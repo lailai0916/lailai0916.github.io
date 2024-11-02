@@ -57,8 +57,8 @@ const config = {
       ({
         docs: {
 
-            remarkPlugins: [remarkMath],
-            rehypePlugins: [rehypeKatex],
+          remarkPlugins: [remarkMath],
+          rehypePlugins: [rehypeKatex],
 
           sidebarPath: './sidebars.js',
           // Please change this to your repo.
@@ -68,10 +68,8 @@ const config = {
 
         blog: {
 
-
           remarkPlugins: [remarkMath],
           rehypePlugins: [rehypeKatex],
-
 
           showReadingTime: true,
           blogSidebarCount: 'ALL',
