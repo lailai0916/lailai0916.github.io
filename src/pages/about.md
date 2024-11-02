@@ -8,11 +8,19 @@ import GiscusComponent from "@site/src/components/giscus/giscus.tsx";
 
 <div style={{maxWidth: '70ch', margin: "auto"}}>
 
-# 你好，我是 lailai! 👋
+<h1 align="center">你好，我是 lailai! 👋</h1>
 
-- 我是一名来自杭州的中学生。
-- 我具备较强的自学能力和问题解决能力，同时对代码整洁有较高的要求。
-- 我会把我的学习过程总结成文章，乐于与他人分享。
+## 个人介绍
+
+🧑🏻‍🎓 一名来自杭州的中学生。
+
+🤯 具备较强的自学能力和问题解决能力。
+
+🧑🏻‍💻 
+
+🫧 对代码整洁有较高的要求。
+
+💡 我会把我的学习过程总结成文章，乐于与他人分享。
 
 ## 我的网名
 
