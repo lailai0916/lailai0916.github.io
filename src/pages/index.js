@@ -43,7 +43,7 @@ function HeroBanner() {
             className={styles.heroTitleTextHtml}
             // eslint-disable-next-line react/no-danger
             dangerouslySetInnerHTML={{
-              __html: '🎉 <b>Welcome</b> to lailai\'s <b>Home</b>! 🥳',
+              __html: '<b>Welcome</b> to lailai\'s <b>Home</b>!',
             }}
           />
         </Heading>
