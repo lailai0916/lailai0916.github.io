@@ -33,9 +33,9 @@ function HeroBanner() {
       <div className={styles.heroInner}>
         <Heading as="h1" className={styles.heroProjectTagline}>
           <img
-            alt='Docusaurus with Keytar'
+            alt="lailai's Logo"
+            src="/img/logo.svg"
             className={styles.heroLogo}
-            src='/img/logo.svg'
             width="200"
             height="200"
           />
