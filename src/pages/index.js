@@ -27,14 +27,15 @@ function HomepageHeader() {
 }
 
 function HeroBanner() {
+  const {siteConfig} = useDocusaurusContext();
   return (
     <div className={styles.hero} data-theme="dark">
       <div className={styles.heroInner}>
         <Heading as="h1" className={styles.heroProjectTagline}>
           <img
-            alt={'Docusaurus with Keytar'}
+            alt='Docusaurus with Keytar'
             className={styles.heroLogo}
-            src={'/img/logo.svg'}
+            src='/img/logo.svg'
             width="200"
             height="200"
           />
@@ -42,16 +43,16 @@ function HeroBanner() {
             className={styles.heroTitleTextHtml}
             // eslint-disable-next-line react/no-danger
             dangerouslySetInnerHTML={{
-              __html: '<b>Welcome</b> to lailai\'s <b>Home</b>! ',
+              __html: '🎉 <b>Welcome</b> to lailai\'s <b>Home</b>! 🥳',
             }}
           />
         </Heading>
         <div className={styles.indexCtas}>
-          <Link className="button button--info" to="/docs">
-            Get Started
+          <Link className="button button--info" to="/blog">
+            博客
           </Link>
-          <Link className="button button--info" to="https://docusaurus.new">
-            Try a Demo
+          <Link className="button button--info" to="/about">
+            关于
           </Link>
         </div>
       </div>
