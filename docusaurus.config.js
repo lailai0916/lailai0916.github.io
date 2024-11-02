@@ -219,8 +219,8 @@ const config = {
       announcementBar: {
         id: 'announcement',
         content: '👻 <b>万圣节快乐!</b> 🎃',
-        backgroundColor: '#fffbcc',
-        textColor: '000000',
+        backgroundColor: '#ffffff',
+        textColor: '#000000',
         isCloseable: true,
       },
     }),
@@ -233,6 +233,7 @@ const config = {
         // https://github.com/easyops-cn/docusaurus-search-local
       require.resolve("@easyops-cn/docusaurus-search-local"),
       /** @type {import("@easyops-cn/docusaurus-search-local").PluginOptions} */
+      // @ts-ignore
       ({
         // ... Your options.
         // `hashed` is recommended as long-term-cache of index file is possible.

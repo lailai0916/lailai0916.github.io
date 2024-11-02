@@ -63,8 +63,8 @@ div[class^='announcementBar_'] {
     var(--site-primary-hue-saturation) 95%
   );
    */
-  --site-announcement-bar-stripe-color1: #d2b1ff;
-  --site-announcement-bar-stripe-color2: #ffd9b1;
+  --site-announcement-bar-stripe-color1: #e8d7ff;
+  --site-announcement-bar-stripe-color2: #ffe9d1;
 
   background: repeating-linear-gradient(
     35deg,
