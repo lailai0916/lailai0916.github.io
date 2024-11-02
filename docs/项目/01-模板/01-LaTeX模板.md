@@ -67,11 +67,11 @@ $$
 ### 极限
 
 ```latex
-\lim_{x \to \infty} f(x)
+\lim_{x\to\infty} f(x)
 ```
 
 $$
-\lim_{x \to \infty} f(x)
+\lim_{x\to\infty} f(x)
 $$
 
 ## 多行公式

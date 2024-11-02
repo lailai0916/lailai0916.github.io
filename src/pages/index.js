@@ -17,14 +17,45 @@ function HomepageHeader() {
         </Heading>
         <p className="hero__subtitle">{siteConfig.tagline}</p>
         <div className={styles.buttons}>
-          <Link
-            className="button button--secondary button--lg"
-            to="/blog">
+          <Link className="button button--secondary button--lg" to="/blog">
             进入博客 →
           </Link>
         </div>
       </div>
     </header>
+  );
+}
+
+function HeroBanner() {
+  return (
+    <div className={styles.hero} data-theme="dark">
+      <div className={styles.heroInner}>
+        <Heading as="h1" className={styles.heroProjectTagline}>
+          <img
+            alt={'Docusaurus with Keytar'}
+            className={styles.heroLogo}
+            src={'/img/logo.svg'}
+            width="200"
+            height="200"
+          />
+          <span
+            className={styles.heroTitleTextHtml}
+            // eslint-disable-next-line react/no-danger
+            dangerouslySetInnerHTML={{
+              __html: '<b>Welcome</b> to lailai\'s <b>Home</b>! ',
+            }}
+          />
+        </Heading>
+        <div className={styles.indexCtas}>
+          <Link className="button button--info" to="/docs">
+            Get Started
+          </Link>
+          <Link className="button button--info" to="https://docusaurus.new">
+            Try a Demo
+          </Link>
+        </div>
+      </div>
+    </div>
   );
 }
 
@@ -34,7 +65,7 @@ function TopBanner() {
       <div className={styles.topBannerTitle}>
         {'🎉\xa0'}
         <Link className={styles.topBannerTitleText} to={`/about`}>
-          lailai's Home
+          Hello, I'm lailai
         </Link>
         {'\xa0🥳'}
       </div>
@@ -46,9 +77,9 @@ export default function Home() {
   const {siteConfig} = useDocusaurusContext();
   return (
     <Layout title={`Hello from lailai`}>
-      <TopBanner />
-      <HomepageHeader />
       <main>
+        <TopBanner />
+        <HeroBanner />
         <HomepageFeatures />
       </main>
     </Layout>
