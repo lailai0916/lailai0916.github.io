@@ -23,6 +23,11 @@
 }
 
 .hero {
+  background-color: #f5f6f7;
+  padding: 48px;
+}
+
+html[data-theme='dark'] .hero {
   background-color: #2b3137;
   padding: 48px;
 }
@@ -34,7 +39,13 @@
 }
 
 .heroProjectTagline {
-  color: #fff;
+  color: #000000;
+  font-size: 60px;
+  margin: 0;
+}
+
+html[data-theme='dark'] .heroProjectTagline {
+  color: #ffffff;
   font-size: 60px;
   margin: 0;
 }
@@ -160,7 +171,7 @@
     90deg,
     rgb(131 58 180) 0%,
     rgb(253 29 29) 50%,
-    rgb(252 176 69 ) 100%
+    rgb(252 176 69) 100%
   );
   background-clip: text;
   -webkit-text-fill-color: transparent;

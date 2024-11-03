@@ -29,7 +29,7 @@ function HomepageHeader() {
 function HeroBanner() {
   const {siteConfig} = useDocusaurusContext();
   return (
-    <div className={styles.hero} data-theme="dark">
+    <div className={styles.hero}>
       <div className={styles.heroInner}>
         <Heading as="h1" className={styles.heroProjectTagline}>
           <img
