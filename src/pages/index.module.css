@@ -39,13 +39,6 @@ html[data-theme='dark'] .hero {
 }
 
 .heroProjectTagline {
-  color: #000000;
-  font-size: 60px;
-  margin: 0;
-}
-
-html[data-theme='dark'] .heroProjectTagline {
-  color: #ffffff;
   font-size: 60px;
   margin: 0;
 }
@@ -76,7 +69,7 @@ html[data-theme='dark'] .heroProjectTagline {
 }
 
 .heroLogo {
-  animation-duration: 2s;
+  animation-duration: 1s;
   animation-name: jack-in-the-box;
   float: right;
   margin-top: 15px;
@@ -125,11 +118,6 @@ html[data-theme='dark'] .heroProjectTagline {
   }
 
   .heroProjectTagline {
-    font-size: 36px;
-    text-align: center;
-  }
-
-  html[data-theme='dark'] .heroProjectTagline {
     font-size: 36px;
     text-align: center;
   }

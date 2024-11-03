@@ -33,6 +33,10 @@
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
 
+html.light-mode .button.button--primary {
+  color: #ffffff !important; /* 强制应用白色文本 */
+}
+
 .header-github-link::before {
   content: '';
   width: 24px;
