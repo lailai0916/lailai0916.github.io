@@ -33,10 +33,6 @@
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
 
-html.light-mode .button.button--primary {
-  color: #ffffff !important; /* 强制应用白色文本 */
-}
-
 .header-github-link::before {
   content: '';
   width: 24px;
@@ -58,15 +54,14 @@ pre, code {
 
 div[class^='announcementBar_'] {
   font-size: 20px;
-
-  /*
-  --site-announcement-bar-stripe-color1: hsl(
+  
+  /* --site-announcement-bar-stripe-color1: hsl(
     var(--site-primary-hue-saturation) 85%
   );
   --site-announcement-bar-stripe-color2: hsl(
     var(--site-primary-hue-saturation) 95%
-  );
-   */
+  ); */
+ 
   --site-announcement-bar-stripe-color1: #e8d7ff;
   --site-announcement-bar-stripe-color2: #ffe9d1;
 
