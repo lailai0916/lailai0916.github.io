@@ -115,6 +115,11 @@ html[data-theme='dark'] .heroProjectTagline {
     padding-right: 20px;
   }
 
+  html[data-theme='dark'] .hero {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
   .heroInner {
     padding: 0;
   }
