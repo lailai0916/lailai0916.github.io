@@ -17,9 +17,9 @@ function FriendHeader() {
     <section className="margin-top--lg margin-bottom--lg text-center">
       <h1>{TITLE}</h1>
       <p>{DESCRIPTION}</p>
-      <a className="button button--primary" href="qwe" target="_blank" rel="noreferrer">
+      {/* <a className="button button--primary" href="qwq" target="_blank" rel="noreferrer">
         🔗 申请友链
-      </a>
+      </a> */}
     </section>
   )
 }
