@@ -129,6 +129,11 @@ html[data-theme='dark'] .heroProjectTagline {
     text-align: center;
   }
 
+  html[data-theme='dark'] .heroProjectTagline {
+    font-size: 36px;
+    text-align: center;
+  }
+
   .heroLogo {
     display: block;
     float: none;
