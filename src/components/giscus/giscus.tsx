@@ -38,7 +38,6 @@ export default function GiscusComponent() {
             inputPosition="bottom"
             theme={colorMode}
             lang="zh-CN"
-            loading="lazy"
             // crossorigin="anonymous"
         />
     );
