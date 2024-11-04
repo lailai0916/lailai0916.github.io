@@ -28,18 +28,16 @@ export default function GiscusComponent() {
         <Giscus
             repo="lailai0916/giscus" // 需要修改
             repoId="R_kgDONHUoXA" // 需要修改
-            category="General"
-            categoryId="DIC_kwDONHUoXM4Cjx_" // 需要修改
+            category="Announcements"
+            categoryId="DIC_kwDONHUoXM4Cjx_9" // 需要修改
             mapping="pathname"
-            term="Welcome to @giscus/react component!"
             strict="0"
             reactionsEnabled="1"
             emitMetadata="0"
             inputPosition="bottom"
             theme={colorMode}
             lang="zh-CN"
-            loading="lazy"
-            // crossorigin="anonymous"
+            crossorigin="anonymous"
         />
     );
 }
