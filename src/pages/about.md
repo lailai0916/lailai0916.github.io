@@ -43,14 +43,14 @@ import GiscusComponent from "@site/src/components/giscus/giscus.tsx";
   <div style={{ width: '24px', height: '24px', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
     <img src="/img/icon/MacBook.svg" style={{ objectFit: 'contain' }} />
   </div>
-  <div>MacBook Pro 16英寸 (M3 Max)</div>
+  <div>MacBook Pro 16 英寸 (M3 Max)</div>
 </p>
 
 <p style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
   <div style={{ width: '24px', height: '24px', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
     <img src="/img/icon/iPad.svg" style={{ objectFit: 'contain' }} />
   </div>
-  <div>iPad Pro 11英寸 (M1)</div>
+  <div>iPad Pro 11 英寸 (M1)</div>
 </p>
 
 <p style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
