@@ -246,7 +246,7 @@ const config = {
         indexDocs: true, // 是否对docs进行索引
         indexBlog: true, // 是否对blog进行索引
         indexPages: false, // 是否对pages进行索引
-        docsRouteBasePath: ["/docs","/linux","/services"], //
+        docsRouteBasePath: ["/docs","/linux","/services"],
 
       }),
     ],
