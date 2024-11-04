@@ -1,6 +1,6 @@
 # ST 表
 
-## 模版
+## 实现
 
 ```cpp
 using ll=long long;

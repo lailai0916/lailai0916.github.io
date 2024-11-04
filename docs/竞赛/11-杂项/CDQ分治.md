@@ -1,6 +1,6 @@
 # CDQ 分治
 
-## 模版
+## 实现
 
 ```cpp
 void cdq(int l,int r)

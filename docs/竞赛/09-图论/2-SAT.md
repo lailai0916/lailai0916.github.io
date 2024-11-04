@@ -1,6 +1,6 @@
 # 2-SAT
 
-## 模版
+## 实现
 
 ```cpp
 #include <bits/stdc++.h>

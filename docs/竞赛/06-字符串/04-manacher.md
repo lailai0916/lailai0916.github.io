@@ -1,6 +1,6 @@
 # manacher
 
-## 模版
+## 实现
 
 ```cpp
 int p[N<<1];

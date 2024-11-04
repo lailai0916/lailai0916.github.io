@@ -1,6 +1,6 @@
 # Kahan 求和
 
-## 模版
+## 实现
 
 ```cpp
 double kahan_sum(vector<double> a)
