@@ -1,0 +1,22 @@
+.deviceList {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.deviceItem {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.deviceItem img {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+  fill: #ffffff;
+}
+
+html[data-theme='dark'] .deviceItem img {
+  fill: #000000;
+}

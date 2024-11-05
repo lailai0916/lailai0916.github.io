@@ -1,7 +1,5 @@
-import CodeBlock from '@theme/CodeBlock'
 import Layout from '@theme/Layout'
 import { memo, useRef } from 'react'
-
 import { Friend, Friends } from '@site/src/data/friend'
 
 import Link from '@docusaurus/Link'
@@ -10,7 +8,6 @@ import styles from './styles.module.css'
 
 const TITLE = '友链'
 const DESCRIPTION = '财富易得，知己难求。'
-const friends = Friends
 
 function FriendHeader() {
   return (
@@ -53,7 +50,7 @@ function FriendCards() {
     <section className="mt-8 mb-8">
       <div className="mx-auto max-w-6xl px-4 py-2">
         <ul className="grid grid-cols-1 gap-6 p-0 sm:grid-cols-2 lg:grid-cols-3 ">
-          {friends.map(friend => (
+          {Friends.map(friend => (
             <FriendCard key={friend.avatar} friend={friend} />
           ))}
         </ul>

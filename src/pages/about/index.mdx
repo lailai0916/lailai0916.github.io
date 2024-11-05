@@ -5,22 +5,25 @@ hide_table_of_contents: true
 
 import { Icon } from '@iconify/react'
 import GiscusComponent from "@site/src/components/giscus/giscus.tsx";
+import styles from './styles.module.css'
 
 <div style={{maxWidth: '70ch', margin: "auto"}}>
 
-<h1 align="center">你好，我是 lailai! 👋</h1>
+<div align="center">
+  <h1>你好，我是 lailai! 👋</h1>
+</div>
 
 ## 个人介绍
 
-🧑🏻‍🎓 我是一名来自杭州的中学生。
+🧑🏻‍🎓 我是来自浙江杭州的一名中学生。
 
-🧑🏻‍💻 热爱数学和计算机。
+🧑🏻‍💻 热爱编程与数学，充满对技术的热情与探索精神。
 
-🤯 具备较强的自学能力和问题解决能力。
+🤯 拥有出色的自学能力和强大的问题解决能力。
 
-🫧 对代码整洁有较高的要求。
+🫧 对代码的整洁和规范有着严格的要求。
 
-💡 我会把我的学习过程总结成文章，乐于与他人分享。
+💡 我喜欢将学习的过程整理成文章，与大家共同成长。
 
 ## 我的昵称
 
@@ -37,41 +40,33 @@ import GiscusComponent from "@site/src/components/giscus/giscus.tsx";
 
 :::
 
-## 我的设备
+## 我的装备
 
-<p style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-  <div style={{ width: '24px', height: '24px', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-    <img src="/img/icon/MacBook.svg" style={{ objectFit: 'contain' }} />
+<p className={styles.deviceList}>
+  <div className={styles.deviceItem}>
+    <img src="/img/icon/Bag.svg" />
+    <span>tomtoc Voyage-T50 Laptop Backpack</span>
   </div>
-  <div>MacBook Pro 16 英寸 (M3 Max)</div>
-</p>
-
-<p style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-  <div style={{ width: '24px', height: '24px', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-    <img src="/img/icon/iPad.svg" style={{ objectFit: 'contain' }} />
+  <div className={styles.deviceItem}>
+    <img src="/img/icon/MacBook.svg" />
+    <span>MacBook Pro 16 英寸 (M3 Max)</span>
   </div>
-  <div>iPad Pro 11 英寸 (M1)</div>
-</p>
-
-<p style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-  <div style={{ width: '24px', height: '24px', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-    <img src="/img/icon/iPhone.svg" style={{ objectFit: 'contain' }} />
+  <div className={styles.deviceItem}>
+    <img src="/img/icon/iPad.svg" />
+    <span>iPad Pro 11 英寸 (M1)</span>
   </div>
-  <div>iPhone 13</div>
-</p>
-
-<p style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-  <div style={{ width: '24px', height: '24px', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-    <img src="/img/icon/AirPods.svg" style={{ objectFit: 'contain' }} />
+  <div className={styles.deviceItem}>
+    <img src="/img/icon/iPhone.svg" />
+    <span>iPhone 13</span>
   </div>
-  <div>AirPods Pro 2</div>
-</p>
-
-<p style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-  <div style={{ width: '24px', height: '24px', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-    <img src="/img/icon/Mouse.svg" style={{ objectFit: 'contain' }} />
+  <div className={styles.deviceItem}>
+    <img src="/img/icon/AirPods.svg" />
+    <span>AirPods Pro 2</span>
   </div>
-  <div>Logitech G PRO X SUPERLIGHT 2</div>
+  <div className={styles.deviceItem}>
+    <img src="/img/icon/Disk.svg" />
+    <span>SanDisk Extreme PRO USB 3.2 (256GB)</span>
+  </div>
 </p>
 
 ## 联系方式
