@@ -1,6 +1,6 @@
 # LaTeX 模板
 
-$\LaTeX$ 是一种基于 $\TeX$ 的排版系统，能够很方便的生成数学公式。
+[$\LaTeX$](https://zh.wikipedia.org/wiki/LaTeX) 是一种基于 [$\TeX$](https://zh.wikipedia.org/wiki/TeX) 的排版系统，能够方便的生成数学公式。
 
 ## 参考资料
 
@@ -12,13 +12,13 @@ $\LaTeX$ 是一种基于 $\TeX$ 的排版系统，能够很方便的生成数学
 
 ### 行内公式与行间公式
 
-行内公式（Inline Math，即穿插在文本中的公式）两侧分别使用一个美元 `$ $` 符号定界。
+行内公式（Inline Math，即穿插在文本中的公式）两侧分别使用一个美元 `$...$` 符号定界。
 
 ```latex
 $a^2 + b^2 = c^2$
 ```
 
-行间公式（Math Blocks，独立成行居中的公式）前后两行分别使用 `$$ $$`（每行两个美元符号）定界。
+行间公式（Math Blocks，独立成行居中的公式）前后两行分别使用 `$$...$$`（每行两个美元符号）定界。
 
 ```latex
 $$
@@ -37,11 +37,11 @@ $$
 ### 求和
 
 ```latex
-\sum_{i=1}^{n} a_i
+\sum_{i=1}^{\infty} a_i
 ```
 
 $$
-\sum_{i=1}^{n} a_i
+\sum_{i=1}^{\infty} a_i
 $$
 
 ### 积分
@@ -82,8 +82,7 @@ $$
 \begin{align*}
   f(x) &= a_1 \\
   &= a_2 \\
-  &= a_3 \\
-  &= \dotsb \\
+  &= \cdots \\
   &= a_n
 \end{align*}
 ```
@@ -92,8 +91,7 @@ $$
 \begin{align*}
   f(x) &= a_1 \\
   &= a_2 \\
-  &= a_3 \\
-  &= \dotsb \\
+  &= \cdots \\
   &= a_n
 \end{align*}
 $$
@@ -137,20 +135,30 @@ $$
 ### 多行公式
 
 ```latex
-\begin{align*}
-  & a_1 = b_1 \\
-  & a_2 = b_2 \\
-  & a_3 = b_3
-\end{align*}
+\begin{array}{l}
+  \cos \pi = 1 \\
+  \sin^2 a + \cos^2 a = 1 \\
+  \sin 2a = 2 \sin a \cos a
+\end{array}
 ```
 
 $$
-\begin{align*}
-  & a_1 = b_1 \\
-  & a_2 = b_2 \\
-  & a_3 = b_3
-\end{align*}
+\begin{array}{l}
+  \cos \pi = 1 \\
+  \sin^2 a + \cos^2 a = 1 \\
+  \sin 2a = 2 \sin a \cos a
+\end{array}
 $$
+
+:::tip
+
+通过调整 `\begin{array}` 后的参数，可以设置公式的对齐方式：
+
+- `{c}`：居中对齐（默认）。
+- `{l}`：左对齐。
+- `{r}`：右对齐。
+
+:::
 
 ### 矩阵
 
@@ -170,22 +178,4 @@ $$
   \vdots & \vdots & \ddots & \vdots \\
   0 & 0 & \cdots & 1
 \end{bmatrix}
-$$
-
-```latex
-\begin{pmatrix}
-  1 & 0 & \cdots & 0 \\
-  0 & 1 & \cdots & 0 \\
-  \vdots & \vdots & \ddots & \vdots \\
-  0 & 0 & \cdots & 1
-\end{pmatrix}
-```
-
-$$
-\begin{pmatrix}
-  1 & 0 & \cdots & 0 \\
-  0 & 1 & \cdots & 0 \\
-  \vdots & \vdots & \ddots & \vdots \\
-  0 & 0 & \cdots & 1
-\end{pmatrix}
 $$
