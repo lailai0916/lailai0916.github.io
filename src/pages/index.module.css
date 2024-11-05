@@ -171,6 +171,9 @@ html[data-theme='dark'] .hero {
 
 .topBannerTitleText {
   background: linear-gradient(
+    /* 45deg,
+    rgb(57 156 255) 0%,
+    rgb(0 199 117) 80% */
     90deg,
     rgb(131 58 180) 0%,
     rgb(253 29 29) 50%,
@@ -182,11 +185,15 @@ html[data-theme='dark'] .hero {
 
 .topBannerTitleText:hover {
   border-bottom: solid 2px;
+  /* border-color: rgb(37 194 160); */
   border-color: rgb(152 0 255);
 }
 
 html[data-theme='dark'] .topBannerTitleText {
   background: linear-gradient(
+    /* 45deg,
+    rgb(57 156 255) 0%,
+    rgb(0 255 149) 80% */
     90deg,
     rgb(152 0 255) 0%,
     rgb(246 41 41) 50%,
