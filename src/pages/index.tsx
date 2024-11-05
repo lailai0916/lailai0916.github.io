@@ -90,6 +90,7 @@ function HeroBanner() {
             className={styles.heroLogo}
             width="200"
             height="200"
+            loading="lazy"
           />
           <span
             className={styles.heroTitleTextHtml}
