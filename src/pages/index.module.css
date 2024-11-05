@@ -3,6 +3,11 @@
  * and scoped locally.
  */
 
+ .featureHeading {
+  font-size: var(--ifm-h3-font-size);
+  padding-top: 1rem;
+}
+
 .heroBanner {
   padding: 4rem 0;
   text-align: center;

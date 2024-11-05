@@ -1,3 +1,10 @@
+export type Friend = {
+  title: string
+  description: string
+  website: string
+  avatar: string
+}
+
 export const Friends: Friend[] = [
   {
     title: 'lailai',
@@ -42,10 +49,3 @@ export const Friends: Friend[] = [
     avatar: '/img/avatar/LaDeX.png',
   },
 ]
-
-export type Friend = {
-  title: string
-  description: string
-  website: string
-  avatar: string
-}
