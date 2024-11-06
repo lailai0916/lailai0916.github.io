@@ -45,7 +45,7 @@ import styles from './styles.module.css'
 <p className={styles.deviceList}>
   <div className={styles.deviceItem}>
     <img src="/img/icon/Bag.svg" />
-    <span>tomtoc Voyage-T50 Laptop Backpack</span>
+    <span>tomtoc Voyage T50 Laptop Backpack</span>
   </div>
   <div className={styles.deviceItem}>
     <img src="/img/icon/MacBook.svg" />
