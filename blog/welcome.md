@@ -4,8 +4,8 @@ tags: [welcome, top]
 date: 2077-01-01
 ---
 
-# 欢迎
+# Welcome to lailai's Blog!
 
-I'm a middle school student from Hangzhou, China.
+- [关于我](/about)
 
 <!-- truncate -->
