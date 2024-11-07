@@ -79,21 +79,21 @@ $$
 ### 递等式
 
 ```latex
-\begin{align*}
+\begin{aligned}
   f(x) &= a_1 \\
   &= a_2 \\
   &= \cdots \\
   &= a_n
-\end{align*}
+\end{aligned}
 ```
 
 $$
-\begin{align*}
+\begin{aligned}
   f(x) &= a_1 \\
   &= a_2 \\
   &= \cdots \\
   &= a_n
-\end{align*}
+\end{aligned}
 $$
 
 ### 分段函数
