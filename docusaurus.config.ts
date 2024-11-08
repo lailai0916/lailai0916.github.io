@@ -273,6 +273,13 @@ const config = {
         ],
       },
     ],
+    [
+      '@docusaurus/plugin-google-analytics',
+      {
+        trackingID: 'G-HGRTVZK8MR',
+        anonymizeIP: true,
+      },
+    ],
   ],
 };
 
