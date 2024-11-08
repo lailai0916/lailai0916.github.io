@@ -3,7 +3,17 @@
  * and scoped locally.
  */
 
- .featureHeading {
+.section {
+  padding: 40px 0;
+}
+
+.featureImage {
+  width: auto;
+  max-height: 128px;
+  margin: 0 auto;
+}
+
+.featureHeading {
   font-size: var(--ifm-h3-font-size);
   padding-top: 1rem;
 }

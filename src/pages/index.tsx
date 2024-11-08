@@ -6,7 +6,7 @@ import Layout from '@theme/Layout';
 import useBaseUrl, {useBaseUrlUtils} from '@docusaurus/useBaseUrl';
 import Features from '@site/src/data/features';
 import Heading from '@theme/Heading';
-import styles from './index.module.css';
+import styles from './styles.module.css';
 
 // function HomepageHeader() {
 //   const {siteConfig} = useDocusaurusContext();
@@ -133,7 +133,9 @@ export default function Home() {
       <main>
         <TopBanner />
         <HeroBanner />
-        <FeaturesContainer />
+        <div className={styles.section}>
+          <FeaturesContainer />
+        </div>
       </main>
     </Layout>
   );
