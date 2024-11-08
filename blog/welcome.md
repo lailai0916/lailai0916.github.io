@@ -6,6 +6,6 @@ date: 2077-01-01
 
 # Welcome to lailai's Blog! 👋
 
-- [关于我](/about)
+- [关于](/about)
 
 <!-- truncate -->
