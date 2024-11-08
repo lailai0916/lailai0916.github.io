@@ -13,8 +13,8 @@ export const FEATURES: FeatureItem[] = [
     title: '竞赛',
     image: {
       src: '/img/undraw_typewriter.svg',
-      width: 200,
-      height: 200,
+      width: 1009.54,
+      height: 717.96,
     },
     text: (
       <div>
@@ -27,8 +27,8 @@ export const FEATURES: FeatureItem[] = [
     title: '数学',
     image: {
       src: '/img/undraw_react.svg',
-      width: 200,
-      height: 200,
+      width: 1108,
+      height: 731.18,
     },
     text: (
       <div>
@@ -41,8 +41,8 @@ export const FEATURES: FeatureItem[] = [
     title: '项目',
     image: {
       src: '/img/undraw_version_control.svg',
-      width: 200,
-      height: 200,
+      width: 1038.23,
+      height: 693.31,
     },
     text: (
       <div>
