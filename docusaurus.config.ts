@@ -267,8 +267,8 @@ const config = {
       {
         redirects: [
           {
-            from: '/class',
-            to: 'https://down-load.lanrar.com/file/?CW9TbVprBjdTWgoyBzIBbVRrVW1TZwVxBHpUK1FCB3wCUVU0DH8BMAcpU2ALeVw7VGdUPVdtAl8CbAdlAGEHNAk5UzNaNAZnUzQKaAdqAThUKFU2U38FOgQyVGBRNAc+AjZVMQxjAWUHd1N1Cy9cYFQ8VGFXOgI0AioHMABtBykJOVMyWigGZ1MzCm0HYgEwVD9VM1M4BWYEZVRjUT0HYwJjVWQMYwFtBzVTPAs7XD5UPVQwVzECMQI3B2UAaQdjCTxTNFpjBnxTYAokBzYBJlR7VSNTaQV1BGpUNlEwBzMCO1U7DGcBYQdnUyMLK1w0VGNUNFduAj0CNAc2AG8HNwk5UzFaPgZiUzYKZQd9AS5UKFU2U2AFcAQ+VGNROgc1AjNVMgxkAWIHaFM9C2dce1R7VCFXfwI9AjQHNgBvBzYJMVM8WjMGalM1CmkHdQF1VGdVIFMxBTUEMlRqUSMHNwIyVToMfwFgB2dTKwtuXGpUP1R/Vy4CZAJqB3YAMgdZCWpTb1o6BmI=',
+            from: '/v50',
+            to: 'https://v50to.me',
           },
         ],
       },
