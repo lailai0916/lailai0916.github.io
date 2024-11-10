@@ -118,7 +118,7 @@ function TopBanner() {
       <div className={styles.topBannerTitle}>
         {'🎉\xa0'}
         <Link className={styles.topBannerTitleText} to="/about">
-          Hello, I'm lailai
+          {'Hello,\xa0I\'m\xa0lailai'}
         </Link>
         {'\xa0🥳'}
       </div>

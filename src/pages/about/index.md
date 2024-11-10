@@ -42,7 +42,7 @@ import styles from './styles.module.css'
 
 ## 我的装备
 
-<p className={styles.deviceList}>
+<div className={styles.deviceList}>
   <div className={styles.deviceItem}>
     <img src="/img/icon/Bag.svg" />
     <span>tomtoc Voyage T50 Laptop Backpack</span>
@@ -67,39 +67,39 @@ import styles from './styles.module.css'
     <img src="/img/icon/Disk.svg" />
     <span>SanDisk Extreme PRO USB 3.2 (256GB)</span>
   </div>
-</p>
+</div>
 
 ## 联系方式
 
-<p style={{ display: 'flex', 'align-items': 'center', gap: '0.5rem' }}>
-  <Icon icon="ri:phone-line" width="20" heigth="20" />
+<div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+  <Icon icon="ri:phone-line" width="20" height="20" />
   <a href="tel:+86 17757102577" target="_blank">+86 17757102577</a>
-</p>
+</div>
 
-<p style={{ display: 'flex', 'align-items': 'center', gap: '0.5rem' }}>
-  <Icon icon="ri:mail-line" width="20" heigth="20" />
+<div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+  <Icon icon="ri:mail-line" width="20" height="20" />
   <a href="mailto:lailai0x394@gmail.com" target="_blank">lailai0x394@gmail.com</a>
-</p>
+</div>
 
-<p style={{ display: 'flex', 'align-items': 'center', gap: '0.5rem' }}>
-  <Icon icon="ri:telegram-line" width="20" heigth="20" />
+<div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+  <Icon icon="ri:telegram-line" width="20" height="20" />
   <a href="https://t.me/lailai0916" target="_blank">lailai0x394</a>
-</p>
+</div>
 
-<p style={{ display: 'flex', 'align-items': 'center', gap: '0.5rem' }}>
-  <Icon icon="ri:twitter-x-line" width="20" heigth="20" />
+<div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+  <Icon icon="ri:twitter-x-line" width="20" height="20" />
   <a href="https://x.com/lailai0x394" target="_blank">lailai0x394</a>
-</p>
+</div>
 
-<p style={{ display: 'flex', 'align-items': 'center', gap: '0.5rem' }}>
-  <Icon icon="ri:linkedin-line" width="20" heigth="20" />
+<div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+  <Icon icon="ri:linkedin-line" width="20" height="20" />
   <a href="https://www.linkedin.com/in/lailai0916" target="_blank">lailai0916</a>
-</p>
+</div>
 
-<p style={{ display: 'flex', 'align-items': 'center', gap: '0.5rem' }}>
-  <Icon icon="ri:github-line" width="20" heigth="20" />
+<div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+  <Icon icon="ri:github-line" width="20" height="20" />
   <a href="https://github.com/lailai0916" target="_blank">lailai0916</a>
-</p>
+</div>
 
 ## 赞助
 
