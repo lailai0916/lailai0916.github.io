@@ -1,6 +1,6 @@
 ---
 authors: [lailai]
-tags: [solution, luogu]
+tags: [solution, atcoder]
 date: 2023-05-20
 ---
 
