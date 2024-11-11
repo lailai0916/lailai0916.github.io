@@ -14,7 +14,7 @@
   width: 24px;
   height: 24px;
   object-fit: contain;
-  fill: #ffffff;
+  fill: #ffff00;
 }
 
 html[data-theme='dark'] .deviceItem img {

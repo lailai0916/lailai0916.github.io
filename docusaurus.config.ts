@@ -214,7 +214,7 @@ const config = {
       },
       announcementBar: {
         id: 'announcement',
-        content: 'NOIP2024 RP++!',
+        content: '💯 NOIP2024 RP++! 💯',
         backgroundColor: '#ffffff',
         textColor: '#000000',
         isCloseable: true,
