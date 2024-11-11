@@ -67,6 +67,7 @@ import styles from './styles.module.css'
     <img src="/img/icon/Disk.svg" />
     <span>SanDisk Extreme PRO USB 3.2 (256GB)</span>
   </div>
+  <div></div>
 </div>
 
 ## 联系方式
@@ -74,11 +75,11 @@ import styles from './styles.module.css'
 <div className={styles.deviceList}>
   <div className={styles.deviceItem}>
     <Icon icon="ri:phone-line" width="20" height="20" />
-    <a href="tel:+86 17757102577" target="_blank">+86 17757102577</a>
+    <a href="tel:+86 17757102577">+86 17757102577</a>
   </div>
   <div className={styles.deviceItem}>
     <Icon icon="ri:mail-line" width="20" height="20" />
-    <a href="mailto:lailai0x394@gmail.com" target="_blank">lailai0x394@gmail.com</a>
+    <a href="mailto:lailai0x394@gmail.com">lailai0x394@gmail.com</a>
   </div>
   <div className={styles.deviceItem}>
     <Icon icon="ri:telegram-line" width="20" height="20" />
@@ -96,13 +97,14 @@ import styles from './styles.module.css'
     <Icon icon="ri:github-line" width="20" height="20" />
     <a href="https://github.com/lailai0916" target="_blank">lailai0916</a>
   </div>
+  <div></div>
 </div>
 
 ## 赞助
 
 :::tip
 
-欢迎支持我的网站，您的赞助将帮助我持续创作更多有价值的内容！
+欢迎赞助我的网站，您的支持将帮助我持续创作更多有价值的内容！
 
 :::
 
