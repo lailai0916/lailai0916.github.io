@@ -31,7 +31,7 @@ import styles from './styles.module.css'
 
 为了解决这个问题，我通常会在后面加上生日数字 0916，形成 lailai0916。
 
-如果 lailai0916 也被占用，我则将 0916 转换为十六进制，变成 lailai0x394。
+如果 lailai0916 也被占用，我会将 0916 转换为十六进制，形成 lailai0x394。
 
 :::warning
 
@@ -71,34 +71,31 @@ import styles from './styles.module.css'
 
 ## 联系方式
 
-<div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-  <Icon icon="ri:phone-line" width="20" height="20" />
-  <a href="tel:+86 17757102577" target="_blank">+86 17757102577</a>
-</div>
-
-<div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-  <Icon icon="ri:mail-line" width="20" height="20" />
-  <a href="mailto:lailai0x394@gmail.com" target="_blank">lailai0x394@gmail.com</a>
-</div>
-
-<div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-  <Icon icon="ri:telegram-line" width="20" height="20" />
-  <a href="https://t.me/lailai0916" target="_blank">lailai0x394</a>
-</div>
-
-<div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-  <Icon icon="ri:twitter-x-line" width="20" height="20" />
-  <a href="https://x.com/lailai0x394" target="_blank">lailai0x394</a>
-</div>
-
-<div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-  <Icon icon="ri:linkedin-line" width="20" height="20" />
-  <a href="https://www.linkedin.com/in/lailai0916" target="_blank">lailai0916</a>
-</div>
-
-<div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-  <Icon icon="ri:github-line" width="20" height="20" />
-  <a href="https://github.com/lailai0916" target="_blank">lailai0916</a>
+<div className={styles.deviceList}>
+  <div className={styles.deviceItem}>
+    <Icon icon="ri:phone-line" width="20" height="20" />
+    <a href="tel:+86 17757102577" target="_blank">+86 17757102577</a>
+  </div>
+  <div className={styles.deviceItem}>
+    <Icon icon="ri:mail-line" width="20" height="20" />
+    <a href="mailto:lailai0x394@gmail.com" target="_blank">lailai0x394@gmail.com</a>
+  </div>
+  <div className={styles.deviceItem}>
+    <Icon icon="ri:telegram-line" width="20" height="20" />
+    <a href="https://t.me/lailai0916" target="_blank">lailai0x394</a>
+  </div>
+  <div className={styles.deviceItem}>
+    <Icon icon="ri:twitter-x-line" width="20" height="20" />
+    <a href="https://x.com/lailai0x394" target="_blank">lailai0x394</a>
+  </div>
+  <div className={styles.deviceItem}>
+    <Icon icon="ri:linkedin-line" width="20" height="20" />
+    <a href="https://www.linkedin.com/in/lailai0916" target="_blank">lailai0916</a>
+  </div>
+  <div className={styles.deviceItem}>
+    <Icon icon="ri:github-line" width="20" height="20" />
+    <a href="https://github.com/lailai0916" target="_blank">lailai0916</a>
+  </div>
 </div>
 
 ## 赞助
