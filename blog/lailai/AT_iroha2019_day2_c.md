@@ -1,10 +1,9 @@
 ---
+title: 题解：AT_iroha2019_day2_c 陽気な妖姫
+date: 2023-05-27
 authors: [lailai]
 tags: [solution, atcoder]
-date: 2023-05-27
 ---
-
-# 题解：AT_iroha2019_day2_c 陽気な妖姫
 
 ## 原题链接
 

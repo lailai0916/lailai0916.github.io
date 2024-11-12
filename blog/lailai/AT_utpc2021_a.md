@@ -1,10 +1,9 @@
 ---
+title: 题解：AT_utpc2021_a UTPC
+date: 2023-05-20
 authors: [lailai]
 tags: [solution, atcoder]
-date: 2023-05-20
 ---
-
-# 题解：AT_utpc2021_a UTPC
 
 ## 原题链接
 

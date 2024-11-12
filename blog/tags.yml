@@ -25,3 +25,11 @@ codeforces:
 atcoder:
   label: AtCoder
   permalink: /atcoder
+
+spoj:
+  label: SPOJ
+  permalink: /spoj
+
+uva:
+  label: UVA
+  permalink: /uva

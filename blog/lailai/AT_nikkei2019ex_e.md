@@ -1,10 +1,9 @@
 ---
+title: 题解：AT_nikkei2019ex_e コラッツ問題
+date: 2023-05-31
 authors: [lailai]
 tags: [solution, atcoder]
-date: 2023-05-31
 ---
-
-# 题解：AT_nikkei2019ex_e コラッツ問題
 
 ## 原题链接
 
