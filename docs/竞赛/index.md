@@ -1,3 +1,7 @@
+---
+sidebar_position: 0
+---
+
 # 竞赛
 
 信息学奥林匹克竞赛（Olympiad in Informatics）在中国起源于 1984 年，是五大高中学科竞赛之一。
