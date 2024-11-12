@@ -20,9 +20,9 @@ tags: [solution, atcoder]
 1. 令 $x_1=0$。
 
 2. 对于每个 $k\in[1,n-1]$ 分类讨论：
-  
-- 如果 $s_k$ 为 `>`，即 $x_k>x_{k+1}$：$x_{k+1}$ 比 $x_k$ 小，但又要尽可能大，可以让 $x_{k+1}\leftarrow x_k-1$。
-- 否则 $s_k$ 为 `<`，即 $x_k<x_{k+1}$：$x_{k+1}$ 要尽可能大，可以让 $x_{k+1}\leftarrow x_k+\infty$。
+
+- 如果 $s_k$ 为 `>`，即 $x_k>x_{k+1}$：$x_{k+1}$ 比 $x_k$ 小，但又要尽可能大，可以让 $x_{k+1}\gets x_k-1$。
+- 否则 $s_k$ 为 `<`，即 $x_k<x_{k+1}$：$x_{k+1}$ 要尽可能大，可以让 $x_{k+1}\gets x_k+\infty$。
 
 3. 这里的 $\infty$ 是相对于数据范围 $250000$ 的，多个 $\infty$ 允许叠加，且 $2\cdot\infty\gg\infty\gg0$。 
 
