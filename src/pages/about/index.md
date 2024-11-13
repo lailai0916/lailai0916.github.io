@@ -65,7 +65,7 @@ import styles from './styles.module.css'
   </div>
   <div className={styles.deviceItem}>
     <img src="/img/icon/Disk.svg" />
-    <span>SanDisk Extreme PRO USB 3.2 (256GB)</span>
+    <span>SanDisk Extreme PRO (256GB)</span>
   </div>
   <div></div>
 </div>
