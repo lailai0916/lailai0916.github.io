@@ -18,8 +18,7 @@ Home/
 │   ├── 数学/
 │   └── 项目/
 ├── src/
-│   ├── components/giscus/
-│   │   └── giscus.tsx
+│   ├── components/
 │   ├── css/
 │   │   └── custom.css
 │   ├── data/
@@ -41,7 +40,3 @@ Home/
 ├── LICENSE
 └── README.md
 ```
-
-## 许可证
-
-This project is licensed under the [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/?ref=chooser-v1)
