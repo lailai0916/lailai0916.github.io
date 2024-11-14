@@ -21,8 +21,8 @@
 ### 订阅
 
 - Microsoft 365
-- Parallels Desktop 20 for Mac Pro Edition
 - ChatGPT Plus
+- Parallels Desktop 20 for Mac Pro Edition
 
 ### 控制
 
