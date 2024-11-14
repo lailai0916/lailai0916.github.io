@@ -12,12 +12,11 @@ import BrowserWindow from './index';
 // Quick and dirty component, to improve later if needed
 export default function IframeWindow({url}: {url: string}): JSX.Element {
   return (
-    <div style={{padding: 10}}>
+    <div>
       <BrowserWindow
         url={url}
         style={{
           minWidth: 'min(100%,45vw)',
-          width: 800,
           maxWidth: '100%',
           overflow: 'hidden',
         }}
@@ -25,7 +24,7 @@ export default function IframeWindow({url}: {url: string}): JSX.Element {
         <iframe
           src={url}
           title={url}
-          style={{display: 'block', width: '100%', height: 300}}
+          style={{display: 'block', width: '100%', height: 600}}
         />
       </BrowserWindow>
     </div>
