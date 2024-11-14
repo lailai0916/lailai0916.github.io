@@ -14,7 +14,10 @@
 
 ## 硬件
 
-- 保护壳：Incase 硬质保护壳
+- 140W USB-C 电源适配器
+- USB-C 转 MagSafe 3 连接线
+- 雷雳 4 (USB‑C) Pro 连接线
+- Incase 硬质保护壳
 
 ## 软件
 
@@ -41,7 +44,6 @@
 
 ### 工具
 
-- Microsoft 365 个人版
 - Typora（MarkDown 编辑器）
 - Downie 4（视频下载）
 - Permute 3（格式转换）
