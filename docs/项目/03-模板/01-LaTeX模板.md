@@ -32,16 +32,46 @@ $$
 
 :::
 
+### 自定义函数
+
+```latex
+\operatorname{lca}{(6,8)}=24
+```
+
+$$
+\operatorname{lca}{(6,8)}=24
+$$
+
+### 单位字体（正体）
+
+```latex
+g=9.8\mathrm{m/s^2}
+```
+
+$$
+g=9.8\mathrm{m/s^2}
+$$
+
 ## 巨运算符
 
 ### 求和
 
 ```latex
-\sum_{i=1}^{\infty} a_i
+\sum_{i=1}^{n} a_i
 ```
 
 $$
-\sum_{i=1}^{\infty} a_i
+\sum_{i=1}^{n} a_i
+$$
+
+### 求积
+
+```
+\prod_{i=1}^{n} a_i
+```
+
+$$
+\prod_{i=1}^{n} a_i
 $$
 
 ### 积分
