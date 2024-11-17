@@ -40,7 +40,7 @@ import styles from './styles.module.css'
 
 :::
 
-## 我的装备
+## 数码设备
 
 <div className={styles.deviceList}>
   <div className={styles.deviceItem}>
