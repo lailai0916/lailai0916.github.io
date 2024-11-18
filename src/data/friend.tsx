@@ -60,4 +60,10 @@ export const Friends: Friend[] = [
     website: 'https://www.lailai.one',
     avatar: '/img/avatar/Herta.gif',
   },
+  {
+    title: 'Soukaku',
+    description: '吃薯片~',
+    website: 'https://www.lailai.one',
+    avatar: '/img/avatar/Soukaku.gif',
+  },
 ]
