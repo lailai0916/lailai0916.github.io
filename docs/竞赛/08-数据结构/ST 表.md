@@ -25,7 +25,7 @@ ll query(int l,int r)
 
 ## 例题
 
-### P3865 【模板】ST 表
+### 洛谷 P3865 【模板】ST 表
 
 ```cpp
 #include <bits/stdc++.h>

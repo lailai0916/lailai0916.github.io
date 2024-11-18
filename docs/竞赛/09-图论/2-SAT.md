@@ -75,7 +75,7 @@ int main()
 
 ## 例题
 
-### P4782 【模板】2-SAT
+### 洛谷 P4782 【模板】2-SAT
 
 ```cpp
 #include <bits/stdc++.h>

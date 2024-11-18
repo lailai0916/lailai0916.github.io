@@ -31,7 +31,7 @@ int manacher(string s)
 
 ## 例题
 
-### P3805 【模板】manacher
+### 洛谷 P3805 【模板】manacher
 
 ```cpp
 #include <bits/stdc++.h>
@@ -76,7 +76,7 @@ int main()
 }
 ```
 
-### P4555 [国家集训队] 最长双回文串
+### 洛谷 P4555 [国家集训队] 最长双回文串
 
 ```cpp
 #include <bits/stdc++.h>
