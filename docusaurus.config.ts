@@ -135,8 +135,14 @@ const config = {
             to: '/docs/项目',
           },
           {to: '/blog', label: '博客', position: 'left'},
-          {to: '/friend', label: '友链', position: 'right'},
-          {to: '/about', label: '关于', position: 'right'},
+          {
+            label: '更多',
+            position: 'right',
+            items: [
+              { label: '友链', to: '/friend' },
+              { label: '关于', to: '/about' },
+            ],
+          },
           {
             href: 'https://github.com/lailai0916/lailai0916.github.io',
             // label: 'GitHub',
