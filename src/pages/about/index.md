@@ -40,13 +40,9 @@ import styles from './styles.module.css'
 
 :::
 
-## 数码设备
+## 我的设备
 
 <div className={styles.deviceList}>
-  <div className={styles.deviceItem}>
-    <img src="/img/icon/Bag.svg" />
-    <span>tomtoc Voyage T50 Laptop Backpack</span>
-  </div>
   <div className={styles.deviceItem}>
     <img src="/img/icon/MacBook.svg" />
     <span>MacBook Pro 16 英寸 (M3 Max)</span>
@@ -62,6 +58,14 @@ import styles from './styles.module.css'
   <div className={styles.deviceItem}>
     <img src="/img/icon/AirPods.svg" />
     <span>AirPods Pro 2</span>
+  </div>
+  <div className={styles.deviceItem}>
+    <img src="/img/icon/Bag.svg" />
+    <span>tomtoc Voyage T50 Laptop Backpack</span>
+  </div>
+  <div className={styles.deviceItem}>
+    <img src="/img/icon/Mouse.svg" />
+    <span>Logitech G PRO X SUPERLIGHT 2</span>
   </div>
   <div className={styles.deviceItem}>
     <img src="/img/icon/Disk.svg" />
