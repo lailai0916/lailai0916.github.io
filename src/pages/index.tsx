@@ -46,7 +46,9 @@ function Feature({
         src={withBaseUrl(feature.image.src)}
       />
       <Heading as="h3" className={clsx(styles.featureHeading)}>
-        <Link to={feature.url}>{feature.title}</Link>
+        <Link to={feature.url} style={{ color: 'inherit' }}>
+          {feature.title}
+        </Link>
       </Heading>
       <p className="padding-horiz--md">{feature.text}</p>
     </div>
