@@ -5,11 +5,13 @@
 - [NOI 全国青少年信息学奥林匹克竞赛](https://www.noi.cn)
 - [《NOI 大纲（2023年修订版）》](https://www.noi.cn/upload/resources/file/2023/03/15/1fa58eac9c412e01ce3c89c761058a43.pdf)
 
-## 难度系数
+:::tip[难度系数]
 
-- 入门级：$1 \sim 5$
-- 题高级：$5 \sim 8$
-- NOI 级：$7 \sim 10$
+- 入门级：$1 \sim 5$。
+- 题高级：$5 \sim 8$。
+- NOI 级：$7 \sim 10$。
+
+:::
 
 ## 1. 入门级
 
