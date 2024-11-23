@@ -16,9 +16,12 @@ Home/
 ├── docs/
 │   ├── 竞赛/
 │   ├── 数学/
-│   └── 项目/
+│   ├── 项目/
+│   └── 其他/
 ├── src/
 │   ├── components/
+│   │   ├── giscus/
+│   │   └── BrowserWindow/
 │   ├── css/
 │   │   └── custom.css
 │   ├── data/
@@ -26,8 +29,9 @@ Home/
 │   │   └── friend.tsx
 │   └── pages/
 │       ├── index.tsx
-│       ├── about.tsx
-│       └── friend.tsx
+│       ├── styles.module.css
+│       ├── about/
+│       └── friend/
 ├── static/img/
 │   ├── avatar/
 │   ├── icon/

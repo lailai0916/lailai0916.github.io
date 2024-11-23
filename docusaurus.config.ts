@@ -134,6 +134,13 @@ const config = {
             label: '项目',
             to: '/docs/项目',
           },
+          {
+            type: 'docSidebar',
+            sidebarId: 'docs4',
+            position: 'left',
+            label: '其他',
+            to: '/docs/其他',
+          },
           {to: '/blog', label: '博客', position: 'left'},
           {
             label: '更多',
@@ -169,22 +176,30 @@ const config = {
                 label: '项目',
                 to: '/docs/项目',
               },
+              {
+                label: '其他',
+                to: '/docs/其他',
+              },
             ],
           },
           {
             title: '社区',
             items: [
               {
-                label: 'QQ',
-                href: 'https://wpa.qq.com/msgrd?v=3&uin=11548585&site=qq&menu=yes',
+                label: 'Telegram',
+                href: 'https://t.me/lailai0916',
               },
               {
-                label: '洛谷',
-                href: 'https://www.luogu.com.cn/user/455474',
+                label: 'LinkedIn',
+                href: 'https://www.linkedin.com/in/lailai0916',
               },
               {
                 label: 'GitHub',
                 href: 'https://github.com/lailai0916',
+              },
+              {
+                label: 'X',
+                href: 'https://x.com/lailai0x394',
               },
             ],
           },
