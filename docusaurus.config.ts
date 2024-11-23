@@ -141,7 +141,7 @@ const config = {
             label: '其他',
             to: '/docs/其他',
           },
-          {to: '/blog', label: '博客', position: 'left'},
+          {to: '/blog', label: '博客', position: 'right'},
           {
             label: '更多',
             position: 'right',

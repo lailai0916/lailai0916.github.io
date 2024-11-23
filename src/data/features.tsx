@@ -1,5 +1,6 @@
 export type FeatureItem = {
   title: string;
+  url: string;
   image: {
     src: string;
     width: number;
@@ -11,6 +12,7 @@ export type FeatureItem = {
 export const FEATURES: FeatureItem[] = [
   {
     title: '竞赛',
+    url: '/docs/竞赛',
     image: {
       src: '/img/undraw_typewriter.svg',
       width: 1009.54,
@@ -25,6 +27,7 @@ export const FEATURES: FeatureItem[] = [
   },
   {
     title: '数学',
+    url: '/docs/数学',
     image: {
       src: '/img/undraw_react.svg',
       width: 1108,
@@ -39,6 +42,7 @@ export const FEATURES: FeatureItem[] = [
   },
   {
     title: '项目',
+    url: '/docs/项目',
     image: {
       src: '/img/undraw_version_control.svg',
       width: 1038.23,
