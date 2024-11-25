@@ -124,9 +124,9 @@ int manacher(string s)
 		r[i+p[i]-1]=max(r[i+p[i]-1],p[i]-1);
 		l[i-p[i]+1]=max(l[i-p[i]+1],p[i]-1);
 	}
-	int res=0;
 	for(int i=3;i<=n;i+=2)l[i]=max(l[i],l[i-2]-2);
 	for(int i=n-2;i>=1;i-=2)r[i]=max(r[i],r[i+2]-2);
+	int res=0;
 	for(int i=1;i<=n;i+=2)
 	{
 		if(l[i]&&r[i])res=max(res,l[i]+r[i]);
