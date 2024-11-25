@@ -1,4 +1,8 @@
-# manacher
+# Manacher
+
+## 参考资料
+
+- [Manacher - OI Wiki](https://oi.wiki/string/manacher/)
 
 ## 实现
 
@@ -7,16 +11,15 @@ int p[N<<1];
 int manacher(string s)
 {
 	int n=s.size();
-	string t((n<<1)+3,' ');
-	t[0]='@';t[1]='#';
+	string t="@#";
 	for(int i=0;i<n;i++)
 	{
-		t[(i<<1)+2]=s[i];
-		t[(i<<1)+3]='#';
+		t+=s[i];
+		t+='#';
 	}
-	n=n<<1|1;
-	t[n+1]='&';
+	t+='&';
 	s=t;
+	n=n<<1|1;
 	for(int i=1,l=0,r=0;i<=n;i++)
 	{
 		p[i]=i<=r?min(p[2*l-i],r-i+1):1;
@@ -33,6 +36,12 @@ int manacher(string s)
 
 ### 洛谷 P3805 【模板】manacher
 
+:::info[[洛谷 P3805 【模板】manacher](https://www.luogu.com.cn/problem/P3805)]
+
+给出一个只由小写英文字符组成的字符串 $S$，求 $S$ 中最长回文串的长度。
+
+:::
+
 ```cpp
 #include <bits/stdc++.h>
 using namespace std;
@@ -45,19 +54,18 @@ int p[N<<1];
 int manacher(string s)
 {
 	int n=s.size();
-	string t((n<<1)+3,' ');
-	t[0]='@';t[1]='#';
+	string t="@#";
 	for(int i=0;i<n;i++)
 	{
-		t[(i<<1)+2]=s[i];
-		t[(i<<1)+3]='#';
+		t+=s[i];
+		t+='#';
 	}
-	n=n<<1|1;
-	t[n+1]='&';
+	t+='&';
 	s=t;
+	n=n<<1|1;
 	for(int i=1,l=0,r=0;i<=n;i++)
 	{
-		p[i]=i<=r?min(p[2*l-i],r-i+1):1;
+		p[i]=i<=r?min(p[l*2-i],r-i+1):1;
 		while(s[i-p[i]]==s[i+p[i]])p[i]++;
 		if(i+p[i]-1>r)r=i+p[i]-1,l=i;
 	}
@@ -78,6 +86,12 @@ int main()
 
 ### 洛谷 P4555 [国家集训队] 最长双回文串
 
+:::info[[洛谷 P4555 [国家集训队] 最长双回文串](https://www.luogu.com.cn/problem/P4555)]
+
+给定长度为 $n$ 的字符串 $S$，求 $S$ 的最长双回文子串 $T$，即可将 $T$ 分为两部分 $X, Y$（$|X|,|Y|\ge1$）且 $X$ 和 $Y$ 都是回文串。
+
+:::
+
 ```cpp
 #include <bits/stdc++.h>
 using namespace std;
@@ -90,16 +104,15 @@ int p[N<<1],l[N<<1],r[N<<1];
 int manacher(string s)
 {
 	int n=s.size();
-	string t((n<<1)+3,' ');
-	t[0]='@';t[1]='#';
+	string t="@#";
 	for(int i=0;i<n;i++)
 	{
-		t[(i<<1)+2]=s[i];
-		t[(i<<1)+3]='#';
+		t+=s[i];
+		t+='#';
 	}
-	n=n<<1|1;
-	t[n+1]='&';
+	t+='&';
 	s=t;
+	n=n<<1|1;
 	for(int i=1,l=0,r=0;i<=n;i++)
 	{
 		p[i]=i<=r?min(p[2*l-i],r-i+1):1;
@@ -112,9 +125,12 @@ int manacher(string s)
 		l[i-p[i]+1]=max(l[i-p[i]+1],p[i]-1);
 	}
 	int res=0;
-	for(int i=n;i>=1;i-=2)r[i]=max(r[i],r[i+2]-2);
-	for(int i=1;i<=n;i+=2)l[i]=max(l[i],l[i-2]-2);
-	for(int i=1;i<=n;i+=2)if(r[i]&&l[i])res=max(res,l[i]+r[i]);
+	for(int i=3;i<=n;i+=2)l[i]=max(l[i],l[i-2]-2);
+	for(int i=n-2;i>=1;i-=2)r[i]=max(r[i],r[i+2]-2);
+	for(int i=1;i<=n;i+=2)
+	{
+		if(l[i]&&r[i])res=max(res,l[i]+r[i]);
+	}
 	return res;
 }
 int main()
