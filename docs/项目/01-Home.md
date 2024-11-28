@@ -6,7 +6,7 @@
 
 ## 文件目录
 
-```bath
+```bash
 Home/
 ├── blog/
 │   ├── lailai/
