@@ -15,36 +15,32 @@
 ## 配件
 
 - Incase 硬质保护壳
-- 雷雳 4 (USB‑C) Pro 连接线
 
 ## 软件
 
-### 效率
-
-- Microsoft 365
-- Typora
-- ChatGPT
-- Parallels Desktop 20 for Mac Pro Edition
-
-### 控制
-
-- AlDente（电量控制）
-- Vivid（激发亮度）
-- Macs Fan Control（风扇控制）
-- One Switch（便捷开关）
-- CleanMyMac X（系统清理）
+- Office 365 Personal（¥398 per year）
+- Typora（¥89）
+- ChatGPT（$20 per month）
+- Parallels Desktop 20（$120 per year）
+- Apple Music（$11 per month）
+- iCloud+ 200GB（¥21 per month）
+- AlDente（¥149）
+- Vivid（¥29）
+- Macs Fan Control（¥88）
+- One Switch（¥29）
+- CleanMyMac X（¥588）
 
 ### 优化
 
-- Bartender 5（菜单栏管理）
-- AdGuard（广告拦截）
-- MediaMate（灵动刘海 + 音量显示）
-- PopClip（划词增强）
+- Bartender 5（¥119）
+- MediaMate（€7）
+- NotchNook（$25）
+- PopClip（¥129）
 
 ### 工具
 
-- Downie 4（视频下载）
-- Permute 3（格式转换）
-- Moment（倒数日）
-- Bob（翻译）
-- MenubarX（移动端网页）
+- Downie 4（¥55）
+- Permute 3（¥79）
+- Moment（¥30）
+- Bob（¥50）
+- MenubarX（¥35）
