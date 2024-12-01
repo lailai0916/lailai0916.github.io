@@ -19,25 +19,22 @@
 ## 软件
 
 - Office 365 Personal（¥398 per year）
-- Typora（¥89）
 - ChatGPT（$20 per month）
 - Parallels Desktop 20（$120 per year）
 - Apple Music（$11 per month）
 - iCloud+ 200GB（¥21 per month）
+
+- Typora（¥89）
 - AlDente（¥149）
 - Vivid（¥29）
 - Macs Fan Control（¥88）
 - One Switch（¥29）
 - CleanMyMac X（¥588）
 
-### 优化
-
 - Bartender 5（¥119）
 - MediaMate（€7）
 - NotchNook（$25）
 - PopClip（¥129）
-
-### 工具
 
 - Downie 4（¥55）
 - Permute 3（¥79）
