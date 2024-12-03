@@ -18,7 +18,7 @@
 
 ## 软件
 
-- Office 365 Personal（¥398 per year）
+- Office 365 Personal（¥398 per year）：办公套件
 - ChatGPT（$20 per month）
 - Parallels Desktop 20（$120 per year）
 - Apple Music（$11 per month）
