@@ -18,6 +18,8 @@
 
 ## 软件
 
+### 办公
+
 - Office 365 Personal（¥398 per year）：办公套件
 - ChatGPT（$20 per month）
 - Parallels Desktop 20（$120 per year）
@@ -45,3 +47,4 @@
 - NotchNook
 - Typing Mind
 - CleanShot X：专业级截图录屏工具
+- IINA
