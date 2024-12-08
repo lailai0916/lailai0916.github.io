@@ -179,10 +179,14 @@ html[data-theme='dark'] .hero {
     /* 45deg,
     rgb(57 156 255) 0%,
     rgb(0 199 117) 80% */
-    90deg,
+    /* 90deg,
     rgb(131 58 180) 0%,
     rgb(253 29 29) 50%,
-    rgb(252 176 69) 100%
+    rgb(252 176 69) 100% */
+    90deg,
+    #0090f7,
+    #ba62fc,
+    #f2416b
   );
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -204,6 +208,7 @@ html[data-theme='dark'] .topBannerTitleText {
     rgb(246 41 41) 50%,
     rgb(255 169 8) 100%
   );
+  
   background-clip: text;
   -webkit-text-fill-color: transparent;
 }
