@@ -183,7 +183,7 @@ html[data-theme='dark'] .hero {
     rgb(131 58 180) 0%,
     rgb(253 29 29) 50%,
     rgb(252 176 69) 100% */
-    90deg,
+    to right,
     #0090f7,
     #ba62fc,
     #f2416b
@@ -203,7 +203,7 @@ html[data-theme='dark'] .topBannerTitleText {
     /* 45deg,
     rgb(57 156 255) 0%,
     rgb(0 255 149) 80% */
-    90deg,
+    to right,
     rgb(152 0 255) 0%,
     rgb(246 41 41) 50%,
     rgb(255 169 8) 100%

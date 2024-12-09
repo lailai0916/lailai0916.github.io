@@ -5,12 +5,13 @@ hide_table_of_contents: true
 
 import { Icon } from '@iconify/react'
 import GiscusComponent from "@site/src/components/giscus";
+import Holiday from '@site/src/components/Holiday';
 import styles from './styles.module.css'
 
 <div style={{maxWidth: '70ch', margin: "auto"}}>
 
 <div align="center">
-  <h1>你好，我是 lailai! 👋</h1>
+  <h1>你好，我是 <Holiday text="lailai" /> 👋</h1>
 </div>
 
 ## 个人介绍
