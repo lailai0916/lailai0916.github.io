@@ -21,7 +21,7 @@ export const Friends: Friend[] = [
   {
     title: 'YunLuo',
     description: '这是个人',
-    website: 'https://www.luogu.com.cn/user/765961',
+    website: 'https://www.cnblogs.com/yunluo-qwq',
     avatar: '/img/avatar/YunLuo.png',
   },
   {
