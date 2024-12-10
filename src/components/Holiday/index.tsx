@@ -1,9 +1,13 @@
 import React from 'react';
-import styles from './styles.module.css';
 
-export default function Holiday({text}: {text: string}): JSX.Element {
+export default function Holiday({ text }: { text: string }): JSX.Element {
+  const holidayTextStyle: React.CSSProperties = {
+    background: 'linear-gradient(to right, #0090f7, #ba62fc, #f2416b)',
+    WebkitBackgroundClip: 'text',
+    WebkitTextFillColor: 'transparent',
+  };
   return (
-    <span className={styles.holidayText}>
+    <span style={holidayTextStyle}>
       {text}
     </span>
   );

@@ -203,10 +203,14 @@ html[data-theme='dark'] .topBannerTitleText {
     /* 45deg,
     rgb(57 156 255) 0%,
     rgb(0 255 149) 80% */
-    to right,
+    /* 90deg,
     rgb(152 0 255) 0%,
     rgb(246 41 41) 50%,
-    rgb(255 169 8) 100%
+    rgb(255 169 8) 100% */
+    to right,
+    #0090f7,
+    #ba62fc,
+    #f2416b
   );
   
   background-clip: text;

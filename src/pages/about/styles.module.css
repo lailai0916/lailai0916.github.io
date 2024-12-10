@@ -21,13 +21,3 @@ html[data-theme='dark'] .deviceItem img {
   filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(100%) contrast(100%);
 }
 
-.holidayText {
-  background: linear-gradient(
-    to right,
-    #0090f7,
-    #ba62fc,
-    #f2416b
-  );
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}

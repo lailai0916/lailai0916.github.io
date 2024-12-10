@@ -10,9 +10,7 @@ import styles from './styles.module.css'
 
 <div style={{maxWidth: '70ch', margin: "auto"}}>
 
-<div align="center">
-  <h1>你好，我是 <Holiday text="lailai" /> 👋</h1>
-</div>
+<h1 align="center">{'🎉\xa0'}<Holiday text={'Hello,\xa0I\'m\xa0lailai'} />{'\xa0🥳'}</h1>
 
 ## 个人介绍
 
