@@ -12,12 +12,6 @@ export type TagType =
   | 'personal'
   | 'rtl';
 
-export type Tag = {
-  label: string;
-  description: string;
-  color: string;
-};
-
 export type User = {
   title: string;
   description: string;
@@ -26,6 +20,39 @@ export type User = {
   source: string | null;
   tags: TagType[];
 };
+
+export type Tag = {
+  label: string;
+  description: string;
+  color: string;
+};
+
+const Users: User[] = [
+  {
+    title: 'lailai\'s home',
+    description: 'This website.',
+    preview: null,
+    website: 'https://www.lailai.one',
+    source: 'https://github.com/lailai0916/lailai0916.github.io',
+    tags: ['favorite', 'personal', 'opensource'],
+  },
+  {
+    title: 'Google',
+    description: 'Search engine.',
+    preview: null,
+    website: 'https://www.google.com',
+    source: null,
+    tags: ['favorite'],
+  },
+  {
+    title: 'Blogasaurus',
+    description: 'A blog written using Docasaurus.',
+    preview: require('./site/blogasaurus.png'),
+    website: 'https://blog.palashsh.me/',
+    source: 'https://github.com/BattleOfPlassey/blogasaurus',
+    tags: ['personal', 'opensource'],
+  },
+];
 
 export const Tags: {[type in TagType]: Tag} = {
   favorite: {
@@ -79,25 +106,6 @@ export const Tags: {[type in TagType]: Tag} = {
     color: '#ffcfc3',
   },
 };
-
-const Users: User[] = [
-  {
-    title: 'lailai\'s home',
-    description: 'This website.',
-    preview: null,
-    website: 'https://www.lailai.one',
-    source: 'https://github.com/lailai0916/lailai0916.github.io',
-    tags: ['favorite', 'personal', 'opensource'],
-  },
-  {
-    title: 'Blogasaurus',
-    description: 'A blog written using Docasaurus.',
-    preview: require('./site/blogasaurus.png'),
-    website: 'https://blog.palashsh.me/',
-    source: 'https://github.com/BattleOfPlassey/blogasaurus',
-    tags: ['personal', 'opensource'],
-  },
-];
 
 export const TagList = Object.keys(Tags) as TagType[];
 function sortUsers() {
