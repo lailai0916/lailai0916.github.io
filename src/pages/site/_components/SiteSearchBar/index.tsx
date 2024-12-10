@@ -9,7 +9,7 @@ import {type ReactNode} from 'react';
 import {useSearchName} from '@site/src/pages/site/_utils';
 import styles from './styles.module.css';
 
-export default function ShowcaseSearchBar(): ReactNode {
+export default function SiteSearchBar(): ReactNode {
   const [searchName, setSearchName] = useSearchName();
   return (
     <div className={styles.searchBar}>

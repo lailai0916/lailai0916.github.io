@@ -9,15 +9,15 @@ import Link from '@docusaurus/Link';
 import Layout from '@theme/Layout';
 import Heading from '@theme/Heading';
 
-import ShowcaseSearchBar from '@site/src/pages/site/_components/ShowcaseSearchBar';
-import ShowcaseCards from './_components/ShowcaseCards';
-import ShowcaseFilters from './_components/ShowcaseFilters';
+import SiteSearchBar from '@site/src/pages/site/_components/SiteSearchBar';
+import SiteCards from './_components/SiteCards';
+import SiteFilters from './_components/SiteFilters';
 
 const TITLE = '网站列表';
 const DESCRIPTION = '发现有趣与实用的优质网站';
 const SUBMIT_URL = 'https://github.com';
 
-function ShowcaseHeader() {
+function SiteHeader() {
   return (
     <section className="margin-top--lg margin-bottom--lg text--center">
       <Heading as="h1">{TITLE}</Heading>
@@ -29,18 +29,18 @@ function ShowcaseHeader() {
   );
 }
 
-export default function Showcase(): JSX.Element {
+export default function Site(): JSX.Element {
   return (
     <Layout title={TITLE} description={DESCRIPTION}>
       <main className="margin-vert--lg">
-        <ShowcaseHeader />
-        <ShowcaseFilters />
+        <SiteHeader />
+        <SiteFilters />
         <div
           style={{display: 'flex', marginLeft: 'auto'}}
           className="container">
-          <ShowcaseSearchBar />
+          <SiteSearchBar />
         </div>
-        <ShowcaseCards />
+        <SiteCards />
       </main>
     </Layout>
   );

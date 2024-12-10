@@ -10,7 +10,7 @@ import clsx from 'clsx';
 import FavoriteIcon from '@site/src/pages/site/_components/FavoriteIcon';
 import {Tags, TagList, type TagType} from '@site/src/data/site';
 import Heading from '@theme/Heading';
-import ShowcaseTagSelect from '../ShowcaseTagSelect';
+import SiteTagSelect from '../SiteTagSelect';
 import OperatorButton from '../OperatorButton';
 import ClearAllButton from '../ClearAllButton';
 import {useFilteredUsers, useSiteCountPlural} from '../../_utils';
@@ -31,11 +31,11 @@ function TagCircleIcon({color, style}: {color: string; style?: CSSProperties}) {
   );
 }
 
-function ShowcaseTagListItem({tag}: {tag: TagType}) {
+function SiteTagListItem({tag}: {tag: TagType}) {
   const {label, description, color} = Tags[tag];
   return (
     <li className={styles.tagListItem}>
-      <ShowcaseTagSelect
+      <SiteTagSelect
         tag={tag}
         label={label}
         description={description}
@@ -57,11 +57,11 @@ function ShowcaseTagListItem({tag}: {tag: TagType}) {
   );
 }
 
-function ShowcaseTagList() {
+function SiteTagList() {
   return (
     <ul className={clsx('clean-list', styles.tagList)}>
       {TagList.map((tag) => {
-        return <ShowcaseTagListItem key={tag} tag={tag} />;
+        return <SiteTagListItem key={tag} tag={tag} />;
       })}
     </ul>
   );
@@ -98,11 +98,11 @@ function HeadingRow() {
   );
 }
 
-export default function ShowcaseFilters(): ReactNode {
+export default function SiteFilters(): ReactNode {
   return (
     <section className="container margin-top--l margin-bottom--lg">
       <HeadingRow />
-      <ShowcaseTagList />
+      <SiteTagList />
     </section>
   );
 }

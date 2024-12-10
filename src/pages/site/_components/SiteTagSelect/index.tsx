@@ -38,7 +38,7 @@ interface Props extends ComponentProps<'input'> {
   icon: ReactElement<ComponentProps<'svg'>>;
 }
 
-export default function ShowcaseTagSelect({
+export default function SiteTagSelect({
   icon,
   label,
   description,

@@ -5,24 +5,24 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-.showcaseCardImage {
+.siteCardImage {
   overflow: hidden;
   height: 150px;
   border-bottom: 2px solid var(--ifm-color-emphasis-200);
 }
 
-.showcaseCardHeader {
+.siteCardHeader {
   display: flex;
   align-items: center;
   margin-bottom: 12px;
 }
 
-.showcaseCardTitle {
+.siteCardTitle {
   margin-bottom: 0;
   flex: 1 1 auto;
 }
 
-.showcaseCardTitle a {
+.siteCardTitle a {
   text-decoration: none;
   background: linear-gradient(
       var(--ifm-color-primary),
@@ -32,36 +32,36 @@
   transition: background-size ease-out 200ms;
 }
 
-.showcaseCardTitle a:not(:focus):hover {
+.siteCardTitle a:not(:focus):hover {
   background-size: 100% 1px;
 }
 
-.showcaseCardTitle,
-.showcaseCardHeader {
+.siteCardTitle,
+.siteCardHeader {
   margin-right: 0.25rem;
 }
 
-.showcaseCardSrcBtn {
+.siteCardSrcBtn {
   margin-left: 6px;
   padding-left: 12px;
   padding-right: 12px;
   border: none;
 }
 
-.showcaseCardSrcBtn:focus-visible {
+.siteCardSrcBtn:focus-visible {
   background-color: var(--ifm-color-secondary-dark);
 }
 
-[data-theme='dark'] .showcaseCardSrcBtn {
+[data-theme='dark'] .siteCardSrcBtn {
   background-color: var(--ifm-color-emphasis-200) !important;
   color: inherit;
 }
 
-[data-theme='dark'] .showcaseCardSrcBtn:hover {
+[data-theme='dark'] .siteCardSrcBtn:hover {
   background-color: var(--ifm-color-emphasis-300) !important;
 }
 
-.showcaseCardBody {
+.siteCardBody {
   font-size: smaller;
   line-height: 1.66;
 }

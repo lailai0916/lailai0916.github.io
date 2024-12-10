@@ -10,7 +10,7 @@ import clsx from 'clsx';
 import {sortedUsers, type User} from '@site/src/data/site';
 import Heading from '@theme/Heading';
 import FavoriteIcon from '../FavoriteIcon';
-import ShowcaseCard from '../ShowcaseCard';
+import SiteCard from '../SiteCard';
 import {useFilteredUsers} from '../../_utils';
 
 import styles from './styles.module.css';
@@ -54,7 +54,7 @@ function CardList({heading, items}: {heading?: ReactNode; items: User[]}) {
       {heading}
       <ul className={clsx('clean-list', styles.cardList)}>
         {items.map((item) => (
-          <ShowcaseCard key={item.title} user={item} />
+          <SiteCard key={item.title} user={item} />
         ))}
       </ul>
     </div>
@@ -71,7 +71,7 @@ function NoResultSection() {
   );
 }
 
-export default function ShowcaseCards() {
+export default function SiteCards() {
   const filteredUsers = useFilteredUsers();
 
   if (filteredUsers.length === 0) {
@@ -82,7 +82,7 @@ export default function ShowcaseCards() {
     <section className="margin-top--lg margin-bottom--xl">
       {filteredUsers.length === sortedUsers.length ? (
         <>
-          <div className={styles.showcaseFavorite}>
+          <div className={styles.siteFavorite}>
             <CardList heading={<HeadingFavorites />} items={favoriteUsers} />
           </div>
           <div className="margin-top--lg">

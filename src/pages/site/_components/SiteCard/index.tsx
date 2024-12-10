@@ -32,7 +32,7 @@ function TagItem({
   );
 }
 
-function ShowcaseCardTag({tags}: {tags: TagType[]}) {
+function SiteCardTag({tags}: {tags: TagType[]}) {
   const tagObjects = tags.map((tag) => ({tag, ...Tags[tag]}));
 
   // Keep same order for all tags
@@ -55,21 +55,21 @@ function getCardImage(user: User): string {
     // TODO make it configurable
     `https://slorber-api-screenshot.netlify.app/${encodeURIComponent(
       user.website,
-    )}/showcase`
+    )}/site`
   );
 }
 
-function ShowcaseCard({user}: {user: User}) {
+function SiteCard({user}: {user: User}) {
   const image = getCardImage(user);
   return (
     <li key={user.title} className="card shadow--md">
-      <div className={clsx('card__image', styles.showcaseCardImage)}>
+      <div className={clsx('card__image', styles.siteCardImage)}>
         <Image img={image} alt={user.title} />
       </div>
       <div className="card__body">
-        <div className={clsx(styles.showcaseCardHeader)}>
-          <Heading as="h4" className={styles.showcaseCardTitle}>
-            <Link href={user.website} className={styles.showcaseCardLink}>
+        <div className={clsx(styles.siteCardHeader)}>
+          <Heading as="h4" className={styles.siteCardTitle}>
+            <Link href={user.website} className={styles.siteCardLink}>
               {user.title}
             </Link>
           </Heading>
@@ -81,19 +81,19 @@ function ShowcaseCard({user}: {user: User}) {
               href={user.source}
               className={clsx(
                 'button button--secondary button--sm',
-                styles.showcaseCardSrcBtn,
+                styles.siteCardSrcBtn,
               )}>
               source
             </Link>
           )} */}
         </div>
-        <p className={styles.showcaseCardBody}>{user.description}</p>
+        <p className={styles.siteCardBody}>{user.description}</p>
       </div>
       <ul className={clsx('card__footer', styles.cardFooter)}>
-        <ShowcaseCardTag tags={user.tags} />
+        <SiteCardTag tags={user.tags} />
       </ul>
     </li>
   );
 }
 
-export default React.memo(ShowcaseCard);
+export default React.memo(SiteCard);

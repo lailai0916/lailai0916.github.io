@@ -11,13 +11,13 @@
   gap: 24px;
 }
 
-.showcaseFavorite {
+.siteFavorite {
   padding-top: 2rem;
   padding-bottom: 2rem;
   background-color: #f6fdfd;
 }
 
-html[data-theme='dark'] .showcaseFavorite {
+html[data-theme='dark'] .siteFavorite {
   background-color: #232525;
 }
 
