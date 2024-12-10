@@ -150,13 +150,19 @@ const config = {
             position: 'right'
           },
           {
-            label: '更多',
-            position: 'right',
-            items: [
-              { label: '网站列表', to: '/site' },
-              { label: 'v50to.me', to: 'https://v50to.me' },
-            ],
+            to: '/site',
+            label: '网站',
+            position: 'right'
           },
+          // {
+          //   label: '更多',
+          //   position: 'right',
+          //   items: [
+          //     { label: 'Page1', to: '/page1' },
+          //     { label: 'Page2', to: '/page2' },
+          //     { label: 'Page3', to: '/page3' },
+          //   ],
+          // },
           {
             href: 'https://github.com/lailai0916/lailai0916.github.io',
             // label: 'GitHub',

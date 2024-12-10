@@ -13,7 +13,7 @@ import SiteSearchBar from '@site/src/pages/site/_components/SiteSearchBar';
 import SiteCards from './_components/SiteCards';
 import SiteFilters from './_components/SiteFilters';
 
-const TITLE = '网站列表';
+const TITLE = '网站';
 const DESCRIPTION = '发现有趣与实用的优质网站';
 const SUBMIT_URL = 'https://github.com';
 

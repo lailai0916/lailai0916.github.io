@@ -7,21 +7,3 @@ lailai:
     x: lailai0x394
     linkedin: lailai0916
     github: lailai0916
-
-sintle:
-  name: sintle
-  title: 星之彩
-  url: https://www.luogu.com.cn/user/681591
-  image_url: /img/avatar/sintle.png
-  socials:
-    x: sintle2010
-    github: sintle
-
-mirekintoc:
-  name: Mirekintoc
-  title: 啥都不会
-  url: https://www.luogu.com.cn/user/556000
-  image_url: /img/avatar/Mirekintoc.png
-  socials:
-    x: mirekintoc
-    github: vochant
