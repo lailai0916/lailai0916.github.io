@@ -7,7 +7,7 @@
 
 import type {ReactNode, CSSProperties} from 'react';
 import clsx from 'clsx';
-import FavoriteIcon from '@site/src/pages/showcase/_components/FavoriteIcon';
+import FavoriteIcon from '@site/src/pages/site/_components/FavoriteIcon';
 import {Tags, TagList, type TagType} from '@site/src/data/site';
 import Heading from '@theme/Heading';
 import ShowcaseTagSelect from '../ShowcaseTagSelect';

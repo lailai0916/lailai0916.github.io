@@ -9,7 +9,7 @@ import Link from '@docusaurus/Link';
 import Layout from '@theme/Layout';
 import Heading from '@theme/Heading';
 
-import ShowcaseSearchBar from '@site/src/pages/showcase/_components/ShowcaseSearchBar';
+import ShowcaseSearchBar from '@site/src/pages/site/_components/ShowcaseSearchBar';
 import ShowcaseCards from './_components/ShowcaseCards';
 import ShowcaseFilters from './_components/ShowcaseFilters';
 

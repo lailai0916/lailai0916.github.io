@@ -76,7 +76,7 @@ function ShowcaseCard({user}: {user: User}) {
           {user.tags.includes('favorite') && (
             <FavoriteIcon size="medium" style={{marginRight: '0.25rem'}} />
           )}
-          {user.source && (
+          {/* {user.source && (
             <Link
               href={user.source}
               className={clsx(
@@ -85,7 +85,7 @@ function ShowcaseCard({user}: {user: User}) {
               )}>
               source
             </Link>
-          )}
+          )} */}
         </div>
         <p className={styles.showcaseCardBody}>{user.description}</p>
       </div>

@@ -6,7 +6,7 @@
  */
 
 import {type ReactNode} from 'react';
-import {useSearchName} from '@site/src/pages/showcase/_utils';
+import {useSearchName} from '@site/src/pages/site/_utils';
 import styles from './styles.module.css';
 
 export default function ShowcaseSearchBar(): ReactNode {

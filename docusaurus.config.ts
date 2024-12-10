@@ -153,7 +153,7 @@ const config = {
             label: '更多',
             position: 'right',
             items: [
-              { label: '网站列表', to: '/showcase' },
+              { label: '网站列表', to: '/site' },
               { label: 'v50to.me', to: 'https://v50to.me' },
             ],
           },
