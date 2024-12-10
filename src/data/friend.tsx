@@ -54,4 +54,10 @@ export const Friends: Friend[] = [
     website: 'https://www.luogu.com.cn/user/372404',
     avatar: '/img/avatar/tiko_tao.png',
   },
+  {
+    title: 'Dream__maker',
+    description: '一息尚存，方能涅槃而生',
+    website: 'https://www.luogu.com.cn/user/718017',
+    avatar: '/img/avatar/Dream__maker.png',
+  },
 ]

@@ -149,14 +149,14 @@ const config = {
             label: '关于',
             position: 'right'
           },
-          // {
-          //   label: '更多',
-          //   position: 'right',
-          //   items: [
-          //     { label: '友链', to: '/friend' },
-          //     { label: '关于', to: '/about' },
-          //   ],
-          // },
+          {
+            label: '更多',
+            position: 'right',
+            items: [
+              { label: '网站列表', to: '/showcase' },
+              { label: 'v50', to: '/v50' },
+            ],
+          },
           {
             href: 'https://github.com/lailai0916/lailai0916.github.io',
             // label: 'GitHub',
