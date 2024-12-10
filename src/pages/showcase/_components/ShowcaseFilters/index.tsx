@@ -7,7 +7,6 @@
 
 import type {ReactNode, CSSProperties} from 'react';
 import clsx from 'clsx';
-import Translate from '@docusaurus/Translate';
 import FavoriteIcon from '@site/src/pages/showcase/_components/FavoriteIcon';
 import {Tags, TagList, type TagType} from '@site/src/data/users';
 import Heading from '@theme/Heading';
@@ -74,7 +73,7 @@ function HeadingText() {
   return (
     <div className={styles.headingText}>
       <Heading as="h2">
-        <Translate id="showcase.filters.title">Filters</Translate>
+        Filters
       </Heading>
       <span>{siteCountPlural(filteredUsers.length)}</span>
     </div>

@@ -5,8 +5,6 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-import Translate, {translate} from '@docusaurus/Translate';
-
 import Link from '@docusaurus/Link';
 import Layout from '@theme/Layout';
 import Heading from '@theme/Heading';
@@ -15,22 +13,18 @@ import ShowcaseSearchBar from '@site/src/pages/showcase/_components/ShowcaseSear
 import ShowcaseCards from './_components/ShowcaseCards';
 import ShowcaseFilters from './_components/ShowcaseFilters';
 
-const TITLE = translate({message: 'Docusaurus Site Showcase'});
-const DESCRIPTION = translate({
-  message: 'List of websites people are building with Docusaurus',
-});
-const SUBMIT_URL = 'https://github.com/facebook/docusaurus/discussions/7826';
+const TITLE = '网站列表';
+const DESCRIPTION = '发现有趣与实用的优质网站';
+const SUBMIT_URL = 'https://github.com';
 
 function ShowcaseHeader() {
   return (
     <section className="margin-top--lg margin-bottom--lg text--center">
       <Heading as="h1">{TITLE}</Heading>
       <p>{DESCRIPTION}</p>
-      <Link className="button button--primary" to={SUBMIT_URL}>
-        <Translate id="showcase.header.button">
-          🙏 Please add your site
-        </Translate>
-      </Link>
+      {/* <Link className="button button--primary" to={SUBMIT_URL}>
+        🙏 Please add your site
+      </Link> */}
     </section>
   );
 }

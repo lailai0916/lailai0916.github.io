@@ -7,7 +7,6 @@
 
 import type {ReactNode} from 'react';
 import clsx from 'clsx';
-import Translate from '@docusaurus/Translate';
 import {sortedUsers, type User} from '@site/src/data/users';
 import Heading from '@theme/Heading';
 import FavoriteIcon from '../FavoriteIcon';
@@ -27,7 +26,7 @@ const otherUsers = sortedUsers.filter(
 function HeadingNoResult() {
   return (
     <Heading as="h2">
-      <Translate id="showcase.usersList.noResult">No result</Translate>
+      No result
     </Heading>
   );
 }
@@ -35,7 +34,7 @@ function HeadingNoResult() {
 function HeadingFavorites() {
   return (
     <Heading as="h2" className={styles.headingFavorites}>
-      <Translate id="showcase.favoritesList.title">Our favorites</Translate>
+      Our favorites
       <FavoriteIcon size="large" style={{marginLeft: '1rem'}} />
     </Heading>
   );
@@ -44,7 +43,7 @@ function HeadingFavorites() {
 function HeadingAllSites() {
   return (
     <Heading as="h2">
-      <Translate id="showcase.usersList.allUsers">All sites</Translate>
+      All sites
     </Heading>
   );
 }

@@ -7,7 +7,6 @@
 
 /* eslint-disable global-require */
 
-import {translate} from '@docusaurus/Translate';
 import {sortBy} from '@site/src/utils/jsUtils';
 
 /*
@@ -2410,99 +2409,62 @@ export type Tag = {
 
 export const Tags: {[type in TagType]: Tag} = {
   favorite: {
-    label: translate({message: 'Favorite'}),
-    description: translate({
-      message:
-        'Our favorite Docusaurus sites that you must absolutely check out!',
-      id: 'showcase.tag.favorite.description',
-    }),
+    label: 'Favorite',
+    description: 'Our favorite Docusaurus sites that you must absolutely check out!',
     color: '#e9669e',
   },
 
   opensource: {
-    label: translate({message: 'Open-Source'}),
-    description: translate({
-      message: 'Open-Source Docusaurus sites can be useful for inspiration!',
-      id: 'showcase.tag.opensource.description',
-    }),
+    label: 'Open-Source',
+    description: 'Open-Source Docusaurus sites can be useful for inspiration!',
     color: '#39ca30',
   },
 
   product: {
-    label: translate({message: 'Product'}),
-    description: translate({
-      message: 'Docusaurus sites associated to a commercial product!',
-      id: 'showcase.tag.product.description',
-    }),
+    label: 'Product',
+    description: 'Docusaurus sites associated to a commercial product!',
     color: '#dfd545',
   },
 
   design: {
-    label: translate({message: 'Design'}),
-    description: translate({
-      message:
-        'Beautiful Docusaurus sites, polished and standing out from the initial template!',
-      id: 'showcase.tag.design.description',
-    }),
+    label: 'Design',
+    description: 'Beautiful Docusaurus sites, polished and standing out from the initial template!',
     color: '#a44fb7',
   },
 
   i18n: {
-    label: translate({message: 'I18n'}),
-    description: translate({
-      message:
-        'Translated Docusaurus sites using the internationalization support with more than 1 locale.',
-      id: 'showcase.tag.i18n.description',
-    }),
+    label: 'I18n',
+    description: 'Translated Docusaurus sites using the internationalization support with more than 1 locale.',
     color: '#127f82',
   },
 
   versioning: {
-    label: translate({message: 'Versioning'}),
-    description: translate({
-      message:
-        'Docusaurus sites using the versioning feature of the docs plugin to manage multiple versions.',
-      id: 'showcase.tag.versioning.description',
-    }),
+    label: 'Versioning',
+    description: 'Docusaurus sites using the versioning feature of the docs plugin to manage multiple versions.',
     color: '#fe6829',
   },
 
   large: {
-    label: translate({message: 'Large'}),
-    description: translate({
-      message:
-        'Very large Docusaurus sites, including many more pages than the average!',
-      id: 'showcase.tag.large.description',
-    }),
+    label: 'Large',
+    description: 'Very large Docusaurus sites, including many more pages than the average!',
     color: '#8c2f00',
   },
 
   meta: {
-    label: translate({message: 'Meta'}),
-    description: translate({
-      message: 'Docusaurus sites of Meta (formerly Facebook) projects',
-      id: 'showcase.tag.meta.description',
-    }),
+    label: 'Meta',
+    description: 'Docusaurus sites of Meta (formerly Facebook) projects',
     color: '#4267b2', // Facebook blue
   },
 
   personal: {
-    label: translate({message: 'Personal'}),
-    description: translate({
-      message:
-        'Personal websites, blogs and digital gardens built with Docusaurus',
-      id: 'showcase.tag.personal.description',
-    }),
+    label: 'Personal',
+    description: 'Personal websites, blogs and digital gardens built with Docusaurus',
     color: '#14cfc3',
   },
 
   rtl: {
-    label: translate({message: 'RTL Direction'}),
-    description: translate({
-      message:
-        'Docusaurus sites using the right-to-left reading direction support.',
-      id: 'showcase.tag.rtl.description',
-    }),
+    label: 'RTL Direction',
+    description: 'Docusaurus sites using the right-to-left reading direction support.',
     color: '#ffcfc3',
   },
 };

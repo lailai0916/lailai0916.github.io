@@ -8,7 +8,6 @@
 import React from 'react';
 import clsx from 'clsx';
 import Link from '@docusaurus/Link';
-import Translate from '@docusaurus/Translate';
 import Image from '@theme/IdealImage';
 import {Tags, TagList, type TagType, type User} from '@site/src/data/users';
 import {sortBy} from '@site/src/utils/jsUtils';
@@ -84,7 +83,7 @@ function ShowcaseCard({user}: {user: User}) {
                 'button button--secondary button--sm',
                 styles.showcaseCardSrcBtn,
               )}>
-              <Translate id="showcase.card.sourceLink">source</Translate>
+              source
             </Link>
           )}
         </div>

@@ -154,7 +154,7 @@ const config = {
             position: 'right',
             items: [
               { label: '网站列表', to: '/showcase' },
-              { label: 'v50', to: '/v50' },
+              { label: 'v50to.me', to: 'https://v50to.me' },
             ],
           },
           {

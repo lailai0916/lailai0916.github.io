@@ -1,22 +1,24 @@
-import Layout from '@theme/Layout'
-import { memo, useRef } from 'react'
-import { Friend, Friends } from '@site/src/data/friend'
+import Link from '@docusaurus/Link';
+import Layout from '@theme/Layout';
+import Heading from '@theme/Heading';
 
-import Link from '@docusaurus/Link'
-import { motion } from 'framer-motion'
-import styles from './styles.module.css'
+import { memo, useRef } from 'react';
+import { Friend, Friends } from '@site/src/data/friend';
 
-const TITLE = '友链'
-const DESCRIPTION = '财富易得，知己难求。'
+import { motion } from 'framer-motion';
+
+const TITLE = '友链';
+const DESCRIPTION = '财富易得，知己难求。';
+const SUBMIT_URL = 'https://github.com';
 
 function FriendHeader() {
   return (
-    <section className="margin-top--lg margin-bottom--lg text-center">
-      <h1>{TITLE}</h1>
+    <section className="margin-top--lg margin-bottom--lg text--center">
+      <Heading as="h1">{TITLE}</Heading>
       <p>{DESCRIPTION}</p>
-      {/* <a className="button button--primary" href="qwq" target="_blank" rel="noreferrer">
-        🔗 申请友链
-      </a> */}
+      {/* <Link className="button button--primary" to={SUBMIT_URL}>
+        🙏 Please add your site
+      </Link> */}
     </section>
   )
 }

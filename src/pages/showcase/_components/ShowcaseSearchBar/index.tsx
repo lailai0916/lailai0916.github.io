@@ -6,7 +6,6 @@
  */
 
 import {type ReactNode} from 'react';
-import {translate} from '@docusaurus/Translate';
 import {useSearchName} from '@site/src/pages/showcase/_utils';
 import styles from './styles.module.css';
 
@@ -15,10 +14,7 @@ export default function ShowcaseSearchBar(): ReactNode {
   return (
     <div className={styles.searchBar}>
       <input
-        placeholder={translate({
-          message: 'Search for site name...',
-          id: 'showcase.searchBar.placeholder',
-        })}
+        placeholder='Search for site name...'
         value={searchName}
         onInput={(e) => {
           setSearchName(e.currentTarget.value);
