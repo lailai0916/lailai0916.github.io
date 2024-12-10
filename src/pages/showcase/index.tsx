@@ -23,7 +23,7 @@ function ShowcaseHeader() {
       <Heading as="h1">{TITLE}</Heading>
       <p>{DESCRIPTION}</p>
       {/* <Link className="button button--primary" to={SUBMIT_URL}>
-        🙏 Please add your site
+        🙏 请添加你的网站
       </Link> */}
     </section>
   );

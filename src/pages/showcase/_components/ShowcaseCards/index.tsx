@@ -7,7 +7,7 @@
 
 import type {ReactNode} from 'react';
 import clsx from 'clsx';
-import {sortedUsers, type User} from '@site/src/data/users';
+import {sortedUsers, type User} from '@site/src/data/site';
 import Heading from '@theme/Heading';
 import FavoriteIcon from '../FavoriteIcon';
 import ShowcaseCard from '../ShowcaseCard';
@@ -26,7 +26,7 @@ const otherUsers = sortedUsers.filter(
 function HeadingNoResult() {
   return (
     <Heading as="h2">
-      No result
+      无结果
     </Heading>
   );
 }
@@ -34,8 +34,8 @@ function HeadingNoResult() {
 function HeadingFavorites() {
   return (
     <Heading as="h2" className={styles.headingFavorites}>
-      Our favorites
-      <FavoriteIcon size="large" style={{marginLeft: '1rem'}} />
+      我的最爱
+    <FavoriteIcon size="large" style={{marginLeft: '1rem'}} />
     </Heading>
   );
 }
@@ -43,7 +43,7 @@ function HeadingFavorites() {
 function HeadingAllSites() {
   return (
     <Heading as="h2">
-      All sites
+      所有网站
     </Heading>
   );
 }

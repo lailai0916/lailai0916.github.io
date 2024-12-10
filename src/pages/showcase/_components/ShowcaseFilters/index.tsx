@@ -8,7 +8,7 @@
 import type {ReactNode, CSSProperties} from 'react';
 import clsx from 'clsx';
 import FavoriteIcon from '@site/src/pages/showcase/_components/FavoriteIcon';
-import {Tags, TagList, type TagType} from '@site/src/data/users';
+import {Tags, TagList, type TagType} from '@site/src/data/site';
 import Heading from '@theme/Heading';
 import ShowcaseTagSelect from '../ShowcaseTagSelect';
 import OperatorButton from '../OperatorButton';
@@ -73,7 +73,7 @@ function HeadingText() {
   return (
     <div className={styles.headingText}>
       <Heading as="h2">
-        Filters
+        标签
       </Heading>
       <span>{siteCountPlural(filteredUsers.length)}</span>
     </div>

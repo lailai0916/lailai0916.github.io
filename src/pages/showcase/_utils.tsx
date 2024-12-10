@@ -10,8 +10,8 @@ import {
   useQueryString,
   useQueryStringList,
 } from '@docusaurus/theme-common';
-import type {TagType, User} from '@site/src/data/users';
-import {sortedUsers} from '@site/src/data/users';
+import type {TagType, User} from '@site/src/data/site';
+import {sortedUsers} from '@site/src/data/site';
 
 export function useSearchName() {
   return useQueryString('name');
@@ -85,6 +85,6 @@ export function useSiteCountPlural() {
   return (sitesCount: number) =>
     selectMessage(
       sitesCount,
-      `${sitesCount} sites`
+      `${sitesCount} 个网站`
     );
 }
