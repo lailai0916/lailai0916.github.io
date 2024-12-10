@@ -234,7 +234,7 @@ const config = {
       },
       announcementBar: {
         id: 'announcement',
-        content: `🎄 Merry Christmas! 🎄`,
+        content: '🎁🎄 Merry Christmas! 🎄🎁',
         backgroundColor: '#ffffff',
         textColor: '#000000',
         isCloseable: true,

@@ -76,16 +76,16 @@ function SiteCard({user}: {user: User}) {
           {user.tags.includes('favorite') && (
             <FavoriteIcon size="medium" style={{marginRight: '0.25rem'}} />
           )}
-          {/* {user.source && (
+          {user.source && (
             <Link
               href={user.source}
               className={clsx(
                 'button button--secondary button--sm',
                 styles.siteCardSrcBtn,
               )}>
-              source
+              源码
             </Link>
-          )} */}
+          )}
         </div>
         <p className={styles.siteCardBody}>{user.description}</p>
       </div>
