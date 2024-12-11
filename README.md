@@ -12,7 +12,7 @@
 
 |               支付宝               |              微信支付              |
 | :--------------------------------: | :--------------------------------: |
-| ![Alipay](static/img/QR-code/Alipay.svg) | ![WeChat](static/img/QR-code/WeChat.svg) |
+| ![Alipay](static/img/qr-code/Alipay.svg) | ![WeChat](static/img/qr-code/WeChat.svg) |
 
 ## 许可证
 

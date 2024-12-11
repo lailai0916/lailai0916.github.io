@@ -35,7 +35,7 @@ Home/
 ├── static/img/
 │   ├── avatar/
 │   ├── icon/
-│   ├── QR-code/
+│   ├── qr-code/
 │   ├── logo.svg
 │   └── favicon.ico
 ├── babel.config.js

@@ -113,7 +113,7 @@ import styles from './styles.module.css';
 
 |               支付宝               |              微信支付              |
 | :--------------------------------: | :--------------------------------: |
-| ![Alipay](/img/QR-code/Alipay.svg) | ![WeChat](/img/QR-code/WeChat.svg) |
+| ![Alipay](/img/qr-code/Alipay.svg) | ![WeChat](/img/qr-code/WeChat.svg) |
 
 ## 评论
 

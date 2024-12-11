@@ -39,7 +39,7 @@ const Users: User[] = [
   {
     title: 'Google',
     description: 'Search engine.',
-    preview: null,
+    preview: '/img/site/Google.png',
     website: 'https://www.google.com/',
     source: null,
     tags: ['favorite'],
@@ -47,7 +47,7 @@ const Users: User[] = [
   {
     title: 'Blogasaurus',
     description: 'A blog written using Docasaurus.',
-    preview: require('./site/blogasaurus.png'),
+    preview: '/img/site/test.png',
     website: 'https://blog.palashsh.me/',
     source: 'https://github.com/BattleOfPlassey/blogasaurus',
     tags: ['personal', 'opensource'],
