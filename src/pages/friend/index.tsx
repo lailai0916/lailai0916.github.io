@@ -63,13 +63,12 @@ function FriendCards() {
 
 export default function FriendLink(): JSX.Element {
   const ref = useRef<HTMLDivElement>(null)
-
   return (
-    <Layout title={TITLE} description={DESCRIPTION} wrapperClassName="bg-background">
-      <motion.main ref={ref} className="my-4 friends-link-page">
+    <Layout title={TITLE} description={DESCRIPTION}>
+      <main className="margin-vert--lg">
         <FriendHeader />
         <FriendCards />
-      </motion.main>
+      </main>
     </Layout>
-  )
+  );
 }
