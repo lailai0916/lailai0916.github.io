@@ -31,7 +31,7 @@ const Users: User[] = [
   {
     title: 'lailai\'s home',
     description: 'This website.',
-    preview: null,
+    preview: '/img/site/Home.png',
     website: 'https://www.lailai.one/',
     source: 'https://github.com/lailai0916/lailai0916.github.io',
     tags: ['favorite', 'personal', 'opensource'],
@@ -45,12 +45,12 @@ const Users: User[] = [
     tags: ['favorite'],
   },
   {
-    title: 'Blogasaurus',
-    description: 'A blog written using Docasaurus.',
-    preview: '/img/site/test.png',
-    website: 'https://blog.palashsh.me/',
-    source: 'https://github.com/BattleOfPlassey/blogasaurus',
-    tags: ['personal', 'opensource'],
+    title: 'Desmos',
+    description: '免费使用的精美数学工具组。',
+    preview: '/img/site/Desmos.png',
+    website: 'https://www.desmos.com',
+    source: null,
+    tags: ['personal'],
   },
 ];
 
