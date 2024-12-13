@@ -56,7 +56,7 @@ const Users: User[] = [
   {
     title: '百度',
     description: 'Search engine.',
-    preview: null,
+    preview: '/img/site/Baidu.png',
     website: 'https://www.baidu.com',
     source: null,
     tags: ['comprehensive'],
@@ -64,7 +64,7 @@ const Users: User[] = [
   {
     title: '维基百科',
     description: '自由的百科全书。',
-    preview: null,
+    preview: '/img/site/Wikipedia.png',
     website: 'https://zh.wikipedia.org/wiki/Wikipedia:首页',
     source: null,
     tags: ['favorite', 'comprehensive', 'resource'],
@@ -72,7 +72,7 @@ const Users: User[] = [
   {
     title: 'ChatGPT',
     description: '人工智能。',
-    preview: null,
+    preview: '/img/site/ChatGPT.png',
     website: 'https://chatgpt.com',
     source: null,
     tags: ['favorite', 'tool'],
@@ -96,7 +96,7 @@ const Users: User[] = [
   {
     title: 'GeoGebra',
     description: 'the world’s favorite, free math tools used by over 100 million students and teachers.',
-    preview: null,
+    preview: '/img/site/GeoGebra.png',
     website: 'https://www.geogebra.org',
     source: null,
     tags: ['academic', 'tool'],
@@ -112,7 +112,7 @@ const Users: User[] = [
   {
     title: '在线LaTeX公式编辑器',
     description: '在线LaTeX公式编辑器。',
-    preview: null,
+    preview: '/img/site/latexlive.png',
     website: 'https://www.latexlive.com',
     source: null,
     tags: ['academic', 'tool'],
@@ -120,7 +120,7 @@ const Users: User[] = [
   {
     title: 'OI Wiki',
     description: '咕',
-    preview: null,
+    preview: '/img/site/OI-Wiki.png',
     website: 'https://oi-wiki.org',
     source: 'https://github.com/OI-wiki/OI-wiki',
     tags: ['competition', 'tutorial', 'opensource'],
@@ -128,7 +128,7 @@ const Users: User[] = [
   {
     title: 'OIerDb NG',
     description: '咕',
-    preview: null,
+    preview: '/img/site/OIerDb-NG.png',
     website: 'https://www.信息学.com',
     source: 'https://github.com/OIerDb-ng/OIerDb-data-generator',
     tags: ['competition', 'resource', 'opensource'],
@@ -136,7 +136,7 @@ const Users: User[] = [
   {
     title: 'Graph Editor',
     description: '咕',
-    preview: null,
+    preview: '/img/site/GraphEditor.png',
     website: 'https://csacademy.com/app/graph_editor/',
     source: null,
     tags: ['competition', 'tool'],
@@ -152,7 +152,7 @@ const Users: User[] = [
   {
     title: 'Codeforces',
     description: '咕',
-    preview: null,
+    preview: '/img/site/Codeforces.png',
     website: 'https://codeforces.com',
     source: null,
     tags: ['competition', 'tool', 'test'],
@@ -160,7 +160,7 @@ const Users: User[] = [
   {
     title: 'AtCoder',
     description: '咕',
-    preview: null,
+    preview: '/img/site/AtCoder.png',
     website: 'https://atcoder.jp',
     source: null,
     tags: ['competition', 'tool', 'test'],
@@ -168,7 +168,7 @@ const Users: User[] = [
   {
     title: 'Virtual Judge',
     description: '咕',
-    preview: null,
+    preview: '/img/site/Vjudge.png',
     website: 'https://vjudge.net',
     source: null,
     tags: ['competition', 'tool', 'test'],
@@ -176,7 +176,7 @@ const Users: User[] = [
   {
     title: '原题机',
     description: '咕',
-    preview: null,
+    preview: '/img/site/yuantiji.png',
     website: 'http://yuantiji.ac/zh/',
     source: null,
     tags: ['competition', 'tool'],
@@ -184,7 +184,7 @@ const Users: User[] = [
   {
     title: 'Code Golf',
     description: '咕',
-    preview: null,
+    preview: '/img/site/CodeGolf.png',
     website: 'https://code.golf',
     source: null,
     tags: ['competition', 'tool', 'test'],
@@ -192,7 +192,7 @@ const Users: User[] = [
   {
     title: 'Apple',
     description: '咕',
-    preview: null,
+    preview: '/img/site/Apple.png',
     website: 'https://www.apple.com',
     source: null,
     tags: ['favorite', 'digital'],
