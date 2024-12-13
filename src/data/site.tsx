@@ -39,7 +39,7 @@ export type Tag = {
 const Users: User[] = [
   {
     title: 'lailai\'s home',
-    description: 'This website.',
+    description: 'lailai 的个人网站，分享技术笔记、项目经验和学习心得。',
     preview: '/img/site/Home.png',
     website: 'https://www.lailai.one',
     source: 'https://github.com/lailai0916/lailai0916.github.io',
@@ -47,7 +47,7 @@ const Users: User[] = [
   },
   {
     title: 'Google',
-    description: 'Search engine.',
+    description: '全球最受欢迎的搜索引擎，提供强大的信息检索和多种在线服务。',
     preview: '/img/site/Google.png',
     website: 'https://www.google.com',
     source: null,
@@ -63,7 +63,7 @@ const Users: User[] = [
   },
   {
     title: '维基百科',
-    description: '自由的百科全书。',
+    description: '一个自由的网络百科全书，由全球用户协作编辑，提供多语言知识内容。',
     preview: '/img/site/Wikipedia.png',
     website: 'https://zh.wikipedia.org/wiki/Wikipedia:首页',
     source: null,
@@ -71,7 +71,7 @@ const Users: User[] = [
   },
   {
     title: 'ChatGPT',
-    description: '人工智能。',
+    description: 'OpenAI 提供的聊天 AI 服务网站，用户可以通过它与 ChatGPT 进行智能交互。',
     preview: '/img/site/ChatGPT.png',
     website: 'https://chatgpt.com',
     source: null,
@@ -79,7 +79,7 @@ const Users: User[] = [
   },
   {
     title: 'GitHub',
-    description: '人工智能。',
+    description: '球领先的代码托管和协作平台，支持开发者管理代码、追踪问题并协作开发项目。',
     preview: null,
     website: 'https://github.com',
     source: null,
@@ -87,7 +87,7 @@ const Users: User[] = [
   },
   {
     title: 'Desmos',
-    description: '免费使用的精美数学工具组。',
+    description: '一个提供免费在线数学工具的网站，帮助用户探索和学习数学。',
     preview: '/img/site/Desmos.png',
     website: 'https://www.desmos.com',
     source: null,
@@ -95,7 +95,7 @@ const Users: User[] = [
   },
   {
     title: 'GeoGebra',
-    description: 'the world’s favorite, free math tools used by over 100 million students and teachers.',
+    description: '一款免费开源的动态数学软件，广泛应用于各级教育领域。',
     preview: '/img/site/GeoGebra.png',
     website: 'https://www.geogebra.org',
     source: null,
@@ -119,7 +119,7 @@ const Users: User[] = [
   },
   {
     title: 'OI Wiki',
-    description: '咕',
+    description: '一个免费开放且持续更新的编程竞赛知识整合站点。',
     preview: '/img/site/OI-Wiki.png',
     website: 'https://oi-wiki.org',
     source: 'https://github.com/OI-wiki/OI-wiki',
@@ -143,7 +143,7 @@ const Users: User[] = [
   },
   {
     title: '洛谷',
-    description: '咕',
+    description: '一个面向编程竞赛爱好者的在线平台。',
     preview: null,
     website: 'https://www.luogu.com.cn',
     source: null,
@@ -191,23 +191,23 @@ const Users: User[] = [
   },
   {
     title: 'Apple',
-    description: '咕',
+    description: '苹果公司的官方网站，提供产品信息、技术支持和在线商店服务。',
     preview: '/img/site/Apple.png',
     website: 'https://www.apple.com',
     source: null,
-    tags: ['favorite', 'digital'],
+    tags: ['favorite', 'digital', 'shop'],
   },
   {
     title: 'Apple 苹果产品参数中心',
-    description: '咕',
+    description: '一个专注于收集和展示苹果公司各类产品详细参数的网站。',
     preview: null,
     website: 'https://hubweb.cn',
     source: null,
     tags: ['digital', 'resource'],
   },
   {
-    title: 'SOCPK-极客湾移动芯片排行',
-    description: '咕',
+    title: 'SOCPK',
+    description: '极客湾移动芯片排行。',
     preview: null,
     website: 'https://socpk.com',
     source: null,
@@ -219,19 +219,19 @@ const Users: User[] = [
     preview: null,
     website: 'https://lizhi.shop',
     source: null,
-    tags: ['digital', 'tool'],
+    tags: ['digital', 'shop'],
   },
   {
     title: 'YouTube',
-    description: '咕',
+    description: '全球最大的视频分享平台，用户可以上传、观看、分享和评论各类视频内容。',
     preview: null,
     website: 'https://www.youtube.com',
     source: null,
-    tags: ['video'],
+    tags: ['favorite', 'video'],
   },
   {
     title: 'bilibili',
-    description: '咕',
+    description: '国内知名的弹幕视频分享网站，用户可在此观看动画、游戏、音乐等多元化内容。',
     preview: null,
     website: 'https://www.bilibili.com',
     source: null,
