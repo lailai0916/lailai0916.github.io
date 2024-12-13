@@ -19,7 +19,7 @@ export type TagType =
   | 'news'
   | 'social'
   | 'develop'
-  | 'other';
+  | 'design';
 
 export type User = {
   title: string;
@@ -259,7 +259,7 @@ const Users: User[] = [
     preview: null,
     website: 'https://colorable.jxnblk.com',
     source: null,
-    tags: ['tool'],
+    tags: ['design', 'tool'],
   },
   {
     title: 'CPS测试',
@@ -339,7 +339,7 @@ const Users: User[] = [
     preview: null,
     website: 'https://developer.apple.com/cn/design/resources/#product-bezels',
     source: null,
-    tags: ['develop', 'resource'],
+    tags: ['design', 'develop', 'resource'],
   },
   {
     title: 'Skill Icons',
@@ -347,7 +347,7 @@ const Users: User[] = [
     preview: null,
     website: 'https://skillicons.dev',
     source: 'https://github.com/tandpfun/skill-icons',
-    tags: ['develop', 'tool', 'opensource'],
+    tags: ['design', 'tool', 'opensource'],
   },
   {
     title: '清华大学开源软件镜像站',
@@ -387,7 +387,7 @@ const Users: User[] = [
     preview: null,
     website: 'https://brandcolors.net',
     source: null,
-    tags: ['resource'],
+    tags: ['design', 'resource'],
   },
   {
     title: 'generals.io',
@@ -530,8 +530,8 @@ export const Tags: {[type in TagType]: Tag} = {
     description: '科技类网站，分享最新的科技资讯和产品。',
     color: '#df1f9f',
   },
-  other: {
-    label: '其他',
+  design: {
+    label: '设计',
     description: '其他网站。',
     color: '#df1f5f',
   },
