@@ -78,6 +78,14 @@ const Users: User[] = [
     tags: ['favorite', 'tool'],
   },
   {
+    title: 'Sora',
+    description: 'OpenAI 推出的视频生成模型，用户可通过输入文本、图像或视频，生成新的视频内容。',
+    preview: '/img/site/Sora.png',
+    website: 'https://sora.com',
+    source: null,
+    tags: ['favorite', 'tool'],
+  },
+  {
     title: 'GitHub',
     description: '代码托管平台，支持版本控制与协作开发。',
     preview: null,
@@ -232,7 +240,7 @@ const Users: User[] = [
   {
     title: 'YouTube',
     description: '全球最大的视频分享平台，用户可以上传、观看、分享和评论各类视频内容。',
-    preview: null,
+    preview: '/img/site/YouTube.png',
     website: 'https://www.youtube.com',
     source: null,
     tags: ['favorite', 'video'],
