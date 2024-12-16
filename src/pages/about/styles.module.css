@@ -1,13 +1,8 @@
-.deviceList {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
-
 .deviceItem {
   display: flex;
   align-items: center;
   gap: 0.5rem;
+  margin-bottom: 1rem;
 }
 
 .deviceItem img {
@@ -20,4 +15,3 @@
 html[data-theme='dark'] .deviceItem img {
   filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(100%) contrast(100%);
 }
-

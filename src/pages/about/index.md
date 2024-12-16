@@ -3,6 +3,7 @@ title: 关于
 hide_table_of_contents: true
 ---
 
+import Link from '@docusaurus/Link';
 import { Icon } from '@iconify/react';
 import GiscusComponent from "@site/src/components/giscus";
 import Holiday from '@site/src/components/Holiday';
@@ -10,7 +11,9 @@ import styles from './styles.module.css';
 
 <div style={{maxWidth: '70ch', margin: "auto"}}>
 
-<h1 align="center">{'🎉\xa0'}<Holiday text={'Hello,\xa0I\'m\xa0lailai'} />{'\xa0🥳'}</h1>
+<h1 align="center">
+  {'🎉\xa0'}<Holiday text={'Hello,\xa0I\'m\xa0lailai'} />{'\xa0🥳'}
+</h1>
 
 ## 个人介绍
 
@@ -41,87 +44,62 @@ import styles from './styles.module.css';
 
 ## 我的设备
 
-<div className={styles.deviceList}>
-  <div className={styles.deviceItem}>
-    <img src="/img/icon/MacBook.svg" />
-    <span>MacBook Pro 16 英寸 (M3 Max)</span>
-  </div>
-  <div className={styles.deviceItem}>
-    <img src="/img/icon/iPad.svg" />
-    <span>iPad Pro 11 英寸 (M1)</span>
-  </div>
-  <div className={styles.deviceItem}>
-    <img src="/img/icon/iPhone.svg" />
-    <span>iPhone 13</span>
-  </div>
-  <div className={styles.deviceItem}>
-    <img src="/img/icon/AirPods.svg" />
-    <span>AirPods Pro 2</span>
-  </div>
-  <div className={styles.deviceItem}>
-    <img src="/img/icon/Bag.svg" />
-    <span>tomtoc Voyage T50 Laptop Backpack</span>
-  </div>
-  <div className={styles.deviceItem}>
-    <img src="/img/icon/Mouse.svg" />
-    <span>Logitech G PRO X SUPERLIGHT 2</span>
-  </div>
-  <div className={styles.deviceItem}>
-    <img src="/img/icon/Disk.svg" />
-    <span>SanDisk Extreme PRO (256GB)</span>
-  </div>
-  <div></div>
+<div className={styles.deviceItem}>
+  <img src="/img/icon/MacBook.svg" />
+  <span>MacBook Pro 16 英寸 (M3 Max)</span>
+</div>
+<div className={styles.deviceItem}>
+  <img src="/img/icon/iPad.svg" />
+  <span>iPad Pro 11 英寸 (M1)</span>
+</div>
+<div className={styles.deviceItem}>
+  <img src="/img/icon/iPhone.svg" />
+  <span>iPhone 13</span>
+</div>
+<div className={styles.deviceItem}>
+  <img src="/img/icon/AirPods.svg" />
+  <span>AirPods Pro 2</span>
+</div>
+<div className={styles.deviceItem}>
+  <img src="/img/icon/Bag.svg" />
+  <span>tomtoc Voyage T50 Laptop Backpack</span>
+</div>
+<div className={styles.deviceItem}>
+  <img src="/img/icon/Mouse.svg" />
+  <span>Logitech G PRO X SUPERLIGHT 2</span>
+</div>
+<div className={styles.deviceItem}>
+  <img src="/img/icon/Disk.svg" />
+  <span>SanDisk Extreme PRO (256GB)</span>
 </div>
 
 ## 联系方式
 
-<div className={styles.deviceList}>
-  <div className={styles.deviceItem}>
-    <Icon icon="ri:phone-line" width="20" height="20" />
-    <a href="tel:+86 17757102577">+86 17757102577</a>
-  </div>
-  <div className={styles.deviceItem}>
-    <Icon icon="ri:mail-line" width="20" height="20" />
-    <a href="mailto:lailai0x394@gmail.com">lailai0x394@gmail.com</a>
-  </div>
-  <div className={styles.deviceItem}>
-    <Icon icon="ri:telegram-line" width="20" height="20" />
-    <a href="https://t.me/lailai0916" target="_blank">lailai0x394</a>
-  </div>
-  <div className={styles.deviceItem}>
-    <Icon icon="ri:twitter-x-line" width="20" height="20" />
-    <a href="https://x.com/lailai0x394" target="_blank">lailai0x394</a>
-  </div>
-  <div className={styles.deviceItem}>
-    <Icon icon="ri:linkedin-line" width="20" height="20" />
-    <a href="https://www.linkedin.com/in/lailai0916" target="_blank">lailai0916</a>
-  </div>
-  <div className={styles.deviceItem}>
-    <Icon icon="ri:github-line" width="20" height="20" />
-    <a href="https://github.com/lailai0916" target="_blank">lailai0916</a>
-  </div>
-  <div></div>
+<div className={styles.deviceItem}>
+  <Icon icon="ri:phone-line" width="20" height="20" />
+  <Link to="tel:+86 17757102577">+86 17757102577</Link>
 </div>
-
-## 赞助
-
-:::tip
-
-欢迎赞助我的网站，您的支持将帮助我持续创作更多有价值的内容！
-
-:::
-
-|               支付宝               |              微信支付              |
-| :--------------------------------: | :--------------------------------: |
-| ![Alipay](/img/qr-code/Alipay.svg) | ![WeChat](/img/qr-code/WeChat.svg) |
-
-## 评论
-
-感谢您的阅读，希望这些分享对您有帮助！
-
-如有疑问，欢迎咨询，我会尽力回复。期待您的评论！
+<div className={styles.deviceItem}>
+  <Icon icon="ri:mail-line" width="20" height="20" />
+  <Link to="mailto:lailai0x394@gmail.com">lailai0x394@gmail.com</Link>
+</div>
+<div className={styles.deviceItem}>
+  <Icon icon="ri:telegram-line" width="20" height="20" />
+  <Link to="https://t.me/lailai0916">lailai0x394</Link>
+</div>
+<div className={styles.deviceItem}>
+  <Icon icon="ri:twitter-x-line" width="20" height="20" />
+  <Link to="https://x.com/lailai0x394">lailai0x394</Link>
+</div>
+<div className={styles.deviceItem}>
+  <Icon icon="ri:linkedin-line" width="20" height="20" />
+  <Link to="https://www.linkedin.com/in/lailai0916">lailai0916</Link>
+</div>
+<div className={styles.deviceItem}>
+  <Icon icon="ri:github-line" width="20" height="20" />
+  <Link to="https://github.com/lailai0916">lailai0916</Link>
+</div>
 
 <GiscusComponent />
 
 </div>
-
