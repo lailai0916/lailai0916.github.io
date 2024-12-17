@@ -5,8 +5,6 @@ import Heading from '@theme/Heading';
 import { memo, useRef } from 'react';
 import { Friend, Friends } from '@site/src/data/friend';
 
-import { motion } from 'framer-motion';
-
 const TITLE = '友链';
 const DESCRIPTION = '财富易得，知己难求。';
 const SUBMIT_URL = 'https://github.com';

@@ -4,6 +4,8 @@ hide_table_of_contents: true
 ---
 
 import Link from '@docusaurus/Link';
+import Heading from '@theme/Heading';
+
 import { Icon } from '@iconify/react';
 import GiscusComponent from "@site/src/components/giscus";
 import Holiday from '@site/src/components/Holiday';
@@ -11,9 +13,9 @@ import styles from './styles.module.css';
 
 <div style={{maxWidth: '70ch', margin: "auto"}}>
 
-<h1 align="center">
-  {'🎉\xa0'}<Holiday text={'Hello,\xa0I\'m\xa0lailai'} />{'\xa0🥳'}
-</h1>
+<section className="margin-top--lg margin-bottom--lg text--center">
+  <Heading as="h1">{'🎉\xa0'}<Holiday text={'Hello,\xa0I\'m\xa0lailai'} />{'\xa0🥳'}</Heading>
+</section>
 
 ## 个人介绍
 
@@ -99,6 +101,8 @@ import styles from './styles.module.css';
   <Icon icon="ri:github-line" width="20" height="20" />
   <Link to="https://github.com/lailai0916">lailai0916</Link>
 </div>
+
+------
 
 <GiscusComponent />
 
