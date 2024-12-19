@@ -105,6 +105,14 @@ html[data-theme='dark'] .hero {
   color: black;
 }
 
+.button {
+  background-color: var(--ifm-color-primary-lightest);
+}
+
+.button:hover {
+  background-color: var(--ifm-color-primary-lighter);
+}
+
 .indexCtas a:last-of-type {
   margin: 20px 36px;
 }

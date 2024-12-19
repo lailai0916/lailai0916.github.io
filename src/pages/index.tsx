@@ -102,10 +102,10 @@ function HeroBanner() {
           />
         </Heading>
         <div className={styles.indexCtas}>
-          <Link className="button button--info" to="/blog">
+          <Link className={`button ${styles.button}`} to="/blog">
             博客
           </Link>
-          <Link className="button button--info" to="/about">
+          <Link className={`button ${styles.button}`} to="/about">
             关于
           </Link>
         </div>

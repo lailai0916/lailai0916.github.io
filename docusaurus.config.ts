@@ -216,8 +216,8 @@ const config = {
                 to: '/blog',
               },
               {
-                label: '友链',
-                to: '/friend',
+                label: '设置',
+                to: '/set',
               },
               {
                 label: '关于',

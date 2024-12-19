@@ -14,7 +14,9 @@ import styles from './styles.module.css';
 <div style={{maxWidth: '70ch', margin: "auto"}}>
 
 <section className="margin-top--lg margin-bottom--lg text--center">
-  <Heading as="h1">{'🎉\xa0'}<Holiday text={'Hello,\xa0I\'m\xa0lailai'} />{'\xa0🥳'}</Heading>
+  <Heading as="h1">
+    {'🎉\xa0'}<Holiday text={'Hello,\xa0I\'m\xa0lailai'} />{'\xa0🥳'}
+  </Heading>
 </section>
 
 ## 个人介绍
