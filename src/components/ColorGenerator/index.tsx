@@ -30,6 +30,15 @@ function wcagContrast(foreground: string, background: string) {
 }
 
 export default function ColorGenerator(): JSX.Element {
+  const colors = [
+    "#1d9bf0",
+    "#ffd400",
+    "#f91880",
+    "#7856ff",
+    "#ff7a00",
+    "#00ba7c",
+  ];
+
   const {colorMode, setColorMode} = useColorMode();
 
   const isDarkTheme = colorMode === 'dark';
@@ -84,14 +93,14 @@ export default function ColorGenerator(): JSX.Element {
   }
 
   return (
-    <div style={{ textAlign: 'center' }}>
-      <p>
+    <div style={{ maxWidth: '70ch', margin: 'auto', textAlign: 'center', display: 'flex', flexDirection: 'column', gap: '25px' }}>
+      <div>
         {/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
         <label htmlFor="primary_color">
           <strong className="margin-right--sm">
             主色调：
           </strong>
-        </label>{' '}
+        </label>
         <input
           id="primary_color"
           type="text"
@@ -111,7 +120,7 @@ export default function ColorGenerator(): JSX.Element {
           type="button"
           className="clean-btn button button--primary margin-left--md"
           onClick={() => setColorMode(isDarkTheme ? 'light' : 'dark')}>
-          切换模式
+          {isDarkTheme ? '深色模式' : '浅色模式'}
         </button>
         <button
           type="button"
@@ -124,21 +133,33 @@ export default function ColorGenerator(): JSX.Element {
           }}>
           重置
         </button>
-      </p>
+      </div>
       <div>
-        {getAdjustedColors(shades, baseColor)
-          .sort((a, b) => a.displayOrder - b.displayOrder)
-          .map((value) => {
-            const {variableName, adjustment, adjustmentInput, hex} = value;
-            return (
-              <span
-                className={styles.color}
-                style={{
-                  backgroundColor: hex,
-                }}
-              />
-            );
-          })}
+        <span
+          className={styles.color}
+          style={{
+            background: `linear-gradient(to right, ${getAdjustedColors(shades, baseColor).sort((a, b) => a.displayOrder - b.displayOrder).map(value => value.hex).join(', ')})`,
+          }}
+        />
+      </div>
+      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+        {colors.map((color) => (
+          <svg
+            width="45"
+            height="45"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+            onClick={() => {
+              setInputColor(color);
+              setBaseColor(color);
+            }}
+            style={{ cursor: 'pointer', borderRadius: '50%' }}
+          >
+            <g>
+              <circle cx="12" cy="12" r="10.3" fill={color} />
+            </g>
+          </svg>
+        ))}
       </div>
     </div>
   );

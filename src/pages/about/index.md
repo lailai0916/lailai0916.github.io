@@ -11,7 +11,7 @@ import GiscusComponent from "@site/src/components/giscus";
 import Holiday from '@site/src/components/Holiday';
 import styles from './styles.module.css';
 
-<div style={{maxWidth: '70ch', margin: "auto"}}>
+<div style={{maxWidth: '70ch', margin: 'auto'}}>
 
 <section className="margin-top--lg margin-bottom--lg text--center">
   <Heading as="h1">
