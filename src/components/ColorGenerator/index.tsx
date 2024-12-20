@@ -94,45 +94,49 @@ export default function ColorGenerator(): JSX.Element {
 
   return (
     <div style={{ maxWidth: '70ch', margin: 'auto', textAlign: 'center', display: 'flex', flexDirection: 'column', gap: '25px' }}>
-      <div>
-        {/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
-        <label htmlFor="primary_color">
-          <strong className="margin-right--sm">
-            主色调：
-          </strong>
-        </label>
-        <input
-          id="primary_color"
-          type="text"
-          className={clsx(styles.input, 'margin-right--sm')}
-          value={inputColor}
-          onChange={updateColor}
-        />
-        <input
-          type="color"
-          className={styles.colorInput}
-          // value has to always be a valid color, so baseColor instead of
-          // inputColor
-          value={baseColor}
-          onChange={updateColor}
-        />
-        <button
-          type="button"
-          className="clean-btn button button--primary margin-left--md"
-          onClick={() => setColorMode(isDarkTheme ? 'light' : 'dark')}>
-          {isDarkTheme ? '深色模式' : '浅色模式'}
-        </button>
-        <button
-          type="button"
-          className="clean-btn button button--secondary margin-left--md"
-          onClick={() => {
-            setInputColor(DEFAULT_PRIMARY_COLOR);
-            setBaseColor(DEFAULT_PRIMARY_COLOR);
-            setBackground(DEFAULT_BACKGROUND_COLOR);
-            setShades(COLOR_SHADES);
-          }}>
-          重置
-        </button>
+      <div className={styles.container}>
+        <div>
+          {/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
+          <label htmlFor="primary_color">
+            <strong className="margin-right--sm">
+              主色调：
+            </strong>
+          </label>
+          <input
+            id="primary_color"
+            type="text"
+            className={clsx(styles.input, 'margin-right--sm')}
+            value={inputColor}
+            onChange={updateColor}
+          />
+        </div>
+        <div>
+          <input
+            type="color"
+            className={styles.colorInput}
+            // value has to always be a valid color, so baseColor instead of
+            // inputColor
+            value={baseColor}
+            onChange={updateColor}
+          />
+          <button
+            type="button"
+            className="clean-btn button button--secondary margin-left--md"
+            onClick={() => setColorMode(isDarkTheme ? 'light' : 'dark')}>
+            {isDarkTheme ? '深色' : '浅色'}
+          </button>
+          <button
+            type="button"
+            className="clean-btn button button--secondary margin-left--md"
+            onClick={() => {
+              setInputColor(DEFAULT_PRIMARY_COLOR);
+              setBaseColor(DEFAULT_PRIMARY_COLOR);
+              setBackground(DEFAULT_BACKGROUND_COLOR);
+              setShades(COLOR_SHADES);
+            }}>
+            重置
+          </button>
+        </div>
       </div>
       <div>
         <span

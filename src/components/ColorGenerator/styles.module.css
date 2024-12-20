@@ -20,6 +20,7 @@
   border-width: var(--ifm-global-border-width);
   font-size: var(--ifm-font-size-base);
   padding: 0.6rem;
+  height: 2.25rem;
 }
 
 .colorInput {
@@ -30,4 +31,18 @@
   border-width: var(--ifm-global-border-width);
   height: 2.25rem;
   top: 7px;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+}
+
+@media only screen and (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
 }
