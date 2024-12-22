@@ -1,31 +1,42 @@
 # ST 表
 
+## 参考资料
+
+- [ST 表 - OI Wiki](https://oi.wiki/ds/sparse-table/)
+
 ## 实现
 
 ```cpp
-using ll=long long;
-const int N=100005;
-ll a[N][20];
-void init(int n)
+struct ST
 {
-	for(int k=1;k<=__lg(n);k++)
+	ll a[N][20];
+	void init(int n)
 	{
-		for(int i=1;i<=n-(1<<k)+1;i++)
+		for(int k=1;k<=__lg(n);k++)
 		{
-			a[i][k]=max(a[i][k-1],a[i+(1<<(k-1))][k-1]);
+			for(int i=1;i<=n-(1<<k)+1;i++)
+			{
+				a[i][k]=max(a[i][k-1],a[i+(1<<(k-1))][k-1]);
+			}
 		}
 	}
-}
-ll query(int l,int r)
-{
-	int k=__lg(r-l+1);
-	return max(a[l][k],a[r-(1<<k)+1][k]);
-}
+	ll query(int l,int r)
+	{
+		int k=__lg(r-l+1);
+		return max(a[l][k],a[r-(1<<k)+1][k]);
+	}
+};
 ```
 
 ## 例题
 
-### 洛谷 P3865 【模板】ST 表
+### 洛谷 P3865 【模板】ST 表 && RMQ 问题
+
+:::info[[洛谷 P3865 【模板】ST 表 && RMQ 问题](https://www.luogu.com.cn/problem/P3865)]
+
+给定一个长度为 $N$ 的数列，和 $ M $ 次询问，求出每一次询问的区间内数字的最大值。
+
+:::
 
 ```cpp
 #include <bits/stdc++.h>
