@@ -92,6 +92,9 @@ const config = {
     ],
   ],
 
+  markdown: {
+    mermaid: true,
+  },
 
   stylesheets: [
     {
@@ -101,6 +104,7 @@ const config = {
       crossorigin: 'anonymous',
     },
   ],
+
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
@@ -249,6 +253,7 @@ const config = {
 
 
   themes: [
+    '@docusaurus/theme-mermaid',
     // ... Your other themes.
     [
         // 本地搜索
