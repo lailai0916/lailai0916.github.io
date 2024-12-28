@@ -251,10 +251,9 @@ const config = {
       },
     }),
 
-
   themes: [
-    '@docusaurus/theme-mermaid',
     // ... Your other themes.
+    '@docusaurus/theme-mermaid',
     [
         // 本地搜索
         // https://github.com/easyops-cn/docusaurus-search-local
