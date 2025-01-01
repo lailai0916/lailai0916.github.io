@@ -244,7 +244,7 @@ const config = {
       },
       announcementBar: {
         id: 'announcement',
-        content: '🎊 Happy New Year! 🎊',
+        content: '🎊 Hello, 2025! 🎊',
         backgroundColor: '#ffffff',
         textColor: '#000000',
         isCloseable: true,
