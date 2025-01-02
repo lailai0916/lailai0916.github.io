@@ -15,7 +15,7 @@ import styles from './styles.module.css';
 
 <section className="margin-top--lg margin-bottom--lg text--center">
   <Heading as="h1">
-    {'🎉\xa0'}<Holiday text={'Hello,\xa0I\'m\xa0lailai'} />{'\xa0🥳'}
+    {'🎉\xa0'}<Vip text={'Hello,\xa0I\'m\xa0lailai'} />{'\xa0🥳'}
   </Heading>
 </section>
 

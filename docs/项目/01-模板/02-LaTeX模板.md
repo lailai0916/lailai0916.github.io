@@ -32,38 +32,6 @@ $$
 
 :::
 
-## 字体
-
-### 自定义函数
-
-```latex
-\operatorname{lca}{(6,8)}=24
-```
-
-$$
-\operatorname{lca}{(6,8)}=24
-$$
-
-### 正体
-
-```latex
-g=9.8\mathrm{m/s^2}
-```
-
-$$
-g=9.8\mathrm{m/s^2}
-$$
-
-### 直立体
-
-```latex
-\frac{\mathrm{d}}{\mathrm{d}x} f(x)
-```
-
-$$
-\frac{\mathrm{d}}{\mathrm{d}x} f(x)
-$$
-
 ## 巨运算符
 
 ### 求和
@@ -210,4 +178,36 @@ $$
   \vdots & \vdots & \ddots & \vdots \\
   0 & 0 & \cdots & 1
 \end{bmatrix}
+$$
+
+## 字体
+
+### 自定义名称
+
+```latex
+\operatorname{lca}{(6,8)}=24
+```
+
+$$
+\operatorname{lca}{(6,8)}=24
+$$
+
+### 正体
+
+```latex
+g=9.8\mathrm{m/s^2}
+```
+
+$$
+g=9.8\mathrm{m/s^2}
+$$
+
+### 直立体
+
+```latex
+\frac{\mathrm{d}}{\mathrm{d}x} f(x)
+```
+
+$$
+\frac{\mathrm{d}}{\mathrm{d}x} f(x)
 $$

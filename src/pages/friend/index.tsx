@@ -6,7 +6,7 @@ import { memo, useRef } from 'react';
 import { Friend, Friends } from '@site/src/data/friend';
 
 const TITLE = '友链';
-const DESCRIPTION = '财富易得，知己难求。';
+const DESCRIPTION = '财富易得，知己难求';
 const SUBMIT_URL = 'https://github.com';
 
 function FriendHeader() {
