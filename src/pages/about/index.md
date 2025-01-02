@@ -8,7 +8,7 @@ import Heading from '@theme/Heading';
 
 import { Icon } from '@iconify/react';
 import GiscusComponent from "@site/src/components/giscus";
-import Holiday from '@site/src/components/Holiday';
+import { Holiday, Vip } from '@site/src/components/TextStyle';
 import styles from './styles.module.css';
 
 <div style={{maxWidth: '70ch', margin: 'auto'}}>
