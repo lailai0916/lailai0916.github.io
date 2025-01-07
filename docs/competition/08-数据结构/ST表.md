@@ -1,0 +1,87 @@
+# ST 表
+
+## 参考资料
+
+- [ST 表 - OI Wiki](https://oi.wiki/ds/sparse-table/)
+
+## 实现
+
+```cpp
+struct ST
+{
+	ll a[N][20];
+	void init(int n)
+	{
+		for(int k=1;k<=__lg(n);k++)
+		{
+			for(int i=1;i<=n-(1<<k)+1;i++)
+			{
+				a[i][k]=max(a[i][k-1],a[i+(1<<(k-1))][k-1]);
+			}
+		}
+	}
+	ll query(int l,int r)
+	{
+		int k=__lg(r-l+1);
+		return max(a[l][k],a[r-(1<<k)+1][k]);
+	}
+};
+```
+
+## 例题
+
+### 洛谷 P3865 【模板】ST 表 && RMQ 问题
+
+:::info[[洛谷 P3865 【模板】ST 表 && RMQ 问题](https://www.luogu.com.cn/problem/P3865)]
+
+给定一个长度为 $N$ 的数列，和 $ M $ 次询问，求出每一次询问的区间内数字的最大值。
+
+:::
+
+<details>
+<summary>参考代码</summary>
+
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+
+using ll=long long;
+const int N=100005;
+ll a[N][20];
+void init(int n)
+{
+	for(int k=1;k<=__lg(n);k++)
+	{
+		for(int i=1;i<=n-(1<<k)+1;i++)
+		{
+			a[i][k]=max(a[i][k-1],a[i+(1<<(k-1))][k-1]);
+		}
+	}
+}
+ll query(int l,int r)
+{
+	int k=__lg(r-l+1);
+	return max(a[l][k],a[r-(1<<k)+1][k]);
+}
+int main()
+{
+	ios::sync_with_stdio(false);
+	cin.tie(nullptr);
+	int n,m;
+	cin>>n>>m;
+	for(int i=1;i<=n;i++)
+	{
+		cin>>a[i][0];
+	}
+	init(n);
+	while(m--)
+	{
+		int l,r;
+		cin>>l>>r;
+		cout<<query(l,r)<<'\n';
+	}
+	return 0;
+}
+```
+
+</details>
