@@ -55,6 +55,7 @@ const config = {
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
         docs: {
+          // showLastUpdateAuthor: true,
           showLastUpdateTime: true,
 
           remarkPlugins: [remarkMath],
@@ -67,6 +68,7 @@ const config = {
         },
 
         blog: {
+          // showLastUpdateAuthor: true,
           showLastUpdateTime: true,
 
           remarkPlugins: [remarkMath],
