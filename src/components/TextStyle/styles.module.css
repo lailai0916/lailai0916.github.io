@@ -1,0 +1,23 @@
+.holidayTextStyle {
+    background: linear-gradient(to right, #0090f7, #ba62fc, #f2416b);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.vipTextStyle {
+    background: #E28A20;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+[data-theme='dark'] .vipTextStyle {
+    background: linear-gradient(270deg,#f5e3d9 40%,#fdc9ae);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.otherTextStyle {
+    background: linear-gradient(to right, #ff7f50, #ff6347, #ff4500);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}

@@ -1,0 +1,17 @@
+.deviceItem {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.deviceItem img {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+  filter: invert(0%) sepia(100%) saturate(0%) hue-rotate(0deg) brightness(0%) contrast(100%);
+}
+
+html[data-theme='dark'] .deviceItem img {
+  filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(100%) contrast(100%);
+}
