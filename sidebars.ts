@@ -17,6 +17,44 @@ const sidebars: SidebarsConfig = {
     'project/introduction',
     {
       type: 'category',
+      label: '模板',
+      link: {
+        type: 'generated-index',
+      },
+      items: [
+        'project/模板/题解模板',
+        'project/模板/LaTeX模板',
+        'project/模板/Mermaid模板',
+      ],
+    },
+    {
+      type: 'category',
+      label: '工具',
+      link: {
+        type: 'generated-index',
+      },
+      items: [
+        'project/工具/代码对拍器',
+        'project/工具/题目测试点配置文件生成器',
+        'project/工具/身份证号校验器',
+        'project/工具/电阻计算器',
+        'project/工具/多项式计算器',
+      ],
+    },
+    {
+      type: 'category',
+      label: '资料',
+      link: {
+        type: 'generated-index',
+      },
+      items: [
+        'project/资料/题目搬运',
+        'project/资料/C++汉化包',
+        'project/资料/C++冷知识',
+      ],
+    },
+    {
+      type: 'category',
       label: '设备',
       link: {
         type: 'generated-index',
@@ -28,6 +66,10 @@ const sidebars: SidebarsConfig = {
         'project/设备/AirPodsPro',
       ],
     },
+    "project/Home",
+    "project/CodeStyle",
+    "project/iGame",
+    "project/Test",
   ],
 };
 
