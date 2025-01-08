@@ -31,7 +31,7 @@ Home/
 │   ├── tags.yml                   # 标签配置文件
 │   └── solution/
 ├── docs/                          # 文档
-│   ├── competition/
+│   ├── contest/
 │   ├── math/
 │   ├── project/
 ├── src/                           # 源代码

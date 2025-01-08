@@ -12,7 +12,7 @@ export type FeatureItem = {
 export const FEATURES: FeatureItem[] = [
   {
     title: '竞赛',
-    url: '/docs/competition',
+    url: '/docs/contest',
     image: {
       src: '/img/undraw_typewriter.svg',
       width: 1009.54,
@@ -26,7 +26,7 @@ export const FEATURES: FeatureItem[] = [
     ),
   },
   {
-    title: '数学',
+    title: '笔记',
     url: '/docs/math',
     image: {
       src: '/img/undraw_react.svg',
@@ -35,8 +35,8 @@ export const FEATURES: FeatureItem[] = [
     },
     text: (
       <div>
-        数学（Mathematics）是研究数量、结构以及空间等概念及其变化的一门学科，属于形式科学的一种。
-        数学利用抽象化和逻辑推理，从计数、计算、量度、对物体形状及运动的观察发展而成。
+        笔记（Note）板块记录了多个学科的学习成果与心得，包括数学、科学、外语等。
+        这里汇聚了丰富的知识点和实践经验，为多领域的学习与应用提供了系统支持，是你探索新知的可靠伙伴。
       </div>
     ),
   },
@@ -50,7 +50,7 @@ export const FEATURES: FeatureItem[] = [
     },
     text: (
       <div>
-        项目板块汇集了丰富的资源和实践成果，包括实用的模板，全面的网站索引，以及各类编程项目和学习资料。
+        项目（Project）板块汇集了丰富的资源和实践成果，包括实用的模板工具，以及各类编程项目和学习资料。
         无论是学习还是开发，这里都能为你提供灵感和支持，助你在不同领域中高效前行。
       </div>
     ),

@@ -126,14 +126,14 @@ const config = {
             sidebarId: 'docs1',
             position: 'left',
             label: '竞赛',
-            to: '/docs/competition'
+            to: '/docs/contest'
           },
           {
             type: 'docSidebar',
             sidebarId: 'docs2',
             position: 'left',
-            label: '数学',
-            to: '/docs/math',
+            label: '笔记',
+            to: '/docs/note',
           },
           {
             type: 'docSidebar',
@@ -177,11 +177,11 @@ const config = {
             items: [
               {
                 label: '竞赛',
-                to: '/docs/competition',
+                to: '/docs/contest',
               },
               {
-                label: '数学',
-                to: '/docs/math',
+                label: '笔记',
+                to: '/docs/note',
               },
               {
                 label: '项目',

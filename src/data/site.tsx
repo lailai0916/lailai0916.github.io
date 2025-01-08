@@ -4,7 +4,7 @@ export type TagType =
   | 'favorite'
   | 'comprehensive'
   | 'academic'
-  | 'competition'
+  | 'contest'
   | 'opensource'
   | 'tutorial'
   | 'tool'
@@ -131,7 +131,7 @@ const Users: User[] = [
     preview: '/img/site/OI-Wiki.png',
     website: 'https://oi-wiki.org',
     source: 'https://github.com/OI-wiki/OI-wiki',
-    tags: ['competition', 'resource', 'opensource'],
+    tags: ['contest', 'resource', 'opensource'],
   },
   {
     title: 'OIerDb',
@@ -139,7 +139,7 @@ const Users: User[] = [
     preview: '/img/site/OIerDb.png',
     website: 'https://www.信息学.com',
     source: 'https://github.com/OIerDb-ng/OIerDb-data-generator',
-    tags: ['competition', 'resource', 'opensource'],
+    tags: ['contest', 'resource', 'opensource'],
   },
   {
     title: 'Graph Editor',
@@ -147,7 +147,7 @@ const Users: User[] = [
     preview: '/img/site/GraphEditor.png',
     website: 'https://csacademy.com/app/graph_editor/',
     source: null,
-    tags: ['competition', 'tool'],
+    tags: ['contest', 'tool'],
   },
   {
     title: 'Diff Tool',
@@ -155,7 +155,7 @@ const Users: User[] = [
     preview: '/img/site/DiffTool.png',
     website: 'https://csacademy.com/app/diffing_tool/',
     source: null,
-    tags: ['competition', 'tool'],
+    tags: ['contest', 'tool'],
   },
   {
     title: '洛谷',
@@ -163,7 +163,7 @@ const Users: User[] = [
     preview: null,
     website: 'https://www.luogu.com.cn',
     source: null,
-    tags: ['competition', 'test'],
+    tags: ['contest', 'test'],
   },
   {
     title: 'Codeforces',
@@ -171,7 +171,7 @@ const Users: User[] = [
     preview: '/img/site/Codeforces.png',
     website: 'https://codeforces.com',
     source: null,
-    tags: ['competition', 'test'],
+    tags: ['contest', 'test'],
   },
   {
     title: 'AtCoder',
@@ -179,7 +179,7 @@ const Users: User[] = [
     preview: '/img/site/AtCoder.png',
     website: 'https://atcoder.jp',
     source: null,
-    tags: ['competition', 'test'],
+    tags: ['contest', 'test'],
   },
   {
     title: 'Virtual Judge',
@@ -187,7 +187,7 @@ const Users: User[] = [
     preview: '/img/site/Vjudge.png',
     website: 'https://vjudge.net',
     source: null,
-    tags: ['competition', 'test'],
+    tags: ['contest', 'test'],
   },
   {
     title: '原题机',
@@ -195,7 +195,7 @@ const Users: User[] = [
     preview: '/img/site/yuantiji.png',
     website: 'http://yuantiji.ac/zh/',
     source: null,
-    tags: ['competition', 'tool'],
+    tags: ['contest', 'tool'],
   },
   {
     title: 'Code Golf',
@@ -203,7 +203,7 @@ const Users: User[] = [
     preview: '/img/site/CodeGolf.png',
     website: 'https://code.golf',
     source: null,
-    tags: ['competition', 'test'],
+    tags: ['contest', 'test'],
   },
   {
     title: 'Apple',
@@ -463,7 +463,7 @@ export const Tags: {[type in TagType]: Tag} = {
     description: 'Beautiful Docusaurus sites, polished and standing out from the initial template!',
     color: '#df5f1f',
   },
-  competition: {
+  contest: {
     label: '竞赛',
     description: 'Translated Docusaurus sites using the internationalization support with more than 1 locale.',
     color: '#df9f1f',
