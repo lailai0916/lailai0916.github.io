@@ -27,7 +27,7 @@ export const FEATURES: FeatureItem[] = [
   },
   {
     title: '笔记',
-    url: '/docs/math',
+    url: '/docs/note',
     image: {
       src: '/img/undraw_react.svg',
       width: 1108,

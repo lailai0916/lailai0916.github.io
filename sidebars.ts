@@ -14,7 +14,7 @@ const sidebars: SidebarsConfig = {
     },
   ],
   docs3: [
-    'project/introduction',
+    'project/index',
     {
       type: 'category',
       label: '模板',
