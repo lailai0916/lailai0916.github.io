@@ -14,23 +14,20 @@ const sidebars: SidebarsConfig = {
     },
   ],
   docs3: [
+    'project/introduction',
     {
       type: 'category',
-      label: 'qwq',
-      link: {type: 'doc', id: 'project/index'},
-      items: ['project/Home',],
+      label: '设备',
+      link: {
+        type: 'generated-index',
+      },
+      items: [
+        'project/设备/MacBook',
+        'project/设备/iPad',
+        'project/设备/iPhone',
+        'project/设备/AirPodsPro',
+      ],
     },
-    // {
-    //   type: 'category',
-    //   label: 'qwq',
-    //   link: {
-    //     type: 'doc',
-    //     id: 'project/index',
-    //   },
-    //   items: [
-    //     'project/Home',
-    //   ],
-    // },
   ],
 };
 

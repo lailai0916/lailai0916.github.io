@@ -234,7 +234,10 @@ const config = {
         respectPrefersColorScheme: true,
       },
       docs: {
-        sidebar: {hideable: true},
+        sidebar: {
+          hideable: true,
+          // autoCollapseCategories: true,
+        },
       },
       announcementBar: {
         id: 'announcement',
