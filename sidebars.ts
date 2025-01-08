@@ -66,10 +66,15 @@ const sidebars: SidebarsConfig = {
         'project/设备/AirPodsPro',
       ],
     },
-    "project/Home",
-    "project/CodeStyle",
-    "project/iGame",
-    "project/Test",
+    'project/Home',
+    'project/CodeStyle',
+    'project/iGame',
+    'project/Test',
+    {
+      type: 'link',
+      label: '其他',
+      href: 'https://vdse.bdstatic.com//192d9a98d782d9c74c96f09db9378d93.mp4',
+    },
   ],
 };
 
