@@ -11,6 +11,7 @@ sidebar_position: 0
 ## 参考资料
 
 - [维基百科](https://zh.wikipedia.org/wiki/Wikipedia:首页)
+- [你被骗了](https://vdse.bdstatic.com//192d9a98d782d9c74c96f09db9378d93.mp4)
 
 ## 高中数学
 
