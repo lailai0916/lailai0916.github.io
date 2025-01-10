@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="static/img/logo.svg" height="150">
+  <img src="static/img/logo.svg">
   <h1>lailai's Home</h1>
 </div>
 
