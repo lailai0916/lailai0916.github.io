@@ -7,25 +7,7 @@ import useBaseUrl, {useBaseUrlUtils} from '@docusaurus/useBaseUrl';
 import Features from '@site/src/data/features';
 import Heading from '@theme/Heading';
 import styles from './styles.module.css';
-
-// function HomepageHeader() {
-//   const {siteConfig} = useDocusaurusContext();
-//   return (
-//     <header className={clsx('hero hero--primary', styles.heroBanner)}>
-//       <div className="container">
-//         <Heading as="h1" className="hero__title">
-//           {siteConfig.title}
-//         </Heading>
-//         <p className="hero__subtitle">{siteConfig.tagline}</p>
-//         <div className={styles.buttons}>
-//           <Link className="button button--secondary button--lg" to="/blog">
-//             进入博客 →
-//           </Link>
-//         </div>
-//       </div>
-//     </header>
-//   );
-// }
+import React, { useEffect, useState } from 'react';
 
 function Feature({
   feature,
@@ -128,15 +110,71 @@ function TopBanner() {
   );
 }
 
+function Countdown() {
+  const calculateTimeLeft = () => {
+    const difference = +new Date('2025-01-29T00:00:00') - +new Date();
+    let timeLeft = {};
+
+    if (difference > 0) {
+      timeLeft = {
+        days: Math.floor(difference / (1000 * 60 * 60 * 24)),
+        hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
+        minutes: Math.floor((difference / 1000 / 60) % 60),
+        seconds: Math.floor((difference / 1000) % 60),
+      };
+    }
+
+    return timeLeft;
+  };
+
+  const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setTimeLeft(calculateTimeLeft());
+    }, 1000);
+
+    return () => clearTimeout(timer);
+  });
+
+  const timerComponents: JSX.Element[] = [];
+
+  Object.keys(timeLeft).forEach((interval) => {
+    if (!timeLeft[interval]) {
+      return;
+    }
+
+    timerComponents.push(
+      <span key={interval}>
+        {timeLeft[interval]} {interval}{' '}
+      </span>
+    );
+  });
+
+  return (
+    <div align="center">
+      <h1>距离2025春节还剩</h1>
+      <h1>
+        {timerComponents.length ? (
+          <span>{timerComponents}</span>
+        ) : (
+          <span>春节快乐!</span>
+        )}
+      </h1>
+    </div>
+  );
+};
+
 export default function Home() {
   const {siteConfig} = useDocusaurusContext();
   return (
-    <Layout title="Hello from lailai">
+    <Layout>
       <main>
         <TopBanner />
         <HeroBanner />
         <div className={styles.section}>
           <FeaturesContainer />
+          <Countdown />
         </div>
       </main>
     </Layout>

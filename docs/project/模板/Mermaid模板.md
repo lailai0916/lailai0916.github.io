@@ -1,10 +1,8 @@
+import BrowserWindow from '@site/src/components/BrowserWindow';
+
 # Mermaid 模板
 
-一个基于JavaScript的图表和绘图工具，可以渲染受Markdown启发的文本定义，以动态创建和修改图表。
-
-## 参考资料
-
-- [Mermaid](https://mermaid.js.org)
+[Mermaid](https://mermaid.js.org) 是一个基于 JavaScript 的图表和绘图工具，可以渲染受 Markdown 启发的文本定义，以动态创建和修改图表。
 
 ## 图表类型
 
@@ -18,6 +16,8 @@ graph TD;
     C-->D;
 ```
 
+<BrowserWindow>
+
 ```mermaid
 graph TD;
     A-->B;
@@ -25,6 +25,19 @@ graph TD;
     B-->D;
     C-->D;
 ```
+
+```mermaid
+journey
+  title 用户注册过程
+  section 登录
+    用户输入用户名: 5: me
+    用户输入密码: 5: me
+  section 注册
+    用户填写信息: 3: me
+    用户确认: 4: me
+```
+
+</BrowserWindow>
 
 ### 时序图
 
@@ -42,6 +55,8 @@ sequenceDiagram
     Bob-->>John: Jolly good!
 ```
 
+<BrowserWindow>
+
 ```mermaid
 sequenceDiagram
     participant Alice
@@ -55,6 +70,8 @@ sequenceDiagram
     John->>Bob: How about you?
     Bob-->>John: Jolly good!
 ```
+
+</BrowserWindow>
 
 ### 甘特图
 
@@ -71,6 +88,8 @@ Future task               :         des3, after des2, 5d
 Future task2              :         des4, after des3, 5d
 ```
 
+<BrowserWindow>
+
 ```mermaid
 gantt
 dateFormat  YYYY-MM-DD
@@ -83,6 +102,8 @@ Active task               :active,  des2, 2014-01-09, 3d
 Future task               :         des3, after des2, 5d
 Future task2              :         des4, after des3, 5d
 ```
+
+</BrowserWindow>
 
 ### 类图
 
@@ -103,6 +124,8 @@ Class01 : int gorilla
 Class08 <--> C2: Cool label
 ```
 
+<BrowserWindow>
+
 ```mermaid
 classDiagram
 Class01 <|-- AveryLongClass : Cool
@@ -120,6 +143,8 @@ Class01 : int gorilla
 Class08 <--> C2: Cool label
 ```
 
+</BrowserWindow>
+
 ### Git 图表
 
 ```
@@ -135,6 +160,8 @@ gitGraph
     commit
 ```
 
+<BrowserWindow>
+
 ```mermaid
 gitGraph
     commit
@@ -148,6 +175,8 @@ gitGraph
     commit
 ```
 
+</BrowserWindow>
+
 ### 实体关系图
 
 ```
@@ -157,12 +186,16 @@ erDiagram
     CUSTOMER }|..|{ DELIVERY-ADDRESS : uses
 ```
 
+<BrowserWindow>
+
 ```mermaid
 erDiagram
     CUSTOMER ||--o{ ORDER : places
     ORDER ||--|{ LINE-ITEM : contains
     CUSTOMER }|..|{ DELIVERY-ADDRESS : uses
 ```
+
+</BrowserWindow>
 
 ### 用户旅程图
 
@@ -178,6 +211,8 @@ journey
       Sit down: 5: Me
 ```
 
+<BrowserWindow>
+
 ```mermaid
 journey
     title My working day
@@ -189,6 +224,8 @@ journey
       Go downstairs: 5: Me
       Sit down: 5: Me
 ```
+
+</BrowserWindow>
 
 ### 象限图
 
@@ -209,6 +246,8 @@ quadrantChart
     Campaign F: [0.35, 0.78]
 ```
 
+<BrowserWindow>
+
 ```mermaid
 quadrantChart
     title Reach and engagement of campaigns
@@ -226,6 +265,8 @@ quadrantChart
     Campaign F: [0.35, 0.78]
 ```
 
+</BrowserWindow>
+
 ### 坐标图
 
 ```
@@ -237,6 +278,8 @@ xychart-beta
     line [5000, 6000, 7500, 8200, 9500, 10500, 11000, 10200, 9200, 8500, 7000, 6000]
 ```
 
+<BrowserWindow>
+
 ```mermaid
 xychart-beta
     title "Sales Revenue"
@@ -245,3 +288,5 @@ xychart-beta
     bar [5000, 6000, 7500, 8200, 9500, 10500, 11000, 10200, 9200, 8500, 7000, 6000]
     line [5000, 6000, 7500, 8200, 9500, 10500, 11000, 10200, 9200, 8500, 7000, 6000]
 ```
+
+</BrowserWindow>

@@ -1,3 +1,5 @@
+import BrowserWindow from '@site/src/components/BrowserWindow';
+
 # LaTeX 模板
 
 [$\LaTeX$](https://zh.wikipedia.org/wiki/LaTeX) 是一种基于 [$\TeX$](https://zh.wikipedia.org/wiki/TeX) 的排版系统，能够方便的生成数学公式。
@@ -40,9 +42,13 @@ $$
 \sum_{i=1}^{n} a_i
 ```
 
+<BrowserWindow>
+
 $$
 \sum_{i=1}^{n} a_i
 $$
+
+</BrowserWindow>
 
 ### 求积
 
@@ -50,9 +56,14 @@ $$
 \prod_{i=1}^{n} a_i
 ```
 
+
+<BrowserWindow>
+
 $$
 \prod_{i=1}^{n} a_i
 $$
+
+</BrowserWindow>
 
 ### 积分
 
@@ -60,9 +71,13 @@ $$
 \int_{a}^{b} f(x) \mathrm{d}x
 ```
 
+<BrowserWindow>
+
 $$
 \int_{a}^{b} f(x) \mathrm{d}x
 $$
+
+</BrowserWindow>
 
 ### 极限
 
@@ -70,9 +85,13 @@ $$
 \lim_{x\to\infty} f(x)
 ```
 
+<BrowserWindow>
+
 $$
 \lim_{x\to\infty} f(x)
 $$
+
+</BrowserWindow>
 
 ## 多行公式
 
@@ -87,6 +106,8 @@ $$
 \end{aligned}
 ```
 
+<BrowserWindow>
+
 $$
 \begin{aligned}
   f(x) &= a_1 \\
@@ -95,6 +116,8 @@ $$
   &= a_n
 \end{aligned}
 $$
+
+</BrowserWindow>
 
 ### 分段函数
 
@@ -106,6 +129,8 @@ f(x)=\begin{cases}
 \end{cases}
 ```
 
+<BrowserWindow>
+
 $$
 f(x)=\begin{cases}
   a_1 & x>0 \\
@@ -113,6 +138,8 @@ f(x)=\begin{cases}
   a_3 & x<0
 \end{cases}
 $$
+
+</BrowserWindow>
 
 ### 线性方程组
 
@@ -124,6 +151,8 @@ $$
 \end{cases}
 ```
 
+<BrowserWindow>
+
 $$
 \begin{cases}
   a_1x + b_1y + c_1z = d_1 \\
@@ -131,6 +160,8 @@ $$
   a_3x + b_3y + c_3z = d_3
 \end{cases}
 $$
+
+</BrowserWindow>
 
 ### 多行公式
 
@@ -142,6 +173,8 @@ $$
 \end{array}
 ```
 
+<BrowserWindow>
+
 $$
 \begin{array}{l}
   \cos \pi = 1 \\
@@ -149,6 +182,8 @@ $$
   \sin 2a = 2 \sin a \cos a
 \end{array}
 $$
+
+</BrowserWindow>
 
 :::tip
 
@@ -171,6 +206,8 @@ $$
 \end{bmatrix}
 ```
 
+<BrowserWindow>
+
 $$
 \begin{bmatrix}
   1 & 0 & \cdots & 0 \\
@@ -180,6 +217,8 @@ $$
 \end{bmatrix}
 $$
 
+</BrowserWindow>
+
 ## 字体
 
 ### 自定义名称
@@ -188,9 +227,13 @@ $$
 \operatorname{lca}{(6,8)}=24
 ```
 
+<BrowserWindow>
+
 $$
 \operatorname{lca}{(6,8)}=24
 $$
+
+</BrowserWindow>
 
 ### 正体
 
@@ -198,9 +241,13 @@ $$
 g=9.8\mathrm{m/s^2}
 ```
 
+<BrowserWindow>
+
 $$
 g=9.8\mathrm{m/s^2}
 $$
+
+</BrowserWindow>
 
 ### 直立体
 
@@ -208,6 +255,10 @@ $$
 \frac{\mathrm{d}}{\mathrm{d}x} f(x)
 ```
 
+<BrowserWindow>
+
 $$
 \frac{\mathrm{d}}{\mathrm{d}x} f(x)
 $$
+
+</BrowserWindow>
