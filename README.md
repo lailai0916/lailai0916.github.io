@@ -1,9 +1,7 @@
-<p align="center">
+<div align="center">
   <img src="static/img/logo.svg" height="150">
-</p>
-<h1 align="center">
-  lailai's Home
-</h1>
+  <h1 align="center">lailai's Home</h1>
+</div>
 
 ## 介绍
 
@@ -58,7 +56,7 @@ Home
 
 |               支付宝               |              微信支付              |
 | :--------------------------------: | :--------------------------------: |
-| <img src="static/img/qr-code/Alipay.svg" height="150"> | <img src="static/img/qr-code/WeChat.svg" height="150"> |
+| ![](static/img/qr-code/Alipay.svg) | ![](static/img/qr-code/WeChat.svg) |
 
 ## 许可证
 
