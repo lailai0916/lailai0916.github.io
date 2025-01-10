@@ -1,44 +1,31 @@
-// @ts-check
-// `@type` JSDoc annotations allow editor autocompletion and type checking
-// (when paired with `@ts-check`).
-// There are various equivalent ways to declare your Docusaurus config.
-// See: https://docusaurus.io/docs/api/docusaurus-config
-
 import {themes as prismThemes} from 'prism-react-renderer';
-import type {Options as IdealImageOptions} from '@docusaurus/plugin-ideal-image';
+import type {Config} from '@docusaurus/types';
+import type * as Preset from '@docusaurus/preset-classic';
 
+import type {Options as IdealImageOptions} from '@docusaurus/plugin-ideal-image';
 import remarkMath from 'remark-math';
 import rehypeKatex from 'rehype-katex';
 
-/** @type {import('@docusaurus/types').Config} */
-const config = {
+// This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
+
+const config: Config = {
   title: 'lailai\'s Home',
   tagline: '光锥之内，就是命运。',
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
-  // url: 'https://your-docusaurus-site.example.com',
+  url: 'https://lailai0916.github.io',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
-  // baseUrl: '/',
-
-
-
-  url: 'https://lailai0916.github.io',
   baseUrl: '/',
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
   organizationName: 'lailai0916', // Usually your GitHub org/user name.
   projectName: 'lailai\'s Home', // Usually your repo name.
+
   trailingSlash: false,
-
-
-
-
-
-  // onBrokenLinks: 'throw',
-  onBrokenLinks: 'warn',
+  onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
 
   // Even if you don't use internationalization, you can use this field to set
@@ -52,28 +39,21 @@ const config = {
   presets: [
     [
       'classic',
-      /** @type {import('@docusaurus/preset-classic').Options} */
-      ({
+      {
         docs: {
+          sidebarPath: './sidebars.ts',
+
           // showLastUpdateAuthor: true,
           showLastUpdateTime: true,
-
           remarkPlugins: [remarkMath],
           rehypePlugins: [rehypeKatex],
 
-          sidebarPath: './sidebars.ts',
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           // editUrl: 'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
         },
 
         blog: {
-          // showLastUpdateAuthor: true,
-          showLastUpdateTime: true,
-
-          remarkPlugins: [remarkMath],
-          rehypePlugins: [rehypeKatex],
-
           showReadingTime: true,
           blogSidebarCount: 'ALL',
           blogSidebarTitle: '文章列表',
@@ -81,6 +61,10 @@ const config = {
             type: ['rss', 'atom'],
             xslt: true,
           },
+          // showLastUpdateAuthor: true,
+          showLastUpdateTime: true,
+          remarkPlugins: [remarkMath],
+          rehypePlugins: [rehypeKatex],
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           // editUrl: 'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
@@ -92,9 +76,142 @@ const config = {
         theme: {
           customCss: './src/css/custom.css',
         },
-      }),
+      } satisfies Preset.Options,
     ],
   ],
+
+  themeConfig: {
+    // Replace with your project's social card
+    image: 'img/logo.svg',
+    navbar: {
+      title: 'lailai\'s Home',
+      logo: {
+        alt: 'lailai\'s Logo',
+        src: 'img/logo.svg',
+      },
+      items: [
+        {
+          type: 'docSidebar',
+          sidebarId: 'docs1',
+          position: 'left',
+          label: '竞赛',
+        },
+        {
+          type: 'docSidebar',
+          sidebarId: 'docs2',
+          position: 'left',
+          label: '笔记',
+        },
+        {
+          type: 'docSidebar',
+          sidebarId: 'docs3',
+          position: 'left',
+          label: '项目',
+        },
+        {
+          to: 'blog',
+          label: '博客',
+          position: 'left'
+        },
+        {
+          to: 'about',
+          label: '关于',
+          position: 'right'
+        },
+        {
+          label: '更多',
+          position: 'right',
+          items: [
+            { label: '友链', to: 'friend' },
+            { label: '网站', to: 'site' },
+            { label: '设置', to: 'set' },
+          ],
+        },
+        {
+          href: 'https://github.com/lailai0916/lailai0916.github.io',
+          // label: 'GitHub',
+          className: 'header-github-link',
+          position: 'right',
+        },
+      ],
+    },
+    footer: {
+      links: [
+        {
+          title: '文档',
+          items: [
+            {
+              label: '竞赛',
+              to: 'docs/contest',
+            },
+            {
+              label: '笔记',
+              to: 'docs/note',
+            },
+            {
+              label: '项目',
+              to: 'docs/project',
+            },
+          ],
+        },
+        {
+          title: '社区',
+          items: [
+            {
+              label: 'Telegram',
+              href: 'https://t.me/lailai0916',
+            },
+            {
+              label: 'LinkedIn',
+              href: 'https://www.linkedin.com/in/lailai0916',
+            },
+            {
+              label: 'X',
+              href: 'https://x.com/lailai0x394',
+            },
+          ],
+        },
+        {
+          title: '更多',
+          items: [
+            {
+              label: '博客',
+              to: 'blog',
+            },
+            {
+              label: '关于',
+              to: 'about',
+            },
+            {
+              label: '设置',
+              to: 'set',
+            },
+          ],
+        },
+      ],
+      copyright: `Copyright © 2024-${new Date().getFullYear()} lailai. Built with <a href="https://docusaurus.io" target="_blank">Docusaurus</a>. <p xmlns:cc="http://creativecommons.org/ns#" >This website's content is licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">CC BY-NC-SA 4.0<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/nc.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/sa.svg?ref=chooser-v1" alt=""></a></p>`,
+    },
+    prism: {
+      theme: prismThemes.github,
+      darkTheme: prismThemes.dracula,
+    },
+    colorMode: {
+      respectPrefersColorScheme: true,
+    },
+    docs: {
+      sidebar: {
+        hideable: true,
+        // autoCollapseCategories: true,
+      },
+    },
+    announcementBar: {
+      id: 'announcement',
+      content: '🎊 Hello, 2025! 🎊',
+      backgroundColor: '#ffffff',
+      textColor: '#000000',
+      isCloseable: true,
+    },
+  } satisfies Preset.ThemeConfig,
 
   markdown: {
     mermaid: true,
@@ -108,145 +225,6 @@ const config = {
       crossorigin: 'anonymous',
     },
   ],
-
-  themeConfig:
-    /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
-    ({
-      // Replace with your project's social card
-      image: 'img/logo.svg',
-      navbar: {
-        title: 'lailai\'s Home',
-        logo: {
-          alt: 'lailai\'s Logo',
-          src: 'img/logo.svg',
-        },
-        items: [
-          {
-            type: 'docSidebar',
-            sidebarId: 'docs1',
-            position: 'left',
-            label: '竞赛',
-            to: '/docs/contest'
-          },
-          {
-            type: 'docSidebar',
-            sidebarId: 'docs2',
-            position: 'left',
-            label: '笔记',
-            to: '/docs/note',
-          },
-          {
-            type: 'docSidebar',
-            sidebarId: 'docs3',
-            position: 'left',
-            label: '项目',
-            to: '/docs/project',
-          },
-          {
-            to: '/blog',
-            label: '博客',
-            position: 'left'
-          },
-          {
-            to: '/about',
-            label: '关于',
-            position: 'right'
-          },
-          {
-            label: '更多',
-            position: 'right',
-            items: [
-              { label: '友链', to: '/friend' },
-              { label: '网站', to: '/site' },
-              { label: '设置', to: '/set' },
-            ],
-          },
-          {
-            href: 'https://github.com/lailai0916/lailai0916.github.io',
-            // label: 'GitHub',
-            position: 'right',
-            className: 'header-github-link',
-            // 'aria-label': 'GitHub repository',
-          },
-        ],
-      },
-      footer: {
-        links: [
-          {
-            title: '文档',
-            items: [
-              {
-                label: '竞赛',
-                to: '/docs/contest',
-              },
-              {
-                label: '笔记',
-                to: '/docs/note',
-              },
-              {
-                label: '项目',
-                to: '/docs/project',
-              },
-            ],
-          },
-          {
-            title: '社区',
-            items: [
-              {
-                label: 'Telegram',
-                href: 'https://t.me/lailai0916',
-              },
-              {
-                label: 'LinkedIn',
-                href: 'https://www.linkedin.com/in/lailai0916',
-              },
-              {
-                label: 'X',
-                href: 'https://x.com/lailai0x394',
-              },
-            ],
-          },
-          {
-            title: '更多',
-            items: [
-              {
-                label: '博客',
-                to: '/blog',
-              },
-              {
-                label: '关于',
-                to: '/about',
-              },
-              {
-                label: '设置',
-                to: '/set',
-              },
-            ],
-          },
-        ],
-        copyright: `Copyright © 2024-${new Date().getFullYear()} lailai. Built with <a href="https://docusaurus.io" target="_blank">Docusaurus</a>. <p xmlns:cc="http://creativecommons.org/ns#" >This website's content is licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">CC BY-NC-SA 4.0<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/nc.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/sa.svg?ref=chooser-v1" alt=""></a></p>`,
-      },
-      prism: {
-        theme: prismThemes.github,
-        darkTheme: prismThemes.dracula,
-      },
-      colorMode: {
-        respectPrefersColorScheme: true,
-      },
-      docs: {
-        sidebar: {
-          hideable: true,
-          // autoCollapseCategories: true,
-        },
-      },
-      announcementBar: {
-        id: 'announcement',
-        content: '🎊 Hello, 2025! 🎊',
-        backgroundColor: '#ffffff',
-        textColor: '#000000',
-        isCloseable: true,
-      },
-    }),
 
   themes: [
     // ... Your other themes.
@@ -272,7 +250,6 @@ const config = {
         indexBlog: true, // 是否对blog进行索引
         indexPages: false, // 是否对pages进行索引
         docsRouteBasePath: ["/docs","/linux","/services"],
-
       }),
     ],
   ],
@@ -305,7 +282,7 @@ const config = {
       {
         redirects: [
           {
-            from: '/v50',
+            from: 'v50',
             to: 'https://v50to.me',
           },
         ],

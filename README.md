@@ -27,23 +27,23 @@ Docusaurus 是一个开源的静态网站生成器，专门用于构建文档网
 ## 文件目录
 
 ```bash
-Home/
-├── blog/                          # 博客
+Home
+├── blog                           # 博客
 │   ├── authors.yml                # 作者配置文件
 │   ├── tags.yml                   # 标签配置文件
-│   └── solution/
-├── docs/                          # 文档
-│   ├── contest/
-│   ├── note/
-│   ├── project/
-├── src/                           # 源代码
-│   ├── components/                # 自定义组件
-│   ├── css/                       # 自定义 CSS
-│   ├── data/                      # 数据资料
-│   ├── pages/                     # 自定义页面
-│   └── theme/                     # 自定义主题
+│   └── solution
+├── docs                           # 文档
+│   ├── contest
+│   ├── note
+│   ├── project
+├── src                            # 源代码
+│   ├── components                 # 自定义组件
+│   ├── css                        # 自定义 CSS
+│   ├── data                       # 数据资料
+│   ├── pages                      # 自定义页面
+│   └── theme                      # 自定义主题
 ├── static                         # 静态资源
-│   └── img/                       # 静态图片
+│   └── img                        # 静态图片
 ├── babel.config.js
 ├── docusaurus.config.ts           # 网站配置文件
 ├── sidebars.ts                    # 文档侧边栏
