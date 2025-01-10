@@ -282,7 +282,7 @@ const config: Config = {
       {
         redirects: [
           {
-            from: 'v50',
+            from: '/v50',
             to: 'https://v50to.me',
           },
         ],
