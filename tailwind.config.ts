@@ -20,7 +20,6 @@ const twConfig: Config = {
       },
       fontFamily: {
         misans: ['misans'],
-        sans: ['PingFang SC', 'Helvetica', 'Arial', 'sans-serif'],
       },
       borderRadius: {
         card: 'var(--ifm-card-border-radius)',
