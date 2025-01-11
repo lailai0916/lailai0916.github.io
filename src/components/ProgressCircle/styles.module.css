@@ -19,7 +19,7 @@
   height: 100%;
   fill: transparent;
   stroke-width: 8;
-  stroke: #d7d7d7;
+  stroke: #e7e7e7;
   stroke-linecap: round;
   transform: translate(5px, 5px);
 }
@@ -39,6 +39,7 @@
   text-align: center;
   font-weight: 500;
   font-size: 3em;
+  user-select: none;
 }
 
 .circle div span {
@@ -48,6 +49,7 @@
   transform: translateX(-50%) translateY(-10px);
   letter-spacing: 0.1em;
   text-transform: uppercase;
+  user-select: none;
 }
 
 .dots {

@@ -63,7 +63,6 @@ function FeaturesContainer() {
 }
 
 function HeroBanner() {
-  const {siteConfig} = useDocusaurusContext();
   return (
     <div className={styles.hero}>
       <div className={styles.heroInner}>
