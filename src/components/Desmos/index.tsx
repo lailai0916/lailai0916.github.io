@@ -1,4 +1,5 @@
 import React from 'react';
+import styles from './styles.module.css';
 
 export default function Desmos({url}: {url: string}): JSX.Element {
   return (
@@ -6,14 +7,7 @@ export default function Desmos({url}: {url: string}): JSX.Element {
       <iframe
         src={url}
         title={url}
-        style={{
-          border: '1px solid #ccc',
-          width: '100%',
-          maxWidth: '400px',
-          height: 'auto',
-          aspectRatio: '1 / 1',
-          maxHeight: '400px',
-        }}
+        className={styles['iframe-container']}
       />
     </div>
   );
