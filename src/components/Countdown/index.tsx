@@ -12,25 +12,27 @@ export default function Countdown() {
   });
   const [isTimeUp, setIsTimeUp] = useState(false);
 
-  useEffect(() => {
+  const calculateTimeLeft = () => {
     const endDate = new Date('2025/01/29 00:00:00').getTime();
-    const timer = setInterval(() => {
-      const nowDate = new Date().getTime();
-      const distance = endDate - nowDate;
+    const nowDate = new Date().getTime();
+    const distance = endDate - nowDate;
 
-      if (distance < 0) {
-        setIsTimeUp(true);
-        clearInterval(timer);
-        return;
-      }
+    if (distance < 0) {
+      setIsTimeUp(true);
+      return;
+    }
 
-      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-      setTimeLeft({ days, hours, minutes, seconds });
-    }, 100);
+    setTimeLeft({ days, hours, minutes, seconds });
+  };
+
+  useEffect(() => {
+    calculateTimeLeft();
+    const timer = setInterval(calculateTimeLeft, 1000);
 
     return () => clearInterval(timer);
   }, []);
