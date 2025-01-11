@@ -7,7 +7,7 @@ export default function Desmos({url}: {url: string}): JSX.Element {
       <iframe
         src={url}
         title={url}
-        className={styles['iframe-container']}
+        className={styles.container}
       />
     </div>
   );
