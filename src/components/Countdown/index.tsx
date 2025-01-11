@@ -40,7 +40,7 @@ export default function Countdown() {
 
   if (isTimeUp) {
     return (
-      <div className={styles.container}>
+      <div className="container">
         <Heading as="h2" className={styles.year}>
           2025
         </Heading>

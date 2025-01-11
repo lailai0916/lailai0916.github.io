@@ -16,8 +16,10 @@
 
 .year {
   font-size: 5em;
+  text-align: center;
 }
 
 .message {
   font-size: 3em;
+  text-align: center;
 }
