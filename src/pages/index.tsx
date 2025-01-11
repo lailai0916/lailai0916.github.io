@@ -8,7 +8,7 @@ import Features from '@site/src/data/features';
 import Heading from '@theme/Heading';
 import styles from './styles.module.css';
 
-import Countdown from '../components/Countdown';
+import Countdown from '@site/src/components/Countdown';
 
 function Feature({
   feature,
