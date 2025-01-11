@@ -1,3 +1,4 @@
+import clsx from 'clsx';
 import { useEffect, useState } from 'react';
 import styles from './styles.module.css';
 import Heading from '@theme/Heading';
@@ -32,7 +33,7 @@ export default function Countdown() {
 
   useEffect(() => {
     calculateTimeLeft();
-    const timer = setInterval(calculateTimeLeft, 1000);
+    const timer = setInterval(calculateTimeLeft, 300);
 
     return () => clearInterval(timer);
   }, []);
@@ -51,8 +52,8 @@ export default function Countdown() {
   }
 
   return (
-    <div className={styles.container}>
-      <Heading as="h2">
+    <div className="container">
+      <Heading as="h2" className={clsx('margin-bottom--lg', 'text--center')}>
         距离 2025 年春节还剩
       </Heading>
       <div className={styles.time}>
