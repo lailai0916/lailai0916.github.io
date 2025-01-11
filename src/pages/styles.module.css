@@ -11,6 +11,8 @@
   width: auto;
   max-height: 128px;
   margin: 0 auto;
+  user-select: none;
+  pointer-events: none;
 }
 
 .featureHeading {
@@ -87,9 +89,12 @@ html[data-theme='dark'] .hero {
   animation-duration: 1s;
   animation-name: jack-in-the-box;
   float: right;
-  margin-top: 15px;
-  padding: 0 20px 20px;
+  padding: 20px 20px;
   height: auto;
+  /* box-shadow: 0 0 20px rgba(0, 123, 255, 0.8), 
+              0 0 40px rgba(0, 123, 255, 0.6), 
+              0 0 60px rgba(0, 123, 255, 0.5), 
+              0 0 100px rgba(0, 123, 255, 0.3); */
 }
 
 .indexCtas {
