@@ -2,7 +2,7 @@ import clsx from 'clsx';
 import { useEffect, useState } from 'react';
 import styles from './styles.module.css';
 import Heading from '@theme/Heading';
-import ProgressCircle from '../ProgressCircle';
+import ProgressCircle from '@site/src/components/ProgressCircle';
 
 export default function Countdown() {
   const [timeLeft, setTimeLeft] = useState({
