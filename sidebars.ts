@@ -66,6 +66,17 @@ const sidebars: SidebarsConfig = {
         'project/设备/AirPodsPro',
       ],
     },
+    {
+      type: 'category',
+      label: 'Docusaurus',
+      link: {
+        type: 'generated-index',
+      },
+      items: [
+        'project/Docusaurus/开始',
+        'project/Docusaurus/安装',
+      ],
+    },
     'project/Home',
     'project/CodeStyle',
     'project/iGame',
