@@ -39,10 +39,14 @@ export default function Countdown() {
 
   if (isTimeUp) {
     return (
-      <h2 className={styles.newYear}>
-        2025<br />
-        <span>Happy Chinese New Year</span>
-      </h2>
+      <div className={styles.container}>
+        <Heading as="h2" className={styles.year}>
+          2025
+        </Heading>
+        <strong className={styles.message}>
+          Happy Chinese New Year!
+        </strong>
+      </div>
     );
   }
 

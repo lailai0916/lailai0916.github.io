@@ -7,11 +7,30 @@ import ColorGenerator from '@site/src/components/ColorGenerator';
 
 Testing new website features...
 
-## 选项
+## 实时编辑器
 
-- [ ] 任务一
-- [x] 任务二
-- [ ] 任务三
+```jsx live
+function Clock(props) {
+  const [date, setDate] = useState(new Date());
+  useEffect(() => {
+    const timerID = setInterval(() => tick(), 1000);
+
+    return function cleanup() {
+      clearInterval(timerID);
+    };
+  });
+
+  function tick() {
+    setDate(new Date());
+  }
+
+  return (
+    <div>
+      <h2>It is {date.toLocaleTimeString()}.</h2>
+    </div>
+  );
+}
+```
 
 ## 折叠
 

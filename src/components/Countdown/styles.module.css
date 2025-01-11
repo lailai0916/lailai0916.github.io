@@ -13,21 +13,17 @@
   }
 }
 
-.newYear {
-  font-size: 8em;
-  font-weight: 500;
-  text-align: center;
-  line-height: 0.6em;
-}
-
-.newYear span {
-  font-size: 0.5em;
-  font-weight: 300;
-}
-
 .container {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 20px;
+}
+
+.year {
+  font-size: 5em;
+}
+
+.message {
+  font-size: 3em;
 }

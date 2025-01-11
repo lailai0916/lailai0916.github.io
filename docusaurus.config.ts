@@ -229,6 +229,7 @@ const config: Config = {
   themes: [
     // ... Your other themes.
     '@docusaurus/theme-mermaid',
+    '@docusaurus/theme-live-codeblock',
     [
         // 本地搜索
         // https://github.com/easyops-cn/docusaurus-search-local
