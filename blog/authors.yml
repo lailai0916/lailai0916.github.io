@@ -3,7 +3,9 @@ lailai:
   title: Blogger
   url: https://www.luogu.com.cn/user/455474
   image_url: /img/avatar/lailai.png
+  page: true
   socials:
     x: lailai0x394
     linkedin: lailai0916
     github: lailai0916
+    Luogu: https://www.luogu.com.cn/user/455474
