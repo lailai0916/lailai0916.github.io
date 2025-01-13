@@ -8,7 +8,7 @@ import Features from '@site/src/data/features';
 import Heading from '@theme/Heading';
 import styles from './styles.module.css';
 
-import Countdown from '@site/src/components/Countdown';
+import Timer from '@site/src/components/Timer';
 
 function Feature({
   feature,
@@ -119,7 +119,7 @@ export default function Home() {
         <HeroBanner />
         <div className={styles.section}>
           <FeaturesContainer />
-          <Countdown />
+          <Timer />
         </div>
       </main>
     </Layout>
