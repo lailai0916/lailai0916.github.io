@@ -73,6 +73,10 @@ const config: Config = {
           onInlineAuthors: 'warn',
           onUntruncatedBlogPosts: 'warn',
         },
+        pages: {
+          remarkPlugins: [remarkMath],
+          rehypePlugins: [rehypeKatex],
+        },
         theme: {
           customCss: './src/css/custom.css',
         },
@@ -231,11 +235,8 @@ const config: Config = {
     '@docusaurus/theme-mermaid',
     '@docusaurus/theme-live-codeblock',
     [
-        // 本地搜索
-        // https://github.com/easyops-cn/docusaurus-search-local
+      // https://github.com/easyops-cn/docusaurus-search-local
       require.resolve("@easyops-cn/docusaurus-search-local"),
-      /** @type {import("@easyops-cn/docusaurus-search-local").PluginOptions} */
-      // @ts-ignore
       ({
         // ... Your options.
         // `hashed` is recommended as long-term-cache of index file is possible.
@@ -246,7 +247,7 @@ const config: Config = {
         // language:  "zh",
         // ```
 
-        language: ["en", "zh"], // 搜索语言
+        language: ["en", "zh"],
         indexDocs: true, // 是否对docs进行索引
         indexBlog: true, // 是否对blog进行索引
         indexPages: false, // 是否对pages进行索引

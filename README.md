@@ -7,15 +7,13 @@
 
 本项目使用 [Docusaurus](https://docusaurus.io) 构建，项目托管于 [GitHub](https://github.com/lailai0916/lailai0916.github.io)。
 
-Docusaurus 是一个开源的静态网站生成器，专门用于构建文档网站。
-
-它由 Facebook 开发，旨在帮助开发者和团队轻松创建和维护技术文档、知识库、博客等。
+Docusaurus 是一个由 Facebook 开发的开源的静态网站生成器，专门用于构建文档网站。
 
 ## 特性
 
 - 🦖 **Docusaurus** - 基于 [Docusaurus](https://docusaurus.io)，提供强大的文档生成和博客功能。
 - 🌱 **易于使用** - 通过简单的配置和 Markdown 文件管理，快速创建文档网站。
-- 🎨 **美观整洁** - 优先考虑阅读体验，界面简洁而美观。
+- 🎨 **美观简洁** - 优先考虑阅读体验，界面简洁而美观。
 - ✍️ **Markdown 支持** - 书写方便，支持 Markdown 和 KaTeX，适合技术文档。
 - 🌐 **国际化** - 内置多语言支持，便于跨语言环境的文档管理。
 - 🎨 **主题与插件** - 提供丰富的主题和插件，支持高度自定义的外观和功能。
