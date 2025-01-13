@@ -55,6 +55,9 @@ const config: Config = {
 
         blog: {
           showReadingTime: true,
+          blogTitle: '博客',
+          blogDescription: 'lailai\'s Blog',
+          postsPerPage: 'ALL',
           blogSidebarTitle: '文章列表',
           blogSidebarCount: 'ALL',
           feedOptions: {

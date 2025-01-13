@@ -1,6 +1,6 @@
 ---
 title: 题解：AT_arc168_a [ARC168A] <Inversion>
-date: 2023-11-28
+date: 2023-11-28T21:25
 authors: [lailai]
 tags: [solution, atcoder]
 ---

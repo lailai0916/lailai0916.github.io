@@ -1,6 +1,6 @@
 ---
 title: 题解：AT_utpc2021_a UTPC
-date: 2023-05-20
+date: 2023-05-20T15:33
 authors: [lailai]
 tags: [solution, atcoder]
 ---
