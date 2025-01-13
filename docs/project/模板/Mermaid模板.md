@@ -26,17 +26,6 @@ graph TD;
     C-->D;
 ```
 
-```mermaid
-journey
-  title 用户注册过程
-  section 登录
-    用户输入用户名: 5: me
-    用户输入密码: 5: me
-  section 注册
-    用户填写信息: 3: me
-    用户确认: 4: me
-```
-
 </BrowserWindow>
 
 ### 时序图
