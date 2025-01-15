@@ -1,6 +1,6 @@
 # lailai's EDC
 
-[ECD](https://zh.wikipedia.org/wiki/日常携带品)（**E**very**d**ay **c**arry）即日常携带品，指的是一个人日常携带的一些有用物品。
+[ECD](https://zh.wikipedia.org/wiki/日常携带品) 即日常携带品（**E**very**d**ay **c**arry），指的是一个人日常携带的一些有用物品。
 
 ## 数码设备
 
