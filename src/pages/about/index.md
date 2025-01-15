@@ -15,7 +15,11 @@ import styles from './styles.module.css';
 
 <section className="margin-top--lg margin-bottom--lg text--center">
   <Heading as="h1">
-    {'🎉\xa0'}<TextStyle text={'Hello,\xa0I\'m\xa0lailai'} style="holiday"/>{'\xa0🥳'}
+    {'🎉\xa0'}
+    <TextStyle style="holiday">
+      {'Hello,\xa0I\'m\xa0lailai'}
+    </TextStyle>
+    {'\xa0🥳'}
   </Heading>
 </section>
 
@@ -48,62 +52,62 @@ import styles from './styles.module.css';
 
 ## 我的设备
 
-<div className={styles.deviceItem}>
+<div className={styles.item}>
   <img src="/img/device/macbook.svg" />
   <span>MacBook Pro 16 英寸</span>
 </div>
-<div className={styles.deviceItem}>
+<div className={styles.item}>
   <img src="/img/device/ipad.svg" />
   <span>iPad Pro 11 英寸</span>
 </div>
-<div className={styles.deviceItem}>
+<div className={styles.item}>
   <img src="/img/device/iphone.svg" />
   <span>iPhone 13</span>
 </div>
-<div className={styles.deviceItem}>
+<div className={styles.item}>
   <img src="/img/device/airpods.pro.svg" />
   <span>AirPods Pro 2</span>
 </div>
-<div className={styles.deviceItem}>
+<div className={styles.item}>
   <img src="/img/device/airpods.max.svg" />
   <span>AirPods Max</span>
 </div>
-<div className={styles.deviceItem}>
+<div className={styles.item}>
   <img src="/img/device/backpack.svg" />
   <span>tomtoc Voyage T50 Laptop Backpack</span>
 </div>
-<div className={styles.deviceItem}>
+<div className={styles.item}>
   <img src="/img/device/computermouse.svg" />
   <span>Logitech G PRO X SUPERLIGHT 2</span>
 </div>
-<div className={styles.deviceItem}>
+<div className={styles.item}>
   <img src="/img/device/externaldrive.svg" />
   <span>SanDisk Extreme PRO</span>
 </div>
 
 ## 联系方式
 
-<div className={styles.deviceItem}>
+<div className={styles.item}>
   <Icon icon="ri:phone-line" width="20" height="20" />
   <Link to="tel:+86 17757102577">+86 17757102577</Link>
 </div>
-<div className={styles.deviceItem}>
+<div className={styles.item}>
   <Icon icon="ri:mail-line" width="20" height="20" />
   <Link to="mailto:lailai0x394@gmail.com">lailai0x394@gmail.com</Link>
 </div>
-<div className={styles.deviceItem}>
+<div className={styles.item}>
   <Icon icon="ri:telegram-line" width="20" height="20" />
   <Link to="https://t.me/lailai0916">lailai0x394</Link>
 </div>
-<div className={styles.deviceItem}>
+<div className={styles.item}>
   <Icon icon="ri:twitter-x-line" width="20" height="20" />
   <Link to="https://x.com/lailai0x394">lailai0x394</Link>
 </div>
-<div className={styles.deviceItem}>
+<div className={styles.item}>
   <Icon icon="ri:linkedin-line" width="20" height="20" />
   <Link to="https://www.linkedin.com/in/lailai0916">lailai0916</Link>
 </div>
-<div className={styles.deviceItem}>
+<div className={styles.item}>
   <Icon icon="ri:github-line" width="20" height="20" />
   <Link to="https://github.com/lailai0916">lailai0916</Link>
 </div>

@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { ReactNode } from 'react';
 import styles from './styles.module.css';
 
 interface TextStyleProps {
-  text: string;
+  children: ReactNode;
   style: string;
 }
 
@@ -12,11 +12,11 @@ const styleMap: { [key: string]: string } = {
   other: styles.otherTextStyle,
 };
 
-export default function TextStyle({ text, style }: TextStyleProps): JSX.Element {
+export default function TextStyle({ children, style }: TextStyleProps): JSX.Element {
   const className = styleMap[style] || '';
   return (
     <span className={className}>
-      {text}
+      {children}
     </span>
   );
 }
