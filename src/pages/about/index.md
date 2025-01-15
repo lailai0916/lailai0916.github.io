@@ -49,35 +49,35 @@ import styles from './styles.module.css';
 ## 我的设备
 
 <div className={styles.deviceItem}>
-  <img src="img/device/macbook.svg" />
+  <img src="/img/device/macbook.svg" />
   <span>MacBook Pro 16 英寸</span>
 </div>
 <div className={styles.deviceItem}>
-  <img src="img/device/ipad.svg" />
+  <img src="/img/device/ipad.svg" />
   <span>iPad Pro 11 英寸</span>
 </div>
 <div className={styles.deviceItem}>
-  <img src="img/device/iphone.svg" />
+  <img src="/img/device/iphone.svg" />
   <span>iPhone 13</span>
 </div>
 <div className={styles.deviceItem}>
-  <img src="img/device/airpods.pro.svg" />
+  <img src="/img/device/airpods.pro.svg" />
   <span>AirPods Pro 2</span>
 </div>
 <div className={styles.deviceItem}>
-  <img src="img/device/airpods.max.svg" />
+  <img src="/img/device/airpods.max.svg" />
   <span>AirPods Max</span>
 </div>
 <div className={styles.deviceItem}>
-  <img src="img/device/backpack.svg" />
+  <img src="/img/device/backpack.svg" />
   <span>tomtoc Voyage T50 Laptop Backpack</span>
 </div>
 <div className={styles.deviceItem}>
-  <img src="img/device/computermouse.svg" />
+  <img src="/img/device/computermouse.svg" />
   <span>Logitech G PRO X SUPERLIGHT 2</span>
 </div>
 <div className={styles.deviceItem}>
-  <img src="img/device/externaldrive.svg" />
+  <img src="/img/device/externaldrive.svg" />
   <span>SanDisk Extreme PRO</span>
 </div>
 

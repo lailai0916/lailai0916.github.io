@@ -90,6 +90,7 @@ const config: Config = {
     // Replace with your project's social card
     image: 'img/logo.svg',
     navbar: {
+      // hideOnScroll: true,
       title: 'lailai\'s Home',
       logo: {
         alt: 'lailai\'s Logo',

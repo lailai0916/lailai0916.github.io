@@ -69,7 +69,7 @@ function HeroBanner() {
         <Heading as="h1" className={styles.heroProjectTagline}>
           <img
             alt="lailai's Logo"
-            src="img/logo.svg"
+            src="/img/logo.svg"
             className={styles.heroLogo}
             width="200"
             height="200"
