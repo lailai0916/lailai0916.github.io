@@ -12,9 +12,9 @@ export type FeatureItem = {
 export const FEATURES: FeatureItem[] = [
   {
     title: '竞赛',
-    url: '/docs/contest',
+    url: 'docs/contest',
     image: {
-      src: '/img/undraw_typewriter.svg',
+      src: 'img/undraw_typewriter.svg',
       width: 1009.54,
       height: 717.96,
     },
@@ -27,9 +27,9 @@ export const FEATURES: FeatureItem[] = [
   },
   {
     title: '笔记',
-    url: '/docs/note',
+    url: 'docs/note',
     image: {
-      src: '/img/undraw_react.svg',
+      src: 'img/undraw_react.svg',
       width: 1108,
       height: 731.18,
     },
@@ -42,9 +42,9 @@ export const FEATURES: FeatureItem[] = [
   },
   {
     title: '项目',
-    url: '/docs/project',
+    url: 'docs/project',
     image: {
-      src: '/img/undraw_version_control.svg',
+      src: 'img/undraw_version_control.svg',
       width: 1038.23,
       height: 693.31,
     },

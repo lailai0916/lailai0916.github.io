@@ -56,7 +56,7 @@ Home
 
 |               支付宝               |              微信支付              |
 | :--------------------------------: | :--------------------------------: |
-| ![](static/img/qr-code/Alipay.svg) | ![](static/img/qr-code/WeChat.svg) |
+| ![](static/img/qrcode/Alipay.svg) | ![](static/img/qrcode/WeChat.svg) |
 
 ## 许可证
 

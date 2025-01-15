@@ -69,7 +69,7 @@ function HeroBanner() {
         <Heading as="h1" className={styles.heroProjectTagline}>
           <img
             alt="lailai's Logo"
-            src="/img/logo.svg"
+            src="img/logo.svg"
             className={styles.heroLogo}
             width="200"
             height="200"
@@ -84,10 +84,10 @@ function HeroBanner() {
           />
         </Heading>
         <div className={styles.indexCtas}>
-          <Link className={`button ${styles.button}`} to="/blog">
+          <Link className={`button ${styles.button}`} to="blog">
             博客
           </Link>
-          <Link className={`button ${styles.button}`} to="/about">
+          <Link className={`button ${styles.button}`} to="about">
             关于
           </Link>
         </div>
@@ -101,7 +101,7 @@ function TopBanner() {
     <div className={styles.topBanner}>
       <div className={styles.topBannerTitle}>
         {'🎉\xa0'}
-        <Link className={styles.topBannerTitleText} to="/about">
+        <Link className={styles.topBannerTitleText} to="about">
           {'Hello,\xa0I\'m\xa0lailai'}
         </Link>
         {'\xa0🥳'}

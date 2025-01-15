@@ -40,7 +40,7 @@ const Users: User[] = [
   {
     title: 'lailai\'s home',
     description: 'lailai 的个人网站，分享技术笔记、项目经验和学习心得。',
-    preview: '/img/site/Home.png',
+    preview: 'img/site/Home.png',
     website: 'https://www.lailai.one',
     source: 'https://github.com/lailai0916/lailai0916.github.io',
     tags: ['favorite', 'personal', 'opensource'],
@@ -48,7 +48,7 @@ const Users: User[] = [
   {
     title: 'Google',
     description: '全球领先的搜索引擎，提供强大的信息检索和多种在线服务。',
-    preview: '/img/site/Google.png',
+    preview: 'img/site/Google.png',
     website: 'https://www.google.com',
     source: null,
     tags: ['favorite', 'comprehensive'],
@@ -56,7 +56,7 @@ const Users: User[] = [
   {
     title: '百度',
     description: '中国最大的搜索引擎，提供搜索、地图、百科等多种互联网服务。',
-    preview: '/img/site/Baidu.png',
+    preview: 'img/site/Baidu.png',
     website: 'https://www.baidu.com',
     source: null,
     tags: ['comprehensive'],
@@ -64,7 +64,7 @@ const Users: User[] = [
   {
     title: '维基百科',
     description: '一个自由的网络百科全书，由全球用户协作编辑，提供多语言知识内容。',
-    preview: '/img/site/Wikipedia.png',
+    preview: 'img/site/Wikipedia.png',
     website: 'https://zh.wikipedia.org/wiki/Wikipedia:首页',
     source: null,
     tags: ['favorite', 'comprehensive', 'resource'],
@@ -72,7 +72,7 @@ const Users: User[] = [
   {
     title: 'ChatGPT',
     description: 'OpenAI 提供的聊天 AI 服务网站，用户可以通过它与 ChatGPT 进行智能交互。',
-    preview: '/img/site/ChatGPT.png',
+    preview: 'img/site/ChatGPT.png',
     website: 'https://chatgpt.com',
     source: null,
     tags: ['favorite', 'tool'],
@@ -80,7 +80,7 @@ const Users: User[] = [
   {
     title: 'Sora',
     description: 'OpenAI 推出的视频生成模型，用户可通过输入文本、图像或视频，生成新的视频内容。',
-    preview: '/img/site/Sora.png',
+    preview: 'img/site/Sora.png',
     website: 'https://sora.com',
     source: null,
     tags: ['favorite', 'tool'],
@@ -96,7 +96,7 @@ const Users: User[] = [
   {
     title: 'Desmos',
     description: '一个提供免费在线数学工具的网站，帮助用户探索和学习数学。',
-    preview: '/img/site/Desmos.png',
+    preview: 'img/site/Desmos.png',
     website: 'https://www.desmos.com',
     source: null,
     tags: ['academic', 'tool'],
@@ -104,7 +104,7 @@ const Users: User[] = [
   {
     title: 'GeoGebra',
     description: '一款免费开源的动态数学软件，广泛应用于各级教育领域。',
-    preview: '/img/site/GeoGebra.png',
+    preview: 'img/site/GeoGebra.png',
     website: 'https://www.geogebra.org',
     source: null,
     tags: ['academic', 'tool'],
@@ -120,7 +120,7 @@ const Users: User[] = [
   {
     title: '在线LaTeX公式编辑器',
     description: '一款免费在线 LaTeX 公式编辑器。',
-    preview: '/img/site/latexlive.png',
+    preview: 'img/site/latexlive.png',
     website: 'https://www.latexlive.com',
     source: null,
     tags: ['academic', 'tool'],
@@ -128,7 +128,7 @@ const Users: User[] = [
   {
     title: 'OI Wiki',
     description: '一个免费开放且持续更新的编程竞赛知识整合站点。',
-    preview: '/img/site/OI-Wiki.png',
+    preview: 'img/site/OI-Wiki.png',
     website: 'https://oi-wiki.org',
     source: 'https://github.com/OI-wiki/OI-wiki',
     tags: ['contest', 'resource', 'opensource'],
@@ -136,7 +136,7 @@ const Users: User[] = [
   {
     title: 'OIerDb',
     description: '一个信息学竞赛选手获奖记录并对学校进行排名的数据库。',
-    preview: '/img/site/OIerDb.png',
+    preview: 'img/site/OIerDb.png',
     website: 'https://www.信息学.com',
     source: 'https://github.com/OIerDb-ng/OIerDb-data-generator',
     tags: ['contest', 'resource', 'opensource'],
@@ -144,7 +144,7 @@ const Users: User[] = [
   {
     title: 'Graph Editor',
     description: '一个在线图论绘制工具。',
-    preview: '/img/site/GraphEditor.png',
+    preview: 'img/site/GraphEditor.png',
     website: 'https://csacademy.com/app/graph_editor/',
     source: null,
     tags: ['contest', 'tool'],
@@ -152,7 +152,7 @@ const Users: User[] = [
   {
     title: 'Diff Tool',
     description: '一个在线代码差异工具。',
-    preview: '/img/site/DiffTool.png',
+    preview: 'img/site/DiffTool.png',
     website: 'https://csacademy.com/app/diffing_tool/',
     source: null,
     tags: ['contest', 'tool'],
@@ -168,7 +168,7 @@ const Users: User[] = [
   {
     title: 'Codeforces',
     description: '一个俄罗斯的在线编程竞赛平台。',
-    preview: '/img/site/Codeforces.png',
+    preview: 'img/site/Codeforces.png',
     website: 'https://codeforces.com',
     source: null,
     tags: ['contest', 'test'],
@@ -176,7 +176,7 @@ const Users: User[] = [
   {
     title: 'AtCoder',
     description: '一个日本的在线编程竞赛平台。',
-    preview: '/img/site/AtCoder.png',
+    preview: 'img/site/AtCoder.png',
     website: 'https://atcoder.jp',
     source: null,
     tags: ['contest', 'test'],
@@ -184,7 +184,7 @@ const Users: User[] = [
   {
     title: 'Virtual Judge',
     description: '一个支持多平台在线判题的工具。',
-    preview: '/img/site/Vjudge.png',
+    preview: 'img/site/Vjudge.png',
     website: 'https://vjudge.net',
     source: null,
     tags: ['contest', 'test'],
@@ -192,7 +192,7 @@ const Users: User[] = [
   {
     title: '原题机',
     description: '一款帮助用户查找编程题目原始出处的工具。',
-    preview: '/img/site/yuantiji.png',
+    preview: 'img/site/yuantiji.png',
     website: 'http://yuantiji.ac/zh/',
     source: null,
     tags: ['contest', 'tool'],
@@ -200,7 +200,7 @@ const Users: User[] = [
   {
     title: 'Code Golf',
     description: '一个在线编程挑战平台，鼓励开发者以最少的字符数编写代码来解决特定问题。',
-    preview: '/img/site/CodeGolf.png',
+    preview: 'img/site/CodeGolf.png',
     website: 'https://code.golf',
     source: null,
     tags: ['contest', 'test'],
@@ -208,7 +208,7 @@ const Users: User[] = [
   {
     title: 'Apple',
     description: '苹果公司的官方网站，提供产品信息、技术支持和在线商店服务。',
-    preview: '/img/site/Apple.png',
+    preview: 'img/site/Apple.png',
     website: 'https://www.apple.com',
     source: null,
     tags: ['favorite', 'digital', 'shop'],
@@ -240,7 +240,7 @@ const Users: User[] = [
   {
     title: 'YouTube',
     description: '全球最大的视频分享平台，用户可以上传、观看、分享和评论各类视频内容。',
-    preview: '/img/site/YouTube.png',
+    preview: 'img/site/YouTube.png',
     website: 'https://www.youtube.com',
     source: null,
     tags: ['favorite', 'video'],
