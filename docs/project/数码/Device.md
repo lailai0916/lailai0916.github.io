@@ -1,4 +1,4 @@
-# 我的设备
+# lailai's Device
 
 ## MacBook Pro 16 英寸
 

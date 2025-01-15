@@ -49,7 +49,9 @@ const sidebars: SidebarsConfig = {
       type: 'category',
       label: '数码',
       items: [
-        'project/数码/我的设备',
+        'project/数码/Device',
+        'project/数码/EDC',
+        'project/数码/Desk',
         'project/数码/软件推荐',
       ],
     },
