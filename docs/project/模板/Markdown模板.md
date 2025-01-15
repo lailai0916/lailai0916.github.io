@@ -14,6 +14,6 @@
 
 Markdown 文档以纯文本格式存储，这意味着，它们可以用几乎任一文本编辑器打开。同时，又能通过 Markdown 编辑器导出为带排版的富文本文档、HTML 网页等等。纯粹、简洁、易用、灵活，都是人们喜欢 Markdown 的原因。
 
-## 内嵌的 LaTeX 公式
+## LaTeX 公式
 
-- [LaTeX 模板](LaTeX模板)
+- 见 [LaTeX 模板](LaTeX模板)

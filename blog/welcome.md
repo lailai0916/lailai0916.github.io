@@ -5,6 +5,6 @@ authors: [lailai]
 tags: [top, welcome]
 ---
 
-- [关于](/about)
+- 见 [关于](about)
 
 <!-- truncate -->
