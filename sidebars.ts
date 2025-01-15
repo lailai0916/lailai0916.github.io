@@ -51,7 +51,7 @@ const sidebars: SidebarsConfig = {
       items: [
         'project/数码/Device',
         'project/数码/EDC',
-        'project/数码/Desk',
+        'project/数码/DeskSetup',
         'project/数码/软件推荐',
       ],
     },
