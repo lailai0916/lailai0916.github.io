@@ -7,7 +7,7 @@
 - [Google C++ Style Guide](https://google.github.io/styleguide/cppguide.html)
 - [Menci's Code Style for OI | Menci's OI Blog](https://oi.men.ci/code-style-oi/)
 
-## 通用要求
+## 通用规范
 
 - 代码需要兼容 C++17，避免使用不兼容的特性。
 
