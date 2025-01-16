@@ -6,13 +6,23 @@
 
 - 见 [数码设备](Device)
 
-## 数码配件
+## 收纳
 
 ### tomtoc Voyage T50 Laptop Backpack
 
 - 介绍：tomtoc 专为 MacBook 和 iPad 设计的电脑背包
 - 售价：$209.99 / ¥1,299
 - 购买：[官网](https://www.tomtoc.com/products/voyage-t50-laptop-backpack-20l-white)
+
+### MUJI 聚酯纤维 旅游用钱包
+
+- 介绍：存放一些现金和证件
+
+### MUJI 硬质收纳盒（XS 号）
+
+- 介绍：存放一些小物件
+
+## 数码配件
 
 ### Logitech G PRO X SUPERLIGHT 2
 
@@ -53,34 +63,24 @@
 ### 雷雳 4 数据线 (1 米)
 
 - 介绍：传输数据（40 Gb/s）和备用供电（100 W）
-- 售价：$69 / ¥459
+- 售价：$69 / ¥486
 
 ## 转接
 
 ### USB-C 转 USB 转换器
 
-介绍：MacBook Pro 没有 USA 接口，通过转接器连接鼠标接收器和 U 盘
+- 介绍：MacBook Pro 没有 USA 接口，通过转接器连接鼠标接收器和 U 盘
 
 ### 多功能数据线盒
 
-介绍：用 Lightning 转换器给 iPhone 供电，并应对一些特殊情况
+- 介绍：用 Lightning 转换器给 iPhone 供电，并应对一些特殊情况
 
 ## 清洁
 
 ### 3M 思高擦拭布
 
-介绍：擦拭眼睛镜片和设备屏幕
+- 介绍：擦拭眼睛镜片和设备屏幕
 
 ### Zeiss 防雾清洁湿巾
 
-介绍：擦拭眼睛镜片和设备屏幕
-
-## 收纳
-
-### MUJI 聚酯纤维 旅游用钱包
-
-介绍：存放一些现金和证件
-
-### MUJI 硬质收纳盒（XS 号）
-
-介绍：存放一些小物件
+- 介绍：擦拭眼睛镜片和设备屏幕
