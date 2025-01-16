@@ -7,7 +7,7 @@ import Link from '@docusaurus/Link';
 import Heading from '@theme/Heading';
 
 import { Icon } from '@iconify/react';
-import GiscusComponent from "@site/src/components/Giscus";
+import Comment from "@site/src/components/Comment";
 import TextStyle from '@site/src/components/TextStyle';
 import styles from './styles.module.css';
 
@@ -102,6 +102,6 @@ import styles from './styles.module.css';
 
 ------
 
-<GiscusComponent />
+<Comment />
 
 </div>
