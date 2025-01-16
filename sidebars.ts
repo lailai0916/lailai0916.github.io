@@ -57,6 +57,7 @@ const sidebars: SidebarsConfig = {
     },
     'project/Home',
     'project/CodeStyle',
+    'project/VSCode',
     'project/iGame',
     'project/Test',
     {
