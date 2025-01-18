@@ -211,13 +211,13 @@ const config: Config = {
         // autoCollapseCategories: true,
       },
     },
-    announcementBar: {
-      id: 'announcement',
-      content: '🎊 Hello, 2025! 🎊',
-      backgroundColor: '#ffffff',
-      textColor: '#000000',
-      isCloseable: true,
-    },
+    // announcementBar: {
+    //   id: 'announcement',
+    //   content: '🎊 Hello, 2025! 🎊',
+    //   backgroundColor: '#ffffff',
+    //   textColor: '#000000',
+    //   isCloseable: true,
+    // },
   } satisfies Preset.ThemeConfig,
 
   markdown: {

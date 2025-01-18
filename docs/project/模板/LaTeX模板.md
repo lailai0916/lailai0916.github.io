@@ -102,10 +102,9 @@ $$
 
 ```latex
 \begin{aligned}
-  f(x) &= a_1 \\
-  &= a_2 \\
-  &= \cdots \\
-  &= a_n
+  f(x) &= a \\
+  &= b \\
+  &= c
 \end{aligned}
 ```
 
@@ -113,10 +112,9 @@ $$
 
 $$
 \begin{aligned}
-  f(x) &= a_1 \\
-  &= a_2 \\
-  &= \cdots \\
-  &= a_n
+  f(x) &= a \\
+  &= b \\
+  &= c
 \end{aligned}
 $$
 
@@ -125,20 +123,22 @@ $$
 ### 分段函数
 
 ```latex
-f(x)=\begin{cases}
-  a_1 & x>0 \\
-  a_2 & x=0 \\
-  a_3 & x<0
+f(x)=
+\begin{cases}
+  a & x>0 \\
+  b & x=0 \\
+  c & x<0
 \end{cases}
 ```
 
 <BrowserWindow>
 
 $$
-f(x)=\begin{cases}
-  a_1 & x>0 \\
-  a_2 & x=0 \\
-  a_3 & x<0
+f(x)=
+\begin{cases}
+  a & x>0 \\
+  b & x=0 \\
+  c & x<0
 \end{cases}
 $$
 
