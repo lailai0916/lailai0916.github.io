@@ -65,6 +65,10 @@ import styles from './styles.module.css';
   <span>iPhone 13</span>
 </div>
 <div className={styles.item}>
+  <img src="/img/device/applewatch.svg" />
+  <span>Apple Watch Series 10</span>
+</div>
+<div className={styles.item}>
   <img src="/img/device/airpods.pro.svg" />
   <span>AirPods Pro 2</span>
 </div>
