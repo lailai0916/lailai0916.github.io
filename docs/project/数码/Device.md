@@ -38,7 +38,7 @@ It's something only Apple can do.
 - 材质：钛合金
 - 外观：石板色
 - 尺寸：46mm
-- 表带：米兰尼斯表带
+- 表带：米兰尼斯
 
 ## AirPods Pro 2
 
