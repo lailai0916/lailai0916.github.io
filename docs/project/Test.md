@@ -1,6 +1,6 @@
 import BrowserWindow from '@site/src/components/BrowserWindow';
 import IframeWindow from '@site/src/components/BrowserWindow/IframeWindow';
-import Desmos from '@site/src/components/Desmos';
+import Desmos from '@site/src/components/BrowserWindow/Desmos';
 import ColorGenerator from '@site/src/components/ColorGenerator';
 
 # 测试
@@ -71,4 +71,4 @@ function Clock(props) {
 
 ## Desmos
 
-<Desmos url="https://www.desmos.com/calculator/mjjhvujgos?embed" />
+<Desmos url="mjjhvujgos" />

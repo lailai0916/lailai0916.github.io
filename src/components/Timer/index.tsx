@@ -2,7 +2,7 @@ import clsx from 'clsx';
 import { useEffect, useState } from 'react';
 import styles from './styles.module.css';
 import Heading from '@theme/Heading';
-import ProgressCircle from '@site/src/components/ProgressCircle';
+import ProgressCircle from './ProgressCircle';
 
 export default function Timer() {
   const [timeLeft, setTimeLeft] = useState({
@@ -33,7 +33,7 @@ export default function Timer() {
 
   useEffect(() => {
     calculateTimeLeft();
-    const timer = setInterval(calculateTimeLeft, 50);
+    const timer = setInterval(calculateTimeLeft, 100);
     
     return () => clearInterval(timer);
   }, []);
@@ -42,10 +42,10 @@ export default function Timer() {
     <div className="container">
       {isTimeUp ? (
         <>
-          <Heading as="h2" className={styles.title}>
+          <Heading as="h2" className={styles.endTitle}>
             2025
           </Heading>
-          <strong className={styles.message}>
+          <strong className={styles.endMessage}>
             Happy Chinese New Year!
           </strong>
         </>
@@ -54,7 +54,7 @@ export default function Timer() {
           <Heading as="h2" className={clsx('margin-bottom--lg', 'text--center')}>
             距离 2025 年春节还剩
           </Heading>
-          <div className={styles.time}>
+          <div className={styles.timer}>
             <ProgressCircle 
               unit="Days"
               total={365}
