@@ -16,13 +16,11 @@ export default function Comment() {
           category="Announcements"
           categoryId="DIC_kwDONHUoXM4Cjx_9"
           mapping="pathname"
-          strict="0"
           reactionsEnabled="1"
           emitMetadata="0"
-          inputPosition="bottom"
+          inputPosition="top"
           theme={colorMode}
           lang="zh-CN"
-          crossorigin="lazy"
         />
       )}
     </BrowserOnly>
