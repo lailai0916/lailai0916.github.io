@@ -8,7 +8,7 @@ export default function Comment() {
   const { colorMode } = useColorMode();
 
   return (
-    <BrowserOnly fallback={<div>Loading Comments...</div>}>
+    <BrowserOnly fallback={<div>Loading Comment...</div>}>
       {() => (
         <Giscus
           repo="lailai0916/giscus"
