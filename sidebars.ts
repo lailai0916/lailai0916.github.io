@@ -47,6 +47,13 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: 'category',
+      label: '配置',
+      items: [
+        'project/配置/VSCode',
+      ],
+    },
+    {
+      type: 'category',
       label: '数码',
       items: [
         'project/数码/Device',
@@ -57,7 +64,6 @@ const sidebars: SidebarsConfig = {
     },
     'project/Home',
     'project/CodeStyle',
-    'project/VSCode',
     'project/iGame',
     'project/Test',
     {
