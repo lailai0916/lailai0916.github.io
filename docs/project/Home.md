@@ -51,7 +51,7 @@ npm start
 - 构建项目
 
 ```bash
-npm build
+npm run build
 ```
 
 ## 文件目录
