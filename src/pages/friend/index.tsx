@@ -9,7 +9,7 @@ const TITLE = '友链';
 const DESCRIPTION = '财富易得，知己难求';
 const SUBMIT_URL = 'https://github.com';
 
-function FriendHeader() {
+function PageHeader() {
   return (
     <section className="margin-top--lg margin-bottom--lg text--center">
       <Heading as="h1">{TITLE}</Heading>
@@ -59,12 +59,11 @@ function FriendCards() {
   )
 }
 
-export default function FriendLink(): JSX.Element {
-  const ref = useRef<HTMLDivElement>(null)
+export default function friendPage(): JSX.Element {
   return (
     <Layout title={TITLE} description={DESCRIPTION}>
       <main className="margin-vert--lg">
-        <FriendHeader />
+        <PageHeader />
         <FriendCards />
       </main>
     </Layout>

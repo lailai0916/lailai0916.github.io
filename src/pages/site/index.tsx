@@ -17,7 +17,7 @@ const TITLE = '网站';
 const DESCRIPTION = '发现有趣与实用的优质网站';
 const SUBMIT_URL = 'https://github.com';
 
-function SiteHeader() {
+function PageHeader() {
   return (
     <section className="margin-top--lg margin-bottom--lg text--center">
       <Heading as="h1">{TITLE}</Heading>
@@ -29,11 +29,11 @@ function SiteHeader() {
   );
 }
 
-export default function Site(): JSX.Element {
+export default function sitePage(): JSX.Element {
   return (
     <Layout title={TITLE} description={DESCRIPTION}>
       <main className="margin-vert--lg">
-        <SiteHeader />
+        <PageHeader />
         <SiteFilters />
         <div
           style={{display: 'flex', marginLeft: 'auto'}}

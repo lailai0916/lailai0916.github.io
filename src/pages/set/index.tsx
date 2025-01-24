@@ -7,7 +7,7 @@ import ColorGenerator from '@site/src/components/ColorGenerator';
 const TITLE = '设置';
 const DESCRIPTION = '🎉 恭喜你发现了一个彩蛋页面 🥳';
 
-function SetHeader() {
+function PageHeader() {
   return (
     <section className="margin-top--lg margin-bottom--lg text--center">
       <Heading as="h1">{TITLE}</Heading>
@@ -16,11 +16,11 @@ function SetHeader() {
   )
 }
 
-export default function FriendLink(): JSX.Element {
+export default function setPage(): JSX.Element {
   return (
     <Layout title={TITLE} description={DESCRIPTION}>
       <main className="margin-vert--lg">
-        <SetHeader />
+        <PageHeader />
         <ColorGenerator />
       </main>
     </Layout>
