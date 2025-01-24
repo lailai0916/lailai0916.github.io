@@ -65,12 +65,8 @@ const sidebars: SidebarsConfig = {
     'project/Home',
     'project/CodeStyle',
     'project/iGame',
+    'project/iClock',
     'project/Test',
-    {
-      type: 'link',
-      label: '其他',
-      href: 'https://vdse.bdstatic.com//192d9a98d782d9c74c96f09db9378d93.mp4',
-    },
   ],
 };
 
