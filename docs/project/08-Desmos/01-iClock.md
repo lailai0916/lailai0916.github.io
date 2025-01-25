@@ -6,7 +6,7 @@ import IframeWindow from '@site/src/components/BrowserWindow/IframeWindow';
 
 ## 说明
 
-目前此作品提交到了 2024 Desmos 艺术博览会，但还未公布评选结果。
+此作品提交到了 2024 Desmos 艺术博览会，但还未公布评选结果。
 
 ## 参考资料
 
