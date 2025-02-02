@@ -21,6 +21,7 @@ export default function Timer() {
     const endDate = new Date(DATE).getTime();
     const nowDate = new Date().getTime();
     const distance = endDate - nowDate;
+    
     if (distance < 0) {
       setIsTimeUp(true);
       return;
@@ -37,7 +38,6 @@ export default function Timer() {
   useEffect(() => {
     calculateTimeLeft();
     const timer = setInterval(calculateTimeLeft, 100);
-    
     return () => clearInterval(timer);
   }, []);
 
