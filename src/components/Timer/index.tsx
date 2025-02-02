@@ -10,10 +10,7 @@ const TEXT = 'Happy New Year!';
 
 export default function Timer() {
   const [timeLeft, setTimeLeft] = useState({
-    days: 0,
-    hours: 0,
-    minutes: 0,
-    seconds: 0,
+    days: 0, hours: 0, minutes: 0, seconds: 0,
   });
   const [isTimeUp, setIsTimeUp] = useState(false);
 
