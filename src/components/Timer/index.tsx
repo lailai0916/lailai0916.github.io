@@ -4,6 +4,10 @@ import styles from './styles.module.css';
 import Heading from '@theme/Heading';
 import ProgressCircle from './ProgressCircle';
 
+const EVENT = '2026 年';
+const DATE = '2026-01-01T00:00:00';
+const TEXT = 'Happy New Year!';
+
 export default function Timer() {
   const [timeLeft, setTimeLeft] = useState({
     days: 0,
@@ -14,10 +18,9 @@ export default function Timer() {
   const [isTimeUp, setIsTimeUp] = useState(false);
 
   const calculateTimeLeft = () => {
-    const endDate = new Date('2025/01/29 00:00:00').getTime();
+    const endDate = new Date(DATE).getTime();
     const nowDate = new Date().getTime();
     const distance = endDate - nowDate;
-
     if (distance < 0) {
       setIsTimeUp(true);
       return;
@@ -43,16 +46,16 @@ export default function Timer() {
       {isTimeUp ? (
         <>
           <Heading as="h2" className={styles.endTitle}>
-            2025
+            {EVENT}
           </Heading>
           <strong className={styles.endMessage}>
-            Happy Chinese New Year!
+            {TEXT}
           </strong>
         </>
       ) : (
         <>
           <Heading as="h2" className={clsx('margin-bottom--lg', 'text--center')}>
-            距离 2025 年春节还剩
+            距离 {EVENT} 还剩
           </Heading>
           <div className={styles.timer}>
             <ProgressCircle 
