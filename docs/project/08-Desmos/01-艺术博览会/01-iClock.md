@@ -14,7 +14,12 @@ import IframeWindow from '@site/src/components/BrowserWindow/IframeWindow';
 
 此作品已提交到 [Desmos 2024 Art Expo](https://www.desmos.com/art?lang=zh-CN)，~~但还未公布评选结果~~ 获奖了！
 
-<IframeWindow url="https://www.desmos.com/winner-certificate-2024?hash=p4i42jkcp1&lang=en" />
+## 证书
+
+<iframe
+  src="https://www.desmos.com/winner-certificate-2024?hash=p4i42jkcp1&lang=en"
+  style={{display: 'block', width: '100%', height: '100vh'}}
+/>
 
 ## 效果展示
 
