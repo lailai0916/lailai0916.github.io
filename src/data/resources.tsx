@@ -740,13 +740,6 @@ export const resourceData: ResourceCategory[] = [
         href: 'https://claude.ai/',
         tags: ['AI'],
       },
-      {
-        name: 'MidJourney',
-        desc: 'AI image generator ',
-        logo: 'https://www.midjourney.com/apple-touch-icon.png',
-        href: '/img/resources/bard.png',
-        tags: ['AI'],
-      },
     ],
   },
   {
