@@ -1,0 +1,12 @@
+.featureImage {
+  width: auto;
+  max-height: 128px;
+  margin: 0 auto;
+  user-select: none;
+  pointer-events: none;
+}
+
+.featureHeading {
+  font-size: var(--ifm-h3-font-size);
+  padding-top: 1rem;
+}

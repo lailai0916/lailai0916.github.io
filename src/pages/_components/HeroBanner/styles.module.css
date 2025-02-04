@@ -1,0 +1,124 @@
+.hero {
+  background-color: #f5f6f7;
+  padding: 48px;
+}
+
+html[data-theme='dark'] .hero {
+  background-color: #2b3137;
+  padding: 48px;
+}
+
+.heroInner {
+  margin: 0 auto;
+  max-width: 1100px;
+  padding: 0 20px;
+}
+
+.heroProjectTagline {
+  font-size: 60px;
+  margin: 0;
+}
+
+.heroTitleTextHtml b {
+  color: var(--ifm-color-primary);
+}
+
+.heroLogo {
+  animation-duration: 1s;
+  animation-name: jack-in-the-box;
+  float: right;
+  padding: 20px 20px;
+  height: auto;
+  filter: drop-shadow(0 0 20px var(--ifm-color-primary))
+          drop-shadow(0 0 40px var(--ifm-color-primary));
+  user-select: none;
+  pointer-events: none;
+}
+
+.indexCtas {
+  --ifm-button-size-multiplier: 1.6;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-top: 24px;
+}
+
+.indexCtas a,
+.indexCtas a:hover {
+  color: black;
+}
+
+.button {
+  background-color: var(--ifm-color-primary-lightest);
+}
+
+.button:hover {
+  background-color: var(--ifm-color-primary-lighter);
+}
+
+.indexCtas a:last-of-type {
+  margin: 20px 36px;
+}
+
+.indexCtasGitHubButtonWrapper {
+  display: flex;
+}
+
+.indexCtasGitHubButton {
+  overflow: hidden;
+}
+
+@media only screen and (max-width: 768px) {
+  .hero {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .heroInner {
+    padding: 0;
+  }
+
+  .heroProjectTagline {
+    font-size: 36px;
+    text-align: center;
+  }
+
+  .heroLogo {
+    display: block;
+    float: none;
+    margin: 0 auto;
+  }
+
+  .indexCtas {
+    justify-content: center;
+  }
+
+  .indexCtas a {
+    margin: 20px 36px;
+  }
+
+  .indexCtasGitHubButton {
+    display: none;
+  }
+}
+
+@keyframes jack-in-the-box {
+  0% {
+    opacity: 0;
+    transform: scale(0.1) rotate(30deg);
+    transform-origin: center bottom;
+  }
+
+  50% {
+    transform: rotate(-10deg);
+  }
+
+  70% {
+    transform: rotate(3deg);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
