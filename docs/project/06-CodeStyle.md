@@ -82,9 +82,6 @@ using namespace std;
 
 ```cpp
 using ll=long long;
-using uint=unsigned int;
-using pii=pair<int,int>;
-using comp=complex<double>;
 ```
 
 ### 常量
@@ -92,8 +89,6 @@ using comp=complex<double>;
 - 常量使用 `const` 定义，避免使用宏进行常量定义。
 
 ```cpp
-const int inf=0x3f3f3f3f;
-const int mod=998244353;
 const int N=100005;
 ```
 
@@ -108,7 +103,7 @@ const int N=100005;
 ```cpp
 int main()
 {
-	
+	...
 	return 0;
 }
 ```

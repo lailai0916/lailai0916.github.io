@@ -15,7 +15,7 @@ export const Friends: Friend[] = [
   {
     title: 'sintle',
     description: '人类最古老而强大的情感是恐惧，而最古老而强烈的恐惧来源于未知。',
-    website: 'https://www.luogu.com.cn/user/681591',
+    website: 'https://sintle.github.io',
     avatar: 'img/avatar/sintle.png',
   },
   {

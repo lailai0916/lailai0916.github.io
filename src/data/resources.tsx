@@ -13,7 +13,7 @@ export interface ResourceCategory {
 
 export const resourceData: ResourceCategory[] = [
   {
-    name: 'SRE, DevOps, Cloud Infrastructure 🖥️',
+    name: '个人网站',
     resources: [
       {
         name: 'Developer Roadmap',

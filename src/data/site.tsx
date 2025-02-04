@@ -39,7 +39,7 @@ export type Tag = {
 const Users: User[] = [
   {
     title: 'lailai\'s home',
-    description: 'lailai 的个人网站，分享技术笔记、项目经验和学习心得。',
+    description: 'lailai\'s personal website, sharing technical notes, project experience and learning experience.',
     preview: 'img/site/Home.png',
     website: 'https://www.lailai.one',
     source: 'https://github.com/lailai0916/lailai0916.github.io',
