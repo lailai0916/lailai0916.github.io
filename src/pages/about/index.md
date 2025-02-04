@@ -7,7 +7,7 @@ import Link from '@docusaurus/Link';
 import Heading from '@theme/Heading';
 
 import { Icon } from '@iconify/react';
-import Comment from "@site/src/components/Comment";
+import Comment from "./_components/Comment";
 import TextStyle from '@site/src/components/TextStyle';
 import styles from './styles.module.css';
 

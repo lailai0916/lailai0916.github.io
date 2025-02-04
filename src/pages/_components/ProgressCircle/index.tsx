@@ -1,9 +1,9 @@
 import React from 'react';
 import styles from './styles.module.css';
 
-export default function ProgressCircle({ unit, total, value, color = 'var(--ifm-color-primary)' }) {
+export default function ProgressCircle({ unit, total, value }) {
   return (
-    <div className={styles.circle} style={{ '--clr': color }}>
+    <div className={styles.circle} style={{ '--clr': 'var(--ifm-color-primary)' }}>
       <div className={styles.dots} 
         style={{ transform: `rotateZ(${ 360 * value / total }deg)` }}
       />

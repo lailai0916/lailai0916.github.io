@@ -2,7 +2,7 @@ import clsx from 'clsx';
 import { useEffect, useState } from 'react';
 import styles from './styles.module.css';
 import Heading from '@theme/Heading';
-import ProgressCircle from './ProgressCircle';
+import ProgressCircle from './../ProgressCircle';
 
 const EVENT = '2026 年';
 const DATE = '2026-01-01T00:00:00';
@@ -42,10 +42,10 @@ export default function Timer() {
     <div className="container">
       {isTimeUp ? (
         <>
-          <Heading as="h2" className={styles.endTitle}>
+          <Heading as="h2" className={styles.title}>
             {EVENT}
           </Heading>
-          <strong className={styles.endMessage}>
+          <strong className={styles.message}>
             {TEXT}
           </strong>
         </>

@@ -8,7 +8,7 @@ import Features from '@site/src/data/features';
 import Heading from '@theme/Heading';
 import styles from './styles.module.css';
 
-import Timer from '@site/src/components/Timer';
+import Timer from './_components/Timer';
 
 function Feature({
   feature,

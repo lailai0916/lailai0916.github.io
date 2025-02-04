@@ -6,7 +6,7 @@
   justify-content: center;
   align-items: center;
 }
-
+  
 .circle svg {
   position: relative;
   width: 150px;
@@ -72,30 +72,4 @@
   background-color: var(--clr);
   border-radius: 50%;
   box-shadow: 0 0 20px var(--clr), 0 0 60px var(--clr);
-}
-
-.timer {
-  display: flex;
-  gap: 30px;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-@media (max-width: 768px) {
-  .timer {
-    gap: 20px;
-  }
-  .timer > * {
-    flex: 1 1 45%;
-  }
-}
-
-.endTitle {
-  font-size: 5em;
-  text-align: center;
-}
-
-.endMessage {
-  font-size: 3em;
-  text-align: center;
 }

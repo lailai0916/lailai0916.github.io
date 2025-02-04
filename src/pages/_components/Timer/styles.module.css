@@ -1,0 +1,25 @@
+.timer {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+@media (max-width: 768px) {
+  .timer {
+    gap: 20px;
+  }
+  .timer > * {
+    flex: 1 1 45%;
+  }
+}
+
+.title {
+  font-size: 5em;
+  text-align: center;
+}
+
+.message {
+  font-size: 3em;
+  text-align: center;
+}
