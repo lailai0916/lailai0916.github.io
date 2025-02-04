@@ -52,12 +52,6 @@ export const resourceData: ResourceCategory[] = [
         href: 'https://www.redhat.com/en/services/training-and-certification',
       },
       {
-        name: 'OpenStack Training',
-        desc: 'Open Source Cloud Computing Infrastructure',
-        logo: '/img/resources/openstack.png',
-        href: 'https://www.openstack.org/marketplace/training/',
-      },
-      {
         name: 'Linux Foundation Training',
         desc: 'Building, maintaining, and managing IT infrastructures of companies',
         logo: 'https://www.linuxfoundation.org/favicon.ico',
@@ -93,13 +87,6 @@ export const resourceData: ResourceCategory[] = [
     name: 'Infrastructure as a Code (IaaC)',
     resources: [
         {
-          name: 'Brainboard',
-          desc: ' Standardize IaC, without the learning curve',
-          logo: '/img/resources/brainboard.webp',
-          href: 'https://www.brainboard.co/',
-          tags: ['IaaC'],
-        },
-        {
           name: 'Terraform',
           desc: 'Infrastructure automation to provision and manage resources in any cloud or data center.',
           logo: 'https://www.terraform.io/favicon.ico',
@@ -125,20 +112,6 @@ export const resourceData: ResourceCategory[] = [
           desc: 'Automate the parts of software development related to building, testing, and deploying, CI/CD ',
           logo: 'https://www.jenkins.io/apple-touch-icon.png',
           href: 'https://www.jenkins.io/',
-          tags: ['IaaC'],
-        },
-        {
-          name: 'Azure DevOps',
-          desc: 'Plan smarter, collaborate better, and ship faster with a set of modern dev services',
-          logo: '/img/resources/azure-devops.webp',
-          href: 'https://azure.microsoft.com/en-us/products/devops',
-          tags: ['IaaC'],
-        },
-        {
-          name: 'Terrascan',
-          desc: 'Detect compliance and security violations across',
-          logo: '/img/resources/terrascan.png',
-          href: 'https://runterrascan.io/',
           tags: ['IaaC'],
         },
         {
@@ -188,13 +161,6 @@ export const resourceData: ResourceCategory[] = [
           desc: 'Build infrastructure intuitively on any cloud using familiar languages.',
           logo: 'https://docs.ansible.com/static/images/community_logo.svg',
           href: 'https://www.ansible.com/',
-          tags: ['IaaC'],
-        },
-        {
-          name: 'Vagrant',
-          desc: 'Creation and configuration of lightweight, reproducible, and portable development environments.',
-          logo: '/img/resources/vagrant.webp',
-          href: 'https://www.vagrantup.com/',
           tags: ['IaaC'],
         },
       ],
@@ -265,34 +231,6 @@ export const resourceData: ResourceCategory[] = [
           tags: ['Python']
         },
         {
-          name: 'Os module',
-          desc: 'Miscellaneous operating system interfaces.',
-          logo: '/img/resources/python-module.jpg',
-          href: 'https://docs.python.org/3/library/os.html',
-          tags: ['Python']
-        },
-        {
-          name: 'Subprocess',
-          desc: 'Subprocess management.',
-          logo: '/img/resources/python-module.jpg',
-          href: 'https://docs.python.org/3/library/subprocess.html',
-          tags: ['Python']
-        },
-        {
-          name: 'Sys',
-          desc: 'System-specific parameters and functions.',
-          logo: '/img/resources/python-module.jpg',
-          href: 'https://docs.python.org/3/library/sys.html',
-          tags: ['Python']
-        },
-        {
-          name: 'Re',
-          desc: 'Regular expression operations.',
-          logo: '/img/resources/python-module.jpg',
-          href: 'https://docs.python.org/3/library/re.html',
-          tags: ['Python']
-        },
-        {
           name: 'Scapy',
           desc: 'An Interactive packet manipulation program and library',
           logo: 'https://scapy.net/favicon.ico',
@@ -314,66 +252,10 @@ export const resourceData: ResourceCategory[] = [
           tags: ['Python']
         },
         {
-          name: 'Logging',
-          desc: 'Provide a standard error logging mechanism in Python as per PEP 282.',
-          logo: '/img/resources/python-module.jpg',
-          href: 'https://pypi.org/project/logging/',
-          tags: ['Python']
-        },
-        {
-          name: 'Getpass',
-          desc: 'Portable password input.',
-          logo: '/img/resources/python-module.jpg',
-          href: 'https://docs.python.org/3/library/getpass.html',
-          tags: ['Python']
-        },
-        {
-          name: 'Boto3',
-          desc: 'The AWS SDK for Python.',
-          logo: '/img/resources/python-module.jpg',
-          href: 'https://pypi.org/project/boto3/',
-          tags: ['Python']
-        },
-        {
-          name: 'Paramiko',
-          desc: 'A Python implementation of SSHv2.',
-          logo: '/img/resources/python-module.jpg',
-          href: 'https://www.paramiko.org/',
-          tags: ['Python']
-        },
-        {
-          name: 'JSON',
-          desc: 'Encoder and decoder.',
-          logo: '/img/resources/python-module.jpg',
-          href: 'https://docs.python.org/3/library/json.html',
-          tags: ['Python']
-        },
-        {
-          name: 'PyYaml',
-          desc: 'Is a YAML parser and emitter for Python.',
-          logo: '/img/resources/python-module.jpg',
-          href: 'https://pyyaml.org/wiki/PyYAMLDocumentation',
-          tags: ['Python']
-        },
-        {
-          name: 'Smtplib',
-          desc: 'SMTP protocol client.',
-          logo: '/img/resources/python-module.jpg',
-          href: 'https://docs.python.org/3/library/smtplib.html',
-          tags: ['Python']
-        },
-        {
           name: 'Fabric',
           desc: 'High level SSH command execution',
           logo: 'https://docs.fabfile.org/en/latest/_static/logo.png',
           href: 'https://docs.fabfile.org/en/latest/  ',
-          tags: ['Python']
-        },
-        {
-          name: 'PyWinRM',
-          desc: 'Python library for Windows Remote Management',
-          logo: '/img/resources/python-module.jpg',
-          href: 'https://pypi.org/project/pywinrm/',
           tags: ['Python']
         },
         {
@@ -691,13 +573,6 @@ export const resourceData: ResourceCategory[] = [
         href: 'https://rahuldkjain.github.io/gh-profile-readme-generator/',
         tags: [],
       },
-      {
-        name: 'Github readme stats',
-        desc: 'Dynamically generated stats for your github readmes',
-        logo: '/img/resources/gh-readme.png',
-        href: 'https://github.com/anuraghazra/github-readme-stats',
-        tags: [],
-      },
     ],
   },
   {
@@ -758,46 +633,6 @@ export const resourceData: ResourceCategory[] = [
         logo: 'https://cdn.zapier.com/zapier/images/favicon.ico',
         href: 'https://zapier.com/',
         tags: ['Tools'],
-      },
-    ],
-  },
-  {
-    name: 'Communities',
-    resources: [
-      {
-        name: 'Docusaurus',
-        desc: 'Open Source Community | Site Generator.',
-        logo: '/img/resources/discord.png',
-        href: 'https://discord.gg/docusaurus',
-        tags: ['Communities'],
-      },
-      {
-        name: 'Cloud Resume Challenge',
-        desc: 'Cloud career questions, job postings, and study groups.',
-        logo: '/img/resources/discord.png',
-        href: 'https://discord.gg/2PTwAth',
-        tags: ['Communities'],
-      },
-      {
-        name: 'Nginx',
-        desc: 'Here, users can discuss and collaborate on Nginx, a popular web server and reverse proxy server',
-        logo: '/img/resources/slack.png',
-        href: 'https://nginxcommunity.slack.com/',
-        tags: ['Communities'],
-      },
-      {
-        name: 'Kubernetes',
-        desc: 'A collaboration space for Kubernetes enthusiasts to share knowledge, discuss topics, and stay updated on the latest developments.',
-        logo: '/img/resources/slack.png',
-        href: 'https://kubernetes.slack.com',
-        tags: ['Communities'],
-      },
-      {
-        name: 'Cloud Native Computing Foundation',
-        desc: 'A collaborative platform for discussing and sharing knowledge about cloud native technologies and projects.',
-        logo: '/img/resources/slack.png',
-        href: 'https://slack.cncf.io/',
-        tags: ['Communities'],
       },
     ],
   },
@@ -892,24 +727,10 @@ export const resourceData: ResourceCategory[] = [
         tags: ['AI'],
       },
       {
-        name: 'GitHub Copilot',
-        desc: 'Uses the OpenAI Codex to suggest code and entire functions in real-time, right from your editor.',
-        logo: '/img/resources/copilot.png',
-        href: 'https://github.com/features/copilot',
-        tags: ['AI'],
-      },
-      {
         name: 'Copilot',
         desc: 'AI-powered search engine owned and operated by Microsoft.',
         logo: 'https://copilot.microsoft.com/sa/simg/favicon-cplt.ico',
         href: 'https://copilot.microsoft.com/',
-        tags: ['AI'],
-      },
-      {
-        name: 'Gemini',
-        desc: 'AI-powered search engine owned and operated by Google.',
-        logo: '/img/resources/bard.gif',
-        href: 'https://bard.google.com/',
         tags: ['AI'],
       },
       {
