@@ -2,7 +2,7 @@ import Link from '@docusaurus/Link';
 import Layout from '@theme/Layout';
 import Heading from '@theme/Heading';
 
-import ColorGenerator from '@site/src/components/ColorGenerator';
+import ColorGenerator from './_components/ColorGenerator';
 
 const TITLE = '设置';
 const DESCRIPTION = '🎉 恭喜你发现了一个彩蛋页面 🥳';
