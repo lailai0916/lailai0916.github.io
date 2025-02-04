@@ -10,7 +10,8 @@ import rehypeKatex from 'rehype-katex';
 
 const config: Config = {
   title: 'lailai\'s Home',
-  tagline: '光锥之内，就是命运。',
+  tagline: '我的个人博客，分享技术笔记、项目经验和学习心得。',
+  // My personal blog, where I share technical notes, project experiences, and learning insights.
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
