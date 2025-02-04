@@ -17,7 +17,7 @@ import styles from './styles.module.css';
   <Heading as="h1">
     {'🎉\xa0'}
     <TextStyle style="holiday">
-      {'Hello,\xa0I\'m\xa0lailai'}
+      <Link to="..">{'Hello,\xa0I\'m\xa0lailai'}</Link>
     </TextStyle>
     {'\xa0🥳'}
   </Heading>
