@@ -1,7 +1,5 @@
-import clsx from 'clsx';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
-import Features from '@site/src/data/features';
 import styles from './styles.module.css';
 
 import HeroBanner from './_components/HeroBanner';
