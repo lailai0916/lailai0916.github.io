@@ -40,12 +40,6 @@ export const resourceData: ResourceCategory[] = [
         href: 'https://azure.microsoft.com/en-us/resources/training-and-certifications/',
       },
       {
-        name: 'Oracle University',
-        desc: 'Accelerate your cloud adoption and manage continuous change with Oracle Guided Learning',
-        logo: 'img/resources/oracle.png',
-        href: 'https://education.oracle.com/',
-      },
-      {
         name: 'Red Hat Training',
         desc: 'Accelerate your cloud adoption and manage continuous change with Oracle Guided Learning',
         logo: 'https://www.redhat.com/favicon.ico',
@@ -733,13 +727,6 @@ export const resourceData: ResourceCategory[] = [
         href: 'https://copilot.microsoft.com/',
         tags: ['AI'],
       },
-      {
-        name: 'Claude',
-        desc: 'Claude is a next generation AI assistant built for work and trained to be safe, accurate, and secure by Anthropic.',
-        logo: 'img/resources/claude.png',
-        href: 'https://claude.ai/',
-        tags: ['AI'],
-      },
     ],
   },
   {
@@ -785,13 +772,6 @@ export const resourceData: ResourceCategory[] = [
         desc: 'Embrace the future of productivity and limitless innovation.',
         logo: 'https://www.microsoft.com/favicon.ico?v2',
         href: 'https://www.microsoft.com/en-us/ai',
-        tags: ['MLOps'],
-      },
-      {
-        name: 'Tensorflow',
-        desc: 'Create production-grade machine learning models.',
-        logo: 'img/resources/tensorflow.png',
-        href: 'https://www.tensorflow.org/',
         tags: ['MLOps'],
       },
       {
