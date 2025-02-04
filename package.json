@@ -44,7 +44,8 @@
   },
   "devDependencies": {
     "@docusaurus/module-type-aliases": "^3.7.0",
-    "@docusaurus/types": "^3.7.0"
+    "@docusaurus/types": "^3.7.0",
+    "daisyui": "^4.12.23"
   },
   "browserslist": {
     "production": [
