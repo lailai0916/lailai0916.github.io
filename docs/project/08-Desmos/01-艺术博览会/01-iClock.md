@@ -18,7 +18,7 @@ import IframeWindow from '@site/src/components/BrowserWindow/IframeWindow';
 
 <iframe
   src="https://www.desmos.com/winner-certificate-2024?hash=p4i42jkcp1&lang=en"
-  style={{display: 'block', width: '100%', height: '100vh'}}
+  style={{display: 'block', width: '100%', height: '840px'}}
 />
 
 ## 效果展示
