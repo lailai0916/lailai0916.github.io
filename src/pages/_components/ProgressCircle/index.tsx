@@ -3,7 +3,7 @@ import styles from './styles.module.css';
 
 export default function ProgressCircle({ unit, total, value }) {
   return (
-    <div className={styles.circle} style={{ '--clr': 'var(--ifm-color-primary)' }}>
+    <div className={styles.circle}>
       <div className={styles.dots} 
         style={{ transform: `rotateZ(${ 360 * value / total }deg)` }}
       />
