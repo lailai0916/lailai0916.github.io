@@ -62,7 +62,13 @@
 
 ## 代码
 
-```cpp
+:::tip
+
+请用正确的格式打开源代码。
+
+:::
+
+```cpp title="main.cpp"
 #include <bits/stdc++.h>
 #include <windows.h>
 #define KEY_DOWN(VK_NONAME) ((GetAsyncKeyState(VK_NONAME)&0x8000)?1:0)
