@@ -1,0 +1,111 @@
+# Windows API
+
+Windows API 是微软提供的一套用于与 Windows 操作系统进行交互的编程接口，允许开发者通过 C++ 语言访问和操作操作系统的底层功能，如窗口管理、文件操作、网络通信等。
+
+## `gotoxy(short x,short y)`
+
+功能：设置控制台光标的位置为 `y` 行 `x` 列。
+
+```cpp
+void gotoxy(short x,short y)
+{
+	SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE),{x,y});
+}
+```
+
+## `color(short a,short b)`
+
+功能：设置控制台文本的前景色和背景色。
+
+| 数字 | 颜色 |             数值              | 数字 |  颜色  |             数值              |
+| :--: | :--: | :---------------------------: | :--: | :----: | :---------------------------: |
+| $0$  | 黑色 | $\color{000000}\text{000000}$ | $8$  |  灰色  | $\color{808080}\text{808080}$ |
+| $1$  | 蓝色 | $\color{000080}\text{000080}$ | $9$  | 亮蓝色 | $\color{0000FF}\text{0000FF}$ |
+| $2$  | 绿色 | $\color{008000}\text{008000}$ | $10$ | 亮绿色 | $\color{00FF00}\text{00FF00}$ |
+| $3$  | 青色 | $\color{008080}\text{008080}$ | $11$ | 亮青色 | $\color{00FFFF}\text{00FFFF}$ |
+| $4$  | 红色 | $\color{800000}\text{800000}$ | $12$ | 亮红色 | $\color{FF0000}\text{FF0000}$ |
+| $5$  | 紫色 | $\color{800080}\text{800080}$ | $13$ | 亮紫色 | $\color{FF00FF}\text{FF00FF}$ |
+| $6$  | 黄色 | $\color{808000}\text{808000}$ | $14$ | 亮黄色 | $\color{FFFF00}\text{FFFF00}$ |
+| $7$  | 白色 | $\color{C0C0C0}\text{C0C0C0}$ | $15$ | 亮白色 | $\color{FFFFFF}\text{FFFFFF}$ |
+
+```cpp
+void color(short a,short b)
+{
+	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),a<<4|b);
+}
+```
+
+## `hideCursor()`
+
+- 功能：隐藏控制台中的光标。
+
+```cpp
+void hideCursor()
+{
+	CONSOLE_CURSOR_INFO cursor_info={1,0};
+	SetConsoleCursorInfo(GetStdHandle(STD_OUTPUT_HANDLE),&cursor_info);
+}
+```
+
+## `disableQuickEditMode()`
+
+- 功能：禁用快速编辑模式。
+
+```cpp
+void disableQuickEditMode()
+{
+	HANDLE hInput=GetStdHandle(STD_INPUT_HANDLE);
+	DWORD prevMode;
+	GetConsoleMode(hInput,&prevMode);
+	prevMode&=~ENABLE_QUICK_EDIT_MODE;
+	prevMode&=~ENABLE_INSERT_MODE;
+	prevMode&=~ENABLE_MOUSE_INPUT;
+	SetConsoleMode(hInput,prevMode);
+}
+```
+
+## `windowPos()`
+
+- 功能：获取鼠标指针在控制台的相对位置。
+
+```cpp
+POINT windowPos()
+{
+	POINT pt;
+	GetCursorPos(&pt);
+	ScreenToClient(GetConsoleWindow(),&pt);
+	return pt;
+}
+```
+
+## `moveConsoleWindow(int x,int y)`
+
+功能：将控制台窗口移动 `x` 和 `y` 个单位。
+
+```cpp
+void moveConsoleWindow(int x,int y)
+{
+	HWND consoleWindow=GetConsoleWindow();
+	RECT rect;
+	GetWindowRect(consoleWindow,&rect);
+	int w=rect.right-rect.left,h=rect.bottom-rect.top;
+	MoveWindow(consoleWindow,rect.left+x,rect.top+y,w,h,TRUE);
+}
+```
+
+## `centerConsoleWindow()`
+
+- 功能：将控制台窗口居中显示在屏幕上。
+
+```cpp
+void centerConsoleWindow()
+{
+	HWND consoleWindow=GetConsoleWindow();
+	RECT rect;
+	GetWindowRect(consoleWindow,&rect);
+	int w=rect.right-rect.left,h=rect.bottom-rect.top;
+	int x=GetSystemMetrics(SM_CXSCREEN)-w>>1;
+	int y=GetSystemMetrics(SM_CYSCREEN)-h>>1;
+	MoveWindow(consoleWindow,x,y,w,h,TRUE);
+}
+```
