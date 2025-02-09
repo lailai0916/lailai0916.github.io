@@ -5,6 +5,8 @@ authors: [lailai]
 tags: [top, welcome]
 ---
 
+import Quote from '@site/src/components/Quote';
+
 - 见 [关于](/about)
 
 <!-- truncate -->
