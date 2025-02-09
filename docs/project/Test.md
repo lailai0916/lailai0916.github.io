@@ -4,7 +4,7 @@ import Desmos from '@site/src/components/BrowserWindow/Desmos';
 
 # 测试
 
-Testing new website features...
+测试网站的新功能...
 
 ## 实时编辑器
 
