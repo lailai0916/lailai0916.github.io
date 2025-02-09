@@ -109,3 +109,4 @@ void centerConsoleWindow()
 	MoveWindow(consoleWindow,x,y,w,h,TRUE);
 }
 ```
+

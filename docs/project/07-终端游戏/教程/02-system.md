@@ -47,3 +47,4 @@ system("cls");
 ```cpp
 system("color A1");
 ```
+
