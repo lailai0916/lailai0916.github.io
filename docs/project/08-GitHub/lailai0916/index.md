@@ -38,7 +38,7 @@ lailai0916/lailai0916 is a ✨special ✨ repository that you can use to add a R
 
 ## 标题
 
-- `README.md` 是 Markdown 格式，并且支持嵌入 HTML 代码。
+- `README.md` 是 Markdown 格式，但支持嵌入 HTML 代码。
 
 ```html live
 <h1 align="center">
