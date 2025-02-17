@@ -55,47 +55,77 @@ lailai0916/lailai0916 is a ✨special ✨ repository that you can use to add a R
 - 技术栈的图标推荐使用 [Skill Icons](https://skillicons.dev)。
 
 ```markdown
-[![My Skills](https://skillicons.dev/icons?i=js,html,css,wasm)](https://skillicons.dev)
+![](https://skillicons.dev/icons?i=js,html,css,wasm)
 ```
 
 <BrowserWindow>
 
-[![My Skills](https://skillicons.dev/icons?i=js,html,css,wasm)](https://skillicons.dev)
+![](https://skillicons.dev/icons?i=js,html,css,wasm)
 
 </BrowserWindow>
 
 - 通过参数 `&theme=light` 和 `&theme=dark`，可以指定图标的深浅模式。
 
 ```markdown
-[![My Skills](https://skillicons.dev/icons?i=java,kotlin,nodejs,figma&theme=light)](https://skillicons.dev)
+![](https://skillicons.dev/icons?i=java,kotlin,nodejs,figma&theme=light)
 
-[![My Skills](https://skillicons.dev/icons?i=java,kotlin,nodejs,figma&theme=dark)](https://skillicons.dev)
+![](https://skillicons.dev/icons?i=java,kotlin,nodejs,figma&theme=dark)
 ```
 
 <BrowserWindow>
 
-[![My Skills](https://skillicons.dev/icons?i=java,kotlin,nodejs,figma&theme=light)](https://skillicons.dev)
+![](https://skillicons.dev/icons?i=java,kotlin,nodejs,figma&theme=light)
 
-[![My Skills](https://skillicons.dev/icons?i=java,kotlin,nodejs,figma&theme=dark)](https://skillicons.dev)
+![](https://skillicons.dev/icons?i=java,kotlin,nodejs,figma&theme=dark)
 
 </BrowserWindow>
 
-- GitHub 有两个特殊标记 `#gh-light-mode-only` 和 `#gh-dark-mode-only`，可以指定某个元素或内容仅在 GitHub 的 Light（亮色）或 Dark（暗色）模式下显示。
+- GitHub 有两个特殊标记 `#gh-light-mode-only` 和 `#gh-dark-mode-only`，可以指定某个元素或内容仅在 GitHub 的 Light（亮色）或 Dark（暗色）模式下显示，这样就可以实现深浅模式切换。
 
 ```markdown
-[![My Skills](https://skillicons.dev/icons?i=java,kotlin,nodejs,figma&theme=light#gh-light-mode-only)](https://skillicons.dev)
-[![My Skills](https://skillicons.dev/icons?i=java,kotlin,nodejs,figma&theme=dark#gh-dark-mode-only)](https://skillicons.dev)
+![](https://skillicons.dev/icons?i=java,kotlin,nodejs,figma&theme=light#gh-light-mode-only)
+![](https://skillicons.dev/icons?i=java,kotlin,nodejs,figma&theme=dark#gh-dark-mode-only)
 ```
 
 <BrowserWindow>
 
-[![My Skills](https://skillicons.dev/icons?i=java,kotlin,nodejs,figma&theme=light#gh-light-mode-only)](https://skillicons.dev)
-[![My Skills](https://skillicons.dev/icons?i=java,kotlin,nodejs,figma&theme=dark#gh-dark-mode-only)](https://skillicons.dev)
+![](https://skillicons.dev/icons?i=java,kotlin,nodejs,figma&theme=light#gh-light-mode-only)
+![](https://skillicons.dev/icons?i=java,kotlin,nodejs,figma&theme=dark#gh-dark-mode-only)
 
 </BrowserWindow>
 
 ## 状态信息
 
-- GitHub 的状态信息推荐使用 [github-stats](https://github.com/jstrieb/github-stats) 或 [GitHub Profile Summary Cards](https://github-profile-summary-cards.vercel.app/demo.html)。
+- GitHub 的状态信息推荐使用 [GitHub Profile Summary Cards](https://github-profile-summary-cards.vercel.app/demo.html) 或 [GitHub Stats Visualization](https://github.com/jstrieb/github-stats)。
 
+### GitHub Profile Summary Cards
 
+- [GitHub Profile Summary Cards](https://github-profile-summary-cards.vercel.app/demo.html) 的优点是方便，修改链接即可直接使用。
+
+```markdown
+![](http://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=lailai0916&theme=default)
+```
+
+<BrowserWindow>
+
+![](http://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=lailai0916&theme=default)
+
+</BrowserWindow>
+
+- 类似技术栈图标，也可以实现深浅模式切换。
+
+```markdown
+![](http://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=lailai0916&theme=default#gh-light-mode-only)
+![](http://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=lailai0916&theme=dark#gh-dark-mode-only)
+```
+
+<BrowserWindow>
+
+![](http://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=lailai0916&theme=default#gh-light-mode-only)
+![](http://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=lailai0916&theme=dark#gh-dark-mode-only)
+
+</BrowserWindow>
+
+### GitHub Stats Visualization
+
+- [GitHub Stats Visualization](https://github.com/jstrieb/github-stats) 的优点是带有动画，但需要自行构建比较麻烦。
