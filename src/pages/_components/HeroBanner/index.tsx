@@ -10,11 +10,10 @@ export default function HeroBanner() {
         <Heading as="h1" className={styles.heroProjectTagline}>
           <img
             alt="lailai's Logo"
-            src="/img/logo.svg"
             className={styles.heroLogo}
+            src="/img/logo.svg"
             width="200"
             height="200"
-            loading="lazy"
           />
           <span
             className={styles.heroTitleTextHtml}
