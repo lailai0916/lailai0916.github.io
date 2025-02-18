@@ -1,6 +1,6 @@
 # lailai's Device
 
-It's something only Apple can do.
+It's something only Apple can do!
 
 ## MacBook Pro 16 英寸
 
