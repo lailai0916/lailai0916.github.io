@@ -91,6 +91,11 @@ html[data-theme='dark'] .hero {
   float: right;
   padding: 20px 20px;
   height: auto;
+  position: relative;
+  z-index: 1;
+  will-change: filter;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
   filter: drop-shadow(0 0 20px var(--ifm-color-primary))
           drop-shadow(0 0 40px var(--ifm-color-primary));
   user-select: none;
@@ -188,13 +193,36 @@ html[data-theme='dark'] .hero {
 }
 
 .topBannerTitleText {
-  background: linear-gradient(to right, #0090f7, #ba62fc, #f2416b);
+  text-decoration: none; 
+  background-image: linear-gradient(90deg,
+    #0090f7,    
+    #ba62fc,   
+    #f2416b,   
+    #ba62fc,    
+    #0090f7
+  );
+  background-size: 200%;
   background-clip: text;
+  -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  animation: streamer 4s ease-in-out infinite;
+}
+
+@keyframes streamer {
+  0% {
+    background-position: 0%;
+  }
+  50% {
+    background-position: 100%;
+  }
+  100% {
+    background-position: 0%;
+  }
 }
 
 .topBannerTitleText:hover {
   border-bottom: solid 2px;
+  text-decoration: none; 
   border-color: rgb(152 0 255);
 }
 
