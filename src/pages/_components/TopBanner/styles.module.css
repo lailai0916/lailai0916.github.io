@@ -33,18 +33,15 @@
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  animation: streamer 4s ease-in-out infinite;
+  animation: streamer 3s ease-in-out infinite;
 }
 
 @keyframes streamer {
   0% {
     background-position: 0%;
   }
-  50% {
-    background-position: 100%;
-  }
   100% {
-    background-position: 0%;
+    background-position: 200%;
   }
 }
 
