@@ -2,17 +2,18 @@
 
 我日常携带的一些有用物品。
 
-## 数码设备
-
-- 见 [数码设备](Device)
-
 ## 收纳
 
 ### tomtoc Voyage T50 Laptop Backpack
 
-- 介绍：tomtoc 专为 MacBook 和 iPad 设计的电脑背包
 - 售价：$209.99 / ¥1,299
 - 购买：[官网](https://www.tomtoc.com/products/voyage-t50-laptop-backpack-20l-white)
+
+这个背包是专为 Apple 产品设计的，所以刚好可以放下我的 16 英寸的 MacBook Pro。
+
+品牌是 [tomtoc](https://www.tomtoc.cn)，是入驻 Apple Store 的数码配件厂。
+
+有黑白两色可选，我选择了黑色的。
 
 ### MUJI 聚酯纤维 旅游用钱包
 
@@ -22,7 +23,13 @@
 
 - 介绍：存放一些小物件
 
-## 数码配件
+## 数码设备
+
+- 见 [数码设备](Device)
+
+这些数码设备我一般都随身携带。
+
+## 辅助设备
 
 ### Logitech G PRO X SUPERLIGHT 2
 
@@ -43,44 +50,36 @@
 - 售价：$29 / ¥249
 - 购买：[官网](https://www.apple.com.cn/airtag/)
 
-## 供电
+## 供电设备
 
-### 140W USB-C 电源适配器
+### 充电器
 
-- 介绍：MacBook Pro 的充电器（140 W）
-- 售价：$99 / ¥729
+- Apple 140W USB-C 电源适配器
+- Anker Zolo 140W 四口氮化镓充电器
 
-### USB-C 转 MagSafe 3 连接线 (2 米)
+### 充电宝
 
-- 介绍：给 MacBook 供电（140 W）
-- 售价：$49 / ¥379
+- Anker Qi2 15W 磁吸充电宝
 
-### USB-C 充电线 (1 米)
+### 线材
 
-- 介绍：给 iPhone、iPad、AirPods 等设备供电（60 W）
-- 售价：$19 / ¥145
+- Apple USB-C 转 MagSafe 3 连接线 (2 米)
+- Apple 60W USB-C 充电线 (1 米)
+- USB-C 转闪电连接线 (1 米)
+- Apple Watch 磁力充电器转 USB-C 连接线 (1 米)
+- Apple 雷雳 4 数据线 (1 米)
 
-### 雷雳 4 数据线 (1 米)
+## 数码配件
 
-- 介绍：传输数据（40 Gb/s）和备用供电（100 W）
-- 售价：$69 / ¥499
+- Apple USB-C 转 USB 转换器
 
-## 转接
+解决了 MacBook Pro 没有 USA 接口的问题，可以连接鼠标接收器和 U 盘等 USB 设备。
 
-### USB-C 转 USB 转换器
+- 多功能数据线盒
 
-- 介绍：MacBook Pro 没有 USA 接口，通过转接器连接鼠标接收器和 U 盘
+用来应对一些特殊情况。
 
-### 多功能数据线盒
+## 清洁工具
 
-- 介绍：用 Lightning 转换器给 iPhone 供电，并应对一些特殊情况
-
-## 清洁
-
-### 3M 思高擦拭布
-
-- 介绍：擦拭眼睛镜片和设备屏幕
-
-### Zeiss 防雾清洁湿巾
-
-- 介绍：擦拭眼睛镜片和设备屏幕
+- 3M 思高擦拭布
+- Zeiss 防雾清洁湿巾
