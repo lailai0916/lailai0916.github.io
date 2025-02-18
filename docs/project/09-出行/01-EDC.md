@@ -11,13 +11,11 @@
 
 这个背包是专为 Apple 产品设计的，所以刚好可以放下我的 16 英寸的 MacBook Pro。
 
-品牌是 [tomtoc](https://www.tomtoc.cn)，是入驻 Apple Store 的数码配件厂。
+包的品牌是 [tomtoc](https://www.tomtoc.cn)，一家入驻 Apple Store 的数码配件厂。
 
 有黑白两色可选，我选择了黑色的。
 
-### MUJI 聚酯纤维 旅游用钱包
-
-- 介绍：存放一些现金和证件
+### THE NORTH FACE EXPLORE HIP PACK
 
 ### MUJI 硬质收纳盒（XS 号）
 
@@ -83,3 +81,8 @@
 
 - 3M 思高擦拭布
 - Zeiss 防雾清洁湿巾
+
+## 其他物品
+
+- 米家多功能便携手电筒：紧急照明
+- MUJI 聚酯纤维 旅游用钱包：存放一些现金和证件
