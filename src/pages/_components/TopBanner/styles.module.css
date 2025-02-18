@@ -22,38 +22,52 @@
 }
 
 .topBannerTitleText {
+  background: linear-gradient(to right, #0090f7, #ba62fc, #f2416b);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* .topBannerTitleText {
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   text-decoration: none;
-  background-image: linear-gradient(90deg,
+  background-image: linear-gradient(
+    90deg,
     #0090f7,
     #ba62fc,
     #f2416b,
     #ba62fc,
-    #0090f7);  
+    #0090f7
+  );  
   background-size: 200%;
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  -webkit-animation: streamer 4s linear infinite;
   animation: streamer 4s linear infinite;
-}
+  -webkit-animation: streamer 4s linear infinite;
+} */
 
-@-webkit-keyframes streamer {
+/* @keyframes streamer {
   0% {
     background-position: 0%;
   }
   100% {
     background-position: 200%;
   }
-}
+} */
 
-@keyframes streamer {
+/* @-webkit-keyframes streamer {
   0% {
     background-position: 0%;
   }
   100% {
     background-position: 200%;
   }
-}
+} */
+
+/* html[data-theme='dark'] .topBannerTitleText {
+  background: linear-gradient(to right, #0090f7, #ba62fc, #f2416b);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+} */
 
 .topBannerTitleText:hover {
   border-bottom: solid 2px;

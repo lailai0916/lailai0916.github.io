@@ -11,7 +11,7 @@
 }
 
 [data-theme='dark'] .vipTextStyle {
-    background: linear-gradient(270deg,#f5e3d9 40%,#fdc9ae);
+    background: linear-gradient(270deg, #f5e3d9 40%, #fdc9ae);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
