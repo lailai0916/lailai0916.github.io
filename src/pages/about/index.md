@@ -8,7 +8,6 @@ import Heading from '@theme/Heading';
 
 import { Icon } from '@iconify/react';
 import Comment from "./_components/Comment";
-import TextStyle from '@site/src/components/TextStyle';
 import styles from './styles.module.css';
 
 <div style={{maxWidth: '70ch', margin: 'auto'}}>
@@ -16,9 +15,9 @@ import styles from './styles.module.css';
 <section className="margin-top--lg margin-bottom--lg text--center">
   <Heading as="h1">
     {'🎉\xa0'}
-    <TextStyle style="holiday">
+    <span className={styles.TitleText}>
       <Link to="..">{'Hello,\xa0I\'m\xa0lailai'}</Link>
-    </TextStyle>
+    </span>
     {'\xa0🥳'}
   </Heading>
 </section>
@@ -37,11 +36,11 @@ import styles from './styles.module.css';
 
 ## 我的昵称
 
-我的昵称是 **lailai**，但由于重名较多，注册时常常遇到困难。
+我的昵称是 **lailai**，但由于重名较多，注册账号时经常遇到困难。
 
-为了解决这个问题，我通常会在后面加上生日数字 $0916$，形成 **lailai0916**。
+为了解决这个问题，我会在后面加上生日数字 **0916**，形成 **lailai0916**。
 
-如果 **lailai0916** 也被占用，我会将 $0916$ 转换为十六进制，形成 **lailai0x394**。
+如果 **lailai0916** 也被占用，我会将 **0916** 转换为十六进制，形成 **lailai0x394**。
 
 :::warning
 

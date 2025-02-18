@@ -1,10 +1,17 @@
 import BrowserWindow from '@site/src/components/BrowserWindow';
 import IframeWindow from '@site/src/components/BrowserWindow/IframeWindow';
-import Desmos from '@site/src/components/BrowserWindow/Desmos';
+import Desmos from '@site/src/components/Desmos';
+import Show from '@site/src/components/Show';
 
 # 测试
 
 测试网站的新功能...
+
+<Show lang="cpp">
+$$
+123
+$$
+</Show>
 
 ## 实时编辑器
 
