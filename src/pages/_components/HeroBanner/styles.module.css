@@ -23,12 +23,38 @@ html[data-theme='dark'] .hero {
   color: var(--ifm-color-primary);
 }
 
+@keyframes jack-in-the-box {
+  0% {
+    opacity: 0;
+    transform: scale(0.1) rotate(30deg);
+    transform-origin: center bottom;
+  }
+
+  50% {
+    transform: rotate(-10deg);
+  }
+
+  70% {
+    transform: rotate(3deg);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
 .heroLogo {
   animation-duration: 1s;
   animation-name: jack-in-the-box;
   float: right;
   padding: 20px 20px;
   height: auto;
+  position: relative;
+  z-index: 1;
+  will-change: filter;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
   filter: drop-shadow(0 0 20px var(--ifm-color-primary))
           drop-shadow(0 0 40px var(--ifm-color-primary));
   user-select: none;
@@ -99,26 +125,5 @@ html[data-theme='dark'] .hero {
 
   .indexCtasGitHubButton {
     display: none;
-  }
-}
-
-@keyframes jack-in-the-box {
-  0% {
-    opacity: 0;
-    transform: scale(0.1) rotate(30deg);
-    transform-origin: center bottom;
-  }
-
-  50% {
-    transform: rotate(-10deg);
-  }
-
-  70% {
-    transform: rotate(3deg);
-  }
-
-  100% {
-    opacity: 1;
-    transform: scale(1);
   }
 }

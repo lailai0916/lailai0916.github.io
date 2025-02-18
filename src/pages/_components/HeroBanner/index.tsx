@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from '@docusaurus/Link';
 import Heading from '@theme/Heading';
-import styles from '../../styles.module.css';
+import styles from './styles.module.css';
 
 export default function HeroBanner() {
   return (

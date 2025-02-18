@@ -3,7 +3,7 @@ import clsx from 'clsx';
 import Link from '@docusaurus/Link';
 import Heading from '@theme/Heading';
 import Features from '@site/src/data/features';
-import styles from '../../styles.module.css';
+import styles from './styles.module.css';
 import {useBaseUrlUtils} from '@docusaurus/useBaseUrl';
 
 function Feature({

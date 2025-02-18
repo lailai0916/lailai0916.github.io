@@ -1,4 +1,3 @@
-import clsx from 'clsx';
 import { useEffect, useState } from 'react';
 import styles from './styles.module.css';
 import Heading from '@theme/Heading';
