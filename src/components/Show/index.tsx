@@ -19,4 +19,3 @@ export default function Show({ lang, children }: Props): JSX.Element {
     </div>
   );
 }
-

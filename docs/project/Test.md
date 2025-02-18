@@ -5,13 +5,7 @@ import Show from '@site/src/components/Show';
 
 # 测试
 
-测试网站的新功能...
-
-<Show lang="cpp">
-$$
-123
-$$
-</Show>
+网站新功能的测试...
 
 ## 实时编辑器
 
