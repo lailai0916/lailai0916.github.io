@@ -2,8 +2,8 @@ import Layout from '@theme/Layout';
 import styles from './styles.module.css';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 
-import HeroBanner from './_components/HeroBanner';
 import TopBanner from './_components/TopBanner';
+import HeroBanner from './_components/HeroBanner';
 import FeaturesContainer from './_components/FeaturesContainer';
 import Timer from './_components/Timer';
 
