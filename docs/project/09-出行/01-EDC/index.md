@@ -24,10 +24,6 @@
 ![](assets/the-north-face-explore-hip-pack/1.png)
 ![](assets/the-north-face-explore-hip-pack/2.png)
 
-### MUJI 硬质收纳盒（XS 号）
-
-- 介绍：存放一些小物件
-
 ## 数码设备
 
 - 见 [lailai's Device](../数码/Device)
