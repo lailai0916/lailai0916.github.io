@@ -1,3 +1,5 @@
+import ShowcaseCarousel from '@site/src/components/ShowcaseCarousel';
+
 # lailai's EDC
 
 我日常携带的一些有用物品。
@@ -14,6 +16,22 @@
 包的品牌是 [tomtoc](https://www.tomtoc.cn)，一家入驻 Apple Store 的国产数码配件商。
 
 有黑白两色可选，我选择了黑色的，因为比较耐脏。
+
+<ShowcaseCarousel
+  aspectRatio={1072 / 584}
+  sites={[
+    {
+      name: 'Prettier',
+      image: 'https://docusaurus.io/assets/images/slash-up-and-running-1c1f83f3064dcd56be41632c51be62ac.png',
+      url: 'https://prettier.io/',
+    },
+    {
+      name: 'Babel',
+      image: 'https://docusaurus.io/assets/images/slash-up-and-running-1c1f83f3064dcd56be41632c51be62ac.png',
+      url: 'https://babeljs.io/',
+    },
+  ]}
+/>
 
 ### THE NORTH FACE EXPLORE HIP PACK
 
@@ -84,7 +102,10 @@
 - 3M 思高擦拭布
 - Zeiss 防雾清洁湿巾
 
+## 应急物品
+
+- 米家多功能便携手电筒：应急照明
+
 ## 其他物品
 
-- 米家多功能便携手电筒：紧急照明
 - MUJI 聚酯纤维 旅游用钱包：存放一些现金和证件

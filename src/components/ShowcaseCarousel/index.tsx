@@ -71,38 +71,3 @@ export default function ShowcaseCarousel({
     </CarouselProvider>
   );
 }
-
-// export function ShowcaseCarouselV1(): JSX.Element {
-//   return (
-//     <ShowcaseCarousel
-//       aspectRatio={1072 / 584}
-//       sites={[
-//         {
-//           name: 'Prettier',
-//           image: require('./img/v1/prettier.png'),
-//           url: 'https://prettier.io/',
-//         },
-//         {
-//           name: 'Babel',
-//           image: require('./img/v1/babel.png'),
-//           url: 'https://babeljs.io/',
-//         },
-//         {
-//           name: 'React-Native',
-//           image: require('./img/v1/react-native.png'),
-//           url: 'https://archive.reactnative.dev/',
-//         },
-//         {
-//           name: 'Katex',
-//           image: require('./img/v1/katex.png'),
-//           url: 'https://katex.org/docs/',
-//         },
-//         {
-//           name: 'Docusaurus',
-//           image: require('./img/v1/docusaurus.png'),
-//           url: 'https://v1.docusaurus.io/',
-//         },
-//       ]}
-//     />
-//   );
-// }
