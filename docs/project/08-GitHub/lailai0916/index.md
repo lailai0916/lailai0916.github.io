@@ -2,13 +2,7 @@ import BrowserWindow from '@site/src/components/BrowserWindow';
 
 # lailai0916
 
-要在 GitHub 个人主页的介绍中添加内容，你可以通过编辑 Profile README 来实现。GitHub 允许你在个人主页上显示一个特殊的 README 文件，这个文件可以包含你想要展示的信息，比如关于你自己、你的项目、统计图等。
-
-lailai0916/lailai0916 is a special repository.
-
-Its README.md will appear on your public profile.
-
-lailai0916/lailai0916 is a ✨special ✨ repository that you can use to add a README.md to your GitHub profile. Make sure it’s public and initialize it with a README to get started.
+username/username 是一个特别的仓库，它的 README.md 将出现在你个人主页的公共资料上，这个文件可以包含你想要展示的信息，比如关于你自己、你的项目、统计图等。
 
 ## 创建仓库
 
@@ -52,7 +46,9 @@ lailai0916/lailai0916 is a ✨special ✨ repository that you can use to add a R
 
 ## 技术栈图标
 
-- 技术栈的图标推荐使用 [Skill Icons](https://skillicons.dev)。
+- 技术栈图标推荐使用 [Skill Icons](https://skillicons.dev)。
+
+### Skill Icons
 
 ```markdown
 ![](https://skillicons.dev/icons?i=js,html,css,wasm)
@@ -103,12 +99,12 @@ lailai0916/lailai0916 is a ✨special ✨ repository that you can use to add a R
 - [GitHub Profile Summary Cards](https://github-profile-summary-cards.vercel.app/demo.html) 的优点是方便，修改链接即可直接使用。
 
 ```markdown
-![](http://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=lailai0916&theme=default)
+![](http://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=lailai0916)
 ```
 
 <BrowserWindow>
 
-![](http://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=lailai0916&theme=default)
+![](http://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=lailai0916)
 
 </BrowserWindow>
 
