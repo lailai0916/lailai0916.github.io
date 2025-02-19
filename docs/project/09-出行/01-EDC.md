@@ -9,9 +9,9 @@
 - 售价：$209.99 / ¥1,299
 - 购买：[官网](https://www.tomtoc.com/products/voyage-t50-laptop-backpack-20l-white)
 
-这个背包是专为 Apple 产品设计的，所以刚好可以放下我的 16 英寸的 MacBook Pro。
+这个背包是专为 Apple 产品设计的，所以刚好可以放下我的 16 英寸的 MacBook Pro 和其他 Apple 设备。
 
-包的品牌是 [tomtoc](https://www.tomtoc.cn)，一家入驻 Apple Store 的数码配件厂。
+包的品牌是 [tomtoc](https://www.tomtoc.cn)，一家入驻 Apple Store 的国产数码配件商。
 
 有黑白两色可选，我选择了黑色的。
 
