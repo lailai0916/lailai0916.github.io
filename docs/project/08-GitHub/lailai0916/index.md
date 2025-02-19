@@ -41,13 +41,13 @@ lailai0916/lailai0916 is a ✨special ✨ repository that you can use to add a R
 - `README.md` 是 Markdown 格式，但支持嵌入 HTML 代码。
 
 ```html live
-<h2 align="center">
+<h1 align="center">
   🎉
   <a href="https://www.lailai.one">
     Hello, I'm lailai
   </a>
   🥳
-</h2>
+</h1>
 ```
 
 ## 技术栈图标
