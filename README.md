@@ -1,7 +1,5 @@
-<div align="center">
-  <img src="static/img/logo.svg" height="150">
-  <h1>lailai's Home</h1>
-</div>
+<img align="center" src="static/img/logo.svg" height="150">
+<h1 align="center">lailai's Home</h1>
 
 ## 介绍
 
