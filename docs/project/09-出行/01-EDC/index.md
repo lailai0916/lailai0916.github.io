@@ -1,41 +1,28 @@
-import ShowcaseCarousel from '@site/src/components/ShowcaseCarousel';
-
 # lailai's EDC
 
 我日常携带的一些有用物品。
 
 ## 收纳
 
-### tomtoc Voyage T50 Laptop Backpack
+### 背包
 
+- 型号：tomtoc Voyage T50 Laptop Backpack
 - 售价：$209.99 / ¥1,299
 - 购买：[官网](https://www.tomtoc.com/products/voyage-t50-laptop-backpack-20l-white)
 
 这个背包是专为 Apple 产品设计的，所以刚好可以放下我的 16 英寸的 MacBook Pro 和其他 Apple 设备。
 
-包的品牌是 [tomtoc](https://www.tomtoc.cn)，一家入驻 Apple Store 的国产数码配件商。
+包的品牌是 [tomtoc](https://www.tomtoc.com)，一家入驻 Apple Store 的国产数码配件商。有黑白两色可选，我选择了黑色的，因为比较耐脏。
 
-有黑白两色可选，我选择了黑色的，因为比较耐脏。
-
-<ShowcaseCarousel
-  aspectRatio={1072 / 584}
-  sites={[
-    {
-      name: 'Prettier',
-      image: 'https://docusaurus.io/assets/images/slash-up-and-running-1c1f83f3064dcd56be41632c51be62ac.png',
-      url: 'https://prettier.io/',
-    },
-    {
-      name: 'Babel',
-      image: 'https://docusaurus.io/assets/images/slash-up-and-running-1c1f83f3064dcd56be41632c51be62ac.png',
-      url: 'https://babeljs.io/',
-    },
-  ]}
-/>
+![](assets/tomtoc-voyage-t50-laptop-backpack/1.png)
+![](assets/tomtoc-voyage-t50-laptop-backpack/2.png)
 
 ### THE NORTH FACE EXPLORE HIP PACK
 
 有的时候出行，背包随身携带不是很方便，我会把手机、充电宝、钱包、护照等重要物品放在腰包里。
+
+![](assets/the-north-face-explore-hip-pack/1.png)
+![](assets/the-north-face-explore-hip-pack/2.png)
 
 ### MUJI 硬质收纳盒（XS 号）
 
