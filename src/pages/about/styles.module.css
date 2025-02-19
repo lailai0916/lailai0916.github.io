@@ -1,10 +1,14 @@
-.TitleText {
+.titleText {
   background: linear-gradient(to right, #0090f7, #ba62fc, #f2416b);
   background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .item {
+  display: block;
+}
+
+.item div {
   display: flex;
   align-items: center;
   gap: 0.5rem;
@@ -12,10 +16,14 @@
 }
 
 .item img {
-  width: 24px;
-  height: 24px;
-  object-fit: contain;
+  width: 20px;
+  height: 20px;
   filter: invert(0%) sepia(100%) saturate(0%) hue-rotate(0deg) brightness(0%) contrast(100%);
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
 }
 
 html[data-theme='dark'] .item img {
