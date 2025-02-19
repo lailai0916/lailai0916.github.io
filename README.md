@@ -1,4 +1,4 @@
-<img align="center" src="static/img/logo.svg" height="150">
+<p align="center"><img src="static/img/logo.svg" height="150"></p>
 <h1 align="center">lailai's Home</h1>
 
 ## 介绍
