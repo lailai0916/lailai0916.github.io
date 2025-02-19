@@ -19,11 +19,8 @@
   width: 20px;
   height: 20px;
   filter: invert(0%) sepia(100%) saturate(0%) hue-rotate(0deg) brightness(0%) contrast(100%);
-}
-
-.icon {
-  width: 20px;
-  height: 20px;
+  user-select: none;
+  pointer-events: none;
 }
 
 html[data-theme='dark'] .item img {
