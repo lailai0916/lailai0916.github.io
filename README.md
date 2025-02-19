@@ -1,6 +1,6 @@
 <div align="center">
   <img src="static/img/logo.svg" height="150">
-  <h2><a href="https://www.lailai.one">lailai's Home</a></h2>
+  <h2>lailai's Home</h2>
 </div>
 
 ## 介绍
