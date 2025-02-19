@@ -1,6 +1,6 @@
 import BrowserWindow from '@site/src/components/BrowserWindow';
 
-# lailai0916
+# 教程
 
 `username/username` 是一个特别的仓库，它的 README.md 将出现在你个人主页的公共资料上，这个文件可以包含你想要展示的信息，比如关于你自己、你的项目、统计图等。
 
