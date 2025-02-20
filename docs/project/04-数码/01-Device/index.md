@@ -13,7 +13,7 @@ It's something only Apple can do!
 - 存储：1TB
 - 配件：Incase 硬质保护壳
 
-<img src="./assets/macbook-pro-14-inch-m3-pro-or-m3.png" style={{ maxWidth: '400px', maxHeight: '400px' }} />
+<img src={require('./assets/macbook.png').default} style={{ width: 'min(100%,400px)', border: '1px solid #ccc' }} />
 
 ## iPad Pro 11 英寸
 
@@ -24,6 +24,8 @@ It's something only Apple can do!
 - 容量：256GB
 - 芯片：M1
 
+<img src={require('./assets/ipad.png').default} style={{ width: 'min(100%,400px)', border: '1px solid #ccc' }} />
+
 ## iPhone 13
 
 - 规格：[技术规格](https://support.apple.com/zh-cn/111872)
@@ -32,6 +34,8 @@ It's something only Apple can do!
 - 容量：256GB
 - 芯片：A15
 - 配件：MagSafe 透明保护壳 / Belkin UltraGlass 屏幕保护膜
+
+<img src={require('./assets/iphone.png').default} style={{ width: 'min(100%,400px)', border: '1px solid #ccc' }} />
 
 ## Apple Watch Series 10
 
@@ -42,14 +46,20 @@ It's something only Apple can do!
 - 尺寸：46mm
 - 表带：米兰尼斯
 
+<img src={require('./assets/applewatch.png').default} style={{ width: 'min(100%,400px)', border: '1px solid #ccc' }} />
+
 ## AirPods Pro 2
 
 - 规格：[技术规格](https://support.apple.com/zh-cn/111851)
 - 售价：$249 / ¥1,899
 - 配件：Incase 挂绳
 
+<img src={require('./assets/airpods.pro.png').default} style={{ width: 'min(100%,400px)', border: '1px solid #ccc' }} />
+
 ## AirPods Max
 
 - 规格：[技术规格](https://support.apple.com/zh-cn/121205)
 - 售价：$549 / ¥3,999
 - 配件：智能耳机套
+
+<img src={require('./assets/airpods.max.png').default} style={{ width: 'min(100%,400px)', border: '1px solid #ccc' }} />
