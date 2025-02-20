@@ -13,6 +13,8 @@ It's something only Apple can do!
 - 存储：1TB
 - 配件：Incase 硬质保护壳
 
+<img src="./assets/macbook-pro-14-inch-m3-pro-or-m3.png" style={{ maxWidth: '400px', maxHeight: '400px' }} />
+
 ## iPad Pro 11 英寸
 
 - 规格：[技术规格](https://support.apple.com/zh-cn/111897)
