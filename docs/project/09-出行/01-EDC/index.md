@@ -16,8 +16,8 @@ import Image from '@theme/IdealImage';
 
 包的品牌是 [tomtoc](https://www.tomtoc.com)，一家入驻 Apple Store 的国产数码配件商。有黑白两色可选，我选择了黑色的，因为比较耐脏。
 
-<Image img={require('./assets/tomtoc-voyage-t50-laptop-backpack/1.png')} />
-<Image img={require('./assets/tomtoc-voyage-t50-laptop-backpack/2.png')} />
+<Image img={require('./assets/tomtoc-voyage-t50-laptop-backpack/1.png')} size={100} />
+<Image img={require('./assets/tomtoc-voyage-t50-laptop-backpack/2.png')} max={100} />
 
 ### THE NORTH FACE EXPLORE HIP PACK
 
