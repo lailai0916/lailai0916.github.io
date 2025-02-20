@@ -137,13 +137,13 @@ GitHub 的状态统计图推荐使用 [GitHub Profile Summary Cards](https://git
 ![](assets/setting-token-dark.png#gh-dark-mode-only)
 
 3. 建议将 **Expiration**（有效期）设置为 **No expiration**（无有效期）。
-3. 在 **Select scopes**（选择范围）中勾选 `read:user` 和 `repo` 权限。
-4. 点击 **Create token**（创建令牌）。
+4. 在 **Select scopes**（选择范围）中勾选 `read:user` 和 `repo` 权限。
+5. 点击 **Create token**（创建令牌）。
 
 ![](assets/generate-token-light.png#gh-light-mode-only)
 ![](assets/generate-token-dark.png#gh-dark-mode-only)
 
-5. 复制并保存这个令牌，以后你将无法再次看到它。
+6. 复制并保存这个令牌，以后你将无法再次看到它。
 
 - 复制 GitHub Stats Visualization 的 GitHub 仓库。
 
