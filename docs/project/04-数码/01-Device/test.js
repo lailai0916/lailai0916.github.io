@@ -12,6 +12,7 @@ export default function SimpleSlider() {
     slidesToScroll: 1,
   };
   return (
+    <div className="slider-container">
     <Slider {...settings}>
       <div>
         <h3>1</h3>
@@ -32,5 +33,6 @@ export default function SimpleSlider() {
         <h3>6</h3>
       </div>
     </Slider>
+    </div>
   );
 }
