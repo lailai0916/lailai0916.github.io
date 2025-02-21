@@ -119,6 +119,20 @@ import BrowserWindow from '@site/src/components/BrowserWindow';
 
 </BrowserWindow>
 
+3. 这个状态统计图支持更换不同的种类和主题。
+
+```markdown
+![](http://github-profile-summary-cards.vercel.app/api/cards/stats?username=lailai0916&theme=2077)
+![](http://github-profile-summary-cards.vercel.app/api/cards/productive-time?username=lailai0916&theme=tokyonight&utcOffset=8)
+```
+
+<BrowserWindow>
+
+![](http://github-profile-summary-cards.vercel.app/api/cards/stats?username=lailai0916&theme=2077)
+![](http://github-profile-summary-cards.vercel.app/api/cards/productive-time?username=lailai0916&theme=tokyonight&utcOffset=8)
+
+</BrowserWindow>
+
 ### GitHub Stats Visualization
 
 [GitHub Stats Visualization](https://github.com/jstrieb/github-stats) 的优点是带有动画，但需要自行构建，会相对比较麻烦。
