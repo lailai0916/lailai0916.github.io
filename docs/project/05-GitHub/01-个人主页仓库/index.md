@@ -8,7 +8,7 @@ import BrowserWindow from '@site/src/components/BrowserWindow';
 
 这个文件可以包含你想要展示的信息，比如个人介绍、你的项目、你的技能、状态统计图等。
 
-这是我的 GitHub 个人主页仓库 [lailai0916/lailai0916](https://github.com/lailai0916/lailai0916)，他将显示在我的 [个人主页](https://github.com/lailai0916) 上。
+这是我的个人主页仓库 [lailai0916/lailai0916](https://github.com/lailai0916/lailai0916)，它将显示在我的 [个人主页](https://github.com/lailai0916) 上。
 
 ## 创建仓库
 
