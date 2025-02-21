@@ -3,8 +3,8 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-function SimpleSlider() {
-  const settings = {
+export default function SimpleSlider() {
+  var settings = {
     dots: true,
     infinite: true,
     speed: 500,
@@ -12,29 +12,25 @@ function SimpleSlider() {
     slidesToScroll: 1,
   };
   return (
-    <div className="slider-container">
-      <Slider {...settings}>
-        <div align="center">
-          <img src={require('./assets/macbook.png').default} style={{ width: 'min(100%,400px)' }} />
-        </div>
-        <div align="center">
-          <img src={require('./assets/ipad.png').default} style={{ width: 'min(100%,400px)' }} />
-        </div>
-        <div align="center">
-          <img src={require('./assets/iphone.png').default} style={{ width: 'min(100%,400px)' }} />
-        </div>
-        <div align="center">
-          <img src={require('./assets/applewatch.png').default} style={{ width: 'min(100%,400px)' }} />
-        </div>
-        <div align="center">
-          <img src={require('./assets/airpods.pro.png').default} style={{ width: 'min(100%,400px)' }} />
-        </div>
-        <div align="center">
-          <img src={require('./assets/airpods.max.png').default} style={{ width: 'min(100%,400px)' }} />
-        </div>
-      </Slider>
-    </div>
+    <Slider {...settings}>
+      <div>
+        <h3>1</h3>
+      </div>
+      <div>
+        <h3>2</h3>
+      </div>
+      <div>
+        <h3>3</h3>
+      </div>
+      <div>
+        <h3>4</h3>
+      </div>
+      <div>
+        <h3>5</h3>
+      </div>
+      <div>
+        <h3>6</h3>
+      </div>
+    </Slider>
   );
 }
-
-export default SimpleSlider;
