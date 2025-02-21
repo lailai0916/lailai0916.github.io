@@ -32,7 +32,7 @@ npm install
 npm start
 ```
 
-## 目录
+## 结构
 
 ```bash
 Home
