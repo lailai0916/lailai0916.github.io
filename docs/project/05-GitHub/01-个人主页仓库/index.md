@@ -245,7 +245,7 @@ import ImageWindow from '@site/src/components/BrowserWindow/ImageWindow';
 
 </ImageWindow>
 
-7. 最后嵌入状态统计图，实现深浅模式切换。
+7. 嵌入状态统计图，并实现深浅模式切换。
 
 ```markdown
 ![](https://raw.githubusercontent.com/lailai0916/github-stats/master/generated/overview.svg#gh-dark-mode-only)
