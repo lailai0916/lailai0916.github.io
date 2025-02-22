@@ -1,4 +1,5 @@
 import BrowserWindow from '@site/src/components/BrowserWindow';
+import ImageWindow from '@site/src/components/BrowserWindow/ImageWindow';
 
 # 个人主页仓库
 
@@ -21,20 +22,32 @@ import BrowserWindow from '@site/src/components/BrowserWindow';
 - 勾选 **Add a README file**（添加 README 文件）。
 - 点击 **Create repository**（创建仓库）。
 
+<ImageWindow url="https://github.com/new">
+
 ![](assets/create-repository-light.png#gh-light-mode-only)
 ![](assets/create-repository-dark.png#gh-dark-mode-only)
+
+</ImageWindow>
 
 3. 创建完仓库后，会跳转到仓库主页，例如 `https://github.com/lailai0916/lailai0916`。
 
 - 仓库的根目录下有一个 `README.md` 文件，会在你的个人主页展示。
 
+<ImageWindow url="https://github.com/lailai0916/lailai0916">
+
 ![](assets/repository-homepage-light.png#gh-light-mode-only)
 ![](assets/repository-homepage-dark.png#gh-dark-mode-only)
 
+</ImageWindow>
+
 4. 点击 **Edit README**（编辑 README）编辑文件，完成后点击 **Commit changes**（提交更改）保存文件。
+
+<ImageWindow url="https://github.com/lailai0916/lailai0916/edit/main/README.md">
 
 ![](assets/edit-readme-light.png#gh-light-mode-only)
 ![](assets/edit-readme-dark.png#gh-dark-mode-only)
+
+</ImageWindow>
 
 ## 标题
 
@@ -119,7 +132,7 @@ import BrowserWindow from '@site/src/components/BrowserWindow';
 
 </BrowserWindow>
 
-3. 这个状态统计图支持更换不同的种类和主题。
+3. 这个状态统计图还支持更换不同的种类和主题。
 
 ```markdown
 ![](http://github-profile-summary-cards.vercel.app/api/cards/stats?username=lailai0916&theme=2077)
@@ -142,15 +155,23 @@ import BrowserWindow from '@site/src/components/BrowserWindow';
 - 在 GitHub 首页右上方点击头像，并点击 **Settings**。
 - 依次点击 **Developer settings** $\to$ **Personal access tokens** $\to$ **Tokens (classic)** $\to$ **Generate new token** $\to$ **Generate new token (classic)**。
 
+<ImageWindow url="https://github.com/settings/tokens">
+
 ![](assets/setting-token-light.png#gh-light-mode-only)
 ![](assets/setting-token-dark.png#gh-dark-mode-only)
+
+</ImageWindow>
 
 - 建议将 **Expiration**（有效期）设置为 **No expiration**（无有效期）。
 - 在 **Select scopes**（选择范围）中勾选 `read:user` 和 `repo` 权限。
 - 点击 **Create token**（创建令牌）。
 
+<ImageWindow url="https://github.com/settings/tokens/new">
+
 ![](assets/generate-token-light.png#gh-light-mode-only)
 ![](assets/generate-token-dark.png#gh-dark-mode-only)
+
+</ImageWindow>
 
 - 复制并保存这个令牌，以后你将无法再次看到它。
 
@@ -160,27 +181,43 @@ import BrowserWindow from '@site/src/components/BrowserWindow';
 - **Repository name**（仓库名称）和 **Description**（描述）可以随意填写，例如 `lailai0916/github-stats` 和 `lailai's Github Stats`。
 - 点击 **Create repository**（创建仓库）。
 
+<ImageWindow url="https://github.com/new?template_name=github-stats&template_owner=jstrieb">
+
 ![](assets/copy-repository-light.png#gh-light-mode-only)
 ![](assets/copy-repository-dark.png#gh-dark-mode-only)
 
+</ImageWindow>
+
 3. 创建完仓库后，会跳转到仓库主页，例如 `https://github.com/lailai0916/github-stats`。
+
+<ImageWindow url="https://github.com/lailai0916/github-stats">
 
 ![](assets/github-stats-homepage-light.png#gh-light-mode-only)
 ![](assets/github-stats-homepage-dark.png#gh-dark-mode-only)
+
+</ImageWindow>
 
 4. 将访问令牌添加到 Secrets（密钥）。
 
 - 在仓库上方点击 **Settings**。
 - 依次点击 **Secrets and variables** $\to$ **Actions** $\to$ **New repository secret**。
 
+<ImageWindow url="https://github.com/lailai0916/github-stats/settings/secrets/actions">
+
 ![](assets/setting-secret-light.png#gh-light-mode-only)
 ![](assets/setting-secret-dark.png#gh-dark-mode-only)
+
+</ImageWindow>
 
 - **Name**（名称）必须填 `ACCESS_TOKEN`，将 **Secret**（密钥）设置为刚才保存的令牌。
 - 点击 **Add secret**（添加密钥）。
 
+<ImageWindow url="https://github.com/lailai0916/github-stats/settings/secrets/actions">
+
 ![](assets/add-secret-light.png#gh-light-mode-only)
 ![](assets/add-secret-dark.png#gh-dark-mode-only)
+
+</ImageWindow>
 
 5. 配置其他选项（可选）
 
@@ -192,13 +229,21 @@ import BrowserWindow from '@site/src/components/BrowserWindow';
 - 在仓库上方点击 **Actions**。
 - 依次点击 **Generate Stats Images** $\to$ **Generate Stats Images** $\to$ **Run workflow**。
 
+<ImageWindow url="https://github.com/lailai0916/github-stats/actions/workflows/main.yml">
+
 ![](assets/run-workflow-light.png#gh-light-mode-only)
 ![](assets/run-workflow-dark.png#gh-dark-mode-only)
 
+</ImageWindow>
+
 - 刷新页面并等待几分钟，直到工作流成功运行。
+
+<ImageWindow url="https://github.com/lailai0916/github-stats/actions">
 
 ![](assets/workflow-success-light.png#gh-light-mode-only)
 ![](assets/workflow-success-dark.png#gh-dark-mode-only)
+
+</ImageWindow>
 
 7. 最后嵌入状态统计图，实现深浅模式切换。
 

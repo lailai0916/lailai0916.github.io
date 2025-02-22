@@ -1,3 +1,7 @@
+import ImageWindow from '@site/src/components/BrowserWindow/ImageWindow';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 # 教程
 
 ## 说明
@@ -28,24 +32,42 @@
 
 推荐使用 TypeScript，因为它是 JavaScript 的一个严格超集，提供了更多功能。
 
-1. 打开终端并运行此命令，它将创建一个包含脚手架文件的新目录。
+1. 打开终端并运行此命令，它将创建一个包含脚手架文件的新目录。你可以将 `my-website` 修改为任意名称。
+
+<Tabs>
+<TabItem value="TypeScript">
 
 ```bash
 npx create-docusaurus@latest my-website classic --typescript
 ```
 
-## 运行
+</TabItem>
+<TabItem value="JavaScript">
 
-1. 切换到项目目录，并启动本地服务器。
+```bash
+npx create-docusaurus@latest my-website classic --javascript
+```
+
+</TabItem>
+</Tabs>
+
+2. 切换到项目目录，并启动本地服务器。
 
 ```bash
 cd my-website
 npm start
 ```
 
-2. 等待一段时间，浏览器将自动打开 `http://localhost:3000` 网址。
+3. 等待一段时间，浏览器会自动打开 `http://localhost:3000` 网址。
 
 此时你能看到 Docusaurus 网站的默认页面。
+
+<ImageWindow url="http://localhost:3000">
+
+![](assets/my-website-light.png#gh-light-mode-only)
+![](assets/my-website-dark.png#gh-dark-mode-only)
+
+</ImageWindow>
 
 ## 结构
 
