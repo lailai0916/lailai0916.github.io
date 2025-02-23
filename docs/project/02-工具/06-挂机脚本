@@ -1,0 +1,14 @@
+# 挂机脚本
+
+游戏挂机脚本，采用 AppleScript 编写，仅适用于macOS系统。
+
+## 代码
+
+```applescript
+repeat
+	delay 5
+	do shell script "/opt/homebrew/bin/cliclick m:540,360 c:."
+	delay 5
+	do shell script "/opt/homebrew/bin/cliclick m:1180,600 c:."
+end repeat
+```
