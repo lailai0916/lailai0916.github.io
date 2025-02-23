@@ -1,10 +1,18 @@
 # 挂机脚本
 
-游戏挂机脚本，采用 AppleScript 编写，仅适用于macOS系统。
+游戏挂机脚本，可执行简单点击操作。
+
+采用 AppleScript 编写，仅适用于 macOS 系统。
+
+## 运行
+
+```bash
+osascript script.scpt
+```
 
 ## 代码
 
-```applescript
+```applescript title="script.scpt"
 repeat
 	delay 5
 	do shell script "/opt/homebrew/bin/cliclick m:540,360 c:."
