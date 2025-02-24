@@ -46,7 +46,10 @@ const config: Config = {
 
           // showLastUpdateAuthor: true,
           showLastUpdateTime: true,
-          remarkPlugins: [remarkMath],
+          remarkPlugins: [
+            remarkMath,
+            [require('@docusaurus/remark-plugin-npm2yarn'), {sync: true}],
+          ],
           rehypePlugins: [rehypeKatex],
 
           // Please change this to your repo.
@@ -66,7 +69,10 @@ const config: Config = {
           },
           // showLastUpdateAuthor: true,
           showLastUpdateTime: true,
-          remarkPlugins: [remarkMath],
+          remarkPlugins: [
+            remarkMath,
+            [require('@docusaurus/remark-plugin-npm2yarn'), {sync: true}],
+          ],
           rehypePlugins: [rehypeKatex],
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
@@ -77,7 +83,10 @@ const config: Config = {
           onUntruncatedBlogPosts: 'warn',
         },
         pages: {
-          remarkPlugins: [remarkMath],
+          remarkPlugins: [
+            remarkMath,
+            [require('@docusaurus/remark-plugin-npm2yarn'), {sync: true}],
+          ],
           rehypePlugins: [rehypeKatex],
         },
         theme: {
