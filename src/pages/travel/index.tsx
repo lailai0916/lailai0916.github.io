@@ -44,32 +44,32 @@ function Timeline() {
     const primaryColor =
       typeof window !== 'undefined'
         ? getComputedStyle(document.documentElement).getPropertyValue('--ifm-color-primary').trim() || '#007bff'
-        : '#007bff'; // 服务端用默认值
+        : '#007bff'; // 服务端默认值
     return isDarkMode
-    ? {
-        primary: primaryColor,
-        secondary: '#6c757d',
-        cardBgColor: '#1a1a1a',
-        cardTitleColor: '#ffffff',
-        cardSubtitleColor: '#ffffff',
-        cardDetailsColor: '#ffffff',
-        titleColor: '#ffffff',
-    }
-    : {
-        primary: primaryColor,
-        secondary: '#adb5bd',
-        cardBgColor: '#ffffff',
-        cardTitleColor: '#000000',
-        cardSubtitleColor: '#000000',
-        cardDetailsColor: '#000000',
-        titleColor: '#000000',
-     };
+      ? {
+          primary: primaryColor,
+          secondary: '#6c757d',
+          cardBgColor: '#1a1a1a',
+          cardTitleColor: '#ffffff',
+          cardSubtitleColor: '#ffffff',
+          cardDetailsColor: '#ffffff',
+          titleColor: '#ffffff',
+        }
+      : {
+          primary: primaryColor,
+          secondary: '#adb5bd',
+          cardBgColor: '#ffffff',
+          cardTitleColor: '#000000',
+          cardSubtitleColor: '#000000',
+          cardDetailsColor: '#000000',
+          titleColor: '#000000',
+        };
   };
 
-  const [theme, setTheme] = useState(() => getTheme(colorMode === 'dark'));
+  const [theme, setTheme] = useState(() => getTheme(false)); // 默认用亮色主题，避免SSR时颜色闪烁
 
   useEffect(() => {
-    setTheme(getTheme(colorMode !== 'dark'));
+    setTheme(getTheme(colorMode === 'dark')); // 客户端更新时根据colorMode调整
   }, [colorMode]);
 
   return (
