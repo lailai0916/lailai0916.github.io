@@ -50,8 +50,8 @@ function Timeline() {
       ? {
           primary: primaryColor,
           secondary: '#6c757d',
-          cardBgColor: '#1a1a1a',
-          cardTitleColor: '#ffffff',
+          cardBgColor: '#2b3137',
+          cardTitleColor: primaryColor,
           cardSubtitleColor: '#ffffff',
           cardDetailsColor: '#ffffff',
           titleColor: '#ffffff',
@@ -59,33 +59,34 @@ function Timeline() {
       : {
           primary: primaryColor,
           secondary: '#adb5bd',
-          cardBgColor: '#ffffff',
-          cardTitleColor: '#000000',
+          cardBgColor: '#f5f6f7',
+          cardTitleColor: primaryColor,
           cardSubtitleColor: '#000000',
           cardDetailsColor: '#000000',
           titleColor: '#000000',
         };
   };
 
-  const [theme, setTheme] = useState(getTheme(false)); // 默认主题，服务端不会用到
-
-  useEffect(() => {
-    setTheme(getTheme(colorMode === 'dark')); // 客户端更新主题
-  }, [colorMode]);
-
   return (
     <BrowserOnly>
-      {() => (
-        <Chrono
-          key={colorMode}
-          items={items}
-          mode="VERTICAL_ALTERNATING"
-          theme={theme}
-          itemWidth={150}
-          disableToolbar={true}
-          disableInteraction={true}
-        />
-      )}
+      {() => {
+        const [theme, setTheme] = useState(getTheme(colorMode === 'dark')); // 在客户端初始化
+        useEffect(() => {
+          setTheme(getTheme(colorMode !== 'dark')); // 监听colorMode变化
+        }, [colorMode]);
+
+        return (
+          <Chrono
+            key={colorMode}
+            items={items}
+            mode="VERTICAL_ALTERNATING"
+            theme={theme}
+            itemWidth={150}
+            disableToolbar={true}
+            disableInteraction={true}
+          />
+        );
+      }}
     </BrowserOnly>
   );
 }
