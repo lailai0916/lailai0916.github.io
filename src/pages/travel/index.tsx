@@ -41,29 +41,29 @@ function Timeline() {
   const { colorMode } = useColorMode();
 
   const getTheme = (isDarkMode) => {
-    let primaryColor = '#007bff';
-    if (typeof window !== 'undefined') {
-      primaryColor = getComputedStyle(document.documentElement).getPropertyValue('--ifm-color-primary').trim();
-    }
+    const primaryColor =
+      typeof window !== 'undefined'
+        ? getComputedStyle(document.documentElement).getPropertyValue('--ifm-color-primary').trim() || '#007bff'
+        : '#007bff'; // 服务端用默认值
     return isDarkMode
-      ? {
+    ? {
         primary: primaryColor,
         secondary: '#6c757d',
-        cardBgColor: '#1a1a1a',      // 暗色模式：深色背景
-        cardTitleColor: '#ffffff',   // 标题白色
-        cardSubtitleColor: '#ffffff', // 副标题白色
-        cardDetailsColor: '#ffffff', // 详情文本白色
-        titleColor: '#ffffff',       // 时间轴标题白色
-      }
-      : {
+        cardBgColor: '#1a1a1a',
+        cardTitleColor: '#ffffff',
+        cardSubtitleColor: '#ffffff',
+        cardDetailsColor: '#ffffff',
+        titleColor: '#ffffff',
+    }
+    : {
         primary: primaryColor,
         secondary: '#adb5bd',
-        cardBgColor: '#ffffff',      // 浅色模式：浅色背景
-        cardTitleColor: '#000000',   // 标题黑色
-        cardSubtitleColor: '#000000', // 副标题黑色
-        cardDetailsColor: '#000000', // 详情文本黑色
-        titleColor: '#000000',       // 时间轴标题黑色
-      };
+        cardBgColor: '#ffffff',
+        cardTitleColor: '#000000',
+        cardSubtitleColor: '#000000',
+        cardDetailsColor: '#000000',
+        titleColor: '#000000',
+     };
   };
 
   const [theme, setTheme] = useState(() => getTheme(colorMode === 'dark'));
