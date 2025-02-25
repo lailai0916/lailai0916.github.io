@@ -142,6 +142,7 @@ const config: Config = {
             { label: '友链', to: 'friend' },
             { label: '资源', to: 'resources' },
             { label: '网站', to: 'site' },
+            { label: '设置', to: 'set' },
           ],
         },
         {
@@ -200,8 +201,8 @@ const config: Config = {
               to: 'about',
             },
             {
-              label: '设置',
-              to: 'set',
+              label: 'OJ',
+              href: 'https://oj.lailai.one',
             },
           ],
         },
@@ -299,6 +300,10 @@ const config: Config = {
           {
             from: '/v50',
             to: 'https://v50to.me',
+          },
+          {
+            from: '/oj',
+            to: 'https://oj.lailai.one',
           },
         ],
       },
