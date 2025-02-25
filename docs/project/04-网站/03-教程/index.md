@@ -18,7 +18,9 @@ import TabItem from '@theme/TabItem';
 
 直到我发现了 [Docusaurus](https://docusaurus.io)，一个由 Facebook 开发的开源的静态网站生成器，它简洁美观、易于使用，而且扩展性强。
 
-但由于 Docusaurus 在国内比较冷门，相关的资料和教程也比较少，因此我花费了不少时间研究。
+由于 Docusaurus 在国内比较冷门，相关的资料和教程也比较少，因此我花费了不少时间研究。
+
+在此之前，我几乎没用过 HTML、CSS 和 JavaScript，但凭借其他编程语言的基础，我自己琢磨出了这些语言的基本语法。
 
 :::tip
 

@@ -282,7 +282,7 @@ const config: Config = {
       }
     },
     [
-      'ideal-image',
+      '@docusaurus/plugin-ideal-image',
       {
         quality: 70,
         max: 1030,
