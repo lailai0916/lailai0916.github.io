@@ -77,6 +77,8 @@ npm start
 
 ## 部署
 
+### GitHub Pages
+
 - 确保你已经安装了 Git，并且在 GitHub 上创建了一个新的仓库。
 - 在本地项目根目录下运行以下命令，将项目推送到 GitHub 仓库：
 
