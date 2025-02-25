@@ -41,7 +41,10 @@ function Timeline() {
   const { colorMode } = useColorMode();
 
   const getTheme = (isDarkMode) => {
-    const primaryColor = getComputedStyle(document.documentElement).getPropertyValue('--ifm-color-primary').trim();
+    let primaryColor = '#007bff';
+    if (typeof window !== 'undefined') {
+      primaryColor = getComputedStyle(document.documentElement).getPropertyValue('--ifm-color-primary').trim();
+    }
     return isDarkMode
       ? {
         primary: primaryColor,
