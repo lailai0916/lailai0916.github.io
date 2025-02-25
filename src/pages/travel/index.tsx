@@ -3,6 +3,7 @@ import Layout from '@theme/Layout';
 import Heading from '@theme/Heading';
 import { useColorMode } from '@docusaurus/theme-common';
 import { Chrono } from 'react-chrono';
+import BrowserOnly from '@docusaurus/BrowserOnly';
 
 const TITLE = '旅行';
 const DESCRIPTION = '纸上得来终觉浅，绝知此事要躬行';
@@ -44,7 +45,7 @@ function Timeline() {
     const primaryColor =
       typeof window !== 'undefined'
         ? getComputedStyle(document.documentElement).getPropertyValue('--ifm-color-primary').trim() || '#007bff'
-        : '#007bff'; // 服务端默认值
+        : '#007bff';
     return isDarkMode
       ? {
           primary: primaryColor,
@@ -66,26 +67,30 @@ function Timeline() {
         };
   };
 
-  const [theme, setTheme] = useState(() => getTheme(false)); // 默认用亮色主题，避免SSR时颜色闪烁
+  const [theme, setTheme] = useState(getTheme(false)); // 默认主题，服务端不会用到
 
   useEffect(() => {
-    setTheme(getTheme(colorMode === 'dark')); // 客户端更新时根据colorMode调整
+    setTheme(getTheme(colorMode === 'dark')); // 客户端更新主题
   }, [colorMode]);
 
   return (
-    <Chrono
-      key={colorMode}
-      items={items}
-      mode="VERTICAL_ALTERNATING"
-      theme={theme}
-      itemWidth={150}
-      disableToolbar={true}
-      disableInteraction={true}
-    />
+    <BrowserOnly>
+      {() => (
+        <Chrono
+          key={colorMode}
+          items={items}
+          mode="VERTICAL_ALTERNATING"
+          theme={theme}
+          itemWidth={150}
+          disableToolbar={true}
+          disableInteraction={true}
+        />
+      )}
+    </BrowserOnly>
   );
 }
 
-export default function travelPage(): JSX.Element {
+export default function travelPage() {
   return (
     <Layout title={TITLE} description={DESCRIPTION}>
       <main className="margin-vert--lg">
