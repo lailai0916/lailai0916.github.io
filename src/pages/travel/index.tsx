@@ -44,19 +44,23 @@ function Timeline() {
     const primaryColor = getComputedStyle(document.documentElement).getPropertyValue('--ifm-color-primary').trim();
     return isDarkMode
       ? {
-          primary: primaryColor,
-          secondary: '#6c757d',
-          cardBgColor: '#1a1a1a', // 暗色模式：深色背景
-          cardForeColor: '#ffffff', // 改为白色文字
-          titleColor: '#ffffff',    // 标题也为白色
-        }
+        primary: primaryColor,
+        secondary: '#6c757d',
+        cardBgColor: '#1a1a1a',      // 暗色模式：深色背景
+        cardTitleColor: '#ffffff',   // 标题白色
+        cardSubtitleColor: '#ffffff', // 副标题白色
+        cardDetailsColor: '#ffffff', // 详情文本白色
+        titleColor: '#ffffff',       // 时间轴标题白色
+      }
       : {
-          primary: primaryColor,
-          secondary: '#adb5bd',
-          cardBgColor: '#ffffff', // 浅色模式：浅色背景
-          cardForeColor: '#000000', // 黑色文字
-          titleColor: '#000000',    // 标题为黑色
-        };
+        primary: primaryColor,
+        secondary: '#adb5bd',
+        cardBgColor: '#ffffff',      // 浅色模式：浅色背景
+        cardTitleColor: '#000000',   // 标题黑色
+        cardSubtitleColor: '#000000', // 副标题黑色
+        cardDetailsColor: '#000000', // 详情文本黑色
+        titleColor: '#000000',       // 时间轴标题黑色
+      };
   };
 
   const [theme, setTheme] = useState(() => getTheme(colorMode === 'dark'));
