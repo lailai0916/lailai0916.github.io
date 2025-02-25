@@ -67,9 +67,18 @@ function Timeline() {
   return (
     <BrowserOnly>
       {() => {
-        const [theme, setTheme] = useState(getTheme(colorMode === 'dark')); // 在客户端初始化
+        const [theme, setTheme] = useState(getTheme(colorMode === 'dark')); // 初始值与colorMode同步
         useEffect(() => {
-          setTheme(getTheme(colorMode !== 'dark')); // 监听colorMode变化
+          setTheme(getTheme(colorMode === 'dark')); // 修正为一致的判断
+        }, [colorMode]);
+
+        // 监听窗口大小变化，确保theme更新
+        useEffect(() => {
+          const handleResize = () => {
+            setTheme(getTheme(colorMode === 'dark')); // 窗口变化时重新计算theme
+          };
+          window.addEventListener('resize', handleResize);
+          return () => window.removeEventListener('resize', handleResize); // 清理监听
         }, [colorMode]);
 
         return (
@@ -78,6 +87,9 @@ function Timeline() {
             items={items}
             mode="VERTICAL_ALTERNATING"
             theme={theme}
+            cardWidth={300}
+            cardHeight={120}
+            useReadMore={true}
             disableToolbar={true}
             disableInteraction={true}
           />
