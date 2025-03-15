@@ -1,4 +1,4 @@
-# 软件推荐
+# macOS
 
 推荐一些我使用过的软件，包括 iOS、macOS、Windows、Linux、Android、Web 等多个平台。
 
@@ -14,7 +14,8 @@
 
 ### Office 365
 
-- 介绍：微软办公套件
+Microsoft 的办公套件
+
 - 平台：iOS / macOS / Windows / Android
 - 售价：个人版 - ¥398/年
 - 下载：[官网](https://www.microsoft.com/) / [数码荔枝](https://lizhi.shop/site/products/id/65)
