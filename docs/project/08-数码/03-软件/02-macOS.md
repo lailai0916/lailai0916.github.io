@@ -1,49 +1,5 @@
 # macOS
 
-推荐一些我使用过的软件，包括 iOS、macOS、Windows、Linux、Android、Web 等多个平台。
-
-## 省钱技巧
-
-你可以通过淘宝、闲鱼等平台：
-
-1. 与他人合购家庭版或多设备版。
-2. 购买低价的激活码。
-3. ~~购买盗版的软件。~~
-
-## 办公效率
-
-### Office 365
-
-Microsoft 的办公套件
-
-- 平台：iOS / macOS / Windows / Android
-- 售价：个人版 - ¥398/年
-- 下载：[官网](https://www.microsoft.com/) / [数码荔枝](https://lizhi.shop/site/products/id/65)
-
-### Typora
-
-- 介绍：跨平台 Markdown 编辑器
-- 平台：Windows / macOS / Linux
-- 售价：¥89
-- 下载：[官网](https://typora.io) / [数码荔枝](https://lizhi.shop/site/products/id/520)
-
-## AI
-
-### ChatGPT
-
-- 介绍：OpenAI 的聊天 AI 服务
-- 平台：iOS / macOS / Android / Web
-- 售价：ChatGPT Free - 免费 / ChatGPT Plus - \$20/月
-- 下载：[官网](https://chatgpt.com) / [App Store](https://apps.apple.com/us/app/chatgpt/id6448311069) / [Google Play](https://play.google.com/store/apps/details?id=com.openai.chatgpt)
-
-### Gemini
-
-### Grok
-
-### Claude
-
-### DeepSeek
-
 ## 订阅服务
 
 ### iCloud+
