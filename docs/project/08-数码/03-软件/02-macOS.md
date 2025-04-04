@@ -1,21 +1,5 @@
 # macOS
 
-## 订阅服务
-
-### iCloud+
-
-- 介绍：苹果的云存储服务
-- 平台：iOS / macOS
-- 售价：200GB - ¥21/月
-- 下载：[官网](https://www.icloud.com.cn)
-
-### Apple Music
-
-- 介绍：苹果的音乐流媒体服务
-- 平台：iOS / macOS
-- 售价：个人 - ¥11/月
-- 下载：[官网](https://www.apple.com.cn/apple-music/)
-
 ## 系统工具
 
 ### Parallels Desktop 20
