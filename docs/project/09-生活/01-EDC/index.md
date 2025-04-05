@@ -9,7 +9,7 @@ import Image from '@theme/IdealImage';
 ### 背包
 
 - 型号：tomtoc Voyage T50 Laptop Backpack
-- 售价：$209.99 / ¥1,299
+- 价格：$209.99 / ¥1,299
 - 购买：[官网](https://www.tomtoc.com/products/voyage-t50-laptop-backpack-20l-white)
 
 这个背包是专为 Apple 产品设计的，所以刚好可以放下我的 16 英寸的 MacBook Pro 和其他 Apple 设备。
@@ -37,20 +37,20 @@ import Image from '@theme/IdealImage';
 ### Logitech G PRO X SUPERLIGHT 2
 
 - 介绍：Logitech 专为电竞玩家设计的超轻量无线游戏鼠标
-- 售价：$159 / ¥1,499
+- 价格：$159 / ¥1,499
 - 购买：[官网](https://www.logitechg.com/zh-cn/products/gaming-mice/pro-x2-superlight-wireless-mouse.910-006634.html)
 
 ### SanDisk Extreme PRO USB 3.2 Solid State Flash Drive
 
 - 介绍：SanDisk 的高性能固态 U 盘
-- 售价：$39.99 / ¥299
+- 价格：$39.99 / ¥299
 - 容量：256GB
 - 购买：[官网](https://shop.sandisk.com/products/usb-flash-drives/sandisk-extreme-pro-usb-3-2?sku=SDCZ880-256G-G46)
 
 ### AirTag
 
 - 介绍：Apple 的小型追踪器，用于给电脑背包定位
-- 售价：$29 / ¥249
+- 价格：$29 / ¥249
 - 购买：[官网](https://www.apple.com.cn/airtag/)
 
 ## 供电设备
