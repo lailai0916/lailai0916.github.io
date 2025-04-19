@@ -51,7 +51,7 @@ export default function Timer() {
       ) : (
         <>
           <Heading as="h2" className="margin-bottom--lg text--center">
-            距离 {EVENT} 还剩
+            距离 {EVENT} 还有
           </Heading>
           <div className={styles.timer}>
             <ProgressCircle 
