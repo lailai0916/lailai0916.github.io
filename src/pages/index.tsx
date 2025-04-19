@@ -5,7 +5,7 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import TopBanner from './_components/TopBanner';
 import HeroBanner from './_components/HeroBanner';
 import FeaturesContainer from './_components/FeaturesContainer';
-import Timer from './_components/Timer';
+import Countdown from './_components/Countdown';
 
 export default function Home() {
   const {siteConfig} = useDocusaurusContext();
@@ -17,7 +17,7 @@ export default function Home() {
         <HeroBanner />
         <div className={styles.section}>
           <FeaturesContainer />
-          <Timer />
+          <Countdown />
         </div>
       </main>
     </Layout>

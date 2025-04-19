@@ -1,13 +1,13 @@
 import { useEffect, useState } from 'react';
 import styles from './styles.module.css';
 import Heading from '@theme/Heading';
-import ProgressCircle from './../ProgressCircle';
+import ProgressCircle from '../ProgressCircle';
 
 const EVENT = '2026 年';
 const DATE = '2026-01-01T00:00:00';
 const TEXT = 'Happy New Year!';
 
-export default function Timer() {
+export default function Countdown() {
   const [timeLeft, setTimeLeft] = useState({
     days: 0, hours: 0, minutes: 0, seconds: 0,
   });
