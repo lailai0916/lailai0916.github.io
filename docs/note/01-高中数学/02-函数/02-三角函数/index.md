@@ -515,9 +515,9 @@ $$
 \cos{(2\pi-\alpha)}=\cos{\alpha}
 $$
 
-### 6.3 二倍角公式
+### 二倍角公式
 
-#### 6.3.1 推导过程
+#### 推导过程
 
 ##### 余弦二倍角公式推导
 
@@ -557,7 +557,7 @@ $$
 \end{aligned}
 $$
 
-#### 6.3.2 公式
+#### 公式汇总
 
 $$
 \begin{array}{l}
@@ -567,9 +567,9 @@ $$
 \end{array}
 $$
 
-### 6.4 三倍角公式
+### 三倍角公式
 
-#### 6.4.1 推导过程
+#### 推导过程
 
 ##### 正弦三倍角公式推导
 
@@ -604,7 +604,7 @@ $$
 \end{aligned}
 $$
 
-#### 6.4.2 公式
+#### 公式汇总
 
 $$
 \sin{3\alpha}=3\sin{\alpha}-4\sin^3{\alpha}
@@ -618,9 +618,9 @@ $$
 \tan{3\alpha}=\tan{\alpha}\tan{(\dfrac{\pi}{3}-\alpha)}\tan{(\dfrac{\pi}{3}+\alpha)}
 $$
 
-### 6.5 半角公式
+### 半角公式
 
-#### 6.5.1 推导过程
+#### 推导过程
 
 ##### 余弦半角公式推导
 
@@ -688,7 +688,7 @@ $$
 
 :::
 
-#### 6.5.2 公式
+#### 公式汇总
 
 $$
 \sin{\dfrac{\alpha}{2}}=\pm\sqrt{\dfrac{1-\cos{\alpha}}{2}}
@@ -702,9 +702,9 @@ $$
 \tan{\dfrac{\alpha}{2}}=\pm\sqrt{\dfrac{1-\cos{\alpha}}{1+\cos{\alpha}}}=\dfrac{\sin{\alpha}}{1+\cos{\alpha}}=\dfrac{1-\cos{\alpha}}{\sin{\alpha}}
 $$
 
-### 6.6 积化和差公式
+### 积化和差公式
 
-#### 6.6.1 推导过程
+#### 推导过程
 
 正弦两角和差公式：
 
@@ -748,7 +748,7 @@ $$
 y=\sin{\alpha}\sin{\beta}=-\dfrac{1}{2}[\cos{(\alpha+\beta)}-\cos{(\alpha-\beta)}]
 $$
 
-#### 6.6.2 记忆方法
+#### 记忆方法
 
 ```
 sc=(s+s)/2
@@ -757,7 +757,7 @@ cc=(c+c)/2
 ss=-(c-c)/2
 ```
 
-#### 6.6.3 公式
+#### 公式汇总
 
 $$
 \sin{\alpha}\cos{\beta}=\dfrac{1}{2}[\sin{(\alpha+\beta)}+\sin{(\alpha-\beta)}]
@@ -775,9 +775,9 @@ $$
 \sin{\alpha}\sin{\beta}=-\dfrac{1}{2}[\cos{(\alpha+\beta)}-\cos{(\alpha-\beta)}]
 $$
 
-### 6.7 和差化积公式
+### 和差化积公式
 
-#### 6.7.1 推导过程
+#### 推导过程
 
 积化和差公式：
 
@@ -835,7 +835,7 @@ $$
 \cos{A}-\cos{B}=-2\sin{\dfrac{A+B}{2}}\sin{\dfrac{A-B}{2}}
 $$
 
-#### 6.7.2 公式
+#### 公式汇总
 
 $$
 \sin{\alpha}+\sin{\beta}=2\sin{\dfrac{\alpha+\beta}{2}}\cos{\dfrac{\alpha-\beta}{2}}
@@ -853,9 +853,9 @@ $$
 \cos{\alpha}-\cos{\beta}=-2\sin{\dfrac{\alpha+\beta}{2}}\sin{\dfrac{\alpha-\beta}{2}}
 $$
 
-### 6.8 辅助角公式
+### 辅助角公式
 
-#### 6.8.1 推导过程
+#### 推导过程
 
 $$
 \begin{aligned}
@@ -873,13 +873,15 @@ $$
 
 同理，可以将 $\cos{\varphi}$ 和 $\sin{\varphi}$ 交换位置。
 
-$\begin{aligned}
+$$
+\begin{aligned}
   {} a\sin{\theta}+b\cos{\theta} &= \sqrt{a^2+b^2}(\dfrac{a}{\sqrt{a^2+b^2}}\sin{\theta}+\dfrac{b}{\sqrt{a^2+b^2}}\cos{\theta}) \\
   &= \sqrt{a^2+b^2}(\sin{\varphi}\sin{\theta}+\cos{\varphi}\cos{\theta}) \\
   &= \sqrt{a^2+b^2}\cos{(\theta-\varphi)}
-\end{aligned}$
+\end{aligned}
+$$
 
-#### 6.8.2 公式
+#### 公式汇总
 
 $$
 a\sin{\theta}+b\cos{\theta}=\sqrt{a^2+b^2}\sin{(\theta+\varphi)},\tan{\varphi}=\dfrac{b}{a}
@@ -889,9 +891,9 @@ $$
 a\sin{\theta}+b\cos{\theta}=\sqrt{a^2+b^2}\cos{(\theta-\varphi)},\tan{\varphi}=\dfrac{a}{b}
 $$
 
-### 6.9 万能公式
+### 万能公式
 
-#### 6.9.1 推导过程
+#### 推导过程
 
 ##### 正弦万能公式推导
 
@@ -921,7 +923,7 @@ $$
 \tan{\alpha}=\dfrac{\sin{\alpha}}{\cos{\alpha}}=\dfrac{2\tan{\dfrac{\alpha}{2}}}{1-\tan^2{\dfrac{\alpha}{2}}}
 $$
 
-#### 6.9.2 公式
+#### 公式汇总
 
 $$
 \sin{\alpha}=\dfrac{2\tan{\dfrac{\alpha}{2}}}{1+\tan^2{\dfrac{\alpha}{2}}}
