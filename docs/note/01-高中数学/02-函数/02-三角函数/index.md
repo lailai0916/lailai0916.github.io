@@ -874,8 +874,8 @@ $$
 同理，可以将 $\cos{\varphi}$ 和 $\sin{\varphi}$ 交换位置。
 
 $$
-\begin{aligned}
-  {} a\sin{\theta}+b\cos{\theta} &= \sqrt{a^2+b^2}(\dfrac{a}{\sqrt{a^2+b^2}}\sin{\theta}+\dfrac{b}{\sqrt{a^2+b^2}}\cos{\theta}) \\
+\begin{aligned}{}
+  a\sin{\theta}+b\cos{\theta} &= \sqrt{a^2+b^2}(\dfrac{a}{\sqrt{a^2+b^2}}\sin{\theta}+\dfrac{b}{\sqrt{a^2+b^2}}\cos{\theta}) \\
   &= \sqrt{a^2+b^2}(\sin{\varphi}\sin{\theta}+\cos{\varphi}\cos{\theta}) \\
   &= \sqrt{a^2+b^2}\cos{(\theta-\varphi)}
 \end{aligned}
