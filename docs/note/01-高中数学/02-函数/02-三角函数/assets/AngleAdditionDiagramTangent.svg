@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   version="1.1"
+   x="0px"
+   y="0px"
+   width="334.667px"
+   height="403.334px"
+   viewBox="0 0 334.667 403.334"
+   enable-background="new 0 0 334.667 403.334"
+   xml:space="preserve"
+   id="svg3089"
+   inkscape:version="0.48.3.1 r9886"
+   sodipodi:docname="AngleAdditionDiagramTangent.svg"><metadata
+   id="metadata3153"><rdf:RDF><cc:Work
+       rdf:about=""><dc:format>image/svg+xml</dc:format><dc:type
+         rdf:resource="http://purl.org/dc/dcmitype/StillImage" /><dc:title></dc:title></cc:Work></rdf:RDF></metadata><defs
+   id="defs3151">
+	
+	
+	
+	
+	
+	
+		
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+		
+		
+	
+			
+			
+			
+			
+		
+			
+			
+		</defs><sodipodi:namedview
+   pagecolor="#ffffff"
+   bordercolor="#666666"
+   borderopacity="1"
+   objecttolerance="10"
+   gridtolerance="10"
+   guidetolerance="10"
+   inkscape:pageopacity="0"
+   inkscape:pageshadow="2"
+   inkscape:window-width="1366"
+   inkscape:window-height="743"
+   id="namedview3149"
+   showgrid="false"
+   inkscape:object-nodes="true"
+   inkscape:zoom="1.3462824"
+   inkscape:cx="270.27855"
+   inkscape:cy="216.53361"
+   inkscape:window-x="0"
+   inkscape:window-y="0"
+   inkscape:window-maximized="1"
+   inkscape:current-layer="svg3089" />
+<polygon
+   style="fill:#cad8e5"
+   id="polygon3095"
+   points="299.5,221.279 299.5,370.499 39.5,370.499 " /><polygon
+   style="fill:#e8cdcd"
+   id="polygon3097"
+   points="194.72,38.499 299.5,221.279 39.5,370.499 " /><polygon
+   style="fill:none;stroke:#000000;stroke-miterlimit:10"
+   id="polygon3101"
+   points="299.5,221.279 299.5,370.499 39.5,370.499 39.5,38.499 194.72,38.499 299.5,38.499 "
+   stroke-miterlimit="10" /><line
+   style="fill:none;stroke:#000000;stroke-miterlimit:10"
+   id="line3103"
+   y2="221.27901"
+   x2="299.5"
+   y1="370.49899"
+   x1="39.5"
+   stroke-miterlimit="10" /><line
+   style="fill:none;stroke:#000000;stroke-miterlimit:10"
+   id="line3105"
+   y2="38.499001"
+   x2="194.72"
+   y1="221.27901"
+   x1="299.5"
+   stroke-miterlimit="10" /><line
+   style="fill:none;stroke:#000000;stroke-width:1.00000002;stroke-miterlimit:10;stroke-dasharray:none"
+   id="line3107"
+   y2="370.49899"
+   x2="39.5"
+   y1="38.499001"
+   x1="194.72"
+   stroke-miterlimit="10" /><rect
+   style="fill:none;stroke:#000000;stroke-miterlimit:10"
+   id="rect3109"
+   height="24"
+   width="24"
+   stroke-miterlimit="10"
+   y="38.499001"
+   x="39.5" /><rect
+   style="fill:none;stroke:#000000;stroke-miterlimit:10"
+   id="rect3111"
+   height="24"
+   width="24"
+   stroke-miterlimit="10"
+   y="38.499001"
+   x="275.5" /><rect
+   style="fill:none;stroke:#000000;stroke-miterlimit:10"
+   id="rect3113"
+   height="24"
+   width="24"
+   stroke-miterlimit="10"
+   y="346.49899"
+   x="275.5" /><path
+   style="fill:none;stroke:#000000;stroke-miterlimit:10"
+   inkscape:connector-curvature="0"
+   id="path3115"
+   d="m 58.9,329.002 c 15.401,7.251 26.061,22.912 26.061,41.063"
+   stroke-miterlimit="10" /><rect
+   style="fill:none;stroke:#000000;stroke-width:0.9999913;stroke-miterlimit:10"
+   id="rect3117"
+   height="23.999792"
+   width="23.999792"
+   stroke-miterlimit="10"
+   transform="matrix(0.87160758,-0.49020426,0.49020426,0.87160758,0,0)"
+   y="315.88629"
+   x="128.45534" /><path
+   style="fill:none;stroke:#000000;stroke-miterlimit:10"
+   inkscape:connector-curvature="0"
+   id="path3119"
+   d="M 175.473,79.677 C 160.174,72.387 149.6,56.78 149.6,38.702"
+   stroke-miterlimit="10" /><text
+   style="font-size:88.78659821px;font-family:Arial-BoldMT"
+   id="text3121"
+   font-size="88.7866"
+   x="164.50885"
+   y="400.63776">1</text>
+<text
+   style="font-size:18px;font-family:ArialMT"
+   id="text3123"
+   font-size="18"
+   x="45.838898"
+   y="30.331499">1 - tan α tan β</text>
+<text
+   style="font-size:18px;font-family:ArialMT"
+   id="text3125"
+   font-size="18"
+   transform="matrix(0,-1,1,0,0,0)"
+   x="-249.8027"
+   y="28.833">tan α + tan β</text>
+<text
+   style="font-size:18px;font-family:ArialMT"
+   id="text3127"
+   font-size="18"
+   x="207.5508"
+   y="30.331499">tan α tan β</text>
+<text
+   style="font-size:18px;font-family:ArialMT"
+   id="text3129"
+   font-size="18"
+   transform="matrix(0,1,-1,0,0,0)"
+   x="82.881798"
+   y="-309.33401">tan β</text>
+<text
+   style="font-size:18px;font-family:ArialMT"
+   id="text3133"
+   font-size="18"
+   transform="matrix(0,1,-1,0,0,0)"
+   x="271.21582"
+   y="-309.33401">tan α</text>
+<text
+   style="font-size:18px;font-family:ArialMT"
+   id="text3135"
+   font-size="18"
+   x="104.7266"
+   y="79.676804">α + β</text>
+<text
+   style="font-size:18px;font-family:ArialMT"
+   id="text3137"
+   font-size="18"
+   x="97.9272"
+   y="357.33109">α</text>
+<text
+   style="font-size:18px;font-family:ArialMT"
+   id="text3139"
+   font-size="18"
+   x="80.6465"
+   y="325.70209">β</text>
+<text
+   style="font-size:17.99975014px;font-family:ArialMT"
+   id="text3141"
+   font-size="18"
+   transform="matrix(0.86991207,-0.49320684,0.49320684,0.86991207,0,0)"
+   x="-0.4281911"
+   y="333.66202">1/cos α</text>
+<text
+   style="font-size:18.00100327px;font-family:ArialMT"
+   id="text3143"
+   font-size="18"
+   transform="matrix(0.48637291,0.87375133,-0.87375133,0.48637291,0,0)"
+   x="180.07285"
+   y="-133.63622">tan β / cos α</text>
+<path
+   style="fill:none;stroke:#000000;stroke-miterlimit:10"
+   inkscape:connector-curvature="0"
+   id="path3145"
+   d="m 275.469,179.36 c 6.96,-4.346 15.184,-6.857 23.993,-6.857"
+   stroke-miterlimit="10" /><text
+   style="font-size:18px;font-family:ArialMT"
+   id="text3147"
+   font-size="18"
+   x="280.58591"
+   y="165.3633">α</text>
+
+<path
+   style="fill:none;stroke:#000000;stroke-width:4;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+   d="m 39.5,370.49901 260,0"
+   id="path3984"
+   inkscape:connector-curvature="0"
+   transform="translate(0,-1.2154024e-5)"
+   sodipodi:nodetypes="cc" /><path
+   style="fill:none;stroke:#000000;stroke-width:4;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+   d="m 39.5,38.499 260.00001,0"
+   id="path3984-7"
+   inkscape:connector-curvature="0"
+   sodipodi:nodetypes="cc" /></svg>

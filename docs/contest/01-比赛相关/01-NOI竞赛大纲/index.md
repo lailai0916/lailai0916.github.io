@@ -4,10 +4,7 @@
 
 - [NOI 全国青少年信息学奥林匹克竞赛](https://www.noi.cn)
 - [《NOI 大纲（2023年修订版）》](https://www.noi.cn/upload/resources/file/2023/03/15/1fa58eac9c412e01ce3c89c761058a43.pdf)
-
-## 网盘下载
-
-- [下载](assets/1fa58eac9c412e01ce3c89c761058a43.pdf)
+- [快速下载](assets/1fa58eac9c412e01ce3c89c761058a43.pdf)
 
 ## 难度系数
 

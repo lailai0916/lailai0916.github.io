@@ -1,3 +1,9 @@
+---
+# Display h2 to h5 headings
+toc_min_heading_level: 2
+toc_max_heading_level: 5
+---
+
 import Desmos from '@site/src/components/BrowserWindow/Desmos';
 
 # 三角函数
@@ -23,13 +29,13 @@ import Desmos from '@site/src/components/BrowserWindow/Desmos';
 
 弧度和角度成正比，其他角度都可以通过换算得到：
 
-|    角度     |       弧度        |     角度     |       弧度        |
-| :---------: | :---------------: | :----------: | :---------------: |
+|    角度    |       弧度        |    角度     |       弧度        |
+| :--------: | :---------------: | :---------: | :---------------: |
+| $0^\circ$  |        $0$        | $90^\circ$  | $\dfrac{\pi}{2}$  |
 | $15^\circ$ | $\dfrac{\pi}{12}$ | $120^\circ$ | $\dfrac{2\pi}{3}$ |
-| $30^\circ$ | $\dfrac{\pi}{6}$  | $150^\circ$ | $\dfrac{5\pi}{6}$ |
-| $45^\circ$ | $\dfrac{\pi}{4}$  | $180^\circ$ |       $\pi$       |
-| $60^\circ$ | $\dfrac{\pi}{3}$  | $270^\circ$ | $\dfrac{3\pi}{2}$ |
-| $90^\circ$ | $\dfrac{\pi}{2}$  | $360^\circ$ |      $2\pi$       |
+| $30^\circ$ | $\dfrac{\pi}{6}$  | $180^\circ$ |       $\pi$       |
+| $45^\circ$ | $\dfrac{\pi}{4}$  | $270^\circ$ | $\dfrac{3\pi}{2}$ |
+| $60^\circ$ | $\dfrac{\pi}{3}$  | $360^\circ$ |      $2\pi$       |
 
 ### 单位圆
 
@@ -59,28 +65,21 @@ $A,B$ 两点之间的距离一般用 $|AB|$ 表示。
 
 :::
 
-## 锐角的三角函数
+## 三角函数的定义
 
-| 三角函数 |         定义          |           定义域           |        值域        | 奇偶性 |  周期  |
-| :------: | :-------------------: | :------------------------: | :----------------: | :----: | :----: |
-|   正弦   | $\sin{x}=\frac{a}{c}$ |        $x\in\mathbb{R}$        |      $y\in[-1,1]$      | 奇函数 | $2\pi$ |
-|   余弦   | $\cos{x}=\frac{b}{c}$ |        $x\in\mathbb{R}$        |      $y\in[-1,1]$      | 偶函数 | $2\pi$ |
-|   正切   | $\tan{x}=\frac{a}{b}$ | $x\not=\frac{\pi}{2}+k\pi$ |    $y\in\mathbb{R}$    | 奇函数 | $\pi$  |
-|   余切   | $\cot{x}=\frac{b}{a}$ |        $x\not=k\pi$        |    $y\in\mathbb{R}$    | 奇函数 | $\pi$  |
-|   正割   | $\sec{x}=\frac{c}{b}$ | $x\not=\frac{\pi}{2}+k\pi$ | $y\le1 \lor y\ge1$ | 偶函数 | $2\pi$ |
-|   余割   | $\csc{x}=\frac{c}{a}$ |        $x\not=k\pi$        | $y\le1 \lor y\ge1$ | 奇函数 | $2\pi$ |
+### 锐角三角函数
 
-<Desmos url="zhow2jcijw" />
+锐角三角函数是在直角三角形中，以一个锐角为基准，定义对边、邻边和斜边中两边之比的函数。
 
-## 任意角的三角函数
+### 任意角三角函数
 
-上文中的三角函数定义是基于直角三角形的，但直角三角形的锐角只能在 $(0,\frac{\pi}{2})$ 范围内。
+锐角三角函数定义是基于 **直角三角形** 的，但直角三角形的锐角只能在 $(0,\frac{\pi}{2})$ 范围内。
 
-超出这个范围的三角函数就没有定义了，所以高中时会用单位圆推导出任意角的三角函数。
+超出这个范围的三角函数就没有意义了，所以高中时会用 **单位圆** 定义任意角三角函数。
 
-如图，把斜边为 $1$ 的直角三角形放入单位圆内。
+如图，将斜边为 $1$ 的直角三角形放入单位圆内。
 
-不难发现，不管 $\theta$ 的大小，斜边 $c$ 永远等于 $1$，带入锐角三角函数的定义：
+不难发现，不管 $\theta$ 的大小，斜边 $c$ 永远等于半径 $1$，带入锐角三角函数的定义：
 
 $$
 \sin{\theta}=\frac{a}{c}=a,\cos{\theta}=\frac{b}{c}=b
@@ -104,13 +103,59 @@ $$
 
 所以一条直线的倾斜角为 $\theta$ 时，该直线的斜率 $k=\tan{\theta}$。
 
-## 常用三角函数值表
+## 三角函数的信息
 
-|      角度      |           $15^\circ$           |     $$30^\circ$$      |      $45^\circ$       |      $60^\circ$       | $90^\circ$ |      $120^\circ$      |      $150^\circ$       | $180^\circ$ | $270^\circ$ | $360^\circ$ |
-| :------------: | :----------------------------: | :-------------------: | :-------------------: | :-------------------: | :--------: | :-------------------: | :--------------------: | :---------: | :---------: | :---------: |
-| $\sin{\theta}$ | $\dfrac{\sqrt{6}-\sqrt{2}}{4}$ |    $\dfrac{1}{2}$     | $\dfrac{\sqrt{2}}{2}$ | $\dfrac{\sqrt{3}}{2}$ |    $1$     | $\dfrac{\sqrt{3}}{2}$ |     $\dfrac{1}{2}$     |     $0$     |    $-1$     |     $0$     |
-| $\cos{\theta}$ | $\dfrac{\sqrt{6}+\sqrt{2}}{4}$ | $\dfrac{\sqrt{3}}{2}$ | $\dfrac{\sqrt{2}}{2}$ |    $\dfrac{1}{2}$     |    $0$     |    $-\dfrac{1}{2}$    | $-\dfrac{\sqrt{3}}{2}$ |    $-1$     |     $0$     |     $1$     |
-| $\tan{\theta}$ |          $2-\sqrt{3}$          | $\dfrac{\sqrt{3}}{3}$ |          $1$          |      $\sqrt{3}$       |    $/$     |      $-\sqrt{3}$      | $-\dfrac{\sqrt{3}}{3}$ |     $0$     |     $/$     |     $0$     |
+### 表格
+
+|  函数  |    $\sin{x}$     |    $\cos{x}$     |         $\tan{x}$         |    $\cot{x}$     |         $\sec{x}$         |     $\csc{x}$      |
+| :----: | :--------------: | :--------------: | :-----------------------: | :--------------: | :-----------------------: | :----------------: |
+|  名称  |       正弦       |       余弦       |           正切            |       余切       |           正割            |        余割        |
+|  定义  |  $\dfrac{a}{c}$  |  $\dfrac{b}{c}$  |      $\dfrac{a}{b}$       |  $\dfrac{b}{a}$  |      $\dfrac{c}{b}$       |   $\dfrac{c}{a}$   |
+| 定义域 | $x\in\mathbb{R}$ | $x\in\mathbb{R}$ | $x\ne\dfrac{\pi}{2}+k\pi$ |   $x\ne k\pi$    | $x\ne\dfrac{\pi}{2}+k\pi$ |    $x\ne k\pi$     |
+|  值域  |   $y\in[-1,1]$   |   $y\in[-1,1]$   |     $y\in\mathbb{R}$      | $y\in\mathbb{R}$ |    $y\le1 \lor y\ge1$     | $y\le1 \lor y\ge1$ |
+| 奇偶性 |      奇函数      |      偶函数      |          奇函数           |      奇函数      |          偶函数           |       奇函数       |
+|  周期  |      $2\pi$      |      $2\pi$      |           $\pi$           |      $\pi$       |          $2\pi$           |       $2\pi$       |
+
+### 三角函数的图像
+
+红色为 $\sin$，蓝色为 $\cos$，绿色为 $\tan$，橙色为 $\cot$，紫色为 $\sec$，黑色为 $\csc$。
+
+<Desmos url="zhow2jcijw" />
+
+### 常用三角函数值表
+
+<style>{`
+  .center-table th, .center-table td {
+    text-align: center;
+  }
+`}</style>
+
+<table className="center-table">
+  <thead>
+    <tr>
+      <th>角度</th>
+      <th>弧度</th>
+      <th>$\sin{\theta}$</th>
+      <th>$\cos{\theta}$</th>
+      <th>$\tan{\theta}$</th>
+      <th>$\cot{\theta}$</th>
+      <th>$\sec{\theta}$</th>
+      <th>$\csc{\theta}$</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>$0^\circ$</td><td>$0$</td><td>$0$</td><td>$1$</td><td>$0$</td><td>$/$</td><td>$1$</td><td>$/$</td></tr>
+    <tr><td>$15^\circ$</td><td>$\dfrac{\pi}{12}$</td><td>$\dfrac{\sqrt{6}-\sqrt{2}}{4}$</td><td>$\dfrac{\sqrt{6}+\sqrt{2}}{4}$</td><td>$2 - \sqrt{3}$</td><td>$2 + \sqrt{3}$</td><td>$\dfrac{4}{\sqrt{6}+\sqrt{2}}$</td><td>$\dfrac{4}{\sqrt{6}-\sqrt{2}}$</td></tr>
+    <tr><td>$30^\circ$</td><td>$\dfrac{\pi}{6}$</td><td>$\dfrac{1}{2}$</td><td>$\dfrac{\sqrt{3}}{2}$</td><td>$\dfrac{\sqrt{3}}{3}$</td><td>$\sqrt{3}$</td><td>$\dfrac{2}{\sqrt{3}}$</td><td>$2$</td></tr>
+    <tr><td>$45^\circ$</td><td>$\dfrac{\pi}{4}$</td><td>$\dfrac{\sqrt{2}}{2}$</td><td>$\dfrac{\sqrt{2}}{2}$</td><td>$1$</td><td>$1$</td><td>$\sqrt{2}$</td><td>$\sqrt{2}$</td></tr>
+    <tr><td>$60^\circ$</td><td>$\dfrac{\pi}{3}$</td><td>$\dfrac{\sqrt{3}}{2}$</td><td>$\dfrac{1}{2}$</td><td>$\sqrt{3}$</td><td>$\dfrac{\sqrt{3}}{3}$</td><td>$2$</td><td>$\dfrac{2}{\sqrt{3}}$</td></tr>
+    <tr><td>$90^\circ$</td><td>$\dfrac{\pi}{2}$</td><td>$1$</td><td>$0$</td><td>$/$</td><td>$0$</td><td>$/$</td><td>$1$</td></tr>
+    <tr><td>$120^\circ$</td><td>$\dfrac{2\pi}{3}$</td><td>$\dfrac{\sqrt{3}}{2}$</td><td>$-\dfrac{1}{2}$</td><td>$-\sqrt{3}$</td><td>$-\dfrac{\sqrt{3}}{3}$</td><td>$-2$</td><td>$\dfrac{2}{\sqrt{3}}$</td></tr>
+    <tr><td>$180^\circ$</td><td>$\pi$</td><td>$0$</td><td>$-1$</td><td>$0$</td><td>$/$</td><td>$-1$</td><td>$/$</td></tr>
+    <tr><td>$270^\circ$</td><td>$\dfrac{3\pi}{2}$</td><td>$-1$</td><td>$0$</td><td>$/$</td><td>$0$</td><td>$/$</td><td>$-1$</td></tr>
+    <tr><td>$360^\circ$</td><td>$2\pi$</td><td>$0$</td><td>$1$</td><td>$0$</td><td>$/$</td><td>$1$</td><td>$/$</td></tr>
+  </tbody>
+</table>
 
 ## 三角函数的恒等式
 
@@ -192,21 +237,41 @@ $$
 \cot^2{\alpha}+1=\csc^2{\alpha}
 $$
 
-对于另外三组恒等式，将三角函数的定义带入即可证明：
+对于其他三组恒等式，将锐角三角函数的定义带入即可证明：
 
 $$
 \sin{\theta}=\frac{a}{c},\cos{\theta}=\frac{b}{c},\tan{\theta}=\frac{a}{b},\cot{\theta}=\frac{b}{a},\sec{\theta}=\frac{c}{b},\csc{\theta}=\frac{c}{a}
 $$
 
-例子：
+:::note[示例]
 
-$$
-\tan{\theta}=\dfrac{a}{b}=\dfrac{a/c}{b/c}=\dfrac{\sin{\theta}}{\cos{\theta}}
-$$
+- $\dfrac{\sin{\theta}}{\cos{\theta}}=\dfrac{a/c}{b/c}=\dfrac{a}{b}=\tan{\theta}$
+
+:::
 
 ## 三角函数的公式
 
 ### 两角和差公式
+
+#### 无字证明
+
+一个精妙的无字证明：
+
+![](assets/AngleAdditionDiagramSine.svg)
+
+$$
+\sin{(\alpha+\beta)}=\sin{\alpha}\cos{\beta}+\cos{\alpha}\sin{\beta}
+$$
+
+$$
+\cos{(\alpha+\beta)}=\cos{\alpha}\cos{\beta}-\sin{\alpha}\sin{\beta}
+$$
+
+![](assets/AngleAdditionDiagramTangent.svg)
+
+$$
+\tan{(\alpha+\beta)}=\dfrac{\tan{\alpha}+\tan{\beta}}{1-\tan{\alpha}\tan{\beta}}
+$$
 
 #### 推导过程
 
@@ -297,7 +362,7 @@ $$
 
 $$
 \begin{aligned}
-  \tan{\alpha-\beta} &= \dfrac{\sin{(\alpha-\beta)}}{\cos{(\alpha-\beta)}} \\
+  \tan{(\alpha-\beta)} &= \dfrac{\sin{(\alpha-\beta)}}{\cos{(\alpha-\beta)}} \\
   &= \dfrac{\sin{\alpha}\cos{\beta}-\cos{\alpha}\sin{\beta}}{\cos{\alpha}\cos{\beta}+\sin{\alpha}\sin{\beta}} \\
   &= \dfrac{\tan{\alpha}-\tan{\beta}}{1+\tan{\alpha}\tan{\beta}}
 \end{aligned}
@@ -313,7 +378,7 @@ $$
 \end{aligned}
 $$
 
-#### 6.1.2 公式
+#### 公式总结
 
 $$
 \sin{(\alpha+\beta)}=\sin{\alpha}\cos{\beta}+\cos{\alpha}\sin{\beta}
@@ -339,41 +404,46 @@ $$
 \tan{(\alpha-\beta)}=\dfrac{\tan{\alpha}-\tan{\beta}}{1+\tan{\alpha}\tan{\beta}}
 $$
 
-### 6.2 诱导公式
+### 诱导公式
 
-#### 6.2.1 推导过程
+#### 推导过程
 
 诱导公式可以用和差角公式直接计算。
 
-#### 6.2.2 记忆方法
+:::note[示例]
+
+- $\sin{(\frac{\pi}{2}+\alpha)}=\sin{\frac{\pi}{2}}\cos{\alpha}+\cos{\frac{\pi}{2}}\sin{\alpha}=\cos{\alpha}$
+
+:::
+
+#### 记忆方法
 
 口诀：奇变偶不变，符号看象限。
 
-1. 奇变偶不变：奇偶指 $\frac{\pi}{2}$ 的系数，例如 $\pi,2\pi$ 是偶数，$\frac{\pi}{2},\frac{3\pi}{2}$ 是奇数。如果是偶数，恒等式前后函数名一致；如果是奇数，改成对应的函数名。（$\sin\leftrightarrow\cos,\tan\leftrightarrow\cot,\sec\leftrightarrow\csc$）
+1. 奇变偶不变：奇偶指 $\frac{\pi}{2}$ 的系数，例如 $\pi,2\pi$ 是偶数，$\frac{\pi}{2},\frac{3\pi}{2}$ 是奇数。如果是偶数，公式前后函数名一致；如果是奇数，改成对应的函数名。（$\sin\leftrightarrow\cos,\tan\leftrightarrow\cot,\sec\leftrightarrow\csc$）
 
-2. 符号看象限：把 $\alpha$ 看作第一象限角，计算出前面的值在后面函数的正负：
+2. 符号看象限：把 $\alpha$ 看作第一象限角（例如设 $\alpha=\frac{\pi}{4}$），计算出前面的值在后面函数的正负号：
 
-|      符号      |              第一象限               |                第二象限                 |                 第三象限                 |                 第四象限                  |
-| :------------: | :---------------------------------: | :-------------------------------------: | :--------------------------------------: | :---------------------------------------: |
-|      范围      | $(2k\pi,2k\pi+\frac{\pi}{2})$ | $(2k\pi+\frac{\pi}{2},2k\pi+\pi)$ | $(2k\pi+\pi,2k\pi+\frac{3\pi}{2})$ | $(2k\pi+\frac{3\pi}{2},2k\pi+2\pi)$ |
-| $\sin{\alpha}$ |                 $+$                 |                   $+$                   |                   $-$                    |                    $-$                    |
-| $\cos{\alpha}$ |                 $+$                 |                   $-$                   |                   $-$                    |                    $+$                    |
-| $\tan{\alpha}$ |                 $+$                 |                   $-$                   |                   $+$                    |                    $-$                    |
-| $\cot{\alpha}$ |                 $+$                 |                   $-$                   |                   $+$                    |                    $-$                    |
+|   象限   |                 范围                 | $\sin{\alpha}$ | $\cos{\alpha}$ | $\tan{\alpha}$ | $\cot{\alpha}$ | $\sec{\alpha}$ | $\csc{\alpha}$ |
+| :------: | :----------------------------------: | :------------: | :------------: | :------------: | :------------: | :------------: | :------------: |
+| 第一象限 |    $(2k\pi,2k\pi+\dfrac{\pi}{2})$    |      $+$       |      $+$       |      $+$       |      $+$       |      $+$       |      $+$       |
+| 第二象限 |  $(2k\pi+\dfrac{\pi}{2},2k\pi+\pi)$  |      $+$       |      $-$       |      $-$       |      $-$       |      $-$       |      $+$       |
+| 第三象限 | $(2k\pi+\pi,2k\pi+\dfrac{3\pi}{2})$  |      $-$       |      $-$       |      $+$       |      $+$       |      $-$       |      $-$       |
+| 第四象限 | $(2k\pi+\dfrac{3\pi}{2},2k\pi+2\pi)$ |      $-$       |      $+$       |      $-$       |      $-$       |      $+$       |      $-$       |
 
-:::tip
+:::note[示例]
 
-例子：化简 $\sin{(\frac{3\pi}{2}-\alpha)}$。
+化简 $\sin{(\frac{3\pi}{2}-\alpha)}$。
 
-1. $\frac{3\pi}{2}=3\cdot\dfrac{\pi}{2}$，$3$ 是奇数，所以要将 $\sin$ 变成 $\cos$。
+1. $\frac{3\pi}{2}=3\cdot\frac{\pi}{2}$ 是奇数，所以要将 $\sin$ 变成 $\cos$。
 2. 把 $\alpha$ 看作第一象限角，则 $(\frac{3\pi}{2}-\alpha)$ 为第三象限角，$\cos$ 在第三象限为负数，所以为负号。
 3. 所以 $\sin{(\frac{3\pi}{2}-\alpha)}=-\cos{\alpha}$。
 
 :::
 
-#### 6.2.3 公式
+#### 公式汇总
 
-##### 第一组诱导公式
+##### 第一组
 
 $$
 \sin{(\frac{\pi}{2}+\alpha)}=\cos{\alpha}
@@ -391,7 +461,7 @@ $$
 \cos{(\frac{\pi}{2}-\alpha)}=\sin{\alpha}
 $$
 
-##### 第二组诱导公式
+##### 第二组
 
 $$
 \sin{(\pi+\alpha)}=-\sin{\alpha}
@@ -409,7 +479,7 @@ $$
 \cos{(\pi-\alpha)}=-\cos{\alpha}
 $$
 
-##### 第三组诱导公式
+##### 第三组
 
 $$
 \sin{(\frac{3\pi}{2}+\alpha)}=-\cos{\alpha}
@@ -427,7 +497,7 @@ $$
 \cos{(\frac{3\pi}{2}-\alpha)}=-\sin{\alpha}
 $$
 
-##### 第四组诱导公式
+##### 第四组
 
 $$
 \sin{(2\pi+\alpha)}=\sin{\alpha}
@@ -461,7 +531,7 @@ $$
 
 :::tip
 
-最后一行三个公式等价。
+最后一行的三个公式等价。
 
 :::
 
@@ -614,7 +684,7 @@ $$
 
 :::tip
 
-以上三个公式等价。
+以上的三个正切半角公式等价。
 
 :::
 
@@ -865,23 +935,20 @@ $$
 \tan{\alpha}=\dfrac{2\tan{\dfrac{\alpha}{2}}}{1-\tan^2{\dfrac{\alpha}{2}}}
 $$
 
-## Part.7 拓展内容
+## 拓展内容
 
-:::tip
+以下内容为 **高中物理** 或 **大学数学** 的内容，可作为扩展阅读。
 
-7.1 为高中物理内容，与本文无关；7.2、7.3、7.4、7.5 高中阶段不学，可以自行了解。
-
-:::
-
-### 7.1 简谐运动
+### 反三角函数
 
 $$
-x=A\cos{(\omega t+\varphi)}
+\sin{(\arcsin x)}=x
 $$
 
-- [地球打穿一个洞，人跳进去会发生什么？李永乐老师讲简谐运动 - bilibili](https://www.bilibili.com/video/BV1Nb411g76W)
+- [反三角函数 - 维基百科](https://zh.wikipedia.org/wiki/反三角函数)
+- [这个视频可能颠覆你对反三角函数的认识！ - bilibili](https://www.bilibili.com/video/BV1oC4y1G7Zk/)
 
-### 7.2 三角函数和复数
+### 欧拉公式
 
 $$
 e^{i\theta}=\cos{\theta}+i\sin{\theta}
@@ -890,16 +957,7 @@ $$
 - [【官方双语】微分方程概论-第五章：在3.14分钟内理解e^iπ - bilibili](https://www.bilibili.com/video/BV1G4411D7kZ)
 - [用几何直觉理解欧拉公式！【中学生也能懂|manim】 - bilibili](https://www.bilibili.com/video/BV1bF411P7RL)
 
-### 7.3 反三角函数
-
-$$
-\sin{(\arcsin{x})}=x
-$$
-
-- [反三角函数 - 维基百科](https://zh.wikipedia.org/wiki/反三角函数)
-- [这个视频可能颠覆你对反三角函数的认识！ - bilibili](https://www.bilibili.com/video/BV1oC4y1G7Zk/)
-
-### 7.4 双曲函数
+### 双曲函数
 
 $$
 e^{j\theta}=\cosh{\theta}+j\sinh{\theta}
@@ -908,7 +966,15 @@ $$
 - [双曲函数——带你领略课本上没有的神奇函数！ - bilibili](https://www.bilibili.com/video/BV1xp4y1v7cw)
 - [双曲正弦，余弦是如何得到的？有和正弦余弦有什么关系？|manim - bilibili](https://www.bilibili.com/video/BV1RV411o7sY)
 
-### 7.5 傅里叶变换
+### 简谐运动
+
+$$
+x=A\cos{(\omega t+\varphi)}
+$$
+
+- [地球打穿一个洞，人跳进去会发生什么？李永乐老师讲简谐运动 - bilibili](https://www.bilibili.com/video/BV1Nb411g76W)
+
+### 傅里叶变换
 
 $$
 F(\omega)=\displaystyle\int_{-\infty}^{\infty}f(x)e^{-i\omega x}dx
