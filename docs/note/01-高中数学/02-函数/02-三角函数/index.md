@@ -68,7 +68,7 @@ $A,B$ 两点之间的距离一般用 $|AB|$ 表示。
 
 :::
 
-## 三角函数的定义
+## 定义
 
 ### 锐角三角函数
 
@@ -80,35 +80,31 @@ $A,B$ 两点之间的距离一般用 $|AB|$ 表示。
 
 超出这个范围的三角函数就没有意义了，所以高中时会用 **单位圆** 定义任意角三角函数。
 
+![](assets/Unit_circle.svg)
+
 如图，将斜边为 $1$ 的直角三角形放入单位圆内。
 
-不难发现，不管 $\theta$ 的大小，斜边 $c$ 永远等于半径 $1$，带入锐角三角函数的定义：
+不难发现，不管 $t$ 的大小，都有斜边 $c=1$。
+
+带入 $\sin$ 和 $\cos$ 的锐角三角函数的定义：
 
 $$
-\sin{\theta}=\frac{a}{c}=a,\cos{\theta}=\frac{b}{c}=b
+\sin t=\frac{a}{c}=a,\cos t=\frac{b}{c}=b
 $$
 
-而 $a$ 和 $b$ 恰好是这个点的 **纵坐标** 和 **横坐标**.
+而 $a$ 和 $b$ 是该直角三角形的两边，是这个点的 **纵坐标** 和 **横坐标**.
 
-所以是单位圆周上辐角为 $\theta$ 的点的纵坐标 $y=\sin{\theta}$，横坐标 $x=\cos{\theta}$。
+因此，单位圆周上辐角为 $t$ 的点的坐标为 $(\cos t,\sin t)$。
 
 :::warning
 
-这个点坐标是 $(\cos{\theta},\sin{\theta})$，$\cos$ 在前面，$\sin$ 在后面。
+这个点坐标为 $(\cos t,\sin t)$，$\cos$ 在前，$\sin$ 在后。
 
 :::
 
-$$
-\tan{\theta}=\frac{a}{b}=\frac{\sin{\theta}}{\cos{\theta}}=\frac{y}{x}
-$$
+## 性质
 
-不难发现，$\frac{y}{x}$ 是计算直线斜率 $k$ 的公式。
-
-所以一条直线的倾斜角为 $\theta$ 时，该直线的斜率 $k=\tan{\theta}$。
-
-## 三角函数的信息
-
-### 表格
+### 基本性质
 
 |  函数  |    $\sin{x}$     |    $\cos{x}$     |         $\tan{x}$         |    $\cot{x}$     |         $\sec{x}$         |     $\csc{x}$      |
 | :----: | :--------------: | :--------------: | :-----------------------: | :--------------: | :-----------------------: | :----------------: |
@@ -119,13 +115,15 @@ $$
 | 奇偶性 |      奇函数      |      偶函数      |          奇函数           |      奇函数      |          偶函数           |       奇函数       |
 |  周期  |      $2\pi$      |      $2\pi$      |           $\pi$           |      $\pi$       |          $2\pi$           |       $2\pi$       |
 
-### 三角函数的图像
+### 函数图像
+
+~~[有点抽象](https://www.desmos.com/calculator/zhow2jcijw)~~
 
 红色为 $\sin$，蓝色为 $\cos$，绿色为 $\tan$，橙色为 $\cot$，紫色为 $\sec$，黑色为 $\csc$。
 
 <Desmos url="zhow2jcijw" />
 
-### 常用三角函数值表
+### 常用值速查表
 
 <style>{`
   .center-table th, .center-table td {
@@ -160,7 +158,7 @@ $$
   </tbody>
 </table>
 
-## 三角函数的恒等式
+## 恒等式
 
 ### 平方恒等式
 
@@ -252,7 +250,7 @@ $$
 
 :::
 
-## 三角函数的公式
+## 公式
 
 ### 两角和差公式
 
@@ -444,7 +442,7 @@ $$
 
 :::
 
-#### 公式汇总
+#### 公式总结
 
 ##### 第一组
 
@@ -560,7 +558,7 @@ $$
 \end{aligned}
 $$
 
-#### 公式汇总
+#### 公式总结
 
 $$
 \begin{array}{l}
@@ -607,7 +605,7 @@ $$
 \end{aligned}
 $$
 
-#### 公式汇总
+#### 公式总结
 
 $$
 \sin{3\alpha}=3\sin{\alpha}-4\sin^3{\alpha}
@@ -691,7 +689,7 @@ $$
 
 :::
 
-#### 公式汇总
+#### 公式总结
 
 $$
 \sin{\dfrac{\alpha}{2}}=\pm\sqrt{\dfrac{1-\cos{\alpha}}{2}}
@@ -760,7 +758,7 @@ cc=(c+c)/2
 ss=-(c-c)/2
 ```
 
-#### 公式汇总
+#### 公式总结
 
 $$
 \sin{\alpha}\cos{\beta}=\dfrac{1}{2}[\sin{(\alpha+\beta)}+\sin{(\alpha-\beta)}]
@@ -838,7 +836,7 @@ $$
 \cos{A}-\cos{B}=-2\sin{\dfrac{A+B}{2}}\sin{\dfrac{A-B}{2}}
 $$
 
-#### 公式汇总
+#### 公式总结
 
 $$
 \sin{\alpha}+\sin{\beta}=2\sin{\dfrac{\alpha+\beta}{2}}\cos{\dfrac{\alpha-\beta}{2}}
@@ -884,7 +882,7 @@ $$
 \end{aligned}
 $$
 
-#### 公式汇总
+#### 公式总结
 
 $$
 a\sin{\theta}+b\cos{\theta}=\sqrt{a^2+b^2}\sin{(\theta+\varphi)},\tan{\varphi}=\dfrac{b}{a}
@@ -926,7 +924,7 @@ $$
 \tan{\alpha}=\dfrac{\sin{\alpha}}{\cos{\alpha}}=\dfrac{2\tan{\dfrac{\alpha}{2}}}{1-\tan^2{\dfrac{\alpha}{2}}}
 $$
 
-#### 公式汇总
+#### 公式总结
 
 $$
 \sin{\alpha}=\dfrac{2\tan{\dfrac{\alpha}{2}}}{1+\tan^2{\dfrac{\alpha}{2}}}
@@ -940,7 +938,65 @@ $$
 \tan{\alpha}=\dfrac{2\tan{\dfrac{\alpha}{2}}}{1-\tan^2{\dfrac{\alpha}{2}}}
 $$
 
-## 拓展内容
+
+## 应用
+
+### 正切与斜率
+
+![](assets/Wiki_slope_in_2d.svg)
+
+如图，带入 $\tan$ 的锐角三角函数的定义：
+
+$$
+\tan{\theta}=\frac{\Delta y}{\Delta x}
+$$
+
+不难发现，$\frac{\Delta y}{\Delta x}$ 也是直线的斜率 $k$ 的计算公式。
+
+所以一条倾斜角为 $\theta$ 的直线，斜率 $k=\tan{\theta}$。
+
+$$
+k=\tan{\theta}=\frac{\Delta y}{\Delta x}
+$$
+
+### 三角形约定
+
+1. 对于 $\triangle ABC$，$a$、$b$、$c$ 分别为 $\angle A$、$\angle B$、$\angle C$ 的对边。
+2. $r$ 为 $\triangle ABC$ 的内切圆半径，$R$ 为 $\triangle ABC$ 的外接圆半径。
+
+![](assets/Triangle_with_notations_2.svg)
+
+### 正弦定理
+
+对于任意 $\triangle ABC$，有：
+
+$$
+\frac{a}{\sin \angle A} = \frac{b}{\sin \angle B} = \frac{c}{\sin \angle C} = 2R
+$$
+
+### 余弦定理
+
+对于任意 $\triangle ABC$，有：
+
+$$
+a^2 = b^2 + c^2 - 2bc\cos A
+$$
+
+$$
+b^2 = a^2 + c^2 - 2ac\cos B
+$$
+
+$$
+c^2 = a^2 + b^2 - 2ab\cos C
+$$
+
+勾股定理是余弦定理在一个角为直角时（例如 $\angle C = 90^\circ$，$\cos 90^\circ=0$）的特殊情况：
+
+$$
+c^2 = a^2 + b^2
+$$
+
+## 拓展
 
 以下内容为 **高中物理** 或 **大学数学** 的内容，可作为扩展阅读。
 
