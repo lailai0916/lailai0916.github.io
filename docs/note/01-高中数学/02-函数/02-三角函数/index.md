@@ -68,6 +68,10 @@ $A,B$ 两点之间的距离一般用 $|AB|$ 表示。
 
 :::
 
+### 三角形的约定
+
+- [解三角形 - 三角形的约定](../几何/解三角形#三角形的约定)
+
 ## 定义
 
 ### 锐角三角函数
@@ -959,13 +963,6 @@ $$
 k=\tan{\theta}=\frac{\Delta y}{\Delta x}
 $$
 
-### 三角形约定
-
-1. 对于 $\triangle ABC$，$a$、$b$、$c$ 分别为 $\angle A$、$\angle B$、$\angle C$ 的对边。
-2. $r$ 为 $\triangle ABC$ 的内切圆半径，$R$ 为 $\triangle ABC$ 的外接圆半径。
-
-![](assets/Triangle_with_notations_2.svg)
-
 ### 正弦定理
 
 对于任意 $\triangle ABC$，有：
@@ -990,7 +987,9 @@ $$
 c^2 = a^2 + b^2 - 2ab\cos C
 $$
 
-勾股定理是余弦定理在一个角为直角时（例如 $\angle C = 90^\circ$，$\cos 90^\circ=0$）的特殊情况：
+**勾股定理** 其实是 **余弦定理** 在一个角为 **直角** 时的特殊情况。
+
+例如当 $\angle C = 90^\circ$ 时，有 $\cos \angle C=0$，即：
 
 $$
 c^2 = a^2 + b^2
