@@ -1,7 +1,6 @@
 ---
-# Display h2 to h5 headings
 toc_min_heading_level: 2
-toc_max_heading_level: 5
+toc_max_heading_level: 4
 ---
 
 import Desmos from '@site/src/components/BrowserWindow/Desmos';
