@@ -34,11 +34,11 @@ import Desmos from '@site/src/components/BrowserWindow/Desmos';
 
 |    角度    |       弧度        |    角度     |       弧度        |
 | :--------: | :---------------: | :---------: | :---------------: |
-| $0^\circ$  |        $0$        | $90^\circ$  | $\dfrac{\pi}{2}$  |
-| $15^\circ$ | $\dfrac{\pi}{12}$ | $120^\circ$ | $\dfrac{2\pi}{3}$ |
-| $30^\circ$ | $\dfrac{\pi}{6}$  | $180^\circ$ |       $\pi$       |
-| $45^\circ$ | $\dfrac{\pi}{4}$  | $270^\circ$ | $\dfrac{3\pi}{2}$ |
-| $60^\circ$ | $\dfrac{\pi}{3}$  | $360^\circ$ |      $2\pi$       |
+| $0^\circ$  |        $0$        | $90^\circ$  | $\frac{\pi}{2}$  |
+| $15^\circ$ | $\frac{\pi}{12}$ | $120^\circ$ | $\frac{2\pi}{3}$ |
+| $30^\circ$ | $\frac{\pi}{6}$  | $180^\circ$ |       $\pi$       |
+| $45^\circ$ | $\frac{\pi}{4}$  | $270^\circ$ | $\frac{3\pi}{2}$ |
+| $60^\circ$ | $\frac{\pi}{3}$  | $360^\circ$ |      $2\pi$       |
 
 ### 单位圆
 
@@ -113,8 +113,8 @@ $$
 |  函数  |    $\sin{x}$     |    $\cos{x}$     |         $\tan{x}$         |    $\cot{x}$     |         $\sec{x}$         |     $\csc{x}$      |
 | :----: | :--------------: | :--------------: | :-----------------------: | :--------------: | :-----------------------: | :----------------: |
 |  名称  |       正弦       |       余弦       |           正切            |       余切       |           正割            |        余割        |
-|  定义  |  $\dfrac{a}{c}$  |  $\dfrac{b}{c}$  |      $\dfrac{a}{b}$       |  $\dfrac{b}{a}$  |      $\dfrac{c}{b}$       |   $\dfrac{c}{a}$   |
-| 定义域 | $x\in\mathbb{R}$ | $x\in\mathbb{R}$ | $x\ne\dfrac{\pi}{2}+k\pi$ |   $x\ne k\pi$    | $x\ne\dfrac{\pi}{2}+k\pi$ |    $x\ne k\pi$     |
+|  定义  |  $\frac{a}{c}$  |  $\frac{b}{c}$  |      $\frac{a}{b}$       |  $\frac{b}{a}$  |      $\frac{c}{b}$       |   $\frac{c}{a}$   |
+| 定义域 | $x\in\mathbb{R}$ | $x\in\mathbb{R}$ | $x\ne\frac{\pi}{2}+k\pi$ |   $x\ne k\pi$    | $x\ne\frac{\pi}{2}+k\pi$ |    $x\ne k\pi$     |
 |  值域  |   $y\in[-1,1]$   |   $y\in[-1,1]$   |     $y\in\mathbb{R}$      | $y\in\mathbb{R}$ |    $y\le1 \lor y\ge1$     | $y\le1 \lor y\ge1$ |
 | 奇偶性 |      奇函数      |      偶函数      |          奇函数           |      奇函数      |          偶函数           |       奇函数       |
 |  周期  |      $2\pi$      |      $2\pi$      |           $\pi$           |      $\pi$       |          $2\pi$           |       $2\pi$       |
@@ -150,14 +150,14 @@ $$
   </thead>
   <tbody>
     <tr><td>$0^\circ$</td><td>$0$</td><td>$0$</td><td>$1$</td><td>$0$</td><td>$/$</td><td>$1$</td><td>$/$</td></tr>
-    <tr><td>$15^\circ$</td><td>$\dfrac{\pi}{12}$</td><td>$\dfrac{\sqrt{6}-\sqrt{2}}{4}$</td><td>$\dfrac{\sqrt{6}+\sqrt{2}}{4}$</td><td>$2 - \sqrt{3}$</td><td>$2 + \sqrt{3}$</td><td>$\dfrac{4}{\sqrt{6}+\sqrt{2}}$</td><td>$\dfrac{4}{\sqrt{6}-\sqrt{2}}$</td></tr>
-    <tr><td>$30^\circ$</td><td>$\dfrac{\pi}{6}$</td><td>$\dfrac{1}{2}$</td><td>$\dfrac{\sqrt{3}}{2}$</td><td>$\dfrac{\sqrt{3}}{3}$</td><td>$\sqrt{3}$</td><td>$\dfrac{2}{\sqrt{3}}$</td><td>$2$</td></tr>
-    <tr><td>$45^\circ$</td><td>$\dfrac{\pi}{4}$</td><td>$\dfrac{\sqrt{2}}{2}$</td><td>$\dfrac{\sqrt{2}}{2}$</td><td>$1$</td><td>$1$</td><td>$\sqrt{2}$</td><td>$\sqrt{2}$</td></tr>
-    <tr><td>$60^\circ$</td><td>$\dfrac{\pi}{3}$</td><td>$\dfrac{\sqrt{3}}{2}$</td><td>$\dfrac{1}{2}$</td><td>$\sqrt{3}$</td><td>$\dfrac{\sqrt{3}}{3}$</td><td>$2$</td><td>$\dfrac{2}{\sqrt{3}}$</td></tr>
-    <tr><td>$90^\circ$</td><td>$\dfrac{\pi}{2}$</td><td>$1$</td><td>$0$</td><td>$/$</td><td>$0$</td><td>$/$</td><td>$1$</td></tr>
-    <tr><td>$120^\circ$</td><td>$\dfrac{2\pi}{3}$</td><td>$\dfrac{\sqrt{3}}{2}$</td><td>$-\dfrac{1}{2}$</td><td>$-\sqrt{3}$</td><td>$-\dfrac{\sqrt{3}}{3}$</td><td>$-2$</td><td>$\dfrac{2}{\sqrt{3}}$</td></tr>
+    <tr><td>$15^\circ$</td><td>$\frac{\pi}{12}$</td><td>$\frac{\sqrt{6}-\sqrt{2}}{4}$</td><td>$\frac{\sqrt{6}+\sqrt{2}}{4}$</td><td>$2 - \sqrt{3}$</td><td>$2 + \sqrt{3}$</td><td>$\frac{4}{\sqrt{6}+\sqrt{2}}$</td><td>$\frac{4}{\sqrt{6}-\sqrt{2}}$</td></tr>
+    <tr><td>$30^\circ$</td><td>$\frac{\pi}{6}$</td><td>$\frac{1}{2}$</td><td>$\frac{\sqrt{3}}{2}$</td><td>$\frac{\sqrt{3}}{3}$</td><td>$\sqrt{3}$</td><td>$\frac{2}{\sqrt{3}}$</td><td>$2$</td></tr>
+    <tr><td>$45^\circ$</td><td>$\frac{\pi}{4}$</td><td>$\frac{\sqrt{2}}{2}$</td><td>$\frac{\sqrt{2}}{2}$</td><td>$1$</td><td>$1$</td><td>$\sqrt{2}$</td><td>$\sqrt{2}$</td></tr>
+    <tr><td>$60^\circ$</td><td>$\frac{\pi}{3}$</td><td>$\frac{\sqrt{3}}{2}$</td><td>$\frac{1}{2}$</td><td>$\sqrt{3}$</td><td>$\frac{\sqrt{3}}{3}$</td><td>$2$</td><td>$\frac{2}{\sqrt{3}}$</td></tr>
+    <tr><td>$90^\circ$</td><td>$\frac{\pi}{2}$</td><td>$1$</td><td>$0$</td><td>$/$</td><td>$0$</td><td>$/$</td><td>$1$</td></tr>
+    <tr><td>$120^\circ$</td><td>$\frac{2\pi}{3}$</td><td>$\frac{\sqrt{3}}{2}$</td><td>$-\frac{1}{2}$</td><td>$-\sqrt{3}$</td><td>$-\frac{\sqrt{3}}{3}$</td><td>$-2$</td><td>$\frac{2}{\sqrt{3}}$</td></tr>
     <tr><td>$180^\circ$</td><td>$\pi$</td><td>$0$</td><td>$-1$</td><td>$0$</td><td>$/$</td><td>$-1$</td><td>$/$</td></tr>
-    <tr><td>$270^\circ$</td><td>$\dfrac{3\pi}{2}$</td><td>$-1$</td><td>$0$</td><td>$/$</td><td>$0$</td><td>$/$</td><td>$-1$</td></tr>
+    <tr><td>$270^\circ$</td><td>$\frac{3\pi}{2}$</td><td>$-1$</td><td>$0$</td><td>$/$</td><td>$0$</td><td>$/$</td><td>$-1$</td></tr>
     <tr><td>$360^\circ$</td><td>$2\pi$</td><td>$0$</td><td>$1$</td><td>$0$</td><td>$/$</td><td>$1$</td><td>$/$</td></tr>
   </tbody>
 </table>
@@ -183,9 +183,9 @@ $$
 $$
 \boxed{\begin{array}{l}
   \\
-  \tan{\alpha}=\dfrac{\sin{\alpha}}{\cos{\alpha}} \\
+  \tan{\alpha}=\frac{\sin{\alpha}}{\cos{\alpha}} \\
   \\
-  \cot{\alpha}=\dfrac{\cos{\alpha}}{\sin{\alpha}} \\
+  \cot{\alpha}=\frac{\cos{\alpha}}{\sin{\alpha}} \\
   \\
 \end{array}}
 $$
@@ -195,11 +195,11 @@ $$
 $$
 \boxed{\begin{array}{l}
   \\
-  \sin{\alpha}=\dfrac{1}{\csc{\alpha}} \\
+  \sin{\alpha}=\frac{1}{\csc{\alpha}} \\
   \\
-  \cos{\alpha}=\dfrac{1}{\sec{\alpha}} \\
+  \cos{\alpha}=\frac{1}{\sec{\alpha}} \\
   \\
-  \tan{\alpha}=\dfrac{1}{\cot{\alpha}} \\
+  \tan{\alpha}=\frac{1}{\cot{\alpha}} \\
   \\
 \end{array}}
 $$
@@ -250,7 +250,7 @@ $$
 
 :::note[示例]
 
-- $\dfrac{\sin{\theta}}{\cos{\theta}}=\dfrac{a/c}{b/c}=\dfrac{a}{b}=\tan{\theta}$
+- $\frac{\sin{\theta}}{\cos{\theta}}=\frac{a/c}{b/c}=\frac{a}{b}=\tan{\theta}$
 
 :::
 
@@ -275,7 +275,7 @@ $$
 ![](assets/AngleAdditionDiagramTangent.svg)
 
 $$
-\tan{(\alpha+\beta)}=\dfrac{\tan{\alpha}+\tan{\beta}}{1-\tan{\alpha}\tan{\beta}}
+\tan{(\alpha+\beta)}=\frac{\tan{\alpha}+\tan{\beta}}{1-\tan{\alpha}\tan{\beta}}
 $$
 
 #### 推导过程
@@ -337,18 +337,18 @@ $$
 ##### 正弦差角公式推导
 
 $$
-\cos{(\dfrac{\pi}{2}-\theta)}=\cos{\dfrac{\pi}{2}}\cos{\theta}+\sin{\dfrac{\pi}{2}}\sin{\theta}=\sin{\theta}
+\cos{(\frac{\pi}{2}-\theta)}=\cos{\frac{\pi}{2}}\cos{\theta}+\sin{\frac{\pi}{2}}\sin{\theta}=\sin{\theta}
 $$
 
 $$
-\sin{(\dfrac{\pi}{2}-\theta)}=\cos{(\dfrac{\pi}{2}-(\dfrac{\pi}{2}-\theta))}=\cos{\theta}
+\sin{(\frac{\pi}{2}-\theta)}=\cos{(\frac{\pi}{2}-(\frac{\pi}{2}-\theta))}=\cos{\theta}
 $$
 
 $$
 \begin{aligned}
-  \sin{(\alpha-\beta)} &= \cos{(\dfrac{\pi}{2}-(\alpha-\beta))} \\
-  &= \cos{((\dfrac{\pi}{2}-\alpha)+\beta)} \\
-  &= \cos{(\dfrac{\pi}{2}-\alpha)}\cos{\beta}-\sin{(\dfrac{\pi}{2}-\alpha)}\sin{\beta} \\
+  \sin{(\alpha-\beta)} &= \cos{(\frac{\pi}{2}-(\alpha-\beta))} \\
+  &= \cos{((\frac{\pi}{2}-\alpha)+\beta)} \\
+  &= \cos{(\frac{\pi}{2}-\alpha)}\cos{\beta}-\sin{(\frac{\pi}{2}-\alpha)}\sin{\beta} \\
   &= \sin{\alpha}\cos{\beta}-\cos{\alpha}\sin{\beta}
 \end{aligned}
 $$
@@ -367,9 +367,9 @@ $$
 
 $$
 \begin{aligned}
-  \tan{(\alpha-\beta)} &= \dfrac{\sin{(\alpha-\beta)}}{\cos{(\alpha-\beta)}} \\
-  &= \dfrac{\sin{\alpha}\cos{\beta}-\cos{\alpha}\sin{\beta}}{\cos{\alpha}\cos{\beta}+\sin{\alpha}\sin{\beta}} \\
-  &= \dfrac{\tan{\alpha}-\tan{\beta}}{1+\tan{\alpha}\tan{\beta}}
+  \tan{(\alpha-\beta)} &= \frac{\sin{(\alpha-\beta)}}{\cos{(\alpha-\beta)}} \\
+  &= \frac{\sin{\alpha}\cos{\beta}-\cos{\alpha}\sin{\beta}}{\cos{\alpha}\cos{\beta}+\sin{\alpha}\sin{\beta}} \\
+  &= \frac{\tan{\alpha}-\tan{\beta}}{1+\tan{\alpha}\tan{\beta}}
 \end{aligned}
 $$
 
@@ -378,8 +378,8 @@ $$
 $$
 \begin{aligned}
   \tan{(\alpha+\beta)} &= \tan{(\alpha-(-\beta))} \\
-  &= \dfrac{\tan{\alpha}-\tan{(-\beta)}}{1+\tan{\alpha}\tan{(-\beta})} \\
-  &= \dfrac{\tan{\alpha}+\tan{\beta}}{1-\tan{\alpha}\tan{\beta}}
+  &= \frac{\tan{\alpha}-\tan{(-\beta)}}{1+\tan{\alpha}\tan{(-\beta})} \\
+  &= \frac{\tan{\alpha}+\tan{\beta}}{1-\tan{\alpha}\tan{\beta}}
 \end{aligned}
 $$
 
@@ -402,11 +402,11 @@ $$
 $$
 
 $$
-\tan{(\alpha+\beta)}=\dfrac{\tan{\alpha}+\tan{\beta}}{1-\tan{\alpha}\tan{\beta}}
+\tan{(\alpha+\beta)}=\frac{\tan{\alpha}+\tan{\beta}}{1-\tan{\alpha}\tan{\beta}}
 $$
 
 $$
-\tan{(\alpha-\beta)}=\dfrac{\tan{\alpha}-\tan{\beta}}{1+\tan{\alpha}\tan{\beta}}
+\tan{(\alpha-\beta)}=\frac{\tan{\alpha}-\tan{\beta}}{1+\tan{\alpha}\tan{\beta}}
 $$
 
 ### 诱导公式
@@ -431,10 +431,10 @@ $$
 
 |   象限   |                 范围                 | $\sin{\alpha}$ | $\cos{\alpha}$ | $\tan{\alpha}$ | $\cot{\alpha}$ | $\sec{\alpha}$ | $\csc{\alpha}$ |
 | :------: | :----------------------------------: | :------------: | :------------: | :------------: | :------------: | :------------: | :------------: |
-| 第一象限 |    $(2k\pi,2k\pi+\dfrac{\pi}{2})$    |      $+$       |      $+$       |      $+$       |      $+$       |      $+$       |      $+$       |
-| 第二象限 |  $(2k\pi+\dfrac{\pi}{2},2k\pi+\pi)$  |      $+$       |      $-$       |      $-$       |      $-$       |      $-$       |      $+$       |
-| 第三象限 | $(2k\pi+\pi,2k\pi+\dfrac{3\pi}{2})$  |      $-$       |      $-$       |      $+$       |      $+$       |      $-$       |      $-$       |
-| 第四象限 | $(2k\pi+\dfrac{3\pi}{2},2k\pi+2\pi)$ |      $-$       |      $+$       |      $-$       |      $-$       |      $+$       |      $-$       |
+| 第一象限 |    $(2k\pi,2k\pi+\frac{\pi}{2})$    |      $+$       |      $+$       |      $+$       |      $+$       |      $+$       |      $+$       |
+| 第二象限 |  $(2k\pi+\frac{\pi}{2},2k\pi+\pi)$  |      $+$       |      $-$       |      $-$       |      $-$       |      $-$       |      $+$       |
+| 第三象限 | $(2k\pi+\pi,2k\pi+\frac{3\pi}{2})$  |      $-$       |      $-$       |      $+$       |      $+$       |      $-$       |      $-$       |
+| 第四象限 | $(2k\pi+\frac{3\pi}{2},2k\pi+2\pi)$ |      $-$       |      $+$       |      $-$       |      $-$       |      $+$       |      $-$       |
 
 :::note[示例]
 
@@ -554,11 +554,11 @@ $$
 
 $$
 \begin{aligned}
-  \tan{2\alpha} &= \dfrac{\sin{2\alpha}}{\cos{2\alpha}} \\
-  &= \dfrac{2\sin{\alpha}\cos{\alpha}}{\cos^2{\alpha}-\sin^2{\alpha}} \\
-  &= \dfrac{2\sin{\alpha}\cos{\alpha}}{\cos^2{\alpha}-\sin^2{\alpha}} \\
-  &= \dfrac{2\sin{\alpha}\cos{\alpha}/\cos^2{\alpha}}{\cos^2{\alpha}/\cos^2{\alpha}-  \sin^2{\alpha}/\cos^2{\alpha}} \\
-  &= \dfrac{2\tan{\alpha}}{1-\tan^2{\alpha}}
+  \tan{2\alpha} &= \frac{\sin{2\alpha}}{\cos{2\alpha}} \\
+  &= \frac{2\sin{\alpha}\cos{\alpha}}{\cos^2{\alpha}-\sin^2{\alpha}} \\
+  &= \frac{2\sin{\alpha}\cos{\alpha}}{\cos^2{\alpha}-\sin^2{\alpha}} \\
+  &= \frac{2\sin{\alpha}\cos{\alpha}/\cos^2{\alpha}}{\cos^2{\alpha}/\cos^2{\alpha}-  \sin^2{\alpha}/\cos^2{\alpha}} \\
+  &= \frac{2\tan{\alpha}}{1-\tan^2{\alpha}}
 \end{aligned}
 $$
 
@@ -568,7 +568,7 @@ $$
 \begin{array}{l}
   \sin{2\alpha}=2\sin{\alpha}\cos{\alpha} \\
   \cos{2\alpha}=\cos^2{\alpha}-\sin^2{\alpha}=1-2\sin^2{\alpha}=2\cos^2{\alpha}-1 \\
-  \tan{2\alpha}=\dfrac{2\tan{\alpha}}{1-\tan^2{\alpha}}
+  \tan{2\alpha}=\frac{2\tan{\alpha}}{1-\tan^2{\alpha}}
 \end{array}
 $$
 
@@ -602,10 +602,10 @@ $$
 
 $$
 \begin{aligned}
-  \tan{3\alpha} &= \dfrac{\sin{3\alpha}}{\cos{3\alpha}} \\
-  &= \dfrac{3\sin{\alpha}-4\sin^3{\alpha}}{4\cos^3{\alpha}-3\cos{\alpha}} \\
-  &= \dfrac{4\sin{\alpha}\sin{(\dfrac{\pi}{3}+\alpha)}\sin{(\dfrac{\pi}{3}-\alpha)}}{4\cos{\alpha}\cos{(\dfrac{\pi}{3}-\alpha)}\cos{(\dfrac{\pi}{3}+\alpha)}} \\
-  &= \tan{\alpha}\tan{(\dfrac{\pi}{3}-\alpha)}\tan{(\dfrac{\pi}{3}+\alpha)}
+  \tan{3\alpha} &= \frac{\sin{3\alpha}}{\cos{3\alpha}} \\
+  &= \frac{3\sin{\alpha}-4\sin^3{\alpha}}{4\cos^3{\alpha}-3\cos{\alpha}} \\
+  &= \frac{4\sin{\alpha}\sin{(\frac{\pi}{3}+\alpha)}\sin{(\frac{\pi}{3}-\alpha)}}{4\cos{\alpha}\cos{(\frac{\pi}{3}-\alpha)}\cos{(\frac{\pi}{3}+\alpha)}} \\
+  &= \tan{\alpha}\tan{(\frac{\pi}{3}-\alpha)}\tan{(\frac{\pi}{3}+\alpha)}
 \end{aligned}
 $$
 
@@ -620,7 +620,7 @@ $$
 $$
 
 $$
-\tan{3\alpha}=\tan{\alpha}\tan{(\dfrac{\pi}{3}-\alpha)}\tan{(\dfrac{\pi}{3}+\alpha)}
+\tan{3\alpha}=\tan{\alpha}\tan{(\frac{\pi}{3}-\alpha)}\tan{(\frac{\pi}{3}+\alpha)}
 $$
 
 ### 半角公式
@@ -637,9 +637,9 @@ $$
 
 $$
 \begin{array}{l}
-  \cos{\alpha}=2\cos^2{\dfrac{\alpha}{2}}-1 \\
-  \Rightarrow \cos^2{\dfrac{\alpha}{2}}=\dfrac{1+\cos{\alpha}}{2} \\
-  \Rightarrow \cos{\dfrac{\alpha}{2}}=\pm\sqrt{\dfrac{1+\cos{\alpha}}{2}}
+  \cos{\alpha}=2\cos^2{\frac{\alpha}{2}}-1 \\
+  \Rightarrow \cos^2{\frac{\alpha}{2}}=\frac{1+\cos{\alpha}}{2} \\
+  \Rightarrow \cos{\frac{\alpha}{2}}=\pm\sqrt{\frac{1+\cos{\alpha}}{2}}
 \end{array}
 $$
 
@@ -653,9 +653,9 @@ $$
 
 $$
 \begin{array}{l}
-  \cos{\alpha}=1-2\sin^2{\dfrac{\alpha}{2}} \\
-  \Rightarrow \sin^2{\dfrac{\alpha}{2}}=\dfrac{1-\cos{\alpha}}{2} \\
-  \Rightarrow \sin{\dfrac{\alpha}{2}}=\pm\sqrt{\dfrac{1-\cos{\alpha}}{2}}
+  \cos{\alpha}=1-2\sin^2{\frac{\alpha}{2}} \\
+  \Rightarrow \sin^2{\frac{\alpha}{2}}=\frac{1-\cos{\alpha}}{2} \\
+  \Rightarrow \sin{\frac{\alpha}{2}}=\pm\sqrt{\frac{1-\cos{\alpha}}{2}}
 \end{array}
 $$
 
@@ -663,27 +663,27 @@ $$
 
 $$
 \begin{aligned}
-  \tan{\dfrac{\alpha}{2}} &= \dfrac{\sin{\dfrac{\alpha}{2}}}{\cos{\dfrac{\alpha}{2}}} \\
-  &= \dfrac{\pm\sqrt{\dfrac{1-\cos{\alpha}}{2}}}{\pm\sqrt{\dfrac{1+\cos{\alpha}}{2}}} \\
-  &= \pm\sqrt{\dfrac{1-\cos{\alpha}}{1+\cos{\alpha}}}
+  \tan{\frac{\alpha}{2}} &= \frac{\sin{\frac{\alpha}{2}}}{\cos{\frac{\alpha}{2}}} \\
+  &= \frac{\pm\sqrt{\frac{1-\cos{\alpha}}{2}}}{\pm\sqrt{\frac{1+\cos{\alpha}}{2}}} \\
+  &= \pm\sqrt{\frac{1-\cos{\alpha}}{1+\cos{\alpha}}}
 \end{aligned}
 $$
 
 $$
 \begin{aligned}
-  \tan{\dfrac{\alpha}{2}} &= \dfrac{\sin{\dfrac{\alpha}{2}}}{\cos{\dfrac{\alpha}{2}}} \\
-  &= \dfrac{\sin{\dfrac{\alpha}{2}}\cdot2\cos{\dfrac{\alpha}{2}}}{\cos{\dfrac{\alpha}{2}}\cdot2\cos{\dfrac{\alpha}{2}}} \\
-  &= \dfrac{2\sin{\dfrac{\alpha}{2}}\cos{\dfrac{\alpha}{2}}}{2\cos^2{\dfrac{\alpha}{2}}} \\
-  &= \dfrac{\sin{\alpha}}{1+\cos{\alpha}}
+  \tan{\frac{\alpha}{2}} &= \frac{\sin{\frac{\alpha}{2}}}{\cos{\frac{\alpha}{2}}} \\
+  &= \frac{\sin{\frac{\alpha}{2}}\cdot2\cos{\frac{\alpha}{2}}}{\cos{\frac{\alpha}{2}}\cdot2\cos{\frac{\alpha}{2}}} \\
+  &= \frac{2\sin{\frac{\alpha}{2}}\cos{\frac{\alpha}{2}}}{2\cos^2{\frac{\alpha}{2}}} \\
+  &= \frac{\sin{\alpha}}{1+\cos{\alpha}}
 \end{aligned}
 $$
 
 $$
 \begin{aligned}
-  \tan{\dfrac{\alpha}{2}} &= \dfrac{\sin{\dfrac{\alpha}{2}}}{\cos{\dfrac{\alpha}{2}}} \\
-  &= \dfrac{\sin{\dfrac{\alpha}{2}}\cdot2\sin{\dfrac{\alpha}{2}}}{\cos{\dfrac{\alpha}{2}}\cdot2\sin{\dfrac{\alpha}{2}}} \\
-  &= \dfrac{2\sin^2{\dfrac{\alpha}{2}}}{2\sin{\dfrac{\alpha}{2}}\cos{\dfrac{\alpha}{2}}} \\
-  &= \dfrac{1-\cos{\alpha}}{\sin{\alpha}}
+  \tan{\frac{\alpha}{2}} &= \frac{\sin{\frac{\alpha}{2}}}{\cos{\frac{\alpha}{2}}} \\
+  &= \frac{\sin{\frac{\alpha}{2}}\cdot2\sin{\frac{\alpha}{2}}}{\cos{\frac{\alpha}{2}}\cdot2\sin{\frac{\alpha}{2}}} \\
+  &= \frac{2\sin^2{\frac{\alpha}{2}}}{2\sin{\frac{\alpha}{2}}\cos{\frac{\alpha}{2}}} \\
+  &= \frac{1-\cos{\alpha}}{\sin{\alpha}}
 \end{aligned}
 $$
 
@@ -696,15 +696,15 @@ $$
 #### 公式总结
 
 $$
-\sin{\dfrac{\alpha}{2}}=\pm\sqrt{\dfrac{1-\cos{\alpha}}{2}}
+\sin{\frac{\alpha}{2}}=\pm\sqrt{\frac{1-\cos{\alpha}}{2}}
 $$
 
 $$
-\cos{\dfrac{\alpha}{2}}=\pm\sqrt{\dfrac{1+\cos{\alpha}}{2}}
+\cos{\frac{\alpha}{2}}=\pm\sqrt{\frac{1+\cos{\alpha}}{2}}
 $$
 
 $$
-\tan{\dfrac{\alpha}{2}}=\pm\sqrt{\dfrac{1-\cos{\alpha}}{1+\cos{\alpha}}}=\dfrac{\sin{\alpha}}{1+\cos{\alpha}}=\dfrac{1-\cos{\alpha}}{\sin{\alpha}}
+\tan{\frac{\alpha}{2}}=\pm\sqrt{\frac{1-\cos{\alpha}}{1+\cos{\alpha}}}=\frac{\sin{\alpha}}{1+\cos{\alpha}}=\frac{1-\cos{\alpha}}{\sin{\alpha}}
 $$
 
 ### 积化和差公式
@@ -728,11 +728,11 @@ $$
 这是 ~~小学二年级~~ 的和差问题：
 
 $$
-x=\sin{\alpha}\cos{\beta}=\dfrac{1}{2}[\sin{(\alpha+\beta)}+\sin{(\alpha-\beta)}]
+x=\sin{\alpha}\cos{\beta}=\frac{1}{2}[\sin{(\alpha+\beta)}+\sin{(\alpha-\beta)}]
 $$
 
 $$
-y=\cos{\alpha}\sin{\beta}=\dfrac{1}{2}[\sin{(\alpha+\beta)}-\sin{(\alpha-\beta)}]
+y=\cos{\alpha}\sin{\beta}=\frac{1}{2}[\sin{(\alpha+\beta)}-\sin{(\alpha-\beta)}]
 $$
 
 同理，用余弦两角和差公式，可以求出另外两组积化和差公式：
@@ -746,11 +746,11 @@ $$
 $$
 
 $$
-x=\cos{\alpha}\cos{\beta}=\dfrac{1}{2}[\cos{(\alpha+\beta)}+\cos{(\alpha-\beta)}]
+x=\cos{\alpha}\cos{\beta}=\frac{1}{2}[\cos{(\alpha+\beta)}+\cos{(\alpha-\beta)}]
 $$
 
 $$
-y=\sin{\alpha}\sin{\beta}=-\dfrac{1}{2}[\cos{(\alpha+\beta)}-\cos{(\alpha-\beta)}]
+y=\sin{\alpha}\sin{\beta}=-\frac{1}{2}[\cos{(\alpha+\beta)}-\cos{(\alpha-\beta)}]
 $$
 
 #### 记忆方法
@@ -765,19 +765,19 @@ ss=-(c-c)/2
 #### 公式总结
 
 $$
-\sin{\alpha}\cos{\beta}=\dfrac{1}{2}[\sin{(\alpha+\beta)}+\sin{(\alpha-\beta)}]
+\sin{\alpha}\cos{\beta}=\frac{1}{2}[\sin{(\alpha+\beta)}+\sin{(\alpha-\beta)}]
 $$
 
 $$
-\cos{\alpha}\sin{\beta}=\dfrac{1}{2}[\sin{(\alpha+\beta)}-\sin{(\alpha-\beta)}]
+\cos{\alpha}\sin{\beta}=\frac{1}{2}[\sin{(\alpha+\beta)}-\sin{(\alpha-\beta)}]
 $$
 
 $$
-\cos{\alpha}\cos{\beta}=\dfrac{1}{2}[\cos{(\alpha+\beta)}+\cos{(\alpha-\beta)}]
+\cos{\alpha}\cos{\beta}=\frac{1}{2}[\cos{(\alpha+\beta)}+\cos{(\alpha-\beta)}]
 $$
 
 $$
-\sin{\alpha}\sin{\beta}=-\dfrac{1}{2}[\cos{(\alpha+\beta)}-\cos{(\alpha-\beta)}]
+\sin{\alpha}\sin{\beta}=-\frac{1}{2}[\cos{(\alpha+\beta)}-\cos{(\alpha-\beta)}]
 $$
 
 ### 和差化积公式
@@ -787,19 +787,19 @@ $$
 积化和差公式：
 
 $$
-\sin{\alpha}\cos{\beta}=\dfrac{1}{2}[\sin{(\alpha+\beta)}+\sin{(\alpha-\beta)}]
+\sin{\alpha}\cos{\beta}=\frac{1}{2}[\sin{(\alpha+\beta)}+\sin{(\alpha-\beta)}]
 $$
 
 $$
-\cos{\alpha}\sin{\beta}=\dfrac{1}{2}[\sin{(\alpha+\beta)}-\sin{(\alpha-\beta)}]
+\cos{\alpha}\sin{\beta}=\frac{1}{2}[\sin{(\alpha+\beta)}-\sin{(\alpha-\beta)}]
 $$
 
 $$
-\cos{\alpha}\cos{\beta}=\dfrac{1}{2}[\cos{(\alpha+\beta)}+\cos{(\alpha-\beta)}]
+\cos{\alpha}\cos{\beta}=\frac{1}{2}[\cos{(\alpha+\beta)}+\cos{(\alpha-\beta)}]
 $$
 
 $$
-\sin{\alpha}\sin{\beta}=-\dfrac{1}{2}[\cos{(\alpha+\beta)}-\cos{(\alpha-\beta)}]
+\sin{\alpha}\sin{\beta}=-\frac{1}{2}[\cos{(\alpha+\beta)}-\cos{(\alpha-\beta)}]
 $$
 
 令 $\alpha+\beta=A,\alpha-\beta=B$，则 $\alpha=\frac{A+B}{2},\beta=\frac{A-B}{2}$。
@@ -807,55 +807,55 @@ $$
 带入积化和差公式：
 
 $$
-\sin{\dfrac{A+B}{2}}\cos{\dfrac{A-B}{2}}=\dfrac{1}{2}[\sin{A}+\sin{B}]
+\sin{\frac{A+B}{2}}\cos{\frac{A-B}{2}}=\frac{1}{2}[\sin{A}+\sin{B}]
 $$
 
 $$
-\cos{\dfrac{A+B}{2}}\sin{\dfrac{A-B}{2}}=\dfrac{1}{2}[\sin{A}-\sin{B}]
+\cos{\frac{A+B}{2}}\sin{\frac{A-B}{2}}=\frac{1}{2}[\sin{A}-\sin{B}]
 $$
 
 $$
-\cos{\dfrac{A+B}{2}}\cos{\dfrac{A-B}{2}}=\dfrac{1}{2}[\cos{A}+\cos{B}]
+\cos{\frac{A+B}{2}}\cos{\frac{A-B}{2}}=\frac{1}{2}[\cos{A}+\cos{B}]
 $$
 
 $$
-\sin{\dfrac{A+B}{2}}\sin{\dfrac{A-B}{2}}=-\dfrac{1}{2}[\cos{A}-\cos{B}]
+\sin{\frac{A+B}{2}}\sin{\frac{A-B}{2}}=-\frac{1}{2}[\cos{A}-\cos{B}]
 $$
 
 移项得：
 
 $$
-\sin{A}+\sin{B}=2\sin{\dfrac{A+B}{2}}\cos{\dfrac{A-B}{2}}
+\sin{A}+\sin{B}=2\sin{\frac{A+B}{2}}\cos{\frac{A-B}{2}}
 $$
 
 $$
-\sin{A}-\sin{B}=2\cos{\dfrac{A+B}{2}}\sin{\dfrac{A-B}{2}}
+\sin{A}-\sin{B}=2\cos{\frac{A+B}{2}}\sin{\frac{A-B}{2}}
 $$
 
 $$
-\cos{A}+\cos{B}=2\cos{\dfrac{A+B}{2}}\cos{\dfrac{A-B}{2}}
+\cos{A}+\cos{B}=2\cos{\frac{A+B}{2}}\cos{\frac{A-B}{2}}
 $$
 
 $$
-\cos{A}-\cos{B}=-2\sin{\dfrac{A+B}{2}}\sin{\dfrac{A-B}{2}}
+\cos{A}-\cos{B}=-2\sin{\frac{A+B}{2}}\sin{\frac{A-B}{2}}
 $$
 
 #### 公式总结
 
 $$
-\sin{\alpha}+\sin{\beta}=2\sin{\dfrac{\alpha+\beta}{2}}\cos{\dfrac{\alpha-\beta}{2}}
+\sin{\alpha}+\sin{\beta}=2\sin{\frac{\alpha+\beta}{2}}\cos{\frac{\alpha-\beta}{2}}
 $$
 
 $$
-\sin{\alpha}-\sin{\beta}=2\cos{\dfrac{\alpha+\beta}{2}}\sin{\dfrac{\alpha-\beta}{2}}
+\sin{\alpha}-\sin{\beta}=2\cos{\frac{\alpha+\beta}{2}}\sin{\frac{\alpha-\beta}{2}}
 $$
 
 $$
-\cos{\alpha}+\cos{\beta}=2\cos{\dfrac{\alpha+\beta}{2}}\cos{\dfrac{\alpha-\beta}{2}}
+\cos{\alpha}+\cos{\beta}=2\cos{\frac{\alpha+\beta}{2}}\cos{\frac{\alpha-\beta}{2}}
 $$
 
 $$
-\cos{\alpha}-\cos{\beta}=-2\sin{\dfrac{\alpha+\beta}{2}}\sin{\dfrac{\alpha-\beta}{2}}
+\cos{\alpha}-\cos{\beta}=-2\sin{\frac{\alpha+\beta}{2}}\sin{\frac{\alpha-\beta}{2}}
 $$
 
 ### 辅助角公式
@@ -864,7 +864,7 @@ $$
 
 $$
 \begin{aligned}
-  a\sin{\theta}+b\cos{\theta} &= \sqrt{a^2+b^2}(\dfrac{a}{\sqrt{a^2+b^2}}\sin{\theta}+\dfrac{b}{\sqrt{a^2+b^2}}\cos{\theta}) \\
+  a\sin{\theta}+b\cos{\theta} &= \sqrt{a^2+b^2}(\frac{a}{\sqrt{a^2+b^2}}\sin{\theta}+\frac{b}{\sqrt{a^2+b^2}}\cos{\theta}) \\
   &= \sqrt{a^2+b^2}(\cos{\varphi}\sin{\theta}+\sin{\varphi}\cos{\theta}) \\
   &= \sqrt{a^2+b^2}\sin{(\theta+\varphi)}
 \end{aligned}
@@ -872,15 +872,15 @@ $$
 
 :::tip
 
-第一行到第二行，$\dfrac{a}{\sqrt{a^2+b^2}}$ 和 $\dfrac{b}{\sqrt{a^2+b^2}}$ 的平方和等于 $1$，而 $\cos{\varphi}$ 和 $\sin{\varphi}$ 的平方和也等于 $1$，所以可以换元。
+第一行到第二行，$\frac{a}{\sqrt{a^2+b^2}}$ 和 $\frac{b}{\sqrt{a^2+b^2}}$ 的平方和等于 $1$，而 $\cos{\varphi}$ 和 $\sin{\varphi}$ 的平方和也等于 $1$，所以可以换元。
 
 :::
 
 同理，可以将 $\cos{\varphi}$ 和 $\sin{\varphi}$ 交换位置。
 
 $$
-\begin{aligned}{}
-  a\sin{\theta}+b\cos{\theta} &= \sqrt{a^2+b^2}(\dfrac{a}{\sqrt{a^2+b^2}}\sin{\theta}+\dfrac{b}{\sqrt{a^2+b^2}}\cos{\theta}) \\
+\begin{aligned}
+  a\sin{\theta}+b\cos{\theta} &= \sqrt{a^2+b^2}(\frac{a}{\sqrt{a^2+b^2}}\sin{\theta}+\frac{b}{\sqrt{a^2+b^2}}\cos{\theta}) \\
   &= \sqrt{a^2+b^2}(\sin{\varphi}\sin{\theta}+\cos{\varphi}\cos{\theta}) \\
   &= \sqrt{a^2+b^2}\cos{(\theta-\varphi)}
 \end{aligned}
@@ -889,11 +889,11 @@ $$
 #### 公式总结
 
 $$
-a\sin{\theta}+b\cos{\theta}=\sqrt{a^2+b^2}\sin{(\theta+\varphi)},\tan{\varphi}=\dfrac{b}{a}
+a\sin{\theta}+b\cos{\theta}=\sqrt{a^2+b^2}\sin{(\theta+\varphi)},\tan{\varphi}=\frac{b}{a}
 $$
 
 $$
-a\sin{\theta}+b\cos{\theta}=\sqrt{a^2+b^2}\cos{(\theta-\varphi)},\tan{\varphi}=\dfrac{a}{b}
+a\sin{\theta}+b\cos{\theta}=\sqrt{a^2+b^2}\cos{(\theta-\varphi)},\tan{\varphi}=\frac{a}{b}
 $$
 
 ### 万能公式
@@ -904,10 +904,10 @@ $$
 
 $$
 \begin{aligned}
-  \sin{\alpha} &= \sin{(\dfrac{\alpha}{2}+\dfrac{\alpha}{2})} \\
-  &= 2\sin{\dfrac{\alpha}{2}}\cos{\dfrac{\alpha}{2}} \\
-  &= \dfrac{2\sin{\dfrac{\alpha}{2}}\cos{\dfrac{\alpha}{2}}}{\cos^2{\dfrac{\alpha}{2}}+\sin^2{\dfrac{\alpha}{2}}} \\
-  &= \dfrac{2\tan{\dfrac{\alpha}{2}}}{1+\tan^2{\dfrac{\alpha}{2}}}
+  \sin{\alpha} &= \sin{(\frac{\alpha}{2}+\frac{\alpha}{2})} \\
+  &= 2\sin{\frac{\alpha}{2}}\cos{\frac{\alpha}{2}} \\
+  &= \frac{2\sin{\frac{\alpha}{2}}\cos{\frac{\alpha}{2}}}{\cos^2{\frac{\alpha}{2}}+\sin^2{\frac{\alpha}{2}}} \\
+  &= \frac{2\tan{\frac{\alpha}{2}}}{1+\tan^2{\frac{\alpha}{2}}}
 \end{aligned}
 $$
 
@@ -915,31 +915,31 @@ $$
 
 $$
 \begin{aligned}
-  \cos{\alpha} &= \cos{(\dfrac{\alpha}{2}+\dfrac{\alpha}{2})} \\
-  &= \cos^2{\dfrac{\alpha}{2}}-\sin^2{\dfrac{\alpha}{2}} \\
-  &= \dfrac{\cos^2{\dfrac{\alpha}{2}}-\sin^2{\dfrac{\alpha}{2}}}{\cos^2{\dfrac{\alpha}{2}}+\sin^2{\dfrac{\alpha}{2}}} \\
-  &= \dfrac{1-\tan^2{\dfrac{\alpha}{2}}}{1+\tan^2{\dfrac{\alpha}{2}}}
+  \cos{\alpha} &= \cos{(\frac{\alpha}{2}+\frac{\alpha}{2})} \\
+  &= \cos^2{\frac{\alpha}{2}}-\sin^2{\frac{\alpha}{2}} \\
+  &= \frac{\cos^2{\frac{\alpha}{2}}-\sin^2{\frac{\alpha}{2}}}{\cos^2{\frac{\alpha}{2}}+\sin^2{\frac{\alpha}{2}}} \\
+  &= \frac{1-\tan^2{\frac{\alpha}{2}}}{1+\tan^2{\frac{\alpha}{2}}}
 \end{aligned}
 $$
 
 ##### 正切万能公式推导
 
 $$
-\tan{\alpha}=\dfrac{\sin{\alpha}}{\cos{\alpha}}=\dfrac{2\tan{\dfrac{\alpha}{2}}}{1-\tan^2{\dfrac{\alpha}{2}}}
+\tan{\alpha}=\frac{\sin{\alpha}}{\cos{\alpha}}=\frac{2\tan{\frac{\alpha}{2}}}{1-\tan^2{\frac{\alpha}{2}}}
 $$
 
 #### 公式总结
 
 $$
-\sin{\alpha}=\dfrac{2\tan{\dfrac{\alpha}{2}}}{1+\tan^2{\dfrac{\alpha}{2}}}
+\sin{\alpha}=\frac{2\tan{\frac{\alpha}{2}}}{1+\tan^2{\frac{\alpha}{2}}}
 $$
 
 $$
-\cos{\alpha}=\dfrac{1-\tan^2{\dfrac{\alpha}{2}}}{1+\tan^2{\dfrac{\alpha}{2}}}
+\cos{\alpha}=\frac{1-\tan^2{\frac{\alpha}{2}}}{1+\tan^2{\frac{\alpha}{2}}}
 $$
 
 $$
-\tan{\alpha}=\dfrac{2\tan{\dfrac{\alpha}{2}}}{1-\tan^2{\dfrac{\alpha}{2}}}
+\tan{\alpha}=\frac{2\tan{\frac{\alpha}{2}}}{1-\tan^2{\frac{\alpha}{2}}}
 $$
 
 
