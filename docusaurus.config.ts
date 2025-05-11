@@ -202,8 +202,8 @@ const config: Config = {
               to: 'about',
             },
             {
-              label: 'OJ',
-              href: 'https://oj.lailai.one',
+              label: '设置',
+              to: 'set',
             },
           ],
         },
@@ -297,21 +297,6 @@ const config: Config = {
         // Use false to debug, but it incurs huge perf costs
         disableInDev: true,
       } satisfies IdealImageOptions,
-    ],
-    [
-      '@docusaurus/plugin-client-redirects',
-      {
-        redirects: [
-          {
-            from: '/v50',
-            to: 'https://v50to.me',
-          },
-          {
-            from: '/oj',
-            to: 'https://oj.lailai.one',
-          },
-        ],
-      },
     ],
     [
       '@docusaurus/plugin-google-gtag',

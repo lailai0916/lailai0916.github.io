@@ -15,8 +15,6 @@
   },
   "dependencies": {
     "@docusaurus/core": "^3.7.0",
-    "@docusaurus/plugin-client-redirects": "^3.7.0",
-    "@docusaurus/plugin-google-gtag": "^3.7.0",
     "@docusaurus/plugin-ideal-image": "^3.7.0",
     "@docusaurus/plugin-pwa": "^3.7.0",
     "@docusaurus/preset-classic": "^3.7.0",
@@ -25,33 +23,27 @@
     "@docusaurus/theme-mermaid": "^3.7.0",
     "@easyops-cn/docusaurus-search-local": "^0.45.0",
     "@giscus/react": "^3.0.0",
-    "@iconify/react": "^5.0.2",
     "@mdx-js/react": "^3.0.0",
     "@popperjs/core": "^2.11.8",
     "@tailwindcss/typography": "^0.5.15",
     "autoprefixer": "^10.4.20",
     "clsx": "^2.0.0",
-    "framer-motion": "^11.11.10",
+    "color": "^5.0.0",
     "mini-svg-data-uri": "^1.4.4",
     "postcss": "^8.4.47",
     "prism-react-renderer": "^2.4.0",
-    "pure-react-carousel": "^1.32.0",
     "react": "^18.3.1",
     "react-chrono": "2.4.0",
     "react-dom": "^18.3.1",
-    "react-markdown": "^9.0.1",
     "react-popper": "^2.3.0",
     "react-slick": "^0.30.3",
     "rehype-katex": "^7.0.1",
     "remark-math": "^6.0.0",
     "slick-carousel": "^1.8.1",
-    "tailwind-merge": "^2.5.4",
     "tailwindcss": "^3.4.14"
   },
   "devDependencies": {
-    "@docusaurus/module-type-aliases": "^3.7.0",
-    "@docusaurus/types": "^3.7.0",
-    "daisyui": "^4.12.23"
+    "@docusaurus/types": "^3.7.0"
   },
   "browserslist": {
     "production": [
