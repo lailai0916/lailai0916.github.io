@@ -1,5 +1,4 @@
-<div align="center"><img src="static/img/logo.svg" height="150"></div>
-<h1 align="center">lailai's Home</h1>
+# README
 
 ## 介绍
 
@@ -60,9 +59,9 @@ Home
 
 ## 赞助
 
-|         支付宝（Alipay）          |        微信支付（WeChat）         |
-| :-------------------------------: | :-------------------------------: |
-| ![](static/img/qrcode/Alipay.svg) | ![](static/img/qrcode/WeChat.svg) |
+|      支付宝（Alipay）       |     微信支付（WeChat）      |
+| :-------------------------: | :-------------------------: |
+| ![](/img/qrcode/Alipay.svg) | ![](/img/qrcode/WeChat.svg) |
 
 ## 许可证
 
