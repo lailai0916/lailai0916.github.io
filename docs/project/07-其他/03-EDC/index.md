@@ -22,7 +22,7 @@ import Image from '@theme/IdealImage';
 
 ## 数码设备
 
-- 见 [lailai's Device](../数码/Device)
+- 见 [lailai's Device](数码/Device)
 
 这些数码设备我一般都随身携带。
 
