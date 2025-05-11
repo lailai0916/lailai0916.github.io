@@ -7,7 +7,7 @@ tags: [top, welcome]
 
 import Quote from '@site/src/components/Quote';
 
-- 见 [关于](/about)
+![](/img/header/blog.png)
 
 <Quote
   name="阿尔伯特·爱因斯坦"

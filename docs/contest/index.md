@@ -8,6 +8,8 @@ sidebar_position: 0
 
 通过这里的资源，你将能迅速掌握竞赛技巧，提升解题效率，增强编程能力。
 
+![](/img/header/contest.png)
+
 ## 参考资料
 
 - [OI Wiki](https://oi.wiki)
