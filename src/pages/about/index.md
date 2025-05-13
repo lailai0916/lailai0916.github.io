@@ -49,6 +49,11 @@ import styles from './styles.module.css';
 
 :::
 
+## 我的技能
+
+![](https://skillicons.dev/icons?i=aws,azure,cloudflare,npm,git,github,c,cpp,qt,html,js,ts,css,py,md,latex,docker,linux,vscode,nodejs,react&theme=light#gh-light-mode-only)
+![](https://skillicons.dev/icons?i=aws,azure,cloudflare,npm,git,github,c,cpp,qt,html,js,ts,css,py,md,latex,docker,linux,vscode,nodejs,react&theme=dark#gh-dark-mode-only)
+
 ## 我的设备
 
 <div className={styles.item}>
@@ -77,11 +82,6 @@ import styles from './styles.module.css';
     <span>AirPods Max</span>
   </div>
 </div>
-
-## 我的技能
-
-![](https://skillicons.dev/icons?i=aws,azure,cloudflare,npm,git,github,c,cpp,qt,html,js,ts,css,py,md,latex,docker,linux,vscode,nodejs,react&theme=light#gh-light-mode-only)
-![](https://skillicons.dev/icons?i=aws,azure,cloudflare,npm,git,github,c,cpp,qt,html,js,ts,css,py,md,latex,docker,linux,vscode,nodejs,react&theme=dark#gh-dark-mode-only)
 
 ## 联系方式
 
