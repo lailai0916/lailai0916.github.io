@@ -8,7 +8,8 @@ sidebar_position: 0
 
 这里汇聚了丰富的知识点和实践经验，为多领域的学习与应用提供了系统支持，是你探索新知的可靠伙伴。
 
-![](/img/header/note.png)
+![](/img/header/note-light.png#gh-light-mode-only)
+![](/img/header/note-dark.png#gh-dark-mode-only)
 
 ## 参考资料
 

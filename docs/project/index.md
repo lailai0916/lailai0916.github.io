@@ -10,4 +10,5 @@ import DocCardList from '@theme/DocCardList';
 
 无论是学习还是开发，这里都能为你提供灵感和支持，助你在不同领域中高效前行。
 
-![](/img/header/project.png)
+![](/img/header/project-light.png#gh-light-mode-only)
+![](/img/header/project-dark.png#gh-dark-mode-only)

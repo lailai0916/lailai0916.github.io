@@ -7,7 +7,8 @@ tags: [top, welcome]
 
 import Quote from '@site/src/components/Quote';
 
-![](/img/header/blog.png)
+![](/img/header/blog-light.png#gh-light-mode-only)
+![](/img/header/blog-dark.png#gh-dark-mode-only)
 
 <Quote
   name="阿尔伯特·爱因斯坦"

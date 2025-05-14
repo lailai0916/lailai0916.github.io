@@ -8,7 +8,8 @@ sidebar_position: 0
 
 通过这里的资源，你将能迅速掌握竞赛技巧，提升解题效率，增强编程能力。
 
-![](/img/header/contest.png)
+![](/img/header/contest-light.png#gh-light-mode-only)
+![](/img/header/contest-dark.png#gh-dark-mode-only)
 
 ## 参考资料
 
