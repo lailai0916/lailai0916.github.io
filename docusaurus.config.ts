@@ -142,8 +142,6 @@ const config: Config = {
             { label: '友链', to: 'friend' },
             { label: '资源', to: 'resources' },
             { label: '网站', to: 'site' },
-            { label: '旅行', to: 'travel' },
-            { label: '设置', to: 'set' },
           ],
         },
         {
