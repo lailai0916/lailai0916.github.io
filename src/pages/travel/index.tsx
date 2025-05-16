@@ -67,18 +67,12 @@ function Timeline() {
   return (
     <BrowserOnly>
       {() => {
-        const [theme, setTheme] = useState(getTheme(colorMode === 'dark')); // 初始值与colorMode同步
+        const [theme, setTheme] = useState(getTheme(colorMode === 'dark'));
         useEffect(() => {
-          setTheme(getTheme(colorMode === 'dark')); // 修正为一致的判断
-        }, [colorMode]);
-
-        // 监听窗口大小变化，确保theme更新
-        useEffect(() => {
-          const handleResize = () => {
-            setTheme(getTheme(colorMode === 'dark')); // 窗口变化时重新计算theme
-          };
-          window.addEventListener('resize', handleResize);
-          return () => window.removeEventListener('resize', handleResize); // 清理监听
+          const timer = setTimeout(() => {
+            setTheme(getTheme(colorMode === 'dark'));
+          }, 0);
+          return () => clearTimeout(timer);
         }, [colorMode]);
 
         return (
@@ -99,7 +93,7 @@ function Timeline() {
   );
 }
 
-export default function travelPage() {
+export default function TravelPage() {
   return (
     <Layout title={TITLE} description={DESCRIPTION}>
       <main className="margin-vert--lg">

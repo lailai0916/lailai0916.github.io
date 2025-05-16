@@ -43,16 +43,16 @@ export default function ColorGenerator(): JSX.Element {
 
   const isDarkTheme = colorMode === 'dark';
 
-  const DEFAULT_PRIMARY_COLOR = isDarkTheme
-    ? DARK_PRIMARY_COLOR
-    : LIGHT_PRIMARY_COLOR;
-  const DEFAULT_BACKGROUND_COLOR = isDarkTheme
-    ? DARK_BACKGROUND_COLOR
-    : LIGHT_BACKGROUND_COLOR;
 
-  const [inputColor, setInputColor] = useState(DEFAULT_PRIMARY_COLOR);
-  const [baseColor, setBaseColor] = useState(DEFAULT_PRIMARY_COLOR);
-  const [background, setBackground] = useState(DEFAULT_BACKGROUND_COLOR);
+  const [inputColor, setInputColor] = useState(
+    isDarkTheme ? DARK_PRIMARY_COLOR : LIGHT_PRIMARY_COLOR
+  );
+  const [baseColor, setBaseColor] = useState(
+    isDarkTheme ? DARK_PRIMARY_COLOR : LIGHT_PRIMARY_COLOR
+  );
+  const [background, setBackground] = useState(
+    isDarkTheme ? DARK_BACKGROUND_COLOR : LIGHT_BACKGROUND_COLOR
+  );
   const [shades, setShades] = useState(COLOR_SHADES);
   const [storage, setStorage] = useState(
     isDarkTheme ? darkStorage : lightStorage,
@@ -64,6 +64,12 @@ export default function ColorGenerator(): JSX.Element {
 
   // Switch modes -> update state by stored values
   useEffect(() => {
+    const DEFAULT_PRIMARY_COLOR = isDarkTheme
+      ? DARK_PRIMARY_COLOR
+      : LIGHT_PRIMARY_COLOR;
+    const DEFAULT_BACKGROUND_COLOR = isDarkTheme
+      ? DARK_BACKGROUND_COLOR
+      : LIGHT_BACKGROUND_COLOR;
     const storedValues = JSON.parse(
       storage.get() ?? '{}',
     ) as Partial<ColorState>;
@@ -71,7 +77,7 @@ export default function ColorGenerator(): JSX.Element {
     setBaseColor(storedValues.baseColor ?? DEFAULT_PRIMARY_COLOR);
     setBackground(storedValues.background ?? DEFAULT_BACKGROUND_COLOR);
     setShades(storedValues.shades ?? COLOR_SHADES);
-  }, [storage, DEFAULT_BACKGROUND_COLOR, DEFAULT_PRIMARY_COLOR]);
+  }, [storage, isDarkTheme]);
 
   // State changes -> update DOM styles
   useEffect(() => {
@@ -129,6 +135,12 @@ export default function ColorGenerator(): JSX.Element {
             type="button"
             className="clean-btn button button--secondary margin-left--md"
             onClick={() => {
+              const DEFAULT_PRIMARY_COLOR = isDarkTheme
+                ? DARK_PRIMARY_COLOR
+                : LIGHT_PRIMARY_COLOR;
+              const DEFAULT_BACKGROUND_COLOR = isDarkTheme
+                ? DARK_BACKGROUND_COLOR
+                : LIGHT_BACKGROUND_COLOR;
               setInputColor(DEFAULT_PRIMARY_COLOR);
               setBaseColor(DEFAULT_PRIMARY_COLOR);
               setBackground(DEFAULT_BACKGROUND_COLOR);
