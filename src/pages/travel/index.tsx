@@ -70,7 +70,7 @@ function Timeline() {
         const [theme, setTheme] = useState(getTheme(colorMode === 'dark'));
         useEffect(() => {
           const timer = setTimeout(() => {
-            setTheme(getTheme(colorMode === 'dark'));
+            setTheme(getTheme(colorMode !== 'dark'));
           }, 0);
           return () => clearTimeout(timer);
         }, [colorMode]);
