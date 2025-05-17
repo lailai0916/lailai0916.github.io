@@ -333,6 +333,10 @@ const config: Config = {
       },
     ],
   ],
+
+  future: {
+    experimental_faster: true,
+  },
 };
 
 export default config;
