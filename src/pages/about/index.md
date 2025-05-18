@@ -34,6 +34,12 @@ import styles from './styles.module.css';
 
 ✍️ 喜欢整理学习过程，记录思考，便于交流与共享。
 
+## 网站简介
+
+这是我的个人网站，分享技术笔记、项目经验和学习心得。✨
+
+本项目基于 [Docusaurus](https://docusaurus.io) 构建，源代码托管于 [GitHub](https://github.com/lailai0916/lailai0916.github.io)。
+
 ## 我的昵称
 
 我的昵称是 **lailai**，由于重名较多，注册账户时经常遇到困难。
@@ -48,12 +54,6 @@ import styles from './styles.module.css';
 - **lailai** 为不翻译内容，始终以英语排印，即使它出现在非英语的语言文本中也是如此。
 
 :::
-
-## 网站简介
-
-这是我的个人网站，分享技术笔记、项目经验和学习心得。✨
-
-本项目基于 [Docusaurus](https://docusaurus.io) 构建，源代码托管于 [GitHub](https://github.com/lailai0916/lailai0916.github.io)。
 
 ## 我的技能
 
