@@ -32,6 +32,7 @@
     "canvas-confetti": "^1.9.3",
     "clsx": "^2.0.0",
     "color": "^5.0.0",
+    "globe.gl": "^2.41.4",
     "mini-svg-data-uri": "^1.4.4",
     "postcss": "^8.4.47",
     "prism-react-renderer": "^2.4.0",
@@ -43,7 +44,8 @@
     "rehype-katex": "^7.0.1",
     "remark-math": "^6.0.0",
     "slick-carousel": "^1.8.1",
-    "tailwindcss": "^3.4.14"
+    "tailwindcss": "^3.4.14",
+    "three": "^0.176.0"
   },
   "devDependencies": {
     "@docusaurus/types": "^3.7.0"
