@@ -18,7 +18,7 @@ export const resourceData: ResourceCategory[] = [
       {
         name: "lailai's home",
         desc: 'lailai 的个人网站，分享技术笔记、项目经验和学习心得。✨',
-        logo: '/img/site/Home.png',
+        logo: '/img/favicon.ico',
         href: 'https://www.lailai.one',
       },
       {
