@@ -12,7 +12,7 @@ import BrowserWindow from '@site/src/components/BrowserWindow';
 
 - [Typora](https://typora.io)
 
-## 介绍
+## 简介
 
 2004 年，John Gruber 创造了 Markdown，一种专门针对网络写作的文本标记语言。使用 Markdown，你只需在写作过程中插入少量的标记符号，就能很轻松地进行排版（例如设置标题、加粗、列表、引用等）。
 

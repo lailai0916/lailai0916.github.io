@@ -1,7 +1,7 @@
 <div align="center"><img src="static/img/logo.svg" height="150"></div>
 <h1 align="center">lailai's Home</h1>
 
-## 介绍
+## 简介
 
 lailai 的个人网站，分享技术笔记、项目经验和学习心得。✨
 

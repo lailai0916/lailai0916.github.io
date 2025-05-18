@@ -176,16 +176,16 @@ const config: Config = {
           title: '社区',
           items: [
             {
+              label: 'X',
+              href: 'https://x.com/lailai0x394',
+            },
+            {
               label: 'Telegram',
               href: 'https://t.me/lailai0916',
             },
             {
               label: 'LinkedIn',
               href: 'https://www.linkedin.com/in/lailai0916',
-            },
-            {
-              label: 'X',
-              href: 'https://x.com/lailai0x394',
             },
           ],
         },

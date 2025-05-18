@@ -22,17 +22,17 @@ import styles from './styles.module.css';
   </Heading>
 </section>
 
-## 个人介绍
+## 个人简介
 
 🧑🏻‍🎓 我是一名来自浙江杭州的中学生。
 
-🧑🏻‍💻 喜欢数学与编程，对技术充满热情与探索精神。
+🧑🏻‍💻 热爱数学与编程，对技术充满热情与探索精神。
 
 💡 具备较强的自学能力与问题解决能力，善于独立思考与实践。
 
 🫧 注重代码的规范与整洁，追求结构清晰、风格一致。
 
-✍️ 喜欢将学习过程整理为文章，记录思考，也便于交流与共享。
+✍️ 喜欢整理学习过程，记录思考，便于交流与共享。
 
 ## 我的昵称
 
@@ -48,6 +48,12 @@ import styles from './styles.module.css';
 - **lailai** 为不翻译内容，始终以英语排印，即使它出现在非英语的语言文本中也是如此。
 
 :::
+
+## 网站简介
+
+这是我的个人网站，分享技术笔记、项目经验和学习心得。✨
+
+本项目基于 [Docusaurus](https://docusaurus.io) 构建，源代码托管于 [GitHub](https://github.com/lailai0916/lailai0916.github.io)。
 
 ## 我的技能
 
@@ -83,7 +89,7 @@ import styles from './styles.module.css';
   </div>
 </div>
 
-## 联系方式
+## 我的社区
 
 <div className={styles.item}>
   <div>
@@ -95,12 +101,12 @@ import styles from './styles.module.css';
     <Link to="mailto:lailai0x394@gmail.com">lailai0x394@gmail.com</Link>
   </div>
   <div>
-    <Icon icon="ri:telegram-line" width="20" height="20" />
-    <Link to="https://t.me/lailai0916">lailai0x394</Link>
-  </div>
-  <div>
     <Icon icon="ri:twitter-x-line" width="20" height="20" />
     <Link to="https://x.com/lailai0x394">lailai0x394</Link>
+  </div>
+  <div>
+    <Icon icon="ri:telegram-line" width="20" height="20" />
+    <Link to="https://t.me/lailai0916">lailai0916</Link>
   </div>
   <div>
     <Icon icon="ri:linkedin-line" width="20" height="20" />
