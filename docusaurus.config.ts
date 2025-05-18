@@ -170,6 +170,10 @@ const config: Config = {
               label: '项目',
               to: 'docs/project',
             },
+            {
+              label: '博客',
+              to: 'blog',
+            },
           ],
         },
         {
@@ -187,22 +191,30 @@ const config: Config = {
               label: 'LinkedIn',
               href: 'https://www.linkedin.com/in/lailai0916',
             },
+            {
+              label: 'GitHub',
+              href: 'https://github.com/lailai0916',
+            },
           ],
         },
         {
           title: '更多',
           items: [
             {
-              label: '博客',
-              to: 'blog',
-            },
-            {
               label: '关于',
               to: 'about',
             },
             {
+              label: '友链',
+              to: 'friend',
+            },
+            {
               label: '设置',
               to: 'set',
+            },
+            {
+              label: '仓库',
+              href: 'https://github.com/lailai0916/lailai0916.github.io',
             },
           ],
         },
