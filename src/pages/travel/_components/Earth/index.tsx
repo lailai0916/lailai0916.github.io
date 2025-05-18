@@ -1,5 +1,4 @@
 import React, { useEffect, useRef } from 'react';
-import Globe from 'globe.gl';
 import BrowserOnly from '@docusaurus/BrowserOnly';
 
 export default function EarthWrapper() {
@@ -12,26 +11,51 @@ export default function EarthWrapper() {
 
 function Earth() {
   const globeRef = useRef<HTMLDivElement>(null);
+  const cleanupRef = useRef<() => void>();
 
   useEffect(() => {
-    const world = Globe()(globeRef.current!)
-      .globeImageUrl('//unpkg.com/three-globe/example/img/earth-blue-marble.jpg')
-      .backgroundColor('rgba(0,0,0,0)')
-      .pointOfView({ lat: 30, lng: -60 })
-      .pointAltitude('size')
-      .pointLabel('label')
-      .pointsMerge(true);
-    world.scene().rotation.y = Math.PI;
+    import('globe.gl').then((GlobeModule) => {
+      const world = GlobeModule.default()(globeRef.current!)
+        .globeImageUrl('//unpkg.com/three-globe/example/img/earth-blue-marble.jpg')
+        .backgroundColor('rgba(0,0,0,0)')
+        .pointOfView({ lat: 30, lng: -60 })
+        .pointAltitude('size')
+        .pointLabel('label')
+        .pointsMerge(true);
 
-    const canvas = globeRef.current?.querySelector('canvas');
-    if (canvas) {
-      canvas.style.width = '100%';
-      canvas.style.height = '100%';
-      canvas.style.display = 'block';
-    }
+      world.scene().rotation.y = Math.PI;
+
+      const canvas = globeRef.current?.querySelector('canvas');
+      if (canvas) {
+        canvas.style.width = '100%';
+        canvas.style.height = '100%';
+        canvas.style.display = 'block';
+        canvas.style.maxWidth = '100%';
+        canvas.style.maxHeight = '100%';
+        canvas.style.objectFit = 'contain';
+      }
+
+      const resizeHandler = () => {
+        if (globeRef.current) {
+          const canvas = globeRef.current.querySelector('canvas');
+          if (canvas) {
+            const containerWidth = globeRef.current.offsetWidth;
+            canvas.style.width = `${containerWidth}px`;
+            canvas.style.height = `${containerWidth}px`;
+          }
+        }
+      };
+      window.addEventListener('resize', resizeHandler);
+      resizeHandler();
+
+      cleanupRef.current = () => {
+        if (globeRef.current) globeRef.current.innerHTML = '';
+        window.removeEventListener('resize', resizeHandler);
+      };
+    });
 
     return () => {
-      if (globeRef.current) globeRef.current.innerHTML = '';
+      if (cleanupRef.current) cleanupRef.current();
     };
   }, []);
 
