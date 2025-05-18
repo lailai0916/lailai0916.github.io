@@ -1,15 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import BrowserOnly from '@docusaurus/BrowserOnly';
 
-export default function EarthWrapper() {
-  return (
-    <BrowserOnly>
-      {() => <Earth />}
-    </BrowserOnly>
-  );
-}
-
-function Earth() {
+export default function Earth() {
   const globeRef = useRef<HTMLDivElement>(null);
   const cleanupRef = useRef<() => void>();
 
@@ -60,25 +52,29 @@ function Earth() {
   }, []);
 
   return (
-    <div style={{
-      width: 'min(100%, 800px)',
-      aspectRatio: '1 / 1',
-      border: '1px solid #ccc',
-      overflow: 'hidden',
-      position: 'relative',
-      margin: '0 auto',
-    }}>
-      <div
-        style={{
-          width: '100%',
-          height: '100%',
-          display: 'flex',
-          justifyContent: 'center',
-          alignItems: 'center',
-        }}
-      >
-        <div ref={globeRef} />
-      </div>
-    </div>
+    <BrowserOnly>
+      {() => (
+        <div style={{
+          width: 'min(100%, 800px)',
+          aspectRatio: '1 / 1',
+          border: '1px solid #ccc',
+          overflow: 'hidden',
+          position: 'relative',
+          margin: '0 auto',
+        }}>
+          <div
+            style={{
+              width: '100%',
+              height: '100%',
+              display: 'flex',
+              justifyContent: 'center',
+              alignItems: 'center',
+            }}
+          >
+            <div ref={globeRef} />
+          </div>
+        </div>
+      )}
+    </BrowserOnly>
   );
 }
