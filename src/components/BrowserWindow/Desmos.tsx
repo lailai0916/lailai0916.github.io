@@ -8,7 +8,7 @@ export default function Desmos({url}: {url: string}): JSX.Element {
         title="Desmos"
         style={{
           border: '1px solid #ccc',
-          width: 'min(100%,400px)',
+          width: 'min(100%, 400px)',
           aspectRatio: '1 / 1',
         }}
       />
