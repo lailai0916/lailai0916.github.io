@@ -1,7 +1,16 @@
 import React, { useEffect, useRef } from 'react';
 import Globe from 'globe.gl';
+import BrowserOnly from '@docusaurus/BrowserOnly';
 
-export default function Earth() {
+export default function EarthWrapper() {
+  return (
+    <BrowserOnly>
+      {() => <Earth />}
+    </BrowserOnly>
+  );
+}
+
+function Earth() {
   const globeRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
