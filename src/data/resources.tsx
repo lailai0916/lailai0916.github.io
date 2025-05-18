@@ -89,7 +89,7 @@ export const resourceData: ResourceCategory[] = [
       {
         name: 'Terraform',
         desc: '用于在任何云或数据中心自动化配置和管理资源的基础设施工具。',
-        logo: 'https://www.terraform.io/favicon.ico',
+        logo: 'https://developer.hashicorp.com/favicon.ico',
         href: 'https://www.terraform.io/',
         tags: ['IaaC'],
       },
@@ -989,7 +989,7 @@ export const resourceData: ResourceCategory[] = [
       {
         name: 'Apple',
         desc: '苹果公司官方网站。',
-        logo: '/img/site/Apple.png',
+        logo: 'https://www.apple.com/favicon.ico',
         href: 'https://www.apple.com',
       },
       {
