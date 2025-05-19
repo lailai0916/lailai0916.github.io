@@ -22,7 +22,7 @@ export default function TravelPage() {
       <main className="margin-vert--lg">
         <PageHeader />
         <Timeline />
-        <Earth />
+        {/* <Earth /> */}
       </main>
     </Layout>
   );
