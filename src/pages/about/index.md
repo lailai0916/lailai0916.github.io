@@ -101,6 +101,14 @@ import styles from './styles.module.css';
     <Link to="mailto:lailai0x394@gmail.com">lailai0x394@gmail.com</Link>
   </div>
   <div>
+    <Icon icon="ri:qq-line" width="20" height="20" />
+    <Link to="https://www.lailai.one/img/community/qq.jpg">11548585</Link>
+  </div>
+  <div>
+    <Icon icon="ri:wechat-line" width="20" height="20" />
+    <Link to="https://www.lailai.one/img/community/wechat.jpg">lailai0x394</Link>
+  </div>
+  <div>
     <Icon icon="ri:twitter-x-line" width="20" height="20" />
     <Link to="https://x.com/lailai0x394">lailai0x394</Link>
   </div>
