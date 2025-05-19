@@ -6,6 +6,8 @@ import TopBanner from './_components/TopBanner';
 import HeroBanner from './_components/HeroBanner';
 import FeaturesContainer from './_components/FeaturesContainer';
 import Countdown from './_components/Countdown';
+import MyProjectsSection from './_components/MyProjectsSection';
+import RecentBlogPostsSection from './_components/RecentBlogPostsSection';
 
 export default function Home() {
   const {siteConfig} = useDocusaurusContext();
@@ -19,6 +21,8 @@ export default function Home() {
           <FeaturesContainer />
           <Countdown />
         </div>
+        <MyProjectsSection />
+        <RecentBlogPostsSection />
       </main>
     </Layout>
   );
