@@ -39,14 +39,13 @@
   position: absolute;
   text-align: center;
   font-weight: 500;
-  font-size: 3em;
+  font-size: 40px;
   user-select: none;
-  font-family: monospace;
 }
 
 .circle div span {
   position: absolute;
-  font-size: 0.1em;
+  font-size: 0.2em;
   font-weight: 300;
   transform: translateX(-50%) translateY(-10px);
   letter-spacing: 0.1em;
