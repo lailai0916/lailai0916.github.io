@@ -51,7 +51,6 @@ html[data-theme='dark'] .hero {
   padding: 20px 20px;
   height: auto;
   position: relative;
-  z-index: 1;
   will-change: filter;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;

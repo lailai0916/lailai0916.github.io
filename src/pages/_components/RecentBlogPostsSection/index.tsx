@@ -1,4 +1,5 @@
 import React from 'react';
+import clsx from 'clsx'; // 导入 clsx
 import styles from '../../styles.module.css';
 import Link from '@docusaurus/Link';
 
@@ -25,7 +26,7 @@ const blogPosts = [
 
 export default function RecentBlogPostsSection() {
   return (
-    <div className={styles.section} style={{backgroundColor: 'var(--ifm-background-surface-color)'}}>
+    <div className={clsx(styles.section, styles.sectionAlt)}> {/* 应用 styles.sectionAlt 并移除内联 style */}
       <div className="container">
         <div className="row">
           <div className="col col--12">

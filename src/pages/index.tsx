@@ -8,6 +8,13 @@ import FeaturesContainer from './_components/FeaturesContainer';
 import Countdown from './_components/Countdown';
 import MyProjectsSection from './_components/MyProjectsSection';
 import RecentBlogPostsSection from './_components/RecentBlogPostsSection';
+import MyTechStackSection from './_components/MyTechStackSection';
+import FunFactsSection from './_components/FunFactsSection';
+import CurrentlyExploringSection from './_components/CurrentlyExploringSection';
+import FavoriteQuotesSection from './_components/FavoriteQuotesSection';
+import ToolsIUseSection from './_components/ToolsIUseSection';
+import ConnectWithMeSection from './_components/ConnectWithMeSection';
+import MyDevicesSection from './_components/MyDevicesSection';
 
 export default function Home() {
   const {siteConfig} = useDocusaurusContext();
@@ -23,6 +30,13 @@ export default function Home() {
         </div>
         <MyProjectsSection />
         <RecentBlogPostsSection />
+        <MyTechStackSection />
+        {/* <FunFactsSection />
+        <CurrentlyExploringSection />
+        <FavoriteQuotesSection />
+        <ToolsIUseSection /> */}
+        <ConnectWithMeSection />
+        <MyDevicesSection />
       </main>
     </Layout>
   );

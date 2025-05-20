@@ -1,0 +1,26 @@
+.item {
+  margin-bottom: 1.5rem;
+}
+
+.deviceCard img {
+  width: 36px;
+  height: 36px;
+  margin-bottom: 0.5rem;
+  filter: invert(0%) sepia(100%) saturate(0%) hue-rotate(0deg) brightness(0%) contrast(100%);
+  user-select: none;
+  pointer-events: none;
+}
+
+html[data-theme='dark'] .deviceCard img {
+  filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(100%) contrast(100%);
+}
+
+.deviceCard {
+  padding: 1rem;
+  height: 100%;
+  text-align: center; /* Ensures text within block children (like h4) is centered */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Horizontally centers flex items (img and h4 block) */
+  justify-content: center; /* Vertically centers content if card has extra space */
+}

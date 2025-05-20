@@ -4,7 +4,6 @@
   color: var(--site-color-tooltip);
   background: var(--site-color-tooltip-background);
   font-size: 0.8rem;
-  z-index: 500;
   line-height: 1.4;
   font-weight: 500;
   max-width: 300px;
