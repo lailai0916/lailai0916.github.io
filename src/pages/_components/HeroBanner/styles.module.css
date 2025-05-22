@@ -54,8 +54,8 @@ html[data-theme='dark'] .hero {
   will-change: filter;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
-  filter: drop-shadow(0 0 20px var(--ifm-color-primary))
-          drop-shadow(0 0 40px var(--ifm-color-primary));
+  filter: drop-shadow(0 0 10px var(--ifm-color-primary))
+          drop-shadow(0 0 30px var(--ifm-color-primary));
   user-select: none;
   pointer-events: none;
 }
