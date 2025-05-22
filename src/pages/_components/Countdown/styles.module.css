@@ -1,16 +1,15 @@
 .timer {
   display: flex;
-  gap: 30px;
+  gap: 2rem; /* 30px / 16px = 1.875rem */
   flex-wrap: wrap;
   justify-content: center;
 }
 
 @media (max-width: 768px) {
   .timer {
-    gap: 20px;
-  }
-  .timer > * {
-    flex: 1 1 45%;
+    display: grid; /* Change to grid for 2x2 layout */
+    grid-template-columns: repeat(2, auto); /* 2 columns */
+    gap: 2rem; /* Row and column gap set to x (30px / 16px = 1.875rem) */
   }
 }
 
