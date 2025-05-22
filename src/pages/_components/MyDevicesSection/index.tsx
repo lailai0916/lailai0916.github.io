@@ -23,7 +23,7 @@ export default function MyDevicesSection() {
         </div>
         <div className="row" style={{ justifyContent: 'center' }}>
           {devices.map((device, idx) => (
-            <div key={idx} className={clsx('col', 'col--2', localStyles.item)}>
+            <div key={idx} className={clsx('col', 'col--4', localStyles.item)}>
               <div className={clsx("card", "card--S", "shadow--md", localStyles.deviceCard)}>
                 <img src={device.imgSrc} alt={device.name} />
                 <h4>{device.name}</h4>
