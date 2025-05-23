@@ -1,6 +1,6 @@
 import React from 'react';
 import clsx from 'clsx';
-import { DEVICES } from '../../../../data/device';
+import { DEVICES } from '@site/src/data/device';
 
 interface DeviceListProps {
   layout?: 'grid' | 'list';
