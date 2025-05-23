@@ -1,3 +1,4 @@
 # lailai's Design
 
-统一·简约·现代
+理念：统一 · 简约 · 现代 / Philosophy: Unity · Simplicity · Modernity
+
