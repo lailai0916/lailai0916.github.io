@@ -4,9 +4,9 @@ sidebar_position: 0
 
 # 竞赛
 
-竞赛（Contest）板块包括信息学奥林匹克竞赛中的基础知识、常见题型、解题思路，以及我的代码模板和比赛经验。
+竞赛（Contest）板块涵盖信息学奥林匹克竞赛相关的基础知识、常见题型、解题思路，以及代码模板和参赛经验。
 
-通过这里的资源，你将能迅速掌握竞赛技巧，提升解题效率，增强编程能力。
+内容聚焦实际竞赛环境，强调算法技巧、编程实践和竞赛能力的综合提升。
 
 ![](/img/header/contest-light.png#gh-light-mode-only)
 ![](/img/header/contest-dark.png#gh-dark-mode-only)

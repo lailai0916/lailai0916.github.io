@@ -6,9 +6,9 @@ import DocCardList from '@theme/DocCardList';
 
 # 项目
 
-项目（Project）板块汇集了丰富的资源和实践成果，包括实用的模板工具，以及各类编程项目和学习资料。
+项目（Project）板块集合了个人在编程和技术实践中的各类项目成果，提供实用的模板、工具以及相关技术资料。
 
-无论是学习还是开发，这里都能为你提供灵感和支持，助你在不同领域中高效前行。
+项目内容关注具体场景的应用与探索，兼顾技术学习、实践开发和经验积累。
 
 ![](/img/header/project-light.png#gh-light-mode-only)
 ![](/img/header/project-dark.png#gh-dark-mode-only)
