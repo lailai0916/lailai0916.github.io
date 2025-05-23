@@ -7,8 +7,11 @@ import Link from '@docusaurus/Link';
 import Heading from '@theme/Heading';
 
 import { Icon } from '@iconify/react';
-import Comment from "./_components/Comment";
 import styles from './styles.module.css';
+
+import Comment from "./_components/Comment";
+import SocialLinks from './_components/SocialLinks';
+import DeviceList from './_components/DeviceList';
 
 <div style={{maxWidth: '70ch', margin: 'auto'}}>
 
@@ -62,69 +65,11 @@ import styles from './styles.module.css';
 
 ## 我的设备
 
-<div className={styles.item}>
-  <div>
-    <img src="/img/device/macbook.svg" />
-    <span>MacBook Pro (M3 Max)</span>
-  </div>
-  <div>
-    <img src="/img/device/ipad.svg" />
-    <span>iPad Pro (M1)</span>
-  </div>
-  <div>
-    <img src="/img/device/iphone.svg" />
-    <span>iPhone 13</span>
-  </div>
-  <div>
-    <img src="/img/device/applewatch.svg" />
-    <span>Apple Watch Series 10</span>
-  </div>
-  <div>
-    <img src="/img/device/airpods.pro.svg" />
-    <span>AirPods Pro 2</span>
-  </div>
-  <div>
-    <img src="/img/device/airpods.max.svg" />
-    <span>AirPods Max</span>
-  </div>
-</div>
+<DeviceList className={styles.item} layout="list" showIcons={true} />
 
 ## 我的社区
 
-<div className={styles.item}>
-  <div>
-    <Icon icon="ri:phone-line" width="20" height="20" />
-    <Link to="tel:+86 17757102577">+86 17757102577</Link>
-  </div>
-  <div>
-    <Icon icon="ri:mail-line" width="20" height="20" />
-    <Link to="mailto:lailai0x394@gmail.com">lailai0x394@gmail.com</Link>
-  </div>
-  <div>
-    <Icon icon="ri:qq-line" width="20" height="20" />
-    <Link to="https://www.lailai.one/img/community/qq.jpg">11548585</Link>
-  </div>
-  <div>
-    <Icon icon="ri:wechat-line" width="20" height="20" />
-    <Link to="https://www.lailai.one/img/community/wechat.jpg">lailai0x394</Link>
-  </div>
-  <div>
-    <Icon icon="ri:twitter-x-line" width="20" height="20" />
-    <Link to="https://x.com/lailai0x394">lailai0x394</Link>
-  </div>
-  <div>
-    <Icon icon="ri:telegram-line" width="20" height="20" />
-    <Link to="https://t.me/lailai0916">lailai0916</Link>
-  </div>
-  <div>
-    <Icon icon="ri:linkedin-line" width="20" height="20" />
-    <Link to="https://www.linkedin.com/in/lailai0916">lailai0916</Link>
-  </div>
-  <div>
-    <Icon icon="ri:github-line" width="20" height="20" />
-    <Link to="https://github.com/lailai0916">lailai0916</Link>
-  </div>
-</div>
+<SocialLinks className={styles.item} iconSize={20} showLabels={true} />
 
 ------
 

@@ -21,6 +21,9 @@ html[data-theme='dark'] .deviceCard img {
   text-align: center; /* Ensures text within block children (like h4) is centered */
   display: flex;
   flex-direction: column;
-  align-items: center; /* Horizontally centers flex items (img and h4 block) */
-  justify-content: center; /* Vertically centers content if card has extra space */
+  align-items: center;
+}
+
+.deviceContainer > div {
+  margin: 0.5rem;
 }

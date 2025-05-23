@@ -6,17 +6,7 @@ import clsx from 'clsx';
 import localStyles from './styles.module.css'; 
 import Link from '@docusaurus/Link';
 import { Icon } from '@iconify/react';
-
-const contactLinks = [
-  { name: '+86 17757102577', url: 'tel:+86 17757102577', icon: 'ri:phone-line' },
-  { name: 'lailai0x394@gmail.com', url: 'mailto:lailai0x394@gmail.com', icon: 'ri:mail-line' },
-  { name: '11548585', url: 'https://www.lailai.one/img/community/qq.jpg', icon: 'ri:qq-line' },
-  { name: 'lailai0x394', url: 'https://www.lailai.one/img/community/wechat.jpg', icon: 'ri:wechat-line' },
-  { name: 'lailai0x394', url: 'https://x.com/lailai0x394', icon: 'ri:twitter-x-line' },
-  { name: 'lailai0916', url: 'https://t.me/lailai0916', icon: 'ri:telegram-line' },
-  { name: 'lailai0916', url: 'https://www.linkedin.com/in/lailai0916', icon: 'ri:linkedin-line' },
-  { name: 'lailai0916', url: 'https://github.com/lailai0916', icon: 'ri:github-line' },
-];
+import { SOCIAL_LINKS } from '@site/src/data/social';
 
 export default function ConnectWithMeSection() {
   return (
@@ -30,14 +20,14 @@ export default function ConnectWithMeSection() {
         </div>
         {/* Apply the new CSS Grid container class and remove inline styles */}
         <div className={clsx('row', localStyles.communityIconsContainer)}>
-          {contactLinks.map((link, idx) => (
+          {SOCIAL_LINKS.map((link, idx) => (
             // Apply .iconItem to each icon wrapper, remove inline styles
             <div key={idx} className={localStyles.iconItem}>
               <Link
-                href={link.url}
+                href={link.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                title={link.name}
+                title={link.label}
                 // Inline styles for display, alignment, and padding are now handled by .iconItem and .communityIconsContainer
               >
                 <Icon icon={link.icon} width="32" height="32" />

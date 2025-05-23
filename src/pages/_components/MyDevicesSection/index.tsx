@@ -2,17 +2,15 @@ import React from 'react';
 import clsx from 'clsx';
 import globalStyles from '../../styles.module.css';
 import localStyles from './styles.module.css';
-
-const devices = [
-  { name: 'MacBook Pro (M3 Max)', imgSrc: '/img/device/macbook.svg' },
-  { name: 'iPad Pro (M1)', imgSrc: '/img/device/ipad.svg' },
-  { name: 'iPhone 13', imgSrc: '/img/device/iphone.svg' },
-  { name: 'Apple Watch S10', imgSrc: '/img/device/applewatch.svg' },
-  { name: 'AirPods Pro 2', imgSrc: '/img/device/airpods.pro.svg' },
-  { name: 'AirPods Max', imgSrc: '/img/device/airpods.max.svg' },
-];
+import DeviceList from '../../about/_components/DeviceList';
 
 export default function MyDevicesSection() {
+  // 将样式类传递给 DeviceList 组件
+  const customStyle = {
+    container: localStyles.deviceContainer,
+    card: localStyles.deviceCard
+  };
+
   return (
     <div className={globalStyles.section}>
       <div className="container">
@@ -21,15 +19,10 @@ export default function MyDevicesSection() {
             <h2 style={{ textAlign: 'center', marginBottom: '2rem' }}>我的设备</h2>
           </div>
         </div>
-        <div className="row" style={{ justifyContent: 'center' }}>
-          {devices.map((device, idx) => (
-            <div key={idx} className={clsx('col', 'col--4', localStyles.item)}>
-              <div className={clsx("card", "card--S", "shadow--md", localStyles.deviceCard)}>
-                <img src={device.imgSrc} alt={device.name} />
-                <h4>{device.name}</h4>
-              </div>
-            </div>
-          ))}
+        <div className="row">
+          <div className="col col--12">
+            <DeviceList layout="grid" showIcons={true} customStyles={customStyle} />
+          </div>
         </div>
       </div>
     </div>
