@@ -1,24 +1,21 @@
 .timer {
   display: flex;
-  gap: 2rem; /* 30px / 16px = 1.875rem */
+  gap: 2rem;
   flex-wrap: wrap;
   justify-content: center;
 }
 
 @media (max-width: 768px) {
   .timer {
-    display: grid; /* Change to grid for 2x2 layout */
-    grid-template-columns: repeat(2, auto); /* 2 columns */
-    gap: 2rem; /* Row and column gap set to x (30px / 16px = 1.875rem) */
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    justify-items: center;
   }
 }
 
 @media (max-width: 480px) {
   .timer {
-    display: grid; /* Change to grid for 4x1 layout */
-    grid-template-columns: 1fr; /* 1 column */
-    gap: 1.5rem; /* Slightly smaller gap for very narrow screens */
-    justify-items: center; /* Center each item */
+    grid-template-columns: 1fr;
   }
 }
 

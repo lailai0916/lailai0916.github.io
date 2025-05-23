@@ -7,12 +7,24 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  /* 防止水平溢出 */
+  width: 100%;
+  overflow-x: hidden;
 }
 
 .topBannerTitle {
   font-size: 54px;
   font-weight: bold;
   margin-bottom: 0.4rem;
+  /* 允许文本换行 */
+  word-wrap: break-word;
+  word-break: break-word;
+  /* 防止文本溢出容器 */
+  max-width: 100%;
+  /* 保持文本居中 */
+  text-align: center;
+  /* 设置行高以改善多行显示效果 */
+  line-height: 1.2;
 }
 
 @media only screen and (max-width: 768px) {
@@ -21,10 +33,25 @@
   }
 }
 
+@media only screen and (max-width: 480px) {
+  .topBanner {
+    padding: 20px 15px;
+  }
+  
+  .topBannerTitle {
+    font-size: 32px;
+  }
+}
+
 .topBannerTitleText {
   background: linear-gradient(to right, #0090f7, #ba62fc, #f2416b);
   background-clip: text;
   -webkit-text-fill-color: transparent;
+  /* 确保链接文本也能换行 */
+  word-wrap: break-word;
+  word-break: break-word;
+  /* 移除可能的 white-space 限制 */
+  white-space: normal;
 }
 
 /* .topBannerTitleText {

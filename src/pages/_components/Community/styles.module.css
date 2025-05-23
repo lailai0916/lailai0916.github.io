@@ -24,3 +24,9 @@
     grid-template-columns: repeat(4, auto);
   }
 }
+
+@media (max-width: 480px) {
+  .communityIconsContainer {
+    grid-template-columns: repeat(2, auto);
+  }
+}
