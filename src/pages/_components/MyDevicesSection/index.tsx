@@ -2,15 +2,9 @@ import React from 'react';
 import clsx from 'clsx';
 import globalStyles from '../../styles.module.css';
 import localStyles from './styles.module.css';
-import DeviceList from '../../about/_components/DeviceList';
+import { DEVICES } from '../../../data/device';
 
 export default function MyDevicesSection() {
-  // 将样式类传递给 DeviceList 组件
-  const customStyle = {
-    container: localStyles.deviceContainer,
-    card: localStyles.deviceCard
-  };
-
   return (
     <div className={globalStyles.section}>
       <div className="container">
@@ -21,7 +15,15 @@ export default function MyDevicesSection() {
         </div>
         <div className="row">
           <div className="col col--12">
-            <DeviceList layout="grid" showIcons={true} customStyles={customStyle} />
+            {/* 直接使用网格布局展示设备 */}
+            <div className={localStyles.deviceContainer}>
+              {DEVICES.map((device, index) => (
+                <div key={index} className={clsx('card', 'card--S', 'shadow--md', localStyles.deviceCard)}>
+                  <img src={device.icon} alt={device.name} />
+                  <h4 style={{ margin: 0 }}>{device.name}</h4>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>

@@ -2,6 +2,20 @@
   margin-bottom: 1.5rem;
 }
 
+/* 设备卡片样式 */
+.deviceCard {
+  padding: 1rem; 
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 200px;
+  flex: 1 1 30%;
+  max-width: 300px;
+  height: 100%;
+}
+
+/* 设备图标样式 */
 .deviceCard img {
   width: 36px;
   height: 36px;
@@ -11,19 +25,21 @@
   pointer-events: none;
 }
 
+/* 暗色模式下的图标 */
 html[data-theme='dark'] .deviceCard img {
   filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(100%) contrast(100%);
 }
 
-.deviceCard {
-  padding: 1rem;
-  height: 100%;
-  text-align: center; /* Ensures text within block children (like h4) is centered */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+/* 设备容器样式 */
+.deviceContainer {
+  display: flex; 
+  flex-wrap: wrap; 
+  justify-content: center;
+  gap: 1rem;
+  width: 100%;
 }
 
+/* 设备容器中的子元素边距 */
 .deviceContainer > div {
   margin: 0.5rem;
 }

@@ -1,0 +1,10 @@
+.item {
+  display: block;
+}
+
+.item div {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}

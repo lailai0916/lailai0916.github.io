@@ -3,27 +3,14 @@ title: 关于
 hide_table_of_contents: true
 ---
 
-import Link from '@docusaurus/Link';
-import Heading from '@theme/Heading';
-
-import { Icon } from '@iconify/react';
-import styles from './styles.module.css';
-
+import PageTitle from './_components/PageTitle';
+import Device from './_components/Device';
+import Community from './_components/Community';
 import Comment from "./_components/Comment";
-import SocialLinks from './_components/SocialLinks';
-import DeviceList from './_components/DeviceList';
 
 <div style={{maxWidth: '70ch', margin: 'auto'}}>
 
-<section className="margin-top--lg margin-bottom--lg text--center">
-  <Heading as="h1">
-    {'🎉\xa0'}
-    <span className={styles.titleText}>
-      <Link to="..">{'Hello,\xa0I\'m\xa0lailai'}</Link>
-    </span>
-    {'\xa0🥳'}
-  </Heading>
-</section>
+<PageTitle />
 
 ## 个人简介
 
@@ -65,11 +52,11 @@ import DeviceList from './_components/DeviceList';
 
 ## 我的设备
 
-<DeviceList className={styles.item} layout="list" showIcons={true} />
+<Device />
 
 ## 我的社区
 
-<SocialLinks className={styles.item} iconSize={20} showLabels={true} />
+<Community />
 
 ------
 
