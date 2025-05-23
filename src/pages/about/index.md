@@ -65,11 +65,11 @@ import styles from './styles.module.css';
 <div className={styles.item}>
   <div>
     <img src="/img/device/macbook.svg" />
-    <span>MacBook Pro 16 英寸</span>
+    <span>MacBook Pro (M3 Max)</span>
   </div>
   <div>
     <img src="/img/device/ipad.svg" />
-    <span>iPad Pro 11 英寸</span>
+    <span>iPad Pro (M1)</span>
   </div>
   <div>
     <img src="/img/device/iphone.svg" />

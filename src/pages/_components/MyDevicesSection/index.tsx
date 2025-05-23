@@ -4,8 +4,8 @@ import globalStyles from '../../styles.module.css';
 import localStyles from './styles.module.css';
 
 const devices = [
-  { name: 'MacBook Pro', imgSrc: '/img/device/macbook.svg' },
-  { name: 'iPad Pro', imgSrc: '/img/device/ipad.svg' },
+  { name: 'MacBook Pro (M3 Max)', imgSrc: '/img/device/macbook.svg' },
+  { name: 'iPad Pro (M1)', imgSrc: '/img/device/ipad.svg' },
   { name: 'iPhone 13', imgSrc: '/img/device/iphone.svg' },
   { name: 'Apple Watch S10', imgSrc: '/img/device/applewatch.svg' },
   { name: 'AirPods Pro 2', imgSrc: '/img/device/airpods.pro.svg' },
