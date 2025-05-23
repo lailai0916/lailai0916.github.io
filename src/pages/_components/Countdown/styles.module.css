@@ -13,7 +13,7 @@
   }
 }
 
-@media (max-width: 300px) {
+@media (max-width: 400px) {
   .timer {
     display: grid; /* Change to grid for 4x1 layout */
     grid-template-columns: 1fr; /* 1 column */
