@@ -13,6 +13,15 @@
   }
 }
 
+@media (max-width: 300px) {
+  .timer {
+    display: grid; /* Change to grid for 4x1 layout */
+    grid-template-columns: 1fr; /* 1 column */
+    gap: 1.5rem; /* Slightly smaller gap for very narrow screens */
+    justify-items: center; /* Center each item */
+  }
+}
+
 .title {
   font-size: 5em;
   text-align: center;
