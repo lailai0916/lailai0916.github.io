@@ -2,9 +2,9 @@ import React from 'react';
 import clsx from 'clsx';
 import globalStyles from '../../styles.module.css';
 import localStyles from './styles.module.css';
-import { DEVICES } from '../../../data/device';
+import { DEVICES } from '@site/src/data/device';
 
-export default function MyDevicesSection() {
+export default function Device() {
   return (
     <div className={globalStyles.section}>
       <div className="container">

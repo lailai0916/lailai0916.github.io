@@ -13,8 +13,8 @@ import FunFactsSection from './_components/FunFactsSection';
 import CurrentlyExploringSection from './_components/CurrentlyExploringSection';
 import FavoriteQuotesSection from './_components/FavoriteQuotesSection';
 import ToolsIUseSection from './_components/ToolsIUseSection';
-import ConnectWithMeSection from './_components/ConnectWithMeSection';
-import MyDevicesSection from './_components/MyDevicesSection';
+import Community from './_components/Community';
+import Device from './_components/Device';
 
 export default function Home() {
   const {siteConfig} = useDocusaurusContext();
@@ -35,8 +35,8 @@ export default function Home() {
         <CurrentlyExploringSection />
         <FavoriteQuotesSection />
         <ToolsIUseSection /> */}
-        <ConnectWithMeSection />
-        <MyDevicesSection />
+        <Community />
+        <Device />
       </main>
     </Layout>
   );

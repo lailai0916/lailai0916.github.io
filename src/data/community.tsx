@@ -1,11 +1,11 @@
-export type SocialLink = {
+export type CommunityLink = {
   label: string;
   text: string;
   icon: string;
   href: string;
 };
 
-export const SOCIAL_LINKS: SocialLink[] = [
+export const COMMUNITY_LINKS: CommunityLink[] = [
   {
     label: "Phone",
     text: "+86 17757102577",

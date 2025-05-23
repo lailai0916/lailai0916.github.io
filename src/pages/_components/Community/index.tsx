@@ -6,9 +6,9 @@ import clsx from 'clsx';
 import localStyles from './styles.module.css'; 
 import Link from '@docusaurus/Link';
 import { Icon } from '@iconify/react';
-import { SOCIAL_LINKS } from '@site/src/data/social';
+import { COMMUNITY_LINKS } from '@site/src/data/community';
 
-export default function ConnectWithMeSection() {
+export default function Community() {
   return (
     // Use global class names directly if they are indeed global
     <div className={clsx('section', 'sectionAlt')}> 
@@ -20,7 +20,7 @@ export default function ConnectWithMeSection() {
         </div>
         {/* Apply the new CSS Grid container class and remove inline styles */}
         <div className={clsx('row', localStyles.communityIconsContainer)}>
-          {SOCIAL_LINKS.map((link, idx) => (
+          {COMMUNITY_LINKS.map((link, idx) => (
             // Apply .iconItem to each icon wrapper, remove inline styles
             <div key={idx} className={localStyles.iconItem}>
               <Link
