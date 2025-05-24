@@ -682,6 +682,12 @@ export const resourceData: ResourceCategory[] = [
         logo: '/img/site/bloxd.png',
         href: 'https://bloxd.io',
       },
+      {
+        name: '名字竞技场',
+        desc: '一个文本对战游戏，玩家通过输入名字进行对战',
+        logo: 'https://namerena.github.io/favicon.ico',
+        href: 'https://namerena.github.io',
+      },
     ],
   },
   {
