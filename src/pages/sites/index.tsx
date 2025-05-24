@@ -9,7 +9,7 @@ import Link from '@docusaurus/Link';
 import Layout from '@theme/Layout';
 import Heading from '@theme/Heading';
 
-import SiteSearchBar from '@site/src/pages/site/_components/SiteSearchBar';
+import SiteSearchBar from '@site/src/pages/sites/_components/SiteSearchBar';
 import SiteCards from './_components/SiteCards';
 import SiteFilters from './_components/SiteFilters';
 

@@ -139,9 +139,9 @@ const config: Config = {
           label: '更多',
           position: 'right',
           items: [
-            { label: '友链', to: 'friend' },
+            { label: '友链', to: 'friends' },
             { label: '资源', to: 'resources' },
-            { label: '网站', to: 'site' },
+            { label: '网站', to: 'sites' },
             { label: '旅行', to: 'travel' },
           ],
         },
@@ -206,11 +206,11 @@ const config: Config = {
             },
             {
               label: '友链',
-              to: 'friend',
+              to: 'friends',
             },
             {
               label: '设置',
-              to: 'set',
+              to: 'settings',
             },
             {
               label: '仓库',

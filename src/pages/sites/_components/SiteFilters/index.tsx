@@ -7,8 +7,8 @@
 
 import type {ReactNode, CSSProperties} from 'react';
 import clsx from 'clsx';
-import FavoriteIcon from '@site/src/pages/site/_components/FavoriteIcon';
-import {Tags, TagList, type TagType} from '@site/src/data/site';
+import FavoriteIcon from '@site/src/pages/sites/_components/FavoriteIcon';
+import {Tags, TagList, type TagType} from '@site/src/data/sites';
 import Heading from '@theme/Heading';
 import SiteTagSelect from '../SiteTagSelect';
 import OperatorButton from '../OperatorButton';

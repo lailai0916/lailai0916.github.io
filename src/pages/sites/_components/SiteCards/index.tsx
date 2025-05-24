@@ -7,7 +7,7 @@
 
 import type {ReactNode} from 'react';
 import clsx from 'clsx';
-import {sortedUsers, type User} from '@site/src/data/site';
+import {sortedUsers, type User} from '@site/src/data/sites';
 import Heading from '@theme/Heading';
 import FavoriteIcon from '../FavoriteIcon';
 import SiteCard from '../SiteCard';

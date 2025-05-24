@@ -10,8 +10,8 @@ import {
   useQueryString,
   useQueryStringList,
 } from '@docusaurus/theme-common';
-import type {TagType, User} from '@site/src/data/site';
-import {sortedUsers} from '@site/src/data/site';
+import type {TagType, User} from '@site/src/data/sites';
+import {sortedUsers} from '@site/src/data/sites';
 
 export function useSearchName() {
   return useQueryString('name');

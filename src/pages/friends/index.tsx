@@ -3,7 +3,7 @@ import Layout from '@theme/Layout';
 import Heading from '@theme/Heading';
 
 import { memo, useRef } from 'react';
-import { Friend, Friends } from '@site/src/data/friend';
+import { Friend, Friends } from '@site/src/data/friends';
 
 const TITLE = '友链';
 const DESCRIPTION = '财富易得，知己难求';
@@ -59,7 +59,7 @@ function FriendCards() {
   )
 }
 
-export default function friendPage(): JSX.Element {
+export default function friendPage() {
   return (
     <Layout title={TITLE} description={DESCRIPTION}>
       <main className="margin-vert--lg">

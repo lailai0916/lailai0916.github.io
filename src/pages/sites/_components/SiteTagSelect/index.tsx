@@ -12,7 +12,7 @@ import React, {
   type ReactElement,
   useId,
 } from 'react';
-import type {TagType} from '@site/src/data/site';
+import type {TagType} from '@site/src/data/sites';
 import {useTags} from '../../_utils';
 
 import styles from './styles.module.css';

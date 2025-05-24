@@ -9,7 +9,7 @@ import React from 'react';
 import clsx from 'clsx';
 import Link from '@docusaurus/Link';
 import Image from '@theme/IdealImage';
-import {Tags, TagList, type TagType, type User} from '@site/src/data/site';
+import {Tags, TagList, type TagType, type User} from '@site/src/data/sites';
 import {sortBy} from '@site/src/utils/jsUtils';
 import Heading from '@theme/Heading';
 import FavoriteIcon from '../FavoriteIcon';
