@@ -5,7 +5,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  --clr: var(--ifm-color-primary);
 }
   
 .circle svg {
@@ -30,7 +29,7 @@
 }
 
 .circle svg circle:nth-child(2) {
-  stroke: var(--clr);
+  stroke: var(--ifm-color-primary);
   stroke-dasharray: 440;
   stroke-dashoffset: 440;
 }
@@ -39,13 +38,13 @@
   position: absolute;
   text-align: center;
   font-weight: 500;
-  font-size: 40px;
+  font-size: 2.5rem;
   user-select: none;
 }
 
 .circle div span {
   position: absolute;
-  font-size: 0.2em;
+  font-size: 0.5rem;
   font-weight: 300;
   transform: translateX(-50%) translateY(-10px);
   letter-spacing: 0.1em;
@@ -69,7 +68,8 @@
   top: -3px;
   width: 15px;
   height: 15px;
-  background-color: var(--clr);
+  background-color: var(--ifm-color-primary);
   border-radius: 50%;
-  box-shadow: 0 0 20px var(--clr), 0 0 60px var(--clr);
+  box-shadow: 0 0 20px var(--ifm-color-primary),
+              0 0 60px var(--ifm-color-primary);
 }
