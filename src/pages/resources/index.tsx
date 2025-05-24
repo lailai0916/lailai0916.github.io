@@ -7,8 +7,8 @@ import { resourceData } from '@site/src/data/resources';
 import ResourceCard from './_components/ResourceCard';
 import styles from './styles.module.css';
 
-const TITLE = '网站';
-const DESCRIPTION = '有趣与实用的优质网站导航';
+const TITLE = '资源';
+const DESCRIPTION = '有趣与实用的优质资源导航';
 
 function PageHeader() {
   return (
