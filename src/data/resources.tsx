@@ -38,267 +38,16 @@ export const resourceData: ResourceCategory[] = [
     name: '☁️ 云计算与认证',
     resources: [
       {
-        name: 'Google Cloud 技能提升',
-        desc: '选择您的学习路径，提升技能并验证您的知识',
-        logo: 'https://www.cloudskillsboost.google/favicon.ico',
-        href: 'https://www.cloudskillsboost.google/',
-      },
-      {
-        name: 'AWS 技能构建者',
-        desc: '您的学习中心，帮助您构建云端热门技能',
+        name: 'Amazon Web Services',
+        desc: '全球领先的云计算平台，提供全面的云服务',
         logo: 'https://a0.awsstatic.com/libra-css/images/logos/aws_logo_smile_179x109.png',
-        href: 'https://explore.skillbuilder.aws/learn',
+        href: 'https://aws.amazon.com',
       },
       {
-        name: 'Azure 云技能',
-        desc: '提升您的云技能，加速职业发展和业务成果',
+        name: 'Microsoft Azure',
+        desc: '全球第二大云计算平台，提供丰富的云服务和解决方案',
         logo: 'https://azure.microsoft.com/favicon.ico',
-        href: 'https://azure.microsoft.com/en-us/resources/training-and-certifications/',
-      },
-      {
-        name: '红帽培训',
-        desc: '企业级 Linux 和开源技术培训认证',
-        logo: 'https://www.redhat.com/favicon.ico',
-        href: 'https://www.redhat.com/en/services/training-and-certification',
-      },
-      {
-        name: 'Linux 基金会培训',
-        desc: '为企业构建、维护和管理 IT 基础设施',
-        logo: 'https://www.linuxfoundation.org/favicon.ico',
-        href: 'https://training.linuxfoundation.org/',
-      },
-    ],
-  },
-  {
-    name: '🐳 容器与编排',
-    resources: [
-      {
-        name: 'Docker',
-        desc: '构建镜像、运行容器，使用卷持久化数据并挂载源代码',
-        logo: 'https://www.docker.com/favicon.ico',
-        href: 'https://www.docker.com/101-tutorial/',
-      },
-      {
-        name: 'Kubernetes 培训',
-        desc: '容器编排技术学习和最佳实践',
-        logo: 'https://kubernetes.io/images/kubernetes.png',
-        href: 'https://kubernetes.io/training/',
-      },
-      {
-        name: '云原生计算基金会',
-        desc: 'CNCF 是一个促进云原生计算的中立组织，推动其广泛采用',
-        logo: 'https://www.cncf.io/wp-content/themes/cncf-twenty-two/images/favicon.svg',
-        href: 'https://www.cncf.io/',
-      },
-      {
-        name: 'Nginx 培训',
-        desc: '从基础到高级负载均衡、高级缓存、安全等全方位课程',
-        logo: 'https://nginx.org/favicon.ico',
-        href: 'https://www.nginx.com/learn/nginx-training/',
-      },
-    ],
-  },
-  {
-    name: '🏗️ 基础设施即代码',
-    resources: [
-      {
-        name: 'Terraform',
-        desc: '用于在任何云或数据中心自动化配置和管理资源的基础设施工具',
-        logo: 'https://developer.hashicorp.com/favicon.ico',
-        href: 'https://www.terraform.io/',
-      },
-      {
-        name: 'Vault',
-        desc: 'HashiCorp 开发的密钥管理与敏感数据保护工具',
-        logo: 'https://www.datocms-assets.com/2885/1676497447-vault-favicon-color.png?h=192&w=192',
-        href: 'https://www.vaultproject.io/',
-      },
-      {
-        name: 'Packer',
-        desc: '跨云厂商标准化镜像构建工具，支持多平台镜像打包',
-        logo: 'https://www.hashicorp.com/favicon.ico',
-        href: 'https://www.hashicorp.com/products/packer',
-      },
-      {
-        name: 'Pulumi',
-        desc: '使用熟悉的编程语言构建云基础设施的现代化工具',
-        logo: 'https://www.pulumi.com/images/favicon.ico',
-        href: 'https://www.pulumi.com/',
-      },
-      {
-        name: 'Ansible',
-        desc: '简单强大的自动化运维工具，支持配置管理和应用部署',
-        logo: 'https://docs.ansible.com/static/images/community_logo.svg',
-        href: 'https://www.ansible.com/',
-      },
-      {
-        name: 'Infracost',
-        desc: '在 Pull Request 中为 Terraform 提供云成本预估和优化建议',
-        logo: 'https://www.infracost.io/wp-content/uploads/2023/10/Icon.jpeg',
-        href: 'https://www.infracost.io/',
-      },
-    ],
-  },
-  {
-    name: '🔒 安全与策略',
-    resources: [
-      {
-        name: 'Aqua Trivy',
-        desc: '容器镜像和基础设施代码的全面安全扫描工具',
-        logo: 'https://aquasecurity.github.io/trivy/v0.54/imgs/logo.png',
-        href: 'https://github.com/aquasecurity/tfsec',
-      },
-      {
-        name: 'Checkov',
-        desc: '静态代码分析工具，实现基础设施即策略（Policy as Code）',
-        logo: 'https://www.checkov.io/assets/img/favicon.png',
-        href: 'https://www.checkov.io/',
-      },
-      {
-        name: 'Open Policy Agent',
-        desc: '云原生环境下统一的策略引擎和框架',
-        logo: 'https://www.openpolicyagent.org/img/logo.png',
-        href: 'https://www.openpolicyagent.org/',
-      },
-      {
-        name: 'Webhook.site',
-        desc: '在线测试和调试 HTTP 请求与邮件的便捷工具',
-        logo: 'https://cdn.webhook.site/assets/icons/apple-touch-icon.png',
-        href: 'https://webhook.site/',
-      },
-    ],
-  },
-  {
-    name: '⚙️ CI/CD 与自动化',
-    resources: [
-      {
-        name: 'Jenkins',
-        desc: '开源自动化服务器，支持构建、测试和部署的完整 CI/CD 流程',
-        logo: 'https://www.jenkins.io/apple-touch-icon.png',
-        href: 'https://www.jenkins.io/',
-      },
-    ],
-  },
-  {
-    name: '☸️ Kubernetes 生态',
-    resources: [
-      {
-        name: 'K8slens',
-        desc: 'Kubernetes 的可视化 IDE，提供集群管理的完整解决方案',
-        logo: 'https://k8slens.dev/favicon.ico',
-        href: 'https://k8slens.dev/',
-      },
-      {
-        name: 'Helm',
-        desc: 'Kubernetes 应用包管理器，简化应用部署和版本管理',
-        logo: 'https://helm.sh/img/helm.svg',
-        href: 'https://helm.sh/',
-      },
-      {
-        name: 'Bitnami',
-        desc: '提供预配置的云原生应用栈，加速容器化应用部署',
-        logo: 'https://bitnami.com/apple-touch-icon-144x144.png',
-        href: 'https://bitnami.com/',
-      },
-      {
-        name: 'Artifact Hub',
-        desc: 'CNCF 官方包仓库，查找和发布 Kubernetes 应用包',
-        logo: 'https://artifacthub.io/static/media/logo192_v2.png',
-        href: 'https://artifacthub.io/',
-      },
-      {
-        name: 'K9s',
-        desc: '强大的 Kubernetes 命令行管理工具，提供直观的终端界面',
-        logo: 'https://k9scli.io/assets/k9s.png',
-        href: 'https://k9scli.io/',
-      },
-      {
-        name: 'Kubecolor',
-        desc: '为 kubectl 命令输出添加语法高亮和颜色支持',
-        logo: 'https://kubecolor.github.io/favicon.svg',
-        href: 'https://kubecolor.github.io/',
-      },
-    ],
-  },
-  {
-    name: '🐍 Python 生态',
-    resources: [
-      {
-        name: 'PyPI - Python 包索引',
-        desc: '全球最大的 Python 软件包仓库，发现和安装优质开源项目',
-        logo: 'https://pypi.org/static/images/logo-small.8998e9d1.svg',
-        href: 'https://pypi.org/',
-      },
-      {
-        name: 'Psutil',
-        desc: '跨平台系统和进程监控库，获取系统信息和资源使用情况',
-        logo: 'https://raw.githubusercontent.com/giampaolo/psutil/master/docs/_static/psutil-logo.png',
-        href: 'https://pypi.org/project/psutil/',
-      },
-      {
-        name: 'Scapy',
-        desc: '强大的交互式数据包操作程序和网络库',
-        logo: 'https://scapy.net/favicon.ico',
-        href: 'https://pypi.org/project/scapy/',
-      },
-      {
-        name: 'Requests',
-        desc: '简洁优雅的 HTTP 库，人性化的 HTTP 请求处理',
-        logo: 'https://requests.readthedocs.io/en/latest/_static/requests-sidebar.png',
-        href: 'https://pypi.org/project/requests/',
-      },
-      {
-        name: 'Urllib3',
-        desc: '功能强大、用户友好的 Python HTTP 客户端',
-        logo: 'https://urllib3.readthedocs.io/en/stable/_static/banner.svg',
-        href: 'https://pypi.org/project/urllib3/',
-      },
-      {
-        name: 'Fabric',
-        desc: '高级 SSH 命令执行和部署工具，简化远程操作',
-        logo: 'https://docs.fabfile.org/en/latest/_static/logo.png',
-        href: 'https://docs.fabfile.org/en/latest/',
-      },
-      {
-        name: 'PyTest',
-        desc: '简单而强大的 Python 测试框架，让测试变得轻松',
-        logo: 'https://docs.pytest.org/en/stable/_static/pytest1.png',
-        href: 'https://docs.pytest.org/en/stable/',
-      },
-    ],
-  },
-  {
-    name: '💻 编程语言与脚本',
-    resources: [
-      {
-        name: 'Bash',
-        desc: 'GNU 项目的 Shell——Bourne Again Shell，Unix/Linux 默认 Shell',
-        logo: 'https://bashlogo.com/img/symbol/svg/full_colored_dark.svg',
-        href: 'https://www.gnu.org/software/bash/',
-      },
-      {
-        name: 'PowerShell',
-        desc: '微软开发的任务自动化与配置管理框架',
-        logo: 'https://learn.microsoft.com/en-us/media/logos/logo-powershell.png',
-        href: 'https://learn.microsoft.com/powershell/',
-      },
-      {
-        name: 'Go',
-        desc: 'Google 开发的高效、简洁、并发的编程语言',
-        logo: 'https://go.dev/images/favicon-gopher.png',
-        href: 'https://go.dev/',
-      },
-      {
-        name: 'Lua',
-        desc: '高效、轻量、可嵌入的强大脚本语言',
-        logo: 'https://www.lua.org/images/luaa.gif',
-        href: 'https://www.lua.org/',
-      },
-      {
-        name: 'Rust',
-        desc: '内存安全的系统编程语言，让每个人都能构建可靠高效软件',
-        logo: 'https://www.rust-lang.org/static/images/favicon.svg',
-        href: 'https://www.rust-lang.org/',
+        href: 'https://azure.microsoft.com',
       },
     ],
   },
@@ -316,47 +65,6 @@ export const resourceData: ResourceCategory[] = [
         desc: '轻量级的数据交换格式（JavaScript 对象表示法）',
         logo: 'https://www.json.org/favicon.png',
         href: 'https://www.json.org/',
-      },
-    ],
-  },
-  {
-    name: '📚 在线学习与教育',
-    resources: [
-      {
-        name: 'Open Up The Cloud',
-        desc: '专注云计算职业发展的学习平台',
-        logo: 'https://openupthecloud.com/wp-content/uploads/2021/04/Screenshot-2021-04-03-at-07.48.45.ico',
-        href: 'https://openupthecloud.com/',
-      },
-      {
-        name: 'Learn to the Cloud',
-        desc: '云计算学习指南，助力云端职业发展',
-        logo: 'https://learntocloud.guide/img/favicon.ico',
-        href: 'https://learntocloud.guide/',
-      },
-      {
-        name: '云简历挑战',
-        desc: '通过实践项目提升云计算技能的挑战',
-        logo: 'https://cloudresumechallenge.dev/images/logo.svg',
-        href: 'https://cloudresumechallenge.dev/',
-      },
-      {
-        name: 'A Cloud Guru',
-        desc: 'Pluralsight 旗下专业云学习平台',
-        logo: 'https://www.pluralsight.com/favicon.ico',
-        href: 'https://acloudguru.com/',
-      },
-      {
-        name: "O'Reilly Learning",
-        desc: '为个人、团队和企业提供专家创作的技术学习资源',
-        logo: 'https://www.oreilly.com/favicon.ico',
-        href: 'https://www.oreilly.com/online-learning/',
-      },
-      {
-        name: 'Anki',
-        desc: '基于间隔重复算法的智能记忆卡片工具',
-        logo: 'https://apps.ankiweb.net/favicon.ico',
-        href: 'https://apps.ankiweb.net/',
       },
     ],
   },
@@ -396,43 +104,13 @@ export const resourceData: ResourceCategory[] = [
         name: 'GitHub',
         desc: '全球最大的代码托管平台，开源项目的大本营',
         logo: 'https://github.githubassets.com/favicons/favicon.svg',
-        href: 'https://github.com/',
+        href: 'https://github.com',
       },
       {
         name: 'GitLab',
         desc: '企业级 DevOps 平台，支持完整的软件开发生命周期',
         logo: 'https://gitlab.com/uploads/-/system/group/avatar/6543/logo-extra-whitespace.png?width=64',
-        href: 'https://gitlab.com/',
-      },
-      {
-        name: 'Bitbucket',
-        desc: 'Atlassian 生态中的 Git 解决方案',
-        logo: 'https://bitbucket.org/favicon.ico',
-        href: 'https://bitbucket.org/',
-      },
-      {
-        name: 'Vercel',
-        desc: '前端云平台，提供极致的开发和部署体验',
-        logo: 'https://assets.vercel.com/image/upload/q_auto/front/favicon/vercel/57x57.png',
-        href: 'https://vercel.com',
-      },
-      {
-        name: 'Netlify',
-        desc: '现代 Web 开发平台，专注于 Jamstack 部署',
-        logo: 'https://www.netlify.com/favicon.ico',
-        href: 'https://www.netlify.com',
-      },
-      {
-        name: 'Railway',
-        desc: '简化的云部署平台，专注开发者体验',
-        logo: 'https://railway.app/favicon.ico',
-        href: 'https://railway.app/',
-      },
-      {
-        name: 'Supabase',
-        desc: '开源的 Firebase 替代方案，后端即服务平台',
-        logo: 'https://supabase.com/favicon/favicon-196x196.png',
-        href: 'https://supabase.com/',
+        href: 'https://gitlab.com',
       },
     ],
   },
@@ -472,7 +150,7 @@ export const resourceData: ResourceCategory[] = [
     ],
   },
   {
-    name: '☁️ 云端开发环境',
+    name: '💻 在线开发工具',
     resources: [
       {
         name: 'GitHub Codespaces',
@@ -486,11 +164,6 @@ export const resourceData: ResourceCategory[] = [
         logo: 'https://www.gitpod.io/favicon192.png',
         href: 'https://www.gitpod.io/',
       },
-    ],
-  },
-  {
-    name: '💻 在线开发工具',
-    resources: [
       {
         name: 'CodeSandbox',
         desc: '云端代码编辑器和协作开发平台',
@@ -556,23 +229,6 @@ export const resourceData: ResourceCategory[] = [
         logo: 'https://hexo.io/favicon.ico',
         href: 'https://hexo.io',
       },
-    ],
-  },
-  {
-    name: '📝 文档与内容管理',
-    resources: [
-      {
-        name: 'GitBook',
-        desc: '现代化的文档平台，支持团队协作',
-        logo: 'https://www.gitbook.com/favicons/favicon-32x32.png',
-        href: 'https://www.gitbook.com/',
-      },
-      {
-        name: 'Docsify',
-        desc: '无需构建的文档网站生成器',
-        logo: 'https://docsify.js.org/_media/icon.svg',
-        href: 'https://docsify.js.org',
-      },
       {
         name: 'WordPress',
         desc: '全球最受欢迎的开源内容管理系统',
@@ -582,59 +238,7 @@ export const resourceData: ResourceCategory[] = [
     ],
   },
   {
-    name: '🛠️ 效率与实用工具',
-    resources: [
-      {
-        name: 'Bitwarden',
-        desc: '开源的跨平台密码管理器',
-        logo: 'https://bitwarden.com/icons/icon-256x256.png',
-        href: 'https://bitwarden.com/',
-      },
-      {
-        name: 'Raindrop',
-        desc: '智能书签管理工具，支持多平台同步',
-        logo: 'https://raindrop.io/favicon.ico',
-        href: 'https://raindrop.io/',
-      },
-      {
-        name: 'Workona',
-        desc: '浏览器工作空间管理工具，提升工作效率',
-        logo: 'https://workona.com/favicon.ico',
-        href: 'https://workona.com/',
-      },
-      {
-        name: 'ClickUp',
-        desc: '一体化项目管理和团队协作平台',
-        logo: 'https://clickup.com/favicon.ico',
-        href: 'https://clickup.com',
-      },
-    ],
-  },
-  {
-    name: '🔄 自动化与集成',
-    resources: [
-      {
-        name: 'IFTTT',
-        desc: '连接不同应用和服务的自动化平台',
-        logo: 'https://ifttt.com/favicon.ico',
-        href: 'https://ifttt.com/',
-      },
-      {
-        name: 'Buffer',
-        desc: '社交媒体管理和排程工具',
-        logo: 'https://buffer.com/favicon.ico',
-        href: 'https://buffer.com/',
-      },
-      {
-        name: 'Zapier',
-        desc: '无代码自动化平台，连接数千种应用',
-        logo: 'https://zapier.com/favicon.ico',
-        href: 'https://zapier.com/',
-      },
-    ],
-  },
-  {
-    name: '🎯 在线测试与工具',
+    name: '🎯 在线工具',
     resources: [
       {
         name: '能不能好好说话？',
@@ -651,20 +255,14 @@ export const resourceData: ResourceCategory[] = [
       {
         name: 'Diff Tool',
         desc: '在线代码差异比较工具',
-        logo: '/img/site/DiffTool.png',
+        logo: 'https://csacademy.com/favicon.ico',
         href: 'https://csacademy.com/app/diffing_tool/',
       },
       {
         name: 'Graph Editor',
         desc: '在线图论可视化和编辑工具',
-        logo: '/img/site/GraphEditor.png',
+        logo: 'https://csacademy.com/favicon.ico',
         href: 'https://csacademy.com/app/graph_editor/',
-      },
-      {
-        name: 'CPS 测试',
-        desc: '在线鼠标点击速度测试工具',
-        logo: 'https://clickspeedtest.com/favicon.ico',
-        href: 'https://clickspeedtest.com/',
       },
       {
         name: 'Password Monster',
@@ -675,8 +273,19 @@ export const resourceData: ResourceCategory[] = [
       {
         name: '原题机',
         desc: '编程竞赛题目溯源工具',
-        logo: '/img/site/yuantiji.png',
+        logo: 'http://yuantiji.ac/favicon.ico',
         href: 'http://yuantiji.ac/zh/',
+      },
+    ],
+  },
+  {
+    name: '🎯 在线测试',
+    resources: [
+      {
+        name: 'CPS 测试',
+        desc: '在线鼠标点击速度测试工具',
+        logo: 'https://clickspeedtest.com/favicon.ico',
+        href: 'https://clickspeedtest.com/',
       },
       {
         name: '政治倾向测试',
@@ -739,7 +348,7 @@ export const resourceData: ResourceCategory[] = [
       {
         name: 'Sora',
         desc: 'OpenAI 开发的文本到视频生成模型',
-        logo: '/img/site/Sora.png',
+        logo: 'https://sora.com/favicon.ico',
         href: 'https://sora.com',
       },
     ],
