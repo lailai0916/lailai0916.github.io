@@ -8,7 +8,7 @@ interface NotationProps {
   show?: boolean;
 }
 
-const Notation: React.FC<NotationProps> = ({ children, type = 'underline', color = '#f00', show = true }) => {
+const Notation: React.FC<NotationProps> = ({ children, type = 'underline', color = 'red', show = true }) => {
   const ref = useRef(null);
 
   useEffect(() => {
@@ -16,7 +16,6 @@ const Notation: React.FC<NotationProps> = ({ children, type = 'underline', color
       const annotation = annotate(ref.current, {
         type,
         color,
-        animationDuration: 800,
       });
       annotation.show();
     }
