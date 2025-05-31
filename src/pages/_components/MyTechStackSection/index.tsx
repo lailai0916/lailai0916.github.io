@@ -2,12 +2,12 @@ import React from 'react';
 import styles from '../../styles.module.css';
 
 const techStack = [
-  { name: 'React', icon: '⚛️' }, // Replace with actual icons or images if desired
-  { name: 'TypeScript', icon: 'TS' },
-  { name: 'Docusaurus', icon: '🦖' },
-  { name: 'Node.js', icon: '🚀' },
-  { name: 'Python', icon: '🐍' },
-  { name: 'Git', icon: '🌿' },
+  { name: 'C++', icon: 'cpp' },
+  { name: 'Python', icon: 'py' },
+  { name: 'React', icon: 'react' },
+  { name: 'TypeScript', icon: 'ts' },
+  { name: 'Latex', icon: 'latex' },
+  { name: 'Git', icon: 'git' },
 ];
 
 export default function MyTechStackSection() {
@@ -23,7 +23,18 @@ export default function MyTechStackSection() {
           {techStack.map((tech, idx) => (
             <div key={idx} className="col col--2" style={{ marginBottom: '1.5rem', textAlign: 'center' }}>
               <div className="card card--S shadow--md" style={{padding: '1rem'}}>
-                <div style={{ fontSize: '2rem', marginBottom: '0.5rem' }}>{tech.icon}</div>
+                <div style={{ fontSize: '2rem', marginBottom: '0.5rem' }}>
+                  <img 
+                    src={`https://skillicons.dev/icons?i=${tech.icon}&theme=light#gh-light-mode-only`} 
+                    alt={tech.name} 
+                    style={{ width: '48px', height: '48px' }}
+                  />
+                  <img 
+                    src={`https://skillicons.dev/icons?i=${tech.icon}&theme=dark#gh-dark-mode-only`} 
+                    alt={tech.name} 
+                    style={{ width: '48px', height: '48px' }}
+                  />
+                </div>
                 <h4>{tech.name}</h4>
               </div>
             </div>

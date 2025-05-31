@@ -47,8 +47,8 @@ import Comment from "./_components/Comment";
 
 ## 我的技能
 
-![](https://skillicons.dev/icons?i=aws,azure,cloudflare,npm,git,github,c,cpp,qt,html,js,ts,css,py,md,latex,docker,linux,vscode,nodejs,react&theme=light#gh-light-mode-only)
-![](https://skillicons.dev/icons?i=aws,azure,cloudflare,npm,git,github,c,cpp,qt,html,js,ts,css,py,md,latex,docker,linux,vscode,nodejs,react&theme=dark#gh-dark-mode-only)
+![](https://skillicons.dev/icons?i=aws,azure,cloudflare,npm,git,github,c,cpp,qt,html,js,ts,css,py,md,latex,docker,linux,vscode,visualstudio,nodejs,react,windows,wordpress&theme=light#gh-light-mode-only)
+![](https://skillicons.dev/icons?i=aws,azure,cloudflare,npm,git,github,c,cpp,qt,html,js,ts,css,py,md,latex,docker,linux,vscode,visualstudio,nodejs,react,windows,wordpress&theme=dark#gh-dark-mode-only)
 
 ## 我的设备
 

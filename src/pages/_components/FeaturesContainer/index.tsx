@@ -29,7 +29,7 @@ function Feature({
           {feature.title}
         </Link>
       </Heading>
-      <p className="padding-horiz--md">{feature.text}</p>
+      <div className="padding-horiz--md">{feature.text}</div>
     </div>
   );
 }
