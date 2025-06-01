@@ -2,13 +2,13 @@ import React from 'react';
 import styles from '../../styles.module.css';
 
 const exploringItems = [
-  { name: 'WebAssembly', icon: '🚀', description: '探索 WebAssembly 在高性能 Web 应用中的潜力。' },
-  { name: 'Rust 编程语言', icon: '🦀', description: '学习 Rust 以构建更安全、并发的系统软件。' },
-  { name: '《设计模式》', icon: '📚', description: '重温经典，提升代码设计能力。' },
-  { name: 'AI 绘画', icon: '🎨', description: '尝试使用 AI 工具进行艺术创作。' },
+  { name: '算法竞赛', icon: '🏆', description: '参与算法竞赛，深入学习数据结构与算法，提升逻辑思维能力。' },
+  { name: 'Docusaurus', icon: '📖', description: '使用 Docusaurus 构建统一、简约、现代的个人网站。' },
+  { name: 'AI 模型', icon: '🤖', description: '深入探索人工智能模型的工作原理，实践机器学习技术应用。' },
+  { name: '英语语法', icon: '📝', description: '系统学习英语语法规则，掌握语言结构，提升表达能力。' },
 ];
 
-export default function CurrentlyExploringSection() {
+export default function Exploration() {
   return (
     <div className={styles.section}>
       <div className="container">

@@ -18,7 +18,7 @@ const favoriteQuotes = [
   },
 ];
 
-export default function FavoriteQuotesSection() {
+export default function Quote() {
   return (
     <div className={clsx(styles.section, styles.sectionAlt)}>
       <div className="container">
