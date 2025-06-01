@@ -10,10 +10,8 @@ import Countdown from './_components/Countdown';
 import Project from './_components/Project';
 import Blog from './_components/Blog';
 
-import FunFactsSection from './_components/FunFactsSection';
 import CurrentlyExploringSection from './_components/CurrentlyExploringSection';
 import FavoriteQuotesSection from './_components/FavoriteQuotesSection';
-import ToolsIUseSection from './_components/ToolsIUseSection';
 
 import Skill from './_components/Skill';
 import Community from './_components/Community';
@@ -33,10 +31,8 @@ export default function Home() {
         </div>
         <Project />
         <Blog />
-        {/* <FunFactsSection />
         <CurrentlyExploringSection />
         <FavoriteQuotesSection />
-        <ToolsIUseSection /> */}
         <Skill />
         <Community />
         <Device />
