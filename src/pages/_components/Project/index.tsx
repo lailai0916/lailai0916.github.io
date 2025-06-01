@@ -20,7 +20,7 @@ const projects = [
   },
 ];
 
-export default function MyProjectsSection() {
+export default function Project() {
   return (
     <div className={styles.section}>
       <div className="container">

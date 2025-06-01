@@ -7,9 +7,9 @@ import HeroBanner from './_components/HeroBanner';
 import FeaturesContainer from './_components/FeaturesContainer';
 
 import Countdown from './_components/Countdown';
-import MyProjectsSection from './_components/MyProjectsSection';
-import RecentBlogPostsSection from './_components/RecentBlogPostsSection';
-import ReactStyleBlogSection from './_components/ReactStyleBlogSection';
+import Project from './_components/Project';
+import Blog from './_components/Blog';
+
 import FunFactsSection from './_components/FunFactsSection';
 import CurrentlyExploringSection from './_components/CurrentlyExploringSection';
 import FavoriteQuotesSection from './_components/FavoriteQuotesSection';
@@ -31,9 +31,8 @@ export default function Home() {
           <FeaturesContainer />
           <Countdown />
         </div>
-        <MyProjectsSection />
-        <ReactStyleBlogSection />
-        <RecentBlogPostsSection />
+        <Project />
+        <Blog />
         {/* <FunFactsSection />
         <CurrentlyExploringSection />
         <FavoriteQuotesSection />

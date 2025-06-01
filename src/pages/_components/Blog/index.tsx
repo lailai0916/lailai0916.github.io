@@ -1,7 +1,6 @@
 import React from 'react';
 import Link from '@docusaurus/Link';
 
-// 模拟博客文章数据
 const recentPosts = [
   {
     title: 'TypeScript 进阶实践',
@@ -116,7 +115,7 @@ function CTA({ children, href, icon, color = 'blue' }) {
   );
 }
 
-export default function ReactStyleBlogSection() {
+export default function Blog() {
   return (
     <Section background="right-card">
       <div className="max-w-7xl mx-auto flex flex-col lg:flex-row px-5">
