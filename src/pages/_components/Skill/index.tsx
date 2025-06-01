@@ -1,5 +1,4 @@
 import React from 'react';
-import { useColorMode } from '@docusaurus/theme-common';
 import styles from '../../styles.module.css';
 
 const techStack = [
@@ -17,7 +16,7 @@ const techStack = [
   { name: 'Tailwind CSS', icon: 'tailwind' },
 ];
 
-export default function MyTechStackSection() {
+export default function Skill() {
   return (
     <div className={styles.section}>
       <div className="container">
