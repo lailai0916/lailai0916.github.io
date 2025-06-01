@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react';
-import styles from './styles.module.css';
 import Heading from '@theme/Heading';
 import ProgressCircle from './_components/ProgressCircle';
 
@@ -41,10 +40,10 @@ export default function Countdown() {
     <div className="container">
       {isTimeUp ? (
         <>
-          <Heading as="h2" className={styles.title}>
+          <Heading as="h2" className="text-[5rem] text-center">
             {EVENT}
           </Heading>
-          <strong className={styles.message}>
+          <strong className="text-[3rem] text-center">
             {TEXT}
           </strong>
         </>
@@ -53,7 +52,7 @@ export default function Countdown() {
           <Heading as="h2" className="margin-bottom--lg text--center">
             距离 {EVENT} 还有
           </Heading>
-          <div className={styles.timer}>
+          <div className="flex gap-8 flex-wrap justify-center max-md:grid max-md:grid-cols-2 max-md:justify-items-center max-md:gap-0 max-[480px]:grid-cols-1">
             <ProgressCircle 
               unit="Days"
               total={365}
