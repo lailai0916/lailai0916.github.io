@@ -143,7 +143,7 @@ export default function Blog() {
               <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
                 <path d="M8.59 16.58L13.17 12L8.59 7.41L10 6L16 12L10 18L8.59 16.58Z" />
               </svg>
-              最新技术分享
+              最新文章
             </p>
             <div className="flex-col sm:flex-row flex-wrap flex gap-5 text-start my-5">
               <div className="flex-1 min-w-[40%] text-start">
