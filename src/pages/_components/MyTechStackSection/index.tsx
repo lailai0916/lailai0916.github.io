@@ -1,13 +1,20 @@
 import React from 'react';
+import { useColorMode } from '@docusaurus/theme-common';
 import styles from '../../styles.module.css';
 
 const techStack = [
+  { name: 'C', icon: 'c' },
   { name: 'C++', icon: 'cpp' },
   { name: 'Python', icon: 'py' },
-  { name: 'React', icon: 'react' },
-  { name: 'TypeScript', icon: 'ts' },
+  { name: 'Java', icon: 'java' },
+  { name: 'Markdown', icon: 'md' },
   { name: 'Latex', icon: 'latex' },
-  { name: 'Git', icon: 'git' },
+  { name: 'HTML', icon: 'html' },
+  { name: 'CSS', icon: 'css' },
+  { name: 'JavaScript', icon: 'js' },
+  { name: 'TypeScript', icon: 'ts' },
+  { name: 'React', icon: 'react' },
+  { name: 'Tailwind CSS', icon: 'tailwind' },
 ];
 
 export default function MyTechStackSection() {
