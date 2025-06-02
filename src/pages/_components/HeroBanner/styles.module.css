@@ -1,5 +1,5 @@
 .hero {
-  background-color: #f5f6f7;
+  background-color: var(--ifm-color-emphasis-100);
   padding: 48px;
 }
 

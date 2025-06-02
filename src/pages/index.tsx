@@ -27,10 +27,10 @@ export default function Home() {
         <HeroBanner />
         <div className={styles.section}>
           <FeaturesContainer />
-          <Countdown />
         </div>
-        <Project />
+        <Countdown />
         <Blog />
+        <Project />
         <Exploration />
         <Quote />
         <Skill />

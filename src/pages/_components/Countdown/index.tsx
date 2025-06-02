@@ -86,7 +86,7 @@ export default function Countdown() {
           <Heading as="h2" className="margin-bottom--lg text--center">
             距离 {EVENT} 还有
           </Heading>
-          <div className="flex gap-8 justify-center max-md:grid max-md:grid-cols-2 max-md:w-max max-md:mx-auto max-[400px]:grid-cols-1">
+          <div className="flex gap-8 justify-center w-fit mx-auto max-md:grid max-md:grid-cols-2 max-[400px]:grid-cols-1">
             <ProgressCircle 
               unit="Days"
               total={365}

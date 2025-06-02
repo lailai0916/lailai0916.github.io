@@ -1,6 +1,7 @@
 import React from 'react';
 import styles from '../../styles.module.css';
 import Link from '@docusaurus/Link';
+import clsx from 'clsx';
 
 const projects = [
   {
@@ -22,7 +23,7 @@ const projects = [
 
 export default function Project() {
   return (
-    <div className={styles.section}>
+    <div className={clsx(styles.section, styles.sectionAlt)}>
       <div className="container">
         <div className="row">
           <div className="col col--12">
