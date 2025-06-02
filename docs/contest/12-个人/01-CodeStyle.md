@@ -82,6 +82,7 @@ using namespace std;
 
 ```cpp
 using ll=long long;
+using ull=unsigned long long;
 ```
 
 ### 修饰
