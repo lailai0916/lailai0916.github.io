@@ -1,30 +1,6 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import Link from '@docusaurus/Link';
-
-// 动态导入博客数据
-let blogListData: any = null;
-try {
-  // 尝试从生成的数据文件导入博客列表
-  blogListData = require('@site/.docusaurus/docusaurus-plugin-content-blog/default/blog-post-list-prop-default.json');
-} catch (error) {
-  console.warn('无法加载博客数据，使用默认数据');
-}
-
-interface BlogPost {
-  title: string;
-  permalink: string;
-  unlisted: boolean;
-  date: string;
-}
-
-// 格式化日期为中文格式
-function formatDateToChinese(dateString: string): string {
-  const date = new Date(dateString);
-  const year = date.getFullYear();
-  const month = date.getMonth() + 1;
-  const day = date.getDate();
-  return `${year}年${month}月${day}日`;
-}
+import { getRecentBlogPosts, BLOG_CONFIG, type ProcessedBlogPost } from '@site/src/utils/blogData';
 
 function BlogCard({ title, date, permalink }: { title: string; date: string; permalink: string }) {
   return (
@@ -93,14 +69,6 @@ function Section({ children, background = null }: { children: React.ReactNode; b
   );
 }
 
-function Header({ children }: { children: React.ReactNode }) {
-  return (
-    <h2 className="font-bold text-4xl text-gray-900 dark:text-neutral-100 leading-tight mb-6">
-      {children}
-    </h2>
-  );
-}
-
 function Para({ children }: { children: React.ReactNode }) {
   return (
     <p className="text-lg lg:text-xl text-gray-700 dark:text-neutral-300 leading-relaxed mb-6">
@@ -133,26 +101,56 @@ function CTA({ children, href, icon, color = 'blue' }: { children: React.ReactNo
   );
 }
 
-export default function Blog() {
-  let recentPosts: Array<{title: string; date: string; permalink: string}> = [];
-  
-  if (blogListData && blogListData.items) {
-    recentPosts = blogListData.items
-      .filter((post: BlogPost) => !post.unlisted && post.permalink !== "/blog/welcome") // 过滤掉置顶欢迎文章
-      .slice(0, 4)
-      .map((post: BlogPost) => ({
-        title: post.title,
-        date: formatDateToChinese(post.date),
-        permalink: post.permalink,
-      }));
+// 博客卡片列表组件
+function BlogCardList({ posts }: { posts: ProcessedBlogPost[] }) {
+  if (posts.length === 0) {
+    return (
+      <div className="w-full text-center py-12">
+        <p className="text-gray-500 dark:text-neutral-400 text-lg">
+          {BLOG_CONFIG.EMPTY_STATE_MESSAGE}
+        </p>
+      </div>
+    );
   }
+
+  return (
+    <>
+      <div className="flex-1 min-w-[280px] text-start">
+        <BlogCard {...posts[0]} />
+      </div>
+      {posts.length > 1 && (
+        <div className="flex-1 min-w-[280px] text-start">
+          <BlogCard {...posts[1]} />
+        </div>
+      )}
+      {posts.length > 2 && (
+        <div className="flex-1 min-w-[280px] text-start">
+          <BlogCard {...posts[2]} />
+        </div>
+      )}
+      {posts.length > 3 && (
+        <div className="hidden sm:flex-1 sm:block sm:min-w-[280px]">
+          <BlogCard {...posts[3]} />
+        </div>
+      )}
+    </>
+  );
+}
+
+export default function Blog() {
+  // 使用工具函数获取博客数据，useMemo确保性能优化
+  const recentPosts = useMemo(() => {
+    return getRecentBlogPosts();
+  }, []);
 
   return (
     <Section background="right-card">
       <div className="max-w-7xl mx-auto flex flex-col lg:flex-row px-5">
         <div className="max-w-3xl lg:max-w-7xl gap-5 flex flex-col lg:flex-row lg:px-5">
           <div className="w-full lg:w-6/12 max-w-3xl flex flex-col items-start justify-start lg:ps-5 lg:pe-10">
-            <Header>持续学习，拥抱未来</Header>
+            <h2 className="font-bold text-4xl text-gray-900 dark:text-neutral-100 leading-tight mb-6">
+              持续学习，拥抱未来
+            </h2>
             <Para>
               技术发展日新月异，我们需要保持敏锐的学习能力。每一次新技术的掌握，
               都是对未来的投资。通过不断的实践和总结，将知识转化为真正的技能。
@@ -177,34 +175,7 @@ export default function Blog() {
               最新文章
             </p>
             <div className="flex-col sm:flex-row flex-wrap flex gap-6 text-start my-8">
-              {recentPosts.length > 0 ? (
-                <>
-                  <div className="flex-1 min-w-[280px] text-start">
-                    <BlogCard {...recentPosts[0]} />
-                  </div>
-                  {recentPosts.length > 1 && (
-                    <div className="flex-1 min-w-[280px] text-start">
-                      <BlogCard {...recentPosts[1]} />
-                    </div>
-                  )}
-                  {recentPosts.length > 2 && (
-                    <div className="flex-1 min-w-[280px] text-start">
-                      <BlogCard {...recentPosts[2]} />
-                    </div>
-                  )}
-                  {recentPosts.length > 3 && (
-                    <div className="hidden sm:flex-1 sm:block sm:min-w-[280px]">
-                      <BlogCard {...recentPosts[3]} />
-                    </div>
-                  )}
-                </>
-              ) : (
-                <div className="w-full text-center py-12">
-                  <p className="text-gray-500 dark:text-neutral-400 text-lg">
-                    暂无文章，敬请期待更多精彩内容...
-                  </p>
-                </div>
-              )}
+              <BlogCardList posts={recentPosts} />
             </div>
             <div className="flex lg:hidden justify-start w-full">
               <CTA color="gray" icon="news" href="/blog">
