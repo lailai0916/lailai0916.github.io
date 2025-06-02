@@ -84,13 +84,15 @@ using namespace std;
 using ll=long long;
 ```
 
-### 常量
+### 修饰
 
 - 常量使用 `const` 定义，避免使用宏进行常量定义。
 
 ```cpp
 const int N=100005;
 ```
+
+- 不使用 `static`、`register`、`inline` 修饰。
 
 ## 核心
 
