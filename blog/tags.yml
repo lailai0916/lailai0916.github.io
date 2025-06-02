@@ -2,10 +2,6 @@ top:
   label: 置顶
   permalink: /top
 
-welcome:
-  label: 欢迎
-  permalink: /welcome
-
 notice:
   label: 公告
   permalink: /notice

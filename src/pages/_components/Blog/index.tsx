@@ -1,39 +1,35 @@
 import React from 'react';
 import Link from '@docusaurus/Link';
 
-const recentPosts = [
-  {
-    title: 'TypeScript 进阶实践',
-    date: '2025年5月28日',
-    url: '/blog/welcome',
-  },
-  {
-    title: 'React 19 新特性解析',
-    date: '2025年5月25日',
-    url: '/blog/welcome',
-  },
-  {
-    title: '前端性能优化指南',
-    date: '2025年5月22日',
-    url: '/blog/welcome',
-  },
-  {
-    title: 'Docker 容器化实战',
-    date: '2025年5月20日',
-    url: '/blog/welcome',
-  },
-];
+// 动态导入博客数据
+let blogListData: any = null;
+try {
+  // 尝试从生成的数据文件导入博客列表
+  blogListData = require('@site/.docusaurus/docusaurus-plugin-content-blog/default/blog-post-list-prop-default.json');
+} catch (error) {
+  console.warn('无法加载博客数据，使用默认数据');
+}
 
 interface BlogPost {
   title: string;
+  permalink: string;
+  unlisted: boolean;
   date: string;
-  url: string;
 }
 
-function BlogCard({ title, date, url }: BlogPost) {
+// 格式化日期为中文格式
+function formatDateToChinese(dateString: string): string {
+  const date = new Date(dateString);
+  const year = date.getFullYear();
+  const month = date.getMonth() + 1;
+  const day = date.getDate();
+  return `${year}年${month}月${day}日`;
+}
+
+function BlogCard({ title, date, permalink }: { title: string; date: string; permalink: string }) {
   return (
     <Link
-      to={url}
+      to={permalink}
       className="group block h-full w-full rounded-2xl outline-none focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 no-underline hover:no-underline"
       style={{ textDecoration: 'none' }}
     >
@@ -125,6 +121,19 @@ function CTA({ children, href, icon, color = 'blue' }: { children: React.ReactNo
 }
 
 export default function Blog() {
+  let recentPosts: Array<{title: string; date: string; permalink: string}> = [];
+  
+  if (blogListData && blogListData.items) {
+    recentPosts = blogListData.items
+      .filter((post: BlogPost) => !post.unlisted && post.permalink !== "/blog/welcome") // 过滤掉置顶欢迎文章
+      .slice(0, 4)
+      .map((post: BlogPost) => ({
+        title: post.title,
+        date: formatDateToChinese(post.date),
+        permalink: post.permalink,
+      }));
+  }
+
   return (
     <Section background="right-card">
       <div className="max-w-7xl mx-auto flex flex-col lg:flex-row px-5">
@@ -155,18 +164,34 @@ export default function Blog() {
               最新文章
             </p>
             <div className="flex-col sm:flex-row flex-wrap flex gap-6 text-start my-8">
-              <div className="flex-1 min-w-[280px] text-start">
-                <BlogCard {...recentPosts[0]} />
-              </div>
-              <div className="flex-1 min-w-[280px] text-start">
-                <BlogCard {...recentPosts[1]} />
-              </div>
-              <div className="flex-1 min-w-[280px] text-start">
-                <BlogCard {...recentPosts[2]} />
-              </div>
-              <div className="hidden sm:flex-1 sm:block sm:min-w-[280px]">
-                <BlogCard {...recentPosts[3]} />
-              </div>
+              {recentPosts.length > 0 ? (
+                <>
+                  <div className="flex-1 min-w-[280px] text-start">
+                    <BlogCard {...recentPosts[0]} />
+                  </div>
+                  {recentPosts.length > 1 && (
+                    <div className="flex-1 min-w-[280px] text-start">
+                      <BlogCard {...recentPosts[1]} />
+                    </div>
+                  )}
+                  {recentPosts.length > 2 && (
+                    <div className="flex-1 min-w-[280px] text-start">
+                      <BlogCard {...recentPosts[2]} />
+                    </div>
+                  )}
+                  {recentPosts.length > 3 && (
+                    <div className="hidden sm:flex-1 sm:block sm:min-w-[280px]">
+                      <BlogCard {...recentPosts[3]} />
+                    </div>
+                  )}
+                </>
+              ) : (
+                <div className="w-full text-center py-12">
+                  <p className="text-gray-500 dark:text-neutral-400 text-lg">
+                    暂无文章，敬请期待更多精彩内容...
+                  </p>
+                </div>
+              )}
             </div>
             <div className="flex lg:hidden justify-start w-full">
               <CTA color="gray" icon="news" href="/blog">
