@@ -36,8 +36,21 @@ function BlogCard({ title, date, permalink }: { title: string; date: string; per
       <article className="relative overflow-hidden p-6 cursor-pointer w-full h-full flex flex-col bg-white dark:bg-neutral-900 hover:bg-gray-50 dark:hover:bg-neutral-800/50 rounded-2xl transition-all duration-200 ease-out shadow-sm hover:shadow-md dark:shadow-none border border-gray-200 dark:border-neutral-700 hover:border-gray-300 dark:hover:border-neutral-600">
         <div className="flex-1 space-y-4">
           <header>
-            <h3 className="font-semibold text-lg text-gray-900 dark:text-neutral-100 leading-snug group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-200">
-              {title}
+            <h3 className="font-semibold text-lg text-gray-900 dark:text-neutral-100 leading-snug transition-colors duration-200">
+              <span 
+                className="group-hover:transition-colors group-hover:duration-200"
+                style={{
+                  color: 'inherit'
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.color = 'var(--ifm-color-primary)';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.color = 'inherit';
+                }}
+              >
+                {title}
+              </span>
             </h3>
           </header>
           <footer className="pt-2">
