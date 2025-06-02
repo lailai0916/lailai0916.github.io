@@ -6,25 +6,21 @@ const recentPosts = [
     title: 'TypeScript 进阶实践',
     date: '2025年5月28日',
     url: '/blog/welcome',
-    icon: 'blog',
   },
   {
     title: 'React 19 新特性解析',
     date: '2025年5月25日',
     url: '/blog/welcome',
-    icon: 'blog',
   },
   {
     title: '前端性能优化指南',
     date: '2025年5月22日',
     url: '/blog/welcome',
-    icon: 'blog',
   },
   {
     title: 'Docker 容器化实战',
     date: '2025年5月20日',
     url: '/blog/welcome',
-    icon: 'blog',
   },
 ];
 
@@ -32,10 +28,9 @@ interface BlogPost {
   title: string;
   date: string;
   url: string;
-  icon: string;
 }
 
-function BlogCard({ title, date, url, icon }: BlogPost) {
+function BlogCard({ title, date, url }: BlogPost) {
   return (
     <Link
       to={url}
@@ -91,7 +86,7 @@ function Section({ children, background = null }: { children: React.ReactNode; b
 
 function Header({ children }: { children: React.ReactNode }) {
   return (
-    <h2 className="font-bold text-4xl lg:text-5xl text-gray-900 dark:text-gray-100 leading-tight mb-6">
+    <h2 className="font-bold text-4xl text-gray-900 dark:text-gray-100 leading-tight mb-6">
       {children}
     </h2>
   );

@@ -28,11 +28,11 @@ export default function Home() {
         <div className={styles.section}>
           <FeaturesContainer />
         </div>
-        <Countdown />
         <Blog />
+        <Countdown />
         <Project />
-        <Exploration />
-        <Quote />
+        {/* <Exploration />
+        <Quote /> */}
         <Skill />
         <Community />
         <Device />
