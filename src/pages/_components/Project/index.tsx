@@ -5,25 +5,25 @@ import clsx from 'clsx';
 
 const projects = [
   {
-    title: '项目一',
-    description: 'This is a test.',
-    link: '/docs/project/test',
+    title: 'lailai\'s Home',
+    description: '基于 Docusaurus 构建的个人网站。',
+    link: '/docs/project/GitHub/lailai\'s%20home/README',
   },
   {
-    title: '项目二',
-    description: 'This is a test.',
-    link: '/docs/project/test',
+    title: 'iGame',
+    description: '基于 C++ 的终端游戏。',
+    link: '/docs/project/终端/iGame',
   },
   {
-    title: '项目三',
-    description: 'This is a test.',
-    link: '/docs/project/test',
+    title: 'iClock',
+    description: '基于 Desmos 的数学艺术作品。',
+    link: '/docs/project/Desmos/艺术博览会/iClock',
   },
 ];
 
 export default function Project() {
   return (
-    <div className={clsx(styles.section, styles.sectionAlt)}>
+    <div className={styles.section}>
       <div className="container">
         <div className="row">
           <div className="col col--12">

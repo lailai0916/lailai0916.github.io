@@ -31,8 +31,8 @@ export default function Home() {
         <Blog />
         <Countdown />
         <Project />
-        {/* <Exploration />
-        <Quote /> */}
+        <Exploration />
+        {/* <Quote /> */}
         <Skill />
         <Community />
         <Device />
