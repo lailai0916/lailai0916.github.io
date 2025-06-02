@@ -3,7 +3,6 @@ import clsx from 'clsx'
 import React, { memo } from 'react'
 
 import type { Resource } from '@site/src/data/resources'
-import Tooltip from '../../_components/Tooltip'
 import styles from './styles.module.css'
 
 const ResourceCard = memo(({ resource }: { resource: Resource }) => (
@@ -21,9 +20,7 @@ const ResourceCard = memo(({ resource }: { resource: Resource }) => (
           </Link>
         </h4>
       </div>
-      <Tooltip key={resource.name} text={resource.desc} anchorEl="#__docusaurus" id={`tooltip-${resource.name}`}>
-        <p className={styles.resourceCardDesc}>{resource.desc}</p>
-      </Tooltip>
+      <p className={styles.resourceCardDesc}>{resource.desc}</p>
     </div>
   </li>
 ))
