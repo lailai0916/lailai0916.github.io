@@ -7,7 +7,7 @@ const projects = [
   {
     title: 'lailai\'s Home',
     description: '基于 Docusaurus 构建的个人网站。',
-    link: '/docs/project/GitHub/lailai\'s%20home/README',
+    link: '/docs/project/GitHub/lailai\'shome/README',
   },
   {
     title: 'iGame',
