@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import Heading from '@theme/Heading';
-import ProgressCircle from './_components/ProgressCircle';
+import ProgressCircle from './ProgressCircle';
 
 const EVENT = '2026 年';
 const DATE = '2026-01-01T00:00:00';
