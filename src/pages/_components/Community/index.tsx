@@ -9,7 +9,7 @@ export default function Community() {
       <div className="max-w-7xl mx-auto px-5 w-full">
         <div className="w-full">
           <div className="w-full">
-            <h2 className="text-center mb-8 text-3xl lg:text-4xl font-bold text-gray-900 dark:text-gray-100">
+            <h2 className="text-center mb-8 text-4xl font-bold text-gray-900 dark:text-gray-100">
               我的社区
             </h2>
           </div>
