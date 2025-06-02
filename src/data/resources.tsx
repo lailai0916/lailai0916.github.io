@@ -265,6 +265,12 @@ export const resourceData: ResourceCategory[] = [
         logo: 'http://yuantiji.ac/favicon.ico',
         href: 'http://yuantiji.ac/zh/',
       },
+      {
+        name: 'Speedtest',
+        desc: '全球领先的网络速度测试工具',
+        logo: 'https://www.speedtest.net/favicon.ico',
+        href: 'https://www.speedtest.net',
+      },
     ],
   },
   {
@@ -516,28 +522,28 @@ export const resourceData: ResourceCategory[] = [
     name: '🛠️ 开发辅助工具',
     resources: [
       {
-        name: 'GitHub',
-        desc: '全球最大的代码托管和协作平台',
-        logo: 'https://github.githubassets.com/favicons/favicon.svg',
-        href: 'https://github.com',
-      },
-      {
         name: 'Compiler Explorer',
         desc: '在线编译器和汇编代码分析工具',
         logo: 'https://godbolt.org/favicon.ico',
         href: 'https://godbolt.org',
       },
       {
-        name: '清华大学开源软件镜像站',
-        desc: '提供各种开源软件和包管理器的镜像服务',
-        logo: 'https://mirrors.tuna.tsinghua.edu.cn/favicon.ico',
-        href: 'https://mirrors.tuna.tsinghua.edu.cn',
-      },
-      {
         name: '电子教室终结者',
         desc: '解除电子教室软件控制的实用工具',
         logo: 'https://dzjszjz.nkxingxh.top/favicon.ico',
         href: 'https://dzjszjz.nkxingxh.top',
+      },
+      {
+        name: 'React',
+        desc: 'Facebook 开发的 JavaScript 库，用于构建用户界面',
+        logo: 'https://react.dev/favicon.ico',
+        href: 'https://react.dev',
+      },
+      {
+        name: '清华大学开源软件镜像站',
+        desc: '提供各种开源软件和包管理器的镜像服务',
+        logo: 'https://mirrors.tuna.tsinghua.edu.cn/static/img/logo-small@2x.png',
+        href: 'https://mirrors.tuna.tsinghua.edu.cn',
       },
     ],
   },
@@ -607,6 +613,18 @@ export const resourceData: ResourceCategory[] = [
         desc: '收集各大品牌官方配色方案的设计资源',
         logo: 'https://brandcolors.net/assets/img/logo.svg',
         href: 'https://brandcolors.net',
+      },
+      {
+        name: 'Maker World',
+        desc: '提供丰富的设计资源和创意工具',
+        logo: 'https://makerworld.com.cn/favicon.ico',
+        href: 'https://makerworld.com.cn',
+      },
+      {
+        name: 'amCharts Pixel Map',
+        desc: '在线创建和编辑像素地图的工具',
+        logo: 'https://pixelmap.amcharts.com/favicon.ico',
+        href: 'https://pixelmap.amcharts.com',
       },
     ],
   },
