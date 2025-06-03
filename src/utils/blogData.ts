@@ -29,9 +29,10 @@ export const BLOG_CONFIG = {
  */
 export function formatDateToChinese(dateString: string): string {
   const date = new Date(dateString);
-  const year = date.getFullYear();
-  const month = date.getMonth() + 1;
-  const day = date.getDate();
+  // 使用 UTC 方法获取日期，避免时区转换问题
+  const year = date.getUTCFullYear();
+  const month = date.getUTCMonth() + 1;
+  const day = date.getUTCDate();
   return `${year}年${month}月${day}日`;
 }
 
