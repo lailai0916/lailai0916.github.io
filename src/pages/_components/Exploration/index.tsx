@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from '../../styles.module.css';
+import { CardGrid, CardItem } from '../common/CardGrid';
 
 const exploringItems = [
   { name: '算法竞赛', icon: '🏆', description: '参与算法竞赛，深入学习数据结构与算法，提升逻辑思维能力。' },
@@ -10,29 +11,20 @@ const exploringItems = [
 
 export default function Exploration() {
   return (
-    <div className={styles.section}>
-      <div className="container">
-        <div className="row">
-          <div className="col col--12">
-            <h2 style={{ textAlign: 'center', marginBottom: '2rem' }}>当前探索</h2>
-          </div>
-        </div>
-        <div className="row">
-          {exploringItems.map((item, idx) => (
-            <div key={idx} className="col col--3" style={{ marginBottom: '1.5rem' }}>
-              <div className="card shadow--md" style={{height: '100%'}}>
-                <div className="card__header" style={{textAlign: 'center'}}>
-                  <div style={{ fontSize: '2.5rem', marginBottom: '0.5rem' }}>{item.icon}</div>
-                  <h3>{item.name}</h3>
-                </div>
-                <div className="card__body">
-                  <p style={{textAlign: 'center'}}>{item.description}</p>
-                </div>
-              </div>
+    <CardGrid title="当前探索">
+      {exploringItems.map((item, idx) => (
+        <CardItem key={idx} colSize="col--3">
+          <div className={`card shadow--md ${styles.fullHeightCard}`}>
+            <div className={`card__header ${styles.centerContent}`}>
+              <div className={styles.cardIcon}>{item.icon}</div>
+              <h3>{item.name}</h3>
             </div>
-          ))}
-        </div>
-      </div>
-    </div>
+            <div className="card__body">
+              <p className={styles.centerContent}>{item.description}</p>
+            </div>
+          </div>
+        </CardItem>
+      ))}
+    </CardGrid>
   );
 }

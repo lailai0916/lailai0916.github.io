@@ -1,6 +1,6 @@
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Heading from '@theme/Heading';
-import globalStyles from '../../styles.module.css';
+import styles from '../../styles.module.css';
 
 const EVENT = '2026 年';
 const DATE = '2026-01-01T00:00:00';
@@ -71,7 +71,7 @@ export default function Countdown() {
   }, []);
 
   return (
-    <div className={globalStyles.section}>
+    <div className={styles.section}>
       {isTimeUp ? (
         <>
           <Heading as="h2" className="text-[5rem] text-center">

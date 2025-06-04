@@ -1,7 +1,6 @@
 import React from 'react';
 import styles from '../../styles.module.css';
-import Link from '@docusaurus/Link';
-import clsx from 'clsx';
+import { CardGrid, CardItem } from '../common/CardGrid';
 
 const favoriteQuotes = [
   {
@@ -20,28 +19,19 @@ const favoriteQuotes = [
 
 export default function Quote() {
   return (
-    <div className={clsx(styles.section, styles.sectionAlt)}>
-      <div className="container">
-        <div className="row">
-          <div className="col col--12">
-            <h2 style={{ textAlign: 'center', marginBottom: '2rem' }}>一些语录</h2>
-          </div>
-        </div>
-        <div className="row">
-          {favoriteQuotes.map((item, idx) => (
-            <div key={idx} className="col col--4" style={{ marginBottom: '1.5rem' }}>
-              <div className="card shadow--md" style={{height: '100%'}}>
-                <div className="card__body" style={{ fontStyle: 'italic', fontSize: '1.1rem'}}>
-                  <p>“{item.quote}”</p>
-                </div>
-                <div className="card__footer" style={{textAlign: 'right'}}>
-                  <small>- {item.author}</small>
-                </div>
-              </div>
+    <CardGrid title="一些语录" hasAltBackground>
+      {favoriteQuotes.map((item, idx) => (
+        <CardItem key={idx}>
+          <div className={`card shadow--md ${styles.fullHeightCard}`}>
+            <div className={`card__body ${styles.quoteBody}`}>
+              <p>"{item.quote}"</p>
             </div>
-          ))}
-        </div>
-      </div>
-    </div>
+            <div className={`card__footer ${styles.quoteFooter}`}>
+              <small>- {item.author}</small>
+            </div>
+          </div>
+        </CardItem>
+      ))}
+    </CardGrid>
   );
 }
