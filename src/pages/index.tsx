@@ -1,3 +1,4 @@
+import React from 'react';
 import Layout from '@theme/Layout';
 import styles from './styles.module.css';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
@@ -32,7 +33,7 @@ export default function Home() {
         <Countdown />
         <Project />
         <Exploration />
-        {/* <Quote /> */}
+        <Quote />
         <Skill />
         <Community />
         <Device />
