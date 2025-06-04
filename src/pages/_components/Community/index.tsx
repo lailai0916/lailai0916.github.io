@@ -8,6 +8,8 @@ function CommunityCard({ href, label, icon }: {
   label: string;
   icon: string;
 }) {
+  const [isHovered, setIsHovered] = React.useState(false);
+
   return (
     <Link
       href={href}
@@ -18,12 +20,21 @@ function CommunityCard({ href, label, icon }: {
     >
       <article className="relative overflow-hidden p-6 cursor-pointer w-full h-full flex flex-col items-center justify-center bg-white dark:bg-neutral-900 hover:bg-gray-50 dark:hover:bg-neutral-800/50 rounded-2xl transition-all duration-200 ease-out shadow-sm hover:shadow-lg dark:shadow-none border border-gray-200 dark:border-neutral-700 hover:border-gray-300 dark:hover:border-neutral-600">
         <div className="flex flex-col items-center space-y-3">
-          <div className="group-hover:scale-110 transition-transform duration-200">
+          <div 
+            className="group-hover:scale-110 transition-transform duration-200"
+            onMouseEnter={() => setIsHovered(true)}
+            onMouseLeave={() => setIsHovered(false)}
+          >
             <Icon 
               icon={icon} 
               width="40" 
               height="40" 
-              className="text-gray-700 group-hover:text-blue-600 dark:text-gray-300 dark:group-hover:text-blue-400 transition-colors duration-200"
+              className="transition-colors duration-200"
+              style={{
+                color: isHovered 
+                  ? 'var(--ifm-color-primary)' 
+                  : '#374151' // gray-700 equivalent
+              }}
             />
           </div>
           <h3 className="font-medium text-sm text-gray-900 dark:text-neutral-100 text-center leading-snug">

@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import Heading from '@theme/Heading';
 import styles from '../../styles.module.css';
 
 const EVENT = '2026 年';
@@ -73,19 +72,21 @@ export default function Countdown() {
   return (
     <div className={styles.section}>
       {isTimeUp ? (
-        <>
-          <Heading as="h2" className="text-[5rem] text-center">
+        <div className="text-center">
+          <h2 className="font-bold text-4xl text-gray-900 dark:text-neutral-100 leading-tight mb-4">
             {EVENT}
-          </Heading>
-          <strong className="text-[3rem] text-center">
+          </h2>
+          <strong className="text-3xl text-gray-700 dark:text-neutral-300">
             {TEXT}
           </strong>
-        </>
+        </div>
       ) : (
         <>
-          <Heading as="h2" className="margin-bottom--lg text--center">
-            距离 {EVENT} 还有
-          </Heading>
+          <div className="text-center mb-12">
+            <h2 className="font-bold text-4xl text-gray-900 dark:text-neutral-100 leading-tight mb-4">
+              距离 {EVENT} 还有
+            </h2>
+          </div>
           <div className="flex gap-8 justify-center w-fit mx-auto max-md:grid max-md:grid-cols-2 max-[400px]:grid-cols-1">
             <ProgressCircle 
               unit="Days"

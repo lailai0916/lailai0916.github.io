@@ -89,7 +89,7 @@ export default function Quote() {
       <div className="max-w-7xl mx-auto flex flex-col px-5">
         <div className="text-center mb-12">
           <h2 className="font-bold text-4xl text-gray-900 dark:text-neutral-100 leading-tight mb-4">
-            一些语录
+            思想启迪
           </h2>
           <p className="text-lg lg:text-xl text-gray-700 dark:text-neutral-300 leading-relaxed max-w-3xl mx-auto">
             智者的话语如明灯，照亮前行的道路。这些箴言见证着思想的力量
