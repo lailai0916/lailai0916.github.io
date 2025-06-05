@@ -1,67 +1,39 @@
 import React from 'react';
 
 const techStack = [
-  { name: 'C', icon: 'c', category: '系统编程', level: '熟练' },
-  { name: 'C++', icon: 'cpp', category: '系统编程', level: '熟练' },
-  { name: 'Python', icon: 'py', category: '脚本语言', level: '熟练' },
-  { name: 'Java', icon: 'java', category: '企业开发', level: '了解' },
-  { name: 'Markdown', icon: 'md', category: '文档编写', level: '精通' },
-  { name: 'LaTeX', icon: 'latex', category: '学术排版', level: '熟练' },
-  { name: 'HTML', icon: 'html', category: 'Web基础', level: '熟练' },
-  { name: 'CSS', icon: 'css', category: 'Web基础', level: '熟练' },
-  { name: 'JavaScript', icon: 'js', category: '前端开发', level: '熟练' },
-  { name: 'TypeScript', icon: 'ts', category: '前端开发', level: '熟练' },
-  { name: 'React', icon: 'react', category: 'Frontend框架', level: '熟练' },
-  { name: 'Tailwind CSS', icon: 'tailwind', category: 'CSS框架', level: '熟练' },
+  { name: 'C', icon: 'c' },
+  { name: 'C++', icon: 'cpp' },
+  { name: 'Python', icon: 'py' },
+  { name: 'Java', icon: 'java' },
+  { name: 'Markdown', icon: 'md' },
+  { name: 'LaTeX', icon: 'latex' },
+  { name: 'HTML', icon: 'html' },
+  { name: 'CSS', icon: 'css' },
+  { name: 'JavaScript', icon: 'js' },
+  { name: 'TypeScript', icon: 'ts' },
+  { name: 'React', icon: 'react' },
+  { name: 'Tailwind CSS', icon: 'tailwind' },
 ];
 
-function SkillCard({ name, icon, category, level }: {
+function SkillCard({ name, icon }: {
   name: string;
   icon: string;
-  category: string;
-  level: string;
 }) {
-  const getLevelColor = (level: string) => {
-    switch (level) {
-      case '精通': return 'text-green-600 dark:text-green-400 bg-green-50 dark:bg-green-900/20';
-      case '熟练': return 'text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-900/20';
-      case '了解': return 'text-gray-600 dark:text-gray-400 bg-gray-50 dark:bg-gray-900/20';
-      default: return 'text-gray-600 dark:text-gray-400 bg-gray-50 dark:bg-gray-900/20';
-    }
-  };
-
   return (
     <article className="group relative overflow-hidden p-6 w-full h-full flex flex-col bg-white dark:bg-neutral-900 hover:bg-gray-50 dark:hover:bg-neutral-800/50 rounded-2xl transition-all duration-200 ease-out shadow-sm hover:shadow-lg dark:shadow-none border border-gray-200 dark:border-neutral-700 hover:border-gray-300 dark:hover:border-neutral-600">
       <div className="flex-1 flex flex-col items-center text-center space-y-4">
-        <header className="space-y-3">
-          <div className="flex justify-center">
-            <div className="group-hover:scale-110 transition-transform duration-200">
-              <img 
-                src={`https://skillicons.dev/icons?i=${icon}&theme=light#gh-light-mode-only`} 
-                alt={name} 
-                className="w-12 h-12 dark:hidden"
-              />
-              <img 
-                src={`https://skillicons.dev/icons?i=${icon}&theme=dark#gh-dark-mode-only`} 
-                alt={name} 
-                className="w-12 h-12 hidden dark:block"
-              />
-            </div>
+        <div className="flex justify-center items-center h-12">
+          <div className="group-hover:scale-110 transition-transform duration-200">
+            <img 
+              src={`https://skillicons.dev/icons?i=${icon}&theme=light`} 
+              alt={name} 
+              className="w-12 h-12 object-contain transition-all duration-200 dark:invert dark:brightness-0 dark:contrast-100"
+            />
           </div>
-          <div>
-            <h3 className="font-semibold text-lg text-gray-900 dark:text-neutral-100 leading-snug">
-              {name}
-            </h3>
-            <p className="text-sm text-gray-600 dark:text-neutral-400 mt-1">
-              {category}
-            </p>
-          </div>
-        </header>
-        <footer>
-          <span className={`inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium ${getLevelColor(level)}`}>
-            {level}
-          </span>
-        </footer>
+        </div>
+        <h3 className="font-semibold text-lg text-gray-900 dark:text-neutral-100 leading-snug">
+          {name}
+        </h3>
       </div>
     </article>
   );
