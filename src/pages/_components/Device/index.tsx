@@ -11,8 +11,9 @@ function DeviceCard({ name, icon }: {
         <div className="group-hover:scale-110 transition-transform duration-200">
           <img 
             src={icon} 
-            alt={name} 
-            className="w-10 h-10 object-contain filter brightness-0 dark:invert transition-transform duration-200"
+            alt={name}
+            draggable="false"
+            className="w-10 h-10 object-contain filter brightness-0 dark:invert transition-transform duration-200 select-none"
           />
         </div>
         <h3 className="font-medium text-base text-gray-900 dark:text-neutral-100 text-center leading-snug">

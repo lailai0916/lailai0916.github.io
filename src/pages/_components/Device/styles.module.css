@@ -15,14 +15,21 @@
   height: 100%;
 }
 
-/* 设备图标样式 */
+/* 设备图标样式 - 只有图标不可选中 */
 .deviceCard img {
   width: 36px;
   height: 36px;
   margin-bottom: 0.5rem;
   filter: invert(0%) sepia(100%) saturate(0%) hue-rotate(0deg) brightness(0%) contrast(100%);
   user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
   pointer-events: none;
+  -webkit-user-drag: none;
+  -moz-user-drag: none;
+  -ms-user-drag: none;
+  user-drag: none;
 }
 
 /* 暗色模式下的图标 */
