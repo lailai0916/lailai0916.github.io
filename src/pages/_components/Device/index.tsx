@@ -47,7 +47,7 @@ function Section({ children, background = null }: { children: React.ReactNode; b
 
 export default function Device() {
   return (
-    <Section background="alt">
+    <Section background={null}>
       <div className="max-w-7xl mx-auto flex flex-col px-5">
         <div className="text-center mb-12">
           <h2 className="font-bold text-4xl text-gray-900 dark:text-neutral-100 leading-tight mb-4">

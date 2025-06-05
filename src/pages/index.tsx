@@ -7,14 +7,14 @@ import TopBanner from './_components/TopBanner';
 import HeroBanner from './_components/HeroBanner';
 import FeaturesContainer from './_components/FeaturesContainer';
 
+import Blog from './_components/Blog';
 import Countdown from './_components/Countdown';
 import Project from './_components/Project';
-import Blog from './_components/Blog';
 
+import Skill from './_components/Skill';
 import Exploration from './_components/Exploration';
 import Quote from './_components/Quote';
 
-import Skill from './_components/Skill';
 import Community from './_components/Community';
 import Device from './_components/Device';
 
@@ -33,9 +33,9 @@ export default function Home() {
         <Blog />
         <Countdown />
         <Project />
+        <Skill />
         <Exploration />
         <Quote />
-        <Skill />
         <Community />
         <Device />
       </main>

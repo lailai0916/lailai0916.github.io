@@ -91,9 +91,21 @@ function ProjectCard({ title, description, link, tech, status }: {
   );
 }
 
-function Section({ children }: { children: React.ReactNode }) {
+function Section({ children, background = null }: { children: React.ReactNode; background?: string | null }) {
   return (
-    <div className="mx-auto flex flex-col w-full max-w-7xl">
+    <div
+      className={`mx-auto flex flex-col w-full ${
+        background === null ? 'max-w-7xl' : ''
+      } ${
+        background === 'alt'
+          ? 'border-t border-gray-200/30 dark:border-neutral-700/30'
+          : ''
+      }`}
+      style={{ 
+        contain: 'content',
+        backgroundColor: background === 'alt' ? 'var(--ifm-color-emphasis-100)' : undefined
+      }}
+    >
       <div className="flex-col gap-2 flex grow w-full my-16 lg:my-24 mx-auto items-center">
         {children}
       </div>
@@ -103,7 +115,7 @@ function Section({ children }: { children: React.ReactNode }) {
 
 export default function Project() {
   return (
-    <Section>
+    <Section background="alt">
       <div className="max-w-7xl mx-auto flex flex-col px-5">
         <div className="text-center mb-12">
           <h2 className="font-bold text-4xl text-gray-900 dark:text-neutral-100 leading-tight mb-4">

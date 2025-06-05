@@ -144,7 +144,7 @@ export default function Blog() {
   }, []);
 
   return (
-    <Section background="right-card">
+    <Section background={null}>
       <div className="max-w-7xl mx-auto flex flex-col lg:flex-row px-5">
         <div className="max-w-3xl lg:max-w-7xl gap-5 flex flex-col lg:flex-row lg:px-5">
           <div className="w-full lg:w-6/12 max-w-3xl flex flex-col items-start justify-start lg:ps-5 lg:pe-10">
