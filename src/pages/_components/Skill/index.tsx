@@ -22,12 +22,17 @@ function SkillCard({ name, icon }: {
   return (
     <article className="group relative overflow-hidden p-6 w-full h-full flex flex-col bg-white dark:bg-neutral-900 hover:bg-gray-50 dark:hover:bg-neutral-800/50 rounded-2xl transition-all duration-200 ease-out shadow-sm hover:shadow-lg dark:shadow-none border border-gray-200 dark:border-neutral-700 hover:border-gray-300 dark:hover:border-neutral-600">
       <div className="flex-1 flex flex-col items-center text-center space-y-4">
-        <div className="flex justify-center items-center h-12">
+        <div className="flex justify-center items-center h-12 w-12">
           <div className="group-hover:scale-110 transition-transform duration-200">
             <img 
-              src={`https://skillicons.dev/icons?i=${icon}&theme=light`} 
+              src={`https://skillicons.dev/icons?i=${icon}&theme=light#gh-light-mode-only`} 
               alt={name} 
-              className="w-12 h-12 object-contain transition-all duration-200 dark:invert dark:brightness-0 dark:contrast-100"
+              className="w-12 h-12 object-contain "
+            />
+            <img 
+              src={`https://skillicons.dev/icons?i=${icon}&theme=dark#gh-dark-mode-only`} 
+              alt={name} 
+              className="w-12 h-12 object-contain "
             />
           </div>
         </div>

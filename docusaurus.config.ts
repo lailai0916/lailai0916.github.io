@@ -180,7 +180,7 @@ const config: Config = {
           title: '社区',
           items: [
             {
-              label: 'X',
+              label: 'X (Twitter)',
               href: 'https://x.com/lailai0x394',
             },
             {

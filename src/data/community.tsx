@@ -31,7 +31,7 @@ export const COMMUNITY_LINKS: CommunityLink[] = [
     href: "https://www.lailai.one/img/community/wechat.jpg",
   },
   {
-    label: "X",
+    label: "X (Twitter)",
     text: "lailai0x394",
     icon: "ri:twitter-x-line",
     href: "https://x.com/lailai0x394",
