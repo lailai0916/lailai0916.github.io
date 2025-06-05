@@ -23,16 +23,7 @@ function CommunityCard({ href, label, icon }: {
               icon={icon} 
               width="40" 
               height="40" 
-              className="text-gray-700 dark:text-gray-300 transition-colors duration-200"
-              style={{
-                color: 'inherit'
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.color = 'var(--ifm-color-primary)';
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.color = 'inherit';
-              }}
+              className="text-black dark:text-white group-hover:text-[var(--ifm-color-primary)] transition-colors duration-200"
             />
           </div>
           <h3 className="font-medium text-sm text-gray-900 dark:text-neutral-100 text-center leading-snug">

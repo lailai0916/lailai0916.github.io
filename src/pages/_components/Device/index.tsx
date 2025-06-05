@@ -6,16 +6,16 @@ function DeviceCard({ name, icon }: {
   icon: string;
 }) {
   return (
-    <article className="group relative overflow-hidden p-6 w-full h-full flex flex-col items-center justify-center bg-white dark:bg-neutral-900 hover:bg-gray-50 dark:hover:bg-neutral-800/50 rounded-2xl transition-all duration-200 ease-out shadow-sm hover:shadow-lg dark:shadow-none border border-gray-200 dark:border-neutral-700 hover:border-gray-300 dark:hover:border-neutral-600">
-      <div className="flex flex-col items-center space-y-4">
+    <article className="group relative overflow-hidden p-5 w-full h-full flex flex-col items-center justify-center bg-white dark:bg-neutral-900 hover:bg-gray-50 dark:hover:bg-neutral-800/50 rounded-2xl transition-all duration-200 ease-out shadow-sm hover:shadow-lg dark:shadow-none border border-gray-200 dark:border-neutral-700 hover:border-gray-300 dark:hover:border-neutral-600">
+      <div className="flex flex-col items-center space-y-3">
         <div className="group-hover:scale-110 transition-transform duration-200">
           <img 
             src={icon} 
             alt={name} 
-            className="w-12 h-12 object-contain filter brightness-0 dark:invert transition-transform duration-200"
+            className="w-10 h-10 object-contain filter brightness-0 dark:invert transition-transform duration-200"
           />
         </div>
-        <h3 className="font-semibold text-lg text-gray-900 dark:text-neutral-100 text-center leading-snug">
+        <h3 className="font-medium text-base text-gray-900 dark:text-neutral-100 text-center leading-snug">
           {name}
         </h3>
       </div>
@@ -58,7 +58,7 @@ export default function Device() {
           </p>
         </div>
         
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-6 max-w-5xl mx-auto">
+        <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 gap-5 max-w-4xl mx-auto">
           {DEVICES.map((device, index) => (
             <div key={index} className="h-full">
               <DeviceCard {...device} />
