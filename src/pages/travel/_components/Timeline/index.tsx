@@ -6,14 +6,14 @@ import './styles.module.css';
 
 export default function Timeline() {
   const theme = {
-    primary: '#3b82f6', // blue-500 - 与主页保持一致
-    secondary: '#60a5fa', // blue-400
-    cardBgColor: 'var(--ifm-background-surface-color)',
-    cardTitleColor: '#1f2937', // gray-800
-    cardSubtitleColor: '#4b5563', // gray-600
-    cardDetailsColor: '#6b7280', // gray-500
-    titleColor: '#374151', // gray-700
-    titleColorActive: '#3b82f6', // blue-500
+    primary: 'var(--ifm-color-primary)', // 使用 Infima 主题色
+    secondary: 'var(--ifm-color-primary-light)', // 使用 Infima 浅色变体
+    cardBgColor: 'var(--ifm-card-background-color)',
+    cardTitleColor: 'var(--ifm-color-emphasis-800)', // Infima 强调色
+    cardSubtitleColor: 'var(--ifm-color-emphasis-600)', // Infima 次要文本色
+    cardDetailsColor: 'var(--ifm-color-emphasis-700)', // Infima 详情文本色
+    titleColor: 'var(--ifm-color-emphasis-700)', // Infima 标题色
+    titleColorActive: 'var(--ifm-color-primary)', // 使用 Infima 主题色
   };
 
   return (

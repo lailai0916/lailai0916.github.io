@@ -52,7 +52,7 @@ function StatCard({ number, label }: { number: string; label: string }) {
     <div className="group h-full w-full">
       <article className="relative overflow-hidden p-6 w-full h-full flex flex-col bg-white dark:bg-neutral-900 hover:bg-gray-50 dark:hover:bg-neutral-800/50 rounded-2xl transition-all duration-200 ease-out shadow-sm hover:shadow-lg dark:shadow-none border border-gray-200 dark:border-neutral-700 hover:border-gray-300 dark:hover:border-neutral-600">
         <div className="text-center space-y-3">
-          <div className="text-4xl lg:text-5xl font-bold text-blue-600 dark:text-blue-400 transition-colors group-hover:text-blue-700 dark:group-hover:text-blue-300">
+          <div className="text-4xl lg:text-5xl font-bold transition-colors" style={{ color: 'var(--ifm-color-primary)' }}>
             {number}
           </div>
           <h3 className="font-semibold text-lg text-gray-900 dark:text-neutral-100 uppercase tracking-wider">
