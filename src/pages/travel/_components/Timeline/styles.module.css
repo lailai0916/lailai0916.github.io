@@ -1,0 +1,216 @@
+/* Timeline全局样式 - 与主页BlogCard保持一致 */
+:global(.react-chrono-tree) {
+  font-family: var(--ifm-font-family-base) !important;
+}
+
+/* 卡片样式 - 模仿主页BlogCard */
+:global(.timeline-card-content) {
+  border-radius: 1rem !important; /* rounded-2xl */
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06) !important; /* shadow-sm */
+  transition: all 0.2s ease-out !important; /* duration-200 */
+  border: 1px solid rgb(229, 231, 235) !important; /* border-gray-200 */
+  background: white !important;
+}
+
+:global(.timeline-card-content:hover) {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05) !important; /* hover:shadow-lg */
+  border-color: rgb(147, 197, 253) !important; /* hover:border-blue-300 */
+  background: rgb(249, 250, 251) !important; /* hover:bg-gray-50 */
+}
+
+/* 暗色模式 - 与主页保持一致 */
+:global(html[data-theme='dark'] .timeline-card-content) {
+  background: rgb(23, 23, 23) !important; /* dark:bg-neutral-900 */
+  border-color: rgb(64, 64, 64) !important; /* dark:border-neutral-700 */
+  box-shadow: none !important; /* dark:shadow-none */
+}
+
+:global(html[data-theme='dark'] .timeline-card-content:hover) {
+  background: rgba(23, 23, 23, 0.5) !important; /* dark:hover:bg-neutral-800/50 */
+  border-color: rgb(96, 165, 250) !important; /* dark:hover:border-blue-400 */
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3) !important;
+}
+
+/* 卡片标题 - 模仿主页BlogCard标题 */
+:global(.travel-timeline-card-title) {
+  font-weight: 600 !important; /* font-semibold */
+  margin-bottom: 0.5rem !important;
+  color: rgb(17, 24, 39) !important; /* text-gray-900 */
+  font-size: 1.125rem !important; /* text-lg */
+  line-height: 1.375 !important; /* leading-snug */
+}
+
+:global(html[data-theme='dark'] .travel-timeline-card-title) {
+  color: rgb(245, 245, 245) !important; /* dark:text-neutral-100 */
+}
+
+/* 卡片副标题 */
+:global(.travel-timeline-card-subtitle) {
+  color: rgb(75, 85, 99) !important; /* text-gray-600 */
+  font-size: 0.875rem !important; /* text-sm */
+  line-height: 1.5 !important; /* leading-relaxed */
+}
+
+:global(html[data-theme='dark'] .travel-timeline-card-subtitle) {
+  color: rgb(163, 163, 163) !important; /* dark:text-neutral-300 */
+}
+
+/* 时间标签 - 类似主页项目状态标签 */
+:global(.travel-timeline-title) {
+  font-weight: 500 !important; /* font-medium */
+  color: rgb(37, 99, 235) !important; /* text-blue-600 */
+  background: rgb(239, 246, 255) !important; /* bg-blue-50 */
+  padding: 0.25rem 0.625rem !important; /* px-2.5 py-1 */
+  border-radius: 9999px !important; /* rounded-full */
+  font-size: 0.75rem !important; /* text-xs */
+  border: 1px solid rgb(147, 197, 253) !important; /* border-blue-300 */
+  display: inline-block !important;
+  line-height: 1rem !important;
+}
+
+:global(html[data-theme='dark'] .travel-timeline-title) {
+  color: rgb(96, 165, 250) !important; /* dark:text-blue-400 */
+  background: rgba(59, 130, 246, 0.2) !important; /* dark:bg-blue-900/20 */
+  border-color: rgba(59, 130, 246, 0.3) !important;
+}
+
+/* 时间线连接元素 */
+:global(.react-chrono-tree-branch) {
+  border-color: rgb(147, 197, 253) !important; /* border-blue-300 */
+}
+
+:global(.timeline-vertical-circle) {
+  background: #3b82f6 !important; /* bg-blue-500 */
+  border: 3px solid var(--ifm-background-color) !important;
+  box-shadow: 0 0 0 2px rgb(147, 197, 253) !important;
+}
+
+/* 时间线整体样式 */
+:global(.react-chrono-timeline) {
+  filter: none !important;
+}
+
+/* 响应式优化 */
+@media (max-width: 768px) {
+  :global(.timeline-card-content) {
+    padding: 1rem !important;
+  }
+  
+  :global(.travel-timeline-card-title) {
+    font-size: 1rem !important;
+  }
+}
+
+/* Timeline 组件自定义样式 */
+
+/* 卡片整体样式 */
+:global(.travel-timeline-card) {
+  border-radius: 16px !important;
+  border: 1px solid var(--ifm-color-emphasis-300) !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1) !important;
+  transition: all 0.2s ease-out !important;
+  background: var(--ifm-background-surface-color) !important;
+}
+
+:global(.travel-timeline-card:hover) {
+  border-color: var(--ifm-color-emphasis-400) !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
+  transform: translateY(-2px) !important;
+}
+
+/* 卡片标题样式 */
+:global(.travel-timeline-card-title) {
+  font-weight: 600 !important;
+  color: var(--ifm-color-emphasis-800) !important;
+  font-size: 1.125rem !important;
+  margin-bottom: 0.5rem !important;
+}
+
+/* 卡片副标题样式 */
+:global(.travel-timeline-card-subtitle) {
+  color: var(--ifm-color-emphasis-600) !important;
+  font-size: 0.875rem !important;
+  font-weight: 500 !important;
+  margin-bottom: 0.75rem !important;
+}
+
+/* 卡片文本样式 */
+:global(.travel-timeline-card-text) {
+  color: var(--ifm-color-emphasis-700) !important;
+  font-size: 0.875rem !important;
+  line-height: 1.5 !important;
+}
+
+/* 时间轴标题样式 */
+:global(.travel-timeline-title) {
+  background: #3b82f6 !important;
+  color: white !important;
+  font-weight: 600 !important;
+  font-size: 0.75rem !important;
+  padding: 0.25rem 0.75rem !important;
+  border-radius: 12px !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.05em !important;
+  box-shadow: 0 2px 4px rgba(59, 130, 246, 0.3) !important;
+}
+
+/* 时间轴点的样式 */
+:global(.timeline-main-wrapper .timeline-vertical-container .timeline-item .timeline-item-content::before) {
+  background: #3b82f6 !important;
+  box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.2) !important;
+}
+
+/* 时间轴线的样式 */
+:global(.timeline-main-wrapper .timeline-vertical-container::before) {
+  background: linear-gradient(to bottom, #3b82f6, #60a5fa) !important;
+}
+
+/* 暗黑模式适配 */
+:global([data-theme='dark'] .travel-timeline-card) {
+  border-color: var(--ifm-color-emphasis-300) !important;
+  background: var(--ifm-background-surface-color) !important;
+}
+
+:global([data-theme='dark'] .travel-timeline-card:hover) {
+  border-color: var(--ifm-color-emphasis-500) !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3) !important;
+}
+
+:global([data-theme='dark'] .travel-timeline-card-title) {
+  color: var(--ifm-color-emphasis-900) !important;
+}
+
+:global([data-theme='dark'] .travel-timeline-card-subtitle) {
+  color: var(--ifm-color-emphasis-700) !important;
+}
+
+:global([data-theme='dark'] .travel-timeline-card-text) {
+  color: var(--ifm-color-emphasis-800) !important;
+}
+
+/* 隐藏卡片连接菱形 */
+:global(.timeline-item-content::after),
+:global(.timeline-item-content::before),
+:global(.react-chrono-timeline-card::after),
+:global(.react-chrono-timeline-card::before),
+:global(.timeline-card-content::after),
+:global(.timeline-card-content::before) {
+  display: none !important;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+  :global(.travel-timeline-card) {
+    margin: 0.5rem !important;
+  }
+  
+  :global(.travel-timeline-card-title) {
+    font-size: 1rem !important;
+  }
+  
+  :global(.travel-timeline-title) {
+    font-size: 0.625rem !important;
+    padding: 0.2rem 0.5rem !important;
+  }
+}
