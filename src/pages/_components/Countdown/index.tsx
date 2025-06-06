@@ -210,7 +210,6 @@ function ProgressCircle({ unit, total, value }: ProgressCircleProps) {
   const progressCircleStyle: React.CSSProperties = useMemo(() => ({
     strokeDasharray: circleMetrics.circumference,
     strokeDashoffset: circleMetrics.strokeDashoffset,
-    filter: 'drop-shadow(0 0 8px var(--ifm-color-primary-light))',
   }), [circleMetrics]);
 
   return (
