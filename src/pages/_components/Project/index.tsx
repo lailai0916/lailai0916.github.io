@@ -44,8 +44,17 @@ function ProjectCard({ title, description, link, tech, status }: {
   return (
     <Link
       to={link}
-      className="group block h-full w-full rounded-2xl outline-none focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 no-underline hover:no-underline"
-      style={{ textDecoration: 'none' }}
+      className="group block h-full w-full rounded-2xl outline-none focus:outline-none no-underline hover:no-underline"
+      style={{ 
+        textDecoration: 'none',
+        '--focus-ring-color': 'var(--ifm-color-primary)'
+      }}
+      onFocus={(e) => {
+        e.currentTarget.style.boxShadow = '0 0 0 2px var(--ifm-color-primary)';
+      }}
+      onBlur={(e) => {
+        e.currentTarget.style.boxShadow = 'none';
+      }}
     >
       <article className="relative overflow-hidden p-6 cursor-pointer w-full h-full flex flex-col bg-white dark:bg-neutral-900 hover:bg-gray-50 dark:hover:bg-neutral-800/50 rounded-2xl transition-all duration-200 ease-out shadow-sm hover:shadow-lg dark:shadow-none border border-gray-200 dark:border-neutral-700 hover:border-gray-300 dark:hover:border-neutral-600">
         <div className="flex-1 space-y-4">

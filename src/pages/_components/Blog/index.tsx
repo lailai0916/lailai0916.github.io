@@ -6,8 +6,17 @@ function BlogCard({ title, date, permalink }: { title: string; date: string; per
   return (
     <Link
       to={permalink}
-      className="group block h-full w-full rounded-2xl outline-none focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 no-underline hover:no-underline"
-      style={{ textDecoration: 'none' }}
+      className="group block h-full w-full rounded-2xl outline-none focus:outline-none no-underline hover:no-underline"
+      style={{ 
+        textDecoration: 'none',
+        '--focus-ring-color': 'var(--ifm-color-primary)'
+      }}
+      onFocus={(e) => {
+        e.currentTarget.style.boxShadow = '0 0 0 2px var(--ifm-color-primary)';
+      }}
+      onBlur={(e) => {
+        e.currentTarget.style.boxShadow = 'none';
+      }}
     >
       <article className="relative overflow-hidden p-6 cursor-pointer w-full h-full flex flex-col bg-white dark:bg-neutral-900 hover:bg-gray-50 dark:hover:bg-neutral-800/50 rounded-2xl transition-all duration-200 ease-out shadow-sm hover:shadow-md dark:shadow-none border border-gray-200 dark:border-neutral-700 hover:border-gray-300 dark:hover:border-neutral-600">
         <div className="flex-1 space-y-4">
@@ -77,16 +86,54 @@ function Para({ children }: { children: React.ReactNode }) {
   );
 }
 
-function CTA({ children, href, icon, color = 'blue' }: { children: React.ReactNode; href: string; icon: string; color?: string }) {
-  const colorClasses = {
-    blue: 'bg-blue-600 hover:bg-blue-700 active:bg-blue-800 text-white shadow-lg hover:shadow-xl',
-    gray: 'bg-white hover:bg-gray-50 active:bg-gray-100 text-gray-900 dark:bg-neutral-800 dark:hover:bg-neutral-700 dark:active:bg-neutral-600 dark:text-neutral-100 border border-gray-200 dark:border-neutral-700 shadow-md hover:shadow-lg',
+function CTA({ children, href, icon, color = 'primary' }: { children: React.ReactNode; href: string; icon: string; color?: string }) {
+  const getColorStyles = (color: string) => {
+    switch (color) {
+      case 'primary':
+        return {
+          backgroundColor: 'var(--ifm-color-primary)',
+          color: 'var(--ifm-color-primary-contrast-foreground)',
+          '--hover-bg': 'var(--ifm-color-primary-dark)',
+          '--active-bg': 'var(--ifm-color-primary-darker)',
+        };
+      case 'secondary':
+        return {
+          backgroundColor: 'var(--ifm-background-color)',
+          color: 'var(--ifm-font-color-base)',
+          border: '1px solid var(--ifm-color-emphasis-300)',
+          '--hover-bg': 'var(--ifm-color-emphasis-100)',
+          '--active-bg': 'var(--ifm-color-emphasis-200)',
+        };
+      default:
+        return {};
+    }
   };
+
+  const colorStyles = getColorStyles(color);
 
   return (
     <Link
       to={href}
-      className={`group inline-flex items-center gap-2 px-5 py-3 rounded-xl font-medium transition-all duration-200 no-underline hover:no-underline ${colorClasses[color]}`}
+      className="group inline-flex items-center gap-2 px-5 py-3 rounded-xl font-medium transition-all duration-200 no-underline hover:no-underline shadow-lg hover:shadow-xl"
+      style={colorStyles}
+      onMouseEnter={(e) => {
+        if (colorStyles['--hover-bg']) {
+          e.currentTarget.style.backgroundColor = colorStyles['--hover-bg'];
+        }
+      }}
+      onMouseLeave={(e) => {
+        e.currentTarget.style.backgroundColor = colorStyles.backgroundColor;
+      }}
+      onMouseDown={(e) => {
+        if (colorStyles['--active-bg']) {
+          e.currentTarget.style.backgroundColor = colorStyles['--active-bg'];
+        }
+      }}
+      onMouseUp={(e) => {
+        if (colorStyles['--hover-bg']) {
+          e.currentTarget.style.backgroundColor = colorStyles['--hover-bg'];
+        }
+      }}
     >
       {icon === 'news' && (
         <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
@@ -161,7 +208,7 @@ export default function Blog() {
                 只有经过实践验证的技术和方法，才能真正帮助我们解决实际问题。
               </Para>
               <div className="hidden lg:flex justify-start w-full">
-                <CTA color="gray" icon="news" href="/blog">
+                <CTA color="secondary" icon="news" href="/blog">
                   查看更多文章
                 </CTA>
               </div>
@@ -178,7 +225,7 @@ export default function Blog() {
               <BlogCardList posts={recentPosts} />
             </div>
             <div className="flex lg:hidden justify-start w-full">
-              <CTA color="gray" icon="news" href="/blog">
+              <CTA color="secondary" icon="news" href="/blog">
                 查看更多文章
               </CTA>
             </div>
