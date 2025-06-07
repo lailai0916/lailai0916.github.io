@@ -22,7 +22,7 @@ function MainContent({ categories }: { categories: ResourceCategory[] }) {
             精选<span className={styles.highlight}>资源</span>导航
           </Heading>
           <p className={styles.mainDescription}>
-            汇聚优质工具与平台，为你的学习和开发之旅提供助力
+            精心筛选的优质工具与平台，助力学习与开发
           </p>
         </div>
         <div className={styles.statsGrid}>
