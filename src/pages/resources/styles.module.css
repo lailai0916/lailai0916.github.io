@@ -294,49 +294,45 @@
 @media (max-width: 768px) {
   .quickStatsInner {
     flex-direction: column;
-    gap: 2.5rem;
-    padding: 2.5rem 1.5rem;
-    text-align: center;
-    max-width: none;
+    align-items: flex-start;
+    gap: 2rem;
+    padding: 2rem 1rem;
   }
-  
+
   .leftContent {
     max-width: none;
   }
-  
+
   .mainTitle {
-    font-size: 2.5rem !important;
+    font-size: 2.2rem !important;
   }
-  
+
   .statsGrid {
     flex-direction: column;
-    width: 100%;
     gap: 1rem;
+    width: 100%;
   }
-  
+
   .statCard {
     min-width: auto;
-    width: 100%;
-    max-width: 300px;
-    margin: 0 auto;
   }
-  
+
   .categoryNavContent {
     justify-content: flex-start;
   }
-  
+
   .categoryHeader {
     flex-direction: column;
     align-items: flex-start;
     gap: 1rem;
   }
-  
+
   .resourceGrid {
     grid-template-columns: 1fr;
   }
-  
+
   .container {
-    padding: 0 1rem 2rem 1rem;
+    padding: 0 1rem 4rem 1rem;
   }
 }
 
