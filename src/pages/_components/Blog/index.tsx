@@ -184,6 +184,17 @@ function BlogCardList({ posts }: { posts: ProcessedBlogPost[] }) {
   );
 }
 
+// 查看更多文章按钮组件
+function ViewMoreButton({ className = "" }: { className?: string }) {
+  return (
+    <div className={`flex justify-start w-full ${className}`}>
+      <CTA color="secondary" icon="news" href="/blog">
+        查看更多文章
+      </CTA>
+    </div>
+  );
+}
+
 export default function Blog() {
   // 使用工具函数获取博客数据，useMemo确保性能优化
   const recentPosts = useMemo(() => {
@@ -207,11 +218,7 @@ export default function Blog() {
                 在这个快速变化的时代，保持好奇心和学习热情是最宝贵的品质。
                 只有经过实践验证的技术和方法，才能真正帮助我们解决实际问题。
               </Para>
-              <div className="hidden lg:flex justify-start w-full">
-                <CTA color="secondary" icon="news" href="/blog">
-                  查看更多文章
-                </CTA>
-              </div>
+              <ViewMoreButton className="hidden lg:flex" />
             </div>
           </div>
           <div className="w-full lg:w-6/12">
@@ -224,11 +231,7 @@ export default function Blog() {
             <div className="flex-col sm:flex-row flex-wrap flex gap-6 text-start my-8">
               <BlogCardList posts={recentPosts} />
             </div>
-            <div className="flex lg:hidden justify-start w-full">
-              <CTA color="secondary" icon="news" href="/blog">
-                查看更多文章
-              </CTA>
-            </div>
+            <ViewMoreButton className="lg:hidden" />
           </div>
         </div>
       </div>
