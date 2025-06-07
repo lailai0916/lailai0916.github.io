@@ -1,97 +1,184 @@
+import React, { useState, useMemo } from 'react';
 import Link from '@docusaurus/Link';
 import Layout from '@theme/Layout';
 import Heading from '@theme/Heading';
+import { Icon } from '@iconify/react';
 
-import clsx from 'clsx';
-import { resourceData } from '@site/src/data/resources';
-import ResourceCard from './_components/ResourceCard';
+import { resourceData, type ResourceCategory } from '@site/src/data/resources';
 import styles from './styles.module.css';
 
 const TITLE = '资源';
-const DESCRIPTION = '有趣与实用的优质资源导航';
+const DESCRIPTION = '精选优质资源，为你的学习和开发提供助力';
 
-function PageHeader() {
+// 顶部横幅组件
+function TopBanner() {
   return (
-    <section className="margin-top--lg margin-bottom--lg text--center">
-      <Heading as="h1">{TITLE}</Heading>
-      <p>{DESCRIPTION}</p>
-    </section>
-  )
-}
-
-function getCategoryId(categoryName: string): string {
-  return categoryName
-  .replace(/[^\w\s\u4e00-\u9fa5]/g, '') // Remove emoji and special characters
-  .replace(/\s+/g, '-') // Replace spaces with hyphens
-  .toLowerCase();
-}
-
-function CategorySidebar() {
-  const sidebar = {
-    title: '',
-    items: resourceData.map(w => ({ title: w.name, permalink: `#${getCategoryId(w.name)}` })),
-  }
-
-  return (
-    <nav className={clsx(styles.sidebar, 'thin-scrollbar')}>
-      <div className={clsx(styles.sidebarItemTitle, 'margin-bottom--md')}>{sidebar.title}</div>
-      <ul className={clsx(styles.sidebarItemList, 'clean-list')}>
-        {sidebar.items.map(item => (
-          <li key={item.permalink} className={styles.sidebarItem}>
-            <Link
-              isNavLink
-              to={item.permalink}
-              className={styles.sidebarItemLink}
-              activeClassName={styles.sidebarItemLinkActive}
-            >
-              {item.title}
-            </Link>
-          </li>
-        ))}
-      </ul>
-    </nav>
-  )
-}
-
-function CategoryList() {
-  return (
-    <div className={styles.category}>
-      {resourceData.map(cate => (
-        <div key={cate.name}>
-          <div className={styles.cateHeader}>
-            <h2 id={getCategoryId(cate.name)} className="anchor">
-              {cate.name}
-            </h2>
-          </div>
-          <section>
-            <ul className={styles.resourceList}>
-              {cate.resources.map(resource => (
-                <ResourceCard key={resource.name} resource={resource} />
-              ))}
-            </ul>
-          </section>
+    <div className={styles.topBanner}>
+      <div className={styles.topBannerContent}>
+        <div className={styles.topBannerText}>
+          <Heading as="h1" className={styles.topBannerTitle}>
+            {TITLE}
+          </Heading>
+          <p className={styles.topBannerDescription}>
+            {DESCRIPTION}
+          </p>
         </div>
-      ))}
+        <div className={styles.topBannerIcon}>
+          <Icon icon="streamline:web-link" width={80} height={80} />
+        </div>
+      </div>
     </div>
-  )
+  );
 }
 
-export default function resourcesPage() {
+// 分类导航组件
+function CategoryNav({ categories, activeCategory, onCategoryChange }: {
+  categories: ResourceCategory[];
+  activeCategory: string;
+  onCategoryChange: (category: string) => void;
+}) {
+  return (
+    <nav className={styles.categoryNav}>
+      <div className={styles.categoryNavContent}>
+        <button
+          className={`${styles.categoryButton} ${activeCategory === 'all' ? styles.categoryButtonActive : ''}`}
+          onClick={() => onCategoryChange('all')}
+        >
+          全部
+        </button>
+        {categories.map((category) => (
+          <button
+            key={category.name}
+            className={`${styles.categoryButton} ${activeCategory === category.name ? styles.categoryButtonActive : ''}`}
+            onClick={() => onCategoryChange(category.name)}
+          >
+            {category.name}
+          </button>
+        ))}
+      </div>
+    </nav>
+  );
+}
+
+// 资源卡片组件
+function ResourceCard({ resource }: { resource: { name: string; desc: string; logo: string; href: string } }) {
+  return (
+    <Link
+      to={resource.href}
+      className={styles.resourceCard}
+      style={{ textDecoration: 'none' }}
+    >
+      <div className={styles.resourceCardContent}>
+        <div className={styles.resourceCardIcon}>
+          <img
+            src={resource.logo}
+            alt={resource.name}
+            className={styles.resourceCardImage}
+            onError={(e) => {
+              e.currentTarget.style.display = 'none';
+              e.currentTarget.nextElementSibling.style.display = 'flex';
+            }}
+          />
+          <div className={styles.resourceCardFallback}>
+            <Icon icon="streamline:web" width={24} height={24} />
+          </div>
+        </div>
+        <div className={styles.resourceCardBody}>
+          <h3 className={styles.resourceCardTitle}>
+            {resource.name}
+          </h3>
+          <p className={styles.resourceCardDescription}>
+            {resource.desc}
+          </p>
+        </div>
+        <div className={styles.resourceCardArrow}>
+          <Icon icon="streamline:arrow-right" width={16} height={16} />
+        </div>
+      </div>
+    </Link>
+  );
+}
+
+// 分类区块组件
+function CategorySection({ category, isVisible }: { 
+  category: ResourceCategory; 
+  isVisible: boolean; 
+}) {
+  if (!isVisible) return null;
+
+  return (
+    <section className={styles.categorySection}>
+      <div className={styles.categoryHeader}>
+        <h2 className={styles.categoryTitle}>
+          {category.name}
+        </h2>
+        <div className={styles.categoryCount}>
+          {category.resources.length} 项资源
+        </div>
+      </div>
+      <div className={styles.resourceGrid}>
+        {category.resources.map((resource) => (
+          <ResourceCard key={resource.name} resource={resource} />
+        ))}
+      </div>
+    </section>
+  );
+}
+
+// 统计信息组件
+function StatsSection({ categories }: { categories: ResourceCategory[] }) {
+  const totalResources = categories.reduce((sum, cat) => sum + cat.resources.length, 0);
+  
+  return (
+    <div className={styles.statsSection}>
+      <div className={styles.statsContent}>
+        <div className={styles.statItem}>
+          <div className={styles.statNumber}>{categories.length}</div>
+          <div className={styles.statLabel}>分类</div>
+        </div>
+        <div className={styles.statItem}>
+          <div className={styles.statNumber}>{totalResources}</div>
+          <div className={styles.statLabel}>资源</div>
+        </div>
+        <div className={styles.statItem}>
+          <div className={styles.statNumber}>100%</div>
+          <div className={styles.statLabel}>免费</div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export default function ResourcesPage() {
+  const [activeCategory, setActiveCategory] = useState('all');
+  
+  const filteredCategories = useMemo(() => {
+    if (activeCategory === 'all') return resourceData;
+    return resourceData.filter(cat => cat.name === activeCategory);
+  }, [activeCategory]);
+
   return (
     <Layout title={TITLE} description={DESCRIPTION}>
-      <main className="margin-vert--lg">
-        <PageHeader />
-        <div className="container">
-          <div className="row">
-            <aside className="col col--2">
-              <CategorySidebar />
-            </aside>
-            <main className="col col--10">
-              <CategoryList />
-            </main>
+      <main className={styles.main}>
+        <TopBanner />
+        <StatsSection categories={resourceData} />
+        <div className={styles.container}>
+          <CategoryNav 
+            categories={resourceData}
+            activeCategory={activeCategory}
+            onCategoryChange={setActiveCategory}
+          />
+          <div className={styles.content}>
+            {filteredCategories.map((category) => (
+              <CategorySection
+                key={category.name}
+                category={category}
+                isVisible={true}
+              />
+            ))}
           </div>
         </div>
       </main>
     </Layout>
-  )
+  );
 }

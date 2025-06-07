@@ -85,45 +85,11 @@ function TravelHero() {
             <p className="text-lg lg:text-xl text-gray-700 dark:text-neutral-300 leading-relaxed mb-6">
               {DESCRIPTION}
             </p>
-            <div className="order-last pt-5">
-              <p className="text-lg lg:text-xl text-gray-700 dark:text-neutral-300 leading-relaxed mb-8">
-                旅行不仅是脚步的延伸，更是心灵的拓展。每一次出发，都是对未知世界的好奇；
-                每一次归来，都带着新的思考与感悟。
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-start w-full">
-                <Link
-                  to="/blog"
-                  className="group inline-flex items-center gap-2 px-6 py-3 rounded-xl font-medium transition-all duration-200 no-underline hover:no-underline text-white dark:text-white shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
-                  style={{ 
-                    backgroundColor: 'var(--ifm-color-primary)',
-                    borderColor: 'var(--ifm-color-primary)'
-                  }}
-                  onMouseEnter={(e) => {
-                    e.currentTarget.style.backgroundColor = 'var(--ifm-color-primary-dark)';
-                  }}
-                  onMouseLeave={(e) => {
-                    e.currentTarget.style.backgroundColor = 'var(--ifm-color-primary)';
-                  }}
-                >
-                  <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M4 6H2V20C2 21.1 2.9 22 4 22H18V20H4V6ZM20 2H8C6.9 2 6 2.9 6 4V16C6 17.1 6.9 18 8 18H20C21.1 18 22 17.1 22 16V4C22 2.9 21.1 2 20 2ZM20 16H8V4H20V16ZM10 6H18V8H10V6ZM10 10H16V12H10V10ZM10 14H18V16H10V14Z" />
-                  </svg>
-                  <span>查看旅行博客</span>
-                  <svg className="w-4 h-4 transition-transform group-hover:translate-x-0.5" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M8.59 16.58L13.17 12L8.59 7.41L10 6L16 12L10 18L8.59 16.58Z" />
-                  </svg>
-                </Link>
-                <Link
-                  to="/about"
-                  className="group inline-flex items-center gap-2 px-6 py-3 rounded-xl font-medium transition-all duration-200 no-underline hover:no-underline bg-white hover:bg-gray-50 active:bg-gray-100 text-gray-900 dark:bg-neutral-800 dark:hover:bg-neutral-700 dark:active:bg-neutral-600 dark:text-neutral-100 border border-gray-200 dark:border-neutral-700 shadow-md hover:shadow-lg transform hover:-translate-y-0.5"
-                >
-                  <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M12 2C13.1 2 14 2.9 14 4C14 5.1 13.1 6 12 6C10.9 6 10 5.1 10 4C10 2.9 10.9 2 12 2ZM21 9V7L15 1H5C3.9 1 3 1.9 3 3V21C3 22.1 3.9 23 5 23H19C20.1 23 21 22.1 21 21V9H21ZM19 21H5V3H13V9H19V21Z" />
-                  </svg>
-                  <span>关于我</span>
-                </Link>
-              </div>
-            </div>
+            <p className="text-lg lg:text-xl text-gray-700 dark:text-neutral-300 leading-relaxed mb-8">
+              旅行不仅是脚步的延伸，更是心灵的拓展。每一次出发，都是对未知世界的好奇；
+              每一次归来，都带着新的思考与感悟。从 2011 年开始的 14 年旅程，足迹遍布世界各地，
+              记录下每一份珍贵的回忆。
+            </p>
           </div>
           
           {/* 右侧统计区 */}
@@ -134,7 +100,7 @@ function TravelHero() {
               </svg>
               旅行数据
             </p>
-            <div className="grid grid-cols-1 gap-4 my-8">
+            <div className="grid grid-cols-3 gap-4 my-8">
               {travelStats.map((stat, idx) => (
                 <StatCard key={idx} {...stat} />
               ))}
