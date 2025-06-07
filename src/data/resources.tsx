@@ -263,6 +263,12 @@ export const resourceData: ResourceCategory[] = [
         logo: 'https://arxiv.org/favicon.ico',
         href: 'https://arxiv.org/',
       },
+      {
+        name: 'Overleaf',
+        desc: '在线 LaTeX 编辑器，协作学术写作平台',
+        logo: 'https://www.overleaf.com/favicon.ico',
+        href: 'https://www.overleaf.com',
+      },
     ],
   },
   {
