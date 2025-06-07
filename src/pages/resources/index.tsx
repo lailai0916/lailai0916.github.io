@@ -10,21 +10,40 @@ import styles from './styles.module.css';
 const TITLE = '资源';
 const DESCRIPTION = '精选优质资源，为你的学习和开发提供助力';
 
-// 顶部横幅组件
-function TopBanner() {
+// 主要内容区域组件
+function MainContent({ categories }: { categories: ResourceCategory[] }) {
+  const totalResources = categories.reduce((sum, cat) => sum + cat.resources.length, 0);
+  
   return (
-    <div className={styles.topBanner}>
-      <div className={styles.topBannerContent}>
-        <div className={styles.topBannerText}>
-          <Heading as="h1" className={styles.topBannerTitle}>
-            {TITLE}
+    <div className={styles.quickStats}>
+      <div className={styles.quickStatsInner}>
+        <div className={styles.leftContent}>
+          <Heading as="h1" className={styles.mainTitle}>
+            精选<span className={styles.highlight}>资源</span>导航
           </Heading>
-          <p className={styles.topBannerDescription}>
-            {DESCRIPTION}
+          <p className={styles.mainDescription}>
+            汇聚优质工具与平台，为你的学习和开发之旅提供助力
           </p>
         </div>
-        <div className={styles.topBannerIcon}>
-          <Icon icon="streamline:web-link" width={80} height={80} />
+        <div className={styles.statsGrid}>
+          <div className={styles.statCard}>
+            <div className={styles.statIcon}>
+              <Icon icon="material-symbols:folder-outline" width={20} height={20} />
+            </div>
+            <div className={styles.statContent}>
+              <div className={styles.statNumber}>{categories.length}</div>
+              <div className={styles.statLabel}>个分类</div>
+            </div>
+          </div>
+          <div className={styles.statCard}>
+            <div className={styles.statIcon}>
+              <Icon icon="material-symbols:database-outline" width={20} height={20} />
+            </div>
+            <div className={styles.statContent}>
+              <div className={styles.statNumber}>{totalResources}</div>
+              <div className={styles.statLabel}>项资源</div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -125,30 +144,6 @@ function CategorySection({ category, isVisible }: {
   );
 }
 
-// 统计信息组件
-function StatsSection({ categories }: { categories: ResourceCategory[] }) {
-  const totalResources = categories.reduce((sum, cat) => sum + cat.resources.length, 0);
-  
-  return (
-    <div className={styles.statsSection}>
-      <div className={styles.statsContent}>
-        <div className={styles.statItem}>
-          <div className={styles.statNumber}>{categories.length}</div>
-          <div className={styles.statLabel}>分类</div>
-        </div>
-        <div className={styles.statItem}>
-          <div className={styles.statNumber}>{totalResources}</div>
-          <div className={styles.statLabel}>资源</div>
-        </div>
-        <div className={styles.statItem}>
-          <div className={styles.statNumber}>100%</div>
-          <div className={styles.statLabel}>免费</div>
-        </div>
-      </div>
-    </div>
-  );
-}
-
 export default function ResourcesPage() {
   const [activeCategory, setActiveCategory] = useState('all');
   
@@ -160,8 +155,7 @@ export default function ResourcesPage() {
   return (
     <Layout title={TITLE} description={DESCRIPTION}>
       <main className={styles.main}>
-        <TopBanner />
-        <StatsSection categories={resourceData} />
+        <MainContent categories={resourceData} />
         <div className={styles.container}>
           <CategoryNav 
             categories={resourceData}

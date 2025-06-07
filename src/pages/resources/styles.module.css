@@ -4,78 +4,100 @@
   overflow-x: hidden;
 }
 
-/* 顶部横幅 */
-.topBanner {
-  background: linear-gradient(135deg, var(--ifm-color-primary) 0%, var(--ifm-color-primary-dark) 100%);
-  color: white;
-  padding: 4rem 2rem;
+.highlight {
+  color: var(--ifm-color-primary);
   position: relative;
 }
 
-.topBannerContent {
-  max-width: 1200px;
+/* 快速统计区域 */
+.quickStats {
+  background-color: var(--ifm-background-color);
+  padding: 0;
+  border-bottom: 1px solid var(--ifm-color-emphasis-200);
+}
+
+.quickStatsInner {
+  max-width: 1400px;
   margin: 0 auto;
+  padding: 3rem 2rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 2rem;
+  gap: 3rem;
 }
 
-.topBannerText {
+.leftContent {
   flex: 1;
+  max-width: 600px;
 }
 
-.topBannerTitle {
-  font-size: 3.5rem !important;
-  font-weight: 800;
+.mainTitle {
+  font-size: 3rem !important;
+  font-weight: 700;
   margin: 0 0 1rem 0;
-  color: white;
-  line-height: 1.1;
+  color: var(--ifm-font-color-base);
+  line-height: 1.2;
 }
 
-.topBannerDescription {
-  font-size: 1.25rem;
-  opacity: 0.9;
+.mainDescription {
+  font-size: 1.1rem;
+  color: var(--ifm-color-emphasis-700);
   margin: 0;
   line-height: 1.6;
 }
 
-.topBannerIcon {
-  flex-shrink: 0;
-  opacity: 0.8;
-  filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.3));
-}
-
-/* 统计信息区域 */
-.statsSection {
-  background-color: var(--ifm-background-color);
-  border-bottom: 1px solid var(--ifm-color-emphasis-200);
-  padding: 2rem 2rem;
-}
-
-.statsContent {
-  max-width: 1200px;
-  margin: 0 auto;
+.statsGrid {
   display: flex;
-  justify-content: center;
-  gap: 4rem;
+  gap: 1.5rem;
+  flex-shrink: 0;
 }
 
-.statItem {
-  text-align: center;
+.statCard {
+  background: var(--ifm-card-background-color);
+  border: 2px solid var(--ifm-color-emphasis-200);
+  border-radius: 16px;
+  padding: 1.5rem;
+  min-width: 180px;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  transition: all 0.2s ease;
+}
+
+.statCard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  border-color: var(--ifm-color-primary);
+}
+
+.statIcon {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  background: var(--ifm-color-emphasis-100);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--ifm-color-emphasis-600);
+}
+
+.statContent {
+  flex: 1;
 }
 
 .statNumber {
-  font-size: 2.5rem;
-  font-weight: 800;
+  font-size: 1.5rem;
+  font-weight: 700;
   color: var(--ifm-color-primary);
   line-height: 1;
+  margin: 0;
 }
 
 .statLabel {
-  font-size: 1rem;
+  font-size: 0.9rem;
   color: var(--ifm-color-emphasis-700);
-  margin-top: 0.5rem;
+  margin-top: 0.25rem;
   font-weight: 500;
 }
 
@@ -270,19 +292,33 @@
 
 /* 响应式设计 */
 @media (max-width: 768px) {
-  .topBannerContent {
+  .quickStatsInner {
     flex-direction: column;
+    gap: 2.5rem;
+    padding: 2.5rem 1.5rem;
     text-align: center;
-    gap: 2rem;
+    max-width: none;
   }
   
-  .topBannerTitle {
+  .leftContent {
+    max-width: none;
+  }
+  
+  .mainTitle {
     font-size: 2.5rem !important;
   }
   
-  .statsContent {
-    gap: 2rem;
-    flex-wrap: wrap;
+  .statsGrid {
+    flex-direction: column;
+    width: 100%;
+    gap: 1rem;
+  }
+  
+  .statCard {
+    min-width: auto;
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
   }
   
   .categoryNavContent {
@@ -305,12 +341,21 @@
 }
 
 @media (max-width: 480px) {
-  .topBanner {
-    padding: 2rem 1rem;
+  .mainTitle {
+    font-size: 2rem !important;
   }
   
-  .topBannerTitle {
-    font-size: 2rem !important;
+  .mainDescription {
+    font-size: 1.1rem;
+  }
+  
+  .statCard {
+    padding: 1rem;
+  }
+  
+  .statIcon {
+    width: 36px;
+    height: 36px;
   }
   
   .categoryButton {
@@ -324,13 +369,24 @@
 }
 
 /* 深色模式适配 */
-html[data-theme='dark'] .topBanner {
-  background: linear-gradient(135deg, var(--ifm-color-primary) 0%, var(--ifm-color-primary-darker) 100%);
-}
-
-html[data-theme='dark'] .statsSection {
+html[data-theme='dark'] .quickStats {
   background-color: var(--ifm-background-color);
   border-bottom-color: var(--ifm-color-emphasis-300);
+}
+
+html[data-theme='dark'] .statCard {
+  background: var(--ifm-card-background-color);
+  border: 2px solid var(--ifm-color-emphasis-300);
+}
+
+html[data-theme='dark'] .statCard:hover {
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  border-color: var(--ifm-color-primary);
+}
+
+html[data-theme='dark'] .statIcon {
+  background: var(--ifm-color-emphasis-200);
+  color: var(--ifm-color-emphasis-600);
 }
 
 html[data-theme='dark'] .resourceCardContent {

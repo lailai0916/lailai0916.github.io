@@ -11,7 +11,7 @@ const DESCRIPTION = '纸上得来终觉浅，绝知此事要躬行';
 const travelStats = [
   {
     number: '20+',
-    label: '国家地区',
+    label: '国家/地区',
     icon: '🌍'
   },
   {
