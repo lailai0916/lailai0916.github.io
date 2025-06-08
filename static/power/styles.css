@@ -1,0 +1,277 @@
+/* --- CSS Variables and Base Styles --- */
+:root {
+  --bg-dark: #121417;
+  --bg-panel: #1a1d21;
+  --border-color: #2c3038;
+  --text-primary: #e2e2e2;
+  --text-secondary: #8c929c;
+  --accent-primary: #00aaff;
+  --accent-primary-hover: #33bbff;
+  --accent-danger: #ff4757;
+  --font-main: 'Roboto', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--bg-dark);
+  color: var(--text-primary);
+  font-family: var(--font-main);
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: stretch; /* Make columns same height */
+  gap: 30px;
+  width: 100%;
+  max-width: 1400px; /* Limit max width */
+  padding: 20px;
+  height: calc(100vh - 40px);
+}
+
+/* --- Layout and Panels --- */
+.side {
+  background-color: var(--bg-panel);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  flex-basis: 250px; /* Fixed width for side panels */
+  flex-shrink: 0;
+}
+
+.left {
+  justify-content: space-between;
+  align-items: center;
+}
+
+.right {
+  justify-content: flex-start;
+}
+
+.game-main {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative; /* Add for overlay positioning context */
+}
+
+#gameCanvas {
+  border: 1px solid var(--border-color);
+  max-width: 100%;
+  max-height: 100%;
+  height: auto;
+  aspect-ratio: 1 / 1;
+}
+
+/* --- Typography and Content --- */
+h1 {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--text-primary);
+  letter-spacing: 1px;
+  text-align: center;
+}
+
+.subtitle {
+  font-size: 14px;
+  font-weight: 300;
+  color: var(--accent-primary);
+  text-align: center;
+  margin-top: 4px;
+}
+
+h2 {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 20px;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 10px;
+}
+
+.instructions {
+  font-size: 13px;
+  text-align: center;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* --- Controls --- */
+button {
+  width: 100%;
+  padding: 15px 20px;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  color: #fff;
+  background-color: var(--accent-primary);
+  transition: background-color 0.2s ease, transform 0.1s ease;
+  margin-bottom: 10px;
+}
+
+button:hover {
+  background-color: var(--accent-primary-hover);
+}
+
+button:active {
+  transform: scale(0.98);
+}
+
+#btnRestart {
+  background-color: var(--accent-danger);
+}
+#btnRestart:hover {
+  background-color: #ff6b79;
+}
+
+
+/* --- Stats Panel --- */
+.stats-panel {
+  width: 100%;
+}
+
+.stat-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--border-color);
+  font-size: 14px;
+}
+.stat-item:last-child {
+  border-bottom: none;
+}
+
+.stat-item .label {
+  color: var(--text-secondary);
+  font-weight: 400;
+}
+
+.stat-item .value {
+  color: var(--text-primary);
+  font-weight: 700;
+  font-size: 16px;
+}
+
+/* --- Game Over Overlay --- */
+.game-over-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 800px;
+  height: 800px;
+  max-width: 100%;
+  max-height: 100%;
+  background: rgba(18, 20, 23, 0.9);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: var(--text-primary);
+  text-align: center;
+  z-index: 1000;
+  opacity: 0;
+  animation: fadeIn 0.5s ease forwards;
+}
+
+.game-over-overlay h2 {
+  font-size: 48px;
+  color: var(--accent-danger);
+  border: none;
+  margin-bottom: 15px;
+}
+
+.game-over-overlay p {
+  font-size: 20px;
+  color: var(--text-secondary);
+  margin-bottom: 8px;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+/* 静态提示在窄屏上隐藏，保证布局 */
+@media(max-width:500px){
+  #info p{font-size:12px;line-height:1.4}
+}
+
+@media(max-height:840px){
+  /* 若高度不够可缩小画布 */
+  #gameCanvas{width:600px;height:600px;}
+}
+
+/* --- Responsive Design --- */
+
+/* For Tablets and smaller desktops */
+@media (max-width: 1200px) {
+  .container {
+    gap: 20px;
+    padding: 15px;
+  }
+  .side {
+    flex-basis: 220px;
+    padding: 20px;
+  }
+  h1 { font-size: 24px; }
+  h2 { font-size: 18px; }
+  button { padding: 12px 15px; }
+}
+
+/* For Mobile devices */
+@media (max-width: 992px) {
+  body {
+    height: auto;
+    overflow: auto;
+  }
+  .container {
+    flex-direction: column;
+    height: auto;
+    padding: 10px;
+  }
+  .side {
+    flex-basis: auto; /* Reset basis for vertical stacking */
+  }
+  .left {
+    order: 1; /* Controls */
+  }
+  .game-main {
+    order: 2; /* Canvas */
+  }
+  .right {
+    order: 3; /* Stats */
+  }
+  #gameCanvas {
+    width: 100%;
+    height: auto;
+  }
+  .game-over-overlay {
+    /* Adjust overlay to canvas size in mobile view */
+    width: calc(100% - 20px); /* container padding */
+    height: calc(100vw - 20px);
+    max-height: calc(100vh - 300px); /* rough estimate to not overlap all content */
+    position: absolute;
+    top: 50%; /* Re-center within game-main */
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+} 
