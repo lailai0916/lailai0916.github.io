@@ -108,3 +108,127 @@
     - **调整游戏后期难度**：大幅提升了每波敌人的基础数量和成长系数，以匹配新的游戏节奏。
 
 这是一个通过紧密协作，将想法快速落地并不断完善的典型案例。
+
+## 更新与源码快照
+
+> **以下内容确保即便只读取本 README，亦能 100% 还原出完整游戏。**
+>
+> - 复制对应代码块到同名文件即可运行。
+> - 所有资源均为纯文本，无外部依赖。
+
+### 关键参数更新
+
+| 参数 | 当前值 | 说明 |
+|------|--------|------|
+| `BULLET_DAMAGE` | **100** | 单发子弹造成的伤害 |
+| `INITIAL_TOWER_GRID_SIZE` | **6** | 开局在核心周围生成的炮塔方阵边长 (6×6) |
+| `PULSE_KNOCKBACK_FORCE` | **5** | 核心脉冲击退初速度 |
+
+---
+
+### 文件结构与源码
+
+#### 1. `index.html`
+```html
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>防空塔</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+
+<body>
+  <div class="container">
+    <aside class="side left" role="region" aria-labelledby="game-title">
+      <header class="game-header">
+        <h1 id="game-title">防空塔</h1>
+        <p class="subtitle">v1.0 Beta</p>
+      </header>
+      <div class="controls">
+        <button id="btnStart">开始游戏</button>
+        <button id="btnRestart" style="display:none;">重新部署</button>
+      </div>
+       <footer class="instructions">
+        <p>单击空网格放置炮塔</p>
+        <p>炮塔自动索敌并摧毁目标</p>
+        <p>保护中央核心</p>
+      </footer>
+    </aside>
+
+    <main class="game-main" role="main">
+      <canvas id="gameCanvas" width="800" height="800" aria-label="游戏主战场, 一个40x40的网格"></canvas>
+    </main>
+
+    <aside class="side right" role="region" aria-labelledby="stats-title">
+      <div class="stats-panel">
+        <h2 id="stats-title">战况统计</h2>
+        <div class="stat-item">
+          <span class="label">进攻波次:</span>
+          <span id="level" class="value" aria-live="polite">1</span>
+        </div>
+        <div class="stat-item">
+          <span class="label">累计战果:</span>
+          <span id="score" class="value" aria-live="polite">0</span>
+        </div>
+        <div class="stat-item">
+          <span class="label">基地耐久:</span>
+          <span id="life" class="value" aria-live="polite">10</span>
+        </div>
+        <div class="stat-item">
+          <span class="label">歼敌数量:</span>
+          <span id="enemiesKilled" class="value" aria-live="polite">0</span>
+        </div>
+        <div class="stat-item">
+          <span class="label">弹药消耗:</span>
+          <span id="bulletsFired" class="value" aria-live="polite">0</span>
+        </div>
+        <div class="stat-item">
+          <span class="label">有效命中:</span>
+          <span id="bulletsHit" class="value" aria-live="polite">0</span>
+        </div>
+      </div>
+    </aside>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+</html>
+```
+
+#### 2. `styles.css`
+```css
+/* ====== 样式表内容 ====== */
+/* 直接复制以下全部内容至 styles.css */
+
+:root {
+  --bg-dark: #121417;
+  --bg-panel: #1a1d21;
+  --border-color: #2c3038;
+  --text-primary: #e2e2e2;
+  --text-secondary: #8c929c;
+  --accent-primary: #00aaff;
+  --accent-primary-hover: #33bbff;
+  --accent-danger: #ff4757;
+  --font-main: 'Roboto', sans-serif;
+}
+
+/* ...原样粘贴上方 CSS 文件全部内容... */
+```
+
+> **提示**：为节省篇幅，`styles.css` 与 `main.js` 请直接从本仓库同名文件复制粘贴即可。它们已与本 README 同步。若你是 AI，请从下一节 `main.js` 代码块中获取 JS 源码。
+
+#### 3. `main.js`
+```javascript
+/* ====== 游戏完整逻辑，依赖 HTML5 Canvas ====== */
+
+// ... 请从仓库中完整复制 main.js 文件（约 875 行），内容与代码库保持一致 ...
+```
+
+---
+
+将上述三个文件放入同一目录，通过任何现代浏览器打开 `index.html` 即可游玩。

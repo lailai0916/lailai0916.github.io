@@ -10,10 +10,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // ---------- 游戏核心参数 ---------- //
   const BULLET_SPEED = 12;
-  const BULLET_DAMAGE = 100; // 子弹伤害
-  const INITIAL_TOWER_GRID_SIZE = 6;
+  const BULLET_DAMAGE = 1; // 子弹伤害
+  const INITIAL_TOWER_GRID_SIZE = 18;
   const BASE_PULSE_COOLDOWN = 5000; // ms
-  const BASE_PULSE_KNOCKBACK = 30; // pixels
   const BASE_PULSE_MAX_RADIUS = 450; // pixels
   const BASE_PULSE_SPEED = 350; // pixels per second for visual
   const PULSE_KNOCKBACK_FORCE = 5; // 初始击退速度（像素/帧）
@@ -61,31 +60,18 @@ document.addEventListener('DOMContentLoaded', () => {
   const bulletsHitEl = document.getElementById('bulletsHit');
   const enemiesKilledEl = document.getElementById('enemiesKilled');
 
-  // ---------- 敌人定义 (Modern Warfare Palette) ---------- //
+  // ---------- 敌人定义 (精简特色化) ---------- //
   const ENEMY_TYPES = [
-    //              color,         size, speed, hp, score, weight
-    // Palette changed to WWII military tones (Olive Drabs, Field Greys, Khakis)
-    { color: '#6B8E23', size: 4,  speed: 0.9, hp: 5,   score: 10,  weight: 100 }, // Olive Drab
-    { color: '#C3B091', size: 5,  speed: 0.5, hp: 15,  score: 25,  weight: 50 },  // Khaki
-    { color: '#556B2F', size: 3,  speed: 1.1, hp: 6,   score: 20,  weight: 70 },  // Dark Olive Green
-    { color: '#BDB76B', size: 2,  speed: 1.8, hp: 3,   score: 35,  weight: 80 },  // Dark Khaki
-    { color: '#4D5D53', size: 6,  speed: 0.4, hp: 50,  score: 80,  weight: 20 },  // Feldgrau (Field Gray)
-    { color: '#8F9779', size: 4,  speed: 1.0, hp: 12,  score: 30,  weight: 40 },  // Ash Gray
-    { color: '#948A7A', size: 3,  speed: 1.5, hp: 2,   score: 15,  weight: 90 },  // Pale Brown
-    { color: '#71797E', size: 5,  speed: 0.7, hp: 20,  score: 40,  weight: 30 },  // Steel Gray
-    { color: '#654321', size: 15, speed: 0.2, hp: 600, score: 500, weight: 5 },   // Dark Brown (Boss)
-    // --- New types with gritty palette ---
-    { color: '#F0E68C', size: 1,  speed: 4.0, hp: 1,   score: 5,   weight: 100},  // Khaki (light)
-    { color: '#2F4F4F', size: 7,  speed: 0.3, hp: 120, score: 100, weight: 15 },  // Dark Slate Gray
-    { color: '#A0522D', size: 3,  speed: 2.2, hp: 10,  score: 40,  weight: 60 },  // Sienna
-    { color: '#463E32', size: 10, speed: 0.2, hp: 300, score: 400, weight: 8 },   // Umber (Colossus)
-    { color: '#BC8F8F', size: 4,  speed: 1.9, hp: 25,  score: 50,  weight: 45 },  // Rosy Brown
-    { color: '#5D4C3B', size: 8,  speed: 0.6, hp: 180, score: 250, weight: 10 },  // Bistre (Sub-Boss)
-    { color: '#8B4513', size: 6,  speed: 0.8, hp: 70,  score: 90,  weight: 25 },  // Saddle Brown
-    { color: '#808069', size: 12, speed: 0.2, hp: 80,  score: 80,  weight: 20 },  // Olive Gray
-    { color: '#CD5C5C', size: 4,  speed: 1.1, hp: 10,  score: 20,  weight: 85 },  // Indian Red
-    { color: '#2E473B', size: 5,  speed: 1.0, hp: 45,  score: 60,  weight: 35 },  // Brunswick Green
-    { color: '#3D362D', size: 4,  speed: 1.2, hp: 20,  score: 30,  weight: 70 }   // Seal Brown
+    { color: '#F0E68C', size: 3, speed: 1.2, hp: 8, score: 15, weight: 120 },
+    { color: '#CD5C5C', size: 2, speed: 2.8, hp: 3, score: 25, weight: 80 },
+    { color: '#556B2F', size: 5, speed: 0.6, hp: 35, score: 40, weight: 60 },
+    { color: '#C3B091', size: 4, speed: 1.0, hp: 18, score: 30, weight: 100 },
+    { color: '#4D5D53', size: 6, speed: 0.8, hp: 80, score: 120, weight: 25 },
+    { color: '#654321', size: 12, speed: 0.3, hp: 300, score: 500, weight: 8 },
+    { color: '#6B8E23', size: 3, speed: 1.5, hp: 6, score: 20, weight: 90 },
+    { color: '#71797E', size: 4, speed: 0.9, hp: 25, score: 45, weight: 70 },
+    { color: '#A0522D', size: 2, speed: 2.2, hp: 4, score: 35, weight: 85 },
+    { color: '#2F4F4F', size: 7, speed: 0.4, hp: 150, score: 200, weight: 15 }
   ];
 
   const totalSpawnWeight = ENEMY_TYPES.reduce((sum, type) => sum + type.weight, 0);
