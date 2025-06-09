@@ -6,7 +6,7 @@ export default function GamePage() {
     <Layout title="防空塔" description="防空塔">
       <div style={{ width: '100%', height: 'calc(100vh - 60px)', overflow: 'hidden' }}>
         <iframe
-          src="/power/index1.html"
+          src="/power/index.html"
           title="防空塔"
           style={{ border: 'none', width: '100%', height: '100%' }}
         />
