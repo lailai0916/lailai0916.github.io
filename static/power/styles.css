@@ -319,18 +319,6 @@ button:active {
     max-width: 120px;
   }
   
-  /* 单个按钮时居中显示 */
-  #btnStart:only-child,
-  #btnRestart:only-child {
-    grid-column: 1 / -1;
-  }
-  
-  /* 当只有开始按钮显示时 */
-  #btnRestart[style*="display: none"] ~ #btnStart,
-  #btnRestart[style*="display:none"] ~ #btnStart {
-    grid-column: 1 / -1;
-  }
-  
   /* 移动端统计面板多列布局 */
   .stats-panel {
     display: grid;
