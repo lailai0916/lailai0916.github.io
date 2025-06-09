@@ -10,11 +10,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // ---------- 游戏核心参数 ---------- //
   const BULLET_SPEED = 12;
-  const INITIAL_TOWER_GRID_SIZE = 18;
+  const BULLET_DAMAGE = 100; // 子弹伤害
+  const INITIAL_TOWER_GRID_SIZE = 6;
   const BASE_PULSE_COOLDOWN = 5000; // ms
   const BASE_PULSE_KNOCKBACK = 30; // pixels
   const BASE_PULSE_MAX_RADIUS = 450; // pixels
   const BASE_PULSE_SPEED = 350; // pixels per second for visual
+  const PULSE_KNOCKBACK_FORCE = 5; // 初始击退速度（像素/帧）
+  const PULSE_KNOCKBACK_DAMPING = 0.9; // 每帧衰减系数
 
   // ---------- 全局状态 ---------- //
   let running = false;
@@ -70,7 +73,7 @@ document.addEventListener('DOMContentLoaded', () => {
     { color: '#8F9779', size: 4,  speed: 1.0, hp: 12,  score: 30,  weight: 40 },  // Ash Gray
     { color: '#948A7A', size: 3,  speed: 1.5, hp: 2,   score: 15,  weight: 90 },  // Pale Brown
     { color: '#71797E', size: 5,  speed: 0.7, hp: 20,  score: 40,  weight: 30 },  // Steel Gray
-    { color: '#654321', size: 15, speed: 0.2, hp: 250, score: 500, weight: 5 },   // Dark Brown (Boss)
+    { color: '#654321', size: 15, speed: 0.2, hp: 600, score: 500, weight: 5 },   // Dark Brown (Boss)
     // --- New types with gritty palette ---
     { color: '#F0E68C', size: 1,  speed: 4.0, hp: 1,   score: 5,   weight: 100},  // Khaki (light)
     { color: '#2F4F4F', size: 7,  speed: 0.3, hp: 120, score: 100, weight: 15 },  // Dark Slate Gray
@@ -131,13 +134,8 @@ document.addEventListener('DOMContentLoaded', () => {
             const distance = Math.hypot(enemy.x - this.x, enemy.y - this.y);
             if (distance <= this.pulseRadius) {
               const angle = Math.atan2(enemy.y - this.y, enemy.x - this.x);
-              enemy.x += Math.cos(angle) * BASE_PULSE_KNOCKBACK;
-              enemy.y += Math.sin(angle) * BASE_PULSE_KNOCKBACK;
-
-              // Clamp position to stay within canvas bounds
-              enemy.x = Math.max(0, Math.min(WIDTH, enemy.x));
-              enemy.y = Math.max(0, Math.min(HEIGHT, enemy.y));
-
+              enemy.kvx += Math.cos(angle) * PULSE_KNOCKBACK_FORCE;
+              enemy.kvy += Math.sin(angle) * PULSE_KNOCKBACK_FORCE;
               this.enemiesHitThisPulse.add(enemy); // Mark as hit for this pulse
             }
           }
@@ -248,6 +246,8 @@ document.addEventListener('DOMContentLoaded', () => {
       this.y = y;
       this.maxHp = this.hp;
       this.angle = 0; // Angle for orientation
+      this.kvx = 0;
+      this.kvy = 0;
     }
     update() {
       let targetX = WIDTH / 2;
@@ -277,6 +277,12 @@ document.addEventListener('DOMContentLoaded', () => {
       this.angle = ang; // Update enemy's orientation angle
       this.x += Math.cos(ang) * this.speed;
       this.y += Math.sin(ang) * this.speed;
+      this.x += this.kvx;
+      this.y += this.kvy;
+      this.kvx *= PULSE_KNOCKBACK_DAMPING;
+      this.kvy *= PULSE_KNOCKBACK_DAMPING;
+      this.x = Math.max(0, Math.min(WIDTH, this.x));
+      this.y = Math.max(0, Math.min(HEIGHT, this.y));
     }
     draw() {
       ctx.save();
@@ -694,7 +700,7 @@ document.addEventListener('DOMContentLoaded', () => {
       for (let j = bullets.length - 1; j >= 0; j--) {
         const bullet = bullets[j];
         if (Math.hypot(enemy.x - bullet.x, enemy.y - bullet.y) < enemy.size + bullet.r) {
-          enemy.hp--;
+          enemy.hp -= BULLET_DAMAGE;
           totalBulletsHit++;
           
           // Release bullet to pool using swap-and-pop
