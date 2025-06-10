@@ -10,11 +10,17 @@ document.addEventListener('DOMContentLoaded', () => {
     // 游戏参数
     BULLET_SPEED: 12,
     BULLET_DAMAGE: 1,
-    INITIAL_TOWER_GRID_SIZE: 18,
+    INITIAL_TOWER_GRID_SIZE: 12,
+    
+    // 炮塔参数
+    TOWER_RANGE: 300,           // 炮塔射程
+    TOWER_FIRE_RATE: 100,       // 炮塔射速（冷却时间）
+    TOWER_HP: 5,                // 炮塔血量
+    TOWER_MAX_HP: 5,            // 炮塔最大血量
     
     // 基地脉冲
     BASE_PULSE_COOLDOWN: 5000,
-    BASE_PULSE_MAX_RADIUS: 450,
+    BASE_PULSE_MAX_RADIUS: 600,
     BASE_PULSE_SPEED: 350,
     PULSE_KNOCKBACK_FORCE: 5,
     PULSE_KNOCKBACK_DAMPING: 0.9,
@@ -153,16 +159,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // ========== 敌人配置 ========== //
   const ENEMY_TYPES = [
-    { color: '#F0E68C', size: 3, speed: 1.2, hp: 8, score: 15, weight: 120 },
-    { color: '#CD5C5C', size: 2, speed: 2.8, hp: 3, score: 25, weight: 80 },
-    { color: '#556B2F', size: 5, speed: 0.6, hp: 35, score: 40, weight: 60 },
-    { color: '#C3B091', size: 4, speed: 1.0, hp: 18, score: 30, weight: 100 },
+    { color: '#F0E68C', size: 3, speed: 1.5, hp: 8, score: 15, weight: 120 },
+    { color: '#CD5C5C', size: 2, speed: 3.0, hp: 3, score: 25, weight: 80 },
+    { color: '#556B2F', size: 5, speed: 0.8, hp: 35, score: 40, weight: 60 },
+    { color: '#C3B091', size: 4, speed: 1.2, hp: 18, score: 30, weight: 100 },
     { color: '#4D5D53', size: 6, speed: 0.8, hp: 80, score: 120, weight: 25 },
-    { color: '#654321', size: 12, speed: 0.3, hp: 300, score: 500, weight: 8 },
+    { color: '#654321', size: 12, speed: 0.6, hp: 300, score: 500, weight: 15 },
     { color: '#6B8E23', size: 3, speed: 1.5, hp: 6, score: 20, weight: 90 },
-    { color: '#71797E', size: 4, speed: 0.9, hp: 25, score: 45, weight: 70 },
+    { color: '#71797E', size: 4, speed: 1.0, hp: 25, score: 45, weight: 70 },
     { color: '#A0522D', size: 2, speed: 2.2, hp: 4, score: 35, weight: 85 },
-    { color: '#2F4F4F', size: 7, speed: 0.4, hp: 150, score: 200, weight: 15 }
+    { color: '#2F4F4F', size: 7, speed: 0.8, hp: 150, score: 200, weight: 15 }
   ];
 
   const TOTAL_SPAWN_WEIGHT = ENEMY_TYPES.reduce((sum, type) => sum + type.weight, 0);
@@ -467,11 +473,11 @@ document.addEventListener('DOMContentLoaded', () => {
       this.x = gx * CONFIG.TILE_SIZE + CONFIG.TILE_SIZE / 2;
       this.y = gy * CONFIG.TILE_SIZE + CONFIG.TILE_SIZE / 2;
       this.r = CONFIG.TILE_SIZE * 0.3;
-      this.hp = 5;
-      this.maxHp = 5;
+      this.hp = CONFIG.TOWER_HP;
+      this.maxHp = CONFIG.TOWER_MAX_HP;
       this.cooldown = 0;
-      this.range = 300;
-      this.fireRate = 100;
+      this.range = CONFIG.TOWER_RANGE;
+      this.fireRate = CONFIG.TOWER_FIRE_RATE;
       this.target = null;
       this.angle = -Math.PI / 2;
     }
@@ -661,7 +667,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function startNextWave() {
     GameState.waveInProgress = true;
-    GameState.enemiesToSpawnThisWave = 400 + GameState.wave * 200;
+    GameState.enemiesToSpawnThisWave = 200 + GameState.wave * 100;
     GameState.enemiesSpawnedThisWave = 0;
     GameState.spawnInWaveTimer = 0;
     
@@ -801,7 +807,7 @@ document.addEventListener('DOMContentLoaded', () => {
             GameState.score += enemy.score;
             createExplosion(enemy.x, enemy.y, enemy.color);
             GameState.enemies.splice(i, 1);
-            GameState.enemiesKilled++;
+            GameState.enemiesKilled++; // 只有被我方火力击杀才计入歼敌数
             triggerScreenShake(1, 100);
             break; 
           }
@@ -822,7 +828,7 @@ document.addEventListener('DOMContentLoaded', () => {
         GameState.base.hp--;
         createExplosion(enemy.x, enemy.y, enemy.color);
         GameState.enemies.splice(i, 1);
-        GameState.enemiesKilled++;
+        // 撞击基地死亡不计入歼敌数
         triggerScreenShake(5, 200);
         if (GameState.base.hp <= 0) {
           endGame();
@@ -837,7 +843,7 @@ document.addEventListener('DOMContentLoaded', () => {
           tower.hp--;
           createExplosion(enemy.x, enemy.y, enemy.color);
           GameState.enemies.splice(i, 1);
-          GameState.enemiesKilled++;
+          // 撞击炮塔死亡不计入歼敌数
           triggerScreenShake(1, 100);
           if (tower.hp <= 0) {
             GameState.towers.splice(j, 1);
