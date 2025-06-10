@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // 游戏参数
     BULLET_SPEED: 12,
     BULLET_DAMAGE: 1,
-    INITIAL_TOWER_GRID_SIZE: 12,
+    INITIAL_TOWER_GRID_SIZE: 18,
     
     // 炮塔参数
     TOWER_RANGE: 400,           // 炮塔射程
@@ -159,13 +159,13 @@ document.addEventListener('DOMContentLoaded', () => {
   const ENEMY_TYPES = [
     { color: '#CD5C5C', size: 4, speed: 3.0, hp: 5, weight: 100 },
     { color: '#A0522D', size: 4, speed: 2.5, hp: 10, weight: 100 },
-    { color: '#C3B091', size: 4, speed: 1.5, hp: 20, weight: 100 },
-    { color: '#F0E68C', size: 4, speed: 1.5, hp: 30, weight: 80 },
-    { color: '#6B8E23', size: 4, speed: 1.5, hp: 50, weight: 80 },
-    { color: '#71797E', size: 8, speed: 1.0, hp: 100, weight: 40 },
+    { color: '#C3B091', size: 4, speed: 2.0, hp: 20, weight: 80 },
+    { color: '#F0E68C', size: 4, speed: 1.5, hp: 30, weight: 40 },
+    { color: '#6B8E23', size: 4, speed: 1.5, hp: 50, weight: 40 },
+    { color: '#71797E', size: 8, speed: 1.0, hp: 100, weight: 80 },
     { color: '#556B2F', size: 8, speed: 1.0, hp: 120, weight: 40 },
-    { color: '#4D5D53', size: 8, speed: 1.0, hp: 150, weight: 20 },
-    { color: '#2F4F4F', size: 8, speed: 1.0, hp: 180, weight: 20 },
+    { color: '#4D5D53', size: 8, speed: 1.0, hp: 150, weight: 40 },
+    { color: '#2F4F4F', size: 8, speed: 1.0, hp: 200, weight: 20 },
     { color: '#654321', size: 15, speed: 0.7, hp: 500, weight: 20 },
   ];
 
