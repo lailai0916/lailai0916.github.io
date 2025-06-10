@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
     INITIAL_TOWER_GRID_SIZE: 12,
     
     // 炮塔参数
-    TOWER_RANGE: 300,           // 炮塔射程
+    TOWER_RANGE: 400,           // 炮塔射程
     TOWER_FIRE_RATE: 100,       // 炮塔射速（冷却时间）
     TOWER_HP: 5,                // 炮塔血量
     TOWER_MAX_HP: 5,            // 炮塔最大血量
@@ -43,7 +43,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const HEIGHT = canvas.height;
   
   const UI_ELEMENTS = {
-    score: document.getElementById('score'),
     life: document.getElementById('life'),
     level: document.getElementById('level'),
     btnStart: document.getElementById('btnStart'),
@@ -125,7 +124,6 @@ document.addEventListener('DOMContentLoaded', () => {
   // ========== 游戏状态管理 ========== //
   const GameState = {
     running: false,
-    score: 0,
     wave: 1,
     lastTime: 0,
     
@@ -159,16 +157,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // ========== 敌人配置 ========== //
   const ENEMY_TYPES = [
-    { color: '#F0E68C', size: 3, speed: 1.5, hp: 8, score: 15, weight: 120 },
-    { color: '#CD5C5C', size: 2, speed: 3.0, hp: 3, score: 25, weight: 80 },
-    { color: '#556B2F', size: 5, speed: 0.8, hp: 35, score: 40, weight: 60 },
-    { color: '#C3B091', size: 4, speed: 1.2, hp: 18, score: 30, weight: 100 },
-    { color: '#4D5D53', size: 6, speed: 0.8, hp: 80, score: 120, weight: 25 },
-    { color: '#654321', size: 12, speed: 0.6, hp: 300, score: 500, weight: 15 },
-    { color: '#6B8E23', size: 3, speed: 1.5, hp: 6, score: 20, weight: 90 },
-    { color: '#71797E', size: 4, speed: 1.0, hp: 25, score: 45, weight: 70 },
-    { color: '#A0522D', size: 2, speed: 2.2, hp: 4, score: 35, weight: 85 },
-    { color: '#2F4F4F', size: 7, speed: 0.8, hp: 150, score: 200, weight: 15 }
+    { color: '#CD5C5C', size: 4, speed: 3.0, hp: 5, weight: 100 },
+    { color: '#A0522D', size: 4, speed: 2.5, hp: 10, weight: 100 },
+    { color: '#C3B091', size: 4, speed: 1.5, hp: 20, weight: 100 },
+    { color: '#F0E68C', size: 4, speed: 1.5, hp: 30, weight: 80 },
+    { color: '#6B8E23', size: 4, speed: 1.5, hp: 50, weight: 80 },
+    { color: '#71797E', size: 8, speed: 1.0, hp: 100, weight: 40 },
+    { color: '#556B2F', size: 8, speed: 1.0, hp: 120, weight: 40 },
+    { color: '#4D5D53', size: 8, speed: 1.0, hp: 150, weight: 20 },
+    { color: '#2F4F4F', size: 8, speed: 1.0, hp: 180, weight: 20 },
+    { color: '#654321', size: 15, speed: 0.7, hp: 500, weight: 20 },
   ];
 
   const TOTAL_SPAWN_WEIGHT = ENEMY_TYPES.reduce((sum, type) => sum + type.weight, 0);
@@ -602,7 +600,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function resetGame() {
     GameState.running = true;
-    GameState.score = 0;
     GameState.wave = 1;
     GameState.base = new Base();
     
@@ -655,7 +652,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const overlay = document.createElement('div');
     overlay.className = 'game-over-overlay';
-    overlay.innerHTML = `<h2>防空塔已失守</h2><p>最终战果: ${GameState.score}</p><p>你抵挡了 ${GameState.wave} 波进攻</p>`;
+    overlay.innerHTML = `<h2>防空塔已失守</h2><p>你抵挡了 ${GameState.wave} 波进攻</p>`;
     
     const mainContainer = document.querySelector('.game-main');
     if (mainContainer) {
@@ -804,7 +801,6 @@ document.addEventListener('DOMContentLoaded', () => {
           GameState.bullets.pop();
 
           if (enemy.hp <= 0) {
-            GameState.score += enemy.score;
             createExplosion(enemy.x, enemy.y, enemy.color);
             GameState.enemies.splice(i, 1);
             GameState.enemiesKilled++; // 只有被我方火力击杀才计入歼敌数
@@ -946,7 +942,6 @@ document.addEventListener('DOMContentLoaded', () => {
     drawMinimap();
 
     UI_ELEMENTS.level.textContent = GameState.wave;
-    UI_ELEMENTS.score.textContent = GameState.score;
     UI_ELEMENTS.life.textContent = GameState.base ? GameState.base.hp : 100;
     UI_ELEMENTS.bulletsFired.textContent = GameState.totalBulletsFired;
     UI_ELEMENTS.bulletsHit.textContent = GameState.totalBulletsHit;
