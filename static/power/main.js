@@ -1,66 +1,157 @@
 document.addEventListener('DOMContentLoaded', () => {
-  // ---------- Canvas & Grid ---------- //
+  // ========== 配置常量 ========== //
+  const CONFIG = {
+    // 画布和网格
+    GRID_SIZE: 100,
+    WORLD_WIDTH: 2000,
+    WORLD_HEIGHT: 2000,
+    get TILE_SIZE() { return this.WORLD_WIDTH / this.GRID_SIZE; },
+    
+    // 游戏参数
+    BULLET_SPEED: 12,
+    BULLET_DAMAGE: 1,
+    INITIAL_TOWER_GRID_SIZE: 18,
+    
+    // 基地脉冲
+    BASE_PULSE_COOLDOWN: 5000,
+    BASE_PULSE_MAX_RADIUS: 450,
+    BASE_PULSE_SPEED: 350,
+    PULSE_KNOCKBACK_FORCE: 5,
+    PULSE_KNOCKBACK_DAMPING: 0.9,
+    
+    // 波次系统
+    BURST_INTERVAL_IN_WAVE: 50,
+    ENEMIES_PER_BURST: 10,
+    INTER_WAVE_DELAY: 4000,
+    
+    // 视口
+    MIN_SCALE: 0.5,
+    MAX_SCALE: 3.0,
+    CAMERA_SMOOTHING: 0.1
+  };
+
+  // ========== DOM 元素 ========== //
   const canvas = document.getElementById('gameCanvas');
   const ctx = canvas.getContext('2d');
   const WIDTH = canvas.width;
   const HEIGHT = canvas.height;
+  
+  const UI_ELEMENTS = {
+    score: document.getElementById('score'),
+    life: document.getElementById('life'),
+    level: document.getElementById('level'),
+    btnStart: document.getElementById('btnStart'),
+    btnRestart: document.getElementById('btnRestart'),
+    bulletsFired: document.getElementById('bulletsFired'),
+    bulletsHit: document.getElementById('bulletsHit'),
+    enemiesKilled: document.getElementById('enemiesKilled')
+  };
 
-  const GRID = 40; // 40×40 网格
-  const TILE = WIDTH / GRID; // 单格 20 像素
+  // ========== 视口和相机系统 ========== //
+  const viewport = {
+    x: 0,
+    y: 0,
+    width: WIDTH,
+    height: HEIGHT,
+    scale: 1.0,
+    minScale: CONFIG.MIN_SCALE,
+    maxScale: CONFIG.MAX_SCALE,
+    get defaultScale() { return WIDTH / (CONFIG.TILE_SIZE * 40); }
+  };
 
-  // ---------- 游戏核心参数 ---------- //
-  const BULLET_SPEED = 12;
-  const BULLET_DAMAGE = 1; // 子弹伤害
-  const INITIAL_TOWER_GRID_SIZE = 18;
-  const BASE_PULSE_COOLDOWN = 5000; // ms
-  const BASE_PULSE_MAX_RADIUS = 450; // pixels
-  const BASE_PULSE_SPEED = 350; // pixels per second for visual
-  const PULSE_KNOCKBACK_FORCE = 5; // 初始击退速度（像素/帧）
-  const PULSE_KNOCKBACK_DAMPING = 0.9; // 每帧衰减系数
+  const camera = {
+    isDragging: false,
+    lastMouseX: 0,
+    lastMouseY: 0,
+    targetX: 0,
+    targetY: 0,
+    smoothing: CONFIG.CAMERA_SMOOTHING
+  };
 
-  // ---------- 全局状态 ---------- //
-  let running = false;
-  let score = 0;
-  let wave = 1;
-  let lastTime = 0;
+  // ========== 坐标转换工具 ========== //
+  const CoordinateUtils = {
+    getDefaultViewPosition() {
+      const viewWidth = WIDTH / viewport.defaultScale;
+      const viewHeight = HEIGHT / viewport.defaultScale;
+      return {
+        x: (CONFIG.WORLD_WIDTH - viewWidth) / 2,
+        y: (CONFIG.WORLD_HEIGHT - viewHeight) / 2
+      };
+    },
 
-  // Wave System State
-  let waveInProgress = false;
-  let enemiesToSpawnThisWave = 0;
-  let enemiesSpawnedThisWave = 0;
-  let interWaveTimer = 0;
-  let spawnInWaveTimer = 0;
-  const BURST_INTERVAL_IN_WAVE = 50; // ms, time between bursts
-  const ENEMIES_PER_BURST = 10;       // enemies per burst
-  const INTER_WAVE_DELAY = 4000; // ms
+    worldToScreen(worldX, worldY) {
+      return {
+        x: (worldX - viewport.x) * viewport.scale,
+        y: (worldY - viewport.y) * viewport.scale
+      };
+    },
 
-  let towers = [];
-  let enemies = [];
-  let bullets = []; // Active bullets
-  let bulletPool = []; // Inactive bullets
-  let particles = []; // Active particles
-  let particlePool = []; // Inactive particles
-  let stars = [];
-  let base;
-  let totalBulletsFired = 0;
-  let totalBulletsHit = 0;
-  let enemiesKilled = 0;
-  let waveMessage = '';
-  let waveMessageTimer = 0;
-  let screenShakeDuration = 0;
-  let screenShakeIntensity = 0;
+    screenToWorld(screenX, screenY) {
+      return {
+        x: viewport.x + screenX / viewport.scale,
+        y: viewport.y + screenY / viewport.scale
+      };
+    },
 
-  // ---------- UI 元素 ---------- //
-  const scoreEl = document.getElementById('score');
-  const lifeEl = document.getElementById('life');
-  const levelEl = document.getElementById('level'); // Note: ID in HTML is 'level'
-  const btnStart = document.getElementById('btnStart');
-  const btnRestart = document.getElementById('btnRestart');
-  const bulletsFiredEl = document.getElementById('bulletsFired');
-  const bulletsHitEl = document.getElementById('bulletsHit');
-  const enemiesKilledEl = document.getElementById('enemiesKilled');
+    worldToGrid(worldX, worldY) {
+      return {
+        x: Math.floor(worldX / CONFIG.TILE_SIZE),
+        y: Math.floor(worldY / CONFIG.TILE_SIZE)
+      };
+    },
 
-  // ---------- 敌人定义 (精简特色化) ---------- //
+    gridToWorld(gridX, gridY) {
+      return {
+        x: gridX * CONFIG.TILE_SIZE + CONFIG.TILE_SIZE / 2,
+        y: gridY * CONFIG.TILE_SIZE + CONFIG.TILE_SIZE / 2
+      };
+    }
+  };
+
+  // 初始化视口
+  viewport.scale = viewport.defaultScale;
+  const defaultPos = CoordinateUtils.getDefaultViewPosition();
+  camera.targetX = defaultPos.x;
+  camera.targetY = defaultPos.y;
+  viewport.x = camera.targetX;
+  viewport.y = camera.targetY;
+
+  // ========== 游戏状态管理 ========== //
+  const GameState = {
+    running: false,
+    score: 0,
+    wave: 1,
+    lastTime: 0,
+    
+    // 波次系统
+    waveInProgress: false,
+    enemiesToSpawnThisWave: 0,
+    enemiesSpawnedThisWave: 0,
+    interWaveTimer: 0,
+    spawnInWaveTimer: 0,
+    
+    // 统计数据
+    totalBulletsFired: 0,
+    totalBulletsHit: 0,
+    enemiesKilled: 0,
+    
+    // 视觉效果
+    waveMessage: '',
+    waveMessageTimer: 0,
+    screenShakeDuration: 0,
+    screenShakeIntensity: 0,
+    
+    // 游戏对象
+    towers: [],
+    enemies: [],
+    bullets: [],
+    bulletPool: [],
+    particles: [],
+    particlePool: [],
+    base: null
+  };
+
+  // ========== 敌人配置 ========== //
   const ENEMY_TYPES = [
     { color: '#F0E68C', size: 3, speed: 1.2, hp: 8, score: 15, weight: 120 },
     { color: '#CD5C5C', size: 2, speed: 2.8, hp: 3, score: 25, weight: 80 },
@@ -74,124 +165,103 @@ document.addEventListener('DOMContentLoaded', () => {
     { color: '#2F4F4F', size: 7, speed: 0.4, hp: 150, score: 200, weight: 15 }
   ];
 
-  const totalSpawnWeight = ENEMY_TYPES.reduce((sum, type) => sum + type.weight, 0);
+  const TOTAL_SPAWN_WEIGHT = ENEMY_TYPES.reduce((sum, type) => sum + type.weight, 0);
 
-  function getHealthColor(hp, maxHp) {
-    const percent = hp / maxHp;
-    if (percent > 0.6) return '#BDBDBD'; // Grey (Healthy)
-    if (percent > 0.3) return '#FBC02D'; // Yellow (Damaged)
-    return '#B71C1C'; // Deep Red (Critical)
-  }
+  // ========== 工具函数 ========== //
+  const Utils = {
+    getHealthColor(hp, maxHp) {
+      const percent = hp / maxHp;
+      if (percent > 0.6) return '#BDBDBD';
+      if (percent > 0.3) return '#FBC02D';
+      return '#B71C1C';
+    },
 
-  // ---------- 类定义 ---------- //
+    isInViewport(worldX, worldY, size = 0) {
+      const screenPos = CoordinateUtils.worldToScreen(worldX, worldY);
+      const scaledSize = size * viewport.scale;
+      return screenPos.x + scaledSize >= 0 && 
+             screenPos.x - scaledSize <= WIDTH &&
+             screenPos.y + scaledSize >= 0 && 
+             screenPos.y - scaledSize <= HEIGHT;
+    },
 
+    clamp(value, min, max) {
+      return Math.max(min, Math.min(max, value));
+    }
+  };
+
+  // ========== 游戏类定义 ========== //
   class Base {
     constructor() {
-      this.x = WIDTH / 2;
-      this.y = HEIGHT / 2;
-      this.size = TILE * 2;
+      this.x = CONFIG.WORLD_WIDTH / 2;
+      this.y = CONFIG.WORLD_HEIGHT / 2;
+      this.size = CONFIG.TILE_SIZE * 2;
       this.hp = 100;
       this.maxHp = 100;
-      // Pulse Skill
-      this.pulseTimer = BASE_PULSE_COOLDOWN;
+      this.pulseTimer = CONFIG.BASE_PULSE_COOLDOWN;
       this.pulseActive = false;
       this.pulseRadius = 0;
-      this.enemiesHitThisPulse = new Set(); // Track enemies hit in the current pulse
+      this.enemiesHitThisPulse = new Set();
     }
     update(dt, enemies) {
-      // Pulse Cooldown
       if (!this.pulseActive) {
         this.pulseTimer -= dt;
         if (this.pulseTimer <= 0) {
-          this.pulseTimer = BASE_PULSE_COOLDOWN;
+          this.pulseTimer = CONFIG.BASE_PULSE_COOLDOWN;
           this.pulseActive = true;
           this.pulseRadius = 0;
-          this.enemiesHitThisPulse.clear(); // Reset for the new pulse
+          this.enemiesHitThisPulse.clear();
         }
       }
 
-      // Update pulse animation and apply knockback as it expands
       if (this.pulseActive) {
-        this.pulseRadius += BASE_PULSE_SPEED * (dt / 1000);
+        this.pulseRadius += CONFIG.BASE_PULSE_SPEED * (dt / 1000);
 
-        // Check for enemies to knock back
         for (const enemy of enemies) {
           if (!this.enemiesHitThisPulse.has(enemy)) {
             const distance = Math.hypot(enemy.x - this.x, enemy.y - this.y);
             if (distance <= this.pulseRadius) {
               const angle = Math.atan2(enemy.y - this.y, enemy.x - this.x);
-              enemy.kvx += Math.cos(angle) * PULSE_KNOCKBACK_FORCE;
-              enemy.kvy += Math.sin(angle) * PULSE_KNOCKBACK_FORCE;
-              this.enemiesHitThisPulse.add(enemy); // Mark as hit for this pulse
+              enemy.kvx += Math.cos(angle) * CONFIG.PULSE_KNOCKBACK_FORCE;
+              enemy.kvy += Math.sin(angle) * CONFIG.PULSE_KNOCKBACK_FORCE;
+              this.enemiesHitThisPulse.add(enemy);
             }
           }
         }
 
-        if (this.pulseRadius > BASE_PULSE_MAX_RADIUS) {
+        if (this.pulseRadius > CONFIG.BASE_PULSE_MAX_RADIUS) {
           this.pulseActive = false;
         }
       }
     }
     draw() {
-      // Draw pulse wave
+      const screenPos = CoordinateUtils.worldToScreen(this.x, this.y);
+      
       if (this.pulseActive) {
         ctx.save();
-        const opacity = 1 - (this.pulseRadius / BASE_PULSE_MAX_RADIUS);
+        const opacity = 1 - (this.pulseRadius / CONFIG.BASE_PULSE_MAX_RADIUS);
         
-        // Outer wave - Gritty explosion style
-        ctx.strokeStyle = `rgba(255, 138, 101, ${opacity * 0.8})`; // Dusty orange
-        ctx.lineWidth = 4;
+        ctx.strokeStyle = `rgba(255, 138, 101, ${opacity * 0.8})`;
+        ctx.lineWidth = 4 * viewport.scale;
         ctx.beginPath();
-        ctx.arc(this.x, this.y, this.pulseRadius, 0, Math.PI * 2);
+        ctx.arc(screenPos.x, screenPos.y, this.pulseRadius * viewport.scale, 0, Math.PI * 2);
         ctx.stroke();
 
-        // Inner wave
-        ctx.strokeStyle = `rgba(255, 235, 156, ${opacity * 0.5})`; // Pale yellow
-        ctx.lineWidth = 2;
+        ctx.strokeStyle = `rgba(255, 235, 156, ${opacity * 0.5})`;
+        ctx.lineWidth = 2 * viewport.scale;
         ctx.beginPath();
-        ctx.arc(this.x, this.y, this.pulseRadius * 0.8, 0, Math.PI * 2);
+        ctx.arc(screenPos.x, screenPos.y, this.pulseRadius * 0.8 * viewport.scale, 0, Math.PI * 2);
         ctx.stroke();
 
         ctx.restore();
       }
 
-      const halfSize = this.size / 2;
-      // Main body
-      ctx.fillStyle = '#00aaff'; // Accent color
-      ctx.fillRect(this.x - halfSize, this.y - halfSize, this.size, this.size);
-      // Border
-      ctx.strokeStyle = '#33bbff'; // Lighter accent
-      ctx.lineWidth = 3;
-      ctx.strokeRect(this.x - halfSize, this.y - halfSize, this.size, this.size);
-    }
-  }
-
-  class Star {
-    constructor(x, y, color) {
-      this.x = x;
-      this.y = y;
-      // Use fire colors instead of enemy color
-      const fireColors = ['#FFD700', '#FFA500', '#FF4500', '#FFFFFF'];
-      this.color = fireColors[Math.floor(Math.random() * fireColors.length)];
-      this.size = Math.random() * 3 + 1.5;
-      this.life = 40; // longer life
-      this.vx = (Math.random() - 0.5) * 5;
-      this.vy = (Math.random() - 0.5) * 5 - 2; // 向上初速度
-      this.gravity = 0.15;
-    }
-    update() {
-      this.life--;
-      this.vy += this.gravity;
-      this.x += this.vx;
-      this.y += this.vy;
-    }
-    draw() {
-      ctx.globalAlpha = this.life / 40;
-      ctx.fillStyle = this.color;
-      ctx.beginPath();
-      ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-      ctx.fill();
-      ctx.globalAlpha = 1.0;
+      const halfSize = (this.size * viewport.scale) / 2;
+      ctx.fillStyle = '#00aaff';
+      ctx.fillRect(screenPos.x - halfSize, screenPos.y - halfSize, this.size * viewport.scale, this.size * viewport.scale);
+      ctx.strokeStyle = '#33bbff';
+      ctx.lineWidth = 3 * viewport.scale;
+      ctx.strokeRect(screenPos.x - halfSize, screenPos.y - halfSize, this.size * viewport.scale, this.size * viewport.scale);
     }
   }
 
@@ -216,10 +286,11 @@ document.addEventListener('DOMContentLoaded', () => {
       this.y += this.vy;
     }
     draw() {
+      const screenPos = CoordinateUtils.worldToScreen(this.x, this.y);
       ctx.globalAlpha = this.life / 30;
       ctx.fillStyle = this.color;
       ctx.beginPath();
-      ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+      ctx.arc(screenPos.x, screenPos.y, this.size * viewport.scale, 0, Math.PI * 2);
       ctx.fill();
       ctx.globalAlpha = 1.0;
     }
@@ -231,17 +302,17 @@ document.addEventListener('DOMContentLoaded', () => {
       this.x = x;
       this.y = y;
       this.maxHp = this.hp;
-      this.angle = 0; // Angle for orientation
+      this.angle = 0;
       this.kvx = 0;
       this.kvy = 0;
     }
+
     update() {
-      let targetX = WIDTH / 2;
-      let targetY = HEIGHT / 2;
+      let targetX = CONFIG.WORLD_WIDTH / 2;
+      let targetY = CONFIG.WORLD_HEIGHT / 2;
       let minDist = Infinity;
 
-      // Find closest tower
-      for (const tower of towers) {
+      for (const tower of GameState.towers) {
         const d = Math.hypot(tower.x - this.x, tower.y - this.y);
         if (d < minDist) {
           minDist = d;
@@ -250,45 +321,45 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       }
 
-      // Check if base is closer
-      if (base) {
-        const dToBase = Math.hypot(base.x - this.x, base.y - this.y);
+      if (GameState.base) {
+        const dToBase = Math.hypot(GameState.base.x - this.x, GameState.base.y - this.y);
         if (dToBase < minDist) {
-          targetX = base.x;
-          targetY = base.y;
+          targetX = GameState.base.x;
+          targetY = GameState.base.y;
         }
       }
       
       const ang = Math.atan2(targetY - this.y, targetX - this.x);
-      this.angle = ang; // Update enemy's orientation angle
+      this.angle = ang;
       this.x += Math.cos(ang) * this.speed;
       this.y += Math.sin(ang) * this.speed;
       this.x += this.kvx;
       this.y += this.kvy;
-      this.kvx *= PULSE_KNOCKBACK_DAMPING;
-      this.kvy *= PULSE_KNOCKBACK_DAMPING;
-      this.x = Math.max(0, Math.min(WIDTH, this.x));
-      this.y = Math.max(0, Math.min(HEIGHT, this.y));
+      this.kvx *= CONFIG.PULSE_KNOCKBACK_DAMPING;
+      this.kvy *= CONFIG.PULSE_KNOCKBACK_DAMPING;
+      this.x = Utils.clamp(this.x, 0, CONFIG.WORLD_WIDTH);
+      this.y = Utils.clamp(this.y, 0, CONFIG.WORLD_HEIGHT);
     }
     draw() {
-      ctx.save();
-      ctx.translate(this.x, this.y);
-      ctx.rotate(this.angle);
-
-      // --- Redrawing enemy as a more realistic B-17-style bomber ---
+      const screenPos = CoordinateUtils.worldToScreen(this.x, this.y);
       
+      ctx.save();
+      ctx.translate(screenPos.x, screenPos.y);
+      ctx.rotate(this.angle);
+      ctx.scale(viewport.scale, viewport.scale);
+
       const bodyLength = this.size * 3;
       const wingSpan = this.size * 3.5;
       const wingWidth = this.size * 0.8;
       const tailSpan = this.size * 1.5;
 
-      // Tailplane (horizontal stabilizer)
+      // 尾翼
       ctx.fillStyle = this.color;
       ctx.beginPath();
       ctx.rect(-bodyLength * 0.5, -tailSpan / 2, bodyLength * 0.2, tailSpan);
       ctx.fill();
 
-      // Fuselage (main body)
+      // 机身
       ctx.beginPath();
       ctx.moveTo(bodyLength * 0.5, 0);
       ctx.quadraticCurveTo(bodyLength * 0.4, this.size * 0.5, 0, this.size * 0.5);
@@ -299,7 +370,7 @@ document.addEventListener('DOMContentLoaded', () => {
       ctx.quadraticCurveTo(bodyLength * 0.4, -this.size * 0.5, bodyLength * 0.5, 0);
       ctx.fill();
 
-      // Main wings
+      // 主翼
       ctx.beginPath();
       ctx.moveTo(0, -wingSpan / 2);
       ctx.lineTo(-wingWidth, -wingSpan / 2);
@@ -308,9 +379,9 @@ document.addEventListener('DOMContentLoaded', () => {
       ctx.quadraticCurveTo(wingWidth * 0.5, 0, 0, -wingSpan/2);
       ctx.fill();
       
-      // Engines
+      // 引擎
       const engineRadius = this.size * 0.3;
-      ctx.fillStyle = '#424242'; // Darker engine color
+      ctx.fillStyle = '#424242';
       ctx.beginPath();
       ctx.arc(-wingWidth * 0.5, -wingSpan * 0.3, engineRadius, 0, Math.PI * 2);
       ctx.fill();
@@ -318,8 +389,8 @@ document.addEventListener('DOMContentLoaded', () => {
       ctx.arc(-wingWidth * 0.5, wingSpan * 0.3, engineRadius, 0, Math.PI * 2);
       ctx.fill();
 
-      // Cockpit
-      ctx.fillStyle = '#A8D2F0'; // Glassy blue
+      // 驾驶舱
+      ctx.fillStyle = '#A8D2F0';
       ctx.beginPath();
       ctx.moveTo(bodyLength * 0.3, -this.size * 0.4);
       ctx.quadraticCurveTo(bodyLength * 0.5, 0, bodyLength * 0.3, this.size * 0.4);
@@ -329,14 +400,14 @@ document.addEventListener('DOMContentLoaded', () => {
       
       ctx.restore();
 
-      // Health bar (non-rotating)
-      const barWidth = this.size * 1.8;
-      const barHeight = 4;
-      const barY = this.y - (wingSpan / 2) - barHeight - 4; // Adjust bar position based on wingspan
+      // 血条
+      const barWidth = this.size * 1.8 * viewport.scale;
+      const barHeight = 4 * viewport.scale;
+      const barY = screenPos.y - (wingSpan / 2 * viewport.scale) - barHeight - 4;
       ctx.fillStyle = '#333';
-      ctx.fillRect(this.x - barWidth / 2, barY, barWidth, barHeight);
-      ctx.fillStyle = getHealthColor(this.hp, this.maxHp);
-      ctx.fillRect(this.x - barWidth / 2, barY, barWidth * (this.hp / this.maxHp), barHeight);
+      ctx.fillRect(screenPos.x - barWidth / 2, barY, barWidth, barHeight);
+      ctx.fillStyle = Utils.getHealthColor(this.hp, this.maxHp);
+      ctx.fillRect(screenPos.x - barWidth / 2, barY, barWidth * (this.hp / this.maxHp), barHeight);
     }
   }
 
@@ -344,62 +415,73 @@ document.addEventListener('DOMContentLoaded', () => {
     constructor(x, y, ang) {
       this.reset(x, y, ang);
     }
+
     reset(x, y, ang) {
-      this.x = x; this.y = y; this.r = 2.5;
-      this.vx = Math.cos(ang) * BULLET_SPEED; 
-      this.vy = Math.sin(ang) * BULLET_SPEED; 
+      this.x = x; 
+      this.y = y; 
+      this.r = 2.5;
+      this.vx = Math.cos(ang) * CONFIG.BULLET_SPEED; 
+      this.vy = Math.sin(ang) * CONFIG.BULLET_SPEED; 
     }
+
     update() { 
       this.x += this.vx; 
       this.y += this.vy; 
     }
+
     draw() { 
+      const screenPos = CoordinateUtils.worldToScreen(this.x, this.y);
+      
       ctx.save();
       
-      const length = 15; // Length of the tracer line
-      const tailX = this.x - this.vx / BULLET_SPEED * length;
-      const tailY = this.y - this.vy / BULLET_SPEED * length;
+      const length = 15 * viewport.scale;
+      const tailX = screenPos.x - (this.vx / CONFIG.BULLET_SPEED * length);
+      const tailY = screenPos.y - (this.vy / CONFIG.BULLET_SPEED * length);
 
-      // Create a gradient for the tracer effect
-      const gradient = ctx.createLinearGradient(this.x, this.y, tailX, tailY);
-      gradient.addColorStop(0, '#FFFFFF');        // White-hot tip
-      gradient.addColorStop(0.3, '#FFCC80');      // Main tracer color (light orange)
-      gradient.addColorStop(1, 'rgba(255, 138, 101, 0)'); // Fading to transparent orange
+      const gradient = ctx.createLinearGradient(screenPos.x, screenPos.y, tailX, tailY);
+      gradient.addColorStop(0, '#FFFFFF');
+      gradient.addColorStop(0.3, '#FFCC80');
+      gradient.addColorStop(1, 'rgba(255, 138, 101, 0)');
 
       ctx.strokeStyle = gradient;
-      ctx.lineWidth = 3;
+      ctx.lineWidth = 3 * viewport.scale;
       ctx.lineCap = 'round';
 
       ctx.beginPath();
       ctx.moveTo(tailX, tailY);
-      ctx.lineTo(this.x, this.y);
+      ctx.lineTo(screenPos.x, screenPos.y);
       ctx.stroke();
 
       ctx.restore();
     }
-    isOffscreen() { return this.x < 0 || this.x > WIDTH || this.y < 0 || this.y > HEIGHT; }
+
+    isOffscreen() { 
+      return this.x < 0 || this.x > CONFIG.WORLD_WIDTH || this.y < 0 || this.y > CONFIG.WORLD_HEIGHT; 
+    }
   }
 
   class Tower {
     constructor(gx, gy) {
-      this.gx = gx; this.gy = gy;
-      this.x = gx * TILE + TILE / 2;
-      this.y = gy * TILE + TILE / 2;
-      this.r = TILE * 0.3; // 6px
+      this.gx = gx; 
+      this.gy = gy;
+      this.x = gx * CONFIG.TILE_SIZE + CONFIG.TILE_SIZE / 2;
+      this.y = gy * CONFIG.TILE_SIZE + CONFIG.TILE_SIZE / 2;
+      this.r = CONFIG.TILE_SIZE * 0.3;
       this.hp = 5;
       this.maxHp = 5;
       this.cooldown = 0;
       this.range = 300;
-      this.fireRate = 100; // 再次降低冷却时间
-      this.target = null; // 用于绘制瞄准线
-      this.angle = -Math.PI / 2; // 默认朝上
+      this.fireRate = 100;
+      this.target = null;
+      this.angle = -Math.PI / 2;
     }
+
     update(dt) {
       if (this.cooldown > 0) this.cooldown -= dt;
       
       let newTarget = null;
       let minDist = Infinity;
-      for (const e of enemies) {
+      for (const e of GameState.enemies) {
         const d = Math.hypot(e.x - this.x, e.y - this.y);
         if (d < this.range && d < minDist) {
           minDist = d;
@@ -410,158 +492,189 @@ document.addEventListener('DOMContentLoaded', () => {
 
       if (this.target) {
         const baseAngle = Math.atan2(this.target.y - this.y, this.target.x - this.x);
-        this.angle = baseAngle; // 炮台自身精确瞄准
+        this.angle = baseAngle;
 
         if (this.cooldown <= 0) {
-          // 子弹发射时增加随机偏移量
-          const angleOffset = (Math.random() - 0.5) * (6 * Math.PI / 180); // ±3 degrees in radians
+          const angleOffset = (Math.random() - 0.5) * (6 * Math.PI / 180);
           const finalAngle = baseAngle + angleOffset;
 
-          spawnBullet(this.x, this.y, finalAngle);
-          totalBulletsFired++;
+          ObjectPool.spawnBullet(this.x, this.y, finalAngle);
+          GameState.totalBulletsFired++;
           this.cooldown = this.fireRate;
         }
       }
     }
     draw() {
-      // Aiming line (dashed)
+      const screenPos = CoordinateUtils.worldToScreen(this.x, this.y);
+      
       if (this.target) {
+        const targetScreenPos = CoordinateUtils.worldToScreen(this.target.x, this.target.y);
         ctx.save();
         ctx.strokeStyle = 'rgba(255, 255, 255, 0.4)';
-        ctx.lineWidth = 1;
-        ctx.setLineDash([2, 4]);
+        ctx.lineWidth = 1 * viewport.scale;
+        ctx.setLineDash([2 * viewport.scale, 4 * viewport.scale]);
         ctx.beginPath();
-        ctx.moveTo(this.x, this.y);
-        ctx.lineTo(this.target.x, this.target.y);
+        ctx.moveTo(screenPos.x, screenPos.y);
+        ctx.lineTo(targetScreenPos.x, targetScreenPos.y);
         ctx.stroke();
         ctx.restore();
       }
       
-      // Draw tower with rotation
       ctx.save();
-      ctx.translate(this.x, this.y);
+      ctx.translate(screenPos.x, screenPos.y);
       ctx.rotate(this.angle);
+      ctx.scale(viewport.scale, viewport.scale);
 
-      // Tower Base
-      ctx.fillStyle = '#9E9E9E'; // Lighter grey
+      ctx.fillStyle = '#9E9E9E';
       ctx.beginPath();
       ctx.arc(0, 0, this.r, 0, Math.PI * 2);
       ctx.fill();
       
-      // Tower Core
-      ctx.fillStyle = '#BDBDBD'; // Metal grey
+      ctx.fillStyle = '#BDBDBD';
       ctx.beginPath();
       ctx.arc(0, 0, this.r * 0.7, 0, Math.PI * 2);
       ctx.fill();
 
-      // Barrel
-      ctx.fillStyle = '#616161'; // Darker grey
+      ctx.fillStyle = '#616161';
       ctx.fillRect(this.r * 0.5, -2, this.r + 2, 4); 
 
       ctx.restore();
 
-      // Health bar (non-rotating)
-      const barWidth = this.r * 1.8;
-      const barHeight = 3;
-      const barY = this.y + this.r + 4;
+      const barWidth = this.r * 1.8 * viewport.scale;
+      const barHeight = 3 * viewport.scale;
+      const barY = screenPos.y + (this.r * viewport.scale) + 4;
       ctx.fillStyle = '#333';
-      ctx.fillRect(this.x - barWidth / 2, barY, barWidth, barHeight);
-      ctx.fillStyle = getHealthColor(this.hp, this.maxHp);
-      ctx.fillRect(this.x - barWidth / 2, barY, barWidth * (this.hp / this.maxHp), barHeight);
+      ctx.fillRect(screenPos.x - barWidth / 2, barY, barWidth, barHeight);
+      ctx.fillStyle = Utils.getHealthColor(this.hp, this.maxHp);
+      ctx.fillRect(screenPos.x - barWidth / 2, barY, barWidth * (this.hp / this.maxHp), barHeight);
     }
   }
 
-  // ---------- 游戏逻辑 ---------- //
+  // ========== 对象池管理 ========== //
+  const ObjectPool = {
+    spawnBullet(x, y, ang) {
+      let bullet;
+      if (GameState.bulletPool.length > 0) {
+        bullet = GameState.bulletPool.pop();
+        bullet.reset(x, y, ang);
+      } else {
+        bullet = new Bullet(x, y, ang);
+      }
+      GameState.bullets.push(bullet);
+    },
 
-  function init() {
-    for (let i = 0; i < 150; i++) { // More stars
-      stars.push(new Star());
+    spawnParticle(x, y, color) {
+      let particle;
+      if (GameState.particlePool.length > 0) {
+        particle = GameState.particlePool.pop();
+        particle.reset(x, y, color);
+      } else {
+        particle = new Particle(x, y, color);
+      }
+      GameState.particles.push(particle);
+    },
+
+    recycleBullet(index) {
+      const bullet = GameState.bullets[index];
+      GameState.bulletPool.push(bullet);
+      GameState.bullets[index] = GameState.bullets[GameState.bullets.length - 1];
+      GameState.bullets.pop();
+    },
+
+    recycleParticle(index) {
+      const particle = GameState.particles[index];
+      GameState.particlePool.push(particle);
+      GameState.particles[index] = GameState.particles[GameState.particles.length - 1];
+      GameState.particles.pop();
     }
+  };
+
+  // ========== 游戏逻辑函数 ========== //
+  function init() {
+    // 游戏初始化
   }
 
   function resetGame() {
-    running = true;
-    score = 0;
-    wave = 1;
-    base = new Base();
+    GameState.running = true;
+    GameState.score = 0;
+    GameState.wave = 1;
+    GameState.base = new Base();
     
-    waveInProgress = false;
-    interWaveTimer = INTER_WAVE_DELAY; // Start countdown for the first wave
+    GameState.waveInProgress = false;
+    GameState.interWaveTimer = CONFIG.INTER_WAVE_DELAY;
 
-    totalBulletsFired = 0;
-    totalBulletsHit = 0;
-    enemiesKilled = 0;
-    towers = [];
-    enemies = [];
-    bullets = [];
-    particles = [];
+    GameState.totalBulletsFired = 0;
+    GameState.totalBulletsHit = 0;
+    GameState.enemiesKilled = 0;
+    GameState.towers = [];
+    GameState.enemies = [];
+    GameState.bullets = [];
+    GameState.particles = [];
 
     // Add starting towers in the 18x18 area around the 2x2 base
-    const center = GRID / 2;
-    const halfGridSize = INITIAL_TOWER_GRID_SIZE / 2;
+    const center = CONFIG.GRID_SIZE / 2;
+    const halfGridSize = CONFIG.INITIAL_TOWER_GRID_SIZE / 2;
     const startX = center - halfGridSize;
     const startY = center - halfGridSize;
 
-    for (let i = 0; i < INITIAL_TOWER_GRID_SIZE; i++) {
-      for (let j = 0; j < INITIAL_TOWER_GRID_SIZE; j++) {
+    for (let i = 0; i < CONFIG.INITIAL_TOWER_GRID_SIZE; i++) {
+      for (let j = 0; j < CONFIG.INITIAL_TOWER_GRID_SIZE; j++) {
         const gx = startX + i;
         const gy = startY + j;
 
         const isBaseCell = (gx >= center - 1 && gx < center + 1 && gy >= center - 1 && gy < center + 1);
 
         if (!isBaseCell) {
-          towers.push(new Tower(gx, gy));
+          GameState.towers.push(new Tower(gx, gy));
         }
       }
     }
     
-    btnRestart.style.display = 'none';
+    UI_ELEMENTS.btnRestart.style.display = 'none';
     const overlay = document.querySelector('.game-over-overlay');
     if (overlay) overlay.remove();
     
-    lastTime = performance.now();
-    gameLoop(lastTime);
+    GameState.lastTime = performance.now();
+    gameLoop(GameState.lastTime);
   }
 
   function startGame() {
-    btnStart.style.display = 'none';
+    UI_ELEMENTS.btnStart.style.display = 'none';
     resetGame();
   }
 
   function endGame() {
-    running = false;
-    btnRestart.style.display = 'inline-block';
+    GameState.running = false;
+    UI_ELEMENTS.btnRestart.style.display = 'inline-block';
 
     const overlay = document.createElement('div');
     overlay.className = 'game-over-overlay';
-    overlay.innerHTML = `<h2>防空塔已失守</h2><p>最终战果: ${score}</p><p>你抵挡了 ${wave} 波进攻</p>`;
+    overlay.innerHTML = `<h2>防空塔已失守</h2><p>最终战果: ${GameState.score}</p><p>你抵挡了 ${GameState.wave} 波进攻</p>`;
     
-    // Append the overlay to the main game container. CSS will handle the centering.
     const mainContainer = document.querySelector('.game-main');
     if (mainContainer) {
       mainContainer.appendChild(overlay);
     } else {
-      // Fallback in case the container isn't found
       document.body.appendChild(overlay);
     }
   }
 
   function startNextWave() {
-    waveInProgress = true;
-    enemiesToSpawnThisWave = 400 + wave * 200;
-    enemiesSpawnedThisWave = 0;
-    spawnInWaveTimer = 0;
+    GameState.waveInProgress = true;
+    GameState.enemiesToSpawnThisWave = 400 + GameState.wave * 200;
+    GameState.enemiesSpawnedThisWave = 0;
+    GameState.spawnInWaveTimer = 0;
     
-    showWaveMessage(`第 ${wave} 波进攻来袭!`);
+    showWaveMessage(`第 ${GameState.wave} 波进攻来袭!`);
   }
   
   function showWaveMessage(msg) {
-    waveMessage = msg;
-    waveMessageTimer = 2000; // Show message for 2 seconds
+    GameState.waveMessage = msg;
+    GameState.waveMessageTimer = 2000;
   }
 
   function spawnEnemy() {
-    let randomWeight = Math.random() * totalSpawnWeight;
+    let randomWeight = Math.random() * TOTAL_SPAWN_WEIGHT;
     let selectedType = ENEMY_TYPES[ENEMY_TYPES.length - 1];
 
     for (const type of ENEMY_TYPES) {
@@ -573,195 +686,184 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     
     let x, y;
-    const spawnEdge = Math.floor(Math.random() * 4); // 0: top, 1: right, 2: bottom, 3: left
+    const spawnEdge = Math.floor(Math.random() * 4);
 
     switch (spawnEdge) {
-      case 0: // Top
-        x = Math.random() * WIDTH;
+      case 0:
+        x = Math.random() * CONFIG.WORLD_WIDTH;
         y = -selectedType.size;
         break;
-      case 1: // Right
-        x = WIDTH + selectedType.size;
-        y = Math.random() * HEIGHT;
+      case 1:
+        x = CONFIG.WORLD_WIDTH + selectedType.size;
+        y = Math.random() * CONFIG.WORLD_HEIGHT;
         break;
-      case 2: // Bottom
-        x = Math.random() * WIDTH;
-        y = HEIGHT + selectedType.size;
+      case 2:
+        x = Math.random() * CONFIG.WORLD_WIDTH;
+        y = CONFIG.WORLD_HEIGHT + selectedType.size;
         break;
-      case 3: // Left
+      case 3:
         x = -selectedType.size;
-        y = Math.random() * HEIGHT;
+        y = Math.random() * CONFIG.WORLD_HEIGHT;
         break;
     }
-    enemies.push(new Enemy(selectedType, x, y));
+
+    GameState.enemies.push(new Enemy(selectedType, x, y));
   }
 
   function triggerScreenShake(intensity, duration) {
-    // Don't let a weaker shake override a stronger one currently in progress
-    screenShakeIntensity = Math.max(screenShakeIntensity, intensity);
-    // Take the longer duration to ensure the shake feels right
-    screenShakeDuration = Math.max(screenShakeDuration, duration);
+    GameState.screenShakeIntensity = Math.max(GameState.screenShakeIntensity, intensity);
+    GameState.screenShakeDuration = Math.max(GameState.screenShakeDuration, duration);
   }
 
   function createExplosion(x, y, color) {
-    for (let i = 0; i < 6; i++) { // Reduced particle count from 8 to 6
-      spawnParticle(x, y, color);
+    for (let i = 0; i < 6; i++) {
+      ObjectPool.spawnParticle(x, y, color);
     }
   }
 
-  // --- Object Pool Functions ---
-  function spawnBullet(x, y, ang) {
-    let bullet;
-    if (bulletPool.length > 0) {
-      bullet = bulletPool.pop();
-      bullet.reset(x, y, ang);
-    } else {
-      bullet = new Bullet(x, y, ang);
-    }
-    bullets.push(bullet);
+  function updateViewport(dt) {
+    const dx = camera.targetX - viewport.x;
+    const dy = camera.targetY - viewport.y;
+    
+    viewport.x += dx * camera.smoothing;
+    viewport.y += dy * camera.smoothing;
+    
+    const scaledWidth = viewport.width / viewport.scale;
+    const scaledHeight = viewport.height / viewport.scale;
+    
+    viewport.x = Math.max(0, Math.min(CONFIG.WORLD_WIDTH - scaledWidth, viewport.x));
+    viewport.y = Math.max(0, Math.min(CONFIG.WORLD_HEIGHT - scaledHeight, viewport.y));
   }
-
-  function spawnParticle(x, y, color) {
-    let particle;
-    if (particlePool.length > 0) {
-      particle = particlePool.pop();
-      particle.reset(x, y, color);
-    } else {
-      particle = new Particle(x, y, color);
-    }
-    particles.push(particle);
-  }
-  // --- End Object Pool Functions ---
 
   function update(dt) {
-    if (waveMessageTimer > 0) {
-      waveMessageTimer -= dt;
+    updateViewport(dt);
+    
+    if (GameState.waveMessageTimer > 0) {
+      GameState.waveMessageTimer -= dt;
     }
 
-    if (screenShakeDuration > 0) {
-      screenShakeDuration -= dt;
-      if (screenShakeDuration <= 0) {
-        screenShakeIntensity = 0;
+    if (GameState.screenShakeDuration > 0) {
+      GameState.screenShakeDuration -= dt;
+      if (GameState.screenShakeDuration <= 0) {
+        GameState.screenShakeIntensity = 0;
       }
     }
 
-    if (!waveInProgress) {
-      interWaveTimer -= dt;
-      if (interWaveTimer <= 0) {
+    if (!GameState.waveInProgress) {
+      GameState.interWaveTimer -= dt;
+      if (GameState.interWaveTimer <= 0) {
         startNextWave();
       }
     } else {
-      spawnInWaveTimer += dt;
-      if (spawnInWaveTimer >= BURST_INTERVAL_IN_WAVE && enemiesSpawnedThisWave < enemiesToSpawnThisWave) {
-        for (let i = 0; i < ENEMIES_PER_BURST && enemiesSpawnedThisWave < enemiesToSpawnThisWave; i++) {
+      GameState.spawnInWaveTimer += dt;
+      if (GameState.spawnInWaveTimer >= CONFIG.BURST_INTERVAL_IN_WAVE && GameState.enemiesSpawnedThisWave < GameState.enemiesToSpawnThisWave) {
+        for (let i = 0; i < CONFIG.ENEMIES_PER_BURST && GameState.enemiesSpawnedThisWave < GameState.enemiesToSpawnThisWave; i++) {
           spawnEnemy();
-          enemiesSpawnedThisWave++;
+          GameState.enemiesSpawnedThisWave++;
         }
-        spawnInWaveTimer = 0;
+        GameState.spawnInWaveTimer = 0;
       }
     }
     
-    stars.forEach(s => s.update());
-    if (base) {
-      base.update(dt, enemies);
+    if (GameState.base) {
+      GameState.base.update(dt, GameState.enemies);
     }
-    bullets.forEach(b => b.update());
-    enemies.forEach(e => e.update());
-    towers.forEach(t => t.update(dt));
-    particles.forEach(p => p.update());
+    GameState.bullets.forEach(b => b.update());
+    GameState.enemies.forEach(e => e.update());
+    GameState.towers.forEach(t => t.update(dt));
+    GameState.particles.forEach(p => p.update());
 
     // Check for wave clear
-    if (waveInProgress && enemiesSpawnedThisWave === enemiesToSpawnThisWave && enemies.length === 0) {
-      waveInProgress = false;
-      wave++;
-      interWaveTimer = INTER_WAVE_DELAY;
-      showWaveMessage(`已击退第 ${wave - 1} 波进攻!`);
+    if (GameState.waveInProgress && GameState.enemiesSpawnedThisWave === GameState.enemiesToSpawnThisWave && GameState.enemies.length === 0) {
+      GameState.waveInProgress = false;
+      GameState.wave++;
+      GameState.interWaveTimer = CONFIG.INTER_WAVE_DELAY;
+      showWaveMessage(`已击退第 ${GameState.wave - 1} 波进攻!`);
     }
 
     // Collisions
-    for (let i = enemies.length - 1; i >= 0; i--) {
-      const enemy = enemies[i];
+    for (let i = GameState.enemies.length - 1; i >= 0; i--) {
+      const enemy = GameState.enemies[i];
       if(!enemy) continue;
       
-      for (let j = bullets.length - 1; j >= 0; j--) {
-        const bullet = bullets[j];
+      for (let j = GameState.bullets.length - 1; j >= 0; j--) {
+        const bullet = GameState.bullets[j];
         if (Math.hypot(enemy.x - bullet.x, enemy.y - bullet.y) < enemy.size + bullet.r) {
-          enemy.hp -= BULLET_DAMAGE;
-          totalBulletsHit++;
+          enemy.hp -= CONFIG.BULLET_DAMAGE;
+          GameState.totalBulletsHit++;
           
-          // Release bullet to pool using swap-and-pop
-          bulletPool.push(bullet);
-          bullets[j] = bullets[bullets.length - 1];
-          bullets.pop();
+          // 手动移除子弹，避免在嵌套循环中使用对象池
+          GameState.bulletPool.push(bullet);
+          GameState.bullets[j] = GameState.bullets[GameState.bullets.length - 1];
+          GameState.bullets.pop();
 
           if (enemy.hp <= 0) {
-            score += enemy.score;
+            GameState.score += enemy.score;
             createExplosion(enemy.x, enemy.y, enemy.color);
-            enemies.splice(i, 1);
-            enemiesKilled++;
-            triggerScreenShake(1, 100); // Add a very slight shake on kill
+            GameState.enemies.splice(i, 1);
+            GameState.enemiesKilled++;
+            triggerScreenShake(1, 100);
             break; 
           }
         }
       }
       if (enemy.hp <= 0) continue; 
 
-      const baseLeft = base.x - base.size / 2;
-      const baseRight = base.x + base.size / 2;
-      const baseTop = base.y - base.size / 2;
-      const baseBottom = base.y + base.size / 2;
+      const baseLeft = GameState.base.x - GameState.base.size / 2;
+      const baseRight = GameState.base.x + GameState.base.size / 2;
+      const baseTop = GameState.base.y - GameState.base.size / 2;
+      const baseBottom = GameState.base.y + GameState.base.size / 2;
       const closestX = Math.max(baseLeft, Math.min(enemy.x, baseRight));
       const closestY = Math.max(baseTop, Math.min(enemy.y, baseBottom));
       const distanceX = enemy.x - closestX;
       const distanceY = enemy.y - closestY;
 
       if ((distanceX * distanceX + distanceY * distanceY) < (enemy.size * enemy.size)) {
-        base.hp--;
+        GameState.base.hp--;
         createExplosion(enemy.x, enemy.y, enemy.color);
-        enemies.splice(i, 1);
-        enemiesKilled++;
-        triggerScreenShake(5, 200); // Restore correct base-hit shake intensity
-        if (base.hp <= 0) {
+        GameState.enemies.splice(i, 1);
+        GameState.enemiesKilled++;
+        triggerScreenShake(5, 200);
+        if (GameState.base.hp <= 0) {
           endGame();
           return;
         }
         continue;
       }
 
-      for (let j = towers.length - 1; j >= 0; j--) {
-        const tower = towers[j];
+      for (let j = GameState.towers.length - 1; j >= 0; j--) {
+        const tower = GameState.towers[j];
         if (Math.hypot(enemy.x - tower.x, enemy.y - tower.y) < enemy.size + tower.r) {
           tower.hp--;
           createExplosion(enemy.x, enemy.y, enemy.color);
-          enemies.splice(i, 1);
-          enemiesKilled++;
-          triggerScreenShake(1, 100); // Keep the slight shake on enemy/tower collision
+          GameState.enemies.splice(i, 1);
+          GameState.enemiesKilled++;
+          triggerScreenShake(1, 100);
           if (tower.hp <= 0) {
-            towers.splice(j, 1);
+            GameState.towers.splice(j, 1);
           }
           break;
         }
       }
     }
     
-    // Optimized-out .filter() calls with high-performance loops
     // Clean up offscreen bullets
-    for (let i = bullets.length - 1; i >= 0; i--) {
-        if (bullets[i].isOffscreen()) {
-            const b = bullets[i];
-            bulletPool.push(b);
-            bullets[i] = bullets[bullets.length - 1];
-            bullets.pop();
+    for (let i = GameState.bullets.length - 1; i >= 0; i--) {
+        if (GameState.bullets[i].isOffscreen()) {
+            const bullet = GameState.bullets[i];
+            GameState.bulletPool.push(bullet);
+            GameState.bullets[i] = GameState.bullets[GameState.bullets.length - 1];
+            GameState.bullets.pop();
         }
     }
     
     // Clean up dead particles
-    for (let i = particles.length - 1; i >= 0; i--) {
-        if (particles[i].life <= 0) {
-            const p = particles[i];
-            particlePool.push(p);
-            particles[i] = particles[particles.length - 1];
-            particles.pop();
+    for (let i = GameState.particles.length - 1; i >= 0; i--) {
+        if (GameState.particles[i].life <= 0) {
+            const particle = GameState.particles[i];
+            GameState.particlePool.push(particle);
+            GameState.particles[i] = GameState.particles[GameState.particles.length - 1];
+            GameState.particles.pop();
         }
     }
   }
@@ -773,88 +875,265 @@ document.addEventListener('DOMContentLoaded', () => {
     ctx.save();
 
     // Apply screen shake if active
-    if (screenShakeDuration > 0) {
-      const dx = (Math.random() - 0.5) * 2 * screenShakeIntensity;
-      const dy = (Math.random() - 0.5) * 2 * screenShakeIntensity;
+    if (GameState.screenShakeDuration > 0) {
+      const dx = (Math.random() - 0.5) * 2 * GameState.screenShakeIntensity;
+      const dy = (Math.random() - 0.5) * 2 * GameState.screenShakeIntensity;
       ctx.translate(dx, dy);
     }
 
-    stars.forEach(s => s.draw());
+    // 绘制网格
+    ctx.strokeStyle = '#1A1D21';
+    ctx.lineWidth = 0.5 * viewport.scale;
     
-    ctx.strokeStyle = '#1A1D21'; // Match new panel background for subtle grid
-    ctx.lineWidth = 0.5; // Thinner grid
-    for (let i = 1; i < GRID; i++) {
-      const p = i * TILE;
-      ctx.beginPath(); ctx.moveTo(p, 0); ctx.lineTo(p, HEIGHT); ctx.stroke();
-      ctx.beginPath(); ctx.moveTo(0, p); ctx.lineTo(WIDTH, p); ctx.stroke();
+    const startGridX = Math.floor(viewport.x / CONFIG.TILE_SIZE);
+    const endGridX = Math.min(CONFIG.GRID_SIZE, Math.ceil((viewport.x + viewport.width / viewport.scale) / CONFIG.TILE_SIZE));
+    const startGridY = Math.floor(viewport.y / CONFIG.TILE_SIZE);
+    const endGridY = Math.min(CONFIG.GRID_SIZE, Math.ceil((viewport.y + viewport.height / viewport.scale) / CONFIG.TILE_SIZE));
+    
+    for (let i = startGridX; i <= endGridX; i++) {
+      const worldX = i * CONFIG.TILE_SIZE;
+      const screenX = (worldX - viewport.x) * viewport.scale;
+      ctx.beginPath();
+      ctx.moveTo(screenX, 0);
+      ctx.lineTo(screenX, HEIGHT);
+      ctx.stroke();
+    }
+    
+    for (let i = startGridY; i <= endGridY; i++) {
+      const worldY = i * CONFIG.TILE_SIZE;
+      const screenY = (worldY - viewport.y) * viewport.scale;
+      ctx.beginPath();
+      ctx.moveTo(0, screenY);
+      ctx.lineTo(WIDTH, screenY);
+      ctx.stroke();
     }
 
-    if (base) {
-      base.draw();
+    // 绘制游戏对象
+    if (GameState.base && Utils.isInViewport(GameState.base.x, GameState.base.y, GameState.base.size)) {
+      GameState.base.draw();
     }
 
-    towers.forEach(t => t.draw());
-    enemies.forEach(e => e.draw());
-    bullets.forEach(b => b.draw());
-    particles.forEach(p => p.draw());
+    GameState.towers.forEach(t => {
+      if (Utils.isInViewport(t.x, t.y, t.r)) {
+        t.draw();
+      }
+    });
+    
+    GameState.enemies.forEach(e => {
+      if (Utils.isInViewport(e.x, e.y, e.size)) {
+        e.draw();
+      }
+    });
+    
+    GameState.bullets.forEach(b => {
+      if (Utils.isInViewport(b.x, b.y, 10)) {
+        b.draw();
+      }
+    });
+    
+    GameState.particles.forEach(p => {
+      if (Utils.isInViewport(p.x, p.y, 10)) {
+        p.draw();
+      }
+    });
 
-    levelEl.textContent = wave;
-    scoreEl.textContent = score;
-    lifeEl.textContent = base ? base.hp : 100;
-    bulletsFiredEl.textContent = totalBulletsFired;
-    bulletsHitEl.textContent = totalBulletsHit;
-    enemiesKilledEl.textContent = enemiesKilled;
+    drawMinimap();
 
-    if (waveMessageTimer > 0) {
+    UI_ELEMENTS.level.textContent = GameState.wave;
+    UI_ELEMENTS.score.textContent = GameState.score;
+    UI_ELEMENTS.life.textContent = GameState.base ? GameState.base.hp : 100;
+    UI_ELEMENTS.bulletsFired.textContent = GameState.totalBulletsFired;
+    UI_ELEMENTS.bulletsHit.textContent = GameState.totalBulletsHit;
+    UI_ELEMENTS.enemiesKilled.textContent = GameState.enemiesKilled;
+
+    if (GameState.waveMessageTimer > 0) {
       ctx.save();
       ctx.font = 'bold 48px sans-serif';
       ctx.textAlign = 'center';
-      ctx.fillStyle = `rgba(255, 255, 0, ${waveMessageTimer / 2000})`;
-      ctx.fillText(waveMessage, WIDTH / 2, HEIGHT / 2 - 100);
+      ctx.fillStyle = `rgba(255, 255, 0, ${GameState.waveMessageTimer / 2000})`;
+      ctx.fillText(GameState.waveMessage, WIDTH / 2, HEIGHT / 2 - 100);
       ctx.restore();
     }
     
     ctx.restore();
   }
 
-  function gameLoop(timestamp) {
-    if (!running) return;
-    const dt = timestamp - lastTime;
-    lastTime = timestamp;
+  // 绘制小地图
+  function drawMinimap() {
+    const minimapSize = 150;
+    const minimapX = WIDTH - minimapSize - 20;
+    const minimapY = 20;
+    const minimapScale = minimapSize / CONFIG.WORLD_WIDTH;
+    
+    ctx.save();
+    
+    ctx.fillStyle = 'rgba(0, 0, 0, 0.5)';
+    ctx.fillRect(minimapX, minimapY, minimapSize, minimapSize);
+    
+    ctx.strokeStyle = '#444';
+    ctx.strokeRect(minimapX, minimapY, minimapSize, minimapSize);
+    
+    // 绘制基地
+    if (GameState.base) {
+      ctx.fillStyle = '#00aaff';
+      const baseMiniX = minimapX + GameState.base.x * minimapScale;
+      const baseMiniY = minimapY + GameState.base.y * minimapScale;
+      ctx.fillRect(baseMiniX - 2, baseMiniY - 2, 4, 4);
+    }
+    
+    // 绘制炮塔
+    ctx.fillStyle = '#999';
+    GameState.towers.forEach(t => {
+      const towerMiniX = minimapX + t.x * minimapScale;
+      const towerMiniY = minimapY + t.y * minimapScale;
+      ctx.fillRect(towerMiniX - 1, towerMiniY - 1, 2, 2);
+    });
+    
+    // 绘制敌人
+    ctx.fillStyle = '#ff4444';
+    GameState.enemies.forEach(e => {
+      const enemyMiniX = minimapX + e.x * minimapScale;
+      const enemyMiniY = minimapY + e.y * minimapScale;
+      ctx.fillRect(enemyMiniX - 1, enemyMiniY - 1, 2, 2);
+    });
+    
+    // 绘制当前视口区域
+    ctx.strokeStyle = '#ffff00';
+    ctx.lineWidth = 1;
+    const viewportMiniX = minimapX + viewport.x * minimapScale;
+    const viewportMiniY = minimapY + viewport.y * minimapScale;
+    const viewportMiniWidth = (viewport.width / viewport.scale) * minimapScale;
+    const viewportMiniHeight = (viewport.height / viewport.scale) * minimapScale;
+    ctx.strokeRect(viewportMiniX, viewportMiniY, viewportMiniWidth, viewportMiniHeight);
+    
+    ctx.restore();
+  }
 
+  function gameLoop(timestamp) {
+    if (!GameState.running) return;
+    const dt = timestamp - GameState.lastTime;
+    GameState.lastTime = timestamp;
+
+    updateViewport(dt);
     update(dt);
     draw();
 
     requestAnimationFrame(gameLoop);
   }
 
-  // ---------- 交互 ---------- //
-  canvas.addEventListener('click', e => {
-    if (!running) return;
-    const rect = canvas.getBoundingClientRect();
-    const x = e.clientX - rect.left;
-    const y = e.clientY - rect.top;
-    const gx = Math.floor(x / TILE);
-    const gy = Math.floor(y / TILE);
+  // 游戏交互 - 已禁用点击放置火炮功能
 
-    if (gx < 0 || gx >= GRID || gy < 0 || gy >= GRID) return;
-    if (towers.some(t => t.gx === gx && t.gy === gy)) return;
-
-    // Prevent building on the base
-    const center = GRID / 2;
-    const baseGridX = center - 1;
-    const baseGridY = center - 1;
-    if (gx >= baseGridX && gx < baseGridX + 2 && gy >= baseGridY && gy < baseGridY + 2) {
-      return;
-    }
-
-    towers.push(new Tower(gx, gy));
+  canvas.addEventListener('mousedown', e => {
+    if (!GameState.running) return;
+    camera.isDragging = true;
+    camera.lastMouseX = e.clientX;
+    camera.lastMouseY = e.clientY;
+    canvas.style.cursor = 'grabbing';
   });
 
-  btnStart.addEventListener('click', startGame);
-  btnRestart.addEventListener('click', resetGame);
+  canvas.addEventListener('mousemove', e => {
+    if (!GameState.running || !camera.isDragging) return;
+    
+    const deltaX = (e.clientX - camera.lastMouseX) / viewport.scale;
+    const deltaY = (e.clientY - camera.lastMouseY) / viewport.scale;
+    
+    camera.targetX -= deltaX;
+    camera.targetY -= deltaY;
+    
+    const scaledWidth = viewport.width / viewport.scale;
+    const scaledHeight = viewport.height / viewport.scale;
+    camera.targetX = Utils.clamp(camera.targetX, 0, CONFIG.WORLD_WIDTH - scaledWidth);
+    camera.targetY = Utils.clamp(camera.targetY, 0, CONFIG.WORLD_HEIGHT - scaledHeight);
+    
+    camera.lastMouseX = e.clientX;
+    camera.lastMouseY = e.clientY;
+  });
 
-  // ---------- 初始化 ---------- //
+  canvas.addEventListener('mouseup', () => {
+    camera.isDragging = false;
+    canvas.style.cursor = 'default';
+  });
+
+  canvas.addEventListener('mouseleave', () => {
+    camera.isDragging = false;
+    canvas.style.cursor = 'default';
+  });
+
+  canvas.addEventListener('wheel', e => {
+    if (!GameState.running) return;
+    e.preventDefault();
+    
+    const zoomFactor = e.deltaY > 0 ? 0.9 : 1.1;
+    const newScale = viewport.scale * zoomFactor;
+    
+    if (newScale >= viewport.minScale && newScale <= viewport.maxScale) {
+      const rect = canvas.getBoundingClientRect();
+      const mouseX = e.clientX - rect.left;
+      const mouseY = e.clientY - rect.top;
+      
+      const worldPos = CoordinateUtils.screenToWorld(mouseX, mouseY);
+      
+      viewport.scale = newScale;
+      
+      const newScreenPos = CoordinateUtils.worldToScreen(worldPos.x, worldPos.y);
+      const offsetX = (newScreenPos.x - mouseX) / viewport.scale;
+      const offsetY = (newScreenPos.y - mouseY) / viewport.scale;
+      
+      camera.targetX += offsetX;
+      camera.targetY += offsetY;
+      
+      const scaledWidth = viewport.width / viewport.scale;
+      const scaledHeight = viewport.height / viewport.scale;
+      camera.targetX = Utils.clamp(camera.targetX, 0, CONFIG.WORLD_WIDTH - scaledWidth);
+      camera.targetY = Utils.clamp(camera.targetY, 0, CONFIG.WORLD_HEIGHT - scaledHeight);
+    }
+  });
+
+  document.addEventListener('keydown', e => {
+    if (!GameState.running) return;
+    
+    const moveSpeed = 100 / viewport.scale;
+    
+    switch(e.key) {
+      case 'w':
+      case 'W':
+      case 'ArrowUp':
+        camera.targetY -= moveSpeed;
+        break;
+      case 's':
+      case 'S':
+      case 'ArrowDown':
+        camera.targetY += moveSpeed;
+        break;
+      case 'a':
+      case 'A':
+      case 'ArrowLeft':
+        camera.targetX -= moveSpeed;
+        break;
+      case 'd':
+      case 'D':
+      case 'ArrowRight':
+        camera.targetX += moveSpeed;
+        break;
+      case ' ':
+        e.preventDefault();
+        viewport.scale = viewport.defaultScale;
+        const resetPos = CoordinateUtils.getDefaultViewPosition();
+        camera.targetX = resetPos.x;
+        camera.targetY = resetPos.y;
+        break;
+    }
+    
+    const scaledWidth = viewport.width / viewport.scale;
+    const scaledHeight = viewport.height / viewport.scale;
+    camera.targetX = Utils.clamp(camera.targetX, 0, CONFIG.WORLD_WIDTH - scaledWidth);
+    camera.targetY = Utils.clamp(camera.targetY, 0, CONFIG.WORLD_HEIGHT - scaledHeight);
+  });
+
+  UI_ELEMENTS.btnStart.addEventListener('click', startGame);
+  UI_ELEMENTS.btnRestart.addEventListener('click', resetGame);
+
+  // 初始化游戏
   init();
   draw();
 });
