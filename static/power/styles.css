@@ -64,15 +64,12 @@ body {
 }
 
 .layout-horizontal .game-main {
-  /* 高度由容器的 align-items: stretch 决定，宽度自适应 */
-  flex: 1 1 auto; 
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  height: 100%;
+  flex: 0 0 auto; /* Let aspect ratio define width based on height */
 }
 
 .layout-horizontal .sidebar {
-  width: var(--sidebar-width);
+  flex: 1 0 var(--sidebar-width); /* Allow sidebars to grow from their base width */
   height: 100%;
 }
 
@@ -106,11 +103,9 @@ body {
 }
 
 .layout-vertical .game-main {
-  /* 宽度由容器的 align-items: stretch 决定，高度自适应 */
-  flex: 1 1 auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  width: 100%;
+  flex: 0 1 auto; /* Allow shrinking */
+  min-height: 0;
 }
 
 .layout-vertical .sidebar {
@@ -140,7 +135,7 @@ body {
 
 /* --- Components --- */
 
-.sidebar, .game-main {
+.sidebar {
   background-color: var(--bg-panel);
   border: 1px solid var(--border-color);
   border-radius: 8px;
@@ -149,13 +144,24 @@ body {
   position: relative;
   z-index: 1;
   overflow: hidden;
-}
-
-.sidebar {
   flex-direction: column;
   justify-content: space-between;
   flex: 0 0 auto; /* Do not grow or shrink */
   overflow-y: auto;
+}
+
+.game-main {
+  background-color: var(--bg-panel);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 20px;
+  display: flex;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  justify-content: center;
+  align-items: center;
+  aspect-ratio: 1 / 1;
 }
 
 #sidebar-1 {
