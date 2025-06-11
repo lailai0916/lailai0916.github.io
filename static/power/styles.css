@@ -9,6 +9,8 @@
   --accent-primary-hover: #33bbff;
   --accent-danger: #ff4757;
   --font-main: 'Roboto', sans-serif;
+  --sidebar-width: 280px; /* 侧边栏宽度 */
+  --gap: 20px; /* 间距 */
 }
 
 * {
@@ -21,206 +23,185 @@ body {
   background-color: var(--bg-dark);
   color: var(--text-primary);
   font-family: var(--font-main);
-  min-height: 100vh;
+  height: 100vh;
   margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+  overflow: hidden; /* 防止滚动条出现 */
+}
+
+/* 页面整体外边框 */
+.page-wrapper {
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+  border: 2px solid var(--border-color);
+  border-radius: 16px;
+  background: linear-gradient(135deg, 
+    rgba(44, 48, 56, 0.1) 0%, 
+    rgba(44, 48, 56, 0.05) 50%, 
+    rgba(44, 48, 56, 0.1) 100%);
+  box-shadow: 
+    inset 0 1px 0 rgba(255, 255, 255, 0.1),
+    0 0 20px rgba(0, 170, 255, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .container {
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   display: flex;
-  align-items: center;
+  gap: var(--gap);
+  align-items: stretch;
   justify-content: center;
-  gap: 20px;
-  padding: 20px;
-  background-color: var(--bg-dark);
-  box-sizing: border-box;
 }
 
-/* --- Layout and Panels --- */
-.side {
-  background-color: var(--bg-panel);
-  border: 1px solid var(--border-color);
-  border-radius: 8px;
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  overflow-y: auto;
-  flex: 0 0 auto;
+/* --- Layout Modes --- */
+
+/* Horizontal Layout (Sidebars Left/Right) */
+.container.layout-horizontal {
+  flex-direction: row;
 }
 
-.left {
-  justify-content: space-between;
-  align-items: center;
-}
-
-.right {
-  justify-content: flex-start;
-}
-
-.game-main {
+.layout-horizontal .game-main {
+  /* 高度由容器的 align-items: stretch 决定，宽度自适应 */
+  flex: 1 1 auto; 
   display: flex;
   justify-content: center;
   align-items: center;
-  position: relative;
-  background-color: var(--bg-panel);
-  border: 1px solid var(--border-color);
-  border-radius: 8px;
-  padding: 20px;
-  flex: 0 0 auto;
 }
 
-#gameCanvas {
-  border: 1px solid var(--border-color);
-  border-radius: 4px;
+.layout-horizontal .sidebar {
+  width: var(--sidebar-width);
+  height: 100%;
 }
 
-/* 画布优先：始终占据最大正方形空间 */
-#gameCanvas {
-  width: min(100vh - 40px, 100vw - 40px);
-  height: min(100vh - 40px, 100vw - 40px);
-  min-width: 350px;
-  min-height: 350px;
-}
-
-/* 当屏幕宽度足够时，侧边栏放在左右 */
-@media (min-width: 1000px) and (min-aspect-ratio: 4/3) {
-  .container {
-    flex-direction: row;
-    align-items: stretch;
-    justify-content: center;
-  }
-  
-  .side {
-    width: calc((100vw - min(100vh - 40px, 100vw - 40px)) / 2 - 30px);
-    max-width: 300px;
-    min-width: 200px;
-    /* 侧边栏高度与画布完全对齐 */
-    height: calc(min(100vh - 40px, 100vw - 40px) + 40px);
-    max-height: calc(100vh - 40px);
-    /* 重置padding确保内部高度一致 */
-    box-sizing: border-box;
-  }
-  
-  .game-main {
-    order: 2;
-    /* 确保游戏主区域也参与stretch */
-    align-self: stretch;
-  }
-  
-  .left {
-    order: 1;
-  }
-  
-  .right {
-    order: 3;
-  }
-}
-
-/* 宽屏但高度不够时，也使用左右布局 */
-@media (min-width: 1200px) and (max-aspect-ratio: 4/3) {
-  .container {
-    flex-direction: row;
-    align-items: stretch;
-    justify-content: center;
-  }
-  
-  .side {
-    width: calc((100vw - min(100vh - 40px, 100vw - 40px)) / 2 - 30px);
-    max-width: 280px;
-    min-width: 180px;
-    /* 侧边栏高度与画布完全对齐 */
-    height: calc(min(100vh - 40px, 100vw - 40px) + 40px);
-    max-height: calc(100vh - 40px);
-    box-sizing: border-box;
-  }
-  
-  .game-main {
-    order: 2;
-    align-self: stretch;
-  }
-  
-  .left {
-    order: 1;
-  }
-  
-  .right {
-    order: 3;
-  }
-}
-
-/* 默认布局：侧边栏在上下 - 只对不匹配媒体查询的情况生效 */
-@media not all and (min-width: 1000px) and (min-aspect-ratio: 4/3) and not all and (min-width: 1200px) {
-  .container {
+.layout-horizontal .sidebar .stats-panel,
+.layout-horizontal .sidebar .controls {
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
+}
 
-  .side {
-    /* 侧边栏宽度与画布完全对齐 */
-    width: calc(min(100vh - 40px, 100vw - 40px) + 40px);
-    max-width: 800px;
-    height: auto;
+.layout-horizontal .sidebar .stats-grid {
+    flex-direction: column;
+    gap: 0;
+    width: 100%;
+}
+
+.layout-horizontal .sidebar .stat-item {
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    padding: 12px 0;
+    border: none;
+    border-bottom: 1px solid var(--border-color);
+    border-radius: 0;
+}
+.layout-horizontal .sidebar .stat-item:last-child {
+    border-bottom: none;
+}
+
+/* Vertical Layout (Sidebars Top/Bottom) */
+.container.layout-vertical {
+  flex-direction: column;
+}
+
+.layout-vertical .game-main {
+  /* 宽度由容器的 align-items: stretch 决定，高度自适应 */
+  flex: 1 1 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.layout-vertical .sidebar {
+  width: 100%;
+  /* 高度由内容决定 */
+  height: auto;
+}
+
+.layout-vertical .sidebar {
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
-    padding: 15px 20px;
-    box-sizing: border-box;
-  }
-
-  .left {
-    order: 1;
-  }
-
-  .game-main {
-    order: 2;
-  }
-
-  .right {
-    order: 3;
-    flex-direction: row;
-    justify-content: space-around;
-  }
-
-  .stats-panel {
+}
+.layout-vertical .sidebar .stats-panel {
     display: flex;
     flex-direction: row;
     gap: 20px;
     align-items: center;
     flex-wrap: wrap;
-  }
-
-  .stats-grid {
+}
+.layout-vertical .sidebar .stats-grid {
     display: flex;
     flex-direction: row;
     gap: 15px;
     flex-wrap: wrap;
-  }
+}
 
-  .stat-item {
-    flex-direction: column;
-    text-align: center;
-    padding: 8px;
-    border: 1px solid var(--border-color);
-    border-radius: 4px;
-    min-width: 70px;
-  }
+/* --- Components --- */
 
-  .controls {
-    display: flex;
-    gap: 10px;
-    align-items: center;
-    flex-wrap: wrap;
-  }
+.sidebar, .game-main {
+  background-color: var(--bg-panel);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 20px;
+  display: flex;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
 
-  button {
-    width: auto;
-    min-width: 100px;
-    margin-bottom: 0;
-  }
+.sidebar {
+  flex-direction: column;
+  justify-content: space-between;
+  flex: 0 0 auto; /* Do not grow or shrink */
+  overflow-y: auto;
+}
+
+#sidebar-1 {
+  align-items: center;
+}
+
+#gameCanvas {
+  display: block; /* 移除 flex 布局可能产生的额外空间 */
+  object-fit: contain; /* 保证比例的同时填满容器 */
+  max-width: 100%;
+  max-height: 100%;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+}
+
+.game-over-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(18, 20, 23, 0.85);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+  z-index: 100;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.game-over-overlay h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: var(--accent-danger);
+}
+
+.game-over-overlay p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
 /* --- Typography and Content --- */
@@ -248,29 +229,40 @@ h2 {
   margin: 0 0 16px 0;
   border-bottom: 1px solid var(--border-color);
   padding-bottom: 8px;
+  width: 100%;
+  text-align: center;
 }
 
 .instructions {
-  font-size: clamp(11px, 1.5vw, 13px);
-  text-align: center;
+  font-size: 0.85rem;
   color: var(--text-secondary);
-  line-height: 1.6;
-  margin: 0;
+  text-align: center;
 }
+.instructions p { margin-bottom: 5px; }
+.instructions strong { color: var(--text-primary); }
+
 
 /* --- Controls --- */
+.controls {
+  display: flex;
+  width: 100%;
+  gap: 10px;
+  align-items: center;
+}
+
 button {
-  padding: clamp(8px, 2vh, 15px) clamp(12px, 3vw, 20px);
-  font-size: clamp(12px, 2vw, 16px);
+  flex-grow: 1;
+  padding: 12px 20px;
+  font-size: 1rem;
   font-weight: 700;
-  letter-spacing: 0.5px;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
   color: #fff;
   background-color: var(--accent-primary);
-  transition: background-color 0.2s ease, transform 0.1s ease;
-  margin-bottom: clamp(6px, 1vh, 10px);
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  text-align: center;
+  width: 100%;
 }
 
 button:hover {
@@ -278,14 +270,14 @@ button:hover {
 }
 
 button:active {
-  transform: scale(0.98);
+  transform: translateY(1px);
 }
 
 #btnRestart {
   background-color: var(--accent-danger);
 }
 #btnRestart:hover {
-  background-color: #ff6b79;
+  background-color: #ff6b81;
 }
 
 /* --- Stats Panel --- */
@@ -295,170 +287,29 @@ button:active {
 
 .stat-item {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  padding: clamp(8px, 1.5vh, 12px) 0;
-  border-bottom: 1px solid var(--border-color);
-  font-size: clamp(11px, 1.5vw, 14px);
-}
-.stat-item:last-child {
-  border-bottom: none;
 }
 
 .stat-item .label {
   color: var(--text-secondary);
-  font-weight: 400;
+  font-size: 0.9rem;
 }
 
 .stat-item .value {
   color: var(--text-primary);
+  font-size: 1.1rem;
   font-weight: 700;
-  font-size: clamp(13px, 2vw, 16px);
 }
 
-/* --- Game Over Overlay --- */
-.game-over-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(18, 20, 23, 0.9);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  color: var(--text-primary);
-  text-align: center;
-  z-index: 1000;
-  opacity: 0;
-  animation: fadeIn 0.5s ease forwards;
-  border-radius: 4px;
-}
-
-.game-over-overlay h2 {
-  font-size: clamp(24px, 6vw, 48px);
-  color: var(--accent-danger);
-  border: none;
-  margin-bottom: 15px;
-}
-
-.game-over-overlay p {
-  font-size: clamp(14px, 3vw, 20px);
-  color: var(--text-secondary);
-  margin-bottom: 8px;
-}
-
-@keyframes fadeIn {
-  to {
-    opacity: 1;
-  }
-}
-
-
-
-/* --- 移动设备特殊布局 --- */
-@media (max-width: 768px) {
-  .container {
-    gap: 10px;
-    padding: 10px;
-    flex-direction: column !important;
-  }
-
-  .side {
-    flex-direction: column !important;
+/* Fallback for no-script */
+.no-script {
+    display: none;
+    padding: 1rem;
+    background: var(--accent-danger);
+    color: white;
     text-align: center;
-    padding: 10px;
-    width: calc(100vw - 20px) !important;
-    height: auto !important;
-  }
-
-  .stats-panel {
-    flex-direction: column !important;
-    gap: 10px;
-  }
-
-  .stats-grid {
-    justify-content: center;
-    gap: 10px;
-    flex-direction: row !important;
-    flex-wrap: wrap;
-  }
-
-  .stat-item {
-    min-width: 70px;
-    padding: 6px;
-  }
-
-  .controls {
-    flex-direction: row !important;
-    justify-content: center;
-  }
-
-  h1 {
-    font-size: 20px;
-  }
-
-  h2 {
-    font-size: 16px;
-  }
-
-  /* 移动端画布也保持最大正方形 */
-  #gameCanvas {
-    width: min(calc(100vh - 200px), calc(100vw - 20px)) !important;
-    height: min(calc(100vh - 200px), calc(100vw - 20px)) !important;
-    min-width: 280px !important;
-    min-height: 280px !important;
-  }
 }
 
-/* 超小屏幕设备 */
-@media (max-width: 480px) {
-  .container {
-    gap: 8px;
-    padding: 8px;
-  }
-  
-  .side {
-    padding: 8px;
-  }
-  
-  .stats-grid {
-    display: grid !important;
-    grid-template-columns: 1fr 1fr;
-    gap: 8px;
-    flex-direction: unset !important;
-  }
-  
-  .stat-item {
-    min-width: auto;
-    padding: 4px;
-    font-size: 10px;
-  }
-  
-  .stat-item .label {
-    font-size: 9px;
-  }
-  
-  .stat-item .value {
-    font-size: 12px;
-  }
-  
-  h1 {
-    font-size: 18px;
-  }
-  
-  h2 {
-    font-size: 14px;
-  }
-  
-  button {
-    min-width: 100px;
-    padding: 8px 12px;
-  }
-  
-  #gameCanvas {
-    min-width: 280px !important;
-    min-height: 280px !important;
-  }
+html:not(.js-enabled) .no-script {
+    display: block;
 } 

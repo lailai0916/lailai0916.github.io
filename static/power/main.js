@@ -959,6 +959,56 @@ document.addEventListener('DOMContentLoaded', () => {
     ctx.restore();
   }
 
+  // ========== 响应式布局管理 ========== //
+  function updateLayout() {
+    const container = document.querySelector('.container');
+    const pageWrapper = document.querySelector('.page-wrapper');
+    const gameMain = document.querySelector('.game-main');
+    const canvas = document.getElementById('gameCanvas');
+
+    if (!container || !pageWrapper || !gameMain || !canvas) {
+      return;
+    }
+
+    // 从 CSS 变量中获取侧边栏宽度和间距
+    const style = getComputedStyle(document.documentElement);
+    const sidebarWidth = parseInt(style.getPropertyValue('--sidebar-width'), 10) || 280;
+    const gap = parseInt(style.getPropertyValue('--gap'), 10) || 20;
+    const wrapperPadding = 10 * 2; // .page-wrapper padding
+
+    const availableWidth = window.innerWidth - wrapperPadding;
+    const availableHeight = window.innerHeight - wrapperPadding;
+
+    // 水平布局所需总宽度：一个正方形画布（高度占满）+ 两个侧边栏 + 间距
+    const requiredWidthForHorizontal = availableHeight + (2 * sidebarWidth) + (2 * gap);
+
+    if (availableWidth >= requiredWidthForHorizontal) {
+      // 空间足够，使用左右布局
+      container.classList.remove('layout-vertical');
+      container.classList.add('layout-horizontal');
+    } else {
+      // 空间不足，使用上下布局
+      container.classList.remove('layout-horizontal');
+      container.classList.add('layout-vertical');
+    }
+
+    // 重新计算画布尺寸以适应其容器
+    // 使用 requestAnimationFrame 来确保在下一帧开始时获取最新的尺寸
+    requestAnimationFrame(() => {
+        const mainRect = gameMain.getBoundingClientRect();
+        // 减去 .game-main 的内边距 (padding: 20px)
+        const mainPadding = 40;
+        const canvasContainerSize = Math.min(mainRect.width, mainRect.height) - mainPadding;
+        
+        canvas.style.width = `${canvasContainerSize}px`;
+        canvas.style.height = `${canvasContainerSize}px`;
+
+        // 更新视口尺寸，这对于游戏内坐标转换很重要
+        viewport.width = canvas.clientWidth;
+        viewport.height = canvas.clientHeight;
+    });
+  }
+
   // 绘制小地图
   function drawMinimap() {
     const minimapSize = 150;
@@ -1133,6 +1183,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
   UI_ELEMENTS.btnStart.addEventListener('click', startGame);
   UI_ELEMENTS.btnRestart.addEventListener('click', resetGame);
+
+  // 初始化布局并监听窗口大小变化
+  updateLayout();
+  window.addEventListener('resize', updateLayout);
 
   // 初始化游戏
   init();
