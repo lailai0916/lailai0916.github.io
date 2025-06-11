@@ -986,10 +986,14 @@ document.addEventListener('DOMContentLoaded', () => {
       // 空间足够，使用左右布局
       container.classList.remove('layout-vertical');
       container.classList.add('layout-horizontal');
+      pageWrapper.classList.remove('layout-vertical');
+      pageWrapper.classList.add('layout-horizontal');
     } else {
       // 空间不足，使用上下布局
       container.classList.remove('layout-horizontal');
       container.classList.add('layout-vertical');
+      pageWrapper.classList.remove('layout-horizontal');
+      pageWrapper.classList.add('layout-vertical');
     }
 
     // 重新计算画布尺寸以适应其容器
