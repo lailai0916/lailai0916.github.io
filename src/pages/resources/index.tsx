@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useEffect, useRef } from 'react';
 import Link from '@docusaurus/Link';
 import Layout from '@theme/Layout';
 import Heading from '@theme/Heading';
@@ -123,6 +123,41 @@ function CategorySection({ category, isVisible }: {
   category: ResourceCategory; 
   isVisible: boolean; 
 }) {
+  const gridRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (!isVisible || !gridRef.current) return;
+
+    const cards = gridRef.current.querySelectorAll(`.${styles.resourceCard}`);
+    const getColumnsCount = () => {
+      if (window.innerWidth <= 480) return 1;
+      if (window.innerWidth <= 768) return 1;
+      if (window.innerWidth <= 1024) return 2;
+      return 3; // 默认3列，基于CSS grid-template-columns: repeat(auto-fill, minmax(320px, 1fr))
+    };
+
+    const applyAnimationDelays = () => {
+      const columnsCount = getColumnsCount();
+      cards.forEach((card, index) => {
+        const row = Math.floor(index / columnsCount);
+        const col = index % columnsCount;
+        const delay = (row * 0.1) + (col * 0.05); // 按行优先，每行0.1s，同行内每列0.05s
+        (card as HTMLElement).style.animationDelay = `${delay}s`;
+      });
+    };
+
+    // 初始设置
+    applyAnimationDelays();
+
+    // 监听窗口大小变化
+    const handleResize = () => {
+      applyAnimationDelays();
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, [isVisible, category.resources.length]);
+
   if (!isVisible) return null;
 
   return (
@@ -135,7 +170,7 @@ function CategorySection({ category, isVisible }: {
           {category.resources.length} 项资源
         </div>
       </div>
-      <div className={styles.resourceGrid}>
+      <div className={styles.resourceGrid} ref={gridRef}>
         {category.resources.map((resource) => (
           <ResourceCard key={resource.name} resource={resource} />
         ))}
