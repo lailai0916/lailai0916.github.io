@@ -22,27 +22,28 @@ export const resourceData: ResourceCategory[] = [
   {
     name: '🤖 AI 对话应用',
     resources: [
-      { name: 'ChatGPT', href: 'https://chatgpt.com/', description: 'OpenAI 大语言模型，智能对话与内容生成', icon: 'https://chatgpt.com/favicon.ico' },
+      { name: 'ChatGPT', href: 'https://chatgpt.com', description: 'OpenAI 大语言模型，智能对话与内容生成', icon: 'https://chatgpt.com/favicon.ico' },
       { name: 'DeepSeek', href: 'https://chat.deepseek.com', description: '深度求索大语言模型，中文AI对话助手', icon: 'https://chat.deepseek.com/favicon.ico' },
       { name: 'Claude', href: 'https://claude.ai', description: 'Anthropic 开发的AI助手，安全可靠的对话体验', icon: 'https://claude.ai/favicon.ico' },
       { name: 'Grok', href: 'https://grok.x.ai', description: 'xAI 开发的AI助手，实时信息获取与分析', icon: 'https://grok.x.ai/favicon.ico' },
       { name: 'Sora', href: 'https://sora.com', description: 'OpenAI 文本生成视频模型，创意无限', icon: 'https://sora.com/favicon.ico' },
-      { name: 'Hugging Face', href: 'https://huggingface.co/', description: '开源 AI 模型社区，机器学习的 GitHub', icon: 'https://huggingface.co/favicon.ico' },
+      { name: 'Hugging Face', href: 'https://huggingface.co', description: '开源 AI 模型社区，机器学习的 GitHub', icon: 'https://huggingface.co/favicon.ico' },
     ],
   },
   {
     name: '🔬 AI 开发研究',
     resources: [
-      { name: 'Google DeepMind', href: 'https://deepmind.com/', description: 'Google AI 研究前沿，推动 AGI 发展', icon: 'https://deepmind.google/favicon.ico' },
-      { name: 'Meta AI', href: 'https://ai.facebook.com/', description: 'Meta 人工智能研究部门', icon: 'https://ai.facebook.com/favicon.ico' },
-      { name: 'Google AI', href: 'https://ai.google/', description: 'Google AI 研究和产品部门', icon: 'https://ai.google/favicon.ico' },
+      { name: 'Google DeepMind', href: 'https://deepmind.com', description: 'Google AI 研究前沿，推动 AGI 发展', icon: 'https://deepmind.google/favicon.ico' },
+      { name: 'Meta AI', href: 'https://ai.facebook.com', description: 'Meta 人工智能研究部门', icon: 'https://ai.facebook.com/favicon.ico' },
+      { name: 'Google AI', href: 'https://ai.google', description: 'Google AI 研究和产品部门', icon: 'https://ai.google/favicon.ico' },
       { name: 'Microsoft AI', href: 'https://www.microsoft.com/ai', description: '微软人工智能研究开发', icon: 'https://www.microsoft.com/favicon.ico' },
-      { name: 'DeepLearning.AI', href: 'https://deeplearning.ai/', description: '吴恩达 AI 教育平台，专业课程体系', icon: 'https://www.deeplearning.ai/favicon.ico' },
-      { name: 'PyTorch', href: 'https://pytorch.org/', description: 'Facebook 开源深度学习框架', icon: 'https://pytorch.org/favicon.ico' },
-      { name: 'Keras', href: 'https://keras.io/', description: '高级神经网络 API，简化深度学习', icon: 'https://keras.io/favicon.ico' },
-      { name: 'NumPy', href: 'https://numpy.org/', description: 'Python 科学计算基础包', icon: 'https://numpy.org/favicon.ico' },
-      { name: 'PyCharm', href: 'https://www.jetbrains.com/pycharm/', description: 'JetBrains 专业 Python IDE', icon: 'https://resources.jetbrains.com/storage/products/company/brand/logos/PyCharm_icon.svg' },
-      { name: 'Jupyter', href: 'https://jupyter.org/', description: '交互式计算数据科学平台', icon: 'https://jupyter.org/favicon.ico' },
+      { name: 'DeepLearning.AI', href: 'https://deeplearning.ai', description: '吴恩达 AI 教育平台，专业课程体系', icon: 'https://www.deeplearning.ai/favicon.ico' },
+      { name: 'PyTorch', href: 'https://pytorch.org', description: 'Facebook 开源深度学习框架', icon: 'https://pytorch.org/favicon.ico' },
+      { name: 'Keras', href: 'https://keras.io', description: '高级神经网络 API，简化深度学习', icon: 'https://keras.io/favicon.ico' },
+      { name: 'NumPy', href: 'https://numpy.org', description: 'Python 科学计算基础包', icon: 'https://numpy.org/favicon.ico' },
+      { name: 'PyCharm', href: 'https://www.jetbrains.com/pycharm', description: 'JetBrains 专业 Python IDE', icon: 'https://resources.jetbrains.com/storage/products/company/brand/logos/PyCharm_icon.svg' },
+      { name: 'Jupyter', href: 'https://jupyter.org', description: '交互式计算数据科学平台', icon: 'https://jupyter.org/favicon.ico' },
+      { name: 'LMArena', href: 'https://lmarena.ai', description: 'AI模型对比竞技场，实时比较不同AI聊天机器人性能', icon: 'https://lmarena.ai/favicon.ico' },
     ],
   },
   {
@@ -50,18 +51,18 @@ export const resourceData: ResourceCategory[] = [
     resources: [
       { name: 'GitHub', href: 'https://github.com', description: '全球最大代码托管平台，开源项目大本营', icon: 'https://github.githubassets.com/favicons/favicon.svg' },
       { name: 'GitLab', href: 'https://gitlab.com', description: '企业级 DevOps 平台，完整开发生命周期', icon: 'https://about.gitlab.com/favicon.ico' },
-      { name: 'GitStar 排行榜', href: 'https://gitstar-ranking.com/', description: 'GitHub 用户仓库 Star 数排行榜', icon: 'https://gitstar-ranking.com/favicon.ico' },
-      { name: 'Committers Top', href: 'https://committers.top/', description: '各国最活跃 GitHub 用户榜单', icon: 'https://committers.top/images/favicon.ico' },
+      { name: 'GitStar 排行榜', href: 'https://gitstar-ranking.com', description: 'GitHub 用户仓库 Star 数排行榜', icon: 'https://gitstar-ranking.com/favicon.ico' },
+      { name: 'Committers Top', href: 'https://committers.top', description: '各国最活跃 GitHub 用户榜单', icon: 'https://committers.top/images/favicon.ico' },
       { name: 'GitHub Metrics', href: 'https://github.com/lowlighter/metrics', description: 'GitHub 账号信息图生成器', icon: 'https://github.githubassets.com/images/icons/emoji/unicode/1f4ca.png' },
       { name: 'GitHub Stats', href: 'https://github.com/jstrieb/github-stats', description: 'GitHub 个人资料统计图像生成', icon: 'https://raw.githubusercontent.com/jstrieb/github-stats/master/generated/overview.svg' },
-      { name: 'GitHub Profile README Generator', href: 'https://rahuldkjain.github.io/gh-profile-readme-generator/', description: '精美 GitHub 个人资料 README 生成', icon: 'https://rahuldkjain.github.io/gh-profile-readme-generator/static/mdg-040f54e2f6c858e0a3dcf568c3f2b6f1.png' },
+      { name: 'GitHub Profile README Generator', href: 'https://rahuldkjain.github.io/gh-profile-readme-generator', description: '精美 GitHub 个人资料 README 生成', icon: 'https://rahuldkjain.github.io/gh-profile-readme-generator/static/mdg-040f54e2f6c858e0a3dcf568c3f2b6f1.png' },
       { name: 'GitHub Codespaces', href: 'https://github.com/codespaces', description: '云端开发环境，随时随地编程', icon: 'https://github.githubassets.com/favicons/favicon.svg' },
-      { name: 'Gitpod', href: 'https://www.gitpod.io/', description: '云开发环境，加速软件开发', icon: 'https://www.gitpod.io/favicon192.png' },
-      { name: 'CodeSandbox', href: 'https://codesandbox.io/', description: '云端代码编辑器，协作开发利器', icon: 'https://codesandbox.io/favicon.ico' },
-      { name: 'CodePen', href: 'https://codepen.io/', description: '前端开发在线编辑器', icon: 'https://codepen.io/favicon.ico' },
-      { name: 'StackBlitz', href: 'https://stackblitz.com/', description: '极速在线 IDE，现代前端框架支持', icon: 'https://stackblitz.com/_astro/favicon.svg' },
-      { name: 'vscode.dev', href: 'https://vscode.dev/', description: 'VS Code 浏览器版，轻量云端开发', icon: 'https://vscode.dev/static/stable/favicon.ico' },
-      { name: 'Sandpack', href: 'https://sandpack.codesandbox.io/', description: 'CodeSandbox 嵌入式代码编辑组件', icon: 'https://sandpack.codesandbox.io/favicon.ico' },
+      { name: 'Gitpod', href: 'https://www.gitpod.io', description: '云开发环境，加速软件开发', icon: 'https://www.gitpod.io/favicon192.png' },
+      { name: 'CodeSandbox', href: 'https://codesandbox.io', description: '云端代码编辑器，协作开发利器', icon: 'https://codesandbox.io/favicon.ico' },
+      { name: 'CodePen', href: 'https://codepen.io', description: '前端开发在线编辑器', icon: 'https://codepen.io/favicon.ico' },
+      { name: 'StackBlitz', href: 'https://stackblitz.com', description: '极速在线 IDE，现代前端框架支持', icon: 'https://stackblitz.com/_astro/favicon.svg' },
+      { name: 'vscode.dev', href: 'https://vscode.dev', description: 'VS Code 浏览器版，轻量云端开发', icon: 'https://vscode.dev/static/stable/favicon.ico' },
+      { name: 'Sandpack', href: 'https://sandpack.codesandbox.io', description: 'CodeSandbox 嵌入式代码编辑组件', icon: 'https://sandpack.codesandbox.io/favicon.ico' },
       { name: 'OnlineGDB', href: 'https://www.onlinegdb.com/online_python_compiler', description: '在线编译运行调试多种编程语言', icon: 'https://www.onlinegdb.com/favicon.ico' },
       { name: 'Compiler Explorer', href: 'https://godbolt.org', description: '在线编译器，汇编代码分析神器', icon: 'https://godbolt.org/favicon.ico' },
       { name: 'React', href: 'https://react.dev', description: 'Facebook 开源 UI 库，构建现代界面', icon: 'https://react.dev/favicon.ico' },
@@ -72,20 +73,20 @@ export const resourceData: ResourceCategory[] = [
   {
     name: '📚 学术研究',
     resources: [
-      { name: 'Google Scholar', href: 'https://scholar.google.com/', description: '学术文献搜索，站在巨人肩膀上', icon: 'https://scholar.google.com/favicon.ico' },
+      { name: 'Google Scholar', href: 'https://scholar.google.com', description: '学术文献搜索，站在巨人肩膀上', icon: 'https://scholar.google.com/favicon.ico' },
       { name: 'Science', href: 'https://www.science.org/journal/science', description: '顶级科学期刊，突破性研究发布', icon: 'https://www.science.org/favicon.ico' },
-      { name: 'Nature', href: 'https://www.nature.com/', description: '权威多学科期刊，科学发现推动者', icon: 'https://www.nature.com/favicon.ico' },
-      { name: 'arXiv', href: 'https://arxiv.org/', description: '开放预印本论文库，前沿研究抢先看', icon: 'https://arxiv.org/favicon.ico' },
+      { name: 'Nature', href: 'https://www.nature.com', description: '权威多学科期刊，科学发现推动者', icon: 'https://www.nature.com/favicon.ico' },
+      { name: 'arXiv', href: 'https://arxiv.org', description: '开放预印本论文库，前沿研究抢先看', icon: 'https://arxiv.org/favicon.ico' },
       { name: 'Overleaf', href: 'https://www.overleaf.com', description: '在线 LaTeX 编辑器，协作学术写作平台', icon: 'https://www.overleaf.com/favicon.ico' },
     ],
   },
   {
     name: '🎓 在线学习',
     resources: [
-      { name: 'Coursera', href: 'https://www.coursera.org/', description: '顶尖大学合作，高质量在线课程', icon: 'https://d3njjcbhbojbot.cloudfront.net/web/images/favicons/apple-touch-icon-v2-180x180.png' },
-      { name: 'edX', href: 'https://www.edx.org/', description: '哈佛 MIT 创立，开放式课程平台', icon: 'https://www.edx.org/images/logos/edx-logo-elm.svg' },
-      { name: 'MIT OpenCourseWare', href: 'https://ocw.mit.edu/', description: 'MIT 免费课程资源，知识无界限', icon: 'https://ocw.mit.edu/static_shared/images/ocw_logo_orange.png' },
-      { name: 'Class Central', href: 'https://www.classcentral.com/', description: '全球课程搜索比较，学习路径规划', icon: 'https://www.classcentral.com/safari-pinned-tab.svg' },
+      { name: 'Coursera', href: 'https://www.coursera.org', description: '顶尖大学合作，高质量在线课程', icon: 'https://d3njjcbhbojbot.cloudfront.net/web/images/favicons/apple-touch-icon-v2-180x180.png' },
+      { name: 'edX', href: 'https://www.edx.org', description: '哈佛 MIT 创立，开放式课程平台', icon: 'https://www.edx.org/images/logos/edx-logo-elm.svg' },
+      { name: 'MIT OpenCourseWare', href: 'https://ocw.mit.edu', description: 'MIT 免费课程资源，知识无界限', icon: 'https://ocw.mit.edu/static_shared/images/ocw_logo_orange.png' },
+      { name: 'Class Central', href: 'https://www.classcentral.com', description: '全球课程搜索比较，学习路径规划', icon: 'https://www.classcentral.com/safari-pinned-tab.svg' },
     ],
   },
   {
@@ -107,7 +108,7 @@ export const resourceData: ResourceCategory[] = [
       { name: 'Wolfram Alpha', href: 'https://www.wolframalpha.com', description: '计算型知识引擎，科学问题解答', icon: 'https://www.wolframalpha.com/favicon.ico' },
       { name: 'GeoGebra', href: 'https://www.geogebra.org', description: '交互式数学软件，几何代数统计', icon: 'https://www.geogebra.org/favicon.ico' },
       { name: 'LaTeX 公式编辑器', href: 'https://www.latexlive.com', description: '实时预览数学公式编辑工具', icon: 'https://www.latexlive.com/favicon.ico' },
-      { name: 'OEIS', href: 'https://oeis.org/', description: '整数序列百科全书，数学研究宝库', icon: 'https://oeis.org/favicon.ico' },
+      { name: 'OEIS', href: 'https://oeis.org', description: '整数序列百科全书，数学研究宝库', icon: 'https://oeis.org/favicon.ico' },
     ],
   },
   {
@@ -117,7 +118,7 @@ export const resourceData: ResourceCategory[] = [
       { name: 'VuePress', href: 'https://vuepress.vuejs.org', description: 'Vue 驱动的静态网站生成器，专注文档', icon: 'https://vuepress.vuejs.org/images/hero.png' },
       { name: 'Docusaurus', href: 'https://docusaurus.io', description: 'Facebook 开源文档网站构建工具', icon: 'https://docusaurus.io/img/docusaurus.svg' },
       { name: 'Hexo', href: 'https://hexo.io', description: '快速简洁高效的博客框架', icon: 'https://hexo.io/favicon.ico' },
-      { name: 'WordPress', href: 'https://wordpress.org/', description: '全球最受欢迎开源内容管理系统', icon: 'https://s1.wp.com/i/favicon.ico' },
+      { name: 'WordPress', href: 'https://wordpress.org', description: '全球最受欢迎开源内容管理系统', icon: 'https://s1.wp.com/i/favicon.ico' },
     ],
   },
   {
@@ -141,9 +142,9 @@ export const resourceData: ResourceCategory[] = [
   {
     name: '📖 知识百科',
     resources: [
-      { name: '维基百科', href: 'https://zh.wikipedia.org/', description: '全球最大多语言自由百科全书', icon: 'https://zh.wikipedia.org/static/favicon/wikipedia.ico' },
-      { name: 'cppreference', href: 'https://en.cppreference.com/w/', description: 'C++ 标准库权威参考文档', icon: 'https://en.cppreference.com/favicon.ico' },
-      { name: 'Passport Index', href: 'https://www.passportindex.org/', description: '全球护照实力免签国家排名', icon: 'https://www.passportindex.org/favicon.ico' },
+      { name: '维基百科', href: 'https://zh.wikipedia.org', description: '全球最大多语言自由百科全书', icon: 'https://zh.wikipedia.org/static/favicon/wikipedia.ico' },
+      { name: 'cppreference', href: 'https://cppreference.com', description: 'C++ 标准库权威参考文档', icon: 'https://en.cppreference.com/favicon.ico' },
+      { name: 'Passport Index', href: 'https://www.passportindex.org', description: '全球护照实力免签国家排名', icon: 'https://www.passportindex.org/favicon.ico' },
     ],
   },
   {
@@ -166,7 +167,7 @@ export const resourceData: ResourceCategory[] = [
   {
     name: '🎨 设计创意',
     resources: [
-      { name: 'Apple 设计资源', href: 'https://developer.apple.com/design/resources/#product-bezels', description: 'Apple 官方设计素材指南', icon: 'https://www.apple.com/favicon.ico' },
+      { name: 'Apple Design Resources', href: 'https://developer.apple.com/design/resources', description: 'Apple 官方设计素材指南', icon: 'https://www.apple.com/favicon.ico' },
       { name: 'Skill Icons', href: 'https://skillicons.dev', description: '开发者技能图标生成工具', icon: 'https://skillicons.dev/icons?i=skillicons' },
       { name: 'BrandColors', href: 'https://brandcolors.net', description: '品牌官方配色方案收集', icon: 'https://brandcolors.net/assets/img/logo.svg' },
       { name: 'Maker World', href: 'https://makerworld.com.cn', description: '丰富设计资源创意工具', icon: 'https://makerworld.com.cn/favicon.ico' },
@@ -185,7 +186,7 @@ export const resourceData: ResourceCategory[] = [
     resources: [
       { name: 'X (Twitter)', href: 'https://x.com', description: '全球实时信息社交网络平台', icon: 'https://abs.twimg.com/favicons/twitter.3.ico' },
       { name: 'Facebook', href: 'https://www.facebook.com', description: '全球最大社交网络平台', icon: 'https://static.xx.fbcdn.net/rsrc.php/yo/r/iRmz9lCMBD2.ico' },
-      { name: 'Telegram Web', href: 'https://web.telegram.org/k/', description: 'Telegram 即时通讯网页版', icon: 'https://web.telegram.org/favicon.ico' },
+      { name: 'Telegram Web', href: 'https://web.telegram.org', description: 'Telegram 即时通讯网页版', icon: 'https://web.telegram.org/favicon.ico' },
     ],
   },
   {
@@ -202,7 +203,7 @@ export const resourceData: ResourceCategory[] = [
     name: '🔓 网络工具',
     resources: [
       { name: '墙妈妈', href: 'https://www.wallmama.com', description: '科学上网指南网络自由访问', icon: 'https://www.wallmama.com/wp-content/uploads/2020/01/wmmfavicon-120x120.png' },
-      { name: 'NordVPN', href: 'https://nordvpn.com/', description: '领先 VPN 服务，保障网络隐私', icon: 'https://nordvpn.com/favicon.ico' },
+      { name: 'NordVPN', href: 'https://nordvpn.com', description: '领先 VPN 服务，保障网络隐私', icon: 'https://nordvpn.com/favicon.ico' },
       { name: 'Taishan Net', href: 'https://taishan.pro', description: '提供多协议科学上网服务，支持全球节点和流媒体解锁', icon: 'https://taishan.pro/favicon.ico' },
     ],
   },
