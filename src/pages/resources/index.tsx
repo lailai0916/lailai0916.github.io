@@ -80,7 +80,7 @@ function CategoryNav({ categories, activeCategory, onCategoryChange }: {
 }
 
 // 资源卡片组件
-function ResourceCard({ resource }: { resource: { name: string; desc: string; logo: string; href: string } }) {
+function ResourceCard({ resource }: { resource: { name: string; description: string; icon: string; href: string } }) {
   return (
     <Link
       to={resource.href}
@@ -90,7 +90,7 @@ function ResourceCard({ resource }: { resource: { name: string; desc: string; lo
       <div className={styles.resourceCardContent}>
         <div className={styles.resourceCardIcon}>
           <img
-            src={resource.logo}
+            src={resource.icon}
             alt={resource.name}
             className={styles.resourceCardImage}
             onError={(e) => {
@@ -107,7 +107,7 @@ function ResourceCard({ resource }: { resource: { name: string; desc: string; lo
             {resource.name}
           </h3>
           <p className={styles.resourceCardDescription}>
-            {resource.desc}
+            {resource.description}
           </p>
         </div>
         <div className={styles.resourceCardArrow}>
