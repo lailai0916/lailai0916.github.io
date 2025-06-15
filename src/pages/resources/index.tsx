@@ -180,7 +180,7 @@ function CategorySection({ category, isVisible }: {
     <section className={styles.categorySection}>
       <div className={styles.categoryHeader}>
         <h2 className={styles.categoryTitle}>
-          {category.name}
+          {category.icon} {category.name}
         </h2>
         <div className={styles.categoryCount}>
           {category.resources.length} 项
