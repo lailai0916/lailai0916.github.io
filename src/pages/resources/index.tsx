@@ -10,6 +10,17 @@ import styles from './styles.module.css';
 const TITLE = '资源';
 const DESCRIPTION = '精选优质资源，为你的学习和开发提供助力';
 
+// 工具函数：从URL生成DuckDuckGo图标链接
+function getDuckDuckGoIcon(url: string): string {
+  try {
+    const urlObj = new URL(url);
+    return `https://icons.duckduckgo.com/ip3/${urlObj.hostname}.ico`;
+  } catch (error) {
+    console.error('无法解析URL:', url);
+    return `https://icons.duckduckgo.com/ip3/example.com.ico`;
+  }
+}
+
 // 主要内容区域组件
 function MainContent({ categories }: { categories: ResourceCategory[] }) {
   const totalResources = categories.reduce((sum, cat) => sum + cat.resources.length, 0);
@@ -80,7 +91,9 @@ function CategoryNav({ categories, activeCategory, onCategoryChange }: {
 }
 
 // 资源卡片组件
-function ResourceCard({ resource }: { resource: { name: string; description: string; icon: string; href: string } }) {
+function ResourceCard({ resource }: { resource: { name: string; description: string; href: string } }) {
+  const iconUrl = getDuckDuckGoIcon(resource.href);
+  
   return (
     <Link
       to={resource.href}
@@ -90,12 +103,15 @@ function ResourceCard({ resource }: { resource: { name: string; description: str
       <div className={styles.resourceCardContent}>
         <div className={styles.resourceCardIcon}>
           <img
-            src={resource.icon}
+            src={iconUrl}
             alt={resource.name}
             className={styles.resourceCardImage}
             onError={(e) => {
               e.currentTarget.style.display = 'none';
-              e.currentTarget.nextElementSibling.style.display = 'flex';
+              const fallback = e.currentTarget.nextElementSibling as HTMLElement;
+              if (fallback) {
+                fallback.style.display = 'flex';
+              }
             }}
           />
           <div className={styles.resourceCardFallback}>
