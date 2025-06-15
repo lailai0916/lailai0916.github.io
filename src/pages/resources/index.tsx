@@ -41,7 +41,7 @@ function MainContent({ categories }: { categories: ResourceCategory[] }) {
             </div>
             <div className={styles.statContent}>
               <div className={styles.statNumber}>{totalResources}</div>
-              <div className={styles.statLabel}>项资源</div>
+              <div className={styles.statLabel}>项</div>
             </div>
           </div>
         </div>
@@ -167,7 +167,7 @@ function CategorySection({ category, isVisible }: {
           {category.name}
         </h2>
         <div className={styles.categoryCount}>
-          {category.resources.length} 项资源
+          {category.resources.length} 项
         </div>
       </div>
       <div className={styles.resourceGrid} ref={gridRef}>
