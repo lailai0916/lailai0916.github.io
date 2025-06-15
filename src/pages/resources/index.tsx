@@ -30,10 +30,10 @@ function MainContent({ categories }: { categories: ResourceCategory[] }) {
       <div className={styles.quickStatsInner}>
         <div className={styles.leftContent}>
           <Heading as="h1" className={styles.mainTitle}>
-            精选<span className={styles.highlight}>资源</span>导航
+            精选<span className={styles.highlight}>资源</span>
           </Heading>
           <p className={styles.mainDescription}>
-            精心筛选的优质工具与平台，助力学习与开发
+            精心筛选的优质工具与平台
           </p>
         </div>
         <div className={styles.statsGrid}>
@@ -52,7 +52,7 @@ function MainContent({ categories }: { categories: ResourceCategory[] }) {
             </div>
             <div className={styles.statContent}>
               <div className={styles.statNumber}>{totalResources}</div>
-              <div className={styles.statLabel}>项</div>
+              <div className={styles.statLabel}>项资源</div>
             </div>
           </div>
         </div>

@@ -49,7 +49,7 @@ function Section({ children, background = null }: { children: React.ReactNode; b
   );
 }
 
-// 统计卡片组件 - 模仿Project组件的卡片风格
+// 统计卡片组件 - 采用与主页Project卡片一致的设计
 function StatCard({ number, label, icon }: { number: string; label: string; icon: string }) {
   return (
     <div className="group h-full w-full">
@@ -68,7 +68,7 @@ function StatCard({ number, label, icon }: { number: string; label: string; icon
   );
 }
 
-// Hero区域 - 采用Blog组件的布局模式，优化设计
+// Hero区域 - 采用Blog组件的布局模式，保持设计一致性
 function TravelHero() {
   return (
     <Section background={null}>
@@ -86,9 +86,8 @@ function TravelHero() {
               {DESCRIPTION}
             </p>
             <p className="text-lg lg:text-xl text-gray-700 dark:text-neutral-300 leading-relaxed mb-8">
-              旅行不仅是脚步的延伸，更是心灵的拓展。每一次出发，都是对未知世界的好奇；
-              每一次归来，都带着新的思考与感悟。从 2011 年开始的 14 年旅程，足迹遍布世界各地，
-              记录下每一份珍贵的回忆。
+              读万卷书，行万里路。路走多了，才能真正平视世界。既不仰望富裕国家，也不轻视贫穷之地。
+              世界，不是新闻里的样子，也不是别人描述的样子，而是你亲眼所见、亲身所感。看得多了，眼界自开，格局亦变。
             </p>
           </div>
           
@@ -100,7 +99,7 @@ function TravelHero() {
               </svg>
               旅行数据
             </p>
-            <div className="grid grid-cols-3 gap-4 my-8">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 my-8">
               {travelStats.map((stat, idx) => (
                 <StatCard key={idx} {...stat} />
               ))}
@@ -112,12 +111,12 @@ function TravelHero() {
   );
 }
 
-// 时间线区域 - 模仿Project组件的结构，优化布局
+// 时间线区域 - 采用Project组件的结构，保持布局一致性
 function TravelTimeline() {
   return (
     <Section background="alt">
       <div className="max-w-7xl mx-auto flex flex-col px-5">
-        <div className="text-center mb-16">
+        <div className="text-center mb-12">
           <h2 className="font-bold text-4xl lg:text-5xl text-gray-900 dark:text-neutral-100 leading-tight mb-6">
             旅行足迹
           </h2>
@@ -130,14 +129,6 @@ function TravelTimeline() {
           <BrowserOnly>
             {() => <Timeline />}
           </BrowserOnly>
-        </div>
-        
-        {/* 底部说明文字 */}
-        <div className="text-center mt-12 px-4">
-          <p className="text-base text-gray-600 dark:text-neutral-400 leading-relaxed max-w-2xl mx-auto">
-            读万卷书，行万里路。路走多了，才能真正平视世界。既不仰望富裕国家，也不轻视贫穷之地。
-            世界，不是新闻里的样子，也不是别人描述的样子，而是你亲眼所见、亲身所感。看得多了，眼界自开，格局亦变。
-          </p>
         </div>
       </div>
     </Section>

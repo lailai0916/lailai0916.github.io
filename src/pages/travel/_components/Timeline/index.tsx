@@ -14,7 +14,6 @@ export default function Timeline() {
     // 卡片样式
     cardBgColor: 'var(--ifm-card-background-color)',
     cardTitleColor: 'var(--ifm-color-emphasis-800)',
-    cardSubtitleColor: 'var(--ifm-color-emphasis-600)',
     cardDetailsColor: 'var(--ifm-color-emphasis-700)',
     
     // 时间轴样式
@@ -42,7 +41,6 @@ export default function Timeline() {
 
   // 字体大小配置 - 确保可读性
   const fontSizes = {
-    cardSubtitle: '0.875rem',
     cardText: '0.875rem', 
     cardTitle: '1.125rem',
     title: '0.75rem',
@@ -52,7 +50,6 @@ export default function Timeline() {
   const classNames = {
     card: 'travel-timeline-card',
     cardMedia: 'travel-timeline-card-media',
-    cardSubTitle: 'travel-timeline-card-subtitle',
     cardText: 'travel-timeline-card-text',
     cardTitle: 'travel-timeline-card-title',
     title: 'travel-timeline-title',
@@ -104,7 +101,6 @@ export default function Timeline() {
             // 可访问性
             semanticTags={{
               cardTitle: 'h3',
-              cardSubtitle: 'p',
             }}
             
             // 高级功能
