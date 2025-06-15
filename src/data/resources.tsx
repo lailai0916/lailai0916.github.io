@@ -26,15 +26,15 @@ export const resourceData: ResourceCategory[] = [
       { name: 'Grok', href: 'https://grok.com', description: 'xAI 开发的AI助手，实时信息获取与分析' },
       { name: 'DeepSeek', href: 'https://deepseek.com', description: '深度求索大语言模型，中文AI对话助手' },
       { name: 'Sora', href: 'https://sora.com', description: 'OpenAI 文本生成视频模型，创意无限' },
-      { name: 'Hugging Face', href: 'https://huggingface.co', description: '开源 AI 模型社区，机器学习的 GitHub' },
     ],
   },
   {
     name: '🔬 AI 开发研究',
     resources: [
+      { name: 'Hugging Face', href: 'https://huggingface.co', description: '开源 AI 模型社区，机器学习的 GitHub' },
       { name: 'Google DeepMind', href: 'https://deepmind.com', description: 'Google AI 研究前沿，推动 AGI 发展' },
-      { name: 'Meta AI', href: 'https://ai.facebook.com', description: 'Meta 人工智能研究部门' },
       { name: 'Google AI', href: 'https://ai.google', description: 'Google AI 研究和产品部门' },
+      { name: 'Meta AI', href: 'https://ai.facebook.com', description: 'Meta 人工智能研究部门' },
       { name: 'Microsoft AI', href: 'https://www.microsoft.com/ai', description: '微软人工智能研究开发' },
       { name: 'DeepLearning.AI', href: 'https://deeplearning.ai', description: '吴恩达 AI 教育平台，专业课程体系' },
       { name: 'PyTorch', href: 'https://pytorch.org', description: 'Facebook 开源深度学习框架' },
@@ -46,15 +46,19 @@ export const resourceData: ResourceCategory[] = [
     ],
   },
   {
-    name: '💻 开发与编程',
+    name: '💻 代码托管与版控',
     resources: [
       { name: 'GitHub', href: 'https://github.com', description: '全球最大代码托管平台，开源项目大本营' },
-      { name: 'GitLab', href: 'https://gitlab.com', description: '企业级 DevOps 平台，完整开发生命周期' },
       { name: 'GitStar 排行榜', href: 'https://gitstar-ranking.com', description: 'GitHub 用户仓库 Star 数排行榜' },
       { name: 'Committers Top', href: 'https://committers.top', description: '各国最活跃 GitHub 用户榜单' },
       { name: 'GitHub Metrics', href: 'https://github.com/lowlighter/metrics', description: 'GitHub 账号信息图生成器' },
       { name: 'GitHub Stats', href: 'https://github.com/jstrieb/github-stats', description: 'GitHub 个人资料统计图像生成' },
       { name: 'GitHub Profile README Generator', href: 'https://rahuldkjain.github.io/gh-profile-readme-generator', description: '精美 GitHub 个人资料 README 生成' },
+    ],
+  },
+  {
+    name: '🔧 在线开发环境',
+    resources: [
       { name: 'GitHub Codespaces', href: 'https://github.com/codespaces', description: '云端开发环境，随时随地编程' },
       { name: 'Gitpod', href: 'https://www.gitpod.io', description: '云开发环境，加速软件开发' },
       { name: 'CodeSandbox', href: 'https://codesandbox.io', description: '云端代码编辑器，协作开发利器' },
@@ -133,6 +137,8 @@ export const resourceData: ResourceCategory[] = [
   {
     name: '🛠️ 日常工具',
     resources: [
+      { name: 'Class Widgets', href: 'https://classwidgets.rinlit.cn', description: '多样化桌面课表软件，支持插件主题系统，跨平台兼容' },
+      { name: 'Google 翻译', href: 'https://translate.google.com', description: '谷歌免费在线翻译服务，支持100多种语言' },
       { name: 'Speedtest', href: 'https://www.speedtest.net', description: '全球领先网络速度测试' },
       { name: '能不能好好说话？', href: 'https://lab.magiconch.com/nbnhhsh/', description: '拼音首字母缩写翻译神器' },
       { name: 'Password Monster', href: 'https://passwordmonster.com/', description: '密码强度检测生成工具' },
