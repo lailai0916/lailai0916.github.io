@@ -77,7 +77,6 @@ export const resourceData: ResourceCategory[] = [
       { name: 'OnlineGDB', href: 'https://www.onlinegdb.com/online_python_compiler', description: '多语言在线编译器' },
       { name: 'Compiler Explorer', href: 'https://godbolt.org', description: '汇编代码分析工具' },
       { name: 'React', href: 'https://react.dev', description: 'Facebook前端UI框架' },
-      { name: '电子教室终结者', href: 'https://dzjszjz.nkxingxh.top', description: '电子教室软件解锁工具' },
       { name: '清华大学开源软件镜像站', href: 'https://mirrors.tuna.tsinghua.edu.cn', description: '开源软件包镜像服务' },
     ],
   },
@@ -127,7 +126,7 @@ export const resourceData: ResourceCategory[] = [
     ],
   },
   {
-    name: '静态站点生成',
+    name: '站点生成',
     icon: '📖',
     resources: [
       { name: 'VitePress', href: 'https://vitepress.vuejs.org', description: 'Vue静态网站生成器' },
@@ -152,16 +151,17 @@ export const resourceData: ResourceCategory[] = [
     name: '日常工具',
     icon: '🛠️',
     resources: [
-      { name: 'Class Widgets', href: 'https://classwidgets.rinlit.cn', description: '桌面课表软件' },
       { name: 'Google 翻译', href: 'https://translate.google.com', description: '谷歌在线翻译服务' },
       { name: 'Speedtest', href: 'https://www.speedtest.net', description: '网络速度测试工具' },
       { name: '能不能好好说话？', href: 'https://lab.magiconch.com/nbnhhsh/', description: '拼音缩写翻译工具' },
       { name: 'Password Monster', href: 'https://passwordmonster.com/', description: '密码强度检测工具' },
       { name: 'CPS 测试', href: 'https://clickspeedtest.com/', description: '鼠标点击速度测试' },
+      { name: '政治倾向测试', href: 'https://luckyfuy.top/compass/', description: '政治倾向分析测试' },
       { name: 'dazidazi', href: 'https://dazidazi.com', description: '在线打字练习平台' },
       { name: 'WildCard 野卡', href: 'https://yeka.ai', description: '虚拟信用卡服务' },
-      { name: '政治倾向测试', href: 'https://luckyfuy.top/compass/', description: '政治倾向分析测试' },
       { name: 'Luban SMS', href: 'https://lubansms.com', description: '全球短信收发平台' },
+      { name: 'Class Widgets', href: 'https://classwidgets.rinlit.cn', description: '桌面课表软件' },
+      { name: '电子教室终结者', href: 'https://dzjszjz.nkxingxh.top', description: '电子教室软件解锁工具' },
     ],
   },
   {
