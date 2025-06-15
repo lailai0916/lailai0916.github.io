@@ -11,13 +11,13 @@ const TITLE = '资源';
 const DESCRIPTION = '精选优质资源，为你的学习和开发提供助力';
 
 // 工具函数：从 URL 生成 Google Favicon 图标链接
-function getFavicon(url: string): string {
+function getFavicon(url: string): string | null {
   try {
     const urlObj = new URL(url);
     return `https://www.google.com/s2/favicons?sz=64&domain=${urlObj.hostname}`;
   } catch (error) {
     console.error('无法解析 URL:', url);
-    return `https://www.google.com/s2/favicons?sz=64&domain=example.com`;
+    return null;
   }
 }
 
@@ -102,21 +102,29 @@ function ResourceCard({ resource }: { resource: { name: string; description: str
     >
       <div className={styles.resourceCardContent}>
         <div className={styles.resourceCardIcon}>
-          <img
-            src={iconUrl}
-            alt={resource.name}
-            className={styles.resourceCardImage}
-            onError={(e) => {
-              e.currentTarget.style.display = 'none';
-              const fallback = e.currentTarget.nextElementSibling as HTMLElement;
-              if (fallback) {
-                fallback.style.display = 'flex';
-              }
-            }}
-          />
-          <div className={styles.resourceCardFallback}>
-            <Icon icon="streamline:web" width={24} height={24} />
-          </div>
+          {iconUrl ? (
+            <>
+              <img
+                src={iconUrl}
+                alt={resource.name}
+                className={styles.resourceCardImage}
+                onError={(e) => {
+                  e.currentTarget.style.display = 'none';
+                  const fallback = e.currentTarget.nextElementSibling as HTMLElement;
+                  if (fallback) {
+                    fallback.style.display = 'flex';
+                  }
+                }}
+              />
+              <div className={styles.resourceCardFallback}>
+                <Icon icon="streamline:web" width={24} height={24} />
+              </div>
+            </>
+          ) : (
+            <div className={styles.resourceCardFallback} style={{ display: 'flex' }}>
+              <Icon icon="streamline:web" width={24} height={24} />
+            </div>
+          )}
         </div>
         <div className={styles.resourceCardBody}>
           <h3 className={styles.resourceCardTitle}>
