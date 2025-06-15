@@ -18,7 +18,7 @@ import Image from '@theme/IdealImage';
 
 ### THE NORTH FACE EXPLORE HIP PACK
 
-有的时候出行，背包随身携带不是很方便，我会把手机、充电宝、钱包、护照等重要物品放在腰包里。
+有时候出行背包随身携带不方便，我会把手机、充电宝、钱包、护照等重要物品放在腰包里。
 
 ## 数码设备
 
