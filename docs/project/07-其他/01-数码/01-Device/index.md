@@ -1,5 +1,3 @@
-import SimpleSlider from './test'
-
 # lailai's Device
 
 It's something only Apple can do!
