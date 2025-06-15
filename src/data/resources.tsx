@@ -17,7 +17,6 @@ export const resourceData: ResourceCategory[] = [
     resources: [
       { name: 'Google', href: 'https://www.google.com', description: '全球最大搜索引擎' },
       { name: 'Microsoft Bing', href: 'https://www.bing.com', description: '微软AI智能搜索' },
-      { name: 'DuckDuckGo', href: 'https://duckduckgo.com', description: '注重隐私的搜索引擎' },
       { name: '百度', href: 'https://www.baidu.com', description: '中国领先中文搜索' },
     ],
   },
