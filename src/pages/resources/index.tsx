@@ -10,14 +10,14 @@ import styles from './styles.module.css';
 const TITLE = '资源';
 const DESCRIPTION = '精选优质资源，为你的学习和开发提供助力';
 
-// 工具函数：从URL生成DuckDuckGo图标链接
-function getDuckDuckGoIcon(url: string): string {
+// 工具函数：从 URL 生成 Google Favicon 图标链接
+function getFavicon(url: string): string {
   try {
     const urlObj = new URL(url);
-    return `https://icons.duckduckgo.com/ip3/${urlObj.hostname}.ico`;
+    return `https://www.google.com/s2/favicons?sz=64&domain=${urlObj.hostname}`;
   } catch (error) {
-    console.error('无法解析URL:', url);
-    return `https://icons.duckduckgo.com/ip3/example.com.ico`;
+    console.error('无法解析 URL:', url);
+    return `https://www.google.com/s2/favicons?sz=64&domain=example.com`;
   }
 }
 
@@ -92,7 +92,7 @@ function CategoryNav({ categories, activeCategory, onCategoryChange }: {
 
 // 资源卡片组件
 function ResourceCard({ resource }: { resource: { name: string; description: string; href: string } }) {
-  const iconUrl = getDuckDuckGoIcon(resource.href);
+  const iconUrl = getFavicon(resource.href);
   
   return (
     <Link

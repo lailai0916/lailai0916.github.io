@@ -232,8 +232,8 @@ export const resourceData: ResourceCategory[] = [
     ],
   },
   {
-    name: '网络工具',
-    icon: '🔓',
+    name: '科学上网',
+    icon: '🌐',
     resources: [
       { name: '墙妈妈', href: 'https://www.wallmama.com', description: '科学上网指南' },
       { name: 'NordVPN', href: 'https://nordvpn.com', description: '专业VPN服务' },
