@@ -137,8 +137,6 @@
 
 .categoryButton:hover {
   border-color: var(--ifm-color-primary);
-  background: var(--ifm-color-primary-lightest);
-  color: var(--ifm-color-primary-dark);
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
