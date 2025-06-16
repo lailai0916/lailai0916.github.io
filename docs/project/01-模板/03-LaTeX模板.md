@@ -9,7 +9,7 @@ import BrowserWindow from '@site/src/components/BrowserWindow';
 - [Supported Functions - KaTeX](https://katex.org/docs/supported.html)
 - [LaTeX 数学公式大全 - 洛谷专栏](https://www.luogu.com.cn/article/1gxob6zc)
 
-## 推荐工具
+## 资源推荐
 
 - [在线 LaTeX 公式编辑器](https://www.latexlive.com)
 

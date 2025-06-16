@@ -8,7 +8,7 @@ import BrowserWindow from '@site/src/components/BrowserWindow';
 
 - [Markdown 书写风格指南](http://einverne.github.io/markdown-style-guide/zh.html)
 
-## 推荐工具
+## 资源推荐
 
 - [Typora](https://typora.io)
 
