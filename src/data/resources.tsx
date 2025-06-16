@@ -195,7 +195,6 @@ export const resourceData: ResourceCategory[] = [
     name: '设计创意',
     icon: '🎨',
     resources: [
-      { name: 'Apple Design Resources', href: 'https://developer.apple.com/design/resources', description: 'Apple官方设计资源' },
       { name: 'Skill Icons', href: 'https://skillicons.dev', description: '技能图标生成工具' },
       { name: 'BrandColors', href: 'https://brandcolors.net', description: '品牌配色方案收集' },
       { name: 'Maker World', href: 'https://makerworld.com.cn', description: '设计资源创意工具' },
