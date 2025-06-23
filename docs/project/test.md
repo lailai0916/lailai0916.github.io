@@ -1,7 +1,6 @@
 import BrowserWindow from '@site/src/components/BrowserWindow';
 import IframeWindow from '@site/src/components/BrowserWindow/IframeWindow';
 import Desmos from '@site/src/components/BrowserWindow/Desmos';
-import Show from '@site/src/components/Show';
 
 # 测试
 
