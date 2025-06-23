@@ -1,0 +1,222 @@
+{
+  "version.label": {
+    "message": "Next",
+    "description": "The label for version current"
+  },
+  "sidebar.docs1.category.比赛相关": {
+    "message": "比赛相关",
+    "description": "The label for category 比赛相关 in sidebar docs1"
+  },
+  "sidebar.docs1.category.题型": {
+    "message": "题型",
+    "description": "The label for category 题型 in sidebar docs1"
+  },
+  "sidebar.docs1.category.语言基础": {
+    "message": "语言基础",
+    "description": "The label for category 语言基础 in sidebar docs1"
+  },
+  "sidebar.docs1.category.C++标准库": {
+    "message": "C++标准库",
+    "description": "The label for category C++标准库 in sidebar docs1"
+  },
+  "sidebar.docs1.category.算法基础": {
+    "message": "算法基础",
+    "description": "The label for category 算法基础 in sidebar docs1"
+  },
+  "sidebar.docs1.category.排序": {
+    "message": "排序",
+    "description": "The label for category 排序 in sidebar docs1"
+  },
+  "sidebar.docs1.category.搜索": {
+    "message": "搜索",
+    "description": "The label for category 搜索 in sidebar docs1"
+  },
+  "sidebar.docs1.category.动态规划": {
+    "message": "动态规划",
+    "description": "The label for category 动态规划 in sidebar docs1"
+  },
+  "sidebar.docs1.category.字符串": {
+    "message": "字符串",
+    "description": "The label for category 字符串 in sidebar docs1"
+  },
+  "sidebar.docs1.category.数学": {
+    "message": "数学",
+    "description": "The label for category 数学 in sidebar docs1"
+  },
+  "sidebar.docs1.category.数论": {
+    "message": "数论",
+    "description": "The label for category 数论 in sidebar docs1"
+  },
+  "sidebar.docs1.category.封装": {
+    "message": "封装",
+    "description": "The label for category 封装 in sidebar docs1"
+  },
+  "sidebar.docs1.category.数值": {
+    "message": "数值",
+    "description": "The label for category 数值 in sidebar docs1"
+  },
+  "sidebar.docs1.category.杂项": {
+    "message": "杂项",
+    "description": "The label for category 杂项 in sidebar docs1"
+  },
+  "sidebar.docs1.category.数据结构": {
+    "message": "数据结构",
+    "description": "The label for category 数据结构 in sidebar docs1"
+  },
+  "sidebar.docs1.category.图论": {
+    "message": "图论",
+    "description": "The label for category 图论 in sidebar docs1"
+  },
+  "sidebar.docs1.category.树上问题": {
+    "message": "树上问题",
+    "description": "The label for category 树上问题 in sidebar docs1"
+  },
+  "sidebar.docs1.category.连通性": {
+    "message": "连通性",
+    "description": "The label for category 连通性 in sidebar docs1"
+  },
+  "sidebar.docs1.category.计算几何": {
+    "message": "计算几何",
+    "description": "The label for category 计算几何 in sidebar docs1"
+  },
+  "sidebar.docs1.category.个人": {
+    "message": "个人",
+    "description": "The label for category 个人 in sidebar docs1"
+  },
+  "sidebar.docs2.category.高中数学": {
+    "message": "高中数学",
+    "description": "The label for category 高中数学 in sidebar docs2"
+  },
+  "sidebar.docs2.category.杂项": {
+    "message": "杂项",
+    "description": "The label for category 杂项 in sidebar docs2"
+  },
+  "sidebar.docs2.category.函数": {
+    "message": "函数",
+    "description": "The label for category 函数 in sidebar docs2"
+  },
+  "sidebar.docs2.category.几何": {
+    "message": "几何",
+    "description": "The label for category 几何 in sidebar docs2"
+  },
+  "sidebar.docs2.category.概率": {
+    "message": "概率",
+    "description": "The label for category 概率 in sidebar docs2"
+  },
+  "sidebar.docs2.category.高等数学": {
+    "message": "高等数学",
+    "description": "The label for category 高等数学 in sidebar docs2"
+  },
+  "sidebar.docs2.category.微积分": {
+    "message": "微积分",
+    "description": "The label for category 微积分 in sidebar docs2"
+  },
+  "sidebar.docs2.category.线性代数": {
+    "message": "线性代数",
+    "description": "The label for category 线性代数 in sidebar docs2"
+  },
+  "sidebar.docs2.category.概率论与数理统计": {
+    "message": "概率论与数理统计",
+    "description": "The label for category 概率论与数理统计 in sidebar docs2"
+  },
+  "sidebar.docs2.category.离散数学": {
+    "message": "离散数学",
+    "description": "The label for category 离散数学 in sidebar docs2"
+  },
+  "sidebar.docs2.category.初等数论": {
+    "message": "初等数论",
+    "description": "The label for category 初等数论 in sidebar docs2"
+  },
+  "sidebar.docs2.category.思考": {
+    "message": "思考",
+    "description": "The label for category 思考 in sidebar docs2"
+  },
+  "sidebar.docs2.category.英语语法": {
+    "message": "英语语法",
+    "description": "The label for category 英语语法 in sidebar docs2"
+  },
+  "sidebar.docs2.category.动词": {
+    "message": "动词",
+    "description": "The label for category 动词 in sidebar docs2"
+  },
+  "sidebar.docs2.category.词性": {
+    "message": "词性",
+    "description": "The label for category 词性 in sidebar docs2"
+  },
+  "sidebar.docs2.category.句子": {
+    "message": "句子",
+    "description": "The label for category 句子 in sidebar docs2"
+  },
+  "sidebar.docs2.category.其他": {
+    "message": "其他",
+    "description": "The label for category 其他 in sidebar docs2"
+  },
+  "sidebar.docs3.category.模板": {
+    "message": "模板",
+    "description": "The label for category 模板 in sidebar docs3"
+  },
+  "sidebar.docs3.category.工具": {
+    "message": "工具",
+    "description": "The label for category 工具 in sidebar docs3"
+  },
+  "sidebar.docs3.category.资料": {
+    "message": "资料",
+    "description": "The label for category 资料 in sidebar docs3"
+  },
+  "sidebar.docs3.category.终端": {
+    "message": "终端",
+    "description": "The label for category 终端 in sidebar docs3"
+  },
+  "sidebar.docs3.category.教程": {
+    "message": "教程",
+    "description": "The label for category 教程 in sidebar docs3"
+  },
+  "sidebar.docs3.category.工具函数": {
+    "message": "工具函数",
+    "description": "The label for category 工具函数 in sidebar docs3"
+  },
+  "sidebar.docs3.category.GitHub": {
+    "message": "GitHub",
+    "description": "The label for category GitHub in sidebar docs3"
+  },
+  "sidebar.docs3.category.lailais-Home": {
+    "message": "lailais-Home",
+    "description": "The label for category lailais-Home in sidebar docs3"
+  },
+  "sidebar.docs3.category.Desmos": {
+    "message": "Desmos",
+    "description": "The label for category Desmos in sidebar docs3"
+  },
+  "sidebar.docs3.category.艺术博览会": {
+    "message": "艺术博览会",
+    "description": "The label for category 艺术博览会 in sidebar docs3"
+  },
+  "sidebar.docs3.category.图形": {
+    "message": "图形",
+    "description": "The label for category 图形 in sidebar docs3"
+  },
+  "sidebar.docs3.category.尺规作图": {
+    "message": "尺规作图",
+    "description": "The label for category 尺规作图 in sidebar docs3"
+  },
+  "sidebar.docs3.category.其他": {
+    "message": "其他",
+    "description": "The label for category 其他 in sidebar docs3"
+  },
+  "sidebar.docs3.category.数码": {
+    "message": "数码",
+    "description": "The label for category 数码 in sidebar docs3"
+  },
+  "sidebar.docs3.category.软件": {
+    "message": "软件",
+    "description": "The label for category 软件 in sidebar docs3"
+  },
+  "sidebar.docs3.category.配置": {
+    "message": "配置",
+    "description": "The label for category 配置 in sidebar docs3"
+  },
+  "sidebar.docs3.category.设计": {
+    "message": "设计",
+    "description": "The label for category 设计 in sidebar docs3"
+  }
+}
