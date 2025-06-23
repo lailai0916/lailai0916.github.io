@@ -135,10 +135,10 @@ const config: Config = {
           position: 'left',
           items: [
             { label: '关于', to: 'about' },
+            { label: '旅行', to: 'travel' },
             { label: '友链', to: 'friends' },
             { label: '资源', to: 'resources' },
             { label: '网站', to: 'sites' },
-            { label: '旅行', to: 'travel' },
           ],
         },
         {
@@ -147,9 +147,9 @@ const config: Config = {
         },
         {
           href: 'https://github.com/lailai0916/lailai0916.github.io',
-          // label: 'GitHub',
-          className: 'header-github-link',
           position: 'right',
+          className: 'header-github-link',
+          'aria-label': 'GitHub repository',
         },
       ],
     },
