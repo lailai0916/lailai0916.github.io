@@ -6,9 +6,9 @@ import TabItem from '@theme/TabItem';
 
 ## 说明
 
-此教程写于 2025 年 1 月，当前版本为 Docusaurus v3.7。
+此教程写于 2025 年 1 月，当前版本为 Docusaurus v3.8。
 
-使用 macOS Sequoia 15.2 操作系统的 MacBook Pro 演示。
+使用 macOS Sequoia 15.5 系统的 MacBook Pro 演示。
 
 ## 前言
 
@@ -32,9 +32,11 @@ import TabItem from '@theme/TabItem';
 
 安装时有两个选择：JavaScript 和 TypeScript。
 
-推荐使用 TypeScript，因为它是 JavaScript 的一个严格超集，提供了更多功能。
+推荐使用 TypeScript，因为它是 JavaScript 的严格超集，提供了更多功能。
 
-1. 打开终端并运行此命令，它将创建一个包含脚手架文件的新目录。你可以将 `my-website` 修改为任意名称。
+### 创建
+
+打开终端并运行此命令，它将创建一个包含脚手架文件的新目录。你可以将 `my-website` 修改为任意名称。
 
 <Tabs>
 <TabItem value="TypeScript">
@@ -53,14 +55,61 @@ npx create-docusaurus@latest my-website classic --javascript
 </TabItem>
 </Tabs>
 
-2. 切换到项目目录，并启动本地服务器。
+```bash
+lailai@lailais-MacBook-Pro GitHub % npx create-docusaurus@latest my-website classic --typescript
+[INFO] Creating new Docusaurus project...
+[INFO] Installing dependencies with npm...
+[SUCCESS] Created my-website.
+[INFO] Inside that directory, you can run several commands:
+
+  `npm start`
+    Starts the development server.
+
+  `npm run build`
+    Bundles your website into static files for production.
+
+  `npm run serve`
+    Serves the built website locally.
+
+  `npm run deploy`
+    Publishes the website to GitHub pages.
+
+We recommend that you begin by typing:
+
+  `cd my-website`
+  `npm start`
+
+Happy building awesome websites!
+```
+
+### 启动
+
+等待创建完成后，切换到项目目录，并启动本地服务器。
 
 ```bash
 cd my-website
 npm start
 ```
 
-3. 等待一段时间，浏览器会自动打开 `http://localhost:3000` 网址。
+```bash
+lailai@lailais-MacBook-Pro GitHub % cd my-website
+npm start
+
+> my-website@0.0.0 start
+> docusaurus start
+
+[INFO] Starting the development server...
+[SUCCESS] Docusaurus website is running at: http://localhost:3000/
+
+✔ Client
+  Compiled successfully in 471.56ms
+
+client (webpack 5.99.9) compiled successfully
+```
+
+### 预览
+
+等待一段时间，会自动打开浏览器 [`http://localhost:3000`](http://localhost:3000) 本地地址。
 
 此时你能看到 Docusaurus 网站的默认页面。
 

@@ -34,7 +34,7 @@ const config: Config = {
   // may want to replace "en" with "zh-Hans".
   i18n: {
     defaultLocale: 'zh-Hans',
-    locales: ['zh-Hans'],
+    locales: ['zh-Hans', 'en'],
   },
 
   presets: [
@@ -131,19 +131,19 @@ const config: Config = {
           position: 'left'
         },
         {
-          to: 'about',
-          label: '关于',
-          position: 'right'
-        },
-        {
           label: '更多',
-          position: 'right',
+          position: 'left',
           items: [
+            { label: '关于', to: 'about' },
             { label: '友链', to: 'friends' },
             { label: '资源', to: 'resources' },
             { label: '网站', to: 'sites' },
             { label: '旅行', to: 'travel' },
           ],
+        },
+        {
+          type: 'localeDropdown',
+          position: 'right',
         },
         {
           href: 'https://github.com/lailai0916/lailai0916.github.io',
