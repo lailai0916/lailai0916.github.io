@@ -1,30 +1,30 @@
 {
   "link.title.文档": {
-    "message": "文档",
+    "message": "Docs",
     "description": "The title of the footer links column with title=文档 in the footer"
   },
   "link.title.社区": {
-    "message": "社区",
+    "message": "Community",
     "description": "The title of the footer links column with title=社区 in the footer"
   },
   "link.title.更多": {
-    "message": "更多",
+    "message": "More",
     "description": "The title of the footer links column with title=更多 in the footer"
   },
   "link.item.label.竞赛": {
-    "message": "竞赛",
+    "message": "Contests",
     "description": "The label of footer link with label=竞赛 linking to docs/contest"
   },
   "link.item.label.笔记": {
-    "message": "笔记",
+    "message": "Notes",
     "description": "The label of footer link with label=笔记 linking to docs/note"
   },
   "link.item.label.项目": {
-    "message": "项目",
+    "message": "Projects",
     "description": "The label of footer link with label=项目 linking to docs/project"
   },
   "link.item.label.博客": {
-    "message": "博客",
+    "message": "Blog",
     "description": "The label of footer link with label=博客 linking to blog"
   },
   "link.item.label.X (Twitter)": {
@@ -44,19 +44,19 @@
     "description": "The label of footer link with label=GitHub linking to https://github.com/lailai0916"
   },
   "link.item.label.关于": {
-    "message": "关于",
+    "message": "About",
     "description": "The label of footer link with label=关于 linking to about"
   },
   "link.item.label.友链": {
-    "message": "友链",
+    "message": "Friends",
     "description": "The label of footer link with label=友链 linking to friends"
   },
   "link.item.label.设置": {
-    "message": "设置",
+    "message": "Settings",
     "description": "The label of footer link with label=设置 linking to settings"
   },
   "link.item.label.仓库": {
-    "message": "仓库",
+    "message": "Repository",
     "description": "The label of footer link with label=仓库 linking to https://github.com/lailai0916/lailai0916.github.io"
   },
   "copyright": {

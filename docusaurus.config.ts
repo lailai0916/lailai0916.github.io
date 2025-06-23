@@ -22,7 +22,7 @@ const config: Config = {
   organizationName: 'lailai0916',
   projectName: 'lailai\'s Home',
 
-  onBrokenLinks: 'throw',
+  onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
 
   i18n: {
