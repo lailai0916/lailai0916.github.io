@@ -13,7 +13,7 @@ const Problem: React.FC<ProblemProps> = ({ id }) => {
   }
 
   try {
-    const module = require(`../../problem/${id}.md`);
+    const module = require(`../../problems/${id}.md`);
     const MDXComponent = module.default;
     
     if (MDXComponent) {
@@ -35,7 +35,7 @@ const Problem: React.FC<ProblemProps> = ({ id }) => {
       }}>
         <strong>错误：</strong> 无法加载题目 {id}
         <br />
-        <small>请检查文件 src/problem/{id}.md 是否存在</small>
+        <small>请检查文件 src/problems/{id}.md 是否存在</small>
       </div>
     );
   }
