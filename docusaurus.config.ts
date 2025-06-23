@@ -6,32 +6,26 @@ import type {Options as IdealImageOptions} from '@docusaurus/plugin-ideal-image'
 import remarkMath from 'remark-math';
 import rehypeKatex from 'rehype-katex';
 
-// This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
-
 const config: Config = {
   title: 'lailai\'s Home',
   tagline: 'lailai 的个人网站，分享技术笔记、项目经验和学习心得。✨',
-  // My personal blog, where I share technical notes, project experiences, and learning insights.
   favicon: 'img/favicon.ico',
 
-  // Set the production url of your site here
+  future: {
+    v4: true,
+    experimental_faster: true,
+  },
+
   url: 'https://lailai0916.github.io',
-  // Set the /<baseUrl>/ pathname under which your site is served
-  // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: '/',
 
-  // GitHub pages deployment config.
-  // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'lailai0916', // Usually your GitHub org/user name.
-  projectName: 'lailai\'s Home', // Usually your repo name.
+  organizationName: 'lailai0916',
+  projectName: 'lailai\'s Home',
 
   trailingSlash: false,
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
 
-  // Even if you don't use internationalization, you can use this field to set
-  // useful metadata like html lang. For example, if your site is Chinese, you
-  // may want to replace "en" with "zh-Hans".
   i18n: {
     defaultLocale: 'zh-Hans',
     locales: ['zh-Hans', 'en'],
@@ -46,15 +40,13 @@ const config: Config = {
 
           // showLastUpdateAuthor: true,
           showLastUpdateTime: true,
+          // editUrl: 'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+
           remarkPlugins: [
             remarkMath,
             [require('@docusaurus/remark-plugin-npm2yarn'), {sync: true}],
           ],
           rehypePlugins: [rehypeKatex],
-
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          // editUrl: 'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
         },
         blog: {
           showReadingTime: true,
@@ -67,20 +59,20 @@ const config: Config = {
             type: ['rss', 'atom'],
             xslt: true,
           },
+
           // showLastUpdateAuthor: true,
           showLastUpdateTime: true,
+          // editUrl: 'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+
+          onInlineTags: 'warn',
+          onInlineAuthors: 'warn',
+          onUntruncatedBlogPosts: 'warn',
+
           remarkPlugins: [
             remarkMath,
             [require('@docusaurus/remark-plugin-npm2yarn'), {sync: true}],
           ],
           rehypePlugins: [rehypeKatex],
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          // editUrl: 'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
-          // Useful options to enforce blogging best practices
-          onInlineTags: 'warn',
-          onInlineAuthors: 'warn',
-          onUntruncatedBlogPosts: 'warn',
         },
         pages: {
           remarkPlugins: [
@@ -97,39 +89,19 @@ const config: Config = {
   ],
 
   themeConfig: {
-    // Replace with your project's social card
     image: 'img/logo.svg',
     navbar: {
-      // hideOnScroll: true,
+      hideOnScroll: true,
       title: 'lailai\'s Home',
       logo: {
         alt: 'lailai\'s Logo',
         src: 'img/logo.svg',
       },
       items: [
-        {
-          type: 'docSidebar',
-          sidebarId: 'docs1',
-          position: 'left',
-          label: '竞赛',
-        },
-        {
-          type: 'docSidebar',
-          sidebarId: 'docs2',
-          position: 'left',
-          label: '笔记',
-        },
-        {
-          type: 'docSidebar',
-          sidebarId: 'docs3',
-          position: 'left',
-          label: '项目',
-        },
-        {
-          to: 'blog',
-          label: '博客',
-          position: 'left'
-        },
+        { type: 'docSidebar', sidebarId: 'docs1', position: 'left', label: '竞赛' },
+        { type: 'docSidebar', sidebarId: 'docs2', position: 'left', label: '笔记' },
+        { type: 'docSidebar', sidebarId: 'docs3', position: 'left', label: '项目' },
+        { to: 'blog', label: '博客', position: 'left' },
         {
           label: '更多',
           position: 'left',
@@ -141,10 +113,7 @@ const config: Config = {
             { label: '网站', to: 'sites' },
           ],
         },
-        {
-          type: 'localeDropdown',
-          position: 'right',
-        },
+        { type: 'localeDropdown', position: 'right' },
         {
           href: 'https://github.com/lailai0916/lailai0916.github.io',
           position: 'right',
@@ -158,64 +127,28 @@ const config: Config = {
         {
           title: '文档',
           items: [
-            {
-              label: '竞赛',
-              to: 'docs/contest',
-            },
-            {
-              label: '笔记',
-              to: 'docs/note',
-            },
-            {
-              label: '项目',
-              to: 'docs/project',
-            },
-            {
-              label: '博客',
-              to: 'blog',
-            },
+            { label: '竞赛', to: 'docs/contest' },
+            { label: '笔记', to: 'docs/note' },
+            { label: '项目', to: 'docs/project' },
+            { label: '博客', to: 'blog' },
           ],
         },
         {
           title: '社区',
           items: [
-            {
-              label: 'X (Twitter)',
-              href: 'https://x.com/lailai0x394',
-            },
-            {
-              label: 'Telegram',
-              href: 'https://t.me/lailai0916',
-            },
-            {
-              label: 'LinkedIn',
-              href: 'https://www.linkedin.com/in/lailai0916',
-            },
-            {
-              label: 'GitHub',
-              href: 'https://github.com/lailai0916',
-            },
+            { label: 'X (Twitter)', href: 'https://x.com/lailai0x394' },
+            { label: 'Telegram', href: 'https://t.me/lailai0916' },
+            { label: 'LinkedIn', href: 'https://www.linkedin.com/in/lailai0916' },
+            { label: 'GitHub', href: 'https://github.com/lailai0916' },
           ],
         },
         {
           title: '更多',
           items: [
-            {
-              label: '关于',
-              to: 'about',
-            },
-            {
-              label: '友链',
-              to: 'friends',
-            },
-            {
-              label: '设置',
-              to: 'settings',
-            },
-            {
-              label: '仓库',
-              href: 'https://github.com/lailai0916/lailai0916.github.io',
-            },
+            { label: '关于', to: 'about' },
+            { label: '友链', to: 'friends' },
+            { label: '设置', to: 'settings' },
+            { label: '仓库', href: 'https://github.com/lailai0916/lailai0916.github.io' },
           ],
         },
       ],
@@ -345,11 +278,6 @@ const config: Config = {
       },
     ],
   ],
-
-  future: {
-    v4: true,
-    experimental_faster: true,
-  },
 };
 
 export default config;
