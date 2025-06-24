@@ -1,6 +1,3 @@
-import BrowserWindow from '@site/src/components/BrowserWindow';
-import ImageWindow from '@site/src/components/BrowserWindow/ImageWindow';
-
 # 个人主页仓库
 
 ## 说明

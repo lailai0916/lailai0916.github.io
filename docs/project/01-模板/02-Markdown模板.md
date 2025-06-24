@@ -1,5 +1,3 @@
-import BrowserWindow from '@site/src/components/BrowserWindow';
-
 # Markdown 模板
 
 [Markdown](https://zh.wikipedia.org/wiki/Markdown) 是一种轻量级标记语言。

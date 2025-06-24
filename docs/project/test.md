@@ -1,7 +1,3 @@
-import BrowserWindow from '@site/src/components/BrowserWindow';
-import IframeWindow from '@site/src/components/BrowserWindow/IframeWindow';
-import Desmos from '@site/src/components/BrowserWindow/Desmos';
-
 # 测试
 
 网站新功能的测试...

@@ -1,5 +1,3 @@
-import BrowserWindow from '@site/src/components/BrowserWindow';
-
 # LaTeX 模板
 
 [$\LaTeX$](https://zh.wikipedia.org/wiki/LaTeX) 是一种基于 [$\TeX$](https://zh.wikipedia.org/wiki/TeX) 的排版系统，能够方便的生成数学公式。
