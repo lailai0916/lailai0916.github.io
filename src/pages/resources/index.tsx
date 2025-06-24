@@ -117,12 +117,12 @@ function ResourceCard({ resource }: { resource: { name: string; description: str
                 }}
               />
               <div className={styles.resourceCardFallback}>
-                <Icon icon="streamline:web" width={24} height={24} />
+                <Icon icon="lucide:globe" width={24} height={24} />
               </div>
             </>
           ) : (
             <div className={styles.resourceCardFallback} style={{ display: 'flex' }}>
-              <Icon icon="streamline:web" width={24} height={24} />
+              <Icon icon="lucide:globe" width={24} height={24} />
             </div>
           )}
         </div>
