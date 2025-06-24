@@ -88,6 +88,7 @@ int main()
 	while(getline(cin,s))
 	{
 		transform(s.begin(),s.end(),s.begin(),::toupper);
+		cout<<'\n';
 		for(int i=0;i<N;i++)
 		{
 			for(char c:s)
@@ -96,7 +97,6 @@ int main()
 			}
 			cout<<'\n';
 		}
-		cout<<'\n';
 	}
 	return 0;
 }
