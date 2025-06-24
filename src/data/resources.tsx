@@ -37,6 +37,7 @@ export const resourceData: ResourceCategory[] = [
     icon: '🔬',
     resources: [
       { name: 'Hugging Face', href: 'https://huggingface.co', description: '开源AI模型社区平台' },
+      { name: 'LMArena', href: 'https://lmarena.ai', description: 'AI模型对比竞技场' },
       { name: 'Google DeepMind', href: 'https://deepmind.com', description: 'Google前沿AI研究' },
       { name: 'Google AI', href: 'https://ai.google', description: 'Google AI研究部门' },
       { name: 'Meta AI', href: 'https://ai.facebook.com', description: 'Meta人工智能研究' },
@@ -47,7 +48,6 @@ export const resourceData: ResourceCategory[] = [
       { name: 'NumPy', href: 'https://numpy.org', description: 'Python科学计算包' },
       { name: 'PyCharm', href: 'https://www.jetbrains.com/pycharm', description: 'JetBrains Python IDE' },
       { name: 'Jupyter', href: 'https://jupyter.org', description: '交互式数据科学平台' },
-      { name: 'LMArena', href: 'https://lmarena.ai', description: 'AI模型对比竞技场' },
     ],
   },
   {

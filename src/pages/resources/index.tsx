@@ -39,7 +39,7 @@ function MainContent({ categories }: { categories: ResourceCategory[] }) {
         <div className={styles.statsGrid}>
           <div className={styles.statCard}>
             <div className={styles.statIcon}>
-              <Icon icon="material-symbols:folder-outline" width={20} height={20} />
+              <Icon icon="lucide:folder" width={20} height={20} />
             </div>
             <div className={styles.statContent}>
               <div className={styles.statNumber}>{categories.length}</div>
@@ -48,7 +48,7 @@ function MainContent({ categories }: { categories: ResourceCategory[] }) {
           </div>
           <div className={styles.statCard}>
             <div className={styles.statIcon}>
-              <Icon icon="material-symbols:database-outline" width={20} height={20} />
+              <Icon icon="lucide:database" width={20} height={20} />
             </div>
             <div className={styles.statContent}>
               <div className={styles.statNumber}>{totalResources}</div>
