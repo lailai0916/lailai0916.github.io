@@ -1,5 +1,3 @@
-import Problem from '@site/src/components/Problem';
-
 # ST 表
 
 ## 参考资料

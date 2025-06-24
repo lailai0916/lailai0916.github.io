@@ -1,7 +1,3 @@
-import ImageWindow from '@site/src/components/BrowserWindow/ImageWindow';
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
-
 # 教程
 
 ## 说明

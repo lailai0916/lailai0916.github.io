@@ -1,5 +1,3 @@
-import Desmos from '@site/src/components/BrowserWindow/Desmos';
-
 # 三角函数
 
 ## 参考资料

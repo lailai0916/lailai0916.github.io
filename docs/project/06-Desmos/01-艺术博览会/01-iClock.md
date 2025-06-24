@@ -1,5 +1,3 @@
-import IframeWindow from '@site/src/components/BrowserWindow/IframeWindow';
-
 # iClock
 
 一件基于 [Desmos](https://www.desmos.com/) 的数学艺术作品。

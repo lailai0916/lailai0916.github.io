@@ -1,5 +1,3 @@
-import IframeWindow from '@site/src/components/BrowserWindow/IframeWindow';
-
 # Apple Logo
 
 ## 参考资料
