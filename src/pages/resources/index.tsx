@@ -188,7 +188,8 @@ function CategorySection({ category, isVisible }: {
     <section className={styles.categorySection}>
       <div className={styles.categoryHeader}>
         <h2 className={styles.categoryTitle}>
-          {category.icon} {category.name}
+          <Icon icon={category.icon} width={24} height={24} className={styles.categoryIcon} />
+          {category.name}
         </h2>
         <div className={styles.categoryCount}>
           {category.resources.length} 项

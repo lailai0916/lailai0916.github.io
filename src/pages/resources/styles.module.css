@@ -180,6 +180,14 @@
   font-weight: 700;
   margin: 0;
   color: var(--ifm-font-color-base);
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.categoryIcon {
+  color: var(--ifm-color-primary);
+  flex-shrink: 0;
 }
 
 .categoryCount {

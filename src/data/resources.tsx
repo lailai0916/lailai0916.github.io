@@ -13,7 +13,7 @@ export interface ResourceCategory {
 export const resourceData: ResourceCategory[] = [
   {
     name: '搜索引擎',
-    icon: '🔍',
+    icon: 'lucide:search',
     resources: [
       { name: 'Google', href: 'https://www.google.com', description: '全球最大搜索引擎' },
       { name: 'Microsoft Bing', href: 'https://www.bing.com', description: '微软AI智能搜索' },
@@ -22,7 +22,7 @@ export const resourceData: ResourceCategory[] = [
   },
   {
     name: 'AI 对话应用',
-    icon: '🤖',
+    icon: 'lucide:bot',
     resources: [
       { name: 'ChatGPT', href: 'https://chatgpt.com', description: 'OpenAI大语言模型' },
       { name: 'Claude', href: 'https://claude.ai', description: 'Anthropic安全AI助手' },
@@ -34,7 +34,7 @@ export const resourceData: ResourceCategory[] = [
   },
   {
     name: 'AI 开发研究',
-    icon: '🔬',
+    icon: 'lucide:microscope',
     resources: [
       { name: 'Hugging Face', href: 'https://huggingface.co', description: '开源AI模型社区平台' },
       { name: 'LMArena', href: 'https://lmarena.ai', description: 'AI模型对比竞技场' },
@@ -52,7 +52,7 @@ export const resourceData: ResourceCategory[] = [
   },
   {
     name: '代码托管与版控',
-    icon: '💻',
+    icon: 'lucide:github',
     resources: [
       { name: 'GitHub', href: 'https://github.com', description: '全球最大代码托管平台' },
       { name: 'GitStar 排行榜', href: 'https://gitstar-ranking.com', description: 'GitHub用户Star排行榜' },
@@ -63,7 +63,7 @@ export const resourceData: ResourceCategory[] = [
   },
   {
     name: '在线开发环境',
-    icon: '🔧',
+    icon: 'lucide:code',
     resources: [
       { name: 'GitHub Codespaces', href: 'https://github.com/codespaces', description: 'GitHub云端开发环境' },
       { name: 'Gitpod', href: 'https://www.gitpod.io', description: '云端IDE开发环境' },
@@ -80,7 +80,7 @@ export const resourceData: ResourceCategory[] = [
   },
   {
     name: '学术研究',
-    icon: '📚',
+    icon: 'lucide:book-open',
     resources: [
       { name: 'Google Scholar', href: 'https://scholar.google.com', description: '学术文献搜索引擎' },
       { name: 'Science', href: 'https://www.science.org/journal/science', description: '顶级科学期刊' },
@@ -91,7 +91,7 @@ export const resourceData: ResourceCategory[] = [
   },
   {
     name: '在线学习',
-    icon: '🎓',
+    icon: 'lucide:graduation-cap',
     resources: [
       { name: 'Coursera', href: 'https://www.coursera.org', description: '顶尖大学在线课程' },
       { name: 'edX', href: 'https://www.edx.org', description: '哈佛MIT开放课程' },
@@ -101,7 +101,7 @@ export const resourceData: ResourceCategory[] = [
   },
   {
     name: '编程竞赛',
-    icon: '🏆',
+    icon: 'lucide:trophy',
     resources: [
       { name: 'Codeforces', href: 'https://codeforces.com', description: '全球编程竞赛平台' },
       { name: '洛谷', href: 'https://www.luogu.com.cn', description: '国内编程竞赛平台' },
@@ -114,7 +114,7 @@ export const resourceData: ResourceCategory[] = [
   },
   {
     name: '数学与计算',
-    icon: '📐',
+    icon: 'lucide:calculator',
     resources: [
       { name: 'Desmos', href: 'https://www.desmos.com', description: '在线图形计算器' },
       { name: 'Wolfram Alpha', href: 'https://www.wolframalpha.com', description: '计算型知识引擎' },
@@ -125,7 +125,7 @@ export const resourceData: ResourceCategory[] = [
   },
   {
     name: '站点生成',
-    icon: '📖',
+    icon: 'lucide:file-text',
     resources: [
       { name: 'VitePress', href: 'https://vitepress.vuejs.org', description: 'Vue静态网站生成器' },
       { name: 'VuePress', href: 'https://vuepress.vuejs.org', description: 'Vue文档网站生成器' },
@@ -136,7 +136,7 @@ export const resourceData: ResourceCategory[] = [
   },
   {
     name: '开发工具',
-    icon: '🔧',
+    icon: 'lucide:wrench',
     resources: [
       { name: 'Colorable', href: 'https://colorable.jxnblk.com', description: '颜色对比度检测工具' },
       { name: 'Diff Tool', href: 'https://csacademy.com/app/diffing_tool/', description: '在线代码差异比较' },
@@ -147,7 +147,7 @@ export const resourceData: ResourceCategory[] = [
   },
   {
     name: '日常工具',
-    icon: '🛠️',
+    icon: 'lucide:tool',
     resources: [
       { name: 'Google 翻译', href: 'https://translate.google.com', description: '谷歌在线翻译服务' },
       { name: 'Speedtest', href: 'https://www.speedtest.net', description: '网络速度测试工具' },
@@ -164,7 +164,7 @@ export const resourceData: ResourceCategory[] = [
   },
   {
     name: '知识百科',
-    icon: '📖',
+    icon: 'lucide:library',
     resources: [
       { name: '维基百科', href: 'https://zh.wikipedia.org', description: '多语言自由百科全书' },
       { name: 'cppreference', href: 'https://cppreference.com', description: 'C++标准库参考文档' },
@@ -173,7 +173,7 @@ export const resourceData: ResourceCategory[] = [
   },
   {
     name: '数码设备',
-    icon: '📱',
+    icon: 'lucide:smartphone',
     resources: [
       { name: 'Apple', href: 'https://www.apple.com', description: '苹果公司官方网站' },
       { name: 'Apple 产品参数中心', href: 'https://hubweb.cn', description: '苹果产品参数对比' },
@@ -183,7 +183,7 @@ export const resourceData: ResourceCategory[] = [
   },
   {
     name: '云服务平台',
-    icon: '☁️',
+    icon: 'lucide:cloud',
     resources: [
       { name: 'Amazon Web Services', href: 'https://aws.amazon.com', description: '亚马逊云计算平台' },
       { name: 'Microsoft Azure', href: 'https://azure.microsoft.com', description: '微软云服务平台' },
@@ -192,7 +192,7 @@ export const resourceData: ResourceCategory[] = [
   },
   {
     name: '设计创意',
-    icon: '🎨',
+    icon: 'lucide:palette',
     resources: [
       { name: 'Skill Icons', href: 'https://skillicons.dev', description: '技能图标生成工具' },
       { name: 'BrandColors', href: 'https://brandcolors.net', description: '品牌配色方案收集' },
@@ -202,7 +202,7 @@ export const resourceData: ResourceCategory[] = [
   },
   {
     name: '视频媒体',
-    icon: '🎬',
+    icon: 'lucide:video',
     resources: [
       { name: 'YouTube', href: 'https://www.youtube.com', description: '全球最大视频平台' },
       { name: 'bilibili', href: 'https://www.bilibili.com', description: '中国年轻人文化社区' },
@@ -210,7 +210,7 @@ export const resourceData: ResourceCategory[] = [
   },
   {
     name: '社交网络',
-    icon: '📱',
+    icon: 'lucide:smartphone',
     resources: [
       { name: 'X (Twitter)', href: 'https://x.com', description: '实时信息社交平台' },
       { name: 'Facebook', href: 'https://www.facebook.com', description: '全球最大社交平台' },
@@ -219,7 +219,7 @@ export const resourceData: ResourceCategory[] = [
   },
   {
     name: '在线游戏',
-    icon: '🎮',
+    icon: 'lucide:gamepad',
     resources: [
       { name: 'generals.io', href: 'https://generals.io', description: '实时多人策略游戏' },
       { name: 'TileMan.io', href: 'https://tileman.io', description: '领土争夺策略游戏' },
@@ -230,7 +230,7 @@ export const resourceData: ResourceCategory[] = [
   },
   {
     name: '科学上网',
-    icon: '🌐',
+    icon: 'lucide:globe',
     resources: [
       { name: '墙妈妈', href: 'https://www.wallmama.com', description: '科学上网指南' },
       { name: 'NordVPN', href: 'https://nordvpn.com', description: '专业VPN服务' },
