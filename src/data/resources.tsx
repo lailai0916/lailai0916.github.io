@@ -147,7 +147,7 @@ export const resourceData: ResourceCategory[] = [
   },
   {
     name: '日常工具',
-    icon: 'lucide:tool',
+    icon: 'lucide:bolt',
     resources: [
       { name: 'Google 翻译', href: 'https://translate.google.com', description: '谷歌在线翻译服务' },
       { name: 'Speedtest', href: 'https://www.speedtest.net', description: '网络速度测试工具' },
