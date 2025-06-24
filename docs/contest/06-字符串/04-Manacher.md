@@ -2,7 +2,7 @@
 
 ## 参考资料
 
-- [Manacher - OI Wiki](https://oi.wiki/string/manacher/)
+- [Manacher - OI Wiki](https://oi-wiki.org/string/manacher/)
 
 ## 实现
 

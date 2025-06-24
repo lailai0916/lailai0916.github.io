@@ -4,7 +4,7 @@ import Problem from '@site/src/components/Problem';
 
 ## 参考资料
 
-- [ST 表 - OI Wiki](https://oi.wiki/ds/sparse-table/)
+- [ST 表 - OI Wiki](https://oi-wiki.org/ds/sparse-table/)
 
 ## 实现
 
