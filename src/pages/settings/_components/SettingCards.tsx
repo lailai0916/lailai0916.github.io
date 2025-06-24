@@ -87,18 +87,18 @@ export function ThemeSettings() {
   };
 
   return (
-    <SettingCard title="外观主题" icon="solar:display-line-duotone">
+    <SettingCard title="外观主题" icon="lucide:monitor">
       <p className={styles.cardDescription}>选择一个适合您的主题模式。</p>
       <div className={styles.buttonGroup}>
         <button
           className={clsx(styles.button, theme === 'light' && styles.buttonActive)}
           onClick={() => handleThemeChange('light')}>
-          <Icon icon="solar:sun-2-line-duotone" /> 浅色
+          <Icon icon="lucide:sun" /> 浅色
         </button>
         <button
           className={clsx(styles.button, theme === 'dark' && styles.buttonActive)}
           onClick={() => handleThemeChange('dark')}>
-          <Icon icon="solar:moon-line-duotone" /> 深色
+          <Icon icon="lucide:moon" /> 深色
         </button>
       </div>
     </SettingCard>
@@ -124,7 +124,7 @@ export function FontSettings() {
   };
 
   return (
-    <SettingCard title="字体大小" icon="solar:text-field-line-duotone">
+    <SettingCard title="字体大小" icon="lucide:type">
       <p className={styles.cardDescription}>调整界面字体以获得最佳阅读体验。</p>
       <div className={styles.sliderContainer}>
         <span className={styles.sliderLabel}>{fontSize}px</span>
@@ -159,7 +159,7 @@ export function NotificationSettings() {
   };
 
   return (
-    <SettingCard title="通知" icon="solar:bell-line-duotone">
+    <SettingCard title="通知" icon="lucide:bell">
       <p className={styles.cardDescription}>管理您希望接收的网站通知。</p>
       <ul className={styles.toggleList}>
         <li>
@@ -193,7 +193,7 @@ export function ExperimentalFeatures() {
   };
 
   return (
-    <SettingCard title="实验性功能" icon="solar:beaker-line-duotone">
+    <SettingCard title="实验性功能" icon="lucide:flask">
       <p className={styles.cardDescription}>尝试即将推出的新功能，可能不稳定。</p>
       <ul className={styles.toggleList}>
         <li>
@@ -237,19 +237,19 @@ export function QuickActions() {
   };
 
   return (
-    <SettingCard title="快捷操作" icon="solar:bolt-line-duotone">
+    <SettingCard title="快捷操作" icon="lucide:zap">
       <p className={styles.cardDescription}>快速管理您的个性化配置。</p>
       <div className={clsx(styles.buttonGroup, styles.verticalButtonGroup)}>
         <button
           className={clsx(styles.button, styles.buttonSecondary)}
           onClick={triggerConfetti}>
-          <Icon icon="solar:sparkle-line-duotone" />
+          <Icon icon="lucide:sparkles" />
           给我惊喜
         </button>
         <button
           className={clsx(styles.button, styles.buttonDanger)}
           onClick={handleReset}>
-          <Icon icon="solar:restart-line-duotone" />
+          <Icon icon="lucide:rotate-ccw" />
           重置所有设置
         </button>
       </div>
@@ -300,7 +300,7 @@ export function ColorGenerator() {
   }
 
   return (
-    <SettingCard title="主题色生成器" icon="solar:color-picker-line-duotone">
+    <SettingCard title="主题色生成器" icon="lucide:palette">
       <p className={styles.cardDescription}>自定义网站的主色调，实时预览效果。</p>
       
       {/* 颜色输入 */}

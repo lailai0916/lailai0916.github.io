@@ -23,7 +23,7 @@ function SettingsHero() {
     <div className={clsx('container', styles.heroContainer)}>
       <div className={styles.heroInner}>
         <div className={styles.heroIcon}>
-          <Icon icon="solar:settings-bold-duotone" />
+          <Icon icon="lucide:settings" />
         </div>
         <Heading as="h1" className={styles.heroTitle}>
           {TITLE}
@@ -63,7 +63,7 @@ export default function SettingsPage(): JSX.Element {
       <main className={styles.main}>
         <SettingsHero />
 
-        <SettingsSection title="基础设置" icon="solar:palette-line-duotone">
+        <SettingsSection title="基础设置" icon="lucide:palette">
           <div className={styles.gridItem}>
             <ThemeSettings />
           </div>
@@ -72,7 +72,7 @@ export default function SettingsPage(): JSX.Element {
           </div>
         </SettingsSection>
 
-        <SettingsSection title="偏好设置" icon="solar:bell-bing-line-duotone">
+        <SettingsSection title="偏好设置" icon="lucide:bell">
           <div className={styles.gridItem}>
             <NotificationSettings />
           </div>
@@ -81,7 +81,7 @@ export default function SettingsPage(): JSX.Element {
           </div>
         </SettingsSection>
 
-        <SettingsSection title="高级工具" icon="solar:rocket-2-line-duotone">
+        <SettingsSection title="高级工具" icon="lucide:rocket">
           <div className={clsx(styles.gridItem, styles.gridItemLarge)}>
             <ColorGenerator />
           </div>

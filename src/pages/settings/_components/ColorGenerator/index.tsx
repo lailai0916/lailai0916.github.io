@@ -9,6 +9,7 @@ import React, {useEffect, useState} from 'react';
 import clsx from 'clsx';
 import Color from 'color';
 import {useColorMode} from '@docusaurus/theme-common';
+import { Icon } from '@iconify/react';
 import {
   type ColorState,
   COLOR_SHADES,
@@ -26,7 +27,7 @@ import styles from './styles.module.css';
 function wcagContrast(foreground: string, background: string) {
   const contrast = Color(foreground).contrast(Color(background));
   // eslint-disable-next-line no-nested-ternary
-  return contrast > 7 ? 'AAA 🏅' : contrast > 4.5 ? 'AA 👍' : 'Fail 🔴';
+  return contrast > 7 ? 'AAA ✓' : contrast > 4.5 ? 'AA ✓' : 'Fail ✗';
 }
 
 export default function ColorGenerator(): JSX.Element {
@@ -100,7 +101,9 @@ export default function ColorGenerator(): JSX.Element {
   return (
     <div className="card" style={{ height: '100%' }}>
       <div className="card__header">
-        <h3 style={{ margin: 0, fontSize: '2.5rem' }}>🎨</h3>
+        <h3 style={{ margin: 0, fontSize: '2.5rem' }}>
+          <Icon icon="lucide:palette" />
+        </h3>
         <h4 style={{ margin: 0 }}>颜色生成器</h4>
       </div>
       <div className="card__body">
@@ -188,7 +191,8 @@ export default function ColorGenerator(): JSX.Element {
             className="button button--secondary"
             onClick={() => setColorMode(isDarkTheme ? 'light' : 'dark')}
           >
-            {isDarkTheme ? '🌞 切换浅色' : '🌙 切换深色'}
+            <Icon icon={isDarkTheme ? 'lucide:sun' : 'lucide:moon'} style={{ marginRight: '0.5rem' }} />
+            {isDarkTheme ? '切换浅色' : '切换深色'}
           </button>
           <button
             type="button"
@@ -206,13 +210,17 @@ export default function ColorGenerator(): JSX.Element {
               setShades(COLOR_SHADES);
             }}
           >
-            🔄 重置默认
+            <Icon icon="lucide:rotate-ccw" style={{ marginRight: '0.5rem' }} />
+            重置默认
           </button>
         </div>
 
         {/* 使用提示 */}
         <div className="alert alert--info margin-top--md" style={{ fontSize: '0.875rem' }}>
-          <strong>💡 提示：</strong> 颜色更改会实时应用到整个网站，设置会自动保存到本地存储。
+          <strong>
+            <Icon icon="lucide:lightbulb" style={{ marginRight: '0.25rem' }} />
+            提示：
+          </strong> 颜色更改会实时应用到整个网站，设置会自动保存到本地存储。
         </div>
       </div>
     </div>
