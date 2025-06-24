@@ -1,4 +1,5 @@
 import React, { useEffect, useRef } from 'react';
+import Admonition from '@theme/Admonition';
 
 interface ProblemProps {
   id: string;
@@ -156,18 +157,9 @@ const Problem: React.FC<ProblemProps> = ({ id }) => {
   } catch (error) {
     console.error(`Error loading problem ${id}:`, error);
     return (
-      <div style={{ 
-        padding: '20px', 
-        color: 'red', 
-        border: '1px solid #ff6b6b',
-        borderRadius: '4px',
-        backgroundColor: '#ffe0e0',
-        margin: '10px 0'
-      }}>
-        <strong>错误：</strong> 无法加载题目 {id}
-        <br />
-        <small>请检查文件 src/problems/{id}.md 是否存在</small>
-      </div>
+      <Admonition type="danger" title={`错误：无法加载题目 ${id}`}>
+        请检查文件 src/problems/{id}.md 是否存在。
+      </Admonition>
     );
   }
 };
