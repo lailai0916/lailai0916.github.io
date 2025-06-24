@@ -59,7 +59,6 @@ export const resourceData: ResourceCategory[] = [
       { name: 'Committers Top', href: 'https://committers.top', description: '各国活跃GitHub用户榜' },
       { name: 'GitHub Metrics', href: 'https://github.com/lowlighter/metrics', description: 'GitHub账号信息图生成' },
       { name: 'GitHub Stats', href: 'https://github.com/jstrieb/github-stats', description: 'GitHub个人统计图生成' },
-      { name: 'GitHub Profile README Generator', href: 'https://rahuldkjain.github.io/gh-profile-readme-generator', description: 'GitHub个人资料生成器' },
     ],
   },
   {
