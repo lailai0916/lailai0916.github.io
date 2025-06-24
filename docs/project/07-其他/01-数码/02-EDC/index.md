@@ -1,5 +1,3 @@
-import Image from '@theme/IdealImage';
-
 # lailai's EDC
 
 我日常携带的一些有用物品。
