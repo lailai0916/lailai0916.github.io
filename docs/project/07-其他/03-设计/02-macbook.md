@@ -5,7 +5,7 @@
 ```bash
 Dock
 ├── Apps
-│   └── Finder, Launchpad, Safari, Mail, Messages, WeChat, QQ, Typora, ChatGPT, cpeditor, Visual Studio Code, Parallels Desktop, bilibili, Music, Cursor, Terminal, System Settings
+│   └── Finder, Launchpad, Safari, Mail, Messages, WeChat, QQ, Typora, ChatGPT, cpeditor, Visual Studio Code, Parallels Desktop, bilibili, Music, Terminal, System Settings
 └── Folders
     └── Desktop, Downloads, GitHub, Trash
 ```
