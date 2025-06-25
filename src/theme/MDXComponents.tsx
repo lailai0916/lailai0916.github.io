@@ -19,9 +19,9 @@ export default {
   Tabs,
   TabItem,
   BrowserWindow,
-  Notation,
-  Problem,
-  Desmos,
   IframeWindow,
   ImageWindow,
+  Desmos,
+  Notation,
+  Problem,
 }; 
