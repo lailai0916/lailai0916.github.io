@@ -1,7 +1,8 @@
 import React, { useMemo } from 'react';
 import Link from '@docusaurus/Link';
 import { Icon } from '@iconify/react';
-import { getRecentBlogPosts, BLOG_CONFIG, type ProcessedBlogPost } from '@site/src/utils/blogData';
+import { getRecentBlogPosts, BLOG_CONFIG, type ProcessedBlogPost } from '../../../utils/blogData';
+import CommonSection from '../common/Section';
 
 function BlogCard({ title, date, permalink }: { title: string; date: string; permalink: string }) {
   return (
@@ -11,7 +12,7 @@ function BlogCard({ title, date, permalink }: { title: string; date: string; per
       style={{ 
         textDecoration: 'none',
         '--focus-ring-color': 'var(--ifm-color-primary)'
-      }}
+      } as React.CSSProperties}
       onFocus={(e) => {
         e.currentTarget.style.boxShadow = '0 0 0 2px var(--ifm-color-primary)';
       }}
@@ -51,27 +52,7 @@ function BlogCard({ title, date, permalink }: { title: string; date: string; per
   );
 }
 
-function Section({ children, background = null }: { children: React.ReactNode; background?: string | null }) {
-  return (
-    <div
-      className={`mx-auto flex flex-col w-full ${
-        background === null ? 'max-w-7xl' : ''
-      } ${
-        background === 'right-card'
-          ? 'border-t border-gray-200/30 dark:border-neutral-700/30'
-          : ''
-      }`}
-      style={{ 
-        contain: 'content',
-        backgroundColor: background === 'right-card' ? 'var(--ifm-color-emphasis-100)' : undefined
-      }}
-    >
-      <div className="flex-col gap-2 flex grow w-full my-16 lg:my-24 mx-auto items-center">
-        {children}
-      </div>
-    </div>
-  );
-}
+
 
 function Para({ children }: { children: React.ReactNode }) {
   return (
@@ -117,7 +98,7 @@ function CTA({ children, href, icon, color = 'primary' }: { children: React.Reac
         }
       }}
       onMouseLeave={(e) => {
-        e.currentTarget.style.backgroundColor = colorStyles.backgroundColor;
+        e.currentTarget.style.backgroundColor = colorStyles.backgroundColor || '';
       }}
       onMouseDown={(e) => {
         if (colorStyles['--active-bg']) {
@@ -193,7 +174,7 @@ export default function Blog() {
   }, []);
 
   return (
-    <Section background={null}>
+    <CommonSection background={null}>
       <div className="max-w-7xl mx-auto flex flex-col lg:flex-row px-5">
         <div className="max-w-3xl lg:max-w-7xl gap-5 flex flex-col lg:flex-row lg:px-5">
           <div className="w-full lg:w-6/12 max-w-3xl flex flex-col items-start justify-start lg:ps-5 lg:pe-10">
@@ -224,6 +205,6 @@ export default function Blog() {
           </div>
         </div>
       </div>
-    </Section>
+    </CommonSection>
   );
 }
