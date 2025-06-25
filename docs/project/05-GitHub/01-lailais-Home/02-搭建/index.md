@@ -1,4 +1,4 @@
-# 教程
+# 搭建
 
 ## 说明
 
@@ -169,3 +169,12 @@ npm run deploy
 ```
 
 - 部署完成后，可以通过 `https://username.github.io/my-website/` 访问你的网站。
+
+## 参考
+
+一些我认为非常出色的个人网站。
+
+- [峰华前端工程师 - 让你学会前端开发](https://zxuqian.cn)
+- [愧怍](https://kuizuo.cn)
+- [老车的个人网站](https://cheyujie.art)
+- [HOME - JIEJOE | 视觉设计者](https://www.jiejoe.com)
