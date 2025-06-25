@@ -15,9 +15,9 @@ Dock
 ```bash
 Launchpad
 ├── Line 1
-│   └── System Settings, App Store, Shadowrocket, Photos, Maps, Google Chrome, Safari
+│   └── App Store, Safari, Google Chrome, Shadowrocket, Calendar, Notes, Calculator
 ├── Line 2
-│   └── Notes, Calendar, Weather, Calculator, Find My, Passwords, iPhone Mirroring
+│   └── Maps, Weather, Photos, Find My, Passwords, iPhone Mirroring, System Settings
 ├── Line 3
 │   ├── Apple
 │   │   ├── Mail, Contacts, Reminders, FaceTime, Messages, Photo Booth, Podcasts
