@@ -226,6 +226,7 @@ export const resourceData: ResourceCategory[] = [
       { name: 'YORG.io', href: 'https://yorg.io', description: '塔防资源管理游戏' },
       { name: 'Bloxd.io', href: 'https://bloxd.io', description: '在线沙盒游戏平台' },
       { name: '名字竞技场', href: 'https://namerena.github.io', description: '文本对战游戏' },
+      { name: '图寻', href: 'https://tuxun.fun', description: '地理位置猜测游戏' },
     ],
   },
   {
