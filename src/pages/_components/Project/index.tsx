@@ -1,33 +1,7 @@
 import React from 'react';
 import { Icon } from '@iconify/react';
-import BaseCard from '../common/BaseCard';
-import Section from '../common/Section';
-import SectionHeader from '../common/SectionHeader';
-import StatusBadge from '../common/StatusBadge';
-
-const projects = [
-  {
-    title: 'lailai\'s Home',
-    description: '基于 Docusaurus 构建的个人网站，采用现代化设计理念，展示个人技术栈与项目经验。',
-    link: '/docs/project/GitHub/lailais-Home/README',
-    tech: 'TypeScript • Docusaurus',
-    status: '维护中',
-  },
-  {
-    title: 'iGame',
-    description: '基于 C++ 开发的终端游戏集合，包含多种经典游戏玩法，体验纯粹的编程乐趣。',
-    link: '/docs/project/终端/iGame',
-    tech: 'C++ • Terminal',
-    status: '已完成',
-  },
-  {
-    title: 'iClock',
-    description: '利用 Desmos 平台创作的数学艺术作品，通过函数图形展现时间的美学表达。',
-    link: '/docs/project/Desmos/艺术博览会/iClock',
-    tech: 'Mathematics • Desmos',
-    status: '展示中',
-  },
-];
+import { projects } from '../../../data/projects';
+import { BaseCard, Section, SectionHeader, StatusBadge, GridLayout, GridConfigs } from '../common';
 
 function ProjectCard({ title, description, link, tech, status }: { 
   title: string; 
@@ -81,13 +55,13 @@ export default function Project() {
           description="通过实践将想法转化为现实，每个项目都是技术探索与创新思维的结晶"
         />
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <GridLayout columns={GridConfigs.projects}>
           {projects.map((project, idx) => (
             <div key={idx} className="h-full">
               <ProjectCard {...project} />
             </div>
           ))}
-        </div>
+        </GridLayout>
       </div>
     </Section>
   );

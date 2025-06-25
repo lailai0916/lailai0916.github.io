@@ -1,8 +1,6 @@
 import React from 'react';
 import { DEVICES } from '../../../data/device';
-import BaseCard from '../common/BaseCard';
-import Section from '../common/Section';
-import SectionHeader from '../common/SectionHeader';
+import { BaseCard, Section, SectionHeader, GridLayout, GridConfigs } from '../common';
 
 function DeviceCard({ name, icon }: {
   name: string;
@@ -36,13 +34,13 @@ export default function Device() {
           description="工欲善其事，必先利其器。优秀的工具是高效工作的基础"
         />
         
-        <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 gap-5 max-w-4xl mx-auto">
+        <GridLayout columns={GridConfigs.devices} gap="gap-5" className="max-w-4xl mx-auto">
           {DEVICES.map((device, index) => (
             <div key={index} className="h-full">
               <DeviceCard {...device} />
             </div>
           ))}
-        </div>
+        </GridLayout>
       </div>
     </Section>
   );

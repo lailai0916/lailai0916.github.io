@@ -1,9 +1,7 @@
 import React from 'react';
 import { Icon } from '@iconify/react';
 import { COMMUNITY_LINKS } from '../../../data/community';
-import BaseCard from '../common/BaseCard';
-import Section from '../common/Section';
-import SectionHeader from '../common/SectionHeader';
+import { BaseCard, Section, SectionHeader, GridLayout, GridConfigs } from '../common';
 
 function CommunityCard({ href, label, icon }: {
   href: string;
@@ -38,13 +36,13 @@ export default function Community() {
           description="在数字世界中建立连接，分享知识与经验，共同成长与进步"
         />
         
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-8 gap-5 max-w-6xl mx-auto">
+        <GridLayout columns={GridConfigs.community} gap="gap-5" className="max-w-6xl mx-auto">
           {COMMUNITY_LINKS.map((link, idx) => (
             <div key={idx} className="h-full">
               <CommunityCard {...link} />
             </div>
           ))}
-        </div>
+        </GridLayout>
       </div>
     </Section>
   );
