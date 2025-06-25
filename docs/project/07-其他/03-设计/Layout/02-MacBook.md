@@ -1,5 +1,12 @@
 # MacBook Pro
 
+## Desktop
+
+```bash
+Desktop
+└── (empty)
+```
+
 ## Finder Sidebar
 
 ```bash
@@ -96,6 +103,6 @@ Notification Center
 │   └── Weather Forecast 1x1, Shadowrocket Widget 1x1
 ├── Line 3
 │   └── Batteries Status 1x2
-└── Line 4
+└── Line 4 & 5
     └── Screen Time Daily Activity 2x2
 ```
