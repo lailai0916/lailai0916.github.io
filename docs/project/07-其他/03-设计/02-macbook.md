@@ -6,7 +6,7 @@
 Finder
 ├── Favorites
 │   └── AirDrop, Applications, lailai, Downloads
-├── Favorites
+├── iCloud
 │   └── iCloud Drive, Desktop, Documents
 └── Locations
     └── lailai’s MacBook Pro
@@ -74,4 +74,28 @@ Launchpad
     │   └── Microsoft Word, Microsoft Excel, Microsoft PowerPoint, Microsoft OneNote, Microsoft Outlook, Microsoft Defender, OneDrive
     └── Adobe
         └── Creative Cloud Content Manager, Adobe Photoshop 2024
+```
+
+## Menu Bar
+
+```bash
+Menu Bar
+├── Hidden
+│   └── Moment, One Switch, CleanMyMac
+└── Shown
+    └── Bartender 5, Display, Sound, Battery, Wi-Fi, Control Center, Clock
+```
+
+## Notification Center
+
+```bash
+Notification Center
+├── Line 1
+│   └── Calendar Date 1x1, Calendar Month 1x1
+├── Line 2
+│   └── Weather Forecast 1x1, Shadowrocket Widget 1x1
+├── Line 3
+│   └── Batteries Status 1x2
+└── Line 4
+    └── Screen Time Daily Activity 2x2
 ```
