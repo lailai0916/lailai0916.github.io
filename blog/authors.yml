@@ -1,8 +1,9 @@
 lailai:
   name: lailai
   title: Blogger
-  url: https://www.luogu.com.cn/user/455474
   image_url: /img/avatar/lailai.png
+  url: https://www.lailai.one
+  email: lailai0x394@gmail.com
   page: true
   socials:
     x: lailai0x394
