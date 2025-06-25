@@ -4,48 +4,48 @@
 
 ### Line 1
 
-- System Settings
-- App Store
-- Shadowrocket
-- Photos
-- Maps
-- Google Chrome
-- Safari
+- Application：System Settings
+- Application：App Store
+- Application：Shadowrocket
+- Application：Photos
+- Application：Maps
+- Application：Google Chrome
+- Application：Safari
 
 ### Line 2
 
-- Notes
-- Calendar
-- Weather
-- Calculator
-- Find My
-- Passwords
-- iPhone
-- Mirroring
+- Application：Notes
+- Application：Calendar
+- Application：Weather
+- Application：Calculator
+- Application：Find My
+- Application：Passwords
+- Application：iPhone
+- Application：Mirroring
 
 ### Line 3
 
-- Apple
-- Other
-- Note
-- Social
-- Cloud
-- Finance
-- Game
+- Folder：Apple
+- Folder：Other
+- Folder：Note
+- Folder：Social
+- Folder：Cloud
+- Folder：Finance
+- Folder：Game
 
 ### Line 4
 
-- Video
-- Music
-- Tool
-- Plugin
-- Multimedia
-- Hardware
-- Development
+- Folder：Video
+- Folder：Music
+- Folder：Tool
+- Folder：Plugin
+- Folder：Multimedia
+- Folder：Hardware
+- Folder：Development
 
 ### Line 5
 
-- Mathematics
-- AI
-- Microsoft
-- Adobe
+- Folder：Mathematics
+- Folder：AI
+- Folder：Microsoft
+- Folder：Adobe
