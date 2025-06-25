@@ -134,9 +134,6 @@ function ResourceCard({ resource }: { resource: { name: string; description: str
             {resource.description}
           </p>
         </div>
-        <div className={styles.resourceCardArrow}>
-          <Icon icon="streamline:arrow-right" width={16} height={16} />
-        </div>
       </div>
     </Link>
   );

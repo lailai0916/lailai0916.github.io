@@ -283,19 +283,6 @@
   overflow: hidden;
 }
 
-.resourceCardArrow {
-  flex-shrink: 0;
-  color: var(--ifm-color-emphasis-500);
-  transition: all 0.2s ease;
-  opacity: 0.7;
-}
-
-.resourceCard:hover .resourceCardArrow {
-  color: var(--ifm-color-primary);
-  transform: translateX(4px);
-  opacity: 1;
-}
-
 /* 响应式设计 */
 @media (max-width: 768px) {
   .quickStatsInner {
