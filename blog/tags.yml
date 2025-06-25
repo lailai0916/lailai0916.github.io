@@ -1,31 +1,26 @@
 top:
   label: 置顶
-  permalink: /top
 
 notice:
   label: 公告
-  permalink: /notice
+
+misc:
+  label: 杂项
 
 solution:
   label: 题解
-  permalink: /solution
 
 luogu:
   label: 洛谷
-  permalink: /luogu
 
 codeforces:
   label: Codeforces
-  permalink: /codeforces
 
 atcoder:
   label: AtCoder
-  permalink: /atcoder
 
 spoj:
   label: SPOJ
-  permalink: /spoj
 
 uva:
   label: UVA
-  permalink: /uva
