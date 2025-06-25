@@ -1,6 +1,17 @@
-# ASCII Art
+---
+title: 项目：ASCII Art
+date: 2025-06-24T13:00
+authors: [lailai]
+tags: [project]
+---
 
-## 效果
+<!-- truncate -->
+
+## 参考资料
+
+- [Claude Code](https://www.anthropic.com/claude-code)
+
+## 效果展示
 
 ```bash
  ██████╗  ███████╗   ███████╗ ███████╗  ████████╗ ████████╗  ██████╗  
