@@ -17,7 +17,7 @@ export const projects = [
     title: 'iClock',
     description: '利用 Desmos 平台创作的数学艺术作品，通过函数图形展现时间的美学表达。',
     link: '/docs/project/Desmos/艺术博览会/iClock',
-    tech: 'Mathematics • Desmos',
+    tech: 'Math • Desmos',
     status: '展示中',
   },
 ]; 

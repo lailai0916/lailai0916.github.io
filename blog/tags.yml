@@ -4,8 +4,14 @@ top:
 notice:
   label: 公告
 
+math:
+  label: 数学
+
 misc:
   label: 杂项
+
+resource:
+  label: 资源
 
 solution:
   label: 题解

@@ -1,6 +1,11 @@
-# C++ 汉化包
+---
+title: 杂项：C++ 汉化包
+date: 2024-11-25T20:00
+authors: [lailai]
+tags: [misc]
+---
 
-贡献者：[sintle](https://www.luogu.com.cn/user/681591)
+<!-- truncate -->
 
 ## 变量类型
 

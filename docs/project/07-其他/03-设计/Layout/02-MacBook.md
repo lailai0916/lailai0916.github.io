@@ -73,7 +73,7 @@ Launchpad
 │   └── Development
 │       └── Visual Studio Code, cpeditor, Cursor, GitHub Desktop, Docker
 └── Line 5
-    ├── Mathematics
+    ├── Math
     │   └── Wolfram, TeXShop, LaTeXiT, TeX Live Utility, BibDesk, hintview, Texifier
     ├── AI
     │   └── ChatGPT, Claude, LM Studio, Ollama
