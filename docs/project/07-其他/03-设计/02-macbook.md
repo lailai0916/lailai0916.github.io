@@ -1,9 +1,9 @@
 # MacBook Pro
 
-## Finder
+## Finder Sidebar
 
 ```bash
-Finder
+Finder Sidebar
 ├── Favorites
 │   └── AirDrop, Applications, lailai, Downloads
 ├── iCloud
