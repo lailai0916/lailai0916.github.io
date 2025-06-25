@@ -1,30 +1,31 @@
 import React from 'react';
+import { Icon } from '@iconify/react';
 
 const exploringItems = [
   { 
     name: '算法竞赛', 
-    icon: '🏆', 
+    icon: 'lucide:trophy', 
     description: '参与算法竞赛，深入学习数据结构与算法，提升逻辑思维能力与问题解决技巧。',
     progress: '进行中',
     skills: ['数据结构', '算法优化', '竞赛策略']
   },
   { 
     name: 'Docusaurus', 
-    icon: '📖', 
+    icon: 'lucide:book-open', 
     description: '使用 Docusaurus 构建统一、简约、现代的个人网站，探索文档工程化的最佳实践。',
     progress: '深化中',
     skills: ['React', 'TypeScript', 'MDX']
   },
   { 
     name: 'AI 模型', 
-    icon: '🤖', 
+    icon: 'lucide:bot', 
     description: '深入探索人工智能模型的工作原理，实践机器学习技术在实际场景中的应用。',
     progress: '探索中',
     skills: ['机器学习', '深度学习', '模型部署']
   },
   { 
     name: '英语语法', 
-    icon: '📝', 
+    icon: 'lucide:pencil', 
     description: '系统学习英语语法规则，掌握语言结构逻辑，提升技术文档阅读与写作能力。',
     progress: '学习中',
     skills: ['语法结构', '技术写作', '学术阅读']
@@ -52,17 +53,17 @@ function ExplorationCard({ name, icon, description, progress, skills }: {
     <article className="group relative overflow-hidden p-6 w-full h-full flex flex-col bg-white dark:bg-neutral-900 hover:bg-gray-50 dark:hover:bg-neutral-800/50 rounded-2xl transition-all duration-200 ease-out shadow-sm hover:shadow-lg dark:shadow-none border border-gray-200 dark:border-neutral-700 hover:border-gray-300 dark:hover:border-neutral-600">
       <div className="flex-1 space-y-4">
         <header className="space-y-3">
-          <div className="flex items-start justify-between">
-            <div className="flex items-center gap-3">
-              <div className="text-3xl group-hover:scale-110 transition-transform duration-200">
-                {icon}
+                      <div className="flex items-start justify-between">
+              <div className="flex items-center gap-3">
+                <div className="group-hover:scale-110 transition-transform duration-200">
+                  <Icon icon={icon} width={32} height={32} className="text-gray-700 dark:text-neutral-300" />
+                </div>
+                <div>
+                  <h3 className="font-semibold text-xl text-gray-900 dark:text-neutral-100 leading-snug">
+                    {name}
+                  </h3>
+                </div>
               </div>
-              <div>
-                <h3 className="font-semibold text-xl text-gray-900 dark:text-neutral-100 leading-snug">
-                  {name}
-                </h3>
-              </div>
-            </div>
             <span className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${getProgressColor(progress)}`}>
               {progress}
             </span>
