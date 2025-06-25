@@ -1,4 +1,6 @@
-import React, { useEffect, useState, useRef, useMemo, useCallback } from 'react';
+import React, { useEffect, useState, useRef, useCallback } from 'react';
+import Section from '../common/Section';
+import { TYPOGRAPHY, LAYOUT, ANIMATIONS } from '../common/constants';
 
 // ====== 类型定义 ======
 type TimeUnit = 'Days' | 'Hours' | 'Minutes' | 'Seconds';
@@ -32,6 +34,9 @@ const COUNTDOWN_CONFIG = {
   DATE: '2026-01-01T00:00:00',
   TEXT: 'Happy New Year!',
   TIMER_INTERVAL: 1000,
+  // 高精度模式：更频繁的更新以确保秒数变化的平滑性
+  HIGH_PRECISION_INTERVAL: 100,
+  USE_HIGH_PRECISION: false, // 可以根据需要开启
 } as const;
 
 const CIRCLE_CONFIG = {
@@ -42,15 +47,7 @@ const CIRCLE_CONFIG = {
   DOT_SIZE: 15,
 } as const;
 
-const LAYOUT_CONFIG = {
-  MAX_WIDTH: 'max-w-7xl',
-  CONTAINER_SPACING: 'my-16 lg:my-24',
-  CONTENT_SPACING: 'mb-12',
-  GRID_GAP: 'gap-8',
-  GRID_GAP_MD: 'gap-6',
-  GRID_GAP_SM: 'gap-4',
-  PADDING: 'px-5',
-} as const;
+
 
 const RESPONSIVE_CONFIG = {
   DESKTOP: 'flex gap-8 justify-center w-fit mx-auto',
@@ -58,14 +55,7 @@ const RESPONSIVE_CONFIG = {
   MOBILE: 'max-[400px]:grid-cols-1 max-[400px]:gap-4',
 } as const;
 
-const TYPOGRAPHY_CONFIG = {
-  MAIN_TITLE: 'font-bold text-4xl text-gray-900 dark:text-neutral-100 leading-tight mb-4',
-  SUBTITLE: 'text-lg lg:text-xl text-gray-700 dark:text-neutral-300 leading-relaxed max-w-3xl mx-auto',
-  SUCCESS_TITLE: 'font-bold text-4xl text-gray-900 dark:text-neutral-100 leading-tight mb-4',
-  SUCCESS_TEXT: 'text-2xl font-medium text-gray-700 dark:text-neutral-300',
-  CIRCLE_VALUE: 'absolute text-center font-medium text-[2.5rem] select-none',
-  CIRCLE_UNIT: 'absolute text-[0.5rem] font-light -translate-x-1/2 -translate-y-[10px] tracking-[0.1em] uppercase select-none',
-} as const;
+
 
 const TIME_UNITS: readonly TimeUnitConfig[] = [
   { key: 'days', unit: 'Days', total: 365 },
@@ -83,19 +73,9 @@ const DOT_BASE_STYLES: React.CSSProperties = {
   height: `${CIRCLE_CONFIG.DOT_SIZE}px`,
 } as const;
 
-// ====== 工具常量 ======
-const TIME_CONSTANTS = {
-  MILLISECOND: 1,
-  SECOND: 1000,
-  MINUTE: 1000 * 60,
-  HOUR: 1000 * 60 * 60,
-  DAY: 1000 * 60 * 60 * 24,
-} as const;
 
-const CSS_TRANSITIONS = {
-  CIRCLE: 'transition-all duration-500 linear',
-  DOT: 'transition-all duration-500 linear',
-} as const;
+
+
 
 // ====== 工具类 ======
 class AccurateTimer {
@@ -134,11 +114,23 @@ class AccurateTimer {
       console.error('Timer callback error:', error);
     }
     
-    const elapsed = Date.now() - this.startTime;
+    // 精确时间校正算法：基于实际时间而非累积延迟
+    const now = Date.now();
+    const elapsed = now - this.startTime;
     this.target += this.delay;
-    const adjust = this.target - elapsed;
-    const nextDelay = Math.max(0, this.delay + adjust);
-    this.timeoutId = setTimeout(this.tick, nextDelay);
+    
+    // 计算到下一个目标时间点的精确延迟
+    const drift = this.target - elapsed;
+    const nextDelay = Math.max(0, this.delay + drift);
+    
+    // 如果误差过大（超过半个周期），重新同步
+    if (Math.abs(drift) > this.delay / 2) {
+      console.warn(`Timer drift detected: ${drift}ms, resyncing...`);
+      this.target = now + this.delay;
+      this.timeoutId = setTimeout(this.tick, this.delay);
+    } else {
+      this.timeoutId = setTimeout(this.tick, nextDelay);
+    }
   };
 
   stop(): void {
@@ -157,10 +149,10 @@ class AccurateTimer {
 // ====== 工具函数 ======
 function calculateTimeUnits(distance: number): TimeLeft {
   return {
-    days: Math.floor(distance / TIME_CONSTANTS.DAY),
-    hours: Math.floor((distance / TIME_CONSTANTS.HOUR) % 24),
-    minutes: Math.floor((distance / TIME_CONSTANTS.MINUTE) % 60),
-    seconds: Math.floor((distance / TIME_CONSTANTS.SECOND) % 60),
+    days: Math.floor(distance / (1000 * 60 * 60 * 24)),
+    hours: Math.floor((distance / (1000 * 60 * 60)) % 24),
+    minutes: Math.floor((distance / (1000 * 60)) % 60),
+    seconds: Math.floor((distance / 1000) % 60),
   };
 }
 
@@ -180,6 +172,8 @@ function getTimeLeft(): TimeResult {
       return { days: 0, hours: 0, minutes: 0, seconds: 0, isTimeUp: true };
     }
 
+    // 关键优化：每次都基于当前实际时间重新计算，而不依赖Timer精度
+    // 这确保了即使Timer有轻微延迟，显示的时间仍然是准确的
     const timeUnits = calculateTimeUnits(distance);
     return { ...timeUnits, isTimeUp: false };
   } catch (error) {
@@ -190,27 +184,22 @@ function getTimeLeft(): TimeResult {
 
 // ====== 组件 ======
 function ProgressCircle({ unit, total, value }: ProgressCircleProps) {
-  const circleMetrics = useMemo(() => {
-    const circumference = 2 * Math.PI * CIRCLE_CONFIG.RADIUS;
-    const progress = Math.min(Math.max((value / total) * 100, 0), 100); // 限制在0-100%
-    const strokeDashoffset = circumference - (progress / 100) * circumference;
-    return { circumference, strokeDashoffset };
-  }, [value, total]);
+  // 简化计算 - 这些都是简单的数学运算，不需要缓存
+  const circumference = 2 * Math.PI * CIRCLE_CONFIG.RADIUS;
+  const progress = Math.min(Math.max((value / total) * 100, 0), 100);
+  const strokeDashoffset = circumference - (progress / 100) * circumference;
+  const rotationAngle = Math.min(Math.max(360 * value / total, 0), 360);
 
-  const rotationAngle = useMemo(() => 
-    Math.min(Math.max(360 * value / total, 0), 360), // 限制在0-360度
-    [value, total]
-  );
-
-  const indicatorDotStyle: React.CSSProperties = useMemo(() => ({
+  // 直接创建样式对象 - 对于每秒更新一次的倒计时，这种开销可以忽略
+  const indicatorDotStyle: React.CSSProperties = {
     ...DOT_BASE_STYLES,
     transform: `translate(-50%, -50%) rotate(${rotationAngle}deg) translateY(-${CIRCLE_CONFIG.RADIUS}px)`,
-  }), [rotationAngle]);
+  };
 
-  const progressCircleStyle: React.CSSProperties = useMemo(() => ({
-    strokeDasharray: circleMetrics.circumference,
-    strokeDashoffset: circleMetrics.strokeDashoffset,
-  }), [circleMetrics]);
+  const progressCircleStyle: React.CSSProperties = {
+    strokeDasharray: circumference,
+    strokeDashoffset: strokeDashoffset,
+  };
 
   return (
     <div className="group relative" role="timer" aria-live="polite" aria-label={`${value} ${unit}`}>
@@ -237,19 +226,19 @@ function ProgressCircle({ unit, total, value }: ProgressCircleProps) {
             strokeWidth={CIRCLE_CONFIG.STROKE_WIDTH}
             strokeLinecap="round"
             style={progressCircleStyle}
-            className={CSS_TRANSITIONS.CIRCLE}
+            className={ANIMATIONS.CIRCLE_TRANSITION}
           />
         </svg>
         
         <div 
-          className={`absolute rounded-full shadow-lg ${CSS_TRANSITIONS.DOT}`}
+          className={`absolute rounded-full shadow-lg ${ANIMATIONS.DOT_TRANSITION}`}
           style={indicatorDotStyle}
         />
 
-        <div className={TYPOGRAPHY_CONFIG.CIRCLE_VALUE} aria-hidden="true">
+        <div className={TYPOGRAPHY.CIRCLE_VALUE} aria-hidden="true">
           {value}
           <br />
-          <span className={TYPOGRAPHY_CONFIG.CIRCLE_UNIT}>
+          <span className={TYPOGRAPHY.CIRCLE_UNIT}>
             {unit}
           </span>
         </div>
@@ -258,31 +247,21 @@ function ProgressCircle({ unit, total, value }: ProgressCircleProps) {
   );
 }
 
-const Section = React.memo(function Section({ children }: { children: React.ReactNode }) {
-  return (
-    <div className={`mx-auto flex flex-col w-full ${LAYOUT_CONFIG.MAX_WIDTH}`}>
-      <div className={`flex-col gap-2 flex grow w-full ${LAYOUT_CONFIG.CONTAINER_SPACING} mx-auto items-center`}>
-        {children}
-      </div>
-    </div>
-  );
-});
+
 
 const CountdownContent = React.memo(function CountdownContent({ timeLeft }: { timeLeft: TimeLeft }) {
-  const responsiveClasses = `${RESPONSIVE_CONFIG.DESKTOP} ${RESPONSIVE_CONFIG.TABLET} ${RESPONSIVE_CONFIG.MOBILE}`;
-  
   return (
     <>
-      <div className={`text-center ${LAYOUT_CONFIG.CONTENT_SPACING}`}>
-        <h2 className={TYPOGRAPHY_CONFIG.MAIN_TITLE}>
+      <div className={`text-center ${LAYOUT.CONTENT_SPACING}`}>
+        <h2 className={TYPOGRAPHY.MAIN_TITLE}>
           距离 {COUNTDOWN_CONFIG.EVENT} 还有
         </h2>
-        <p className={TYPOGRAPHY_CONFIG.SUBTITLE}>
+        <p className={TYPOGRAPHY.SECTION_DESCRIPTION}>
           时间如流水，每一秒都值得珍惜。让我们一起迎接新的开始
         </p>
       </div>
       
-      <div className={responsiveClasses}>
+      <div className={`${RESPONSIVE_CONFIG.DESKTOP} ${RESPONSIVE_CONFIG.TABLET} ${RESPONSIVE_CONFIG.MOBILE}`}>
         {TIME_UNITS.map(({ key, unit, total }) => (
           <ProgressCircle 
             key={key}
@@ -299,10 +278,10 @@ const CountdownContent = React.memo(function CountdownContent({ timeLeft }: { ti
 const TimeUpContent = React.memo(function TimeUpContent() {
   return (
     <div className="text-center">
-      <h2 className={TYPOGRAPHY_CONFIG.SUCCESS_TITLE}>
+      <h2 className={TYPOGRAPHY.MAIN_TITLE}>
         {COUNTDOWN_CONFIG.EVENT}
       </h2>
-      <p className={TYPOGRAPHY_CONFIG.SUCCESS_TEXT}>
+      <p className={TYPOGRAPHY.SUCCESS_TEXT}>
         {COUNTDOWN_CONFIG.TEXT}
       </p>
     </div>
@@ -326,11 +305,17 @@ export default function Countdown() {
       return;
     }
 
-    setTimeLeft({ 
-      days: result.days, 
-      hours: result.hours, 
-      minutes: result.minutes, 
-      seconds: result.seconds 
+    // 优化：只有当时间真正发生变化时才更新状态
+    // 这避免了不必要的重新渲染，特别是在高精度模式下
+    const { days, hours, minutes, seconds } = result;
+    setTimeLeft(prevTime => {
+      if (prevTime.days !== days || 
+          prevTime.hours !== hours || 
+          prevTime.minutes !== minutes || 
+          prevTime.seconds !== seconds) {
+        return { days, hours, minutes, seconds };
+      }
+      return prevTime; // 返回相同的引用，避免重新渲染
     });
   }, []);
 
@@ -338,7 +323,12 @@ export default function Countdown() {
     calculateTimeLeft();
     
     try {
-      timerRef.current = new AccurateTimer(calculateTimeLeft, COUNTDOWN_CONFIG.TIMER_INTERVAL);
+      // 根据配置选择更新间隔
+      const interval = COUNTDOWN_CONFIG.USE_HIGH_PRECISION 
+        ? COUNTDOWN_CONFIG.HIGH_PRECISION_INTERVAL 
+        : COUNTDOWN_CONFIG.TIMER_INTERVAL;
+        
+      timerRef.current = new AccurateTimer(calculateTimeLeft, interval);
       timerRef.current.start();
     } catch (error) {
       console.error('Timer initialization error:', error);
@@ -351,8 +341,8 @@ export default function Countdown() {
   }, [calculateTimeLeft]);
 
   return (
-    <Section>
-      <div className={`${LAYOUT_CONFIG.MAX_WIDTH} mx-auto flex flex-col ${LAYOUT_CONFIG.PADDING}`} role="main" aria-label="距离2026年倒计时">
+    <Section background={null}>
+      <div className="max-w-7xl mx-auto flex flex-col px-5" role="main" aria-label="距离2026年倒计时">
         {isTimeUp ? (
           <TimeUpContent />
         ) : (

@@ -14,7 +14,12 @@ export const TYPOGRAPHY = {
   LABEL_TEXT: 'uppercase tracking-wide font-bold text-sm text-gray-600 dark:text-neutral-400',
   
   // 链接文本
-  LINK_TEXT: 'text-gray-600 dark:text-neutral-400 hover:text-gray-900 dark:hover:text-neutral-100 transition-colors'
+  LINK_TEXT: 'text-gray-600 dark:text-neutral-400 hover:text-gray-900 dark:hover:text-neutral-100 transition-colors',
+  
+  // Countdown组件特有样式
+  SUCCESS_TEXT: 'text-2xl font-medium text-gray-700 dark:text-neutral-300',
+  CIRCLE_VALUE: 'absolute text-center font-medium text-[2.5rem] select-none',
+  CIRCLE_UNIT: 'absolute text-[0.5rem] font-light -translate-x-1/2 -translate-y-[10px] tracking-[0.1em] uppercase select-none'
 } as const;
 
 // 统一的布局样式常量
@@ -49,7 +54,11 @@ export const ANIMATIONS = {
   TRANSITION: 'transition-all duration-200 ease-out',
   HOVER_SCALE: 'hover:scale-110 transition-transform duration-200',
   FADE_IN: 'opacity-0 animate-fade-in',
-  SLIDE_UP: 'translate-y-4 animate-slide-up'
+  SLIDE_UP: 'translate-y-4 animate-slide-up',
+  
+  // Countdown组件特有动画
+  CIRCLE_TRANSITION: 'transition-all duration-500 linear',
+  DOT_TRANSITION: 'transition-all duration-500 linear'
 } as const;
 
 // 常用的组合样式
