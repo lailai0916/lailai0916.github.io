@@ -1,5 +1,6 @@
 import React, { useMemo } from 'react';
 import Link from '@docusaurus/Link';
+import { Icon } from '@iconify/react';
 import { getRecentBlogPosts, BLOG_CONFIG, type ProcessedBlogPost } from '@site/src/utils/blogData';
 
 function BlogCard({ title, date, permalink }: { title: string; date: string; permalink: string }) {
@@ -40,13 +41,7 @@ function BlogCard({ title, date, permalink }: { title: string; date: string; per
           </header>
           <footer className="pt-2">
             <div className="flex items-center gap-2 text-sm text-gray-600 dark:text-neutral-400">
-              <svg
-                className="w-4 h-4"
-                viewBox="0 0 24 24"
-                fill="currentColor"
-              >
-                <path d="M19 3H5C3.9 3 3 3.9 3 5V19C3 20.1 3.9 21 5 21H19C20.1 21 21 20.1 21 19V5C21 3.9 20.1 3 19 3ZM19 19H5V8H19V19ZM7 10H17V12H7V10ZM7 14H14V16H7V14Z" />
-              </svg>
+              <Icon icon="lucide:calendar" width={16} height={16} />
               <time style={{ textDecoration: 'none' }}>{date}</time>
             </div>
           </footer>
@@ -136,14 +131,10 @@ function CTA({ children, href, icon, color = 'primary' }: { children: React.Reac
       }}
     >
       {icon === 'news' && (
-        <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
-          <path d="M4 6H2V20C2 21.1 2.9 22 4 22H18V20H4V6ZM20 2H8C6.9 2 6 2.9 6 4V16C6 17.1 6.9 18 8 18H20C21.1 18 22 17.1 22 16V4C22 2.9 21.1 2 20 2ZM20 16H8V4H20V16ZM10 6H18V8H10V6ZM10 10H16V12H10V10ZM10 14H18V16H10V14Z" />
-        </svg>
+        <Icon icon="lucide:newspaper" width={16} height={16} />
       )}
       <span>{children}</span>
-      <svg className="w-4 h-4 transition-transform group-hover:translate-x-0.5" viewBox="0 0 24 24" fill="currentColor">
-        <path d="M8.59 16.58L13.17 12L8.59 7.41L10 6L16 12L10 18L8.59 16.58Z" />
-      </svg>
+      <Icon icon="lucide:chevron-right" width={16} height={16} className="transition-transform group-hover:translate-x-0.5" />
     </Link>
   );
 }
@@ -223,9 +214,7 @@ export default function Blog() {
           </div>
           <div className="w-full lg:w-6/12">
             <p className="uppercase tracking-wide font-bold text-sm text-gray-600 dark:text-neutral-400 flex flex-row gap-2 items-center mt-5 lg:-mt-2 w-full">
-              <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M8.59 16.58L13.17 12L8.59 7.41L10 6L16 12L10 18L8.59 16.58Z" />
-              </svg>
+              <Icon icon="lucide:chevron-right" width={16} height={16} />
               最新文章
             </p>
             <div className="flex-col sm:flex-row flex-wrap flex gap-6 text-start my-8">

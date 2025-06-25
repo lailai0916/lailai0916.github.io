@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from '@docusaurus/Link';
+import { Icon } from '@iconify/react';
 
 const projects = [
   {
@@ -84,13 +85,7 @@ function ProjectCard({ title, description, link, tech, status }: {
           </header>
           <footer className="pt-2">
             <div className="flex items-center gap-2 text-sm text-gray-500 dark:text-neutral-400">
-              <svg
-                className="w-4 h-4"
-                viewBox="0 0 24 24"
-                fill="currentColor"
-              >
-                <path d="M12 2L2 7L12 12L22 7L12 2ZM2 17L12 22L22 17M2 12L12 17L22 12" />
-              </svg>
+              <Icon icon="lucide:layers" />
               <span>{tech}</span>
             </div>
           </footer>
