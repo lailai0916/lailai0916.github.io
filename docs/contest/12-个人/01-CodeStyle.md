@@ -213,7 +213,7 @@ int T;
 cin>>T;
 while(T--)
 {
-	
+	// do sth
 }
 ```
 
@@ -226,6 +226,7 @@ int T;
 cin>>T;
 for(int $=1;$<=T;$++)
 {
+	// do sth
 	cout<<$<<'\n';
 }
 ```
@@ -248,7 +249,7 @@ int m;
 cin>>m;
 while(m--)
 {
-	
+	// do sth
 }
 ```
 
