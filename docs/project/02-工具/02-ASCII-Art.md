@@ -1,11 +1,4 @@
----
-title: 项目：ASCII Art
-date: 2025-06-24T13:00
-authors: [lailai]
-tags: [project]
----
-
-<!-- truncate -->
+# ASCII Art
 
 ## 参考资料
 

@@ -7,9 +7,6 @@ notice:
 math:
   label: 数学
 
-project:
-  label: 项目
-
 misc:
   label: 杂项
 
