@@ -1,5 +1,17 @@
 # MacBook Pro
 
+## Finder
+
+```bash
+Finder
+├── Favorites
+│   └── AirDrop, Applications, lailai, Downloads
+├── Favorites
+│   └── iCloud Drive, Desktop, Documents
+└── Locations
+    └── lailai’s MacBook Pro
+```
+
 ## Dock
 
 ```bash
