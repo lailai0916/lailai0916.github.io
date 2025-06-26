@@ -135,21 +135,4 @@
   }
 }
 
-/* 滚动条样式优化 */
-:global(.react-chrono .react-chrono-timeline .react-chrono-tree::-webkit-scrollbar) {
-  width: 6px !important;
-}
 
-:global(.react-chrono .react-chrono-timeline .react-chrono-tree::-webkit-scrollbar-track) {
-  background: transparent !important;
-  border-radius: 3px !important;
-}
-
-:global(.react-chrono .react-chrono-timeline .react-chrono-tree::-webkit-scrollbar-thumb) {
-  background: var(--ifm-color-emphasis-400) !important;
-  border-radius: 3px !important;
-}
-
-:global(.react-chrono .react-chrono-timeline .react-chrono-tree::-webkit-scrollbar-thumb:hover) {
-  background: var(--ifm-color-emphasis-600) !important;
-}
