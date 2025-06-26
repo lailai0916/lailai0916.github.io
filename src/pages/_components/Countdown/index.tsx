@@ -1,5 +1,6 @@
 import React, { useEffect, useState, useRef, useCallback } from 'react';
 import Section from '../common/Section';
+import SectionHeader from '../common/SectionHeader';
 import { TYPOGRAPHY, LAYOUT, ANIMATIONS } from '../common/constants';
 
 // ====== 类型定义 ======
@@ -252,14 +253,11 @@ function ProgressCircle({ unit, total, value }: ProgressCircleProps) {
 const CountdownContent = React.memo(function CountdownContent({ timeLeft }: { timeLeft: TimeLeft }) {
   return (
     <>
-      <div className={`text-center ${LAYOUT.CONTENT_SPACING}`}>
-        <h2 className={TYPOGRAPHY.MAIN_TITLE}>
-          距离 {COUNTDOWN_CONFIG.EVENT} 还有
-        </h2>
-        <p className={TYPOGRAPHY.SECTION_DESCRIPTION}>
-          时间如流水，每一秒都值得珍惜。让我们一起迎接新的开始
-        </p>
-      </div>
+      <SectionHeader 
+        title={`距离 ${COUNTDOWN_CONFIG.EVENT} 还有`}
+        description="时间如流水，每一秒都值得珍惜。让我们一起迎接新的开始"
+        align="center"
+      />
       
       <div className={`${RESPONSIVE_CONFIG.DESKTOP} ${RESPONSIVE_CONFIG.TABLET} ${RESPONSIVE_CONFIG.MOBILE}`}>
         {TIME_UNITS.map(({ key, unit, total }) => (
