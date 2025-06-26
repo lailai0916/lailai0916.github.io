@@ -24,11 +24,15 @@ export default function HeroBanner() {
           />
         </Heading>
         <div className={styles.indexCtas}>
-          <Link className={`button ${styles.button}`} to="blog">
-            博客
+          <Link to="blog" className={styles.ctaCard}>
+            <div className={styles.ctaCardContent}>
+              博客
+            </div>
           </Link>
-          <Link className={`button ${styles.button}`} to="about">
-            关于
+          <Link to="about" className={styles.ctaCard}>
+            <div className={styles.ctaCardContent}>
+              关于
+            </div>
           </Link>
         </div>
       </div>

@@ -61,36 +61,51 @@ html[data-theme='dark'] .hero {
 }
 
 .indexCtas {
-  --ifm-button-size-multiplier: 1.6;
   display: flex;
   flex-wrap: wrap;
+  gap: 1.6rem;
   align-items: center;
-  margin-top: 24px;
+  margin-top: 48px;
+  margin-bottom: 12px;
 }
 
-.indexCtas a,
-.indexCtas a:hover {
-  color: black;
+/* 简化的卡片按钮样式 - 统一尺寸 */
+.ctaCard {
+  display: block;
+  text-decoration: none !important;
+  color: inherit !important;
 }
 
-.button {
-  background-color: var(--ifm-color-primary-lightest);
-}
-
-.button:hover {
-  background-color: var(--ifm-color-primary-lighter);
-}
-
-.indexCtas a:last-of-type {
-  margin: 20px 36px;
-}
-
-.indexCtasGitHubButtonWrapper {
+.ctaCardContent {
+  background: var(--ifm-card-background-color);
+  border: 2px solid var(--ifm-color-emphasis-200);
+  border-radius: 12px;
+  padding: 0.85rem 1.7rem;
   display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--ifm-font-color-base);
+  min-width: 125px;
+  white-space: nowrap;
 }
 
-.indexCtasGitHubButton {
-  overflow: hidden;
+.ctaCard:hover .ctaCardContent {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  border-color: var(--ifm-color-primary);
+}
+
+/* 深色模式适配 */
+html[data-theme='dark'] .ctaCardContent {
+  background: var(--ifm-card-background-color);
+  border: 2px solid var(--ifm-color-emphasis-300);
+}
+
+html[data-theme='dark'] .ctaCard:hover .ctaCardContent {
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 }
 
 @media only screen and (max-width: 768px) {
@@ -116,13 +131,15 @@ html[data-theme='dark'] .hero {
 
   .indexCtas {
     justify-content: center;
+    gap: 4rem;
+    margin-top: 36px;
+    margin-bottom: 0;
   }
 
-  .indexCtas a {
-    margin: 20px 36px;
-  }
-
-  .indexCtasGitHubButton {
-    display: none;
+  .ctaCardContent {
+    padding: 0.85rem 1.7rem;
+    font-size: 1.2rem;
+    font-weight: 700;
+    min-width: 125px;
   }
 }
