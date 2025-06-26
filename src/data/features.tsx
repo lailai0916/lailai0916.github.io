@@ -1,4 +1,5 @@
 import React from 'react';
+import Translate, {translate} from '@docusaurus/Translate';
 
 export type FeatureItem = {
   title: string;
@@ -14,7 +15,7 @@ export type FeatureItem = {
 
 export const FEATURES: FeatureItem[] = [
   {
-    title: '竞赛',
+    title: translate({ id: 'data.features.contest.title', message: 'Contest' }),
     url: 'docs/contest',
     icon: 'lucide:trophy',
     image: {
@@ -23,14 +24,14 @@ export const FEATURES: FeatureItem[] = [
       height: 717.96,
     },
     text: (
-      <div>
-        竞赛（Contest）板块涵盖信息学奥林匹克竞赛相关的基础知识、常见题型、解题思路，以及代码模板和参赛经验。
-        内容聚焦实际竞赛环境，强调算法技巧、编程实践和竞赛能力的综合提升。
-      </div>
+      <Translate id="data.features.contest.text">
+        The Contest section covers fundamental knowledge, common problem types, solution ideas, code templates, and competition experience related to Olympiad in Informatics.
+        It focuses on real contest environments, emphasizing algorithmic skills, programming practice, and overall competitive ability.
+      </Translate>
     ),
   },
   {
-    title: '笔记',
+    title: translate({ id: 'data.features.note.title', message: 'Note' }),
     url: 'docs/note',
     icon: 'lucide:notebook-pen',
     image: {
@@ -39,14 +40,14 @@ export const FEATURES: FeatureItem[] = [
       height: 731.18,
     },
     text: (
-      <div>
-        笔记（Note）板块整理了数学、编程、技术、外语等多个学科的学习笔记、知识梳理与个人的思考总结。
-        内容涵盖不同学科的核心知识点与实用技巧，系统反映个人学习与理解过程。
-      </div>
+      <Translate id="data.features.note.text">
+        The Note section organizes learning notes, knowledge summaries, and personal insights across multiple disciplines, including mathematics, programming, technology, and languages.
+        It systematically presents key concepts and practical skills, reflecting the learning and understanding process.
+      </Translate>
     ),
   },
   {
-    title: '项目',
+    title: translate({ id: 'data.features.project.title', message: 'Project' }),
     url: 'docs/project',
     icon: 'lucide:code-2',
     image: {
@@ -55,10 +56,10 @@ export const FEATURES: FeatureItem[] = [
       height: 693.31,
     },
     text: (
-      <div>
-        项目（Project）板块集合了个人在编程和技术实践中的各类项目成果，提供实用的模板、工具以及相关技术资料。
-        项目内容关注具体场景的应用与探索，兼顾技术学习、实践开发和经验积累。
-      </div>
+      <Translate id="data.features.project.text">
+        The Project section showcases various project outcomes from personal programming and technical practice, providing practical templates, tools, and relevant resources.
+        It emphasizes real-world applications and exploration, combining technical learning, development practice, and experience accumulation.
+      </Translate>
     ),
   },
 ];
