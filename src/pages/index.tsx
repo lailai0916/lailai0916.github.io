@@ -27,10 +27,8 @@ export default function Home() {
       <main>
         <TopBanner />
         <HeroBanner />
-        <div className={styles.section}>
-          <Docs />
-          <Blog />
-        </div>
+        <Docs />
+        <Blog />
         <Countdown />
         <Project />
         <Skill />

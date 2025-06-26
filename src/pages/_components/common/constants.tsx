@@ -26,7 +26,7 @@ export const TYPOGRAPHY = {
 export const LAYOUT = {
   // 容器样式
   CONTAINER: 'max-w-7xl mx-auto flex flex-col px-5',
-  SECTION_SPACING: 'my-16 lg:my-24',
+  SECTION_SPACING: 'my-16',
   CONTENT_SPACING: 'mb-12',
   
   // 卡片间距

@@ -41,20 +41,22 @@ export default function FeaturesContainer() {
   const secondRow = Features.slice(3);
 
   return (
-    <div className="container text--center">
-      <div className="row margin-top--lg margin-bottom--lg">
-        {firstRow.map((feature, idx) => (
-          <Feature feature={feature} key={idx} />
-        ))}
-      </div>
-      <div className="row">
-        {secondRow.map((feature, idx) => (
-          <Feature
-            feature={feature}
-            key={idx}
-            className={clsx('col--4', idx === 0 && 'col--offset-2')}
-          />
-        ))}
+    <div style={{ padding: '4rem 0', width: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+      <div className="container text--center">
+        <div className="row margin-top--lg margin-bottom--lg">
+          {firstRow.map((feature, idx) => (
+            <Feature feature={feature} key={idx} />
+          ))}
+        </div>
+        <div className="row">
+          {secondRow.map((feature, idx) => (
+            <Feature
+              feature={feature}
+              key={idx}
+              className={clsx('col--4', idx === 0 && 'col--offset-2')}
+            />
+          ))}
+        </div>
       </div>
     </div>
   );

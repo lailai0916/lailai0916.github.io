@@ -20,7 +20,7 @@ export default function Section({ children, background = null }: SectionProps) {
         backgroundColor: background === 'alt' ? 'var(--ifm-color-emphasis-100)' : undefined
       }}
     >
-      <div className="flex-col gap-2 flex grow w-full my-16 lg:my-24 mx-auto items-center">
+      <div className="flex-col gap-2 flex grow w-full my-16 mx-auto items-center">
         {children}
       </div>
     </div>
