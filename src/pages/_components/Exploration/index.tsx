@@ -1,9 +1,6 @@
 import React from 'react';
 import { Icon } from '@iconify/react';
-import BaseCard from '../common/BaseCard';
-import Section from '../common/Section';
-import SectionHeader from '../common/SectionHeader';
-import StatusBadge from '../common/StatusBadge';
+import { BaseCard, Section, SectionHeader, StatusBadge, IconWrapper, GridLayout, GridConfigs } from '../common';
 
 const exploringItems = [
   { 
@@ -47,11 +44,11 @@ function ExplorationCard({ name, icon, description, progress, skills }: {
     <BaseCard isClickable={false} className="p-6">
       <div className="flex-1 space-y-4">
         <header className="space-y-3">
-          <div className="flex items-start justify-between">
-            <div className="flex items-center gap-3">
-              <div className="group-hover:scale-110 transition-transform duration-200">
-                <Icon icon={icon} width={32} height={32} className="text-gray-700 dark:text-neutral-300" />
-              </div>
+                      <div className="flex items-start justify-between">
+              <div className="flex items-center gap-3">
+                <IconWrapper>
+                  <Icon icon={icon} width={32} height={32} className="text-gray-700 dark:text-neutral-300" />
+                </IconWrapper>
               <div>
                 <h3 className="font-semibold text-xl text-gray-900 dark:text-neutral-100 leading-snug">
                   {name}
@@ -90,13 +87,13 @@ export default function Exploration() {
           description="保持好奇心，不断探索新领域。每一次学习都是对未知世界的勇敢探索"
         />
         
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <GridLayout columns={GridConfigs.exploration}>
           {exploringItems.map((item, idx) => (
             <div key={idx} className="h-full">
               <ExplorationCard {...item} />
             </div>
           ))}
-        </div>
+        </GridLayout>
       </div>
     </Section>
   );

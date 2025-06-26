@@ -30,33 +30,17 @@ interface TimeUnitConfig {
 }
 
 // ====== 常量配置 ======
-const COUNTDOWN_CONFIG = {
+const CONFIG = {
   EVENT: '2026 年',
   DATE: '2026-01-01T00:00:00',
   TEXT: 'Happy New Year!',
   TIMER_INTERVAL: 1000,
-  // 高精度模式：更频繁的更新以确保秒数变化的平滑性
-  HIGH_PRECISION_INTERVAL: 100,
-  USE_HIGH_PRECISION: false, // 可以根据需要开启
-} as const;
-
-const CIRCLE_CONFIG = {
+  // 圆形进度条配置
   RADIUS: 74,
   SVG_SIZE: 160,
-  SVG_CENTER: 80, // SVG_SIZE / 2
   STROKE_WIDTH: 8,
   DOT_SIZE: 15,
 } as const;
-
-
-
-const RESPONSIVE_CONFIG = {
-  DESKTOP: 'flex gap-8 justify-center w-fit mx-auto',
-  TABLET: 'max-md:grid max-md:grid-cols-2 max-md:gap-6',
-  MOBILE: 'max-[400px]:grid-cols-1 max-[400px]:gap-4',
-} as const;
-
-
 
 const TIME_UNITS: readonly TimeUnitConfig[] = [
   { key: 'days', unit: 'Days', total: 365 },
@@ -64,15 +48,6 @@ const TIME_UNITS: readonly TimeUnitConfig[] = [
   { key: 'minutes', unit: 'Minutes', total: 60 },
   { key: 'seconds', unit: 'Seconds', total: 60 },
 ] as const;
-
-const DOT_BASE_STYLES: React.CSSProperties = {
-  background: 'var(--ifm-color-primary)',
-  boxShadow: '0 0 20px var(--ifm-color-primary), 0 0 60px var(--ifm-color-primary)',
-  left: '50%',
-  top: '50%',
-  width: `${CIRCLE_CONFIG.DOT_SIZE}px`,
-  height: `${CIRCLE_CONFIG.DOT_SIZE}px`,
-} as const;
 
 
 
@@ -159,7 +134,7 @@ function calculateTimeUnits(distance: number): TimeLeft {
 
 function getTimeLeft(): TimeResult {
   try {
-    const endDate = new Date(COUNTDOWN_CONFIG.DATE);
+    const endDate = new Date(CONFIG.DATE);
     const nowDate = new Date();
     
     // 验证日期有效性
@@ -185,16 +160,19 @@ function getTimeLeft(): TimeResult {
 
 // ====== 组件 ======
 function ProgressCircle({ unit, total, value }: ProgressCircleProps) {
-  // 简化计算 - 这些都是简单的数学运算，不需要缓存
-  const circumference = 2 * Math.PI * CIRCLE_CONFIG.RADIUS;
+  const circumference = 2 * Math.PI * CONFIG.RADIUS;
   const progress = Math.min(Math.max((value / total) * 100, 0), 100);
   const strokeDashoffset = circumference - (progress / 100) * circumference;
   const rotationAngle = Math.min(Math.max(360 * value / total, 0), 360);
 
-  // 直接创建样式对象 - 对于每秒更新一次的倒计时，这种开销可以忽略
   const indicatorDotStyle: React.CSSProperties = {
-    ...DOT_BASE_STYLES,
-    transform: `translate(-50%, -50%) rotate(${rotationAngle}deg) translateY(-${CIRCLE_CONFIG.RADIUS}px)`,
+    background: 'var(--ifm-color-primary)',
+    boxShadow: '0 0 20px var(--ifm-color-primary), 0 0 60px var(--ifm-color-primary)',
+    left: '50%',
+    top: '50%',
+    width: `${CONFIG.DOT_SIZE}px`,
+    height: `${CONFIG.DOT_SIZE}px`,
+    transform: `translate(-50%, -50%) rotate(${rotationAngle}deg) translateY(-${CONFIG.RADIUS}px)`,
   };
 
   const progressCircleStyle: React.CSSProperties = {
@@ -202,29 +180,31 @@ function ProgressCircle({ unit, total, value }: ProgressCircleProps) {
     strokeDashoffset: strokeDashoffset,
   };
 
+  const svgCenter = CONFIG.SVG_SIZE / 2;
+
   return (
     <div className="group relative" role="timer" aria-live="polite" aria-label={`${value} ${unit}`}>
       <div className="relative w-40 h-40 flex justify-center items-center">
         <svg 
           className="absolute w-40 h-40 transform -rotate-90" 
-          viewBox={`0 0 ${CIRCLE_CONFIG.SVG_SIZE} ${CIRCLE_CONFIG.SVG_SIZE}`}
+          viewBox={`0 0 ${CONFIG.SVG_SIZE} ${CONFIG.SVG_SIZE}`}
         >
           <circle 
-            cx={CIRCLE_CONFIG.SVG_CENTER}
-            cy={CIRCLE_CONFIG.SVG_CENTER}
-            r={CIRCLE_CONFIG.RADIUS}
+            cx={svgCenter}
+            cy={svgCenter}
+            r={CONFIG.RADIUS}
             fill="none"
             stroke="currentColor"
-            strokeWidth={CIRCLE_CONFIG.STROKE_WIDTH}
+            strokeWidth={CONFIG.STROKE_WIDTH}
             className="text-gray-100 dark:text-neutral-800"
           />
           <circle 
-            cx={CIRCLE_CONFIG.SVG_CENTER}
-            cy={CIRCLE_CONFIG.SVG_CENTER}
-            r={CIRCLE_CONFIG.RADIUS}
+            cx={svgCenter}
+            cy={svgCenter}
+            r={CONFIG.RADIUS}
             fill="none"
             stroke="var(--ifm-color-primary)"
-            strokeWidth={CIRCLE_CONFIG.STROKE_WIDTH}
+            strokeWidth={CONFIG.STROKE_WIDTH}
             strokeLinecap="round"
             style={progressCircleStyle}
             className={ANIMATIONS.CIRCLE_TRANSITION}
@@ -250,16 +230,16 @@ function ProgressCircle({ unit, total, value }: ProgressCircleProps) {
 
 
 
-const CountdownContent = React.memo(function CountdownContent({ timeLeft }: { timeLeft: TimeLeft }) {
+function CountdownContent({ timeLeft }: { timeLeft: TimeLeft }) {
   return (
     <>
       <SectionHeader 
-        title={`距离 ${COUNTDOWN_CONFIG.EVENT} 还有`}
+        title={`距离 ${CONFIG.EVENT} 还有`}
         description="时间如流水，每一秒都值得珍惜。让我们一起迎接新的开始"
         align="center"
       />
       
-      <div className={`${RESPONSIVE_CONFIG.DESKTOP} ${RESPONSIVE_CONFIG.TABLET} ${RESPONSIVE_CONFIG.MOBILE}`}>
+      <div className="flex gap-8 justify-center w-fit mx-auto max-md:grid max-md:grid-cols-2 max-md:gap-6 max-[400px]:grid-cols-1 max-[400px]:gap-4">
         {TIME_UNITS.map(({ key, unit, total }) => (
           <ProgressCircle 
             key={key}
@@ -271,20 +251,20 @@ const CountdownContent = React.memo(function CountdownContent({ timeLeft }: { ti
       </div>
     </>
   );
-});
+}
 
-const TimeUpContent = React.memo(function TimeUpContent() {
+function TimeUpContent() {
   return (
     <div className="text-center">
       <h2 className={TYPOGRAPHY.MAIN_TITLE}>
-        {COUNTDOWN_CONFIG.EVENT}
+        {CONFIG.EVENT}
       </h2>
       <p className={TYPOGRAPHY.SUCCESS_TEXT}>
-        {COUNTDOWN_CONFIG.TEXT}
+        {CONFIG.TEXT}
       </p>
     </div>
   );
-});
+}
 
 export default function Countdown() {
   const [timeLeft, setTimeLeft] = useState<TimeLeft>(() => {
@@ -321,12 +301,7 @@ export default function Countdown() {
     calculateTimeLeft();
     
     try {
-      // 根据配置选择更新间隔
-      const interval = COUNTDOWN_CONFIG.USE_HIGH_PRECISION 
-        ? COUNTDOWN_CONFIG.HIGH_PRECISION_INTERVAL 
-        : COUNTDOWN_CONFIG.TIMER_INTERVAL;
-        
-      timerRef.current = new AccurateTimer(calculateTimeLeft, interval);
+      timerRef.current = new AccurateTimer(calculateTimeLeft, CONFIG.TIMER_INTERVAL);
       timerRef.current.start();
     } catch (error) {
       console.error('Timer initialization error:', error);

@@ -1,6 +1,6 @@
 import React from 'react';
 import { DEVICES } from '../../../data/device';
-import { BaseCard, Section, SectionHeader, GridLayout, GridConfigs } from '../common';
+import { BaseCard, Section, SectionHeader, GridLayout, GridConfigs, IconWrapper } from '../common';
 
 function DeviceCard({ name, icon }: {
   name: string;
@@ -9,14 +9,14 @@ function DeviceCard({ name, icon }: {
   return (
     <BaseCard isClickable={false} className="p-5 items-center justify-center">
       <div className="flex flex-col items-center space-y-3">
-        <div className="group-hover:scale-110 transition-transform duration-200">
+        <IconWrapper>
           <img 
             src={icon} 
             alt={name}
             draggable="false"
             className="w-10 h-10 object-contain filter brightness-0 dark:invert transition-transform duration-200 select-none"
           />
-        </div>
+        </IconWrapper>
         <h3 className="font-medium text-base text-gray-900 dark:text-neutral-100 text-center leading-snug">
           {name}
         </h3>

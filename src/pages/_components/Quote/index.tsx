@@ -35,7 +35,7 @@ function QuoteCard({ quote, author, context, category }: {
           <div className="flex justify-start">
             <StatusBadge status={category} variant="compact" />
           </div>
-          <blockquote className="relative border-l-0" style={{ borderLeft: 'none' }}>
+          <blockquote className="relative" style={{ borderLeft: 'none' }}>
             <svg
               className="absolute -top-2 -left-2 w-8 h-8 text-gray-200 dark:text-neutral-700"
               fill="currentColor"

@@ -1,6 +1,5 @@
 import React from 'react';
 import Layout from '@theme/Layout';
-import styles from './styles.module.css';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 
 import TopBanner from './_components/TopBanner';

@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react';
+import React from 'react';
 import Link from '@docusaurus/Link';
 import { Icon } from '@iconify/react';
 import { getRecentBlogPosts, BLOG_CONFIG, type ProcessedBlogPost } from '../../../utils/blogData';
@@ -23,27 +23,14 @@ function BlogCard({ title, date, permalink }: { title: string; date: string; per
       <article className="relative overflow-hidden p-6 cursor-pointer w-full h-full flex flex-col bg-white dark:bg-neutral-900 hover:bg-gray-50 dark:hover:bg-neutral-800/50 rounded-2xl transition-all duration-200 ease-out shadow-sm hover:shadow-md dark:shadow-none border border-gray-200 dark:border-neutral-700 hover:border-gray-300 dark:hover:border-neutral-600">
         <div className="flex-1 space-y-4">
           <header>
-            <h3 className="font-semibold text-lg text-gray-900 dark:text-neutral-100 leading-snug transition-colors duration-200">
-              <span 
-                className="group-hover:transition-colors group-hover:duration-200"
-                style={{
-                  color: 'inherit'
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.color = 'var(--ifm-color-primary)';
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.color = 'inherit';
-                }}
-              >
-                {title}
-              </span>
+            <h3 className="font-semibold text-lg text-gray-900 dark:text-neutral-100 leading-snug group-hover:text-[var(--ifm-color-primary)] transition-colors duration-200">
+              {title}
             </h3>
           </header>
           <footer className="pt-2">
             <div className="flex items-center gap-2 text-sm text-gray-600 dark:text-neutral-400">
               <Icon icon="lucide:calendar" width={16} height={16} />
-              <time style={{ textDecoration: 'none' }}>{date}</time>
+              <time className="no-underline">{date}</time>
             </div>
           </footer>
         </div>
@@ -52,71 +39,9 @@ function BlogCard({ title, date, permalink }: { title: string; date: string; per
   );
 }
 
-function Para({ children }: { children: React.ReactNode }) {
-  return (
-    <p className="leading-relaxed mb-6">
-      {children}
-    </p>
-  );
-}
 
-function CTA({ children, href, icon, color = 'primary' }: { children: React.ReactNode; href: string; icon: string; color?: string }) {
-  const getColorStyles = (color: string) => {
-    switch (color) {
-      case 'primary':
-        return {
-          backgroundColor: 'var(--ifm-color-primary)',
-          color: 'var(--ifm-color-primary-contrast-foreground)',
-          '--hover-bg': 'var(--ifm-color-primary-dark)',
-          '--active-bg': 'var(--ifm-color-primary-darker)',
-        };
-      case 'secondary':
-        return {
-          backgroundColor: 'var(--ifm-background-color)',
-          color: 'var(--ifm-font-color-base)',
-          border: '1px solid var(--ifm-color-emphasis-300)',
-          '--hover-bg': 'var(--ifm-color-emphasis-100)',
-          '--active-bg': 'var(--ifm-color-emphasis-200)',
-        };
-      default:
-        return {};
-    }
-  };
 
-  const colorStyles = getColorStyles(color);
 
-  return (
-    <Link
-      to={href}
-      className="group inline-flex items-center gap-2 px-5 py-3 rounded-xl font-medium transition-all duration-200 no-underline hover:no-underline shadow-lg hover:shadow-xl"
-      style={colorStyles}
-      onMouseEnter={(e) => {
-        if (colorStyles['--hover-bg']) {
-          e.currentTarget.style.backgroundColor = colorStyles['--hover-bg'];
-        }
-      }}
-      onMouseLeave={(e) => {
-        e.currentTarget.style.backgroundColor = colorStyles.backgroundColor || '';
-      }}
-      onMouseDown={(e) => {
-        if (colorStyles['--active-bg']) {
-          e.currentTarget.style.backgroundColor = colorStyles['--active-bg'];
-        }
-      }}
-      onMouseUp={(e) => {
-        if (colorStyles['--hover-bg']) {
-          e.currentTarget.style.backgroundColor = colorStyles['--hover-bg'];
-        }
-      }}
-    >
-      {icon === 'news' && (
-        <Icon icon="lucide:newspaper" width={16} height={16} />
-      )}
-      <span>{children}</span>
-      <Icon icon="lucide:chevron-right" width={16} height={16} className="transition-transform group-hover:translate-x-0.5" />
-    </Link>
-  );
-}
 
 // 博客卡片列表组件
 function BlogCardList({ posts }: { posts: ProcessedBlogPost[] }) {
@@ -132,44 +57,68 @@ function BlogCardList({ posts }: { posts: ProcessedBlogPost[] }) {
 
   return (
     <>
-      <div className="flex-1 min-w-[280px] text-start">
-        <BlogCard {...posts[0]} />
-      </div>
-      {posts.length > 1 && (
-        <div className="flex-1 min-w-[280px] text-start">
-          <BlogCard {...posts[1]} />
+      {posts.slice(0, 4).map((post, index) => (
+        <div 
+          key={post.permalink}
+          className={`flex-1 min-w-[280px] text-start ${
+            index === 3 ? 'hidden sm:flex-1 sm:block sm:min-w-[280px]' : ''
+          }`}
+        >
+          <BlogCard {...post} />
         </div>
-      )}
-      {posts.length > 2 && (
-        <div className="flex-1 min-w-[280px] text-start">
-          <BlogCard {...posts[2]} />
-        </div>
-      )}
-      {posts.length > 3 && (
-        <div className="hidden sm:flex-1 sm:block sm:min-w-[280px]">
-          <BlogCard {...posts[3]} />
-        </div>
-      )}
+      ))}
     </>
   );
 }
 
-// 查看更多文章按钮组件
+// 查看更多文章按钮组件 - 使用HeroBanner相同风格
 function ViewMoreButton({ className = "" }: { className?: string }) {
   return (
     <div className={`flex justify-start w-full mt-10 ${className}`}>
-      <CTA color="secondary" icon="news" href="/blog">
-        查看更多文章
-      </CTA>
+      <Link 
+        to="/blog" 
+        className="block text-decoration-none"
+        style={{ textDecoration: 'none', color: 'inherit' }}
+      >
+        <div 
+          className="flex items-center justify-center gap-2 transition-all duration-200 cursor-pointer hover:-translate-y-0.5 hover:shadow-md hover:border-[var(--ifm-color-primary)]"
+          style={{
+            background: 'var(--ifm-card-background-color)',
+            border: '2px solid var(--ifm-color-emphasis-200)',
+            borderRadius: '12px',
+            padding: '0.85rem 1.7rem',
+            fontSize: '1rem',
+            fontWeight: 'normal',
+            color: 'var(--ifm-font-color-base)',
+            minWidth: '125px',
+            whiteSpace: 'nowrap',
+            lineHeight: '1.2',
+          }}
+        >
+          <Icon 
+            icon="lucide:feather" 
+            width={24} 
+            height={24} 
+            style={{ 
+              color: 'var(--ifm-color-primary)',
+              flexShrink: 0,
+              display: 'inline-flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              verticalAlign: 'middle',
+              lineHeight: 1
+            }}
+          />
+          查看更多文章
+        </div>
+      </Link>
     </div>
   );
 }
 
 export default function Blog() {
-  // 使用工具函数获取博客数据，useMemo确保性能优化
-  const recentPosts = useMemo(() => {
-    return getRecentBlogPosts();
-  }, []);
+  // 直接获取博客数据，无需useMemo包装
+  const recentPosts = getRecentBlogPosts();
 
   return (
     <Section background="alt">
@@ -188,15 +137,15 @@ export default function Blog() {
               />
               持续学习，拥抱未来
             </h2>
-            <Para>
+            <p className="leading-relaxed mb-6">
               技术发展日新月异，我们需要保持敏锐的学习能力。每一次新技术的掌握，
               都是对未来的投资。通过不断的实践和总结，将知识转化为真正的技能。
-            </Para>
+            </p>
             <div className="order-last pt-5">
-              <Para>
+              <p className="leading-relaxed mb-6">
                 在这个快速变化的时代，保持好奇心和学习热情是最宝贵的品质。
                 只有经过实践验证的技术和方法，才能真正帮助我们解决实际问题。
-              </Para>
+              </p>
               <ViewMoreButton className="hidden lg:flex" />
             </div>
           </div>

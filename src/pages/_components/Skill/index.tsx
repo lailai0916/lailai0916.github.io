@@ -1,13 +1,13 @@
 import React from 'react';
 import { techStack } from '../../../data/skills';
-import { BaseCard, Section, SectionHeader, GridLayout, GridConfigs } from '../common';
+import { BaseCard, Section, SectionHeader, GridLayout, GridConfigs, IconWrapper } from '../common';
 
 function SkillCard({ name, icon }: { name: string; icon: string }) {
   return (
     <BaseCard isClickable={false} className="p-6 items-center justify-center">
       <div className="flex flex-col items-center text-center space-y-4">
         <div className="flex justify-center items-center h-12 w-12">
-          <div className="group-hover:scale-110 transition-transform duration-200">
+          <IconWrapper>
             <img 
               src={`https://skillicons.dev/icons?i=${icon}&theme=light#gh-light-mode-only`} 
               alt={name} 
@@ -18,7 +18,7 @@ function SkillCard({ name, icon }: { name: string; icon: string }) {
               alt={name} 
               className="w-12 h-12 object-contain"
             />
-          </div>
+          </IconWrapper>
         </div>
         <h3 className="font-semibold text-lg text-gray-900 dark:text-neutral-100 leading-snug">
           {name}

@@ -38,57 +38,13 @@
 }
 
 .topBannerTitleText {
-  background: linear-gradient(to right, #0090f7, #ba62fc, #f2416b);
+  background: linear-gradient(108deg,#0894FF,#C959DD 34%,#FF2E54 68%,#FF9004);
   background-clip: text;
   -webkit-text-fill-color: transparent;
-  /* 确保链接文本也能换行 */
   word-wrap: break-word;
   word-break: break-word;
-  /* 移除可能的 white-space 限制 */
   white-space: normal;
 }
-
-/* .topBannerTitleText {
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  text-decoration: none;
-  background-image: linear-gradient(
-    90deg,
-    #0090f7,
-    #ba62fc,
-    #f2416b,
-    #ba62fc,
-    #0090f7
-  );  
-  background-size: 200%;
-  animation: streamer 4s linear infinite;
-  -webkit-animation: streamer 4s linear infinite;
-} */
-
-/* @keyframes streamer {
-  0% {
-    background-position: 0%;
-  }
-  100% {
-    background-position: 200%;
-  }
-} */
-
-/* @-webkit-keyframes streamer {
-  0% {
-    background-position: 0%;
-  }
-  100% {
-    background-position: 200%;
-  }
-} */
-
-/* html[data-theme='dark'] .topBannerTitleText {
-  background: linear-gradient(to right, #0090f7, #ba62fc, #f2416b);
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-} */
 
 .topBannerTitleText:hover {
   border-bottom: solid 2px;

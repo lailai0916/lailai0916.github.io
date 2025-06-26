@@ -15,19 +15,8 @@ function ProjectCard({ title, description, link, tech, status }: {
       <div className="flex-1 space-y-4">
         <header className="space-y-3">
           <div className="flex items-center justify-between">
-            <h3 className="font-semibold text-xl text-gray-900 dark:text-neutral-100 leading-snug">
-              <span 
-                className="group-hover:transition-colors group-hover:duration-200"
-                style={{ color: 'inherit' }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.color = 'var(--ifm-color-primary)';
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.color = 'inherit';
-                }}
-              >
-                {title}
-              </span>
+            <h3 className="font-semibold text-xl text-gray-900 dark:text-neutral-100 leading-snug group-hover:text-[var(--ifm-color-primary)] transition-colors duration-200">
+              {title}
             </h3>
             <StatusBadge status={status} />
           </div>

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Icon } from '@iconify/react';
 import { COMMUNITY_LINKS } from '../../../data/community';
-import { BaseCard, Section, SectionHeader, GridLayout, GridConfigs } from '../common';
+import { BaseCard, Section, SectionHeader, GridLayout, GridConfigs, IconWrapper } from '../common';
 
 function CommunityCard({ href, label, icon }: {
   href: string;
@@ -11,14 +11,14 @@ function CommunityCard({ href, label, icon }: {
   return (
     <BaseCard href={href} isExternalLink className="p-6 items-center justify-center">
       <div className="flex flex-col items-center space-y-3">
-        <div className="group-hover:scale-110 transition-transform duration-200">
+        <IconWrapper>
           <Icon 
             icon={icon} 
             width="40" 
             height="40" 
             className="text-black dark:text-white group-hover:text-[var(--ifm-color-primary)] transition-colors duration-200"
           />
-        </div>
+        </IconWrapper>
         <h3 className="font-medium text-sm text-gray-900 dark:text-neutral-100 text-center leading-snug">
           {label}
         </h3>

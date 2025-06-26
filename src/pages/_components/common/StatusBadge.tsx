@@ -11,7 +11,7 @@ export default function StatusBadge({ status, variant = 'default' }: StatusBadge
     switch (status) {
       case '维护中':
       case '进行中':
-        return COLORS.SUCCESS;
+        return COLORS.GREEN;
       case '展示中':
       case '探索中':
       case '创新思维':
@@ -19,12 +19,12 @@ export default function StatusBadge({ status, variant = 'default' }: StatusBadge
       case '深化中':
       case '职业理念':
       case '已完成':
-        return COLORS.INFO;
+        return COLORS.BLUE;
       case '学习中':
       case '技术态度':
-        return COLORS.WARNING;
+        return COLORS.ORANGE;
       default:
-        return COLORS.DEFAULT;
+        return COLORS.GRAY;
     }
   };
 
