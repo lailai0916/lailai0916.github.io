@@ -4,36 +4,43 @@
   background: transparent !important;
 }
 
-/* 卡片样式 - 模仿主页BlogCard */
-:global(.timeline-card-content) {
+/* 卡片基础样式 - 统一timeline-card-content和travel-timeline-card */
+:global(.timeline-card-content),
+:global(.travel-timeline-card) {
   border-radius: 1rem !important;
   box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06) !important;
   transition: all 0.2s ease-out !important;
   border: 1px solid var(--ifm-color-emphasis-300) !important;
   background: var(--ifm-card-background-color) !important;
+  padding: 1.5rem !important;
+  position: relative !important;
+  overflow: hidden !important;
 }
 
-:global(.timeline-card-content:hover) {
+:global(.timeline-card-content:hover),
+:global(.travel-timeline-card:hover) {
   transform: translateY(-2px) !important;
   box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05) !important;
   border-color: var(--ifm-color-primary-lighter) !important;
   background: var(--ifm-background-surface-color) !important;
 }
 
-/* 暗色模式 - 与主页保持一致 */
-:global(html[data-theme='dark'] .timeline-card-content) {
+/* 暗色模式 - 统一选择器格式 */
+:global(html[data-theme='dark'] .timeline-card-content),
+:global(html[data-theme='dark'] .travel-timeline-card) {
   background: var(--ifm-card-background-color) !important;
   border-color: var(--ifm-color-emphasis-300) !important;
   box-shadow: none !important;
 }
 
-:global(html[data-theme='dark'] .timeline-card-content:hover) {
+:global(html[data-theme='dark'] .timeline-card-content:hover),
+:global(html[data-theme='dark'] .travel-timeline-card:hover) {
   background: var(--ifm-background-surface-color) !important;
   border-color: var(--ifm-color-primary-light) !important;
   box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3) !important;
 }
 
-/* 卡片标题 - 模仿主页BlogCard标题 */
+/* 卡片标题样式 */
 :global(.travel-timeline-card-title) {
   font-weight: 600 !important;
   margin-bottom: 0.5rem !important;
@@ -46,18 +53,20 @@
   color: var(--ifm-color-emphasis-900) !important;
 }
 
-/* 卡片副标题 */
-:global(.travel-timeline-card-subtitle) {
+/* 卡片副标题和文本 */
+:global(.travel-timeline-card-subtitle),
+:global(.travel-timeline-card-text) {
   color: var(--ifm-color-emphasis-600) !important;
   font-size: 0.875rem !important;
   line-height: 1.5 !important;
 }
 
-:global(html[data-theme='dark'] .travel-timeline-card-subtitle) {
+:global(html[data-theme='dark'] .travel-timeline-card-subtitle),
+:global(html[data-theme='dark'] .travel-timeline-card-text) {
   color: var(--ifm-color-emphasis-700) !important;
 }
 
-/* 时间标签 - 类似主页项目状态标签 */
+/* 时间标签样式 */
 :global(.travel-timeline-title) {
   background: var(--ifm-color-primary) !important;
   color: white !important;
@@ -94,6 +103,7 @@
   background: var(--ifm-color-primary) !important;
   border: 3px solid var(--ifm-background-color) !important;
   box-shadow: 0 0 0 2px var(--ifm-color-primary-lighter) !important;
+  border-radius: 50% !important;
 }
 
 /* 时间线整体样式 */
@@ -101,118 +111,15 @@
   filter: none !important;
 }
 
-/* 响应式优化 */
-@media (max-width: 768px) {
-  :global(.timeline-card-content) {
-    padding: 1rem !important;
-  }
-  
-  :global(.travel-timeline-card-title) {
-    font-size: 1rem !important;
-  }
-}
-
-/* Timeline 组件自定义样式 */
-
-/* 卡片整体样式 */
-:global(.travel-timeline-card) {
-  border-radius: 16px !important;
-  border: 1px solid var(--ifm-color-emphasis-300) !important;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.06) !important;
-  transition: all 0.2s ease-out !important;
-  background: var(--ifm-card-background-color) !important;
-  padding: 1.5rem !important;
-  position: relative !important;
-  overflow: hidden !important;
-}
-
-:global(.travel-timeline-card:hover) {
-  border-color: var(--ifm-color-primary-lighter) !important;
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05) !important;
-  transform: translateY(-2px) !important;
-  background: var(--ifm-background-surface-color) !important;
-}
-
-/* 卡片标题样式 */
-:global(.travel-timeline-card-title) {
-  font-weight: 600 !important;
-  color: var(--ifm-color-emphasis-800) !important;
-  font-size: 1.125rem !important;
-  margin-bottom: 0.5rem !important;
-}
-
-/* 卡片副标题样式 */
-:global(.travel-timeline-card-subtitle) {
-  color: var(--ifm-color-emphasis-600) !important;
-  font-size: 0.875rem !important;
-  font-weight: 500 !important;
-  margin-bottom: 0.75rem !important;
-}
-
-/* 卡片文本样式 */
-:global(.travel-timeline-card-text) {
-  color: var(--ifm-color-emphasis-700) !important;
-  font-size: 0.875rem !important;
-  line-height: 1.5 !important;
-}
-
-
-
-/* 时间轴点的样式 */
-:global(.timeline-main-wrapper .timeline-vertical-container .timeline-item .timeline-item-content::before) {
-  background: var(--ifm-color-primary) !important;
-  box-shadow: 0 0 0 4px var(--ifm-color-primary-lightest) !important;
-}
-
-/* 时间轴线的样式 */
-:global(.timeline-main-wrapper .timeline-vertical-container::before) {
-  background: linear-gradient(
-    to bottom, 
-    var(--ifm-color-primary-lighter), 
-    var(--ifm-color-primary), 
-    var(--ifm-color-primary-lighter)
-  ) !important;
-  width: 3px !important;
-}
-
-/* 暗黑模式适配 */
-:global([data-theme='dark'] .travel-timeline-card) {
-  background: var(--ifm-card-background-color) !important;
-  border-color: var(--ifm-color-emphasis-300) !important;
-  box-shadow: none !important;
-}
-
-:global([data-theme='dark'] .travel-timeline-card:hover) {
-  background: var(--ifm-background-surface-color) !important;
-  border-color: var(--ifm-color-primary-light) !important;
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3) !important;
-}
-
-:global([data-theme='dark'] .travel-timeline-card-title) {
-  color: var(--ifm-color-emphasis-900) !important;
-}
-
-:global([data-theme='dark'] .travel-timeline-card-subtitle) {
-  color: var(--ifm-color-emphasis-700) !important;
-}
-
-:global([data-theme='dark'] .travel-timeline-card-text) {
-  color: var(--ifm-color-emphasis-800) !important;
-}
-
-/* 隐藏卡片连接菱形 - 但保留时间轴点 */
+/* 隐藏卡片连接菱形 */
 :global(.timeline-card-content::after),
 :global(.timeline-card-content::before) {
   display: none !important;
 }
 
-/* 确保时间轴点显示为圆形 */
-:global(.timeline-vertical-circle) {
-  border-radius: 50% !important;
-}
-
 /* 响应式设计 */
 @media (max-width: 768px) {
+  :global(.timeline-card-content),
   :global(.travel-timeline-card) {
     padding: 1rem !important;
     margin: 0.5rem !important;
@@ -228,129 +135,21 @@
   }
 }
 
-/* Timeline 组件样式 - 遵循网站设计理念：统一·简约·现代 */
-
-/* 工具栏样式 - 与主页导航栏保持一致 */
-:global(.timeline-toolbar) {
-  background: var(--ifm-background-surface-color) !important;
-  border: 1px solid var(--ifm-color-emphasis-300) !important;
-  border-radius: 12px !important;
-  padding: 0.75rem !important;
-  margin-bottom: 2rem !important;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1) !important;
-}
-
-:global([data-theme='dark'] .timeline-toolbar) {
-  background: var(--ifm-background-surface-color) !important;
-  border-color: var(--ifm-color-emphasis-400) !important;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3) !important;
-}
-
-/* 搜索框样式 */
-:global(.timeline-toolbar input) {
-  border: 1px solid var(--ifm-color-emphasis-300) !important;
-  border-radius: 8px !important;
-  padding: 0.5rem 0.75rem !important;
-  background: var(--ifm-background-color) !important;
-  color: var(--ifm-color-emphasis-800) !important;
-  font-size: 0.875rem !important;
-  transition: all 0.2s ease !important;
-}
-
-:global(.timeline-toolbar input:focus) {
-  border-color: var(--ifm-color-primary) !important;
-  box-shadow: 0 0 0 2px var(--ifm-color-primary-lightest) !important;
-  outline: none !important;
-}
-
-/* 工具栏按钮样式 */
-:global(.timeline-toolbar button) {
-  background: var(--ifm-button-background-color) !important;
-  border: 1px solid var(--ifm-color-emphasis-300) !important;
-  border-radius: 8px !important;
-  color: var(--ifm-color-emphasis-800) !important;
-  padding: 0.5rem 0.75rem !important;
-  font-size: 0.875rem !important;
-  font-weight: 500 !important;
-  transition: all 0.2s ease !important;
-  cursor: pointer !important;
-}
-
-:global(.timeline-toolbar button:hover) {
-  background: var(--ifm-color-emphasis-200) !important;
-  border-color: var(--ifm-color-primary-lighter) !important;
-  color: var(--ifm-color-primary) !important;
-}
-
-:global(.timeline-toolbar button:active),
-:global(.timeline-toolbar button.active) {
-  background: var(--ifm-color-primary) !important;
-  border-color: var(--ifm-color-primary) !important;
-  color: white !important;
-}
-
-/* 动画效果 */
-:global(.travel-timeline-card) {
-  animation: fadeInUp 0.6s ease-out !important;
-}
-
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* 卡片悬浮效果增强 */
-:global(.travel-timeline-card::before) {
-  content: '' !important;
-  position: absolute !important;
-  top: 0 !important;
-  left: 0 !important;
-  right: 0 !important;
-  height: 3px !important;
-  background: linear-gradient(
-    90deg, 
-    var(--ifm-color-primary-lightest), 
-    var(--ifm-color-primary), 
-    var(--ifm-color-primary-lightest)
-  ) !important;
-  opacity: 0 !important;
-  transition: opacity 0.2s ease !important;
-}
-
-:global(.travel-timeline-card:hover::before) {
-  opacity: 1 !important;
-}
-
-/* 搜索高亮样式 */
-:global(.timeline-search-highlight) {
-  background: var(--ifm-color-primary-lightest) !important;
-  color: var(--ifm-color-primary-dark) !important;
-  padding: 0.125rem 0.25rem !important;
-  border-radius: 4px !important;
-  font-weight: 600 !important;
-}
-
-/* 滚动条样式优化 - 使用更具体的选择器避免样式泄露 */
+/* 滚动条样式优化 */
 :global(.react-chrono .react-chrono-timeline .react-chrono-tree::-webkit-scrollbar) {
   width: 6px !important;
 }
 
 :global(.react-chrono .react-chrono-timeline .react-chrono-tree::-webkit-scrollbar-track) {
-  background: var(--ifm-color-emphasis-200) !important;
+  background: transparent !important;
   border-radius: 3px !important;
 }
 
 :global(.react-chrono .react-chrono-timeline .react-chrono-tree::-webkit-scrollbar-thumb) {
-  background: var(--ifm-color-primary-lighter) !important;
+  background: var(--ifm-color-emphasis-400) !important;
   border-radius: 3px !important;
 }
 
 :global(.react-chrono .react-chrono-timeline .react-chrono-tree::-webkit-scrollbar-thumb:hover) {
-  background: var(--ifm-color-primary) !important;
+  background: var(--ifm-color-emphasis-600) !important;
 }
