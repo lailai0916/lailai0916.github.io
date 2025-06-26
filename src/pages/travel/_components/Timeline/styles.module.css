@@ -347,21 +347,21 @@
   font-weight: 600 !important;
 }
 
-/* 滚动条样式优化 */
-:global(.react-chrono-tree::-webkit-scrollbar) {
+/* 滚动条样式优化 - 使用更具体的选择器避免样式泄露 */
+:global(.react-chrono .react-chrono-timeline .react-chrono-tree::-webkit-scrollbar) {
   width: 6px !important;
 }
 
-:global(.react-chrono-tree::-webkit-scrollbar-track) {
+:global(.react-chrono .react-chrono-timeline .react-chrono-tree::-webkit-scrollbar-track) {
   background: var(--ifm-color-emphasis-200) !important;
   border-radius: 3px !important;
 }
 
-:global(.react-chrono-tree::-webkit-scrollbar-thumb) {
+:global(.react-chrono .react-chrono-timeline .react-chrono-tree::-webkit-scrollbar-thumb) {
   background: var(--ifm-color-primary-lighter) !important;
   border-radius: 3px !important;
 }
 
-:global(.react-chrono-tree::-webkit-scrollbar-thumb:hover) {
+:global(.react-chrono .react-chrono-timeline .react-chrono-tree::-webkit-scrollbar-thumb:hover) {
   background: var(--ifm-color-primary) !important;
 }
