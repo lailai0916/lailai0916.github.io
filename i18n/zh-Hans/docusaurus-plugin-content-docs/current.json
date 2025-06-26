@@ -3,6 +3,10 @@
     "message": "Next",
     "description": "The label for version current"
   },
+  "sidebar.docs1.category.个人": {
+    "message": "个人",
+    "description": "The label for category 个人 in sidebar docs1"
+  },
   "sidebar.docs1.category.比赛相关": {
     "message": "比赛相关",
     "description": "The label for category 比赛相关 in sidebar docs1"
@@ -22,10 +26,6 @@
   "sidebar.docs1.category.算法基础": {
     "message": "算法基础",
     "description": "The label for category 算法基础 in sidebar docs1"
-  },
-  "sidebar.docs1.category.排序": {
-    "message": "排序",
-    "description": "The label for category 排序 in sidebar docs1"
   },
   "sidebar.docs1.category.搜索": {
     "message": "搜索",
@@ -79,10 +79,6 @@
     "message": "计算几何",
     "description": "The label for category 计算几何 in sidebar docs1"
   },
-  "sidebar.docs1.category.个人": {
-    "message": "个人",
-    "description": "The label for category 个人 in sidebar docs1"
-  },
   "sidebar.docs2.category.高中数学": {
     "message": "高中数学",
     "description": "The label for category 高中数学 in sidebar docs2"
@@ -127,10 +123,6 @@
     "message": "初等数论",
     "description": "The label for category 初等数论 in sidebar docs2"
   },
-  "sidebar.docs2.category.思考": {
-    "message": "思考",
-    "description": "The label for category 思考 in sidebar docs2"
-  },
   "sidebar.docs2.category.英语语法": {
     "message": "英语语法",
     "description": "The label for category 英语语法 in sidebar docs2"
@@ -158,10 +150,6 @@
   "sidebar.docs3.category.工具": {
     "message": "工具",
     "description": "The label for category 工具 in sidebar docs3"
-  },
-  "sidebar.docs3.category.资料": {
-    "message": "资料",
-    "description": "The label for category 资料 in sidebar docs3"
   },
   "sidebar.docs3.category.终端": {
     "message": "终端",
