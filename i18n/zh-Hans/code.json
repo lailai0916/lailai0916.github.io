@@ -480,5 +480,11 @@
   "theme.tags.tagsPageTitle": {
     "message": "标签",
     "description": "The title of the tag list page"
+  },
+  "About": {
+    "message": "关于"
+  },
+  "Blog": {
+    "message": "博客"
   }
 }

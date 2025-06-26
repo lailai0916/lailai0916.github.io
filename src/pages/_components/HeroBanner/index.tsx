@@ -3,6 +3,7 @@ import Link from '@docusaurus/Link';
 import Heading from '@theme/Heading';
 import { Icon } from '@iconify/react';
 import styles from './styles.module.css';
+import Translate, {translate} from '@docusaurus/Translate';
 
 export default function HeroBanner() {
   return (
@@ -28,13 +29,13 @@ export default function HeroBanner() {
           <Link to="about" className={styles.ctaCard}>
             <div className={styles.ctaCardContent}>
               <Icon icon="lucide:user-circle" width={24} height={24} className={styles.ctaCardIcon} />
-              关于
+              <Translate>About</Translate>
             </div>
           </Link>
           <Link to="blog" className={styles.ctaCard}>
             <div className={styles.ctaCardContent}>
               <Icon icon="lucide:feather" width={24} height={24} className={styles.ctaCardIcon} />
-              博客
+              <Translate>Blog</Translate>
             </div>
           </Link>
         </div>
