@@ -98,11 +98,11 @@ Menu Bar
 ```bash
 Notification Center
 ├── Line 1
-│   └── Calendar Date 1x1, Calendar Month 1x1
+│   └── Calendar Date 2×2, Calendar Month 2×2
 ├── Line 2
-│   └── Weather Forecast 1x1, Shadowrocket Widget 1x1
+│   └── Weather Forecast 2×2, Shadowrocket Widget 2×2
 ├── Line 3
-│   └── Batteries Status 1x2
+│   └── Batteries Status 4×2
 └── Line 4 & 5
-    └── Screen Time Daily Activity 2x2
+    └── Screen Time Daily Activity 4×4
 ```
