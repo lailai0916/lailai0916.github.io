@@ -89,6 +89,11 @@ const config: Config = {
 
   themeConfig: {
     image: 'img/logo.svg',
+    algolia: {
+      appId: '5RCTMT18J0',
+      apiKey: '14ba8b9ca7ed34dbbc3852d690b15473',
+      indexName: 'lailai',
+    },
     navbar: {
       hideOnScroll: true,
       title: 'lailai\'s Home',
@@ -103,7 +108,7 @@ const config: Config = {
         { to: 'blog', label: '博客', position: 'left' },
         {
           label: '更多',
-          position: 'left',
+          position: 'right',
           items: [
             { label: '关于', to: 'about' },
             { label: '旅行', to: 'travel' },
@@ -196,26 +201,6 @@ const config: Config = {
     // ... Your other themes.
     '@docusaurus/theme-mermaid',
     '@docusaurus/theme-live-codeblock',
-    [
-      // https://github.com/easyops-cn/docusaurus-search-local
-      require.resolve("@easyops-cn/docusaurus-search-local"),
-      ({
-        // ... Your options.
-        // `hashed` is recommended as long-term-cache of index file is possible.
-        hashed: true,
-        // For Docs using Chinese, The `language` is recommended to set to:
-        // ```
-        // language: ["en", "zh"],
-        // language:  "zh",
-        // ```
-
-        language: ["en", "zh"],
-        indexDocs: true, // 是否对docs进行索引
-        indexBlog: true, // 是否对blog进行索引
-        indexPages: true, // 是否对pages进行索引
-        docsRouteBasePath: ["/docs","/linux","/services"],
-      }),
-    ],
   ],
 
   plugins: [
