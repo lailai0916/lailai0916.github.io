@@ -53,7 +53,7 @@ const config: Config = {
           blogTitle: 'Blog',
           blogDescription: 'lailai\'s Blog',
           postsPerPage: 'ALL',
-          blogSidebarTitle: 'Article List',
+          blogSidebarTitle: 'Post List',
           blogSidebarCount: 'ALL',
           feedOptions: {
             type: ['rss', 'atom'],
