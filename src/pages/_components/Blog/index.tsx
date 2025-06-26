@@ -178,7 +178,13 @@ export default function Blog() {
       <div className="max-w-7xl mx-auto flex flex-col lg:flex-row px-5">
         <div className="max-w-3xl lg:max-w-7xl gap-5 flex flex-col lg:flex-row lg:px-5">
           <div className="w-full lg:w-6/12 max-w-3xl flex flex-col items-start justify-start lg:ps-5 lg:pe-10">
-            <h2 className="font-bold text-4xl text-gray-900 dark:text-neutral-100 leading-tight mb-4">
+            <h2 className="font-bold text-4xl text-gray-900 dark:text-neutral-100 leading-tight mb-4 flex items-center gap-3">
+              <Icon 
+                icon="lucide:graduation-cap" 
+                width={40} 
+                height={40} 
+                style={{ color: 'var(--ifm-color-primary)' }}
+              />
               持续学习，拥抱未来
             </h2>
             <Para>
