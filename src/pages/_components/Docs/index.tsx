@@ -41,7 +41,7 @@ export default function FeaturesContainer() {
   const secondRow = Features.slice(3);
 
   return (
-    <div style={{ padding: '4rem 0', width: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+    <div className="py-16 w-full flex flex-col items-center">
       <div className="container text--center">
         <div className="row margin-top--lg margin-bottom--lg">
           {firstRow.map((feature, idx) => (

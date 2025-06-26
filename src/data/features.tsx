@@ -10,7 +10,7 @@ export type FeatureItem = {
     width: number;
     height: number;
   };
-  text: React.JSX.Element;
+  text: React.ReactNode;
 };
 
 export const FEATURES: FeatureItem[] = [

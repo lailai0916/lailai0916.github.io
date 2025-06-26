@@ -63,9 +63,9 @@ function ExplorationCard({ name, icon, description, progress, skills }: {
         </header>
         <footer className="pt-2">
           <div className="flex flex-wrap gap-2">
-            {skills.map((skill, index) => (
+            {skills.map((skill) => (
               <span
-                key={index}
+                key={skill}
                 className="inline-flex items-center px-2 py-1 rounded-md text-xs font-medium bg-gray-100 dark:bg-neutral-800 text-gray-700 dark:text-neutral-300"
               >
                 {skill}

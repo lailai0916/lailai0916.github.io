@@ -81,33 +81,13 @@ function ViewMoreButton({ className = "" }: { className?: string }) {
         style={{ textDecoration: 'none', color: 'inherit' }}
       >
         <div 
-          className="flex items-center justify-center gap-2 transition-all duration-200 cursor-pointer hover:-translate-y-0.5 hover:shadow-md hover:border-[var(--ifm-color-primary)]"
-          style={{
-            background: 'var(--ifm-card-background-color)',
-            border: '2px solid var(--ifm-color-emphasis-200)',
-            borderRadius: '12px',
-            padding: '0.85rem 1.7rem',
-            fontSize: '1rem',
-            fontWeight: 'normal',
-            color: 'var(--ifm-font-color-base)',
-            minWidth: '125px',
-            whiteSpace: 'nowrap',
-            lineHeight: '1.2',
-          }}
+          className="flex items-center justify-center gap-2 transition-all duration-200 cursor-pointer hover:-translate-y-0.5 hover:shadow-md hover:border-[var(--ifm-color-primary)] bg-[var(--ifm-card-background-color)] border-2 border-[var(--ifm-color-emphasis-200)] rounded-xl px-7 py-3 text-base font-normal text-[var(--ifm-font-color-base)] min-w-[125px] whitespace-nowrap leading-tight"
         >
           <Icon 
             icon="lucide:feather" 
             width={24} 
             height={24} 
-            style={{ 
-              color: 'var(--ifm-color-primary)',
-              flexShrink: 0,
-              display: 'inline-flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              verticalAlign: 'middle',
-              lineHeight: 1
-            }}
+            className="text-[var(--ifm-color-primary)] flex-shrink-0"
           />
           查看更多文章
         </div>
@@ -122,10 +102,7 @@ export default function Blog() {
 
   return (
     <Section background="alt">
-      <div 
-        className="max-w-7xl mx-auto flex flex-col lg:flex-row px-5"
-        style={{ padding: '4rem 0', width: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center' }}
-      >
+      <div className="max-w-7xl mx-auto flex flex-col lg:flex-row px-5 py-16 w-full items-center">
         <div className="max-w-3xl lg:max-w-7xl gap-5 flex flex-col lg:flex-row lg:px-5">
           <div className="w-full lg:w-6/12 max-w-3xl flex flex-col items-start justify-start lg:ps-5 lg:pe-10">
             <h2 className="font-bold text-4xl text-gray-900 dark:text-neutral-100 leading-tight mb-8 flex items-center gap-3">
@@ -133,7 +110,7 @@ export default function Blog() {
                 icon="lucide:graduation-cap" 
                 width={40} 
                 height={40} 
-                style={{ color: 'var(--ifm-color-primary)' }}
+                className="text-[var(--ifm-color-primary)]"
               />
               持续学习，拥抱未来
             </h2>
