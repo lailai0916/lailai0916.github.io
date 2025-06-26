@@ -27,6 +27,15 @@ function CardContent({ children, className = "" }: { children: React.ReactNode; 
   );
 }
 
+// 统一的焦点处理函数
+const handleFocus = (e: React.FocusEvent<HTMLElement>) => {
+  e.currentTarget.style.boxShadow = '0 0 0 2px var(--ifm-color-primary)';
+};
+
+const handleBlur = (e: React.FocusEvent<HTMLElement>) => {
+  e.currentTarget.style.boxShadow = 'none';
+};
+
 export default function BaseCard({ 
   children, 
   href, 
@@ -35,13 +44,6 @@ export default function BaseCard({
   isExternalLink = false,
   onClick 
 }: BaseCardProps) {
-  const handleFocus = (e: React.FocusEvent<HTMLElement>) => {
-    e.currentTarget.style.boxShadow = '0 0 0 2px var(--ifm-color-primary)';
-  };
-
-  const handleBlur = (e: React.FocusEvent<HTMLElement>) => {
-    e.currentTarget.style.boxShadow = 'none';
-  };
 
   // 如果有链接，渲染为链接
   if (href && isClickable) {

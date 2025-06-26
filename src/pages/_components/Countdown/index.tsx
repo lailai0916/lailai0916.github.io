@@ -1,7 +1,7 @@
-import React, { useEffect, useState, useRef, useCallback } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import Section from '../common/Section';
 import SectionHeader from '../common/SectionHeader';
-import { TYPOGRAPHY, LAYOUT, ANIMATIONS } from '../common/constants';
+import { TYPOGRAPHY, ANIMATIONS } from '../common/constants';
 
 // ====== 类型定义 ======
 type TimeUnit = 'Days' | 'Hours' | 'Minutes' | 'Seconds';
@@ -274,7 +274,7 @@ export default function Countdown() {
   const [isTimeUp, setIsTimeUp] = useState(false);
   const timerRef = useRef<AccurateTimer | null>(null);
 
-  const calculateTimeLeft = useCallback(() => {
+  const calculateTimeLeft = () => {
     const result = getTimeLeft();
     
     if (result.isTimeUp) {
@@ -284,7 +284,6 @@ export default function Countdown() {
     }
 
     // 优化：只有当时间真正发生变化时才更新状态
-    // 这避免了不必要的重新渲染，特别是在高精度模式下
     const { days, hours, minutes, seconds } = result;
     setTimeLeft(prevTime => {
       if (prevTime.days !== days || 
@@ -295,7 +294,7 @@ export default function Countdown() {
       }
       return prevTime; // 返回相同的引用，避免重新渲染
     });
-  }, []);
+  };
 
   useEffect(() => {
     calculateTimeLeft();
@@ -311,7 +310,7 @@ export default function Countdown() {
       timerRef.current?.stop();
       timerRef.current = null;
     };
-  }, [calculateTimeLeft]);
+  }, []);
 
   return (
     <Section background={null}>

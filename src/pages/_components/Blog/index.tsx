@@ -45,7 +45,7 @@ function BlogCard({ title, date, permalink }: { title: string; date: string; per
 
 // 博客卡片列表组件
 function BlogCardList({ posts }: { posts: ProcessedBlogPost[] }) {
-  if (posts.length === 0) {
+  if (!posts.length) {
     return (
       <div className="w-full text-center py-12">
         <p className="text-gray-500 dark:text-neutral-400 text-lg">
