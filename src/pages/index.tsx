@@ -5,8 +5,8 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 
 import TopBanner from './_components/TopBanner';
 import HeroBanner from './_components/HeroBanner';
-import FeaturesContainer from './_components/FeaturesContainer';
 
+import Docs from './_components/Docs';
 import Blog from './_components/Blog';
 import Countdown from './_components/Countdown';
 import Project from './_components/Project';
@@ -28,9 +28,9 @@ export default function Home() {
         <TopBanner />
         <HeroBanner />
         <div className={styles.section}>
-          <FeaturesContainer />
+          <Docs />
+          <Blog />
         </div>
-        <Blog />
         <Countdown />
         <Project />
         <Skill />
