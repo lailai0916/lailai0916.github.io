@@ -69,7 +69,7 @@ html[data-theme='dark'] .hero {
   margin-bottom: 12px;
 }
 
-/* 简化的卡片按钮样式 - 带图标 */
+/* 简化的卡片按钮样式 - 带图标，优化对齐 */
 .ctaCard {
   display: block;
   text-decoration: none !important;
@@ -91,14 +91,17 @@ html[data-theme='dark'] .hero {
   color: var(--ifm-font-color-base);
   min-width: 125px;
   white-space: nowrap;
+  line-height: 1.2;
 }
 
 .ctaCardIcon {
   flex-shrink: 0;
   color: var(--ifm-color-primary);
-  display: flex;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
+  vertical-align: middle;
+  line-height: 1;
 }
 
 .ctaCard:hover .ctaCardContent {
@@ -155,5 +158,6 @@ html[data-theme='dark'] .ctaCardIcon {
     font-weight: 700;
     min-width: 125px;
     gap: 0.5rem;
+    line-height: 1.2;
   }
 }
