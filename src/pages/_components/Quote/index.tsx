@@ -65,7 +65,7 @@ function QuoteCard({ quote, author, context, category }: {
 
 export default function Quote() {
   return (
-    <Section background="alt">
+    <Section background={null}>
       <div className="max-w-7xl mx-auto flex flex-col px-5">
         <SectionHeader 
           title="思想启迪"

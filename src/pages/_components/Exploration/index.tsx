@@ -83,7 +83,7 @@ function ExplorationCard({ name, icon, description, progress, skills }: {
 
 export default function Exploration() {
   return (
-    <Section background={null}>
+    <Section background="alt">
       <div className="max-w-7xl mx-auto flex flex-col px-5">
         <SectionHeader 
           title="当前探索"

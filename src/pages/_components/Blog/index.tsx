@@ -172,7 +172,7 @@ export default function Blog() {
   }, []);
 
   return (
-    <Section background={null}>
+    <Section background="alt">
       <div 
         className="max-w-7xl mx-auto flex flex-col lg:flex-row px-5"
         style={{ padding: '4rem 0', width: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center' }}
