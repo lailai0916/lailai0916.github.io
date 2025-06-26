@@ -20,7 +20,7 @@
 
 :::tip
 
-[Material for MkDocs](https://squidfunk.github.io/mkdocs-material/) 也是一个不错的选择，例如 [OI Wiki](https://oi-wiki.org) 就是基于它搭建的，界面同样简洁易用。
+[Material for MkDocs](https://squidfunk.github.io/mkdocs-material/) 和 [VitePress](https://vitepress.dev) 也是一些很好的选择，例如 [OI Wiki](https://oi-wiki.org) 就是基于 Material for MkDocs 搭建的。
 
 :::
 

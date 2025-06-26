@@ -127,9 +127,10 @@ export const resourceData: ResourceCategory[] = [
     name: '站点生成',
     icon: 'lucide:file-text',
     resources: [
+      { name: 'Docusaurus', href: 'https://docusaurus.io', description: 'Facebook文档网站工具' },
       { name: 'VitePress', href: 'https://vitepress.vuejs.org', description: 'Vue静态网站生成器' },
       { name: 'VuePress', href: 'https://vuepress.vuejs.org', description: 'Vue文档网站生成器' },
-      { name: 'Docusaurus', href: 'https://docusaurus.io', description: 'Facebook文档网站工具' },
+      { name: 'Material for MkDocs', href: 'https://squidfunk.github.io/mkdocs-material/', description: 'Python文档网站生成器' },
       { name: 'Hexo', href: 'https://hexo.io', description: '快速博客框架' },
       { name: 'WordPress', href: 'https://wordpress.org', description: '开源内容管理系统' },
     ],
