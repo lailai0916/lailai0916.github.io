@@ -56,7 +56,7 @@ function BlogCard({ title, date, permalink }: { title: string; date: string; per
 
 function Para({ children }: { children: React.ReactNode }) {
   return (
-    <p className="text-lg lg:text-xl text-gray-700 dark:text-neutral-300 leading-relaxed mb-6">
+    <p className="leading-relaxed mb-6">
       {children}
     </p>
   );
@@ -159,7 +159,7 @@ function BlogCardList({ posts }: { posts: ProcessedBlogPost[] }) {
 // 查看更多文章按钮组件
 function ViewMoreButton({ className = "" }: { className?: string }) {
   return (
-    <div className={`flex justify-start w-full ${className}`}>
+    <div className={`flex justify-start w-full mt-10 ${className}`}>
       <CTA color="secondary" icon="news" href="/blog">
         查看更多文章
       </CTA>
@@ -178,7 +178,7 @@ export default function Blog() {
       <div className="max-w-7xl mx-auto flex flex-col lg:flex-row px-5">
         <div className="max-w-3xl lg:max-w-7xl gap-5 flex flex-col lg:flex-row lg:px-5">
           <div className="w-full lg:w-6/12 max-w-3xl flex flex-col items-start justify-start lg:ps-5 lg:pe-10">
-            <h2 className="font-bold text-4xl text-gray-900 dark:text-neutral-100 leading-tight mb-4 flex items-center gap-3">
+            <h2 className="font-bold text-4xl text-gray-900 dark:text-neutral-100 leading-tight mb-8 flex items-center gap-3">
               <Icon 
                 icon="lucide:graduation-cap" 
                 width={40} 
