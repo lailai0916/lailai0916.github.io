@@ -37,7 +37,7 @@ function ProjectCard({ title, description, link, tech, status }: {
 
 export default function Project() {
   return (
-    <Section background="alt">
+    <Section>
       <div className="max-w-7xl mx-auto flex flex-col px-5">
         <SectionHeader 
           title="我的项目"

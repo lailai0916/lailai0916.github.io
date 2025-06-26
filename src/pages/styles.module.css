@@ -1,0 +1,15 @@
+/* 主要内容区域的容器 */
+.mainSections {
+  width: 100%;
+}
+
+/* 奇数位置的组件（默认背景，限制宽度） */
+.mainSections > *:nth-child(odd) {
+  background: transparent;
+}
+
+/* 偶数位置的组件（强调背景，全宽） */
+.mainSections > *:nth-child(even) {
+  background: var(--ifm-color-emphasis-100);
+  border-top: 1px solid var(--ifm-color-emphasis-200);
+} 

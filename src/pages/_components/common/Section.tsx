@@ -6,15 +6,10 @@ interface SectionProps {
 }
 
 export default function Section({ children, background = null }: SectionProps) {
-  const containerClass = `mx-auto flex flex-col w-full ${
-    background === null ? 'max-w-7xl' : ''
-  } ${
-    background === 'alt' ? 'border-t border-gray-200/30 dark:border-neutral-700/30' : ''
-  }`;
+  const containerClass = 'mx-auto flex flex-col w-full';
 
   const containerStyle = { 
     contain: 'content' as const,
-    backgroundColor: background === 'alt' ? 'var(--ifm-color-emphasis-100)' : undefined
   };
 
   return (

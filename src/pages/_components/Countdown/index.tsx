@@ -313,7 +313,7 @@ export default function Countdown() {
   }, []);
 
   return (
-    <Section background={null}>
+    <Section>
       <div className="max-w-7xl mx-auto flex flex-col px-5" role="main" aria-label="距离2026年倒计时">
         {isTimeUp ? (
           <TimeUpContent />

@@ -27,7 +27,7 @@ function DeviceCard({ name, icon }: {
 
 export default function Device() {
   return (
-    <Section background={null}>
+    <Section>
       <div className="max-w-7xl mx-auto flex flex-col px-5">
         <SectionHeader 
           title="我的设备"

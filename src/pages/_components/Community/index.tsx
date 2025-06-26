@@ -29,7 +29,7 @@ function CommunityCard({ href, label, icon }: {
 
 export default function Community() {
   return (
-    <Section background="alt">
+    <Section>
       <div className="max-w-7xl mx-auto flex flex-col px-5">
         <SectionHeader 
           title="我的社区"

@@ -17,6 +17,8 @@ import Quote from './_components/Quote';
 import Community from './_components/Community';
 import Device from './_components/Device';
 
+import styles from './styles.module.css';
+
 export default function Home() {
   const {siteConfig} = useDocusaurusContext();
   const {title, tagline} = siteConfig;
@@ -26,15 +28,17 @@ export default function Home() {
       <main>
         <TopBanner />
         <HeroBanner />
-        <Docs />
-        <Blog />
-        <Countdown />
-        <Project />
-        <Skill />
-        <Exploration />
-        <Quote />
-        <Community />
-        <Device />
+        <div className={styles.mainSections}>
+          <Docs />
+          <Blog />
+          <Countdown />
+          <Project />
+          <Skill />
+          <Exploration />
+          <Quote />
+          <Community />
+          <Device />
+        </div>
       </main>
     </Layout>
   );

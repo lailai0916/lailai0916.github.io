@@ -30,7 +30,7 @@ function SkillCard({ name, icon }: { name: string; icon: string }) {
 
 export default function Skill() {
   return (
-    <Section background={null}>
+    <Section>
       <div className="max-w-7xl mx-auto flex flex-col px-5">
         <SectionHeader 
           title="我的技能"
