@@ -1,5 +1,5 @@
 import React from 'react';
-import { BaseCard, Section, SectionHeader, StatusBadge, GridLayout, GridConfigs } from '../common';
+import { BaseCard, Section, SectionHeader, StatusBadge, GridLayout, GridConfigs, TEXT_COLORS } from '../common';
 
 const favoriteQuotes = [
   {
@@ -43,17 +43,17 @@ function QuoteCard({ quote, author, context, category }: {
             >
               <path d="M10 8C6.691 8 4 10.691 4 14v10c0 3.309 2.691 6 6 6h6v-8h-6v-6h6V8h-6zM26 8c-3.309 0-6 2.691-6 6v10c0 3.309 2.691 6 6 6h6v-8h-6v-6h6V8h-6z"/>
             </svg>
-            <p className="relative text-lg lg:text-xl font-medium text-gray-900 dark:text-neutral-100 leading-relaxed pl-6">
+            <p className={`relative text-lg lg:text-xl font-medium ${TEXT_COLORS.PRIMARY} leading-relaxed pl-6`}>
               {quote}
             </p>
           </blockquote>
         </header>
         <footer className="space-y-2 pt-4 border-t border-gray-100 dark:border-neutral-800">
           <div className="text-right">
-            <p className="font-semibold text-gray-900 dark:text-neutral-100">
+            <p className={`font-semibold ${TEXT_COLORS.PRIMARY}`}>
               — {author}
             </p>
-            <p className="text-sm text-gray-600 dark:text-neutral-400">
+            <p className={`text-sm ${TEXT_COLORS.SECONDARY}`}>
               {context}
             </p>
           </div>
@@ -73,8 +73,8 @@ export default function Quote() {
         />
         
         <GridLayout columns={GridConfigs.quotes}>
-          {favoriteQuotes.map((item, idx) => (
-            <div key={idx} className="h-full">
+          {favoriteQuotes.map((item) => (
+            <div key={`${item.author}-${item.quote.slice(0, 10)}`} className="h-full">
               <QuoteCard {...item} />
             </div>
           ))}

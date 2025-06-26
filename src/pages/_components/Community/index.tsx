@@ -1,7 +1,7 @@
 import React from 'react';
 import { Icon } from '@iconify/react';
 import { COMMUNITY_LINKS } from '../../../data/community';
-import { BaseCard, Section, SectionHeader, GridLayout, GridConfigs, IconWrapper } from '../common';
+import { BaseCard, Section, SectionHeader, GridLayout, GridConfigs, IconWrapper, TEXT_COLORS } from '../common';
 
 function CommunityCard({ href, label, icon }: {
   href: string;
@@ -19,7 +19,7 @@ function CommunityCard({ href, label, icon }: {
             className="text-black dark:text-white group-hover:text-[var(--ifm-color-primary)] transition-colors duration-200"
           />
         </IconWrapper>
-        <h3 className="font-medium text-sm text-gray-900 dark:text-neutral-100 text-center leading-snug">
+        <h3 className={`font-medium text-sm ${TEXT_COLORS.PRIMARY} text-center leading-snug`}>
           {label}
         </h3>
       </div>

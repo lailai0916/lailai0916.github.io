@@ -1,6 +1,6 @@
 import React from 'react';
 import { DEVICES } from '../../../data/device';
-import { BaseCard, Section, SectionHeader, GridLayout, GridConfigs, IconWrapper } from '../common';
+import { BaseCard, Section, SectionHeader, GridLayout, GridConfigs, IconWrapper, TEXT_COLORS } from '../common';
 
 function DeviceCard({ name, icon }: {
   name: string;
@@ -17,7 +17,7 @@ function DeviceCard({ name, icon }: {
             className="w-10 h-10 object-contain filter brightness-0 dark:invert transition-transform duration-200 select-none"
           />
         </IconWrapper>
-        <h3 className="font-medium text-base text-gray-900 dark:text-neutral-100 text-center leading-snug">
+        <h3 className={`font-medium text-base ${TEXT_COLORS.PRIMARY} text-center leading-snug`}>
           {name}
         </h3>
       </div>

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Icon } from '@iconify/react';
 import { projects } from '../../../data/projects';
-import { BaseCard, Section, SectionHeader, StatusBadge, GridLayout, GridConfigs } from '../common';
+import { BaseCard, Section, SectionHeader, StatusBadge, GridLayout, GridConfigs, TEXT_COLORS } from '../common';
 
 function ProjectCard({ title, description, link, tech, status }: { 
   title: string; 
@@ -15,17 +15,17 @@ function ProjectCard({ title, description, link, tech, status }: {
       <div className="flex-1 space-y-4">
         <header className="space-y-3">
           <div className="flex items-center justify-between">
-            <h3 className="font-semibold text-xl text-gray-900 dark:text-neutral-100 leading-snug group-hover:text-[var(--ifm-color-primary)] transition-colors duration-200">
+            <h3 className={`font-semibold text-xl ${TEXT_COLORS.PRIMARY} leading-snug group-hover:text-[var(--ifm-color-primary)] transition-colors duration-200`}>
               {title}
             </h3>
             <StatusBadge status={status} />
           </div>
-          <p className="text-gray-600 dark:text-neutral-300 leading-relaxed">
+          <p className={`${TEXT_COLORS.SECONDARY} leading-relaxed`}>
             {description}
           </p>
         </header>
         <footer className="pt-2">
-          <div className="flex items-center gap-2 text-sm text-gray-500 dark:text-neutral-400">
+                      <div className={`flex items-center gap-2 text-sm ${TEXT_COLORS.MUTED}`}>
             <Icon icon="lucide:layers" />
             <span>{tech}</span>
           </div>

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Icon } from '@iconify/react';
-import { BaseCard, Section, SectionHeader, StatusBadge, IconWrapper, GridLayout, GridConfigs } from '../common';
+import { BaseCard, Section, SectionHeader, StatusBadge, IconWrapper, GridLayout, GridConfigs, TEXT_COLORS } from '../common';
 
 const exploringItems = [
   { 
@@ -50,14 +50,14 @@ function ExplorationCard({ name, icon, description, progress, skills }: {
                   <Icon icon={icon} width={32} height={32} className="text-gray-700 dark:text-neutral-300" />
                 </IconWrapper>
               <div>
-                <h3 className="font-semibold text-xl text-gray-900 dark:text-neutral-100 leading-snug">
+                <h3 className={`font-semibold text-xl ${TEXT_COLORS.PRIMARY} leading-snug`}>
                   {name}
                 </h3>
               </div>
             </div>
             <StatusBadge status={progress} />
           </div>
-          <p className="text-gray-600 dark:text-neutral-300 leading-relaxed">
+          <p className={`${TEXT_COLORS.SECONDARY} leading-relaxed`}>
             {description}
           </p>
         </header>

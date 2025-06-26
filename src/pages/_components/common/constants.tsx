@@ -7,6 +7,13 @@ export const TYPOGRAPHY = {
   CIRCLE_UNIT: 'absolute text-[0.5rem] font-light -translate-x-1/2 -translate-y-[10px] tracking-[0.1em] uppercase select-none'
 } as const;
 
+// 通用的文本颜色样式
+export const TEXT_COLORS = {
+  PRIMARY: 'text-gray-900 dark:text-neutral-100',
+  SECONDARY: 'text-gray-600 dark:text-neutral-400',
+  MUTED: 'text-gray-500 dark:text-neutral-400'
+} as const;
+
 // 统一的颜色类名常量
 export const COLORS = {
   // 状态标签颜色

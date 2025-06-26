@@ -1,4 +1,5 @@
 import React from 'react';
+import { TEXT_COLORS } from './constants';
 
 interface SectionHeaderProps {
   title: string;
@@ -16,7 +17,7 @@ export default function SectionHeader({
   
   return (
     <div className={`${alignClass} mb-12`}>
-      <h2 className="font-bold text-4xl text-gray-900 dark:text-neutral-100 leading-tight mb-4">
+      <h2 className={`font-bold text-4xl ${TEXT_COLORS.PRIMARY} leading-tight mb-4`}>
         {title}
       </h2>
       <p className={`text-lg lg:text-xl text-gray-700 dark:text-neutral-300 leading-relaxed ${maxWidthClass}`}>

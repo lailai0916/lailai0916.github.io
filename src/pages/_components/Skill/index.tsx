@@ -1,6 +1,6 @@
 import React from 'react';
 import { techStack } from '../../../data/skills';
-import { BaseCard, Section, SectionHeader, GridLayout, GridConfigs, IconWrapper } from '../common';
+import { BaseCard, Section, SectionHeader, GridLayout, GridConfigs, IconWrapper, TEXT_COLORS } from '../common';
 
 function SkillCard({ name, icon }: { name: string; icon: string }) {
   return (
@@ -20,7 +20,7 @@ function SkillCard({ name, icon }: { name: string; icon: string }) {
             />
           </IconWrapper>
         </div>
-        <h3 className="font-semibold text-lg text-gray-900 dark:text-neutral-100 leading-snug">
+        <h3 className={`font-semibold text-lg ${TEXT_COLORS.PRIMARY} leading-snug`}>
           {name}
         </h3>
       </div>
