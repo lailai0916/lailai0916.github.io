@@ -1,6 +1,6 @@
 # iClock
 
-一件基于 [Desmos](https://www.desmos.com/) 的数学艺术作品。
+一件使用 [Desmos](https://www.desmos.com/) 构建的数学艺术作品。
 
 ## 参考资料
 

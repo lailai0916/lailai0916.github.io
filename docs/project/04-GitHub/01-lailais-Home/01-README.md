@@ -4,11 +4,11 @@
 
 lailai 的个人网站，分享技术笔记、项目经验和学习心得。✨
 
-本项目基于 [Docusaurus](https://docusaurus.io) 构建，源代码托管于 [GitHub](https://github.com/lailai0916/lailai0916.github.io)。
+本网站使用 [Docusaurus](https://docusaurus.io) 构建，源代码托管于 [GitHub](https://github.com/lailai0916/lailai0916.github.io)。
 
 ## 特性
 
-- 🦖 **Docusaurus 构建**：基于 [Docusaurus](https://docusaurus.io)，专为文档与博客设计，功能强大，运行稳定。
+- 🦖 **Docusaurus 构建**：使用 [Docusaurus](https://docusaurus.io) 构建，专为文档与博客设计，功能强大，运行稳定。
 - ✍️ **Markdown 与 KaTeX**：内建 [Markdown](https://daringfireball.net/projects/markdown/) 语法与 [KaTeX](https://katex.org) 数学公式，适用于技术写作与学术笔记。
 - 📚 **文档版本管理**：具备多版本文档维护能力，适合长期迭代的项目。
 - 🌐 **多语言支持**：内建国际化功能，适配多语言内容发布。
@@ -65,4 +65,4 @@ Home
 
 ## 许可证
 
-This website's content is licensed under the [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/?ref=chooser-v1).
+本网站内容遵循 [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/?ref=chooser-v1)。
