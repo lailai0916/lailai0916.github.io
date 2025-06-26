@@ -1,6 +1,6 @@
 {
   "title": {
-    "message": "博客",
+    "message": "Blog",
     "description": "The title for the blog used in SEO"
   },
   "description": {
@@ -8,7 +8,7 @@
     "description": "The description for the blog used in SEO"
   },
   "sidebar.title": {
-    "message": "文章列表",
+    "message": "Article List",
     "description": "The label for the left sidebar"
   }
 }

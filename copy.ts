@@ -8,7 +8,7 @@ import rehypeKatex from 'rehype-katex';
 
 const config: Config = {
   title: 'lailai\'s Home',
-  tagline: 'lailai\'s personal website, sharing technical notes, project experiences, and learning insights. ✨',
+  tagline: 'lailai 的个人网站，分享技术笔记、项目经验和学习心得。✨',
   favicon: 'img/favicon.ico',
 
   future: {
@@ -20,7 +20,7 @@ const config: Config = {
   baseUrl: '/',
 
   organizationName: 'lailai0916',
-  projectName: 'lailai.github.io',
+  projectName: 'lailai\'s Home',
 
   trailingSlash: false,
   onBrokenLinks: 'warn',
@@ -50,10 +50,10 @@ const config: Config = {
         },
         blog: {
           showReadingTime: true,
-          blogTitle: 'Blog',
+          blogTitle: '博客',
           blogDescription: 'lailai\'s Blog',
           postsPerPage: 'ALL',
-          blogSidebarTitle: 'Article List',
+          blogSidebarTitle: '文章列表',
           blogSidebarCount: 'ALL',
           feedOptions: {
             type: ['rss', 'atom'],
@@ -103,19 +103,19 @@ const config: Config = {
         src: 'img/logo.svg',
       },
       items: [
-        { type: 'docSidebar', sidebarId: 'docs1', position: 'left', label: 'Contest' },
-        { type: 'docSidebar', sidebarId: 'docs2', position: 'left', label: 'Note' },
-        { type: 'docSidebar', sidebarId: 'docs3', position: 'left', label: 'Project' },
-        { to: 'blog', label: 'Blog', position: 'left' },
+        { type: 'docSidebar', sidebarId: 'docs1', position: 'left', label: '竞赛' },
+        { type: 'docSidebar', sidebarId: 'docs2', position: 'left', label: '笔记' },
+        { type: 'docSidebar', sidebarId: 'docs3', position: 'left', label: '项目' },
+        { to: 'blog', label: '博客', position: 'left' },
         {
-          label: 'More',
+          label: '更多',
           position: 'right',
           items: [
-            { label: 'About', to: 'about' },
-            { label: 'Travel', to: 'travel' },
-            { label: 'Friends', to: 'friends' },
-            { label: 'Resources', to: 'resources' },
-            { label: 'Sites', to: 'sites' },
+            { label: '关于', to: 'about' },
+            { label: '旅行', to: 'travel' },
+            { label: '友链', to: 'friends' },
+            { label: '资源', to: 'resources' },
+            { label: '网站', to: 'sites' },
           ],
         },
         { type: 'localeDropdown', position: 'right' },
@@ -130,16 +130,16 @@ const config: Config = {
     footer: {
       links: [
         {
-          title: 'Docs',
+          title: '文档',
           items: [
-            { label: 'Contest', to: 'docs/contest' },
-            { label: 'Note', to: 'docs/note' },
-            { label: 'Project', to: 'docs/project' },
-            { label: 'Blog', to: 'blog' },
+            { label: '竞赛', to: 'docs/contest' },
+            { label: '笔记', to: 'docs/note' },
+            { label: '项目', to: 'docs/project' },
+            { label: '博客', to: 'blog' },
           ],
         },
         {
-          title: 'Community',
+          title: '社区',
           items: [
             { label: 'X (Twitter)', href: 'https://x.com/lailai0x394' },
             { label: 'Telegram', href: 'https://t.me/lailai0916' },
@@ -148,12 +148,12 @@ const config: Config = {
           ],
         },
         {
-          title: 'More',
+          title: '更多',
           items: [
-            { label: 'About', to: 'about' },
-            { label: 'Friends', to: 'friends' },
-            { label: 'Settings', to: 'settings' },
-            { label: 'Repository', href: 'https://github.com/lailai0916/lailai0916.github.io' },
+            { label: '关于', to: 'about' },
+            { label: '友链', to: 'friends' },
+            { label: '设置', to: 'settings' },
+            { label: '仓库', href: 'https://github.com/lailai0916/lailai0916.github.io' },
           ],
         },
       ],
@@ -247,7 +247,7 @@ const config: Config = {
           {
             tagName: 'link',
             rel: 'icon',
-            href: 'img/logo.svg',
+            href: '/img/logo.svg',
           },
           {
             tagName: 'link',
