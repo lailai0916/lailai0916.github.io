@@ -25,16 +25,16 @@ export default function HeroBanner() {
           />
         </Heading>
         <div className={styles.indexCtas}>
-          <Link to="blog" className={styles.ctaCard}>
-            <div className={styles.ctaCardContent}>
-              <Icon icon="lucide:book-open" width={24} height={24} className={styles.ctaCardIcon} />
-              博客
-            </div>
-          </Link>
           <Link to="about" className={styles.ctaCard}>
             <div className={styles.ctaCardContent}>
-              <Icon icon="lucide:user" width={24} height={24} className={styles.ctaCardIcon} />
+              <Icon icon="lucide:user-circle" width={24} height={24} className={styles.ctaCardIcon} />
               关于
+            </div>
+          </Link>
+          <Link to="blog" className={styles.ctaCard}>
+            <div className={styles.ctaCardContent}>
+              <Icon icon="lucide:feather" width={24} height={24} className={styles.ctaCardIcon} />
+              博客
             </div>
           </Link>
         </div>

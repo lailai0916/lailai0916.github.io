@@ -48,7 +48,7 @@ export const FEATURES: FeatureItem[] = [
   {
     title: '项目',
     url: 'docs/project',
-    icon: 'lucide:folder-code',
+    icon: 'lucide:code-2',
     image: {
       src: '/img/undraw_version_control.svg',
       width: 1038.23,
