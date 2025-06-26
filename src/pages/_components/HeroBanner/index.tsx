@@ -1,6 +1,7 @@
 import React from 'react';
 import Link from '@docusaurus/Link';
 import Heading from '@theme/Heading';
+import { Icon } from '@iconify/react';
 import styles from './styles.module.css';
 
 export default function HeroBanner() {
@@ -26,11 +27,13 @@ export default function HeroBanner() {
         <div className={styles.indexCtas}>
           <Link to="blog" className={styles.ctaCard}>
             <div className={styles.ctaCardContent}>
+              <Icon icon="lucide:book-open" width={24} height={24} className={styles.ctaCardIcon} />
               博客
             </div>
           </Link>
           <Link to="about" className={styles.ctaCard}>
             <div className={styles.ctaCardContent}>
+              <Icon icon="lucide:user" width={24} height={24} className={styles.ctaCardIcon} />
               关于
             </div>
           </Link>

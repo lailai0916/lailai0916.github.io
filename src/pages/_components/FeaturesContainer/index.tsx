@@ -2,6 +2,7 @@ import React from 'react';
 import clsx from 'clsx';
 import Link from '@docusaurus/Link';
 import Heading from '@theme/Heading';
+import { Icon } from '@iconify/react';
 import Features from '@site/src/data/features';
 import styles from './styles.module.css';
 import {useBaseUrlUtils} from '@docusaurus/useBaseUrl';
@@ -25,7 +26,8 @@ function Feature({
         src={withBaseUrl(feature.image.src)}
       />
       <Heading as="h3" className={clsx(styles.featureHeading)}>
-        <Link to={feature.url} style={{ color: 'inherit' }}>
+        <Link to={feature.url} style={{ color: 'inherit' }} className={styles.featureLink}>
+          <Icon icon={feature.icon} width={24} height={24} className={styles.featureIcon} />
           {feature.title}
         </Link>
       </Heading>

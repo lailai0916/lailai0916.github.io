@@ -1,18 +1,22 @@
+import React from 'react';
+
 export type FeatureItem = {
   title: string;
   url: string;
+  icon: string;
   image: {
     src: string;
     width: number;
     height: number;
   };
-  text: JSX.Element;
+  text: React.JSX.Element;
 };
 
 export const FEATURES: FeatureItem[] = [
   {
     title: '竞赛',
     url: 'docs/contest',
+    icon: 'lucide:trophy',
     image: {
       src: '/img/undraw_typewriter.svg',
       width: 1009.54,
@@ -28,6 +32,7 @@ export const FEATURES: FeatureItem[] = [
   {
     title: '笔记',
     url: 'docs/note',
+    icon: 'lucide:notebook-pen',
     image: {
       src: '/img/undraw_react.svg',
       width: 1108,
@@ -43,6 +48,7 @@ export const FEATURES: FeatureItem[] = [
   {
     title: '项目',
     url: 'docs/project',
+    icon: 'lucide:folder-code',
     image: {
       src: '/img/undraw_version_control.svg',
       width: 1038.23,
