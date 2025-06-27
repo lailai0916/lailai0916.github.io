@@ -173,10 +173,10 @@ const config: Config = {
     colorMode: {
       respectPrefersColorScheme: true,
     },
-    announcementBar: {
-      id: 'announcement',
-      content: '🎊 Hello, 2025! 🎊',
-    },
+    // announcementBar: {
+    //   id: 'announcement',
+    //   content: '🎊 Hello, 2025! 🎊',
+    // },
     tableOfContents: {
       minHeadingLevel: 2,
       maxHeadingLevel: 4,
