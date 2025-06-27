@@ -2,33 +2,38 @@ import {themes as prismThemes} from 'prism-react-renderer';
 import type {Config} from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
 
-import type {Options as IdealImageOptions} from '@docusaurus/plugin-ideal-image';
-import remarkMath from 'remark-math';
-import rehypeKatex from 'rehype-katex';
+// This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
 const config: Config = {
-  title: 'lailai\'s Home',
-  tagline: 'lailai\'s personal website, sharing technical notes, project experiences, and learning insights. ✨',
+  title: 'My Site',
+  tagline: 'Dinosaurs are cool',
   favicon: 'img/favicon.ico',
 
+  // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
   future: {
-    v4: true,
-    experimental_faster: true,
+    v4: true, // Improve compatibility with the upcoming Docusaurus v4
   },
 
-  url: 'https://lailai0916.github.io',
+  // Set the production url of your site here
+  url: 'https://your-docusaurus-site.example.com',
+  // Set the /<baseUrl>/ pathname under which your site is served
+  // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: '/',
 
-  organizationName: 'lailai0916',
-  projectName: 'lailai.github.io',
+  // GitHub pages deployment config.
+  // If you aren't using GitHub pages, you don't need these.
+  organizationName: 'facebook', // Usually your GitHub org/user name.
+  projectName: 'docusaurus', // Usually your repo name.
 
-  trailingSlash: false,
-  onBrokenLinks: 'warn',
+  onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
 
+  // Even if you don't use internationalization, you can use this field to set
+  // useful metadata like html lang. For example, if your site is Chinese, you
+  // may want to replace "en" with "zh-Hans".
   i18n: {
     defaultLocale: 'en',
-    locales: ['en', 'zh-Hans'],
+    locales: ['en'],
   },
 
   presets: [
@@ -37,49 +42,25 @@ const config: Config = {
       {
         docs: {
           sidebarPath: './sidebars.ts',
-
-          // showLastUpdateAuthor: true,
-          showLastUpdateTime: true,
-          // editUrl: 'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
-
-          remarkPlugins: [
-            remarkMath,
-            [require('@docusaurus/remark-plugin-npm2yarn'), {sync: true}],
-          ],
-          rehypePlugins: [rehypeKatex],
+          // Please change this to your repo.
+          // Remove this to remove the "edit this page" links.
+          editUrl:
+            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
         },
         blog: {
           showReadingTime: true,
-          blogTitle: 'Blog',
-          blogDescription: 'lailai\'s Blog',
-          postsPerPage: 'ALL',
-          blogSidebarTitle: 'Post List',
-          blogSidebarCount: 'ALL',
           feedOptions: {
             type: ['rss', 'atom'],
             xslt: true,
           },
-
-          // showLastUpdateAuthor: true,
-          showLastUpdateTime: true,
-          // editUrl: 'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
-
+          // Please change this to your repo.
+          // Remove this to remove the "edit this page" links.
+          editUrl:
+            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+          // Useful options to enforce blogging best practices
           onInlineTags: 'warn',
           onInlineAuthors: 'warn',
           onUntruncatedBlogPosts: 'warn',
-
-          remarkPlugins: [
-            remarkMath,
-            [require('@docusaurus/remark-plugin-npm2yarn'), {sync: true}],
-          ],
-          rehypePlugins: [rehypeKatex],
-        },
-        pages: {
-          remarkPlugins: [
-            remarkMath,
-            [require('@docusaurus/remark-plugin-npm2yarn'), {sync: true}],
-          ],
-          rehypePlugins: [rehypeKatex],
         },
         theme: {
           customCss: './src/css/custom.css',
@@ -89,180 +70,79 @@ const config: Config = {
   ],
 
   themeConfig: {
-    image: 'img/logo.svg',
-    algolia: {
-      appId: '5RCTMT18J0',
-      apiKey: '14ba8b9ca7ed34dbbc3852d690b15473',
-      indexName: 'lailai',
-    },
+    // Replace with your project's social card
+    image: 'img/docusaurus-social-card.jpg',
     navbar: {
-      hideOnScroll: true,
-      title: 'lailai\'s Home',
+      title: 'My Site',
       logo: {
-        alt: 'lailai\'s Logo',
+        alt: 'My Site Logo',
         src: 'img/logo.svg',
       },
       items: [
-        { type: 'docSidebar', sidebarId: 'docs1', position: 'left', label: 'Contest' },
-        { type: 'docSidebar', sidebarId: 'docs2', position: 'left', label: 'Note' },
-        { type: 'docSidebar', sidebarId: 'docs3', position: 'left', label: 'Project' },
-        { to: 'blog', label: 'Blog', position: 'left' },
         {
-          label: 'More',
-          position: 'right',
-          items: [
-            { label: 'About', to: 'about' },
-            { label: 'Travel', to: 'travel' },
-            { label: 'Friends', to: 'friends' },
-            { label: 'Resources', to: 'resources' },
-            { label: 'Sites', to: 'sites' },
-          ],
+          type: 'docSidebar',
+          sidebarId: 'tutorialSidebar',
+          position: 'left',
+          label: 'Tutorial',
         },
-        { type: 'localeDropdown', position: 'right' },
+        {to: '/blog', label: 'Blog', position: 'left'},
         {
-          href: 'https://github.com/lailai0916/lailai0916.github.io',
+          href: 'https://github.com/facebook/docusaurus',
+          label: 'GitHub',
           position: 'right',
-          className: 'header-github-link',
-          'aria-label': 'GitHub repository',
         },
       ],
     },
     footer: {
+      style: 'dark',
       links: [
         {
           title: 'Docs',
           items: [
-            { label: 'Contest', to: 'docs/contest' },
-            { label: 'Note', to: 'docs/note' },
-            { label: 'Project', to: 'docs/project' },
-            { label: 'Blog', to: 'blog' },
+            {
+              label: 'Tutorial',
+              to: '/docs/intro',
+            },
           ],
         },
         {
           title: 'Community',
           items: [
-            { label: 'X (Twitter)', href: 'https://x.com/lailai0x394' },
-            { label: 'Telegram', href: 'https://t.me/lailai0916' },
-            { label: 'LinkedIn', href: 'https://www.linkedin.com/in/lailai0916' },
-            { label: 'GitHub', href: 'https://github.com/lailai0916' },
+            {
+              label: 'Stack Overflow',
+              href: 'https://stackoverflow.com/questions/tagged/docusaurus',
+            },
+            {
+              label: 'Discord',
+              href: 'https://discordapp.com/invite/docusaurus',
+            },
+            {
+              label: 'X',
+              href: 'https://x.com/docusaurus',
+            },
           ],
         },
         {
           title: 'More',
           items: [
-            { label: 'About', to: 'about' },
-            { label: 'Friends', to: 'friends' },
-            { label: 'Settings', to: 'settings' },
-            { label: 'Repository', href: 'https://github.com/lailai0916/lailai0916.github.io' },
+            {
+              label: 'Blog',
+              to: '/blog',
+            },
+            {
+              label: 'GitHub',
+              href: 'https://github.com/facebook/docusaurus',
+            },
           ],
         },
       ],
-      copyright: `Copyright © 2024-${new Date().getFullYear()} lailai. Built with <a href="https://docusaurus.io" target="_blank">Docusaurus</a>. <p xmlns:cc="http://creativecommons.org/ns#" >This website's content is licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">CC BY-NC-SA 4.0<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/nc.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/sa.svg?ref=chooser-v1" alt=""></a></p>`,
-    },
-    docs: {
-      sidebar: {
-        hideable: true,
-        // autoCollapseCategories: true,
-      },
-    },
-    colorMode: {
-      respectPrefersColorScheme: true,
+      copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
     },
     prism: {
       theme: prismThemes.github,
       darkTheme: prismThemes.dracula,
     },
-    tableOfContents: {
-      minHeadingLevel: 2,
-      maxHeadingLevel: 4,
-    },
-    // announcementBar: {
-    //   id: 'announcement',
-    //   content: '🎊 Hello, 2025! 🎊',
-    //   backgroundColor: '#ffffff',
-    //   textColor: '#000000',
-    //   isCloseable: true,
-    // },
   } satisfies Preset.ThemeConfig,
-
-  markdown: {
-    mermaid: true,
-  },
-
-  stylesheets: [
-    {
-      href: 'https://cdn.jsdelivr.net/npm/katex@0.13.24/dist/katex.min.css',
-      type: 'text/css',
-      integrity: 'sha384-odtC+0UGzzFL/6PNoE8rX/SPcQDXBJ+uRepguP4QkPCm2LBxH3FA3y+fKSiJ+AmM',
-      crossorigin: 'anonymous',
-    },
-  ],
-
-  themes: [
-    // ... Your other themes.
-    '@docusaurus/theme-mermaid',
-    '@docusaurus/theme-live-codeblock',
-  ],
-
-  plugins: [
-    async function tailwindcssPlugin() {
-      return {
-        name: 'docusaurus-tailwindcss',
-        configurePostCss(postcssOptions) {
-          // Appends TailwindCSS and AutoPrefixer.
-          postcssOptions.plugins.push(require('tailwindcss'))
-          postcssOptions.plugins.push(require('autoprefixer'))
-          return postcssOptions
-        },
-      }
-    },
-    [
-      '@docusaurus/plugin-ideal-image',
-      {
-        quality: 70,
-        max: 1030,
-        min: 640,
-        steps: 2,
-        // Use false to debug, but it incurs huge perf costs
-        disableInDev: true,
-      } satisfies IdealImageOptions,
-    ],
-    [
-      '@docusaurus/plugin-google-gtag',
-      {
-        trackingID: 'G-HGRTVZK8MR',
-        anonymizeIP: true,
-      },
-    ],
-    [
-      '@docusaurus/plugin-pwa',
-      {
-        debug: true,
-        offlineModeActivationStrategies: [
-          'appInstalled',
-          'standalone',
-          'queryString',
-        ],
-        pwaHead: [
-          {
-            tagName: 'link',
-            rel: 'icon',
-            href: 'img/logo.svg',
-          },
-          {
-            tagName: 'link',
-            rel: 'manifest',
-            href: '/manifest.json', // your PWA manifest
-          },
-          {
-            tagName: 'meta',
-            name: 'theme-color',
-            content: 'rgb(29, 155, 240)',
-          },
-        ],
-      },
-    ],
-  ],
 };
 
 export default config;

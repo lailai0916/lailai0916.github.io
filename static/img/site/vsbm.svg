@@ -1,9 +1,0 @@
-<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <rect width="64" height="64" rx="8" fill="#8B5CF6"/>
-  <rect x="8" y="12" width="48" height="32" rx="4" fill="white"/>
-  <rect x="12" y="16" width="40" height="6" fill="#8B5CF6"/>
-  <rect x="12" y="26" width="24" height="4" fill="#C7D2FE"/>
-  <rect x="12" y="34" width="32" height="4" fill="#C7D2FE"/>
-  <circle cx="46" cy="28" r="4" fill="#10B981"/>
-  <text x="32" y="54" text-anchor="middle" fill="white" font-family="Arial" font-size="8" font-weight="bold">GPU TEST</text>
-</svg>
