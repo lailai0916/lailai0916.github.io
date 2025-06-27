@@ -10,7 +10,7 @@
 
 ## 说明
 
-此作品已提交到 [Desmos 2024 Art Expo](https://www.desmos.com/art?lang=zh-CN)，~~但还未公布评选结果~~ 已经获奖了！
+此作品已提交至 [Desmos 2024 Art Expo](https://www.desmos.com/art?lang=zh-CN)，~~但还未公布评选结果~~ 已经获奖了！
 
 ## 证书
 
