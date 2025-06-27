@@ -23,8 +23,8 @@ const config: Config = {
   projectName: 'lailai.github.io',
 
   trailingSlash: false,
-  onBrokenLinks: 'ignore',
-  onBrokenMarkdownLinks: 'ignore',
+  onBrokenLinks: 'warn',
+  onBrokenMarkdownLinks: 'warn',
 
   i18n: {
     defaultLocale: 'en',

@@ -1,0 +1,22 @@
+.item {
+  display: block;
+}
+
+.item div {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.item img {
+  width: 20px;
+  height: 20px;
+  filter: invert(0%) sepia(100%) saturate(0%) hue-rotate(0deg) brightness(0%) contrast(100%);
+  user-select: none;
+  pointer-events: none;
+}
+
+html[data-theme='dark'] .item img {
+  filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(100%) contrast(100%);
+}
