@@ -40,7 +40,7 @@ lailai 的个人网站，分享技术笔记、项目经验与学习心得。✨
 
 📊 **数据统计**：集成 [Google Analytics](https://analytics.google.com) 访问统计。
 
-## 部署运行
+## 快速开始
 
 ```bash
 git clone https://github.com/lailai0916/lailai0916.github.io.git
@@ -77,7 +77,7 @@ Home
 └── tsconfig.json                  # TypeScript 配置
 ```
 
-## 赞助
+## 赞助支持
 
 |              支付宝               |             微信支付              |
 | :-------------------------------: | :-------------------------------: |
