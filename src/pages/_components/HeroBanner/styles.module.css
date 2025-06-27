@@ -109,7 +109,7 @@ html[data-theme='dark'] .hero {
   font-size: 1.2rem;
   font-weight: 700;
   color: var(--ifm-font-color-base);
-  min-width: 125px;
+  width: 140px;
   white-space: nowrap;
   line-height: 1.2;
 }
@@ -190,7 +190,7 @@ html[data-theme='dark'] .heroLogo:hover {
 
   .indexCtas {
     justify-content: center;
-    gap: 4rem;
+    gap: 1.5rem;
     margin-top: 36px;
     margin-bottom: 0;
   }
@@ -199,7 +199,7 @@ html[data-theme='dark'] .heroLogo:hover {
     padding: 0.85rem 1.7rem;
     font-size: 1.2rem;
     font-weight: 700;
-    min-width: 125px;
+    width: 140px;
     gap: 0.5rem;
     line-height: 1.2;
   }
