@@ -43,7 +43,6 @@
     "rehype-katex": "^7.0.1",
     "remark-math": "^6.0.0",
     "rough-notation": "^0.5.1",
-    "slick-carousel": "^1.8.1",
     "tailwindcss": "^3.4.14"
   },
   "devDependencies": {
