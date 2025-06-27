@@ -5,6 +5,8 @@ import type * as Preset from '@docusaurus/preset-classic';
 import remarkMath from 'remark-math';
 import rehypeKatex from 'rehype-katex';
 
+const defaultLocale = 'en';
+
 const config: Config = {
   title: 'lailai\'s Home',
   tagline: 'lailai\'s personal website, sharing technical notes, project experiences, and learning insights. ✨',
@@ -26,8 +28,8 @@ const config: Config = {
   onBrokenMarkdownLinks: 'warn',
 
   i18n: {
-    defaultLocale: 'en',
-    locales: ['en', 'zh-Hans'],
+    defaultLocale,
+    locales: [defaultLocale, 'zh-Hans'],
   },
 
   presets: [
@@ -93,6 +95,10 @@ const config: Config = {
       appId: '5RCTMT18J0',
       apiKey: '14ba8b9ca7ed34dbbc3852d690b15473',
       indexName: 'lailai',
+      replaceSearchResultPathname: {
+        from: `/${defaultLocale}/`,
+        to: '/',
+      },
     },
     navbar: {
       hideOnScroll: true,
