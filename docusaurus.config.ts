@@ -2,7 +2,6 @@ import {themes as prismThemes} from 'prism-react-renderer';
 import type {Config} from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
 
-import type {Options as IdealImageOptions} from '@docusaurus/plugin-ideal-image';
 import remarkMath from 'remark-math';
 import rehypeKatex from 'rehype-katex';
 
@@ -213,16 +212,6 @@ const config: Config = {
         },
       }
     },
-    [
-      '@docusaurus/plugin-ideal-image',
-      {
-        quality: 70,
-        max: 1030,
-        min: 640,
-        steps: 2,
-        disableInDev: true,
-      } satisfies IdealImageOptions,
-    ],
     [
       '@docusaurus/plugin-google-gtag',
       {

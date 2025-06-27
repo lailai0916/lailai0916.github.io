@@ -8,7 +8,7 @@
 import React from 'react';
 import clsx from 'clsx';
 import Link from '@docusaurus/Link';
-import Image from '@theme/IdealImage';
+
 import {Tags, TagList, type TagType, type User} from '@site/src/data/sites';
 import {sortBy} from '@site/src/utils/jsUtils';
 import Heading from '@theme/Heading';
@@ -64,7 +64,7 @@ function SiteCard({user}: {user: User}) {
   return (
     <li key={user.title} className="card shadow--md">
       <div className={clsx('card__image', styles.siteCardImage)}>
-        <Image img={image} alt={user.title} />
+        <img src={image} alt={user.title} />
       </div>
       <div className="card__body">
         <div className={clsx(styles.siteCardHeader)}>
