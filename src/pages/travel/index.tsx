@@ -2,6 +2,7 @@ import React from 'react';
 import Layout from '@theme/Layout';
 import Link from '@docusaurus/Link';
 import BrowserOnly from '@docusaurus/BrowserOnly';
+import { Icon } from '@iconify/react';
 import Timeline from './_components/Timeline';
 import { BaseCard, Section, SectionHeader, GridLayout, GridConfigs } from '../_components/common';
 
@@ -13,17 +14,17 @@ const travelStats = [
   {
     number: '20+',
     label: '国家/地区',
-    icon: '🌍'
+    icon: 'material-symbols:public'
   },
   {
     number: '50+',
     label: '城市',
-    icon: '🏙️'
+    icon: 'material-symbols:location-city'
   },
   {
     number: '14年',
     label: '足迹',
-    icon: '👣'
+    icon: 'material-symbols:footprint'
   }
 ];
 
@@ -32,7 +33,9 @@ function StatCard({ number, label, icon }: { number: string; label: string; icon
   return (
     <BaseCard isClickable={false} className="p-6 items-center justify-center">
       <div className="text-center space-y-3">
-        <div className="text-3xl mb-2">{icon}</div>
+        <div className="text-3xl mb-2">
+          <Icon icon={icon} />
+        </div>
         <div className="text-4xl lg:text-5xl font-bold transition-colors" style={{ color: 'var(--ifm-color-primary)' }}>
           {number}
         </div>
@@ -53,7 +56,7 @@ function TravelHero() {
           {/* 左侧内容区 */}
           <div className="w-full lg:w-6/12 max-w-3xl flex flex-col items-start justify-start lg:ps-5 lg:pe-10">
             <div className="text-6xl lg:text-7xl mb-6 opacity-90">
-              <span className="inline-block animate-bounce">✈️</span>
+              <Icon icon="material-symbols:flight" className="inline-block" />
             </div>
             <h1 className="font-bold text-4xl lg:text-5xl text-gray-900 dark:text-neutral-100 leading-tight mb-4">
               {TITLE}
