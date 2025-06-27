@@ -73,9 +73,7 @@ function TravelHero() {
           {/* 右侧统计区 */}
           <div className="w-full lg:w-6/12">
             <p className="uppercase tracking-wide font-bold text-sm text-gray-600 dark:text-neutral-400 flex flex-row gap-2 items-center mt-5 lg:-mt-2 w-full mb-6">
-              <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M16 6L18.29 8.29L13.41 13.17L9.41 9.17L2 16.59L3.41 18L9.41 12L13.41 16L19.71 9.71L22 12V6H16Z" />
-              </svg>
+              <Icon icon="material-symbols:trending-up" className="w-4 h-4" />
               旅行数据
             </p>
             <GridLayout columns={GridConfigs.stats} gap="gap-4" className="my-8">
