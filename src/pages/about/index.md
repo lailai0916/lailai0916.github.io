@@ -26,7 +26,7 @@ import Comment from "./_components/Comment";
 
 ## 网站简介
 
-这是我的 **个人网站**，分享技术笔记、项目经验和学习心得。✨
+这是我的个人网站，分享技术笔记、项目经验和学习心得。✨
 
 本网站使用 [Docusaurus](https://docusaurus.io) 构建，源代码托管于 [GitHub](https://github.com/lailai0916/lailai0916.github.io)。
 
