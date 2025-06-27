@@ -74,6 +74,6 @@ Home
 | :-------------------------------: | :-------------------------------: |
 | ![](static/img/qrcode/Alipay.svg) | ![](static/img/qrcode/WeChat.svg) |
 
-## 许可证
+## 许可
 
 本网站内容遵循 [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/?ref=chooser-v1)。
