@@ -8,13 +8,13 @@
   <a href="README.md">English</a> | <a href="README.zh-Hans.md">简体中文</a>
 </p>
 
-## 简介
+## 网站简介
 
-lailai 的个人网站，分享技术笔记、项目经验和学习心得。✨
+lailai 的个人网站，分享技术笔记、项目经验与学习心得。✨
 
 本网站使用 [Docusaurus](https://docusaurus.io) 构建，源代码托管于 [GitHub](https://github.com/lailai0916/lailai0916.github.io)。
 
-## 特性
+## 网站特性
 
 🦖 **Docusaurus 构建**：使用 [Docusaurus](https://docusaurus.io) 构建，专为文档与博客设计。
 
@@ -40,7 +40,7 @@ lailai 的个人网站，分享技术笔记、项目经验和学习心得。✨
 
 📊 **数据统计**：集成 [Google Analytics](https://analytics.google.com) 访问统计。
 
-## 运行
+## 部署运行
 
 ```bash
 git clone https://github.com/lailai0916/lailai0916.github.io.git
@@ -49,7 +49,7 @@ npm install
 npm start
 ```
 
-## 结构
+## 项目结构
 
 ```bash
 Home
@@ -83,6 +83,6 @@ Home
 | :-------------------------------: | :-------------------------------: |
 | ![](static/img/qrcode/Alipay.svg) | ![](static/img/qrcode/WeChat.svg) |
 
-## 许可
+## 许可证
 
 本网站内容遵循 [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/?ref=chooser-v1)。

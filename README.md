@@ -10,7 +10,7 @@
 
 ## Overview
 
-lailai's personal website, sharing technical notes, project experience, and learning insights. ✨
+lailai's personal website for sharing technical notes, project experience, and learning insights. ✨
 
 Built with [Docusaurus](https://docusaurus.io) and open-sourced on [GitHub](https://github.com/lailai0916/lailai0916.github.io).
 
@@ -85,4 +85,4 @@ Home
 
 ## License
 
-This website's content is licensed under [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/?ref=chooser-v1)。
+This website's content is licensed under [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/?ref=chooser-v1).
