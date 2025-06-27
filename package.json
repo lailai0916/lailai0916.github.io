@@ -13,7 +13,8 @@
     "serve": "docusaurus serve",
     "write-translations": "docusaurus write-translations",
     "write-translations:zh-Hans": "docusaurus write-translations --locale zh-Hans",
-    "write-heading-ids": "docusaurus write-heading-ids"
+    "write-heading-ids": "docusaurus write-heading-ids",
+    "typecheck": "tsc"
   },
   "dependencies": {
     "@docusaurus/core": "^3.8.1",
@@ -46,7 +47,13 @@
     "tailwindcss": "^3.4.14"
   },
   "devDependencies": {
-    "@docusaurus/types": "^3.8.1"
+    "@docusaurus/module-type-aliases": "3.8.1",
+    "@docusaurus/tsconfig": "3.8.1",
+    "@docusaurus/types": "^3.8.1",
+    "@types/canvas-confetti": "^1.9.0",
+    "@types/react": "^19.1.8",
+    "@types/react-dom": "^19.1.6",
+    "typescript": "^5.8.3"
   },
   "browserslist": {
     "production": [
