@@ -2,7 +2,7 @@
   <img src="static/img/logo.svg" height="150">
 </div>
 <h1 align="center">
-  <a>lailai's Home</a>
+  <a href="https://www.lailai.one">lailai's Home</a>
 </h1>
 
 ## 简介
