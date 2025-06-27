@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Link from '@docusaurus/Link';
 import Heading from '@theme/Heading';
 import { Icon } from '@iconify/react';
@@ -6,13 +6,19 @@ import Translate from '@docusaurus/Translate';
 import styles from './styles.module.css';
 
 export default function HeroBanner() {
+  const [hasAnimated, setHasAnimated] = useState(false);
+
+  useEffect(() => {
+    setHasAnimated(true);
+  }, []);
+
   return (
     <div className={styles.hero}>
       <div className={styles.heroInner}>
         <Heading as="h1" className={styles.heroProjectTagline}>
           <img
             alt="lailai's Logo"
-            className={styles.heroLogo}
+            className={`${styles.heroLogo} ${hasAnimated ? styles.heroLogoAnimated : ''}`}
             src="/img/logo.svg"
             width="200"
             height="200"

@@ -27,26 +27,26 @@ html[data-theme='dark'] .hero {
   0% {
     opacity: 0;
     transform: scale(0.1) rotate(30deg);
-    transform-origin: center bottom;
   }
 
   50% {
-    transform: rotate(-10deg);
+    transform: scale(1) rotate(-10deg);
   }
 
   70% {
-    transform: rotate(3deg);
+    transform: scale(1) rotate(3deg);
   }
 
   100% {
     opacity: 1;
-    transform: scale(1);
+    transform: scale(1) rotate(0deg);
   }
 }
 
 .heroLogo {
-  animation-duration: 1s;
-  animation-name: jack-in-the-box;
+  opacity: 0;
+  transform: scale(0.1) rotate(30deg);
+  transform-origin: center bottom;
   float: right;
   padding: 20px 20px;
   height: auto;
@@ -58,6 +58,10 @@ html[data-theme='dark'] .hero {
           drop-shadow(0 0 30px var(--ifm-color-primary));
   user-select: none;
   pointer-events: none;
+}
+
+.heroLogoAnimated {
+  animation: jack-in-the-box 1s forwards;
 }
 
 .indexCtas {
