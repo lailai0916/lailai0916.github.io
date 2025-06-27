@@ -39,7 +39,6 @@
     "react-chrono": "2.4.0",
     "react-dom": "^18.3.1",
     "react-popper": "^2.3.0",
-    "react-slick": "^0.30.3",
     "rehype-katex": "^7.0.1",
     "remark-math": "^6.0.0",
     "rough-notation": "^0.5.1",
