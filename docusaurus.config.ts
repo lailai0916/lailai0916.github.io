@@ -168,17 +168,17 @@ const config: Config = {
     colorMode: {
       respectPrefersColorScheme: true,
     },
-    prism: {
-      theme: prismThemes.github,
-      darkTheme: prismThemes.dracula,
+    announcementBar: {
+      id: 'announcement',
+      content: '🎊 Hello, 2025! 🎊',
     },
     tableOfContents: {
       minHeadingLevel: 2,
       maxHeadingLevel: 4,
     },
-    announcementBar: {
-      id: 'announcement',
-      content: '🎊 Hello, 2025! 🎊',
+    prism: {
+      theme: prismThemes.github,
+      darkTheme: prismThemes.dracula,
     },
   } satisfies Preset.ThemeConfig,
 
