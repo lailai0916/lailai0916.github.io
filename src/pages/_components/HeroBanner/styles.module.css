@@ -23,45 +23,61 @@ html[data-theme='dark'] .hero {
   color: var(--ifm-color-primary);
 }
 
-@keyframes jack-in-the-box {
+@keyframes smooth-entrance {
   0% {
     opacity: 0;
-    transform: scale(0.1) rotate(30deg);
+    transform: scale(0.9) translateY(10px);
   }
 
-  50% {
-    transform: scale(1) rotate(-10deg);
-  }
-
-  70% {
-    transform: scale(1) rotate(3deg);
+  60% {
+    opacity: 1;
+    transform: scale(1.01) translateY(-1px);
   }
 
   100% {
     opacity: 1;
-    transform: scale(1) rotate(0deg);
+    transform: scale(1) translateY(0px);
   }
 }
 
 .heroLogo {
   opacity: 0;
-  transform: scale(0.1) rotate(30deg);
-  transform-origin: center bottom;
+  transform: scale(0.9) translateY(10px);
+  filter: drop-shadow(0 0 12px var(--ifm-color-primary))
+          drop-shadow(0 0 25px var(--ifm-color-primary));
   float: right;
   padding: 20px 20px;
   height: auto;
   position: relative;
-  will-change: filter;
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-  filter: drop-shadow(0 0 10px var(--ifm-color-primary))
-          drop-shadow(0 0 30px var(--ifm-color-primary));
+  will-change: transform, opacity;
   user-select: none;
   pointer-events: none;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .heroLogoAnimated {
-  animation: jack-in-the-box 1s forwards;
+  animation: smooth-entrance 1s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+/* 简约悬停效果 */
+.heroLogo:hover {
+  transform: scale(1.05) translateY(-2px);
+  filter: drop-shadow(0 0 16px var(--ifm-color-primary))
+          drop-shadow(0 0 30px var(--ifm-color-primary));
+  pointer-events: auto;
+  cursor: pointer;
+}
+
+/* 无障碍支持 */
+@media (prefers-reduced-motion: reduce) {
+  .heroLogo {
+    animation: none !important;
+    transition: none !important;
+    transform: scale(1) translateY(0px) !important;
+    opacity: 1 !important;
+    filter: drop-shadow(0 0 10px var(--ifm-color-primary))
+            drop-shadow(0 0 25px var(--ifm-color-primary)) !important;
+  }
 }
 
 .indexCtas {
@@ -128,6 +144,17 @@ html[data-theme='dark'] .ctaCardIcon {
   color: var(--ifm-color-primary-light);
 }
 
+/* 深色模式适配 */
+html[data-theme='dark'] .heroLogo {
+  filter: drop-shadow(0 0 15px var(--ifm-color-primary))
+          drop-shadow(0 0 30px var(--ifm-color-primary));
+}
+
+html[data-theme='dark'] .heroLogo:hover {
+  filter: drop-shadow(0 0 20px var(--ifm-color-primary))
+          drop-shadow(0 0 35px var(--ifm-color-primary));
+}
+
 @media only screen and (max-width: 768px) {
   .hero {
     padding-left: 20px;
@@ -147,6 +174,18 @@ html[data-theme='dark'] .ctaCardIcon {
     display: block;
     float: none;
     margin: 0 auto;
+    transform: scale(0.9) translateY(8px);
+  }
+
+  .heroLogoAnimated {
+    animation: smooth-entrance 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  }
+
+  /* 移动端禁用悬停效果 */
+  .heroLogo:hover {
+    transform: scale(0.9) translateY(0px);
+    filter: drop-shadow(0 0 10px var(--ifm-color-primary))
+            drop-shadow(0 0 20px var(--ifm-color-primary));
   }
 
   .indexCtas {
