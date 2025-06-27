@@ -196,7 +196,6 @@ const config: Config = {
 
   themes: [
     // ... Your other themes.
-    '@docusaurus/theme-search-algolia',
     '@docusaurus/theme-mermaid',
     '@docusaurus/theme-live-codeblock',
   ],
