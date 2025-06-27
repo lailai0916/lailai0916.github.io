@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useRef } from 'react';
 import Section from '../common/Section';
 import SectionHeader from '../common/SectionHeader';
-import { TYPOGRAPHY, ANIMATIONS } from '../common/constants';
+import { COUNTDOWN_STYLES } from '../common/constants';
 
 // ====== 类型定义 ======
 type TimeUnit = 'Days' | 'Hours' | 'Minutes' | 'Seconds';
@@ -207,19 +207,19 @@ function ProgressCircle({ unit, total, value }: ProgressCircleProps) {
             strokeWidth={CONFIG.STROKE_WIDTH}
             strokeLinecap="round"
             style={progressCircleStyle}
-            className={ANIMATIONS.CIRCLE_TRANSITION}
+            className={COUNTDOWN_STYLES.CIRCLE_TRANSITION}
           />
         </svg>
         
-        <div 
-          className={`absolute rounded-full shadow-lg ${ANIMATIONS.DOT_TRANSITION}`}
+                <div
+          className={`absolute rounded-full shadow-lg ${COUNTDOWN_STYLES.DOT_TRANSITION}`}
           style={indicatorDotStyle}
         />
 
-        <div className={TYPOGRAPHY.CIRCLE_VALUE} aria-hidden="true">
+        <div className={COUNTDOWN_STYLES.CIRCLE_VALUE} aria-hidden="true">
           {value}
           <br />
-          <span className={TYPOGRAPHY.CIRCLE_UNIT}>
+          <span className={COUNTDOWN_STYLES.CIRCLE_UNIT}>
             {unit}
           </span>
         </div>
@@ -256,10 +256,10 @@ function CountdownContent({ timeLeft }: { timeLeft: TimeLeft }) {
 function TimeUpContent() {
   return (
     <div className="text-center">
-      <h2 className={TYPOGRAPHY.MAIN_TITLE}>
+      <h2 className={COUNTDOWN_STYLES.MAIN_TITLE}>
         {CONFIG.EVENT}
       </h2>
-      <p className={TYPOGRAPHY.SUCCESS_TEXT}>
+      <p className={COUNTDOWN_STYLES.SUCCESS_TEXT}>
         {CONFIG.TEXT}
       </p>
     </div>

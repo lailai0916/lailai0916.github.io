@@ -1,6 +1,7 @@
 import React from 'react';
 import Layout from '@theme/Layout';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
+import styles from './styles.module.css';
 
 import TopBanner from './_components/TopBanner';
 import HeroBanner from './_components/HeroBanner';
@@ -13,11 +14,8 @@ import Project from './_components/Project';
 import Skill from './_components/Skill';
 import Exploration from './_components/Exploration';
 import Quote from './_components/Quote';
-
 import Community from './_components/Community';
 import Device from './_components/Device';
-
-import styles from './styles.module.css';
 
 export default function Home() {
   const {siteConfig} = useDocusaurusContext();
