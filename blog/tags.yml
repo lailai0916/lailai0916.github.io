@@ -1,19 +1,32 @@
-facebook:
-  label: Facebook
-  permalink: /facebook
-  description: Facebook tag description
+top:
+  label: 置顶
 
-hello:
-  label: Hello
-  permalink: /hello
-  description: Hello tag description
+notice:
+  label: 公告
 
-docusaurus:
-  label: Docusaurus
-  permalink: /docusaurus
-  description: Docusaurus tag description
+math:
+  label: 数学
 
-hola:
-  label: Hola
-  permalink: /hola
-  description: Hola tag description
+misc:
+  label: 杂项
+
+resource:
+  label: 资源
+
+solution:
+  label: 题解
+
+luogu:
+  label: 洛谷
+
+codeforces:
+  label: Codeforces
+
+atcoder:
+  label: AtCoder
+
+spoj:
+  label: SPOJ
+
+uva:
+  label: UVA

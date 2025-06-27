@@ -1,0 +1,354 @@
+/* Settings page specific styles */
+
+/* --- 全局与布局 --- */
+:root {
+  --setting-card-bg: var(--ifm-card-background-color);
+  --setting-card-border: var(--ifm-color-emphasis-200);
+  --setting-card-shadow: var(--ifm-global-shadow-lw);
+}
+
+[data-theme='dark'] {
+  --setting-card-bg: var(--ifm-color-emphasis-100);
+  --setting-card-border: var(--ifm-color-emphasis-300);
+}
+
+.main {
+  background-color: var(--ifm-background-color);
+  padding-bottom: 4rem;
+}
+
+/* --- Hero 区域 --- */
+.heroContainer {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+  text-align: center;
+}
+
+.heroInner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.heroIcon {
+  font-size: 4rem;
+  line-height: 1;
+  color: var(--ifm-color-primary);
+  filter: drop-shadow(0 4px 10px var(--ifm-color-primary-lightest));
+}
+
+.heroTitle {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.heroSubtitle {
+  font-size: 1.125rem;
+  color: var(--ifm-color-secondary-darkest);
+  max-width: 600px;
+}
+
+/* --- Section 区域 --- */
+.settingsSection {
+  margin-top: 2rem;
+}
+
+.sectionHeader {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 2rem;
+  border-bottom: 1px solid var(--ifm-color-emphasis-200);
+  padding-bottom: 1rem;
+}
+
+.sectionIcon {
+  font-size: 1.75rem;
+  color: var(--ifm-color-primary);
+}
+
+.sectionTitle {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+/* --- 网格布局 --- */
+.settingsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 1.5rem;
+}
+
+.gridItem {
+  min-width: 0;
+}
+
+.gridItemLarge {
+  grid-column: span 1;
+}
+
+@media (min-width: 997px) {
+  .gridItemLarge {
+    grid-column: span 2;
+  }
+}
+
+/* --- 设置卡片 --- */
+.settingCard {
+  background-color: var(--setting-card-bg);
+  border: 1px solid var(--setting-card-border);
+  border-radius: var(--ifm-card-border-radius);
+  padding: 1.5rem;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.2s ease-in-out;
+}
+
+.settingCard:hover {
+  border-color: var(--ifm-color-primary);
+  transform: translateY(-2px);
+  box-shadow: var(--ifm-global-shadow-md);
+}
+
+.cardHeader {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.cardIcon {
+  font-size: 1.5rem;
+  color: var(--ifm-color-primary);
+}
+
+.cardTitle {
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.cardBody {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.cardDescription {
+  color: var(--ifm-color-secondary-darkest);
+  font-size: 0.9rem;
+  line-height: 1.5;
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  flex-grow: 1;
+}
+
+/* --- 交互元素 --- */
+/* 按钮组 */
+.buttonGroup {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+  width: 100%;
+}
+
+.verticalButtonGroup {
+  grid-template-columns: 1fr;
+}
+
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  border: 1px solid var(--ifm-color-emphasis-300);
+  background-color: var(--ifm-color-emphasis-100);
+  color: var(--ifm-font-color-base);
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.button:hover {
+  border-color: var(--ifm-color-primary);
+  background-color: var(--ifm-color-primary-lightest);
+}
+
+.buttonActive {
+  background-color: var(--ifm-color-primary);
+  border-color: var(--ifm-color-primary);
+  color: white;
+}
+
+[data-theme='dark'] .buttonActive {
+  color: var(--ifm-color-emphasis-0);
+}
+
+.buttonActive:hover {
+  background-color: var(--ifm-color-primary-dark);
+  border-color: var(--ifm-color-primary-dark);
+}
+
+.buttonSecondary {
+  background-color: var(--ifm-color-secondary-contrast-background);
+  border-color: var(--ifm-color-secondary-contrast-background);
+}
+
+.buttonDanger {
+  background-color: var(--ifm-color-danger-contrast-background);
+  border-color: var(--ifm-color-danger-contrast-background);
+  color: var(--ifm-color-danger);
+}
+
+.buttonDanger:hover {
+  background-color: var(--ifm-color-danger);
+  border-color: var(--ifm-color-danger);
+  color: white;
+}
+
+/* 滑块 */
+.sliderContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.sliderLabel {
+  font-weight: 600;
+  color: var(--ifm-color-primary);
+  text-align: center;
+  font-size: 1rem;
+}
+
+.slider {
+  width: 100%;
+  accent-color: var(--ifm-color-primary);
+}
+
+.sliderTicks {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.8rem;
+  color: var(--ifm-color-secondary-darkest);
+}
+
+/* 开关 */
+.toggleList {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.toggleList li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.95rem;
+}
+
+/* 颜色生成器 */
+.colorInputContainer {
+  display: flex;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.colorTextInput {
+  flex-grow: 1;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-radius: 8px;
+  background-color: var(--ifm-color-emphasis-100);
+}
+
+.colorPickerInput {
+  height: 38px;
+  width: 50px;
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-radius: 8px;
+  cursor: pointer;
+  padding: 2px;
+}
+
+.presetColors {
+  display: flex;
+  gap: 0.75rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 1.5rem;
+}
+
+.presetColorButton {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 2px solid var(--ifm-color-emphasis-200);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.presetColorButton:hover {
+  transform: scale(1.1);
+  border-color: var(--ifm-color-primary);
+}
+
+.colorPreview {
+  height: 40px;
+  border-radius: 8px;
+  border: 1px solid var(--ifm-color-emphasis-300);
+}
+
+/* Footer alert styles */
+.footerAlert {
+  border-radius: 12px;
+  border: 1px solid var(--ifm-color-primary-lighter);
+  background: linear-gradient(135deg, 
+    var(--ifm-color-primary-lighter) 0%, 
+    var(--ifm-color-primary-lightest) 100%
+  );
+}
+
+.footerAlert .alert__icon {
+  font-size: 1.5rem;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .settingsHeader {
+    padding: 2rem 1rem;
+  }
+  
+  .settingsIcon {
+    font-size: 3rem;
+  }
+  
+  .quickActionButtons {
+    flex-direction: column;
+  }
+  
+  .quickActionButtons .button {
+    min-width: auto;
+  }
+}
+
+/* Dark theme adjustments */
+[data-theme='dark'] .settingCard {
+  border-color: var(--ifm-color-emphasis-300);
+}
+
+[data-theme='dark'] .cardTitle {
+  color: var(--ifm-color-emphasis-100);
+}
+
+[data-theme='dark'] .cardDescription {
+  color: var(--ifm-color-emphasis-600);
+} 

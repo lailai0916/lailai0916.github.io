@@ -1,43 +1,44 @@
-import type {ReactNode} from 'react';
-import clsx from 'clsx';
-import Link from '@docusaurus/Link';
-import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
+import React from 'react';
 import Layout from '@theme/Layout';
-import HomepageFeatures from '@site/src/components/HomepageFeatures';
-import Heading from '@theme/Heading';
+import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 
-import styles from './index.module.css';
+import TopBanner from './_components/TopBanner';
+import HeroBanner from './_components/HeroBanner';
 
-function HomepageHeader() {
+import Docs from './_components/Docs';
+import Blog from './_components/Blog';
+import Countdown from './_components/Countdown';
+import Project from './_components/Project';
+
+import Skill from './_components/Skill';
+import Exploration from './_components/Exploration';
+import Quote from './_components/Quote';
+
+import Community from './_components/Community';
+import Device from './_components/Device';
+
+import styles from './styles.module.css';
+
+export default function Home() {
   const {siteConfig} = useDocusaurusContext();
+  const {title, tagline} = siteConfig;
+  
   return (
-    <header className={clsx('hero hero--primary', styles.heroBanner)}>
-      <div className="container">
-        <Heading as="h1" className="hero__title">
-          {siteConfig.title}
-        </Heading>
-        <p className="hero__subtitle">{siteConfig.tagline}</p>
-        <div className={styles.buttons}>
-          <Link
-            className="button button--secondary button--lg"
-            to="/docs/intro">
-            Docusaurus Tutorial - 5min ⏱️
-          </Link>
-        </div>
-      </div>
-    </header>
-  );
-}
-
-export default function Home(): ReactNode {
-  const {siteConfig} = useDocusaurusContext();
-  return (
-    <Layout
-      title={`Hello from ${siteConfig.title}`}
-      description="Description will go into a meta tag in <head />">
-      <HomepageHeader />
+    <Layout>
       <main>
-        <HomepageFeatures />
+        <TopBanner />
+        <HeroBanner />
+        <div className={styles.mainSections}>
+          <Docs />
+          <Blog />
+          <Countdown />
+          <Project />
+          <Skill />
+          <Exploration />
+          <Quote />
+          <Community />
+          <Device />
+        </div>
       </main>
     </Layout>
   );

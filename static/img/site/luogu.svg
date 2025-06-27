@@ -1,0 +1,8 @@
+<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="64" height="64" rx="8" fill="#52C4B0"/>
+  <circle cx="32" cy="28" r="12" fill="white"/>
+  <circle cx="32" cy="28" r="6" fill="#52C4B0"/>
+  <rect x="28" y="40" width="8" height="12" fill="white"/>
+  <rect x="24" y="44" width="16" height="4" fill="white"/>
+  <text x="32" y="58" text-anchor="middle" fill="white" font-family="Arial" font-size="6" font-weight="bold">洛谷</text>
+</svg>

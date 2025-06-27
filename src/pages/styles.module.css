@@ -1,0 +1,12 @@
+.mainSections {
+  width: 100%;
+  border-top: 1px solid var(--ifm-color-emphasis-200);
+}
+
+.mainSections > *:nth-child(odd) {
+  background: transparent;
+}
+
+.mainSections > *:nth-child(even) {
+  background: var(--ifm-color-emphasis-100);
+} 

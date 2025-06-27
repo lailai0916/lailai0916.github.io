@@ -1,0 +1,3 @@
+# lailai's Desk Setup
+
+等以后有桌子了再考虑吧……

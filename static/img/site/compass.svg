@@ -1,0 +1,8 @@
+<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="32" cy="32" r="30" fill="#FF6B6B" stroke="#E53E3E" stroke-width="2"/>
+  <circle cx="32" cy="32" r="20" fill="none" stroke="white" stroke-width="2"/>
+  <path d="M32 12 L36 28 L32 32 L28 28 Z" fill="white"/>
+  <path d="M32 52 L28 36 L32 32 L36 36 Z" fill="white"/>
+  <circle cx="32" cy="32" r="2" fill="white"/>
+  <text x="32" y="50" text-anchor="middle" fill="white" font-family="Arial" font-size="8" font-weight="bold">COMPASS</text>
+</svg>

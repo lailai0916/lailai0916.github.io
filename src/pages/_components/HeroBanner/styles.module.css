@@ -1,0 +1,163 @@
+.hero {
+  background-color: var(--ifm-color-emphasis-100);
+  padding: 48px;
+}
+
+html[data-theme='dark'] .hero {
+  background-color: #2b3137;
+  padding: 48px;
+}
+
+.heroInner {
+  margin: 0 auto;
+  max-width: 1100px;
+  padding: 0 20px;
+}
+
+.heroProjectTagline {
+  font-size: 60px;
+  margin: 0;
+}
+
+.heroTitleTextHtml b {
+  color: var(--ifm-color-primary);
+}
+
+@keyframes jack-in-the-box {
+  0% {
+    opacity: 0;
+    transform: scale(0.1) rotate(30deg);
+    transform-origin: center bottom;
+  }
+
+  50% {
+    transform: rotate(-10deg);
+  }
+
+  70% {
+    transform: rotate(3deg);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.heroLogo {
+  animation-duration: 1s;
+  animation-name: jack-in-the-box;
+  float: right;
+  padding: 20px 20px;
+  height: auto;
+  position: relative;
+  will-change: filter;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  filter: drop-shadow(0 0 10px var(--ifm-color-primary))
+          drop-shadow(0 0 30px var(--ifm-color-primary));
+  user-select: none;
+  pointer-events: none;
+}
+
+.indexCtas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.6rem;
+  align-items: center;
+  margin-top: 48px;
+  margin-bottom: 12px;
+}
+
+/* 简化的卡片按钮样式 - 带图标，优化对齐 */
+.ctaCard {
+  display: block;
+  text-decoration: none !important;
+  color: inherit !important;
+}
+
+.ctaCardContent {
+  background: var(--ifm-card-background-color);
+  border: 2px solid var(--ifm-color-emphasis-200);
+  border-radius: 12px;
+  padding: 0.85rem 1.7rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  transition: all 0.2s ease;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--ifm-font-color-base);
+  min-width: 125px;
+  white-space: nowrap;
+  line-height: 1.2;
+}
+
+.ctaCardIcon {
+  flex-shrink: 0;
+  color: var(--ifm-color-primary);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  vertical-align: middle;
+  line-height: 1;
+}
+
+.ctaCard:hover .ctaCardContent {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  border-color: var(--ifm-color-primary);
+}
+
+/* 深色模式适配 */
+html[data-theme='dark'] .ctaCardContent {
+  background: var(--ifm-card-background-color);
+  border: 2px solid var(--ifm-color-emphasis-300);
+}
+
+html[data-theme='dark'] .ctaCard:hover .ctaCardContent {
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+html[data-theme='dark'] .ctaCardIcon {
+  color: var(--ifm-color-primary-light);
+}
+
+@media only screen and (max-width: 768px) {
+  .hero {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .heroInner {
+    padding: 0;
+  }
+
+  .heroProjectTagline {
+    font-size: 36px;
+    text-align: center;
+  }
+
+  .heroLogo {
+    display: block;
+    float: none;
+    margin: 0 auto;
+  }
+
+  .indexCtas {
+    justify-content: center;
+    gap: 4rem;
+    margin-top: 36px;
+    margin-bottom: 0;
+  }
+
+  .ctaCardContent {
+    padding: 0.85rem 1.7rem;
+    font-size: 1.2rem;
+    font-weight: 700;
+    min-width: 125px;
+    gap: 0.5rem;
+    line-height: 1.2;
+  }
+}
