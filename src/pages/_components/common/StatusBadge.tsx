@@ -1,38 +1,30 @@
 import React from 'react';
-import { COLORS } from './constants';
+import { STATUS_COLORS } from './constants';
 
 interface StatusBadgeProps {
   status: string;
-  variant?: 'default' | 'compact';
 }
 
-export default function StatusBadge({ status, variant = 'default' }: StatusBadgeProps) {
-  const getStatusColor = (status: string) => {
-    switch (status) {
-      case '维护中':
-      case '进行中':
-        return COLORS.GREEN;
-      case '展示中':
-      case '探索中':
-      case '创新思维':
-        return COLORS.PURPLE;
-      case '深化中':
-      case '职业理念':
-      case '已完成':
-        return COLORS.BLUE;
-      case '学习中':
-      case '技术态度':
-        return COLORS.ORANGE;
-      default:
-        return COLORS.GRAY;
-    }
-  };
+// 状态映射配置
+const STATUS_MAP = {
+  'completed': { color: STATUS_COLORS.GREEN, text: '已完成' },
+  'in-progress': { color: STATUS_COLORS.ORANGE, text: '进行中' },
+  'planning': { color: STATUS_COLORS.BLUE, text: '规划中' },
+  'experimental': { color: STATUS_COLORS.PURPLE, text: '实验性' },
+  'archived': { color: STATUS_COLORS.GRAY, text: '已归档' }
+} as const;
 
-  const sizeClass = variant === 'compact' ? 'px-2 py-0.5 text-xs' : 'px-2.5 py-0.5 text-xs';
+export default function StatusBadge({ status }: StatusBadgeProps) {
+  const statusConfig = STATUS_MAP[status as keyof typeof STATUS_MAP];
+  
+  if (!statusConfig) {
+    console.warn(`Unknown status: ${status}`);
+    return null;
+  }
 
   return (
-    <span className={`inline-flex items-center ${sizeClass} rounded-full font-medium ${getStatusColor(status)}`}>
-      {status}
+    <span className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${statusConfig.color}`}>
+      {statusConfig.text}
     </span>
   );
 } 

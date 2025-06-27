@@ -2,8 +2,8 @@ import React from 'react';
 import Link from '@docusaurus/Link';
 import Heading from '@theme/Heading';
 import { Icon } from '@iconify/react';
-import styles from './styles.module.css';
 import Translate from '@docusaurus/Translate';
+import styles from './styles.module.css';
 
 export default function HeroBanner() {
   return (
@@ -17,13 +17,9 @@ export default function HeroBanner() {
             width="200"
             height="200"
           />
-          <span
-            className={styles.heroTitleTextHtml}
-            // eslint-disable-next-line react/no-danger
-            dangerouslySetInnerHTML={{
-              __html: '<b>Welcome</b> to lailai\'s <b>Home</b>!',
-            }}
-          />
+          <span className={styles.heroTitleTextHtml}>
+            <b>Welcome</b> to lailai's <b>Home</b>!
+          </span>
         </Heading>
         <div className={styles.indexCtas}>
           <Link to="about" className={styles.ctaCard}>
