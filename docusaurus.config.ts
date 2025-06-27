@@ -176,13 +176,10 @@ const config: Config = {
       minHeadingLevel: 2,
       maxHeadingLevel: 4,
     },
-    // announcementBar: {
-    //   id: 'announcement',
-    //   content: '🎊 Hello, 2025! 🎊',
-    //   backgroundColor: '#ffffff',
-    //   textColor: '#000000',
-    //   isCloseable: true,
-    // },
+    announcementBar: {
+      id: 'announcement',
+      content: '🎊 Hello, 2025! 🎊',
+    },
   } satisfies Preset.ThemeConfig,
 
   markdown: {
