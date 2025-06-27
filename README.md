@@ -9,18 +9,18 @@ lailai 的个人网站，分享技术笔记、项目经验和学习心得。✨
 
 ## 特性
 
-- 🦖 **Docusaurus 构建**：使用 [Docusaurus](https://docusaurus.io) 构建，专为文档与博客设计，功能强大，运行稳定。
-- ✍️ **Markdown 与 KaTeX**：内建 [Markdown](https://daringfireball.net/projects/markdown/) 语法与 [KaTeX](https://katex.org) 数学公式，适用于技术写作与学术笔记。
-- 📚 **文档版本管理**：具备多版本文档维护能力，适合长期迭代的项目。
-- 🌐 **多语言支持**：内建国际化功能，适配多语言内容发布。
-- 🔍 **全文搜索**：集成 [Algolia DocSearch](https://docsearch.algolia.com)，提供快速精准的内容检索。
-- 💯 **SEO 优化**：内置搜索引擎优化机制，提升页面可见性。
-- ⚛️ **React 组件集成**：支持嵌入 [React](https://react.dev) 组件，增强页面交互体验。
-- 🎨 **主题与插件系统**：提供丰富的主题和插件，支持灵活自定义。
-- 🧼 **界面简洁美观**：注重排版规范与阅读体验，整体风格清晰统一。
-- 🚀 **GitHub Pages 部署**：可一键部署至 [GitHub Pages](https://pages.github.com)，便于托管与分享。
-- 📊 **Google Analytics 集成**：集成 [Google Analytics](https://analytics.google.com)，提供访问数据统计与分析。
-- 🌱 **配置简单，易于上手**：结构清晰，流程直观，便于快速搭建与维护。
+🦖 **Docusaurus 构建**：使用 [Docusaurus](https://docusaurus.io) 构建，专为文档与博客设计，功能强大，运行稳定。
+✍️ **Markdown 与 KaTeX**：内建 [Markdown](https://daringfireball.net/projects/markdown/) 语法与 [KaTeX](https://katex.org) 数学公式，适用于技术写作与学术笔记。
+📚 **文档版本管理**：具备多版本文档维护能力，适合长期迭代的项目。
+🌐 **多语言支持**：内建国际化功能，适配多语言内容发布。
+🔍 **全文搜索**：集成 [Algolia DocSearch](https://docsearch.algolia.com)，提供快速精准的内容检索。
+💯 **SEO 优化**：内置搜索引擎优化机制，提升页面可见性。
+⚛️ **React 组件集成**：支持嵌入 [React](https://react.dev) 组件，增强页面交互体验。
+🎨 **主题与插件系统**：提供丰富的主题和插件，支持灵活自定义。
+🧼 **界面简洁美观**：注重排版规范与阅读体验，整体风格清晰统一。
+🚀 **GitHub Pages 部署**：可一键部署至 [GitHub Pages](https://pages.github.com)，便于托管与分享。
+📊 **Google Analytics 集成**：集成 [Google Analytics](https://analytics.google.com)，提供访问数据统计与分析。
+🌱 **配置简单，易于上手**：结构清晰，流程直观，便于快速搭建与维护。
 
 ## 运行
 
