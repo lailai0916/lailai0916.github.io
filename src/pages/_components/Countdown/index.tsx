@@ -234,8 +234,8 @@ function CountdownContent({ timeLeft }: { timeLeft: TimeLeft }) {
   return (
     <>
       <SectionHeader 
-        title={`距离 ${CONFIG.EVENT} 还有`}
-        description="时间如流水，每一秒都值得珍惜。让我们一起迎接新的开始"
+        title="倒计时"
+        description={`距离 ${CONFIG.EVENT} 还有`}
         align="center"
       />
       
