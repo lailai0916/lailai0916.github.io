@@ -2,7 +2,7 @@ export const projects = [
   {
     title: 'lailai\'s Home',
     description: '基于 Docusaurus 构建的个人网站，采用现代化设计理念，展示个人技术栈与项目经验。',
-    link: '/docs/project/GitHub/lailais-Home/README',
+    link: 'https://github.com/lailai0916/lailai0916.github.io',
     tech: 'TypeScript • Docusaurus',
     status: '维护中',
   },
