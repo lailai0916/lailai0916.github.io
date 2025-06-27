@@ -48,24 +48,26 @@ npm start
 Home
 ├── blog                           # 博客
 │   ├── authors.yml                # 作者配置文件
-│   ├── tags.yml                   # 标签配置文件
-│   └── solution
-├── docs                           # 文档内容
-│   ├── contest
-│   ├── note
-│   └── project
-├── src                            # 源代码
+│   └── tags.yml                   # 标签配置文件
+├── docs                           # 文档
+├── i18n                           # 国际化资源
+├── src                            # 源码目录
 │   ├── components                 # 自定义组件
-│   ├── css                        # 自定义 CSS
-│   ├── data                       # 数据资料
+│   ├── css                        # 自定义样式
+│   ├── data                       # 数据文件
 │   ├── pages                      # 自定义页面
-│   └── theme                      # 自定义主题
+│   ├── theme                      # 自定义主题
+│   └── utils                      # 工具函数
 ├── static                         # 静态资源
-│   └── img                        # 静态图片
-├── docusaurus.config.ts           # 网站配置文件
+│   ├── img                        # 图片文件
+│   └── CNAME                      # 域名配置
+├── docusaurus.config.ts           # Docusaurus 配置文件
+├── LICENSE                        # 许可证文件
+├── package-lock.json              # 依赖锁定文件
+├── package.json                   # 依赖与脚本
 ├── sidebars.ts                    # 文档侧边栏
-├── package.json                   # 依赖管理
-└── LICENSE                        # 许可证文件
+├── tailwind.config.ts             # Tailwind CSS 配置文件
+└── tsconfig.json                  # TypeScript 配置文件
 ```
 
 ## 赞助
