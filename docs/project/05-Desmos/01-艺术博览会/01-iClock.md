@@ -1,6 +1,6 @@
 # iClock
 
-一件使用 [Desmos](https://www.desmos.com/) 构建的数学艺术作品。
+一件使用 [Desmos](https://www.desmos.com/) 平台构建的数学艺术作品，通过函数图形展现时间的美学表达。
 
 ## 参考资料
 
@@ -10,7 +10,7 @@
 
 ## 说明
 
-此作品已提交到 [Desmos 2024 Art Expo](https://www.desmos.com/art?lang=zh-CN)，~~但还未公布评选结果~~ 获奖了！
+此作品已提交到 [Desmos 2024 Art Expo](https://www.desmos.com/art?lang=zh-CN)，~~但还未公布评选结果~~ 已经获奖了！
 
 ## 证书
 
