@@ -8,7 +8,7 @@ export default function PageTitle() {
       <Heading as="h1">
         {'🎉\xa0'}
         <span className={styles.titleText}>
-          <Link to="..">{'Hello,\xa0I\'m\xa0lailai'}</Link>
+          <Link to="/">{'Hello,\xa0I\'m\xa0lailai'}</Link>
         </span>
         {'\xa0🥳'}
       </Heading>
