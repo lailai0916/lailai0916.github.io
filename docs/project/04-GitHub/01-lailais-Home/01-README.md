@@ -17,7 +17,6 @@ lailai 的个人网站，分享技术笔记、项目经验和学习心得。✨
 - ⚛️ **React 组件集成**：支持嵌入 [React](https://react.dev) 组件，增强页面交互体验。
 - 🎨 **主题与插件系统**：提供丰富的主题和插件，支持灵活自定义。
 - 🧼 **界面简洁美观**：注重排版规范与阅读体验，整体风格清晰统一。
-- 🖥️ **PWA 支持**：兼容渐进式网页应用，支持安装与离线访问。
 - 🚀 **GitHub Pages 部署**：可一键部署至 [GitHub Pages](https://pages.github.com)，便于托管与分享。
 - 📊 **Google Analytics 集成**：集成 [Google Analytics](https://analytics.google.com)，提供访问数据统计与分析。
 - 🌱 **配置简单，易于上手**：结构清晰，流程直观，便于快速搭建与维护。
