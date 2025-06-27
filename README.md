@@ -11,8 +11,6 @@ lailai 的个人网站，分享技术笔记、项目经验和学习心得。✨
 
 🦖 **Docusaurus 构建**：使用 [Docusaurus](https://docusaurus.io) 构建，专为文档与博客设计，功能强大，运行稳定。
 
-🌙 **配置简单，易于上手**：结构清晰，流程直观，便于快速搭建与维护。
-
 📝 **Markdown 与 KaTeX**：内建 [Markdown](https://daringfireball.net/projects/markdown/) 语法与 [KaTeX](https://katex.org) 数学公式，适用于技术写作与学术笔记。
 
 🌐 **多语言支持**：内建国际化功能，适配多语言内容发布。
@@ -24,6 +22,8 @@ lailai 的个人网站，分享技术笔记、项目经验和学习心得。✨
 ⚛️ **React 组件集成**：支持嵌入 [React](https://react.dev) 组件，增强页面交互体验。
 
 🎨 **主题与插件系统**：提供丰富的主题和插件，支持灵活自定义。
+
+🌙 **配置简单，易于上手**：结构清晰，流程直观，便于快速搭建与维护。
 
 🚀 **GitHub Pages 部署**：可一键部署至 [GitHub Pages](https://pages.github.com)，便于托管与分享。
 
