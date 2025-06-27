@@ -79,7 +79,7 @@ Home
 
 ## 赞助
 
-|         支付宝（Alipay）          |        微信支付（WeChat）         |
+|              支付宝               |             微信支付              |
 | :-------------------------------: | :-------------------------------: |
 | ![](static/img/qrcode/Alipay.svg) | ![](static/img/qrcode/WeChat.svg) |
 

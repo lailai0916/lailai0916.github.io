@@ -79,7 +79,7 @@ Home
 
 ## Support
 
-|         支付宝（Alipay）          |        微信支付（WeChat）         |
+|              Alipay               |            WeChat Pay             |
 | :-------------------------------: | :-------------------------------: |
 | ![](static/img/qrcode/Alipay.svg) | ![](static/img/qrcode/WeChat.svg) |
 
