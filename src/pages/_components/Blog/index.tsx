@@ -5,24 +5,14 @@ import { getRecentBlogPosts, BLOG_CONFIG, type ProcessedBlogPost } from '../../.
 import Section from '../common/Section';
 import { TEXT_COLORS } from '../common';
 
-// 统一的卡片样式常量
-const CARD_STYLES = "group block h-full w-full rounded-2xl outline-none focus:outline-none no-underline hover:no-underline focus:ring-2 focus:ring-[var(--ifm-color-primary)]";
-const CARD_ARTICLE_STYLES = "relative overflow-hidden p-6 cursor-pointer w-full h-full flex flex-col bg-white dark:bg-neutral-900 hover:bg-gray-50 dark:hover:bg-neutral-800/50 rounded-2xl transition-all duration-200 ease-out shadow-sm hover:shadow-md dark:shadow-none border border-gray-200 dark:border-neutral-700 hover:border-gray-300 dark:hover:border-neutral-600";
-
-interface BlogCardProps {
-  title: string;
-  date: string;
-  permalink: string;
-}
-
-function BlogCard({ title, date, permalink }: BlogCardProps) {
+function BlogCard({ title, date, permalink }: { title: string; date: string; permalink: string }) {
   return (
     <Link
       to={permalink}
-      className={CARD_STYLES}
+      className="group block h-full w-full rounded-2xl outline-none focus:outline-none no-underline hover:no-underline focus:ring-2 focus:ring-[var(--ifm-color-primary)]"
       style={{ textDecoration: 'none' }}
     >
-      <article className={CARD_ARTICLE_STYLES}>
+      <article className="relative overflow-hidden p-6 cursor-pointer w-full h-full flex flex-col bg-white dark:bg-neutral-900 hover:bg-gray-50 dark:hover:bg-neutral-800/50 rounded-2xl transition-all duration-200 ease-out shadow-sm hover:shadow-md dark:shadow-none border border-gray-200 dark:border-neutral-700 hover:border-gray-300 dark:hover:border-neutral-600">
         <div className="flex-1 space-y-4">
           <header>
             <h3 className={`font-semibold text-lg ${TEXT_COLORS.PRIMARY} leading-snug group-hover:text-[var(--ifm-color-primary)] transition-colors duration-200`}>
@@ -41,11 +31,12 @@ function BlogCard({ title, date, permalink }: BlogCardProps) {
   );
 }
 
-interface BlogCardListProps {
-  posts: ProcessedBlogPost[];
-}
 
-function BlogCardList({ posts }: BlogCardListProps) {
+
+
+
+// 博客卡片列表组件
+function BlogCardList({ posts }: { posts: ProcessedBlogPost[] }) {
   if (!posts.length) {
     return (
       <div className="w-full text-center py-12">
@@ -72,11 +63,8 @@ function BlogCardList({ posts }: BlogCardListProps) {
   );
 }
 
-interface ViewMoreButtonProps {
-  className?: string;
-}
-
-function ViewMoreButton({ className = "" }: ViewMoreButtonProps) {
+// 查看更多文章按钮组件 - 使用HeroBanner相同风格
+function ViewMoreButton({ className = "" }: { className?: string }) {
   return (
     <div className={`flex justify-start w-full mt-10 ${className}`}>
       <Link 
@@ -84,7 +72,9 @@ function ViewMoreButton({ className = "" }: ViewMoreButtonProps) {
         className="block text-decoration-none"
         style={{ textDecoration: 'none', color: 'inherit' }}
       >
-        <div className="flex items-center justify-center gap-2 transition-all duration-200 cursor-pointer hover:-translate-y-0.5 hover:shadow-md hover:border-[var(--ifm-color-primary)] bg-[var(--ifm-card-background-color)] border-2 border-[var(--ifm-color-emphasis-200)] rounded-xl px-7 py-3 text-base font-normal text-[var(--ifm-font-color-base)] min-w-[125px] whitespace-nowrap leading-tight">
+        <div 
+          className="flex items-center justify-center gap-2 transition-all duration-200 cursor-pointer hover:-translate-y-0.5 hover:shadow-md hover:border-[var(--ifm-color-primary)] bg-[var(--ifm-card-background-color)] border-2 border-[var(--ifm-color-emphasis-200)] rounded-xl px-7 py-3 text-base font-normal text-[var(--ifm-font-color-base)] min-w-[125px] whitespace-nowrap leading-tight"
+        >
           <Icon 
             icon="lucide:feather" 
             width={24} 
@@ -99,6 +89,7 @@ function ViewMoreButton({ className = "" }: ViewMoreButtonProps) {
 }
 
 export default function Blog() {
+  // 直接获取博客数据，无需useMemo包装
   const recentPosts = getRecentBlogPosts();
 
   return (

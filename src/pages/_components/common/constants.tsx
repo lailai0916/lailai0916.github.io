@@ -14,8 +14,9 @@ export const TEXT_COLORS = {
   MUTED: 'text-gray-500 dark:text-neutral-400'
 } as const;
 
-// 状态标签颜色
-export const STATUS_COLORS = {
+// 统一的颜色类名常量
+export const COLORS = {
+  // 状态标签颜色
   GREEN: 'text-green-600 dark:text-green-400 bg-green-50 dark:bg-green-900/20',
   ORANGE: 'text-orange-600 dark:text-orange-400 bg-orange-50 dark:bg-orange-900/20',
   BLUE: 'text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-900/20',
@@ -23,12 +24,9 @@ export const STATUS_COLORS = {
   GRAY: 'text-gray-600 dark:text-gray-400 bg-gray-50 dark:bg-gray-900/20'
 } as const;
 
-// Countdown组件专用样式（仅在该组件中使用）
-export const COUNTDOWN_STYLES = {
-  MAIN_TITLE: 'font-bold text-4xl text-gray-900 dark:text-neutral-100 leading-tight mb-4',
-  SUCCESS_TEXT: 'text-2xl font-medium text-gray-700 dark:text-neutral-300',
-  CIRCLE_VALUE: 'absolute text-center font-medium text-[2.5rem] select-none',
-  CIRCLE_UNIT: 'absolute text-[0.5rem] font-light -translate-x-1/2 -translate-y-[10px] tracking-[0.1em] uppercase select-none',
+// 统一的动画类名常量（仅保留实际使用的）
+export const ANIMATIONS = {
+  // Countdown组件特有动画
   CIRCLE_TRANSITION: 'transition-all duration-500 linear',
   DOT_TRANSITION: 'transition-all duration-500 linear'
 } as const; 

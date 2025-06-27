@@ -10,7 +10,6 @@ interface BaseCardProps {
   onClick?: () => void;
 }
 
-// 统一的卡片样式
 const CARD_BASE_STYLES = [
   "relative overflow-hidden cursor-pointer w-full h-full flex flex-col",
   "bg-white dark:bg-neutral-900",
@@ -23,22 +22,11 @@ const CARD_BASE_STYLES = [
 
 const LINK_STYLES = "group block h-full w-full rounded-2xl outline-none focus:outline-none no-underline hover:no-underline";
 
-const FOCUS_STYLES: React.CSSProperties = {
+const FOCUS_STYLES = {
   textDecoration: 'none',
   '--focus-ring-color': 'var(--ifm-color-primary)'
-};
+} as React.CSSProperties;
 
-// 统一的焦点处理
-const focusHandlers = {
-  onFocus: (e: React.FocusEvent<HTMLElement>) => {
-    e.currentTarget.style.boxShadow = '0 0 0 2px var(--ifm-color-primary)';
-  },
-  onBlur: (e: React.FocusEvent<HTMLElement>) => {
-    e.currentTarget.style.boxShadow = 'none';
-  }
-};
-
-// 卡片内容组件
 function CardContent({ children, className = "" }: { children: React.ReactNode; className?: string }) {
   return (
     <article className={`${CARD_BASE_STYLES} ${className}`}>
@@ -46,6 +34,15 @@ function CardContent({ children, className = "" }: { children: React.ReactNode; 
     </article>
   );
 }
+
+// 统一的焦点处理函数
+const handleFocus = (e: React.FocusEvent<HTMLElement>) => {
+  e.currentTarget.style.boxShadow = '0 0 0 2px var(--ifm-color-primary)';
+};
+
+const handleBlur = (e: React.FocusEvent<HTMLElement>) => {
+  e.currentTarget.style.boxShadow = 'none';
+};
 
 export default function BaseCard({ 
   children, 
@@ -55,44 +52,51 @@ export default function BaseCard({
   isExternalLink = false,
   onClick 
 }: BaseCardProps) {
-  // 非交互式卡片
-  if (!isClickable) {
-    return (
-      <CardContent className={className}>
-        {children}
-      </CardContent>
-    );
+
+  // 如果有链接，渲染为链接
+  if (href && isClickable) {
+    if (isExternalLink) {
+      return (
+        <a
+          href={href}
+          target="_blank"
+          rel="noopener noreferrer"
+          className={LINK_STYLES}
+          style={FOCUS_STYLES}
+          onFocus={handleFocus}
+          onBlur={handleBlur}
+        >
+          <CardContent className={className}>
+            {children}
+          </CardContent>
+        </a>
+      );
+    } else {
+      return (
+        <Link
+          to={href}
+          className={LINK_STYLES}
+          style={FOCUS_STYLES}
+          onFocus={handleFocus}
+          onBlur={handleBlur}
+        >
+          <CardContent className={className}>
+            {children}
+          </CardContent>
+        </Link>
+      );
+    }
   }
 
-  // 带链接的卡片
-  if (href) {
-    const LinkComponent = isExternalLink ? 'a' : Link;
-    const linkProps = isExternalLink 
-      ? { href, target: "_blank", rel: "noopener noreferrer" }
-      : { to: href };
-
-    return (
-      <LinkComponent
-        {...linkProps}
-        className={LINK_STYLES}
-        style={FOCUS_STYLES}
-        {...focusHandlers}
-      >
-        <CardContent className={className}>
-          {children}
-        </CardContent>
-      </LinkComponent>
-    );
-  }
-
-  // 带点击事件的卡片
-  if (onClick) {
+  // 如果有onClick，渲染为按钮
+  if (onClick && isClickable) {
     return (
       <button
         onClick={onClick}
         className={`${LINK_STYLES} cursor-pointer`}
         style={FOCUS_STYLES}
-        {...focusHandlers}
+        onFocus={handleFocus}
+        onBlur={handleBlur}
       >
         <CardContent className={className}>
           {children}
@@ -101,7 +105,7 @@ export default function BaseCard({
     );
   }
 
-  // 默认情况（不应该到达这里）
+  // 普通卡片
   return (
     <CardContent className={className}>
       {children}
