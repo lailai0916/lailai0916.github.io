@@ -157,17 +157,17 @@ export default function Blog() {
                 height={40} 
                 className="text-[var(--ifm-color-primary)]"
               />
-              <Translate id="blog.title">Learning & Practice</Translate>
+              <Translate id="home.blog.title">Learning & Practice</Translate>
             </h2>
             <p className="leading-relaxed mb-6">
-              <Translate id="blog.description.first">
+              <Translate id="home.blog.description.first">
                 Technology evolves rapidly, and we need to maintain keen learning abilities and curiosity.
                 Every mastery of new technology is an investment in the future.
                 Here we record thoughts and summaries in the learning process, sharing methods and experiences for solving problems.
               </Translate>
             </p>
             <p className="leading-relaxed mb-6">
-              <Translate id="blog.description.second">
+              <Translate id="home.blog.description.second">
                 Through continuous practice and summarization, we transform knowledge into real skills.
                 Only through practice-verified technologies and methods can truly help us solve real problems.
                 You can find algorithm solutions, technical notes, and project practices here.
@@ -175,7 +175,7 @@ export default function Blog() {
             </p>
             <Link to="/blog">
               <strong>
-                <Translate id="blog.viewMore">View More Posts →</Translate>
+                <Translate id="home.blog.more">View More Posts →</Translate>
               </strong>
             </Link>
           </div>
@@ -184,7 +184,7 @@ export default function Blog() {
           <div className="w-full lg:w-6/12">
             <p className={`uppercase tracking-wide font-bold text-sm ${TEXT_COLORS.SECONDARY} flex flex-row gap-2 items-center mt-5 lg:mt-0 w-full`}>
               <Icon icon="lucide:chevron-right" width={16} height={16} />
-              <Translate id="blog.latestPosts">Latest Posts</Translate>
+              <Translate id="home.blog.latest">Latest Posts</Translate>
             </p>
             <div className="flex-col sm:flex-row flex-wrap flex gap-6 text-start my-8">
               <BlogCardList posts={recentPosts} locale={i18n.currentLocale} />

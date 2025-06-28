@@ -42,34 +42,34 @@ const CONFIG = {
 // ====== 国际化文本 ======
 const COUNTDOWN_TEXTS = {
   title: translate({
-    id: 'countdown.title',
+    id: 'home.countdown.title',
     message: 'Countdown',
   }),
   description: translate({
-    id: 'countdown.description',
+    id: 'home.countdown.description',
     message: 'Time remaining until {event}',
   }, {
     event: CONFIG.EVENT
   }),
   finalText: translate({
-    id: 'countdown.finalText',
+    id: 'home.countdown.final',
     message: 'Happy New Year!',
   }),
   units: {
     days: translate({
-      id: 'countdown.unit.days',
+      id: 'home.countdown.unit.days',
       message: 'Days',
     }),
     hours: translate({
-      id: 'countdown.unit.hours',
+      id: 'home.countdown.unit.hours',
       message: 'Hours',
     }),
     minutes: translate({
-      id: 'countdown.unit.minutes',
+      id: 'home.countdown.unit.minutes',
       message: 'Minutes',
     }),
     seconds: translate({
-      id: 'countdown.unit.seconds',
+      id: 'home.countdown.unit.seconds',
       message: 'Seconds',
     }),
   }
