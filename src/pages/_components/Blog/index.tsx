@@ -89,7 +89,7 @@ interface ViewMoreButtonProps {
 
 function ViewMoreButton({ className = "" }: ViewMoreButtonProps) {
   return (
-    <div className={`flex justify-start w-full mt-10 ${className}`}>
+    <div className={`flex justify-start w-full mt-6 ${className}`}>
       <Link 
         to="/blog" 
         className="block text-decoration-none"
@@ -127,13 +127,14 @@ export default function Blog() {
               学习与实践
             </h2>
             <p className="leading-relaxed mb-6">
-              记录技术学习过程中的思考与总结，分享解决问题的方法和经验。从基础概念到实际应用，每一篇文章都源于真实的学习实践。
+              技术发展日新月异，我们需要保持敏锐的学习能力和好奇心。
+              每一次新技术的掌握，都是对未来的投资。
+              在这里记录学习过程中的思考与总结，分享解决问题的方法和经验。
             </p>
             <p className="leading-relaxed mb-6">
-              在这个技术日新月异的时代，保持敏锐的学习能力和好奇心是最宝贵的品质。每一次对新知识的掌握，都是对未来的投资。通过不断的实践与总结，我们才能将知识转化为解决实际问题的能力。
-            </p>
-            <p className="leading-relaxed mb-6">
-              在这里你可以找到算法题解、技术笔记和项目实践等内容，希望能为你的学习之路提供帮助。
+              通过不断的实践和总结，将知识转化为真正的技能。
+              只有经过实践验证的技术和方法，才能真正帮助我们解决实际问题。
+              你可以在这里找到算法题解、技术笔记和项目实践等内容。
             </p>
             <ViewMoreButton className="hidden lg:flex" />
           </div>
