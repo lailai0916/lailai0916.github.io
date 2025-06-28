@@ -182,7 +182,7 @@ export default function Blog() {
           
           {/* 右侧博客卡片区域 */}
           <div className="w-full lg:w-6/12">
-            <p className={`uppercase tracking-wide font-bold text-sm ${TEXT_COLORS.SECONDARY} flex flex-row gap-2 items-center mt-5 lg:-mt-2 w-full`}>
+            <p className={`uppercase tracking-wide font-bold text-sm ${TEXT_COLORS.SECONDARY} flex flex-row gap-2 items-center mt-5 lg:mt-0 w-full`}>
               <Icon icon="lucide:chevron-right" width={16} height={16} />
               <Translate id="blog.latestPosts">Latest Posts</Translate>
             </p>
