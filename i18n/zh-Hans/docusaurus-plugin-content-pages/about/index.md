@@ -5,7 +5,7 @@ hide_table_of_contents: true
 
 import { Title, Device, Community, Comment } from '@site/src/pages/about/_components';
 
-<div style={{maxWidth: '70ch', margin: 'auto'}}>
+<div style={{maxWidth: '68ch', margin: 'auto'}}>
 
 <Title />
 
