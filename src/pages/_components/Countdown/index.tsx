@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from 'react';
+import React, { useEffect, useState, useRef, useMemo, useCallback } from 'react';
 import Section from '../common/Section';
 import SectionHeader from '../common/SectionHeader';
 import { COUNTDOWN_STYLES } from '../common/constants';
@@ -12,19 +12,11 @@ interface TimeLeft {
   seconds: number;
 }
 
-interface TimeResult extends TimeLeft {
-  isTimeUp: boolean;
-}
-
 interface ProgressCircleProps {
   unitKey: keyof TimeLeft;
   total: number;
   value: number;
-}
-
-interface TimeUnitConfig {
-  key: keyof TimeLeft;
-  total: number;
+  unitText: string;
 }
 
 // ====== 常量配置 ======
@@ -78,7 +70,7 @@ const COUNTDOWN_TEXTS = {
   }
 } as const;
 
-const TIME_UNITS: readonly TimeUnitConfig[] = [
+const TIME_UNITS: readonly { key: keyof TimeLeft; total: number }[] = [
   { key: 'days', total: 365 },
   { key: 'hours', total: 24 },
   { key: 'minutes', total: 60 },
@@ -89,9 +81,9 @@ const TIME_UNITS: readonly TimeUnitConfig[] = [
 class AccurateTimer {
   private func: () => void;
   private delay: number;
-  private started: boolean = false;
-  private startTime: number = 0;
-  private target: number = 0;
+  private started = false;
+  private startTime = 0;
+  private target = 0;
   private timeoutId: NodeJS.Timeout | null = null;
 
   constructor(func: () => void, delay: number) {
@@ -122,18 +114,14 @@ class AccurateTimer {
       console.error('Timer callback error:', error);
     }
     
-    // 精确时间校正算法：基于实际时间而非累积延迟
     const now = Date.now();
     const elapsed = now - this.startTime;
     this.target += this.delay;
     
-    // 计算到下一个目标时间点的精确延迟
     const drift = this.target - elapsed;
     const nextDelay = Math.max(0, this.delay + drift);
     
-    // 如果误差过大（超过半个周期），重新同步
     if (Math.abs(drift) > this.delay / 2) {
-      console.warn(`Timer drift detected: ${drift}ms, resyncing...`);
       this.target = now + this.delay;
       this.timeoutId = setTimeout(this.tick, this.delay);
     } else {
@@ -148,30 +136,18 @@ class AccurateTimer {
       this.timeoutId = null;
     }
   }
-
-  isRunning(): boolean {
-    return this.started;
-  }
 }
 
 // ====== 工具函数 ======
-function calculateTimeUnits(distance: number): TimeLeft {
-  return {
-    days: Math.floor(distance / (1000 * 60 * 60 * 24)),
-    hours: Math.floor((distance / (1000 * 60 * 60)) % 24),
-    minutes: Math.floor((distance / (1000 * 60)) % 60),
-    seconds: Math.floor((distance / 1000) % 60),
-  };
-}
-
-function getTimeLeft(): TimeResult {
+const calculateTimeLeft = (): TimeLeft & { isTimeUp: boolean } => {
   try {
     const endDate = new Date(CONFIG.DATE);
     const nowDate = new Date();
     
     // 验证日期有效性
     if (isNaN(endDate.getTime()) || isNaN(nowDate.getTime())) {
-      throw new Error('Invalid date format');
+      console.error('Invalid date format');
+      return { days: 0, hours: 0, minutes: 0, seconds: 0, isTimeUp: true };
     }
     
     const distance = endDate.getTime() - nowDate.getTime();
@@ -180,42 +156,48 @@ function getTimeLeft(): TimeResult {
       return { days: 0, hours: 0, minutes: 0, seconds: 0, isTimeUp: true };
     }
 
-    // 关键优化：每次都基于当前实际时间重新计算，而不依赖Timer精度
-    // 这确保了即使Timer有轻微延迟，显示的时间仍然是准确的
-    const timeUnits = calculateTimeUnits(distance);
-    return { ...timeUnits, isTimeUp: false };
+    return {
+      days: Math.floor(distance / (1000 * 60 * 60 * 24)),
+      hours: Math.floor((distance / (1000 * 60 * 60)) % 24),
+      minutes: Math.floor((distance / (1000 * 60)) % 60),
+      seconds: Math.floor((distance / 1000) % 60),
+      isTimeUp: false,
+    };
   } catch (error) {
     console.error('Date calculation error:', error);
     return { days: 0, hours: 0, minutes: 0, seconds: 0, isTimeUp: true };
   }
-}
+};
 
 // ====== 组件 ======
-function ProgressCircle({ unitKey, total, value }: ProgressCircleProps) {
-  const circumference = 2 * Math.PI * CONFIG.RADIUS;
-  const progress = Math.min(Math.max((value / total) * 100, 0), 100);
-  const strokeDashoffset = circumference - (progress / 100) * circumference;
-  const rotationAngle = Math.min(Math.max(360 * value / total, 0), 360);
+const ProgressCircle = React.memo<ProgressCircleProps>(({ unitKey, total, value, unitText }) => {
+  const circleProps = useMemo(() => {
+    const circumference = 2 * Math.PI * CONFIG.RADIUS;
+    const progress = Math.min(Math.max((value / total) * 100, 0), 100);
+    const strokeDashoffset = circumference - (progress / 100) * circumference;
+    const rotationAngle = Math.min(Math.max(360 * value / total, 0), 360);
+    const svgCenter = CONFIG.SVG_SIZE / 2;
 
-  // 直接获取国际化的单位文本
-  const unitText = COUNTDOWN_TEXTS.units[unitKey];
-
-  const indicatorDotStyle: React.CSSProperties = {
-    background: 'var(--ifm-color-primary)',
-    boxShadow: '0 0 20px var(--ifm-color-primary), 0 0 60px var(--ifm-color-primary)',
-    left: '50%',
-    top: '50%',
-    width: `${CONFIG.DOT_SIZE}px`,
-    height: `${CONFIG.DOT_SIZE}px`,
-    transform: `translate(-50%, -50%) rotate(${rotationAngle}deg) translateY(-${CONFIG.RADIUS}px)`,
-  };
-
-  const progressCircleStyle: React.CSSProperties = {
-    strokeDasharray: circumference,
-    strokeDashoffset: strokeDashoffset,
-  };
-
-  const svgCenter = CONFIG.SVG_SIZE / 2;
+    return {
+      circumference,
+      strokeDashoffset,
+      rotationAngle,
+      svgCenter,
+      indicatorDotStyle: {
+        background: 'var(--ifm-color-primary)',
+        boxShadow: '0 0 20px var(--ifm-color-primary), 0 0 60px var(--ifm-color-primary)',
+        left: '50%',
+        top: '50%',
+        width: `${CONFIG.DOT_SIZE}px`,
+        height: `${CONFIG.DOT_SIZE}px`,
+        transform: `translate(-50%, -50%) rotate(${rotationAngle}deg) translateY(-${CONFIG.RADIUS}px)`,
+      } as React.CSSProperties,
+      progressStyle: {
+        strokeDasharray: circumference,
+        strokeDashoffset,
+      } as React.CSSProperties,
+    };
+  }, [value, total]);
 
   return (
     <div className="group relative" role="timer" aria-live="polite" aria-label={`${value} ${unitText}`}>
@@ -225,8 +207,8 @@ function ProgressCircle({ unitKey, total, value }: ProgressCircleProps) {
           viewBox={`0 0 ${CONFIG.SVG_SIZE} ${CONFIG.SVG_SIZE}`}
         >
           <circle 
-            cx={svgCenter}
-            cy={svgCenter}
+            cx={circleProps.svgCenter}
+            cy={circleProps.svgCenter}
             r={CONFIG.RADIUS}
             fill="none"
             stroke="currentColor"
@@ -234,21 +216,21 @@ function ProgressCircle({ unitKey, total, value }: ProgressCircleProps) {
             className="text-gray-100 dark:text-neutral-800"
           />
           <circle 
-            cx={svgCenter}
-            cy={svgCenter}
+            cx={circleProps.svgCenter}
+            cy={circleProps.svgCenter}
             r={CONFIG.RADIUS}
             fill="none"
             stroke="var(--ifm-color-primary)"
             strokeWidth={CONFIG.STROKE_WIDTH}
             strokeLinecap="round"
-            style={progressCircleStyle}
+            style={circleProps.progressStyle}
             className={COUNTDOWN_STYLES.CIRCLE_TRANSITION}
           />
         </svg>
         
-                <div
+        <div
           className={`absolute rounded-full shadow-lg ${COUNTDOWN_STYLES.DOT_TRANSITION}`}
-          style={indicatorDotStyle}
+          style={circleProps.indicatorDotStyle}
         />
 
         <div className={COUNTDOWN_STYLES.CIRCLE_VALUE} aria-hidden="true">
@@ -261,98 +243,109 @@ function ProgressCircle({ unitKey, total, value }: ProgressCircleProps) {
       </div>
     </div>
   );
-}
+});
 
-function CountdownContent({ timeLeft }: { timeLeft: TimeLeft }) {
-  return (
-    <>
-      <SectionHeader 
-        title={COUNTDOWN_TEXTS.title}
-        description={COUNTDOWN_TEXTS.description}
-        align="center"
-      />
-      
-      <div className="flex gap-8 justify-center w-fit mx-auto max-md:grid max-md:grid-cols-2 max-md:gap-6 max-[400px]:grid-cols-1 max-[400px]:gap-4">
-        {TIME_UNITS.map(({ key, total }) => (
-          <ProgressCircle 
-            key={key}
-            unitKey={key}
-            total={total}
-            value={timeLeft[key]}
-          />
-        ))}
-      </div>
-    </>
-  );
-}
+ProgressCircle.displayName = 'ProgressCircle';
 
-function TimeUpContent() {
-  return (
-    <div className="text-center">
-      <h2 className={COUNTDOWN_STYLES.MAIN_TITLE}>
-        {CONFIG.EVENT}
-      </h2>
-      <p className={COUNTDOWN_STYLES.SUCCESS_TEXT}>
-        {COUNTDOWN_TEXTS.finalText}
-      </p>
+const CountdownContent = React.memo<{ timeLeft: TimeLeft }>(({ timeLeft }) => (
+  <>
+    <SectionHeader 
+      title={COUNTDOWN_TEXTS.title}
+      description={COUNTDOWN_TEXTS.description}
+      align="center"
+    />
+    
+    <div className="flex gap-8 justify-center w-fit mx-auto max-md:grid max-md:grid-cols-2 max-md:gap-6 max-[400px]:grid-cols-1 max-[400px]:gap-4">
+      {TIME_UNITS.map(({ key, total }) => (
+        <ProgressCircle 
+          key={key}
+          unitKey={key}
+          total={total}
+          value={timeLeft[key]}
+          unitText={COUNTDOWN_TEXTS.units[key]}
+        />
+      ))}
     </div>
-  );
-}
+  </>
+));
+
+CountdownContent.displayName = 'CountdownContent';
+
+const TimeUpContent = React.memo(() => (
+  <div className="text-center">
+    <h2 className={COUNTDOWN_STYLES.MAIN_TITLE}>
+      {CONFIG.EVENT}
+    </h2>
+    <p className={COUNTDOWN_STYLES.SUCCESS_TEXT}>
+      {COUNTDOWN_TEXTS.finalText}
+    </p>
+  </div>
+));
+
+TimeUpContent.displayName = 'TimeUpContent';
 
 export default function Countdown() {
   const [timeLeft, setTimeLeft] = useState<TimeLeft>(() => {
-    const { days, hours, minutes, seconds } = getTimeLeft();
-    return { days, hours, minutes, seconds };
+    const result = calculateTimeLeft();
+    return { days: result.days, hours: result.hours, minutes: result.minutes, seconds: result.seconds };
   });
-  const [isTimeUp, setIsTimeUp] = useState(false);
+  const [isTimeUp, setIsTimeUp] = useState(() => {
+    const result = calculateTimeLeft();
+    return result.isTimeUp;
+  });
   const timerRef = useRef<AccurateTimer | null>(null);
 
-  const calculateTimeLeft = () => {
-    const result = getTimeLeft();
-    
-    if (result.isTimeUp) {
-      setIsTimeUp(true);
-      timerRef.current?.stop();
-      return;
-    }
-
-    // 优化：只有当时间真正发生变化时才更新状态
-    const { days, hours, minutes, seconds } = result;
-    setTimeLeft(prevTime => {
-      if (prevTime.days !== days || 
-          prevTime.hours !== hours || 
-          prevTime.minutes !== minutes || 
-          prevTime.seconds !== seconds) {
-        return { days, hours, minutes, seconds };
+  const updateTime = useCallback(() => {
+    try {
+      const result = calculateTimeLeft();
+      
+      if (result.isTimeUp) {
+        setIsTimeUp(true);
+        timerRef.current?.stop();
+        return;
       }
-      return prevTime; // 返回相同的引用，避免重新渲染
-    });
-  };
+
+      const { days, hours, minutes, seconds } = result;
+      setTimeLeft(prev => {
+        if (prev.days !== days || prev.hours !== hours || prev.minutes !== minutes || prev.seconds !== seconds) {
+          return { days, hours, minutes, seconds };
+        }
+        return prev;
+      });
+    } catch (error) {
+      console.error('Update time error:', error);
+    }
+  }, []);
 
   useEffect(() => {
-    calculateTimeLeft();
+    // 初始更新
+    updateTime();
+    
+    // 检查初始状态，如果时间已到就不启动定时器
+    const initialResult = calculateTimeLeft();
+    if (initialResult.isTimeUp) {
+      return;
+    }
     
     try {
-      timerRef.current = new AccurateTimer(calculateTimeLeft, CONFIG.TIMER_INTERVAL);
+      timerRef.current = new AccurateTimer(updateTime, CONFIG.TIMER_INTERVAL);
       timerRef.current.start();
     } catch (error) {
       console.error('Timer initialization error:', error);
     }
 
     return () => {
-      timerRef.current?.stop();
-      timerRef.current = null;
+      if (timerRef.current) {
+        timerRef.current.stop();
+        timerRef.current = null;
+      }
     };
-  }, []);
+  }, [updateTime]);
 
   return (
     <Section>
       <div className="max-w-7xl mx-auto flex flex-col px-5" role="main" aria-label={`Countdown to ${CONFIG.EVENT}`}>
-        {isTimeUp ? (
-          <TimeUpContent />
-        ) : (
-          <CountdownContent timeLeft={timeLeft} />
-        )}
+        {isTimeUp ? <TimeUpContent /> : <CountdownContent timeLeft={timeLeft} />}
       </div>
     </Section>
   );
