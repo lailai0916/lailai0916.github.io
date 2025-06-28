@@ -27,18 +27,18 @@ lailai's personal website for sharing technical notes, project experience, and l
 
 Built with [Docusaurus](https://docusaurus.io) and open-sourced on [GitHub](https://github.com/lailai0916/lailai0916.github.io).
 
-## My Username
+## My Nickname
 
-My username is **lailai**. Due to the high frequency of this name, I often encounter difficulties when registering accounts.
+My nickname is **lailai**. Since this name is quite common, I often have trouble registering accounts.
 
-So I usually add my birthday digits **0916** after it, forming **lailai0916**.
+To solve this, I usually add my birthday digits **0916**, forming **lailai0916**.
 
-If this username is also taken, I will convert the digits to hexadecimal **0x394**, forming **lailai0x394**.
+If that is also taken, I convert the digits to hexadecimal **0x394**, forming **lailai0x394**.
 
 :::warning
 
-- **lailai** should always be printed in lowercase, even if it appears at the beginning of a sentence, paragraph, or title.
-- **lailai** is untranslatable content, always printed in English, even if it appears in non-English text.
+- **lailai** should always be typeset with all lowercase letters, even when it is the first word in a sentence, paragraph, or title.
+- **lailai** is untranslatable content and should always be set in English, even when it appears within text in a language other than English.
 
 :::
 
