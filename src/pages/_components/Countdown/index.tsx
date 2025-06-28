@@ -2,7 +2,7 @@ import React, { useEffect, useState, useRef } from 'react';
 import Section from '../common/Section';
 import SectionHeader from '../common/SectionHeader';
 import { COUNTDOWN_STYLES } from '../common/constants';
-import Translate, { translate } from '@docusaurus/Translate';
+import { translate } from '@docusaurus/Translate';
 
 // ====== 类型定义 ======
 type TimeUnit = 'Days' | 'Hours' | 'Minutes' | 'Seconds';
@@ -45,13 +45,10 @@ const CONFIG = {
 /**
  * 📝 修改倒计时目标说明：
  * 要修改倒计时目标年份，只需要修改以下地方：
- * 1. CONFIG.EVENT - 事件年份
+ * 1. CONFIG.EVENT - 事件年份  
  * 2. CONFIG.DATE - 具体日期
  * 
- * ✨ 优化说明：
- * 使用了 Docusaurus translate() 函数的插值功能，翻译文本使用 {event} 占位符，
- * 动态值通过 values 参数传递，既满足静态分析要求，又实现了灵活性。
- * 不再需要修改翻译文件中的硬编码年份！
+ * 其他所有文本都会自动更新（使用模板字符串）
  */
 
 // ====== 国际化文本 ======
@@ -59,47 +56,35 @@ const COUNTDOWN_TEXTS = {
   title: translate({
     id: 'countdown.title',
     message: 'Countdown',
-    description: 'The title of the countdown section'
   }),
   description: translate({
     id: 'countdown.description',
-    message: 'Time remaining until {event}',
-    description: 'The description showing time remaining until the event'
-  }, {
-    event: CONFIG.EVENT
+    message: `Time remaining until ${CONFIG.EVENT}`,
   }),
   celebrationText: translate({
     id: 'countdown.celebrationText',
     message: 'Happy New Year!',
-    description: 'The celebration text when countdown is finished'
   }),
   ariaLabel: translate({
     id: 'countdown.ariaLabel',
-    message: 'Countdown to {event}',
-    description: 'Aria label for the countdown section'
-  }, {
-    event: CONFIG.EVENT
+    message: `Countdown to ${CONFIG.EVENT}`,
   }),
   units: {
     days: translate({
       id: 'countdown.unit.days',
       message: 'Days',
-      description: 'Days unit for countdown'
     }),
     hours: translate({
       id: 'countdown.unit.hours',
       message: 'Hours',
-      description: 'Hours unit for countdown'
     }),
     minutes: translate({
       id: 'countdown.unit.minutes',
       message: 'Minutes',
-      description: 'Minutes unit for countdown'
     }),
     seconds: translate({
       id: 'countdown.unit.seconds',
       message: 'Seconds',
-      description: 'Seconds unit for countdown'
     }),
   }
 } as const;
@@ -110,10 +95,6 @@ const TIME_UNITS: readonly TimeUnitConfig[] = [
   { key: 'minutes', unit: 'Minutes', total: 60 },
   { key: 'seconds', unit: 'Seconds', total: 60 },
 ] as const;
-
-
-
-
 
 // ====== 工具类 ======
 class AccurateTimer {
