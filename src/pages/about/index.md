@@ -3,27 +3,11 @@ title: 关于
 hide_table_of_contents: true
 ---
 
-import React from 'react';
-import Link from '@docusaurus/Link';
-import Heading from '@theme/Heading';
-import styles from './styles.module.css';
-
-import { Comment } from './_comment';
-import { Icon } from '@iconify/react';
-import { DEVICES } from '@site/src/data/device';
-import { COMMUNITY_LINKS } from '@site/src/data/community';
+import { Title, Device, Community, Comment } from './_components';
 
 <div style={{maxWidth: '70ch', margin: 'auto'}}>
 
-<section className="margin-top--lg margin-bottom--lg text--center">
-  <Heading as="h1">
-    {'🎉\xa0'}
-    <span className={styles.titleText}>
-      <Link to="/">{'Hello,\xa0I\'m\xa0lailai'}</Link>
-    </span>
-    {'\xa0🥳'}
-  </Heading>
-</section>
+<Title />
 
 ## 个人简介
 
@@ -65,25 +49,11 @@ import { COMMUNITY_LINKS } from '@site/src/data/community';
 
 ## 我的设备
 
-<div className={styles.listContainer}>
-  {DEVICES.map((device) => (
-    <div key={device.name} className={styles.listItem}>
-      <img src={device.icon} alt={device.name} className={styles.deviceIcon} />
-      <span>{device.name}</span>
-    </div>
-  ))}
-</div>
+<Device />
 
 ## 我的社区
 
-<div className={styles.listContainer}>
-  {COMMUNITY_LINKS.map((link) => (
-    <div key={link.text} className={styles.listItem}>
-      <Icon icon={link.icon} width="1.25rem" height="1.25rem" />
-      <Link to={link.href}>{link.text}</Link>
-    </div>
-  ))}
-</div>
+<Community />
 
 ------
 
