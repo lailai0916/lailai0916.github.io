@@ -71,7 +71,7 @@ export function getRecentBlogPosts(maxCount: number = BLOG_CONFIG.MAX_POSTS): Pr
     .slice(0, maxCount)
     .map((post: BlogPost): ProcessedBlogPost => ({
       title: post.title,
-      date: formatDateToChinese(post.date),
+      date: post.date, // 保留原始ISO日期，让Docusaurus处理格式化
       permalink: post.permalink,
     }));
 }

@@ -1,6 +1,7 @@
 import React from 'react';
 import Link from '@docusaurus/Link';
 import Translate, {translate} from '@docusaurus/Translate';
+import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import { Icon } from '@iconify/react';
 import { getRecentBlogPosts, BLOG_CONFIG, type ProcessedBlogPost } from '../../../utils/blogData';
 import Section from '../common/Section';
@@ -9,6 +10,26 @@ import { TEXT_COLORS } from '../common';
 const CARD_STYLES = "group block h-full w-full rounded-2xl outline-none focus:outline-none no-underline hover:no-underline focus:ring-2 focus:ring-[var(--ifm-color-primary)]";
 const CARD_ARTICLE_STYLES = "relative overflow-hidden p-6 cursor-pointer w-full h-36 flex flex-col bg-white dark:bg-neutral-900 hover:bg-gray-50 dark:hover:bg-neutral-800/50 rounded-2xl transition-all duration-200 ease-out shadow-sm hover:shadow-md dark:shadow-none border border-gray-200 dark:border-neutral-700 hover:border-gray-300 dark:hover:border-neutral-600";
 
+/**
+ * 根据当前语言环境格式化日期 - 使用Docusaurus官方推荐方法
+ * @param dateString ISO格式的日期字符串
+ * @param locale 语言环境
+ * @returns 格式化后的日期字符串
+ */
+function formatDateByLocale(dateString: string, locale: string): string {
+  const date = new Date(dateString);
+  
+  // 使用浏览器内置的Intl.DateTimeFormat，根据locale自动格式化
+  const options: Intl.DateTimeFormatOptions = {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+    timeZone: 'UTC'
+  };
+  
+  return date.toLocaleDateString(locale, options);
+}
+
 interface BlogCardProps {
   title: string;
   date: string;
@@ -16,6 +37,9 @@ interface BlogCardProps {
 }
 
 function BlogCard({ title, date, permalink }: BlogCardProps) {
+  const { i18n } = useDocusaurusContext();
+  const currentLocale = i18n.currentLocale;
+  const formattedDate = formatDateByLocale(date, currentLocale);
   return (
     <Link
       to={permalink}
@@ -43,7 +67,7 @@ function BlogCard({ title, date, permalink }: BlogCardProps) {
           <footer className="mt-auto pt-2">
             <div className={`flex items-center gap-2 text-sm ${TEXT_COLORS.SECONDARY}`}>
               <Icon icon="lucide:calendar" width={16} height={16} />
-              <time className="no-underline">{date}</time>
+              <time className="no-underline" dateTime={date}>{formattedDate}</time>
             </div>
           </footer>
         </div>
