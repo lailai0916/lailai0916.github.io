@@ -1,11 +1,9 @@
-/* PageTitle 组件样式 */
 .titleText {
-  background: linear-gradient(108deg, #0894FF, #C959DD 34%, #FF2E54 68%, #FF9004);
+  background: linear-gradient(108deg, #0894ff, #c959dd 34%, #ff2e54 68%, #ff9004);
   background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-/* 列表容器样式 */
 .listContainer {
   display: block;
 }
@@ -17,16 +15,14 @@
   margin-bottom: 1rem;
 }
 
-/* 设备图标样式 */
 .deviceIcon {
   width: 20px;
   height: 20px;
-  filter: invert(0%) sepia(100%) saturate(0%) hue-rotate(0deg) brightness(0%) contrast(100%);
   user-select: none;
   pointer-events: none;
+  filter: invert(0%) sepia(100%) saturate(0%) hue-rotate(0deg) brightness(0%) contrast(100%);
 }
 
-/* 深色主题下的设备图标 */
 html[data-theme='dark'] .deviceIcon {
   filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(100%) contrast(100%);
 }
