@@ -4,7 +4,7 @@ import Giscus from "@giscus/react";
 import { useColorMode } from "@docusaurus/theme-common";
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 
-// https://zhuanlan.zhihu.com/p/687041162
+// Reference: https://zhuanlan.zhihu.com/p/687041162
 
 export default function Comment() {
   const { colorMode } = useColorMode();
