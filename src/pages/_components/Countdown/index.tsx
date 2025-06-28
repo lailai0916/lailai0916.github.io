@@ -44,11 +44,14 @@ const CONFIG = {
 
 /**
  * 📝 修改倒计时目标说明：
- * 要修改倒计时目标年份，需要同时修改以下地方：
+ * 要修改倒计时目标年份，只需要修改以下地方：
  * 1. CONFIG.EVENT - 事件年份
  * 2. CONFIG.DATE - 具体日期
- * 3. COUNTDOWN_TEXTS 中的 message 文本（因为 Docusaurus 翻译提取要求静态字符串）
- * 4. i18n/zh-Hans/code.json 中对应的中文翻译
+ * 
+ * ✨ 优化说明：
+ * 使用了 Docusaurus translate() 函数的插值功能，翻译文本使用 {event} 占位符，
+ * 动态值通过 values 参数传递，既满足静态分析要求，又实现了灵活性。
+ * 不再需要修改翻译文件中的硬编码年份！
  */
 
 // ====== 国际化文本 ======
@@ -60,8 +63,10 @@ const COUNTDOWN_TEXTS = {
   }),
   description: translate({
     id: 'countdown.description',
-    message: 'Time remaining until 2026',
+    message: 'Time remaining until {event}',
     description: 'The description showing time remaining until the event'
+  }, {
+    event: CONFIG.EVENT
   }),
   celebrationText: translate({
     id: 'countdown.celebrationText',
@@ -70,8 +75,10 @@ const COUNTDOWN_TEXTS = {
   }),
   ariaLabel: translate({
     id: 'countdown.ariaLabel',
-    message: 'Countdown to 2026',
+    message: 'Countdown to {event}',
     description: 'Aria label for the countdown section'
+  }, {
+    event: CONFIG.EVENT
   }),
   units: {
     days: translate({

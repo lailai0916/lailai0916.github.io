@@ -203,7 +203,7 @@
     "description": "The title of the countdown section"
   },
   "countdown.description": {
-    "message": "距离 2026 年 还有",
+    "message": "距离 {event} 年 还有",
     "description": "The description showing time remaining until the event"
   },
   "countdown.celebrationText": {
@@ -227,7 +227,7 @@
     "description": "Seconds unit for countdown"
   },
   "countdown.ariaLabel": {
-    "message": "距离 2026 年倒计时",
+    "message": "距离 {event} 年倒计时",
     "description": "Aria label for the countdown section"
   },
   "theme.blog.post.readMore": {
