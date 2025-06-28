@@ -5,8 +5,6 @@ import { COUNTDOWN_STYLES } from '../common/constants';
 import { translate } from '@docusaurus/Translate';
 
 // ====== 类型定义 ======
-type TimeUnit = 'Days' | 'Hours' | 'Minutes' | 'Seconds';
-
 interface TimeLeft {
   days: number;
   hours: number;
@@ -19,14 +17,13 @@ interface TimeResult extends TimeLeft {
 }
 
 interface ProgressCircleProps {
-  unit: TimeUnit;
+  unitKey: keyof TimeLeft;
   total: number;
   value: number;
 }
 
 interface TimeUnitConfig {
   key: keyof TimeLeft;
-  unit: TimeUnit;
   total: number;
 }
 
@@ -85,10 +82,10 @@ const COUNTDOWN_TEXTS = {
 } as const;
 
 const TIME_UNITS: readonly TimeUnitConfig[] = [
-  { key: 'days', unit: 'Days', total: 365 },
-  { key: 'hours', unit: 'Hours', total: 24 },
-  { key: 'minutes', unit: 'Minutes', total: 60 },
-  { key: 'seconds', unit: 'Seconds', total: 60 },
+  { key: 'days', total: 365 },
+  { key: 'hours', total: 24 },
+  { key: 'minutes', total: 60 },
+  { key: 'seconds', total: 60 },
 ] as const;
 
 // ====== 工具类 ======
@@ -197,29 +194,14 @@ function getTimeLeft(): TimeResult {
 }
 
 // ====== 组件 ======
-function ProgressCircle({ unit, total, value }: ProgressCircleProps) {
+function ProgressCircle({ unitKey, total, value }: ProgressCircleProps) {
   const circumference = 2 * Math.PI * CONFIG.RADIUS;
   const progress = Math.min(Math.max((value / total) * 100, 0), 100);
   const strokeDashoffset = circumference - (progress / 100) * circumference;
   const rotationAngle = Math.min(Math.max(360 * value / total, 0), 360);
 
-  // 获取国际化的单位文本
-  const getUnitText = (unit: TimeUnit): string => {
-    switch (unit) {
-      case 'Days':
-        return COUNTDOWN_TEXTS.units.days;
-      case 'Hours':
-        return COUNTDOWN_TEXTS.units.hours;
-      case 'Minutes':
-        return COUNTDOWN_TEXTS.units.minutes;
-      case 'Seconds':
-        return COUNTDOWN_TEXTS.units.seconds;
-      default:
-        return unit;
-    }
-  };
-
-  const unitText = getUnitText(unit);
+  // 直接获取国际化的单位文本
+  const unitText = COUNTDOWN_TEXTS.units[unitKey];
 
   const indicatorDotStyle: React.CSSProperties = {
     background: 'var(--ifm-color-primary)',
@@ -284,8 +266,6 @@ function ProgressCircle({ unit, total, value }: ProgressCircleProps) {
   );
 }
 
-
-
 function CountdownContent({ timeLeft }: { timeLeft: TimeLeft }) {
   return (
     <>
@@ -296,10 +276,10 @@ function CountdownContent({ timeLeft }: { timeLeft: TimeLeft }) {
       />
       
       <div className="flex gap-8 justify-center w-fit mx-auto max-md:grid max-md:grid-cols-2 max-md:gap-6 max-[400px]:grid-cols-1 max-[400px]:gap-4">
-        {TIME_UNITS.map(({ key, unit, total }) => (
+        {TIME_UNITS.map(({ key, total }) => (
           <ProgressCircle 
             key={key}
-            unit={unit}
+            unitKey={key}
             total={total}
             value={timeLeft[key]}
           />
