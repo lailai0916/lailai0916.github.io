@@ -198,6 +198,38 @@
     "message": "本页总览",
     "description": "The label used by the button on the collapsible TOC component"
   },
+  "countdown.title": {
+    "message": "倒计时",
+    "description": "The title of the countdown section"
+  },
+  "countdown.description": {
+    "message": "距离 2026 年 还有",
+    "description": "The description showing time remaining until the event"
+  },
+  "countdown.celebrationText": {
+    "message": "新年快乐！",
+    "description": "The celebration text when countdown is finished"
+  },
+  "countdown.unit.days": {
+    "message": "天",
+    "description": "Days unit for countdown"
+  },
+  "countdown.unit.hours": {
+    "message": "小时",
+    "description": "Hours unit for countdown"
+  },
+  "countdown.unit.minutes": {
+    "message": "分钟",
+    "description": "Minutes unit for countdown"
+  },
+  "countdown.unit.seconds": {
+    "message": "秒",
+    "description": "Seconds unit for countdown"
+  },
+  "countdown.ariaLabel": {
+    "message": "距离 2026 年倒计时",
+    "description": "Aria label for the countdown section"
+  },
   "theme.blog.post.readMore": {
     "message": "阅读更多",
     "description": "The label used in blog post item excerpts to link to full blog posts"

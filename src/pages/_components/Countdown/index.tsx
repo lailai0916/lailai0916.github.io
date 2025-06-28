@@ -2,6 +2,7 @@ import React, { useEffect, useState, useRef } from 'react';
 import Section from '../common/Section';
 import SectionHeader from '../common/SectionHeader';
 import { COUNTDOWN_STYLES } from '../common/constants';
+import Translate, { translate } from '@docusaurus/Translate';
 
 // ====== 类型定义 ======
 type TimeUnit = 'Days' | 'Hours' | 'Minutes' | 'Seconds';
@@ -31,15 +32,69 @@ interface TimeUnitConfig {
 
 // ====== 常量配置 ======
 const CONFIG = {
-  EVENT: '2026 年',
+  EVENT: '2026',
   DATE: '2026-01-01T00:00:00',
-  TEXT: 'Happy New Year!',
   TIMER_INTERVAL: 1000,
   // 圆形进度条配置
   RADIUS: 74,
   SVG_SIZE: 160,
   STROKE_WIDTH: 8,
   DOT_SIZE: 15,
+} as const;
+
+/**
+ * 📝 修改倒计时目标说明：
+ * 要修改倒计时目标年份，需要同时修改以下地方：
+ * 1. CONFIG.EVENT - 事件年份
+ * 2. CONFIG.DATE - 具体日期
+ * 3. COUNTDOWN_TEXTS 中的 message 文本（因为 Docusaurus 翻译提取要求静态字符串）
+ * 4. i18n/zh-Hans/code.json 中对应的中文翻译
+ */
+
+// ====== 国际化文本 ======
+const COUNTDOWN_TEXTS = {
+  title: translate({
+    id: 'countdown.title',
+    message: 'Countdown',
+    description: 'The title of the countdown section'
+  }),
+  description: translate({
+    id: 'countdown.description',
+    message: 'Time remaining until 2026',
+    description: 'The description showing time remaining until the event'
+  }),
+  celebrationText: translate({
+    id: 'countdown.celebrationText',
+    message: 'Happy New Year!',
+    description: 'The celebration text when countdown is finished'
+  }),
+  ariaLabel: translate({
+    id: 'countdown.ariaLabel',
+    message: 'Countdown to 2026',
+    description: 'Aria label for the countdown section'
+  }),
+  units: {
+    days: translate({
+      id: 'countdown.unit.days',
+      message: 'Days',
+      description: 'Days unit for countdown'
+    }),
+    hours: translate({
+      id: 'countdown.unit.hours',
+      message: 'Hours',
+      description: 'Hours unit for countdown'
+    }),
+    minutes: translate({
+      id: 'countdown.unit.minutes',
+      message: 'Minutes',
+      description: 'Minutes unit for countdown'
+    }),
+    seconds: translate({
+      id: 'countdown.unit.seconds',
+      message: 'Seconds',
+      description: 'Seconds unit for countdown'
+    }),
+  }
 } as const;
 
 const TIME_UNITS: readonly TimeUnitConfig[] = [
@@ -165,6 +220,24 @@ function ProgressCircle({ unit, total, value }: ProgressCircleProps) {
   const strokeDashoffset = circumference - (progress / 100) * circumference;
   const rotationAngle = Math.min(Math.max(360 * value / total, 0), 360);
 
+  // 获取国际化的单位文本
+  const getUnitText = (unit: TimeUnit): string => {
+    switch (unit) {
+      case 'Days':
+        return COUNTDOWN_TEXTS.units.days;
+      case 'Hours':
+        return COUNTDOWN_TEXTS.units.hours;
+      case 'Minutes':
+        return COUNTDOWN_TEXTS.units.minutes;
+      case 'Seconds':
+        return COUNTDOWN_TEXTS.units.seconds;
+      default:
+        return unit;
+    }
+  };
+
+  const unitText = getUnitText(unit);
+
   const indicatorDotStyle: React.CSSProperties = {
     background: 'var(--ifm-color-primary)',
     boxShadow: '0 0 20px var(--ifm-color-primary), 0 0 60px var(--ifm-color-primary)',
@@ -183,7 +256,7 @@ function ProgressCircle({ unit, total, value }: ProgressCircleProps) {
   const svgCenter = CONFIG.SVG_SIZE / 2;
 
   return (
-    <div className="group relative" role="timer" aria-live="polite" aria-label={`${value} ${unit}`}>
+    <div className="group relative" role="timer" aria-live="polite" aria-label={`${value} ${unitText}`}>
       <div className="relative w-40 h-40 flex justify-center items-center">
         <svg 
           className="absolute w-40 h-40 transform -rotate-90" 
@@ -220,7 +293,7 @@ function ProgressCircle({ unit, total, value }: ProgressCircleProps) {
           {value}
           <br />
           <span className={COUNTDOWN_STYLES.CIRCLE_UNIT}>
-            {unit}
+            {unitText}
           </span>
         </div>
       </div>
@@ -234,8 +307,8 @@ function CountdownContent({ timeLeft }: { timeLeft: TimeLeft }) {
   return (
     <>
       <SectionHeader 
-        title="倒计时"
-        description={`距离 ${CONFIG.EVENT} 还有`}
+        title={COUNTDOWN_TEXTS.title}
+        description={COUNTDOWN_TEXTS.description}
         align="center"
       />
       
@@ -260,7 +333,7 @@ function TimeUpContent() {
         {CONFIG.EVENT}
       </h2>
       <p className={COUNTDOWN_STYLES.SUCCESS_TEXT}>
-        {CONFIG.TEXT}
+        {COUNTDOWN_TEXTS.celebrationText}
       </p>
     </div>
   );
@@ -314,7 +387,7 @@ export default function Countdown() {
 
   return (
     <Section>
-      <div className="max-w-7xl mx-auto flex flex-col px-5" role="main" aria-label="距离2026年倒计时">
+      <div className="max-w-7xl mx-auto flex flex-col px-5" role="main" aria-label={COUNTDOWN_TEXTS.ariaLabel}>
         {isTimeUp ? (
           <TimeUpContent />
         ) : (
