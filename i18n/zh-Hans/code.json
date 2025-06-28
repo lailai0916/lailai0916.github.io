@@ -506,7 +506,7 @@
   "countdown.description": {
     "message": "距离 {event} 年 还有"
   },
-  "countdown.celebrationText": {
+  "countdown.finalText": {
     "message": "新年快乐！"
   },
   "countdown.unit.days": {

@@ -51,8 +51,8 @@ const COUNTDOWN_TEXTS = {
   }, {
     event: CONFIG.EVENT
   }),
-  celebrationText: translate({
-    id: 'countdown.celebrationText',
+  finalText: translate({
+    id: 'countdown.finalText',
     message: 'Happy New Year!',
   }),
   units: {
@@ -290,7 +290,7 @@ function TimeUpContent() {
         {CONFIG.EVENT}
       </h2>
       <p className={COUNTDOWN_STYLES.SUCCESS_TEXT}>
-        {COUNTDOWN_TEXTS.celebrationText}
+        {COUNTDOWN_TEXTS.finalText}
       </p>
     </div>
   );
