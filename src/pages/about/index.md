@@ -17,46 +17,6 @@ import Giscus from "@giscus/react";
 import { useColorMode } from "@docusaurus/theme-common";
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 
-export const PageTitle = () => {
-  return (
-    <section className="margin-top--lg margin-bottom--lg text--center">
-      <Heading as="h1">
-        {'🎉\xa0'}
-        <span className={styles.titleText}>
-          <Link to="/">{'Hello,\xa0I\'m\xa0lailai'}</Link>
-        </span>
-        {'\xa0🥳'}
-      </Heading>
-    </section>
-  );
-};
-
-export const Device = () => {
-  return (
-    <div className={styles.listContainer}>
-      {DEVICES.map((device) => (
-        <div key={device.name} className={styles.listItem}>
-          <img src={device.icon} alt={device.name} className={styles.deviceIcon} />
-          <span>{device.name}</span>
-        </div>
-      ))}
-    </div>
-  );
-};
-
-export const Community = () => {
-  return (
-    <div className={styles.listContainer}>
-      {COMMUNITY_LINKS.map((link) => (
-        <div key={link.text} className={styles.listItem}>
-          <Icon icon={link.icon} width="1.25rem" height="1.25rem" />
-          <Link to={link.href}>{link.text}</Link>
-        </div>
-      ))}
-    </div>
-  );
-};
-
 export const Comment = () => {
   const { colorMode } = useColorMode();
   const { i18n } = useDocusaurusContext();
@@ -82,7 +42,15 @@ export const Comment = () => {
 
 <div style={{maxWidth: '70ch', margin: 'auto'}}>
 
-<PageTitle />
+<section className="margin-top--lg margin-bottom--lg text--center">
+  <Heading as="h1">
+    {'🎉\xa0'}
+    <span className={styles.titleText}>
+      <Link to="/">{'Hello,\xa0I\'m\xa0lailai'}</Link>
+    </span>
+    {'\xa0🥳'}
+  </Heading>
+</section>
 
 ## 个人简介
 
@@ -124,11 +92,25 @@ export const Comment = () => {
 
 ## 我的设备
 
-<Device />
+<div className={styles.listContainer}>
+  {DEVICES.map((device) => (
+    <div key={device.name} className={styles.listItem}>
+      <img src={device.icon} alt={device.name} className={styles.deviceIcon} />
+      <span>{device.name}</span>
+    </div>
+  ))}
+</div>
 
 ## 我的社区
 
-<Community />
+<div className={styles.listContainer}>
+  {COMMUNITY_LINKS.map((link) => (
+    <div key={link.text} className={styles.listItem}>
+      <Icon icon={link.icon} width="1.25rem" height="1.25rem" />
+      <Link to={link.href}>{link.text}</Link>
+    </div>
+  ))}
+</div>
 
 ------
 
