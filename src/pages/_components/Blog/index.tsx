@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import Link from '@docusaurus/Link';
 import Translate from '@docusaurus/Translate';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
@@ -7,65 +7,91 @@ import { getRecentBlogPosts, BLOG_CONFIG, type ProcessedBlogPost } from '../../.
 import Section from '../common/Section';
 import { TEXT_COLORS } from '../common';
 
-// 样式常量 - 统一管理
-const STYLES = {
-  // 卡片容器样式
-  cardContainer: "group block h-full w-full rounded-2xl outline-none focus:outline-none no-underline hover:no-underline focus:ring-2 focus:ring-[var(--ifm-color-primary)]",
-  
-  // 卡片文章样式
-  cardArticle: "relative overflow-hidden p-6 cursor-pointer w-full h-36 flex flex-col bg-white dark:bg-neutral-900 hover:bg-gray-50 dark:hover:bg-neutral-800/50 rounded-2xl transition-all duration-200 ease-out shadow-sm hover:shadow-md dark:shadow-none border border-gray-200 dark:border-neutral-700 hover:border-gray-300 dark:hover:border-neutral-600",
-  
-  // 标题样式
-  title: `font-semibold text-lg leading-snug group-hover:text-[var(--ifm-color-primary)] transition-colors duration-200`,
-  
-  // 标题裁剪样式对象
-  titleClamp: {
-    display: '-webkit-box',
-    WebkitLineClamp: 2,
-    WebkitBoxOrient: 'vertical' as const,
-    overflow: 'hidden',
-    textOverflow: 'ellipsis',
-    lineHeight: '1.375',
-    height: '2.75em',
-  },
-  
-  // 卡片包装器样式
-  cardWrapper: (index: number) => 
-    `flex-1 min-w-[280px] text-start ${index === 3 ? 'hidden sm:flex-1 sm:block sm:min-w-[280px]' : ''}`,
+// 常量定义
+const RESPONSIVE_BREAKPOINT = 3; // 第4个卡片在小屏幕隐藏
+const DATE_FORMAT_OPTIONS: Intl.DateTimeFormatOptions = {
+  year: 'numeric',
+  month: 'long', 
+  day: 'numeric',
+  timeZone: 'UTC'
 } as const;
 
-/**
- * 格式化日期 - 优化版本，减少重复计算
- */
-function formatDateByLocale(dateString: string, locale: string): string {
-  const date = new Date(dateString);
+// 样式常量 - 简化并提升可读性
+const CARD_STYLES = {
+  container: [
+    'group block h-full w-full rounded-2xl outline-none focus:outline-none',
+    'no-underline hover:no-underline',
+    'focus:ring-2 focus:ring-[var(--ifm-color-primary)]'
+  ].join(' '),
   
-  const options: Intl.DateTimeFormatOptions = {
-    year: 'numeric',
-    month: 'long', 
-    day: 'numeric',
-    timeZone: 'UTC'
-  };
+  article: [
+    'relative overflow-hidden p-6 cursor-pointer w-full h-36 flex flex-col',
+    'bg-white dark:bg-neutral-900',
+    'hover:bg-gray-50 dark:hover:bg-neutral-800/50',
+    'rounded-2xl transition-all duration-200 ease-out',
+    'shadow-sm hover:shadow-md dark:shadow-none',
+    'border border-gray-200 dark:border-neutral-700',
+    'hover:border-gray-300 dark:hover:border-neutral-600'
+  ].join(' '),
   
-  return date.toLocaleDateString(locale, options);
-}
+  title: [
+    'font-semibold text-lg leading-snug',
+    'group-hover:text-[var(--ifm-color-primary)]',
+    'transition-colors duration-200'
+  ].join(' ')
+} as const;
 
+// 标题截断样式
+const TITLE_CLAMP_STYLE: React.CSSProperties = {
+  display: '-webkit-box',
+  WebkitLineClamp: 2,
+  WebkitBoxOrient: 'vertical',
+  overflow: 'hidden',
+  textOverflow: 'ellipsis',
+  lineHeight: '1.375',
+  height: '2.75em'
+};
+
+/**
+ * 优化的日期格式化函数
+ */
+const formatDate = (dateString: string, locale: string): string => {
+  return new Date(dateString).toLocaleDateString(locale, DATE_FORMAT_OPTIONS);
+};
+
+/**
+ * 获取响应式卡片样式
+ */
+const getCardWrapperClass = (index: number): string => {
+  const baseClass = 'flex-1 min-w-[280px] text-start';
+  const hiddenOnSmall = index === RESPONSIVE_BREAKPOINT ? 'hidden sm:flex-1 sm:block sm:min-w-[280px]' : '';
+  return `${baseClass} ${hiddenOnSmall}`.trim();
+};
+
+// 类型定义
 interface BlogCardProps extends ProcessedBlogPost {
   locale: string;
 }
 
-// 优化后的BlogCard - 移除重复的context调用
-function BlogCard({ title, date, permalink, locale }: BlogCardProps) {
-  const formattedDate = formatDateByLocale(date, locale);
+interface BlogCardListProps {
+  posts: ProcessedBlogPost[];
+  locale: string;
+}
+
+/**
+ * 博客卡片组件 - 使用React.memo优化性能
+ */
+const BlogCard = React.memo<BlogCardProps>(({ title, date, permalink, locale }) => {
+  const formattedDate = useMemo(() => formatDate(date, locale), [date, locale]);
   
   return (
-    <Link to={permalink} className={STYLES.cardContainer} style={{ textDecoration: 'none' }}>
-      <article className={STYLES.cardArticle}>
+    <Link to={permalink} className={CARD_STYLES.container} style={{ textDecoration: 'none' }}>
+      <article className={CARD_STYLES.article}>
         <div className="flex flex-col justify-between h-full">
           <header className="flex-1">
             <h3 
-              className={`${STYLES.title} ${TEXT_COLORS.PRIMARY}`}
-              style={STYLES.titleClamp}
+              className={`${CARD_STYLES.title} ${TEXT_COLORS.PRIMARY}`}
+              style={TITLE_CLAMP_STYLE}
             >
               {title}
             </h3>
@@ -80,15 +106,14 @@ function BlogCard({ title, date, permalink, locale }: BlogCardProps) {
       </article>
     </Link>
   );
-}
+});
 
-interface BlogCardListProps {
-  posts: ProcessedBlogPost[];
-  locale: string;
-}
+BlogCard.displayName = 'BlogCard';
 
-// 优化后的BlogCardList - 使用配置而非魔法数字
-function BlogCardList({ posts, locale }: BlogCardListProps) {
+/**
+ * 博客卡片列表组件 - 使用React.memo优化性能
+ */
+const BlogCardList = React.memo<BlogCardListProps>(({ posts, locale }) => {
   if (!posts.length) {
     return (
       <div className="w-full text-center py-12">
@@ -102,18 +127,22 @@ function BlogCardList({ posts, locale }: BlogCardListProps) {
   return (
     <>
       {posts.slice(0, BLOG_CONFIG.MAX_POSTS).map((post, index) => (
-        <div key={post.permalink} className={STYLES.cardWrapper(index)}>
+        <div key={post.permalink} className={getCardWrapperClass(index)}>
           <BlogCard {...post} locale={locale} />
         </div>
       ))}
     </>
   );
-}
+});
 
-// 主组件 - 优化性能，减少重复调用
+BlogCardList.displayName = 'BlogCardList';
+
+/**
+ * 博客主组件
+ */
 export default function Blog() {
   const { i18n } = useDocusaurusContext();
-  const recentPosts = getRecentBlogPosts();
+  const recentPosts = useMemo(() => getRecentBlogPosts(), []);
 
   return (
     <Section>
