@@ -504,7 +504,7 @@
     "message": "倒计时"
   },
   "countdown.description": {
-    "message": "距离 2026 年 还有"
+    "message": "距离 {event} 年 还有"
   },
   "countdown.celebrationText": {
     "message": "新年快乐！"
@@ -522,6 +522,6 @@
     "message": "秒"
   },
   "countdown.ariaLabel": {
-    "message": "距离 2026 年倒计时"
+    "message": "距离 {event} 年倒计时"
   }
 }

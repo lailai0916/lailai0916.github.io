@@ -50,7 +50,9 @@ const COUNTDOWN_TEXTS = {
   }),
   description: translate({
     id: 'countdown.description',
-    message: `Time remaining until ${CONFIG.EVENT}`,
+    message: 'Time remaining until {event}',
+  }, {
+    event: CONFIG.EVENT
   }),
   celebrationText: translate({
     id: 'countdown.celebrationText',
@@ -58,7 +60,9 @@ const COUNTDOWN_TEXTS = {
   }),
   ariaLabel: translate({
     id: 'countdown.ariaLabel',
-    message: `Countdown to ${CONFIG.EVENT}`,
+    message: 'Countdown to {event}',
+  }, {
+    event: CONFIG.EVENT
   }),
   units: {
     days: translate({
