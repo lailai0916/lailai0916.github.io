@@ -8,37 +8,10 @@ import Link from '@docusaurus/Link';
 import Heading from '@theme/Heading';
 import styles from './styles.module.css';
 
+import { Comment } from './_comment';
 import { Icon } from '@iconify/react';
 import { DEVICES } from '@site/src/data/device';
 import { COMMUNITY_LINKS } from '@site/src/data/community';
-
-import BrowserOnly from '@docusaurus/BrowserOnly';
-import Giscus from "@giscus/react";
-import { useColorMode } from "@docusaurus/theme-common";
-import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
-
-export const Comment = () => {
-  const { colorMode } = useColorMode();
-  const { i18n } = useDocusaurusContext();
-
-  return (
-    <BrowserOnly fallback={<div>Loading comments...</div>}>
-      {() => (
-        <Giscus
-          repo="lailai0916/giscus"
-          repoId="R_kgDONHUoXA"
-          category="Announcements"
-          categoryId="DIC_kwDONHUoXM4Cjx_9"
-          mapping="specific"
-          term="website-comments"
-          inputPosition="top"
-          theme={colorMode}
-          lang={i18n.currentLocale}
-        />
-      )}
-    </BrowserOnly>
-  );
-};
 
 <div style={{maxWidth: '70ch', margin: 'auto'}}>
 
