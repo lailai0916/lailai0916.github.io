@@ -510,7 +510,7 @@
     "message": "新年快乐！"
   },
   "countdown.unit.days": {
-    "message": "天"
+    "message": "天数"
   },
   "countdown.unit.hours": {
     "message": "小时"
@@ -519,9 +519,6 @@
     "message": "分钟"
   },
   "countdown.unit.seconds": {
-    "message": "秒"
-  },
-  "countdown.ariaLabel": {
-    "message": "距离 {event} 年倒计时"
+    "message": "秒种"
   }
 }

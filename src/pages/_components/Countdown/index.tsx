@@ -55,12 +55,6 @@ const COUNTDOWN_TEXTS = {
     id: 'countdown.celebrationText',
     message: 'Happy New Year!',
   }),
-  ariaLabel: translate({
-    id: 'countdown.ariaLabel',
-    message: 'Countdown to {event}',
-  }, {
-    event: CONFIG.EVENT
-  }),
   units: {
     days: translate({
       id: 'countdown.unit.days',
@@ -350,7 +344,7 @@ export default function Countdown() {
 
   return (
     <Section>
-      <div className="max-w-7xl mx-auto flex flex-col px-5" role="main" aria-label={COUNTDOWN_TEXTS.ariaLabel}>
+      <div className="max-w-7xl mx-auto flex flex-col px-5" role="main" aria-label={`Countdown to ${CONFIG.EVENT}`}>
         {isTimeUp ? (
           <TimeUpContent />
         ) : (
