@@ -28,3 +28,18 @@
 html[data-theme='dark'] .featureIcon {
   color: var(--ifm-color-primary-light);
 }
+
+.section {
+  padding: 40px 0;
+}
+
+/* 小屏幕下卡片间距 */
+@media (max-width: 996px) {
+  .featureCard {
+    margin-bottom: 2rem;
+  }
+  
+  .featureCard:last-child {
+    margin-bottom: 0;
+  }
+}

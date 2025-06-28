@@ -44,7 +44,7 @@ export default function FeaturesContainer() {
       <div className="container text--center">
         <div className="row margin-top--lg margin-bottom--lg">
           {firstRow.map((feature, idx) => (
-            <Feature feature={feature} key={idx} />
+            <Feature feature={feature} key={idx} className={styles.featureCard} />
           ))}
         </div>
         <div className="row">
@@ -52,7 +52,7 @@ export default function FeaturesContainer() {
             <Feature
               feature={feature}
               key={idx}
-              className={clsx('col--4', idx === 0 && 'col--offset-2')}
+              className={clsx('col--4', idx === 0 && 'col--offset-2', styles.featureCard)}
             />
           ))}
         </div>
