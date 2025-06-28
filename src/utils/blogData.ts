@@ -17,7 +17,7 @@ export interface ProcessedBlogPost {
 // 博客配置常量
 export const BLOG_CONFIG = {
   MAX_POSTS: 4,
-  EXCLUDED_PERMALINKS: ['/blog/welcome'] as string[],
+  EXCLUDED_PERMALINKS: ['/blog/welcome', '/zh-Hans/blog/welcome'] as string[],
   EMPTY_STATE_MESSAGE: '暂无文章，敬请期待更多精彩内容...'
 } as const;
 
