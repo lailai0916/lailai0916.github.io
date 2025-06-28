@@ -5,7 +5,6 @@
 export interface BlogPost {
   title: string;
   permalink: string;
-  unlisted: boolean;
   date: string;
 }
 
@@ -56,6 +55,8 @@ function getBlogListData(): any {
  * @param maxCount 最大文章数量，默认为配置中的MAX_POSTS
  * @returns 处理后的博客文章数组
  */
+
+
 export function getRecentBlogPosts(maxCount: number = BLOG_CONFIG.MAX_POSTS): ProcessedBlogPost[] {
   const blogListData = getBlogListData();
   
@@ -63,15 +64,15 @@ export function getRecentBlogPosts(maxCount: number = BLOG_CONFIG.MAX_POSTS): Pr
     return [];
   }
 
+  // 简单过滤：排除指定的文章
   return blogListData.items
     .filter((post: BlogPost) => 
-      !post.unlisted && 
       !BLOG_CONFIG.EXCLUDED_PERMALINKS.includes(post.permalink)
     )
     .slice(0, maxCount)
     .map((post: BlogPost): ProcessedBlogPost => ({
       title: post.title,
-      date: post.date, // 保留原始ISO日期，让Docusaurus处理格式化
+      date: post.date,
       permalink: post.permalink,
     }));
 }
