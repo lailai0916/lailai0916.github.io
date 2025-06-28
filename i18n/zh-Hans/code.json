@@ -513,15 +513,15 @@
     "message": "新年快乐！"
   },
   "home.countdown.unit.days": {
-    "message": "天数"
+    "message": "天"
   },
   "home.countdown.unit.hours": {
-    "message": "小时"
+    "message": "时"
   },
   "home.countdown.unit.minutes": {
-    "message": "分钟"
+    "message": "分"
   },
   "home.countdown.unit.seconds": {
-    "message": "秒数"
+    "message": "秒"
   }
 }
