@@ -1,6 +1,6 @@
 ---
 title: 资源：《美国独立宣言》
-date: 2025-06-07T12:00
+date: 2025-06-10T12:00
 authors: [lailai]
 tags: [resource]
 ---
