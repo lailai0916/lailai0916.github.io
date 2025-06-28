@@ -7,7 +7,7 @@ import { TEXT_COLORS } from '../common';
 
 // 统一的卡片样式常量
 const CARD_STYLES = "group block h-full w-full rounded-2xl outline-none focus:outline-none no-underline hover:no-underline focus:ring-2 focus:ring-[var(--ifm-color-primary)]";
-const CARD_ARTICLE_STYLES = "relative overflow-hidden p-6 cursor-pointer w-full h-32 flex flex-col bg-white dark:bg-neutral-900 hover:bg-gray-50 dark:hover:bg-neutral-800/50 rounded-2xl transition-all duration-200 ease-out shadow-sm hover:shadow-md dark:shadow-none border border-gray-200 dark:border-neutral-700 hover:border-gray-300 dark:hover:border-neutral-600";
+const CARD_ARTICLE_STYLES = "relative overflow-hidden p-6 cursor-pointer w-full h-36 flex flex-col bg-white dark:bg-neutral-900 hover:bg-gray-50 dark:hover:bg-neutral-800/50 rounded-2xl transition-all duration-200 ease-out shadow-sm hover:shadow-md dark:shadow-none border border-gray-200 dark:border-neutral-700 hover:border-gray-300 dark:hover:border-neutral-600";
 
 interface BlogCardProps {
   title: string;
