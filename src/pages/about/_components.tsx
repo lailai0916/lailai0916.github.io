@@ -1,17 +1,16 @@
-import BrowserOnly from '@docusaurus/BrowserOnly';
-import Giscus from "@giscus/react";
-import { useColorMode } from "@docusaurus/theme-common";
-import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
-
 import React from 'react';
-import Link from '@docusaurus/Link';
 import Heading from '@theme/Heading';
+import Link from '@docusaurus/Link';
 import styles from './styles.module.css';
 
-import { Comment } from './_components';
 import { Icon } from '@iconify/react';
 import { DEVICES } from '@site/src/data/device';
 import { COMMUNITY_LINKS } from '@site/src/data/community';
+
+import Giscus from "@giscus/react";
+import BrowserOnly from '@docusaurus/BrowserOnly';
+import { useColorMode } from "@docusaurus/theme-common";
+import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 
 export const Title = () => {
   return (
