@@ -8,13 +8,13 @@
   <a href="README.md">English</a> | <a href="README.zh-Hans.md">简体中文</a>
 </p>
 
-## Overview
+## Website Introduction
 
 lailai's personal website for sharing technical notes, project experience, and learning insights. ✨
 
 Built with [Docusaurus](https://docusaurus.io) and open-sourced on [GitHub](https://github.com/lailai0916/lailai0916.github.io).
 
-## Features
+## Website Features
 
 🦖 **Powered by Docusaurus** — Built with [Docusaurus](https://docusaurus.io), designed for documentation and blogs.
 

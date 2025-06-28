@@ -13,19 +13,19 @@ import { Title, Device, Community, Comment } from './_components';
 
 🎓 I am a middle school student from Hangzhou, Zhejiang, China.
 
-💻 Passionate about mathematics and programming, with great enthusiasm for technology and love exploring new things.
+💻 Passionate about mathematics and programming, enthusiastic about technology, and enjoy exploring new things.
 
 💡 Strong self-learning ability and problem-solving skills, good at independent thinking and hands-on practice.
 
-🛠️ Focus on code standards and cleanliness, pursuing clear structure and consistent style.
+🛠️ Focus on clean and standardized code, pursuing clear structure and consistent style.
 
-✍️ Enjoy organizing learning processes, recording thoughts, facilitating communication and sharing.
+✍️ Enjoy organizing the learning process and recording thoughts for convenient communication and sharing.
 
 ## Website Introduction
 
-This is my personal website, sharing technical notes, project experience, and learning insights. ✨
+lailai's personal website for sharing technical notes, project experience, and learning insights. ✨
 
-This website is built with [Docusaurus](https://docusaurus.io) and the source code is hosted on [GitHub](https://github.com/lailai0916/lailai0916.github.io).
+Built with [Docusaurus](https://docusaurus.io) and open-sourced on [GitHub](https://github.com/lailai0916/lailai0916.github.io).
 
 ## My Username
 
