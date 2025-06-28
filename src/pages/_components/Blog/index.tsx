@@ -95,7 +95,7 @@ function ViewMoreButton({ className = "" }: ViewMoreButtonProps) {
         className="block text-decoration-none"
         style={{ textDecoration: 'none', color: 'inherit' }}
       >
-        <div className={`flex items-center justify-center gap-2 transition-all duration-200 cursor-pointer hover:-translate-y-0.5 hover:shadow-md hover:border-[var(--ifm-color-primary)] bg-[var(--ifm-card-background-color)] border-2 border-[var(--ifm-color-emphasis-200)] rounded-xl px-7 py-3 font-semibold text-lg ${TEXT_COLORS.PRIMARY} min-w-[125px] whitespace-nowrap leading-snug group`}>
+        <div className={`flex items-center justify-center gap-2 transition-all duration-200 cursor-pointer hover:-translate-y-0.5 hover:shadow-md hover:border-[var(--ifm-color-primary)] bg-[var(--ifm-card-background-color)] border-2 border-[var(--ifm-color-emphasis-200)] rounded-xl px-7 py-3 text-base font-medium ${TEXT_COLORS.PRIMARY} min-w-[125px] whitespace-nowrap leading-snug group`}>
           <span className="group-hover:text-[var(--ifm-color-primary)] transition-colors duration-200">查看更多文章</span>
           <Icon 
             icon="lucide:arrow-right" 
