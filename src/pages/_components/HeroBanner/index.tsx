@@ -36,7 +36,7 @@ export default function HeroBanner() {
           </Link>
           <Link to="blog" className={styles.ctaCard}>
             <div className={styles.ctaCardContent}>
-              <Icon icon="lucide:feather" width={24} height={24} className={styles.ctaCardIcon} />
+              <Icon icon="lucide:book-open" width={24} height={24} className={styles.ctaCardIcon} />
               <Translate id="herobanner.blog">Blog</Translate>
             </div>
           </Link>
