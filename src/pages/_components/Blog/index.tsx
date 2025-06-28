@@ -7,7 +7,7 @@ import { TEXT_COLORS } from '../common';
 
 // 统一的卡片样式常量
 const CARD_STYLES = "group block h-full w-full rounded-2xl outline-none focus:outline-none no-underline hover:no-underline focus:ring-2 focus:ring-[var(--ifm-color-primary)]";
-const CARD_ARTICLE_STYLES = "relative overflow-hidden p-6 cursor-pointer w-full h-full flex flex-col bg-white dark:bg-neutral-900 hover:bg-gray-50 dark:hover:bg-neutral-800/50 rounded-2xl transition-all duration-200 ease-out shadow-sm hover:shadow-md dark:shadow-none border border-gray-200 dark:border-neutral-700 hover:border-gray-300 dark:hover:border-neutral-600";
+const CARD_ARTICLE_STYLES = "relative overflow-hidden p-6 cursor-pointer w-full h-32 flex flex-col bg-white dark:bg-neutral-900 hover:bg-gray-50 dark:hover:bg-neutral-800/50 rounded-2xl transition-all duration-200 ease-out shadow-sm hover:shadow-md dark:shadow-none border border-gray-200 dark:border-neutral-700 hover:border-gray-300 dark:hover:border-neutral-600";
 
 interface BlogCardProps {
   title: string;
@@ -23,13 +23,24 @@ function BlogCard({ title, date, permalink }: BlogCardProps) {
       style={{ textDecoration: 'none' }}
     >
       <article className={CARD_ARTICLE_STYLES}>
-        <div className="flex-1 space-y-4">
-          <header>
-            <h3 className={`font-semibold text-lg ${TEXT_COLORS.PRIMARY} leading-snug group-hover:text-[var(--ifm-color-primary)] transition-colors duration-200`}>
+        <div className="flex flex-col justify-between h-full">
+          <header className="flex-1">
+            <h3 
+              className={`font-semibold text-lg ${TEXT_COLORS.PRIMARY} leading-snug group-hover:text-[var(--ifm-color-primary)] transition-colors duration-200`}
+              style={{
+                display: '-webkit-box',
+                WebkitLineClamp: 2,
+                WebkitBoxOrient: 'vertical',
+                overflow: 'hidden',
+                textOverflow: 'ellipsis',
+                lineHeight: '1.375',
+                height: '2.75em', // 2行高度 (1.375 * 2)
+              }}
+            >
               {title}
             </h3>
           </header>
-          <footer className="pt-2">
+          <footer className="mt-auto pt-2">
             <div className={`flex items-center gap-2 text-sm ${TEXT_COLORS.SECONDARY}`}>
               <Icon icon="lucide:calendar" width={16} height={16} />
               <time className="no-underline">{date}</time>
