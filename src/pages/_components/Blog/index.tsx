@@ -97,7 +97,7 @@ function ViewMoreButton({ className = "" }: ViewMoreButtonProps) {
       >
         <div className={`flex items-center justify-center gap-2 transition-all duration-200 cursor-pointer hover:-translate-y-0.5 hover:shadow-md hover:border-[var(--ifm-color-primary)] bg-[var(--ifm-card-background-color)] border-2 border-[var(--ifm-color-emphasis-200)] rounded-xl px-7 py-3 text-base font-medium ${TEXT_COLORS.PRIMARY} min-w-[125px] whitespace-nowrap leading-snug group`}>
           <span className="group-hover:text-[var(--ifm-color-primary)] transition-colors duration-200">
-            <Translate id="blog.viewMore">View More Articles</Translate>
+            <Translate id="blog.viewMore">View More Blog Posts</Translate>
           </span>
           <Icon 
             icon="lucide:arrow-right" 
@@ -147,7 +147,7 @@ export default function Blog() {
           <div className="w-full lg:w-6/12">
             <p className={`uppercase tracking-wide font-bold text-sm ${TEXT_COLORS.SECONDARY} flex flex-row gap-2 items-center mt-5 lg:-mt-2 w-full`}>
               <Icon icon="lucide:chevron-right" width={16} height={16} />
-              <Translate id="blog.latestArticles">Latest Articles</Translate>
+              <Translate id="blog.latestPosts">Latest Blog Posts</Translate>
             </p>
             <div className="flex-col sm:flex-row flex-wrap flex gap-6 text-start my-8">
               <BlogCardList posts={recentPosts} />
