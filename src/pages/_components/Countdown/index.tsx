@@ -29,8 +29,11 @@ interface TimeUnitConfig {
 
 // ====== 常量配置 ======
 const CONFIG = {
-  EVENT: '2026',
   DATE: '2026-01-01T00:00:00',
+  EVENT: translate({
+    id: 'home.countdown.event',
+    message: '2026',
+  }),
   TIMER_INTERVAL: 1000,
   // 圆形进度条配置
   RADIUS: 74,
