@@ -51,7 +51,7 @@ export const resourceData: ResourceCategory[] = [
     ],
   },
   {
-    name: '代码托管与版控',
+    name: '代码托管',
     icon: 'lucide:github',
     resources: [
       { name: 'GitHub', href: 'https://github.com', description: '全球最大代码托管平台' },
@@ -59,10 +59,11 @@ export const resourceData: ResourceCategory[] = [
       { name: 'Committers Top', href: 'https://committers.top', description: '各国活跃GitHub用户榜' },
       { name: 'GitHub Metrics', href: 'https://github.com/lowlighter/metrics', description: 'GitHub账号信息图生成' },
       { name: 'GitHub Stats', href: 'https://github.com/jstrieb/github-stats', description: 'GitHub个人统计图生成' },
+      { name: 'Shields.io', href: 'https://shields.io', description: '项目徽章生成服务' },
     ],
   },
   {
-    name: '在线开发环境',
+    name: '在线开发',
     icon: 'lucide:code',
     resources: [
       { name: 'GitHub Codespaces', href: 'https://github.com/codespaces', description: 'GitHub云端开发环境' },
