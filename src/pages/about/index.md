@@ -1,5 +1,5 @@
 ---
-title: 关于
+title: About
 hide_table_of_contents: true
 ---
 
@@ -9,49 +9,49 @@ import { Title, Device, Community, Comment } from './_components';
 
 <Title />
 
-## 个人简介
+## Personal Introduction
 
-🎓 我是一名来自浙江杭州的中学生。
+🎓 I am a middle school student from Hangzhou, Zhejiang, China.
 
-💻 热爱数学与编程，对技术充满热情，喜欢探索新事物。
+💻 Passionate about mathematics and programming, with great enthusiasm for technology and love exploring new things.
 
-💡 拥有较强的自学能力和解决问题的能力，善于独立思考和动手实践。
+💡 Strong self-learning ability and problem-solving skills, good at independent thinking and hands-on practice.
 
-🛠️ 注重代码的规范与整洁，追求结构清晰、风格一致。
+🛠️ Focus on code standards and cleanliness, pursuing clear structure and consistent style.
 
-✍️ 喜欢整理学习过程，记录思考，方便交流和分享。
+✍️ Enjoy organizing learning processes, recording thoughts, facilitating communication and sharing.
 
-## 网站简介
+## Website Introduction
 
-这是我的个人网站，分享技术笔记、项目经验与学习心得。✨
+This is my personal website, sharing technical notes, project experience, and learning insights. ✨
 
-本网站使用 [Docusaurus](https://docusaurus.io) 构建，源代码托管于 [GitHub](https://github.com/lailai0916/lailai0916.github.io)。
+This website is built with [Docusaurus](https://docusaurus.io) and the source code is hosted on [GitHub](https://github.com/lailai0916/lailai0916.github.io).
 
-## 我的昵称
+## My Username
 
-我的昵称是 **lailai**，由于重名较多，注册账户时经常遇到困难。
+My username is **lailai**. Due to the high frequency of this name, I often encounter difficulties when registering accounts.
 
-所以我通常会在其后添加生日数字 **0916**，组成 **lailai0916**。
+So I usually add my birthday digits **0916** after it, forming **lailai0916**.
 
-如果这个昵称也被占用，我会将数字转换为十六进制 **0x394**，组成 **lailai0x394**。
+If this username is also taken, I will convert the digits to hexadecimal **0x394**, forming **lailai0x394**.
 
 :::warning
 
-- **lailai** 始终应排印为小写，即使它出现在句首、段落开头或标题中。
-- **lailai** 为不翻译内容，始终以英语排印，即使它出现在非英语的语言文本中也是如此。
+- **lailai** should always be printed in lowercase, even if it appears at the beginning of a sentence, paragraph, or title.
+- **lailai** is untranslatable content, always printed in English, even if it appears in non-English text.
 
 :::
 
-## 我的技能
+## My Skills
 
 ![](https://skillicons.dev/icons?i=c,cpp,py,java,md,latex,html,css,js,ts,react,tailwind,qt,cmake,npm,git,github,vscode,visualstudio,linux,windows,docker,cloudflare,wordpress&perline=12&theme=light#gh-light-mode-only)
 ![](https://skillicons.dev/icons?i=c,cpp,py,java,md,latex,html,css,js,ts,react,tailwind,qt,cmake,npm,git,github,vscode,visualstudio,linux,windows,docker,cloudflare,wordpress&perline=12&theme=dark#gh-dark-mode-only)
 
-## 我的设备
+## My Devices
 
 <Device />
 
-## 我的社区
+## My Community
 
 <Community />
 
