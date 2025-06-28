@@ -8,27 +8,27 @@
     "description": "The ARIA label for the back to top button"
   },
   "theme.blog.archive.title": {
-    "message": "历史博文",
+    "message": "历史文章",
     "description": "The page & hero title of the blog archive page"
   },
   "theme.blog.archive.description": {
-    "message": "历史博文",
+    "message": "历史文章",
     "description": "The page & hero description of the blog archive page"
   },
   "theme.blog.paginator.navAriaLabel": {
-    "message": "博文列表分页导航",
+    "message": "文章列表分页导航",
     "description": "The ARIA label for the blog pagination"
   },
   "theme.blog.paginator.newerEntries": {
-    "message": "较新的博文",
+    "message": "较新的文章",
     "description": "The label used to navigate to the newer blog posts page (previous page)"
   },
   "theme.blog.paginator.olderEntries": {
-    "message": "较旧的博文",
+    "message": "较旧的文章",
     "description": "The label used to navigate to the older blog posts page (next page)"
   },
   "theme.blog.post.paginator.navAriaLabel": {
-    "message": "博文分页导航",
+    "message": "文章分页导航",
     "description": "The ARIA label for the blog posts pagination"
   },
   "theme.blog.post.paginator.newerPost": {
@@ -167,7 +167,7 @@
     "description": "The ARIA label for close button of announcement bar"
   },
   "theme.blog.sidebar.navAriaLabel": {
-    "message": "最近博文导航",
+    "message": "最近文章导航",
     "description": "The ARIA label for recent posts in the blog sidebar"
   },
   "theme.DocSidebarItem.expandCategoryAriaLabel": {
@@ -410,7 +410,7 @@
     "description": "The result label of the live codeblocks"
   },
   "theme.blog.post.plurals": {
-    "message": "{count} 篇博文",
+    "message": "{count} 篇文章",
     "description": "Pluralized label for \"{count} posts\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
   },
   "theme.blog.tagTitle": {
@@ -495,9 +495,9 @@
     "message": "通过不断的实践和总结，将知识转化为真正的技能。只有经过实践验证的技术和方法，才能真正帮助我们解决实际问题。你可以在这里找到算法题解、技术笔记和项目实践等内容。"
   },
   "blog.latestPosts": {
-    "message": "最新博客文章"
+    "message": "最新文章"
   },
   "blog.viewMore": {
-    "message": "查看更多博客文章"
+    "message": "查看更多文章"
   }
 }
