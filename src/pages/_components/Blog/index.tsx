@@ -1,11 +1,11 @@
 import React from 'react';
 import Link from '@docusaurus/Link';
+import Translate, {translate} from '@docusaurus/Translate';
 import { Icon } from '@iconify/react';
 import { getRecentBlogPosts, BLOG_CONFIG, type ProcessedBlogPost } from '../../../utils/blogData';
 import Section from '../common/Section';
 import { TEXT_COLORS } from '../common';
 
-// 统一的卡片样式常量
 const CARD_STYLES = "group block h-full w-full rounded-2xl outline-none focus:outline-none no-underline hover:no-underline focus:ring-2 focus:ring-[var(--ifm-color-primary)]";
 const CARD_ARTICLE_STYLES = "relative overflow-hidden p-6 cursor-pointer w-full h-36 flex flex-col bg-white dark:bg-neutral-900 hover:bg-gray-50 dark:hover:bg-neutral-800/50 rounded-2xl transition-all duration-200 ease-out shadow-sm hover:shadow-md dark:shadow-none border border-gray-200 dark:border-neutral-700 hover:border-gray-300 dark:hover:border-neutral-600";
 
@@ -34,7 +34,7 @@ function BlogCard({ title, date, permalink }: BlogCardProps) {
                 overflow: 'hidden',
                 textOverflow: 'ellipsis',
                 lineHeight: '1.375',
-                height: '2.75em', // 2行高度 (1.375 * 2)
+                height: '2.75em',
               }}
             >
               {title}
@@ -96,7 +96,9 @@ function ViewMoreButton({ className = "" }: ViewMoreButtonProps) {
         style={{ textDecoration: 'none', color: 'inherit' }}
       >
         <div className={`flex items-center justify-center gap-2 transition-all duration-200 cursor-pointer hover:-translate-y-0.5 hover:shadow-md hover:border-[var(--ifm-color-primary)] bg-[var(--ifm-card-background-color)] border-2 border-[var(--ifm-color-emphasis-200)] rounded-xl px-7 py-3 text-base font-medium ${TEXT_COLORS.PRIMARY} min-w-[125px] whitespace-nowrap leading-snug group`}>
-          <span className="group-hover:text-[var(--ifm-color-primary)] transition-colors duration-200">查看更多文章</span>
+          <span className="group-hover:text-[var(--ifm-color-primary)] transition-colors duration-200">
+            <Translate id="blog.viewMore">View More Articles</Translate>
+          </span>
           <Icon 
             icon="lucide:arrow-right" 
             width={24} 
@@ -124,24 +126,28 @@ export default function Blog() {
                 height={40} 
                 className="text-[var(--ifm-color-primary)]"
               />
-              学习与实践
+              <Translate id="blog.title">Learning & Practice</Translate>
             </h2>
             <p className="leading-relaxed mb-6">
-              技术发展日新月异，我们需要保持敏锐的学习能力和好奇心。
-              每一次新技术的掌握，都是对未来的投资。
-              在这里记录学习过程中的思考与总结，分享解决问题的方法和经验。
+              <Translate id="blog.description.first">
+                Technology evolves rapidly, and we need to maintain keen learning abilities and curiosity.
+                Every mastery of new technology is an investment in the future.
+                Here we record thoughts and summaries in the learning process, sharing methods and experiences for solving problems.
+              </Translate>
             </p>
             <p className="leading-relaxed mb-6">
-              通过不断的实践和总结，将知识转化为真正的技能。
-              只有经过实践验证的技术和方法，才能真正帮助我们解决实际问题。
-              你可以在这里找到算法题解、技术笔记和项目实践等内容。
+              <Translate id="blog.description.second">
+                Through continuous practice and summarization, we transform knowledge into real skills.
+                Only through practice-verified technologies and methods can truly help us solve real problems.
+                You can find algorithm solutions, technical notes, and project practices here.
+              </Translate>
             </p>
             <ViewMoreButton className="hidden lg:flex" />
           </div>
           <div className="w-full lg:w-6/12">
             <p className={`uppercase tracking-wide font-bold text-sm ${TEXT_COLORS.SECONDARY} flex flex-row gap-2 items-center mt-5 lg:-mt-2 w-full`}>
               <Icon icon="lucide:chevron-right" width={16} height={16} />
-              最新文章
+              <Translate id="blog.latestArticles">Latest Articles</Translate>
             </p>
             <div className="flex-col sm:flex-row flex-wrap flex gap-6 text-start my-8">
               <BlogCardList posts={recentPosts} />
