@@ -42,15 +42,6 @@ const CONFIG = {
   DOT_SIZE: 15,
 } as const;
 
-/**
- * 📝 修改倒计时目标说明：
- * 要修改倒计时目标年份，只需要修改以下地方：
- * 1. CONFIG.EVENT - 事件年份  
- * 2. CONFIG.DATE - 具体日期
- * 
- * 其他所有文本都会自动更新（使用模板字符串）
- */
-
 // ====== 国际化文本 ======
 const COUNTDOWN_TEXTS = {
   title: translate({

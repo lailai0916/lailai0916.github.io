@@ -198,32 +198,6 @@
     "message": "本页总览",
     "description": "The label used by the button on the collapsible TOC component"
   },
-  "countdown.title": {
-    "message": "倒计时"
-  },
-  "countdown.description": {
-    "message": "距离 2026 年 还有",
-    "description": "The description showing time remaining until the event"
-  },
-  "countdown.celebrationText": {
-    "message": "新年快乐！"
-  },
-  "countdown.unit.days": {
-    "message": "天"
-  },
-  "countdown.unit.hours": {
-    "message": "小时"
-  },
-  "countdown.unit.minutes": {
-    "message": "分钟"
-  },
-  "countdown.unit.seconds": {
-    "message": "秒"
-  },
-  "countdown.ariaLabel": {
-    "message": "距离 2026 年倒计时",
-    "description": "Aria label for the countdown section"
-  },
   "theme.blog.post.readMore": {
     "message": "阅读更多",
     "description": "The label used in blog post item excerpts to link to full blog posts"
@@ -525,5 +499,29 @@
   },
   "blog.viewMore": {
     "message": "查看更多文章 →"
+  },
+  "countdown.title": {
+    "message": "倒计时"
+  },
+  "countdown.description": {
+    "message": "距离 2026 年 还有"
+  },
+  "countdown.celebrationText": {
+    "message": "新年快乐！"
+  },
+  "countdown.unit.days": {
+    "message": "天"
+  },
+  "countdown.unit.hours": {
+    "message": "小时"
+  },
+  "countdown.unit.minutes": {
+    "message": "分钟"
+  },
+  "countdown.unit.seconds": {
+    "message": "秒"
+  },
+  "countdown.ariaLabel": {
+    "message": "距离 2026 年倒计时"
   }
 }
