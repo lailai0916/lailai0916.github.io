@@ -83,33 +83,7 @@ function BlogCardList({ posts }: BlogCardListProps) {
   );
 }
 
-interface ViewMoreButtonProps {
-  className?: string;
-}
 
-function ViewMoreButton({ className = "" }: ViewMoreButtonProps) {
-  return (
-    <div className={`flex justify-start w-full mt-6 ${className}`}>
-      <Link 
-        to="/blog" 
-        className="block text-decoration-none"
-        style={{ textDecoration: 'none', color: 'inherit' }}
-      >
-        <div className={`flex items-center justify-center gap-2 transition-all duration-200 cursor-pointer hover:-translate-y-0.5 hover:shadow-md hover:border-[var(--ifm-color-primary)] bg-[var(--ifm-card-background-color)] border-2 border-[var(--ifm-color-emphasis-200)] rounded-xl px-7 py-3 text-base font-medium ${TEXT_COLORS.PRIMARY} min-w-[125px] whitespace-nowrap leading-snug group`}>
-          <span className="group-hover:text-[var(--ifm-color-primary)] transition-colors duration-200">
-            <Translate id="blog.viewMore">View More Blog Posts</Translate>
-          </span>
-          <Icon 
-            icon="lucide:arrow-right" 
-            width={24} 
-            height={24} 
-            className="text-[var(--ifm-color-primary)] flex-shrink-0"
-          />
-        </div>
-      </Link>
-    </div>
-  );
-}
 
 export default function Blog() {
   const recentPosts = getRecentBlogPosts();
@@ -142,17 +116,18 @@ export default function Blog() {
                 You can find algorithm solutions, technical notes, and project practices here.
               </Translate>
             </p>
-            <ViewMoreButton className="hidden lg:flex" />
+            <Link to="/blog" >
+              <Translate id="blog.viewMore">View More Posts →</Translate>
+            </Link>
           </div>
           <div className="w-full lg:w-6/12">
             <p className={`uppercase tracking-wide font-bold text-sm ${TEXT_COLORS.SECONDARY} flex flex-row gap-2 items-center mt-5 lg:-mt-2 w-full`}>
               <Icon icon="lucide:chevron-right" width={16} height={16} />
-              <Translate id="blog.latestPosts">Latest Blog Posts</Translate>
+              <Translate id="blog.latestPosts">Latest Posts</Translate>
             </p>
             <div className="flex-col sm:flex-row flex-wrap flex gap-6 text-start my-8">
               <BlogCardList posts={recentPosts} />
             </div>
-            <ViewMoreButton className="lg:hidden" />
           </div>
         </div>
       </div>
