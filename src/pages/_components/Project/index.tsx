@@ -62,7 +62,7 @@ const ProjectCard = React.memo<{
   status: string;
 }>(({ title, description, link, tech, status }) => (
   <BaseCard href={link} className="p-6">
-    <div className="flex-1 space-y-3">
+    <div className="flex-1 space-y-6">
       <header className="space-y-3">
         <div className={CARD_STYLE_CLASSES.titleContainer}>
           <h3 
