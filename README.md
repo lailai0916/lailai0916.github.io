@@ -52,7 +52,7 @@ npm start
 ## Project Structure
 
 ```bash
-Home
+website
 ├── blog                           # Blog
 │   ├── authors.yml                # Author settings
 │   └── tags.yml                   # Tag settings
