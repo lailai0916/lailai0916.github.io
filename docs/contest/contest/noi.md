@@ -6,15 +6,13 @@
 - [《NOI 大纲（2025年修订版）》](https://www.noi.cn/upload/resources/file/2025/04/18/NOI_Syllabus_Edition_2025.pdf)
 - [《NOI 大纲（2023年修订版）》](https://www.noi.cn/upload/resources/file/2023/03/15/1fa58eac9c412e01ce3c89c761058a43.pdf)
 
-## 竞赛大纲（2023年版本）
-
-:::tip[难度系数]
+## 难度系数
 
 - 入门级：$1 \sim 5$
 - 题高级：$5 \sim 8$
 - NOI 级：$7 \sim 10$
 
-:::
+## NOI 大纲（2023年修订版）
 
 ### 1. 入门级
 

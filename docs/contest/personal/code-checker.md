@@ -3,7 +3,7 @@
 ## 结构
 
 ```bash
-Checker
+checker
 ├── main.bat                       # 批处理脚本
 ├── lite.bat                       # 批处理脚本（轻量版）
 ├── gen.exe                        # 数据生成器

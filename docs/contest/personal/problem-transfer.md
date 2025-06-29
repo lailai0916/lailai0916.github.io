@@ -1,4 +1,4 @@
-# 洛谷题目搬运
+# 题目搬运
 
 ## 参考资料
 
@@ -9,7 +9,7 @@
 
 ## 题目测试点配置文件生成器
 
-```cpp
+```cpp title="main.cpp"
 #include <bits/stdc++.h>
 using namespace std;
 
