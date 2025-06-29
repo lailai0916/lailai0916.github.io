@@ -172,10 +172,10 @@ const calculateTimeLeft = (): TimeLeft & { isTimeUp: boolean } => {
 // ====== 组件 ======
 const ProgressCircle = React.memo<ProgressCircleProps>(({ unitKey, total, value, unitText }) => {
   const circleProps = useMemo(() => {
-    const circumference = 2 * Math.PI * CONFIG.RADIUS;
-    const progress = Math.min(Math.max((value / total) * 100, 0), 100);
-    const strokeDashoffset = circumference - (progress / 100) * circumference;
-    const rotationAngle = Math.min(Math.max(360 * value / total, 0), 360);
+  const circumference = 2 * Math.PI * CONFIG.RADIUS;
+  const progress = Math.min(Math.max((value / total) * 100, 0), 100);
+  const strokeDashoffset = circumference - (progress / 100) * circumference;
+  const rotationAngle = Math.min(Math.max(360 * value / total, 0), 360);
     const svgCenter = CONFIG.SVG_SIZE / 2;
 
     return {
@@ -184,19 +184,19 @@ const ProgressCircle = React.memo<ProgressCircleProps>(({ unitKey, total, value,
       rotationAngle,
       svgCenter,
       indicatorDotStyle: {
-        background: 'var(--ifm-color-primary)',
-        boxShadow: '0 0 20px var(--ifm-color-primary), 0 0 60px var(--ifm-color-primary)',
-        left: '50%',
-        top: '50%',
-        width: `${CONFIG.DOT_SIZE}px`,
-        height: `${CONFIG.DOT_SIZE}px`,
-        transform: `translate(-50%, -50%) rotate(${rotationAngle}deg) translateY(-${CONFIG.RADIUS}px)`,
+    background: 'var(--ifm-color-primary)',
+    boxShadow: '0 0 20px var(--ifm-color-primary), 0 0 60px var(--ifm-color-primary)',
+    left: '50%',
+    top: '50%',
+    width: `${CONFIG.DOT_SIZE}px`,
+    height: `${CONFIG.DOT_SIZE}px`,
+    transform: `translate(-50%, -50%) rotate(${rotationAngle}deg) translateY(-${CONFIG.RADIUS}px)`,
       } as React.CSSProperties,
       progressStyle: {
-        strokeDasharray: circumference,
+    strokeDasharray: circumference,
         strokeDashoffset,
       } as React.CSSProperties,
-    };
+  };
   }, [value, total]);
 
   return (
@@ -228,7 +228,7 @@ const ProgressCircle = React.memo<ProgressCircleProps>(({ unitKey, total, value,
           />
         </svg>
         
-        <div
+                <div
           className={`absolute rounded-full shadow-lg ${COUNTDOWN_STYLES.DOT_TRANSITION}`}
           style={circleProps.indicatorDotStyle}
         />
@@ -248,38 +248,38 @@ const ProgressCircle = React.memo<ProgressCircleProps>(({ unitKey, total, value,
 ProgressCircle.displayName = 'ProgressCircle';
 
 const CountdownContent = React.memo<{ timeLeft: TimeLeft }>(({ timeLeft }) => (
-  <>
-    <SectionHeader 
-      title={COUNTDOWN_TEXTS.title}
-      description={COUNTDOWN_TEXTS.description}
-      align="center"
-    />
-    
-    <div className="flex gap-8 justify-center w-fit mx-auto max-md:grid max-md:grid-cols-2 max-md:gap-6 max-[400px]:grid-cols-1 max-[400px]:gap-4">
-      {TIME_UNITS.map(({ key, total }) => (
-        <ProgressCircle 
-          key={key}
-          unitKey={key}
-          total={total}
-          value={timeLeft[key]}
+    <>
+      <SectionHeader 
+        title={COUNTDOWN_TEXTS.title}
+        description={COUNTDOWN_TEXTS.description}
+        align="center"
+      />
+      
+      <div className="flex gap-8 justify-center w-fit mx-auto max-md:grid max-md:grid-cols-2 max-md:gap-6 max-[400px]:grid-cols-1 max-[400px]:gap-4">
+        {TIME_UNITS.map(({ key, total }) => (
+          <ProgressCircle 
+            key={key}
+            unitKey={key}
+            total={total}
+            value={timeLeft[key]}
           unitText={COUNTDOWN_TEXTS.units[key]}
-        />
-      ))}
-    </div>
-  </>
+          />
+        ))}
+      </div>
+    </>
 ));
 
 CountdownContent.displayName = 'CountdownContent';
 
 const TimeUpContent = React.memo(() => (
-  <div className="text-center">
-    <h2 className={COUNTDOWN_STYLES.MAIN_TITLE}>
-      {CONFIG.EVENT}
-    </h2>
-    <p className={COUNTDOWN_STYLES.SUCCESS_TEXT}>
-      {COUNTDOWN_TEXTS.finalText}
-    </p>
-  </div>
+    <div className="text-center">
+      <h2 className={COUNTDOWN_STYLES.MAIN_TITLE}>
+        {CONFIG.EVENT}
+      </h2>
+      <p className={COUNTDOWN_STYLES.SUCCESS_TEXT}>
+        {COUNTDOWN_TEXTS.finalText}
+      </p>
+    </div>
 ));
 
 TimeUpContent.displayName = 'TimeUpContent';
@@ -298,20 +298,20 @@ export default function Countdown() {
   const updateTime = useCallback(() => {
     try {
       const result = calculateTimeLeft();
-      
-      if (result.isTimeUp) {
-        setIsTimeUp(true);
-        timerRef.current?.stop();
-        return;
-      }
+    
+    if (result.isTimeUp) {
+      setIsTimeUp(true);
+      timerRef.current?.stop();
+      return;
+    }
 
-      const { days, hours, minutes, seconds } = result;
+    const { days, hours, minutes, seconds } = result;
       setTimeLeft(prev => {
         if (prev.days !== days || prev.hours !== hours || prev.minutes !== minutes || prev.seconds !== seconds) {
-          return { days, hours, minutes, seconds };
-        }
+        return { days, hours, minutes, seconds };
+      }
         return prev;
-      });
+    });
     } catch (error) {
       console.error('Update time error:', error);
     }
@@ -337,7 +337,7 @@ export default function Countdown() {
     return () => {
       if (timerRef.current) {
         timerRef.current.stop();
-        timerRef.current = null;
+      timerRef.current = null;
       }
     };
   }, [updateTime]);
