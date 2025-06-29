@@ -16,7 +16,7 @@ function getFavicon(url: string): string | null {
     const urlObj = new URL(url);
     return `https://www.google.com/s2/favicons?sz=64&domain=${urlObj.hostname}`;
   } catch (error) {
-    console.error('无法解析 URL:', url);
+    // 静默处理URL解析错误
     return null;
   }
 }

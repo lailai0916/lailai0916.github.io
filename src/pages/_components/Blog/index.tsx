@@ -47,12 +47,12 @@ const formatDate = (dateString: string, locale: string): string => {
   try {
     const date = new Date(dateString);
     if (isNaN(date.getTime())) {
-      console.warn(`Invalid date string: ${dateString}`);
+      // 静默处理无效日期
       return dateString;
     }
     return date.toLocaleDateString(locale, DATE_FORMAT_OPTIONS);
   } catch (error) {
-    console.warn(`Date formatting error: ${error}`);
+    // 静默处理日期格式化错误
     return dateString;
   }
 };

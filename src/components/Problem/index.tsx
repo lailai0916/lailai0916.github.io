@@ -64,7 +64,7 @@ const Problem: React.FC<ProblemProps> = ({ id }) => {
                 });
                 return `<div class="math-display">${renderedMath}</div>`;
               } catch (e) {
-                console.warn('KaTeX rendering error for display math:', e);
+                // 静默处理KaTeX块级数学公式渲染错误
                 return match;
               }
             });
@@ -108,7 +108,7 @@ const Problem: React.FC<ProblemProps> = ({ id }) => {
                   throwOnError: false
                 });
               } catch (e) {
-                console.warn('KaTeX rendering error for inline math:', e);
+                // 静默处理KaTeX内联数学公式渲染错误
                 return match;
               }
             });
@@ -126,7 +126,7 @@ const Problem: React.FC<ProblemProps> = ({ id }) => {
         processInlineMath(container);
         
       }).catch(error => {
-        console.warn('Failed to load KaTeX:', error);
+        // 静默处理KaTeX加载失败
       });
     }
   });
@@ -155,7 +155,7 @@ const Problem: React.FC<ProblemProps> = ({ id }) => {
       throw new Error('Module has no default export');
     }
   } catch (error) {
-    console.error(`Error loading problem ${id}:`, error);
+    // 静默处理题目加载错误，只显示错误信息给用户
     return (
       <Admonition type="danger" title={`错误：无法加载题目 ${id}`}>
         请检查文件 src/problems/{id}.md 是否存在。

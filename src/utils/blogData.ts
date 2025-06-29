@@ -42,10 +42,10 @@ export function formatDateToChinese(dateString: string): string {
 function getBlogListData(): any {
   try {
     const data = require('@site/.docusaurus/docusaurus-plugin-content-blog/default/blog-post-list-prop-default.json');
-    console.log(`✅ 成功加载 ${data?.items?.length || 0} 篇博客文章`);
+    // 静默加载博客数据
     return data;
   } catch (error) {
-    console.warn('⚠️ 无法加载博客数据，将显示空状态:', error);
+    // 静默处理博客数据加载失败
     return null;
   }
 }

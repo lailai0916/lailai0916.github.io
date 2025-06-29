@@ -111,7 +111,7 @@ class AccurateTimer {
     try {
       this.func();
     } catch (error) {
-      console.error('Timer callback error:', error);
+      // 静默处理定时器回调错误
     }
     
     const now = Date.now();
@@ -146,7 +146,7 @@ const calculateTimeLeft = (): TimeLeft & { isTimeUp: boolean } => {
     
     // 验证日期有效性
     if (isNaN(endDate.getTime()) || isNaN(nowDate.getTime())) {
-      console.error('Invalid date format');
+      // 静默处理无效日期格式
       return { days: 0, hours: 0, minutes: 0, seconds: 0, isTimeUp: true };
     }
     
@@ -164,7 +164,7 @@ const calculateTimeLeft = (): TimeLeft & { isTimeUp: boolean } => {
       isTimeUp: false,
     };
   } catch (error) {
-    console.error('Date calculation error:', error);
+    // 静默处理日期计算错误
     return { days: 0, hours: 0, minutes: 0, seconds: 0, isTimeUp: true };
   }
 };
@@ -313,7 +313,7 @@ export default function Countdown() {
         return prev;
     });
     } catch (error) {
-      console.error('Update time error:', error);
+      // 静默处理更新时间错误
     }
   }, []);
 
@@ -331,7 +331,7 @@ export default function Countdown() {
       timerRef.current = new AccurateTimer(updateTime, CONFIG.TIMER_INTERVAL);
       timerRef.current.start();
     } catch (error) {
-      console.error('Timer initialization error:', error);
+      // 静默处理定时器初始化错误
     }
 
     return () => {

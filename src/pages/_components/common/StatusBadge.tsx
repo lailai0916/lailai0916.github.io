@@ -23,7 +23,7 @@ export default function StatusBadge({ status }: StatusBadgeProps) {
   const statusConfig = STATUS_MAP[status as keyof typeof STATUS_MAP];
   
   if (!statusConfig) {
-    console.warn(`Unknown status: ${status}`);
+    // 静默处理未知状态
     return null;
   }
 

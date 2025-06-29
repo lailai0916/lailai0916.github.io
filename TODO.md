@@ -17,13 +17,13 @@
   ```
 
 ### 调试代码清理
-- [ ] **资源页面**: 移除调试用的console.error (src/pages/resources/index.tsx:18)
-- [ ] **状态徽章**: 移除console.warn (src/pages/_components/common/StatusBadge.tsx:25)
-- [ ] **博客组件**: 移除多个console.warn (src/pages/_components/Blog/index.tsx:49,54)
-- [ ] **倒计时组件**: 清理多个console.error (src/pages/_components/Countdown/index.tsx:113,148,166,315,333)
-- [ ] **博客数据工具**: 移除console.log和console.warn (src/utils/blogData.ts:44,47)
-- [ ] **设置卡片**: 移除console.error (src/pages/settings/_components/SettingCards.tsx:36,47)
-- [ ] **题目组件**: 移除多个console.warn和console.error (src/components/Problem/index.tsx:66,110,128,157)
+- [x] **资源页面**: 移除调试用的console.error (src/pages/resources/index.tsx:18) ✅
+- [x] **状态徽章**: 移除console.warn (src/pages/_components/common/StatusBadge.tsx:25) ✅
+- [x] **博客组件**: 移除多个console.warn (src/pages/_components/Blog/index.tsx:49,54) ✅
+- [x] **倒计时组件**: 清理多个console.error (src/pages/_components/Countdown/index.tsx:113,148,166,315,333) ✅
+- [x] **博客数据工具**: 移除console.log和console.warn (src/utils/blogData.ts:44,47) ✅
+- [x] **设置卡片**: 移除console.error (src/pages/settings/_components/SettingCards.tsx:36,47) ✅
+- [x] **题目组件**: 移除多个console.warn和console.error (src/components/Problem/index.tsx:66,110,128,157) ✅
 
 ### 代码规范工具
 - [ ] **ESLint配置**: 添加ESLint配置文件提升代码质量
