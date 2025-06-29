@@ -52,7 +52,7 @@ const ProjectCard = React.memo<{
   <BaseCard href={link} className="p-6">
     <div className="flex-1 space-y-3">
       <header className="space-y-3">
-        <div className="flex items-start justify-between gap-3">
+        <div className="flex items-baseline justify-between gap-3">
           <h3 
             className={`font-semibold text-xl ${TEXT_COLORS.PRIMARY} group-hover:text-[var(--ifm-color-primary)] transition-colors duration-200`}
             style={TEXT_CLAMP_STYLES.title}
