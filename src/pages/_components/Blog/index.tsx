@@ -15,23 +15,30 @@ const DATE_FORMAT_OPTIONS: Intl.DateTimeFormatOptions = {
   timeZone: 'UTC'
 } as const;
 
+// 文本截断样式配置 - 学习Project的配置化机制
+const TEXT_CLAMP_STYLES = {
+  title: {
+    display: '-webkit-box',
+    WebkitLineClamp: 2,
+    WebkitBoxOrient: 'vertical',
+    overflow: 'hidden',
+    textOverflow: 'ellipsis',
+    lineHeight: '1.375',
+    minHeight: '2.75em'
+  } as React.CSSProperties
+} as const;
+
+// 图标尺寸配置 - 统一尺寸控制机制
+const ICON_SIZES = {
+  small: { width: 16, height: 16 }
+} as const;
+
 // 样式常量
 const CARD_STYLES = {
   container: 'group block h-full w-full rounded-2xl outline-none focus:outline-none no-underline hover:no-underline focus:ring-2 focus:ring-[var(--ifm-color-primary)]',
   article: 'relative overflow-hidden p-6 cursor-pointer w-full bg-white dark:bg-neutral-900 hover:bg-gray-50 dark:hover:bg-neutral-800/50 rounded-2xl transition-all duration-200 ease-out shadow-sm hover:shadow-md dark:shadow-none border border-gray-200 dark:border-neutral-700 hover:border-gray-300 dark:hover:border-neutral-600',
   title: 'font-semibold text-lg leading-snug group-hover:text-[var(--ifm-color-primary)] transition-colors duration-200'
 } as const;
-
-// 标题截断样式
-const TITLE_CLAMP_STYLE: React.CSSProperties = {
-  display: '-webkit-box',
-  WebkitLineClamp: 2,
-  WebkitBoxOrient: 'vertical',
-  overflow: 'hidden',
-  textOverflow: 'ellipsis',
-  lineHeight: '1.375',
-  minHeight: '2.75em'
-};
 
 /**
  * 日期格式化函数
@@ -69,14 +76,14 @@ const BlogCard = React.memo<ProcessedBlogPost & { locale: string }>(
             <header>
               <h3 
                 className={`${CARD_STYLES.title} ${TEXT_COLORS.PRIMARY}`}
-                style={TITLE_CLAMP_STYLE}
+                style={TEXT_CLAMP_STYLES.title}
               >
                 {title}
               </h3>
             </header>
             <footer>
               <div className={`flex items-center gap-2 text-sm ${TEXT_COLORS.SECONDARY}`}>
-                <Icon icon="lucide:calendar" width={16} height={16} aria-hidden="true" />
+                <Icon icon="lucide:calendar" width={ICON_SIZES.small.width} height={ICON_SIZES.small.height} aria-hidden="true" />
                 <time className="no-underline" dateTime={date}>
                   {formattedDate}
                 </time>

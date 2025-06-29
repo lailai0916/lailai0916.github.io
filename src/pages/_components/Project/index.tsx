@@ -3,6 +3,11 @@ import { Icon } from '@iconify/react';
 import { projects } from '../../../data/projects';
 import { BaseCard, Section, SectionHeader, StatusBadge, GridLayout, GridConfigs, TEXT_COLORS } from '../common';
 
+// 图标尺寸配置 - 学习Blog的明确尺寸控制机制
+const ICON_SIZES = {
+  default: { width: 20, height: 20 }
+} as const;
+
 // 文本行数控制样式 - 保证卡片高度一致性
 const TEXT_CLAMP_STYLES = {
   // 标题：1行高度，超出截断
@@ -39,6 +44,13 @@ const TEXT_CLAMP_STYLES = {
   } as React.CSSProperties
 } as const;
 
+// 样式类名配置 - 学习Blog的语义化命名机制
+const CARD_STYLE_CLASSES = {
+  titleContainer: 'flex items-baseline justify-between gap-3',
+  title: 'font-semibold text-xl leading-snug group-hover:text-[var(--ifm-color-primary)] transition-colors duration-200',
+  footer: 'flex items-center gap-2 text-sm'
+} as const;
+
 /**
  * 项目卡片组件 - 采用统一的布局机制
  */
@@ -52,9 +64,9 @@ const ProjectCard = React.memo<{
   <BaseCard href={link} className="p-6">
     <div className="flex-1 space-y-3">
       <header className="space-y-3">
-        <div className="flex items-baseline justify-between gap-3">
+        <div className={CARD_STYLE_CLASSES.titleContainer}>
           <h3 
-            className={`font-semibold text-xl ${TEXT_COLORS.PRIMARY} group-hover:text-[var(--ifm-color-primary)] transition-colors duration-200`}
+            className={`${CARD_STYLE_CLASSES.title} ${TEXT_COLORS.PRIMARY}`}
             style={TEXT_CLAMP_STYLES.title}
           >
             {title}
@@ -68,12 +80,16 @@ const ProjectCard = React.memo<{
           {description}
         </p>
       </header>
-      <footer>
-        <div className={`flex items-center gap-2 text-sm ${TEXT_COLORS.MUTED}`}>
-          <Icon icon="lucide:layers" />
-          <span style={TEXT_CLAMP_STYLES.tech}>{tech}</span>
-        </div>
-      </footer>
+              <footer>
+          <div className={`${CARD_STYLE_CLASSES.footer} ${TEXT_COLORS.MUTED}`}>
+            <Icon 
+              icon="lucide:layers" 
+              width={ICON_SIZES.default.width} 
+              height={ICON_SIZES.default.height} 
+            />
+            <span style={TEXT_CLAMP_STYLES.tech}>{tech}</span>
+          </div>
+        </footer>
     </div>
   </BaseCard>
 ));
