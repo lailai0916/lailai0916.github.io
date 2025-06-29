@@ -2,6 +2,8 @@
 sidebar_position: 0
 ---
 
+import DocCardList from '@theme/DocCardList';
+
 # 竞赛
 
 竞赛（Contest）板块涵盖信息学奥林匹克竞赛相关的基础知识、常见题型、解题思路，以及代码模板和参赛经验。
@@ -16,3 +18,7 @@ sidebar_position: 0
 - [OI Wiki](https://oi-wiki.org)
 - [cppreference.com](https://zh.cppreference.com/w/首页)
 - [维基百科，自由的百科全书](https://zh.wikipedia.org/wiki/Wikipedia:首页)
+
+## 目录
+
+<DocCardList />

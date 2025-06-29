@@ -2,6 +2,8 @@
 sidebar_position: 0
 ---
 
+import DocCardList from '@theme/DocCardList';
+
 # 笔记
 
 笔记（Note）板块整理了数学、编程、技术、外语等多个学科的学习笔记、知识梳理与个人的思考总结。
@@ -14,3 +16,7 @@ sidebar_position: 0
 ## 参考资料
 
 - [维基百科，自由的百科全书](https://zh.wikipedia.org/wiki/Wikipedia:首页)
+
+## 目录
+
+<DocCardList />
