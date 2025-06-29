@@ -108,9 +108,9 @@ const config: Config = {
         src: 'img/logo.svg',
       },
       items: [
-        { type: 'docSidebar', sidebarId: 'docs1', position: 'left', label: 'Contest' },
-        { type: 'docSidebar', sidebarId: 'docs2', position: 'left', label: 'Note' },
-        { type: 'docSidebar', sidebarId: 'docs3', position: 'left', label: 'Project' },
+        { type: 'docSidebar', sidebarId: 'sidebar1', position: 'left', label: 'Contest' },
+        { type: 'docSidebar', sidebarId: 'sidebar2', position: 'left', label: 'Note' },
+        { type: 'docSidebar', sidebarId: 'sidebar3', position: 'left', label: 'Project' },
         { to: 'blog', label: 'Blog', position: 'left' },
         {
           label: 'More',
