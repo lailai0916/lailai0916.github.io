@@ -8,8 +8,7 @@ interface StatusBadgeProps {
 // 状态映射配置
 const STATUS_MAP = {
   '维护中': { color: STATUS_COLORS.ORANGE, text: '维护中' },
-  '已完成': { color: STATUS_COLORS.GREEN, text: '已完成' },
-  '展示中': { color: STATUS_COLORS.BLUE, text: '展示中' },
+  '更新中': { color: STATUS_COLORS.GREEN, text: '更新中' },
   '敬请期待': { color: STATUS_COLORS.BLUE, text: '敬请期待' },
   '进行中': { color: STATUS_COLORS.ORANGE, text: '进行中' },
   '深化中': { color: STATUS_COLORS.PURPLE, text: '深化中' },

@@ -11,7 +11,7 @@ export const projects = [
     description: 'A collection of terminal mini-games developed in C++, featuring a variety of classic gameplay.',
     link: '/docs/project/终端/iGame',
     tech: 'C++ • Terminal',
-    status: '已完成',
+    status: '更新中',
   },
   {
     title: 'laiKit',
