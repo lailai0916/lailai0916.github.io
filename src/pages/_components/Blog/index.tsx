@@ -71,12 +71,12 @@ const formatDate = (dateString: string, locale: string): string => {
 };
 
 /**
- * 获取响应式卡片样式 - 简化逻辑
+ * 获取响应式卡片样式 - CSS Grid自动布局
  */
 const getCardWrapperClass = (index: number): string => {
-  const baseClass = `flex-1 min-w-[${CARD_MIN_WIDTH}px] text-start`;
+  const baseClass = `text-start`;
   // 第4个卡片（index=3）在小屏幕隐藏
-  const hideOnSmall = index === RESPONSIVE_BREAKPOINT ? 'hidden sm:block' : '';
+  const hideOnSmall = index === RESPONSIVE_BREAKPOINT ? 'hidden md:block' : '';
   return [baseClass, hideOnSmall].filter(Boolean).join(' ');
 };
 
@@ -208,7 +208,7 @@ export default function Blog() {
               <Icon icon="lucide:chevron-right" width={16} height={16} />
               <Translate id="home.blog.latest">Latest Posts</Translate>
             </p>
-            <div className="flex-col sm:flex-row flex-wrap flex gap-6 text-start my-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-start my-8">
               <BlogCardList posts={recentPosts} locale={i18n.currentLocale} />
             </div>
           </div>
