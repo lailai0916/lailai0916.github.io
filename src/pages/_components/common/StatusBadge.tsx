@@ -13,7 +13,7 @@ const STATUS_MAP = {
   '进行中': { color: STATUS_COLORS.ORANGE, text: '进行中' },
   '深化中': { color: STATUS_COLORS.PURPLE, text: '深化中' },
   '探索中': { color: STATUS_COLORS.BLUE, text: '探索中' },
-  '学习中': { color: STATUS_COLORS.BLUE, text: '学习中' },
+  '学习中': { color: STATUS_COLORS.GREEN, text: '学习中' },
   '创新思维': { color: STATUS_COLORS.PURPLE, text: '创新思维' },
   '职业理念': { color: STATUS_COLORS.GREEN, text: '职业理念' },
   '技术态度': { color: STATUS_COLORS.BLUE, text: '技术态度' }
