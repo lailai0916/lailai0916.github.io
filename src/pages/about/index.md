@@ -23,7 +23,7 @@ import { Title, Device, Community, Comment } from '@site/src/pages/about/_compon
 
 ## Website Introduction
 
-lailai's personal website for sharing technical notes, project experience, and learning insights. ✨
+lailai's personal website for sharing technical notes, project experience, and learning insights.
 
 Built with [Docusaurus](https://docusaurus.io) and open-sourced on [GitHub](https://github.com/lailai0916/lailai0916.github.io).
 

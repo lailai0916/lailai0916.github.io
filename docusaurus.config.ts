@@ -9,7 +9,7 @@ const defaultLocale = 'en';
 
 const config: Config = {
   title: 'lailai\'s Home',
-  tagline: 'lailai\'s personal website for sharing technical notes, project experience, and learning insights. ✨',
+  tagline: 'lailai\'s personal website for sharing technical notes, project experience, and learning insights.',
   favicon: 'img/favicon.ico',
 
   future: {
