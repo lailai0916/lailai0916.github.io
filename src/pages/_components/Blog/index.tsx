@@ -8,8 +8,6 @@ import Section from '../common/Section';
 import { TEXT_COLORS } from '../common';
 
 // 常量定义
-const RESPONSIVE_BREAKPOINT = 3; // 第4个卡片在小屏幕隐藏
-const CARD_MIN_WIDTH = 280; // 卡片最小宽度(px)
 const DATE_FORMAT_OPTIONS: Intl.DateTimeFormatOptions = {
   year: 'numeric',
   month: 'long', 
@@ -17,32 +15,14 @@ const DATE_FORMAT_OPTIONS: Intl.DateTimeFormatOptions = {
   timeZone: 'UTC'
 } as const;
 
-// 样式常量 - 简化并提升可读性
+// 样式常量
 const CARD_STYLES = {
-  container: [
-    'group block h-full w-full rounded-2xl outline-none focus:outline-none',
-    'no-underline hover:no-underline',
-    'focus:ring-2 focus:ring-[var(--ifm-color-primary)]'
-  ].join(' '),
-  
-  article: [
-    'relative overflow-hidden p-6 cursor-pointer w-full flex flex-col',
-    'bg-white dark:bg-neutral-900',
-    'hover:bg-gray-50 dark:hover:bg-neutral-800/50',
-    'rounded-2xl transition-all duration-200 ease-out',
-    'shadow-sm hover:shadow-md dark:shadow-none',
-    'border border-gray-200 dark:border-neutral-700',
-    'hover:border-gray-300 dark:hover:border-neutral-600'
-  ].join(' '),
-  
-  title: [
-    'font-semibold text-lg leading-snug',
-    'group-hover:text-[var(--ifm-color-primary)]',
-    'transition-colors duration-200'
-  ].join(' ')
+  container: 'group block h-full w-full rounded-2xl outline-none focus:outline-none no-underline hover:no-underline focus:ring-2 focus:ring-[var(--ifm-color-primary)]',
+  article: 'relative overflow-hidden p-6 cursor-pointer w-full bg-white dark:bg-neutral-900 hover:bg-gray-50 dark:hover:bg-neutral-800/50 rounded-2xl transition-all duration-200 ease-out shadow-sm hover:shadow-md dark:shadow-none border border-gray-200 dark:border-neutral-700 hover:border-gray-300 dark:hover:border-neutral-600',
+  title: 'font-semibold text-lg leading-snug group-hover:text-[var(--ifm-color-primary)] transition-colors duration-200'
 } as const;
 
-// 标题截断样式 - 保持两行高度，不足两行时自动占位
+// 标题截断样式
 const TITLE_CLAMP_STYLE: React.CSSProperties = {
   display: '-webkit-box',
   WebkitLineClamp: 2,
@@ -50,18 +30,18 @@ const TITLE_CLAMP_STYLE: React.CSSProperties = {
   overflow: 'hidden',
   textOverflow: 'ellipsis',
   lineHeight: '1.375',
-  minHeight: '2.75em' // 确保始终占据两行高度：1.375 * 2 = 2.75em
+  minHeight: '2.75em'
 };
 
 /**
- * 优化的日期格式化函数 - 添加错误处理
+ * 日期格式化函数
  */
 const formatDate = (dateString: string, locale: string): string => {
   try {
     const date = new Date(dateString);
     if (isNaN(date.getTime())) {
       console.warn(`Invalid date string: ${dateString}`);
-      return dateString; // 返回原始字符串作为回退
+      return dateString;
     }
     return date.toLocaleDateString(locale, DATE_FORMAT_OPTIONS);
   } catch (error) {
@@ -71,91 +51,75 @@ const formatDate = (dateString: string, locale: string): string => {
 };
 
 /**
- * 获取响应式卡片样式 - CSS Grid自动布局
+ * 博客卡片组件
  */
-const getCardWrapperClass = (index: number): string => {
-  const baseClass = `text-start`;
-  // 第4个卡片（index=3）在小屏幕隐藏
-  const hideOnSmall = index === RESPONSIVE_BREAKPOINT ? 'hidden md:block' : '';
-  return [baseClass, hideOnSmall].filter(Boolean).join(' ');
-};
-
-// 类型定义
-interface BlogCardProps extends ProcessedBlogPost {
-  locale: string;
-}
-
-interface BlogCardListProps {
-  posts: ProcessedBlogPost[];
-  locale: string;
-}
-
-/**
- * 博客卡片组件 - 使用React.memo优化性能
- */
-const BlogCard = React.memo<BlogCardProps>(({ title, date, permalink, locale }) => {
-  const formattedDate = useMemo(() => formatDate(date, locale), [date, locale]);
-  
-  // 为可访问性创建描述性标签
-  const ariaLabel = `阅读文章: ${title}, 发布于 ${formattedDate}`;
-  
-  return (
-    <Link 
-      to={permalink} 
-      className={CARD_STYLES.container} 
-      style={{ textDecoration: 'none' }}
-      aria-label={ariaLabel}
-    >
-      <article className={CARD_STYLES.article}>
-        <div className="flex flex-col justify-between h-full">
-          <header className="flex-1">
-            <h3 
-              className={`${CARD_STYLES.title} ${TEXT_COLORS.PRIMARY}`}
-              style={TITLE_CLAMP_STYLE}
-            >
-              {title}
-            </h3>
-          </header>
-          <footer className="mt-auto pt-2">
-            <div className={`flex items-center gap-2 text-sm ${TEXT_COLORS.SECONDARY}`}>
-              <Icon icon="lucide:calendar" width={16} height={16} aria-hidden="true" />
-              <time className="no-underline" dateTime={date}>
-                {formattedDate}
-              </time>
-            </div>
-          </footer>
-        </div>
-      </article>
-    </Link>
-  );
-});
+const BlogCard = React.memo<ProcessedBlogPost & { locale: string }>(
+  ({ title, date, permalink, locale }) => {
+    const formattedDate = useMemo(() => formatDate(date, locale), [date, locale]);
+    
+    return (
+      <Link 
+        to={permalink} 
+        className={CARD_STYLES.container} 
+        style={{ textDecoration: 'none' }}
+        aria-label={`阅读文章: ${title}, 发布于 ${formattedDate}`}
+      >
+        <article className={CARD_STYLES.article}>
+          <div className="space-y-3">
+            <header>
+              <h3 
+                className={`${CARD_STYLES.title} ${TEXT_COLORS.PRIMARY}`}
+                style={TITLE_CLAMP_STYLE}
+              >
+                {title}
+              </h3>
+            </header>
+            <footer>
+              <div className={`flex items-center gap-2 text-sm ${TEXT_COLORS.SECONDARY}`}>
+                <Icon icon="lucide:calendar" width={16} height={16} aria-hidden="true" />
+                <time className="no-underline" dateTime={date}>
+                  {formattedDate}
+                </time>
+              </div>
+            </footer>
+          </div>
+        </article>
+      </Link>
+    );
+  }
+);
 
 BlogCard.displayName = 'BlogCard';
 
 /**
- * 博客卡片列表组件 - 使用React.memo优化性能
+ * 博客卡片列表组件
  */
-const BlogCardList = React.memo<BlogCardListProps>(({ posts, locale }) => {
-  if (!posts.length) {
+const BlogCardList = React.memo<{ posts: ProcessedBlogPost[]; locale: string }>(
+  ({ posts, locale }) => {
+    if (!posts.length) {
+      return (
+        <div className="w-full text-center py-12">
+          <p className={`${TEXT_COLORS.MUTED} text-lg`}>
+            {BLOG_CONFIG.EMPTY_STATE_MESSAGE}
+          </p>
+        </div>
+      );
+    }
+
     return (
-      <div className="w-full text-center py-12">
-        <p className={`${TEXT_COLORS.MUTED} text-lg`}>
-          {BLOG_CONFIG.EMPTY_STATE_MESSAGE}
-        </p>
-      </div>
+      <>
+        {posts.slice(0, BLOG_CONFIG.MAX_POSTS).map((post, index) => (
+          <div 
+            key={post.permalink} 
+            className={index === 3 ? 'hidden md:block' : undefined}
+          >
+            <BlogCard {...post} locale={locale} />
+          </div>
+        ))}
+      </>
     );
   }
-
-  return (
-    <>
-      {posts.slice(0, BLOG_CONFIG.MAX_POSTS).map((post, index) => (
-        <div key={post.permalink} className={getCardWrapperClass(index)}>
-          <BlogCard {...post} locale={locale} />
-        </div>
-      ))}
-    </>
-  );
-});
+);
 
 BlogCardList.displayName = 'BlogCardList';
 
