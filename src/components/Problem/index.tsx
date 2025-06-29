@@ -2,13 +2,9 @@ import React from 'react';
 import Admonition from '@theme/Admonition';
 import { translate } from '@docusaurus/Translate';
 
-interface ProblemProps {
-  id: string;
-}
-
 const componentCache = new Map<string, React.ComponentType>();
 
-const Problem: React.FC<ProblemProps> = ({ id }) => {
+const Problem = ({ id }: { id: string }) => {
   // 检查缓存
   const cachedComponent = componentCache.get(id);
   if (cachedComponent) {
