@@ -9,6 +9,7 @@ import { TEXT_COLORS } from '../common';
 
 // 常量定义
 const RESPONSIVE_BREAKPOINT = 3; // 第4个卡片在小屏幕隐藏
+const CARD_MIN_WIDTH = 280; // 卡片最小宽度(px)
 const DATE_FORMAT_OPTIONS: Intl.DateTimeFormatOptions = {
   year: 'numeric',
   month: 'long', 
@@ -25,7 +26,7 @@ const CARD_STYLES = {
   ].join(' '),
   
   article: [
-    'relative overflow-hidden p-6 cursor-pointer w-full h-36 flex flex-col',
+    'relative overflow-hidden p-6 cursor-pointer w-full flex flex-col',
     'bg-white dark:bg-neutral-900',
     'hover:bg-gray-50 dark:hover:bg-neutral-800/50',
     'rounded-2xl transition-all duration-200 ease-out',
@@ -41,7 +42,7 @@ const CARD_STYLES = {
   ].join(' ')
 } as const;
 
-// 标题截断样式
+// 标题截断样式 - 保持两行高度，不足两行时自动占位
 const TITLE_CLAMP_STYLE: React.CSSProperties = {
   display: '-webkit-box',
   WebkitLineClamp: 2,
@@ -49,23 +50,34 @@ const TITLE_CLAMP_STYLE: React.CSSProperties = {
   overflow: 'hidden',
   textOverflow: 'ellipsis',
   lineHeight: '1.375',
-  height: '2.75em'
+  minHeight: '2.75em' // 确保始终占据两行高度：1.375 * 2 = 2.75em
 };
 
 /**
- * 优化的日期格式化函数
+ * 优化的日期格式化函数 - 添加错误处理
  */
 const formatDate = (dateString: string, locale: string): string => {
-  return new Date(dateString).toLocaleDateString(locale, DATE_FORMAT_OPTIONS);
+  try {
+    const date = new Date(dateString);
+    if (isNaN(date.getTime())) {
+      console.warn(`Invalid date string: ${dateString}`);
+      return dateString; // 返回原始字符串作为回退
+    }
+    return date.toLocaleDateString(locale, DATE_FORMAT_OPTIONS);
+  } catch (error) {
+    console.warn(`Date formatting error: ${error}`);
+    return dateString;
+  }
 };
 
 /**
- * 获取响应式卡片样式
+ * 获取响应式卡片样式 - 简化逻辑
  */
 const getCardWrapperClass = (index: number): string => {
-  const baseClass = 'flex-1 min-w-[280px] text-start';
-  const hiddenOnSmall = index === RESPONSIVE_BREAKPOINT ? 'hidden sm:flex-1 sm:block sm:min-w-[280px]' : '';
-  return `${baseClass} ${hiddenOnSmall}`.trim();
+  const baseClass = `flex-1 min-w-[${CARD_MIN_WIDTH}px] text-start`;
+  // 第4个卡片（index=3）在小屏幕隐藏
+  const hideOnSmall = index === RESPONSIVE_BREAKPOINT ? 'hidden sm:block' : '';
+  return [baseClass, hideOnSmall].filter(Boolean).join(' ');
 };
 
 // 类型定义
@@ -84,8 +96,16 @@ interface BlogCardListProps {
 const BlogCard = React.memo<BlogCardProps>(({ title, date, permalink, locale }) => {
   const formattedDate = useMemo(() => formatDate(date, locale), [date, locale]);
   
+  // 为可访问性创建描述性标签
+  const ariaLabel = `阅读文章: ${title}, 发布于 ${formattedDate}`;
+  
   return (
-    <Link to={permalink} className={CARD_STYLES.container} style={{ textDecoration: 'none' }}>
+    <Link 
+      to={permalink} 
+      className={CARD_STYLES.container} 
+      style={{ textDecoration: 'none' }}
+      aria-label={ariaLabel}
+    >
       <article className={CARD_STYLES.article}>
         <div className="flex flex-col justify-between h-full">
           <header className="flex-1">
@@ -98,8 +118,10 @@ const BlogCard = React.memo<BlogCardProps>(({ title, date, permalink, locale }) 
           </header>
           <footer className="mt-auto pt-2">
             <div className={`flex items-center gap-2 text-sm ${TEXT_COLORS.SECONDARY}`}>
-              <Icon icon="lucide:calendar" width={16} height={16} />
-              <time className="no-underline" dateTime={date}>{formattedDate}</time>
+              <Icon icon="lucide:calendar" width={16} height={16} aria-hidden="true" />
+              <time className="no-underline" dateTime={date}>
+                {formattedDate}
+              </time>
             </div>
           </footer>
         </div>
@@ -182,7 +204,7 @@ export default function Blog() {
           
           {/* 右侧博客卡片区域 */}
           <div className="w-full lg:w-6/12">
-            <p className={`tracking-wide font-bold text-sm ${TEXT_COLORS.SECONDARY} flex flex-row gap-2 items-center mt-5 lg:mt-0 w-full`}>
+            <p className={`font-bold text-sm ${TEXT_COLORS.SECONDARY} flex flex-row gap-2 items-center mt-5 lg:mt-0 w-full`}>
               <Icon icon="lucide:chevron-right" width={16} height={16} />
               <Translate id="home.blog.latest">Latest Posts</Translate>
             </p>

@@ -4,11 +4,11 @@
   background: transparent !important;
 }
 
-/* 卡片基础样式 - 统一timeline-card-content和travel-timeline-card */
+/* 卡片基础样式 - 统一所有卡片元素 */
 :global(.timeline-card-content),
 :global(.travel-timeline-card) {
   border-radius: 1rem !important;
-  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06) !important;
+  box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px 0 rgb(0 0 0 / 0.06) !important;
   transition: all 0.2s ease-out !important;
   border: 1px solid var(--ifm-color-emphasis-300) !important;
   background: var(--ifm-card-background-color) !important;
@@ -17,15 +17,16 @@
   overflow: hidden !important;
 }
 
+/* 卡片悬停效果 */
 :global(.timeline-card-content:hover),
 :global(.travel-timeline-card:hover) {
   transform: translateY(-2px) !important;
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05) !important;
+  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -2px rgb(0 0 0 / 0.05) !important;
   border-color: var(--ifm-color-primary-lighter) !important;
   background: var(--ifm-background-surface-color) !important;
 }
 
-/* 暗色模式 - 统一选择器格式 */
+/* 暗色模式样式 */
 :global(html[data-theme='dark'] .timeline-card-content),
 :global(html[data-theme='dark'] .travel-timeline-card) {
   background: var(--ifm-card-background-color) !important;
@@ -37,7 +38,7 @@
 :global(html[data-theme='dark'] .travel-timeline-card:hover) {
   background: var(--ifm-background-surface-color) !important;
   border-color: var(--ifm-color-primary-light) !important;
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3) !important;
+  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.3) !important;
 }
 
 /* 卡片标题样式 */
@@ -76,7 +77,7 @@
   border-radius: 12px !important;
   text-transform: uppercase !important;
   letter-spacing: 0.05em !important;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important;
+  box-shadow: 0 2px 4px rgb(0 0 0 / 0.1) !important;
   display: inline-block !important;
   line-height: 1rem !important;
   transition: all 0.2s ease !important;
@@ -85,7 +86,7 @@
 :global(.travel-timeline-title:hover) {
   background: var(--ifm-color-primary-dark) !important;
   transform: translateY(-1px) !important;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15) !important;
+  box-shadow: 0 4px 8px rgb(0 0 0 / 0.15) !important;
 }
 
 :global(html[data-theme='dark'] .travel-timeline-title) {
@@ -106,12 +107,7 @@
   border-radius: 50% !important;
 }
 
-/* 时间线整体样式 */
-:global(.react-chrono-timeline) {
-  filter: none !important;
-}
-
-/* 隐藏卡片连接菱形 */
+/* 隐藏卡片连接装饰 */
 :global(.timeline-card-content::after),
 :global(.timeline-card-content::before) {
   display: none !important;
