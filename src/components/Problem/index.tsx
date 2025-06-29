@@ -1,33 +1,40 @@
 import React from 'react';
 import Admonition from '@theme/Admonition';
+import { translate } from '@docusaurus/Translate';
 
 interface ProblemProps {
   id: string;
 }
 
-const componentCache: { [key: string]: React.ComponentType } = {};
+const componentCache = new Map<string, React.ComponentType>();
 
 const Problem: React.FC<ProblemProps> = ({ id }) => {
-  if (componentCache[id]) {
-    const CachedComponent = componentCache[id];
-    return <CachedComponent />;
+  // 检查缓存
+  const cachedComponent = componentCache.get(id);
+  if (cachedComponent) {
+    return React.createElement(cachedComponent);
   }
 
   try {
     const module = require(`../../../docs/contest/_problems/${id}.md`);
     const MDXComponent = module.default;
     
-    if (MDXComponent) {
-      componentCache[id] = MDXComponent;
-      return <MDXComponent />;
-    } else {
+    if (!MDXComponent) {
       throw new Error('Module has no default export');
     }
-  } catch (error) {
-    // 静默处理题目加载错误，只显示错误信息给用户
+
+    componentCache.set(id, MDXComponent);
+    return React.createElement(MDXComponent);
+  } catch {
     return (
-      <Admonition type="danger" title={`Error: Unable to load question ${id}`}>
-        请检查文件 docs/contest/_problems/{id}.md 是否存在。
+      <Admonition type="danger" title={translate({
+        id: 'components.problem.error.title',
+        message: 'Error: Unable to load question {id}',
+      }, { id })}>
+        {translate({
+          id: 'components.problem.error.content',
+          message: 'Please check if the file docs/contest/_problems/{id}.md exists.',
+        }, { id })}
       </Admonition>
     );
   }

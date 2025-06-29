@@ -523,5 +523,11 @@
   },
   "home.countdown.unit.seconds": {
     "message": "秒"
+  },
+  "components.problem.error.title": {
+    "message": "错误：无法加载问题 {id}",
+  },
+  "components.problem.error.content": {
+    "message": "请检查文件 docs/contest/_problems/{id}.md 是否存在。",
   }
 }
