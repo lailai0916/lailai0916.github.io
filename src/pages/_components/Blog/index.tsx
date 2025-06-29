@@ -72,7 +72,7 @@ const BlogCard = React.memo<ProcessedBlogPost & { locale: string }>(
         aria-label={`阅读文章: ${title}, 发布于 ${formattedDate}`}
       >
         <article className={CARD_STYLES.article}>
-          <div className="space-y-3">
+          <div className="space-y-6">
             <header>
               <h3 
                 className={`${CARD_STYLES.title} ${TEXT_COLORS.PRIMARY}`}
