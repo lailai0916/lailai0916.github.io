@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function Desmos({url}: {url: string}): JSX.Element {
+const Desmos = ({ url }: { url: string }) => {
   return (
     <div>
       <iframe
@@ -14,4 +14,6 @@ export default function Desmos({url}: {url: string}): JSX.Element {
       />
     </div>
   );
-}
+};
+
+export default Desmos;
