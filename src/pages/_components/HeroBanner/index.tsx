@@ -28,13 +28,13 @@ export default function HeroBanner() {
           </span>
         </Heading>
         <div className={styles.indexCtas}>
-          <Link to="about" className={styles.ctaCard}>
+          <Link to="/about" className={styles.ctaCard}>
             <div className={styles.ctaCardContent}>
               <Icon icon="lucide:user-circle" width={24} height={24} className={styles.ctaCardIcon} />
               <Translate id="home.herobanner.about">About</Translate>
             </div>
           </Link>
-          <Link to="blog" className={styles.ctaCard}>
+          <Link to="/blog" className={styles.ctaCard}>
             <div className={styles.ctaCardContent}>
               <Icon icon="lucide:book-open" width={24} height={24} className={styles.ctaCardIcon} />
               <Translate id="home.herobanner.blog">Blog</Translate>
