@@ -22,10 +22,8 @@ interface ProgressCircleProps {
 // ====== 常量配置 ======
 const CONFIG = {
   DATE: '2026-01-01T00:00:00',
-  EVENT: translate({
-    id: 'home.countdown.event',
-    message: '2026',
-  }),
+  EVENT: translate({ id: 'home.countdown.event', message: '2026' }),
+  finalText: translate({ id: 'home.countdown.final', message: 'Happy New Year!' }),
   TIMER_INTERVAL: 1000,
   // 圆形进度条配置
   RADIUS: 74,
@@ -36,37 +34,13 @@ const CONFIG = {
 
 // ====== 国际化文本 ======
 const COUNTDOWN_TEXTS = {
-  title: translate({
-    id: 'home.countdown.title',
-    message: 'Countdown',
-  }),
-  description: translate({
-    id: 'home.countdown.description',
-    message: 'Time remaining until {event}',
-  }, {
-    event: CONFIG.EVENT
-  }),
-  finalText: translate({
-    id: 'home.countdown.final',
-    message: 'Happy New Year!',
-  }),
+  title: translate({ id: 'home.countdown.title', message: 'Countdown' }),
+  description: translate({ id: 'home.countdown.description', message: 'Time remaining until {event}' }, { event: CONFIG.EVENT }),
   units: {
-    days: translate({
-      id: 'home.countdown.unit.days',
-      message: 'Days',
-    }),
-    hours: translate({
-      id: 'home.countdown.unit.hours',
-      message: 'Hours',
-    }),
-    minutes: translate({
-      id: 'home.countdown.unit.minutes',
-      message: 'Minutes',
-    }),
-    seconds: translate({
-      id: 'home.countdown.unit.seconds',
-      message: 'Seconds',
-    }),
+    days: translate({ id: 'home.countdown.unit.days', message: 'Days' }),
+    hours: translate({ id: 'home.countdown.unit.hours', message: 'Hours' }),
+    minutes: translate({ id: 'home.countdown.unit.minutes', message: 'Minutes' }),
+    seconds: translate({ id: 'home.countdown.unit.seconds', message: 'Seconds' }),
   }
 } as const;
 
@@ -248,38 +222,38 @@ const ProgressCircle = React.memo<ProgressCircleProps>(({ unitKey, total, value,
 ProgressCircle.displayName = 'ProgressCircle';
 
 const CountdownContent = React.memo<{ timeLeft: TimeLeft }>(({ timeLeft }) => (
-    <>
-      <SectionHeader 
-        title={COUNTDOWN_TEXTS.title}
-        description={COUNTDOWN_TEXTS.description}
-        align="center"
-      />
-      
-      <div className="flex gap-8 justify-center w-fit mx-auto max-md:grid max-md:grid-cols-2 max-md:gap-6 max-[400px]:grid-cols-1 max-[400px]:gap-4">
-        {TIME_UNITS.map(({ key, total }) => (
-          <ProgressCircle 
-            key={key}
-            unitKey={key}
-            total={total}
-            value={timeLeft[key]}
-          unitText={COUNTDOWN_TEXTS.units[key]}
-          />
-        ))}
-      </div>
-    </>
+  <>
+    <SectionHeader 
+      title={COUNTDOWN_TEXTS.title}
+      description={COUNTDOWN_TEXTS.description}
+      align="center"
+    />
+    
+    <div className="flex gap-8 justify-center w-fit mx-auto max-md:grid max-md:grid-cols-2 max-md:gap-6 max-[400px]:grid-cols-1 max-[400px]:gap-4">
+      {TIME_UNITS.map(({ key, total }) => (
+        <ProgressCircle 
+          key={key}
+          unitKey={key}
+          total={total}
+          value={timeLeft[key]}
+        unitText={COUNTDOWN_TEXTS.units[key]}
+        />
+      ))}
+    </div>
+  </>
 ));
 
 CountdownContent.displayName = 'CountdownContent';
 
 const TimeUpContent = React.memo(() => (
-    <div className="text-center">
-      <h2 className={COUNTDOWN_STYLES.MAIN_TITLE}>
-        {CONFIG.EVENT}
-      </h2>
-      <p className={COUNTDOWN_STYLES.SUCCESS_TEXT}>
-        {COUNTDOWN_TEXTS.finalText}
-      </p>
-    </div>
+  <div className="text-center">
+    <h2 className={COUNTDOWN_STYLES.MAIN_TITLE}>
+      {CONFIG.EVENT}
+    </h2>
+    <p className={COUNTDOWN_STYLES.SUCCESS_TEXT}>
+      {CONFIG.finalText}
+    </p>
+  </div>
 ));
 
 TimeUpContent.displayName = 'TimeUpContent';

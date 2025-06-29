@@ -27,14 +27,8 @@ const Problem: React.FC<ProblemProps> = ({ id }) => {
     return React.createElement(MDXComponent);
   } catch {
     return (
-      <Admonition type="danger" title={translate({
-        id: 'components.problem.error.title',
-        message: 'Error: Unable to load question {id}',
-      }, { id })}>
-        {translate({
-          id: 'components.problem.error.content',
-          message: 'Please check if the file docs/contest/_problems/{id}.md exists.',
-        }, { id })}
+      <Admonition type="danger" title={translate({ id: 'components.problem.error.title',message: 'Error: Unable to load question {id}' }, { id })}>
+        {translate({ id: 'components.problem.error.content', message: 'Please check if the file "docs/contest/_problems/{id}.md" exists.' }, { id })}
       </Admonition>
     );
   }
