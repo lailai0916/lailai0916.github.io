@@ -47,6 +47,20 @@ const sidebars: SidebarsConfig = {
         'contest/lang/csl',
       ],
     },
+    {
+      type: 'category',
+      label: '算法基础',
+      link:
+      {
+        type: 'generated-index',
+        description: "本章介绍一些基础算法。",
+      },
+      items: [
+        'contest/basic/binary',
+        'contest/basic/divide-and-conquer',
+        'contest/basic/sort',
+      ],
+    },
   ],
   sidebar2: [
     {
