@@ -32,6 +32,21 @@ const sidebars: SidebarsConfig = {
         'contest/contest/tricks',
       ],
     },
+    {
+      type: 'category',
+      label: '语言基础',
+      link:
+      {
+        type: 'generated-index',
+        description: "本章将会介绍编程相关的知识，包括 C++ 从入门到进阶教程和一些其它语言的简介。",
+      },
+      items: [
+        'contest/lang/io',
+        'contest/lang/op',
+        'contest/lang/ascii',
+        'contest/lang/csl',
+      ],
+    },
   ],
   sidebar2: [
     {
