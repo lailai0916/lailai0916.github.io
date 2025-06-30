@@ -61,6 +61,61 @@ const sidebars: SidebarsConfig = {
         'contest/basic/sort',
       ],
     },
+    {
+      type: 'category',
+      label: '搜索',
+      link:
+      {
+        type: 'generated-index',
+        description: "搜索，也就是对状态空间进行枚举，通过穷尽所有的可能来找到最优解，或者统计合法解的个数。",
+      },
+      items: [
+        'contest/search/dfs',
+        'contest/search/bfs',
+        'contest/search/bidirectional',
+      ],
+    },
+    {
+      type: 'category',
+      label: '动态规划',
+      link:
+      {
+        type: 'generated-index',
+        description: "动态规划是一种通过把原问题分解为相对简单的子问题的方式求解复杂问题的方法。",
+      },
+      items: [
+        'contest/dp/knapsack',
+        'contest/dp/tree',
+        'contest/dp/state',
+      ],
+    },
+    {
+      type: 'category',
+      label: '字符串',
+      link:
+      {
+        type: 'generated-index',
+        description: "字符串，就是由字符连接而成的序列。",
+      },
+      items: [
+        'contest/string/match',
+        'contest/string/hash',
+        'contest/string/trie',
+        'contest/string/manacher',
+      ],
+    },
+    {
+      type: 'category',
+      label: '数学',
+      link:
+      {
+        type: 'generated-index',
+        description: "本章介绍 OI 中可能会用到的数学知识。",
+      },
+      items: [
+        
+      ],
+    },
   ],
   sidebar2: [
     {
