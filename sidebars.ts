@@ -6,7 +6,11 @@ const sidebars: SidebarsConfig = {
     {
       type: 'category',
       label: '个人',
-      link: { type: 'generated-index' },
+      link:
+      {
+        type: 'generated-index',
+        description: "本章主要记录我在 OI 中的个人经验，包括风格规范、对拍工具、常用模板库以及实用技巧等。",
+      },
       items: [
         'contest/personal/code-style',
         'contest/personal/code-checker',
@@ -17,7 +21,11 @@ const sidebars: SidebarsConfig = {
     {
       type: 'category',
       label: '比赛相关',
-      link: { type: 'generated-index' },
+      link:
+      {
+        type: 'generated-index',
+        description: "本章主要介绍计算机编程比赛直接相关的知识，包括各种赛事、赛制、题型，以及赛场上常见的坑点与技巧。",
+      },
       items: [
         'contest/contest/noi',
         'contest/contest/problems',
