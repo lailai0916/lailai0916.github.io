@@ -402,7 +402,18 @@ const sidebars: SidebarsConfig = {
             description: "本章记录我的高等数学笔记。",
           },
           items: [
-            
+            {
+              type: 'category',
+              label: '《微积分》',
+              link:
+              {
+                type: 'generated-index',
+                description: "本章记录我的高中数学笔记。",
+              },
+              items: [
+                'note/math/advanced/calculus/index',
+              ],
+            },
           ],
         },
       ],
