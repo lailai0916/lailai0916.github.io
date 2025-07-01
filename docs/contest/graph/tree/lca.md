@@ -2,8 +2,6 @@
 
 ## 树链剖分
 
-- [树链剖分](hld)
-
 ```cpp
 int lca(int u,int v)
 {
