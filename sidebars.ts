@@ -113,7 +113,93 @@ const sidebars: SidebarsConfig = {
         description: "本章介绍 OI 中可能会用到的数学知识。",
       },
       items: [
-        
+        'contest/math/binary-exponentiation',
+        {
+          type: 'category',
+          label: '数论',
+          link:
+          {
+            type: 'generated-index',
+            description: "数论是纯粹数学的分支之一，主要研究整数的性质。",
+          },
+          items: [
+            'contest/math/number-theory/prime',
+            'contest/math/number-theory/gcd',
+            'contest/math/number-theory/sqrt-decomposition',
+            'contest/math/number-theory/euler-totient',
+            'contest/math/number-theory/sieve',
+            'contest/math/number-theory/inverse',
+            'contest/math/number-theory/du',
+          ],
+        },
+        {
+          type: 'category',
+          label: '组合数学',
+          link:
+          {
+            type: 'generated-index',
+            description: "本章介绍组合数学。",
+          },
+          items: [
+            'contest/math/combinatorics/combination',
+            'contest/math/combinatorics/inclusion-exclusion-principle',
+          ],
+        },
+        {
+          type: 'category',
+          label: '多项式与生成函数',
+          link:
+          {
+            type: 'generated-index',
+            description: "本章介绍多项式与生成函数。",
+          },
+          items: [
+            'contest/math/poly/fft',
+          ],
+        },
+        {
+          type: 'category',
+          label: '数值算法',
+          link:
+          {
+            type: 'generated-index',
+            description: "数值算法是指用计算机对数学问题进行近似数值计算的方法。",
+          },
+          items: [
+            'contest/math/numerical/interp',
+            'contest/math/numerical/integral',
+            'contest/math/numerical/elimination',
+          ],
+        },
+        {
+          type: 'category',
+          label: '杂项',
+          link:
+          {
+            type: 'generated-index',
+            description: "本章介绍的是一些难以分类的数学算法。",
+          },
+          items: [
+            'contest/math/misc/approximation',
+            'contest/math/misc/cantor-expansion',
+          ],
+        },
+        {
+          type: 'category',
+          label: '模板',
+          link:
+          {
+            type: 'generated-index',
+            description: "本章记录 OI 中封装的通用数学模板。",
+          },
+          items: [
+            'contest/math/template/matrix',
+            'contest/math/template/complex',
+            'contest/math/template/fraction',
+            'contest/math/template/function',
+            'contest/math/template/constant',
+          ],
+        },
       ],
     },
   ],

@@ -1,5 +1,7 @@
 # 分数
 
+## 实现
+
 ```cpp
 using ll=long long;
 struct Frac
