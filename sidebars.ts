@@ -407,11 +407,66 @@ const sidebars: SidebarsConfig = {
               label: '《微积分》',
               link:
               {
-                type: 'generated-index',
-                description: "本章记录我的高中数学笔记。",
+                type: 'doc',
+                id: 'note/math/advanced/calculus/index',
               },
               items: [
-                'note/math/advanced/calculus/index',
+                
+              ],
+            },
+            {
+              type: 'category',
+              label: '《线性代数》',
+              link:
+              {
+                type: 'doc',
+                id: 'note/math/advanced/linear-algebra/index',
+              },
+              items: [
+                'note/math/advanced/linear-algebra/行列式的性质与计算',
+                'note/math/advanced/linear-algebra/行列式的展开',
+                'note/math/advanced/linear-algebra/矩阵',
+                'note/math/advanced/linear-algebra/万能的初等行变换',
+                'note/math/advanced/linear-algebra/向量',
+                'note/math/advanced/linear-algebra/解方程组',
+                'note/math/advanced/linear-algebra/特征值、特征向量、对角化',
+                'note/math/advanced/linear-algebra/二次型',
+              ],
+            },
+            {
+              type: 'category',
+              label: '《概率论与数理统计》',
+              link:
+              {
+                type: 'doc',
+                id: 'note/math/advanced/linear-algebra/index',
+              },
+              items: [
+
+              ],
+            },
+            {
+              type: 'category',
+              label: '《离散数学》',
+              link:
+              {
+                type: 'doc',
+                id: 'note/math/advanced/discrete-math/index',
+              },
+              items: [
+                
+              ],
+            },
+            {
+              type: 'category',
+              label: '《初等数论》',
+              link:
+              {
+                type: 'doc',
+                id: 'note/math/advanced/elementary-number-theory/index',
+              },
+              items: [
+                
               ],
             },
           ],
