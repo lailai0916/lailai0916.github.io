@@ -193,13 +193,121 @@ const sidebars: SidebarsConfig = {
             description: "本章记录 OI 中封装的通用数学模板。",
           },
           items: [
-            'contest/math/template/matrix',
-            'contest/math/template/complex',
-            'contest/math/template/fraction',
-            'contest/math/template/function',
-            'contest/math/template/constant',
+            'contest/math/math-templates/matrix',
+            'contest/math/math-templates/complex',
+            'contest/math/math-templates/fraction',
+            'contest/math/math-templates/function',
+            'contest/math/math-templates/constant',
           ],
         },
+      ],
+    },
+    {
+      type: 'category',
+      label: '数据结构',
+      link:
+      {
+        type: 'generated-index',
+        description: "数据结构是在计算机中存储、组织数据的方式。",
+      },
+      items: [
+        'contest/ds/dsu',
+        'contest/ds/heap',
+        'contest/ds/block',
+        'contest/ds/monotonous-stack',
+        'contest/ds/sparse-table',
+        'contest/ds/fenwick',
+        'contest/ds/seg',
+        'contest/ds/bst',
+        'contest/ds/persistent-seg',
+      ],
+    },
+    {
+      type: 'category',
+      label: '图论',
+      link:
+      {
+        type: 'generated-index',
+        description: "图论是数学的一个分支，图是图论的主要研究对象。",
+      },
+      items: [
+        'contest/graph/topo',
+        'contest/graph/shortest-path',
+        'contest/graph/mst',
+        'contest/graph/2sat',
+        'contest/graph/flow',
+        {
+          type: 'category',
+          label: '树上问题',
+          link:
+          {
+            type: 'generated-index',
+            description: "树是一类特殊的图，即无环连通图。",
+          },
+          items: [
+            'contest/graph/tree/diameter',
+            'contest/graph/tree/lca',
+            'contest/graph/tree/difference',
+            'contest/graph/tree/hld',
+            'contest/graph/tree/virtual-tree',
+          ],
+        },
+        {
+          type: 'category',
+          label: '连通性',
+          link:
+          {
+            type: 'generated-index',
+            description: "图论是数学的一个分支，图是图论的主要研究对象。",
+          },
+          items: [
+            'contest/graph/connectivity/scc',
+            'contest/graph/connectivity/bcc',
+          ],
+        },
+      ],
+    },
+    {
+      type: 'category',
+      label: '计算几何',
+      link:
+      {
+        type: 'generated-index',
+        description: "利用计算机建立数学模型解决几何问题。",
+      },
+      items: [
+        'contest/geometry/2d',
+        'contest/geometry/3d',
+        'contest/geometry/convex-hull',
+        'contest/geometry/scanning',
+        'contest/geometry/rotating-calipers',
+        'contest/geometry/geometry-templates',
+      ],
+    },
+    {
+      type: 'category',
+      label: '杂项',
+      link:
+      {
+        type: 'generated-index',
+        description: "这个板块主要介绍的是一些难以分类的算法及 OI 相关知识。",
+      },
+      items: [
+        'contest/misc/cdq-divide',
+        'contest/misc/kahan-summation',
+        'contest/misc/odt',
+      ],
+    },
+    {
+      type: 'category',
+      label: '专题',
+      link:
+      {
+        type: 'generated-index',
+        description: "这个板块主要介绍的是一些特定问题的解法。",
+      },
+      items: [
+        'contest/topic/lis',
       ],
     },
   ],

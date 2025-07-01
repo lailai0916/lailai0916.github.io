@@ -1,6 +1,6 @@
-# 边双连通分量（BCC）
+# 双连通分量（BCC）
 
-## 实现
+## 边双连通分量
 
 ```cpp
 #include <bits/stdc++.h>
