@@ -193,7 +193,7 @@ export function ExperimentalFeatures() {
   };
 
   return (
-    <SettingCard title="实验性功能" icon="lucide:flask">
+    <SettingCard title="实验性功能" icon="lucide:flask-conical">
       <p className={styles.cardDescription}>尝试即将推出的新功能，可能不稳定。</p>
       <ul className={styles.toggleList}>
         <li>
