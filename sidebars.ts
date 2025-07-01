@@ -482,7 +482,30 @@ const sidebars: SidebarsConfig = {
         description: "本章记录我的英语笔记。",
       },
       items: [
-        
+        {
+          type: 'category',
+          label: '英语词汇',
+          link:
+          {
+            type: 'generated-index',
+            description: "本章记录我的英语词汇笔记。",
+          },
+          items: [
+            
+          ],
+        },
+        {
+          type: 'category',
+          label: '英语语法',
+          link:
+          {
+            type: 'doc',
+            id: 'note/english/grammar/index',
+          },
+          items: [
+            
+          ],
+        },
       ],
     },
   ],
