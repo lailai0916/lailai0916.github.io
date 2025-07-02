@@ -390,7 +390,7 @@ const sidebars: SidebarsConfig = {
         type: 'generated-index',
         description: '本章收录各种实用的文档模板，包括题解、Markdown、LaTeX等常用模板。',
       },
-      items: ['project/templates/题解模板', 'project/templates/Markdown模板', 'project/templates/LaTeX模板', 'project/templates/Mermaid模板'],
+      items: ['project/templates/solution', 'project/templates/markdown', 'project/templates/latex', 'project/templates/mermaid'],
     },
     {
       type: 'category',
@@ -399,7 +399,7 @@ const sidebars: SidebarsConfig = {
         type: 'generated-index',
         description: '本章展示各种实用的小工具和计算器项目。',
       },
-      items: ['project/工具/ASCII-Art', 'project/工具/身份证号校验器', 'project/工具/电阻计算器', 'project/工具/多项式计算器', 'project/工具/挂机脚本'],
+      items: ['project/tools/ASCII-Art', 'project/tools/身份证号校验器', 'project/tools/电阻计算器', 'project/tools/多项式计算器', 'project/tools/挂机脚本'],
     },
     {
       type: 'category',
@@ -409,9 +409,9 @@ const sidebars: SidebarsConfig = {
         description: '本章展示基于终端的项目和教程。',
       },
       items: [
-        'project/终端/iGame',
-        'project/终端/地图生成器',
-        'project/终端/图片处理',
+        'project/terminal/iGame',
+        'project/terminal/地图生成器',
+        'project/terminal/图片处理',
         {
           type: 'category',
           label: '教程',
@@ -419,19 +419,7 @@ const sidebars: SidebarsConfig = {
             type: 'generated-index',
             description: '终端编程相关教程和工具函数。',
           },
-          items: [
-            'project/终端/教程/迷宫游戏',
-            'project/终端/教程/颜色',
-            {
-              type: 'category',
-              label: '工具函数',
-              link: {
-                type: 'generated-index',
-                description: '终端编程常用的工具函数库。',
-              },
-              items: ['project/终端/教程/工具函数/system', 'project/终端/教程/工具函数/windows', 'project/终端/教程/工具函数/检测按键'],
-            },
-          ],
+          items: ['project/terminal/教程/迷宫游戏', 'project/terminal/教程/颜色', 'project/terminal/教程/工具函数'],
         },
       ],
     },
@@ -440,7 +428,7 @@ const sidebars: SidebarsConfig = {
       label: 'GitHub',
       link: {
         type: 'generated-index',
-        description: '本章记录GitHub相关的项目和经验。',
+        description: '本章记录 GitHub 相关的项目和经验。',
       },
       items: [
         {
@@ -450,17 +438,9 @@ const sidebars: SidebarsConfig = {
             type: 'generated-index',
             description: '个人网站项目的搭建过程和功能介绍。',
           },
-          items: ['project/GitHub/lailais-Home/搭建/index', 'project/GitHub/lailais-Home/插件', 'project/GitHub/lailais-Home/组件'],
+          items: ['project/github/lailais-Home/搭建/index', 'project/github/lailais-Home/插件', 'project/github/lailais-Home/组件'],
         },
-        {
-          type: 'category',
-          label: 'lailai0916',
-          link: {
-            type: 'doc',
-            id: 'project/GitHub/lailai0916/index',
-          },
-          items: [],
-        },
+        'project/github/lailai0916/index',
       ],
     },
     {
@@ -468,7 +448,7 @@ const sidebars: SidebarsConfig = {
       label: 'Desmos',
       link: {
         type: 'generated-index',
-        description: '本章展示使用Desmos图形计算器创作的各种项目。',
+        description: '本章展示使用 Desmos 图形计算器创作的各种项目。',
       },
       items: [
         {
@@ -478,7 +458,7 @@ const sidebars: SidebarsConfig = {
             type: 'generated-index',
             description: 'Desmos艺术创作项目。',
           },
-          items: ['project/Desmos/艺术博览会/iClock'],
+          items: ['project/desmos/艺术博览会/iClock'],
         },
         {
           type: 'category',
@@ -487,7 +467,7 @@ const sidebars: SidebarsConfig = {
             type: 'generated-index',
             description: '各种有趣的图形绘制项目。',
           },
-          items: ['project/Desmos/图形/细胞膜融合', 'project/Desmos/图形/凸透镜成像', 'project/Desmos/图形/法国国旗', 'project/Desmos/图形/美国国旗'],
+          items: ['project/desmos/图形/细胞膜融合', 'project/desmos/图形/凸透镜成像', 'project/desmos/图形/法国国旗', 'project/desmos/图形/美国国旗'],
         },
         {
           type: 'category',
@@ -496,7 +476,7 @@ const sidebars: SidebarsConfig = {
             type: 'generated-index',
             description: '使用Desmos进行经典的尺规作图。',
           },
-          items: ['project/Desmos/尺规作图/正十七边形', 'project/Desmos/尺规作图/三圆公接线', 'project/Desmos/尺规作图/AppleLogo', 'project/Desmos/尺规作图/中国国旗'],
+          items: ['project/desmos/尺规作图/正十七边形', 'project/desmos/尺规作图/三圆公接线', 'project/desmos/尺规作图/AppleLogo', 'project/desmos/尺规作图/中国国旗'],
         },
       ],
     },
@@ -515,7 +495,7 @@ const sidebars: SidebarsConfig = {
             type: 'generated-index',
             description: '数码产品相关的分享和展示。',
           },
-          items: ['project/其他/数码/Device/index', 'project/其他/数码/EDC/index', 'project/其他/数码/DeskSetup'],
+          items: ['project/other/数码/Device/index', 'project/other/数码/EDC/index', 'project/other/数码/DeskSetup'],
         },
         {
           type: 'category',
@@ -525,9 +505,9 @@ const sidebars: SidebarsConfig = {
             description: '软件推荐和配置分享。',
           },
           items: [
-            'project/其他/软件/综合',
-            'project/其他/软件/macOS',
-            'project/其他/软件/iOS',
+            'project/other/软件/综合',
+            'project/other/软件/macOS',
+            'project/other/软件/iOS',
             {
               type: 'category',
               label: '配置',
@@ -535,7 +515,7 @@ const sidebars: SidebarsConfig = {
                 type: 'generated-index',
                 description: '各种开发工具的配置分享。',
               },
-              items: ['project/其他/软件/配置/VSCode', 'project/其他/软件/配置/Cursor'],
+              items: ['project/other/软件/配置/VSCode', 'project/other/软件/配置/Cursor'],
             },
           ],
         },
@@ -546,7 +526,7 @@ const sidebars: SidebarsConfig = {
             type: 'generated-index',
             description: '设计相关的心得和分享。',
           },
-          items: ['project/其他/设计/DesignStyle', 'project/其他/设计/Layout'],
+          items: ['project/other/设计/DesignStyle', 'project/other/设计/Layout'],
         },
       ],
     },
