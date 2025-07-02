@@ -60,74 +60,8 @@ void init()
 
 ### 洛谷 P3811 【模板】模意义下的乘法逆元
 
-:::info[[洛谷 P3811 【模板】模意义下的乘法逆元](https://www.luogu.com.cn/problem/P3811)]
-
-给定两个整数 $n,p$，求 $1\sim n$ 中所有整数在模 $p$ 意义下的乘法逆元。（$n\le3\times10^6,n<p<20000528$）
-
-保证 $p$ 是质数。
-
-:::
-
-```cpp
-#include <bits/stdc++.h>
-using namespace std;
-
-using ll=long long;
-const int N=3000005;
-int mod;
-ll inv[N];
-void init()
-{
-	inv[1]=1;
-	for(int i=2;i<N;i++)
-	{
-		inv[i]=(mod-mod/i)*inv[mod%i]%mod;
-	}
-}
-int main()
-{
-	ios::sync_with_stdio(false);
-	cin.tie(nullptr);
-	int n;
-	cin>>n>>mod;
-	init();
-	for(int i=1;i<=n;i++)
-	{
-		cout<<inv[i]<<'\n';
-	}
-	return 0;
-}
-```
+<Problem id="P3811" />
 
 ### 洛谷 P1082 [NOIP2012 提高组] 同余方程
 
-:::info[[洛谷 P1082 [NOIP2012 提高组] 同余方程](https://www.luogu.com.cn/problem/P1082)]
-
-求同余方程 $ax\equiv1\pmod b$ 的最小正整数解。（$a,b\le2\times10^9$）
-
-:::
-
-```cpp
-#include <bits/stdc++.h>
-using namespace std;
-
-using ll=long long;
-ll exgcd(ll a,ll b,ll &x,ll &y)
-{
-	if(b==0){x=1;y=0;return a;}
-	ll d=exgcd(b,a%b,y,x);
-	y-=a/b*x;
-	return d;
-}
-int main()
-{
-	ios::sync_with_stdio(false);
-	cin.tie(nullptr);
-	ll a,b,x,y;
-	cin>>a>>b;
-	exgcd(a,b,x,y);
-	cout<<(x%b+b)%b<<'\n';
-	return 0;
-}
-```
-
+<Problem id="P1082" />
