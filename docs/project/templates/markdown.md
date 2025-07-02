@@ -326,8 +326,8 @@ int main()
 
 ## LaTeX 公式
 
-- 详见 [LaTeX 模板](LaTeX模板)
+- 详见 [LaTeX 模板](latex)
 
 ## Mermaid 图表
 
-- 详见 [Mermaid 模板](Mermaid模板)
+- 详见 [Mermaid 模板](mermaid)

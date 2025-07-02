@@ -221,7 +221,7 @@ $$
 
 :::
 
-- 详见 [从句](sentences/clauses)
+- 详见 [从句](grammar/sentences/clauses)
 
 这是一个简单句 A：
 
@@ -357,7 +357,7 @@ graph TD;
 
 ### 动词
 
-- 详见 [动词分类](verbs/verb-classification)
+- 详见 [动词分类](grammar/verbs/verb-classification)
 
 表示动作或状态。
 
@@ -375,7 +375,7 @@ graph TD;
 
 ### 名词
 
-- 详见 [名词](parts-of-speech/nouns)
+- 详见 [名词](grammar/parts-of-speech/nouns)
 
 表示人、事物、地点或概念。
 
@@ -387,7 +387,7 @@ graph TD;
 
 ### 冠词
 
-- 详见 [冠词](parts-of-speech/articles)
+- 详见 [冠词](grammar/parts-of-speech/articles)
 
 限定名词的范围。
 
@@ -399,7 +399,7 @@ graph TD;
 
 ### 代词
 
-- 详见 [代词](parts-of-speech/pronouns)
+- 详见 [代词](grammar/parts-of-speech/pronouns)
 
 代替名词或名词短语。
 
@@ -411,7 +411,7 @@ graph TD;
 
 ### 形容词
 
-- 详见 [形容词](parts-of-speech/adjectives)
+- 详见 [形容词](grammar/parts-of-speech/adjectives)
 
 修饰名词或代词。
 
@@ -423,7 +423,7 @@ graph TD;
 
 ### 数词
 
-- 详见 [数词](词性/数词)
+- 详见 [数词](grammar/parts-of-speech/numerals)
 
 表示数目和次序。
 
@@ -435,7 +435,7 @@ graph TD;
 
 ### 副词
 
-- 详见 [副词](词性/副词)
+- 详见 [副词](grammar/parts-of-speech/adverbs)
 
 修饰动词、形容词、副词或整个句子。
 
@@ -447,7 +447,7 @@ graph TD;
 
 ### 介词
 
-- 详见 [介词](词性/介词)
+- 详见 [介词](grammar/parts-of-speech/prepositions)
 
 表示名词与句子中其他词的关系。
 
@@ -459,7 +459,7 @@ graph TD;
 
 ### 连词
 
-- 详见 [连词](词性/连词)
+- 详见 [连词](grammar/parts-of-speech/conjunctions)
 
 连接词、短语或句子。
 
@@ -471,7 +471,7 @@ graph TD;
 
 ### 叹词
 
-- 详见 [叹词](词性/叹词)
+- 详见 [叹词](grammar/parts-of-speech/interjections)
 
 表达强烈情感或反应。
 
