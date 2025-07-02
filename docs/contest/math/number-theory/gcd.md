@@ -3,7 +3,7 @@
 ## 参考资料
 
 - [最大公约数 - OI Wiki](https://oi-wiki.org/math/number-theory/gcd/)
-- [扩展欧几里得算法 - OI Wiki](https://oi-wiki.org/math/number-theory/gcd/#扩展欧几里得算法)
+- [扩展欧几里得算法 - 最大公约数 - OI Wiki](https://oi-wiki.org/math/number-theory/gcd/#扩展欧几里得算法)
 
 ## 欧几里得算法（辗转相除法）
 
