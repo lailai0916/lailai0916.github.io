@@ -20,7 +20,7 @@
 
 ## 数码设备
 
-- 见 [lailai's Device](Device)
+- 详见 [lailai's Device](Device)
 
 这些数码设备我一般都随身携带。
 
