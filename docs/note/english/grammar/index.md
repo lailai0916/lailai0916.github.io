@@ -52,7 +52,7 @@ $$
 
 ### 句子分类
 
-- 见 [句子分类](句子/句子分类)
+- 见 [句子分类](sentences/sentence-types)
 
 英语中有 $3$ 种句子类别：
 
@@ -221,7 +221,7 @@ $$
 
 :::
 
-- 见 [从句](句子/从句)
+- 见 [从句](sentences/clauses)
 
 这是一个简单句 A：
 
@@ -357,7 +357,7 @@ graph TD;
 
 ### 动词
 
-- 见 [动词分类](动词/动词分类)
+- 见 [动词分类](verbs/verb-classification)
 
 表示动作或状态。
 
@@ -375,7 +375,7 @@ graph TD;
 
 ### 名词
 
-- 见 [名词](词性/名词)
+- 见 [名词](parts-of-speech/nouns)
 
 表示人、事物、地点或概念。
 
@@ -387,7 +387,7 @@ graph TD;
 
 ### 冠词
 
-- 见 [冠词](词性/冠词)
+- 见 [冠词](parts-of-speech/articles)
 
 限定名词的范围。
 
@@ -399,7 +399,7 @@ graph TD;
 
 ### 代词
 
-- 见 [代词](词性/代词)
+- 见 [代词](parts-of-speech/pronouns)
 
 代替名词或名词短语。
 
@@ -411,7 +411,7 @@ graph TD;
 
 ### 形容词
 
-- 见 [形容词](词性/形容词)
+- 见 [形容词](parts-of-speech/adjectives)
 
 修饰名词或代词。
 
