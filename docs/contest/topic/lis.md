@@ -32,4 +32,4 @@ for(int i=1;i<=n;i++)
 
 ### 洛谷 B3637 最长上升子序列
 
-<Problem id="P3637" />
+<Problem id="B3637" />
