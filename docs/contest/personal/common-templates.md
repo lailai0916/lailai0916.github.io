@@ -54,6 +54,17 @@ fflush(stdout);
 cout.flush();
 ```
 
+## pb_ds
+
+```cpp
+#include <bits/stdc++.h>
+#include <bits/extc++.h>
+using namespace std;
+using namespace __gnu_pbds;
+
+tree<pair<int,int>,null_type,less<pair<int,int>>,rb_tree_tag,tree_order_statistics_node_update> T;
+```
+
 ## mt19937
 
 ```cpp

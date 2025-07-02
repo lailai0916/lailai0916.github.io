@@ -10,39 +10,4 @@
 
 ### 洛谷 P5788 【模板】单调栈
 
-:::info[[洛谷 P5788 【模板】单调栈](https://www.luogu.com.cn/problem/P5788)]
-
-给定一个长度为 $n$ 的数列 $a_i$，求出每个元素 $a_i$ 后第一个大于 $a_i$ 的元素下标，若不存在则为 $0$。
-
-:::
-
-```cpp
-#include <bits/stdc++.h>
-using namespace std;
-
-const int N=3000005;
-int a[N],ans[N];
-int main()
-{
-	ios::sync_with_stdio(false);
-	cin.tie(nullptr);
-	int n;
-	cin>>n;
-	for(int i=1;i<=n;i++)
-	{
-		cin>>a[i];
-	}
-	stack<int> s;
-	for(int i=n;i>=1;i--)
-	{
-		while(!s.empty()&&a[s.top()]<=a[i])s.pop();
-		if(!s.empty())ans[i]=s.top();
-		s.push(i);
-	}
-	for(int i=1;i<=n;i++)
-	{
-		cout<<ans[i]<<' ';
-	}
-	return 0;
-}
-```
+<Problem id="P5788" />
