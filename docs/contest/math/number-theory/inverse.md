@@ -62,6 +62,6 @@ void init()
 
 <Problem id="P3811" />
 
-### 洛谷 P1082 [NOIP2012 提高组] 同余方程
+### 洛谷 P1082 [NOIP 2012 提高组] 同余方程
 
 <Problem id="P1082" />
