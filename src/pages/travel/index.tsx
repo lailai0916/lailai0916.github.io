@@ -1,9 +1,8 @@
 import React from 'react';
 import Layout from '@theme/Layout';
-import Link from '@docusaurus/Link';
 import BrowserOnly from '@docusaurus/BrowserOnly';
 import { Icon } from '@iconify/react';
-import Timeline from './_components/Timeline';
+import Timeline from '@site/src/pages/travel/_components';
 import { BaseCard, Section, SectionHeader, GridLayout, GridConfigs } from '../_components/common';
 
 // 页面常量
