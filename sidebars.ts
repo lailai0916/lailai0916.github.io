@@ -1,4 +1,4 @@
-import type {SidebarsConfig} from '@docusaurus/plugin-content-docs';
+import type { SidebarsConfig } from '@docusaurus/plugin-content-docs';
 
 const sidebars: SidebarsConfig = {
   sidebar1: [
@@ -6,10 +6,9 @@ const sidebars: SidebarsConfig = {
     {
       type: 'category',
       label: '个人',
-      link:
-      {
+      link: {
         type: 'generated-index',
-        description: "本章主要记录我在 OI 中的个人经验，包括风格规范、对拍工具、常用模板库以及实用技巧等。",
+        description: '本章主要记录我在 OI 中的个人经验，包括风格规范、对拍工具、常用模板库以及实用技巧等。',
       },
       items: [
         'contest/personal/code-style',
@@ -21,106 +20,72 @@ const sidebars: SidebarsConfig = {
     {
       type: 'category',
       label: '比赛相关',
-      link:
-      {
+      link: {
         type: 'generated-index',
-        description: "本章主要介绍计算机编程比赛直接相关的知识，包括各种赛事、赛制、题型，以及赛场上常见的坑点与技巧。",
+        description: '本章主要介绍计算机编程比赛直接相关的知识，包括各种赛事、赛制、题型，以及赛场上常见的坑点与技巧。',
       },
-      items: [
-        'contest/contest/noi',
-        'contest/contest/problems',
-        'contest/contest/tricks',
-      ],
+      items: ['contest/contest/noi', 'contest/contest/problems', 'contest/contest/tricks'],
     },
     {
       type: 'category',
       label: '语言基础',
-      link:
-      {
+      link: {
         type: 'generated-index',
-        description: "本章将会介绍编程相关的知识，包括 C++ 从入门到进阶教程和一些其它语言的简介。",
+        description: '本章将会介绍编程相关的知识，包括 C++ 从入门到进阶教程和一些其它语言的简介。',
       },
-      items: [
-        'contest/lang/io',
-        'contest/lang/op',
-        'contest/lang/ascii',
-        'contest/lang/csl',
-      ],
+      items: ['contest/lang/io', 'contest/lang/op', 'contest/lang/ascii', 'contest/lang/csl'],
     },
     {
       type: 'category',
       label: '算法基础',
-      link:
-      {
+      link: {
         type: 'generated-index',
-        description: "本章介绍一些基础算法。",
+        description: '本章介绍一些基础算法。',
       },
-      items: [
-        'contest/basic/binary',
-        'contest/basic/divide-and-conquer',
-        'contest/basic/sort',
-      ],
+      items: ['contest/basic/binary', 'contest/basic/divide-and-conquer', 'contest/basic/sort'],
     },
     {
       type: 'category',
       label: '搜索',
-      link:
-      {
+      link: {
         type: 'generated-index',
-        description: "搜索，也就是对状态空间进行枚举，通过穷尽所有的可能来找到最优解，或者统计合法解的个数。",
+        description: '搜索，也就是对状态空间进行枚举，通过穷尽所有的可能来找到最优解，或者统计合法解的个数。',
       },
-      items: [
-        'contest/search/dfs',
-        'contest/search/bfs',
-        'contest/search/bidirectional',
-      ],
+      items: ['contest/search/dfs', 'contest/search/bfs', 'contest/search/bidirectional'],
     },
     {
       type: 'category',
       label: '动态规划',
-      link:
-      {
+      link: {
         type: 'generated-index',
-        description: "动态规划是一种通过把原问题分解为相对简单的子问题的方式求解复杂问题的方法。",
+        description: '动态规划是一种通过把原问题分解为相对简单的子问题的方式求解复杂问题的方法。',
       },
-      items: [
-        'contest/dp/knapsack',
-        'contest/dp/tree',
-        'contest/dp/state',
-      ],
+      items: ['contest/dp/knapsack', 'contest/dp/tree', 'contest/dp/state'],
     },
     {
       type: 'category',
       label: '字符串',
-      link:
-      {
+      link: {
         type: 'generated-index',
-        description: "字符串，就是由字符连接而成的序列。",
+        description: '字符串，就是由字符连接而成的序列。',
       },
-      items: [
-        'contest/string/match',
-        'contest/string/hash',
-        'contest/string/trie',
-        'contest/string/manacher',
-      ],
+      items: ['contest/string/match', 'contest/string/hash', 'contest/string/trie', 'contest/string/manacher'],
     },
     {
       type: 'category',
       label: '数学',
-      link:
-      {
+      link: {
         type: 'generated-index',
-        description: "本章介绍 OI 中可能会用到的数学知识。",
+        description: '本章介绍 OI 中可能会用到的数学知识。',
       },
       items: [
         'contest/math/binary-exponentiation',
         {
           type: 'category',
           label: '数论',
-          link:
-          {
+          link: {
             type: 'generated-index',
-            description: "数论是纯粹数学的分支之一，主要研究整数的性质。",
+            description: '数论是纯粹数学的分支之一，主要研究整数的性质。',
           },
           items: [
             'contest/math/number-theory/prime',
@@ -135,10 +100,9 @@ const sidebars: SidebarsConfig = {
         {
           type: 'category',
           label: '组合数学',
-          link:
-          {
+          link: {
             type: 'generated-index',
-            description: "本章介绍组合数学。",
+            description: '本章介绍组合数学。',
           },
           items: [
             'contest/math/combinatorics/permutation-and-combination',
@@ -148,22 +112,18 @@ const sidebars: SidebarsConfig = {
         {
           type: 'category',
           label: '多项式与生成函数',
-          link:
-          {
+          link: {
             type: 'generated-index',
-            description: "本章介绍多项式与生成函数。",
+            description: '本章介绍多项式与生成函数。',
           },
-          items: [
-            'contest/math/poly/fft',
-          ],
+          items: ['contest/math/poly/fft'],
         },
         {
           type: 'category',
           label: '数值算法',
-          link:
-          {
+          link: {
             type: 'generated-index',
-            description: "数值算法是指用计算机对数学问题进行近似数值计算的方法。",
+            description: '数值算法是指用计算机对数学问题进行近似数值计算的方法。',
           },
           items: [
             'contest/math/numerical/interp',
@@ -174,23 +134,18 @@ const sidebars: SidebarsConfig = {
         {
           type: 'category',
           label: '杂项',
-          link:
-          {
+          link: {
             type: 'generated-index',
-            description: "本章介绍的是一些难以分类的数学算法。",
+            description: '本章介绍的是一些难以分类的数学算法。',
           },
-          items: [
-            'contest/math/misc/approximation',
-            'contest/math/misc/cantor-expansion',
-          ],
+          items: ['contest/math/misc/approximation', 'contest/math/misc/cantor-expansion'],
         },
         {
           type: 'category',
           label: '模板',
-          link:
-          {
+          link: {
             type: 'generated-index',
-            description: "本章记录 OI 中封装的通用数学模板。",
+            description: '本章记录 OI 中封装的通用数学模板。',
           },
           items: [
             'contest/math/math-templates/matrix',
@@ -205,10 +160,9 @@ const sidebars: SidebarsConfig = {
     {
       type: 'category',
       label: '数据结构',
-      link:
-      {
+      link: {
         type: 'generated-index',
-        description: "数据结构是在计算机中存储、组织数据的方式。",
+        description: '数据结构是在计算机中存储、组织数据的方式。',
       },
       items: [
         'contest/ds/dsu',
@@ -225,10 +179,9 @@ const sidebars: SidebarsConfig = {
     {
       type: 'category',
       label: '图论',
-      link:
-      {
+      link: {
         type: 'generated-index',
-        description: "图论是数学的一个分支，图是图论的主要研究对象。",
+        description: '图论是数学的一个分支，图是图论的主要研究对象。',
       },
       items: [
         'contest/graph/topo',
@@ -239,10 +192,9 @@ const sidebars: SidebarsConfig = {
         {
           type: 'category',
           label: '树上问题',
-          link:
-          {
+          link: {
             type: 'generated-index',
-            description: "树是一类特殊的图，即无环连通图。",
+            description: '树是一类特殊的图，即无环连通图。',
           },
           items: [
             'contest/graph/tree/diameter',
@@ -255,25 +207,20 @@ const sidebars: SidebarsConfig = {
         {
           type: 'category',
           label: '连通性',
-          link:
-          {
+          link: {
             type: 'generated-index',
-            description: "图论是数学的一个分支，图是图论的主要研究对象。",
+            description: '图论是数学的一个分支，图是图论的主要研究对象。',
           },
-          items: [
-            'contest/graph/connectivity/scc',
-            'contest/graph/connectivity/bcc',
-          ],
+          items: ['contest/graph/connectivity/scc', 'contest/graph/connectivity/bcc'],
         },
       ],
     },
     {
       type: 'category',
       label: '计算几何',
-      link:
-      {
+      link: {
         type: 'generated-index',
-        description: "利用计算机建立数学模型解决几何问题。",
+        description: '利用计算机建立数学模型解决几何问题。',
       },
       items: [
         'contest/geometry/2d',
@@ -287,28 +234,20 @@ const sidebars: SidebarsConfig = {
     {
       type: 'category',
       label: '杂项',
-      link:
-      {
+      link: {
         type: 'generated-index',
-        description: "这个板块主要介绍的是一些难以分类的算法及 OI 相关知识。",
+        description: '这个板块主要介绍的是一些难以分类的算法及 OI 相关知识。',
       },
-      items: [
-        'contest/misc/cdq-divide',
-        'contest/misc/kahan-summation',
-        'contest/misc/odt',
-      ],
+      items: ['contest/misc/cdq-divide', 'contest/misc/kahan-summation', 'contest/misc/odt'],
     },
     {
       type: 'category',
       label: '专题',
-      link:
-      {
+      link: {
         type: 'generated-index',
-        description: "这个板块主要介绍的是一些特定问题的解法。",
+        description: '这个板块主要介绍的是一些特定问题的解法。',
       },
-      items: [
-        'contest/topic/lis',
-      ],
+      items: ['contest/topic/lis'],
     },
   ],
   sidebar2: [
@@ -316,28 +255,25 @@ const sidebars: SidebarsConfig = {
     {
       type: 'category',
       label: '数学',
-      link:
-      {
+      link: {
         type: 'generated-index',
-        description: "本章记录我的数学笔记。",
+        description: '本章记录我的数学笔记。',
       },
       items: [
         {
           type: 'category',
           label: '高中数学',
-          link:
-          {
+          link: {
             type: 'generated-index',
-            description: "本章记录我的高中数学笔记。",
+            description: '本章记录我的高中数学笔记。',
           },
           items: [
             {
               type: 'category',
               label: '杂项',
-              link:
-              {
+              link: {
                 type: 'generated-index',
-                description: "本章记录我的高中数学笔记。",
+                description: '本章记录我的高中数学笔记。',
               },
               items: [
                 'note/math/high-school/misc/set-and-logic',
@@ -351,10 +287,9 @@ const sidebars: SidebarsConfig = {
             {
               type: 'category',
               label: '函数',
-              link:
-              {
+              link: {
                 type: 'generated-index',
-                description: "本章记录我的高中数学笔记。",
+                description: '本章记录我的高中数学笔记。',
               },
               items: [
                 'note/math/high-school/function/function',
@@ -366,10 +301,9 @@ const sidebars: SidebarsConfig = {
             {
               type: 'category',
               label: '集合',
-              link:
-              {
+              link: {
                 type: 'generated-index',
-                description: "本章记录我的高中数学笔记。",
+                description: '本章记录我的高中数学笔记。',
               },
               items: [
                 'note/math/high-school/geometry/triangle-solving/index',
@@ -380,10 +314,9 @@ const sidebars: SidebarsConfig = {
             {
               type: 'category',
               label: '概率',
-              link:
-              {
+              link: {
                 type: 'generated-index',
-                description: "本章记录我的高中数学笔记。",
+                description: '本章记录我的高中数学笔记。',
               },
               items: [
                 'note/math/high-school/probability/statistics',
@@ -396,29 +329,24 @@ const sidebars: SidebarsConfig = {
         {
           type: 'category',
           label: '高等数学',
-          link:
-          {
+          link: {
             type: 'generated-index',
-            description: "本章记录我的高等数学笔记。",
+            description: '本章记录我的高等数学笔记。',
           },
           items: [
             {
               type: 'category',
               label: '《微积分》',
-              link:
-              {
+              link: {
                 type: 'doc',
                 id: 'note/math/advanced/calculus/index',
               },
-              items: [
-                
-              ],
+              items: [],
             },
             {
               type: 'category',
               label: '《线性代数》',
-              link:
-              {
+              link: {
                 type: 'doc',
                 id: 'note/math/advanced/linear-algebra/index',
               },
@@ -436,38 +364,29 @@ const sidebars: SidebarsConfig = {
             {
               type: 'category',
               label: '《概率论与数理统计》',
-              link:
-              {
+              link: {
                 type: 'doc',
                 id: 'note/math/advanced/linear-algebra/index',
               },
-              items: [
-
-              ],
+              items: [],
             },
             {
               type: 'category',
               label: '《离散数学》',
-              link:
-              {
+              link: {
                 type: 'doc',
                 id: 'note/math/advanced/discrete-math/index',
               },
-              items: [
-                
-              ],
+              items: [],
             },
             {
               type: 'category',
               label: '《初等数论》',
-              link:
-              {
+              link: {
                 type: 'doc',
                 id: 'note/math/advanced/elementary-number-theory/index',
               },
-              items: [
-                
-              ],
+              items: [],
             },
           ],
         },
@@ -476,29 +395,24 @@ const sidebars: SidebarsConfig = {
     {
       type: 'category',
       label: '英语',
-      link:
-      {
+      link: {
         type: 'generated-index',
-        description: "本章记录我的英语笔记。",
+        description: '本章记录我的英语笔记。',
       },
       items: [
         {
           type: 'category',
           label: '英语词汇',
-          link:
-          {
+          link: {
             type: 'doc',
             id: 'note/english/vocabulary/index',
           },
-          items: [
-            
-          ],
+          items: [],
         },
         {
           type: 'category',
           label: '英语语法',
-          link:
-          {
+          link: {
             type: 'doc',
             id: 'note/english/grammar/index',
           },
@@ -506,10 +420,9 @@ const sidebars: SidebarsConfig = {
             {
               type: 'category',
               label: '动词',
-              link:
-              {
+              link: {
                 type: 'generated-index',
-                description: "本章介绍英语动词的相关知识，包括动词分类、时态、语气等。",
+                description: '本章介绍英语动词的相关知识，包括动词分类、时态、语气等。',
               },
               items: [
                 'note/english/grammar/verbs/verb-classification',
@@ -524,10 +437,9 @@ const sidebars: SidebarsConfig = {
             {
               type: 'category',
               label: '词性',
-              link:
-              {
+              link: {
                 type: 'generated-index',
-                description: "本章介绍英语各种词性的用法，包括名词、代词、形容词等。",
+                description: '本章介绍英语各种词性的用法，包括名词、代词、形容词等。',
               },
               items: [
                 'note/english/grammar/parts-of-speech/nouns',
@@ -544,10 +456,9 @@ const sidebars: SidebarsConfig = {
             {
               type: 'category',
               label: '句子',
-              link:
-              {
+              link: {
                 type: 'generated-index',
-                description: "本章介绍英语句子结构，包括句子分类、从句、语态等。",
+                description: '本章介绍英语句子结构，包括句子分类、从句、语态等。',
               },
               items: [
                 'note/english/grammar/sentences/sentence-types',
@@ -563,10 +474,9 @@ const sidebars: SidebarsConfig = {
             {
               type: 'category',
               label: '其他',
-              link:
-              {
+              link: {
                 type: 'generated-index',
-                description: "本章介绍其他英语语法相关知识，包括构词法和标点符号。",
+                description: '本章介绍其他英语语法相关知识，包括构词法和标点符号。',
               },
               items: [
                 'note/english/grammar/miscellaneous/word-formation',
@@ -584,10 +494,9 @@ const sidebars: SidebarsConfig = {
     {
       type: 'category',
       label: '模板',
-      link:
-      {
+      link: {
         type: 'generated-index',
-        description: "本章收录各种实用的文档模板，包括题解、Markdown、LaTeX等常用模板。",
+        description: '本章收录各种实用的文档模板，包括题解、Markdown、LaTeX等常用模板。',
       },
       items: [
         'project/模板/题解模板',
@@ -599,10 +508,9 @@ const sidebars: SidebarsConfig = {
     {
       type: 'category',
       label: '工具',
-      link:
-      {
+      link: {
         type: 'generated-index',
-        description: "本章展示各种实用的小工具和计算器项目。",
+        description: '本章展示各种实用的小工具和计算器项目。',
       },
       items: [
         'project/工具/ASCII-Art',
@@ -615,10 +523,9 @@ const sidebars: SidebarsConfig = {
     {
       type: 'category',
       label: '终端',
-      link:
-      {
+      link: {
         type: 'generated-index',
-        description: "本章展示基于终端的项目和教程。",
+        description: '本章展示基于终端的项目和教程。',
       },
       items: [
         'project/终端/iGame',
@@ -627,27 +534,25 @@ const sidebars: SidebarsConfig = {
         {
           type: 'category',
           label: '教程',
-          link:
-          {
+          link: {
             type: 'generated-index',
-            description: "终端编程相关教程和工具函数。",
+            description: '终端编程相关教程和工具函数。',
           },
-                     items: [
-             'project/终端/教程/迷宫游戏',
-             'project/终端/教程/颜色',
+          items: [
+            'project/终端/教程/迷宫游戏',
+            'project/终端/教程/颜色',
             {
               type: 'category',
               label: '工具函数',
-              link:
-              {
+              link: {
                 type: 'generated-index',
-                description: "终端编程常用的工具函数库。",
+                description: '终端编程常用的工具函数库。',
               },
-                             items: [
-                 'project/终端/教程/工具函数/system',
-                 'project/终端/教程/工具函数/windows',
-                 'project/终端/教程/工具函数/检测按键',
-               ],
+              items: [
+                'project/终端/教程/工具函数/system',
+                'project/终端/教程/工具函数/windows',
+                'project/终端/教程/工具函数/检测按键',
+              ],
             },
           ],
         },
@@ -656,154 +561,129 @@ const sidebars: SidebarsConfig = {
     {
       type: 'category',
       label: 'GitHub',
-      link:
-      {
+      link: {
         type: 'generated-index',
-        description: "本章记录GitHub相关的项目和经验。",
+        description: '本章记录GitHub相关的项目和经验。',
       },
       items: [
         {
           type: 'category',
-          label: 'lailai\'s Home',
-          link:
-          {
+          label: "lailai's Home",
+          link: {
             type: 'generated-index',
-            description: "个人网站项目的搭建过程和功能介绍。",
+            description: '个人网站项目的搭建过程和功能介绍。',
           },
-                     items: [
-             'project/GitHub/lailais-Home/搭建/index',
-             'project/GitHub/lailais-Home/插件',
-             'project/GitHub/lailais-Home/组件',
-           ],
+          items: [
+            'project/GitHub/lailais-Home/搭建/index',
+            'project/GitHub/lailais-Home/插件',
+            'project/GitHub/lailais-Home/组件',
+          ],
         },
         {
           type: 'category',
           label: 'lailai0916',
-                     link:
-           {
-             type: 'doc',
-             id: 'project/GitHub/lailai0916/index',
-           },
-          items: [
-          ],
+          link: {
+            type: 'doc',
+            id: 'project/GitHub/lailai0916/index',
+          },
+          items: [],
         },
       ],
     },
     {
       type: 'category',
       label: 'Desmos',
-      link:
-      {
+      link: {
         type: 'generated-index',
-        description: "本章展示使用Desmos图形计算器创作的各种项目。",
+        description: '本章展示使用Desmos图形计算器创作的各种项目。',
       },
       items: [
         {
           type: 'category',
           label: '艺术博览会',
-          link:
-          {
+          link: {
             type: 'generated-index',
-            description: "Desmos艺术创作项目。",
+            description: 'Desmos艺术创作项目。',
           },
-                     items: [
-             'project/Desmos/艺术博览会/iClock',
-           ],
+          items: ['project/Desmos/艺术博览会/iClock'],
         },
         {
           type: 'category',
           label: '图形',
-          link:
-          {
+          link: {
             type: 'generated-index',
-            description: "各种有趣的图形绘制项目。",
+            description: '各种有趣的图形绘制项目。',
           },
-                     items: [
-             'project/Desmos/图形/细胞膜融合',
-             'project/Desmos/图形/凸透镜成像',
-             'project/Desmos/图形/法国国旗',
-             'project/Desmos/图形/美国国旗',
-           ],
+          items: [
+            'project/Desmos/图形/细胞膜融合',
+            'project/Desmos/图形/凸透镜成像',
+            'project/Desmos/图形/法国国旗',
+            'project/Desmos/图形/美国国旗',
+          ],
         },
         {
           type: 'category',
           label: '尺规作图',
-          link:
-          {
+          link: {
             type: 'generated-index',
-            description: "使用Desmos进行经典的尺规作图。",
+            description: '使用Desmos进行经典的尺规作图。',
           },
-                     items: [
-             'project/Desmos/尺规作图/正十七边形',
-             'project/Desmos/尺规作图/三圆公接线',
-             'project/Desmos/尺规作图/AppleLogo',
-             'project/Desmos/尺规作图/中国国旗',
-           ],
+          items: [
+            'project/Desmos/尺规作图/正十七边形',
+            'project/Desmos/尺规作图/三圆公接线',
+            'project/Desmos/尺规作图/AppleLogo',
+            'project/Desmos/尺规作图/中国国旗',
+          ],
         },
       ],
     },
     {
       type: 'category',
       label: '其他',
-      link:
-      {
+      link: {
         type: 'generated-index',
-        description: "其他分类的项目和分享。",
+        description: '其他分类的项目和分享。',
       },
       items: [
         {
           type: 'category',
           label: '数码',
-          link:
-          {
+          link: {
             type: 'generated-index',
-            description: "数码产品相关的分享和展示。",
+            description: '数码产品相关的分享和展示。',
           },
-                     items: [
-             'project/其他/数码/Device/index',
-             'project/其他/数码/EDC/index',
-             'project/其他/数码/DeskSetup',
-           ],
+          items: ['project/其他/数码/Device/index', 'project/其他/数码/EDC/index', 'project/其他/数码/DeskSetup'],
         },
         {
           type: 'category',
           label: '软件',
-          link:
-          {
+          link: {
             type: 'generated-index',
-            description: "软件推荐和配置分享。",
+            description: '软件推荐和配置分享。',
           },
-                     items: [
-             'project/其他/软件/综合',
-             'project/其他/软件/macOS',
-             'project/其他/软件/iOS',
+          items: [
+            'project/其他/软件/综合',
+            'project/其他/软件/macOS',
+            'project/其他/软件/iOS',
             {
               type: 'category',
               label: '配置',
-              link:
-              {
+              link: {
                 type: 'generated-index',
-                description: "各种开发工具的配置分享。",
+                description: '各种开发工具的配置分享。',
               },
-                             items: [
-                 'project/其他/软件/配置/VSCode',
-                 'project/其他/软件/配置/Cursor',
-               ],
+              items: ['project/其他/软件/配置/VSCode', 'project/其他/软件/配置/Cursor'],
             },
           ],
         },
         {
           type: 'category',
           label: '设计',
-          link:
-          {
+          link: {
             type: 'generated-index',
-            description: "设计相关的心得和分享。",
+            description: '设计相关的心得和分享。',
           },
-                     items: [
-             'project/其他/设计/DesignStyle',
-             'project/其他/设计/Layout',
-           ],
+          items: ['project/其他/设计/DesignStyle', 'project/其他/设计/Layout'],
         },
       ],
     },
