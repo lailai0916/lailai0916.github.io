@@ -24,6 +24,6 @@ void dfs(int u)
 
 <Problem id="P1352" />
 
-### 洛谷 P3478 [POI2008] STA-Station
+### 洛谷 P3478 [POI 2008] STA-Station
 
 <Problem id="P3478" />

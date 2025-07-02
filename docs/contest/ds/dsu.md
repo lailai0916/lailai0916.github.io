@@ -24,11 +24,11 @@ struct DSU
 
 <Problem id="P3367" />
 
-### 洛谷 P1525 [NOIP2010 提高组] 关押罪犯
+### 洛谷 P1525 [NOIP 2010 提高组] 关押罪犯
 
 <Problem id="P1525" />
 
-### 洛谷 P1892 [BOI2003] 团伙
+### 洛谷 P1892 [BalticOI 2003] 团伙
 
 <Problem id="P1892" />
 
