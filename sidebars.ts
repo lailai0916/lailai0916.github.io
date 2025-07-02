@@ -419,7 +419,7 @@ const sidebars: SidebarsConfig = {
             type: 'generated-index',
             description: '终端编程相关教程和工具函数。',
           },
-          items: ['project/terminal/教程/迷宫游戏', 'project/terminal/教程/颜色', 'project/terminal/教程/工具函数'],
+          items: ['project/terminal/教程/迷宫游戏', 'project/terminal/教程/工具函数'],
         },
       ],
     },
