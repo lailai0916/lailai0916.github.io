@@ -1030,7 +1030,7 @@ $$
 ### 傅里叶变换
 
 $$
-F(\omega)=\displaystyle\int_{-\infty}^{\infty}f(x)e^{-i\omega x}dx
+F(\omega)=\int_{-\infty}^{\infty}f(x)e^{-i\omega x}dx
 $$
 
 - [【官方双语】形象展示傅里叶变换 - bilibili](https://www.bilibili.com/video/BV1pW411J7s8)
