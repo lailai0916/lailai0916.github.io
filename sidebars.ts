@@ -456,7 +456,7 @@ const sidebars: SidebarsConfig = {
           label: '艺术博览会',
           link: {
             type: 'generated-index',
-            description: 'Desmos艺术创作项目。',
+            description: 'Desmos 艺术博览会项目。',
           },
           items: ['project/desmos/艺术博览会/iClock'],
         },
@@ -465,7 +465,7 @@ const sidebars: SidebarsConfig = {
           label: '图形',
           link: {
             type: 'generated-index',
-            description: '各种有趣的图形绘制项目。',
+            description: '使用 Desmos 绘制的图形项目。',
           },
           items: ['project/desmos/图形/细胞膜融合', 'project/desmos/图形/凸透镜成像', 'project/desmos/图形/法国国旗', 'project/desmos/图形/美国国旗'],
         },
@@ -474,7 +474,7 @@ const sidebars: SidebarsConfig = {
           label: '尺规作图',
           link: {
             type: 'generated-index',
-            description: '使用Desmos进行经典的尺规作图。',
+            description: '使用 Desmos 进行经典的尺规作图。',
           },
           items: ['project/desmos/尺规作图/正十七边形', 'project/desmos/尺规作图/三圆公接线', 'project/desmos/尺规作图/AppleLogo', 'project/desmos/尺规作图/中国国旗'],
         },
@@ -490,12 +490,12 @@ const sidebars: SidebarsConfig = {
       items: [
         {
           type: 'category',
-          label: '数码',
+          label: '硬件',
           link: {
             type: 'generated-index',
-            description: '数码产品相关的分享和展示。',
+            description: '数码硬件产品相关的分享和展示。',
           },
-          items: ['project/other/数码/Device/index', 'project/other/数码/EDC/index', 'project/other/数码/DeskSetup'],
+          items: ['project/other/hardware/device/index', 'project/other/hardware/edc/index', 'project/other/hardware/desk-setup'],
         },
         {
           type: 'category',
@@ -505,9 +505,9 @@ const sidebars: SidebarsConfig = {
             description: '软件推荐和配置分享。',
           },
           items: [
-            'project/other/软件/综合',
-            'project/other/软件/macOS',
-            'project/other/软件/iOS',
+            'project/other/software/general',
+            'project/other/software/macos',
+            'project/other/software/ios',
             {
               type: 'category',
               label: '配置',
@@ -515,7 +515,7 @@ const sidebars: SidebarsConfig = {
                 type: 'generated-index',
                 description: '各种开发工具的配置分享。',
               },
-              items: ['project/other/软件/配置/VSCode', 'project/other/软件/配置/Cursor'],
+              items: ['project/other/software/config/vscode', 'project/other/software/config/cursor'],
             },
           ],
         },
@@ -526,7 +526,7 @@ const sidebars: SidebarsConfig = {
             type: 'generated-index',
             description: '设计相关的心得和分享。',
           },
-          items: ['project/other/设计/DesignStyle', 'project/other/设计/Layout'],
+          items: ['project/other/design/style', 'project/other/design/layout'],
         },
       ],
     },
