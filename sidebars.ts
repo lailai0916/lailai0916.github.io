@@ -86,6 +86,15 @@ const sidebars: SidebarsConfig = {
         },
         {
           type: 'category',
+          label: '多项式与生成函数',
+          link: {
+            type: 'generated-index',
+            description: '本章介绍多项式与生成函数。',
+          },
+          items: ['contest/math/poly/fft'],
+        },
+        {
+          type: 'category',
           label: '组合数学',
           link: {
             type: 'generated-index',
@@ -95,12 +104,12 @@ const sidebars: SidebarsConfig = {
         },
         {
           type: 'category',
-          label: '多项式与生成函数',
+          label: '线性代数',
           link: {
             type: 'generated-index',
-            description: '本章介绍多项式与生成函数。',
+            description: '本章介绍线性代数。',
           },
-          items: ['contest/math/poly/fft'],
+          items: ['contest/math/linear-algebra/matrix'],
         },
         {
           type: 'category',
@@ -127,7 +136,7 @@ const sidebars: SidebarsConfig = {
             type: 'generated-index',
             description: '本章记录 OI 中封装的通用数学模板。',
           },
-          items: ['contest/math/math-templates/matrix', 'contest/math/math-templates/complex', 'contest/math/math-templates/fraction', 'contest/math/math-templates/function', 'contest/math/math-templates/constant'],
+          items: ['contest/math/math-templates/complex', 'contest/math/math-templates/fraction', 'contest/math/math-templates/function', 'contest/math/math-templates/constant'],
         },
       ],
     },
