@@ -32,16 +32,16 @@ __gnu_pbds::priority_queue<pair<int,int>,greater<pair<int,int>>> q[N];
 
 ### 洛谷 P3377 【模板】左偏树/可并堆
 
-<problem id="P3377" />
+<Problem id="P3377" />
 
 ### 洛谷 P2713 罗马游戏
 
-<problem id="P2713" />
+<Problem id="P2713" />
 
 ### 洛谷 P1456 Monkey King
 
-<problem id="P1456" />
+<Problem id="P1456" />
 
 ### 洛谷 P10641 BZOJ3252 攻略
 
-<problem id="P10641" />
+<Problem id="P10641" />

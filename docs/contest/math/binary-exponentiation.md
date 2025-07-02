@@ -5,7 +5,7 @@
 - [快速幂 - OI Wiki](https://oi-wiki.org/math/binary-exponentiation/)
 - [平方求幂 - 维基百科](https://zh.wikipedia.org/wiki/平方求幂)
 
-## 实现
+## 快速幂
 
 ```cpp
 ll Pow(ll x,ll y)
@@ -22,11 +22,9 @@ ll Pow(ll x,ll y)
 }
 ```
 
-## 拓展
+## 快速乘
 
-### 快速乘
-
-计算 $xy\bmod p$，可以防止 $xy$ 溢出。
+用于计算 $xy\bmod p$，可以防止 $xy$ 过大溢出。
 
 ```cpp
 ll mul(ll x,ll y)
@@ -47,37 +45,4 @@ ll mul(ll x,ll y)
 
 ### 洛谷 P1226 【模板】快速幂
 
-:::info[[洛谷 P1226 【模板】快速幂](https://www.luogu.com.cn/problem/P1226)]
-
-给定三个整数 $a,b,p$，求 $a^b \bmod p$。（$a,b,p<2^{31}$）
-
-:::
-
-```cpp
-#include <bits/stdc++.h>
-using namespace std;
-
-using ll=long long;
-int mod;
-ll Pow(ll x,ll y)
-{
-	x%=mod;
-	ll res=1;
-	while(y)
-	{
-		if(y&1)res=res*x%mod;
-		x=x*x%mod;
-		y>>=1;
-	}
-	return res;
-}
-int main()
-{
-	ios::sync_with_stdio(false);
-	cin.tie(nullptr);
-	ll a,b;
-	cin>>a>>b>>mod;
-	cout<<a<<'^'<<b<<" mod "<<mod<<'='<<Pow(a,b)<<'\n';
-	return 0;
-}
-```
+<Problem id="P1226" />
