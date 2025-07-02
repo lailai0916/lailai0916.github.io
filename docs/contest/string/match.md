@@ -58,47 +58,4 @@ int RK(string s,string t)
 
 ### 洛谷 P3375 【模板】KMP
 
-:::info[[洛谷 P3375 【模板】KMP](https://www.luogu.com.cn/problem/P3375)]
-
-给定两个字符串 $s_1$ 和 $s_2$，求出 $s_2$ 在 $s_1$ 中所有出现的位置，以及 `next` 数组。
-
-:::
-
-```cpp
-#include <bits/stdc++.h>
-using namespace std;
-
-const int N=1000005;
-int nxt[N];
-void kmp(string s,string t)
-{
-	int n=s.size(),m=t.size();
-	for(int i=1;i<m;i++)
-	{
-		int j=nxt[i-1];
-		while(j&&t[i]!=t[j])j=nxt[j-1];
-		if(t[i]==t[j])j++;
-		nxt[i]=j;
-	}
-	int j=0;
-	for(int i=0;i<n;i++)
-	{
-		while(j&&s[i]!=t[j])j=nxt[j-1];
-		if(s[i]==t[j])j++;
-		if(j==m)cout<<i-m+2<<'\n';
-	}
-}
-int main()
-{
-	ios::sync_with_stdio(false);
-	cin.tie(nullptr);
-	string s,t;
-	cin>>s>>t;
-	kmp(s,t);
-	for(int i=0;i<t.size();i++)
-	{
-		cout<<nxt[i]<<' ';
-	}
-	return 0;
-}
-```
+<Problem id="P3375" />
