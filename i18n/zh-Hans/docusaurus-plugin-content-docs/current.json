@@ -203,13 +203,13 @@
     "message": "本章记录我的高中数学笔记。",
     "description": "The generated-index page description for category 函数 in sidebar sidebar2"
   },
-  "sidebar.sidebar2.category.集合": {
-    "message": "集合",
-    "description": "The label for category 集合 in sidebar sidebar2"
+  "sidebar.sidebar2.category.几何": {
+    "message": "几何",
+    "description": "The label for category 几何 in sidebar sidebar2"
   },
-  "sidebar.sidebar2.category.集合.link.generated-index.description": {
+  "sidebar.sidebar2.category.几何.link.generated-index.description": {
     "message": "本章记录我的高中数学笔记。",
-    "description": "The generated-index page description for category 集合 in sidebar sidebar2"
+    "description": "The generated-index page description for category 几何 in sidebar sidebar2"
   },
   "sidebar.sidebar2.category.概率": {
     "message": "概率",

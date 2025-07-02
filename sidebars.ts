@@ -248,7 +248,7 @@ const sidebars: SidebarsConfig = {
             },
             {
               type: 'category',
-              label: '集合',
+              label: '几何',
               link: {
                 type: 'generated-index',
                 description: '本章记录我的高中数学笔记。',
@@ -297,7 +297,7 @@ const sidebars: SidebarsConfig = {
               label: '《概率论与数理统计》',
               link: {
                 type: 'doc',
-                id: 'note/math/advanced/linear-algebra/index',
+                id: 'note/math/advanced/probability-statistics/index',
               },
               items: [],
             },
