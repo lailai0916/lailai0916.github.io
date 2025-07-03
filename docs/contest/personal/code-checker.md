@@ -6,6 +6,7 @@
 checker
 ├── main.bat                       # 批处理脚本
 ├── lite.bat                       # 批处理脚本（轻量版）
+├── lite.sh                        # 批处理脚本（Shell 版）
 ├── gen.exe                        # 数据生成器
 ├── std.exe                        # 标准程序
 └── sol.exe                        # 被测试的程序
@@ -77,6 +78,27 @@ set num=0
 
 :end
 pause > nul
+```
+
+### lite.sh
+
+```bash
+#!/bin/bash
+
+num=0
+while true; do
+  num=$((num + 1))
+  ./gen > in
+  ./std < in > ans
+  ./sol < in > out
+  diff out ans > /dev/null
+  if [ $? -ne 0 ]; then
+    echo "Failure #$num"
+    diff out ans
+    break
+  fi
+  echo "Success #$num"
+done
 ```
 
 ### gen.cpp
