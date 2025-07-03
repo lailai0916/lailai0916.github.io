@@ -333,6 +333,15 @@ const sidebars: SidebarsConfig = {
       items: [
         {
           type: 'category',
+          label: '英语语音',
+          link: {
+            type: 'doc',
+            id: 'note/english/pronunciation/index',
+          },
+          items: ['note/english/pronunciation/phonics'],
+        },
+        {
+          type: 'category',
           label: '英语词汇',
           link: {
             type: 'doc',
