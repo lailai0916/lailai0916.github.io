@@ -136,7 +136,7 @@ const sidebars: SidebarsConfig = {
             type: 'generated-index',
             description: '本章记录 OI 中封装的通用数学模板。',
           },
-          items: ['contest/math/math-templates/complex', 'contest/math/math-templates/fraction', 'contest/math/math-templates/function', 'contest/math/math-templates/constant'],
+          items: ['contest/math/math-templates/fraction', 'contest/math/math-templates/function', 'contest/math/math-templates/constant'],
         },
       ],
     },
