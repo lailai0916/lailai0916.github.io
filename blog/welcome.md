@@ -1,5 +1,5 @@
 ---
-title: Welcome to lailai's Blog! 👋
+title: 'Welcome to lailai's Blog! 👋'
 date: 2077-01-01T00:00
 authors: [lailai]
 tags: [top]
