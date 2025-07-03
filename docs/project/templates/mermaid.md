@@ -6,7 +6,7 @@
 
 ### 流程图
 
-```
+```text
 graph TD;
     A-->B;
     A-->C;
@@ -28,7 +28,7 @@ graph TD;
 
 ### 时序图
 
-```
+```text
 sequenceDiagram
     participant Alice
     participant Bob
@@ -62,7 +62,7 @@ sequenceDiagram
 
 ### 甘特图
 
-```
+```text
 gantt
 dateFormat  YYYY-MM-DD
 title Adding GANTT diagram to mermaid
@@ -94,7 +94,7 @@ Future task2              :         des4, after des3, 5d
 
 ### 类图
 
-```
+```text
 classDiagram
 Class01 <|-- AveryLongClass : Cool
 Class03 *-- Class04
@@ -134,7 +134,7 @@ Class08 <--> C2: Cool label
 
 ### Git 图表
 
-```
+```text
 gitGraph
     commit
     commit
@@ -166,7 +166,7 @@ gitGraph
 
 ### 实体关系图
 
-```
+```text
 erDiagram
     CUSTOMER ||--o{ ORDER : places
     ORDER ||--|{ LINE-ITEM : contains
@@ -186,7 +186,7 @@ erDiagram
 
 ### 用户旅程图
 
-```
+```text
 journey
     title My working day
     section Go to work
@@ -216,7 +216,7 @@ journey
 
 ### 象限图
 
-```
+```text
 quadrantChart
     title Reach and engagement of campaigns
     x-axis Low Reach --> High Reach
@@ -256,7 +256,7 @@ quadrantChart
 
 ### 坐标图
 
-```
+```text
 xychart-beta
     title "Sales Revenue"
     x-axis [jan, feb, mar, apr, may, jun, jul, aug, sep, oct, nov, dec]
