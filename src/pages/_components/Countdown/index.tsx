@@ -35,7 +35,7 @@ const CONFIG = {
 // ====== 国际化文本 ======
 const COUNTDOWN_TEXTS = {
   title: translate({ id: 'home.countdown.title', message: 'Countdown' }),
-  description: translate({ id: 'home.countdown.description', message: 'Time remaining until {event}' }, { event: CONFIG.EVENT }),
+  description: translate({ id: 'home.countdown.description', message: 'Countdown to {event}' }, { event: CONFIG.EVENT }),
   units: {
     days: translate({ id: 'home.countdown.unit.days', message: 'Days' }),
     hours: translate({ id: 'home.countdown.unit.hours', message: 'Hours' }),
