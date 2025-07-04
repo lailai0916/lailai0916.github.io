@@ -559,5 +559,11 @@
   },
   "home.skill.description": {
     "message": "技术栈的积累是一个持续的过程，每一项技能都是解决问题的工具"
+  },
+  "home.community.title": {
+    "message": "我的社区"
+  },
+  "home.community.description": {
+    "message": "在数字世界中建立连接，分享知识与经验，共同成长与进步"
   }
 }
