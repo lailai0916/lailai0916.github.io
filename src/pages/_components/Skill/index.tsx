@@ -1,6 +1,7 @@
 import React from 'react';
 import { techStack } from '../../../data/skills';
 import { BaseCard, Section, SectionHeader, GridLayout, GridConfigs, IconWrapper, TEXT_COLORS } from '../common';
+import { translate } from '@docusaurus/Translate';
 
 function SkillCard({ name, icon }: { name: string; icon: string }) {
   return (
@@ -33,8 +34,14 @@ export default function Skill() {
     <Section>
       <div className="max-w-7xl mx-auto flex flex-col px-5">
         <SectionHeader 
-          title="我的技能"
-          description="技术栈的积累是一个持续的过程，每一项技能都是解决问题的工具"
+          title={translate({
+            id: 'home.skill.title',
+            message: 'My Skills'
+          })}
+          description={translate({
+            id: 'home.skill.description',
+            message: 'Building a technology stack is a continuous journey — every skill is a tool for solving problems.'
+          })}
         />
         
         <GridLayout columns={GridConfigs.skills} gap="gap-4">
