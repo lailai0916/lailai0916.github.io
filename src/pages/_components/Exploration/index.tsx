@@ -13,7 +13,7 @@ const TEXT_CLAMP_STYLES = {
     overflow: 'hidden',
     textOverflow: 'ellipsis',
     lineHeight: '1.625',
-    minHeight: '4.875em', // 1.625 * 3
+    minHeight: '3.25em', // 1.625 * 2
   } as React.CSSProperties,
 };
 
