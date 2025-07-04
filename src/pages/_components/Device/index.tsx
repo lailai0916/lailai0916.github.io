@@ -1,6 +1,7 @@
 import React from 'react';
 import { DEVICES } from '../../../data/device';
 import { BaseCard, Section, SectionHeader, GridLayout, GridConfigs, IconWrapper, TEXT_COLORS } from '../common';
+import { translate } from '@docusaurus/Translate';
 
 function DeviceCard({ name, icon }: {
   name: string;
@@ -30,8 +31,14 @@ export default function Device() {
     <Section>
       <div className="max-w-7xl mx-auto flex flex-col px-5">
         <SectionHeader 
-          title="我的设备"
-          description="工欲善其事，必先利其器。优秀的工具是高效工作的基础"
+          title={translate({
+            id: 'home.device.title',
+            message: 'My Devices',
+          })}
+          description={translate({
+            id: 'home.device.description',
+            message: 'To work efficiently, you need the right devices — good tools lay the foundation for productivity.',
+          })}
         />
         
         <GridLayout columns={GridConfigs.devices} gap="gap-5" className="max-w-4xl mx-auto">
