@@ -577,5 +577,77 @@
   },
   "home.exploration.description": {
     "message": "保持好奇心，不断探索新领域。每一次学习都是对未知世界的勇敢探索"
+  },
+  "data.exploration.p1.name": {
+    "message": "算法竞赛"
+  },
+  "data.exploration.p1.description": {
+    "message": "参与算法竞赛，深入学习数据结构与算法，提升逻辑思维能力与问题解决技巧。"
+  },
+  "data.exploration.p1.progress": {
+    "message": "进行中"
+  },
+  "data.exploration.p1.skill1": {
+    "message": "数据结构"
+  },
+  "data.exploration.p1.skill2": {
+    "message": "算法优化"
+  },
+  "data.exploration.p1.skill3": {
+    "message": "竞赛策略"
+  },
+  "data.exploration.p2.name": {
+    "message": "Docusaurus"
+  },
+  "data.exploration.p2.description": {
+    "message": "使用 Docusaurus 构建统一、简约、现代的个人网站，探索文档工程化的最佳实践。"
+  },
+  "data.exploration.p2.progress": {
+    "message": "深化中"
+  },
+  "data.exploration.p2.skill1": {
+    "message": "React"
+  },
+  "data.exploration.p2.skill2": {
+    "message": "TypeScript"
+  },
+  "data.exploration.p2.skill3": {
+    "message": "MDX"
+  },
+  "data.exploration.p3.name": {
+    "message": "AI 模型"
+  },
+  "data.exploration.p3.description": {
+    "message": "深入探索人工智能模型的工作原理，实践机器学习技术在实际场景中的应用。"
+  },
+  "data.exploration.p3.progress": {
+    "message": "探索中"
+  },
+  "data.exploration.p3.skill1": {
+    "message": "机器学习"
+  },
+  "data.exploration.p3.skill2": {
+    "message": "深度学习"
+  },
+  "data.exploration.p3.skill3": {
+    "message": "模型部署"
+  },
+  "data.exploration.p4.name": {
+    "message": "英语语法"
+  },
+  "data.exploration.p4.description": {
+    "message": "系统学习英语语法规则，掌握语言结构逻辑，提升技术文档阅读与写作能力。"
+  },
+  "data.exploration.p4.progress": {
+    "message": "学习中"
+  },
+  "data.exploration.p4.skill1": {
+    "message": "语法结构"
+  },
+  "data.exploration.p4.skill2": {
+    "message": "技术写作"
+  },
+  "data.exploration.p4.skill3": {
+    "message": "学术阅读"
   }
 }

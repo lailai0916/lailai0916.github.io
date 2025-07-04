@@ -1,5 +1,5 @@
-import { translate } from '@docusaurus/Translate';
 import { STATUS_COLORS } from '@site/src/pages/_components/common/constants';
+import { translate } from '@docusaurus/Translate';
 
 export const projects = [
   {

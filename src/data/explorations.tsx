@@ -1,32 +1,33 @@
 import { STATUS_COLORS } from '@site/src/pages/_components/common/constants';
+import { translate } from '@docusaurus/Translate';
 
 export const exploringItems = [
   {
-    name: '算法竞赛',
+    name: translate({ id: 'data.exploration.p1.name', message: 'Algorithm Competitions' }),
     icon: 'lucide:trophy',
-    description: '参与算法竞赛，深入学习数据结构与算法，提升逻辑思维能力与问题解决技巧。',
-    progress: { text: '进行中', color: STATUS_COLORS.ORANGE },
-    skills: ['数据结构', '算法优化', '竞赛策略'],
+    description: translate({ id: 'data.exploration.p1.description', message: 'Participating in algorithm competitions to deepen my understanding of data structures and algorithms, while improving logical thinking and problem-solving skills.' }),
+    progress: { text: translate({ id: 'data.exploration.p1.progress', message: 'In Progress' }), color: STATUS_COLORS.ORANGE },
+    skills: [translate({ id: 'data.exploration.p1.skill1', message: 'Data Structures' }), translate({ id: 'data.exploration.p1.skill2', message: 'Algorithm Optimization' }), translate({ id: 'data.exploration.p1.skill3', message: 'Competition Strategies' })],
   },
   {
-    name: 'Docusaurus',
+    name: translate({ id: 'data.exploration.p2.name', message: 'Docusaurus' }),
     icon: 'lucide:book-open',
-    description: '使用 Docusaurus 构建统一、简约、现代的个人网站，探索文档工程化的最佳实践。',
-    progress: { text: '深化中', color: STATUS_COLORS.PURPLE },
-    skills: ['React', 'TypeScript', 'MDX'],
+    description: translate({ id: 'data.exploration.p2.description', message: 'Building a unified, simple, and modern personal website with Docusaurus, exploring best practices for documentation engineering.' }),
+    progress: { text: translate({ id: 'data.exploration.p2.progress', message: 'Deepening' }), color: STATUS_COLORS.PURPLE },
+    skills: [translate({ id: 'data.exploration.p2.skill1', message: 'React' }), translate({ id: 'data.exploration.p2.skill2', message: 'TypeScript' }), translate({ id: 'data.exploration.p2.skill3', message: 'MDX' })],
   },
   {
-    name: 'AI 模型',
+    name: translate({ id: 'data.exploration.p3.name', message: 'AI Models' }),
     icon: 'lucide:bot',
-    description: '深入探索人工智能模型的工作原理，实践机器学习技术在实际场景中的应用。',
-    progress: { text: '探索中', color: STATUS_COLORS.BLUE },
-    skills: ['机器学习', '深度学习', '模型部署'],
+    description: translate({ id: 'data.exploration.p3.description', message: 'Exploring the inner workings of AI models and applying machine learning techniques to real-world scenarios.' }),
+    progress: { text: translate({ id: 'data.exploration.p3.progress', message: 'Exploring' }), color: STATUS_COLORS.BLUE },
+    skills: [translate({ id: 'data.exploration.p3.skill1', message: 'Machine Learning' }), translate({ id: 'data.exploration.p3.skill2', message: 'Deep Learning' }), translate({ id: 'data.exploration.p3.skill3', message: 'Model Deployment' })],
   },
   {
-    name: '英语语法',
+    name: translate({ id: 'data.exploration.p4.name', message: 'English Grammar' }),
     icon: 'lucide:pencil',
-    description: '系统学习英语语法规则，掌握语言结构逻辑，提升技术文档阅读与写作能力。',
-    progress: { text: '学习中', color: STATUS_COLORS.GREEN },
-    skills: ['语法结构', '技术写作', '学术阅读'],
+    description: translate({ id: 'data.exploration.p4.description', message: 'Systematically learning English grammar rules to master language structure and improve technical documentation reading and writing skills.' }),
+    progress: { text: translate({ id: 'data.exploration.p4.progress', message: 'Learning' }), color: STATUS_COLORS.GREEN },
+    skills: [translate({ id: 'data.exploration.p4.skill1', message: 'Grammar Structure' }), translate({ id: 'data.exploration.p4.skill2', message: 'Technical Writing' }), translate({ id: 'data.exploration.p4.skill3', message: 'Academic Reading' })],
   },
 ];
