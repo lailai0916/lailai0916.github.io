@@ -15,7 +15,7 @@ $$
 <TabItem value="递归">
 
 ```cpp
-int Gcd(int a,int b)
+ll Gcd(ll a,ll b)
 {
 	return !b?a:Gcd(b,a%b);
 }
