@@ -18,9 +18,9 @@ import Community from './_components/Community';
 import Device from './_components/Device';
 
 export default function Home() {
-  const {siteConfig} = useDocusaurusContext();
-  const {title, tagline} = siteConfig;
-  
+  const { siteConfig } = useDocusaurusContext();
+  const { title, tagline } = siteConfig;
+
   return (
     <Layout>
       <main>
