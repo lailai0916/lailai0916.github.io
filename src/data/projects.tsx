@@ -1,23 +1,25 @@
+import { translate } from '@docusaurus/Translate';
+
 export const projects = [
   {
-    title: 'lailai\'s Home',
-    description: 'My personal website for sharing technical notes, project experience, and learning insights.',
+    title: "lailai's Home",
+    description: translate({ id: 'data.project.p1.description', message: 'My personal website for sharing technical notes, project experience, and learning insights.' }),
     link: 'https://github.com/lailai0916/lailai0916.github.io',
     tech: 'TypeScript • Docusaurus',
     status: '维护中',
   },
   {
     title: 'iGame',
-    description: 'A collection of terminal mini-games developed in C++, featuring a variety of classic gameplay.',
+    description: translate({ id: 'data.project.p2.description', message:'A collection of terminal mini-games developed in C++, featuring a variety of classic gameplay.' }),
     link: '/docs/project/terminal/iGame',
     tech: 'C++ • Terminal',
     status: '更新中',
   },
   {
     title: 'laiKit',
-    description: 'A unified, simple, and modern UI component library that enhances design consistency.',
+    description: translate({ id: 'data.project.p3.description', message:'A unified, simple, and modern UI component library that enhances design consistency.' }),
     link: '',
     tech: 'TypeScript • React',
     status: '敬请期待',
   },
-]; 
+];

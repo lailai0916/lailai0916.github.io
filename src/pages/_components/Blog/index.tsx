@@ -10,9 +10,9 @@ import { TEXT_COLORS } from '../common';
 // 常量定义
 const DATE_FORMAT_OPTIONS: Intl.DateTimeFormatOptions = {
   year: 'numeric',
-  month: 'long', 
+  month: 'long',
   day: 'numeric',
-  timeZone: 'UTC'
+  timeZone: 'UTC',
 } as const;
 
 // 文本截断样式配置 - 学习Project的配置化机制
@@ -24,20 +24,20 @@ const TEXT_CLAMP_STYLES = {
     overflow: 'hidden',
     textOverflow: 'ellipsis',
     lineHeight: '1.375',
-    minHeight: '2.75em'
-  } as React.CSSProperties
+    minHeight: '2.75em',
+  } as React.CSSProperties,
 } as const;
 
 // 图标尺寸配置 - 统一尺寸控制机制
 const ICON_SIZES = {
-  small: { width: 16, height: 16 }
+  small: { width: 16, height: 16 },
 } as const;
 
 // 样式常量
 const CARD_STYLES = {
   container: 'group block h-full w-full rounded-2xl outline-none focus:outline-none no-underline hover:no-underline focus:ring-2 focus:ring-[var(--ifm-color-primary)]',
   article: 'relative overflow-hidden p-6 cursor-pointer w-full bg-white dark:bg-neutral-900 hover:bg-gray-50 dark:hover:bg-neutral-800/50 rounded-2xl transition-all duration-200 ease-out shadow-sm hover:shadow-md dark:shadow-none border border-gray-200 dark:border-neutral-700 hover:border-gray-300 dark:hover:border-neutral-600',
-  title: 'font-semibold text-lg leading-snug group-hover:text-[var(--ifm-color-primary)] transition-colors duration-200'
+  title: 'font-semibold text-lg leading-snug group-hover:text-[var(--ifm-color-primary)] transition-colors duration-200',
 } as const;
 
 /**
@@ -60,73 +60,56 @@ const formatDate = (dateString: string, locale: string): string => {
 /**
  * 博客卡片组件
  */
-const BlogCard = React.memo<ProcessedBlogPost & { locale: string }>(
-  ({ title, date, permalink, locale }) => {
-    const formattedDate = useMemo(() => formatDate(date, locale), [date, locale]);
-    
-    return (
-      <Link 
-        to={permalink} 
-        className={CARD_STYLES.container} 
-        style={{ textDecoration: 'none' }}
-        aria-label={`阅读文章: ${title}, 发布于 ${formattedDate}`}
-      >
-        <article className={CARD_STYLES.article}>
-          <div className="space-y-6">
-            <header>
-              <h3 
-                className={`${CARD_STYLES.title} ${TEXT_COLORS.PRIMARY}`}
-                style={TEXT_CLAMP_STYLES.title}
-              >
-                {title}
-              </h3>
-            </header>
-            <footer>
-              <div className={`flex items-center gap-2 text-sm ${TEXT_COLORS.SECONDARY}`}>
-                <Icon icon="lucide:calendar" width={ICON_SIZES.small.width} height={ICON_SIZES.small.height} aria-hidden="true" />
-                <time className="no-underline" dateTime={date}>
-                  {formattedDate}
-                </time>
-              </div>
-            </footer>
-          </div>
-        </article>
-      </Link>
-    );
-  }
-);
+const BlogCard = React.memo<ProcessedBlogPost & { locale: string }>(({ title, date, permalink, locale }) => {
+  const formattedDate = useMemo(() => formatDate(date, locale), [date, locale]);
+
+  return (
+    <Link to={permalink} className={CARD_STYLES.container} style={{ textDecoration: 'none' }} aria-label={`阅读文章: ${title}, 发布于 ${formattedDate}`}>
+      <article className={CARD_STYLES.article}>
+        <div className="space-y-6">
+          <header>
+            <h3 className={`${CARD_STYLES.title} ${TEXT_COLORS.PRIMARY}`} style={TEXT_CLAMP_STYLES.title}>
+              {title}
+            </h3>
+          </header>
+          <footer>
+            <div className={`flex items-center gap-2 text-sm ${TEXT_COLORS.SECONDARY}`}>
+              <Icon icon="lucide:calendar" width={ICON_SIZES.small.width} height={ICON_SIZES.small.height} aria-hidden="true" />
+              <time className="no-underline" dateTime={date}>
+                {formattedDate}
+              </time>
+            </div>
+          </footer>
+        </div>
+      </article>
+    </Link>
+  );
+});
 
 BlogCard.displayName = 'BlogCard';
 
 /**
  * 博客卡片列表组件
  */
-const BlogCardList = React.memo<{ posts: ProcessedBlogPost[]; locale: string }>(
-  ({ posts, locale }) => {
-    if (!posts.length) {
-      return (
-        <div className="w-full text-center py-12">
-          <p className={`${TEXT_COLORS.MUTED} text-lg`}>
-            {BLOG_CONFIG.EMPTY_STATE_MESSAGE}
-          </p>
-        </div>
-      );
-    }
-
+const BlogCardList = React.memo<{ posts: ProcessedBlogPost[]; locale: string }>(({ posts, locale }) => {
+  if (!posts.length) {
     return (
-      <>
-        {posts.slice(0, BLOG_CONFIG.MAX_POSTS).map((post, index) => (
-          <div 
-            key={post.permalink} 
-            className={index === 3 ? 'hidden md:block' : undefined}
-          >
-            <BlogCard {...post} locale={locale} />
-          </div>
-        ))}
-      </>
+      <div className="w-full text-center py-12">
+        <p className={`${TEXT_COLORS.MUTED} text-lg`}>{BLOG_CONFIG.EMPTY_STATE_MESSAGE}</p>
+      </div>
     );
   }
-);
+
+  return (
+    <>
+      {posts.slice(0, BLOG_CONFIG.MAX_POSTS).map((post, index) => (
+        <div key={post.permalink} className={index === 3 ? 'hidden md:block' : undefined}>
+          <BlogCard {...post} locale={locale} />
+        </div>
+      ))}
+    </>
+  );
+});
 
 BlogCardList.displayName = 'BlogCardList';
 
@@ -144,27 +127,14 @@ export default function Blog() {
           {/* 左侧描述区域 */}
           <div className="w-full lg:w-6/12 max-w-3xl flex flex-col items-start justify-start lg:ps-5 lg:pe-10">
             <h2 className={`font-bold text-3xl md:text-4xl ${TEXT_COLORS.PRIMARY} leading-tight mb-8 flex items-center gap-3`}>
-              <Icon 
-                icon="lucide:graduation-cap" 
-                width={32} 
-                height={32}
-                className="text-[var(--ifm-color-primary)] md:w-10 md:h-10"
-              />
+              <Icon icon="lucide:graduation-cap" width={32} height={32} className="text-[var(--ifm-color-primary)] md:w-10 md:h-10" />
               <Translate id="home.blog.title">Learning & Practice</Translate>
             </h2>
             <p className="leading-relaxed mb-6">
-              <Translate id="home.blog.description.first">
-                Technology evolves rapidly, and we need to maintain keen learning abilities and curiosity.
-                Every mastery of new technology is an investment in the future.
-                Here we record thoughts and summaries in the learning process, sharing methods and experiences for solving problems.
-              </Translate>
+              <Translate id="home.blog.description.p1">Technology evolves rapidly, and we need to maintain keen learning abilities and curiosity. Every mastery of new technology is an investment in the future. Here we record thoughts and summaries in the learning process, sharing methods and experiences for solving problems.</Translate>
             </p>
             <p className="leading-relaxed mb-6">
-              <Translate id="home.blog.description.second">
-                Through continuous practice and summarization, we transform knowledge into real skills.
-                Only through practice-verified technologies and methods can truly help us solve real problems.
-                You can find algorithm solutions, technical notes, and project practices here.
-              </Translate>
+              <Translate id="home.blog.description.p2">Through continuous practice and summarization, we transform knowledge into real skills. Only through practice-verified technologies and methods can truly help us solve real problems. You can find algorithm solutions, technical notes, and project practices here.</Translate>
             </p>
             <Link to="/blog">
               <strong>
@@ -172,7 +142,7 @@ export default function Blog() {
               </strong>
             </Link>
           </div>
-          
+
           {/* 右侧博客卡片区域 */}
           <div className="w-full lg:w-6/12">
             <p className={`font-bold text-sm ${TEXT_COLORS.SECONDARY} flex flex-row gap-2 items-center mt-5 lg:mt-0 w-full`}>
