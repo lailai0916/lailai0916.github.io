@@ -8,7 +8,7 @@ import { exploringItems } from '@site/src/data/explorations';
 const TEXT_CLAMP_STYLES = {
   description: {
     display: '-webkit-box',
-    WebkitLineClamp: 3,
+    WebkitLineClamp: 2,
     WebkitBoxOrient: 'vertical',
     overflow: 'hidden',
     textOverflow: 'ellipsis',
