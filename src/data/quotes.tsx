@@ -3,21 +3,30 @@ import { translate } from '@docusaurus/Translate';
 
 export const favoriteQuotes = [
   {
-    quote: 'Stay hungry. Stay foolish.',
-    author: 'Steve Jobs',
-    context: '斯坦福大学毕业典礼演讲',
-    category: { text: '创新思维', color: STATUS_COLORS.PURPLE },
+    quote: translate({ id: 'data.quote.p1.quote', message: 'Stay hungry. Stay foolish.' }),
+    author: translate({ id: 'data.quote.p1.author', message: 'Steve Jobs' }),
+    context: translate({ id: 'data.quote.p1.context', message: 'Stanford Commencement Speech' }),
+    category: {
+      text: translate({ id: 'data.quote.p1.category', message: 'Innovative Thinking' }),
+      color: STATUS_COLORS.PURPLE,
+    },
   },
   {
-    quote: 'The only way to do great work is to love what you do.',
-    author: 'Steve Jobs',
-    context: '关于工作与热情',
-    category: { text: '职业理念', color: STATUS_COLORS.GREEN },
+    quote: translate({ id: 'data.quote.p2.quote', message: 'The only way to do great work is to love what you do.' }),
+    author: translate({ id: 'data.quote.p2.author', message: 'Steve Jobs' }),
+    context: translate({ id: 'data.quote.p2.context', message: 'On Work and Passion' }),
+    category: {
+      text: translate({ id: 'data.quote.p2.category', message: 'Career Philosophy' }),
+      color: STATUS_COLORS.GREEN,
+    },
   },
   {
-    quote: 'Talk is cheap. Show me the code.',
-    author: 'Linus Torvalds',
-    context: 'Linux 之父的编程哲学',
-    category: { text: '技术态度', color: STATUS_COLORS.BLUE },
+    quote: translate({ id: 'data.quote.p3.quote', message: 'Talk is cheap. Show me the code.' }),
+    author: translate({ id: 'data.quote.p3.author', message: 'Linus Torvalds' }),
+    context: translate({ id: 'data.quote.p3.context', message: 'The Programming Philosophy of the Father of Linux' }),
+    category: {
+      text: translate({ id: 'data.quote.p3.category', message: 'Technical Attitude' }),
+      color: STATUS_COLORS.BLUE,
+    },
   },
 ];
