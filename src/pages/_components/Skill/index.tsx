@@ -9,21 +9,11 @@ function SkillCard({ name, icon }: { name: string; icon: string }) {
       <div className="flex flex-col items-center text-center space-y-4">
         <div className="flex justify-center items-center h-12 w-12">
           <IconWrapper>
-            <img 
-              src={`https://skillicons.dev/icons?i=${icon}&theme=light#gh-light-mode-only`} 
-              alt={name} 
-              className="w-12 h-12 object-contain"
-            />
-            <img 
-              src={`https://skillicons.dev/icons?i=${icon}&theme=dark#gh-dark-mode-only`} 
-              alt={name} 
-              className="w-12 h-12 object-contain"
-            />
+            <img src={`https://skillicons.dev/icons?i=${icon}&theme=light#gh-light-mode-only`} alt={name} className="w-12 h-12 object-contain" />
+            <img src={`https://skillicons.dev/icons?i=${icon}&theme=dark#gh-dark-mode-only`} alt={name} className="w-12 h-12 object-contain" />
           </IconWrapper>
         </div>
-        <h3 className={`font-semibold text-lg ${TEXT_COLORS.PRIMARY} leading-snug`}>
-          {name}
-        </h3>
+        <h3 className={`font-semibold text-lg ${TEXT_COLORS.PRIMARY} leading-snug`}>{name}</h3>
       </div>
     </BaseCard>
   );
@@ -33,17 +23,17 @@ export default function Skill() {
   return (
     <Section>
       <div className="max-w-7xl mx-auto flex flex-col px-5">
-        <SectionHeader 
+        <SectionHeader
           title={translate({
             id: 'home.skill.title',
-            message: 'My Skills'
+            message: 'My Skills',
           })}
           description={translate({
             id: 'home.skill.description',
-            message: 'Turning ideas into reality through practice — every project is a product of technological exploration and innovative thinking.'
+            message: 'Turning ideas into reality through practice — every project is a product of technological exploration and innovative thinking.',
           })}
         />
-        
+
         <GridLayout columns={GridConfigs.skills} gap="gap-4">
           {techStack.map((tech, idx) => (
             <div key={idx} className="h-full">
