@@ -40,7 +40,7 @@ export default function Skill() {
           })}
           description={translate({
             id: 'home.skill.description',
-            message: 'Building a technology stack is a continuous journey — every skill is a tool for solving problems.'
+            message: 'Turning ideas into reality through practice — every project is a product of technological exploration and innovative thinking.'
           })}
         />
         
