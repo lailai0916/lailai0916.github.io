@@ -1,5 +1,5 @@
-import {themes as prismThemes} from 'prism-react-renderer';
-import type {Config} from '@docusaurus/types';
+import { themes as prismThemes } from 'prism-react-renderer';
+import type { Config } from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
 
 import remarkMath from 'remark-math';
@@ -8,8 +8,8 @@ import rehypeKatex from 'rehype-katex';
 const defaultLocale = 'en';
 
 const config: Config = {
-  title: 'lailai\'s Home',
-  tagline: 'lailai\'s personal website for sharing technical notes, project experience, and learning insights.',
+  title: "lailai's Home",
+  tagline: "lailai's personal website for sharing technical notes, project experience, and learning insights.",
   favicon: 'img/favicon.ico',
 
   future: {
@@ -43,16 +43,13 @@ const config: Config = {
           showLastUpdateTime: true,
           // editUrl: 'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
 
-          remarkPlugins: [
-            remarkMath,
-            [require('@docusaurus/remark-plugin-npm2yarn'), {sync: true}],
-          ],
+          remarkPlugins: [remarkMath, [require('@docusaurus/remark-plugin-npm2yarn'), { sync: true }]],
           rehypePlugins: [rehypeKatex],
         },
         blog: {
           showReadingTime: true,
           blogTitle: 'Blog',
-          blogDescription: 'lailai\'s Blog',
+          blogDescription: "lailai's Blog",
           postsPerPage: 'ALL',
           blogSidebarTitle: 'Post List',
           blogSidebarCount: 'ALL',
@@ -69,17 +66,11 @@ const config: Config = {
           onInlineAuthors: 'warn',
           onUntruncatedBlogPosts: 'warn',
 
-          remarkPlugins: [
-            remarkMath,
-            [require('@docusaurus/remark-plugin-npm2yarn'), {sync: true}],
-          ],
+          remarkPlugins: [remarkMath, [require('@docusaurus/remark-plugin-npm2yarn'), { sync: true }]],
           rehypePlugins: [rehypeKatex],
         },
         pages: {
-          remarkPlugins: [
-            remarkMath,
-            [require('@docusaurus/remark-plugin-npm2yarn'), {sync: true}],
-          ],
+          remarkPlugins: [remarkMath, [require('@docusaurus/remark-plugin-npm2yarn'), { sync: true }]],
           rehypePlugins: [rehypeKatex],
         },
         theme: {
@@ -102,9 +93,9 @@ const config: Config = {
     },
     navbar: {
       hideOnScroll: true,
-      title: 'lailai\'s Home',
+      title: "lailai's Home",
       logo: {
-        alt: 'lailai\'s Logo',
+        alt: "lailai's Logo",
         src: 'img/logo.svg',
       },
       items: [
@@ -214,11 +205,11 @@ const config: Config = {
         name: 'docusaurus-tailwindcss',
         configurePostCss(postcssOptions) {
           // Appends TailwindCSS and AutoPrefixer.
-          postcssOptions.plugins.push(require('tailwindcss'))
-          postcssOptions.plugins.push(require('autoprefixer'))
-          return postcssOptions
+          postcssOptions.plugins.push(require('tailwindcss'));
+          postcssOptions.plugins.push(require('autoprefixer'));
+          return postcssOptions;
         },
-      }
+      };
     },
     [
       '@docusaurus/plugin-google-gtag',
