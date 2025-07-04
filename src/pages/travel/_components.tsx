@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import { Chrono } from 'react-chrono';
-import { items } from '@site/src/data/travel';
+import { items as rawItems } from '@site/src/data/travel';
 import './styles.module.css';
 
 // Timeline配置常量
@@ -12,7 +12,7 @@ const TIMELINE_CONFIG = {
   lineWidth: 3,
   timelinePointDimension: 18,
   responsiveBreakPoint: 768,
-  
+
   // 交互配置
   hideControls: true,
   useReadMore: false,
@@ -21,13 +21,13 @@ const TIMELINE_CONFIG = {
   enableBreakPoint: true,
   highlightCardsOnHover: true,
   borderLessCards: false,
-  
+
   // 媒体设置
   mediaSettings: {
     align: 'center' as const,
     fit: 'cover' as const,
   },
-  
+
   // 可访问性
   semanticTags: {
     cardTitle: 'h3' as const,
@@ -73,36 +73,46 @@ const CLASS_NAMES = {
   title: 'travel-timeline-title',
 } as const;
 
-// 按钮文本配置
-const BUTTON_TEXTS = {
-  first: '回到开始',
-  last: '跳到最新',
-  next: '下一个',
-  previous: '上一个',
-  play: '开始播放',
-  stop: '停止播放',
-} as const;
+/**
+ * 格式化 YYYY-MM 日期为 "Month Year"
+ */
+const formatTravelDate = (dateStr: string): string => {
+  if (!/^\d{4}-\d{2}$/.test(dateStr)) {
+    return dateStr; // 格式不符，直接返回原字符串
+  }
+  const [year, month] = dateStr.split('-');
+  const date = new Date(Number(year), Number(month) - 1);
+  return date.toLocaleDateString('en-US', {
+    year: 'numeric',
+    month: 'long',
+  });
+};
 
 /**
  * 旅行时间线组件
  */
 export default function Timeline() {
+  const items = useMemo(
+    () =>
+      [...rawItems].reverse().map((item) => ({
+        ...item,
+        title: formatTravelDate(item.title),
+      })),
+    [rawItems]
+  );
+
   return (
     <div className="w-full max-w-6xl mx-auto">
       <Chrono
         // 数据和模式
-        items={[...items].reverse()}
+        items={items}
         mode="VERTICAL_ALTERNATING"
-        
         // 主题和样式
         theme={TIMELINE_THEME}
         fontSizes={FONT_SIZES}
         classNames={CLASS_NAMES}
-        buttonTexts={BUTTON_TEXTS}
-        
         // 布局配置
         {...TIMELINE_CONFIG}
-        
         // 时间轴点样式
         timelinePointShape="circle"
       />

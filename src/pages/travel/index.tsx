@@ -8,7 +8,7 @@ import { BaseCard, Section, SectionHeader, GridLayout, GridConfigs } from '../_c
 // 页面常量
 const PAGE_CONFIG = {
   title: '旅行',
-  description: '纸上得来终觉浅，绝知此事要躬行'
+  description: '读万卷书，行万里路。路走多了，才能真正平视世界。既不仰望富裕国家，也不轻视贫穷之地。世界，不是新闻里的样子，也不是别人描述的样子，而是你亲眼所见、亲身所感。看得多了，眼界自开，格局亦变。'
 } as const;
 
 // 统计数据配置
@@ -62,10 +62,6 @@ const TravelHero = React.memo(() => (
           <p className="text-lg lg:text-xl text-gray-700 dark:text-neutral-300 leading-relaxed mb-6">
             {PAGE_CONFIG.description}
           </p>
-          <p className="text-lg lg:text-xl text-gray-700 dark:text-neutral-300 leading-relaxed mb-8">
-            读万卷书，行万里路。路走多了，才能真正平视世界。既不仰望富裕国家，也不轻视贫穷之地。
-            世界，不是新闻里的样子，也不是别人描述的样子，而是你亲眼所见、亲身所感。看得多了，眼界自开，格局亦变。
-          </p>
         </div>
         
         {/* 右侧统计区 */}
@@ -97,7 +93,7 @@ const TravelTimeline = React.memo(() => (
     <div className="max-w-7xl mx-auto flex flex-col px-5">
       <SectionHeader 
         title="旅行足迹"
-        description="记录每一次出发，珍藏每一份回忆。"
+        description="纸上得来终觉浅，绝知此事要躬行"
       />
       <div className="w-full">
         <BrowserOnly>
