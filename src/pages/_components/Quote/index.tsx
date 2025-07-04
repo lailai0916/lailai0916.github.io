@@ -1,6 +1,7 @@
 import React from 'react';
 import { BaseCard, Section, SectionHeader, StatusBadge, GridLayout, GridConfigs, TEXT_COLORS } from '../common';
 import { favoriteQuotes } from '@site/src/data/quotes';
+import { translate } from '@docusaurus/Translate';
 
 function QuoteCard({ quote, author, context, category }: { quote: string; author: string; context: string; category: { text: string; color: string } }) {
   return (
@@ -32,7 +33,16 @@ export default function Quote() {
   return (
     <Section>
       <div className="max-w-7xl mx-auto flex flex-col px-5">
-        <SectionHeader title="思想启迪" description="智者的话语如明灯，照亮前行的道路。这些箴言见证着思想的力量" />
+        <SectionHeader
+          title={translate({
+            id: 'home.quote.title',
+            message: 'Inspiring Thoughts',
+          })}
+          description={translate({
+            id: 'home.quote.description',
+            message: 'The words of the wise are like guiding lights, illuminating the path ahead. These quotes embody the power of thought.',
+          })}
+        />
 
         <GridLayout columns={GridConfigs.quotes}>
           {favoriteQuotes.map((item) => (

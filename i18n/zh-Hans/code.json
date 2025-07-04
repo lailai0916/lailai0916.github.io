@@ -649,5 +649,11 @@
   },
   "data.exploration.p4.skill3": {
     "message": "学术阅读"
+  },
+  "home.quote.title": {
+    "message": "思想启迪"
+  },
+  "home.quote.description": {
+    "message": "智者的话语如明灯，照亮前行的道路。这些箴言见证着思想的力量"
   }
 }
