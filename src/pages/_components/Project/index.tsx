@@ -111,7 +111,7 @@ export default function Project() {
           })}
           description={translate({
             id: 'home.project.description',
-            message: 'Transforming ideas into reality through practice, where each project is a crystallization of technological exploration and innovative thinking'
+            message: 'Turning ideas into reality through practice — every project is a product of technological exploration and innovative thinking.'
           })}
         />
         
