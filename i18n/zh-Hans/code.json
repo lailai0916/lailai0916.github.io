@@ -529,5 +529,11 @@
   },
   "components.problem.error.content": {
     "message": "请检查文件 \"docs/contest/_problems/{id}.md\" 是否存在。"
+  },
+  "home.project.title": {
+    "message": "我的项目"
+  },
+  "home.project.description": {
+    "message": "通过实践将想法转化为现实，每个项目都是技术探索与创新思维的结晶"
   }
 }

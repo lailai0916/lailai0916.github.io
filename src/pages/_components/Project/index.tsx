@@ -1,4 +1,5 @@
 import React from 'react';
+import { translate } from '@docusaurus/Translate';
 import { Icon } from '@iconify/react';
 import { projects } from '../../../data/projects';
 import { BaseCard, Section, SectionHeader, StatusBadge, GridLayout, GridConfigs, TEXT_COLORS } from '../common';
@@ -103,9 +104,15 @@ export default function Project() {
   return (
     <Section>
       <div className="max-w-7xl mx-auto flex flex-col px-5">
-        <SectionHeader 
-          title="我的项目"
-          description="通过实践将想法转化为现实，每个项目都是技术探索与创新思维的结晶"
+        <SectionHeader
+          title={translate({
+            id: 'home.project.title',
+            message: 'My Projects'
+          })}
+          description={translate({
+            id: 'home.project.description',
+            message: 'Transforming ideas into reality through practice, where each project is a crystallization of technological exploration and innovative thinking'
+          })}
         />
         
         <GridLayout columns={GridConfigs.projects}>

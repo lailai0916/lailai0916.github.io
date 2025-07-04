@@ -239,6 +239,10 @@
     "message": "本章记录我的英语笔记。",
     "description": "The generated-index page description for category 英语 in sidebar sidebar2"
   },
+  "sidebar.sidebar2.category.英语语音": {
+    "message": "英语语音",
+    "description": "The label for category 英语语音 in sidebar sidebar2"
+  },
   "sidebar.sidebar2.category.英语语法": {
     "message": "英语语法",
     "description": "The label for category 英语语法 in sidebar sidebar2"
