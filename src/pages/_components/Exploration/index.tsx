@@ -1,7 +1,7 @@
 import React from 'react';
 import { Icon } from '@iconify/react';
 import { BaseCard, Section, SectionHeader, StatusBadge, IconWrapper, GridLayout, GridConfigs, TEXT_COLORS } from '../common';
-import { STATUS_COLORS } from '../common/constants';
+import { translate } from '@docusaurus/Translate';
 import { exploringItems } from '@site/src/data/explorations';
 
 // 文本截断样式
@@ -28,7 +28,7 @@ function ExplorationCard({ name, icon, description, progress, skills }: { name: 
     <BaseCard isClickable={false} className="p-6 group">
       <div className="flex-1 space-y-4">
         <header className="space-y-3">
-          <div className="flex items-start justify-between">
+          <div className="flex items-center justify-between">
             <div className="flex items-center gap-3">
               <IconWrapper>
                 <Icon icon={icon} width={32} height={32} className="text-gray-700 dark:text-neutral-300" />
@@ -61,8 +61,16 @@ export default function Exploration() {
   return (
     <Section>
       <div className="max-w-7xl mx-auto flex flex-col px-5">
-        <SectionHeader title="当前探索" description="保持好奇心，不断探索新领域。每一次学习都是对未知世界的勇敢探索" />
-
+        <SectionHeader
+          title={translate({
+            id: 'home.exploration.title',
+            message: 'Current Exploration',
+          })}
+          description={translate({
+            id: 'home.exploration.description',
+            message: 'Stay curious and keep exploring new fields — every learning journey is a bold step into the unknown.',
+          })}
+        />
         <GridLayout columns={GridConfigs.exploration}>
           {exploringItems.map((item, idx) => (
             <div key={idx} className="h-full">

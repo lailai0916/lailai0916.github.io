@@ -571,5 +571,11 @@
   },
   "home.device.description": {
     "message": "工欲善其事，必先利其器。优秀的工具是高效工作的基础"
+  },
+  "home.exploration.title": {
+    "message": "当前探索"
+  },
+  "home.exploration.description": {
+    "message": "保持好奇心，不断探索新领域。每一次学习都是对未知世界的勇敢探索"
   }
 }
