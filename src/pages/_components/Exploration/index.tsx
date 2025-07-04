@@ -1,11 +1,31 @@
 import React from 'react';
 import { Icon } from '@iconify/react';
 import { BaseCard, Section, SectionHeader, StatusBadge, IconWrapper, GridLayout, GridConfigs, TEXT_COLORS } from '../common';
+import { STATUS_COLORS } from '../common/constants';
 import { exploringItems } from '@site/src/data/explorations';
+
+// 文本截断样式
+const TEXT_CLAMP_STYLES = {
+  description: {
+    display: '-webkit-box',
+    WebkitLineClamp: 3,
+    WebkitBoxOrient: 'vertical',
+    overflow: 'hidden',
+    textOverflow: 'ellipsis',
+    lineHeight: '1.625',
+    minHeight: '4.875em', // 1.625 * 3
+  } as React.CSSProperties,
+};
+
+// 样式类名配置
+const CARD_STYLE_CLASSES = {
+  title: 'font-semibold text-xl group-hover:text-[var(--ifm-color-primary)] transition-colors duration-200',
+  skillTag: 'inline-flex items-center px-2 py-1 rounded-md text-xs font-medium bg-gray-100 dark:bg-neutral-800 text-gray-700 dark:text-neutral-300',
+};
 
 function ExplorationCard({ name, icon, description, progress, skills }: { name: string; icon: string; description: string; progress: { text: string; color: string }; skills: string[] }) {
   return (
-    <BaseCard isClickable={false} className="p-6">
+    <BaseCard isClickable={false} className="p-6 group">
       <div className="flex-1 space-y-4">
         <header className="space-y-3">
           <div className="flex items-start justify-between">
@@ -14,17 +34,19 @@ function ExplorationCard({ name, icon, description, progress, skills }: { name: 
                 <Icon icon={icon} width={32} height={32} className="text-gray-700 dark:text-neutral-300" />
               </IconWrapper>
               <div>
-                <h3 className={`font-semibold text-xl ${TEXT_COLORS.PRIMARY} leading-snug`}>{name}</h3>
+                <h3 className={`${CARD_STYLE_CLASSES.title} ${TEXT_COLORS.PRIMARY} leading-snug`}>{name}</h3>
               </div>
             </div>
             <StatusBadge status={progress} />
           </div>
-          <p className={`${TEXT_COLORS.SECONDARY} leading-relaxed`}>{description}</p>
+          <p className={`${TEXT_COLORS.SECONDARY} leading-relaxed`} style={TEXT_CLAMP_STYLES.description}>
+            {description}
+          </p>
         </header>
         <footer className="pt-2">
           <div className="flex flex-wrap gap-2">
             {skills.map((skill) => (
-              <span key={skill} className="inline-flex items-center px-2 py-1 rounded-md text-xs font-medium bg-gray-100 dark:bg-neutral-800 text-gray-700 dark:text-neutral-300">
+              <span key={skill} className={CARD_STYLE_CLASSES.skillTag}>
                 {skill}
               </span>
             ))}
