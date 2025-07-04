@@ -143,12 +143,12 @@ export default function Blog() {
         <div className="max-w-3xl lg:max-w-7xl gap-5 flex flex-col lg:flex-row lg:px-5">
           {/* 左侧描述区域 */}
           <div className="w-full lg:w-6/12 max-w-3xl flex flex-col items-start justify-start lg:ps-5 lg:pe-10">
-            <h2 className={`font-bold text-4xl ${TEXT_COLORS.PRIMARY} leading-tight mb-8 flex items-center gap-3`}>
+            <h2 className={`font-bold text-3xl md:text-4xl ${TEXT_COLORS.PRIMARY} leading-tight mb-8 flex items-center gap-3`}>
               <Icon 
                 icon="lucide:graduation-cap" 
-                width={40} 
-                height={40} 
-                className="text-[var(--ifm-color-primary)]"
+                width={32} 
+                height={32}
+                className="text-[var(--ifm-color-primary)] md:w-10 md:h-10"
               />
               <Translate id="home.blog.title">Learning & Practice</Translate>
             </h2>
