@@ -540,9 +540,9 @@
     "message": "我的个人网站，分享技术笔记、项目经验与学习心得。"
   },
   "data.project.p2.description": {
-    "message": "一款用C++开发的终端小游戏合集，包含多种经典玩法。"
+    "message": "一款使用 C++ 开发的终端小游戏合集，包含多种经典玩法。"
   },
   "data.project.p3.description": {
-    "message": "一个统一、简单、现代的UI组件库，增强设计一致性。"
+    "message": "一个统一、简约、现代的 UI 组件库，构建纯净的界面体验。"
   }
 }
