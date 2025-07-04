@@ -23,7 +23,7 @@ export const favoriteQuotes = [
   {
     quote: translate({ id: 'data.quote.p3.quote', message: 'Talk is cheap. Show me the code.' }),
     author: translate({ id: 'data.quote.p3.author', message: 'Linus Torvalds' }),
-    context: translate({ id: 'data.quote.p3.context', message: 'The Programming Philosophy of the Father of Linux' }),
+    context: translate({ id: 'data.quote.p3.context', message: "Linus Torvalds' Programming Philosophy" }),
     category: {
       text: translate({ id: 'data.quote.p3.category', message: 'Technical Attitude' }),
       color: STATUS_COLORS.BLUE,
