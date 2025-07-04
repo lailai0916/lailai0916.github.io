@@ -17,7 +17,7 @@ export const projects = [
   },
   {
     title: 'laiKit',
-    description: translate({ id: 'data.project.p3.description', message:'A unified, simple, and modern UI component library that enhances design consistency.' }),
+    description: translate({ id: 'data.project.p3.description', message:'A unified, simple, and modern UI component library for building clean interface experiences.' }),
     link: '',
     tech: 'TypeScript • React',
     status: '敬请期待',
