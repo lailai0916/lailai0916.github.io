@@ -29,9 +29,9 @@ ll Gcd(ll a,ll b)
 {
 	while(b)
 	{
-		ll tmp=a;
+		ll t=a;
 		a=b;
-		b=tmp%b;
+		b=t%b;
 	}
 	return a;
 }
