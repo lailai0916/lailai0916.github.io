@@ -1,14 +1,20 @@
+export interface TravelStatItem {
+  number: string;
+  title: string;
+  icon: string;
+}
+
 export interface TravelItem {
   title: string;
   cardTitle: string;
   cardDetailedText: string;
 }
 
-export interface TravelStatItem {
-  number: string;
-  title: string;
-  icon: string;
-}
+export const TRAVEL_STAT_LIST: TravelStatItem[] = [
+  { number: '20+', title: '国家/地区', icon: 'material-symbols:public' },
+  { number: '50+', title: '城市', icon: 'material-symbols:location-city' },
+  { number: '13年', title: '历程', icon: 'material-symbols:schedule' },
+];
 
 export const TRAVEL_LIST: TravelItem[] = [
   {
@@ -207,24 +213,3 @@ export const TRAVEL_LIST: TravelItem[] = [
     cardDetailedText: '吉隆坡、怡保、乔治 - 感受马来西亚的多元文化融合',
   },
 ];
-
-// 旅行统计数据
-export const TRAVEL_STAT_LIST: TravelStatItem[] = [
-  { number: '20+', title: '国家/地区', icon: 'material-symbols:public' },
-  { number: '50+', title: '城市', icon: 'material-symbols:location-city' },
-  { number: '13年', title: '历程', icon: 'material-symbols:schedule' },
-];
-
-/*
-旅行足迹统计：
-- 国内旅行：涵盖中国大陆多个省市自治区
-- 国际旅行：亚洲、欧洲、大洋洲、北美洲
-- 时间跨度：2011年至今，14年旅行历程
-- 旅行方式：自由行为主，深度体验当地文化
-
-特色旅行：
-- 文化探索：古都、历史名城、文化遗产
-- 自然风光：山川、海岛、草原、雨林
-- 城市体验：现代都市、传统古镇
-- 国际视野：多国文化交流与体验
-*/
