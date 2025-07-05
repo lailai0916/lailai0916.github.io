@@ -1,16 +1,16 @@
 import React from 'react';
 import { DEVICE_LIST } from '../../../data/device';
-import { BaseCard, Section, SectionHeader, GridLayout, GridConfigs, IconWrapper, TEXT_COLORS } from '../common';
+import { BaseCard, Section, SectionHeader, GridLayout, GridConfigs, TEXT_COLORS } from '../common';
 import { translate } from '@docusaurus/Translate';
 
-function DeviceCard({ name, icon }: { name: string; icon: string }) {
+function DeviceCard({ title, icon }: { title: string; icon: string }) {
   return (
-    <BaseCard isClickable={false} className="p-5 items-center justify-center">
-      <div className="flex flex-col items-center space-y-3">
-        <IconWrapper>
-          <img src={icon} alt={name} draggable="false" className="w-10 h-10 object-contain filter brightness-0 dark:invert transition-transform duration-200 select-none" />
-        </IconWrapper>
-        <h3 className={`font-medium text-base ${TEXT_COLORS.PRIMARY} text-center leading-snug`}>{name}</h3>
+    <BaseCard isClickable={false} className="p-6 items-center justify-center">
+      <div className="flex flex-col items-center text-center space-y-4">
+        <div className="flex justify-center items-center h-12 w-12">
+          <img src={icon} alt={title} className="w-12 h-12 object-contain" />
+        </div>
+        <h3 className={`font-semibold text-lg ${TEXT_COLORS.PRIMARY} leading-snug`}>{title}</h3>
       </div>
     </BaseCard>
   );

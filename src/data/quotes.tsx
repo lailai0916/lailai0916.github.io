@@ -5,7 +5,7 @@ export type QuoteItem = {
   quote: string;
   author: string;
   context: string;
-  category: { text: string; color: string };
+  status: { text: string; color: string };
 };
 
 export const QUOTE_LIST: QuoteItem[] = [
@@ -13,7 +13,7 @@ export const QUOTE_LIST: QuoteItem[] = [
     quote: translate({ id: 'data.quote.p1.quote', message: 'Stay hungry. Stay foolish.' }),
     author: translate({ id: 'data.quote.p1.author', message: 'Steve Jobs' }),
     context: translate({ id: 'data.quote.p1.context', message: 'Stanford Commencement Speech' }),
-    category: {
+    status: {
       text: translate({ id: 'data.quote.p1.category', message: 'Innovative Thinking' }),
       color: STATUS_COLORS.PURPLE,
     },
@@ -22,7 +22,7 @@ export const QUOTE_LIST: QuoteItem[] = [
     quote: translate({ id: 'data.quote.p2.quote', message: 'The only way to do great work is to love what you do.' }),
     author: translate({ id: 'data.quote.p2.author', message: 'Steve Jobs' }),
     context: translate({ id: 'data.quote.p2.context', message: 'On Work and Passion' }),
-    category: {
+    status: {
       text: translate({ id: 'data.quote.p2.category', message: 'Career Philosophy' }),
       color: STATUS_COLORS.GREEN,
     },
@@ -31,7 +31,7 @@ export const QUOTE_LIST: QuoteItem[] = [
     quote: translate({ id: 'data.quote.p3.quote', message: 'Talk is cheap. Show me the code.' }),
     author: translate({ id: 'data.quote.p3.author', message: 'Linus Torvalds' }),
     context: translate({ id: 'data.quote.p3.context', message: "Linus Torvalds' Programming Philosophy" }),
-    category: {
+    status: {
       text: translate({ id: 'data.quote.p3.category', message: 'Technical Attitude' }),
       color: STATUS_COLORS.BLUE,
     },

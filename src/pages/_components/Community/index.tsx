@@ -4,14 +4,14 @@ import { COMMUNITY_LIST } from '../../../data/community';
 import { BaseCard, Section, SectionHeader, GridLayout, GridConfigs, IconWrapper, TEXT_COLORS } from '../common';
 import { translate } from '@docusaurus/Translate';
 
-function CommunityCard({ href, label, icon }: { href: string; label: string; icon: string }) {
+function CommunityCard({ href, title, icon }: { href: string; title: string; icon: string }) {
   return (
     <BaseCard href={href} isExternalLink className="p-6 items-center justify-center">
       <div className="flex flex-col items-center space-y-3">
         <IconWrapper>
           <Icon icon={icon} width="40" height="40" className="text-black dark:text-white group-hover:text-[var(--ifm-color-primary)] transition-colors duration-200" />
         </IconWrapper>
-        <h3 className={`font-medium text-sm ${TEXT_COLORS.PRIMARY} text-center leading-snug`}>{label}</h3>
+        <h3 className={`font-medium text-sm ${TEXT_COLORS.PRIMARY} text-center leading-snug`}>{title}</h3>
       </div>
     </BaseCard>
   );

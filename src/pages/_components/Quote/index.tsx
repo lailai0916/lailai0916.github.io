@@ -3,13 +3,13 @@ import { BaseCard, Section, SectionHeader, StatusBadge, GridLayout, GridConfigs,
 import { QUOTE_LIST } from '@site/src/data/quotes';
 import { translate } from '@docusaurus/Translate';
 
-function QuoteCard({ quote, author, context, category }: { quote: string; author: string; context: string; category: { text: string; color: string } }) {
+function QuoteCard({ quote, author, context, status }: { quote: string; author: string; context: string; status: { text: string; color: string } }) {
   return (
     <BaseCard isClickable={false} className="p-6 justify-between">
       <div className="flex-1 flex flex-col justify-between space-y-4">
         <header className="space-y-4">
           <div className="flex justify-start">
-            <StatusBadge status={category} />
+            <StatusBadge status={status} />
           </div>
           <blockquote className="relative" style={{ borderLeft: 'none' }}>
             <svg className="absolute -top-2 -left-2 w-8 h-8 text-gray-200 dark:text-neutral-700" fill="currentColor" viewBox="0 0 32 32">

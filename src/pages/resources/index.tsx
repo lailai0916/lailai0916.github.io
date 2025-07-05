@@ -18,7 +18,7 @@ function filterResourceCategories(categories: readonly ResourceCategoryItem[], a
   const query = searchQuery.toLowerCase().trim();
 
   // 按分类过滤
-  const filteredByCategory = activeCategory === 'all' ? [...categories] : categories.filter((cat) => cat.name === activeCategory);
+  const filteredByCategory = activeCategory === 'all' ? [...categories] : categories.filter((cat) => cat.title === activeCategory);
 
   // 如果没有搜索查询，直接返回
   if (!query) return filteredByCategory;
@@ -27,7 +27,7 @@ function filterResourceCategories(categories: readonly ResourceCategoryItem[], a
   return filteredByCategory
     .map((category) => ({
       ...category,
-      resources: category.resources.filter((resource) => resource.name.toLowerCase().includes(query) || resource.description.toLowerCase().includes(query)),
+      resources: category.resources.filter((resource) => resource.title.toLowerCase().includes(query) || resource.description.toLowerCase().includes(query)),
     }))
     .filter((category) => category.resources.length > 0);
 }
@@ -99,8 +99,8 @@ function CategoryNav({ categories, activeCategory, onCategoryChange }: { categor
           全部
         </button>
         {categories.map((category) => (
-          <button key={category.name} className={clsx(styles.categoryButton, activeCategory === category.name && styles.categoryButtonActive)} onClick={() => onCategoryChange(category.name)}>
-            {category.name}
+          <button key={category.title} className={clsx(styles.categoryButton, activeCategory === category.title && styles.categoryButtonActive)} onClick={() => onCategoryChange(category.title)}>
+            {category.title}
           </button>
         ))}
       </div>
@@ -109,7 +109,7 @@ function CategoryNav({ categories, activeCategory, onCategoryChange }: { categor
 }
 
 // 资源卡片组件
-function ResourceCard({ resource }: { resource: { name: string; description: string; href: string } }) {
+function ResourceCard({ resource }: { resource: { title: string; description: string; href: string } }) {
   const iconUrl = getFavicon(resource.href);
 
   return (
@@ -119,7 +119,7 @@ function ResourceCard({ resource }: { resource: { name: string; description: str
           {iconUrl && (
             <img
               src={iconUrl}
-              alt={resource.name}
+              alt={resource.title}
               className={styles.resourceCardImage}
               onError={(e) => {
                 e.currentTarget.style.display = 'none';
@@ -133,7 +133,7 @@ function ResourceCard({ resource }: { resource: { name: string; description: str
           </div>
         </div>
         <div className={styles.resourceCardBody}>
-          <h3 className={styles.resourceCardTitle}>{resource.name}</h3>
+          <h3 className={styles.resourceCardTitle}>{resource.title}</h3>
           <p className={styles.resourceCardDescription}>{resource.description}</p>
         </div>
       </div>
@@ -148,13 +148,13 @@ function CategorySection({ category }: { category: ResourceCategoryItem }) {
       <div className={styles.categoryHeader}>
         <h2 className={styles.categoryTitle}>
           <Icon icon={category.icon} width={24} height={24} className={styles.categoryIcon} />
-          {category.name}
+          {category.title}
         </h2>
         <div className={styles.categoryCount}>{category.resources.length} 项</div>
       </div>
       <div className={styles.resourceGrid}>
         {category.resources.map((resource) => (
-          <ResourceCard key={resource.name} resource={resource} />
+          <ResourceCard key={resource.title} resource={resource} />
         ))}
       </div>
     </section>
@@ -180,7 +180,7 @@ export default function ResourcesPage() {
           </div>
           <div className={styles.content}>
             {filteredCategories.length > 0 ? (
-              filteredCategories.map((category) => <CategorySection key={category.name} category={category} />)
+              filteredCategories.map((category) => <CategorySection key={category.title} category={category} />)
             ) : (
               <div className={styles.noResults}>
                 <p>找不到匹配"{searchQuery}"的资源。</p>

@@ -6,7 +6,7 @@ import { BaseCard, Section, SectionHeader, StatusBadge, GridLayout, GridConfigs,
 
 // 图标尺寸配置 - 学习Blog的明确尺寸控制机制
 const ICON_SIZES = {
-  default: { width: 20, height: 20 },
+  default: { width: 16, height: 16 },
 } as const;
 
 // 文本行数控制样式 - 保证卡片高度一致性
@@ -55,37 +55,31 @@ const CARD_STYLE_CLASSES = {
 /**
  * 项目卡片组件 - 采用统一的布局机制
  */
-const ProjectCard = React.memo<{
-  title: string;
-  description: string;
-  link: string;
-  tech: string;
-  status: { text: string; color: string };
-}>(({ title, description, link, tech, status }) => (
-  <BaseCard href={link} className="p-6">
-    <div className="flex-1 space-y-6">
-      <header className="space-y-3">
-        <div className={CARD_STYLE_CLASSES.titleContainer}>
-          <h3 className={`${CARD_STYLE_CLASSES.title} ${TEXT_COLORS.PRIMARY}`} style={TEXT_CLAMP_STYLES.title}>
-            {title}
-          </h3>
-          <StatusBadge status={status} />
-        </div>
-        <p className={`${TEXT_COLORS.SECONDARY}`} style={TEXT_CLAMP_STYLES.description}>
-          {description}
-        </p>
-      </header>
-      <footer>
-        <div className={`${CARD_STYLE_CLASSES.footer} ${TEXT_COLORS.MUTED}`}>
-          <Icon icon="lucide:layers" width={ICON_SIZES.default.width} height={ICON_SIZES.default.height} />
-          <span style={TEXT_CLAMP_STYLES.tech}>{tech}</span>
-        </div>
-      </footer>
-    </div>
-  </BaseCard>
-));
-
-ProjectCard.displayName = 'ProjectCard';
+function ProjectCard({ title, description, href, tech, status }: { title: string; description: string; href: string; tech: string; status: { text: string; color: string } }) {
+  return (
+    <BaseCard href={href} className="p-6 group">
+      <div className="flex-1 space-y-6">
+        <header className="space-y-3">
+          <div className={`${CARD_STYLE_CLASSES.titleContainer}`}>
+            <h3 className={`${CARD_STYLE_CLASSES.title} ${TEXT_COLORS.PRIMARY}`} style={TEXT_CLAMP_STYLES.title}>
+              {title}
+            </h3>
+            <StatusBadge status={status} />
+          </div>
+          <p className={`${TEXT_COLORS.SECONDARY}`} style={TEXT_CLAMP_STYLES.description}>
+            {description}
+          </p>
+        </header>
+        <footer>
+          <div className={`${CARD_STYLE_CLASSES.footer} ${TEXT_COLORS.SECONDARY}`}>
+            <Icon icon="lucide:layers" width={ICON_SIZES.default.width} height={ICON_SIZES.default.height} />
+            <span style={TEXT_CLAMP_STYLES.tech}>{tech}</span>
+          </div>
+        </footer>
+      </div>
+    </BaseCard>
+  );
+}
 
 /**
  * 项目展示组件

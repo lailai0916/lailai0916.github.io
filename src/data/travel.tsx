@@ -6,7 +6,7 @@ export interface TravelItem {
 
 export interface TravelStatItem {
   number: string;
-  label: string;
+  title: string;
   icon: string;
 }
 
@@ -209,10 +209,11 @@ export const TRAVEL_LIST: TravelItem[] = [
 ];
 
 // 旅行统计数据
-export const TRAVEL_STATS: TravelStatItem[] = [
-  { number: '20+', label: '国家/地区', icon: 'material-symbols:public' },
-  { number: '50+', label: '城市', icon: 'material-symbols:location-city' },
-  { number: '14年', label: '足迹', icon: 'material-symbols:footprint' },
+export const TRAVEL_STAT_LIST: TravelStatItem[] = [
+  { number: '20+', title: '国家/地区', icon: 'material-symbols:public' },
+  { number: '50+', title: '城市', icon: 'material-symbols:location-city' },
+  { number: '500+', title: '景点', icon: 'material-symbols:photo-camera' },
+  { number: '13', title: '年总跨度', icon: 'material-symbols:schedule' },
 ];
 
 /*

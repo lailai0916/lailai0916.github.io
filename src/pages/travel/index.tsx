@@ -4,7 +4,7 @@ import BrowserOnly from '@docusaurus/BrowserOnly';
 import { Icon } from '@iconify/react';
 import Timeline from '@site/src/pages/travel/_components';
 import { BaseCard, Section, SectionHeader, GridLayout, GridConfigs } from '../_components/common';
-import { TRAVEL_STATS, TravelStatItem } from '@site/src/data/travel';
+import { TRAVEL_STAT_LIST, TravelStatItem } from '@site/src/data/travel';
 
 // 页面常量
 const PAGE_CONFIG = {
@@ -15,7 +15,7 @@ const PAGE_CONFIG = {
 /**
  * 统计卡片组件 - 采用与主页Project卡片一致的设计
  */
-const StatCard = React.memo<TravelStatItem>(({ number, label, icon }) => (
+const StatCard = React.memo<TravelStatItem>(({ number, title, icon }) => (
   <BaseCard isClickable={false} className="p-6 items-center justify-center">
     <div className="text-center space-y-3">
       <div className="text-3xl mb-2">
@@ -24,7 +24,7 @@ const StatCard = React.memo<TravelStatItem>(({ number, label, icon }) => (
       <div className="text-4xl lg:text-5xl font-bold transition-colors" style={{ color: 'var(--ifm-color-primary)' }}>
         {number}
       </div>
-      <h3 className="font-semibold text-lg text-gray-900 dark:text-neutral-100 uppercase tracking-wider">{label}</h3>
+      <h3 className="font-semibold text-lg text-gray-900 dark:text-neutral-100 uppercase tracking-wider">{title}</h3>
     </div>
   </BaseCard>
 ));
@@ -54,7 +54,7 @@ const TravelHero = React.memo(() => (
             旅行数据
           </p>
           <GridLayout columns={GridConfigs.stats} gap="gap-4" className="my-8">
-            {TRAVEL_STATS.map((stat, idx) => (
+            {TRAVEL_STAT_LIST.map((stat, idx) => (
               <div key={idx} className="h-full">
                 <StatCard {...stat} />
               </div>

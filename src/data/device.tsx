@@ -1,31 +1,31 @@
 export type DeviceItem = {
-  name: string;
+  title: string;
   icon: string;
 };
 
 export const DEVICE_LIST: DeviceItem[] = [
   {
-    name: 'MacBook Pro (M3 Max)',
+    title: 'MacBook Pro (M3 Max)',
     icon: '/img/device/macbook.svg',
   },
   {
-    name: 'iPad Pro (M1)',
+    title: 'iPad Pro (M1)',
     icon: '/img/device/ipad.svg',
   },
   {
-    name: 'iPhone 13',
+    title: 'iPhone 13',
     icon: '/img/device/iphone.svg',
   },
   {
-    name: 'Apple Watch Series 10',
+    title: 'Apple Watch Series 10',
     icon: '/img/device/applewatch.svg',
   },
   {
-    name: 'AirPods Pro 2',
+    title: 'AirPods Pro 2',
     icon: '/img/device/airpods.pro.svg',
   },
   {
-    name: 'AirPods Max',
+    title: 'AirPods Max',
     icon: '/img/device/airpods.max.svg',
   },
 ];

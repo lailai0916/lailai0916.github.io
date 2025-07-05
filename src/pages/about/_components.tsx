@@ -27,9 +27,9 @@ export const Title = () => (
 export const Device = () => (
   <div className={styles.listContainer}>
     {DEVICE_LIST.map((device) => (
-      <div key={device.name} className={styles.listItem}>
-        <img src={device.icon} alt={device.name} className={styles.deviceIcon} />
-        <span>{device.name}</span>
+      <div key={device.title} className={styles.listItem}>
+        <img src={device.icon} alt={device.title} className={styles.deviceIcon} />
+        <span>{device.title}</span>
       </div>
     ))}
   </div>

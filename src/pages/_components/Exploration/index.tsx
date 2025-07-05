@@ -23,7 +23,7 @@ const CARD_STYLE_CLASSES = {
   skillTag: 'inline-flex items-center px-2 py-1 rounded-md text-xs font-medium bg-gray-100 dark:bg-neutral-800 text-gray-700 dark:text-neutral-300',
 };
 
-function ExplorationCard({ name, icon, description, progress, skills }: { name: string; icon: string; description: string; progress: { text: string; color: string }; skills: string[] }) {
+function ExplorationCard({ title, icon, description, status, skills }: { title: string; icon: string; description: string; status: { text: string; color: string }; skills: string[] }) {
   return (
     <BaseCard isClickable={false} className="p-6 group">
       <div className="flex-1 space-y-4">
@@ -34,10 +34,10 @@ function ExplorationCard({ name, icon, description, progress, skills }: { name: 
                 <Icon icon={icon} width={32} height={32} className="text-gray-700 dark:text-neutral-300" />
               </IconWrapper>
               <div>
-                <h3 className={`${CARD_STYLE_CLASSES.title} ${TEXT_COLORS.PRIMARY} leading-snug`}>{name}</h3>
+                <h3 className={`${CARD_STYLE_CLASSES.title} ${TEXT_COLORS.PRIMARY} leading-snug`}>{title}</h3>
               </div>
             </div>
-            <StatusBadge status={progress} />
+            <StatusBadge status={status} />
           </div>
           <p className={`${TEXT_COLORS.SECONDARY} leading-relaxed`} style={TEXT_CLAMP_STYLES.description}>
             {description}

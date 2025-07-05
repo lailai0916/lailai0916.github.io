@@ -32,7 +32,7 @@ const FriendCard = memo(({ friend }: { friend: FriendItem }) => (
     <div className="pl-4">
       <div className="mb-1 flex items-center">
         <h4 className="mb-0 flex-1">
-          <Link to={friend.website} className="bg-[0%_100%] bg-[length:0%_1px] bg-gradient-to-b from-ifm-color-primary to-ifm-color-primary bg-no-repeat no-underline transition-[background-size] duration-200 ease-out hover:bg-[length:100%_1px] focus:bg-[length:100%_1px]">
+          <Link to={friend.href} className="bg-[0%_100%] bg-[length:0%_1px] bg-gradient-to-b from-ifm-color-primary to-ifm-color-primary bg-no-repeat no-underline transition-[background-size] duration-200 ease-out hover:bg-[length:100%_1px] focus:bg-[length:100%_1px]">
             {friend.title}
           </Link>
         </h4>
