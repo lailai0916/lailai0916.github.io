@@ -11,13 +11,11 @@ export default function NeuralNetworkDemo() {
         <SectionHeader
           title={translate({
             id: 'home.neuralnetwork.title',
-            message: 'Neural Network Experience',
-            description: 'Neural network handwritten digit recognition title',
+            message: 'Neural Network',
           })}
           description={translate({
             id: 'home.neuralnetwork.description',
             message: 'Draw digits 0-9 below, and the neural network will recognize your handwriting in real-time',
-            description: 'Neural network demo description',
           })}
         />
 
