@@ -42,7 +42,7 @@ function MainContent({ categories }: { categories: ResourceCategory[] }) {
           <Heading as="h1" className={styles.mainTitle}>
             精选<span className={styles.highlight}>资源</span>
           </Heading>
-          <p className={styles.mainDescription}>精心筛选的优质工具与平台</p>
+          <p className={styles.mainDescription}>探索实用、有趣的工具与网站资源</p>
         </div>
         <div className={styles.statsGrid}>
           <div className={styles.statCard}>
