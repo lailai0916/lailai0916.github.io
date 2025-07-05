@@ -118,6 +118,7 @@ export default function NeuralNetworkInteractive({ instant = false }) {
       style={{
         willChange: animating ? 'transform' : 'auto',
         contain: 'layout style paint',
+        touchAction: 'none', // 防止触摸时页面滚动
       }}
     >
       {(neurons || animating || instant) && (
