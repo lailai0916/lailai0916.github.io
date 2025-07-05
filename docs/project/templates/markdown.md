@@ -2,21 +2,20 @@
 
 [Markdown](https://zh.wikipedia.org/wiki/Markdown) 是一种轻量级标记语言。
 
+2004 年，John Gruber 创造了 Markdown，一种专门针对网络写作的文本标记语言。使用 Markdown，你只需在写作过程中插入少量的标记符号，就能很轻松地进行排版（例如设置标题、加粗、列表、引用等）。
+
+Markdown 文档以纯文本格式存储，这意味着，它们可以用几乎任一文本编辑器打开。同时，又能通过 Markdown 编辑器导出为带排版的富文本文档、HTML 网页等等。纯粹、简洁、易用、灵活，都是人们喜欢 Markdown 的原因。
+
 ## 参考资料
 
 - [Markdown 书写风格指南](http://einverne.github.io/markdown-style-guide/zh.html)
+- [洛谷 Markdown 格式手册 - 洛谷帮助中心](https://help.luogu.com.cn/rules/academic/handbook/markdown)
 
 ## 资源推荐
 
 - [Typora](https://typora.io)
 
-## 简介
-
-2004 年，John Gruber 创造了 Markdown，一种专门针对网络写作的文本标记语言。使用 Markdown，你只需在写作过程中插入少量的标记符号，就能很轻松地进行排版（例如设置标题、加粗、列表、引用等）。
-
-Markdown 文档以纯文本格式存储，这意味着，它们可以用几乎任一文本编辑器打开。同时，又能通过 Markdown 编辑器导出为带排版的富文本文档、HTML 网页等等。纯粹、简洁、易用、灵活，都是人们喜欢 Markdown 的原因。
-
-## 通用规则
+## 通用
 
 ### 文件扩展名
 
@@ -324,10 +323,16 @@ int main()
 
 </BrowserWindow>
 
-## LaTeX 公式
+## 建议
+
+中文与西文字符或公式之间以一个半角空格隔开，但标点符号与西文字符或公式间不要加空格。
+
+## 扩展
+
+### LaTeX 公式
 
 - 详见 [LaTeX 模板](latex)
 
-## Mermaid 图表
+### Mermaid 图表
 
 - 详见 [Mermaid 模板](mermaid)

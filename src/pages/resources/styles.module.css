@@ -85,14 +85,14 @@
   font-size: 0.9rem;
   font-weight: 600;
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   white-space: nowrap;
 }
 
 .categoryButton:hover {
   border-color: var(--ifm-color-primary);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 .categoryButtonActive {
@@ -168,12 +168,12 @@
   display: flex;
   align-items: center;
   gap: 1rem;
-  transition: all 0.2s ease;
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 .statCard:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   border-color: var(--ifm-color-primary);
 }
 
@@ -275,15 +275,15 @@
   display: flex;
   align-items: flex-start;
   gap: 1rem;
-  transition: all 0.2s ease;
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   position: relative;
   overflow: hidden;
   box-sizing: border-box;
 }
 
 .resourceCard:hover .resourceCardContent {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   border-color: var(--ifm-color-primary);
 }
 
@@ -365,7 +365,7 @@
   border-radius: 8px;
   cursor: pointer;
   font-size: 1rem;
-  transition: background-color 0.2s;
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 .clearSearchButton:hover {
@@ -458,7 +458,8 @@ html[data-theme='dark'] .statCard {
 }
 
 html[data-theme='dark'] .statCard:hover {
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
   border-color: var(--ifm-color-primary);
 }
 
@@ -472,14 +473,16 @@ html[data-theme='dark'] .resourceCardContent {
 }
 
 html[data-theme='dark'] .resourceCard:hover .resourceCardContent {
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  border-color: var(--ifm-color-primary);
 }
 
-/* Animations */
-@keyframes fadeInUp {
+/* Animations - Unity · Simplicity · Modernity */
+@keyframes fadeIn {
   from {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(8px);
   }
   to {
     opacity: 1;
@@ -488,10 +491,9 @@ html[data-theme='dark'] .resourceCard:hover .resourceCardContent {
 }
 
 .categorySection {
-  animation: fadeInUp 0.6s ease-out;
+  animation: fadeIn 0.3s ease-out;
 }
 
 .resourceCard {
-  animation: fadeInUp 0.6s ease-out;
-  animation-fill-mode: both;
+  animation: fadeIn 0.3s ease-out;
 }
