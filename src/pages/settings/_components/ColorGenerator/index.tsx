@@ -30,7 +30,7 @@ function wcagContrast(foreground: string, background: string) {
   return contrast > 7 ? 'AAA ✓' : contrast > 4.5 ? 'AA ✓' : 'Fail ✗';
 }
 
-export default function ColorGenerator(): JSX.Element {
+export default function ColorGenerator() {
   const colors = [
     "#1d9bf0",
     "#ffd400",

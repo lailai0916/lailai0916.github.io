@@ -6,7 +6,7 @@ interface Props {
   url: string;
 }
 
-export default function ImageWindow({children, url = 'http://localhost:3000'}: Props): JSX.Element {
+export default function ImageWindow({children, url = 'http://localhost:3000'}: Props) {
   return (
     <div>
       <BrowserWindow

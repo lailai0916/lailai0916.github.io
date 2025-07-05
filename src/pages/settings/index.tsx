@@ -5,14 +5,7 @@ import clsx from 'clsx';
 import { Icon } from '@iconify/react';
 
 import styles from './styles.module.css';
-import {
-  ThemeSettings,
-  FontSettings,
-  NotificationSettings,
-  ExperimentalFeatures,
-  QuickActions,
-  ColorGenerator,
-} from './_components/SettingCards';
+import { ThemeSettings, FontSettings, NotificationSettings, ExperimentalFeatures, QuickActions, ColorGenerator } from './_components/SettingCards';
 
 const TITLE = '设置';
 const DESCRIPTION = '个性化您的体验，自定义网站功能和偏好设置';
@@ -35,15 +28,7 @@ function SettingsHero() {
 }
 
 // 设置区域 Section 组件
-function SettingsSection({
-  title,
-  icon,
-  children,
-}: {
-  title: string;
-  icon: string;
-  children: React.ReactNode;
-}) {
+function SettingsSection({ title, icon, children }: { title: string; icon: string; children: React.ReactNode }) {
   return (
     <section className={clsx('container', styles.settingsSection)}>
       <div className={styles.sectionHeader}>
@@ -57,7 +42,7 @@ function SettingsSection({
   );
 }
 
-export default function SettingsPage(): JSX.Element {
+export default function SettingsPage() {
   return (
     <Layout title={TITLE} description={DESCRIPTION}>
       <main className={styles.main}>
