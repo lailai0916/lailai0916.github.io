@@ -1,10 +1,10 @@
 import React from 'react';
-import NeuralNetworkInteractive from './index';
+import NeuralNetworkInteractive from '@site/src/components/NeuralNetwork';
 import { Section, SectionHeader } from '@site/src/pages/_components/common';
 import { translate } from '@docusaurus/Translate';
-import styles from './styles.module.css';
+import styles from '@site/src/components/NeuralNetwork/styles.module.css';
 
-export default function NeuralNetworkDemo() {
+export default function NeuralNetwork() {
   return (
     <Section>
       <div className="max-w-7xl mx-auto flex flex-col px-5">

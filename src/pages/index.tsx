@@ -1,7 +1,6 @@
 import React from 'react';
 import Layout from '@theme/Layout';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
-import NeuralNetwork from '@site/src/components/NeuralNetwork/NeuralNetworkDemo';
 import styles from './styles.module.css';
 
 import TopBanner from './_components/TopBanner';
@@ -11,6 +10,7 @@ import Docs from './_components/Docs';
 import Blog from './_components/Blog';
 import Countdown from './_components/Countdown';
 import Project from './_components/Project';
+import NeuralNetwork from './_components/NeuralNetwork';
 
 import Skill from './_components/Skill';
 import Exploration from './_components/Exploration';
