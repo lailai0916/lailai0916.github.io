@@ -1,0 +1,110 @@
+.container {
+  width: 100%;
+  max-width: 640px;
+  margin: 2rem auto;
+  background: #000;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow:
+    0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  min-height: 520px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-width: 640px;
+  touch-action: none;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+/* 神经元样式 */
+.neuron {
+  cursor: pointer;
+  transition: filter 0.2s ease;
+}
+
+.neuron:hover {
+  filter: brightness(1.2);
+}
+
+/* 连接线样式 */
+.connection {
+  stroke: #666;
+  stroke-width: 0.5;
+  fill: none;
+  opacity: 0.3;
+  transition: opacity 0.3s ease;
+}
+
+.connection.active {
+  opacity: 0.8;
+}
+
+/* 按钮样式 */
+.button {
+  fill: #1c758a;
+  cursor: pointer;
+  transition: fill 0.2s ease;
+}
+
+.button:hover {
+  fill: #2596be;
+}
+
+.buttonText {
+  fill: white;
+  font-family: sans-serif;
+  font-size: 24px;
+  pointer-events: none;
+  user-select: none;
+}
+
+/* 权重网格样式 */
+.weightGrid {
+  stroke: yellow;
+  stroke-width: 0.5;
+  fill: black;
+}
+
+/* 动画样式 */
+.animating {
+  transition: transform 0.5s ease-in-out;
+}
+
+/* 预处理提示 */
+.processingOverlay {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 200ms ease-in-out;
+}
+
+.processingOverlay.active {
+  opacity: 1;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+  .container {
+    margin: 1rem auto;
+  }
+
+  .buttonText {
+    font-size: 20px;
+  }
+}
+
+/* 深色模式适配 */
+[data-theme='dark'] .container {
+  box-shadow:
+    0 4px 6px -1px rgba(255, 255, 255, 0.1),
+    0 2px 4px -1px rgba(255, 255, 255, 0.06);
+}

@@ -561,16 +561,16 @@
     "message": "技术栈的积累是一个持续的过程，每一项技能都是解决问题的工具"
   },
   "home.community.title": {
-    "message": "我的社区"
+    "message": "社区"
   },
   "home.community.description": {
-    "message": "在数字世界中建立连接，分享知识与经验，共同成长与进步"
+    "message": "加入我们的社区，一起学习和成长"
   },
   "home.device.title": {
-    "message": "我的设备"
+    "message": "设备"
   },
   "home.device.description": {
-    "message": "工欲善其事，必先利其器。优秀的工具是高效工作的基础"
+    "message": "我的工作和学习设备"
   },
   "home.exploration.title": {
     "message": "当前探索"
@@ -654,7 +654,7 @@
     "message": "思想启迪"
   },
   "home.quote.description": {
-    "message": "智者的话语如明灯，照亮前行的道路。这些箴言见证着思想的力量"
+    "message": "名人名言"
   },
   "data.quote.p1.quote": {
     "message": "Stay hungry. Stay foolish."
@@ -691,5 +691,13 @@
   },
   "data.quote.p3.category": {
     "message": "技术态度"
+  },
+  "home.neuralnetwork.title": {
+    "message": "神经网络体验",
+    "description": "The title of the neural network experience"
+  },
+  "home.neuralnetwork.description": {
+    "message": "在下方绘制数字 0-9，神经网络会实时识别您的手写数字",
+    "description": "The description of the neural network experience"
   }
 }

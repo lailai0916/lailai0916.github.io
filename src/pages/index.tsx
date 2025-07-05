@@ -16,6 +16,7 @@ import Exploration from './_components/Exploration';
 import Quote from './_components/Quote';
 import Community from './_components/Community';
 import Device from './_components/Device';
+import NeuralNetworkDemo from '@site/src/components/NeuralNetwork/NeuralNetworkDemo';
 
 export default function Home() {
   const { siteConfig } = useDocusaurusContext();
@@ -31,6 +32,7 @@ export default function Home() {
           <Blog />
           <Countdown />
           <Project />
+          <NeuralNetworkDemo />
           <Skill />
           <Exploration />
           <Quote />
