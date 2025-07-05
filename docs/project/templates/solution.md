@@ -5,13 +5,13 @@
 - [洛谷主题库题解规范（2023 试行版） - 洛谷帮助中心](https://help.luogu.com.cn/rules/academic/solution-standard)
 - [如何用 Markdown 和 LaTeX 写一篇排版整齐的题解？ - 洛谷帮助中心](https://help.luogu.com.cn/rules/academic/guide/solution)
 
-## 例题模板
+## 例题
 
-:::info[[洛谷 P1001 A+B Problem](https://www.luogu.com.cn/problem/P1001)]
+### 洛谷 P1001 A+B Problem
 
-输入两个整数 $a,b$，输出它们的和。（$|a|,|b| \le {10}^9$）
+<Problem id="P1001" />
 
-:::
+## 题解示例
 
 ````markdown
 ## 原题链接
