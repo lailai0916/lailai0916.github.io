@@ -4,6 +4,12 @@ export interface TravelItem {
   cardDetailedText: string;
 }
 
+export interface TravelStat {
+  number: string;
+  label: string;
+  icon: string;
+}
+
 export const items: TravelItem[] = [
   {
     title: '2011-09',
@@ -200,6 +206,13 @@ export const items: TravelItem[] = [
     cardTitle: '马来西亚🇲🇾',
     cardDetailedText: '吉隆坡、怡保、乔治 - 感受马来西亚的多元文化融合',
   },
+];
+
+// 旅行统计数据
+export const TRAVEL_STATS: TravelStat[] = [
+  { number: '20+', label: '国家/地区', icon: 'material-symbols:public' },
+  { number: '50+', label: '城市', icon: 'material-symbols:location-city' },
+  { number: '14年', label: '足迹', icon: 'material-symbols:footprint' },
 ];
 
 /*

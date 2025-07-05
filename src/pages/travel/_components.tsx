@@ -19,8 +19,11 @@ const TIMELINE_CONFIG = {
   disableClickOnCircle: false,
   disableNavOnKey: false,
   enableBreakPoint: true,
-  highlightCardsOnHover: true,
-  borderLessCards: false,
+  highlightCardsOnHover: false,
+  borderLessCards: true,
+  disableToolbar: true,
+  showAllCardsHorizontal: false,
+  parseDetailsAsHTML: false,
 
   // 媒体设置
   mediaSettings: {
