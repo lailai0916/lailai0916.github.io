@@ -1,7 +1,7 @@
 import { STATUS_COLORS } from '@site/src/pages/_components/common/constants';
 import { translate } from '@docusaurus/Translate';
 
-export const favoriteQuotes = [
+export const QUOTE_LIST = [
   {
     quote: translate({ id: 'data.quote.p1.quote', message: 'Stay hungry. Stay foolish.' }),
     author: translate({ id: 'data.quote.p1.author', message: 'Steve Jobs' }),

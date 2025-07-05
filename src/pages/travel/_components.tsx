@@ -1,6 +1,6 @@
 import React, { useMemo } from 'react';
 import { Chrono } from 'react-chrono';
-import { items as rawItems } from '@site/src/data/travel';
+import { TRAVEL_LIST as rawItems } from '@site/src/data/travel';
 import './styles.module.css';
 
 // Timeline配置常量

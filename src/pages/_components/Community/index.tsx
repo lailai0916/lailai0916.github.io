@@ -1,6 +1,6 @@
 import React from 'react';
 import { Icon } from '@iconify/react';
-import { COMMUNITY_LINKS } from '../../../data/community';
+import { COMMUNITY_LIST } from '../../../data/community';
 import { BaseCard, Section, SectionHeader, GridLayout, GridConfigs, IconWrapper, TEXT_COLORS } from '../common';
 import { translate } from '@docusaurus/Translate';
 
@@ -33,7 +33,7 @@ export default function Community() {
         />
 
         <GridLayout columns={GridConfigs.community} gap="gap-5" className="max-w-6xl mx-auto">
-          {COMMUNITY_LINKS.map((link, idx) => (
+          {COMMUNITY_LIST.map((link, idx) => (
             <div key={idx} className="h-full">
               <CommunityCard {...link} />
             </div>

@@ -1,4 +1,4 @@
-export const techStack = [
+export const SKILL_LIST = [
   { name: 'C', icon: 'c' },
   { name: 'C++', icon: 'cpp' },
   { name: 'Python', icon: 'py' },
@@ -11,4 +11,4 @@ export const techStack = [
   { name: 'TypeScript', icon: 'ts' },
   { name: 'React', icon: 'react' },
   { name: 'Tailwind CSS', icon: 'tailwind' },
-]; 
+];

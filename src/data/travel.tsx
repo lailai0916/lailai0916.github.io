@@ -10,7 +10,7 @@ export interface TravelStat {
   icon: string;
 }
 
-export const items: TravelItem[] = [
+export const TRAVEL_LIST: TravelItem[] = [
   {
     title: '2011-09',
     cardTitle: '海南',

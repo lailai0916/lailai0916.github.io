@@ -3,7 +3,7 @@ import Layout from '@theme/Layout';
 import Heading from '@theme/Heading';
 
 import { memo, useRef } from 'react';
-import { Friend, Friends } from '@site/src/data/friends';
+import { Friend, FRIEND_LIST } from '@site/src/data/friends';
 
 const TITLE = '友链';
 const DESCRIPTION = '财富易得，知己难求';
@@ -18,7 +18,7 @@ function PageHeader() {
         🙏 请添加你的网站
       </Link> */}
     </section>
-  )
+  );
 }
 
 const FriendCard = memo(({ friend }: { friend: Friend }) => (
@@ -32,10 +32,7 @@ const FriendCard = memo(({ friend }: { friend: Friend }) => (
     <div className="pl-4">
       <div className="mb-1 flex items-center">
         <h4 className="mb-0 flex-1">
-          <Link
-            to={friend.website}
-            className="bg-[0%_100%] bg-[length:0%_1px] bg-gradient-to-b from-ifm-color-primary to-ifm-color-primary bg-no-repeat no-underline transition-[background-size] duration-200 ease-out hover:bg-[length:100%_1px] focus:bg-[length:100%_1px]"
-          >
+          <Link to={friend.website} className="bg-[0%_100%] bg-[length:0%_1px] bg-gradient-to-b from-ifm-color-primary to-ifm-color-primary bg-no-repeat no-underline transition-[background-size] duration-200 ease-out hover:bg-[length:100%_1px] focus:bg-[length:100%_1px]">
             {friend.title}
           </Link>
         </h4>
@@ -43,20 +40,20 @@ const FriendCard = memo(({ friend }: { friend: Friend }) => (
       <p className="m-0 line-clamp-2 w-full overflow-hidden text-sm leading-[1.66]">{friend.description}</p>
     </div>
   </li>
-))
+));
 
 function FriendCards() {
   return (
     <section className="mt-8 mb-8">
       <div className="mx-auto max-w-6xl px-4 py-2">
         <ul className="grid grid-cols-1 gap-6 p-0 sm:grid-cols-2 lg:grid-cols-3 ">
-          {Friends.map(friend => (
+          {FRIEND_LIST.map((friend) => (
             <FriendCard key={friend.avatar} friend={friend} />
           ))}
         </ul>
       </div>
     </section>
-  )
+  );
 }
 
 export default function friendPage() {

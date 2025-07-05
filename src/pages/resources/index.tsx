@@ -5,7 +5,7 @@ import Heading from '@theme/Heading';
 import { Icon } from '@iconify/react';
 import clsx from 'clsx';
 
-import { resourceData, type ResourceCategory } from '@site/src/data/resources';
+import { RESOURCE_LIST, type ResourceCategory } from '@site/src/data/resources';
 import styles from './styles.module.css';
 
 const TITLE = '资源';
@@ -169,17 +169,17 @@ export default function ResourcesPage() {
   const [searchQuery, setSearchQuery] = useState('');
 
   const filteredCategories = useMemo(() => {
-    return filterResourceCategories(resourceData, activeCategory, searchQuery);
+    return filterResourceCategories(RESOURCE_LIST, activeCategory, searchQuery);
   }, [activeCategory, searchQuery]);
 
   return (
     <Layout title={TITLE} description={DESCRIPTION}>
       <main className={styles.main}>
-        <MainContent categories={resourceData} />
+        <MainContent categories={RESOURCE_LIST} />
         <div className={styles.container}>
           <div className={styles.stickyControls}>
             <CategoryNav 
-              categories={resourceData} 
+              categories={RESOURCE_LIST} 
               activeCategory={activeCategory} 
               onCategoryChange={setActiveCategory} 
             />

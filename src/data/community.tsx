@@ -5,7 +5,7 @@ export type CommunityLink = {
   href: string;
 };
 
-export const COMMUNITY_LINKS: CommunityLink[] = [
+export const COMMUNITY_LIST: CommunityLink[] = [
   {
     label: 'Phone',
     text: '+86 17757102577',

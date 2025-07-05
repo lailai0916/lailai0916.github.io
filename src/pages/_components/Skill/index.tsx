@@ -1,5 +1,5 @@
 import React from 'react';
-import { techStack } from '../../../data/skills';
+import { SKILL_LIST } from '../../../data/skills';
 import { BaseCard, Section, SectionHeader, GridLayout, GridConfigs, IconWrapper, TEXT_COLORS } from '../common';
 import { translate } from '@docusaurus/Translate';
 
@@ -35,7 +35,7 @@ export default function Skill() {
         />
 
         <GridLayout columns={GridConfigs.skills} gap="gap-4">
-          {techStack.map((tech, idx) => (
+          {SKILL_LIST.map((tech, idx) => (
             <div key={idx} className="h-full">
               <SkillCard {...tech} />
             </div>

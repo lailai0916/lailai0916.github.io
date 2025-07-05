@@ -5,7 +5,7 @@ export type Friend = {
   avatar: string
 }
 
-export const Friends: Friend[] = [
+export const FRIEND_LIST: Friend[] = [
   {
     title: 'lailai',
     description: 'Blogger',

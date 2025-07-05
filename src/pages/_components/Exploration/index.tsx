@@ -2,7 +2,7 @@ import React from 'react';
 import { Icon } from '@iconify/react';
 import { BaseCard, Section, SectionHeader, StatusBadge, IconWrapper, GridLayout, GridConfigs, TEXT_COLORS } from '../common';
 import { translate } from '@docusaurus/Translate';
-import { exploringItems } from '@site/src/data/explorations';
+import { EXPLORATION_LIST } from '@site/src/data/explorations';
 
 // 文本截断样式
 const TEXT_CLAMP_STYLES = {
@@ -72,7 +72,7 @@ export default function Exploration() {
           })}
         />
         <GridLayout columns={GridConfigs.exploration}>
-          {exploringItems.map((item, idx) => (
+          {EXPLORATION_LIST.map((item, idx) => (
             <div key={idx} className="h-full">
               <ExplorationCard {...item} />
             </div>

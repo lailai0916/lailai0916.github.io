@@ -13,7 +13,7 @@ export type FeatureItem = {
   text: React.ReactNode;
 };
 
-export const FEATURES: FeatureItem[] = [
+export const FEATURE_LIST: FeatureItem[] = [
   {
     title: translate({ id: 'data.features.p1.title', message: 'Contest' }),
     url: 'docs/contest',
@@ -49,4 +49,4 @@ export const FEATURES: FeatureItem[] = [
   },
 ];
 
-export default FEATURES;
+export default FEATURE_LIST;

@@ -1,6 +1,6 @@
 import React from 'react';
 import { BaseCard, Section, SectionHeader, StatusBadge, GridLayout, GridConfigs, TEXT_COLORS } from '../common';
-import { favoriteQuotes } from '@site/src/data/quotes';
+import { QUOTE_LIST } from '@site/src/data/quotes';
 import { translate } from '@docusaurus/Translate';
 
 function QuoteCard({ quote, author, context, category }: { quote: string; author: string; context: string; category: { text: string; color: string } }) {
@@ -45,7 +45,7 @@ export default function Quote() {
         />
 
         <GridLayout columns={GridConfigs.quotes}>
-          {favoriteQuotes.map((item) => (
+          {QUOTE_LIST.map((item) => (
             <div key={`${item.author}-${item.quote.slice(0, 10)}`} className="h-full">
               <QuoteCard {...item} />
             </div>

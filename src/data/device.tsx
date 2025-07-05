@@ -3,7 +3,7 @@ export type Device = {
   icon: string;
 };
 
-export const DEVICES: Device[] = [
+export const DEVICE_LIST: Device[] = [
   {
     name: 'MacBook Pro (M3 Max)',
     icon: '/img/device/macbook.svg',
@@ -27,5 +27,5 @@ export const DEVICES: Device[] = [
   {
     name: 'AirPods Max',
     icon: '/img/device/airpods.max.svg',
-  }
+  },
 ];
