@@ -1,6 +1,7 @@
 import React from 'react';
 import Layout from '@theme/Layout';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
+import NeuralNetwork from '@site/src/components/NeuralNetwork/NeuralNetworkDemo';
 import styles from './styles.module.css';
 
 import TopBanner from './_components/TopBanner';
@@ -16,7 +17,6 @@ import Exploration from './_components/Exploration';
 import Quote from './_components/Quote';
 import Community from './_components/Community';
 import Device from './_components/Device';
-import NeuralNetworkDemo from '@site/src/components/NeuralNetwork/NeuralNetworkDemo';
 
 export default function Home() {
   const { siteConfig } = useDocusaurusContext();
@@ -32,9 +32,9 @@ export default function Home() {
           <Blog />
           <Countdown />
           <Project />
-          <NeuralNetworkDemo />
           <Skill />
           <Exploration />
+          <NeuralNetwork />
           <Quote />
           <Community />
           <Device />
