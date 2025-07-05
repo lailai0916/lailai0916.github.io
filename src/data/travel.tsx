@@ -212,8 +212,7 @@ export const TRAVEL_LIST: TravelItem[] = [
 export const TRAVEL_STAT_LIST: TravelStatItem[] = [
   { number: '20+', title: '国家/地区', icon: 'material-symbols:public' },
   { number: '50+', title: '城市', icon: 'material-symbols:location-city' },
-  { number: '500+', title: '景点', icon: 'material-symbols:photo-camera' },
-  { number: '13', title: '年总跨度', icon: 'material-symbols:schedule' },
+  { number: '13年', title: '历程', icon: 'material-symbols:schedule' },
 ];
 
 /*
