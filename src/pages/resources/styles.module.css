@@ -5,6 +5,79 @@
   padding: 2rem 0;
 }
 
+.stickyControls {
+  position: sticky;
+  top: 60px; /* 和导航栏高度一致 */
+  background: var(--ifm-background-color);
+  padding: 1rem 0;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  border-bottom: 1px solid var(--ifm-color-emphasis-200);
+  margin-bottom: 1.5rem;
+}
+
+.searchBarContainer {
+  position: relative;
+  width: 100%;
+}
+
+.searchBar {
+  width: 100%;
+  padding: 0.75rem 1rem 0.75rem 2.5rem;
+  border-radius: 8px;
+  border: 1px solid var(--ifm-color-emphasis-300);
+  background-color: var(--ifm-color-emphasis-100);
+  color: var(--ifm-font-color-base);
+  font-size: 1rem;
+  transition:
+    border-color 0.2s,
+    box-shadow 0.2s;
+}
+
+.searchBar:focus {
+  outline: none;
+  border-color: var(--ifm-color-primary);
+  box-shadow: 0 0 0 3px var(--ifm-color-primary-lightest);
+}
+
+.searchIcon {
+  position: absolute;
+  left: 0.8rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--ifm-color-emphasis-500);
+}
+
+.noResults {
+  text-align: center;
+  padding: 4rem 1rem;
+  border: 1px dashed var(--ifm-color-emphasis-300);
+  border-radius: var(--ifm-card-border-radius);
+  background-color: var(--ifm-color-emphasis-100);
+}
+
+.noResults p {
+  margin-bottom: 1.5rem;
+  font-size: 1.1rem;
+}
+
+.clearSearchButton {
+  background-color: var(--ifm-color-primary);
+  color: white;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.2s;
+}
+
+.clearSearchButton:hover {
+  background-color: var(--ifm-color-primary-dark);
+}
+
 .highlight {
   color: var(--ifm-color-primary);
   position: relative;
@@ -41,7 +114,7 @@
 }
 
 .mainDescription {
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   color: var(--ifm-color-emphasis-700);
   margin: 0;
   line-height: 1.6;
@@ -278,10 +351,9 @@
   color: var(--ifm-color-emphasis-700);
   margin: 0;
   line-height: 1.5;
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
+  white-space: nowrap;
   overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 /* 响应式设计 */
@@ -408,77 +480,4 @@ html[data-theme='dark'] .resourceCard:hover .resourceCardContent {
   animation: fadeInUp 0.6s ease-out;
   animation-fill-mode: both;
   /* 动画延迟将通过JavaScript动态设置 */
-}
-
-.stickyControls {
-  position: sticky;
-  top: 60px; /* 和导航栏高度一致 */
-  background: var(--ifm-background-color);
-  padding: 1rem 0;
-  z-index: 10;
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  border-bottom: 1px solid var(--ifm-color-emphasis-200);
-  margin-bottom: 1.5rem;
-}
-
-.searchBarContainer {
-  position: relative;
-  width: 100%;
-}
-
-.searchBar {
-  width: 100%;
-  padding: 0.75rem 1rem 0.75rem 2.5rem;
-  border-radius: 8px;
-  border: 1px solid var(--ifm-color-emphasis-300);
-  background-color: var(--ifm-color-emphasis-100);
-  color: var(--ifm-font-color-base);
-  font-size: 1rem;
-  transition:
-    border-color 0.2s,
-    box-shadow 0.2s;
-}
-
-.searchBar:focus {
-  outline: none;
-  border-color: var(--ifm-color-primary);
-  box-shadow: 0 0 0 3px var(--ifm-color-primary-lightest);
-}
-
-.searchIcon {
-  position: absolute;
-  left: 0.8rem;
-  top: 50%;
-  transform: translateY(-50%);
-  color: var(--ifm-color-emphasis-500);
-}
-
-.noResults {
-  text-align: center;
-  padding: 4rem 1rem;
-  border: 1px dashed var(--ifm-color-emphasis-300);
-  border-radius: var(--ifm-card-border-radius);
-  background-color: var(--ifm-color-emphasis-100);
-}
-
-.noResults p {
-  margin-bottom: 1.5rem;
-  font-size: 1.1rem;
-}
-
-.clearSearchButton {
-  background-color: var(--ifm-color-primary);
-  color: white;
-  border: none;
-  padding: 0.6rem 1.2rem;
-  border-radius: 8px;
-  cursor: pointer;
-  font-size: 1rem;
-  transition: background-color 0.2s;
-}
-
-.clearSearchButton:hover {
-  background-color: var(--ifm-color-primary-dark);
 }

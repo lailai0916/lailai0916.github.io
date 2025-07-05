@@ -42,7 +42,7 @@ function MainContent({ categories }: { categories: ResourceCategory[] }) {
           <Heading as="h1" className={styles.mainTitle}>
             精选<span className={styles.highlight}>资源</span>
           </Heading>
-          <p className={styles.mainDescription}>探索实用、有趣的工具与网站资源</p>
+          <p className={styles.mainDescription}>精心筛选的优质工具与平台</p>
         </div>
         <div className={styles.statsGrid}>
           <div className={styles.statCard}>
@@ -192,22 +192,21 @@ export default function ResourcesPage() {
   const filteredCategories = useMemo(() => {
     const query = searchQuery.toLowerCase();
 
-    // 如果没有搜索查询，并且分类是 "all"，则返回全部数据
-    if (!query && activeCategory === 'all') {
-      return resourceData;
-    }
+    let categories = resourceData;
 
     // 先按分类过滤
-    const categoryFiltered = activeCategory === 'all' ? resourceData : resourceData.filter((cat) => cat.name === activeCategory);
+    if (activeCategory !== 'all') {
+      categories = categories.filter((cat) => cat.name === activeCategory);
+    }
 
     // 如果没有搜索查询，直接返回分类过滤结果
     if (!query) {
-      return categoryFiltered;
+      return categories;
     }
 
     // 在分类过滤的基础上，再按搜索查询过滤
     return (
-      categoryFiltered
+      categories
         .map((category) => {
           const filteredResources = category.resources.filter((resource) => resource.name.toLowerCase().includes(query) || resource.description.toLowerCase().includes(query));
           // 返回新的分类对象，只包含过滤后的资源

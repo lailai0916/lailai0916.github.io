@@ -111,7 +111,6 @@ const config: Config = {
             { label: 'Travel', to: 'travel' },
             { label: 'Friends', to: 'friends' },
             { label: 'Resources', to: 'resources' },
-            { label: 'Sites', to: 'sites' },
           ],
         },
         { type: 'localeDropdown', position: 'right' },
