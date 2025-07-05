@@ -57,8 +57,8 @@ export default function NeuralNetworkInteractive({ instant = false }) {
 
   const [animating, setAnimating] = useState(false);
 
-  // Only calculate neurons when needed
-  const [neurons, setNeurons] = useState(() => (instant ? getNeuronValues(points) : null));
+  // Always initialize neurons to ensure animation works on first click
+  const [neurons, setNeurons] = useState(() => getNeuronValues(points));
 
   useEffect(() => {
     if (instant || animating) {
@@ -127,18 +127,17 @@ export default function NeuralNetworkInteractive({ instant = false }) {
 
           <VerticalEllipsis cx={230} cy={240} />
 
-          <Neurons neurons={neurons || getAllNeuronValues(getInputNeuronValues(points))} selectedNeuron={selectedNeuron} setSelectedNeuron={setSelectedNeuron} animating={animating} instant={instant} />
+          <Neurons neurons={neurons} selectedNeuron={selectedNeuron} setSelectedNeuron={setSelectedNeuron} animating={animating} instant={instant} />
 
           <OutputDigitLabels />
 
-          <WinningOutputNeuronBox neurons={neurons || getAllNeuronValues(getInputNeuronValues(points))} animating={animating} instant={instant} />
+          <WinningOutputNeuronBox neurons={neurons} animating={animating} instant={instant} />
         </>
       )}
 
       {/* Weight grid for neurons in 2nd layer */}
       {selectedNeuron &&
         selectedNeuron.layerIndex === 1 &&
-        neurons &&
         (() => {
           const position = getNeuronPosition(selectedNeuron.layerIndex, selectedNeuron.neuronId);
 
@@ -425,7 +424,7 @@ function ImageGrid({ x, y, width, height, points, setPoints, normalizing, isNorm
   }, [onMouseUp]);
 
   const values = useMemo(() => getInputNeuronValues(points), [points]);
-  
+
   // Prevent re-renders during drawing
   const stableValues = useRef(values);
   useEffect(() => {
@@ -637,7 +636,7 @@ function WeightGrid({ x, y, width, height, weights, inputNeurons }) {
         const alpha = Math.abs(weight / maxWeight) ** 0.3;
         const color = weight < 0 ? `rgba(252, 98, 85, ${alpha})` : `rgba(88, 196, 221, ${alpha})`;
 
-        return <rect x={weightX} y={weightY} width="1" height="1" fill={color} />;
+        return <rect key={n} x={weightX} y={weightY} width="1" height="1" fill={color} />;
       })}
       <rect x="31" y="-1" width="30" height="30" fill="black" stroke="yellow" strokeWidth="0.5" />
       {weights.map((weight, n) => {
@@ -647,7 +646,7 @@ function WeightGrid({ x, y, width, height, weights, inputNeurons }) {
         const alpha = Math.abs(weight / maxWeight) ** 0.3 * inputNeurons[n];
         const color = weight < 0 ? `rgba(252, 98, 85, ${alpha})` : `rgba(88, 196, 221, ${alpha})`;
 
-        return <rect x={32 + weightX} y={weightY} width="1" height="1" fill={color} />;
+        return <rect key={`weighted-${n}`} x={32 + weightX} y={weightY} width="1" height="1" fill={color} />;
       })}
     </g>
   );
