@@ -10,6 +10,37 @@ import styles from './styles.module.css';
 const TITLE = '资源';
 const DESCRIPTION = '精选优质资源，为你的学习和开发提供助力';
 
+/**
+ * 根据分类和搜索查询过滤资源数据
+ * @param categories - 原始资源分类数组
+ * @param activeCategory - 当前激活的分类名称 ('all' 表示全部)
+ * @param searchQuery - 用户输入的搜索关键词
+ * @returns 过滤后的资源分类数组
+ */
+function filterResourceCategories(categories: readonly ResourceCategory[], activeCategory: string, searchQuery: string): ResourceCategory[] {
+  const query = searchQuery.toLowerCase().trim();
+
+  // 1. 按分类过滤
+  const filteredByCategory = activeCategory === 'all' ? [...categories] : categories.filter((cat) => cat.name === activeCategory);
+
+  // 2. 如果没有搜索，直接返回
+  if (!query) {
+    return filteredByCategory;
+  }
+
+  // 3. 按搜索关键词过滤
+  return (
+    filteredByCategory
+      .map((category) => {
+        const filteredResources = category.resources.filter((resource) => resource.name.toLowerCase().includes(query) || resource.description.toLowerCase().includes(query));
+        // 返回带有过滤后资源的新分类对象
+        return { ...category, resources: filteredResources };
+      })
+      // 4. 移除没有资源的空分类
+      .filter((category) => category.resources.length > 0)
+  );
+}
+
 // 新增：搜索栏组件
 function SearchBar({ value, onChange }: { value: string; onChange: (value: string) => void }) {
   return (
@@ -137,10 +168,11 @@ function CategorySection({ category, isVisible }: { category: ResourceCategory; 
 
     const cards = gridRef.current.querySelectorAll(`.${styles.resourceCard}`);
     const getColumnsCount = () => {
-      if (window.innerWidth <= 480) return 1;
-      if (window.innerWidth <= 768) return 1;
-      if (window.innerWidth <= 1024) return 2;
-      return 3; // 默认3列，基于CSS grid-template-columns: repeat(auto-fill, minmax(320px, 1fr))
+      // These breakpoints are approximations of the CSS Grid behavior
+      // to calculate row/column indices for the stagger animation effect.
+      if (window.innerWidth <= 768) return 1; // Corresponds to @media (max-width: 768px)
+      if (window.innerWidth <= 1024) return 2; // Fits 2 columns on medium screens
+      return 3; // Fits 3+ columns on large screens
     };
 
     const applyAnimationDelays = () => {
@@ -190,31 +222,7 @@ export default function ResourcesPage() {
   const [searchQuery, setSearchQuery] = useState('');
 
   const filteredCategories = useMemo(() => {
-    const query = searchQuery.toLowerCase();
-
-    let categories = resourceData;
-
-    // 先按分类过滤
-    if (activeCategory !== 'all') {
-      categories = categories.filter((cat) => cat.name === activeCategory);
-    }
-
-    // 如果没有搜索查询，直接返回分类过滤结果
-    if (!query) {
-      return categories;
-    }
-
-    // 在分类过滤的基础上，再按搜索查询过滤
-    return (
-      categories
-        .map((category) => {
-          const filteredResources = category.resources.filter((resource) => resource.name.toLowerCase().includes(query) || resource.description.toLowerCase().includes(query));
-          // 返回新的分类对象，只包含过滤后的资源
-          return { ...category, resources: filteredResources };
-        })
-        // 最后，过滤掉那些在搜索后资源列表变为空的分类
-        .filter((category) => category.resources.length > 0)
-    );
+    return filterResourceCategories(resourceData, activeCategory, searchQuery);
   }, [activeCategory, searchQuery]);
 
   return (
