@@ -48,5 +48,3 @@ export const FEATURE_LIST: FeatureItem[] = [
     text: <Translate id="data.features.p3.text">The Project section showcases various project outcomes from personal programming and technical practice, providing practical templates, tools, and relevant resources. It emphasizes real-world applications and exploration, combining technical learning, development practice, and experience accumulation.</Translate>,
   },
 ];
-
-export default FEATURE_LIST;

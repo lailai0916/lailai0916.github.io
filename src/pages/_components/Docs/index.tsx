@@ -4,7 +4,7 @@ import Link from '@docusaurus/Link';
 import Heading from '@theme/Heading';
 import { Icon } from '@iconify/react';
 import { useBaseUrlUtils } from '@docusaurus/useBaseUrl';
-import FEATURE_LIST, { type FeatureItem } from '@site/src/data/features';
+import { FEATURE_LIST, type FeatureItem } from '@site/src/data/features';
 import styles from './styles.module.css';
 
 interface FeatureProps {
