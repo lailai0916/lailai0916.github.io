@@ -10,6 +10,16 @@ import styles from './styles.module.css';
 const TITLE = '资源';
 const DESCRIPTION = '精选优质资源，为你的学习和开发提供助力';
 
+// 新增：搜索栏组件
+function SearchBar({ value, onChange }: { value: string; onChange: (value: string) => void }) {
+  return (
+    <div className={styles.searchBarContainer}>
+      <input type="text" placeholder="搜索资源名称或描述..." value={value} onChange={(e) => onChange(e.target.value)} className={styles.searchBar} />
+      <Icon icon="lucide:search" className={styles.searchIcon} />
+    </div>
+  );
+}
+
 // 工具函数：从 URL 生成 Google Favicon 图标链接
 function getFavicon(url: string): string | null {
   try {
@@ -24,7 +34,7 @@ function getFavicon(url: string): string | null {
 // 主要内容区域组件
 function MainContent({ categories }: { categories: ResourceCategory[] }) {
   const totalResources = categories.reduce((sum, cat) => sum + cat.resources.length, 0);
-  
+
   return (
     <div className={styles.quickStats}>
       <div className={styles.quickStatsInner}>
@@ -32,9 +42,7 @@ function MainContent({ categories }: { categories: ResourceCategory[] }) {
           <Heading as="h1" className={styles.mainTitle}>
             精选<span className={styles.highlight}>资源</span>
           </Heading>
-          <p className={styles.mainDescription}>
-            精心筛选的优质工具与平台
-          </p>
+          <p className={styles.mainDescription}>精心筛选的优质工具与平台</p>
         </div>
         <div className={styles.statsGrid}>
           <div className={styles.statCard}>
@@ -62,26 +70,15 @@ function MainContent({ categories }: { categories: ResourceCategory[] }) {
 }
 
 // 分类导航组件
-function CategoryNav({ categories, activeCategory, onCategoryChange }: {
-  categories: ResourceCategory[];
-  activeCategory: string;
-  onCategoryChange: (category: string) => void;
-}) {
+function CategoryNav({ categories, activeCategory, onCategoryChange }: { categories: ResourceCategory[]; activeCategory: string; onCategoryChange: (category: string) => void }) {
   return (
     <nav className={styles.categoryNav}>
       <div className={styles.categoryNavContent}>
-        <button
-          className={`${styles.categoryButton} ${activeCategory === 'all' ? styles.categoryButtonActive : ''}`}
-          onClick={() => onCategoryChange('all')}
-        >
+        <button className={`${styles.categoryButton} ${activeCategory === 'all' ? styles.categoryButtonActive : ''}`} onClick={() => onCategoryChange('all')}>
           全部
         </button>
         {categories.map((category) => (
-          <button
-            key={category.name}
-            className={`${styles.categoryButton} ${activeCategory === category.name ? styles.categoryButtonActive : ''}`}
-            onClick={() => onCategoryChange(category.name)}
-          >
+          <button key={category.name} className={`${styles.categoryButton} ${activeCategory === category.name ? styles.categoryButtonActive : ''}`} onClick={() => onCategoryChange(category.name)}>
             {category.name}
           </button>
         ))}
@@ -93,13 +90,9 @@ function CategoryNav({ categories, activeCategory, onCategoryChange }: {
 // 资源卡片组件
 function ResourceCard({ resource }: { resource: { name: string; description: string; href: string } }) {
   const iconUrl = getFavicon(resource.href);
-  
+
   return (
-    <Link
-      to={resource.href}
-      className={styles.resourceCard}
-      style={{ textDecoration: 'none' }}
-    >
+    <Link to={resource.href} className={styles.resourceCard} style={{ textDecoration: 'none' }}>
       <div className={styles.resourceCardContent}>
         <div className={styles.resourceCardIcon}>
           {iconUrl ? (
@@ -127,12 +120,8 @@ function ResourceCard({ resource }: { resource: { name: string; description: str
           )}
         </div>
         <div className={styles.resourceCardBody}>
-          <h3 className={styles.resourceCardTitle}>
-            {resource.name}
-          </h3>
-          <p className={styles.resourceCardDescription}>
-            {resource.description}
-          </p>
+          <h3 className={styles.resourceCardTitle}>{resource.name}</h3>
+          <p className={styles.resourceCardDescription}>{resource.description}</p>
         </div>
       </div>
     </Link>
@@ -140,10 +129,7 @@ function ResourceCard({ resource }: { resource: { name: string; description: str
 }
 
 // 分类区块组件
-function CategorySection({ category, isVisible }: { 
-  category: ResourceCategory; 
-  isVisible: boolean; 
-}) {
+function CategorySection({ category, isVisible }: { category: ResourceCategory; isVisible: boolean }) {
   const gridRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -162,7 +148,7 @@ function CategorySection({ category, isVisible }: {
       cards.forEach((card, index) => {
         const row = Math.floor(index / columnsCount);
         const col = index % columnsCount;
-        const delay = (row * 0.1) + (col * 0.05); // 按行优先，每行0.1s，同行内每列0.05s
+        const delay = row * 0.1 + col * 0.05; // 按行优先，每行0.1s，同行内每列0.05s
         (card as HTMLElement).style.animationDelay = `${delay}s`;
       });
     };
@@ -188,9 +174,7 @@ function CategorySection({ category, isVisible }: {
           <Icon icon={category.icon} width={24} height={24} className={styles.categoryIcon} />
           {category.name}
         </h2>
-        <div className={styles.categoryCount}>
-          {category.resources.length} 项
-        </div>
+        <div className={styles.categoryCount}>{category.resources.length} 项</div>
       </div>
       <div className={styles.resourceGrid} ref={gridRef}>
         {category.resources.map((resource) => (
@@ -203,30 +187,57 @@ function CategorySection({ category, isVisible }: {
 
 export default function ResourcesPage() {
   const [activeCategory, setActiveCategory] = useState('all');
-  
+  const [searchQuery, setSearchQuery] = useState('');
+
   const filteredCategories = useMemo(() => {
-    if (activeCategory === 'all') return resourceData;
-    return resourceData.filter(cat => cat.name === activeCategory);
-  }, [activeCategory]);
+    const query = searchQuery.toLowerCase();
+
+    // 如果没有搜索查询，并且分类是 "all"，则返回全部数据
+    if (!query && activeCategory === 'all') {
+      return resourceData;
+    }
+
+    // 先按分类过滤
+    const categoryFiltered = activeCategory === 'all' ? resourceData : resourceData.filter((cat) => cat.name === activeCategory);
+
+    // 如果没有搜索查询，直接返回分类过滤结果
+    if (!query) {
+      return categoryFiltered;
+    }
+
+    // 在分类过滤的基础上，再按搜索查询过滤
+    return (
+      categoryFiltered
+        .map((category) => {
+          const filteredResources = category.resources.filter((resource) => resource.name.toLowerCase().includes(query) || resource.description.toLowerCase().includes(query));
+          // 返回新的分类对象，只包含过滤后的资源
+          return { ...category, resources: filteredResources };
+        })
+        // 最后，过滤掉那些在搜索后资源列表变为空的分类
+        .filter((category) => category.resources.length > 0)
+    );
+  }, [activeCategory, searchQuery]);
 
   return (
     <Layout title={TITLE} description={DESCRIPTION}>
       <main className={styles.main}>
         <MainContent categories={resourceData} />
         <div className={styles.container}>
-          <CategoryNav 
-            categories={resourceData}
-            activeCategory={activeCategory}
-            onCategoryChange={setActiveCategory}
-          />
+          <div className={styles.stickyControls}>
+            <CategoryNav categories={resourceData} activeCategory={activeCategory} onCategoryChange={setActiveCategory} />
+            <SearchBar value={searchQuery} onChange={setSearchQuery} />
+          </div>
           <div className={styles.content}>
-            {filteredCategories.map((category) => (
-              <CategorySection
-                key={category.name}
-                category={category}
-                isVisible={true}
-              />
-            ))}
+            {filteredCategories.length > 0 ? (
+              filteredCategories.map((category) => <CategorySection key={category.name} category={category} isVisible={true} />)
+            ) : (
+              <div className={styles.noResults}>
+                <p>找不到匹配"{searchQuery}"的资源。</p>
+                <button onClick={() => setSearchQuery('')} className={styles.clearSearchButton}>
+                  清空搜索
+                </button>
+              </div>
+            )}
           </div>
         </div>
       </main>
