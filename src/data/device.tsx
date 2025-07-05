@@ -1,9 +1,9 @@
-export type Device = {
+export type DeviceItem = {
   name: string;
   icon: string;
 };
 
-export const DEVICE_LIST: Device[] = [
+export const DEVICE_LIST: DeviceItem[] = [
   {
     name: 'MacBook Pro (M3 Max)',
     icon: '/img/device/macbook.svg',

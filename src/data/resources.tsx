@@ -1,16 +1,16 @@
-export interface Resource {
+export interface ResourceItem {
   name: string;
   href: string;
   description: string;
 }
 
-export interface ResourceCategory {
+export interface ResourceCategoryItem {
   name: string;
   icon: string;
-  resources: Resource[];
+  resources: ResourceItem[];
 }
 
-export const RESOURCE_LIST: ResourceCategory[] = [
+export const RESOURCE_LIST: ResourceCategoryItem[] = [
   {
     name: '搜索引擎',
     icon: 'lucide:search',

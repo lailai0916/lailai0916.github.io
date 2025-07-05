@@ -4,7 +4,7 @@ export interface TravelItem {
   cardDetailedText: string;
 }
 
-export interface TravelStat {
+export interface TravelStatItem {
   number: string;
   label: string;
   icon: string;
@@ -209,7 +209,7 @@ export const TRAVEL_LIST: TravelItem[] = [
 ];
 
 // 旅行统计数据
-export const TRAVEL_STATS: TravelStat[] = [
+export const TRAVEL_STATS: TravelStatItem[] = [
   { number: '20+', label: '国家/地区', icon: 'material-symbols:public' },
   { number: '50+', label: '城市', icon: 'material-symbols:location-city' },
   { number: '14年', label: '足迹', icon: 'material-symbols:footprint' },

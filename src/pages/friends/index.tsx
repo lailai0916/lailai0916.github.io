@@ -3,7 +3,7 @@ import Layout from '@theme/Layout';
 import Heading from '@theme/Heading';
 
 import { memo, useRef } from 'react';
-import { Friend, FRIEND_LIST } from '@site/src/data/friends';
+import { FriendItem, FRIEND_LIST } from '@site/src/data/friends';
 
 const TITLE = '友链';
 const DESCRIPTION = '财富易得，知己难求';
@@ -21,7 +21,7 @@ function PageHeader() {
   );
 }
 
-const FriendCard = memo(({ friend }: { friend: Friend }) => (
+const FriendCard = memo(({ friend }: { friend: FriendItem }) => (
   <li className="relative flex min-h-24 cursor-pointer flex-row items-center overflow-hidden rounded-card bg-card px-4 py-1 transition-all duration-300 hover:translate-y-[-5px] hover:scale-[1.01] hover:bg-[rgba(229,231,235,0.3)] hover:shadow-[0_3px_10px_0_rgba(164,190,217,0.3)]">
     <img
       // @ts-ignore

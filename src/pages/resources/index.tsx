@@ -5,7 +5,7 @@ import Heading from '@theme/Heading';
 import { Icon } from '@iconify/react';
 import clsx from 'clsx';
 
-import { RESOURCE_LIST, type ResourceCategory } from '@site/src/data/resources';
+import { RESOURCE_LIST, type ResourceCategoryItem } from '@site/src/data/resources';
 import styles from './styles.module.css';
 
 const TITLE = '资源';
@@ -14,25 +14,22 @@ const DESCRIPTION = '精选优质资源，为你的学习和开发提供助力';
 /**
  * 根据分类和搜索查询过滤资源数据
  */
-function filterResourceCategories(categories: readonly ResourceCategory[], activeCategory: string, searchQuery: string): ResourceCategory[] {
+function filterResourceCategories(categories: readonly ResourceCategoryItem[], activeCategory: string, searchQuery: string): ResourceCategoryItem[] {
   const query = searchQuery.toLowerCase().trim();
 
   // 按分类过滤
-  const filteredByCategory = activeCategory === 'all' ? [...categories] : categories.filter(cat => cat.name === activeCategory);
+  const filteredByCategory = activeCategory === 'all' ? [...categories] : categories.filter((cat) => cat.name === activeCategory);
 
   // 如果没有搜索查询，直接返回
   if (!query) return filteredByCategory;
 
   // 按搜索关键词过滤
   return filteredByCategory
-    .map(category => ({
+    .map((category) => ({
       ...category,
-      resources: category.resources.filter(resource => 
-        resource.name.toLowerCase().includes(query) || 
-        resource.description.toLowerCase().includes(query)
-      ),
+      resources: category.resources.filter((resource) => resource.name.toLowerCase().includes(query) || resource.description.toLowerCase().includes(query)),
     }))
-    .filter(category => category.resources.length > 0);
+    .filter((category) => category.resources.length > 0);
 }
 
 // 搜索栏组件
@@ -56,7 +53,7 @@ function getFavicon(url: string): string | null {
 }
 
 // 主要内容区域组件
-function MainContent({ categories }: { categories: ResourceCategory[] }) {
+function MainContent({ categories }: { categories: ResourceCategoryItem[] }) {
   const totalResources = categories.reduce((sum, cat) => sum + cat.resources.length, 0);
 
   return (
@@ -94,14 +91,14 @@ function MainContent({ categories }: { categories: ResourceCategory[] }) {
 }
 
 // 分类导航组件
-function CategoryNav({ categories, activeCategory, onCategoryChange }: { categories: ResourceCategory[]; activeCategory: string; onCategoryChange: (category: string) => void }) {
+function CategoryNav({ categories, activeCategory, onCategoryChange }: { categories: ResourceCategoryItem[]; activeCategory: string; onCategoryChange: (category: string) => void }) {
   return (
     <nav className={styles.categoryNav}>
       <div className={styles.categoryNavContent}>
         <button className={clsx(styles.categoryButton, activeCategory === 'all' && styles.categoryButtonActive)} onClick={() => onCategoryChange('all')}>
           全部
         </button>
-        {categories.map(category => (
+        {categories.map((category) => (
           <button key={category.name} className={clsx(styles.categoryButton, activeCategory === category.name && styles.categoryButtonActive)} onClick={() => onCategoryChange(category.name)}>
             {category.name}
           </button>
@@ -145,7 +142,7 @@ function ResourceCard({ resource }: { resource: { name: string; description: str
 }
 
 // 分类区块组件
-function CategorySection({ category }: { category: ResourceCategory }) {
+function CategorySection({ category }: { category: ResourceCategoryItem }) {
   return (
     <section className={styles.categorySection}>
       <div className={styles.categoryHeader}>
@@ -156,7 +153,7 @@ function CategorySection({ category }: { category: ResourceCategory }) {
         <div className={styles.categoryCount}>{category.resources.length} 项</div>
       </div>
       <div className={styles.resourceGrid}>
-        {category.resources.map(resource => (
+        {category.resources.map((resource) => (
           <ResourceCard key={resource.name} resource={resource} />
         ))}
       </div>
@@ -178,18 +175,12 @@ export default function ResourcesPage() {
         <MainContent categories={RESOURCE_LIST} />
         <div className={styles.container}>
           <div className={styles.stickyControls}>
-            <CategoryNav 
-              categories={RESOURCE_LIST} 
-              activeCategory={activeCategory} 
-              onCategoryChange={setActiveCategory} 
-            />
+            <CategoryNav categories={RESOURCE_LIST} activeCategory={activeCategory} onCategoryChange={setActiveCategory} />
             <SearchBar value={searchQuery} onChange={setSearchQuery} />
           </div>
           <div className={styles.content}>
             {filteredCategories.length > 0 ? (
-              filteredCategories.map(category => (
-                <CategorySection key={category.name} category={category} />
-              ))
+              filteredCategories.map((category) => <CategorySection key={category.name} category={category} />)
             ) : (
               <div className={styles.noResults}>
                 <p>找不到匹配"{searchQuery}"的资源。</p>

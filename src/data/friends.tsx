@@ -1,11 +1,11 @@
-export type Friend = {
-  title: string
-  description: string
-  website: string
-  avatar: string
-}
+export type FriendItem = {
+  title: string;
+  description: string;
+  website: string;
+  avatar: string;
+};
 
-export const FRIEND_LIST: Friend[] = [
+export const FRIEND_LIST: FriendItem[] = [
   {
     title: 'lailai',
     description: 'Blogger',
@@ -60,4 +60,4 @@ export const FRIEND_LIST: Friend[] = [
     website: 'https://www.luogu.com.cn/user/718017',
     avatar: 'img/avatar/Dream__maker.png',
   },
-]
+];

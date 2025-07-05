@@ -4,7 +4,7 @@ import BrowserOnly from '@docusaurus/BrowserOnly';
 import { Icon } from '@iconify/react';
 import Timeline from '@site/src/pages/travel/_components';
 import { BaseCard, Section, SectionHeader, GridLayout, GridConfigs } from '../_components/common';
-import { TRAVEL_STATS, TravelStat } from '@site/src/data/travel';
+import { TRAVEL_STATS, TravelStatItem } from '@site/src/data/travel';
 
 // 页面常量
 const PAGE_CONFIG = {
@@ -15,7 +15,7 @@ const PAGE_CONFIG = {
 /**
  * 统计卡片组件 - 采用与主页Project卡片一致的设计
  */
-const StatCard = React.memo<TravelStat>(({ number, label, icon }) => (
+const StatCard = React.memo<TravelStatItem>(({ number, label, icon }) => (
   <BaseCard isClickable={false} className="p-6 items-center justify-center">
     <div className="text-center space-y-3">
       <div className="text-3xl mb-2">
