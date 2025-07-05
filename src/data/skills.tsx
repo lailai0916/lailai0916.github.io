@@ -1,4 +1,9 @@
-export const SKILL_LIST = [
+export type SkillItem = {
+  name: string;
+  icon: string;
+};
+
+export const SKILL_LIST: SkillItem[] = [
   { name: 'C', icon: 'c' },
   { name: 'C++', icon: 'cpp' },
   { name: 'Python', icon: 'py' },

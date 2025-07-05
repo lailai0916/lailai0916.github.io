@@ -1,7 +1,15 @@
 import { STATUS_COLORS } from '@site/src/pages/_components/common/constants';
 import { translate } from '@docusaurus/Translate';
 
-export const PROJECT_LIST = [
+export type ProjectItem = {
+  title: string;
+  description: string;
+  link: string;
+  tech: string;
+  status: { text: string; color: string };
+};
+
+export const PROJECT_LIST: ProjectItem[] = [
   {
     title: "lailai's Home",
     description: translate({ id: 'data.project.p1.description', message: 'My personal website for sharing technical notes, project experience, and learning insights.' }),

@@ -1,7 +1,14 @@
 import { STATUS_COLORS } from '@site/src/pages/_components/common/constants';
 import { translate } from '@docusaurus/Translate';
 
-export const QUOTE_LIST = [
+export type QuoteItem = {
+  quote: string;
+  author: string;
+  context: string;
+  category: { text: string; color: string };
+};
+
+export const QUOTE_LIST: QuoteItem[] = [
   {
     quote: translate({ id: 'data.quote.p1.quote', message: 'Stay hungry. Stay foolish.' }),
     author: translate({ id: 'data.quote.p1.author', message: 'Steve Jobs' }),

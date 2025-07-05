@@ -1,7 +1,15 @@
 import { STATUS_COLORS } from '@site/src/pages/_components/common/constants';
 import { translate } from '@docusaurus/Translate';
 
-export const EXPLORATION_LIST = [
+export type ExplorationItem = {
+  name: string;
+  icon: string;
+  description: string;
+  progress: { text: string; color: string };
+  skills: string[];
+};
+
+export const EXPLORATION_LIST: ExplorationItem[] = [
   {
     name: translate({ id: 'data.exploration.p1.name', message: 'Algorithm Competitions' }),
     icon: 'lucide:trophy',
