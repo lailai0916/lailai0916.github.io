@@ -19,13 +19,13 @@ const TEXT_CLAMP_STYLES = {
 
 // 样式类名配置
 const CARD_STYLE_CLASSES = {
-  title: 'font-semibold text-xl group-hover:text-[var(--ifm-color-primary)] transition-colors duration-200',
+  title: 'font-semibold text-xl',
   skillTag: 'inline-flex items-center px-2 py-1 rounded-md text-xs font-medium bg-gray-100 dark:bg-neutral-800 text-gray-700 dark:text-neutral-300',
 };
 
 function ExplorationCard({ title, icon, description, status, skills }: { title: string; icon: string; description: string; status: { text: string; color: string }; skills: string[] }) {
   return (
-    <BaseCard isClickable={false} className="p-6 group">
+    <BaseCard isClickable={false} className="p-6">
       <div className="flex-1 space-y-4">
         <header className="space-y-3">
           <div className="flex items-center justify-between">
