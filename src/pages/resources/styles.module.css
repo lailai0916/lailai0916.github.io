@@ -309,6 +309,12 @@
 .resourceCardFallback {
   display: none;
   color: var(--ifm-color-emphasis-600);
+  align-items: center;
+  justify-content: center;
+}
+
+.resourceCardFallbackVisible {
+  display: flex;
 }
 
 .resourceCardBody {
@@ -488,5 +494,4 @@ html[data-theme='dark'] .resourceCard:hover .resourceCardContent {
 .resourceCard {
   animation: fadeInUp 0.6s ease-out;
   animation-fill-mode: both;
-  /* Animation delay is set dynamically via JavaScript */
 }

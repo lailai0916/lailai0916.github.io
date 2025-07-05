@@ -1,8 +1,9 @@
-import React, { useState, useMemo, useEffect, useRef } from 'react';
+import React, { useState, useMemo } from 'react';
 import Link from '@docusaurus/Link';
 import Layout from '@theme/Layout';
 import Heading from '@theme/Heading';
 import { Icon } from '@iconify/react';
+import clsx from 'clsx';
 
 import { resourceData, type ResourceCategory } from '@site/src/data/resources';
 import styles from './styles.module.css';
@@ -12,36 +13,29 @@ const DESCRIPTION = '精选优质资源，为你的学习和开发提供助力';
 
 /**
  * 根据分类和搜索查询过滤资源数据
- * @param categories - 原始资源分类数组
- * @param activeCategory - 当前激活的分类名称 ('all' 表示全部)
- * @param searchQuery - 用户输入的搜索关键词
- * @returns 过滤后的资源分类数组
  */
 function filterResourceCategories(categories: readonly ResourceCategory[], activeCategory: string, searchQuery: string): ResourceCategory[] {
   const query = searchQuery.toLowerCase().trim();
 
-  // 1. 按分类过滤
-  const filteredByCategory = activeCategory === 'all' ? [...categories] : categories.filter((cat) => cat.name === activeCategory);
+  // 按分类过滤
+  const filteredByCategory = activeCategory === 'all' ? [...categories] : categories.filter(cat => cat.name === activeCategory);
 
-  // 2. 如果没有搜索，直接返回
-  if (!query) {
-    return filteredByCategory;
-  }
+  // 如果没有搜索查询，直接返回
+  if (!query) return filteredByCategory;
 
-  // 3. 按搜索关键词过滤
-  return (
-    filteredByCategory
-      .map((category) => {
-        const filteredResources = category.resources.filter((resource) => resource.name.toLowerCase().includes(query) || resource.description.toLowerCase().includes(query));
-        // 返回带有过滤后资源的新分类对象
-        return { ...category, resources: filteredResources };
-      })
-      // 4. 移除没有资源的空分类
-      .filter((category) => category.resources.length > 0)
-  );
+  // 按搜索关键词过滤
+  return filteredByCategory
+    .map(category => ({
+      ...category,
+      resources: category.resources.filter(resource => 
+        resource.name.toLowerCase().includes(query) || 
+        resource.description.toLowerCase().includes(query)
+      ),
+    }))
+    .filter(category => category.resources.length > 0);
 }
 
-// 新增：搜索栏组件
+// 搜索栏组件
 function SearchBar({ value, onChange }: { value: string; onChange: (value: string) => void }) {
   return (
     <div className={styles.searchBarContainer}>
@@ -51,13 +45,12 @@ function SearchBar({ value, onChange }: { value: string; onChange: (value: strin
   );
 }
 
-// 工具函数：从 URL 生成 Google Favicon 图标链接
+// 获取网站图标
 function getFavicon(url: string): string | null {
   try {
     const urlObj = new URL(url);
     return `https://www.google.com/s2/favicons?sz=64&domain=${urlObj.hostname}`;
-  } catch (error) {
-    // 静默处理URL解析错误
+  } catch {
     return null;
   }
 }
@@ -105,11 +98,11 @@ function CategoryNav({ categories, activeCategory, onCategoryChange }: { categor
   return (
     <nav className={styles.categoryNav}>
       <div className={styles.categoryNavContent}>
-        <button className={`${styles.categoryButton} ${activeCategory === 'all' ? styles.categoryButtonActive : ''}`} onClick={() => onCategoryChange('all')}>
+        <button className={clsx(styles.categoryButton, activeCategory === 'all' && styles.categoryButtonActive)} onClick={() => onCategoryChange('all')}>
           全部
         </button>
-        {categories.map((category) => (
-          <button key={category.name} className={`${styles.categoryButton} ${activeCategory === category.name ? styles.categoryButtonActive : ''}`} onClick={() => onCategoryChange(category.name)}>
+        {categories.map(category => (
+          <button key={category.name} className={clsx(styles.categoryButton, activeCategory === category.name && styles.categoryButtonActive)} onClick={() => onCategoryChange(category.name)}>
             {category.name}
           </button>
         ))}
@@ -123,32 +116,24 @@ function ResourceCard({ resource }: { resource: { name: string; description: str
   const iconUrl = getFavicon(resource.href);
 
   return (
-    <Link to={resource.href} className={styles.resourceCard} style={{ textDecoration: 'none' }}>
+    <Link to={resource.href} className={styles.resourceCard}>
       <div className={styles.resourceCardContent}>
         <div className={styles.resourceCardIcon}>
-          {iconUrl ? (
-            <>
-              <img
-                src={iconUrl}
-                alt={resource.name}
-                className={styles.resourceCardImage}
-                onError={(e) => {
-                  e.currentTarget.style.display = 'none';
-                  const fallback = e.currentTarget.nextElementSibling as HTMLElement;
-                  if (fallback) {
-                    fallback.style.display = 'flex';
-                  }
-                }}
-              />
-              <div className={styles.resourceCardFallback}>
-                <Icon icon="lucide:globe" width={24} height={24} />
-              </div>
-            </>
-          ) : (
-            <div className={styles.resourceCardFallback} style={{ display: 'flex' }}>
-              <Icon icon="lucide:globe" width={24} height={24} />
-            </div>
+          {iconUrl && (
+            <img
+              src={iconUrl}
+              alt={resource.name}
+              className={styles.resourceCardImage}
+              onError={(e) => {
+                e.currentTarget.style.display = 'none';
+                const fallback = e.currentTarget.nextElementSibling as HTMLElement;
+                if (fallback) fallback.style.display = 'flex';
+              }}
+            />
           )}
+          <div className={clsx(styles.resourceCardFallback, !iconUrl && styles.resourceCardFallbackVisible)}>
+            <Icon icon="lucide:globe" width={24} height={24} />
+          </div>
         </div>
         <div className={styles.resourceCardBody}>
           <h3 className={styles.resourceCardTitle}>{resource.name}</h3>
@@ -160,45 +145,7 @@ function ResourceCard({ resource }: { resource: { name: string; description: str
 }
 
 // 分类区块组件
-function CategorySection({ category, isVisible }: { category: ResourceCategory; isVisible: boolean }) {
-  const gridRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    if (!isVisible || !gridRef.current) return;
-
-    const cards = gridRef.current.querySelectorAll(`.${styles.resourceCard}`);
-    const getColumnsCount = () => {
-      // These breakpoints are approximations of the CSS Grid behavior
-      // to calculate row/column indices for the stagger animation effect.
-      if (window.innerWidth <= 768) return 1; // Corresponds to @media (max-width: 768px)
-      if (window.innerWidth <= 1024) return 2; // Fits 2 columns on medium screens
-      return 3; // Fits 3+ columns on large screens
-    };
-
-    const applyAnimationDelays = () => {
-      const columnsCount = getColumnsCount();
-      cards.forEach((card, index) => {
-        const row = Math.floor(index / columnsCount);
-        const col = index % columnsCount;
-        const delay = row * 0.1 + col * 0.05; // 按行优先，每行0.1s，同行内每列0.05s
-        (card as HTMLElement).style.animationDelay = `${delay}s`;
-      });
-    };
-
-    // 初始设置
-    applyAnimationDelays();
-
-    // 监听窗口大小变化
-    const handleResize = () => {
-      applyAnimationDelays();
-    };
-
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
-  }, [isVisible, category.resources.length]);
-
-  if (!isVisible) return null;
-
+function CategorySection({ category }: { category: ResourceCategory }) {
   return (
     <section className={styles.categorySection}>
       <div className={styles.categoryHeader}>
@@ -208,8 +155,8 @@ function CategorySection({ category, isVisible }: { category: ResourceCategory; 
         </h2>
         <div className={styles.categoryCount}>{category.resources.length} 项</div>
       </div>
-      <div className={styles.resourceGrid} ref={gridRef}>
-        {category.resources.map((resource) => (
+      <div className={styles.resourceGrid}>
+        {category.resources.map(resource => (
           <ResourceCard key={resource.name} resource={resource} />
         ))}
       </div>
@@ -231,12 +178,18 @@ export default function ResourcesPage() {
         <MainContent categories={resourceData} />
         <div className={styles.container}>
           <div className={styles.stickyControls}>
-            <CategoryNav categories={resourceData} activeCategory={activeCategory} onCategoryChange={setActiveCategory} />
+            <CategoryNav 
+              categories={resourceData} 
+              activeCategory={activeCategory} 
+              onCategoryChange={setActiveCategory} 
+            />
             <SearchBar value={searchQuery} onChange={setSearchQuery} />
           </div>
           <div className={styles.content}>
             {filteredCategories.length > 0 ? (
-              filteredCategories.map((category) => <CategorySection key={category.name} category={category} isVisible={true} />)
+              filteredCategories.map(category => (
+                <CategorySection key={category.name} category={category} />
+              ))
             ) : (
               <div className={styles.noResults}>
                 <p>找不到匹配"{searchQuery}"的资源。</p>
