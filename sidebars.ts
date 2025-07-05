@@ -408,7 +408,7 @@ const sidebars: SidebarsConfig = {
         type: 'generated-index',
         description: '本章收录各种实用的文档模板，包括题解、Markdown、LaTeX等常用模板。',
       },
-      items: ['project/templates/solution', 'project/templates/markdown', 'project/templates/latex', 'project/templates/mermaid'],
+      items: ['project/templates/markdown', 'project/templates/latex', 'project/templates/mermaid', 'project/templates/solution'],
     },
     {
       type: 'category',
