@@ -15,7 +15,7 @@ export const QUOTE_LIST: QuoteItem[] = [
     context: translate({ id: 'data.quote.p1.context', message: 'Stanford Commencement Speech' }),
     status: {
       text: translate({ id: 'data.quote.p1.category', message: 'Innovative Thinking' }),
-      color: STATUS_COLORS.PURPLE,
+      color: STATUS_COLORS.VIOLET,
     },
   },
   {
@@ -24,7 +24,7 @@ export const QUOTE_LIST: QuoteItem[] = [
     context: translate({ id: 'data.quote.p2.context', message: 'On Work and Passion' }),
     status: {
       text: translate({ id: 'data.quote.p2.category', message: 'Career Philosophy' }),
-      color: STATUS_COLORS.GREEN,
+      color: STATUS_COLORS.EMERALD,
     },
   },
   {
@@ -33,7 +33,7 @@ export const QUOTE_LIST: QuoteItem[] = [
     context: translate({ id: 'data.quote.p3.context', message: "Linus Torvalds' Programming Philosophy" }),
     status: {
       text: translate({ id: 'data.quote.p3.category', message: 'Technical Attitude' }),
-      color: STATUS_COLORS.BLUE,
+      color: STATUS_COLORS.INDIGO,
     },
   },
 ];

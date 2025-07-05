@@ -21,7 +21,7 @@ export const EXPLORATION_LIST: ExplorationItem[] = [
     title: translate({ id: 'data.exploration.p2.name', message: 'Docusaurus' }),
     icon: 'lucide:book-open',
     description: translate({ id: 'data.exploration.p2.description', message: 'Building a unified, simple, and modern personal website with Docusaurus, exploring best practices for documentation engineering.' }),
-    status: { text: translate({ id: 'data.exploration.p2.progress', message: 'Deepening' }), color: STATUS_COLORS.PURPLE },
+    status: { text: translate({ id: 'data.exploration.p2.progress', message: 'Deepening' }), color: STATUS_COLORS.VIOLET },
     skills: [translate({ id: 'data.exploration.p2.skill1', message: 'React' }), translate({ id: 'data.exploration.p2.skill2', message: 'TypeScript' }), translate({ id: 'data.exploration.p2.skill3', message: 'MDX' })],
   },
   {
@@ -35,7 +35,7 @@ export const EXPLORATION_LIST: ExplorationItem[] = [
     title: translate({ id: 'data.exploration.p4.name', message: 'English Grammar' }),
     icon: 'lucide:pencil',
     description: translate({ id: 'data.exploration.p4.description', message: 'Systematically learning English grammar rules to master language structure and improve technical documentation reading and writing skills.' }),
-    status: { text: translate({ id: 'data.exploration.p4.progress', message: 'Learning' }), color: STATUS_COLORS.GREEN },
+    status: { text: translate({ id: 'data.exploration.p4.progress', message: 'Learning' }), color: STATUS_COLORS.TEAL },
     skills: [translate({ id: 'data.exploration.p4.skill1', message: 'Grammar Structure' }), translate({ id: 'data.exploration.p4.skill2', message: 'Technical Writing' }), translate({ id: 'data.exploration.p4.skill3', message: 'Academic Reading' })],
   },
 ];
