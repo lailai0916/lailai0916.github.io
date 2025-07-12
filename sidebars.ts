@@ -557,10 +557,10 @@ const sidebars: SidebarsConfig = {
         description: '本章展示各种实用的小工具和计算器项目。',
       },
       items: [
-        'project/tools/ascii-art1',
-        'project/tools/身份证号校验器',
-        'project/tools/电阻计算器',
-        'project/tools/poly-calc',
+        'project/tools/ascii-art',
+        'project/tools/id-checker',
+        'project/tools/resistor-calculator',
+        'project/tools/polynomial-calculator',
         'project/tools/afk-script',
       ],
     },
@@ -572,7 +572,7 @@ const sidebars: SidebarsConfig = {
         description: '本章展示基于终端的项目和教程。',
       },
       items: [
-        'project/terminal/iGame',
+        'project/terminal/igame1',
         'project/terminal/地图生成器',
         'project/terminal/图片处理',
         {
