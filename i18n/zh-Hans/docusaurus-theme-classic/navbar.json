@@ -1,0 +1,46 @@
+{
+  "title": {
+    "message": "lailai's Home",
+    "description": "The title in the navbar"
+  },
+  "logo.alt": {
+    "message": "lailai's Logo",
+    "description": "The alt text of navbar logo"
+  },
+  "item.label.Contest": {
+    "message": "竞赛",
+    "description": "Navbar item with label Contest"
+  },
+  "item.label.Note": {
+    "message": "笔记",
+    "description": "Navbar item with label Note"
+  },
+  "item.label.Project": {
+    "message": "项目",
+    "description": "Navbar item with label Project"
+  },
+  "item.label.Blog": {
+    "message": "博客",
+    "description": "Navbar item with label Blog"
+  },
+  "item.label.More": {
+    "message": "更多",
+    "description": "Navbar item with label More"
+  },
+  "item.label.About": {
+    "message": "关于",
+    "description": "Navbar item with label About"
+  },
+  "item.label.Travel": {
+    "message": "旅行",
+    "description": "Navbar item with label Travel"
+  },
+  "item.label.Friends": {
+    "message": "友链",
+    "description": "Navbar item with label Friends"
+  },
+  "item.label.Resources": {
+    "message": "资源",
+    "description": "Navbar item with label Resources"
+  }
+}

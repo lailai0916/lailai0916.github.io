@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="334.667px" height="403.334px" viewBox="0 0 334.667 403.334" enable-background="new 0 0 334.667 403.334"
+	 xml:space="preserve">
+<g id="Drawing">
+	<g id="XMLID_1_">
+		<g>
+			<polygon fill="#CAD8E5" points="299.5,221.279 299.5,370.499 39.5,370.499 			"/>
+			<polygon fill="#E8CDCD" points="194.72,38.499 299.5,221.279 39.5,370.499 			"/>
+		</g>
+		<g>
+			<polygon fill="none" stroke="#000000" stroke-miterlimit="10" points="299.5,221.279 299.5,370.499 39.5,370.499 39.5,38.499 
+				194.72,38.499 299.5,38.499 			"/>
+			<line fill="none" stroke="#000000" stroke-miterlimit="10" x1="39.5" y1="370.499" x2="299.5" y2="221.279"/>
+			<line fill="none" stroke="#000000" stroke-miterlimit="10" x1="299.5" y1="221.279" x2="194.72" y2="38.499"/>
+			<line fill="none" stroke="#000000" stroke-width="4" stroke-miterlimit="10" x1="194.72" y1="38.499" x2="39.5" y2="370.499"/>
+		</g>
+	</g>
+	<rect x="39.5" y="38.499" fill="none" stroke="#000000" stroke-miterlimit="10" width="24" height="24"/>
+	<rect x="275.5" y="38.499" fill="none" stroke="#000000" stroke-miterlimit="10" width="24" height="24"/>
+	<rect x="275.5" y="346.499" fill="none" stroke="#000000" stroke-miterlimit="10" width="24" height="24"/>
+	<path fill="none" stroke="#000000" stroke-miterlimit="10" d="M58.9,329.002c15.401,7.251,26.061,22.912,26.061,41.063"/>
+	
+		<rect x="271.158" y="204.923" transform="matrix(0.8716 -0.4902 0.4902 0.8716 -69.9831 166.6703)" fill="none" stroke="#000000" stroke-miterlimit="10" width="24" height="24"/>
+	<path fill="none" stroke="#000000" stroke-miterlimit="10" d="M175.473,79.677c-15.299-7.29-25.873-22.897-25.873-40.975"/>
+	<text transform="matrix(1 0 0 1 91.7158 229.7969)" font-family="'Arial-BoldMT'" font-size="88.7866">1</text>
+	<text transform="matrix(1 0 0 1 65.8389 30.3315)" font-family="'ArialMT'" font-size="18">cos(α + β)</text>
+	<text transform="matrix(4.489659e-011 -1 1 4.489659e-011 28.833 239.8027)" font-family="'ArialMT'" font-size="18">sin(α + β)</text>
+	<text transform="matrix(1 0 0 1 207.5508 30.3315)" font-family="'ArialMT'" font-size="18">sin α sin β</text>
+	<text transform="matrix(0 1 -1 0 309.334 78.8818)" font-family="'ArialMT'" font-size="18">cos α sin β</text>
+	<text transform="matrix(1 0 0 1 121.4419 390.665)" font-family="'ArialMT'" font-size="18">cos α cos β</text>
+	<text transform="matrix(0 1 -1 0 309.334 253.2158)" font-family="'ArialMT'" font-size="18">sin α cos β</text>
+	<text transform="matrix(1 0 0 1 104.7266 79.6768)" font-family="'ArialMT'" font-size="18">α + β</text>
+	<text transform="matrix(1 0 0 1 97.9272 357.3311)" font-family="'ArialMT'" font-size="18">α</text>
+	<text transform="matrix(1 0 0 1 80.6465 325.7021)" font-family="'ArialMT'" font-size="18">β</text>
+	<text transform="matrix(0.8699 -0.4932 0.4932 0.8699 164.1919 290.4678)" font-family="'ArialMT'" font-size="18">cos β</text>
+	<text transform="matrix(0.4864 0.8738 -0.8738 0.4864 219.2031 121.3105)" font-family="'ArialMT'" font-size="18">sin β</text>
+	<path fill="none" stroke="#000000" stroke-miterlimit="10" d="M275.469,179.36c6.96-4.346,15.184-6.857,23.993-6.857"/>
+	<text transform="matrix(1 0 0 1 280.5859 165.3633)" font-family="'ArialMT'" font-size="18">α</text>
+</g>
+</svg>

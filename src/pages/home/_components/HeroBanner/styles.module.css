@@ -1,0 +1,206 @@
+.hero {
+  background-color: var(--ifm-color-emphasis-100);
+  padding: 48px;
+}
+
+html[data-theme='dark'] .hero {
+  background-color: #2b3137;
+  padding: 48px;
+}
+
+.heroInner {
+  margin: 0 auto;
+  max-width: 1100px;
+  padding: 0 20px;
+}
+
+.heroProjectTagline {
+  font-size: 60px;
+  margin: 0;
+}
+
+.heroTitleTextHtml b {
+  color: var(--ifm-color-primary);
+}
+
+@keyframes smooth-entrance {
+  0% {
+    opacity: 0;
+    transform: scale(0.9) translateY(10px);
+  }
+
+  60% {
+    opacity: 1;
+    transform: scale(1.01) translateY(-1px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0px);
+  }
+}
+
+.heroLogo {
+  opacity: 0;
+  transform: scale(0.9) translateY(10px);
+  filter: drop-shadow(0 0 12px var(--ifm-color-primary))
+    drop-shadow(0 0 25px var(--ifm-color-primary));
+  float: right;
+  padding: 20px 20px;
+  height: auto;
+  position: relative;
+  will-change: transform, opacity;
+  user-select: none;
+  pointer-events: none;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.heroLogoAnimated {
+  animation: smooth-entrance 1s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+/* 简约悬停效果 */
+.heroLogo:hover {
+  transform: scale(1.05) translateY(-2px);
+  filter: drop-shadow(0 0 16px var(--ifm-color-primary))
+    drop-shadow(0 0 30px var(--ifm-color-primary));
+  pointer-events: auto;
+  cursor: pointer;
+}
+
+/* 无障碍支持 */
+@media (prefers-reduced-motion: reduce) {
+  .heroLogo {
+    animation: none !important;
+    transition: none !important;
+    transform: scale(1) translateY(0px) !important;
+    opacity: 1 !important;
+    filter: drop-shadow(0 0 10px var(--ifm-color-primary))
+      drop-shadow(0 0 25px var(--ifm-color-primary)) !important;
+  }
+}
+
+.indexCtas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.6rem;
+  align-items: center;
+  margin-top: 48px;
+  margin-bottom: 12px;
+}
+
+/* 简化的卡片按钮样式 - 带图标，优化对齐 */
+.ctaCard {
+  display: block;
+  text-decoration: none !important;
+  color: inherit !important;
+}
+
+.ctaCardContent {
+  background: var(--ifm-card-background-color);
+  border: 2px solid var(--ifm-color-emphasis-200);
+  border-radius: 12px;
+  padding: 0.85rem 1.7rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  transition: all 0.2s ease;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--ifm-font-color-base);
+  width: 140px;
+  white-space: nowrap;
+  line-height: 1.2;
+}
+
+.ctaCardIcon {
+  flex-shrink: 0;
+  color: var(--ifm-color-primary);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  vertical-align: middle;
+  line-height: 1;
+}
+
+.ctaCard:hover .ctaCardContent {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  border-color: var(--ifm-color-primary);
+}
+
+/* 深色模式适配 */
+html[data-theme='dark'] .ctaCardContent {
+  background: var(--ifm-card-background-color);
+  border: 2px solid var(--ifm-color-emphasis-300);
+}
+
+html[data-theme='dark'] .ctaCard:hover .ctaCardContent {
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+html[data-theme='dark'] .ctaCardIcon {
+  color: var(--ifm-color-primary-light);
+}
+
+/* 深色模式适配 */
+html[data-theme='dark'] .heroLogo {
+  filter: drop-shadow(0 0 15px var(--ifm-color-primary))
+    drop-shadow(0 0 30px var(--ifm-color-primary));
+}
+
+html[data-theme='dark'] .heroLogo:hover {
+  filter: drop-shadow(0 0 20px var(--ifm-color-primary))
+    drop-shadow(0 0 35px var(--ifm-color-primary));
+}
+
+@media only screen and (max-width: 768px) {
+  .hero {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .heroInner {
+    padding: 0;
+  }
+
+  .heroProjectTagline {
+    font-size: 36px;
+    text-align: center;
+  }
+
+  .heroLogo {
+    display: block;
+    float: none;
+    margin: 0 auto;
+    transform: scale(0.9) translateY(8px);
+  }
+
+  .heroLogoAnimated {
+    animation: smooth-entrance 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  }
+
+  /* 移动端禁用悬停效果 */
+  .heroLogo:hover {
+    transform: scale(0.9) translateY(0px);
+    filter: drop-shadow(0 0 10px var(--ifm-color-primary))
+      drop-shadow(0 0 20px var(--ifm-color-primary));
+  }
+
+  .indexCtas {
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 36px;
+    margin-bottom: 0;
+  }
+
+  .ctaCardContent {
+    padding: 0.85rem 1.7rem;
+    font-size: 1.2rem;
+    font-weight: 700;
+    width: 140px;
+    gap: 0.5rem;
+    line-height: 1.2;
+  }
+}

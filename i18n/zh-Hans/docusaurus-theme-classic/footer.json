@@ -1,0 +1,66 @@
+{
+  "link.title.Docs": {
+    "message": "文档",
+    "description": "The title of the footer links column with title=Docs in the footer"
+  },
+  "link.title.Community": {
+    "message": "社区",
+    "description": "The title of the footer links column with title=Community in the footer"
+  },
+  "link.title.More": {
+    "message": "更多",
+    "description": "The title of the footer links column with title=More in the footer"
+  },
+  "link.item.label.Contest": {
+    "message": "竞赛",
+    "description": "The label of footer link with label=Contest linking to docs/contest"
+  },
+  "link.item.label.Note": {
+    "message": "笔记",
+    "description": "The label of footer link with label=Note linking to docs/note"
+  },
+  "link.item.label.Project": {
+    "message": "项目",
+    "description": "The label of footer link with label=Project linking to docs/project"
+  },
+  "link.item.label.Blog": {
+    "message": "博客",
+    "description": "The label of footer link with label=Blog linking to blog"
+  },
+  "link.item.label.X (Twitter)": {
+    "message": "X (Twitter)",
+    "description": "The label of footer link with label=X (Twitter) linking to https://x.com/lailai0x394"
+  },
+  "link.item.label.Telegram": {
+    "message": "Telegram",
+    "description": "The label of footer link with label=Telegram linking to https://t.me/lailai0916"
+  },
+  "link.item.label.LinkedIn": {
+    "message": "LinkedIn",
+    "description": "The label of footer link with label=LinkedIn linking to https://www.linkedin.com/in/lailai0916"
+  },
+  "link.item.label.GitHub": {
+    "message": "GitHub",
+    "description": "The label of footer link with label=GitHub linking to https://github.com/lailai0916"
+  },
+  "link.item.label.About": {
+    "message": "关于",
+    "description": "The label of footer link with label=About linking to about"
+  },
+  "link.item.label.Friends": {
+    "message": "友链",
+    "description": "The label of footer link with label=Friends linking to friends"
+  },
+  "link.item.label.Settings": {
+    "message": "设置",
+    "description": "The label of footer link with label=Settings linking to settings"
+  },
+  "link.item.label.Repository": {
+    "message": "仓库",
+    "description": "The label of footer link with label=Repository linking to https://github.com/lailai0916/lailai0916.github.io"
+  },
+  "copyright": {
+    "message": "版权所有 © 2024-2025 lailai，使用 <a href=\"https://docusaurus.io\" target=\"_blank\">Docusaurus</a> 构建。 <p xmlns:cc=\"http://creativecommons.org/ns#\" >本网站内容遵循 <a href=\"https://creativecommons.org/licenses/by-nc-sa/4.0/?ref=chooser-v1\" target=\"_blank\" rel=\"license noopener noreferrer\" style=\"display:inline-block;\">CC BY-NC-SA 4.0<img style=\"height:22px!important;margin-left:3px;vertical-align:text-bottom;\" src=\"https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1\" alt=\"\"><img style=\"height:22px!important;margin-left:3px;vertical-align:text-bottom;\" src=\"https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1\" alt=\"\"><img style=\"height:22px!important;margin-left:3px;vertical-align:text-bottom;\" src=\"https://mirrors.creativecommons.org/presskit/icons/nc.svg?ref=chooser-v1\" alt=\"\"><img style=\"height:22px!important;margin-left:3px;vertical-align:text-bottom;\" src=\"https://mirrors.creativecommons.org/presskit/icons/sa.svg?ref=chooser-v1\" alt=\"\"></a></p>",
+    "description": "The footer copyright"
+  }
+}

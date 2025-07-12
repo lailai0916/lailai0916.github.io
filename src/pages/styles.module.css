@@ -1,0 +1,11 @@
+.section {
+  width: 100%;
+}
+
+.section > *:nth-child(odd) {
+  background: transparent;
+}
+
+.section > *:nth-child(even) {
+  background: var(--ifm-color-emphasis-100);
+}

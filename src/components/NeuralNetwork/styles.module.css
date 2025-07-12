@@ -1,0 +1,189 @@
+/* Neural Network Component - Complete Color Variables */
+.container {
+  /* Default Theme (Dark Mode) */
+  /* Background Colors */
+  --nn-bg-primary: #000000;
+  --nn-bg-overlay: rgba(0, 0, 0, 0.6);
+  --nn-transparent: transparent;
+
+  /* Text Colors */
+  --nn-text-primary: #ffffff;
+  --nn-text-secondary: #000000;
+  --nn-text-accent: #ffff00;
+
+  /* Neuron Colors */
+  --nn-neuron-border-selected: #ffff00;
+  --nn-neuron-border-default: #ffffff;
+  --nn-neuron-fill-default: #000000;
+
+  /* Neuron Gray Color Mapping (Dark Mode: 0->0, 1->255) */
+  --nn-neuron-gray-base: 0;
+  --nn-neuron-gray-multiplier: 255;
+
+  /* Connection Colors (RGB values for rgba() usage) */
+  --nn-connection-negative-rgb: 252, 98, 85;
+  --nn-connection-positive-rgb: 88, 196, 221;
+  --nn-connection-animation: rgba(255, 255, 0, 0.5);
+  --nn-connection-default: #666666;
+
+  /* Button Colors */
+  --nn-button-clear: var(--ifm-color-primary-lightest);
+  --nn-button-primary: var(--ifm-color-primary);
+
+  /* Border Colors */
+  --nn-stroke-primary: var(--ifm-color-primary);
+  --nn-stroke-accent: #ffff00;
+
+  /* Grid Colors */
+  --nn-grid-white: #ffffff;
+  --nn-grid-white-rgb: 255, 255, 255;
+  --nn-grid-stroke: #ffff00;
+  --nn-grid-fill: #000000;
+
+  /* Layout */
+  width: 100%;
+  max-width: 640px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Light Mode Theme */
+[data-theme='light'] .container {
+  /* Background Colors */
+  --nn-bg-primary: #ffffff;
+  --nn-bg-overlay: rgba(255, 255, 255, 0.8);
+  --nn-transparent: transparent;
+
+  /* Text Colors */
+  --nn-text-primary: #1a1a1a;
+  --nn-text-secondary: #ffffff;
+  --nn-text-accent: #e67e00;
+
+  /* Neuron Colors */
+  --nn-neuron-border-selected: #e67e00;
+  --nn-neuron-border-default: #333333;
+  --nn-neuron-fill-default: #ffffff;
+
+  /* Neuron Gray Color Mapping (Light Mode: 0->255, 1->0) */
+  --nn-neuron-gray-base: 255;
+  --nn-neuron-gray-multiplier: -255;
+
+  /* Connection Colors (RGB values for rgba() usage) */
+  --nn-connection-negative-rgb: 220, 53, 69;
+  --nn-connection-positive-rgb: 13, 110, 253;
+  --nn-connection-animation: rgba(230, 126, 0, 0.6);
+  --nn-connection-default: #999999;
+
+  /* Button Colors */
+  --nn-button-clear: var(--ifm-color-primary-lightest);
+  --nn-button-primary: var(--ifm-color-primary);
+
+  /* Border Colors */
+  --nn-stroke-primary: var(--ifm-color-primary);
+  --nn-stroke-accent: #e67e00;
+
+  /* Grid Colors */
+  --nn-grid-white: #1a1a1a;
+  --nn-grid-white-rgb: 26, 26, 26;
+  --nn-grid-stroke: #e67e00;
+  --nn-grid-fill: #ffffff;
+}
+
+.svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-width: 640px;
+  touch-action: none;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+/* 神经元样式 */
+.neuron {
+  cursor: pointer;
+}
+
+/* 连接线样式 */
+.connection {
+  stroke: var(--nn-connection-default);
+  stroke-width: 0.5;
+  fill: none;
+  opacity: 0.3;
+  transition: opacity 0.3s ease;
+}
+
+.connection.active {
+  opacity: 0.8;
+}
+
+/* 按钮样式 - 匹配 3B1B 原版 */
+.clearButton {
+  fill: var(--nn-button-clear);
+  cursor: pointer;
+}
+
+.checkButton {
+  fill: var(--nn-button-primary);
+  cursor: pointer;
+}
+
+.buttonDisabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+.buttonText {
+  fill: var(--nn-text-secondary);
+  font-family: sans-serif;
+  font-size: 24px;
+  pointer-events: none;
+  user-select: none;
+}
+
+.buttonTextWhite {
+  fill: var(--nn-text-primary);
+  font-family: sans-serif;
+  font-size: 24px;
+  pointer-events: none;
+  user-select: none;
+}
+
+/* 权重网格样式 */
+.weightGrid {
+  stroke: var(--nn-grid-stroke);
+  stroke-width: 0.5;
+  fill: var(--nn-grid-fill);
+}
+
+/* 动画样式 */
+.animating {
+  transition: transform 0.5s ease-in-out;
+}
+
+/* 预处理提示 */
+.processingOverlay {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 200ms ease-in-out;
+}
+
+.processingOverlay.active {
+  opacity: 1;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+  .container {
+    margin: 0;
+  }
+
+  .buttonText,
+  .buttonTextWhite {
+    font-size: 20px;
+  }
+}

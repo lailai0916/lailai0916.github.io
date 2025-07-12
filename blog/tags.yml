@@ -1,0 +1,32 @@
+top:
+  label: 置顶
+
+notice:
+  label: 公告
+
+math:
+  label: 数学
+
+misc:
+  label: 杂项
+
+resource:
+  label: 资源
+
+solution:
+  label: 题解
+
+luogu:
+  label: 洛谷
+
+codeforces:
+  label: Codeforces
+
+atcoder:
+  label: AtCoder
+
+spoj:
+  label: SPOJ
+
+uva:
+  label: UVA

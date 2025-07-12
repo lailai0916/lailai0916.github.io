@@ -1,0 +1,499 @@
+/* ==========================================================================
+   1. Core Layout & Structure
+   ========================================================================== */
+
+.main {
+  position: relative;
+  overflow-x: hidden;
+  padding: 2rem 0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem 4rem 2rem;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+/* ==========================================================================
+   2. Sticky Controls (Navigation & Search)
+   ========================================================================== */
+
+.stickyControls {
+  position: sticky;
+  top: 60px; /* Match navbar height */
+  background: var(--ifm-background-color);
+  padding: 2rem 0 1rem; /* Restore vertical spacing */
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem; /* Increase gap slightly for better separation */
+  border-bottom: 1px solid var(--ifm-color-emphasis-200);
+  margin-bottom: 3rem; /* Restore original margin */
+}
+
+.searchBarContainer {
+  position: relative;
+  width: 100%;
+}
+
+.searchBar {
+  width: 100%;
+  padding: 0.75rem 1rem 0.75rem 2.5rem;
+  border-radius: 8px;
+  border: 1px solid var(--ifm-color-emphasis-300);
+  background-color: var(--ifm-color-emphasis-100);
+  color: var(--ifm-font-color-base);
+  font-size: 1rem;
+  transition:
+    border-color 0.2s,
+    box-shadow 0.2s;
+}
+
+.searchBar:focus {
+  outline: none;
+  border-color: var(--ifm-color-primary);
+  box-shadow: 0 0 0 3px var(--ifm-color-primary-lightest);
+}
+
+.searchIcon {
+  position: absolute;
+  left: 0.8rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--ifm-color-emphasis-500);
+}
+
+.categoryNavContent {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  justify-content: center;
+}
+
+.categoryButton {
+  background: var(--ifm-background-color);
+  border: 2px solid var(--ifm-color-emphasis-300);
+  color: var(--ifm-font-color-base);
+  border-radius: 50px;
+  padding: 0.75rem 1.5rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  white-space: nowrap;
+}
+
+.categoryButton:hover {
+  border-color: var(--ifm-color-primary);
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.categoryButtonActive {
+  background: var(--ifm-color-primary);
+  border-color: var(--ifm-color-primary);
+  color: white;
+  box-shadow: 0 4px 12px rgba(var(--ifm-color-primary-rgb), 0.3);
+}
+
+.categoryButtonActive:hover {
+  background: var(--ifm-color-primary-dark);
+  border-color: var(--ifm-color-primary-dark);
+  color: white;
+}
+
+/* ==========================================================================
+   3. Page Header & Stats
+   ========================================================================== */
+
+.quickStats {
+  background-color: var(--ifm-background-color);
+  padding: 0;
+  border-bottom: 1px solid var(--ifm-color-emphasis-200);
+}
+
+.quickStatsInner {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 3rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 3rem;
+}
+
+.leftContent {
+  flex: 1;
+  max-width: 600px;
+}
+
+.mainTitle {
+  font-size: 3rem !important;
+  font-weight: 700;
+  margin: 0 0 1rem 0;
+  color: var(--ifm-font-color-base);
+  line-height: 1.2;
+}
+
+.mainDescription {
+  font-size: 1.2rem;
+  color: var(--ifm-color-emphasis-700);
+  margin: 0;
+  line-height: 1.6;
+}
+
+.highlight {
+  color: var(--ifm-color-primary);
+  position: relative;
+}
+
+.statsGrid {
+  display: flex;
+  gap: 1.5rem;
+  flex-shrink: 0;
+}
+
+.statCard {
+  background: var(--ifm-card-background-color);
+  border: 2px solid var(--ifm-color-emphasis-200);
+  border-radius: 16px;
+  padding: 1.5rem;
+  min-width: 180px;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.statCard:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-color: var(--ifm-color-primary);
+}
+
+.statIcon {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  background: var(--ifm-color-emphasis-100);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--ifm-color-emphasis-600);
+}
+
+.statContent {
+  flex: 1;
+}
+
+.statNumber {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--ifm-color-primary);
+  line-height: 1;
+  margin: 0;
+}
+
+.statLabel {
+  font-size: 0.9rem;
+  color: var(--ifm-color-emphasis-700);
+  margin-top: 0.25rem;
+  font-weight: 500;
+}
+
+/* ==========================================================================
+   4. Category Sections & Resource Grid
+   ========================================================================== */
+
+.categorySection {
+  background: var(--ifm-background-color);
+}
+
+.categoryHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid var(--ifm-color-emphasis-200);
+}
+
+.categoryTitle {
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 0;
+  color: var(--ifm-font-color-base);
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.categoryIcon {
+  color: var(--ifm-color-primary);
+  flex-shrink: 0;
+}
+
+.categoryCount {
+  background: var(--ifm-color-emphasis-200);
+  color: var(--ifm-color-emphasis-800);
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.resourceGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 1.5rem;
+}
+
+/* ==========================================================================
+   5. Resource Card Component
+   ========================================================================== */
+
+.resourceCard {
+  display: block;
+  text-decoration: none !important;
+  color: inherit !important;
+  height: 100%;
+}
+
+.resourceCardContent {
+  background: var(--ifm-card-background-color);
+  border: 2px solid var(--ifm-color-emphasis-200);
+  border-radius: 16px;
+  padding: 1.5rem;
+  height: 100%;
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  position: relative;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.resourceCard:hover .resourceCardContent {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-color: var(--ifm-color-primary);
+}
+
+.resourceCardIcon {
+  flex-shrink: 0;
+  position: relative;
+  width: 48px;
+  height: 48px;
+  background: var(--ifm-color-emphasis-100);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.resourceCardImage {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}
+
+.resourceCardFallback {
+  display: none;
+  color: var(--ifm-color-emphasis-600);
+  align-items: center;
+  justify-content: center;
+}
+
+.resourceCardFallbackVisible {
+  display: flex;
+}
+
+.resourceCardBody {
+  flex: 1;
+  min-width: 0;
+}
+
+.resourceCardTitle {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin: 0 0 0.5rem 0;
+  color: var(--ifm-font-color-base);
+  line-height: 1.3;
+}
+
+.resourceCardDescription {
+  font-size: 0.9rem;
+  color: var(--ifm-color-emphasis-700);
+  margin: 0;
+  line-height: 1.5;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* ==========================================================================
+   6. Utility & Fallback States
+   ========================================================================== */
+
+.noResults {
+  text-align: center;
+  padding: 4rem 1rem;
+  border: 1px dashed var(--ifm-color-emphasis-300);
+  border-radius: var(--ifm-card-border-radius);
+  background-color: var(--ifm-color-emphasis-100);
+}
+
+.noResults p {
+  margin-bottom: 1.5rem;
+  font-size: 1.1rem;
+}
+
+.clearSearchButton {
+  background-color: var(--ifm-color-primary);
+  color: white;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.clearSearchButton:hover {
+  background-color: var(--ifm-color-primary-dark);
+}
+
+/* ==========================================================================
+   7. Responsive Design
+   ========================================================================== */
+
+@media (max-width: 768px) {
+  .quickStatsInner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2rem;
+    padding: 2rem 1rem;
+  }
+
+  .leftContent {
+    max-width: none;
+  }
+
+  .mainTitle {
+    font-size: 2.2rem !important;
+  }
+
+  .statsGrid {
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+  }
+
+  .statCard {
+    min-width: auto;
+  }
+
+  .categoryHeader {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .resourceGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .container {
+    padding: 0 1rem 4rem 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .mainTitle {
+    font-size: 2rem !important;
+  }
+
+  .mainDescription {
+    font-size: 1.1rem;
+  }
+
+  .statCard {
+    padding: 1rem;
+  }
+
+  .statIcon {
+    width: 36px;
+    height: 36px;
+  }
+
+  .categoryButton {
+    padding: 0.5rem 1rem;
+    font-size: 0.85rem;
+  }
+
+  .resourceCardContent {
+    padding: 1rem;
+  }
+}
+
+/* ==========================================================================
+   8. Dark Mode & Animations
+   ========================================================================== */
+
+html[data-theme='dark'] .quickStats {
+  border-bottom-color: var(--ifm-color-emphasis-300);
+}
+
+html[data-theme='dark'] .statCard {
+  border-color: var(--ifm-color-emphasis-300);
+}
+
+html[data-theme='dark'] .statCard:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  border-color: var(--ifm-color-primary);
+}
+
+html[data-theme='dark'] .statIcon {
+  background: var(--ifm-color-emphasis-200);
+  color: var(--ifm-color-emphasis-600);
+}
+
+html[data-theme='dark'] .resourceCardContent {
+  border-color: var(--ifm-color-emphasis-300);
+}
+
+html[data-theme='dark'] .resourceCard:hover .resourceCardContent {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  border-color: var(--ifm-color-primary);
+}
+
+/* Animations - Unity · Simplicity · Modernity */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.categorySection {
+  animation: fadeIn 0.3s ease-out;
+}
+
+.resourceCard {
+  animation: fadeIn 0.3s ease-out;
+}
