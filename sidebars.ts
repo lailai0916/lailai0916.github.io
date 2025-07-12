@@ -625,7 +625,7 @@ const sidebars: SidebarsConfig = {
         {
           type: 'category',
           label: '艺术博览会',
-          items: ['project/desmos/art-expo/iclock-2024'],
+          items: ['project/desmos/art-expo/iclock'],
         },
         {
           type: 'category',

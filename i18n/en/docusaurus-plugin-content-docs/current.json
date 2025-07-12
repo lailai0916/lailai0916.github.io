@@ -319,25 +319,13 @@
     "message": "艺术博览会",
     "description": "The label for category 艺术博览会 in sidebar sidebar3"
   },
-  "sidebar.sidebar3.category.艺术博览会.link.generated-index.description": {
-    "message": "Desmos 艺术博览会项目。",
-    "description": "The generated-index page description for category 艺术博览会 in sidebar sidebar3"
-  },
   "sidebar.sidebar3.category.图形": {
     "message": "图形",
     "description": "The label for category 图形 in sidebar sidebar3"
   },
-  "sidebar.sidebar3.category.图形.link.generated-index.description": {
-    "message": "使用 Desmos 绘制的图形项目。",
-    "description": "The generated-index page description for category 图形 in sidebar sidebar3"
-  },
   "sidebar.sidebar3.category.尺规作图": {
     "message": "尺规作图",
     "description": "The label for category 尺规作图 in sidebar sidebar3"
-  },
-  "sidebar.sidebar3.category.尺规作图.link.generated-index.description": {
-    "message": "使用 Desmos 进行经典的尺规作图。",
-    "description": "The generated-index page description for category 尺规作图 in sidebar sidebar3"
   },
   "sidebar.sidebar3.category.其他": {
     "message": "其他",
