@@ -85,11 +85,11 @@ Stay updated with the latest blog posts:
 - [Atom Feed](https://lailai.one/blog/atom.xml)
 - [JSON Feed](https://lailai.one/blog/feed.json)
 
-## # Support
+## # Sponsor
 
 |              Alipay               |            WeChat Pay             |
 | :-------------------------------: | :-------------------------------: |
-| ![](static/img/qrcode/Alipay.svg) | ![](static/img/qrcode/WeChat.svg) |
+| ![](static/img/sponsor/alipay.svg) | ![](static/img/sponsor/wechat.svg) |
 
 ## # License
 

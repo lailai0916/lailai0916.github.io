@@ -89,7 +89,7 @@ website
 
 |              支付宝               |             微信支付              |
 | :-------------------------------: | :-------------------------------: |
-| ![](static/img/qrcode/Alipay.svg) | ![](static/img/qrcode/WeChat.svg) |
+| ![](static/img/sponsor/alipay.svg) | ![](static/img/sponsor/wechat.svg) |
 
 ## # 许可证
 
