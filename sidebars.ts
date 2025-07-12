@@ -583,8 +583,8 @@ const sidebars: SidebarsConfig = {
             description: '终端编程相关教程和工具函数。',
           },
           items: [
-            'project/terminal/教程/迷宫游戏',
-            'project/terminal/教程/工具函数',
+            'project/terminal/tutorial/maze-game',
+            'project/terminal/tutorial/utils',
           ],
         },
       ],
@@ -605,10 +605,10 @@ const sidebars: SidebarsConfig = {
             description: '个人网站项目的搭建过程和功能介绍。',
           },
           items: [
-            'project/github/lailais-home/搭建/index',
-            'project/github/lailais-home/插件',
-            'project/github/lailais-home/组件',
-            'project/github/lailais-home/设计系统改进',
+            'project/github/lailais-home/setup/index',
+            'project/github/lailais-home/plugins',
+            'project/github/lailais-home/components',
+            'project/github/lailais-home/design',
           ],
         },
         'project/github/lailai0916/index',
@@ -625,38 +625,26 @@ const sidebars: SidebarsConfig = {
         {
           type: 'category',
           label: '艺术博览会',
-          link: {
-            type: 'generated-index',
-            description: 'Desmos 艺术博览会项目。',
-          },
-          items: ['project/desmos/艺术博览会/iclock'],
+          items: ['project/desmos/art-expo/iclock'],
+        },
+        {
+          type: 'category',
+          label: '尺规作图',
+          items: [
+            'project/desmos/geometric-construction/heptadecagon',
+            'project/desmos/geometric-construction/three-circle-tangent',
+            'project/desmos/geometric-construction/apple-logo',
+            'project/desmos/geometric-construction/china-flag',
+          ],
         },
         {
           type: 'category',
           label: '图形',
-          link: {
-            type: 'generated-index',
-            description: '使用 Desmos 绘制的图形项目。',
-          },
           items: [
             'project/desmos/图形/细胞膜融合',
             'project/desmos/图形/凸透镜成像',
             'project/desmos/图形/法国国旗',
             'project/desmos/图形/美国国旗',
-          ],
-        },
-        {
-          type: 'category',
-          label: '尺规作图',
-          link: {
-            type: 'generated-index',
-            description: '使用 Desmos 进行经典的尺规作图。',
-          },
-          items: [
-            'project/desmos/尺规作图/正十七边形',
-            'project/desmos/尺规作图/三圆公接线',
-            'project/desmos/尺规作图/AppleLogo',
-            'project/desmos/尺规作图/中国国旗',
           ],
         },
       ],
