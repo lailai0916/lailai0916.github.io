@@ -10,9 +10,6 @@ math:
 misc:
   label: 杂项
 
-resource:
-  label: 资源
-
 solution:
   label: 题解
 
