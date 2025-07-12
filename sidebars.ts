@@ -381,14 +381,14 @@ const sidebars: SidebarsConfig = {
                 id: 'note/math/advanced/linear-algebra/index',
               },
               items: [
-                'note/math/advanced/linear-algebra/行列式的性质与计算',
-                'note/math/advanced/linear-algebra/行列式的展开',
-                'note/math/advanced/linear-algebra/矩阵',
-                'note/math/advanced/linear-algebra/万能的初等行变换',
-                'note/math/advanced/linear-algebra/向量',
-                'note/math/advanced/linear-algebra/解方程组',
-                'note/math/advanced/linear-algebra/特征值、特征向量、对角化',
-                'note/math/advanced/linear-algebra/二次型',
+                'note/math/advanced/linear-algebra/l1',
+                'note/math/advanced/linear-algebra/l2',
+                'note/math/advanced/linear-algebra/l3',
+                'note/math/advanced/linear-algebra/l4',
+                'note/math/advanced/linear-algebra/l5',
+                'note/math/advanced/linear-algebra/l6',
+                'note/math/advanced/linear-algebra/l7',
+                'note/math/advanced/linear-algebra/l8',
               ],
             },
             {
@@ -540,7 +540,7 @@ const sidebars: SidebarsConfig = {
       link: {
         type: 'generated-index',
         description:
-          '本章收录各种实用的文档模板，包括题解、Markdown、LaTeX等常用模板。',
+          '本章收录各种实用的文档模板，包括Markdown、LaTeX、Mermaid、题解等常用模板。',
       },
       items: [
         'project/templates/markdown',
@@ -557,11 +557,11 @@ const sidebars: SidebarsConfig = {
         description: '本章展示各种实用的小工具和计算器项目。',
       },
       items: [
-        'project/tools/ASCII-Art',
+        'project/tools/ascii-art1',
         'project/tools/身份证号校验器',
         'project/tools/电阻计算器',
-        'project/tools/多项式计算器',
-        'project/tools/挂机脚本',
+        'project/tools/poly-calc',
+        'project/tools/afk-script',
       ],
     },
     {
