@@ -572,9 +572,9 @@ const sidebars: SidebarsConfig = {
         description: '本章展示基于终端的项目和教程。',
       },
       items: [
-        'project/terminal/igame1',
-        'project/terminal/地图生成器',
-        'project/terminal/图片处理',
+        'project/terminal/igame',
+        'project/terminal/map-generator',
+        'project/terminal/image-processor',
         {
           type: 'category',
           label: '教程',
