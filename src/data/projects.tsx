@@ -34,7 +34,7 @@ export const PROJECT_LIST: ProjectItem[] = [
       message:
         'A collection of terminal mini-games developed in C++, featuring a variety of classic gameplay.',
     }),
-    href: '/docs/project/terminal/iGame',
+    href: '/docs/project/terminal/igame',
     tech: 'C++ • Terminal',
     status: {
       text: translate({
