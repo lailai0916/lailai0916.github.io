@@ -5,11 +5,14 @@
 ## 参考资料
 
 - [用desmos模拟细胞的分裂与融合 - bilibili](https://www.bilibili.com/video/BV1kr42187eE)
+
+## 项目链接
+
 - [细胞膜融合 | Desmos](https://www.desmos.com/calculator/bsweyrd7l7)
 
 ## 原理
 
-到三点的距离乘积为定值：
+计算到三点的距离乘积为定值的点集：
 
 $$
 \sqrt{(x-x_1)^2+(y-y_1)^2}\cdot\sqrt{(x-x_2)^2+(y-y_2)^2}\cdot\sqrt{(x-x_3)^2+(y-y_3)^2}=r^3

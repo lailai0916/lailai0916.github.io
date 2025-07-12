@@ -1,11 +1,14 @@
-# 凸透镜成像
+# 凸透镜模型
 
 一个凸透镜成像演示模型。
 
 ## 参考资料
 
 - [透镜 - 维基百科](https://zh.wikipedia.org/wiki/透镜)
-- [凸透镜成像 | Desmos](https://www.desmos.com/calculator/jgwzcw32ub)
+
+## 项目链接
+
+- [凸透镜模型 | Desmos](https://www.desmos.com/calculator/jgwzcw32ub)
 
 ## 原理
 
