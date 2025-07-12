@@ -1,5 +1,9 @@
 # lailai0916
 
+## 项目链接
+
+- [lailai0916/lailai0916: lailai's Profile](https://github.com/lailai0916/lailai0916)
+
 ## 说明
 
 `username/username` 是一个特殊的 GitHub 仓库，它的 README.md 将出现在你个人主页的公共资料上。
@@ -48,14 +52,29 @@
 
 ## 标题
 
-`README.md` 是 Markdown 格式，支持嵌入 HTML 代码。
+`README.md` 文件采用 Markdown 格式，同时支持嵌入 HTML 代码。
+
+我选择使用 HTML 编写一个居中的标题，并添加表情和链接。
 
 ```html live
 <h1 align="center">
-  🎉
-  <a href="https://www.lailai.one"> Hello, I'm lailai </a>
-  🥳
+  🎉 <a href="https://www.lailai.one">Hello, I'm lailai</a> 🥳
 </h1>
+```
+
+## 国际化
+
+你可以在仓库中添加多语言版本，并为每个版本提供链接。
+
+```html
+<p align="center">
+  <a href="README.md">English</a> | 
+  <a href="README.zh-Hans.md">简体中文</a> | 
+  <a href="README.zh-Hant.md">繁體中文</a> | 
+  <a href="README.ja.md">日本語</a> | 
+  <a href="README.es.md">Español</a> | 
+  <a href="README.fr.md">Français</a>
+</p>
 ```
 
 ## 技术栈图标

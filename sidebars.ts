@@ -597,12 +597,13 @@ const sidebars: SidebarsConfig = {
         description: '本章记录 GitHub 相关的项目和经验。',
       },
       items: [
+        'project/github/lailai0916/index',
         {
           type: 'category',
           label: "lailai's Home",
           link: {
-            type: 'generated-index',
-            description: '个人网站项目的搭建过程和功能介绍。',
+            type: 'doc',
+            id: 'project/github/lailais-home/index',
           },
           items: [
             'project/github/lailais-home/setup/index',
@@ -611,7 +612,6 @@ const sidebars: SidebarsConfig = {
             'project/github/lailais-home/design',
           ],
         },
-        'project/github/lailai0916/index',
       ],
     },
     {

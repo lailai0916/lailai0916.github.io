@@ -303,10 +303,6 @@
     "message": "lailai's Home",
     "description": "The label for category lailai's Home in sidebar sidebar3"
   },
-  "sidebar.sidebar3.category.lailai's Home.link.generated-index.description": {
-    "message": "个人网站项目的搭建过程和功能介绍。",
-    "description": "The generated-index page description for category lailai's Home in sidebar sidebar3"
-  },
   "sidebar.sidebar3.category.Desmos": {
     "message": "Desmos",
     "description": "The label for category Desmos in sidebar sidebar3"
