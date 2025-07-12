@@ -629,7 +629,7 @@ const sidebars: SidebarsConfig = {
             type: 'generated-index',
             description: 'Desmos 艺术博览会项目。',
           },
-          items: ['project/desmos/艺术博览会/iClock'],
+          items: ['project/desmos/艺术博览会/iclock'],
         },
         {
           type: 'category',
