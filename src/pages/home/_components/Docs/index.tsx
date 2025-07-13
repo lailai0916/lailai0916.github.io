@@ -44,7 +44,7 @@ export default function FeaturesContainer() {
   const secondRow = FEATURE_LIST.slice(3);
 
   return (
-    <div className="container text--center">
+    <div className="container text--center" style={{ padding: '40px 0' }}>
       <div className="row margin-top--lg margin-bottom--lg">
         {firstRow.map((feature, idx) => (
           <Feature feature={feature} key={idx} />
