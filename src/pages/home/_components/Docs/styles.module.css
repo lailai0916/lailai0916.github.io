@@ -15,8 +15,6 @@
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  text-decoration: none !important;
-  color: inherit !important;
 }
 
 .featureIcon {
@@ -31,15 +29,4 @@ html[data-theme='dark'] .featureIcon {
 
 .section {
   padding: 40px 0;
-}
-
-/* 小屏幕下卡片间距 */
-@media (max-width: 996px) {
-  .featureCard {
-    margin-bottom: 2rem;
-  }
-
-  .featureCard:last-child {
-    margin-bottom: 0;
-  }
 }

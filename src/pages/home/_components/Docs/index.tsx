@@ -23,6 +23,7 @@ function Feature({ feature, className }: FeatureProps) {
         width={Math.floor(feature.image.width)}
         height={Math.floor(feature.image.height)}
         src={withBaseUrl(feature.image.src)}
+        loading="lazy"
       />
       <Heading as="h3" className={styles.featureHeading}>
         <Link
@@ -49,30 +50,20 @@ export default function FeaturesContainer() {
   const secondRow = FEATURE_LIST.slice(3);
 
   return (
-    <div className="py-16 w-full flex flex-col items-center">
-      <div className="container text--center">
-        <div className="row margin-top--lg margin-bottom--lg">
-          {firstRow.map((feature, idx) => (
-            <Feature
-              feature={feature}
-              key={idx}
-              className={styles.featureCard}
-            />
-          ))}
-        </div>
-        <div className="row">
-          {secondRow.map((feature, idx) => (
-            <Feature
-              feature={feature}
-              key={idx}
-              className={clsx(
-                'col--4',
-                idx === 0 && 'col--offset-2',
-                styles.featureCard
-              )}
-            />
-          ))}
-        </div>
+    <div className="container text--center">
+      <div className="row margin-top--lg margin-bottom--lg">
+        {firstRow.map((feature, idx) => (
+          <Feature feature={feature} key={idx} />
+        ))}
+      </div>
+      <div className="row">
+        {secondRow.map((feature, idx) => (
+          <Feature
+            feature={feature}
+            key={idx}
+            className={clsx('col--4', idx === 0 && 'col--offset-2')}
+          />
+        ))}
       </div>
     </div>
   );
