@@ -1,12 +1,8 @@
 <div align="center">
   <img src="static/img/logo.svg" width="150" height="150">
-</div>
-<h1 align="center">
-  <a href="https://www.lailai.one">lailai's Home</a>
-</h1>
-<p align="center">
+  <h1><a href="https://www.lailai.one">lailai's Home</a></h1>
   <a href="README.md">English</a> | <a href="README.zh-Hans.md">简体中文</a>
-</p>
+</div>
 
 ## # Website Introduction
 
