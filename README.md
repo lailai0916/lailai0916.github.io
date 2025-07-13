@@ -87,8 +87,8 @@ Stay updated with the latest blog posts:
 
 ## # Sponsor
 
-|              Alipay               |            WeChat Pay             |
-| :-------------------------------: | :-------------------------------: |
+|               Alipay               |             WeChat Pay             |
+| :--------------------------------: | :--------------------------------: |
 | ![](static/img/sponsor/alipay.svg) | ![](static/img/sponsor/wechat.svg) |
 
 ## # License

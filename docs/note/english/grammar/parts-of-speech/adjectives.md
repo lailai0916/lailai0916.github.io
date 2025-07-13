@@ -34,16 +34,14 @@
    - large $\to$ larger $\to$ largest
    - late $\to$ later $\to$ latest
 
-   :::
-   2. 以“辅音+y”结尾：将 y 改为 i。
+   ::: 2. 以“辅音+y”结尾：将 y 改为 i。
 
    :::note[示例]
    - happy $\to$ happier $\to$ happiest
    - easy $\to$ easier $\to$ easiest
    - busy $\to$ busier $\to$ busiest
 
-   :::
-   3. 重读闭音节单词（以“单元音+单辅音”结尾）：双写末尾辅音。
+   ::: 3. 重读闭音节单词（以“单元音+单辅音”结尾）：双写末尾辅音。
 
    :::note[示例]
    - big $\to$ bigger $\to$ biggest

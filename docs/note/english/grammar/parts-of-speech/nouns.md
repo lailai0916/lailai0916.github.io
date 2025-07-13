@@ -30,8 +30,7 @@
    - bus $\to$ buses
    - watch $\to$ watches
 
-   :::
-   2. 以“辅音+y”结尾：将 y 改为 i，再加 -es。
+   ::: 2. 以“辅音+y”结尾：将 y 改为 i，再加 -es。
 
    :::note[示例]
    - city $\to$ cities
@@ -39,16 +38,14 @@
    - baby $\to$ babies
    - country $\to$ countries
 
-   :::
-   3. 以 f 或 fe 结尾：将 f 改为 v，再加 -es。
+   ::: 3. 以 f 或 fe 结尾：将 f 改为 v，再加 -es。
 
    :::note[示例]
    - knife $\to$ knives
    - wife $\to$ wives
    - leaf $\to$ leaves
 
-   :::
-   4. 以 o 结尾：加 -s 或 -es。
+   ::: 4. 以 o 结尾：加 -s 或 -es。
 
    :::note[示例]
    - tomato $\to$ tomatoes

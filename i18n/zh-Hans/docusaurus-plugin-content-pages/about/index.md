@@ -3,7 +3,7 @@ title: 关于
 hide_table_of_contents: true
 ---
 
-import { Title, Device, Community, Comment } from '@site/src/pages/about/_components';
+import { Title, Device, Community, Comment } from '@site/src/pages/about/\_components';
 
 <div style={{maxWidth: '664px', margin: 'auto'}}>
 

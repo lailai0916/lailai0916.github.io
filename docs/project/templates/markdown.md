@@ -309,7 +309,6 @@ int main()
 
 ```markdown
 ---
-
 ---
 
 ---
