@@ -6,9 +6,9 @@ import { useColorMode } from '@docusaurus/theme-common';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 
 import Giscus from '@giscus/react';
-import { Icon } from '@iconify/react';
 import { COMMUNITY_LIST } from '@site/src/data/community';
 import { DEVICE_LIST } from '@site/src/data/device';
+import IconText from '@site/src/components/IconText';
 import styles from './styles.module.css';
 
 export const Title = () => (
@@ -25,8 +25,10 @@ export const Title = () => (
 
 export const Device = () => {
   const columns = useMemo(() => {
-    const midIndex = Math.ceil(DEVICE_LIST.length / 2);
-    return [DEVICE_LIST.slice(0, midIndex), DEVICE_LIST.slice(midIndex)];
+    return [
+      DEVICE_LIST.filter((_, i) => i % 2 === 0),
+      DEVICE_LIST.filter((_, i) => i % 2 === 1),
+    ];
   }, []);
 
   return (
@@ -51,8 +53,10 @@ export const Device = () => {
 
 export const Community = () => {
   const columns = useMemo(() => {
-    const midIndex = Math.ceil(COMMUNITY_LIST.length / 2);
-    return [COMMUNITY_LIST.slice(0, midIndex), COMMUNITY_LIST.slice(midIndex)];
+    return [
+      COMMUNITY_LIST.filter((_, i) => i % 2 === 0),
+      COMMUNITY_LIST.filter((_, i) => i % 2 === 1),
+    ];
   }, []);
 
   return (
@@ -61,10 +65,11 @@ export const Community = () => {
         <div key={index} className={styles.column}>
           {columnItems.map((item) => (
             <div key={item.title} className={styles.listItem}>
-              <Icon icon={item.icon} width="1.25rem" height="1.25rem" />
-              <Link to={item.href} style={{ color: 'inherit' }}>
-                {item.text}
-              </Link>
+              <IconText icon={item.icon} colorMode="monochrome">
+                <Link to={item.href} style={{ color: 'inherit' }}>
+                  {item.text}
+                </Link>
+              </IconText>
             </div>
           ))}
         </div>

@@ -1,0 +1,12 @@
+.iconText {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5em;
+}
+
+.iconTheme {
+  color: var(--ifm-color-primary);
+}
+html[data-theme='dark'] .iconTheme {
+  color: var(--ifm-color-primary-light);
+}

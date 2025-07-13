@@ -2,9 +2,9 @@ import React from 'react';
 import clsx from 'clsx';
 import Link from '@docusaurus/Link';
 import Heading from '@theme/Heading';
-import { Icon } from '@iconify/react';
 import { useBaseUrlUtils } from '@docusaurus/useBaseUrl';
 import { FEATURE_LIST, type FeatureItem } from '@site/src/data/features';
+import IconText from '@site/src/components/IconText';
 import styles from './styles.module.css';
 
 interface FeatureProps {
@@ -31,13 +31,7 @@ function Feature({ feature, className }: FeatureProps) {
           style={{ color: 'inherit' }}
           className={styles.featureLink}
         >
-          <Icon
-            icon={feature.icon}
-            width={24}
-            height={24}
-            className={styles.featureIcon}
-          />
-          {feature.title}
+          <IconText icon={feature.icon}>{feature.title}</IconText>
         </Link>
       </Heading>
       <div className="padding-horiz--md">{feature.text}</div>

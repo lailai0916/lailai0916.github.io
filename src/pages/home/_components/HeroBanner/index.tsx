@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import Link from '@docusaurus/Link';
 import Heading from '@theme/Heading';
-import { Icon } from '@iconify/react';
 import Translate from '@docusaurus/Translate';
+import IconText from '@site/src/components/IconText';
 import styles from './styles.module.css';
 
 export default function HeroBanner() {
@@ -30,24 +30,16 @@ export default function HeroBanner() {
         <div className={styles.indexCtas}>
           <Link to="/about" className={styles.ctaCard}>
             <div className={styles.ctaCardContent}>
-              <Icon
-                icon="lucide:user-circle"
-                width={24}
-                height={24}
-                className={styles.ctaCardIcon}
-              />
-              <Translate id="home.herobanner.about">About</Translate>
+              <IconText icon="lucide:user-circle">
+                <Translate id="home.herobanner.about">About</Translate>
+              </IconText>
             </div>
           </Link>
           <Link to="/blog" className={styles.ctaCard}>
             <div className={styles.ctaCardContent}>
-              <Icon
-                icon="lucide:book-open"
-                width={24}
-                height={24}
-                className={styles.ctaCardIcon}
-              />
-              <Translate id="home.herobanner.blog">Blog</Translate>
+              <IconText icon="lucide:book-open">
+                <Translate id="home.herobanner.blog">Blog</Translate>
+              </IconText>
             </div>
           </Link>
         </div>

@@ -1,7 +1,7 @@
 import React from 'react';
 import { translate } from '@docusaurus/Translate';
-import { Icon } from '@iconify/react';
 import { PROJECT_LIST } from '@site/src/data/projects';
+import IconText from '@site/src/components/IconText';
 import {
   BaseCard,
   Section,
@@ -11,11 +11,6 @@ import {
   GridConfigs,
   TEXT_COLORS,
 } from '../common';
-
-// 图标尺寸配置 - 学习Blog的明确尺寸控制机制
-const ICON_SIZES = {
-  default: { width: 16, height: 16 },
-} as const;
 
 // 文本行数控制样式 - 保证卡片高度一致性
 const TEXT_CLAMP_STYLES = {
@@ -101,12 +96,9 @@ function ProjectCard({
           <div
             className={`${CARD_STYLE_CLASSES.footer} ${TEXT_COLORS.SECONDARY}`}
           >
-            <Icon
-              icon="lucide:layers"
-              width={ICON_SIZES.default.width}
-              height={ICON_SIZES.default.height}
-            />
-            <span style={TEXT_CLAMP_STYLES.tech}>{tech}</span>
+            <IconText icon="lucide:layers" colorMode="monochrome">
+              <span style={TEXT_CLAMP_STYLES.tech}>{tech}</span>
+            </IconText>
           </div>
         </footer>
       </div>

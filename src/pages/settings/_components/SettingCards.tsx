@@ -4,6 +4,7 @@ import { useColorMode } from '@docusaurus/theme-common';
 import { Icon } from '@iconify/react';
 import confetti from 'canvas-confetti';
 
+import IconText from '@site/src/components/IconText';
 import styles from '../styles.module.css';
 import type { ColorState } from '@site/src/utils/colorUtils';
 import {
@@ -140,7 +141,7 @@ export function ThemeSettings() {
           )}
           onClick={() => handleThemeChange('light')}
         >
-          <Icon icon="lucide:sun" /> 浅色
+          <IconText icon="lucide:sun">浅色</IconText>
         </button>
         <button
           className={clsx(
@@ -149,7 +150,7 @@ export function ThemeSettings() {
           )}
           onClick={() => handleThemeChange('dark')}
         >
-          <Icon icon="lucide:moon" /> 深色
+          <IconText icon="lucide:moon">深色</IconText>
         </button>
         <button
           className={clsx(
@@ -158,7 +159,7 @@ export function ThemeSettings() {
           )}
           onClick={() => handleThemeChange('auto')}
         >
-          <Icon icon="lucide:monitor" /> 跟随系统
+          <IconText icon="lucide:monitor">跟随系统</IconText>
         </button>
       </div>
     </SettingCard>
@@ -313,15 +314,13 @@ export function QuickActions() {
           className={clsx(styles.button, styles.buttonSecondary)}
           onClick={triggerConfetti}
         >
-          <Icon icon="lucide:sparkles" />
-          给我惊喜
+          <IconText icon="lucide:sparkles">给我惊喜</IconText>
         </button>
         <button
           className={clsx(styles.button, styles.buttonDanger)}
           onClick={handleReset}
         >
-          <Icon icon="lucide:rotate-ccw" />
-          重置所有设置
+          <IconText icon="lucide:rotate-ccw">重置所有设置</IconText>
         </button>
       </div>
     </SettingCard>

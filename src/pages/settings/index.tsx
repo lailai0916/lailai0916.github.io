@@ -4,6 +4,7 @@ import Heading from '@theme/Heading';
 import clsx from 'clsx';
 import { Icon } from '@iconify/react';
 
+import IconText from '@site/src/components/IconText';
 import styles from './styles.module.css';
 import {
   ThemeSettings,
@@ -39,30 +40,33 @@ function SettingsHeader() {
         </div>
         <div className={styles.statsGrid}>
           <div className={styles.statCard}>
-            <div className={styles.statIcon}>
-              <Icon icon="lucide:settings" width={20} height={20} />
-            </div>
             <div className={styles.statContent}>
               <div className={styles.statNumber}>{STATS.totalSettings}</div>
-              <div className={styles.statLabel}>项设置</div>
+              <div className={styles.statLabel}>
+                <IconText icon="lucide:settings" colorMode="monochrome">
+                  项设置
+                </IconText>
+              </div>
             </div>
           </div>
           <div className={styles.statCard}>
-            <div className={styles.statIcon}>
-              <Icon icon="lucide:layers" width={20} height={20} />
-            </div>
             <div className={styles.statContent}>
               <div className={styles.statNumber}>{STATS.categories}</div>
-              <div className={styles.statLabel}>个分类</div>
+              <div className={styles.statLabel}>
+                <IconText icon="lucide:layers" colorMode="monochrome">
+                  个分类
+                </IconText>
+              </div>
             </div>
           </div>
           <div className={styles.statCard}>
-            <div className={styles.statIcon}>
-              <Icon icon="lucide:zap" width={20} height={20} />
-            </div>
             <div className={styles.statContent}>
               <div className={styles.statNumber}>{STATS.activeFeatures}</div>
-              <div className={styles.statLabel}>项功能</div>
+              <div className={styles.statLabel}>
+                <IconText icon="lucide:zap" colorMode="monochrome">
+                  项功能
+                </IconText>
+              </div>
             </div>
           </div>
         </div>
@@ -88,13 +92,7 @@ function SettingsSection({
       <div className={styles.sectionHeader}>
         <div className={styles.sectionTitleGroup}>
           <h2 className={styles.sectionTitle}>
-            <Icon
-              icon={icon}
-              width={24}
-              height={24}
-              className={styles.sectionIcon}
-            />
-            {title}
+            <IconText icon={icon}>{title}</IconText>
           </h2>
           <p className={styles.sectionDescription}>{description}</p>
         </div>

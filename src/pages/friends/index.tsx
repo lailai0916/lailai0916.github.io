@@ -6,6 +6,7 @@ import { Icon } from '@iconify/react';
 import clsx from 'clsx';
 
 import { FriendItem, FRIEND_LIST } from '@site/src/data/friends';
+import IconText from '@site/src/components/IconText';
 import styles from './styles.module.css';
 
 const TITLE = '友链';
@@ -29,21 +30,23 @@ function MainContent() {
         </div>
         <div className={styles.statsGrid}>
           <div className={styles.statCard}>
-            <div className={styles.statIcon}>
-              <Icon icon="lucide:users" width={20} height={20} />
-            </div>
             <div className={styles.statContent}>
               <div className={styles.statNumber}>{totalFriends}</div>
-              <div className={styles.statLabel}>位朋友</div>
+              <div className={styles.statLabel}>
+                <IconText icon="lucide:users" colorMode="monochrome">
+                  位朋友
+                </IconText>
+              </div>
             </div>
           </div>
           <div className={styles.statCard}>
-            <div className={styles.statIcon}>
-              <Icon icon="lucide:link" width={20} height={20} />
-            </div>
             <div className={styles.statContent}>
               <div className={styles.statNumber}>{activeFriends}</div>
-              <div className={styles.statLabel}>个链接</div>
+              <div className={styles.statLabel}>
+                <IconText icon="lucide:link" colorMode="monochrome">
+                  个链接
+                </IconText>
+              </div>
             </div>
           </div>
         </div>
@@ -81,8 +84,9 @@ function FriendCard({ friend }: { friend: FriendItem }) {
         </div>
         <div className={styles.friendCardFooter}>
           <div className={styles.friendCardLink}>
-            <Icon icon="lucide:external-link" width={16} height={16} />
-            <span>访问网站</span>
+            <IconText icon="lucide:external-link" colorMode="monochrome">
+              访问网站
+            </IconText>
           </div>
         </div>
       </div>
@@ -108,10 +112,11 @@ function PageFooter() {
   return (
     <div className={styles.pageFooter}>
       <div className={styles.footerContent}>
-        <div className={styles.footerIcon}>
-          <Icon icon="lucide:heart" width={20} height={20} />
-        </div>
-        <p className={styles.footerText}>感谢每一位朋友的陪伴与支持</p>
+        <p className={styles.footerText}>
+          <IconText icon="lucide:heart" colorMode="monochrome">
+            感谢每一位朋友的陪伴与支持
+          </IconText>
+        </p>
       </div>
     </div>
   );

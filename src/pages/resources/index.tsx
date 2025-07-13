@@ -9,6 +9,7 @@ import {
   RESOURCE_LIST,
   type ResourceCategoryItem,
 } from '@site/src/data/resources';
+import IconText from '@site/src/components/IconText';
 import styles from './styles.module.css';
 
 const TITLE = '资源';
@@ -209,13 +210,7 @@ function CategorySection({ category }: { category: ResourceCategoryItem }) {
     <section className={styles.categorySection}>
       <div className={styles.categoryHeader}>
         <h2 className={styles.categoryTitle}>
-          <Icon
-            icon={category.icon}
-            width={24}
-            height={24}
-            className={styles.categoryIcon}
-          />
-          {category.title}
+          <IconText icon={category.icon}>{category.title}</IconText>
         </h2>
         <div className={styles.categoryCount}>
           {category.resources.length} 项

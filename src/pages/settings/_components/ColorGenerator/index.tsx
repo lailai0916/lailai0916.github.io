@@ -22,6 +22,7 @@ import {
   darkStorage,
   updateDOMColors,
 } from '@site/src/utils/colorUtils';
+import IconText from '@site/src/components/IconText';
 import styles from './styles.module.css';
 
 function wcagContrast(foreground: string, background: string) {
@@ -216,11 +217,9 @@ export default function ColorGenerator() {
             className="button button--secondary"
             onClick={() => setColorMode(isDarkTheme ? 'light' : 'dark')}
           >
-            <Icon
-              icon={isDarkTheme ? 'lucide:sun' : 'lucide:moon'}
-              style={{ marginRight: '0.5rem' }}
-            />
-            {isDarkTheme ? '切换浅色' : '切换深色'}
+            <IconText icon={isDarkTheme ? 'lucide:sun' : 'lucide:moon'}>
+              {isDarkTheme ? '切换浅色' : '切换深色'}
+            </IconText>
           </button>
           <button
             type="button"
@@ -238,8 +237,7 @@ export default function ColorGenerator() {
               setShades(COLOR_SHADES);
             }}
           >
-            <Icon icon="lucide:rotate-ccw" style={{ marginRight: '0.5rem' }} />
-            重置默认
+            <IconText icon="lucide:rotate-ccw">重置默认</IconText>
           </button>
         </div>
 
@@ -249,8 +247,7 @@ export default function ColorGenerator() {
           style={{ fontSize: '0.875rem' }}
         >
           <strong>
-            <Icon icon="lucide:lightbulb" style={{ marginRight: '0.25rem' }} />
-            提示：
+            <IconText icon="lucide:lightbulb">提示：</IconText>
           </strong>{' '}
           颜色更改会实时应用到整个网站，设置会自动保存到本地存储。
         </div>

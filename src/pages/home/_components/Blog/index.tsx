@@ -2,7 +2,8 @@ import React, { useMemo } from 'react';
 import Link from '@docusaurus/Link';
 import Translate from '@docusaurus/Translate';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
-import { Icon } from '@iconify/react';
+import IconText from '@site/src/components/IconText';
+
 import {
   getRecentBlogPosts,
   BLOG_CONFIG,
@@ -32,10 +33,7 @@ const TEXT_CLAMP_STYLES = {
   } as React.CSSProperties,
 } as const;
 
-// 图标尺寸配置 - 统一尺寸控制机制
-const ICON_SIZES = {
-  small: { width: 16, height: 16 },
-} as const;
+
 
 // 样式常量
 const CARD_STYLES = {
@@ -95,15 +93,11 @@ const BlogCard = React.memo<ProcessedBlogPost & { locale: string }>(
               <div
                 className={`flex items-center gap-2 text-sm ${TEXT_COLORS.SECONDARY}`}
               >
-                <Icon
-                  icon="lucide:calendar"
-                  width={ICON_SIZES.small.width}
-                  height={ICON_SIZES.small.height}
-                  aria-hidden="true"
-                />
-                <time className="no-underline" dateTime={date}>
-                  {formattedDate}
-                </time>
+                <IconText icon="lucide:calendar" colorMode="monochrome">
+                  <time className="no-underline" dateTime={date}>
+                    {formattedDate}
+                  </time>
+                </IconText>
               </div>
             </footer>
           </div>
@@ -163,13 +157,9 @@ export default function Blog() {
             <h2
               className={`font-bold text-3xl md:text-4xl ${TEXT_COLORS.PRIMARY} leading-tight mb-8 flex items-center gap-3`}
             >
-              <Icon
-                icon="lucide:graduation-cap"
-                width={32}
-                height={32}
-                className="text-[var(--ifm-color-primary)] md:w-10 md:h-10"
-              />
-              <Translate id="home.blog.title">Learning & Practice</Translate>
+              <IconText icon="lucide:graduation-cap">
+                <Translate id="home.blog.title">Learning & Practice</Translate>
+              </IconText>
             </h2>
             <p className="leading-relaxed mb-6">
               <Translate id="home.blog.description.p1">
@@ -201,8 +191,9 @@ export default function Blog() {
             <p
               className={`font-bold text-sm ${TEXT_COLORS.SECONDARY} flex flex-row gap-2 items-center mt-5 lg:mt-0 w-full`}
             >
-              <Icon icon="lucide:chevron-right" width={16} height={16} />
-              <Translate id="home.blog.latest">Latest Posts</Translate>
+              <IconText icon="lucide:chevron-right" colorMode="monochrome">
+                <Translate id="home.blog.latest">Latest Posts</Translate>
+              </IconText>
             </p>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-start my-8">
               <BlogCardList posts={recentPosts} locale={i18n.currentLocale} />
