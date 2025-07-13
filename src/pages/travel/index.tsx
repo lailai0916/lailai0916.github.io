@@ -2,6 +2,7 @@ import React from 'react';
 import Layout from '@theme/Layout';
 import BrowserOnly from '@docusaurus/BrowserOnly';
 import { Icon } from '@iconify/react';
+import IconText from '@site/src/components/IconText';
 import Timeline from '@site/src/pages/travel/_components';
 import {
   BaseCard,
@@ -52,11 +53,10 @@ const TravelHero = React.memo(() => (
       <div className="max-w-3xl lg:max-w-7xl gap-5 flex flex-col lg:flex-row lg:px-5">
         {/* 左侧内容区 */}
         <div className="w-full lg:w-6/12 max-w-3xl flex flex-col items-start justify-start lg:ps-5 lg:pe-10">
-          <div className="text-6xl lg:text-7xl mb-6 opacity-90">
-            <Icon icon="material-symbols:flight" />
-          </div>
           <h1 className="font-bold text-4xl lg:text-5xl text-gray-900 dark:text-neutral-100 leading-tight mb-4">
-            {PAGE_CONFIG.title}
+            <IconText icon="material-symbols:flight" colorMode="monochrome">
+              {PAGE_CONFIG.title}
+            </IconText>
           </h1>
           <p className="text-lg lg:text-xl text-gray-700 dark:text-neutral-300 leading-relaxed mb-6">
             {PAGE_CONFIG.description}
