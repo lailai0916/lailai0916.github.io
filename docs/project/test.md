@@ -6,6 +6,13 @@
 
 <Problem id="P3372" />
 
+## 脚注
+
+- This is a test. [^1][^2]
+
+[^1]: test #1
+[^2]: test #2
+
 ## 实时编辑器
 
 ```jsx live
