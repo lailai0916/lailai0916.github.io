@@ -1,12 +1,19 @@
 # 题目搬运
 
+[洛谷](https://www.luogu.com.cn) 的 [咕值系统](https://help.luogu.com.cn/manual/luogu/account/guzhi) 中有一个指标是“社区贡献”，满分为 $100$ 分，其中 $70$ 分来自题解，$30$ 分来自搬题。
+
+每搬运一道主题库题目可获得 $1$ 分咕值，搬满 $30$ 题即可 **永久** 拿满搬题部分的 $30$ 分咕值。
+
 ## 参考资料
 
 - [洛谷主题库题目规范 - 洛谷帮助中心](https://help.luogu.com.cn/rules/academic/problem-standard)
 - [题目测试点配置文件 - 洛谷帮助中心](https://help.luogu.com.cn/manual/luogu/problem/testcase-config)
+- [MikeMirzayanov/testlib: C++ library to develop competitive programming problems](https://github.com/MikeMirzayanov/testlib)
 - [noisg/sg_noi_archive: Archive of Singapore National Olympiad in Informatics (NOI)](https://github.com/noisg/sg_noi_archive)
 
 ## 题目测试点配置文件生成器
+
+以下程序可根据子任务分值与数量，自动生成标准格式的题目配置文件。
 
 ```cpp title="main.cpp"
 #include <bits/stdc++.h>
@@ -43,6 +50,8 @@ int main()
 ```
 
 ## 提示词
+
+以下提示词可用于 AI 翻译整理英文 PDF 题面为规范格式。
 
 ```text
 请将提供的算法竞赛题目的英文 PDF，翻译成中文，并严格按照《洛谷主题库题目规范》（https://help.luogu.com.cn/rules/academic/problem-standard）整理成 Markdown 格式，具体要求如下：
@@ -104,6 +113,58 @@ int main()
 ```
 
 ## NOISG
+
+### 搬题表
+
+<style>{`
+  .center-table th, .center-table td {
+    text-align: center;
+  }
+`}</style>
+
+<table className="center-table">
+  <thead>
+    <tr>
+      <th>年份 / 后缀</th>
+      <th>(null)</th>
+      <th>Qualification</th>
+      <th>Prelim</th>
+      <th>Finals</th>
+      <th>Practice</th>
+      <th>Prelim Practice</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>1998</td><td>?</td><td>/</td><td>/</td><td>/</td><td>/</td><td>/</td></tr>
+    <tr><td>1999</td><td>?</td><td>/</td><td>/</td><td>/</td><td>/</td><td>/</td></tr>
+    <tr><td>2000</td><td>?</td><td>/</td><td>/</td><td>/</td><td>/</td><td>/</td></tr>
+    <tr><td>2001</td><td>?</td><td>/</td><td>/</td><td>/</td><td>/</td><td>/</td></tr>
+    <tr><td>2002</td><td>?</td><td>/</td><td>/</td><td>/</td><td>/</td><td>/</td></tr>
+    <tr><td>2003</td><td>?</td><td>/</td><td>/</td><td>/</td><td>/</td><td>/</td></tr>
+    <tr><td>2004</td><td>?</td><td>/</td><td>/</td><td>/</td><td>/</td><td>/</td></tr>
+    <tr><td>2005</td><td>?</td><td>?</td><td>/</td><td>/</td><td>/</td><td>/</td></tr>
+    <tr><td>2006</td><td>?</td><td>?</td><td>/</td><td>/</td><td>/</td><td>/</td></tr>
+    <tr><td>2007</td><td>?</td><td>/</td><td>/</td><td>/</td><td>/</td><td>/</td></tr>
+    <tr><td>2008</td><td>?</td><td>/</td><td>/</td><td>/</td><td>/</td><td>/</td></tr>
+    <tr><td>2009</td><td>?</td><td>/</td><td>/</td><td>/</td><td>/</td><td>/</td></tr>
+    <tr><td>2010</td><td>?</td><td>/</td><td>/</td><td>/</td><td>/</td><td>/</td></tr>
+    <tr><td>2011</td><td>?</td><td>/</td><td>/</td><td>/</td><td>/</td><td>/</td></tr>
+    <tr><td>2012</td><td>?</td><td>/</td><td>/</td><td>/</td><td>/</td><td>/</td></tr>
+    <tr><td>2013</td><td>?</td><td>/</td><td>/</td><td>/</td><td>/</td><td>/</td></tr>
+    <tr><td>2014</td><td>?</td><td>/</td><td>/</td><td>/</td><td>/</td><td>/</td></tr>
+    <tr><td>2015</td><td>?</td><td>/</td><td>/</td><td>/</td><td>/</td><td>/</td></tr>
+    <tr><td>2016</td><td>?</td><td>/</td><td>/</td><td>/</td><td>/</td><td>/</td></tr>
+    <tr><td>2017</td><td>?</td><td>/</td><td>/</td><td>/</td><td>/</td><td>/</td></tr>
+    <tr><td>2018</td><td>Shunpower</td><td>/</td><td>ToastBread</td><td>/</td><td>?</td><td>?</td></tr>
+    <tr><td>2019</td><td>lailai0916</td><td>/</td><td>ToastBread</td><td>/</td><td>/</td><td>/</td></tr>
+    <tr><td>2020</td><td>/</td><td>lailai0916</td><td>lailai0916</td><td>lailai0916</td><td>/</td><td>/</td></tr>
+    <tr><td>2021</td><td>/</td><td>CEFqwq</td><td>/</td><td>lailai0916</td><td>/</td><td>/</td></tr>
+    <tr><td>2022</td><td>/</td><td>lailai0916</td><td>/</td><td>Eason_cyx</td><td>/</td><td>/</td></tr>
+    <tr><td>2023</td><td>/</td><td>Eason_cyx</td><td>/</td><td>StayAlone</td><td>/</td><td>/</td></tr>
+    <tr><td>2024</td><td>/</td><td>/</td><td>Eason_cyx</td><td>lailai0916</td><td>/</td><td>/</td></tr>
+    <tr><td>2025</td><td>/</td><td>/</td><td>Starrykiller</td><td>Milmon</td><td>/</td><td>/</td></tr>
+  </tbody>
+</table>
 
 ### NOISG 2022 Qualification
 
