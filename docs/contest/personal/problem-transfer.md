@@ -53,7 +53,7 @@ int main()
 
 以下提示词可用于 AI 翻译整理英文 PDF 题面为规范格式。
 
-```text
+```text title="翻译整理题面"
 请将提供的算法竞赛题目的英文 PDF，翻译成中文，并严格按照《洛谷主题库题目规范》（https://help.luogu.com.cn/rules/academic/problem-standard）整理成 Markdown 格式，具体要求如下：
 
 ### 1. 内容

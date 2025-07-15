@@ -1,9 +1,5 @@
 # lailai0916
 
-## 项目链接
-
-- [lailai0916/lailai0916: lailai's Profile](https://github.com/lailai0916/lailai0916)
-
 ## 说明
 
 `username/username` 是一个特殊的 GitHub 仓库，它的 README.md 将出现在你个人主页的公共资料上。
@@ -11,6 +7,10 @@
 这个文件可以包含你想要展示的信息，比如个人简介、你的项目、你的技能、状态统计图等。
 
 这是我的个人主页仓库 [lailai0916/lailai0916](https://github.com/lailai0916/lailai0916)，它将显示在我的 [个人主页](https://github.com/lailai0916) 上。
+
+## 项目链接
+
+- [lailai0916/lailai0916: lailai's Profile](https://github.com/lailai0916/lailai0916)
 
 ## 创建仓库
 
