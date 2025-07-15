@@ -551,6 +551,31 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: 'category',
+      label: 'GitHub',
+      link: {
+        type: 'generated-index',
+        description: '本章记录 GitHub 相关的项目和经验。',
+      },
+      items: [
+        'project/github/lailai0916/index',
+        {
+          type: 'category',
+          label: "lailai's Home",
+          link: {
+            type: 'doc',
+            id: 'project/github/lailais-home/index',
+          },
+          items: [
+            'project/github/lailais-home/setup/index',
+            'project/github/lailais-home/plugins',
+            'project/github/lailais-home/components',
+            'project/github/lailais-home/design',
+          ],
+        },
+      ],
+    },
+    {
+      type: 'category',
       label: '工具',
       link: {
         type: 'generated-index',
@@ -585,31 +610,6 @@ const sidebars: SidebarsConfig = {
           items: [
             'project/terminal/tutorial/maze-game',
             'project/terminal/tutorial/utils',
-          ],
-        },
-      ],
-    },
-    {
-      type: 'category',
-      label: 'GitHub',
-      link: {
-        type: 'generated-index',
-        description: '本章记录 GitHub 相关的项目和经验。',
-      },
-      items: [
-        'project/github/lailai0916/index',
-        {
-          type: 'category',
-          label: "lailai's Home",
-          link: {
-            type: 'doc',
-            id: 'project/github/lailais-home/index',
-          },
-          items: [
-            'project/github/lailais-home/setup/index',
-            'project/github/lailais-home/plugins',
-            'project/github/lailais-home/components',
-            'project/github/lailais-home/design',
           ],
         },
       ],
