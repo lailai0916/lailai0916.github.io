@@ -402,7 +402,7 @@ export function ColorGenerator() {
           type="text"
           value={inputColor}
           onChange={(e) => handleColorUpdate(e.target.value)}
-          className={styles.colorTextInput}
+          className={styles.textcolorInput}
         />
         <input
           type="color"

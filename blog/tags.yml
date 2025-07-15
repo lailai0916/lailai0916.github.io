@@ -4,6 +4,9 @@ top:
 notice:
   label: 公告
 
+personal:
+  label: 个人
+
 math:
   label: 数学
 
