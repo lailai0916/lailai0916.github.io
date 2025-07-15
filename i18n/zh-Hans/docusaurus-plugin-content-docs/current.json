@@ -203,10 +203,6 @@
     "message": "高等数学",
     "description": "The label for category 高等数学 in sidebar sidebar2"
   },
-  "sidebar.sidebar2.category.高等数学.link.generated-index.description": {
-    "message": "本章记录我的高等数学笔记。",
-    "description": "The generated-index page description for category 高等数学 in sidebar sidebar2"
-  },
   "sidebar.sidebar2.category.《线性代数》": {
     "message": "《线性代数》",
     "description": "The label for category 《线性代数》 in sidebar sidebar2"
