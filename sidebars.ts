@@ -360,8 +360,8 @@ const sidebars: SidebarsConfig = {
           type: 'category',
           label: '高等数学',
           link: {
-            type: 'generated-index',
-            description: '本章记录我的高等数学笔记。',
+            type: 'doc',
+            id: 'note/math/advanced/index',
           },
           items: [
             {
