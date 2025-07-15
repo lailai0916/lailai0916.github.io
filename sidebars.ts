@@ -333,7 +333,7 @@ const sidebars: SidebarsConfig = {
                 'note/math/high-school/function/function',
                 'note/math/high-school/function/trigonometric-function/index',
                 'note/math/high-school/function/sequence',
-                'note/math/high-school/function/derivative',
+                'note/math/high-school/function/derivative/index',
               ],
             },
             {

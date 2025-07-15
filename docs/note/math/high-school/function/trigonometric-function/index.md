@@ -79,6 +79,8 @@ $A,B$ 两点之间的距离一般用 $|AB|$ 表示。
 
 ![](assets/Unit_circle.svg)
 
+![](assets/graph9.svg)
+
 如图，将斜边为 $1$ 的直角三角形放入单位圆内。
 
 不难发现，不管 $t$ 的大小，都有斜边 $c=1$。
@@ -114,9 +116,7 @@ $$
 
 ### 函数图像
 
-~~[有点抽象](https://www.desmos.com/calculator/zhow2jcijw)~~
-
-红色为 $\sin$，蓝色为 $\cos$，绿色为 $\tan$，橙色为 $\cot$，紫色为 $\sec$，黑色为 $\csc$。
+红色为 $\sin$，蓝色为 $\cos$，绿色为 $\tan$，橙色为 $\cot$，紫色为 $\sec$，黑色为 $\csc$。[link](https://www.desmos.com/calculator/zhow2jcijw)
 
 <Desmos url="zhow2jcijw" />
 
@@ -282,6 +282,8 @@ $$
 其他公式都可以通过代入已有公式推导得出。
 
 :::
+
+![](assets/graph10.svg)
 
 如图，设 $\angle AOB'=\alpha,\angle BOB'=\beta$。
 
