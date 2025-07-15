@@ -533,22 +533,6 @@ const sidebars: SidebarsConfig = {
   ],
   sidebar3: [
     'project/index',
-    'project/test',
-    {
-      type: 'category',
-      label: '模板',
-      link: {
-        type: 'generated-index',
-        description:
-          '本章收录各种实用的文档模板，包括Markdown、LaTeX、Mermaid、题解等常用模板。',
-      },
-      items: [
-        'project/templates/markdown',
-        'project/templates/latex',
-        'project/templates/mermaid',
-        'project/templates/solution',
-      ],
-    },
     {
       type: 'category',
       label: 'GitHub',
@@ -572,6 +556,21 @@ const sidebars: SidebarsConfig = {
             'project/github/lailais-home/design',
           ],
         },
+      ],
+    },
+    {
+      type: 'category',
+      label: '模板',
+      link: {
+        type: 'generated-index',
+        description:
+          '本章收录各种实用的文档模板，包括Markdown、LaTeX、Mermaid、题解等常用模板。',
+      },
+      items: [
+        'project/templates/markdown',
+        'project/templates/latex',
+        'project/templates/mermaid',
+        'project/templates/solution',
       ],
     },
     {
@@ -706,6 +705,7 @@ const sidebars: SidebarsConfig = {
         },
       ],
     },
+    'project/test',
   ],
 };
 
