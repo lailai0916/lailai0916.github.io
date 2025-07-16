@@ -9,7 +9,7 @@ export const FRIEND_LIST: FriendItem[] = [
   {
     title: 'lailai',
     description: 'Blogger',
-    href: 'https://www.lailai.one',
+    href: 'https://lailai.one',
     avatar: 'img/avatar/lailai.png',
   },
   {

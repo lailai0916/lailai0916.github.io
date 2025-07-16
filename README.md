@@ -1,5 +1,5 @@
 <div align="center">
-  <a href="https://www.lailai.one">
+  <a href="https://lailai.one">
     <img src="static/img/logo.svg" width="150" height="150">
   </a>
   <h1>lailai's Home</h1>

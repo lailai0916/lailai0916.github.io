@@ -46,12 +46,12 @@ export const COMMUNITY_LIST: CommunityItem[] = [
     title: 'QQ',
     text: '11548585',
     icon: 'ri:qq-line',
-    href: 'https://www.lailai.one/img/community/qq.jpg',
+    href: 'https://lailai.one/img/community/qq.jpg',
   },
   {
     title: 'WeChat',
     text: 'lailai0x394',
     icon: 'ri:wechat-line',
-    href: 'https://www.lailai.one/img/community/wechat.jpg',
+    href: 'https://lailai.one/img/community/wechat.jpg',
   },
 ];

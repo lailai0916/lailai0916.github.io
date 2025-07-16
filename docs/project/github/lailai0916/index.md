@@ -58,7 +58,7 @@
 
 ```html live
 <h1 align="center">
-  🎉 <a href="https://www.lailai.one">Hello, I'm lailai</a> 🥳
+  🎉 <a href="https://lailai.one">Hello, I'm lailai</a> 🥳
 </h1>
 ```
 
