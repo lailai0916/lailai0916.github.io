@@ -92,4 +92,4 @@ website
 
 ## # 许可证
 
-本网站内容遵循 [CC BY-NC-SA 4.0](LICENSE)。
+本网站内容遵循 [CC BY 4.0](LICENSE-docs)。
