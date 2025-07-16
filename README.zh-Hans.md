@@ -67,7 +67,8 @@ website
 │   ├── img                        # 图片文件
 │   └── CNAME                      # 域名配置
 ├── docusaurus.config.ts           # Docusaurus 配置
-├── LICENSE                        # 许可证文件
+├── LICENSE                        # 代码许可证
+├── LICENSE-docs                   # 文档许可证
 ├── package-lock.json              # 依赖锁定文件
 ├── package.json                   # 项目依赖
 ├── sidebars.ts                    # 文档侧边栏配置

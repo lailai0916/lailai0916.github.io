@@ -67,7 +67,8 @@ website
 │   ├── img                        # Image files
 │   └── CNAME                      # Domain settings
 ├── docusaurus.config.ts           # Docusaurus config
-├── LICENSE                        # License
+├── LICENSE                        # Code License
+├── LICENSE-docs                   # Docs License
 ├── package-lock.json              # Dependency lock file
 ├── package.json                   # Project dependencies
 ├── sidebars.ts                    # Sidebar config
