@@ -11,8 +11,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 游戏参数
     BULLET_SPEED: 12,
-    BULLET_DAMAGE: 1,
-    INITIAL_TOWER_GRID_SIZE: 18,
+    BULLET_DAMAGE: 100,
+    INITIAL_TOWER_GRID_SIZE: 6,
 
     // 炮塔参数
     TOWER_RANGE: 400, // 炮塔射程
