@@ -22,7 +22,7 @@ const config: Config = {
   baseUrl: '/',
 
   organizationName: 'lailai0916',
-  projectName: 'lailai.github.io',
+  projectName: 'lailai0916.github.io',
 
   trailingSlash: false,
   onBrokenLinks: 'warn',
