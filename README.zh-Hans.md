@@ -92,4 +92,6 @@ website
 
 ## # 许可证
 
+本项目代码遵循 [MIT License](LICENSE)。
+
 本网站内容遵循 [CC BY 4.0](LICENSE-docs)。

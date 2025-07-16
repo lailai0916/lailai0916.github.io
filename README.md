@@ -92,4 +92,6 @@ Stay updated with the latest blog posts:
 
 ## # License
 
+This project's code licensed under [MIT License](LICENSE).
+
 This website's content is licensed under [CC BY 4.0](LICENSE-docs).
