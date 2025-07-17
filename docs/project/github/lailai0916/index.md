@@ -2,11 +2,9 @@
 
 ## 说明
 
-`username/username` 是一个特殊的 GitHub 仓库，它的 README.md 将出现在你个人主页的公共资料上。
+`username/username` 是一个特殊的 GitHub 仓库，其 README.md 文件会显示在你的个人主页上。
 
-这个文件可以包含你想要展示的信息，比如个人简介、你的项目、你的技能、状态统计图等。
-
-这是我的个人主页仓库 [lailai0916/lailai0916](https://github.com/lailai0916/lailai0916)，它将显示在我的 [个人主页](https://github.com/lailai0916) 上。
+你可以在这个文件中展示各种信息，如个人简介、项目、技能、状态统计图等。
 
 ## 项目链接
 
@@ -50,29 +48,19 @@
 
 </ImageWindow>
 
-## 标题
+## 标题 & 国际化
 
-`README.md` 文件采用 Markdown 格式，同时支持嵌入 HTML 代码。
+`README.md` 文件使用 Markdown 格式，并支持嵌入 HTML 代码。
 
-我选择使用 HTML 编写一个居中的标题，并添加表情和链接。
+我选择用 HTML 编写一个居中的标题，并添加表情和链接。
+
+还可以添加多语言版本的链接来实现国际化。
 
 ```html live
-<h1 align="center">
-  🎉 <a href="https://lailai.one">Hello, I'm lailai</a> 🥳
-</h1>
-```
-
-## 国际化
-
-你可以在仓库中添加多语言版本，并为每个版本提供链接。
-
-```html
-<p align="center">
-  <a href="README.md">English</a> | <a href="README.zh-Hans.md">简体中文</a> |
-  <a href="README.zh-Hant.md">繁體中文</a> | <a href="README.ja.md">日本語</a> |
-  <a href="README.es.md">Español</a> |
-  <a href="README.fr.md">Français</a>
-</p>
+<div align="center">
+  <h1>🎉 <a href="https://lailai.one">Hello, I'm lailai</a> 🥳</h1>
+  <p><a href="README.md">English</a> | <a href="README.zh-Hans.md">简体中文</a> | <a href="README.zh-Hant.md">繁體中文</a> | <a href="README.ja.md">日本語</a> | <a href="README.es.md">Español</a> | <a href="README.fr.md">Français</a></p>
+</div>
 ```
 
 ## 技术栈图标

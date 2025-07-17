@@ -33,8 +33,6 @@ const TEXT_CLAMP_STYLES = {
   } as React.CSSProperties,
 } as const;
 
-
-
 // 样式常量
 const CARD_STYLES = {
   container:
