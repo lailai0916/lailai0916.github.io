@@ -138,11 +138,17 @@ async function autoCreatePullRequest(page, k) {
   const context = await browser.newContext({ storageState: 'login.json' });
   const page = await context.newPage();
 
-  for (let i = 220; i < 300; i++) {
+  for (let i = 1; i < 100; i++) {
     await autoCreatePullRequest(page, i);
     await page.waitForTimeout(3000 + Math.random() * 2000);
   }
 
   await browser.close();
 })();
+```
+
+## Galaxy Brain
+
+```js title="galaxy_brain.js"
+
 ```

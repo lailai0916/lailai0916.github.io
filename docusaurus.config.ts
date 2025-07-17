@@ -18,7 +18,7 @@ const config: Config = {
     experimental_faster: true,
   },
 
-  url: 'https://lailai0916.github.io',
+  url: 'https://lailai.one',
   baseUrl: '/',
 
   organizationName: 'lailai0916',
