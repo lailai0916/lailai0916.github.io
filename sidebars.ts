@@ -556,6 +556,7 @@ const sidebars: SidebarsConfig = {
             'project/github/lailais-home/design',
           ],
         },
+        'project/github/achievements',
       ],
     },
     {
