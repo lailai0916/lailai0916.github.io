@@ -17,18 +17,18 @@ npx playwright install
 ## 账号登录脚本
 
 ```js title="login.js"
-const { chromium } = require('playwright');
+const { chromium } = require("playwright");
 
 (async () => {
   const browser = await chromium.launch({ headless: false });
   const context = await browser.newContext();
   const page = await context.newPage();
 
-  await page.goto('https://github.com/login');
-  console.log('请登录 GitHub，登录成功后关闭窗口...');
+  await page.goto("https://github.com");
+  console.log("请登录 GitHub");
   await page.waitForTimeout(60000);
 
-  await context.storageState({ path: 'login.json' });
+  await context.storageState({ path: "login.json" });
   await browser.close();
 })();
 ```
