@@ -9,10 +9,6 @@ tags: [personal]
 
 <!-- truncate -->
 
-## 浅色版本
-
-![](assets/business-card-light.png)
-
-## 深色版本
-
-![](assets/business-card-dark.png)
+|              浅色版本               |              深色版本              |
+| :---------------------------------: | :--------------------------------: |
+| ![](assets/business-card-light.png) | ![](assets/business-card-dark.png) |
