@@ -3,20 +3,20 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
 import styles from './styles.module.css';
 
-import TopBanner from './home/_components/TopBanner';
-import HeroBanner from './home/_components/HeroBanner';
+import TopBanner from './_components/TopBanner';
+import HeroBanner from './_components/HeroBanner';
 
-import Docs from './home/_components/Docs';
-import Blog from './home/_components/Blog';
-import Countdown from './home/_components/Countdown';
-import Project from './home/_components/Project';
-import NeuralNetwork from './home/_components/NeuralNetwork';
+import Docs from './_components/Docs';
+import Blog from './_components/Blog';
+import Countdown from './_components/Countdown';
+import Project from './_components/Project';
+import NeuralNetwork from './_components/NeuralNetwork';
 
-import Skill from './home/_components/Skill';
-import Exploration from './home/_components/Exploration';
-import Quote from './home/_components/Quote';
-import Community from './home/_components/Community';
-import Device from './home/_components/Device';
+import Skill from './_components/Skill';
+import Exploration from './_components/Exploration';
+import Quote from './_components/Quote';
+import Community from './_components/Community';
+import Device from './_components/Device';
 
 export default function Home(): ReactNode {
   const { siteConfig } = useDocusaurusContext();
