@@ -21,6 +21,12 @@
 
 #### deque
 
+:::tip
+
+The “ueue” in “queue” is silent — but not in “deque.”
+
+:::
+
 - [std::deque - cppreference.com](https://zh.cppreference.com/w/cpp/container/deque)
 
 ##### 访问
