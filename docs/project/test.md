@@ -6,6 +6,12 @@
 
 <Problem id="P3372" />
 
+## 按键
+
+<kbd>Ctrl</kbd> + <kbd>C</kbd>
+
+<kbd>⌘</kbd> + <kbd>C</kbd>
+
 ## 脚注
 
 - This is a test. [^1][^2]
