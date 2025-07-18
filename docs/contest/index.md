@@ -2,8 +2,6 @@
 sidebar_position: 0
 ---
 
-import DocCardList from '@theme/DocCardList';
-
 # 竞赛
 
 竞赛（Contest）板块涵盖信息学奥林匹克竞赛相关的基础知识、常见题型、解题思路，以及代码模板和参赛经验。

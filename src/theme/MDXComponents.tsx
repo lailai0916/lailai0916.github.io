@@ -3,6 +3,7 @@ import React from 'react';
 import MDXComponents from '@theme-original/MDXComponents';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+import DocCardList from '@theme/DocCardList';
 
 import BrowserWindow from '@site/src/components/BrowserWindow';
 import IframeWindow from '@site/src/components/BrowserWindow/IframeWindow';
@@ -18,6 +19,7 @@ export default {
   // Map the "<BrowserWindow>" and "<Notation>" tags to our components
   Tabs,
   TabItem,
+  DocCardList,
   BrowserWindow,
   IframeWindow,
   ImageWindow,
