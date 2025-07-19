@@ -1,5 +1,5 @@
 ---
-title: '数学：微积分（咕）'
+title: '数学：微积分'
 date: 2024-02-17T12:00
 authors: [lailai]
 tags: [math]
@@ -43,7 +43,7 @@ $$
 
 :::
 
-利用前缀和，可以高效计算任意区间 $[a,b]$ 的和：
+利用前缀和，就可以高效计算任意区间 $[a,b]$ 的和：
 
 $$
 \begin{aligned}
@@ -196,15 +196,33 @@ $$
 \underbrace{F(x)}_{\text{原函数}}
 $$
 
-原函数 $F(k)$ 可以理解为函数 $f(x)$ 在区间 $[c,k]$ 的定积分（面积），其中 $c$ 是一个任意的常数。
+原函数 $F(k)$ 可以理解为函数 $f(x)$ 在区间 $[c,k]$ 的面积（定积分），其中 $c$ 是一个 **任意** 的常数。
 
 $$
 F(x)=\int_c^k f(x)\mathrm{d}x
 $$
 
-同理，
+这里就体现了使用有向面积的好处：我们无需考虑 $k$ 和 $c$ 的关系，即使 $k<c$ 也可以直接代入公式。
 
-这里就体现出使用有向面积的好处了，
+$$
+\int_c^k f(x)\mathrm{d}x=-\int_k^c f(x)\mathrm{d}x
+$$
+
+同理，利用原函数，就可以计算 $f(x)$ 在区间 $[a,b]$ 的面积 $S$：
+
+$$
+\begin{aligned}
+  S &= \int_a^b f(x)\mathrm{d}x \\
+  &= \int_c^b f(x)\mathrm{d}x-\int_c^a f(x)\mathrm{d}x \\
+  &= F(b)-F(a)
+\end{aligned}
+$$
+
+因此，我们得到了微积分中最重要的公式——**牛顿-莱布尼茨公式**。
+
+$$
+\int_a^b f(x)\mathrm{d}x=F(b)-F(a)=\left.F(x)\right|_a^b
+$$
 
 <!-- ![](assets/400px-Integral_approximations-3-steps.png) -->
 
@@ -219,9 +237,5 @@ $$
 假设我们已经知道 $F(x)$ 是 $f(x)$ 的不定积分。
 
 仿照数列前缀和思想。
-
-$$
-\int_a^b f(x)\mathrm{d}x=F(b)-F(a)
-$$
 
 即 $[a,b] \text{的面积} = [0,b] \text{的面积} -[0,a] \text{的面积}$。
