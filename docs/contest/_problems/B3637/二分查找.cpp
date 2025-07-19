@@ -1,7 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-using ll=long long;
 const int inf=0x3f3f3f3f;
 const int N=5005;
 int a[N],b[N];

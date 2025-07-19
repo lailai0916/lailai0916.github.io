@@ -294,7 +294,7 @@ const sidebars: SidebarsConfig = {
         type: 'generated-index',
         description: '这个板块主要介绍的是一些特定问题的解法。',
       },
-      items: ['contest/topic/lis'],
+      items: ['contest/topic/rmq'],
     },
   ],
   sidebar2: [
