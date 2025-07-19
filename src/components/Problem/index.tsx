@@ -54,10 +54,13 @@ export default function Problem({ id }: { id: string }) {
       {React.createElement(MDX)}
       {codes.length > 0 && (
         <Details
-          summary={translate({
-            id: 'components.problem.summary',
-            message: 'Reference Code',
-          })}
+          summary={translate(
+            {
+              id: 'components.problem.summary',
+              message: 'Reference Code ({num})',
+            },
+            { num: codes.length }
+          )}
         >
           {codes.length === 1 ? (
             <CodeBlock language="cpp">{codes[0].code}</CodeBlock>

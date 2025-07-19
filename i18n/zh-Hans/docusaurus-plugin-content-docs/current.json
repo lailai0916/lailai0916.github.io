@@ -7,17 +7,9 @@
     "message": "个人",
     "description": "The label for category 个人 in sidebar sidebar1"
   },
-  "sidebar.sidebar1.category.个人.link.generated-index.description": {
-    "message": "本章主要记录我在 OI 中的个人经验，包括风格规范、对拍工具、常用模板库以及实用技巧等。",
-    "description": "The generated-index page description for category 个人 in sidebar sidebar1"
-  },
   "sidebar.sidebar1.category.比赛相关": {
     "message": "比赛相关",
     "description": "The label for category 比赛相关 in sidebar sidebar1"
-  },
-  "sidebar.sidebar1.category.比赛相关.link.generated-index.description": {
-    "message": "本章主要介绍计算机编程比赛直接相关的知识，包括各种赛事、赛制、题型，以及赛场上常见的坑点与技巧。",
-    "description": "The generated-index page description for category 比赛相关 in sidebar sidebar1"
   },
   "sidebar.sidebar1.category.语言基础": {
     "message": "语言基础",
@@ -46,10 +38,6 @@
   "sidebar.sidebar1.category.动态规划": {
     "message": "动态规划",
     "description": "The label for category 动态规划 in sidebar sidebar1"
-  },
-  "sidebar.sidebar1.category.动态规划.link.generated-index.description": {
-    "message": "动态规划是一种通过把原问题分解为相对简单的子问题的方式求解复杂问题的方法。",
-    "description": "The generated-index page description for category 动态规划 in sidebar sidebar1"
   },
   "sidebar.sidebar1.category.字符串": {
     "message": "字符串",
@@ -255,12 +243,24 @@
     "message": "本章介绍其他英语语法相关知识，包括构词法和标点符号。",
     "description": "The generated-index page description for category 其他 in sidebar sidebar2"
   },
+  "sidebar.sidebar3.category.GitHub": {
+    "message": "GitHub",
+    "description": "The label for category GitHub in sidebar sidebar3"
+  },
+  "sidebar.sidebar3.category.GitHub.link.generated-index.description": {
+    "message": "本章记录 GitHub 相关的项目和经验。",
+    "description": "The generated-index page description for category GitHub in sidebar sidebar3"
+  },
+  "sidebar.sidebar3.category.lailai's Home": {
+    "message": "lailai's Home",
+    "description": "The label for category lailai's Home in sidebar sidebar3"
+  },
   "sidebar.sidebar3.category.模板": {
     "message": "模板",
     "description": "The label for category 模板 in sidebar sidebar3"
   },
   "sidebar.sidebar3.category.模板.link.generated-index.description": {
-    "message": "本章收录各种实用的文档模板，包括题解、Markdown、LaTeX等常用模板。",
+    "message": "本章收录各种实用的文档模板，包括Markdown、LaTeX、Mermaid、题解等常用模板。",
     "description": "The generated-index page description for category 模板 in sidebar sidebar3"
   },
   "sidebar.sidebar3.category.工具": {
@@ -287,18 +287,6 @@
     "message": "终端编程相关教程和工具函数。",
     "description": "The generated-index page description for category 教程 in sidebar sidebar3"
   },
-  "sidebar.sidebar3.category.GitHub": {
-    "message": "GitHub",
-    "description": "The label for category GitHub in sidebar sidebar3"
-  },
-  "sidebar.sidebar3.category.GitHub.link.generated-index.description": {
-    "message": "本章记录 GitHub 相关的项目和经验。",
-    "description": "The generated-index page description for category GitHub in sidebar sidebar3"
-  },
-  "sidebar.sidebar3.category.lailai's Home": {
-    "message": "lailai's Home",
-    "description": "The label for category lailai's Home in sidebar sidebar3"
-  },
   "sidebar.sidebar3.category.Desmos": {
     "message": "Desmos",
     "description": "The label for category Desmos in sidebar sidebar3"
@@ -311,13 +299,13 @@
     "message": "艺术博览会",
     "description": "The label for category 艺术博览会 in sidebar sidebar3"
   },
-  "sidebar.sidebar3.category.图形": {
-    "message": "图形",
-    "description": "The label for category 图形 in sidebar sidebar3"
-  },
   "sidebar.sidebar3.category.尺规作图": {
     "message": "尺规作图",
     "description": "The label for category 尺规作图 in sidebar sidebar3"
+  },
+  "sidebar.sidebar3.category.图形": {
+    "message": "图形",
+    "description": "The label for category 图形 in sidebar sidebar3"
   },
   "sidebar.sidebar3.category.其他": {
     "message": "其他",

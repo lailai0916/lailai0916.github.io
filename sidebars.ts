@@ -76,11 +76,15 @@ const sidebars: SidebarsConfig = {
       type: 'category',
       label: '动态规划',
       link: {
-        type: 'generated-index',
-        description:
-          '动态规划是一种通过把原问题分解为相对简单的子问题的方式求解复杂问题的方法。',
+        type: 'doc',
+        id: 'contest/dp/index',
       },
-      items: ['contest/dp/knapsack', 'contest/dp/tree', 'contest/dp/state'],
+      items: [
+        'contest/dp/basic',
+        'contest/dp/knapsack',
+        'contest/dp/tree',
+        'contest/dp/state',
+      ],
     },
     {
       type: 'category',
