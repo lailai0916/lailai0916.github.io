@@ -89,7 +89,7 @@
 
 解得：$k=\frac{y_2-y_1}{x_2-x_1}=\frac{\Delta y}{\Delta x}$。
 
-所以斜率 k 等于两点纵横坐标之差之比，即**纵横坐标增量之比**。
+所以斜率 $k$ 等于两点纵横坐标之差之比，即 **纵横坐标增量之比**。
 
 切线也是直线，所以切线等斜率 $k$ 也等于 $\frac{\Delta y}{\Delta x}$。
 
@@ -133,7 +133,7 @@ $f(x)$ 的导数一般写作 $f'(x)$ 或 $y'$，一个式子的的导数一般�
 
 $f'(x)=\displaystyle\lim_{\Delta x \to 0}\frac{\Delta y}{\Delta x}$
 
-不难发现 $\frac{\Delta y}{\Delta x}$ 就是切线斜率 $k$ 的定义？所以导数又是 ${\color{Orange}{\text{函数在某点处切线的斜率}}}$.
+不难发现 $\frac{\Delta y}{\Delta x}$ 就是切线斜率 $k$ 的定义？所以导数又是 **函数在某点处切线的斜率**.
 
 ## 举例
 
