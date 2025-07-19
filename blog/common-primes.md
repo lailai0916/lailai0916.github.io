@@ -7,6 +7,10 @@ tags: [math]
 
 <!-- truncate -->
 
+## 参考资料
+
+- [素数列表 - 维基百科](https://zh.wikipedia.org/zh-cn/質數列表)
+
 ## 100 以内 (25)
 
 ```text
