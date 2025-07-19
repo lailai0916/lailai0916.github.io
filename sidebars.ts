@@ -192,7 +192,6 @@ const sidebars: SidebarsConfig = {
           items: [
             'contest/math/math-templates/fraction',
             'contest/math/math-templates/function',
-            'contest/math/math-templates/constant',
           ],
         },
       ],
