@@ -3,7 +3,7 @@
 ## 参考资料
 
 - [题型概述 - OI Wiki](https://oi-wiki.org/contest/problems/)
-- [自产生程序 - 维基百科](https://zh.wikipedia.org/wiki/自產生程式)
+- [自产生程序 - 维基百科](https://zh.wikipedia.org/zh-cn/自產生程式)
 
 ## 传统题
 

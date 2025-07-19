@@ -20,7 +20,7 @@
 
 ## 参考资料
 
-- [加法 - 维基百科](https://zh.wikipedia.org/wiki/加法)
+- [加法 - 维基百科](https://zh.wikipedia.org/zh-cn/加法)
 
 ## 题意简述
 
@@ -62,7 +62,7 @@ int main()
 
 <h2>参考资料</h2>
 
-- [加法 - 维基百科](https://zh.wikipedia.org/wiki/加法)
+- [加法 - 维基百科](https://zh.wikipedia.org/zh-cn/加法)
 
 <h2>题意简述</h2>
 

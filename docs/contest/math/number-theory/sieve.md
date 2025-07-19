@@ -3,7 +3,7 @@
 ## 参考资料
 
 - [筛法 - OI Wiki](https://oi-wiki.org/math/number-theory/sieve/)
-- [埃拉托斯特尼筛法 - 维基百科](https://zh.wikipedia.org/wiki/埃拉托斯特尼筛法)
+- [埃拉托斯特尼筛法 - 维基百科](https://zh.wikipedia.org/zh-cn/埃拉托斯特尼筛法)
 
 ## 算法对比
 

@@ -3,7 +3,7 @@
 ## 参考资料
 
 - [并查集 - OI Wiki](https://oi-wiki.org/ds/dsu/)
-- [并查集 - 维基百科](https://zh.wikipedia.org/wiki/并查集)
+- [并查集 - 维基百科](https://zh.wikipedia.org/zh-cn/并查集)
 
 ## 实现
 

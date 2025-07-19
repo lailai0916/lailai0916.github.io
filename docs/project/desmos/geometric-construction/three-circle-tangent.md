@@ -2,7 +2,7 @@
 
 ## 参考资料
 
-- [圆 - 维基百科](https://zh.wikipedia.org/wiki/圆)
+- [圆 - 维基百科](https://zh.wikipedia.org/zh-cn/圆)
 
 ## 项目链接
 

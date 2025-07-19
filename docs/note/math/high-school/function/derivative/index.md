@@ -2,8 +2,8 @@
 
 ## 参考资料
 
-- [导数 - 维基百科](https://zh.wikipedia.org/wiki/导数)
-- [链式法则 - 维基百科](https://zh.wikipedia.org/wiki/链式法则)
+- [导数 - 维基百科](https://zh.wikipedia.org/zh-cn/导数)
+- [链式法则 - 维基百科](https://zh.wikipedia.org/zh-cn/链式法则)
 
 ## 前置知识
 
@@ -49,7 +49,7 @@
 | $0.0001$  | $0.0000999999998333$  | $0.999999998333$ |
 | $0.00001$ | $0.00000999999999983$ | $0.999999999983$ |
 
-不难发现，随着 $x$ 趋近于 $0$，函数值逐渐趋近 $1$，所以 $\displaystyle\lim_{x \to 0}\frac{\sin x}{x}=1$。（[洛必达法则](https://zh.wikipedia.org/wiki/洛必达法则)）
+不难发现，随着 $x$ 趋近于 $0$，函数值逐渐趋近 $1$，所以 $\displaystyle\lim_{x \to 0}\frac{\sin x}{x}=1$。（[洛必达法则](https://zh.wikipedia.org/zh-cn/洛必达法则)）
 
 ![](assets/graph4.svg)
 

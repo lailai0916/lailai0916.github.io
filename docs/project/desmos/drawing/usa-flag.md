@@ -2,7 +2,7 @@
 
 ## 参考资料
 
-- [美国国旗 - 维基百科](https://zh.wikipedia.org/wiki/美国国旗)
+- [美国国旗 - 维基百科](https://zh.wikipedia.org/zh-cn/美国国旗)
 
 ## 项目链接
 

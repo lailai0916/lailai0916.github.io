@@ -3,7 +3,7 @@
 ## 参考资料
 
 - [快速幂 - OI Wiki](https://oi-wiki.org/math/binary-exponentiation/)
-- [平方求幂 - 维基百科](https://zh.wikipedia.org/wiki/平方求幂)
+- [平方求幂 - 维基百科](https://zh.wikipedia.org/zh-cn/平方求幂)
 
 ## 快速幂
 

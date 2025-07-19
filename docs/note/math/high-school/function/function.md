@@ -2,7 +2,7 @@
 
 ## 参考资料
 
-- [函数 - 维基百科](https://zh.wikipedia.org/wiki/函数)
+- [函数 - 维基百科](https://zh.wikipedia.org/zh-cn/函数)
 - [都表示函数，为啥初中用y，高中用f(x)?【初高中衔接】 - bilibili](https://www.bilibili.com/video/BV1Cd4y1S7Sx/)
 
 ## 函数的定义

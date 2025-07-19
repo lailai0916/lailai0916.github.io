@@ -2,7 +2,7 @@
 
 ## 双伽马函数
 
-- [双伽玛函数 - 维基百科](https://zh.wikipedia.org/wiki/双伽玛函数)
+- [双伽玛函数 - 维基百科](https://zh.wikipedia.org/zh-cn/双伽玛函数)
 
 ```cpp
 double digamma(double x)

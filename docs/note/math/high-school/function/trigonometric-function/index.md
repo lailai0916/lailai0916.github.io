@@ -2,7 +2,7 @@
 
 ## 参考资料
 
-- [三角函数 - 维基百科](https://zh.wikipedia.org/wiki/三角函数)
+- [三角函数 - 维基百科](https://zh.wikipedia.org/zh-cn/三角函数)
 - [《关于我不背三角公式，高考数学144这件事》 一个式子推出所有三角公式 - bilibili](https://www.bilibili.com/video/BV18f4y1Q7GC)
 
 ## 前置知识
@@ -999,7 +999,7 @@ $$
 \sin{(\arcsin x)}=x
 $$
 
-- [反三角函数 - 维基百科](https://zh.wikipedia.org/wiki/反三角函数)
+- [反三角函数 - 维基百科](https://zh.wikipedia.org/zh-cn/反三角函数)
 - [这个视频可能颠覆你对反三角函数的认识！ - bilibili](https://www.bilibili.com/video/BV1oC4y1G7Zk/)
 
 ### 欧拉公式

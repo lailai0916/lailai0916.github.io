@@ -2,7 +2,7 @@
 
 ## 参考资料
 
-- [中华人民共和国国旗 - 维基百科](https://zh.wikipedia.org/wiki/中华人民共和国国旗)
+- [中华人民共和国国旗 - 维基百科](https://zh.wikipedia.org/zh-cn/中华人民共和国国旗)
 
 ## 项目链接
 

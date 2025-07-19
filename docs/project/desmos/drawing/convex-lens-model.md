@@ -4,7 +4,7 @@
 
 ## 参考资料
 
-- [透镜 - 维基百科](https://zh.wikipedia.org/wiki/透镜)
+- [透镜 - 维基百科](https://zh.wikipedia.org/zh-cn/透镜)
 
 ## 项目链接
 

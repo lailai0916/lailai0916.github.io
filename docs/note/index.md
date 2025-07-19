@@ -13,7 +13,7 @@ sidebar_position: 0
 
 ## 参考资料
 
-- [维基百科，自由的百科全书](https://zh.wikipedia.org/wiki/Wikipedia:首页)
+- [维基百科，自由的百科全书](https://zh.wikipedia.org/zh-cn/Wikipedia:首页)
 
 ## 目录
 

@@ -11,7 +11,7 @@ tags: [math]
 
 ## 参考资料
 
-- [泰勒公式 - 维基百科](https://zh.wikipedia.org/wiki/泰勒公式)
+- [泰勒公式 - 维基百科](https://zh.wikipedia.org/zh-cn/泰勒公式)
 - [如何理解泰勒展开？它有何用途？高中生也能听懂的泰勒展开式 - bilibili](https://www.bilibili.com/video/BV1ss411E7be/)
 
 ## 作用
