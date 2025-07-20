@@ -5,6 +5,14 @@
 - [排列组合 - OI Wiki](https://oi-wiki.org/math/combinatorics/combination/)
 - [卢卡斯定理 - OI Wiki](https://oi-wiki.org/math/number-theory/lucas/)
 
+## 加法原理
+
+完成一个工程可以有 $n$ 类办法，$a_i(1 \le i \le n)$ 代表第 $i$ 类方法的数目。那么完成这件事共有 $S=a_1+a_2+\cdots +a_n$ 种不同的方法。
+
+## 乘法原理
+
+完成一个工程需要分 $n$ 个步骤，$a_i(1 \le i \le n)$ 代表第 $i$ 个步骤的不同方法数目。那么完成这件事共有 $S = a_1 \times a_2 \times \cdots \times a_n$ 种不同的方法。
+
 ## 实现
 
 ### 初始化（线性逆元）

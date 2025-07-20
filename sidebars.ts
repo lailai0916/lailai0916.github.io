@@ -145,6 +145,7 @@ const sidebars: SidebarsConfig = {
           items: [
             'contest/math/combinatorics/permutation-and-combination',
             'contest/math/combinatorics/inclusion-exclusion-principle',
+            'contest/math/combinatorics/vandermonde-convolution',
           ],
         },
         {
