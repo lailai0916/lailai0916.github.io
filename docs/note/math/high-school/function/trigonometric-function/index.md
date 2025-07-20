@@ -453,7 +453,7 @@ $$
 
 #### 公式总结
 
-##### 第一组
+第一组（$\frac{\pi}{2}$）
 
 $$
 \sin{(\frac{\pi}{2}+\alpha)}=\cos{\alpha}
@@ -471,7 +471,7 @@ $$
 \cos{(\frac{\pi}{2}-\alpha)}=\sin{\alpha}
 $$
 
-##### 第二组
+第二组（$\pi$）
 
 $$
 \sin{(\pi+\alpha)}=-\sin{\alpha}
@@ -489,7 +489,7 @@ $$
 \cos{(\pi-\alpha)}=-\cos{\alpha}
 $$
 
-##### 第三组
+第三组（$\frac{3\pi}{2}$）
 
 $$
 \sin{(\frac{3\pi}{2}+\alpha)}=-\cos{\alpha}
@@ -507,7 +507,7 @@ $$
 \cos{(\frac{3\pi}{2}-\alpha)}=-\sin{\alpha}
 $$
 
-##### 第四组
+第四组（$2\pi$）
 
 $$
 \sin{(2\pi+\alpha)}=\sin{\alpha}
