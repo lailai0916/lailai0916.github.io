@@ -166,61 +166,65 @@ $$
 ### 平方恒等式
 
 $$
-\boxed{\begin{array}{l}
-  \\
-  \sin^2{\alpha}+\cos^2{\alpha}=1 \\
-  \\
-  1+\tan^2{\alpha}=\sec^2{\alpha} \\
-  \\
-  \cot^2{\alpha}+1=\csc^2{\alpha} \\
-  \\
-\end{array}}
+\sin^2{\alpha}+\cos^2{\alpha}=1
+$$
+
+$$
+1+\tan^2{\alpha}=\sec^2{\alpha}
+$$
+
+$$
+\cot^2{\alpha}+1=\csc^2{\alpha}
 $$
 
 ### 商数恒等式
 
 $$
-\boxed{\begin{array}{l}
-  \\
-  \tan{\alpha}=\frac{\sin{\alpha}}{\cos{\alpha}} \\
-  \\
-  \cot{\alpha}=\frac{\cos{\alpha}}{\sin{\alpha}} \\
-  \\
-\end{array}}
+\tan{\alpha}=\frac{\sin{\alpha}}{\cos{\alpha}}
+$$
+
+$$
+\cot{\alpha}=\frac{\cos{\alpha}}{\sin{\alpha}}
 $$
 
 ### 倒数恒等式
 
 $$
-\boxed{\begin{array}{l}
-  \\
-  \sin{\alpha}=\frac{1}{\csc{\alpha}} \\
-  \\
-  \cos{\alpha}=\frac{1}{\sec{\alpha}} \\
-  \\
-  \tan{\alpha}=\frac{1}{\cot{\alpha}} \\
-  \\
-\end{array}}
+\sin{\alpha}=\frac{1}{\csc{\alpha}}
+$$
+
+$$
+\cos{\alpha}=\frac{1}{\sec{\alpha}}
+$$
+
+$$
+\tan{\alpha}=\frac{1}{\cot{\alpha}}
 $$
 
 ### 积的恒等式
 
 $$
-\boxed{\begin{array}{l}
-  \\
-  \sin{\alpha}=\tan{\alpha}\cos{\alpha} \\
-  \\
-  \cos{\alpha}=\cot{\alpha}\sin{\alpha} \\
-  \\
-  \tan{\alpha}=\sin{\alpha}\sec{\alpha} \\
-  \\
-  \cot{\alpha}=\cos{\alpha}\csc{\alpha} \\
-  \\
-  \sec{\alpha}=\tan{\alpha}\csc{\alpha} \\
-  \\
-  \csc{\alpha}=\sec{\alpha}\cot{\alpha} \\
-  \\
-\end{array}}
+\sin{\alpha}=\tan{\alpha}\cos{\alpha}
+$$
+
+$$
+\cos{\alpha}=\cot{\alpha}\sin{\alpha}
+$$
+
+$$
+\tan{\alpha}=\sin{\alpha}\sec{\alpha}
+$$
+
+$$
+\cot{\alpha}=\cos{\alpha}\csc{\alpha}
+$$
+
+$$
+\sec{\alpha}=\tan{\alpha}\csc{\alpha}
+$$
+
+$$
+\csc{\alpha}=\sec{\alpha}\cot{\alpha}
 $$
 
 ### 推导过程
@@ -566,11 +570,15 @@ $$
 #### 公式总结
 
 $$
-\begin{array}{l}
-  \sin{2\alpha}=2\sin{\alpha}\cos{\alpha} \\
-  \cos{2\alpha}=\cos^2{\alpha}-\sin^2{\alpha}=1-2\sin^2{\alpha}=2\cos^2{\alpha}-1 \\
-  \tan{2\alpha}=\frac{2\tan{\alpha}}{1-\tan^2{\alpha}}
-\end{array}
+\sin{2\alpha}=2\sin{\alpha}\cos{\alpha}
+$$
+
+$$
+\cos{2\alpha}=\cos^2{\alpha}-\sin^2{\alpha}=1-2\sin^2{\alpha}=2\cos^2{\alpha}-1
+$$
+
+$$
+\tan{2\alpha}=\frac{2\tan{\alpha}}{1-\tan^2{\alpha}}
 $$
 
 ### 三倍角公式
@@ -957,7 +965,7 @@ $$
 
 不难发现，$\frac{\Delta y}{\Delta x}$ 也是直线的斜率 $k$ 的计算公式。
 
-所以一条倾斜角为 $\theta$ 的直线，斜率 $k=\tan{\theta}$。
+所以一条 **倾斜角** 为 $\theta$ 的直线，斜率 $k=\tan{\theta}$。
 
 $$
 k=\tan{\theta}=\frac{\Delta y}{\Delta x}
@@ -987,13 +995,19 @@ $$
 c^2 = a^2 + b^2 - 2ab\cos C
 $$
 
-**勾股定理** 其实是 **余弦定理** 在一个角为 **直角** 时的特殊情况。
+:::tip
 
-例如当 $\angle C = 90^\circ$ 时，有 $\cos \angle C=0$，即：
+**勾股定理** 实际上是 **余弦定理** 在一个角为 **直角** 时的特殊情形。
+
+当 $\angle C=90^\circ$ 时，有 $\cos \angle C=0$，代入余弦定理公式得到：
 
 $$
-c^2 = a^2 + b^2
+c^2=a^2+b^2
 $$
+
+但直接用余弦定理证明勾股定理，可能会构成 **循环论证**，因为余弦定理本身可能依赖于勾股定理的成立。
+
+:::
 
 ## 拓展
 
