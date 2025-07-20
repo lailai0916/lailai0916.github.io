@@ -30,7 +30,7 @@ void init()
 ### 排列
 
 $$
-A_{m}^{n}=\frac{n!}{(n-m)!}
+A_{n}^{m}=\frac{n!}{(n-m)!}
 $$
 
 ```cpp
@@ -44,7 +44,7 @@ ll A(ll n,ll m)
 ### 组合
 
 $$
-C_{m}^{n}=\frac{n!}{m!(n-m)!}
+C_{n}^{m}=\frac{n!}{m!(n-m)!}
 $$
 
 ```cpp
@@ -58,7 +58,7 @@ ll C(ll n,ll m)
 ### 卢卡斯定理
 
 $$
-C_{m}^{n}=C_{m/p}^{n/p}\cdot C_{m\bmod p}^{n\bmod p}\pmod p
+C_{n}^{m}=C_{m/p}^{n/p}\cdot C_{m\bmod p}^{n\bmod p}\pmod p
 $$
 
 ```cpp
