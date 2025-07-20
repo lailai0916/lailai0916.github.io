@@ -25,6 +25,14 @@ $$
 a\uparrow\uparrow b=\underbrace{a^{a^{\cdots^a}}}_{b\text{个}a}
 $$
 
+$$
+3\uparrow\uparrow 3=3^{3^3}=3^{27}
+$$
+
+$$
+3\uparrow\uparrow\uparrow\uparrow 3=3\uparrow\uparrow\uparrow 3\uparrow\uparrow\uparrow 3\uparrow\uparrow\uparrow 3
+$$
+
 ## 葛立恒数
 
 $$
