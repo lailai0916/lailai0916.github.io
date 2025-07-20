@@ -13,8 +13,6 @@
 - A 版分为 $2$ 册必修和 $3$ 册选修（选择性必修）。
 - B 版分为 $4$ 册必修和 $3$ 册选修（选择性必修）。
 
-GitHub 上的开源仓库 [ChinaTextbook](https://github.com/TapXWorld/ChinaTextbook/tree/master) 提供几乎所有小学、初中、高中和大学教材的 PDF 下载。
-
 ## 基础与杂项
 
 1. 初高衔接

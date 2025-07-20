@@ -14,7 +14,11 @@ sidebar_position: 0
 ## 参考资料
 
 - [维基百科，自由的百科全书](https://zh.wikipedia.org/zh-cn/Wikipedia:首页)
-- [TapXWorld/ChinaTextbook: 所有小初高、大学PDF教材。](https://github.com/TapXWorld/ChinaTextbook)
+- [国家中小学智慧教育平台](https://basic.smartedu.cn)
+
+## 教材
+
+GitHub 上的开源仓库 [TapXWorld/ChinaTextbook](https://github.com/TapXWorld/ChinaTextbook/tree/master) 提供几乎所有小学、初中、高中和大学教材的 PDF 下载。
 
 ## 目录
 
