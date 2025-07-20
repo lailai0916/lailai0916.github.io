@@ -13,7 +13,7 @@
 
 函数 $f$ 就像一台“机器”，每输入一个 $x$，就会输出唯一的 $y$，我们用 $f(x)$ 表示这个输出值。
 
-![](assets/Function_machine2.svg.png)
+![](assets/Function_machine2.svg)
 
 初中阶段我们学过的 [三角函数](function/trigonometric-function) $\sin$、$\cos$、$\tan$ 就是函数。
 
