@@ -2,6 +2,10 @@
 
 一些网站新功能的测试...
 
+## 注释
+
+<Notation type="circle">This is a notation.</Notation>
+
 ## 例题
 
 <Problem id="P3372" />

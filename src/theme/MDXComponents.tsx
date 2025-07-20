@@ -16,7 +16,7 @@ import Problem from '@site/src/components/Problem';
 export default {
   // Re-use the default mapping
   ...MDXComponents,
-  // Map the "<BrowserWindow>" and "<Notation>" tags to our components
+  // Map tags to our components
   Tabs,
   TabItem,
   DocCardList,
