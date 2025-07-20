@@ -14,6 +14,7 @@ sidebar_position: 0
 ## 参考资料
 
 - [维基百科，自由的百科全书](https://zh.wikipedia.org/zh-cn/Wikipedia:首页)
+- [TapXWorld/ChinaTextbook: 所有小初高、大学PDF教材。](https://github.com/TapXWorld/ChinaTextbook)
 
 ## 目录
 
