@@ -14,6 +14,7 @@ tags: [math]
 ## 超运算
 
 
+## 大数记号
 
 ## 高德纳箭号表示法
 
@@ -44,6 +45,8 @@ $$
 $$
 3\uparrow\uparrow\uparrow\uparrow 3=3\uparrow\uparrow\uparrow 3\uparrow\uparrow\uparrow 3
 $$
+
+## 康威链式箭号表示法
 
 ## 葛立恒数
 
