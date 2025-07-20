@@ -61,7 +61,7 @@ $A,B$ 两点之间的距离一般用 $|AB|$ 表示。
 
 ### 三角形的约定
 
-- [解三角形 - 三角形的约定](../geometry/triangle-solving#三角形的约定)
+- 详见 [解三角形 - 三角形的约定](../geometry/triangle-solving#三角形的约定)
 
 ## 定义
 
@@ -72,7 +72,7 @@ $A,B$ 两点之间的距离一般用 $|AB|$ 表示。
 图中 $\theta=\angle BAC,a=|BC|,b=|AC|,c=|AB|$：
 
 $$
-\sin\theta=\frac{a}{c}
+\sin{\theta}=\frac{a}{c},\cos{\theta}=\frac{b}{c},\tan{\theta}=\frac{a}{b},\cot{\theta}=\frac{b}{a},\sec{\theta}=\frac{c}{b},\csc{\theta}=\frac{c}{a}
 $$
 
 ![](assets/TrigonometryTriangle.svg)
