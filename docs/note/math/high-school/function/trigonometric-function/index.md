@@ -35,11 +35,11 @@
 
 ### 单位圆
 
-单位圆指平面直角坐标系上，圆心为 **原点**，半径为 **单位长度** 的圆。
+单位圆指平面直角坐标系上，圆心为 **原点** 且半径为 **单位长度** 的圆。
 
 单位圆的方程：$x^2+y^2=1$。
 
-<Desmos url="ecbaehbecs" />
+<Desmos url="wocs5bz2f4" />
 
 ### 距离公式
 
@@ -77,29 +77,35 @@ $A,B$ 两点之间的距离一般用 $|AB|$ 表示。
 
 超出这个范围的三角函数就没有意义了，所以高中时会用 **单位圆** 定义任意角三角函数。
 
-![](assets/Unit_circle.svg)
+<Desmos url="dzl65z2m99" />
 
-![](assets/graph9.svg)
+如图，将斜边为 $1$ 的直角三角形放入单位圆内，令：
 
-如图，将斜边为 $1$ 的直角三角形放入单位圆内。
-
-不难发现，不管 $t$ 的大小，都有斜边 $c=1$。
+$$
+\theta=\angle BAC,a=|BC|,b=|AC|,c=|AB|=1
+$$
 
 带入 $\sin$ 和 $\cos$ 的锐角三角函数的定义：
 
 $$
-\sin t=\frac{a}{c}=a,\cos t=\frac{b}{c}=b
+\sin \theta=\frac{a}{c}=a,\cos \theta=\frac{b}{c}=b
 $$
 
 而 $a$ 和 $b$ 是该直角三角形的两边，是这个点的 **纵坐标** 和 **横坐标**.
 
-因此，单位圆周上辐角为 $t$ 的点的坐标为 $(\cos t,\sin t)$。
+因此，单位圆上辐角为 $t$ 的点 $B$ 的坐标为：
 
-:::warning
+$$
+B(\cos \theta,\sin \theta)
+$$
 
-这个点坐标为 $(\cos t,\sin t)$，$\cos$ 在前，$\sin$ 在后。
+:::tip
+
+这个点的坐标是 $(\cos \theta, \sin \theta)$，请注意顺序不要弄错。
 
 :::
+
+![](assets/Unit_circle.svg)
 
 ## 性质
 

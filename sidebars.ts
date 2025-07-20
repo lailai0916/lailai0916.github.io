@@ -331,7 +331,7 @@ const sidebars: SidebarsConfig = {
               type: 'category',
               label: '代数与函数',
               items: [
-                'note/math/high-school/function/function',
+                'note/math/high-school/function/function/index',
                 'note/math/high-school/function/trigonometric-function/index',
                 'note/math/high-school/function/sequence',
                 'note/math/high-school/function/derivative/index',

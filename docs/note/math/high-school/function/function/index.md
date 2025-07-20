@@ -13,6 +13,8 @@
 
 函数 $f$ 就像一台“机器”，每输入一个 $x$，就会输出唯一的 $y$，我们用 $f(x)$ 表示这个输出值。
 
+![](assets/Function_machine2.svg.png)
+
 初中阶段我们学过的 [三角函数](function/trigonometric-function) $\sin$、$\cos$、$\tan$ 就是函数。
 
 通常函数括号不能省略，但在一些不易引起歧义的场合，如 $\sin 2\alpha$、$\ln x$ 等，可以省略括号。
@@ -31,7 +33,7 @@
 
 例如单位圆的方程为 $x^2+y^2=1$，表示平面上所有满足该等式的点 $(x,y)$ 构成的图像，几何意义上，就是到原点距离为 $1$ 的所有点组成的图像，也就是单位圆。
 
-<Desmos url="ecbaehbecs" />
+<Desmos url="wocs5bz2f4" />
 
 ## 方程与函数
 

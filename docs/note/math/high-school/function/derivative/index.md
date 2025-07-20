@@ -36,7 +36,7 @@
 
 不难发现，随着 $x$ 趋近于 $+\infty$，函数值逐渐趋近 $3$，所以 $\displaystyle\lim_{x \to +\infty}\frac{3x-1}{x+3}=3$。
 
-![](assets/graph4.svg)
+<Desmos url="ffnbjq3ghj" />
 
 2. 例2. 求极限 $\displaystyle\lim_{x \to 0}\frac{\sin x}{x}$。
 
@@ -51,7 +51,7 @@
 
 不难发现，随着 $x$ 趋近于 $0$，函数值逐渐趋近 $1$，所以 $\displaystyle\lim_{x \to 0}\frac{\sin x}{x}=1$。（[洛必达法则](https://zh.wikipedia.org/zh-cn/洛必达法则)）
 
-![](assets/graph4.svg)
+<Desmos url="flrlzx7rcl" />
 
 ### 切线
 
