@@ -86,6 +86,8 @@ Stay updated with the latest blog posts:
 
 ## # Sponsor
 
+You can buy me a coffee, and I'll do better. Thanks!
+
 |               Alipay               |             WeChat Pay             |
 | :--------------------------------: | :--------------------------------: |
 | ![](static/img/sponsor/alipay.svg) | ![](static/img/sponsor/wechat.svg) |
