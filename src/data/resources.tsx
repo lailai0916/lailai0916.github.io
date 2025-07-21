@@ -616,7 +616,7 @@ export const RESOURCE_LIST: ResourceCategoryItem[] = [
     ],
   },
   {
-    title: '在线游戏',
+    title: '在线娱乐',
     icon: 'lucide:gamepad',
     resources: [
       {
@@ -649,6 +649,11 @@ export const RESOURCE_LIST: ResourceCategoryItem[] = [
         href: 'https://tuxun.fun',
         description: '地理位置猜测游戏',
       },
+      {
+        title: '猜盐',
+        href: 'https://xiaoce.fun',
+        description: '趣味问答平台',
+      },
     ],
   },
   {
@@ -661,8 +666,18 @@ export const RESOURCE_LIST: ResourceCategoryItem[] = [
         description: '科学上网指南',
       },
       {
+        title: 'ExpressVPN',
+        href: 'https://www.expressvpn.com',
+        description: '专业 VPN 服务',
+      },
+      {
         title: 'NordVPN',
         href: 'https://nordvpn.com',
+        description: '专业 VPN 服务',
+      },
+      {
+        title: 'AstrillVPN',
+        href: 'https://www.astrill.com',
         description: '专业 VPN 服务',
       },
       {
