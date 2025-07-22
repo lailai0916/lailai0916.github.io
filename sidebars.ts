@@ -323,7 +323,7 @@ const sidebars: SidebarsConfig = {
                 'note/math/high-school/misc/set-and-logic',
                 'note/math/high-school/misc/inequality',
                 'note/math/high-school/misc/vector',
-                'note/math/high-school/misc/complex',
+                'note/math/high-school/misc/complex/index',
                 'note/math/high-school/misc/permutation-and-combination',
                 'note/math/high-school/misc/binomial',
               ],
