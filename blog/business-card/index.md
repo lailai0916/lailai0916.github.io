@@ -18,13 +18,13 @@ tags: [personal]
 
 ## 代码
 
-```json
+```json title="business-card.json"
 {
     "name": "lailai",
     "title": "Student & Developer",
     "location": "Hangzhou, China",
+    "website": "https://lailai.one",
     "phone": "+86 17757102577",
-    "email": "lailai0x394@gmail.com",
-    "website": "https://www.lailai.one"
+    "email": "lailai0x394@gmail.com"
 }
 ```
