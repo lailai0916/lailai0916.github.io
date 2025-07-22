@@ -289,23 +289,38 @@ export const RESOURCE_LIST: ResourceCategoryItem[] = [
     ],
   },
   {
-    title: '编程竞赛',
+    title: '算法竞赛',
     icon: 'lucide:trophy',
     resources: [
-      {
-        title: 'Codeforces',
-        href: 'https://codeforces.com',
-        description: '全球编程竞赛平台',
-      },
       {
         title: '洛谷',
         href: 'https://www.luogu.com.cn',
         description: '国内编程竞赛平台',
       },
       {
+        title: 'Codeforces',
+        href: 'https://codeforces.com',
+        description: '全球编程竞赛平台',
+      },
+      {
         title: 'AtCoder',
         href: 'https://atcoder.jp',
         description: '日本编程竞赛平台',
+      },
+      {
+        title: 'Virtual Judge',
+        href: 'https://vjudge.net',
+        description: '多平台虚拟判题系统',
+      },
+      {
+        title: 'Algorithm Duels Online',
+        href: 'https://algorithm-duels.online',
+        description: '组队算法对决平台',
+      },
+      {
+        title: 'Code Golf',
+        href: 'https://code.golf',
+        description: '最短代码挑战平台',
       },
       {
         title: 'OI Wiki',
@@ -318,19 +333,19 @@ export const RESOURCE_LIST: ResourceCategoryItem[] = [
         description: '信息学竞赛记录库',
       },
       {
-        title: 'Virtual Judge',
-        href: 'https://vjudge.net',
-        description: '多平台虚拟判题系统',
+        title: '原题机',
+        href: 'http://yuantiji.ac/zh/',
+        description: '编程题目溯源工具',
       },
       {
-        title: 'Code Golf',
-        href: 'https://code.golf',
-        description: '最短代码挑战平台',
+        title: 'Diff Tool',
+        href: 'https://csacademy.com/app/diffing_tool/',
+        description: '在线代码差异比较',
       },
       {
-        title: 'Algorithm Duels Online',
-        href: 'https://algorithm-duels.online',
-        description: '组队算法对决平台',
+        title: 'Graph Editor',
+        href: 'https://csacademy.com/app/graph_editor/',
+        description: '图论可视化编辑器',
       },
     ],
   },
@@ -398,37 +413,6 @@ export const RESOURCE_LIST: ResourceCategoryItem[] = [
     ],
   },
   {
-    title: '开发工具',
-    icon: 'lucide:wrench',
-    resources: [
-      {
-        title: 'Colorable',
-        href: 'https://colorable.jxnblk.com',
-        description: '颜色对比度检测工具',
-      },
-      {
-        title: 'Diff Tool',
-        href: 'https://csacademy.com/app/diffing_tool/',
-        description: '在线代码差异比较',
-      },
-      {
-        title: 'Graph Editor',
-        href: 'https://csacademy.com/app/graph_editor/',
-        description: '图论可视化编辑器',
-      },
-      {
-        title: '原题机',
-        href: 'http://yuantiji.ac/zh/',
-        description: '编程题目溯源工具',
-      },
-      {
-        title: '毒蘑菇测试',
-        href: 'https://cznull.github.io/vsbm',
-        description: 'GPU 渲染性能测试',
-      },
-    ],
-  },
-  {
     title: '日常工具',
     icon: 'lucide:bolt',
     resources: [
@@ -441,6 +425,11 @@ export const RESOURCE_LIST: ResourceCategoryItem[] = [
         title: 'Speedtest',
         href: 'https://www.speedtest.net',
         description: '网络速度测试工具',
+      },
+      {
+        title: '毒蘑菇测试',
+        href: 'https://cznull.github.io/vsbm',
+        description: 'GPU 渲染性能测试',
       },
       {
         title: '能不能好好说话？',
@@ -561,6 +550,11 @@ export const RESOURCE_LIST: ResourceCategoryItem[] = [
     title: '设计创意',
     icon: 'lucide:palette',
     resources: [
+      {
+        title: 'Colorable',
+        href: 'https://colorable.jxnblk.com',
+        description: '颜色对比度检测工具',
+      },
       {
         title: 'Skill Icons',
         href: 'https://skillicons.dev',
