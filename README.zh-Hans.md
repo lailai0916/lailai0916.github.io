@@ -94,6 +94,6 @@ website
 
 ## # 许可证
 
-本项目代码遵循 [MIT License](LICENSE)。
+本项目代码遵循 [MIT 许可协议](LICENSE)。
 
-本网站内容遵循 [CC BY 4.0](LICENSE-docs)。
+本网站内容遵循 [知识共享署名 4.0 国际许可协议](LICENSE-docs)。
