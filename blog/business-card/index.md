@@ -14,3 +14,17 @@ tags: [personal]
 |              浅色版本               |              深色版本              |
 | :---------------------------------: | :--------------------------------: |
 | ![](assets/business-card-light.png) | ![](assets/business-card-dark.png) |
+
+
+## 代码
+
+```json
+{
+    "name": "lailai",
+    "title": "Student & Developer",
+    "location": "Hangzhou, China",
+    "phone": "+86 17757102577",
+    "email": "lailai0x394@gmail.com",
+    "website": "https://www.lailai.one"
+}
+```
