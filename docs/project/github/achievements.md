@@ -130,6 +130,7 @@ async function autoCreatePullRequest(page, k) {
     'div[role="dialog"] >> button:has-text("Commit changes")',
     { timeout: 5000 }
   );
+  await page.waitForTimeout(3000);
   const confirmButton = page.locator(
     'div[role="dialog"] >> button:has-text("Commit changes")'
   );
