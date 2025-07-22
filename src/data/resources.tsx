@@ -327,6 +327,11 @@ export const RESOURCE_LIST: ResourceCategoryItem[] = [
         href: 'https://code.golf',
         description: '最短代码挑战平台',
       },
+      {
+        title: 'Algorithm Duels Online',
+        href: 'https://algorithm-duels.online',
+        description: '组队算法对决平台',
+      },
     ],
   },
   {
