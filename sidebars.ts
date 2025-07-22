@@ -122,6 +122,7 @@ const sidebars: SidebarsConfig = {
             'contest/math/number-theory/sqrt-decomposition',
             'contest/math/number-theory/euler-totient',
             'contest/math/number-theory/sieve',
+            'contest/math/number-theory/pollard-rho',
             'contest/math/number-theory/inverse',
             'contest/math/number-theory/du',
           ],
