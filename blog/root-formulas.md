@@ -81,7 +81,7 @@ $$
   &+ x^{n-1} \cdot a_n (-x_1-x_2-\cdots-x_n) \\
   &+ x^{n-2} \cdot a_n (x_1x_2+x_1x_3+\cdots+x_1x_n+x_2x_3+\cdots+x_{n-1}x_n) \\
   &+ \cdots \\
-  &+ x^{n-r} \cdot a_n \left(\sum_{1\le i_1\le i_2\le \cdots \le i_{r-1} \le i_r \le n}(-x_{i_1})(-x_{i_2})\cdots(-x_{i_{r-1}})(-x_{i_r})\right) \\
+  &+ x^{n-r} \cdot a_n \left[\sum_{1\le i_1\le i_2\le \cdots \le i_{r-1} \le i_r \le n}(-x_{i_1})(-x_{i_2})\cdots(-x_{i_{r-1}})(-x_{i_r})\right] \\
   &+ \cdots \\
   &+ a_n(-1)^n(x_1x_2\cdots x_n) \\
   &= \sum_{r=0}^n x^{n-r}a_n(-1)^r\left(\sum x_{i_1}x_{i_2}\cdots x_{i_{r-1}}x_{i_r}\right)
