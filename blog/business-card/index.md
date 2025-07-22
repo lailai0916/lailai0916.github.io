@@ -11,20 +11,19 @@ tags: [personal]
 
 ## 效果展示
 
-|              浅色版本               |              深色版本              |
-| :---------------------------------: | :--------------------------------: |
-| ![](assets/business-card-light.png) | ![](assets/business-card-dark.png) |
-
+|                                                          正面                                                          |                                                         反面                                                         |
+| :--------------------------------------------------------------------------------------------------------------------: | :------------------------------------------------------------------------------------------------------------------: |
+| ![](assets/business-card-front-light.png#gh-light-mode-only)![](assets/business-card-front-dark.png#gh-dark-mode-only) | ![](assets/business-card-back-light.png#gh-light-mode-only)![](assets/business-card-back-dark.png#gh-dark-mode-only) |
 
 ## 代码
 
 ```json title="business-card.json"
 {
-    "name": "lailai",
-    "title": "Student & Developer",
-    "location": "Hangzhou, China",
-    "website": "https://lailai.one",
-    "phone": "+86 17757102577",
-    "email": "lailai0x394@gmail.com"
+  "name": "lailai",
+  "title": "Student & Developer",
+  "location": "Hangzhou, China",
+  "website": "https://lailai.one",
+  "phone": "+86 17757102577",
+  "email": "lailai0x394@gmail.com"
 }
 ```
