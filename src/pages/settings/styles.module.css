@@ -512,26 +512,3 @@
     font-size: 1.25rem;
   }
 }
-
-/* ==========================================================================
-   9. Dark Mode Enhancements
-   ========================================================================== */
-
-html[data-theme='dark'] .headerSection {
-  background-color: var(--ifm-color-emphasis-100);
-}
-
-html[data-theme='dark'] .statIcon {
-  background: var(--ifm-color-emphasis-300);
-  color: var(--ifm-color-emphasis-800);
-}
-
-html[data-theme='dark'] .settingCard {
-  background: var(--ifm-color-emphasis-200);
-  border-color: var(--ifm-color-emphasis-400);
-}
-
-html[data-theme='dark'] .settingCard:hover {
-  background: var(--ifm-color-emphasis-300);
-  border-color: var(--ifm-color-primary);
-}
