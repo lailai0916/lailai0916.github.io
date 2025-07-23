@@ -709,7 +709,11 @@ const sidebars: SidebarsConfig = {
         },
       ],
     },
-    'project/test',
+    {
+      type: 'link',
+      label: '测试',
+      href: '/test',
+    },
   ],
 };
 

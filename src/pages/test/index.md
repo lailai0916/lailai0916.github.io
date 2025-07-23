@@ -1,6 +1,14 @@
-# 测试
+---
+title: Test
+hide_table_of_contents: true
+---
 
-一些网站新功能的测试...
+<div style={{maxWidth: '664px', margin: 'auto'}}>
+
+<div align="center">
+  <h1>Test</h1>
+  <p>Tests for new website features</p>
+</div>
 
 ## 注释
 
@@ -62,3 +70,5 @@ function Clock(props) {
 ## Desmos
 
 <Desmos url="mjjhvujgos" />
+
+</div>
