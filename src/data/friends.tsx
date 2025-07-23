@@ -33,7 +33,7 @@ export const FRIEND_LIST: FriendItem[] = [
   },
   {
     title: 'Mirekintoc',
-    description: 'Zako Chuugaku Sannensei OIer & Personal Developer',
+    description: 'Zate feíam sucur ilém',
     href: 'https://vochant.github.io',
     avatar: 'img/avatar/Mirekintoc.png',
   },
@@ -60,5 +60,11 @@ export const FRIEND_LIST: FriendItem[] = [
     description: '一息尚存，方能涅槃而生',
     href: 'https://www.luogu.com.cn/user/718017',
     avatar: 'img/avatar/Dream__maker.png',
+  },
+  {
+    title: '0513DTY',
+    description: '',
+    href: 'https://www.luogu.com.cn/user/1031108',
+    avatar: 'img/avatar/0513DTY.png',
   },
 ];
