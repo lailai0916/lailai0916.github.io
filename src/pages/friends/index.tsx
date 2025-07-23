@@ -30,23 +30,12 @@ function MainContent() {
         </div>
         <div className={styles.statsGrid}>
           <div className={styles.statCard}>
+            <div className={styles.statIcon}>
+              <Icon icon="lucide:users" width={20} height={20} />
+            </div>
             <div className={styles.statContent}>
               <div className={styles.statNumber}>{totalFriends}</div>
-              <div className={styles.statLabel}>
-                <IconText icon="lucide:users" colorMode="monochrome">
-                  位朋友
-                </IconText>
-              </div>
-            </div>
-          </div>
-          <div className={styles.statCard}>
-            <div className={styles.statContent}>
-              <div className={styles.statNumber}>{activeFriends}</div>
-              <div className={styles.statLabel}>
-                <IconText icon="lucide:link" colorMode="monochrome">
-                  个链接
-                </IconText>
-              </div>
+              <div className={styles.statLabel}>位朋友</div>
             </div>
           </div>
         </div>
