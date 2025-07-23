@@ -11,7 +11,6 @@ import {
 import Section from '../common/Section';
 import { TEXT_COLORS } from '../common';
 
-// 常量定义
 const DATE_FORMAT_OPTIONS: Intl.DateTimeFormatOptions = {
   year: 'numeric',
   month: 'long',
@@ -19,7 +18,6 @@ const DATE_FORMAT_OPTIONS: Intl.DateTimeFormatOptions = {
   timeZone: 'UTC',
 } as const;
 
-// 文本截断样式配置 - 学习Project的配置化机制
 const TEXT_CLAMP_STYLES = {
   title: {
     display: '-webkit-box',
@@ -32,7 +30,6 @@ const TEXT_CLAMP_STYLES = {
   } as React.CSSProperties,
 } as const;
 
-// 样式常量
 const CARD_STYLES = {
   container:
     'group block h-full w-full rounded-2xl outline-none focus:outline-none no-underline hover:no-underline focus:ring-2 focus:ring-[var(--ifm-color-primary)]',
@@ -42,9 +39,6 @@ const CARD_STYLES = {
     'font-semibold text-lg leading-snug group-hover:text-[var(--ifm-color-primary)] transition-colors duration-200',
 } as const;
 
-/**
- * 日期格式化函数
- */
 const formatDate = (dateString: string, locale: string): string => {
   try {
     const date = new Date(dateString);
@@ -59,9 +53,6 @@ const formatDate = (dateString: string, locale: string): string => {
   }
 };
 
-/**
- * 博客卡片组件
- */
 const BlogCard = React.memo<ProcessedBlogPost & { locale: string }>(
   ({ title, date, permalink, locale }) => {
     const formattedDate = useMemo(
@@ -105,9 +96,6 @@ const BlogCard = React.memo<ProcessedBlogPost & { locale: string }>(
 
 BlogCard.displayName = 'BlogCard';
 
-/**
- * 博客卡片列表组件
- */
 const BlogCardList = React.memo<{ posts: ProcessedBlogPost[]; locale: string }>(
   ({ posts, locale }) => {
     if (!posts.length) {
@@ -139,9 +127,6 @@ const BlogCardList = React.memo<{ posts: ProcessedBlogPost[]; locale: string }>(
 
 BlogCardList.displayName = 'BlogCardList';
 
-/**
- * 博客主组件
- */
 export default function Blog() {
   const { i18n } = useDocusaurusContext();
   const recentPosts = useMemo(() => getRecentBlogPosts(), []);
@@ -150,7 +135,6 @@ export default function Blog() {
     <Section>
       <div className="max-w-7xl mx-auto flex flex-col lg:flex-row px-5 w-full items-center">
         <div className="max-w-3xl lg:max-w-7xl gap-5 flex flex-col lg:flex-row lg:px-5">
-          {/* 左侧描述区域 */}
           <div className="w-full lg:w-6/12 max-w-3xl flex flex-col items-start justify-start lg:ps-5 lg:pe-10">
             <h2
               className={`font-bold text-3xl md:text-4xl ${TEXT_COLORS.PRIMARY} leading-tight mb-8 flex items-center gap-3`}
@@ -184,7 +168,6 @@ export default function Blog() {
             </Link>
           </div>
 
-          {/* 右侧博客卡片区域 */}
           <div className="w-full lg:w-6/12">
             <p
               className={`font-bold text-sm ${TEXT_COLORS.SECONDARY} flex flex-row gap-2 items-center mt-5 lg:mt-0 w-full`}
