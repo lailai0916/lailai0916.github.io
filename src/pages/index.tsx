@@ -16,7 +16,6 @@ import Skill from './_components/Skill';
 import Exploration from './_components/Exploration';
 import Quote from './_components/Quote';
 import Community from './_components/Community';
-import Device from './_components/Device';
 
 export default function Home(): ReactNode {
   const { siteConfig } = useDocusaurusContext();
@@ -36,7 +35,6 @@ export default function Home(): ReactNode {
         <NeuralNetwork />
         <Quote />
         <Community />
-        {/* <Device /> */}
       </main>
     </Layout>
   );
