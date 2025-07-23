@@ -3,7 +3,6 @@ import Link from '@docusaurus/Link';
 import Layout from '@theme/Layout';
 import Heading from '@theme/Heading';
 import { Icon } from '@iconify/react';
-import clsx from 'clsx';
 
 import { FriendItem, FRIEND_LIST } from '@site/src/data/friends';
 import IconText from '@site/src/components/IconText';
