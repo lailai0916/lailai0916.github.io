@@ -19,10 +19,8 @@ import Community from './_components/Community';
 
 export default function Home(): ReactNode {
   const { siteConfig } = useDocusaurusContext();
-  const { title, tagline } = siteConfig;
-
   return (
-    <Layout title={title} description={tagline}>
+    <Layout title={siteConfig.title} description={siteConfig.tagline}>
       <TopBanner />
       <HeroBanner />
       <main className={styles.section}>
