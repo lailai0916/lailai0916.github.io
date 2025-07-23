@@ -25,7 +25,7 @@ const config: Config = {
   projectName: 'lailai0916.github.io',
 
   trailingSlash: false,
-  onBrokenLinks: 'warn',
+  onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
 
   i18n: {
