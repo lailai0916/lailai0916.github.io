@@ -129,15 +129,15 @@ const config: Config = {
           position: 'left',
           label: 'Project',
         },
-        { to: 'blog', label: 'Blog', position: 'left' },
+        { label: 'Blog', to: '/blog', position: 'left' },
         {
           label: 'More',
           position: 'right',
           items: [
-            { label: 'About', to: 'about' },
-            { label: 'Travel', to: 'travel' },
-            { label: 'Friends', to: 'friends' },
-            { label: 'Resources', to: 'resources' },
+            { label: 'About', to: '/about' },
+            { label: 'Travel', to: '/travel' },
+            { label: 'Friends', to: '/friends' },
+            { label: 'Resources', to: '/resources' },
           ],
         },
         { type: 'localeDropdown', position: 'right' },
@@ -154,10 +154,10 @@ const config: Config = {
         {
           title: 'Docs',
           items: [
-            { label: 'Contest', to: 'docs/contest' },
-            { label: 'Note', to: 'docs/note' },
-            { label: 'Project', to: 'docs/project' },
-            { label: 'Blog', to: 'blog' },
+            { label: 'Contest', to: '/docs/contest' },
+            { label: 'Note', to: '/docs/note' },
+            { label: 'Project', to: '/docs/project' },
+            { label: 'Blog', to: '/blog' },
           ],
         },
         {
@@ -175,13 +175,10 @@ const config: Config = {
         {
           title: 'More',
           items: [
-            { label: 'About', to: 'about' },
-            { label: 'Friends', to: 'friends' },
-            { label: 'Settings', to: 'settings' },
-            {
-              label: 'Repository',
-              href: 'https://github.com/lailai0916/lailai0916.github.io',
-            },
+            { label: 'About', to: '/about' },
+            { label: 'Friends', to: '/friends' },
+            { label: 'Games', to: '/games' },
+            { label: 'Settings', to: '/settings' },
           ],
         },
       ],
@@ -226,11 +223,7 @@ const config: Config = {
     },
   ],
 
-  themes: [
-    // ... Your other themes.
-    '@docusaurus/theme-mermaid',
-    '@docusaurus/theme-live-codeblock',
-  ],
+  themes: ['@docusaurus/theme-mermaid', '@docusaurus/theme-live-codeblock'],
 
   plugins: [
     async function tailwindcssPlugin() {
