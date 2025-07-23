@@ -211,39 +211,6 @@ export function FontSettings() {
   );
 }
 
-// 通知设置
-export function NotificationSettings() {
-  const [toggles, setToggles] = usePersistentState('settings-notifications', {
-    newPosts: true,
-    siteUpdates: false,
-  });
-
-  const handleToggle = (key: keyof typeof toggles, checked: boolean) => {
-    setToggles((prev) => ({ ...prev, [key]: checked }));
-  };
-
-  return (
-    <SettingCard title="通知" subtitle="消息推送" icon="lucide:bell">
-      <p className={styles.cardDescription}>管理您希望接收的网站通知。</p>
-      <ul className={styles.toggleList}>
-        <li>
-          <span>新文章发布</span>
-          <Switch
-            checked={toggles.newPosts}
-            onChange={(checked) => handleToggle('newPosts', checked)}
-          />
-        </li>
-        <li>
-          <span>网站功能更新</span>
-          <Switch
-            checked={toggles.siteUpdates}
-            onChange={(checked) => handleToggle('siteUpdates', checked)}
-          />
-        </li>
-      </ul>
-    </SettingCard>
-  );
-}
 
 // 实验性功能
 export function ExperimentalFeatures() {

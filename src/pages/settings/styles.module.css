@@ -16,7 +16,7 @@
 .container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 2rem 4rem 2rem;
+  padding: 4rem 2rem 4rem 2rem;
 }
 
 .content {
@@ -86,48 +86,6 @@
   align-items: center;
   justify-content: center;
   color: var(--ifm-color-emphasis-600);
-}
-
-/* ==========================================================================
-   3. Settings Sections
-   ========================================================================== */
-
-.settingsSection {
-  background: var(--ifm-background-color);
-}
-
-.sectionHeader {
-  margin-bottom: 2rem;
-  padding-bottom: 1rem;
-  border-bottom: 2px solid var(--ifm-color-emphasis-200);
-}
-
-.sectionTitleGroup {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-}
-
-.sectionTitle {
-  font-size: 2rem;
-  font-weight: 700;
-  margin: 0;
-  color: var(--ifm-font-color-base);
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-}
-
-.sectionIcon {
-  color: var(--ifm-color-primary);
-  flex-shrink: 0;
-}
-
-.sectionDescription {
-  font-size: 1rem;
-  color: var(--ifm-color-emphasis-600);
-  margin: 0;
-  line-height: 1.5;
 }
 
 /* ==========================================================================
@@ -425,25 +383,6 @@
 }
 
 /* ==========================================================================
-   7. Animations
-   ========================================================================== */
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(8px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.settingsSection {
-  animation: fadeIn 0.3s ease-out;
-}
-
-/* ==========================================================================
    8. Responsive Design
    ========================================================================== */
 
@@ -480,10 +419,6 @@
   .container {
     padding: 0 1rem 2rem 1rem;
   }
-
-  .sectionTitle {
-    font-size: 1.5rem;
-  }
 }
 
 @media (max-width: 480px) {
@@ -506,9 +441,5 @@
 
   .settingCard {
     padding: 1rem;
-  }
-
-  .sectionTitle {
-    font-size: 1.25rem;
   }
 }
