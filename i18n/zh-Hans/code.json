@@ -500,6 +500,9 @@
   "home.blog.more": {
     "message": "查看更多文章"
   },
+  "home.blog.noPosts": {
+    "message": "暂无文章，敬请期待更多精彩内容..."
+  },
   "home.countdown.title": {
     "message": "倒计时"
   },
@@ -696,6 +699,6 @@
     "message": "神经网络"
   },
   "home.neuralnetwork.description": {
-    "message": "在下方绘制数字 0-9，神经网络会实时识别您的手写数字"
+    "message": "在下方绘制数字 0~9，神经网络会实时识别您的手写数字"
   }
 }

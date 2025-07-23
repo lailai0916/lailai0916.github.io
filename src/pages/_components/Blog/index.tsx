@@ -6,7 +6,6 @@ import IconText from '@site/src/components/IconText';
 
 import {
   getRecentBlogPosts,
-  BLOG_CONFIG,
   type ProcessedBlogPost,
 } from '@site/src/utils/blogData';
 import Section from '../common/Section';
@@ -75,7 +74,6 @@ const BlogCard = React.memo<ProcessedBlogPost & { locale: string }>(
         to={permalink}
         className={CARD_STYLES.container}
         style={{ textDecoration: 'none' }}
-        aria-label={`阅读文章: ${title}, 发布于 ${formattedDate}`}
       >
         <article className={CARD_STYLES.article}>
           <div className="space-y-6">
@@ -116,7 +114,9 @@ const BlogCardList = React.memo<{ posts: ProcessedBlogPost[]; locale: string }>(
       return (
         <div className="w-full text-center py-12">
           <p className={`${TEXT_COLORS.MUTED} text-lg`}>
-            {BLOG_CONFIG.EMPTY_STATE_MESSAGE}
+            <Translate id="home.blog.noPosts">
+              No articles yet, stay tuned for more exciting content...
+            </Translate>
           </p>
         </div>
       );
@@ -124,7 +124,7 @@ const BlogCardList = React.memo<{ posts: ProcessedBlogPost[]; locale: string }>(
 
     return (
       <>
-        {posts.slice(0, BLOG_CONFIG.MAX_POSTS).map((post, index) => (
+        {posts.slice(0, 4).map((post, index) => (
           <div
             key={post.permalink}
             className={index === 3 ? 'hidden md:block' : undefined}

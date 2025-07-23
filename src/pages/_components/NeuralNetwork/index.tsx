@@ -15,7 +15,7 @@ export default function NeuralNetwork() {
           description={translate({
             id: 'home.neuralnetwork.description',
             message:
-              'Draw digits 0-9 below, and the neural network will recognize your handwriting in real-time',
+              'Draw digits 0~9 below, and the neural network will recognize your handwriting in real-time',
           })}
         />
 
