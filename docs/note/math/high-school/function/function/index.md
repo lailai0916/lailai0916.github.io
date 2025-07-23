@@ -19,7 +19,7 @@
 
 在函数 $f(x)$ 中，$f$ 是 **函数名**，通常用 $f$、$g$、$h$ 等字母表示；$x$ 是 **自变量**，表示输入；$f(x)$ 是 **函数值**，即输出结果。
 
-初中阶段我们学过的 [三角函数](function/trigonometric-function)（$\sin$、$\cos$、$\tan$）就是函数。
+初中我们学过的 [三角函数](trigonometric-function)（$\sin$、$\cos$、$\tan$）就是函数。
 
 :::tip
 

@@ -12,12 +12,8 @@ import styles from './styles.module.css';
 const TITLE = '友链';
 const DESCRIPTION = '真正的友谊是世上最稀有的东西。';
 
-// 主要内容区域组件
 function MainContent() {
   const totalFriends = FRIEND_LIST.length;
-  const activeFriends = FRIEND_LIST.filter(
-    (friend) => friend.href && friend.href !== '#'
-  ).length;
 
   return (
     <div className={styles.quickStats}>
