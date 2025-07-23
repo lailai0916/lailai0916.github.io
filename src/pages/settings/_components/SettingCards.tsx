@@ -19,7 +19,7 @@ import {
   updateDOMColors,
 } from '@site/src/utils/colorUtils';
 import Color from 'color';
-import Switch from '../../../components/laiKit/Switch';
+import Switch from '@site/src/components/laiKit/Switch';
 
 // --- 通用组件 ---
 
