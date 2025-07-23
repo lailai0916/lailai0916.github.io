@@ -222,7 +222,7 @@ async function autoCreateDiscussionAnswer(page, k) {
   const discussionUrl = page.url();
   console.log(`讨论已创建，URL: ${discussionUrl}`);
 
-  // TODO: 添加回答讨论的逻辑
+  // 添加回答讨论的逻辑
   console.log(
     `执行第 ${k} 次 Galaxy Brain 操作 - 标题: ${discussionTitle}, 内容: ${discussionBody}`
   );
