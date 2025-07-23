@@ -42,7 +42,8 @@ const config: Config = {
 
           // showLastUpdateAuthor: true,
           showLastUpdateTime: true,
-          // editUrl: 'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+          editUrl:
+            'https://github.com/lailai0916/lailai0916.github.io/tree/main/',
 
           remarkPlugins: [
             remarkMath,
@@ -64,7 +65,8 @@ const config: Config = {
 
           // showLastUpdateAuthor: true,
           showLastUpdateTime: true,
-          // editUrl: 'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+          editUrl:
+            'https://github.com/lailai0916/lailai0916.github.io/tree/main/',
 
           onInlineTags: 'warn',
           onInlineAuthors: 'warn',
