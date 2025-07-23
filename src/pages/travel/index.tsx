@@ -10,7 +10,7 @@ import {
   SectionHeader,
   GridLayout,
   GridConfigs,
-} from '@site/src/pages/_components/common';
+} from '@site/src/components/laiKit/common';
 import { TRAVEL_STAT_LIST, TravelStatItem } from '@site/src/data/travel';
 
 // 页面常量

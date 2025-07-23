@@ -7,7 +7,7 @@ import {
   GridLayout,
   GridConfigs,
   TEXT_COLORS,
-} from '../common';
+} from '../../../components/laiKit/common';
 import { QUOTE_LIST } from '@site/src/data/quotes';
 import { translate } from '@docusaurus/Translate';
 

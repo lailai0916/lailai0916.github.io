@@ -9,7 +9,7 @@ import {
   GridConfigs,
   IconWrapper,
   TEXT_COLORS,
-} from '../common';
+} from '../../../components/laiKit/common';
 import { translate } from '@docusaurus/Translate';
 
 function CommunityCard({

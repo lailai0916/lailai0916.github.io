@@ -1,4 +1,4 @@
-import { STATUS_COLORS } from '@site/src/pages/_components/common/constants';
+import { STATUS_COLORS } from '@site/src/components/laiKit/common/constants';
 import { translate } from '@docusaurus/Translate';
 
 export type ExplorationItem = {
