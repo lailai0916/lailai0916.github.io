@@ -3,7 +3,7 @@ import Layout from '@theme/Layout';
 import Heading from '@theme/Heading';
 import clsx from 'clsx';
 
-import IconText from '@site/src/components/IconText';
+import IconText from '@site/src/components/laiKit/IconText';
 import styles from './styles.module.css';
 import {
   ThemeSettings,
@@ -17,43 +17,30 @@ import {
 const TITLE = '设置';
 const DESCRIPTION = '个性化您的体验，自定义网站功能和偏好设置';
 
-const STATS = [
-  { value: 6, label: '项设置', icon: 'lucide:settings' },
-  { value: 3, label: '个分类', icon: 'lucide:layers' },
-  { value: 4, label: '项功能', icon: 'lucide:zap' },
-];
+const STATS = [{ value: 6, label: '项设置', icon: 'lucide:settings' }];
 
 const SECTIONS = [
   {
     title: '基础设置',
     description: '外观主题、字体大小等基本个性化选项',
     icon: 'lucide:palette',
-    items: [
-      { Comp: ThemeSettings },
-      { Comp: FontSettings },
-    ],
+    items: [{ Comp: ThemeSettings }, { Comp: FontSettings }],
   },
   {
     title: '偏好设置',
     description: '通知推送、实验功能等个性化体验',
     icon: 'lucide:bell',
-    items: [
-      { Comp: NotificationSettings },
-      { Comp: ExperimentalFeatures },
-    ],
+    items: [{ Comp: NotificationSettings }, { Comp: ExperimentalFeatures }],
   },
   {
     title: '高级工具',
     description: '主题定制、管理工具等高级功能',
     icon: 'lucide:rocket',
-    items: [
-      { Comp: ColorGenerator, large: true },
-      { Comp: QuickActions },
-    ],
+    items: [{ Comp: ColorGenerator, large: true }, { Comp: QuickActions }],
   },
 ];
 
-function StatCard({ value, label, icon }: typeof STATS[number]) {
+function StatCard({ value, label, icon }: (typeof STATS)[number]) {
   return (
     <div className={styles.statCard}>
       <div className={styles.statContent}>

@@ -1,7 +1,7 @@
 import React from 'react';
 import { translate } from '@docusaurus/Translate';
 import { PROJECT_LIST } from '@site/src/data/projects';
-import IconText from '@site/src/components/IconText';
+import IconText from '@site/src/components/laiKit/IconText';
 import {
   BaseCard,
   Section,

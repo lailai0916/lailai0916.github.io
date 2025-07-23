@@ -2,7 +2,7 @@ import React, { useMemo } from 'react';
 import Link from '@docusaurus/Link';
 import Translate from '@docusaurus/Translate';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
-import IconText from '@site/src/components/IconText';
+import IconText from '@site/src/components/laiKit/IconText';
 
 import {
   getRecentBlogPosts,

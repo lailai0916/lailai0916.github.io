@@ -8,7 +8,7 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Giscus from '@giscus/react';
 import { COMMUNITY_LIST } from '@site/src/data/community';
 import { DEVICE_LIST } from '@site/src/data/device';
-import IconText from '@site/src/components/IconText';
+import IconText from '@site/src/components/laiKit/IconText';
 import styles from './styles.module.css';
 
 export const Title = () => (

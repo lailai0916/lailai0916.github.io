@@ -22,7 +22,7 @@ import {
   darkStorage,
   updateDOMColors,
 } from '@site/src/utils/colorUtils';
-import IconText from '@site/src/components/IconText';
+import IconText from '@site/src/components/laiKit/IconText';
 import styles from './styles.module.css';
 
 function wcagContrast(foreground: string, background: string) {

@@ -4,12 +4,13 @@ import Layout from '@theme/Layout';
 import Heading from '@theme/Heading';
 import { Icon } from '@iconify/react';
 import clsx from 'clsx';
+import DataCard from '@site/src/components/laiKit/DataCard';
 
 import {
   RESOURCE_LIST,
   type ResourceCategoryItem,
 } from '@site/src/data/resources';
-import IconText from '@site/src/components/IconText';
+import IconText from '@site/src/components/laiKit/IconText';
 import styles from './styles.module.css';
 
 const TITLE = '资源';
@@ -96,24 +97,8 @@ function MainContent({ categories }: { categories: ResourceCategoryItem[] }) {
           <p className={styles.mainDescription}>精心筛选的优质工具与平台</p>
         </div>
         <div className={styles.statsGrid}>
-          <div className={styles.statCard}>
-            <div className={styles.statIcon}>
-              <Icon icon="lucide:folder" width={20} height={20} />
-            </div>
-            <div className={styles.statContent}>
-              <div className={styles.statNumber}>{categories.length}</div>
-              <div className={styles.statLabel}>个分类</div>
-            </div>
-          </div>
-          <div className={styles.statCard}>
-            <div className={styles.statIcon}>
-              <Icon icon="lucide:database" width={20} height={20} />
-            </div>
-            <div className={styles.statContent}>
-              <div className={styles.statNumber}>{totalResources}</div>
-              <div className={styles.statLabel}>项资源</div>
-            </div>
-          </div>
+          <DataCard value={categories.length} label="个分类" icon="lucide:folder" />
+          <DataCard value={totalResources} label="项资源" icon="lucide:database" />
         </div>
       </div>
     </div>

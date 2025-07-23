@@ -5,7 +5,7 @@ import Heading from '@theme/Heading';
 import { Icon } from '@iconify/react';
 
 import { FriendItem, FRIEND_LIST } from '@site/src/data/friends';
-import IconText from '@site/src/components/IconText';
+import IconText from '@site/src/components/laiKit/IconText';
 import styles from './styles.module.css';
 
 const TITLE = '友链';

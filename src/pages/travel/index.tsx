@@ -2,7 +2,7 @@ import React from 'react';
 import Layout from '@theme/Layout';
 import BrowserOnly from '@docusaurus/BrowserOnly';
 import { Icon } from '@iconify/react';
-import IconText from '@site/src/components/IconText';
+import IconText from '@site/src/components/laiKit/IconText';
 import Timeline from '@site/src/pages/travel/_components';
 import {
   BaseCard,
