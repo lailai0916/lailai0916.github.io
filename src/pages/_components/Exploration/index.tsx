@@ -9,7 +9,7 @@ import {
   GridLayout,
   GridConfigs,
   TEXT_COLORS,
-} from '../../../components/laiKit/common';
+} from '@site/src/components/laiKit/common';
 import { translate } from '@docusaurus/Translate';
 import { EXPLORATION_LIST } from '@site/src/data/explorations';
 

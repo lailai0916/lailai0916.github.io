@@ -5,9 +5,9 @@ import React, {
   useMemo,
   useCallback,
 } from 'react';
-import Section from '../../../components/laiKit/common/Section';
-import SectionHeader from '../../../components/laiKit/common/SectionHeader';
-import { COUNTDOWN_STYLES } from '../../../components/laiKit/common/constants';
+import Section from '@site/src/components/laiKit/common/Section';
+import SectionHeader from '@site/src/components/laiKit/common/SectionHeader';
+import { COUNTDOWN_STYLES } from '@site/src/components/laiKit/common/constants';
 import { translate } from '@docusaurus/Translate';
 
 // ====== 类型定义 ======

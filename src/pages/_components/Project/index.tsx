@@ -10,7 +10,7 @@ import {
   GridLayout,
   GridConfigs,
   TEXT_COLORS,
-} from '../../../components/laiKit/common';
+} from '@site/src/components/laiKit/common';
 
 // 文本行数控制样式 - 保证卡片高度一致性
 const TEXT_CLAMP_STYLES = {

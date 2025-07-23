@@ -8,8 +8,8 @@ import {
   getRecentBlogPosts,
   type ProcessedBlogPost,
 } from '@site/src/utils/blogData';
-import Section from '../../../components/laiKit/common/Section';
-import { TEXT_COLORS } from '../../../components/laiKit/common';
+import Section from '@site/src/components/laiKit/common/Section';
+import { TEXT_COLORS } from '@site/src/components/laiKit/common';
 
 const DATE_FORMAT_OPTIONS: Intl.DateTimeFormatOptions = {
   year: 'numeric',
