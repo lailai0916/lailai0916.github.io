@@ -3,6 +3,7 @@ import Layout from '@theme/Layout';
 import Heading from '@theme/Heading';
 import clsx from 'clsx';
 
+import DataCard from '@site/src/components/laiKit/DataCard';
 import IconText from '@site/src/components/laiKit/IconText';
 import styles from './styles.module.css';
 import {
@@ -16,8 +17,6 @@ import {
 
 const TITLE = '设置';
 const DESCRIPTION = '个性化您的体验，自定义网站功能和偏好设置';
-
-const STATS = [{ value: 6, label: '项设置', icon: 'lucide:settings' }];
 
 const SECTIONS = [
   {
@@ -40,21 +39,6 @@ const SECTIONS = [
   },
 ];
 
-function StatCard({ value, label, icon }: (typeof STATS)[number]) {
-  return (
-    <div className={styles.statCard}>
-      <div className={styles.statContent}>
-        <div className={styles.statNumber}>{value}</div>
-        <div className={styles.statLabel}>
-          <IconText icon={icon} colorMode="monochrome">
-            {label}
-          </IconText>
-        </div>
-      </div>
-    </div>
-  );
-}
-
 function SettingsHeader() {
   return (
     <div className={styles.headerSection}>
@@ -68,9 +52,7 @@ function SettingsHeader() {
           </p>
         </div>
         <div className={styles.statsGrid}>
-          {STATS.map((s) => (
-            <StatCard key={s.label} {...s} />
-          ))}
+          <DataCard value={6} label="项设置" icon="lucide:settings" />
         </div>
       </div>
     </div>

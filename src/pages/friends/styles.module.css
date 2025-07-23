@@ -65,54 +65,6 @@
   flex-shrink: 0;
 }
 
-.statCard {
-  background: var(--ifm-card-background-color);
-  border: 2px solid var(--ifm-color-emphasis-200);
-  border-radius: 16px;
-  padding: 1.5rem;
-  min-width: 180px;
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-}
-
-.statCard:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  border-color: var(--ifm-color-primary);
-}
-
-.statIcon {
-  flex-shrink: 0;
-  width: 40px;
-  height: 40px;
-  background: var(--ifm-color-emphasis-100);
-  border-radius: 8px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--ifm-color-emphasis-600);
-}
-
-.statContent {
-  flex: 1;
-}
-
-.statNumber {
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: var(--ifm-color-primary);
-  line-height: 1;
-}
-
-.statLabel {
-  font-size: 0.875rem;
-  color: var(--ifm-color-emphasis-600);
-  margin-top: 0.25rem;
-  line-height: 1.2;
-}
-
 /* ==========================================================================
    3. Friends Section
    ========================================================================== */
@@ -313,10 +265,6 @@
     flex-wrap: wrap;
   }
 
-  .statCard {
-    min-width: 160px;
-  }
-
   .friendsGrid {
     grid-template-columns: 1fr;
     gap: 1.5rem;
@@ -345,16 +293,6 @@
     font-size: 1rem;
   }
 
-  .statCard {
-    min-width: 140px;
-    padding: 1rem;
-  }
-
-  .statIcon {
-    width: 36px;
-    height: 36px;
-  }
-
   .friendCardContent {
     padding: 1.25rem;
   }
@@ -371,20 +309,6 @@
 
 html[data-theme='dark'] .quickStats {
   background-color: var(--ifm-background-color);
-}
-
-html[data-theme='dark'] .statCard {
-  background: var(--ifm-card-background-color);
-  border-color: var(--ifm-color-emphasis-300);
-}
-
-html[data-theme='dark'] .statCard:hover {
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-}
-
-html[data-theme='dark'] .statIcon {
-  background: var(--ifm-color-emphasis-200);
-  color: var(--ifm-color-emphasis-600);
 }
 
 html[data-theme='dark'] .friendCardContent {

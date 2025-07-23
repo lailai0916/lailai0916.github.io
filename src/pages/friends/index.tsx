@@ -4,6 +4,7 @@ import Layout from '@theme/Layout';
 import Heading from '@theme/Heading';
 import { Icon } from '@iconify/react';
 
+import DataCard from '@site/src/components/laiKit/DataCard';
 import { FriendItem, FRIEND_LIST } from '@site/src/data/friends';
 import IconText from '@site/src/components/laiKit/IconText';
 import styles from './styles.module.css';
@@ -24,15 +25,7 @@ function MainContent() {
           <p className={styles.mainDescription}>{DESCRIPTION}</p>
         </div>
         <div className={styles.statsGrid}>
-          <div className={styles.statCard}>
-            <div className={styles.statIcon}>
-              <Icon icon="lucide:users" width={20} height={20} />
-            </div>
-            <div className={styles.statContent}>
-              <div className={styles.statNumber}>{totalFriends}</div>
-              <div className={styles.statLabel}>位朋友</div>
-            </div>
-          </div>
+          <DataCard value={totalFriends} label="位朋友" icon="lucide:users" />
         </div>
       </div>
     </div>
