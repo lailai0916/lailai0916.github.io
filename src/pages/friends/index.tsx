@@ -24,7 +24,7 @@ function MainContent() {
           </Heading>
           <p className={styles.mainDescription}>{DESCRIPTION}</p>
         </div>
-        <div className={styles.statsGrid}>
+        <div>
           <DataCard value={totalFriends} label="位朋友" icon="lucide:users" />
         </div>
       </div>

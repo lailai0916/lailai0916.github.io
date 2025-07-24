@@ -62,9 +62,21 @@ html[data-theme='dark'] .statIcon {
   font-weight: 500;
 }
 
+.statsGrid {
+  display: flex;
+  gap: 1.5rem;
+  flex-shrink: 0;
+}
+
 @media (max-width: 768px) {
   .statCard {
     min-width: auto;
+  }
+
+  .statsGrid {
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
   }
 }
 

@@ -4,13 +4,13 @@ import Layout from '@theme/Layout';
 import Heading from '@theme/Heading';
 import { Icon } from '@iconify/react';
 import clsx from 'clsx';
-import DataCard from '@site/src/components/laiKit/DataCard';
+import { DataCardList } from '@site/src/components/laiKit/DataCard';
+import IconText from '@site/src/components/laiKit/IconText';
 
 import {
   RESOURCE_LIST,
   type ResourceCategoryItem,
 } from '@site/src/data/resources';
-import IconText from '@site/src/components/laiKit/IconText';
 import styles from './styles.module.css';
 
 const TITLE = '资源';
@@ -96,10 +96,16 @@ function MainContent({ categories }: { categories: ResourceCategoryItem[] }) {
           </Heading>
           <p className={styles.mainDescription}>精心筛选的优质工具与平台</p>
         </div>
-        <div className={styles.statsGrid}>
-          <DataCard value={categories.length} label="个分类" icon="lucide:folder" />
-          <DataCard value={totalResources} label="项资源" icon="lucide:database" />
-        </div>
+        <DataCardList
+          items={[
+            {
+              value: categories.length,
+              label: '个分类',
+              icon: 'lucide:folder',
+            },
+            { value: totalResources, label: '项资源', icon: 'lucide:database' },
+          ]}
+        />
       </div>
     </div>
   );

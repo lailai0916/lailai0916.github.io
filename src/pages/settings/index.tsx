@@ -29,8 +29,8 @@ function SettingsHeader() {
             定制您的专属体验，享受个性化的网站功能
           </p>
         </div>
-        <div className={styles.statsGrid}>
-          <DataCard value={6} label="项设置" icon="lucide:settings" />
+        <div>
+          <DataCard value={5} label="项设置" icon="lucide:settings" />
         </div>
       </div>
     </div>
@@ -44,11 +44,21 @@ export default function SettingsPage() {
         <SettingsHeader />
         <div className={styles.container}>
           <div className={styles.settingsGrid}>
-            <div className={styles.gridItem}><ThemeSettings /></div>
-            <div className={styles.gridItemLarge}><ColorGenerator /></div>
-            <div className={styles.gridItem}><FontSettings /></div>
-            <div className={styles.gridItem}><ExperimentalFeatures /></div>
-            <div className={styles.gridItem}><QuickActions /></div>
+            <div className={styles.gridItem}>
+              <ThemeSettings />
+            </div>
+            <div className={styles.gridItemLarge}>
+              <ColorGenerator />
+            </div>
+            <div className={styles.gridItem}>
+              <FontSettings />
+            </div>
+            <div className={styles.gridItem}>
+              <ExperimentalFeatures />
+            </div>
+            <div className={styles.gridItem}>
+              <QuickActions />
+            </div>
           </div>
         </div>
       </main>

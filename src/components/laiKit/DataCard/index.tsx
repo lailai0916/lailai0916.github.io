@@ -20,3 +20,17 @@ export default function DataCard({ value, label, icon }: DataCardProps) {
     </div>
   );
 }
+
+interface DataCardListProps {
+  items: DataCardProps[];
+}
+
+export function DataCardList({ items }: DataCardListProps) {
+  return (
+    <div className={styles.statsGrid}>
+      {items.map((item, index) => (
+        <DataCard key={index} value={item.value} label={item.label} icon={item.icon} />
+      ))}
+    </div>
+  );
+}
