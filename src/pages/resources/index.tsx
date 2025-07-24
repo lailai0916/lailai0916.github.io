@@ -81,37 +81,6 @@ function getFavicon(url: string): string | null {
   }
 }
 
-// 主要内容区域组件
-function MainContent({ categories }: { categories: ResourceCategoryItem[] }) {
-  const totalResources = categories.reduce(
-    (sum, cat) => sum + cat.resources.length,
-    0
-  );
-
-  return (
-    <PageHeader>
-      <PageTitle
-        title={
-          <>
-            精选<b>资源</b>
-          </>
-        }
-        description="精心筛选的优质工具与平台"
-      />
-      <DataCardList
-        items={[
-          {
-            value: categories.length,
-            label: '个分类',
-            icon: 'lucide:folder',
-          },
-          { value: totalResources, label: '项资源', icon: 'lucide:database' },
-        ]}
-      />
-    </PageHeader>
-  );
-}
-
 // 分类导航组件
 function CategoryNav({
   categories,
@@ -217,6 +186,36 @@ function CategorySection({ category }: { category: ResourceCategoryItem }) {
   );
 }
 
+function ResourcesHeader({ categories }: { categories: ResourceCategoryItem[] }) {
+  const totalResources = categories.reduce(
+    (sum, cat) => sum + cat.resources.length,
+    0
+  );
+
+  return (
+    <PageHeader>
+      <PageTitle
+        title={
+          <>
+            精选<b>资源</b>
+          </>
+        }
+        description="精心筛选的优质工具与平台"
+      />
+      <DataCardList
+        items={[
+          {
+            value: categories.length,
+            label: '个分类',
+            icon: 'lucide:folder',
+          },
+          { value: totalResources, label: '项资源', icon: 'lucide:database' },
+        ]}
+      />
+    </PageHeader>
+  );
+}
+
 export default function Resources(): ReactNode {
   const [activeCategory, setActiveCategory] = useState('all');
   const [searchQuery, setSearchQuery] = useState('');
@@ -228,7 +227,7 @@ export default function Resources(): ReactNode {
   return (
     <Layout title={TITLE} description={DESCRIPTION}>
       <main className={styles.main}>
-        <MainContent categories={RESOURCE_LIST} />
+        <ResourcesHeader categories={RESOURCE_LIST} />
         <div className={styles.container}>
           <div className={styles.stickyControls}>
             <CategoryNav
