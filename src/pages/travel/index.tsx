@@ -55,17 +55,17 @@ function TravelHeader() {
           {
             value: '20+',
             label: '国家/地区',
-            icon: 'material-symbols:public',
+            icon: 'lucide:globe',
           },
           {
             value: '50+',
             label: '城市',
-            icon: 'material-symbols:location-city',
+            icon: 'lucide:map-pin',
           },
           {
             value: '13',
             label: '年历程',
-            icon: 'material-symbols:schedule',
+            icon: 'lucide:calendar',
           },
         ]}
       />
