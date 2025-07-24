@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { type ReactNode } from 'react';
 import Layout from '@theme/Layout';
 import BrowserOnly from '@docusaurus/BrowserOnly';
 import { Icon } from '@iconify/react';
@@ -13,12 +13,9 @@ import {
 } from '@site/src/components/laiKit/common';
 import { TRAVEL_STAT_LIST, TravelStatItem } from '@site/src/data/travel';
 
-// 页面常量
-const PAGE_CONFIG = {
-  title: '旅行',
-  description:
-    '读万卷书，行万里路。路走多了，才能真正平视世界。既不仰望富裕国家，也不轻视贫穷之地。世界，不是新闻里的样子，也不是别人描述的样子，而是你亲眼所见、亲身所感。看得多了，眼界自开，格局亦变。',
-} as const;
+const TITLE = '旅行';
+const DESCRIPTION =
+  '读万卷书，行万里路。路走多了，才能真正平视世界。既不仰望富裕国家，也不轻视贫穷之地。世界，不是新闻里的样子，也不是别人描述的样子，而是你亲眼所见、亲身所感。看得多了，眼界自开，格局亦变。';
 
 /**
  * 统计卡片组件 - 采用与主页Project卡片一致的设计
@@ -55,11 +52,11 @@ const TravelHero = React.memo(() => (
         <div className="w-full lg:w-6/12 max-w-3xl flex flex-col items-start justify-start lg:ps-5 lg:pe-10">
           <h1 className="font-bold text-4xl lg:text-5xl text-gray-900 dark:text-neutral-100 leading-tight mb-4">
             <IconText icon="material-symbols:flight" colorMode="monochrome">
-              {PAGE_CONFIG.title}
+              {TITLE}
             </IconText>
           </h1>
           <p className="text-lg lg:text-xl text-gray-700 dark:text-neutral-300 leading-relaxed mb-6">
-            {PAGE_CONFIG.description}
+            {DESCRIPTION}
           </p>
         </div>
 
@@ -103,12 +100,9 @@ const TravelTimeline = React.memo(() => (
 
 TravelTimeline.displayName = 'TravelTimeline';
 
-/**
- * 旅行页面主组件
- */
-export default function TravelPage() {
+export default function Travel(): ReactNode {
   return (
-    <Layout title={PAGE_CONFIG.title} description={PAGE_CONFIG.description}>
+    <Layout title={TITLE} description={DESCRIPTION}>
       <main>
         <TravelHero />
         <TravelTimeline />

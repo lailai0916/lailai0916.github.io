@@ -1,10 +1,10 @@
-import React from 'react';
+import React, { type ReactNode } from 'react';
 import Layout from '@theme/Layout';
 
 const TITLE = '防空塔';
 const DESCRIPTION = '防空塔小游戏';
 
-export default function GamePage() {
+export default function Games(): ReactNode {
   return (
     <Layout title={TITLE} description={DESCRIPTION}>
       <div
