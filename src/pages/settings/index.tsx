@@ -11,7 +11,7 @@ import {
   ExperimentalFeatures,
   QuickActions,
   ColorGenerator,
-} from './_components/SettingCards';
+} from './_components';
 
 const TITLE = '设置';
 const DESCRIPTION = '个性化您的体验，自定义网站功能和偏好设置';
