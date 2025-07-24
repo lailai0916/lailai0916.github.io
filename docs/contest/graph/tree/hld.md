@@ -41,7 +41,7 @@ void dfs2(int u,int t)
 
 ## 应用
 
-- [最近公共祖先（LCA）](lca)
+- 详见 [最近公共祖先](lca)
 
 ## 例题
 

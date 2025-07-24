@@ -3,7 +3,7 @@ export { default as ThemeSettings } from './ThemeSettings';
 export { default as FontSettings } from './FontSettings';
 export { default as ExperimentalFeatures } from './ExperimentalFeatures';
 export { default as QuickActions } from './QuickActions';
-export { default as ColorGenerator } from './ColorGeneratorSettings';
+export { default as ColorGenerator } from './ColorGenerator';
 
 // 共享组件和工具
 export { default as SettingCard } from './shared/SettingCard';

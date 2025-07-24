@@ -39,7 +39,7 @@ void tarjan(int u)
 
 ## 应用
 
-- [2-SAT](../2sat)
+- 详见 [2-SAT](../2sat)
 
 ## 例题
 
