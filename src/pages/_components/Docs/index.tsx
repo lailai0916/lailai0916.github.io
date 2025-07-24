@@ -4,7 +4,7 @@ import Link from '@docusaurus/Link';
 import Heading from '@theme/Heading';
 import { useBaseUrlUtils } from '@docusaurus/useBaseUrl';
 import { FEATURE_LIST, type FeatureItem } from '@site/src/data/features';
-import IconText from '@site/src/components/laiKit/IconText';
+import IconText from '@site/src/components/laiKit/widget/IconText';
 import styles from './styles.module.css';
 
 interface FeatureProps {

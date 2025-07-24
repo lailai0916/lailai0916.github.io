@@ -1,9 +1,9 @@
 import React, { type ReactNode } from 'react';
 import Layout from '@theme/Layout';
 
-import DataCard from '@site/src/components/laiKit/DataCard';
-import PageTitle from '@site/src/components/laiKit/PageTitle';
-import PageHeader from '@site/src/components/laiKit/PageHeader';
+import DataCard from '@site/src/components/laiKit/widget/DataCard';
+import PageTitle from '@site/src/components/laiKit/page/PageTitle';
+import PageHeader from '@site/src/components/laiKit/page/PageHeader';
 import styles from './styles.module.css';
 import {
   ThemeSettings,

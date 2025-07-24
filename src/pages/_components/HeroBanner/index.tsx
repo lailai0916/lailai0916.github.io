@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Link from '@docusaurus/Link';
 import Heading from '@theme/Heading';
 import Translate from '@docusaurus/Translate';
-import IconText from '@site/src/components/laiKit/IconText';
+import IconText from '@site/src/components/laiKit/widget/IconText';
 import styles from './styles.module.css';
 
 export default function HeroBanner() {

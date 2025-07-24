@@ -2,12 +2,11 @@ import React, { type ReactNode, useState } from 'react';
 import Link from '@docusaurus/Link';
 import Layout from '@theme/Layout';
 import { Icon } from '@iconify/react';
-import PageTitle from '@site/src/components/laiKit/PageTitle';
-import PageHeader from '@site/src/components/laiKit/PageHeader';
-
-import DataCard from '@site/src/components/laiKit/DataCard';
+import PageHeader from '@site/src/components/laiKit/page/PageHeader';
+import PageTitle from '@site/src/components/laiKit/page/PageTitle';
+import DataCard from '@site/src/components/laiKit/widget/DataCard';
+import IconText from '@site/src/components/laiKit/widget/IconText';
 import { FriendItem, FRIEND_LIST } from '@site/src/data/friends';
-import IconText from '@site/src/components/laiKit/IconText';
 import styles from './styles.module.css';
 
 const TITLE = '友链';

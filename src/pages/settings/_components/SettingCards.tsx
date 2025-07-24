@@ -4,7 +4,7 @@ import { useColorMode } from '@docusaurus/theme-common';
 import { Icon } from '@iconify/react';
 import confetti from 'canvas-confetti';
 
-import IconText from '@site/src/components/laiKit/IconText';
+import IconText from '@site/src/components/laiKit/widget/IconText';
 import styles from '../styles.module.css';
 import type { ColorState } from '@site/src/utils/colorUtils';
 import {
@@ -19,7 +19,7 @@ import {
   updateDOMColors,
 } from '@site/src/utils/colorUtils';
 import Color from 'color';
-import Switch from '@site/src/components/laiKit/Switch';
+import Switch from '@site/src/components/laiKit/widget/Switch';
 
 // --- 通用组件 ---
 

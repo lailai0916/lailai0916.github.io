@@ -3,10 +3,10 @@ import Link from '@docusaurus/Link';
 import Layout from '@theme/Layout';
 import { Icon } from '@iconify/react';
 import clsx from 'clsx';
-import { DataCardList } from '@site/src/components/laiKit/DataCard';
-import PageTitle from '@site/src/components/laiKit/PageTitle';
-import PageHeader from '@site/src/components/laiKit/PageHeader';
-import IconText from '@site/src/components/laiKit/IconText';
+import { DataCardList } from '@site/src/components/laiKit/widget/DataCard';
+import PageTitle from '@site/src/components/laiKit/page/PageTitle';
+import PageHeader from '@site/src/components/laiKit/page/PageHeader';
+import IconText from '@site/src/components/laiKit/widget/IconText';
 
 import {
   RESOURCE_LIST,
