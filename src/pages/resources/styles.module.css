@@ -109,26 +109,6 @@
 }
 
 /* ==========================================================================
-   3. Page Header & Stats
-   ========================================================================== */
-
-.quickStats {
-  background-color: var(--ifm-background-color);
-  padding: 0;
-  border-bottom: 1px solid var(--ifm-color-emphasis-200);
-}
-
-.quickStatsInner {
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 3rem 2rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 3rem;
-}
-
-/* ==========================================================================
    4. Category Sections & Resource Grid
    ========================================================================== */
 
@@ -297,12 +277,6 @@
    ========================================================================== */
 
 @media (max-width: 768px) {
-  .quickStatsInner {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 2rem;
-    padding: 2rem 1rem;
-  }
 
   .categoryHeader {
     flex-direction: column;
@@ -333,10 +307,6 @@
 /* ==========================================================================
    8. Dark Mode & Animations
    ========================================================================== */
-
-html[data-theme='dark'] .quickStats {
-  border-bottom-color: var(--ifm-color-emphasis-300);
-}
 
 html[data-theme='dark'] .resourceCardContent {
   border-color: var(--ifm-color-emphasis-300);

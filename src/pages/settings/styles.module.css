@@ -29,22 +29,6 @@
    2. Modern Header Section (类似 resources 页面的头部)
    ========================================================================== */
 
-.headerSection {
-  background-color: var(--ifm-background-color);
-  border-bottom: 1px solid var(--ifm-color-emphasis-200);
-  padding: 3rem 0;
-}
-
-.headerInner {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 2rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 3rem;
-}
-
 .mainDescription {
   font-size: 1.2rem;
   color: var(--ifm-color-emphasis-700);
@@ -363,13 +347,6 @@
    ========================================================================== */
 
 @media (max-width: 768px) {
-  .headerInner {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 2rem;
-    padding: 0 1rem;
-  }
-
   .settingsGrid {
     grid-template-columns: 1fr;
   }

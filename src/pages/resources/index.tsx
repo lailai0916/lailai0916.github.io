@@ -6,6 +6,7 @@ import { Icon } from '@iconify/react';
 import clsx from 'clsx';
 import { DataCardList } from '@site/src/components/laiKit/DataCard';
 import PageTitle from '@site/src/components/laiKit/PageTitle';
+import PageHeader from '@site/src/components/laiKit/PageHeader';
 import IconText from '@site/src/components/laiKit/IconText';
 
 import {
@@ -89,28 +90,26 @@ function MainContent({ categories }: { categories: ResourceCategoryItem[] }) {
   );
 
   return (
-    <div className={styles.quickStats}>
-      <div className={styles.quickStatsInner}>
-        <PageTitle
-          title={
-            <>
-              精选<b>资源</b>
-            </>
-          }
-          description="精心筛选的优质工具与平台"
-        />
-        <DataCardList
-          items={[
-            {
-              value: categories.length,
-              label: '个分类',
-              icon: 'lucide:folder',
-            },
-            { value: totalResources, label: '项资源', icon: 'lucide:database' },
-          ]}
-        />
-      </div>
-    </div>
+    <PageHeader>
+      <PageTitle
+        title={
+          <>
+            精选<b>资源</b>
+          </>
+        }
+        description="精心筛选的优质工具与平台"
+      />
+      <DataCardList
+        items={[
+          {
+            value: categories.length,
+            label: '个分类',
+            icon: 'lucide:folder',
+          },
+          { value: totalResources, label: '项资源', icon: 'lucide:database' },
+        ]}
+      />
+    </PageHeader>
   );
 }
 

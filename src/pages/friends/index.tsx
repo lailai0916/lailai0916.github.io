@@ -3,6 +3,7 @@ import Link from '@docusaurus/Link';
 import Layout from '@theme/Layout';
 import { Icon } from '@iconify/react';
 import PageTitle from '@site/src/components/laiKit/PageTitle';
+import PageHeader from '@site/src/components/laiKit/PageHeader';
 
 import DataCard from '@site/src/components/laiKit/DataCard';
 import { FriendItem, FRIEND_LIST } from '@site/src/data/friends';
@@ -16,19 +17,17 @@ function MainContent() {
   const totalFriends = FRIEND_LIST.length;
 
   return (
-    <div className={styles.quickStats}>
-      <div className={styles.quickStatsInner}>
-        <PageTitle
-          title={
-            <>
-              我的<b>友链</b>
-            </>
-          }
-          description={DESCRIPTION}
-        />
-        <DataCard value={totalFriends} label="位朋友" icon="lucide:users" />
-      </div>
-    </div>
+    <PageHeader>
+      <PageTitle
+        title={
+          <>
+            我的<b>友链</b>
+          </>
+        }
+        description={DESCRIPTION}
+      />
+      <DataCard value={totalFriends} label="位朋友" icon="lucide:users" />
+    </PageHeader>
   );
 }
 

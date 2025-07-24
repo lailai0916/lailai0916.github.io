@@ -3,6 +3,7 @@ import Layout from '@theme/Layout';
 
 import DataCard from '@site/src/components/laiKit/DataCard';
 import PageTitle from '@site/src/components/laiKit/PageTitle';
+import PageHeader from '@site/src/components/laiKit/PageHeader';
 import styles from './styles.module.css';
 import {
   ThemeSettings,
@@ -17,19 +18,17 @@ const DESCRIPTION = '个性化您的体验，自定义网站功能和偏好设�
 
 function SettingsHeader() {
   return (
-    <div className={styles.headerSection}>
-      <div className={styles.headerInner}>
-        <PageTitle
-          title={
-            <>
-              个性化<b>设置</b>
-            </>
-          }
-          description={DESCRIPTION}
-        />
-        <DataCard value={5} label="项设置" icon="lucide:settings" />
-      </div>
-    </div>
+    <PageHeader>
+      <PageTitle
+        title={
+          <>
+            个性化<b>设置</b>
+          </>
+        }
+        description={DESCRIPTION}
+      />
+      <DataCard value={5} label="项设置" icon="lucide:settings" />
+    </PageHeader>
   );
 }
 

@@ -15,26 +15,6 @@
 }
 
 /* ==========================================================================
-   2. Page Header & Stats
-   ========================================================================== */
-
-.quickStats {
-  background-color: var(--ifm-background-color);
-  padding: 0;
-  border-bottom: 1px solid var(--ifm-color-emphasis-200);
-}
-
-.quickStatsInner {
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 3rem 2rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 3rem;
-}
-
-/* ==========================================================================
    3. Friends Section
    ========================================================================== */
 
@@ -214,13 +194,6 @@
    ========================================================================== */
 
 @media (max-width: 768px) {
-  .quickStatsInner {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    gap: 2rem;
-  }
-
   .friendsGrid {
     grid-template-columns: 1fr;
     gap: 1.5rem;
@@ -254,10 +227,6 @@
 /* ==========================================================================
    7. Dark Mode
    ========================================================================== */
-
-html[data-theme='dark'] .quickStats {
-  background-color: var(--ifm-background-color);
-}
 
 html[data-theme='dark'] .friendCardContent {
   background: var(--ifm-card-background-color);
