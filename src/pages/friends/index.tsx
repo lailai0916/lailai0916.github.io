@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { type ReactNode, useState } from 'react';
 import Link from '@docusaurus/Link';
 import Layout from '@theme/Layout';
 import { Icon } from '@iconify/react';
@@ -98,7 +98,7 @@ function PageFooter() {
   );
 }
 
-export default function FriendsPage() {
+export default function Friends(): ReactNode {
   return (
     <Layout title={TITLE} description={DESCRIPTION}>
       <main className={styles.main}>

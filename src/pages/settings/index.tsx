@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { type ReactNode } from 'react';
 import Layout from '@theme/Layout';
 
 import DataCard from '@site/src/components/laiKit/DataCard';
@@ -32,7 +32,7 @@ function SettingsHeader() {
   );
 }
 
-export default function SettingsPage() {
+export default function Settings(): ReactNode {
   return (
     <Layout title={TITLE} description={DESCRIPTION}>
       <main className={styles.main}>
