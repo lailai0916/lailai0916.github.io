@@ -5,6 +5,5 @@ export { default as ExperimentalFeatures } from './ExperimentalFeatures';
 export { default as QuickActions } from './QuickActions';
 export { default as ColorGenerator } from './ColorGenerator';
 
-// 共享组件和工具
-export { default as SettingCard } from './shared/SettingCard';
+// 共享工具
 export { usePersistentState } from './shared/usePersistentState';

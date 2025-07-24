@@ -1,6 +1,6 @@
 import React from 'react';
 import Switch from '@site/src/components/laiKit/widget/Switch';
-import SettingCard from '../shared/SettingCard';
+import SettingCard from '@site/src/components/laiKit/widget/SettingCard';
 import { usePersistentState } from '../shared/usePersistentState';
 import styles from '../../styles.module.css';
 

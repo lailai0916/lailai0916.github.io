@@ -13,7 +13,7 @@ import {
   darkStorage,
   updateDOMColors,
 } from '@site/src/utils/colorUtils';
-import SettingCard from '../shared/SettingCard';
+import SettingCard from '@site/src/components/laiKit/widget/SettingCard';
 import styles from '../../styles.module.css';
 
 export default function ColorGenerator() {
