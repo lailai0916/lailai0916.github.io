@@ -186,7 +186,11 @@ function CategorySection({ category }: { category: ResourceCategoryItem }) {
   );
 }
 
-function ResourcesHeader({ categories }: { categories: ResourceCategoryItem[] }) {
+function ResourcesHeader({
+  categories,
+}: {
+  categories: ResourceCategoryItem[];
+}) {
   const totalResources = categories.reduce(
     (sum, cat) => sum + cat.resources.length,
     0
