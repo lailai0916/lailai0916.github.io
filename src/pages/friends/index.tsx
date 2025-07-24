@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import Link from '@docusaurus/Link';
 import Layout from '@theme/Layout';
-import Heading from '@theme/Heading';
 import { Icon } from '@iconify/react';
+import PageTitle from '@site/src/components/laiKit/PageTitle';
 
 import DataCard from '@site/src/components/laiKit/DataCard';
 import { FriendItem, FRIEND_LIST } from '@site/src/data/friends';
@@ -18,15 +18,15 @@ function MainContent() {
   return (
     <div className={styles.quickStats}>
       <div className={styles.quickStatsInner}>
-        <div className={styles.leftContent}>
-          <Heading as="h1" className={styles.mainTitle}>
-            我的<span className={styles.highlight}>友链</span>
-          </Heading>
-          <p className={styles.mainDescription}>{DESCRIPTION}</p>
-        </div>
-        <div>
-          <DataCard value={totalFriends} label="位朋友" icon="lucide:users" />
-        </div>
+        <PageTitle
+          title={
+            <>
+              我的<b>友链</b>
+            </>
+          }
+          description={DESCRIPTION}
+        />
+        <DataCard value={totalFriends} label="位朋友" icon="lucide:users" />
       </div>
     </div>
   );

@@ -234,14 +234,14 @@ export function ExperimentalFeatures() {
       </p>
       <ul className={styles.toggleList}>
         <li>
-          <span>启用新版布局</span>
+          <span>新版布局</span>
           <Switch
             checked={toggles.newLayout}
             onChange={(checked) => handleToggle('newLayout', checked)}
           />
         </li>
         <li>
-          <span>开发者调试模式</span>
+          <span>调试模式</span>
           <Switch
             checked={toggles.debugMode}
             onChange={(checked) => handleToggle('debugMode', checked)}

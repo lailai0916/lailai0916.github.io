@@ -5,6 +5,7 @@ import Heading from '@theme/Heading';
 import { Icon } from '@iconify/react';
 import clsx from 'clsx';
 import { DataCardList } from '@site/src/components/laiKit/DataCard';
+import PageTitle from '@site/src/components/laiKit/PageTitle';
 import IconText from '@site/src/components/laiKit/IconText';
 
 import {
@@ -90,12 +91,14 @@ function MainContent({ categories }: { categories: ResourceCategoryItem[] }) {
   return (
     <div className={styles.quickStats}>
       <div className={styles.quickStatsInner}>
-        <div className={styles.leftContent}>
-          <Heading as="h1" className={styles.mainTitle}>
-            精选<span className={styles.highlight}>资源</span>
-          </Heading>
-          <p className={styles.mainDescription}>精心筛选的优质工具与平台</p>
-        </div>
+        <PageTitle
+          title={
+            <>
+              精选<b>资源</b>
+            </>
+          }
+          description="精心筛选的优质工具与平台"
+        />
         <DataCardList
           items={[
             {

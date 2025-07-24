@@ -128,31 +128,6 @@
   gap: 3rem;
 }
 
-.leftContent {
-  flex: 1;
-  max-width: 600px;
-}
-
-.mainTitle {
-  font-size: 3rem !important;
-  font-weight: 700;
-  margin: 0 0 1rem 0;
-  color: var(--ifm-font-color-base);
-  line-height: 1.2;
-}
-
-.mainDescription {
-  font-size: 1.2rem;
-  color: var(--ifm-color-emphasis-700);
-  margin: 0;
-  line-height: 1.6;
-}
-
-.highlight {
-  color: var(--ifm-color-primary);
-  position: relative;
-}
-
 /* ==========================================================================
    4. Category Sections & Resource Grid
    ========================================================================== */
@@ -329,14 +304,6 @@
     padding: 2rem 1rem;
   }
 
-  .leftContent {
-    max-width: none;
-  }
-
-  .mainTitle {
-    font-size: 2.2rem !important;
-  }
-
   .categoryHeader {
     flex-direction: column;
     align-items: flex-start;
@@ -353,14 +320,6 @@
 }
 
 @media (max-width: 480px) {
-  .mainTitle {
-    font-size: 2rem !important;
-  }
-
-  .mainDescription {
-    font-size: 1.1rem;
-  }
-
   .categoryButton {
     padding: 0.5rem 1rem;
     font-size: 0.85rem;

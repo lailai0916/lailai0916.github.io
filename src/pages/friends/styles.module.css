@@ -34,31 +34,6 @@
   gap: 3rem;
 }
 
-.leftContent {
-  flex: 1;
-  max-width: 600px;
-}
-
-.mainTitle {
-  font-size: 3rem !important;
-  font-weight: 700;
-  margin: 0 0 1rem 0;
-  color: var(--ifm-font-color-base);
-  line-height: 1.2;
-}
-
-.mainDescription {
-  font-size: 1.2rem;
-  color: var(--ifm-color-emphasis-700);
-  margin: 0;
-  line-height: 1.6;
-}
-
-.highlight {
-  color: var(--ifm-color-primary);
-  position: relative;
-}
-
 /* ==========================================================================
    3. Friends Section
    ========================================================================== */
@@ -246,14 +221,6 @@
     gap: 2rem;
   }
 
-  .leftContent {
-    max-width: none;
-  }
-
-  .mainTitle {
-    font-size: 2.5rem !important;
-  }
-
   .friendsGrid {
     grid-template-columns: 1fr;
     gap: 1.5rem;
@@ -274,14 +241,6 @@
 }
 
 @media (max-width: 480px) {
-  .mainTitle {
-    font-size: 2rem !important;
-  }
-
-  .mainDescription {
-    font-size: 1rem;
-  }
-
   .friendCardContent {
     padding: 1.25rem;
   }

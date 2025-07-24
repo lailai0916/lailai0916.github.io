@@ -1,10 +1,8 @@
 import React from 'react';
 import Layout from '@theme/Layout';
-import Heading from '@theme/Heading';
-import clsx from 'clsx';
 
 import DataCard from '@site/src/components/laiKit/DataCard';
-import IconText from '@site/src/components/laiKit/IconText';
+import PageTitle from '@site/src/components/laiKit/PageTitle';
 import styles from './styles.module.css';
 import {
   ThemeSettings,
@@ -21,17 +19,15 @@ function SettingsHeader() {
   return (
     <div className={styles.headerSection}>
       <div className={styles.headerInner}>
-        <div className={styles.headerContent}>
-          <Heading as="h1" className={styles.mainTitle}>
-            个性化<span className={styles.highlight}>设置</span>
-          </Heading>
-          <p className={styles.mainDescription}>
-            定制您的专属体验，享受个性化的网站功能
-          </p>
-        </div>
-        <div>
-          <DataCard value={5} label="项设置" icon="lucide:settings" />
-        </div>
+        <PageTitle
+          title={
+            <>
+              个性化<b>设置</b>
+            </>
+          }
+          description={DESCRIPTION}
+        />
+        <DataCard value={5} label="项设置" icon="lucide:settings" />
       </div>
     </div>
   );
