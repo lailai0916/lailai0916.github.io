@@ -110,18 +110,24 @@ export function updateDOMColors(
       rule.selectorText ===
         (isDarkTheme ? '[data-theme="dark"]' : '[data-theme="light"]') &&
       Array.from(rule.style).includes('--ifm-color-primary') &&
-      rule.style.length < 10
+      rule.style.length < 15
   );
   if (ruleToDelete >= 0) {
     styleSheet.deleteRule(ruleToDelete);
   }
+  
+  // 获取默认背景色
+  const defaultBackground = isDarkTheme ? DARK_BACKGROUND_COLOR : LIGHT_BACKGROUND_COLOR;
+  
+  // 只有在背景色真的改变时才添加背景色变量
+  const backgroundRule = background !== defaultBackground ? `\n  --ifm-background-color: ${background};` : '';
+  
   const overrideStyle = `${
     isDarkTheme ? '[data-theme="dark"]' : '[data-theme="light"]'
   } {
   ${getAdjustedColors(shades, baseColor)
     .map((value) => `  ${value.variableName}: ${value.hex};`)
-    .join('\n')}
-  --ifm-background-color: ${background};
+    .join('\n')}${backgroundRule}
 }`;
   styleSheet.insertRule(overrideStyle, styleSheet.cssRules.length - 1);
 }
