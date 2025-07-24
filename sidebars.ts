@@ -239,6 +239,7 @@ const sidebars: SidebarsConfig = {
           },
           items: [
             'contest/graph/tree/diameter',
+            'contest/graph/tree/centroid',
             'contest/graph/tree/lca',
             'contest/graph/tree/difference',
             'contest/graph/tree/hld',
