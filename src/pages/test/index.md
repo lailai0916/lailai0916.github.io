@@ -65,7 +65,7 @@ function Clock(props) {
 
 ## 网页
 
-<IframeWindow url="https://generals.io" />
+<IframeWindow url="https://www.baidu.com" />
 
 ## Desmos
 
