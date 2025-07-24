@@ -4,6 +4,7 @@ import Layout from '@theme/Layout';
 import { Icon } from '@iconify/react';
 import PageHeader from '@site/src/components/laiKit/page/PageHeader';
 import PageTitle from '@site/src/components/laiKit/page/PageTitle';
+import PageFooter from '@site/src/components/laiKit/page/PageFooter';
 import DataCard from '@site/src/components/laiKit/widget/DataCard';
 import IconText from '@site/src/components/laiKit/widget/IconText';
 import { FriendItem, FRIEND_LIST } from '@site/src/data/friends';
@@ -64,13 +65,9 @@ function FriendGrid() {
 
 function FriendsFooter() {
   return (
-    <div className={styles.pageFooter}>
-      <div className={styles.footerContent}>
-        <p className={styles.footerText}>
-          <IconText icon="lucide:heart">感谢每一位朋友的陪伴与支持</IconText>
-        </p>
-      </div>
-    </div>
+    <PageFooter>
+      <IconText icon="lucide:heart">感谢每一位朋友的陪伴与支持</IconText>
+    </PageFooter>
   );
 }
 

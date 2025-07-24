@@ -153,43 +153,6 @@
 }
 
 /* ==========================================================================
-   5. Page Footer
-   ========================================================================== */
-
-.pageFooter {
-  margin-top: 4rem;
-  padding: 2rem 0;
-  border-top: 1px solid var(--ifm-color-emphasis-200);
-  text-align: center;
-}
-
-.footerContent {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1rem;
-}
-
-.footerIcon {
-  width: 48px;
-  height: 48px;
-  background: var(--ifm-color-primary-lightest);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--ifm-color-primary);
-}
-
-.footerText {
-  font-size: 1rem;
-  color: var(--ifm-color-emphasis-700);
-  margin: 0;
-  max-width: 400px;
-  line-height: 1.6;
-}
-
-/* ==========================================================================
    6. Responsive Design
    ========================================================================== */
 
@@ -240,11 +203,6 @@ html[data-theme='dark'] .friendCard:hover .friendCardContent {
 html[data-theme='dark'] .friendCardFallback {
   background: var(--ifm-color-emphasis-200);
   color: var(--ifm-color-emphasis-600);
-}
-
-html[data-theme='dark'] .footerIcon {
-  background: var(--ifm-color-emphasis-200);
-  color: var(--ifm-color-primary-light);
 }
 
 /* ==========================================================================
