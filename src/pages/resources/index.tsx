@@ -186,16 +186,11 @@ function CategorySection({ category }: { category: ResourceCategoryItem }) {
   );
 }
 
-function ResourcesHeader({
-  categories,
-}: {
-  categories: ResourceCategoryItem[];
-}) {
-  const totalResources = categories.reduce(
+function ResourcesHeader() {
+  const totalResources = RESOURCE_LIST.reduce(
     (sum, cat) => sum + cat.resources.length,
     0
   );
-
   return (
     <PageHeader>
       <PageTitle
@@ -209,7 +204,7 @@ function ResourcesHeader({
       <DataCardList
         items={[
           {
-            value: categories.length,
+            value: RESOURCE_LIST.length,
             label: '个分类',
             icon: 'lucide:folder',
           },
@@ -231,7 +226,7 @@ export default function Resources(): ReactNode {
   return (
     <Layout title={TITLE} description={DESCRIPTION}>
       <main className={styles.main}>
-        <ResourcesHeader categories={RESOURCE_LIST} />
+        <ResourcesHeader />
         <div className={styles.container}>
           <div className={styles.stickyControls}>
             <CategoryNav
