@@ -23,7 +23,11 @@ export default function FontSettings() {
   };
 
   return (
-    <SettingCard title="字体大小" subtitle="调整界面字体以获得最佳阅读体验" icon="lucide:type">
+    <SettingCard
+      title="字体大小"
+      subtitle="调整界面字体以获得最佳阅读体验"
+      icon="lucide:type"
+    >
       <div className={styles.sliderContainer}>
         <span className={styles.sliderLabel}>{fontSize}px</span>
         <input

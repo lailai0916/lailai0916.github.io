@@ -45,7 +45,11 @@ export default function ThemeSettings() {
   const currentChoice = getCurrentChoice();
 
   return (
-    <SettingCard title="外观主题" subtitle="选择一个适合您的主题模式" icon="lucide:monitor">
+    <SettingCard
+      title="外观主题"
+      subtitle="选择一个适合您的主题模式"
+      icon="lucide:monitor"
+    >
       <div className={clsx(styles.buttonGroup, styles.verticalButtonGroup)}>
         {themeOptions.map((option) => (
           <button

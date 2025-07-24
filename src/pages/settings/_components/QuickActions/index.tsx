@@ -24,7 +24,11 @@ export default function QuickActions() {
   };
 
   return (
-    <SettingCard title="快捷操作" subtitle="快速管理您的个性化配置" icon="lucide:zap">
+    <SettingCard
+      title="快捷操作"
+      subtitle="快速管理您的个性化配置"
+      icon="lucide:zap"
+    >
       <div className={clsx(styles.buttonGroup, styles.verticalButtonGroup)}>
         <button
           className={clsx(styles.button, styles.buttonSecondary)}
