@@ -346,5 +346,9 @@
   "sidebar.sidebar3.category.设计.link.generated-index.description": {
     "message": "设计相关的心得和分享。",
     "description": "The generated-index page description for category 设计 in sidebar sidebar3"
+  },
+  "sidebar.sidebar3.link.测试": {
+    "message": "测试",
+    "description": "The label for link 测试 in sidebar sidebar3, linking to /test"
   }
 }

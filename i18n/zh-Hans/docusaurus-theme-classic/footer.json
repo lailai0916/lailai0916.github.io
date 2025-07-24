@@ -13,19 +13,19 @@
   },
   "link.item.label.Contest": {
     "message": "竞赛",
-    "description": "The label of footer link with label=Contest linking to docs/contest"
+    "description": "The label of footer link with label=Contest linking to /docs/contest"
   },
   "link.item.label.Note": {
     "message": "笔记",
-    "description": "The label of footer link with label=Note linking to docs/note"
+    "description": "The label of footer link with label=Note linking to /docs/note"
   },
   "link.item.label.Project": {
     "message": "项目",
-    "description": "The label of footer link with label=Project linking to docs/project"
+    "description": "The label of footer link with label=Project linking to /docs/project"
   },
   "link.item.label.Blog": {
     "message": "博客",
-    "description": "The label of footer link with label=Blog linking to blog"
+    "description": "The label of footer link with label=Blog linking to /blog"
   },
   "link.item.label.X (Twitter)": {
     "message": "X (Twitter)",
@@ -45,19 +45,19 @@
   },
   "link.item.label.About": {
     "message": "关于",
-    "description": "The label of footer link with label=About linking to about"
+    "description": "The label of footer link with label=About linking to /about"
   },
   "link.item.label.Friends": {
     "message": "友链",
-    "description": "The label of footer link with label=Friends linking to friends"
+    "description": "The label of footer link with label=Friends linking to /friends"
+  },
+  "link.item.label.Games": {
+    "message": "游戏",
+    "description": "The label of footer link with label=Games linking to /games"
   },
   "link.item.label.Settings": {
     "message": "设置",
-    "description": "The label of footer link with label=Settings linking to settings"
-  },
-  "link.item.label.Repository": {
-    "message": "仓库",
-    "description": "The label of footer link with label=Repository linking to https://github.com/lailai0916/lailai0916.github.io"
+    "description": "The label of footer link with label=Settings linking to /settings"
   },
   "copyright": {
     "message": "版权所有 © 2022-2025 lailai，使用 <a href=\"https://docusaurus.io\" target=\"_blank\">Docusaurus</a> 构建。<br />本网站内容遵循 <a href=\"https://creativecommons.org/licenses/by/4.0/\">知识共享署名 4.0 国际许可协议</a><img src=\"https://mirrors.creativecommons.org/presskit/icons/cc.svg\" alt=\"\" style=\"max-width: 1em;max-height:1em;margin-left: .2em;\"><img src=\"https://mirrors.creativecommons.org/presskit/icons/by.svg\" alt=\"\" style=\"max-width: 1em;max-height:1em;margin-left: .2em;\">",
