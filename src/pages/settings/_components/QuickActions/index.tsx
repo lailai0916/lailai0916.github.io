@@ -39,7 +39,7 @@ export default function QuickActions() {
           className={clsx(styles.button, styles.buttonDanger)}
           onClick={handleReset}
         >
-          <IconText icon="lucide:rotate-ccw">重置所有设置</IconText>
+          <IconText icon="lucide:rotate-ccw">重置设置</IconText>
         </button>
       </div>
     </SettingCard>
