@@ -17,12 +17,9 @@ export default function ExperimentalFeatures() {
   return (
     <SettingCard
       title="实验性功能"
-      subtitle="测试版本"
+      subtitle="尝试即将推出的新功能，可能不稳定"
       icon="lucide:flask-conical"
     >
-      <p className={styles.cardDescription}>
-        尝试即将推出的新功能，可能不稳定。
-      </p>
       <ul className={styles.toggleList}>
         <li>
           <span>新版布局</span>

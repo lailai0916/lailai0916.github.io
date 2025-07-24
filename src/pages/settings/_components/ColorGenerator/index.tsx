@@ -79,11 +79,7 @@ export default function ColorGenerator() {
   }
 
   return (
-    <SettingCard title="主题色生成器" subtitle="主题定制" icon="lucide:palette">
-      <p className={styles.cardDescription}>
-        自定义网站的主色调，实时预览效果。
-      </p>
-
+    <SettingCard title="主题色生成器" subtitle="自定义网站的主色调，实时预览效果" icon="lucide:palette">
       {/* 颜色输入 */}
       <div className={styles.colorInputContainer}>
         <input

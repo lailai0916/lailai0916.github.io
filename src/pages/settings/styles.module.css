@@ -140,14 +140,6 @@
   flex-direction: column;
 }
 
-.cardDescription {
-  color: var(--ifm-color-emphasis-700);
-  font-size: 0.9rem;
-  line-height: 1.5;
-  margin: 0 0 1.5rem 0;
-  flex-grow: 1;
-}
-
 /* ==========================================================================
    6. Interactive Elements
    ========================================================================== */
