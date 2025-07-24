@@ -135,6 +135,37 @@ export const RESOURCE_LIST: ResourceCategoryItem[] = [
     ],
   },
   {
+    title: '云服务平台',
+    icon: 'lucide:cloud',
+    resources: [
+      {
+        title: 'Amazon Web Services',
+        href: 'https://aws.amazon.com',
+        description: '亚马逊云计算平台',
+      },
+      {
+        title: 'Microsoft Azure',
+        href: 'https://azure.microsoft.com',
+        description: '微软云服务平台',
+      },
+      {
+        title: 'Cloudflare',
+        href: 'https://www.cloudflare.com',
+        description: '网络安全加速服务',
+      },
+      {
+        title: 'Namecheap',
+        href: 'https://www.namecheap.com',
+        description: '域名注册服务',
+      },
+      {
+        title: 'Namesilo',
+        href: 'https://www.namesilo.com',
+        description: '域名注册服务',
+      },
+    ],
+  },
+  {
     title: '代码托管',
     icon: 'lucide:github',
     resources: [
@@ -522,27 +553,6 @@ export const RESOURCE_LIST: ResourceCategoryItem[] = [
         title: '数码荔枝',
         href: 'https://lizhi.shop',
         description: '正版软件商店',
-      },
-    ],
-  },
-  {
-    title: '云服务平台',
-    icon: 'lucide:cloud',
-    resources: [
-      {
-        title: 'Amazon Web Services',
-        href: 'https://aws.amazon.com',
-        description: '亚马逊云计算平台',
-      },
-      {
-        title: 'Microsoft Azure',
-        href: 'https://azure.microsoft.com',
-        description: '微软云服务平台',
-      },
-      {
-        title: 'Cloudflare',
-        href: 'https://www.cloudflare.com',
-        description: '网络安全加速服务',
       },
     ],
   },
