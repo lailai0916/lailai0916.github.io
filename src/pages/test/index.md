@@ -1,9 +1,6 @@
 ---
 title: Test
-hide_table_of_contents: true
 ---
-
-<div style={{maxWidth: '664px', margin: 'auto'}}>
 
 <div align="center">
   <h1>Test</h1>
@@ -70,5 +67,3 @@ function Clock(props) {
 ## Desmos
 
 <Desmos url="mjjhvujgos" />
-
-</div>
