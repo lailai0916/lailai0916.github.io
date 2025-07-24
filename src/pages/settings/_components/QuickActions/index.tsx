@@ -7,14 +7,12 @@ import styles from '../../styles.module.css';
 
 export default function QuickActions() {
   const handleReset = () => {
-    if (confirm('确定要重置所有设置吗？此操作不可逆。')) {
-      localStorage.removeItem('theme');
-      localStorage.removeItem('global-font-size');
-      // also clear settings from usePersistentState
-      localStorage.removeItem('settings-notifications');
-      localStorage.removeItem('settings-experimental');
-      window.location.reload();
-    }
+    localStorage.removeItem('theme');
+    localStorage.removeItem('global-font-size');
+    // also clear settings from usePersistentState
+    localStorage.removeItem('settings-notifications');
+    localStorage.removeItem('settings-experimental');
+    window.location.reload();
   };
 
   const triggerConfetti = () => {
