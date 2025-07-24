@@ -29,8 +29,8 @@ export default function FontSettings() {
         <span className={styles.sliderLabel}>{fontSize}px</span>
         <input
           type="range"
-          min="14"
-          max="18"
+          min="12"
+          max="20"
           step="1"
           value={fontSize}
           onChange={(e) => handleSizeChange(parseInt(e.target.value, 10))}
