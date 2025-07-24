@@ -60,7 +60,7 @@ export default function ThemeSettings() {
             )}
             onClick={() => handleThemeChange(option.key)}
           >
-            <IconText icon={option.icon}>{option.label}</IconText>
+            <IconText icon={option.icon} colorMode='monochrome'>{option.label}</IconText>
           </button>
         ))}
       </div>
