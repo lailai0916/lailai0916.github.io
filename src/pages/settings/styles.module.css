@@ -342,6 +342,23 @@
   margin-top: 1rem;
 }
 
+.resetButton {
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  background: var(--ifm-color-emphasis-200);
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-radius: 8px;
+  color: var(--ifm-color-emphasis-700);
+  cursor: pointer;
+  font-size: 0.875rem;
+  transition: all 0.2s ease;
+}
+
+.resetButton:hover {
+  background: var(--ifm-color-emphasis-300);
+  border-color: var(--ifm-color-emphasis-400);
+}
+
 /* ==========================================================================
    8. Responsive Design
    ========================================================================== */

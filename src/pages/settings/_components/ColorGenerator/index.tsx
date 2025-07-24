@@ -1,38 +1,15 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { useColorMode } from '@docusaurus/theme-common';
-import Color from 'color';
-import type { ColorState } from '@site/src/utils/colorUtils';
-import {
-  COLOR_SHADES,
-  LIGHT_PRIMARY_COLOR,
-  DARK_PRIMARY_COLOR,
-  LIGHT_BACKGROUND_COLOR,
-  DARK_BACKGROUND_COLOR,
-  getAdjustedColors,
-  lightStorage,
-  darkStorage,
-  updateDOMColors,
-} from '@site/src/utils/colorUtils';
+import { getAdjustedColors } from '@site/src/utils/colorUtils';
+import { useThemeColors } from '@site/src/pages/settings/_components/shared/useThemeColors';
 import SettingCard from '@site/src/components/laiKit/widget/SettingCard';
 import styles from '../../styles.module.css';
 
 export default function ColorGenerator() {
   const { colorMode } = useColorMode();
   const isDarkTheme = colorMode === 'dark';
-
-  const [inputColor, setInputColor] = useState(
-    isDarkTheme ? DARK_PRIMARY_COLOR : LIGHT_PRIMARY_COLOR
-  );
-  const [baseColor, setBaseColor] = useState(
-    isDarkTheme ? DARK_PRIMARY_COLOR : LIGHT_PRIMARY_COLOR
-  );
-  const [background, setBackground] = useState(
-    isDarkTheme ? DARK_BACKGROUND_COLOR : LIGHT_BACKGROUND_COLOR
-  );
-  const [shades, setShades] = useState(COLOR_SHADES);
-  const [storage, setStorage] = useState(
-    isDarkTheme ? darkStorage : lightStorage
-  );
+  
+  const { colorState, inputColor, updateColor, resetColors } = useThemeColors(isDarkTheme);
 
   const presetColors = [
     '#1d9bf0',
@@ -42,41 +19,6 @@ export default function ColorGenerator() {
     '#ff7a00',
     '#00ba7c',
   ];
-
-  useEffect(() => {
-    setStorage(isDarkTheme ? darkStorage : lightStorage);
-  }, [isDarkTheme]);
-
-  useEffect(() => {
-    const DEFAULT_PRIMARY_COLOR = isDarkTheme
-      ? DARK_PRIMARY_COLOR
-      : LIGHT_PRIMARY_COLOR;
-    const DEFAULT_BACKGROUND_COLOR = isDarkTheme
-      ? DARK_BACKGROUND_COLOR
-      : LIGHT_BACKGROUND_COLOR;
-    const storedValues = JSON.parse(
-      storage.get() ?? '{}'
-    ) as Partial<ColorState>;
-    setInputColor(storedValues.baseColor ?? DEFAULT_PRIMARY_COLOR);
-    setBaseColor(storedValues.baseColor ?? DEFAULT_PRIMARY_COLOR);
-    setBackground(storedValues.background ?? DEFAULT_BACKGROUND_COLOR);
-    setShades(storedValues.shades ?? COLOR_SHADES);
-  }, [storage, isDarkTheme]);
-
-  useEffect(() => {
-    updateDOMColors({ baseColor, background, shades }, isDarkTheme);
-    storage.set(JSON.stringify({ baseColor, background, shades }));
-  }, [baseColor, background, shades, storage, isDarkTheme]);
-
-  function handleColorUpdate(colorValue: string) {
-    const newColor = colorValue.replace(/^(?=[^#])/, '#');
-    setInputColor(newColor);
-    try {
-      setBaseColor(Color(newColor).hex());
-    } catch {
-      // 忽略无效颜色
-    }
-  }
 
   return (
     <SettingCard
@@ -89,13 +31,13 @@ export default function ColorGenerator() {
         <input
           type="text"
           value={inputColor}
-          onChange={(e) => handleColorUpdate(e.target.value)}
+          onChange={(e) => updateColor(e.target.value)}
           className={styles.textcolorInput}
         />
         <input
           type="color"
-          value={baseColor}
-          onChange={(e) => handleColorUpdate(e.target.value)}
+          value={colorState.baseColor}
+          onChange={(e) => updateColor(e.target.value)}
           className={styles.colorPickerInput}
         />
       </div>
@@ -107,7 +49,7 @@ export default function ColorGenerator() {
             key={color}
             className={styles.presetColorButton}
             style={{ backgroundColor: color }}
-            onClick={() => handleColorUpdate(color)}
+            onClick={() => updateColor(color)}
             aria-label={`Set color to ${color}`}
           />
         ))}
@@ -118,14 +60,23 @@ export default function ColorGenerator() {
         className={styles.colorPreview}
         style={{
           background: `linear-gradient(to right, ${getAdjustedColors(
-            shades,
-            baseColor
+            colorState.shades,
+            colorState.baseColor
           )
             .sort((a, b) => a.displayOrder - b.displayOrder)
             .map((value) => value.hex)
             .join(', ')})`,
         }}
       />
+      
+      {/* 重置按钮 */}
+      <button 
+        onClick={resetColors}
+        className={styles.resetButton}
+        title="重置为默认颜色"
+      >
+        重置
+      </button>
     </SettingCard>
   );
 }

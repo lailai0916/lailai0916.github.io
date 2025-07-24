@@ -72,10 +72,17 @@ export const COLOR_SHADES: Shades = {
   },
 };
 
-export const LIGHT_PRIMARY_COLOR = '#1d9bf0';
-export const DARK_PRIMARY_COLOR = '#1d9bf0';
-export const LIGHT_BACKGROUND_COLOR = '#ffffff';
-export const DARK_BACKGROUND_COLOR = '#181920';
+// 主题配置
+export const THEME_CONFIG = {
+  light: {
+    primary: '#1d9bf0',
+    background: '#ffffff',
+  },
+  dark: {
+    primary: '#1d9bf0',
+    background: '#181920',
+  },
+} as const;
 
 // sessionStorage allows resetting everything next time users visit the site
 export const lightStorage = createStorageSlot('ifm-theme-colors-light', {
@@ -84,6 +91,16 @@ export const lightStorage = createStorageSlot('ifm-theme-colors-light', {
 export const darkStorage = createStorageSlot('ifm-theme-colors-dark', {
   persistence: 'sessionStorage',
 });
+
+// 获取主题配置的辅助函数
+export function getThemeDefaults(isDarkTheme: boolean) {
+  const theme = isDarkTheme ? 'dark' : 'light';
+  return THEME_CONFIG[theme];
+}
+
+export function getThemeStorage(isDarkTheme: boolean) {
+  return isDarkTheme ? darkStorage : lightStorage;
+}
 
 export function getAdjustedColors(
   shades: Shades,
@@ -117,7 +134,7 @@ export function updateDOMColors(
   }
   
   // 获取默认背景色
-  const defaultBackground = isDarkTheme ? DARK_BACKGROUND_COLOR : LIGHT_BACKGROUND_COLOR;
+  const defaultBackground = getThemeDefaults(isDarkTheme).background;
   
   // 只有在背景色真的改变时才添加背景色变量
   const backgroundRule = background !== defaultBackground ? `\n  --ifm-background-color: ${background};` : '';
