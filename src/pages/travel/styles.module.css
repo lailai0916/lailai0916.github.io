@@ -7,6 +7,21 @@
   max-width: 100% !important;
 }
 
+/* 旅行页面样式 */
+.travelContainer {
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-direction: column;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
+
+.timelineWrapper {
+  width: 100%;
+}
+
 /* 统一动画 - Unity · Simplicity · Modernity */
 @keyframes fadeIn {
   from {

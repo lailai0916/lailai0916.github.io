@@ -8,25 +8,26 @@ import { DataCardList } from '@site/src/components/laiKit/widget/DataCard';
 import IconText from '@site/src/components/laiKit/widget/IconText';
 import Timeline from '@site/src/pages/travel/_components';
 import { Section, SectionHeader } from '@site/src/components/laiKit/common';
+import styles from './styles.module.css';
 
 const TITLE = '旅行';
 const DESCRIPTION = '每一次旅行都能带来新的视野和感悟。';
 
-const TravelTimeline = React.memo(() => (
-  <Section background="alt">
-    <div className="max-w-7xl mx-auto flex flex-col px-5">
-      <SectionHeader
-        title="旅行足迹"
-        description="纸上得来终觉浅，绝知此事要躬行"
-      />
-      <div className="w-full">
-        <BrowserOnly>{() => <Timeline />}</BrowserOnly>
+function TravelTimeline() {
+  return (
+    <Section background="alt">
+      <div className={styles.travelContainer}>
+        <SectionHeader
+          title="旅行足迹"
+          description="纸上得来终觉浅，绝知此事要躬行"
+        />
+        <div className={styles.timelineWrapper}>
+          <BrowserOnly>{() => <Timeline />}</BrowserOnly>
+        </div>
       </div>
-    </div>
-  </Section>
-));
-
-TravelTimeline.displayName = 'TravelTimeline';
+    </Section>
+  );
+}
 
 function TravelFooter() {
   return (
@@ -52,17 +53,17 @@ function TravelHeader() {
       <DataCardList
         items={[
           {
-            value: "20+",
+            value: '20+',
             label: '国家/地区',
             icon: 'material-symbols:public',
           },
           {
-            value: "50+",
+            value: '50+',
             label: '城市',
             icon: 'material-symbols:location-city',
           },
           {
-            value: "13",
+            value: '13',
             label: '年历程',
             icon: 'material-symbols:schedule',
           },
