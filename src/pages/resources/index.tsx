@@ -243,7 +243,9 @@ export default function Resources(): ReactNode {
               ))
             ) : (
               <div className={styles.noResults}>
-                <p>找不到匹配"{searchQuery}"的资源。</p>
+                <p>
+                  找不到和“<b>{searchQuery}</b>”相符的资源。
+                </p>
                 <button
                   onClick={() => setSearchQuery('')}
                   className={styles.clearSearchButton}
