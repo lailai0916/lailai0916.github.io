@@ -13,24 +13,6 @@ import styles from './styles.module.css';
 const TITLE = '友链';
 const DESCRIPTION = '真正的友谊是世上最稀有的东西。';
 
-function MainContent() {
-  const totalFriends = FRIEND_LIST.length;
-
-  return (
-    <PageHeader>
-      <PageTitle
-        title={
-          <>
-            我的<b>友链</b>
-          </>
-        }
-        description={DESCRIPTION}
-      />
-      <DataCard value={totalFriends} label="位朋友" icon="lucide:users" />
-    </PageHeader>
-  );
-}
-
 // 友链卡片组件
 function FriendCard({ friend }: { friend: FriendItem }) {
   const [imageError, setImageError] = useState(false);
@@ -83,18 +65,32 @@ function FriendGrid() {
   );
 }
 
-// 页面底部说明
-function PageFooter() {
+function FriendsFooter() {
   return (
     <div className={styles.pageFooter}>
       <div className={styles.footerContent}>
         <p className={styles.footerText}>
-          <IconText icon="lucide:heart" colorMode="monochrome">
-            感谢每一位朋友的陪伴与支持
-          </IconText>
+          <IconText icon="lucide:heart">感谢每一位朋友的陪伴与支持</IconText>
         </p>
       </div>
     </div>
+  );
+}
+
+function FriendsHeader() {
+  const totalFriends = FRIEND_LIST.length;
+  return (
+    <PageHeader>
+      <PageTitle
+        title={
+          <>
+            我的<b>友链</b>
+          </>
+        }
+        description={DESCRIPTION}
+      />
+      <DataCard value={totalFriends} label="位朋友" icon="lucide:users" />
+    </PageHeader>
   );
 }
 
@@ -102,10 +98,10 @@ export default function Friends(): ReactNode {
   return (
     <Layout title={TITLE} description={DESCRIPTION}>
       <main className={styles.main}>
-        <MainContent />
+        <FriendsHeader />
         <div className={styles.container}>
           <FriendGrid />
-          <PageFooter />
+          <FriendsFooter />
         </div>
       </main>
     </Layout>
