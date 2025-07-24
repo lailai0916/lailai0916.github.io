@@ -41,9 +41,7 @@ function FriendCard({ friend }: { friend: FriendItem }) {
         </div>
         <div className={styles.friendCardFooter}>
           <div className={styles.friendCardLink}>
-            <IconText icon="lucide:external-link">
-              访问网站
-            </IconText>
+            <IconText icon="lucide:external-link">访问网站</IconText>
           </div>
         </div>
       </div>
