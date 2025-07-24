@@ -50,6 +50,12 @@ export default function ColorGenerator() {
             className={styles.presetColorButton}
             style={{ backgroundColor: color }}
             onClick={() => updateColor(color)}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.borderColor = color;
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.borderColor = 'var(--ifm-color-emphasis-300)';
+            }}
             aria-label={`Set color to ${color}`}
           />
         ))}
