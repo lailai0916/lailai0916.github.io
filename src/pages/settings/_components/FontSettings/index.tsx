@@ -37,9 +37,9 @@ export default function FontSettings() {
           className={styles.slider}
         />
         <div className={styles.sliderTicks}>
-          <span>小</span>
-          <span>标准</span>
-          <span>大</span>
+          <span>12px</span>
+          <span>16px</span>
+          <span>20px</span>
         </div>
       </div>
     </SettingCard>
