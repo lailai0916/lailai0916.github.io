@@ -182,7 +182,6 @@
 
 .button:hover {
   border-color: var(--ifm-color-primary);
-  background-color: var(--ifm-color-primary-lightest);
   transform: translateY(-1px);
 }
 
@@ -309,6 +308,7 @@
   border: 1px solid var(--ifm-color-emphasis-300);
   border-radius: 8px;
   font-family: monospace;
+  font-size: 0.875rem;
 }
 
 .colorPickerInput {
@@ -344,7 +344,7 @@
 
 .colorPreview {
   width: 100%;
-  height: 60px;
+  height: 30px;
   border: 2px solid var(--ifm-color-emphasis-300);
   border-radius: 8px;
   margin-top: 1rem;
