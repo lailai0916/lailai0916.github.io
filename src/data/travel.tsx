@@ -4,18 +4,6 @@ export interface TravelStatItem {
   icon: string;
 }
 
-export interface TravelItem {
-  title: string;
-  cardTitle: string;
-  cardDetailedText: string;
-}
-
-export const TRAVEL_STAT_LIST: TravelStatItem[] = [
-  { number: '20+', title: '国家/地区', icon: 'material-symbols:public' },
-  { number: '50+', title: '城市', icon: 'material-symbols:location-city' },
-  { number: '13年', title: '历程', icon: 'material-symbols:schedule' },
-];
-
 export const TRAVEL_LIST: TravelItem[] = [
   {
     title: '2011-09',

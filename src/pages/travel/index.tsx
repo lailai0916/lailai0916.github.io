@@ -63,7 +63,7 @@ function TravelHeader() {
             icon: 'lucide:map-pin',
           },
           {
-            value: '13',
+            value: `${new Date().getFullYear() - 2011}`,
             label: '年历程',
             icon: 'lucide:calendar',
           },
