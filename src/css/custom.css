@@ -19,6 +19,21 @@
   --ifm-color-primary-lightest: #69bcf5;
   --ifm-code-font-size: 95%;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+  
+  /* 全局字体大小设置 */
+  --global-font-size: 16px;
+}
+
+/* 应用全局字体大小 */
+html {
+  font-size: var(--global-font-size);
+}
+
+/* 确保内容区域也使用全局字体大小 */
+.main-wrapper,
+article,
+.markdown {
+  font-size: var(--global-font-size);
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
