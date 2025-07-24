@@ -9,10 +9,9 @@ tags: [math]
 
 ## 参考资料
 
-- [大数 (数学) - 维基百科](https://zh.wikipedia.org/zh-cn/大数_(数学))
+- [大数 (数学) - 维基百科](<https://zh.wikipedia.org/zh-cn/大数_(数学)>)
 
 ## 超运算
-
 
 ## 大数记号
 

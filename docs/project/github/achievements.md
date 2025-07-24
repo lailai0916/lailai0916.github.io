@@ -155,7 +155,7 @@ async function autoCreatePullRequest(page, k) {
   const mergeButton = page.locator('button:has-text("Merge pull request")');
   await mergeButton.waitFor({ timeout: 5000 });
   await page.waitForTimeout(1000);
-  
+
   console.log('点击 Merge pull request');
   await mergeButton.click();
   await page.waitForTimeout(1000);

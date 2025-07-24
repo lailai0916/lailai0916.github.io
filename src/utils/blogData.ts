@@ -26,9 +26,7 @@ function getBlogListData(): any {
   }
 }
 
-export function getRecentBlogPosts(
-  maxCount: number = 4
-): ProcessedBlogPost[] {
+export function getRecentBlogPosts(maxCount: number = 4): ProcessedBlogPost[] {
   const blogListData = getBlogListData();
 
   if (!blogListData?.items) {

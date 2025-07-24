@@ -277,7 +277,6 @@
    ========================================================================== */
 
 @media (max-width: 768px) {
-
   .categoryHeader {
     flex-direction: column;
     align-items: flex-start;

@@ -2,7 +2,7 @@
 
 ## 参考资料
 
-- [复数 (数学) - 维基百科](https://zh.wikipedia.org/zh-cn/复数_(数学))
+- [复数 (数学) - 维基百科](<https://zh.wikipedia.org/zh-cn/复数_(数学)>)
 
 ## 引入
 
