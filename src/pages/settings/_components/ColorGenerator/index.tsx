@@ -55,28 +55,29 @@ export default function ColorGenerator() {
         ))}
       </div>
 
-      {/* 色阶预览 */}
-      <div
-        className={styles.colorPreview}
-        style={{
-          background: `linear-gradient(to right, ${getAdjustedColors(
-            colorState.shades,
-            colorState.baseColor
-          )
-            .sort((a, b) => a.displayOrder - b.displayOrder)
-            .map((value) => value.hex)
-            .join(', ')})`,
-        }}
-      />
-      
-      {/* 重置按钮 */}
-      <button 
-        onClick={resetColors}
-        className={styles.resetButton}
-        title="重置为默认颜色"
-      >
-        重置
-      </button>
+      {/* 色阶预览与重置按钮 */}
+      <div className={styles.colorPreviewContainer}>
+        <div
+          className={styles.colorPreview}
+          style={{
+            background: `linear-gradient(to right, ${getAdjustedColors(
+              colorState.shades,
+              colorState.baseColor
+            )
+              .sort((a, b) => a.displayOrder - b.displayOrder)
+              .map((value) => value.hex)
+              .join(', ')})`,
+          }}
+        />
+        
+        <button 
+          onClick={resetColors}
+          className={styles.resetButton}
+          title="重置为默认颜色"
+        >
+          重置
+        </button>
+      </div>
     </SettingCard>
   );
 }
