@@ -83,52 +83,25 @@ function SettingCard({
 
 // 主题设置
 export function ThemeSettings() {
-  const { colorMode, setColorMode } = useColorMode();
-  // 单独维护用户的主题选择，包括auto选项
-  const [userThemeChoice, setUserThemeChoice] = usePersistentState<
-    'light' | 'dark' | 'auto'
-  >('theme-choice', 'auto');
+  const { colorMode, colorModeChoice, setColorMode } = useColorMode();
 
   const handleThemeChange = (newTheme: 'light' | 'dark' | 'auto') => {
-    setUserThemeChoice(newTheme);
-
     if (newTheme === 'auto') {
-      // 跟随系统时，检测系统主题并设置
-      const systemTheme = window.matchMedia('(prefers-color-scheme: dark)')
-        .matches
-        ? 'dark'
-        : 'light';
-      setColorMode(systemTheme);
-
-      // 监听系统主题变化
-      const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
-      const handler = (e: MediaQueryListEvent) => {
-        setColorMode(e.matches ? 'dark' : 'light');
-      };
-      mediaQuery.addEventListener('change', handler);
-
-      // 清理监听器的逻辑会在组件卸载时自动处理
-      return () => mediaQuery.removeEventListener('change', handler);
+      // 跟随系统：设置为 null
+      setColorMode(null);
     } else {
+      // 设置具体的主题
       setColorMode(newTheme);
     }
   };
 
-  // 当选择auto模式时，需要监听系统主题变化
-  useEffect(() => {
-    if (userThemeChoice === 'auto') {
-      const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
-      const handler = (e: MediaQueryListEvent) => {
-        setColorMode(e.matches ? 'dark' : 'light');
-      };
-      mediaQuery.addEventListener('change', handler);
+  // 获取当前的用户选择状态
+  const getCurrentChoice = () => {
+    if (colorModeChoice === null) return 'auto';
+    return colorModeChoice;
+  };
 
-      // 初始设置
-      setColorMode(mediaQuery.matches ? 'dark' : 'light');
-
-      return () => mediaQuery.removeEventListener('change', handler);
-    }
-  }, [userThemeChoice, setColorMode]);
+  const currentChoice = getCurrentChoice();
 
   return (
     <SettingCard title="外观主题" subtitle="显示偏好" icon="lucide:monitor">
@@ -137,25 +110,25 @@ export function ThemeSettings() {
         <button
           className={clsx(
             styles.button,
-            userThemeChoice === 'light' && styles.buttonActive
+            currentChoice === 'light' && styles.buttonActive
           )}
           onClick={() => handleThemeChange('light')}
         >
-          <IconText icon="lucide:sun">浅色</IconText>
+          <IconText icon="lucide:sun">浅色模式</IconText>
         </button>
         <button
           className={clsx(
             styles.button,
-            userThemeChoice === 'dark' && styles.buttonActive
+            currentChoice === 'dark' && styles.buttonActive
           )}
           onClick={() => handleThemeChange('dark')}
         >
-          <IconText icon="lucide:moon">深色</IconText>
+          <IconText icon="lucide:moon">深色模式</IconText>
         </button>
         <button
           className={clsx(
             styles.button,
-            userThemeChoice === 'auto' && styles.buttonActive
+            currentChoice === 'auto' && styles.buttonActive
           )}
           onClick={() => handleThemeChange('auto')}
         >
