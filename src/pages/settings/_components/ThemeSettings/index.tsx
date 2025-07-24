@@ -5,8 +5,26 @@ import IconText from '@site/src/components/laiKit/widget/IconText';
 import SettingCard from '../shared/SettingCard';
 import styles from '../../styles.module.css';
 
+const themeOptions = [
+  {
+    key: 'auto' as const,
+    label: '跟随系统',
+    icon: 'lucide:monitor',
+  },
+  {
+    key: 'light' as const,
+    label: '浅色模式',
+    icon: 'lucide:sun',
+  },
+  {
+    key: 'dark' as const,
+    label: '深色模式',
+    icon: 'lucide:moon',
+  },
+];
+
 export default function ThemeSettings() {
-  const { colorMode, colorModeChoice, setColorMode } = useColorMode();
+  const { colorModeChoice, setColorMode } = useColorMode();
 
   const handleThemeChange = (newTheme: 'light' | 'dark' | 'auto') => {
     if (newTheme === 'auto') {
@@ -30,33 +48,18 @@ export default function ThemeSettings() {
     <SettingCard title="外观主题" subtitle="显示偏好" icon="lucide:monitor">
       <p className={styles.cardDescription}>选择一个适合您的主题模式。</p>
       <div className={clsx(styles.buttonGroup, styles.verticalButtonGroup)}>
-        <button
-          className={clsx(
-            styles.button,
-            currentChoice === 'light' && styles.buttonActive
-          )}
-          onClick={() => handleThemeChange('light')}
-        >
-          <IconText icon="lucide:sun">浅色模式</IconText>
-        </button>
-        <button
-          className={clsx(
-            styles.button,
-            currentChoice === 'dark' && styles.buttonActive
-          )}
-          onClick={() => handleThemeChange('dark')}
-        >
-          <IconText icon="lucide:moon">深色模式</IconText>
-        </button>
-        <button
-          className={clsx(
-            styles.button,
-            currentChoice === 'auto' && styles.buttonActive
-          )}
-          onClick={() => handleThemeChange('auto')}
-        >
-          <IconText icon="lucide:monitor">跟随系统</IconText>
-        </button>
+        {themeOptions.map((option) => (
+          <button
+            key={option.key}
+            className={clsx(
+              styles.button,
+              currentChoice === option.key && styles.buttonActive
+            )}
+            onClick={() => handleThemeChange(option.key)}
+          >
+            <IconText icon={option.icon}>{option.label}</IconText>
+          </button>
+        ))}
       </div>
     </SettingCard>
   );
