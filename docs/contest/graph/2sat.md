@@ -1,6 +1,10 @@
 # 2-SAT
 
-## 实现
+## 参考资料
+
+- [2-SAT - OI Wiki](https://oi-wiki.org/graph/2-sat/)
+
+## SCC
 
 ```cpp
 #include <bits/stdc++.h>

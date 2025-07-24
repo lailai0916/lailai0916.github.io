@@ -1,6 +1,6 @@
 # 强连通分量（SCC）
 
-## 实现
+## Tarjan 算法
 
 ```cpp
 vector<int> G[N];
