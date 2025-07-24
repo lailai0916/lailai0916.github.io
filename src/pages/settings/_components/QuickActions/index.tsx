@@ -34,13 +34,13 @@ export default function QuickActions() {
           className={clsx(styles.button, styles.buttonSecondary)}
           onClick={triggerConfetti}
         >
-          <IconText icon="lucide:sparkles">给我惊喜</IconText>
+          <IconText icon="lucide:sparkles" colorMode='monochrome'>给我惊喜</IconText>
         </button>
         <button
           className={clsx(styles.button, styles.buttonDanger)}
           onClick={handleReset}
         >
-          <IconText icon="lucide:rotate-ccw">重置设置</IconText>
+          <IconText icon="lucide:rotate-ccw" colorMode='monochrome'>重置设置</IconText>
         </button>
       </div>
     </SettingCard>
