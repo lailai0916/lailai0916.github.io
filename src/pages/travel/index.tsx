@@ -62,8 +62,8 @@ function TravelHeader() {
             icon: 'material-symbols:location-city',
           },
           {
-            value: "13年",
-            label: '历程',
+            value: "13",
+            label: '年历程',
             icon: 'material-symbols:schedule',
           },
         ]}
