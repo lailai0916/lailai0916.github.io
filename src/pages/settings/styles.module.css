@@ -71,7 +71,7 @@
 .settingsGrid > :nth-child(4) { grid-area: experimental; }
 .settingsGrid > :nth-child(5) { grid-area: actions; }
 
-@media (max-width: 1200px) {
+@media (max-width: 1199px) {
   .settingsGrid {
     grid-template-columns: 1fr 1fr;
     grid-template-areas:
@@ -386,18 +386,10 @@
 }
 
 /* ==========================================================================
-   8. Responsive Design
+   8. Additional Responsive Design
    ========================================================================== */
 
 @media (max-width: 768px) {
-  .settingsGrid {
-    grid-template-columns: 1fr;
-  }
-
-  .gridItemLarge {
-    grid-column: span 1;
-  }
-
   .container {
     padding: 0 1rem 2rem 1rem;
   }
