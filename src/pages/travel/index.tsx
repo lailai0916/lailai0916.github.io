@@ -15,17 +15,15 @@ const DESCRIPTION = '每一次旅行都能带来新的视野和感悟。';
 
 function TravelTimeline() {
   return (
-    <Section background="alt">
-      <div className={styles.travelContainer}>
-        <SectionHeader
-          title="旅行足迹"
-          description="纸上得来终觉浅，绝知此事要躬行"
-        />
-        <div className={styles.timelineWrapper}>
-          <BrowserOnly>{() => <Timeline />}</BrowserOnly>
-        </div>
+    <div className={styles.travelContainer}>
+      <SectionHeader
+        title="旅行足迹"
+        description="纸上得来终觉浅，绝知此事要躬行"
+      />
+      <div className={styles.timelineWrapper}>
+        <BrowserOnly>{() => <Timeline />}</BrowserOnly>
       </div>
-    </Section>
+    </div>
   );
 }
 
