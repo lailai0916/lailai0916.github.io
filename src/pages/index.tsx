@@ -11,17 +11,16 @@ import Docs from './_components/Docs';
 import Blog from './_components/Blog';
 import Countdown from './_components/Countdown';
 import Project from './_components/Project';
-import NeuralNetwork from './_components/NeuralNetwork';
 
 import Skill from './_components/Skill';
 import Exploration from './_components/Exploration';
+import NeuralNetwork from './_components/NeuralNetwork';
 import Quote from './_components/Quote';
 import Community from './_components/Community';
 
 export default function Home(): ReactNode {
   const { siteConfig } = useDocusaurusContext();
   const debugMode = useDebugMode();
-
   return (
     <Layout
       title={siteConfig.title}
