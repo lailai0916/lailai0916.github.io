@@ -1,6 +1,6 @@
 import React, { type ReactNode, useState } from 'react';
-import Link from '@docusaurus/Link';
 import Layout from '@theme/Layout';
+import Link from '@docusaurus/Link';
 import { Icon } from '@iconify/react';
 import PageHeader from '@site/src/components/laiKit/page/PageHeader';
 import PageTitle from '@site/src/components/laiKit/page/PageTitle';
