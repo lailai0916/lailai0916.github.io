@@ -1,18 +1,6 @@
-/**
- * Copyright (c) Facebook, Inc. and its affiliates.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- */
-
 import Color from 'color';
 import { createStorageSlot } from '@docusaurus/theme-common';
 
-// These values are shared between the Toggle component and the ColorGenerator
-
-/**
- * Stored in session storage
- */
 export type ColorState = {
   baseColor: string;
   background: string;
@@ -27,6 +15,7 @@ export type Shades = {
     codeOrder: number;
   };
 };
+
 export const COLOR_SHADES: Shades = {
   '--ifm-color-primary': {
     adjustment: 0,
