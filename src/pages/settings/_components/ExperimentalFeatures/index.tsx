@@ -1,7 +1,7 @@
 import React from 'react';
 import Switch from '@site/src/components/laiKit/widget/Switch';
 import SettingCard from '@site/src/components/laiKit/widget/SettingCard';
-import { usePersistentState } from '../shared/usePersistentState';
+import { usePersistentState } from '../hooks/usePersistentState';
 import styles from '../../styles.module.css';
 
 export default function ExperimentalFeatures() {

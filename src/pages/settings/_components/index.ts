@@ -6,4 +6,4 @@ export { default as QuickActions } from './QuickActions';
 export { default as ColorGenerator } from './ColorGenerator';
 
 // 共享工具
-export { usePersistentState } from './shared/usePersistentState';
+export { usePersistentState } from './hooks/usePersistentState';
