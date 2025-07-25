@@ -54,22 +54,22 @@
 
 .settingsGrid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  grid-template-columns: 1fr 1fr;
   gap: 1.5rem;
   animation: fadeIn 0.3s ease-out;
 }
 
-.gridItem {
-  min-width: 0;
+.settingsGrid > :nth-child(2) {
+  grid-column: 1 / -1; /* ColorGenerator 跨越整行 */
 }
 
-.gridItemLarge {
-  grid-column: span 1;
-}
-
-@media (min-width: 997px) {
-  .gridItemLarge {
-    grid-column: span 2;
+@media (max-width: 768px) {
+  .settingsGrid {
+    grid-template-columns: 1fr;
+  }
+  
+  .settingsGrid > :nth-child(2) {
+    grid-column: 1;
   }
 }
 

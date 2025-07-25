@@ -39,21 +39,11 @@ export default function Settings(): ReactNode {
         <SettingsHeader />
         <div className={styles.container}>
           <div className={styles.settingsGrid}>
-            <div className={styles.gridItem}>
-              <ThemeSettings />
-            </div>
-            <div className={styles.gridItemLarge}>
-              <ColorGenerator />
-            </div>
-            <div className={styles.gridItem}>
-              <FontSettings />
-            </div>
-            <div className={styles.gridItem}>
-              <ExperimentalFeatures />
-            </div>
-            <div className={styles.gridItem}>
-              <QuickActions />
-            </div>
+            <ThemeSettings />
+            <ColorGenerator />
+            <FontSettings />
+            <ExperimentalFeatures />
+            <QuickActions />
           </div>
         </div>
       </main>
