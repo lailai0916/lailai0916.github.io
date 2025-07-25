@@ -35,16 +35,6 @@
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
 
-html {
-  font-size: var(--global-font-size);
-}
-
-.main-wrapper,
-article,
-.markdown {
-  font-size: var(--global-font-size);
-}
-
 .header-github-link::before {
   content: '';
   width: 24px;
@@ -63,6 +53,20 @@ article,
 pre,
 code {
   tab-size: 4;
+}
+
+.debug div {
+  outline: 1px solid red;
+}
+
+html {
+  font-size: var(--global-font-size);
+}
+
+.main-wrapper,
+article,
+.markdown {
+  font-size: var(--global-font-size);
 }
 
 .theme-announcement-bar {

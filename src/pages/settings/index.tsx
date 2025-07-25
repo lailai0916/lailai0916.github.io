@@ -36,7 +36,11 @@ function SettingsHeader() {
 export default function Settings(): ReactNode {
   const debugMode = useDebugMode();
   return (
-    <Layout title={TITLE} description={DESCRIPTION} wrapperClassName={debugMode && styles.debug}>
+    <Layout
+      title={TITLE}
+      description={DESCRIPTION}
+      wrapperClassName={debugMode && 'debug'}
+    >
       <main className={styles.main}>
         <SettingsHeader />
         <div className={styles.container}>

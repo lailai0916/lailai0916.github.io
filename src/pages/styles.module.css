@@ -1,7 +1,3 @@
 .container > *:nth-child(even) {
   background: var(--ifm-color-emphasis-100);
 }
-
-.debug div {
-  outline: 1px solid red;
-}

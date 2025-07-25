@@ -25,7 +25,7 @@ export default function Home(): ReactNode {
     <Layout
       title={siteConfig.title}
       description={siteConfig.tagline}
-      wrapperClassName={debugMode && styles.debug}
+      wrapperClassName={debugMode && "debug"}
     >
       <main>
         <TopBanner />
