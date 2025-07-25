@@ -28,9 +28,9 @@ export default function Home(): ReactNode {
       description={siteConfig.tagline}
       wrapperClassName={debugMode && styles.debug}
     >
-      <TopBanner />
-      <HeroBanner />
       <main className={styles.section}>
+        <TopBanner />
+        <HeroBanner />
         <Docs />
         <Blog />
         <Countdown />
