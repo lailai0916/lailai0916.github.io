@@ -19,37 +19,8 @@
   padding: 4rem 2rem 4rem 2rem;
 }
 
-.content {
-  display: flex;
-  flex-direction: column;
-  gap: 3rem;
-}
-
 /* ==========================================================================
-   2. Modern Header Section (类似 resources 页面的头部)
-   ========================================================================== */
-
-.mainDescription {
-  font-size: 1.2rem;
-  color: var(--ifm-color-emphasis-700);
-  margin: 0;
-  line-height: 1.6;
-}
-
-.statIcon {
-  flex-shrink: 0;
-  width: 40px;
-  height: 40px;
-  background: var(--ifm-color-emphasis-100);
-  border-radius: 8px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--ifm-color-emphasis-600);
-}
-
-/* ==========================================================================
-   4. Settings Grid & Layout
+   2. Settings Grid & Layout
    ========================================================================== */
 
 .settingsGrid {
@@ -96,7 +67,7 @@
 
 
 /* ==========================================================================
-   6. Interactive Elements
+   3. Interactive Elements
    ========================================================================== */
 
 /* 按钮组 */
@@ -232,7 +203,6 @@
   border-bottom: none;
 }
 
-/* 颜色选择器 */
 .colorInputContainer {
   display: flex;
   gap: 0.75rem;
@@ -312,7 +282,7 @@
 }
 
 /* ==========================================================================
-   8. Additional Responsive Design
+   4. Additional Responsive Design
    ========================================================================== */
 
 @media (max-width: 768px) {
