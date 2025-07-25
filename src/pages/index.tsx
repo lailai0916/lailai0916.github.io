@@ -1,8 +1,9 @@
 import type { ReactNode } from 'react';
+import clsx from 'clsx';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
+import { useDebugMode } from '@site/src/hooks/useDebugMode';
 import Layout from '@theme/Layout';
 import styles from './styles.module.css';
-import { useDebugMode } from '@site/src/hooks/useDebugMode';
 
 import TopBanner from './_components/TopBanner';
 import HeroBanner from './_components/HeroBanner';
@@ -21,15 +22,12 @@ import Community from './_components/Community';
 export default function Home(): ReactNode {
   const { siteConfig } = useDocusaurusContext();
   const debugMode = useDebugMode();
-  
-  // 组合CSS类：基础类 + 可选的调试类
-  const sectionClass = `${styles.section} ${debugMode ? styles.debug : ''}`.trim();
-  
+
   return (
     <Layout title={siteConfig.title} description={siteConfig.tagline}>
       <TopBanner />
       <HeroBanner />
-      <main className={sectionClass}>
+      <main className={clsx(styles.section, debugMode && styles.debug)}>
         <Docs />
         <Blog />
         <Countdown />
