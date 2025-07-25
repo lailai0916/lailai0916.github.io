@@ -32,22 +32,22 @@ export default function ExperimentalFeatures() {
       subtitle="尝试即将推出的新功能，可能不稳定"
       icon="lucide:flask-conical"
     >
-      <ul className={styles.toggleList}>
-        <li>
+      <div className={styles.toggleList}>
+        <div>
           <span>新版布局</span>
           <Switch
             checked={toggles.newLayout}
             onChange={(checked) => handleToggle('newLayout', checked)}
           />
-        </li>
-        <li>
+        </div>
+        <div>
           <span>调试模式</span>
           <Switch
             checked={toggles.debugMode}
             onChange={(checked) => handleToggle('debugMode', checked)}
           />
-        </li>
-      </ul>
+        </div>
+      </div>
     </SettingCard>
   );
 }
