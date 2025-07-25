@@ -20,6 +20,7 @@
 
 .timelineWrapper {
   width: 100%;
+  border: 1px solid red;
 }
 
 /* 统一动画 - Unity · Simplicity · Modernity */
