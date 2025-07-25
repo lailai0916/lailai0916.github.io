@@ -59,13 +59,10 @@
 }
 
 .settingsGrid {
-  grid-template-columns: 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   grid-template-areas:
-    "theme"
-    "color"
-    "font"
-    "experimental"
-    "actions";
+    "theme color color"
+    "font experimental actions";
 }
 
 .settingsGrid > :nth-child(1) { grid-area: theme; }
@@ -74,7 +71,7 @@
 .settingsGrid > :nth-child(4) { grid-area: experimental; }
 .settingsGrid > :nth-child(5) { grid-area: actions; }
 
-@media (min-width: 769px) {
+@media (max-width: 1200px) {
   .settingsGrid {
     grid-template-columns: 1fr 1fr;
     grid-template-areas:
@@ -84,12 +81,15 @@
   }
 }
 
-@media (min-width: 1200px) {
+@media (max-width: 768px) {
   .settingsGrid {
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr;
     grid-template-areas:
-      "theme color color"
-      "font experimental actions";
+      "theme"
+      "color"
+      "font"
+      "experimental"
+      "actions";
   }
 }
 
