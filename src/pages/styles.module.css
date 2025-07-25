@@ -4,9 +4,14 @@
 
 /* 调试模式样式 - 只在调试模式开启时应用 */
 .sectionDebug div {
+  width: 100%;
   outline: 1px solid red;
 }
 
 .section > *:nth-child(even) {
+  background: var(--ifm-color-emphasis-100);
+}
+
+.sectionDebug > *:nth-child(even) {
   background: var(--ifm-color-emphasis-100);
 }
