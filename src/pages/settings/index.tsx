@@ -1,5 +1,6 @@
 import React, { type ReactNode } from 'react';
 import Layout from '@theme/Layout';
+import { useDebugMode } from '@site/src/hooks/useDebugMode';
 
 import DataCard from '@site/src/components/laiKit/widget/DataCard';
 import PageTitle from '@site/src/components/laiKit/page/PageTitle';
@@ -33,8 +34,9 @@ function SettingsHeader() {
 }
 
 export default function Settings(): ReactNode {
+  const debugMode = useDebugMode();
   return (
-    <Layout title={TITLE} description={DESCRIPTION}>
+    <Layout title={TITLE} description={DESCRIPTION} wrapperClassName={debugMode && styles.debug}>
       <main className={styles.main}>
         <SettingsHeader />
         <div className={styles.container}>

@@ -7,6 +7,10 @@
    1. Core Layout & Structure
    ========================================================================== */
 
+.debug div {
+  outline: 1px solid red;
+}
+
 .main {
   position: relative;
   overflow-x: hidden;
