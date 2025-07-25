@@ -22,8 +22,8 @@ export default function Home(): ReactNode {
   const { siteConfig } = useDocusaurusContext();
   const debugMode = useDebugMode();
   
-  // 根据调试模式动态决定CSS类
-  const sectionClass = debugMode ? styles.sectionDebug : styles.section;
+  // 组合CSS类：基础类 + 可选的调试类
+  const sectionClass = `${styles.section} ${debugMode ? styles.debug : ''}`.trim();
   
   return (
     <Layout title={siteConfig.title} description={siteConfig.tagline}>
