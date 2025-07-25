@@ -1,5 +1,7 @@
 import React, { type ReactNode, useState } from 'react';
 import Layout from '@theme/Layout';
+import { useDebugMode } from '@site/src/hooks/useDebugMode';
+
 import Link from '@docusaurus/Link';
 import { Icon } from '@iconify/react';
 import PageHeader from '@site/src/components/laiKit/page/PageHeader';
@@ -89,8 +91,13 @@ function FriendsHeader() {
 }
 
 export default function Friends(): ReactNode {
+  const debugMode = useDebugMode();
   return (
-    <Layout title={TITLE} description={DESCRIPTION}>
+    <Layout
+      title={TITLE}
+      description={DESCRIPTION}
+      wrapperClassName={debugMode && 'debug'}
+    >
       <main className={styles.main}>
         <FriendsHeader />
         <div className={styles.container}>

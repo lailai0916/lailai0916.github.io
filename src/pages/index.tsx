@@ -1,7 +1,7 @@
 import type { ReactNode } from 'react';
 import Layout from '@theme/Layout';
-import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import { useDebugMode } from '@site/src/hooks/useDebugMode';
+import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import styles from './styles.module.css';
 
 import TopBanner from './_components/TopBanner';
@@ -25,7 +25,7 @@ export default function Home(): ReactNode {
     <Layout
       title={siteConfig.title}
       description={siteConfig.tagline}
-      wrapperClassName={debugMode && "debug"}
+      wrapperClassName={debugMode && 'debug'}
     >
       <main>
         <TopBanner />

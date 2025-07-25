@@ -1,5 +1,7 @@
 import React, { type ReactNode } from 'react';
 import Layout from '@theme/Layout';
+import { useDebugMode } from '@site/src/hooks/useDebugMode';
+
 import BrowserOnly from '@docusaurus/BrowserOnly';
 import PageHeader from '@site/src/components/laiKit/page/PageHeader';
 import PageTitle from '@site/src/components/laiKit/page/PageTitle';
@@ -72,8 +74,13 @@ function TravelHeader() {
 }
 
 export default function Travel(): ReactNode {
+  const debugMode = useDebugMode();
   return (
-    <Layout title={TITLE} description={DESCRIPTION}>
+    <Layout
+      title={TITLE}
+      description={DESCRIPTION}
+      wrapperClassName={debugMode && 'debug'}
+    >
       <main>
         <TravelHeader />
         <TravelTimeline />

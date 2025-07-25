@@ -1,6 +1,8 @@
 import React, { type ReactNode, useState, useMemo } from 'react';
-import Link from '@docusaurus/Link';
 import Layout from '@theme/Layout';
+import { useDebugMode } from '@site/src/hooks/useDebugMode';
+
+import Link from '@docusaurus/Link';
 import { Icon } from '@iconify/react';
 import clsx from 'clsx';
 import { DataCardList } from '@site/src/components/laiKit/widget/DataCard';
@@ -223,8 +225,13 @@ export default function Resources(): ReactNode {
     return filterResourceCategories(RESOURCE_LIST, activeCategory, searchQuery);
   }, [activeCategory, searchQuery]);
 
+  const debugMode = useDebugMode();
   return (
-    <Layout title={TITLE} description={DESCRIPTION}>
+    <Layout
+      title={TITLE}
+      description={DESCRIPTION}
+      wrapperClassName={debugMode && 'debug'}
+    >
       <main className={styles.main}>
         <ResourcesHeader />
         <div className={styles.container}>
