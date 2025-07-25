@@ -2,6 +2,10 @@
   width: 100%;
 }
 
+.section div {
+  outline: 1px solid red;
+}
+
 .section > *:nth-child(even) {
   background: var(--ifm-color-emphasis-100);
 }
