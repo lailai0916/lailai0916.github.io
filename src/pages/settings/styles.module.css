@@ -210,11 +210,6 @@
   color: white;
 }
 
-.buttonSecondary {
-  border-color: var(--ifm-color-secondary);
-  color: var(--ifm-color-secondary);
-}
-
 .buttonDanger {
   border-color: var(--ifm-color-danger);
   color: var(--ifm-color-danger);

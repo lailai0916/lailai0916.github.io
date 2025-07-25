@@ -31,7 +31,7 @@ export default function QuickActions() {
     >
       <div className={clsx(styles.buttonGroup, styles.verticalButtonGroup)}>
         <button
-          className={clsx(styles.button, styles.buttonSecondary)}
+          className={styles.button}
           onClick={triggerConfetti}
         >
           <IconText icon="lucide:sparkles" colorMode='monochrome'>给我惊喜</IconText>
