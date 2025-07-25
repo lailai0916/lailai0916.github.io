@@ -1,7 +1,7 @@
 import React from 'react';
 import Switch from '@site/src/components/laiKit/widget/Switch';
 import SettingCard from '@site/src/components/laiKit/widget/SettingCard';
-import { usePersistentState } from '../hooks/usePersistentState';
+import { usePersistentState } from '../../../../hooks/usePersistentState';
 import styles from '../../styles.module.css';
 
 export default function ExperimentalFeatures() {
@@ -11,7 +11,19 @@ export default function ExperimentalFeatures() {
   });
 
   const handleToggle = (key: keyof typeof toggles, checked: boolean) => {
-    setToggles((prev) => ({ ...prev, [key]: checked }));
+    setToggles((prev) => {
+      const newState = { ...prev, [key]: checked };
+      
+      // 触发自定义事件通知状态变化
+      if (typeof window !== 'undefined') {
+        const event = new CustomEvent('experimentalSettingsChanged', {
+          detail: { key, checked, newState }
+        });
+        window.dispatchEvent(event);
+      }
+      
+      return newState;
+    });
   };
 
   return (

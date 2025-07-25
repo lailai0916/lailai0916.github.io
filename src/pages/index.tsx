@@ -2,6 +2,7 @@ import type { ReactNode } from 'react';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
 import styles from './styles.module.css';
+import { useDebugMode } from '@site/src/hooks/useDebugMode';
 
 import TopBanner from './_components/TopBanner';
 import HeroBanner from './_components/HeroBanner';
@@ -19,11 +20,16 @@ import Community from './_components/Community';
 
 export default function Home(): ReactNode {
   const { siteConfig } = useDocusaurusContext();
+  const debugMode = useDebugMode();
+  
+  // 根据调试模式动态决定CSS类
+  const sectionClass = debugMode ? styles.sectionDebug : styles.section;
+  
   return (
     <Layout title={siteConfig.title} description={siteConfig.tagline}>
       <TopBanner />
       <HeroBanner />
-      <main className={styles.section}>
+      <main className={sectionClass}>
         <Docs />
         <Blog />
         <Countdown />
