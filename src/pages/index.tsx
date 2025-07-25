@@ -1,8 +1,7 @@
 import type { ReactNode } from 'react';
-import clsx from 'clsx';
+import Layout from '@theme/Layout';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import { useDebugMode } from '@site/src/hooks/useDebugMode';
-import Layout from '@theme/Layout';
 import styles from './styles.module.css';
 
 import TopBanner from './_components/TopBanner';
@@ -24,10 +23,14 @@ export default function Home(): ReactNode {
   const debugMode = useDebugMode();
 
   return (
-    <Layout title={siteConfig.title} description={siteConfig.tagline}>
+    <Layout
+      title={siteConfig.title}
+      description={siteConfig.tagline}
+      wrapperClassName={debugMode && styles.debug}
+    >
       <TopBanner />
       <HeroBanner />
-      <main className={clsx(styles.section, debugMode && styles.debug)}>
+      <main className={styles.section}>
         <Docs />
         <Blog />
         <Countdown />

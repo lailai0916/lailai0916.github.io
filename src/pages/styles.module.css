@@ -1,12 +1,7 @@
-.section {
-  width: 100%;
-}
-
 .section > *:nth-child(even) {
   background: var(--ifm-color-emphasis-100);
 }
 
-/* 调试模式修饰类 - 只在调试模式开启时添加 */
 .debug div {
   outline: 1px solid red;
 }
