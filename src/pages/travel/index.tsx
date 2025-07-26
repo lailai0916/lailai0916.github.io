@@ -55,11 +55,6 @@ function TravelHeader() {
             icon: 'lucide:globe',
           },
           {
-            value: '50+',
-            label: '城市',
-            icon: 'lucide:map-pin',
-          },
-          {
             value: `${new Date().getFullYear() - 2011}`,
             label: '年历程',
             icon: 'lucide:route',
