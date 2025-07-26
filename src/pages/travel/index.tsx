@@ -1,15 +1,17 @@
 import React, { type ReactNode } from 'react';
 import Layout from '@theme/Layout';
-import { useDebugMode } from '@site/src/hooks/useDebugMode';
 
-import BrowserOnly from '@docusaurus/BrowserOnly';
-import PageHeader from '@site/src/components/laiKit/page/PageHeader';
-import PageTitle from '@site/src/components/laiKit/page/PageTitle';
-import PageFooter from '@site/src/components/laiKit/page/PageFooter';
+import {
+  PageTitle,
+  PageMain,
+  PageHeader,
+  PageFooter,
+} from '@site/src/components/laiKit/page';
 import { DataCardList } from '@site/src/components/laiKit/widget/DataCard';
 import IconText from '@site/src/components/laiKit/widget/IconText';
+import BrowserOnly from '@docusaurus/BrowserOnly';
 import Timeline from '@site/src/pages/travel/_components';
-import { Section, SectionHeader } from '@site/src/components/laiKit/common';
+import { SectionHeader } from '@site/src/components/laiKit/common';
 import styles from './styles.module.css';
 
 const TITLE = '旅行';
@@ -74,18 +76,13 @@ function TravelHeader() {
 }
 
 export default function Travel(): ReactNode {
-  const debugMode = useDebugMode();
   return (
-    <Layout
-      title={TITLE}
-      description={DESCRIPTION}
-      wrapperClassName={debugMode && 'debug'}
-    >
-      <main>
+    <Layout title={TITLE} description={DESCRIPTION}>
+      <PageMain>
         <TravelHeader />
         <TravelTimeline />
         <TravelFooter />
-      </main>
+      </PageMain>
     </Layout>
   );
 }

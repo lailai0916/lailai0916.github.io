@@ -1,7 +1,8 @@
-import type { ReactNode } from 'react';
+import React, { type ReactNode } from 'react';
 import Layout from '@theme/Layout';
-import { useDebugMode } from '@site/src/hooks/useDebugMode';
+
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
+import { PageMain } from '@site/src/components/laiKit/page';
 import styles from './styles.module.css';
 
 import TopBanner from './_components/TopBanner';
@@ -20,14 +21,9 @@ import Community from './_components/Community';
 
 export default function Home(): ReactNode {
   const { siteConfig } = useDocusaurusContext();
-  const debugMode = useDebugMode();
   return (
-    <Layout
-      title={siteConfig.title}
-      description={siteConfig.tagline}
-      wrapperClassName={debugMode && 'debug'}
-    >
-      <main>
+    <Layout title={siteConfig.title} description={siteConfig.tagline}>
+      <PageMain>
         <TopBanner />
         <HeroBanner />
         <div className={styles.container}>
@@ -41,7 +37,7 @@ export default function Home(): ReactNode {
           <Quote />
           <Community />
         </div>
-      </main>
+      </PageMain>
     </Layout>
   );
 }

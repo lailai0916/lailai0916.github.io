@@ -1,14 +1,16 @@
 import React, { type ReactNode, useState } from 'react';
 import Layout from '@theme/Layout';
-import { useDebugMode } from '@site/src/hooks/useDebugMode';
 
-import Link from '@docusaurus/Link';
-import { Icon } from '@iconify/react';
-import PageHeader from '@site/src/components/laiKit/page/PageHeader';
-import PageTitle from '@site/src/components/laiKit/page/PageTitle';
-import PageFooter from '@site/src/components/laiKit/page/PageFooter';
+import {
+  PageTitle,
+  PageMain,
+  PageHeader,
+  PageFooter
+} from '@site/src/components/laiKit/page';
 import DataCard from '@site/src/components/laiKit/widget/DataCard';
 import IconText from '@site/src/components/laiKit/widget/IconText';
+import Link from '@docusaurus/Link';
+import { Icon } from '@iconify/react';
 import { FriendItem, FRIEND_LIST } from '@site/src/data/friends';
 import styles from './styles.module.css';
 
@@ -91,20 +93,15 @@ function FriendsHeader() {
 }
 
 export default function Friends(): ReactNode {
-  const debugMode = useDebugMode();
   return (
-    <Layout
-      title={TITLE}
-      description={DESCRIPTION}
-      wrapperClassName={debugMode && 'debug'}
-    >
-      <main className={styles.main}>
+    <Layout title={TITLE} description={DESCRIPTION}>
+      <PageMain>
         <FriendsHeader />
         <div className={styles.container}>
           <FriendGrid />
           <FriendsFooter />
         </div>
-      </main>
+      </PageMain>
     </Layout>
   );
 }

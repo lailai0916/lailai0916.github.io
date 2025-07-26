@@ -1,10 +1,12 @@
 import React, { type ReactNode } from 'react';
 import Layout from '@theme/Layout';
-import { useDebugMode } from '@site/src/hooks/useDebugMode';
 
+import {
+  PageTitle,
+  PageMain,
+  PageHeader,
+} from '@site/src/components/laiKit/page';
 import DataCard from '@site/src/components/laiKit/widget/DataCard';
-import PageTitle from '@site/src/components/laiKit/page/PageTitle';
-import PageHeader from '@site/src/components/laiKit/page/PageHeader';
 import styles from './styles.module.css';
 import {
   ThemeSettings,
@@ -34,14 +36,9 @@ function SettingsHeader() {
 }
 
 export default function Settings(): ReactNode {
-  const debugMode = useDebugMode();
   return (
-    <Layout
-      title={TITLE}
-      description={DESCRIPTION}
-      wrapperClassName={debugMode && 'debug'}
-    >
-      <main>
+    <Layout title={TITLE} description={DESCRIPTION}>
+      <PageMain>
         <SettingsHeader />
         <div className={styles.container}>
           <ThemeSettings />
@@ -50,7 +47,7 @@ export default function Settings(): ReactNode {
           <ExperimentalFeatures />
           <QuickActions />
         </div>
-      </main>
+      </PageMain>
     </Layout>
   );
 }

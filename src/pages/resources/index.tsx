@@ -1,13 +1,16 @@
 import React, { type ReactNode, useState, useMemo } from 'react';
 import Layout from '@theme/Layout';
-import { useDebugMode } from '@site/src/hooks/useDebugMode';
 
 import Link from '@docusaurus/Link';
 import { Icon } from '@iconify/react';
 import clsx from 'clsx';
+
+import {
+  PageTitle,
+  PageMain,
+  PageHeader,
+} from '@site/src/components/laiKit/page';
 import { DataCardList } from '@site/src/components/laiKit/widget/DataCard';
-import PageTitle from '@site/src/components/laiKit/page/PageTitle';
-import PageHeader from '@site/src/components/laiKit/page/PageHeader';
 import IconText from '@site/src/components/laiKit/widget/IconText';
 
 import {
@@ -224,15 +227,9 @@ export default function Resources(): ReactNode {
   const filteredCategories = useMemo(() => {
     return filterResourceCategories(RESOURCE_LIST, activeCategory, searchQuery);
   }, [activeCategory, searchQuery]);
-
-  const debugMode = useDebugMode();
   return (
-    <Layout
-      title={TITLE}
-      description={DESCRIPTION}
-      wrapperClassName={debugMode && 'debug'}
-    >
-      <main className={styles.main}>
+    <Layout title={TITLE} description={DESCRIPTION}>
+      <PageMain>
         <ResourcesHeader />
         <div className={styles.container}>
           <div className={styles.stickyControls}>
@@ -263,7 +260,7 @@ export default function Resources(): ReactNode {
             )}
           </div>
         </div>
-      </main>
+      </PageMain>
     </Layout>
   );
 }

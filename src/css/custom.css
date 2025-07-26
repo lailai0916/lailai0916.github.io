@@ -55,10 +55,6 @@ code {
   tab-size: 4;
 }
 
-.debug div {
-  outline: 1px solid red;
-}
-
 html {
   font-size: var(--global-font-size);
 }
