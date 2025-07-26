@@ -19,7 +19,6 @@
    ========================================================================== */
 
 .stickyControls {
-  position: sticky;
   top: 60px; /* Match navbar height */
   background: var(--ifm-background-color);
   padding: 2rem 0 1rem; /* Restore vertical spacing */
