@@ -152,9 +152,9 @@ npm run deploy
 
 ## 参考
 
-以下是一些我认为非常出色的个人网站：
+以下是一些我认为非常出色的个人网站，供参考和借鉴：
 
 - [峰华前端工程师 - 让你学会前端开发](https://zxuqian.cn)
 - [愧怍](https://kuizuo.cn)
 - [老车的个人网站](https://cheyujie.art)
-- [HOME - JIEJOE | 视觉设计者](https://www.jiejoe.com)
+- [JIEJOE | 视觉设计者](https://www.jiejoe.com)
