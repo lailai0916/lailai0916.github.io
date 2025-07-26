@@ -1,5 +1,7 @@
 # 题解模板
 
+本文是我的洛谷题解模板。
+
 ## 参考资料
 
 - [洛谷主题库题解规范（2023 试行版） - 洛谷帮助中心](https://help.luogu.com.cn/rules/academic/solution-standard)
