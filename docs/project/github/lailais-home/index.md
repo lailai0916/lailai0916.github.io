@@ -2,7 +2,7 @@
 
 ## 说明
 
-这是我的 lailai 的个人网站项目。
+这是我的个人网站项目。
 
 ## 项目链接
 
@@ -10,19 +10,19 @@
 
 ## 前言
 
-我曾经使用过 [CSDN](https://www.csdn.net)、[博客园](https://www.cnblogs.com) 等现成的博客平台，但它们的自由度较低，功能也较为受限，而且经常有广告。
+我曾经使用过 [CSDN](https://www.csdn.net)、[博客园](https://www.cnblogs.com) 等现成的博客平台，但它们的自由度低，功能受限，还经常有广告。
 
-随后我也尝试过 [WordPress](https://wordpress.org)、[Hexo](https://hexo.io) 等博客框架，但效果始终都不是很满意。
+后来我尝试过 [WordPress](https://wordpress.org)、[Hexo](https://hexo.io) 等博客框架，但效果始终不是很满意。
 
-直到我发现了 [Docusaurus](https://docusaurus.io)，一个由 Facebook 开发的开源的静态网站生成器，它简洁美观、易于使用，而且扩展性强。
+直到我发现了 [Docusaurus](https://docusaurus.io)，一个由 Facebook 开发的开源静态网站生成器，它简洁美观、易于使用，而且扩展性强。
 
-由于 Docusaurus 在国内比较冷门，相关的资料和教程也比较少，因此我花费了不少时间研究。
+但 Docusaurus 在国内比较冷门，相关的资料和教程也很少，因此我花费了不少时间研究。
 
-在此之前，我几乎没用过 HTML、CSS 和 JavaScript，但凭借其他编程语言的基础，我自己琢磨出了这些语言的基本语法。
+在此之前，我几乎没有学习过 HTML、CSS 和 JavaScript，但凭借其他编程语言的基础，我通过搭建网站掌握了这些语言的基本语法。
 
 :::tip
 
-[Material for MkDocs](https://squidfunk.github.io/mkdocs-material/) 和 [VitePress](https://vitepress.dev) 也是一些很好的选择，例如 [OI Wiki](https://oi-wiki.org) 就是基于 Material for MkDocs 搭建的。
+[Material for MkDocs](https://squidfunk.github.io/mkdocs-material/) 和 [VitePress](https://vitepress.dev) 也是很好的选择，例如 [OI Wiki](https://oi-wiki.org) 就是基于前者搭建的。
 
 :::
 
