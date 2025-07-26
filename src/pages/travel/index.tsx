@@ -44,14 +44,9 @@ function TravelFooter() {
 function TravelHeader() {
   return (
     <PageHeader>
-      <PageTitle
-        title={
-          <>
-            <b>旅行</b>记录
-          </>
-        }
-        description={DESCRIPTION}
-      />
+      <PageTitle description={DESCRIPTION}>
+        <b>旅行</b>记录
+      </PageTitle>
       <DataCardList
         items={[
           {

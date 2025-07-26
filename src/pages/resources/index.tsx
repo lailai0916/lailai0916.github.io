@@ -20,7 +20,7 @@ import {
 import styles from './styles.module.css';
 
 const TITLE = '资源';
-const DESCRIPTION = '精选优质资源，为你的学习和开发提供助力';
+const DESCRIPTION = '精心筛选的优质工具与平台';
 
 /**
  * 根据分类和搜索查询过滤资源数据
@@ -198,14 +198,9 @@ function ResourcesHeader() {
   );
   return (
     <PageHeader>
-      <PageTitle
-        title={
-          <>
-            精选<b>资源</b>
-          </>
-        }
-        description="精心筛选的优质工具与平台"
-      />
+      <PageTitle description={DESCRIPTION}>
+        精选<b>资源</b>
+      </PageTitle>
       <DataCardList
         items={[
           {

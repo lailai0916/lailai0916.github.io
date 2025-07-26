@@ -22,14 +22,9 @@ const DESCRIPTION = '个性化您的体验，自定义网站功能和偏好设�
 function SettingsHeader() {
   return (
     <PageHeader>
-      <PageTitle
-        title={
-          <>
-            个性化<b>设置</b>
-          </>
-        }
-        description={DESCRIPTION}
-      />
+      <PageTitle description={DESCRIPTION}>
+        个性化<b>设置</b>
+      </PageTitle>
       <DataCard value={5} label="项设置" icon="lucide:settings" />
     </PageHeader>
   );

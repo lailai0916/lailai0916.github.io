@@ -79,14 +79,9 @@ function FriendsHeader() {
   const totalFriends = FRIEND_LIST.length;
   return (
     <PageHeader>
-      <PageTitle
-        title={
-          <>
-            我的<b>友链</b>
-          </>
-        }
-        description={DESCRIPTION}
-      />
+      <PageTitle description={DESCRIPTION}>
+        我的<b>友链</b>
+      </PageTitle>
       <DataCard value={totalFriends} label="位朋友" icon="lucide:users" />
     </PageHeader>
   );
