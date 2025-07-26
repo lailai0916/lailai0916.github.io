@@ -3,7 +3,7 @@ import { useColorMode } from '@docusaurus/theme-common';
 import { getAdjustedColors } from '@site/src/utils/colorUtils';
 import { useThemeColors } from '@site/src/hooks/useThemeColors';
 import SettingCard from '@site/src/components/laiKit/widget/SettingCard';
-import styles from '../../styles.module.css';
+import styles from '../styles.module.css';
 
 export default function ColorGenerator() {
   const { colorMode } = useColorMode();

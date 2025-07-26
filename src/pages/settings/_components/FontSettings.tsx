@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import SettingCard from '@site/src/components/laiKit/widget/SettingCard';
-import styles from '../../styles.module.css';
+import styles from '../styles.module.css';
 
 export default function FontSettings() {
   const [fontSize, setFontSize] = useState<number>(16);

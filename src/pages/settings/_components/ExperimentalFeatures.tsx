@@ -2,7 +2,7 @@ import React from 'react';
 import Switch from '@site/src/components/laiKit/widget/Switch';
 import SettingCard from '@site/src/components/laiKit/widget/SettingCard';
 import { usePersistentState } from '@site/src/hooks/usePersistentState';
-import styles from '../../styles.module.css';
+import styles from '../styles.module.css';
 
 export default function ExperimentalFeatures() {
   const [toggles, setToggles] = usePersistentState('settings-experimental', {
