@@ -21,7 +21,7 @@ ICPC（International Collegiate Programming Contest，国际大学生程序设�
 - [cppreference.com](https://zh.cppreference.com/w/首页)
 - [维基百科，自由的百科全书](https://zh.wikipedia.org/zh-cn/Wikipedia:首页)
 
-## 倒计时
+## 比赛倒计时
 
 - 距离 **IOI 2025** 还有 {Math.ceil((new Date('2025-07-27').getTime() - new Date().getTime()) / (1000 * 60 * 60 * 24))} 天
 - 距离 **CSP-J/S 2025 第一轮** 还有 {Math.ceil((new Date('2025-09-20').getTime() - new Date().getTime()) / (1000 * 60 * 60 * 24))} 天
