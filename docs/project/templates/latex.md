@@ -7,7 +7,7 @@
 - [Supported Functions - KaTeX](https://katex.org/docs/supported.html)
 - [LaTeX 数学公式大全 - 洛谷专栏](https://www.luogu.com.cn/article/1gxob6zc)
 
-## 资源推荐
+## 推荐资源
 
 - [在线 LaTeX 公式编辑器](https://www.latexlive.com)
 

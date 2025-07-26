@@ -4,7 +4,7 @@
 
 - [Human Interface Guidelines](https://developer.apple.com/design/human-interface-guidelines/)
 
-## 资源推荐
+## 推荐资源
 
 - [Apple Design Resources](https://developer.apple.com/design/resources/#macos-apps)
 

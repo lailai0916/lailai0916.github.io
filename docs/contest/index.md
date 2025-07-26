@@ -17,6 +17,13 @@ sidebar_position: 0
 - [cppreference.com](https://zh.cppreference.com/w/首页)
 - [维基百科，自由的百科全书](https://zh.wikipedia.org/zh-cn/Wikipedia:首页)
 
+## 倒计时
+
+- 距离 **IOI 2025** 还有 {Math.ceil((new Date('2025-07-27').getTime() - new Date().getTime()) / (1000 * 60 * 60 * 24))} 天
+- 距离 **CSP-J/S 2025 第一轮** 还有 {Math.ceil((new Date('2025-09-20').getTime() - new Date().getTime()) / (1000 * 60 * 60 * 24))} 天
+- 距离 **CSP-J/S 2025 第二轮** 还有 {Math.ceil((new Date('2025-11-01').getTime() - new Date().getTime()) / (1000 * 60 * 60 * 24))} 天
+- 距离 **NOIP 2025** 还有 {Math.ceil((new Date('2025-11-29').getTime() - new Date().getTime()) / (1000 * 60 * 60 * 24))} 天
+
 ## 算法基础
 
 枚举、模拟、暴力、递归、分治、贪心、排序（快速排序、归并排序、计数排序、基数排序）、前缀和、差分、二分（二分查找、二分答案）、倍增、构造、双指针、复杂度、快速幂
