@@ -7,12 +7,6 @@
    1. Core Layout & Structure
    ========================================================================== */
 
-.main {
-  position: relative;
-  overflow-x: hidden;
-  background-color: var(--ifm-background-color);
-}
-
 .container {
   max-width: 1200px;
   margin: 0 auto;

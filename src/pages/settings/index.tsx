@@ -41,7 +41,7 @@ export default function Settings(): ReactNode {
       description={DESCRIPTION}
       wrapperClassName={debugMode && 'debug'}
     >
-      <main className={styles.main}>
+      <main>
         <SettingsHeader />
         <div className={styles.container}>
           <div className={styles.settingsGrid}>

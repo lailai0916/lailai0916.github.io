@@ -1,6 +1,6 @@
 import React from 'react';
-import clsx from 'clsx';
 import { useColorMode } from '@docusaurus/theme-common';
+import clsx from 'clsx';
 import IconText from '@site/src/components/laiKit/widget/IconText';
 import SettingCard from '@site/src/components/laiKit/widget/SettingCard';
 import styles from '../styles.module.css';
