@@ -44,13 +44,11 @@ export default function Settings(): ReactNode {
       <main>
         <SettingsHeader />
         <div className={styles.container}>
-          <div className={styles.settingsGrid}>
-            <ThemeSettings />
-            <ColorGenerator />
-            <FontSettings />
-            <ExperimentalFeatures />
-            <QuickActions />
-          </div>
+          <ThemeSettings />
+          <ColorGenerator />
+          <FontSettings />
+          <ExperimentalFeatures />
+          <QuickActions />
         </div>
       </main>
     </Layout>

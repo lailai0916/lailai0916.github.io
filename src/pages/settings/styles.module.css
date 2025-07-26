@@ -11,54 +11,52 @@
   max-width: 1200px;
   margin: 0 auto;
   padding: 4rem 2rem 4rem 2rem;
-}
-
-/* ==========================================================================
-   2. Settings Grid & Layout
-   ========================================================================== */
-
-.settingsGrid {
   display: grid;
   gap: 1.5rem;
   animation: fadeIn 0.3s ease-out;
-}
-
-.settingsGrid {
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-areas:
-    "theme color color"
-    "font experimental actions";
+    'theme color color'
+    'font experimental actions';
 }
 
-.settingsGrid > :nth-child(1) { grid-area: theme; }
-.settingsGrid > :nth-child(2) { grid-area: color; }
-.settingsGrid > :nth-child(3) { grid-area: font; }
-.settingsGrid > :nth-child(4) { grid-area: experimental; }
-.settingsGrid > :nth-child(5) { grid-area: actions; }
+.container > :nth-child(1) {
+  grid-area: theme;
+}
+.container > :nth-child(2) {
+  grid-area: color;
+}
+.container > :nth-child(3) {
+  grid-area: font;
+}
+.container > :nth-child(4) {
+  grid-area: experimental;
+}
+.container > :nth-child(5) {
+  grid-area: actions;
+}
 
 @media (max-width: 1199px) {
-  .settingsGrid {
+  .container {
     grid-template-columns: 1fr 1fr;
     grid-template-areas:
-      "theme font"
-      "color color"
-      "experimental actions";
+      'theme font'
+      'color color'
+      'experimental actions';
   }
 }
 
 @media (max-width: 768px) {
-  .settingsGrid {
+  .container {
     grid-template-columns: 1fr;
     grid-template-areas:
-      "theme"
-      "color"
-      "font"
-      "experimental"
-      "actions";
+      'theme'
+      'color'
+      'font'
+      'experimental'
+      'actions';
   }
 }
-
-
 
 /* ==========================================================================
    3. Interactive Elements
