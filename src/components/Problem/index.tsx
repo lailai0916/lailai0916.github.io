@@ -7,32 +7,13 @@ import Admonition from '@theme/Admonition';
 import { translate } from '@docusaurus/Translate';
 
 declare const require: any;
-
 const ctx = require.context(
   '!!raw-loader!@site/docs/contest/_problems',
   true,
   /\.cpp$/
 );
 
-export default function Problem({ id }: { id: string }) {
-  let MDX: React.ComponentType;
-  try {
-    MDX = require(`@site/docs/contest/_problems/${id}/index.md`).default;
-  } catch {
-    return (
-      <Admonition type="warning">
-        {translate(
-          {
-            id: 'components.problem.warn',
-            message:
-              'Unable to load question {id}: please check if the file exists.',
-          },
-          { id }
-        )}
-      </Admonition>
-    );
-  }
-
+export function GetCode({ id }: { id: string }) {
   const codes = useMemo(
     () =>
       ctx
@@ -50,13 +31,12 @@ export default function Problem({ id }: { id: string }) {
   );
 
   return (
-    <div>
-      {React.createElement(MDX)}
+    <>
       {codes.length > 0 && (
         <Details
           summary={translate(
             {
-              id: 'components.problem.summary',
+              id: 'components.problem.code',
               message: 'Reference Code ({num})',
             },
             { num: codes.length }
@@ -75,6 +55,53 @@ export default function Problem({ id }: { id: string }) {
           )}
         </Details>
       )}
-    </div>
+    </>
+  );
+}
+
+export function GetSolution({ id }: { id: string }) {
+  let SOL: React.ComponentType;
+  try {
+    SOL = require(`@site/blog/solution/${id}.md`).default;
+  } catch {
+    return <></>;
+  }
+  return (
+    <Details
+      summary={translate({
+        id: 'components.problem.solution',
+        message: 'Solution',
+      })}
+    >
+      {React.createElement(SOL)}
+    </Details>
+  );
+}
+
+export default function Problem({ id }: { id: string }) {
+  let MDX: React.ComponentType;
+  try {
+    MDX = require(`@site/docs/contest/_problems/${id}/index.md`).default;
+  } catch {
+    return (
+      <Admonition type="warning">
+        {translate(
+          {
+            id: 'components.problem.error',
+            message:
+              'Unable to load question {id}: please check if the file exists.',
+          },
+          { id }
+        )}
+      </Admonition>
+    );
+  }
+
+  return (
+    <>
+      {React.createElement(MDX)}
+      <GetSolution id={id} />
+      <GetCode id={id} />
+    </>
   );
 }
