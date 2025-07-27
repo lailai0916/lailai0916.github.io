@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import useBaseUrl from '@docusaurus/useBaseUrl';
 import Link from '@docusaurus/Link';
 import Heading from '@theme/Heading';
 import Translate from '@docusaurus/Translate';
@@ -19,7 +20,7 @@ export default function HeroBanner() {
           <img
             alt="lailai's Logo"
             className={`${styles.heroLogo} ${hasAnimated ? styles.heroLogoAnimated : ''}`}
-            src="/img/logo.svg"
+            src={useBaseUrl("/img/logo.svg")}
             width="200"
             height="200"
           />
