@@ -1,3 +1,16 @@
+/* 旅行页面样式 */
+.travelContainer {
+  max-width: 900px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  padding: 4rem 2rem 4rem 2rem;
+}
+
+.timelineWrapper {
+  width: 100%;
+}
+
 /* Timeline全局样式 - 与主页BlogCard保持一致 */
 :global(.react-chrono-tree) {
   font-family: var(--ifm-font-family-base) !important;
@@ -5,21 +18,6 @@
   animation: fadeIn 0.3s ease-out;
   padding: 2rem 1rem !important;
   max-width: 100% !important;
-}
-
-/* 旅行页面样式 */
-.travelContainer {
-  max-width: 1280px;
-  margin-left: auto;
-  margin-right: auto;
-  display: flex;
-  flex-direction: column;
-  padding-left: 1.25rem;
-  padding-right: 1.25rem;
-}
-
-.timelineWrapper {
-  width: 100%;
 }
 
 /* 统一动画 - Unity · Simplicity · Modernity */
