@@ -11,13 +11,6 @@ import {
 import Section from '@site/src/components/laiKit/common/Section';
 import { TEXT_COLORS } from '@site/src/components/laiKit/common';
 
-const DATE_FORMAT_OPTIONS: Intl.DateTimeFormatOptions = {
-  year: 'numeric',
-  month: 'long',
-  day: 'numeric',
-  timeZone: 'UTC',
-} as const;
-
 const TEXT_CLAMP_STYLES = {
   title: {
     display: '-webkit-box',
@@ -46,7 +39,12 @@ const formatDate = (dateString: string, locale: string): string => {
       // 静默处理无效日期
       return dateString;
     }
-    return date.toLocaleDateString(locale, DATE_FORMAT_OPTIONS);
+    return date.toLocaleDateString(locale, {
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric',
+      timeZone: 'UTC',
+    });
   } catch (error) {
     // 静默处理日期格式化错误
     return dateString;

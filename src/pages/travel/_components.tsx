@@ -1,4 +1,5 @@
 import React, { useMemo } from 'react';
+import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import { Chrono } from 'react-chrono';
 import { TRAVEL_LIST as rawItems } from '@site/src/data/travel';
 import './styles.module.css';
@@ -79,15 +80,16 @@ const CLASS_NAMES = {
 /**
  * 格式化 YYYY-MM 日期为 "Month Year"
  */
-const formatTravelDate = (dateStr: string): string => {
+const formatTravelDate = (dateStr: string, locale: string): string => {
   if (!/^\d{4}-\d{2}$/.test(dateStr)) {
     return dateStr; // 格式不符，直接返回原字符串
   }
   const [year, month] = dateStr.split('-');
   const date = new Date(Number(year), Number(month) - 1);
-  return date.toLocaleDateString('en-US', {
+  return date.toLocaleDateString(locale, {
     year: 'numeric',
     month: 'long',
+    timeZone: 'UTC',
   });
 };
 
@@ -95,11 +97,12 @@ const formatTravelDate = (dateStr: string): string => {
  * 旅行时间线组件
  */
 export default function Timeline() {
+  const { i18n } = useDocusaurusContext();
   const items = useMemo(
     () =>
       [...rawItems].reverse().map((item) => ({
         ...item,
-        title: formatTravelDate(item.title),
+        title: formatTravelDate(item.title, i18n.currentLocale),
       })),
     [rawItems]
   );
