@@ -24,9 +24,7 @@ function TravelTimeline() {
         title="旅行足迹"
         description="纸上得来终觉浅，绝知此事要躬行"
       />
-      <div className={styles.timelineWrapper}>
-        <BrowserOnly>{() => <Timeline />}</BrowserOnly>
-      </div>
+      <BrowserOnly>{() => <Timeline />}</BrowserOnly>
     </div>
   );
 }
