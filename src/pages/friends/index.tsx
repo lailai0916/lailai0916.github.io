@@ -6,9 +6,9 @@ import {
   PageMain,
   PageHeader,
   PageFooter
-} from '@site/src/components/qwq/page';
-import DataCard from '@site/src/components/qwq/widget/DataCard';
-import IconText from '@site/src/components/qwq/widget/IconText';
+} from '@site/src/components/laikit/page';
+import DataCard from '@site/src/components/laikit/widget/DataCard';
+import IconText from '@site/src/components/laikit/widget/IconText';
 import Link from '@docusaurus/Link';
 import { Icon } from '@iconify/react';
 import { FriendItem, FRIEND_LIST } from '@site/src/data/friends';

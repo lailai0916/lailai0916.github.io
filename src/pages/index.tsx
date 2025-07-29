@@ -2,7 +2,7 @@ import React, { type ReactNode } from 'react';
 import Layout from '@theme/Layout';
 
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
-import { PageMain } from '@site/src/components/qwq/page';
+import { PageMain } from '@site/src/components/laikit/page';
 import styles from './styles.module.css';
 
 import TopBanner from './_components/TopBanner';

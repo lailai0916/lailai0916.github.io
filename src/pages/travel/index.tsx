@@ -6,12 +6,12 @@ import {
   PageMain,
   PageHeader,
   PageFooter,
-} from '@site/src/components/qwq/page';
-import { DataCardList } from '@site/src/components/qwq/widget/DataCard';
-import IconText from '@site/src/components/qwq/widget/IconText';
+} from '@site/src/components/laikit/page';
+import { DataCardList } from '@site/src/components/laikit/widget/DataCard';
+import IconText from '@site/src/components/laikit/widget/IconText';
 import BrowserOnly from '@docusaurus/BrowserOnly';
 import Timeline from '@site/src/pages/travel/_components';
-import { SectionHeader } from '@site/src/components/qwq/section';
+import { SectionHeader } from '@site/src/components/laikit/section';
 import styles from './styles.module.css';
 
 const TITLE = '旅行';

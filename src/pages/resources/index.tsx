@@ -9,9 +9,9 @@ import {
   PageTitle,
   PageMain,
   PageHeader,
-} from '@site/src/components/qwq/page';
-import { DataCardList } from '@site/src/components/qwq/widget/DataCard';
-import IconText from '@site/src/components/qwq/widget/IconText';
+} from '@site/src/components/laikit/page';
+import { DataCardList } from '@site/src/components/laikit/widget/DataCard';
+import IconText from '@site/src/components/laikit/widget/IconText';
 
 import {
   RESOURCE_LIST,

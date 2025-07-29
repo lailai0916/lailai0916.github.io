@@ -5,9 +5,9 @@ import React, {
   useMemo,
   useCallback,
 } from 'react';
-import Section from '@site/src/components/qwq/section/Section';
-import SectionHeader from '@site/src/components/qwq/section/SectionHeader';
-import { COUNTDOWN_STYLES } from '@site/src/components/qwq/section/constants';
+import Section from '@site/src/components/laikit/section/Section';
+import SectionHeader from '@site/src/components/laikit/section/SectionHeader';
+import { COUNTDOWN_STYLES } from '@site/src/components/laikit/section/constants';
 import { translate } from '@docusaurus/Translate';
 
 // ====== 类型定义 ======
