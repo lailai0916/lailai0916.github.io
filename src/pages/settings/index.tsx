@@ -5,8 +5,8 @@ import {
   PageTitle,
   PageMain,
   PageHeader,
-} from '@site/src/components/laiKit/page';
-import DataCard from '@site/src/components/laiKit/widget/DataCard';
+} from '@site/src/components/laikit/page';
+import DataCard from '@site/src/components/laikit/widget/DataCard';
 import styles from './styles.module.css';
 import {
   ThemeSettings,

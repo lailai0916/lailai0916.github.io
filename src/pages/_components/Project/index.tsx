@@ -1,7 +1,7 @@
 import React from 'react';
 import { translate } from '@docusaurus/Translate';
 import { PROJECT_LIST } from '@site/src/data/projects';
-import IconText from '@site/src/components/laiKit/widget/IconText';
+import IconText from '@site/src/components/laikit/widget/IconText';
 import {
   BaseCard,
   Section,
@@ -10,7 +10,7 @@ import {
   GridLayout,
   GridConfigs,
   TEXT_COLORS,
-} from '@site/src/components/laiKit/common';
+} from '@site/src/components/laikit/section';
 
 // 文本行数控制样式 - 保证卡片高度一致性
 const TEXT_CLAMP_STYLES = {

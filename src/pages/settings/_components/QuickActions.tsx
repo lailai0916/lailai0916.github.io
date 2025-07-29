@@ -1,8 +1,8 @@
 import React from 'react';
 import clsx from 'clsx';
 import confetti from 'canvas-confetti';
-import IconText from '@site/src/components/laiKit/widget/IconText';
-import SettingCard from '@site/src/components/laiKit/widget/SettingCard';
+import IconText from '@site/src/components/laikit/widget/IconText';
+import SettingCard from '@site/src/components/laikit/widget/SettingCard';
 import styles from '../styles.module.css';
 
 export default function QuickActions() {

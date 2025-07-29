@@ -3,7 +3,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import Link from '@docusaurus/Link';
 import Heading from '@theme/Heading';
 import Translate from '@docusaurus/Translate';
-import IconText from '@site/src/components/laiKit/widget/IconText';
+import IconText from '@site/src/components/laikit/widget/IconText';
 import styles from './styles.module.css';
 
 export default function HeroBanner() {

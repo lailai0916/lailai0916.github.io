@@ -1,4 +1,4 @@
-import { STATUS_COLORS } from '@site/src/components/laiKit/common/constants';
+import { STATUS_COLORS } from '@site/src/components/laikit/section/constants';
 import { translate } from '@docusaurus/Translate';
 
 export type ProjectItem = {
