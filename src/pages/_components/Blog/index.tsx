@@ -2,14 +2,14 @@ import React, { useMemo } from 'react';
 import Link from '@docusaurus/Link';
 import Translate from '@docusaurus/Translate';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
-import IconText from '@site/src/components/laikit/widget/IconText';
+import IconText from '@site/src/components/qwq/widget/IconText';
 
 import {
   getRecentBlogPosts,
   type ProcessedBlogPost,
 } from '@site/src/utils/blogData';
-import Section from '@site/src/components/laikit/section/Section';
-import { TEXT_COLORS } from '@site/src/components/laikit/section';
+import Section from '@site/src/components/qwq/section/Section';
+import { TEXT_COLORS } from '@site/src/components/qwq/section';
 
 const TEXT_CLAMP_STYLES = {
   title: {

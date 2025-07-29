@@ -9,7 +9,7 @@ import {
   GridLayout,
   GridConfigs,
   TEXT_COLORS,
-} from '@site/src/components/laikit/section';
+} from '@site/src/components/qwq/section';
 import { translate } from '@docusaurus/Translate';
 import { EXPLORATION_LIST } from '@site/src/data/explorations';
 

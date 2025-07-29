@@ -1,8 +1,8 @@
 import React from 'react';
 import { useColorMode } from '@docusaurus/theme-common';
 import clsx from 'clsx';
-import IconText from '@site/src/components/laikit/widget/IconText';
-import SettingCard from '@site/src/components/laikit/widget/SettingCard';
+import IconText from '@site/src/components/qwq/widget/IconText';
+import SettingCard from '@site/src/components/qwq/widget/SettingCard';
 import styles from '../styles.module.css';
 
 const themeOptions = [

@@ -1,6 +1,6 @@
 import React from 'react';
-import Switch from '@site/src/components/laikit/widget/Switch';
-import SettingCard from '@site/src/components/laikit/widget/SettingCard';
+import Switch from '@site/src/components/qwq/widget/Switch';
+import SettingCard from '@site/src/components/qwq/widget/SettingCard';
 import { usePersistentState } from '@site/src/hooks/usePersistentState';
 import styles from '../styles.module.css';
 

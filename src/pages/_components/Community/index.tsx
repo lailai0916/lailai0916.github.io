@@ -9,7 +9,7 @@ import {
   GridConfigs,
   IconWrapper,
   TEXT_COLORS,
-} from '@site/src/components/laikit/section';
+} from '@site/src/components/qwq/section';
 import { translate } from '@docusaurus/Translate';
 
 function CommunityCard({
