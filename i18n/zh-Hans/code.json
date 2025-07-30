@@ -461,6 +461,9 @@
     "message": "标签",
     "description": "The title of the tag list page"
   },
+  "home.topbanner.title": {
+    "message": "Hello, I'm lailai"
+  },
   "home.herobanner.about": {
     "message": "关于"
   },
