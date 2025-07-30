@@ -136,14 +136,14 @@ import {
 } from '@site/src/theme/design-system';
 
 // 使用组件构建页面
-<Section background="alt">
+<SectionMain background="alt">
   <Container>
     <Heading level={2}>标题</Heading>
     <Grid cols={3}>
       <Card>内容</Card>
     </Grid>
   </Container>
-</Section>;
+</SectionMain>;
 ```
 
 ## 后续建议

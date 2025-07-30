@@ -1,7 +1,7 @@
 import React from 'react';
 import {
   BaseCard,
-  Section,
+  SectionMain,
   SectionHeader,
   StatusBadge,
   GridLayout,
@@ -57,7 +57,7 @@ function QuoteCard({
 
 export default function Quote() {
   return (
-    <Section>
+    <SectionMain>
       <div className="max-w-7xl mx-auto flex flex-col px-5">
         <SectionHeader
           title={translate({
@@ -82,6 +82,6 @@ export default function Quote() {
           ))}
         </GridLayout>
       </div>
-    </Section>
+    </SectionMain>
   );
 }

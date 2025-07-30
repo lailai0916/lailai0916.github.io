@@ -1,11 +1,11 @@
 import React from 'react';
 import NeuralNetworkInteractive from '@site/src/components/NeuralNetwork';
-import { Section, SectionHeader } from '@site/src/components/laikit/section';
+import { SectionMain, SectionHeader } from '@site/src/components/laikit/section';
 import { translate } from '@docusaurus/Translate';
 
 export default function NeuralNetwork() {
   return (
-    <Section>
+    <SectionMain>
       <div className="max-w-7xl mx-auto flex flex-col px-5">
         <SectionHeader
           title={translate({
@@ -23,6 +23,6 @@ export default function NeuralNetwork() {
           <NeuralNetworkInteractive instant={false} />
         </div>
       </div>
-    </Section>
+    </SectionMain>
   );
 }

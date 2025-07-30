@@ -4,7 +4,7 @@ import { PROJECT_LIST } from '@site/src/data/projects';
 import IconText from '@site/src/components/laikit/widget/IconText';
 import {
   BaseCard,
-  Section,
+  SectionMain,
   SectionHeader,
   StatusBadge,
   GridLayout,
@@ -111,7 +111,7 @@ function ProjectCard({
  */
 export default function Project() {
   return (
-    <Section>
+    <SectionMain>
       <div className="max-w-7xl mx-auto flex flex-col px-5">
         <SectionHeader
           title={translate({
@@ -133,6 +133,6 @@ export default function Project() {
           ))}
         </GridLayout>
       </div>
-    </Section>
+    </SectionMain>
   );
 }
