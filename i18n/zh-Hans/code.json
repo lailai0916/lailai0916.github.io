@@ -464,10 +464,10 @@
   "home.topbanner.title": {
     "message": "Hello, I'm lailai"
   },
-  "home.herobanner.about": {
+  "home.herobanner.b1": {
     "message": "关于"
   },
-  "home.herobanner.blog": {
+  "home.herobanner.b2": {
     "message": "博客"
   },
   "data.features.p1.title": {
