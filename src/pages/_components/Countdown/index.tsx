@@ -5,7 +5,7 @@ import React, {
   useMemo,
   useCallback,
 } from 'react';
-import Section from '@site/src/components/laikit/section/Section';
+import Section from '@site/src/components/laikit/section/SectionMain';
 import SectionHeader from '@site/src/components/laikit/section/SectionHeader';
 import { COUNTDOWN_STYLES } from '@site/src/components/laikit/section/constants';
 import { translate } from '@docusaurus/Translate';
