@@ -20,7 +20,7 @@ export default function HeroBanner() {
           <img
             alt="lailai's Logo"
             className={`${styles.heroLogo} ${hasAnimated ? styles.heroLogoAnimated : ''}`}
-            src={useBaseUrl("/img/logo.svg")}
+            src={useBaseUrl('/img/logo.svg')}
             width="200"
             height="200"
           />

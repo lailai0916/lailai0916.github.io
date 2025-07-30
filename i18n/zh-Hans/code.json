@@ -461,6 +461,12 @@
     "message": "标签",
     "description": "The title of the tag list page"
   },
+  "home.herobanner.about": {
+    "message": "关于"
+  },
+  "home.herobanner.blog": {
+    "message": "博客"
+  },
   "data.features.p1.title": {
     "message": "竞赛"
   },
@@ -478,12 +484,6 @@
   },
   "data.features.p3.text": {
     "message": "项目板块集合了个人在编程和技术实践中的各类项目成果，提供实用的模板、工具以及相关技术资料。项目内容关注具体场景的应用与探索，兼顾技术学习、实践开发和经验积累。"
-  },
-  "home.herobanner.about": {
-    "message": "关于"
-  },
-  "home.herobanner.blog": {
-    "message": "博客"
   },
   "home.blog.title": {
     "message": "学习与实践"
