@@ -30,17 +30,18 @@ export default function QuickActions() {
       icon="lucide:zap"
     >
       <div className={clsx(styles.buttonGroup, styles.verticalButtonGroup)}>
-        <button
-          className={styles.button}
-          onClick={triggerConfetti}
-        >
-          <IconText icon="lucide:sparkles" colorMode='monochrome'>给我惊喜</IconText>
+        <button className={styles.button} onClick={triggerConfetti}>
+          <IconText icon="lucide:sparkles" colorMode="monochrome">
+            给我惊喜
+          </IconText>
         </button>
         <button
           className={clsx(styles.button, styles.buttonDanger)}
           onClick={handleReset}
         >
-          <IconText icon="lucide:rotate-ccw" colorMode='monochrome'>重置设置</IconText>
+          <IconText icon="lucide:rotate-ccw" colorMode="monochrome">
+            重置设置
+          </IconText>
         </button>
       </div>
     </SettingCard>

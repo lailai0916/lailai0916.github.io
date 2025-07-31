@@ -8,13 +8,12 @@ import {
 } from '@site/src/components/laikit/page';
 import DataCard from '@site/src/components/laikit/widget/DataCard';
 import styles from './styles.module.css';
-import {
-  ThemeSettings,
-  FontSettings,
-  ExperimentalFeatures,
-  QuickActions,
-  ColorGenerator,
-} from './_components';
+
+import ThemeSettings from './_components/ThemeSettings';
+import ColorGenerator from './_components/ColorGenerator';
+import FontSettings from './_components/FontSettings';
+import ExperimentalFeatures from './_components/ExperimentalFeatures';
+import QuickActions from './_components/QuickActions';
 
 const TITLE = '设置';
 const DESCRIPTION = '个性化您的体验，自定义网站功能和偏好设置';
