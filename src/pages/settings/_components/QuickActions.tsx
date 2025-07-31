@@ -1,11 +1,11 @@
 import React from 'react';
-import clsx from 'clsx';
-import confetti from 'canvas-confetti';
 import IconText from '@site/src/components/laikit/widget/IconText';
 import SettingCard from '@site/src/components/laikit/widget/SettingCard';
+import clsx from 'clsx';
+import confetti from 'canvas-confetti';
 import styles from '../styles.module.css';
 
-export function Confetti() {
+function Confetti() {
   const count = 200;
   const defaults = {
     origin: { y: 0.7 },
@@ -43,16 +43,16 @@ export function Confetti() {
   });
 }
 
-export default function QuickActions() {
-  const handleReset = () => {
-    localStorage.removeItem('theme');
-    localStorage.removeItem('global-font-size');
-    // also clear settings from usePersistentState
-    localStorage.removeItem('settings-notifications');
-    localStorage.removeItem('settings-experimental');
-    window.location.reload();
-  };
+function handleReset() {
+  localStorage.removeItem('theme');
+  localStorage.removeItem('global-font-size');
+  // also clear settings from usePersistentState
+  localStorage.removeItem('settings-notifications');
+  localStorage.removeItem('settings-experimental');
+  window.location.reload();
+};
 
+export default function QuickActions() {
   return (
     <SettingCard
       title="快捷操作"
