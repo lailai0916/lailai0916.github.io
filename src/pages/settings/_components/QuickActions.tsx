@@ -46,11 +46,10 @@ function Confetti() {
 function handleReset() {
   localStorage.removeItem('theme');
   localStorage.removeItem('global-font-size');
-  // also clear settings from usePersistentState
   localStorage.removeItem('settings-notifications');
   localStorage.removeItem('settings-experimental');
   window.location.reload();
-};
+}
 
 export default function QuickActions() {
   return (
