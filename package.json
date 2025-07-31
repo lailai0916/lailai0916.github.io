@@ -45,8 +45,8 @@
   },
   "devDependencies": {
     "@crowdin/cli": "^3.19.4",
-    "@docusaurus/module-type-aliases": "3.8.1",
-    "@docusaurus/tsconfig": "3.8.1",
+    "@docusaurus/module-type-aliases": "^3.8.1",
+    "@docusaurus/tsconfig": "^3.8.1",
     "@docusaurus/types": "^3.8.1",
     "@types/canvas-confetti": "^1.9.0",
     "@types/react": "^19.1.8",
