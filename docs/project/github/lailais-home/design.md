@@ -1,6 +1,20 @@
-# 设计
+# lailai's Design Style
 
 基于"统一、简约、现代"的设计理念，我对整个网站进行了全面的设计系统改进，确保各个页面在视觉风格、布局和样式上保持高度一致性。
+
+## 参考资料
+
+- [Human Interface Guidelines](https://developer.apple.com/design/human-interface-guidelines/)
+
+## 推荐资源
+
+- [Apple Design Resources](https://developer.apple.com/design/resources/#macos-apps)
+
+## 设计理念
+
+理念：统一 · 简约 · 现代（Unity · Simplicity · Modernity）
+
+“Simplicity is the ultimate sophistication.”
 
 ## 改进概述
 

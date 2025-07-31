@@ -699,15 +699,6 @@ const sidebars: SidebarsConfig = {
             },
           ],
         },
-        {
-          type: 'category',
-          label: '设计',
-          link: {
-            type: 'generated-index',
-            description: '设计相关的心得和分享。',
-          },
-          items: ['project/other/design/style', 'project/other/design/layout'],
-        },
       ],
     },
     {
