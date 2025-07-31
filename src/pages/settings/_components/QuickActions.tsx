@@ -5,6 +5,44 @@ import IconText from '@site/src/components/laikit/widget/IconText';
 import SettingCard from '@site/src/components/laikit/widget/SettingCard';
 import styles from '../styles.module.css';
 
+export function Confetti() {
+  const count = 200;
+  const defaults = {
+    origin: { y: 0.7 },
+  };
+
+  function fire(particleRatio: number, opts: confetti.Options) {
+    confetti({
+      ...defaults,
+      ...opts,
+      particleCount: Math.floor(count * particleRatio),
+    });
+  }
+
+  fire(0.25, {
+    spread: 26,
+    startVelocity: 55,
+  });
+  fire(0.2, {
+    spread: 60,
+  });
+  fire(0.35, {
+    spread: 100,
+    decay: 0.91,
+    scalar: 0.8,
+  });
+  fire(0.1, {
+    spread: 120,
+    startVelocity: 25,
+    decay: 0.92,
+    scalar: 1.2,
+  });
+  fire(0.1, {
+    spread: 120,
+    startVelocity: 45,
+  });
+}
+
 export default function QuickActions() {
   const handleReset = () => {
     localStorage.removeItem('theme');
@@ -15,14 +53,6 @@ export default function QuickActions() {
     window.location.reload();
   };
 
-  const triggerConfetti = () => {
-    confetti({
-      particleCount: 150,
-      spread: 90,
-      origin: { y: 0.6 },
-    });
-  };
-
   return (
     <SettingCard
       title="快捷操作"
@@ -30,7 +60,7 @@ export default function QuickActions() {
       icon="lucide:zap"
     >
       <div className={clsx(styles.buttonGroup, styles.verticalButtonGroup)}>
-        <button className={styles.button} onClick={triggerConfetti}>
+        <button className={styles.button} onClick={Confetti}>
           <IconText icon="lucide:sparkles" colorMode="monochrome">
             给我惊喜
           </IconText>
