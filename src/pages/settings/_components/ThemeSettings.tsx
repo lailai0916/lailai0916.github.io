@@ -6,14 +6,13 @@ import SettingCard from '@site/src/components/laikit/widget/SettingCard';
 import styles from '../styles.module.css';
 
 const themeOptions = [
-  { key: 'auto' as const, label: '跟随系统', icon: 'lucide:monitor' },
+  { key: null, label: '跟随系统', icon: 'lucide:monitor' },
   { key: 'light' as const, label: '浅色模式', icon: 'lucide:sun' },
   { key: 'dark' as const, label: '深色模式', icon: 'lucide:moon' },
 ];
 
 export default function ThemeSettings() {
   const { colorModeChoice, setColorMode } = useColorMode();
-  const currentChoice = colorModeChoice === null ? 'auto' : colorModeChoice;
 
   return (
     <SettingCard
@@ -27,11 +26,9 @@ export default function ThemeSettings() {
             key={option.key}
             className={clsx(
               styles.button,
-              currentChoice === option.key && styles.buttonActive
+              colorModeChoice === option.key && styles.buttonActive
             )}
-            onClick={() =>
-              setColorMode(option.key === 'auto' ? null : option.key)
-            }
+            onClick={() => setColorMode(option.key)}
           >
             <IconText icon={option.icon} colorMode="monochrome">
               {option.label}
