@@ -15,9 +15,7 @@
   gap: 1.5rem;
   animation: fadeIn 0.3s ease-out;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-template-areas:
-    'theme color color'
-    'font experimental actions';
+  grid-template-areas: 'theme color color' 'font experimental actions';
 }
 
 .container > :nth-child(1) {
@@ -39,22 +37,14 @@
 @media (max-width: 1199px) {
   .container {
     grid-template-columns: 1fr 1fr;
-    grid-template-areas:
-      'theme font'
-      'color color'
-      'experimental actions';
+    grid-template-areas: 'theme font' 'color color' 'experimental actions';
   }
 }
 
 @media (max-width: 768px) {
   .container {
     grid-template-columns: 1fr;
-    grid-template-areas:
-      'theme'
-      'color'
-      'font'
-      'experimental'
-      'actions';
+    grid-template-areas: 'theme' 'color' 'font' 'experimental' 'actions';
   }
 }
 
