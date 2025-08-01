@@ -13,11 +13,6 @@ const themeOptions = [
 
 export default function ThemeSettings() {
   const { colorModeChoice, setColorMode } = useColorMode();
-
-  const handleThemeChange = (newTheme: 'auto' | 'light' | 'dark') => {
-    setColorMode(newTheme === 'auto' ? null : newTheme);
-  };
-
   const currentChoice = colorModeChoice === null ? 'auto' : colorModeChoice;
 
   return (
@@ -34,7 +29,9 @@ export default function ThemeSettings() {
               styles.button,
               currentChoice === option.key && styles.buttonActive
             )}
-            onClick={() => handleThemeChange(option.key)}
+            onClick={() =>
+              setColorMode(option.key === 'auto' ? null : option.key)
+            }
           >
             <IconText icon={option.icon} colorMode="monochrome">
               {option.label}
