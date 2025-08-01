@@ -65,13 +65,9 @@
 /* 按钮组 */
 .buttonGroup {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
   gap: 0.75rem;
   width: 100%;
-}
-
-.verticalButtonGroup {
-  grid-template-columns: 1fr;
 }
 
 .button {

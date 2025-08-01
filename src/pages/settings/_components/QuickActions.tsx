@@ -39,7 +39,7 @@ export default function QuickActions() {
       subtitle="快速管理您的个性化配置"
       icon="lucide:zap"
     >
-      <div className={clsx(styles.buttonGroup, styles.verticalButtonGroup)}>
+      <div className={styles.buttonGroup}>
         <button className={styles.button} onClick={Confetti}>
           <IconText icon="lucide:sparkles" colorMode="monochrome">
             给我惊喜

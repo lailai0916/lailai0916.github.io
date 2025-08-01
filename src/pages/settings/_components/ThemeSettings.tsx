@@ -20,7 +20,7 @@ export default function ThemeSettings() {
       subtitle="选择一个适合您的主题模式"
       icon="lucide:monitor"
     >
-      <div className={clsx(styles.buttonGroup, styles.verticalButtonGroup)}>
+      <div className={styles.buttonGroup}>
         {themeOptions.map((option) => (
           <button
             key={option.key}
