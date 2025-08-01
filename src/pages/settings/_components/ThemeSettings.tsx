@@ -14,23 +14,11 @@ const themeOptions = [
 export default function ThemeSettings() {
   const { colorModeChoice, setColorMode } = useColorMode();
 
-  const handleThemeChange = (newTheme: 'light' | 'dark' | 'auto') => {
-    if (newTheme === 'auto') {
-      // 跟随系统：设置为 null
-      setColorMode(null);
-    } else {
-      // 设置具体的主题
-      setColorMode(newTheme);
-    }
+  const handleThemeChange = (newTheme: 'auto' | 'light' | 'dark') => {
+    setColorMode(newTheme === 'auto' ? null : newTheme);
   };
 
-  // 获取当前的用户选择状态
-  const getCurrentChoice = () => {
-    if (colorModeChoice === null) return 'auto';
-    return colorModeChoice;
-  };
-
-  const currentChoice = getCurrentChoice();
+  const currentChoice = colorModeChoice === null ? 'auto' : colorModeChoice;
 
   return (
     <SettingCard
