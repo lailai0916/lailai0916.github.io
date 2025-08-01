@@ -6,21 +6,9 @@ import SettingCard from '@site/src/components/laikit/widget/SettingCard';
 import styles from '../styles.module.css';
 
 const themeOptions = [
-  {
-    key: 'auto' as const,
-    label: '跟随系统',
-    icon: 'lucide:monitor',
-  },
-  {
-    key: 'light' as const,
-    label: '浅色模式',
-    icon: 'lucide:sun',
-  },
-  {
-    key: 'dark' as const,
-    label: '深色模式',
-    icon: 'lucide:moon',
-  },
+  { key: 'auto' as const, label: '跟随系统', icon: 'lucide:monitor' },
+  { key: 'light' as const, label: '浅色模式', icon: 'lucide:sun' },
+  { key: 'dark' as const, label: '深色模式', icon: 'lucide:moon' },
 ];
 
 export default function ThemeSettings() {
@@ -60,7 +48,9 @@ export default function ThemeSettings() {
             )}
             onClick={() => handleThemeChange(option.key)}
           >
-            <IconText icon={option.icon} colorMode='monochrome'>{option.label}</IconText>
+            <IconText icon={option.icon} colorMode="monochrome">
+              {option.label}
+            </IconText>
           </button>
         ))}
       </div>
