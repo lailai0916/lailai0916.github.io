@@ -1,5 +1,6 @@
 import React from 'react';
 import { Icon } from '@iconify/react';
+import Heading from '@theme/Heading';
 import styles from '../styles.module.css';
 
 interface SettingCardProps {
@@ -20,7 +21,9 @@ export default function SettingCard({
       <div className={styles.cardHeader}>
         <Icon icon={icon} className={styles.cardIcon} />
         <div className={styles.cardTitleGroup}>
-          <h3 className={styles.cardTitle}>{title}</h3>
+          <Heading as="h3" className={styles.cardTitle}>
+            {title}
+          </Heading>
           {subtitle && <span className={styles.cardSubtitle}>{subtitle}</span>}
         </div>
       </div>
