@@ -7,12 +7,13 @@ import { FEATURE_LIST, type FeatureItem } from '@site/src/data/features';
 import IconText from '@site/src/components/laikit/widget/IconText';
 import styles from './styles.module.css';
 
-interface FeatureProps {
+function Feature({
+  feature,
+  className,
+}: {
   feature: FeatureItem;
   className?: string;
-}
-
-function Feature({ feature, className }: FeatureProps) {
+}) {
   const { withBaseUrl } = useBaseUrlUtils();
 
   return (
@@ -28,8 +29,7 @@ function Feature({ feature, className }: FeatureProps) {
       <Heading as="h3" className={styles.featureHeading}>
         <Link
           to={feature.url}
-          style={{ color: 'inherit' }}
-          className={styles.featureLink}
+          style={{ color: 'inherit', display: 'inline-flex' }}
         >
           <IconText icon={feature.icon}>{feature.title}</IconText>
         </Link>
@@ -39,7 +39,7 @@ function Feature({ feature, className }: FeatureProps) {
   );
 }
 
-export default function FeaturesContainer() {
+export default function Docs() {
   const firstRow = FEATURE_LIST.slice(0, 3);
   const secondRow = FEATURE_LIST.slice(3);
 

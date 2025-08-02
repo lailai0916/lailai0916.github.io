@@ -11,12 +11,6 @@
   padding-top: 1rem;
 }
 
-.featureLink {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-
 .featureIcon {
   flex-shrink: 0;
   color: var(--ifm-color-primary);
