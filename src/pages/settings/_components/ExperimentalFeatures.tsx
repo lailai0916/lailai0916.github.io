@@ -37,7 +37,7 @@ export default function ExperimentalFeatures() {
       subtitle="尝试仍在开发的新功能"
       icon="lucide:flask-conical"
     >
-      <div className={styles.toggleList}>
+      <div className={styles.buttonGroup}>
         {buttonOptions.map((option) => (
           <div key={option.key} className={styles.toggleItem}>
             <span>{option.label}</span>

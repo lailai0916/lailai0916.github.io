@@ -65,10 +65,9 @@
 
 /* 按钮组 */
 .buttonGroup {
-  display: grid;
-  grid-template-columns: 1fr;
+  display: flex;
+  flex-direction: column;
   gap: 0.75rem;
-  width: 100%;
 }
 
 .button {
@@ -175,12 +174,6 @@
 }
 
 /* 切换列表 */
-.toggleList {
-  display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
-}
-
 .toggleItem {
   display: flex;
   align-items: center;
