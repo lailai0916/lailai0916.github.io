@@ -39,7 +39,7 @@ export default function ExperimentalFeatures() {
     >
       <div className={styles.toggleList}>
         {buttonOptions.map((option) => (
-          <div key={option.key}>
+          <div key={option.key} className={styles.toggleItem}>
             <span>{option.label}</span>
             <Switch
               checked={toggles[option.key]}

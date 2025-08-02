@@ -181,7 +181,7 @@
   gap: 0.75rem;
 }
 
-.toggleList > div {
+.toggleItem {
   display: flex;
   align-items: center;
   justify-content: space-between;
