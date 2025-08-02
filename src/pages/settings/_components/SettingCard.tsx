@@ -1,6 +1,6 @@
 import React from 'react';
 import { Icon } from '@iconify/react';
-import styles from './styles.module.css';
+import styles from './../styles.module.css';
 
 interface SettingCardProps {
   title: string;
