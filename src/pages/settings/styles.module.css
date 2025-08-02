@@ -7,6 +7,17 @@
    1. Core Layout & Structure
    ========================================================================== */
 
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .container {
   max-width: 1200px;
   margin: 0 auto;
@@ -262,24 +273,5 @@
 @media (max-width: 768px) {
   .container {
     padding: 0 1rem 2rem 1rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .mainTitle {
-    font-size: 1.8rem !important;
-  }
-
-  .statIcon {
-    width: 32px;
-    height: 32px;
-  }
-
-  .buttonGroup {
-    grid-template-columns: 1fr;
-  }
-
-  .settingCard {
-    padding: 1rem;
   }
 }
