@@ -26,36 +26,36 @@
   gap: 1.5rem;
   animation: fadeIn 0.3s ease-out;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-template-areas: 'theme color color' 'font experimental actions';
+  grid-template-areas: 'a1 a2 a2' 'a3 a4 a5';
 }
 
 .container > :nth-child(1) {
-  grid-area: theme;
+  grid-area: a1;
 }
 .container > :nth-child(2) {
-  grid-area: color;
+  grid-area: a2;
 }
 .container > :nth-child(3) {
-  grid-area: font;
+  grid-area: a3;
 }
 .container > :nth-child(4) {
-  grid-area: experimental;
+  grid-area: a4;
 }
 .container > :nth-child(5) {
-  grid-area: actions;
+  grid-area: a5;
 }
 
 @media (max-width: 1199px) {
   .container {
     grid-template-columns: 1fr 1fr;
-    grid-template-areas: 'theme font' 'color color' 'experimental actions';
+    grid-template-areas: 'a1 a3' 'a2 a2' 'a4 a5';
   }
 }
 
 @media (max-width: 768px) {
   .container {
     grid-template-columns: 1fr;
-    grid-template-areas: 'theme' 'color' 'font' 'experimental' 'actions';
+    grid-template-areas: 'a1' 'a2' 'a3' 'a4' 'a5';
   }
 }
 
