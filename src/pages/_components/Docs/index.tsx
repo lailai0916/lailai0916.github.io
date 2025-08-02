@@ -34,7 +34,7 @@ function Feature({
           <IconText icon={feature.icon}>{feature.title}</IconText>
         </Link>
       </Heading>
-      <div className="padding-horiz--md">{feature.text}</div>
+      <p className="padding-horiz--md">{feature.text}</p>
     </div>
   );
 }
