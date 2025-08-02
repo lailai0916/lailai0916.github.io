@@ -95,6 +95,23 @@ function handleReset() {
   window.location.reload();
 }
 
+const quickActionOptions = [
+  {
+    key: 'confetti' as const,
+    label: '给我惊喜',
+    icon: 'lucide:sparkles',
+    onClick: Confetti,
+    className: styles.button,
+  },
+  {
+    key: 'reset' as const,
+    label: '重置设置',
+    icon: 'lucide:rotate-ccw',
+    onClick: handleReset,
+    className: clsx(styles.button, styles.buttonDanger),
+  },
+];
+
 function QuickActions() {
   return (
     <SettingCard
@@ -103,19 +120,17 @@ function QuickActions() {
       icon="lucide:zap"
     >
       <div className={styles.buttonGroup}>
-        <button className={styles.button} onClick={Confetti}>
-          <IconText icon="lucide:sparkles" colorMode="monochrome">
-            给我惊喜
-          </IconText>
-        </button>
-        <button
-          className={clsx(styles.button, styles.buttonDanger)}
-          onClick={handleReset}
-        >
-          <IconText icon="lucide:rotate-ccw" colorMode="monochrome">
-            重置设置
-          </IconText>
-        </button>
+        {quickActionOptions.map((option) => (
+          <button
+            key={option.key}
+            className={option.className}
+            onClick={option.onClick}
+          >
+            <IconText icon={option.icon} colorMode="monochrome">
+              {option.label}
+            </IconText>
+          </button>
+        ))}
       </div>
     </SettingCard>
   );
