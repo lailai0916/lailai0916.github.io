@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import SettingCard from '@site/src/components/laikit/widget/SettingCard';
+import SettingCard from '@site/src/pages/settings/_components/SettingCard';
 import styles from '../styles.module.css';
 
 export default function FontSettings() {

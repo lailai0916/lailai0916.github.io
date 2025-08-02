@@ -2,14 +2,15 @@ import React from 'react';
 import { useColorMode } from '@docusaurus/theme-common';
 import { getAdjustedColors } from '@site/src/utils/colorUtils';
 import { useThemeColors } from '@site/src/hooks/useThemeColors';
-import SettingCard from '@site/src/components/laikit/widget/SettingCard';
+import SettingCard from '@site/src/pages/settings/_components/SettingCard';
 import styles from '../styles.module.css';
 
 export default function ColorGenerator() {
   const { colorMode } = useColorMode();
   const isDarkTheme = colorMode === 'dark';
-  
-  const { colorState, inputColor, updateColor, resetColors } = useThemeColors(isDarkTheme);
+
+  const { colorState, inputColor, updateColor, resetColors } =
+    useThemeColors(isDarkTheme);
 
   const presetColors = [
     '#1d9bf0',
@@ -54,7 +55,8 @@ export default function ColorGenerator() {
               e.currentTarget.style.borderColor = color;
             }}
             onMouseLeave={(e) => {
-              e.currentTarget.style.borderColor = 'var(--ifm-color-emphasis-300)';
+              e.currentTarget.style.borderColor =
+                'var(--ifm-color-emphasis-300)';
             }}
             aria-label={`Set color to ${color}`}
           />
@@ -75,8 +77,8 @@ export default function ColorGenerator() {
               .join(', ')})`,
           }}
         />
-        
-        <button 
+
+        <button
           onClick={resetColors}
           className={styles.resetButton}
           title="重置为默认颜色"

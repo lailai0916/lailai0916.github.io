@@ -12,7 +12,7 @@ import styles from './styles.module.css';
 import { useColorMode } from '@docusaurus/theme-common';
 import clsx from 'clsx';
 import IconText from '@site/src/components/laikit/widget/IconText';
-import SettingCard from '@site/src/components/laikit/widget/SettingCard';
+import SettingCard from '@site/src/pages/settings/_components/SettingCard';
 import confetti from 'canvas-confetti';
 
 import ColorGenerator from './_components/ColorGenerator';
