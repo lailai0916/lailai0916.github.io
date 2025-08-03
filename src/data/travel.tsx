@@ -1,7 +1,7 @@
-export interface TravelStatItem {
-  number: string;
+export interface TravelItem {
   title: string;
-  icon: string;
+  cardTitle: string;
+  cardDetailedText: string;
 }
 
 export const TRAVEL_LIST: TravelItem[] = [
@@ -199,5 +199,10 @@ export const TRAVEL_LIST: TravelItem[] = [
     title: '2025-01',
     cardTitle: '马来西亚🇲🇾',
     cardDetailedText: '吉隆坡、怡保、乔治',
+  },
+  {
+    title: '2025-07',
+    cardTitle: '香港🇭🇰、广东',
+    cardDetailedText: '香港、深圳、广州',
   },
 ];

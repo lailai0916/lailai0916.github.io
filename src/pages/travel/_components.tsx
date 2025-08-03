@@ -1,7 +1,7 @@
 import React, { useMemo } from 'react';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import { Chrono } from 'react-chrono';
-import { TRAVEL_LIST as rawItems } from '@site/src/data/travel';
+import { TRAVEL_LIST } from '@site/src/data/travel';
 import './styles.module.css';
 
 // Timeline配置常量
@@ -100,11 +100,11 @@ export default function Timeline() {
   const { i18n } = useDocusaurusContext();
   const items = useMemo(
     () =>
-      [...rawItems].reverse().map((item) => ({
+      [...TRAVEL_LIST].reverse().map((item) => ({
         ...item,
         title: formatTravelDate(item.title, i18n.currentLocale),
       })),
-    [rawItems]
+    [TRAVEL_LIST]
   );
 
   return (
