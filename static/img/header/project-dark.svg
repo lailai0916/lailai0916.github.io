@@ -9,13 +9,13 @@
       fill: #fdcf72;
     }
     .B {
-      fill: #f5f6f7;
+      fill: #1e2223;
     }
     .C {
-      fill: #263032;
+      fill: #303537;
     }
     .D {
-      fill: #5b6768;
+      fill: #606464;
     }
   </style>
   <path class="B" d="M0 0L1536 0L1536 1024L0 1024L0 0Z" />

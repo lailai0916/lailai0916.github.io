@@ -8,8 +8,8 @@ sidebar_position: 0
 
 内容聚焦实际竞赛环境，强调算法技巧、编程实践和竞赛能力的综合提升。
 
-![](/img/header/contest-light.png#gh-light-mode-only)
-![](/img/header/contest-dark.png#gh-dark-mode-only)
+![](/img/header/contest-light.svg#gh-light-mode-only)
+![](/img/header/contest-dark.svg#gh-dark-mode-only)
 
 OI（Olympiad in Informatics，信息学奥林匹克竞赛）在中国起源于 1984 年，是五大高中学科竞赛之一。
 

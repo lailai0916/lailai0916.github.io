@@ -8,8 +8,8 @@ sidebar_position: 0
 
 项目内容关注具体场景的应用与探索，兼顾技术学习、实践开发和经验积累。
 
-![](/img/header/project-light.png#gh-light-mode-only)
-![](/img/header/project-dark.png#gh-dark-mode-only)
+![](/img/header/project-light.svg#gh-light-mode-only)
+![](/img/header/project-dark.svg#gh-dark-mode-only)
 
 ## 目录
 
