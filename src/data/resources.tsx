@@ -542,12 +542,12 @@ export const RESOURCE_LIST: ResourceCategoryItem[] = [
       {
         title: 'Apple',
         href: 'https://www.apple.com',
-        description: '苹果公司官方网站',
+        description: 'Apple 公司官方网站',
       },
       {
         title: 'Apple 产品参数中心',
         href: 'https://hubweb.cn',
-        description: '苹果产品参数对比',
+        description: 'Apple 产品参数对比',
       },
       {
         title: 'SOCPK',
