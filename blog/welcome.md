@@ -9,8 +9,8 @@ Technology evolves rapidly, and we need to maintain keen learning abilities and 
 
 Through continuous practice and summarization, we transform knowledge into real skills. Only through practice-verified technologies and methods can truly help us solve real problems. You can find algorithm solutions, technical notes, and project practices here.
 
-![](/img/header/blog-light.png#gh-light-mode-only)
-![](/img/header/blog-dark.png#gh-dark-mode-only)
+![](/img/header/blog-light.svg#gh-light-mode-only)
+![](/img/header/blog-dark.svg#gh-dark-mode-only)
 
 Stay updated with the latest blog posts:
 

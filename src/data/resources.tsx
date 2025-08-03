@@ -507,6 +507,11 @@ export const RESOURCE_LIST: ResourceCategoryItem[] = [
         href: 'https://dzjszjz.nkxingxh.top',
         description: '电子教室软件解锁工具',
       },
+      {
+        title: 'Recraft',
+        href: 'https://www.recraft.ai',
+        description: 'AI 图片生成工具',
+      },
     ],
   },
   {
