@@ -105,8 +105,8 @@ export function ColorGenerator() {
           }}
         />
         <button
-          onClick={resetColors}
           className={styles.resetButton}
+          onClick={resetColors}
           title="重置为默认颜色"
         >
           重置
