@@ -9,6 +9,34 @@ import Switch from '@site/src/components/laikit/widget/Switch';
 import { getAdjustedColors } from '@site/src/utils/colorUtils';
 import { useThemeColors } from '@site/src/hooks/useThemeColors';
 
+export function ThemeSettings() {
+  const themeOptions = [
+    { key: null, label: '跟随系统', icon: 'lucide:monitor' },
+    { key: 'light' as const, label: '浅色模式', icon: 'lucide:sun' },
+    { key: 'dark' as const, label: '深色模式', icon: 'lucide:moon' },
+  ];
+  const { colorModeChoice, setColorMode } = useColorMode();
+
+  return (
+    <div className={styles.buttonGroup}>
+      {themeOptions.map((option) => (
+        <button
+          key={option.key}
+          className={clsx(
+            styles.button,
+            colorModeChoice === option.key && styles.buttonActive
+          )}
+          onClick={() => setColorMode(option.key)}
+        >
+          <IconText icon={option.icon} colorMode="monochrome">
+            {option.label}
+          </IconText>
+        </button>
+      ))}
+    </div>
+  );
+}
+
 export function ColorGenerator() {
   const { colorMode } = useColorMode();
   const isDarkTheme = colorMode === 'dark';
@@ -90,48 +118,6 @@ export function ColorGenerator() {
   );
 }
 
-const buttonOptions = [
-  { key: 'newLayout' as const, label: '新版布局' },
-  { key: 'debugMode' as const, label: '调试模式' },
-];
-
-export function ExperimentalFeatures() {
-  const [toggles, setToggles] = usePersistentState('settings-experimental', {
-    newLayout: false,
-    debugMode: false,
-  });
-
-  const handleToggle = (key: keyof typeof toggles, checked: boolean) => {
-    setToggles((prev) => {
-      const newState = { ...prev, [key]: checked };
-
-      // 触发自定义事件通知状态变化
-      if (typeof window !== 'undefined') {
-        const event = new CustomEvent('experimentalSettingsChanged', {
-          detail: { key, checked, newState },
-        });
-        window.dispatchEvent(event);
-      }
-
-      return newState;
-    });
-  };
-
-  return (
-    <div className={styles.buttonGroup}>
-      {buttonOptions.map((option) => (
-        <div key={option.key} className={styles.toggleItem}>
-          <span>{option.label}</span>
-          <Switch
-            checked={toggles[option.key]}
-            onChange={(checked) => handleToggle(option.key, checked)}
-          />
-        </div>
-      ))}
-    </div>
-  );
-}
-
 export function FontSettings() {
   const [fontSize, setFontSize] = useState<number>(16);
 
@@ -173,80 +159,91 @@ export function FontSettings() {
   );
 }
 
-const themeOptions = [
-  { key: null, label: '跟随系统', icon: 'lucide:monitor' },
-  { key: 'light' as const, label: '浅色模式', icon: 'lucide:sun' },
-  { key: 'dark' as const, label: '深色模式', icon: 'lucide:moon' },
-];
+export function ExperimentalFeatures() {
+  const buttonOptions = [
+    { key: 'newLayout' as const, label: '新版布局' },
+    { key: 'debugMode' as const, label: '调试模式' },
+  ];
+  const [toggles, setToggles] = usePersistentState('settings-experimental', {
+    newLayout: false,
+    debugMode: false,
+  });
 
-export function ThemeSettings() {
-  const { colorModeChoice, setColorMode } = useColorMode();
+  const handleToggle = (key: keyof typeof toggles, checked: boolean) => {
+    setToggles((prev) => {
+      const newState = { ...prev, [key]: checked };
+
+      // 触发自定义事件通知状态变化
+      if (typeof window !== 'undefined') {
+        const event = new CustomEvent('experimentalSettingsChanged', {
+          detail: { key, checked, newState },
+        });
+        window.dispatchEvent(event);
+      }
+
+      return newState;
+    });
+  };
 
   return (
     <div className={styles.buttonGroup}>
-      {themeOptions.map((option) => (
-        <button
-          key={option.key}
-          className={clsx(
-            styles.button,
-            colorModeChoice === option.key && styles.buttonActive
-          )}
-          onClick={() => setColorMode(option.key)}
-        >
-          <IconText icon={option.icon} colorMode="monochrome">
-            {option.label}
-          </IconText>
-        </button>
+      {buttonOptions.map((option) => (
+        <div key={option.key} className={styles.toggleItem}>
+          <span>{option.label}</span>
+          <Switch
+            checked={toggles[option.key]}
+            onChange={(checked) => handleToggle(option.key, checked)}
+          />
+        </div>
       ))}
     </div>
   );
 }
 
-function Confetti() {
-  const count = 200;
-  const defaults = { origin: { y: 0.7 } };
+export function QuickActions() {
+  function Confetti() {
+    const count = 200;
+    const defaults = { origin: { y: 0.7 } };
 
-  function fire(particleRatio: number, opts: confetti.Options) {
-    confetti({
-      ...defaults,
-      ...opts,
-      particleCount: Math.floor(count * particleRatio),
-    });
+    function fire(particleRatio: number, opts: confetti.Options) {
+      confetti({
+        ...defaults,
+        ...opts,
+        particleCount: Math.floor(count * particleRatio),
+      });
+    }
+
+    fire(0.25, { spread: 26, startVelocity: 55 });
+    fire(0.2, { spread: 60 });
+    fire(0.35, { spread: 100, decay: 0.91, scalar: 0.8 });
+    fire(0.1, { spread: 120, startVelocity: 25, decay: 0.92, scalar: 1.2 });
+    fire(0.1, { spread: 120, startVelocity: 45 });
   }
 
-  fire(0.25, { spread: 26, startVelocity: 55 });
-  fire(0.2, { spread: 60 });
-  fire(0.35, { spread: 100, decay: 0.91, scalar: 0.8 });
-  fire(0.1, { spread: 120, startVelocity: 25, decay: 0.92, scalar: 1.2 });
-  fire(0.1, { spread: 120, startVelocity: 45 });
-}
+  function handleReset() {
+    localStorage.removeItem('theme');
+    localStorage.removeItem('global-font-size');
+    localStorage.removeItem('settings-notifications');
+    localStorage.removeItem('settings-experimental');
+    window.location.reload();
+  }
 
-function handleReset() {
-  localStorage.removeItem('theme');
-  localStorage.removeItem('global-font-size');
-  localStorage.removeItem('settings-notifications');
-  localStorage.removeItem('settings-experimental');
-  window.location.reload();
-}
-
-const quickActionOptions = [
-  {
-    key: 'confetti' as const,
-    label: '给我惊喜',
-    icon: 'lucide:sparkles',
-    onClick: Confetti,
-    className: styles.button,
-  },
-  {
-    key: 'reset' as const,
-    label: '重置设置',
-    icon: 'lucide:rotate-ccw',
-    onClick: handleReset,
-    className: clsx(styles.button, styles.buttonDanger),
-  },
-];
-
-export function QuickActions() {
+  const quickActionOptions = [
+    {
+      key: 'confetti' as const,
+      label: '给我惊喜',
+      icon: 'lucide:sparkles',
+      onClick: Confetti,
+      className: styles.button,
+    },
+    {
+      key: 'reset' as const,
+      label: '重置设置',
+      icon: 'lucide:rotate-ccw',
+      onClick: handleReset,
+      className: clsx(styles.button, styles.buttonDanger),
+    },
+  ];
   return (
     <div className={styles.buttonGroup}>
       {quickActionOptions.map((option) => (

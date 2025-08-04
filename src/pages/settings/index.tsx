@@ -11,11 +11,11 @@ import { Icon } from '@iconify/react';
 import styles from './styles.module.css';
 
 import {
-  QuickActions,
   ThemeSettings,
+  ColorGenerator,
   FontSettings,
   ExperimentalFeatures,
-  ColorGenerator,
+  QuickActions,
 } from './_components';
 
 const TITLE = '设置';
