@@ -107,17 +107,6 @@ function ExperimentalFeatures() {
   );
 }
 
-function SettingsHeader() {
-  return (
-    <PageHeader>
-      <PageTitle description={DESCRIPTION}>
-        个性化<b>设置</b>
-      </PageTitle>
-      <DataCard value={5} label="项设置" icon="lucide:settings" />
-    </PageHeader>
-  );
-}
-
 function ColorGenerator() {
   const { colorMode } = useColorMode();
   const isDarkTheme = colorMode === 'dark';
@@ -322,6 +311,21 @@ const SettingItems = [
     component: QuickActions,
   },
 ];
+
+function SettingsHeader() {
+  return (
+    <PageHeader>
+      <PageTitle description={DESCRIPTION}>
+        个性化<b>设置</b>
+      </PageTitle>
+      <DataCard
+        value={SettingItems.length}
+        label="项设置"
+        icon="lucide:settings"
+      />
+    </PageHeader>
+  );
+}
 
 function SettingsContainer() {
   return (
