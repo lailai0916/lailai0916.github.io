@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from 'react';
-import IconText from '@site/src/components/laikit/widget/IconText';
 import clsx from 'clsx';
-import styles from './styles.module.css';
 import confetti from 'canvas-confetti';
+
+import IconText from '@site/src/components/laikit/widget/IconText';
+import Switch from '@site/src/components/laikit/widget/Switch';
 import { useColorMode } from '@docusaurus/theme-common';
 import { usePersistentState } from '@site/src/hooks/usePersistentState';
-import Switch from '@site/src/components/laikit/widget/Switch';
 import { getAdjustedColors } from '@site/src/utils/colorUtils';
 import { useThemeColors } from '@site/src/hooks/useThemeColors';
+import styles from './styles.module.css';
 
 export function ThemeSettings() {
   const themeOptions = [
