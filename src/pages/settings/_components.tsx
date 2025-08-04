@@ -104,7 +104,6 @@ export function ColorGenerator() {
               .join(', ')})`,
           }}
         />
-
         <button
           onClick={resetColors}
           className={styles.resetButton}
@@ -233,23 +232,21 @@ export function QuickActions() {
       label: '给我惊喜',
       icon: 'lucide:sparkles',
       onClick: Confetti,
-      className: styles.button,
     },
     {
       key: 'reset' as const,
       label: '重置设置',
       icon: 'lucide:rotate-ccw',
       onClick: handleReset,
-      className: clsx(styles.button, styles.buttonDanger),
     },
   ];
-  
+
   return (
     <div className={styles.buttonGroup}>
       {quickActionOptions.map((option) => (
         <button
           key={option.key}
-          className={option.className}
+          className={styles.button}
           onClick={option.onClick}
         >
           <IconText icon={option.icon} colorMode="monochrome">
