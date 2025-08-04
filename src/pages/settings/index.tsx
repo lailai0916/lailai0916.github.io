@@ -21,6 +21,21 @@ import {
 const TITLE = '设置';
 const DESCRIPTION = '个性化您的体验，自定义网站功能和偏好设置';
 
+function SettingsHeader() {
+  return (
+    <PageHeader>
+      <PageTitle description={DESCRIPTION}>
+        个性化<b>设置</b>
+      </PageTitle>
+      <DataCard
+        value={SettingItems.length}
+        label="项设置"
+        icon="lucide:settings"
+      />
+    </PageHeader>
+  );
+}
+
 const SettingItems = [
   {
     title: '外观主题',
@@ -53,21 +68,6 @@ const SettingItems = [
     component: QuickActions,
   },
 ];
-
-function SettingsHeader() {
-  return (
-    <PageHeader>
-      <PageTitle description={DESCRIPTION}>
-        个性化<b>设置</b>
-      </PageTitle>
-      <DataCard
-        value={SettingItems.length}
-        label="项设置"
-        icon="lucide:settings"
-      />
-    </PageHeader>
-  );
-}
 
 function SettingsContainer() {
   return (
