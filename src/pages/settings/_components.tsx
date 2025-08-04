@@ -138,7 +138,7 @@ export function FontSettings() {
 
   return (
     <div className={styles.sliderContainer}>
-      <span className={styles.sliderLabel}>Now: {fontSize}px</span>
+      <span className={styles.sliderLabel}>当前：{fontSize}px</span>
       <input
         type="range"
         min="12"
