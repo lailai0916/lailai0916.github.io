@@ -24,28 +24,6 @@ import { useThemeColors } from '@site/src/hooks/useThemeColors';
 const TITLE = '设置';
 const DESCRIPTION = '个性化您的体验，自定义网站功能和偏好设置';
 
-interface SettingCardProps {
-  title: string;
-  subtitle: string;
-  icon: string;
-  children: React.ReactNode;
-}
-
-function SettingCard({ title, subtitle, icon, children }: SettingCardProps) {
-  return (
-    <div className={styles.settingCard}>
-      <div className={styles.cardHeader}>
-        <Icon icon={icon} className={styles.cardIcon} />
-        <div className={styles.cardTitleGroup}>
-          <h3 className={styles.cardTitle}>{title}</h3>
-          <span className={styles.cardSubtitle}>{subtitle}</span>
-        </div>
-      </div>
-      <div className={styles.cardBody}>{children}</div>
-    </div>
-  );
-}
-
 function FontSettings() {
   const [fontSize, setFontSize] = useState<number>(16);
 
@@ -67,29 +45,23 @@ function FontSettings() {
   };
 
   return (
-    <SettingCard
-      title="字体大小"
-      subtitle="调整界面字体以获得最佳阅读体验"
-      icon="lucide:type"
-    >
-      <div className={styles.sliderContainer}>
-        <span className={styles.sliderLabel}>{fontSize}px</span>
-        <input
-          type="range"
-          min="12"
-          max="20"
-          step="1"
-          value={fontSize}
-          onChange={(e) => handleSizeChange(parseInt(e.target.value, 10))}
-          className={styles.slider}
-        />
-        <div className={styles.sliderTicks}>
-          <span>12px</span>
-          <span>16px</span>
-          <span>20px</span>
-        </div>
+    <div className={styles.sliderContainer}>
+      <span className={styles.sliderLabel}>{fontSize}px</span>
+      <input
+        type="range"
+        min="12"
+        max="20"
+        step="1"
+        value={fontSize}
+        onChange={(e) => handleSizeChange(parseInt(e.target.value, 10))}
+        className={styles.slider}
+      />
+      <div className={styles.sliderTicks}>
+        <span>12px</span>
+        <span>16px</span>
+        <span>20px</span>
       </div>
-    </SettingCard>
+    </div>
   );
 }
 
@@ -121,23 +93,17 @@ function ExperimentalFeatures() {
   };
 
   return (
-    <SettingCard
-      title="实验性内容"
-      subtitle="尝试仍在开发的新功能"
-      icon="lucide:flask-conical"
-    >
-      <div className={styles.buttonGroup}>
-        {buttonOptions.map((option) => (
-          <div key={option.key} className={styles.toggleItem}>
-            <span>{option.label}</span>
-            <Switch
-              checked={toggles[option.key]}
-              onChange={(checked) => handleToggle(option.key, checked)}
-            />
-          </div>
-        ))}
-      </div>
-    </SettingCard>
+    <div className={styles.buttonGroup}>
+      {buttonOptions.map((option) => (
+        <div key={option.key} className={styles.toggleItem}>
+          <span>{option.label}</span>
+          <Switch
+            checked={toggles[option.key]}
+            onChange={(checked) => handleToggle(option.key, checked)}
+          />
+        </div>
+      ))}
+    </div>
   );
 }
 
@@ -169,11 +135,7 @@ function ColorGenerator() {
   ];
 
   return (
-    <SettingCard
-      title="主题色生成器"
-      subtitle="自定义网站的主色调，实时预览效果"
-      icon="lucide:palette"
-    >
+    <>
       {/* 颜色输入 */}
       <div className={styles.colorInputContainer}>
         <input
@@ -233,7 +195,7 @@ function ColorGenerator() {
           重置
         </button>
       </div>
-    </SettingCard>
+    </>
   );
 }
 
@@ -247,28 +209,22 @@ function ThemeSettings() {
   const { colorModeChoice, setColorMode } = useColorMode();
 
   return (
-    <SettingCard
-      title="外观主题"
-      subtitle="选择一个适合您的主题模式"
-      icon="lucide:monitor"
-    >
-      <div className={styles.buttonGroup}>
-        {themeOptions.map((option) => (
-          <button
-            key={option.key}
-            className={clsx(
-              styles.button,
-              colorModeChoice === option.key && styles.buttonActive
-            )}
-            onClick={() => setColorMode(option.key)}
-          >
-            <IconText icon={option.icon} colorMode="monochrome">
-              {option.label}
-            </IconText>
-          </button>
-        ))}
-      </div>
-    </SettingCard>
+    <div className={styles.buttonGroup}>
+      {themeOptions.map((option) => (
+        <button
+          key={option.key}
+          className={clsx(
+            styles.button,
+            colorModeChoice === option.key && styles.buttonActive
+          )}
+          onClick={() => setColorMode(option.key)}
+        >
+          <IconText icon={option.icon} colorMode="monochrome">
+            {option.label}
+          </IconText>
+        </button>
+      ))}
+    </div>
   );
 }
 
@@ -318,41 +274,71 @@ const quickActionOptions = [
 
 function QuickActions() {
   return (
-    <SettingCard
-      title="快捷操作"
-      subtitle="快速管理您的个性化配置"
-      icon="lucide:zap"
-    >
-      <div className={styles.buttonGroup}>
-        {quickActionOptions.map((option) => (
-          <button
-            key={option.key}
-            className={option.className}
-            onClick={option.onClick}
-          >
-            <IconText icon={option.icon} colorMode="monochrome">
-              {option.label}
-            </IconText>
-          </button>
-        ))}
-      </div>
-    </SettingCard>
+    <div className={styles.buttonGroup}>
+      {quickActionOptions.map((option) => (
+        <button
+          key={option.key}
+          className={option.className}
+          onClick={option.onClick}
+        >
+          <IconText icon={option.icon} colorMode="monochrome">
+            {option.label}
+          </IconText>
+        </button>
+      ))}
+    </div>
   );
 }
 
 const SettingItems = [
-  { title: '外观主题', icon: 'lucide:monitor', component: ThemeSettings },
-  { title: '主题色生成器', icon: 'lucide:palette', component: ColorGenerator },
-  { title: '字体大小', icon: 'lucide:type', component: FontSettings },
-  { title: '实验性内容', icon: 'lucide:flask-conical', component: ExperimentalFeatures },
-  { title: '快捷操作', icon: 'lucide:zap', component: QuickActions },
+  {
+    title: '外观主题',
+    subtitle: '选择一个适合您的主题模式',
+    icon: 'lucide:monitor',
+    component: ThemeSettings,
+  },
+  {
+    title: '主题色生成器',
+    subtitle: '自定义网站的主色调，实时预览效果',
+    icon: 'lucide:palette',
+    component: ColorGenerator,
+  },
+  {
+    title: '字体大小',
+    subtitle: '调整界面字体以获得最佳阅读体验',
+    icon: 'lucide:type',
+    component: FontSettings,
+  },
+  {
+    title: '实验性内容',
+    subtitle: '尝试仍在开发的新功能',
+    icon: 'lucide:flask-conical',
+    component: ExperimentalFeatures,
+  },
+  {
+    title: '快捷操作',
+    subtitle: '快速管理您的个性化配置',
+    icon: 'lucide:zap',
+    component: QuickActions,
+  },
 ];
 
 function SettingsContainer() {
   return (
     <div className={styles.container}>
       {SettingItems.map((item) => (
-        <item.component key={item.title} />
+        <div className={styles.settingCard}>
+          <div className={styles.cardHeader}>
+            <Icon icon={item.icon} className={styles.cardIcon} />
+            <div className={styles.cardTitleGroup}>
+              <h3 className={styles.cardTitle}>{item.title}</h3>
+              <span className={styles.cardSubtitle}>{item.subtitle}</span>
+            </div>
+          </div>
+          <div className={styles.cardBody}>
+            <item.component key={item.title} />
+          </div>
+        </div>
       ))}
     </div>
   );
