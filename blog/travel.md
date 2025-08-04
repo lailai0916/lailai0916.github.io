@@ -13,7 +13,7 @@ tags: [travel]
 
 ## 旅行路线
 
-杭州 $\xrightarrow{\text{飞机（HX113）}}$ 香港 $\xrightarrow{\text{高铁（G5814）}}$ 深圳 $\xrightarrow{\text{高铁（C8014）}}$ 广州 $\xrightarrow{\text{飞机（CA1794）}}$ 杭州
+杭州 $\xrightarrow[\text{HX113}]{\text{飞机}}$ 香港 $\xrightarrow[\text{G5814}]{\text{高铁}}$ 深圳 $\xrightarrow[\text{C8014}]{\text{高铁}}$ 广州 $\xrightarrow[\text{CA1794}]{\text{飞机}}$ 杭州
 
 ## Day 1（2025-07-27）
 
