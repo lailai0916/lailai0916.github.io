@@ -73,7 +73,7 @@ function SettingsContainer() {
   return (
     <div className={styles.container}>
       {SettingItems.map((item) => (
-        <div className={styles.settingCard}>
+        <div key={item.title} className={styles.settingCard}>
           <div className={styles.cardHeader}>
             <Icon icon={item.icon} className={styles.cardIcon} />
             <div className={styles.cardTitleGroup}>

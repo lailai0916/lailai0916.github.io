@@ -40,10 +40,9 @@ export function ThemeSettings() {
 
 export function ColorGenerator() {
   const { colorMode } = useColorMode();
-  const isDarkTheme = colorMode === 'dark';
-
-  const { colorState, inputColor, updateColor, resetColors } =
-    useThemeColors(isDarkTheme);
+  const { colorState, inputColor, updateColor, resetColors } = useThemeColors(
+    colorMode === 'dark'
+  );
 
   const presetColors = [
     '#1d9bf0',
