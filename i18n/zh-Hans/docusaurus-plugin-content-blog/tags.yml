@@ -1,26 +1,26 @@
 top:
-  label: Pinned
+  label: 置顶
 
 notice:
-  label: Notice
+  label: 公告
 
 personal:
-  label: Personal
+  label: 个人
 
 travel:
-  label: Travel
+  label: 旅行
 
 math:
-  label: Mathematics
+  label: 数学
 
 misc:
-  label: Miscellaneous
+  label: 杂项
 
 solution:
-  label: Solution
+  label: 题解
 
 luogu:
-  label: Luogu
+  label: 洛谷
 
 codeforces:
   label: Codeforces
