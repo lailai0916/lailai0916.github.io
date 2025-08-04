@@ -39,11 +39,6 @@ export function ThemeSettings() {
 }
 
 export function ColorGenerator() {
-  const { colorMode } = useColorMode();
-  const { colorState, inputColor, updateColor, resetColors } = useThemeColors(
-    colorMode === 'dark'
-  );
-
   const presetColors = [
     '#1d9bf0',
     '#ffd400',
@@ -52,6 +47,10 @@ export function ColorGenerator() {
     '#ff7a00',
     '#00ba7c',
   ];
+  const { colorMode } = useColorMode();
+  const { colorState, inputColor, updateColor, resetColors } = useThemeColors(
+    colorMode === 'dark'
+  );
 
   return (
     <>
@@ -244,6 +243,7 @@ export function QuickActions() {
       className: clsx(styles.button, styles.buttonDanger),
     },
   ];
+  
   return (
     <div className={styles.buttonGroup}>
       {quickActionOptions.map((option) => (
