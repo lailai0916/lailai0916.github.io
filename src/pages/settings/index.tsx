@@ -340,18 +340,30 @@ function QuickActions() {
   );
 }
 
+const SettingItems = [
+  { title: '外观主题', icon: 'lucide:monitor', component: ThemeSettings },
+  { title: '主题色生成器', icon: 'lucide:palette', component: ColorGenerator },
+  { title: '字体大小', icon: 'lucide:type', component: FontSettings },
+  { title: '实验性内容', icon: 'lucide:flask-conical', component: ExperimentalFeatures },
+  { title: '快捷操作', icon: 'lucide:zap', component: QuickActions },
+];
+
+function SettingsContainer() {
+  return (
+    <div className={styles.container}>
+      {SettingItems.map((item) => (
+        <item.component key={item.title} />
+      ))}
+    </div>
+  );
+}
+
 export default function Settings(): ReactNode {
   return (
     <Layout title={TITLE} description={DESCRIPTION}>
       <PageMain>
         <SettingsHeader />
-        <div className={styles.container}>
-          <ThemeSettings />
-          <ColorGenerator />
-          <FontSettings />
-          <ExperimentalFeatures />
-          <QuickActions />
-        </div>
+        <SettingsContainer />
       </PageMain>
     </Layout>
   );
