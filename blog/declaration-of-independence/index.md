@@ -23,7 +23,7 @@ In CONGRESS, July 4, 1776.
 
 一七七六年七月四日，大陆会议
 
-The unanimous Declaration of the thirteen united States of America
+The unanimous Declaration of the thirteen united States of America,
 
 美利坚十三个联合邦一致宣言
 
