@@ -46,6 +46,29 @@ cout<<fixed<<setprecision(6)<<x<<'\n';
 cout<<setw(6)<<x<<'\n';
 ```
 
+## 快速读入
+
+```cpp
+int read()
+{
+	int x=0,f=1;char c=getchar();
+	while(c<'0'||c>'9'){if(c=='-')f=-1;c=getchar();}
+	while(c>='0'&&c<='9'){x=x*10+c-48;c=getchar();}
+	return x*f;
+}
+```
+
+## 快速输出
+
+```cpp
+void write(int x)
+{
+	if(x<0)putchar('-'),x=-x;
+	if(x>9)write(x/10);
+	putchar(x%10+48);
+}
+```
+
 ## 刷新缓冲区
 
 ```cpp
@@ -57,11 +80,8 @@ cout.flush();
 ## pb_ds
 
 ```cpp
-#include <bits/stdc++.h>
 #include <bits/extc++.h>
-using namespace std;
 using namespace __gnu_pbds;
-
 tree<pair<int,int>,null_type,less<pair<int,int>>,rb_tree_tag,tree_order_statistics_node_update> T;
 ```
 

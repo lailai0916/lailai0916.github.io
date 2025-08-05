@@ -10,6 +10,12 @@
 
 - [lailai0916/code-comparator: A lightweight code comparator for Olympiad in Informatics (OI).](https://github.com/lailai0916/code-comparator)
 
+## 对拍介绍
+
+对拍是一种验证代码正确性的方法。它通过编写两份代码：一份是待验证的代码，另一份是已知正确但效率较低的暴力解法。
+
+代码对拍器会自动生成随机数据并处理，比较两份代码的输出结果，以判断待验证代码的正确性。
+
 ## 项目结构
 
 ```bash
