@@ -3,8 +3,11 @@
 ## 参考资料
 
 - [NOI 全国青少年信息学奥林匹克竞赛](https://www.noi.cn)
-- [《NOI 大纲（2025年修订版）》](https://www.noi.cn/upload/resources/file/2025/04/18/NOI_Syllabus_Edition_2025.pdf)
+- [NOI大纲正式发布](https://www.noi.cn/xw/2021-04-02/724387.shtml)
+- [NOI 大纲（2023年修订版）正式发布](https://www.noi.cn/xw/2023-03-15/788060.shtml)
+- [NOI 大纲（2025年修订版）正式发布](https://www.noi.cn/xw/2025-04-18/841584.shtml)
 - [《NOI 大纲（2023年修订版）》](https://www.noi.cn/upload/resources/file/2023/03/15/1fa58eac9c412e01ce3c89c761058a43.pdf)
+- [《NOI 大纲（2025年修订版）》](https://www.noi.cn/upload/resources/file/2025/04/18/NOI_Syllabus_Edition_2025.pdf)
 
 ## 难度系数
 
