@@ -1,0 +1,100 @@
+---
+title: '数学：不等式挑战'
+date: 2025-01-14T05:07
+authors: [lailai]
+tags: [math]
+---
+
+<!-- truncate -->
+
+网上一个不等式闯关挑战。
+
+## 题目
+
+己知实数 $a,b$ 满足 $a^2+b^2=1$：
+
+1. 求 $ab$ 的最大值。
+2. 求 $a+b$ 的最大值。
+3. 求 $a+3b$ 的最大值。
+4. 求 $(a+1)(b+1)$ 的最大值。
+5. 求 $(a+1)(b-1)$ 的最大值。
+6. 求 $(a+1)(5b+2)$ 的最大值。
+7. 求 $(a+1)(b+2)$ 的最大值。
+
+## Level 1
+
+求 $ab$ 的最大值。
+
+根据 [均值不等式](../../docs/note/math/high-school/misc/inequality#均值不等式)：
+
+$$
+2ab\le a^2+b^2=1
+$$
+
+所以 $ab$ 的最大值为 $\frac{1}{2}$。
+
+## Level 2
+
+求 $a+b$ 的最大值。
+
+根据 [均值不等式](../../docs/note/math/high-school/misc/inequality#均值不等式)：
+
+$$
+\frac{a+b}{2}\le \sqrt{\frac{a^2+b^2}{2}}=\sqrt{\frac{1}{2}}
+$$
+
+所以 $a+b$ 的最大值为 $\sqrt{2}$。
+
+## Level 3
+
+求 $a+3b$ 的最大值。
+
+$$
+(a+3b)^2\le(a+3b)^2+(3a-b)^2=10(a^2+b^2)=10
+$$
+
+所以 $a+3b$ 的最大值为 $\sqrt{10}$。
+
+## Level 4
+
+求 $(a+1)(b+1)$ 的最大值。
+
+$$
+(a+1)(b+1)=ab+a+b+1\le\frac{a^2+b^2}{2}+\sqrt{2(a^2+b^2)}+1=\frac{3+2\sqrt{2}}{2}
+$$
+
+所以 $(a+1)(b+1)$ 的最大值为 $\frac{3+2\sqrt{2}}{2}$。
+
+## Level 5
+
+求 $(a+1)(b-1)$ 的最大值。
+
+$$
+\begin{aligned}
+  (a+1)(b-1) &= ab-a+b-1 \\
+  &= \frac{a^2+b^2-(a-b)^2}{2}-(a-b)-1 \\
+  &= \frac{1}{2}-\frac{1}{2}(a-b)^2-(a-b)-1 \\
+  &= -\frac{1}{2}(a-b+1)^2\le 0
+\end{aligned}
+$$
+
+所以 $(a+1)(b-1)$ 的最大值为 $0$。
+
+## Level 6
+
+求 $(a+1)(5b+2)$ 的最大值。
+
+$$
+\begin{aligned}
+  (a+1)(5b+2) &= 5ab+2a+5b+2 \\
+  &= \frac{5}{12}(4a\cdot 3b)+\frac{2}{15}(5a\cdot 3)+\frac{1}{4}(5b\cdot 4)+2 \\
+  &\le \frac{5}{12}\cdot\frac{16a^2+9b^2}{2}+\frac{2}{15}\cdot\frac{25a^2+9}{2}+\frac{1}{4}\cdot\frac{25b^2+16}{2}+2 \\
+  &= 5(a^2+b^2)+\frac{23}{5}=\frac{48}{5}
+\end{aligned}
+$$
+
+所以 $(a+1)(5b+2)$ 的最大值为 $\frac{48}{5}$。
+
+## Level 7
+
+求 $(a+1)(b+2)$ 的最大值。

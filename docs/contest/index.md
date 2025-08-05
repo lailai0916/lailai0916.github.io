@@ -11,15 +11,11 @@ sidebar_position: 0
 ![](/img/header/contest-light.svg#gh-light-mode-only)
 ![](/img/header/contest-dark.svg#gh-dark-mode-only)
 
-OI（Olympiad in Informatics，信息学奥林匹克竞赛）在中国起源于 1984 年，是五大高中学科竞赛之一。
-
-ICPC（International Collegiate Programming Contest，国际大学生程序设计竞赛）由 ICPC 基金会（ICPC Foundation）举办，是最具影响力的大学生计算机竞赛。
-
 ## 参考资料
 
 - [OI Wiki](https://oi-wiki.org)
+- [算法 - 维基百科](https://zh.wikipedia.org/zh-cn/算法)
 - [cppreference.com](https://zh.cppreference.com/w/首页)
-- [维基百科，自由的百科全书](https://zh.wikipedia.org/zh-cn/Wikipedia:首页)
 
 ## 比赛倒计时
 

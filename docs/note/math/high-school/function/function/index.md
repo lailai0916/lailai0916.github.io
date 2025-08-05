@@ -9,7 +9,7 @@
 
 ### 定义
 
-> 《人教版高中必修一》：一般地，设 $\mathbb{A}, \mathbb{B}$ 是非空的实数集，如果对于集合 $\mathbb{A}$ 中的任意一个数 $x$，按照某种确定的对应关系 $f$，在集合 $\mathbb{B}$ 中都有唯一确定的数 $y$ 和它对应，那么就称 $f:\mathbb{A} \to \mathbb{B}$ 为从集合 $\mathbb{A}$ 到集合 $\mathbb{B}$ 的一个函数（function），记作 $y=f(x),x \in \mathbb{A}$。
+> 《人教版高中数学·必修一》：一般地，设 $\mathbb{A}, \mathbb{B}$ 是非空的实数集，如果对于集合 $\mathbb{A}$ 中的任意一个数 $x$，按照某种确定的对应关系 $f$，在集合 $\mathbb{B}$ 中都有唯一确定的数 $y$ 和它对应，那么就称 $f:\mathbb{A} \to \mathbb{B}$ 为从集合 $\mathbb{A}$ 到集合 $\mathbb{B}$ 的一个函数（function），记作 $y=f(x),x \in \mathbb{A}$。
 
 ### 理解
 

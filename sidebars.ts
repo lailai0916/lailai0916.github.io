@@ -25,8 +25,10 @@ const sidebars: SidebarsConfig = {
         id: 'contest/contest/index',
       },
       items: [
-        'contest/contest/noi',
+        'contest/contest/events',
         'contest/contest/problems',
+        'contest/contest/outline',
+        'contest/contest/io',
         'contest/contest/tricks',
       ],
     },
@@ -39,9 +41,9 @@ const sidebars: SidebarsConfig = {
           '本章将会介绍编程相关的知识，包括 C++ 从入门到进阶教程和一些其它语言的简介。',
       },
       items: [
-        'contest/lang/io',
+        'contest/lang/helloworld',
         'contest/lang/op',
-        'contest/lang/ascii',
+        'contest/lang/ascii/index',
         'contest/lang/csl',
       ],
     },
