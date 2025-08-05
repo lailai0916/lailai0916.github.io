@@ -25,7 +25,7 @@ tags: [math]
 
 求 $ab$ 的最大值。
 
-根据 [均值不等式](../../docs/note/math/high-school/misc/inequality#均值不等式)：
+根据均值不等式：
 
 $$
 2ab\le a^2+b^2=1
@@ -37,7 +37,7 @@ $$
 
 求 $a+b$ 的最大值。
 
-根据 [均值不等式](../../docs/note/math/high-school/misc/inequality#均值不等式)：
+根据均值不等式：
 
 $$
 \frac{a+b}{2}\le \sqrt{\frac{a^2+b^2}{2}}=\sqrt{\frac{1}{2}}
