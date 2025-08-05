@@ -12,12 +12,6 @@ Through continuous practice and summarization, we transform knowledge into real 
 ![](/img/header/blog-light.svg#gh-light-mode-only)
 ![](/img/header/blog-dark.svg#gh-dark-mode-only)
 
-## 统计数据
-
-import BlogStats from '@site/src/components/BlogStats';
-
-<BlogStats />
-
 ## 博客订阅
 
 Stay updated with the latest blog posts:
