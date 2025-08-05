@@ -289,6 +289,7 @@ const sidebars: SidebarsConfig = {
         description: '这个板块主要介绍的是一些难以分类的算法及 OI 相关知识。',
       },
       items: [
+        'contest/misc/two-pointer',
         'contest/misc/cdq-divide',
         'contest/misc/kahan-summation',
         'contest/misc/odt',
