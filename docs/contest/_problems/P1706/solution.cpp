@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-const int N=15;
+const int N=20;
 int a[N];
 bool vis[N];
 void dfs(int s,int n)
@@ -17,13 +17,11 @@ void dfs(int s,int n)
 	}
 	for(int i=1;i<=n;i++)
 	{
-		if(!vis[i])
-		{
-			a[s]=i;
-			vis[i]=1;
-			dfs(s+1,n);
-			vis[i]=0;
-		}
+		if(vis[i])continue;
+		a[s]=i;
+		vis[i]=1;
+		dfs(s+1,n);
+		vis[i]=0;
 	}
 }
 int main()
