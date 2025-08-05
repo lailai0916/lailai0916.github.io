@@ -82,7 +82,7 @@ function SettingsContainer() {
             </div>
           </div>
           <div className={styles.cardBody}>
-            <item.component key={item.title} />
+            <item.component />
           </div>
         </div>
       ))}
