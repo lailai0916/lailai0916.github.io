@@ -4,10 +4,12 @@ It's something only Apple can do!
 
 ## MacBook Pro (M3 Max)
 
+笔记本电脑
+
 ### 配置
 
-- 16 英寸 | 银色
-- M3 Max | 36GB | 1TB
+- 16 英寸 / 银色
+- M3 Max / 36GB / 1TB
 - [技术规格](https://support.apple.com/zh-cn/117737)
 
 ### 配件
@@ -127,10 +129,12 @@ Notification Center
 
 ## iPad Pro (M1)
 
+平板电脑
+
 ### 配置
 
-- 11 英寸 | 深空灰色
-- M1 | 256GB
+- 11 英寸 / 深空灰色
+- M1 / 256GB
 - [技术规格](https://support.apple.com/zh-cn/111897)
 
 ### Home Screen
@@ -227,10 +231,12 @@ App Library
 
 ## iPhone 13
 
+手机
+
 ### 配置
 
 - 星光色
-- A15 | 256GB
+- A15 / 256GB
 - [技术规格](https://support.apple.com/zh-cn/111872)
 
 ### 配件
@@ -337,13 +343,17 @@ App Library
 
 ## Apple Watch S10
 
+手表
+
 ### 配置
 
-- 钛合金 | 石板色 | 46mm
+- 钛合金 / 石板色 / 46mm
 - 石板色米兰尼斯表带
 - [技术规格](https://support.apple.com/zh-cn/121202)
 
 ## AirPods Pro 2
+
+入耳式耳机
 
 ### 配置
 
@@ -354,6 +364,8 @@ App Library
 - Incase 挂绳
 
 ## AirPods Max
+
+头戴式耳机
 
 ### 配置
 
