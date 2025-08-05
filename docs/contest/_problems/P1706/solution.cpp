@@ -4,9 +4,9 @@ using namespace std;
 const int N=20;
 int a[N];
 bool vis[N];
-void dfs(int s,int n)
+void dfs(int u,int n)
 {
-	if(s>n)
+	if(u>n)
 	{
 		for(int i=1;i<=n;i++)
 		{
@@ -18,9 +18,9 @@ void dfs(int s,int n)
 	for(int i=1;i<=n;i++)
 	{
 		if(vis[i])continue;
-		a[s]=i;
+		a[u]=i;
 		vis[i]=1;
-		dfs(s+1,n);
+		dfs(u+1,n);
 		vis[i]=0;
 	}
 }
