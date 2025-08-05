@@ -80,9 +80,7 @@ website
 
 获取最新博客文章更新：
 
-- [RSS 订阅](https://lailai.one/blog/rss.xml)
-- [Atom 订阅](https://lailai.one/blog/atom.xml)
-- [JSON 订阅](https://lailai.one/blog/feed.json)
+[RSS 订阅](https://lailai.one/blog/rss.xml) | [Atom 订阅](https://lailai.one/blog/atom.xml) | [JSON 订阅](https://lailai.one/blog/feed.json)
 
 ## # 赞助支持
 
