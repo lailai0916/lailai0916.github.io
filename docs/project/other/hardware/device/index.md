@@ -6,21 +6,17 @@ It's something only Apple can do!
 
 ### 配置
 
-- 尺寸：16 英寸
-- 外观：银色
-- 芯片：M3 Max
-- 内存：36GB
-- 存储：1TB
-- 规格：[技术规格](https://support.apple.com/zh-cn/117737)
-- 价格：$3,499 / ¥27,999
+- 16 英寸 | 银色
+- M3 Max | 36GB | 1TB
+- [技术规格](https://support.apple.com/zh-cn/117737)
 
 ### 配件
 
-MacBook 比较贵重，又是铝合金外壳，所以我买了个 Apple Store 官网的 Incase **保护壳**。
-
 - Incase 硬质保护壳
 
-我之前试过贴 **屏幕膜** 和 **键盘膜**，但发现屏幕和键盘的间隔很小，贴了膜会让键盘印在屏幕上，所以最后还是放弃了。
+MacBook 是铝合金外壳容易变形，所以我买了 Incase 的 **保护壳**。
+
+我以前试过 **屏幕膜** 和 **键盘膜**，但屏幕和键盘的间隙很小，会让键盘印在屏幕上，最后还是放弃了。
 
 ### Desktop
 
@@ -133,12 +129,9 @@ Notification Center
 
 ### 配置
 
-- 尺寸：11 英寸
-- 外观：深空灰色
-- 容量：256GB
-- 芯片：M1
-- 规格：[技术规格](https://support.apple.com/zh-cn/111897)
-- 价格：$899 / ¥6,999
+- 11 英寸 | 深空灰色
+- M1 | 256GB
+- [技术规格](https://support.apple.com/zh-cn/111897)
 
 ### Home Screen
 
@@ -236,15 +229,11 @@ App Library
 
 ### 配置
 
-- 外观：星光色
-- 容量：256GB
-- 芯片：A15
-- 规格：[技术规格](https://support.apple.com/zh-cn/111872)
-- 价格：$899 / ¥6,799
+- 星光色
+- A15 | 256GB
+- [技术规格](https://support.apple.com/zh-cn/111872)
 
 ### 配件
-
-这个保护壳和屏幕膜都是 Apple Store 官网的：
 
 - MagSafe 透明保护壳
 - Belkin UltraGlass 屏幕保护膜
@@ -350,19 +339,15 @@ App Library
 
 ### 配置
 
-- 材质：钛合金
-- 外观：石板色
-- 尺寸：46mm
-- 表带：石板色米兰尼斯表带
-- 规格：[技术规格](https://support.apple.com/zh-cn/121202)
-- 价格：$799 / ¥6,599
+- 钛合金 | 石板色 | 46mm
+- 石板色米兰尼斯表带
+- [技术规格](https://support.apple.com/zh-cn/121202)
 
 ## AirPods Pro 2
 
 ### 配置
 
-- 价格：$249 / ¥1,899
-- 规格：[技术规格](https://support.apple.com/zh-cn/111851)
+- [技术规格](https://support.apple.com/zh-cn/111851)
 
 ### 配件
 
@@ -372,9 +357,12 @@ App Library
 
 ### 配置
 
-- 价格：$549 / ¥3,999
-- 规格：[技术规格](https://support.apple.com/zh-cn/121205)
+- [技术规格](https://support.apple.com/zh-cn/121205)
 
 ### 配件
 
 - 智能耳机套
+
+## Powerbeats Pro 2
+
+运动耳机
