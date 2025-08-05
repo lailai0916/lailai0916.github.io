@@ -1,5 +1,9 @@
 # CDQ 分治
 
+## 参考资料
+
+- [CDQ 分治 - OI Wiki](https://oi-wiki.org/misc/cdq-divide/)
+
 ## 实现
 
 ```cpp
