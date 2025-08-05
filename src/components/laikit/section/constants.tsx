@@ -1,13 +1,4 @@
 // 统一的排版样式常量（仅保留实际使用的）
-export const TYPOGRAPHY = {
-  // Countdown组件特有样式
-  MAIN_TITLE:
-    'font-bold text-4xl text-gray-900 dark:text-neutral-100 leading-tight mb-4',
-  SUCCESS_TEXT: 'text-2xl font-medium text-gray-700 dark:text-neutral-300',
-  CIRCLE_VALUE: 'absolute text-center font-medium text-[2.5rem] select-none',
-  CIRCLE_UNIT:
-    'absolute text-[0.75rem] font-light -translate-x-1/2 -translate-y-[12px] select-none whitespace-nowrap',
-} as const;
 
 // 通用的文本颜色样式
 export const TEXT_COLORS = {

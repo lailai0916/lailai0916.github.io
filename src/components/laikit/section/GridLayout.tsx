@@ -20,10 +20,6 @@ export default function GridLayout({
 
 // 预定义的常用网格配置
 export const GridConfigs = {
-  // 设备网格：2-3-3列
-  devices:
-    'grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3',
-
   // 社区网格：2-3-4-6-8列
   community:
     'grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-8',
