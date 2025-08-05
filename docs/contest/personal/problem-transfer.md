@@ -1,6 +1,6 @@
 # 题目搬运
 
-[洛谷](https://www.luogu.com.cn) 的 [咕值系统](https://help.luogu.com.cn/manual/luogu/account/guzhi) 中有一个指标是“社区贡献”，满分为 $100$ 分，其中 $70$ 分来自题解，$30$ 分来自搬题。
+[洛谷](https://www.luogu.com.cn) 中的 [咕值系统](https://help.luogu.com.cn/manual/luogu/account/guzhi) 有一个“社区贡献”指标，满分为 $100$ 分，其中 $70$ 分来自题解，$30$ 分来自搬题。
 
 每搬运一道主题库题目可获得 $1$ 分咕值，搬满 $30$ 题即可 **永久** 拿满搬题部分的 $30$ 分咕值。
 
@@ -13,7 +13,7 @@
 
 ## 题目测试点配置文件生成器
 
-以下程序可根据子任务分值与数量，自动生成标准格式的题目配置文件。
+以下程序可以根据时间限制、空间限制、子任务的分值和数量，自动生成标准格式的题目配置文件。
 
 ```cpp title="main.cpp"
 #include <bits/stdc++.h>
