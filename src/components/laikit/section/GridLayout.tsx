@@ -35,7 +35,4 @@ export const GridConfigs = {
 
   // 引言网格：1-2-3列
   quotes: 'grid-cols-1 md:grid-cols-2 lg:grid-cols-3',
-
-  // 统计网格：1-3列
-  stats: 'grid-cols-1 sm:grid-cols-3',
 } as const;
