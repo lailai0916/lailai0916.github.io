@@ -53,6 +53,7 @@ const sidebars: SidebarsConfig = {
         description: '本章介绍一些基础算法。',
       },
       items: [
+        'contest/basic/complexity',
         'contest/basic/binary',
         'contest/basic/divide-and-conquer',
         'contest/basic/sort',
