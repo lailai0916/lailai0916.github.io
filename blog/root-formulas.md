@@ -562,13 +562,33 @@ $$
 
 ### 推导过程
 
+#### 最高项归一
+
 方程两边同时除以 $a$，使最高次项系数化为 $1$：
 
 $$
 x^4+\frac{b}{a}x^3+\frac{c}{a}x^2+\frac{d}{a}x+\frac{e}{a}=0
 $$
 
-同二次、三次方程，令 $$
+#### 次高项归零
+
+同二次、三次方程，令：
+
+$$
+x\gets x-\frac{b}{4a}
+$$
+
+代入：
+
+$$
+\left(x-\frac{b}{4a}\right)^4+\frac{b}{a}\left(x-\frac{b}{4a}\right)^3+\frac{c}{a}\left(x-\frac{b}{4a}\right)^2+\frac{d}{a}\left(x-\frac{b}{4a}\right)+\frac{e}{a}=0
+$$
+
+展开：
+
+$$
+x^4+\left(\frac{8ac-3b^2}{8a^2}\right)x^2+\left(\frac{b^3-4abc+8a^2d}{8a^3}\right)x+\frac{-3b^4+16ab^2c-64a^2bd+256a^3e}{256a^4}=0
+$$
 
 ## 五次及以上方程
 
