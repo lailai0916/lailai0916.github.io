@@ -2,12 +2,13 @@
 using namespace std;
 
 const int N=500005;
-int f[N][20],dep[N];
+int a[N][25],dep[N];
 vector<int> G[N];
 bool vis[N];
 void dfs(int u,int fa)
 {
-	f[u][0]=fa;
+	a[u][0]=fa;
+	for(int i=1;i<=20;i++)a[u][i]=a[a[u][i-1]][i-1];
 	dep[u]=dep[fa]+1;
 	for(auto v:G[u])
 	{
@@ -17,30 +18,20 @@ void dfs(int u,int fa)
 int lca(int u,int v)
 {
 	if(dep[u]<dep[v])swap(u,v);
-	for(int i=22;i>=0;i--)
+	for(int i=20;i>=0;i--)
 	{
-		if(dep[f[u][i]]>=dep[v])u=f[u][i];
+		if(dep[a[u][i]]>=dep[v])u=a[u][i];
 	}
 	if(u==v)return u;
-	for(int i=22;i>=0;i--)
+	for(int i=20;i>=0;i--)
 	{
-		if(f[u][i]!=f[v][i])
+		if(a[u][i]!=a[v][i])
 		{
-			u=f[u][i];
-			v=f[v][i];
+			u=a[u][i];
+			v=a[v][i];
 		}
 	}
-	return f[u][0];
-}
-void init(int n)
-{
-	for(int j=1;(1<<j)<=n;j++)
-	{
-		for(int i=1;i<=n;i++)
-		{
-			f[i][j]=f[f[i][j-1]][j-1];
-		}
-	}
+	return a[u][0];
 }
 int main()
 {
@@ -56,7 +47,6 @@ int main()
 		G[v].push_back(u);
 	}
 	dfs(s,0);
-	init(n);
 	while(m--)
 	{
 		int u,v;
