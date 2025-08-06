@@ -1,6 +1,6 @@
 # lailai0916
 
-## 说明
+## 介绍
 
 `username/username` 是一个特殊的 GitHub 仓库，其 README.md 文件会显示在你的个人主页上。
 
