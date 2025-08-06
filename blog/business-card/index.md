@@ -5,7 +5,7 @@ authors: [lailai]
 tags: [personal]
 ---
 
-使用 VSCode 的 CodeSnap 插件制作了一套 JSON 风格的个人名片。
+使用 VSCode 的 [CodeSnap](https://marketplace.visualstudio.com/items?itemName=adpyke.codesnap) 插件制作了一套 JSON 风格的个人名片。
 
 <!-- truncate -->
 
