@@ -269,6 +269,14 @@ int main()
 }
 ```
 
+## STL
+
+- [`std::qsort`](https://en.cppreference.com/w/cpp/algorithm/qsort.html)
+- [`std::sort`](https://en.cppreference.com/w/cpp/algorithm/sort.html)
+- [`std::nth_element`](https://en.cppreference.com/w/cpp/algorithm/nth_element.html)
+- [`std::stable_sort`](https://en.cppreference.com/w/cpp/algorithm/stable_sort.html)
+- [`std::partial_sort`](https://en.cppreference.com/w/cpp/algorithm/partial_sort.html)
+
 ## 例题
 
 ### 洛谷 P1177 【模板】排序
