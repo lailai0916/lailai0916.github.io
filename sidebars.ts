@@ -295,15 +295,6 @@ const sidebars: SidebarsConfig = {
         'contest/misc/odt',
       ],
     },
-    {
-      type: 'category',
-      label: '专题',
-      link: {
-        type: 'generated-index',
-        description: '这个板块主要介绍的是一些特定问题的解法。',
-      },
-      items: ['contest/topic/rmq'],
-    },
   ],
   sidebar2: [
     'note/index',

@@ -151,14 +151,6 @@
     "message": "利用计算机建立数学模型解决几何问题。",
     "description": "The generated-index page description for category 计算几何 in sidebar sidebar1"
   },
-  "sidebar.sidebar1.category.专题": {
-    "message": "专题",
-    "description": "The label for category 专题 in sidebar sidebar1"
-  },
-  "sidebar.sidebar1.category.专题.link.generated-index.description": {
-    "message": "这个板块主要介绍的是一些特定问题的解法。",
-    "description": "The generated-index page description for category 专题 in sidebar sidebar1"
-  },
   "sidebar.sidebar2.category.数学": {
     "message": "数学",
     "description": "The label for category 数学 in sidebar sidebar2"
