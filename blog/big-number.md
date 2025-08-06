@@ -25,15 +25,15 @@ a\uparrow b=a^b
 $$
 
 $$
-a\uparrow^n b=a\underbrace{\uparrow\uparrow\cdots\uparrow}_{n\text{个}\uparrow}b
+a\uparrow^n b=a\underbrace{\uparrow\uparrow\cdots\uparrow}_{n\text{ times}}b
 $$
 
 $$
-a\uparrow^n b=\underbrace{a\uparrow^{n-1}a\uparrow^{n-1}\cdots\uparrow^{n-1}a}_{b\text{个}a}
+a\uparrow^n b=\underbrace{a\uparrow^{n-1}a\uparrow^{n-1}\cdots\uparrow^{n-1}a}_{b\text{ times}}
 $$
 
 $$
-a\uparrow\uparrow b=\underbrace{a^{a^{\cdots^a}}}_{b\text{个}a}
+a\uparrow\uparrow b=\underbrace{a^{a^{\cdots^a}}}_{b\text{ times}}
 $$
 
 $$
@@ -41,7 +41,7 @@ $$
 $$
 
 $$
-3\uparrow\uparrow\uparrow 3=3\uparrow\uparrow 3\uparrow\uparrow 3=3\uparrow\uparrow 3^{27}=\underbrace{3^{3^{\cdots^3}}}_{3^{27}\text{个}3}
+3\uparrow\uparrow\uparrow 3=3\uparrow\uparrow 3\uparrow\uparrow 3=3\uparrow\uparrow 3^{27}=\underbrace{3^{3^{\cdots^3}}}_{3^{27}\text{ times}}
 $$
 
 $$
@@ -76,7 +76,7 @@ G = \left.
   3\underbrace{\uparrow \uparrow \cdots \cdots \uparrow}3 \\
   3\uparrow \uparrow \uparrow \uparrow 3
 \end{matrix}
-\right \} 64\text{layers}
+\right \} 64\text{ layers}
 $$
 
 ## TREE 数列
