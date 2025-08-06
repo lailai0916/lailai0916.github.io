@@ -4,6 +4,10 @@
 
 - [快速傅里叶变换 - OI Wiki](https://oi-wiki.org/math/poly/fft/)
 
+## 思路
+
+首先进行正变换，然后逐位相乘，最后通过逆变换得到答案。
+
 ## 复数
 
 ```cpp
