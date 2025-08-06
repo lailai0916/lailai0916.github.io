@@ -22,7 +22,7 @@ $$
 ## 组合
 
 $$
-\mathrm C_n^m = \frac{\mathrm A_n^m}{m!} = \frac{n!}{m!(n - m)!}
+\mathrm C_n^m = \dbinom{n}{m}=\frac{\mathrm A_n^m}{m!} = \frac{n!}{m!(n - m)!}
 $$
 
 ## 实现
