@@ -1,5 +1,9 @@
 # 矩阵
 
+## 参考资料
+
+- [矩阵 - OI Wiki](https://oi-wiki.org/math/linear-algebra/matrix/)
+
 ## 实现
 
 ```cpp

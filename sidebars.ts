@@ -163,7 +163,10 @@ const sidebars: SidebarsConfig = {
             type: 'generated-index',
             description: '本章介绍线性代数。',
           },
-          items: ['contest/math/linear-algebra/matrix'],
+          items: [
+            'contest/math/linear-algebra/matrix',
+            'contest/math/linear-algebra/basis',
+          ],
         },
         {
           type: 'category',
