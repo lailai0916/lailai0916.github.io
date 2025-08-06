@@ -1,5 +1,9 @@
 # 快速傅立叶变换（FFT）
 
+## 参考资料
+
+- [快速傅里叶变换 - OI Wiki](https://oi-wiki.org/math/poly/fft/)
+
 ## 复数
 
 ```cpp

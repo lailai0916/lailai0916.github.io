@@ -143,7 +143,7 @@ const sidebars: SidebarsConfig = {
             type: 'generated-index',
             description: '本章介绍多项式与生成函数。',
           },
-          items: ['contest/math/poly/fft'],
+          items: ['contest/math/poly/fft', 'contest/math/poly/fwt'],
         },
         {
           type: 'category',

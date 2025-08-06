@@ -10,12 +10,15 @@ tags: [math]
 ## 参考资料
 
 - [大数 (数学) - 维基百科](<https://zh.wikipedia.org/zh-cn/大数_(数学)>)
+- [How Big is Graham's Number? (feat Ron Graham) - Youtube](https://www.youtube.com/watch?v=GuigptwlVHo)
+- [葛立恒数是什么？有多大？一个穷尽所有算力也无法计算出来的大数 - bilibili](https://www.bilibili.com/video/BV1Yt411z7dR)
+- [比葛立恒数还大的TREE(3)究竟有多大？教你用超运算表示大数 - bilibili](https://www.bilibili.com/video/BV1Kt411z7fB)
 
 ## 超运算
 
 ## 大数记号
 
-## 高德纳箭号表示法
+### 高德纳箭号表示法
 
 $$
 a\uparrow b=a^b
@@ -45,7 +48,10 @@ $$
 3\uparrow\uparrow\uparrow\uparrow 3=3\uparrow\uparrow\uparrow 3\uparrow\uparrow\uparrow 3
 $$
 
-## 康威链式箭号表示法
+### 康威链式箭号表示法
+
+## Ackermann 函数
+
 
 ## 葛立恒数
 
@@ -63,12 +69,14 @@ $$
 
 $$
 G = \left.
- \begin{matrix}
+\begin{matrix}
   3\underbrace{\uparrow \uparrow \cdots \cdots \cdots \cdots \cdots \uparrow}3 \\
-    3\underbrace{\uparrow \uparrow \cdots \cdots \cdots \cdots \uparrow}3 \\
-      \underbrace{\qquad \quad \vdots \qquad \quad} \\
-     3\underbrace{\uparrow \uparrow \cdots \cdots \uparrow}3 \\
-    3\uparrow \uparrow \uparrow \uparrow3
- \end{matrix}
-\right \} \text{64 layers}
+  3\underbrace{\uparrow \uparrow \cdots \cdots \cdots \cdots \uparrow}3 \\
+  \underbrace{\qquad \quad \vdots \qquad \quad} \\
+  3\underbrace{\uparrow \uparrow \cdots \cdots \uparrow}3 \\
+  3\uparrow \uparrow \uparrow \uparrow 3
+\end{matrix}
+\right \} 64\text{layers}
 $$
+
+## TREE 数列
