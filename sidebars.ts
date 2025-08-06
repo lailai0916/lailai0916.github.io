@@ -59,6 +59,7 @@ const sidebars: SidebarsConfig = {
         'contest/basic/enumerate',
         'contest/basic/simulate',
         'contest/basic/divide-and-conquer',
+        'contest/basic/greedy',
         'contest/basic/sort',
         'contest/basic/binary',
       ],

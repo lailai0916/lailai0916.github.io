@@ -243,7 +243,7 @@ int main()
 using namespace std;
 
 const int inf=0x3f3f3f3f;
-const int N=10005;
+const int N=100005;
 int a[N];
 int main()
 {
@@ -262,10 +262,7 @@ int main()
 	}
 	for(int i=mn;i<=mx;i++)
 	{
-		while(a[i]--)
-		{
-			cout<<i<<' ';
-		}
+		while(a[i]--)cout<<i<<' ';
 	}
 	return 0;
 }
