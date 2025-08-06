@@ -3,7 +3,7 @@
 给定长度为 $2^n$ 的两个序列 $A,B$，设：
 
 $$
-C_i=\sum_{j\oplus k = i}A_j \times B_k
+C_k=\sum_{i\oplus j=k}A_i\times B_j
 $$
 
 分别当 $\oplus$ 是 $\operatorname{or},\operatorname{and},\operatorname{xor}$ 时求出 $C$。
