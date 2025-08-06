@@ -28,3 +28,9 @@ $$
 $$
 C_k=\sum_{i\oplus j=k}A_i\times B_j
 $$
+
+## 例题
+
+### 洛谷 P4717 【模板】快速莫比乌斯/沃尔什变换 (FMT/FWT)
+
+<Problem id="P4717" />
