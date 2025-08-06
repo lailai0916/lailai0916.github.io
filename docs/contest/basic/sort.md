@@ -269,6 +269,10 @@ int main()
 }
 ```
 
+## Tim Sort
+
+- [TimSort 一个几乎没人知道的排序算法 | 时间复杂度最快达到了o(n) - bilibili](https://www.bilibili.com/video/BV1944y1E7as)
+
 ## STL
 
 - [`std::qsort`](https://en.cppreference.com/w/cpp/algorithm/qsort.html)
