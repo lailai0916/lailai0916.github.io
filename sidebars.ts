@@ -64,6 +64,7 @@ const sidebars: SidebarsConfig = {
         'contest/basic/prefix-sum',
         'contest/basic/binary',
         'contest/basic/binary-lifting',
+        'contest/basic/construction',
       ],
     },
     {
