@@ -2,7 +2,13 @@
 
 ## 参考资料
 
-- [Min-max 容斥 - 容斥原理 - OI Wiki](https://oi-wiki.org/math/combinatorics/inclusion-exclusion-principle/#min-max-容斥)
+- [容斥原理 - OI Wiki](https://oi-wiki.org/math/combinatorics/inclusion-exclusion-principle/)
+
+## 容斥原理
+
+$$
+\left|\bigcup_{i=1}^{n}S_i\right|=\sum_{m=1}^n(-1)^{m-1}\sum_{a_i<a_{i+1} }\left|\bigcap_{i=1}^mS_{a_i}\right|
+$$
 
 ## Min-max 容斥
 
