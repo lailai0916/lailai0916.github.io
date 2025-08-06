@@ -3,14 +3,14 @@ using namespace std;
 
 using ll=long long;
 const int N=100005;
-ll a[N][20];
+ll a[N][25];
 void init(int n)
 {
-	for(int k=1;k<=__lg(n);k++)
+	for(int j=1;j<=__lg(n);j++)
 	{
-		for(int i=1;i<=n-(1<<k)+1;i++)
+		for(int i=1;i<=n-(1<<j)+1;i++)
 		{
-			a[i][k]=max(a[i][k-1],a[i+(1<<(k-1))][k-1]);
+			a[i][j]=max(a[i][j-1],a[i+(1<<(j-1))][j-1]);
 		}
 	}
 }
