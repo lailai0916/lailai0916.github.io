@@ -17,17 +17,21 @@
 
 #### array
 
+- [`std::array`](https://en.cppreference.com/w/cpp/container/array.html)
+
 #### vector
 
+- [`std::vector`](https://en.cppreference.com/w/cpp/container/vector.html)
+
 #### deque
+
+- [`std::deque`](https://en.cppreference.com/w/cpp/container/deque.html)
 
 :::tip
 
 The “ueue” in “queue” is silent — but not in “deque.”
 
 :::
-
-- [std::deque - cppreference.com](https://zh.cppreference.com/w/cpp/container/deque)
 
 ##### 访问
 
@@ -51,33 +55,53 @@ The “ueue” in “queue” is silent — but not in “deque.”
 
 #### list
 
+- [`std::list`](https://en.cppreference.com/w/cpp/container/list.html)
+
 #### forward_list
+
+- [`std::forward_list`](https://en.cppreference.com/w/cpp/container/forward_list.html)
 
 ### 关联式容器
 
 #### set
 
+- [`std::set`](https://en.cppreference.com/w/cpp/container/set.html)
+
 #### multiset
+
+- [`std::multiset`](https://en.cppreference.com/w/cpp/container/multiset.html)
 
 #### map
 
+- [`std::map`](https://en.cppreference.com/w/cpp/container/map.html)
+
 #### multimap
+
+- [`std::multimap`](https://en.cppreference.com/w/cpp/container/multimap.html)
 
 ### 无序关联式容器
 
 #### unordered_set
 
+- [`std::unordered_set`](https://en.cppreference.com/w/cpp/container/unordered_set.html)
+
 #### unordered_multiset
+
+- [`std::unordered_multiset`](https://en.cppreference.com/w/cpp/container/unordered_multiset.html)
 
 #### unordered_map
 
+- [`std::unordered_map`](https://en.cppreference.com/w/cpp/container/unordered_map.html)
+
 #### unordered_multimap
+
+- [`std::unordered_multimap`](https://en.cppreference.com/w/cpp/container/unordered_multimap.html)
 
 ### 容器适配器
 
 #### stack
 
-- [std::stack - cppreference.com](https://zh.cppreference.com/w/cpp/container/stack)
+- [`std::stack`](https://en.cppreference.com/w/cpp/container/stack.html)
 
 ##### 访问
 
@@ -95,7 +119,7 @@ The “ueue” in “queue” is silent — but not in “deque.”
 
 #### queue
 
-- [std::queue - cppreference.com](https://zh.cppreference.com/w/cpp/container/queue)
+- [`std::queue`](https://en.cppreference.com/w/cpp/container/queue.html)
 
 ##### 访问
 
@@ -114,14 +138,35 @@ The “ueue” in “queue” is silent — but not in “deque.”
 
 #### priority_queue
 
+- [`std::priority_queue`](https://en.cppreference.com/w/cpp/container/priority_queue.html)
+
 ## 其他容器（非 STL 容器）
 
 ### bitset
 
+- [`std::bitset`](https://en.cppreference.com/w/cpp/utility/bitset.html)
+
 ### string
+
+- [`std::string`](https://en.cppreference.com/w/cpp/utility/string.html)
 
 ### pair
 
+- [`std::pair`](https://en.cppreference.com/w/cpp/utility/pair.html)
+
 ### tuple
 
+- [`std::tuple`](https://en.cppreference.com/w/cpp/utility/tuple.html)
+
 ## STL 算法
+
+- `std::find`
+- `std::reverse`
+- `std::unique`
+- `std::shuffle`
+- `std::sort`
+- `std::binary_search`
+- `std::lower_bound`
+- `std::upper_bound`
+- `std::next_permutation`
+- `std::prev_permutation`
