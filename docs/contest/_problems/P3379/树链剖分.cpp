@@ -45,8 +45,8 @@ int main()
 {
 	ios::sync_with_stdio(false);
 	cin.tie(nullptr);
-	int n,m,r;
-	cin>>n>>m>>r;
+	int n,m,s;
+	cin>>n>>m>>s;
 	for(int i=1;i<n;i++)
 	{
 		int u,v;
@@ -54,13 +54,13 @@ int main()
 		G[u].push_back(v);
 		G[v].push_back(u);
 	}
-	dfs1(r);
-	dfs2(r,r);
+	dfs1(s);
+	dfs2(s,s);
 	while(m--)
 	{
-		int x,y;
-		cin>>x>>y;
-		cout<<lca(x,y)<<'\n';
+		int u,v;
+		cin>>u>>v;
+		cout<<lca(u,v)<<'\n';
 	}
 	return 0;
 }
