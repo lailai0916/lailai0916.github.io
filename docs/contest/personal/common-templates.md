@@ -32,18 +32,18 @@ int main()
 }
 ```
 
-## 文件读写
+## 文件操作
 
 ```cpp
 freopen("problem.in","r",stdin);
 freopen("problem.out","w",stdout);
 ```
 
-## cout 格式化
+## 读写优化
 
 ```cpp
-cout<<fixed<<setprecision(6)<<x<<'\n';
-cout<<setw(6)<<x<<'\n';
+ios::sync_with_stdio(false);
+cin.tie(nullptr);
 ```
 
 ## 快速读入
@@ -67,6 +67,13 @@ void write(int x)
 	if(x>9)write(x/10);
 	putchar(x%10+48);
 }
+```
+
+## cout 格式化
+
+```cpp
+cout<<fixed<<setprecision(6)<<x<<'\n';
+cout<<setw(6)<<x<<'\n';
 ```
 
 ## 刷新缓冲区
@@ -111,7 +118,7 @@ ll Pow(ll x,ll y)
 }
 ```
 
-## 排列组合
+## 组合数学
 
 ```cpp
 ll inv[N],fac[N],jv[N];
@@ -124,5 +131,10 @@ void init()
 		fac[i]=fac[i-1]*i%mod;
 		jv[i]=jv[i-1]*inv[i]%mod;
 	}
+}
+ll C(ll n,ll m)
+{
+	if(n<m||m<0)return 0;
+	return fac[n]*jv[n-m]%mod*jv[m]%mod;
 }
 ```
