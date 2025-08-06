@@ -9,6 +9,7 @@ tags: [math]
 
 ## 参考资料
 
+- [多项式 - 维基百科](https://zh.wikipedia.org/zh-cn/多項式)
 - [500 years of NOT teaching THE CUBIC FORMULA. What is it they think you can't handle? - YouTube](https://www.youtube.com/watch?v=N-KXStupwsc)
 
 ## 引入
