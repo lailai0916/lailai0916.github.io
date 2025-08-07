@@ -5,11 +5,11 @@ using Comp=complex<double>;
 const double pi=acos(-1.0);
 const int N=1<<20;
 Comp a[N<<1],b[N<<1],t[N<<1];
-void fft(Comp *f,int lim,int type)
+void fft(Comp *f,int n,int type)
 {
-	if(lim==1)return;
-	int mid=lim>>1;
-	for(int i=0;i<lim;i++)t[i]=f[i];
+	if(n==1)return;
+	int mid=n>>1;
+	for(int i=0;i<n;i++)t[i]=f[i];
 	for(int i=0;i<mid;i++)
 	{
 		f[i]=t[i<<1];
@@ -18,14 +18,14 @@ void fft(Comp *f,int lim,int type)
 	Comp *g=f,*h=f+mid;
 	fft(g,mid,type);
 	fft(h,mid,type);
-	Comp cur(1,0),step(cos(pi*2/lim),sin(pi*2/lim)*type);
+	Comp cur(1,0),step(cos(pi*2/n),sin(pi*2/n)*type);
 	for(int i=0;i<mid;i++)
 	{
 		t[i]=g[i]+cur*h[i];
 		t[i+mid]=g[i]-cur*h[i];
 		cur*=step;
 	}
-	for(int i=0;i<lim;i++)f[i]=t[i];
+	for(int i=0;i<n;i++)f[i]=t[i];
 }
 int main()
 {
