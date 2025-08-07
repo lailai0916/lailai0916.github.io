@@ -10,8 +10,8 @@ void fft(Comp *f,int n,int type)
 {
 	if(n==1)return;
 	int mid=n>>1;
-	for(int i=0;i<n;i++)t[i]=f[i];
 	Comp *g=f,*h=f+mid;
+	for(int i=0;i<n;i++)t[i]=f[i];
 	for(int i=0;i<mid;i++)
 	{
 		g[i]=t[i<<1];
