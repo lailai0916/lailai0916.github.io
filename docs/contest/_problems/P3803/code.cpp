@@ -10,12 +10,12 @@ void fft(Comp *f,int n,int type)
 	if(n==1)return;
 	int mid=n>>1;
 	for(int i=0;i<n;i++)t[i]=f[i];
+	Comp *g=f,*h=f+mid;
 	for(int i=0;i<mid;i++)
 	{
-		f[i]=t[i<<1];
-		f[i+mid]=t[i<<1|1];
+		g[i]=t[i<<1];
+		h[i]=t[i<<1|1];
 	}
-	Comp *g=f,*h=f+mid;
 	fft(g,mid,type);
 	fft(h,mid,type);
 	Comp cur(1,0),step(cos(pi*2/n),sin(pi*2/n)*type);
