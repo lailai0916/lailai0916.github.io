@@ -135,34 +135,34 @@ int main()
     </tr>
   </thead>
   <tbody>
-    <tr><td>1998</td><td>X</td><td>/</td><td>/</td><td>/</td><td>/</td><td>/</td></tr>
-    <tr><td>1999</td><td>X</td><td>/</td><td>/</td><td>/</td><td>/</td><td>/</td></tr>
-    <tr><td>2000</td><td>X</td><td>/</td><td>/</td><td>/</td><td>/</td><td>/</td></tr>
-    <tr><td>2001</td><td>X</td><td>/</td><td>/</td><td>/</td><td>/</td><td>/</td></tr>
-    <tr><td>2002</td><td>X</td><td>/</td><td>/</td><td>/</td><td>/</td><td>/</td></tr>
-    <tr><td>2003</td><td>X</td><td>/</td><td>/</td><td>/</td><td>/</td><td>/</td></tr>
-    <tr><td>2004</td><td>X</td><td>/</td><td>/</td><td>/</td><td>/</td><td>/</td></tr>
-    <tr><td>2005</td><td>X</td><td>X</td><td>/</td><td>/</td><td>/</td><td>/</td></tr>
-    <tr><td>2006</td><td>X</td><td>X</td><td>/</td><td>/</td><td>/</td><td>/</td></tr>
-    <tr><td>2007</td><td>X</td><td>/</td><td>/</td><td>/</td><td>/</td><td>/</td></tr>
-    <tr><td>2008</td><td>X</td><td>/</td><td>/</td><td>/</td><td>/</td><td>/</td></tr>
-    <tr><td>2009</td><td>X</td><td>/</td><td>/</td><td>/</td><td>/</td><td>/</td></tr>
-    <tr><td>2010</td><td>X</td><td>/</td><td>/</td><td>/</td><td>/</td><td>/</td></tr>
-    <tr><td>2011</td><td>X</td><td>/</td><td>/</td><td>/</td><td>/</td><td>/</td></tr>
-    <tr><td>2012</td><td>X</td><td>/</td><td>/</td><td>/</td><td>/</td><td>/</td></tr>
-    <tr><td>2013</td><td>X</td><td>/</td><td>/</td><td>/</td><td>/</td><td>/</td></tr>
-    <tr><td>2014</td><td>X</td><td>/</td><td>/</td><td>/</td><td>/</td><td>/</td></tr>
-    <tr><td>2015</td><td>X</td><td>/</td><td>/</td><td>/</td><td>/</td><td>/</td></tr>
-    <tr><td>2016</td><td>X</td><td>/</td><td>/</td><td>/</td><td>/</td><td>/</td></tr>
-    <tr><td>2017</td><td>X</td><td>/</td><td>/</td><td>/</td><td>/</td><td>/</td></tr>
-    <tr><td>2018</td><td>[Shunpower](https://www.luogu.com.cn/user/399150)</td><td>/</td><td>[ToastBread](https://www.luogu.com.cn/user/545809)</td><td>/</td><td>X</td><td>X</td></tr>
-    <tr><td>2019</td><td>[lailai0916](https://www.luogu.com.cn/user/455474)</td><td>/</td><td>[ToastBread](https://www.luogu.com.cn/user/545809)</td><td>/</td><td>/</td><td>/</td></tr>
-    <tr><td>2020</td><td>/</td><td>[lailai0916](https://www.luogu.com.cn/user/455474)</td><td>[lailai0916](https://www.luogu.com.cn/user/455474)</td><td>[lailai0916](https://www.luogu.com.cn/user/455474)</td><td>/</td><td>/</td></tr>
-    <tr><td>2021</td><td>/</td><td>[Mortidesperatslav](https://www.luogu.com.cn/user/482610)</td><td>/</td><td>[lailai0916](https://www.luogu.com.cn/user/455474)</td><td>/</td><td>/</td></tr>
-    <tr><td>2022</td><td>/</td><td>[lailai0916](https://www.luogu.com.cn/user/455474)</td><td>/</td><td>[Eason_cyx](https://www.luogu.com.cn/user/741244)</td><td>/</td><td>/</td></tr>
-    <tr><td>2023</td><td>/</td><td>[Eason_cyx](https://www.luogu.com.cn/user/741244)</td><td>/</td><td>[StayAlone](https://www.luogu.com.cn/user/409236)</td><td>/</td><td>/</td></tr>
-    <tr><td>2024</td><td>/</td><td>/</td><td>[Eason_cyx](https://www.luogu.com.cn/user/741244)</td><td>[lailai0916](https://www.luogu.com.cn/user/455474)</td><td>/</td><td>/</td></tr>
-    <tr><td>2025</td><td>/</td><td>/</td><td>[Starrykiller](https://www.luogu.com.cn/user/235125)</td><td>[Milmon](https://www.luogu.com.cn/user/234641)</td><td>/</td><td>/</td></tr>
+    <tr><td>1998</td><td>X</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+    <tr><td>1999</td><td>X</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+    <tr><td>2000</td><td>X</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+    <tr><td>2001</td><td>X</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+    <tr><td>2002</td><td>X</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+    <tr><td>2003</td><td>X</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+    <tr><td>2004</td><td>X</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+    <tr><td>2005</td><td>X</td><td>X</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+    <tr><td>2006</td><td>X</td><td>X</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+    <tr><td>2007</td><td>X</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+    <tr><td>2008</td><td>X</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+    <tr><td>2009</td><td>X</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+    <tr><td>2010</td><td>X</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+    <tr><td>2011</td><td>X</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+    <tr><td>2012</td><td>X</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+    <tr><td>2013</td><td>X</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+    <tr><td>2014</td><td>X</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+    <tr><td>2015</td><td>X</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+    <tr><td>2016</td><td>X</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+    <tr><td>2017</td><td>X</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+    <tr><td>2018</td><td>[Shunpower](https://www.luogu.com.cn/user/399150)</td><td>-</td><td>[ToastBread](https://www.luogu.com.cn/user/545809)</td><td>-</td><td>X</td><td>X</td></tr>
+    <tr><td>2019</td><td>[lailai0916](https://www.luogu.com.cn/user/455474)</td><td>-</td><td>[ToastBread](https://www.luogu.com.cn/user/545809)</td><td>-</td><td>-</td><td>-</td></tr>
+    <tr><td>2020</td><td>-</td><td>[lailai0916](https://www.luogu.com.cn/user/455474)</td><td>[lailai0916](https://www.luogu.com.cn/user/455474)</td><td>[lailai0916](https://www.luogu.com.cn/user/455474)</td><td>-</td><td>-</td></tr>
+    <tr><td>2021</td><td>-</td><td>[Mortidesperatslav](https://www.luogu.com.cn/user/482610)</td><td>-</td><td>[lailai0916](https://www.luogu.com.cn/user/455474)</td><td>-</td><td>-</td></tr>
+    <tr><td>2022</td><td>-</td><td>[lailai0916](https://www.luogu.com.cn/user/455474)</td><td>-</td><td>[Eason_cyx](https://www.luogu.com.cn/user/741244)</td><td>-</td><td>-</td></tr>
+    <tr><td>2023</td><td>-</td><td>[Eason_cyx](https://www.luogu.com.cn/user/741244)</td><td>-</td><td>[StayAlone](https://www.luogu.com.cn/user/409236)</td><td>-</td><td>-</td></tr>
+    <tr><td>2024</td><td>-</td><td>-</td><td>[Eason_cyx](https://www.luogu.com.cn/user/741244)</td><td>[lailai0916](https://www.luogu.com.cn/user/455474)</td><td>-</td><td>-</td></tr>
+    <tr><td>2025</td><td>-</td><td>-</td><td>[Starrykiller](https://www.luogu.com.cn/user/235125)</td><td>[Milmon](https://www.luogu.com.cn/user/234641)</td><td>-</td><td>-</td></tr>
   </tbody>
 </table>
 
