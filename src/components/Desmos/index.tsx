@@ -1,12 +1,12 @@
 import React from 'react';
 
-const Desmos = ({
+export default function Desmos({
   url,
   type = 'calculator',
 }: {
   url: string;
   type?: string;
-}) => {
+}) {
   return (
     <iframe
       src={`https://www.desmos.com/${type}/${url}?embed`}
@@ -18,6 +18,4 @@ const Desmos = ({
       }}
     />
   );
-};
-
-export default Desmos;
+}
