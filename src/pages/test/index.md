@@ -2,10 +2,10 @@
 title: Test
 ---
 
-<div align="center">
-  <h1>Test</h1>
+<section className="margin-top--lg margin-bottom--lg text--center">
+  <Heading as="h1">Test</Heading>
   <p>Tests for new website features</p>
-</div>
+</section>
 
 ## 注释
 
