@@ -20,7 +20,7 @@ void dfs(int u)
 
 ## 换根 DP
 
-- 详见 [树的重心](../graph/tree/centroid)
+详见 [树的重心](../graph/tree/centroid)
 
 ## 例题
 

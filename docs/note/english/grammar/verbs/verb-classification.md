@@ -45,11 +45,11 @@ $$
 
 ### 连系动词
 
-- 详见 [系动词](linking-verbs)
+详见 [系动词](linking-verbs)
 
 ## 可辅助谓语动词
 
-- 详见 [助动词 & 情态动词](auxiliary-modal-verbs)
+详见 [助动词 & 情态动词](auxiliary-modal-verbs)
 
 ### 助动词
 
@@ -59,7 +59,7 @@ $$
 
 ### 非谓语动词
 
-- 详见 [非谓语动词](non-finite-verbs)
+详见 [非谓语动词](non-finite-verbs)
 
 不定式、过去分词、现在分词、动名词
 

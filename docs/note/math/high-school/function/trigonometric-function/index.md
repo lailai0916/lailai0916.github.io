@@ -61,7 +61,7 @@ $A,B$ 两点之间的距离一般用 $|AB|$ 表示。
 
 ### 三角形的约定
 
-- 详见 [解三角形 - 三角形的约定](../geometry/triangle-solving#三角形的约定)
+详见 [解三角形 - 三角形的约定](../geometry/triangle-solving#三角形的约定)
 
 ## 定义
 
