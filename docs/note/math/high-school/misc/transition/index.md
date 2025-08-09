@@ -149,6 +149,9 @@ $$
 
 :::note[示例]
 
+<Tabs>
+<TabItem value="Example 1">
+
 分解因式 $x^2-x-6$。
 
 $$
@@ -161,11 +164,78 @@ $$
 \end{array}
 $$
 
-所以：
+所以 $x^2-x-6=(x+2)(x-3)$。
+
+</TabItem>
+<TabItem value="Example 2">
+
+分解因式 $2x^2+9x-5$。
 
 $$
-x^2-x-6=(x+2)(x-3)
+\begin{array}{c}
+1 \\ 2
+\end{array}
+\times
+\begin{array}{c}
+5 \\ -1
+\end{array}
 $$
+
+所以 $2x^2+9x-5=(x+5)(2x-1)$。
+
+</TabItem>
+<TabItem value="Example 3">
+
+分解因式 $6x^2+7x-3$。
+
+$$
+\begin{array}{c}
+2 \\ 3
+\end{array}
+\times
+\begin{array}{c}
+3 \\ -1
+\end{array}
+$$
+
+所以 $6x^2+7x-3=(2x+3)(3x-1)$。
+
+</TabItem>
+<TabItem value="Example 4">
+
+分解因式 $x^2+(3-a)-3a$。
+
+$$
+\begin{array}{c}
+1 \\ 1
+\end{array}
+\times
+\begin{array}{c}
+3 \\ -a
+\end{array}
+$$
+
+所以 $x^2+(3-a)-3a=(x+3)(x-a)$。
+
+</TabItem>
+<TabItem value="Example 5">
+
+分解因式 $x^2-2y^2+xy+x+5y-2$。
+
+$$
+\begin{array}{c}
+1 \\ 1
+\end{array}
+\times
+\begin{array}{c}
+2y-1 \\ 2-y
+\end{array}
+$$
+
+所以 $x^2-2y^2+xy+x+5y-2=(x+2y-1)(x+2-y)$。
+
+</TabItem>
+</Tabs>
 
 :::
 
