@@ -75,13 +75,13 @@ $$
 \sqrt{a\pm\sqrt{b}}
 $$
 
-我们要找到一组正整数 $x$ 和 $y$，使得：
+找到一组正整数 $x$ 和 $y$，使得：
 
 $$
 x+y=a,xy=\frac{b}{4}
 $$
 
-就可以化简：
+这样就可以化简：
 
 $$
 \sqrt{a\pm\sqrt{b}}=\sqrt{x}\pm\sqrt{y}
