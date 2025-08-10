@@ -1,7 +1,7 @@
 # 《微积分》
 
 $$
-\boxed{\frac{\displaystyle\frac{
+\frac{\displaystyle\frac{
 \displaystyle\int_{0}^{+\infty} e^{-s} s^{5} \mathrm{d} s
 }{2}+\frac{
 \displaystyle\int_{-\infty}^{+\infty} e^{-\frac{t^2}{2}} \mathrm{d} t
@@ -16,6 +16,6 @@ $$
 }{
 \displaystyle\lim _{t \to 0^+} \int_{-2020}^{2020} \frac{t \cos x}{x^2+t^2} \mathrm{d} x
 }\right)}{
-\displaystyle\lim _{n \to \infty}\left(\left(\left(\int_{0}^{1} \frac{x^{n-1}}{1+x} \mathrm{d} x\right) n-\frac{1}{2}\right)\cdot\frac{n}{2}\right)
-}=520}
+\displaystyle\lim _{n \to \infty}\left(n\int_{0}^{1} \frac{x^{n-1}}{1+x} \mathrm{d} x-\frac{1}{2}\right)\cdot\frac{n}{2}
+}=520
 $$
