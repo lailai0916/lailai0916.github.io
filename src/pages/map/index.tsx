@@ -19,7 +19,7 @@ function MapHeader() {
       <PageTitle description={DESCRIPTION}>
         网站<b>地图</b>
       </PageTitle>
-      <DataCard value={1} label="个页面" icon="lucide:map" />
+      <DataCard value={8} label="个页面" icon="lucide:list" />
     </PageHeader>
   );
 }
