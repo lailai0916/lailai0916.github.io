@@ -130,9 +130,23 @@ $$
 
 ### 函数图像
 
-红色为 $\sin$，蓝色为 $\cos$，绿色为 $\tan$，橙色为 $\cot$，紫色为 $\sec$，黑色为 $\csc$。[link](https://www.desmos.com/calculator/zhow2jcijw)
+红色为 $\sin$，蓝色为 $\cos$，绿色为 $\tan$，橙色为 $\cot$，紫色为 $\sec$，黑色为 $\csc$。
 
 <Desmos url="zhow2jcijw" />
+
+正弦函数的图象叫做 **正弦曲线**：
+
+$$
+y=\sin x
+$$
+
+余弦函数同理。更一般的形式如下：
+
+$$
+y=A\cos{(\omega x+\varphi)}
+$$
+
+<Desmos url="qckplvwpkk" />
 
 ### 常用值速查表
 
