@@ -2,7 +2,7 @@
 
 等以后有固定的桌子再考虑吧……  
 
-先考虑用 Rhinoceros 建模。
+先考虑用 SketchUp 或 Rhinoceros 建模。
 
 ## 参考资料
 
