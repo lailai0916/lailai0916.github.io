@@ -5,7 +5,7 @@ It's something only Apple can do!
 ## MacBook Pro (M3 Max)
 
 - 类型：笔记本电脑
-- 配置：16 英寸 / 银色 / M3 Max / 36GB / 1TB
+- 配置：16 英寸 / 银色 / M3 Max / 30+40 / 36GB / 1TB
 - 配件：Incase 硬质保护壳
 - 技术规格：[MacBook Pro - Apple 支持](https://support.apple.com/zh-cn/117737)
 
@@ -334,17 +334,19 @@ App Library
 ## AirPods Pro 2
 
 - 类型：入耳式耳机
+- 配置：USB-C / H2 / U1
 - 配件：Incase 挂绳
 - 技术规格：[AirPods Pro 2 - Apple 支持](https://support.apple.com/zh-cn/111851)
 
 ## AirPods Max
 
 - 类型：头戴式耳机
+- 配置：USB-C / H1
 - 配件：智能耳机套
 - 技术规格：[AirPods Max - Apple 支持](https://support.apple.com/zh-cn/121205)
 
 ## Powerbeats Pro 2
 
 - 类型：运动耳机
-- 配置：极速黑
+- 配置：极速黑 / H2
 - 技术规格：[Powerbeats Pro 2 - Beats](https://www.beatsbydre.com/earbuds/powerbeats-pro-2)
