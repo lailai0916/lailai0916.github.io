@@ -4,17 +4,10 @@ It's something only Apple can do!
 
 ## MacBook Pro (M3 Max)
 
-笔记本电脑
-
-### 配置
-
-- 16 英寸 / 银色
-- M3 Max / 36GB / 1TB
-- [技术规格](https://support.apple.com/zh-cn/117737)
-
-### 配件
-
-- Incase 硬质保护壳
+- 类型：笔记本电脑
+- 配置：16 英寸 / 银色 / M3 Max / 36GB / 1TB
+- 配件：Incase 硬质保护壳
+- 技术规格：[MacBook Pro - Apple 支持](https://support.apple.com/zh-cn/117737)
 
 MacBook 是铝合金外壳容易变形，所以我买了 Incase 的 **保护壳**。
 
@@ -129,13 +122,11 @@ Notification Center
 
 ## iPad Pro (M1)
 
-平板电脑
+- 类型：平板电脑
+- 配置：11 英寸 / 深空灰色 / M1 / 256GB
+- 技术支持：[iPad Pro - Apple 支持](https://support.apple.com/zh-cn/111897)
 
-### 配置
-
-- 11 英寸 / 深空灰色
-- M1 / 256GB
-- [技术规格](https://support.apple.com/zh-cn/111897)
+我想买 Apple Pencil 和 Magic Keyboard，但与新款 iPad 不兼容，感觉有点不划算，打算以后再买。
 
 ### Home Screen
 
@@ -231,18 +222,10 @@ App Library
 
 ## iPhone 13
 
-手机
-
-### 配置
-
-- 星光色
-- A15 / 256GB
-- [技术规格](https://support.apple.com/zh-cn/111872)
-
-### 配件
-
-- MagSafe 透明保护壳
-- Belkin UltraGlass 屏幕保护膜
+- 类型：智能手机
+- 配置：星光色 / A15 / 256GB
+- 配件：MagSafe 透明保护壳 / Belkin UltraGlass 屏幕保护膜
+- 技术规格：[iPhone 13 - Apple 支持](https://support.apple.com/zh-cn/111872)
 
 ### Home Screen
 
@@ -343,38 +326,25 @@ App Library
 
 ## Apple Watch S10
 
-手表
-
-### 配置
-
-- 钛合金 / 石板色 / 46mm
-- 石板色米兰尼斯表带
-- [技术规格](https://support.apple.com/zh-cn/121202)
+- 类型：智能手表
+- 配置：钛合金 / 石板色 / 46mm
+- 配件：石板色米兰尼斯表带
+- 技术规格：[Apple Watch Series 10 - Apple 支持](https://support.apple.com/zh-cn/121202)
 
 ## AirPods Pro 2
 
-入耳式耳机
-
-### 配置
-
-- [技术规格](https://support.apple.com/zh-cn/111851)
-
-### 配件
-
-- Incase 挂绳
+- 类型：入耳式耳机
+- 配件：Incase 挂绳
+- 技术规格：[AirPods Pro 2 - Apple 支持](https://support.apple.com/zh-cn/111851)
 
 ## AirPods Max
 
-头戴式耳机
-
-### 配置
-
-- [技术规格](https://support.apple.com/zh-cn/121205)
-
-### 配件
-
-- 智能耳机套
+- 类型：头戴式耳机
+- 配件：智能耳机套
+- 技术规格：[AirPods Max - Apple 支持](https://support.apple.com/zh-cn/121205)
 
 ## Powerbeats Pro 2
 
-运动耳机
+- 类型：运动耳机
+- 配置：极速黑
+- 技术规格：[Powerbeats Pro 2 - Beats](https://www.beatsbydre.com/earbuds/powerbeats-pro-2)
