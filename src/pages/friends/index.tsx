@@ -66,7 +66,7 @@ function FriendsFooter() {
   return (
     <PageFooter>
       <IconText icon="lucide:heart">
-        感谢每位朋友的陪伴和支持，也欢迎大家添加友链。
+        感谢每位朋友的陪伴和支持，也欢迎大家联系我添加友链。
       </IconText>
     </PageFooter>
   );
