@@ -7,12 +7,6 @@ export type FriendItem = {
 
 export const FRIEND_LIST: FriendItem[] = [
   {
-    title: 'lailai',
-    description: 'Blogger',
-    href: 'https://lailai.one',
-    avatar: 'img/avatar/lailai.png',
-  },
-  {
     title: 'sintle',
     description:
       '人类最古老而强大的情感是恐惧，而最古老而强烈的恐惧来源于未知。',
