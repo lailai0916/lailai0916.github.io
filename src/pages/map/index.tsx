@@ -86,15 +86,6 @@ function MapContainer() {
         </ul>
       </div>
       <div>
-        <h3>语言</h3>
-        <ul>
-          <li>
-            <Link to="/map">English</Link>
-          </li>
-          <li>
-            <Link to="/zh-Hans/map">中文</Link>
-          </li>
-        </ul>
         <h3>搜索</h3>
         <ul>
           <li>
