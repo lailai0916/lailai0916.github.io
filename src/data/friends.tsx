@@ -19,16 +19,16 @@ export const FRIEND_LIST: FriendItem[] = [
     avatar: 'img/avatar/YunLuo.png',
   },
   {
-    title: 'AKorz',
-    description: 'face the sin, save the e.g.o.',
-    href: 'https://www.luogu.com.cn/user/716602',
-    avatar: 'img/avatar/AKorz.png',
-  },
-  {
     title: 'Mirekintoc',
     description: 'Zate feíam sucur ilém',
     href: 'https://vochant.github.io',
     avatar: 'img/avatar/Mirekintoc.png',
+  },
+  {
+    title: 'AKorz',
+    description: 'face the sin, save the e.g.o.',
+    href: 'https://www.luogu.com.cn/user/716602',
+    avatar: 'img/avatar/AKorz.png',
   },
   {
     title: 'CEFqwq',
