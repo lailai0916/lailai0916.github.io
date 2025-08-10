@@ -19,3 +19,7 @@ $$
 \displaystyle\lim _{n \to \infty}\left(n\int_{0}^{1} \frac{x^{n-1}}{1+x} \mathrm{d} x-\frac{1}{2}\right)\cdot\frac{n}{2}
 }=520
 $$
+
+$$
+\left(\frac{\sqrt[x]{2}+\sqrt[x]{53}+\sqrt[x]{49069}}{3}\right)^{3x}=5201314
+$$

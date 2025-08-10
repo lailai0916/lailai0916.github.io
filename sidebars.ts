@@ -542,6 +542,15 @@ const sidebars: SidebarsConfig = {
         },
       ],
     },
+    {
+      type: 'category',
+      label: '推荐',
+      link: {
+        type: 'doc',
+        id: 'note/recommend/index',
+      },
+      items: ['note/recommend/bilibili/index'],
+    },
   ],
   sidebar3: [
     'project/index',
