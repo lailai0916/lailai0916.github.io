@@ -43,16 +43,16 @@ export const FRIEND_LIST: FriendItem[] = [
     avatar: 'img/avatar/LaDeX.png',
   },
   {
-    title: 'tiko_tao',
-    description: 'Ciallo～(∠・ω< )⌒★',
-    href: 'https://www.luogu.com.cn/user/372404',
-    avatar: 'img/avatar/tiko_tao.png',
-  },
-  {
     title: 'Dream__maker',
     description: '一息尚存，方能涅槃而生',
     href: 'https://www.luogu.com.cn/user/718017',
     avatar: 'img/avatar/Dream__maker.png',
+  },
+  {
+    title: 'tiko_tao',
+    description: 'Ciallo～(∠・ω< )⌒★',
+    href: 'https://www.luogu.com.cn/user/372404',
+    avatar: 'img/avatar/tiko_tao.png',
   },
   {
     title: '0513DTY',
