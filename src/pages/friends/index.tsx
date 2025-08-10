@@ -5,7 +5,7 @@ import {
   PageTitle,
   PageMain,
   PageHeader,
-  PageFooter
+  PageFooter,
 } from '@site/src/components/laikit/page';
 import DataCard from '@site/src/components/laikit/widget/DataCard';
 import IconText from '@site/src/components/laikit/widget/IconText';
@@ -42,11 +42,6 @@ function FriendCard({ friend }: { friend: FriendItem }) {
           <div className={styles.friendCardInfo}>
             <h3 className={styles.friendCardTitle}>{friend.title}</h3>
             <p className={styles.friendCardDescription}>{friend.description}</p>
-          </div>
-        </div>
-        <div className={styles.friendCardFooter}>
-          <div className={styles.friendCardLink}>
-            <IconText icon="lucide:external-link">访问网站</IconText>
           </div>
         </div>
       </div>

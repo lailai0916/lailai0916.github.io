@@ -125,27 +125,6 @@
   overflow: hidden;
 }
 
-.friendCardFooter {
-  margin-top: auto;
-  padding-top: 0.5rem;
-  border-top: 1px solid var(--ifm-color-emphasis-200);
-}
-
-.friendCardLink {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  color: var(--ifm-color-primary);
-  font-size: 0.875rem;
-  font-weight: 500;
-  transition: all 0.2s ease;
-}
-
-.friendCard:hover .friendCardLink {
-  color: var(--ifm-color-primary-dark);
-  transform: translateX(2px);
-}
-
 /* ==========================================================================
    6. Responsive Design
    ========================================================================== */
@@ -230,10 +209,6 @@ html[data-theme='dark'] .friendCardFallback {
   }
 
   .friendCard:hover {
-    transform: none;
-  }
-
-  .friendCard:hover .friendCardLink {
     transform: none;
   }
 }
