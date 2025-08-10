@@ -176,9 +176,9 @@ const config: Config = {
           title: 'More',
           items: [
             { label: 'About', to: '/about' },
-            { label: 'Friends', to: '/friends' },
             { label: 'Games', to: '/games' },
             { label: 'Settings', to: '/settings' },
+            { label: 'Map', to: '/map' },
           ],
         },
       ],
