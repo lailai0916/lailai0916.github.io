@@ -5,7 +5,7 @@ GitHub 个人主页中有一个“Achievements”板块。
 ## 参考资料
 
 - [Personalizing your profile - GitHub Docs](https://docs.github.com/en/account-and-profile/setting-up-and-managing-your-github-profile/customizing-your-profile/personalizing-your-profile#displaying-badges-on-your-profile)
-- [drknzz/GitHub-Achievements: 🔥 A Complete List of GitHub Profile Badges and Achievements 🔥](https://github.com/drknzz/GitHub-Achievements)
+- [drknzz/GitHub-Achievements](https://github.com/drknzz/GitHub-Achievements)
 
 ## 自动化脚本（Playwright）
 

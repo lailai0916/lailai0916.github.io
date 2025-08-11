@@ -8,8 +8,8 @@
 
 - [洛谷主题库题目规范 - 洛谷帮助中心](https://help.luogu.com.cn/rules/academic/problem-standard)
 - [题目测试点配置文件 - 洛谷帮助中心](https://help.luogu.com.cn/manual/luogu/problem/testcase-config)
-- [MikeMirzayanov/testlib: C++ library to develop competitive programming problems](https://github.com/MikeMirzayanov/testlib)
-- [noisg/sg_noi_archive: Archive of Singapore National Olympiad in Informatics (NOI)](https://github.com/noisg/sg_noi_archive)
+- [MikeMirzayanov/testlib](https://github.com/MikeMirzayanov/testlib)
+- [noisg/sg_noi_archive](https://github.com/noisg/sg_noi_archive)
 
 ## 题目测试点配置文件生成器
 

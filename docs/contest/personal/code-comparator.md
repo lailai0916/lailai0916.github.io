@@ -8,7 +8,7 @@
 
 ## 项目链接
 
-- [lailai0916/code-comparator: A lightweight code comparator for Olympiad in Informatics (OI).](https://github.com/lailai0916/code-comparator)
+- [lailai0916/code-comparator](https://github.com/lailai0916/code-comparator)
 
 ## 对拍简介
 
