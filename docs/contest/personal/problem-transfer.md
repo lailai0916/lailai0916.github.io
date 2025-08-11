@@ -114,7 +114,7 @@ int main()
 
 ## NOISG
 
-### 搬题表
+### 比赛搬题表
 
 <style>{`
   .center-table th, .center-table td {

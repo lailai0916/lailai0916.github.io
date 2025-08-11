@@ -14,6 +14,7 @@ const sidebars: SidebarsConfig = {
         'contest/personal/code-style',
         'contest/personal/code-comparator',
         'contest/personal/common-templates',
+        'contest/personal/solution-template',
         'contest/personal/problem-transfer',
       ],
     },
@@ -584,17 +585,15 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: 'category',
-      label: '模板',
+      label: '指南',
       link: {
         type: 'generated-index',
-        description:
-          '本章收录各种实用的文档模板，包括Markdown、LaTeX、Mermaid、题解等常用模板。',
+        description: '本章收录各种实用的文档指南。',
       },
       items: [
-        'project/templates/markdown',
-        'project/templates/latex',
-        'project/templates/mermaid',
-        'project/templates/solution',
+        'project/guides/markdown',
+        'project/guides/latex',
+        'project/guides/mermaid',
       ],
     },
     {

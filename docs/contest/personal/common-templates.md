@@ -1,6 +1,10 @@
-# 常用模板库
+# 常用模板
 
-## 基础框架
+本文是我的竞赛常用模板。
+
+## 框架
+
+### 基础框架
 
 ```cpp
 #include <bits/stdc++.h>
@@ -13,7 +17,7 @@ int main()
 }
 ```
 
-## 便捷框架
+### 便捷框架
 
 ```cpp
 #include <bits/stdc++.h>
@@ -32,21 +36,23 @@ int main()
 }
 ```
 
-## 文件操作
+## 读写
+
+### 文件读写
 
 ```cpp
-freopen("problem.in","r",stdin);
-freopen("problem.out","w",stdout);
+freopen(".in","r",stdin);
+freopen(".out","w",stdout);
 ```
 
-## 读写优化
+### 读写优化
 
 ```cpp
 ios::sync_with_stdio(false);
 cin.tie(nullptr);
 ```
 
-## 快速读入
+### 快速读入
 
 ```cpp
 int read()
@@ -58,7 +64,7 @@ int read()
 }
 ```
 
-## 快速输出
+### 快速输出
 
 ```cpp
 void write(int x)
@@ -69,14 +75,14 @@ void write(int x)
 }
 ```
 
-## cout 格式化
+### cout 格式化
 
 ```cpp
 cout<<fixed<<setprecision(6)<<x<<'\n';
 cout<<setw(6)<<x<<'\n';
 ```
 
-## 刷新缓冲区
+### 刷新缓冲区
 
 ```cpp
 cout<<flush;
@@ -84,24 +90,9 @@ fflush(stdout);
 cout.flush();
 ```
 
-## pb_ds
+## 数学
 
-```cpp
-#include <bits/extc++.h>
-using namespace __gnu_pbds;
-tree<pair<int,int>,null_type,less<pair<int,int>>,rb_tree_tag,tree_order_statistics_node_update> T;
-```
-
-## mt19937
-
-```cpp
-random_device rd;
-mt19937 gen(rd());
-uniform_int_distribution<int> dist(1,100);
-int k=dist(gen);
-```
-
-## 快速幂
+### 快速幂
 
 ```cpp
 ll Pow(ll x,ll y)
@@ -118,7 +109,7 @@ ll Pow(ll x,ll y)
 }
 ```
 
-## 组合数学
+### 组合数学
 
 ```cpp
 ll inv[N],fac[N],jv[N];
@@ -137,4 +128,23 @@ ll C(ll n,ll m)
 	if(n<m||m<0)return 0;
 	return fac[n]*jv[n-m]%mod*jv[m]%mod;
 }
+```
+
+## 杂项
+
+### pb_ds
+
+```cpp
+#include <bits/extc++.h>
+using namespace __gnu_pbds;
+tree<pair<int,int>,null_type,less<pair<int,int>>,rb_tree_tag,tree_order_statistics_node_update> T;
+```
+
+### mt19937
+
+```cpp
+random_device rd;
+mt19937 gen(rd());
+uniform_int_distribution<int> dist(1,100);
+int k=dist(gen);
 ```

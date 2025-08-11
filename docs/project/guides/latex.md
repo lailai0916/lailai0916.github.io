@@ -1,4 +1,4 @@
-# LaTeX 模板
+# LaTeX 指南
 
 [$\LaTeX$](https://zh.wikipedia.org/zh-cn/LaTeX) 是一种基于 [$\TeX$](https://zh.wikipedia.org/zh-cn/TeX) 的排版系统，能够方便的生成数学公式。
 

@@ -1,4 +1,4 @@
-# Mermaid 模板
+# Mermaid 指南
 
 [Mermaid](https://mermaid.js.org) 是一个基于 JavaScript 的图表和绘图工具，可以渲染受 Markdown 启发的文本定义，以动态创建和修改图表。
 

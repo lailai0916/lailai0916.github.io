@@ -1,4 +1,4 @@
-# Markdown 模板
+# Markdown 指南
 
 [Markdown](https://zh.wikipedia.org/zh-cn/Markdown) 是一种轻量级标记语言。
 
