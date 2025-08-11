@@ -1,20 +1,21 @@
 # lailai's EDC
 
-我日常携带的一些有用物品。
+我日常出门随身携带的物品。
 
 ## 收纳
 
 ### 背包
 
 - 型号：tomtoc Voyage T50 Laptop Backpack
-- 价格：$209.99 / ¥1,299
 - 购买：[官网](https://www.tomtoc.com/products/voyage-t50-laptop-backpack-20l-white)
 
 这个背包是专为 Apple 产品设计的，所以刚好可以放下我的 16 英寸 MacBook Pro 和其他设备。
 
 背包的品牌是 [tomtoc](https://www.tomtoc.com)，一家入驻 Apple Store 的国产数码配件商。有黑白两色可选，我选择了黑色的，因为比较耐脏。
 
-### THE NORTH FACE EXPLORE HIP PACK
+### 腰包
+
+- 型号：THE NORTH FACE EXPLORE HIP PACK
 
 有时候出行背包随身携带不方便，我会把手机、充电宝、钱包、护照等重要物品放在腰包里。
 
@@ -22,27 +23,24 @@
 
 详见 [lailai's Device](device)
 
-这些数码设备我一般都随身携带。
+## 数码配件
 
-## 辅助设备
+### 鼠标
 
-### Logitech G PRO X SUPERLIGHT 2
-
+- 型号：Logitech G PRO X SUPERLIGHT 2
 - 简介：Logitech 专为电竞玩家设计的超轻量无线游戏鼠标
-- 价格：$159 / ¥1,499
 - 购买：[官网](https://www.logitechg.com/zh-cn/products/gaming-mice/pro-x2-superlight-wireless-mouse.910-006634.html)
 
-### SanDisk Extreme PRO USB 3.2 Solid State Flash Drive
+### 固态 U 盘
 
+- 型号：SanDisk Extreme PRO USB 3.2 Solid State Flash Drive
 - 简介：SanDisk 的高性能固态 U 盘
-- 价格：$39.99 / ¥299
 - 容量：256GB
 - 购买：[官网](https://shop.sandisk.com/products/usb-flash-drives/sandisk-extreme-pro-usb-3-2?sku=SDCZ880-256G-G46)
 
 ### AirTag
 
 - 简介：Apple 的小型追踪器，用于给电脑背包定位
-- 价格：$29 / ¥249
 - 购买：[官网](https://www.apple.com.cn/airtag/)
 
 ## 供电设备
@@ -78,10 +76,6 @@
 
 - 3M 思高擦拭布
 - Zeiss 防雾清洁湿巾
-
-## 应急物品
-
-- 米家多功能便携手电筒：应急照明
 
 ## 其他物品
 

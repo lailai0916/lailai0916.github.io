@@ -9,9 +9,9 @@ It's something only Apple can do!
 - 配件：Incase 硬质保护壳
 - 技术规格：[MacBook Pro - Apple 支持](https://support.apple.com/zh-cn/117737)
 
-MacBook 是铝合金外壳容易变形，所以我买了 Incase 的 **保护壳**。
+MacBook Pro 的铝合金外壳容易变形，所以我配了一个保护壳。
 
-我以前试过 **屏幕膜** 和 **键盘膜**，但屏幕和键盘的间隙很小，会让键盘印在屏幕上，最后还是放弃了。
+我以前试过贴屏幕膜和键盘膜，但因为 B 面（屏幕）和 C 面（键盘）间隙特别小，键盘会在屏幕上留下印子，最后就放弃了。
 
 ### Desktop
 
