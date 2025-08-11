@@ -10,17 +10,3 @@
   font-size: var(--ifm-h3-font-size);
   padding-top: 1rem;
 }
-
-.featureIcon {
-  flex-shrink: 0;
-  color: var(--ifm-color-primary);
-}
-
-/* 深色模式适配 */
-html[data-theme='dark'] .featureIcon {
-  color: var(--ifm-color-primary-light);
-}
-
-.section {
-  padding: 40px 0;
-}
