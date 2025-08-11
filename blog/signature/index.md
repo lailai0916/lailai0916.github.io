@@ -11,7 +11,7 @@ tags: [personal]
 
 ## 参考资料
 
-- [【Jrenc】我做了一个苹果线条动画生成器🥰....](https://www.bilibili.com/video/BV1QmpceuEe1)
+- [【Jrenc】我做了一个苹果线条动画生成器🥰.... - bilibili](https://www.bilibili.com/video/BV1QmpceuEe1)
 - [jrenc2002/GenLineAnimation-Server](https://github.com/jrenc2002/GenLineAnimation-Server)
 
 ## 效果展示
