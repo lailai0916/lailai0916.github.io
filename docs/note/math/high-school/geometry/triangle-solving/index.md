@@ -10,7 +10,7 @@
 对于三角形 $\triangle ABC$，如果没有特别说明，则：
 
 1. 边长 $a$、$b$、$c$ 分别为角 $\angle A$、$\angle B$、$\angle C$ 的对边。
-2. $S$ 表示三角形面积，$C=a+b+c$ 表示三角形周长。
+2. $S$ 表示三角形的面积，$s=\frac{a+b+c}{2}$ 表示三角形的半周长。
 3. $r$ 表示内切圆的半径，$R$ 表示外接圆的半径。
 
 ![](assets/Triangle_with_notations_2.svg)
@@ -66,7 +66,7 @@ $$
 海伦公式：
 
 $$
-S=\sqrt{p(p-a)(p-b)(p-c)},p=\frac{C}{2}=\frac{a+b+c}{2}
+S=\sqrt{s(s-a)(s-b)(s-c)}
 $$
 
 秦九昭公式：
@@ -78,7 +78,7 @@ $$
 ### 内切圆 + 三边
 
 $$
-S=\frac{1}{2}rC=\frac{1}{2}r(a+b+c)
+S=sr=\frac{1}{2}r(a+b+c)
 $$
 
 ### 外接圆 + 边/角
@@ -100,7 +100,7 @@ S=\frac{1}{4}(a^2+b^2-c^2)\tan{\angle C}=\frac{1}{4}(a^2+c^2-b^2)\tan{\angle B}=
 $$
 
 $$
-S=p(p-a)\tan{\frac{\angle A}{2}}=p(p-b)\tan{\frac{\angle B}{2}}=p(p-c)\tan{\frac{\angle C}{2}},p=\frac{C}{2}=\frac{a+b+c}{2}
+S=s(s-a)\tan{\frac{\angle A}{2}}=s(s-b)\tan{\frac{\angle B}{2}}=s(s-c)\tan{\frac{\angle C}{2}}
 $$
 
 ### 两边 + 两角
