@@ -350,7 +350,6 @@ export default function Countdown() {
     <SectionMain>
       <div
         className="max-w-7xl mx-auto flex flex-col px-5"
-        role="main"
         aria-label={`Countdown to ${CONFIG.EVENT}`}
       >
         {isTimeUp ? (

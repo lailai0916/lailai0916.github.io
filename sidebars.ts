@@ -316,6 +316,7 @@ const sidebars: SidebarsConfig = {
         type: 'generated-index',
         description: '本章记录我的数学笔记。',
       },
+      collapsed: false,
       items: [
         {
           type: 'category',
@@ -324,6 +325,7 @@ const sidebars: SidebarsConfig = {
             type: 'doc',
             id: 'note/math/high-school/index',
           },
+          collapsed: false,
           items: [
             {
               type: 'category',
