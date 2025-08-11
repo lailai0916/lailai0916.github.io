@@ -34,15 +34,3 @@ export const STATUS_COLORS = {
   SLATE: 'text-slate-600 dark:text-slate-400 bg-slate-50 dark:bg-slate-900/20',
   STONE: 'text-stone-600 dark:text-stone-400 bg-stone-50 dark:bg-stone-900/20',
 } as const;
-
-// Countdown组件专用样式（仅在该组件中使用）
-export const COUNTDOWN_STYLES = {
-  MAIN_TITLE:
-    'font-bold text-4xl text-gray-900 dark:text-neutral-100 leading-tight mb-4',
-  SUCCESS_TEXT: 'text-2xl font-medium text-gray-700 dark:text-neutral-300',
-  CIRCLE_VALUE: 'absolute text-center font-medium text-[2.5rem] select-none',
-  CIRCLE_UNIT:
-    'absolute text-[0.75rem] font-light -translate-x-1/2 -translate-y-[12px] select-none whitespace-nowrap',
-  CIRCLE_TRANSITION: 'transition-all duration-500 linear',
-  DOT_TRANSITION: 'transition-all duration-500 linear',
-} as const;
