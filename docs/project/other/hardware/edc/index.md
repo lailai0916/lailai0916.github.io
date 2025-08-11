@@ -1,23 +1,26 @@
 # lailai's EDC
 
-我日常出门随身携带的物品。
+我日常外出时随身携带的物品。
 
 ## 收纳
 
 ### 背包
 
 - 型号：tomtoc Voyage T50 Laptop Backpack
-- 购买：[官网](https://www.tomtoc.com/products/voyage-t50-laptop-backpack-20l-white)
 
-这个背包是专为 Apple 产品设计的，所以刚好可以放下我的 16 英寸 MacBook Pro 和其他设备。
-
-背包的品牌是 [tomtoc](https://www.tomtoc.com)，一家入驻 Apple Store 的国产数码配件商。有黑白两色可选，我选择了黑色的，因为比较耐脏。
+这个背包是专为 Apple 产品设计的，可以完美放下我的各种设备。
 
 ### 腰包
 
 - 型号：THE NORTH FACE EXPLORE HIP PACK
 
-有时候出行背包随身携带不方便，我会把手机、充电宝、钱包、护照等重要物品放在腰包里。
+有时候出行背包随身携带不方便，我会把手机、充电宝、钱包、身份证、护照等重要物品放在腰包里。
+
+### 钱包
+
+- 型号：MUJI 聚酯纤维 旅游用钱包：存放一些现金和证件
+
+平时出门很少带现金，但还是准备了一个钱包。
 
 ## 数码设备
 
@@ -36,14 +39,8 @@
 - 型号：SanDisk Extreme PRO USB 3.2 Solid State Flash Drive
 - 简介：SanDisk 的高性能固态 U 盘
 - 容量：256GB
-- 购买：[官网](https://shop.sandisk.com/products/usb-flash-drives/sandisk-extreme-pro-usb-3-2?sku=SDCZ880-256G-G46)
 
-### AirTag
-
-- 简介：Apple 的小型追踪器，用于给电脑背包定位
-- 购买：[官网](https://www.apple.com.cn/airtag/)
-
-## 供电设备
+我平时主要使用 AirDrop 传输数据，但还是准备了一个 U 盘。
 
 ### 充电器
 
@@ -60,23 +57,23 @@
 - Apple 60W USB-C 充电线 (1 米)
 - USB-C 转闪电连接线 (1 米)
 - Apple Watch 磁力充电器转 USB-C 连接线 (1 米)
-- Apple 雷雳 4 数据线 (1 米)
 
-## 数码配件
+### 杂项
+
+- AirTag
+
+Apple 的小型追踪器，用于给我的背包定位
 
 - Apple USB-C 转 USB 转换器
 
-解决了 MacBook Pro 没有 USA 接口的问题，可以连接鼠标接收器和 U 盘等 USB 设备。
+解决了 MacBook Pro 没有 USB-A 接口的问题，现在可以连接鼠标接收器和 U 盘等 USB-A 设备。
 
 - 多功能数据线盒
 
-用来应对一些特殊情况。
+有各种转接头，用于应对一些特殊情况。
 
 ## 清洁工具
 
 - 3M 思高擦拭布
 - Zeiss 防雾清洁湿巾
-
-## 其他物品
-
-- MUJI 聚酯纤维 旅游用钱包：存放一些现金和证件
+- 高乐氏卫生湿巾
