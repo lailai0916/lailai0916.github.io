@@ -289,6 +289,6 @@ $$
 
 利用 **乘法公式** 和 **因式分解** 的等式变形方法，可以化简二重根式：
 
-详见 [二重根式](/blog/double-radical-expression)
+详见 [数学：二重根式](/blog/double-radical-expression)
 
 ## 不等式
