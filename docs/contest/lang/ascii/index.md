@@ -7,7 +7,7 @@
 
 ## 简介
 
-ASCII（American Standard Code for Information Interchange，美国信息交换标准代码）是基于拉丁字母的一套电脑字符编码标准。
+美国信息交换标准代码（ASCII，American Standard Code for Information Interchange）是基于拉丁字母的一套电脑字符编码标准。
 
 ## ASCII 表
 

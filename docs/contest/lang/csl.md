@@ -5,9 +5,9 @@
 - [C++ 标准库简介 - OI Wiki](https://oi-wiki.org/lang/csl/)
 - [标准模板库 - 维基百科](https://zh.wikipedia.org/zh-cn/标准模板库)
 
-## 标准模板库（STL）
+## 标准模板库
 
-标准模板库（Standard Template Library，STL）是 C++ 标准库的一部分，里面包含了一些模板化的通用的数据结构和算法。
+标准模板库（STL，Standard Template Library）是 C++ 标准库的一部分，里面包含了一些模板化的通用的数据结构和算法。
 
 ## STL 容器
 
