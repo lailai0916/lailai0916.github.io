@@ -159,10 +159,11 @@ const sidebars: SidebarsConfig = {
           },
           items: [
             'contest/math/combinatorics/permutation-and-combination',
+            'contest/math/combinatorics/drawer-principle',
             'contest/math/combinatorics/inclusion-exclusion-principle',
             'contest/math/combinatorics/vandermonde-convolution',
           ],
-        },
+        },drawer-principle
         {
           type: 'category',
           label: '线性代数',
