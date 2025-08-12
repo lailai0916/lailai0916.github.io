@@ -120,6 +120,7 @@ const sidebars: SidebarsConfig = {
       },
       items: [
         'contest/math/binary-exponentiation',
+        'contest/math/permutation',
         {
           type: 'category',
           label: '数论',
@@ -189,18 +190,7 @@ const sidebars: SidebarsConfig = {
             'contest/math/numerical/interp',
             'contest/math/numerical/integral',
             'contest/math/numerical/elimination',
-          ],
-        },
-        {
-          type: 'category',
-          label: '杂项',
-          link: {
-            type: 'generated-index',
-            description: '本章介绍的是一些难以分类的数学算法。',
-          },
-          items: [
-            'contest/math/misc/approximation',
-            'contest/math/misc/cantor-expansion',
+            'contest/math/numerical/approximation',
           ],
         },
         {
