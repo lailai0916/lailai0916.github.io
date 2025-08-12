@@ -5,13 +5,16 @@
 - [递归 - 维基百科](https://zh.wikipedia.org/zh-hans/递归)
 - [递归 & 分治 - OI Wiki](https://oi-wiki.org/basic/divide-and-conquer/)
 
+## 前言
+
+> 要理解递归，就得先理解什么是递归。
+
 ## 递归
 
 递归（Recursion），在数学和计算机科学中是指在函数的定义中使用函数自身的方法，在计算机科学中还额外指一种通过重复将问题分解为同类的子问题而解决问题的方法。
 
-> 要理解递归，就得先理解什么是递归。
-
 - [递归 - Google 搜索](https://www.google.com/search?q=%E9%80%92%E5%BD%92)
+- GNU = GNU’s Not Unix
 
 ## 分治
 
