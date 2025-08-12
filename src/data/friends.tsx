@@ -61,6 +61,12 @@ export const FRIEND_LIST: FriendItem[] = [
     avatar: 'img/avatar/tiko_tao.png',
   },
   {
+    title: 'Zhou_Xincheng',
+    description: '可可爱爱小清慕~',
+    href: 'https://www.luogu.com.cn/user/756249',
+    avatar: 'img/avatar/Zhou_Xincheng.png',
+  },
+  {
     title: '0513DTY',
     description: '',
     href: 'https://www.luogu.com.cn/user/1031108',
