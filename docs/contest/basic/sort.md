@@ -1,9 +1,13 @@
-# 排序（Sort）
+# 排序
 
 ## 参考资料
 
 - [排序简介 - OI Wiki](https://oi-wiki.org/basic/sort-intro/)
 - [排序算法 - 维基百科](https://zh.wikipedia.org/zh-cn/排序算法)
+
+## 简介
+
+排序算法（Sorting algorithm）是一种将一组特定的数据按某种顺序进行排列的算法。排序算法多种多样，性质也大多不同。
 
 ## 算法对比
 
