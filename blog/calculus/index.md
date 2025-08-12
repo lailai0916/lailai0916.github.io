@@ -198,7 +198,7 @@ $$
 
 计算 $\displaystyle\int_{-2}^2 \sqrt{4-x^2}\mathrm{d}x$。
 
-<Desmos url="vwlhsxpy1l" />
+<Desmos url="dxjwvtqsdl" />
 
 这个积分表达式表示图中 **半圆形** 的面积。
 
