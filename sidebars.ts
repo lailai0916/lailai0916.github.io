@@ -193,6 +193,7 @@ const sidebars: SidebarsConfig = {
             'contest/math/numerical/approximation',
           ],
         },
+        'contest/math/game-theory',
         {
           type: 'category',
           label: '模板',

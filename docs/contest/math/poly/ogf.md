@@ -4,7 +4,7 @@
 
 - [普通生成函数 - OI Wiki](https://oi-wiki.org/math/poly/ogf/)
 
-## 介绍
+## 简介
 
 序列 $a$ 的普通生成函数（Ordinary Generating Function，OGF）定义为形式幂级数：
 
