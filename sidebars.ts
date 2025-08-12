@@ -94,6 +94,7 @@ const sidebars: SidebarsConfig = {
         'contest/dp/knapsack',
         'contest/dp/tree',
         'contest/dp/state',
+        'contest/dp/number',
       ],
     },
     {
@@ -163,7 +164,7 @@ const sidebars: SidebarsConfig = {
             'contest/math/combinatorics/inclusion-exclusion-principle',
             'contest/math/combinatorics/vandermonde-convolution',
           ],
-        },drawer-principle
+        },
         {
           type: 'category',
           label: '线性代数',
