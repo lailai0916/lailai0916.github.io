@@ -170,3 +170,4 @@ The “ueue” in “queue” is silent — but not in “deque.”
 - `std::upper_bound`
 - `std::next_permutation`
 - `std::prev_permutation`
+- ...
