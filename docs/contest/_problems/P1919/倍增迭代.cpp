@@ -5,7 +5,7 @@ using Comp=complex<double>;
 const double pi=acos(-1.0);
 const int N=1<<20;
 Comp a[N<<1],b[N<<1];
-int r[N<<1];
+int c[N<<1],r[N<<1];
 void fft(Comp *f,int n,int type)
 {
 	for(int i=0;i<n;i++)
@@ -32,20 +32,11 @@ int main()
 {
 	ios::sync_with_stdio(false);
 	cin.tie(nullptr);
-	int n,m;
-	cin>>n>>m;
-	for(int i=0;i<=n;i++)
-	{
-		double x;
-		cin>>x;
-		a[i]=Comp(x,0);
-	}
-	for(int i=0;i<=m;i++)
-	{
-		double x;
-		cin>>x;
-		b[i]=Comp(x,0);
-	}
+	string s1,s2;
+	cin>>s1>>s2;
+	int n=s1.length()-1,m=s2.length()-1;
+	for(int i=0;i<=n;i++)a[i]=Comp(s1[n-i]-'0',0);
+	for(int i=0;i<=m;i++)b[i]=Comp(s2[m-i]-'0',0);
 	int lim=1,cnt=0;
 	while(lim<=n+m){lim<<=1;cnt++;}
 	for(int i=0;i<lim;i++)
@@ -54,8 +45,15 @@ int main()
 	}
 	fft(a,lim,1);
 	fft(b,lim,1);
-	for(int i=0;i<lim;i++)a[i]*=b[i];
+	for(int i=0;i<lim;i++)a[i]=a[i]*b[i];
 	fft(a,lim,-1);
-	for(int i=0;i<=n+m;i++)cout<<int(a[i].real()/lim+0.5)<<' ';
+	for(int i=0;i<=n+m;i++)c[i]=a[i].real()/lim+0.5;
+	int dig=0;
+	while(dig<=n+m||c[dig])
+	{
+		c[dig+1]+=c[dig]/10;
+		c[dig++]%=10;
+	}
+	for(int i=dig-1;i>=0;i--)cout<<c[i];
 	return 0;
 }

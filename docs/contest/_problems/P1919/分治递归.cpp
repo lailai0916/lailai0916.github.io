@@ -44,12 +44,12 @@ int main()
 	for(int i=0;i<lim;i++)a[i]=a[i]*b[i];
 	fft(a,lim,-1);
 	for(int i=0;i<=n+m;i++)c[i]=a[i].real()/lim+0.5;
-	int cnt=0;
-	while(cnt<=n+m||c[cnt])
+	int dig=0;
+	while(dig<=n+m||c[dig])
 	{
-		c[cnt+1]+=c[cnt]/10;
-		c[cnt++]%=10;
+		c[dig+1]+=c[dig]/10;
+		c[dig++]%=10;
 	}
-	for(int i=cnt-1;i>=0;i--)cout<<c[i];
+	for(int i=dig-1;i>=0;i--)cout<<c[i];
 	return 0;
 }
