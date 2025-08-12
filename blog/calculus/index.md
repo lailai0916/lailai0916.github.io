@@ -90,23 +90,21 @@ $$
 
 ![](assets/Integral_example.svg-1024722.png)
 
-整个符号可以理解为：从 $a$ 到 $b$ 将 **无穷多个**（$n\to\infty$）宽度为 $\mathrm{d}x$、长度为 $f(x)$ 的细长方形面积累加起来。
-
-<Desmos url="8tvqa3pyoq" />
-
 ### 有向面积
 
 我们日常理解的“面积”都是正数，但在数学中引入了 **有向面积** 的概念，它可以为负。
 
 在计算定积分时，我们约定：图像在 $x$ 轴 **上方** 的区域（蓝色）面积为 **正**，**下方** 的区域（黄色）面积为 **负**，这种带符号的面积叫作 **有向面积**。
 
-:::tip[带符号的意义]
-
 这种表示方式在数学、科学，甚至生活中都很常见。
 
-很多看似“只有大小”的量，其实也可以有正负之分，用来表示方向或性质。例如角度、面积、长度、位移、海拔、温度、记账等。
+很多看似“只有大小”的量，其实也可以有正负之分，用来表示方向或性质。
 
-这样有一个明显的好处：可以直接代入公式，自动处理方向，简化计算与判断。
+例如角度、面积、长度、位移、海拔、温度、记账等。
+
+:::tip[带符号的优势]
+
+带符号有一个明显的优势：可以直接代入公式，自动处理方向，简化计算与判断。
 
 <Tabs>
 <TabItem value="海拔">
@@ -164,6 +162,17 @@ $$
 
 :::
 
+### 原理
+
+这个符号可以理解为：从 $a$ 到 $b$ 将 **无穷多个**（$n\to\infty$）宽度为 $\mathrm{d}x$、长度为 $f(x)$ 的细长方形面积累加起来。
+
+$$
+S=\int_a^b f(x)\mathrm{d}x
+$$
+
+随着细长方形的数量增加，其总面积越来越接近实际面积。
+
+<Desmos url="sxeafs1ajz" />
 
 ### 简单积分
 
@@ -176,33 +185,33 @@ $$
 
 计算 $\displaystyle\int_1^3 \frac{x}{2}\mathrm{d}x$。
 
-<Desmos url="zvt4aupfms" />
-
-这个积分表达式表示图中 **直角梯形** 的面积。
+这个积分表达式表示图中 **直角梯形** 的有向面积。
 
 所以 $\displaystyle\int_1^3 \frac{x}{2}\mathrm{d}x=\frac{h(a+b)}{2}=\frac{2\cdot(0.5+1.5)}{2}=2$。
+
+<Desmos url="ywcdneien2" />
 
 </TabItem>
 <TabItem value="Example 2">
 
 计算 $\displaystyle\int_{-2}^3 2x\mathrm{d}x$。
 
-<Desmos url="xlwjbick4u" />
-
-这个积分表达式表示图中 **三角形** 的面积差。
+这个积分表达式表示图中两个 **三角形** 的有向面积。
 
 所以 $\displaystyle\int_{-2}^3 2x\mathrm{d}x=\frac{ah}{2}-\frac{bh}{2}=\frac{3\cdot 6}{2}-\frac{2\cdot 4}{2}=5$。
+
+<Desmos url="xlwjbick4u" />
 
 </TabItem>
 <TabItem value="Example 3">
 
 计算 $\displaystyle\int_{-2}^2 \sqrt{4-x^2}\mathrm{d}x$。
 
-<Desmos url="dxjwvtqsdl" />
-
-这个积分表达式表示图中 **半圆形** 的面积。
+这个积分表达式表示图中 **半圆形** 的有向面积。
 
 所以 $\displaystyle\int_{-2}^2 \sqrt{4-x^2}\mathrm{d}x=\frac{1}{2}\pi r^2=\frac{1}{2}\pi\cdot 2^2=2\pi$。
+
+<Desmos url="dxjwvtqsdl" />
 
 </TabItem>
 </Tabs>
@@ -219,7 +228,7 @@ $$
 \int_a^b f(x)\mathrm{d}x
 $$
 
-### 定义
+### 作用
 
 前面我们已经通过对 **数列** $\{A_n\}$ 做 **前缀和**，得到了 **前缀和数列** $\{S_n\}$，从而高效区间求和：
 
