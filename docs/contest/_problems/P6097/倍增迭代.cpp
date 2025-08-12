@@ -17,7 +17,6 @@ void fmt(ll *a,int n,int type)
 		}
 	}
 }
-
 ll a[N+1][1<<N],b[N+1][1<<N],c[N+1][1<<N];
 int main()
 {
