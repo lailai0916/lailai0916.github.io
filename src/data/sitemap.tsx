@@ -17,12 +17,12 @@ export const SITEMAP_LIST: SitemapCategoryItem[] = [
       { title: '旅行', href: '/travel' },
       { title: '友链', href: '/friends' },
       { title: '资源', href: '/resources' },
-      { title: '游戏', href: '/game' },
+      { title: '游戏', href: '/games' },
     ],
   },
   {
     title: '地图',
-    sitemaps: [{ title: '地图', href: '/map' }],
+    sitemaps: [{ title: '地图', href: '/sitemap' }],
   },
   {
     title: '文档',
@@ -37,7 +37,7 @@ export const SITEMAP_LIST: SitemapCategoryItem[] = [
     sitemaps: [
       { title: '博客', href: '/blog' },
       { title: '归档', href: '/blog/archive' },
-      { title: '作者', href: '/blog/author' },
+      { title: '作者', href: '/blog/authors' },
       { title: '标签', href: '/blog/tags' },
     ],
   },
