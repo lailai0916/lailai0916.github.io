@@ -15,6 +15,7 @@ import styles from './styles.module.css';
 
 const TITLE = '友链';
 const DESCRIPTION = '真正的友谊是世上最稀有的东西';
+const FOOTER = '感谢每位朋友的陪伴和支持，也欢迎大家联系我添加友链。';
 
 // 友链卡片组件
 function FriendCard({ friend }: { friend: FriendItem }) {
@@ -62,11 +63,7 @@ function FriendGrid() {
 }
 
 function FriendsFooter() {
-  return (
-    <PageFooter>
-      感谢每位朋友的陪伴和支持，也欢迎大家联系我添加友链。
-    </PageFooter>
-  );
+  return <PageFooter>{FOOTER}</PageFooter>;
 }
 
 function FriendsHeader() {

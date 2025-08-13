@@ -15,6 +15,7 @@ import styles from './styles.module.css';
 
 const TITLE = '旅行';
 const DESCRIPTION = '每一次旅行都能带来新的视野和感悟';
+const FOOTER = '读万卷书，行万里路。路走多了，才能真正平视世界。既不仰望富裕国家，也不轻视贫穷之地。世界，不是新闻里的样子，也不是别人描述的样子，而是你亲眼所见、亲身所感。看得多了，眼界自开，格局亦变。';
 
 function TravelTimeline() {
   return (
@@ -29,11 +30,7 @@ function TravelTimeline() {
 }
 
 function TravelFooter() {
-  return (
-    <PageFooter>
-      读万卷书，行万里路。路走多了，才能真正平视世界。既不仰望富裕国家，也不轻视贫穷之地。世界，不是新闻里的样子，也不是别人描述的样子，而是你亲眼所见、亲身所感。看得多了，眼界自开，格局亦变。
-    </PageFooter>
-  );
+  return <PageFooter>{FOOTER}</PageFooter>;
 }
 
 function TravelHeader() {
