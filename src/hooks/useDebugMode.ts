@@ -11,7 +11,7 @@ export function useDebugMode(): boolean {
   useEffect(() => {
     // 只在客户端执行
     if (typeof window === 'undefined') return;
-    
+
     // 读取localStorage中的调试模式状态
     const loadDebugMode = () => {
       try {
@@ -43,11 +43,17 @@ export function useDebugMode(): boolean {
     };
 
     window.addEventListener('storage', handleStorageChange);
-    window.addEventListener('experimentalSettingsChanged', handleExperimentalSettingsChange as EventListener);
-    
+    window.addEventListener(
+      'experimentalSettingsChanged',
+      handleExperimentalSettingsChange as EventListener
+    );
+
     return () => {
       window.removeEventListener('storage', handleStorageChange);
-      window.removeEventListener('experimentalSettingsChanged', handleExperimentalSettingsChange as EventListener);
+      window.removeEventListener(
+        'experimentalSettingsChanged',
+        handleExperimentalSettingsChange as EventListener
+      );
     };
   }, []);
 

@@ -11,7 +11,7 @@ import {
 export function useThemeColors(isDarkTheme: boolean) {
   const storage = getThemeStorage(isDarkTheme);
   const defaults = getThemeDefaults(isDarkTheme);
-  
+
   // 统一的状态管理 - 在SSR时使用默认值
   const [colorState, setColorState] = useState<ColorState>(() => {
     // 在服务端渲染时，直接返回默认值
@@ -22,10 +22,12 @@ export function useThemeColors(isDarkTheme: boolean) {
         shades: COLOR_SHADES,
       };
     }
-    
+
     // 在客户端时，尝试从storage加载
     try {
-      const storedValues = JSON.parse(storage.get() ?? '{}') as Partial<ColorState>;
+      const storedValues = JSON.parse(
+        storage.get() ?? '{}'
+      ) as Partial<ColorState>;
       return {
         baseColor: storedValues.baseColor ?? defaults.primary,
         background: storedValues.background ?? defaults.background,
@@ -39,25 +41,27 @@ export function useThemeColors(isDarkTheme: boolean) {
       };
     }
   });
-  
+
   const [inputColor, setInputColor] = useState(colorState.baseColor);
 
   // 当主题切换时重新加载数据
   useEffect(() => {
     // 只在客户端执行
     if (typeof window === 'undefined') return;
-    
+
     try {
       const newStorage = getThemeStorage(isDarkTheme);
       const newDefaults = getThemeDefaults(isDarkTheme);
-      const storedValues = JSON.parse(newStorage.get() ?? '{}') as Partial<ColorState>;
-      
+      const storedValues = JSON.parse(
+        newStorage.get() ?? '{}'
+      ) as Partial<ColorState>;
+
       const newState = {
         baseColor: storedValues.baseColor ?? newDefaults.primary,
         background: storedValues.background ?? newDefaults.background,
         shades: storedValues.shades ?? COLOR_SHADES,
       };
-      
+
       setColorState(newState);
       setInputColor(newState.baseColor);
     } catch {
@@ -77,7 +81,7 @@ export function useThemeColors(isDarkTheme: boolean) {
   useEffect(() => {
     // 只在客户端执行
     if (typeof window === 'undefined') return;
-    
+
     try {
       updateDOMColors(colorState, isDarkTheme);
       const storage = getThemeStorage(isDarkTheme);
@@ -91,10 +95,10 @@ export function useThemeColors(isDarkTheme: boolean) {
   const updateColor = useCallback((colorValue: string) => {
     const newColor = colorValue.replace(/^(?=[^#])/, '#');
     setInputColor(newColor);
-    
+
     try {
       const validColor = Color(newColor).hex();
-      setColorState(prev => ({
+      setColorState((prev) => ({
         ...prev,
         baseColor: validColor,
       }));
@@ -111,7 +115,7 @@ export function useThemeColors(isDarkTheme: boolean) {
       background: defaults.background,
       shades: COLOR_SHADES,
     };
-    
+
     setColorState(newState);
     setInputColor(newState.baseColor);
   }, [isDarkTheme]);

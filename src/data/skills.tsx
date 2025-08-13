@@ -1,7 +1,7 @@
 export interface SkillItem {
   title: string;
   icon: string;
-};
+}
 
 export const SKILL_LIST: SkillItem[] = [
   { title: 'C', icon: 'c' },

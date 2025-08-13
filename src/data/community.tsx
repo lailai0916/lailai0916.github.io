@@ -3,7 +3,7 @@ export interface CommunityItem {
   text: string;
   icon: string;
   href: string;
-};
+}
 
 export const COMMUNITY_LIST: CommunityItem[] = [
   {

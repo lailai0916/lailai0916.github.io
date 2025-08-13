@@ -5,7 +5,7 @@ export interface ColorState {
   baseColor: string;
   background: string;
   shades: Shades;
-};
+}
 
 export interface Shades {
   [cssVar: string]: {
@@ -14,7 +14,7 @@ export interface Shades {
     displayOrder: number;
     codeOrder: number;
   };
-};
+}
 
 export const COLOR_SHADES: Shades = {
   '--ifm-color-primary': {
@@ -121,13 +121,16 @@ export function updateDOMColors(
   if (ruleToDelete >= 0) {
     styleSheet.deleteRule(ruleToDelete);
   }
-  
+
   // 获取默认背景色
   const defaultBackground = getThemeDefaults(isDarkTheme).background;
-  
+
   // 只有在背景色真的改变时才添加背景色变量
-  const backgroundRule = background !== defaultBackground ? `\n  --ifm-background-color: ${background};` : '';
-  
+  const backgroundRule =
+    background !== defaultBackground
+      ? `\n  --ifm-background-color: ${background};`
+      : '';
+
   const overrideStyle = `${
     isDarkTheme ? '[data-theme="dark"]' : '[data-theme="light"]'
   } {

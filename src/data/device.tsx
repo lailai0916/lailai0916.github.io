@@ -1,7 +1,7 @@
 export interface DeviceItem {
   title: string;
   icon: string;
-};
+}
 
 export const DEVICE_LIST: DeviceItem[] = [
   {

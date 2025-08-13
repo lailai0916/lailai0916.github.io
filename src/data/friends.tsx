@@ -3,7 +3,7 @@ export interface FriendItem {
   description: string;
   href: string;
   avatar: string;
-};
+}
 
 export const FRIEND_LIST: FriendItem[] = [
   // {

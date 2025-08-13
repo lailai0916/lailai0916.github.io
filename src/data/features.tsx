@@ -11,7 +11,7 @@ export interface FeatureItem {
     height: number;
   };
   text: React.ReactNode;
-};
+}
 
 export const FEATURE_LIST: FeatureItem[] = [
   {

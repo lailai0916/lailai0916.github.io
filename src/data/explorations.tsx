@@ -7,7 +7,7 @@ export interface ExplorationItem {
   description: string;
   status: { text: string; color: string };
   skills: string[];
-};
+}
 
 export const EXPLORATION_LIST: ExplorationItem[] = [
   {

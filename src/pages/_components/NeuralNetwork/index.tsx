@@ -1,6 +1,9 @@
 import React from 'react';
 import NeuralNetworkInteractive from '@site/src/components/NeuralNetwork';
-import { SectionMain, SectionHeader } from '@site/src/components/laikit/section';
+import {
+  SectionMain,
+  SectionHeader,
+} from '@site/src/components/laikit/section';
 import { translate } from '@docusaurus/Translate';
 
 export default function NeuralNetwork() {

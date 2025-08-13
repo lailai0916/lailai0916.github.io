@@ -6,7 +6,7 @@ export interface QuoteItem {
   author: string;
   context: string;
   status: { text: string; color: string };
-};
+}
 
 export const QUOTE_LIST: QuoteItem[] = [
   {
