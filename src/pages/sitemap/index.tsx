@@ -1,6 +1,7 @@
 import React, { type ReactNode } from 'react';
 import Layout from '@theme/Layout';
 
+import { SITEMAP_LIST } from '@site/src/data/sitemap';
 import Link from '@docusaurus/Link';
 import {
   PageTitle,
@@ -40,98 +41,18 @@ function MapHeader() {
 function MapContainer() {
   return (
     <div className={styles.container}>
-      <div>
-        <div>
-          <h3>页面</h3>
+      {SITEMAP_LIST.map((category) => (
+        <div key={category.title}>
+          <h3>{category.title}</h3>
           <ul>
-            <li>
-              <Link to="/">首页</Link>
-            </li>
-            <li>
-              <Link to="/about">关于</Link>
-            </li>
-            <li>
-              <Link to="/travel">旅行</Link>
-            </li>
-            <li>
-              <Link to="/friends">友链</Link>
-            </li>
-            <li>
-              <Link to="/resources">资源</Link>
-            </li>
-            <li>
-              <Link to="/games">游戏</Link>
-            </li>
+            {category.sitemaps.map((sitemap) => (
+              <li key={sitemap.title}>
+                <Link to={sitemap.href}>{sitemap.title}</Link>
+              </li>
+            ))}
           </ul>
         </div>
-        <div>
-          <h3>地图</h3>
-          <ul>
-            <li>
-              <Link to="/sitemap">地图</Link>
-            </li>
-          </ul>
-        </div>
-      </div>
-      <div>
-        <div>
-          <h3>文档</h3>
-          <ul>
-            <li>
-              <Link to="/docs/contest">竞赛</Link>
-            </li>
-            <li>
-              <Link to="/docs/note">笔记</Link>
-            </li>
-            <li>
-              <Link to="/docs/project">项目</Link>
-            </li>
-          </ul>
-        </div>
-        <div>
-          <h3>博客</h3>
-          <ul>
-            <li>
-              <Link to="/blog">博客</Link>
-            </li>
-            <li>
-              <Link to="/blog/archive">归档</Link>
-            </li>
-            <li>
-              <Link to="/blog/authors">作者</Link>
-            </li>
-            <li>
-              <Link to="/blog/tags">标签</Link>
-            </li>
-          </ul>
-        </div>
-      </div>
-      <div>
-        <div>
-          <h3>搜索</h3>
-          <ul>
-            <li>
-              <Link to="/search">搜索</Link>
-            </li>
-          </ul>
-        </div>
-        <div>
-          <h3>测试</h3>
-          <ul>
-            <li>
-              <Link to="/test">测试</Link>
-            </li>
-          </ul>
-        </div>
-        <div>
-          <h3>设置</h3>
-          <ul>
-            <li>
-              <Link to="/settings">设置</Link>
-            </li>
-          </ul>
-        </div>
-      </div>
+      ))}
     </div>
   );
 }

@@ -13,8 +13,8 @@
   max-width: 1200px;
   margin: 0 auto;
   padding: 4rem 2rem 4rem 2rem;
-  display: flex;
-  gap: 1.5rem;
+  column-count: 3;
+  column-gap: 1.5rem;
   animation: fadeIn 0.3s ease-out;
 }
 

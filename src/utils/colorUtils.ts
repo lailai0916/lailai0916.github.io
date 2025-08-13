@@ -1,13 +1,13 @@
 import Color from 'color';
 import { createStorageSlot } from '@docusaurus/theme-common';
 
-export type ColorState = {
+export interface ColorState {
   baseColor: string;
   background: string;
   shades: Shades;
 };
 
-export type Shades = {
+export interface Shades {
   [cssVar: string]: {
     adjustment: number;
     adjustmentInput: string;

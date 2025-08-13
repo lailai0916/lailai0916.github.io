@@ -1,4 +1,4 @@
-export type FriendItem = {
+export interface FriendItem {
   title: string;
   description: string;
   href: string;

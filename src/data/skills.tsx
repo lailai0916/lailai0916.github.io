@@ -1,4 +1,4 @@
-export type SkillItem = {
+export interface SkillItem {
   title: string;
   icon: string;
 };

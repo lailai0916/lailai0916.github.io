@@ -1,7 +1,7 @@
 import React from 'react';
 import Translate, { translate } from '@docusaurus/Translate';
 
-export type FeatureItem = {
+export interface FeatureItem {
   title: string;
   url: string;
   icon: string;

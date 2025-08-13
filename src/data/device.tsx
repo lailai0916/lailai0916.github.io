@@ -1,4 +1,4 @@
-export type DeviceItem = {
+export interface DeviceItem {
   title: string;
   icon: string;
 };

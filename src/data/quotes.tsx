@@ -1,7 +1,7 @@
 import { STATUS_COLORS } from '@site/src/components/laikit/section/constants';
 import { translate } from '@docusaurus/Translate';
 
-export type QuoteItem = {
+export interface QuoteItem {
   quote: string;
   author: string;
   context: string;
