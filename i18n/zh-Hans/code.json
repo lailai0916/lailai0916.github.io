@@ -708,7 +708,7 @@
     "message": "地图"
   },
   "pages.sitemap.modification": {
-    "message": "网站"
+    "message": "网站<b>地图</b>"
   },
   "pages.sitemap.description": {
     "message": "lailai's Home 的网站地图"

@@ -15,7 +15,7 @@ import styles from './styles.module.css';
 const TITLE = translate({ id: 'pages.sitemap.title', message: 'Map' });
 const MODIFICATION = translate({
   id: 'pages.sitemap.modification',
-  message: 'Site<b>map</b>',
+  message: 'Site <b>Map</b>',
 });
 const DESCRIPTION = translate({
   id: 'pages.sitemap.description',
