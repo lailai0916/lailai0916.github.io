@@ -33,7 +33,7 @@ struct Mat
 		{
 			for(int j=0;j<N;j++)
 			{
-				res.a[i][j]=(i==j);
+				res.a[i][j]=i==j;
 			}
 		}
 		while(rhs)
