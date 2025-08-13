@@ -713,11 +713,6 @@ const sidebars: SidebarsConfig = {
         },
       ],
     },
-    {
-      type: 'link',
-      label: '测试',
-      href: '/test',
-    },
   ],
 };
 
