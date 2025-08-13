@@ -15,7 +15,7 @@ import { FriendItem, FRIEND_LIST } from '@site/src/data/friends';
 import styles from './styles.module.css';
 
 const TITLE = '友链';
-const DESCRIPTION = '真正的友谊是世上最稀有的东西。';
+const DESCRIPTION = '真正的友谊是世上最稀有的东西';
 
 // 友链卡片组件
 function FriendCard({ friend }: { friend: FriendItem }) {

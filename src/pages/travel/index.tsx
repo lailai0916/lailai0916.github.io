@@ -15,7 +15,7 @@ import { SectionHeader } from '@site/src/components/laikit/section';
 import styles from './styles.module.css';
 
 const TITLE = '旅行';
-const DESCRIPTION = '每一次旅行都能带来新的视野和感悟。';
+const DESCRIPTION = '每一次旅行都能带来新的视野和感悟';
 
 function TravelTimeline() {
   return (
