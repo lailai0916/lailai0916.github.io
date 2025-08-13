@@ -228,10 +228,6 @@ const config: Config = {
         'sha384-odtC+0UGzzFL/6PNoE8rX/SPcQDXBJ+uRepguP4QkPCm2LBxH3FA3y+fKSiJ+AmM',
       crossorigin: 'anonymous',
     },
-    {
-      href: 'https://cdn.jsdelivr.net/npm/katex@0.13.24/dist/contrib/copy-tex.min.css',
-      type: 'text/css',
-    },
   ],
 
   themes: ['@docusaurus/theme-mermaid', '@docusaurus/theme-live-codeblock'],
