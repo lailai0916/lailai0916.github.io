@@ -11,7 +11,7 @@ import DataCard from '@site/src/components/laikit/widget/DataCard';
 import styles from './styles.module.css';
 
 const TITLE = '地图';
-const DESCRIPTION = "lailai's Home 网站地图";
+const DESCRIPTION = "lailai's Home 的网站地图";
 
 function MapHeader() {
   return (
