@@ -464,6 +464,9 @@
   "home.topbanner.title": {
     "message": "Hello, I'm lailai"
   },
+  "home.herobanner.title": {
+    "message": "<b>Welcome</b> to lailai's <b>Home</b>!"
+  },
   "home.herobanner.b1": {
     "message": "关于"
   },
@@ -700,5 +703,17 @@
   },
   "home.neuralnetwork.description": {
     "message": "在下方绘制数字 0~9，神经网络会实时识别您的手写数字"
+  },
+  "pages.sitemap.title": {
+    "message": "地图"
+  },
+  "pages.sitemap.modification": {
+    "message": "网站"
+  },
+  "pages.sitemap.description": {
+    "message": "lailai's Home 的网站地图"
+  },
+  "pages.sitemap.datacard.label": {
+    "message": "个页面"
   }
 }

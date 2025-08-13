@@ -2,8 +2,9 @@ import React, { useState, useEffect } from 'react';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import Link from '@docusaurus/Link';
 import Heading from '@theme/Heading';
-import Translate from '@docusaurus/Translate';
+import Translate, { translate } from '@docusaurus/Translate';
 import IconText from '@site/src/components/laikit/widget/IconText';
+
 import styles from './styles.module.css';
 
 export default function HeroBanner() {
@@ -24,9 +25,15 @@ export default function HeroBanner() {
             width="200"
             height="200"
           />
-          <span className={styles.heroTitleTextHtml}>
-            <b>Welcome</b> to lailai's <b>Home</b>!
-          </span>
+          <span
+            className={styles.heroTitleTextHtml}
+            dangerouslySetInnerHTML={{
+              __html: translate({
+                id: 'home.herobanner.title',
+                message: "<b>Welcome</b> to lailai's <b>Home</b>!",
+              }),
+            }}
+          />
         </Heading>
         <div className={styles.indexCtas}>
           <Link to="/about" className={styles.ctaCard}>

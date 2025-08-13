@@ -24,9 +24,7 @@ const DESCRIPTION = '自定义网站功能和偏好设置';
 function SettingsHeader() {
   return (
     <PageHeader>
-      <PageTitle description={DESCRIPTION}>
-        个性化<b>设置</b>
-      </PageTitle>
+      <PageTitle title="个性化<b>设置</b>" description={DESCRIPTION} />
       <DataCard
         value={SettingItems.length}
         label="项设置"

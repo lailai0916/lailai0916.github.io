@@ -178,7 +178,7 @@ const config: Config = {
             { label: 'About', to: '/about' },
             { label: 'Games', to: '/games' },
             { label: 'Settings', to: '/settings' },
-            { label: 'Map', to: '/map' },
+            { label: 'Sitemap', to: '/sitemap' },
           ],
         },
       ],

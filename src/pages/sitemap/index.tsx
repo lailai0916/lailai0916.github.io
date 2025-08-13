@@ -8,18 +8,31 @@ import {
   PageHeader,
 } from '@site/src/components/laikit/page';
 import DataCard from '@site/src/components/laikit/widget/DataCard';
+import { translate } from '@docusaurus/Translate';
 import styles from './styles.module.css';
 
-const TITLE = '地图';
-const DESCRIPTION = "lailai's Home 的网站地图";
+const TITLE = translate({ id: 'pages.sitemap.title', message: 'Map' });
+const MODIFICATION = translate({
+  id: 'pages.sitemap.modification',
+  message: 'Site<b>map</b>',
+});
+const DESCRIPTION = translate({
+  id: 'pages.sitemap.description',
+  message: "Sitemap of lailai's Home",
+});
 
 function MapHeader() {
   return (
     <PageHeader>
-      <PageTitle description={DESCRIPTION}>
-        网站<b>地图</b>
-      </PageTitle>
-      <DataCard value={8} label="个页面" icon="lucide:list" />
+      <PageTitle title={MODIFICATION} description={DESCRIPTION} />
+      <DataCard
+        value={8}
+        label={translate({
+          id: 'pages.sitemap.datacard.label',
+          message: 'Pages',
+        })}
+        icon="lucide:list"
+      />
     </PageHeader>
   );
 }
@@ -55,7 +68,7 @@ function MapContainer() {
           <h3>地图</h3>
           <ul>
             <li>
-              <Link to="/map">地图</Link>
+              <Link to="/sitemap">地图</Link>
             </li>
           </ul>
         </div>

@@ -8,17 +8,21 @@ export function PageMain({ children }: { children: React.ReactNode }) {
 }
 
 export function PageTitle({
+  title,
   description,
-  children,
 }: {
+  title: string;
   description: string;
-  children: React.ReactNode;
 }) {
   return (
     <div className={styles.headerContent}>
-      <Heading as="h1" className={styles.mainTitle}>
-        {children}
-      </Heading>
+      <Heading
+        as="h1"
+        className={styles.mainTitle}
+        dangerouslySetInnerHTML={{
+          __html: title,
+        }}
+      />
       <p className={styles.mainDescription}>{description}</p>
     </div>
   );

@@ -198,9 +198,7 @@ function ResourcesHeader() {
   );
   return (
     <PageHeader>
-      <PageTitle description={DESCRIPTION}>
-        精选<b>资源</b>
-      </PageTitle>
+      <PageTitle title="精选<b>资源</b>" description={DESCRIPTION} />
       <DataCardList
         items={[
           {
