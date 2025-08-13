@@ -8,7 +8,6 @@ import {
   PageFooter,
 } from '@site/src/components/laikit/page';
 import DataCard from '@site/src/components/laikit/widget/DataCard';
-import IconText from '@site/src/components/laikit/widget/IconText';
 import Link from '@docusaurus/Link';
 import { Icon } from '@iconify/react';
 import { FriendItem, FRIEND_LIST } from '@site/src/data/friends';
@@ -65,9 +64,7 @@ function FriendGrid() {
 function FriendsFooter() {
   return (
     <PageFooter>
-      <IconText icon="lucide:heart">
-        感谢每位朋友的陪伴和支持，也欢迎大家联系我添加友链。
-      </IconText>
+      感谢每位朋友的陪伴和支持，也欢迎大家联系我添加友链。
     </PageFooter>
   );
 }
@@ -91,8 +88,8 @@ export default function Friends(): ReactNode {
         <FriendsHeader />
         <div className={styles.container}>
           <FriendGrid />
-          <FriendsFooter />
         </div>
+        <FriendsFooter />
       </PageMain>
     </Layout>
   );
