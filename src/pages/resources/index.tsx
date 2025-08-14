@@ -13,6 +13,7 @@ import {
 import { DataCardList } from '@site/src/components/laikit/widget/DataCard';
 import IconText from '@site/src/components/laikit/widget/IconText';
 
+import { usePluralForm } from '@docusaurus/theme-common';
 import {
   RESOURCE_LIST,
   type ResourceCategoryItem,
@@ -189,6 +190,7 @@ function ResourceCard({
 
 // 分类区块组件
 function CategorySection({ category }: { category: ResourceCategoryItem }) {
+  const { selectMessage } = usePluralForm();
   return (
     <section className={styles.categorySection}>
       <div className={styles.categoryHeader}>
@@ -196,12 +198,15 @@ function CategorySection({ category }: { category: ResourceCategoryItem }) {
           <IconText icon={category.icon}>{category.title}</IconText>
         </h2>
         <div className={styles.categoryCount}>
-          {translate(
-            {
-              id: 'pages.resources.category.count',
-              message: '{count} items',
-            },
-            { count: category.resources.length }
+          {selectMessage(
+            category.resources.length,
+            translate(
+              {
+                id: 'pages.resources.category.count',
+                message: '{count} item|{count} items',
+              },
+              { count: category.resources.length }
+            )
           )}
         </div>
       </div>

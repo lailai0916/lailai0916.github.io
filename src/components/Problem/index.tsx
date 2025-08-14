@@ -4,6 +4,7 @@ import TabItem from '@theme/TabItem';
 import Details from '@theme/Details';
 import CodeBlock from '@theme/CodeBlock';
 import Admonition from '@theme/Admonition';
+import { usePluralForm } from '@docusaurus/theme-common';
 import { translate } from '@docusaurus/Translate';
 
 declare const require: any;
@@ -14,6 +15,7 @@ const ctx = require.context(
 );
 
 export function GetCode({ id }: { id: string }) {
+  const { selectMessage } = usePluralForm();
   const codes = useMemo(
     () =>
       ctx
@@ -34,12 +36,15 @@ export function GetCode({ id }: { id: string }) {
     <>
       {codes.length > 0 && (
         <Details
-          summary={translate(
-            {
-              id: 'components.problem.code',
-              message: 'Code ({num})',
-            },
-            { num: codes.length }
+          summary={selectMessage(
+            codes.length,
+            translate(
+              {
+                id: 'components.problem.code',
+                message: 'Code|Code ({num})',
+              },
+              { num: codes.length }
+            )
           )}
         >
           {codes.length === 1 ? (
