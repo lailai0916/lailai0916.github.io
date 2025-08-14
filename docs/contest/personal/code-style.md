@@ -171,6 +171,7 @@ vector<int> G[N];
 - `vis`：访问性
 - `dis`：距离
 - `siz`：大小
+- `len`：长度
 - `rnk`：排名
 - `tag`：标记
 - `val`：价值
@@ -182,6 +183,7 @@ vector<int> G[N];
 - `fa`：父节点
 - `son`：子节点
 - `dep`：深度
+- `cmp`：比较
 - ...
 
 ### 常量命名
