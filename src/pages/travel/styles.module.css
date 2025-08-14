@@ -4,7 +4,7 @@
   flex-direction: column;
   max-width: 800px;
   padding: 2rem;
-  margin: auto;
+  margin: 0 auto;
 }
 
 /* Timeline全局样式 - 与主页BlogCard保持一致 */

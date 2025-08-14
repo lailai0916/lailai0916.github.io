@@ -2,12 +2,9 @@
 title: Test
 ---
 
-import Heading from '@theme/Heading';
+import { Title } from '@site/src/pages/test/\_components';
 
-<section className="margin-top--lg margin-bottom--lg text--center">
-  <Heading as="h1">Test</Heading>
-  <p>Tests for new website features</p>
-</section>
+<Title />
 
 ## 注释
 

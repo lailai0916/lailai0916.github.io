@@ -67,7 +67,7 @@ function FriendCard({ friend }: { friend: FriendItem }) {
 // 友链网格组件
 function FriendGrid() {
   return (
-    <section className={styles.friendsSection}>
+    <section className={styles.container}>
       <div className={styles.friendsGrid}>
         {FRIEND_LIST.map((friend, index) => (
           <FriendCard key={`${friend.title}-${index}`} friend={friend} />
@@ -103,9 +103,7 @@ export default function Friends(): ReactNode {
     <Layout title={TITLE} description={DESCRIPTION}>
       <PageMain>
         <FriendsHeader />
-        <div className={styles.container}>
-          <FriendGrid />
-        </div>
+        <FriendGrid />
         <FriendsFooter />
       </PageMain>
     </Layout>
