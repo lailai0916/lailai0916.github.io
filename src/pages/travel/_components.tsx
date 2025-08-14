@@ -4,7 +4,6 @@ import { Chrono } from 'react-chrono';
 import { TRAVEL_LIST } from '@site/src/data/travel';
 import './styles.module.css';
 
-// 布局常量
 const LAYOUT_CONSTANTS = {
   BREAKPOINT_MOBILE: 768,
   CARD_WIDTH: 400,
@@ -14,9 +13,7 @@ const LAYOUT_CONSTANTS = {
   POINT_SIZE: 18,
 } as const;
 
-// Timeline配置常量（仅保留非默认值）
 const TIMELINE_CONFIG = {
-  // 布局和尺寸
   cardWidth: LAYOUT_CONSTANTS.CARD_WIDTH,
   cardHeight: LAYOUT_CONSTANTS.CARD_HEIGHT,
   contentDetailsHeight: LAYOUT_CONSTANTS.CONTENT_HEIGHT,
@@ -26,24 +23,20 @@ const TIMELINE_CONFIG = {
 
   hideControls: true,
   useReadMore: false,
-  // 必要的交互配置
   enableBreakPoint: true,
   borderLessCards: true,
   disableToolbar: true,
 
-  // 媒体设置
   mediaSettings: {
     align: 'center' as const,
     fit: 'cover' as const,
   },
 
-  // 可访问性
   semanticTags: {
     cardTitle: 'h3' as const,
   },
 } as const;
 
-// 主题配置 - 遵循网站设计理念：统一·简约·现代
 const TIMELINE_THEME = {
   primary: 'var(--ifm-color-primary)',
   secondary: 'var(--ifm-color-primary-light)',
@@ -66,7 +59,6 @@ const TIMELINE_THEME = {
   glowColor: 'var(--ifm-color-primary-lightest)',
 } as const;
 
-// 样式类名配置
 const CLASS_NAMES = {
   card: 'travel-timeline-card',
   cardMedia: 'travel-timeline-card-media',
