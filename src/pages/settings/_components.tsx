@@ -8,13 +8,35 @@ import { useColorMode } from '@docusaurus/theme-common';
 import { usePersistentState } from '@site/src/hooks/usePersistentState';
 import { getAdjustedColors } from '@site/src/utils/colorUtils';
 import { useThemeColors } from '@site/src/hooks/useThemeColors';
+import { translate } from '@docusaurus/Translate';
 import styles from './styles.module.css';
 
 export function ThemeSettings() {
   const themeOptions = [
-    { key: null, label: '跟随系统', icon: 'lucide:monitor' },
-    { key: 'light' as const, label: '浅色模式', icon: 'lucide:sun' },
-    { key: 'dark' as const, label: '深色模式', icon: 'lucide:moon' },
+    {
+      key: null,
+      label: translate({
+        id: 'pages.settings.item.theme.option.system',
+        message: 'Follow System',
+      }),
+      icon: 'lucide:monitor',
+    },
+    {
+      key: 'light' as const,
+      label: translate({
+        id: 'pages.settings.item.theme.option.light',
+        message: 'Light Mode',
+      }),
+      icon: 'lucide:sun',
+    },
+    {
+      key: 'dark' as const,
+      label: translate({
+        id: 'pages.settings.item.theme.option.dark',
+        message: 'Dark Mode',
+      }),
+      icon: 'lucide:moon',
+    },
   ];
   const { colorModeChoice, setColorMode } = useColorMode();
 
@@ -104,12 +126,11 @@ export function ColorGenerator() {
               .join(', ')})`,
           }}
         />
-        <button
-          className={styles.resetButton}
-          onClick={resetColors}
-          title="重置为默认颜色"
-        >
-          重置
+        <button className={styles.resetButton} onClick={resetColors}>
+          {translate({
+            id: 'pages.settings.item.color.reset',
+            message: 'Reset',
+          })}
         </button>
       </div>
     </>
@@ -138,7 +159,15 @@ export function FontSettings() {
 
   return (
     <div className={styles.sliderContainer}>
-      <span className={styles.sliderLabel}>当前：{fontSize}px</span>
+      <span className={styles.sliderLabel}>
+        {translate(
+          {
+            id: 'pages.settings.item.font.current',
+            message: 'Current: {size}px',
+          },
+          { size: fontSize }
+        )}
+      </span>
       <input
         type="range"
         min="12"
@@ -159,8 +188,20 @@ export function FontSettings() {
 
 export function ExperimentalFeatures() {
   const buttonOptions = [
-    { key: 'newLayout' as const, label: '新版布局' },
-    { key: 'debugMode' as const, label: '调试模式' },
+    {
+      key: 'newLayout' as const,
+      label: translate({
+        id: 'pages.settings.item.experimental.option.newLayout',
+        message: 'New Layout',
+      }),
+    },
+    {
+      key: 'debugMode' as const,
+      label: translate({
+        id: 'pages.settings.item.experimental.option.debugMode',
+        message: 'Debug Mode',
+      }),
+    },
   ];
   const [toggles, setToggles] = usePersistentState('settings-experimental', {
     newLayout: false,
@@ -229,13 +270,19 @@ export function QuickActions() {
   const quickActionOptions = [
     {
       key: 'confetti' as const,
-      label: '给我惊喜',
+      label: translate({
+        id: 'pages.settings.item.quickactions.option.confetti',
+        message: 'Surprise Me',
+      }),
       icon: 'lucide:sparkles',
       onClick: Confetti,
     },
     {
       key: 'reset' as const,
-      label: '重置设置',
+      label: translate({
+        id: 'pages.settings.item.quickactions.option.reset',
+        message: 'Reset Settings',
+      }),
       icon: 'lucide:rotate-ccw',
       onClick: handleReset,
     },

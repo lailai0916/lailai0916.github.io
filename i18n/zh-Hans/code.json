@@ -898,5 +898,32 @@
   },
   "pages.settings.item.quickactions.subtitle": {
     "message": "快速管理您的个性化配置"
+  },
+  "pages.settings.item.theme.option.system": {
+    "message": "跟随系统"
+  },
+  "pages.settings.item.theme.option.light": {
+    "message": "浅色模式"
+  },
+  "pages.settings.item.theme.option.dark": {
+    "message": "深色模式"
+  },
+  "pages.settings.item.color.reset": {
+    "message": "重置"
+  },
+  "pages.settings.item.font.current": {
+    "message": "当前：{size}px"
+  },
+  "pages.settings.item.experimental.option.newLayout": {
+    "message": "新版布局"
+  },
+  "pages.settings.item.experimental.option.debugMode": {
+    "message": "调试模式"
+  },
+  "pages.settings.item.quickactions.option.confetti": {
+    "message": "给我惊喜"
+  },
+  "pages.settings.item.quickactions.option.reset": {
+    "message": "重置设置"
   }
 }
