@@ -64,13 +64,6 @@ const TIMELINE_THEME = {
   glowColor: 'var(--ifm-color-primary-lightest)',
 } as const;
 
-// 字体大小配置
-const FONT_SIZES = {
-  cardText: '0.875rem', // 14px
-  cardTitle: '1.125rem', // 18px
-  title: '0.75rem', // 12px
-} as const;
-
 // 样式类名配置
 const CLASS_NAMES = {
   card: 'travel-timeline-card',
@@ -132,10 +125,8 @@ export default function Timeline() {
       items={items}
       mode="VERTICAL_ALTERNATING"
       theme={TIMELINE_THEME}
-      fontSizes={FONT_SIZES}
       classNames={CLASS_NAMES}
       {...TIMELINE_CONFIG}
-      timelinePointShape="circle"
     />
   );
 }
