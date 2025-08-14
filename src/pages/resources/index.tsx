@@ -274,10 +274,13 @@ export default function Resources(): ReactNode {
             ) : (
               <div className={styles.noResults}>
                 <p>
-                  {translate({
-                    id: 'pages.resources.noresults.description',
-                    message: 'No resources found matching "{query}".',
-                  })}
+                  {translate(
+                    {
+                      id: 'pages.resources.noresults.description',
+                      message: 'No resources found matching "{query}".',
+                    },
+                    { query: searchQuery }
+                  )}
                 </p>
                 <button
                   onClick={() => setSearchQuery('')}
