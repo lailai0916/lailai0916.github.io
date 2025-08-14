@@ -27,7 +27,7 @@ function MapHeader() {
     <PageHeader>
       <PageTitle title={MODIFICATION} description={DESCRIPTION} />
       <DataCard
-        value={8}
+        value={10}
         label={translate({
           id: 'pages.sitemap.datacard.label',
           message: 'Pages',
