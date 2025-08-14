@@ -95,14 +95,6 @@
     "message": "数值算法是指用计算机对数学问题进行近似数值计算的方法。",
     "description": "The generated-index page description for category 数值算法 in sidebar sidebar1"
   },
-  "sidebar.sidebar1.category.杂项": {
-    "message": "杂项",
-    "description": "The label for category 杂项 in sidebar sidebar1"
-  },
-  "sidebar.sidebar1.category.杂项.link.generated-index.description": {
-    "message": "这个板块主要介绍的是一些难以分类的算法及 OI 相关知识。",
-    "description": "The generated-index page description for category 杂项 in sidebar sidebar1"
-  },
   "sidebar.sidebar1.category.模板": {
     "message": "模板",
     "description": "The label for category 模板 in sidebar sidebar1"
@@ -150,6 +142,14 @@
   "sidebar.sidebar1.category.计算几何.link.generated-index.description": {
     "message": "利用计算机建立数学模型解决几何问题。",
     "description": "The generated-index page description for category 计算几何 in sidebar sidebar1"
+  },
+  "sidebar.sidebar1.category.杂项": {
+    "message": "杂项",
+    "description": "The label for category 杂项 in sidebar sidebar1"
+  },
+  "sidebar.sidebar1.category.杂项.link.generated-index.description": {
+    "message": "这个板块主要介绍的是一些难以分类的算法及 OI 相关知识。",
+    "description": "The generated-index page description for category 杂项 in sidebar sidebar1"
   },
   "sidebar.sidebar2.category.数学": {
     "message": "数学",
@@ -235,6 +235,10 @@
     "message": "本章介绍其他英语语法相关知识，包括构词法和标点符号。",
     "description": "The generated-index page description for category 其他 in sidebar sidebar2"
   },
+  "sidebar.sidebar2.category.推荐": {
+    "message": "推荐",
+    "description": "The label for category 推荐 in sidebar sidebar2"
+  },
   "sidebar.sidebar3.category.GitHub": {
     "message": "GitHub",
     "description": "The label for category GitHub in sidebar sidebar3"
@@ -247,13 +251,13 @@
     "message": "lailai's Home",
     "description": "The label for category lailai's Home in sidebar sidebar3"
   },
-  "sidebar.sidebar3.category.模板": {
-    "message": "模板",
-    "description": "The label for category 模板 in sidebar sidebar3"
+  "sidebar.sidebar3.category.指南": {
+    "message": "指南",
+    "description": "The label for category 指南 in sidebar sidebar3"
   },
-  "sidebar.sidebar3.category.模板.link.generated-index.description": {
-    "message": "本章收录各种实用的文档模板，包括Markdown、LaTeX、Mermaid、题解等常用模板。",
-    "description": "The generated-index page description for category 模板 in sidebar sidebar3"
+  "sidebar.sidebar3.category.指南.link.generated-index.description": {
+    "message": "本章收录各种实用的文档指南。",
+    "description": "The generated-index page description for category 指南 in sidebar sidebar3"
   },
   "sidebar.sidebar3.category.工具": {
     "message": "工具",
@@ -330,9 +334,5 @@
   "sidebar.sidebar3.category.配置.link.generated-index.description": {
     "message": "各种开发工具的配置分享。",
     "description": "The generated-index page description for category 配置 in sidebar sidebar3"
-  },
-  "sidebar.sidebar3.link.测试": {
-    "message": "测试",
-    "description": "The label for link 测试 in sidebar sidebar3, linking to /test"
   }
 }

@@ -1,3 +1,5 @@
+import { translate } from '@docusaurus/Translate';
+
 export interface SitemapItem {
   title: string;
   href: string;
@@ -10,47 +12,178 @@ export interface SitemapCategoryItem {
 
 export const SITEMAP_LIST: SitemapCategoryItem[] = [
   {
-    title: '页面',
+    title: translate({
+      id: 'data.sitemap.pages.title',
+      message: 'Pages',
+    }),
     sitemaps: [
-      { title: '首页', href: '/' },
-      { title: '关于', href: '/about' },
-      { title: '旅行', href: '/travel' },
-      { title: '友链', href: '/friends' },
-      { title: '资源', href: '/resources' },
-      { title: '游戏', href: '/games' },
+      {
+        title: translate({
+          id: 'data.sitemap.pages.home',
+          message: 'Home',
+        }),
+        href: '/',
+      },
+      {
+        title: translate({
+          id: 'data.sitemap.pages.about',
+          message: 'About',
+        }),
+        href: '/about',
+      },
+      {
+        title: translate({
+          id: 'data.sitemap.pages.travel',
+          message: 'Travel',
+        }),
+        href: '/travel',
+      },
+      {
+        title: translate({
+          id: 'data.sitemap.pages.friends',
+          message: 'Friends',
+        }),
+        href: '/friends',
+      },
+      {
+        title: translate({
+          id: 'data.sitemap.pages.resources',
+          message: 'Resources',
+        }),
+        href: '/resources',
+      },
+      {
+        title: translate({
+          id: 'data.sitemap.pages.games',
+          message: 'Games',
+        }),
+        href: '/games',
+      },
     ],
   },
   {
-    title: '地图',
-    sitemaps: [{ title: '地图', href: '/sitemap' }],
-  },
-  {
-    title: '文档',
+    title: translate({
+      id: 'data.sitemap.sitemap.title',
+      message: 'Sitemap',
+    }),
     sitemaps: [
-      { title: '竞赛', href: '/docs/contest' },
-      { title: '笔记', href: '/docs/note' },
-      { title: '项目', href: '/docs/project' },
+      {
+        title: translate({
+          id: 'data.sitemap.sitemap.sitemap',
+          message: 'Sitemap',
+        }),
+        href: '/sitemap',
+      },
     ],
   },
   {
-    title: '博客',
+    title: translate({
+      id: 'data.sitemap.docs.title',
+      message: 'Docs',
+    }),
     sitemaps: [
-      { title: '博客', href: '/blog' },
-      { title: '归档', href: '/blog/archive' },
-      { title: '作者', href: '/blog/authors' },
-      { title: '标签', href: '/blog/tags' },
+      {
+        title: translate({
+          id: 'data.sitemap.docs.contest',
+          message: 'Contest',
+        }),
+        href: '/docs/contest',
+      },
+      {
+        title: translate({
+          id: 'data.sitemap.docs.note',
+          message: 'Note',
+        }),
+        href: '/docs/note',
+      },
+      {
+        title: translate({
+          id: 'data.sitemap.docs.project',
+          message: 'Project',
+        }),
+        href: '/docs/project',
+      },
     ],
   },
   {
-    title: '搜索',
-    sitemaps: [{ title: '搜索', href: '/search' }],
+    title: translate({
+      id: 'data.sitemap.blog.title',
+      message: 'Blog',
+    }),
+    sitemaps: [
+      {
+        title: translate({
+          id: 'data.sitemap.blog.blog',
+          message: 'Blog',
+        }),
+        href: '/blog',
+      },
+      {
+        title: translate({
+          id: 'data.sitemap.blog.archive',
+          message: 'Archive',
+        }),
+        href: '/blog/archive',
+      },
+      {
+        title: translate({
+          id: 'data.sitemap.blog.authors',
+          message: 'Authors',
+        }),
+        href: '/blog/authors',
+      },
+      {
+        title: translate({
+          id: 'data.sitemap.blog.tags',
+          message: 'Tags',
+        }),
+        href: '/blog/tags',
+      },
+    ],
   },
   {
-    title: '设置',
-    sitemaps: [{ title: '设置', href: '/settings' }],
+    title: translate({
+      id: 'data.sitemap.search.title',
+      message: 'Search',
+    }),
+    sitemaps: [
+      {
+        title: translate({
+          id: 'data.sitemap.search.search',
+          message: 'Search',
+        }),
+        href: '/search',
+      },
+    ],
   },
   {
-    title: '测试',
-    sitemaps: [{ title: '测试', href: '/test' }],
+    title: translate({
+      id: 'data.sitemap.settings.title',
+      message: 'Settings',
+    }),
+    sitemaps: [
+      {
+        title: translate({
+          id: 'data.sitemap.settings.settings',
+          message: 'Settings',
+        }),
+        href: '/settings',
+      },
+    ],
+  },
+  {
+    title: translate({
+      id: 'data.sitemap.test.title',
+      message: 'Test',
+    }),
+    sitemaps: [
+      {
+        title: translate({
+          id: 'data.sitemap.test.test',
+          message: 'Test',
+        }),
+        href: '/test',
+      },
+    ],
   },
 ];

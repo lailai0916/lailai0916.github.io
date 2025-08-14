@@ -715,5 +715,77 @@
   },
   "pages.sitemap.datacard.label": {
     "message": "个页面"
+  },
+  "data.sitemap.pages.title": {
+    "message": "页面"
+  },
+  "data.sitemap.pages.home": {
+    "message": "首页"
+  },
+  "data.sitemap.pages.about": {
+    "message": "关于"
+  },
+  "data.sitemap.pages.travel": {
+    "message": "旅行"
+  },
+  "data.sitemap.pages.friends": {
+    "message": "友链"
+  },
+  "data.sitemap.pages.resources": {
+    "message": "资源"
+  },
+  "data.sitemap.pages.games": {
+    "message": "游戏"
+  },
+  "data.sitemap.sitemap.title": {
+    "message": "地图"
+  },
+  "data.sitemap.sitemap.sitemap": {
+    "message": "地图"
+  },
+  "data.sitemap.docs.title": {
+    "message": "文档"
+  },
+  "data.sitemap.docs.contest": {
+    "message": "竞赛"
+  },
+  "data.sitemap.docs.note": {
+    "message": "笔记"
+  },
+  "data.sitemap.docs.project": {
+    "message": "项目"
+  },
+  "data.sitemap.blog.title": {
+    "message": "博客"
+  },
+  "data.sitemap.blog.blog": {
+    "message": "博客"
+  },
+  "data.sitemap.blog.archive": {
+    "message": "归档"
+  },
+  "data.sitemap.blog.authors": {
+    "message": "作者"
+  },
+  "data.sitemap.blog.tags": {
+    "message": "标签"
+  },
+  "data.sitemap.search.title": {
+    "message": "搜索"
+  },
+  "data.sitemap.search.search": {
+    "message": "搜索"
+  },
+  "data.sitemap.settings.title": {
+    "message": "设置"
+  },
+  "data.sitemap.settings.settings": {
+    "message": "设置"
+  },
+  "data.sitemap.test.title": {
+    "message": "测试"
+  },
+  "data.sitemap.test.test": {
+    "message": "测试"
   }
 }
