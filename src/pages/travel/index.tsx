@@ -33,7 +33,7 @@ const FOOTER = translate({
     'Read ten thousand books and travel ten thousand miles. Only by walking far can you truly look the world in the eye—neither looking up to wealthy nations nor looking down on poorer lands. The world is not what the news shows, nor what others tell you, but what you see with your own eyes and feel with your own heart. The more you see, the broader your vision and the greater your mind.',
 });
 
-function TravelTimeline() {
+function TravelMain() {
   return (
     <div className={styles.container}>
       <SectionHeader
@@ -89,7 +89,7 @@ export default function Travel(): ReactNode {
     <Layout title={TITLE} description={DESCRIPTION}>
       <PageMain>
         <TravelHeader />
-        <TravelTimeline />
+        <TravelMain />
         <TravelFooter />
       </PageMain>
     </Layout>
