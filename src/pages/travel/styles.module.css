@@ -1,9 +1,10 @@
 /* 旅行页面样式 */
-.travelContainer {
-  max-width: 800px;
-  margin: auto;
+.container {
+  display: flex;
   flex-direction: column;
+  max-width: 800px;
   padding: 2rem;
+  margin: auto;
 }
 
 /* Timeline全局样式 - 与主页BlogCard保持一致 */

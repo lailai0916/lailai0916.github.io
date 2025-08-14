@@ -35,7 +35,7 @@ const FOOTER = translate({
 
 function TravelTimeline() {
   return (
-    <div className={styles.travelContainer}>
+    <div className={styles.container}>
       <SectionHeader
         title={translate({
           id: 'pages.travel.timeline.title',
