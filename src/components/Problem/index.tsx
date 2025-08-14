@@ -37,7 +37,7 @@ export function GetCode({ id }: { id: string }) {
           summary={translate(
             {
               id: 'components.problem.code',
-              message: 'Reference Code ({num})',
+              message: 'Code ({num})',
             },
             { num: codes.length }
           )}

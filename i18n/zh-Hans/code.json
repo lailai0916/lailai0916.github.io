@@ -537,7 +537,7 @@
     "message": "题解"
   },
   "components.problem.code": {
-    "message": "参考代码（{num}）"
+    "message": "代码（{num}）"
   },
   "components.problem.error": {
     "message": "无法加载问题 {id}：请检查文件 \"docs/contest/_problems/{id}.md\" 是否存在。"
