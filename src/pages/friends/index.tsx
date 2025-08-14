@@ -67,13 +67,11 @@ function FriendCard({ friend }: { friend: FriendItem }) {
 // 友链网格组件
 function FriendGrid() {
   return (
-    <section className={styles.container}>
-      <div className={styles.friendsGrid}>
-        {FRIEND_LIST.map((friend, index) => (
-          <FriendCard key={`${friend.title}-${index}`} friend={friend} />
-        ))}
-      </div>
-    </section>
+    <div className={styles.container}>
+      {FRIEND_LIST.map((friend, index) => (
+        <FriendCard key={`${friend.title}-${index}`} friend={friend} />
+      ))}
+    </div>
   );
 }
 

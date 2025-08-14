@@ -6,13 +6,6 @@
   max-width: 1200px;
   margin: 0 auto;
   padding: 2rem;
-}
-
-/* ==========================================================================
-   3. Friends Section
-   ========================================================================== */
-
-.friendsGrid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
   gap: 2rem;
