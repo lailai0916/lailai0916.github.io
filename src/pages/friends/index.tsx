@@ -3,7 +3,7 @@ import Layout from '@theme/Layout';
 
 import {
   PageTitle,
-  PageMain,
+  PageContainer,
   PageHeader,
   PageFooter,
 } from '@site/src/components/laikit/page';
@@ -98,11 +98,11 @@ function FriendsHeader() {
 export default function Friends(): ReactNode {
   return (
     <Layout title={TITLE} description={DESCRIPTION}>
-      <PageMain>
+      <PageContainer>
         <FriendsHeader />
         <FriendsMain />
         <FriendsFooter />
-      </PageMain>
+      </PageContainer>
     </Layout>
   );
 }

@@ -3,7 +3,7 @@ import Layout from '@theme/Layout';
 
 import {
   PageTitle,
-  PageMain,
+  PageContainer,
   PageHeader,
 } from '@site/src/components/laikit/page';
 import DataCard from '@site/src/components/laikit/widget/DataCard';
@@ -135,10 +135,10 @@ function SettingsContainer() {
 export default function Settings(): ReactNode {
   return (
     <Layout title={TITLE} description={DESCRIPTION}>
-      <PageMain>
+      <PageContainer>
         <SettingsHeader />
         <SettingsContainer />
-      </PageMain>
+      </PageContainer>
     </Layout>
   );
 }

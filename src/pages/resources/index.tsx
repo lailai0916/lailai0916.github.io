@@ -7,7 +7,7 @@ import clsx from 'clsx';
 
 import {
   PageTitle,
-  PageMain,
+  PageContainer,
   PageHeader,
 } from '@site/src/components/laikit/page';
 import { DataCardList } from '@site/src/components/laikit/widget/DataCard';
@@ -255,7 +255,7 @@ export default function Resources(): ReactNode {
   }, [activeCategory, searchQuery]);
   return (
     <Layout title={TITLE} description={DESCRIPTION}>
-      <PageMain>
+      <PageContainer>
         <ResourcesHeader />
         <div className={styles.container}>
           <div className={styles.stickyControls}>
@@ -295,7 +295,7 @@ export default function Resources(): ReactNode {
             )}
           </div>
         </div>
-      </PageMain>
+      </PageContainer>
     </Layout>
   );
 }

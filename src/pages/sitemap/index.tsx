@@ -5,7 +5,7 @@ import { SITEMAP_LIST } from '@site/src/data/sitemap';
 import Link from '@docusaurus/Link';
 import {
   PageTitle,
-  PageMain,
+  PageContainer,
   PageHeader,
 } from '@site/src/components/laikit/page';
 import DataCard from '@site/src/components/laikit/widget/DataCard';
@@ -60,10 +60,10 @@ function SitemapMain() {
 export default function Sitemap(): ReactNode {
   return (
     <Layout title={TITLE} description={DESCRIPTION}>
-      <PageMain>
+      <PageContainer>
         <SitemapHeader />
         <SitemapMain />
-      </PageMain>
+      </PageContainer>
     </Layout>
   );
 }

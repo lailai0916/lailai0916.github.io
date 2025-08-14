@@ -6,6 +6,10 @@ import { Title } from '@site/src/pages/test/\_components';
 
 <Title />
 
+$$
+\underline{\widehat{\dbinom{\odot_\vee\odot}{\raisebox{-8pt}{"}\ \wr\ \raisebox{-8pt}{"}}}}
+$$
+
 ## 注释
 
 <Notation type="circle">This is a notation.</Notation>

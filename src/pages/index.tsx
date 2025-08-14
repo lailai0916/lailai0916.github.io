@@ -2,7 +2,7 @@ import React, { type ReactNode } from 'react';
 import Layout from '@theme/Layout';
 
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
-import { PageMain } from '@site/src/components/laikit/page';
+import { PageContainer } from '@site/src/components/laikit/page';
 import styles from './styles.module.css';
 
 import TopBanner from './_components/TopBanner';
@@ -23,7 +23,7 @@ export default function Home(): ReactNode {
   const { siteConfig } = useDocusaurusContext();
   return (
     <Layout title={siteConfig.title} description={siteConfig.tagline}>
-      <PageMain>
+      <PageContainer>
         <TopBanner />
         <HeroBanner />
         <div className={styles.container}>
@@ -37,7 +37,7 @@ export default function Home(): ReactNode {
           <Quote />
           <Community />
         </div>
-      </PageMain>
+      </PageContainer>
     </Layout>
   );
 }

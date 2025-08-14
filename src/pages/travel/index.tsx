@@ -3,7 +3,7 @@ import Layout from '@theme/Layout';
 
 import {
   PageTitle,
-  PageMain,
+  PageContainer,
   PageHeader,
   PageFooter,
 } from '@site/src/components/laikit/page';
@@ -87,11 +87,11 @@ function TravelHeader() {
 export default function Travel(): ReactNode {
   return (
     <Layout title={TITLE} description={DESCRIPTION}>
-      <PageMain>
+      <PageContainer>
         <TravelHeader />
         <TravelMain />
         <TravelFooter />
-      </PageMain>
+      </PageContainer>
     </Layout>
   );
 }
