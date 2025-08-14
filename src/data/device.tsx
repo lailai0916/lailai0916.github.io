@@ -28,4 +28,8 @@ export const DEVICE_LIST: DeviceItem[] = [
     title: 'AirPods Max',
     icon: '/img/device/airpods.max.svg',
   },
+  {
+    title: 'Powerbeats Pro 2',
+    icon: '/img/device/beats.powerbeats.pro.svg',
+  },
 ];
