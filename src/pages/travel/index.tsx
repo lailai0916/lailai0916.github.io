@@ -65,7 +65,7 @@ function TravelHeader() {
             value: '20+',
             label: translate({
               id: 'pages.travel.datacard.label1',
-              message: 'Country/Region',
+              message: 'Countries',
             }),
             icon: 'lucide:globe',
           },
@@ -73,7 +73,7 @@ function TravelHeader() {
             value: `${new Date().getFullYear() - 2011}`,
             label: translate({
               id: 'pages.travel.datacard.label2',
-              message: 'Years of Journey',
+              message: 'Years',
             }),
             icon: 'lucide:route',
           },
