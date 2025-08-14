@@ -856,5 +856,47 @@
   },
   "pages.resources.noresults.clear": {
     "message": "清空搜索"
+  },
+  "pages.settings.title": {
+    "message": "设置"
+  },
+  "pages.settings.description": {
+    "message": "自定义网站功能和偏好设置"
+  },
+  "pages.settings.modification": {
+    "message": "个性化<b>设置</b>"
+  },
+  "pages.settings.datacard.label": {
+    "message": "项设置"
+  },
+  "pages.settings.item.theme.title": {
+    "message": "外观主题"
+  },
+  "pages.settings.item.theme.subtitle": {
+    "message": "选择一个适合您的主题模式"
+  },
+  "pages.settings.item.color.title": {
+    "message": "主题色生成器"
+  },
+  "pages.settings.item.color.subtitle": {
+    "message": "自定义网站的主色调，实时预览效果"
+  },
+  "pages.settings.item.font.title": {
+    "message": "字体大小"
+  },
+  "pages.settings.item.font.subtitle": {
+    "message": "调整界面字体以获得最佳阅读体验"
+  },
+  "pages.settings.item.experimental.title": {
+    "message": "实验性内容"
+  },
+  "pages.settings.item.experimental.subtitle": {
+    "message": "尝试仍在开发的新功能"
+  },
+  "pages.settings.item.quickactions.title": {
+    "message": "快捷操作"
+  },
+  "pages.settings.item.quickactions.subtitle": {
+    "message": "快速管理您的个性化配置"
   }
 }

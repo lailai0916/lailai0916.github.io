@@ -8,8 +8,6 @@ import {
 } from '@site/src/components/laikit/page';
 import DataCard from '@site/src/components/laikit/widget/DataCard';
 import { Icon } from '@iconify/react';
-import styles from './styles.module.css';
-
 import {
   ThemeSettings,
   ColorGenerator,
@@ -17,17 +15,32 @@ import {
   ExperimentalFeatures,
   QuickActions,
 } from './_components';
+import { translate } from '@docusaurus/Translate';
+import styles from './styles.module.css';
 
-const TITLE = '设置';
-const DESCRIPTION = '自定义网站功能和偏好设置';
+const TITLE = translate({
+  id: 'pages.settings.title',
+  message: 'Settings',
+});
+const DESCRIPTION = translate({
+  id: 'pages.settings.description',
+  message: 'Customize website features and preferences',
+});
+const MODIFICATION = translate({
+  id: 'pages.settings.modification',
+  message: 'Personalized <b>Settings</b>',
+});
 
 function SettingsHeader() {
   return (
     <PageHeader>
-      <PageTitle title="个性化<b>设置</b>" description={DESCRIPTION} />
+      <PageTitle title={MODIFICATION} description={DESCRIPTION} />
       <DataCard
         value={SettingItems.length}
-        label="项设置"
+        label={translate({
+          id: 'pages.settings.datacard.label',
+          message: 'Items',
+        })}
         icon="lucide:settings"
       />
     </PageHeader>
@@ -36,32 +49,63 @@ function SettingsHeader() {
 
 const SettingItems = [
   {
-    title: '外观主题',
-    subtitle: '选择一个适合您的主题模式',
+    title: translate({
+      id: 'pages.settings.item.theme.title',
+      message: 'Theme',
+    }),
+    subtitle: translate({
+      id: 'pages.settings.item.theme.subtitle',
+      message: 'Select a theme mode that suits you',
+    }),
     icon: 'lucide:monitor',
     component: ThemeSettings,
   },
   {
-    title: '主题色生成器',
-    subtitle: '自定义网站的主色调，实时预览效果',
+    title: translate({
+      id: 'pages.settings.item.color.title',
+      message: 'Theme Color Generator',
+    }),
+    subtitle: translate({
+      id: 'pages.settings.item.color.subtitle',
+      message:
+        'Customize the main color of the website, preview the effect in real time',
+    }),
     icon: 'lucide:palette',
     component: ColorGenerator,
   },
   {
-    title: '字体大小',
-    subtitle: '调整界面字体以获得最佳阅读体验',
+    title: translate({
+      id: 'pages.settings.item.font.title',
+      message: 'Font Size',
+    }),
+    subtitle: translate({
+      id: 'pages.settings.item.font.subtitle',
+      message: 'Adjust the interface font to get the best reading experience',
+    }),
     icon: 'lucide:type',
     component: FontSettings,
   },
   {
-    title: '实验性内容',
-    subtitle: '尝试仍在开发的新功能',
+    title: translate({
+      id: 'pages.settings.item.experimental.title',
+      message: 'Experimental Content',
+    }),
+    subtitle: translate({
+      id: 'pages.settings.item.experimental.subtitle',
+      message: 'Try new features that are still under development',
+    }),
     icon: 'lucide:flask-conical',
     component: ExperimentalFeatures,
   },
   {
-    title: '快捷操作',
-    subtitle: '快速管理您的个性化配置',
+    title: translate({
+      id: 'pages.settings.item.quickactions.title',
+      message: 'Quick Actions',
+    }),
+    subtitle: translate({
+      id: 'pages.settings.item.quickactions.subtitle',
+      message: 'Quickly manage your personalized configuration',
+    }),
     icon: 'lucide:zap',
     component: QuickActions,
   },
