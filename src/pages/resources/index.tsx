@@ -65,11 +65,6 @@ function filterResourceCategories(
     .filter((category) => category.resources.length > 0);
 }
 
-const searchPlaceholder = translate({
-  id: 'pages.resources.search.placeholder',
-  message: 'Search for resources by name or description...',
-});
-
 // 搜索栏组件
 function SearchBar({
   value,
@@ -82,7 +77,10 @@ function SearchBar({
     <div className={styles.searchBarContainer}>
       <input
         type="text"
-        placeholder={searchPlaceholder}
+        placeholder={translate({
+          id: 'pages.resources.search.placeholder',
+          message: 'Search for resources by name or description...',
+        })}
         value={value}
         onChange={(e) => onChange(e.target.value)}
         className={styles.searchBar}

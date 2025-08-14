@@ -17,7 +17,3 @@
   column-gap: 1.5rem;
   animation: fadeIn 0.3s ease-out;
 }
-
-.container > div {
-  flex: 1;
-}
