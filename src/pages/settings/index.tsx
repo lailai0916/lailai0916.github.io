@@ -39,7 +39,7 @@ function SettingsHeader() {
         value={SettingItems.length}
         label={translate({
           id: 'pages.settings.datacard.label',
-          message: 'Items',
+          message: 'Settings',
         })}
         icon="lucide:settings"
       />
