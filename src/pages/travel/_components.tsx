@@ -109,16 +109,12 @@ export default function Timeline() {
 
   return (
     <Chrono
-      // 数据和模式
       items={items}
       mode="VERTICAL_ALTERNATING"
-      // 主题和样式
       theme={TIMELINE_THEME}
       fontSizes={FONT_SIZES}
       classNames={CLASS_NAMES}
-      // 布局配置
       {...TIMELINE_CONFIG}
-      // 时间轴点样式
       timelinePointShape="circle"
     />
   );
