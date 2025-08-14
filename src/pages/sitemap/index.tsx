@@ -12,7 +12,7 @@ import DataCard from '@site/src/components/laikit/widget/DataCard';
 import { translate } from '@docusaurus/Translate';
 import styles from './styles.module.css';
 
-const TITLE = translate({ id: 'pages.sitemap.title', message: 'Map' });
+const TITLE = translate({ id: 'pages.sitemap.title', message: 'Sitemap' });
 const DESCRIPTION = translate({
   id: 'pages.sitemap.description',
   message: "Sitemap of lailai's Home",
@@ -22,7 +22,7 @@ const MODIFICATION = translate({
   message: 'Site <b>Map</b>',
 });
 
-function MapHeader() {
+function SitemapHeader() {
   return (
     <PageHeader>
       <PageTitle title={MODIFICATION} description={DESCRIPTION} />
@@ -38,7 +38,7 @@ function MapHeader() {
   );
 }
 
-function MapContainer() {
+function SitemapMain() {
   return (
     <div className={styles.container}>
       {SITEMAP_LIST.map((category) => (
@@ -57,12 +57,12 @@ function MapContainer() {
   );
 }
 
-export default function Map(): ReactNode {
+export default function Sitemap(): ReactNode {
   return (
     <Layout title={TITLE} description={DESCRIPTION}>
       <PageMain>
-        <MapHeader />
-        <MapContainer />
+        <SitemapHeader />
+        <SitemapMain />
       </PageMain>
     </Layout>
   );
