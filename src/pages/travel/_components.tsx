@@ -4,27 +4,30 @@ import { Chrono } from 'react-chrono';
 import { TRAVEL_LIST } from '@site/src/data/travel';
 import './styles.module.css';
 
-// Timeline配置常量
+// 布局常量
+const LAYOUT_CONSTANTS = {
+  BREAKPOINT_MOBILE: 768,
+  CARD_WIDTH: 400,
+  CARD_HEIGHT: 160,
+  CONTENT_HEIGHT: 120,
+  LINE_WIDTH: 3,
+  POINT_SIZE: 18,
+} as const;
+
+// Timeline配置常量（仅保留非默认值）
 const TIMELINE_CONFIG = {
   // 布局和尺寸
-  cardWidth: 400,
-  cardHeight: 160,
-  contentDetailsHeight: 120,
-  lineWidth: 3,
-  timelinePointDimension: 18,
-  responsiveBreakPoint: 768,
+  cardWidth: LAYOUT_CONSTANTS.CARD_WIDTH,
+  cardHeight: LAYOUT_CONSTANTS.CARD_HEIGHT,
+  contentDetailsHeight: LAYOUT_CONSTANTS.CONTENT_HEIGHT,
+  lineWidth: LAYOUT_CONSTANTS.LINE_WIDTH,
+  timelinePointDimension: LAYOUT_CONSTANTS.POINT_SIZE,
+  responsiveBreakPoint: LAYOUT_CONSTANTS.BREAKPOINT_MOBILE,
 
-  // 交互配置
-  hideControls: true,
-  useReadMore: false,
-  disableClickOnCircle: false,
-  disableNavOnKey: false,
+  // 必要的交互配置
   enableBreakPoint: true,
-  highlightCardsOnHover: false,
   borderLessCards: true,
   disableToolbar: true,
-  showAllCardsHorizontal: false,
-  parseDetailsAsHTML: false,
 
   // 媒体设置
   mediaSettings: {
@@ -53,19 +56,19 @@ const TIMELINE_THEME = {
   iconColor: 'var(--ifm-color-primary-light)',
   buttonHoverBgColor: 'var(--ifm-color-emphasis-200)',
   buttonActiveBgColor: 'var(--ifm-color-primary)',
-  buttonActiveIconColor: '#ffffff',
+  buttonActiveIconColor: 'var(--ifm-color-content-inverse)',
   buttonBorderColor: 'var(--ifm-color-emphasis-300)',
   buttonHoverBorderColor: 'var(--ifm-color-primary-lighter)',
   buttonActiveBorderColor: 'var(--ifm-color-primary)',
-  shadowColor: 'rgba(0, 0, 0, 0.1)',
+  shadowColor: 'var(--ifm-global-shadow-lw)',
   glowColor: 'var(--ifm-color-primary-lightest)',
 } as const;
 
 // 字体大小配置
 const FONT_SIZES = {
-  cardText: '0.875rem',
-  cardTitle: '1.125rem',
-  title: '0.75rem',
+  cardText: '0.875rem', // 14px
+  cardTitle: '1.125rem', // 18px
+  title: '0.75rem', // 12px
 } as const;
 
 // 样式类名配置
@@ -79,18 +82,35 @@ const CLASS_NAMES = {
 
 /**
  * 格式化 YYYY-MM 日期为 "Month Year"
+ * @param dateStr - 日期字符串，格式为 YYYY-MM
+ * @param locale - 语言环境
+ * @returns 格式化后的日期字符串
  */
 const formatTravelDate = (dateStr: string, locale: string): string => {
+  // 验证日期格式
   if (!/^\d{4}-\d{2}$/.test(dateStr)) {
-    return dateStr; // 格式不符，直接返回原字符串
+    console.warn(`Invalid date format: ${dateStr}. Expected format: YYYY-MM`);
+    return dateStr;
   }
-  const [year, month] = dateStr.split('-');
-  const date = new Date(Number(year), Number(month) - 1);
-  return date.toLocaleDateString(locale, {
-    year: 'numeric',
-    month: 'long',
-    timeZone: 'UTC',
-  });
+
+  try {
+    const [year, month] = dateStr.split('-');
+    const date = new Date(Number(year), Number(month) - 1);
+
+    // 验证日期是否有效
+    if (isNaN(date.getTime())) {
+      throw new Error(`Invalid date: ${dateStr}`);
+    }
+
+    return date.toLocaleDateString(locale, {
+      year: 'numeric',
+      month: 'long',
+      timeZone: 'UTC',
+    });
+  } catch (error) {
+    console.error(`Error formatting date ${dateStr}:`, error);
+    return dateStr; // 降级处理，返回原始字符串
+  }
 };
 
 /**
@@ -104,7 +124,7 @@ export default function Timeline() {
         ...item,
         title: formatTravelDate(item.title, i18n.currentLocale),
       })),
-    [TRAVEL_LIST]
+    [i18n.currentLocale]
   );
 
   return (
