@@ -11,19 +11,39 @@ import { DataCardList } from '@site/src/components/laikit/widget/DataCard';
 import BrowserOnly from '@docusaurus/BrowserOnly';
 import Timeline from '@site/src/pages/travel/_components';
 import { SectionHeader } from '@site/src/components/laikit/section';
+import { translate } from '@docusaurus/Translate';
 import styles from './styles.module.css';
 
-const TITLE = '旅行';
-const DESCRIPTION = '每一次旅行都能带来新的视野和感悟';
-const FOOTER =
-  '读万卷书，行万里路。路走多了，才能真正平视世界。既不仰望富裕国家，也不轻视贫穷之地。世界，不是新闻里的样子，也不是别人描述的样子，而是你亲眼所见、亲身所感。看得多了，眼界自开，格局亦变。';
+const TITLE = translate({
+  id: 'pages.travel.title',
+  message: 'Travel',
+});
+const DESCRIPTION = translate({
+  id: 'pages.travel.description',
+  message: 'Every trip brings new perspectives and insights',
+});
+const MODIFICATION = translate({
+  id: 'pages.travel.modification',
+  message: '<b>Travel</b> Record',
+});
+const FOOTER = translate({
+  id: 'pages.travel.footer',
+  message:
+    'Read ten thousand books and travel ten thousand miles. Only by walking far can you truly look the world in the eye—neither looking up to wealthy nations nor looking down on poorer lands. The world is not what the news shows, nor what others tell you, but what you see with your own eyes and feel with your own heart. The more you see, the broader your vision and the greater your mind.',
+});
 
 function TravelTimeline() {
   return (
     <div className={styles.travelContainer}>
       <SectionHeader
-        title="旅行足迹"
-        description="纸上得来终觉浅，绝知此事要躬行"
+        title={translate({
+          id: 'pages.travel.timeline.title',
+          message: 'Travel Footprint',
+        })}
+        description={translate({
+          id: 'pages.travel.timeline.description',
+          message: 'From what is gained on paper, understanding always feels shallow; to truly know it, you must experience it yourself.',
+        })}
       />
       <BrowserOnly>{() => <Timeline />}</BrowserOnly>
     </div>
@@ -37,17 +57,23 @@ function TravelFooter() {
 function TravelHeader() {
   return (
     <PageHeader>
-      <PageTitle title="<b>旅行</b>记录" description={DESCRIPTION} />
+      <PageTitle title={MODIFICATION} description={DESCRIPTION} />
       <DataCardList
         items={[
           {
             value: '20+',
-            label: '国家/地区',
+            label: translate({
+              id: 'pages.travel.datacard.label1',
+              message: 'Country/Region',
+            }),
             icon: 'lucide:globe',
           },
           {
             value: `${new Date().getFullYear() - 2011}`,
-            label: '年历程',
+            label: translate({
+              id: 'pages.travel.datacard.label2',
+              message: 'Years of Journey',
+            }),
             icon: 'lucide:route',
           },
         ]}
