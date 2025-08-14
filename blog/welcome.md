@@ -12,7 +12,7 @@ Through continuous practice and summarization, we transform knowledge into real 
 ![](/img/header/blog-light.svg#gh-light-mode-only)
 ![](/img/header/blog-dark.svg#gh-dark-mode-only)
 
-## 博客订阅
+## Blog Feeds
 
 Stay updated with the latest blog posts:
 
