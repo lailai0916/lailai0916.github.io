@@ -116,55 +116,36 @@ int main()
 
 ### 比赛搬题表
 
-<style>{`
-  .center-table th, .center-table td {
-    text-align: center;
-  }
-`}</style>
-
-<table className="center-table">
-  <thead>
-    <tr>
-      <th>年份 / 后缀</th>
-      <th>(null)</th>
-      <th>Qualification</th>
-      <th>Prelim</th>
-      <th>Finals</th>
-      <th>Practice</th>
-      <th>Prelim Practice</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr><td>1998</td><td>X</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
-    <tr><td>1999</td><td>X</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
-    <tr><td>2000</td><td>X</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
-    <tr><td>2001</td><td>X</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
-    <tr><td>2002</td><td>X</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
-    <tr><td>2003</td><td>X</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
-    <tr><td>2004</td><td>X</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
-    <tr><td>2005</td><td>X</td><td>X</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
-    <tr><td>2006</td><td>X</td><td>X</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
-    <tr><td>2007</td><td>X</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
-    <tr><td>2008</td><td>X</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
-    <tr><td>2009</td><td>X</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
-    <tr><td>2010</td><td>X</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
-    <tr><td>2011</td><td>X</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
-    <tr><td>2012</td><td>X</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
-    <tr><td>2013</td><td>X</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
-    <tr><td>2014</td><td>X</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
-    <tr><td>2015</td><td>X</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
-    <tr><td>2016</td><td>X</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
-    <tr><td>2017</td><td>X</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
-    <tr><td>2018</td><td>[Shunpower](https://www.luogu.com.cn/user/399150)</td><td>-</td><td>[ToastBread](https://www.luogu.com.cn/user/545809)</td><td>-</td><td>X</td><td>X</td></tr>
-    <tr><td>2019</td><td>[lailai0916](https://www.luogu.com.cn/user/455474)</td><td>-</td><td>[ToastBread](https://www.luogu.com.cn/user/545809)</td><td>-</td><td>-</td><td>-</td></tr>
-    <tr><td>2020</td><td>-</td><td>[lailai0916](https://www.luogu.com.cn/user/455474)</td><td>[lailai0916](https://www.luogu.com.cn/user/455474)</td><td>[lailai0916](https://www.luogu.com.cn/user/455474)</td><td>-</td><td>-</td></tr>
-    <tr><td>2021</td><td>-</td><td>[Mortidesperatslav](https://www.luogu.com.cn/user/482610)</td><td>-</td><td>[lailai0916](https://www.luogu.com.cn/user/455474)</td><td>-</td><td>-</td></tr>
-    <tr><td>2022</td><td>-</td><td>[lailai0916](https://www.luogu.com.cn/user/455474)</td><td>-</td><td>[Eason_cyx](https://www.luogu.com.cn/user/741244)</td><td>-</td><td>-</td></tr>
-    <tr><td>2023</td><td>-</td><td>[Eason_cyx](https://www.luogu.com.cn/user/741244)</td><td>-</td><td>[StayAlone](https://www.luogu.com.cn/user/409236)</td><td>-</td><td>-</td></tr>
-    <tr><td>2024</td><td>-</td><td>-</td><td>[Eason_cyx](https://www.luogu.com.cn/user/741244)</td><td>[lailai0916](https://www.luogu.com.cn/user/455474)</td><td>-</td><td>-</td></tr>
-    <tr><td>2025</td><td>-</td><td>-</td><td>[Starrykiller](https://www.luogu.com.cn/user/235125)</td><td>[Milmon](https://www.luogu.com.cn/user/234641)</td><td>-</td><td>-</td></tr>
-  </tbody>
-</table>
+| 年份 / 后缀 |                       (null)                       |                       Qualification                       |                        Prelim                        |                       Finals                       | Practice | Prelim Practice |
+| :---------: | :------------------------------------------------: | :-------------------------------------------------------: | :--------------------------------------------------: | :------------------------------------------------: | :------: | :-------------: |
+|    1998     |                         X                          |                             -                             |                          -                           |                         -                          |    -     |        -        |
+|    1999     |                         X                          |                             -                             |                          -                           |                         -                          |    -     |        -        |
+|    2000     |                         X                          |                             -                             |                          -                           |                         -                          |    -     |        -        |
+|    2001     |                         X                          |                             -                             |                          -                           |                         -                          |    -     |        -        |
+|    2002     |                         X                          |                             -                             |                          -                           |                         -                          |    -     |        -        |
+|    2003     |                         X                          |                             -                             |                          -                           |                         -                          |    -     |        -        |
+|    2004     |                         X                          |                             -                             |                          -                           |                         -                          |    -     |        -        |
+|    2005     |                         X                          |                             X                             |                          -                           |                         -                          |    -     |        -        |
+|    2006     |                         X                          |                             X                             |                          -                           |                         -                          |    -     |        -        |
+|    2007     |                         X                          |                             -                             |                          -                           |                         -                          |    -     |        -        |
+|    2008     |                         X                          |                             -                             |                          -                           |                         -                          |    -     |        -        |
+|    2009     |                         X                          |                             -                             |                          -                           |                         -                          |    -     |        -        |
+|    2010     |                         X                          |                             -                             |                          -                           |                         -                          |    -     |        -        |
+|    2011     |                         X                          |                             -                             |                          -                           |                         -                          |    -     |        -        |
+|    2012     |                         X                          |                             -                             |                          -                           |                         -                          |    -     |        -        |
+|    2013     |                         X                          |                             -                             |                          -                           |                         -                          |    -     |        -        |
+|    2014     |                         X                          |                             -                             |                          -                           |                         -                          |    -     |        -        |
+|    2015     |                         X                          |                             -                             |                          -                           |                         -                          |    -     |        -        |
+|    2016     |                         X                          |                             -                             |                          -                           |                         -                          |    -     |        -        |
+|    2017     |                         X                          |                             -                             |                          -                           |                         -                          |    -     |        -        |
+|    2018     | [Shunpower](https://www.luogu.com.cn/user/399150)  |                             -                             |  [ToastBread](https://www.luogu.com.cn/user/545809)  |                         -                          |    X     |        X        |
+|    2019     | [lailai0916](https://www.luogu.com.cn/user/455474) |                             -                             |  [ToastBread](https://www.luogu.com.cn/user/545809)  |                         -                          |    -     |        -        |
+|    2020     |                         -                          |    [lailai0916](https://www.luogu.com.cn/user/455474)     |  [lailai0916](https://www.luogu.com.cn/user/455474)  | [lailai0916](https://www.luogu.com.cn/user/455474) |    -     |        -        |
+|    2021     |                         -                          | [Mortidesperatslav](https://www.luogu.com.cn/user/482610) |                          -                           | [lailai0916](https://www.luogu.com.cn/user/455474) |    -     |        -        |
+|    2022     |                         -                          |    [lailai0916](https://www.luogu.com.cn/user/455474)     |                          -                           | [Eason_cyx](https://www.luogu.com.cn/user/741244)  |    -     |        -        |
+|    2023     |                         -                          |     [Eason_cyx](https://www.luogu.com.cn/user/741244)     |                          -                           | [StayAlone](https://www.luogu.com.cn/user/409236)  |    -     |        -        |
+|    2024     |                         -                          |                             -                             |  [Eason_cyx](https://www.luogu.com.cn/user/741244)   | [lailai0916](https://www.luogu.com.cn/user/455474) |    -     |        -        |
+|    2025     |                         -                          |                             -                             | [Starrykiller](https://www.luogu.com.cn/user/235125) |   [Milmon](https://www.luogu.com.cn/user/234641)   |    -     |        -        |
 
 ### NOISG 2022 Qualification
 
