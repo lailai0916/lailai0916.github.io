@@ -17,10 +17,21 @@ import {
   RESOURCE_LIST,
   type ResourceCategoryItem,
 } from '@site/src/data/resources';
+import { translate } from '@docusaurus/Translate';
 import styles from './styles.module.css';
 
-const TITLE = '资源';
-const DESCRIPTION = '精心筛选的优质工具与平台';
+const TITLE = translate({
+  id: 'pages.resources.title',
+  message: 'Resources',
+});
+const DESCRIPTION = translate({
+  id: 'pages.resources.description',
+  message: 'High-quality tools and platforms',
+});
+const MODIFICATION = translate({
+  id: 'pages.resources.modification',
+  message: 'Selected <b>Resources</b>',
+});
 
 /**
  * 根据分类和搜索查询过滤资源数据
@@ -54,6 +65,11 @@ function filterResourceCategories(
     .filter((category) => category.resources.length > 0);
 }
 
+const searchPlaceholder = translate({
+  id: 'pages.resources.search.placeholder',
+  message: 'Search for resources by name or description...',
+});
+
 // 搜索栏组件
 function SearchBar({
   value,
@@ -66,7 +82,7 @@ function SearchBar({
     <div className={styles.searchBarContainer}>
       <input
         type="text"
-        placeholder="搜索资源名称或描述..."
+        placeholder={searchPlaceholder}
         value={value}
         onChange={(e) => onChange(e.target.value)}
         className={styles.searchBar}
@@ -106,7 +122,10 @@ function CategoryNav({
           )}
           onClick={() => onCategoryChange('all')}
         >
-          全部
+          {translate({
+            id: 'pages.resources.category.all',
+            message: 'All',
+          })}
         </button>
         {categories.map((category) => (
           <button
@@ -179,7 +198,13 @@ function CategorySection({ category }: { category: ResourceCategoryItem }) {
           <IconText icon={category.icon}>{category.title}</IconText>
         </h2>
         <div className={styles.categoryCount}>
-          {category.resources.length} 项
+          {translate(
+            {
+              id: 'pages.resources.category.count',
+              message: '{count} items',
+            },
+            { count: category.resources.length }
+          )}
         </div>
       </div>
       <div className={styles.resourceGrid}>
@@ -198,15 +223,25 @@ function ResourcesHeader() {
   );
   return (
     <PageHeader>
-      <PageTitle title="精选<b>资源</b>" description={DESCRIPTION} />
+      <PageTitle title={MODIFICATION} description={DESCRIPTION} />
       <DataCardList
         items={[
           {
             value: RESOURCE_LIST.length,
-            label: '个分类',
+            label: translate({
+              id: 'pages.resources.datacard.label1',
+              message: 'Categories',
+            }),
             icon: 'lucide:folder',
           },
-          { value: totalResources, label: '项资源', icon: 'lucide:database' },
+          {
+            value: totalResources,
+            label: translate({
+              id: 'pages.resources.datacard.label2',
+              message: 'Resources',
+            }),
+            icon: 'lucide:database',
+          },
         ]}
       />
     </PageHeader>
@@ -241,13 +276,19 @@ export default function Resources(): ReactNode {
             ) : (
               <div className={styles.noResults}>
                 <p>
-                  找不到和“<b>{searchQuery}</b>”相符的资源。
+                  {translate({
+                    id: 'pages.resources.noresults.description',
+                    message: 'No resources found matching "{query}".',
+                  })}
                 </p>
                 <button
                   onClick={() => setSearchQuery('')}
                   className={styles.clearSearchButton}
                 >
-                  清空搜索
+                  {translate({
+                    id: 'pages.resources.noresults.clear',
+                    message: 'Clear Search',
+                  })}
                 </button>
               </div>
             )}

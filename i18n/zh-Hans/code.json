@@ -826,5 +826,35 @@
   },
   "pages.friends.datacard.label": {
     "message": "位朋友"
+  },
+  "pages.resources.title": {
+    "message": "资源"
+  },
+  "pages.resources.description": {
+    "message": "精心筛选的优质工具与平台"
+  },
+  "pages.resources.modification": {
+    "message": "精选<b>资源</b>"
+  },
+  "pages.resources.search.placeholder": {
+    "message": "搜索资源名称或描述..."
+  },
+  "pages.resources.category.all": {
+    "message": "全部"
+  },
+  "pages.resources.category.count": {
+    "message": "{count} 项"
+  },
+  "pages.resources.datacard.label1": {
+    "message": "个分类"
+  },
+  "pages.resources.datacard.label2": {
+    "message": "项资源"
+  },
+  "pages.resources.noresults.description": {
+    "message": "找不到和“{query}”相符的资源。"
+  },
+  "pages.resources.noresults.clear": {
+    "message": "清空搜索"
   }
 }
