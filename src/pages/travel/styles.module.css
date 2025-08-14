@@ -1,6 +1,6 @@
 /* 旅行页面样式 */
 .travelContainer {
-  max-width: 900px;
+  max-width: 800px;
   margin: auto;
   flex-direction: column;
   padding: 4rem 2rem 4rem 2rem;
