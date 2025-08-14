@@ -47,9 +47,7 @@ function TravelTimeline() {
             'From what is gained on paper, understanding always feels shallow; to truly know it, you must experience it yourself.',
         })}
       />
-      <div className="w-full max-w-6xl mx-auto">
-        <BrowserOnly>{() => <Timeline />}</BrowserOnly>
-      </div>
+      <BrowserOnly>{() => <Timeline />}</BrowserOnly>
     </div>
   );
 }

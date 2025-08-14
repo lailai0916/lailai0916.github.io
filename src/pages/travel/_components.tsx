@@ -24,6 +24,8 @@ const TIMELINE_CONFIG = {
   timelinePointDimension: LAYOUT_CONSTANTS.POINT_SIZE,
   responsiveBreakPoint: LAYOUT_CONSTANTS.BREAKPOINT_MOBILE,
 
+  hideControls: true,
+  useReadMore: false,
   // 必要的交互配置
   enableBreakPoint: true,
   borderLessCards: true,
