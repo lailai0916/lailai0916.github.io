@@ -11,11 +11,26 @@ import DataCard from '@site/src/components/laikit/widget/DataCard';
 import Link from '@docusaurus/Link';
 import { Icon } from '@iconify/react';
 import { FriendItem, FRIEND_LIST } from '@site/src/data/friends';
+import { translate } from '@docusaurus/Translate';
 import styles from './styles.module.css';
 
-const TITLE = '友链';
-const DESCRIPTION = '真正的友谊是世上最稀有的东西';
-const FOOTER = '感谢每位朋友的陪伴和支持，也欢迎大家联系我添加友链。';
+const TITLE = translate({
+  id: 'pages.friends.title',
+  message: 'Friends',
+});
+const DESCRIPTION = translate({
+  id: 'pages.friends.description',
+  message: 'True friendship is the rarest thing in the world',
+});
+const MODIFICATION = translate({
+  id: 'pages.friends.modification',
+  message: 'My <b>Friends</b>',
+});
+const FOOTER = translate({
+  id: 'pages.friends.footer',
+  message:
+    'Thank you for the companionship and support of each friend, and welcome everyone to contact me to add a friend link.',
+});
 
 // 友链卡片组件
 function FriendCard({ friend }: { friend: FriendItem }) {
@@ -70,8 +85,15 @@ function FriendsHeader() {
   const totalFriends = FRIEND_LIST.length;
   return (
     <PageHeader>
-      <PageTitle title="我的<b>友链</b>" description={DESCRIPTION} />
-      <DataCard value={totalFriends} label="位朋友" icon="lucide:users" />
+      <PageTitle title={MODIFICATION} description={DESCRIPTION} />
+      <DataCard
+        value={totalFriends}
+        label={translate({
+          id: 'pages.friends.datacard.label',
+          message: 'Friends',
+        })}
+        icon="lucide:users"
+      />
     </PageHeader>
   );
 }

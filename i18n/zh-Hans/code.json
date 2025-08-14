@@ -811,5 +811,20 @@
   },
   "pages.travel.datacard.label2": {
     "message": "年历程"
+  },
+  "pages.friends.title": {
+    "message": "友链"
+  },
+  "pages.friends.description": {
+    "message": "真正的友谊是世上最稀有的东西"
+  },
+  "pages.friends.modification": {
+    "message": "我的<b>友链</b>"
+  },
+  "pages.friends.footer": {
+    "message": "感谢每位朋友的陪伴和支持，也欢迎大家联系我添加友链。"
+  },
+  "pages.friends.datacard.label": {
+    "message": "位朋友"
   }
 }
