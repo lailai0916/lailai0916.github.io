@@ -12,6 +12,7 @@ import BrowserOnly from '@docusaurus/BrowserOnly';
 import Timeline from '@site/src/pages/travel/_components';
 import { SectionHeader } from '@site/src/components/laikit/section';
 import { translate } from '@docusaurus/Translate';
+import { TRAVEL_LIST } from '@site/src/data/travel';
 import styles from './styles.module.css';
 
 const TITLE = translate({
@@ -70,7 +71,7 @@ function TravelHeader() {
             icon: 'lucide:globe',
           },
           {
-            value: `${new Date().getFullYear() - 2011}`,
+            value: `${new Date().getFullYear() - parseInt(TRAVEL_LIST[0].title.substring(0, 4))}`,
             label: translate({
               id: 'pages.travel.datacard.label2',
               message: 'Years',
