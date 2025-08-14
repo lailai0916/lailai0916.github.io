@@ -42,7 +42,8 @@ function TravelTimeline() {
         })}
         description={translate({
           id: 'pages.travel.timeline.description',
-          message: 'From what is gained on paper, understanding always feels shallow; to truly know it, you must experience it yourself.',
+          message:
+            'From what is gained on paper, understanding always feels shallow; to truly know it, you must experience it yourself.',
         })}
       />
       <BrowserOnly>{() => <Timeline />}</BrowserOnly>
