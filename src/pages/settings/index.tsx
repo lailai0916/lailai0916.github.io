@@ -63,7 +63,7 @@ const SettingItems = [
   {
     title: translate({
       id: 'pages.settings.item.color.title',
-      message: 'Theme Color Generator',
+      message: 'Color Generator',
     }),
     subtitle: translate({
       id: 'pages.settings.item.color.subtitle',
