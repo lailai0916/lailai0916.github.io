@@ -252,7 +252,7 @@ function ResourcesHeader() {
   );
 }
 
-export default function Resources(): ReactNode {
+function ResourcesMain() {
   const [activeCategory, setActiveCategory] = useState('all');
   const [searchQuery, setSearchQuery] = useState('');
 
@@ -260,47 +260,53 @@ export default function Resources(): ReactNode {
     return filterResourceCategories(RESOURCE_LIST, activeCategory, searchQuery);
   }, [activeCategory, searchQuery]);
   return (
+    <div className={styles.container}>
+      <div className={styles.stickyControls}>
+        <CategoryNav
+          categories={RESOURCE_LIST}
+          activeCategory={activeCategory}
+          onCategoryChange={setActiveCategory}
+        />
+        <SearchBar value={searchQuery} onChange={setSearchQuery} />
+      </div>
+      <div className={styles.content}>
+        {filteredCategories.length > 0 ? (
+          filteredCategories.map((category) => (
+            <CategorySection key={category.title} category={category} />
+          ))
+        ) : (
+          <div className={styles.noResults}>
+            <p>
+              {translate(
+                {
+                  id: 'pages.resources.noresults.description',
+                  message: 'No resources found matching "{query}".',
+                },
+                { query: searchQuery }
+              )}
+            </p>
+            <button
+              onClick={() => setSearchQuery('')}
+              className={styles.clearSearchButton}
+            >
+              {translate({
+                id: 'pages.resources.noresults.clear',
+                message: 'Clear Search',
+              })}
+            </button>
+          </div>
+        )}
+      </div>
+    </div>
+  );
+}
+
+export default function Resources(): ReactNode {
+  return (
     <Layout title={TITLE} description={DESCRIPTION}>
       <PageContainer>
         <ResourcesHeader />
-        <div className={styles.container}>
-          <div className={styles.stickyControls}>
-            <CategoryNav
-              categories={RESOURCE_LIST}
-              activeCategory={activeCategory}
-              onCategoryChange={setActiveCategory}
-            />
-            <SearchBar value={searchQuery} onChange={setSearchQuery} />
-          </div>
-          <div className={styles.content}>
-            {filteredCategories.length > 0 ? (
-              filteredCategories.map((category) => (
-                <CategorySection key={category.title} category={category} />
-              ))
-            ) : (
-              <div className={styles.noResults}>
-                <p>
-                  {translate(
-                    {
-                      id: 'pages.resources.noresults.description',
-                      message: 'No resources found matching "{query}".',
-                    },
-                    { query: searchQuery }
-                  )}
-                </p>
-                <button
-                  onClick={() => setSearchQuery('')}
-                  className={styles.clearSearchButton}
-                >
-                  {translate({
-                    id: 'pages.resources.noresults.clear',
-                    message: 'Clear Search',
-                  })}
-                </button>
-              </div>
-            )}
-          </div>
-        </div>
+        <ResourcesMain />
       </PageContainer>
     </Layout>
   );
