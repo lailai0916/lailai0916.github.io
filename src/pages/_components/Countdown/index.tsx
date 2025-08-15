@@ -5,7 +5,7 @@ import React, {
   useMemo,
   useCallback,
 } from 'react';
-import SectionMain from '@site/src/components/laikit/section/SectionMain';
+import SectionContainer from '@site/src/components/laikit/section/SectionContainer';
 import SectionHeader from '@site/src/components/laikit/section/SectionHeader';
 import { translate } from '@docusaurus/Translate';
 
@@ -357,7 +357,7 @@ export default function Countdown() {
   }, [updateTime]);
 
   return (
-    <SectionMain>
+    <SectionContainer>
       <div
         className="max-w-7xl mx-auto flex flex-col px-5"
         aria-label={`Countdown to ${CONFIG.EVENT}`}
@@ -368,6 +368,6 @@ export default function Countdown() {
           <CountdownContent timeLeft={timeLeft} />
         )}
       </div>
-    </SectionMain>
+    </SectionContainer>
   );
 }

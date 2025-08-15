@@ -2,7 +2,7 @@ import React from 'react';
 import { SKILL_LIST } from '@site/src/data/skills';
 import {
   BaseCard,
-  SectionMain,
+  SectionContainer,
   SectionHeader,
   GridLayout,
   GridConfigs,
@@ -41,7 +41,7 @@ function SkillCard({ title, icon }: { title: string; icon: string }) {
 
 export default function Skill() {
   return (
-    <SectionMain>
+    <SectionContainer>
       <div className="max-w-7xl mx-auto flex flex-col px-5">
         <SectionHeader
           title={translate({
@@ -63,6 +63,6 @@ export default function Skill() {
           ))}
         </GridLayout>
       </div>
-    </SectionMain>
+    </SectionContainer>
   );
 }

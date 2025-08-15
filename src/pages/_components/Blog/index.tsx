@@ -8,7 +8,7 @@ import {
   getRecentBlogPosts,
   type ProcessedBlogPost,
 } from '@site/src/utils/blogData';
-import SectionMain from '@site/src/components/laikit/section/SectionMain';
+import SectionContainer from '@site/src/components/laikit/section/SectionContainer';
 import { TEXT_COLORS } from '@site/src/components/laikit/section';
 
 const TEXT_CLAMP_STYLES = {
@@ -130,7 +130,7 @@ export default function Blog() {
   const recentPosts = useMemo(() => getRecentBlogPosts(), []);
 
   return (
-    <SectionMain>
+    <SectionContainer>
       <div className="max-w-7xl mx-auto flex flex-col lg:flex-row px-5 w-full items-center">
         <div className="max-w-3xl lg:max-w-7xl gap-5 flex flex-col lg:flex-row lg:px-5">
           <div className="w-full lg:w-6/12 max-w-3xl flex flex-col items-start justify-start lg:ps-5 lg:pe-10">
@@ -180,6 +180,6 @@ export default function Blog() {
           </div>
         </div>
       </div>
-    </SectionMain>
+    </SectionContainer>
   );
 }

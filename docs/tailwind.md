@@ -134,12 +134,12 @@ const LINK_STYLES =
 
 ### 🟢 低影响文件（1-4次）
 
-| 文件                                            | 使用次数               | 常量 | 直接 | 复杂度 |
-| ----------------------------------------------- | ---------------------- | ---- | ---- | ------ |
-| `src/components/laikit/section/IconWrapper.tsx` | **3次**                | 0    | 3    | ⭐     |
-| `src/components/laikit/section/SectionMain.tsx` | **2次**                | 0    | 2    | ⭐     |
-| `src/pages/_components/NeuralNetwork/index.tsx` | **2次**                | 0    | 2    | ⭐     |
-| `src/pages/travel/_components.tsx`              | ~~**1次**~~ **0次** ✅ | 0    | 0    | 已清理 |
+| 文件                                                 | 使用次数               | 常量 | 直接 | 复杂度 |
+| ---------------------------------------------------- | ---------------------- | ---- | ---- | ------ |
+| `src/components/laikit/section/IconWrapper.tsx`      | **3次**                | 0    | 3    | ⭐     |
+| `src/components/laikit/section/SectionContainer.tsx` | **2次**                | 0    | 2    | ⭐     |
+| `src/pages/_components/NeuralNetwork/index.tsx`      | **2次**                | 0    | 2    | ⭐     |
+| `src/pages/travel/_components.tsx`                   | ~~**1次**~~ **0次** ✅ | 0    | 0    | 已清理 |
 
 ## 🔧 配置与依赖清理
 
@@ -353,7 +353,7 @@ className="p-6"                   → className="padding--lg"
 
 **阶段三：普通组件**（3个文件）10. Skill组件 - 技能展示 11. Community组件 - 社区链接 12. StatusBadge组件 - 状态标签
 
-**阶段四：简单组件**（3个文件）13. IconWrapper组件14. SectionMain组件15. NeuralNetwork组件
+**阶段四：简单组件**（3个文件）13. IconWrapper组件14. SectionContainer组件15. NeuralNetwork组件
 
 ~~16. travel/\_components.tsx~~ ✅ **已清理完成**
 

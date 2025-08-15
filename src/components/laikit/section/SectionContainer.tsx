@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function SectionMain({
+export default function SectionContainer({
   children,
 }: {
   children: React.ReactNode;

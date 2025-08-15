@@ -3,7 +3,7 @@ import { Icon } from '@iconify/react';
 import { COMMUNITY_LIST } from '@site/src/data/community';
 import {
   BaseCard,
-  SectionMain,
+  SectionContainer,
   SectionHeader,
   GridLayout,
   GridConfigs,
@@ -48,7 +48,7 @@ function CommunityCard({
 
 export default function Community() {
   return (
-    <SectionMain>
+    <SectionContainer>
       <div className="max-w-7xl mx-auto flex flex-col px-5">
         <SectionHeader
           title={translate({
@@ -74,6 +74,6 @@ export default function Community() {
           ))}
         </GridLayout>
       </div>
-    </SectionMain>
+    </SectionContainer>
   );
 }
