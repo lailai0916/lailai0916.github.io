@@ -60,6 +60,7 @@ function filterResourceCategories(
       resources: category.resources.filter(
         (resource) =>
           resource.title.toLowerCase().includes(query) ||
+          resource.href.toLowerCase().includes(query) ||
           resource.description.toLowerCase().includes(query)
       ),
     }))
@@ -80,7 +81,7 @@ function SearchBar({
         type="text"
         placeholder={translate({
           id: 'pages.resources.search.placeholder',
-          message: 'Search for resources by name or description...',
+          message: 'Search for resources by name, description or URL...',
         })}
         value={value}
         onChange={(e) => onChange(e.target.value)}
