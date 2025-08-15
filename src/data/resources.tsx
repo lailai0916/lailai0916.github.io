@@ -510,7 +510,12 @@ export const RESOURCE_LIST: ResourceCategoryItem[] = [
       {
         title: 'Recraft',
         href: 'https://www.recraft.ai',
-        description: 'AI 图片生成工具',
+        description: 'AI 矢量图生成工具',
+      },
+      {
+        title: 'Note.ms',
+        href: 'https://note.ms',
+        description: '公共的剪贴板服务',
       },
     ],
   },
