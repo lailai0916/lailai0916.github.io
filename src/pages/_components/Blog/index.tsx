@@ -8,7 +8,7 @@ import {
   getRecentBlogPosts,
   type ProcessedBlogPost,
 } from '@site/src/utils/blogData';
-import SectionContainer from '@site/src/components/laikit/section/SectionContainer';
+import SectionContainer from '@site/src/components/laikit/section/SectionContainer1';
 import { TEXT_COLORS } from '@site/src/components/laikit/section';
 
 const TEXT_CLAMP_STYLES = {

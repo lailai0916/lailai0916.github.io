@@ -5,7 +5,7 @@ import React, {
   useMemo,
   useCallback,
 } from 'react';
-import SectionContainer from '@site/src/components/laikit/section/SectionContainer';
+import SectionContainer from '@site/src/components/laikit/section/SectionContainer1';
 import SectionHeader from '@site/src/components/laikit/section/SectionHeader';
 import { translate } from '@docusaurus/Translate';
 
