@@ -286,8 +286,8 @@ function ResourcesMain() {
               )}
             </p>
             <button
-              onClick={() => setSearchQuery('')}
               className={styles.clearSearchButton}
+              onClick={() => setSearchQuery('')}
             >
               {translate({
                 id: 'pages.resources.noresults.clear',
