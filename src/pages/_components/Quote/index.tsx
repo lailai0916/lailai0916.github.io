@@ -23,31 +23,33 @@ function QuoteCard({
   status: { text: string; color: string };
 }) {
   return (
-    <BaseCard isClickable={false} className="p-6 justify-between">
-      <div className="flex-1 flex flex-col justify-between space-y-4">
-        <header className="space-y-4">
-          <div className="flex justify-start">
+    <BaseCard isClickable={false} className="tw-p-6 tw-justify-between">
+      <div className="tw-flex-1 tw-flex tw-flex-col tw-justify-between tw-space-y-4">
+        <header className="tw-space-y-4">
+          <div className="tw-flex tw-justify-start">
             <StatusBadge status={status} />
           </div>
-          <blockquote className="relative" style={{ borderLeft: 'none' }}>
+          <blockquote className="tw-relative" style={{ borderLeft: 'none' }}>
             <svg
-              className="absolute -top-2 -left-2 w-8 h-8 text-gray-200 dark:text-neutral-700"
+              className="tw-absolute -tw-top-2 -tw-left-2 tw-w-8 tw-h-8 tw-text-gray-200 dark:tw-text-neutral-700"
               fill="currentColor"
               viewBox="0 0 32 32"
             >
               <path d="M10 8C6.691 8 4 10.691 4 14v10c0 3.309 2.691 6 6 6h6v-8h-6v-6h6V8h-6zM26 8c-3.309 0-6 2.691-6 6v10c0 3.309 2.691 6 6 6h6v-8h-6v-6h6V8h-6z" />
             </svg>
             <p
-              className={`relative text-lg lg:text-xl font-medium ${TEXT_COLORS.PRIMARY} leading-relaxed pl-6`}
+              className={`tw-relative tw-text-lg lg:tw-text-xl tw-font-medium ${TEXT_COLORS.PRIMARY} tw-leading-relaxed tw-pl-6`}
             >
               {quote}
             </p>
           </blockquote>
         </header>
-        <footer className="space-y-2 pt-4 border-t border-gray-100 dark:border-neutral-800">
-          <div className="text-right">
-            <p className={`font-semibold ${TEXT_COLORS.PRIMARY}`}>— {author}</p>
-            <p className={`text-sm ${TEXT_COLORS.SECONDARY}`}>{context}</p>
+        <footer className="tw-space-y-2 tw-pt-4 tw-border-t tw-border-gray-100 dark:tw-border-neutral-800">
+          <div className="tw-text-right">
+            <p className={`tw-font-semibold ${TEXT_COLORS.PRIMARY}`}>
+              — {author}
+            </p>
+            <p className={`tw-text-sm ${TEXT_COLORS.SECONDARY}`}>{context}</p>
           </div>
         </footer>
       </div>
@@ -58,7 +60,7 @@ function QuoteCard({
 export default function Quote() {
   return (
     <SectionContainer>
-      <div className="max-w-7xl mx-auto flex flex-col px-5">
+      <div className="tw-max-w-7xl tw-mx-auto tw-flex tw-flex-col tw-px-5">
         <SectionHeader
           title={translate({
             id: 'home.quote.title',
@@ -75,7 +77,7 @@ export default function Quote() {
           {QUOTE_LIST.map((item) => (
             <div
               key={`${item.author}-${item.quote.slice(0, 10)}`}
-              className="h-full"
+              className="tw-h-full"
             >
               <QuoteCard {...item} />
             </div>

@@ -7,10 +7,10 @@ export default function SectionContainer({
 }) {
   return (
     <div
-      className="mx-auto flex flex-col w-full"
+      className="tw-mx-auto tw-flex tw-flex-col tw-w-full"
       style={{ contain: 'content' as const }}
     >
-      <div className="flex-col gap-2 flex grow w-full my-16 mx-auto items-center px-4">
+      <div className="tw-flex-col tw-gap-2 tw-flex tw-grow tw-w-full tw-my-16 tw-mx-auto tw-items-center tw-px-4">
         {children}
       </div>
     </div>

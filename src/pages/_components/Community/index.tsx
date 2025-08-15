@@ -25,19 +25,19 @@ function CommunityCard({
     <BaseCard
       href={href}
       isExternalLink
-      className="p-6 items-center justify-center"
+      className="tw-p-6 tw-items-center tw-justify-center"
     >
-      <div className="flex flex-col items-center space-y-3">
+      <div className="tw-flex tw-flex-col tw-items-center tw-space-y-3">
         <IconWrapper>
           <Icon
             icon={icon}
             width="40"
             height="40"
-            className="text-black dark:text-white group-hover:text-[var(--ifm-color-primary)] transition-colors duration-200"
+            className="tw-text-black dark:tw-text-white group-hover:tw-text-[var(--ifm-color-primary)] tw-transition-colors tw-duration-200"
           />
         </IconWrapper>
         <h3
-          className={`font-medium text-sm ${TEXT_COLORS.PRIMARY} text-center leading-snug`}
+          className={`tw-font-medium tw-text-sm ${TEXT_COLORS.PRIMARY} tw-text-center tw-leading-snug`}
         >
           {title}
         </h3>
@@ -49,7 +49,7 @@ function CommunityCard({
 export default function Community() {
   return (
     <SectionContainer>
-      <div className="max-w-7xl mx-auto flex flex-col px-5">
+      <div className="tw-max-w-7xl tw-mx-auto tw-flex tw-flex-col tw-px-5">
         <SectionHeader
           title={translate({
             id: 'home.community.title',
@@ -64,11 +64,11 @@ export default function Community() {
 
         <GridLayout
           columns={GridConfigs.community}
-          gap="gap-5"
-          className="max-w-6xl mx-auto"
+          gap="tw-gap-5"
+          className="tw-max-w-6xl tw-mx-auto"
         >
           {COMMUNITY_LIST.map((link, idx) => (
-            <div key={idx} className="h-full">
+            <div key={idx} className="tw-h-full">
               <CommunityCard {...link} />
             </div>
           ))}

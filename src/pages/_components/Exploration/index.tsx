@@ -28,9 +28,9 @@ const TEXT_CLAMP_STYLES = {
 
 // 样式类名配置
 const CARD_STYLE_CLASSES = {
-  title: 'font-semibold text-xl',
+  title: 'tw-font-semibold tw-text-xl',
   skillTag:
-    'inline-flex items-center px-2 py-1 rounded-md text-xs font-medium bg-gray-100 dark:bg-neutral-800 text-gray-700 dark:text-neutral-300',
+    'tw-inline-flex tw-items-center tw-px-2 tw-py-1 tw-rounded-md tw-text-xs tw-font-medium tw-bg-gray-100 dark:tw-bg-neutral-800 tw-text-gray-700 dark:tw-text-neutral-300',
 };
 
 function ExplorationCard({
@@ -47,22 +47,22 @@ function ExplorationCard({
   skills: string[];
 }) {
   return (
-    <BaseCard isClickable={false} className="p-6">
-      <div className="flex-1 space-y-4">
-        <header className="space-y-3">
-          <div className="flex items-center justify-between">
-            <div className="flex items-center gap-3">
+    <BaseCard isClickable={false} className="tw-p-6">
+      <div className="tw-flex-1 tw-space-y-4">
+        <header className="tw-space-y-3">
+          <div className="tw-flex tw-items-center tw-justify-between">
+            <div className="tw-flex tw-items-center tw-gap-3">
               <IconWrapper>
                 <Icon
                   icon={icon}
                   width={32}
                   height={32}
-                  className="text-gray-700 dark:text-neutral-300"
+                  className="tw-text-gray-700 dark:tw-text-neutral-300"
                 />
               </IconWrapper>
               <div>
                 <h3
-                  className={`${CARD_STYLE_CLASSES.title} ${TEXT_COLORS.PRIMARY} leading-snug`}
+                  className={`${CARD_STYLE_CLASSES.title} ${TEXT_COLORS.PRIMARY} tw-leading-snug`}
                 >
                   {title}
                 </h3>
@@ -71,14 +71,14 @@ function ExplorationCard({
             <StatusBadge status={status} />
           </div>
           <p
-            className={`${TEXT_COLORS.SECONDARY} leading-relaxed`}
+            className={`${TEXT_COLORS.SECONDARY} tw-leading-relaxed`}
             style={TEXT_CLAMP_STYLES.description}
           >
             {description}
           </p>
         </header>
-        <footer className="pt-2">
-          <div className="flex flex-wrap gap-2">
+        <footer className="tw-pt-2">
+          <div className="tw-flex tw-flex-wrap tw-gap-2">
             {skills.map((skill) => (
               <span key={skill} className={CARD_STYLE_CLASSES.skillTag}>
                 {skill}
@@ -94,7 +94,7 @@ function ExplorationCard({
 export default function Exploration() {
   return (
     <SectionContainer>
-      <div className="max-w-7xl mx-auto flex flex-col px-5">
+      <div className="tw-max-w-7xl tw-mx-auto tw-flex tw-flex-col tw-px-5">
         <SectionHeader
           title={translate({
             id: 'home.exploration.title',
@@ -108,7 +108,7 @@ export default function Exploration() {
         />
         <GridLayout columns={GridConfigs.exploration}>
           {EXPLORATION_LIST.map((item, idx) => (
-            <div key={idx} className="h-full">
+            <div key={idx} className="tw-h-full">
               <ExplorationCard {...item} />
             </div>
           ))}

@@ -25,11 +25,11 @@ const TEXT_CLAMP_STYLES = {
 
 const CARD_STYLES = {
   container:
-    'group block h-full w-full rounded-2xl outline-none focus:outline-none no-underline hover:no-underline focus:ring-2 focus:ring-[var(--ifm-color-primary)]',
+    'tw-group tw-block tw-h-full tw-w-full tw-rounded-2xl tw-outline-none focus:tw-outline-none tw-no-underline hover:tw-no-underline focus:tw-ring-2 focus:tw-ring-[var(--ifm-color-primary)]',
   article:
-    'relative overflow-hidden p-6 cursor-pointer w-full bg-white dark:bg-neutral-900 hover:bg-gray-50 dark:hover:bg-neutral-800/50 rounded-2xl transition-all duration-200 ease-out shadow-sm hover:shadow-md dark:shadow-none border border-gray-200 dark:border-neutral-700 hover:border-gray-300 dark:hover:border-neutral-600',
+    'tw-relative tw-overflow-hidden tw-p-6 tw-cursor-pointer tw-w-full tw-bg-white dark:tw-bg-neutral-900 hover:tw-bg-gray-50 dark:hover:tw-bg-neutral-800/50 tw-rounded-2xl tw-transition-all tw-duration-200 tw-ease-out tw-shadow-sm hover:tw-shadow-md dark:tw-shadow-none tw-border tw-border-gray-200 dark:tw-border-neutral-700 hover:tw-border-gray-300 dark:hover:tw-border-neutral-600',
   title:
-    'font-semibold text-lg leading-snug group-hover:text-[var(--ifm-color-primary)] transition-colors duration-200',
+    'tw-font-semibold tw-text-lg tw-leading-snug group-hover:tw-text-[var(--ifm-color-primary)] tw-transition-colors tw-duration-200',
 } as const;
 
 const formatDate = (dateString: string, locale: string): string => {
@@ -65,7 +65,7 @@ const BlogCard = React.memo<ProcessedBlogPost & { locale: string }>(
         style={{ textDecoration: 'none' }}
       >
         <article className={CARD_STYLES.article}>
-          <div className="space-y-6">
+          <div className="tw-space-y-6">
             <header>
               <h3
                 className={`${CARD_STYLES.title} ${TEXT_COLORS.PRIMARY}`}
@@ -76,10 +76,10 @@ const BlogCard = React.memo<ProcessedBlogPost & { locale: string }>(
             </header>
             <footer>
               <div
-                className={`flex items-center gap-2 text-sm ${TEXT_COLORS.SECONDARY}`}
+                className={`tw-flex tw-items-center tw-gap-2 tw-text-sm ${TEXT_COLORS.SECONDARY}`}
               >
                 <IconText icon="lucide:calendar" colorMode="monochrome">
-                  <time className="no-underline" dateTime={date}>
+                  <time className="tw-no-underline" dateTime={date}>
                     {formattedDate}
                   </time>
                 </IconText>
@@ -98,8 +98,8 @@ const BlogCardList = React.memo<{ posts: ProcessedBlogPost[]; locale: string }>(
   ({ posts, locale }) => {
     if (!posts.length) {
       return (
-        <div className="w-full text-center py-12">
-          <p className={`${TEXT_COLORS.MUTED} text-lg`}>
+        <div className="tw-w-full tw-text-center tw-py-12">
+          <p className={`${TEXT_COLORS.MUTED} tw-text-lg`}>
             <Translate id="home.blog.noPosts">
               No articles yet, stay tuned for more exciting content...
             </Translate>
@@ -113,7 +113,7 @@ const BlogCardList = React.memo<{ posts: ProcessedBlogPost[]; locale: string }>(
         {posts.slice(0, 4).map((post, index) => (
           <div
             key={post.permalink}
-            className={index === 3 ? 'hidden md:block' : undefined}
+            className={index === 3 ? 'tw-hidden md:tw-block' : undefined}
           >
             <BlogCard {...post} locale={locale} />
           </div>
@@ -131,17 +131,17 @@ export default function Blog() {
 
   return (
     <SectionContainer>
-      <div className="max-w-7xl mx-auto flex flex-col lg:flex-row px-5 w-full items-center">
-        <div className="max-w-3xl lg:max-w-7xl gap-5 flex flex-col lg:flex-row lg:px-5">
-          <div className="w-full lg:w-6/12 max-w-3xl flex flex-col items-start justify-start lg:ps-5 lg:pe-10">
+      <div className="tw-max-w-7xl tw-mx-auto tw-flex tw-flex-col lg:tw-flex-row tw-px-5 tw-w-full tw-items-center">
+        <div className="tw-max-w-3xl lg:tw-max-w-7xl tw-gap-5 tw-flex tw-flex-col lg:tw-flex-row lg:tw-px-5">
+          <div className="tw-w-full lg:tw-w-6/12 tw-max-w-3xl tw-flex tw-flex-col tw-items-start tw-justify-start lg:tw-ps-5 lg:tw-pe-10">
             <h2
-              className={`font-bold text-3xl md:text-4xl ${TEXT_COLORS.PRIMARY} leading-tight mb-8 flex items-center gap-3`}
+              className={`tw-font-bold tw-text-3xl md:tw-text-4xl ${TEXT_COLORS.PRIMARY} tw-leading-tight tw-mb-8 tw-flex tw-items-center tw-gap-3`}
             >
               <IconText icon="lucide:graduation-cap">
                 <Translate id="home.blog.title">Learning & Practice</Translate>
               </IconText>
             </h2>
-            <p className="leading-relaxed mb-6">
+            <p className="tw-leading-relaxed tw-mb-6">
               <Translate id="home.blog.description.p1">
                 Technology evolves rapidly, and we need to maintain keen
                 learning abilities and curiosity. Every mastery of new
@@ -150,7 +150,7 @@ export default function Blog() {
                 and experiences for solving problems.
               </Translate>
             </p>
-            <p className="leading-relaxed mb-6">
+            <p className="tw-leading-relaxed tw-mb-6">
               <Translate id="home.blog.description.p2">
                 Through continuous practice and summarization, we transform
                 knowledge into real skills. Only through practice-verified
@@ -166,15 +166,15 @@ export default function Blog() {
             </Link>
           </div>
 
-          <div className="w-full lg:w-6/12">
+          <div className="tw-w-full lg:tw-w-6/12">
             <p
-              className={`font-bold text-sm ${TEXT_COLORS.SECONDARY} flex flex-row gap-2 items-center mt-5 lg:mt-0 w-full`}
+              className={`tw-font-bold tw-text-sm ${TEXT_COLORS.SECONDARY} tw-flex tw-flex-row tw-gap-2 tw-items-center tw-mt-5 lg:tw-mt-0 tw-w-full`}
             >
               <IconText icon="lucide:chevron-right" colorMode="monochrome">
                 <Translate id="home.blog.latest">Latest Posts</Translate>
               </IconText>
             </p>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-start my-8">
+            <div className="tw-grid tw-grid-cols-1 md:tw-grid-cols-2 tw-gap-6 tw-text-start tw-my-8">
               <BlogCardList posts={recentPosts} locale={i18n.currentLocale} />
             </div>
           </div>

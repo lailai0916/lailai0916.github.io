@@ -12,18 +12,19 @@ export default function SectionHeader({
   description,
   align = 'center',
 }: SectionHeaderProps) {
-  const alignClass = align === 'center' ? 'text-center' : 'text-left';
-  const maxWidthClass = align === 'center' ? 'max-w-3xl mx-auto' : 'max-w-3xl';
+  const alignClass = align === 'center' ? 'tw-text-center' : 'tw-text-left';
+  const maxWidthClass =
+    align === 'center' ? 'tw-max-w-3xl tw-mx-auto' : 'tw-max-w-3xl';
 
   return (
-    <div className={`${alignClass} mb-12`}>
+    <div className={`${alignClass} tw-mb-12`}>
       <h2
-        className={`font-bold text-4xl ${TEXT_COLORS.PRIMARY} leading-tight mb-4`}
+        className={`tw-font-bold tw-text-4xl ${TEXT_COLORS.PRIMARY} tw-leading-tight tw-mb-4`}
       >
         {title}
       </h2>
       <p
-        className={`text-lg lg:text-xl text-gray-700 dark:text-neutral-300 leading-relaxed ${maxWidthClass}`}
+        className={`tw-text-lg lg:tw-text-xl tw-text-gray-700 dark:tw-text-neutral-300 tw-leading-relaxed ${maxWidthClass}`}
       >
         {description}
       </p>

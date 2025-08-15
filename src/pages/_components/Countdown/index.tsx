@@ -11,13 +11,15 @@ import { translate } from '@docusaurus/Translate';
 
 export const COUNTDOWN_STYLES = {
   MAIN_TITLE:
-    'font-bold text-4xl text-gray-900 dark:text-neutral-100 leading-tight mb-4',
-  SUCCESS_TEXT: 'text-2xl font-medium text-gray-700 dark:text-neutral-300',
-  CIRCLE_VALUE: 'absolute text-center font-medium text-[2.5rem] select-none',
+    'tw-font-bold tw-text-4xl tw-text-gray-900 dark:tw-text-neutral-100 tw-leading-tight tw-mb-4',
+  SUCCESS_TEXT:
+    'tw-text-2xl tw-font-medium tw-text-gray-700 dark:tw-text-neutral-300',
+  CIRCLE_VALUE:
+    'tw-absolute tw-text-center tw-font-medium tw-text-[2.5rem] tw-select-none',
   CIRCLE_UNIT:
-    'absolute text-[0.75rem] font-light -translate-x-1/2 -translate-y-[12px] select-none whitespace-nowrap',
-  CIRCLE_TRANSITION: 'transition-all duration-500 linear',
-  DOT_TRANSITION: 'transition-all duration-500 linear',
+    'tw-absolute tw-text-[0.75rem] tw-font-light -tw-translate-x-1/2 -tw-translate-y-[12px] tw-select-none tw-whitespace-nowrap',
+  CIRCLE_TRANSITION: 'tw-transition-all tw-duration-500 tw-linear',
+  DOT_TRANSITION: 'tw-transition-all tw-duration-500 tw-linear',
 } as const;
 
 // ====== 类型定义 ======
@@ -205,14 +207,14 @@ const ProgressCircle = React.memo<ProgressCircleProps>(
 
     return (
       <div
-        className="group relative"
+        className="tw-group tw-relative"
         role="timer"
         aria-live="polite"
         aria-label={`${value} ${unitText}`}
       >
-        <div className="relative w-40 h-40 flex justify-center items-center">
+        <div className="tw-relative tw-w-40 tw-h-40 tw-flex tw-justify-center tw-items-center">
           <svg
-            className="absolute w-40 h-40 transform -rotate-90"
+            className="tw-absolute tw-w-40 tw-h-40 tw-transform -tw-rotate-90"
             viewBox={`0 0 ${CONFIG.SVG_SIZE} ${CONFIG.SVG_SIZE}`}
           >
             <circle
@@ -222,7 +224,7 @@ const ProgressCircle = React.memo<ProgressCircleProps>(
               fill="none"
               stroke="currentColor"
               strokeWidth={CONFIG.STROKE_WIDTH}
-              className="text-gray-100 dark:text-neutral-800"
+              className="tw-text-gray-100 dark:tw-text-neutral-800"
             />
             <circle
               cx={circleProps.svgCenter}
@@ -238,7 +240,7 @@ const ProgressCircle = React.memo<ProgressCircleProps>(
           </svg>
 
           <div
-            className={`absolute rounded-full shadow-lg ${COUNTDOWN_STYLES.DOT_TRANSITION}`}
+            className={`tw-absolute tw-rounded-full tw-shadow-lg ${COUNTDOWN_STYLES.DOT_TRANSITION}`}
             style={circleProps.indicatorDotStyle}
           />
 
@@ -263,7 +265,7 @@ const CountdownContent = React.memo<{ timeLeft: TimeLeft }>(({ timeLeft }) => (
       align="center"
     />
 
-    <div className="flex gap-8 justify-center w-fit mx-auto max-md:grid max-md:grid-cols-2 max-md:gap-6 max-[400px]:grid-cols-1 max-[400px]:gap-4">
+    <div className="tw-flex tw-gap-8 tw-justify-center tw-w-fit tw-mx-auto max-md:tw-grid max-md:tw-grid-cols-2 max-md:tw-gap-6 max-[400px]:tw-grid-cols-1 max-[400px]:tw-gap-4">
       {TIME_UNITS.map(({ key, total }) => (
         <ProgressCircle
           key={key}
@@ -280,7 +282,7 @@ const CountdownContent = React.memo<{ timeLeft: TimeLeft }>(({ timeLeft }) => (
 CountdownContent.displayName = 'CountdownContent';
 
 const TimeUpContent = React.memo(() => (
-  <div className="text-center">
+  <div className="tw-text-center">
     <h2 className={COUNTDOWN_STYLES.MAIN_TITLE}>{CONFIG.EVENT}</h2>
     <p className={COUNTDOWN_STYLES.SUCCESS_TEXT}>{CONFIG.finalText}</p>
   </div>
@@ -359,7 +361,7 @@ export default function Countdown() {
   return (
     <SectionContainer>
       <div
-        className="max-w-7xl mx-auto flex flex-col px-5"
+        className="tw-max-w-7xl tw-mx-auto tw-flex tw-flex-col tw-px-5"
         aria-label={`Countdown to ${CONFIG.EVENT}`}
       >
         {isTimeUp ? (

@@ -50,10 +50,10 @@ const TEXT_CLAMP_STYLES = {
 
 // 样式类名配置 - 学习Blog的语义化命名机制
 const CARD_STYLE_CLASSES = {
-  titleContainer: 'flex items-baseline justify-between gap-3',
+  titleContainer: 'tw-flex tw-items-baseline tw-justify-between tw-gap-3',
   title:
-    'font-semibold text-xl leading-snug group-hover:text-[var(--ifm-color-primary)] transition-colors duration-200',
-  footer: 'flex items-center gap-2 text-sm',
+    'tw-font-semibold tw-text-xl tw-leading-snug group-hover:tw-text-[var(--ifm-color-primary)] tw-transition-colors tw-duration-200',
+  footer: 'tw-flex tw-items-center tw-gap-2 tw-text-sm',
 } as const;
 
 /**
@@ -73,9 +73,9 @@ function ProjectCard({
   status: { text: string; color: string };
 }) {
   return (
-    <BaseCard href={href} className="p-6 group">
-      <div className="flex-1 space-y-6">
-        <header className="space-y-3">
+    <BaseCard href={href} className="tw-p-6 tw-group">
+      <div className="tw-flex-1 tw-space-y-6">
+        <header className="tw-space-y-3">
           <div className={`${CARD_STYLE_CLASSES.titleContainer}`}>
             <h3
               className={`${CARD_STYLE_CLASSES.title} ${TEXT_COLORS.PRIMARY}`}
@@ -112,7 +112,7 @@ function ProjectCard({
 export default function Project() {
   return (
     <SectionContainer>
-      <div className="max-w-7xl mx-auto flex flex-col px-5">
+      <div className="tw-max-w-7xl tw-mx-auto tw-flex tw-flex-col tw-px-5">
         <SectionHeader
           title={translate({
             id: 'home.project.title',

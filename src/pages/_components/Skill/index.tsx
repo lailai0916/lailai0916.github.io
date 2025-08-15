@@ -13,24 +13,27 @@ import { translate } from '@docusaurus/Translate';
 
 function SkillCard({ title, icon }: { title: string; icon: string }) {
   return (
-    <BaseCard isClickable={false} className="p-6 items-center justify-center">
-      <div className="flex flex-col items-center text-center space-y-4">
-        <div className="flex justify-center items-center h-12 w-12">
+    <BaseCard
+      isClickable={false}
+      className="tw-p-6 tw-items-center tw-justify-center"
+    >
+      <div className="tw-flex tw-flex-col tw-items-center tw-text-center tw-space-y-4">
+        <div className="tw-flex tw-justify-center tw-items-center tw-h-12 tw-w-12">
           <IconWrapper>
             <img
               src={`https://skillicons.dev/icons?i=${icon}&theme=light#gh-light-mode-only`}
               alt={title}
-              className="w-12 h-12 object-contain"
+              className="tw-w-12 tw-h-12 tw-object-contain"
             />
             <img
               src={`https://skillicons.dev/icons?i=${icon}&theme=dark#gh-dark-mode-only`}
               alt={title}
-              className="w-12 h-12 object-contain"
+              className="tw-w-12 tw-h-12 tw-object-contain"
             />
           </IconWrapper>
         </div>
         <h3
-          className={`font-semibold text-lg ${TEXT_COLORS.PRIMARY} leading-snug`}
+          className={`tw-font-semibold tw-text-lg ${TEXT_COLORS.PRIMARY} tw-leading-snug`}
         >
           {title}
         </h3>
@@ -42,7 +45,7 @@ function SkillCard({ title, icon }: { title: string; icon: string }) {
 export default function Skill() {
   return (
     <SectionContainer>
-      <div className="max-w-7xl mx-auto flex flex-col px-5">
+      <div className="tw-max-w-7xl tw-mx-auto tw-flex tw-flex-col tw-px-5">
         <SectionHeader
           title={translate({
             id: 'home.skill.title',
@@ -55,9 +58,9 @@ export default function Skill() {
           })}
         />
 
-        <GridLayout columns={GridConfigs.skills} gap="gap-4">
+        <GridLayout columns={GridConfigs.skills} gap="tw-gap-4">
           {SKILL_LIST.map((tech, idx) => (
-            <div key={idx} className="h-full">
+            <div key={idx} className="tw-h-full">
               <SkillCard {...tech} />
             </div>
           ))}
