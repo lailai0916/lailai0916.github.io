@@ -2,23 +2,20 @@
 using namespace std;
 
 using ll=long long;
-const ll inf=0x3f3f3f3f3f3f3f3f;
-const int N=505;
+const int inf=0x3f3f3f3f;
+const int N=1005;
 struct Edge
 {
-	int v;
-	ll w;
-	int id;
+	int v,w,id;
 };
 vector<Edge> G[N];
-int pre[N],fa[N];
-ll dis[N];
+int pre[N],fa[N],dis[N];
 bool vis[N];
 int s,t;
-void add(int u,int v,ll w)
+void add(int u,int v)
 {
 	int uid=G[u].size(),vid=G[v].size();
-	G[u].push_back({v,w,vid});
+	G[u].push_back({v,1,vid});
 	G[v].push_back({u,0,uid});
 }
 bool bfs()
@@ -60,14 +57,17 @@ int main()
 {
 	ios::sync_with_stdio(false);
 	cin.tie(nullptr);
-	int n,m;
-	cin>>n>>m>>s>>t;
-	while(m--)
+	int n,m,e;
+	cin>>n>>m>>e;
+	s=n+m+1;t=n+m+2;
+	for(int i=1;i<=n;i++)add(s,i);
+	for(int i=n+1;i<=n+m;i++)add(i,t);
+	while(e--)
 	{
 		int u,v;
-		ll w;
-		cin>>u>>v>>w;
-		add(u,v,w);
+		cin>>u>>v;
+		v+=n;
+		add(u,v);
 	}
 	while(bfs())update();
 	cout<<ans<<'\n';
