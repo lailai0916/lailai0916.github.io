@@ -19,15 +19,11 @@
    ========================================================================== */
 
 .stickyControls {
-  top: 60px; /* Match navbar height */
-  background: var(--ifm-background-color);
-  padding: 2rem 0 1rem; /* Restore vertical spacing */
-  z-index: 10;
   display: flex;
   flex-direction: column;
-  gap: 1.5rem; /* Increase gap slightly for better separation */
+  gap: 1.5rem;
   border-bottom: 1px solid var(--ifm-color-emphasis-200);
-  margin-bottom: 3rem; /* Restore original margin */
+  margin-bottom: 3rem;
 }
 
 .searchBarContainer {
