@@ -10,3 +10,8 @@
   font-size: var(--ifm-h3-font-size);
   padding-top: 1rem;
 }
+
+.featureLinking {
+  color: inherit;
+  display: inline-flex;
+}
