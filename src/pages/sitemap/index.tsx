@@ -15,7 +15,7 @@ import styles from './styles.module.css';
 const TITLE = translate({ id: 'pages.sitemap.title', message: 'Sitemap' });
 const DESCRIPTION = translate({
   id: 'pages.sitemap.description',
-  message: 'Sitemap of lailai.one',
+  message: 'The sitemap of lailai.one',
 });
 const MODIFICATION = translate({
   id: 'pages.sitemap.modification',
