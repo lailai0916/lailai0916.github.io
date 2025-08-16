@@ -286,14 +286,8 @@ while(m--)
 {
 	int op;
 	cin>>op;
-	if(op==1)
-	{
-		// do sth
-	}
-	else if(op==2)
-	{
-		// do sth
-	}
+	if(op==1)// do sth
+	else if(op==2)// do sth
 	// ...
 }
 ```
