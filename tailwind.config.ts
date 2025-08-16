@@ -48,7 +48,6 @@ const twConfig: Config = {
   },
   corePlugins: {
     preflight: false,
-    container: false,
   },
   plugins: [
     require('@tailwindcss/typography'),
