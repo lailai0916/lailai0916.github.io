@@ -3,7 +3,7 @@ title: 关于
 hide_table_of_contents: true
 ---
 
-import { Title, Device, Community, Comment } from '@site/src/pages/about/\_components';
+import { Title, Skills, Devices, Community, Comment } from '@site/src/pages/about/\_components';
 
 <div style={{maxWidth: '664px', margin: 'auto'}}>
 
@@ -44,12 +44,11 @@ import { Title, Device, Community, Comment } from '@site/src/pages/about/\_compo
 
 ## # 我的技能
 
-![](https://skillicons.dev/icons?i=c,cpp,py,java,md,latex,html,css,js,ts,react,tailwind,qt,cmake,npm,git,github,vscode,visualstudio,linux,windows,docker,cloudflare,wordpress&perline=12&theme=light#gh-light-mode-only)
-![](https://skillicons.dev/icons?i=c,cpp,py,java,md,latex,html,css,js,ts,react,tailwind,qt,cmake,npm,git,github,vscode,visualstudio,linux,windows,docker,cloudflare,wordpress&perline=12&theme=dark#gh-dark-mode-only)
+<Skills />
 
 ## # 我的设备
 
-<Device />
+<Devices />
 
 ## # 我的社区
 
