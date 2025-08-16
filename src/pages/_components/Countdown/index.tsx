@@ -11,15 +11,15 @@ import { translate } from '@docusaurus/Translate';
 
 export const COUNTDOWN_STYLES = {
   MAIN_TITLE:
-    'tw-font-bold tw-text-4xl tw-text-gray-900 dark:tw-text-neutral-100 tw-leading-tight tw-mb-4',
+    '--tw-font-bold --tw-text-4xl --tw-text-gray-900 dark:--tw-text-neutral-100 --tw-leading-tight --tw-mb-4',
   SUCCESS_TEXT:
-    'tw-text-2xl tw-font-medium tw-text-gray-700 dark:tw-text-neutral-300',
+    '--tw-text-2xl --tw-font-medium --tw-text-gray-700 dark:--tw-text-neutral-300',
   CIRCLE_VALUE:
-    'tw-absolute tw-text-center tw-font-medium tw-text-[2.5rem] tw-select-none',
+    '--tw-absolute --tw-text-center --tw-font-medium --tw-text-[2.5rem] --tw-select-none',
   CIRCLE_UNIT:
-    'tw-absolute tw-text-[0.75rem] tw-font-light -tw-translate-x-1/2 -tw-translate-y-[12px] tw-select-none tw-whitespace-nowrap',
-  CIRCLE_TRANSITION: 'tw-transition-all tw-duration-500 tw-linear',
-  DOT_TRANSITION: 'tw-transition-all tw-duration-500 tw-linear',
+    '--tw-absolute --tw-text-[0.75rem] --tw-font-light ---tw-translate-x-1/2 ---tw-translate-y-[12px] --tw-select-none --tw-whitespace-nowrap',
+  CIRCLE_TRANSITION: '--tw-transition-all --tw-duration-500 --tw-linear',
+  DOT_TRANSITION: '--tw-transition-all --tw-duration-500 --tw-linear',
 } as const;
 
 // ====== 类型定义 ======
@@ -207,14 +207,14 @@ const ProgressCircle = React.memo<ProgressCircleProps>(
 
     return (
       <div
-        className="tw-group tw-relative"
+        className="--tw-group --tw-relative"
         role="timer"
         aria-live="polite"
         aria-label={`${value} ${unitText}`}
       >
-        <div className="tw-relative tw-w-40 tw-h-40 tw-flex tw-justify-center tw-items-center">
+        <div className="--tw-relative --tw-w-40 --tw-h-40 --tw-flex --tw-justify-center --tw-items-center">
           <svg
-            className="tw-absolute tw-w-40 tw-h-40 tw-transform -tw-rotate-90"
+            className="--tw-absolute --tw-w-40 --tw-h-40 --tw-transform ---tw-rotate-90"
             viewBox={`0 0 ${CONFIG.SVG_SIZE} ${CONFIG.SVG_SIZE}`}
           >
             <circle
@@ -224,7 +224,7 @@ const ProgressCircle = React.memo<ProgressCircleProps>(
               fill="none"
               stroke="currentColor"
               strokeWidth={CONFIG.STROKE_WIDTH}
-              className="tw-text-gray-100 dark:tw-text-neutral-800"
+              className="--tw-text-gray-100 dark:--tw-text-neutral-800"
             />
             <circle
               cx={circleProps.svgCenter}
@@ -240,7 +240,7 @@ const ProgressCircle = React.memo<ProgressCircleProps>(
           </svg>
 
           <div
-            className={`tw-absolute tw-rounded-full tw-shadow-lg ${COUNTDOWN_STYLES.DOT_TRANSITION}`}
+            className={`--tw-absolute --tw-rounded-full --tw-shadow-lg ${COUNTDOWN_STYLES.DOT_TRANSITION}`}
             style={circleProps.indicatorDotStyle}
           />
 
@@ -265,7 +265,7 @@ const CountdownContent = React.memo<{ timeLeft: TimeLeft }>(({ timeLeft }) => (
       align="center"
     />
 
-    <div className="tw-flex tw-gap-8 tw-justify-center tw-w-fit tw-mx-auto max-md:tw-grid max-md:tw-grid-cols-2 max-md:tw-gap-6 max-[400px]:tw-grid-cols-1 max-[400px]:tw-gap-4">
+    <div className="--tw-flex --tw-gap-8 --tw-justify-center --tw-w-fit --tw-mx-auto max-md:--tw-grid max-md:--tw-grid-cols-2 max-md:--tw-gap-6 max-[400px]:--tw-grid-cols-1 max-[400px]:--tw-gap-4">
       {TIME_UNITS.map(({ key, total }) => (
         <ProgressCircle
           key={key}
@@ -282,7 +282,7 @@ const CountdownContent = React.memo<{ timeLeft: TimeLeft }>(({ timeLeft }) => (
 CountdownContent.displayName = 'CountdownContent';
 
 const TimeUpContent = React.memo(() => (
-  <div className="tw-text-center">
+  <div className="--tw-text-center">
     <h2 className={COUNTDOWN_STYLES.MAIN_TITLE}>{CONFIG.EVENT}</h2>
     <p className={COUNTDOWN_STYLES.SUCCESS_TEXT}>{CONFIG.finalText}</p>
   </div>
@@ -361,7 +361,7 @@ export default function Countdown() {
   return (
     <SectionContainer>
       <div
-        className="tw-max-w-7xl tw-mx-auto tw-flex tw-flex-col tw-px-5"
+        className="--tw-max-w-7xl --tw-mx-auto --tw-flex --tw-flex-col --tw-px-5"
         aria-label={`Countdown to ${CONFIG.EVENT}`}
       >
         {isTimeUp ? (

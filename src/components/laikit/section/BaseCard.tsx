@@ -12,17 +12,17 @@ interface BaseCardProps {
 
 // 统一的卡片样式
 const CARD_BASE_STYLES = [
-  'tw-relative tw-overflow-hidden tw-cursor-pointer tw-w-full tw-h-full tw-flex tw-flex-col',
-  'tw-bg-white dark:tw-bg-neutral-900',
-  'hover:tw-bg-gray-50 dark:hover:tw-bg-neutral-800/50',
-  'tw-rounded-2xl tw-transition-all tw-duration-200 tw-ease-out',
-  'tw-shadow-sm hover:tw-shadow-lg dark:tw-shadow-none',
-  'tw-border tw-border-gray-200 dark:tw-border-neutral-700',
-  'hover:tw-border-gray-300 dark:hover:tw-border-neutral-600',
+  '--tw-relative --tw-overflow-hidden --tw-cursor-pointer --tw-w-full --tw-h-full --tw-flex --tw-flex-col',
+  '--tw-bg-white dark:--tw-bg-neutral-900',
+  'hover:--tw-bg-gray-50 dark:hover:--tw-bg-neutral-800/50',
+  '--tw-rounded-2xl --tw-transition-all --tw-duration-200 --tw-ease-out',
+  '--tw-shadow-sm hover:--tw-shadow-lg dark:--tw-shadow-none',
+  '--tw-border --tw-border-gray-200 dark:--tw-border-neutral-700',
+  'hover:--tw-border-gray-300 dark:hover:--tw-border-neutral-600',
 ].join(' ');
 
 const LINK_STYLES =
-  'tw-group tw-block tw-h-full tw-w-full tw-rounded-2xl tw-outline-none focus:tw-outline-none tw-no-underline hover:tw-no-underline';
+  '--tw-group --tw-block --tw-h-full --tw-w-full --tw-rounded-2xl --tw-outline-none focus:--tw-outline-none --tw-no-underline hover:--tw-no-underline';
 
 const FOCUS_STYLES: React.CSSProperties = {
   textDecoration: 'none',
@@ -88,7 +88,7 @@ export default function BaseCard({
     return (
       <button
         onClick={onClick}
-        className={`${LINK_STYLES} tw-cursor-pointer`}
+        className={`${LINK_STYLES} --tw-cursor-pointer`}
         style={FOCUS_STYLES}
         {...focusHandlers}
       >

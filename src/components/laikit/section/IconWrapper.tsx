@@ -11,7 +11,7 @@ export default function IconWrapper({
 }: IconWrapperProps) {
   return (
     <div
-      className={`group-hover:tw-scale-110 tw-transition-transform tw-duration-200 ${className}`}
+      className={`group-hover:--tw-scale-110 --tw-transition-transform --tw-duration-200 ${className}`}
     >
       {children}
     </div>
