@@ -3,7 +3,7 @@ title: About
 hide_table_of_contents: true
 ---
 
-import { Title, Devices, Community, Comment } from '@site/src/pages/about/\_components';
+import { Title, Skills, Devices, Community, Comment } from '@site/src/pages/about/\_components';
 
 <div style={{maxWidth: '664px', margin: 'auto'}}>
 
@@ -44,8 +44,7 @@ If that is also taken, I convert the digits to hexadecimal **0x394**, forming **
 
 ## # My Skills
 
-![](https://skillicons.dev/icons?i=c,cpp,py,java,md,latex,html,css,js,ts,react,tailwind,qt,cmake,npm,git,github,vscode,visualstudio,linux,windows,docker,cloudflare,wordpress&perline=12&theme=light#gh-light-mode-only)
-![](https://skillicons.dev/icons?i=c,cpp,py,java,md,latex,html,css,js,ts,react,tailwind,qt,cmake,npm,git,github,vscode,visualstudio,linux,windows,docker,cloudflare,wordpress&perline=12&theme=dark#gh-dark-mode-only)
+<Skills />
 
 ## # My Devices
 

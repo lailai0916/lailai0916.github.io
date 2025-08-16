@@ -7,6 +7,7 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 
 import Giscus from '@giscus/react';
 import { COMMUNITY_LIST } from '@site/src/data/community';
+import { SKILL_LIST } from '@site/src/data/skills';
 import { DEVICE_LIST } from '@site/src/data/devices';
 import IconText from '@site/src/components/laikit/widget/IconText';
 import styles from './styles.module.css';
@@ -22,6 +23,17 @@ export const Title = () => (
     </Heading>
   </section>
 );
+
+export const Skills = () => {
+  const skills = SKILL_LIST.map((skill) => skill.icon).join(',');
+  const url = `https://skillicons.dev/icons?i=${skills}&perline=12`;
+  return (
+    <>
+      <img src={`${url}&theme=light#gh-light-mode-only`} />
+      <img src={`${url}&theme=dark#gh-dark-mode-only`} />
+    </>
+  );
+};
 
 export const Devices = () => {
   const columns = useMemo(() => {

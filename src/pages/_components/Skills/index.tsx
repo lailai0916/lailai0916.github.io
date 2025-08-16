@@ -59,7 +59,7 @@ export default function Skills() {
         />
 
         <GridLayout columns={GridConfigs.skills} gap="--tw-gap-4">
-          {SKILL_LIST.map((tech, idx) => (
+          {SKILL_LIST.filter((skill) => skill.show).map((tech, idx) => (
             <div key={idx} className="--tw-h-full">
               <SkillCard {...tech} />
             </div>
