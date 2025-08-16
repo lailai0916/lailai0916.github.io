@@ -8,7 +8,7 @@
 
 ## 推荐资源
 
-- [Apple Design Resources](https://developer.apple.com/design/resources/#macos-apps)
+- [Apple Design Resources](https://developer.apple.com/design/resources/)
 
 ## 设计理念
 
