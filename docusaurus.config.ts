@@ -201,7 +201,7 @@ const config: Config = {
     },
     // announcementBar: {
     //   id: 'announcement',
-    //   content: '🎊 Hello, 2025! 🎊',
+    //   content: 'Happy New Year!',
     // },
     tableOfContents: {
       minHeadingLevel: 2,
