@@ -36,15 +36,12 @@ export function GetCode({ id }: { id: string }) {
     <>
       {codes.length > 0 && (
         <Details
-          summary={selectMessage(
-            codes.length,
-            translate(
-              {
-                id: 'components.problem.code',
-                message: 'Code|Code ({num})',
-              },
-              { num: codes.length }
-            )
+          summary={translate(
+            {
+              id: 'components.problem.code',
+              message: 'Code ({num})',
+            },
+            { num: codes.length }
           )}
         >
           {codes.length === 1 ? (
