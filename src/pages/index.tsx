@@ -13,10 +13,10 @@ import Blog from './_components/Blog';
 import Countdown from './_components/Countdown';
 import Project from './_components/Project';
 
-import Skill from './_components/Skill';
+import Skills from './_components/Skills';
 import Exploration from './_components/Exploration';
 import NeuralNetwork from './_components/NeuralNetwork';
-import Quote from './_components/Quote';
+import Quotes from './_components/Quotes';
 import Community from './_components/Community';
 
 export default function Home(): ReactNode {
@@ -31,10 +31,10 @@ export default function Home(): ReactNode {
           <Blog />
           <Countdown />
           <Project />
-          <Skill />
+          <Skills />
           <Exploration />
           <NeuralNetwork />
-          <Quote />
+          <Quotes />
           <Community />
         </div>
       </PageContainer>

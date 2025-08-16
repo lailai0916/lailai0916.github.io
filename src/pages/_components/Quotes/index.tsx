@@ -57,7 +57,7 @@ function QuoteCard({
   );
 }
 
-export default function Quote() {
+export default function Quotes() {
   return (
     <SectionContainer>
       <div className="--tw-max-w-7xl --tw-mx-auto --tw-flex --tw-flex-col --tw-px-5">

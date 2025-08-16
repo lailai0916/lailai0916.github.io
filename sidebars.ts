@@ -681,7 +681,7 @@ const sidebars: SidebarsConfig = {
             description: '数码硬件产品相关的分享和展示。',
           },
           items: [
-            'project/other/hardware/device/index',
+            'project/other/hardware/devices/index',
             'project/other/hardware/edc/index',
             'project/other/hardware/desk-setup',
           ],

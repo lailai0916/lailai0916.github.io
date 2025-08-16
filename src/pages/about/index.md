@@ -3,7 +3,7 @@ title: About
 hide_table_of_contents: true
 ---
 
-import { Title, Device, Community, Comment } from '@site/src/pages/about/\_components';
+import { Title, Devices, Community, Comment } from '@site/src/pages/about/\_components';
 
 <div style={{maxWidth: '664px', margin: 'auto'}}>
 
@@ -49,7 +49,7 @@ If that is also taken, I convert the digits to hexadecimal **0x394**, forming **
 
 ## # My Devices
 
-<Device />
+<Devices />
 
 ## # My Community
 

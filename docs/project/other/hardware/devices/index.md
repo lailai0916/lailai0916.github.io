@@ -1,4 +1,4 @@
-# lailai's Device
+# lailai's Devices
 
 It's something only Apple can do!
 

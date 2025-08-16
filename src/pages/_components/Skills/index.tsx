@@ -42,7 +42,7 @@ function SkillCard({ title, icon }: { title: string; icon: string }) {
   );
 }
 
-export default function Skill() {
+export default function Skills() {
   return (
     <SectionContainer>
       <div className="--tw-max-w-7xl --tw-mx-auto --tw-flex --tw-flex-col --tw-px-5">

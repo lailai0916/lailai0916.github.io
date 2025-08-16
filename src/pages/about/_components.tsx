@@ -7,7 +7,7 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 
 import Giscus from '@giscus/react';
 import { COMMUNITY_LIST } from '@site/src/data/community';
-import { DEVICE_LIST } from '@site/src/data/device';
+import { DEVICE_LIST } from '@site/src/data/devices';
 import IconText from '@site/src/components/laikit/widget/IconText';
 import styles from './styles.module.css';
 
@@ -23,7 +23,7 @@ export const Title = () => (
   </section>
 );
 
-export const Device = () => {
+export const Devices = () => {
   const columns = useMemo(() => {
     return [
       DEVICE_LIST.filter((_, i) => i % 2 === 0),
