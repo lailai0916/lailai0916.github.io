@@ -12,7 +12,7 @@
 
 ## 设计理念
 
-理念：统一 · 简约 · 现代（Unity · Simplicity · Modernity）
+理念：统一 · 简约 · 现代（Unified · Simple · Modern）
 
 “Simplicity is the ultimate sophistication.”
 
