@@ -17,3 +17,10 @@
   column-gap: 1.5rem;
   animation: fadeIn 0.3s ease-out;
 }
+
+.container > div {
+  break-inside: avoid;
+  page-break-inside: avoid;
+  -webkit-column-break-inside: avoid;
+  -moz-column-break-inside: avoid;
+}
