@@ -2,13 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-/**
- * Any CSS included here will be global. The classic template
- * bundles Infima by default. Infima is a CSS framework designed to
- * work well for content-centric websites.
- */
-
-/* You can override the default Infima variables here. */
 :root {
   --ifm-color-primary: #1d9bf0;
   --ifm-color-primary-dark: #0f8ee3;
@@ -25,13 +18,6 @@
 }
 /* For readability concerns, you should choose a lighter palette in dark mode. */
 [data-theme='dark'] {
-  /* --ifm-color-primary: #1d9bf0;
-  --ifm-color-primary-dark: #0f8ee3;
-  --ifm-color-primary-darker: #0e86d6;
-  --ifm-color-primary-darkest: #0c6eb1;
-  --ifm-color-primary-light: #36a6f2;
-  --ifm-color-primary-lighter: #43acf3;
-  --ifm-color-primary-lightest: #69bcf5; */
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
 
@@ -55,16 +41,6 @@ code {
   tab-size: 4;
 }
 
-html {
-  font-size: var(--global-font-size);
-}
-
-.main-wrapper,
-article,
-.markdown {
-  font-size: var(--global-font-size);
-}
-
 .theme-announcement-bar {
   font-size: 20px;
 
@@ -79,6 +55,16 @@ article,
     var(--site-announcement-bar-stripe-color2) 40px
   );
   font-weight: bold;
+}
+
+html {
+  font-size: var(--global-font-size);
+}
+
+.main-wrapper,
+article,
+.markdown {
+  font-size: var(--global-font-size);
 }
 
 .screen-reader-only {
@@ -97,137 +83,4 @@ article,
 [data-theme='light'] img[src$='#gh-dark-mode-only'],
 [data-theme='dark'] img[src$='#gh-light-mode-only'] {
   display: none;
-}
-
-/* ===== DocCardList 样式修复 ===== */
-/* 恢复 DocCardList 的默认样式，防止 Tailwind base 重置影响 */
-
-/* 确保卡片组件使用默认的 Infima 样式而不被 Tailwind 重置 */
-article.col {
-  margin-bottom: 2rem;
-}
-
-article.col > * {
-  height: 100%;
-}
-
-/* 修复 .card 基础样式 */
-.card {
-  background: var(--ifm-card-background-color);
-  border: 1px solid var(--ifm-color-emphasis-200);
-  border-radius: var(--ifm-card-border-radius);
-  box-shadow: var(--ifm-global-shadow-lw);
-  display: flex;
-  flex-direction: column;
-  overflow: hidden;
-  position: relative;
-  transition:
-    box-shadow var(--ifm-transition-fast) ease,
-    border-color var(--ifm-transition-fast) ease;
-}
-
-.card:hover {
-  border-color: var(--ifm-color-primary);
-  box-shadow: var(--ifm-global-shadow-md);
-}
-
-.card .card__header {
-  padding: var(--ifm-card-vertical-spacing) var(--ifm-card-horizontal-spacing);
-}
-
-.card .card__body {
-  flex: 1 1 auto;
-  padding: 0 var(--ifm-card-horizontal-spacing) var(--ifm-card-vertical-spacing);
-}
-
-.card .card__footer {
-  padding: 0 var(--ifm-card-horizontal-spacing) var(--ifm-card-vertical-spacing);
-}
-
-/* 修复 padding--lg 样式 */
-.padding--lg {
-  padding: var(--ifm-spacing-vertical) var(--ifm-spacing-horizontal) !important;
-}
-
-/* 修复 padding-horiz--md 样式 - 解决 600px 宽度溢出问题 */
-.padding-horiz--md {
-  padding-left: var(--ifm-spacing-horizontal) !important;
-  padding-right: var(--ifm-spacing-horizontal) !important;
-}
-
-@media screen and (max-width: 768px) {
-  .padding-horiz--md {
-    padding-left: 1rem !important;
-    padding-right: 1rem !important;
-  }
-}
-
-@media screen and (max-width: 480px) {
-  .padding-horiz--md {
-    padding-left: 0.5rem !important;
-    padding-right: 0.5rem !important;
-  }
-}
-
-/* 确保 Docs 组件容器不会溢出 */
-.container.text--center {
-  box-sizing: border-box;
-  max-width: 100%;
-  overflow-x: hidden;
-}
-
-/* 防止 row 造成水平溢出 */
-.row {
-  margin-left: calc(-1 * var(--ifm-spacing-horizontal, 1rem));
-  margin-right: calc(-1 * var(--ifm-spacing-horizontal, 1rem));
-  box-sizing: border-box;
-}
-
-@media screen and (max-width: 768px) {
-  .row {
-    margin-left: -1rem;
-    margin-right: -1rem;
-  }
-}
-
-/* 确保链接样式正确 */
-.card a {
-  color: inherit;
-  text-decoration: none;
-}
-
-.card a:hover {
-  color: inherit;
-  text-decoration: none;
-}
-
-/* 确保标题样式正确 */
-.card h2 {
-  font-size: 1.2rem;
-  font-weight: var(--ifm-font-weight-semibold);
-  line-height: var(--ifm-heading-line-height);
-  margin: 0 0 0.5rem 0;
-}
-
-.card p {
-  font-size: 0.8rem;
-  line-height: var(--ifm-line-height-base);
-  margin: 0;
-}
-
-/* 确保 text--truncate 样式正确 */
-.text--truncate {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
-/* 深色模式适配 */
-[data-theme='dark'] .card {
-  background: var(--ifm-card-background-color);
-  border-color: var(--ifm-color-emphasis-300);
-}
-
-[data-theme='dark'] .card:hover {
-  border-color: var(--ifm-color-primary);
 }
