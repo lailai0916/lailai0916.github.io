@@ -1,18 +1,19 @@
 import React, { useMemo } from 'react';
+
+import BrowserOnly from '@docusaurus/BrowserOnly';
 import Heading from '@theme/Heading';
 import Link from '@docusaurus/Link';
-import BrowserOnly from '@docusaurus/BrowserOnly';
+import Giscus from '@giscus/react';
+import IconText from '@site/src/components/laikit/widget/IconText';
 import { useColorMode } from '@docusaurus/theme-common';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 
-import Giscus from '@giscus/react';
-import { COMMUNITY_LIST } from '@site/src/data/community';
 import { SKILL_LIST } from '@site/src/data/skills';
 import { DEVICE_LIST } from '@site/src/data/devices';
-import IconText from '@site/src/components/laikit/widget/IconText';
+import { COMMUNITY_LIST } from '@site/src/data/community';
 import styles from './styles.module.css';
 
-export const Title = () => (
+export function Title() {
   <section className="margin-top--lg margin-bottom--lg text--center">
     <Heading as="h1">
       {'🎉\xa0'}
@@ -21,10 +22,10 @@ export const Title = () => (
       </Link>
       {'\xa0🥳'}
     </Heading>
-  </section>
-);
+  </section>;
+}
 
-export const Skills = () => {
+export function Skills() {
   const skills = SKILL_LIST.map((skill) => skill.icon).join(',');
   const url = `https://skillicons.dev/icons?i=${skills}&perline=12`;
   return (
@@ -33,9 +34,9 @@ export const Skills = () => {
       <img src={`${url}&theme=dark#gh-dark-mode-only`} />
     </>
   );
-};
+}
 
-export const Devices = () => {
+export function Devices() {
   const columns = useMemo(() => {
     return [
       DEVICE_LIST.filter((_, i) => i % 2 === 0),
@@ -61,9 +62,9 @@ export const Devices = () => {
       ))}
     </div>
   );
-};
+}
 
-export const Community = () => {
+export function Community() {
   const columns = useMemo(() => {
     return [
       COMMUNITY_LIST.filter((_, i) => i % 2 === 0),
@@ -88,9 +89,9 @@ export const Community = () => {
       ))}
     </div>
   );
-};
+}
 
-export const Comment = () => {
+export function Comment() {
   const { colorMode } = useColorMode();
   const { i18n } = useDocusaurusContext();
   return (
@@ -110,4 +111,4 @@ export const Comment = () => {
       )}
     </BrowserOnly>
   );
-};
+}
