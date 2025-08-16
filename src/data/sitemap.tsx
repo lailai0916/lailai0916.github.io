@@ -63,13 +63,20 @@ export const SITEMAP_LIST: SitemapCategoryItem[] = [
   },
   {
     title: translate({
-      id: 'data.sitemap.sitemap.title',
-      message: 'Sitemap',
+      id: 'data.sitemap.site.title',
+      message: 'Site',
     }),
     sitemaps: [
       {
         title: translate({
-          id: 'data.sitemap.sitemap.sitemap',
+          id: 'data.sitemap.site.settings',
+          message: 'Settings',
+        }),
+        href: '/settings',
+      },
+      {
+        title: translate({
+          id: 'data.sitemap.site.sitemap',
           message: 'Sitemap',
         }),
         href: '/sitemap',
@@ -158,21 +165,6 @@ export const SITEMAP_LIST: SitemapCategoryItem[] = [
   },
   {
     title: translate({
-      id: 'data.sitemap.settings.title',
-      message: 'Settings',
-    }),
-    sitemaps: [
-      {
-        title: translate({
-          id: 'data.sitemap.settings.settings',
-          message: 'Settings',
-        }),
-        href: '/settings',
-      },
-    ],
-  },
-  {
-    title: translate({
       id: 'data.sitemap.test.title',
       message: 'Test',
     }),
@@ -183,6 +175,35 @@ export const SITEMAP_LIST: SitemapCategoryItem[] = [
           message: 'Test',
         }),
         href: '/test',
+      },
+    ],
+  },
+  {
+    title: translate({
+      id: 'data.sitemap.more.title',
+      message: 'More',
+    }),
+    sitemaps: [
+      {
+        title: translate({
+          id: 'data.sitemap.more.status',
+          message: "lailai's Status",
+        }),
+        href: 'https://status.lailai.one',
+      },
+      {
+        title: translate({
+          id: 'data.sitemap.more.cloud',
+          message: "lailai's Cloud",
+        }),
+        href: 'https://cloud.lailai.one',
+      },
+      {
+        title: translate({
+          id: 'data.sitemap.more.ai',
+          message: "lailai's AI",
+        }),
+        href: 'https://ai.lailai.one',
       },
     ],
   },

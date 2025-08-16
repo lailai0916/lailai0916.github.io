@@ -737,11 +737,14 @@
   "data.sitemap.pages.games": {
     "message": "游戏"
   },
-  "data.sitemap.sitemap.title": {
+  "data.sitemap.site.title": {
+    "message": "网站"
+  },
+  "data.sitemap.site.sitemap": {
     "message": "地图"
   },
-  "data.sitemap.sitemap.sitemap": {
-    "message": "地图"
+  "data.sitemap.site.settings": {
+    "message": "设置"
   },
   "data.sitemap.docs.title": {
     "message": "文档"
@@ -775,12 +778,6 @@
   },
   "data.sitemap.search.search": {
     "message": "搜索"
-  },
-  "data.sitemap.settings.title": {
-    "message": "设置"
-  },
-  "data.sitemap.settings.settings": {
-    "message": "设置"
   },
   "data.sitemap.test.title": {
     "message": "测试"
