@@ -1,7 +1,7 @@
 import React from 'react';
 import Translate, { translate } from '@docusaurus/Translate';
 
-export interface FeatureItem {
+export interface DocsItem {
   title: string;
   url: string;
   icon: string;
@@ -13,9 +13,9 @@ export interface FeatureItem {
   text: React.ReactNode;
 }
 
-export const FEATURE_LIST: FeatureItem[] = [
+export const DOCS_LIST: DocsItem[] = [
   {
-    title: translate({ id: 'data.features.p1.title', message: 'Contest' }),
+    title: translate({ id: 'data.docs.p1.title', message: 'Contest' }),
     url: 'docs/contest',
     icon: 'lucide:trophy',
     image: {
@@ -24,7 +24,7 @@ export const FEATURE_LIST: FeatureItem[] = [
       height: 717.96,
     },
     text: (
-      <Translate id="data.features.p1.text">
+      <Translate id="data.docs.p1.text">
         The Contest section covers fundamental knowledge, common problem types,
         solution ideas, code templates, and competition experience related to
         Olympiad in Informatics. It focuses on real contest environments,
@@ -34,7 +34,7 @@ export const FEATURE_LIST: FeatureItem[] = [
     ),
   },
   {
-    title: translate({ id: 'data.features.p2.title', message: 'Note' }),
+    title: translate({ id: 'data.docs.p2.title', message: 'Note' }),
     url: 'docs/note',
     icon: 'lucide:notebook-pen',
     image: {
@@ -43,7 +43,7 @@ export const FEATURE_LIST: FeatureItem[] = [
       height: 731.18,
     },
     text: (
-      <Translate id="data.features.p2.text">
+      <Translate id="data.docs.p2.text">
         The Note section organizes learning notes, knowledge summaries, and
         personal insights across multiple disciplines, including mathematics,
         programming, technology, and languages. It systematically presents key
@@ -53,7 +53,7 @@ export const FEATURE_LIST: FeatureItem[] = [
     ),
   },
   {
-    title: translate({ id: 'data.features.p3.title', message: 'Project' }),
+    title: translate({ id: 'data.docs.p3.title', message: 'Project' }),
     url: 'docs/project',
     icon: 'lucide:code-2',
     image: {
@@ -62,7 +62,7 @@ export const FEATURE_LIST: FeatureItem[] = [
       height: 693.31,
     },
     text: (
-      <Translate id="data.features.p3.text">
+      <Translate id="data.docs.p3.text">
         The Project section showcases various project outcomes from personal
         programming and technical practice, providing practical templates,
         tools, and relevant resources. It emphasizes real-world applications and
