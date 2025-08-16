@@ -673,6 +673,11 @@ export const RESOURCE_LIST: ResourceCategoryItem[] = [
         href: 'https://xiaoce.fun',
         description: '趣味问答平台',
       },
+      {
+        title: 'WPlace',
+        href: 'https://wplace.live',
+        description: '一个巨大的实时像素画布',
+      },
     ],
   },
   {
