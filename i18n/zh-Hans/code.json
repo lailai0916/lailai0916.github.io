@@ -785,6 +785,18 @@
   "data.sitemap.test.test": {
     "message": "测试"
   },
+  "data.sitemap.more.title": {
+    "message": "更多"
+  },
+  "data.sitemap.more.status": {
+    "message": "lailai's Status"
+  },
+  "data.sitemap.more.cloud": {
+    "message": "lailai's Cloud"
+  },
+  "data.sitemap.more.ai": {
+    "message": "lailai's AI"
+  },
   "pages.travel.title": {
     "message": "旅行"
   },
