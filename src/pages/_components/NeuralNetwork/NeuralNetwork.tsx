@@ -27,11 +27,7 @@
 */
 
 import React, { useState, useEffect, useCallback, useMemo } from 'react';
-import {
-  threeImage,
-  weights,
-  biases,
-} from './data';
+import { threeImage, weights, biases } from './data';
 import styles from './styles.module.css';
 
 // This array defines which neurons are visible on screen.
