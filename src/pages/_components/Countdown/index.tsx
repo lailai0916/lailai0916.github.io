@@ -4,13 +4,13 @@ import SectionHeader from '@site/src/components/laikit/section/SectionHeader';
 import { translate } from '@docusaurus/Translate';
 import styles from './styles.module.css';
 
-// ====== 类型定义 ======
-interface TimeLeft {
+type CountdownState = {
   days: number;
   hours: number;
   minutes: number;
   seconds: number;
-}
+  isTimeUp: boolean;
+};
 
 interface ProgressCircleProps {
   total: number;
@@ -18,29 +18,21 @@ interface ProgressCircleProps {
   unitText: string;
 }
 
-// ====== 常量配置 ======
-const CONFIG = {
-  DATE: '2026-01-01T00:00:00',
-  EVENT: translate({ id: 'home.countdown.event', message: '2026' }),
-  finalText: translate({
-    id: 'home.countdown.final',
-    message: 'Happy New Year!',
-  }),
+const TARGET_DATE = '2026-01-01T00:00:00';
+const SVG_RADIUS = 74;
+const SVG_SIZE = 160;
+const STROKE_WIDTH = 8;
+const DOT_SIZE = 15;
+const CIRCUMFERENCE = 2 * Math.PI * SVG_RADIUS; // 预计算常量
 
-  // 圆形进度条配置
-  RADIUS: 74,
-  SVG_SIZE: 160,
-  STROKE_WIDTH: 8,
-  DOT_SIZE: 15,
-} as const;
-
-// ====== 国际化文本 ======
-const COUNTDOWN_TEXTS = {
+const TEXTS = {
   title: translate({ id: 'home.countdown.title', message: 'Countdown' }),
   description: translate(
     { id: 'home.countdown.description', message: 'Countdown to {event}' },
-    { event: CONFIG.EVENT }
+    { event: translate({ id: 'home.countdown.event', message: '2026' }) }
   ),
+  event: translate({ id: 'home.countdown.event', message: '2026' }),
+  final: translate({ id: 'home.countdown.final', message: 'Happy New Year!' }),
   units: {
     days: translate({ id: 'home.countdown.unit.days', message: 'Days' }),
     hours: translate({ id: 'home.countdown.unit.hours', message: 'Hours' }),
@@ -53,43 +45,37 @@ const COUNTDOWN_TEXTS = {
       message: 'Seconds',
     }),
   },
-} as const;
+};
 
-const TIME_UNITS: readonly { key: keyof TimeLeft; total: number }[] = [
-  { key: 'days', total: 365 },
-  { key: 'hours', total: 24 },
-  { key: 'minutes', total: 60 },
-  { key: 'seconds', total: 60 },
-] as const;
+const TIME_UNITS = [
+  { key: 'days' as const, total: 365 },
+  { key: 'hours' as const, total: 24 },
+  { key: 'minutes' as const, total: 60 },
+  { key: 'seconds' as const, total: 60 },
+];
 
-// ====== 工具函数 ======
-function calculateTimeLeft(): TimeLeft & { isTimeUp: boolean } {
-  const endDate = new Date(CONFIG.DATE);
-  const nowDate = new Date();
-
-  const distance = endDate.getTime() - nowDate.getTime();
+function calculateTimeLeft(): CountdownState {
+  const distance = new Date(TARGET_DATE).getTime() - Date.now();
 
   if (distance < 0) {
     return { days: 0, hours: 0, minutes: 0, seconds: 0, isTimeUp: true };
   }
 
   return {
-    days: Math.floor(distance / (1000 * 60 * 60 * 24)),
-    hours: Math.floor((distance / (1000 * 60 * 60)) % 24),
-    minutes: Math.floor((distance / (1000 * 60)) % 60),
+    days: Math.floor(distance / 86400000),
+    hours: Math.floor((distance / 3600000) % 24),
+    minutes: Math.floor((distance / 60000) % 60),
     seconds: Math.floor((distance / 1000) % 60),
     isTimeUp: false,
   };
 }
 
-// ====== 组件 ======
 function ProgressCircle({ total, value, unitText }: ProgressCircleProps) {
   const circleProps = useMemo(() => {
-    const circumference = 2 * Math.PI * CONFIG.RADIUS;
     const progress = Math.min(Math.max((value / total) * 100, 0), 100);
-    const strokeDashoffset = circumference - (progress / 100) * circumference;
+    const strokeDashoffset = CIRCUMFERENCE - (progress / 100) * CIRCUMFERENCE;
     const rotationAngle = Math.min(Math.max((360 * value) / total, 0), 360);
-    const svgCenter = CONFIG.SVG_SIZE / 2;
+    const svgCenter = SVG_SIZE / 2;
 
     return {
       strokeDashoffset,
@@ -98,12 +84,12 @@ function ProgressCircle({ total, value, unitText }: ProgressCircleProps) {
       indicatorDotStyle: {
         left: '50%',
         top: '50%',
-        width: `${CONFIG.DOT_SIZE}px`,
-        height: `${CONFIG.DOT_SIZE}px`,
-        transform: `translate(-50%, -50%) rotate(${rotationAngle}deg) translateY(-${CONFIG.RADIUS}px)`,
+        width: `${DOT_SIZE}px`,
+        height: `${DOT_SIZE}px`,
+        transform: `translate(-50%, -50%) rotate(${rotationAngle}deg) translateY(-${SVG_RADIUS}px)`,
       } as React.CSSProperties,
       progressStyle: {
-        strokeDasharray: circumference,
+        strokeDasharray: CIRCUMFERENCE,
         strokeDashoffset,
       } as React.CSSProperties,
     };
@@ -119,24 +105,24 @@ function ProgressCircle({ total, value, unitText }: ProgressCircleProps) {
       <div className={styles.circleWrapper}>
         <svg
           className={styles.circleSvg}
-          viewBox={`0 0 ${CONFIG.SVG_SIZE} ${CONFIG.SVG_SIZE}`}
+          viewBox={`0 0 ${SVG_SIZE} ${SVG_SIZE}`}
         >
           <circle
             cx={circleProps.svgCenter}
             cy={circleProps.svgCenter}
-            r={CONFIG.RADIUS}
+            r={SVG_RADIUS}
             fill="none"
             stroke="currentColor"
-            strokeWidth={CONFIG.STROKE_WIDTH}
+            strokeWidth={STROKE_WIDTH}
             className={styles.circleBackground}
           />
           <circle
             cx={circleProps.svgCenter}
             cy={circleProps.svgCenter}
-            r={CONFIG.RADIUS}
+            r={SVG_RADIUS}
             fill="none"
             stroke="var(--ifm-color-primary)"
-            strokeWidth={CONFIG.STROKE_WIDTH}
+            strokeWidth={STROKE_WIDTH}
             strokeLinecap="round"
             style={circleProps.progressStyle}
             className={styles.circleTransition}
@@ -158,12 +144,12 @@ function ProgressCircle({ total, value, unitText }: ProgressCircleProps) {
   );
 }
 
-function CountdownContent({ timeLeft }: { timeLeft: TimeLeft }) {
+function CountdownContent({ timeLeft }: { timeLeft: CountdownState }) {
   return (
     <>
       <SectionHeader
-        title={COUNTDOWN_TEXTS.title}
-        description={COUNTDOWN_TEXTS.description}
+        title={TEXTS.title}
+        description={TEXTS.description}
         align="center"
       />
 
@@ -173,7 +159,7 @@ function CountdownContent({ timeLeft }: { timeLeft: TimeLeft }) {
             key={key}
             total={total}
             value={timeLeft[key]}
-            unitText={COUNTDOWN_TEXTS.units[key]}
+            unitText={TEXTS.units[key]}
           />
         ))}
       </div>
@@ -184,68 +170,35 @@ function CountdownContent({ timeLeft }: { timeLeft: TimeLeft }) {
 function TimeUpContent() {
   return (
     <div className={styles.timeUpContent}>
-      <h2 className={styles.mainTitle}>{CONFIG.EVENT}</h2>
-      <p className={styles.successText}>{CONFIG.finalText}</p>
+      <h2 className={styles.mainTitle}>{TEXTS.event}</h2>
+      <p className={styles.successText}>{TEXTS.final}</p>
     </div>
   );
 }
 
 export default function Countdown() {
-  const [timeLeft, setTimeLeft] = useState<TimeLeft>(() => {
-    const result = calculateTimeLeft();
-    return {
-      days: result.days,
-      hours: result.hours,
-      minutes: result.minutes,
-      seconds: result.seconds,
-    };
-  });
-  const [isTimeUp, setIsTimeUp] = useState(() => {
-    const result = calculateTimeLeft();
-    return result.isTimeUp;
-  });
+  const [state, setState] = useState(calculateTimeLeft);
   const timerRef = useRef<NodeJS.Timeout | null>(null);
 
-  // 精确定时器：确保每次更新都对齐到整秒（恢复顿挫感）
-  function startPreciseTimer() {
-    function tick() {
-      const result = calculateTimeLeft();
-
-      if (result.isTimeUp) {
-        setIsTimeUp(true);
-        return;
-      }
-
-      // 更新状态
-      const { days, hours, minutes, seconds } = result;
-      setTimeLeft({ days, hours, minutes, seconds });
-
-      // 计算到下一个整秒的精确延迟
-      const now = Date.now();
-      const nextSecond = Math.ceil(now / 1000) * 1000;
-      const delay = nextSecond - now;
-
-      // 设置下一次更新，确保对齐到整秒
-      timerRef.current = setTimeout(tick, delay);
-    }
-
-    tick();
-  }
-
-  useEffect(() => {
-    // 初始化时间显示
+  function tick() {
     const result = calculateTimeLeft();
+    setState(result);
+
     if (result.isTimeUp) {
-      setIsTimeUp(true);
       return;
     }
 
-    // 设置初始状态
-    const { days, hours, minutes, seconds } = result;
-    setTimeLeft({ days, hours, minutes, seconds });
+    const now = Date.now();
+    const nextSecond = Math.ceil(now / 1000) * 1000;
+    const delay = nextSecond - now;
 
-    // 启动精确定时器（恢复顿挫感）
-    startPreciseTimer();
+    timerRef.current = setTimeout(tick, delay);
+  }
+
+  useEffect(() => {
+    if (state.isTimeUp) return;
+
+    tick();
 
     return () => {
       if (timerRef.current) {
@@ -259,12 +212,12 @@ export default function Countdown() {
     <SectionContainer>
       <div
         className={styles.container}
-        aria-label={`Countdown to ${CONFIG.EVENT}`}
+        aria-label={`Countdown to ${TEXTS.event}`}
       >
-        {isTimeUp ? (
+        {state.isTimeUp ? (
           <TimeUpContent />
         ) : (
-          <CountdownContent timeLeft={timeLeft} />
+          <CountdownContent timeLeft={state} />
         )}
       </div>
     </SectionContainer>
