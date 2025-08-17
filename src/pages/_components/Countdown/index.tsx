@@ -4,13 +4,13 @@ import SectionHeader from '@site/src/components/laikit/section/SectionHeader';
 import { translate } from '@docusaurus/Translate';
 import styles from './styles.module.css';
 
-type CountdownState = {
+interface CountdownState {
   days: number;
   hours: number;
   minutes: number;
   seconds: number;
   isTimeUp: boolean;
-};
+}
 
 interface ProgressCircleProps {
   total: number;
@@ -19,21 +19,17 @@ interface ProgressCircleProps {
 }
 
 const TARGET_DATE = '2026-01-01T00:00:00';
-const SVG_RADIUS = 74;
-const SVG_SIZE = 160;
-const STROKE_WIDTH = 8;
-const DOT_SIZE = 16;
-const CIRCUMFERENCE = 2 * Math.PI * SVG_RADIUS; // 预计算常量
+const EVENT = translate({ id: 'home.countdown.event', message: '2026' });
+const FINAL = translate({
+  id: 'home.countdown.final',
+  message: 'Happy New Year!',
+});
 
-const TEXTS = {
-  title: translate({ id: 'home.countdown.title', message: 'Countdown' }),
-  description: translate(
-    { id: 'home.countdown.description', message: 'Countdown to {event}' },
-    { event: translate({ id: 'home.countdown.event', message: '2026' }) }
-  ),
-  event: translate({ id: 'home.countdown.event', message: '2026' }),
-  final: translate({ id: 'home.countdown.final', message: 'Happy New Year!' }),
-};
+const TITLE = translate({ id: 'home.countdown.title', message: 'Countdown' });
+const DESCRIPTION = translate(
+  { id: 'home.countdown.description', message: 'Countdown to {event}' },
+  { event: EVENT }
+);
 
 const TIME_UNITS = [
   {
@@ -57,6 +53,12 @@ const TIME_UNITS = [
     label: translate({ id: 'home.countdown.unit.seconds', message: 'Seconds' }),
   },
 ];
+
+const SVG_RADIUS = 74;
+const SVG_SIZE = 160;
+const STROKE_WIDTH = 8;
+const DOT_SIZE = 16;
+const CIRCUMFERENCE = 2 * Math.PI * SVG_RADIUS; // 预计算常量
 
 function calculateTimeLeft(): CountdownState {
   const distance = new Date(TARGET_DATE).getTime() - Date.now();
@@ -151,12 +153,7 @@ function ProgressCircle({ total, value, unitText }: ProgressCircleProps) {
 function CountdownContent({ timeLeft }: { timeLeft: CountdownState }) {
   return (
     <>
-      <SectionHeader
-        title={TEXTS.title}
-        description={TEXTS.description}
-        align="center"
-      />
-
+      <SectionHeader title={TITLE} description={DESCRIPTION} />
       <div className={styles.countdownLayout}>
         {TIME_UNITS.map(({ key, total, label }) => (
           <ProgressCircle
@@ -174,8 +171,8 @@ function CountdownContent({ timeLeft }: { timeLeft: CountdownState }) {
 function TimeUpContent() {
   return (
     <div className={styles.timeUpContent}>
-      <h2 className={styles.mainTitle}>{TEXTS.event}</h2>
-      <p className={styles.successText}>{TEXTS.final}</p>
+      <h2 className={styles.mainTitle}>{EVENT}</h2>
+      <p className={styles.successText}>{FINAL}</p>
     </div>
   );
 }
@@ -214,10 +211,7 @@ export default function Countdown() {
 
   return (
     <SectionContainer>
-      <div
-        className={styles.container}
-        aria-label={`Countdown to ${TEXTS.event}`}
-      >
+      <div className={styles.container} aria-label={`Countdown to ${EVENT}`}>
         {state.isTimeUp ? (
           <TimeUpContent />
         ) : (
