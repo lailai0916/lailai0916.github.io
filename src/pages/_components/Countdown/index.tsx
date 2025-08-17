@@ -54,16 +54,10 @@ interface CountdownState {
   isTimeUp: boolean;
 }
 
-interface ProgressCircleProps {
-  total: number;
-  value: number;
-  unitText: string;
-}
-
 function calculateTimeLeft(): CountdownState {
   const distance = new Date(TARGET_DATE).getTime() - Date.now();
 
-  if (distance < 0) {
+  if (distance <= 0) {
     return { days: 0, hours: 0, minutes: 0, seconds: 0, isTimeUp: true };
   }
 
@@ -74,6 +68,12 @@ function calculateTimeLeft(): CountdownState {
     seconds: Math.floor((distance / 1000) % 60),
     isTimeUp: false,
   };
+}
+
+interface ProgressCircleProps {
+  total: number;
+  value: number;
+  unitText: string;
 }
 
 function ProgressCircle({ total, value, unitText }: ProgressCircleProps) {
