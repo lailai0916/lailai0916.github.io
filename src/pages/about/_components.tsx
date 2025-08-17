@@ -14,15 +14,17 @@ import { COMMUNITY_LIST } from '@site/src/data/community';
 import styles from './styles.module.css';
 
 export function Title() {
-  <section className="margin-top--lg margin-bottom--lg text--center">
-    <Heading as="h1">
-      {'🎉\xa0'}
-      <Link className={styles.titleText} to="/">
-        {"Hello,\xa0I'm\xa0lailai"}
-      </Link>
-      {'\xa0🥳'}
-    </Heading>
-  </section>;
+  return (
+    <section className="margin-top--lg margin-bottom--lg text--center">
+      <Heading as="h1">
+        {'🎉\xa0'}
+        <Link className={styles.titleText} to="/">
+          {"Hello,\xa0I'm\xa0lailai"}
+        </Link>
+        {'\xa0🥳'}
+      </Heading>
+    </section>
+  );
 }
 
 export function Skills() {

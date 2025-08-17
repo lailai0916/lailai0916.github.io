@@ -2,10 +2,28 @@ import React, { useState, useEffect } from 'react';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import Link from '@docusaurus/Link';
 import Heading from '@theme/Heading';
-import Translate, { translate } from '@docusaurus/Translate';
+import { translate } from '@docusaurus/Translate';
 import IconText from '@site/src/components/laikit/widget/IconText';
 
 import styles from './styles.module.css';
+
+const TITLE = translate({
+  id: 'home.herobanner.title',
+  message: "<b>Welcome</b> to lailai's <b>Home</b>!",
+});
+
+const BUTTONS = [
+  {
+    href: '/about',
+    label: translate({ id: 'home.herobanner.b1', message: 'About' }),
+    icon: 'lucide:user-circle',
+  },
+  {
+    href: '/blog',
+    label: translate({ id: 'home.herobanner.b2', message: 'Blog' }),
+    icon: 'lucide:book-open',
+  },
+];
 
 export default function HeroBanner() {
   const [hasAnimated, setHasAnimated] = useState(false);
@@ -27,29 +45,17 @@ export default function HeroBanner() {
           />
           <span
             className={styles.heroTitleTextHtml}
-            dangerouslySetInnerHTML={{
-              __html: translate({
-                id: 'home.herobanner.title',
-                message: "<b>Welcome</b> to lailai's <b>Home</b>!",
-              }),
-            }}
+            dangerouslySetInnerHTML={{ __html: TITLE }}
           />
         </Heading>
         <div className={styles.indexCtas}>
-          <Link to="/about" className={styles.ctaCard}>
-            <div className={styles.ctaCardContent}>
-              <IconText icon="lucide:user-circle">
-                <Translate id="home.herobanner.b1">About</Translate>
-              </IconText>
-            </div>
-          </Link>
-          <Link to="/blog" className={styles.ctaCard}>
-            <div className={styles.ctaCardContent}>
-              <IconText icon="lucide:book-open">
-                <Translate id="home.herobanner.b2">Blog</Translate>
-              </IconText>
-            </div>
-          </Link>
+          {BUTTONS.map((button) => (
+            <Link to={button.href} className={styles.ctaCard}>
+              <div className={styles.ctaCardContent}>
+                <IconText icon={button.icon}>{button.label}</IconText>
+              </div>
+            </Link>
+          ))}
         </div>
       </div>
     </div>
