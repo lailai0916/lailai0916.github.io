@@ -22,13 +22,13 @@
 /* Transition styles - 快速跳跃效果（像指针一样） */
 .circleTransition {
   transition-property: stroke-dashoffset;
-  transition-duration: 300ms;
+  transition-duration: 500ms;
   transition-timing-function: ease-out;
 }
 
 .dotTransition {
   transition-property: transform;
-  transition-duration: 300ms;
+  transition-duration: 500ms;
   transition-timing-function: ease-out;
 }
 

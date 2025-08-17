@@ -62,8 +62,8 @@ export const TRAVEL_LIST: TravelItem[] = [
   },
   {
     title: '2015-05',
-    cardTitle: '日本🇯🇵',
-    cardDetailedText: '本州',
+    cardTitle: '日本（本州）🇯🇵',
+    cardDetailedText: '大阪、名古屋、东京',
   },
   {
     title: '2015-10',
@@ -83,7 +83,7 @@ export const TRAVEL_LIST: TravelItem[] = [
   {
     title: '2016-07',
     cardTitle: '奥地利🇦🇹、斯洛伐克🇸🇰、匈牙利🇭🇺、捷克🇨🇿、斯洛文尼亚🇸🇮、德国🇩🇪',
-    cardDetailedText: '奥地利、斯洛伐克、匈牙利、捷克、斯洛文尼亚、德国',
+    cardDetailedText: '维也纳、布拉格、布达佩斯、萨尔茨堡、哈尔施塔特、柏林',
   },
   {
     title: '2016-09',
@@ -97,13 +97,13 @@ export const TRAVEL_LIST: TravelItem[] = [
   },
   {
     title: '2017-01',
-    cardTitle: '日本🇯🇵',
+    cardTitle: '日本（九州）🇯🇵',
     cardDetailedText: '熊本',
   },
   {
     title: '2017-02',
     cardTitle: '土耳其🇹🇷',
-    cardDetailedText: '伊斯坦布尔',
+    cardDetailedText: '伊斯坦布尔、卡帕多奇亚',
   },
   {
     title: '2017-05',
@@ -137,8 +137,8 @@ export const TRAVEL_LIST: TravelItem[] = [
   },
   {
     title: '2018-08',
-    cardTitle: '日本🇯🇵',
-    cardDetailedText: '北海道',
+    cardTitle: '日本（北海道）🇯🇵',
+    cardDetailedText: '札幌、小樽、函馆',
   },
   {
     title: '2018-10',
@@ -158,7 +158,7 @@ export const TRAVEL_LIST: TravelItem[] = [
   {
     title: '2019-07',
     cardTitle: '意大利🇮🇹、梵蒂冈🇻🇦、瑞士🇨🇭、法国🇫🇷',
-    cardDetailedText: '意大利、梵蒂冈、瑞士、法国',
+    cardDetailedText: '罗马、梵蒂冈、佛罗伦萨、威尼斯、卢塞恩、巴黎',
   },
   {
     title: '2020-07',
@@ -193,7 +193,7 @@ export const TRAVEL_LIST: TravelItem[] = [
   {
     title: '2024-08',
     cardTitle: '韩国🇰🇷',
-    cardDetailedText: '首尔、釜山',
+    cardDetailedText: '仁川、首尔、釜山',
   },
   {
     title: '2025-01',
