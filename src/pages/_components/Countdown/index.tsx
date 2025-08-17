@@ -91,12 +91,7 @@ function ProgressCircle({ total, value, unitText }: ProgressCircleProps) {
   }, [value, total]);
 
   return (
-    <div
-      className={styles.progressCircleContainer}
-      role="timer"
-      aria-live="polite"
-      aria-label={`${value} ${unitText}`}
-    >
+    <div className={styles.progressCircleContainer}>
       <div className={styles.circleWrapper}>
         <svg
           className={styles.circleSvg}
@@ -132,7 +127,7 @@ function ProgressCircle({ total, value, unitText }: ProgressCircleProps) {
             className={styles.circleTransition}
           />
         </svg>
-        <div className={styles.circleValue} aria-hidden="true">
+        <div className={styles.circleValue}>
           {value}
           <br />
           <span className={styles.circleUnit}>{unitText}</span>
