@@ -4,7 +4,7 @@ import SectionHeader from '@site/src/components/laikit/section/SectionHeader';
 import { translate } from '@docusaurus/Translate';
 import styles from './styles.module.css';
 
-const TARGET_DATE = '2026-01-01T00:00:00';
+const TARGET_DATE = '2026-07-01T00:00:00';
 const EVENT = translate({ id: 'home.countdown.event', message: '2026' });
 const FINAL = translate({
   id: 'home.countdown.final',
@@ -40,10 +40,10 @@ const TIME_UNITS = [
   },
 ];
 
-const SVG_SIZE = 10;
-const SVG_RADIUS = 4.5;
-const STROKE_WIDTH = 0.5;
-const DOT_SIZE = 1;
+const SVG_SIZE = 160;
+const SVG_RADIUS = 72;
+const STROKE_WIDTH = 8;
+const DOT_SIZE = 16;
 const SVG_CENTER = SVG_SIZE / 2;
 const CIRCUMFERENCE = 2 * Math.PI * SVG_RADIUS;
 
@@ -75,21 +75,19 @@ interface ProgressCircleProps {
 
 function ProgressCircle({ total, value, unitText }: ProgressCircleProps) {
   const circleProps = useMemo(() => {
-    const progress = (100 * value) / total;
-    const strokeDashoffset = (1 - progress / 100) * CIRCUMFERENCE;
-    const rotationAngle = (360 * value) / total;
+    const p = value / total;
+    const dash = p * CIRCUMFERENCE;
+    const rotationAngle = 360 * p;
 
     return {
+      dash,
+      rotationAngle,
       indicatorDotStyle: {
         left: '50%',
         top: '50%',
-        width: `${DOT_SIZE}rem`,
-        height: `${DOT_SIZE}rem`,
-        transform: `translate(-50%, -50%) rotate(${rotationAngle}deg) translateY(-${SVG_RADIUS}rem)`,
-      } as React.CSSProperties,
-      progressStyle: {
-        strokeDasharray: CIRCUMFERENCE,
-        strokeDashoffset,
+        width: `${DOT_SIZE}px`,
+        height: `${DOT_SIZE}px`,
+        transform: `translate(-50%, -50%) rotate(${rotationAngle}deg) translateY(-${SVG_RADIUS}px)`,
       } as React.CSSProperties,
     };
   }, [value, total]);
@@ -123,7 +121,8 @@ function ProgressCircle({ total, value, unitText }: ProgressCircleProps) {
             stroke="var(--ifm-color-primary)"
             strokeWidth={STROKE_WIDTH}
             strokeLinecap="round"
-            style={circleProps.progressStyle}
+            strokeDasharray={`${circleProps.dash} ${CIRCUMFERENCE}`}
+            strokeDashoffset={0}
             className={styles.circleTransition}
           />
         </svg>
