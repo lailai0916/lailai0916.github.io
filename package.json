@@ -14,7 +14,8 @@
     "write-translations": "docusaurus write-translations",
     "write-translations:zh-Hans": "docusaurus write-translations --locale zh-Hans",
     "crowdin": "crowdin",
-    "crowdin:sync": "docusaurus write-translations && crowdin upload && crowdin download"
+    "crowdin:sync": "docusaurus write-translations && crowdin upload && crowdin download",
+    "fmt": "npx prettier --write ."
   },
   "dependencies": {
     "@docusaurus/core": "^3.8.1",
