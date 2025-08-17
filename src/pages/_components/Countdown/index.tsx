@@ -152,27 +152,15 @@ function ProgressCircle({ total, value, unitText }: ProgressCircleProps) {
 
 function CountdownContent({ timeLeft }: { timeLeft: CountdownState }) {
   return (
-    <>
-      <SectionHeader title={TITLE} description={DESCRIPTION} />
-      <div className={styles.countdownLayout}>
-        {TIME_UNITS.map(({ key, total, label }) => (
-          <ProgressCircle
-            key={key}
-            total={total}
-            value={timeLeft[key]}
-            unitText={label}
-          />
-        ))}
-      </div>
-    </>
-  );
-}
-
-function TimeUpContent() {
-  return (
-    <div className={styles.timeUpContent}>
-      <h2 className={styles.mainTitle}>{EVENT}</h2>
-      <p className={styles.successText}>{FINAL}</p>
+    <div className={styles.countdownLayout}>
+      {TIME_UNITS.map(({ key, total, label }) => (
+        <ProgressCircle
+          key={key}
+          total={total}
+          value={timeLeft[key]}
+          unitText={label}
+        />
+      ))}
     </div>
   );
 }
@@ -213,9 +201,12 @@ export default function Countdown() {
     <SectionContainer>
       <div className={styles.container} aria-label={`Countdown to ${EVENT}`}>
         {state.isTimeUp ? (
-          <TimeUpContent />
+          <SectionHeader title={EVENT} description={FINAL} />
         ) : (
-          <CountdownContent timeLeft={state} />
+          <>
+            <SectionHeader title={TITLE} description={DESCRIPTION} />
+            <CountdownContent timeLeft={state} />
+          </>
         )}
       </div>
     </SectionContainer>

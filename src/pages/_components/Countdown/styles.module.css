@@ -1,29 +1,5 @@
 /* Countdown Component Styles */
 
-/* Main title styles */
-.mainTitle {
-  font-weight: 700;
-  font-size: 2.25rem;
-  color: rgb(17 24 39);
-  line-height: 1.25;
-  margin-bottom: 1rem;
-}
-
-[data-theme='dark'] .mainTitle {
-  color: rgb(245 245 245);
-}
-
-/* Success text styles */
-.successText {
-  font-size: 1.5rem;
-  font-weight: 500;
-  color: rgb(55 65 81);
-}
-
-[data-theme='dark'] .successText {
-  color: rgb(212 212 212);
-}
-
 /* Circle value text styles */
 .circleValue {
   position: absolute;
@@ -121,11 +97,6 @@
     grid-template-columns: 1fr;
     gap: 1rem;
   }
-}
-
-/* Time up content */
-.timeUpContent {
-  text-align: center;
 }
 
 /* Main container */
