@@ -10,7 +10,6 @@ const FINAL = translate({
   id: 'home.countdown.final',
   message: 'Happy New Year!',
 });
-
 const TITLE = translate({ id: 'home.countdown.title', message: 'Countdown' });
 const DESCRIPTION = translate(
   { id: 'home.countdown.description', message: 'Time left until {event}' },
@@ -65,9 +64,9 @@ function calculateTimeLeft(): CountdownState {
   const distance = new Date(TARGET_DATE).getTime() - Date.now();
 
   return {
-    days: Math.floor(distance / 86400000),
-    hours: Math.floor((distance / 3600000) % 24),
-    minutes: Math.floor((distance / 60000) % 60),
+    days: Math.floor(distance / (24 * 60 * 60 * 1000)),
+    hours: Math.floor((distance / (60 * 60 * 1000)) % 24),
+    minutes: Math.floor((distance / (60 * 1000)) % 60),
     seconds: Math.floor((distance / 1000) % 60),
     isTimeUp: distance <= 0,
   };
