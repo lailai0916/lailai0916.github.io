@@ -81,10 +81,9 @@ interface ProgressCircleProps {
 
 function ProgressCircle({ total, value, unitText }: ProgressCircleProps) {
   const circleProps = useMemo(() => {
-    const p = value / total;
-    const dash = p * SVG_CONFIG.circumference;
-    const angleRad = p * 2 * Math.PI; // start at +X; the SVG is rotated -90deg via CSS to start at 12 o'clock visually
-
+    const progress = value / total;
+    const dash = progress * SVG_CONFIG.circumference;
+    const angleRad = progress * 2 * Math.PI;
     const dotX = SVG_CONFIG.center + SVG_CONFIG.radius * Math.cos(angleRad);
     const dotY = SVG_CONFIG.center + SVG_CONFIG.radius * Math.sin(angleRad);
 
