@@ -77,19 +77,12 @@ function ProgressCircle({ total, value, unitText }: ProgressCircleProps) {
   const circleProps = useMemo(() => {
     const p = value / total;
     const dash = p * CIRCUMFERENCE;
-    const rotationAngle = 360 * p;
+    const angleRad = p * 2 * Math.PI; // start at +X; the SVG is rotated -90deg via CSS to start at 12 o'clock visually
 
-    return {
-      dash,
-      rotationAngle,
-      indicatorDotStyle: {
-        left: '50%',
-        top: '50%',
-        width: `${DOT_SIZE}px`,
-        height: `${DOT_SIZE}px`,
-        transform: `translate(-50%, -50%) rotate(${rotationAngle}deg) translateY(-${SVG_RADIUS}px)`,
-      } as React.CSSProperties,
-    };
+    const dotX = SVG_CENTER + SVG_RADIUS * Math.cos(angleRad);
+    const dotY = SVG_CENTER + SVG_RADIUS * Math.sin(angleRad);
+
+    return { dash, dotX, dotY } as const;
   }, [value, total]);
 
   return (
@@ -121,17 +114,19 @@ function ProgressCircle({ total, value, unitText }: ProgressCircleProps) {
             stroke="var(--ifm-color-primary)"
             strokeWidth={STROKE_WIDTH}
             strokeLinecap="round"
-            strokeDasharray={`${circleProps.dash} ${CIRCUMFERENCE}`}
+            pathLength={CIRCUMFERENCE}
+            strokeDasharray={`${circleProps.dash} ${CIRCUMFERENCE - circleProps.dash}`}
             strokeDashoffset={0}
             className={styles.circleTransition}
           />
+          <circle
+            cx={circleProps.dotX}
+            cy={circleProps.dotY}
+            r={DOT_SIZE / 2}
+            fill="var(--ifm-color-primary)"
+            className={styles.circleTransition}
+          />
         </svg>
-
-        <div
-          className={`${styles.indicatorDot} ${styles.dotTransition}`}
-          style={circleProps.indicatorDotStyle}
-        />
-
         <div className={styles.circleValue} aria-hidden="true">
           {value}
           <br />
