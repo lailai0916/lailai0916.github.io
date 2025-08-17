@@ -23,7 +23,7 @@
 
 @media only screen and (max-width: 480px) {
   .topBanner {
-    padding: 20px 15px;
+    padding: 15px 10px;
   }
 
   .topBannerTitle {
@@ -39,15 +39,9 @@
     #ff2e54 68%,
     #ff9004
   );
-  /* background: linear-gradient(
-    90deg,
-    #3186FF 0,
-    #346BF1 50%,
-    #4FA0FF 100%
-  ); */
   background-clip: text;
   -webkit-text-fill-color: transparent;
-  word-wrap: break-word;
+  overflow-wrap: break-word;
   word-break: break-word;
 }
 
