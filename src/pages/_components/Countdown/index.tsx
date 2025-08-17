@@ -75,9 +75,9 @@ interface ProgressCircleProps {
 
 function ProgressCircle({ total, value, unitText }: ProgressCircleProps) {
   const circleProps = useMemo(() => {
-    const progress = Math.min(Math.max((value / total) * 100, 0), 100);
+    const progress = (100 * value) / total;
     const strokeDashoffset = CIRCUMFERENCE - (progress / 100) * CIRCUMFERENCE;
-    const rotationAngle = Math.min(Math.max((360 * value) / total, 0), 360);
+    const rotationAngle = (360 * value) / total;
 
     return {
       strokeDashoffset,
