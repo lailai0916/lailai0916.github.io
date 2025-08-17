@@ -4,7 +4,7 @@ import SectionHeader from '@site/src/components/laikit/section/SectionHeader';
 import { translate } from '@docusaurus/Translate';
 import styles from './styles.module.css';
 
-const TARGET_DATE = '2026-07-01T00:00:00';
+const TARGET_DATE = '2026-01-01T00:00:00';
 const EVENT = translate({ id: 'home.countdown.event', message: '2026' });
 const FINAL = translate({
   id: 'home.countdown.final',
