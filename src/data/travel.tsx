@@ -98,12 +98,12 @@ export const TRAVEL_LIST: TravelItem[] = [
   {
     title: '2017-01',
     cardTitle: '日本🇯🇵',
-    cardDetailedText: '九州（熊本）',
+    cardDetailedText: '熊本',
   },
   {
     title: '2017-02',
     cardTitle: '土耳其🇹🇷',
-    cardDetailedText: '土耳其',
+    cardDetailedText: '伊斯坦布尔',
   },
   {
     title: '2017-05',
@@ -118,7 +118,7 @@ export const TRAVEL_LIST: TravelItem[] = [
   {
     title: '2017-08',
     cardTitle: '澳大利亚🇦🇺',
-    cardDetailedText: '澳大利亚',
+    cardDetailedText: '布里斯班、黄金海岸、悉尼、墨尔本',
   },
   {
     title: '2017-10',
