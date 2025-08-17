@@ -58,7 +58,7 @@
 
 ```html live
 <div align="center">
-  <h1>🎉 <a href="https://www.lailai.one">Hello, I'm lailai</a> 🥳</h1>
+  <h1>🎉 <a href="https://lailai.one">Hello, I'm lailai</a> 🥳</h1>
   <p>
     <a href="README.md">English</a> | <a href="README.zh-Hans.md">简体中文</a>
   </p>
