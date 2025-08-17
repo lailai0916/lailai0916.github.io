@@ -13,7 +13,7 @@ const FINAL = translate({
 
 const TITLE = translate({ id: 'home.countdown.title', message: 'Countdown' });
 const DESCRIPTION = translate(
-  { id: 'home.countdown.description', message: 'Countdown to {event}' },
+  { id: 'home.countdown.description', message: 'Time left until {event}' },
   { event: EVENT }
 );
 
@@ -57,16 +57,12 @@ interface CountdownState {
 function calculateTimeLeft(): CountdownState {
   const distance = new Date(TARGET_DATE).getTime() - Date.now();
 
-  if (distance <= 0) {
-    return { days: 0, hours: 0, minutes: 0, seconds: 0, isTimeUp: true };
-  }
-
   return {
     days: Math.floor(distance / 86400000),
     hours: Math.floor((distance / 3600000) % 24),
     minutes: Math.floor((distance / 60000) % 60),
     seconds: Math.floor((distance / 1000) % 60),
-    isTimeUp: false,
+    isTimeUp: distance <= 0,
   };
 }
 
@@ -199,16 +195,11 @@ export default function Countdown() {
 
   return (
     <SectionContainer>
-      <div className={styles.container} aria-label={`Countdown to ${EVENT}`}>
-        {state.isTimeUp ? (
-          <SectionHeader title={EVENT} description={FINAL} />
-        ) : (
-          <>
-            <SectionHeader title={TITLE} description={DESCRIPTION} />
-            <CountdownContent timeLeft={state} />
-          </>
-        )}
-      </div>
+      <SectionHeader
+        title={state.isTimeUp ? EVENT : TITLE}
+        description={state.isTimeUp ? FINAL : DESCRIPTION}
+      />
+      {!state.isTimeUp && <CountdownContent timeLeft={state} />}
     </SectionContainer>
   );
 }
