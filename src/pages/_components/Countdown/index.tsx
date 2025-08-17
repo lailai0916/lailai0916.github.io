@@ -76,12 +76,10 @@ interface ProgressCircleProps {
 function ProgressCircle({ total, value, unitText }: ProgressCircleProps) {
   const circleProps = useMemo(() => {
     const progress = (100 * value) / total;
-    const strokeDashoffset = CIRCUMFERENCE - (progress / 100) * CIRCUMFERENCE;
+    const strokeDashoffset = (1 - progress / 100) * CIRCUMFERENCE;
     const rotationAngle = (360 * value) / total;
 
     return {
-      strokeDashoffset,
-      rotationAngle,
       indicatorDotStyle: {
         left: '50%',
         top: '50%',
