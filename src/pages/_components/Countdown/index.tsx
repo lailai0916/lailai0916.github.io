@@ -22,7 +22,7 @@ const TARGET_DATE = '2026-01-01T00:00:00';
 const SVG_RADIUS = 74;
 const SVG_SIZE = 160;
 const STROKE_WIDTH = 8;
-const DOT_SIZE = 15;
+const DOT_SIZE = 16;
 const CIRCUMFERENCE = 2 * Math.PI * SVG_RADIUS; // 预计算常量
 
 const TEXTS = {
@@ -48,7 +48,7 @@ const TEXTS = {
 };
 
 const TIME_UNITS = [
-  { key: 'days' as const, total: 365 },
+  { key: 'days' as const, total: 366 },
   { key: 'hours' as const, total: 24 },
   { key: 'minutes' as const, total: 60 },
   { key: 'seconds' as const, total: 60 },
