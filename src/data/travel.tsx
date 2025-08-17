@@ -53,7 +53,7 @@ export const TRAVEL_LIST: TravelItem[] = [
   {
     title: '2015-01',
     cardTitle: '越南🇻🇳',
-    cardDetailedText: '越南',
+    cardDetailedText: '岘港',
   },
   {
     title: '2015-02',
