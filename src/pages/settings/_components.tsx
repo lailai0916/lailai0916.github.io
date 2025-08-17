@@ -17,7 +17,7 @@ export function ThemeSettings() {
       key: null,
       label: translate({
         id: 'pages.settings.item.theme.option.system',
-        message: 'Follow System',
+        message: 'System Mode',
       }),
       icon: 'lucide:monitor',
     },

@@ -909,7 +909,7 @@
     "message": "快速管理您的个性化配置"
   },
   "pages.settings.item.theme.option.system": {
-    "message": "跟随系统"
+    "message": "系统模式"
   },
   "pages.settings.item.theme.option.light": {
     "message": "浅色模式"
