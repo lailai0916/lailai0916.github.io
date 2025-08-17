@@ -18,7 +18,7 @@ export const PROJECT_LIST: ProjectItem[] = [
         'My personal website for sharing technical notes, project experience, and learning insights.',
     }),
     href: 'https://github.com/lailai0916/lailai0916.github.io',
-    tech: 'TypeScript • Docusaurus',
+    tech: 'TypeScript · Docusaurus',
     status: {
       text: translate({
         id: 'data.project.p1.status',
@@ -35,7 +35,7 @@ export const PROJECT_LIST: ProjectItem[] = [
         'A collection of terminal mini-games developed in C++, featuring a variety of classic gameplay.',
     }),
     href: '/docs/project/terminal/igame',
-    tech: 'C++ • Terminal',
+    tech: 'C++ · Terminal',
     status: {
       text: translate({
         id: 'data.project.p2.status',
@@ -52,7 +52,7 @@ export const PROJECT_LIST: ProjectItem[] = [
         'A unified, simple, and modern UI component library for building clean interface experiences.',
     }),
     href: '',
-    tech: 'TypeScript • React',
+    tech: 'TypeScript · React',
     status: {
       text: translate({ id: 'data.project.p3.status', message: 'Stay Tuned' }),
       color: STATUS_COLORS.ROSE,
