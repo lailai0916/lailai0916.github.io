@@ -1,15 +1,14 @@
 import React from 'react';
 import { Icon } from '@iconify/react';
 import { COMMUNITY_LIST } from '@site/src/data/community';
-import {
-  BaseCard,
-  SectionContainer,
-  SectionHeader,
-  GridLayout,
+import BaseCard from '@site/src/components/laikit/section/BaseCard';
+import SectionContainer from '@site/src/components/laikit/section/SectionContainer1';
+import SectionHeader from '@site/src/components/laikit/section/SectionHeader';
+import GridLayout, {
   GridConfigs,
-  IconWrapper,
-  TEXT_COLORS,
-} from '@site/src/components/laikit/section';
+} from '@site/src/components/laikit/section/GridLayout';
+import IconWrapper from '@site/src/components/laikit/section/IconWrapper';
+import { TEXT_COLORS } from '@site/src/components/laikit/section/constants';
 import { translate } from '@docusaurus/Translate';
 
 function CommunityCard({

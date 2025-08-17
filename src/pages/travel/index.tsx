@@ -10,7 +10,7 @@ import {
 import { DataCardList } from '@site/src/components/laikit/widget/DataCard';
 import BrowserOnly from '@docusaurus/BrowserOnly';
 import Timeline from '@site/src/pages/travel/_components';
-import { SectionHeader } from '@site/src/components/laikit/section';
+import SectionHeader from '@site/src/components/laikit/section/SectionHeader';
 import { translate } from '@docusaurus/Translate';
 import { TRAVEL_LIST } from '@site/src/data/travel';
 import styles from './styles.module.css';

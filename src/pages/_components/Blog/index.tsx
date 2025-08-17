@@ -9,7 +9,7 @@ import {
   type ProcessedBlogPost,
 } from '@site/src/utils/blogData';
 import SectionContainer from '@site/src/components/laikit/section/SectionContainer1';
-import { TEXT_COLORS } from '@site/src/components/laikit/section';
+import { TEXT_COLORS } from '@site/src/components/laikit/section/constants';
 
 const TEXT_CLAMP_STYLES = {
   title: {

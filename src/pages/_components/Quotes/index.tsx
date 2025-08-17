@@ -1,13 +1,12 @@
 import React from 'react';
-import {
-  BaseCard,
-  SectionContainer,
-  SectionHeader,
-  StatusBadge,
-  GridLayout,
+import BaseCard from '@site/src/components/laikit/section/BaseCard';
+import SectionContainer from '@site/src/components/laikit/section/SectionContainer1';
+import SectionHeader from '@site/src/components/laikit/section/SectionHeader';
+import StatusBadge from '@site/src/components/laikit/section/StatusBadge';
+import GridLayout, {
   GridConfigs,
-  TEXT_COLORS,
-} from '@site/src/components/laikit/section';
+} from '@site/src/components/laikit/section/GridLayout';
+import { TEXT_COLORS } from '@site/src/components/laikit/section/constants';
 import { QUOTE_LIST } from '@site/src/data/quotes';
 import { translate } from '@docusaurus/Translate';
 
