@@ -40,12 +40,18 @@ const TIME_UNITS = [
   },
 ];
 
-const SVG_SIZE = 160;
-const SVG_RADIUS = 72;
-const STROKE_WIDTH = 8;
-const DOT_SIZE = 16;
-const SVG_CENTER = SVG_SIZE / 2;
-const CIRCUMFERENCE = 2 * Math.PI * SVG_RADIUS;
+const SVG_CONFIG = {
+  size: 160,
+  radius: 72,
+  strokeWidth: 8,
+  dotSize: 16,
+  get center() {
+    return this.size / 2;
+  },
+  get circumference() {
+    return 2 * Math.PI * this.radius;
+  },
+} as const;
 
 interface CountdownState {
   days: number;
@@ -76,11 +82,11 @@ interface ProgressCircleProps {
 function ProgressCircle({ total, value, unitText }: ProgressCircleProps) {
   const circleProps = useMemo(() => {
     const p = value / total;
-    const dash = p * CIRCUMFERENCE;
+    const dash = p * SVG_CONFIG.circumference;
     const angleRad = p * 2 * Math.PI; // start at +X; the SVG is rotated -90deg via CSS to start at 12 o'clock visually
 
-    const dotX = SVG_CENTER + SVG_RADIUS * Math.cos(angleRad);
-    const dotY = SVG_CENTER + SVG_RADIUS * Math.sin(angleRad);
+    const dotX = SVG_CONFIG.center + SVG_CONFIG.radius * Math.cos(angleRad);
+    const dotY = SVG_CONFIG.center + SVG_CONFIG.radius * Math.sin(angleRad);
 
     return { dash, dotX, dotY } as const;
   }, [value, total]);
@@ -95,34 +101,34 @@ function ProgressCircle({ total, value, unitText }: ProgressCircleProps) {
       <div className={styles.circleWrapper}>
         <svg
           className={styles.circleSvg}
-          viewBox={`0 0 ${SVG_SIZE} ${SVG_SIZE}`}
+          viewBox={`0 0 ${SVG_CONFIG.size} ${SVG_CONFIG.size}`}
         >
           <circle
-            cx={SVG_CENTER}
-            cy={SVG_CENTER}
-            r={SVG_RADIUS}
+            cx={SVG_CONFIG.center}
+            cy={SVG_CONFIG.center}
+            r={SVG_CONFIG.radius}
             fill="none"
             stroke="currentColor"
-            strokeWidth={STROKE_WIDTH}
+            strokeWidth={SVG_CONFIG.strokeWidth}
             className={styles.circleBackground}
           />
           <circle
-            cx={SVG_CENTER}
-            cy={SVG_CENTER}
-            r={SVG_RADIUS}
+            cx={SVG_CONFIG.center}
+            cy={SVG_CONFIG.center}
+            r={SVG_CONFIG.radius}
             fill="none"
             stroke="var(--ifm-color-primary)"
-            strokeWidth={STROKE_WIDTH}
+            strokeWidth={SVG_CONFIG.strokeWidth}
             strokeLinecap="round"
-            pathLength={CIRCUMFERENCE}
-            strokeDasharray={`${circleProps.dash} ${CIRCUMFERENCE - circleProps.dash}`}
+            pathLength={SVG_CONFIG.circumference}
+            strokeDasharray={`${circleProps.dash} ${SVG_CONFIG.circumference - circleProps.dash}`}
             strokeDashoffset={0}
             className={styles.circleTransition}
           />
           <circle
             cx={circleProps.dotX}
             cy={circleProps.dotY}
-            r={DOT_SIZE / 2}
+            r={SVG_CONFIG.dotSize / 2}
             fill="var(--ifm-color-primary)"
             className={styles.circleTransition}
           />
