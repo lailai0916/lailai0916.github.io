@@ -161,7 +161,7 @@ export default function Countdown() {
   const [state, setState] = useState(calculateTimeLeft);
   const timerRef = useRef<NodeJS.Timeout | null>(null);
 
-  function tick() {
+  const tick = () => {
     const result = calculateTimeLeft();
     setState(result);
 
@@ -174,7 +174,7 @@ export default function Countdown() {
     const delay = nextSecond - now;
 
     timerRef.current = setTimeout(tick, delay);
-  }
+  };
 
   useEffect(() => {
     if (state.isTimeUp) return;
