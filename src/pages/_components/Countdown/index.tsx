@@ -33,25 +33,29 @@ const TEXTS = {
   ),
   event: translate({ id: 'home.countdown.event', message: '2026' }),
   final: translate({ id: 'home.countdown.final', message: 'Happy New Year!' }),
-  units: {
-    days: translate({ id: 'home.countdown.unit.days', message: 'Days' }),
-    hours: translate({ id: 'home.countdown.unit.hours', message: 'Hours' }),
-    minutes: translate({
-      id: 'home.countdown.unit.minutes',
-      message: 'Minutes',
-    }),
-    seconds: translate({
-      id: 'home.countdown.unit.seconds',
-      message: 'Seconds',
-    }),
-  },
 };
 
 const TIME_UNITS = [
-  { key: 'days' as const, total: 366 },
-  { key: 'hours' as const, total: 24 },
-  { key: 'minutes' as const, total: 60 },
-  { key: 'seconds' as const, total: 60 },
+  {
+    key: 'days' as const,
+    total: 366,
+    label: translate({ id: 'home.countdown.unit.days', message: 'Days' }),
+  },
+  {
+    key: 'hours' as const,
+    total: 24,
+    label: translate({ id: 'home.countdown.unit.hours', message: 'Hours' }),
+  },
+  {
+    key: 'minutes' as const,
+    total: 60,
+    label: translate({ id: 'home.countdown.unit.minutes', message: 'Minutes' }),
+  },
+  {
+    key: 'seconds' as const,
+    total: 60,
+    label: translate({ id: 'home.countdown.unit.seconds', message: 'Seconds' }),
+  },
 ];
 
 function calculateTimeLeft(): CountdownState {
@@ -154,12 +158,12 @@ function CountdownContent({ timeLeft }: { timeLeft: CountdownState }) {
       />
 
       <div className={styles.countdownLayout}>
-        {TIME_UNITS.map(({ key, total }) => (
+        {TIME_UNITS.map(({ key, total, label }) => (
           <ProgressCircle
             key={key}
             total={total}
             value={timeLeft[key]}
-            unitText={TEXTS.units[key]}
+            unitText={label}
           />
         ))}
       </div>
