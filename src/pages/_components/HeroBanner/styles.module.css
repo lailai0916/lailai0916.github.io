@@ -57,27 +57,6 @@ html[data-theme='dark'] .hero {
   animation: smooth-entrance 1s cubic-bezier(0.4, 0, 0.2, 1) forwards;
 }
 
-/* 简约悬停效果 */
-.heroLogo:hover {
-  transform: scale(1.05) translateY(-2px);
-  filter: drop-shadow(0 0 16px var(--ifm-color-primary))
-    drop-shadow(0 0 30px var(--ifm-color-primary));
-  pointer-events: auto;
-  cursor: pointer;
-}
-
-/* 无障碍支持 */
-@media (prefers-reduced-motion: reduce) {
-  .heroLogo {
-    animation: none !important;
-    transition: none !important;
-    transform: scale(1) translateY(0px) !important;
-    opacity: 1 !important;
-    filter: drop-shadow(0 0 10px var(--ifm-color-primary))
-      drop-shadow(0 0 25px var(--ifm-color-primary)) !important;
-  }
-}
-
 .indexCtas {
   display: flex;
   flex-wrap: wrap;
@@ -177,13 +156,6 @@ html[data-theme='dark'] .heroLogo:hover {
 
   .heroLogoAnimated {
     animation: smooth-entrance 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
-  }
-
-  /* 移动端禁用悬停效果 */
-  .heroLogo:hover {
-    transform: scale(0.9) translateY(0px);
-    filter: drop-shadow(0 0 10px var(--ifm-color-primary))
-      drop-shadow(0 0 20px var(--ifm-color-primary));
   }
 
   .indexCtas {
