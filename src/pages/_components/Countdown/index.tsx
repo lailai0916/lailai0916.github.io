@@ -40,11 +40,12 @@ const TIME_UNITS = [
   },
 ];
 
-const SVG_RADIUS = 74;
-const SVG_SIZE = 160;
+const SVG_SIZE = 10;
+const SVG_RADIUS = 4.5;
 const STROKE_WIDTH = 0.5;
 const DOT_SIZE = 1;
-const CIRCUMFERENCE = 2 * Math.PI * SVG_RADIUS; // 预计算常量
+const SVG_CENTER = SVG_SIZE / 2;
+const CIRCUMFERENCE = 2 * Math.PI * SVG_RADIUS;
 
 interface CountdownState {
   days: number;
@@ -77,18 +78,16 @@ function ProgressCircle({ total, value, unitText }: ProgressCircleProps) {
     const progress = Math.min(Math.max((value / total) * 100, 0), 100);
     const strokeDashoffset = CIRCUMFERENCE - (progress / 100) * CIRCUMFERENCE;
     const rotationAngle = Math.min(Math.max((360 * value) / total, 0), 360);
-    const svgCenter = SVG_SIZE / 2;
 
     return {
       strokeDashoffset,
       rotationAngle,
-      svgCenter,
       indicatorDotStyle: {
         left: '50%',
         top: '50%',
         width: `${DOT_SIZE}rem`,
         height: `${DOT_SIZE}rem`,
-        transform: `translate(-50%, -50%) rotate(${rotationAngle}deg) translateY(-${SVG_RADIUS}px)`,
+        transform: `translate(-50%, -50%) rotate(${rotationAngle}deg) translateY(-${SVG_RADIUS}rem)`,
       } as React.CSSProperties,
       progressStyle: {
         strokeDasharray: CIRCUMFERENCE,
@@ -110,21 +109,21 @@ function ProgressCircle({ total, value, unitText }: ProgressCircleProps) {
           viewBox={`0 0 ${SVG_SIZE} ${SVG_SIZE}`}
         >
           <circle
-            cx={circleProps.svgCenter}
-            cy={circleProps.svgCenter}
+            cx={SVG_CENTER}
+            cy={SVG_CENTER}
             r={SVG_RADIUS}
             fill="none"
             stroke="currentColor"
-            strokeWidth={`${STROKE_WIDTH}rem`}
+            strokeWidth={STROKE_WIDTH}
             className={styles.circleBackground}
           />
           <circle
-            cx={circleProps.svgCenter}
-            cy={circleProps.svgCenter}
+            cx={SVG_CENTER}
+            cy={SVG_CENTER}
             r={SVG_RADIUS}
             fill="none"
             stroke="var(--ifm-color-primary)"
-            strokeWidth={`${STROKE_WIDTH}rem`}
+            strokeWidth={STROKE_WIDTH}
             strokeLinecap="round"
             style={circleProps.progressStyle}
             className={styles.circleTransition}
