@@ -1,0 +1,138 @@
+/* Countdown Component Styles */
+
+/* Main title styles */
+.mainTitle {
+  font-weight: 700;
+  font-size: 2.25rem;
+  color: rgb(17 24 39);
+  line-height: 1.25;
+  margin-bottom: 1rem;
+}
+
+[data-theme='dark'] .mainTitle {
+  color: rgb(245 245 245);
+}
+
+/* Success text styles */
+.successText {
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: rgb(55 65 81);
+}
+
+[data-theme='dark'] .successText {
+  color: rgb(212 212 212);
+}
+
+/* Circle value text styles */
+.circleValue {
+  position: absolute;
+  text-align: center;
+  font-weight: 500;
+  font-size: 2.5rem;
+  user-select: none;
+}
+
+/* Circle unit text styles */
+.circleUnit {
+  position: absolute;
+  font-size: 0.75rem;
+  font-weight: 300;
+  transform: translateX(-50%) translateY(-12px);
+  user-select: none;
+  white-space: nowrap;
+}
+
+/* Transition styles - 快速跳跃效果（像指针一样） */
+.circleTransition {
+  transition-property: stroke-dashoffset;
+  transition-duration: 300ms;
+  transition-timing-function: ease-out;
+}
+
+.dotTransition {
+  transition-property: transform;
+  transition-duration: 300ms;
+  transition-timing-function: ease-out;
+}
+
+/* Progress circle container */
+.progressCircleContainer {
+  position: relative;
+}
+
+/* Circle wrapper */
+.circleWrapper {
+  position: relative;
+  width: 10rem;
+  height: 10rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* SVG styles */
+.circleSvg {
+  position: absolute;
+  width: 10rem;
+  height: 10rem;
+  transform: rotate(-90deg);
+}
+
+/* Circle background */
+.circleBackground {
+  color: rgb(243 244 246);
+}
+
+[data-theme='dark'] .circleBackground {
+  color: rgb(38 38 38);
+}
+
+/* Indicator dot */
+.indicatorDot {
+  position: absolute;
+  border-radius: 50%;
+  background: var(--ifm-color-primary);
+  box-shadow:
+    0 0 20px var(--ifm-color-primary),
+    0 0 60px var(--ifm-color-primary);
+}
+
+/* Countdown content layout */
+.countdownLayout {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  width: fit-content;
+  margin: 0 auto;
+}
+
+/* Responsive grid for mobile */
+@media (max-width: 768px) {
+  .countdownLayout {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .countdownLayout {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}
+
+/* Time up content */
+.timeUpContent {
+  text-align: center;
+}
+
+/* Main container */
+.container {
+  max-width: 80rem;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  padding: 0 1.25rem;
+}
