@@ -4,20 +4,6 @@ import SectionHeader from '@site/src/components/laikit/section/SectionHeader';
 import { translate } from '@docusaurus/Translate';
 import styles from './styles.module.css';
 
-interface CountdownState {
-  days: number;
-  hours: number;
-  minutes: number;
-  seconds: number;
-  isTimeUp: boolean;
-}
-
-interface ProgressCircleProps {
-  total: number;
-  value: number;
-  unitText: string;
-}
-
 const TARGET_DATE = '2026-01-01T00:00:00';
 const EVENT = translate({ id: 'home.countdown.event', message: '2026' });
 const FINAL = translate({
@@ -56,9 +42,23 @@ const TIME_UNITS = [
 
 const SVG_RADIUS = 74;
 const SVG_SIZE = 160;
-const STROKE_WIDTH = 8;
-const DOT_SIZE = 16;
+const STROKE_WIDTH = 0.5;
+const DOT_SIZE = 1;
 const CIRCUMFERENCE = 2 * Math.PI * SVG_RADIUS; // 预计算常量
+
+interface CountdownState {
+  days: number;
+  hours: number;
+  minutes: number;
+  seconds: number;
+  isTimeUp: boolean;
+}
+
+interface ProgressCircleProps {
+  total: number;
+  value: number;
+  unitText: string;
+}
 
 function calculateTimeLeft(): CountdownState {
   const distance = new Date(TARGET_DATE).getTime() - Date.now();
@@ -90,8 +90,8 @@ function ProgressCircle({ total, value, unitText }: ProgressCircleProps) {
       indicatorDotStyle: {
         left: '50%',
         top: '50%',
-        width: `${DOT_SIZE}px`,
-        height: `${DOT_SIZE}px`,
+        width: `${DOT_SIZE}rem`,
+        height: `${DOT_SIZE}rem`,
         transform: `translate(-50%, -50%) rotate(${rotationAngle}deg) translateY(-${SVG_RADIUS}px)`,
       } as React.CSSProperties,
       progressStyle: {
@@ -119,7 +119,7 @@ function ProgressCircle({ total, value, unitText }: ProgressCircleProps) {
             r={SVG_RADIUS}
             fill="none"
             stroke="currentColor"
-            strokeWidth={STROKE_WIDTH}
+            strokeWidth={`${STROKE_WIDTH}rem`}
             className={styles.circleBackground}
           />
           <circle
@@ -128,7 +128,7 @@ function ProgressCircle({ total, value, unitText }: ProgressCircleProps) {
             r={SVG_RADIUS}
             fill="none"
             stroke="var(--ifm-color-primary)"
-            strokeWidth={STROKE_WIDTH}
+            strokeWidth={`${STROKE_WIDTH}rem`}
             strokeLinecap="round"
             style={circleProps.progressStyle}
             className={styles.circleTransition}
