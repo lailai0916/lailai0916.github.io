@@ -21,6 +21,7 @@ import Community from './_components/Community';
 
 export default function Home(): ReactNode {
   const { siteConfig } = useDocusaurusContext();
+
   return (
     <Layout title={siteConfig.title} description={siteConfig.tagline}>
       <PageContainer>

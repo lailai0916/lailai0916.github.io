@@ -50,7 +50,11 @@ export default function HeroBanner() {
         </Heading>
         <div className={styles.indexCtas}>
           {BUTTONS.map((button) => (
-            <Link to={button.href} className={styles.ctaCard}>
+            <Link
+              key={button.label}
+              to={button.href}
+              className={styles.ctaCard}
+            >
               <div className={styles.ctaCardContent}>
                 <IconText icon={button.icon}>{button.label}</IconText>
               </div>
