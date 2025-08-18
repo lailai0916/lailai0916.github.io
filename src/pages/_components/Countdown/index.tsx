@@ -133,12 +133,37 @@ function ProgressCircle({ total, value, unitText }: ProgressCircleProps) {
   );
 }
 
+function CircleBadge() {
+  return (
+    <div className={styles.pxcontainer}>
+      <svg
+        className={styles.pxring}
+        viewBox="0 0 160 160"
+      >
+        <circle
+          cx="80"
+          cy="80"
+          r="72"
+          fill="none"
+          stroke="var(--ifm-color-primary)"
+          strokeWidth="8"
+        />
+      </svg>
+      <div className={styles.pxanchor}>
+        <div className={styles.pxtitle}>XXX</div>
+        <div className={styles.pxsub}>YYY</div>
+      </div>
+    </div>
+  );
+}
+
 function CountdownContent({ timeLeft }: { timeLeft: CountdownState }) {
   return (
     <div className={styles.countdownLayout}>
       {TIME_UNITS.map(({ key, total, label }) => (
         <ProgressCircle total={total} value={timeLeft[key]} unitText={label} />
       ))}
+      {/* <CircleBadge /> */}
     </div>
   );
 }

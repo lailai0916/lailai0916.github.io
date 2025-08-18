@@ -92,3 +92,45 @@
     gap: 1rem;
   }
 }
+
+/* test */
+
+.pxcontainer {
+  position: relative;
+  width: 160px;
+  height: 160px;
+}
+
+.pxring {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+}
+
+.pxanchor {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.pxtitle {
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 32px;
+  text-align: center;
+}
+
+.pxsub {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: 4px;
+  font-size: 12px;
+  font-weight: 400;
+  opacity: 0.85;
+  white-space: nowrap;
+}
