@@ -13,7 +13,6 @@
 .circleUnit {
   position: absolute;
   font-size: 0.75rem;
-  font-weight: 300;
   transform: translateX(-50%) translateY(-12px);
   user-select: none;
   white-space: nowrap;
@@ -30,11 +29,6 @@
   transition-property: transform;
   transition-duration: 500ms;
   transition-timing-function: ease-out;
-}
-
-/* Progress circle container */
-.progressCircleContainer {
-  position: relative;
 }
 
 /* Circle wrapper */
@@ -87,7 +81,7 @@
 @media (max-width: 768px) {
   .countdownLayout {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr 1fr;
     gap: 1.5rem;
   }
 }

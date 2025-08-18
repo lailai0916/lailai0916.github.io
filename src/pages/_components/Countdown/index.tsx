@@ -90,47 +90,44 @@ function ProgressCircle({ total, value, unitText }: ProgressCircleProps) {
   }, [value, total]);
 
   return (
-    <div className={styles.progressCircleContainer}>
-      <div className={styles.circleWrapper}>
-        <svg
-          className={styles.circleSvg}
-          viewBox={`0 0 ${SVG_CONFIG.size} ${SVG_CONFIG.size}`}
-        >
-          <circle
-            cx={SVG_CONFIG.center}
-            cy={SVG_CONFIG.center}
-            r={SVG_CONFIG.radius}
-            fill="none"
-            stroke="currentColor"
-            strokeWidth={SVG_CONFIG.strokeWidth}
-            className={styles.circleBackground}
-          />
-          <circle
-            cx={SVG_CONFIG.center}
-            cy={SVG_CONFIG.center}
-            r={SVG_CONFIG.radius}
-            fill="none"
-            stroke="var(--ifm-color-primary)"
-            strokeWidth={SVG_CONFIG.strokeWidth}
-            strokeLinecap="round"
-            pathLength={SVG_CONFIG.circumference}
-            strokeDasharray={`${circleProps.dash} ${SVG_CONFIG.circumference - circleProps.dash}`}
-            strokeDashoffset={0}
-            className={styles.circleTransition}
-          />
-          <circle
-            cx={circleProps.dotX}
-            cy={circleProps.dotY}
-            r={SVG_CONFIG.dotSize / 2}
-            fill="var(--ifm-color-primary)"
-            className={styles.circleTransition}
-          />
-        </svg>
-        <div className={styles.circleValue}>
-          {value}
-          <br />
-          <span className={styles.circleUnit}>{unitText}</span>
-        </div>
+    <div className={styles.circleWrapper}>
+      <svg
+        className={styles.circleSvg}
+        viewBox={`0 0 ${SVG_CONFIG.size} ${SVG_CONFIG.size}`}
+      >
+        <circle
+          cx={SVG_CONFIG.center}
+          cy={SVG_CONFIG.center}
+          r={SVG_CONFIG.radius}
+          fill="none"
+          stroke="currentColor"
+          strokeWidth={SVG_CONFIG.strokeWidth}
+          className={styles.circleBackground}
+        />
+        <circle
+          cx={SVG_CONFIG.center}
+          cy={SVG_CONFIG.center}
+          r={SVG_CONFIG.radius}
+          fill="none"
+          stroke="var(--ifm-color-primary)"
+          strokeWidth={SVG_CONFIG.strokeWidth}
+          strokeLinecap="round"
+          pathLength={SVG_CONFIG.circumference}
+          strokeDasharray={`${circleProps.dash} ${SVG_CONFIG.circumference - circleProps.dash}`}
+          strokeDashoffset={0}
+          className={styles.circleTransition}
+        />
+        <circle
+          cx={circleProps.dotX}
+          cy={circleProps.dotY}
+          r={SVG_CONFIG.dotSize / 2}
+          fill="var(--ifm-color-primary)"
+          className={styles.circleTransition}
+        />
+      </svg>
+      <div className={styles.circleValue}>
+        <span>{value}</span>
+        <span className={styles.circleUnit}>{unitText}</span>
       </div>
     </div>
   );
@@ -140,11 +137,7 @@ function CountdownContent({ timeLeft }: { timeLeft: CountdownState }) {
   return (
     <div className={styles.countdownLayout}>
       {TIME_UNITS.map(({ key, total, label }) => (
-        <ProgressCircle
-          total={total}
-          value={timeLeft[key]}
-          unitText={label}
-        />
+        <ProgressCircle total={total} value={timeLeft[key]} unitText={label} />
       ))}
     </div>
   );
