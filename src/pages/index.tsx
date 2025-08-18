@@ -27,7 +27,7 @@ export default function Home(): ReactNode {
       <PageContainer>
         <TopBanner />
         <HeroBanner />
-        <div className={styles.container}>
+        <div className={styles.section}>
           <Docs />
           <Blog />
           <Countdown />

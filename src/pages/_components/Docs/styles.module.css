@@ -1,3 +1,7 @@
+.section {
+  padding: 40px 0;
+}
+
 .featureImage {
   width: auto;
   max-height: 128px;

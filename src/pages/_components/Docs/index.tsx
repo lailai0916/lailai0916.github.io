@@ -31,11 +31,13 @@ function DocsCard({ feature }: { feature: DocsItem }) {
 
 export default function Docs() {
   return (
-    <div className="container text--center" style={{ padding: '40px 0' }}>
-      <div className="row margin-top--lg margin-bottom--lg">
-        {DOCS_LIST.map((feature, idx) => (
-          <DocsCard feature={feature} key={idx} />
-        ))}
+    <div className={styles.section}>
+      <div className="container text--center">
+        <div className="row margin-top--lg margin-bottom--lg">
+          {DOCS_LIST.map((feature, idx) => (
+            <DocsCard feature={feature} key={idx} />
+          ))}
+        </div>
       </div>
     </div>
   );

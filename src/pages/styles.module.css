@@ -1,3 +1,3 @@
-.container > *:nth-child(even) {
+.section > *:nth-child(even) {
   background: var(--ifm-color-emphasis-100);
 }
