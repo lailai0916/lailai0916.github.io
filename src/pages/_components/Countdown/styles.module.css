@@ -1,52 +1,42 @@
 /* Countdown Component Styles */
 
-/* Circle value text styles */
-.circleValue {
-  position: absolute;
-  text-align: center;
-  font-weight: 500;
-  font-size: 2.5rem;
-  user-select: none;
-}
-
-/* Circle unit text styles */
-.circleUnit {
-  position: absolute;
-  font-size: 0.75rem;
-  transform: translateX(-50%) translateY(-12px);
-  user-select: none;
-  white-space: nowrap;
-}
-
-/* Transition styles - 快速跳跃效果（像指针一样） */
-.circleTransition {
-  transition-property: stroke-dashoffset;
-  transition-duration: 500ms;
-  transition-timing-function: ease-out;
-}
-
-.dotTransition {
-  transition-property: transform;
-  transition-duration: 500ms;
-  transition-timing-function: ease-out;
-}
-
-/* Circle wrapper */
-.circleWrapper {
-  position: relative;
-  width: 10rem;
-  height: 10rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
 /* SVG styles */
 .circleSvg {
   position: absolute;
-  width: 10rem;
-  height: 10rem;
   transform: rotate(-90deg);
+}
+
+.pxcontainer {
+  position: relative;
+  width: 160px;
+  height: 160px;
+  display: flex;
+}
+
+.pxanchor {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.pxtitle {
+  font-size: 40px;
+  font-weight: 600;
+  line-height: 32px;
+  text-align: center;
+}
+
+.pxsub {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: 4px;
+  font-size: 12px;
+  font-weight: 400;
+  opacity: 0.85;
+  white-space: nowrap;
 }
 
 /* Circle background */
@@ -56,16 +46,6 @@
 
 [data-theme='dark'] .circleBackground {
   color: rgb(38 38 38);
-}
-
-/* Indicator dot */
-.indicatorDot {
-  position: absolute;
-  border-radius: 50%;
-  background: var(--ifm-color-primary);
-  box-shadow:
-    0 0 20px var(--ifm-color-primary),
-    0 0 60px var(--ifm-color-primary);
 }
 
 /* Countdown content layout */
@@ -91,46 +71,4 @@
     grid-template-columns: 1fr;
     gap: 1rem;
   }
-}
-
-/* test */
-
-.pxcontainer {
-  position: relative;
-  width: 160px;
-  height: 160px;
-}
-
-.pxring {
-  position: absolute;
-  top: 0px;
-  right: 0px;
-  bottom: 0px;
-  left: 0px;
-}
-
-.pxanchor {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.pxtitle {
-  font-size: 32px;
-  font-weight: 600;
-  line-height: 32px;
-  text-align: center;
-}
-
-.pxsub {
-  position: absolute;
-  top: 100%;
-  left: 50%;
-  transform: translateX(-50%);
-  margin-top: 4px;
-  font-size: 12px;
-  font-weight: 400;
-  opacity: 0.85;
-  white-space: nowrap;
 }

@@ -90,7 +90,7 @@ function ProgressCircle({ total, value, unitText }: ProgressCircleProps) {
   }, [value, total]);
 
   return (
-    <div className={styles.circleWrapper}>
+    <div className={styles.pxcontainer}>
       <svg
         className={styles.circleSvg}
         viewBox={`0 0 ${SVG_CONFIG.size} ${SVG_CONFIG.size}`}
@@ -125,33 +125,9 @@ function ProgressCircle({ total, value, unitText }: ProgressCircleProps) {
           className={styles.circleTransition}
         />
       </svg>
-      <div className={styles.circleValue}>
-        <span>{value}</span>
-        <span className={styles.circleUnit}>{unitText}</span>
-      </div>
-    </div>
-  );
-}
-
-function CircleBadge() {
-  return (
-    <div className={styles.pxcontainer}>
-      <svg
-        className={styles.pxring}
-        viewBox="0 0 160 160"
-      >
-        <circle
-          cx="80"
-          cy="80"
-          r="72"
-          fill="none"
-          stroke="var(--ifm-color-primary)"
-          strokeWidth="8"
-        />
-      </svg>
       <div className={styles.pxanchor}>
-        <div className={styles.pxtitle}>XXX</div>
-        <div className={styles.pxsub}>YYY</div>
+        <div className={styles.pxtitle}>{value}</div>
+        <div className={styles.pxsub}>{unitText}</div>
       </div>
     </div>
   );
@@ -163,7 +139,6 @@ function CountdownContent({ timeLeft }: { timeLeft: CountdownState }) {
       {TIME_UNITS.map(({ key, total, label }) => (
         <ProgressCircle total={total} value={timeLeft[key]} unitText={label} />
       ))}
-      {/* <CircleBadge /> */}
     </div>
   );
 }
