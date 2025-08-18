@@ -46,33 +46,15 @@ const SVG_CONFIG = {
   dotSize: 16,
 } as const;
 
-interface CountdownState {
-  days: number;
-  hours: number;
-  minutes: number;
-  seconds: number;
-  isTimeUp: boolean;
-}
-
-function calculateTimeLeft(): CountdownState {
-  const distance = new Date(TARGET_DATE).getTime() - Date.now();
-
-  return {
-    days: Math.floor(distance / (24 * 60 * 60 * 1000)),
-    hours: Math.floor((distance / (60 * 60 * 1000)) % 24),
-    minutes: Math.floor((distance / (60 * 1000)) % 60),
-    seconds: Math.floor((distance / 1000) % 60),
-    isTimeUp: distance <= 0,
-  };
-}
-
-interface ProgressCircleProps {
+function ProgressCircle({
+  total,
+  value,
+  unitText,
+}: {
   total: number;
   value: number;
   unitText: string;
-}
-
-function ProgressCircle({ total, value, unitText }: ProgressCircleProps) {
+}) {
   const progress = value / total;
   const angleRad = progress * 2 * Math.PI;
   const dotX = SVG_CONFIG.radius * Math.cos(angleRad);
@@ -120,11 +102,36 @@ function ProgressCircle({ total, value, unitText }: ProgressCircleProps) {
   );
 }
 
+interface CountdownState {
+  days: number;
+  hours: number;
+  minutes: number;
+  seconds: number;
+  isTimeUp: boolean;
+}
+
+function calculateTimeLeft(): CountdownState {
+  const distance = new Date(TARGET_DATE).getTime() - Date.now();
+
+  return {
+    days: Math.floor(distance / (24 * 60 * 60 * 1000)),
+    hours: Math.floor((distance / (60 * 60 * 1000)) % 24),
+    minutes: Math.floor((distance / (60 * 1000)) % 60),
+    seconds: Math.floor((distance / 1000) % 60),
+    isTimeUp: distance <= 0,
+  };
+}
+
 function CountdownContent({ timeLeft }: { timeLeft: CountdownState }) {
   return (
     <div className={styles.countdownLayout}>
       {TIME_UNITS.map(({ key, total, label }) => (
-        <ProgressCircle total={total} value={timeLeft[key]} unitText={label} />
+        <ProgressCircle
+          key={key}
+          total={total}
+          value={timeLeft[key]}
+          unitText={label}
+        />
       ))}
     </div>
   );
