@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react';
+import React, { useMemo, useState, useEffect } from 'react';
 
 import BrowserOnly from '@docusaurus/BrowserOnly';
 import Heading from '@theme/Heading';
@@ -11,6 +11,7 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import { SKILL_LIST } from '@site/src/data/skills';
 import { DEVICE_LIST } from '@site/src/data/devices';
 import { COMMUNITY_LIST } from '@site/src/data/community';
+
 import styles from './styles.module.css';
 
 export function Title() {
@@ -28,13 +29,45 @@ export function Title() {
 }
 
 export function Skills() {
+  const [perline, setPerline] = useState(12);
+
+  useEffect(() => {
+    const handleResize = () => {
+      const width = window.innerWidth;
+
+      const breakpoints = [
+        [668, 12],
+        [448, 8],
+        [336, 6],
+        [224, 4],
+        [168, 3],
+        [112, 2],
+      ];
+
+      const newPerline =
+        breakpoints.find(([minWidth]) => width >= minWidth)?.[1] || 1;
+      setPerline(newPerline);
+    };
+
+    if (typeof window !== 'undefined') {
+      handleResize();
+      window.addEventListener('resize', handleResize);
+      return () => window.removeEventListener('resize', handleResize);
+    }
+  }, []);
+
   const skills = SKILL_LIST.map((skill) => skill.icon).join(',');
-  const url = `https://skillicons.dev/icons?i=${skills}&perline=12`;
+  const url = `https://skillicons.dev/icons?i=${skills}&perline=${perline}`;
+
   return (
-    <>
-      <img src={`${url}&theme=light#gh-light-mode-only`} />
-      <img src={`${url}&theme=dark#gh-dark-mode-only`} />
-    </>
+    <BrowserOnly>
+      {() => (
+        <>
+          <img src={`${url}&theme=light#gh-light-mode-only`} />
+          <img src={`${url}&theme=dark#gh-dark-mode-only`} />
+        </>
+      )}
+    </BrowserOnly>
   );
 }
 
