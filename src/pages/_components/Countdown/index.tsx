@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef, useMemo } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import SectionContainer from '@site/src/components/laikit/section/SectionContainer1';
 import SectionHeader from '@site/src/components/laikit/section/SectionHeader';
 import { translate } from '@docusaurus/Translate';
@@ -44,12 +44,6 @@ const SVG_CONFIG = {
   radius: 72,
   strokeWidth: 8,
   dotSize: 16,
-  get center() {
-    return this.size / 2;
-  },
-  get circumference() {
-    return 2 * Math.PI * this.radius;
-  },
 } as const;
 
 interface CountdownState {
@@ -79,15 +73,10 @@ interface ProgressCircleProps {
 }
 
 function ProgressCircle({ total, value, unitText }: ProgressCircleProps) {
-  const circleProps = useMemo(() => {
-    const progress = value / total;
-    const dash = progress * SVG_CONFIG.circumference;
-    const angleRad = progress * 2 * Math.PI;
-    const dotX = SVG_CONFIG.center + SVG_CONFIG.radius * Math.cos(angleRad);
-    const dotY = SVG_CONFIG.center + SVG_CONFIG.radius * Math.sin(angleRad);
-
-    return { dash, dotX, dotY } as const;
-  }, [value, total]);
+  const progress = value / total;
+  const angleRad = progress * 2 * Math.PI;
+  const dotX = SVG_CONFIG.radius * Math.cos(angleRad);
+  const dotY = SVG_CONFIG.radius * Math.sin(angleRad);
 
   return (
     <div className={styles.pxcontainer}>
@@ -96,8 +85,8 @@ function ProgressCircle({ total, value, unitText }: ProgressCircleProps) {
         viewBox={`0 0 ${SVG_CONFIG.size} ${SVG_CONFIG.size}`}
       >
         <circle
-          cx={SVG_CONFIG.center}
-          cy={SVG_CONFIG.center}
+          cx={SVG_CONFIG.size / 2}
+          cy={SVG_CONFIG.size / 2}
           r={SVG_CONFIG.radius}
           fill="none"
           stroke="currentColor"
@@ -105,24 +94,22 @@ function ProgressCircle({ total, value, unitText }: ProgressCircleProps) {
           className={styles.circleBackground}
         />
         <circle
-          cx={SVG_CONFIG.center}
-          cy={SVG_CONFIG.center}
+          cx={SVG_CONFIG.size / 2}
+          cy={SVG_CONFIG.size / 2}
           r={SVG_CONFIG.radius}
           fill="none"
           stroke="var(--ifm-color-primary)"
           strokeWidth={SVG_CONFIG.strokeWidth}
           strokeLinecap="round"
-          pathLength={SVG_CONFIG.circumference}
-          strokeDasharray={`${circleProps.dash} ${SVG_CONFIG.circumference - circleProps.dash}`}
+          pathLength={1}
+          strokeDasharray={`${progress} ${1 - progress}`}
           strokeDashoffset={0}
-          className={styles.circleTransition}
         />
         <circle
-          cx={circleProps.dotX}
-          cy={circleProps.dotY}
+          cx={SVG_CONFIG.size / 2 + dotX}
+          cy={SVG_CONFIG.size / 2 + dotY}
           r={SVG_CONFIG.dotSize / 2}
           fill="var(--ifm-color-primary)"
-          className={styles.circleTransition}
         />
       </svg>
       <div className={styles.pxanchor}>
