@@ -26,9 +26,11 @@
   --nn-connection-animation: rgba(255, 255, 0, 0.5);
   --nn-connection-default: #666666;
 
-  /* Button Colors */
-  --nn-button-clear: var(--ifm-color-primary-lightest);
+  /* Button Colors - 现代卡片风格 */
+  --nn-button-clear: var(--ifm-card-background-color);
+  --nn-button-clear-border: var(--ifm-color-emphasis-300);
   --nn-button-primary: var(--ifm-color-primary);
+  --nn-button-primary-border: var(--ifm-color-primary);
 
   /* Border Colors */
   --nn-stroke-primary: var(--ifm-color-primary);
@@ -76,9 +78,11 @@
   --nn-connection-animation: rgba(230, 126, 0, 0.6);
   --nn-connection-default: #999999;
 
-  /* Button Colors */
-  --nn-button-clear: var(--ifm-color-primary-lightest);
+  /* Button Colors - 现代卡片风格 */
+  --nn-button-clear: var(--ifm-card-background-color);
+  --nn-button-clear-border: var(--ifm-color-emphasis-200);
   --nn-button-primary: var(--ifm-color-primary);
+  --nn-button-primary-border: var(--ifm-color-primary);
 
   /* Border Colors */
   --nn-stroke-primary: var(--ifm-color-primary);
@@ -124,33 +128,29 @@
 /* 按钮样式 - 匹配 3B1B 原版 */
 .clearButton {
   fill: var(--nn-button-clear);
+  stroke: var(--nn-button-clear-border);
+  stroke-width: 2;
   cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.clearButton:hover {
+  stroke: var(--ifm-color-primary);
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.1));
 }
 
 .checkButton {
   fill: var(--nn-button-primary);
+  stroke: var(--nn-button-primary-border);
+  stroke-width: 2;
   cursor: pointer;
+  transition: all 0.2s ease;
 }
 
-.buttonDisabled {
-  opacity: 0.5;
-  cursor: default;
-}
-
-.buttonText {
-  fill: var(--nn-text-secondary);
-  font-family: sans-serif;
-  font-size: 24px;
-  pointer-events: none;
-  user-select: none;
-}
-
-.buttonTextWhite {
-  fill: var(--nn-text-primary);
-  font-family: sans-serif;
-  font-size: 24px;
-  pointer-events: none;
-  user-select: none;
+.checkButton:hover {
+  fill: var(--ifm-color-primary-dark);
+  stroke: var(--ifm-color-primary-dark);
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.1));
 }
 
 /* 权重网格样式 */
@@ -181,9 +181,16 @@
   .container {
     margin: 0;
   }
+}
 
-  .buttonText,
-  .buttonTextWhite {
-    font-size: 20px;
-  }
+/* 深色模式适配 */
+html[data-theme='dark'] .clearButton:hover {
+  stroke: var(--ifm-color-primary-light) !important;
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.3));
+}
+
+html[data-theme='dark'] .checkButton:hover {
+  fill: var(--ifm-color-primary-light) !important;
+  stroke: var(--ifm-color-primary-light) !important;
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.3));
 }

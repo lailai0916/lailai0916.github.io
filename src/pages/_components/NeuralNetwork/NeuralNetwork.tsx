@@ -616,12 +616,13 @@ function ImageGrid({
       >
         <g>
           <rect
+            className={styles.clearButton}
             x={0}
             y={0}
             width={150}
             height={60}
             tabIndex={0}
-            rx={3}
+            rx={12}
             onClick={() => {
               if (!isEmpty) {
                 setPoints([]);
@@ -629,8 +630,11 @@ function ImageGrid({
             }}
             style={{
               fill: 'var(--nn-button-clear)',
+              stroke: 'var(--nn-button-clear-border)',
+              strokeWidth: 2,
               cursor: isEmpty ? 'default' : 'pointer',
               opacity: isEmpty ? 0.5 : 1.0,
+              transition: 'all 0.2s ease',
             }}
           />
 
@@ -639,7 +643,7 @@ function ImageGrid({
             y={32}
             dominantBaseline="middle"
             textAnchor="middle"
-            fill="var(--nn-text-secondary)"
+            fill="var(--ifm-font-color-base)"
             fontFamily="sans-serif"
             fontSize={24}
             style={{
@@ -654,12 +658,13 @@ function ImageGrid({
         {!instant && (
           <g>
             <rect
+              className={styles.checkButton}
               x={200}
               y={0}
               width={200}
               height={60}
               tabIndex={0}
-              rx={3}
+              rx={12}
               onClick={() => {
                 if (!isEmpty) {
                   beginAnimation();
@@ -667,8 +672,11 @@ function ImageGrid({
               }}
               style={{
                 fill: 'var(--nn-button-primary)',
+                stroke: 'var(--nn-button-primary-border)',
+                strokeWidth: 2,
                 cursor: isEmpty ? 'default' : 'pointer',
                 opacity: isEmpty ? 0.5 : 1.0,
+                transition: 'all 0.2s ease',
               }}
             />
 
@@ -677,7 +685,7 @@ function ImageGrid({
               y={32}
               dominantBaseline="middle"
               textAnchor="middle"
-              fill="var(--nn-text-primary)"
+              fill="white"
               fontFamily="sans-serif"
               fontSize={24}
               style={{
@@ -693,12 +701,13 @@ function ImageGrid({
         {instant && (
           <g>
             <rect
+              className={styles.checkButton}
               x={200}
               y={0}
               width={200}
               height={60}
               tabIndex={0}
-              rx={3}
+              rx={12}
               onClick={() => {
                 if (!(isEmpty || isNormalized)) {
                   normalizePointsAnimated(1);
@@ -706,8 +715,11 @@ function ImageGrid({
               }}
               style={{
                 fill: 'var(--nn-button-primary)',
+                stroke: 'var(--nn-button-primary-border)',
+                strokeWidth: 2,
                 cursor: isEmpty || isNormalized ? 'default' : 'pointer',
                 opacity: isEmpty || isNormalized ? 0.5 : 1.0,
+                transition: 'all 0.2s ease',
               }}
             />
 
@@ -716,7 +728,7 @@ function ImageGrid({
               y={32}
               dominantBaseline="middle"
               textAnchor="middle"
-              fill="var(--nn-text-primary)"
+              fill="white"
               fontFamily="sans-serif"
               fontSize={24}
               style={{
