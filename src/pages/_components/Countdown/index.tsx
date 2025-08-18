@@ -18,22 +18,22 @@ const DESCRIPTION = translate(
 
 const TIME_UNITS = [
   {
-    key: 'days' as const,
+    key: 'days',
     total: 366,
     label: translate({ id: 'home.countdown.unit.days', message: 'Days' }),
   },
   {
-    key: 'hours' as const,
+    key: 'hours',
     total: 24,
     label: translate({ id: 'home.countdown.unit.hours', message: 'Hours' }),
   },
   {
-    key: 'minutes' as const,
+    key: 'minutes',
     total: 60,
     label: translate({ id: 'home.countdown.unit.minutes', message: 'Minutes' }),
   },
   {
-    key: 'seconds' as const,
+    key: 'seconds',
     total: 60,
     label: translate({ id: 'home.countdown.unit.seconds', message: 'Seconds' }),
   },
@@ -141,7 +141,6 @@ function CountdownContent({ timeLeft }: { timeLeft: CountdownState }) {
     <div className={styles.countdownLayout}>
       {TIME_UNITS.map(({ key, total, label }) => (
         <ProgressCircle
-          key={key}
           total={total}
           value={timeLeft[key]}
           unitText={label}
