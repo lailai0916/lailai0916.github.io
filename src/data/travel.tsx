@@ -83,7 +83,7 @@ export const TRAVEL_LIST: TravelItem[] = [
   {
     title: '2016-07',
     cardTitle: '奥地利🇦🇹、斯洛伐克🇸🇰、匈牙利🇭🇺、捷克🇨🇿、斯洛文尼亚🇸🇮、德国🇩🇪',
-    cardDetailedText: '维也纳、布拉格、布达佩斯、萨尔茨堡、哈尔施塔特、柏林',
+    cardDetailedText: '维也纳、布拉迪斯拉发、布拉格、布达佩斯、萨尔茨堡、哈尔施塔特、柏林',
   },
   {
     title: '2016-09',
