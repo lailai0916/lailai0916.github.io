@@ -86,9 +86,9 @@ website
 
 你可以请我喝杯咖啡，我会做得更好。谢谢！
 
-|               支付宝               |              微信支付              |
-| :--------------------------------: | :--------------------------------: |
-| ![](static/img/sponsor/alipay.svg) | ![](static/img/sponsor/wechat.svg) |
+|                贝宝                |               支付宝               |              微信支付              |
+| :--------------------------------: | :--------------------------------: | :--------------------------------: |
+| ![](static/img/sponsor/paypal.svg) | ![](static/img/sponsor/alipay.svg) | ![](static/img/sponsor/wechat.svg) |
 
 ## # 许可证
 
