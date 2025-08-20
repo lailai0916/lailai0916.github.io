@@ -85,7 +85,7 @@ export const TRAVEL_LIST: TravelItem[] = [
     cardTitle:
       '🇦🇹 奥地利 & 🇸🇰 斯洛伐克 & 🇭🇺 匈牙利 & 🇨🇿 捷克 & 🇸🇮 斯洛文尼亚 & 🇩🇪 德国',
     cardDetailedText:
-      '维也纳、布拉迪斯拉发、布拉格、布达佩斯、萨尔茨堡、哈尔施塔特、柏林',
+      '维也纳、布拉迪斯拉发、布拉格、布达佩斯、萨尔茨堡、哈尔施塔特、马里博尔、柏林',
   },
   {
     title: '2016-09',
@@ -121,7 +121,7 @@ export const TRAVEL_LIST: TravelItem[] = [
     title: '2017-08',
     cardTitle: '🇦🇺 澳大利亚',
     cardDetailedText:
-      '布里斯班、黄金海岸、凯恩斯（大堡礁、红树林）、悉尼（蓝山公园）、墨尔本（大洋路）',
+      '布里斯班、黄金海岸、凯恩斯（绿岛大堡礁、红树林）、悉尼（蓝山公园）、墨尔本（大洋路）',
   },
   {
     title: '2017-10',
@@ -201,7 +201,7 @@ export const TRAVEL_LIST: TravelItem[] = [
   {
     title: '2025-01',
     cardTitle: '🇲🇾 马来西亚',
-    cardDetailedText: '吉隆坡、怡保、乔治',
+    cardDetailedText: '吉隆坡、怡保、槟城（乔治）',
   },
   {
     title: '2025-07',
