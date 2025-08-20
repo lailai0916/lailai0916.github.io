@@ -32,7 +32,7 @@ export const TRAVEL_LIST: TravelItem[] = [
   },
   {
     title: '2013-05',
-    cardTitle: '🇨🇳 广东、🇭🇰 香港',
+    cardTitle: '🇨🇳 广东 & 🇭🇰 香港',
     cardDetailedText: '深圳、香港',
   },
   {
@@ -82,8 +82,10 @@ export const TRAVEL_LIST: TravelItem[] = [
   },
   {
     title: '2016-07',
-    cardTitle: '🇦🇹 奥地利、🇸🇰 斯洛伐克、🇭🇺 匈牙利、🇨🇿 捷克、🇸🇮 斯洛文尼亚、🇩🇪 德国',
-    cardDetailedText: '维也纳、布拉迪斯拉发、布拉格、布达佩斯、萨尔茨堡、哈尔施塔特、柏林',
+    cardTitle:
+      '🇦🇹 奥地利 & 🇸🇰 斯洛伐克 & 🇭🇺 匈牙利 & 🇨🇿 捷克 & 🇸🇮 斯洛文尼亚 & 🇩🇪 德国',
+    cardDetailedText:
+      '维也纳、布拉迪斯拉发、布拉格、布达佩斯、萨尔茨堡、哈尔施塔特、柏林',
   },
   {
     title: '2016-09',
@@ -118,7 +120,8 @@ export const TRAVEL_LIST: TravelItem[] = [
   {
     title: '2017-08',
     cardTitle: '🇦🇺 澳大利亚',
-    cardDetailedText: '布里斯班、黄金海岸、凯恩斯（大堡礁、红树林）、悉尼（蓝山公园）、墨尔本（大洋路）',
+    cardDetailedText:
+      '布里斯班、黄金海岸、凯恩斯（大堡礁、红树林）、悉尼（蓝山公园）、墨尔本（大洋路）',
   },
   {
     title: '2017-10',
@@ -157,7 +160,7 @@ export const TRAVEL_LIST: TravelItem[] = [
   },
   {
     title: '2019-07',
-    cardTitle: '🇮🇹 意大利、🇻🇦 梵蒂冈、🇨🇭 瑞士、🇫🇷 法国',
+    cardTitle: '🇮🇹 意大利 & 🇻🇦 梵蒂冈 & 🇨🇭 瑞士 & 🇫🇷 法国',
     cardDetailedText: '罗马、梵蒂冈、佛罗伦萨、威尼斯、卢塞恩、巴黎',
   },
   {
@@ -202,7 +205,7 @@ export const TRAVEL_LIST: TravelItem[] = [
   },
   {
     title: '2025-07',
-    cardTitle: '🇭🇰 香港、🇨🇳 广东',
+    cardTitle: '🇭🇰 香港 & 🇨🇳 广东',
     cardDetailedText: '香港、深圳、广州',
   },
 ];
