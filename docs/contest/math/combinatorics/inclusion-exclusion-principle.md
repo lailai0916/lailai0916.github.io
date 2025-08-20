@@ -10,13 +10,13 @@
 ### 两个集合
 
 $$
-\left | A \cup B \right | = \left | A \right | + \left | B \right | - \left | A \cap B \right |
+|A\cup B|=|A|+|B|-|A\cap B|
 $$
 
 ### 三个集合
 
 $$
-\left | A \cup B \cup C \right | = \left | A \right | + \left | B \right | + \left | C \right | - \left | A \cap B \right | - \left | A \cap C \right | - \left | B \cap C \right | + \left | A \cap B \cap C \right |
+|A\cup B\cup C|=|A|+|B|+|C|-|A\cap B|-|A\cap C|-|B\cap C|+|A\cap B\cap C|
 $$
 
 ### 多个集合
