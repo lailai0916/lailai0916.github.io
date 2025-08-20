@@ -82,7 +82,7 @@ $$
 a\notin A
 $$
 
-集合一般由花括号/大括号（$\{\dots\}$）包裹。
+集合一般由花括号（$\{\dots\}$）包裹。
 
 除了用 **自然语言** 描述集合，还有 $2$ 种常见的方法：
 
@@ -111,7 +111,7 @@ $$
 在不产生歧义的情况下，我们可以省略一些常见的条件：
 
 $$
-\{x\in\mathbb{R}|x\ge 5\}\iff\{x\ge 5\}
+\{x\in\mathbb{R}|x\ge 5\}\iff\{x|x\ge 5\}
 $$
 
 ### 关系
@@ -154,17 +154,19 @@ $$
 A\subseteq B,A\supseteq B\iff A=B
 $$
 
-有时我们研究 $B$ 的子集 $A$ 时，不希望包含自身，即排除 $A=B$ 的情况，因此定义了 **真子集**：
+有时我们研究 $B$ 的子集 $A$ 时，不希望包含自身，即排除 $A=B$ 的情况，因此定义了 **真子集**，记为：
 
 $$
-A\subsetneq B
+A\subsetneqq B
 $$
 
-同理，还可以定义 **真超集**：
+同理，还可以定义 **真超集**，记为：
 
 $$
-B\subsetneq A
+B\subsetneqq A
 $$
+
+真子集符号 $\subsetneqq$ 也可以写作 $\subsetneq$，真超集符号 $\supsetneqq$ 也可以写作 $\supsetneq$。
 
 :::tip
 
@@ -172,8 +174,8 @@ $$
 
 - 子集（$\subseteq$）对应小于等于（$\le$）
 - 超集（$\supseteq$）对应大于等于（$\ge$）
-- 真子集（$\subsetneq$）对应小于（$<$）
-- 真超集（$\supsetneq$）对应大于（$>$）
+- 真子集（$\subsetneqq$）对应小于（$<$）
+- 真超集（$\supsetneqq$）对应大于（$>$）
 
 :::
 
