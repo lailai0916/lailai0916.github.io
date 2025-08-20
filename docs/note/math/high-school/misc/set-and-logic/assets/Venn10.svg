@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<svg xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" width="279.85999" height="279.85999" id="svg8621" sodipodi:version="0.32" inkscape:version="0.46" sodipodi:docbase="C:\Programme\Inkscape" sodipodi:docname="Venn10.svg" inkscape:output_extension="org.inkscape.output.svg.inkscape" version="1.0">
+  <defs id="defs3">
+    <inkscape:perspective sodipodi:type="inkscape:persp3d" inkscape:vp_x="0 : 139.93124 : 1" inkscape:vp_y="0 : 1000 : 0" inkscape:vp_z="384.10001 : 139.93124 : 1" inkscape:persp3d-origin="192.05 : 93.287496 : 1" id="perspective11"/>
+  </defs>
+  <sodipodi:namedview inkscape:document-units="mm" id="base" pagecolor="#ffffff" bordercolor="#666666" borderopacity="1.0" inkscape:pageopacity="0.0" inkscape:pageshadow="2" inkscape:zoom="1.6403509" inkscape:cx="133" inkscape:cy="153" inkscape:current-layer="layer1" inkscape:window-width="1024" inkscape:window-height="768" inkscape:window-x="0" inkscape:window-y="0" showborder="true" borderlayer="true" showgrid="false"/>
+  <metadata id="metadata4">
+    <rdf:RDF>
+      <cc:Work rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g inkscape:label="Layer 1" inkscape:groupmode="layer" id="layer1">
+    <rect x="2.5186429" y="2.5205758" width="274.82397" height="274.83716" id="rect1310" style="fill:#f55;fill-opacity:1;stroke:#000000;stroke-width:5.03630494999999989;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"/>
+    <circle sodipodi:ry="120" sodipodi:rx="120" sodipodi:cy="180" sodipodi:cx="180" cx="180" cy="180" r="120" id="circle1312" style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:5.99920464;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" transform="matrix(0.842564,0,0,0.840731,-12.072777,-9.9142743)"/>
+  </g>
+</svg>

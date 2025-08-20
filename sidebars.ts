@@ -325,7 +325,7 @@ const sidebars: SidebarsConfig = {
               label: '基础与杂项',
               items: [
                 'note/math/high-school/misc/transition/index',
-                'note/math/high-school/misc/set-and-logic',
+                'note/math/high-school/misc/set-and-logic/index',
                 'note/math/high-school/misc/inequality',
                 'note/math/high-school/misc/vector',
                 'note/math/high-school/misc/complex/index',
