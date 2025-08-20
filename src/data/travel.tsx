@@ -100,7 +100,7 @@ export const TRAVEL_LIST: TravelItem[] = [
   {
     title: '2017-01',
     cardTitle: '🇯🇵 日本（九州）',
-    cardDetailedText: '熊本',
+    cardDetailedText: '量子号游轮：上海⇌熊本',
   },
   {
     title: '2017-02',
