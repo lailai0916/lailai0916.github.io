@@ -13,8 +13,6 @@
     "serve": "docusaurus serve",
     "write-translations": "docusaurus write-translations",
     "write-translations:zh-Hans": "docusaurus write-translations --locale zh-Hans",
-    "crowdin": "crowdin",
-    "crowdin:sync": "docusaurus write-translations && crowdin upload && crowdin download",
     "format": "npx prettier --write ."
   },
   "dependencies": {
@@ -45,7 +43,6 @@
     "tailwindcss": "^3.4.14"
   },
   "devDependencies": {
-    "@crowdin/cli": "^3.19.4",
     "@docusaurus/module-type-aliases": "^3.8.1",
     "@docusaurus/tsconfig": "^3.8.1",
     "@docusaurus/types": "^3.8.1",
