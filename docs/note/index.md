@@ -18,7 +18,9 @@ sidebar_position: 0
 
 ## 教材
 
-GitHub 上的开源仓库 [TapXWorld/ChinaTextbook](https://github.com/TapXWorld/ChinaTextbook/tree/master) 提供几乎所有小学、初中、高中和大学教材的 PDF 下载。
+GitHub 上的开源仓库 TapXWorld/ChinaTextbook 提供几乎所有小学、初中、高中和大学教材的 PDF 下载。
+
+<GithubCard repo="TapXWorld/ChinaTextbook" />
 
 ## 目录
 

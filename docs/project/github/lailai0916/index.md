@@ -8,7 +8,7 @@
 
 ## 项目链接
 
-- [lailai0916/lailai0916](https://github.com/lailai0916/lailai0916)
+<GithubCard repo="lailai0916/lailai0916" />
 
 ## 创建仓库
 
