@@ -1,15 +1,9 @@
 import React from 'react';
 
-export default function Desmos({
-  url,
-  type = 'calculator',
-}: {
-  url: string;
-  type?: string;
-}) {
+export default function Desmos({ url }: { url: string }) {
   return (
     <iframe
-      src={`https://www.desmos.com/${type}/${url}?embed`}
+      src={`https://www.desmos.com/calculator/${url}?embed`}
       title="Desmos"
       style={{
         border: '1px solid #ccc',
