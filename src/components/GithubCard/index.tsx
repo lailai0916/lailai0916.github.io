@@ -162,5 +162,3 @@ export default function GithubCard(props: GithubCardProps) {
     </a>
   );
 }
-
-export { GithubCard };
