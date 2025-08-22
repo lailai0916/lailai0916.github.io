@@ -328,7 +328,6 @@ const sidebars: SidebarsConfig = {
                 'note/math/high-school/misc/set/index',
                 'note/math/high-school/misc/logic',
                 'note/math/high-school/misc/inequality/index',
-                'note/math/high-school/misc/vector',
                 'note/math/high-school/misc/complex/index',
                 'note/math/high-school/misc/permutation-and-combination',
                 'note/math/high-school/misc/binomial',
@@ -348,6 +347,7 @@ const sidebars: SidebarsConfig = {
               type: 'category',
               label: '几何与解析',
               items: [
+                'note/math/high-school/geometry/vector',
                 'note/math/high-school/geometry/triangle-solving/index',
                 'note/math/high-school/geometry/solid-geometry',
                 'note/math/high-school/geometry/conic',
