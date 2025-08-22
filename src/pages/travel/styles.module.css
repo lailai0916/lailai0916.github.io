@@ -1,12 +1,3 @@
-/* 旅行页面样式 */
-.container {
-  display: flex;
-  flex-direction: column;
-  max-width: 800px;
-  padding: 2rem;
-  margin: 0 auto;
-}
-
 /* Timeline全局样式 - 与主页BlogCard保持一致 */
 :global(.react-chrono-tree) {
   font-family: var(--ifm-font-family-base) !important;

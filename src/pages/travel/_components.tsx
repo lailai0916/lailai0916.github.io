@@ -2,6 +2,10 @@ import React, { useMemo } from 'react';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import { Chrono } from 'react-chrono';
 import { TRAVEL_LIST } from '@site/src/data/travel';
+import BrowserOnly from '@docusaurus/BrowserOnly';
+import SectionHeader from '@site/src/components/laikit/section/SectionHeader';
+import SectionContainer from '@site/src/components/laikit/section/SectionContainer1';
+import { translate } from '@docusaurus/Translate';
 import './styles.module.css';
 
 const LAYOUT_CONSTANTS = {
@@ -103,7 +107,7 @@ const formatTravelDate = (dateStr: string, locale: string): string => {
 /**
  * 旅行时间线组件
  */
-export default function Timeline() {
+export function TravelTimeline() {
   const { i18n } = useDocusaurusContext();
   const items = useMemo(
     () =>
@@ -115,12 +119,97 @@ export default function Timeline() {
   );
 
   return (
-    <Chrono
-      items={items}
-      mode="VERTICAL_ALTERNATING"
-      theme={TIMELINE_THEME}
-      classNames={CLASS_NAMES}
-      {...TIMELINE_CONFIG}
-    />
+    <SectionContainer>
+      <SectionHeader
+        title={translate({
+          id: 'pages.travel.timeline.title',
+          message: 'Travel Footprint',
+        })}
+        description={translate({
+          id: 'pages.travel.timeline.description',
+          message:
+            'From what is gained on paper, understanding always feels shallow; to truly know it, you must experience it yourself.',
+        })}
+      />
+      <BrowserOnly>
+        {() => (
+          <Chrono
+            items={items}
+            mode="VERTICAL_ALTERNATING"
+            theme={TIMELINE_THEME}
+            classNames={CLASS_NAMES}
+            {...TIMELINE_CONFIG}
+          />
+        )}
+      </BrowserOnly>
+    </SectionContainer>
+  );
+}
+
+import { ComposableMap, Geographies, Geography } from 'react-simple-maps';
+
+// 世界地图 TopoJSON（110m 精度）
+const geoUrl = 'https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json';
+
+// 你去过的国家（ISO-3166 Alpha-2，大写）：CN, JP, US, FR...
+const VISITED = new Set<string>(['CN', 'JP', 'US', 'FR']);
+
+import { Marker } from 'react-simple-maps';
+
+const CITIES = [
+  { name: 'Tokyo', coords: [139.6917, 35.6895] }, // [lon, lat]
+  { name: 'Paris', coords: [2.3522, 48.8566] },
+];
+
+export function TravelMap() {
+  return (
+    <div style={{ maxWidth: 1200, margin: '0 auto', padding: '2rem' }}>
+      <h1>旅行地图</h1>
+      <ComposableMap projectionConfig={{ scale: 150 }} projection="geoMercator">
+        <Geographies geography={geoUrl}>
+          {({ geographies }) =>
+            geographies.map((geo) => {
+              // world-atlas 的国家码字段：
+              // v2 通常在 geo.properties.ISO_A2_EH 或 ISO_A2
+              const code =
+                (geo.properties as any).ISO_A2_EH ||
+                (geo.properties as any).ISO_A2 ||
+                '';
+              const visited = VISITED.has(code);
+              return (
+                <Geography
+                  key={geo.rsmKey}
+                  geography={geo}
+                  onMouseEnter={() => {
+                    // 可选：做悬浮提示用
+                  }}
+                  style={{
+                    default: {
+                      fill: visited ? '#2f80ed' : '#e5e7eb',
+                      stroke: '#94a3b8',
+                      strokeWidth: 0.5,
+                      outline: 'none',
+                    },
+                    hover: {
+                      fill: visited ? '#1d4ed8' : '#cbd5e1',
+                      outline: 'none',
+                    },
+                    pressed: { outline: 'none' },
+                  }}
+                />
+              );
+            })
+          }
+        </Geographies>
+        {CITIES.map((c) => (
+          <Marker key={c.name} coordinates={c.coords as any}>
+            <circle r={3} fill="#ef4444" />
+            <text y={-8} fontSize={10} textAnchor="middle">
+              {c.name}
+            </text>
+          </Marker>
+        ))}
+      </ComposableMap>
+    </div>
   );
 }

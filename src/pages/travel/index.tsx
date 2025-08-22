@@ -8,12 +8,9 @@ import {
   PageFooter,
 } from '@site/src/components/laikit/page';
 import { DataCardList } from '@site/src/components/laikit/widget/DataCard';
-import BrowserOnly from '@docusaurus/BrowserOnly';
-import Timeline from '@site/src/pages/travel/_components';
-import SectionHeader from '@site/src/components/laikit/section/SectionHeader';
+import { TravelTimeline, TravelMap } from '@site/src/pages/travel/_components';
 import { translate } from '@docusaurus/Translate';
 import { TRAVEL_LIST } from '@site/src/data/travel';
-import styles from './styles.module.css';
 
 const TITLE = translate({
   id: 'pages.travel.title',
@@ -32,25 +29,6 @@ const FOOTER = translate({
   message:
     'Read ten thousand books and travel ten thousand miles. Only by walking far can you truly look the world in the eye—neither looking up to wealthy nations nor looking down on poorer lands. The world is not what the news shows, nor what others tell you, but what you see with your own eyes and feel with your own heart. The more you see, the broader your vision and the greater your mind.',
 });
-
-function TravelMain() {
-  return (
-    <div className={styles.container}>
-      <SectionHeader
-        title={translate({
-          id: 'pages.travel.timeline.title',
-          message: 'Travel Footprint',
-        })}
-        description={translate({
-          id: 'pages.travel.timeline.description',
-          message:
-            'From what is gained on paper, understanding always feels shallow; to truly know it, you must experience it yourself.',
-        })}
-      />
-      <BrowserOnly>{() => <Timeline />}</BrowserOnly>
-    </div>
-  );
-}
 
 function TravelFooter() {
   return <PageFooter>{FOOTER}</PageFooter>;
@@ -89,7 +67,8 @@ export default function Travel(): ReactNode {
     <Layout title={TITLE} description={DESCRIPTION}>
       <PageContainer>
         <TravelHeader />
-        <TravelMain />
+        <TravelTimeline />
+        <TravelMap />
         <TravelFooter />
       </PageContainer>
     </Layout>
