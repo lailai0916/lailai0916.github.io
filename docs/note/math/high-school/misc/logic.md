@@ -182,8 +182,10 @@ $$
 它的否定为：
 
 $$
-\exists x\in M,\lnot p(x)
+\lnot(\forall x\in M,p(x))\Leftrightarrow\exists x\in M,\lnot p(x)
 $$
+
+**全称量词命题** 的否定是 **存在量词命题**。
 
 :::note[示例]
 
@@ -196,7 +198,7 @@ $$
 它的否定是“并非所有实数 $x$ 的 $0$ 次幂都等于 $1$”，换句话说就是“存在实数 $x$ 的 $0$ 次幂不等于 $1$”：
 
 $$
-\exists x\in\mathbb{R},x^0\neq 1
+\lnot(\forall x\in\mathbb{R},x^0=1)\Leftrightarrow\exists x\in\mathbb{R},x^0\neq 1
 $$
 
 :::
@@ -212,8 +214,10 @@ $$
 它的否定为：
 
 $$
-\forall x\in M,\lnot p(x)
+\lnot(\exists x\in M,p(x))\Leftrightarrow\forall x\in M,\lnot p(x)
 $$
+
+**存在量词命题** 的否定是 **全称量词命题**。
 
 :::note[示例]
 
@@ -226,7 +230,7 @@ $$
 它的否定是“不存在整数 $x$ 的平方等于 $9$”，换句话说就是“所有整数 $x$ 的平方都不等于 $9$”：
 
 $$
-\forall x\in\mathbb{Z},x^2\neq 9
+\lnot(\exists x\in\mathbb{Z},x^2=9)\Leftrightarrow\forall x\in\mathbb{Z},x^2\neq 9
 $$
 
 :::
