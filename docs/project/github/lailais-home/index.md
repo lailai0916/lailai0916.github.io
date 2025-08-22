@@ -6,7 +6,7 @@
 
 ## 项目链接
 
-<GithubCard repo="lailai0916/lailai0916.github.io" />
+<Github repo="lailai0916/lailai0916.github.io" />
 
 ## 前言
 

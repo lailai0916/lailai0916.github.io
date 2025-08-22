@@ -2,7 +2,7 @@
 import React, { useEffect, useMemo, useState } from 'react';
 import styles from './styles.module.css';
 
-export type GithubCardProps = {
+export type GithubProps = {
   /** owner/repo */
   repo: string;
   className?: string;
@@ -48,7 +48,10 @@ function stripGithubEmojiShortcodes(text?: string | null) {
   return text.replace(/:[a-zA-Z0-9_]+:/g, '').trim();
 }
 
-async function defaultFetcher(repo: string, signal: AbortSignal): Promise<GithubRepoData> {
+async function defaultFetcher(
+  repo: string,
+  signal: AbortSignal
+): Promise<GithubRepoData> {
   const res = await fetch(`https://api.github.com/repos/${repo}`, {
     signal,
     // align with original implementation behaviour
@@ -58,8 +61,15 @@ async function defaultFetcher(repo: string, signal: AbortSignal): Promise<Github
   return res.json();
 }
 
-export default function GithubCard(props: GithubCardProps) {
-  const { repo, className, style, target = '_blank', showLanguage = true, fetcher } = props;
+export default function Github(props: GithubProps) {
+  const {
+    repo,
+    className,
+    style,
+    target = '_blank',
+    showLanguage = true,
+    fetcher,
+  } = props;
 
   const [data, setData] = useState<GithubRepoData | null>(null);
   const [error, setError] = useState<string | null>(null);
@@ -94,7 +104,8 @@ export default function GithubCard(props: GithubCardProps) {
   }, [owner, repoName, fetcher]);
 
   const href = `https://github.com/${owner}/${repoName}`;
-  const description = stripGithubEmojiShortcodes(data?.description) || 'Description not set';
+  const description =
+    stripGithubEmojiShortcodes(data?.description) || 'Description not set';
   const stars = compactNumber(data?.stargazers_count || 0);
   const forks = compactNumber(data?.forks || 0);
   const license = data?.license?.spdx_id || 'no-license';
@@ -124,7 +135,9 @@ export default function GithubCard(props: GithubCardProps) {
           <div className={styles.owner}>
             <div
               className={styles.avatar}
-              style={avatarUrl ? { backgroundImage: `url(${avatarUrl})` } : undefined}
+              style={
+                avatarUrl ? { backgroundImage: `url(${avatarUrl})` } : undefined
+              }
               aria-hidden="true"
             />
             <div className={styles.user}>{owner}</div>
