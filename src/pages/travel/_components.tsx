@@ -163,9 +163,9 @@ const CITIES = [
 
 export function TravelMap() {
   return (
-    <div style={{ maxWidth: 1200, margin: '0 auto', padding: '2rem' }}>
-      <h1>旅行地图</h1>
-      <ComposableMap projectionConfig={{ scale: 150 }} projection="geoMercator">
+    <SectionContainer>
+      <SectionHeader title="Travel Map" description="Travel Map" />
+      <ComposableMap projectionConfig={{ scale: 100 }} projection="geoMercator">
         <Geographies geography={geoUrl}>
           {({ geographies }) =>
             geographies.map((geo) => {
@@ -194,7 +194,6 @@ export function TravelMap() {
                       fill: visited ? '#1d4ed8' : '#cbd5e1',
                       outline: 'none',
                     },
-                    pressed: { outline: 'none' },
                   }}
                 />
               );
@@ -210,6 +209,6 @@ export function TravelMap() {
           </Marker>
         ))}
       </ComposableMap>
-    </div>
+    </SectionContainer>
   );
 }

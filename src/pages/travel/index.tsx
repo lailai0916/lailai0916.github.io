@@ -67,8 +67,8 @@ export default function Travel(): ReactNode {
     <Layout title={TITLE} description={DESCRIPTION}>
       <PageContainer>
         <TravelHeader />
-        <TravelTimeline />
         <TravelMap />
+        <TravelTimeline />
         <TravelFooter />
       </PageContainer>
     </Layout>
