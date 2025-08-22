@@ -27,7 +27,7 @@ $$
 
 函数 $f(t)$ 是单调不减的。
 
-<Desmos url="jqbeguzcnr" />
+<Desmos id="jqbeguzcnr" />
 
 ## 均值
 

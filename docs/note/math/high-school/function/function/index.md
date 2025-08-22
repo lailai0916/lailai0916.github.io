@@ -49,11 +49,11 @@
 
 满足 $f(-x)=f(x)$ 的函数被称为 **偶函数**，也就是关于 $y$ 轴对称。
 
-<Desmos url="sleyv1aojt" />
+<Desmos id="sleyv1aojt" />
 
 满足 $f(-x)=-f(x)$ 的函数被称为 **奇函数**，也就是关于原点 $O$ 对称。
 
-<Desmos url="91a51qktbh" />
+<Desmos id="91a51qktbh" />
 
 ## 方程的定义
 
@@ -63,7 +63,7 @@
 
 几何意义上，就是到原点距离为 $1$ 的所有点组成的图像，也就是单位圆。
 
-<Desmos url="wocs5bz2f4" />
+<Desmos id="wocs5bz2f4" />
 
 ## 方程与函数
 

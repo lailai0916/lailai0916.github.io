@@ -28,7 +28,7 @@ $$
 
 函数 $\frac{x}{\ln x}$ 在 $x=e$ 时取最小值，此时所需状态数最少，理论上 $e$ 进制效率最高。
 
-<Desmos url="yqv0tbufkv" />
+<Desmos id="yqv0tbufkv" />
 
 但 $e$ 进制在工程上无法实现，又因为：
 

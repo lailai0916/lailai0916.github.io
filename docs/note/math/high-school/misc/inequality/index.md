@@ -48,7 +48,7 @@ $$
 ax^2+bx+c<0\text{或}ax^2+bx+c>0(a\neq 0)
 $$
 
-<Desmos url="s8qv3vgffa" />
+<Desmos id="s8qv3vgffa" />
 
 求解一元二次不等式的方法与方程类似。
 
@@ -136,7 +136,7 @@ $$
 
 因为 $AB\ge DE$，所以 $a+b\le 2\sqrt{ab}$。当且仅当 $a=b$ 时，等号成立。
 
-<Desmos url="hzzctb8v6z" />
+<Desmos id="hzzctb8v6z" />
 
 ## 不等式扩展
 

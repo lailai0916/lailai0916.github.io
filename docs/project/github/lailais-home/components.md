@@ -98,5 +98,5 @@
   ```jsx
   import Desmos from '@site/src/components/Desmos';
 
-  <Desmos url="w3srdj1pde" />;
+  <Desmos id="w3srdj1pde" />;
   ```

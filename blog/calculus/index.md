@@ -172,7 +172,7 @@ $$
 
 随着细长方形的数量增加，其总面积会越来越接近实际面积。
 
-<Desmos url="sxeafs1ajz" />
+<Desmos id="sxeafs1ajz" />
 
 ### 简单积分
 
@@ -189,7 +189,7 @@ $$
 
 所以 $\displaystyle\int_1^3 \frac{x}{2}\mathrm{d}x=\frac{h(a+b)}{2}=\frac{2\cdot(0.5+1.5)}{2}=2$。
 
-<Desmos url="ywcdneien2" />
+<Desmos id="ywcdneien2" />
 
 </TabItem>
 <TabItem value="Example 2">
@@ -200,7 +200,7 @@ $$
 
 所以 $\displaystyle\int_{-2}^3 2x\mathrm{d}x=\frac{ah}{2}-\frac{bh}{2}=\frac{3\cdot 6}{2}-\frac{2\cdot 4}{2}=5$。
 
-<Desmos url="xlwjbick4u" />
+<Desmos id="xlwjbick4u" />
 
 </TabItem>
 <TabItem value="Example 3">
@@ -211,7 +211,7 @@ $$
 
 所以 $\displaystyle\int_{-2}^2 \sqrt{4-x^2}\mathrm{d}x=\frac{1}{2}\pi r^2=\frac{1}{2}\pi\cdot 2^2=2\pi$。
 
-<Desmos url="dxjwvtqsdl" />
+<Desmos id="dxjwvtqsdl" />
 
 </TabItem>
 </Tabs>

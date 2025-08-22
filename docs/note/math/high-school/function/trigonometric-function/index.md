@@ -37,13 +37,13 @@
 
 单位圆指平面直角坐标系上，圆心为 **原点** $O(0,0)$ 且半径为 **单位长度** $1$ 的圆，方程为 $x^2+y^2=1$。
 
-<Desmos url="wocs5bz2f4" />
+<Desmos id="wocs5bz2f4" />
 
 ### 距离公式
 
 两点 $A(x_0,y_0),B(x_1,y_1)$ 之间的距离为 $\sqrt{(x_0-x_1)^2+(y_0-y_1)^2}$。
 
-<Desmos url="bjodmisvtc" />
+<Desmos id="bjodmisvtc" />
 
 构造直角三角形，两条直角边的长度分别为 $|x_0-x_1|$ 和 $|y_0-y_1|$。
 
@@ -79,7 +79,7 @@ $$
 
 超出这个范围的三角函数就没有意义了，所以高中时会用 **单位圆** 定义任意角三角函数。
 
-<Desmos url="dzl65z2m99" />
+<Desmos id="dzl65z2m99" />
 
 如图，将斜边为 $1$ 的直角三角形放入单位圆内，令：
 
@@ -128,7 +128,7 @@ $$
 
 红色为 $\sin$，蓝色为 $\cos$，绿色为 $\tan$，橙色为 $\cot$，紫色为 $\sec$，黑色为 $\csc$。
 
-<Desmos url="zhow2jcijw" />
+<Desmos id="zhow2jcijw" />
 
 正弦函数的图象叫做 **正弦曲线**：
 
@@ -142,7 +142,7 @@ $$
 y=A\cos{(\omega x+\varphi)}
 $$
 
-<Desmos url="qckplvwpkk" />
+<Desmos id="qckplvwpkk" />
 
 ### 常用值速查表
 
