@@ -92,7 +92,9 @@ $$
 
 设 $AC=a,BC=b$，则半径 $AB=AC+BC=a+b$。
 
-根据相似三角形，$CD=\sqrt{ab}$，而 $DE=2CD=2\sqrt{ab}$，因为 $AB\ge DE$，所以 $a+b\le 2\sqrt{ab}$。
+根据相似三角形，$CD=\sqrt{ab}$，而弦 $DE=2CD=2\sqrt{ab}$。
+
+因为 $AB\ge DE$，所以 $a+b\le 2\sqrt{ab}$。当且仅当 $a=b$ 时，等号成立。
 
 <Desmos url="hzzctb8v6z" />
 
