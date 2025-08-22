@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { type ReactNode } from 'react';
 import Layout from '@theme/Layout';
 
 const TITLE = 'Data';
@@ -12,7 +12,7 @@ function dotColor(s: number) {
   return s === 1 ? '#16a34a' : s === 0 ? '#ef4444' : '#f59e0b';
 }
 
-export default function StatusPage() {
+export default function StatusPage(): ReactNode {
   const [beats, setBeats] = React.useState<Resp>({});
   const [err, setErr] = React.useState<string>('');
 
