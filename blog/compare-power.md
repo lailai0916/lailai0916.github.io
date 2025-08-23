@@ -9,7 +9,7 @@ tags: [math]
 
 ## 引入
 
-对于两个正实数 $x$ 和 $y$，如何比较 $x^y$ 和 $y^x$ 的大小关系？
+对于两个正实数 $x$ 和 $y$，如何比较 $x^y$ 和 $y^x$ 的大小？
 
 $$
 x^y\gtreqless y^x
@@ -17,20 +17,54 @@ $$
 
 ## 思考
 
-首先对两边同时取自然对数并化简：
+两边同时取自然对数：
 
 $$
-\ln{x^y}\gtreqless \ln{y^x}\Rightarrow y\ln{x}\gtreqless x\ln{y}\Rightarrow \frac{\ln{x}}{x}\gtreqless \frac{\ln{y}}{y}
+\ln{x^y}\gtreqless \ln{y^x}\iff y\ln{x}\gtreqless x\ln{y}\iff \frac{\ln{x}}{x}\gtreqless \frac{\ln{y}}{y}
 $$
 
-构造函数：
+由此构造函数：
 
 $$
 f(t)=\frac{\ln t}{t}
 $$
 
-原问题变成：
+原问题转化为比较 $f(x)$ 与 $f(y)$ 的大小。
+
+## 求解
+
+对 $f(t)$ 求导：
 
 $$
-f(x)\gtreqless f(y)
+f'(t)=\frac{1-\ln t}{t^2}
 $$
+
+令导数为 $0$：
+
+$$
+f'(t)=\frac{1-\ln t}{t^2}=0\iff t=e
+$$
+
+因此 $f(t)$ 在 $(0,e)$ 单调递增，在 $t=e$ 处取得最大值 $\frac{1}{e}$，在 $(e,+\infty)$ 单调递减。
+
+## 分类讨论
+
+1. 如果 $x,y$ 都小于 $e$：
+
+- 如果 $x<y<e$，那么 $x^y<y^x$。
+- 如果 $y<x<e$，那么 $x^y>y^x$。
+
+2. 如果 $x,y$ 都大于 $e$：
+
+- 如果 $e<x<y$，那么 $x^y>y^x$。
+- 如果 $e<y<x$，那么 $x^y<y^x$。
+
+3. 如果 $x,y$ 在 $e$ 的两侧：
+
+此时只能直接比较 $y\ln x$ 和 $x\ln y$ 的大小。
+
+## 图像
+
+图中黑色曲线 $x^y=y^x$，红色区域 $x^y>y^x$，蓝色区域 $x^y<y^x$
+
+<Desmos id="bcfuoq2oyh" />
