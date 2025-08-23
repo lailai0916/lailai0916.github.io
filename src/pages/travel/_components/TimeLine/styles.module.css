@@ -1,4 +1,4 @@
-/* Timeline全局样式 - 与主页BlogCard保持一致 */
+/* Timeline全局样式 */
 :global(.react-chrono-tree) {
   font-family: var(--ifm-font-family-base) !important;
   background: transparent !important;
@@ -7,7 +7,6 @@
   max-width: 100% !important;
 }
 
-/* 统一动画 - Unity · Simplicity · Modernity */
 @keyframes fadeIn {
   from {
     opacity: 0;

@@ -70,6 +70,34 @@
   color: var(--ifm-color-emphasis-700);
 }
 
+/* Legend items */
+.legendItem {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  line-height: 1.1;
+  animation: fadeIn 0.3s ease-out;
+}
+
+.legendColor {
+  width: 16px;
+  height: 16px;
+  border-radius: 4px;
+  display: inline-block;
+  box-shadow: 0 0 0 1px var(--ifm-color-emphasis-300);
+}
+
+.legendColor.visited,
+.legendColorVisited {
+  /* 支持两种写法 */
+  background: var(--ifm-color-primary);
+}
+
+.legendColor.unvisited,
+.legendColorUnvisited {
+  background: var(--ifm-color-emphasis-200);
+}
+
 @media (max-width: 600px) {
   .mapLegend {
     flex-direction: column;
@@ -79,5 +107,9 @@
   :global(.travel-map-tooltip) {
     font-size: 0.8rem;
     padding: 0.4rem 0.6rem;
+  }
+  .legendColor {
+    width: 14px;
+    height: 14px;
   }
 }

@@ -379,37 +379,16 @@ export default function TravelMap() {
           {tooltip && <div className="travel-map-tooltip">{tooltip}</div>}
         </div>
         <div className={styles.mapLegend}>
-          {/* 图例内容，可自定义 */}
-          <span
-            style={{
-              display: 'inline-flex',
-              alignItems: 'center',
-              marginRight: '1rem',
-            }}
-          >
+          <span className={styles.legendItem}>
             <span
-              style={{
-                width: 16,
-                height: 16,
-                background: MAP_THEME.visited,
-                borderRadius: 4,
-                display: 'inline-block',
-                marginRight: 6,
-              }}
-            ></span>
+              className={`${styles.legendColor} ${styles.legendColorVisited}`}
+            />
             Visited
           </span>
-          <span style={{ display: 'inline-flex', alignItems: 'center' }}>
+          <span className={styles.legendItem}>
             <span
-              style={{
-                width: 16,
-                height: 16,
-                background: MAP_THEME.unvisited,
-                borderRadius: 4,
-                display: 'inline-block',
-                marginRight: 6,
-              }}
-            ></span>
+              className={`${styles.legendColor} ${styles.legendColorUnvisited}`}
+            />
             Not visited
           </span>
         </div>
