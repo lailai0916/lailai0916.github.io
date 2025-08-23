@@ -40,6 +40,8 @@ function TravelHeader() {
   const countryCount = new Set(
     TRAVEL_LIST.flatMap((i) => i.cardTitle.match(flagRegex) ?? [])
   ).size;
+  const yearCount =
+    new Date().getFullYear() - parseInt(TRAVEL_LIST[0].title.substring(0, 4));
 
   return (
     <PageHeader>
@@ -55,7 +57,7 @@ function TravelHeader() {
             icon: 'lucide:globe',
           },
           {
-            value: `${new Date().getFullYear() - parseInt(TRAVEL_LIST[0].title.substring(0, 4))}`,
+            value: `${yearCount}`,
             label: translate({
               id: 'pages.travel.datacard.label2',
               message: 'Years',
