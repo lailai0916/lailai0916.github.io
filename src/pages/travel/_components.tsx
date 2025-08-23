@@ -479,7 +479,12 @@ export function TravelMap() {
       <div className={styles.mapOuter}>
         <div className={styles.mapInner}>
           <ComposableMap projection="geoMercator">
-            <ZoomableGroup zoom={0.8} minZoom={0.7} center={[0, 40]}>
+            <ZoomableGroup
+              zoom={0.8}
+              minZoom={0.7}
+              center={[0, 40]}
+              filterZoomEvent={(e) => false}
+            >
               <Geographies geography={MAP_FILE}>
                 {({ geographies }) =>
                   geographies.map((geo) => {

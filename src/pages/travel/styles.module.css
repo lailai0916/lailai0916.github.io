@@ -359,7 +359,6 @@
 .mapInner {
   width: 100%;
   max-width: 800px;
-  height: 480px;
   background: var(--ifm-background-surface-color);
   border-radius: 12px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
