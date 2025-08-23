@@ -83,20 +83,6 @@ const extractVisitedCountries = (): Set<string> => {
 
 const VISITED_COUNTRIES = extractVisitedCountries();
 
-// 重要城市标记点（基于旅行记录）
-const MAJOR_CITIES = [
-  { name: 'Beijing', coords: [116.4074, 39.9042], country: 'China' },
-  { name: 'Shanghai', coords: [121.4737, 31.2304], country: 'China' },
-  { name: 'Tokyo', coords: [139.6917, 35.6895], country: 'Japan' },
-  { name: 'Osaka', coords: [135.5023, 34.6937], country: 'Japan' },
-  { name: 'Paris', coords: [2.3522, 48.8566], country: 'France' },
-  { name: 'Rome', coords: [12.4964, 41.9028], country: 'Italy' },
-  { name: 'Vienna', coords: [16.3738, 48.2082], country: 'Austria' },
-  { name: 'Sydney', coords: [151.2093, -33.8688], country: 'Australia' },
-  { name: 'Singapore', coords: [103.8198, 1.3521], country: 'Singapore' },
-  { name: 'Seoul', coords: [126.978, 37.5665], country: 'South Korea' },
-];
-
 /**
  * 地图颜色主题配置 - 参考 Umami 风格
  */
