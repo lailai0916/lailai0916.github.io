@@ -11,7 +11,7 @@ import SectionContainer from '@site/src/components/laikit/section/SectionContain
 import { translate } from '@docusaurus/Translate';
 import styles from './styles.module.css';
 
-const MAP_FILE = './datamaps.world.json';
+const MAP_FILE = '/datamaps.world.json';
 
 const ISO_COUNTRIES = {
   AFG: 'AF',

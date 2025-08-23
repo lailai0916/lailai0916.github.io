@@ -2,6 +2,16 @@
    Travel Map Styles - 现代化地图设计
    ========================================================================== */
 
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 /* 地图悬浮提示 - 参考 Umami 样式 */
 :global(.travel-map-tooltip) {
   position: absolute;
