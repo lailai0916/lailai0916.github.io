@@ -821,6 +821,27 @@
   "pages.travel.datacard.label2": {
     "message": "年历程"
   },
+  "pages.travel.map.title": {
+    "message": "旅行地图"
+  },
+  "pages.travel.map.description": {
+    "message": "世界那么大，我想去看看。足迹遍布的国家和城市"
+  },
+  "pages.travel.map.legend.visited": {
+    "message": "已到访"
+  },
+  "pages.travel.map.legend.unvisited": {
+    "message": "未到访"
+  },
+  "pages.travel.map.legend.cities": {
+    "message": "重要城市"
+  },
+  "pages.travel.map.loading": {
+    "message": "地图加载中..."
+  },
+  "pages.travel.map.error": {
+    "message": "地图加载失败，请稍后再试"
+  },
   "pages.friends.title": {
     "message": "友链"
   },

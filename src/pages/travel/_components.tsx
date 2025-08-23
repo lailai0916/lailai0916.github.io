@@ -1,12 +1,13 @@
-import React, { useMemo } from 'react';
+import React, { useMemo, useState } from 'react';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import { Chrono } from 'react-chrono';
+import { ComposableMap, Geographies, Geography, ZoomableGroup } from 'react-simple-maps';
 import { TRAVEL_LIST } from '@site/src/data/travel';
 import BrowserOnly from '@docusaurus/BrowserOnly';
 import SectionHeader from '@site/src/components/laikit/section/SectionHeader';
 import SectionContainer from '@site/src/components/laikit/section/SectionContainer1';
 import { translate } from '@docusaurus/Translate';
-import './styles.module.css';
+import styles from './styles.module.css';
 
 const LAYOUT_CONSTANTS = {
   BREAKPOINT_MOBILE: 768,
@@ -16,6 +17,111 @@ const LAYOUT_CONSTANTS = {
   LINE_WIDTH: 3,
   POINT_SIZE: 18,
 } as const;
+
+// 使用更稳定的地图数据源 - 参考 Umami 实现
+const MAP_FILE = 'https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json';
+
+// 从旅行数据中提取国家代码的辅助函数
+const extractCountryFromFlag = (flag: string): string | null => {
+  const flagToCode: Record<string, string> = {
+    '🇨🇳': 'CHN',
+    '🇯🇵': 'JPN',
+    '🇻🇳': 'VNM',
+    '🇦🇹': 'AUT',
+    '🇸🇬': 'SGP',
+    '🇹🇭': 'THA',
+    '🇰🇷': 'KOR',
+    '🇵🇭': 'PHL',
+    '🇲🇾': 'MYS',
+    '🇮🇩': 'IDN',
+    '🇰🇭': 'KHM',
+    '🇱🇦': 'LAO',
+    '🇲🇲': 'MMR',
+    '🇹🇼': 'TWN',
+    '🇭🇰': 'HKG',
+    '🇲🇴': 'MAC',
+  };
+  return flagToCode[flag] || null;
+};
+
+// 从旅行数据中提取访问过的国家（基于旅行记录自动生成）
+const extractVisitedCountries = (): Set<string> => {
+  const countryMap: Record<string, string> = {
+    '🇨🇳': 'CHN',
+    '🇯🇵': 'JPN',
+    '🇻🇳': 'VNM',
+    '🇦🇹': 'AUT',
+    '🇸🇰': 'SVK',
+    '🇭🇺': 'HUN',
+    '🇨🇿': 'CZE',
+    '🇸🇮': 'SVN',
+    '🇩🇪': 'DEU',
+    '🇹🇷': 'TUR',
+    '🇸🇬': 'SGP',
+    '🇦🇺': 'AUS',
+    '🇮🇹': 'ITA',
+    '🇻🇦': 'VAT',
+    '🇨🇭': 'CHE',
+    '🇫🇷': 'FRA',
+    '🇲🇻': 'MDV',
+    '🇰🇷': 'KOR',
+    '🇲🇾': 'MYS',
+    '🇭🇰': 'HKG',
+  };
+
+  const visited = new Set<string>();
+  TRAVEL_LIST.forEach((item) => {
+    Object.keys(countryMap).forEach((flag) => {
+      if (item.cardTitle.includes(flag)) {
+        visited.add(countryMap[flag]);
+      }
+    });
+  });
+
+  return visited;
+};
+
+const VISITED_COUNTRIES = extractVisitedCountries();
+
+// 重要城市标记点（基于旅行记录）
+const MAJOR_CITIES = [
+  { name: 'Beijing', coords: [116.4074, 39.9042], country: 'China' },
+  { name: 'Shanghai', coords: [121.4737, 31.2304], country: 'China' },
+  { name: 'Tokyo', coords: [139.6917, 35.6895], country: 'Japan' },
+  { name: 'Osaka', coords: [135.5023, 34.6937], country: 'Japan' },
+  { name: 'Paris', coords: [2.3522, 48.8566], country: 'France' },
+  { name: 'Rome', coords: [12.4964, 41.9028], country: 'Italy' },
+  { name: 'Vienna', coords: [16.3738, 48.2082], country: 'Austria' },
+  { name: 'Sydney', coords: [151.2093, -33.8688], country: 'Australia' },
+  { name: 'Singapore', coords: [103.8198, 1.3521], country: 'Singapore' },
+  { name: 'Seoul', coords: [126.978, 37.5665], country: 'South Korea' },
+];
+
+/**
+ * 地图颜色主题配置 - 参考 Umami 风格
+ */
+const MAP_THEME = {
+  visited: 'var(--ifm-color-primary)',
+  visitedHover: 'var(--ifm-color-primary-dark)',
+  unvisited: 'var(--ifm-color-emphasis-200)',
+  stroke: 'var(--ifm-color-emphasis-300)',
+  background: 'var(--ifm-background-surface-color)',
+} as const;
+
+/**
+ * 获取国家显示名称
+ */
+const getCountryName = (geo: any): string => {
+  return geo.properties?.NAME || geo.properties?.name || 'Unknown';
+};
+
+/**
+ * 检查国家是否已访问
+ */
+const isCountryVisited = (geo: any): boolean => {
+  const code = geo.properties?.ISO_A3 || geo.properties?.ADM0_A3 || '';
+  return VISITED_COUNTRIES.has(code);
+};
 
 const TIMELINE_CONFIG = {
   cardWidth: LAYOUT_CONSTANTS.CARD_WIDTH,
@@ -146,69 +252,140 @@ export function TravelTimeline() {
   );
 }
 
-import { ComposableMap, Geographies, Geography } from 'react-simple-maps';
-
-// 世界地图 TopoJSON（110m 精度）
-const geoUrl = 'https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json';
-
-// 你去过的国家（ISO-3166 Alpha-2，大写）：CN, JP, US, FR...
-const VISITED = new Set<string>(['CN', 'JP', 'US', 'FR']);
-
-import { Marker } from 'react-simple-maps';
-
-const CITIES = [
-  { name: 'Tokyo', coords: [139.6917, 35.6895] }, // [lon, lat]
-  { name: 'Paris', coords: [2.3522, 48.8566] },
-];
-
+/**
+ * 旅行地图组件 - 参考 Umami 实现
+ */
 export function TravelMap() {
+  const [tooltip, setTooltip] = useState<string>('');
+
+  // 获取访问过的国家
+  const visitedCountries = useMemo(() => {
+    const countries = new Set<string>();
+    TRAVEL_LIST.forEach((item) => {
+      const flag = item.cardTitle.split(' ')[0]; // 提取旗帜表情符号
+      const countryCode = extractCountryFromFlag(flag);
+      if (countryCode) {
+        countries.add(countryCode);
+      }
+    });
+    return countries;
+  }, []);
+
+  // 获取填充颜色
+  const getFillColor = (properties: any) => {
+    const countryCode = properties?.ISO_A3 || properties?.ADM0_A3 || '';
+    
+    if (visitedCountries.has(countryCode)) {
+      return MAP_THEME.visited;
+    }
+    
+    return MAP_THEME.unvisited;
+  };
+
+  // 获取透明度
+  const getOpacity = (properties: any) => {
+    const countryCode = properties?.ISO_A3 || properties?.ADM0_A3 || '';
+    return countryCode === 'ATA' ? 0 : 1; // 隐藏南极洲
+  };
+
+  // 处理鼠标悬停
+  const handleMouseEnter = (properties: any) => {
+    const countryName = properties?.NAME || properties?.name || 'Unknown';
+    const countryCode = properties?.ISO_A3 || properties?.ADM0_A3 || '';
+    const isVisited = visitedCountries.has(countryCode);
+    
+    setTooltip(isVisited ? `✈️ ${countryName}` : countryName);
+  };
+
+  const handleMouseLeave = () => {
+    setTooltip('');
+  };
+
   return (
     <SectionContainer>
-      <SectionHeader title="Travel Map" description="Travel Map" />
-      <ComposableMap projectionConfig={{ scale: 100 }} projection="geoMercator">
-        <Geographies geography={geoUrl}>
-          {({ geographies }) =>
-            geographies.map((geo) => {
-              // world-atlas 的国家码字段：
-              // v2 通常在 geo.properties.ISO_A2_EH 或 ISO_A2
-              const code =
-                (geo.properties as any).ISO_A2_EH ||
-                (geo.properties as any).ISO_A2 ||
-                '';
-              const visited = VISITED.has(code);
-              return (
-                <Geography
-                  key={geo.rsmKey}
-                  geography={geo}
-                  onMouseEnter={() => {
-                    // 可选：做悬浮提示用
-                  }}
-                  style={{
-                    default: {
-                      fill: visited ? '#2f80ed' : '#e5e7eb',
-                      stroke: '#94a3b8',
-                      strokeWidth: 0.5,
-                      outline: 'none',
-                    },
-                    hover: {
-                      fill: visited ? '#1d4ed8' : '#cbd5e1',
-                      outline: 'none',
-                    },
-                  }}
-                />
-              );
-            })
-          }
-        </Geographies>
-        {CITIES.map((c) => (
-          <Marker key={c.name} coordinates={c.coords as any}>
-            <circle r={3} fill="#ef4444" />
-            <text y={-8} fontSize={10} textAnchor="middle">
-              {c.name}
-            </text>
-          </Marker>
-        ))}
-      </ComposableMap>
+      <SectionHeader
+        title={translate({
+          id: 'pages.travel.map.title',
+          message: 'Travel Map',
+        })}
+        description={translate({
+          id: 'pages.travel.map.description',
+          message:
+            'Interactive map showing countries I have visited around the world',
+        })}
+      />
+
+      <div className={styles.mapOuter}>
+        <div className={styles.mapInner}>
+          <BrowserOnly
+            fallback={
+              <div
+                style={{
+                  textAlign: 'center',
+                  padding: '3rem',
+                  fontSize: '1.1rem',
+                  color: '#6c757d',
+                }}
+              >
+                正在加载地图...
+              </div>
+            }
+          >
+            {() => (
+              <ComposableMap
+                projection="geoMercator"
+                style={{ width: '100%', height: '100%' }}
+              >
+                <ZoomableGroup zoom={1} center={[0, 30]}>
+                  <Geographies geography={MAP_FILE}>
+                    {({ geographies }) =>
+                      geographies.map((geo) => {
+                        const { properties } = geo;
+                        
+                        return (
+                          <Geography
+                            key={geo.rsmKey}
+                            geography={geo}
+                            fill={getFillColor(properties)}
+                            stroke={MAP_THEME.stroke}
+                            opacity={getOpacity(properties)}
+                            style={{
+                              default: { outline: 'none' },
+                              hover: { 
+                                outline: 'none', 
+                                fill: MAP_THEME.visitedHover 
+                              },
+                              pressed: { outline: 'none' },
+                            }}
+                            onMouseEnter={() => handleMouseEnter(properties)}
+                            onMouseLeave={handleMouseLeave}
+                          />
+                        );
+                      })
+                    }
+                  </Geographies>
+                </ZoomableGroup>
+              </ComposableMap>
+            )}
+          </BrowserOnly>
+        </div>
+        <div className={styles.mapLegend}>
+          {/* 图例内容，可自定义 */}
+          <span style={{display:'inline-flex',alignItems:'center',marginRight:'1rem'}}>
+            <span style={{width:16,height:16,background:'#007bff',borderRadius:4,display:'inline-block',marginRight:6}}></span>Visited
+          </span>
+          <span style={{display:'inline-flex',alignItems:'center'}}>
+            <span style={{width:16,height:16,background:'#e0e7ef',borderRadius:4,display:'inline-block',marginRight:6}}></span>Not visited
+          </span>
+        </div>
+      </div>
+
+      {/* 悬浮提示 */}
+      {tooltip && (
+        <div className="travel-map-tooltip">
+          {tooltip}
+        </div>
+      )}
     </SectionContainer>
   );
 }
