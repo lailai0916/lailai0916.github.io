@@ -1,7 +1,12 @@
 import React, { useMemo, useState } from 'react';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import { Chrono } from 'react-chrono';
-import { ComposableMap, Geographies, Geography, ZoomableGroup } from 'react-simple-maps';
+import {
+  ComposableMap,
+  Geographies,
+  Geography,
+  ZoomableGroup,
+} from 'react-simple-maps';
 import { TRAVEL_LIST } from '@site/src/data/travel';
 import BrowserOnly from '@docusaurus/BrowserOnly';
 import SectionHeader from '@site/src/components/laikit/section/SectionHeader';
@@ -18,8 +23,7 @@ const LAYOUT_CONSTANTS = {
   POINT_SIZE: 18,
 } as const;
 
-// 使用更稳定的地图数据源 - 参考 Umami 实现
-const MAP_FILE = 'https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json';
+const MAP_FILE = './datamaps.world.json';
 
 // 从旅行数据中提取国家代码的辅助函数
 const extractCountryFromFlag = (flag: string): string | null => {
@@ -260,11 +264,11 @@ export function TravelMap() {
   // 获取填充颜色
   const getFillColor = (properties: any) => {
     const countryCode = properties?.ISO_A3 || properties?.ADM0_A3 || '';
-    
+
     if (visitedCountries.has(countryCode)) {
       return MAP_THEME.visited;
     }
-    
+
     return MAP_THEME.unvisited;
   };
 
@@ -279,7 +283,7 @@ export function TravelMap() {
     const countryName = properties?.NAME || properties?.name || 'Unknown';
     const countryCode = properties?.ISO_A3 || properties?.ADM0_A3 || '';
     const isVisited = visitedCountries.has(countryCode);
-    
+
     setTooltip(isVisited ? `✈️ ${countryName}` : countryName);
   };
 
@@ -327,7 +331,7 @@ export function TravelMap() {
                     {({ geographies }) =>
                       geographies.map((geo) => {
                         const { properties } = geo;
-                        
+
                         return (
                           <Geography
                             key={geo.rsmKey}
@@ -337,9 +341,9 @@ export function TravelMap() {
                             opacity={getOpacity(properties)}
                             style={{
                               default: { outline: 'none' },
-                              hover: { 
-                                outline: 'none', 
-                                fill: MAP_THEME.visitedHover 
+                              hover: {
+                                outline: 'none',
+                                fill: MAP_THEME.visitedHover,
                               },
                               pressed: { outline: 'none' },
                             }}
@@ -357,21 +361,43 @@ export function TravelMap() {
         </div>
         <div className={styles.mapLegend}>
           {/* 图例内容，可自定义 */}
-          <span style={{display:'inline-flex',alignItems:'center',marginRight:'1rem'}}>
-            <span style={{width:16,height:16,background:'#007bff',borderRadius:4,display:'inline-block',marginRight:6}}></span>Visited
+          <span
+            style={{
+              display: 'inline-flex',
+              alignItems: 'center',
+              marginRight: '1rem',
+            }}
+          >
+            <span
+              style={{
+                width: 16,
+                height: 16,
+                background: '#007bff',
+                borderRadius: 4,
+                display: 'inline-block',
+                marginRight: 6,
+              }}
+            ></span>
+            Visited
           </span>
-          <span style={{display:'inline-flex',alignItems:'center'}}>
-            <span style={{width:16,height:16,background:'#e0e7ef',borderRadius:4,display:'inline-block',marginRight:6}}></span>Not visited
+          <span style={{ display: 'inline-flex', alignItems: 'center' }}>
+            <span
+              style={{
+                width: 16,
+                height: 16,
+                background: '#e0e7ef',
+                borderRadius: 4,
+                display: 'inline-block',
+                marginRight: 6,
+              }}
+            ></span>
+            Not visited
           </span>
         </div>
       </div>
 
       {/* 悬浮提示 */}
-      {tooltip && (
-        <div className="travel-map-tooltip">
-          {tooltip}
-        </div>
-      )}
+      {tooltip && <div className="travel-map-tooltip">{tooltip}</div>}
     </SectionContainer>
   );
 }
