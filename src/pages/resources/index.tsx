@@ -10,7 +10,7 @@ import {
   PageContainer,
   PageHeader,
 } from '@site/src/components/laikit/page';
-import { DataCardList } from '@site/src/components/laikit/widget/DataCard';
+import DataCard from '@site/src/components/laikit/widget/DataCard';
 import IconText from '@site/src/components/laikit/widget/IconText';
 
 import { usePluralForm } from '@docusaurus/theme-common';
@@ -228,7 +228,7 @@ function ResourcesHeader() {
   return (
     <PageHeader>
       <PageTitle title={MODIFICATION} description={DESCRIPTION} />
-      <DataCardList
+      <DataCard
         items={[
           {
             value: RESOURCE_LIST.length,

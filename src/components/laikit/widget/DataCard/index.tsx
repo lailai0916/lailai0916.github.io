@@ -7,35 +7,30 @@ interface DataCardProps {
   icon: string;
 }
 
-export default function DataCard({ value, label, icon }: DataCardProps) {
-  return (
-    <div className={styles.statCard}>
-      <div className={styles.statIcon}>
-        <Icon icon={icon} width={20} height={20} />
-      </div>
-      <div className={styles.statContent}>
-        <div className={styles.statNumber}>{value}</div>
-        <div className={styles.statLabel}>{label}</div>
-      </div>
-    </div>
-  );
-}
-
 interface DataCardListProps {
   items: DataCardProps[];
 }
 
-export function DataCardList({ items }: DataCardListProps) {
+export default function DataCard(props: DataCardProps | DataCardListProps) {
+  if ('items' in props) {
+    return (
+      <div className={styles.statsGrid}>
+        {props.items.map((item, index) => (
+          <DataCard key={index} {...item} />
+        ))}
+      </div>
+    );
+  }
+
   return (
-    <div className={styles.statsGrid}>
-      {items.map((item, index) => (
-        <DataCard
-          key={index}
-          value={item.value}
-          label={item.label}
-          icon={item.icon}
-        />
-      ))}
+    <div className={styles.statCard}>
+      <div className={styles.statIcon}>
+        <Icon icon={props.icon} width={20} height={20} />
+      </div>
+      <div className={styles.statContent}>
+        <div className={styles.statNumber}>{props.value}</div>
+        <div className={styles.statLabel}>{props.label}</div>
+      </div>
     </div>
   );
 }

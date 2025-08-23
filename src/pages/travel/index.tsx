@@ -7,7 +7,7 @@ import {
   PageHeader,
   PageFooter,
 } from '@site/src/components/laikit/page';
-import { DataCardList } from '@site/src/components/laikit/widget/DataCard';
+import DataCard from '@site/src/components/laikit/widget/DataCard';
 import { TravelTimeline, TravelMap } from '@site/src/pages/travel/_components';
 import { translate } from '@docusaurus/Translate';
 import { TRAVEL_LIST } from '@site/src/data/travel';
@@ -43,7 +43,7 @@ function TravelHeader() {
   return (
     <PageHeader>
       <PageTitle title={MODIFICATION} description={DESCRIPTION} />
-      <DataCardList
+      <DataCard
         items={[
           {
             value: `${CountryCount}`,
