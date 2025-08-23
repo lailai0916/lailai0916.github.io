@@ -36,7 +36,7 @@ function TravelFooter() {
 
 function TravelHeader() {
   const flagRegex = /[\u{1F1E6}-\u{1F1FF}]{2}/gu;
-  const CountryCount = new Set(
+  const countryCount = new Set(
     TRAVEL_LIST.flatMap((i) => i.cardTitle.match(flagRegex) ?? [])
   ).size;
 
@@ -46,7 +46,7 @@ function TravelHeader() {
       <DataCard
         items={[
           {
-            value: `${CountryCount}`,
+            value: `${countryCount}`,
             label: translate({
               id: 'pages.travel.datacard.label1',
               message: 'Countries',

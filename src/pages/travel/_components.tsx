@@ -276,32 +276,6 @@ const ISO_COUNTRIES = {
   XKX: 'XK',
 };
 
-// 从旅行数据中提取国家代码的辅助函数
-const extractCountryFromFlag = (flag: string): string | null => {
-  const flagToCode: Record<string, string> = {
-    '🇨🇳': 'CHN',
-    '🇯🇵': 'JPN',
-    '🇻🇳': 'VNM',
-    '🇦🇹': 'AUT',
-    '🇸🇬': 'SGP',
-    '🇹🇭': 'THA',
-    '🇰🇷': 'KOR',
-    '🇵🇭': 'PHL',
-    '🇲🇾': 'MYS',
-    '🇮🇩': 'IDN',
-    '🇰🇭': 'KHM',
-    '🇱🇦': 'LAO',
-    '🇲🇲': 'MMR',
-    '🇹🇼': 'TWN',
-    '🇭🇰': 'HKG',
-    '🇲🇴': 'MAC',
-  };
-  return flagToCode[flag] || null;
-};
-
-/**
- * 地图颜色主题配置 - 参考 Umami 风格
- */
 const MAP_THEME = {
   visited: 'var(--ifm-color-primary)',
   visitedHover: 'var(--ifm-color-primary-dark)',
@@ -445,23 +419,39 @@ export function TravelTimeline() {
 export function TravelMap() {
   const [tooltip, setTooltip] = useState<string>('');
 
+  function flagEmojiToISO2(flag: string): string | null {
+    const chars = Array.from(flag);
+    if (chars.length < 2) return null;
+    const a = chars[0].codePointAt(0)!;
+    const b = chars[1].codePointAt(0)!;
+    // 区域指示符范围 U+1F1E6..U+1F1FF
+    if (a < 0x1f1e6 || a > 0x1f1ff || b < 0x1f1e6 || b > 0x1f1ff) return null;
+    return (
+      String.fromCharCode(65 + (a - 0x1f1e6)) +
+      String.fromCharCode(65 + (b - 0x1f1e6))
+    );
+  }
+
+  // 从“国旗数组”得到去重后的 ISO2 列表
+  function flagsToISO2(flags: string[]): string[] {
+    return [
+      ...new Set(flags.map(flagEmojiToISO2).filter((x): x is string => !!x)),
+    ];
+  }
+
   // 获取访问过的国家
   const visitedCountries = useMemo(() => {
-    const countries = new Set<string>();
-    TRAVEL_LIST.forEach((item) => {
-      const flag = item.cardTitle.split(' ')[0]; // 提取旗帜表情符号
-      const countryCode = extractCountryFromFlag(flag);
-      if (countryCode) {
-        countries.add(countryCode);
-      }
-    });
-    return countries;
+    const flagRegex = /[\u{1F1E6}-\u{1F1FF}]{2}/gu;
+    const countries = TRAVEL_LIST.flatMap(
+      (i) => i.cardTitle.match(flagRegex) ?? []
+    );
+    return flagsToISO2(countries);
   }, []);
 
   const getFillColor = (code: string) => {
     if (code === 'AQ') return;
 
-    if (visitedCountries.has(code)) {
+    if (visitedCountries.includes(code)) {
       return MAP_THEME.visited;
     }
 
@@ -472,13 +462,8 @@ export function TravelMap() {
     return code === 'AQ' ? 0 : 1;
   };
 
-  // 处理鼠标悬停
-  const handleMouseEnter = (properties: any) => {
-    const countryName = properties?.NAME || properties?.name || 'Unknown';
-    const countryCode = properties?.ISO_A3 || properties?.ADM0_A3 || '';
-    const isVisited = visitedCountries.has(countryCode);
-
-    setTooltip(isVisited ? `✈️ ${countryName}` : countryName);
+  const handleMouseEnter = (country: string) => {
+    setTooltip(country);
   };
 
   const handleMouseLeave = () => {
@@ -506,7 +491,8 @@ export function TravelMap() {
               <Geographies geography={MAP_FILE}>
                 {({ geographies }) =>
                   geographies.map((geo) => {
-                    const { code } = ISO_COUNTRIES[geo.id] || {};
+                    const code = ISO_COUNTRIES[geo.id];
+                    const country = geo.properties.name;
 
                     return (
                       <Geography
@@ -523,7 +509,7 @@ export function TravelMap() {
                           },
                           pressed: { outline: 'none' },
                         }}
-                        onMouseEnter={() => handleMouseEnter(code)}
+                        onMouseEnter={() => handleMouseEnter(country)}
                         onMouseLeave={handleMouseLeave}
                       />
                     );
