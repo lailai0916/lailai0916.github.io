@@ -35,14 +35,10 @@ function TravelFooter() {
 }
 
 function TravelHeader() {
-  const flagRegex = /\p{RI}{2}/gu;
-  const set = new Set<string>();
-  for (const item of TRAVEL_LIST) {
-    const matches = item.cardTitle.match(flagRegex);
-    if (matches) {
-      matches.forEach((flag) => set.add(flag));
-    }
-  }
+  const flagRegex = /[\u{1F1E6}-\u{1F1FF}]{2}/gu;
+  const CountryCount = new Set(
+    TRAVEL_LIST.flatMap((i) => i.cardTitle.match(flagRegex) ?? [])
+  ).size;
 
   return (
     <PageHeader>
@@ -50,7 +46,7 @@ function TravelHeader() {
       <DataCardList
         items={[
           {
-            value: `${set.size}`,
+            value: `${CountryCount}`,
             label: translate({
               id: 'pages.travel.datacard.label1',
               message: 'Countries',
