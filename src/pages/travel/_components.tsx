@@ -279,7 +279,7 @@ const ISO_COUNTRIES = {
 const MAP_THEME = {
   visited: 'var(--ifm-color-primary)',
   visitedHover: 'var(--ifm-color-primary-dark)',
-  unvisited: 'var(--ifm-color-emphasis-200)',
+  unvisited: 'var(--ifm-color-secondary)',
   stroke: 'var(--ifm-color-emphasis-300)',
   background: 'var(--ifm-background-surface-color)',
 } as const;
@@ -462,14 +462,6 @@ export function TravelMap() {
     return code === 'AQ' ? 0 : 1;
   };
 
-  const handleMouseEnter = (country: string) => {
-    setTooltip(country);
-  };
-
-  const handleMouseLeave = () => {
-    setTooltip('');
-  };
-
   return (
     <SectionContainer>
       <SectionHeader
@@ -509,8 +501,8 @@ export function TravelMap() {
                           },
                           pressed: { outline: 'none' },
                         }}
-                        onMouseEnter={() => handleMouseEnter(country)}
-                        onMouseLeave={handleMouseLeave}
+                        onMouseEnter={() => setTooltip(country)}
+                        onMouseLeave={() => setTooltip('')}
                       />
                     );
                   })
@@ -533,7 +525,7 @@ export function TravelMap() {
               style={{
                 width: 16,
                 height: 16,
-                background: 'var(--ifm-color-primary)',
+                background: MAP_THEME.visited,
                 borderRadius: 4,
                 display: 'inline-block',
                 marginRight: 6,
@@ -546,7 +538,7 @@ export function TravelMap() {
               style={{
                 width: 16,
                 height: 16,
-                background: '#e0e7ef',
+                background: MAP_THEME.unvisited,
                 borderRadius: 4,
                 display: 'inline-block',
                 marginRight: 6,
