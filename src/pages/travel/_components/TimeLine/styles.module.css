@@ -18,34 +18,6 @@
     transform: translateY(0);
   }
 }
-
-/* ==========================================================================
-   Travel Map Styles - 现代化地图设计
-   ========================================================================== */
-
-/* 旅行地图容器 */
-.travel-map-container {
-  width: 100%;
-  position: relative;
-  margin: 2rem 0;
-  border-radius: 12px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
-  background: #f8f9fa;
-}
-
-.travel-map-container svg {
-  width: 100%;
-  height: 600px;
-  display: block;
-}
-
-:global(.travel-map-container:hover) {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  border-color: var(--ifm-color-primary-lighter);
-}
-
 /* 删除这个冲突的CSS规则 */
 
 /* 地图悬浮提示 - 参考 Umami 样式 */
@@ -140,14 +112,6 @@
 
 /* 响应式设计 */
 @media (max-width: 768px) {
-  .travel-map-container {
-    margin: 1rem 0;
-  }
-
-  .travel-map-container svg {
-    height: 400px;
-  }
-
   :global(.travel-map-legend) {
     flex-direction: column;
     gap: 0.75rem;
@@ -166,15 +130,6 @@
 }
 
 @media (max-width: 480px) {
-  .travel-map-container {
-    margin: 0.5rem 0;
-    border-radius: 8px;
-  }
-
-  .travel-map-container svg {
-    height: 300px;
-  }
-
   :global(.travel-map-legend) {
     padding: 0.75rem;
     gap: 0.5rem;
@@ -346,37 +301,4 @@
   :global(.timeline-vertical-circle) {
     border-width: 1px !important;
   }
-}
-
-/* 地图最佳实践样式 */
-.mapOuter {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.mapInner {
-  width: 100%;
-  max-width: 800px;
-  background: var(--ifm-background-surface-color);
-  border-radius: 12px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-  margin-bottom: 1.5rem;
-  overflow: hidden;
-}
-
-.mapInner svg {
-  width: 100% !important;
-  height: 100% !important;
-  display: block;
-}
-
-.mapLegend {
-  margin-top: 0.5rem;
-  display: flex;
-  justify-content: center;
-  gap: 1.5rem;
-  font-size: 1rem;
-  color: var(--ifm-color-emphasis-700);
 }
