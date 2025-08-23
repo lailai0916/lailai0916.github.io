@@ -307,57 +307,37 @@ export function TravelMap() {
 
       <div className={styles.mapOuter}>
         <div className={styles.mapInner}>
-          <BrowserOnly
-            fallback={
-              <div
-                style={{
-                  textAlign: 'center',
-                  padding: '3rem',
-                  fontSize: '1.1rem',
-                  color: '#6c757d',
-                }}
-              >
-                正在加载地图...
-              </div>
-            }
-          >
-            {() => (
-              <ComposableMap
-                projection="geoMercator"
-                style={{ width: '100%', height: '100%' }}
-              >
-                <ZoomableGroup zoom={1} center={[0, 30]}>
-                  <Geographies geography={MAP_FILE}>
-                    {({ geographies }) =>
-                      geographies.map((geo) => {
-                        const { properties } = geo;
+          <ComposableMap projection="geoMercator">
+            <ZoomableGroup zoom={0.8} minZoom={0.7} center={[0, 40]}>
+              <Geographies geography={MAP_FILE}>
+                {({ geographies }) =>
+                  geographies.map((geo) => {
+                    const { properties } = geo;
 
-                        return (
-                          <Geography
-                            key={geo.rsmKey}
-                            geography={geo}
-                            fill={getFillColor(properties)}
-                            stroke={MAP_THEME.stroke}
-                            opacity={getOpacity(properties)}
-                            style={{
-                              default: { outline: 'none' },
-                              hover: {
-                                outline: 'none',
-                                fill: MAP_THEME.visitedHover,
-                              },
-                              pressed: { outline: 'none' },
-                            }}
-                            onMouseEnter={() => handleMouseEnter(properties)}
-                            onMouseLeave={handleMouseLeave}
-                          />
-                        );
-                      })
-                    }
-                  </Geographies>
-                </ZoomableGroup>
-              </ComposableMap>
-            )}
-          </BrowserOnly>
+                    return (
+                      <Geography
+                        key={geo.rsmKey}
+                        geography={geo}
+                        fill={getFillColor(properties)}
+                        stroke={MAP_THEME.stroke}
+                        opacity={getOpacity(properties)}
+                        style={{
+                          default: { outline: 'none' },
+                          hover: {
+                            outline: 'none',
+                            fill: MAP_THEME.visitedHover,
+                          },
+                          pressed: { outline: 'none' },
+                        }}
+                        onMouseEnter={() => handleMouseEnter(properties)}
+                        onMouseLeave={handleMouseLeave}
+                      />
+                    );
+                  })
+                }
+              </Geographies>
+            </ZoomableGroup>
+          </ComposableMap>
         </div>
         <div className={styles.mapLegend}>
           {/* 图例内容，可自定义 */}
@@ -372,7 +352,7 @@ export function TravelMap() {
               style={{
                 width: 16,
                 height: 16,
-                background: '#007bff',
+                background: 'var(--ifm-color-primary)',
                 borderRadius: 4,
                 display: 'inline-block',
                 marginRight: 6,
