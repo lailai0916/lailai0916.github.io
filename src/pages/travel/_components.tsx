@@ -25,6 +25,257 @@ const LAYOUT_CONSTANTS = {
 
 const MAP_FILE = './datamaps.world.json';
 
+const ISO_COUNTRIES = {
+  AFG: 'AF',
+  ALA: 'AX',
+  ALB: 'AL',
+  DZA: 'DZ',
+  ASM: 'AS',
+  AND: 'AD',
+  AGO: 'AO',
+  AIA: 'AI',
+  ATA: 'AQ',
+  ATG: 'AG',
+  ARG: 'AR',
+  ARM: 'AM',
+  ABW: 'AW',
+  AUS: 'AU',
+  AUT: 'AT',
+  AZE: 'AZ',
+  BHS: 'BS',
+  BHR: 'BH',
+  BGD: 'BD',
+  BRB: 'BB',
+  BLR: 'BY',
+  BEL: 'BE',
+  BLZ: 'BZ',
+  BEN: 'BJ',
+  BMU: 'BM',
+  BTN: 'BT',
+  BOL: 'BO',
+  BIH: 'BA',
+  BWA: 'BW',
+  BVT: 'BV',
+  BRA: 'BR',
+  VGB: 'VG',
+  IOT: 'IO',
+  BRN: 'BN',
+  BGR: 'BG',
+  BFA: 'BF',
+  BDI: 'BI',
+  KHM: 'KH',
+  CMR: 'CM',
+  CAN: 'CA',
+  CPV: 'CV',
+  CYM: 'KY',
+  CAF: 'CF',
+  TCD: 'TD',
+  CHL: 'CL',
+  CHN: 'CN',
+  HKG: 'HK',
+  MAC: 'MO',
+  CXR: 'CX',
+  CCK: 'CC',
+  COL: 'CO',
+  COM: 'KM',
+  COG: 'CG',
+  COD: 'CD',
+  COK: 'CK',
+  CRI: 'CR',
+  CIV: 'CI',
+  HRV: 'HR',
+  CUB: 'CU',
+  CYP: 'CY',
+  CZE: 'CZ',
+  DNK: 'DK',
+  DJI: 'DJ',
+  DMA: 'DM',
+  DOM: 'DO',
+  ECU: 'EC',
+  EGY: 'EG',
+  SLV: 'SV',
+  GNQ: 'GQ',
+  ERI: 'ER',
+  EST: 'EE',
+  ETH: 'ET',
+  FLK: 'FK',
+  FRO: 'FO',
+  FJI: 'FJ',
+  FIN: 'FI',
+  FRA: 'FR',
+  GUF: 'GF',
+  PYF: 'PF',
+  ATF: 'TF',
+  GAB: 'GA',
+  GMB: 'GM',
+  GEO: 'GE',
+  DEU: 'DE',
+  GHA: 'GH',
+  GIB: 'GI',
+  GRC: 'GR',
+  GRL: 'GL',
+  GRD: 'GD',
+  GLP: 'GP',
+  GUM: 'GU',
+  GTM: 'GT',
+  GGY: 'GG',
+  GIN: 'GN',
+  GNB: 'GW',
+  GUY: 'GY',
+  HTI: 'HT',
+  HMD: 'HM',
+  VAT: 'VA',
+  HND: 'HN',
+  HUN: 'HU',
+  ISL: 'IS',
+  IND: 'IN',
+  IDN: 'ID',
+  IRN: 'IR',
+  IRQ: 'IQ',
+  IRL: 'IE',
+  IMN: 'IM',
+  ISR: 'IL',
+  ITA: 'IT',
+  JAM: 'JM',
+  JPN: 'JP',
+  JEY: 'JE',
+  JOR: 'JO',
+  KAZ: 'KZ',
+  KEN: 'KE',
+  KIR: 'KI',
+  PRK: 'KP',
+  KOR: 'KR',
+  KWT: 'KW',
+  KGZ: 'KG',
+  LAO: 'LA',
+  LVA: 'LV',
+  LBN: 'LB',
+  LSO: 'LS',
+  LBR: 'LR',
+  LBY: 'LY',
+  LIE: 'LI',
+  LTU: 'LT',
+  LUX: 'LU',
+  MKD: 'MK',
+  MDG: 'MG',
+  MWI: 'MW',
+  MYS: 'MY',
+  MDV: 'MV',
+  MLI: 'ML',
+  MLT: 'MT',
+  MHL: 'MH',
+  MTQ: 'MQ',
+  MRT: 'MR',
+  MUS: 'MU',
+  MYT: 'YT',
+  MEX: 'MX',
+  FSM: 'FM',
+  MDA: 'MD',
+  MCO: 'MC',
+  MNG: 'MN',
+  MNE: 'ME',
+  MSR: 'MS',
+  MAR: 'MA',
+  MOZ: 'MZ',
+  MMR: 'MM',
+  NAM: 'NA',
+  NRU: 'NR',
+  NPL: 'NP',
+  NLD: 'NL',
+  ANT: 'AN',
+  NCL: 'NC',
+  NZL: 'NZ',
+  NIC: 'NI',
+  NER: 'NE',
+  NGA: 'NG',
+  NIU: 'NU',
+  NFK: 'NF',
+  MNP: 'MP',
+  NOR: 'NO',
+  OMN: 'OM',
+  PAK: 'PK',
+  PLW: 'PW',
+  PSE: 'PS',
+  PAN: 'PA',
+  PNG: 'PG',
+  PRY: 'PY',
+  PER: 'PE',
+  PHL: 'PH',
+  PCN: 'PN',
+  POL: 'PL',
+  PRT: 'PT',
+  PRI: 'PR',
+  QAT: 'QA',
+  REU: 'RE',
+  ROU: 'RO',
+  RUS: 'RU',
+  RWA: 'RW',
+  BLM: 'BL',
+  SHN: 'SH',
+  KNA: 'KN',
+  LCA: 'LC',
+  MAF: 'MF',
+  SPM: 'PM',
+  VCT: 'VC',
+  WSM: 'WS',
+  SMR: 'SM',
+  STP: 'ST',
+  SAU: 'SA',
+  SEN: 'SN',
+  SRB: 'RS',
+  SYC: 'SC',
+  SLE: 'SL',
+  SGP: 'SG',
+  SVK: 'SK',
+  SVN: 'SI',
+  SLB: 'SB',
+  SOM: 'SO',
+  ZAF: 'ZA',
+  SGS: 'GS',
+  SSD: 'SS',
+  ESP: 'ES',
+  LKA: 'LK',
+  SDN: 'SD',
+  SUR: 'SR',
+  SJM: 'SJ',
+  SWZ: 'SZ',
+  SWE: 'SE',
+  CHE: 'CH',
+  SYR: 'SY',
+  TWN: 'TW',
+  TJK: 'TJ',
+  TZA: 'TZ',
+  THA: 'TH',
+  TLS: 'TL',
+  TGO: 'TG',
+  TKL: 'TK',
+  TON: 'TO',
+  TTO: 'TT',
+  TUN: 'TN',
+  TUR: 'TR',
+  TKM: 'TM',
+  TCA: 'TC',
+  TUV: 'TV',
+  UGA: 'UG',
+  UKR: 'UA',
+  ARE: 'AE',
+  GBR: 'GB',
+  USA: 'US',
+  UMI: 'UM',
+  URY: 'UY',
+  UZB: 'UZ',
+  VUT: 'VU',
+  VEN: 'VE',
+  VNM: 'VN',
+  VIR: 'VI',
+  WLF: 'WF',
+  ESH: 'EH',
+  YEM: 'YE',
+  ZMB: 'ZM',
+  ZWE: 'ZW',
+  XKX: 'XK',
+};
+
 // 从旅行数据中提取国家代码的辅助函数
 const extractCountryFromFlag = (flag: string): string | null => {
   const flagToCode: Record<string, string> = {
@@ -48,45 +299,6 @@ const extractCountryFromFlag = (flag: string): string | null => {
   return flagToCode[flag] || null;
 };
 
-// 从旅行数据中提取访问过的国家（基于旅行记录自动生成）
-const extractVisitedCountries = (): Set<string> => {
-  const countryMap: Record<string, string> = {
-    '🇨🇳': 'CHN',
-    '🇯🇵': 'JPN',
-    '🇻🇳': 'VNM',
-    '🇦🇹': 'AUT',
-    '🇸🇰': 'SVK',
-    '🇭🇺': 'HUN',
-    '🇨🇿': 'CZE',
-    '🇸🇮': 'SVN',
-    '🇩🇪': 'DEU',
-    '🇹🇷': 'TUR',
-    '🇸🇬': 'SGP',
-    '🇦🇺': 'AUS',
-    '🇮🇹': 'ITA',
-    '🇻🇦': 'VAT',
-    '🇨🇭': 'CHE',
-    '🇫🇷': 'FRA',
-    '🇲🇻': 'MDV',
-    '🇰🇷': 'KOR',
-    '🇲🇾': 'MYS',
-    '🇭🇰': 'HKG',
-  };
-
-  const visited = new Set<string>();
-  TRAVEL_LIST.forEach((item) => {
-    Object.keys(countryMap).forEach((flag) => {
-      if (item.cardTitle.includes(flag)) {
-        visited.add(countryMap[flag]);
-      }
-    });
-  });
-
-  return visited;
-};
-
-const VISITED_COUNTRIES = extractVisitedCountries();
-
 /**
  * 地图颜色主题配置 - 参考 Umami 风格
  */
@@ -97,21 +309,6 @@ const MAP_THEME = {
   stroke: 'var(--ifm-color-emphasis-300)',
   background: 'var(--ifm-background-surface-color)',
 } as const;
-
-/**
- * 获取国家显示名称
- */
-const getCountryName = (geo: any): string => {
-  return geo.properties?.NAME || geo.properties?.name || 'Unknown';
-};
-
-/**
- * 检查国家是否已访问
- */
-const isCountryVisited = (geo: any): boolean => {
-  const code = geo.properties?.ISO_A3 || geo.properties?.ADM0_A3 || '';
-  return VISITED_COUNTRIES.has(code);
-};
 
 const TIMELINE_CONFIG = {
   cardWidth: LAYOUT_CONSTANTS.CARD_WIDTH,
@@ -261,21 +458,18 @@ export function TravelMap() {
     return countries;
   }, []);
 
-  // 获取填充颜色
-  const getFillColor = (properties: any) => {
-    const countryCode = properties?.ISO_A3 || properties?.ADM0_A3 || '';
+  const getFillColor = (code: string) => {
+    if (code === 'AQ') return;
 
-    if (visitedCountries.has(countryCode)) {
+    if (visitedCountries.has(code)) {
       return MAP_THEME.visited;
     }
 
     return MAP_THEME.unvisited;
   };
 
-  // 获取透明度
-  const getOpacity = (properties: any) => {
-    const countryCode = properties?.ISO_A3 || properties?.ADM0_A3 || '';
-    return countryCode === 'ATA' ? 0 : 1; // 隐藏南极洲
+  const getOpacity = (code: string) => {
+    return code === 'AQ' ? 0 : 1;
   };
 
   // 处理鼠标悬停
@@ -312,15 +506,15 @@ export function TravelMap() {
               <Geographies geography={MAP_FILE}>
                 {({ geographies }) =>
                   geographies.map((geo) => {
-                    const { properties } = geo;
+                    const { code } = ISO_COUNTRIES[geo.id] || {};
 
                     return (
                       <Geography
                         key={geo.rsmKey}
                         geography={geo}
-                        fill={getFillColor(properties)}
+                        fill={getFillColor(code)}
                         stroke={MAP_THEME.stroke}
-                        opacity={getOpacity(properties)}
+                        opacity={getOpacity(code)}
                         style={{
                           default: { outline: 'none' },
                           hover: {
@@ -329,7 +523,7 @@ export function TravelMap() {
                           },
                           pressed: { outline: 'none' },
                         }}
-                        onMouseEnter={() => handleMouseEnter(properties)}
+                        onMouseEnter={() => handleMouseEnter(code)}
                         onMouseLeave={handleMouseLeave}
                       />
                     );
@@ -338,6 +532,7 @@ export function TravelMap() {
               </Geographies>
             </ZoomableGroup>
           </ComposableMap>
+          {tooltip && <div className="travel-map-tooltip">{tooltip}</div>}
         </div>
         <div className={styles.mapLegend}>
           {/* 图例内容，可自定义 */}
@@ -375,9 +570,6 @@ export function TravelMap() {
           </span>
         </div>
       </div>
-
-      {/* 悬浮提示 */}
-      {tooltip && <div className="travel-map-tooltip">{tooltip}</div>}
     </SectionContainer>
   );
 }
