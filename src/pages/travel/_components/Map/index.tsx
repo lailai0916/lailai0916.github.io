@@ -362,7 +362,10 @@ export default function TravelMap() {
                             outline: 'none',
                             fill: MAP_THEME.visitedHover,
                           },
-                          pressed: { outline: 'none' },
+                          pressed: {
+                            outline: 'none',
+                            fill: MAP_THEME.visitedHover,
+                          },
                         }}
                         onMouseEnter={() => setTooltip(country)}
                         onMouseLeave={() => setTooltip('')}
