@@ -35,13 +35,22 @@ function TravelFooter() {
 }
 
 function TravelHeader() {
+  const flagRegex = /\p{RI}{2}/gu;
+  const set = new Set<string>();
+  for (const item of TRAVEL_LIST) {
+    const matches = item.cardTitle.match(flagRegex);
+    if (matches) {
+      matches.forEach((flag) => set.add(flag));
+    }
+  }
+
   return (
     <PageHeader>
       <PageTitle title={MODIFICATION} description={DESCRIPTION} />
       <DataCardList
         items={[
           {
-            value: '20+',
+            value: `${set.size}`,
             label: translate({
               id: 'pages.travel.datacard.label1',
               message: 'Countries',
