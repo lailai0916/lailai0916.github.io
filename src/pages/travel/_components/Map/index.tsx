@@ -383,13 +383,19 @@ export default function TravelMap() {
             <span
               className={`${styles.legendColor} ${styles.legendColorVisited}`}
             />
-            Visited
+            {translate({
+              id: 'pages.travel.map.legend.visited',
+              message: 'Visited',
+            })}
           </span>
           <span className={styles.legendItem}>
             <span
               className={`${styles.legendColor} ${styles.legendColorUnvisited}`}
             />
-            Not visited
+            {translate({
+              id: 'pages.travel.map.legend.unvisited',
+              message: 'Not visited',
+            })}
           </span>
         </div>
       </div>

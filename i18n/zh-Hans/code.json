@@ -833,15 +833,6 @@
   "pages.travel.map.legend.unvisited": {
     "message": "未到访"
   },
-  "pages.travel.map.legend.cities": {
-    "message": "重要城市"
-  },
-  "pages.travel.map.loading": {
-    "message": "地图加载中..."
-  },
-  "pages.travel.map.error": {
-    "message": "地图加载失败，请稍后再试"
-  },
   "pages.friends.title": {
     "message": "友链"
   },
