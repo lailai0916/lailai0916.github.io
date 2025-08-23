@@ -38,7 +38,7 @@ function TravelFooter() {
 function TravelHeader() {
   const flagRegex = /[\u{1F1E6}-\u{1F1FF}]{2}/gu;
   const countryCount = new Set(
-    TRAVEL_LIST.flatMap((i) => i.cardTitle.match(flagRegex) ?? [])
+    TRAVEL_LIST.flatMap((i) => i.cardTitle.match(flagRegex))
   ).size;
   const yearCount =
     new Date().getFullYear() - parseInt(TRAVEL_LIST[0].title.substring(0, 4));
