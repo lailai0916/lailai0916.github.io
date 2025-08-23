@@ -1,6 +1,6 @@
 .card {
   display: block;
-  background: var(--license-block-bg, rgba(127,127,127,0.06));
+  background: var(--license-block-bg, rgba(127, 127, 127, 0.06));
   position: relative;
   margin: 0.5rem 0;
   padding: 1.1rem 1.5rem;
@@ -11,7 +11,7 @@
 }
 
 .card:hover {
-  background: var(--ifm-hover-overlay, rgba(127,127,127,0.12));
+  background: var(--ifm-hover-overlay, rgba(127, 127, 127, 0.12));
 }
 
 .card:active {
@@ -24,7 +24,10 @@
   justify-content: space-between;
   margin-bottom: 0.5rem;
   /* Prefer heading color; fallback to emphasis/content to adapt both themes */
-  color: var(--ifm-heading-color, var(--ifm-color-emphasis-900, var(--ifm-font-color-base, #111)));
+  color: var(
+    --ifm-heading-color,
+    var(--ifm-color-emphasis-900, var(--ifm-font-color-base, #111))
+  );
   font-size: 1.25rem;
   font-weight: 500;
 }
@@ -87,7 +90,7 @@
   font-size: 0.875rem;
   opacity: 0.9;
   border-radius: 0.4rem;
-  background: var(--ifm-badge-background-color, rgba(127,127,127,0.1));
+  background: var(--ifm-badge-background-color, rgba(127, 127, 127, 0.1));
 }
 
 .stars,
