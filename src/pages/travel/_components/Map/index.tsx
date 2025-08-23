@@ -267,9 +267,8 @@ const ISO_COUNTRIES = {
 const MAP_THEME = {
   visited: 'var(--ifm-color-primary)',
   visitedHover: 'var(--ifm-color-primary-dark)',
-  unvisited: 'var(--ifm-color-secondary)',
+  unvisited: 'var(--ifm-color-emphasis-200)',
   stroke: 'var(--ifm-color-emphasis-300)',
-  background: 'var(--ifm-background-surface-color)',
 } as const;
 
 /**
