@@ -13,7 +13,7 @@ tags: [misc]
 
 ## 原件摹本
 
-![](assets/United_States_Declaration_of_Independence.jpg)
+![](./assets/United_States_Declaration_of_Independence.jpg)
 
 ## 宣言原文
 

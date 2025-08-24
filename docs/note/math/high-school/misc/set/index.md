@@ -219,7 +219,7 @@ $$
 A\cup B=C=\{x|x\in A\text{或}x\in B\}
 $$
 
-![](assets/Venn0111.svg)
+![](./assets/Venn0111.svg)
 
 :::tip
 
@@ -235,7 +235,7 @@ $$
 A\cap B=C=\{x|x\in A\text{且}x\in B\}
 $$
 
-![](assets/Venn0001.svg)
+![](./assets/Venn0001.svg)
 
 ### 补集
 
@@ -245,7 +245,7 @@ $$
 \complement_U A=B=\{x|x\notin A\}
 $$
 
-![](assets/Venn10.svg)
+![](./assets/Venn10.svg)
 
 :::tip
 
@@ -345,4 +345,4 @@ $$
 |A\cup B\cup C|=|A|+|B|+|C|-|A\cap B|-|A\cap C|-|B\cap C|+|A\cap B\cap C|
 $$
 
-![](assets/Inclusion-exclusion.svg)
+![](./assets/Inclusion-exclusion.svg)

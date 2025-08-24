@@ -13,8 +13,8 @@ tags: [misc]
 
 ## 世界地图
 
-![](assets/世界地图.jpg)
+![](./assets/世界地图.jpg)
 
 ## 中国地图
 
-![](assets/中国地图.jpg)
+![](./assets/中国地图.jpg)

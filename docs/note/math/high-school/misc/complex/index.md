@@ -10,6 +10,6 @@
 
 进入高中后，我们引入虚数单位 $i=\sqrt{-1}$，并在实数集 $\mathbb{R}$ 的基础上拓展出复数集 $\mathbb{C}$。
 
-![](assets/NumberSetinC.svg)
+![](./assets/NumberSetinC.svg)
 
 这个扩展是有意义的，因为复数体系是自洽的，即内部无矛盾，因此在数学中是允许且合理的。

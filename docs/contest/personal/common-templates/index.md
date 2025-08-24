@@ -4,7 +4,7 @@
 
 ## 联赛
 
-- [name.zip](assets/name.zip)
+- [name.zip](./assets/name.zip)
 
 ## 框架
 

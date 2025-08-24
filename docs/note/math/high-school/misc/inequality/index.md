@@ -58,7 +58,7 @@ $$
 
 《人教版高中数学·必修一》中的表格总结了各种情况的对应关系：
 
-![](assets/table.png)
+![](./assets/table.png)
 
 :::note[示例]
 

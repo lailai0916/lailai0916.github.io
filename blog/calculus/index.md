@@ -88,7 +88,7 @@ $$
 S=\int_a^b f(x)\mathrm{d}x=|S_\text{蓝色}|-|S_\text{黄色}|
 $$
 
-![](assets/Integral_example.svg-1024722.png)
+![](./assets/Integral_example.svg-1024722.png)
 
 ### 有向面积
 
@@ -306,7 +306,7 @@ $$
 \int_a^b f(x)\mathrm{d}x=F(b)-F(a)=\left.F(x)\right|_a^b
 $$
 
-<!-- ![](assets/400px-Integral_approximations-3-steps.png) -->
+<!-- ![](./assets/400px-Integral_approximations-3-steps.png) -->
 
 ## 微积分基本定理
 

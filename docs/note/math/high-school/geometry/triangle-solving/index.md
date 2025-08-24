@@ -13,7 +13,7 @@
 2. $S$ 表示三角形的面积，$s=\frac{a+b+c}{2}$ 表示三角形的半周长。
 3. $r$ 表示内切圆的半径，$R$ 表示外接圆的半径。
 
-![](assets/Triangle_with_notations_2.svg)
+![](./assets/Triangle_with_notations_2.svg)
 
 ## 三角形的心
 
@@ -21,31 +21,31 @@
 
 内心（Incenter）为三个内角的 **角平分线** 的交点，即 **内切圆** 的圆心。
 
-![](assets/三角形の内心.png)
+![](./assets/三角形の内心.png)
 
 ### 外心
 
 外心（Circumcenter）为三条边的 **中垂线** 的交点，即 **外接圆** 的圆心。
 
-![](assets/三角形の外心.png)
+![](./assets/三角形の外心.png)
 
 ### 垂心
 
 垂心（Orthocenter）为三条 **高线** 的交点。
 
-![](assets/三角形の垂心.png)
+![](./assets/三角形の垂心.png)
 
 ### 重心
 
 重心（Centroid）为三条 **中线** 的交点，又称为 **形心**。
 
-![](assets/三角形の重心.png)
+![](./assets/三角形の重心.png)
 
 ### 旁心
 
 旁心（Excenter）为外角的 **角平分线** 的交点，有三个，分别为三角形某一边的 **旁切圆** 的圆心。
 
-![](assets/三角形の傍心.png)
+![](./assets/三角形の傍心.png)
 
 ## 面积公式
 

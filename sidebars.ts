@@ -643,7 +643,7 @@ const sidebars: SidebarsConfig = {
         {
           type: 'category',
           label: '艺术博览会',
-          items: ['project/desmos/art-expo/iclock'],
+          items: ['project/desmos/art-expo/iclock/index'],
         },
         {
           type: 'category',

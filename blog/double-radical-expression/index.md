@@ -19,7 +19,7 @@ $$
 
 在解数学题时，有时会遇到一些二重根式的结果。
 
-<img src={require('./assets/de1e7a219492200560905ce9d47c614a.jpg').default} style={{maxWidth: '400px'}} />
+<img src={require('././assets/de1e7a219492200560905ce9d47c614a.jpg').default} style={{maxWidth: '500px'}} />
 
 例如，在一个 $15\degree$ 的直角三角形中，两条直角边 $AB$ 和 $AC$ 分别为 $2+\sqrt 3$ 和 $1$。
 
