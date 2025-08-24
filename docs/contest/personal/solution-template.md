@@ -7,13 +7,41 @@
 - [洛谷主题库题解规范（2023 试行版） - 洛谷帮助中心](https://help.luogu.com.cn/rules/academic/solution-standard)
 - [如何用 Markdown 和 LaTeX 写一篇排版整齐的题解？ - 洛谷帮助中心](https://help.luogu.com.cn/rules/academic/guide/solution)
 
-## 例题
+## 题解模板
 
-### 洛谷 P1001 A+B Problem
+````markdown
+## 原题链接
+
+- [{Platform} {ID} {Title}]({URL})
+
+## 参考资料
+
+## 题意简述
+
+## 前置知识
+
+## 解题思路
+
+## 参考代码
+
+```cpp
+
+```
+````
+
+:::tip
+
+“参考资料”、“题意简述”、“前置知识”板块为可选项，应根据实际需求决定是否添加。
+
+:::
+
+## 题解示例
+
+### 题目：洛谷 P1001 A+B Problem
 
 <Problem id="P1001" />
 
-## 题解示例
+### 题解代码
 
 ````markdown
 ## 原题链接
@@ -52,14 +80,7 @@ int main()
 ```
 ````
 
-:::tip
-
-“参考资料”、“题意简述”、“前置知识”板块为可选项，应根据实际需求决定是否添加。
-
-
-:::
-
-## 效果展示
+### 效果展示
 
 <BrowserWindow>
 
