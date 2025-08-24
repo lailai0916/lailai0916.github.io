@@ -39,7 +39,7 @@ const sidebars: SidebarsConfig = {
       link: {
         type: 'generated-index',
         description:
-          '本章将会介绍编程相关的知识，包括 C++ 从入门到进阶教程和一些其它语言的简介。',
+          '本章介绍编程相关的知识，包括 C++ 从入门到进阶教程和一些其它语言的简介。',
       },
       items: [
         'contest/lang/helloworld',
@@ -291,7 +291,7 @@ const sidebars: SidebarsConfig = {
       label: '杂项',
       link: {
         type: 'generated-index',
-        description: '这个板块主要介绍的是一些难以分类的算法及 OI 相关知识。',
+        description: '本章介绍的是一些难以分类的算法及 OI 相关知识。',
       },
       items: [
         'contest/misc/two-pointer',

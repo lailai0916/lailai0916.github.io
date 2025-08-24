@@ -13,7 +13,7 @@ cin.tie(nullptr);
 
 :::warning
 
-关闭同步后 `cin`/`cout` 和 `scanf`/`printf` 不能混用，否则可能会出现未定义行为，导致读写顺序错误。
+关闭同步后，`cin`/`cout` 和 `scanf`/`printf` 不能混用，否则可能会导致未定义行为（UB），从而引发读写顺序错误。
 
 :::
 
