@@ -35,11 +35,6 @@
   background-color: var(--ifm-navbar-link-hover-color);
 }
 
-pre,
-code {
-  tab-size: 4;
-}
-
 .theme-announcement-bar {
   font-size: 20px;
 
@@ -56,14 +51,19 @@ code {
   font-weight: bold;
 }
 
+[data-theme='light'] img[src$='#gh-dark-mode-only'],
+[data-theme='dark'] img[src$='#gh-light-mode-only'] {
+  display: none;
+}
+
+pre,
+code {
+  tab-size: 4;
+}
+
 html,
 .main-wrapper,
 article,
 .markdown {
   font-size: var(--global-font-size);
-}
-
-[data-theme='light'] img[src$='#gh-dark-mode-only'],
-[data-theme='dark'] img[src$='#gh-light-mode-only'] {
-  display: none;
 }
