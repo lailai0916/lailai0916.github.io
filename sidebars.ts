@@ -237,6 +237,7 @@ const sidebars: SidebarsConfig = {
       items: [
         'contest/graph/topo',
         'contest/graph/shortest-path',
+        'contest/graph/diff-constraints',
         'contest/graph/mst',
         'contest/graph/2sat',
         'contest/graph/flow',
