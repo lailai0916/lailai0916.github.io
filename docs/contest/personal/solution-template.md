@@ -35,13 +35,11 @@
 
 :::
 
-## 题解示例
-
-### 题目：洛谷 P1001 A+B Problem
+## 例题：洛谷 P1001 A+B Problem
 
 <Problem id="P1001" />
 
-### 题解代码
+## 题解示例
 
 ````markdown
 ## 原题链接
@@ -80,7 +78,7 @@ int main()
 ```
 ````
 
-### 效果展示
+## 效果展示
 
 <BrowserWindow>
 
