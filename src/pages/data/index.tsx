@@ -49,12 +49,13 @@ function lastChangeInfo(arr: Beat[]) {
 
 function pingStats(arr: Beat[]) {
   const v = arr
-    .filter(b => Number(b.status) === 1 && typeof b.ping === 'number')
-    .map(b => b.ping as number)
+    .filter((b) => Number(b.status) === 1 && typeof b.ping === 'number')
+    .map((b) => b.ping as number)
     .sort((a, b) => a - b);
   if (!v.length) return null;
   const avg = Math.round(v.reduce((a, b) => a + b, 0) / v.length);
-  const p90 = v[Math.min(v.length - 1, Math.max(0, Math.floor(v.length * 0.9) - 1))];
+  const p90 =
+    v[Math.min(v.length - 1, Math.max(0, Math.floor(v.length * 0.9) - 1))];
   return { avg, p90 };
 }
 
@@ -63,7 +64,9 @@ function Spark({ arr }: { arr: Beat[] }) {
   const last20 = [...arr]
     .sort((a, b) => toMs(a.time) - toMs(b.time))
     .slice(-20); // 左旧右新
-  const h = 14, w = 70, n = last20.length;
+  const h = 14,
+    w = 70,
+    n = last20.length;
   const step = n > 1 ? w / (n - 1) : w;
   // 1=UP绘高位，其它绘低位
   const pts = last20
@@ -71,7 +74,12 @@ function Spark({ arr }: { arr: Beat[] }) {
     .join(' ');
   return (
     <svg width={w} height={h} className={styles.spark} aria-hidden="true">
-      <polyline points={pts} fill="none" stroke="currentColor" strokeWidth="2" />
+      <polyline
+        points={pts}
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2"
+      />
     </svg>
   );
 }
@@ -89,7 +97,10 @@ export default function StatusPage(): JSX.Element {
       setLoading(true);
       const [confR, hbR] = await Promise.all([
         fetch(`${KUMA}/api/status-page/monitor`, { signal, cache: 'no-store' }),
-        fetch(`${KUMA}/api/status-page/heartbeat/monitor`, { signal, cache: 'no-store' }),
+        fetch(`${KUMA}/api/status-page/heartbeat/monitor`, {
+          signal,
+          cache: 'no-store',
+        }),
       ]);
       if (!confR.ok || !hbR.ok)
         throw new Error(`HTTP ${confR.status}/${hbR.status}`);
@@ -111,7 +122,9 @@ export default function StatusPage(): JSX.Element {
       setUpdatedAt(Date.now());
     } catch (e: any) {
       if (e?.name !== 'AbortError') {
-        setErr('加载失败（可能是未登录公开页或 CORS 未配置）：' + (e?.message ?? ''));
+        setErr(
+          '加载失败（可能是未登录公开页或 CORS 未配置）：' + (e?.message ?? '')
+        );
       }
     } finally {
       setLoading(false);
@@ -165,23 +178,25 @@ export default function StatusPage(): JSX.Element {
     (conf.publicGroupList ?? []).forEach((g, idx) => {
       const gname = g.name || `分组 ${idx + 1}`;
       const ids = (g.monitorList ?? [])
-        .map(m => String(m.id))
-        .filter(id => idSet.has(id));
+        .map((m) => String(m.id))
+        .filter((id) => idSet.has(id));
       if (ids.length) groups.push({ name: gname, items: ids });
-      ids.forEach(id => idSet.delete(id));
+      ids.forEach((id) => idSet.delete(id));
     });
 
     // 其余
-    idSet.forEach(id => rest.push(id));
+    idSet.forEach((id) => rest.push(id));
     if (rest.length) groups.push({ name: '其他', items: rest });
 
     // 每组内按名称排序
-    groups.forEach(g => g.items.sort((a, b) => (names[a] ?? a).localeCompare(names[b] ?? b)));
+    groups.forEach((g) =>
+      g.items.sort((a, b) => (names[a] ?? a).localeCompare(names[b] ?? b))
+    );
     return groups;
   }, [conf, hb, names]);
 
   const renderItem = (id: string) => {
-    const last = latest.find(x => x.id === id)?.last;
+    const last = latest.find((x) => x.id === id)?.last;
     if (!last) return null;
     const hist = hb.heartbeatList[id] ?? [];
     const status = STATUS[Number(last.status)] ?? 'UNKNOWN';
@@ -200,15 +215,29 @@ export default function StatusPage(): JSX.Element {
         <div className={styles.nameWrap}>
           <strong>{names[id] ?? `Monitor #${id}`}</strong>
           <span className={styles.metaSmall}>
-            {typeof last.ping === 'number' ? `${last.ping} ms` : (last.msg ?? '')}
-            {stats && <> · {stats.avg}ms avg / {stats.p90}ms p90</>}
-            {change && <> · 已持续 {Math.max(1, Math.round(change.durMs / 60000))} 分钟</>}
+            {typeof last.ping === 'number'
+              ? `${last.ping} ms`
+              : (last.msg ?? '')}
+            {stats && (
+              <>
+                {' '}
+                · {stats.avg}ms avg / {stats.p90}ms p90
+              </>
+            )}
+            {change && (
+              <>
+                {' '}
+                · 已持续 {Math.max(1, Math.round(change.durMs / 60000))} 分钟
+              </>
+            )}
           </span>
         </div>
         <span className={styles.statusText}>
           {status}
           {typeof upPct === 'number' && (
-            <span className={styles.uptime}>· Uptime {(upPct * 100).toFixed(2)}%</span>
+            <span className={styles.uptime}>
+              · Uptime {(upPct * 100).toFixed(2)}%
+            </span>
           )}
         </span>
         <span className={styles.time}>
@@ -254,14 +283,14 @@ export default function StatusPage(): JSX.Element {
           <div className={styles.dim}>加载中…</div>
         ) : latest.length ? (
           <div className={styles.groupWrap}>
-            {grouped.map(g => (
+            {grouped.map((g) => (
               <section key={g.name} className={styles.group}>
                 <h2 className={styles.groupTitle}>
                   {g.name}
                   <span className={styles.groupMeta}>（{g.items.length}）</span>
                 </h2>
                 <ul className={styles.list}>
-                  {g.items.map(id => renderItem(id))}
+                  {g.items.map((id) => renderItem(id))}
                 </ul>
               </section>
             ))}
@@ -269,10 +298,6 @@ export default function StatusPage(): JSX.Element {
         ) : (
           <div className={styles.dim}>暂无数据</div>
         )}
-
-        <div className={styles.note}>
-          注：每 5 分钟自动刷新一次（遵守缓存）。如需展示私有监控，请在 Kuma 端开启公开状态页或处理 CORS。
-        </div>
       </main>
     </Layout>
   );
