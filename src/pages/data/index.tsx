@@ -1,10 +1,11 @@
 import React from 'react';
 import Layout from '@theme/Layout';
+import styles from './styles.module.css';
 
 const TITLE = 'Data';
 const DESCRIPTION = 'Data Page';
 
-// 配置：你的 Kuma 域名（末尾不带 /）
+// Kuma 域名
 const KUMA = 'https://status.lailai.one';
 
 type Beat = {
@@ -41,8 +42,11 @@ export default function StatusPage(): JSX.Element {
     try {
       setLoading(true);
       const [confR, hbR] = await Promise.all([
-        fetch(`${KUMA}/api/status-page/monitor`, { signal }),
-        fetch(`${KUMA}/api/status-page/heartbeat/monitor`, { signal }),
+        fetch(`${KUMA}/api/status-page/monitor`, { signal, cache: 'no-store' }),
+        fetch(`${KUMA}/api/status-page/heartbeat/monitor`, {
+          signal,
+          cache: 'no-store',
+        }),
       ]);
       if (!confR.ok || !hbR.ok)
         throw new Error(`HTTP ${confR.status}/${hbR.status}`);
@@ -75,15 +79,13 @@ export default function StatusPage(): JSX.Element {
   React.useEffect(() => {
     const ac = new AbortController();
     load(ac.signal);
-
-    const timer = setInterval(() => load(ac.signal), 5 * 60 * 1000); // 5 分钟刷新
+    const timer = setInterval(() => load(ac.signal), 5 * 60 * 1000);
     return () => {
       ac.abort();
       clearInterval(timer);
     };
   }, [load]);
 
-  // 取每个监控的“最新一次心跳”（按 time 最大值而非数组第 0 项，避免顺序不稳）
   const latest = React.useMemo(() => {
     const list: { id: string; last: Beat }[] = [];
     for (const [id, arr] of Object.entries(hb.heartbeatList)) {
@@ -100,80 +102,59 @@ export default function StatusPage(): JSX.Element {
 
   return (
     <Layout title={TITLE} description={DESCRIPTION}>
-      <main style={{ maxWidth: 900, margin: '0 auto', padding: '2rem' }}>
-        <h1 style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
-          网站状态
+      <main className={styles.container}>
+        <h1 className={styles.header}>
+          <span>网站状态</span>
           <button
             onClick={() => load()}
             disabled={loading}
-            style={{
-              padding: '4px 10px',
-              borderRadius: 8,
-              border: '1px solid #e5e7eb',
-              background: '#fff',
-              cursor: loading ? 'not-allowed' : 'pointer',
-              fontSize: 12,
-            }}
+            className={styles.refreshBtn}
             aria-label="手动刷新"
             title="手动刷新"
           >
             {loading ? '加载中…' : '刷新'}
           </button>
           {updatedAt && (
-            <span style={{ marginLeft: 'auto', opacity: 0.6, fontSize: 12 }}>
+            <span className={styles.updatedAt}>
               上次更新：{new Date(updatedAt).toLocaleString()}
             </span>
           )}
         </h1>
 
-        {err && <div style={{ color: '#ef4444', marginBottom: 12 }}>{err}</div>}
+        {err && <div className={styles.error}>{err}</div>}
 
         {loading && !latest.length ? (
-          <div style={{ opacity: 0.6 }}>加载中…</div>
+          <div className={styles.dim}>加载中…</div>
         ) : latest.length ? (
-          <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
+          <ul className={styles.list}>
             {latest.map(({ id, last }) => {
               const status = STATUS[Number(last.status)] ?? 'UNKNOWN';
               const upPct = hb.uptimeList?.[id];
               return (
-                <li
-                  key={id}
-                  style={{
-                    display: 'grid',
-                    gridTemplateColumns: 'auto 1fr auto auto',
-                    alignItems: 'center',
-                    gap: 12,
-                    padding: '10px 0',
-                    borderBottom: '1px solid #f3f4f6',
-                  }}
-                >
+                <li key={id} className={styles.item}>
                   <span
                     aria-label={status}
                     title={status}
-                    style={{
-                      width: 10,
-                      height: 10,
-                      borderRadius: '50%',
-                      background: dotColor(Number(last.status)),
-                    }}
+                    className={styles.dot}
+                    style={{ background: dotColor(Number(last.status)) }}
                   />
-                  <div style={{ display: 'flex', flexDirection: 'column' }}>
+                  <div className={styles.nameWrap}>
                     <strong>{names[id] ?? `Monitor #${id}`}</strong>
-                    <span style={{ opacity: 0.7, fontSize: 12 }}>
+                    <span className={styles.metaSmall}>
                       {typeof last.ping === 'number'
                         ? `${last.ping} ms`
                         : (last.msg ?? '')}
                     </span>
                   </div>
-                  <span style={{ opacity: 0.7, fontSize: 12 }}>
+                  <span className={styles.statusText}>
                     {status}
                     {typeof upPct === 'number' && (
-                      <span style={{ marginLeft: 8 }}>
+                      <span className={styles.uptime}>
                         · Uptime {(upPct * 100).toFixed(2)}%
                       </span>
                     )}
                   </span>
-                  <span style={{ opacity: 0.6, fontSize: 12 }}>
+                  <span className={styles.time}>
                     {new Date(toMs(last.time)).toLocaleString()}
                   </span>
                 </li>
@@ -181,10 +162,10 @@ export default function StatusPage(): JSX.Element {
             })}
           </ul>
         ) : (
-          <div style={{ opacity: 0.6 }}>暂无数据</div>
+          <div className={styles.dim}>暂无数据</div>
         )}
 
-        <div style={{ marginTop: 16, opacity: 0.6, fontSize: 12 }}>
+        <div className={styles.note}>
           注：每 5 分钟自动刷新一次（遵守缓存）。如需展示私有监控，请在 Kuma
           端开启公开状态页或处理 CORS。
         </div>
