@@ -235,12 +235,6 @@ const sidebars: SidebarsConfig = {
         description: '图论是数学的一个分支，图是图论的主要研究对象。',
       },
       items: [
-        'contest/graph/topo',
-        'contest/graph/shortest-path',
-        'contest/graph/diff-constraints',
-        'contest/graph/mst',
-        'contest/graph/2sat',
-        'contest/graph/flow',
         {
           type: 'category',
           label: '树上问题',
@@ -257,6 +251,10 @@ const sidebars: SidebarsConfig = {
             'contest/graph/tree/virtual-tree',
           ],
         },
+        'contest/graph/topo',
+        'contest/graph/shortest-path',
+        'contest/graph/diff-constraints',
+        'contest/graph/mst',
         {
           type: 'category',
           label: '连通性',
@@ -269,6 +267,8 @@ const sidebars: SidebarsConfig = {
             'contest/graph/connectivity/bcc',
           ],
         },
+        'contest/graph/2sat',
+        'contest/graph/flow',
       ],
     },
     {
