@@ -214,11 +214,16 @@ const config: Config = {
   },
 
   scripts: [
+    process.env.NODE_ENV === 'production' && {
+      src: 'https://analytics.lailai.one/script.js',
+      defer: true,
+      'data-website-id': '69d3b7de-90e4-4be4-a355-633620ecefdb',
+    },
     {
       src: 'https://cdn.jsdelivr.net/npm/katex@0.13.24/dist/contrib/copy-tex.min.js',
       defer: true,
     },
-  ],
+  ].filter(Boolean),
 
   stylesheets: [
     {
