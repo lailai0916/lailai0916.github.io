@@ -1,5 +1,5 @@
 .container {
-  max-width: 900px;
+  max-width: 980px;
   margin: 0 auto;
   padding: 2rem;
 }
@@ -29,12 +29,44 @@
   font-size: 12px;
 }
 
+.summary {
+  display: flex;
+  gap: 12px;
+  margin: 8px 0 14px;
+  font-size: 12px;
+  opacity: 0.85;
+  flex-wrap: wrap;
+}
+.summary .ok {
+  color: #16a34a;
+}
+.summary .bad {
+  color: #ef4444;
+}
+
 .error {
   color: #ef4444;
   margin-bottom: 12px;
 }
-
 .dim {
+  opacity: 0.6;
+}
+
+.groupWrap {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+.groupTitle {
+  margin: 8px 0;
+  font-size: 14px;
+  opacity: 0.9;
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+}
+.groupMeta {
+  font-size: 12px;
   opacity: 0.6;
 }
 
@@ -46,7 +78,7 @@
 
 .item {
   display: grid;
-  grid-template-columns: auto 1fr auto auto;
+  grid-template-columns: auto 1fr auto auto auto; /* dot | name | status | time | spark */
   align-items: center;
   gap: 12px;
   padding: 10px 0;
@@ -62,18 +94,22 @@
 .nameWrap {
   display: flex;
   flex-direction: column;
+  gap: 2px;
+  min-width: 0;
 }
-
 .metaSmall {
   opacity: 0.7;
   font-size: 12px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .statusText {
-  opacity: 0.7;
+  opacity: 0.8;
   font-size: 12px;
+  white-space: nowrap;
 }
-
 .uptime {
   margin-left: 8px;
 }
@@ -81,6 +117,13 @@
 .time {
   opacity: 0.6;
   font-size: 12px;
+  white-space: nowrap;
+}
+
+.spark {
+  width: 70px;
+  height: 14px;
+  opacity: 0.7;
 }
 
 .note {
@@ -89,7 +132,7 @@
   font-size: 12px;
 }
 
-/* 暗色模式细节（可按需调整） */
+/* 暗色模式细节 */
 :global(html[data-theme='dark']) .item {
   border-bottom-color: rgba(255, 255, 255, 0.08);
 }
