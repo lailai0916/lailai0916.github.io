@@ -46,7 +46,8 @@
 - [x] ~~添加调试模式~~
 - [x] ~~优化 LaTeX 复制~~
 - [ ] 添加新版博客页面
-- [ ] 添加 Status 和 Analytics 页面
+- [ ] 添加 Status 页面
+- [ ] 添加主页 Analytics 组件
 
 ## 提示词
 
