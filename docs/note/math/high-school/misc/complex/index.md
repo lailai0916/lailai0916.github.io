@@ -3,6 +3,7 @@
 ## 参考资料
 
 - [复数 (数学) - 维基百科](<https://zh.wikipedia.org/zh-cn/复数_(数学)>)
+- [如何通俗的理解虚数和复数？虚数的几何意义又是啥？一次搞懂！ - bilibili](https://www.bilibili.com/video/BV1ns411J7Qs)
 
 ## 历史
 
