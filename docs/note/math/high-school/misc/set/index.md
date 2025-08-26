@@ -51,11 +51,11 @@
 |  实数  | $\mathbb{R}$ |    $0,\frac{1}{9},\sqrt{2},\pi,e$    |  实数（包含有理数和无理数）  |
 |  复数  | $\mathbb{C}$ |         $0,3,i,2-\sqrt{3}i$          |    复数（包含实数和虚数）    |
 
+详见 [复数](complex)
+
 $$
 \mathbb{N}\subseteq\mathbb{Z}\subseteq\mathbb{Q}\subseteq\mathbb{R}\subseteq\mathbb{C}
 $$
-
-详见 [复数](complex)
 
 这些数集符号还可以添加角标，通过 $+$ 和 $-$ 来区分正负。
 
