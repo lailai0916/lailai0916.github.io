@@ -15,3 +15,5 @@ $$
 $$
 S=a_1\times a_2\times\cdots\times a_n
 $$
+
+## 二项式

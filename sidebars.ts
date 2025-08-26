@@ -331,7 +331,6 @@ const sidebars: SidebarsConfig = {
                 'note/math/high-school/misc/inequality/index',
                 'note/math/high-school/misc/complex/index',
                 'note/math/high-school/misc/permutation-and-combination',
-                'note/math/high-school/misc/binomial',
               ],
             },
             {
