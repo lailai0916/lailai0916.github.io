@@ -28,7 +28,7 @@ export const daysUntil = (target) => Math.ceil((new Date(target) - new Date()) /
 - 距离 **CSP-J/S 2025 第二轮** 还有 {daysUntil('2025-11-01')} 天
 - 距离 **NOIP 2025** 还有 {daysUntil('2025-11-29')} 天
 
-## 知识点汇总
+## 知识点
 
 ### 算法基础
 

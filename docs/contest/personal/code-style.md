@@ -8,6 +8,7 @@
 
 - [Google C++ Style Guide](https://google.github.io/styleguide/cppguide.html)
 - [Menci's Code Style for OI | Menci's OI Blog](https://oi.men.ci/code-style-oi/)
+- [代码风格指南 - Baoshuo's OI Blog](https://oi.baoshuo.ren/code-style-guide/)
 
 ## 通用
 

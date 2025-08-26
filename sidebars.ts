@@ -325,12 +325,12 @@ const sidebars: SidebarsConfig = {
               type: 'category',
               label: '基础与杂项',
               items: [
-                'note/math/high-school/misc/transition/index',
-                'note/math/high-school/misc/set/index',
-                'note/math/high-school/misc/logic',
-                'note/math/high-school/misc/inequality/index',
-                'note/math/high-school/misc/complex/index',
-                'note/math/high-school/misc/permutation-and-combination',
+                'note/math/high-school/basic/transition/index',
+                'note/math/high-school/basic/set/index',
+                'note/math/high-school/basic/logic',
+                'note/math/high-school/basic/inequality/index',
+                'note/math/high-school/basic/complex/index',
+                'note/math/high-school/basic/permutation-and-combination',
               ],
             },
             {
