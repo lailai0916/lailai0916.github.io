@@ -56,6 +56,6 @@ import { Title, Skills, Devices, Community, Comment } from '@site/src/pages/abou
 
 ---
 
-<Comment />
+<Comments />
 
 </div>

@@ -126,7 +126,7 @@ export function Community() {
   );
 }
 
-export function Comment() {
+export function Comments() {
   const { colorMode } = useColorMode();
   const { i18n } = useDocusaurusContext();
   return (
