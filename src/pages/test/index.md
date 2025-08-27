@@ -2,9 +2,9 @@
 title: Test
 ---
 
-import { Title } from '@site/src/pages/test/\_components';
+import { MDTitle } from '@site/src/components/laikit/markdown';
 
-<Title />
+<MDTitle title="Test" description="Tests for new website features" />
 
 $$
 \underline{\widehat{\dbinom{\odot_\vee\odot}{\raisebox{-8pt}{"}\ \wr\ \raisebox{-8pt}{"}}}}

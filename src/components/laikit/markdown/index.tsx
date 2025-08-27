@@ -1,6 +1,6 @@
 import Heading from '@theme/Heading';
 
-export function Title({ title, description }) {
+export function MDTitle({ title, description }) {
   return (
     <section className="margin-top--lg margin-bottom--lg text--center">
       <Heading as="h1">{title}</Heading>

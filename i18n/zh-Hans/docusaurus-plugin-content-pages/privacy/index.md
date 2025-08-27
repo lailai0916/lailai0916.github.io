@@ -2,9 +2,9 @@
 title: 隐私政策
 ---
 
-import { Title } from '@site/src/pages/privacy/\_components';
+import { MDTitle } from '@site/src/components/laikit/markdown';
 
-<Title title="隐私政策" description="您使用我们提供的服务，即表示您信赖我们对您的信息的处理方式。我们深知这项责任事关重大，因此一直致力于保护您的信息，并让您拥有控制权。" />
+<MDTitle title="隐私政策" description="您使用我们提供的服务，即表示您信赖我们对您的信息的处理方式。我们深知这项责任事关重大，因此一直致力于保护您的信息，并让您拥有控制权。" />
 
 ## 总则
 

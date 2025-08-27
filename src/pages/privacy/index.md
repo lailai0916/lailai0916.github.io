@@ -2,9 +2,9 @@
 title: Privacy Policy
 ---
 
-import { Title } from '@site/src/pages/privacy/\_components';
+import { MDTitle } from '@site/src/components/laikit/markdown';
 
-<Title title="Privacy Policy" description="When you use our services, you’re trusting us with your information. We understand this is a big responsibility and work hard to protect your information and put you in control." />
+<MDTitle title="Privacy Policy" description="When you use our services, you’re trusting us with your information. We understand this is a big responsibility and work hard to protect your information and put you in control." />
 
 ## Introduction
 
