@@ -141,7 +141,7 @@ export const TRAVEL_LIST: TravelItem[] = [
   {
     title: '2018-08',
     cardTitle: '🇯🇵 日本（北海道）',
-    cardDetailedText: '札幌、函馆、登别、洞爷湖、富良野（富田农场）、小樽',
+    cardDetailedText: '函馆、登别、洞爷湖、富良野（富田农场）、小樽、札幌',
   },
   {
     title: '2018-10',
