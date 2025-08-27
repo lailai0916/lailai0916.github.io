@@ -70,14 +70,21 @@ function Spark({ arr }: { arr: Beat[] }) {
   const last20 = [...arr]
     .sort((a, b) => toMs(a.time) - toMs(b.time))
     .slice(-20);
-  const h = 14, w = 70, n = last20.length;
+  const h = 14,
+    w = 70,
+    n = last20.length;
   const step = n > 1 ? w / (n - 1) : w;
   const pts = last20
     .map((b, i) => `${i * step},${Number(b.status) === 1 ? 2 : h - 2}`)
     .join(' ');
   return (
     <svg width={w} height={h} className={styles.spark} aria-hidden="true">
-      <polyline points={pts} fill="none" stroke="currentColor" strokeWidth="2" />
+      <polyline
+        points={pts}
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2"
+      />
     </svg>
   );
 }
@@ -95,7 +102,10 @@ export default function StatusPage(): JSX.Element {
       setLoading(true);
       const [confR, hbR] = await Promise.all([
         fetch(`${KUMA}/api/status-page/monitor`, { signal, cache: 'no-store' }),
-        fetch(`${KUMA}/api/status-page/heartbeat/monitor`, { signal, cache: 'no-store' }),
+        fetch(`${KUMA}/api/status-page/heartbeat/monitor`, {
+          signal,
+          cache: 'no-store',
+        }),
       ]);
       if (!confR.ok || !hbR.ok)
         throw new Error(`HTTP ${confR.status}/${hbR.status}`);
@@ -117,7 +127,9 @@ export default function StatusPage(): JSX.Element {
       setUpdatedAt(Date.now());
     } catch (e: any) {
       if (e?.name !== 'AbortError') {
-        setErr('加载失败（可能是未登录公开页或 CORS 未配置）：' + (e?.message ?? ''));
+        setErr(
+          '加载失败（可能是未登录公开页或 CORS 未配置）：' + (e?.message ?? '')
+        );
       }
     } finally {
       setLoading(false);
@@ -207,16 +219,30 @@ export default function StatusPage(): JSX.Element {
         <div className={styles.nameWrap}>
           <strong>{names[id] ?? `Monitor #${id}`}</strong>
           <span className={styles.metaSmall}>
-            {typeof last.ping === 'number' ? `${last.ping} ms` : (last.msg ?? '')}
-            {stats && <> · {stats.avg}ms avg / {stats.p90}ms p90</>}
+            {typeof last.ping === 'number'
+              ? `${last.ping} ms`
+              : (last.msg ?? '')}
+            {stats && (
+              <>
+                {' '}
+                · {stats.avg}ms avg / {stats.p90}ms p90
+              </>
+            )}
             {typeof certDays === 'number' && <> · Cert Exp.: {certDays} days</>}
-            {change && <> · 已持续 {Math.max(1, Math.round(change.durMs / 60000))} 分钟</>}
+            {change && (
+              <>
+                {' '}
+                · 已持续 {Math.max(1, Math.round(change.durMs / 60000))} 分钟
+              </>
+            )}
           </span>
         </div>
         <span className={styles.statusText}>
           {status}
           {typeof upPct === 'number' && (
-            <span className={styles.uptime}>· Uptime {(upPct * 100).toFixed(2)}%</span>
+            <span className={styles.uptime}>
+              · Uptime {(upPct * 100).toFixed(2)}%
+            </span>
           )}
         </span>
         <span className={styles.time}>
@@ -279,7 +305,8 @@ export default function StatusPage(): JSX.Element {
         )}
 
         <div className={styles.note}>
-          注：每 5 分钟自动刷新一次（遵守缓存）。如需展示私有监控，请在 Kuma 端开启公开状态页或处理 CORS。
+          注：每 5 分钟自动刷新一次（遵守缓存）。如需展示私有监控，请在 Kuma
+          端开启公开状态页或处理 CORS。
         </div>
       </main>
     </Layout>

@@ -32,334 +32,337 @@ import { Title } from '@site/src/pages/privacy/\_components';
 
 :::
 
-## Revision Strategy
+## 修订策略
 
-We reserve the right to modify, amend or update this policy at any time. The current version will always be posted on our Privacy Policy page.
-
-:::warning
-
-If you click the "Refresh" button in your browser and the "Last Updated" date remains the same, you can assume that there is no change to this policy.
-
-:::
-
-A change in the "Last Updated" date indicates that the policy has been updated or edited, and the updated or edited version replaces any previous version immediately after it is released.
-
-Browsers, Internet Service Providers (ISPs), CDNs, and other organizations or individuals may cache our pages for bandwidth savings or other reasons, in which case you should refresh the cache yourself to check for the latest privacy policy. If the content of the page caused by the cache does not match the actual content, it should be based on what we provide.
-
-## Interpretation and Definitions
-
-### Interpretation
-
-The words of which the initial letter is capitalized have meanings defined under the following conditions. The following definitions shall have the same meaning regardless of whether they appear in singular or plural.
-
-### Definitions
-
-- **Account** means a unique account created for You to access our Service or parts of our Service.
-- **We** (also referred to as either "**Us**" or "**Our**" in this policy) refers to the owner of the provided Services. For the purpose of the GDPR, "We" are the Data Controller.
-- **Cookies** are a small piece of data that the server sends to the user's browser and is stored at the user-side locally. It may contain an anonymous unique identifier that is carried and sent to the server the next time the browser re-initiates a request to the same server. Usually, it is used to tell the server whether different requests are from the same browser/user, such as keeping the user's login status.
-- **Customers** (also referred to as either "**Your**" or "**Your**" in this policy) are those who utilize the services. Under GDPR (General Data Protection Regulation), You can be referred to as the "**Data Subject**" or as the "**User**" as you are the individual using the Service.
-- **Data Controller** for the purposes of the GDPR (General Data Protection Regulation), refers to "We" as the legal person which alone or jointly with others determines the purposes and means of the processing of the Personal Information.
-- **End-Users** are who interact with our Service through the websites of our Integrators.
-- **Integrators** are those who incorporate our Service into their website or service.
-- **Personal Information** (also referred to as "**Personal Data**" in this policy), is any information recorded in an electric form or other forms that can identify an individual itself or when it is associated with other information. If the subject of several acts can be identified as the same person by a single piece of information (with or without simple assistance), then the information will be considered as Personal Information, and vice versa.
-- **Personal Identifiable Information** is one type of Personal Information. If it is possible to directly identify, contact or accurately locate the corresponding single specific natural person through a single piece of information (without any assistance), then the information will be considered as Personal Identifiable Information, and vice versa. Personal Identifiable Information includes, without limitation, the individual's name, date of birth, identification card number or SSN, biometric identifier (e.g. photographs, fingerprints, palm prints, iris, etc.), address, telephone number, precise coordinates, etc.
+我们保留在任何时间修改，修订或更新本政策的权利。当前生效的版本将会始终发布在我们的页面上。
 
 :::warning
 
-Your IP address will be desensitized and obscured during the process of de-identified, anonymized, desensitized and aggregated, thus we treat it as personal information rather than personal identifiable information.
+您应该定期访问此网页，使用浏览器上的「刷新」按钮，检查本政策的任何修改。如果在点击浏览器的「刷新」按钮后，「最后更新」日期保持不变，可以假设，没有更改。
 
 :::
 
-- **Non-personal Information** is any information recorded but cannot be directly linked to any particular individual by itself. Usually, this kind of information will be aggregated into categories, thus it is almost impossible to use this information to restore any personally relevant data about a particular individual.
+「最后更新」日期的变化表示该政策已被更新或编辑，更新或编辑的版本在发布后立即取代先前任何版本。
+
+浏览器、运营商、CDN、和其他组织或个人可能出于节省带宽或其他因素缓存我们的页面，在这种情况下导致您看到的页面内容和实际不符，应当以我们提供的为准。
+
+## 解释和定义
+
+### 解释
+
+下列列表中以粗体显示的词语，其含义是在以下条件下定义的。以下定义，无论以单数还是复数出现，都具有相同的含义。
+
+### 定义
+
+- **账号** 指为您创建的独特账户，用于访问我们的服务或我们服务的部分内容。
+- **我们**（在本协议中亦可称为「**我**」、「**我的**」或「**我们的**」）是指为您提供服务的所有者。
+- **Cookies**（在本协议中亦可称为「**浏览器元数据**」）是服务器发送到用户浏览器并保存在本地的一小块数据，可能包含匿名的唯一标识符，它会在浏览器下次向同一服务器再发起请求时被携带并发送到服务器上。通常，它用于告知服务端两个请求是否来自同一浏览器或用户，如用于保持用户的登录状态。
+- **顾客**（在本协议中亦可称为「**你**」、「**您**」、「**你的**」或「**您的**」）指利用我们服务的个人、公司或组织。根据 GDPR（通用数据保护条例），您可以被称为「**数据主体**」或「**用户**」，因为您是使用本服务的个人。
+- **数据控制者** 就 GDPR（通用数据保护条例）而言指单独或与他人共同决定处理个人信息的目的和方式的法人。
+- **终端用户** 通过我们的集成商的网站与我们的服务互动的个人、公司或组织。
+- **集成商** 是指那些将我们提供的服务纳入其网站或服务的个人、公司或组织。
+- **个人信息**（在本协议中亦可称为「**Personal Information**」或「**Personal Data**」），指以电子形式或其他形式记录的、可用于识别或联系特定个人的数据。如果仅通过某一项信息（或加以简单的辅助）就可以确定数件行为的主体为同一人，那么这项信息就是个人信息，反之则不是个人信息。
+- **个人身份信息**（在本协议中亦可称为「**Personal Identifiable Information**」）是一种个人信息。如果仅通过某一项信息（不加以任何辅助）就可以直接辨识、联系或准确找到相应的单一特定自然人，那么这项信息就是个人身份信息，反之则不是个人身份信息。个人身份信息包括但不限于真实姓名，出生日期，身份证号码或社会保障号码，生物识别信息（如照片，指纹，掌纹，虹膜，皮下毛细血管分布等），生活地址，电话号码，车牌号码，精确的 GPS 经纬度坐标等。
+
+:::warning
+
+您在使用我们提供的服务时的 IP 地址，在我们收集、归类和汇总时会被去身份化、匿名化、去敏和汇总，因此我们将其视为个人信息而非个人身份信息。
+
+:::
+
+- **非个人信息**（在本协议中亦可称为「**Non-personal Information**」），指以任何形式记录的，但是其本身无法与任何特定自然人建立直接联系的数据。通常情况下，这些数据会被归类和汇总，因此，几乎不可能通过这些数据来还原出有关特定个人的任何相关信息。
 
 :::tip
 
-Notes that the use of Non-personal Information in combination with Personal Information will be treated as the use of Personal Information.
+将非个人信息与个人信息结合使用时，此类信息会被我们视为个人信息。
 
 :::
 
-- **Service** (also referred to as "**The Services We Provided**" in this policy) include, without limitation, websites, online services, interactive applications, and email.
-- **Unique Identifier**, (sometimes called a unique ID or **UUID**) is a string of characters that is incorporated into a device by the manufacturer or server and can be used to uniquely identify the device or user.
-- **Usage Data** (also referred to as "**Analytics Information**" in this policy) refers to data collected automatically, either generated by the use of the Service or from the Service infrastructure itself (for example, the duration of a page visit). Typically we treat the information as Personal Information.
+- **服务**（在本协议中亦可称为「我们提供的服务」），包括但不限于网站，在线服务，交互式应用程序，电子邮件。
+- **唯一标识符**（在本协议中亦可称为「**Unique Identifier**」或「**UUID**」）是指一串字符，可用于以独有方式标识相应设备。通常情况下由设备制造者编入用户的设备，或由服务器发送到浏览器，用于分辨设备或用户。
+- **使用数据**（在本协议中亦可称为「**分析信息**」）由于使用本服务、或来自本服务基础设施本身（例如，页面访问的持续时间）时自动收集的数据。一般的，这部分信息被我们视为个人信息。
 
-## Information We Collect
+## 我们收集的信息
 
-We collect information from individuals who interact with our Sites and Services, including Integrators, Customers, and End-Users.
+我们从与我们的网站和服务互动的个人收集信息，包括那些将我们的服务纳入其网站的人（集成商），那些利用服务进行数据标记的人（客户），以及通过我们的集成商的网站与我们的服务互动的终端用户（终端用户）。
 
-We collect the following categories of information:
+我们收集以下类型的信息：
 
-### Personal Information
+### 个人信息
 
-We collect from our current and prospective Integrators and Customers when they give it directly to us (for example, by filling in a form when signing up for an account, or applying to receive email notifications from us). We may also verify the identity of our Integrators and Customers by comparing personal information against third-party databases or official legal documents.
+当我们的现有和潜在的集成商和客户直接向我们提供个人信息时（例如，通过在注册账户时填写表格，或申请接收我们的电子邮件通知），我们会收集这些信息。我们还可能通过将个人信息与第三方数据库或官方认可的法律文件进行比较来核实我们的集成商和客户的身份。
 
-### Analytics Information
+### 分析信息
 
-Information collected automatically as a result of an Integrator’s or Customer's use of the Sites or the Services. Some Analytics Information is collected on our behalf by third parties we engage for that purpose, and some Analytics Information is collected through a variety of tracking technologies, including cookies:
+由于集成商或客户使用网站或服务而自动收集的信息。有些分析信息是由我们聘请的第三方代表我们收集的，有些分析信息是通过各种跟踪技术收集的，包括浏览器元数据：
 
-- The referrer, frequency, date and the time of your accessing, the clickstream data, the time you spent, the browser you use
-- Device brand, vendor, model, factor, screen size and operating systems.
-- Network operator and **location in province level**
-- Application or website startup and loading speed, critical operation timing
-- Application or website critical errors and related error information that **doesn't include any personal information**
+- 引荐来源、访问的频率、访问日期和时间、行为流、花费的时间、使用的浏览器
+- 设备品牌、供应商、型号、屏幕尺寸和操作系统
+- 网络运营商和 **仅精确到大洲或省级的地理位置**
+- 应用程序和网站的启动、加载速度，关键的运行计时
+- 不同的内容分发网络服务提供商在您所在的网络环境下的性能数据
+- **不包含个人信息的** 应用程序与网站的严重错误和相关错误信息
 
 :::warning
 
-According to the definition of "Personal Information" and "Non-personal Information", this information **will not be considered as Personal Information**.
+根据我们对「个人信息」的定义，上述数据 **不会被视为个人信息**。
 
 :::
 
 :::tip
 
-If we need certain files for investigating some specific application errors, we will contact you. Files won't be uploaded automatically unless you permitted.
+如果我们需要某些信息来调查某些特定的应用程序的特定错误，我们会与您联系。在得到您的授权之前，相关信息不会被上传。
 
 :::
 
 :::warning
 
-Besides that, like most Internet services, we also automatically collect certain information, such as your IP address and HTTP request headers. Usually, we use this information to protect our services from being infringed. For example, we will use this information in our Web Application Firewall. Usually, this kind of information will be stored log files and will be deleted within the certain time limit.
+除此之外，如同大多数互联网服务一样，我们的服务器也会自动收集某些信息，如您的 IP 地址和 HTTP 请求头。这些信息一般会存储在日志文件中，并在收集后规定时间之内删除。
 
 :::
 
-### Personal Identifiable Information
+### 个人身份信息
 
 :::tip
 
-We **do not knowingly, actively and proactively and** collect **any Personal Identifiable Information** through the Service we provide. **Never.**
+我们 **不会在知情的情况下积极和主动地** 通过我们提供的服务来收集 **任何个人身份信息。永远不会。**
 
 :::
 
-## How we collect your information
+## 我们如何收集您的信息
 
 :::danger
 
-The services we provided might use Cookies and other technologies such as pixel tags, web beacons, HTML5 fingerprint, TLS Handshake fingerprint, etc.
+我们提供的服务可能会使用 Cookies 和其他技术，如 Pixel Tags、浏览器信标、HTML5 指纹、TLS 握手指纹等。
 
 :::
 
-We use those technologies to help us better understand the behavior of our users, distinguish between natural persons and automated software, to tell us which parts of our website are being viewed.
+这些技术帮助我们更好地了解用户的行为（如用户浏览了我们网站的哪些部分），以及区分自然人和自动化程序。
 
-### Cookies or Browser Cookies
+### Cookie 或浏览器元数据
 
-You can instruct Your browser to refuse all Cookies or to indicate when a Cookie is being sent. If you would prefer to block cookies or other tracking technologies, most browsers and mobile devices all you to change your settings so as to notify you when you receive cookies or other tracking technologies are being used, and to choose whether or not to accept/allow it. Most browsers also allow you to disable or delete existing cookies or to automatically reject future cookies. You may also use third-party tools, including browser plug-ins and extensions, to control your cookie preferences. Note, however, that if you disable all cookies, some portions of our Sites may not function properly. Unless you have adjusted Your browser setting so that it will refuse Cookies, our Service may use Cookies.
+您可以指示您的浏览器拒绝所有的 Cookies，或在发送 Cookies 时进行提示。如果您希望阻止 Cookie 或其他跟踪技术，大多数浏览器和移动设备都可以改变您的设置，以便在您收到 Cookie 或其他跟踪技术被使用时通知您，并选择是否 接受/允许 它。大多数浏览器还允许你禁用或删除现有的 Cookies，或自动拒绝未来的 Cookies。你也可以使用第三方工具，包括浏览器插件，来控制你的 Cookies 偏好。但是，请注意，如果您禁用所有cookies，我们网站的某些部分可能无法正常运行。除非您已经调整了您的浏览器设置，使其拒绝接受 Cookies，否则我们的服务可能会使用 Cookies。
 
 ### Flash Cookies
 
-Certain features of our Service may use local stored objects (or Flash Cookies) to collect and store information about Your preferences or Your activity on our Service.
+我们服务的某些功能可能使用本地存储对象（或 Flash Cookies）来收集和存储有关您的偏好或您在我们服务上的活动的信息。
 
 ### Web Beacons
 
-Certain sections of our Service and our emails may contain small electronic files known as web beacons (also referred to as clear gifs, pixel tags, and single-pixel gifs) that permit us, for example, to count users who have visited those pages or opened an email and for other related website statistics.
+我们服务的某些部分和我们的电子邮件可能包含被称为 Web Beacons（网络信标）的小型电子文件（如像素标签、浏览器信标），这些技术允许我们计算访问过这些网页或打开过电子邮件的用户，并用于其他相关的网站统计。
 
-### Third-Party Analytics and Tracking Technologies
+### 第三方分析和跟踪技术
 
-As discussed above, we (and our third-party vendors) collect Analytics Information in part through the use of cookies, web beacons, and other tracking technologies. In some instances, we work with third-party vendors to employ cookies for the purposes of collecting Analytics Information.
+如上所述，我们（和我们的第三方供应商）部分地通过使用 Cookies、Web Beacons 和其他跟踪技术来收集分析信息。在某些情况下，我们与第三方供应商合作，为收集分析信息的目的而使用 Cookies。
 
-- We use Sentry to collect debugging data when a user experiences an error. For information on how Sentry collects and processes data, please see [Sentry's Privacy Policy](https://sentry.io/privacy/).
-- We use Cloudflare to optimize our web traffic and protect us from online attack. For information on how Cloudflare collects and processes data, please see [Cloudflare's Privacy Policy](https://www.cloudflare.com/privacypolicy/).
-- We use Google Analytics to track and report website traffic, and monitor the use of our Service. This data might be shared with other Google services. Google may use the collected data to contextualize and personalize the ads of its own advertising network. For information on how Google uses the collected data, please see [Google's Privacy Policy](https://policies.google.com/privacy).
+- 当用户遇到错误时，我们使用 Sentry 来收集调试数据。关于 Sentry 如何收集和处理数据的信息，请参见 [Sentry 的隐私政策](https://sentry.io/privacy/)。
+- 我们使用 Cloudflare 来优化我们的网络传输、保护我们免受在线攻击。关于 Cloudflare 如何收集和处理数据的信息，请参见 [Cloudflare 的隐私政策](https://www.cloudflare.com/privacypolicy/)。
+- 我们使用 Google Analytics 来收集和分析我们的网站的使用情况，监测我们服务的使用情况。这些数据可能会被 Google 用于对其旗下的广告网络服务进行情景化和个性化处理。关于 Google Analytics 如何使用数据的信息，请参见 [Google 的隐私政策](https://policies.google.com/privacy)。
 
-## How We Transmit, Process, Store and Protect Information Collected
+## 我们如何传输、处理、存储和保护收集的信息
 
 :::tip
 
-The online services we provided use encryption technologies such as Transport Layer Security (TLS) to protect collected information during transmission so that it won't be theft by the Man-in-the-Middle.
+我们提供的在线服务会使用加密技术，如传输层安全协议 (TLS) ，在传输过程中保护我们收集到的信息不被中间人获取。
 
-The information we collected will be aggregated into categories. Any information that is not required for those purpose described in the policy will be deleted, de-identified, anonymized, or desensitized during the aggregation process.
+我们收集的分析信息将被归类和汇总，以便用于在本条款中描述的用途。
 
-Analytical information will be stored in computer systems with limited, authorization-required access rights that are protected by mathematical algorithmic encryption and/or physical security measures that cannot be cracked in modern computer systems in a short period of time. Among the facilities. We store the data in encrypted form, as we use third-party storage services.
+任何非分析信息和任何其它非审核和研究用途所需的信息（如完整的、未经过去敏和模糊化的 IP 地址）将在汇总阶段被删除、去身份化、匿名化或去敏。
+
+分析用途的信息将被存储在具有有限的，需要授权的访问权限的计算机系统中，这些系统受到数学算法加密和（或）物理安全措施的保护，在我们使用第三方提供的存储服务时也是如此。这些措施在现代计算机系统中不可能在短时间内被破解。
 
 :::
 
-Unfortunately, no security measures are 100% foolproof, and as such no network or system (including ours) can be guaranteed to be 100% secure against destruction, loss, alteration, unauthorized disclosure of, or access to the information we collect and store. If you believe your information may not be secure for any reason, please contact us immediately at: `secure <{a}> lailai.one`
+不幸的是，没有任何安全措施是 100% 万无一失的，因此，没有任何网络或系统（包括我们的）可以保证 100% 防止我们收集和储存的信息被破坏、丢失、更改、未经授权的披露或访问。如果您认为您的信息可能因任何原因不安全，请立即通过邮件 `secure <{a}> lailai.one` 与我们联系。
 
 :::warning
 
-We will store the information for the purposes described in this Privacy Policy. Usually, this information will be deleted after the purpose has been fulfilled or unless being required by law or regulation.
+我们将会在实现本隐私策略所述目的的的期间内保留收集到的信息。通常这些信息会在收集此类信息的目的达成以后删除，除非法律或法规要求储存更长的时间。
 
 :::
 
-## How We Use Information
+## 我们如何使用你的信息
 
-We generally use this information for internal purposes such as auditing, data analysis, research, etc.; to protect our services from intrusion; to administer the website; to understand user behavior on the website; to understand and analyze trends; to gather information about the overall audience characteristics of our user base; to create, develop and improve the services we provide. Specifically:
+- 通常我们将这些信息用于审计、分析、研究等内部目的；来保护我们的服务不被入侵；管理网站；了解网站上的用户行为；了解和分析趋势；收集用户群的整体受众特征信息；创建、开发和改善我们提供的服务。具体地：
 
-- To administer Integrator and Customer accounts and provide the Service. We use Personal Information in order to associate specific accounts with Integrators and Customers and provide them the Service, respond to requests or inquiries, provide support or technical assistance, and facilitate payments.
-- To improve to Site and the Service. We use Analytics Information to improve our existing and develop new services and offerings and to customize existing and future product offerings.
-- To derive market insights. We use Analytics Information to analyze the market and conduct business analyses related to the Site and our Services, and for other research purposes.
-- To secure our services and systems. We use Analytics Information to secure our systems by identifying potential threats and vulnerabilities and to otherwise protect the information we collect.
-- For any legitimate business purpose.
-
-:::tip
-
-Before such information is used for this purpose, it will be deleted,de-identified, anonymized, desensitized, categorized, and aggregated in ways described above that it cannot be reasonably tied to any individual.
-
-:::
+- 为了管理集成商和客户的账户并提供服务。我们使用个人信息是为了将特定的账户与集成商和客户联系起来，并向他们提供服务，对请求或查询作出回应，提供支持或技术援助，或提供便捷的支付方式。
+- 为了改进网站和服务。我们使用分析信息来改进我们现有的和开发新的服务和产品，并定制现有和未来的产品。
+- 为了获得市场洞察力。我们使用分析信息来分析市场，进行与本网站和我们的服务有关的业务分析，并用于其他研究目的。
+- 为确保我们的服务和系统的安全。我们使用分析信息，通过识别潜在的威胁和漏洞来保护我们的系统，并以其他方式保护我们收集的信息。
+- 为了任何合法的商业目的。
 
 :::tip
 
-We **do not use the information we collect for content and advertising**.
-
-:::
-
-## How We Share Information
-
-We share or disclose Personal Information in the following cases:
-
-- Upon direct request from an Integrator to identify the fraud risk of a specific network request or IP address, or otherwise where specific consent was given.
-- With vendors, we engage to provide essential aspects of the Sites and the Service, such as data storage, hosting, and Analytics, and only for those purposes.
-- As necessary to comply with applicable law, including written requests from government agencies or law enforcement, and otherwise to public and private entities in order to protect the rights, privacy, safety, or property of you, us, or others.
-
-:::tip
-
-We would exhaust our legal remedies before complying with such a request, to minimize the information we have to share.
+在出于此目的而使用的这些信息之前，我们会按照前文所述的方式进行删除、去身份化、匿名化、去敏、归类和汇总，从而无法合理地与任何个体联系起来。
 
 :::
 
 :::tip
 
-**We have never implemented any "back doors" or other access methods in the services we provided. We do not knowingly, actively and proactively disclose any information to any government. Never.**
+我们 **不会将收集到的信息用于任何内容和广告宣传**。
 
 :::
 
-- With others for any legitimate business purpose, provided the information is deleted, de-identified, anonymized, desensitized, categorized, and aggregated in ways that it cannot be reasonably tied to any individual.
+## 我们如何分享信息
+
+我们在以下情况下分享或披露个人信息：
+
+- 应集成商的直接要求，以确定特定请求或 IP 地址的欺诈风险；或在顾客给予具体同意的情况下。
+- 与我们聘用的供应商提供网站和服务的基础设施，如数据存储、托管和分析，并且仅用于这些目的。
+- 为遵守适用的法律，包括来自政府或执法机构的书面要求，以及为保护您、我们或他人的权利、隐私、安全或财产而向公共和私人实体提出的其他要求。
 
 :::tip
 
-We do not share any information with third parties for any content, marketing purposes, or advertising purposes.
+在遵守此类请求之前，我们会用尽我们的法律补救措施，尽可能最小化我们不得不分享的信息
 
 :::
 
-## Warranty Disclaimers
+:::tip
+
+**我们从未在我们提供的服务中植入任何「后门」或者任何其它访问方式。我们不会在知情的情况下积极和主动地向任何政府透露任何信息。永远不会。**
+
+:::
+
+- 出于任何合法的商业目的与他人分享，前提是这些信息被删除、去身份化、匿名化、去敏、分类和汇总，从而无法合理地与任何个体联系起来。
+
+:::tip
+
+我们不会出于任何内容、营销用途和广告宣传的目的与第三方共享任何信息。
+
+:::
+
+## 担保免责声明
 
 :::warning
 
-To the fullest extent permitted by law, the Site and the Service (and any other associated services, information, data, features, and other content or materials) are provided on an “as-is” and “as-available” basis. To the fullest extent permitted by law, IMI excludes all warranties, including but not limited to the implied warranties of merchantability, fitness for a particular purpose, and non-infringement.
+在法律允许的最大范围内，本网站及服务（以及任何其他相关服务、信息、数据、功能及其他内容或材料）均以「现状」及「可用」为基础提供。在法律允许的最大范围内，我们排除了所有保证，包括但不限于对适销性、特定用途的适用性和非侵权性的隐含保证。
 
 :::
 
-## Data Retention
+## 数据保留
 
-We store your Personal Data securely throughout the life of your account with us. We will only retain your Personal Data for as long as necessary to fulfill the purposes for which we collected it, including for the purposes of satisfying any legal, accounting, or reporting obligations or resolving disputes. The criteria we use to determine storage periods include the applicable contractual provisions that are in force, legal statutory limitation periods, applicable regulatory requirements, and industry standards.
+在您与我们的账户存续期间，我们安全地保存您的个人资料。我们仅在完成收集目的所需的时间内保留您的个人数据，包括为满足任何法律、会计或报告义务或解决争端的目的。我们用于确定存储期限的标准包括现行的适用合同条款、法定时效期限、适用的监管要求和行业标准。
 
-While retention requirements vary by jurisdiction, information about our typical retention periods for different aspects of your Personal Information are described below.
+虽然保留要求因管辖区而异，但我们对您的个人数据的不同方面的典型保留期的信息描述如下。
 
-Contact information for marketing purposes is retained on an ongoing basis until you un-subscribe. Thereafter we will add your details to our suppression list indefinitely. Email information collected from Accessibility Users will never be used for marketing purposes.
+用于营销目的的联系信息将持续保留，直到您取消订阅。此后，我们将把您的详细资料无限期地添加到我们的抑制名单中。从无障碍用户处收集的电子邮件信息将永远不会被用于营销目的。
 
-Records of communications with you (e.g. support tickets opened via email or Twitter) may be kept indefinitely.
+与您沟通的记录（如通过电子邮件或通过 Twitter 联系）可能会被无限期地保存。
 
-Information collected via technical means such as Cookies, webpage counters and other analytics tools is discarded as soon as practical, but may be kept for a limited period of up to one year from expiry of the cookie, typically in a de-identified, anonymized, desensitized, categorized and aggregated form unless we detect potential abuse of our service.
+通过技术手段（如 Cookies、网页计数器和其他分析工具）收集的信息将在可行的情况下尽快丢弃，但可能会在 Cookies 到期后的一年内有限地保存，通常是以去身份化、匿名化、去敏、分类和汇总的形式保存，除非我们发现我们的服务可能被滥用。
 
 :::warning
 
-If we detect potential abuse of our service, we will retain that information to aid us in preventing future abuse. We are unable to link this information to you, your household, an IP address, or any personal information based on the information stored.
+如果我们发现我们的服务可能被滥用，我们将保留这些信息以帮助我们防止未来的滥用。我们无法将这些信息与您、您的家庭、IP 地址或任何我们存储的其它个人信息联系起来。
 
 :::
 
-## Cookie Policy (How We Use Cookies and Other Technologies)
+## Cookie 政策（我们对 Cookie 和其他技术的使用）
 
-### Type of Cookies We Use
+### 我们使用的 Cookies
 
-Cookies can be "Persistent" or "Session" Cookies. Persistent Cookies remain on your personal computer or mobile device when You go offline, while Session Cookies are deleted as soon as You close your web browser.
+Cookies 可以是「持久性 Cookies」或「会话 Cookies」。当您下线时，持久性 Cookies 仍保留在您的个人电脑或移动设备上，而会话 Cookies 则在您关闭网络浏览器后被立即删除。
 
-We use both session and Persistent Cookies for the purposes set out below:
+处于以下目的，我们同时使用会话和持久性 Cookies：
 
-#### Necessary / Essential Cookies
+#### 必要的 / 基本的 Cookies
 
-- Type: Session Cookies / Persistent Cookies
-- Administered by: Us
+- 类型：会话 Cookies 和持久性 Cookies
+- 管理者：我们
 
-These Cookies are essential to provide You with services available through the Website and to enable You to use some of its features (E.g. Your Login Status). They help to authenticate users and prevent fraudulent use of your accounts. Without these Cookies, the services that You have asked for cannot be provided, and We only use these Cookies to provide You with those services.
+这些 Cookies 对于向您提供本网站的服务以及使您能够使用本网站的某些功能是必不可少的（例如，您的「登录状态」）。它们有助于验证用户的身份，防止您的账户被冒用。没有这些 Cookies，就无法提供您所要求的服务，我们只使用这些 Cookies 为您提供这些服务。
 
-#### Functionality Cookies
+#### 功能性的 Cookies
 
-- Type: Persistent Cookies
-- Administered by: Us
+- 类型：持久性 Cookies
+- 管理者：我们
 
-These Cookies allow us to remember choices You make when You use the Website, such as remembering your login details or language preference. The purpose of these Cookies is to provide You with a more personal experience and to avoid You having to re-enter your preferences every time You use the Website.
+这些 Cookies 使我们能够记住您在使用本网站时做出的选择，例如记住您的登录信息或语言偏好。这些 Cookies 的目的是为您提供更多的个人体验，避免您在每次使用本网站时都要重新输入您的偏好。
 
 :::warning
 
-We considered the information collected through cookies and other technologies as Non-personal Information, as it is impossible for others to restore any personally relevant data about you through it.
+我们将通过 Cookie 和其他技术收集的信息视为非个人信息，因为他人无法使用这些信息还原出您的任何个人相关数据。
 
 :::
 
 :::tip
 
-We will not use cookie technology to share any of your personal information to any third-party, or to assist third parties in collecting any of your personal information.
+我们不会使用 Cookie 技术向任何第三方披露、或辅助第三方收集任何您的个人信息。
 
 :::
 
-#### Tracking and Performance Cookies
+#### 用于追踪和性能分析的 Cookies
 
-- Type: Persistent Cookies
-- Administered by: Third-Parties Vendors
+- 类型：持久性 Cookies
+- 管理者：第三方供应商
 
-These Cookies are used to track information about traffic to the Website and how users use the Website. The information gathered via these Cookies may directly or indirectly identify you as an individual visitor. This is because the information collected is typically linked to a pseudonymous identifier associated with the device you use to access the Website. We may also use these Cookies to test new advertisements, pages, features, or new functionality of the Website to see how our users react to them.
+这些 Cookies 用于跟踪网站的流量和用户如何使用网站的信息。通过这些 Cookies 收集的信息可能会直接或间接地识别你作为一个单独的访问者。这是因为所收集的信息通常与您用来访问网站的设备相关的假名标识符相联系。我们也可能使用这些 Cookies 来测试网站的新广告、网页、特征或新功能，以了解我们的用户对它们的反应。
 
 :::tip
 
-We have taken every possible measure to avoid the usage of cookies for tracking and performance analysis purposes. We also have taken every possible measure to prevent third-party vendors from setting cookies for such purposes on your browser or device
+我们已经尽可能采取一切手段避免使用 Cookie 用于追踪和分析用途。同时我们也已经尽可能采取一切手段避免第三方供应商将用于此用途的 Cookie 设置到你的浏览器或者设备中
 
 :::
 
-### Your Choices Regarding Cookies
+### 您对 Cookies 的选择
 
-If You prefer to avoid the use of Cookies on the Website, first You must disable the use of Cookies in your browser and then delete the Cookies saved in your browser associated with this website. You may use this option for preventing the use of Cookies at any time.
+如果您希望避免在网站上使用 Cookies，首先您必须在您的浏览器中禁止使用 Cookies，然后删除保存在您的浏览器中与本网站有关的 Cookies。您可以在任何时候使用这个选项来阻止 Cookies 的使用。
 
-If You do not accept Our Cookies, You may experience some inconvenience in your use of the Website and some features may not function properly.
+如果您不接受我们的 Cookies，您在使用本网站时可能会遇到一些不便，一些功能可能无法正常运行。
 
-If You'd like to delete Cookies or instruct your web browser to delete or refuse Cookies, please visit the help pages of your web browser.
+如果您想删除 Cookies 或指示您的网络浏览器删除或拒绝 Cookies，请访问您网络浏览器的帮助页面。
 
-- For the Chrome web browser, please visit [this page from Google](https://support.google.com/accounts/answer/32050).
-- For the Internet Explorer web browser, please visit [this page from Microsoft](https://support.microsoft.com/kb/278835)
-- For the Firefox web browser, please visit [this page from Mozilla](https://support.microsoft.com/kb/278835)
-- For the Safari web browser, please visit [this page from Apple](https://support.apple.com/guide/safari/manage-cookies-and-website-data-sfri11471/mac)
-- For any other web browser, please visit your web browser's official web pages.
+- 对于 Chrome 浏览器，请访问 [Google 提供的页面](https://support.google.com/accounts/answer/32050)。
+- 对于 Internet Explorer 浏览器, 请访问 [Microsoft 提供的页面](https://support.microsoft.com/kb/278835)。
+- 对于 Firefox 浏览器, 请访问 [Mozilla 提供的页面](https://support.microsoft.com/kb/278835)。
+- 对于 Safari 浏览器, 请访问 [Apple 提供的页面](https://support.apple.com/guide/safari/manage-cookies-and-website-data-sfri11471/mac)。
+- 对于其它浏览器, 请访问你的浏览器提供的支持页面。
 
-Flash Cookies are not managed by the same browser settings as those used for Browser Cookies. For more information on how You can delete Flash Cookies, please read "Where can I change the settings for disabling, or deleting local shared objects?" available on [Adobe's website](https://helpx.adobe.com/flash-player/kb/disable-local-shared-objects-flash.html#main_Where_can_I_change_the_settings_for_disabling__or_deleting_local_shared_objects_).
+Flash Cookies 与浏览器 Cookies 的并不共享设置的管理。关于您如何删除 Flash Cookies 的更多信息，请前往 [Adobe 的网站](https://helpx.adobe.com/flash-player/kb/disable-local-shared-objects-flash.html#main_Where_can_I_change_the_settings_for_disabling__or_deleting_local_shared_objects_) 阅读「我在哪里可以改变禁用或删除本地共享对象的设置？」。
 
-## Personal Information from Children
+## 来自儿童的个人信息
 
 :::tip
 
-Our Sites and Service are not directed to children under the age of 13 and we do not knowingly collect Personal Information from children under the age of 13, although certain third-party vendors that we use, or certain websites that we link to may do so.
+我们的网站和服务不针对 13 岁以下的儿童，我们不会有意收集 13 岁以下儿童的个人信息，尽管我们使用的某些第三方服务商或链接到的某些第三方网站可能会这样做。
 
 :::
 
-These third-party websites have their own terms of use and privacy policies and we encourage parents and legal guardians to monitor their children's Internet usage and instruct their children to never provide information on other websites without their permission.
+这些第三方网站有自己的使用条款和隐私政策，我们鼓励家长和法定监护人监督其子女的互联网使用情况，并指示其子女在未经其许可的情况下不要在其他网站上提供信息。
 
 :::tip
 
-If we learn that we have collected Personal Information of a child under the age of 13, we will take reasonable steps to delete such information from our files as soon as is practicable, unless we have a legal obligation to retain it. Please contact us through `secure <{a}> lailai.one` if you believe we have any information from or about a child under the age of 13.
+如果我们得知我们收集了 13 岁以下儿童的个人信息，我们将采取合理措施，尽快从我们的文件中删除这些信息，除非我们有法律义务保留它们。如果您认为我们有任何来自 13 岁以下儿童或与之有关的信息，请通过 `secure <{a}> lailai.one` 联系我们。
 
 :::
 
 :::tip
 
-We do not share the personal information of Consumers We actually know are less than 16 years of age, even if We already receive affirmative authorization (the "right to opt-in") from either the Consumer who is between 13 and 16 years of age, or the parent or guardian of a Consumer less than 13 years of age. And consumers may opt-out of future sales at any time. To exercise the right to opt-out, You (or Your authorized representative) may submit a request to Us by contacting Us.
+即使我们收到 13 至 16 岁的顾客，或未满 13 岁的顾客的父母或监护人的肯定授权（「选择加入权」），我们依然不会分享我们实际知道的未满 16 岁的顾客的个人信息。顾客也可以在任何时候选择退出未来的分享。要行使退出的权利，您（或您的授权代表）可以通过联系我们向我们提交请求。
 
 :::
 
-## Cross-Border Data Transfer
+## 跨境数据传输
 
-Please be aware that your personal data will be transferred to, processed, and stored in the United States. Data protection laws in the U.S. may be different from those in your country of residence. You consent to the transfer of your information, including personal information, to the U.S. as set forth in this Privacy Policy by visiting our Sites or using our Service.
+请注意，您的个人数据将被转移到美国，并在美国处理和储存。美国的数据保护法可能与您居住国的法律不同。通过访问我们的网站或使用我们的服务，您同意将您的信息，包括个人信息，按照本隐私政策的规定转移到美国。
 
-## Use Your Personal Information for New Purposes
+## 为新的目的而使用你的个人信息
 
-We may use your personal information for reasons not described in this Privacy Policy, where we are permitted by law to do so and where the reason is compatible with the purpose for which we collected it. If we need to use your personal information for an unrelated purpose, we may notify you and explain the applicable legal basis for that use. If we have relied upon your consent for a particular use of your personal information, we may seek your consent for any unrelated purpose and allow you to terminate your use of the service at that time if you object.
+在法律允许的情况下，我们可以将您的个人信息用于本隐私政策中并未描述、但与我们收集信息的目的相符的原因。如果我们需要将您的个人信息用于不相关的目的，我们可能会通知您并解释该用途的适用法律依据。如果我们在使用您的特定个人信息时需要依赖您的同意，在征求您的同意时我们可以使用任何不相关的目的，并在您反对时终止对服务的使用。
 
-## Do Not Sell My Personal Information
+## 请勿销售我的个人信息
 
 :::tip
 
-You have the right to opt-out of the sale of Your personal information. However, we do not, and will never sell your personal information. So You don't have to send request to Us.
+您有权利选择不出售您的个人信息。然而，我们不会，也永远不会出售您的个人信息。因此，您不必向我们发出请求。
 
 :::
 
-## Notice to California Residents
+## 致加利福尼亚州居民的通知
 
-This section provides additional details about the personal information we collect about California consumers and the rights afforded to them under the California Consumer Privacy Act or "CCPA".
+本节提供有关我们收集的加州消费者的个人信息以及根据《加利福尼亚州州消费者隐私法》或 「CCPA」赋予他们的权利的额外细节。
 
-For the categories of personal information we have collected from you in the preceding 12 months, please see the sections above. We collect this information for the business and commercial purposes described above. In the preceding 12 months, we have shared the following categories of information with third parties for a business purpose:
+关于我们在过去 12 个月内从您那里收集的个人信息的类别，请参见上文。我们收集这些信息是为了上述中所描述的业务和商业目的。在过去的 12 个月里，我们出于商业目的与第三方共享以下类别的信息。
 
 |       Category of Personal Information        |                                        Examples of Personal Information Shared                                        | Categories of Third-Party Recipients |
 | :-------------------------------------------: | :-------------------------------------------------------------------------------------------------------------------: | :----------------------------------: |
@@ -367,19 +370,19 @@ For the categories of personal information we have collected from you in the pre
 |            Commercial information             |                          Records of products or services purchased, obtained, or considered                           |          Service Providers           |
 | Internet or other electronic network activity |            Information on a consumer's interaction with an internet website, application, or advertisement            |          Service Providers           |
 
-We do not "sell" (as this term is defined in the CCPA) the personal information we collect. Please refer to the section above for more information regarding the types of third-party cookies, if any, that we use.
+我们不会「出售」（按照 CCPA 中的定义）我们收集的个人信息。请参阅上文了解有关我们使用的第三方 Cookies 类型的更多信息（如果有）。
 
-Subject to certain limitations, the CCPA provides California consumers the right to request to know more details about the categories or specific pieces of personal information we collect (including how we use and disclose this information), to delete their personal information, to opt out of any "sales" that may be occurring, as well as the right to not be discriminated against for exercising these rights.
+在某些条件下，CCPA 为加利福尼亚州消费者提供了以下权利：要求了解我们收集的个人信息类别或具体内容的更多细节（包括我们如何使用和披露这些信息），删除他们的个人信息，选择退出任何可能发生的「销售」，以及不因行使这些权利而受到歧视的权利。
 
-California consumers may make a request pursuant to their rights under the CCPA by contacting us at `secure.ccpa <{a}> lailai.one`. Please note that you must verify your identity and request before further action is taken, such as by providing your government identification. Consistent with California law, you may designate an authorized agent to make a request on your behalf. In order to designate an authorized agent to make a request on your behalf, you must provide a valid power of attorney, the requester’s valid government-issued identification, and the authorized agent’s valid government-issued identification.
+加利福尼亚州的消费者可以根据他们在 CCPA 下的权利提出请求，请通过 `secure.ccpa <{a}> lailai.one` 与我们联系。请注意，在采取进一步行动之前，您必须核实您的身份和请求，例如提供您的政府身份证明。根据加利福尼亚州的法律，您可以指定一个授权代理人代表您提出请求。为了指定授权代理人代表你提出请求，你必须提供有效的授权书，请求人的有效政府颁发的身份证明，以及授权代理人的有效政府颁发的身份证明。
 
-## Notice to EU Data Subjects
+## 致欧盟数据主体的通知
 
-We may process Personal Data (Personal Information) under the following conditions:
+我们可能在以下条件下处理个人数据（个人信息）。
 
-- Consent: You have given Your consent for processing Personal Data for one or more specific purposes.
-- Performance of a contract: Provision of Personal Data is necessary for the performance of an agreement with You and/or for any pre-contractual obligations thereof.
-- Legal obligations: Processing Personal Data is necessary for compliance with a legal obligation to which we are subject.
-- Vital interests: Processing Personal Data is necessary in order to protect Your vital interests or of another natural person.
-- Public interests: Processing Personal Data is related to a task that is carried out in the public interest or in the exercise of official authority vested in us.
-- Legitimate interests: Processing Personal Data is necessary for the purposes of the legitimate interests pursued by us.
+- 同意：您已经同意为一个或多个特定目的处理个人资料。
+- 合同的履行：为履行与您的协议和/或其中的任何合同前义务，必须提供个人资料。
+- 法律义务：为履行我们所承担的法律义务，有必要处理个人数据。
+- 重要利益：为了保护您或其他自然人的重要利益，处理个人资料是必要的。
+- 公共利益：处理个人数据与为了公共利益或行使赋予我们的官方权力而开展的任务有关。
+- 合法的利益：处理个人数据是为了我们所追求的合法利益而必须的。
