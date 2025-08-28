@@ -12,7 +12,7 @@ export interface ResourceCategoryItem {
 
 export const RESOURCE_LIST: ResourceCategoryItem[] = [
   {
-    title: '搜索引擎',
+    title: '搜索与导航',
     icon: 'lucide:search',
     resources: [
       {
@@ -32,8 +32,9 @@ export const RESOURCE_LIST: ResourceCategoryItem[] = [
       },
     ],
   },
+  
   {
-    title: 'AI 对话应用',
+    title: 'AI 助手与生成',
     icon: 'lucide:bot',
     resources: [
       {
@@ -69,7 +70,7 @@ export const RESOURCE_LIST: ResourceCategoryItem[] = [
     ],
   },
   {
-    title: 'AI 开发研究',
+    title: 'AI 研发与生态',
     icon: 'lucide:microscope',
     resources: [
       {
@@ -90,7 +91,7 @@ export const RESOURCE_LIST: ResourceCategoryItem[] = [
       {
         title: 'Google AI',
         href: 'https://ai.google',
-        description: 'Google AI 研究部门',
+        description: 'Google AI 研究项目',
       },
       {
         title: 'Meta AI',
@@ -110,32 +111,18 @@ export const RESOURCE_LIST: ResourceCategoryItem[] = [
       {
         title: 'PyTorch',
         href: 'https://pytorch.org',
-        description: 'Facebook 深度学习框架',
+        description: '深度学习框架',
       },
       {
         title: 'Keras',
         href: 'https://keras.io',
-        description: '高级神经网络 API',
+        description: '深度学习高层 API',
       },
-      {
-        title: 'NumPy',
-        href: 'https://numpy.org',
-        description: 'Python 科学计算包',
-      },
-      {
-        title: 'PyCharm',
-        href: 'https://www.jetbrains.com/pycharm',
-        description: 'JetBrains Python IDE',
-      },
-      {
-        title: 'Jupyter',
-        href: 'https://jupyter.org',
-        description: '交互式数据科学平台',
-      },
+      
     ],
   },
   {
-    title: '云服务平台',
+    title: '云与 CDN',
     icon: 'lucide:cloud',
     resources: [
       {
@@ -151,22 +138,28 @@ export const RESOURCE_LIST: ResourceCategoryItem[] = [
       {
         title: 'Cloudflare',
         href: 'https://www.cloudflare.com',
-        description: '网络安全加速服务',
-      },
-      {
-        title: 'Namecheap',
-        href: 'https://www.namecheap.com',
-        description: '域名注册服务',
-      },
-      {
-        title: 'Namesilo',
-        href: 'https://www.namesilo.com',
-        description: '域名注册服务',
+        description: 'CDN 与边缘安全网络',
       },
     ],
   },
   {
-    title: '代码托管',
+    title: '域名与 DNS',
+    icon: 'lucide:globe-2',
+    resources: [
+      {
+        title: 'Namecheap',
+        href: 'https://www.namecheap.com',
+        description: '域名注册与管理服务',
+      },
+      {
+        title: 'Namesilo',
+        href: 'https://www.namesilo.com',
+        description: '域名注册与管理服务',
+      },
+    ],
+  },
+  {
+    title: '代码托管与统计',
     icon: 'lucide:github',
     resources: [
       {
@@ -202,8 +195,8 @@ export const RESOURCE_LIST: ResourceCategoryItem[] = [
     ],
   },
   {
-    title: '在线开发',
-    icon: 'lucide:code',
+    title: '在线 IDE 与沙盒',
+    icon: 'lucide:terminal',
     resources: [
       {
         title: 'GitHub Codespaces',
@@ -240,6 +233,13 @@ export const RESOURCE_LIST: ResourceCategoryItem[] = [
         href: 'https://sandpack.codesandbox.io',
         description: '嵌入式代码编辑器',
       },
+      
+    ],
+  },
+  {
+    title: '编译与调试',
+    icon: 'lucide:bug-play',
+    resources: [
       {
         title: 'OnlineGDB',
         href: 'https://www.onlinegdb.com/online_python_compiler',
@@ -248,22 +248,38 @@ export const RESOURCE_LIST: ResourceCategoryItem[] = [
       {
         title: 'Compiler Explorer',
         href: 'https://godbolt.org',
-        description: '汇编代码分析工具',
+        description: '汇编与编译器分析工具',
       },
       {
-        title: 'React',
-        href: 'https://react.dev',
-        description: 'Facebook 前端 UI 框架',
+        title: 'Diff Tool',
+        href: 'https://csacademy.com/app/diffing_tool/',
+        description: '在线代码差异比较',
       },
       {
-        title: '清华大学开源软件镜像站',
-        href: 'https://mirrors.tuna.tsinghua.edu.cn',
-        description: '开源软件包镜像服务',
+        title: 'Graph Editor',
+        href: 'https://csacademy.com/app/graph_editor/',
+        description: '图论结构可视化编辑器',
       },
     ],
   },
   {
-    title: '学术研究',
+    title: '开发工具与 IDE',
+    icon: 'lucide:code-2',
+    resources: [
+      {
+        title: 'PyCharm',
+        href: 'https://www.jetbrains.com/pycharm',
+        description: 'JetBrains Python IDE',
+      },
+      {
+        title: 'Jupyter',
+        href: 'https://jupyter.org',
+        description: '笔记本与数据科学环境',
+      },
+    ],
+  },
+  {
+    title: '学术与论文',
     icon: 'lucide:book-open',
     resources: [
       {
@@ -320,7 +336,7 @@ export const RESOURCE_LIST: ResourceCategoryItem[] = [
     ],
   },
   {
-    title: '算法竞赛',
+    title: '算法与竞赛',
     icon: 'lucide:trophy',
     resources: [
       {
@@ -368,16 +384,7 @@ export const RESOURCE_LIST: ResourceCategoryItem[] = [
         href: 'http://yuantiji.ac/zh/',
         description: '编程题目溯源工具',
       },
-      {
-        title: 'Diff Tool',
-        href: 'https://csacademy.com/app/diffing_tool/',
-        description: '在线代码差异比较',
-      },
-      {
-        title: 'Graph Editor',
-        href: 'https://csacademy.com/app/graph_editor/',
-        description: '图论可视化编辑器',
-      },
+      
     ],
   },
   {
@@ -400,6 +407,11 @@ export const RESOURCE_LIST: ResourceCategoryItem[] = [
         description: '交互式数学软件',
       },
       {
+        title: 'NumPy',
+        href: 'https://numpy.org',
+        description: 'Python 科学计算包',
+      },
+      {
         title: 'LaTeX 公式编辑器',
         href: 'https://www.latexlive.com',
         description: 'LaTeX 公式编辑器',
@@ -412,13 +424,18 @@ export const RESOURCE_LIST: ResourceCategoryItem[] = [
     ],
   },
   {
-    title: '站点生成',
-    icon: 'lucide:file-text',
+    title: '前端与站点构建',
+    icon: 'lucide:layout-template',
     resources: [
+      {
+        title: 'React',
+        href: 'https://react.dev',
+        description: '现代前端框架',
+      },
       {
         title: 'Docusaurus',
         href: 'https://docusaurus.io',
-        description: 'Facebook 文档网站工具',
+        description: 'React 文档网站生成器',
       },
       {
         title: 'VitePress',
@@ -444,13 +461,18 @@ export const RESOURCE_LIST: ResourceCategoryItem[] = [
     ],
   },
   {
-    title: '日常工具',
+    title: '实用工具',
     icon: 'lucide:bolt',
     resources: [
       {
         title: 'Google 翻译',
         href: 'https://translate.google.com',
         description: '谷歌在线翻译服务',
+      },
+      {
+        title: '清华大学开源软件镜像站',
+        href: 'https://mirrors.tuna.tsinghua.edu.cn',
+        description: '开源软件镜像与下载',
       },
       {
         title: 'Speedtest',
@@ -507,20 +529,16 @@ export const RESOURCE_LIST: ResourceCategoryItem[] = [
         href: 'https://dzjszjz.nkxingxh.top',
         description: '电子教室软件解锁工具',
       },
-      {
-        title: 'Recraft',
-        href: 'https://www.recraft.ai',
-        description: 'AI 矢量图生成工具',
-      },
+      
       {
         title: 'Note.ms',
         href: 'https://note.ms',
-        description: '公共的剪贴板服务',
+        description: '公共剪贴板服务',
       },
     ],
   },
   {
-    title: '知识百科',
+    title: '知识与参考',
     icon: 'lucide:library',
     resources: [
       {
@@ -541,7 +559,7 @@ export const RESOURCE_LIST: ResourceCategoryItem[] = [
     ],
   },
   {
-    title: '数码设备',
+    title: '数码与硬件',
     icon: 'lucide:smartphone',
     resources: [
       {
@@ -567,7 +585,7 @@ export const RESOURCE_LIST: ResourceCategoryItem[] = [
     ],
   },
   {
-    title: '设计创意',
+    title: '设计与可视化',
     icon: 'lucide:palette',
     resources: [
       {
@@ -596,6 +614,11 @@ export const RESOURCE_LIST: ResourceCategoryItem[] = [
         description: '在线像素地图编辑器',
       },
       {
+        title: 'Recraft',
+        href: 'https://www.recraft.ai',
+        description: 'AI 矢量图生成工具',
+      },
+      {
         title: 'Mult',
         href: 'https://mult.dev',
         description: '地图路线动画与视频生成工具',
@@ -608,7 +631,7 @@ export const RESOURCE_LIST: ResourceCategoryItem[] = [
     ],
   },
   {
-    title: '视频媒体',
+    title: '视频与媒体',
     icon: 'lucide:video',
     resources: [
       {
@@ -624,8 +647,8 @@ export const RESOURCE_LIST: ResourceCategoryItem[] = [
     ],
   },
   {
-    title: '社交网络',
-    icon: 'lucide:smartphone',
+    title: '社交与社区',
+    icon: 'lucide:users',
     resources: [
       {
         title: 'X (Twitter)',
@@ -691,7 +714,7 @@ export const RESOURCE_LIST: ResourceCategoryItem[] = [
     ],
   },
   {
-    title: '科学上网',
+    title: '网络与访问',
     icon: 'lucide:globe',
     resources: [
       {
