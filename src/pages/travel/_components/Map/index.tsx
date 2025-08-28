@@ -29,9 +29,7 @@ export function flagEmojiToISO2(flag: string): string | null {
 
 export function iso2FromText(text: string): string[] {
   const flags = text.match(FLAG_REGEX) ?? [];
-  return flags
-    .map(flagEmojiToISO2)
-    .filter((x): x is string => !!x);
+  return flags.map(flagEmojiToISO2).filter((x): x is string => !!x);
 }
 
 const ISO_COUNTRIES = {
@@ -307,7 +305,9 @@ export default function TravelMap() {
 
   const getFillColor = (code?: string) => {
     if (!code || code === 'AQ') return;
-    return visitedCountrySet.has(code) ? MAP_THEME.visited : MAP_THEME.unvisited;
+    return visitedCountrySet.has(code)
+      ? MAP_THEME.visited
+      : MAP_THEME.unvisited;
   };
 
   const getOpacity = (code: string) => {
@@ -331,12 +331,7 @@ export default function TravelMap() {
       <div className={styles.mapOuter}>
         <div className={styles.mapInner}>
           <ComposableMap projection="geoMercator">
-            <ZoomableGroup
-              zoom={0.8}
-              minZoom={0.7}
-              center={[0, 40]}
-              filterZoomEvent={(e) => false}
-            >
+            <ZoomableGroup zoom={0.8} minZoom={0.7} center={[0, 40]}>
               <Geographies geography={MAP_FILE}>
                 {({ geographies }) =>
                   geographies.map((geo) => {
