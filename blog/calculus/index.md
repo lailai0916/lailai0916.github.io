@@ -53,7 +53,7 @@ $$
 $$
 \begin{aligned}
   T &= \sum_{i=a}^b A_i=A_a+A_{a+1}+\cdots+A_b \\
-  &= (\bcancel{A_1+A_2+\cdots+A_{a-1}}+A_a+A_{a+1}+\cdots+A_b)-(\bcancel{A_1+A_2+\cdots+A_{a-1}}) \\
+  &= (\sout{A_1+A_2+\cdots+A_{a-1}}+A_a+A_{a+1}+\cdots+A_b)-(\sout{A_1+A_2+\cdots+A_{a-1}}) \\
   &= \sum_{i=1}^b A_i-\sum_{i=1}^{a-1} A_i=S_b-S_{a-1}
 \end{aligned}
 $$

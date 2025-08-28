@@ -6,22 +6,25 @@
 
 - [Supported Functions - KaTeX](https://katex.org/docs/supported.html)
 - [LaTeX 数学公式大全 - 洛谷专栏](https://www.luogu.com.cn/article/1gxob6zc)
+- [常用数学符号 - Baoshuo's OI Blog](https://oi.baoshuo.ren/math-formulas/)
 
 ## 推荐资源
 
 - [在线 LaTeX 公式编辑器](https://www.latexlive.com)
 
-## 基础知识
+## 公式类型
 
-### 行内公式与行间公式
+### 行内公式
 
-行内公式（Inline Math，穿插在文本中的公式）两侧分别使用一个美元符号定界。
+行内公式（Inline Math）是嵌入在文本中的公式，其两侧分别用一个美元符号标记。
 
 ```latex
 $...$
 ```
 
-行间公式（Math Blocks，独立成行居中的公式）前后两行分别使用两个美元符号定界。
+### 行间公式
+
+行间公式（Math Blocks）是独立成行并居中的公式，其前后分别用两个美元符号进行标记。
 
 ```latex
 $$
@@ -35,29 +38,44 @@ $$
 
 :::
 
-## 基础符号
+## 运算符号
 
-|   名称   |           演示           |               代码               |
-| :------: | :----------------------: | :------------------------------: |
-|   加号   |           $+$            |               `+`                |
-|   减号   |           $-$            |               `-`                |
-|   乘号   |         $\times$         |             `\times`             |
-|   点乘   |         $\cdot$          |             `\cdot`              |
-|   除号   |          $\div$          |              `\div`              |
-|   等号   |           $=$            |            `=`、`\eq`            |
-|  不等号  |          $\ne$           |          `\ne`、`\neq`           |
-|  约等号  |        $\approx$         |            `\approx`             |
-|  大于号  |           $>$            |            `>`、`\gt`            |
-|  小于号  |           $<$            |            `<`、`\lt`            |
-| 大于等于 |          $\geq$          |          `\ge`、`\geq`           |
-| 小于等于 |          $\leq$          |          `\le`、`\leq`           |
-|  正负号  |          $\pm$           |         `\pm`、`\plusmn`         |
-|   无穷   |         $\infty$         |             `\infty`             |
-|   根号   | $\sqrt{x},\ \sqrt[y]{x}$ |    `\sqrt{x}`，`\sqrt[y]{x}`     |
-|   分数   |      $\tfrac{a}{b}$      |          `\frac{a}{b}`           |
-|  上取整  |    $\lceil$、$\rceil$    |        `\lceil`、`\rceil`        |
-|  下取整  |   $\lfloor$、$\rfloor$   |       `\lfloor`、`\rfloor`       |
-|  大括号  |        $\{$，$\}$        | `\lbrace`、`\{`，`\rbrace`、`\}` |
+### 基础
+
+|   名称   |           演示            |               代码               |
+| :------: | :-----------------------: | :------------------------------: |
+|   加号   |            $+$            |               `+`                |
+|   减号   |            $-$            |               `-`                |
+|   乘号   |         $\times$          |             `\times`             |
+|   点乘   |          $\cdot$          |             `\cdot`              |
+|   除号   |          $\div$           |              `\div`              |
+|   等号   |            $=$            |            `=`、`\eq`            |
+|  不等号  |           $\ne$           |          `\ne`、`\neq`           |
+|  约等号  |         $\approx$         |            `\approx`             |
+|  大于号  |            $>$            |            `>`、`\gt`            |
+|  小于号  |            $<$            |            `<`、`\lt`            |
+| 大于等于 |          $\geq$           |          `\ge`、`\geq`           |
+| 小于等于 |          $\leq$           |          `\le`、`\leq`           |
+|  正负号  |           $\pm$           |         `\pm`、`\plusmn`         |
+|   无穷   |         $\infty$          |             `\infty`             |
+|   根号   | $\sqrt{x}$，$\sqrt[y]{x}$ |    `\sqrt{x}`，`\sqrt[y]{x}`     |
+|   分数   |      $\tfrac{a}{b}$       |          `\frac{a}{b}`           |
+|  上取整  |    $\lceil$、$\rceil$     |        `\lceil`、`\rceil`        |
+|  下取整  |   $\lfloor$、$\rfloor$    |       `\lfloor`、`\rfloor`       |
+|  大括号  |        $\{$，$\}$         | `\lbrace`、`\{`，`\rbrace`、`\}` |
+
+### 逻辑
+
+| 名称 |            演示            |            代码            |
+| :--: | :------------------------: | :------------------------: |
+|  与  |          $\land$           |          `\land`           |
+|  或  |           $\lor$           |           `\lor`           |
+|  非  |          $\lnot$           |          `\lnot`           |
+| 推出 | $\implies$，$\Rightarrow$  | `\implies`，`\Rightarrow`  |
+| 反推 | $\impliedby$，$\Leftarrow$ | `\impliedby`，`\Leftarrow` |
+| 等价 | $\iff$，$\Leftrightarrow$  | `\iff`，`\Leftrightarrow`  |
+| 因为 |         $\because$         |         `\because`         |
+| 所以 |        $\therefore$        |        `\therefore`        |
 
 ## 巨运算符
 
