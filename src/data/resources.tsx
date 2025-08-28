@@ -238,7 +238,7 @@ export const RESOURCE_LIST: ResourceCategoryItem[] = [
   },
   {
     title: '编译与调试',
-    icon: 'lucide:bug-play',
+    icon: 'lucide:bug',
     resources: [
       {
         title: 'OnlineGDB',

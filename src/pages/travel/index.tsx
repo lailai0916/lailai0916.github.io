@@ -12,6 +12,7 @@ import TravelTimeline from '@site/src/pages/travel/_components/TimeLine';
 import TravelMap from '@site/src/pages/travel/_components/Map';
 import { translate } from '@docusaurus/Translate';
 import { TRAVEL_LIST } from '@site/src/data/travel';
+import { iso2FromText } from '@site/src/pages/travel/_components/Map';
 
 const TITLE = translate({
   id: 'pages.travel.title',
@@ -36,9 +37,8 @@ function TravelFooter() {
 }
 
 function TravelHeader() {
-  const flagRegex = /[\u{1F1E6}-\u{1F1FF}]{2}/gu;
   const countryCount = new Set(
-    TRAVEL_LIST.flatMap((i) => i.cardTitle.match(flagRegex) ?? [])
+    TRAVEL_LIST.flatMap((i) => iso2FromText(i.cardTitle))
   ).size;
   const yearCount =
     new Date().getFullYear() - parseInt(TRAVEL_LIST[0].title.substring(0, 4));

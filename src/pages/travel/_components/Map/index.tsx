@@ -11,8 +11,28 @@ import { translate } from '@docusaurus/Translate';
 import styles from './styles.module.css';
 import { TRAVEL_LIST } from '@site/src/data/travel';
 
-// Local constants (kept in-file by request)
+// Local constants and helpers (kept in-file by request)
 const MAP_FILE = '/datamaps.world.json';
+const FLAG_REGEX = /[\u{1F1E6}-\u{1F1FF}]{2}/gu;
+
+export function flagEmojiToISO2(flag: string): string | null {
+  const chars = Array.from(flag);
+  if (chars.length < 2) return null;
+  const a = chars[0].codePointAt(0)!;
+  const b = chars[1].codePointAt(0)!;
+  if (a < 0x1f1e6 || a > 0x1f1ff || b < 0x1f1e6 || b > 0x1f1ff) return null;
+  return (
+    String.fromCharCode(65 + (a - 0x1f1e6)) +
+    String.fromCharCode(65 + (b - 0x1f1e6))
+  );
+}
+
+export function iso2FromText(text: string): string[] {
+  const flags = text.match(FLAG_REGEX) ?? [];
+  return flags
+    .map(flagEmojiToISO2)
+    .filter((x): x is string => !!x);
+}
 
 const ISO_COUNTRIES = {
   AFG: 'AF',
@@ -279,21 +299,7 @@ export default function TravelMap() {
   const [tooltip, setTooltip] = useState<string>('');
   // Build visited country set from flags in TRAVEL_LIST
   const visitedCountrySet = useMemo(() => {
-    const flagRegex = /[\u{1F1E6}-\u{1F1FF}]{2}/gu;
-    const flags = TRAVEL_LIST.flatMap((i) => i.cardTitle.match(flagRegex) ?? []);
-    const iso2 = flags
-      .map((s) => Array.from(s))
-      .map((chars) => {
-        if (chars.length < 2) return null;
-        const a = chars[0].codePointAt(0)!;
-        const b = chars[1].codePointAt(0)!;
-        if (a < 0x1f1e6 || a > 0x1f1ff || b < 0x1f1e6 || b > 0x1f1ff) return null;
-        return (
-          String.fromCharCode(65 + (a - 0x1f1e6)) +
-          String.fromCharCode(65 + (b - 0x1f1e6))
-        );
-      })
-      .filter((x): x is string => !!x);
+    const iso2 = TRAVEL_LIST.flatMap((i) => iso2FromText(i.cardTitle));
     return new Set(iso2);
   }, []);
 
