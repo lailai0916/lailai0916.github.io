@@ -595,6 +595,16 @@ export const RESOURCE_LIST: ResourceCategoryItem[] = [
         href: 'https://pixelmap.amcharts.com',
         description: '在线像素地图编辑器',
       },
+      {
+        title: 'Mult',
+        href: 'https://mult.dev',
+        description: '地图路线动画与视频生成工具',
+      },
+      {
+        title: 'CodeSnap',
+        href: 'https://codesnap.dev',
+        description: '开发者代码美化截图工具',
+      },
     ],
   },
   {
