@@ -35,6 +35,30 @@ $$
 
 :::
 
+## 基础符号
+
+|   名称   |           演示           |               代码               |
+| :------: | :----------------------: | :------------------------------: |
+|   加号   |           $+$            |               `+`                |
+|   减号   |           $-$            |               `-`                |
+|   乘号   |         $\times$         |             `\times`             |
+|   点乘   |         $\cdot$          |             `\cdot`              |
+|   除号   |          $\div$          |              `\div`              |
+|   等号   |           $=$            |            `=`、`\eq`            |
+|  不等号  |          $\ne$           |          `\ne`、`\neq`           |
+|  约等号  |        $\approx$         |            `\approx`             |
+|  大于号  |           $>$            |            `>`、`\gt`            |
+|  小于号  |           $<$            |            `<`、`\lt`            |
+| 大于等于 |          $\geq$          |          `\ge`、`\geq`           |
+| 小于等于 |          $\leq$          |          `\le`、`\leq`           |
+|  正负号  |          $\pm$           |         `\pm`、`\plusmn`         |
+|   无穷   |         $\infty$         |             `\infty`             |
+|   根号   | $\sqrt{x},\ \sqrt[y]{x}$ |    `\sqrt{x}`，`\sqrt[y]{x}`     |
+|   分数   |      $\tfrac{a}{b}$      |          `\frac{a}{b}`           |
+|  上取整  |    $\lceil$、$\rceil$    |        `\lceil`、`\rceil`        |
+|  下取整  |   $\lfloor$、$\rfloor$   |       `\lfloor`、`\rfloor`       |
+|  大括号  |        $\{$，$\}$        | `\lbrace`、`\{`，`\rbrace`、`\}` |
+
 ## 巨运算符
 
 ### 求和
@@ -189,9 +213,7 @@ $$
 
 通过调整 `\begin{array}` 后的参数，可以设置公式的对齐方式：
 
-- `{c}`：居中对齐（默认）。
-- `{l}`：左对齐。
-- `{r}`：右对齐。
+`{c}` 表示居中（默认）；`{l}` 表示左对齐；`{r}` 表示右对齐。
 
 :::
 
@@ -219,23 +241,39 @@ $$
 
 </BrowserWindow>
 
-## 字体
+## 更多功能
 
-### 自定义名称
+### 边框
 
 ```latex
-\operatorname{lca}{(6,8)}=24
+\boxed{a^2+b^2=c^2}
 ```
 
 <BrowserWindow>
 
 $$
-\operatorname{lca}{(6,8)}=24
+\boxed{a^2+b^2=c^2}
 $$
 
 </BrowserWindow>
 
-### 正体
+### 颜色
+
+```latex
+{\color{White}\colorbox{Red}{FBI WARNING}}
+```
+
+<BrowserWindow>
+
+$$
+{\color{White}\colorbox{Red}{FBI WARNING}}
+$$
+
+</BrowserWindow>
+
+### 字体
+
+#### 正体
 
 ```latex
 g=9.8\mathrm{m/s^2}
@@ -249,16 +287,30 @@ $$
 
 </BrowserWindow>
 
-### 直立体
+#### 黑板粗体
 
 ```latex
-\frac{\mathrm{d}}{\mathrm{d}x} f(x)
+x\in\mathbb{R}
 ```
 
 <BrowserWindow>
 
 $$
-\frac{\mathrm{d}}{\mathrm{d}x} f(x)
+x\in\mathbb{R}
+$$
+
+</BrowserWindow>
+
+#### 自定义运算符
+
+```latex
+\operatorname{lca}{(6,8)}=24
+```
+
+<BrowserWindow>
+
+$$
+\operatorname{lca}{(6,8)}=24
 $$
 
 </BrowserWindow>
