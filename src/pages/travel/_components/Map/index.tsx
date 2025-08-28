@@ -5,12 +5,13 @@ import {
   Geography,
   ZoomableGroup,
 } from 'react-simple-maps';
-import { TRAVEL_LIST } from '@site/src/data/travel';
 import SectionHeader from '@site/src/components/laikit/section/SectionHeader';
 import SectionContainer from '@site/src/components/laikit/section/SectionContainer1';
 import { translate } from '@docusaurus/Translate';
 import styles from './styles.module.css';
+import { TRAVEL_LIST } from '@site/src/data/travel';
 
+// Local constants (kept in-file by request)
 const MAP_FILE = '/datamaps.world.json';
 
 const ISO_COUNTRIES = {
@@ -276,44 +277,31 @@ const MAP_THEME = {
  */
 export default function TravelMap() {
   const [tooltip, setTooltip] = useState<string>('');
-
-  function flagEmojiToISO2(flag: string): string | null {
-    const chars = Array.from(flag);
-    if (chars.length < 2) return null;
-    const a = chars[0].codePointAt(0)!;
-    const b = chars[1].codePointAt(0)!;
-    // 区域指示符范围 U+1F1E6..U+1F1FF
-    if (a < 0x1f1e6 || a > 0x1f1ff || b < 0x1f1e6 || b > 0x1f1ff) return null;
-    return (
-      String.fromCharCode(65 + (a - 0x1f1e6)) +
-      String.fromCharCode(65 + (b - 0x1f1e6))
-    );
-  }
-
-  // 从“国旗数组”得到去重后的 ISO2 列表
-  function flagsToISO2(flags: string[]): string[] {
-    return [
-      ...new Set(flags.map(flagEmojiToISO2).filter((x): x is string => !!x)),
-    ];
-  }
-
-  // 获取访问过的国家
-  const visitedCountries = useMemo(() => {
+  // Build visited country set from flags in TRAVEL_LIST
+  const visitedCountrySet = useMemo(() => {
     const flagRegex = /[\u{1F1E6}-\u{1F1FF}]{2}/gu;
-    const countries = TRAVEL_LIST.flatMap(
-      (i) => i.cardTitle.match(flagRegex) ?? []
-    );
-    return flagsToISO2(countries);
+    const flags = TRAVEL_LIST.flatMap((i) => i.cardTitle.match(flagRegex) ?? []);
+    const iso2 = flags
+      .map((s) => Array.from(s))
+      .map((chars) => {
+        if (chars.length < 2) return null;
+        const a = chars[0].codePointAt(0)!;
+        const b = chars[1].codePointAt(0)!;
+        if (a < 0x1f1e6 || a > 0x1f1ff || b < 0x1f1e6 || b > 0x1f1ff) return null;
+        return (
+          String.fromCharCode(65 + (a - 0x1f1e6)) +
+          String.fromCharCode(65 + (b - 0x1f1e6))
+        );
+      })
+      .filter((x): x is string => !!x);
+    return new Set(iso2);
   }, []);
 
-  const getFillColor = (code: string) => {
-    if (code === 'AQ') return;
+  // 颜色: 已访问/未访问
 
-    if (visitedCountries.includes(code)) {
-      return MAP_THEME.visited;
-    }
-
-    return MAP_THEME.unvisited;
+  const getFillColor = (code?: string) => {
+    if (!code || code === 'AQ') return;
+    return visitedCountrySet.has(code) ? MAP_THEME.visited : MAP_THEME.unvisited;
   };
 
   const getOpacity = (code: string) => {
@@ -353,6 +341,7 @@ export default function TravelMap() {
                       <Geography
                         key={geo.rsmKey}
                         geography={geo}
+                        aria-label={country}
                         fill={getFillColor(code)}
                         stroke={MAP_THEME.stroke}
                         opacity={getOpacity(code)}
