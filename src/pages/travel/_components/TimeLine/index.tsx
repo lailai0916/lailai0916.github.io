@@ -30,15 +30,6 @@ const TIMELINE_CONFIG = {
   enableBreakPoint: true,
   borderLessCards: true,
   disableToolbar: true,
-
-  mediaSettings: {
-    align: 'center' as const,
-    fit: 'cover' as const,
-  },
-
-  semanticTags: {
-    cardTitle: 'h3' as const,
-  },
 } as const;
 
 const TIMELINE_THEME = {
