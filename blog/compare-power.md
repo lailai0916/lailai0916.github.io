@@ -84,5 +84,5 @@ $$
 ### e^π 与 π^e
 
 $$
-e^\pi=e^e(e^{\frac{\pi}{e}-1})^e>e^e(\frac{\pi}{e}-1+1)^e=\pi^e
+e^\pi=e^e\left(e^{\frac{\pi}{e}-1}\right)^e>e^e\left(\frac{\pi}{e}-1+1\right)^e=\pi^e
 $$
