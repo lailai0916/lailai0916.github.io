@@ -12,7 +12,6 @@ export default function Desmos({ id }: { id: string }) {
     <>
       <div style={{ marginBottom: '0.25rem' }}>
         <button
-          type="button"
           className="button button--sm button--secondary"
           onClick={refresh}
         >
