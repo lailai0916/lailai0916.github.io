@@ -117,7 +117,7 @@ $$
 
 ### 模长
 
-我们将 [向量](../geometry/vector) $\overrightarrow{OZ}$ 的模长定义为复数 $z=a+bi$ 的 **模长**，记为：
+我们将 [向量](../geometry/vector) $\overrightarrow{OZ}$ 的 **模长** 定义为复数 $z=a+bi$ 的 **模长**，记为：
 
 $$
 |OZ|=|z|=|a+bi|=\sqrt{a^2+b^2}
@@ -130,6 +130,12 @@ $$
 $$
 |a|=|a+0i|=\sqrt{a^2}
 $$
+
+### 辐角
+
+我们将向量 $\overrightarrow{OZ}$ 与 **实轴正方向** 的夹角定义为 **辐角**，通常取值范围为 $(-\pi,\pi]$。
+
+这类似于任意角 [三角函数](../function/trigonometric-function) 的定义。
 
 ### 共轭
 
@@ -163,15 +169,19 @@ $$
 z_1-z_2=(a+bi)-(c+di)=(a-c)+(b-d)i
 $$
 
-对于集合意义，在复平面中，复数可以被视为点或向量，因此复数运算的几何性质与向量相似，遵循平行四边形法则。
+对于几何意义，在复平面中，复数可以被视为点或向量，因此复数运算的几何性质与向量相似，遵循 **平行四边形法则**。
 
-<Desmos id="k3mywflnya" />
+<Desmos id="ckrrgnsnxd" />
 
 ### 乘法
+
+对于代数意义，直接相乘即可：
 
 $$
 z_1z_2=(a+bi)(c+di)=ac+adi+bci+bdi^2=(ac-bd)+(ad+bc)i
 $$
+
+对于几何意义，
 
 ### 除法
 
