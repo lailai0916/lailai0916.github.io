@@ -81,7 +81,7 @@ $$
 
 :::note[记号]
 
-本文默认 $z=a+bi$，则 $\operatorname{Re}(z)=a,\ \operatorname{Im}(z)=b$。
+本文默认 $z=a+bi$，则 $\operatorname{Re}(z)=a,\operatorname{Im}(z)=b$。
 
 :::
 
@@ -133,7 +133,7 @@ $$
 
 ### 辐角
 
-我们将向量 $\overrightarrow{OZ}$ 与 **实轴正方向** 的夹角定义为 **辐角**，记作 $\operatorname{Arg}z$，取值范围通常为 $(-\pi,\pi]$。
+我们将向量 $\overrightarrow{OZ}$ 与 **实轴正方向** 的夹角定义为 **辐角**，记作 $\operatorname{arg}z$，取值范围通常为 $[0,2\pi)$。
 
 这类似于任意角 [三角函数](../function/trigonometric-function) 的定义。
 
@@ -191,7 +191,7 @@ $$
 \frac{z_1}{z_2}=\frac{a+bi}{c+di}(z_2\ne 0)
 $$
 
-然后通过 **分母有理化** 继续化简：
+然后通过 **分母实数化** 继续化简：
 
 $$
 \frac{(a+bi)(c-di)}{(c+di)(c-di)}=\frac{(a+bi)(c-di)}{c^2+d^2}=\frac{ac+bd}{c^2+d^2}+\frac{bc-ad}{c^2+d^2}i
@@ -199,7 +199,7 @@ $$
 
 :::note
 
-分母含有复数时，乘以分母的共轭 $\overline{z}$ 即可有理化：
+分母含有复数时，乘以分母的共轭 $\overline{z}$ 即可实数化：
 
 $$
 z\overline{z}=|z|^2
