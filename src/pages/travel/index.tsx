@@ -8,7 +8,7 @@ import {
   PageFooter,
 } from '@site/src/components/laikit/page';
 import DataCard from '@site/src/components/laikit/widget/DataCard';
-import TravelTimeline from '@site/src/pages/travel/_components/Timeline';
+import TravelTimeline from '@site/src/pages/travel/_components/Timeline1';
 import TravelMap from '@site/src/pages/travel/_components/Map';
 import { translate } from '@docusaurus/Translate';
 import { TRAVEL_LIST } from '@site/src/data/travel';
