@@ -281,6 +281,7 @@ const ISO_COUNTRIES = {
   ZMB: 'ZM',
   ZWE: 'ZW',
   XKX: 'XK',
+  '-99': 'SO', // Somaliland -> treat as Somalia (ISO2 SO)
 };
 
 const MAP_THEME = {
