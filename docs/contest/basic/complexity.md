@@ -33,7 +33,7 @@
 - $f(n) = \Theta(g(n))\iff f(n)=O(g(n))\land f(n)=\Omega(g(n))$
 - $f_1(n) + f_2(n) = O(\max(f_1(n), f_2(n)))$
 - $f_1(n) \times f_2(n) = O(f_1(n) \times f_2(n))$
-- $\forall a \neq 1, \log_a{n} = O(\log_2 n)$
+- $\forall a \ne 1, \log_a{n} = O(\log_2 n)$
 
 :::tip
 

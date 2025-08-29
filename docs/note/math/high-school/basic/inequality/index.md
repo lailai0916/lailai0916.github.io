@@ -9,7 +9,7 @@
 - $a=a$（自反性）
 - ‌$a=b\Rightarrow b=a$（对称性）
 - $a=b,b=c\Rightarrow a=c$（传递性）
-- $a=b\Rightarrow a\pm c=b\pm c,ac=bc,\frac{a}{c}=\frac{b}{c}$（$c\neq 0$）（替代性）
+- $a=b\Rightarrow a\pm c=b\pm c,ac=bc,\frac{a}{c}=\frac{b}{c}$（$c\ne 0$）（替代性）
 
 :::tip
 
@@ -37,7 +37,7 @@
 初中阶段我们学过 **一元二次方程**，一般形式为：
 
 $$
-ax^2+bx+c=0(a\neq 0)
+ax^2+bx+c=0(a\ne 0)
 $$
 
 方程是含有未知数的 **等式**。
@@ -45,7 +45,7 @@ $$
 我们把等式改为不等式就得到了 **一元二次不等式**，一般形式为：
 
 $$
-ax^2+bx+c<0\text{或}ax^2+bx+c>0(a\neq 0)
+ax^2+bx+c<0\text{或}ax^2+bx+c>0(a\ne 0)
 $$
 
 <Desmos id="s8qv3vgffa" />
