@@ -107,7 +107,7 @@ const formatTravelDate = (dateStr: string, locale: string): string => {
 
 const TITLE = translate({
   id: 'pages.travel.timeline.title',
-  message: 'Travel Footprint',
+  message: 'Travel Timeline',
 });
 const DESCRIPTION = translate({
   id: 'pages.travel.timeline.description',
