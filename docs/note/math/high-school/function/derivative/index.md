@@ -69,15 +69,15 @@ $$
 
 :::
 
-### 切线
+## 切线
 
-#### 定义
+### 定义
 
 > 《人教版高中数学·选修二》：在曲线 $y=f(x)$ 上任取一点 $P(x,f(x))$，如果当点 $P(x,f(x))$ 沿着曲线 $y=f(x)$ 无限趋近于点 $P_0(x_0,f(x_0))$ 时，割线 $P_0P$ 无限趋近于一个确定的位置，这个确定位置的直线称为曲线 $y=f(x)$ 在点 $P_0$ 处的切线（tangent line）。
 
 理解：切线是一条 **恰好碰到** 曲线上某一点的直线。
 
-#### 直线方程
+### 直线方程
 
 常见的直线方程有 **斜截式**、**两点式**、**点斜式**、**截距式**、**一般式** 等。
 
@@ -85,7 +85,7 @@ $$
 
 直线与一次函数的区别：所有的一次函数都是直线，但平行于 $y$ 轴的直线 $x=C$ 不是函数。
 
-#### 斜率计算
+### 斜率计算
 
 在初中我们学过一次函数 $y=kx+b$，其中 $k$ 就是直线的 **斜率**。
 
@@ -114,13 +114,15 @@ $$
 
 所以斜率 $k$ 等于 **两点纵横坐标之差之比**，即 **纵横坐标增量之比**。
 
-## 定义和意义
+## 定义与计算
+
+### 定义
 
 > 《人教版高中数学·选修二》：假设函数 $y=f(x)$ 在点 $x_0$ 处的邻域内有定义，当自变量 $x$ 在 $x_0$ 处取得增量 $\Delta x$，相对应的函数取得增量 $\Delta y$，如果 $\frac{\Delta y}{\Delta x}$ 在 $\Delta x \to 0$ 时的极限存在，那么称函数 $y=f(x)$ 在点 $x_0$ 处可导。
 
 理解：导数就是函数在某点处的 **瞬时变化率**。
 
-$f(x)$ 的导数一般写作 $f'(x)$ 或 $y'$，一个式子的的导数一般在最后加 $'$（撇号）.
+$f(x)$ 的导数通常写作 $f'(x)$ 或 $y'$，而一个式子的导数通常在最后加 **撇号**（$'$）。
 
 :::note[示例]
 
@@ -128,47 +130,93 @@ $ax^2+bx+c$ 的导数可以写作 $(ax^2+bx+c)'$。
 
 :::
 
-### 速度
+### 代数意义
 
-平均速度和瞬时速度：
+平均速度：一段路程的变化（$\Delta s$）和时间的变化（$\Delta t$）之比，即：
 
-平均速度：一段路程的变化（$\Delta s$）和时间的变化（$\Delta t$）之比，即 $V=\frac{\Delta s}{\Delta t}$.
+$$
+V=\frac{\Delta s}{\Delta t}
+$$
 
-瞬时速度：瞬间路程的变化（$\Delta s$）和时间的变化（$\Delta t$）之比，此时 $\Delta t \to 0$，即 $V=\displaystyle\lim_{\Delta t \to 0}\frac{\Delta s}{\Delta t}$.
+瞬时速度：瞬间路程的变化（$\Delta s$）和时间的变化（$\Delta t$）之比，此时 $\Delta t \to 0$，即：
+
+$$
+V=\lim_{\Delta t \to 0}\frac{\Delta s}{\Delta t}
+$$
 
 :::tip
 
-这里不区分“速度”和“速率”、“路程”和“位移”。
+这里不区分“速度”与“速率”、“路程”与“位移”。
 
 :::
 
-### 瞬时变化率
+而 **瞬时变化率** 和 **瞬时速度** 类似，即：
 
-**瞬时变化率** 和 **瞬时速度** 类似，即 $f'(x)=\displaystyle\lim_{\Delta x \to 0}\frac{\Delta y}{\Delta x}$.
+$$
+f'(x)=\lim_{\Delta x \to 0}\frac{\Delta y}{\Delta x}
+$$
 
-函数在 $x$ 处的函数值为 $f(x)$，增加 $\Delta x$ 后，函数值变成 $f(x+\Delta x)$，所以增量（$\Delta y$）就是 $f(x+\Delta x)-f(x)$.
+函数在 $x$ 处的函数值为 $f(x)$，增加 $\Delta x$ 后，函数值变成 $f(x+\Delta x)$，所以增量 $\Delta y$ 就是 $f(x+\Delta x)-f(x)$。
 
-所以 $f(x)$ 的导数 $f'(x)=\displaystyle\lim_{\Delta x \to 0}\frac{\Delta y}{\Delta x}=\displaystyle\lim_{\Delta x \to 0}\frac{f(x+\Delta x)-f(x)}{\Delta x}$.
+所以 $f(x)$ 的导数计算公式为：
+
+$$
+f'(x)=\lim_{\Delta x \to 0}\frac{\Delta y}{\Delta x}=\lim_{\Delta x \to 0}\frac{f(x+\Delta x)-f(x)}{\Delta x}
+$$
 
 ### 几何意义
 
-$f'(x)=\displaystyle\lim_{\Delta x \to 0}\frac{\Delta y}{\Delta x}$
+$$
+f'(x)=\lim_{\Delta x \to 0}\frac{\Delta y}{\Delta x}
+$$
 
-不难发现 $\frac{\Delta y}{\Delta x}$ 就是切线斜率 $k$ 的定义？所以导数又是 **函数在某点处切线的斜率**.
+不难发现 $\frac{\Delta y}{\Delta x}$ 就是切线斜率 $k$ 的定义，所以导数的几何意义是 **函数在某点处切线的斜率**。
 
-## 举例
+:::note[示例]
 
-1. $f(x)=C$（$C$ 为常数），求 $f'(x)$.
+<Tabs>
+<TabItem value="Example 1">
 
-- $f'(x)=\displaystyle\lim_{\Delta x \to 0}\frac{\Delta y}{\Delta x}=\displaystyle\lim_{\Delta x \to 0}\frac{f(x+\Delta x)-f(x)}{\Delta x}=\displaystyle\lim_{\Delta x \to 0}\frac{C-C}{\Delta x}=0$.
+已知 $f(x)=C$（$C$ 为常数），求 $f'(x)$。
 
-2. $f(x)=x$，求 $f'(x)$.
+$$
+\begin{aligned}
+  f'(x) &= \lim_{\Delta x \to 0}\frac{f(x+\Delta x)-f(x)}{\Delta x} \\
+  &= \lim_{\Delta x \to 0}\frac{C-C}{\Delta x}=0
+\end{aligned}
+$$
 
-- $f'(x)=\displaystyle\lim_{\Delta x \to 0}\frac{\Delta y}{\Delta x}=\displaystyle\lim_{\Delta x \to 0}\frac{f(x+\Delta x)-f(x)}{\Delta x}=\displaystyle\lim_{\Delta x \to 0}\frac{(x+\Delta x)-x}{\Delta x}=\displaystyle\lim_{\Delta x \to 0}\frac{\Delta x}{\Delta x}=1$.
+</TabItem>
+<TabItem value="Example 2">
 
-3. $f(x)=x^2$，求 $f'(x)$.
+已知 $f(x)=x$，求 $f'(x)$。
 
-- $f'(x)=\displaystyle\lim_{\Delta x \to 0}\frac{\Delta y}{\Delta x}=\displaystyle\lim_{\Delta x \to 0}\frac{f(x+\Delta x)-f(x)}{\Delta x}=\displaystyle\lim_{\Delta x \to 0}\frac{(x+\Delta x)^2-x^2}{\Delta x}=\displaystyle\lim_{\Delta x \to 0}\frac{2x \Delta x+{\Delta x}^2}{\Delta x}=\displaystyle\lim_{\Delta x \to 0}2x+\Delta x=2x$.
+$$
+\begin{aligned}
+  f'(x) &= \lim_{\Delta x \to 0}\frac{f(x+\Delta x)-f(x)}{\Delta x} \\
+  &= \lim_{\Delta x \to 0}\frac{(x+\Delta x)-x}{\Delta x} \\
+  &= \lim_{\Delta x \to 0}\frac{\Delta x}{\Delta x}=1
+\end{aligned}
+$$
+
+</TabItem>
+<TabItem value="Example 3">
+
+已知 $f(x)=x^2$，求 $f'(x)$。
+
+$$
+\begin{aligned}
+  f'(x) &= \lim_{\Delta x \to 0}\frac{f(x+\Delta x)-f(x)}{\Delta x} \\
+  &= \lim_{\Delta x \to 0}\frac{(x+\Delta x)^2-x^2}{\Delta x} \\
+  &= \lim_{\Delta x \to 0}\frac{2x \Delta x+{\Delta x}^2}{\Delta x} \\
+  &= \lim_{\Delta x \to 0}2x+\Delta x=2x
+\end{aligned}
+$$
+
+</TabItem>
+</Tabs>
+
+:::
 
 :::tip
 
@@ -176,9 +224,9 @@ $f'(x)=\displaystyle\lim_{\Delta x \to 0}\frac{\Delta y}{\Delta x}$
 
 :::
 
-## 常见初等函数导数公式
+## 公式
 
-### 常量函数
+### 常数函数
 
 - $f(x)=C$（$C$ 为常数），$f'(x)=0$.
 
@@ -208,7 +256,7 @@ $f'(x)=\displaystyle\lim_{\Delta x \to 0}\frac{\Delta y}{\Delta x}$
 
 - $f(x)=\cos{x}$，$f'(x)=-\sin{x}$.
 
-### 常用公式
+### 公式总结
 
 - $C'=0$（$C$ 为常数）.
 
@@ -222,7 +270,7 @@ $f'(x)=\displaystyle\lim_{\Delta x \to 0}\frac{\Delta y}{\Delta x}$
 
 - $(\cos{x})'=-\sin{x}$.
 
-## 导数的运算
+## 运算
 
 ### 函数和差的导数
 
@@ -240,6 +288,16 @@ $f'(x)=\displaystyle\lim_{\Delta x \to 0}\frac{\Delta y}{\Delta x}$
 
 > Tips：$[\frac{1}{f(x)}]'=\frac{1'f(x)-f(x)'}{[f(x)]^2}=-\frac{f(x)'}{[f(x)]^2}$（$f(x) \not = 0$）.
 
+### 公式总结
+
+- $[f(x) \pm g(x)]'=f(x)' \pm g(x)'$.
+
+- $[f(x) \cdot g(x)]'=f(x)'g(x)+f(x)g(x)'$.
+
+- $[\frac{f(x)}{g(x)}]'=\frac{f(x)'g(x)-f(x)g(x)'}{[g(x)]^2}$（$g(x) \not = 0$）.
+
+## 更多
+
 ### 链式法则
 
 假设有三个相互咬合的齿轮，分别对应转动角度为 $x$、$g(x)$ 和 $f(g(x))$。
@@ -252,15 +310,7 @@ $$
 [f(g(x))]'=f'(g(x))g'(x)
 $$
 
-### 常用公式
-
-- $[f(x) \pm g(x)]'=f(x)' \pm g(x)'$.
-
-- $[f(x) \cdot g(x)]'=f(x)'g(x)+f(x)g(x)'$.
-
-- $[\frac{f(x)}{g(x)}]'=\frac{f(x)'g(x)-f(x)g(x)'}{[g(x)]^2}$（$g(x) \not = 0$）.
-
-## 高阶导数
+### 高阶导数
 
 零阶导数即原函数，一阶导数为零阶导数的导数；二阶导数为一阶导数的导数为；三阶导数为二阶导数的导数，以此类推……
 
