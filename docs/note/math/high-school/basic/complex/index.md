@@ -69,7 +69,7 @@ $$
 z=a+bi(a,b\in\mathbb{R})
 $$
 
-其中 $a$ 称为 $z$ 的 **实部**，记作 $\operatorname{Re}(z)$；$b$ 称为 **虚部**，记作 $\operatorname{Im}(z)$；$i$ 称为 **虚数单位**，满足 $i^2=-1$。
+其中 $a$ 称为 $z$ 的 **实部**，记作 $\operatorname{Re}z$；$b$ 称为 **虚部**，记作 $\operatorname{Im}z$；$i$ 称为 **虚数单位**，满足 $i^2=-1$。
 
 特别地，当 $b=0$ 时，$z=a$ 为 **实数**；但 $b\ne 0$ 时，$z$ 为 **虚数**；当 $a=0$ 且 $b\ne 0$ 时，$z=bi$ 为 **纯虚数**。
 
@@ -133,7 +133,7 @@ $$
 
 ### 辐角
 
-我们将向量 $\overrightarrow{OZ}$ 与 **实轴正方向** 的夹角定义为 **辐角**，通常取值范围为 $(-\pi,\pi]$。
+我们将向量 $\overrightarrow{OZ}$ 与 **实轴正方向** 的夹角定义为 **辐角**，记作 $\operatorname{Arg}z$，取值范围通常为 $(-\pi,\pi]$。
 
 这类似于任意角 [三角函数](../function/trigonometric-function) 的定义。
 
