@@ -55,6 +55,10 @@ $$
 
 数集在前面的 [集合](set#数集) 章节中提到过。
 
+$$
+\mathbb{N}\subseteq\mathbb{Z}\subseteq\mathbb{Q}\subseteq\mathbb{R}\subseteq\mathbb{C}
+$$
+
 ![](./assets/NumberSetinC.svg)
 
 ## 定义与表示
