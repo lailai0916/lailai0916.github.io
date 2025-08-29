@@ -361,7 +361,7 @@ $$
 这就是高中阶段学过的 **导数**：
 
 $$
-f(x)=\lim_{\Delta x\to 0}\dfrac{F(x+\Delta x)-F(x)}{\Delta x}
+f(x)=\lim_{\Delta x\to 0}\frac{F(x+\Delta x)-F(x)}{\Delta x}
 $$
 
 而 **导数** 就是微积分中的 **微分**。

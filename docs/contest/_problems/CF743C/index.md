@@ -3,7 +3,7 @@
 构造一组 $x,y,z$，使得对于给定的 $n$，满足：
 
 $$
-\dfrac{1}{x}+\dfrac{1}{y}+\dfrac{1}{z}=\dfrac{2}{n}
+\frac{1}{x}+\frac{1}{y}+\frac{1}{z}=\frac{2}{n}
 $$
 
 :::

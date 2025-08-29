@@ -159,7 +159,7 @@ $$
 
 ### 加法 & 减法
 
-对于代数意义，直接相加减即可：
+在代数意义上，直接相加减即可：
 
 $$
 z_1+z_2=(a+bi)+(c+di)=(a+c)+(b+d)i
@@ -169,120 +169,44 @@ $$
 z_1-z_2=(a+bi)-(c+di)=(a-c)+(b-d)i
 $$
 
-对于几何意义，在复平面中，复数可以被视为点或向量，因此复数运算的几何性质与向量相似，遵循 **平行四边形法则**。
+在几何意义上，复数在复平面中可以被视为 **点或向量**，因此复数运算的几何性质与向量相似，都遵循 **平行四边形法则**。
 
-<Desmos id="ckrrgnsnxd" />
+<Desmos id="vpr9zilhfy" />
 
-### 乘法
+### 乘法 & 除法
 
-对于代数意义，直接相乘即可：
+在代数意义上，直接相乘即可：
 
 $$
 z_1z_2=(a+bi)(c+di)=ac+adi+bci+bdi^2=(ac-bd)+(ad+bc)i
 $$
 
-对于几何意义，
+在几何意义上，复数乘法遵循 **模长相乘、辐角相加**。
 
-### 除法
+<Desmos id="shfexqdskd" />
+
+除法在直接计算后得到：
 
 $$
-\frac{z_1}{z_2}=\frac{a+bi}{c+di}=\frac{(a+bi)(c-di)}{(c+di)(c-di)}=\frac{(a+bi)(c-di)}{c^2+d^2}=\frac{ac+bd}{c^2+d^2}+\frac{bc-ad}{c^2+d^2}i(z_2\ne 0)
+\frac{z_1}{z_2}=\frac{a+bi}{c+di}(z_2\ne 0)
+$$
+
+然后通过 **分母有理化** 继续化简：
+
+$$
+\frac{(a+bi)(c-di)}{(c+di)(c-di)}=\frac{(a+bi)(c-di)}{c^2+d^2}=\frac{ac+bd}{c^2+d^2}+\frac{bc-ad}{c^2+d^2}i
 $$
 
 :::note
 
-分母有理化：分母含有复数时，乘以分母的共轭 $\overline{z}$，利用 $z\overline{z}=|z|^2$ 即可“有理化”。
-
-:::
-
-## 极坐标（三角形式）与指数形式
-
-若 $z\ne 0$，令 $r=|z|\ge 0,\ \theta=\arg z$，则
+分母含有复数时，乘以分母的共轭 $\overline{z}$ 即可有理化：
 
 $$
-z=r(\cos\theta+i\sin\theta).
-$$
-
-利用欧拉公式 $e^{i\theta}=\cos\theta+i\sin\theta$，可写作
-
-$$
-z=re^{i\theta}.
-$$
-
-此时乘除运算特别简单：
-
-$$
-\begin{aligned}
-z_1z_2&=r_1r_2\,e^{i(\theta_1+\theta_2)}\\
-\dfrac{z_1}{z_2}&=\dfrac{r_1}{r_2}\,e^{i(\theta_1-\theta_2)}\ (z_2\ne 0)
-\end{aligned}
-$$
-
-## De Moivre 公式与 n 次方根
-
-对任意整数 $n$：
-
-$$
-(\cos\theta+i\sin\theta)^n=\cos(n\theta)+i\sin(n\theta).
-$$
-
-设 $w\ne 0$，求 $z^n=w$。若记 $w=Re^{i\phi}$，则 $z_k=R^{1/n}\,e^{i(\phi+2k\pi)/n}\ (k=0,1,\dots,n-1)$。这些根均匀分布在以原点为圆心、半径 $R^{1/n}$ 的圆上。
-
-:::note[单位根]
-
-$x^n=1$ 的全部解为 $\zeta_k=e^{2k\pi i/n}$。它们构成正 $n$ 边形的顶点，且满足 $1+\zeta+\cdots+\zeta^{n-1}=0\ (\zeta\ne1)$。
-
-:::
-
-## 复数方程（高中常见）
-
-1. 实系数二次方程 $ax^2+bx+c=0\ (a\ne 0)$：判别式 $\Delta=b^2-4ac$。当 $\Delta<0$，两根为共轭对 $\dfrac{-b\pm i\sqrt{4ac-b^2}}{2a}$。
-2. 线性方程组可在复平面上解释为直线交点；二次曲线与圆的交点也可转为复数运算求解。
-
-## 示例
-
-:::note[示例 1：化简除法]
-
-化简 $\dfrac{3-4i}{1+2i}$。
-
-解：乘以分母共轭 $1-2i$，得
-
-$$
-\frac{(3-4i)(1-2i)}{(1+2i)(1-2i)}=\frac{3-6i-4i+8i^2}{1-4i^2}=\frac{3-10i-8}{1+4}=\frac{-5-10i}{5}=-1-2i.
+z\overline{z}=|z|^2
 $$
 
 :::
 
-:::note[示例 2：求模与辐角]
+### 幂运算
 
-设 $z=1-\sqrt{3}i$，求 $|z|$ 与 $\operatorname{Arg} z$。
-
-解：$|z|=\sqrt{1+3}=2$；在第四象限，$\cos\theta=\tfrac{1}{2},\ \sin\theta=-\tfrac{\sqrt{3}}{2}$，故 $\operatorname{Arg} z=-\tfrac{\pi}{3}$。
-
-:::
-
-:::note[示例 3：n 次方根]
-
-求 $z^3=8(\cos\tfrac{\pi}{3}+i\sin\tfrac{\pi}{3})$ 的全部解。
-
-解：$R=8,\ \phi=\tfrac{\pi}{3}$。则
-
-$$
-z_k=2\big(\cos\tfrac{\phi+2k\pi}{3}+i\sin\tfrac{\phi+2k\pi}{3}\big),\ k=0,1,2.
-$$
-
-:::
-
-## 常见误区
-
-- 把 $\sqrt{a}\,\sqrt{b}=\sqrt{ab}$ 直接用于负数。复数域下需要选择分支，一般高中阶段避免在含负数根式间随意合并。
-- 忽视共轭：实系数多项式若有一非实根，则另一根必为其共轭。
-- 误把 $|a+bi|=|a|+|b|$。实际应为 $|a+bi|=\sqrt{a^2+b^2}$。
-
-## 小结
-
-- 代数形式：$z=a+bi$；几何表示：点/向量；极形式：$re^{i\theta}$。
-- 基本量：实部、虚部、模、辐角、共轭；性质：$z\overline{z}=|z|^2$、三角不等式。
-- 运算规律：乘除在极形式下化加减；De Moivre 与 $n$ 次方根规则化、几何直观。
-
-这些工具将贯穿后续的三角、解析几何与函数专题，并在竞赛中的多项式与变换题目里频繁出现。
+复数的幂运算和实数同理。
