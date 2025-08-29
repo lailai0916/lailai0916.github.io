@@ -32,7 +32,7 @@ export const RESOURCE_LIST: ResourceCategoryItem[] = [
       },
     ],
   },
-  
+
   {
     title: 'AI 助手与生成',
     icon: 'lucide:bot',
@@ -118,7 +118,6 @@ export const RESOURCE_LIST: ResourceCategoryItem[] = [
         href: 'https://keras.io',
         description: '深度学习高层 API',
       },
-      
     ],
   },
   {
@@ -233,7 +232,6 @@ export const RESOURCE_LIST: ResourceCategoryItem[] = [
         href: 'https://sandpack.codesandbox.io',
         description: '嵌入式代码编辑器',
       },
-      
     ],
   },
   {
@@ -384,7 +382,6 @@ export const RESOURCE_LIST: ResourceCategoryItem[] = [
         href: 'http://yuantiji.ac/zh/',
         description: '编程题目溯源工具',
       },
-      
     ],
   },
   {
@@ -529,7 +526,7 @@ export const RESOURCE_LIST: ResourceCategoryItem[] = [
         href: 'https://dzjszjz.nkxingxh.top',
         description: '电子教室软件解锁工具',
       },
-      
+
       {
         title: 'Note.ms',
         href: 'https://note.ms',

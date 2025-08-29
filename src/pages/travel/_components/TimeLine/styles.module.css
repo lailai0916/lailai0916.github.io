@@ -99,7 +99,9 @@
   line-height: 1.5 !important;
 }
 
-:global(html[data-theme='dark']) .wrapper :global(.travel-timeline-card-subtitle),
+:global(html[data-theme='dark'])
+  .wrapper
+  :global(.travel-timeline-card-subtitle),
 :global(html[data-theme='dark']) .wrapper :global(.travel-timeline-card-text) {
   color: var(--ifm-color-emphasis-700) !important;
 }
@@ -152,7 +154,9 @@
 
 /* 响应式设计 */
 @media (max-width: 768px) {
-  .wrapper :global(.react-chrono-tree) { padding: 1rem 0.5rem !important; }
+  .wrapper :global(.react-chrono-tree) {
+    padding: 1rem 0.5rem !important;
+  }
 
   .wrapper :global(.timeline-card-content),
   .wrapper :global(.travel-timeline-card) {
@@ -174,7 +178,9 @@
     padding: 0.3rem 0.6rem !important;
   }
 
-  .wrapper :global(.timeline-vertical-circle) { border-width: 1px !important; }
+  .wrapper :global(.timeline-vertical-circle) {
+    border-width: 1px !important;
+  }
 }
 
 /* 降低动效：尊重系统“减少动态效果”设置 */
