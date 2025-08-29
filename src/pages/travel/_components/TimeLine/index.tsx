@@ -105,6 +105,16 @@ const formatTravelDate = (dateStr: string, locale: string): string => {
   }
 };
 
+const TITLE = translate({
+  id: 'pages.travel.timeline.title',
+  message: 'Travel Footprint',
+});
+const DESCRIPTION = translate({
+  id: 'pages.travel.timeline.description',
+  message:
+    'From what is gained on paper, understanding always feels shallow; to truly know it, you must experience it yourself.',
+});
+
 export default function TravelTimeline() {
   const { i18n } = useDocusaurusContext();
   const items = useMemo(
@@ -118,17 +128,7 @@ export default function TravelTimeline() {
 
   return (
     <SectionContainer>
-      <SectionHeader
-        title={translate({
-          id: 'pages.travel.timeline.title',
-          message: 'Travel Footprint',
-        })}
-        description={translate({
-          id: 'pages.travel.timeline.description',
-          message:
-            'From what is gained on paper, understanding always feels shallow; to truly know it, you must experience it yourself.',
-        })}
-      />
+      <SectionHeader title={TITLE} description={DESCRIPTION} />
       <BrowserOnly>
         {() => (
           <Chrono

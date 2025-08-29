@@ -293,6 +293,16 @@ const MAP_THEME = {
 /**
  * 旅行地图组件 - 参考 Umami 实现
  */
+
+const TITLE = translate({
+  id: 'pages.travel.map.title',
+  message: 'Travel Map',
+});
+const DESCRIPTION = translate({
+  id: 'pages.travel.map.description',
+  message: 'Interactive map showing countries I have visited around the world',
+});
+
 export default function TravelMap() {
   const [tooltip, setTooltip] = useState<string>('');
   // Build visited country set from flags in TRAVEL_LIST
@@ -316,18 +326,7 @@ export default function TravelMap() {
 
   return (
     <SectionContainer>
-      <SectionHeader
-        title={translate({
-          id: 'pages.travel.map.title',
-          message: 'Travel Map',
-        })}
-        description={translate({
-          id: 'pages.travel.map.description',
-          message:
-            'Interactive map showing countries I have visited around the world',
-        })}
-      />
-
+      <SectionHeader title={TITLE} description={DESCRIPTION} />
       <div className={styles.mapOuter}>
         <div className={styles.mapInner}>
           <ComposableMap projection="geoMercator">
