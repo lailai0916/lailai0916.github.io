@@ -9,13 +9,13 @@
 
 ### 增量
 
-增量：在一段时间内，自变量取不同的值所对应的 **函数值之差**。
+增量指在一段时间内，自变量取不同的值所对应的 **函数值之差**。
 
 一个变量或函数的增量表示为 $\Delta$。
 
-:::tip
+:::note[示例]
 
-例子：$x$ 的增量表示为 $\Delta x$；$f(x)$ 的增量表示为 $\Delta f(x)$。
+$x$ 的增量表示为 $\Delta x$；$f(x)$ 的增量表示为 $\Delta f(x)$。
 
 :::
 
@@ -23,7 +23,12 @@
 
 当 $x$ 趋近于 $x_0$ 时，$f(x)$ 会无限趋近于一个 **确定** 的值，这个值就是函数 $f(x)$ 在 $x_0$ 处的极限。
 
-1. 例1. 求极限 $\displaystyle\lim_{x \to +\infty}\frac{3x-1}{x+3}$。
+:::note[示例]
+
+<Tabs>
+<TabItem value="Example 1">
+
+求极限 $\displaystyle\lim_{x \to +\infty}\frac{3x-1}{x+3}$。
 
 |   $x$    |  $3x-1$  |  $x+3$   | $(3x-1)/(x+3)$  |
 | :------: | :------: | :------: | :-------------: |
@@ -36,9 +41,12 @@
 
 不难发现，随着 $x$ 趋近于 $+\infty$，函数值逐渐趋近 $3$，所以 $\displaystyle\lim_{x \to +\infty}\frac{3x-1}{x+3}=3$。
 
-<Desmos id="ffnbjq3ghj" />
+<Desmos id="1uj0squ0j4" />
 
-2. 例2. 求极限 $\displaystyle\lim_{x \to 0}\frac{\sin x}{x}$。
+</TabItem>
+<TabItem value="Example 2">
+
+求极限 $\displaystyle\lim_{x \to 0}\frac{\sin x}{x}$。
 
 |    $x$    |       $\sin x$        |   $\sin(x)/x$    |
 | :-------: | :-------------------: | :--------------: |
@@ -51,13 +59,20 @@
 
 不难发现，随着 $x$ 趋近于 $0$，函数值逐渐趋近 $1$，所以 $\displaystyle\lim_{x \to 0}\frac{\sin x}{x}=1$。（[洛必达法则](https://zh.wikipedia.org/zh-cn/洛必达法则)）
 
-<Desmos id="flrlzx7rcl" />
+<Desmos id="zmjoejqeoi" />
+
+</TabItem>
+</Tabs>
+
+:::
 
 ### 切线
 
+#### 定义
+
 > 《人教版高中数学·选修二》：在曲线 $y=f(x)$ 上任取一点 $P(x,f(x))$，如果当点 $P(x,f(x))$ 沿着曲线 $y=f(x)$ 无限趋近于点 $P_0(x_0,f(x_0))$ 时，割线 $P_0P$ 无限趋近于一个确定的位置，这个确定位置的直线称为曲线 $y=f(x)$ 在点 $P_0$ 处的切线（tangent line）。
 
-解释：切线是一条 **恰好碰到** 曲线上某一点的直线。
+理解：切线是一条 **恰好碰到** 曲线上某一点的直线。
 
 #### 直线方程
 
