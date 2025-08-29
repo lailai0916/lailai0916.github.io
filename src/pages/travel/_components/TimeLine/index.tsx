@@ -6,7 +6,7 @@ import { TRAVEL_LIST } from '@site/src/data/travel';
 import SectionHeader from '@site/src/components/laikit/section/SectionHeader';
 import SectionContainer from '@site/src/components/laikit/section/SectionContainer1';
 import { translate } from '@docusaurus/Translate';
-import './styles.module.css';
+import styles from './styles.module.css';
 
 const LAYOUT_CONSTANTS = {
   BREAKPOINT_MOBILE: 768,
@@ -122,13 +122,15 @@ export default function TravelTimeline() {
       <SectionHeader title={TITLE} description={DESCRIPTION} />
       <BrowserOnly>
         {() => (
-          <Chrono
-            items={items}
-            mode="VERTICAL_ALTERNATING"
-            theme={TIMELINE_THEME}
-            classNames={CLASS_NAMES}
-            {...TIMELINE_CONFIG}
-          />
+          <div className={styles.wrapper}>
+            <Chrono
+              items={items}
+              mode="VERTICAL_ALTERNATING"
+              theme={TIMELINE_THEME}
+              classNames={CLASS_NAMES}
+              {...TIMELINE_CONFIG}
+            />
+          </div>
         )}
       </BrowserOnly>
     </SectionContainer>
