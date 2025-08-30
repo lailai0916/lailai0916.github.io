@@ -181,7 +181,7 @@ $$
 :::note[示例]
 
 <Tabs>
-<TabItem value="Example 1">
+<TabItem value="y=C">
 
 已知 $f(x)=C$（$C$ 为常数），求 $f'(x)$。
 
@@ -193,7 +193,7 @@ $$
 $$
 
 </TabItem>
-<TabItem value="Example 2">
+<TabItem value="y=x">
 
 已知 $f(x)=x$，求 $f'(x)$。
 
@@ -206,7 +206,7 @@ $$
 $$
 
 </TabItem>
-<TabItem value="Example 3">
+<TabItem value="y=x^2">
 
 已知 $f(x)=x^2$，求 $f'(x)$。
 
@@ -229,16 +229,51 @@ $$
 ### 常数函数
 
 $$
-f(x)=C,f'(x)=0
+f(x)=C
+$$
+
+$$
+f'(x)=0
 $$
 
 ### 幂函数
 
-- $f(x)=x^a$（$a \in \mathbb{R}, a \not = 1$），$f'(x)=ax^{a-1}$.
+$$
+f(x)=x^a(a \in \mathbb{R},a\ne 1)
+$$
 
-> Tips：$f(x)=\frac{1}{x}$，$f'(x)=(x^{-1})'=-x^{-2}=-\frac{1}{x^2}$.
+$$
+f'(x)=ax^{a-1}
+$$
 
-> Tips：$f(x)=\sqrt{x}$，$f'(x)=(x^{0.5})'=0.5x^{-0.5}=\frac{1}{2\sqrt{x}}$.
+:::note[示例]
+
+<Tabs>
+<TabItem value="y=1/x">
+
+$$
+f(x)=\frac{1}{x}
+$$
+
+$$
+f'(x)=(x^{-1})'=-x^{-2}=-\frac{1}{x^2}
+$$
+
+</TabItem>
+<TabItem value="y=sqrt{x}">
+
+$$
+f(x)=\sqrt{x}
+$$
+
+$$
+f'(x)=(x^{0.5})'=0.5x^{-0.5}=\frac{1}{2\sqrt{x}}
+$$
+
+</TabItem>
+</Tabs>
+
+:::
 
 ### 指数函数
 
@@ -248,9 +283,9 @@ $$
 
 ### 对数函数
 
-- $f(x)=\log_a{x}$（$a>0$ 且 $a \not = 1$），$f'(x)=\frac{1}{x\ln{a}}$.
+- $f(x)=\log_a{x}$（$a>0$ 且 $a \ne 1$），$f'(x)=\frac{1}{x\ln{a}}$.
 
-> Tips：$f(x)=\ln{x}$（$a>0$ 且 $a \not = 1$），$f'(x)=\log_e{x}=\frac{1}{x\ln{e}}=\frac{1}{x}$.
+> Tips：$f(x)=\ln{x}$（$a>0$ 且 $a \ne 1$），$f'(x)=\log_e{x}=\frac{1}{x\ln{e}}=\frac{1}{x}$.
 
 ### 三角函数
 
@@ -262,11 +297,11 @@ $$
 
 - $C'=0$（$C$ 为常数）.
 
-- $(x^a)'=ax^{a-1}$（$a \in \mathbb{R}, a \not = 1$）.
+- $(x^a)'=ax^{a-1}$（$a \in \mathbb{R}, a \ne 1$）.
 
 - $(a^x)'=a^{x}\ln{a}$（$a>0$）.
 
-- $(\log_a{x})'=\frac{1}{x\ln{a}}$（$a>0$ 且 $a \not = 1$）.
+- $(\log_a{x})'=\frac{1}{x\ln{a}}$（$a>0$ 且 $a \ne 1$）.
 
 - $(\sin{x})'=\cos{x}$.
 
@@ -286,9 +321,9 @@ $$
 
 ### 函数商的导数
 
-- $[\frac{f(x)}{g(x)}]'=\frac{f(x)'g(x)-f(x)g(x)'}{[g(x)]^2}$（$g(x) \not = 0$）.
+- $[\frac{f(x)}{g(x)}]'=\frac{f(x)'g(x)-f(x)g(x)'}{[g(x)]^2}$（$g(x) \ne 0$）.
 
-> Tips：$[\frac{1}{f(x)}]'=\frac{1'f(x)-f(x)'}{[f(x)]^2}=-\frac{f(x)'}{[f(x)]^2}$（$f(x) \not = 0$）.
+> Tips：$[\frac{1}{f(x)}]'=\frac{1'f(x)-f(x)'}{[f(x)]^2}=-\frac{f(x)'}{[f(x)]^2}$（$f(x) \ne 0$）.
 
 ### 公式总结
 
@@ -296,7 +331,7 @@ $$
 
 - $[f(x) \cdot g(x)]'=f(x)'g(x)+f(x)g(x)'$.
 
-- $[\frac{f(x)}{g(x)}]'=\frac{f(x)'g(x)-f(x)g(x)'}{[g(x)]^2}$（$g(x) \not = 0$）.
+- $[\frac{f(x)}{g(x)}]'=\frac{f(x)'g(x)-f(x)g(x)'}{[g(x)]^2}$（$g(x) \ne 0$）.
 
 ## 更多
 

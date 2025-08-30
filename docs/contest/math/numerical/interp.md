@@ -7,7 +7,7 @@
 ## 拉格朗日插值
 
 $$
-f(x)=\sum_{i=1}^{n}y_i\cdot\prod_{j\not=i}\frac{x-x_j}{x_i-x_j}
+f(x)=\sum_{i=1}^{n}y_i\cdot\prod_{j\ne i}\frac{x-x_j}{x_i-x_j}
 $$
 
 ```cpp
