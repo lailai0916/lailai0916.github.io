@@ -161,7 +161,7 @@ export const TRAVEL_LIST: TravelItem[] = [
   {
     title: '2019-07',
     cardTitle: '🇮🇹 意大利 & 🇻🇦 梵蒂冈 & 🇨🇭 瑞士 & 🇫🇷 法国',
-    cardDetailedText: '罗马、梵蒂冈、佛罗伦萨、威尼斯、卢塞恩、少女峰、安纳西、巴黎',
+    cardDetailedText: '罗马、梵蒂冈、白露里治奥、锡耶纳、佛罗伦萨、威尼斯、维罗纳、卢塞恩、少女峰、安纳西、里昂、巴黎',
   },
   {
     title: '2020-07',
