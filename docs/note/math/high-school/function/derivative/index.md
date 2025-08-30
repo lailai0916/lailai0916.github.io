@@ -277,53 +277,97 @@ $$
 
 ### 指数函数
 
-- $f(x)=a^x$（$a>0$），$f'(x)=a^{x}\ln{a}$.
+$$
+f(x)=a^x(a>0)
+$$
 
-> Tips：$f(x)=e^x$，$f'(x)=e^x\ln{e}=e^x$.
+$$
+f'(x)=a^{x}\ln{a}
+$$
+
+:::note[示例]
+
+$$
+f(x)=e^x
+$$
+
+$$
+f'(x)=e^x\ln{e}=e^x
+$$
+
+:::
 
 ### 对数函数
 
-- $f(x)=\log_a{x}$（$a>0$ 且 $a \ne 1$），$f'(x)=\frac{1}{x\ln{a}}$.
+$$
+f(x)=\log_a{x}(a>0,a\ne 1)
+$$
 
-> Tips：$f(x)=\ln{x}$（$a>0$ 且 $a \ne 1$），$f'(x)=\log_e{x}=\frac{1}{x\ln{e}}=\frac{1}{x}$.
+$$
+f'(x)=\frac{1}{x\ln{a}}
+$$
+
+:::note
+
+$$
+f(x)=\ln{x}(a>0,a\ne 1)
+$$
+
+$$
+f'(x)=\log_e{x}=\frac{1}{x\ln{e}}=\frac{1}{x}
+$$
+
+:::
 
 ### 三角函数
 
-- $f(x)=\sin{x}$，$f'(x)=\cos{x}$.
+$$
+f(x)=\sin{x}
+$$
 
-- $f(x)=\cos{x}$，$f'(x)=-\sin{x}$.
+$$
+f'(x)=\cos{x}
+$$
+
+$$
+f(x)=\cos{x}
+$$
+
+$$
+f'(x)=-\sin{x}
+$$
 
 ### 公式总结
 
-- $C'=0$（$C$ 为常数）.
+- $C'=0$（$C$ 为常数）
 
-- $(x^a)'=ax^{a-1}$（$a \in \mathbb{R}, a \ne 1$）.
+- $(x^a)'=ax^{a-1}$（$a \in \mathbb{R}, a\ne 1$）
 
-- $(a^x)'=a^{x}\ln{a}$（$a>0$）.
+- $(a^x)'=a^{x}\ln{a}$（$a>0$）
 
-- $(\log_a{x})'=\frac{1}{x\ln{a}}$（$a>0$ 且 $a \ne 1$）.
+- $(\log_a{x})'=\frac{1}{x\ln{a}}$（$a>0,a\ne 1$）
 
-- $(\sin{x})'=\cos{x}$.
+- $(\sin{x})'=\cos{x}$
 
-- $(\cos{x})'=-\sin{x}$.
+- $(\cos{x})'=-\sin{x}$
 
 ## 运算
 
-### 函数和差的导数
+### 和差的导数
 
 - $[f(x) \pm g(x)]'=f(x)' \pm g(x)'$.
 
-### 函数积的导数
+### 积的导数
 
 - $[f(x) \cdot g(x)]'=f(x)'g(x)+f(x)g(x)'$.
 
 > Tips：$[k \cdot f(x)]'=k'f(x)+kf'(x)=kf'(x)$（$k$ 为常数）.
 
-### 函数商的导数
+### 商的导数
 
-- $[\frac{f(x)}{g(x)}]'=\frac{f(x)'g(x)-f(x)g(x)'}{[g(x)]^2}$（$g(x) \ne 0$）.
+- $[\frac{f(x)}{g(x)}]'=\frac{f(x)'g(x)-f(x)g(x)'}{[g(x)]^2}$（$g(x)\ne 0$）.
 
-> Tips：$[\frac{1}{f(x)}]'=\frac{1'f(x)-f(x)'}{[f(x)]^2}=-\frac{f(x)'}{[f(x)]^2}$（$f(x) \ne 0$）.
+> Tips：$[\frac{1}{f(x)}]'=\frac{1'f(x)-f(x)'}{[f(x)]^2}=-\frac{f(x)'}{[f(x)]^2}$（$f(x)\ne 0$）.
 
 ### 公式总结
 
@@ -331,9 +375,9 @@ $$
 
 - $[f(x) \cdot g(x)]'=f(x)'g(x)+f(x)g(x)'$.
 
-- $[\frac{f(x)}{g(x)}]'=\frac{f(x)'g(x)-f(x)g(x)'}{[g(x)]^2}$（$g(x) \ne 0$）.
+- $[\frac{f(x)}{g(x)}]'=\frac{f(x)'g(x)-f(x)g(x)'}{[g(x)]^2}$（$g(x)\ne 0$）.
 
-## 更多
+## 拓展
 
 ### 链式法则
 
