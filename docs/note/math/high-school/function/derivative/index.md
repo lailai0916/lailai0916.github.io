@@ -246,7 +246,7 @@ $$
 f'(x)=ax^{a-1}
 $$
 
-:::note[示例]
+:::tip
 
 <Tabs>
 <TabItem value="y=1/x">
@@ -285,7 +285,7 @@ $$
 f'(x)=a^{x}\ln{a}
 $$
 
-:::note[示例]
+:::tip
 
 $$
 f(x)=e^x
@@ -307,7 +307,7 @@ $$
 f'(x)=\frac{1}{x\ln{a}}
 $$
 
-:::note
+:::tip
 
 $$
 f(x)=\ln{x}(a>0,a\ne 1)
@@ -340,42 +340,53 @@ $$
 ### 公式总结
 
 - $C'=0$（$C$ 为常数）
-
 - $(x^a)'=ax^{a-1}$（$a \in \mathbb{R}, a\ne 1$）
-
 - $(a^x)'=a^{x}\ln{a}$（$a>0$）
-
 - $(\log_a{x})'=\frac{1}{x\ln{a}}$（$a>0,a\ne 1$）
-
 - $(\sin{x})'=\cos{x}$
-
 - $(\cos{x})'=-\sin{x}$
 
 ## 运算
 
 ### 和差的导数
 
-- $[f(x) \pm g(x)]'=f(x)' \pm g(x)'$.
+$$
+[f(x) \pm g(x)]'=f(x)' \pm g(x)'
+$$
 
 ### 积的导数
 
-- $[f(x) \cdot g(x)]'=f(x)'g(x)+f(x)g(x)'$.
+$$
+[f(x) \cdot g(x)]'=f(x)'g(x)+f(x)g(x)'
+$$
 
-> Tips：$[k \cdot f(x)]'=k'f(x)+kf'(x)=kf'(x)$（$k$ 为常数）.
+:::tip
+
+$$
+[k \cdot f(x)]'=k'f(x)+kf'(x)=kf'(x)
+$$
+
+:::
 
 ### 商的导数
 
-- $[\frac{f(x)}{g(x)}]'=\frac{f(x)'g(x)-f(x)g(x)'}{[g(x)]^2}$（$g(x)\ne 0$）.
+$$
+[\frac{f(x)}{g(x)}]'=\frac{f(x)'g(x)-f(x)g(x)'}{[g(x)]^2}(g(x)\ne 0)
+$$
 
-> Tips：$[\frac{1}{f(x)}]'=\frac{1'f(x)-f(x)'}{[f(x)]^2}=-\frac{f(x)'}{[f(x)]^2}$（$f(x)\ne 0$）.
+:::tip
+
+$$
+\left[\frac{1}{f(x)}\right]'=\frac{1'f(x)-f(x)'}{[f(x)]^2}=-\frac{f(x)'}{[f(x)]^2}(f(x)\ne 0)
+$$
+
+:::
 
 ### 公式总结
 
-- $[f(x) \pm g(x)]'=f(x)' \pm g(x)'$.
-
-- $[f(x) \cdot g(x)]'=f(x)'g(x)+f(x)g(x)'$.
-
-- $[\frac{f(x)}{g(x)}]'=\frac{f(x)'g(x)-f(x)g(x)'}{[g(x)]^2}$（$g(x)\ne 0$）.
+- $[f(x) \pm g(x)]'=f(x)' \pm g(x)'$
+- $[f(x) \cdot g(x)]'=f(x)'g(x)+f(x)g(x)'$
+- $[\frac{f(x)}{g(x)}]'=\frac{f(x)'g(x)-f(x)g(x)'}{[g(x)]^2}(g(x)\ne 0)$
 
 ## 拓展
 
@@ -395,8 +406,12 @@ $$
 
 零阶导数即原函数，一阶导数为零阶导数的导数；二阶导数为一阶导数的导数为；三阶导数为二阶导数的导数，以此类推……
 
-一个函数 $f(x)$ 的 $n$ 阶导数就是对原函数求导 $n$ 次，一般写作 $f^{(n)}(x)$.
+一个函数 $f(x)$ 的 $n$ 阶导数就是对原函数求导 $n$ 次，一般写作 $f^{(n)}(x)$
 
-> Tips：$f^{(n)}(x)=[f^{(n-1)}(x)]'$.
+:::tip
 
-咕.
+$$
+f^{(n)}(x)=[f^{(n-1)}(x)]'
+$$
+
+:::
