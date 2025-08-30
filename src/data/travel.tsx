@@ -85,7 +85,7 @@ export const TRAVEL_LIST: TravelItem[] = [
     cardTitle:
       '🇦🇹 奥地利 & 🇸🇰 斯洛伐克 & 🇭🇺 匈牙利 & 🇨🇿 捷克 & 🇸🇮 斯洛文尼亚 & 🇩🇪 德国',
     cardDetailedText:
-      '维也纳、布拉迪斯拉发、布拉格、布达佩斯、萨尔茨堡、哈尔施塔特、马里博尔、柏林',
+      '维也纳、萨尔茨堡、哈尔施塔特、布拉迪斯拉发、布拉格、克鲁姆洛夫、布达佩斯、萨尔茨堡、哈尔施塔特、马里博尔、柏林',
   },
   {
     title: '2016-09',
@@ -161,7 +161,7 @@ export const TRAVEL_LIST: TravelItem[] = [
   {
     title: '2019-07',
     cardTitle: '🇮🇹 意大利 & 🇻🇦 梵蒂冈 & 🇨🇭 瑞士 & 🇫🇷 法国',
-    cardDetailedText: '罗马、梵蒂冈、佛罗伦萨、威尼斯、卢塞恩、巴黎',
+    cardDetailedText: '罗马、梵蒂冈、佛罗伦萨、威尼斯、卢塞恩、少女峰、安纳西、巴黎',
   },
   {
     title: '2020-07',
