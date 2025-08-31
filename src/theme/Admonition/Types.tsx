@@ -1,42 +1,30 @@
 import React from 'react';
-import AdmonitionTypeNote from '@theme/Admonition/Type/Note';
-import AdmonitionTypeTip from '@theme/Admonition/Type/Tip';
-import AdmonitionTypeInfo from '@theme/Admonition/Type/Info';
-import AdmonitionTypeWarning from '@theme/Admonition/Type/Warning';
-import AdmonitionTypeDanger from '@theme/Admonition/Type/Danger';
-import AdmonitionTypeCaution from '@theme/Admonition/Type/Caution';
-import type AdmonitionTypes from '@theme/Admonition/Types';
-import { translate } from '@docusaurus/Translate';
+import DefaultAdmonitionTypes from '@theme-original/Admonition/Types';
+import Translate from '@docusaurus/Translate';
 
-const admonitionTypes: typeof AdmonitionTypes = {
-  note: AdmonitionTypeNote,
-  tip: AdmonitionTypeTip,
-  info: AdmonitionTypeInfo,
-  warning: AdmonitionTypeWarning,
-  danger: AdmonitionTypeDanger,
-  example: (props) => (
-    <AdmonitionTypeNote
+function ExampleAdmonition(props: any) {
+  const Note = (DefaultAdmonitionTypes as any).note;
+  return (
+    <Note
       {...props}
       type="note"
       title={
-        props.title ??
-        translate({ id: 'theme.admonition.example', message: 'Example' })
+        props.title ?? (
+          <Translate
+            id="theme.admonition.example"
+            description="The default label used for the Example admonition (:::example)"
+          >
+            Example
+          </Translate>
+        )
       }
     />
-  ),
+  );
+}
+
+const AdmonitionTypes = {
+  ...DefaultAdmonitionTypes,
+  example: ExampleAdmonition,
 };
 
-// Undocumented legacy admonition type aliases
-// Provide hardcoded/untranslated retrocompatible label
-// See also https://github.com/facebook/docusaurus/issues/7767
-const admonitionAliases: typeof AdmonitionTypes = {
-  secondary: (props) => <AdmonitionTypeNote title="secondary" {...props} />,
-  important: (props) => <AdmonitionTypeInfo title="important" {...props} />,
-  success: (props) => <AdmonitionTypeTip title="success" {...props} />,
-  caution: AdmonitionTypeCaution,
-};
-
-export default {
-  ...admonitionTypes,
-  ...admonitionAliases,
-};
+export default AdmonitionTypes;
