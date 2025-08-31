@@ -68,7 +68,7 @@ $$
 
 1. 主语 + **不及物动词**（S + V）
 
-:::note[示例]
+:::example
 
 - He **sleeps**.
 
@@ -76,7 +76,7 @@ $$
 
 2. 主语 + **单及物动词** + 宾语（S + V + O）
 
-:::note[示例]
+:::example
 
 - She **bought** a dress.
 
@@ -84,7 +84,7 @@ $$
 
 3. 主语 + **双及物动词** + 间接宾语 + 直接宾语（S + V + IO + DO）
 
-:::note[示例]
+:::example
 
 - I **teach** you English.
 
@@ -92,7 +92,7 @@ $$
 
 4. 主语 + **复杂及物动词** + 宾语 + 宾语补语（S + V + O + OC）
 
-:::note[示例]
+:::example
 
 - Emmy **considers** you smart.
 
@@ -100,7 +100,7 @@ $$
 
 5. 主语 + **连系动词** + 主语补语（表语）（S + V + P）
 
-:::note[示例]
+:::example
 
 - He **is** tall.
 - The soup **smells** nice.
@@ -122,7 +122,7 @@ $$
 
 6. there + be + 主语（存现句）
 
-:::note[示例]
+:::example
 
 - There **is** a cat.
 
@@ -132,7 +132,7 @@ $$
 
 7. 主语 + 谓语动词 + 状语
 
-:::note[示例]
+:::example
 
 - I **live** in China.
 
@@ -142,7 +142,7 @@ $$
 
 8. 主语 + 谓语动词 + 宾语 + 状语
 
-:::note[示例]
+:::example
 
 - I **put** the apple on the table.
 
@@ -204,7 +204,7 @@ $$
 
 由多个 **并列** 的简单句组成，通常用并列连词连接。
 
-:::note[示例]
+:::example
 
 - He likes coffee, **and** she likes tea.
 - She wanted to go to the park, **but** it was raining.
@@ -216,7 +216,7 @@ $$
 
 由 **主句** 和 **从句** 组成，从句充当主句的某个句子成分。
 
-:::note[示例]
+:::example
 
 - I saw **that the cat ate a fish**.
 - I wonder **where she is from**.
@@ -264,7 +264,7 @@ $$
 
 1. 主语从句
 
-:::note[示例]
+:::example
 
 - **That she left** surprised me.
 
@@ -272,7 +272,7 @@ $$
 
 2. 宾语从句
 
-:::note[示例]
+:::example
 
 - I know **that he is honest**.
 
@@ -280,7 +280,7 @@ $$
 
 3. 宾语补语从句
 
-:::note[示例]
+:::example
 
 - She made it clear **that she disagreed**.
 
@@ -288,7 +288,7 @@ $$
 
 4. 表语从句
 
-:::note[示例]
+:::example
 
 - The problem is **that we lack time**.
 
@@ -296,7 +296,7 @@ $$
 
 5. 定语从句
 
-:::note[示例]
+:::example
 
 - The book **that I read** is great.
 
@@ -304,7 +304,7 @@ $$
 
 6. 状语从句
 
-:::note[示例]
+:::example
 
 - I’ll go **if it doesn’t rain**.
 
@@ -312,7 +312,7 @@ $$
 
 7. 同位语从句
 
-:::note[示例]
+:::example
 
 - The news **that he won** excited us.
 
@@ -363,7 +363,7 @@ graph TD;
 
 表示动作或状态。
 
-:::note[示例]
+:::example
 
 - He **runs** fast.
 
@@ -381,7 +381,7 @@ graph TD;
 
 表示人、事物、地点或概念。
 
-:::note[示例]
+:::example
 
 - **Dog** barks.
 
@@ -393,7 +393,7 @@ graph TD;
 
 限定名词的范围。
 
-:::note[示例]
+:::example
 
 - **The** cat sleeps.
 
@@ -405,7 +405,7 @@ graph TD;
 
 代替名词或名词短语。
 
-:::note[示例]
+:::example
 
 - **She** is here.
 
@@ -417,7 +417,7 @@ graph TD;
 
 修饰名词或代词。
 
-:::note[示例]
+:::example
 
 - There is a **big** house.
 
@@ -429,7 +429,7 @@ graph TD;
 
 表示数目和次序。
 
-:::note[示例]
+:::example
 
 - I have **two** books.
 
@@ -441,7 +441,7 @@ graph TD;
 
 修饰动词、形容词、副词或整个句子。
 
-:::note[示例]
+:::example
 
 - He runs **quickly**.
 
@@ -453,7 +453,7 @@ graph TD;
 
 表示名词与句子中其他词的关系。
 
-:::note[示例]
+:::example
 
 - She lives **in** London.
 
@@ -465,7 +465,7 @@ graph TD;
 
 连接词、短语或句子。
 
-:::note[示例]
+:::example
 
 - I like tea **and** coffee.
 
@@ -477,7 +477,7 @@ graph TD;
 
 表达强烈情感或反应。
 
-:::note[示例]
+:::example
 
 - **Wow**! That’s amazing.
 

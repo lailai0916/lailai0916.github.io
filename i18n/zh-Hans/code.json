@@ -162,6 +162,10 @@
     "message": "注意",
     "description": "The default label used for the Warning admonition (:::warning)"
   },
+  "theme.admonition.example": {
+    "message": "示例",
+    "description": "The default label used for the Example admonition (:::example)"
+  },
   "theme.AnnouncementBar.closeButtonAriaLabel": {
     "message": "关闭",
     "description": "The ARIA label for close button of announcement bar"

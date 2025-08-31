@@ -12,7 +12,7 @@
 
 **增量** 指变量或函数从原值变为新值时产生的 **差值**，通常用 $\Delta$ 表示。
 
-:::note[示例]
+:::example
 
 $x$ 的增量表示为 $\Delta x$；$f(x)$ 的增量表示为 $\Delta f(x)$。
 
@@ -26,7 +26,7 @@ $$
 \lim_{x\to x_0}f(x)=t
 $$
 
-:::note[示例]
+:::example
 
 <Tabs>
 <TabItem value="Example 1">
@@ -124,7 +124,7 @@ $$
 
 $f(x)$ 的导数通常写作 $f'(x)$ 或 $y'$，而一个式子的导数通常在最后加 **撇号**（$'$）。
 
-:::note[示例]
+:::example
 
 $ax^2+bx+c$ 的导数可以写作 $(ax^2+bx+c)'$。
 
@@ -178,7 +178,7 @@ $$
 
 :::
 
-:::note[示例]
+:::example
 
 <Tabs>
 <TabItem value="y=C">
@@ -414,4 +414,4 @@ $$
 
 ### 微积分
 
-- [数学：微积分](/blog/calculus)
+详见 [数学：微积分](/blog/calculus)

@@ -8,7 +8,7 @@
 
 1. 单音节词及部分双音节词：在词尾加 -er（比较级）或 -est（最高级）。
 
-:::note[示例]
+:::example
 
 - long $\to$ longer $\to$ longest
 - tall $\to$ taller $\to$ tallest
@@ -18,7 +18,7 @@
 
 2. 部分双音节词及多音节词：在词前加 more（比较级）或 most（最高级）。
 
-:::note[示例]
+:::example
 
 - modern $\to$ more modern $\to$ most modern
 - interesting $\to$ more interesting $\to$ most interesting
@@ -29,21 +29,21 @@
 3. 特殊拼写规则（为保持发音或拼写规律）。
    1. 以 e 结尾：去除重复的 e。
 
-   :::note[示例]
+   :::example
    - nice $\to$ nicer $\to$ nicest
    - large $\to$ larger $\to$ largest
    - late $\to$ later $\to$ latest
 
    ::: 2. 以“辅音+y”结尾：将 y 改为 i。
 
-   :::note[示例]
+   :::example
    - happy $\to$ happier $\to$ happiest
    - easy $\to$ easier $\to$ easiest
    - busy $\to$ busier $\to$ busiest
 
    ::: 3. 重读闭音节单词（以“单元音+单辅音”结尾）：双写末尾辅音。
 
-   :::note[示例]
+   :::example
    - big $\to$ bigger $\to$ biggest
    - fat $\to$ fatter $\to$ fattest
 
@@ -51,7 +51,7 @@
 
 4. 不规则变化。
 
-:::note[示例]
+:::example
 
 - good / well $\to$ better $\to$ best
 - bad / badly $\to$ worse $\to$ worst

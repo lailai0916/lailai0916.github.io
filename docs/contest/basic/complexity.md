@@ -41,7 +41,7 @@
 
 :::
 
-:::note[示例]
+:::example
 
 <Tabs>
 <TabItem value="Example 1">
@@ -117,7 +117,7 @@ T(n)=
 \end{cases}
 $$
 
-:::note[示例]
+:::example
 
 <Tabs>
 <TabItem value="Example 1">

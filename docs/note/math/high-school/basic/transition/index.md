@@ -111,7 +111,7 @@ $$
 
 通过乘法公式，将每一项凑成公式形式。
 
-:::note[示例]
+:::example
 
 分解因式 $x^2+4y^2+4xy$。
 
@@ -153,7 +153,7 @@ $$
 B=ad+bc
 $$
 
-:::note[示例]
+:::example
 
 <Tabs>
 <TabItem value="Example 1">
@@ -257,7 +257,7 @@ $$
 4. 在方程 $f(x)=0$ 中，所有满足 $x\ne a$ 的根，都是方程 $g(x)=0$ 的根。
 5. 由于 $g(x)$ 的多项式次数比 $f(x)$ 低，因此求 $g$ 的零点可能更简单。
 
-:::note[示例]
+:::example
 
 <Tabs>
 <TabItem value="Example 1">
@@ -381,7 +381,7 @@ $$
 
 :::
 
-:::note[示例]
+:::example
 
 化简 $\sqrt{4-\sqrt{15}}$。
 

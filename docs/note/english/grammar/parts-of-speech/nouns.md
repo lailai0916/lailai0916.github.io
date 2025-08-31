@@ -14,7 +14,7 @@
 
 1. 一般情况：在词尾加 -s。
 
-:::note[示例]
+:::example
 
 - carrot $\to$ carrots
 - rabbit $\to$ rabbits
@@ -24,7 +24,7 @@
 2. 特殊拼写规则。
    1. 以 s, x, sh, ch 结尾：加 -es。
 
-   :::note[示例]
+   :::example
    - box $\to$ boxes
    - wish $\to$ wishes
    - bus $\to$ buses
@@ -32,7 +32,7 @@
 
    ::: 2. 以“辅音+y”结尾：将 y 改为 i，再加 -es。
 
-   :::note[示例]
+   :::example
    - city $\to$ cities
    - century $\to$ centuries
    - baby $\to$ babies
@@ -40,14 +40,14 @@
 
    ::: 3. 以 f 或 fe 结尾：将 f 改为 v，再加 -es。
 
-   :::note[示例]
+   :::example
    - knife $\to$ knives
    - wife $\to$ wives
    - leaf $\to$ leaves
 
    ::: 4. 以 o 结尾：加 -s 或 -es。
 
-   :::note[示例]
+   :::example
    - tomato $\to$ tomatoes
    - potato $\to$ potatoes
    - hero $\to$ heroes
@@ -57,7 +57,7 @@
 
 3. 不规则变化。
 
-:::note[示例]
+:::example
 
 - man $\to$ men
 - foot $\to$ feet
@@ -83,7 +83,7 @@
 
 表示个体的人或事物的词。
 
-:::note[示例]
+:::example
 
 - boy、carrot、rabbit
 
@@ -99,7 +99,7 @@
 
 表示一群人或一类事物的词，根据语境可视为单数或复数。
 
-:::note[示例]
+:::example
 
 - family、team、audience、fruit
 
@@ -118,7 +118,7 @@
 
 表示无法分为个体的东西的词。
 
-:::note[示例]
+:::example
 
 - water、milk、bread、air、beer、wood、paper
 
@@ -131,7 +131,7 @@
 
 表示状态、品质、行为、感情等抽象概念等词。
 
-:::note[示例]
+:::example
 
 - power、peace、honesty、pleasure
 
@@ -151,7 +151,7 @@
 
 表示人、地方、事物、机构、组织等的词，通常 **首字母大写**，一般 **不可数**。
 
-:::note[示例]
+:::example
 
 - 人名：Jack、Harry Potter、Michael
 - 地名：Earth、Asia、China、London
@@ -175,7 +175,7 @@
 
 用于表示所属关系，常用于有生命的事物，也可用于无生命名词表达性质。
 
-:::note[示例]
+:::example
 
 - The rabbit's carrot（兔子的胡萝卜）
 - Michael's computer（Michael 的电脑）
@@ -195,7 +195,7 @@
 
 用于表示关系或特征，结构为：`A of B`，其中 B 修饰 A。
 
-:::note[示例]
+:::example
 
 - The brightness of the moon（月亮的亮度）
 - A friend of Michael（Michael 的一个朋友）
@@ -217,7 +217,7 @@
 
 1. 名词 + of + 's 所有格
 
-:::note[示例]
+:::example
 
 - I am a friend of Michael's.
 - That is a photo of Alice's.
@@ -226,7 +226,7 @@
 
 2. 名词 + of + 名词性物主代词
 
-:::note[示例]
+:::example
 
 - I lost a book of mine.
 

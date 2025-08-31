@@ -28,7 +28,7 @@
 
 将“几十几”拆分为“几十+几”，并在中间添加连字符。
 
-:::note[示例]
+:::example
 
 - $21$：twenty-one
 - $66$：sixty-six
@@ -40,7 +40,7 @@
 
 “百”的单词为“hundred”，将“几百”拆分为“几+hundred”。
 
-:::note[示例]
+:::example
 
 - $100$：one hundred
 - $200$：two hundred
@@ -58,7 +58,7 @@
 
 将“几百几十几”拆分为“几百+几十几”。
 
-:::note[示例]
+:::example
 
 - $365$：three hundred (and) sixty-five
 - $999$：nine hundred (and) ninety-nine
@@ -83,7 +83,7 @@
 
 然后从左侧开始，读出每一段的数以及对应的单位。
 
-:::note[示例]
+:::example
 
 - $65536\rightarrow 65,536$：sixty-five **thousand** five hundred (and) thirty-six
 - $16777216\rightarrow 16,777,216$：sixteen **million** seven hundred (and) seventy-seven **thousand** two hundred (and) sixteen
@@ -95,7 +95,7 @@
 
 在单位后加 -s 和 of。
 
-:::note[示例]
+:::example
 
 - tens of：数十
 - hundreds of：数百
@@ -116,7 +116,7 @@
 
 #### 主语&表语
 
-:::note[示例]
+:::example
 
 - **One and two** is **three**.
 
@@ -124,7 +124,7 @@
 
 #### 宾语
 
-:::note[示例]
+:::example
 
 - It costs **fifty** Yuan.
 
@@ -132,7 +132,7 @@
 
 #### 定语
 
-:::note[示例]
+:::example
 
 - There are **two hundred** students.
 
@@ -140,7 +140,7 @@
 
 #### 同位语
 
-:::note[示例]
+:::example
 
 - You **two** can go with me.
 
@@ -170,7 +170,7 @@
 
 其他数的序数词为将其基数词的最后一个单词变为序数词，并在个位和十位中间添加连字符。
 
-:::note[示例]
+:::example
 
 - 第 $22$：twenty-second
 - 第 $56$：fifty-sixth
@@ -185,7 +185,7 @@
 
 大多数的序数词缩写为“数字+th”。
 
-:::note[示例]
+:::example
 
 - 第 $7$：$\text{seventh}\rightarrow 7\text{th}$
 - 第 $13$：$\text{thirteenth}\rightarrow 13\text{th}$
@@ -195,7 +195,7 @@
 
 以 first、second、third 结尾的序数词缩写为“数字+st/nd/rd”。
 
-:::note[示例]
+:::example
 
 - 第 $1$：$\text{first}\rightarrow 1\text{st}$
 - 第 $2$：$\text{second}\rightarrow 2\text{nd}$
@@ -211,7 +211,7 @@
 
 #### 主语
 
-:::note[示例]
+:::example
 
 - The **fifth** to pay the bill will get this prize.
 
@@ -219,7 +219,7 @@
 
 #### 宾语
 
-:::note[示例]
+:::example
 
 - Please give me the **second**.
 
@@ -227,7 +227,7 @@
 
 #### 定语
 
-:::note[示例]
+:::example
 
 - He is the **13th** person to fall over this morning.
 - Today is my **16th** birthday.
@@ -236,7 +236,7 @@
 
 #### 表语
 
-:::note[示例]
+:::example
 
 - She was the **fifth** to pay the bill.
 
@@ -256,7 +256,7 @@
 
 零的单词为“zero”，有时也可读成 “oh”（例如 $101$ 可读作 one-oh-one）
 
-:::note[示例]
+:::example
 
 - $0$：zero
 - $-1$：negative one
@@ -268,7 +268,7 @@
 
 分数的分子用基数词，分母用序数词。如果分子 $>1$，分母的序数词要加 -s：
 
-:::note[示例]
+:::example
 
 - $\frac{1}{3}$：one third
 - $\frac{3}{5}$：three fifths
@@ -277,7 +277,7 @@
 
 二分之一称为 half，四分之一称为 quarter。
 
-:::note[示例]
+:::example
 
 - $\frac{1}{2}$：a half
 - $\frac{1}{4}$：one fourth / a quarter
@@ -287,7 +287,7 @@
 
 带分数表示为“整数+and+分数”。
 
-:::note[示例]
+:::example
 
 - $2\frac{1}{3}$：two and one third
 
@@ -297,7 +297,7 @@
 
 小数的表示和中文一样，整数部分用基数词，小数部分按顺序写出每一位的基数词，小数点的单词为“point”。
 
-:::note[示例]
+:::example
 
 - $1.34$：one **point** three four
 - $0.57$：zero **point** five seven
@@ -309,7 +309,7 @@
 
 百分数的单词为“percent”，百分数表示为“数字+percent”。
 
-:::note[示例]
+:::example
 
 - $25\%$：twenty-five percent
 - $2.5\%$：two point five percent
@@ -322,7 +322,7 @@
 
 #### 四则运算
 
-:::note[示例]
+:::example
 
 - $2+2=4$：2 plus 2 is 4.
 - $4-2=2$：4 minus 2 is 2.
@@ -333,7 +333,7 @@
 
 #### 幂运算
 
-:::note[示例]
+:::example
 
 - $3^2=9$：3 squared is 9.
 - $2^3=8$：2 cubed is 8.
@@ -345,7 +345,7 @@
 
 #### 比较运算
 
-:::note[示例]
+:::example
 
 - $x=5$：x is 5. / x equals 5.
 - $4>3$：4 is more than 3.
@@ -356,7 +356,7 @@
 
 #### 其他运算
 
-:::note[示例]
+:::example
 
 - $\log_2 8=3$：Log base 2 of 8 equals 3.
 - $5!=120$：5 factorial is 120.

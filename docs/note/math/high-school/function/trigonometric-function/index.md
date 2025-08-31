@@ -269,7 +269,7 @@ $$
 \sin{\theta}=\frac{a}{c},\cos{\theta}=\frac{b}{c},\tan{\theta}=\frac{a}{b},\cot{\theta}=\frac{b}{a},\sec{\theta}=\frac{c}{b},\csc{\theta}=\frac{c}{a}
 $$
 
-:::note[示例]
+:::example
 
 - $\frac{\sin{\theta}}{\cos{\theta}}=\frac{a/c}{b/c}=\frac{a}{b}=\tan{\theta}$
 
@@ -438,7 +438,7 @@ $$
 
 诱导公式可以用和差角公式直接计算。
 
-:::note[示例]
+:::example
 
 $$
 \sin{(\frac{\pi}{2}+\alpha)}=\sin{\frac{\pi}{2}}\cos{\alpha}+\cos{\frac{\pi}{2}}\sin{\alpha}=\cos{\alpha}
@@ -469,7 +469,7 @@ $$
 
 原理：单位圆具有对称性和周期性；所有三角函数在第一象限内均为正数。
 
-:::note[示例]
+:::example
 
 化简 $\sin{(\frac{3\pi}{2}-\alpha)}$。
 

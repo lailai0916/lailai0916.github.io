@@ -50,6 +50,7 @@ const config: Config = {
             [require('@docusaurus/remark-plugin-npm2yarn'), { sync: true }],
           ],
           rehypePlugins: [rehypeKatex],
+          admonitions: { extendDefaults: true, keywords: ['example'] },
         },
         blog: {
           showReadingTime: true,
@@ -77,6 +78,7 @@ const config: Config = {
             [require('@docusaurus/remark-plugin-npm2yarn'), { sync: true }],
           ],
           rehypePlugins: [rehypeKatex],
+          admonitions: { extendDefaults: true, keywords: ['example'] },
         },
         pages: {
           remarkPlugins: [
@@ -84,6 +86,7 @@ const config: Config = {
             [require('@docusaurus/remark-plugin-npm2yarn'), { sync: true }],
           ],
           rehypePlugins: [rehypeKatex],
+          admonitions: { extendDefaults: true, keywords: ['example'] },
         },
         theme: {
           customCss: './src/css/custom.css',
