@@ -1,30 +1,34 @@
 import React from 'react';
-import { translate } from '@docusaurus/Translate';
 import AdmonitionTypeNote from '@theme/Admonition/Type/Note';
 import AdmonitionTypeTip from '@theme/Admonition/Type/Tip';
 import AdmonitionTypeInfo from '@theme/Admonition/Type/Info';
 import AdmonitionTypeWarning from '@theme/Admonition/Type/Warning';
 import AdmonitionTypeDanger from '@theme/Admonition/Type/Danger';
 import AdmonitionTypeCaution from '@theme/Admonition/Type/Caution';
+import type AdmonitionTypes from '@theme/Admonition/Types';
+import { translate } from '@docusaurus/Translate';
 
-// Extend the default mapping: add `example` that renders like `note`
-const admonitionTypes = {
+const admonitionTypes: typeof AdmonitionTypes = {
   note: AdmonitionTypeNote,
   tip: AdmonitionTypeTip,
   info: AdmonitionTypeInfo,
   warning: AdmonitionTypeWarning,
   danger: AdmonitionTypeDanger,
-  // Custom: :::example → same visuals as note, default title is translatable
   example: (props) => (
     <AdmonitionTypeNote
       {...props}
       type="note"
-      title={props.title ?? translate({ id: 'theme.admonition.example', message: 'Example' })}
+      title={
+        props.title ??
+        translate({ id: 'theme.admonition.example', message: 'Example' })
+      }
     />
   ),
 };
 
-// Keep legacy aliases from the upstream theme
+// Undocumented legacy admonition type aliases
+// Provide hardcoded/untranslated retrocompatible label
+// See also https://github.com/facebook/docusaurus/issues/7767
 const admonitionAliases = {
   secondary: (props) => <AdmonitionTypeNote title="secondary" {...props} />,
   important: (props) => <AdmonitionTypeInfo title="important" {...props} />,
