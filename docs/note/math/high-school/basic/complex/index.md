@@ -79,11 +79,7 @@ $$
 a+bi=c+di\iff a=c\text{且}b=d
 $$
 
-:::note[记号]
-
 本文默认 $z=a+bi$，则 $\operatorname{Re}(z)=a,\operatorname{Im}(z)=b$。
-
-:::
 
 ### 复数集
 
@@ -197,7 +193,7 @@ $$
 \frac{(a+bi)(c-di)}{(c+di)(c-di)}=\frac{(a+bi)(c-di)}{c^2+d^2}=\frac{ac+bd}{c^2+d^2}+\frac{bc-ad}{c^2+d^2}i
 $$
 
-:::note
+:::tip
 
 分母含有复数时，乘以分母的共轭 $\overline{z}$ 即可实数化：
 
