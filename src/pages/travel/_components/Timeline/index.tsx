@@ -23,7 +23,8 @@ const TIMELINE_CONFIG = {
   contentDetailsHeight: LAYOUT_CONSTANTS.CONTENT_HEIGHT,
   lineWidth: LAYOUT_CONSTANTS.LINE_WIDTH,
   timelinePointDimension: LAYOUT_CONSTANTS.POINT_SIZE,
-  responsiveBreakPoint: LAYOUT_CONSTANTS.BREAKPOINT_MOBILE,
+  // react-chrono v2 uses verticalBreakPoint for VERTICAL_ALTERNATING auto-switch
+  verticalBreakPoint: LAYOUT_CONSTANTS.BREAKPOINT_MOBILE,
 
   hideControls: true,
   useReadMore: false,
