@@ -10,15 +10,7 @@ import SidebarRight from '../BlogShared/SidebarRight';
 // page uses shared sidebars that fetch data; no direct utils here
 
 import type { Props } from '@theme/BlogArchivePage';
-
-function formatDate(dateString: string): string {
-  try {
-    const d = new Date(dateString);
-    return d.toISOString().slice(0, 10);
-  } catch {
-    return dateString;
-  }
-}
+import { formatDate } from '@site/src/utils/date';
 
 export default function BlogArchivePage(props: Props) {
   const { archive } = props;

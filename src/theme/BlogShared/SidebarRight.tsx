@@ -3,15 +3,7 @@ import Link from '@docusaurus/Link';
 import Translate from '@docusaurus/Translate';
 import styles from '../BlogListPage/styles.module.css';
 import { getRecentBlogPosts, getArchiveByYear } from '@site/src/utils/blogData';
-
-function formatDate(dateString: string): string {
-  try {
-    const d = new Date(dateString);
-    return d.toISOString().slice(0, 10);
-  } catch {
-    return dateString;
-  }
-}
+import { formatDate } from '@site/src/utils/date';
 
 export default function SidebarRight() {
   const posts = getRecentBlogPosts(5);

@@ -2,15 +2,7 @@ import React from 'react';
 import Link from '@docusaurus/Link';
 import { translate } from '@docusaurus/Translate';
 import styles from '../BlogListPage/styles.module.css';
-
-function formatDate(dateString: string): string {
-  try {
-    const d = new Date(dateString);
-    return d.toISOString().slice(0, 10);
-  } catch {
-    return dateString;
-  }
-}
+import { formatDate } from '@site/src/utils/date';
 
 export default function PostCard({ item }: { item: any }) {
   const { content } = item;
