@@ -66,6 +66,7 @@ website
 ├── static                         # Static assets
 │   ├── img                        # Image files
 │   └── CNAME                      # Domain settings
+├── CONTRIBUTING.md                # Contribution Guidelines
 ├── docusaurus.config.ts           # Docusaurus config
 ├── LICENSE                        # Code License
 ├── LICENSE-docs                   # Docs License

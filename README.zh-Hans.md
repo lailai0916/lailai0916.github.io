@@ -66,6 +66,7 @@ website
 ├── static                         # 静态资源
 │   ├── img                        # 图片文件
 │   └── CNAME                      # 域名配置
+├── CONTRIBUTING.md                # 贡献指南
 ├── docusaurus.config.ts           # Docusaurus 配置
 ├── LICENSE                        # 代码许可证
 ├── LICENSE-docs                   # 文档许可证
