@@ -89,7 +89,7 @@ function Spark({ arr }: { arr: Beat[] }) {
   );
 }
 
-export default function StatusPage(): JSX.Element {
+export default function StatusPage(): React.ReactElement {
   const [hb, setHb] = React.useState<RespHB>({ heartbeatList: {} });
   const [conf, setConf] = React.useState<RespConf>({});
   const [names, setNames] = React.useState<Record<string, string>>({});

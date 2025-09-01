@@ -35,7 +35,7 @@ function getBlogListData(): any {
 export function getAllBlogItems(): any[] {
   const collected: any[] = [];
   try {
-    const ctx = require.context(
+    const ctx = (require as any).context(
       '@generated/docusaurus-plugin-content-blog/default',
       false,
       /blog-post-list-prop-.*\.json$/
@@ -71,7 +71,7 @@ export function getAllBlogItems(): any[] {
 export function getAllPostMetadata(): any[] {
   const list: any[] = [];
   try {
-    const ctx = require.context('~blog/default', false, /\.json$/);
+    const ctx = (require as any).context('~blog/default', false, /\.json$/);
     ctx.keys().forEach((key: string) => {
       const mod = ctx(key);
       const data = (mod && (mod.default ?? mod)) as any;

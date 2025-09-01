@@ -25,7 +25,6 @@ export default function PostCard({ item }: { item: any }) {
     <article className={styles.postCard}>
       {image ? (
         <Link to={metadata.permalink} className={styles.postCoverWrap}>
-          {/* eslint-disable-next-line @next/next/no-img-element */}
           <img src={image} alt={metadata.title} className={styles.postCover} />
         </Link>
       ) : null}
