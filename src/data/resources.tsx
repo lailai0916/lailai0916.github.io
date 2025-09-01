@@ -526,11 +526,15 @@ export const RESOURCE_LIST: ResourceCategoryItem[] = [
         href: 'https://dzjszjz.nkxingxh.top',
         description: '电子教室软件解锁工具',
       },
-
       {
         title: 'Note.ms',
         href: 'https://note.ms',
         description: '公共剪贴板服务',
+      },
+      {
+        title: 'QR Code Generator',
+        href: 'https://www.qr-code-generator.com',
+        description: '在线二维码生成工具',
       },
     ],
   },
