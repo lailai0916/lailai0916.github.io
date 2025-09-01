@@ -1,0 +1,336 @@
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  display: grid;
+  grid-template-columns: 280px 1fr 280px;
+  gap: 1.25rem;
+}
+
+@media (max-width: 1200px) {
+  .container {
+    grid-template-columns: 260px 1fr;
+  }
+  .rightCol {
+    display: none;
+  }
+}
+
+@media (max-width: 996px) {
+  .container {
+    grid-template-columns: 1fr;
+  }
+  .leftCol {
+    order: 2;
+  }
+  .mainCol {
+    order: 1;
+  }
+}
+
+.leftCol,
+.rightCol {
+  display: block;
+}
+
+.stickyCol {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  position: sticky;
+  top: calc(var(--ifm-navbar-height, 60px) + 1rem);
+  overflow: visible;
+}
+
+.mainCol {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.card {
+  background: var(--ifm-card-background-color);
+  border: 1px solid var(--ifm-color-emphasis-200);
+  border-radius: 16px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
+  padding: 1rem;
+  transition: transform 160ms ease, box-shadow 160ms ease, border-color 160ms ease;
+}
+
+.card:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.08);
+  border-color: var(--ifm-color-primary);
+}
+
+html[data-theme='dark'] .card {
+  border-color: var(--ifm-color-emphasis-300);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+}
+
+.authorCardHeader {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 0.25rem 0 0.5rem;
+}
+
+.authorAvatar {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.18);
+}
+
+.authorName {
+  font-weight: 700;
+  font-size: 1.125rem;
+}
+
+.authorDesc {
+  color: var(--ifm-color-emphasis-700);
+  font-size: 0.95rem;
+}
+
+.authorStats {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.75rem;
+  margin-top: 0.75rem;
+}
+
+.statItem {
+  text-align: center;
+  border: 1px dashed var(--ifm-color-emphasis-200);
+  border-radius: 12px;
+  padding: 0.5rem 0.25rem;
+}
+
+.statValue {
+  color: var(--ifm-color-primary);
+  font-weight: 700;
+}
+
+.statLabel {
+  color: var(--ifm-color-emphasis-700);
+  font-size: 0.8rem;
+}
+
+.cardTitle {
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+}
+
+.tagList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.tagChip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  background: var(--ifm-color-emphasis-100);
+  border-radius: 999px;
+  padding: 0.25rem 0.6rem;
+  font-size: 0.85rem;
+  color: var(--ifm-font-color-base);
+  text-decoration: none !important;
+  border: 1px solid var(--ifm-color-emphasis-200);
+  transition: background 160ms ease, transform 160ms ease, border-color 160ms ease;
+}
+
+.tagChip:hover {
+  background: var(--ifm-color-emphasis-200);
+  border-color: var(--ifm-color-primary);
+  transform: translateY(-1px);
+}
+
+.tagDot {
+  width: 6px;
+  height: 6px;
+  background: var(--ifm-color-primary);
+  border-radius: 50%;
+}
+
+.tagCount {
+  color: var(--ifm-color-emphasis-700);
+}
+
+.mutedText {
+  color: var(--ifm-color-emphasis-700);
+}
+
+.recentList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.recentItem {
+  display: grid;
+  grid-template-columns: 92px 1fr;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding: 0.25rem 0;
+  border-bottom: 1px dashed var(--ifm-color-emphasis-200);
+}
+
+.recentDate {
+  color: var(--ifm-color-emphasis-700);
+  font-size: 0.85rem;
+}
+
+.recentLink {
+  text-decoration: none !important;
+  color: var(--ifm-font-color-base);
+}
+
+.recentLink:hover {
+  color: var(--ifm-color-primary);
+}
+
+.archiveList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.archiveItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.35rem 0.5rem;
+  border-radius: 8px;
+}
+
+.archiveItem:hover {
+  background: var(--ifm-color-emphasis-100);
+}
+
+.archiveLink {
+  text-decoration: none !important;
+}
+
+.archiveCount {
+  background: var(--ifm-color-emphasis-200);
+  border-radius: 999px;
+  padding: 0.05rem 0.5rem;
+  font-size: 0.75rem;
+}
+
+.postCard {
+  background: var(--ifm-card-background-color);
+  border: 1px solid var(--ifm-color-emphasis-200);
+  border-radius: 16px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
+  overflow: hidden;
+  transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
+}
+
+.postCard:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.09);
+  border-color: var(--ifm-color-primary);
+}
+
+.postCoverWrap {
+  display: block;
+}
+
+.postCover {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.postBody {
+  padding: 1rem 1rem 0.75rem 1rem;
+}
+
+.postTitleLink {
+  text-decoration: none !important;
+}
+
+.postTitle {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.postExcerpt {
+  color: var(--ifm-color-emphasis-700);
+  margin: 0.5rem 0 0.25rem 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.postMeta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.35rem 0.5rem;
+  color: var(--ifm-color-emphasis-700);
+  font-size: 0.9rem;
+}
+
+.postDate {
+  white-space: nowrap;
+}
+
+.dot {
+  opacity: 0.6;
+}
+
+.tags {
+  display: inline-flex;
+  gap: 0.35rem;
+}
+
+.tagSmall {
+  display: inline-flex;
+  align-items: center;
+  background: var(--ifm-color-emphasis-100);
+  border-radius: 999px;
+  padding: 0.1rem 0.5rem;
+  text-decoration: none !important;
+  font-size: 0.8rem;
+  border: 1px solid var(--ifm-color-emphasis-200);
+}
+
+.postMore {
+  margin-top: 0.25rem;
+  padding-bottom: 0.75rem;
+}
+
+.moreLink {
+  color: var(--ifm-color-primary);
+  text-decoration: none !important;
+}
+
+.paginator {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 0.5rem;
+}
+
+.paginatorBtn {
+  background: var(--ifm-card-background-color);
+  border: 1px solid var(--ifm-color-emphasis-200);
+  border-radius: 10px;
+  padding: 0.5rem 0.75rem;
+  text-decoration: none !important;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.06);
+  transition: transform 160ms ease, box-shadow 160ms ease, border-color 160ms ease;
+}
+
+.paginatorBtn:hover {
+  transform: translateY(-1px);
+  border-color: var(--ifm-color-primary);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.09);
+}
