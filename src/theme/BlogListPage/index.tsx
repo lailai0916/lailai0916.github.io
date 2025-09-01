@@ -26,48 +26,7 @@ function formatDate(dateString: string): string {
   }
 }
 
-function AuthorCard({
-  author,
-  authorId,
-  tagsCount,
-}: {
-  author?: any;
-  authorId: string;
-  tagsCount: number;
-}) {
-  const name = author?.name ?? authorId;
-  const title = author?.title ?? '';
-  const imageUrl = author?.imageURL ?? '/img/avatar/lailai.png';
-  return (
-    <div className={styles.card}>
-      <div className={styles.authorCardHeader}>
-        <img
-          src={useBaseUrl(imageUrl)}
-          alt="avatar"
-          className={styles.authorAvatar}
-          width={96}
-          height={96}
-        />
-        <div className={styles.authorName}>{name}</div>
-        {title ? <div className={styles.authorDesc}>{title}</div> : null}
-      </div>
-      <div className={styles.authorStats}>
-        <div className={styles.statItem}>
-          <div className={styles.statValue}>{getBlogPostCount()}</div>
-          <div className={styles.statLabel}>
-            <Translate id="blog.stats.posts">Posts</Translate>
-          </div>
-        </div>
-        <div className={styles.statItem}>
-          <div className={styles.statValue}>{tagsCount}</div>
-          <div className={styles.statLabel}>
-            <Translate id="blog.stats.tags">Tags</Translate>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-}
+// AuthorCard 的实现会在 BlogListPage 内部定义，使其能读取列表页 items
 
 type SimpleTag = { label: string; permalink: string; count: number };
 
@@ -216,19 +175,52 @@ export default function BlogListPage(props: BlogListPageProps) {
   // 聚合当前已加载页面中的标签，避免依赖生成产物路径
   const tags: SimpleTag[] = React.useMemo(() => getTopTags(12), []);
 
-  // 官方 API：从当前列表项的 metadata.authors 中解析作者信息
-  const AUTHOR_ID = 'lailai';
-  const authorFromPage = React.useMemo(() => {
-    try {
-      const list = (items ?? [])
-        .flatMap((it: any) => (it?.content?.metadata?.authors ?? []) as any[]);
-      return (
-        list.find((a: any) => (a?.key || a?.name) === AUTHOR_ID) || null
-      );
-    } catch {
-      return null;
-    }
-  }, [items]);
+  // 将作者解析逻辑直接放进 AuthorCard 中，不再传入作者参数
+  function AuthorCard() {
+    const AUTHOR_ID = 'lailai';
+    const authorFromPage = React.useMemo(() => {
+      try {
+        const list = (items ?? []).flatMap(
+          (it: any) => (it?.content?.metadata?.authors ?? []) as any[]
+        );
+        return list.find((a: any) => (a?.key || a?.name) === AUTHOR_ID) || null;
+      } catch {
+        return null;
+      }
+    }, [items]);
+
+    const tagsCount = React.useMemo(() => getTopTags(12).length, []);
+
+    return (
+      <div className={styles.card}>
+        <div className={styles.authorCardHeader}>
+          <img
+            src={useBaseUrl(authorFromPage.imageURL)}
+            alt="avatar"
+            className={styles.authorAvatar}
+            width={96}
+            height={96}
+          />
+          <div className={styles.authorName}>{authorFromPage.name}</div>
+          <div className={styles.authorDesc}>{authorFromPage.title}</div>
+        </div>
+        <div className={styles.authorStats}>
+          <div className={styles.statItem}>
+            <div className={styles.statValue}>{getBlogPostCount()}</div>
+            <div className={styles.statLabel}>
+              <Translate id="blog.stats.posts">Posts</Translate>
+            </div>
+          </div>
+          <div className={styles.statItem}>
+            <div className={styles.statValue}>{tagsCount}</div>
+            <div className={styles.statLabel}>
+              <Translate id="blog.stats.tags">Tags</Translate>
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <Layout title={title} description={description}>
@@ -236,7 +228,7 @@ export default function BlogListPage(props: BlogListPageProps) {
         {/* Left Column */}
         <aside className={styles.leftCol}>
           <div className={styles.stickyCol}>
-            <AuthorCard authorId={AUTHOR_ID} author={authorFromPage} tagsCount={tags.length} />
+            <AuthorCard />
             <HotTagsCard tags={tags} />
           </div>
         </aside>
