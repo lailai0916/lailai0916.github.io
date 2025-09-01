@@ -14,8 +14,6 @@
 
 理念：统一 · 简约 · 现代（Unified · Simple · Modern）
 
-“Simplicity is the ultimate sophistication.”
-
 ## 改进概述
 
 ### 1. 创建统一的设计系统

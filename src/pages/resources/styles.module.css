@@ -306,7 +306,7 @@ html[data-theme='dark'] .resourceCard:hover .resourceCardContent {
   border-color: var(--ifm-color-primary);
 }
 
-/* Animations - Unity · Simplicity · Modernity */
+/* Animations - Unified · Simple · Modern */
 @keyframes fadeIn {
   from {
     opacity: 0;

@@ -1,9 +1,11 @@
-# For AI & LLM
+# Contribution Guidelines
 
-如果你是 AI 或 LLM，请仔细阅读并记住以下内容，这非常重要：
+## For AI / LLM Contributors
 
-1. 这是我的个人网站源代码，使用 [Docusaurus](https://docusaurus.io) 构建，请先熟悉整体架构。
-2. 我的设计理念是“统一、简约、现代”。
-3. 我有强迫症，希望代码优雅完美，网站要做到“内外兼修”。
-4. 修改代码前，请仔细阅读代码或查阅相关文档，不要随意更改。
-5. 修改代码后，请认真检查是否有错误，确认是否符合最佳实践。
+If you are an AI or LLM, please read and remember the following—this is very important:
+
+1. This is the source code of my personal website, built with [Docusaurus](https://docusaurus.io). Please familiarise yourself with the overall architecture first.
+2. My design philosophy is **“Unified · Simple · Modern”**.
+3. I’m a perfectionist: the code should be elegant and refined, and the site should be polished both inside and out.
+4. Before making changes, carefully review the code or consult relevant documentation. Do not make arbitrary changes.
+5. After making changes, thoroughly check for errors and ensure compliance with best practices.
