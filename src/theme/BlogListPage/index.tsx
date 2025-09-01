@@ -12,6 +12,7 @@ import {
   getBlogPostCount,
   getAllBlogItems,
   getTopTags,
+  getAllTagCount,
 } from '@site/src/utils/blogData';
 
 // Docusaurus will inject correct props at runtime; keep type permissive
@@ -189,7 +190,7 @@ export default function BlogListPage(props: BlogListPageProps) {
       }
     }, [items]);
 
-    const tagsCount = React.useMemo(() => getTopTags(12).length, []);
+    const tagsCount = React.useMemo(() => getAllTagCount(), []);
 
     return (
       <div className={styles.card}>
