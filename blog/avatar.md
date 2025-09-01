@@ -19,7 +19,7 @@ tags: [personal]
 - 白色（$W\to\textcolor{FFFFFF}{FFFFFF}$）
 - 黑色（$K\to\textcolor{000000}{000000}$）
 
-3. 色块布局为：
+3. 色块的布局顺序为：
 
 ```text
 GYGYR
