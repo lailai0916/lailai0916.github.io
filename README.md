@@ -85,8 +85,8 @@ Stay updated with the latest blog posts: [RSS Feed](https://lailai.one/blog/rss.
 
 You can buy me a coffee, and I'll do better. Thanks!
 
-|               PayPal               |               Alipay               |             WeChat Pay             | BitCoin |
-| :--------------------------------: | :--------------------------------: | :--------------------------------: | :-: |
+|               PayPal               |               Alipay               |             WeChat Pay             |                   BitCoin                    |
+| :--------------------------------: | :--------------------------------: | :--------------------------------: | :------------------------------------------: |
 | ![](static/img/sponsor/paypal.svg) | ![](static/img/sponsor/alipay.svg) | ![](static/img/sponsor/wechat.svg) | `0xdf38162867ef15822412ff15b07620f4a3318bef` |
 
 ## # License
