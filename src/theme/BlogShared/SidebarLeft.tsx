@@ -10,8 +10,8 @@ import {
 } from '@site/src/utils/blogData';
 
 type Props = {
-  items?: any[]; // list pages items
-  authors?: any[]; // authors array from a post page if available
+  items?: readonly any[]; // list pages items
+  authors?: readonly any[]; // authors array from a post page if available
   authorId?: string; // default 'lailai'
 };
 
@@ -25,7 +25,7 @@ export default function SidebarLeft({
       const listAuthors = (items ?? []).flatMap(
         (it: any) => (it?.content?.metadata?.authors ?? []) as any[]
       );
-      const source = (authors ?? listAuthors) as any[];
+      const source = (authors ?? listAuthors) as readonly any[];
       return source.find((a) => (a?.key || a?.name) === authorId) || null;
     } catch {
       return null;

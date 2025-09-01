@@ -13,8 +13,8 @@ export default function BlogAuthorsPostsPage(props: Props) {
     <PostsListLayout
       title={title}
       description={description}
-      items={items as any[]}
-      meta={listMetadata as any}
+      items={items}
+      meta={listMetadata}
     />
   );
 }

@@ -4,14 +4,7 @@ import SidebarLeft from './SidebarLeft';
 import SidebarRight from './SidebarRight';
 import Paginator from './Paginator';
 import PostCard from './PostCard';
-
-type Meta = {
-  page: number;
-  totalPages: number;
-  previousPage?: string;
-  nextPage?: string;
-  permalink: string;
-};
+import type { BlogPaginatedMetadata } from '@docusaurus/plugin-content-blog';
 
 export default function PostsListLayout({
   title,
@@ -21,8 +14,8 @@ export default function PostsListLayout({
 }: {
   title: string;
   description?: string;
-  items: any[];
-  meta: Meta;
+  items: readonly any[];
+  meta: BlogPaginatedMetadata;
 }) {
   return (
     <BlogScaffold
@@ -38,4 +31,3 @@ export default function PostsListLayout({
     </BlogScaffold>
   );
 }
-

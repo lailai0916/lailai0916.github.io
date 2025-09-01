@@ -12,15 +12,15 @@ import type { Props as BlogListPageProps } from '@theme/BlogListPage';
 
 export default function BlogListPage(props: BlogListPageProps) {
   const { metadata, items } = props;
-  const title = metadata?.title ?? 'Blog';
-  const description = metadata?.description ?? '';
+  const title = metadata?.blogTitle ?? 'Blog';
+  const description = metadata?.blogDescription ?? '';
 
   return (
     <PostsListLayout
       title={title}
       description={description}
       items={items}
-      meta={metadata as any}
+      meta={metadata}
     />
   );
 }
