@@ -244,7 +244,10 @@ export default function BlogListPage(props: BlogListPageProps) {
             <nav className={styles.paginator} aria-label="Pagination">
               {/* Left: Newer */}
               {metadata.previousPage ? (
-                <Link className={styles.paginatorBtn} to={metadata.previousPage}>
+                <Link
+                  className={styles.paginatorBtn}
+                  to={metadata.previousPage}
+                >
                   ← <Translate id="blog.newer">Newer</Translate>
                 </Link>
               ) : (
@@ -258,14 +261,17 @@ export default function BlogListPage(props: BlogListPageProps) {
                   const total = metadata.totalPages as number;
 
                   const curPermalink = metadata.permalink as string;
-                  const baseLink = current > 1
-                    ? curPermalink.replace(/\/page\/\d+\/?$/, '')
-                    : curPermalink;
-                  const sample = metadata.nextPage || metadata.previousPage || '';
+                  const baseLink =
+                    current > 1
+                      ? curPermalink.replace(/\/page\/\d+\/?$/, '')
+                      : curPermalink;
+                  const sample =
+                    metadata.nextPage || metadata.previousPage || '';
                   const pageBase = sample
                     ? sample.replace(/\/?\d+\/?$/, '')
                     : `${baseLink.replace(/\/?$/, '')}/page`;
-                  const linkFor = (n: number) => (n === 1 ? baseLink : `${pageBase}/${n}`);
+                  const linkFor = (n: number) =>
+                    n === 1 ? baseLink : `${pageBase}/${n}`;
 
                   // Build the set {1, total, current-1, current, current+1} within bounds
                   const set = new Set<number>();
@@ -290,7 +296,10 @@ export default function BlogListPage(props: BlogListPageProps) {
 
                   return items.map((it, idx) =>
                     it === '…' ? (
-                      <span key={`ellipsis-${idx}`} className={styles.paginatorEllipsis}>
+                      <span
+                        key={`ellipsis-${idx}`}
+                        className={styles.paginatorEllipsis}
+                      >
                         …
                       </span>
                     ) : (
@@ -298,13 +307,15 @@ export default function BlogListPage(props: BlogListPageProps) {
                         key={`page-${it}`}
                         to={linkFor(it as number)}
                         className={
-                          it === current ? `${styles.pageLink} ${styles.pageLinkActive}` : styles.pageLink
+                          it === current
+                            ? `${styles.pageLink} ${styles.pageLinkActive}`
+                            : styles.pageLink
                         }
                         aria-current={it === current ? 'page' : undefined}
                       >
                         {it}
                       </Link>
-                    ),
+                    )
                   );
                 })()}
               </div>
