@@ -52,6 +52,14 @@ export default function SidebarLeft({
           <div className={styles.authorName}>{name}</div>
           {title ? <div className={styles.authorDesc}>{title}</div> : null}
         </div>
+        {/* 个人信息卡片已不再包含统计 */}
+      </div>
+
+      {/* 合并文章数量 + 标签数量为一个统计块 */}
+      <div className={styles.card}>
+        <div className={styles.cardTitle}>
+          <Translate id="blog.stats.overview">Statistics</Translate>
+        </div>
         <div className={styles.authorStats}>
           <div className={styles.statItem}>
             <div className={styles.statValue}>{getBlogPostCount()}</div>
