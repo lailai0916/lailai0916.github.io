@@ -26,19 +26,30 @@ function formatDate(dateString: string): string {
   }
 }
 
-function AuthorCard({ tagsCount }: { tagsCount: number }) {
+function AuthorCard({
+  author,
+  authorId,
+  tagsCount,
+}: {
+  author?: any;
+  authorId: string;
+  tagsCount: number;
+}) {
+  const name = author?.name ?? authorId;
+  const title = author?.title ?? '';
+  const imageUrl = author?.imageURL ?? '/img/avatar/lailai.png';
   return (
     <div className={styles.card}>
       <div className={styles.authorCardHeader}>
         <img
-          src={useBaseUrl('/img/avatar/lailai.png')}
+          src={useBaseUrl(imageUrl)}
           alt="avatar"
           className={styles.authorAvatar}
           width={96}
           height={96}
         />
-        <div className={styles.authorName}>lailai</div>
-        <div className={styles.authorDesc}>Student & Developer</div>
+        <div className={styles.authorName}>{name}</div>
+        {title ? <div className={styles.authorDesc}>{title}</div> : null}
       </div>
       <div className={styles.authorStats}>
         <div className={styles.statItem}>
@@ -205,13 +216,27 @@ export default function BlogListPage(props: BlogListPageProps) {
   // 聚合当前已加载页面中的标签，避免依赖生成产物路径
   const tags: SimpleTag[] = React.useMemo(() => getTopTags(12), []);
 
+  // 官方 API：从当前列表项的 metadata.authors 中解析作者信息
+  const AUTHOR_ID = 'lailai';
+  const authorFromPage = React.useMemo(() => {
+    try {
+      const list = (items ?? [])
+        .flatMap((it: any) => (it?.content?.metadata?.authors ?? []) as any[]);
+      return (
+        list.find((a: any) => (a?.key || a?.name) === AUTHOR_ID) || null
+      );
+    } catch {
+      return null;
+    }
+  }, [items]);
+
   return (
     <Layout title={title} description={description}>
       <div className={styles.container}>
         {/* Left Column */}
         <aside className={styles.leftCol}>
           <div className={styles.stickyCol}>
-            <AuthorCard tagsCount={tags.length} />
+            <AuthorCard authorId={AUTHOR_ID} author={authorFromPage} tagsCount={tags.length} />
             <HotTagsCard tags={tags} />
           </div>
         </aside>
