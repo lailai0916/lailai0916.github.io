@@ -86,7 +86,7 @@ function HotTagsCard({ tags }: { tags: SimpleTag[] }) {
 }
 
 function RecentPostsCard() {
-  const posts = getRecentBlogPosts(5);
+  const posts = getRecentBlogPosts(3);
   return (
     <div className={styles.card}>
       <div className={styles.cardTitle}>
