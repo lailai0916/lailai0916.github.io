@@ -133,8 +133,9 @@ html[data-theme='dark'] .card {
 }
 
 .statValue {
-  color: var(--ifm-color-primary);
+  font-size: 1.5rem;
   font-weight: 700;
+  color: var(--ifm-color-primary);
 }
 
 .statLabel {
