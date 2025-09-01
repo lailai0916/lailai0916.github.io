@@ -317,16 +317,6 @@ html[data-theme='dark'] .card {
   border: 1px solid var(--ifm-color-emphasis-200);
 }
 
-.postMore {
-  margin-top: 0.25rem;
-  padding-bottom: 0.75rem;
-}
-
-.moreLink {
-  color: var(--ifm-color-primary);
-  text-decoration: none !important;
-}
-
 .paginator {
   display: flex;
   justify-content: space-between;

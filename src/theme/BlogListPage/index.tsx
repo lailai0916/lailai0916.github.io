@@ -136,7 +136,9 @@ function PostCard({ item }: { item: any }) {
     const rt = (metadata as any)?.readingTime;
     if (typeof rt === 'number') return rt;
     if (rt && typeof rt === 'object') {
-      const v = (rt.minutes ?? rt.value ?? rt.readingTime) as number | undefined;
+      const v = (rt.minutes ?? rt.value ?? rt.readingTime) as
+        | number
+        | undefined;
       if (typeof v === 'number') return v;
     }
     return null;
@@ -161,15 +163,16 @@ function PostCard({ item }: { item: any }) {
           <time dateTime={metadata.date} className={styles.postDate}>
             {formatDate(metadata.date)}
           </time>
-          {readingTimeValue !== null && (
-            <span className={styles.dot}>·</span>
-          )}
+          {readingTimeValue !== null && <span className={styles.dot}>·</span>}
           {readingTimeValue !== null && (
             <span className={styles.reading}>
-              {translate({
-                id: 'blog.readingTime',
-                message: '{time} min read',
-              }, { time: Math.max(1, Math.round(readingTimeValue)) })}
+              {translate(
+                {
+                  id: 'blog.readingTime',
+                  message: '{time} min read',
+                },
+                { time: Math.max(1, Math.round(readingTimeValue)) }
+              )}
             </span>
           )}
           {metadata.tags?.length ? (
@@ -177,18 +180,17 @@ function PostCard({ item }: { item: any }) {
               <span className={styles.dot}>·</span>
               <span className={styles.tags}>
                 {metadata.tags.slice(0, 2).map((t: any) => (
-                  <Link key={t.permalink} to={t.permalink} className={styles.tagSmall}>
+                  <Link
+                    key={t.permalink}
+                    to={t.permalink}
+                    className={styles.tagSmall}
+                  >
                     {t.label}
                   </Link>
                 ))}
               </span>
             </>
           ) : null}
-        </div>
-        <div className={styles.postMore}>
-          <Link to={metadata.permalink} className={styles.moreLink}>
-            <Translate id="blog.readMore">Continue Reading</Translate>
-          </Link>
         </div>
       </div>
     </article>
@@ -223,7 +225,10 @@ export default function BlogListPage(props: BlogListPageProps) {
           {metadata?.previousPage || metadata?.nextPage ? (
             <nav className={styles.paginator} aria-label="Pagination">
               {metadata.previousPage && (
-                <Link className={styles.paginatorBtn} to={metadata.previousPage}>
+                <Link
+                  className={styles.paginatorBtn}
+                  to={metadata.previousPage}
+                >
                   ← <Translate id="blog.newer">Newer</Translate>
                 </Link>
               )}
