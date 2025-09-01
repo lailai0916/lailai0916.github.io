@@ -49,7 +49,7 @@ npm start
 
 ## # 项目结构
 
-```bash
+```text
 website
 ├── blog                           # 博客
 │   ├── authors.yml                # 作者配置

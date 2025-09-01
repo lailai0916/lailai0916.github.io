@@ -49,7 +49,7 @@ npm start
 
 ## # Project Structure
 
-```bash
+```text
 website
 ├── blog                           # Blog
 │   ├── authors.yml                # Author settings
