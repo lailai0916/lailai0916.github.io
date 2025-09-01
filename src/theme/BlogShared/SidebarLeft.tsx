@@ -33,24 +33,25 @@ export default function SidebarLeft({
   }, [items, authors, authorId]);
 
   const tagsCount = React.useMemo(() => getAllTagCount(), []);
-  const name = author?.name ?? authorId;
-  const title = author?.title ?? '';
-  const imageUrl = author?.imageURL ?? '/img/avatar/lailai.png';
   const hotTags = React.useMemo(() => getTopTags(12), []);
 
   return (
     <>
       <div className={styles.card}>
         <div className={styles.authorCardHeader}>
-          <img
-            src={useBaseUrl(imageUrl)}
-            alt="avatar"
-            className={styles.authorAvatar}
-            width={96}
-            height={96}
-          />
-          <div className={styles.authorName}>{name}</div>
-          {title ? <div className={styles.authorDesc}>{title}</div> : null}
+          {author?.imageURL && (
+            <img
+              src={useBaseUrl(author.imageURL)}
+              alt="avatar"
+              className={styles.authorAvatar}
+              width={96}
+              height={96}
+            />
+          )}
+          <div className={styles.authorName}>{author?.name}</div>
+          {author?.title ? (
+            <div className={styles.authorDesc}>{author.title}</div>
+          ) : null}
         </div>
         {/* 个人信息卡片已不再包含统计 */}
       </div>
