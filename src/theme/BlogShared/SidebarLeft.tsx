@@ -10,22 +10,20 @@ import {
 } from '@site/src/utils/blogData';
 
 type Props = {
-  items?: readonly any[]; // list pages items
-  authors?: readonly any[]; // authors array from a post page if available
-  authorId?: string; // default 'lailai'
+  items?: readonly any[]; // list pages items (用于推断作者)
+  authors?: readonly any[]; // 明确传入作者数组（优先级更高）
+  authorId?: string; // 指定作者 key/name（可选）
 };
 
-export default function SidebarLeft({
-  items,
-  authors,
-  authorId = 'lailai',
-}: Props) {
+export default function SidebarLeft({ items, authors, authorId }: Props) {
   const author = React.useMemo(() => {
     try {
       const listAuthors = (items ?? []).flatMap(
         (it: any) => (it?.content?.metadata?.authors ?? []) as any[]
       );
       const source = (authors ?? listAuthors) as readonly any[];
+      // 当未指定 authorId 时，优先取列表/传入的第一个作者
+      if (!authorId) return (source[0] as any) || null;
       return source.find((a) => (a?.key || a?.name) === authorId) || null;
     } catch {
       return null;

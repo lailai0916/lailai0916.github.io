@@ -24,12 +24,26 @@ export default function BlogArchivePage(props: Props) {
     return Array.from(map.entries()).sort((a, b) => b[0] - a[0]);
   }, [archive]);
 
+  const authors = React.useMemo(() => {
+    try {
+      const posts = (archive?.blogPosts ?? []) as any[];
+      const list = posts.flatMap((p) => (p?.metadata?.authors ?? []) as any[]);
+      const seen = new Set<string>();
+      const uniq: any[] = [];
+      for (const a of list) {
+        const key = (a as any)?.key || (a as any)?.name;
+        if (!key || seen.has(key)) continue;
+        seen.add(key);
+        uniq.push(a);
+      }
+      return uniq;
+    } catch {
+      return [] as any[];
+    }
+  }, [archive]);
+
   return (
-    <BlogScaffold
-      title="Archive"
-      left={<SidebarLeft />}
-      right={<SidebarRight />}
-    >
+    <BlogScaffold title="Archive" left={<SidebarLeft authors={authors} />} right={<SidebarRight />}>
       {groups.map(([year, posts]) => (
         <div key={year} className={styles.card} id={String(year)}>
           <div className={styles.cardTitle}>{year}</div>
