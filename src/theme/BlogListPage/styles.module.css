@@ -333,8 +333,6 @@ html[data-theme='dark'] .card {
   opacity: 0.6;
 }
 
-
-
 .paginator {
   display: grid;
   grid-template-columns: 1fr auto 1fr;
