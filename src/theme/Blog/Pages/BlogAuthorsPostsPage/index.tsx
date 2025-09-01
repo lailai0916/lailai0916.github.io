@@ -11,11 +11,16 @@ import type { Props } from '@theme/Blog/Pages/BlogAuthorsPostsPage';
 // use shared PostCard & Sidebars
 
 export default function BlogAuthorsPostsPage(props: Props) {
-  const {items, listMetadata, author} = props;
+  const { items, listMetadata, author } = props;
   const title = author.name;
   const description = author.title ?? '';
   return (
-    <BlogScaffold title={title} description={description} left={<SidebarLeft items={items} />} right={<SidebarRight />}>
+    <BlogScaffold
+      title={title}
+      description={description}
+      left={<SidebarLeft items={items} />}
+      right={<SidebarRight />}
+    >
       {items.map((it: any) => (
         <PostCard key={it.content.metadata.permalink} item={it} />
       ))}

@@ -20,7 +20,12 @@ export default function BlogListPage(props: BlogListPageProps) {
   const description = metadata?.description ?? '';
 
   return (
-    <BlogScaffold title={title} description={description} left={<SidebarLeft items={items} />} right={<SidebarRight />}>
+    <BlogScaffold
+      title={title}
+      description={description}
+      left={<SidebarLeft items={items} />}
+      right={<SidebarRight />}
+    >
       {items.map((it: any) => (
         <PostCard key={it.content.metadata.permalink} item={it} />
       ))}

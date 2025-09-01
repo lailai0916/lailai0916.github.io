@@ -10,7 +10,13 @@ type Props = {
   children: React.ReactNode;
 };
 
-export default function BlogScaffold({title, description, left, right, children}: Props) {
+export default function BlogScaffold({
+  title,
+  description,
+  left,
+  right,
+  children,
+}: Props) {
   return (
     <Layout title={title} description={description}>
       <div className={styles.container}>
@@ -29,4 +35,3 @@ export default function BlogScaffold({title, description, left, right, children}
     </Layout>
   );
 }
-

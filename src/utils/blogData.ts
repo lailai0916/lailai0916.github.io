@@ -94,10 +94,17 @@ export function getRecentBlogPosts(maxCount: number = 4): ProcessedBlogPost[] {
     permalink: it.permalink ?? it.metadata?.permalink,
   }));
   return posts
-    .filter((p) => p.permalink && !BLOG_CONFIG.EXCLUDED_PERMALINKS.includes(p.permalink))
+    .filter(
+      (p) =>
+        p.permalink && !BLOG_CONFIG.EXCLUDED_PERMALINKS.includes(p.permalink)
+    )
     .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
     .slice(0, maxCount)
-    .map((post) => ({ title: post.title, date: post.date, permalink: post.permalink }));
+    .map((post) => ({
+      title: post.title,
+      date: post.date,
+      permalink: post.permalink,
+    }));
 }
 
 /**
@@ -149,12 +156,16 @@ export function getTopTags(limit: number = 20): Array<{
   // 使用全量 metadata（包含 tags）进行统计，官方推荐的 ~blog 别名生成物
   const metas = getAllPostMetadata();
   if (!metas.length) return [];
-  const map = new Map<string, { label: string; permalink: string; count: number }>();
+  const map = new Map<
+    string,
+    { label: string; permalink: string; count: number }
+  >();
   metas.forEach((meta: any) => {
     const tags: any[] = meta.tags ?? [];
     tags.forEach((t) => {
       const label = t.label ?? t.name ?? String(t);
-      const permalink = t.permalink ?? `/blog/tags/${(t.name || label).toLowerCase()}`;
+      const permalink =
+        t.permalink ?? `/blog/tags/${(t.name || label).toLowerCase()}`;
       const prev = map.get(label) ?? { label, permalink, count: 0 };
       prev.count += 1;
       map.set(label, prev);

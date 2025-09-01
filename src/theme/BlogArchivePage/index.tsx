@@ -20,9 +20,8 @@ function formatDate(dateString: string): string {
   }
 }
 
-
 export default function BlogArchivePage(props: Props) {
-  const {archive} = props;
+  const { archive } = props;
   const groups = React.useMemo(() => {
     const map = new Map<number, any[]>();
     const posts = (archive?.blogPosts ?? []) as any[];
@@ -34,14 +33,20 @@ export default function BlogArchivePage(props: Props) {
   }, [archive]);
 
   return (
-    <BlogScaffold title="Archive" left={<SidebarLeft />} right={<SidebarRight />}>
+    <BlogScaffold
+      title="Archive"
+      left={<SidebarLeft />}
+      right={<SidebarRight />}
+    >
       {groups.map(([year, posts]) => (
         <div key={year} className={styles.card} id={String(year)}>
           <div className={styles.cardTitle}>{year}</div>
           <ul className={styles.recentList}>
             {posts.map((p: any) => (
               <li key={p.metadata.permalink} className={styles.recentItem}>
-                <div className={styles.recentDate}>{formatDate(p.metadata.date)}</div>
+                <div className={styles.recentDate}>
+                  {formatDate(p.metadata.date)}
+                </div>
                 <Link to={p.metadata.permalink} className={styles.recentLink}>
                   {p.metadata.title}
                 </Link>
@@ -52,7 +57,9 @@ export default function BlogArchivePage(props: Props) {
       ))}
       {!groups.length && (
         <div className={styles.card}>
-          <div className={styles.mutedText}><Translate id="blog.archive.empty">No posts yet</Translate></div>
+          <div className={styles.mutedText}>
+            <Translate id="blog.archive.empty">No posts yet</Translate>
+          </div>
         </div>
       )}
     </BlogScaffold>

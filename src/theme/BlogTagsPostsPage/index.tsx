@@ -15,11 +15,16 @@ import type { Props } from '@theme/BlogTagsPostsPage';
 // use shared PostCard / Sidebars / Paginator
 
 export default function BlogTagsPostsPage(props: Props) {
-  const {items, listMetadata, tag} = props;
+  const { items, listMetadata, tag } = props;
   const title = `${tag.label}`;
   const description = tag.description ?? '';
   return (
-    <BlogScaffold title={title} description={description} left={<SidebarLeft items={items} />} right={<SidebarRight />}>
+    <BlogScaffold
+      title={title}
+      description={description}
+      left={<SidebarLeft items={items} />}
+      right={<SidebarRight />}
+    >
       {items.map((it: any) => (
         <PostCard key={it.content.metadata.permalink} item={it} />
       ))}

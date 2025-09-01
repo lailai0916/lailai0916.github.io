@@ -11,18 +11,42 @@ type Meta = {
   permalink: string;
 };
 
-export default function Paginator({meta}: {meta: Meta}) {
+export default function Paginator({ meta }: { meta: Meta }) {
   if (!meta?.totalPages || meta.totalPages <= 1) return null;
-  const {page: current, totalPages: total} = meta;
+  const { page: current, totalPages: total } = meta;
   const curPermalink = meta.permalink as string;
-  const baseLink = current > 1 ? curPermalink.replace(/\/page\/\d+\/?$/, '') : curPermalink;
   const sample = meta.nextPage || meta.previousPage || '';
-  const pageBase = sample ? sample.replace(/\/?\d+\/?$/, '') : `${baseLink.replace(/\/?$/, '')}/page`;
-  const linkFor = (n: number) => (n === 1 ? baseLink : `${pageBase}/${n}`);
+  // Derive pageBase and firstBase robustly for routes like:
+  //  - /blog/page/3
+  //  - /blog/tags/<tag>/page/3
+  //  - /blog/authors/<id>/authors/3
+  let pageBase: string;
+  let firstBase: string;
+  if (/(.*\/[^/]+)\/\d+\/?$/.test(sample)) {
+    // sample looks like "/.../<segment>/<n>"
+    pageBase = sample.replace(/\/\d+\/?$/, '');
+    firstBase = pageBase.replace(/\/[^/]+$/, '');
+  } else if (sample) {
+    // sample is likely the first page (no trailing number)
+    firstBase = sample;
+    pageBase = `${firstBase.replace(/\/?$/, '')}/page`;
+  } else {
+    // no sample at all: infer from current permalink when possible
+    const m2 = curPermalink.match(/(.*)\/page\/\d+\/?$/);
+    firstBase = m2 ? m2[1] : curPermalink;
+    pageBase = `${firstBase.replace(/\/?$/, '')}/page`;
+  }
+  const linkFor = (n: number) => (n === 1 ? firstBase : `${pageBase}/${n}`);
 
   const set = new Set<number>();
-  const add = (n: number) => { if (n >= 1 && n <= total) set.add(n); };
-  add(1); add(total); add(current - 1); add(current); add(current + 1);
+  const add = (n: number) => {
+    if (n >= 1 && n <= total) set.add(n);
+  };
+  add(1);
+  add(total);
+  add(current - 1);
+  add(current);
+  add(current + 1);
   const pages = Array.from(set).sort((a, b) => a - b);
   const items: Array<number | '…'> = [];
   for (let i = 0; i < pages.length; i += 1) {
@@ -44,26 +68,34 @@ export default function Paginator({meta}: {meta: Meta}) {
       <div className={styles.paginatorMid}>
         {items.map((it, idx) =>
           it === '…' ? (
-            <span key={`ellipsis-${idx}`} className={styles.paginatorEllipsis}>…</span>
+            <span key={`ellipsis-${idx}`} className={styles.paginatorEllipsis}>
+              …
+            </span>
           ) : (
             <Link
               key={`page-${it}`}
               to={linkFor(it as number)}
-              className={it === current ? `${styles.pageLink} ${styles.pageLinkActive}` : styles.pageLink}
+              className={
+                it === current
+                  ? `${styles.pageLink} ${styles.pageLinkActive}`
+                  : styles.pageLink
+              }
               aria-current={it === current ? 'page' : undefined}
             >
               {it}
             </Link>
-          ),
+          )
         )}
       </div>
 
       {meta.nextPage && (
-        <Link className={`${styles.paginatorBtn} ${styles.paginatorNext}`} to={meta.nextPage}>
+        <Link
+          className={`${styles.paginatorBtn} ${styles.paginatorNext}`}
+          to={meta.nextPage}
+        >
           <Translate id="blog.older">Older</Translate> →
         </Link>
       )}
     </nav>
   );
 }
-

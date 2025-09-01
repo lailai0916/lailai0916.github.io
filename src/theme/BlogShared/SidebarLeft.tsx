@@ -3,7 +3,11 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import Translate from '@docusaurus/Translate';
 import styles from '../BlogListPage/styles.module.css';
 import Link from '@docusaurus/Link';
-import {getBlogPostCount, getTopTags, getAllTagCount} from '@site/src/utils/blogData';
+import {
+  getBlogPostCount,
+  getTopTags,
+  getAllTagCount,
+} from '@site/src/utils/blogData';
 
 type Props = {
   items?: any[]; // list pages items
@@ -11,10 +15,16 @@ type Props = {
   authorId?: string; // default 'lailai'
 };
 
-export default function SidebarLeft({items, authors, authorId = 'lailai'}: Props) {
+export default function SidebarLeft({
+  items,
+  authors,
+  authorId = 'lailai',
+}: Props) {
   const author = React.useMemo(() => {
     try {
-      const listAuthors = (items ?? []).flatMap((it: any) => (it?.content?.metadata?.authors ?? []) as any[]);
+      const listAuthors = (items ?? []).flatMap(
+        (it: any) => (it?.content?.metadata?.authors ?? []) as any[]
+      );
       const source = (authors ?? listAuthors) as any[];
       return source.find((a) => (a?.key || a?.name) === authorId) || null;
     } catch {
@@ -32,24 +42,36 @@ export default function SidebarLeft({items, authors, authorId = 'lailai'}: Props
     <>
       <div className={styles.card}>
         <div className={styles.authorCardHeader}>
-          <img src={useBaseUrl(imageUrl)} alt="avatar" className={styles.authorAvatar} width={96} height={96} />
+          <img
+            src={useBaseUrl(imageUrl)}
+            alt="avatar"
+            className={styles.authorAvatar}
+            width={96}
+            height={96}
+          />
           <div className={styles.authorName}>{name}</div>
           {title ? <div className={styles.authorDesc}>{title}</div> : null}
         </div>
         <div className={styles.authorStats}>
           <div className={styles.statItem}>
             <div className={styles.statValue}>{getBlogPostCount()}</div>
-            <div className={styles.statLabel}><Translate id="blog.stats.posts">Posts</Translate></div>
+            <div className={styles.statLabel}>
+              <Translate id="blog.stats.posts">Posts</Translate>
+            </div>
           </div>
           <div className={styles.statItem}>
             <div className={styles.statValue}>{tagsCount}</div>
-            <div className={styles.statLabel}><Translate id="blog.stats.tags">Tags</Translate></div>
+            <div className={styles.statLabel}>
+              <Translate id="blog.stats.tags">Tags</Translate>
+            </div>
           </div>
         </div>
       </div>
 
       <div className={styles.card}>
-        <div className={styles.cardTitle}><Translate id="blog.tags.hot">Popular Tags</Translate></div>
+        <div className={styles.cardTitle}>
+          <Translate id="blog.tags.hot">Popular Tags</Translate>
+        </div>
         <div className={styles.tagList}>
           {hotTags.map((t) => (
             <Link key={t.permalink} to={t.permalink} className={styles.tagChip}>
