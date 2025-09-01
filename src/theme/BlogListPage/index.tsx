@@ -240,18 +240,81 @@ export default function BlogListPage(props: BlogListPageProps) {
             <PostCard key={it.content.metadata.permalink} item={it} />
           ))}
           {/* Paginator */}
-          {metadata?.previousPage || metadata?.nextPage ? (
+          {metadata?.totalPages && metadata.totalPages > 1 ? (
             <nav className={styles.paginator} aria-label="Pagination">
-              {metadata.previousPage && (
-                <Link
-                  className={styles.paginatorBtn}
-                  to={metadata.previousPage}
-                >
+              {/* Left: Newer */}
+              {metadata.previousPage ? (
+                <Link className={styles.paginatorBtn} to={metadata.previousPage}>
                   ← <Translate id="blog.newer">Newer</Translate>
                 </Link>
+              ) : (
+                <span />
               )}
+
+              {/* Middle: Numbered pages with ellipsis */}
+              <div className={styles.paginatorMid}>
+                {(() => {
+                  const current = metadata.page as number;
+                  const total = metadata.totalPages as number;
+
+                  const curPermalink = metadata.permalink as string;
+                  const baseLink = current > 1
+                    ? curPermalink.replace(/\/page\/\d+\/?$/, '')
+                    : curPermalink;
+                  const sample = metadata.nextPage || metadata.previousPage || '';
+                  const pageBase = sample
+                    ? sample.replace(/\/?\d+\/?$/, '')
+                    : `${baseLink.replace(/\/?$/, '')}/page`;
+                  const linkFor = (n: number) => (n === 1 ? baseLink : `${pageBase}/${n}`);
+
+                  // Build the set {1, total, current-1, current, current+1} within bounds
+                  const set = new Set<number>();
+                  const add = (n: number) => {
+                    if (n >= 1 && n <= total) set.add(n);
+                  };
+                  add(1);
+                  add(total);
+                  add(current - 1);
+                  add(current);
+                  add(current + 1);
+
+                  const pages = Array.from(set).sort((a, b) => a - b);
+
+                  // Insert ellipsis between non-consecutive pages
+                  const items: Array<number | '…'> = [];
+                  for (let i = 0; i < pages.length; i += 1) {
+                    const n = pages[i];
+                    if (i > 0 && n - pages[i - 1] > 1) items.push('…');
+                    items.push(n);
+                  }
+
+                  return items.map((it, idx) =>
+                    it === '…' ? (
+                      <span key={`ellipsis-${idx}`} className={styles.paginatorEllipsis}>
+                        …
+                      </span>
+                    ) : (
+                      <Link
+                        key={`page-${it}`}
+                        to={linkFor(it as number)}
+                        className={
+                          it === current ? `${styles.pageLink} ${styles.pageLinkActive}` : styles.pageLink
+                        }
+                        aria-current={it === current ? 'page' : undefined}
+                      >
+                        {it}
+                      </Link>
+                    ),
+                  );
+                })()}
+              </div>
+
+              {/* Right: Older */}
               {metadata.nextPage && (
-                <Link className={styles.paginatorBtn} to={metadata.nextPage}>
+                <Link
+                  className={`${styles.paginatorBtn} ${styles.paginatorNext}`}
+                  to={metadata.nextPage}
+                >
                   <Translate id="blog.older">Older</Translate> →
                 </Link>
               )}
