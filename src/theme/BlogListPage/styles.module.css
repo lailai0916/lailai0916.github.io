@@ -54,7 +54,10 @@
   border-radius: 16px;
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
   padding: 1rem;
-  transition: transform 160ms ease, box-shadow 160ms ease, border-color 160ms ease;
+  transition:
+    transform 160ms ease,
+    box-shadow 160ms ease,
+    border-color 160ms ease;
 }
 
 .card:hover {
@@ -140,7 +143,10 @@ html[data-theme='dark'] .card {
   color: var(--ifm-font-color-base);
   text-decoration: none !important;
   border: 1px solid var(--ifm-color-emphasis-200);
-  transition: background 160ms ease, transform 160ms ease, border-color 160ms ease;
+  transition:
+    background 160ms ease,
+    transform 160ms ease,
+    border-color 160ms ease;
 }
 
 .tagChip:hover {
@@ -228,7 +234,10 @@ html[data-theme='dark'] .card {
   border-radius: 16px;
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
   overflow: hidden;
-  transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
+  transition:
+    transform 180ms ease,
+    box-shadow 180ms ease,
+    border-color 180ms ease;
 }
 
 .postCard:hover {
@@ -252,7 +261,12 @@ html[data-theme='dark'] .card {
 }
 
 .postTitleLink {
+  color: inherit;
   text-decoration: none !important;
+}
+
+.postTitleLink:hover {
+  color: var(--ifm-color-primary);
 }
 
 .postTitle {
@@ -326,7 +340,10 @@ html[data-theme='dark'] .card {
   padding: 0.5rem 0.75rem;
   text-decoration: none !important;
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.06);
-  transition: transform 160ms ease, box-shadow 160ms ease, border-color 160ms ease;
+  transition:
+    transform 160ms ease,
+    box-shadow 160ms ease,
+    border-color 160ms ease;
 }
 
 .paginatorBtn:hover {
