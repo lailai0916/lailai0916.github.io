@@ -266,6 +266,10 @@ $$
 y=\arcsin(x)/\arccos(x)/\arctan(x)/\operatorname{arccot}(x)/\operatorname{arcsec}(x)/\operatorname{arccsc}(x)
 $$
 
+反三角函数的图像：
+
+<Desmos id="a2cggsvyzy" />
+
 反三角函数在高中阶段很少涉及。
 
 ## 反函数
