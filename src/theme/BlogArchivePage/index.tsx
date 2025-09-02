@@ -43,7 +43,7 @@ export default function BlogArchivePage(props: Props) {
   }, [archive]);
 
   return (
-    <BlogScaffold title="Archive" left={<SidebarLeft authors={authors} />} right={<SidebarRight />}>
+    <BlogScaffold title="Archive" left={<SidebarLeft />} right={<SidebarRight />}>
       {groups.map(([year, posts]) => (
         <div key={year} className={styles.card} id={String(year)}>
           <div className={styles.cardTitle}>{year}</div>

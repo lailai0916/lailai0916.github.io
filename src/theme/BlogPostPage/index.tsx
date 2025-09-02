@@ -32,7 +32,7 @@ export default function BlogPostPage(props: Props): ReactNode {
         <BlogScaffold
           title={props.content.metadata.title}
           description={props.content.metadata.description}
-          left={<SidebarLeft authors={props.content.metadata.authors} />}
+          left={<SidebarLeft />}
           right={<SidebarRight />}
         >
           <BlogPostItem>

@@ -21,7 +21,7 @@ export default function PostsListLayout({
     <BlogScaffold
       title={title}
       description={description}
-      left={<SidebarLeft items={items} />}
+      left={<SidebarLeft />}
       right={<SidebarRight />}
     >
       {items.map((it: any) => (

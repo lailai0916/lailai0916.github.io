@@ -7,27 +7,29 @@ import {
   getBlogPostCount,
   getTopTags,
   getAllTagCount,
+  getAllPostMetadata,
 } from '@site/src/utils/blogData';
 
-type Props = {
-  items?: readonly any[]; // list pages items (用于推断作者)
-  authors?: readonly any[]; // 明确传入作者数组（优先级更高）
-};
+type Props = {};
 
-export default function SidebarLeft({ items, authors }: Props) {
-  // 使用原本逻辑，但将 authorId 恒定为 'lailai'
+export default function SidebarLeft({}: Props) {
+  // 在组件内部获取作者集合：
+  // 1) 优先使用 props.authors；2) 否则从列表页传入的 items 聚合；
+  // 3) 若两者都没有，则读取全量博文数据聚合，最终固定选择 'lailai'
   const author = React.useMemo(() => {
     try {
-      const listAuthors = (items ?? []).flatMap(
-        (it: any) => (it?.content?.metadata?.authors ?? []) as any[]
-      );
-      const source = (authors ?? listAuthors) as readonly any[];
       const fixedId = 'lailai';
-      return source.find((a) => (a?.key || a?.name) === fixedId) || null;
+      // 组件内自取作者集合：读取全量博文元数据（包含 authors）并聚合
+      const metas = getAllPostMetadata();
+      const source = metas.flatMap((m: any) => (m?.authors ?? []) as any[]);
+
+      return (source as readonly any[]).find(
+        (a: any) => (a?.key || a?.name) === fixedId
+      ) as any;
     } catch {
       return null;
     }
-  }, [items, authors]);
+  }, []);
 
   const hotTags = React.useMemo(() => getTopTags(12), []);
 
