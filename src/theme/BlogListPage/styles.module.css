@@ -132,6 +132,13 @@ html[data-theme='dark'] .card {
   padding: 0.5rem 0.25rem;
 }
 
+/* Make entire stats block behave like a clean button link */
+.statItemLink {
+  text-decoration: none !important;
+  color: var(--ifm-font-color-base);
+  display: block;
+}
+
 .statValue {
   font-size: 1.5rem;
   font-weight: 700;

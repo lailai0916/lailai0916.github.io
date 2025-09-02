@@ -60,18 +60,24 @@ export default function SidebarLeft({ items, authors, authorId }: Props) {
           <Translate id="blog.stats.overview">Statistics</Translate>
         </div>
         <div className={styles.authorStats}>
-          <div className={styles.statItem}>
+          <Link
+            to="/blog/archive"
+            className={[styles.statItem, styles.statItemLink].join(' ')}
+          >
             <div className={styles.statValue}>{getBlogPostCount()}</div>
             <div className={styles.statLabel}>
               <Translate id="blog.stats.posts">Posts</Translate>
             </div>
-          </div>
-          <div className={styles.statItem}>
+          </Link>
+          <Link
+            to="/blog/tags"
+            className={[styles.statItem, styles.statItemLink].join(' ')}
+          >
             <div className={styles.statValue}>{tagsCount}</div>
             <div className={styles.statLabel}>
               <Translate id="blog.stats.tags">Tags</Translate>
             </div>
-          </div>
+          </Link>
         </div>
       </div>
 
