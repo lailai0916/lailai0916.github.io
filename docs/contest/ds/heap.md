@@ -22,7 +22,13 @@ int merge(int x,int y)
 }
 ```
 
-## pb_ds
+## `std::priority_queue`
+
+```cpp
+priority_queue<pair<int,int>> q[N];
+```
+
+## `__gnu_pb_ds::priority_queue`
 
 ```cpp
 __gnu_pbds::priority_queue<pair<int,int>,greater<pair<int,int>>> q[N];
