@@ -3,19 +3,10 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import Translate from '@docusaurus/Translate';
 import styles from '../BlogListPage/styles.module.css';
 import Link from '@docusaurus/Link';
-import {
-  getBlogPostCount,
-  getTopTags,
-  getAllTagCount,
-  getAllPostMetadata,
-} from '@site/src/utils/blogData';
+import { getBlogPostCount, getTopTags, getAllTagCount, getAllPostMetadata } from '@site/src/utils/blogData';
 
-type Props = {};
-
-export default function SidebarLeft({}: Props) {
-  // 在组件内部获取作者集合：
-  // 1) 优先使用 props.authors；2) 否则从列表页传入的 items 聚合；
-  // 3) 若两者都没有，则读取全量博文数据聚合，最终固定选择 'lailai'
+export default function SidebarLeft() {
+  // 组件内部汇总全站作者并固定选择 'lailai'
   const author = React.useMemo(() => {
     try {
       const fixedId = 'lailai';
