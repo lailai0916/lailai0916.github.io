@@ -229,4 +229,10 @@ $$
 
 ### 反三角函数
 
-其中反三角函数在高中阶段很少涉及。
+常见的 **反三角函数** 也有 $6$ 个：
+
+$$
+y=\arcsin(x)/\arccos(x)/\arctan(x)/\operatorname{arccot}(x)/\operatorname{arcsec}(x)/\operatorname{arccsc}(x)
+$$
+
+但反三角函数在高中阶段很少涉及。
