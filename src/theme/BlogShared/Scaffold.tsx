@@ -10,11 +10,7 @@ type Props = {
   children: React.ReactNode;
 };
 
-export default function BlogScaffold({
-  title,
-  description,
-  children,
-}: Props) {
+export default function BlogScaffold({ title, description, children }: Props) {
   return (
     <Layout title={title} description={description}>
       <div className={styles.container}>
