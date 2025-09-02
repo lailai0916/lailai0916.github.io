@@ -127,11 +127,6 @@ html[data-theme='dark'] .heroLogo {
     drop-shadow(0 0 30px var(--ifm-color-primary));
 }
 
-html[data-theme='dark'] .heroLogo:hover {
-  filter: drop-shadow(0 0 20px var(--ifm-color-primary))
-    drop-shadow(0 0 35px var(--ifm-color-primary));
-}
-
 @media only screen and (max-width: 768px) {
   .hero {
     padding-left: 20px;
