@@ -4,8 +4,6 @@ import Translate from '@docusaurus/Translate';
 
 import styles from '../BlogListPage/styles.module.css';
 import BlogScaffold from '../BlogShared/Scaffold';
-import SidebarLeft from '../BlogShared/SidebarLeft';
-import SidebarRight from '../BlogShared/SidebarRight';
 
 // page uses shared sidebars that fetch data; no direct utils here
 
@@ -25,7 +23,7 @@ export default function BlogArchivePage(props: Props) {
   }, [archive]);
 
   return (
-    <BlogScaffold title="Archive" left={<SidebarLeft />} right={<SidebarRight />}>
+    <BlogScaffold title="Archive">
       {groups.map(([year, posts]) => (
         <div key={year} className={styles.card} id={String(year)}>
           <div className={styles.cardTitle}>{year}</div>

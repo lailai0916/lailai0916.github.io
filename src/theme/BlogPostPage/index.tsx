@@ -1,7 +1,5 @@
 import React, { type ReactNode } from 'react';
 import BlogScaffold from '../BlogShared/Scaffold';
-import SidebarLeft from '../BlogShared/SidebarLeft';
-import SidebarRight from '../BlogShared/SidebarRight';
 import {
   HtmlClassNameProvider,
   ThemeClassNames,
@@ -32,8 +30,6 @@ export default function BlogPostPage(props: Props): ReactNode {
         <BlogScaffold
           title={props.content.metadata.title}
           description={props.content.metadata.description}
-          left={<SidebarLeft />}
-          right={<SidebarRight />}
         >
           <BlogPostItem>
             <BlogPostContent />
