@@ -12,10 +12,9 @@ import {
 type Props = {
   items?: readonly any[]; // list pages items (用于推断作者)
   authors?: readonly any[]; // 明确传入作者数组（优先级更高）
-  authorId?: string; // 指定作者 key/name（可选）
 };
 
-export default function SidebarLeft({ items, authors, authorId }: Props) {
+export default function SidebarLeft({ items, authors }: Props) {
   // 使用原本逻辑，但将 authorId 恒定为 'lailai'
   const author = React.useMemo(() => {
     try {
@@ -30,7 +29,6 @@ export default function SidebarLeft({ items, authors, authorId }: Props) {
     }
   }, [items, authors]);
 
-  const tagsCount = React.useMemo(() => getAllTagCount(), []);
   const hotTags = React.useMemo(() => getTopTags(12), []);
 
   return (
@@ -73,7 +71,7 @@ export default function SidebarLeft({ items, authors, authorId }: Props) {
             to="/blog/tags"
             className={[styles.statItem, styles.statItemLink].join(' ')}
           >
-            <div className={styles.statValue}>{tagsCount}</div>
+            <div className={styles.statValue}>{getAllTagCount()}</div>
             <div className={styles.statLabel}>
               <Translate id="blog.stats.tags">Tags</Translate>
             </div>
