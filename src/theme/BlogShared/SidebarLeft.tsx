@@ -16,19 +16,19 @@ type Props = {
 };
 
 export default function SidebarLeft({ items, authors, authorId }: Props) {
+  // 使用原本逻辑，但将 authorId 恒定为 'lailai'
   const author = React.useMemo(() => {
     try {
       const listAuthors = (items ?? []).flatMap(
         (it: any) => (it?.content?.metadata?.authors ?? []) as any[]
       );
       const source = (authors ?? listAuthors) as readonly any[];
-      // 当未指定 authorId 时，优先取列表/传入的第一个作者
-      if (!authorId) return (source[0] as any) || null;
-      return source.find((a) => (a?.key || a?.name) === authorId) || null;
+      const fixedId = 'lailai';
+      return source.find((a) => (a?.key || a?.name) === fixedId) || null;
     } catch {
       return null;
     }
-  }, [items, authors, authorId]);
+  }, [items, authors]);
 
   const tagsCount = React.useMemo(() => getAllTagCount(), []);
   const hotTags = React.useMemo(() => getTopTags(12), []);
