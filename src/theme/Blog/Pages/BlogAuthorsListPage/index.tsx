@@ -6,16 +6,15 @@ import BlogScaffold from '../../../BlogShared/Scaffold';
 import ChipListCard from '../../../BlogShared/ChipListCard';
 import type { Props } from '@theme/Blog/Pages/BlogAuthorsListPage';
 
-export default function BlogAuthorsListPage(props: Props) {
-  const { authors } = props;
+export default function BlogAuthorsListPage({ authors, sidebar }: Props) {
   return (
     <BlogScaffold title="Authors">
       <ChipListCard
         title={<Translate id="blog.authors">All Authors</Translate>}
-        items={authors.map((a: any) => ({
-          to: a.permalink,
-          label: a.name,
-          count: a.count,
+        items={authors.map((author: any) => ({
+          to: author.page.permalink,
+          label: author.name,
+          count: author.count,
         }))}
       />
     </BlogScaffold>
