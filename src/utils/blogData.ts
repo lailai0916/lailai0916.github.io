@@ -112,11 +112,7 @@ export function getRecentBlogPosts(maxCount: number = 4): ProcessedBlogPost[] {
  */
 export function getBlogPostCount(): number {
   const items = getAllBlogItems();
-  if (!items.length) return 0;
-  return items.filter((it: any) => {
-    const link = it.permalink ?? it.metadata?.permalink;
-    return link && !BLOG_CONFIG.EXCLUDED_PERMALINKS.includes(link);
-  }).length;
+  return items.length;
 }
 
 /**
