@@ -43,7 +43,7 @@
 
 两点 $A(x_0,y_0),B(x_1,y_1)$ 之间的距离为 $\sqrt{(x_0-x_1)^2+(y_0-y_1)^2}$。
 
-<Desmos id="bjodmisvtc" />
+<Desmos id="xhsfggz1l6" />
 
 构造直角三角形，两条直角边的长度分别为 $|x_0-x_1|$ 和 $|y_0-y_1|$。
 
