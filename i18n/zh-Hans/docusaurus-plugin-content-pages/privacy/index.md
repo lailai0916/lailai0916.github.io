@@ -314,7 +314,7 @@ Cookies 可以是「持久性 Cookies」或「会话 Cookies」。当您下线�
 
 - 对于 Chrome 浏览器，请访问 [Google 提供的页面](https://support.google.com/accounts/answer/32050)。
 - 对于 Internet Explorer 浏览器, 请访问 [Microsoft 提供的页面](https://support.microsoft.com/kb/278835)。
-- 对于 Firefox 浏览器, 请访问 [Mozilla 提供的页面](https://support.microsoft.com/kb/278835)。
+- 对于 Firefox 浏览器, 请访问 [Mozilla 提供的页面](https://support.mozilla.org/en-US/kb/clear-cookies-and-site-data-firefox)。
 - 对于 Safari 浏览器, 请访问 [Apple 提供的页面](https://support.apple.com/guide/safari/manage-cookies-and-website-data-sfri11471/mac)。
 - 对于其它浏览器, 请访问你的浏览器提供的支持页面。
 

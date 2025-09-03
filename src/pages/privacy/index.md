@@ -311,7 +311,7 @@ If You'd like to delete Cookies or instruct your web browser to delete or refuse
 
 - For the Chrome web browser, please visit [this page from Google](https://support.google.com/accounts/answer/32050).
 - For the Internet Explorer web browser, please visit [this page from Microsoft](https://support.microsoft.com/kb/278835)
-- For the Firefox web browser, please visit [this page from Mozilla](https://support.microsoft.com/kb/278835)
+- For the Firefox web browser, please visit [this page from Mozilla](https://support.mozilla.org/en-US/kb/clear-cookies-and-site-data-firefox)
 - For the Safari web browser, please visit [this page from Apple](https://support.apple.com/guide/safari/manage-cookies-and-website-data-sfri11471/mac)
 - For any other web browser, please visit your web browser's official web pages.
 
