@@ -1,5 +1,5 @@
 ---
-title: '数学：球体体积（咕）'
+title: '球体体积（咕）'
 date: 2024-07-03T12:00
 authors: [lailai]
 tags: [math]

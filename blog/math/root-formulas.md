@@ -1,5 +1,5 @@
 ---
-title: '数学：求根公式（咕）'
+title: '求根公式（咕）'
 date: 2023-11-27T12:00
 authors: [lailai]
 tags: [math]

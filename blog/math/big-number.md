@@ -1,5 +1,5 @@
 ---
-title: '数学：大数'
+title: '大数'
 date: 2025-07-20T10:00
 authors: [lailai]
 tags: [math]

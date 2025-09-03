@@ -1,5 +1,5 @@
 ---
-title: '资源：地图集合'
+title: '地图集合'
 date: 2025-03-18T12:00
 authors: [lailai]
 tags: [misc]

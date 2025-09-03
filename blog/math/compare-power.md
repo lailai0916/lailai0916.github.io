@@ -1,5 +1,5 @@
 ---
-title: '数学：比较 x^y 与 y^x'
+title: '比较 x^y 与 y^x'
 date: 2025-08-23T15:17
 authors: [lailai]
 tags: [math]

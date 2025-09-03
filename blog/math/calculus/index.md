@@ -1,5 +1,5 @@
 ---
-title: '数学：微积分'
+title: '微积分'
 date: 2024-02-17T12:00
 authors: [lailai]
 tags: [math]

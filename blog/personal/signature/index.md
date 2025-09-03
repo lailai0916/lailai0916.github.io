@@ -1,5 +1,5 @@
 ---
-title: '个人：签名'
+title: '签名'
 date: 2024-08-30T05:20
 authors: [lailai]
 tags: [personal]
