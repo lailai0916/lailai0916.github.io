@@ -111,40 +111,40 @@
 1. 用 Markdown 或 HTML 格式嵌入图片。
 
 ```markdown
-![](http://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=lailai0916)
+![](https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=lailai0916)
 ```
 
 <BrowserWindow>
 
-![](http://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=lailai0916)
+![](https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=lailai0916)
 
 </BrowserWindow>
 
 2. 类似技术栈图标，状态统计图也能实现深浅模式切换。
 
 ```markdown
-![](http://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=lailai0916&theme=default#gh-light-mode-only)
-![](http://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=lailai0916&theme=dark#gh-dark-mode-only)
+![](https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=lailai0916&theme=default#gh-light-mode-only)
+![](https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=lailai0916&theme=dark#gh-dark-mode-only)
 ```
 
 <BrowserWindow>
 
-![](http://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=lailai0916&theme=default#gh-light-mode-only)
-![](http://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=lailai0916&theme=dark#gh-dark-mode-only)
+![](https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=lailai0916&theme=default#gh-light-mode-only)
+![](https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=lailai0916&theme=dark#gh-dark-mode-only)
 
 </BrowserWindow>
 
 3. 这个状态统计图还支持更换不同的种类和主题。
 
 ```markdown
-![](http://github-profile-summary-cards.vercel.app/api/cards/stats?username=lailai0916&theme=2077)
-![](http://github-profile-summary-cards.vercel.app/api/cards/productive-time?username=lailai0916&theme=tokyonight&utcOffset=8)
+![](https://github-profile-summary-cards.vercel.app/api/cards/stats?username=lailai0916&theme=2077)
+![](https://github-profile-summary-cards.vercel.app/api/cards/productive-time?username=lailai0916&theme=tokyonight&utcOffset=8)
 ```
 
 <BrowserWindow>
 
-![](http://github-profile-summary-cards.vercel.app/api/cards/stats?username=lailai0916&theme=2077)
-![](http://github-profile-summary-cards.vercel.app/api/cards/productive-time?username=lailai0916&theme=tokyonight&utcOffset=8)
+![](https://github-profile-summary-cards.vercel.app/api/cards/stats?username=lailai0916&theme=2077)
+![](https://github-profile-summary-cards.vercel.app/api/cards/productive-time?username=lailai0916&theme=tokyonight&utcOffset=8)
 
 </BrowserWindow>
 
