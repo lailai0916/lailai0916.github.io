@@ -88,15 +88,15 @@ $$
 
 $$\frac{14!}{(2!2!2!4!4!)(3!2!)}=1576575$$
 
-### 定理
+## 定理
 
-- 二项式定理：
+### 二项式定理
 
 $$(a+b)^n=\displaystyle\sum_{k=0}^{n}C_n^ka^kb^{n-k}\ \ \ \ \ \ \ (ax+by)^n=\displaystyle\sum_{k=0}^{n}C_n^ka^kb^{n-k}x^ky^{n-k}$$
 
 例如：$(2x+3y)^3=8x^3+36x^2y+54xy^2+27y^3\\ \ \ \ \ \ \ \ \ \ \ \displaystyle\left(3x+\frac{5}{x^2}\right)^4=81x^4+540x+\frac{1350}{x^2}+\frac{1500}{x^5}+\frac{625}{x^8}$
 
-- 三项式定理：
+### 三项式定理
 
 $$(a+b+c)^n=\sum_{i+j+k=n}\frac{n!}{i!j!k!}a^ib^jc^k$$
 
@@ -116,7 +116,7 @@ $$(x_1+x_2+\dots+x_t)^n=\displaystyle\sum_{\text{满足}\ n_1+n_2+\dots+n_t=n\ \
 
 或者用三项式展开的形式也行。
 
-- 范德蒙德卷积（ 范德蒙德恒等式 ）
+### 范德蒙德卷积
 
 $$\displaystyle\sum_{i=0}^k C_n^iC_m^{k-i}=C_n^0C_m^k+C_n^1C_m^{k-1}+\dots+C_n^kC_m^0=C_{n+m}^k$$
 
@@ -128,7 +128,7 @@ $$\displaystyle\sum_{i=0}^k C_n^iC_m^{k-i}=C_n^0C_m^k+C_n^1C_m^{k-1}+\dots+C_n^k
 
 $$C_n^m\equiv C_{n\ \text{mod}\ p}^{m\ \text{mod}\ p}\times C_{n/p}^{m/p}\ (\text{mod}\ p)$$
 
-### 容斥原理
+## 容斥原理
 
 设 $S_1,S_2,\dots,S_n$ 为有限集合，$|S|$ 表示集合 $S$ 的大小，则：
 
