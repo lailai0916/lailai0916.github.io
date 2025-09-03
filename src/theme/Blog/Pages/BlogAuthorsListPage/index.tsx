@@ -8,7 +8,7 @@ import type { Props } from '@theme/Blog/Pages/BlogAuthorsListPage';
 
 export default function BlogAuthorsListPage({ authors, sidebar }: Props) {
   return (
-    <BlogScaffold title="Authors">
+    <BlogScaffold title="Authors" description="Authors of lailai's blog">
       <ChipListCard
         title={<Translate id="blog.authors">All Authors</Translate>}
         items={authors.map((author: any) => ({

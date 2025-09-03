@@ -23,7 +23,7 @@ export default function BlogArchivePage(props: Props) {
   }, [archive]);
 
   return (
-    <BlogScaffold title="Archive">
+    <BlogScaffold title="Archive" description="Archive of lailai's blog">
       {groups.map(([year, posts]) => (
         <div key={year} className={styles.card} id={String(year)}>
           <div className={styles.cardTitle}>{year}</div>

@@ -15,7 +15,7 @@ type Props = any;
 export default function BlogTagsListPage(props: Props) {
   const { tags } = props;
   return (
-    <BlogScaffold title="Tags">
+    <BlogScaffold title="Tags" description="Tags of lailai's blog">
       <ChipListCard
         title={<Translate id="blog.tags.list">All Tags</Translate>}
         items={tags.map((t: any) => ({
