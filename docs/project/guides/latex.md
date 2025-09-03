@@ -239,10 +239,10 @@ $$
 
 ```latex
 \begin{bmatrix}
-  1 & 0 & \cdots & 0 \\
-  0 & 1 & \cdots & 0 \\
+  1 & 0 & \dots & 0 \\
+  0 & 1 & \dots & 0 \\
   \vdots & \vdots & \ddots & \vdots \\
-  0 & 0 & \cdots & 1
+  0 & 0 & \dots & 1
 \end{bmatrix}
 ```
 
@@ -250,10 +250,10 @@ $$
 
 $$
 \begin{bmatrix}
-  1 & 0 & \cdots & 0 \\
-  0 & 1 & \cdots & 0 \\
+  1 & 0 & \dots & 0 \\
+  0 & 1 & \dots & 0 \\
   \vdots & \vdots & \ddots & \vdots \\
-  0 & 0 & \cdots & 1
+  0 & 0 & \dots & 1
 \end{bmatrix}
 $$
 
@@ -294,13 +294,13 @@ $$
 #### 正体
 
 ```latex
-g=9.8\mathrm{m/s^2}
+g\approx 9.8\mathrm{m/s^2}
 ```
 
 <BrowserWindow>
 
 $$
-g=9.8\mathrm{m/s^2}
+g\approx 9.8\mathrm{m/s^2}
 $$
 
 </BrowserWindow>
