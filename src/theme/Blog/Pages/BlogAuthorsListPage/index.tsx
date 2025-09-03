@@ -13,7 +13,7 @@ export default function BlogAuthorsListPage(props: Props) {
   return (
     <BlogScaffold title="Authors">
       <ChipListCard
-        title={<Translate id="blog.authors">Authors</Translate>}
+        title={<Translate id="blog.authors">All Authors</Translate>}
         items={authors.map((a: any) => ({
           to: a.permalink,
           label: a.name,
