@@ -154,7 +154,7 @@ $$
 
 基本不等式还有一种优雅的几何证明：
 
-设 $AC=a,BC=b$，则半径 $AB=AC+BC=a+b$。
+设 $AC=a,BC=b$，则直径 $AB=AC+BC=a+b$。
 
 根据相似三角形，$CD=\sqrt{ab}$，而弦 $DE=2CD=2\sqrt{ab}$。
 
