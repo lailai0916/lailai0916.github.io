@@ -2,10 +2,10 @@
 
 $$
 \begin{cases}
-a_{1,1} x_1 + a_{1,2} x_2 + \ldots + a_{1,n} x_n = a_{1,n+1} \\
-a_{2,1} x_1 + a_{2,2} x_2 + \ldots + a_{2,n} x_n = a_{2,n+1} \\
-\ldots \\
-a_{n,1} x_1 + a_{n,2} x_2 + \ldots + a_{n,n} x_n = a_{n,n+1} \\
+  a_{1,1}x_1+a_{1,2}x_2+\ldots+a_{1,n}x_n=a_{1,n+1} \\
+  a_{2,1}x_1+a_{2,2}x_2+\ldots+a_{2,n}x_n=a_{2,n+1} \\
+  \vdots \\
+  a_{n,1}x_1+a_{n,2}x_2+\ldots+a_{n,n}x_n=a_{n,n+1} \\
 \end{cases}
 $$
 
@@ -23,19 +23,23 @@ $$
 ## 高斯 - 约旦消元法
 
 $$
-\left\{\begin{matrix}
-a_{1,1} & a_{1,2} & \ldots & a_{1,n} \mid a_{1,n+1} \\
-a_{2,1} & a_{2,2} & \ldots & a_{2,n} \mid a_{2,n+1} \\
-\ldots & & & \\
-a_{n,1} & a_{n,2} & \ldots & a_{n,n} \mid a_{n,n+1}
-\end{matrix}\right.
+\left\{
+\begin{matrix}
+  a_{1,1} & a_{1,2} & \ldots & a_{1,n} & \mid a_{1,n+1} \\
+  a_{2,1} & a_{2,2} & \ldots & a_{2,n} & \mid a_{2,n+1} \\
+  \vdots & \vdots & \ddots & \vdots & \vdots \\
+  a_{n,1} & a_{n,2} & \ldots & a_{n,n} & \mid a_{n,n+1}
+\end{matrix}
+\right.
 \rightarrow
-\left\{\begin{matrix}
-1 & 0 & \ldots & 0 \mid a'_{1,n+1} \\
-0 & 1 & \ldots & 0 \mid a'_{2,n+1} \\
-\ldots & & & \\
-0 & 0 & \ldots & 1 \mid a'_{n,n+1}
-\end{matrix}\right.
+\left\{
+\begin{matrix}
+  1 & 0 & \ldots & 0 & \mid a'_{1,n+1} \\
+  0 & 1 & \ldots & 0 & \mid a'_{2,n+1} \\
+  \vdots & \vdots & \ddots & \vdots & \vdots \\
+  0 & 0 & \ldots & 1 & \mid a'_{n,n+1}
+\end{matrix}
+\right.
 $$
 
 ```cpp
@@ -70,19 +74,23 @@ bool gauss(int n)
 ## 高斯消元法
 
 $$
-\left\{\begin{matrix}
-a_{1,1} & a_{1,2} & \ldots & a_{1,n} \mid a_{1,n+1} \\
-a_{2,1} & a_{2,2} & \ldots & a_{2,n} \mid a_{2,n+1} \\
-\ldots \\
-a_{n,1} & a_{n,2} & \ldots & a_{n,n} \mid a_{n,n+1}
-\end{matrix}\right.
+\left\{
+\begin{matrix}
+  a_{1,1} & a_{1,2} & \ldots & a_{1,n} & \mid a_{1,n+1} \\
+  a_{2,1} & a_{2,2} & \ldots & a_{2,n} & \mid a_{2,n+1} \\
+  \vdots & \vdots & \ddots & \vdots & \vdots \\
+  a_{n,1} & a_{n,2} & \ldots & a_{n,n} & \mid a_{n,n+1}
+\end{matrix}
+\right.
 \rightarrow
-\left\{\begin{matrix}
-a'_{1,1} & a'_{1,2} & \ldots & a_{1,n} \mid a'_{1,n+1} \\
-0 & a_{2,2} & \ldots & a'_{2,n} \mid a'_{2,n+1} \\
-\ldots \\
-0 & 0 & \ldots & a'_{n,n} \mid a'_{n,n+1}
-\end{matrix}\right.
+\left\{
+\begin{matrix}
+  a'_{1,1} & a'_{1,2} & \ldots & a_{1,n} & \mid a'_{1,n+1} \\
+  0 & a_{2,2} & \ldots & a'_{2,n} & \mid a'_{2,n+1} \\
+  \vdots & \vdots & \ddots & \vdots & \vdots \\
+  0 & 0 & \ldots & a'_{n,n} & \mid a'_{n,n+1}
+\end{matrix}
+\right.
 $$
 
 :::tip

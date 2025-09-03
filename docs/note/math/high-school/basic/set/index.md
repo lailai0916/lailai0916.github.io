@@ -111,7 +111,7 @@ $$
 a\notin A
 $$
 
-集合一般由花括号（$\{\dots\}$）包裹。
+集合一般由花括号 $\set{\dots}$ 包裹。
 
 除了用 **自然语言** 描述集合，还有 $2$ 种常见的表示方法：
 
@@ -121,9 +121,9 @@ $$
 
 :::example
 
-- “小于 $10$ 的正偶数”的集合可以表示为 $\{2,4,6,8\}$。
-- 自然数集可以表示为 $\{0,1,2,3,\dots\}$。
-- “地球上的四大洋”的集合可以表示为 $\{\text{太平洋},\text{大西洋},\text{大西洋},\text{北冰洋}\}$。
+- “小于 $10$ 的正偶数”的集合可以表示为 $\set{2,4,6,8}$。
+- 自然数集可以表示为 $\set{0,1,2,3,\dots}$。
+- “地球上的四大洋”的集合可以表示为 $\set{\text{太平洋},\text{大西洋},\text{大西洋},\text{北冰洋}}$。
 
 :::
 
@@ -135,9 +135,9 @@ $$
 
 :::example
 
-- “大于等于 $5$ 的实数”的集合可以表示为 $\{\underbrace{x\in\mathbb{R}}_{\text{属于实数}}|\underbrace{x\ge 5}_{\text{大于等于} 5}\}$。
-- “所有奇数”的集合可以表示为 $\{\underbrace{x\in\mathbb{Z}}_{\text{属于整数}}|\underbrace{x=2k+1,k\in\mathbb{Z}}_{\text{是奇数}}\}$。
-- “你人生中喝过的饮料种类”的集合可以表示为 $\{\underbrace{x\in\text{饮料种类}}_{\text{属于饮料种类}}|\underbrace{\text{你喝过 x}}_{\text{是你喝过的}}\}$。
+- “大于等于 $5$ 的实数”的集合可以表示为 $\set{\underbrace{x\in\mathbb{R}}_{\text{属于实数}}|\underbrace{x\ge 5}_{\text{大于等于} 5}}$。
+- “所有奇数”的集合可以表示为 $\set{\underbrace{x\in\mathbb{Z}}_{\text{属于整数}}|\underbrace{x=2k+1,k\in\mathbb{Z}}_{\text{是奇数}}}$。
+- “你人生中喝过的饮料种类”的集合可以表示为 $\set{\underbrace{x\in\text{饮料种类}}_{\text{属于饮料种类}}|\underbrace{\text{你喝过 x}}_{\text{是你喝过的}}}$。
 
 :::
 
@@ -146,7 +146,7 @@ $$
 在不产生歧义的情况下，我们可以省略一些常见的条件：
 
 $$
-\{x\in\mathbb{R}|x\ge 5\}\iff\{x|x\ge 5\}
+\set{x\in\mathbb{R}|x\ge 5}\iff\set{x|x\ge 5}
 $$
 
 ## 关系
@@ -247,7 +247,7 @@ $$
 包含集合 $A$ 和 $B$ 中所有元素的集合 $C$ 定义为 **并集**，记为：
 
 $$
-A\cup B=C=\{x|x\in A\text{或}x\in B\}
+A\cup B=C=\set{x|x\in A\text{或}x\in B}
 $$
 
 ![](./assets/Venn0111.svg)
@@ -263,7 +263,7 @@ $$
 集合 $A$ 和 $B$ 中共有元素的集合 $C$ 定义为 **交集**，记为：
 
 $$
-A\cap B=C=\{x|x\in A\text{且}x\in B\}
+A\cap B=C=\set{x|x\in A\text{且}x\in B}
 $$
 
 ![](./assets/Venn0001.svg)
@@ -273,7 +273,7 @@ $$
 对于全集 $U$，除集合 $A$ 以外的其他元素的集合 $B$ 定义为 **补集**，记为：
 
 $$
-\complement_U A=B=\{x|x\notin A\}
+\complement_U A=B=\set{x|x\notin A}
 $$
 
 ![](./assets/Venn10.svg)
@@ -292,9 +292,9 @@ $$
 
 :::example
 
-已知三个集合：$A=\{1,2,3\}$，$B=\{3,4,5\}$，$U=\{1,2,3,4,5,6\}$。
+已知三个集合：$A=\set{1,2,3}$，$B=\set{3,4,5}$，$U=\set{1,2,3,4,5,6}$。
 
-则 $A\cup B=\{1,2,3,4,5\}$，$A\cap B=\{3\}$，$\complement_U A=\{4,5,6\}$。
+则 $A\cup B=\set{1,2,3,4,5}$，$A\cap B=\set{3}$，$\complement_U A=\set{4,5,6}$。
 
 :::
 

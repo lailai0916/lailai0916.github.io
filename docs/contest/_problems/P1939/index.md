@@ -5,7 +5,7 @@
 $$
 a_x=
 \begin{cases}
- 1 & x \in\{1,2,3\} \\
+ 1 & x \in\set{1,2,3} \\
  a_{x-1}+a_{x-3} & x \geq 4
 \end{cases}
 $$

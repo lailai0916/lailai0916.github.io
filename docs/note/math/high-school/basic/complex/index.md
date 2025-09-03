@@ -86,7 +86,7 @@ $$
 数集在前面的 [集合](set#数集) 章节中提到过，我们在实数集 $\mathbb{R}$ 的基础上拓展出 **复数集** $\mathbb{C}$。
 
 $$
-\mathbb{C}=\{a+bi|a,b\in\mathbb{R}\}
+\mathbb{C}=\set{a+bi|a,b\in\mathbb{R}}
 $$
 
 $$
