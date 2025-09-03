@@ -47,9 +47,9 @@
     "message": "关于",
     "description": "The label of footer link with label=About linking to /about"
   },
-  "link.item.label.Games": {
-    "message": "游戏",
-    "description": "The label of footer link with label=Games linking to /games"
+  "link.item.label.Status": {
+    "message": "状态",
+    "description": "The label of footer link with label=Status linking to /status"
   },
   "link.item.label.Settings": {
     "message": "设置",

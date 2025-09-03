@@ -52,13 +52,6 @@ export const SITEMAP_LIST: SitemapCategoryItem[] = [
         }),
         href: '/resources',
       },
-      {
-        title: translate({
-          id: 'data.sitemap.pages.games',
-          message: 'Games',
-        }),
-        href: '/games',
-      },
     ],
   },
   {
