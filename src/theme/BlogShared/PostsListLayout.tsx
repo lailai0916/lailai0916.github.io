@@ -16,10 +16,7 @@ export default function PostsListLayout({
   meta: BlogPaginatedMetadata;
 }) {
   return (
-    <BlogScaffold
-      title={title}
-      description={description}
-    >
+    <BlogScaffold title={title} description={description}>
       {items.map((it: any) => (
         <PostCard key={it.content.metadata.permalink} item={it} />
       ))}

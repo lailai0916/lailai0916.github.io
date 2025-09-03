@@ -3,7 +3,12 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import Translate from '@docusaurus/Translate';
 import styles from '../BlogListPage/styles.module.css';
 import Link from '@docusaurus/Link';
-import { getBlogPostCount, getTopTags, getAllTagCount, getAllPostMetadata } from '@site/src/utils/blogData';
+import {
+  getBlogPostCount,
+  getTopTags,
+  getAllTagCount,
+  getAllPostMetadata,
+} from '@site/src/utils/blogData';
 
 export default function SidebarLeft() {
   // 组件内部汇总全站作者并固定选择 'lailai'
