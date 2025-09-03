@@ -10,7 +10,7 @@ import ImageWindow from '@site/src/components/BrowserWindow/ImageWindow';
 import Notation from '@site/src/components/Notation';
 import Desmos from '@site/src/components/Desmos';
 import Problem from '@site/src/components/Problem';
-import Github from '@site/src/components/Github';
+import GitHub from '@site/src/components/GitHub';
 
 export default {
   ...MDXComponents,
@@ -21,7 +21,7 @@ export default {
   IframeWindow,
   ImageWindow,
   Notation,
-  Github,
+  GitHub,
   Desmos,
   Problem,
 };

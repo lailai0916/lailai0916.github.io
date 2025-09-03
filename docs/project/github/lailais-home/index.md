@@ -6,7 +6,7 @@
 
 ## 项目链接
 
-<Github repo="lailai0916/lailai0916.github.io" />
+<GitHub repo="lailai0916/lailai0916.github.io" />
 
 ## 前言
 

@@ -2,7 +2,7 @@
 import React, { useEffect, useMemo, useState } from 'react';
 import styles from './styles.module.css';
 
-export type GithubProps = {
+export type GitHubProps = {
   /** owner/repo */
   repo: string;
   className?: string;
@@ -15,10 +15,10 @@ export type GithubProps = {
    * Optional custom fetch function (e.g., call your proxy to avoid rate limit)
    * Must return a JSON compatible with GitHub repo API (subset used below)
    */
-  fetcher?: (repo: string, signal: AbortSignal) => Promise<GithubRepoData>;
+  fetcher?: (repo: string, signal: AbortSignal) => Promise<GitHubRepoData>;
 };
 
-export type GithubRepoData = {
+export type GitHubRepoData = {
   description?: string | null;
   language?: string | null;
   forks?: number;
@@ -42,7 +42,7 @@ function compactNumber(n?: number) {
   }
 }
 
-function stripGithubEmojiShortcodes(text?: string | null) {
+function stripGitHubEmojiShortcodes(text?: string | null) {
   if (!text) return '';
   // Convert :emoji_name: to empty string, keep readable description
   return text.replace(/:[a-zA-Z0-9_]+:/g, '').trim();
@@ -51,7 +51,7 @@ function stripGithubEmojiShortcodes(text?: string | null) {
 async function defaultFetcher(
   repo: string,
   signal: AbortSignal
-): Promise<GithubRepoData> {
+): Promise<GitHubRepoData> {
   const res = await fetch(`https://api.github.com/repos/${repo}`, {
     signal,
     // align with original implementation behaviour
@@ -61,7 +61,7 @@ async function defaultFetcher(
   return res.json();
 }
 
-export default function Github(props: GithubProps) {
+export default function GitHub(props: GitHubProps) {
   const {
     repo,
     className,
@@ -71,7 +71,7 @@ export default function Github(props: GithubProps) {
     fetcher,
   } = props;
 
-  const [data, setData] = useState<GithubRepoData | null>(null);
+  const [data, setData] = useState<GitHubRepoData | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState<boolean>(true);
 
@@ -105,7 +105,7 @@ export default function Github(props: GithubProps) {
 
   const href = `https://github.com/${owner}/${repoName}`;
   const description =
-    stripGithubEmojiShortcodes(data?.description) || 'Description not set';
+    stripGitHubEmojiShortcodes(data?.description) || 'Description not set';
   const stars = compactNumber(data?.stargazers_count || 0);
   const forks = compactNumber(data?.forks || 0);
   const license = data?.license?.spdx_id || 'no-license';

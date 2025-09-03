@@ -8,7 +8,7 @@
 
 ## 项目链接
 
-<Github repo="lailai0916/lailai0916" />
+<GitHub repo="lailai0916/lailai0916" />
 
 ## 创建仓库
 
@@ -180,7 +180,7 @@
 2. 复制 [GitHub Stats Visualization](https://github.com/jstrieb/github-stats) 的 GitHub 仓库。
 
 - 点击 [Create a new repository](https://github.com/jstrieb/github-stats/generate) 创建一个副本，注意不是直接 fork，这样避免了大规模的提交历史。
-- **Repository name**（仓库名称）和 **Description**（描述）可以随意填写，例如 `lailai0916/github-stats` 和 `lailai's Github Stats`。
+- **Repository name**（仓库名称）和 **Description**（描述）可以随意填写，例如 `lailai0916/github-stats` 和 `lailai's GitHub Stats`。
 - 点击 **Create repository**（创建仓库）。
 
 <ImageWindow url="https://github.com/new?template_name=github-stats&template_owner=jstrieb">

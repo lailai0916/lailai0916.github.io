@@ -8,7 +8,7 @@
 
 ## 项目链接
 
-<Github repo="lailai0916/code-comparator" />
+<GitHub repo="lailai0916/code-comparator" />
 
 ## 对拍简介
 
