@@ -62,13 +62,13 @@ $$
 设多项式 $f(x)$ 的 $n-r$ 次项系数为 $a_{n-r}$，即：
 
 $$
-f(x)=a_nx^n+a_{n-1}x^{n-1}+\cdots+a_1x+a_0= \sum_{r=0}^n x^{n-r}a_{n-r}
+f(x)=a_nx^n+a_{n-1}x^{n-1}+\dots+a_1x+a_0= \sum_{r=0}^n x^{n-r}a_{n-r}
 $$
 
-对于第二种等价描述，设 $f(x)$ 的 $n$ 个根分别为 $x_1,x_2,\cdots,x_n$，则：
+对于第二种等价描述，设 $f(x)$ 的 $n$ 个根分别为 $x_1,x_2,\dots,x_n$，则：
 
 $$
-f(x)=a_n(x-x_1)(x-x_2)\cdots(x-x_n)=0
+f(x)=a_n(x-x_1)(x-x_2)\dots(x-x_n)=0
 $$
 
 代入任意根 $x_i$，均有 $f(x_i)=0$，方程显然成立。
@@ -79,28 +79,28 @@ $$
 
 $$
 \begin{aligned}
-  f(x) &= a_n(x-x_1)(x-x_2)\cdots(x-x_n) \\
+  f(x) &= a_n(x-x_1)(x-x_2)\dots(x-x_n) \\
   &= x^n \cdot a_n \\
-  &+ x^{n-1} \cdot a_n (-x_1-x_2-\cdots-x_n) \\
-  &+ x^{n-2} \cdot a_n (x_1x_2+x_1x_3+\cdots+x_1x_n+x_2x_3+\cdots+x_{n-1}x_n) \\
-  &+ \cdots \\
-  &+ x^{n-r} \cdot a_n \left[\sum_{1\le i_1\le i_2\le \cdots \le i_{r-1} \le i_r \le n}(-x_{i_1})(-x_{i_2})\cdots(-x_{i_{r-1}})(-x_{i_r})\right] \\
-  &+ \cdots \\
-  &+ a_n(-1)^n(x_1x_2\cdots x_n) \\
-  &= \sum_{r=0}^n x^{n-r}a_n(-1)^r\left(\sum x_{i_1}x_{i_2}\cdots x_{i_{r-1}}x_{i_r}\right)
+  &+ x^{n-1} \cdot a_n (-x_1-x_2-\dots-x_n) \\
+  &+ x^{n-2} \cdot a_n (x_1x_2+x_1x_3+\dots+x_1x_n+x_2x_3+\dots+x_{n-1}x_n) \\
+  &+ \dots \\
+  &+ x^{n-r} \cdot a_n \left[\sum_{1\le i_1\le i_2\le \dots \le i_{r-1} \le i_r \le n}(-x_{i_1})(-x_{i_2})\dots(-x_{i_{r-1}})(-x_{i_r})\right] \\
+  &+ \dots \\
+  &+ a_n(-1)^n(x_1x_2\dots x_n) \\
+  &= \sum_{r=0}^n x^{n-r}a_n(-1)^r\left(\sum x_{i_1}x_{i_2}\dots x_{i_{r-1}}x_{i_r}\right)
 \end{aligned}
 $$
 
 因为多项式每一项系数相等，整理得：
 
 $$
-a_{n-r}=a_n(-1)^r\left(\sum x_{i_1}x_{i_2}\cdots x_{i_{r-1}}x_{i_r}\right)
+a_{n-r}=a_n(-1)^r\left(\sum x_{i_1}x_{i_2}\dots x_{i_{r-1}}x_{i_r}\right)
 $$
 
 最终结论：
 
 $$
-\sum x_{i_1}x_{i_2}\cdots x_{i_{r-1}}x_{i_r}=(-1)^r\frac{a_{n-r}}{a_n}
+\sum x_{i_1}x_{i_2}\dots x_{i_{r-1}}x_{i_r}=(-1)^r\frac{a_{n-r}}{a_n}
 $$
 
 这就是系数与根的对称关系，也就是韦达定理的内容。

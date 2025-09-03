@@ -25,15 +25,15 @@ a\uparrow b=a^b
 $$
 
 $$
-a\uparrow^n b=a\underbrace{\uparrow\uparrow\cdots\uparrow}_{n\text{ times}}b
+a\uparrow^n b=a\underbrace{\uparrow\uparrow\dots\uparrow}_{n\text{ times}}b
 $$
 
 $$
-a\uparrow^n b=\underbrace{a\uparrow^{n-1}a\uparrow^{n-1}\cdots\uparrow^{n-1}a}_{b\text{ times}}
+a\uparrow^n b=\underbrace{a\uparrow^{n-1}a\uparrow^{n-1}\dots\uparrow^{n-1}a}_{b\text{ times}}
 $$
 
 $$
-a\uparrow\uparrow b=\underbrace{a^{a^{\cdots^a}}}_{b\text{ times}}
+a\uparrow\uparrow b=\underbrace{a^{a^{\dots^a}}}_{b\text{ times}}
 $$
 
 $$
@@ -41,7 +41,7 @@ $$
 $$
 
 $$
-3\uparrow\uparrow\uparrow 3=3\uparrow\uparrow 3\uparrow\uparrow 3=3\uparrow\uparrow 3^{27}=\underbrace{3^{3^{\cdots^3}}}_{3^{27}\text{ times}}
+3\uparrow\uparrow\uparrow 3=3\uparrow\uparrow 3\uparrow\uparrow 3=3\uparrow\uparrow 3^{27}=\underbrace{3^{3^{\dots^3}}}_{3^{27}\text{ times}}
 $$
 
 $$
@@ -69,10 +69,10 @@ $$
 $$
 G = \left.
 \begin{matrix}
-  3\underbrace{\uparrow \uparrow \cdots \cdots \cdots \cdots \cdots \uparrow}3 \\
-  3\underbrace{\uparrow \uparrow \cdots \cdots \cdots \cdots \uparrow}3 \\
+  3\underbrace{\uparrow \uparrow \dots \dots \dots \dots \dots \uparrow}3 \\
+  3\underbrace{\uparrow \uparrow \dots \dots \dots \dots \uparrow}3 \\
   \underbrace{\qquad \quad \vdots \qquad \quad} \\
-  3\underbrace{\uparrow \uparrow \cdots \cdots \uparrow}3 \\
+  3\underbrace{\uparrow \uparrow \dots \dots \uparrow}3 \\
   3\uparrow \uparrow \uparrow \uparrow 3
 \end{matrix}
 \right \} 64\text{ layers}

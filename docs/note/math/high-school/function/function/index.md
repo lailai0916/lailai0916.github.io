@@ -209,7 +209,7 @@ $$
 
 指数的运算与性质：
 
-- $a^n=a\times a\times\cdots\times a$
+- $a^n=a\times a\times\dots\times a$
 - $a^{\frac{1}{n}}=\sqrt[n]{a}$
 - $a^{\frac{m}{n}}=(\sqrt[n]{a})^m$
 - $a^{-n}=\frac{1}{a^n}$

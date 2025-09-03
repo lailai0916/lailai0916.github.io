@@ -18,10 +18,10 @@ tags: [math]
 
 ## 引入
 
-有一个 **固定** 的数列 $\set{A_1,A_2,\cdots,A_n}$，需要 **频繁** 计算某个区间 $[a,b]$ 上的总和 $T$。
+有一个 **固定** 的数列 $\set{A_1,A_2,\dots,A_n}$，需要 **频繁** 计算某个区间 $[a,b]$ 上的总和 $T$。
 
 $$
-T=\sum_{i=a}^b A_i=A_a+A_{a+1}+\cdots+A_b
+T=\sum_{i=a}^b A_i=A_a+A_{a+1}+\dots+A_b
 $$
 
 如果每次都从 $A_a$ 累加到 $A_b$，运算总次数会很多，效率较低。如何更高效地计算呢？
@@ -41,7 +41,7 @@ $$
 **前缀和** 就是一种常见的预处理技巧，提前计算出 **前缀和数列** $S_n$：
 
 $$
-S_k=\sum_{i=1}^k A_i=A_1+A_2+\cdots+A_k
+S_k=\sum_{i=1}^k A_i=A_1+A_2+\dots+A_k
 $$
 
 这样，前缀和数列 $S_k$ 就表示数列 $\set{A_n}$ 的前 $k$ 项和。
@@ -52,8 +52,8 @@ $$
 
 $$
 \begin{aligned}
-  T &= \sum_{i=a}^b A_i=A_a+A_{a+1}+\cdots+A_b \\
-  &= (\sout{A_1+A_2+\cdots+A_{a-1}}+A_a+A_{a+1}+\cdots+A_b)-(\sout{A_1+A_2+\cdots+A_{a-1}}) \\
+  T &= \sum_{i=a}^b A_i=A_a+A_{a+1}+\dots+A_b \\
+  &= (\sout{A_1+A_2+\dots+A_{a-1}}+A_a+A_{a+1}+\dots+A_b)-(\sout{A_1+A_2+\dots+A_{a-1}}) \\
   &= \sum_{i=1}^b A_i-\sum_{i=1}^{a-1} A_i=S_b-S_{a-1}
 \end{aligned}
 $$
@@ -331,7 +331,7 @@ $$
 我们不妨先回到数列，考虑 $A_n$ 和 $S_n$ 之间的关系。
 
 $$
-S_k=\sum_{i=1}^k A_i=A_1+A_2+\cdots+A_k
+S_k=\sum_{i=1}^k A_i=A_1+A_2+\dots+A_k
 $$
 
 如果已知 $S_n$，则有：
