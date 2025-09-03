@@ -416,4 +416,4 @@ $$
 
 ### 微积分
 
-详见 [数学：微积分](/blog/calculus)
+详见 [数学：微积分](/blog/math/calculus)
