@@ -11,18 +11,18 @@
 
 ## 算法对比
 
-|          算法名称          |    平均时间     |   最坏时间    | 空间复杂度 |   排序方式   | 稳定性 |
-| :------------------------: | :-------------: | :-----------: | :--------: | :----------: | :----: |
-|  冒泡排序（Bubble Sort）   |    $O(n^2)$     |   $O(n^2)$    |   $O(1)$   |   In-place   |  稳定  |
-| 选择排序（Selection Sort） |    $O(n^2)$     |   $O(n^2)$    |   $O(1)$   |   In-place   | 不稳定 |
-| 插入排序（Insertion Sort） |    $O(n^2)$     |   $O(n^2)$    |   $O(1)$   |   In-place   |  稳定  |
-|    堆排序（Heap Sort）     |  $O(n\log{n})$  | $O(n\log{n})$ |   $O(1)$   |   In-place   | 不稳定 |
-|   归并排序（Merge Sort）   |  $O(n\log{n})$  | $O(n\log{n})$ |   $O(n)$   | Out-of-place |  稳定  |
-|   快速排序（Quick Sort）   |  $O(n\log{n})$  |   $O(n^2)$    |   $O(n)$   |   In-place   | 不稳定 |
-|   希尔排序（Shell Sort）   | $O(n\log^2{n})$ |   $O(n^2)$    |   $O(1)$   |   In-place   | 不稳定 |
-| 计数排序（Counting Sort）  |    $O(n+m)$     |   $O(n+m)$    |  $O(n+m)$  | Out-of-place |  稳定  |
-|   桶排序（Bucket Sort）    |     $O(n)$      |   $O(n^2)$    |   $O(m)$   | Out-of-place |  稳定  |
-|   基数排序（Radix Sort）   |     $O(nk)$     |   $O(n^2)$    |  $O(n+k)$  | Out-of-place |  稳定  |
+|          算法名称          |    平均时间    |   最坏时间   | 空间复杂度  |   排序方式   | 稳定性 |
+| :------------------------: | :------------: | :----------: | :---------: | :----------: | :----: |
+|  冒泡排序（Bubble Sort）   |    $O(n^2)$    |   $O(n^2)$   |   $O(1)$    |   In-place   |  稳定  |
+| 选择排序（Selection Sort） |    $O(n^2)$    |   $O(n^2)$   |   $O(1)$    |   In-place   | 不稳定 |
+| 插入排序（Insertion Sort） |    $O(n^2)$    |   $O(n^2)$   |   $O(1)$    |   In-place   |  稳定  |
+|    堆排序（Heap Sort）     |  $O(n\log n)$  | $O(n\log n)$ |   $O(1)$    |   In-place   | 不稳定 |
+|   归并排序（Merge Sort）   |  $O(n\log n)$  | $O(n\log n)$ |   $O(n)$    | Out-of-place |  稳定  |
+|   快速排序（Quick Sort）   |  $O(n\log n)$  |   $O(n^2)$   | $O(\log n)$ |   In-place   | 不稳定 |
+|   希尔排序（Shell Sort）   | $O(n\log^2 n)$ |   $O(n^2)$   |   $O(1)$    |   In-place   | 不稳定 |
+| 计数排序（Counting Sort）  |    $O(n+m)$    |   $O(n+m)$   |  $O(n+m)$   | Out-of-place |  稳定  |
+|   桶排序（Bucket Sort）    |     $O(n)$     |   $O(n^2)$   |   $O(m)$    | Out-of-place |  稳定  |
+|   基数排序（Radix Sort）   |    $O(nk)$     |   $O(n^2)$   |  $O(n+k)$   | Out-of-place |  稳定  |
 
 :::tip
 
@@ -34,7 +34,7 @@ $n$ 代表数据的规模，$m$ 代表数据的极差，$k$ 代表数值中的"�
 
 ### 时间复杂度
 
-任何基于比较的排序算法，其最坏情况时间复杂度至少为 $\Omega(n\log n)$，因为 $\log_2{(n!)}=\Theta(n\log n)$。（[证明](https://en.wikipedia.org/wiki/Comparison_sort)）
+任何基于比较的排序算法，其最坏情况下的时间复杂度至少为 $\Omega(n\log n)$，因为 $\log_2{(n!)}=\Theta(n\log n)$。（[证明](https://en.wikipedia.org/wiki/Comparison_sort)）
 
 ![](https://oi-wiki.org/basic/images/sort-intro-1.apng)
 
