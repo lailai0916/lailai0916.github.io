@@ -29,12 +29,14 @@ export default function PostCard({ item }: { item: any }) {
         </Link>
       ) : null}
       <div className={styles.postBody}>
-        <Link to={metadata.permalink} className={styles.postTitleLink}>
+        <div className={styles.postTitleRow}>
           <span className={`${styles.tagChip} ${styles.postInlineTag}`}>
             {metadata.tags[0].label}
           </span>
-          <h2 className={styles.postTitle}>{metadata.title}</h2>
-        </Link>
+          <Link to={metadata.permalink} className={styles.postTitleLink}>
+            <h2 className={styles.postTitle}>{metadata.title}</h2>
+          </Link>
+        </div>
         <p className={styles.postExcerpt}>
           {metadata.description ?? content.excerpt}
         </p>
