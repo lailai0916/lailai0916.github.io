@@ -177,7 +177,7 @@ $$
 |  常函数  |  $f(x)=C$  |         $\mathbb{R}$         |          $\set{C}$           |
 |  幂函数  | $f(x)=x^a$ | $\mathbb{R}$ 或 $[0,\infty)$ | $\mathbb{R}$ 或 $[0,\infty)$ |
 | 指数函数 | $f(x)=a^x$ |         $\mathbb{R}$         |         $(0,\infty)$         |
-| 对数函数 |  $f(x)=C$  |         $(0,\infty)$         |         $\mathbb{R}$         |
+| 对数函数 |  $f(x)=\log_a x$  |         $(0,\infty)$         |         $\mathbb{R}$         |
 
 ### 常函数
 

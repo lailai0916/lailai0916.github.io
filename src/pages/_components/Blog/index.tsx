@@ -153,10 +153,10 @@ export default function Blog() {
             <p className="--tw-leading-relaxed --tw-mb-6">
               <Translate id="home.blog.description.p2">
                 Through continuous practice and summarization, we transform
-                knowledge into real skills. Only through practice-verified
-                technologies and methods can truly help us solve real problems.
-                You can find algorithm solutions, technical notes, and project
-                practices here.
+                knowledge into real skills. Only practice‑validated methods and
+                technologies truly help solve real problems. You can find
+                algorithm solutions, technical notes, and project practices
+                here.
               </Translate>
             </p>
             <Link to="/blog">
