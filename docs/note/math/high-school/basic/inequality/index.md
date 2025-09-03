@@ -162,7 +162,7 @@ $$
 
 <Desmos id="hzzctb8v6z" />
 
-## 拓展
+## 扩展
 
 ### 均值不等式
 
@@ -172,7 +172,7 @@ $$
 \frac{2}{\frac{1}{a}+\frac{1}{b}}\le\sqrt{ab}\le\frac{a+b}{2}\le\sqrt{\frac{a^2+b^2}{2}}
 $$
 
-拓展到更多数的情况，对于正实数 $x_1,x_2,\dots,x_n$，都有：
+推广到更多数的情况，对于正实数 $x_1,x_2,\dots,x_n$，都有：
 
 $$
 H_n\le G_n\le A_n\le Q_n
