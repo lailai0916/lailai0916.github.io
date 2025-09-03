@@ -370,8 +370,8 @@ $$
 
 严格来说，**导数** 和 **微分** 是两个不同的概念，但它们的结果 **完全相同**。
 
-- 导数的定义：函数在某一点的瞬时变化率。
-- 微分的定义：当自变量变化一个很小的量时，因变量的近似变化量。
+- 导数：函数在某一点的瞬时变化率。
+- 微分：当自变量发生微小变化时，因变量的近似变化量。
 
 :::
 
@@ -395,10 +395,43 @@ $$
 
 ## 例题
 
-### Example 1
+:::example
 
-计算：
+<Tabs>
+<TabItem value="Example 1">
+
+计算 $\displaystyle\int_1^3 \frac{x}{2}\mathrm{d}x$。
 
 $$
-\int_1^3 2x\mathrm{d}x
+\int_1^3\frac{x}{2}\mathrm{d}x=\left.\frac{x^2}{4}\right|_{1}^{3}=\frac{3^2}{4}-\frac{1^2}{4}=2
 $$
+
+<Desmos id="ywcdneien2" />
+
+</TabItem>
+<TabItem value="Example 2">
+
+计算 $\displaystyle\int_{-2}^3 2x\mathrm{d}x$。
+
+$$
+\int_{-2}^3 2x\mathrm{d}x=\left.x^2\right|_{-2}^{3}=3^2-(-2)^2=5
+$$
+
+<Desmos id="xlwjbick4u" />
+
+</TabItem>
+<TabItem value="Example 3">
+
+计算 $\displaystyle\int_{-2}^2 \sqrt{4-x^2}\mathrm{d}x$。
+
+$$
+\int_{-2}^2\sqrt{4-x^2}\mathrm{d}x
+=\left.\left(2\arcsin\frac{x}{2}+\frac{x}{2}\sqrt{4-x^2}\right)\right|_{-2}^{2}=\pi-(-\pi)=2\pi
+$$
+
+<Desmos id="dxjwvtqsdl" />
+
+</TabItem>
+</Tabs>
+
+:::
