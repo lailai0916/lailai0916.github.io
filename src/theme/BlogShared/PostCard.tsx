@@ -30,12 +30,10 @@ export default function PostCard({ item }: { item: any }) {
       ) : null}
       <div className={styles.postBody}>
         <Link to={metadata.permalink} className={styles.postTitleLink}>
-          <h2 className={styles.postTitle}>
-            <span className={`${styles.tagChip} ${styles.postInlineTag}`}>
-              {metadata.tags[0].label}
-            </span>
-            {metadata.title}
-          </h2>
+          <span className={`${styles.tagChip} ${styles.postInlineTag}`}>
+            {metadata.tags[0].label}
+          </span>
+          <h2 className={styles.postTitle}>{metadata.title}</h2>
         </Link>
         <p className={styles.postExcerpt}>
           {metadata.description ?? content.excerpt}

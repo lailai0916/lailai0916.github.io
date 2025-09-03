@@ -326,6 +326,10 @@ html[data-theme='dark'] .card {
 .postTitleLink {
   color: inherit;
   text-decoration: none !important;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 0.5rem;
 }
 
 .postTitleLink:hover {
@@ -333,7 +337,7 @@ html[data-theme='dark'] .card {
 }
 
 .postTitle {
-  margin: 0 0 0.5rem 0;
+  margin: 0; /* 由父元素控制底部间距 */
   font-size: 1.25rem;
   font-weight: 700;
 }
@@ -341,7 +345,7 @@ html[data-theme='dark'] .card {
 /* Inline label before title */
 .postInlineTag {
   margin-right: 0.5rem;
-  font-size: 1rem;
+  font-size: 0.9rem;
   padding: 0.2rem 0.6rem;
 }
 
