@@ -1,4 +1,4 @@
-# Contribution Guidelines
+# Contributing
 
 ## For AI / LLM Contributors
 
