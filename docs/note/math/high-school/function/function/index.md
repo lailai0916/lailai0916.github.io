@@ -228,10 +228,10 @@ $$
 
 - $b=\log_a n\iff a^b=n$
 - $a^{\log_a n}=n$
-- $\log_a nm=\log_a n+\log_a m$
+- $\log_a mn=\log_a m+\log_a n$（乘法）
+- $\log_a\frac{m}{n}=\log_a m-\log_a n$（除法）
 - $\log_a n^m=m\log_a n$
 - $\log_a\frac{1}{n}=-\log_a n$
-- $\log_a\frac{m}{n}=\log_a m-\log_a n$
 - $\log_a n=\frac{\log_b n}{\log_b a}$（换底公式）
 
 **对数函数** 的一般形式如下，其中 $a$ 为常数，且 $a>0,a\ne 1$，定义域为 $(0,\infty)$，值域为 $\mathbb{R}$。
