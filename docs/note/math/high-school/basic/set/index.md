@@ -209,7 +209,7 @@ $$
 B\subsetneqq A
 $$
 
-真子集符号 $\subsetneqq$ 也常写作 $\subsetneq$，真超集符号 $\supsetneqq$ 也常写作 $\supsetneq$。
+真子集符号 $\subsetneqq$ 和真超集符号 $\supsetneqq$ 也常写作 $\subsetneq$ 和 $\supsetneq$。
 
 如果集合 $A$ 是集合 $B$ 的真子集，则 $A$ 一定是 $B$ 的子集，超集同理。
 
@@ -282,7 +282,7 @@ $$
 
 补集符号 $\complement_U A$ 也常写作 $A^{\complement}$、$\overline{A}$ 或 $U \setminus A$。
 
-在国内高中教材中，补集通常采用 $\complement_U A$，因为这种写法比较明确。
+在国内高中教材中，补集通常使用 $\complement_U A$，因为这种写法比较明确。
 
 相比之下，$A^{\complement}$ 和 $\overline{A}$ 没有 **标明全集**，容易产生歧义。
 
