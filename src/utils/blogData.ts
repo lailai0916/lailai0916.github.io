@@ -12,11 +12,6 @@ export interface ProcessedBlogPost {
   permalink: string;
 }
 
-// 博客配置常量
-export const BLOG_CONFIG = {
-  EXCLUDED_PERMALINKS: ['/blog/welcome', '/zh-Hans/blog/welcome'] as string[],
-} as const;
-
 function getBlogListData(): any {
   try {
     const data = require('@generated/docusaurus-plugin-content-blog/default/blog-post-list-prop-default.json');
@@ -85,26 +80,70 @@ export function getAllPostMetadata(): any[] {
   return list;
 }
 
+// 博客配置常量
+const BLOG_CONFIG = {
+  PINNED_TAG_LABEL: 'Pinned',
+} as const;
+
+/**
+ * 检查文章是否为置顶文章
+ */
+function isPinnedPost(tags: any[]): boolean {
+  return tags.some(
+    (tag: any) =>
+      (tag.label || tag.name || tag) === BLOG_CONFIG.PINNED_TAG_LABEL
+  );
+}
+
+/**
+ * 自定义排序：按日期降序，但将置顶文章排在最后
+ */
+function sortPostsWithPinnedLast(
+  posts: (ProcessedBlogPost & { isPinned: boolean })[]
+): (ProcessedBlogPost & { isPinned: boolean })[] {
+  return posts.sort((a, b) => {
+    // 如果一个是置顶，一个不是，非置顶的排在前面
+    if (a.isPinned !== b.isPinned) {
+      return a.isPinned ? 1 : -1;
+    }
+    // 如果都是置顶或都不是置顶，按日期降序排列
+    return new Date(b.date).getTime() - new Date(a.date).getTime();
+  });
+}
+
 export function getRecentBlogPosts(maxCount: number = 4): ProcessedBlogPost[] {
   const items = getAllBlogItems();
   if (!items.length) return [];
-  const posts: BlogPost[] = items.map((it: any) => ({
-    title: it.title ?? it.metadata?.title,
-    date: it.date ?? it.metadata?.date,
-    permalink: it.permalink ?? it.metadata?.permalink,
-  }));
-  return posts
-    .filter(
-      (p) =>
-        p.permalink && !BLOG_CONFIG.EXCLUDED_PERMALINKS.includes(p.permalink)
-    )
-    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
-    .slice(0, maxCount)
-    .map((post) => ({
-      title: post.title,
-      date: post.date,
-      permalink: post.permalink,
-    }));
+
+  // 获取文章的完整元数据（包含标签信息）
+  const allMetadata = getAllPostMetadata();
+  const metadataMap = new Map<string, any>();
+  allMetadata.forEach((meta) => {
+    if (meta.permalink) {
+      metadataMap.set(meta.permalink, meta);
+    }
+  });
+
+  const postsWithMetadata = items
+    .map((item: any) => {
+      const permalink = item.permalink ?? item.metadata?.permalink;
+      const metadata = metadataMap.get(permalink);
+      const tags = metadata?.tags || [];
+
+      return {
+        title: item.title ?? item.metadata?.title,
+        date: item.date ?? item.metadata?.date,
+        permalink,
+        isPinned: isPinnedPost(tags),
+      };
+    })
+    .filter((post): post is ProcessedBlogPost & { isPinned: boolean } =>
+      Boolean(post.permalink && post.title && post.date)
+    );
+
+  const sortedPosts = sortPostsWithPinnedLast(postsWithMetadata);
+
+  return sortedPosts.slice(0, maxCount).map(({ isPinned, ...post }) => post); // 移除 isPinned 属性
 }
 
 /**
@@ -114,9 +153,6 @@ export function getBlogPostCount(): number {
   return getAllBlogItems().length;
 }
 
-/**
- * 统计按年份的归档数量（降序）
- */
 export function getArchiveByYear(): { year: number; count: number }[] {
   const items = getAllBlogItems();
   if (!items.length) return [];
@@ -125,7 +161,7 @@ export function getArchiveByYear(): { year: number; count: number }[] {
   items
     .filter((it: any) => {
       const link = it.permalink ?? it.metadata?.permalink;
-      return link && !BLOG_CONFIG.EXCLUDED_PERMALINKS.includes(link);
+      return link; // 移除硬编码排除，显示所有文章
     })
     .forEach((it: any) => {
       const dateStr = it.date ?? it.metadata?.date;
