@@ -108,11 +108,10 @@ export function getRecentBlogPosts(maxCount: number = 4): ProcessedBlogPost[] {
 }
 
 /**
- * 返回所有文章数量（排除不希望展示的页面）
+ * 返回所有文章数量
  */
 export function getBlogPostCount(): number {
-  const items = getAllBlogItems();
-  return items.length;
+  return getAllBlogItems().length;
 }
 
 /**
