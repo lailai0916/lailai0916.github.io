@@ -297,6 +297,7 @@ const sidebars: SidebarsConfig = {
       items: [
         'contest/misc/two-pointer',
         'contest/misc/cdq-divide',
+        'contest/misc/mo-algo',
         'contest/misc/kahan-summation',
         'contest/misc/odt',
       ],
