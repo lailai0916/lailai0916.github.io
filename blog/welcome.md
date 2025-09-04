@@ -2,7 +2,7 @@
 title: "Welcome to lailai's Blog! 👋"
 date: 2077-01-01T00:00
 authors: [lailai]
-tags: [top]
+tags: [pinned]
 ---
 
 Technology evolves rapidly, and we need to maintain keen learning abilities and curiosity. Every mastery of new technology is an investment in the future. Here we record thoughts and summaries in the learning process, sharing methods and experiences for solving problems.
