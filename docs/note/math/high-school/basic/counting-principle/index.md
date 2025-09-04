@@ -182,7 +182,11 @@ $$
 (x_1'+a_1)+(x_2'+a_2)+\dots+(x_k'+a_k)=n\implies\sum_{i=1}^{k}x_i'=n-\sum a_i
 $$
 
-答案为 $\mathrm{C}_{n-\sum a_i+k-1}^{k-1}$
+答案为：
+
+$$
+\mathrm{C}_{n-\sum a_i+k-1}^{k-1}
+$$
 
 4. 从 $n$ 个连续整数选 $k$ 个，这 $k$ 个数中两两都不相邻的组合有 $\mathrm{C}_{n-k+1}^k$ 种。
 
