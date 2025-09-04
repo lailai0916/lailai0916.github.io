@@ -7,9 +7,25 @@ tags: [math]
 
 <!-- truncate -->
 
-以 $A$ 为原点，$AB$ 为 $x$ 轴正方向建系。
+## 题目
 
-易得：
+24.（本题 $12$ 分）在菱形 $ABCD$ 中，$AB$=5，$AC$=8。
+
+（1）如图 $1$，求 $\sin\angle BAC$ 的值。
+
+（2）如图 $2$，$E$ 是 $AD$ 延长线上的一点，连接 $BE$，作 $\triangle FBE$ 与 $\triangle ABE$ 关于直线 $BE$ 对称，$EF$ 交射线 $AC$ 于点 $P$，连接 $BP$。
+
+①当 $EF\perp AC$ 时，求 $AE$ 的长
+
+②求 $PA-PB$ 的最小值。
+
+<Desmos id="4ydta0qtnx" />
+
+<Desmos id="fxo4hftvxi" />
+
+## 建系法
+
+以 $A$ 为原点，$AB$ 为 $x$ 轴正方向建系，易得：
 
 $$
 A(0,0),B(5,0),C\left(\frac{32}{5},\frac{24}{5}\right),D\left(\frac{7}{5},\frac{24}{5}\right)
