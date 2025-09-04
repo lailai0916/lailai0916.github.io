@@ -331,7 +331,7 @@ const sidebars: SidebarsConfig = {
                 'note/math/high-school/basic/logic',
                 'note/math/high-school/basic/inequality/index',
                 'note/math/high-school/basic/complex/index',
-                'note/math/high-school/basic/counting-principle',
+                'note/math/high-school/basic/counting-principle/index',
               ],
             },
             {
