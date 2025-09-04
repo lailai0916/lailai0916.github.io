@@ -71,7 +71,7 @@ $$
 
 ### 全排列
 
-全排列：将 $n$ 个物品按某种顺序排列成一列：
+全排列：将 $n$ 个物品按某种顺序排成一列：
 
 - 第 $1$ 个位置有 $n$ 种选择；
 - 第 $2$ 个位置有 $n-1$ 种选择；
@@ -88,7 +88,7 @@ $$
 
 ### 排列
 
-排列：从 $n$ 个物品中选取 $m$ 个排列成一列：
+排列：从 $n$ 个不同物品中选取 $m$ 个排成一列：
 
 - 第 $1$ 个位置有 $n$ 种选择；
 - 第 $2$ 个位置有 $n-1$ 种选择；
@@ -111,20 +111,20 @@ $$
 
 ### 组合
 
-组合：从 $n$ 个不同元素中取 $m$ 个排成一列，**不考虑顺序**，产生不同组合的数量为：
+组合：从 $n$ 个不同元素中选取 $m$ 个，不考虑顺序，产生不同组合的数量为：
 
 $$
 \mathrm{C}_n^m=\dbinom{n}{m}=\frac{\mathrm{A}_n^m}{m!}=\frac{n!}{m!(n-m)!}=\frac{n\times(n-1)\times\dots\times(n-m+1)}{m\times(m-1)\times\dots\times 2\times 1}
 $$
 
-    性质：
+性质：
 
-    1. $C_n^m=C_n^{n-m}$
-    2. $C_n^m=C_{n-1}^m+C_{n-1}^{m-1}$
-    3. $\displaystyle\frac{k}{n}C_n^k=C_{n-1}^{k-1}$
-    4. $\displaystyle\frac{n}{n-m}C_{n-1}^m=C_n^m$
-    5. $\displaystyle\sum_{i=0}^{n}C_n^i=C_n^0+C_n^1+C_n^2+\dots+C_n^n=2^n$
-    6. $C_n^0+C_n^2+C_n^4+\dots=C_n^1+C_n^3+C_n^5+\dots$
+1. $C_n^m=C_n^{n-m}$
+2. $C_n^m=C_{n-1}^m+C_{n-1}^{m-1}$
+3. $\displaystyle\frac{k}{n}C_n^k=C_{n-1}^{k-1}$
+4. $\displaystyle\frac{n}{n-m}C_{n-1}^m=C_n^m$
+5. $\displaystyle\sum_{i=0}^{n}C_n^i=C_n^0+C_n^1+C_n^2+\dots+C_n^n=2^n$
+6. $C_n^0+C_n^2+C_n^4+\dots=C_n^1+C_n^3+C_n^5+\dots$
 
 - 组合数的应用
 
