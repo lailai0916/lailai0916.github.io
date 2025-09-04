@@ -1,4 +1,7 @@
 import React from 'react';
+import type { JSX } from 'react';
+import { useTheme } from '@site/src/hooks/useTheme';
+import BlogArchivePageOriginal from '@theme-original/BlogArchivePage';
 import Link from '@docusaurus/Link';
 import Translate from '@docusaurus/Translate';
 
@@ -10,7 +13,8 @@ import BlogScaffold from '../BlogShared/Scaffold';
 import type { Props } from '@theme/BlogArchivePage';
 import { formatDate } from '@site/src/utils/date';
 
-export default function BlogArchivePage(props: Props) {
+export default function BlogArchivePage(props: Props): JSX.Element {
+  const { isNewLayout } = useTheme();
   const { archive } = props;
   const groups = React.useMemo(() => {
     const map = new Map<number, any[]>();
@@ -22,32 +26,36 @@ export default function BlogArchivePage(props: Props) {
     return Array.from(map.entries()).sort((a, b) => b[0] - a[0]);
   }, [archive]);
 
-  return (
-    <BlogScaffold title="Archive" description="Archive of lailai's blog">
-      {groups.map(([year, posts]) => (
-        <div key={year} className={styles.card} id={String(year)}>
-          <div className={styles.cardTitle}>{year}</div>
-          <ul className={styles.recentList}>
-            {posts.map((p: any) => (
-              <li key={p.metadata.permalink} className={styles.recentItem}>
-                <div className={styles.recentDate}>
-                  {formatDate(p.metadata.date)}
-                </div>
-                <Link to={p.metadata.permalink} className={styles.recentLink}>
-                  {p.metadata.title}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </div>
-      ))}
-      {!groups.length && (
-        <div className={styles.card}>
-          <div className={styles.mutedText}>
-            <Translate id="blog.archive.empty">No posts yet</Translate>
+  if (isNewLayout) {
+    return (
+      <BlogScaffold title="Archive" description="Archive of lailai's blog">
+        {groups.map(([year, posts]) => (
+          <div key={year} className={styles.card} id={String(year)}>
+            <div className={styles.cardTitle}>{year}</div>
+            <ul className={styles.recentList}>
+              {posts.map((p: any) => (
+                <li key={p.metadata.permalink} className={styles.recentItem}>
+                  <div className={styles.recentDate}>
+                    {formatDate(p.metadata.date)}
+                  </div>
+                  <Link to={p.metadata.permalink} className={styles.recentLink}>
+                    {p.metadata.title}
+                  </Link>
+                </li>
+              ))}
+            </ul>
           </div>
-        </div>
-      )}
-    </BlogScaffold>
-  );
+        ))}
+        {!groups.length && (
+          <div className={styles.card}>
+            <div className={styles.mutedText}>
+              <Translate id="blog.archive.empty">No posts yet</Translate>
+            </div>
+          </div>
+        )}
+      </BlogScaffold>
+    );
+  }
+
+  return <BlogArchivePageOriginal {...props} />;
 }

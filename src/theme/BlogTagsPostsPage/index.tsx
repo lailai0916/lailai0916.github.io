@@ -1,6 +1,7 @@
 import React from 'react';
-//
-
+import type { JSX } from 'react';
+import { useTheme } from '@site/src/hooks/useTheme';
+import BlogTagsPostsPageOriginal from '@theme-original/BlogTagsPostsPage';
 import PostsListLayout from '../BlogShared/PostsListLayout';
 
 // no direct data utils needed here; sidebars handle their own data
@@ -9,16 +10,22 @@ import type { Props } from '@theme/BlogTagsPostsPage';
 
 // use shared PostCard / Sidebars / Paginator
 
-export default function BlogTagsPostsPage(props: Props) {
+export default function BlogTagsPostsPage(props: Props): JSX.Element {
+  const { isNewLayout } = useTheme();
   const { items, listMetadata, tag } = props;
-  const title = `${tag.label}`;
-  const description = tag.description ?? '';
-  return (
-    <PostsListLayout
-      title={title}
-      description={description}
-      items={items}
-      meta={listMetadata}
-    />
-  );
+
+  if (isNewLayout) {
+    const title = `${tag.label}`;
+    const description = tag.description ?? '';
+    return (
+      <PostsListLayout
+        title={title}
+        description={description}
+        items={items}
+        meta={listMetadata}
+      />
+    );
+  }
+
+  return <BlogTagsPostsPageOriginal {...props} />;
 }

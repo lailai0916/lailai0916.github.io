@@ -1,4 +1,7 @@
 import React, { type ReactNode } from 'react';
+import type { JSX } from 'react';
+import { useTheme } from '@site/src/hooks/useTheme';
+import BlogPostPageOriginal from '@theme-original/BlogPostPage';
 import BlogScaffold from '../BlogShared/Scaffold';
 import {
   HtmlClassNameProvider,
@@ -18,31 +21,37 @@ import type { Props } from '@theme/BlogPostPage';
 
 // Use the official BlogPostItem to render content and metadata
 
-export default function BlogPostPage(props: Props): ReactNode {
+export default function BlogPostPage(props: Props): JSX.Element {
+  const { isNewLayout } = useTheme();
   const BlogPostContent = props.content;
-  return (
-    <BlogPostProvider content={props.content} isBlogPostPage>
-      <HtmlClassNameProvider
-        className={`${ThemeClassNames.wrapper.blogPages} ${ThemeClassNames.page.blogPostPage}`}
-      >
-        <BlogPostPageMetadata />
-        <BlogPostPageStructuredData />
-        <BlogScaffold
-          title={props.content.metadata.title}
-          description={props.content.metadata.description}
+
+  if (isNewLayout) {
+    return (
+      <BlogPostProvider content={props.content} isBlogPostPage>
+        <HtmlClassNameProvider
+          className={`${ThemeClassNames.wrapper.blogPages} ${ThemeClassNames.page.blogPostPage}`}
         >
-          <BlogPostItem>
-            <BlogPostContent />
-          </BlogPostItem>
-          {(props.content.metadata.nextItem ||
-            props.content.metadata.prevItem) && (
-            <BlogPostPaginator
-              nextItem={props.content.metadata.nextItem}
-              prevItem={props.content.metadata.prevItem}
-            />
-          )}
-        </BlogScaffold>
-      </HtmlClassNameProvider>
-    </BlogPostProvider>
-  );
+          <BlogPostPageMetadata />
+          <BlogPostPageStructuredData />
+          <BlogScaffold
+            title={props.content.metadata.title}
+            description={props.content.metadata.description}
+          >
+            <BlogPostItem>
+              <BlogPostContent />
+            </BlogPostItem>
+            {(props.content.metadata.nextItem ||
+              props.content.metadata.prevItem) && (
+              <BlogPostPaginator
+                nextItem={props.content.metadata.nextItem}
+                prevItem={props.content.metadata.prevItem}
+              />
+            )}
+          </BlogScaffold>
+        </HtmlClassNameProvider>
+      </BlogPostProvider>
+    );
+  }
+
+  return <BlogPostPageOriginal {...props} />;
 }
