@@ -4,18 +4,16 @@ import TabItem from '@theme/TabItem';
 import Details from '@theme/Details';
 import CodeBlock from '@theme/CodeBlock';
 import Admonition from '@theme/Admonition';
-import { usePluralForm } from '@docusaurus/theme-common';
 import { translate } from '@docusaurus/Translate';
 
 declare const require: any;
 const ctx = require.context(
-  '!!raw-loader!@site/docs/contest/_problems',
+  '!!raw-loader!@site/docs/_problems',
   true,
   /\.cpp$/
 );
 
 export function GetCode({ id }: { id: string }) {
-  const { selectMessage } = usePluralForm();
   const codes = useMemo(
     () =>
       ctx
@@ -83,7 +81,7 @@ export function GetSolution({ id }: { id: string }) {
 export default function Problem({ id }: { id: string }) {
   let MDX: React.ComponentType;
   try {
-    MDX = require(`@site/docs/contest/_problems/${id}/index.md`).default;
+    MDX = require(`@site/docs/_problems/${id}/index.md`).default;
   } catch {
     return (
       <Admonition type="warning">
