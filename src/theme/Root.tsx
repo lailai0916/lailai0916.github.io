@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { ThemeContext } from '@site/src/context/ThemeContext';
+import { ThemeContext } from '@site/src/hooks/useTheme';
 
 export default function Root({ children }) {
   const [isNewLayout, setIsNewLayout] = useState(false);

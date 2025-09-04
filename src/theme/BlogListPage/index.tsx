@@ -1,6 +1,6 @@
 import React from 'react';
 import type { JSX } from 'react';
-import { useTheme } from '@site/src/context/ThemeContext';
+import { useTheme } from '@site/src/hooks/useTheme';
 import BlogListPageOriginal from '@theme-original/BlogListPage';
 import PostsListLayout from '../BlogShared/PostsListLayout';
 import type { Props as BlogListPageProps } from '@theme/BlogListPage';
