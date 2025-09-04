@@ -17,10 +17,16 @@ export default function Root({ children }) {
       }
     };
 
-    window.addEventListener('experimentalSettingsChanged', handleSettingsChange);
+    window.addEventListener(
+      'experimentalSettingsChanged',
+      handleSettingsChange
+    );
 
     return () => {
-      window.removeEventListener('experimentalSettingsChanged', handleSettingsChange);
+      window.removeEventListener(
+        'experimentalSettingsChanged',
+        handleSettingsChange
+      );
     };
   }, []);
 
