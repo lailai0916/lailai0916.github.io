@@ -1,7 +1,7 @@
 ---
 title: '名片'
 date: 2025-07-13T16:00
-authors: [lailai]
+authors: lailai
 tags: [personal]
 ---
 

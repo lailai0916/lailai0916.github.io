@@ -1,7 +1,7 @@
 ---
 title: 'AT_cpsco2019_s1_c Coins'
 date: 2023-05-31T22:36
-authors: [lailai]
+authors: lailai
 tags: [solution, atcoder]
 ---
 

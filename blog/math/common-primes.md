@@ -1,7 +1,7 @@
 ---
 title: '常用质数'
 date: 2024-11-10T12:00
-authors: [lailai]
+authors: lailai
 tags: [math]
 ---
 

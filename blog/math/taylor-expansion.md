@@ -1,7 +1,7 @@
 ---
 title: '泰勒展开'
 date: 2023-06-03T19:30
-authors: [lailai]
+authors: lailai
 tags: [math]
 ---
 

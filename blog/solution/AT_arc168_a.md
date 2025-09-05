@@ -1,7 +1,7 @@
 ---
 title: 'AT_arc168_a [ARC168A] <Inversion>'
 date: 2023-11-28T21:25
-authors: [lailai]
+authors: lailai
 tags: [solution, atcoder]
 ---
 

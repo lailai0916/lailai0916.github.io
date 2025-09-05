@@ -1,7 +1,7 @@
 ---
 title: '🇭🇰 香港 & 🇨🇳 广东'
 date: 2025-08-04T00:00
-authors: [lailai]
+authors: lailai
 tags: [travel]
 ---
 

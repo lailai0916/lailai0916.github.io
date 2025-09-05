@@ -1,7 +1,7 @@
 ---
 title: 'AT_nikkei2019ex_e コラッツ問題'
 date: 2023-05-31T21:10
-authors: [lailai]
+authors: lailai
 tags: [solution, atcoder]
 ---
 

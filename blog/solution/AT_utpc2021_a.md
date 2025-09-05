@@ -1,7 +1,7 @@
 ---
 title: 'AT_utpc2021_a UTPC'
 date: 2023-05-20T15:33
-authors: [lailai]
+authors: lailai
 tags: [solution, atcoder]
 ---
 

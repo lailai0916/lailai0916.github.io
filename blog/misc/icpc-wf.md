@@ -1,7 +1,7 @@
 ---
 title: '49th ICPC World Final'
 date: 2025-09-04T15:00
-authors: [lailai]
+authors: lailai
 tags: [misc]
 ---
 

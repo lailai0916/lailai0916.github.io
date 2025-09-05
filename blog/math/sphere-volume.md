@@ -1,7 +1,7 @@
 ---
 title: '球体体积（咕）'
 date: 2024-07-03T12:00
-authors: [lailai]
+authors: lailai
 tags: [math]
 ---
 

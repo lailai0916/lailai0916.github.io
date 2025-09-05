@@ -1,7 +1,7 @@
 ---
 title: '微积分'
 date: 2024-02-17T12:00
-authors: [lailai]
+authors: lailai
 tags: [math]
 ---
 

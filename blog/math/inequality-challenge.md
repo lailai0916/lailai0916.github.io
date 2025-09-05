@@ -1,7 +1,7 @@
 ---
 title: '不等式挑战'
 date: 2025-01-14T05:07
-authors: [lailai]
+authors: lailai
 tags: [math]
 ---
 

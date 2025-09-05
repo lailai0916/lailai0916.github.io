@@ -1,7 +1,7 @@
 ---
 title: "Welcome to lailai's Blog! 👋"
 date: 2077-01-01T00:00
-authors: [lailai]
+authors: lailai
 tags: [pinned]
 ---
 
