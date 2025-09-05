@@ -11,7 +11,7 @@ Example:
   title: 'lailai',
   description: 'Student & Developer',
   href: 'https://lailai.one',
-  avatar: 'img/avatar/lailai.png',
+  avatar: 'https://lailai.one/img/logo.svg',
 },
 */
 
