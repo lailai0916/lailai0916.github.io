@@ -573,6 +573,7 @@ const sidebars: SidebarsConfig = {
             'project/github/lailais-home/plugins',
             'project/github/lailais-home/components',
             'project/github/lailais-home/design',
+            'project/github/lailais-home/tailwind',
           ],
         },
         'project/github/achievements',
