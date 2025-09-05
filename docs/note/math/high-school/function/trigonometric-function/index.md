@@ -94,7 +94,7 @@ $$
 带入 $\sin$ 和 $\cos$ 的锐角三角函数的定义：
 
 $$
-\sin \theta=\frac{a}{c}=a,\cos \theta=\frac{b}{c}=b
+\sin\theta=\frac{a}{c}=a,\cos\theta=\frac{b}{c}=b
 $$
 
 而 $a$ 和 $b$ 是该直角三角形的两边，是这个点的 **纵坐标** 和 **横坐标**.
@@ -102,12 +102,12 @@ $$
 因此，单位圆上辐角为 $t$ 的点 $B$ 的坐标为：
 
 $$
-B(\cos \theta,\sin \theta)
+B(\cos\theta,\sin\theta)
 $$
 
 :::tip
 
-这个点的坐标是 $(\cos \theta, \sin \theta)$，请注意顺序不要弄错。
+这个点的坐标是 $(\cos\theta,\sin\theta)$，请注意 $\cos$ 和 $\sin$ 的顺序。
 
 :::
 
@@ -1009,7 +1009,7 @@ $$
 对于任意 $\triangle ABC$，有：
 
 $$
-\frac{a}{\sin \angle A} = \frac{b}{\sin \angle B} = \frac{c}{\sin \angle C} = 2R
+\frac{a}{\sin\angle A}=\frac{b}{\sin\angle B}=\frac{c}{\sin\angle C}=2R
 $$
 
 ### 余弦定理
@@ -1032,7 +1032,7 @@ $$
 
 **勾股定理** 实际上是 **余弦定理** 在一个角为 **直角** 时的特殊情形。
 
-当 $\angle C=90^\circ$ 时，有 $\cos \angle C=0$，代入余弦定理公式得到：
+当 $\angle C=90^\circ$ 时，有 $\cos\angle C=0$，代入余弦定理公式得到：
 
 $$
 c^2=a^2+b^2
