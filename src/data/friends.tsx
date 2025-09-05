@@ -20,7 +20,7 @@ export const FRIEND_LIST: FriendItem[] = [
     title: 'Sintle',
     description: 'Code, Learn, Share',
     href: 'https://sintle.github.io',
-    avatar: '/img/friends/sintle.png',
+    avatar: 'https://github.com/sintle.png',
   },
   {
     title: 'YunLuo',
