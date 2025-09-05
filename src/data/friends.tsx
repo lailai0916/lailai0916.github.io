@@ -76,4 +76,10 @@ export const FRIEND_LIST: FriendItem[] = [
     href: 'https://www.luogu.com.cn/user/1031108',
     avatar: 'img/avatar/0513DTY.png',
   },
+  {
+    title: 'Castamere',
+    description: '代码美学',
+    href: 'https://www.castamerego.com/',
+    avatar: 'https://github.com/Casta-mere.png',
+  },
 ];
