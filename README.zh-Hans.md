@@ -50,7 +50,7 @@ npm start
 ## # 项目结构
 
 ```text
-website
+lailai0916.github.io
 ├── blog                           # 博客
 │   ├── authors.yml                # 作者配置
 │   └── tags.yml                   # 标签配置

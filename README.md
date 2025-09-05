@@ -50,7 +50,7 @@ npm start
 ## # Project Structure
 
 ```text
-website
+lailai0916.github.io
 ├── blog                           # Blog
 │   ├── authors.yml                # Author settings
 │   └── tags.yml                   # Tag settings
