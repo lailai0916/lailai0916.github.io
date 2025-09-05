@@ -48,7 +48,7 @@ $$
 
 反复使用这一拆分过程，最终可以将 $f(x)$ 完全因式分解为 $n$ 个一次多项式的乘积。
 
-所以，该定理还有另外两种等价描述：
+因此，该定理还有另外两种等价描述：
 
 1. 任何一个 $n$ 次复系数多项式，都正好有 $n$ 个复数根（重根视为多个根）。
 2. 任何一个 $n$ 次复系数多项式，都可以因式分解为 $n$ 个复系数一次多项式的乘积。
@@ -167,36 +167,36 @@ $$
 x=\pm\sqrt{-t}
 $$
 
-所以我们可以通过换元法消除一次项。
+因此我们可以通过 **换元法** 消除一次项。
 
 #### 次高项归零
 
 令：
 
 $$
-x\gets x-\frac{b}{2a}
+x\gets x_0-\frac{b}{2a}
 $$
 
 代入：
 
 $$
-\left(x-\frac{b}{2a}\right)^2+\frac{b}{a}\left(x-\frac{b}{2a}\right)+\frac{c}{a}=0
+\left(x_0-\frac{b}{2a}\right)^2+\frac{b}{a}\left(x_0-\frac{b}{2a}\right)+\frac{c}{a}=0
 $$
 
 展开：
 
 $$
-\left(x^2-\frac{bx}{a}+\frac{b^2}{4a^2}\right)+\left(\frac{b x}{a}-\frac{b^2}{2 a^2}\right)+\frac{c}{a}=0
+\left(x_0^2-\frac{bx_0}{a}+\frac{b^2}{4a^2}\right)+\left(\frac{bx_0}{a}-\frac{b^2}{2 a^2}\right)+\frac{c}{a}=0
 $$
 
 化简：
 
 $$
-x^2+\frac{c}{a}-\frac{b^2}{4a^2}=0
+x_0^2+\frac{c}{a}-\frac{b^2}{4a^2}=0
 $$
 
 $$
-x=\pm\sqrt{\frac{b^2-4ac}{4a^2}}
+x_0=\pm\sqrt{\frac{b^2-4ac}{4a^2}}
 $$
 
 还原：
@@ -218,9 +218,7 @@ $$
 x^2+\frac{b}{a}x=-\frac{c}{a}
 $$
 
-通过配方法，使方程左边变为一个式子的平方。
-
-方程两边同时加上 $\left(\frac{b}{2a}\right)^2$：
+通过 **配方法**，使方程左边变为一个完全平方式。方程两边同时加上 $\left(\frac{b}{2a}\right)^2$：
 
 $$
 x^2+\frac{b}{a}x+\left(\frac{b}{2a}\right)^2=-\frac{c}{a}+\left(\frac{b}{2a}\right)^2
@@ -325,7 +323,7 @@ $$
 令：
 
 $$
-x\gets x-\frac{b}{3a}
+x\gets x_0-\frac{b}{3a}
 $$
 
 <details>
@@ -352,7 +350,7 @@ $$
 x=-\frac{b}{3a}
 $$
 
-所以任意三次函数都是中心对称的，对称中心为：
+因此任意三次函数都是中心对称的，对称中心为：
 
 $$
 \left(-\frac{b}{3a},f\left(-\frac{b}{3a}\right)\right)
@@ -370,31 +368,31 @@ $$
 设：
 
 $$
-x\gets x+t
+x\gets x_0+t
 $$
 
 代入方程：
 
 $$
-\left(x+t\right)^3+\frac{b}{a}\left(x+t\right)^2+\frac{c}{a}\left(x+t\right)+\frac{d}{a}=0
+\left(x_0+t\right)^3+\frac{b}{a}\left(x_0+t\right)^2+\frac{c}{a}\left(x_0+t\right)+\frac{d}{a}=0
 $$
 
 展开：
 
 $$
-\left(x^3+3tx^2+3t^2x+t^3\right)+
-\left(\frac{bx^2}{a}+\frac{2btx}{a}+\frac{bt^2}{a}\right)+
-\left(\frac{cx}{a}+\frac{ct}{a}\right)+
+\left(x_0^3+3tx_0^2+3t^2x_0+t^3\right)+
+\left(\frac{bx_0^2}{a}+\frac{2btx_0}{a}+\frac{bt^2}{a}\right)+
+\left(\frac{cx_0}{a}+\frac{ct}{a}\right)+
 \frac{d}{a}=0
 $$
 
 化简：
 
 $$
-x^3+\left(3t+\frac{b}{a}\right)x^2+\left(3t^2+\frac{2bt}{a}+\frac{c}{a}\right)x+\left(t^3+\frac{bt^2}{a}+\frac{ct}{a}+\frac{d}{a}\right)
+x_0^3+\left(3t+\frac{b}{a}\right)x_0^2+\left(3t^2+\frac{2bt}{a}+\frac{c}{a}\right)x_0+\left(t^3+\frac{bt^2}{a}+\frac{ct}{a}+\frac{d}{a}\right)
 $$
 
-要让二次项系数 $3t+\frac{b}{a}=0$，所以：
+要让二次项系数 $3t+\frac{b}{a}=0$，可以令：
 
 $$
 t=-\frac{b}{3a}
@@ -408,13 +406,13 @@ $$
 代入：
 
 $$
-\left(x-\frac{b}{3a}\right)^3+\frac{b}{a}\left(x-\frac{b}{3a}\right)^2+\frac{c}{a}\left(x-\frac{b}{3a}\right)+\frac{d}{a}=0
+\left(x_0-\frac{b}{3a}\right)^3+\frac{b}{a}\left(x_0-\frac{b}{3a}\right)^2+\frac{c}{a}\left(x_0-\frac{b}{3a}\right)+\frac{d}{a}=0
 $$
 
 展开：
 
 $$
-x^3+\left(\frac{c}{a}-\frac{b^2}{3a^2}\right)x+\left(\frac{2b^3}{27a^3}-\frac{bc}{3a^2}+\frac{d}{a}\right)=0
+x_0^3+\left(\frac{c}{a}-\frac{b^2}{3a^2}\right)x_0+\left(\frac{2b^3}{27a^3}-\frac{bc}{3a^2}+\frac{d}{a}\right)=0
 $$
 
 令：
@@ -426,10 +424,10 @@ $$
 此时方程的最高次项系数为 $1$，并消除了二次项：
 
 $$
-x^3+px+q=0
+x_0^3+px_0+q=0
 $$
 
-令 $x=u+v$，代入：
+令 $x_0=u+v$，代入：
 
 $$
 (u+v)^3+p(u+v)+q=0
@@ -449,8 +447,8 @@ $$
 
 $$
 \begin{cases}
-u^3+v^3=-q \\
-3uv+p=0 \Rightarrow uv=-\frac{p}{3}
+  u^3+v^3=-q \\
+  3uv+p=0 \Rightarrow uv=-\frac{p}{3}
 \end{cases}
 $$
 
@@ -458,12 +456,12 @@ $$
 
 $$
 \begin{cases}
-U+V=-q \\
-UV=(-\frac{p}{3})^3
+  U+V=-q \\
+  UV=(-\frac{p}{3})^3
 \end{cases}
 $$
 
-所以 $U$ 和 $V$ 是如下二次方程的两个根：
+因此 $U$ 和 $V$ 是如下二次方程的两个根：
 
 $$
 X^2+qX-\frac{p^3}{27}=0
@@ -472,7 +470,7 @@ $$
 解得：
 
 $$
-U,V=X=\frac{-q\pm\sqrt{q^2+\frac{4p^3}{27}}}{2}=-\frac{q}{2}\pm\sqrt{\left(\frac{q}{2}\right)^2+\left(\frac{p}{3}\right)^3}
+U,V=X_1,X_2=\frac{-q\pm\sqrt{q^2+\frac{4p^3}{27}}}{2}=-\frac{q}{2}\pm\sqrt{\left(\frac{q}{2}\right)^2+\left(\frac{p}{3}\right)^3}
 $$
 
 令：
@@ -498,13 +496,7 @@ $$
 解得：
 
 $$
-x=u+v=\sqrt[3]{U}+\sqrt[3]{V}
-$$
-
-所以：
-
-$$
-x_1=u+v,x_2=\omega u+\omega^2 v,x_3=\omega^2 u+\omega v
+x_0=u+v=\sqrt[3]{U}+\sqrt[3]{V}
 $$
 
 还原：
@@ -515,7 +507,7 @@ $$
 
 :::tip
 
-由于 $u^3,v^3$ 是共轭复数，引入单位根 $\omega = \frac{-1+\sqrt{3}i}{2}$ 可生成其余两个复根。
+由于 $u^3,v^3$ 是共轭复数，引入单位根 $\omega = \frac{-1+\sqrt{3}i}{2}$ 可得到其余两个复根。
 
 :::
 
@@ -574,19 +566,19 @@ $$
 同二次、三次方程，令：
 
 $$
-x\gets x-\frac{b}{4a}
+x\gets x_0-\frac{b}{4a}
 $$
 
 代入：
 
 $$
-\left(x-\frac{b}{4a}\right)^4+\frac{b}{a}\left(x-\frac{b}{4a}\right)^3+\frac{c}{a}\left(x-\frac{b}{4a}\right)^2+\frac{d}{a}\left(x-\frac{b}{4a}\right)+\frac{e}{a}=0
+\left(x_0-\frac{b}{4a}\right)^4+\frac{b}{a}\left(x_0-\frac{b}{4a}\right)^3+\frac{c}{a}\left(x_0-\frac{b}{4a}\right)^2+\frac{d}{a}\left(x_0-\frac{b}{4a}\right)+\frac{e}{a}=0
 $$
 
 展开：
 
 $$
-x^4+\left(\frac{8ac-3b^2}{8a^2}\right)x^2+\left(\frac{b^3-4abc+8a^2d}{8a^3}\right)x+\frac{-3b^4+16ab^2c-64a^2bd+256a^3e}{256a^4}=0
+x_0^4+\left(\frac{8ac-3b^2}{8a^2}\right)x_0^2+\left(\frac{b^3-4abc+8a^2d}{8a^3}\right)x_0+\frac{-3b^4+16ab^2c-64a^2bd+256a^3e}{256a^4}=0
 $$
 
 令：
@@ -598,7 +590,7 @@ $$
 此时方程的最高次项系数为 $1$，并消除了三次项：
 
 $$
-x^4+px^2+qx+r=0
+x_0^4+px_0^2+qx_0+r=0
 $$
 
 ## 五次及以上方程
