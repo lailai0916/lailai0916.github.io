@@ -105,7 +105,7 @@ $$
 
 ### 复平面
 
-每个复数 $z=a+bi$ 都对应了一个点 $Z(a,b)$，我们考虑把复数放到直角坐标系中。
+每个复数 $z=a+bi$ 都可以对应一个点 $Z(a,b)$，我们考虑把复数放到直角坐标系中。
 
 而这个建立了直角坐标系来表示复数的平面称作 **复平面**，横轴（$x$ 轴）叫做 **实轴**，纵轴（$y$ 轴）叫做 **虚轴**。
 
@@ -191,11 +191,15 @@ $$
 
 在几何上，复数乘法遵循 **模长相乘**、**辐角相加**。
 
+$$
+r_1(\cos\theta_{1}+i\sin\theta_{1})\cdot r_2(\cos\theta_{2}+i\sin\theta_{2})=r_1r_2[\cos(\theta_{1}+\theta_{2})+i\sin(\theta_{1}+\theta_{2})] 
+$$
+
 <Desmos id="bplzxno9jh" />
 
 ### 除法
 
-除法直接计算得到：
+在代数上，除法直接计算得到：
 
 $$
 \frac{z_1}{z_2}=\frac{a+bi}{c+di}(z_2\ne 0)
@@ -205,6 +209,12 @@ $$
 
 $$
 \frac{(a+bi)(c-di)}{(c+di)(c-di)}=\frac{(a+bi)(c-di)}{c^2+d^2}=\frac{ac+bd}{c^2+d^2}+\frac{bc-ad}{c^2+d^2}i
+$$
+
+在几何上，复数除法遵循 **模长相除**、**辐角相减**。
+
+$$
+\frac{r_1(\cos\theta_{1}+i\sin\theta_{1})}{r_2(\cos\theta_{2}+i\sin\theta_{2})}=\frac{r_1}{r_2}[\cos(\theta_{1}+\theta_{2})+i\sin(\theta_{1}+\theta_{2})] 
 $$
 
 :::tip
@@ -253,7 +263,7 @@ $$
 
 :::
 
-## 坐标系
+## 三角表示
 
 ### 直角坐标系
 
@@ -333,4 +343,47 @@ $$
 
 这个并不重要，简单了解一下即可。
 
-## 三角表示
+### 复数
+
+回到复数，我们知道每个复数 $z=a+bi$ 都可以对应直角坐标系中的点 $Z(a,b)$。
+
+而复数还可以用 **模长** 和 **辐角** 表示，正好对应了极坐标系的 **极径** 和 **极角**。
+
+因此，点 $Z(a,b)$ 的坐标也可以写作：
+
+$$
+Z(r\cos\theta,r\sin\theta)
+$$
+
+$$
+a=r\cos\theta,b=r\sin\theta
+$$
+
+在复平面中，这个点对应的复数为：
+
+$$
+z=a+bi=r\cos\theta+ir\sin\theta=r(\cos\theta+i\sin\theta)
+$$
+
+其中 $r(\cos\theta+i\sin\theta)$ 称为复数 $z$ 的 **三角表示式**（三角形式），而 $a+bi$ 称为 **代数表示式**（代数形式）。
+
+## 拓展
+
+### 欧拉公式
+
+进一步地，数学家 [莱昂哈德·欧拉](https://zh.wikipedia.org/zh-cn/萊昂哈德·歐拉) 发现：
+
+$$
+\cos\theta+i\sin\theta=e^{i\theta}
+$$
+
+因此，复数的极坐标形式可以进一步简化为：
+
+$$
+z=re^{i\theta}
+$$
+
+这就是著名的 [欧拉公式](https://zh.wikipedia.org/zh-cn/欧拉公式)。
+
+- [用几何直觉理解欧拉公式！【中学生也能懂|manim】 - bilibili](https://www.bilibili.com/video/BV1bF411P7RL)
+- [【官方双语】微分方程概论-第五章：在3.14分钟内理解e^iπ - bilibili](https://www.bilibili.com/video/BV1G4411D7kZ)

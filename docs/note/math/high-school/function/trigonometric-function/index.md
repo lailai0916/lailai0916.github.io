@@ -1057,15 +1057,6 @@ $$
 - [反三角函数 - 维基百科](https://zh.wikipedia.org/zh-cn/反三角函数)
 - [这个视频可能颠覆你对反三角函数的认识！ - bilibili](https://www.bilibili.com/video/BV1oC4y1G7Zk/)
 
-### 欧拉公式
-
-$$
-e^{i\theta}=\cos{\theta}+i\sin{\theta}
-$$
-
-- [【官方双语】微分方程概论-第五章：在3.14分钟内理解e^iπ - bilibili](https://www.bilibili.com/video/BV1G4411D7kZ)
-- [用几何直觉理解欧拉公式！【中学生也能懂|manim】 - bilibili](https://www.bilibili.com/video/BV1bF411P7RL)
-
 ### 双曲函数
 
 $$
