@@ -310,7 +310,7 @@ $$
 :::warning
 
 $$
-\cancel{\theta=\arctan{\frac{y}{x}}}
+\xcancel{\theta=\arctan{\frac{y}{x}}}
 $$
 
 :::
@@ -330,5 +330,7 @@ $$
   \text{undefine} & x=0,y=0
 \end{cases}
 $$
+
+这个并不重要，简单了解一下即可。
 
 ## 三角表示
