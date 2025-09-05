@@ -400,6 +400,18 @@ $$
 
 :::example
 
+<Tabs>
+<TabItem value="Example 1">
+
+化简 $\sqrt{5-2\sqrt{6}}$。
+
+$$
+\sqrt{5-2\sqrt{6}}=\left|\sqrt{2}-\sqrt{3}\right|=\sqrt{3}-\sqrt{2}
+$$
+
+</TabItem>
+<TabItem value="Example 2">
+
 化简 $\sqrt{4-\sqrt{15}}$。
 
 $$
@@ -409,6 +421,9 @@ $$
   &= \frac{\sqrt{10}-\sqrt 6}{2}
 \end{aligned}
 $$
+
+</TabItem>
+</Tabs>
 
 :::
 
