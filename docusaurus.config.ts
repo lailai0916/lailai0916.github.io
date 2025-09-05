@@ -210,6 +210,9 @@ const config: Config = {
       minHeadingLevel: 2,
       maxHeadingLevel: 4,
     },
+    metadata: [
+      { name: 'baidu-site-verification', content: 'codeva-eeKBeIm6xX' },
+    ],
   } satisfies Preset.ThemeConfig,
 
   markdown: {
