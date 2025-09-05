@@ -269,7 +269,7 @@ $$
 
 ### 极坐标系
 
-我们还可以用 **距离** $r$ 和 **夹角** $\theta$ 描述这个点 $A$，这就是 **极坐标系**。
+我们还可以用 **极径** $r$ 和 **极角** $\theta$ 描述这个点 $A$，这就是 **极坐标系**。
 
 $$
 A(r,\theta)
@@ -281,10 +281,54 @@ $$
 
 假设点 $A$ 的直角坐标为 $A(x,y)$，极坐标为 $A(r,\theta)$，考虑如何进行坐标转换。
 
-从 **极坐标系** 转换到 **直角坐标系** 可以使用 [三角函数](../geometry/triangle-solving)：
+从 **极坐标系** 转换到 **直角坐标系** 可以使用 [三角函数](../function/trigonometric-function)：
 
 $$
-x=r\cos\theta,r=r\sin\theta
+x=r\cos\theta,y=r\sin\theta
+$$
+
+单位圆上辐角为 $\theta$ 的点 $B$ 的坐标为 $B(\cos\theta,\sin\theta)$，将其缩放 $r$ 倍就得到了 $A(r\cos\theta,r\sin\theta)$。
+
+<Desmos id="phg9pjhx41" />
+
+从 **直角坐标系** 转换到 **极坐标系** 时，**极径** $r$ 比较容易计算，根据 **距离公式**：
+
+$$
+r=\sqrt{x^2+y^2}
+$$
+
+但 **极角** $\theta$ 的计算相对比较复杂。
+
+我们知道，极角的 **正切值** $\tan\theta$ 等于 **纵坐标** $y$ 除以 **横坐标** $x$。
+
+$$
+\tan\theta=\frac{y}{x}
+$$
+
+因此极角可以通过 **反三角函数** 来确定。
+
+:::warning
+
+$$
+\cancel{\theta=\arctan{\frac{y}{x}}}
+$$
+
+:::
+
+但直接使用反三角函数会遇到很多问题，例如定义域与值域限制。
+
+为了解决这些问题，数学家通常引入一个改进的分段函数 $\operatorname{atan2}$：
+
+$$
+\theta=\operatorname{atan2}(y,x)=
+\begin{cases}
+  \arctan\left(\frac{y}{x}\right) & x>0 \\
+  \arctan\left(\frac{y}{x}\right)+\pi & x<0,y\geq 0 \\
+  \arctan\left(\frac{y}{x}\right)-\pi & x<0,y<0 \\
+  +\frac{\pi}{2} & x=0,y>0 \\
+  -\frac{\pi}{2} & x=0,y<0 \\
+  \text{undefine} & x=0,y=0
+\end{cases}
 $$
 
 ## 三角表示
