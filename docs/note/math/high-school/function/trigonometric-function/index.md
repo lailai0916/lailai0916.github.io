@@ -35,7 +35,11 @@
 
 ### 单位圆
 
-单位圆指平面直角坐标系上，圆心为 **原点** $O(0,0)$ 且半径为 **单位长度** $1$ 的圆，方程为 $x^2+y^2=1$。
+**单位圆** 指平面直角坐标系上，圆心为 **原点** $O(0,0)$ 且半径为 **单位长度** $1$ 的圆，方程为：
+
+$$
+x^2+y^2=1
+$$
 
 <Desmos id="wocs5bz2f4" />
 
@@ -43,7 +47,7 @@
 
 两点 $A(x_0,y_0),B(x_1,y_1)$ 之间的距离为 $\sqrt{(x_0-x_1)^2+(y_0-y_1)^2}$。
 
-<Desmos id="xhsfggz1l6" />
+<Desmos id="4etrc0utqs" />
 
 构造直角三角形，两条直角边的长度分别为 $|x_0-x_1|$ 和 $|y_0-y_1|$。
 
@@ -63,15 +67,15 @@ $A,B$ 两点之间的距离一般用 $|AB|$ 表示。
 
 ### 锐角三角函数
 
-锐角三角函数是在 **直角三角形** 中，以一个 **锐角** $\theta$ 为基准，定义 **对边** $a$、**邻边** $b$ 和 **斜边** $c$ 中两边之比的函数。
+在初中阶段，我们学过锐角三角形的定义：在 **直角三角形** 中，以一个 **锐角** $\theta$ 为基准，定义 **对边** $a$、**邻边** $b$ 和 **斜边** $c$ 中两边之比的函数。
 
-图中 $\theta=\angle BAC,a=|BC|,b=|AC|,c=|AB|$：
+![](./assets/TrigonometryTriangle.svg)
+
+图中 $\theta=\angle BAC,a=|BC|,b=|AC|,c=|AB|$，每个三角函数的定义为：
 
 $$
 \sin{\theta}=\frac{a}{c},\cos{\theta}=\frac{b}{c},\tan{\theta}=\frac{a}{b},\cot{\theta}=\frac{b}{a},\sec{\theta}=\frac{c}{b},\csc{\theta}=\frac{c}{a}
 $$
-
-![](./assets/TrigonometryTriangle.svg)
 
 ### 任意角三角函数
 

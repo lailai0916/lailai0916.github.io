@@ -330,6 +330,7 @@ const sidebars: SidebarsConfig = {
                 'note/math/high-school/basic/set/index',
                 'note/math/high-school/basic/logic',
                 'note/math/high-school/basic/inequality/index',
+                'note/math/high-school/basic/vector',
                 'note/math/high-school/basic/complex/index',
                 'note/math/high-school/basic/counting-principle/index',
               ],
@@ -348,9 +349,9 @@ const sidebars: SidebarsConfig = {
               type: 'category',
               label: '几何与解析',
               items: [
-                'note/math/high-school/geometry/vector',
                 'note/math/high-school/geometry/triangle-solving/index',
                 'note/math/high-school/geometry/solid-geometry',
+                'note/math/high-school/geometry/line-and-circle',
                 'note/math/high-school/geometry/conic',
               ],
             },
