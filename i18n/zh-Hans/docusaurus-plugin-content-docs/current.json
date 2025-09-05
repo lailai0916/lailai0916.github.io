@@ -16,7 +16,7 @@
     "description": "The label for category 语言基础 in sidebar sidebar1"
   },
   "sidebar.sidebar1.category.语言基础.link.generated-index.description": {
-    "message": "本章介绍编程相关的知识，包括 C++ 从入门到进阶教程和一些其它语言的简介。",
+    "message": "本章介绍编程相关的知识，包括 C++ 从入门到进阶教程和一些其他语言的简介。",
     "description": "The generated-index page description for category 语言基础 in sidebar sidebar1"
   },
   "sidebar.sidebar1.category.算法基础": {

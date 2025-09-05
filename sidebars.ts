@@ -39,7 +39,7 @@ const sidebars: SidebarsConfig = {
       link: {
         type: 'generated-index',
         description:
-          '本章介绍编程相关的知识，包括 C++ 从入门到进阶教程和一些其它语言的简介。',
+          '本章介绍编程相关的知识，包括 C++ 从入门到进阶教程和一些其他语言的简介。',
       },
       items: [
         'contest/lang/helloworld',
