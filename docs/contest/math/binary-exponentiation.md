@@ -24,7 +24,7 @@ ll Pow(ll x,ll y)
 
 ## 快速乘
 
-用于计算 $xy\bmod p$，可以防止 $xy$ 过大溢出。
+快速乘用于计算 $xy\bmod p$，可以防止直接计算 $xy$ 过大导致溢出。
 
 ```cpp
 ll mul(ll x,ll y)
