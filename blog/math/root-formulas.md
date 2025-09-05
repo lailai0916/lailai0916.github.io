@@ -80,7 +80,7 @@ $$
   &+ x^{n-1} \cdot a_n (-x_1-x_2-\dots-x_n) \\
   &+ x^{n-2} \cdot a_n (x_1x_2+x_1x_3+\dots+x_1x_n+x_2x_3+\dots+x_{n-1}x_n) \\
   &+ \dots \\
-  &+ x^{n-r} \cdot a_n \left[\sum_{1\le i_1\le i_2\le \dots \le i_{r-1} \le i_r \le n}(-x_{i_1})(-x_{i_2})\dots(-x_{i_{r-1}})(-x_{i_r})\right] \\
+  &+ x^{n-r} \cdot a_n \left[\sum_{1\le i_1<i_2<\dots<i_{r-1}<i_r\le n}(-x_{i_1})(-x_{i_2})\dots(-x_{i_{r-1}})(-x_{i_r})\right] \\
   &+ \dots \\
   &+ a_n(-1)^n(x_1x_2\dots x_n) \\
   &= \sum_{r=0}^n x^{n-r}a_n(-1)^r\left(\sum x_{i_1}x_{i_2}\dots x_{i_{r-1}}x_{i_r}\right)
@@ -336,33 +336,6 @@ f(x)=ax^3+bx^2+cx+d
 $$
 
 <Tabs>
-<TabItem value="求导法">
-
-求导，得到一个二次函数：
-
-$$
-f'(x)=3ax^2+2bx+c
-$$
-
-对于任意二次函数都是轴对称的，对称轴为：
-
-$$
-x=-\frac{b}{3a}
-$$
-
-因此任意三次函数都是中心对称的，对称中心为：
-
-$$
-\left(-\frac{b}{3a},f\left(-\frac{b}{3a}\right)\right)
-$$
-
-为了消除二次项，即 $-\frac{b}{3a}=0$，我们可以将函数平移 $-\frac{b}{3a}$，即：
-
-$$
-x\gets x-\frac{b}{3a}
-$$
-
-</TabItem>
 <TabItem value="待定系数法">
 
 设：
@@ -396,6 +369,33 @@ $$
 
 $$
 t=-\frac{b}{3a}
+$$
+
+</TabItem>
+<TabItem value="求导法">
+
+求导，得到一个二次函数：
+
+$$
+f'(x)=3ax^2+2bx+c
+$$
+
+对于任意二次函数都是轴对称的，对称轴为：
+
+$$
+x=-\frac{b}{3a}
+$$
+
+因此任意三次函数都是中心对称的，对称中心为：
+
+$$
+\left(-\frac{b}{3a},f\left(-\frac{b}{3a}\right)\right)
+$$
+
+为了消除二次项，即 $-\frac{b}{3a}=0$，我们可以将函数平移 $-\frac{b}{3a}$，即：
+
+$$
+x\gets x-\frac{b}{3a}
 $$
 
 </TabItem>
@@ -483,7 +483,7 @@ $$
 V=-\frac{q}{2}-\sqrt{\left(\frac{q}{2}\right)^2+\left(\frac{p}{3}\right)^3}
 $$
 
-回代：
+还原：
 
 $$
 u=\sqrt[3]{U}=\sqrt[3]{-\frac{q}{2}+\sqrt{\left(\frac{q}{2}\right)^2+\left(\frac{p}{3}\right)^3}}
