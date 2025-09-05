@@ -17,7 +17,7 @@ Example:
 
 export const FRIEND_LIST: FriendItem[] = [
   {
-    title: 'sintle',
+    title: 'Sintle',
     description: 'Code, Learn, Share',
     href: 'https://sintle.github.io',
     avatar: '/img/friends/sintle.png',
