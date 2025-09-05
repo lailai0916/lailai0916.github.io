@@ -5,13 +5,15 @@ export interface FriendItem {
   avatar: string;
 }
 
-// Example:
-// {
-//   title: 'lailai',
-//   description: 'Student & Developer',
-//   href: 'https://lailai.one',
-//   avatar: 'img/avatar/lailai.png',
-// },
+/*
+Example:
+{
+  title: 'lailai',
+  description: 'Student & Developer',
+  href: 'https://lailai.one',
+  avatar: 'img/avatar/lailai.png',
+},
+*/
 
 export const FRIEND_LIST: FriendItem[] = [
   {
