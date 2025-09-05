@@ -36,7 +36,7 @@ export function GetCode({ id }: { id: string }) {
         <Details
           summary={translate(
             {
-              id: 'components.problem.code',
+              id: 'components.problems.code',
               message: 'Code ({num})',
             },
             { num: codes.length }
@@ -69,7 +69,7 @@ export function GetSolution({ id }: { id: string }) {
   return (
     <Details
       summary={translate({
-        id: 'components.problem.solution',
+        id: 'components.problems.solution',
         message: 'Solution',
       })}
     >
@@ -87,9 +87,9 @@ export default function Problem({ id }: { id: string }) {
       <Admonition type="warning">
         {translate(
           {
-            id: 'components.problem.error',
+            id: 'components.problems.error',
             message:
-              'Unable to load question {id}: please check if the file exists.',
+              'Unable to load problem {id}: please check if the file exists.',
           },
           { id }
         )}

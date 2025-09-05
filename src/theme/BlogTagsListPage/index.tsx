@@ -23,7 +23,7 @@ export default function BlogTagsListPage(props: Props): JSX.Element {
     return (
       <BlogScaffold title="Tags" description="Tags of lailai's blog">
         <ChipListCard
-          title={<Translate id="blog.tags.list">All Tags</Translate>}
+          title={<Translate id="theme.tags.tagsPageTitle">Tags</Translate>}
           items={tags.map((t: any) => ({
             to: t.permalink,
             label: t.label,

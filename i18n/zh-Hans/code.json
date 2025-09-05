@@ -537,14 +537,14 @@
   "home.countdown.unit.seconds": {
     "message": "秒"
   },
-  "components.problem.solution": {
+  "components.problems.solution": {
     "message": "题解"
   },
-  "components.problem.code": {
+  "components.problems.code": {
     "message": "代码（{num}）"
   },
-  "components.problem.error": {
-    "message": "无法加载问题 {id}：请检查文件 \"docs/contest/_problems/{id}.md\" 是否存在。"
+  "components.problems.error": {
+    "message": "无法加载题目 {id}：请检查文件 \"docs/contest/_problems/{id}.md\" 是否存在。"
   },
   "home.project.title": {
     "message": "我的项目"
@@ -947,5 +947,23 @@
   },
   "pages.settings.item.quickactions.option.reset": {
     "message": "重置设置"
+  },
+  "blog.archive.empty": {
+    "message": "暂无文章"
+  },
+  "blog.stats.overview": {
+    "message": "统计"
+  },
+  "blog.stats.posts": {
+    "message": "文章"
+  },
+  "blog.stats.tags": {
+    "message": "标签"
+  },
+  "blog.tags.hot": {
+    "message": "热门标签"
+  },
+  "blog.recent": {
+    "message": "最新文章"
   }
 }

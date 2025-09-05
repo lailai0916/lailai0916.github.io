@@ -59,7 +59,7 @@ export default function Paginator({ meta }: { meta: Meta }) {
     <nav className={styles.paginator} aria-label="Pagination">
       {meta.previousPage ? (
         <Link className={styles.paginatorBtn} to={meta.previousPage}>
-          ← <Translate id="blog.newer">Newer</Translate>
+          ← <Translate id="theme.blog.paginator.newerEntries">Newer</Translate>
         </Link>
       ) : (
         <span />
@@ -93,7 +93,7 @@ export default function Paginator({ meta }: { meta: Meta }) {
           className={`${styles.paginatorBtn} ${styles.paginatorNext}`}
           to={meta.nextPage}
         >
-          <Translate id="blog.older">Older</Translate> →
+          <Translate id="theme.blog.paginator.olderEntries">Older</Translate> →
         </Link>
       )}
     </nav>

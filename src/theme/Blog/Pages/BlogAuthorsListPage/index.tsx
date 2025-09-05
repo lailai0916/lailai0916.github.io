@@ -10,7 +10,9 @@ export default function BlogAuthorsListPage({ authors, sidebar }: Props) {
   return (
     <BlogScaffold title="Authors" description="Authors of lailai's blog">
       <ChipListCard
-        title={<Translate id="blog.authors">All Authors</Translate>}
+        title={
+          <Translate id="theme.blog.authorsList.pageTitle">Authors</Translate>
+        }
         items={authors.map((author: any) => ({
           to: author.page.permalink,
           label: author.name,

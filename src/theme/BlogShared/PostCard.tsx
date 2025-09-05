@@ -48,9 +48,12 @@ export default function PostCard({ item }: { item: any }) {
           {readingTimeValue !== null && (
             <span className={styles.reading}>
               {translate(
-                { id: 'blog.readingTime', message: '{time} min read' },
                 {
-                  time: Math.max(1, Math.round(readingTimeValue)),
+                  id: 'theme.blog.post.readingTime.plurals',
+                  message: '{readingTime} min read',
+                },
+                {
+                  readingTime: Math.max(1, Math.round(readingTimeValue)),
                 }
               )}
             </span>

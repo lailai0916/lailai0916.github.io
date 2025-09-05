@@ -27,7 +27,7 @@ export default function SidebarRight() {
       </div>
       <div className={styles.card}>
         <div className={styles.cardTitle}>
-          <Translate id="blog.archive">Archive</Translate>
+          <Translate id="theme.blog.archive.title">Archive</Translate>
         </div>
         <ul className={styles.archiveList}>
           {years.map((y) => (
