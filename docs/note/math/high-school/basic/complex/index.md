@@ -113,7 +113,7 @@ $$
 
 ### 模长
 
-我们将 [向量](../geometry/vector) $\overrightarrow{OZ}$ 的 **模长** 定义为复数 $z=a+bi$ 的 **模长**，记为：
+我们将 [向量](vector) $\overrightarrow{OZ}$ 的 **模长** 定义为复数 $z=a+bi$ 的 **模长**，记为：
 
 $$
 |OZ|=|z|=|a+bi|=\sqrt{a^2+b^2}
