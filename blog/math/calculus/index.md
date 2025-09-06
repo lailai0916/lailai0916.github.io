@@ -306,8 +306,6 @@ $$
 \int_a^b f(x)\mathrm{d}x=F(b)-F(a)=\left.F(x)\right|_a^b
 $$
 
-<!-- ![](./assets/400px-Integral_approximations-3-steps.png) -->
-
 ## 微积分基本定理
 
 **微积分基本定理** 是微积分学中的一条重要定理，由 [艾萨克·牛顿](https://zh.wikipedia.org/zh-cn/艾萨克·牛顿) 和 [戈特弗里德·莱布尼茨](https://zh.wikipedia.org/zh-cn/戈特弗里德·莱布尼茨) 在十七世纪分别独立发现，描述了微积分的两个主要运算——**微分** 和 **积分** 之间的关系。
@@ -392,6 +390,8 @@ $$
 许多现有的积分公式也是通过“凑”总结出来的。
 
 如果已知函数 $F(x)$ 的导数是 $f(x)$，那么 $F(x)$ 就是不定积分 $f(x)$ 的一个原函数。
+
+![](./assets/400px-Integral_approximations-3-steps.png)
 
 ## 例题
 
