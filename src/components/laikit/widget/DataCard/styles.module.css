@@ -69,9 +69,6 @@ html[data-theme='dark'] .statIcon {
 }
 
 @media (max-width: 768px) {
-  .statCard {
-    min-width: auto;
-  }
 
   .statsGrid {
     flex-direction: column;
@@ -81,9 +78,6 @@ html[data-theme='dark'] .statIcon {
 }
 
 @media (max-width: 480px) {
-  .statCard {
-    padding: 1rem;
-  }
   .statIcon {
     width: 36px;
     height: 36px;
