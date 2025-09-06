@@ -27,7 +27,7 @@ function SitemapHeader() {
     <PageHeader>
       <PageTitle title={MODIFICATION} description={DESCRIPTION} />
       <DataCard
-        value={10}
+        value={SITEMAP_LIST.flatMap((category) => category.sitemaps).length}
         label={translate({
           id: 'pages.sitemap.datacard.label',
           message: 'Pages',
