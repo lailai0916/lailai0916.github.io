@@ -1,5 +1,6 @@
 import Heading from '@theme/Heading';
 import Link from '@docusaurus/Link';
+import Translate from '@docusaurus/Translate';
 import styles from '@site/src/pages/_components/TopBanner/styles.module.css';
 
 export function MDTitle({ title, description }) {
@@ -10,7 +11,9 @@ export function MDTitle({ title, description }) {
           <>
             {'🎉\xa0'}
             <Link className={styles.topBannerTitleText} to="/">
-              {"Hello,\xa0I'm\xa0lailai"}
+              <Translate id="home.topbanner.title">
+                {"Hello,\xa0I'm\xa0lailai"}
+              </Translate>
             </Link>
             {'\xa0🥳'}
           </>
