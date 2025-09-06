@@ -10,7 +10,7 @@ import { MDTitle } from '@site/src/components/laikit/markdown';
 
 ### 9 月
 
-- **[新增]** 接入搜索引擎收录平台：[Google Search Console](https://search.google.com/search-console/welcome)、[Bing Webmaster Tools](https://www.bing.com/webmasters)、[百度搜索资源平台](https://ziyuan.baidu.com/linksubmit/url)
+- **[新增]** 
 
 ## 2024 年
 

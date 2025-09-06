@@ -1,7 +1,6 @@
 import React, { useMemo, useState, useEffect } from 'react';
 
 import BrowserOnly from '@docusaurus/BrowserOnly';
-import Heading from '@theme/Heading';
 import Link from '@docusaurus/Link';
 import Giscus from '@giscus/react';
 import IconText from '@site/src/components/laikit/widget/IconText';
@@ -13,20 +12,6 @@ import { DEVICE_LIST } from '@site/src/data/devices';
 import { COMMUNITY_LIST } from '@site/src/data/community';
 
 import styles from './styles.module.css';
-
-export function Title() {
-  return (
-    <section className="margin-top--lg margin-bottom--lg text--center">
-      <Heading as="h1">
-        {'🎉\xa0'}
-        <Link className={styles.titleText} to="/">
-          {"Hello,\xa0I'm\xa0lailai"}
-        </Link>
-        {'\xa0🥳'}
-      </Heading>
-    </section>
-  );
-}
 
 export function Skills() {
   const [perline, setPerline] = useState(12);

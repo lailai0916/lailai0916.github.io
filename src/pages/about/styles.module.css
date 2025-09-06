@@ -1,17 +1,3 @@
-.titleText {
-  background: linear-gradient(
-    108deg,
-    #0894ff,
-    #c959dd 34%,
-    #ff2e54 68%,
-    #ff9004
-  );
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  word-wrap: break-word;
-  word-break: break-word;
-}
-
 .twoColumnContainer {
   display: grid;
   grid-template-columns: 1fr 1fr;
