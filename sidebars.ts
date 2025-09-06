@@ -351,7 +351,7 @@ const sidebars: SidebarsConfig = {
               items: [
                 'note/math/high-school/geometry/triangle-solving/index',
                 'note/math/high-school/geometry/solid-geometry',
-                'note/math/high-school/geometry/line-and-circle',
+                'note/math/high-school/geometry/line-and-circle/index',
                 'note/math/high-school/geometry/conic',
               ],
             },
