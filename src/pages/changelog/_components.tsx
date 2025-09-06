@@ -1,5 +1,7 @@
 import React from 'react';
 import { CHANGELOG_LIST, TYPE_LABEL } from '@site/src/data/changelog';
+import ReactMarkdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
 
 export function Changelog() {
   const map: Record<string, Record<string, typeof CHANGELOG_LIST>> = {};
@@ -31,7 +33,22 @@ export function Changelog() {
               <ul>
                 {items.map((item) => (
                   <li key={`${item.date}-${item.type}`}>
-                    <strong>[{TYPE_LABEL[item.type]}]</strong> {item.content}
+                    <strong>[{TYPE_LABEL[item.type]}]</strong>{' '}
+                    <ReactMarkdown
+                      remarkPlugins={[remarkGfm]}
+                      components={{
+                        p: ({ node, ...props }) => <>{props.children}</>,
+                        a: ({ node, ...props }) => (
+                          <a
+                            {...props}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          />
+                        ),
+                      }}
+                    >
+                      {item.content}
+                    </ReactMarkdown>
                   </li>
                 ))}
               </ul>
