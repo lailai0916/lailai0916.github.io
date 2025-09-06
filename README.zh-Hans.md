@@ -67,8 +67,8 @@ lailai0916.github.io
 │   ├── img                        # 图片文件
 │   └── CNAME                      # 域名配置
 ├── docusaurus.config.ts           # Docusaurus 配置
-├── LICENSE                        # 代码许可证
-├── LICENSE-docs                   # 文档许可证
+├── LICENSE                        # 代码许可协议
+├── LICENSE-docs                   # 文档许可协议
 ├── package-lock.json              # 依赖锁定文件
 ├── package.json                   # 项目依赖
 ├── sidebars.ts                    # 文档侧边栏配置
@@ -88,7 +88,7 @@ lailai0916.github.io
 | :--------------------------------: | :--------------------------------: | :--------------------------------: |
 | ![](static/img/sponsor/paypal.svg) | ![](static/img/sponsor/alipay.svg) | ![](static/img/sponsor/wechat.svg) |
 
-## # 许可证
+## # 许可协议
 
 本项目代码遵循 [MIT 许可协议](LICENSE)。
 
