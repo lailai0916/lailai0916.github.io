@@ -741,11 +741,17 @@
   "data.sitemap.site.title": {
     "message": "网站"
   },
+  "data.sitemap.site.settings": {
+    "message": "设置"
+  },
   "data.sitemap.site.sitemap": {
     "message": "地图"
   },
-  "data.sitemap.site.settings": {
-    "message": "设置"
+  "data.sitemap.site.privacy": {
+    "message": "隐私政策"
+  },
+  "data.sitemap.site.changelog": {
+    "message": "更新日志"
   },
   "data.sitemap.docs.title": {
     "message": "文档"
@@ -791,6 +797,9 @@
   },
   "data.sitemap.more.status": {
     "message": "lailai's Status"
+  },
+  "data.sitemap.more.analytics": {
+    "message": "lailai's Analytics"
   },
   "data.sitemap.more.cloud": {
     "message": "lailai's Cloud"

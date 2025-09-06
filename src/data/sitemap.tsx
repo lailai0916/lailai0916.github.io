@@ -74,6 +74,20 @@ export const SITEMAP_LIST: SitemapCategoryItem[] = [
         }),
         href: '/sitemap',
       },
+      {
+        title: translate({
+          id: 'data.sitemap.site.privacy',
+          message: 'Privacy Policy',
+        }),
+        href: '/privacy',
+      },
+      {
+        title: translate({
+          id: 'data.sitemap.site.changelog',
+          message: 'Changelog',
+        }),
+        href: '/changelog',
+      },
     ],
   },
   {
@@ -183,6 +197,13 @@ export const SITEMAP_LIST: SitemapCategoryItem[] = [
           message: "lailai's Status",
         }),
         href: 'https://status.lailai.one',
+      },
+      {
+        title: translate({
+          id: 'data.sitemap.more.analytics',
+          message: "lailai's Analytics",
+        }),
+        href: 'https://analytics.lailai.one',
       },
       {
         title: translate({

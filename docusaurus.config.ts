@@ -176,12 +176,12 @@ const config: Config = {
           ],
         },
         {
-          title: 'More',
+          title: 'Site',
           items: [
-            { label: 'About', to: '/about' },
-            { label: 'Status', to: '/status' },
             { label: 'Settings', to: '/settings' },
             { label: 'Sitemap', to: '/sitemap' },
+            { label: 'Privacy Policy', to: '/privacy' },
+            { label: 'Changelog', to: '/changelog' },
           ],
         },
       ],

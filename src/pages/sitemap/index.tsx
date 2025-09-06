@@ -19,7 +19,7 @@ const DESCRIPTION = translate({
 });
 const MODIFICATION = translate({
   id: 'pages.sitemap.modification',
-  message: 'Site <b>Map</b>',
+  message: 'Site<b>map</b>',
 });
 
 function SitemapHeader() {
