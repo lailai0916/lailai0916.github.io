@@ -982,61 +982,11 @@ $$
 
 ## 应用
 
-### 正切与斜率
+三角函数在几何中被广泛应用：
 
-![](./assets/Wiki_slope_in_2d.svg)
+详见 [解三角形](../geometry/triangle-solving)
 
-如图，带入正切 $\tan$ 的锐角三角函数的定义：
-
-$$
-\tan{\theta}=\frac{\Delta y}{\Delta x}
-$$
-
-不难发现，$\frac{\Delta y}{\Delta x}$ 也是直线的斜率 $k$ 的计算公式。
-
-所以一条 **倾斜角** 为 $\theta$ 的直线，斜率 $k=\tan{\theta}$。
-
-$$
-k=\tan{\theta}=\frac{\Delta y}{\Delta x}
-$$
-
-### 正弦定理
-
-对于任意 $\triangle ABC$，有：
-
-$$
-\frac{a}{\sin\angle A}=\frac{b}{\sin\angle B}=\frac{c}{\sin\angle C}=2R
-$$
-
-### 余弦定理
-
-对于任意 $\triangle ABC$，有：
-
-$$
-a^2 = b^2 + c^2 - 2bc\cos A
-$$
-
-$$
-b^2 = a^2 + c^2 - 2ac\cos B
-$$
-
-$$
-c^2 = a^2 + b^2 - 2ab\cos C
-$$
-
-:::tip
-
-**勾股定理** 实际上是 **余弦定理** 在一个角为 **直角** 时的特殊情形。
-
-当 $\angle C=90^\circ$ 时，有 $\cos\angle C=0$，代入余弦定理公式得到：
-
-$$
-c^2=a^2+b^2
-$$
-
-但直接用余弦定理证明勾股定理，可能会构成 **循环论证**，因为余弦定理本身可能依赖于勾股定理的成立。
-
-:::
+详见 [直线和圆](../geometry/line-and-circle)
 
 ## 扩展
 
