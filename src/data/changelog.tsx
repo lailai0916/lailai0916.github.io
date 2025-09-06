@@ -17,7 +17,7 @@ export const CHANGELOG_LIST: ChangelogItem[] = [
   {
     date: '2025-09-01',
     type: 'added',
-    content: '示例告示框 `example` 组件',
+    content: '示例告示框组件：`example`',
   },
   {
     date: '2025-09-05',
