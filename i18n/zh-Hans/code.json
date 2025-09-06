@@ -965,5 +965,23 @@
   },
   "blog.recent": {
     "message": "最新文章"
+  },
+  "data.changelog.type.added": {
+    "message": "新增"
+  },
+  "data.changelog.type.changed": {
+    "message": "变更"
+  },
+  "data.changelog.type.deprecated": {
+    "message": "弃用"
+  },
+  "data.changelog.type.removed": {
+    "message": "移除"
+  },
+  "data.changelog.type.fixed": {
+    "message": "修复"
+  },
+  "data.changelog.type.security": {
+    "message": "安全"
   }
 }
