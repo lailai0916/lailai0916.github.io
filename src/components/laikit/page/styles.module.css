@@ -40,8 +40,7 @@
 }
 
 .mainTitle {
-  font-size: 3rem !important;
-  font-weight: 700;
+  font-size: 3rem;
   margin: 0 0 1rem 0;
   color: var(--ifm-font-color-base);
   line-height: 1.2;
@@ -64,24 +63,5 @@
     flex-direction: column;
     align-items: flex-start;
     gap: 2rem;
-    padding: 0 1rem;
-  }
-
-  .headerContent {
-    max-width: none;
-  }
-
-  .mainTitle {
-    font-size: 2.2rem !important;
-  }
-}
-
-@media (max-width: 480px) {
-  .mainTitle {
-    font-size: 1.8rem !important;
-  }
-
-  .mainDescription {
-    font-size: 1rem;
   }
 }
