@@ -15,110 +15,6 @@
 
 ![](./assets/Triangle_with_notations_2.svg)
 
-## 三角形的心
-
-### 内心
-
-内心（Incenter）为三个内角的 **角平分线** 的交点，即 **内切圆** 的圆心。
-
-![](./assets/三角形の内心.png)
-
-### 外心
-
-外心（Circumcenter）为三条边的 **中垂线** 的交点，即 **外接圆** 的圆心。
-
-![](./assets/三角形の外心.png)
-
-### 垂心
-
-垂心（Orthocenter）为三条 **高线** 的交点。
-
-![](./assets/三角形の垂心.png)
-
-### 重心
-
-重心（Centroid）为三条 **中线** 的交点，又称为 **形心** 或 **质心**。
-
-![](./assets/三角形の重心.png)
-
-### 旁心
-
-旁心（Excenter）为外角的 **角平分线** 的交点，每个三角形有 $3$ 个旁心，分别为三角形某一边的 **旁切圆** 的圆心。
-
-![](./assets/三角形の傍心.png)
-
-## 面积公式
-
-基本公式（底 + 高）：
-
-$$
-S=\frac{1}{2}ah_a=\frac{1}{2}bh_b=\frac{1}{2}ch_c
-$$
-
-两边 + 夹角：
-
-$$
-S=\frac{1}{2}ab\cos{\angle C}=\frac{1}{2}ac\cos{\angle B}=\frac{1}{2}bc\cos{\angle A}
-$$
-
-海伦公式（三边）：
-
-$$
-S=\sqrt{s(s-a)(s-b)(s-c)}
-$$
-
-秦九昭公式（三边）：
-
-$$
-S=\sqrt{\frac{1}{4}\left(a^2c^2-\left(\frac{a^2+c^2-b^2}{2}\right)^2\right)}
-$$
-
-内切圆 + 三边：
-
-$$
-S=sr=\frac{1}{2}r(a+b+c)
-$$
-
-外接圆 + 边/角：
-
-$$
-S=\frac{abc}{4R}=2R^2\sin{\angle A}\sin{\angle B}\sin{\angle C}=\frac{1}{2}R^2(\sin{\angle 2A}+\sin{\angle 2B}+\sin{\angle 2C})
-$$
-
-三角 + 一边：
-
-$$
-S=\frac{a^2\sin{\angle B}\sin{\angle C}}{\sin{\angle A}}=\frac{b^2\sin{\angle A}\sin{\angle C}}{\sin{\angle B}}=\frac{c^2\sin{\angle A}\sin{\angle B}}{\sin{\angle C}}
-$$
-
-三边 + 一角：
-
-$$
-S=\frac{1}{4}(a^2+b^2-c^2)\tan{\angle C}=\frac{1}{4}(a^2+c^2-b^2)\tan{\angle B}=\frac{1}{4}(b^2+c^2-a^2)\tan{\angle A}
-$$
-
-$$
-S=s(s-a)\tan{\frac{\angle A}{2}}=s(s-b)\tan{\frac{\angle B}{2}}=s(s-c)\tan{\frac{\angle C}{2}}
-$$
-
-两边 + 两角：
-
-$$
-S=\frac{1}{4}a^2\sin{2\angle B}+\frac{1}{4}b^2\sin{2\angle A}=\frac{1}{4}a^2\sin{2\angle C}+\frac{1}{4}c^2\sin{2\angle A}=\frac{1}{4}b^2\sin{2\angle C}+\frac{1}{4}c^2\sin{2\angle B}
-$$
-
-向量：
-
-$$
-S=\frac{1}{2}\left|\overrightarrow{AB}\times\overrightarrow{AC}\right|=\frac{1}{2}\left|\overrightarrow{BA}\times\overrightarrow{BC}\right|=\frac{1}{2}\left|\overrightarrow{CA}\times\overrightarrow{CB}\right|
-$$
-
-等边三角形：
-
-$$
-S=\frac{\sqrt 3}{4}a^2
-$$
-
 ## 基本方法
 
 ### 基本原理
@@ -152,7 +48,7 @@ $$
 在三角形中，
 
 $$
-\global\let\vecc=\overrightarrow
+\global\let\vec=\overrightarrow
 A+B+C=\pi
 $$
 
@@ -377,12 +273,12 @@ $$
 
 ## 三角形四心
 
-|   编号   | 心的名称 |          定义          |
-| :------: | :------: | :--------------------: |
-| $X_1(I)$ |   内心   | 三条**角平分线**的交点 |
-| $X_2(G)$ |   重心   |   三条**中线**的交点   |
-| $X_3(O)$ |   外心   |  三条**中垂线**的交点  |
-| $X_4(H)$ |   垂心   |   三条**高线**的交点   |
+|   编号   | 心的名称 |           定义           |
+| :------: | :------: | :----------------------: |
+| $X_1(I)$ |   内心   | 三条 **角平分线** 的交点 |
+| $X_2(G)$ |   重心   |   三条 **中线** 的交点   |
+| $X_3(O)$ |   外心   |  三条 **中垂线** 的交点  |
+| $X_4(H)$ |   垂心   |   三条 **高线** 的交点   |
 
 ### 奔驰定理
 
@@ -475,19 +371,23 @@ $$
 特殊的，中点的向量方程：
 
 $$
-\vecc{AD}=\frac12\vecc{AB}+\frac12\vecc{AC}
+\vec{AD}=\frac12\vec{AB}+\frac12\vec{AC}
 $$
 
 ![](assets/image.png)
 
 即对边比例相乘向量相加。
 
-### 重心及其性质
+### 重心
 
-重心：三角形三边中线交点，在平面直角坐标系中，重心的坐标是顶点坐标的算术平均，也就是说对于平面内任意一点 $P$：
+重心（Centroid）为三条 **中线** 的交点，又称为 **形心** 或 **质心**。
+
+![](./assets/三角形の重心.png)
+
+在平面直角坐标系中，重心的坐标是顶点坐标的算术平均，也就是说对于平面内任意一点 $P$：
 
 $$
-\vecc{PG}=\frac13\left(\vecc{PA}+\vecc{PB}+\vecc{PC}\right)
+\vec{PG}=\frac13\left(\vec{PA}+\vec{PB}+\vec{PC}\right)
 $$
 
 重心和三角形任意两个顶点组成的三个三角形面积相等，而重心到三条边的距离与三条边的长成反比。
@@ -495,7 +395,7 @@ $$
 根据奔驰定理，有三角形重心到其各个顶点向量之和为零。
 
 $$
-\vecc{GA}+\vecc{GB}+\vecc{GC}=\vec 0
+\vec{GA}+\vec{GB}+\vec{GC}=\vec 0
 $$
 
 特性：一个三角形的重心同时也是其中点三角形的重心，中位线证明。
@@ -508,18 +408,22 @@ $$
 
 特殊的，重心到三边距离之积最大、到三角形三个顶点距离的平方和最小。
 
-### 内心及其性质
+### 内心
+
+内心（Incenter）为三个内角的 **角平分线** 的交点，即 **内切圆** 的圆心。
+
+![](./assets/三角形の内心.png)
 
 内心为三角形内切圆圆心，因此为三个角的角平分线交点：
 
 $$
-\vecc{AI}=\lambda\left(\frac{\vecc{AB}}{|\vecc{AB}}+\frac{\vecc{AC}}{|\vecc{AC}|}\right)
+\vec{AI}=\lambda\left(\frac{\vec{AB}}{|\vec{AB}}+\frac{\vec{AC}}{|\vec{AC}|}\right)
 $$
 
 有奔驰定理的形式：
 
 $$
-\sin A\cdot\vecc{IA}+\sin B\cdot\vecc{IB}+\sin C\cdot\vecc{IC}=\vec 0
+\sin A\cdot\vec{IA}+\sin B\cdot\vec{IB}+\sin C\cdot\vec{IC}=\vec 0
 $$
 
 三角形的内心到边的距离（即内切圆的半径）与三边长及面积之间有关系：
@@ -530,18 +434,22 @@ $$
 
 可以连接内心与三顶点，等面积法求解。
 
-### 外心及其性质
+### 外心
+
+外心（Circumcenter）为三条边的 **中垂线** 的交点，即 **外接圆** 的圆心。
+
+![](./assets/三角形の外心.png)
 
 外心为三角形外接圆圆心，因此为三边中垂线交点，不一定在三角形内部，到三角形三点距离相等。
 
 $$
-\vecc{OA}^2=\vecc{OB}^2=\vecc{OC}^2
+\vec{OA}^2=\vec{OB}^2=\vec{OC}^2
 $$
 
 有奔驰定理的形式：
 
 $$
-\sin2A\cdot\vecc{OA}+\sin2B\cdot\vecc{OB}+\sin2C\cdot\vecc{OC}=\vec 0
+\sin2A\cdot\vec{OA}+\sin2B\cdot\vec{OB}+\sin2C\cdot\vec{OC}=\vec 0
 $$
 
 而，
@@ -576,29 +484,41 @@ $$
 
 联立上两式（相乘），直接展开易知等式成立。
 
-### 垂心及其性质
+### 垂心
+
+垂心（Orthocenter）为三条 **高线** 的交点。
+
+![](./assets/三角形の垂心.png)
 
 垂心是三角形三边垂线的交点，因此有点积为零。
 
 $$
-\vecc{HA}\cdot{BC}=\vecc{HB}\cdot\vecc{AC}=\vecc{HC}\cdot\vecc{AB}=0
+\vec{HA}\cdot{BC}=\vec{HB}\cdot\vec{AC}=\vec{HC}\cdot\vec{AB}=0
 $$
 
 两两整理，得到：
 
 $$
-\vecc{HA}\cdot\vecc{HB}=\vecc{HB}\cdot\vecc{HC}=\vecc{HC}\cdot\vecc{HA}
+\vec{HA}\cdot\vec{HB}=\vec{HB}\cdot\vec{HC}=\vec{HC}\cdot\vec{HA}
 $$
 
 有奔驰定理的形式：
 
 $$
-\tan A\cdot\vecc{HA}+\tan B\cdot\vecc{HB}+\tan C\cdot\vecc{HC}=\vec 0
+\tan A\cdot\vec{HA}+\tan B\cdot\vec{HB}+\tan C\cdot\vec{HC}=\vec 0
 $$
 
 而垂心到三角形一顶点距离等于此三角形外心到此顶点对边距离的 $2$ 倍。
 
 三角形外心 $O$、重心 $G$、垂心 $H$ 三点共线且 $OG:GH=1:2$ 此直线称为三角形的欧拉线。
+
+### 旁心
+
+除了四心之外，三角形还有旁心。
+
+旁心（Excenter）为外角的 **角平分线** 的交点，每个三角形有 $3$ 个旁心，分别为三角形某一边的 **旁切圆** 的圆心。
+
+![](./assets/三角形の傍心.png)
 
 ## 三角形三线
 
@@ -762,24 +682,75 @@ $$
 
 ## 面积公式
 
-### 海伦公式
-
-任意三角形面积可以表示为：
+基本公式（底 + 高）：
 
 $$
-\begin{aligned}
-  S&=\sqrt{p(p-a)(p-b)(p-c)} \\
-  p&={a+b+c\over2}
-\end{aligned}
+S=\frac{1}{2}ah_a=\frac{1}{2}bh_b=\frac{1}{2}ch_c
 $$
 
-即：
+两边 + 夹角：
 
 $$
-S=\frac14\sqrt{(a+b+c)(a+b-c)(a-b+c)(-a+b+c)}
+S=\frac{1}{2}ab\cos{\angle C}=\frac{1}{2}ac\cos{\angle B}=\frac{1}{2}bc\cos{\angle A}
 $$
 
-其中 $p$ 为三角形的半周长。
+海伦公式（三边）：
+
+$$
+S=\sqrt{s(s-a)(s-b)(s-c)}
+$$
+
+秦九昭公式（三边）：
+
+$$
+S=\sqrt{\frac{1}{4}\left(a^2c^2-\left(\frac{a^2+c^2-b^2}{2}\right)^2\right)}
+$$
+
+内切圆 + 三边：
+
+$$
+S=sr=\frac{1}{2}r(a+b+c)
+$$
+
+外接圆 + 边/角：
+
+$$
+S=\frac{abc}{4R}=2R^2\sin{\angle A}\sin{\angle B}\sin{\angle C}=\frac{1}{2}R^2(\sin{\angle 2A}+\sin{\angle 2B}+\sin{\angle 2C})
+$$
+
+三角 + 一边：
+
+$$
+S=\frac{a^2\sin{\angle B}\sin{\angle C}}{\sin{\angle A}}=\frac{b^2\sin{\angle A}\sin{\angle C}}{\sin{\angle B}}=\frac{c^2\sin{\angle A}\sin{\angle B}}{\sin{\angle C}}
+$$
+
+三边 + 一角：
+
+$$
+S=\frac{1}{4}(a^2+b^2-c^2)\tan{\angle C}=\frac{1}{4}(a^2+c^2-b^2)\tan{\angle B}=\frac{1}{4}(b^2+c^2-a^2)\tan{\angle A}
+$$
+
+$$
+S=s(s-a)\tan{\frac{\angle A}{2}}=s(s-b)\tan{\frac{\angle B}{2}}=s(s-c)\tan{\frac{\angle C}{2}}
+$$
+
+两边 + 两角：
+
+$$
+S=\frac{1}{4}a^2\sin{2\angle B}+\frac{1}{4}b^2\sin{2\angle A}=\frac{1}{4}a^2\sin{2\angle C}+\frac{1}{4}c^2\sin{2\angle A}=\frac{1}{4}b^2\sin{2\angle C}+\frac{1}{4}c^2\sin{2\angle B}
+$$
+
+向量：
+
+$$
+S=\frac{1}{2}\left|\overrightarrow{AB}\times\overrightarrow{AC}\right|=\frac{1}{2}\left|\overrightarrow{BA}\times\overrightarrow{BC}\right|=\frac{1}{2}\left|\overrightarrow{CA}\times\overrightarrow{CB}\right|
+$$
+
+等边三角形：
+
+$$
+S=\frac{\sqrt 3}{4}a^2
+$$
 
 ### 布雷特施奈德公式
 
