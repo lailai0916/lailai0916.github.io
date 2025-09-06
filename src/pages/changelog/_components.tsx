@@ -26,11 +26,10 @@ function MarkdownText({ text }: { text: string }) {
 
 export function Changelog() {
   const { i18n } = useDocusaurusContext();
-  const locale = i18n?.currentLocale ?? 'zh-CN';
 
   const monthFmt = useMemo(
-    () => new Intl.DateTimeFormat(locale, { month: 'long' }),
-    [locale]
+    () => new Intl.DateTimeFormat(i18n.currentLocale, { month: 'long' }),
+    [i18n.currentLocale]
   );
 
   const grouped = useMemo(() => {
@@ -44,14 +43,13 @@ export function Changelog() {
       map[year][month].push(item);
     }
     return Object.keys(map)
-      .sort((a, b) => b.localeCompare(a)) // 年份降序
+      .sort((a, b) => b.localeCompare(a))
       .map((year) => ({
         year,
         months: Object.keys(map[year])
-          .sort((a, b) => b.localeCompare(a)) // 月份降序
+          .sort((a, b) => b.localeCompare(a))
           .map((m) => ({
             month: m,
-            // 同月内再按日期降序，确保稳态
             items: [...map[year][m]].sort((a, b) =>
               b.date.localeCompare(a.date)
             ),
@@ -59,7 +57,7 @@ export function Changelog() {
       }));
   }, []);
 
-  if (!grouped.length) return <p className="text--secondary">暂无更新日志</p>;
+  if (!grouped.length) return <p>暂无更新日志</p>;
 
   return (
     <div>
