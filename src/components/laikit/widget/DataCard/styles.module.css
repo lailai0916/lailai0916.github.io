@@ -69,7 +69,6 @@ html[data-theme='dark'] .statIcon {
 }
 
 @media (max-width: 768px) {
-
   .statsGrid {
     flex-direction: column;
     gap: 1rem;

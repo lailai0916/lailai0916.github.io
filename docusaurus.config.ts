@@ -179,11 +179,6 @@ const config: Config = {
               href: 'https://www.linkedin.com/in/lailai0916',
             },
             { label: 'GitHub', href: 'https://github.com/lailai0916' },
-            // Travelling Temp
-            {
-              href: 'https://www.travellings.cn/go.html',
-              label: 'Travelling',
-            },
           ],
         },
         {
@@ -193,6 +188,26 @@ const config: Config = {
             { label: 'Sitemap', to: '/sitemap' },
             { label: 'Privacy Policy', to: '/privacy' },
             { label: 'Changelog', to: '/changelog' },
+          ],
+        },
+        {
+          title: 'More',
+          items: [
+            { label: "lailai's Status", href: 'https://status.lailai.one' },
+            {
+              label: "lailai's Analytics",
+              href: 'https://analytics.lailai.one/share/DDd09iBEYOQw2k9L',
+            },
+            {
+              label: "lailai's Cloud",
+              href: 'https://cloud.lailai.one',
+            },
+            { label: "lailai's AI", href: 'https://ai.lailai.one' },
+            // Travelling Temp
+            {
+              href: 'https://www.travellings.cn/go.html',
+              label: 'Travelling',
+            },
           ],
         },
       ],
