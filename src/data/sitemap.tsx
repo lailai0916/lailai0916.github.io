@@ -203,7 +203,7 @@ export const SITEMAP_LIST: SitemapCategoryItem[] = [
           id: 'data.sitemap.more.analytics',
           message: "lailai's Analytics",
         }),
-        href: 'https://analytics.lailai.one',
+        href: 'https://analytics.lailai.one/share/DDd09iBEYOQw2k9L',
       },
       {
         title: translate({
