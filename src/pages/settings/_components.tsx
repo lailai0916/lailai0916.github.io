@@ -295,6 +295,7 @@ export function QuickActions() {
           key={option.key}
           className={styles.button}
           onClick={option.onClick}
+          data-umami-event={option.key === 'confetti' ? 'surprise' : undefined}
         >
           <IconText icon={option.icon} colorMode="monochrome">
             {option.label}
