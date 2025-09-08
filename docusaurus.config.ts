@@ -133,6 +133,12 @@ const config: Config = {
           label: 'Project',
         },
         { label: 'Blog', to: '/blog', position: 'left' },
+        // Travelling Temp
+        {
+          href: 'https://www.travellings.cn/go.html',
+          position: 'left',
+          label: 'Travelling',
+        },
         {
           label: 'More',
           position: 'right',
@@ -173,6 +179,11 @@ const config: Config = {
               href: 'https://www.linkedin.com/in/lailai0916',
             },
             { label: 'GitHub', href: 'https://github.com/lailai0916' },
+            // Travelling Temp
+            {
+              href: 'https://www.travellings.cn/go.html',
+              label: 'Travelling',
+            },
           ],
         },
         {

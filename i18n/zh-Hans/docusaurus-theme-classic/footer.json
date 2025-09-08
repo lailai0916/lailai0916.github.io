@@ -62,5 +62,10 @@
   "copyright": {
     "message": "版权所有 © 2022-2025 lailai，使用 <a href=\"https://docusaurus.io\" target=\"_blank\">Docusaurus</a> 构建。<br />本网站内容遵循 <a href=\"https://creativecommons.org/licenses/by/4.0/\">知识共享署名 4.0 国际许可协议</a><img src=\"https://mirrors.creativecommons.org/presskit/icons/cc.svg\" alt=\"\" style=\"max-width: 1em;max-height:1em;margin-left: .2em;\"><img src=\"https://mirrors.creativecommons.org/presskit/icons/by.svg\" alt=\"\" style=\"max-width: 1em;max-height:1em;margin-left: .2em;\">",
     "description": "The footer copyright"
+  },
+  
+  "link.item.label.Travelling": {
+    "message": "开往",
+    "description": "The label of footer link with label=Travelling linking to https://www.travellings.cn/go.html"
   }
 }

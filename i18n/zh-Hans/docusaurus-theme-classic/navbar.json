@@ -42,5 +42,9 @@
   "item.label.Resources": {
     "message": "资源",
     "description": "Navbar item with label Resources"
+  },
+  "item.label.Travelling": {
+    "message": "开往",
+    "description": "Navbar item with label Travelling"
   }
 }
