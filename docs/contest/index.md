@@ -19,14 +19,14 @@ sidebar_position: 0
 
 ## 比赛倒计时
 
-export const today = new Date().toISOString().split("T")[0];
+export const date = new Date().toISOString().split("T")[0];
 export const daysUntil = (target) => Math.ceil((new Date(target) - new Date()) / 86400000);
 
-今天是 **{today}**：
+今天是 **{date}**：
 
-- 距离 **CSP-J/S 2025 第一轮** 还有 {daysUntil('2025-09-20')} 天
-- 距离 **CSP-J/S 2025 第二轮** 还有 {daysUntil('2025-11-01')} 天
-- 距离 **NOIP 2025** 还有 {daysUntil('2025-11-29')} 天
+- 距离 **CSP-J/S 2025 第一轮** 还有 **{daysUntil('2025-09-20')}** 天
+- 距离 **CSP-J/S 2025 第二轮** 还有 **{daysUntil('2025-11-01')}** 天
+- 距离 **NOIP 2025** 还有 **{daysUntil('2025-11-29')}** 天
 
 ## 知识点
 
