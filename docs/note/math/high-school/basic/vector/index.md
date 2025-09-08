@@ -312,7 +312,7 @@ $$
 \bm a\perp(\bm b-\bm c)
 $$
 
-我们可以发现，
+不难发现，
 
 $$
 |\bm a+\bm b|^2-|\bm a-\bm b|^2=4\bm a\cdot\bm b
