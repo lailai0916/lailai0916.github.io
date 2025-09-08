@@ -40,7 +40,7 @@ export const daysUntil = (target) => Math.ceil((new Date(target) - new Date()) /
 
 ### 动态规划
 
-记忆化搜索、线性 DP、背包 DP（0-1 背包、完全背包、多重背包、混合背包、分组背包、二进制分组优化）、区间 DP、DAG上的 DP、树形 DP、状压 DP、数位 DP、插头 DP、计数 DP、动态 DP、概率 DP、斜率优化、四边形不等式优化
+记忆化搜索、线性 DP、背包 DP（0-1 背包、完全背包、多重背包、混合背包、分组背包、二进制分组优化）、区间 DP、DAG上的 DP、树形 DP、状压 DP、数位 DP、插头 DP、计数 DP、动态 DP、概率 DP、DP 优化（斜率优化、四边形不等式优化）
 
 ### 字符串
 
@@ -64,7 +64,7 @@ export const daysUntil = (target) => Math.ceil((new Date(target) - new Date()) /
 
 ### 杂项
 
-双指针、RMQ（Range Minimum Query）、离散化、双指针、莫队算法、CDQ 分治、整体二分、随机化（爬山算法、模拟退火）、Garsia–Wachs 算法、珂朵莉树（ODT）
+双指针、RMQ（Range Minimum Query）、离散化、双指针、莫队算法（普通莫队、带修改莫队、树上莫队、回滚莫队、二维莫队、莫队二次离线）、CDQ 分治、整体二分、随机化（爬山算法、模拟退火）、Garsia–Wachs 算法、珂朵莉树（ODT）
 
 ## 目录
 
