@@ -127,7 +127,11 @@ export function ColorGenerator() {
               .join(', ')})`,
           }}
         />
-        <button className={styles.resetButton} onClick={resetColors}>
+        <button
+          className={styles.resetButton}
+          onClick={resetColors}
+          data-umami-event="reset"
+        >
           {translate({
             id: 'pages.settings.item.color.reset',
             message: 'Reset',
