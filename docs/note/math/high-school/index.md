@@ -1,10 +1,15 @@
 # 高中数学
 
-本章记录我的高中数学笔记。
+本章是我的高中数学笔记。
 
 各种数学教材中的定义通常非常严谨，但也显得晦涩难懂，不易理解。
 
+![](/img/notbyai/Written-By-Human-Not-By-AI-Badge-white.svg#gh-light-mode-only)
+![](/img/notbyai/Written-By-Human-Not-By-AI-Badge-black.svg#gh-dark-mode-only)
+
 ## 教材
+
+### 分类
 
 人教版高中数学教材分为 A 版和 B 版：
 
@@ -12,6 +17,14 @@
 - B 版包含 4 册必修和 3 册选修（选择性必修）。
 
 浙江通常使用 A 版教材，因此我的笔记基于 A 版。
+
+### 资源
+
+GitHub 上的开源仓库 TapXWorld/ChinaTextbook 收录了几乎所有小学、初中、高中和大学教材的 PDF 下载。
+
+<GitHub repo="TapXWorld/ChinaTextbook" />
+
+如果你无法访问 GitHub，也可以到 [人民教育出版社](https://jc.pep.com.cn) 或 [国家中小学智慧教育平台](https://basic.smartedu.cn/tchMaterial) 在线预览。
 
 ## A 版
 
