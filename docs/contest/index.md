@@ -28,6 +28,10 @@ export const daysUntil = (target) => Math.ceil((new Date(target) - new Date()) /
 - 距离 **CSP-J/S 2025 第二轮** 还有 **{daysUntil('2025-11-01')}** 天
 - 距离 **NOIP 2025** 还有 **{daysUntil('2025-11-29')}** 天
 
+## 目录
+
+<DocCardList />
+
 ## 知识点
 
 ### 算法基础
@@ -65,7 +69,3 @@ export const daysUntil = (target) => Math.ceil((new Date(target) - new Date()) /
 ### 杂项
 
 双指针、RMQ（Range Minimum Query）、离散化、双指针、莫队算法（普通莫队、带修改莫队、树上莫队、回滚莫队、二维莫队、莫队二次离线）、CDQ 分治、整体二分、随机化（爬山算法、模拟退火）、Garsia–Wachs 算法、珂朵莉树（ODT）
-
-## 目录
-
-<DocCardList />
