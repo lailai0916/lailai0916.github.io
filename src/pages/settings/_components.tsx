@@ -269,7 +269,7 @@ export function QuickActions() {
 
   const quickActionOptions = [
     {
-      key: 'confetti' as const,
+      key: 'surprise' as const,
       label: translate({
         id: 'pages.settings.item.quickactions.option.confetti',
         message: 'Surprise Me',
@@ -295,7 +295,7 @@ export function QuickActions() {
           key={option.key}
           className={styles.button}
           onClick={option.onClick}
-          data-umami-event={option.key === 'confetti' ? 'surprise' : undefined}
+          data-umami-event={option.key === 'surprise' && 'surprise'}
         >
           <IconText icon={option.icon} colorMode="monochrome">
             {option.label}
