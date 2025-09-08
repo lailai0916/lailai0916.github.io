@@ -15,6 +15,11 @@ export const CHANGELOG_LIST: ChangelogItem[] = [
     content: '网站建立',
   },
   {
+    date: '2025-08-13',
+    type: 'added',
+    content: 'KaTeX 复制优化插件：copy-tex',
+  },
+  {
     date: '2025-09-01',
     type: 'added',
     content: '示例告示框组件：`example`',
