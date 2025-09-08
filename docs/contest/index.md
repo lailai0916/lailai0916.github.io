@@ -17,7 +17,7 @@ sidebar_position: 0
 - [算法 - 维基百科](https://zh.wikipedia.org/zh-cn/算法)
 - [cppreference.com](https://zh.cppreference.com/w/首页)
 
-## 比赛倒计时
+## 倒计时
 
 export const date = new Date().toISOString().split("T")[0];
 export const daysUntil = (target) => Math.ceil((new Date(target) - new Date()) / 86400000);
