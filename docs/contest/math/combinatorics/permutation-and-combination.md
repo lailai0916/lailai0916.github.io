@@ -28,20 +28,6 @@ void init()
 }
 ```
 
-### 排列
-
-$$
-A_{n}^{m}=\frac{n!}{(n-m)!}
-$$
-
-```cpp
-ll A(ll n,ll m)
-{
-	if(n<m||m<0)return 0;
-	return fac[n]*jv[n-m]%mod;
-}
-```
-
 ### 组合
 
 $$
@@ -53,6 +39,20 @@ ll C(ll n,ll m)
 {
 	if(n<m||m<0)return 0;
 	return fac[n]*jv[n-m]%mod*jv[m]%mod;
+}
+```
+
+### 排列
+
+$$
+A_{n}^{m}=\frac{n!}{(n-m)!}
+$$
+
+```cpp
+ll A(ll n,ll m)
+{
+	if(n<m||m<0)return 0;
+	return fac[n]*jv[n-m]%mod;
 }
 ```
 

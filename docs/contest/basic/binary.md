@@ -5,7 +5,7 @@
 - [二分 - OI Wiki](https://oi-wiki.org/basic/binary/)
 - [整数范围二分的正确写法 - bilibili](https://www.bilibili.com/video/BV1np421o77o)
 
-## 二分法
+## 二分
 
 <Tabs>
 <TabItem value="整数">
@@ -44,7 +44,7 @@ while(r-l>eps)
 
 :::
 
-## 三分法
+## 三分
 
 ```cpp
 double l=x,r=y;

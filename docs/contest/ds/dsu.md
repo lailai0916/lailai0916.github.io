@@ -15,7 +15,7 @@ struct DSU
 	int find(int u){return u==fa[u]?u:fa[u]=find(fa[u]);}
 	void merge(int u,int v){fa[find(u)]=find(v);}
     bool query(int u,int v){return find(u)==find(v);}
-}dsu;
+};
 ```
 
 ## 例题
