@@ -1,0 +1,3711 @@
+# 高考词汇
+
+高考英语 3500 单词
+
+## 1. A
+
+- a：art. 一（个、件……）
+- abandon：v. 抛弃，舍弃，放弃
+- ability：n. 能力；才能
+- able：adj. 能够；有能力的
+- abnormal：adj. 反常的
+- aboard：prep. 上（船，飞机，火车，汽车等）
+- abolish：v. 废除，废止
+- abortion：v. 人工流产，堕胎
+- about：adv. 大约；到处；四处prep. 关于；在各处；四处
+- above：prep. 在……上面adj. 上面的adv. 在……之上
+- abroad：adv. 到（在）国外
+- abrupt：adj. 突然的，意外的
+- absence：n. 不在，缺席
+- absent：adj. 缺席的，不在的
+- absolute：adj. 完全的，绝对的
+- absorb：v. 吸收，使全神贯注
+- abstract：adj. / n. 抽象的（作品）
+- absurd：adj. 荒谬的，怪诞不经的
+- abundant：adj. 大量的，丰盛的，充裕的
+- abuse：v. 滥用，虐待，辱骂
+- academic：adj. / n. 学术的，教学的
+- academy：n. 学院，学会，（美）私立学校
+- accelerate：v. （使）加速，加快
+- accent：n. 口音，音调
+- accept：vt. 接受
+- acceptable：adj. 可以接受的
+- access：n. / v. 接近（的机会），使用之权，通道、
+- accessible：adj. 可得到的，易接近的，可进入的
+- accident：n. 事故，意外的事
+- accommodation：n. 住宿，膳宿
+- accompany：v. 陪同，陪伴
+- accomplish：v. 完成，实现
+- according：adv. 按照，根据
+- account：n. 账户，账目；描述
+- accountant：n. 会计，会计师
+- accumulate：v. 积累，积聚
+- accuracy：n. 准确，精确
+- accurate：adj. 准确的；精确的
+- accuse：v. 指控，控告；指责
+- accustomed：adj. 习惯的，惯常的
+- ache：vi. & n. 痛，疼痛
+- achieve：vt. 达到，取得
+- achievement：n. 成就，成绩，功绩
+- acid：adj. 酸的
+- acknowledge：v. 承认，答谢
+- acquaintance：n. 熟人，（与某人）认识
+- acquire：v. 获得，得到
+- acquisition：n. 获得，得到
+- acre：n. 英亩
+- across：prep. 横过，穿过
+- act：n. 法令，条例v. （戏）表演，扮演（角色），演出（戏）；行动，做事
+- action：n. 行动
+- active：adj. 积极的，主动的
+- activity：n. 活动
+- actor：n. 男演员
+- actress：n. 女演员
+- actual：adj. 实际的；现实的
+- acute：adj. 敏锐的，急性的，剧烈的
+- AD：n. 公元
+- ad：=n. 广告
+- adapt：v. 使适应，适合，改编
+- adaptation：n. 适应，改编本
+- add：vt. 添加，增加
+- addition：n. 增加；（算数用语）加
+- addicted：adj. 上瘾，成瘾，入迷
+- address：n. / v. 地址，发表演说
+- adequate：adj. 足够的，适当的，能胜任的
+- adjust：v. 调整，调节，适应，习惯
+- adjustment：n. 调整，适应
+- administration：n. 管理，行政部门
+- admirable：adj. 值得赞赏的，可钦佩的
+- admire：v. 钦佩；羡慕
+- admission：n. 准入，接纳
+- admit：vt. 承认，准许（入场，入学，入会）
+- adolescence：n. 青春，青春期
+- adolescent：n. 青少年
+- adopt：v. 收养，领养；采取
+- adore：v. （不用于进行时）热爱，爱慕某人
+- adult：n. 成年人
+- advance：v. 推进，促进；前进
+- advantage：n. 优点；好处
+- adventure：n. 冒险；奇遇
+- advertise：vt. 为……做广告
+- advertisement：n. 广告
+- advice：n. 忠告，劝告，建议
+- advise：vt. 忠告，劝告，建议
+- advocate：v. 拥护，支持，提倡
+- affair：n. 事，事情
+- affect：vt. 影响
+- affection：n. 喜爱，感情
+- afford：vt. 花费得起，能够做，承担得起（后果）
+- afraid：adj. 害怕的；担心的
+- Africa：n. 非洲
+- African：adj. 非洲的，非洲人的n. 非洲人
+- after：adv. 在后；后来prep. 在…之后；在后面conj. 在…以后
+- afternoon：n. 下午，午后
+- afterward：adv. 后来
+- again：adv. 再一次；再，又
+- against：prep. 对着，反对
+- age：n. 年龄；时代
+- agency：n. 代理机构
+- agent：n. 代理人，经济人
+- agenda：n. （会议）议程表，议事日程
+- aggression：n. 侵略
+- aggressive：adj. 侵略的；咄咄逼人
+- ago：adv. 以前
+- agree：v. 同意；应允
+- agreement：n. 同意，一致；协定，协议
+- agricultural：adj. 农业的
+- agriculture：n. 农业，农学
+- ahead：adv. 在前，向前
+- aid：n. 援助；救护；辅助器具
+- AIDS：n. 艾滋病
+- aim：n. 目的；目标v. 计划，打算；瞄准；针对
+- air：n. 空气；大气
+- aircraft：n. 飞机（单复数同）
+- airline：n. 航空公司；航空系统
+- airmail：n. 航空邮件
+- airplane：n. （美）飞机
+- airport：n. 航空站，飞机场
+- airspace：n. 领空，（某国的）空域
+- alarm：n. 警报
+- album：n. 相册，影集，集邮簿
+- alcohol：n. 含酒精饮料，酒
+- alcoholic：adj. / n. 含酒精的，酒鬼
+- algebra：n. 代数
+- alike：adv. 很相似地，同样地
+- alive：adj. 活着的，存在的
+- all：adv. 全部地adj. 全（部）；所有的；总；整pron. 全部；全体人员
+- allergic：adj. 过敏的，厌恶的
+- alley：n. 小巷，胡同
+- allocate：v. 拨给，划归，分配…给
+- allow：vt. 允许，准许
+- allowance：n. 津贴，补助
+- almost：adv. 几乎，差不多
+- alone：adj. 单独的，孤独的
+- along：adv. 向前；和…一起；一同prep. 沿着；顺着
+- alongside：adv. 在…旁边，与…同时
+- aloud：adv. 大声地
+- alphabet：n. 字母表，字母
+- already：adv. 已经
+- also：adv. 也
+- alternative：adj. 两者择一的，供选择的
+- although：conj. 虽然，尽管
+- altitude：n. 海拔，高度
+- altogether：adv. 总共
+- aluminium：n. （化）铝
+- always：adv. 总是；一直；永远
+- amateur：adj. 业余的；外行的
+- amaze：v. 惊奇，惊叹
+- amazing：adj. 惊奇的，惊叹的
+- ambassador：n. 大使
+- ambiguous：adj. 模棱两可的
+- ambition：n. 目标，野心，雄心，抱负
+- ambulance：n. 救护车
+- America：n. 美国；美洲
+- American：adj. 美国的；美国人的n. 美国人
+- among：prep. 在…中间；在（三个以上）之间
+- amount：n. / v. 金额，数量，总计
+- ample：adj. 足够的，丰裕的
+- amuse：vt. （使人）快乐，逗乐
+- amusement：n. 娱乐
+- analyse：v. 分析
+- analysis：n. 分析，分析结果
+- ancestor：n. 祖宗；祖先
+- anchor：v. / n. 锚，抛锚
+- ancient：adj. 古代的，古老的
+- and：conj. 和；又；而
+- anecdote：n. 逸事，趣闻
+- anger：n. 怒，愤怒
+- angle：n. 角度
+- angry：adj. 生气的，愤怒的
+- animal：n. 动物
+- ankle：n. 踝，踝关节
+- anniversary：n. 周年纪念日
+- announce：vt. 宣布，宣告
+- announcement：n. 通告，宣布
+- annoy：vt. （使）烦恼
+- annual：adj. 每年的，年度的，一年一次的
+- another：adj. 再一；另一；别的；不同的pron. 另一个
+- answer：n. 回答，答复；回信；答案v. 回答，答复；回信；（作出）答案
+- ant：n. 蚂蚁
+- Antarctic：adj. 南极的
+- antique：n. 古董
+- anxiety：n. 担忧，焦虑
+- anxious：adj. 忧虑的，焦急的
+- any：pron. （无论）哪一个；哪些任何的；（用于疑问句、否定句）一些；什么
+- anybody：pron. 任何人，无论谁
+- anyhow：adv. 不管怎样
+- anyone：pron. 任何人，无论谁
+- anything：pron. 什么事（物）；任何事（物）
+- anyway：adv. 不管怎样
+- anywhere：adv. 任何地方
+- apart：ad， / adj. 相隔，相距，除外
+- apartment：n. （美）楼中单元房，一套房间；房间
+- apologize：vi. 道歉，谢罪
+- apology：n. 道歉；歉意
+- apparent：adj. 显而易见的
+- appeal：v. 恳求，呼吁，吸引力
+- appear：vi. 出现
+- appearance：n. 出现，露面；容貌
+- appendix：n. 附录，阑尾
+- appetite：n. 食欲，胃口，爱好
+- applaud：v. / n. 鼓掌，赞许，赞赏
+- apple：n. 苹果
+- applicant：n. 申请人
+- application：n. 申请
+- apply：v. 申请
+- appoint：v. 任命，委任，安排，确定（时间，地点）
+- appointment：n. 约会
+- appreciate：v. 欣赏；感激
+- appreciation：n. 欣赏；感激
+- approach：n. / v. 靠近，接近，途径，方法
+- appropriate：adj. 合适的，恰当的
+- approve：v. 赞成，同意，批准，通过
+- approximately：adv. 近似，大约
+- apron：n. 围裙，（机场的）停机坪
+- arbitrary：adj. 随心所欲的，独裁的，专断的
+- arch：n. 拱，拱门
+- architect：n. 建筑师，设计师
+- architecture：n. 建筑学，建筑设计，风格
+- Arctic：adj. 北极的
+- are：v. （be）是
+- area：n. 面积；地域，地方，区域；范围，领域
+- argue：vi. 争辩，争论
+- argument：n. 争论，辩论
+- arise：vi. 起来，升起；出现
+- arm：n. 臂，支架v. 以…装备，武装起来n. （美）武器，武力
+- armchair：n. 扶手椅
+- army：n. 军队
+- around：adv. 在周围；在附近prep. 在……周围；大约
+- arrange：v. 安排，布置
+- arrangement：n. 安排，布置
+- arrest：v. 逮捕，拘留
+- arrival：n. 到来，到达
+- arrive：vi. 到达；达到
+- arrow：n. 箭；箭头
+- art：n. 艺术，美术；技艺
+- article：n. 文章；东西，物品；冠词
+- artificial：adj. 人工的，人造的
+- artist：n. 艺术家
+- as：adv. & conj. 像……一样；如同；因为prep. 作为，当做
+- ash：n. 灰；灰末
+- ashamed：adj. 惭愧；害臊
+- Asia：n. 亚洲
+- Asian：adj. 亚洲（人）的n. 亚洲人
+- aside：adv. 在旁边
+- ask：v. 问；请求，要求；邀请
+- asleep：adj. 睡着的，熟睡的
+- aspect：n. 方面，外观
+- assess：v. 评价，评定
+- assessment：n. 估价；评价
+- assignment：n. 分配，任务，作业
+- assist：v. 帮助，协助
+- assistance：n. 帮助，援助，支持
+- assistant：n. 助手，助理
+- associate：v. 联想，联系
+- association：n. 协会，社团，联系
+- assume：v. 假定，假设
+- assumption：n. 假定，假设
+- astonish：vt. 使惊讶
+- astronaut：n. 宇航员
+- astronomer：n. 天文学家
+- astronomy：n. 天文学
+- at：prep. 在（几点钟）；在（某处）
+- athlete：n. 运动员
+- athletic：adj. 健壮的，体育运动的
+- Atlantic：adj. 大西洋的
+- atmosphere：n. 大气；气氛
+- atom：n. 原子，微粒
+- attach：v. 把…固定，重视
+- attack：vt. / n. 攻击，袭击
+- attain：v. （经过努力）获得，得到
+- attempt：vt. 试图，尝试
+- attend：v. 看护，照料，服侍；出席，参加
+- attention：n. 注意，关心
+- attitude：n. 态度，看法
+- attract：v. 吸引，引起
+- attraction：n. 吸引，爱慕
+- attractive：adj. 迷人的，有吸引力的
+- audience：n. 观众，听众
+- authentic：adj. 真正的，真品的
+- author：n. 作者，作家
+- authority：n. 权力，权威，威信，官方
+- automatic：adj. 自动的，机械的
+- autonomous：adj. 自治的，自主的
+- August：n. 8月
+- aunt：n. 伯母；舅母；婶；姑；姨
+- Australia：n. 澳洲；澳大利亚
+- Australian：adj. 澳洲的，澳大利亚人的n. 澳大利亚人
+- autumn：n. 秋天，秋季
+- available：adj. 可获得的，有空的
+- avenue：n. 大道
+- average：adj. 平均；普通的n. 平均数
+- avoid：v. 避免，躲开，逃避
+- awake：v. 唤醒adj. 醒着的
+- award：n. 奖品，奖励
+- aware：adj. 知道，意识到，发觉
+- away：adv. 离开；远离
+- awesome：adj. 可怕的，表示敬畏的
+- awful：adj. 糟糕的，可怕的，充满敬畏的
+- awkward：adj. 令人尴尬，使人难堪的
+
+## 2. B
+
+- baby：n. 婴儿
+- bachelor：n. 未婚男子，单身汉
+- back：adv. 回（原处）；向后adj. 后面的n. 背后，后部；背
+- background：n. 背景
+- backward：adv. 向后
+- bacon：n. 咸猪肉；熏猪肉
+- bad：adj. 坏的；有害的，不利的；严重的
+- bag：n. 书包；提包；袋子
+- baggage：n. 行李
+- bake：v. 烤；烘（面包）
+- bakery：n. 面包店
+- balance：n. 平衡
+- balcony：n. 阳台；楼座
+- ball：n. 球n. 舞会
+- ballet：n. 芭蕾舞
+- balloon：n. 气球
+- bamboo：n. 竹
+- ban：n. 禁令v. 禁止；取缔
+- banana：n. 香蕉
+- band：n. 乐队
+- bandage：n. 绷带
+- bank：n. （河海湖的）岸，堤n. 银行
+- bar：n. 条（长方）块，棒，横木n. （酒店的）买酒柜台；酒吧；（卖东西的）柜台
+- barbecue：n. 烤肉野餐
+- barber：n. （为男人理发）理发师
+- bare：adj. 裸露的，光秃秃的
+- bargain：n. （经讨价还价后）成交的商品；廉价货v. 讨价还价
+- bark：v. 狗叫n. 狗叫声
+- barrier：n. 屏障，障碍，关卡
+- base：n. 根据地，基地（棒球）垒
+- baseball：n. 棒球
+- basement：n. 地下室
+- basic：adj. 基本的
+- basin：n. 水盆，脸盆
+- basis：n. 原因，缘由，要素
+- basket：n. 篮子
+- basketball：n. 篮球
+- bat：n. （棒球、板球的）球棒n. 蝙蝠
+- bath：n. 洗澡；浴室；澡盆
+- bathe：vi. 洗澡；游泳
+- bathrobe：n. 浴衣
+- bathroom：n. 浴室，盥洗室
+- bathtub：n. 澡盆
+- battery：n. 电池
+- battle：n. 战斗；战役
+- bay：n. 湾；海湾
+- BC：n. 公元前
+- be：v. 是（原形），其人称和时态形式有（am，is，are，was，were，being，been）；成为
+- beach：n. 海滨，海滩
+- bean：n. 豆，豆科植物
+- beancurd：n. 豆腐
+- bear：v. 承受，负担，承担；忍受；容忍n. 熊
+- beard：n. （下巴上的）胡须
+- beast：n. 野兽；牲畜
+- beat：v. 敲打；跳动；打赢n. （音乐）节拍
+- beautiful：adj. 美，美丽，美观的
+- beauty：n. 美丽，美人
+- because：conj. 因为
+- become：v. 变得；成为
+- bed：n. 床
+- beddings：n. 卧具，铺盖
+- bedroom：n. 寝室，卧室
+- bee：n. 蜜蜂
+- beef：n. 牛肉
+- beer：n. 啤酒
+- before：prep. 在…以前；在…前面adv. 以前conj. 在…之前
+- beg：v. 请求，乞求，乞讨
+- begin：v. 开始，着手
+- beginning：n. 开始，开端
+- behalf：n. 代表某人，为了某人
+- behave：v. 守规矩，行为
+- behaviour：n. 行为，举止
+- behind：prep. （表示位置）在…后面adv. 在后面；向后
+- being：n. 物；生物；人
+- Belgium：n. 比利时
+- belief：n. 信条，信念
+- believe：v. 相信，认为
+- bell：n. 钟，铃；钟（铃）声；钟形物
+- belly：n. 肚子
+- belong：vi. 属，附属
+- below：prep. 在……下面
+- belt：n. （皮）带
+- bench：n. 长凳；工作台
+- bend：vt. 使弯曲
+- beneath：prep. 在…下方（面）
+- beneficial：adj. 有利的，有帮助的，有用的
+- benefit：n. / v. 优势，益处，使…受益
+- beside：prep. 在…旁边；靠近
+- besides：prep. 除…以外（还有）adv. 还有，此外
+- betray：v. 出卖，泄露（机密），辜负
+- between：prep. 在（两者）之间；在…中间
+- beyond：prep. （表示位置）在…的那边
+- bicycle：n. 自行车
+- bid：v. / n. 出价，投标，向（某人）道别
+- big：adj. 大的
+- bike：n. 自行车
+- bill：n. 账单；法案，议案；（美）钞票，纸币
+- biology：n. 生物（学）
+- bird：n. 鸟
+- birth：n. 出生；诞生
+- birthday：n. 生日
+- birthplace：n. 出生地；故乡
+- biscuit：n. 饼干
+- bit：n. 一点，一些，少量的
+- bite：v. 咬；叮
+- bitter：adj. 有苦味的；痛苦的，难过的；严酷的
+- black：n. 黑色adj. 黑色的
+- blackboard：n. 黑板
+- blame：n. & v. 责备；责怪
+- blank：n. & adj. 空格，空白（处）；空的；茫然无表情的
+- blanket：n. 毛毯，毯子
+- bleed：vi. 出血，流血
+- bless：vt. 保佑，降福
+- blind：adj. 瞎的
+- block：n. 大块；（木、石等）块；街区；路障vt. 阻塞；阻挡
+- blonde：adj. 头发金黄色的n. 金发碧眼的女人
+- blood：n. 血，血液
+- blouse：n. 宽罩衫；（妇女、儿童穿的）短上衣
+- blow：n. 击；打击
+- blow：v. 吹；刮风；吹气
+- blue：n. 蓝色adj. 蓝色的adj. 悲伤的；沮丧的
+- board：n. 木板；布告牌；委员会；（政府的）部v. 上（船、火车、飞机）
+- boat：n. 小船，小舟
+- body：n. 身体
+- boil：v. 沸腾；烧开；煮……
+- bomb：n. 炸弹v. 轰炸
+- bond：n. / v. 纽带，联系，使牢固
+- bone：n. 骨头，骨质（复数bones骨骼；骨骸）
+- bonus：n. 津贴，奖金，红利
+- book：n. 书；本子v. 预定，定（房间、车票等）
+- booklet：n. 小册子
+- boom：n. / v. 繁荣，轰鸣，激增
+- boot：n. 长统靴；靴
+- border：n. 边缘；边境，国界
+- bored： / bɔ / adj. （对人，事）厌倦的，烦闷的
+- boring： / `bɔrɪŋ / adj. 乏味的，无聊的
+- born：adj. 出生
+- borrow：v. （向别人）借用；借
+- boss：n. 领班；老板
+- both：adj. 两；双pron. 两者；双方
+- bother：vt. 烦扰，打扰vi. 烦恼，操心n. 麻烦，烦扰
+- bottle：n. 瓶子
+- bottom：n. 底部；底
+- bounce：v. 弹起，蹦，上下晃动
+- boundary：n. 边界，界限
+- bow：v. & n. 鞠躬，弯腰行礼
+- bowl：n. 碗
+- bowling：n. 保龄球
+- box：n. 盒子，箱子
+- boxing：n. 拳击（运动）
+- boy：n. 男孩
+- boycott：v. 拒绝购买，抵制
+- brain：n. 脑（子）
+- brake：n. 闸vi. 刹车
+- branch：n. 树枝；分枝；分公司，分店；支部
+- brand：n. 品牌
+- brave：adj. 勇敢的
+- bravery：n. 勇气
+- bread：n. 面包
+- break：n. 间隙
+- break：v. 打破（断，碎）；损坏，撕开
+- breakfast：n. 早餐
+- breakthrough：n. 重大进展，突破
+- breast：n. 乳房，胸脯
+- breath：n. 气息；呼吸
+- breathe：vi. 呼吸
+- breathless：adj. 气喘吁吁的，上气不接下气的
+- brick：n. 砖；砖块
+- bride：n. 新娘
+- bridegroom：n. 新郎
+- bridge：n. 桥
+- brief：adj. 简洁的
+- bright：adj. 明亮的；聪明的
+- brilliant：adj. 巧妙的，使人印象深刻的，技艺高的
+- bring：vt. 拿来，带来，取来
+- broad：adj. 宽的，宽大的
+- broadcast：vt. 广播
+- broken：adj. 弄坏了的
+- broom：n. 扫帚
+- brother：n. 兄；弟
+- brotherhood：n. 兄弟般的关系
+- brown：n. 褐色，棕色adj. 褐色的，棕色的
+- brush：v. 刷；擦n. 刷子
+- budget：n. 预算
+- buffet：n. 自助餐
+- build：v. 建筑；造
+- building：n. 建筑物；房屋；大楼
+- bunch：n. 串，束，扎，大量，大批
+- burden：n. （义务，责任的）重担，负担
+- bureaucratic：adj. 官僚的
+- burglar：n. 入室窃贼
+- burn：v. 燃，烧，着火；使烧焦；使晒黑n. 烧伤；晒伤
+- burst：v. 突然发生；突然发作
+- bury：vt. 埋；葬
+- bus：n. 公共汽车
+- bush：n. 灌木丛，矮树丛
+- business：n. （本分）工作，职业；职责；生意，交易；事业
+- businessman：n. 商人（男）；男企业家
+- businesswoman：n. 商人（女）；女企业家
+- busy：adj. 忙（碌）的
+- but：conj. 但是，可是prep. 除了，除……外
+- butcher：n. vt. 肉店；屠夫屠宰（动物）；残杀（人）
+- butter：n. 黄油，奶油
+- butterfly：n. 蝴蝶
+- button：n. 纽扣；（电铃等的）按钮v. 扣（纽扣）
+- buy：vt. 买
+- by：prep. 靠近，在…旁；在…时间；不迟于；被；用；由；乘（车）
+- bye：int. 再见
+
+## 3. C
+
+- cab：n. （美）出租车
+- cabbage：n. 卷心菜，洋白菜
+- café：cafén. 咖啡馆；餐馆
+- cafeteria：n. 自助餐厅
+- cage：笼；鸟笼
+- calculate：v. 计算，核算，推测
+- cake：n. 蛋糕，糕点；饼
+- call：n. 喊，叫；电话，通话v. 称呼；呼唤；喊，叫
+- calm：adj. 镇静，沉着的v. 镇静沉着
+- camel：n. 骆驼
+- camera：n. 照相机；摄像机
+- camp：n. （夏令）营vi. 野营，宿营
+- campaign：n. 运动，战役
+- can：v. 可能；能够；可以不能n. （美）罐头；罐子
+- canal：n. 运河；水道
+- cancel：vt. 取消
+- cancer：n. 癌
+- candidate：n. 候选人，申请人
+- candle：n. 蜡烛
+- candy：n. 糖果
+- canteen：n. 餐厅；食堂
+- cap：n. （无檐的或仅在前面有檐的）帽子；（瓶子的）盖；（钢笔等的）笔套
+- capable：adj. 有能力的，能干的
+- capital：n. 首都. 省会. 大写；资本
+- capsule：n. （药）胶囊
+- captain：n. （海军）上校；船长，舰长；队长
+- caption：n. （图片，漫画等的）说明文字
+- car：n. 汽车，小卧车
+- carbon：n. 碳
+- card：n. 卡片；名片；纸牌
+- care：n. 照料，保护；小心v. 介意……，在乎；关心
+- career：n. 事业，生涯，
+- careful：adj. 小心，仔细，谨慎的
+- careless：adj. 粗心的，漫不经心的
+- carpenter：n. 木工，木匠
+- carpet：n. 地毯
+- carriage：n. 四轮马车；（火车）客车厢
+- carrier：n. 搬运者；媒介；（自行车等的）置物架；（车的）货架
+- carrot：n. 胡萝卜
+- carry：vt. 拿，搬，带，提，抬，背，抱，运等
+- cartoon：n. 动画片，卡通；漫画
+- carve：vt. 刻；雕刻
+- case：n. 情况；病例；案件；真相n. 箱；盒；容器
+- cash：n. 现金，现钞v. 兑现
+- cassettle：n. 磁带
+- cast：v. 扔，抛，撒
+- castle：n. 城堡
+- casual：adj. 漫不经心的，不经意的，非正式的
+- cat：n. 猫
+- catalogue：n. 目录
+- catastrophe：n. 灾难，灾祸，不幸事件
+- catchv.：catchv. 接住；捉住；赶上；染上（疾病）
+- category：n. 类别，种类
+- cater：v. 提供饮食，承办酒席
+- catholic：adj. 天主教的
+- cattle：n. 牛（总称），家畜
+- cause：n. 原因，起因vt. 促使，引起，使发生
+- caution：n. 谨慎，小心，警告
+- cautious：adj. 小心的，谨慎的
+- cave：n. 洞，穴；地窖
+- CD：光盘（disk的缩写）
+- ceiling：n. 天花板，顶棚
+- celebrate：v. 庆祝
+- celebration：n. 庆祝；庆祝会
+- cell：n. （监狱的）单人牢房；（修道院等的）单人小室；（蜂巢的）小蜂窝，蜂房；［生物］细胞
+- cent：n. 美分（100cent=1dollar）
+- centigrade：adj. 摄氏的
+- centimetre：（美centimeter）n. 公分，厘米
+- central：adj. 中心，中央；主要的
+- centre：n. 中心，中央
+- century：n. 世纪，百年
+- ceremony：n. 典礼，仪式，礼节
+- certain：adj. （未指明真实名称的）某…；确定的，无疑的；一定会…
+- certificate：n. 证明，证明书
+- chain：n. 链；链条
+- chair：n. 椅子
+- chairman：（pl. chairmen）n. 主席，会长；议长
+- chairwoman：n. 女主席，女会长；女议长
+- chalk：n. 粉笔
+- challenge：n. 挑战（性）
+- challenging：adj. 具有挑战性的
+- champion：n. 冠军，优胜者
+- chance：n. 机会，可能性
+- changeable：adj. 易变的，变化无常的
+- change：n. 零钱；找头v. 改变，变化；更换；兑换
+- channel：n. 频道；通道；水渠
+- chant：v. / n. 反复呼喊
+- chaos：n. 混乱，杂乱，紊乱
+- character：n. （汉）字. 字体；品格
+- characteristic：adj. 典型的，独特的
+- charge：v. 要求收费；索价；将（电池）充电n. 费用；价钱
+- chapter：n. 章
+- chart：n. 图表；航海图
+- chase：vt. & n. 追逐；追捕；追踪追寻，寻找
+- chat：n. & vi. 聊天，闲谈
+- cheap：adj. 便宜的，贱
+- cheat：n. & v. 骗取，哄骗；作弊
+- check：n. 检查；批改vt. 校对，核对；检查；批改
+- cheek：n. 面颊，脸蛋
+- cheer：n. & vi. 欢呼；喝彩
+- cheerful：adj. 兴高采烈的，快活的
+- cheers：int. 干杯，（口）谢谢，再见
+- cheese：n. 奶酪
+- chef：n. 厨师长，主厨
+- chemical：adj. 化学的n. 化学品
+- chemist：n. 药剂师；化学家
+- chemistry：n. 化学
+- cheque：（美check）n. 支票
+- chess：n. 棋
+- chest：n. 箱子；盒子；胸部
+- chew：vt. 咀嚼
+- chicken：n. 鸡；鸡肉
+- chief：adj. 主要，首要的n. 领导，头
+- childhood：n. 幼年时代，童年
+- chocolate：n. 巧克力
+- choice：n. 选择；抉择
+- choke：n. & v. 窒息
+- choose：vt. 选择
+- chopsticks：n. 筷子
+- Christmas：n. 圣诞节（12月25日）
+- church：n. 教堂；教会
+- cigar：n. 雪茄烟
+- cigarette：n. 纸烟，香烟
+- cinema：n. 电影院；电影
+- circle：n. / vt. 圆圈将…圈起来
+- circuit：n. 环形路线，巡回赛
+- circumstance：n. 条件，环境，状况
+- circus：n. 马戏团
+- citizen：n. 公民；居民
+- city：n. 市，城市，都市
+- civil：adj. 国内的；平民（非军人）的；民用的
+- civilian：n. 平民，老百姓
+- civilization：n. 文明
+- claim：v. 声称，主张，要求，索取，夺取，认领n. 要求，要求权
+- clap：vi. 拍手；鼓掌
+- clarify：v. 澄清，阐明
+- class：n. （学校的）班；年级；课
+- classic：adj. 一流的，典型的，有代表性的
+- classical：adj. 传统的；古典的
+- classify：v. 分类，归类
+- classmate：n. 同班同学
+- classroom：n. 教室
+- clause：n. 1. （文件的）条款，款2. 【语】从句
+- claw：n. 爪
+- clay：n. 黏土，陶土
+- clean：vt. 弄干净，擦干净adj. 清洁的，干净的
+- cleaner：n. 清洁工，清洁器，清洁剂
+- clear：adj. 清晰；明亮的；清楚的
+- clerk：n. 书记员；办事员；职员
+- clever：adj. 聪明的，伶俐的
+- click：v. 点击（计算机用语）
+- client：n. 1. 委托人，（律师等的）当事人2. 顾客，客户
+- climate：n. 气候
+- climb：v. 爬，攀登
+- clinic：n. 诊所
+- clock：n. 钟
+- clone：n. 克隆（无性繁殖出来的有机体群）
+- close：adj. 亲密的；近，靠近adv. 近，靠近vt. 关，关闭
+- cloth：n. 布
+- clothes：n. 衣服；各种衣物
+- clothing：n. （总称）衣服
+- cloud：n. 云；云状物；阴影
+- cloudy：adj. 多云的，阴天的
+- club：n. 俱乐部；纸牌中的梅花
+- clue：n. 线索
+- clumsy：adj. 笨拙的，不灵巧的
+- coach：n. 教练；马车；长途车
+- coal：n. 煤；煤块
+- coast：n. 海岸；海滨
+- coat：n. 外套；涂层；表皮；皮毛vt. 给……穿外套；涂上
+- cocoa：n. 可可粉
+- code：n. 代码，代号，密码，编码
+- coffee：n. 咖啡
+- coin：n. 硬币
+- coincidence：n. 巧合，巧事
+- coke：n. 可口可乐
+- cold：adj. 冷的，寒的n. 寒冷；感冒，伤风
+- collapse：v. & n. 倒塌，崩溃
+- collar：n. 衣领；硬领
+- colleague：n. 同事
+- collect：vt. 收集，搜集
+- collection：n. 收藏品，收集物
+- college：n. 学院；专科学校
+- colour：n. 颜色vt. 给…着色，涂色
+- column：n. 圆柱，柱壮物，专栏，纵队
+- comb：n. 梳子v. 梳
+- combine：vt. 使联合；使结合
+- combination：n. 结合，联合，合并，化合，化合物
+- come：vi. 来，来到
+- comedy：n. 喜剧
+- comfort：n. 安慰；慰问
+- comfortable：adj. 舒服的；安逸的；舒服自在的
+- command：n. & v. 命令
+- comment：n. 评论
+- commericial：adj. 贸易的，商业的
+- commission：n. 委任，委托，代办（权），代理（权），犯（罪），佣金
+- commit：v. 犯（罪，错），自杀
+- commitment：n. 承诺，允诺，承担
+- committee：n. 委员会
+- common：adj. 普通，一般；共有的
+- communicate：v. 交际；传达（感情，信息等）
+- communication：n. 交际，交往；通讯
+- communism：n. 共产主义
+- communist：n. 共产主义者adj. 共产党的；共产主义的
+- community：n. 公社，团体，社会，（政治）共同体，共有，一致，（生物）群落
+- companion：n. 同伴；同事
+- company：n. 公司
+- compare：vt. 比较，对照
+- compensate：v. 补偿，弥补
+- compete：vi. 比赛，竞赛
+- competence：n. 能力，胜任，管辖权
+- competition：n. 竞赛，比赛
+- complain：n. 抱怨，悲叹，控诉
+- complete：adj. 完成vt. 完成，结束
+- complex：adj. / n. 复杂的，建筑群
+- complicated：adj. 复杂的，难解的
+- component：n. 组成部分，部件
+- composition：n. 作文；作曲
+- comprehension：n. 理解
+- compulsory：adj. 强制的，必须做的
+- computer：n. 电子计算机
+- concentrate：v. 聚精会神
+- concept：n. 概念
+- concern：v. / n. 涉及，关心
+- concerned：adj. 关心的，有关的
+- concert：n. 音乐会；演奏会
+- conclude：v. 完成，结束
+- conclusion：n. 结论；结束
+- concrete：adj. 混凝土制的
+- condition：n. 条件，状况
+- conduct：vt. 引导，带领
+- conductor：n. 管理人；指导者；（车上的）售票员，列车员；乐队指挥
+- confident：adj. 自信的
+- confidential：adj. 机密的，保密的
+- conference：n. （正式的）会议；讨论
+- confirm：v. 证实，证明，确认
+- conflict：n. 冲突，争执，争论
+- confuse：v. 使迷惑，混淆
+- congratulate：vt. 祝贺
+- congratulation：n. 祝贺，庆贺
+- connect：v. 连接，把…联系起来
+- connection：n. 连接物；接触，联系
+- conscience：n. 良心，良知，内疚
+- conscious：adj. 有意识的，有知觉的
+- consequence：n. 结果，后果
+- conservation：保存；（自然资源的）保护，管理
+- conservative：adj. 保守的，守旧的；保守主义的；谨慎的n. 保守的人，保守主义
+- consider：vt. 考虑
+- considerable：adj. 相当大（或多）的，值得考虑的，相当可观的
+- considerate：adj. 体贴的
+- consideration：n. 考虑；关心
+- consist：v. 包含，组成，构成
+- consistent：adj. 一致的，始终如一的，连续的
+- constant：adj. 经常的，不断的
+- constitution：n. 宪法，章程，身体素质
+- construct：v. 构筑；建造，建设
+- construction：n. 建造，建设，建筑物
+- consult：v. 咨询，商量
+- consultant：n. 顾问
+- consume：v. 消耗，耗费（燃料，能量，时间等）
+- contact：n. & v. 接触，联系
+- contain：v. 包含；包括；能容纳
+- container：n. 容器
+- contemporary：adj. 属同时期的，同一时代的
+- content：adj. 甘愿的，满意的n. 内容
+- continent：n. 大陆，大洲；陆地
+- continue：vi. 继续
+- contract：n. 合同，契约，婚约
+- contradict：v. 反驳，驳斥，批驳
+- contradictory：adj. 相互矛盾，对立的
+- contrary：n. / adj. 相反相反的
+- contribute：v. 贡献
+- contribution：n. 贡献
+- control：vt. & n. 控制
+- convenience：n. 便利
+- convenient：adj. 便利的，方便的
+- conventional：adj. 依照惯例的，习惯的
+- conversation：n. 谈话，交谈
+- convey：v. 表达，传递（思想，感情等）
+- convince：v. 使确信，使信服
+- cook：n. 炊事员，厨师v. 烹调，做饭
+- cooker：n. 炊具（锅、炉灶、烤炉等）
+- cookie：n. 小甜饼
+- cool：adj. 凉的，凉爽的；酷
+- cooperation：n. 合作，协作
+- cope：v. （善于）应付，（善于）处理
+- copy：n. 抄本，副本；一本（份，册……）v. 抄写；复印；（计算机用语）拷（备份盘）
+- corn：n. 玉米，谷物
+- corner：n. 角；角落；拐角
+- corporation：n. （大）公司
+- correct：v. 改正；纠正adj. 正确的，对的；恰当的
+- correction：n. 改正
+- correspond：vi. 一致；与……相当；（与人）通信，有书信往来
+- corrupt：adj. / v. 贪污的，腐败的，使腐化，堕落
+- cost：v. 值（钱），花费n. 价格
+- cottage：n. （郊外）小屋，村舍，别墅
+- cotton：n. 棉花adj. 棉花的
+- cough：n. & vi. 咳嗽
+- could：v. （can的过去式）可以…；（表示许可或请求）可以…，行
+- council：n. 政务会，理事会，委员会，参议会，
+- count：vt. 数，点数
+- counter：n. 柜台，结账处
+- country：n. 国家；农村，乡下
+- countryside：n. 乡下，农村
+- county：n. 县，郡
+- couple：n. 夫妇，一对
+- courage：n. 勇气；胆略
+- course：n. 过程；经过；课程
+- court：n. 法庭；法院
+- courtyard：n. 庭院，院子
+- cousin：n. 堂（表）兄弟，堂（表）姐妹
+- cover：n. 盖子；罩v. 覆盖，遮盖；掩盖
+- cow：n. 母牛，奶牛
+- crack：v. （使）破裂，裂纹，（使）爆裂
+- crash：v. / n. 碰撞，撞击
+- crayon：蜡笔；蜡笔画
+- crazy：adj. 疯狂的
+- cream：n. 奶油，乳脂
+- create：vt. 创造；造成
+- creature：n. 生物，动物
+- credit：n. 信用；信赖；信誉
+- crime：n. （法律上的）罪，犯罪
+- criminal：n. 罪犯
+- crisis：n. 危机，危险期，历史上的紧要关头，决定性时刻
+- critic：n. 批评家，评论家，吹毛求疵者
+- critical：adj. adj. 评论的，鉴定的，批评的，危急的，临界的
+- criticism：n. 批评，批判
+- criticize：v. 批评，责备
+- crew：n. 全体船员
+- crop：n. 庄稼；收成
+- cross：adj. 脾气不好的，易怒的n. 十字形的东西vt. 越过；穿过
+- crossing：n. 十字路口，人行横道
+- crossroads：n. 交叉路口
+- crowd：n. 人群vt. 拥挤，群聚
+- cruel：adj. 残忍的，残酷的；无情的
+- cry：n. 叫喊；哭声v. 喊叫；哭
+- cube：n. 立方体
+- cubic：adj. 立方体的，立方形的
+- cuisine：n. 饭菜，佳肴
+- culture：n. 文化
+- cup：n. 茶杯
+- cupboard：n. 碗柜；橱柜
+- cure：n. & vt. 治疗；医好
+- curious：adj. 好奇的；奇异的
+- currency：n. 货币；现金
+- curriculum：n. （学校的）全部课程
+- curtain：n. 窗帘
+- custom：n. 习惯，习俗，风俗习惯
+- customer：n. （商店）顾客，主顾
+- customs：n. 海关，关税
+- cut：v. / n. 切，剪，削，割，伤口
+- cute：adj. 漂亮的，可爱的；小巧玲珑的
+- cycle：vi. 骑自行车
+- cyclist：n. 骑自行车的人
+
+## 4. D
+
+- dad：n. （口）爸爸，爹爹
+- daily：adj. 每日的；日常的adv. 每天n. 日报
+- dam：n. 水坝，堰堤
+- damage：n. & vt. 毁坏，损害
+- damp：adj. & n. 潮湿（的）
+- dance：n. & vi. 跳舞
+- danger：n. 危险
+- dangerous：adj. 危险的
+- dare：v. & aux. . （后接不带to的不定式；主要用于疑问，否定或条件句）敢，敢于
+- dark：n. 黑暗；暗处；日暮adj. 黑暗的；暗淡的；深色的
+- darkness：n. 黑暗，阴暗
+- darling：亲爱的；心爱的人adj. 可（心）爱的
+- dash：v. & n. 快跑，冲刺，短跑
+- data：n. 资料，数据
+- database：n. 资料库，数据库
+- date：n. 日期；约会n. 枣
+- daughter：n. 女儿
+- dawn：n. 黎明，拂晓
+- day：n. （一）天，（一）日；白天
+- dead：adj. 死的；无生命的
+- deadline：n. 最后期限，截止日期
+- deaf：adj. 聋的
+- deal：n. 量，数额；交易
+- dear：int. （表示惊愕）哎呀！唷！adj. 亲爱的；贵的
+- death：n. 死
+- debate：n. & v. 讨论，辩论
+- debt：n. 债务；欠款
+- decade：n. 十年期
+- decide：v. 决定；下决心
+- decision：n. 决定；决心
+- declare：vt. 声明；断言
+- decline：v. 减少，下降，衰退，谢绝
+- decorate：vt. 装饰…，修饰…
+- decoration：n. 装饰，修饰
+- decrease：v. 减少，减小，降低
+- deed：n. 行为；事迹
+- deep：adj. 深adv. 深；深厚
+- deer：n. 鹿
+- defeat：vt. 击败；战胜
+- defence：n. & v. 防御；防务
+- defend：vt. 防守；保卫
+- define：vt. 给…下定义，解释；限定，规定
+- definite：adj. 明确的，确切的；一定的，肯定的
+- definition：n. 定义，释义；清晰（度），鲜明（度）
+- degree：n. 程度；度数；学位
+- delay：v. & n. 拖延，延误，延迟，延期；耽搁
+- delete：v. 删去
+- deliberately：adv. 故意，蓄意，存心
+- delicate：adj. 易损的，易碎的
+- delicious：adj. 美味的，可口的
+- delight：n. 快乐；乐事
+- delighted：adj. 高兴的，快乐的
+- deliver：vt. 投递（信件，邮包等）
+- demand：vt. 要求
+- demanding：adj. 要求多的，吃力的
+- dentist：n. 牙科医生
+- deny：vt. 否认，不承认；拒绝给予，拒绝要求
+- department：n. 部门；（机关的）司，处；（大学的）系
+- departure：n. 离开，启程
+- depend：vi. 依靠，依赖，指望；取决于
+- deposit：v. / n. 订金，押金，放下，放置，储存
+- depression：n. 抑郁，沮丧；不景气，萧条
+- depth：n. 深，深度
+- describe：vt. 描写，叙述
+- description：n. 描述，描写
+- desert：n. 沙漠vt. 舍弃；遗弃
+- deserve：v. （不用于进行时态）应得，应受
+- design：n. & vt. n. 设计，策划图案，图样，样式
+- desire：vt. & n. 要求；期望
+- desk：n. 书桌，写字台
+- desperate：adj. （因绝望而）不惜冒险的，不顾一切的，拼命的
+- despite：prep. 不管，尽管
+- dessert：n. 甜点
+- destination：n. 目的地，终点
+- destroy：vt. 破坏，毁坏
+- detail：n. 细节，详情
+- detective：n. 侦探
+- determine：vt. 决定；决心
+- develop：v. （使）发展；（使）发达；（使）发育；开发vt. 冲洗（照片）
+- development：n. 发展，发达，发育，开发
+- device：n. 装置，设备，器械
+- devote：vt. 把…奉献，把…专用（于）
+- devotion：n. 奉献，奉献精神
+- dial：vt. 拨（电话号码）
+- dialogue：n. 对话
+- diamond：n. 钻石，金刚石；纸牌中的方块
+- diary：n. 日记；日记簿
+- dictation：n. 听写
+- dictionary：n. 词典，字典
+- die：v. 死
+- diet：n. 饮食
+- differ：v. 相异，有区别
+- difference：n. 不同
+- different：adj. 不同的，有差异的
+- difficult：adj. 难；艰难；不易相处
+- difficulty：n. 困难，费力
+- dig：v. 挖（洞沟），掘
+- digest：v. 消化，领会
+- digital：adj. . 数字的，数码的
+- dignity：n. 庄重，庄严，尊严。尊贵，高尚
+- dimension：n. 量度，尺寸，面积，程度，范围
+- dinner：n. 正餐，宴会
+- dinosaur：n. 恐龙
+- dip：vt. 浸，蘸；把…放入又取出
+- diploma：n. 毕业文凭；学位证书
+- direct：adj. / vt. 直接的；直达的；直截了当的指挥；指导；监督；管理；指挥（演奏）；导演（电影）
+- direction：n. 方向；方位
+- director：n. 所长，处长，主任；董事；导演
+- directory：n. 姓名地址录
+- dirty：adj. 脏的
+- disability：n. . 残疾；无能
+- disabled：adj. 残废的，残疾的
+- disadvantage：n. 不利条件；弱点
+- disagree：vi. 意见不一致，持不同意见
+- disagreement：n. 意见不一致；相违；争论
+- disappear：vi. 消失
+- disappoint：vt. 使失望
+- disaster：n. 灾难；祸患
+- discipline：n. 纪律；训练
+- discount：n. 折扣
+- discourage：vt. （使）气馁；打消（做…的念头）
+- discover：vt. 发现
+- discovery：n. 发现
+- discrimination：n. 歧视
+- discuss：vt. 讨论，议论
+- discussion：n. 讨论，辩论
+- disease：n. 病，疾病
+- disgusting：adj. 极糟的，令人不快的，令人厌恶的
+- dish：n. 盘，碟；盘装菜；盘形物
+- disk：n. 磁盘
+- dislike：vt. 不喜爱；厌恶
+- dismiss：vt. 让……离开；遣散；解散；解雇
+- display：n. ／vt. 陈列，展览；显示，表现
+- distance：n. 距离
+- distant：adj. 远的，遥远的
+- distinction：n. 差别，区别，优秀，卓越
+- distinguish：v. 区分，辨别，分清
+- distribute：v. 分发，分配
+- district：n. 区；地区；区域
+- disturb：vt. 扰乱；打扰
+- disturbing：adj. 令人不安的，引起恐慌的
+- dive：vi. 跳水
+- diverse：v. 不同的，多种多样，形形色色的
+- divide：vt. 分，划分
+- division：n. （算术用语）除
+- divorce：v. 离婚
+- dizzy：adj. 头眩目晕的
+- do：v. & aux. 做，干
+- doctor：n. 医生，大夫；博士
+- document：n. 文件；文献
+- dog：n. 狗
+- doll：n. 玩偶，玩具娃娃
+- dollar：n. 元（美国、加拿大、澳大利亚等国货币单位）
+- domestic：adj. 国内的；家（庭）的，家用的；驯养的
+- donate：v. 捐赠，赠送
+- door：n. 门
+- dormitory：n. 学生宿舍（缩写式dorm）
+- dot：n. 点，小点，圆点
+- double：adj. 两倍. 双的n. 两个. 双
+- doubt：n. & v. 怀疑，疑惑
+- down：prep. 沿着，沿…而下adv. 向下
+- download：n. & v. 下载
+- downstairs：adv. 在楼下；到楼下
+- downtown：adv. 往或在城市的商业区（或中心区、闹市区）n. 城市的商业区，中心区，闹市区adj. 城市的商业区的，中心区的，闹市区的
+- dozen：n. 十二个；
+- Doctor：n. 医生，大夫；博士
+- draft：n. / v. 草稿，草案，起草，草拟
+- drag：v. 拖；拽
+- draw：v. 绘画；绘制；拉，拖；提取（金钱）
+- drawer：n. 抽屉
+- dream：n. & vt. 梦，梦想
+- dress：n. 女服，连衣裙；（统指）服装；童装v. 穿衣；穿着
+- drill：n. 钻头；（反复的）训练vt. 钻（孔），在…上钻孔；重复训练
+- drink：v. 喝，饮
+- drive：v. 驾驶，开（车）；驱赶
+- driver：n. 司机，驾驶员
+- drop：n. 滴v. 掉下. 落下. 投递. 放弃
+- drug：n. 药，药物；毒品
+- drum：n. 鼓
+- drunk：adj. 醉的
+- dry：v. 使…干；弄干；擦干adj. 干的；干燥的
+- duck：n. 鸭子
+- due：adj. 预期的；约定的
+- dull：adj. 阴暗的；单调无味
+- dumpling：n. 饺子
+- during：prep. 在…期间；在…过程中
+- dusk：n. 黄昏
+- dust：n. 灰尘，尘土
+- dustbin：n. 垃圾箱
+- dusty：adj. 尘土般的，尘土多的
+- duty：n. 责任，义务
+- DVD：数码影碟（disk）
+- dynamic：adj. 充满活力，精力充沛的
+- Dynasty：n. 王朝，朝代
+
+## 5. E
+
+- each：adj. & pron. 每人. 每个. 每件
+- eager：adj. 渴望的，热切的
+- eagle：n. 鹰
+- ear：n. 耳朵. 耳状物；听力，听觉
+- early：adj. 早的adv. 早地
+- earn：vt. 挣得，赚得
+- earth：n. 地球；土，泥；大地
+- earthquake：n. 地震
+- east：adj. 东方的；东部的；朝东的；从东方来的adv. 在东方；向东方；从东方n. 东，东方；东部
+- Easter：n. 复活节
+- eastern：adj. 东方的；东部的
+- easy：adj. 容易的，不费力的
+- eat：v. 吃
+- ecology：n. 生态，生态学
+- economic：adj. 经济（上，学）的
+- edge：n. 边缘
+- edition：n. （发行物的）版，版（本）
+- editor：n. 编辑
+- educate：vt. 教育，培养
+- educator：n. 教育家
+- education：n. 教育，培养
+- educational：adj. 教育的，有教育意义的
+- effect：n. 效果；作用
+- effective：adj. 有效的，生效的
+- effort：n. 努力，艰难的尝试
+- egg：n. 蛋；卵
+- either：adj. 两方任一方的；二者之一conj. 二者之一；要么……
+- either：adv. （用于否定句或短语后）也
+- elder：n. 长者；前辈
+- elderly：到了晚年的人
+- elect：vt. （投票）选举
+- electric：adj. 电的
+- electrical：adj. 电的；电器的
+- electricity：n. 电；电流
+- electronic：adj. 电子的
+- elegant：adj. 文雅的，漂亮的，精美的
+- element：n. 元素；成分
+- elephant：n. 象
+- else：adv. 别的，其他的
+- e-mail / e：e-mail / n. 电子邮件
+- embarrass：v. 使窘迫，尴尬
+- embassy：n. 大使馆
+- emergency：n. 紧急情况或状态
+- emotion：n. 情感，感情，激情
+- emotional：adj. 令人动情的；易动感情的；感情（上）的
+- emperor：n. 皇帝
+- employ：vt. 雇佣
+- employer：n. 雇佣者，雇
+- employment：n. 工作，职业；雇用，
+- empty：adj. 空的
+- encourage：vt. 鼓励
+- encouragement：n. 鼓励
+- end：n. 末尾；终点；结束v. 结束，终止
+- ending：n. 结局；结尾，最后
+- endless：adj. 无止境的；没完的
+- enemy：n. 敌人；敌军
+- energetic：adj. 精力旺盛的
+- energy：n. 精力，能量
+- engine：n. 发动机，引擎
+- engineer：n. 工程师；技师
+- engineering：n. 工程（学），工程师行业
+- English：adj. 英国的，英国人的，英语的n. 英语
+- enjoy：vt. 欣赏；享受乐趣；喜欢
+- enjoyable：adj. 愉快的；有趣的
+- enlarge：vt. 扩大
+- enough：n. 足够；充足adj. 足够；充分的adv. 足够地；充分地
+- enquiry：n. 询问
+- ensure：vt. 保证，担保，确保
+- enter：vt. 进入
+- enterprise：n. 公司，企，事业单位
+- entertainment：n. 娱乐
+- enthusiastic：adj. 热情的，热心的
+- entire：adj. 整个的，全部的
+- entitle：vt. 给…权利，给…资格；给（书等）题名
+- entrance：n. 入口；入场；进入的权利；入学许可
+- entry：n. 进入
+- envelope：n. 信封
+- environment：n. 环境
+- environmental：adj. 环境的，有关环境的
+- envy：vt. & n. 忌妒；羡慕
+- equal：adj. 平等的vt. 等于，使等于
+- equality：n. 平等
+- equip：vt. 提供设备；装备；配备
+- equipment：n. 装备，设备
+- eraser：n. 橡皮擦；黑板擦
+- error：n. 错误；差错
+- erupt：v. （火山）爆发，喷发
+- escape：n. & vi. 逃跑；逃脱
+- especially：adv. 特别，尤其
+- essay：n. 散文；文章；随笔
+- essential：adj. 必不可少的；本质的，基本的
+- establish：vt. 建立，创办，设立
+- Europe：n. 欧洲
+- European：adj. 欧洲的，欧洲人的n. 欧洲人
+- evaluate：v. 估值，评价，评估
+- even：adv. 甚至，连（…都）；更
+- evening：n. 傍晚，晚上
+- event：n. 事件，大事
+- eventually：adv. 最终地
+- ever：adv. 曾经；无论何时
+- every：adj. 每一，每个的
+- everybody：pron. 每人，人人
+- everyday：adj. 每日的；日常的
+- everyone：pron. 每人，人人
+- everything：pron. 每件事，事事
+- everywhere：adv. 到处
+- evidence：n. 证据，证明
+- evident：adj. 清楚的，显而易见的
+- evil：adj. 邪恶的，坏的n. 邪恶，罪恶
+- evolution：n. 进化，演变
+- exact：adj. 精确的；确切的
+- exam：n. 考试，测试；检查；审查
+- examine：vt. 检查；诊察
+- example：n. 例子；榜样
+- excellent：adj. 极好的，优秀的
+- except：prep. 除……之外
+- exception：n. 例外
+- exchange：n. 交换，掉换；交流
+- excite：vt. 使兴奋，使激动
+- excuse：n. 借口. 辩解vt. 原谅. 宽恕
+- exercise：n. 锻炼，做操；练习，习题vi. 锻炼
+- exhibition：n. 展览；展览会
+- exist：vi. 存在
+- existence：n. 存在；生存；存在物
+- exit：n. 出口，太平门
+- expand：v. 扩大，增加，扩展
+- expect：vt. 预料；盼望；认为
+- expectation：n. 预料；期望
+- expense：n. 消费；支出
+- expensive：adj. 昂贵的
+- experience：n. 经验；经历
+- experiment：n. 实验
+- expert：n. 专家，能手
+- explain：vt. 解释，说明
+- explanation：n. 解释，说明
+- explicit：adj. 清楚明白，易于理解的
+- explode：v. （使）爆炸
+- explore：v. 探险
+- explorer：n. 探险者
+- export：n. / v. 出口，输出
+- expose：vt. 揭露
+- express：vt. 表达；表示；表情n. 快车，特快专递
+- expression：n. 表达；词句；表示，说法；表情
+- extension：n. 扩大，延伸
+- extra：adj. 额外的，外加的
+- extraordinary：adj. 离奇的；使人惊奇的
+- extreme：adj. 极其的，非常的
+- extremely：adv. 极其，非常
+- eye：n. 眼睛
+- eyesight：n. 视力；视觉
+- eyewitness：n. 目击证人
+
+## 6. F
+
+- f：n. 女（的）；雌（的）；英尺
+- face：n. 脸vt. 面向；面对
+- facial：adj. 面部用的
+- facility：n. 设备，设施；工具容易，简易，灵巧，熟练，便利，敏捷，设备，工具
+- fact：n. 事实，现实
+- factory：n. 工厂
+- fade：vi. 褪色，（颜色）消退
+- fail：v. 失败；不及格；衰退
+- failure：n. 失败
+- fair：adj. 公平的，合理的adj. （肤色）白皙的；（人）白肤金发的n. 集市；庙会；展览会
+- fairly：adv. 公正地，正当地；相当（程度）地
+- fairness：n. 公平；公正
+- faith：n. 信仰；信念
+- fall：n. （美）秋季
+- fall：vi. 落（下），降落；倒
+- false：adj. 不正确的；假的
+- familiar：adj. 熟悉的
+- family：n. 家庭；家族；子女
+- familyname：姓氏
+- famous：adj. 著名的
+- fan：n. （电影、运动等的）迷；热心的爱好者（支持者）n. 风扇
+- fancy：adj. 花式；装饰的；奇特的
+- fantastic：adj. （口语）极好的，美妙的，很棒的
+- fantasy：幻想，梦想
+- far：（farther，或，furthest）adj. & adv. 远的；远地
+- fare：n. （车或船的）费用，票（价）
+- farm：n. 农场；农庄
+- farmer：n. 农民
+- fascinating：adj. 迷人的；极美的；极好的
+- fast：adj. 快的，迅速的；紧密的adv. 快地，迅速地；紧密地
+- fasten：vt. 扎牢；扣住
+- fat：n. 脂肪adj. 胖的；肥的
+- father：n. 父亲
+- fault：n. 缺点，毛病
+- favour：（美favor）n. 恩惠；好意；帮助
+- favourite：（美favorite）adj. 喜爱的n. 特别喜爱的人（或物）
+- fax：n. 传真
+- fear：n. 害怕；恐惧；担忧
+- feast：n. 盛宴，宴会，（宗教的）节日
+- feather：n. 羽毛
+- February：n. 2月
+- federa：adj. 中央的（政府）联邦的
+- fee：n. 费，费用
+- feed：vt. 喂（养）；饲（养）
+- feel：v. & 感觉，觉得；摸，触
+- feeling：n. 感情；感觉
+- fellow：n. 同伴；伙伴
+- female：adj. 女的；女性的；雌性的
+- fence：n. 栅栏；围栏；篱笆
+- ferry：n. 渡船
+- festival：adj. 节日的，喜庆的
+- fetch：vt. （去）取（物）来，（去）带（人）来
+- fever：n. 发烧；发热
+- few：pron. 不多；少数不多的；少数的
+- fibre：（美fiber）n. 纤维质
+- fiction：n. 小说，虚构的事
+- field：n. 田地；牧场；场地
+- fierce：adj. 猛烈的
+- fifteen：num. 十五
+- fifth：num. 第五
+- fifty：num. 五十
+- fight：n. 打仗（架），争论
+- fight：n. 打仗（架），与……打仗（架）
+- fighter：v. 战士；斗士
+- figure：n. 数字；数目；图；图形；（人的）身型；人物；（绘画、雕刻）人物像vt. （美口语）认为，判断. （在心里）想像，描绘
+- file：n. 公文柜；档案（计算机）文档
+- fill：vt. 填空，装满
+- film：n. 电影；影片；胶卷vt. 拍摄，把……拍成电影
+- final：adj. 最后的；终极的
+- finance：n. 资金，财政，财务
+- financial：adj. 财务的；金融的
+- find：vt. 找到，发现，感到
+- fine：adj. 细的；晴朗的；美好的；（身体）健康的n. & v. 罚款
+- finger：n. 手指
+- finish：v. 结束；做完
+- fire：n. 火；火炉；火灾vi. 开火，开（枪，炮等），射击
+- firefighter：n. 消防人员
+- firework：n. 焰火
+- firm：n. 公司；企业adj. 坚固的，坚定的
+- firmly：adv. 牢牢地
+- first：num. 第一adj. & adv. 第一；首次；最初n. 开始；开端
+- fish：n. 鱼；鱼肉vi. 钓鱼；捕鱼
+- fisherman：n. 渔民；钓鱼健身者
+- fist：n. 拳（头）
+- fit：adj. 健康的，适合的v. （使）适合，安装
+- five：num. 五
+- fix：vt. 修理；安装；确定，决定
+- flag：n. 旗；标志；旗舰
+- flame：n. 火焰，光辉
+- flaming：adj. 火红的；火焰般的
+- flash：n. 闪；闪光；转瞬间
+- flashlight：n. 手电
+- flat：adj. 平的n. 楼中一套房间；公寓（常用复数）
+- flee：v. 逃走；逃跑
+- flexible：adj. 灵活的，可变动的
+- flesh：n. 肉
+- flight：n. 航班n. 楼梯的一段
+- float：vi. 漂浮，浮动
+- flood：n. 洪水vt. 淹没，使泛滥
+- floor：n. 地面，地板. （楼房的）层
+- flour：n. 面粉，粉
+- flow：vi. 流动
+- flower：n. 花
+- flu：n. 流行性感冒
+- fluency：n. （外语）流利，流畅
+- fluent：adj. （外语）流利的，流畅
+- fly：n. 飞行；苍蝇
+- fly：vi. （鸟、飞机）飞；（人乘飞机）飞行；（旗子等）飘动vt. 空运（乘客，货物等）；放（风筝、飞机模型等）
+- focus：v. / n. 集中（注意力，精力）于，焦点，中心点
+- fog：n. 雾
+- foggy：adj. 多雾的
+- fold：vt. 折叠；合拢
+- folk：adj. 民间的
+- follow：vt. 跟随；仿效；跟得上
+- following：adj. 接着的；以下的
+- fond：adj. 喜爱的，爱好的
+- food：n. 食物，食品
+- fool：n. 傻子，蠢人
+- foolish：adj. 愚蠢的，傻的
+- foot：n. 足，脚；英尺
+- football：n. （英式）足球；（美式）橄榄球
+- for：prep. 为了…；向…，往…；与…交换；防备…；适合…；因为…；在…期间；对于…；对…来说conj. 因为，由于
+- forbid：vt. 禁止，不许
+- force：vt. 强迫，迫使
+- forecast：n. & vt. 预告
+- forehead：n. 前额
+- foreign：adj. 外国的
+- foreigner：n. 外国人
+- foresee：vt. 预见. 预知
+- forest：n. 森林
+- forever：adv. 永远；永恒的
+- forget：v. 忘记；忘掉
+- forgetful：adj. 健忘的，不留心的
+- forgive：vt. 原谅，宽恕
+- fork：n. 叉，餐叉
+- form：n. 表格；形式；结构
+- format：n. 安排，计划，设计
+- former：adj. 以前的，从前的；（两者之中的）前者
+- fortnight：n. 十四日，两星期
+- fortunate：adj. 幸运的；侥幸的
+- fortune：n. 财产；运气
+- forty：num. 四十
+- forward：adv. 将来. 今后. 向前，前进
+- found：vt. 成立，建立
+- founding：n. 成立，建立
+- fountain：n. 喷泉
+- four：num. 四
+- fourteen：num. 十四
+- fourth：num. 第四
+- fox：n. 狐狸
+- franc：n. 法郎
+- France：n. 法国
+- fragile：adj. 易碎的，易损的
+- fragrant：adj. 香的，芳香的
+- framework：n. （建筑物）框架，结构
+- free：adj. 自由，空闲的；免费的
+- freedom：n. 自由
+- freeway：n. 高速公路
+- freeze：vi. 结冰
+- freezing：adj. 冻结的；极冷的
+- French：n. 法语a法国的；法国人的；法语的
+- Frenchman：（复Frenchmen）n. 法国人（男）
+- frequent：adj. 经常的；频繁的
+- fresh：adj. 新鲜的
+- Friday：n. 星期五
+- friction：n. 摩擦
+- fridge：n. 冰箱
+- fried：adj. 油煎的
+- friend：n. 朋友
+- friendly：adj. 友好的
+- friendship：n. 友谊，友情
+- fright：n. 惊恐；恐吓
+- frighten：vt. 使惊恐，吓唬
+- frog：n. 青蛙
+- from：prep. 从；从…起. 距. 来自
+- front：adj. 前面的；前部的n. 前面；前部；前线
+- frontier：n. 前沿，边界；前线
+- frost：n. 霜
+- fruit：n. 水果；果实
+- fruitjuice：n. 果汁
+- fry：vt. 用油煎；用油炸
+- fuel：n. 燃料
+- full：adj. 满的，充满的；完全的
+- fun：n. 有趣的事，娱乐，玩笑
+- function：n. / v. 作用，功能，运转
+- fundamental：adj. 十分重大的，根本的
+- funeral：n. 葬礼
+- funny：adj. 有趣的，滑稽可笑的
+- fur：n. 毛皮；皮子
+- furnished：adj. 配备了家具的
+- furniture：n. （总称）家具
+- future：n. 将来
+
+## 7. G
+
+- gain：vt. 赢得；挣得
+- gallery：n. 画廊；美术品陈列室
+- gallon：n. 加仑
+- game：n. 游戏；运动；比赛
+- garage：n. 汽车间（库）
+- garbage：n. 垃圾
+- garden：n. 花园，果园，菜园
+- gardening：n. 园艺学
+- garment：n. （一件）衣服
+- gas：n. 煤气
+- gate：n. 大门
+- gather：v. 聚集；采集
+- gay：adj. （男）同性恋的；快活的，愉快的
+- general：adj. 大体，笼统的，总的
+- generation：n. 代，一代
+- generous：adj. 慷慨大方的
+- gentle：adj. 温柔的，轻轻的
+- gentleman：n. 绅士，先生；有身份、有教养的人
+- geography：n. 地理学
+- geometry：n. 几何学
+- German：adj. 德国的，德国人的，德语的n. 德国人，德语
+- Germany：n. 德国
+- gesture：n. 姿势，手势
+- get：vt. 成为；得到；具有；到达
+- get-together：get-n. 聚会
+- gift：n. 赠品；礼物
+- gifted：adj. 有天赋的；有才华的
+- giraffe：n. 长颈鹿
+- girl：n. 女孩
+- give：vt. 给，递给，付出，给予
+- glad：adj. 高兴的；乐意的
+- glance：vi. 匆匆一看；一瞥
+- glare：v. 瞪眼，怒目而视，闪耀
+- glass：n. 玻璃杯，玻璃；（复）眼镜
+- globe：n. 地球仪，地球
+- glory：n. 巨大的光荣；荣誉；赞美
+- glove：n. 手套
+- glue：n. 胶水
+- go：vi. 去；走；驶；通到；到达n. 尝试（做某事）
+- goal：n. （足球）球门，目标
+- goat：n. 山羊
+- god：n. 神，（大写）上帝
+- gold：n. 黄金金的，黄金的
+- golden：adj. 金（黄）色的
+- goldfish：n. 金鱼
+- golf：n. 高尔夫球
+- good：adj. 好；良好
+- good-bye：good-int. 再见；再会
+- goodness：n. 善良，美德
+- goods：n. 商品，货物
+- goose：n. 鹅
+- govern：v. 统治；管理
+- government：n. 政府
+- gown：n. 礼服，长外衣，睡衣
+- grade：n. 等级；（中小学的）学年；成绩，分数
+- gradually：adv. 逐渐地
+- graduate：v. 毕业
+- graduation：n. 毕业，毕业典礼
+- grain：n. 谷物，谷类
+- gram：n. 克（重量单位）
+- grammar：n. 语法
+- grand：adj. 宏伟的
+- grandchild：n. （外）孙或孙女. 孙辈
+- granddaughter：n. （外）孙女
+- grandma：n. 奶奶；外婆
+- grandpa：n. 爷爷，外公
+- grandparents：n. 祖父母. 外祖父母
+- grandson：n. （外）孙子
+- granny：n. 老奶奶；祖母；外婆
+- grape：n. 葡萄
+- graph：n. 图表，曲线图
+- grasp：v. 抓住；紧握
+- grass：n. 草；草场；牧草
+- grateful：adj. 感激的，感谢的
+- gravity：n. 重力，地球引力
+- great：adj. 伟大的，重要的，好极了adv. （口语）好极了，很好
+- Greece：n. 希腊
+- greedy：adj. 贪婪的
+- Greek：adj. / n. 希腊的，希腊人的，希腊语的；希腊人，希腊语
+- green：adj. 绿色的；青的n. 绿色
+- greengrocer：n. （英）蔬菜水果商
+- greet：vt. 问候；向……致敬
+- greeting：n. 祝贺
+- grey： / adj. 灰色的；灰白的
+- grocer：n. 零售商人；食品店
+- ground：n. 地面
+- group：n. 组，群
+- grow：v. 生长；发育；种植；变成
+- growth：n. 生长，增长
+- guarantee：v. & n. 保证，担保
+- guard：vt. & vi. 保护；控制n. 防护装置，警戒
+- guess：vt. & vi. 猜
+- guest：n. 客人，宾客
+- guidance：n. 引导，指导
+- guide：vt. 指导；操纵；支配n. 向导，导游
+- guilty：adj. 内疚的；有罪的
+- guitar：n. 吉他，六弦琴
+- gun：n. 枪，炮vt. 开枪，开炮
+- guy：n. 家伙，伙计
+- gym：n. 体操；体育馆；健身房
+- gymnastics：n. 体操
+
+## 8. H
+
+- habit：n. 习惯，习性
+- hair：n. 头发
+- haircut：n. 理发；发型
+- half：adj. 一半的，半个的adv. 一半n. 半，一半
+- hall：n. 大厅，礼堂
+- ham：n. 火腿
+- hamburger：n. 汉堡包
+- hammer：n. 锤子vt. & vi. 锤打
+- hand：n. 手；指针v. 递；交付
+- handbag：n. 女用皮包，手提包
+- handful：n. （一）把；少数，少量
+- handkerchief：n. 手帕
+- handle：n. 柄，把柄vt. 处理vi. 易于操作
+- handsome：adj. 英俊的
+- handwriting：n. 书法
+- handy：adj. 便利的，顺手的
+- hang：vt. & vi. 悬，挂；（被）绞死，吊死
+- happen：vi. （偶然）发生
+- happily：adv. 幸福地，快乐地
+- happiness：n. 幸福，愉快
+- happy：adj. 幸福；快乐的，高兴的
+- harbour：n. 港口
+- hard：adj. 硬的；困难的；艰难的adv. 努力地；艰难地；猛烈地
+- hardly：adv. 几乎不
+- hardship：n. 困难
+- hardworking：adj. 努力工作的
+- harm：n. & v. 伤害；损伤
+- harmful：adj. 有害的；致伤的
+- harmless：adj. 无害的；不致伤的
+- harmonious：adj. 和睦的；协调的
+- harmony：n. 融洽，和睦
+- harvest：n. & v. 收割，收获
+- hat：n. 帽子
+- hatch：v. （鸟、鸡）孵蛋
+- hate：vt. & n. 憎恨，讨厌
+- have：vt. 有；吃；喝；进行；经受
+- he：pron. 他
+- head：n. 头；头脑；首脑adj. 头部的；主要的；首席的vi. 朝…行进
+- headache：n. 头疼
+- headline：n. （报刊的）大字标题
+- headmaster：n. （英）中小学校长
+- health：n. 健康，卫生
+- healthy：adj. 健康的，健壮的
+- hear：v. 听见；听说；得知
+- hearing：n. 听力
+- heart：n. 心；心脏
+- heat：n. 高温，炎热；激烈vt. & vi. （使）热
+- heating：n. 暖气装置〔设备〕
+- heaven：n. 天，天空
+- heavy：adj. 重的
+- heavily：adv. 严重地，大量地；沉重地
+- heel：n. 脚后跟
+- height：n. 高，高度
+- helicopter：n. 直升飞机
+- hell：n. 地狱；苦痛的境况
+- hello：int. 喂；你好（表示打招呼，问候或唤起注意）
+- helmet：n. 头盔
+- help：n. & v. 帮助，帮忙
+- helpful：adj. 有帮助的，有益的
+- hen：n. 母鸡
+- her：pron. 她（宾格），她的
+- here：adv. 在这里
+- herb：n. 草本植物；药草，香草
+- here：adv. 这里；向这里
+- hero：n. 英雄，勇士，男主角
+- heroine：n. 女英雄，女主角
+- hers：pron. 她的
+- herself：pron. 她自己
+- hesitate：vi. 犹豫；踌躇vt. 不情愿；对…犹豫
+- hi：int. 你好（表示打招呼、问候或唤起注意）
+- hide：v. 把…藏起来，隐藏
+- high：adj. 高的；高度的adv. 高地
+- highway：n. 公路
+- hill：n. 小山；斜坡
+- hillside：n. （小山的）山坡
+- hilly：adj. 丘陵的；多小山的
+- him：pron. 他（宾格）
+- himself：pron. 他自己
+- hire：vt. 租用
+- his：pron. 他的
+- historical：adj. 历史（学）的
+- history：n. 历史，历史学
+- hit：n. & v. 打，撞，击中
+- hobby：n. 业余爱好，嗜好
+- hold：vt. 拿，握住；认为；容纳；保持
+- hole：n. 洞
+- holiday：n. 假日；假期
+- holy：adj. 神圣的
+- home：n. 家adv. 到家；回家
+- homeland：n. 祖国
+- hometown：n. 故乡
+- homework：n. 家庭作业
+- honest：adj. 诚实的，正直的
+- honey：n. 蜂蜜
+- honour：n. 荣誉，光荣vt. 尊敬，给予荣誉
+- hook：n. & v. 钩子；衔接，连接
+- hope：n. & v. 希望
+- hopeful：adj. 有希望的；有前途的
+- hopeless：adj. 没有希望，不可救药的
+- horrible：adj. 令人恐惧的；恐怖的
+- horse：n. 马
+- hospital：n. 医院
+- host：n. 主人；节目主持人v. 主办，主持
+- hostess：n. 女主人
+- hot：adj. 热的
+- hotdog：n. 热狗（红肠面包）
+- hotel：n. 旅馆，饭店，宾馆
+- hour：n. 小时
+- house：n. 房子；住宅vt. 给…提供住房；收藏
+- household：n. 同住在一所房子里的人，一家人，户adj. 家庭的，家用的
+- housewife：n. 家庭主妇
+- housework：n. 家务劳动
+- how：adv. 怎样，如何；多少；多么
+- however：adv. 无论如何；然而，不过conj. 不管怎样
+- howl：vi. 嚎叫，嚎哭
+- hug：v. 拥抱
+- huge：adj. 巨大的，庞大的
+- human：adj. 人的，人类的
+- humorous：adj. 富于幽默的
+- humour：n. 幽默，幽默感
+- hundred：num. 百
+- hunger：n. 饥饿
+- hungry：adj. 饥饿的；渴望的
+- hunt：v. 寻找；狩猎，猎取
+- hunter：n. 猎人
+- hurricane：n. 飓风
+- hurry：v. 催促；急忙n. 匆忙，急忙
+- hurt：n. 受伤adj. 疼痛
+- husband：n. 丈夫
+- hydrogen：n. 氢
+
+## 9. I
+
+- I：pron. 我
+- ice：n. 冰
+- ice-cream：ice-n. 冰淇淋
+- idea：n. 主意，想法；知道，了解
+- ideal：adj. 理想的，完满的；想像的，空想的
+- identity：n. 身份，特征
+- identification：n. 鉴定，辨别
+- idiom：n. 习语，成语
+- if：conj. 如果；假使；是否
+- ignore：v. 忽视，对…不理会
+- ill：adj. 有病的；不健康的
+- illegal：adj. 非法的
+- illness：n. 疾病
+- illustrate：vt. 给…加插图；说明，阐明；表明
+- image：n. 形象；图像
+- imagination：n. 想像力；想像
+- imagine：vt. 想像，设想
+- immediate：adj. 立即的，马上
+- immediately：adv. 立即
+- immigration：n. 移民
+- impact：n. 影响，作用；冲击（力），碰撞vt. & vi. 对某事物有影响
+- imply：vt. 暗示，暗指
+- import：v. & n. 进口，输入
+- importance：n. 重要性
+- important：adj. 重要的
+- impossible：adj. 不可能的
+- impress：vt. 留下极深的印象
+- impression：n. 印象，感觉
+- impressive：adj. 给人印象深刻的，感人的
+- improve：vt. & vi. 改善，改进，提高
+- improvement：n. 增加或修改；改进，改善，改良
+- in：prep. 在…里面；在…时期，；处于…之中adv. 进入；在里面
+- inch：n. 英寸
+- incident：n. 事件
+- incidentally：adv. 偶然地，不经意地
+- include：vt. 包含，包括
+- including：prep. 包括；包含
+- income：n. 收入，所得
+- incorrect：adj. 不正确的，错误的
+- increase：v. & n. 增加
+- indeed：adj. 确实；实在
+- independence：n. 独立
+- independent：adj. 独立的
+- indicate：v. 表明，象征，暗示
+- individual：adj. 个别的，个人的n. 个人；人
+- industrial：adj. 工业的，产业的；用于工业的
+- industry：n. 工业，产业
+- infection：n. 〈医〉传染，感染；传染病
+- inflation：n. （充气而引起的）膨胀；通货膨胀
+- influence：n. & v. 影响
+- inform：vt. 告诉；通知
+- information：n. 信息
+- initial：adj. 开始的，最初的
+- injure：vt. 损害，伤害
+- injury：n. 受伤处
+- ink：n. 墨水，油墨
+- inn：n. 小旅店；小饭店
+- inner：adj. 内部的，里面的；内心的
+- innocent：adj. 无辜的，清白的
+- insect：n. 昆虫
+- insert：vt. 插入
+- inside：prep. 在…里面adv. 在里面
+- insist：vi. 坚持；坚决认为
+- inspect：vt. 检查；检验；审视
+- inspire：vt. 鼓舞；激励
+- install：vt. 安装
+- instance：n. 例子，实例
+- instant：adj. 瞬间；刹那
+- instead：adv. 代替，顶替
+- institute：n. （研究）所，院，学院
+- institution：n. （慈善、宗教等性质的）公共机构；学校
+- instruct：vt. 通知；指示；教
+- instruction：n. 命令，指示；讲授，指导，教学；使用说明书，操作指南
+- instrument：n. 乐器；工具，器械
+- insurance：n. 保险
+- insure：vt. 给……保险
+- intelligence：n. 智力，才智，智慧
+- intelligent：adj. 聪明的；理解力强的
+- intend：vt. 想要，打算
+- intention：n. 打算，计划，意图
+- interest：n. 兴趣；爱好；利益；利息vt. 使产生兴趣
+- interesting：adj. 有趣的
+- internal：adj. 内部的；国内的，内政的；体内的
+- international：adj. 国际的
+- Internet：n. 互联网，英特网
+- interpret：vt. 解释；说明vt. & vi. 口译；翻译
+- interpreter：n. 翻译
+- interrupt：v. 打扰，打断
+- interval：n. 间歇；间隔
+- interview：n. & v. 采访，会见，面试
+- into：prep. 到…里；向内
+- introduce：vt. 介绍
+- introduction：n. 引进，介绍
+- invent：vt. 发明，创造
+- invention：n. 发明，创造
+- inventor：n. 发明者，创造者
+- invest：v. 投资
+- investigate：vt. 调查；审查
+- invitation：n. 邀请，请帖
+- invite：vt. 邀请，招待
+- involve：vt. 需要；使参与，牵涉
+- iron：n. 铁，熨斗vt. 熨烫
+- irrigate：vt. 灌溉
+- irrigation：n. 灌溉
+- island：n. 岛
+- issue：n. 问题；争论点；发行物；发行vt. 出版，发行
+- it：pron. 它
+- item：n. 一项，一件，一条；项目
+- its：pron. 它的
+- itself：pron. 它自己
+
+## 10. J
+
+- jacket：n. 短上衣，夹克衫
+- jam：n. 果酱；阻塞
+- January：n. 1月
+- jar：n. 罐子；坛子
+- jaw：n. 下巴
+- jazz：n. 爵士音乐，爵士舞曲
+- jeans：n. 牛仔裤
+- jeep：n. 吉普车
+- jet：n. 喷气式飞机；喷射（器）
+- jewel：n. 宝石
+- jewelry：n. （总称）珠宝
+- job：n. （一份）工作
+- jog：v. 慢跑
+- join：v. 参加，加入；连接；会合
+- joint：adj. 共同的，联合的n. 关节；接头，接合处
+- joke：n. 笑话
+- journalist：n. 新闻工作者，新闻记者
+- journey：n. 旅行，路程vi. 旅行
+- joy：n. 欢乐，高兴，乐趣
+- judge：n. 裁判；审判员；法官vt. & vi. 审判；评判；断定
+- judgement：n. 裁判；判断
+- juice：n. 汁、液
+- July：n. 7月
+- jump：n. 跳跃；跳变v. 跳跃；惊起；猛扑
+- June：n. 6月
+- jungle：n. 丛林，密林
+- junction：n. 联结点，会合点，枢纽
+- junior：adj. 初级的；年少的
+- just：adv. 刚才；恰好；不过；仅adj. 公正的
+- justice：n. 正义；公正；司法
+- justify：vt. 证明…有理；为…辩护
+
+## 11. K
+
+- kangaroo：n. 大袋鼠
+- keep：v. 保持；保存；继续不断vt. 保存，饲养
+- keen：adj. 热心的，渴望（做某事）；敏锐的，敏捷的
+- kettle：n. （烧水用的）水壶
+- key：n. 钥匙；答案；键；关键
+- keyboard：n. 键盘
+- kick：v. & n. 踢
+- kid：n. 小孩
+- kill：v. 杀死，弄死
+- kilo：n. 千克；千米
+- kilogram：n. 千克
+- kilometre：n. 千米（公里）
+- kind：n. 种；类adj. 善良，友好的
+- kindergarten：n. 幼儿园
+- kindness：n. 仁慈；善良
+- king：n. 国王
+- kingdom：n. 王国
+- kiss：n. & v. 吻，亲吻
+- kitchen：n. 厨房
+- kite：n. 风筝
+- knee：n. 膝盖
+- knife：（复knives）n. 小刀；匕首；刀片
+- knock：n. & v. 敲；打；击
+- know：v. 知道，了解；认识；懂得
+- knowledge：n. 知识，学问
+
+## 12. L
+
+- lab：=n. 实验室
+- labour：n. 劳动
+- lack：n. & vt. 缺乏，缺少
+- ladder：n. 梯子
+- lady：n. 女士，夫人
+- lake：n. 湖
+- lamb：n. 羔羊
+- lame：adj. 跛的，瘸的，残废的
+- lamp：n. 灯，油灯；光源
+- land：n. 陆地，土地v. 登岸（陆）降落
+- landscape：n. 风景；风景画；全景vt. 美化…
+- lane：n. （乡间）小路（巷）；车（跑，泳）道；航道
+- language：n. 语言
+- lap：n. （人坐时）膝部. （跑道的）一圈
+- large：adj. 大的；巨大的
+- last：adj. 最近刚过去；最后的adv. 最近；最后地n. 最后v. 持续
+- late：adj. 晚的，迟的adv. 晚地，迟地
+- later：adj. 晚些的，迟些的
+- latter：n. （两者之中的）后者
+- laugh：n. & v. 笑，大笑；嘲笑
+- laughter：n. 笑；笑声
+- launch：v. 发动，推出；发射n. 发射，下水，投产
+- laundry：n. 洗衣店；要洗的衣服
+- law：n. 法律，法令；定律
+- lawyer：n. 律师
+- lay：vt. 放，搁
+- layer：n. 层，层次
+- lazy：adj. 懒惰的
+- lead：v. 领导，带领n. 铅
+- leader：n. 领袖，领导人
+- leadership：n. 领导，领导层
+- leaf：n. （树，菜）叶
+- league：n. 联盟，社团
+- leak：vi. 漏；渗
+- learn：vt. 学，学习，学会
+- least：n. 最少，最少量
+- leather：n. 皮革
+- leave：v. 离开；把…留下，剩下
+- lecture：n. 讲课，演讲
+- left：adj. 左边的adv. 向左n. 左，左边
+- leg：n. 腿；腿脚；支柱
+- legal：adj. 与法律有关的，法律的
+- lemon：n. 柠檬adj. 柠檬色（味）的
+- lemonade：n. 柠檬水
+- lend：vt. 借（出），把…借给
+- length：n. 长，长度，段，节
+- lesson：n. 课；功课；教训
+- let：vt. 让
+- letter：n. 信；字母
+- level：n. 水平线，水平
+- liberty：n. 自由
+- liberal：adj. 心胸宽阔的；自由（主义）的；慷慨的
+- liberation：n. 解放
+- librarian：n. 图书管理员；（西方的）图书馆馆长
+- library：n. 图书馆，图书室
+- license：n. 执照，许可证
+- lid：n. 盖子
+- lie：v. 躺；卧；平放；位于n. & vi. 谎言；说谎
+- life：n. 生命；生涯；生活；人生；生物
+- lift：v. 举起，抬起；（云、烟等）消散n. （英）电梯
+- light：n. 光，光亮；灯，灯光vt. 点（火），点燃adj. 明亮的；轻的；浅色的
+- lightning：n. 闪电
+- like：prep. 像，跟…一样vt. 喜欢，喜爱
+- likely：adj. 很可能的
+- limit：vt. 限制；减少
+- limited：adj. 有限的
+- line：n. 绳索，线，排，行，线路v. 画线于，（使）成行
+- link：v. 连接；联系
+- lion：n. 狮子
+- lip：n. 嘴唇
+- liquid：n. & adj. 液体；液体的
+- list：n. 一览表，清单
+- listen：vi. 听，仔细听
+- literally：n. 逐字地，照字面地；真正地；简直
+- literature：n. 文学
+- literary：adj. 文学的
+- litre：n. 升；公升
+- litter：v. 乱丢杂物
+- little：adj. 小的，少的adv. 很少地，稍许n. 没有多少，一点
+- live：vi. 生活；居住；活着adj. 活的，活着的；实况，现场（直播）的
+- lively：adj. 活泼的；充满生气的
+- load：n. 担子，货物
+- loaf：n. 一个面包
+- loan：n. 贷款，借，贷vt. 借出，贷给
+- local：adj. 当地的；地方的
+- location：n. 位置，场所；（电影的）外景拍摄地
+- lock：n. 锁vt. 锁，锁上
+- lonely：adj. 孤独的，寂寞的
+- long：adj. 长的，远adv. 长久
+- look：n. 看，瞧v. 看，观看v. 看起来
+- loose：adj. 松散的；宽松的
+- lorry：n. （英）运货汽车，卡车
+- lose：v. 丢失；迷失；输，损失；浪费；（钟）走慢
+- loss：n. 丧失；损耗
+- lose：vt. 失去，丢失
+- lost：adj. 失去的
+- lot：n. 许多，好些
+- loud：adj. 大声的
+- lounge：n. 休息厅；休息室
+- love：n. & vt. 爱；热爱；很喜欢
+- lovely：adj. 美好的，可爱的
+- low：adj. & adv. 低；矮
+- luck：n. 运气，好运
+- lucky：adj. 运气好，侥幸
+- luggage：n. （总称）行李
+- lump：n. 小方块，（肿）块vt. 归在一起vi. 结块
+- lunch：n. 午餐，午饭
+- lung：n. 肺；肺脏
+
+## 13. M
+
+- machine：n. 机器
+- mad：adj. 发疯的；生气的
+- madam / ：madam / n. 夫人，女士
+- magazine：n. 杂志
+- magic：adj. 有魔力的
+- maid：n. 女仆；侍女
+- mail：n. 邮政，邮递v. （美）邮寄
+- mailbox：n. 邮筒；邮箱
+- main：adj. 主要的
+- mainland：n. 大陆
+- major：adj. 较大的；主要的
+- majority：n. 大多数
+- make：vt. 制造，做；使得n. 样式；制造
+- male：adj. 男（性）的；雄的
+- man：n. 成年男人；人类
+- manage：v. 管理；设法对付
+- manager：n. 经理
+- mankind：n. 人类；（总称）人
+- man-made：man-adj. 人造的，人工的
+- manner：n. 方式，态度，举止
+- many：pron. 许多人（或物）adj. 许多的
+- map：n. 地图
+- marathon：n. 马拉松
+- march：n. 游行，行进
+- March：n. 3月
+- margin：n. 页边空白；差额；余地，余裕；边，边缘
+- mark：n. 标记vt. 标明，作记号于
+- market：n. 市场，集市
+- marriage：n. 结婚，婚姻
+- marry：v. （使）成婚，结婚
+- marvellous：adj. 奇迹般的，惊人的，了不起的
+- mask：n. 口罩；面罩（具）；遮盖物v. 戴面具；掩饰；伪装
+- mass：n. 众多；大量；（复）群众
+- massive：adj. 大的，大而重的，大块的；大规模的
+- mat：n. 垫子
+- match：vt. 使相配，使成对n. 比赛，竞赛n. 火柴
+- material：n. 材料，原料
+- mathematics：n. （常作单数用）数学，（英美口语）数学
+- matter：n. 要紧事，要紧，事情；问题vi. 要紧，有重大关系
+- mature：adj. 成熟的
+- maximum：adj. & n. 最大量（的）；最大限度（的）
+- may：v. 可以；也许，可能
+- May：n. 5月
+- maybe：adv. 可能，大概，也许
+- me：pron. 我（宾格）
+- meal：n. 一餐（饭）
+- mean：vt. 意思，意指
+- meaning：n. 意思，含意
+- means：n. 方法，手段；财产
+- meanwhile：adv. 同时
+- measure：v. 量
+- meat：n. （猪、牛、羊等的）肉
+- medal：n. 奖牌
+- media：n. 大众传播媒介
+- medical：adj. 医学的，医疗的
+- medicine：n. 药
+- medium：n. 媒体，中间的，中等的
+- meet：vt. / n. 遇见，见到会；集会
+- meeting：n. 会，集会，会见，汇合点
+- melon：n. （甜）瓜；瓜状物
+- member：n. 成员，会员
+- membership：n. 会员身份，会籍；全体会员，会员数
+- memory：n. 回忆，记忆
+- memorize：v. 记忆
+- mend：v. 修理，修补
+- mental：adj. 精神的；脑力的
+- mention：n. 提及；记载vt. 提到，说起；提名表扬
+- menu：n. 菜单
+- merchant：adj. 商业的；商人的n. 商人；生意人
+- merciful：adj. 仁慈的；宽大的
+- mercy：n. 怜悯
+- merely：adv. 仅仅，只不过
+- merry：adj. 高兴的，愉快的
+- mess：n. 凌乱
+- message：n. 消息
+- metal：n. 金属adj. 金属制成的
+- method：n. 方法，办法
+- metre：n. 米，公尺
+- microscope：n. 显微镜
+- microwave：n. 微波
+- middle：n. 中间；当中；中级的
+- midnight：n. 午夜
+- might：v. aux. （may的过去式，助动词）可能，也许，或许
+- migration：n. 迁移；移居
+- mild：adj. 温和，暖和的，凉爽的
+- mile：n. 英里
+- military：军队，武装力量
+- milk：n. 牛奶vt. 挤奶
+- millionaire：n. 百万富翁
+- mind：n. 思想，想法v. 介意，关心
+- mine：n. 矿藏，矿山vt. 开采（矿物）pron. 我的
+- mineral：n. 矿物质，矿物
+- minibus：n. 小型公共汽车
+- minimum：adj. 最小的
+- minister：n. 部长；牧师
+- ministry：n. （政府的）部
+- minor：adj. 较小的；次要的n. 未成年人vi. 副修
+- minority：n. 少数；少数民族
+- minus：prep. & adj. 负的，减去的
+- minute：n. 分钟；一会儿，瞬间
+- mirror：n. 镜子
+- misery：n. 痛苦，苦恼，苦难；悲惨的境遇，贫苦
+- mist：n. 雾
+- mistake：n. 错误vt. 弄错
+- mistaken：adj. 错误的
+- misunderstand：v. 误会；不理解
+- mix：v. 混合，搅拌
+- mixture：n. 混合物
+- millimetre：n. 毫米
+- mobile：adj. 活动的，可移动的
+- model：n. 模型，原形，范例，模范
+- modem：n. 调制解调器
+- modern：adj. 现代的
+- modest：adj. 谦虚的；谦逊的
+- Mom：n. 妈妈
+- moment：n. 片刻，瞬间
+- mommy：n. 妈妈（美）
+- money：n. 钱；货币
+- monitor：n. （班级内的）班长；v. 监视，监控
+- monkey：n. 猴子
+- month：n. 月，月份
+- monument：n. 纪念碑，纪念物
+- moon：n. 月球；月光；月状物
+- mood：n. 心情，情绪
+- mop：n. / v. 拖把拖地
+- moral：adj. 道德的n. 寓意，道德启示
+- more：more（much或的比较级）adj. / adv. 另外的；附加的；较多的再；另外；而且；更n. 更多的量；另外的一些
+- moreover：adv. 而且，再者，此外
+- morning：n. 早晨，上午
+- Mosquito：n. 蚊子
+- mother：n. 母亲
+- motherland：n. 祖国
+- motivation：n. （做事的）动机
+- motor：n. 发动机，马达
+- mountain：n. 山，山脉
+- mountainous：adj. 多山的
+- mouse：n. 鼠，耗子；（计算机）鼠标
+- moustache：n. 小胡子
+- mouth：n. 嘴，
+- move：v. 移动，搬动，搬家
+- movement：n. 运动，活动
+- movie：n. （口语）电影
+- Mr.：Mr. n. 先生（用于姓名前）
+- Mrs.：Mrs. n. 夫人，太太（称呼已婚妇女）
+- Ms.：Ms. n. 女士（用在婚姻状况不明的女子姓名前）
+- mud：n. 泥，泥浆
+- muddy：adj. 泥泞的
+- mug：n. 大杯vt. 对…行凶抢劫
+- multiply：vt. 乘；使相乘；成倍地增加
+- mum：n. （口语）妈妈
+- mummy：n. 木乃伊；妈妈
+- murder：vt. 谋杀
+- muscle：n. 肌肉
+- museum：n. 博物馆，博物院
+- mushroom：n. 蘑菇
+- music：n. 音乐，乐曲
+- musical：adj. 音乐的，爱好音乐的n. 音乐片
+- musician：n. 音乐家，乐师
+- must：v. 必须，应当；必定是
+- mutton：n. 羊肉
+- my：pron. 我的
+- myself：pron. 我自己
+- mystery：n. 神秘（性），神秘的人（或事物）
+
+## 14. N
+
+- nail：n. 钉，钉子
+- name：n. 名字，姓名，名称vt. 命名，名叫
+- narrow：adj. 狭窄的
+- nasty：adj. 令人讨厌的
+- nation：n. 民族，国家
+- national：adj. 国家的，全国性的，民族的
+- nationality：n. 国籍
+- nationwide：adv. 全国范围内的，全国性的
+- native：adj. 本土的，本国的
+- natural：adj. 自然的
+- nature：n. 自然，性质
+- navy：n. 海军
+- near：adj. 近的adv. 附近，邻近prep. 在……附近，靠近
+- nearby：adj. 附近的
+- nearly：adv. 将近，几乎
+- neat：adj. 整洁的；灵巧的
+- necessary：adj. 必需的，必要的
+- neck：n. 颈，脖子
+- necklace：n. 项链
+- need：n. 需要，需求aux. & v. 需要，必须
+- needle：n. 针
+- negative：adj. 否定的；消极的；负的
+- negotiate：v. 谈判，协商
+- neighbour：n. 邻居，邻人
+- neighbourhood：n. 四邻；邻近地区
+- neither：adj. （两者）都不；也不
+- nephew：n. 侄子，外甥
+- nervous：adj. 紧张不安的
+- nest：n. 巢；窝
+- net：n. 网
+- network：n. 网络，网状系统
+- never：adv. 决不，从来没有
+- nevertheless：adv. 仍然，不过，然而
+- new：adj. 新的；新鲜的
+- news：n. 新闻，消息
+- newspaper：n. 报纸
+- next：adj. 最近的，紧挨着的，隔壁的；下一次adv. 随后，然后，下一步n. 下一个人（东西）
+- nice：adj. 令人愉快；好的漂亮的
+- niece：n. 侄女，甥女
+- night：n. 夜；夜间
+- night-club：night-n. 夜总会
+- nine：num. 九
+- nineteen：num. 十九
+- ninety：num. 九十
+- ninth：num. 第九
+- no：adv. 不，不是adj. 没有，无，不
+- number：n. 数字；号码
+- noble：adj. 高贵的，贵族的
+- nobody：n. 渺小人物pron. 没有人，谁也不
+- nod：vi. 点头
+- noise：n. 声音，噪声，喧闹声
+- noisily：adv. 喧闹地
+- noisy：adj. 喧闹的，嘈杂的
+- none：pron. 无任何东西，无一人
+- nonsense：n. 胡说；胡闹，愚蠢的举动，无价值（或不重要的）的东西
+- nonsense：int. 胡说!废话!
+- non-stop：non-adj. & adv. 不停的，不断地
+- non-violent：non-adj. 非暴力的
+- noodle：n. 面条
+- noon：n. 中午，正午
+- nor：conj. 也不
+- normal：n. & adj. 正常的（状态）
+- north：adj. 北的；朝北的；从北来的adv. 向（在，从）北方n. 北；北方；北部
+- northeast：n. 东北（部）
+- northern：adj. 北方的，北部的
+- northwards：adv. 向北
+- northwest：n. 西北
+- nose：n. 鼻
+- not：adv. 不，没
+- note：n. 便条，笔记，注释；钞票，纸币；音符，音调vt. 记下，记录；注意，留意
+- notebook：n. 笔记簿
+- nothing：n. 没有东西，没有什么adv. 一点也不；并不
+- notice：n. 布告，通告；注意vt. 注意，注意到
+- novel：n. （长篇）小说
+- novelist：n. 小说家
+- November：n. 11月
+- now：adv. 现在
+- nowadays：adv. 当今，现在
+- nowhere：adv. 任何地方都不，无处
+- nuclear：adj. 原子核的，原子能的，核动力的
+- numb：adj. 麻木的，失去知觉的，迟钝的
+- number：n. 数，数字，号码，数量
+- nurse：n. 护士；保育员
+- nursery：n. 托儿所
+- nursing：n. （职业性的）保育，护理
+- nut：n. 坚果，果仁（胡桃，栗子等）
+- nutrition：n. 营养，滋养
+- nylon：n. 尼龙
+
+## 15. O
+
+- obey：v. 服从，顺从，听从
+- object：n. 物，物体；宾语
+- observe：v. 观察，监视，观测
+- obtain：vt. 获得；得到
+- obvious：adj. 显然
+- occasion：vt. 引起；惹起
+- occupation：n. 职业，工作
+- occupy：vt. 占领，占据，占（时间，空间）；占用；住，（常与oneself连用或作被动式）……
+- occur：vi. 发生
+- ocean：n. 海洋
+- Oceania：n. 大洋洲
+- o'clock：o'n. 点钟
+- October：n. 10月
+- odd：adj. 奇特的，古怪的，单只的，不成对的，零散的，奇数的，单数的，临时的
+- of：prep. （表所属，数量，）…. 的
+- off：prep. 离开，脱离，（走）开，adv. 离开；（电自来水）停了，中断
+- offence：n. 违法行为，犯罪
+- offer：n. & vt. 提供；建议
+- office：n. 办公室
+- officer：n. 军官；公务员，官员；警察，警官
+- official：n. （公司、团体或政府）官员，高级职员adj. 官方，政府的
+- offshore：adj. 近海的
+- often：adv. 经常，常常
+- oh：int. 哦！啊！
+- oil：n. 油
+- oilfield：n. 油田
+- OK：adv. （口语）好，对，不错
+- old：adj. 老的，旧的
+- Olympic：adj. & n. 奥林匹克
+- OlympicGames：n. 奥运会
+- omelette：n. 煎蛋卷；煎蛋饼
+- on：prep. 在…上（时），关于adv. （穿，放…）上；接通；进行下去；（电灯）开
+- once：n. & adv. 一次，一度，从前conj. 一旦
+- one：pron. 一（个，只…）（pl. ones）num. 一
+- oneself：pron. 自己；自身
+- onion：n. 洋葱；洋葱头
+- only：adj. 惟一的，仅有的adv. 仅仅，只，才
+- onto：prep. 到…的上面
+- open：adj. 开着的，开的vt. 开，打开
+- opener：n. 开具，启子
+- opening：n. 开放，口子
+- opera：n. 歌剧
+- operahouse：n. 歌剧院，艺术剧院
+- operate：v. 做手术，运转；实施，负责，经营，管理
+- operation：n. 手术，操作
+- operator：n. 接线员
+- opinion：n. 看法，见解
+- opportunity：n. 机会；良机
+- oppose：vt. 反对；反抗
+- opposite：n. 相反，对面adj. 相反的，对面的
+- opposition：n. 反对；反抗；对抗，敌对；对立；意见相反
+- optimistic：adj. 乐观的
+- option：n. 选择；选择权；选择自由，可选择的东西；选修科目
+- optional：adj. 可选择的，选修的
+- or：conj. 或；就是；否则
+- oral：adj. 口述的，口头上的
+- orange：n. 橘子，橙子，橘汁adj. 橘色的，橙色的
+- orbit：n. （天体等的）运行轨道
+- order：n. 顺序
+- order：vt. 定购，定货；点菜
+- ordinary：adj. 普通的，平常的
+- organ：n. （人，动物）器官
+- organise：vt. 组织
+- organiser：n. 组织者
+- organization：n. 组织，机构
+- origin：n. 起源，由来
+- original：adj. 最初的，本来的，原始的，有独创性的，新颖的；奇特的，原作的
+- original：n. 原物；原著；原画；原版，原著之语言；原文，原型
+- other：pron. 别人，别的东西adj. 别的，另外的
+- otherwise：adv. 要不然，否则，另样
+- Ottawa：n. 渥太华
+- ouch：int（突然受痛时叫声）哎哟
+- ought：v. & aux. 应该，应当
+- our：pron. 我们的
+- ours：pron. 我们的
+- ourselves：pron. 我们自己
+- out：adv. 出外；在外，向外；熄
+- outcome：n. 结果，效果
+- outdoors：adv. 在户外，在野外
+- outer：adj. 外部的，外面的
+- outgoing：adj. 爱交际的，外向的
+- outing：n. 郊游，远足
+- outline：n. 概述，略述
+- output：n. 产量，输出量
+- outside：n. 外面adv. 在外面；向外面prep. 在…外面
+- outspoken：adj. 直率，坦诚
+- outstanding：adj. 优秀的，杰出的
+- outward：adv. 向外的，外出的
+- over：prep. 在…上方，越过，遍及adv. 翻倒，遍布，越过，结束
+- overall：adj. 全部的，全体的，全面的adv. 总体地，大体说来n. 工作裤，工作服；防护服，罩衫
+- overcoat：n. 大衣
+- overcome：v. 克服，解决
+- overhead：adj. 在头顶上；架空的
+- overlook：v. 忽略，不予理会
+- overweight：adj. 太胖的，超重的
+- owe：vt. 欠（债等）
+- own：adj. 自己的v. 拥有，所有
+- owner：n. 物主，所有人
+- ownership：n. 所有制
+- ox：n. 牛；公牛
+- oxygen：n. 氧；氧气
+
+## 16. P
+
+- pace：n. 步子；节奏
+- Pacific：adj. 太平洋的
+- pack：n. 包，捆；（猎犬、野兽的）一群v. （为运输或储存而）打包
+- package：n. （尤指包装好或密封的容器）一包，一袋，一盒
+- packet：n. 小包裹，袋
+- page：n. 页，页码
+- pain：n. 疼痛，疼
+- painful：adj. 使痛的，使痛苦的
+- paint：n. 油漆vt. 油漆，粉刷，绘画
+- painter：n. 绘画者，（油）画家
+- painting：n. 油画，水彩画
+- pair：n. 一双，一对
+- palace：n. 宫，宫殿
+- pale：adj. 苍白的，灰白的
+- pan：n. 平底锅
+- pancake：n. 薄煎饼
+- panda：n. 熊猫
+- panel：n. 嵌板，镶板；壁板；镜板，控制板；操纵盘；仪表盘，专门小组vt. （用镶板等）镶嵌（门，墙等），把……分格
+- panic：adj. / v. 惊慌，恐慌，惶恐不安
+- pants：n. 裤子，宽松的长裤，短裤
+- paper：n. 纸；报纸
+- paperwork：n. 日常文书工作
+- paragraph：n. （文章的）段落
+- parallel：adj. 平行的，同方向的，相同的；类似的，电并联的……n. 平行线；平行面，类似的人（或事物），可相比拟的人（或事物）vt. 使成平行；与……平行，与……相似，比得上
+- parcel：n. 包裹
+- pardon：n. 原谅，宽恕，对不起
+- parent：n. 父（母），双亲
+- Paris：n. 巴黎
+- park：n. 公园
+- park：vt. 停放（汽车）
+- parking：n. 停车
+- parrot：n. 鹦鹉
+- part：n. 部分；成分；角色；部件；零件adj. 局部的；部分的v. 分离；分开；分割
+- participate：v. 参加，参与
+- particular：adj. 特殊的，个别的
+- partly：adv. 部分地，在一定程度上
+- partner：n. 搭档，合作者
+- part-time：adj. & adv. 兼职的；部分时间的（地）
+- party：v.聚会，晚会；n.党派
+- pass：vt. 传，递；经过；通过
+- passage：n. （文章等的）一节，一段；通道；走廊
+- passenger：n. 乘客，旅客
+- passer-by：passer-n. 过客，过路人
+- passive：adj. 被动的
+- passport：n. 护照
+- past：adv. 过n. 过去，昔日，往事prep. 过…，走过某处
+- patent：n. 专利权，专利证书
+- path：n. 小道，小径
+- patience：n. 容忍；耐心
+- patient：n. 病人
+- pattern：n. 式样
+- pause：n. & vi. 中止，暂停；停止
+- pay：v. 付钱，给…报酬n. 工资
+- payment：n. 支付，付款，支付的款项（或实物），报偿；惩罚
+- pea：n. 豌豆
+- peace：n. 和平
+- peaceful：adj. 和平的，安宁的
+- peach：n. 桃子
+- peak：n. 山顶，山峰；（有尖峰的）山，高峰，顶端，最高点，（物体的）尖端，帽舌vt. 使尖起，使成峰状，使达到高峰vi. 达到高峰，耸起adj. 最高的，高峰的
+- pear：n. 梨子，梨树
+- peasant：n. 农民；佃农
+- pedestrian：n. 步行者，行人
+- pen：n. 钢笔，笔
+- penalty：n. 处罚；刑罚，罚款，【体】犯规的处罚；罚球
+- pence：（penny的复数）
+- pencil：n. 铅笔
+- pencil-box：n. 铅笔盒
+- pen-friend：n. 笔友
+- penny：n. （英）便士；美分
+- pension：n. 养老金
+- people：n. 人，人们；人民
+- pepper：n. 胡椒粉
+- per：prep. 每，每一
+- percent：n. 百分之……
+- percentage：n. 百分率
+- perfect：adj. 完美的，极好的
+- perform：v. 表演，履行；行动
+- performance：n. 演出，表演
+- performer：n. 表演者，执行者
+- perfume：n. 香水
+- perhaps：adv. 可能，或
+- period：n. 时期，时代
+- permanent：adj. 永久的，永恒的
+- permission：n. 允许，许可，同意
+- permit：vt. 许可，允许；执照n. 许可证
+- person：n. 人
+- personal：adj. 个人的，私人的
+- personnel：n. 全体人员，职员
+- personally：adv. 就自己而言
+- persuade：vt. 说服，劝说
+- pest：n. 害虫
+- pet：n. 宠物，爱畜
+- petrol：n. 石油
+- phenomenon：n. 现象
+- phone：v. 打电话n. 电话，电话机
+- photo：n. 照片
+- photograph：n. 照片
+- photographer：n. 摄影师
+- phrase：n. 短语；习惯用语
+- physical：adj. 身体的；物理的
+- physician：n. （有行医执照的）医生
+- physicist：n. 物理学家
+- physics：n. 物理（学）
+- pianist：n. 钢琴家
+- piano：n. 钢琴
+- pick：v. 拾起，采集；挑选
+- picnic：n. & v. 野餐
+- picture：n. 图片，画片，照片
+- pie：n. 甜馅饼
+- piece：n. 一块（片，张，件…）
+- pig：n. 猪
+- pile：n. 堆
+- pill：n. 药丸，药片
+- pillow：n. 枕头
+- pilot：n. 飞行员
+- pin：n. 别针v. 别住，钉住
+- pine：n. 松树
+- pineapple：n. 菠萝
+- ping-pong：ping-n. 乒乓球
+- pink：adj. 粉红色的
+- pint：n. （液量单位）品脱
+- pioneer：n. 先锋，开拓者
+- pipe：n. 管子，输送管
+- pity：n. 怜悯，同情
+- pizza：n. （涂有番茄酱、乳酪等的）意大利肉馅饼
+- place：n. 地方，处所v. 放置，安置，安排
+- plain：adj. 家常的；普通的
+- plan：n. & v. 计划，打算
+- plane：n. 飞机
+- planet：n. 行星
+- plant：vt. 种植，播种n. 植物
+- plastic：adj. 塑料的
+- plate：n. 板；片；牌；盘子；盆子
+- platform：n. 讲台，（车站的）月台
+- play：v. 玩；打（球）；游戏；播放n. 玩耍，戏剧
+- playroom：n. 游戏室
+- player：n. 比赛者，选手
+- playground：n. 操场，运动场
+- playmate：n. 玩伴
+- pleasant：adj. 令人愉快的，舒适的
+- please：v. 请，使人高兴，使人满意
+- pleased：adj. 高兴的
+- pleasure：n. 高兴，愉快
+- plenty：n. 充足，大量
+- plot：v. / n. 故事情节，密谋
+- plug：n. 塞子vt. （用塞子）把…塞住
+- plus：prep. 加，加上
+- p.m. / pm，：p. m. / pm，P. M. / n. 下午，午后
+- pocket：n. （衣服的）口袋
+- poem：n. 诗
+- poet：n. 诗人
+- point：v. 指，指向n. 点；分数
+- poison：n. 毒药
+- poisonous：adj. 有毒的，致命的
+- pole：n. 杆，电线杆；
+- police：n. 警察，警务人员
+- policeman：n. 警察，巡警
+- policewoman：n. 女警察
+- policy：n. 政策，方针，原则
+- polish：v. 擦亮n. 擦光剂，亮光剂
+- polite：adj. 有礼貌的，有教养的
+- political：adj. 政治的
+- politician：n. 政治家
+- politics：n. 政治
+- pollute：vt. 污染
+- pollution：n. 污染
+- pond：n. 池塘
+- pool：n. 水塘，水池
+- poor：adj. 贫穷；可怜；不好的，差的
+- popular：adj. （口语）（音乐、艺术等）大众的，通俗的
+- popcorn：n. 爆米花
+- popular：adj. 流行，大众，受欢迎的
+- population：n. 人口，人数
+- pork：n. 猪肉
+- porridge：n. 稀饭，粥
+- port：n. 港口，码头
+- portable：adj. 手提的，便携式的
+- porter：n. （火车站或旅馆处的）搬运工
+- position：n. 位置
+- positive：adj. 积极的，肯定的
+- possess：vt. 占有；拥有
+- possession：n. 所有，拥有；财产，所有物
+- possibility：vn. 可能，可能性
+- possible：adj. 可能的
+- post：n. 邮政，邮寄，邮件v. 投寄；邮寄
+- postage：n. 邮费
+- postcard：n. 明信片
+- postcode：n. （英）邮政编码
+- poster：n. （贴在公共场所的大型）招贴；广告（画）
+- postman：n. 邮递员
+- postpone：vt. 推迟，延期
+- pot：n. 锅，壶，瓶，罐
+- potato：n. 土豆，马铃薯
+- potential：adj. 潜在的，可能的
+- pound：n. 磅；英镑
+- pour：vi. 倾泻，不断流出
+- poverty：n. 贫困，贫穷
+- powder：n. 粉，粉末
+- power：n. 力，动力，电力
+- powerful：adj. 效力大的，强有力的，强大的
+- practical：adj. 实际的，适用的
+- practice：practice（s）n. 练习
+- praise：n. & vt. 赞扬，表扬
+- pray：v. 祈祷；祈求
+- prayer：n. 祈祷
+- precious：adj. 宝贵的，珍贵的
+- precise：adj. 准确，精确的，确切的
+- predict：v. 预言，预告，预报
+- prefer：vt. 宁愿（选择），更喜欢
+- preference：n. 选择，趋向
+- prejudice：n. 偏见，成见
+- premier：n. 首相，总理
+- preparation：n. 准备
+- prepare：vt. 准备，预备，调制，配制
+- presence：n. 在场，出席
+- present：adj. 出现的，出席的n. 礼物，赠品vt. 呈奉，奉送
+- presentation：n. 演示，演出
+- preserve：v. 保护，保留，保存
+- president：n. 总统；主席
+- press：vt. 压，按n. 新闻界，出版社
+- pressure：n. 压迫，压力，压强
+- pretend：vi. 假装，装作
+- pretty：adj. 漂亮的，俊俏的
+- prevent：vt. 防止，预防
+- preview：vt. 预习；试演；预展
+- previous：adj. 先前的，以前的
+- price：n. 价格，价钱
+- pride：n. 自豪，骄傲
+- primary：adj. 初等的；初级的
+- principle：n. 道德原则，法则
+- print：vt. 印刷
+- priority：n. 优先考虑的事
+- prison：n. 监狱
+- prisoner：n. 囚犯
+- private：adj. 私人的
+- privilege：特权，特殊待遇
+- prize：n. 奖赏，奖品
+- probable：adj. 很可能，很有希望的
+- probably：adv. 很可能，大概
+- problem：n. 问题，难题
+- procedure：n. 程序，手续，待遇
+- process：n. / v. 过程，加工，处理
+- produce：vt. 生产；制造
+- product：n. 产品，制品
+- production：n. 生产；制造
+- profession：n. （需要有高等教育学位的）职业（如医生或律师）
+- professor：n. 教授
+- profit：n. 利润，收益
+- programme：（美program）n. 节目；项目
+- progress：n. 进步，上进vi. 进展，进行
+- project：n. 工程
+- promise：n. & vi. 答应，允诺
+- promote：v. 促进，推动，促销，晋升
+- pronounce：vt. 发音
+- pronunciation：n. 发音
+- proper：adj. 恰当的，合适的
+- properly：adv. 适当地
+- property：n. 财产，资产，地产
+- proposal：n. 建议；求婚
+- protect：vt. 保护
+- protection：n. 保护
+- proud：adj. 自豪的；骄傲的
+- prove：vt. 证明
+- provide：vt. 提供
+- provided：conj. 以……为条件；假如
+- providing：conj. 以……为条件；假如
+- province：n. 省
+- psychological：adj. 1. 心理学的；心理学家的2. 心理的，精神的
+- psychology：n. 心理学
+- pub：n. 酒店，酒吧
+- public：adj. 公共，公众的n. 公众
+- publish：t. 出版，发行
+- pull：拉，拖n. 拉力，引力
+- pulse：n. 脉搏，（光、能量、波等的）脉动，搏动
+- pump：t. 用泵抽水
+- punctual：adj. 准时的
+- punish：v. 惩罚，处罚
+- punishment：n. 惩罚
+- pupil：n. （小）学生
+- purchase：v. 购买，采购
+- pure：adj. 纯的，不掺杂的
+- purple：n. / adj. 紫色
+- purpose：n. 目的，意图
+- purse：n. 钱包
+- push：n. & v. 推
+- put：vt. 放，摆
+- puzzle：n. 难题，（字、画）谜
+
+## 17. Q
+
+- quake：n. & v. 震动，颤抖
+- qualification：n. 资格，学历
+- qualify：vt. 使具有资格，使合格
+- quality：n. 质量，性质
+- quantity：n. 量，数
+- quarrel：vi. 争吵，吵架
+- quarter：n. 四分之一，一刻钟
+- queen：n. 皇后，女王
+- question：vt. 询问n. 问题
+- questionnaire：n. 调查表，问卷
+- queue：n. 行列，长队
+- quick：adj. 快；敏捷的；急剧的adv. 快地；敏捷地；急剧地
+- quiet：adj. 安静的；寂静的
+- quilt：n. 被子；被状物
+- quit：v. 离任，离校，戒掉
+- quite：adv. 完全，十分
+- quiz：n. 测验，小型考试
+
+## 18. R
+
+- rabbit：n. 兔，家兔
+- race：n. 种族，民族v. （速度）竞赛，比赛n. 赛跑，竞赛
+- racial：adj. 种族的
+- radio：n. 无线电，收音机
+- rag：n. 破布，抹布
+- rail：n. 铁路
+- railway：n. 铁路；铁道
+- rain：n. 雨，雨水vi. 下雨
+- rainbow：n. 虹，彩虹
+- raincoat：n. 雨衣
+- rainfall：n. 一场雨；降雨量
+- rainy：adj. 下雨的；多雨的
+- raise：vt. 使升高；饲养
+- random：adj. 随意的，未经事先考虑的
+- range：n. / v. 变化，变动，排序
+- rank：n. 职衔，军衔
+- rapid：adj. 快的，迅速的
+- rare：adj. 罕见的，稀有的
+- rat：n. 老鼠
+- rate：n. / v. 率，评估，评价
+- rather：adv. 相当，宁可
+- raw：adj. 生的，未煮过的，未加工的
+- raw：原料
+- ray：n. 光束，光线
+- razor：n. 剃须刀
+- reach：v. 到达，伸手（脚）够到
+- react：v. 回应，过敏，起物理，化学反应
+- reaction：n. 回应，过敏，起物理，化学反应
+- read：v. 读；朗读
+- reading：n. 阅读；朗读
+- ready：adj. 准备好的
+- real：adj. 真实的，确实的
+- reality：n. 现实
+- realise：vt. 认识到，实现
+- realistic：adj. 现实的，现实主义的
+- really：adv. 真正地；到底；确实
+- reason：vi. 评理，劝说n. 理由，原因
+- reasonable：adj. 合乎情理的
+- rebuild：vt. 重建
+- recall：n. vt. 回忆，取消，召回
+- receipt：n. 收据
+- receive：v. 收到，得到
+- receiver：n. 电话听筒
+- reception：n. 接待
+- receptionist：n. 接待员
+- recite：v. 背诵
+- recognise：vt. 认出
+- recommend：v. 推荐
+- record：n. 记录；唱片
+- record：v. 录制，记录
+- recorder：n. 录音机
+- recover：vi. 痊愈；恢复
+- recreation：n. 娱乐，消遣
+- recycle：vt. 回收；再循环
+- red：n. 红色adj. 红色的
+- reduce：vt. 减少，缩减
+- refer：vi. 谈到，提到，涉及，有关
+- reference：n. 提到，涉及，谈及，查询
+- reflect：v. 反映，反射
+- reform：v. / n. 改革，改进，改良
+- refresh：v. 使恢复精力，提醒
+- refrigerator：n. 冰箱
+- refusal：n. 拒绝
+- refuse：vi. 拒绝，不愿
+- regard：v. 把……看作
+- regards：n. 问候，致意
+- regarding：prep. 关于
+- regardless：adj. 不顾，不加理会
+- region：n. 地区，范围，领域，
+- regional：adj. 地区的，局部的，
+- register：n. 登记簿，花名册，注册员v. 登记，注册
+- regret：n. / vt. 可惜，遗憾；痛惜；哀悼
+- regular：adj. 规则的，经常
+- regulation：n. 规则，规章
+- reject：v. 拒绝
+- relate：vi. 有关；涉及
+- relation：n. 关系；亲属
+- relationship：n. 关系
+- relative：n. 亲属，亲戚
+- relax：v. （使）放松，轻松
+- release：vt. / n. 释放，让渡，发行
+- relevant：adj. 相关的，切题的，中肯的
+- reliable：adj. 可信赖的，可依靠的
+- relief：n. 轻松，解脱，缓和，救济
+- religion：n. 宗教
+- religious：adj. 宗教的
+- rely：v. 依赖，依靠
+- remain：vt. 余下，留下vi. 保持，仍是
+- remaining：adj. 剩余的
+- remark：n. 陈述；话；议论
+- remember：v. 记得，想起
+- remind：vt. 提醒，使记起
+- remote：adj. 偏远的，偏僻的
+- remove：vt. 移动，拿走，脱掉（衣服等）
+- removal：n. 移动，搬迁，除去，开除
+- rent：n. & v. 租金
+- repair：n. & vt. 修理；修补
+- repairs：n. 修理工作
+- repeat：vt. 重说，重做
+- replace：vt. 取代
+- reply：n. 回答，答复
+- report：n. & v. 报道，报告
+- reporter：n. 记者，新闻通讯员
+- represent：vt. 代表
+- representative：n. 代表，典型人物
+- republic：n. 共和国
+- reputation：n. 名声，名誉
+- request：n. 请求，要求的事物
+- require：vt. 需求；要求
+- requirement：n. 需要；要求；必要的条件
+- rescue：vt. 营救，援救
+- research：n. 研究，调查
+- resemble：v. （不用进行时）像，看起来像
+- reservation：n. 预定
+- reserve：n. & v. 储备；预定
+- resign：v. 辞职
+- resist：v. 抵抗；挡开
+- resource：n. 资源，
+- respect：vt. & n. 尊敬，尊重
+- respond：v. 回答，回应，作出反应
+- response：n. 回答，响应，答复
+- responsible：adj. 有责任的，负责的，
+- responsibility：n. 责任，负责
+- rest：n. 休息；剩余的部分，其余的人（物）vi. 休息，歇息
+- restaurant：n. 饭馆，饭店
+- restore：vt. 恢复，归还，复原
+- restriction：n. 限制，约束
+- result：n. 结果，效果
+- retell：vt. 重讲，重复，复述
+- retire：v. 退休
+- return：v. 归还
+- reveal：vt. 显示，透露，揭示，展现
+- revenue：n. 税收，收入，税务局
+- review：vt. 重新调查；回顾；复习n. 复查；复习；评论
+- revision：n. 复习，温习
+- revolution：n. 革命，变革
+- reward：n. 奖赏
+- rewind：v. 回转（磁带等）
+- rhyme：n. / v. 押韵
+- rice：n. 稻米；米饭
+- rich：adj. 富裕的，有钱的
+- rid：vt. 使摆脱
+- riddle：n. 谜（语）
+- ridiculous：adj. 荒谬的，愚蠢的
+- ride：v. 骑（马、自行车）；乘车n. 乘车旅行
+- right：n. 权利adj. 对，正确的adv. 正确地，恰恰，完全地adj. 右，右边的
+- ring：v. （钟、铃等）响；打电话n. 电话，铃声n. 环形物（如环、圈、戒指等）
+- rigid：adj. 死板的，僵硬的，固执的
+- ripe：adj. 成熟的，熟的
+- rise：vi. 上升，上涨
+- risk：n. / v. 危险，风险，冒险
+- river：n. 江；河；水道；巨流
+- road：n. 路，道路
+- roast：v. 烤（肉）
+- rob：v. 抢夺，抢劫
+- robot：n. 机器人
+- rock：n. 岩石，大石头vt. 摇，摇晃
+- rocket：n. 火箭
+- role：n. 角色
+- roll：v. 滚动，打滚n. 面包圈，小圆面包；卷状物
+- roof：n. 屋顶，顶部
+- room：n. 房间，室；空间；地方
+- root：n. 根，根源，起源
+- rope：n. 绳，索
+- rose：n. 玫瑰花
+- rot：vi. 烂；腐败
+- rough：adj. 粗糙的，粗略的
+- round：adv. 转过来prep. 环绕一周，围着adj. 圆的；球形的
+- roundabout：adj. & n. 绕道的，不直接的；转盘路
+- route：n. 路线
+- routine：n. 常规，正常顺序，无聊
+- row：n. （一）排，（一）行v. 划船
+- royal：adj. 皇家的，王室的，国王的，女王的
+- rubber：n. 橡胶；合成橡胶
+- rubbish：n. 垃圾；废物
+- rude：adj. 无理的，粗鲁的
+- rugby：n. （英）橄榄球
+- ruin：vt. （使）毁坏；（使）毁灭n. （复）废墟；遗迹
+- rule：n. 规则，规定vt. 统治，支配
+- ruler：n. 统治者；直尺
+- run：vi. 跑，奔跑；（颜色）褪色
+- rural：adv. 乡下的，农村的
+- rush：vi. 冲，奔跑
+
+## 19. S
+
+- sacred：adj. 害怕，恐惧，担心
+- sacrifice：vt. 牺牲
+- sad：adj. （使人）悲伤的
+- sadness：n. 悲哀，忧伤
+- safe：adj. 安全的n. 保险柜
+- safety：n. 安全，保险
+- sail：n. 航行v. 航行，开航
+- sailor：n. 水手，海员
+- sake：n. 缘故，理由；利益
+- salad：n. 色拉（西餐中的一种菜）
+- salary：n. 薪金，薪水
+- sale：n. 卖，出售
+- salesgirl：n. 女售货员
+- salesman：n. 男售货员
+- saleswoman：n. 女售货员
+- salt：n. 盐
+- salty：adj. 盐的，咸的，含盐的
+- same：n. 同样的事a同样的，同一
+- sand：n. 沙，沙子
+- sandwich：n. 三明治（夹心面包片）
+- satellite：n. 卫星
+- satisfaction：n. 满意
+- satisfy：vt. 满足，使满意
+- sausage：n. 香肠，腊肠
+- save：vt. 救，挽救，节省
+- say：vt. 说，讲
+- saying：n. 说，俗话，谚语
+- scale：n. 天平，秤
+- scan：v. 略读，浏览，扫描
+- scar：n. 伤疤，伤痕
+- scare：v. 使害怕，使恐惧
+- scarf：n. 领巾，围巾
+- scene：n. （戏剧、电影等的）一场，场景，布景
+- scenery：n. 风景，景色，风光
+- sceptical：adj. 怀疑的
+- schedule：n. 工作计划，日程安排v. 安排时间，预定
+- scheme：n. v. 计划；策划
+- school：n. 学校
+- scholar：n. 学者
+- scholarship：n. 奖学金
+- schoolbag：n. 书包
+- schoolmate：n. 同校同学
+- science：n. 科学，自然科学
+- scientific：adj. 科学的
+- scientist：n. 科学家
+- scissors：n. 剪刀，剪子
+- scold：vt. 责骂
+- score：n. & v. 得分，分数
+- Scratch：v. / n. 划破，划痕，划伤
+- scream：n. 尖叫
+- screen：n. 幕，荧光屏
+- sea：n. 海，海洋
+- seal：n. 海豹
+- search：n. & v. 搜寻，搜查
+- seaside：n. 海滨
+- season：n. 季；季节
+- seat：n. 座位，座
+- second：n. 秒num. 第二adj. 第二的
+- secondary：adv. 中等的，次要的
+- secret：n. 秘密，内情
+- secretary：n. 秘书；书记
+- section：n. 段，部分，部门
+- sector：n. 部门
+- secure：adj. 安心的，有把握的，牢靠的
+- security：n. 安全，平安
+- see：vt. 看见，看到；领会；拜会
+- seed：n. 种子
+- seek：vt. 试图；探寻
+- seem：v. 似乎，好像
+- seize：vt. 抓住（时机等）
+- seldom：adv. 很少，不常
+- select：vt. 选择，挑选，选拔
+- selection：vt. 选择，挑选，选拔
+- self：n. 自己，自我，自身
+- selfish：adj. 自私的
+- sell：v. 卖，售
+- send：v. 打发，派遣；送，邮寄
+- senior：adj. 年长的，资深的，高年级的n. 上级，长辈，高年级生
+- sense：n. 感觉，意识
+- sensitive：adj. 体贴的，善解人意的
+- sentence：n. 句子
+- separate：v. 使分开，使分离adj. 单独的，分开的
+- separately：adv. 单独地，各自地
+- separation：n. 分离，隔离
+- series：n. 一系列；一连串
+- serious：adj. 严肃的，严重的，认真的
+- servant：n. 仆人，佣人
+- serve：vt. 招待（顾客等），服务
+- service：n. 服务
+- session：n. 一场，一节，一段时间
+- set：vt. 释放，安置n. 装备，设备
+- setting：n. 舞台，背景
+- settle：vi. 安家，定居
+- settlement：n. 新拓居地；（美）部落，村落
+- settler：n. 移居者，开拓者
+- several：pron. 几个，数个adj. 若干
+- severe：adj. 极为恶劣，十分严重的
+- sew：vi. 缝，缝制；缝补；缝纫
+- sex：n. 性，性别
+- shabby：adj. 破旧，破烂，衣衫褴褛的
+- shade：n. 阴凉处，树荫处
+- shadow：n. 影子，阴影
+- shake：v. （使）动摇，震动
+- shall：v. aux. （表示将来）将要，会；……好吗
+- shallow：adj. 浅的，不深的，肤浅的
+- shame：n. 遗憾的事；羞愧
+- shape：n. 形状，外形v. 使成型，制造，塑造
+- share：vt. 分享，共同使用
+- shark：n. 鲨鱼
+- sharp：adj. 锋利的，尖的
+- sharpen：v. （使）变锐利，削尖
+- shave：v. 刮（脸，胡子）
+- shaver：n. 电动剃须刀
+- she：pron. 她
+- sheep：n. （绵）羊；羊皮；驯服者
+- sheet：n. 成幅的薄片，薄板
+- shelf：n. 架子；搁板；格层；礁；陆架
+- shelter：n. 掩蔽；隐蔽处
+- shift：v. 改变，更换
+- shine：v. 发光；照耀；杰出；擦亮
+- ship：n. 船，轮船vi. 用船装运
+- shirt：vn. 男衬衫
+- shock：vt. 使震惊
+- shoe：n. 鞋
+- shoot：vt. 射击，射中，发射n. 嫩枝；苗；芽
+- shop：vi. 买东西n. 商店，车间
+- shopkeeper：n. 店主，零售商人
+- shopping：n. 买东西
+- shore：n. 滨，岸
+- short：adj. 短的；矮的
+- shortcoming：n. 缺点，短处
+- shortly：adv. 不久
+- shorts：n. 短裤；运动短裤
+- shot：n. 射击，开枪，开炮，射击声；子弹
+- should：v. mod. 应当，应该，会v. aux. 会，应该（shall的过去时态）
+- shoulder：n. 肩膀，（道路的）路肩
+- shout：n. & v. 喊，高声呼喊
+- show：n. 展示，展览（会）；演出
+- show：（showed，或showed）v. 给…看，出示，显示
+- shower：n. 阵雨；淋浴
+- shrink：v. 缩小，收缩，减少
+- shut：v. / n. 关上，封闭；禁闭；
+- shuttle：vn. 合拢（往返与两个定点之间的）（火车汽车飞机）班车 / 机
+- shy：adj. 害羞的
+- sick：adj. 有病，患病的，（想）呕吐
+- sickness：n. 疾病
+- side：n. 边，旁边，面，侧面
+- sidewalk：n. 人行道
+- sigh：vi. 叹息；叹气
+- sight：n. 情景，风景；视力
+- sightseeing：n. 游览，观光
+- sign：n. 符号，标记
+- signal：n. 信号，暗号
+- significance：n. 重要性，意义
+- significant：adj. 重要的
+- silence：n. 安静，沉默
+- silent：silentˈsaɪlənt]adj. 无声的，无对话的
+- silk：n. （蚕）丝，丝织品
+- silly：adj. 傻的，愚蠢的
+- silver：n. 银
+- similar：adj. 相似的，像
+- similarity：n. 相似
+- simple：adj. 简单的，简易的
+- simplify：v. 使简化，使简易
+- simply：adv. 简单地，（加强语气）的确
+- sin：n. v. 罪；犯罪
+- since：adv. 从那时以来conj. 从…以来，…以后，由于prep. 从…以来
+- sincerely：adv. 真诚地
+- sing：v. 唱，唱歌
+- single：adj. 单一的，单个的
+- sink：n. 洗涤槽；污水槽
+- sink：vi. 下沉；消沉
+- sir：n. 先生；阁下
+- sister：n. 姐；妹
+- sit：vi. 坐
+- situation：n. 形势，情况
+- size：n. 尺寸，大小
+- skate：vi. 溜冰，滑冰
+- ski：n. & vi. 滑雪板；滑雪
+- skill：n. 技能，技巧
+- skillful：adj. 熟练，精湛的，灵巧的
+- skin：n. 皮，皮肤；兽皮
+- skip：v. 蹦蹦跳跳；跳绳
+- skirt：n. 女裙
+- sky：n. 天；天空
+- skyscraper：n. 摩天楼
+- slave：n. 奴隶
+- slavery：n. 奴隶制度
+- slap：v. 拍打
+- sleep：n. 睡觉
+- sleep：vi. 睡觉
+- sleepy：adj. 想睡的，困倦的，瞌睡的
+- sleeve：n. 袖子，袖套
+- slice：n. 片，切面（薄）片
+- slide：n. 幻灯片，滑道v. 滑行，滑动
+- slight：adj. 轻微的，细小的
+- slim：adj. 苗条的，纤细的
+- slip：n. 片，条，纸片，纸条
+- slow：adv. 慢慢地，缓慢地
+- small：adj. 小的，少的
+- smart：adj. 灵巧的，伶俐的；（人、服装等）时髦的，帅的
+- smell：v. 嗅，闻到；发气味n. 气味
+- smile：n. & v. 微笑
+- smog：=n. 烟雾（smoke+fog）
+- smoke：n. 烟v. 冒烟；吸烟
+- smoker：n. 吸烟者
+- smooth：adj. 光滑的；平坦的
+- snake：n. 蛇v. 蛇般爬行；蜿蜒行进
+- snap：v. 发出劈啪声
+- sneaker：n. （复）轻便运动鞋（美）
+- sneeze：v. 打喷嚏
+- sniff：v. 抽鼻子（哭，患感冒时）
+- snow：n. 雪vi. 下雪
+- snowball：n. 雪球
+- snowman：n. 雪人
+- snowy：adj. 雪（白）的；下雪的；多（积）雪的
+- so：adv. 如此，这么；非常；同样conj. 因此，所以
+- soap：n. 肥皂
+- sob：n. & v. 抽泣，啜泣
+- soccer：n. 英式足球
+- social：adj. 社会的；社交的
+- socialism：n. 社会主义
+- socialist：adj. 社会主义的
+- society：n. 社会
+- sock：n. 短袜
+- socket：n. （电源）插座
+- sofa：n. （长）沙发
+- soft：adj. 软的，柔和的
+- software：n. 软件
+- soil：n. 土壤，土地
+- solar：adj. 太阳的
+- soldier：n. 士兵，战士
+- solution：n. 解答；解决（办法）；
+- solve：解决
+- solid：adj. 结实的，固体的n. 固体
+- some：adj. 一些，若干；有些；某一pron. 若干，一些
+- somebody：pron. 某人；有人；有名气的人
+- someone：pron. 某一个人
+- somehow：adv. 以某种方法，设法
+- something：pron. 某事；某物
+- sometimes：adv. 有时
+- somewhat：ad稍许，有几分
+- somewhere：adv. 在某处
+- son：n. 儿子
+- song：n. 歌唱；歌曲
+- soon：adv. 不久，很快，一会儿
+- sore：疼痛的
+- sorrow：n. 悲伤，悲痛
+- sorry：adj. 对不起，抱歉；难过的
+- sort：t. 把…分类，拣选n. 种类，类别
+- soul：n. 灵魂；心灵；气魄
+- sound：vi. 听起来，发出声音n. 声音
+- soup：n. 汤
+- sour：adj. 酸的，馊的
+- source：n. 来源，水源
+- south：adj. 南（方）的；向南的；从南来的adv. 在南方；向南方；自南方n. 南；南方；南风；南部
+- southeast：n. 东南
+- southern：adj. 南部的，南方的
+- southwest：n. 西南
+- souvenir：n. 旅游纪念品，纪念物
+- sow：vt. 播种
+- space：n. 空间
+- spaceship：n. 宇宙飞船
+- spade：n. 铲子；纸牌中的黑桃
+- spare：adj. 空闲，多余的，剩余的
+- speak：v. 说，讲；谈话；发言
+- speaker：n. 演讲人，演说家
+- special：adj. 特别的，专门的
+- specialist：n. （医学）专家，专科医生；专家；专业人员
+- specific：adj. 明确的，具体的，独特的
+- speech：n. 演讲
+- speed：n. 速度v. （使）加速
+- spell：vt. 拼写
+- spelling：n. 拼写，拼读
+- spend：v. 度过；花费（钱、时间等）
+- spin：v. & n. 纺，（使）快速旋转；旋转，旋转运动
+- spirit：n. 精神
+- spiritual：adj. 精神的；心灵的
+- spit：v. 吐唾沫；吐痰
+- splendid：adj. 灿烂的，辉煌的；（口语）极好的
+- split：v. 撕开；切开
+- spoken：adj. 口语的
+- sponsor：n. 赞助者，赞助商
+- spoon：n. 匙，调羹
+- spoonful：n. 一匙（的量）
+- sport：vn. 体育运动，锻炼；（复，英）运动会
+- spot：n. 斑点，污点；场所，地点v. 沾上污渍，弄脏
+- spray：n. / v. 水雾，喷雾（器）喷洒
+- spread：v. 延伸；展开
+- spring：n. 春天，春季n. 泉水，泉
+- spy：n. 密探，间谍v. 侦探，刺探
+- square：n. 广场adj. 平方的；方形的，宽而结实的（体格，肩膀）
+- squeeze：n. 挤压，捏，塞
+- stable：adj. 稳固的，牢固的
+- stadium：n. （露天）体育场
+- staff：n. 全体职工（雇员）
+- stage：n. 舞台；阶段
+- stain：n. 污点，污渍，染色剂
+- stair：n. 楼梯
+- stamp：n. 邮票
+- stand：n. 站；立；停止；立场；地位；台；坛；摊
+- stand：v. 站；立；起立；坐落；经受；持久
+- standard：n. & adj. 标准（的）
+- star：n. 星，恒星
+- stare：vi. 盯，凝视
+- start：v. 开始，着手；出发
+- starvation：n. 饥饿；饿死
+- starve：v. 饿死
+- state：n. 状态；情形；国家，（美国的）州
+- station：n. 站，所，车站；电台
+- statement：n. 声明，陈诉，说法
+- statistics：n. 统计数字，统计资料，统计学
+- statue：n. 法令，法规，章程
+- status：n. 法律地位（身份）
+- stay：n. & vi. 停留，逗留，呆
+- steady：adj. 稳固的；平稳的
+- steak：n. 牛排，肉排，鱼排
+- steal：vt. 偷，窃取
+- steam：n. 汽，水蒸气
+- steel：n. 钢，钢铁
+- steep：adj. 险峻的；陡峭的
+- step：n. 脚步，台阶，梯级vi. 走，跨步
+- stick：vi. 粘住，钉住；坚持n. 木棒（棍），枝条
+- still：adj. 不动的，平静的adv. 仍然，还
+- stocking：n. 长统袜
+- stomach：n. 胃，胃部
+- stone：n. 石头，石料
+- stop：n. 停；（停车）站v. 停，停止，阻止
+- storage：n. 贮藏；储存
+- store：n. 商店vt. 储藏，存储
+- storm：n. 风暴，暴（风）雨
+- story：n. 故事，小说
+- straight：adj. 一直的，直的adv. 一直地，直地
+- straightforward：adj. / adv. 简单的，坦率的
+- strange：adj. 奇怪，奇特的，陌生的
+- stranger：n. 陌生人，外人
+- straw：n. 稻草
+- strawberry：n. 草莓
+- stream：n. 小河；溪流
+- street：n. 街，街道
+- strength：n. 力量，力气
+- strengthen：vt. 加强，增强
+- stress：n. 精神压力，心理负担v. 强调，重读
+- strict：adj. 严格的，严密的
+- strike：v. （钟）鸣；敲（响），罢工
+- strike：（struck，或stricken）vt. 擦（打）火，侵袭
+- string：n. 细绳，线，带
+- strong：adj. 强（壮）的；坚固的；强烈的；坚强的
+- structure：n. 结构；构造
+- struggle：vi. 斗争
+- stubborn：adj. 固执的，倔强的
+- student：n. 学生
+- studio：n. 工作室，演播室
+- study：v. 学习；研究n. 书房
+- stuff：n. 东西，材料
+- stupid：adj. 愚蠢的，笨的
+- style：n. 方式，作风，款式
+- subject：adj. 隶属的；受支配的；易受…的；在…条件下vt. 使隶属；使服从；使受到n. 题目；主题；学科；主语；主体
+- submission：n. 投降；提交（物）
+- subjective：adj. 主观的
+- submit：v. 提交，呈递（文件，建议等）
+- subscribe：v. 订阅，订购（报刊等）
+- succeed：vi. 成功
+- success：n. 成功
+- successful：adj. 成功的，有成就的
+- such：adv. 那么pron. （泛指）人，事物adj. 这样的，那样的
+- suck：vt. 吸吮
+- sudden：adj. 突然的
+- suffer：vi. 受苦，遭受
+- suffering：n. 痛苦，苦难
+- sufficient：adj. 足够的，充分的
+- sugar：n. 糖
+- suggest：vt. 建议，提议
+- suggestion：n. 建议
+- suit：vt. 适合n. 一套（衣服）
+- suite：n. 套间；组曲
+- suitable：adj. 合适的，适宜的
+- suitcase：n. （旅行用）小提箱，衣箱
+- sum：n. 金额，总数
+- summary：n. 摘要，概要
+- summer：n. 夏天，夏季
+- sun：n. 太阳，阳光
+- sunlight：n. 日光，阳光
+- sunny：adj. 晴朗的；阳光充足的
+- sunshine：n. 阳光
+- super：adj. 顶好的，超级的
+- superior：adj. 更胜一筹的n. 上级，上司
+- supermarket：n. 超级市场
+- supper：n. 晚餐，晚饭
+- supply：vt. & n. 供给，供应
+- support：vt. & n. 支持，赞助
+- suppose：vt. 猜想，假定，料想
+- sure：adj. 确信，肯定adv. （口语）的确，一定，当然
+- surface：n. 表面
+- surgeon：n. 外科医生
+- surgery：n. 外科；外科手术
+- surplus：n. 过剩，剩余
+- surprise：vt. 使惊奇，使诧异n. 惊奇，诧异
+- surround：vt. 围绕；包围
+- surrounding：adj. 周围的
+- survey：n. 调查；测量
+- survival：n. 存活，幸存
+- survive：v. 生存，存活，幸免于难
+- suspect：n. 犯罪嫌疑人
+- sustainable：adj. 可持续的；可忍受的
+- swallow：vt. 吞下；咽下
+- swap：v. 交换（东西）
+- swear：v. 咒骂. ，诅咒
+- sweat：n. 汗，汗水
+- sweater：n. 厚运动衫，毛衣
+- sweep：v. 扫除，扫
+- sweet：n. 甜食；蜜饯；甜点；糖果；芳香adj. 甜的；新鲜的；可爱的；亲切的
+- swell：v. 肿胀
+- swift：adj. 快的，迅速的
+- swim：vi. 游泳，游
+- swing：vt. 挥舞，摆动n. 秋千
+- switch：v. / n. 开关，转换，改变
+- symbol：n. 象征
+- sympathy：n. 同情
+- symptom：n. 症状
+- system：n. 体系；系统
+- systematic：adj. 系统的，有条理的
+
+## 20. T
+
+- table：n. 桌子，表格
+- tablet：n. 药片
+- tail：n. （动物的）尾巴
+- take：vt. 拿；拿走；做；服用；乘坐；花费
+- tale：n. 故事，传说
+- talent：n. 天才，天赋
+- talk：n. & v. 谈话，讲话，演讲，交谈
+- tall：adj. 高的
+- tank：n. 储水容量；坦克
+- tap：n. （自来水煤气等的）龙头
+- tape：n. 磁带；录音带
+- target：n. / v. 目标，把…作为攻击目标
+- task：n. 任务，工作
+- taste：n. 品尝，尝味；味道vt. 品尝，尝味
+- tasty：adj. 味道好的
+- tax：n. 税，税款
+- taxi：n. 出租汽车
+- taxpayer：n. 纳税人
+- tea：n. 茶；茶叶
+- teach：v. 教书，教
+- teacher：n. 教师，教员
+- team：n. 队，组
+- teamwork：n. 合作，协同工作
+- teapot：n. 茶壶
+- tear：n. 眼泪v. 扯破，撕开
+- tease：v. 取笑，戏弄，寻开心
+- technical：adj. 技术的，工艺的
+- technique：n. 技术；技巧，方法
+- technology：n. 技术
+- teenager：n. （13～19岁的）青少年，十几岁的少年
+- telephone：v. 打电话n. 电话
+- telescope：n. 望远镜
+- television：n. 电视
+- tell：vt. 告诉，讲述，吩咐
+- temperature：n. 温度
+- temporary：adj. 短暂的，暂时的
+- tend：v. 往往会，常常就，倾向，趋于
+- tendency：n. 倾向，偏好，性情
+- tennis：n. 网球
+- tense：adj. 心烦意乱的，紧张的
+- tension：n. 紧张局势，矛盾
+- tent：n. 帐篷
+- term：n. 学期；术语；条款；项
+- terminal：adj. （火车汽车飞机）终点站
+- terrible：adj. 可怕的；糟糕的
+- terrify：vt. 使人感到恐怖
+- territory：n. 领土，领域；范围
+- terror：n. 恐惧，惊恐
+- test：vt. & n. 测试，考查，试验
+- text：n. 文本，课文
+- textbook：n. 课本，教科书
+- than：conj. 比
+- thank：vt. 感谢，致谢，道谢n. （复）感谢，谢意
+- thankful：adj. 感谢的，感激的
+- that：adj. & pron. 那，那个conj. 那，那个（引导宾语从句等）adv. 那么，那样
+- the：art. 这（那）个，这（那）些（用于特定人或物，序数词，最高级，专有名词，世上独一无二事物前）
+- theatre：（美theater）n. 剧场，戏院
+- theft：n. 盗窃案
+- their：pron. 他（她，它）们的
+- theirs：pron. 他（她，它）们的
+- them：pron. 他 / 她 / 它们（宾格）
+- theme：n. 主题
+- themselves：pron. 他 / 她 / 它们自己
+- then：adv. 当时，那时，然后，那么
+- theoretical：adj. 理论的
+- theory：n. 理论
+- there：int. 那！你瞧（表示引起注意）n. 那里，那儿adv. 在那里，往那里；（作引导词）表”存在
+- therefore：adv. 因此，所以
+- these：adj. & pron. 这些
+- they：pron. 他（她）们；它们
+- thick：adj. 厚的
+- thief：（复thieves）n. 窃贼，小偷
+- thin：adj. 薄的；瘦的；稀的
+- thing：n. 东西；（复）物品，用品；事情，事件
+- think：v. 想；认为；考虑
+- thirst：n. 渴；口渴
+- this：adj. & pron. 这，这个
+- thorough：adj. 彻底的
+- those：adj. & pron. 那些
+- though：conj. 虽然，可是
+- thought：n. 思考，思想；念头
+- thread：n. 线
+- threat：n. 威胁，恐吓；凶兆
+- threaten：v. 威胁，恐吓；预示
+- thrill：n. / v. 兴奋，激动
+- thriller：n. 惊险小说
+- throat：n. 喉咙
+- through：prep. 穿（通）过；从始至终adv. 穿（通）过；自始至终，全部
+- throughout：prep. 遍及，贯穿
+- throw：v. 投，掷，扔
+- thunder：n. & v. 雷声，打雷
+- thus：adv. 这样；因而
+- ticket：n. 票；卷
+- tidy：adj. 整洁的，干净的vt. 弄整洁，弄干净
+- tie：vt. （用绳，线）系，拴，扎n. 领带，绳子，结；关系
+- tiger：n. 老虎
+- tight：adj. 紧的
+- till：conj. & prep. 直到，直到…为止
+- time：n. 时间；时期；钟点，次，回vt. 测定…的时间，记录…的时间
+- timetable：n. （火车、公共汽车等）时间表；（学校）课表
+- tin：n. （英）罐头，听头
+- tiny：adj. tinier，adj. 极小的，微小的
+- tip：n. & v. 顶端，尖端；告诫；提示（给）小费
+- tire：vi. 使疲劳
+- tired：adj. 疲劳的，累的
+- tiresomev：adj. 令人厌倦的
+- tissue：n. （人，动植物的）组织，纸巾
+- title：n. 标题，题目
+- to：prep. （动词不定式符号，无词义）；（表示接受动作的人或物）给；对，向，到；在…之前
+- toast：v. / n. 烤
+- tobacco：n. 烟草，烟叶
+- today：adv. & n. 今天；现在，当前
+- together：adv. 一起，共同
+- toilet：n. 厕所
+- tolerate：v. 容许，允许，忍受
+- tomato：n. 西红柿，番茄
+- tomb：n. 坟墓
+- tomorrow：adv. & n. 明天
+- ton：n. （重量单位）吨
+- tone：n. 声音；音调
+- tongue：n. 舌，舌头
+- tonight：adv. & n. 今晚，今夜
+- too：adv. 也，还，又，太，过分，很，非常
+- tool：n. 工具，器具
+- tooth：n. 牙齿
+- toothache：n. 牙痛
+- top：n. 顶部，（物体的）上面
+- topic：n. 题目，话题
+- tortoise：n. 乌龟
+- total：adj. 总数的；总括的；完全的，全然的n. 合计，总计v. 合计为
+- totally：adv. 总合地，完全地
+- touch：vt. 触摸，接触
+- tough：adj. 坚硬的；结实的；棘手的，难解的
+- tour：n. 参观，观光，旅行
+- tourism：n. 旅游业；观光
+- tourist：vn. 旅行者，观光者
+- toward：prep. 向，朝，对于
+- towel：n. 毛巾
+- tower：n. 塔
+- town：n. 城镇，城
+- toy：n. 玩具，玩物
+- track：n. 轨道；田径
+- tractor：n. 拖拉机
+- trade：n. 贸易vt. 用…进行交换
+- tradition：n. 传统，风俗
+- traditional：adj. 传统的，风俗的
+- traffic：n. 交通，来往车辆
+- trail：n. 痕迹；踪迹；足迹
+- train：n. 火车v. 培训，训练
+- trainer：n. 训练人；教练
+- training：n. 培训
+- transform：v. 使改变形态，使改观
+- translate：vt. 翻译
+- translation：n. 翻译；译文
+- transparent：adj. 透明的，清澈的
+- translator：n. 翻译家，译者
+- transport：n. & vt. 运输
+- transportation：n. 运输；输送；运输工具
+- trap：n. 陷阱vt. 使陷入困境
+- travel：n. & vi. 旅行
+- traveler：n. 旅行者
+- treasure：n. 金银财宝，财富
+- treat：vt. 对待，看待
+- treatment：n. 治疗，疗法
+- tree：n. 树
+- tremble：v. 颤抖
+- tremendous：adj. 巨大的，极大的
+- trend：n. 趋势，倾向，动态
+- trial：n. 审判；试验；试用
+- triangle：n. & adj. 三角形；三角形的
+- trick：n. 诡计，把戏
+- trip：n. 旅行，旅程
+- troop：vi. 成群结队地走
+- troop：n. 部队
+- trouble：vt. 使苦恼，使忧虑，使麻烦n. 问题，疾病，烦恼，麻烦
+- troublesome：adj. 令人烦恼，讨厌
+- trousers：n. 裤子，长裤
+- truck：n. 卡车，运货车；车皮v. 装车；用货车运
+- true：adj. 真的，真实的；忠诚的
+- truly：adv. 真正地，真实地
+- trunk：n. 树干；大箱子
+- trust：vt. 相信，信任，信赖
+- truth：n. 真理，事实，真相，实际
+- try：v. 试，试图，努力
+- T-shirt：T-n. T恤衫
+- tube：n. 管，管状物
+- tune：n. 曲调，曲子
+- tunnel：n. 隧道，地道
+- turkey：n. 火鸡
+- turn：v. 旋转，翻转，转变，转弯n. 轮流，（轮流的）顺序
+- turning：. 拐弯处，拐角处
+- tutor：n. 家庭教师，私人教师，导师
+- TV：n. 电视机
+- twice：adv. 两次；两倍
+- twin：n. 双胞胎之一
+- twist：v. / n. 使弯曲，转动
+- type：vt. 打字
+- typewriter：n. 打字机
+- typical：adj. 典型的，有代表性的，特有的
+- typhoon：n. 台风
+- typist：n. 打字员
+- tyre：n. 轮胎
+
+## 21. U
+
+- ugly：adj. 丑陋的；难看的
+- umbrella：n. 雨伞
+- unable：adj. 不能的，不能胜任的
+- unbearable：adj. 难耐的，无法接受的
+- unbelievable：adj. 难以置信的
+- uncertain：adj. 不确定的
+- uncle：n. 叔，伯，舅，姑夫，姨父
+- uncomfortable：adj. 令人不舒服的
+- unconditional：adj. 无条件，绝对的
+- unconscious：adj. 昏迷，不省人事的
+- under：adv. & prep. 在…下面，向…下面
+- underground：adj. 地下的n. 地铁
+- underline：v. 在…下划线
+- underneath：prep. 在……下面，在……底下
+- understand：v. 懂得；明白；理解
+- understanding：n. 领会；理解
+- undertake：v. 承担，从事，负责
+- undivided：adj. 没分开的；专一的；专心的
+- undo：undid；v. 解开，松开
+- unemployed：adj. 失业的，无工作的
+- unemployment：n. 失业，失业状态
+- unfair：adj. 不公平的，不公正的
+- unfold：vt. 展开，打开
+- unfortunate：adj. 不幸的
+- unfortunately：adv. 不幸地
+- uniform：n. 制服
+- union：n. 联合，联盟；工会
+- unique：adj. 惟一的，独一无二的
+- unit：n. 单元，单位
+- unite：v. 联合，团结
+- universal：adj. 普遍的，全体的
+- universe：n. 宇宙
+- university：n. 大学
+- unless：conj. 如果不，除非
+- unlike：prep. 不像，和…不同
+- unrest：n. 不安；骚动
+- until：prep. & conj. 直到…为止
+- unusual：adj. 不平常的，异常的
+- unwilling：adj. 不愿意的，勉强的
+- up：adv. 向上；在上方；起来；在…以上adj. 上面的，向上的，上行的n. 上升；上坡；上行；繁荣v. 举起；拿起；提高prep. 向（高处）；向（在）……上（面）游
+- update：v. 更新，升级n. 更新
+- upon：prep. 在……上面
+- upper：adj. 较高的，较上的
+- upset：adj. 心烦的，苦恼的
+- upstairs：adv. 在楼上，到楼上
+- upward：adv. 向上；往上
+- urban：adj. 城市的，都市的
+- urge：v. 敦促，催促，力劝
+- urgent：adj. 紧急的，紧迫的
+- use：n. & vt. 利用，使用，应用
+- used：adj. 用过的；旧的；二手的
+- useful：adj. 有用的，有益的
+- useless：adj. 无用的
+- user：n. 使用者；用户
+- usual：adj. 通常的，平常的
+
+## 22. V
+
+- vacation：n. 假期，休假
+- vacant：adj. 空缺的，未被占用的
+- vague：adj. 含糊的，紧迫的
+- vain：n. 自负的，自视过高的，徒劳的，无效的
+- valid：adj. 有效的，合理的，有根据的
+- valley：n. 山谷，溪谷
+- valuable：adj. 值钱的，贵重的
+- value：n. 价值，益处
+- variety：n. 种种，种类
+- various：adj. 各种各样的，不同的
+- vary：v. 使多样化
+- vase：n. （花）瓶；瓶饰
+- vast：adj. 巨大的，广阔的
+- vegetable：n. 蔬菜
+- vehicle：n. 交通工具，车辆
+- version：n. 变体，变种，改写本
+- vertical：adj. 垂直的，纵向的
+- very：vadv. 很，非常
+- vest：n. 背心，内衣
+- via：prep. 经过（某地），通过
+- vice：n. 罪行，不道德行为
+- victim：n. 受害者，牺牲品
+- victory：n. 胜利
+- video：n. 录像，视频
+- view：n. 看法，见解；风景，景色
+- viewer：n. 观看者
+- village：n. 村庄，乡村
+- villager：n. 村民
+- vinegar：n. 醋
+- violence：n. 暴力行为
+- violent：adj. 暴力的
+- violin：n. 小提琴
+- virtue：n. 美德，正直的品行，德行
+- virus：n. 病毒
+- visa：n. 签证，背签
+- visit：n. & vt. 参观，访问，拜访
+- visitor：n. 访问者，参观者
+- visual：adj. 视力的，视觉的
+- vital：adj. 必不可少的，对…极重要的
+- vivid：adj. 生动，逼真的，鲜明的
+- vocabulary：n. 词汇，词汇表
+- voice：n. 说话声；语态
+- volcano：n. 火山
+- volleyball：n. 排球
+- voluntary：adj. 自愿的，主动的
+- volunteer：n. / v. 义工，自愿者，无偿做
+- vote：vi. 选举，投票
+- voyage：n. 航行，旅行
+
+## 23. W
+
+- wag：v. 摇动；摆动
+- wage：n. 工资，工钱，报酬
+- waist：n. 腰，腰部，腰围
+- wait：vi. 等，等候
+- waiter：n. （餐厅）男服务员
+- waiting：-n. 候诊室，候车室
+- waitress：n. 女服务员
+- wake：v. 醒来，叫醒
+- walk：n. & v. 步行；散步
+- wall：n. 墙
+- wallet：n. （放钱，证件等的）皮夹
+- wander：vi. 漫游，游荡，漫步，流浪
+- want：vt. 想，想要，需要，必要
+- war：n. 战争
+- ward：n. 保卫，看护，病房，收容所
+- warehouse：n. 仓库，货栈
+- warm：adj. 暖和的，温暖的；热情的
+- warmth：n. 暖和，温暖
+- warn：vt. 警告，预先通知
+- wash：n. 洗（涤）冲洗，洗剂，泼溅，洗的衣服v. 洗（涤），冲洗，流过，弄湿
+- washroom：n. 盥洗室
+- waste：n. & vt. 浪费
+- watch：vt. 观看，注视；当心，注意n. 手表，表
+- water：n. 水v. 浇水
+- watermelon：n. 西瓜
+- wave：n. （热、光、声等的）波，波浪v. 挥手，挥动，波动
+- way：n. 路，路线；方式，手段
+- we：pron. 我们
+- web：n. 网，网状物
+- website：n. 网络
+- weak：adj. 差的，弱的，淡的
+- weakness：n. 软弱
+- wealth：n. 财产，财富
+- wealthy：adj. 富的
+- weapon：n. 武器，兵器
+- wear：v. 穿，戴
+- weather：n. 天气
+- web：n. 网，网状物
+- website：n. 网络
+- weatherman：n. 气象员，预报天气的人
+- wedding：n. 婚礼，结婚
+- Wednesday：n. 星期三
+- weed：n. 杂草，野草
+- week：n. 星期，周
+- weekday：n. 平日
+- weekend：n. 周末
+- weekly：adj. 每周的
+- weep：v. 哭泣，流泪
+- weigh：vt. 称…的重量，重（若干）
+- weight：n. 重，重量
+- weird：adj. 神秘的；奇特的；不可思议的
+- welcome：int. n. & v. 欢迎adj. 受欢迎的
+- welfare：n. 幸福，福利
+- well：adv. 好，令人满意地，完全地adj. 好的，健康的int. 表示惊讶同意或犹豫等，亦用于接话语；好吧，那么，哎呀n. 井
+- west：adj. （在）西；向西，从西来的adv. 在西方，向西方n. 西部；西方
+- western：adj. 西方的，西部的
+- westwards：adv. 向西
+- wet：adj. 湿的，潮的，多雨的
+- whale：n. 鲸
+- what：pron. 什么，怎么样adj. 多么，何等；什么
+- whatever：conj. & pron. 无论什么，不管什么
+- wheat：n. 小麦
+- wheel：n. 轮，机轮
+- when：conj. 当…的时候adv. 什么时候，何时
+- whenever：conj. 每当，无论何时
+- where：adv. 在哪里；往哪里
+- wherever：conj. 无论在哪里
+- whether：conj. 是否
+- which：pron. 那（哪）一个；那（哪）一些adj. 这（哪）个；这（哪）些；无论哪个（些）
+- whichever：pron. 无论哪个；无论哪些
+- while：conj. 在…的时候，和…同时n. 一会儿，一段时间
+- whisper：v. 低语，私下说
+- whistle：n. 口哨，口哨声
+- white：adj. 白色的n. 白色
+- who：pron. 谁
+- whole：adj. 整个的
+- whom：pron. （who的宾格）
+- whose：pron. 谁的
+- why：adv. / int. 为什么，你难道不知道（表示反驳、不耐烦等）
+- wide：adj. 宽阔的
+- widespread：adj. 分布广的，普遍的
+- widow：n. 寡妇
+- wife：n. 妻子
+- wild：adj. 未开发的，荒凉的；野生的，野的
+- wildlife：n. 野生动物
+- will：n. 意志，遗嘱
+- will：v. 将，会（表示将来）；愿意，要
+- willing：adj. 乐意的；愿意的
+- win：n. 获胜，赢得
+- wind：n. 风
+- wind：vt. 缠，连带；蜿蜒，弯曲
+- window：n. 窗户；计算机的窗
+- windy：adj. 有风的，多风的
+- wine：n. 酒
+- wing：n. 机翼，翅膀
+- winner：n. 获胜者
+- winter：n. 冬天，冬季
+- wipe：v. 擦；擦净；擦干
+- wire：n. 电线
+- wisdom：n. 智慧
+- wise：adj. 聪明，英明的，有见识的
+- wish：n. 愿望，祝愿vt. 希望，想要，祝愿
+- with：prep. 关于，带有，以，和，用，有
+- withdraw：v. 撤回，撤离
+- within：prep. 在……里面
+- without：prep. 没有
+- witness：v. / n. 目击者，见证人
+- wolf：wolf（复wolves）n. 狼
+- woman：n. 妇女女人
+- wonder：v. 对…疑惑，感到惊奇，想知道n. 惊讶，惊叹；奇迹
+- wonderful：adj. 美妙的，精彩的；了不起的；太好了
+- wood：n. 木头，木材，（复）树木，森林
+- wooden：adj. 木制的
+- wool：n. 羊毛，羊绒
+- woollen：adj. 羊毛的，羊毛制的
+- word：n. 词，单词；话
+- work：n. 工作，劳动，事情vi. 工作；（机器、器官等）运转，活动
+- worker：n. 工人；工作者
+- world：n. 世界
+- worldwide：adj. 遍及全球的，世界范围的
+- worm：n. 软体虫，蠕虫（尤指蚯蚓）
+- worn：adj. 用坏，用旧的，疲惫的
+- worried：adj. 担心的，烦恼的
+- worry：n. & v. 烦恼，担忧，发怒，困扰
+- worth：adj. 有…的价值，值得…的
+- worthwhile：adj. 值得做的
+- worthy：adj. 值得的
+- would：v. （will的过去时）将会，打算，想要，过去常常
+- wound：vt. 伤，伤害n. 创伤，伤口
+- wrap：vt. 包，裹
+- wrinkle：n. 皱纹
+- wrist：n. 手腕，腕关节
+- write：v. 写，书写；写作，著述
+- wrong：adj. 错误，不正常，有毛病的
+
+## 24. X
+
+- Xray：n. X射线；X光
+
+## 25. Y
+
+- yard：n. 码；院子；场地
+- yawn：v. 打哈欠
+- yeah：adv. 是
+- year：n. 年
+- yell：v. 叫喊，吼叫
+- yellow：adj. 黄色的
+- yes：adv. 是，好，同意
+- yesterday：n. & adv. 昨天
+- yet：adv. 尚，还，仍然
+- yoghurt：n. 酸奶
+- you：pron. 你；你们
+- young：adj. 年轻的
+- your：pron. 你的；你们的
+- yours：pron. 你的；你们的
+- yourself：pron. 你自己
+- yourselves：pron. 你们自己
+- youth：n. 青春；青年
+
+## 26. Z
+
+- zebra：n. 斑马
+- zero：n. & num. 零，零度，零点
+- zip：v. & n. 拉开（或扣上）……的拉链；拉链
+- zone：n. 区域；范围
+- zoo：n. 动物园
+- zoom：v. 快速移动，迅速前往，猛涨

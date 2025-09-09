@@ -457,7 +457,7 @@ const sidebars: SidebarsConfig = {
             type: 'doc',
             id: 'note/english/vocabulary/index',
           },
-          items: [],
+          items: ['note/english/vocabulary/ncee'],
         },
         {
           type: 'category',
