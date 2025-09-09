@@ -390,7 +390,7 @@ $$
 这样就可以化简为：
 
 $$
-\sqrt{a\pm\sqrt{b}}=\sqrt{x}\pm\sqrt{y}
+\sqrt{a\pm\sqrt{b}}=\left|\sqrt{x}\pm\sqrt{y}\right|
 $$
 
 :::tip
