@@ -38,7 +38,7 @@
 
 GitHub 上的开源仓库 **TapXWorld/ChinaTextbook** 收录了几乎所有小学、初中、高中和大学的 **PDF 教材**。
 
-如果你 **无法访问 GitHub** 或 **不会下载文件**，也可以到 [人民教育出版社](https://jc.pep.com.cn) 或 [国家中小学智慧教育平台](https://basic.smartedu.cn/tchMaterial) 在线预览。
+如果你 **无法访问 GitHub** 或 **不会下载文件**，也可以到 [人民教育出版社](https://jc.pep.com.cn) 或 [国家中小学智慧教育平台](https://basic.smartedu.cn/tchMaterial) 在线预览电子课本。
 
 <GitHub repo="TapXWorld/ChinaTextbook" />
 
