@@ -11,6 +11,10 @@
     "message": "网站",
     "description": "The title of the footer links column with title=Site in the footer"
   },
+  "link.title.More": {
+    "message": "更多",
+    "description": "The title of the footer links column with title=More in the footer"
+  },
   "link.item.label.Contest": {
     "message": "竞赛",
     "description": "The label of footer link with label=Contest linking to /docs/contest"
@@ -43,26 +47,6 @@
     "message": "GitHub",
     "description": "The label of footer link with label=GitHub linking to https://github.com/lailai0916"
   },
-  "link.item.label.Settings": {
-    "message": "设置",
-    "description": "The label of footer link with label=Settings linking to /settings"
-  },
-  "link.item.label.Sitemap": {
-    "message": "地图",
-    "description": "The label of footer link with label=Sitemap linking to /sitemap"
-  },
-  "link.item.label.Privacy Policy": {
-    "message": "隐私政策",
-    "description": "The label of footer link with label=Privacy Policy linking to /privacy"
-  },
-  "link.item.label.Changelog": {
-    "message": "更新日志",
-    "description": "The label of footer link with label=Changelog linking to /changelog"
-  },
-  "link.title.More": {
-    "message": "更多",
-    "description": "The title of the footer links column with title=More in the footer"
-  },
   "link.item.label.lailai's Status": {
     "message": "lailai's Status",
     "description": "The label of footer link with label=lailai's Status linking to https://status.lailai.one"
@@ -78,6 +62,22 @@
   "link.item.label.lailai's AI": {
     "message": "lailai's AI",
     "description": "The label of footer link with label=lailai's AI linking to https://ai.lailai.one"
+  },
+  "link.item.label.Settings": {
+    "message": "设置",
+    "description": "The label of footer link with label=Settings linking to /settings"
+  },
+  "link.item.label.Sitemap": {
+    "message": "地图",
+    "description": "The label of footer link with label=Sitemap linking to /sitemap"
+  },
+  "link.item.label.Privacy Policy": {
+    "message": "隐私政策",
+    "description": "The label of footer link with label=Privacy Policy linking to /privacy"
+  },
+  "link.item.label.Changelog": {
+    "message": "更新日志",
+    "description": "The label of footer link with label=Changelog linking to /changelog"
   },
   "copyright": {
     "message": "版权所有 © 2022-2025 lailai，使用 <a href=\"https://docusaurus.io\" target=\"_blank\">Docusaurus</a> 构建。<br />本网站内容遵循 <a href=\"https://creativecommons.org/licenses/by/4.0/\">知识共享署名 4.0 国际许可协议</a><img src=\"https://mirrors.creativecommons.org/presskit/icons/cc.svg\" alt=\"\" style=\"max-width: 1em;max-height:1em;margin-left: .2em;\"><img src=\"https://mirrors.creativecommons.org/presskit/icons/by.svg\" alt=\"\" style=\"max-width: 1em;max-height:1em;margin-left: .2em;\">",

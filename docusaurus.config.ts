@@ -176,15 +176,6 @@ const config: Config = {
           ],
         },
         {
-          title: 'Site',
-          items: [
-            { label: 'Settings', to: '/settings' },
-            { label: 'Sitemap', to: '/sitemap' },
-            { label: 'Privacy Policy', to: '/privacy' },
-            { label: 'Changelog', to: '/changelog' },
-          ],
-        },
-        {
           title: 'More',
           items: [
             { label: "lailai's Status", href: 'https://status.lailai.one' },
@@ -197,6 +188,15 @@ const config: Config = {
               href: 'https://cloud.lailai.one',
             },
             { label: "lailai's AI", href: 'https://ai.lailai.one' },
+          ],
+        },
+        {
+          title: 'Site',
+          items: [
+            { label: 'Settings', to: '/settings' },
+            { label: 'Sitemap', to: '/sitemap' },
+            { label: 'Privacy Policy', to: '/privacy' },
+            { label: 'Changelog', to: '/changelog' },
           ],
         },
       ],
