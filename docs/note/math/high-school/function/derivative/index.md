@@ -4,7 +4,7 @@
 
 - [导数 - 维基百科](https://zh.wikipedia.org/zh-cn/导数)
 - [链式法则 - 维基百科](https://zh.wikipedia.org/zh-cn/链式法则)
-- [[Manim动画]导！导！导！初中生也能理解的导数的概念](https://www.bilibili.com/video/BV1Ja411x7fB)
+- [[Manim动画]导！导！导！初中生也能理解的导数的概念 - bilibili](https://www.bilibili.com/video/BV1Ja411x7fB)
 
 ## 前置知识
 
