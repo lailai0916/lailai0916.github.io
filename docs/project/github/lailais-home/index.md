@@ -32,9 +32,8 @@
 
 - [ ] 统一页面风格
 - [ ] 优化主页各组件代码
-- [ ] 添加各页面描述
-- [x] ~~维护 i18n 翻译~~
-- [ ] 添加主页“lailai”拖动效果
+- [ ] 添加文章描述
+- [ ] 添加主页“lailai”拖动交互效果
 - [ ] 优化响应式布局
 - [ ] 维护无障碍功能
 - [ ] 添加 React 图片展示组件
@@ -42,8 +41,9 @@
 - [ ] 优化网站性能
 - [x] ~~添加调试模式~~
 - [ ] 添加新版博客页面
-- [ ] 添加 Status 页面
-- [ ] 添加主页 Analytics 组件
+- [ ] 添加 Status 组件
+- [ ] 添加 Analytics 组件
+- [ ] 添加 AI 总结
 
 ## 提示词
 
@@ -76,9 +76,13 @@
 
 ## 参考
 
-以下是一些我认为非常出色的个人网站，供参考和借鉴：
+这是一些我认为非常出色的个人网站，供参考：
 
 - [峰华前端工程师 - 让你学会前端开发](https://zxuqian.cn)
 - [愧怍](https://kuizuo.cn)
 - [老车的个人网站](https://cheyujie.art)
 - [JIEJOE | 视觉设计者](https://www.jiejoe.com)
+- [AcoFork Blog - 技术分享与实践](https://2x.nz)
+- [Sukka (@sukkaw)](https://skk.moe)
+- [Alan Wang](https://www.alanwang.site)
+- [Baoshuo (@renbaoshuo)](https://baoshuo.ren)

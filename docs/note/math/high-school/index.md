@@ -44,7 +44,7 @@ GitHub 上的开源仓库 **TapXWorld/ChinaTextbook** 收录了几乎所有小�
 
 ## A 版
 
-这是 A 版教材的目录。
+这是 **A 版** 教材的目录，供参考。
 
 ### 必修一
 
