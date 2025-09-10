@@ -8,14 +8,14 @@ void insert(ll x)
 {
 	for(int i=N;i>=0;i--)
 	{
-		if(x>>i==1)
+		if(x>>i&1)
 		{
-			if(p[i]==0)
+			if(!p[i])
 			{
 				p[i]=x;
 				return;
 			}
-			else x^=p[i];
+			x^=p[i];
 		}
 	}
 }
