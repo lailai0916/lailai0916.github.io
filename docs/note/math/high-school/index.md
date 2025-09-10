@@ -2,8 +2,8 @@
 
 本章是我的高中数学笔记。
 
-![](/img/notbyai/Written-By-Human-Not-By-AI-Badge-white.svg#gh-light-mode-only)
-![](/img/notbyai/Written-By-Human-Not-By-AI-Badge-black.svg#gh-dark-mode-only)
+![](/img/notbyai/Written-By-Humans-Not-By-AI-Badge-white.svg#gh-light-mode-only)
+![](/img/notbyai/Written-By-Humans-Not-By-AI-Badge-black.svg#gh-dark-mode-only)
 
 ## 前言
 
@@ -11,7 +11,7 @@
 
 我的高中数学大部分是在初中学习的，当时只是感兴趣。
 
-我会在网上找一些讲得很好的课程和视频，从不同角度去理解问题，这对我帮助很大。
+我会到网上找一些讲得很好的课程和视频，从不同角度去理解问题，这对我帮助很大。
 
 写下这份笔记，就是想把自己的理解整理出来，希望能对你有所帮助。
 
@@ -43,6 +43,8 @@ GitHub 上的开源仓库 **TapXWorld/ChinaTextbook** 收录了几乎所有小�
 <GitHub repo="TapXWorld/ChinaTextbook" />
 
 ## A 版
+
+这是 A 版教材的目录。
 
 ### 必修一
 
