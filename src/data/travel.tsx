@@ -105,7 +105,7 @@ export const TRAVEL_LIST: TravelItem[] = [
   {
     title: '2017-02',
     cardTitle: '🇹🇷 土耳其',
-    cardDetailedText: '伊斯坦布尔、卡帕多奇亚',
+    cardDetailedText: '伊斯坦布尔、卡帕多奇亚、以弗所、棉花堡',
   },
   {
     title: '2017-05',
