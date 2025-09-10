@@ -22,7 +22,10 @@ void insert(ull x)
 ull query()
 {
 	ull res=0;
-	for(int i=N-1;i>=0;i--)res=max(res,res^p[i]);
+	for(int i=N-1;i>=0;i--)
+	{
+		res=max(res,res^p[i]);
+	}
 	return res;
 }
 int main()
