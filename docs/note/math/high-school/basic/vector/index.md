@@ -88,8 +88,8 @@ $$
 
 $$
 \begin{cases}
-x=x'-\dfrac{y'}{\tan\theta}\\
-y=\dfrac{y'}{\sin\theta}
+x=x'-\frac{y'}{\tan\theta}\\
+y=\frac{y'}{\sin\theta}
 \end{cases}
 $$
 
@@ -242,13 +242,13 @@ $$
 - 其中，我们称 $|\bm a|\cos \theta$ 为 $\bm a$ 在 $\bm b$ 方向上的投影。
 
   $$
-  |\bm a|\cos\theta=\dfrac{\bm a\cdot\bm b}{|\bm b|}
+  |\bm a|\cos\theta=\frac{\bm a\cdot\bm b}{|\bm b|}
   $$
 
   而投影向量需要再乘上 $\bm b$ 方向的单位向量：
 
   $$
-  \dfrac{\bm a\cdot\bm b}{|\bm b|^2}\bm b
+  \frac{\bm a\cdot\bm b}{|\bm b|^2}\bm b
   $$
 
 - 其中，$\theta\in[0,\pi]$，但是直线的夹角 $\theta\in[0,\pi)$，因为相反向量是完全不同的。
@@ -414,7 +414,7 @@ $$
 常见形式为：
 
 $$
-\vec{PA}\cdot\vec{PB}=|PM|^2-\dfrac{1}{4}|AB|^2
+\vec{PA}\cdot\vec{PB}=|PM|^2-\frac{1}{4}|AB|^2
 $$
 
 其中 $M$ 为 $AB$ 中点。
