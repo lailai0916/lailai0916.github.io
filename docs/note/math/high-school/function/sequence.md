@@ -949,9 +949,9 @@ $$
 
 等差乘等比。
 
-若 $a_n=(An+B)q^{n-1}$，令 $D=\frac{A}{q-1},E=\frac{B-D}{q-1}$，则 $S_n=(Dn+E)q^n-E$.
+若 $a_n=(An+B)q^{n-1}$，令 $D=\frac{A}{q-1},E=\frac{B-D}{q-1}$，则 $S_n=(Dn+E)q^n-E$。
 
-例题：$\displaystyle a_n=\frac{n}{3^n}$，求 $S_n$.
+例题：$\displaystyle a_n=\frac{n}{3^n}$，求 $S_n$。
 
 ### 数学归纳
 
