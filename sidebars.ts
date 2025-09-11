@@ -350,7 +350,7 @@ const sidebars: SidebarsConfig = {
               label: '几何与解析',
               items: [
                 'note/math/high-school/geometry/triangle-solving/index',
-                'note/math/high-school/geometry/solid-geometry',
+                'note/math/high-school/geometry/solid-geometry/index',
                 'note/math/high-school/geometry/line-and-circle/index',
                 'note/math/high-school/geometry/conic',
               ],
