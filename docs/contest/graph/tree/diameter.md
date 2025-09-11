@@ -4,7 +4,7 @@
 
 - [树的直径 - OI Wiki](https://oi-wiki.org/graph/tree-diameter/)
 
-## 思路
+## 思想
 
 第一次 dfs 找到距离任意点最远的点 $u$，第二次 dfs 找到距离 $u$ 最远的点 $v$，直径即为 $u-v$。
 
