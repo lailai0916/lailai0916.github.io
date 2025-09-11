@@ -20,16 +20,13 @@ $$
 
 ## 按键
 
-<kbd>Ctrl</kbd> + <kbd>C</kbd>
-
-<kbd>⌘</kbd> + <kbd>C</kbd>
+<kbd>Ctrl</kbd> + <kbd>C</kbd> or <kbd>⌘</kbd> + <kbd>C</kbd>
 
 ## 脚注
 
-- This is a test. [^1][^2]
+- This is a footnote test. [^1][^2]
 
 [^1]: test #1
-
 [^2]: test #2
 
 ## 实时编辑器
