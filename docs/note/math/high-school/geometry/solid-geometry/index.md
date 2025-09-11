@@ -18,7 +18,7 @@
 
 将平面 $x$ 轴不变，$y$ 轴向右倾斜 $45^\circ$ 并长度缩短到原来的 $1/2$，称为斜二测画法，画出来的图称为直观图。
 
-容易知道，直观图的面积是原图形的 $\dfrac{\sqrt2}4$，原图形的面积是直观图的 $2\sqrt2$ 倍。
+容易知道，直观图的面积是原图形的 $\frac{\sqrt2}4$，原图形的面积是直观图的 $2\sqrt2$ 倍。
 
 竖直的 $z$ 轴也不变，称所画出的图形称为直观图。
 
@@ -37,13 +37,13 @@ $$
 设拟柱体的高为 $H$，如果用平行于底面的平面去截该图形，所得到的截面面积是与到底面之间距离 $h$ 的不超过 $3$ 次的函数，那么该拟柱体的体积 $V$ 为：
 
 $$
-V=\dfrac{h(a+4b+c)}6
+V=\frac{h(a+4b+c)}6
 $$
 
 其描述的是辛普森积分法（一种数值积分方法）：
 
 $$
-\int_{a}^{b}f(x)\mathrm dx\approx {\dfrac {b-a}{6}}\left[f(a)+4f\left({\dfrac {a+b}{2}}\right)+f(b)\right]
+\int_{a}^{b}f(x)\mathrm dx\approx {\frac {b-a}{6}}\left[f(a)+4f\left({\frac {a+b}{2}}\right)+f(b)\right]
 $$
 
 ### 欧拉公式
@@ -95,7 +95,7 @@ $$
 根据祖暅原理，任何棱锥都可以转化为一个正棱锥，从而：
 
 $$
-V=\dfrac{Sh}3
+V=\frac{Sh}3
 $$
 
 证明：
@@ -107,19 +107,19 @@ $$
 其中：
 
 $$
-S(h)=S\cdot\dfrac{h^2}{H^2}
+S(h)=S\cdot\frac{h^2}{H^2}
 $$
 
 注意到：
 
 $$
-\dfrac{\mathrm d(Sh^3/3H^2)}{\mathrm dh}=\dfrac{Sh^2}{H^2}
+\frac{\mathrm d(Sh^3/3H^2)}{\mathrm dh}=\frac{Sh^2}{H^2}
 $$
 
 因此：
 
 $$
-V=\dfrac{SH^3}{3H^2}=\dfrac{SH}{3}
+V=\frac{SH^3}{3H^2}=\frac{SH}{3}
 $$
 
 这个公式对所有椎体成立。
@@ -131,13 +131,13 @@ $$
 根据祖暅原理，任何棱台都可以转化为一个圆台，从而根据：
 
 $$
-V=\dfrac{h}{6}[S+S'+4\times\dfrac{1}{4}(S+S'+2\sqrt{SS'})]=\dfrac h3(S+\sqrt{SS'}+S')
+V=\frac{h}{6}[S+S'+4\times\frac{1}{4}(S+S'+2\sqrt{SS'})]=\frac h3(S+\sqrt{SS'}+S')
 $$
 
 棱台的体积公式也可以描述为一种希罗平均数：
 
 $$
-H={\dfrac {1}{3}}\left(A+{\sqrt {AB}}+B\right)
+H={\frac {1}{3}}\left(A+{\sqrt {AB}}+B\right)
 $$
 
 用以计算棱台或圆台的体积等于棱台或圆台的高乘以两底面面积的希罗平均数。
@@ -145,7 +145,7 @@ $$
 希罗平均数也可以看成算术平均数与几何平均数的加权平均数。
 
 $$
-H={\dfrac {2}{3}}\cdot {\dfrac {A+B}{2}}+{\dfrac {1}{3}}\cdot {\sqrt {AB}}
+H={\frac {2}{3}}\cdot {\frac {A+B}{2}}+{\frac {1}{3}}\cdot {\sqrt {AB}}
 $$
 
 ## 旋转体
@@ -175,7 +175,7 @@ $$
 根据祖暅原理：
 
 $$
-V=\dfrac13Sh=\dfrac13\pi r^2h
+V=\frac13Sh=\frac13\pi r^2h
 $$
 
 也可以用定积分算。
@@ -203,7 +203,7 @@ $$
 根据辛普森法则：
 
 $$
-V=\dfrac16h\left[\pi r^2+\pi\left(\dfrac{r+R}{2}\right)^2+\pi R^2\right]=\dfrac{\pi h}3(r^2+rR+R^2)
+V=\frac16h\left[\pi r^2+\pi\left(\frac{r+R}{2}\right)^2+\pi R^2\right]=\frac{\pi h}3(r^2+rR+R^2)
 $$
 
 表面积同样可以拆分：
@@ -235,7 +235,7 @@ $$
 
 1. 若四面体有三条棱两两互相垂直，则可将其放入某个长方体内。
 2. 若四面体的四个面均是直角三角形，则可将其放入某个长方体内。
-3. 正四面体 $ P-ABC $ 可以补形为正方体且正方体的棱长 $ a = \dfrac{PA}{\sqrt{2}} $。
+3. 正四面体 $ P-ABC $ 可以补形为正方体且正方体的棱长 $ a = \frac{PA}{\sqrt{2}} $。
 4. 若四面体的三组对棱分别相等，则可将其放入某个长方体内。
 
 ### 截面问题
@@ -273,7 +273,7 @@ $$
 根据辛普森法则：
 
 $$
-V=\dfrac{1}{6}\times2r\times(0+4\pi r^2+0)=\dfrac43\pi r^3
+V=\frac{1}{6}\times2r\times(0+4\pi r^2+0)=\frac43\pi r^3
 $$
 
 根据球的表面积等于其外接圆柱的侧面面积（详细看 3B1B 的视频）：
@@ -295,7 +295,7 @@ $$
 容易发现，长方体外接球直径就是其对角线的长度，也就是：
 
 $$
-R=\dfrac{\sqrt{a^2+b^2+c^2}}{2}
+R=\frac{\sqrt{a^2+b^2+c^2}}{2}
 $$
 
 ### 棱锥的外接球
@@ -323,11 +323,11 @@ $$
 注意到可以将三棱锥分为，等面积法：
 
 $$
-V=\dfrac{1}{3}S_1r+\dfrac{1}{3}S_2r+\dfrac{1}{3}S_3r+\dfrac{1}{3}S_4r
+V=\frac{1}{3}S_1r+\frac{1}{3}S_2r+\frac{1}{3}S_3r+\frac{1}{3}S_4r
 $$
 
 即：
 
 $$
-r=\dfrac{3V}{S_1+S_2+S_3+S_4}=\dfrac{3V}{S_{\text{表}}}
+r=\frac{3V}{S_1+S_2+S_3+S_4}=\frac{3V}{S_{\text{表}}}
 $$
