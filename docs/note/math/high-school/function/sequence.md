@@ -165,7 +165,7 @@ $$
 形如，
 
 $$
-\boxed{a_{n+1}=a_n+d,(n\in\mathbb Z^*)}
+a_{n+1}=a_n+d,(n\in\mathbb Z^*)
 $$
 
 或者记为，
@@ -181,7 +181,7 @@ $$
 形如，
 
 $$
-\boxed{a_n=a_1+(n-1)d}
+a_n=a_1+(n-1)d
 $$
 
 即，角标减一，等于公差个数。
@@ -201,7 +201,7 @@ $$
 给定任意两项 $a_n,a_m$，则公差，
 
 $$
-\boxed{d={a_n-a_m\over n-m}}
+d={a_n-a_m\over n-m}
 $$
 
 在等差数列中，前项与后项和为该项两倍，具体的，
@@ -222,19 +222,19 @@ $$
 对于正整数 $m,n,p,q$，若 $m+n=p+q$，则，
 
 $$
-\boxed{a_m+a_n=a_p+a_q}
+a_m+a_n=a_p+a_q
 $$
 
 或者简化一下，
 
 $$
-\boxed{a_m+a_n=a_{m-k}+a_{n+k}}
+a_m+a_n=a_{m-k}+a_{n+k}
 $$
 
 据此，有，
 
 $$
-\boxed{a_{n-k}+a_{n+k}=2a_n}
+a_{n-k}+a_{n+k}=2a_n
 $$
 
 对于 $a_{n-k},a_n,a_{n+k}$ 有意义。据此，同理，
@@ -257,7 +257,7 @@ $$
 \begin{aligned}
 a_k=a_1+(k-1)d\\
 k-1={a_k-a_1\over d}\\
-\boxed{k={a_k-a_1\over d}+1}
+k={a_k-a_1\over d}+1
 \end{aligned}
 $$
 
@@ -333,9 +333,9 @@ $$
 $$
 \begin{aligned}
 S_n&=na_1+dT_{n-1}\\
-&=\boxed{na_1+{n(n-1)\over2}d}\\
+&=na_1+{n(n-1)\over2}d\\
 &={n\over2}[2a_1+(n-1)d]\\
-&=\boxed{{n(a_1+a_n)\over2}}
+&={n(a_1+a_n)\over2}
 \end{aligned}
 $$
 
@@ -344,19 +344,19 @@ $$
 总结一下，一般写为，
 
 $$
-\boxed{S_n={[2a_1+(n-1)]d\over2}\cdot n={n(a_1+a_n)\over2}}
+S_n={[2a_1+(n-1)]d\over2}\cdot n={n(a_1+a_n)\over2}
 $$
 
 常用二次函数的思想：
 
 $$
-\boxed{S_n={d\over2}n^2+\left(a_1-{d\over2}\right)n}
+S_n={d\over2}n^2+\left(a_1-{d\over2}\right)n
 $$
 
 据此，可以等差数列和的极点存在于，
 
 $$
-\boxed{n={d/2-a_1\over d}={1\over2}-{a_1\over d}}
+n={d/2-a_1\over d}={1\over2}-{a_1\over d}
 $$
 
 我们发现，该函数图像过原点，因此我们定义，
@@ -510,13 +510,13 @@ $$
 形如，
 
 $$
-\boxed{a_{n+1}=qa_n,\,(n\in\mathbb Z^*,q\neq0)}
+a_{n+1}=qa_n,\,(n\in\mathbb Z^*,q\neq0)
 $$
 
 或者记为，
 
 $$
-\boxed{q={a_{n+1}\over a_n}}
+q={a_{n+1}\over a_n}
 $$
 
 即公比的定义式。
@@ -528,7 +528,7 @@ $$
 形如，
 
 $$
-\boxed{a_n=a_1q^{n-1}}
+a_n=a_1q^{n-1}
 $$
 
 换句话说，任意一个等比数列 $\{a_n\}$ 都可以写为，
@@ -557,19 +557,19 @@ $$
 对于正整数 $m,n,p,q$，若 $m+n=p+q$，则，
 
 $$
-\boxed{a_m\cdot a_n=a_p\cdot a_q}
+a_m\cdot a_n=a_p\cdot a_q
 $$
 
 或者简化一下，
 
 $$
-\boxed{a_m\cdot a_n=a_{m-k}\cdot a_{n+k}}
+a_m\cdot a_n=a_{m-k}\cdot a_{n+k}
 $$
 
 据此，有，
 
 $$
-\boxed{a_{n-k}\cdot a_{n+k}=a_n^2}
+a_{n-k}\cdot a_{n+k}=a_n^2
 $$
 
 还有一些和上面等比数列类似的操作的结论，
@@ -604,7 +604,7 @@ $$
 注意到后面的是经典的分解因式，
 
 $$
-\boxed{S_n=a_1\cdot{q^n-1\over q-1},\,(q\neq 1)}
+S_n=a_1\cdot{q^n-1\over q-1},\,(q\neq 1)
 $$
 
 或者，错位相减，
@@ -619,7 +619,7 @@ $$
 同时，若 $q=1$，数列退化为常数列，
 
 $$
-\boxed{S_n=na_1,\,(q=1)}
+S_n=na_1,\,(q=1)
 $$
 
 ### 等比中项
@@ -671,7 +671,7 @@ $$
 有性质，
 
 $$
-\boxed{{1\over n(n+1)}={1\over n}-{1\over n+1}}
+{1\over n(n+1)}={1\over n}-{1\over n+1}
 $$
 
 可以求解，形如
@@ -685,7 +685,7 @@ $$
 同时，易证，
 
 $$
-\boxed{{1\over n(n+k)}={1\over k}\left({1\over k}-{1\over n+k}\right)}
+{1\over n(n+k)}={1\over k}\left({1\over k}-{1\over n+k}\right)
 $$
 
 注意，此时裂项一定要找准剩下的。
@@ -726,7 +726,7 @@ $$
 有公式，
 
 $$
-\boxed{n(n+1)={1\over3}\Big[n(n+1)(n+2)-(n-1)n(n+1)\Big]}
+n(n+1)={1\over3}\Big[n(n+1)(n+2)-(n-1)n(n+1)\Big]
 $$
 
 于是，例题，
@@ -756,7 +756,7 @@ $$
 于是，
 
 $$
-\boxed{1^2+2^2+\dots+n^2=S-{n(n+1)\over2}={n(n+1)(2n+1)\over6}}
+1^2+2^2+\dots+n^2=S-{n(n+1)\over2}={n(n+1)(2n+1)\over6}
 $$
 
 或者用求和符号简单的表示，下文再说。
@@ -872,13 +872,13 @@ $$
 定义，
 
 $$
-\boxed{n!=1\times2\times3\times\dots\times(n-1)\times n}
+n!=1\times2\times3\times\dots\times(n-1)\times n
 $$
 
 称为阶乘，有，
 
 $$
-\boxed{n\cdot n!=(n+1)!-n!}
+n\cdot n!=(n+1)!-n!
 $$
 
 还有组合数的，但是这里还没涉及到。
@@ -949,7 +949,7 @@ $$
 
 等差乘等比。
 
-若 $a_n=(An+B)q^{\red{n-1}}$，令 $\red{\boxed{D=\frac{A}{q-1},E=\frac{B-D}{q-1}}}$，则 $\red{\boxed{S_n=(Dn+E)q^n-E}}$.
+若 $a_n=(An+B)q^{n-1}$，令 $D=\frac{A}{q-1},E=\frac{B-D}{q-1}$，则 $S_n=(Dn+E)q^n-E$.
 
 例题：$\displaystyle a_n=\frac{n}{3^n}$，求 $S_n$.
 
@@ -1042,7 +1042,7 @@ $$
 另右侧常数项为零，于是，
 
 $$
-\boxed{x={q\over p-1}}
+x={q\over p-1}
 $$
 
 即，对于原数列，加上这个数，即可转化为普通的等比数列。
@@ -1111,7 +1111,7 @@ $$
 我们还可以等式两边同除 $p^n$，得
 
 $$
-\boxed{{a_n\over p^n}={a_{n-1}\over p^{n-1}}+{q\over p^n}}
+{a_n\over p^n}={a_{n-1}\over p^{n-1}}+{q\over p^n}
 $$
 
 设新的数列，
@@ -1141,7 +1141,7 @@ $$
 两边同时乘 $p^n$，
 
 $$
-\boxed{a_n=(a_1-q)p^{n-1}+{q\over p-1}(p^n-1)}
+a_n=(a_1-q)p^{n-1}+{q\over p-1}(p^n-1)
 $$
 
 即通用公式。
@@ -1209,19 +1209,19 @@ $$
 我们复习一下再换元里面常用的恒等变换，
 
 $$
-\boxed{\cos2\theta=2\cos^2\theta-1}\tag1
+\cos2\theta=2\cos^2\theta-1
 $$
 
 $$
-\boxed{\tan2\theta={2\tan\theta\over1-\tan^2\theta}}\tag2
+\tan2\theta={2\tan\theta\over1-\tan^2\theta}
 $$
 
 $$
-\boxed{\sin3\theta=3\sin\theta-4\sin^2\theta}\tag3
+\sin3\theta=3\sin\theta-4\sin^2\theta
 $$
 
 $$
-\boxed{\cos3\theta=4\cos^2\theta-3\cos\theta}\tag4
+\cos3\theta=4\cos^2\theta-3\cos\theta
 $$
 
 注意到，除了正切函数，其他的函数值域都是 $[-1,1]$（不指定定义域）。
