@@ -32,14 +32,11 @@ $$
 离心率与行星运动，以牛顿大炮为例：
 
 - 以第一宇宙速度发射：圆形。
-
 - 大于第一宇宙速度，小于第二宇宙速度：椭圆形。
-
 - 第二宇宙速度：抛物线。
-
 - 大于第二宇宙速度：双曲线。
 
-此处忽略太阳引力的影响。
+此处忽略其他引力的影响。
 
 ### 定比轨迹
 
@@ -277,10 +274,10 @@ $$
 PQ=\frac{2b^2}{a}
 $$
 
-上述结论可以作如下推广：过焦点 $F$ 作 $n$ 条夹角相等的射线交椭圆于 $P_1, P_2, \cdots, P_n$，则
+上述结论可以作如下推广：过焦点 $F$ 作 $n$ 条夹角相等的射线交椭圆于 $P_1, P_2, \dots, P_n$，则
 
 $$
-\frac{1}{|FP_1|} + \frac{1}{|FP_2|} + \cdots + \frac{1}{|FP_n|} = \frac{na}{b^2}
+\frac{1}{|FP_1|} + \frac{1}{|FP_2|} + \dots + \frac{1}{|FP_n|} = \frac{na}{b^2}
 $$
 
 椭圆的面积：$S=\pi ab$（$a,b$ 分别为长半轴、短半轴的长）。
@@ -735,17 +732,14 @@ $$
 事实上：
 
 - 平行直线依然平行。
-
 - 共线的点依然共线。
-
 - 直线变换后依然是直线。
-
 - 直线上的线段比例保持不变。
 
 使用一增广矩阵与一增广向量，需要所有向量在其末端扩长 $1$ 且所有矩阵都于底部添加一排零，右边扩长一列转换向量，及右下角添加一个 $1$。
 
 $$
-\begin{bmatrix}{\vec {y}}\\1\end{bmatrix}=\left[{\begin{array}{ccc|c}\,&A&&{\vec {b}}\ \\0&\ldots &0&1\end{array}}\right]{\begin{bmatrix}{\vec {x}}\\1\end{bmatrix}}
+\begin{bmatrix}{\vec {y}}\\1\end{bmatrix}=\left[{\begin{array}{ccc|c}\,&A&&{\vec {b}}\ \\0&\dots &0&1\end{array}}\right]{\begin{bmatrix}{\vec {x}}\\1\end{bmatrix}}
 $$
 
 等价于
