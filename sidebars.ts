@@ -352,7 +352,7 @@ const sidebars: SidebarsConfig = {
                 'note/math/high-school/geometry/triangle-solving/index',
                 'note/math/high-school/geometry/solid-geometry/index',
                 'note/math/high-school/geometry/line-and-circle/index',
-                'note/math/high-school/geometry/conic',
+                'note/math/high-school/geometry/conic/index',
               ],
             },
             {
