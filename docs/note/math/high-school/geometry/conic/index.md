@@ -534,55 +534,55 @@ $$
 
 1. 抛物线的焦点关于任意一条切线的对称点一定在准线上。
 
-    证明：做 $PP'\perp\ell$，根据椭圆的性质，$FP=PP'$。
-    
-    ![](./assets/image-16.png)
+   证明：做 $PP'\perp\ell$，根据椭圆的性质，$FP=PP'$。
 
-    因为 $FP'\perp\ell'$，因此 $\ell'$ 是 $\angle FPP'$ 角平分线，所以，$F$ 关于 $\ell'$ 的反射点即为 $P'$ 在准线上。
+   ![](./assets/image-16.png)
 
-    推论：抛物线的焦点到其各条切线的投影点，均位于抛物线顶点处的切线上。
+   因为 $FP'\perp\ell'$，因此 $\ell'$ 是 $\angle FPP'$ 角平分线，所以，$F$ 关于 $\ell'$ 的反射点即为 $P'$ 在准线上。
+
+   推论：抛物线的焦点到其各条切线的投影点，均位于抛物线顶点处的切线上。
 
 2. 假设抛物线在点 $X$ 和 $Y$ 的切线相交于点 $P$。那么 $PX'=PY'=PF$，其中 $X'$ 和 $Y'$ 是 $X$ 和 $Y$ 在抛物线准线上的投影，而 $F$ 是抛物线的焦点。
 
-    证明：根据上一条，这两条切线分别是线段 $FX'$ 和 $FY'$ 的中垂线。因此，它们的交点即为三角形 $FX'Y'$ 的外接圆圆心。
+   证明：根据上一条，这两条切线分别是线段 $FX'$ 和 $FY'$ 的中垂线。因此，它们的交点即为三角形 $FX'Y'$ 的外接圆圆心。
 
-    ![](./assets/image-17.png)
+   ![](./assets/image-17.png)
 
-    推论：如果 $PX$ 和 $PY$ 是抛物线的切线，那么点 $P$ 在准线上的投影，是 $X$ 和 $Y$ 在准线上的投影点所构成线段的中点。
+   推论：如果 $PX$ 和 $PY$ 是抛物线的切线，那么点 $P$ 在准线上的投影，是 $X$ 和 $Y$ 在准线上的投影点所构成线段的中点。
 
 3. 做抛物线上两点 $X,Y$ 的切线，相交于点 $P$，若 $PX\perp PY$，则 $P$ 在抛物线的准线上。反过来，过准线上一点 $P$ 做抛物线的两条切线，则他们相互垂直。同时，$XY$ 一定过焦点 $F$ 且 $PF\perp XY$。
 
-    证明：设 $X',Y'$ 为 $X,Y$ 到准线上的投影，因为 $P$ 在准线上，
+   证明：设 $X',Y'$ 为 $X,Y$ 到准线上的投影，因为 $P$ 在准线上，
 
-    ![](./assets/image-18.png)
-    
-    那么 $XF=XX',YF=YY'$，因此可以得到两个三角形全等，那么 $\angle XPY=90^\circ$。
+   ![](./assets/image-18.png)
+
+   那么 $XF=XX',YF=YY'$，因此可以得到两个三角形全等，那么 $\angle XPY=90^\circ$。
 
 4. 我们做推广，两条切线为 $\varphi$ 或 $180^\circ-\varphi$ 的点的集合是一个以 $F$ 焦点，抛物线准线 $\ell$ 为准线的双曲线，其离心率等于 $|\cos\varphi|$。
 
-    ![](./assets/image-19.png)
+   ![](./assets/image-19.png)
 
-    注意到 $P$ 为 $\triangle FX'Y'$ 外心，因此 $\angle X'PY'=360^\circ-2\varphi$，那么 $P$ 到准线的距离为 $PF|\cos(180^\circ-\varphi)|=PF|\cos\varphi|$，证毕。
+   注意到 $P$ 为 $\triangle FX'Y'$ 外心，因此 $\angle X'PY'=360^\circ-2\varphi$，那么 $P$ 到准线的距离为 $PF|\cos(180^\circ-\varphi)|=PF|\cos\varphi|$，证毕。
 
 5. 设 $PX$ 和 $PY$ 为过点 $P$ 的抛物线的两条切线，并设 $l$ 为过 $P$ 且平行于抛物线轴的直线。那么直线 $PY$ 与 $l$ 的夹角等于 $\angle XPF$，且 $\triangle XFP\backsim\triangle PFY$。由此可推知，$FP$ 是角 $XFY$ 的角平分线。
 
-    设 $X'$ 和 $Y'$ 是 $X$ 和 $Y$ 在准线上的投影。那么，点 $F$、$X'$ 和 $Y'$位于一个以 $P$ 为圆心的圆上，
-    
-    ![](./assets/image-20.png)
+   设 $X'$ 和 $Y'$ 是 $X$ 和 $Y$ 在准线上的投影。那么，点 $F$、$X'$ 和 $Y'$位于一个以 $P$ 为圆心的圆上，
 
-    因此 $\angle X'Y'F = \frac{1}{2}\angle X'PF = \angle XPF$。因为 $\ell$ 垂直于 $X'Y'$，因此 $PY$ 与 $\ell$ 的夹角等于 $Y'F$ 与 $X'Y'$ 的夹角，而 $Y'F$ 垂直于 $PY$。
+   ![](./assets/image-20.png)
 
-    由于 $l$ 平行于 $YY'$，$PY$ 与 $l$ 的夹角等于角 $PYY'$，根据光学性质，该角等于角 $FYP$。因此 $\angle FYP = \angle XPF$。类似地，$\angle FXP = \angle YPF$。因此 $\triangle XFP\backsim\triangle PFY$。 
+   因此 $\angle X'Y'F = \frac{1}{2}\angle X'PF = \angle XPF$。因为 $\ell$ 垂直于 $X'Y'$，因此 $PY$ 与 $\ell$ 的夹角等于 $Y'F$ 与 $X'Y'$ 的夹角，而 $Y'F$ 垂直于 $PY$。
+
+   由于 $l$ 平行于 $YY'$，$PY$ 与 $l$ 的夹角等于角 $PYY'$，根据光学性质，该角等于角 $FYP$。因此 $\angle FYP = \angle XPF$。类似地，$\angle FXP = \angle YPF$。因此 $\triangle XFP\backsim\triangle PFY$。
 
 6. 假设 $\triangle ABC$ 外切于一条抛物线，即直线 $AB$，$BC$，$CA$ 均与抛物线相切，那么 $\triangle ABC$ 的垂心始终过抛物线的准线。
 
-    ![](./assets/image-22.png)
+   ![](./assets/image-22.png)
 
-    兰伯特定理：由抛物线的三条切线所围成的三角形，其外接圆必经过抛物线的焦点。
+   兰伯特定理：由抛物线的三条切线所围成的三角形，其外接圆必经过抛物线的焦点。
 
-    西姆松定理：点 $P$ 到 $\triangle ABC$ 各边的投影共线，当且仅当 $P$ 位于该三角形的外接圆上。
+   西姆松定理：点 $P$ 到 $\triangle ABC$ 各边的投影共线，当且仅当 $P$ 位于该三角形的外接圆上。
 
-    斯坦纳线定理：一个三角形外接圆上任意一点（该点不为三角形顶点）关于三角形三边的对称点，这三个对称点是共线的，并且这条直线（称为斯坦纳线）必经过该三角形的垂心。
+   斯坦纳线定理：一个三角形外接圆上任意一点（该点不为三角形顶点）关于三角形三边的对称点，这三个对称点是共线的，并且这条直线（称为斯坦纳线）必经过该三角形的垂心。
 
 ## 几何性质
 
