@@ -1,8 +1,8 @@
 # LaTeX 指南
 
-[$\LaTeX$](https://zh.wikipedia.org/zh-cn/LaTeX) 是一种基于 [$\TeX$](https://zh.wikipedia.org/zh-cn/TeX) 的排版系统，能够编写包含数学公式的文档。
+[$\LaTeX$](https://zh.wikipedia.org/zh-cn/LaTeX) 是一种基于 [$\TeX$](https://zh.wikipedia.org/zh-cn/TeX) 的排版系统，用于编写包含数学公式的文档。
 
-而 [$\KaTeX$](https://zh.wikipedia.org/wiki/KaTeX) 是一个在浏览器端运行的 JavaScript 数学公式渲染库，可以在网页中渲染使用 $\LaTeX$ 语法编写的数学公式。
+[$\KaTeX$](https://zh.wikipedia.org/wiki/KaTeX) 是一个在浏览器中运行的 JavaScript 数学公式渲染库，可以在网页上渲染使用 $\LaTeX$ 语法编写的数学公式。
 
 ## 参考资料
 
