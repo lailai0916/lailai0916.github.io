@@ -5,6 +5,7 @@
 ## 参考资料
 
 - [统计学 - 维基百科](https://zh.wikipedia.org/wiki/统计学)
+- [【人话统计学概念】一次搞懂卡方检验三大类型：独立性检验、同质性检验、拟合优度检验！ - bilibili](https://www.bilibili.com/video/BV15tHQzrECH)
 
 ## 数据
 
