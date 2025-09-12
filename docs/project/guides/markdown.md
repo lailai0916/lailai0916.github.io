@@ -344,8 +344,8 @@ int main()
 
 ### LaTeX 公式
 
-详见 [LaTeX 模板](latex)
+详见 [LaTeX 指南](latex)
 
 ### Mermaid 图表
 
-详见 [Mermaid 模板](mermaid)
+详见 [Mermaid 指南](mermaid)
