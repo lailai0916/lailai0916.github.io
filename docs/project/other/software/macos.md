@@ -54,11 +54,11 @@ Macs Fan Control 是一款风扇控制软件，允许用户实时监控和自定
 
 ## 优化工具
 
-### Bartender 5
+### Bartender 6
 
-Bartender 5 是一款菜单栏管理工具，帮助用户整理和隐藏菜单栏图标，保持桌面整洁。 ​
+Bartender 6 是一款菜单栏管理工具，帮助用户整理和隐藏菜单栏图标，保持桌面整洁。 ​
 
-- 官网：[Bartender 5](https://www.macbartender.com)
+- 官网：[Bartender 6](https://www.macbartender.com)
 - 平台：macOS
 - 价格：¥119
 

@@ -78,7 +78,7 @@ Launchpad
 │   ├── Tools
 │   │   └── CleanMyMac, Parallels Desktop, MenubarX
 │   ├── Plugins
-│   │   └── Bartender 5, One Switch, Moment, NotchNook, PopClip, Bob
+│   │   └── Bartender 6, One Switch, Moment, NotchNook, PopClip, Bob
 │   ├── Multimedia
 │   │   └── CleanShot X, Downie 4, Permute 3, SF Symbols, Image2Icon, MacZip, FastZip
 │   ├── Hardware
@@ -103,7 +103,7 @@ Menu Bar
 ├── Hidden
 │   └── Moment, One Switch, CleanMyMac
 └── Shown
-    └── Bartender 5, Display, Sound, Battery, Wi-Fi, Control Center, Clock
+    └── Bartender 6, Display, Sound, Battery, Wi-Fi, Control Center, Clock
 ```
 
 ### Notification Center
