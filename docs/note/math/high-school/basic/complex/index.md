@@ -4,6 +4,7 @@
 
 - [复数 (数学) - 维基百科](<https://zh.wikipedia.org/zh-cn/复数_(数学)>)
 - [如何通俗的理解虚数和复数？虚数的几何意义又是啥？一次搞懂！ - bilibili](https://www.bilibili.com/video/BV1ns411J7Qs)
+- [复数除法，哈密顿的解释 - bilibili](https://www.bilibili.com/video/BV11gHkzwEBL)
 
 ## 历史
 
