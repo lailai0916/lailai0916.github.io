@@ -47,7 +47,7 @@ $$
 正态分布的解析式：
 
 $$
-f(x)=\frac{1}{\sigma\sqrt{2\pi} }e^{-\frac{(x-\mu)^2}{2\sigma^2}}
+f(x)=\frac{1}{\sigma\sqrt{2\pi}}e^{-\frac{(x-\mu)^2}{2\sigma^2}}
 $$
 
 其中 $\mu\in\R,\sigma >0$ 为参数。对 $\forall x\in\R,f(x)>0$，可以用积分证明 $x$ 轴与曲线之间的区域面积为 $1$。称 $f(x)$ 为正态密度函数，图像为正态（ 密度 ）曲线。$X$ 服从正态分布，记为：
