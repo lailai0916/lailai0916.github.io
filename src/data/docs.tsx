@@ -18,7 +18,7 @@ export const DOCS_LIST: DocsItem[] = [
     url: 'docs/contest',
     icon: 'lucide:trophy',
     image: {
-      src: '/img/home/undraw_typewriter.svg',
+      src: '/img/home/contest.svg',
       width: 1009.54,
       height: 717.96,
     },
@@ -37,7 +37,7 @@ export const DOCS_LIST: DocsItem[] = [
     url: 'docs/note',
     icon: 'lucide:notebook-pen',
     image: {
-      src: '/img/home/undraw_react.svg',
+      src: '/img/home/note.svg',
       width: 1108,
       height: 731.18,
     },
@@ -56,7 +56,7 @@ export const DOCS_LIST: DocsItem[] = [
     url: 'docs/project',
     icon: 'lucide:code-2',
     image: {
-      src: '/img/home/undraw_version_control.svg',
+      src: '/img/home/project.svg',
       width: 1038.23,
       height: 693.31,
     },
