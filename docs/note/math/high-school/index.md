@@ -5,6 +5,11 @@
 ![](/img/notbyai/Written-By-Humans-Not-By-AI-Badge-white.svg#gh-light-mode-only)
 ![](/img/notbyai/Written-By-Humans-Not-By-AI-Badge-black.svg#gh-dark-mode-only)
 
+## 参考资料
+
+- [whk wiki](https://whk-wiki.github.io/whk-wiki/)
+- [RainPPR's WHK Blog](https://blog.rainppr.dns-dynamic.net/whk/)
+
 ## 前言
 
 高中数学教材中的定义虽然非常严谨，但也显得晦涩难懂，不易理解。
