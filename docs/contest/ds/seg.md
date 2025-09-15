@@ -76,3 +76,7 @@ struct SEG
 ### 洛谷 P4556 [Vani有约会] 雨天的尾巴 /【模板】线段树合并
 
 <Problem id="P4556" />
+
+### 洛谷 CF786B Legacy
+
+<Problem id="CF786B" />
