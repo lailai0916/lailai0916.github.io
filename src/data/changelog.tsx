@@ -13,17 +13,17 @@ export const CHANGELOG_LIST: ChangelogItem[] = [
     date: '2025-09-05',
     type: 'added',
     content:
-      '接入搜索引擎收录平台：[Google Search Console](https://search.google.com/search-console/welcome)、[Bing Webmaster Tools](https://www.bing.com/webmasters)、[百度搜索资源平台](https://ziyuan.baidu.com/linksubmit/url)',
+      '搜索引擎收录平台（[Google Search Console](https://search.google.com/search-console/welcome)、[Bing Webmaster Tools](https://www.bing.com/webmasters)、[百度搜索资源平台](https://ziyuan.baidu.com/linksubmit/url)）',
   },
   {
     date: '2025-09-01',
     type: 'added',
-    content: '示例告示框 `example`',
+    content: '`example` 示例告示框',
   },
   {
     date: '2025-08-13',
     type: 'added',
-    content: 'KaTeX 复制优化插件 **copy-tex**',
+    content: '**copy-tex** 公式复制优化插件',
   },
   {
     date: '2025-06-23',
@@ -33,7 +33,17 @@ export const CHANGELOG_LIST: ChangelogItem[] = [
   {
     date: '2025-06-23',
     type: 'added',
-    content: '国际化支持 **English**',
+    content: '**English** 国际化支持',
+  },
+  {
+    date: '2025-01-08',
+    type: 'added',
+    content: '**Mermaid** 图表支持',
+  },
+  {
+    date: '2025-01-08',
+    type: 'added',
+    content: '**Google Analytics** 分析',
   },
   {
     date: '2024-10-17',
