@@ -3,11 +3,11 @@ import DefaultAdmonitionTypes from '@theme-original/Admonition/Types';
 import Translate from '@docusaurus/Translate';
 
 function ExampleAdmonition(props: any) {
-  const Note = (DefaultAdmonitionTypes as any).note;
+  const Info = (DefaultAdmonitionTypes as any).info;
   return (
-    <Note
+    <Info
       {...props}
-      type="note"
+      type="info"
       title={
         props.title ?? (
           <Translate
