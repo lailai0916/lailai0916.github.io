@@ -9,6 +9,7 @@
 
 - [whk wiki](https://whk-wiki.github.io/whk-wiki/)
 - [RainPPR's WHK Blog](https://blog.rainppr.dns-dynamic.net/whk/)
+- [liuhaopeng543/MathBook](https://github.com/liuhaopeng543/MathBook)
 
 ## 前言
 
