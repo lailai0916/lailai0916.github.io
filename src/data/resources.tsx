@@ -712,6 +712,11 @@ export const RESOURCE_LIST: ResourceCategoryItem[] = [
         href: 'https://wplace.live',
         description: '一个巨大的实时像素画布',
       },
+      {
+        title: 'sandspiel',
+        href: 'https://sandspiel.club',
+        description: '网页沙盒模拟器',
+      },
     ],
   },
   {
