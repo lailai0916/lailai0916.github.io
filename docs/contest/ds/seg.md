@@ -56,3 +56,7 @@ struct SEG
 ### 洛谷 P3372 【模板】线段树 1
 
 <Problem id="P3372" />
+
+### 洛谷 P4588 [TJOI2018] 数学计算
+
+<Problem id="P4588" />
