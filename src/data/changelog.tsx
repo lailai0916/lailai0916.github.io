@@ -18,22 +18,22 @@ export const CHANGELOG_LIST: ChangelogItem[] = [
   {
     date: '2025-09-01',
     type: 'added',
-    content: '示例告示框组件：`example`',
+    content: '示例告示框 `example`',
   },
   {
     date: '2025-08-13',
     type: 'added',
-    content: 'KaTeX 复制优化插件：copy-tex',
+    content: 'KaTeX 复制优化插件 **copy-tex**',
   },
   {
     date: '2025-06-23',
     type: 'changed',
-    content: '默认语言：English',
+    content: '默认语言从 **简体中文** 更改为 **English**',
   },
   {
     date: '2025-06-23',
     type: 'added',
-    content: '国际化支持：English',
+    content: '国际化支持 **English**',
   },
   {
     date: '2024-10-17',
