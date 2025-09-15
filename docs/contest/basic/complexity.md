@@ -5,6 +5,7 @@
 - [复杂度简介 - OI Wiki](https://oi-wiki.org/basic/complexity/)
 - [时间复杂度 - 维基百科](https://zh.wikipedia.org/zh-cn/时间复杂度)
 - [主定理 - 维基百科](https://zh.wikipedia.org/zh-cn/主定理)
+- [重谈主定理（master定理）及其证明 - 洛谷专栏](https://www.luogu.com.cn/article/w3avh1ku)
 
 ## 定义
 
