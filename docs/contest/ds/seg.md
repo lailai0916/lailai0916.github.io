@@ -57,6 +57,10 @@ struct SEG
 
 <Problem id="P3372" />
 
+### 洛谷 P13825 【模板】线段树 1.5
+
+<Problem id="P13825" />
+
 ### 洛谷 P3373 【模板】线段树 2
 
 <Problem id="P3373" />
@@ -64,3 +68,11 @@ struct SEG
 ### 洛谷 P4588 [TJOI2018] 数学计算
 
 <Problem id="P4588" />
+
+### 洛谷 P1471 方差
+
+<Problem id="P1471" />
+
+### 洛谷 P4556 [Vani有约会] 雨天的尾巴 /【模板】线段树合并
+
+<Problem id="P4556" />
