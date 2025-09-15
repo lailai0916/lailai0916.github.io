@@ -2,7 +2,7 @@
 
 ## 素性测试
 
-### 朴素算法
+### 试除法
 
 时间复杂度 $O(\sqrt{n})$。
 
@@ -21,3 +21,9 @@ bool prime(int n)
 ### Fermat 素性测试
 
 - 咕.
+
+## 例题
+
+### 洛谷 P1217 [USACO1.5] 回文质数 Prime Palindromes
+
+<Problem id="P1217" />
