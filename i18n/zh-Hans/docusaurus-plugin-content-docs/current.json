@@ -132,7 +132,7 @@
     "description": "The label for category 连通性 in sidebar sidebar1"
   },
   "sidebar.sidebar1.category.连通性.link.generated-index.description": {
-    "message": "图论是数学的一个分支，图是图论的主要研究对象。",
+    "message": "本章介绍图的连通性问题，包括强连通分量和双连通分量。",
     "description": "The generated-index page description for category 连通性 in sidebar sidebar1"
   },
   "sidebar.sidebar1.category.计算几何": {
@@ -198,6 +198,10 @@
   "sidebar.sidebar2.category.英语语音": {
     "message": "英语语音",
     "description": "The label for category 英语语音 in sidebar sidebar2"
+  },
+  "sidebar.sidebar2.category.英语词汇": {
+    "message": "英语词汇",
+    "description": "The label for category 英语词汇 in sidebar sidebar2"
   },
   "sidebar.sidebar2.category.英语语法": {
     "message": "英语语法",
