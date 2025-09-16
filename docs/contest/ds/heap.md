@@ -4,6 +4,20 @@
 
 - [堆简介 - OI Wiki](https://oi-wiki.org/ds/heap/)
 
+## `std::priority_queue`
+
+```cpp
+std::priority_queue<pair<int,int>> q[N];
+```
+
+## `__gnu_pb_ds::priority_queue`
+
+```cpp
+#include <bits/extc++.h>
+using namespace __gnu_pbds;
+__gnu_pbds::priority_queue<pair<int,int>,greater<pair<int,int>>> q[N];
+```
+
 ## 左偏树
 
 ```cpp
@@ -20,18 +34,6 @@ int merge(int x,int y)
 	t[x].dis=t[t[x].rs].dis+1;
 	return x;
 }
-```
-
-## `std::priority_queue`
-
-```cpp
-priority_queue<pair<int,int>> q[N];
-```
-
-## `__gnu_pb_ds::priority_queue`
-
-```cpp
-__gnu_pbds::priority_queue<pair<int,int>,greater<pair<int,int>>> q[N];
 ```
 
 ## 例题

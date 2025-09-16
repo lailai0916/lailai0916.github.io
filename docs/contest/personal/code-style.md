@@ -71,9 +71,11 @@ if(n%i==0)return 0;
 ### 命名空间
 
 - 使用标准命名空间 `std`。
+- 如有特殊需求，可补充其他命名空间。
 
 ```cpp
 using namespace std;
+using namespace __gnu_pbds;
 ```
 
 ### 空行

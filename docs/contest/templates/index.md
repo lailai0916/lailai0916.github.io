@@ -266,12 +266,12 @@ struct SEG
 
 ## 杂项
 
-### pb_ds
+### `__gnu_pbds::tree`
 
 ```cpp
 #include <bits/extc++.h>
 using namespace __gnu_pbds;
-tree<pair<int,int>,null_type,less<pair<int,int>>,rb_tree_tag,tree_order_statistics_node_update> T;
+__gnu_pbds::tree<pair<int,int>,null_type,less<pair<int,int>>,rb_tree_tag,tree_order_statistics_node_update> T;
 ```
 
 ### mt19937

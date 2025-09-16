@@ -4,10 +4,12 @@
 
 - [二叉搜索树 & 平衡树 - OI Wiki](https://oi-wiki.org/ds/bst/)
 
-## pb_ds
+## `__gnu_pbds::tree`
 
 ```cpp
-tree<pair<int,int>,null_type,less<pair<int,int>>,rb_tree_tag,tree_order_statistics_node_update> T;
+#include <bits/extc++.h>
+using namespace __gnu_pbds;
+__gnu_pbds::tree<pair<int,int>,null_type,less<pair<int,int>>,rb_tree_tag,tree_order_statistics_node_update> T;
 ```
 
 ## 例题
