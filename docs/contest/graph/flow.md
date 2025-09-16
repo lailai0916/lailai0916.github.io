@@ -1,5 +1,9 @@
 # 网络流
 
+## 参考资料
+
+- [网络流简介 - OI Wiki](https://oi-wiki.org/graph/flow/)
+
 ## Edmonds–Karp 算法
 
 ```cpp

@@ -260,7 +260,7 @@ const sidebars: SidebarsConfig = {
           label: '连通性',
           link: {
             type: 'generated-index',
-            description: '图论是数学的一个分支，图是图论的主要研究对象。',
+            description: '本章介绍图的连通性问题，包括强连通分量和双连通分量。',
           },
           items: [
             'contest/graph/connectivity/scc',
@@ -269,6 +269,7 @@ const sidebars: SidebarsConfig = {
         },
         'contest/graph/2sat',
         'contest/graph/flow',
+        'contest/graph/bigraph-match',
       ],
     },
     {
