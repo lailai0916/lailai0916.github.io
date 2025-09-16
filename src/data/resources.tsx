@@ -717,6 +717,11 @@ export const RESOURCE_LIST: ResourceCategoryItem[] = [
         href: 'https://sandspiel.club',
         description: '网页沙盒模拟器',
       },
+      {
+        title: 'HullQin Game',
+        href: 'https://game.hullqin.cn',
+        description: '在线桌游合集',
+      },
     ],
   },
   {
