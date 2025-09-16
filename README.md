@@ -3,7 +3,7 @@
     <img src="static/img/logo.svg" width="150" height="150">
   </a>
   <h1>lailai's Home</h1>
-  <p>English | <a href="README.zh-Hans.md">简体中文</a></p>
+  <p><u>English</u> | <a href="README.zh-Hans.md">简体中文</a></p>
 </div>
 
 ## # Website Introduction
