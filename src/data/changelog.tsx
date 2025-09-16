@@ -18,7 +18,17 @@ export const CHANGELOG_LIST: ChangelogItem[] = [
   {
     date: '2025-09-01',
     type: 'added',
+    content: '博客新版布局（实验性）',
+  },
+  {
+    date: '2025-08-31',
+    type: 'added',
     content: '`example` 示例告示框',
+  },
+  {
+    date: '2025-08-14',
+    type: 'added',
+    content: '**debug** 调试模式（实验性）',
   },
   {
     date: '2025-08-13',
