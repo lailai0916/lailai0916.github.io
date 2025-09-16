@@ -1,14 +1,14 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-priority_queue<int,vector<int>,greater<int>> q;
 int main()
 {
 	ios::sync_with_stdio(false);
 	cin.tie(nullptr);
 	int n;
 	cin>>n;
-	for(int i=1;i<=n;i++)
+	priority_queue<int> q;
+	while(n--)
 	{
 		int op;
 		cin>>op;
@@ -16,11 +16,11 @@ int main()
 		{
 			int x;
 			cin>>x;
-			q.push(x);
+			q.push(-x);
 		}
 		else if(op==2)
 		{
-			cout<<q.top()<<'\n';
+			cout<<-q.top()<<'\n';
 		}
 		else if(op==3)
 		{
