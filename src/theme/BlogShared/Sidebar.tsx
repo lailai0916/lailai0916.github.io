@@ -105,9 +105,9 @@ export default function Sidebar() {
                 to={`/blog/archive#${y.year}`}
                 className={styles.archiveLink}
               >
-                {y.year}
+                <span className={styles.archiveYear}>{y.year}</span>
+                <span className={styles.archiveCount}>{y.count}</span>
               </Link>
-              <span className={styles.archiveCount}>{y.count}</span>
             </li>
           ))}
         </ul>

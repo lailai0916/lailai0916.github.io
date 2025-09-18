@@ -321,19 +321,33 @@ html[data-theme='dark'] .archiveFilterButton {
 }
 
 .archiveItem {
+  list-style: none;
+}
+
+.archiveLink {
+  text-decoration: none !important;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0.35rem 0.5rem; /* 还原：保持与整体卡片风格一致 */
   border-radius: 8px;
+  transition:
+    background 160ms ease,
+    transform 80ms ease;
 }
 
-.archiveItem:hover {
+.archiveLink:hover {
   background: var(--ifm-color-emphasis-100);
+  transform: translateY(-1px);
 }
 
-.archiveLink {
-  text-decoration: none !important;
+.archiveLink:focus-visible {
+  outline: 2px solid var(--ifm-color-primary);
+  outline-offset: 2px;
+}
+
+.archiveYear {
+  color: inherit;
 }
 
 .archiveCount {
