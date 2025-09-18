@@ -5,7 +5,9 @@
   --grid-gap: 1.25rem;
 
   width: 100%;
-  max-width: calc(var(--left-col-width) + var(--main-col-width) + var(--grid-gap));
+  max-width: calc(
+    var(--left-col-width) + var(--main-col-width) + var(--grid-gap)
+  );
   margin: 0 auto;
   padding: 2rem 1rem;
   display: grid;
@@ -17,7 +19,9 @@
   .container {
     --left-col-width: 300px;
     --main-col-width: 640px;
-    max-width: calc(var(--left-col-width) + var(--main-col-width) + var(--grid-gap));
+    max-width: calc(
+      var(--left-col-width) + var(--main-col-width) + var(--grid-gap)
+    );
   }
 }
 

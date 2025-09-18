@@ -178,9 +178,17 @@ export function getArchiveByYear(): { year: number; count: number }[] {
 /**
  * 读取官方生成的标签列表，保持与 Docusaurus 默认顺序一致。
  */
-let cachedOfficialTags: Array<{ label: string; permalink: string; count: number }> | null = null;
+let cachedOfficialTags: Array<{
+  label: string;
+  permalink: string;
+  count: number;
+}> | null = null;
 
-function loadOfficialTags(): Array<{ label: string; permalink: string; count: number }> {
+function loadOfficialTags(): Array<{
+  label: string;
+  permalink: string;
+  count: number;
+}> {
   if (cachedOfficialTags) {
     return cachedOfficialTags;
   }

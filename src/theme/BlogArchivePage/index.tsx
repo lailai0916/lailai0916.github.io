@@ -60,7 +60,9 @@ export default function BlogArchivePage(props: Props): JSX.Element {
       return;
     }
 
-    setSelectedYear((prev) => (prev && yearList.includes(prev) ? prev : yearList[0]));
+    setSelectedYear((prev) =>
+      prev && yearList.includes(prev) ? prev : yearList[0]
+    );
     scrollToTop();
   }, [yearList, location.hash]);
 
