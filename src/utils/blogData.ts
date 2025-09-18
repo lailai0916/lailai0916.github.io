@@ -12,6 +12,36 @@ export interface ProcessedBlogPost {
   permalink: string;
 }
 
+type JsonModule<T> = { default?: T } | T | undefined;
+
+function resolveJsonModule<T>(mod: JsonModule<T>): T | null {
+  if (!mod) {
+    return null;
+  }
+  if (typeof mod === 'object' && 'default' in mod && mod.default) {
+    return mod.default as T;
+  }
+  return mod as T;
+}
+
+function globJsonModules<T>(pattern: string): T[] {
+  const glob = (
+    import.meta as unknown as {
+      glob?: (
+        pattern: string,
+        options?: { eager?: boolean; import?: string }
+      ) => Record<string, JsonModule<T>>;
+    }
+  ).glob;
+  if (typeof glob !== 'function') {
+    return [];
+  }
+  const modules = glob(pattern, { eager: true });
+  return Object.values(modules)
+    .map((mod) => resolveJsonModule<T>(mod) ?? null)
+    .filter((value): value is T => value !== null);
+}
+
 function getBlogListData(): any {
   try {
     const data = require('@generated/docusaurus-plugin-content-blog/default/blog-post-list-prop-default.json');
@@ -38,16 +68,30 @@ export function getAllBlogItems(): any[] {
     ctx.keys().forEach((key: string) => {
       try {
         const mod = ctx(key);
-        const items = (mod && (mod.items || mod.default?.items)) ?? [];
+        const resolved = resolveJsonModule<any>(mod);
+        const items = resolved?.items ?? [];
         if (Array.isArray(items)) collected.push(...items);
       } catch {
         // ignore single file read error
       }
     });
   } catch {
-    // context 不可用时，退化为 default 页面数据
-    const data = getBlogListData();
-    if (data?.items) collected.push(...data.items);
+    // context 不可用时（如非 Webpack/Rspack 环境），尝试使用 import.meta.glob
+    const modules = globJsonModules<any>(
+      '@generated/docusaurus-plugin-content-blog/default/blog-post-list-prop-*.json'
+    );
+    if (modules.length) {
+      modules.forEach((mod) => {
+        const items = mod?.items ?? [];
+        if (Array.isArray(items)) {
+          collected.push(...items);
+        }
+      });
+    } else {
+      // 再退化为 default 页面数据
+      const data = getBlogListData();
+      if (data?.items) collected.push(...data.items);
+    }
   }
   // 去重（按 permalink）
   const seen = new Set<string>();
@@ -69,13 +113,21 @@ export function getAllPostMetadata(): any[] {
     const ctx = (require as any).context('~blog/default', false, /\.json$/);
     ctx.keys().forEach((key: string) => {
       const mod = ctx(key);
-      const data = (mod && (mod.default ?? mod)) as any;
+      const data = resolveJsonModule<any>(mod);
       if (data && data.permalink && Array.isArray(data.tags)) {
         list.push(data);
       }
     });
   } catch {
-    // ignore if alias/context unsupported during type-checking
+    // context 不可用时，使用 import.meta.glob 作为兼容实现
+    const modules = globJsonModules<any>(
+      '@generated/docusaurus-plugin-content-blog/default/site-blog-*.json'
+    );
+    modules.forEach((data) => {
+      if (data && data.permalink && Array.isArray(data.tags)) {
+        list.push(data);
+      }
+    });
   }
   return list;
 }

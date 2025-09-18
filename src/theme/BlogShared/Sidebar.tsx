@@ -97,7 +97,7 @@ function PopularTagsCard({ tags }: { tags: readonly any[] }) {
   return (
     <div className={styles.card}>
       <div className={styles.cardTitle}>
-        <Translate id="blog.sidebar.tags.titlet">Popular Tags</Translate>
+        <Translate id="blog.sidebar.tags.title">Popular Tags</Translate>
       </div>
       <div className={styles.tagList}>
         {tags.map((t) => (
