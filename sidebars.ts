@@ -677,43 +677,18 @@ const sidebars: SidebarsConfig = {
         description: '其他分类的项目和分享。',
       },
       items: [
+        'project/other/devices/index',
+        'project/other/edc/index',
+        'project/other/desk-setup',
+        'project/other/software',
         {
           type: 'category',
-          label: '硬件',
+          label: '配置',
           link: {
             type: 'generated-index',
-            description: '数码硬件产品相关的分享和展示。',
+            description: '各种开发工具的配置分享。',
           },
-          items: [
-            'project/other/hardware/devices/index',
-            'project/other/hardware/edc/index',
-            'project/other/hardware/desk-setup',
-          ],
-        },
-        {
-          type: 'category',
-          label: '软件',
-          link: {
-            type: 'generated-index',
-            description: '软件推荐和配置分享。',
-          },
-          items: [
-            'project/other/software/general',
-            'project/other/software/macos',
-            'project/other/software/ios',
-            {
-              type: 'category',
-              label: '配置',
-              link: {
-                type: 'generated-index',
-                description: '各种开发工具的配置分享。',
-              },
-              items: [
-                'project/other/software/config/vscode',
-                'project/other/software/config/cursor',
-              ],
-            },
-          ],
+          items: ['project/other/config/vscode', 'project/other/config/cursor'],
         },
       ],
     },
