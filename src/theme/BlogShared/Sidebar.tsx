@@ -171,6 +171,26 @@ export default function Sidebar() {
               <Translate id="blog.stats.tags">Tags</Translate>
             </div>
           </Link>
+          <div className={styles.statItem}>
+            <div className={styles.statValue}>
+              {analyticsLoaded && !analyticsError
+                ? formatStatValue(analytics?.pageviews)
+                : '...'}
+            </div>
+            <div className={styles.statLabel}>
+              <Translate id="blog.analytics.pageviews">Views</Translate>
+            </div>
+          </div>
+          <div className={styles.statItem}>
+            <div className={styles.statValue}>
+              {analyticsLoaded && !analyticsError
+                ? formatStatValue(analytics?.visitors)
+                : '...'}
+            </div>
+            <div className={styles.statLabel}>
+              <Translate id="blog.analytics.visitors">Visitors</Translate>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -188,36 +208,6 @@ export default function Sidebar() {
           ))}
         </div>
       </div>
-
-      {(analyticsLoaded || !analyticsError) && (
-        <div className={styles.card}>
-          <div className={styles.cardTitle}>
-            <Translate id="blog.analytics.title">Traffic Overview</Translate>
-          </div>
-          <div className={styles.authorStats}>
-            <div className={styles.statItem}>
-              <div className={styles.statValue}>
-                {analyticsLoaded && !analyticsError
-                  ? formatStatValue(analytics?.visitors)
-                  : '...'}
-              </div>
-              <div className={styles.statLabel}>
-                <Translate id="blog.analytics.visitors">Visitors</Translate>
-              </div>
-            </div>
-            <div className={styles.statItem}>
-              <div className={styles.statValue}>
-                {analyticsLoaded && !analyticsError
-                  ? formatStatValue(analytics?.pageviews)
-                  : '...'}
-              </div>
-              <div className={styles.statLabel}>
-                <Translate id="blog.analytics.pageviews">Pageviews</Translate>
-              </div>
-            </div>
-          </div>
-        </div>
-      )}
 
       <div className={styles.card}>
         <div className={styles.cardTitle}>
