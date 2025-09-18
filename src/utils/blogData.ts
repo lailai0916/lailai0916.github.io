@@ -176,6 +176,53 @@ export function getArchiveByYear(): { year: number; count: number }[] {
 }
 
 /**
+ * 读取官方生成的标签列表，保持与 Docusaurus 默认顺序一致。
+ */
+let cachedOfficialTags: Array<{ label: string; permalink: string; count: number }> | null = null;
+
+function loadOfficialTags(): Array<{ label: string; permalink: string; count: number }> {
+  if (cachedOfficialTags) {
+    return cachedOfficialTags;
+  }
+
+  try {
+    const ctx = (require as any).context(
+      '@generated/docusaurus-plugin-content-blog/default/p',
+      false,
+      /blog-tags-.*\.json$/
+    );
+    const candidates = ctx.keys();
+    for (const key of candidates) {
+      const mod = ctx(key);
+      const data = (mod && (mod.tags ?? mod.default?.tags)) as
+        | Array<{ label: string; permalink: string; count: number }>
+        | undefined;
+      if (Array.isArray(data)) {
+        cachedOfficialTags = data;
+        return cachedOfficialTags;
+      }
+    }
+  } catch {
+    // ignore if generated data unavailable during tests/SSR
+  }
+
+  cachedOfficialTags = [];
+  return cachedOfficialTags;
+}
+
+export function getTagsOfficialOrder(limit?: number): Array<{
+  label: string;
+  permalink: string;
+  count: number;
+}> {
+  const tags = loadOfficialTags();
+  if (typeof limit === 'number') {
+    return tags.slice(0, Math.max(0, limit));
+  }
+  return tags;
+}
+
+/**
  * 读取标签统计（若生成数据不可用，则返回空列表）。
  * 返回格式：label、permalink、count
  */

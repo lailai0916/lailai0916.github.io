@@ -3,7 +3,7 @@ import clsx from 'clsx';
 import Translate from '@docusaurus/Translate';
 import Link from '@docusaurus/Link';
 import styles from '../BlogListPage/styles.module.css';
-import { getTopTags } from '@site/src/utils/blogData';
+import { getTagsOfficialOrder } from '@site/src/utils/blogData';
 
 interface TagSelectorProps {
   activePermalink?: string;
@@ -14,7 +14,7 @@ export default function TagSelector({
   activePermalink,
   limit = 30,
 }: TagSelectorProps) {
-  const tags = React.useMemo(() => getTopTags(limit), [limit]);
+  const tags = React.useMemo(() => getTagsOfficialOrder(limit), [limit]);
 
   if (!tags.length) {
     return null;

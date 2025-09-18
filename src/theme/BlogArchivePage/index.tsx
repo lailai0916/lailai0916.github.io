@@ -4,6 +4,7 @@ import { useTheme } from '@site/src/hooks/useTheme';
 import BlogArchivePageOriginal from '@theme-original/BlogArchivePage';
 import Link from '@docusaurus/Link';
 import Translate from '@docusaurus/Translate';
+import { useLocation, useHistory } from '@docusaurus/router';
 import clsx from 'clsx';
 
 import styles from '../BlogListPage/styles.module.css';
@@ -17,6 +18,8 @@ import { formatDate } from '@site/src/utils/date';
 export default function BlogArchivePage(props: Props): JSX.Element {
   const { isNewLayout } = useTheme();
   const { archive } = props;
+  const location = useLocation();
+  const history = useHistory();
   const groups = React.useMemo(() => {
     const map = new Map<number, any[]>();
     const posts = (archive?.blogPosts ?? []) as any[];
@@ -34,8 +37,32 @@ export default function BlogArchivePage(props: Props): JSX.Element {
       setSelectedYear(null);
       return;
     }
+
+    const hash = location.hash?.replace('#', '');
+    const parsed = hash ? Number(hash) : NaN;
+
+    if (Number.isFinite(parsed) && yearList.includes(parsed)) {
+      setSelectedYear((prev) => (prev === parsed ? prev : parsed));
+      return;
+    }
+
     setSelectedYear((prev) => (prev && yearList.includes(prev) ? prev : yearList[0]));
-  }, [yearList]);
+  }, [yearList, location.hash]);
+
+  const handleYearChange = React.useCallback(
+    (year: number) => {
+      setSelectedYear((prev) => (prev === year ? prev : year));
+      const targetHash = `#${year}`;
+      if (location.hash !== targetHash) {
+        history.replace({
+          pathname: location.pathname,
+          search: location.search,
+          hash: targetHash,
+        });
+      }
+    },
+    [history, location.hash, location.pathname, location.search]
+  );
 
   const visibleGroups = React.useMemo(() => {
     if (selectedYear == null) {
@@ -64,7 +91,7 @@ export default function BlogArchivePage(props: Props): JSX.Element {
                     className={clsx(styles.archiveFilterButton, {
                       [styles.archiveFilterButtonActive]: year === selectedYear,
                     })}
-                    onClick={() => setSelectedYear(year)}
+                    onClick={() => handleYearChange(year)}
                     aria-pressed={year === selectedYear}
                   >
                     {year}
@@ -91,7 +118,7 @@ export default function BlogArchivePage(props: Props): JSX.Element {
             </ul>
           </div>
         ))}
-        {!visibleGroups.length && (
+        {selectedYear != null && !visibleGroups.length && (
           <div className={styles.card}>
             <div className={styles.mutedText}>
               <Translate id="blog.archive.empty">No posts yet</Translate>

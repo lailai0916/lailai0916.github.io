@@ -101,7 +101,10 @@ export default function Sidebar() {
         <ul className={styles.archiveList}>
           {archiveYears.map((y) => (
             <li key={y.year} className={styles.archiveItem}>
-              <Link to="/blog/archive" className={styles.archiveLink}>
+              <Link
+                to={`/blog/archive#${y.year}`}
+                className={styles.archiveLink}
+              >
                 {y.year}
               </Link>
               <span className={styles.archiveCount}>{y.count}</span>
