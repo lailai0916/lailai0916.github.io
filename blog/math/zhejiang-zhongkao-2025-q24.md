@@ -9,17 +9,17 @@ tags: [math]
 
 ## 题目
 
-24.（本题 $12$ 分）在菱形 $ABCD$ 中，$AB$=5，$AC$=8。
+24.（本题 $12$ 分）在菱形 $ABCD$ 中，$AB=5$，$AC=8$。
 
 （1）如图 $1$，求 $\sin\angle BAC$ 的值。
 
+<Desmos id="4ydta0qtnx" />
+
 （2）如图 $2$，$E$ 是 $AD$ 延长线上的一点，连接 $BE$，作 $\triangle FBE$ 与 $\triangle ABE$ 关于直线 $BE$ 对称，$EF$ 交射线 $AC$ 于点 $P$，连接 $BP$。
 
-①当 $EF\perp AC$ 时，求 $AE$ 的长
+① 当 $EF\perp AC$ 时，求 $AE$ 的长。
 
-②求 $PA-PB$ 的最小值。
-
-<Desmos id="4ydta0qtnx" />
+② 求 $PA-PB$ 的最小值。
 
 <Desmos id="fxo4hftvxi" />
 
