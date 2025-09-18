@@ -1,84 +1,68 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-using ll=long long;
-const int N=5000005;
-bool vis[N];
-ll pri[N],phi[N],mu[N];
-unordered_map<ll,ll> sum_phi,sum_mu;
-void init()
+const int N=2050;
+struct BIT
 {
-	vis[0]=vis[1]=1;
-	phi[1]=mu[1]=1;
-	int cnt=0;
-	for(int i=2;i<N;i++)
+	int c[N][N];
+	void add(int x,int y,int v)
 	{
-		if(!vis[i])
+		if(!x||!y)return;
+		for(int i=x;i<N;i+=i&-i)
 		{
-			pri[++cnt]=i;
-			phi[i]=i-1;
-			mu[i]=-1;
-		}
-		for(int j=1;j<=cnt;j++)
-		{
-			if(i*pri[j]>=N)break;
-			vis[i*pri[j]]=1;
-			if(i%pri[j]==0)
+			for(int j=y;j<N;j+=j&-j)
 			{
-				phi[i*pri[j]]=phi[i]*pri[j];
-				mu[i*pri[j]]=0;
-				break;
+				c[i][j]+=v;
 			}
-			phi[i*pri[j]]=phi[i]*phi[pri[j]];
-			mu[i*pri[j]]=-mu[i];
 		}
 	}
-	for(int i=1;i<N;i++)
+	int query(int x,int y)
 	{
-		phi[i]+=phi[i-1];
-		mu[i]+=mu[i-1];
+		int res=0;
+		for(int i=x;i;i-=i&-i)
+		{
+			for(int j=y;j;j-=j&-j)
+			{
+				res+=c[i][j];
+			}
+		}
+		return res;
 	}
-}
-ll sum_g(ll x)
+}A,B,C,D;
+int n,m;
+void add(int x,int y,int v)
 {
-	return x;
+	A.add(x,y,v*x*y);
+	B.add(x,y,v*x);
+	C.add(x,y,v*y);
+	D.add(x,y,v);
 }
-ll get_phi(ll x)
+int query(int x,int y)
 {
-	if(x<N)return phi[x];
-	if(sum_phi[x])return sum_phi[x];
-	ll ans=x*(x+1)/2;
-	for(ll l=2,r;l<=x;l=r+1)
-	{
-		r=x/(x/l);
-		ans-=(sum_g(r)-sum_g(l-1))*get_phi(x/l);
-	}
-	return sum_phi[x]=ans/sum_g(1);
-}
-ll get_mu(ll x)
-{
-	if(x<N)return mu[x];
-	if(sum_mu[x])return sum_mu[x];
-	ll ans=1;
-	for(ll l=2,r;l<=x;l=r+1)
-	{
-		r=x/(x/l);
-		ans-=(sum_g(r)-sum_g(l-1))*get_mu(x/l);
-	}
-	return sum_mu[x]=ans/sum_g(1);
+	return A.query(x,y)+y*(B.query(x,m)-B.query(x,y))+x*(C.query(n,y)-C.query(x,y))+x*y*(D.query(n,m)-D.query(x,m)-D.query(n,y)+D.query(x,y));
 }
 int main()
 {
 	ios::sync_with_stdio(false);
 	cin.tie(nullptr);
-	init();
-	int T;
-	cin>>T;
-	while(T--)
+	char op;
+	cin>>op>>n>>m;
+	while(cin>>op)
 	{
-		ll n;
-		cin>>n;
-		cout<<get_phi(n)<<' '<<get_mu(n)<<'\n';
+		int a,b,c,d,v;
+		if(op=='L')
+		{
+			cin>>a>>b>>c>>d>>v;
+			add(c,d,v);
+			add(a-1,d,-v);
+			add(c,b-1,-v);
+			add(a-1,b-1,v);
+		}
+		else if(op=='k')
+		{
+			cin>>a>>b>>c>>d;
+			cout<<query(c,d)-query(a-1,d)-query(c,b-1)+query(a-1,b-1)<<'\n';
+		}
 	}
 	return 0;
 }
