@@ -26,13 +26,13 @@ type StatsItem = {
 
 const formatStatValue = (value?: number) => {
   if (typeof value !== 'number' || !Number.isFinite(value)) {
-    return '--';
+    return 'N/A';
   }
   if (value < 1000) {
     return value.toLocaleString();
   }
   if (value < 1_000_000) {
-    return `${(value / 1000).toFixed(2)}k`;
+    return `${(value / 1000).toFixed(2)}K`;
   }
   return `${(value / 1_000_000).toFixed(2)}M`;
 };
