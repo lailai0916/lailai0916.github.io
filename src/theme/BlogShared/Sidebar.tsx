@@ -11,6 +11,14 @@ import {
   getArchiveByYear,
 } from '@site/src/utils/blogData';
 
+const ANALYTICS_BASE_URL =
+  'https://analytics.lailai.one/api/websites/69d3b7de-90e4-4be4-a355-633620ecefdb/stats?startAt=0';
+
+const ANALYTICS_HEADERS = {
+  Authorization:
+    'Bearer mXASurmA0JxF4bm+aeWM458Rk3hKZJUoYm4aSFdVUp1LzlZ96vwe2RcV6b19yqwgwmPIo3q2jvqLlBqLhNrkW+AlPZ/CgTIfAkeMrg+NWpcYD9waQRngwntf5maKEt/oBwKm9C3wd3dCm7m0BSXddT8q8vDMYSRYeJ+tcwkcbEOCtsgAHs28V+qT30mGz6yCh02gctP3RrPDeIvq3A4az1n87MlUZDiLxI8YwX8aVhSOml6WKnKtFOWgqTCXt9si79sLuw8vWT+FySCkes47gl0JlgOz/gFGZPwCGa2LKP1N0evzma5tvUtKLJsQfcBp/JZVoxDRmMUp2B1PaKoUyAn4ELxQzLpaFkVyMdA/p1AO72N2vhlNHILC4/kI',
+};
+
 export default function Sidebar() {
   // 组件内部汇总全站作者并固定选择 'lailai'
   const author = React.useMemo(() => {
@@ -48,16 +56,12 @@ export default function Sidebar() {
     async function loadAnalytics() {
       try {
         const endAt = Date.now();
-        const shareUrl = new URL(
-          'https://analytics.lailai.one/api/share/DDd09iBEYOQw2k9L'
-        );
-        shareUrl.searchParams.set('type', 'stats');
-        shareUrl.searchParams.set('startAt', '0');
-        shareUrl.searchParams.set('endAt', String(endAt));
+        const url = `${ANALYTICS_BASE_URL}&endAt=${endAt}&unit=month&timezone=Asia%2FShanghai&compare=false`;
 
-        const res = await fetch(shareUrl.toString(), {
+        const res = await fetch(url, {
           signal: controller.signal,
           headers: {
+            ...ANALYTICS_HEADERS,
             Accept: 'application/json',
           },
           credentials: 'omit',
@@ -65,14 +69,20 @@ export default function Sidebar() {
         });
 
         if (!res.ok) {
-          throw new Error(`Share stats request failed with status ${res.status}`);
+          throw new Error(
+            `Share stats request failed with status ${res.status}`
+          );
         }
 
-        const data = await res.json();
+        const statsData = await res.json();
 
         const visitorsRaw =
-          data?.visitors?.value ?? data?.visitors ?? data?.sessions?.value ?? data?.sessions;
-        const pageviewsRaw = data?.pageviews?.value ?? data?.pageviews;
+          statsData?.visitors?.value ??
+          statsData?.visitors ??
+          statsData?.sessions?.value ??
+          statsData?.sessions;
+        const pageviewsRaw =
+          statsData?.pageviews?.value ?? statsData?.pageviews;
 
         const visitors = Number.isFinite(Number(visitorsRaw))
           ? Number(visitorsRaw)
@@ -89,7 +99,7 @@ export default function Sidebar() {
         if (controller.signal.aborted || didCancel) {
           return;
         }
-        console.error('Failed to load analytics (share API)', error);
+        console.error('Failed to load analytics (external API)', error);
         setAnalyticsError(true);
         setAnalyticsLoaded(true);
       }
@@ -104,10 +114,16 @@ export default function Sidebar() {
   }, []);
 
   const formatStatValue = React.useCallback((value?: number) => {
-    if (typeof value === 'number' && Number.isFinite(value)) {
+    if (typeof value !== 'number' || !Number.isFinite(value)) {
+      return '--';
+    }
+    if (value < 1000) {
       return value.toLocaleString();
     }
-    return '--';
+    if (value < 1_000_000) {
+      return `${(value / 1000).toFixed(2)}k`;
+    }
+    return `${(value / 1_000_000).toFixed(2)}M`;
   }, []);
 
   return (
