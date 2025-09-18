@@ -31,25 +31,23 @@ const formatStatValue = (value?: number) => {
   if (value < 1000) {
     return value.toLocaleString();
   }
-  if (value < 1_000_000) {
+  if (value < 1000000) {
     return `${(value / 1000).toFixed(2)}K`;
   }
-  return `${(value / 1_000_000).toFixed(2)}M`;
+  return `${(value / 1000000).toFixed(2)}M`;
 };
 
 function AuthorCard({ author }: { author: Author }) {
   return (
     <div className={styles.card}>
       <div className={styles.authorCardHeader}>
-        {author.imageURL ? (
-          <img
-            src={useBaseUrl(author.imageURL)}
-            alt="avatar"
-            className={styles.authorAvatar}
-            width={96}
-            height={96}
-          />
-        ) : null}
+        <img
+          src={useBaseUrl(author.imageURL)}
+          alt="avatar"
+          className={styles.authorAvatar}
+          width={96}
+          height={96}
+        />
         <div className={styles.authorName}>{author.name}</div>
         <div className={styles.authorDesc}>{author.title}</div>
       </div>
@@ -57,13 +55,7 @@ function AuthorCard({ author }: { author: Author }) {
   );
 }
 
-function StatisticsCard({
-  items,
-  analyticsError,
-}: {
-  items: StatsItem[];
-  analyticsError: boolean;
-}) {
+function StatsCard({ items }: { items: StatsItem[] }) {
   return (
     <div className={styles.card}>
       <div className={styles.cardTitle}>
@@ -259,7 +251,7 @@ export default function Sidebar() {
         analyticsLoaded && !analyticsError
           ? formatStatValue(analytics?.pageviews)
           : '...',
-      label: <Translate id="blog.analytics.pageviews">Views</Translate>,
+      label: <Translate id="blog.stats.views">Views</Translate>,
     },
     {
       key: 'visitors',
@@ -267,14 +259,14 @@ export default function Sidebar() {
         analyticsLoaded && !analyticsError
           ? formatStatValue(analytics?.visitors)
           : '...',
-      label: <Translate id="blog.analytics.visitors">Visitors</Translate>,
+      label: <Translate id="blog.stats.visitors">Visitors</Translate>,
     },
   ];
 
   return (
     <>
       <AuthorCard author={author ?? undefined} />
-      <StatisticsCard items={statsItems} analyticsError={analyticsError} />
+      <StatsCard items={statsItems} />
       <PopularTagsCard tags={hotTags} />
       <ArchiveCard years={archiveYears} />
     </>

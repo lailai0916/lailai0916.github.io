@@ -969,6 +969,12 @@
   "blog.stats.tags": {
     "message": "标签"
   },
+  "blog.stats.views": {
+    "message": "浏览"
+  },
+  "blog.stats.visitors": {
+    "message": "访客"
+  },
   "blog.tags.hot": {
     "message": "热门标签"
   },
