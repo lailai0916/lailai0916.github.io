@@ -11,8 +11,9 @@ import {
   getArchiveByYear,
 } from '@site/src/utils/blogData';
 
-const ANALYTICS_BASE_URL =
-  'https://analytics.lailai.one/api/websites/69d3b7de-90e4-4be4-a355-633620ecefdb/stats?startAt=0';
+const baseurl = 'https://analytics.lailai.one';
+const website_id = '69d3b7de-90e4-4be4-a355-633620ecefdb';
+const ANALYTICS_BASE_URL = `${baseurl}/api/websites/${website_id}/stats?startAt=0`;
 
 const ANALYTICS_HEADERS = {
   Authorization:

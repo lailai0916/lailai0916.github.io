@@ -35,18 +35,33 @@ export default function BlogArchivePage(props: Props): JSX.Element {
   React.useEffect(() => {
     if (!yearList.length) {
       setSelectedYear(null);
+      if (typeof window !== 'undefined') {
+        window.requestAnimationFrame(() => {
+          window.scrollTo({ top: 0, behavior: 'auto' });
+        });
+      }
       return;
     }
 
     const hash = location.hash?.replace('#', '');
     const parsed = hash ? Number(hash) : NaN;
 
+    const scrollToTop = () => {
+      if (typeof window !== 'undefined') {
+        window.requestAnimationFrame(() => {
+          window.scrollTo({ top: 0, behavior: 'auto' });
+        });
+      }
+    };
+
     if (Number.isFinite(parsed) && yearList.includes(parsed)) {
       setSelectedYear((prev) => (prev === parsed ? prev : parsed));
+      scrollToTop();
       return;
     }
 
     setSelectedYear((prev) => (prev && yearList.includes(prev) ? prev : yearList[0]));
+    scrollToTop();
   }, [yearList, location.hash]);
 
   const handleYearChange = React.useCallback(
@@ -58,6 +73,11 @@ export default function BlogArchivePage(props: Props): JSX.Element {
           pathname: location.pathname,
           search: location.search,
           hash: targetHash,
+        });
+      }
+      if (typeof window !== 'undefined') {
+        window.requestAnimationFrame(() => {
+          window.scrollTo({ top: 0, behavior: 'auto' });
         });
       }
     },
