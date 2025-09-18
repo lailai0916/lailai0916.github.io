@@ -1,68 +1,52 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-const int N=1000005;
-vector<int> G[N<<1];
-int dfn[N<<1],low[N<<1],sccno[N<<1];
-int cnt=0,scc_cnt=0;
-stack<int> s;
-void tarjan(int u)
+using ll=long long;
+const int mod=1e9+7;
+ll phi(ll n)
 {
-	low[u]=dfn[u]=++cnt;
-	s.push(u);
-	for(auto v:G[u])
+	ll res=n;
+	for(ll i=2;i*i<=n;i++)
 	{
-		if(!dfn[v])
-		{
-			tarjan(v);
-			low[u]=min(low[u],low[v]);
-		}
-		else if(!sccno[v])
-		{
-			low[u]=min(low[u],dfn[v]);
+	    if(n%i==0)
+	    {
+			res=res/i*(i-1);
+			while(n%i==0)n/=i;
 		}
 	}
-	if(low[u]==dfn[u])
+	if(n>1)res=res/n*(n-1);
+	return res;
+}
+ll Pow(ll a,ll b,ll m)
+{
+	a%=m;
+	ll res=1;
+	while(b)
 	{
-		scc_cnt++;
-		while(1)
-		{
-			int x=s.top();
-			s.pop();
-			sccno[x]=scc_cnt;
-			if(x==u)break;
-		}
+		if(b&1)res=res*a%m;
+		a=a*a%m;
+		b>>=1;
 	}
+	return res;
+}
+ll Mod(string s,ll m)
+{
+    ll res=0,f=0;
+    for(auto c:s)
+    {
+        res=res*10+(c-'0');
+        if(res>=m)f=1;
+        res%=m;
+    }
+    return res+m*f;
 }
 int main()
 {
 	ios::sync_with_stdio(false);
 	cin.tie(nullptr);
-	int n,m;
-	cin>>n>>m;
-	while(m--)
-	{
-		int u,x,v,y;
-		cin>>u>>x>>v>>y;
-		G[u+n*(1-x)].push_back(v+n*y);
-		G[v+n*(1-y)].push_back(u+n*x);
-	}
-	for(int i=1;i<=(n<<1);i++)
-	{
-		if(!dfn[i])tarjan(i);
-	}
-	for(int i=1;i<=n;i++)
-	{
-		if(sccno[i]==sccno[i+n])
-		{
-			cout<<"IMPOSSIBLE"<<'\n';
-			return 0;
-		}
-	}
-	cout<<"POSSIBLE"<<'\n';
-	for(int i=1;i<=n;i++)
-	{
-		cout<<(sccno[i]>sccno[i+n])<<' ';
-	}
+	ll a,m;
+	string b;
+	cin>>a>>m>>b;
+	cout<<Pow(a,Mod(b,phi(m)),m)<<'\n';
 	return 0;
 }

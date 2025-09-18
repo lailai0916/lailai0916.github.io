@@ -1,15 +1,18 @@
 # 欧拉函数
 
-## 扩展欧拉定理
+## 参考资料
+
+- [欧拉函数 - OI Wiki](https://oi-wiki.org/math/number-theory/euler-totient/)
+
+## 定义
+
+欧拉函数（Euler's totient function），即 $\varphi(n)$，表示的是小于等于 $n$ 和 $n$ 互质的数的个数。
+
+例如 $\varphi(1)=1$；当 $n$ 是质数的时候，显然有 $\varphi(n)=n-1$。
+
+## 实现
 
 ```cpp
-#include <bits/stdc++.h>
-using namespace std;
-
-using ll=long long;
-const int inf=0x3f3f3f3f;
-const int mod=1e9+7;
-const int N=200005;
 ll phi(ll n)
 {
 	ll res=n;
@@ -24,40 +27,27 @@ ll phi(ll n)
 	if(n>1)res=res/n*(n-1);
 	return res;
 }
-ll Pow(ll a,ll b,ll m)
-{
-	a%=m;
-	ll res=1;
-	while(b)
-	{
-		if(b&1)res=res*a%m;
-		a=a*a%m;
-		b>>=1;
-	}
-	return res;
-}
-ll Mod(string s,ll m)
-{
-    ll res=0,f=0;
-    for(auto c:s)
-    {
-        res=res*10+(c-'0');
-        if(res>=m)f=1;
-        res%=m;
-    }
-    return res+m*f;
-}
-int main()
-{
-	ios::sync_with_stdio(false);
-	cin.tie(nullptr);
-	ll a,m;
-	string b;
-	cin>>a>>m>>b;
-	cout<<Pow(a,Mod(b,phi(m)),m)<<'\n';
-	return 0;
-}
 ```
+
+## 欧拉定理
+
+与欧拉函数紧密相关的一个定理就是欧拉定理。其描述如下：
+
+若 $\gcd(a,m)=1$，则 $a^{\varphi(m)}\equiv 1\pmod{m}$。
+
+### 扩展欧拉定理
+
+当然也有扩展欧拉定理，用于处理一般的 $a$ 和 $m$ 的情形。
+
+$$
+a^b\equiv
+\begin{cases}
+  a^{b\bmod\varphi(m)} & \gcd(a,m)=1  \\
+  a^b & \gcd(a,m)\ne 1,b<\varphi(m)  \\
+  a^{b\bmod\varphi(m)+\varphi(m)} & \gcd(a,m)\ne 1,b\ge\varphi(m)
+\end{cases}
+\pmod m
+$$
 
 ## 例题
 
