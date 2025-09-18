@@ -11,7 +11,7 @@ import {
   getArchiveByYear,
 } from '@site/src/utils/blogData';
 
-export default function SidebarLeft() {
+export default function Sidebar() {
   // 组件内部汇总全站作者并固定选择 'lailai'
   const author = React.useMemo(() => {
     try {

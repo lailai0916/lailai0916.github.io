@@ -1,7 +1,7 @@
 import React from 'react';
 import Layout from '@theme/Layout';
 import styles from '../BlogListPage/styles.module.css';
-import SidebarLeft from './SidebarLeft';
+import Sidebar from './Sidebar';
 
 type Props = {
   title?: string;
@@ -15,7 +15,7 @@ export default function BlogScaffold({ title, description, children }: Props) {
       <div className={styles.container}>
         <aside className={styles.leftCol}>
           <div className={styles.sidebarStack}>
-            <SidebarLeft />
+            <Sidebar />
           </div>
         </aside>
         <main className={styles.mainCol}>{children}</main>

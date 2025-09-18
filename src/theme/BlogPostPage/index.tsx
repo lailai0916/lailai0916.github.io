@@ -17,8 +17,6 @@ import BlogPostItem from '@theme/BlogPostItem';
 
 import type { Props } from '@theme/BlogPostPage';
 
-// left sidebar uses shared SidebarLeft
-
 // Use the official BlogPostItem to render content and metadata
 
 export default function BlogPostPage(props: Props): JSX.Element {
