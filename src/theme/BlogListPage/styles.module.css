@@ -271,10 +271,6 @@ html[data-theme='dark'] .archiveFilterButton {
   color: var(--ifm-color-emphasis-700);
 }
 
-.mutedText {
-  color: var(--ifm-color-emphasis-700);
-}
-
 .recentList {
   display: flex;
   flex-direction: column;

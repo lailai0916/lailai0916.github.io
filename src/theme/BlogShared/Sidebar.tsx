@@ -30,6 +30,85 @@ export default function Sidebar() {
 
   const hotTags = React.useMemo(() => getTopTags(8), []);
   const archiveYears = React.useMemo(() => getArchiveByYear(), []);
+  const [analytics, setAnalytics] = React.useState<{
+    visitors?: number;
+    pageviews?: number;
+  } | null>(null);
+  const [analyticsLoaded, setAnalyticsLoaded] = React.useState(false);
+  const [analyticsError, setAnalyticsError] = React.useState(false);
+
+  React.useEffect(() => {
+    if (typeof window === 'undefined') {
+      return;
+    }
+
+    const controller = new AbortController();
+    let didCancel = false;
+
+    async function loadAnalytics() {
+      try {
+        const endAt = Date.now();
+        const shareUrl = new URL(
+          'https://analytics.lailai.one/api/share/DDd09iBEYOQw2k9L'
+        );
+        shareUrl.searchParams.set('type', 'stats');
+        shareUrl.searchParams.set('startAt', '0');
+        shareUrl.searchParams.set('endAt', String(endAt));
+
+        const res = await fetch(shareUrl.toString(), {
+          signal: controller.signal,
+          headers: {
+            Accept: 'application/json',
+          },
+          credentials: 'omit',
+          mode: 'cors',
+        });
+
+        if (!res.ok) {
+          throw new Error(`Share stats request failed with status ${res.status}`);
+        }
+
+        const data = await res.json();
+
+        const visitorsRaw =
+          data?.visitors?.value ?? data?.visitors ?? data?.sessions?.value ?? data?.sessions;
+        const pageviewsRaw = data?.pageviews?.value ?? data?.pageviews;
+
+        const visitors = Number.isFinite(Number(visitorsRaw))
+          ? Number(visitorsRaw)
+          : undefined;
+        const pageviews = Number.isFinite(Number(pageviewsRaw))
+          ? Number(pageviewsRaw)
+          : undefined;
+
+        if (!didCancel) {
+          setAnalytics({ visitors, pageviews });
+          setAnalyticsLoaded(true);
+        }
+      } catch (error) {
+        if (controller.signal.aborted || didCancel) {
+          return;
+        }
+        console.error('Failed to load analytics (share API)', error);
+        setAnalyticsError(true);
+        setAnalyticsLoaded(true);
+      }
+    }
+
+    loadAnalytics();
+
+    return () => {
+      didCancel = true;
+      controller.abort();
+    };
+  }, []);
+
+  const formatStatValue = React.useCallback((value?: number) => {
+    if (typeof value === 'number' && Number.isFinite(value)) {
+      return value.toLocaleString();
+    }
+    return '--';
+  }, []);
 
   return (
     <>
@@ -93,6 +172,36 @@ export default function Sidebar() {
           ))}
         </div>
       </div>
+
+      {(analyticsLoaded || !analyticsError) && (
+        <div className={styles.card}>
+          <div className={styles.cardTitle}>
+            <Translate id="blog.analytics.title">Traffic Overview</Translate>
+          </div>
+          <div className={styles.authorStats}>
+            <div className={styles.statItem}>
+              <div className={styles.statValue}>
+                {analyticsLoaded && !analyticsError
+                  ? formatStatValue(analytics?.visitors)
+                  : '...'}
+              </div>
+              <div className={styles.statLabel}>
+                <Translate id="blog.analytics.visitors">Visitors</Translate>
+              </div>
+            </div>
+            <div className={styles.statItem}>
+              <div className={styles.statValue}>
+                {analyticsLoaded && !analyticsError
+                  ? formatStatValue(analytics?.pageviews)
+                  : '...'}
+              </div>
+              <div className={styles.statLabel}>
+                <Translate id="blog.analytics.pageviews">Pageviews</Translate>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
 
       <div className={styles.card}>
         <div className={styles.cardTitle}>
