@@ -1,35 +1,23 @@
 .container {
-  /* 固定中间主列宽度（统一所有子页面），左右列固定 */
-  --main-col-width: 720px;
-  --left-col-width: 280px;
-  --right-col-width: 280px;
+  /* 固定中间主列宽度（统一所有子页面），左侧栏与内容列固定 */
+  --main-col-width: 680px;
+  --left-col-width: 320px;
   --grid-gap: 1.25rem;
 
   width: 100%;
-  max-width: calc(
-    var(--left-col-width) + var(--main-col-width) + var(--right-col-width) + 2 *
-      var(--grid-gap)
-  );
+  max-width: calc(var(--left-col-width) + var(--main-col-width) + var(--grid-gap));
   margin: 0 auto;
   padding: 2rem 1rem;
   display: grid;
-  grid-template-columns: var(--left-col-width) var(--main-col-width) var(
-      --right-col-width
-    );
+  grid-template-columns: var(--left-col-width) var(--main-col-width);
   gap: var(--grid-gap);
 }
 
 @media (max-width: 1200px) {
   .container {
-    --left-col-width: 260px;
-    --right-col-width: 0px; /* 右栏隐藏时不占位 */
-    grid-template-columns: var(--left-col-width) var(--main-col-width);
-    max-width: calc(
-      var(--left-col-width) + var(--main-col-width) + var(--grid-gap)
-    );
-  }
-  .rightCol {
-    display: none;
+    --left-col-width: 300px;
+    --main-col-width: 640px;
+    max-width: calc(var(--left-col-width) + var(--main-col-width) + var(--grid-gap));
   }
 }
 
@@ -47,8 +35,7 @@
   }
 }
 
-.leftCol,
-.rightCol {
+.leftCol {
   display: block;
 }
 

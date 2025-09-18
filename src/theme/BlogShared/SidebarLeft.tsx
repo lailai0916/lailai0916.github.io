@@ -8,6 +8,7 @@ import {
   getTopTags,
   getAllTagCount,
   getAllPostMetadata,
+  getArchiveByYear,
 } from '@site/src/utils/blogData';
 
 export default function SidebarLeft() {
@@ -28,6 +29,7 @@ export default function SidebarLeft() {
   }, []);
 
   const hotTags = React.useMemo(() => getTopTags(12), []);
+  const archiveYears = React.useMemo(() => getArchiveByYear(), []);
 
   return (
     <>
@@ -90,6 +92,22 @@ export default function SidebarLeft() {
             </Link>
           ))}
         </div>
+      </div>
+
+      <div className={styles.card}>
+        <div className={styles.cardTitle}>
+          <Translate id="theme.blog.archive.title">Archive</Translate>
+        </div>
+        <ul className={styles.archiveList}>
+          {archiveYears.map((y) => (
+            <li key={y.year} className={styles.archiveItem}>
+              <Link to="/blog/archive" className={styles.archiveLink}>
+                {y.year}
+              </Link>
+              <span className={styles.archiveCount}>{y.count}</span>
+            </li>
+          ))}
+        </ul>
       </div>
     </>
   );

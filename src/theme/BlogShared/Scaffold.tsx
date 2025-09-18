@@ -2,7 +2,6 @@ import React from 'react';
 import Layout from '@theme/Layout';
 import styles from '../BlogListPage/styles.module.css';
 import SidebarLeft from './SidebarLeft';
-import SidebarRight from './SidebarRight';
 
 type Props = {
   title?: string;
@@ -20,11 +19,6 @@ export default function BlogScaffold({ title, description, children }: Props) {
           </div>
         </aside>
         <main className={styles.mainCol}>{children}</main>
-        <aside className={styles.rightCol}>
-          <div className={styles.stickyCol}>
-            <SidebarRight />
-          </div>
-        </aside>
       </div>
     </Layout>
   );
