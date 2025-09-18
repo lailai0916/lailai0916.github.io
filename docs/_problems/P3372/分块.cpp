@@ -3,25 +3,32 @@ using namespace std;
 
 using ll=long long;
 const int N=100005;
-ll c1[N],c2[N];
-void add(int u,ll v)
+ll a[N],b[N],s[N];
+int id[N],len;
+void update(int l,int r,ll v)
 {
-	ll w=u*v;
-	while(u<N)
+	int x=id[l],y=id[r];
+	if(x==y)
 	{
-		c1[u]+=v;
-		c2[u]+=w;
-		u+=u&-u;
+		for(int i=l;i<=r;i++){a[i]+=v;s[x]+=v;}
+		return;
 	}
+	for(int i=l;id[i]==x;i++){a[i]+=v;s[x]+=v;}
+	for(int i=r;id[i]==y;i--){a[i]+=v;s[y]+=v;}
+	for(int i=x+1;i<y;i++){b[i]+=v;s[i]+=v*len;}
 }
-ll sum(ll *c,int u)
+ll query(int l,int r)
 {
+	int x=id[l],y=id[r];
 	ll res=0;
-	while(u)
+	if(x==y)
 	{
-		res+=c[u];
-		u-=u&-u;
+		for(int i=l;i<=r;i++)res+=a[i]+b[x];
+		return res;
 	}
+	for(int i=l;id[i]==x;i++)res+=a[i]+b[x];
+	for(int i=r;id[i]==y;i--)res+=a[i]+b[y];
+	for(int i=x+1;i<y;i++)res+=s[i];
 	return res;
 }
 int main()
@@ -30,12 +37,12 @@ int main()
 	cin.tie(nullptr);
 	int n,m;
 	cin>>n>>m;
+	len=sqrt(n);
 	for(int i=1;i<=n;i++)
 	{
-		ll x;
-		cin>>x;
-		add(i,x);
-		add(i+1,-x);
+		cin>>a[i];
+		id[i]=(i-1)/len+1;
+		s[id[i]]+=a[i];
 	}
 	while(m--)
 	{
@@ -45,13 +52,12 @@ int main()
 		if(op==1)
 		{
 			cin>>x>>y>>k;
-			add(x,k);
-			add(y+1,-k);
+			update(x,y,k);
 		}
 		else if(op==2)
 		{
 			cin>>x>>y;
-			cout<<sum(c1,y)*(y+1)-sum(c1,x-1)*x-(sum(c2,y)-sum(c2,x-1))<<'\n';
+			cout<<query(x,y)<<'\n';
 		}
 	}
 	return 0;

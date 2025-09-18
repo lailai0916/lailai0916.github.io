@@ -1,19 +1,22 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-const int N=500005;
-int c[N];
-void add(int u,int v)
+using ll=long long;
+const int N=100005;
+ll c1[N],c2[N];
+void add(int u,ll v)
 {
+	ll w=u*v;
 	while(u<N)
 	{
-		c[u]+=v;
+		c1[u]+=v;
+		c2[u]+=w;
 		u+=u&-u;
 	}
 }
-int sum(int u)
+ll sum(ll *c,int u)
 {
-	int res=0;
+	ll res=0;
 	while(u)
 	{
 		res+=c[u];
@@ -29,16 +32,27 @@ int main()
 	cin>>n>>m;
 	for(int i=1;i<=n;i++)
 	{
-		int x;
+		ll x;
 		cin>>x;
 		add(i,x);
+		add(i+1,-x);
 	}
 	while(m--)
 	{
 		int op,x,y;
-		cin>>op>>x>>y;
-		if(op==1)add(x,y);
-		else if(op==2)cout<<sum(y)-sum(x-1)<<'\n';
+		ll k;
+		cin>>op;
+		if(op==1)
+		{
+			cin>>x>>y>>k;
+			add(x,k);
+			add(y+1,-k);
+		}
+		else if(op==2)
+		{
+			cin>>x>>y;
+			cout<<sum(c1,y)*(y+1)-sum(c1,x-1)*x-(sum(c2,y)-sum(c2,x-1))<<'\n';
+		}
 	}
 	return 0;
 }
