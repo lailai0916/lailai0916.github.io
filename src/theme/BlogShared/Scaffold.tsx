@@ -14,7 +14,7 @@ export default function BlogScaffold({ title, description, children }: Props) {
     <Layout title={title} description={description}>
       <div className={styles.container}>
         <aside className={styles.leftCol}>
-          <div className={styles.stickyCol}>
+          <div className={styles.sidebarStack}>
             <SidebarLeft />
           </div>
         </aside>

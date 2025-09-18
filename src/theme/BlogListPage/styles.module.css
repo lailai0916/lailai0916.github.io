@@ -39,13 +39,10 @@
   display: block;
 }
 
-.stickyCol {
+.sidebarStack {
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  position: sticky;
-  top: calc(var(--ifm-navbar-height, 60px) + 1rem);
-  overflow: visible;
 }
 
 .mainCol {
