@@ -4,6 +4,7 @@ import { useTheme } from '@site/src/hooks/useTheme';
 import BlogArchivePageOriginal from '@theme-original/BlogArchivePage';
 import Link from '@docusaurus/Link';
 import Translate from '@docusaurus/Translate';
+import clsx from 'clsx';
 
 import styles from '../BlogListPage/styles.module.css';
 import BlogScaffold from '../BlogShared/Scaffold';
@@ -25,11 +26,55 @@ export default function BlogArchivePage(props: Props): JSX.Element {
     });
     return Array.from(map.entries()).sort((a, b) => b[0] - a[0]);
   }, [archive]);
+  const yearList = React.useMemo(() => groups.map(([year]) => year), [groups]);
+  const [selectedYear, setSelectedYear] = React.useState<number | null>(null);
+
+  React.useEffect(() => {
+    if (!yearList.length) {
+      setSelectedYear(null);
+      return;
+    }
+    setSelectedYear((prev) => (prev && yearList.includes(prev) ? prev : yearList[0]));
+  }, [yearList]);
+
+  const visibleGroups = React.useMemo(() => {
+    if (selectedYear == null) {
+      return [] as typeof groups;
+    }
+    return groups.filter(([year]) => year === selectedYear);
+  }, [groups, selectedYear]);
 
   if (isNewLayout) {
     return (
       <BlogScaffold title="Archive" description="Archive of lailai's blog">
-        {groups.map(([year, posts]) => (
+        {!!yearList.length && (
+          <div className={styles.card}>
+            <div className={styles.cardTitle}>
+              <Translate id="theme.blog.archive.title">Archive</Translate>
+            </div>
+            <div className={styles.archiveFilter}>
+              <span className={styles.archiveFilterLabel}>
+                <Translate id="blog.archive.yearSelect">Year</Translate>
+              </span>
+              <div className={styles.archiveFilterOptions}>
+                {yearList.map((year) => (
+                  <button
+                    key={year}
+                    type="button"
+                    className={clsx(styles.archiveFilterButton, {
+                      [styles.archiveFilterButtonActive]: year === selectedYear,
+                    })}
+                    onClick={() => setSelectedYear(year)}
+                    aria-pressed={year === selectedYear}
+                  >
+                    {year}
+                  </button>
+                ))}
+              </div>
+            </div>
+          </div>
+        )}
+        {visibleGroups.map(([year, posts]) => (
           <div key={year} className={styles.card} id={String(year)}>
             <div className={styles.cardTitle}>{year}</div>
             <ul className={styles.recentList}>
@@ -46,7 +91,7 @@ export default function BlogArchivePage(props: Props): JSX.Element {
             </ul>
           </div>
         ))}
-        {!groups.length && (
+        {!visibleGroups.length && (
           <div className={styles.card}>
             <div className={styles.mutedText}>
               <Translate id="blog.archive.empty">No posts yet</Translate>
