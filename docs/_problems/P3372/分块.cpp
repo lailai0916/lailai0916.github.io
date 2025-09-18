@@ -2,8 +2,6 @@
 using namespace std;
 
 using ll=long long;
-const int inf=0x3f3f3f3f;
-const int mod=1e9+7;
 const int N=100005;
 ll a[N],b[N],s[N];
 int id[N],len;
