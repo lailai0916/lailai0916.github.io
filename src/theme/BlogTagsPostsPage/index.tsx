@@ -3,6 +3,7 @@ import type { JSX } from 'react';
 import { useTheme } from '@site/src/hooks/useTheme';
 import BlogTagsPostsPageOriginal from '@theme-original/BlogTagsPostsPage';
 import PostsListLayout from '../BlogShared/PostsListLayout';
+import TagSelector from '../BlogShared/TagSelector';
 
 // no direct data utils needed here; sidebars handle their own data
 
@@ -23,6 +24,7 @@ export default function BlogTagsPostsPage(props: Props): JSX.Element {
         description={description}
         items={items}
         meta={listMetadata}
+        topSlot={<TagSelector activePermalink={tag.permalink} />}
       />
     );
   }

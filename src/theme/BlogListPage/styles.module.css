@@ -240,6 +240,26 @@ html[data-theme='dark'] .archiveFilterButton {
   transform: translateY(-1px);
 }
 
+.tagChipActive {
+  background: var(--ifm-color-primary);
+  border-color: var(--ifm-color-primary);
+  color: #fff;
+}
+
+.tagChipActive:hover {
+  background: var(--ifm-color-primary);
+  border-color: var(--ifm-color-primary);
+  transform: translateY(-1px);
+}
+
+.tagChipActive .tagCount {
+  color: inherit;
+}
+
+.tagChipActive .tagDot {
+  background: #fff;
+}
+
 .tagDot {
   width: 6px;
   height: 6px;
