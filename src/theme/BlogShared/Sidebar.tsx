@@ -11,6 +11,152 @@ import {
   getArchiveByYear,
 } from '@site/src/utils/blogData';
 
+type Author = {
+  name?: string;
+  title?: string;
+  imageURL?: string;
+};
+
+type StatsItem = {
+  key: string;
+  value: React.ReactNode;
+  label: React.ReactNode;
+  link?: string;
+};
+
+const formatStatValue = (value?: number) => {
+  if (typeof value !== 'number' || !Number.isFinite(value)) {
+    return '--';
+  }
+  if (value < 1000) {
+    return value.toLocaleString();
+  }
+  if (value < 1_000_000) {
+    return `${(value / 1000).toFixed(2)}k`;
+  }
+  return `${(value / 1_000_000).toFixed(2)}M`;
+};
+
+function AuthorCard({ author }: { author?: Author }) {
+  if (!author) {
+    return null;
+  }
+
+  return (
+    <div className={styles.card}>
+      <div className={styles.authorCardHeader}>
+        {author.imageURL ? (
+          <img
+            src={useBaseUrl(author.imageURL)}
+            alt="avatar"
+            className={styles.authorAvatar}
+            width={96}
+            height={96}
+          />
+        ) : null}
+        <div className={styles.authorName}>{author.name}</div>
+        {author.title ? (
+          <div className={styles.authorDesc}>{author.title}</div>
+        ) : null}
+      </div>
+    </div>
+  );
+}
+
+function StatisticsCard({
+  items,
+  analyticsError,
+}: {
+  items: StatsItem[];
+  analyticsError: boolean;
+}) {
+  return (
+    <div className={styles.card}>
+      <div className={styles.cardTitle}>
+        <Translate id="blog.stats.overview">Statistics</Translate>
+      </div>
+      <div className={styles.authorStats}>
+        {items.map((item) => {
+          const content = (
+            <>
+              <div className={styles.statValue}>{item.value}</div>
+              <div className={styles.statLabel}>{item.label}</div>
+            </>
+          );
+
+          if (item.link) {
+            return (
+              <Link
+                key={item.key}
+                to={item.link}
+                className={[styles.statItem, styles.statItemLink].join(' ')}
+              >
+                {content}
+              </Link>
+            );
+          }
+
+          return (
+            <div key={item.key} className={styles.statItem}>
+              {content}
+            </div>
+          );
+        })}
+      </div>
+      {analyticsError && (
+        <div className={styles.mutedText}>
+          <Translate id="blog.analytics.error">
+            Unable to load analytics.
+          </Translate>
+        </div>
+      )}
+    </div>
+  );
+}
+
+function PopularTagsCard({ tags }: { tags: readonly any[] }) {
+  return (
+    <div className={styles.card}>
+      <div className={styles.cardTitle}>
+        <Translate id="blog.tags.hot">Popular Tags</Translate>
+      </div>
+      <div className={styles.tagList}>
+        {tags.map((t) => (
+          <Link key={t.permalink} to={t.permalink} className={styles.tagChip}>
+            <span className={styles.tagDot} />
+            {t.label}
+            <span className={styles.tagCount}>{t.count}</span>
+          </Link>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+function ArchiveCard({
+  years,
+}: {
+  years: Array<{ year: number; count: number }>;
+}) {
+  return (
+    <div className={styles.card}>
+      <div className={styles.cardTitle}>
+        <Translate id="theme.blog.archive.title">Archive</Translate>
+      </div>
+      <ul className={styles.archiveList}>
+        {years.map((y) => (
+          <li key={y.year} className={styles.archiveItem}>
+            <Link to={`/blog/archive#${y.year}`} className={styles.archiveLink}>
+              <span className={styles.archiveYear}>{y.year}</span>
+              <span className={styles.archiveCount}>{y.count}</span>
+            </Link>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+
 const fixedId = 'lailai';
 const baseurl = 'https://analytics.lailai.one';
 const website_id = '69d3b7de-90e4-4be4-a355-633620ecefdb';
@@ -107,114 +253,43 @@ export default function Sidebar() {
     };
   }, []);
 
-  const formatStatValue = React.useCallback((value?: number) => {
-    if (typeof value !== 'number' || !Number.isFinite(value)) {
-      return '--';
-    }
-    if (value < 1000) {
-      return value.toLocaleString();
-    }
-    if (value < 1_000_000) {
-      return `${(value / 1000).toFixed(2)}k`;
-    }
-    return `${(value / 1_000_000).toFixed(2)}M`;
-  }, []);
+  const statsItems: StatsItem[] = [
+    {
+      key: 'posts',
+      value: getBlogPostCount(),
+      label: <Translate id="blog.stats.posts">Posts</Translate>,
+      link: '/blog/archive',
+    },
+    {
+      key: 'tags',
+      value: getAllTagCount(),
+      label: <Translate id="blog.stats.tags">Tags</Translate>,
+      link: '/blog/tags',
+    },
+    {
+      key: 'views',
+      value:
+        analyticsLoaded && !analyticsError
+          ? formatStatValue(analytics?.pageviews)
+          : '...',
+      label: <Translate id="blog.analytics.pageviews">Views</Translate>,
+    },
+    {
+      key: 'visitors',
+      value:
+        analyticsLoaded && !analyticsError
+          ? formatStatValue(analytics?.visitors)
+          : '...',
+      label: <Translate id="blog.analytics.visitors">Visitors</Translate>,
+    },
+  ];
 
   return (
     <>
-      <div className={styles.card}>
-        <div className={styles.authorCardHeader}>
-          <img
-            src={useBaseUrl(author.imageURL)}
-            alt="avatar"
-            className={styles.authorAvatar}
-            width={96}
-            height={96}
-          />
-          <div className={styles.authorName}>{author?.name}</div>
-          <div className={styles.authorDesc}>{author.title}</div>
-        </div>
-      </div>
-
-      <div className={styles.card}>
-        <div className={styles.cardTitle}>
-          <Translate id="blog.stats.overview">Statistics</Translate>
-        </div>
-        <div className={styles.authorStats}>
-          <Link
-            to="/blog/archive"
-            className={[styles.statItem, styles.statItemLink].join(' ')}
-          >
-            <div className={styles.statValue}>{getBlogPostCount()}</div>
-            <div className={styles.statLabel}>
-              <Translate id="blog.stats.posts">Posts</Translate>
-            </div>
-          </Link>
-          <Link
-            to="/blog/tags"
-            className={[styles.statItem, styles.statItemLink].join(' ')}
-          >
-            <div className={styles.statValue}>{getAllTagCount()}</div>
-            <div className={styles.statLabel}>
-              <Translate id="blog.stats.tags">Tags</Translate>
-            </div>
-          </Link>
-          <div className={styles.statItem}>
-            <div className={styles.statValue}>
-              {analyticsLoaded && !analyticsError
-                ? formatStatValue(analytics?.pageviews)
-                : '...'}
-            </div>
-            <div className={styles.statLabel}>
-              <Translate id="blog.analytics.pageviews">Views</Translate>
-            </div>
-          </div>
-          <div className={styles.statItem}>
-            <div className={styles.statValue}>
-              {analyticsLoaded && !analyticsError
-                ? formatStatValue(analytics?.visitors)
-                : '...'}
-            </div>
-            <div className={styles.statLabel}>
-              <Translate id="blog.analytics.visitors">Visitors</Translate>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div className={styles.card}>
-        <div className={styles.cardTitle}>
-          <Translate id="blog.tags.hot">Popular Tags</Translate>
-        </div>
-        <div className={styles.tagList}>
-          {hotTags.map((t) => (
-            <Link key={t.permalink} to={t.permalink} className={styles.tagChip}>
-              <span className={styles.tagDot} />
-              {t.label}
-              <span className={styles.tagCount}>{t.count}</span>
-            </Link>
-          ))}
-        </div>
-      </div>
-
-      <div className={styles.card}>
-        <div className={styles.cardTitle}>
-          <Translate id="theme.blog.archive.title">Archive</Translate>
-        </div>
-        <ul className={styles.archiveList}>
-          {archiveYears.map((y) => (
-            <li key={y.year} className={styles.archiveItem}>
-              <Link
-                to={`/blog/archive#${y.year}`}
-                className={styles.archiveLink}
-              >
-                <span className={styles.archiveYear}>{y.year}</span>
-                <span className={styles.archiveCount}>{y.count}</span>
-              </Link>
-            </li>
-          ))}
-        </ul>
-      </div>
+      <AuthorCard author={author ?? undefined} />
+      <StatisticsCard items={statsItems} analyticsError={analyticsError} />
+      <PopularTagsCard tags={hotTags} />
+      <ArchiveCard years={archiveYears} />
     </>
   );
 }
