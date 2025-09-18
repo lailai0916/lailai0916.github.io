@@ -101,7 +101,7 @@ export default function BlogArchivePage(props: Props): JSX.Element {
             </div>
             <div className={styles.archiveFilter}>
               <span className={styles.archiveFilterLabel}>
-                <Translate id="blog.archive.yearSelect">Year</Translate>
+                <Translate id="blog.pages.archive.yearSelect">Year</Translate>
               </span>
               <div className={styles.archiveFilterOptions}>
                 {yearList.map((year) => (
@@ -141,7 +141,7 @@ export default function BlogArchivePage(props: Props): JSX.Element {
         {selectedYear != null && !visibleGroups.length && (
           <div className={styles.card}>
             <div className={styles.mutedText}>
-              <Translate id="blog.archive.empty">No posts yet</Translate>
+              <Translate id="blog.pages.archive.empty">No posts yet</Translate>
             </div>
           </div>
         )}

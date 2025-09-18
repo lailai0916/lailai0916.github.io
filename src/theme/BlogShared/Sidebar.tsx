@@ -59,7 +59,7 @@ function StatsCard({ items }: { items: StatsItem[] }) {
   return (
     <div className={styles.card}>
       <div className={styles.cardTitle}>
-        <Translate id="blog.stats.overview">Statistics</Translate>
+        <Translate id="blog.sidebar.stats.title">Statistics</Translate>
       </div>
       <div className={styles.authorStats}>
         {items.map((item) => {
@@ -97,7 +97,7 @@ function PopularTagsCard({ tags }: { tags: readonly any[] }) {
   return (
     <div className={styles.card}>
       <div className={styles.cardTitle}>
-        <Translate id="blog.tags.hot">Popular Tags</Translate>
+        <Translate id="blog.sidebar.tags.titlet">Popular Tags</Translate>
       </div>
       <div className={styles.tagList}>
         {tags.map((t) => (
@@ -236,13 +236,13 @@ export default function Sidebar() {
     {
       key: 'posts',
       value: getBlogPostCount(),
-      label: <Translate id="blog.stats.posts">Posts</Translate>,
+      label: <Translate id="blog.sidebar.stats.posts">Posts</Translate>,
       link: '/blog/archive',
     },
     {
       key: 'tags',
       value: getAllTagCount(),
-      label: <Translate id="blog.stats.tags">Tags</Translate>,
+      label: <Translate id="blog.sidebar.stats.tags">Tags</Translate>,
       link: '/blog/tags',
     },
     {
@@ -251,7 +251,7 @@ export default function Sidebar() {
         analyticsLoaded && !analyticsError
           ? formatStatValue(analytics?.pageviews)
           : '...',
-      label: <Translate id="blog.stats.views">Views</Translate>,
+      label: <Translate id="blog.sidebar.stats.views">Views</Translate>,
     },
     {
       key: 'visitors',
@@ -259,7 +259,7 @@ export default function Sidebar() {
         analyticsLoaded && !analyticsError
           ? formatStatValue(analytics?.visitors)
           : '...',
-      label: <Translate id="blog.stats.visitors">Visitors</Translate>,
+      label: <Translate id="blog.sidebar.stats.visitors">Visitors</Translate>,
     },
   ];
 

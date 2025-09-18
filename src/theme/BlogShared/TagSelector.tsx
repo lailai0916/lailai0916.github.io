@@ -23,7 +23,7 @@ export default function TagSelector({
   return (
     <div className={styles.card}>
       <div className={styles.cardTitle}>
-        <Translate id="blog.tags.select">Tags</Translate>
+        <Translate id="blog.pages.tags.tagSelect">Tags</Translate>
       </div>
       <div className={styles.tagList}>
         {tags.map((tag) => (

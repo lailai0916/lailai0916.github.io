@@ -777,7 +777,7 @@
   "data.sitemap.blog.authors": {
     "message": "作者"
   },
-  "data.sitemap.blog.tags": {
+  "data.sitemap.blog.sidebar.tags": {
     "message": "标签"
   },
   "data.sitemap.search.title": {
@@ -957,29 +957,32 @@
   "pages.settings.item.quickactions.option.reset": {
     "message": "重置设置"
   },
-  "blog.archive.empty": {
-    "message": "暂无文章"
-  },
-  "blog.stats.overview": {
+  "blog.sidebar.stats.title": {
     "message": "统计"
   },
-  "blog.stats.posts": {
+  "blog.sidebar.stats.posts": {
     "message": "文章"
   },
-  "blog.stats.tags": {
+  "blog.sidebar.stats.tags": {
     "message": "标签"
   },
-  "blog.stats.views": {
+  "blog.sidebar.stats.views": {
     "message": "浏览"
   },
-  "blog.stats.visitors": {
+  "blog.sidebar.stats.visitors": {
     "message": "访客"
   },
-  "blog.tags.hot": {
+  "blog.sidebar.tags.titlet": {
     "message": "热门标签"
   },
-  "blog.recent": {
-    "message": "最新文章"
+  "blog.pages.archive.empty": {
+    "message": "暂无文章"
+  },
+  "blog.pages.archive.yearSelect": {
+    "message": "年份"
+  },
+  "blog.pages.tags.tagSelect": {
+    "message": "标签"
   },
   "data.changelog.type.added": {
     "message": "新增"

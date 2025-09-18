@@ -148,7 +148,7 @@ export const SITEMAP_LIST: SitemapCategoryItem[] = [
       },
       {
         title: translate({
-          id: 'data.sitemap.blog.tags',
+          id: 'data.sitemap.blog.sidebar.tags',
           message: 'Tags',
         }),
         href: '/blog/tags',
