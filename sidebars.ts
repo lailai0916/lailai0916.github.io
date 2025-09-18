@@ -644,28 +644,28 @@ const sidebars: SidebarsConfig = {
       items: [
         {
           type: 'category',
-          label: '艺术博览会',
-          items: ['project/desmos/art-expo/iclock/index'],
-        },
-        {
-          type: 'category',
-          label: '尺规作图',
-          items: [
-            'project/desmos/geometric-construction/heptadecagon',
-            'project/desmos/geometric-construction/three-circle-tangent',
-            'project/desmos/geometric-construction/apple-logo',
-            'project/desmos/geometric-construction/china-flag',
-          ],
-        },
-        {
-          type: 'category',
           label: '图形',
           items: [
-            'project/desmos/drawing/france-flag',
-            'project/desmos/drawing/usa-flag',
-            'project/desmos/drawing/cell-membrane-fusion',
-            'project/desmos/drawing/convex-lens-model',
+            'project/desmos/calculator/france-flag',
+            'project/desmos/calculator/usa-flag',
+            'project/desmos/calculator/cell-membrane-fusion',
+            'project/desmos/calculator/convex-lens-model',
           ],
+        },
+        {
+          type: 'category',
+          label: '几何',
+          items: [
+            'project/desmos/geometry/heptadecagon',
+            'project/desmos/geometry/three-circle-tangent',
+            'project/desmos/geometry/apple-logo',
+            'project/desmos/geometry/china-flag',
+          ],
+        },
+        {
+          type: 'category',
+          label: '艺术博览会',
+          items: ['project/desmos/art-expo/iclock/index'],
         },
       ],
     },

@@ -1,8 +1,8 @@
-# 2024 - iClock
+# Desmos 2024 Art Expo | iClock
 
-一件使用 [Desmos](https://www.desmos.com/) 平台构建的数学艺术作品，通过函数图形展现时间的美学表达。
+使用 [Desmos](https://www.desmos.com) 构建的数学艺术作品，通过函数图形展现时间之美。
 
-此作品已提交至 [Desmos 2024 Art Expo](https://www.desmos.com/art)，~~但还未公布评选结果~~ 已经获奖了！
+此作品为 [Desmos 2024 Art Expo](https://www.desmos.com/art) 获奖作品。
 
 ## 参考资料
 
