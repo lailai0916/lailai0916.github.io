@@ -45,7 +45,7 @@ export const PROJECT_LIST: ProjectItem[] = [
     },
   },
   {
-    title: 'laiKit',
+    title: 'laikit-UI',
     description: translate({
       id: 'data.project.p3.description',
       message:
