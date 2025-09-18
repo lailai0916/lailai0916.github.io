@@ -40,7 +40,7 @@ $$
 因为 $F$ 为 $A$ 关于 $BE$ 的对称点，所以：
 
 $$
-F=2\left[B+\frac{(A-B)\cdot(E-B)}{\lVert E-B\rVert^{2}}\,(E-B)\right]-A=\left(
+F=2\left[B+\frac{(A-B)\cdot(E-B)}{\lVert E-B\rVert^{2}}(E-B)\right]-A=\left(
 \frac{1152t^{2}}{5(25t^{2}-14t+25)},
 \frac{48t(25-7t)}{5(25t^{2}-14t+25)}
 \right)
@@ -63,14 +63,14 @@ $$
 $$
 f'(t)=
 \frac{
-\Bigl(
-800t-112-\frac{3\bigl[(50t-14)(425t^{2}-494t+169)+(25t^{2}-14t+25)(850t-494)\bigr]}
+\left(
+800t-112-\frac{3\left[(50t-14)(425t^{2}-494t+169)+(25t^{2}-14t+25)(850t-494)\right]}
 {2\sqrt{(25t^{2}-14t+25)(425t^{2}-494t+169)}}
-\Bigr)\,(25t^{2}+50t-39)-
-\Bigl(
+\right)(25t^{2}+50t-39)-
+\left(
 400t^{2}-112t-3\sqrt{(25t^{2}-14t+25)(425t^{2}-494t+169)}
-\Bigr)\,(50t+50)}
-{\bigl(25t^{2}+50t-39\bigr)^{2}}
+\right)(50t+50)}
+{\left(25t^{2}+50t-39\right)^{2}}
 $$
 
 令 $f'(t)=0$：
@@ -94,5 +94,5 @@ $$
 所以 $AP-BP$ 最小值为：
 
 $$
-\frac{3\sqrt{39}-4}{5}
+(AP-BP)_{\min}=\frac{3\sqrt{39}-4}{5}
 $$
