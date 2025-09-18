@@ -28,7 +28,7 @@ export default function Sidebar() {
     }
   }, []);
 
-  const hotTags = React.useMemo(() => getTopTags(12), []);
+  const hotTags = React.useMemo(() => getTopTags(8), []);
   const archiveYears = React.useMemo(() => getArchiveByYear(), []);
 
   return (
