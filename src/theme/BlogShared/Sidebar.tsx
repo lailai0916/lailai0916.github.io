@@ -37,11 +37,7 @@ const formatStatValue = (value?: number) => {
   return `${(value / 1_000_000).toFixed(2)}M`;
 };
 
-function AuthorCard({ author }: { author?: Author }) {
-  if (!author) {
-    return null;
-  }
-
+function AuthorCard({ author }: { author: Author }) {
   return (
     <div className={styles.card}>
       <div className={styles.authorCardHeader}>
@@ -55,9 +51,7 @@ function AuthorCard({ author }: { author?: Author }) {
           />
         ) : null}
         <div className={styles.authorName}>{author.name}</div>
-        {author.title ? (
-          <div className={styles.authorDesc}>{author.title}</div>
-        ) : null}
+        <div className={styles.authorDesc}>{author.title}</div>
       </div>
     </div>
   );
@@ -103,13 +97,6 @@ function StatisticsCard({
           );
         })}
       </div>
-      {analyticsError && (
-        <div className={styles.mutedText}>
-          <Translate id="blog.analytics.error">
-            Unable to load analytics.
-          </Translate>
-        </div>
-      )}
     </div>
   );
 }
