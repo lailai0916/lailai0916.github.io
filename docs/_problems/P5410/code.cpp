@@ -25,14 +25,8 @@ int main()
 	get_z(b,n+m+1);
 	ll ans1=0,ans2=0;
 	z[1]=m;
-	for(int i=1;i<=m;i++)
-	{
-		ans1^=(ll)(z[i]+1)*i;
-	}
-	for(int i=1;i<=n;i++)
-	{
-		ans2^=(ll)(z[m+i+1]+1)*i;
-	}
+	for(int i=1;i<=m;i++)ans1^=(ll)(z[i]+1)*i;
+	for(int i=1;i<=n;i++)ans2^=(ll)(z[m+i+1]+1)*i;
 	cout<<ans1<<'\n'<<ans2<<'\n';
-    return 0;
+	return 0;
 }
