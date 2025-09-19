@@ -139,7 +139,7 @@ function CountdownContent({ timeLeft }: { timeLeft: CountdownState }) {
 
 export default function Countdown() {
   const [state, setState] = useState(calculateTimeLeft);
-  const timerRef = useRef<NodeJS.Timeout | null>(null);
+  const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   const tick = () => {
     const result = calculateTimeLeft();

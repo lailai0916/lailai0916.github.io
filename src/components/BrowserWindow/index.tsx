@@ -6,7 +6,7 @@ import styles from './styles.module.css';
 interface Props {
   children: ReactNode;
   minHeight?: number;
-  url: string;
+  url?: string;
   style?: CSSProperties;
   bodyStyle?: CSSProperties;
 }
