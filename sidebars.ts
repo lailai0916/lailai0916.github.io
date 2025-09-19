@@ -107,6 +107,8 @@ const sidebars: SidebarsConfig = {
         'contest/string/match',
         'contest/string/hash',
         'contest/string/trie',
+        'contest/string/z-func',
+        'contest/string/ac-automaton',
         'contest/string/manacher',
       ],
     },
