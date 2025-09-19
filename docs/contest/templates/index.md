@@ -108,6 +108,76 @@ while(l<r)
 }
 ```
 
+## 字符串
+
+### KMP 算法
+
+详见 [字符串匹配](string/match)
+
+```cpp
+int kmp(string s,string t)
+{
+	int n=s.size(),m=t.size();
+	for(int i=1;i<m;i++)
+	{
+		int j=nxt[i-1];
+		while(j&&t[i]!=t[j])j=nxt[j-1];
+		if(t[i]==t[j])j++;
+		nxt[i]=j;
+	}
+	int j=0;
+	for(int i=0;i<n;i++)
+	{
+		while(j&&s[i]!=t[j])j=nxt[j-1];
+		if(s[i]==t[j])j++;
+		if(j==m)return i-m+1;
+	}
+	return -1;
+}
+```
+
+### 字典树
+
+详见 [字典树](string/trie)
+
+```cpp
+struct Trie
+{
+	int T[N][M],val[N];
+	int cnt=0;
+	void init()
+	{
+		for(int i=0;i<=cnt;i++)
+		{
+			memset(T[i],0,sizeof T[i]);
+			val[i]=0;
+		}
+		cnt=0;
+	}
+	void insert(string s)
+	{
+		int u=0;
+		for(auto c:s)
+		{
+			int &v=T[u][c];
+			if(!v)v=++cnt;
+			val[u=v]++;
+		}
+	}
+	int query(string s)
+	{
+		int u=0;
+		for(auto c:s)
+		{
+			int v=T[u][c];
+			if(!v)return 0;
+			u=v;
+		}
+		return val[u];
+	}
+};
+```
+
 ## 数学
 
 ### 快速幂

@@ -1,5 +1,9 @@
 # 字典树（Trie）
 
+## 参考资料
+
+- [字典树 (Trie) - OI Wiki](https://oi-wiki.org/string/trie/)
+
 ## 实现
 
 ```cpp
@@ -19,20 +23,19 @@ struct Trie
 	void insert(string s)
 	{
 		int u=0;
-		for(auto f:s)
+		for(auto c:s)
 		{
-			int &v=T[u][f];
+			int &v=T[u][c];
 			if(!v)v=++cnt;
-			u=v;
-			val[u]++;
+			val[u=v]++;
 		}
 	}
 	int query(string s)
 	{
 		int u=0;
-		for(auto f:s)
+		for(auto c:s)
 		{
-			int v=T[u][f];
+			int v=T[u][c];
 			if(!v)return 0;
 			u=v;
 		}

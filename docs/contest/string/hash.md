@@ -1,5 +1,9 @@
 # 字符串哈希
 
+## 参考资料
+
+- [字符串哈希 - OI Wiki](https://oi-wiki.org/string/hash/)
+
 ## 实现
 
 ```cpp
