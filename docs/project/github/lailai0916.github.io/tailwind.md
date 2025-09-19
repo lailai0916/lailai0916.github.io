@@ -120,7 +120,7 @@ const LINK_STYLES =
 | ------------------------------------------------- | -------- | ---- | ---- | ------ |
 | `src/pages/_components/Exploration/index.tsx`     | **24次** | 15   | 9    | ⭐⭐⭐ |
 | `src/components/laikit/section/GridLayout.tsx`    | **22次** | 21   | 1    | ⭐⭐⭐ |
-| `src/pages/_components/Quote/index.tsx`           | **19次** | 0    | 19   | ⭐⭐⭐ |
+| `src/pages/_components/Quotes/index.tsx`           | **19次** | 0    | 19   | ⭐⭐⭐ |
 | `src/pages/_components/Project/index.tsx`         | **17次** | 13   | 4    | ⭐⭐⭐ |
 | `src/components/laikit/section/SectionHeader.tsx` | **17次** | 5    | 12   | ⭐⭐⭐ |
 
@@ -128,7 +128,7 @@ const LINK_STYLES =
 
 | 文件                                            | 使用次数 | 常量 | 直接 | 复杂度 |
 | ----------------------------------------------- | -------- | ---- | ---- | ------ |
-| `src/pages/_components/Skill/index.tsx`         | **10次** | 0    | 10   | ⭐⭐   |
+| `src/pages/_components/Skills/index.tsx`         | **10次** | 0    | 10   | ⭐⭐   |
 | `src/pages/_components/Community/index.tsx`     | **8次**  | 0    | 8    | ⭐⭐   |
 | `src/components/laikit/section/StatusBadge.tsx` | **7次**  | 0    | 7    | ⭐⭐   |
 
