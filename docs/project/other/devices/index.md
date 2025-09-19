@@ -126,7 +126,7 @@ Notification Center
 - 配置：11 英寸 / 深空灰色 / M1 / 256GB
 - 技术支持：[iPad Pro - Apple 支持](https://support.apple.com/zh-cn/111897)
 
-我想买 Apple Pencil 和 Magic Keyboard，但与新款 iPad 不兼容，感觉有点不划算，打算以后再买。
+我想买 Apple Pencil 和 Magic Keyboard，但与新款 iPad 不兼容，感觉不划算，以后再买吧。
 
 ### Home Screen
 
