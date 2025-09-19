@@ -365,7 +365,7 @@ className="p-6"                   → className="padding--lg"
 | 常量更新 | 1个文件             | 2小时    | 困难 | **关键**：`constants.tsx`       |
 | 核心组件 | 3个文件             | 3小时    | 困难 | Blog、Countdown、BaseCard       |
 | 重要组件 | 5个文件             | 2.5小时  | 中等 | Exploration、Grid等             |
-| 普通组件 | 3个文件             | 1小时    | 简单 | Skill、Community等              |
+| 普通组件 | 3个文件             | 1小时    | 简单 | Skills、Community等              |
 | 简单组件 | ~~4个~~ **3个**文件 | 30分钟   | 简单 | IconWrapper等（travel已清理✅） |
 | 依赖验证 | 3个文件             | 30分钟   | 简单 | 数据文件验证                    |
 | 文档清理 | 6个文件             | 30分钟   | 简单 | 移除文档引用                    |

@@ -790,7 +790,7 @@
 - contract：n. 合同，契约，婚约
 - contradict：v. 反驳，驳斥，批驳
 - contradictory：adj. 相互矛盾，对立的
-- contrary：n. / adj. 相反相反的
+- contrary：n. 相反adj. 相反的
 - contribute：v. 贡献
 - contribution：n. 贡献
 - control：vt. & n. 控制

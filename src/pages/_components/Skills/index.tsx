@@ -47,11 +47,11 @@ export default function Skills() {
       <div className="--tw-max-w-7xl --tw-mx-auto --tw-flex --tw-flex-col --tw-px-5">
         <SectionHeader
           title={translate({
-            id: 'home.skill.title',
+            id: 'home.skills.title',
             message: 'My Skills',
           })}
           description={translate({
-            id: 'home.skill.description',
+            id: 'home.skills.description',
             message:
               'Building technical skills is a continuous journey — every skill is a practical tool for solving problems.',
           })}

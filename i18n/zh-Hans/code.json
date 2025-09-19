@@ -570,10 +570,10 @@
   "data.project.p3.status": {
     "message": "敬请期待"
   },
-  "home.skill.title": {
+  "home.skills.title": {
     "message": "我的技能"
   },
-  "home.skill.description": {
+  "home.skills.description": {
     "message": "技术栈的积累是一个持续的过程，每一项技能都是解决问题的工具"
   },
   "home.community.title": {
