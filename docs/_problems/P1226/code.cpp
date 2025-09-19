@@ -2,16 +2,15 @@
 using namespace std;
 
 using ll=long long;
-int mod;
-ll Pow(ll x,ll y)
+ll Pow(ll a,ll b,ll mod)
 {
-	x%=mod;
+	a%=mod;
 	ll res=1;
-	while(y)
+	while(b)
 	{
-		if(y&1)res=res*x%mod;
-		x=x*x%mod;
-		y>>=1;
+		if(b&1)res=res*a%mod;
+		a=a*a%mod;
+		b>>=1;
 	}
 	return res;
 }
@@ -19,8 +18,8 @@ int main()
 {
 	ios::sync_with_stdio(false);
 	cin.tie(nullptr);
-	ll a,b;
+	ll a,b,mod;
 	cin>>a>>b>>mod;
-	cout<<a<<'^'<<b<<" mod "<<mod<<'='<<Pow(a,b)<<'\n';
+	cout<<a<<'^'<<b<<" mod "<<mod<<'='<<Pow(a,b,mod)<<'\n';
 	return 0;
 }
