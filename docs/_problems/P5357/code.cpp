@@ -41,14 +41,14 @@ void build()
 		}
 	}
 }
-int ans[N],id[N];
+int sum[N],id[N];
 void query(string s)
 {
 	int u=0;
 	for(auto c:s)
 	{
 		u=T[u][c-'a'];
-		ans[u]++;
+		sum[u]++;
 	}
 }
 void dfs(int u)
@@ -56,7 +56,7 @@ void dfs(int u)
 	for(auto v:G[u])
 	{
 		dfs(v);
-		ans[u]+=ans[v];
+		sum[u]+=sum[v];
 	}
 }
 int main()
@@ -78,7 +78,7 @@ int main()
 	dfs(0);
 	for(int i=1;i<=n;i++)
 	{
-		cout<<ans[id[i]]<<'\n';
+		cout<<sum[id[i]]<<'\n';
 	}
 	return 0;
 }
