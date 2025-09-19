@@ -15,25 +15,25 @@ struct Frac
 		p/=g;q/=g;
 	}
 	Frac operator+(const Frac &rhs) const
-    {
+		{
 		Frac res={p*rhs.q+q*rhs.p,q*rhs.q};
 		res.maintain();
 		return res;
 	}
 	Frac operator-(const Frac &rhs) const
-    {
+		{
 		Frac res={p*rhs.q-q*rhs.p,q*rhs.q};
 		res.maintain();
 		return res;
 	}
 	Frac operator*(const Frac &rhs) const
-    {
+		{
 		Frac res={p*rhs.p,q*rhs.q};
 		res.maintain();
 		return res;
 	}
 	Frac operator/(const Frac &rhs) const
-    {
+		{
 		Frac res={p*rhs.q,q*rhs.p};
 		res.maintain();
 		return res;

@@ -14,7 +14,7 @@ void reset(int k)
 }
 void init(int n)
 {
-    int len=sqrt(n);
+	int len=sqrt(n);
 	for(int i=1;i<=len;i++)
 	{
 		st[i]=n/len*(i-1)+1;
@@ -63,20 +63,20 @@ int main()
 {
 	ios::sync_with_stdio(false);
 	cin.tie(nullptr);
-    int n,q;
-    cin>>n>>q;
-    for(int i=1;i<=n;i++)
-    {
-    	cin>>a[i];
-    }
-    init(n);
-    while(q--)
-    {
-    	char op;
-    	int l,r,v;
-    	cin>>op>>l>>r>>v;
-    	if(op=='M')update(l,r,v);
-    	else if(op=='A')cout<<query(l,r,v)<<'\n';
+	int n,q;
+	cin>>n>>q;
+	for(int i=1;i<=n;i++)
+	{
+		cin>>a[i];
+	}
+	init(n);
+	while(q--)
+	{
+		char op;
+		int l,r,v;
+		cin>>op>>l>>r>>v;
+		if(op=='M')update(l,r,v);
+		else if(op=='A')cout<<query(l,r,v)<<'\n';
 	}
 	return 0;
 }

@@ -4,16 +4,18 @@ using namespace std;
 using ll=long long;
 int main()
 {
+	ios::sync_with_stdio(false);
+	cin.tie(nullptr);
 	int n,m;
     cin>>n>>m;
 	ll a=0,b=0;
     for(int i=0;i<n;i++)
-    {
-        for(int j=0;j<m;j++)
+	{
+	    for(int j=0;j<m;j++)
 		{
-            if(i==j)a+=(n-i)*(m-j);
-            else b+=(n-i)*(m-j);
-        }
+			if(i==j)a+=(n-i)*(m-j);
+		    else b+=(n-i)*(m-j);
+		}
 	}
     cout<<a<<' '<<b<<'\n';
     return 0;

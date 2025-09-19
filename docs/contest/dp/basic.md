@@ -15,12 +15,12 @@
 ```cpp
 for(int i=1;i<=n;i++)
 {
-    f[i]=1;
-    for(int j=1;j<i;j++)
-    {
-        if(a[j]<a[i])f[i]=max(f[i],f[j]+1);
-    }
-    ans=max(ans,f[i]);
+	f[i]=1;
+	for(int j=1;j<i;j++)
+	{
+		if(a[j]<a[i])f[i]=max(f[i],f[j]+1);
+	}
+	ans=max(ans,f[i]);
 }
 ```
 
@@ -30,9 +30,9 @@ for(int i=1;i<=n;i++)
 ```cpp
 for(int i=1;i<=n;i++)
 {
-    int k=lower_bound(b+1,b+n+1,a[i])-b;
-    b[k]=a[i];
-    ans=max(ans,k);
+	int k=lower_bound(b+1,b+n+1,a[i])-b;
+	b[k]=a[i];
+	ans=max(ans,k);
 }
 ```
 
@@ -42,9 +42,9 @@ for(int i=1;i<=n;i++)
 ```cpp
 for(int i=1;i<=n;i++)
 {
-    int k=query(a[i]-1)+1;
-    update(a[i],k);
-    ans=max(ans,k);
+	int k=query(a[i]-1)+1;
+	update(a[i],k);
+	ans=max(ans,k);
 }
 ```
 

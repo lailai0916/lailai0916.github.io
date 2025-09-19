@@ -20,10 +20,10 @@ int main()
     int n=read();
     ll ans=0;
     for(int i=1;i<=n;i++)
-    {
-    	ll x=read();
-    	ans+=x;
-    }
+	{
+		ll x=read();
+		ans+=x;
+	}
     write(ans);
     return 0;
 }

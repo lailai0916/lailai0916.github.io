@@ -13,7 +13,7 @@ struct Poly
 	void maintain(){while(!v.empty()&&v.back()==0)v.pop_back();}
 	T &operator[](int u){if(u>=v.size())v.resize(u+1,0);return v[u];}
 	Poly operator+(const Poly &rhs) const
-    {
+	{
 		Poly res;
 		for(int i=0;i<max(v.size(),rhs.v.size());i++)
 		{
@@ -23,8 +23,8 @@ struct Poly
 		return res;
 	}
 	Poly operator-(const Poly &rhs) const
-    {
-    	Poly res;
+	{
+		Poly res;
 		for(int i=0;i<max(v.size(),rhs.v.size());i++)
 		{
 			res[i]=v[i]-rhs.v[i];
