@@ -18,8 +18,8 @@ ll phi(ll n)
 	ll res=n;
 	for(ll i=2;i*i<=n;i++)
 	{
-	    if(n%i==0)
-	    {
+		if(n%i==0)
+		{
 			res=res/i*(i-1);
 			while(n%i==0)n/=i;
 		}
@@ -42,8 +42,8 @@ ll phi(ll n)
 $$
 a^b\equiv
 \begin{cases}
-  a^{b\bmod\varphi(m)} & \gcd(a,m)=1  \\
-  a^b & \gcd(a,m)\ne 1,b<\varphi(m)  \\
+  a^{b\bmod\varphi(m)} & \gcd(a,m)=1 \\
+  a^b & \gcd(a,m)\ne 1,b<\varphi(m) \\
   a^{b\bmod\varphi(m)+\varphi(m)} & \gcd(a,m)\ne 1,b\ge\varphi(m)
 \end{cases}
 \pmod m
