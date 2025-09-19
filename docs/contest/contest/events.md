@@ -1,17 +1,21 @@
-# 赛事
+# 赛事 & 题型
 
 ## 参考资料
 
 - [OI 赛事与赛制 - OI Wiki](https://oi-wiki.org/contest/oi/)
 - [ICPC/CCPC 赛事与赛制 - OI Wiki](https://oi-wiki.org/contest/icpc/)
+- [题型概述 - OI Wiki](https://oi-wiki.org/contest/problems/)
+- [自产生程序 - 维基百科](https://zh.wikipedia.org/zh-cn/自產生程式)
 
-## OI
+## 赛事
+
+### OI
 
 信息学奥林匹克竞赛（Olympiad in Informatics，OI）是一门在中学生中广泛开展的学科竞赛，和物理、数学等竞赛性质相同；该竞赛于 1984 年在中国起源，属中国高中五大学科竞赛之一。OI 考察的内容是参赛者运用算法、数据结构和数学知识，通过编写计算机程序解决实际问题的能力。
 
 - [NOI 全国青少年信息学奥林匹克竞赛](https://www.noi.cn)
 
-## ICPC
+### ICPC
 
 国际大学生程序设计竞赛（International Collegiate Programming Contest，ICPC）由 ICPC 基金会（ICPC Foundation）举办，是最具影响力的大学生计算机竞赛。
 
@@ -49,3 +53,58 @@ APIO、IOI 都是 IOI 赛制。目前国内比赛也在逐渐向 IOI 赛制靠�
 它的比赛特点是在比赛过程中只测试一部分数据（Pretests），而在比赛结束后返回完整的所有测试点的测试结果（System Tests）。比赛时可以多次提交，允许 Hack 别人的代码（此处 Hack 的意思是提交一个测试数据，使得别人的代码无法给出正确答案）。如果想要 Hack，选手必须要锁定自己的代码（换言之，比赛时无法重新提交该题）。Hack 时不允许将选手程序拷贝到本地进行测试，源代码会被转换成图片。
 
 Codeforces 同时提供另外一种赛制，称作扩展 ICPC（Extended ICPC 或 ICPC+）。在这一赛制中，在比赛过程中会测试全部数据，但比赛结束以后会有 12 小时的全网 Hack 时间。Hack 时允许将选手程序拷贝到本地进行测试。
+
+## 题型
+
+### 传统题
+
+#### 评测结果
+
+- AC（Accept）：程序通过。
+- CE（Compile Error）：编译错误。
+- PC（Partially Correct）：部分正确。
+- WA（Wrong Answer）：答案错误。
+- PE（Presentation Error）：格式错误。
+- RE（Runtime Error）：运行时错误。
+- TLE（Time Limit Exceeded）：超出时间限制。
+- MLE（Memory Limit Exceeded）：超出内存限制。
+- OLE（Output Limit Exceeded）：输出超过限制。
+- UKE（Unknown Error）：未知错误。
+
+:::tip
+
+在 ICPC 赛事中，你的程序需要在一道题目的所有测试点上都取得 AC 状态，才能视为通过相应的题目。
+
+在 OI 赛事中，在一个测试点中取得 AC 状态，即可拿到该测试点的分数。
+
+:::
+
+#### 洛谷 P1001 A+B Problem
+
+<Problem id="P1001" />
+
+### 交互题
+
+交互题近年来没有在省选以下的比赛中出现。
+
+#### 洛谷 P1733 猜数（IO交互版）
+
+<Problem id="P1733" />
+
+### 通信题
+
+通信题是需要两个程序进行通信，合作完成某项任务的题目。第一个程序接收问题的输入，并产生某些输出；第二个程序的输入会与第一个的输出相关。
+
+#### 洛谷 P12509 【模板】通信题
+
+<Problem id="P12509" />
+
+#### UOJ #178. 新年的贺电
+
+<Problem id="UOJ178" />
+
+### 自产生程序（Quine）
+
+#### LibreOJ #4. Quine
+
+<Problem id="LOJ4" />

@@ -27,7 +27,6 @@ const sidebars: SidebarsConfig = {
       },
       items: [
         'contest/contest/events',
-        'contest/contest/problems',
         'contest/contest/outline',
         'contest/contest/io',
         'contest/contest/tricks',

@@ -4,7 +4,7 @@
 
 - [读入、输出优化 - OI Wiki](https://oi-wiki.org/contest/io/)
 
-## 关闭同步
+## 关闭同步 & 解除关联
 
 ```cpp
 ios::sync_with_stdio(false);
@@ -17,7 +17,7 @@ cin.tie(nullptr);
 
 :::
 
-## 快速读入
+## 快读快写
 
 ```cpp
 int read()
@@ -27,11 +27,6 @@ int read()
 	while(c>='0'&&c<='9'){x=x*10+c-48;c=getchar();}
 	return x*f;
 }
-```
-
-## 快速输出
-
-```cpp
 void write(int x)
 {
 	if(x<0)putchar('-'),x=-x;

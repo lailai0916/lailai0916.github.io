@@ -2,13 +2,14 @@
 
 本文是我的竞赛常用模板。
 
-## 联赛
+## 文件
 
 下载 [name.zip](./assets/name.zip)
 
 ## 框架
 
-### 基础框架
+<Tabs>
+<TabItem value="基础框架">
 
 ```cpp
 #include <bits/stdc++.h>
@@ -21,7 +22,26 @@ int main()
 }
 ```
 
-### 便捷框架
+</TabItem>
+<TabItem value="快捷框架 1">
+
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+
+using ll=long long;
+const int N=100005;
+int main()
+{
+	ios::sync_with_stdio(false);
+	cin.tie(nullptr);
+
+	return 0;
+}
+```
+
+</TabItem>
+<TabItem value="快捷框架 2">
 
 ```cpp
 #include <bits/stdc++.h>
@@ -40,23 +60,21 @@ int main()
 }
 ```
 
-## 读写
+</TabItem>
+</Tabs>
 
-### 文件读写
+## 读写优化
 
-```cpp
-freopen(".in","r",stdin);
-freopen(".out","w",stdout);
-```
+详见 [读写优化](contest/io)
 
-### 读写优化
+### 关闭同步 & 解除关联
 
 ```cpp
 ios::sync_with_stdio(false);
 cin.tie(nullptr);
 ```
 
-### 快速读入
+### 快读快写
 
 ```cpp
 int read()
@@ -66,11 +84,6 @@ int read()
 	while(c>='0'&&c<='9'){x=x*10+c-48;c=getchar();}
 	return x*f;
 }
-```
-
-### 快速输出
-
-```cpp
 void write(int x)
 {
 	if(x<0)putchar('-'),x=-x;
@@ -79,24 +92,11 @@ void write(int x)
 }
 ```
 
-### cout 格式化
-
-```cpp
-cout<<fixed<<setprecision(6)<<x<<'\n';
-cout<<setw(6)<<x<<'\n';
-```
-
-### 刷新缓冲区
-
-```cpp
-cout<<flush;
-fflush(stdout);
-cout.flush();
-```
-
 ## 算法基础
 
 ### 二分
+
+详见 [二分](basic/binary)
 
 ```cpp
 int l=x,r=y+1;
@@ -111,6 +111,8 @@ while(l<r)
 ## 数学
 
 ### 快速幂
+
+详见 [快速幂](math/binary-exponentiation)
 
 ```cpp
 ll Pow(ll x,ll y)
@@ -128,6 +130,8 @@ ll Pow(ll x,ll y)
 ```
 
 ### 排列组合
+
+详见 [排列组合](math/combinatorics/permutation-and-combination)
 
 ```cpp
 ll inv[N],fac[N],jv[N];
@@ -155,6 +159,8 @@ ll A(ll n,ll m)
 
 ### 筛法
 
+详见 [筛法](math/number-theory/sieve)
+
 ```cpp
 void init()
 {
@@ -177,6 +183,8 @@ void init()
 
 ### 并查集
 
+详见 [并查集](ds/dsu)
+
 ```cpp
 struct DSU
 {
@@ -189,6 +197,8 @@ struct DSU
 ```
 
 ### ST 表
+
+详见 [ST 表](ds/sparse-table)
 
 ```cpp
 struct ST
@@ -214,6 +224,8 @@ struct ST
 
 ### 树状数组
 
+详见 [树状数组](ds/fenwick)
+
 ```cpp
 struct BIT
 {
@@ -224,6 +236,8 @@ struct BIT
 ```
 
 ### 线段树
+
+详见 [线段树](ds/seg)
 
 ```cpp
 struct SEG
@@ -266,6 +280,28 @@ struct SEG
 
 ## 杂项
 
+### 文件读写
+
+```cpp
+freopen(".in","r",stdin);
+freopen(".out","w",stdout);
+```
+
+### cout 格式化
+
+```cpp
+cout<<fixed<<setprecision(6)<<x<<'\n';
+cout<<setw(6)<<x<<'\n';
+```
+
+### 刷新缓冲区
+
+```cpp
+cout<<flush;
+fflush(stdout);
+cout.flush();
+```
+
 ### `__gnu_pbds::tree`
 
 ```cpp
@@ -274,7 +310,7 @@ using namespace __gnu_pbds;
 __gnu_pbds::tree<pair<int,int>,null_type,less<pair<int,int>>,rb_tree_tag,tree_order_statistics_node_update> T;
 ```
 
-### mt19937
+### `mt19937`
 
 ```cpp
 random_device rd;
