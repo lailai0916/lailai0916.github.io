@@ -108,3 +108,8 @@ Codeforces 同时提供另外一种赛制，称作扩展 ICPC（Extended ICPC �
 #### LibreOJ #4. Quine
 
 <Problem id="LOJ4" />
+
+## CSP 初赛
+
+- [题库 - 洛谷有题](https://ti.luogu.com.cn/problemset/)
+- [CSP初赛知识点梳理 - 洛谷专栏](https://www.luogu.com.cn/article/9sxilb3x)
