@@ -36,6 +36,11 @@ export const CHANGELOG_LIST: ChangelogItem[] = [
     content: '**copy-tex** 公式复制优化插件',
   },
   {
+    date: '2025-07-22',
+    type: 'added',
+    content: '**GitHub** 项目展示组件',
+  },
+  {
     date: '2025-06-23',
     type: 'changed',
     content: '默认语言从 **简体中文** 更改为 **English**',
