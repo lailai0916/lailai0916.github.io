@@ -3,7 +3,6 @@ import type { SidebarsConfig } from '@docusaurus/plugin-content-docs';
 const sidebars: SidebarsConfig = {
   sidebar1: [
     'contest/index',
-    'contest/templates/index',
     {
       type: 'category',
       label: '个人',
@@ -14,6 +13,7 @@ const sidebars: SidebarsConfig = {
       items: [
         'contest/personal/code-style',
         'contest/personal/code-comparator',
+        'contest/personal/common-templates/index',
         'contest/personal/solution-template',
         'contest/personal/problem-transfer',
       ],
@@ -286,7 +286,6 @@ const sidebars: SidebarsConfig = {
         'contest/geometry/convex-hull',
         'contest/geometry/scanning',
         'contest/geometry/rotating-calipers',
-        'contest/geometry/geometry-templates',
       ],
     },
     {
