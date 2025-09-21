@@ -2,6 +2,11 @@
 
 本文是我的竞赛常用模板。
 
+## 参考资料
+
+- [OI Wiki](https://oi-wiki.org)
+- [ACM 常用算法模板](https://acm.sdut.edu.cn/10th_anniversary_celebration/kuangbin的ACM模板（新）.pdf)
+
 ## 文件
 
 下载 [name.zip](./assets/name.zip)
