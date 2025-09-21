@@ -113,4 +113,5 @@ Codeforces 同时提供另外一种赛制，称作扩展 ICPC（Extended ICPC �
 
 - [题库 - 洛谷有题](https://ti.luogu.com.cn/problemset/)
 - [CSP初赛知识点梳理 - 洛谷专栏](https://www.luogu.com.cn/article/9sxilb3x)
+- [CCF NOI2024笔试题库](https://www.noi.cn/xw/2024-07-01/827159.shtml)
 - [CCF NOI2025笔试题库](https://www.noi.cn/xw/2025-06-16/844453.shtml)
