@@ -25,18 +25,30 @@ type StatsItem = {
   link?: string;
 };
 
-const formatStatValue = (value?: number) => {
+function formatLongNumber(value: number) {
   if (typeof value !== 'number' || !Number.isFinite(value)) {
     return 'N/A';
   }
-  if (value < 1000) {
-    return value.toLocaleString();
+  const n = Number(value);
+
+  if (n >= 1000000000) {
+    return `${(n / 1000000).toFixed(1)}b`;
   }
-  if (value < 1000000) {
-    return `${(value / 1000).toFixed(2)}K`;
+  if (n >= 1000000) {
+    return `${(n / 1000000).toFixed(1)}m`;
   }
-  return `${(value / 1000000).toFixed(2)}M`;
-};
+  if (n >= 100000) {
+    return `${(n / 1000).toFixed(0)}k`;
+  }
+  if (n >= 10000) {
+    return `${(n / 1000).toFixed(1)}k`;
+  }
+  if (n >= 1000) {
+    return `${(n / 1000).toFixed(2)}k`;
+  }
+
+  return n.toLocaleString();
+}
 
 function AuthorCard({ author }: { author: Author }) {
   return (
@@ -248,7 +260,7 @@ export default function Sidebar() {
       key: 'views',
       value:
         analyticsLoaded && !analyticsError
-          ? formatStatValue(analytics?.pageviews)
+          ? formatLongNumber(analytics?.pageviews)
           : '...',
       label: <Translate id="blog.sidebar.stats.views">Views</Translate>,
     },
@@ -256,7 +268,7 @@ export default function Sidebar() {
       key: 'visitors',
       value:
         analyticsLoaded && !analyticsError
-          ? formatStatValue(analytics?.visitors)
+          ? formatLongNumber(analytics?.visitors)
           : '...',
       label: <Translate id="blog.sidebar.stats.visitors">Visitors</Translate>,
     },
