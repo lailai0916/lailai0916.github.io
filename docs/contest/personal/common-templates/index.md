@@ -402,7 +402,7 @@ freopen(".out","w",stdout);
 
 ```cpp
 cout<<fixed<<setprecision(6)<<x<<'\n';
-cout<<setw(6)<<x<<'\n';
+cout<<setfill('0')<<setw(6)<<x<<'\n';
 ```
 
 ### 刷新缓冲区
