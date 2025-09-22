@@ -1,7 +1,7 @@
 import React from 'react';
 import useBaseUrl from '@docusaurus/useBaseUrl';
-import Translate from '@docusaurus/Translate';
-import styles from '../BlogListPage/styles.module.css';
+import Translate, { translate } from '@docusaurus/Translate';
+import clsx from 'clsx';
 import Link from '@docusaurus/Link';
 import {
   getBlogPostCount,
@@ -11,6 +11,7 @@ import {
   getArchiveByYear,
 } from '@site/src/utils/blogData';
 import TagChipList from './TagChipList';
+import styles from '../BlogListPage/styles.module.css';
 
 type Author = {
   name?: string;
@@ -19,8 +20,8 @@ type Author = {
 };
 
 type StatsItem = {
-  value: React.ReactNode;
-  label: React.ReactNode;
+  value: number | string;
+  label: string;
   href: string;
 };
 
@@ -72,20 +73,14 @@ function StatsCard({ items }: { items: StatsItem[] }) {
       </div>
       <div className={styles.authorStats}>
         {items.map((item) => {
-          const content = (
-            <>
-              <div className={styles.statValue}>{item.value}</div>
-              <div className={styles.statLabel}>{item.label}</div>
-            </>
-          );
-
           return (
             <Link
-              key={item.label}
+              key={String(item.label)}
               to={item.href}
-              className={[styles.statItem, styles.statItemLink].join(' ')}
+              className={clsx(styles.statItem, styles.statItemLink)}
             >
-              {content}
+              <div className={styles.statValue}>{item.value}</div>
+              <div className={styles.statLabel}>{item.label}</div>
             </Link>
           );
         })}
@@ -137,6 +132,7 @@ function ArchiveCard({
 
 const fixedId = 'lailai';
 const baseurl = 'https://analytics.lailai.one';
+const shareurl = `${baseurl}/share/DDd09iBEYOQw2k9L`;
 const website_id = '69d3b7de-90e4-4be4-a355-633620ecefdb';
 const ANALYTICS_BASE_URL = `${baseurl}/api/websites/${website_id}/stats?startAt=0`;
 const ANALYTICS_HEADERS = {
@@ -234,12 +230,18 @@ export default function Sidebar() {
   const statsItems: StatsItem[] = [
     {
       value: getBlogPostCount(),
-      label: <Translate id="blog.sidebar.stats.posts">Posts</Translate>,
+      label: translate({
+        id: 'blog.sidebar.stats.posts',
+        message: 'Posts',
+      }),
       href: '/blog/archive',
     },
     {
       value: getAllTagCount(),
-      label: <Translate id="blog.sidebar.stats.tags">Tags</Translate>,
+      label: translate({
+        id: 'blog.sidebar.stats.tags',
+        message: 'Tags',
+      }),
       href: '/blog/tags',
     },
     {
@@ -247,16 +249,22 @@ export default function Sidebar() {
         analyticsLoaded && !analyticsError
           ? formatLongNumber(analytics?.pageviews)
           : 'N/A',
-      label: <Translate id="blog.sidebar.stats.views">Views</Translate>,
-      href: 'https://analytics.lailai.one/share/DDd09iBEYOQw2k9L',
+      label: translate({
+        id: 'blog.sidebar.stats.views',
+        message: 'Views',
+      }),
+      href: shareurl,
     },
     {
       value:
         analyticsLoaded && !analyticsError
           ? formatLongNumber(analytics?.visitors)
           : 'N/A',
-      label: <Translate id="blog.sidebar.stats.visitors">Visitors</Translate>,
-      href: 'https://analytics.lailai.one/share/DDd09iBEYOQw2k9L',
+      label: translate({
+        id: 'blog.sidebar.stats.visitors',
+        message: 'Visitors',
+      }),
+      href: shareurl,
     },
   ];
 
