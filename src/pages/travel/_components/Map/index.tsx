@@ -291,10 +291,6 @@ const MAP_THEME = {
   stroke: 'var(--ifm-color-emphasis-300)',
 } as const;
 
-/**
- * 旅行地图组件 - 参考 Umami 实现
- */
-
 const TITLE = translate({
   id: 'pages.travel.map.title',
   message: 'Travel Map',
