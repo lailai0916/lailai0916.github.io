@@ -19,16 +19,12 @@ type Author = {
 };
 
 type StatsItem = {
-  key: string;
   value: React.ReactNode;
   label: React.ReactNode;
-  link?: string;
+  href: string;
 };
 
 function formatLongNumber(value: number) {
-  if (typeof value !== 'number' || !Number.isFinite(value)) {
-    return 'N/A';
-  }
   const n = Number(value);
 
   if (n >= 1000000000) {
@@ -83,22 +79,14 @@ function StatsCard({ items }: { items: StatsItem[] }) {
             </>
           );
 
-          if (item.link) {
-            return (
-              <Link
-                key={item.key}
-                to={item.link}
-                className={[styles.statItem, styles.statItemLink].join(' ')}
-              >
-                {content}
-              </Link>
-            );
-          }
-
           return (
-            <div key={item.key} className={styles.statItem}>
+            <Link
+              key={item.label}
+              to={item.href}
+              className={[styles.statItem, styles.statItemLink].join(' ')}
+            >
               {content}
-            </div>
+            </Link>
           );
         })}
       </div>
@@ -245,32 +233,30 @@ export default function Sidebar() {
 
   const statsItems: StatsItem[] = [
     {
-      key: 'posts',
       value: getBlogPostCount(),
       label: <Translate id="blog.sidebar.stats.posts">Posts</Translate>,
-      link: '/blog/archive',
+      href: '/blog/archive',
     },
     {
-      key: 'tags',
       value: getAllTagCount(),
       label: <Translate id="blog.sidebar.stats.tags">Tags</Translate>,
-      link: '/blog/tags',
+      href: '/blog/tags',
     },
     {
-      key: 'views',
       value:
         analyticsLoaded && !analyticsError
           ? formatLongNumber(analytics?.pageviews)
-          : '...',
+          : 'N/A',
       label: <Translate id="blog.sidebar.stats.views">Views</Translate>,
+      href: 'https://analytics.lailai.one/share/DDd09iBEYOQw2k9L',
     },
     {
-      key: 'visitors',
       value:
         analyticsLoaded && !analyticsError
           ? formatLongNumber(analytics?.visitors)
-          : '...',
+          : 'N/A',
       label: <Translate id="blog.sidebar.stats.visitors">Visitors</Translate>,
+      href: 'https://analytics.lailai.one/share/DDd09iBEYOQw2k9L',
     },
   ];
 
