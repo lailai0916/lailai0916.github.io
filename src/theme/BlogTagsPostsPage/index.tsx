@@ -1,5 +1,4 @@
 import React from 'react';
-import type { JSX } from 'react';
 import { useTheme } from '@site/src/hooks/useTheme';
 import BlogTagsPostsPageOriginal from '@theme-original/BlogTagsPostsPage';
 import PostsListLayout from '../BlogShared/PostsListLayout';
@@ -11,7 +10,7 @@ import type { Props } from '@theme/BlogTagsPostsPage';
 
 // use shared PostCard / Sidebars / Paginator
 
-export default function BlogTagsPostsPage(props: Props): JSX.Element {
+export default function BlogTagsPostsPage(props: Props): React.ReactElement {
   const { isNewLayout } = useTheme();
   const { items, listMetadata, tag } = props;
 

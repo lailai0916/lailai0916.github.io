@@ -1,5 +1,4 @@
 import React from 'react';
-import type { JSX } from 'react';
 import { useTheme } from '@site/src/hooks/useTheme';
 import BlogArchivePageOriginal from '@theme-original/BlogArchivePage';
 import Link from '@docusaurus/Link';
@@ -15,7 +14,7 @@ import BlogScaffold from '../BlogShared/Scaffold';
 import type { Props } from '@theme/BlogArchivePage';
 import { formatDate } from '@site/src/utils/date';
 
-export default function BlogArchivePage(props: Props): JSX.Element {
+export default function BlogArchivePage(props: Props): React.ReactElement {
   const { isNewLayout } = useTheme();
   const { archive } = props;
   const location = useLocation();

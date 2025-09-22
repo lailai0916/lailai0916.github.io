@@ -1,5 +1,4 @@
-import React, { type ReactNode } from 'react';
-import type { JSX } from 'react';
+import React from 'react';
 import { useTheme } from '@site/src/hooks/useTheme';
 import BlogPostPageOriginal from '@theme-original/BlogPostPage';
 import BlogScaffold from '../BlogShared/Scaffold';
@@ -19,7 +18,7 @@ import type { Props } from '@theme/BlogPostPage';
 
 // Use the official BlogPostItem to render content and metadata
 
-export default function BlogPostPage(props: Props): JSX.Element {
+export default function BlogPostPage(props: Props): React.ReactElement {
   const { isNewLayout } = useTheme();
   const BlogPostContent = props.content;
 

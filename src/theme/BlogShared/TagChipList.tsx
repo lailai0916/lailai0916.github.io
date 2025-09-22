@@ -18,9 +18,9 @@ interface TagChipListProps {
 export default function TagChipList({
   items,
   className,
-}: TagChipListProps): JSX.Element {
+}: TagChipListProps): React.ReactElement | null {
   if (!items.length) {
-    return <></>;
+    return null;
   }
 
   return (

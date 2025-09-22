@@ -1,5 +1,4 @@
 import React from 'react';
-import type { JSX } from 'react';
 import { useTheme } from '@site/src/hooks/useTheme';
 import BlogTagsListPageOriginal from '@theme-original/BlogTagsListPage';
 import BlogScaffold from '../BlogShared/Scaffold';
@@ -15,7 +14,7 @@ type Props = any;
 
 // removed page-local sidebars/cards; using shared ones
 
-export default function BlogTagsListPage(props: Props): JSX.Element {
+export default function BlogTagsListPage(props: Props): React.ReactElement {
   const { isNewLayout } = useTheme();
   const { tags } = props;
 

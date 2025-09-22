@@ -1,11 +1,12 @@
 import React from 'react';
-import type { JSX } from 'react';
 import { useTheme } from '@site/src/hooks/useTheme';
 import BlogListPageOriginal from '@theme-original/BlogListPage';
 import PostsListLayout from '../BlogShared/PostsListLayout';
 import type { Props as BlogListPageProps } from '@theme/BlogListPage';
 
-export default function BlogListPage(props: BlogListPageProps): JSX.Element {
+export default function BlogListPage(
+  props: BlogListPageProps
+): React.ReactElement {
   const { isNewLayout } = useTheme();
   const { metadata, items } = props;
 
