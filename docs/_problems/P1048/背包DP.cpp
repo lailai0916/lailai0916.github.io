@@ -20,7 +20,7 @@ int main()
 		{
 			f[j]=max(f[j],f[j-a[i]]+b[i]);
 		}
-	}    
+	}
 	cout<<f[t]<<'\n';
 	return 0;
 }
