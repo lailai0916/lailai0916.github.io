@@ -230,20 +230,32 @@ export function getArchiveByYear(): { year: number; count: number }[] {
 /**
  * 读取官方生成的标签列表，保持与 Docusaurus 默认顺序一致。
  */
-let cachedOfficialTags: Array<{
+type TagAggregate = {
   label: string;
   permalink: string;
   count: number;
-}> | null = null;
+};
 
-function loadOfficialTags(): Array<{
-  label: string;
-  permalink: string;
-  count: number;
-}> {
-  if (cachedOfficialTags) {
-    return cachedOfficialTags;
+const cachedOfficialTags = new Map<string, TagAggregate[]>();
+
+const getLocaleCacheKey = (locale?: string) =>
+  (locale && locale.toLowerCase()) || 'default';
+
+const getLocaleFilePrefix = (locale?: string) =>
+  locale ? `${locale.toLowerCase().replace(/_/g, '-')}-` : '';
+
+function loadOfficialTags(locale?: string): TagAggregate[] {
+  const cacheKey = getLocaleCacheKey(locale);
+  const cached = cachedOfficialTags.get(cacheKey);
+  if (cached) {
+    return cached;
   }
+
+  const filePrefix = getLocaleFilePrefix(locale);
+  const basePattern = new RegExp(
+    `^\\.\/${filePrefix}blog-tags-[a-z0-9]+\\.json$`,
+    'i'
+  );
 
   try {
     const ctx = (require as any).context(
@@ -253,29 +265,40 @@ function loadOfficialTags(): Array<{
     );
     const candidates = ctx.keys();
     for (const key of candidates) {
+      if (!basePattern.test(key)) {
+        continue;
+      }
       const mod = ctx(key);
       const data = (mod && (mod.tags ?? mod.default?.tags)) as
-        | Array<{ label: string; permalink: string; count: number }>
+        | TagAggregate[]
         | undefined;
       if (Array.isArray(data)) {
-        cachedOfficialTags = data;
-        return cachedOfficialTags;
+        cachedOfficialTags.set(cacheKey, data);
+        return data;
       }
     }
   } catch {
     // ignore if generated data unavailable during tests/SSR
   }
 
-  cachedOfficialTags = [];
-  return cachedOfficialTags;
+  if (locale) {
+    const fallback = loadOfficialTags();
+    cachedOfficialTags.set(cacheKey, fallback);
+    return fallback;
+  }
+
+  cachedOfficialTags.set(cacheKey, []);
+  return [];
 }
 
-export function getTagsOfficialOrder(limit?: number): Array<{
-  label: string;
-  permalink: string;
-  count: number;
-}> {
-  const tags = loadOfficialTags();
+export function getTagsOfficialOrder({
+  limit,
+  locale,
+}: {
+  limit?: number;
+  locale?: string;
+} = {}): TagAggregate[] {
+  const tags = loadOfficialTags(locale);
   if (typeof limit === 'number') {
     return tags.slice(0, Math.max(0, limit));
   }

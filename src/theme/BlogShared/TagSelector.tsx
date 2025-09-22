@@ -2,6 +2,7 @@ import React from 'react';
 import clsx from 'clsx';
 import Translate from '@docusaurus/Translate';
 import Link from '@docusaurus/Link';
+import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import styles from '../BlogListPage/styles.module.css';
 import { getTagsOfficialOrder } from '@site/src/utils/blogData';
 
@@ -14,7 +15,15 @@ export default function TagSelector({
   activePermalink,
   limit = 30,
 }: TagSelectorProps) {
-  const tags = React.useMemo(() => getTagsOfficialOrder(limit), [limit]);
+  const {
+    i18n: { currentLocale, defaultLocale },
+  } = useDocusaurusContext();
+  const localeKey = currentLocale === defaultLocale ? undefined : currentLocale;
+
+  const tags = React.useMemo(
+    () => getTagsOfficialOrder({ limit, locale: localeKey }),
+    [limit, localeKey]
+  );
 
   if (!tags.length) {
     return null;
