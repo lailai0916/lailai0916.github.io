@@ -264,7 +264,7 @@ export default function Sidebar() {
 
   return (
     <>
-      <AuthorCard author={author ?? undefined} />
+      <AuthorCard author={author} />
       <StatsCard items={statsItems} />
       <PopularTagsCard tags={hotTags} />
       <ArchiveCard years={archiveYears} />
