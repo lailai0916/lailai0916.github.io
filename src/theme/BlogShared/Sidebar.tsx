@@ -47,7 +47,7 @@ function formatLongNumber(value: number) {
     return `${(n / 1000).toFixed(2)}k`;
   }
 
-  return n.toLocaleString();
+  return String(n);
 }
 
 function AuthorCard({ author }: { author: Author }) {
