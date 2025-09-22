@@ -1,10 +1,9 @@
 import React from 'react';
-import clsx from 'clsx';
 import Translate from '@docusaurus/Translate';
-import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import styles from '../BlogListPage/styles.module.css';
 import { getTagsOfficialOrder } from '@site/src/utils/blogData';
+import TagChipList from './TagChipList';
 
 interface TagSelectorProps {
   activePermalink?: string;
@@ -34,21 +33,14 @@ export default function TagSelector({
       <div className={styles.cardTitle}>
         <Translate id="blog.pages.tags.tagSelect">Tags</Translate>
       </div>
-      <div className={styles.tagList}>
-        {tags.map((tag) => (
-          <Link
-            key={tag.permalink}
-            to={tag.permalink}
-            className={clsx(styles.tagChip, {
-              [styles.tagChipActive]: tag.permalink === activePermalink,
-            })}
-          >
-            <span className={styles.tagDot} />
-            {tag.label}
-            <span className={styles.tagCount}>{tag.count}</span>
-          </Link>
-        ))}
-      </div>
+      <TagChipList
+        items={tags.map((tag) => ({
+          to: tag.permalink,
+          label: tag.label,
+          count: tag.count,
+          active: tag.permalink === activePermalink,
+        }))}
+      />
     </div>
   );
 }

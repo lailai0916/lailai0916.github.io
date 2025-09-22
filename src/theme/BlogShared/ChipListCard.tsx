@@ -1,6 +1,6 @@
 import React from 'react';
-import Link from '@docusaurus/Link';
 import styles from '../BlogListPage/styles.module.css';
+import TagChipList from './TagChipList';
 
 type Item = {
   to: string;
@@ -18,17 +18,7 @@ export default function ChipListCard({
   return (
     <div className={styles.card}>
       <div className={styles.cardTitle}>{title}</div>
-      <div className={styles.tagList}>
-        {items.map((it) => (
-          <Link key={it.to} to={it.to} className={styles.tagChip}>
-            <span className={styles.tagDot} />
-            {it.label}
-            {it.count !== undefined && (
-              <span className={styles.tagCount}>{it.count}</span>
-            )}
-          </Link>
-        ))}
-      </div>
+      <TagChipList items={items} />
     </div>
   );
 }

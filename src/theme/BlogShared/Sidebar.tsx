@@ -10,6 +10,7 @@ import {
   getAllPostMetadata,
   getArchiveByYear,
 } from '@site/src/utils/blogData';
+import TagChipList from './TagChipList';
 
 type Author = {
   name?: string;
@@ -99,15 +100,13 @@ function PopularTagsCard({ tags }: { tags: readonly any[] }) {
       <div className={styles.cardTitle}>
         <Translate id="blog.sidebar.tags.title">Popular Tags</Translate>
       </div>
-      <div className={styles.tagList}>
-        {tags.map((t) => (
-          <Link key={t.permalink} to={t.permalink} className={styles.tagChip}>
-            <span className={styles.tagDot} />
-            {t.label}
-            <span className={styles.tagCount}>{t.count}</span>
-          </Link>
-        ))}
-      </div>
+      <TagChipList
+        items={tags.map((t) => ({
+          to: t.permalink,
+          label: t.label,
+          count: t.count,
+        }))}
+      />
     </div>
   );
 }
