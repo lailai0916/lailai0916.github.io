@@ -10,7 +10,7 @@ import { Skills, Devices, Community, Comments } from '@site/src/pages/about/\_co
 
 <MDTitle title="About" />
 
-## # Personal Introduction
+## Personal Introduction
 
 🎓 I am a middle school student from Hangzhou, China.
 
@@ -22,13 +22,13 @@ import { Skills, Devices, Community, Comments } from '@site/src/pages/about/\_co
 
 ✍️ Enjoy organizing the learning process and recording thoughts for convenient communication and sharing.
 
-## # Website Introduction
+## Website Introduction
 
 My personal website for sharing technical notes, project experience, and learning insights.
 
 Built with [Docusaurus](https://docusaurus.io) and open-sourced on [GitHub](https://github.com/lailai0916/lailai0916.github.io).
 
-## # My Nickname
+## My Nickname
 
 My nickname is **lailai**. Since this name is quite common, I often have trouble registering accounts.
 
@@ -43,15 +43,15 @@ If that is also taken, I convert the digits to hexadecimal **0x394**, forming **
 
 :::
 
-## # My Skills
+## My Skills
 
 <Skills />
 
-## # My Devices
+## My Devices
 
 <Devices />
 
-## # My Community
+## My Community
 
 <Community />
 

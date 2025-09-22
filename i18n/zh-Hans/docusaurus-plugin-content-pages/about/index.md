@@ -10,7 +10,7 @@ import { Skills, Devices, Community, Comments } from '@site/src/pages/about/\_co
 
 <MDTitle title="About" />
 
-## # 个人简介
+## 个人简介
 
 🎓 我是一名来自中国杭州的中学生。
 
@@ -22,13 +22,13 @@ import { Skills, Devices, Community, Comments } from '@site/src/pages/about/\_co
 
 ✍️ 喜欢整理学习过程，记录思考，方便交流和分享。
 
-## # 网站简介
+## 网站简介
 
 我的个人网站，分享技术笔记、项目经验与学习心得。
 
 本网站使用 [Docusaurus](https://docusaurus.io) 构建，源代码托管于 [GitHub](https://github.com/lailai0916/lailai0916.github.io)。
 
-## # 我的昵称
+## 我的昵称
 
 我的昵称是 **lailai**，由于重名较多，注册账户时经常遇到困难。
 
@@ -43,15 +43,15 @@ import { Skills, Devices, Community, Comments } from '@site/src/pages/about/\_co
 
 :::
 
-## # 我的技能
+## 我的技能
 
 <Skills />
 
-## # 我的设备
+## 我的设备
 
 <Devices />
 
-## # 我的社区
+## 我的社区
 
 <Community />
 
