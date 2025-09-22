@@ -74,11 +74,7 @@ function StatsCard({ items }: { items: StatsItem[] }) {
       <div className={styles.authorStats}>
         {items.map((item) => {
           return (
-            <Link
-              key={String(item.label)}
-              to={item.href}
-              className={clsx(styles.statItem, styles.statItemLink)}
-            >
+            <Link key={item.label} to={item.href} className={styles.statItem}>
               <div className={styles.statValue}>{item.value}</div>
               <div className={styles.statLabel}>{item.label}</div>
             </Link>
