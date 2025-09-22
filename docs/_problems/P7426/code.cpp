@@ -22,7 +22,7 @@ struct Stu
 	ll id;
 	char sex;
 	int score,cnt1,cnt2,lst;
-	bool operator<(Stu t){return id<t.id;}
+	bool operator<(const Stu &rhs){return id<rhs.id;}
 }P[N];
 int main()
 {
