@@ -25,7 +25,7 @@ int main()
 		{
 			while(a[i][i])
 			{
-	 			int tmp=a[j][i]/a[i][i];
+				int tmp=a[j][i]/a[i][i];
 				for(int k=i;k<=n;k++)
 				{
 					a[j][k]=(a[j][k]-a[i][k]*tmp%mod)%mod;
