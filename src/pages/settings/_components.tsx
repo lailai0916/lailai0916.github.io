@@ -50,7 +50,6 @@ export function ThemeSettings() {
             colorModeChoice === option.key && styles.buttonActive
           )}
           onClick={() => setColorMode(option.key)}
-          data-umami-event={option.key}
         >
           <IconText icon={option.icon} colorMode="monochrome">
             {option.label}
@@ -108,7 +107,6 @@ export function ColorGenerator() {
               e.currentTarget.style.borderColor =
                 'var(--ifm-color-emphasis-300)';
             }}
-            data-umami-event={color}
           />
         ))}
       </div>
@@ -127,11 +125,7 @@ export function ColorGenerator() {
               .join(', ')})`,
           }}
         />
-        <button
-          className={styles.resetButton}
-          onClick={resetColors}
-          data-umami-event="reset"
-        >
+        <button className={styles.resetButton} onClick={resetColors}>
           {translate({
             id: 'pages.settings.item.color.reset',
             message: 'Reset',
@@ -300,7 +294,6 @@ export function QuickActions() {
           key={option.key}
           className={styles.button}
           onClick={option.onClick}
-          data-umami-event={option.key}
         >
           <IconText icon={option.icon} colorMode="monochrome">
             {option.label}
