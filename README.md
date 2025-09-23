@@ -4,8 +4,6 @@
   </a>
   <h1>lailai's Home</h1>
   <p>English | <a href="README.zh-Hans.md">简体中文</a></p>
-  <img src="static/img/previews/preview-light.png#gh-light-mode-only" />
-  <img src="static/img/previews/preview-dark.png#gh-dark-mode-only" />
 </div>
 
 ## # Website Introduction
@@ -81,6 +79,11 @@ lailai0916.github.io
 ## # Blog Feeds
 
 Stay updated with the latest blog posts: [RSS Feed](https://lailai.one/blog/rss.xml) | [Atom Feed](https://lailai.one/blog/atom.xml) | [JSON Feed](https://lailai.one/blog/feed.json)
+
+## # Preview
+
+![](static/img/preview/preview-light.png#gh-light-mode-only)
+![](static/img/preview/preview-dark.png#gh-dark-mode-only)
 
 ## # Sponsor
 

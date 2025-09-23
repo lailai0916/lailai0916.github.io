@@ -4,8 +4,6 @@
   </a>
   <h1>lailai's Home</h1>
   <p><a href="README.md">English</a> | 简体中文</p>
-  <img src="static/img/previews/preview-light.png#gh-light-mode-only" />
-  <img src="static/img/previews/preview-dark.png#gh-dark-mode-only" />
 </div>
 
 ## # 网站简介
@@ -81,6 +79,11 @@ lailai0916.github.io
 ## # 博客订阅
 
 获取最新博客文章更新：[RSS 订阅](https://lailai.one/blog/rss.xml) | [Atom 订阅](https://lailai.one/blog/atom.xml) | [JSON 订阅](https://lailai.one/blog/feed.json)
+
+## # 网站预览
+
+![](static/img/preview/preview-light.png#gh-light-mode-only)
+![](static/img/preview/preview-dark.png#gh-dark-mode-only)
 
 ## # 赞助支持
 
