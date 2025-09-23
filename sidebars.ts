@@ -592,10 +592,8 @@ const sidebars: SidebarsConfig = {
         description: '本章展示各种实用的小工具和计算器项目。',
       },
       items: [
-        'project/tools/ascii-art',
         'project/tools/id-checker',
         'project/tools/resistor-calculator',
-        'project/tools/polynomial-calculator',
         'project/tools/afk-script',
       ],
     },
