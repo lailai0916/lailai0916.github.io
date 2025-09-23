@@ -83,7 +83,6 @@ Stay updated with the latest blog posts: [RSS Feed](https://lailai.one/blog/rss.
 ## # Preview
 
 ![](static/img/preview/home-light.png#gh-light-mode-only)![](static/img/preview/home-dark.png#gh-dark-mode-only)
-![](static/img/preview/settings-light.png#gh-light-mode-only)![](static/img/preview/settings-dark.png#gh-dark-mode-only)
 
 ## # Sponsor
 
