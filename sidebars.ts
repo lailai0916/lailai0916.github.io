@@ -150,6 +150,7 @@ const sidebars: SidebarsConfig = {
           },
           items: [
             'contest/math/poly/fft',
+            'contest/math/poly/ntt',
             'contest/math/poly/fwt',
             'contest/math/poly/ogf',
           ],
