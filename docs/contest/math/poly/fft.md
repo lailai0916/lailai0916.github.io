@@ -8,20 +8,6 @@
 
 首先进行正变换，然后逐位相乘，最后通过逆变换得到答案。
 
-## 复数
-
-```cpp
-struct Comp
-{
-	double real,imag;
-	Comp(double real=0.0,double imag=0.0):real(real),imag(imag){}
-	Comp operator+(const Comp &rhs) const{return Comp(real+rhs.real,imag+rhs.imag);}
-	Comp operator-(const Comp &rhs) const{return Comp(real-rhs.real,imag-rhs.imag);}
-	Comp operator*(const Comp &rhs) const{return Comp(real*rhs.real-imag*rhs.imag,real*rhs.imag+rhs.real*imag);}
-	Comp operator/(const Comp &rhs) const{return Comp((real*rhs.real+imag*rhs.imag)/(rhs.real*rhs.real+rhs.imag*rhs.imag),(imag*rhs.real-real*rhs.imag)/(rhs.real*rhs.real+rhs.imag*rhs.imag));}
-};
-```
-
 ## 实现
 
 ### 分治递归
