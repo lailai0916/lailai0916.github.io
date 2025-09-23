@@ -591,11 +591,7 @@ const sidebars: SidebarsConfig = {
         type: 'generated-index',
         description: '本章展示各种实用的小工具和计算器项目。',
       },
-      items: [
-        'project/tools/id-checker',
-        'project/tools/resistor-calculator',
-        'project/tools/afk-script',
-      ],
+      items: ['project/tools/id-checker', 'project/tools/afk-script'],
     },
     {
       type: 'category',
