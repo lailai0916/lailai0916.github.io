@@ -610,18 +610,7 @@ const sidebars: SidebarsConfig = {
         'project/terminal/igame',
         'project/terminal/map-generator',
         'project/terminal/image-processor',
-        {
-          type: 'category',
-          label: '教程',
-          link: {
-            type: 'generated-index',
-            description: '终端编程相关教程和工具函数。',
-          },
-          items: [
-            'project/terminal/tutorial/maze-game',
-            'project/terminal/tutorial/utils',
-          ],
-        },
+        'project/terminal/tutorial',
       ],
     },
     {

@@ -1,12 +1,159 @@
-# 工具函数
+# 教程
 
-## system 函数
+本教程将演示如何制作一个简单的终端迷宫游戏：
+
+- 迷宫地图为 $10\times 10$。
+- 玩家可以控制角色到达终点。
+
+## 流程
+
+代码的大致流程如下：
+
+```cpp
+init();
+print();
+while(!check())
+{
+	move();
+	print();
+}
+```
+
+- `init()`：初始化
+- `print()`：打印地图
+- `check()`：判断结束
+- `move()`：玩家移动
+
+## 地图
+
+### 创建地图
+
+定义一个常量 $N=10$，表示迷宫地图的大小。
+
+再定义一个 $N\times N$ 的数组 $a$ 存储地图。
+
+```cpp
+const int N=10;
+int a[N][N];
+```
+
+此时我们可以随意编写地图，并赋予数字意义：
+
+- $0$：空地（可以经过）。
+- $1$：墙壁（无法经过）。
+
+```cpp
+int a[N][N]=
+{
+	{1,1,1,1,1,1,1,1,1,1},
+	{1,0,0,0,0,0,0,0,0,1},
+	{1,1,1,0,1,0,1,1,1,1},
+	{1,0,0,0,1,0,0,0,0,1},
+	{1,0,1,0,1,1,1,1,0,1},
+	{1,0,1,0,0,0,0,0,0,1},
+	{1,0,1,0,1,0,1,1,0,1},
+	{1,0,0,0,1,0,1,1,0,1},
+	{1,0,1,0,1,0,0,0,0,1},
+	{1,1,1,1,1,1,1,1,1,1}
+};
+```
+
+### 打印地图（`print()`）
+
+打印地图，先清空屏幕，再逐行输出数组即可。
+
+```cpp
+void print()
+{
+	system("cls");
+	for(int i=0;i<N;i++)
+	{
+		for(int j=0;j<N;j++)
+		{
+			printf("%d ",a[i][j]);
+		}
+		printf("\n");
+	}
+}
+```
+
+## 玩家
+
+### 创建玩家
+
+定义两个变量 $x$ 和 $y$，表示玩家当前的坐标为 $(x,y)$。
+
+```cpp
+int x,y;
+```
+
+### 初始化（`init()`）
+
+将玩家位置设置为出生点 $(1,1)$。
+
+```cpp
+void init()
+{
+	x=1;
+	y=1;
+}
+```
+
+## 事件
+
+### 判断结束
+
+返回玩家位置是否在目标点 $(8,8)$。
+
+```cpp
+bool check()
+{
+	return x==8&&y==8;
+}
+```
+
+### 玩家移动
+
+将 $x,y$ 备份为 $x_1,y_1$。
+
+然后使用 `getch()` 函数读取一个字符。
+
+```cpp
+int x1=x,y1=y;
+char f=getch();
+```
+
+:::tip
+
+`getch()` 相比直接输入，不需要按回车键，可以减少玩家操作复杂度。
+
+`getch()` 函数需要头文件 `#include <conio.h>`
+
+:::
+
+分别判断 $f$ 是否为 `w`、`a`、`s` 和 `d`。
+
+如果是某个字符，将 $x_1$ 或 $y_1$ 移动 $1$。
+
+判断 $a_{x_1,y_1}$ 是否等于 $0$。
+
+如果是，就让 $x,y$ 等于 $x_1,y_1$。
+
+## 完整代码
+
+```cpp
+咕.
+```
+
+## 工具函数
+
+### system 函数
 
 `system()` 函数是 C++ 标准库中的一个函数，用于执行系统命令。
 
 调用操作系统的命令行或 shell 来执行指定的命令。
 
-### `system("title XXX")`
+#### `system("title XXX")`
 
 - 功能：修改终端窗口标题为 `XXX`。
 
@@ -14,7 +161,7 @@
 system("title Game");
 ```
 
-### `system("mode con cols=XX lines=YY")`
+#### `system("mode con cols=XX lines=YY")`
 
 - 功能：修改终端窗口大小为 `YY` 行 `XX` 列。
 
@@ -22,7 +169,7 @@ system("title Game");
 system("mode con cols=60 lines=30");
 ```
 
-### `system("cls")`
+#### `system("cls")`
 
 - 功能：清空整个终端。
 
@@ -30,11 +177,11 @@ system("mode con cols=60 lines=30");
 system("cls");
 ```
 
-## Windows API
+### Windows API
 
 Windows API 是微软提供的一套用于与 Windows 操作系统进行交互的编程接口，允许开发者通过 C++ 语言访问和操作操作系统的底层功能，如窗口管理、文件操作、网络通信等。
 
-### `gotoxy(short x,short y)`
+#### `gotoxy(short x,short y)`
 
 功能：设置控制台光标的位置为 `y` 行 `x` 列。
 
@@ -45,7 +192,7 @@ void gotoxy(short x,short y)
 }
 ```
 
-### `hideCursor()`
+#### `hideCursor()`
 
 - 功能：隐藏控制台中的光标。
 
@@ -57,7 +204,7 @@ void hideCursor()
 }
 ```
 
-### `disableQuickEditMode()`
+#### `disableQuickEditMode()`
 
 - 功能：禁用快速编辑模式。
 
@@ -74,7 +221,7 @@ void disableQuickEditMode()
 }
 ```
 
-### `windowPos()`
+#### `windowPos()`
 
 - 功能：获取鼠标指针在控制台的相对位置。
 
@@ -88,7 +235,7 @@ POINT windowPos()
 }
 ```
 
-### `moveConsoleWindow(int x,int y)`
+#### `moveConsoleWindow(int x,int y)`
 
 功能：将控制台窗口移动 `x` 和 `y` 个单位。
 
@@ -103,7 +250,7 @@ void moveConsoleWindow(int x,int y)
 }
 ```
 
-### `centerConsoleWindow()`
+#### `centerConsoleWindow()`
 
 - 功能：将控制台窗口居中显示在屏幕上。
 
@@ -120,9 +267,9 @@ void centerConsoleWindow()
 }
 ```
 
-## 按键检测
+### 按键检测
 
-### `KEY_DOWN(VK_NONAME)`
+#### `KEY_DOWN(VK_NONAME)`
 
 - 功能：检测某个按键是否被按下。
 
@@ -130,11 +277,11 @@ void centerConsoleWindow()
 #define KEY_DOWN(VK_NONAME) ((GetAsyncKeyState(VK_NONAME)&0x8000)?1:0)
 ```
 
-## 颜色
+### 颜色
 
 终端不仅只有黑白的显示，还可以支持多种颜色。
 
-### system 函数
+#### system 函数
 
 通过 `system("color XY")`，可以设置终端文本的背景色和前景色。
 
@@ -153,7 +300,7 @@ void centerConsoleWindow()
 
 `system` 函数的缺点是只能修改整个终端的颜色，无法仅修改特定部分的文字颜色。
 
-### Windows API
+#### Windows API
 
 如果你需要只修改某一段文字的颜色，可以使用 Windows API 来实现。
 
@@ -168,7 +315,7 @@ void color(short a,short b)
 
 Windows API 的缺点是颜色种类有限（只有 $16$ 种）。
 
-### ANSI 转义序列
+#### ANSI 转义序列
 
 ANSI 转义序列支持 $24$ 位真彩色，也就是常见的 RGB 颜色格式。
 
