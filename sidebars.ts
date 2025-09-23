@@ -13,7 +13,7 @@ const sidebars: SidebarsConfig = {
       items: [
         'contest/personal/code-style',
         'contest/personal/code-comparator',
-        'contest/personal/common-templates/index',
+        'contest/personal/common-templates',
         'contest/personal/solution-template',
         'contest/personal/problem-transfer',
       ],
