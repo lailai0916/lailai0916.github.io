@@ -544,30 +544,19 @@ const sidebars: SidebarsConfig = {
   ],
   sidebar3: [
     'project/index',
+    'project/lailai0916/index',
     {
       type: 'category',
-      label: 'GitHub',
+      label: "lailai's Home",
       link: {
-        type: 'generated-index',
-        description: '本章记录 GitHub 相关的项目和经验。',
+        type: 'doc',
+        id: 'project/lailai0916.github.io/index',
       },
       items: [
-        'project/github/lailai0916/index',
-        {
-          type: 'category',
-          label: "lailai's Home",
-          link: {
-            type: 'doc',
-            id: 'project/github/lailai0916.github.io/index',
-          },
-          items: [
-            'project/github/lailai0916.github.io/setup/index',
-            'project/github/lailai0916.github.io/plugins',
-            'project/github/lailai0916.github.io/design',
-            'project/github/lailai0916.github.io/tailwind',
-          ],
-        },
-        'project/github/achievements',
+        'project/lailai0916.github.io/setup/index',
+        'project/lailai0916.github.io/plugins',
+        'project/lailai0916.github.io/design',
+        'project/lailai0916.github.io/tailwind',
       ],
     },
     {

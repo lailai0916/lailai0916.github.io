@@ -1,6 +1,13 @@
-# GitHub 成就工具
+---
+title: 'GitHub 成就工具'
+date: 2025-07-17T15:48
+authors: lailai
+tags: [misc]
+---
 
-GitHub 个人主页中有一个“Achievements”板块。
+GitHub 个人主页中有一个“Achievements”板块，可以通过脚本自动获取成就。
+
+<!-- truncate -->
 
 ## 参考资料
 

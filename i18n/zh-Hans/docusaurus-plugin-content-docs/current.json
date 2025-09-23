@@ -235,14 +235,6 @@
     "message": "推荐",
     "description": "The label for category 推荐 in sidebar sidebar2"
   },
-  "sidebar.sidebar3.category.GitHub": {
-    "message": "GitHub",
-    "description": "The label for category GitHub in sidebar sidebar3"
-  },
-  "sidebar.sidebar3.category.GitHub.link.generated-index.description": {
-    "message": "本章记录 GitHub 相关的项目和经验。",
-    "description": "The generated-index page description for category GitHub in sidebar sidebar3"
-  },
   "sidebar.sidebar3.category.lailai's Home": {
     "message": "lailai's Home",
     "description": "The label for category lailai's Home in sidebar sidebar3"
