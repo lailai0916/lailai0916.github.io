@@ -18,7 +18,7 @@ void solve(ll x,ll *ans)
 {
 	ll t[N];
 	int cnt=0;
-	while(x){t[++cnt]=x%10;x/=10;} 
+	while(x){t[++cnt]=x%10;x/=10;}
 	for(int i=cnt;i>=1;i--)
 	{
 		for(int j=0;j<=9;j++)ans[j]+=t1[i-1]*t[i];

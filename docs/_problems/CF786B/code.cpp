@@ -18,7 +18,7 @@ void build(int u,int l,int r)
 	G[ls+K].push_back({u+K,0});
 	G[rs+K].push_back({u+K,0});
 	build(ls,l,mid);
-	build(rs,mid+1,r); 
+	build(rs,mid+1,r);
 }
 void modify(int u,int l,int r,int x,int y,int v,int w,int type)
 {

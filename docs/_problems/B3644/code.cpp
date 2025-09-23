@@ -3,7 +3,6 @@ using namespace std;
 
 const int N=105;
 vector<int> G[N];
-queue<int> q;
 int in[N];
 int main()
 {
@@ -20,6 +19,7 @@ int main()
 			in[t]++;
 		}
 	}
+	queue<int> q;
 	for(int i=1;i<=n;i++)
 	{
 		if(!in[i])q.push(i);
