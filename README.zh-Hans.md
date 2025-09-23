@@ -82,8 +82,8 @@ lailai0916.github.io
 
 ## # 网站预览
 
-![](static/img/preview/preview-light.png#gh-light-mode-only)
-![](static/img/preview/preview-dark.png#gh-dark-mode-only)
+![](static/img/preview/home-light.png#gh-light-mode-only)![](static/img/preview/home-dark.png#gh-dark-mode-only)
+![](static/img/preview/settings-light.png#gh-light-mode-only)![](static/img/preview/settings-dark.png#gh-dark-mode-only)
 
 ## # 赞助支持
 
