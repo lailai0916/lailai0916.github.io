@@ -196,18 +196,6 @@ const sidebars: SidebarsConfig = {
           ],
         },
         'contest/math/game-theory',
-        {
-          type: 'category',
-          label: '模板',
-          link: {
-            type: 'generated-index',
-            description: '本章记录 OI 中封装的通用数学模板。',
-          },
-          items: [
-            'contest/math/math-templates/fraction',
-            'contest/math/math-templates/function',
-          ],
-        },
       ],
     },
     {

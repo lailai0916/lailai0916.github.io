@@ -68,7 +68,7 @@ int main()
 </TabItem>
 </Tabs>
 
-## 读写优化
+## 读写
 
 详见 [读写优化](../contest/io)
 
@@ -95,6 +95,28 @@ void write(int x)
 	if(x>9)write(x/10);
 	putchar(x%10+48);
 }
+```
+
+### 文件读写
+
+```cpp
+freopen("problem.in","r",stdin);
+freopen("problem.out","w",stdout);
+```
+
+### cout 格式化
+
+```cpp
+cout<<fixed<<setprecision(6)<<x<<'\n';
+cout<<setfill('0')<<setw(6)<<x<<'\n';
+```
+
+### 刷新缓冲区
+
+```cpp
+cout<<flush;
+fflush(stdout);
+cout.flush();
 ```
 
 ## 算法基础
@@ -254,6 +276,55 @@ void init()
 }
 ```
 
+### 随机数（`mt19937`）
+
+```cpp
+random_device rd;
+mt19937 gen(rd());
+uniform_int_distribution<int> dist(1,100);
+int k=dist(gen);
+```
+
+### 分数
+
+```cpp
+struct Frac
+{
+	ll p,q;
+	Frac(ll _p,ll _q):p(_p),q(_q){}
+	void maintain()
+	{
+		if(q<0){p=-p;q=-q;}
+		ll g=gcd(p,q);
+		p/=g;q/=g;
+	}
+	Frac operator+(const Frac &rhs) const
+	{
+		Frac res={p*rhs.q+q*rhs.p,q*rhs.q};
+		res.maintain();
+		return res;
+	}
+	Frac operator-(const Frac &rhs) const
+	{
+		Frac res={p*rhs.q-q*rhs.p,q*rhs.q};
+		res.maintain();
+		return res;
+	}
+	Frac operator*(const Frac &rhs) const
+	{
+		Frac res={p*rhs.p,q*rhs.q};
+		res.maintain();
+		return res;
+	}
+	Frac operator/(const Frac &rhs) const
+	{
+		Frac res={p*rhs.q,q*rhs.p};
+		res.maintain();
+		return res;
+	}
+};
+```
+
 ## 数据结构
 
 ### 并查集
@@ -353,6 +424,14 @@ struct SEG
 };
 ```
 
+### 平衡树（`__gnu_pbds::tree`）
+
+```cpp
+#include <bits/extc++.h>
+using namespace __gnu_pbds;
+__gnu_pbds::tree<pair<int,int>,null_type,less<pair<int,int>>,rb_tree_tag,tree_order_statistics_node_update> T;
+```
+
 ## 计算几何
 
 ```cpp
@@ -387,45 +466,4 @@ int main()
 
 	return 0;
 }
-```
-
-## 杂项
-
-### 文件读写
-
-```cpp
-freopen(".in","r",stdin);
-freopen(".out","w",stdout);
-```
-
-### cout 格式化
-
-```cpp
-cout<<fixed<<setprecision(6)<<x<<'\n';
-cout<<setfill('0')<<setw(6)<<x<<'\n';
-```
-
-### 刷新缓冲区
-
-```cpp
-cout<<flush;
-fflush(stdout);
-cout.flush();
-```
-
-### `__gnu_pbds::tree`
-
-```cpp
-#include <bits/extc++.h>
-using namespace __gnu_pbds;
-__gnu_pbds::tree<pair<int,int>,null_type,less<pair<int,int>>,rb_tree_tag,tree_order_statistics_node_update> T;
-```
-
-### `mt19937`
-
-```cpp
-random_device rd;
-mt19937 gen(rd());
-uniform_int_distribution<int> dist(1,100);
-int k=dist(gen);
 ```
