@@ -1,5 +1,9 @@
 # 范德蒙德卷积
 
+## 参考资料
+
+- [范德蒙德卷积 - OI Wiki](https://oi-wiki.org/math/combinatorics/vandermonde-convolution/)
+
 ## 公式
 
 $$
