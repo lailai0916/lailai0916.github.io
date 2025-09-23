@@ -48,7 +48,7 @@
 
 .mainTitle b {
   color: var(--ifm-color-primary);
-  position: relative;
+  font-weight: inherit;
 }
 
 .mainDescription {
