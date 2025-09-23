@@ -14,9 +14,9 @@ int main()
 	{
 		cin>>a[i]>>b[i];
 	}
-	for(int i=1;i<=m;i++) 
+	for(int i=1;i<=m;i++)
 	{
-		for(int j=t;j>=a[i];j--) 
+		for(int j=t;j>=a[i];j--)
 		{
 			f[j]=max(f[j],f[j-a[i]]+b[i]);
 		}

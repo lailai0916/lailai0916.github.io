@@ -3,7 +3,7 @@ using namespace std;
 
 const int N=205;
 int a[N],b[N];
-int main() 
+int main()
 {
 	ios::sync_with_stdio(false);
 	cin.tie(nullptr);
