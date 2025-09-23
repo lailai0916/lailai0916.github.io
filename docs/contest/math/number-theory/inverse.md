@@ -62,6 +62,10 @@ void init()
 
 <Problem id="P3811" />
 
+### 洛谷 P5431 【模板】模意义下的乘法逆元 2
+
+<Problem id="P5431" />
+
 ### 洛谷 P1082 [NOIP 2012 提高组] 同余方程
 
 <Problem id="P1082" />
