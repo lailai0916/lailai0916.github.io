@@ -550,7 +550,7 @@ const sidebars: SidebarsConfig = {
         type: 'doc',
         id: 'note/recommend/index',
       },
-      items: ['note/recommend/bilibili/index'],
+      items: ['note/recommend/bilibili'],
     },
   ],
   sidebar3: [
