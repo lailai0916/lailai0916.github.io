@@ -255,14 +255,6 @@
     "message": "本章收录各种实用的文档指南。",
     "description": "The generated-index page description for category 指南 in sidebar sidebar3"
   },
-  "sidebar.sidebar3.category.工具": {
-    "message": "工具",
-    "description": "The label for category 工具 in sidebar sidebar3"
-  },
-  "sidebar.sidebar3.category.工具.link.generated-index.description": {
-    "message": "本章展示各种实用的小工具和计算器项目。",
-    "description": "The generated-index page description for category 工具 in sidebar sidebar3"
-  },
   "sidebar.sidebar3.category.终端": {
     "message": "终端",
     "description": "The label for category 终端 in sidebar sidebar3"

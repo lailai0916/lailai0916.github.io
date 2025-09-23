@@ -13,6 +13,7 @@
     "serve": "docusaurus serve",
     "write-translations": "docusaurus write-translations",
     "write-translations:zh-Hans": "docusaurus write-translations --locale zh-Hans",
+    "i18n": "npm run write-translations:zh-Hans",
     "format": "npx prettier --write ."
   },
   "dependencies": {
