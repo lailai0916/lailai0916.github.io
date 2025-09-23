@@ -586,15 +586,6 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: 'category',
-      label: '工具',
-      link: {
-        type: 'generated-index',
-        description: '本章展示各种实用的小工具和计算器项目。',
-      },
-      items: ['project/tools/id-checker', 'project/tools/afk-script'],
-    },
-    {
-      type: 'category',
       label: '终端',
       link: {
         type: 'generated-index',

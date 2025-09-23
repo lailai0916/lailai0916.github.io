@@ -1,8 +1,15 @@
-# 挂机脚本
+---
+title: '挂机脚本'
+date: 2025-02-17T15:02
+authors: lailai
+tags: [misc]
+---
 
 我的游戏挂机脚本，可执行简单的重复点击操作。
 
 采用 AppleScript 编写，仅适用于 macOS 系统。
+
+<!-- truncate -->
 
 ## 安装
 
