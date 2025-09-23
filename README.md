@@ -4,8 +4,8 @@
   </a>
   <h1>lailai's Home</h1>
   <p>English | <a href="README.zh-Hans.md">简体中文</a></p>
-  <img src="static/img/previews/previews-light.png#gh-light-mode-only" />
-  <img src="static/img/previews/previews-dark.png#gh-dark-mode-only" />
+  <img src="static/img/previews/preview-light.png#gh-light-mode-only" />
+  <img src="static/img/previews/preview-dark.png#gh-dark-mode-only" />
 </div>
 
 ## # Website Introduction
