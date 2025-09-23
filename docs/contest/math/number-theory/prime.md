@@ -1,5 +1,9 @@
 # 素数
 
+## 参考资料
+
+- [素数 - OI Wiki](https://oi-wiki.org/math/number-theory/prime/)
+
 ## 素性测试
 
 ### 试除法

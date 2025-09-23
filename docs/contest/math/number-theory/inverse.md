@@ -1,11 +1,13 @@
-# 乘法逆元
-
-如果线性同余方程 $ax\equiv1\pmod b$，则 $x$ 称为 $a\bmod b$ 的逆元，记为 $a^{-1}$。
+# 模逆元
 
 ## 参考资料
 
-- [乘法逆元 - OI Wiki](https://oi-wiki.org/math/number-theory/inverse/)
+- [模逆元 - OI Wiki](https://oi-wiki.org/math/number-theory/inverse/)
 - [【笔记】常见逆元计算方法总结 - 洛谷专栏](https://www.luogu.com.cn/article/37lps3sm)
+
+## 定义
+
+如果线性同余方程 $ax\equiv1\pmod b$，则 $x$ 称为 $a\bmod b$ 的逆元，记为 $a^{-1}$。
 
 ## 费马小定理
 
