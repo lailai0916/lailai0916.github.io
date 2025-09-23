@@ -5,10 +5,10 @@
 .container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 2rem 2.5rem;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-  gap: 2rem;
+  gap: 1.75rem;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
 }
 
 /* ==========================================================================
@@ -117,34 +117,54 @@
    6. Responsive Design
    ========================================================================== */
 
-@media (max-width: 768px) {
-  .friendsGrid {
-    grid-template-columns: 1fr;
+@media (max-width: 1024px) {
+  .container {
+    padding: 1.75rem 1.75rem 2rem;
     gap: 1.5rem;
   }
+}
 
+@media (max-width: 768px) {
   .container {
-    padding: 0 1rem 2rem 1rem;
+    padding: 0 1.25rem 1.75rem;
+    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   }
 
   .friendCardHeader {
     flex-direction: column;
     text-align: center;
+    align-items: center;
   }
 
   .friendCardAvatar {
     align-self: center;
   }
+
+  .friendCardInfo {
+    width: 100%;
+  }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 600px) {
+  .container {
+    padding: 0 1rem 1.5rem;
+    gap: 1.25rem;
+    grid-template-columns: minmax(0, 1fr);
+  }
+
   .friendCardContent {
     padding: 1.25rem;
   }
+}
 
-  .friendsGrid {
-    grid-template-columns: 1fr;
-    gap: 1rem;
+@media (max-width: 400px) {
+  .container {
+    padding: 0 0.75rem 1.5rem;
+  }
+
+  .friendCardContent {
+    padding: 1.1rem;
   }
 }
 
