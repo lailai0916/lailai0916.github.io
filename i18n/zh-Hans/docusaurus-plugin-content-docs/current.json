@@ -282,13 +282,5 @@
   "sidebar.sidebar3.category.其他.link.generated-index.description": {
     "message": "其他分类的项目和分享。",
     "description": "The generated-index page description for category 其他 in sidebar sidebar3"
-  },
-  "sidebar.sidebar3.category.配置": {
-    "message": "配置",
-    "description": "The label for category 配置 in sidebar sidebar3"
-  },
-  "sidebar.sidebar3.category.配置.link.generated-index.description": {
-    "message": "各种开发工具的配置分享。",
-    "description": "The generated-index page description for category 配置 in sidebar sidebar3"
   }
 }

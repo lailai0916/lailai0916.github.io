@@ -330,3 +330,13 @@ Permute 3 是一款多媒体格式转换工具，支持视频、音频与图像�
 - 官网：[Permute 3](https://lizhi.shop/site/products/id/51)
 - 平台：macOS
 - 价格：¥79
+
+## 配置
+
+### VSCode
+
+- CodeSnap：代码片段截图插件
+- Material Icon Theme：文件图表主题
+- GitHub Copilot：代码生成工具
+- Codex：OpenAI 的编码 Agent
+- Prettier：代码格式化插件

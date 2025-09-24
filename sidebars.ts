@@ -634,15 +634,6 @@ const sidebars: SidebarsConfig = {
         'project/other/edc/index',
         'project/other/desk-setup',
         'project/other/software',
-        {
-          type: 'category',
-          label: '配置',
-          link: {
-            type: 'generated-index',
-            description: '各种开发工具的配置分享。',
-          },
-          items: ['project/other/config/vscode', 'project/other/config/cursor'],
-        },
       ],
     },
   ],
