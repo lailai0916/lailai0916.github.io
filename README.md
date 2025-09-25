@@ -82,6 +82,8 @@ Stay updated with the latest blog posts: [RSS Feed](https://lailai.one/blog/rss.
 
 ## # Website Preview
 
+This is a preview of the website’s homepage.
+
 ![](static/img/preview/home-light.png#gh-light-mode-only)![](static/img/preview/home-dark.png#gh-dark-mode-only)
 
 ## # Sponsor
