@@ -516,16 +516,16 @@ $$
 
 ### 共轭根式
 
-以下两个根式称为 **共轭根式**：
+以下两个根式 $x$ 和 $y$ 互为 **共轭根式**：
 
 $$
-\sqrt a+\sqrt b,\sqrt a-\sqrt b
+x=\sqrt a+\sqrt b\iff y=\sqrt a-\sqrt b
 $$
 
-容易证明：
+容易发现：
 
 $$
-(\sqrt a-\sqrt b)\times(\sqrt a+\sqrt b)=a-b(a,b\ge 0)
+xy=(\sqrt a-\sqrt b)(\sqrt a+\sqrt b)=a-b(a,b\ge 0)
 $$
 
 :::tip
