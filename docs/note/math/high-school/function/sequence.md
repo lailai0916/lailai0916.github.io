@@ -22,7 +22,7 @@
 
 ### 无穷数列
 
-一个 $(a:\mathbb N\to\mathbb C)$ 的函数被称为 **无穷数列**。
+一个 $(a:\mathbb N\to\mathbb C)$ 的函数称为 **无穷数列**。
 
 可记为 $\{a_i\}_{i\in\mathbb N}$ 或 $(a_i)_{i\in\mathbb N}$ 或 $\langle a_i\rangle_{i\in\mathbb N}$。
 
@@ -30,7 +30,7 @@
 
 ### 有限数列
 
-若 $I_n=\{1,2,\dots,n\}$，则一个 $(a:I_n\to\mathbb C)$ 的函数被称为 **有限数列**。
+若 $I_n=\{1,2,\dots,n\}$，则一个 $(a:I_n\to\mathbb C)$ 的函数称为 **有限数列**。
 
 可记为 $\{a_i\}_{i=1}^n$ 或 $(a_i)_{i=1}^n$ 或 $\langle a_i\rangle_{i=1}^n$。
 
@@ -116,7 +116,7 @@ $$
 a_n=f(n)
 $$
 
-数列对应函数的解析式，被称为数列的通项公式。
+数列对应函数的解析式，称为数列的通项公式。
 
 例如：
 
