@@ -7,6 +7,7 @@
 
 ## 参考资料
 
+- [高中数学 - 维基教科书](https://zh.wikibooks.org/wiki/高中数学)
 - [whk wiki](https://whk-wiki.github.io/whk-wiki/)
 - [RainPPR's WHK Blog](https://blog.rainppr.dns-dynamic.net/whk/)
 - [liuhaopeng543/MathBook](https://github.com/liuhaopeng543/MathBook)
