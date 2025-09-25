@@ -164,6 +164,15 @@ const config: Config = {
           ],
         },
         {
+          title: 'Site',
+          items: [
+            { label: 'Settings', to: '/settings' },
+            { label: 'Sitemap', to: '/sitemap' },
+            { label: 'Privacy Policy', to: '/privacy' },
+            { label: 'Changelog', to: '/changelog' },
+          ],
+        },
+        {
           title: 'Community',
           items: [
             { label: 'X (Twitter)', href: 'https://x.com/lailai0x394' },
@@ -188,15 +197,6 @@ const config: Config = {
               href: 'https://cloud.lailai.one',
             },
             { label: "lailai's AI", href: 'https://ai.lailai.one' },
-          ],
-        },
-        {
-          title: 'Site',
-          items: [
-            { label: 'Settings', to: '/settings' },
-            { label: 'Sitemap', to: '/sitemap' },
-            { label: 'Privacy Policy', to: '/privacy' },
-            { label: 'Changelog', to: '/changelog' },
           ],
         },
       ],
