@@ -10,6 +10,17 @@ export interface ChangelogItem {
 
 export const CHANGELOG_LIST: ChangelogItem[] = [
   {
+    date: '2025-09-26',
+    type: 'changed',
+    content:
+      '更新至 [DocSearch v4](https://docsearch.algolia.com/docs/what-is-docsearch)',
+  },
+  {
+    date: '2025-09-25',
+    type: 'changed',
+    content: '更新至 [Docusaurus 3.9](https://docusaurus.io/blog/releases/3.9)',
+  },
+  {
     date: '2025-09-05',
     type: 'added',
     content:
