@@ -105,6 +105,7 @@ const config: Config = {
         from: `/${defaultLocale}/`,
         to: '/',
       },
+      askAi: '58ORw662EwUH',
     },
     navbar: {
       hideOnScroll: true,
