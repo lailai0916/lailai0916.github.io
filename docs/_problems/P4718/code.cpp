@@ -1,30 +1,3 @@
-# 分解质因数
-
-## 参考资料
-
-- [分解质因数 - OI Wiki](https://oi-wiki.org/math/number-theory/pollard-rho/)
-
-## 朴素算法
-
-```cpp
-void factorize(ll n)
-{
-	int cnt=0;
-	for(ll k=2;k*k<=n;k++)
-	{
-		while(n%k==0)
-		{
-			a[++cnt]=k;
-			n/=k;
-		}
-	}
-	if(n!=1)a[++cnt]=n;
-}
-```
-
-## Pollard Rho 算法
-
-```cpp
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -114,14 +87,3 @@ int main()
 	}
 	return 0;
 }
-```
-
-## 例题
-
-### 洛谷 B3715 分解质因子 2
-
-<Problem id="B3715" />
-
-### 洛谷 P4718 【模板】Pollard-Rho
-
-<Problem id="P4718" />

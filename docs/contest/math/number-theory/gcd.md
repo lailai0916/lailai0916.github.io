@@ -12,7 +12,7 @@ $$
 $$
 
 <Tabs>
-<TabItem value="递归">
+<TabItem value="递归实现">
 
 ```cpp
 ll Gcd(ll a,ll b)
@@ -22,7 +22,7 @@ ll Gcd(ll a,ll b)
 ```
 
 </TabItem>
-<TabItem value="迭代">
+<TabItem value="迭代实现">
 
 ```cpp
 ll Gcd(ll a,ll b)
