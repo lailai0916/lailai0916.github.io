@@ -8,11 +8,13 @@
 - [OI-wiki/OI-Wiki-export](https://github.com/OI-wiki/OI-Wiki-export)
 - [ACM 常用算法模板](https://acm.sdut.edu.cn/10th_anniversary_celebration/kuangbin的ACM模板（新）.pdf)
 
-## 文件
+## 通用
+
+### 文件
 
 联赛文件模板：[name.zip](./assets/name.zip)
 
-## 框架
+### 框架
 
 <Tabs>
 <TabItem value="基础框架">
@@ -68,6 +70,23 @@ int main()
 
 </TabItem>
 </Tabs>
+
+### 性能
+
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+using namespace chrono;
+
+int main()
+{
+	auto st=high_resolution_clock::now();
+	// do sth
+	auto ed=high_resolution_clock::now();
+	cout<<duration_cast<microseconds>(ed-st).count()<<'\n';
+	return 0;
+}
+```
 
 ## 读写
 
