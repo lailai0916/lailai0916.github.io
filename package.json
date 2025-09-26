@@ -52,9 +52,11 @@
     "@docusaurus/module-type-aliases": "^3.9.0",
     "@docusaurus/tsconfig": "^3.9.0",
     "@docusaurus/types": "^3.9.0",
+    "@mermaid-js/layout-elk": "^0.1.9",
     "@types/canvas-confetti": "^1.9.0",
     "@types/react": "^19.1.8",
     "@types/react-dom": "^19.1.6",
+    "elkjs": "^0.11.0",
     "prettier": "^3.6.2",
     "typescript": "^5.8.3"
   },

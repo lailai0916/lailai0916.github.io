@@ -26,7 +26,6 @@ const config: Config = {
 
   trailingSlash: false,
   onBrokenLinks: 'throw',
-  onBrokenMarkdownLinks: 'warn',
 
   i18n: {
     defaultLocale,
@@ -232,6 +231,9 @@ const config: Config = {
   } satisfies Preset.ThemeConfig,
 
   markdown: {
+    hooks: {
+      onBrokenMarkdownLinks: 'warn',
+    },
     mermaid: true,
   },
 
