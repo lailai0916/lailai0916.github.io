@@ -69,3 +69,9 @@ ll lucas(ll n,ll m)
 	return C(n%mod,m%mod)*lucas(n/mod,m/mod)%mod;
 }
 ```
+
+## 例题
+
+### 洛谷 P3807 【模板】卢卡斯定理/Lucas 定理
+
+<Problem id="P3807" />
