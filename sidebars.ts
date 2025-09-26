@@ -133,11 +133,12 @@ const sidebars: SidebarsConfig = {
           items: [
             'contest/math/number-theory/prime',
             'contest/math/number-theory/gcd',
-            'contest/math/number-theory/sqrt-decomposition',
             'contest/math/number-theory/euler-totient',
             'contest/math/number-theory/sieve',
             'contest/math/number-theory/pollard-rho',
             'contest/math/number-theory/inverse',
+            'contest/math/number-theory/crt',
+            'contest/math/number-theory/sqrt-decomposition',
             'contest/math/number-theory/du',
           ],
         },
