@@ -1,8 +1,6 @@
 # 题目搬运
 
-[洛谷](https://www.luogu.com.cn) 中的 [咕值系统](https://help.luogu.com.cn/manual/luogu/account/guzhi) 有一个“社区贡献”指标，满分为 $100$ 分，其中 $70$ 分来自题解，$30$ 分来自搬题。
-
-每搬运一道主题库题目可获得 $1$ 分咕值，搬满 $30$ 题即可 **永久** 拿满搬题部分的 $30$ 分咕值。
+本文是我的题目搬运记录。
 
 ## 参考资料
 
@@ -10,6 +8,12 @@
 - [题目测试点配置文件 - 洛谷帮助中心](https://help.luogu.com.cn/manual/luogu/problem/testcase-config)
 - [MikeMirzayanov/testlib](https://github.com/MikeMirzayanov/testlib)
 - [noisg/sg_noi_archive](https://github.com/noisg/sg_noi_archive)
+
+## 说明
+
+[洛谷](https://www.luogu.com.cn) 中的 [咕值系统](https://help.luogu.com.cn/manual/luogu/account/guzhi) 有一个“社区贡献”指标，满分为 $100$ 分，其中 $70$ 分来自题解，$30$ 分来自搬题。
+
+每搬运一道主题库题目可获得 $1$ 分咕值，搬满 $30$ 题即可 **永久** 拿满搬题部分的 $30$ 分咕值。
 
 ## 题目测试点配置文件生成器
 
