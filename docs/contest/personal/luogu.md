@@ -1,17 +1,15 @@
 # 洛谷题目
 
+[洛谷](https://www.luogu.com.cn) 的 [咕值系统](https://help.luogu.com.cn/manual/luogu/account/guzhi) 有一个 **社区贡献** 指标，满分为 $100$ 分，其中 $70$ 分来自 **题解**，$30$ 分来自 **搬题**。
+
+每搬运一道主题库题目可获得 $1$ 分咕值，搬满 $30$ 题即可 **永久** 拿满搬题部分的 $30$ 分咕值。
+
 ## 参考资料
 
 - [洛谷主题库题解规范（2023 试行版） - 洛谷帮助中心](https://help.luogu.com.cn/rules/academic/solution-standard)
 - [如何用 Markdown 和 LaTeX 写一篇排版整齐的题解？ - 洛谷帮助中心](https://help.luogu.com.cn/rules/academic/guide/solution)
 - [洛谷主题库题目规范 - 洛谷帮助中心](https://help.luogu.com.cn/rules/academic/problem-standard)
 - [题目测试点配置文件 - 洛谷帮助中心](https://help.luogu.com.cn/manual/luogu/problem/testcase-config)
-
-## 说明
-
-[洛谷](https://www.luogu.com.cn) 的 [咕值系统](https://help.luogu.com.cn/manual/luogu/account/guzhi) 有一个 **社区贡献** 指标，满分为 $100$ 分，其中 $70$ 分来自 **题解**，$30$ 分来自 **搬题**。
-
-每搬运一道主题库题目可获得 $1$ 分咕值，搬满 $30$ 题即可 **永久** 拿满搬题部分的 $30$ 分咕值。
 
 ## 题解
 
@@ -245,6 +243,8 @@ int main()
 ```
 
 ### NOISG
+
+我搬运了 $30$ 道新加坡全国信息学奥林匹克竞赛（NOISG）的题目。
 
 <GitHub repo="noisg/sg_noi_archive" />
 
