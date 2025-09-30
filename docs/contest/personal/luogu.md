@@ -251,7 +251,7 @@ int main()
 
 ### 搬题记录
 
-我搬运了 $30$ 道新加坡全国信息学奥林匹克竞赛（NOISG）的题目。
+我搬运了新加坡全国信息学奥林匹克竞赛（NOISG）的 $7$ 场比赛 $30$ 道题目。
 
 <GitHub repo="noisg/sg_noi_archive" />
 
