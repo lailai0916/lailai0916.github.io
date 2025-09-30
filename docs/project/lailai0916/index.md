@@ -23,8 +23,7 @@
 
 <ImageWindow url="https://github.com/new">
 
-![](./assets/create-repository-light.png#gh-light-mode-only)
-![](./assets/create-repository-dark.png#gh-dark-mode-only)
+![](./assets/create-repository-light.png#gh-light-mode-only)![](./assets/create-repository-dark.png#gh-dark-mode-only)
 
 </ImageWindow>
 
@@ -34,8 +33,7 @@
 
 <ImageWindow url="https://github.com/lailai0916/lailai0916">
 
-![](./assets/repository-homepage-light.png#gh-light-mode-only)
-![](./assets/repository-homepage-dark.png#gh-dark-mode-only)
+![](./assets/repository-homepage-light.png#gh-light-mode-only)![](./assets/repository-homepage-dark.png#gh-dark-mode-only)
 
 </ImageWindow>
 
@@ -43,8 +41,7 @@
 
 <ImageWindow url="https://github.com/lailai0916/lailai0916/edit/main/README.md">
 
-![](./assets/edit-readme-light.png#gh-light-mode-only)
-![](./assets/edit-readme-dark.png#gh-dark-mode-only)
+![](./assets/edit-readme-light.png#gh-light-mode-only)![](./assets/edit-readme-dark.png#gh-dark-mode-only)
 
 </ImageWindow>
 
@@ -89,14 +86,12 @@
 - 标记 `#gh-light-mode-only` 和 `#gh-dark-mode-only` 可以指定某个元素仅在 GitHub 的 Light 或 Dark 模式下显示。
 
 ```markdown
-![](https://skillicons.dev/icons?i=java,kotlin,nodejs,figma&theme=light#gh-light-mode-only)
-![](https://skillicons.dev/icons?i=java,kotlin,nodejs,figma&theme=dark#gh-dark-mode-only)
+![](https://skillicons.dev/icons?i=java,kotlin,nodejs,figma&theme=light#gh-light-mode-only)![](https://skillicons.dev/icons?i=java,kotlin,nodejs,figma&theme=dark#gh-dark-mode-only)
 ```
 
 <BrowserWindow>
 
-![](https://skillicons.dev/icons?i=java,kotlin,nodejs,figma&theme=light#gh-light-mode-only)
-![](https://skillicons.dev/icons?i=java,kotlin,nodejs,figma&theme=dark#gh-dark-mode-only)
+![](https://skillicons.dev/icons?i=java,kotlin,nodejs,figma&theme=light#gh-light-mode-only)![](https://skillicons.dev/icons?i=java,kotlin,nodejs,figma&theme=dark#gh-dark-mode-only)
 
 </BrowserWindow>
 
@@ -123,14 +118,12 @@
 2. 类似技术栈图标，状态统计图也能实现深浅模式切换。
 
 ```markdown
-![](https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=lailai0916&theme=default#gh-light-mode-only)
-![](https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=lailai0916&theme=dark#gh-dark-mode-only)
+![](https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=lailai0916&theme=default#gh-light-mode-only)![](https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=lailai0916&theme=dark#gh-dark-mode-only)
 ```
 
 <BrowserWindow>
 
-![](https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=lailai0916&theme=default#gh-light-mode-only)
-![](https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=lailai0916&theme=dark#gh-dark-mode-only)
+![](https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=lailai0916&theme=default#gh-light-mode-only)![](https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=lailai0916&theme=dark#gh-dark-mode-only)
 
 </BrowserWindow>
 
@@ -159,8 +152,7 @@
 
 <ImageWindow url="https://github.com/settings/tokens">
 
-![](./assets/setting-token-light.png#gh-light-mode-only)
-![](./assets/setting-token-dark.png#gh-dark-mode-only)
+![](./assets/setting-token-light.png#gh-light-mode-only)![](./assets/setting-token-dark.png#gh-dark-mode-only)
 
 </ImageWindow>
 
@@ -170,8 +162,7 @@
 
 <ImageWindow url="https://github.com/settings/tokens/new">
 
-![](./assets/generate-token-light.png#gh-light-mode-only)
-![](./assets/generate-token-dark.png#gh-dark-mode-only)
+![](./assets/generate-token-light.png#gh-light-mode-only)![](./assets/generate-token-dark.png#gh-dark-mode-only)
 
 </ImageWindow>
 
@@ -185,8 +176,7 @@
 
 <ImageWindow url="https://github.com/new?template_name=github-stats&template_owner=jstrieb">
 
-![](./assets/copy-repository-light.png#gh-light-mode-only)
-![](./assets/copy-repository-dark.png#gh-dark-mode-only)
+![](./assets/copy-repository-light.png#gh-light-mode-only)![](./assets/copy-repository-dark.png#gh-dark-mode-only)
 
 </ImageWindow>
 
@@ -194,8 +184,7 @@
 
 <ImageWindow url="https://github.com/lailai0916/github-stats">
 
-![](./assets/github-stats-homepage-light.png#gh-light-mode-only)
-![](./assets/github-stats-homepage-dark.png#gh-dark-mode-only)
+![](./assets/github-stats-homepage-light.png#gh-light-mode-only)![](./assets/github-stats-homepage-dark.png#gh-dark-mode-only)
 
 </ImageWindow>
 
@@ -206,8 +195,7 @@
 
 <ImageWindow url="https://github.com/lailai0916/github-stats/settings/secrets/actions">
 
-![](./assets/setting-secret-light.png#gh-light-mode-only)
-![](./assets/setting-secret-dark.png#gh-dark-mode-only)
+![](./assets/setting-secret-light.png#gh-light-mode-only)![](./assets/setting-secret-dark.png#gh-dark-mode-only)
 
 </ImageWindow>
 
@@ -216,8 +204,7 @@
 
 <ImageWindow url="https://github.com/lailai0916/github-stats/settings/secrets/actions">
 
-![](./assets/add-secret-light.png#gh-light-mode-only)
-![](./assets/add-secret-dark.png#gh-dark-mode-only)
+![](./assets/add-secret-light.png#gh-light-mode-only)![](./assets/add-secret-dark.png#gh-dark-mode-only)
 
 </ImageWindow>
 
@@ -233,8 +220,7 @@
 
 <ImageWindow url="https://github.com/lailai0916/github-stats/actions/workflows/main.yml">
 
-![](./assets/run-workflow-light.png#gh-light-mode-only)
-![](./assets/run-workflow-dark.png#gh-dark-mode-only)
+![](./assets/run-workflow-light.png#gh-light-mode-only)![](./assets/run-workflow-dark.png#gh-dark-mode-only)
 
 </ImageWindow>
 
@@ -242,25 +228,20 @@
 
 <ImageWindow url="https://github.com/lailai0916/github-stats/actions">
 
-![](./assets/workflow-success-light.png#gh-light-mode-only)
-![](./assets/workflow-success-dark.png#gh-dark-mode-only)
+![](./assets/workflow-success-light.png#gh-light-mode-only)![](./assets/workflow-success-dark.png#gh-dark-mode-only)
 
 </ImageWindow>
 
 7. 嵌入状态统计图，并实现深浅模式切换。
 
 ```markdown
-![](https://raw.githubusercontent.com/lailai0916/github-stats/master/generated/overview.svg#gh-dark-mode-only)
-![](https://raw.githubusercontent.com/lailai0916/github-stats/master/generated/overview.svg#gh-light-mode-only)
-![](https://raw.githubusercontent.com/lailai0916/github-stats/master/generated/languages.svg#gh-dark-mode-only)
-![](https://raw.githubusercontent.com/lailai0916/github-stats/master/generated/languages.svg#gh-light-mode-only)
+![](https://raw.githubusercontent.com/lailai0916/github-stats/master/generated/overview.svg#gh-light-mode-only)![](https://raw.githubusercontent.com/lailai0916/github-stats/master/generated/overview.svg#gh-dark-mode-only)
+![](https://raw.githubusercontent.com/lailai0916/github-stats/master/generated/languages.svg#gh-light-mode-only)![](https://raw.githubusercontent.com/lailai0916/github-stats/master/generated/languages.svg#gh-dark-mode-only)
 ```
 
 <BrowserWindow>
 
-![](https://raw.githubusercontent.com/lailai0916/github-stats/master/generated/overview.svg#gh-dark-mode-only)
-![](https://raw.githubusercontent.com/lailai0916/github-stats/master/generated/overview.svg#gh-light-mode-only)
-![](https://raw.githubusercontent.com/lailai0916/github-stats/master/generated/languages.svg#gh-dark-mode-only)
-![](https://raw.githubusercontent.com/lailai0916/github-stats/master/generated/languages.svg#gh-light-mode-only)
+![](https://raw.githubusercontent.com/lailai0916/github-stats/master/generated/overview.svg#gh-light-mode-only)![](https://raw.githubusercontent.com/lailai0916/github-stats/master/generated/overview.svg#gh-dark-mode-only)
+![](https://raw.githubusercontent.com/lailai0916/github-stats/master/generated/languages.svg#gh-light-mode-only)![](https://raw.githubusercontent.com/lailai0916/github-stats/master/generated/languages.svg#gh-dark-mode-only)
 
 </BrowserWindow>

@@ -2,8 +2,7 @@
 
 本章是我的高中数学笔记。
 
-![](/img/notbyai/Written-By-Humans-Not-By-AI-Badge-white.svg#gh-light-mode-only)
-![](/img/notbyai/Written-By-Humans-Not-By-AI-Badge-black.svg#gh-dark-mode-only)
+![](/img/notbyai/Written-By-Humans-Not-By-AI-Badge-white.svg#gh-light-mode-only)![](/img/notbyai/Written-By-Humans-Not-By-AI-Badge-black.svg#gh-dark-mode-only)
 
 ## 参考资料
 
