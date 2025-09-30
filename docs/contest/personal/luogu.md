@@ -294,7 +294,7 @@ int main()
 #### NOISG 2021 Finals
 
 - [洛谷 P11299 [NOISG 2021 Finals] Fraud](https://www.luogu.com.cn/problem/P11299)
-- [洛谷 P11300 [NOISG 2021 Finals] Archaeologist（交互题，暂时无法评测）](https://www.luogu.com.cn/problem/P11300)
+- [洛谷 P11300 [NOISG 2021 Finals] Archaeologist](https://www.luogu.com.cn/problem/P11300)
 - [洛谷 P11301 [NOISG 2021 Finals] Password](https://www.luogu.com.cn/problem/P11301)
 - [洛谷 P11302 [NOISG 2021 Finals] Tiles](https://www.luogu.com.cn/problem/P11302)
 - [洛谷 P11303 [NOISG 2021 Finals] Pond](https://www.luogu.com.cn/problem/P11303)
