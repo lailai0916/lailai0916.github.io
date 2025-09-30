@@ -302,9 +302,9 @@ $$
 
 - 欧拉线定理：三角形的外心 $O$，垂心 $H$，重心 $G$ 依次位于同一直线上，且重心到外心的距离是重心到垂心的距离的一半，即
 
-  $$
-  \overrightarrow{OG}=\frac{1}{3}\overrightarrow{OH}=\frac{1}{3}(\overrightarrow{OA}+\overrightarrow{OB}+\overrightarrow{OC})
-  $$
+$$
+\overrightarrow{OG}=\frac{1}{3}\overrightarrow{OH}=\frac{1}{3}(\overrightarrow{OA}+\overrightarrow{OB}+\overrightarrow{OC})
+$$
 
 ### 极化恒等式
 
