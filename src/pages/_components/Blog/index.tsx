@@ -161,7 +161,7 @@ export default function Blog() {
             </p>
             <Link to="/blog">
               <strong>
-                <Translate id="home.blog.more">View More Posts</Translate> →
+                <Translate id="home.blog.more">View More Posts →</Translate>
               </strong>
             </Link>
           </div>
