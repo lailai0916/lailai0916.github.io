@@ -5,9 +5,9 @@ authors: lailai
 tags: [solution, atcoder]
 ---
 
-## 原题链接
-
-- [洛谷 AT_past202203_g 方程式](https://www.luogu.com.cn/problem/AT_past202203_g)
+[![](https://img.shields.io/badge/Luogu-AT__past202203__g-blue?style=for-the-badge&logo=codeforces)](https://www.luogu.com.cn/problem/AT_past202203_g)
+[![](https://img.shields.io/badge/Luogu-Solution-blue?style=for-the-badge&logo=markdown)](https://www.luogu.com.cn/article/r7cpvq1g)
+[![](https://img.shields.io/badge/Blog-Solution-blue?style=for-the-badge&logo=markdown)](https://lailai.one/blog/solution/AT_past202203_g)
 
 <!-- truncate -->
 
