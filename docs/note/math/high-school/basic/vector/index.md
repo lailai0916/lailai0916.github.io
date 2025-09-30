@@ -245,7 +245,7 @@ $$
 |\bm a|\cos\theta=\frac{\bm a\cdot\bm b}{|\bm b|}
 $$
 
-  而投影向量需要再乘上 $\bm b$ 方向的单位向量：
+而投影向量需要再乘上 $\bm b$ 方向的单位向量：
 
 $$
 \frac{\bm a\cdot\bm b}{|\bm b|^2}\bm b
