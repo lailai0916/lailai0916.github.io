@@ -1,13 +1,11 @@
-# 题目搬运
-
-本文是我的题目搬运记录。
+# 洛谷题目
 
 ## 参考资料
 
+- [洛谷主题库题解规范（2023 试行版） - 洛谷帮助中心](https://help.luogu.com.cn/rules/academic/solution-standard)
+- [如何用 Markdown 和 LaTeX 写一篇排版整齐的题解？ - 洛谷帮助中心](https://help.luogu.com.cn/rules/academic/guide/solution)
 - [洛谷主题库题目规范 - 洛谷帮助中心](https://help.luogu.com.cn/rules/academic/problem-standard)
 - [题目测试点配置文件 - 洛谷帮助中心](https://help.luogu.com.cn/manual/luogu/problem/testcase-config)
-- [MikeMirzayanov/testlib](https://github.com/MikeMirzayanov/testlib)
-- [noisg/sg_noi_archive](https://github.com/noisg/sg_noi_archive)
 
 ## 说明
 
@@ -15,7 +13,137 @@
 
 每搬运一道主题库题目可获得 $1$ 分咕值，搬满 $30$ 题即可 **永久** 拿满搬题部分的 $30$ 分咕值。
 
-## 题目测试点配置文件生成器
+## 题解
+
+本文是我的洛谷题解模板。
+
+### 题解模板
+
+````markdown
+[![](https://img.shields.io/badge/Luogu-{PID}-blue?style=for-the-badge&logo=codeforces)](https://www.luogu.com.cn/problem/{PID})
+[![](https://img.shields.io/badge/Luogu-Solution-blue?style=for-the-badge&logo=markdown)](https://www.luogu.com.cn/article/{AID})
+[![](https://img.shields.io/badge/Blog-Solution-blue?style=for-the-badge&logo=markdown)](https://lailai.one/blog/solution/{PID})
+
+## 参考资料
+
+## 题意简述
+
+## 基础知识
+
+## 解题思路
+
+## 参考代码
+
+```cpp
+
+```
+````
+
+:::tip
+
+**参考资料**、**题意简述**、**基础知识** 板块可根据实际需求决定是否添加。
+
+:::
+
+### 例题：洛谷 P1001 A+B Problem
+
+<Problem id="P1001" />
+
+<details>
+<summary>Solution</summary>
+
+<Tabs>
+<TabItem value="题解示例">
+
+````markdown
+[![](https://img.shields.io/badge/Luogu-P1001-blue?style=for-the-badge&logo=codeforces)](https://www.luogu.com.cn/problem/P1001)
+[![](https://img.shields.io/badge/Luogu-Solution-blue?style=for-the-badge&logo=markdown)](https://www.luogu.com.cn/article/abcd1234)
+[![](https://img.shields.io/badge/Blog-Solution-blue?style=for-the-badge&logo=markdown)](https://lailai.one/blog/solution/P1001)
+
+## 参考资料
+
+- [加法 - 维基百科](https://zh.wikipedia.org/zh-cn/加法)
+
+## 题意简述
+
+给定两个整数 $a,b$，求它们的和。（$|a|,|b| \le {10}^9$）
+
+## 基础知识
+
+加法是基本的算术运算之一，两个自然数相加是将他们组合起来的总量。
+
+## 解题思路
+
+使用 `cin` 读入两个整数，使用 `cout` 输出它们的和。
+
+## 参考代码
+
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+	int a,b;
+	cin>>a>>b;
+	cout<<a+b<<'\n';
+	return 0;
+}
+```
+````
+
+</TabItem>
+<TabItem value="效果展示">
+
+<BrowserWindow>
+
+[![](https://img.shields.io/badge/Luogu-P1001-blue?style=for-the-badge&logo=codeforces)](https://www.luogu.com.cn/problem/P1001)
+[![](https://img.shields.io/badge/Luogu-Solution-blue?style=for-the-badge&logo=markdown)](https://www.luogu.com.cn/article/abcd1234)
+[![](https://img.shields.io/badge/Blog-Solution-blue?style=for-the-badge&logo=markdown)](https://lailai.one/blog/solution/P1001)
+
+<h2>参考资料</h2>
+
+- [加法 - 维基百科](https://zh.wikipedia.org/zh-cn/加法)
+
+<h2>题意简述</h2>
+
+给定两个整数 $a,b$，求它们的和。（$|a|,|b| \le {10}^9$）
+
+<h2>基础知识</h2>
+
+加法是基本的算术运算之一，两个自然数相加是将他们组合起来的总量。
+
+<h2>解题思路</h2>
+
+使用 `cin` 读入两个整数，使用 `cout` 输出它们的和。
+
+<h2>参考代码</h2>
+
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+	int a,b;
+	cin>>a>>b;
+	cout<<a+b<<'\n';
+	return 0;
+}
+```
+
+</BrowserWindow>
+
+</TabItem>
+</Tabs>
+
+</details>
+
+## 搬题
+
+本文是我的题目搬运记录。
+
+### 题目测试点配置文件生成器
 
 以下程序可以根据时间限制、空间限制、子任务的分值和数量，自动生成标准格式的题目配置文件。
 
@@ -53,7 +181,7 @@ int main()
 }
 ```
 
-## 提示词
+### 提示词
 
 以下提示词可用于 AI 翻译整理英文 PDF 题面为规范格式。
 
@@ -116,9 +244,13 @@ int main()
 - 最终仅输出 Markdown 源文本，**不得**添加额外解释、图示或格式改动。
 ```
 
-## NOISG
+### NOISG
 
-### 比赛搬题表
+<GitHub repo="noisg/sg_noi_archive" />
+
+<GitHub repo="MikeMirzayanov/testlib" />
+
+#### 比赛搬题表
 
 | 年份 / 后缀 |                       (null)                       |                       Qualification                       |                        Prelim                        |                       Finals                       | Practice | Prelim Practice |
 | :---------: | :------------------------------------------------: | :-------------------------------------------------------: | :--------------------------------------------------: | :------------------------------------------------: | :------: | :-------------: |
@@ -151,13 +283,13 @@ int main()
 |    2024     |                         -                          |                             -                             |  [Eason_cyx](https://www.luogu.com.cn/user/741244)   | [lailai0916](https://www.luogu.com.cn/user/455474) |    -     |        -        |
 |    2025     |                         -                          |                             -                             | [Starrykiller](https://www.luogu.com.cn/user/235125) |   [Milmon](https://www.luogu.com.cn/user/234641)   |    -     |        -        |
 
-### NOISG 2022 Qualification
+#### NOISG 2022 Qualification
 
 - [洛谷 P11293 [NOISG 2022 Qualification] L-Board](https://www.luogu.com.cn/problem/P11293)
 - [洛谷 P11294 [NOISG 2022 Qualification] Tree Cutting](https://www.luogu.com.cn/problem/P11294)
 - [洛谷 P11295 [NOISG 2022 Qualification] Dragonfly](https://www.luogu.com.cn/problem/P11295)
 
-### NOISG 2021 Finals
+#### NOISG 2021 Finals
 
 - [洛谷 P11299 [NOISG 2021 Finals] Fraud](https://www.luogu.com.cn/problem/P11299)
 - [洛谷 P11300 [NOISG 2021 Finals] Archaeologist（交互题，暂时无法评测）](https://www.luogu.com.cn/problem/P11300)
@@ -165,14 +297,14 @@ int main()
 - [洛谷 P11302 [NOISG 2021 Finals] Tiles](https://www.luogu.com.cn/problem/P11302)
 - [洛谷 P11303 [NOISG 2021 Finals] Pond](https://www.luogu.com.cn/problem/P11303)
 
-### NOISG 2020 Qualification
+#### NOISG 2020 Qualification
 
 - [洛谷 P11319 [NOISG 2020 Qualification] Cryptography](https://www.luogu.com.cn/problem/P11319)
 - [洛谷 P11320 [NOISG 2020 Qualification] Fuel Station](https://www.luogu.com.cn/problem/P11320)
 - [洛谷 P11321 [NOISG 2020 Qualification] Relay Marathon](https://www.luogu.com.cn/problem/P11321)
 - [洛谷 P11322 [NOISG 2020 Qualification] Firefighting](https://www.luogu.com.cn/problem/P11322)
 
-### NOISG 2020 Finals
+#### NOISG 2020 Finals
 
 - [洛谷 P11332 [NOISG 2020 Finals] Labels](https://www.luogu.com.cn/problem/P11332)
 - [洛谷 P11333 [NOISG 2020 Finals] Discharging](https://www.luogu.com.cn/problem/P11333)
@@ -180,7 +312,7 @@ int main()
 - [洛谷 P11335 [NOISG 2020 Finals] Arcade](https://www.luogu.com.cn/problem/P11335)
 - [洛谷 P11336 [NOISG 2020 Finals] Aesthetic](https://www.luogu.com.cn/problem/P11336)
 
-### NOISG 2024 Finals
+#### NOISG 2024 Finals
 
 - [洛谷 P11349 [NOISG 2024 Finals] Problem Setter](https://www.luogu.com.cn/problem/P11349)
 - [洛谷 P11350 [NOISG 2024 Finals] Shops](https://www.luogu.com.cn/problem/P11350)
@@ -188,13 +320,13 @@ int main()
 - [洛谷 P11352 [NOISG 2024 Finals] Coin](https://www.luogu.com.cn/problem/P11352)
 - [洛谷 P11353 [NOISG 2024 Finals] Field](https://www.luogu.com.cn/problem/P11353)
 
-### NOISG 2020 Prelim
+#### NOISG 2020 Prelim
 
 - [洛谷 P12931 [NOISG 2020 Prelim] Mountains](https://www.luogu.com.cn/problem/P12931)
 - [洛谷 P12932 [NOISG 2020 Prelim] Visiting Singapore](https://www.luogu.com.cn/problem/P12932)
 - [洛谷 P12933 [NOISG 2020 Prelim] Mountains](https://www.luogu.com.cn/problem/P12933)
 
-### NOISG 2019
+#### NOISG 2019
 
 - [洛谷 P13075 [NOISG 2019] Pilot](https://www.luogu.com.cn/problem/P13075)
 - [洛谷 P13076 [NOISG 2019] Lasers](https://www.luogu.com.cn/problem/P13076)

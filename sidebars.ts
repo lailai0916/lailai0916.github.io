@@ -14,8 +14,7 @@ const sidebars: SidebarsConfig = {
         'contest/personal/code-style',
         'contest/personal/code-comparator',
         'contest/personal/common-templates',
-        'contest/personal/solution-template',
-        'contest/personal/problem-transfer',
+        'contest/personal/luogu',
       ],
     },
     {
