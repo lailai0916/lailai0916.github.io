@@ -12,7 +12,7 @@
 ````markdown
 [![](https://img.shields.io/badge/Luogu-{PID}-blue?style=for-the-badge&logo=codeforces)](https://www.luogu.com.cn/problem/{PID})
 [![](https://img.shields.io/badge/Luogu-Solution-blue?style=for-the-badge&logo=markdown)](https://www.luogu.com.cn/article/{AID})
-[![](https://img.shields.io/badge/lailai.one-Solution-blue?style=for-the-badge&logo=markdown)](https://lailai.one/blog/solution/{PID})
+[![](https://img.shields.io/badge/Blog-Solution-blue?style=for-the-badge&logo=markdown)](https://lailai.one/blog/solution/{PID})
 
 ## 参考资料
 
@@ -44,7 +44,7 @@
 ````markdown
 [![](https://img.shields.io/badge/Luogu-P1001-blue?style=for-the-badge&logo=codeforces)](https://www.luogu.com.cn/problem/P1001)
 [![](https://img.shields.io/badge/Luogu-Solution-blue?style=for-the-badge&logo=markdown)](https://www.luogu.com.cn/article/abcd1234)
-[![](https://img.shields.io/badge/lailai.one-Solution-blue?style=for-the-badge&logo=markdown)](https://lailai.one/blog/solution/P1001)
+[![](https://img.shields.io/badge/Blog-Solution-blue?style=for-the-badge&logo=markdown)](https://lailai.one/blog/solution/P1001)
 
 ## 参考资料
 
@@ -84,7 +84,7 @@ int main()
 
 [![](https://img.shields.io/badge/Luogu-P1001-blue?style=for-the-badge&logo=codeforces)](https://www.luogu.com.cn/problem/P1001)
 [![](https://img.shields.io/badge/Luogu-Solution-blue?style=for-the-badge&logo=markdown)](https://www.luogu.com.cn/article/abcd1234)
-[![](https://img.shields.io/badge/lailai.one-Solution-blue?style=for-the-badge&logo=markdown)](https://lailai.one/blog/solution/P1001)
+[![](https://img.shields.io/badge/Blog-Solution-blue?style=for-the-badge&logo=markdown)](https://lailai.one/blog/solution/P1001)
 
 <h2>参考资料</h2>
 
