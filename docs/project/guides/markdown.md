@@ -9,7 +9,7 @@ Markdown 文档以纯文本格式存储，这意味着，它们可以用几乎�
 ## 参考资料
 
 - [Markdown 书写风格指南](http://einverne.github.io/markdown-style-guide/zh.html)
-- [洛谷 Markdown 格式手册 - 洛谷帮助中心](https://help.luogu.com.cn/rules/academic/handbook/markdown)
+- [洛谷 Markdown 格式手册 | 洛谷帮助中心](https://help.luogu.com.cn/rules/academic/handbook/markdown)
 
 ## 推荐资源
 

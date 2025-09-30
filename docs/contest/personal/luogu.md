@@ -6,10 +6,9 @@
 
 ## 参考资料
 
-- [洛谷主题库题解规范（2023 试行版） - 洛谷帮助中心](https://help.luogu.com.cn/rules/academic/solution-standard)
-- [如何用 Markdown 和 LaTeX 写一篇排版整齐的题解？ - 洛谷帮助中心](https://help.luogu.com.cn/rules/academic/guide/solution)
-- [洛谷主题库题目规范 - 洛谷帮助中心](https://help.luogu.com.cn/rules/academic/problem-standard)
-- [题目测试点配置文件 - 洛谷帮助中心](https://help.luogu.com.cn/manual/luogu/problem/testcase-config)
+- [洛谷主题库题解规范（2023 试行版） | 洛谷帮助中心](https://help.luogu.com.cn/rules/academic/solution-standard)
+- [如何用 Markdown 和 LaTeX 写一篇排版整齐的题解？ | 洛谷帮助中心](https://help.luogu.com.cn/rules/academic/guide/solution)
+- [洛谷主题库题目规范 | 洛谷帮助中心](https://help.luogu.com.cn/rules/academic/problem-standard)
 
 ## 题解
 
@@ -143,6 +142,8 @@ int main()
 
 ### 题目测试点配置文件生成器
 
+- [题目测试点配置文件 | 洛谷帮助中心](https://help.luogu.com.cn/manual/luogu/problem/testcase-config)
+
 以下程序可以根据时间限制、空间限制、子任务的分值和数量，自动生成标准格式的题目配置文件。
 
 ```cpp title="main.cpp"
@@ -180,6 +181,8 @@ int main()
 ```
 
 ### Special Judge
+
+- [Special Judge 功能说明 | 洛谷帮助中心](https://help.luogu.com.cn/manual/luogu/problem/special-judge)
 
 <GitHub repo="MikeMirzayanov/testlib" />
 
