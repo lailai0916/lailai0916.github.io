@@ -26,7 +26,7 @@ export const DOCS_LIST: DocsItem[] = [
       <Translate id="data.docs.p1.text">
         The Contest section covers fundamental knowledge, common problem types,
         solution ideas, code templates, and competition experience related to
-        Olympiad in Informatics. It focuses on real contest environments,
+        Olympiad in Informatics (OI). It focuses on real contest environments,
         emphasizing algorithmic skills, programming practice, and overall
         competitive ability.
       </Translate>
