@@ -5,9 +5,9 @@ authors: lailai
 tags: [solution, atcoder]
 ---
 
-## 原题链接
-
-- [洛谷 AT_iroha2019_day2_c 陽気な妖姫](https://www.luogu.com.cn/problem/AT_iroha2019_day2_c)
+[![](https://img.shields.io/badge/Luogu-AT__iroha2019__day2__c-blue?style=for-the-badge&logo=codeforces)](https://www.luogu.com.cn/problem/AT_iroha2019_day2_c)
+[![](https://img.shields.io/badge/Luogu-Solution-blue?style=for-the-badge&logo=markdown)](https://www.luogu.com.cn/article/zwqdlgue)
+[![](https://img.shields.io/badge/Blog-Solution-blue?style=for-the-badge&logo=markdown)](https://lailai.one/blog/solution/AT_iroha2019_day2_c)
 
 <!-- truncate -->
 
