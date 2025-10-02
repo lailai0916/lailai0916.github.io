@@ -5,9 +5,7 @@ authors: lailai
 tags: [solution, atcoder]
 ---
 
-[![](https://img.shields.io/badge/Luogu-AT__past202203__g-blue?style=for-the-badge&logo=codeforces)](https://www.luogu.com.cn/problem/AT_past202203_g)
-[![](https://img.shields.io/badge/Luogu-Solution-blue?style=for-the-badge&logo=markdown)](https://www.luogu.com.cn/article/r7cpvq1g)
-[![](https://img.shields.io/badge/Blog-Solution-blue?style=for-the-badge&logo=markdown)](https://lailai.one/blog/solution/AT_past202203_g)
+<Solution pid="AT_past202203_g" aid="r7cpvq1g" />
 
 <!-- truncate -->
 

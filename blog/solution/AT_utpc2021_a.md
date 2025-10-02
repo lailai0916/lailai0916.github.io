@@ -5,9 +5,7 @@ authors: lailai
 tags: [solution, atcoder]
 ---
 
-[![](https://img.shields.io/badge/Luogu-AT__utpc2021__a-blue?style=for-the-badge&logo=codeforces)](https://www.luogu.com.cn/problem/AT_utpc2021_a)
-[![](https://img.shields.io/badge/Luogu-Solution-blue?style=for-the-badge&logo=markdown)](https://www.luogu.com.cn/article/klkmkf8a)
-[![](https://img.shields.io/badge/Blog-Solution-blue?style=for-the-badge&logo=markdown)](https://lailai.one/blog/solution/AT_utpc2021_a)
+<Solution pid="AT_utpc2021_a" aid="klkmkf8a" />
 
 <!-- truncate -->
 
