@@ -15,13 +15,13 @@ tags: [math]
 
 （1）如图 $1$，求 $\sin\angle BAC$ 的值。
 
-<Desmos id="4ydta0qtnx" />
-
 （2）如图 $2$，$E$ 是 $AD$ 延长线上的一点，连接 $BE$，作 $\triangle FBE$ 与 $\triangle ABE$ 关于直线 $BE$ 对称，$EF$ 交射线 $AC$ 于点 $P$，连接 $BP$。
 
 ① 当 $EF\perp AC$ 时，求 $AE$ 的长。
 
 ② 求 $PA-PB$ 的最小值。
+
+<Desmos id="4ydta0qtnx" />
 
 <Desmos id="fxo4hftvxi" />
 
