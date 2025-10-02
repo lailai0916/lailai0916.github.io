@@ -10,6 +10,11 @@ export interface ChangelogItem {
 
 export const CHANGELOG_LIST: ChangelogItem[] = [
   {
+    date: '2025-10-01',
+    type: 'changed',
+    content: '`<Solution />` 题解标题组件',
+  },
+  {
     date: '2025-09-26',
     type: 'changed',
     content:
@@ -34,7 +39,7 @@ export const CHANGELOG_LIST: ChangelogItem[] = [
   {
     date: '2025-08-31',
     type: 'added',
-    content: '`example` 示例告示框',
+    content: '`:::example` 示例告示框',
   },
   {
     date: '2025-08-14',
@@ -49,7 +54,7 @@ export const CHANGELOG_LIST: ChangelogItem[] = [
   {
     date: '2025-07-22',
     type: 'added',
-    content: '**GitHub** 项目展示组件',
+    content: '`<GitHub />` 项目展示组件',
   },
   {
     date: '2025-06-23',
