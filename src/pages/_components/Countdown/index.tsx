@@ -2,6 +2,7 @@ import React, { useEffect, useState, useRef } from 'react';
 import SectionContainer from '@site/src/components/laikit/section/SectionContainer1';
 import SectionHeader from '@site/src/components/laikit/section/SectionHeader';
 import { translate } from '@docusaurus/Translate';
+import useIsBrowser from '@docusaurus/useIsBrowser';
 import styles from './styles.module.css';
 
 const TARGET_DATE = '2026-01-01T00:00:00';
@@ -110,6 +111,14 @@ interface CountdownState {
   isTimeUp: boolean;
 }
 
+const INITIAL_STATE: CountdownState = {
+  days: 0,
+  hours: 0,
+  minutes: 0,
+  seconds: 0,
+  isTimeUp: false,
+};
+
 function calculateTimeLeft(): CountdownState {
   const distance = new Date(TARGET_DATE).getTime() - Date.now();
 
@@ -138,36 +147,47 @@ function CountdownContent({ timeLeft }: { timeLeft: CountdownState }) {
 }
 
 export default function Countdown() {
-  const [state, setState] = useState(calculateTimeLeft);
+  const isBrowser = useIsBrowser();
+  const [state, setState] = useState<CountdownState>(INITIAL_STATE);
   const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
-  const tick = () => {
-    const result = calculateTimeLeft();
-    setState(result);
-
-    if (result.isTimeUp) {
-      return;
+  useEffect(() => {
+    if (!isBrowser) {
+      return undefined;
     }
 
-    const now = Date.now();
-    const nextSecond = Math.ceil(now / 1000) * 1000;
-    const delay = nextSecond - now;
+    let cancelled = false;
 
-    timerRef.current = setTimeout(tick, delay);
-  };
+    const tick = () => {
+      if (cancelled) {
+        return;
+      }
 
-  useEffect(() => {
-    if (state.isTimeUp) return;
+      const result = calculateTimeLeft();
+      setState(result);
+
+      if (result.isTimeUp) {
+        timerRef.current = null;
+        return;
+      }
+
+      const now = Date.now();
+      const nextSecond = Math.ceil(now / 1000) * 1000;
+      const delay = nextSecond - now;
+
+      timerRef.current = setTimeout(tick, delay);
+    };
 
     tick();
 
     return () => {
+      cancelled = true;
       if (timerRef.current) {
         clearTimeout(timerRef.current);
         timerRef.current = null;
       }
     };
-  }, []);
+  }, [isBrowser]);
 
   return (
     <SectionContainer>
