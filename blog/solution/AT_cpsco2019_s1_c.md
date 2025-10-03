@@ -5,9 +5,7 @@ authors: lailai
 tags: [solution, atcoder]
 ---
 
-## 原题链接
-
-- [洛谷 AT_cpsco2019_s1_c Coins](https://www.luogu.com.cn/problem/AT_cpsco2019_s1_c)
+<Solution pid="AT_cpsco2019_s1_c" aid="7ag0p8ey" />
 
 <!-- truncate -->
 
@@ -15,9 +13,7 @@ tags: [solution, atcoder]
 
 有 $20$ 种硬币（每种硬币数量充足），面值分别为 $1,10,100,\dots,10^{9}$ 和 $5,50,500,\dots,5\times10^{9}$。
 
-给定 $n$ 种水果，每种的价格为 $a_i$ 元。
-
-求任意买 $k$ 种水果，使用硬币的最少个数。
+给定 $n$ 种水果，每种的价格为 $a_i$ 元。求任意买 $k$ 种水果，使用硬币的最少个数。
 
 ## 解题思路
 
