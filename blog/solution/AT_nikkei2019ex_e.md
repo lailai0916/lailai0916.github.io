@@ -5,6 +5,8 @@ authors: lailai
 tags: [solution, atcoder]
 ---
 
+<Solution pid="AT_nikkei2019ex_e" aid="437ulbdi" />
+
 ## 原题链接
 
 - [洛谷 AT_nikkei2019ex_e コラッツ問題](https://www.luogu.com.cn/problem/AT_nikkei2019ex_e)
@@ -18,8 +20,8 @@ tags: [solution, atcoder]
 $$
 p-1=
 \begin{cases}
-  f\left(\frac{x}{2}\right)&x\bmod2=0 \\
-  f(3x+1)&x\bmod2=1
+  f\left(\frac{x}{2}\right) & x\bmod2=0 \\
+  f(3x+1) & x\bmod2=1
 \end{cases}
 $$
 
