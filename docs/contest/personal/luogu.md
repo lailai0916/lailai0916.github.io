@@ -17,9 +17,9 @@
 ### 题解模板
 
 ````markdown
-[![](https://img.shields.io/badge/Luogu-{PID}-blue?style=for-the-badge&logo=codeforces)](https://www.luogu.com.cn/problem/{PID})
-[![](https://img.shields.io/badge/Luogu-Solution-blue?style=for-the-badge&logo=markdown)](https://www.luogu.com.cn/article/{AID})
-[![](https://img.shields.io/badge/Blog-Solution-blue?style=for-the-badge&logo=markdown)](https://lailai.one/blog/solution/{PID})
+[![](https://img.shields.io/badge/Luogu-{pid}-blue?style=for-the-badge&logo=codeforces)](https://www.luogu.com.cn/problem/{pid})
+[![](https://img.shields.io/badge/Luogu-Solution-blue?style=for-the-badge&logo=markdown)](https://www.luogu.com.cn/article/{aid})
+[![](https://img.shields.io/badge/Blog-Solution-blue?style=for-the-badge&logo=markdown)](https://lailai.one/blog/solution/{pid})
 
 ## 参考资料
 
@@ -42,7 +42,7 @@
 
 :::
 
-### 例题：洛谷 P1001 A+B Problem
+### 例题（洛谷 P1001 A+B Problem）
 
 <Problem id="P1001" />
 
