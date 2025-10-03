@@ -5,9 +5,7 @@ authors: lailai
 tags: [solution, atcoder]
 ---
 
-## 原题链接
-
-- [洛谷 AT_arc168_a [ARC168A] \<Inversion\>](https://www.luogu.com.cn/problem/AT_arc168_a)
+<Solution pid="AT_arc168_a" aid="hm72ngsq" />
 
 <!-- truncate -->
 
