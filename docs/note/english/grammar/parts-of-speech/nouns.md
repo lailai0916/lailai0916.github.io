@@ -139,7 +139,7 @@
 
 :::tip
 
-有时抽象名词也可数，例如：
+有时抽象名词也可数。例如：
 
 - Thank you → It's a pleasure.
 
