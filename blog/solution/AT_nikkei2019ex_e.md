@@ -7,10 +7,6 @@ tags: [solution, atcoder]
 
 <Solution pid="AT_nikkei2019ex_e" aid="437ulbdi" />
 
-## 原题链接
-
-- [洛谷 AT_nikkei2019ex_e コラッツ問題](https://www.luogu.com.cn/problem/AT_nikkei2019ex_e)
-
 <!-- truncate -->
 
 ## 解题思路
