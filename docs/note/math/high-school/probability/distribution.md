@@ -90,4 +90,4 @@ $$
 P(\mu-3\sigma\leq X\leq \mu+3\sigma)\approx 0.9973
 $$
 
-$3\sigma$ 原则：服从于正态分布 $N(\mu,\sigma^2)$ 的随机变量只取 $[\mu-3\sigma,\mu+3\sigma]$ 中的值。
+$3\sigma$ 原则：服从于正态分布 $N(\mu,\sigma^2)$ 的随机变量通常只取 $[\mu-3\sigma,\mu+3\sigma]$ 之间的值。
