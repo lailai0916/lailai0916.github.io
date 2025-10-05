@@ -576,7 +576,7 @@ $$
 不难发现它们的乘积不含根式：
 
 $$
-xy=(\sqrt a-\sqrt b)(\sqrt a+\sqrt b)=a-b(a,b\ge 0)
+xy=\left(\sqrt a-\sqrt b\right)\left(\sqrt a+\sqrt b\right)=a-b
 $$
 
 :::tip
@@ -598,15 +598,15 @@ $$
 $$
 
 $$
-\frac{1}{\sqrt{a}-\sqrt{b}}=\frac{\sqrt{a}+\sqrt{b}}{(\sqrt{a}-\sqrt{b})(\sqrt{a}+\sqrt{b})}=\frac{\sqrt{a}+\sqrt{b}}{a-b}
+\frac{1}{\sqrt{a}-\sqrt{b}}=\frac{\sqrt{a}+\sqrt{b}}{\left(\sqrt{a}-\sqrt{b}\right)\left(\sqrt{a}+\sqrt{b}\right)}=\frac{\sqrt{a}+\sqrt{b}}{a-b}
 $$
 
 $$
-\frac{1}{a+\sqrt{b}}=\frac{a-\sqrt{b}}{(a+\sqrt{b})(a-\sqrt{b})}=\frac{a-\sqrt{b}}{a^2-b}
+\frac{1}{a+\sqrt{b}}=\frac{a-\sqrt{b}}{\left(a+\sqrt{b}\right)\left(a-\sqrt{b}\right)}=\frac{a-\sqrt{b}}{a^2-b}
 $$
 
 $$
-\frac{1}{a-\sqrt{b}}=\frac{a+\sqrt{b}}{(a-\sqrt{b})(a+\sqrt{b})}=\frac{a+\sqrt{b}}{a^2-b}
+\frac{1}{a-\sqrt{b}}=\frac{a+\sqrt{b}}{\left(a-\sqrt{b}\right)\left(a+\sqrt{b}\right)}=\frac{a+\sqrt{b}}{a^2-b}
 $$
 
 ## 不等式
