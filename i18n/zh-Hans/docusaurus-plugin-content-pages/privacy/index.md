@@ -167,7 +167,7 @@ import { MDTitle } from '@site/src/components/laikit/markdown';
 
 我们收集的分析信息将被归类和汇总，以便用于在本条款中描述的用途。
 
-任何非分析信息和任何其它非审核和研究用途所需的信息（如完整的、未经过去敏和模糊化的 IP 地址）将在汇总阶段被删除、去身份化、匿名化或去敏。
+任何非分析信息和任何其他非审核和研究用途所需的信息（如完整的、未经过去敏和模糊化的 IP 地址）将在汇总阶段被删除、去身份化、匿名化或去敏。
 
 分析用途的信息将被存储在具有有限的，需要授权的访问权限的计算机系统中，这些系统受到数学算法加密和（或）物理安全措施的保护，在我们使用第三方提供的存储服务时也是如此。这些措施在现代计算机系统中不可能在短时间内被破解。
 
@@ -219,7 +219,7 @@ import { MDTitle } from '@site/src/components/laikit/markdown';
 
 :::tip
 
-**我们从未在我们提供的服务中植入任何「后门」或者任何其它访问方式。我们不会在知情的情况下积极和主动地向任何政府透露任何信息。永远不会。**
+**我们从未在我们提供的服务中植入任何「后门」或者任何其他访问方式。我们不会在知情的情况下积极和主动地向任何政府透露任何信息。永远不会。**
 
 :::
 
@@ -253,7 +253,7 @@ import { MDTitle } from '@site/src/components/laikit/markdown';
 
 :::warning
 
-如果我们发现我们的服务可能被滥用，我们将保留这些信息以帮助我们防止未来的滥用。我们无法将这些信息与您、您的家庭、IP 地址或任何我们存储的其它个人信息联系起来。
+如果我们发现我们的服务可能被滥用，我们将保留这些信息以帮助我们防止未来的滥用。我们无法将这些信息与您、您的家庭、IP 地址或任何我们存储的其他个人信息联系起来。
 
 :::
 
@@ -316,7 +316,7 @@ Cookies 可以是「持久性 Cookies」或「会话 Cookies」。当您下线�
 - 对于 Internet Explorer 浏览器, 请访问 [Microsoft 提供的页面](https://support.microsoft.com/kb/278835)。
 - 对于 Firefox 浏览器, 请访问 [Mozilla 提供的页面](https://support.mozilla.org/en-US/kb/clear-cookies-and-site-data-firefox)。
 - 对于 Safari 浏览器, 请访问 [Apple 提供的页面](https://support.apple.com/guide/safari/manage-cookies-and-website-data-sfri11471/mac)。
-- 对于其它浏览器, 请访问你的浏览器提供的支持页面。
+- 对于其他浏览器, 请访问你的浏览器提供的支持页面。
 
 Flash Cookies 与浏览器 Cookies 的并不共享设置的管理。关于您如何删除 Flash Cookies 的更多信息，请前往 [Adobe 的网站](https://helpx.adobe.com/flash-player/kb/disable-local-shared-objects-flash.html#main_Where_can_I_change_the_settings_for_disabling__or_deleting_local_shared_objects_) 阅读「我在哪里可以改变禁用或删除本地共享对象的设置？」。
 
