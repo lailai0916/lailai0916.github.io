@@ -8,7 +8,7 @@
 
 ### 试除法
 
-时间复杂度 $O(\sqrt{n})$。
+时间复杂度为 $O(\sqrt{n})$。
 
 ```cpp
 bool prime(int n)
@@ -24,7 +24,7 @@ bool prime(int n)
 
 ### Fermat 素性测试
 
-时间复杂度 $O(k\log{n})$。
+时间复杂度为 $O(k\log{n})$。
 
 ```cpp
 ll Pow(ll x,ll y,int mod)
@@ -52,7 +52,7 @@ bool prime(int n,int k)
 
 ### Miller–Rabin 素性测试
 
-时间复杂度 $O(k\log^3{n})$。
+时间复杂度为 $O(k\log^3{n})$。
 
 ```cpp
 ll Pow(ll x,ll y,int mod)

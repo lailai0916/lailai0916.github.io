@@ -57,7 +57,7 @@ for(int i=1;i<n;i++)
 }
 ```
 
-时间复杂度 $\Theta(n^2)$。
+时间复杂度为 $\Theta(n^2)$。
 
 </TabItem>
 <TabItem value="Example 2">
@@ -72,7 +72,7 @@ for(int i=1;i<=n;i++)
 }
 ```
 
-时间复杂度 $\Theta\left(\sum_{i=1}^{n} \left\lfloor \frac{n}{i} \right\rfloor\right)=\Theta(n\log n)$。（[调和级数](https://zh.wikipedia.org/zh-cn/调和级数)）
+时间复杂度为 $\Theta\left(\sum_{i=1}^{n} \left\lfloor \frac{n}{i} \right\rfloor\right)=\Theta(n\log n)$。（[调和级数](https://zh.wikipedia.org/zh-cn/调和级数)）
 
 </TabItem>
 <TabItem value="Example 3">
@@ -90,7 +90,7 @@ for(int i=1;i<=n;i++)
 }
 ```
 
-时间复杂度 $\Theta(n^2)$。
+时间复杂度为 $\Theta(n^2)$。
 
 </TabItem>
 </Tabs>
@@ -127,7 +127,7 @@ $$
 T(n)=2T\left(\frac{n}{2}\right)+\Theta(1)
 $$
 
-时间复杂度 $\Theta(n)$。
+时间复杂度为 $\Theta(n)$。
 
 </TabItem>
 <TabItem value="Example 2">
@@ -136,7 +136,7 @@ $$
 T(n)=2T\left(\frac{n}{2}\right)+\Theta(n)
 $$
 
-时间复杂度 $\Theta(n\log n)$。
+时间复杂度为 $\Theta(n\log n)$。
 
 </TabItem>
 <TabItem value="Example 3">
@@ -145,7 +145,7 @@ $$
 T(n)=2T\left(\frac{n}{2}\right)+\Theta(n\log n)
 $$
 
-时间复杂度 $\Theta(n\log^2 n)$。
+时间复杂度为 $\Theta(n\log^2 n)$。
 
 </TabItem>
 </Tabs>
