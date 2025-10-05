@@ -120,6 +120,7 @@ const sidebars: SidebarsConfig = {
         description: '本章介绍 OI 中可能会用到的数学知识。',
       },
       items: [
+        'contest/math/bignum',
         'contest/math/binary-exponentiation',
         'contest/math/permutation',
         {
