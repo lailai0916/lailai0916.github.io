@@ -594,7 +594,7 @@ $$
 当 **分母** 含有根式时，同时乘以分母的 **共轭根式**，即可实现 **分母有理化**：
 
 $$
-\frac{1}{\sqrt{a}}=\frac{\sqrt{a}}{a}
+\frac{1}{\sqrt{a}}=\frac{\sqrt{a}}{\sqrt{a}\times\sqrt{a}}=\frac{\sqrt{a}}{a}
 $$
 
 $$
