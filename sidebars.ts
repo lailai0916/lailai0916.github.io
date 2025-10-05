@@ -167,6 +167,7 @@ const sidebars: SidebarsConfig = {
             'contest/math/combinatorics/drawer-principle',
             'contest/math/combinatorics/inclusion-exclusion-principle',
             'contest/math/combinatorics/vandermonde-convolution',
+            'contest/math/combinatorics/polya',
           ],
         },
         {
