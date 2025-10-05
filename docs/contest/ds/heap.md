@@ -10,7 +10,7 @@
 std::priority_queue<pair<int,int>> q[N];
 ```
 
-## `__gnu_pb_ds::priority_queue`
+## `__gnu_pbds::priority_queue`
 
 ```cpp
 #include <bits/extc++.h>
