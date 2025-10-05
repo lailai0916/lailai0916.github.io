@@ -5,7 +5,7 @@ authors: lailai
 tags: [misc]
 ---
 
-GitHub 个人主页中有一个“Achievements”板块，可以通过脚本自动获取成就。
+[GitHub](https://github.com) 个人主页中有一个 **Achievements** 板块，可以通过自动化脚本获取成就。
 
 <!-- truncate -->
 
@@ -21,7 +21,7 @@ npm install playwright
 npx playwright install
 ```
 
-## Login 脚本
+## 登录账号
 
 ```js title="login.js"
 const { chromium } = require('playwright');
