@@ -89,7 +89,7 @@ $$
 
 :::tip
 
-这个点的坐标是 $(\cos\theta,\sin\theta)$，请注意 $\cos$ 和 $\sin$ 的顺序。
+这个点的坐标是 $(\cos\theta,\sin\theta)$，请注意 $\cos$ 和 $\sin$ 的位置顺序。
 
 :::
 
