@@ -16,8 +16,8 @@ tags: [solution, atcoder]
 $$
 p-1=
 \begin{cases}
-  f\left(\frac{x}{2}\right) & x\bmod2=0 \\
-  f(3x+1) & x\bmod2=1
+  f\left(\frac{x}{2}\right) & x\bmod 2=0 \\
+  f(3x+1) & x\bmod 2=1
 \end{cases}
 $$
 
