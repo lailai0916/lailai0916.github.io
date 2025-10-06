@@ -24,7 +24,7 @@ bool prime(int n)
 
 ### Fermat 素性测试
 
-时间复杂度为 $O(k\log{n})$。
+时间复杂度为 $O(k\log n)$。
 
 ```cpp
 ll Pow(ll x,ll y,int mod)
