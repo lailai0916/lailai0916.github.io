@@ -588,7 +588,7 @@ $$
 
 - $\langle b+a_n\rangle$：为一个等比数列；
 - $\langle b\times a_n\rangle$：为一个等比数列；
-- $\langle \log_ba_n\rangle$：为一个等差数列（见上）；
+- $\langle\log_ba_n\rangle$：为一个等差数列（见上）；
 
 ### 求和公式
 
@@ -1077,7 +1077,7 @@ $$
 
 - 形如 $a_{n+1} = pa_n + kn + q(p \ne 1, k \ne 0, n \in \mathbb{N}^*)$ 的递推式，在两边同时加上 $xn+y$ 构造等比数列 $\{a_n + xn + y\}(n \in \mathbb{N}^*)$，方法见例 2.9 解析。
 
-- 对于 $a_{n+1} = p a_n^r (p > 0, p \ne 1, r \ne 1)$ 型，两边同时取以 $p$ 为底的对数，于是可得 $\log_p a_{n+1} = r \log_p a_n + 1$，构造等比数列 $\{\log_p a_n + x\}$，其中 $x = \frac{1}{r-1}$。
+- 对于 $a_{n+1} = p a_n^r (p > 0, p \ne 1, r \ne 1)$ 型，两边同时取以 $p$ 为底的对数，于是可得 $\log_p a_{n+1} = r\log_p a_n + 1$，构造等比数列 $\{\log_p a_n + x\}$，其中 $x = \frac{1}{r-1}$。
 
 对于形如 $a_{n+1} = pa_n + q^n(p \ne 0, 1 \text{ 且 } q \ne 0, 1)$ 的数列求通项公式，有以下两种方法：
 
