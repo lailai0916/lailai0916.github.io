@@ -15,16 +15,14 @@ tags: [solution, atcoder]
 
 为了使逆序对数量尽可能少，就要让后面的数尽可能大。
 
-1. 令 $x_1=0$。
+令 $x_1=0$，对于每个 $k\in[1,n-1]$ 分类讨论：
+  
+1. 如果 $s_k$ 为 `>`，即 $x_k>x_{k+1}$：$x_{k+1}$ 比 $x_k$ 小，但又要尽可能大，可以让 $x_{k+1}\gets x_k-1$。
+2. 否则 $s_k$ 为 `<`，即 $x_k<x_{k+1}$：$x_{k+1}$ 要尽可能大，可以让 $x_{k+1}\gets x_k+\infty$。
 
-2. 对于每个 $k\in[1,n-1]$ 分类讨论：
+最后用归并排序求 $x_i$ 的逆序对数量。
 
-- 如果 $s_k$ 为 `>`，即 $x_k>x_{k+1}$：$x_{k+1}$ 比 $x_k$ 小，但又要尽可能大，可以让 $x_{k+1}\gets x_k-1$。
-- 否则 $s_k$ 为 `<`，即 $x_k<x_{k+1}$：$x_{k+1}$ 要尽可能大，可以让 $x_{k+1}\gets x_k+\infty$。
-
-3. 这里的 $\infty$ 是相对于数据范围 $250000$ 的，多个 $\infty$ 允许叠加，且 $2\cdot\infty\gg\infty\gg0$。
-
-4. 最后用归并排序求 $x_i$ 的逆序对数量。
+这里的 $\infty$ 是相对于数据范围 $250000$ 的，多个 $\infty$ 允许叠加，且 $2\times\infty\gg\infty\gg 0$。 
 
 ## 参考代码
 
@@ -43,21 +41,12 @@ void msort(int l,int r)
 	if(l==r)return;
 	msort(l,mid);
 	msort(mid+1,r);
-	int p1=l,p2=mid+1,k=l;
-	while(p1<=mid&&p2<=r)
+	int p1=l,p2=mid+1;
+	for(int i=l;i<=r;i++)
 	{
-		if(a[p1]<=a[p2])
-		{
-			b[k++]=a[p1++];
-		}
-		else
-		{
-			b[k++]=a[p2++];
-			ans+=mid-p1+1;
-		}
+		bool t=p1<=mid&&(p2>r||a[p1]<=a[p2]);
+		b[i]=t?a[p1++]:(ans+=mid-p1+1,a[p2++]);
 	}
-	while(p1<=mid)b[k++]=a[p1++];
-	while(p2<=r)b[k++]=a[p2++];
 	for(int i=l;i<=r;i++)a[i]=b[i];
 }
 int main()
@@ -69,8 +58,7 @@ int main()
 	cin>>n>>s;
 	for(int i=0;i<n-1;i++)
 	{
-		if(s[i]=='>')a[i+1]=a[i]-1;
-		else a[i+1]=a[i]+inf;
+		a[i+1]=a[i]+(s[i]=='>'?-1:inf);
 	}
 	msort(0,n-1);
 	cout<<ans<<'\n';

@@ -14,15 +14,8 @@ void msort(int l,int r)
 	int p1=l,p2=mid+1;
 	for(int i=l;i<=r;i++)
 	{
-		if(p1<=mid&&(p2>r||a[p1]<=a[p2]))
-		{
-			b[i]=a[p1++];
-		}
-		else
-		{
-			b[i]=a[p2++];
-			ans+=mid-p1+1;
-		}
+		bool t=p1<=mid&&(p2>r||a[p1]<=a[p2]);
+		b[i]=t?a[p1++]:(ans+=mid-p1+1,a[p2++]);
 	}
 	for(int i=l;i<=r;i++)a[i]=b[i];
 }
