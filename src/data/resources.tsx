@@ -629,6 +629,11 @@ export const RESOURCE_LIST: ResourceCategoryItem[] = [
         href: 'https://codesnap.dev',
         description: '开发者代码美化截图工具',
       },
+      {
+        title: 'Bento Grids',
+        href: 'https://bentogrids.com',
+        description: '响应式网格布局生成器',
+      },
     ],
   },
   {
