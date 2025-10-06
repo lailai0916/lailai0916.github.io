@@ -44,7 +44,7 @@ if(n%i==0)return 0;
 
 ### 头文件
 
-- 通常使用万能头文件 `bits/stdc++.h`，如有特殊需求可补充其他头文件。
+- 通常使用万能头文件 `<bits/stdc++.h>`，如有特殊需求可补充其他头文件。
 
 ```cpp
 #include <bits/stdc++.h>
@@ -72,14 +72,15 @@ using namespace __gnu_pbds;
 
 ### 空行
 
-- 头文件、宏定义和命名空间之后保留唯一的空行。
+- 头文件、宏定义和命名空间后保留唯一的空行。
 
 ### 别名
 
-- 若代码中大量使用较长的类型名，可使用 `using` 定义别名，避免使用宏。
+- 若代码中频繁使用较长的类型名，可使用 `using` 定义别名，避免使用宏。
 
 ```cpp
 using ll=long long;
+using ld=long double;
 using uint=unsigned int;
 using pii=pair<int,int>;
 using Comp=complex<double>;
@@ -148,30 +149,12 @@ vector<int> G[N];
 
 - 命名简洁，通常不超过三个字符。
 - 优先使用英文单词辅音字母，避免使用中文拼音。
+- 常用命名：
 
-常用命名：
-
-- `ans`：最终答案
-- `cmp`：比较
-- `cnt`：计数器
-- `cur`：当前值
-- `dep`：深度
-- `dis`：距离
-- `fa`：父节点
-- `len`：长度
-- `mn`：最小值
-- `mx`：最大值
-- `pos`：位置
-- `res`：返回值
-- `rnk`：排名
-- `rt`：根节点
-- `siz`：大小
-- `son`：子节点
-- `sum`：总和
-- `tag`：标记
-- `tmp`：临时变量
-- `val`：价值
-- `vis`：访问性
+| `ans`<br />最终答案 |  `cmp`<br />比较  | `cnt`<br />计数器 | `cur`<br />当前值 |   `dep`<br />深度   | `dis`<br />距离 | `fa`<br />父节点  |
+| :-----------------: | :---------------: | :---------------: | :---------------: | :-----------------: | :-------------: | :---------------: |
+|   `len`<br />长度   | `mn`<br />最小值  | `mx`<br />最大值  |  `pos`<br />位置  |  `res`<br />返回值  | `rnk`<br />排名 | `rt`<br />根节点  |
+|   `siz`<br />大小   | `son`<br />子节点 |  `sum`<br />总和  |  `tag`<br />标记  | `tmp`<br />临时变量 | `val`<br />价值 | `vis`<br />访问性 |
 
 ### 常量命名
 
@@ -218,6 +201,21 @@ for(int $=1;$<=T;$++)
 ```
 
 ## 参考模板
+
+### A+B Problem
+
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+	int a,b;
+	cin>>a>>b;
+	cout<<a+b<<'\n';
+	return 0;
+}
+```
 
 ### 树链剖分
 
