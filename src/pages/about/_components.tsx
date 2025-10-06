@@ -75,7 +75,9 @@ export function Devices() {
                 alt={item.title}
                 className={styles.deviceIcon}
               />
-              <span>{item.title}</span>
+              <Link to={item.slug} style={{ color: 'inherit' }}>
+                {item.title}
+              </Link>
             </div>
           ))}
         </div>
