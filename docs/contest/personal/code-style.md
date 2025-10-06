@@ -34,7 +34,7 @@ bool operator<(const Node &rhs) const
 ```cpp
 for(int i=1;i<=n;i++)
 {
-	// do sth
+	/* code */
 }
 if(x<=l&&r<=y){gx(u,v,r-l+1);return;}
 if(n%i==0)return 0;
@@ -104,7 +104,7 @@ const int N=100005;
 ```cpp
 int main()
 {
-	// do sth
+	/* code */
 	return 0;
 }
 ```
@@ -192,8 +192,8 @@ for(int $=1;$<=T;$++)
 	{
 		int op;
 		cin>>op;
-		if(op==1)// do sth
-		else if(op==2)// do sth
+		if(op==1)/* code */
+		else if(op==2)/* code */
 		// ...
 	}
 	cout<<"Case #"<<$<<'\n';

@@ -80,7 +80,7 @@ using namespace chrono;
 int main()
 {
 	auto st=high_resolution_clock::now();
-	// do sth
+	/* code */
 	auto ed=high_resolution_clock::now();
 	cout<<duration_cast<microseconds>(ed-st).count()<<'\n';
 	return 0;
