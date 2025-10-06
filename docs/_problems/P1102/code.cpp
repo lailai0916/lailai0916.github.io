@@ -22,9 +22,9 @@ int main()
 		if(a[i]!=a[i-1])
 		{
 			l=r;
-			while(a[l]<a[i]+c&&l<=n)l++;
+			while(l<=n&&a[l]<a[i]+c)l++;
 			r=l;
-			while(a[r]==a[i]+c&&r<=n)r++;
+			while(r<=n&&a[r]==a[i]+c)r++;
 		}
 		ans+=r-l;
 	}
