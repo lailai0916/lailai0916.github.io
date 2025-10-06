@@ -6,6 +6,7 @@ import Giscus from '@giscus/react';
 import IconText from '@site/src/components/laikit/widget/IconText';
 import { useColorMode } from '@docusaurus/theme-common';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
+import GithubSlugger from 'github-slugger';
 
 import { SKILL_LIST } from '@site/src/data/skills';
 import { DEVICE_LIST } from '@site/src/data/devices';
@@ -57,6 +58,7 @@ export function Skills() {
 }
 
 export function Devices() {
+  const slugger = new GithubSlugger();
   const columns = useMemo(() => {
     return [
       DEVICE_LIST.filter((_, i) => i % 2 === 0),
@@ -75,7 +77,10 @@ export function Devices() {
                 alt={item.title}
                 className={styles.deviceIcon}
               />
-              <Link to={item.slug} style={{ color: 'inherit' }}>
+              <Link
+                to={`/docs/project/other/devices#${slugger.slug(item.title)}`}
+                style={{ color: 'inherit' }}
+              >
                 {item.title}
               </Link>
             </div>
