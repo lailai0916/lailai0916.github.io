@@ -18,7 +18,7 @@ export default function IconText({
         icon={icon}
         width="1.25em"
         height="1.25em"
-        className={colorMode === 'theme' ? styles.iconTheme : ''}
+        className={colorMode === 'theme' && styles.iconTheme}
       />
       <span>{children}</span>
     </span>
