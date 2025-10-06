@@ -62,12 +62,12 @@ export function ThemeSettings() {
 
 export function ColorGenerator() {
   const presetColors = [
+    '#1d9bf0',
+    '#7856ff',
     '#f91880',
     '#ff7a00',
     '#ffd400',
     '#00ba7c',
-    '#1d9bf0',
-    '#7856ff',
   ];
   const { colorMode } = useColorMode();
   const { colorState, inputColor, updateColor, resetColors } = useThemeColors(
