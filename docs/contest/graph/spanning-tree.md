@@ -5,6 +5,16 @@
 - [最小生成树 - OI Wiki](https://oi-wiki.org/graph/mst/)
 - [最小生成树 - 维基百科](https://zh.wikipedia.org/zh-cn/最小生成树)
 
+## 算法对比
+
+$n$ 代表图的点数，$m$ 代表图的边数。
+
+|   算法名称   |    时间复杂度    |
+| :----------: | :--------------: |
+| Kruskal 算法 |   $O(m\log m)$   |
+|  Prim 算法   | $O((n+m)\log n)$ |
+| Boruvka 算法 |   $O(m\log n)$   |
+
 ## Kruskal 算法
 
 ```cpp

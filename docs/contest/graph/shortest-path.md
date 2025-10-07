@@ -10,22 +10,19 @@
 
 ### 算法对比
 
-|   算法名称   |  时间复杂度   | 最短路类型 | 负权图 |
-| :----------: | :-----------: | :--------: | :----: |
-|    Floyd     |   $O(n^3)$    | 全源最短路 |   能   |
-| Bellman–Ford |    $O(nm)$    | 单源最短路 |   能   |
-|   Dijkstra   | $O(m\log m)$  | 单源最短路 |   否   |
-|   Johnson    | $O(nm\log m)$ | 全源最短路 |   能   |
-
-:::tip
-
 $n$ 代表图的点数，$m$ 代表图的边数。
 
-:::
+|     算法名称      |  时间复杂度   | 最短路类型 | 负权图 |
+| :---------------: | :-----------: | :--------: | :----: |
+|    Floyd 算法     |   $O(n^3)$    | 全源最短路 |   能   |
+| Bellman–Ford 算法 |    $O(nm)$    | 单源最短路 |   能   |
+|   Dijkstra 算法   | $O(m\log m)$  | 单源最短路 |   否   |
+|   Johnson 算法    | $O(nm\log m)$ | 全源最短路 |   能   |
 
 ### Floyd 算法
 
 ```cpp
+int a[N][N];
 void floyd(int n)
 {
 	for(int k=1;k<=n;k++)
@@ -44,6 +41,9 @@ void floyd(int n)
 ### Dijkstra 算法
 
 ```cpp
+vector<pair<int,int>> G[N];
+int dis[N];
+bool vis[N];
 void dijkstra(int s)
 {
 	memset(dis,0x3f,sizeof dis);
