@@ -49,6 +49,10 @@ void dfs2(int u,int t)
 
 <Problem id="P3384" />
 
+### 洛谷 P5903 【模板】树上 K 级祖先
+
+<Problem id="P5903" />
+
 ### 洛谷 P2590 [ZJOI2008] 树的统计
 
 <Problem id="P2590" />
