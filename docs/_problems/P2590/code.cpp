@@ -7,7 +7,7 @@ using namespace std;
 const int inf=0x3f3f3f3f;
 const int N=30005;
 vector<int> G[N];
-int fa[N],son[N],dep[N],siz[N];
+int fa[N],son[N],siz[N],dep[N];
 int top[N],dfn[N],rnk[N],out[N];
 int cnt=0;
 void dfs1(int u)
@@ -44,14 +44,14 @@ void push_up(int u)
 }
 void build(int u,int l,int r)
 {
-	if(l==r){val[u]=a[rnk[l]];mx[u]=a[rnk[l]];return;}
+	if(l==r){val[u]=mx[u]=a[rnk[l]];return;}
 	build(ls,l,mid);
 	build(rs,mid+1,r);
 	push_up(u);
 }
 void update(int u,int l,int r,int x,int v)
 {
-	if(l==r){val[u]=v;mx[u]=v;return;}
+	if(l==r){val[u]=mx[u]=v;return;}
 	if(x<=mid)update(ls,l,mid,x,v);
 	else update(rs,mid+1,r,x,v);
 	push_up(u);
@@ -106,37 +106,25 @@ int main()
 	cin>>n;
 	for(int i=1;i<n;i++)
 	{
-		int x,y;
-		cin>>x>>y;
-		G[x].push_back(y);
-		G[y].push_back(x);
+		int u,v;
+		cin>>u>>v;
+		G[u].push_back(v);
+		G[v].push_back(u);
 	}
 	dfs1(1);
 	dfs2(1,1);
-	for(int i=1;i<=n;i++)
-	{
-		cin>>a[i];
-	}
+	for(int i=1;i<=n;i++)cin>>a[i];
 	build(1,1,n);
 	int m;
 	cin>>m;
 	while(m--)
 	{
 		string op;
-		int x,y;
-		cin>>op>>x>>y;
-		if(op=="CHANGE")
-		{
-			update(1,1,n,dfn[x],y);
-		}
-		else if(op=="QMAX")
-		{
-			cout<<query_path_max(x,y,n)<<'\n';
-		}
-		else if(op=="QSUM")
-		{
-			cout<<query_path_sum(x,y,n)<<'\n';
-		}
+		int u,v;
+		cin>>op>>u>>v;
+		if(op=="CHANGE")update(1,1,n,dfn[u],v);
+		else if(op=="QMAX")cout<<query_path_max(u,v,n)<<'\n';
+		else if(op=="QSUM")cout<<query_path_sum(u,v,n)<<'\n';
 	}
 	return 0;
 }
