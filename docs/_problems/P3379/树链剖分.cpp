@@ -3,8 +3,7 @@ using namespace std;
 
 const int N=500005;
 vector<int> G[N];
-int fa[N],son[N],siz[N],dep[N];
-int top[N],dfn[N],rnk[N],out[N];
+int fa[N],son[N],siz[N],dep[N],top[N];
 int cnt=0;
 void dfs1(int u)
 {
@@ -22,15 +21,12 @@ void dfs1(int u)
 void dfs2(int u,int t)
 {
 	top[u]=t;
-	dfn[u]=++cnt;
-	rnk[cnt]=u;
 	if(son[u])dfs2(son[u],t);
 	for(auto v:G[u])
 	{
 		if(v==fa[u]||v==son[u])continue;
 		dfs2(v,v);
 	}
-	out[u]=cnt;
 }
 int lca(int u,int v)
 {
