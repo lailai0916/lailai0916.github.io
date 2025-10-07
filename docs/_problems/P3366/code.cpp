@@ -2,25 +2,25 @@
 using namespace std;
 
 const int N=5005;
-const int M=200005;
 struct Edge
 {
 	int u,v,w;
 	bool operator<(const Edge &x) const{return w<x.w;}
-}e[M];
+};
+vector<Edge> E;
 int fa[N];
 int find(int u){return u==fa[u]?u:fa[u]=find(fa[u]);}
 int kruskal(int n,int m)
 {
 	for(int i=1;i<=n;i++)fa[i]=i;
-	sort(e+1,e+m+1);
+	sort(E.begin(),E.end());
 	int ans=0,cnt=0;
-	for(int i=1;i<=m;i++)
+	for(auto [u,v,w]:E)
 	{
-		int x=find(e[i].u),y=find(e[i].v);
+		int x=find(u),y=find(v);
 		if(x==y)continue;
 		fa[x]=y;
-		ans+=e[i].w;
+		ans+=w;
 		cnt++;
 	}
 	return cnt==n-1?ans:-1;
@@ -33,7 +33,9 @@ int main()
 	cin>>n>>m;
 	for(int i=1;i<=m;i++)
 	{
-		cin>>e[i].u>>e[i].v>>e[i].w;
+		int u,v,w;
+		cin>>u>>v>>w;
+		E.push_back({u,v,w});
 	}
 	int ans=kruskal(n,m);
 	if(ans!=-1)cout<<ans<<'\n';
