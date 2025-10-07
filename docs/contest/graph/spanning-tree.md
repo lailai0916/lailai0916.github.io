@@ -33,6 +33,7 @@ int kruskal(int n)
 	int ans=0,cnt=0;
 	for(auto [u,v,w]:E)
 	{
+		if(cnt==n-1)break;
 		int x=find(u),y=find(v);
 		if(x==y)continue;
 		fa[x]=y;
