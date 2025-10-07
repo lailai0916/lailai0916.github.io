@@ -9,10 +9,7 @@ int main()
 	cin.tie(nullptr);
 	int n;
 	cin>>n;
-	for(int i=1;i<=n;i++)
-	{
-		cin>>a[i];
-	}
+	for(int i=1;i<=n;i++)cin>>a[i];
 	stack<int> s;
 	for(int i=n;i>=1;i--)
 	{
@@ -20,9 +17,6 @@ int main()
 		if(!s.empty())ans[i]=s.top();
 		s.push(i);
 	}
-	for(int i=1;i<=n;i++)
-	{
-		cout<<ans[i]<<' ';
-	}
+	for(int i=1;i<=n;i++)cout<<ans[i]<<' ';
 	return 0;
 }
