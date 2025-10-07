@@ -678,6 +678,16 @@ export const RESOURCE_LIST: ResourceCategoryItem[] = [
     icon: 'lucide:gamepad',
     resources: [
       {
+        title: 'CrazyGames',
+        href: 'https://www.crazygames.com',
+        description: '网页在线游戏平台',
+      },
+      {
+        title: '.io Games',
+        href: 'https://iogames.space',
+        description: 'IO 游戏索引网站',
+      },
+      {
         title: 'generals.io',
         href: 'https://generals.io',
         description: '实时多人策略游戏',
