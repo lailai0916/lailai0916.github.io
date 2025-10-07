@@ -16,7 +16,7 @@ struct Edge
 vector<Edge> E;
 int fa[N];
 int find(int u){return u==fa[u]?u:fa[u]=find(fa[u]);}
-int kruskal(int n,int m)
+int kruskal(int n)
 {
 	for(int i=1;i<=n;i++)fa[i]=i;
 	sort(E.begin(),E.end());
