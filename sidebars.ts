@@ -246,8 +246,7 @@ const sidebars: SidebarsConfig = {
         },
         'contest/graph/topo',
         'contest/graph/shortest-path',
-        'contest/graph/diff-constraints',
-        'contest/graph/mst',
+        'contest/graph/spanning-tree',
         {
           type: 'category',
           label: '连通性',

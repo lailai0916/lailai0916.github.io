@@ -1,11 +1,14 @@
-# 最短路
+# 最短路问题
 
 ## 参考资料
 
 - [最短路 - OI Wiki](https://oi-wiki.org/graph/shortest-path/)
 - [最短路问题 - 维基百科](https://zh.wikipedia.org/zh-cn/最短路问题)
+- [差分约束 - OI Wiki](https://oi-wiki.org/graph/diff-constraints/)
 
-## 算法对比
+## 最短路
+
+### 算法对比
 
 |   算法名称   |  时间复杂度   | 最短路类型 | 负权图 |
 | :----------: | :-----------: | :--------: | :----: |
@@ -20,7 +23,7 @@ $n$ 代表图的点数，$m$ 代表图的边数。
 
 :::
 
-## Floyd 算法
+### Floyd 算法
 
 ```cpp
 void floyd(int n)
@@ -38,7 +41,7 @@ void floyd(int n)
 }
 ```
 
-## Dijkstra 算法
+### Dijkstra 算法
 
 ```cpp
 void dijkstra(int s)
@@ -64,6 +67,8 @@ void dijkstra(int s)
 	}
 }
 ```
+
+## 差分约束
 
 ## 例题
 

@@ -1,9 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-using ll=long long;
-const int inf=0x3f3f3f3f;
-const int mod=1e9+7;
 const int N=100005;
 vector<pair<int,int>> G[N];
 int dis[N];
