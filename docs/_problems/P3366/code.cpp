@@ -10,7 +10,7 @@ struct Edge
 vector<Edge> E;
 int fa[N];
 int find(int u){return u==fa[u]?u:fa[u]=find(fa[u]);}
-int kruskal(int n,int m)
+int kruskal(int n)
 {
 	for(int i=1;i<=n;i++)fa[i]=i;
 	sort(E.begin(),E.end());
@@ -31,13 +31,13 @@ int main()
 	cin.tie(nullptr);
 	int n,m;
 	cin>>n>>m;
-	for(int i=1;i<=m;i++)
+	while(m--)
 	{
 		int u,v,w;
 		cin>>u>>v>>w;
 		E.push_back({u,v,w});
 	}
-	int ans=kruskal(n,m);
+	int ans=kruskal(n);
 	if(ans!=-1)cout<<ans<<'\n';
 	else cout<<"orz"<<'\n';
 	return 0;
