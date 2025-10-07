@@ -7,7 +7,7 @@
 ## 二次排序
 
 ```cpp
-void build(int &k)
+int build(int k)
 {
 	sort(h+1,h+k+1,cmp);
 	for(int i=1;i<k;i++)h[k+i]=lca(h[i],h[i+1]);
@@ -19,14 +19,16 @@ void build(int &k)
 		int u=lca(h[i],h[i+1]),v=h[i+1];
 		H[u].push_back({v,dis[v]});
 	}
+	return k;
 }
 ```
 
 ## 单调栈
 
 ```cpp
-void build(int &k)
+void build(int k)
 {
+	sort(h+1,h+k+1,cmp);
 	s[1]=1;
 	int t=1;
 	for(int i=1;i<=k;i++)
