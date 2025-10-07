@@ -340,17 +340,17 @@ $$
 
 而复数还可以用 **模长** 和 **辐角** 表示，正好对应了极坐标系的 **极径** 和 **极角**。
 
-因此，点 $Z(a,b)$ 的坐标也可以写作：
+因此，点 $Z$ 的坐标也可以写作：
 
 $$
-Z(r\cos\theta,r\sin\theta)
+Z(a,b)\iff Z(r\cos\theta,r\sin\theta)
 $$
 
 $$
 a=r\cos\theta,b=r\sin\theta
 $$
 
-在复平面中，这个点对应的复数为：
+在复平面中，点 $Z$ 对应的复数为：
 
 $$
 z=a+bi=r\cos\theta+ir\sin\theta=r(\cos\theta+i\sin\theta)
@@ -371,10 +371,20 @@ $$
 因此，复数的极坐标形式可以进一步简化为：
 
 $$
-z=re^{i\theta}
+z=r(\cos\theta+i\sin\theta)=re^{i\theta}
 $$
 
 这就是著名的 [欧拉公式](https://zh.wikipedia.org/zh-cn/欧拉公式)。
 
 - [用几何直觉理解欧拉公式！【中学生也能懂|manim】 - bilibili](https://www.bilibili.com/video/BV1bF411P7RL)
 - [【官方双语】微分方程概论-第五章：在3.14分钟内理解e^iπ - bilibili](https://www.bilibili.com/video/BV1G4411D7kZ)
+
+### 四元数
+
+类似于实数扩展到复数，复数还可以扩展为 [四元数](https://zh.wikipedia.org/zh-cn/四元數)。
+
+$$
+h=a+bi+cj+dk
+$$
+
+![](./assets/v2-063e3b991174c594a19458c606f0ea1b_1440w.webp)
