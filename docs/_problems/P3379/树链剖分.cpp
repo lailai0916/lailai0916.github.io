@@ -4,7 +4,6 @@ using namespace std;
 const int N=500005;
 vector<int> G[N];
 int fa[N],son[N],siz[N],dep[N],top[N];
-int cnt=0;
 void dfs1(int u)
 {
 	siz[u]=1;
