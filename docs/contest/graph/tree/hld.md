@@ -53,6 +53,10 @@ void dfs2(int u,int t)
 
 <Problem id="P5903" />
 
+### 洛谷 P3379 【模板】最近公共祖先（LCA）
+
+<Problem id="P3379" />
+
 ### 洛谷 P2590 [ZJOI2008] 树的统计
 
 <Problem id="P2590" />
