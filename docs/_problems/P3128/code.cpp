@@ -17,10 +17,10 @@ void dfs1(int u)
 		if(siz[v]>siz[son[u]])son[u]=v;
 	}
 }
-void dfs2(int u,int e)
+void dfs2(int u,int t)
 {
-	top[u]=e;
-	if(son[u])dfs2(son[u],e);
+	top[u]=t;
+	if(son[u])dfs2(son[u],t);
 	for(auto v:G[u])
 	{
 		if(v==fa[u]||v==son[u])continue;
@@ -49,6 +49,8 @@ void dfs(int u)
 }
 int main()
 {
+	ios::sync_with_stdio(false);
+	cin.tie(nullptr);
 	int n,k;
 	cin>>n>>k;
 	for(int i=1;i<n;i++)
