@@ -22,11 +22,11 @@ void dfs1(int u)
 		if(siz[v]>siz[son[u]])son[u]=v;
 	}
 }
-void dfs2(int u,int e)
+void dfs2(int u,int t)
 {
-	top[u]=e;
+	top[u]=t;
 	dfn[u]=++cnt;
-	if(son[u])dfs2(son[u],e);
+	if(son[u])dfs2(son[u],t);
 	for(auto [v,w]:G[u])
 	{
 		if(v==fa[u]||v==son[u])continue;
@@ -42,19 +42,46 @@ int lca(int u,int v)
 	}
 	return dep[u]<dep[v]?u:v;
 }
+vector<pair<int,int>> H[N];
+int h[N],s[N];
+bool tag[N];
 bool cmp(int u,int v)
 {
 	return dfn[u]<dfn[v];
 }
-vector<pair<int,int>> H[N];
-int h[N],s[N];
-bool tag[N];
-ll dp(int u)
+void build(int &k)
+{
+	sort(h+1,h+k+1,cmp);
+	s[1]=1;
+	int t=1;
+	for(int i=1;i<=k;i++)
+	{
+		if(h[i]==1)continue;
+		int l=lca(h[i],s[t]);
+		while(t>1&&dep[s[t-1]]>=dep[l])
+		{
+			int u=s[t-1],v=s[t--];
+			H[u].push_back({v,dis[v]});
+		}
+		if(s[t]!=l)
+		{
+			H[l].push_back({s[t],dis[s[t]]});
+			s[t]=l;
+		}
+		s[++t]=h[i];
+	}
+	while(t>1)
+	{
+		int u=s[t-1],v=s[t--];
+		H[u].push_back({v,dis[v]});
+	}
+}
+ll dfs(int u)
 {
 	ll res=0;
 	for(auto [v,w]:H[u])
 	{
-		ll t=dp(v);
+		ll t=dfs(v);
 		res+=tag[v]?w:min(ll(w),t);
 	}
 	H[u].clear();
@@ -87,31 +114,8 @@ int main()
 			cin>>h[i];
 			tag[h[i]]=1;
 		}
-		sort(h+1,h+k+1,cmp);
-		s[1]=1;
-		int t=1;
-		for(int i=1;i<=k;i++)
-		{
-			if(h[i]==1)continue;
-			int l=lca(h[i],s[t]);
-			while(t>1&&dep[s[t-1]]>=dep[l])
-			{
-				int u=s[t-1],v=s[t--];
-				H[u].push_back({v,dis[v]});
-			}
-			if(s[t]!=l)
-			{
-				H[l].push_back({s[t],dis[s[t]]});
-				s[t]=l;
-			}
-			s[++t]=h[i];
-		}
-		while(t>1)
-		{
-			int u=s[t-1],v=s[t--];
-			H[u].push_back({v,dis[v]});
-		}
-		cout<<dp(1)<<'\n';
+		build(k);
+		cout<<dfs(1)<<'\n';
 		for(int i=1;i<=k;i++)tag[h[i]]=0;
 	}
 	return 0;
