@@ -49,7 +49,7 @@ bool cmp(int u,int v)
 {
 	return dfn[u]<dfn[v];
 }
-void build(int &k)
+int build(int k)
 {
 	sort(h+1,h+k+1,cmp);
 	for(int i=1;i<k;i++)h[k+i]=lca(h[i],h[i+1]);
@@ -61,6 +61,7 @@ void build(int &k)
 		int u=lca(h[i],h[i+1]),v=h[i+1];
 		H[u].push_back({v,dis[v]});
 	}
+	return k;
 }
 ll dfs(int u)
 {
@@ -100,7 +101,7 @@ int main()
 			cin>>h[i];
 			tag[h[i]]=1;
 		}
-		build(k);
+		k=build(k);
 		cout<<dfs(1)<<'\n';
 		for(int i=1;i<=k;i++)tag[h[i]]=0;
 	}

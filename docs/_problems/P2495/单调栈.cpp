@@ -49,7 +49,7 @@ bool cmp(int u,int v)
 {
 	return dfn[u]<dfn[v];
 }
-void build(int &k)
+void build(int k)
 {
 	sort(h+1,h+k+1,cmp);
 	s[1]=1;
