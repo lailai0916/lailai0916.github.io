@@ -43,7 +43,7 @@ int lca(int u,int v)
 	return dep[u]<dep[v]?u:v;
 }
 vector<pair<int,int>> H[N];
-int h[N],s[N];
+int a[N],s[N];
 bool tag[N];
 bool cmp(int u,int v)
 {
@@ -51,13 +51,13 @@ bool cmp(int u,int v)
 }
 void build(int k)
 {
-	sort(h+1,h+k+1,cmp);
+	sort(a+1,a+k+1,cmp);
 	s[1]=1;
 	int t=1;
 	for(int i=1;i<=k;i++)
 	{
-		if(h[i]==1)continue;
-		int l=lca(h[i],s[t]);
+		if(a[i]==1)continue;
+		int l=lca(a[i],s[t]);
 		while(t>1&&dep[s[t-1]]>=dep[l])
 		{
 			int u=s[t-1],v=s[t--];
@@ -68,7 +68,7 @@ void build(int k)
 			H[l].push_back({s[t],dis[s[t]]});
 			s[t]=l;
 		}
-		s[++t]=h[i];
+		s[++t]=a[i];
 	}
 	while(t>1)
 	{
@@ -111,12 +111,12 @@ int main()
 		cin>>k;
 		for(int i=1;i<=k;i++)
 		{
-			cin>>h[i];
-			tag[h[i]]=1;
+			cin>>a[i];
+			tag[a[i]]=1;
 		}
 		build(k);
 		cout<<dfs(1)<<'\n';
-		for(int i=1;i<=k;i++)tag[h[i]]=0;
+		for(int i=1;i<=k;i++)tag[a[i]]=0;
 	}
 	return 0;
 }

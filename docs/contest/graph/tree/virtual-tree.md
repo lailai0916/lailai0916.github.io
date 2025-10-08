@@ -9,14 +9,14 @@
 ```cpp
 int build(int k)
 {
-	sort(h+1,h+k+1,cmp);
-	for(int i=1;i<k;i++)h[k+i]=lca(h[i],h[i+1]);
-	h[k<<=1]=1;
-	sort(h+1,h+k+1,cmp);
-	k=unique(h+1,h+k+1)-h-1;
+	sort(a+1,a+k+1,cmp);
+	for(int i=1;i<k;i++)a[k+i]=lca(a[i],a[i+1]);
+	a[k<<=1]=1;
+	sort(a+1,a+k+1,cmp);
+	k=unique(a+1,a+k+1)-a-1;
 	for(int i=1;i<k;i++)
 	{
-		int u=lca(h[i],h[i+1]),v=h[i+1];
+		int u=lca(a[i],a[i+1]),v=a[i+1];
 		H[u].push_back({v,dis[v]});
 	}
 	return k;
@@ -28,13 +28,13 @@ int build(int k)
 ```cpp
 void build(int k)
 {
-	sort(h+1,h+k+1,cmp);
+	sort(a+1,a+k+1,cmp);
 	s[1]=1;
 	int t=1;
 	for(int i=1;i<=k;i++)
 	{
-		if(h[i]==1)continue;
-		int l=lca(h[i],s[t]);
+		if(a[i]==1)continue;
+		int l=lca(a[i],s[t]);
 		while(t>1&&dep[s[t-1]]>=dep[l])
 		{
 			int u=s[t-1],v=s[t--];
@@ -45,7 +45,7 @@ void build(int k)
 			H[l].push_back({s[t],dis[s[t]]});
 			s[t]=l;
 		}
-		s[++t]=h[i];
+		s[++t]=a[i];
 	}
 	while(t>1)
 	{
