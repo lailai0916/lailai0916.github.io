@@ -10,10 +10,7 @@ void dfs(int u,int fa)
 	a[u][0]=fa;
 	for(int i=1;i<=20;i++)a[u][i]=a[a[u][i-1]][i-1];
 	dep[u]=dep[fa]+1;
-	for(auto v:G[u])
-	{
-		if(v!=fa)dfs(v,u);
-	}
+	for(auto v:G[u])if(v!=fa)dfs(v,u);
 }
 int lca(int u,int v)
 {
