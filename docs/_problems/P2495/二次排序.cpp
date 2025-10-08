@@ -45,12 +45,9 @@ int lca(int u,int v)
 vector<pair<int,int>> H[N];
 int a[N<<1];
 bool tag[N];
-bool cmp(int u,int v)
-{
-	return dfn[u]<dfn[v];
-}
 int build(int k)
 {
+	auto cmp=[](int u,int v){return dfn[u]<dfn[v];};
 	sort(a+1,a+k+1,cmp);
 	for(int i=1;i<k;i++)a[k+i]=lca(a[i],a[i+1]);
 	a[k<<=1]=1;
