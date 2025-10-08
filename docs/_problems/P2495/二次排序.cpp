@@ -53,10 +53,7 @@ int build(int k)
 	a[k<<=1]=1;
 	sort(a+1,a+k+1,cmp);
 	k=unique(a+1,a+k+1)-a-1;
-	for(int i=1;i<k;i++)
-	{
-		H[lca(a[i],a[i+1])].push_back(a[i+1]);
-	}
+	for(int i=1;i<k;i++)H[lca(a[i],a[i+1])].push_back(a[i+1]);
 	return k;
 }
 ll dfs(int u)

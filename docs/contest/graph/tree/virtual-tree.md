@@ -15,10 +15,7 @@ int build(int k)
 	a[k<<=1]=1;
 	sort(a+1,a+k+1,cmp);
 	k=unique(a+1,a+k+1)-a-1;
-	for(int i=1;i<k;i++)
-	{
-		int u=lca(a[i],a[i+1]),v=a[i+1];
-		H[u].push_back({v,dis[v]});
+	for(int i=1;i<k;i++)H[lca(a[i],a[i+1])].push_back(a[i+1]);
 	}
 	return k;
 }
@@ -37,23 +34,11 @@ void build(int k)
 	{
 		if(a[i]==1)continue;
 		int l=lca(a[i],s[t]);
-		while(t>1&&dep[s[t-1]]>=dep[l])
-		{
-			int u=s[t-1],v=s[t--];
-			H[u].push_back({v,dis[v]});
-		}
-		if(s[t]!=l)
-		{
-			H[l].push_back({s[t],dis[s[t]]});
-			s[t]=l;
-		}
+		while(t>1&&dep[s[t-1]]>=dep[l])H[s[t-1]].push_back(s[t--]);
+		if(s[t]!=l){H[l].push_back(s[t]);s[t]=l;}
 		s[++t]=a[i];
 	}
-	while(t>1)
-	{
-		int u=s[t-1],v=s[t--];
-		H[u].push_back({v,dis[v]});
-	}
+	while(t>1)H[s[t-1]].push_back(s[t--]);
 }
 ```
 
