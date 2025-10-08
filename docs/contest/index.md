@@ -63,7 +63,7 @@ export const daysUntil = (target) => Math.ceil((new Date(target) - new Date()) /
 
 ### 计算几何
 
-三角剖分、凸包、扫描线、旋转卡壳、半平面交、反演变换、点积、叉积
+Pick 定理、三角剖分、凸包、扫描线、旋转卡壳、半平面交、平面最近点对、反演变换、随机增量、点积、叉积
 
 ### 杂项
 
