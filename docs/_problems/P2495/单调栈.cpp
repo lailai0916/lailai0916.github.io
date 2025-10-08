@@ -58,7 +58,7 @@ void build(int k)
 		if(s[t]!=l){H[l].push_back(s[t]);s[t]=l;}
 		s[++t]=a[i];
 	}
-	while(t>1)H[s[t-1]].push_back(s[t--]);
+	for(int i=1;i<t;i++)H[s[i]].push_back(s[i+1]);
 }
 ll dfs(int u)
 {
