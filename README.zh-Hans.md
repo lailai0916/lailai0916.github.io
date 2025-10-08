@@ -84,7 +84,7 @@ lailai0916.github.io
 
 这是网站主页的预览。
 
-![](static/img/preview/home-light.png#gh-light-mode-only)![](static/img/preview/home-dark.png#gh-dark-mode-only)
+![](static/img/preview/home-light.zh-Hans.png#gh-light-mode-only)![](static/img/preview/home-dark.zh-Hans.png#gh-dark-mode-only)
 
 ## # 赞助支持
 
