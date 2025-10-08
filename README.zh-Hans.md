@@ -96,6 +96,6 @@ lailai0916.github.io
 
 ## # 许可协议
 
-本项目代码遵循 [MIT 许可协议](LICENSE)。
+本项目代码采用 [MIT 许可协议](LICENSE)。
 
-本网站内容遵循 [知识共享署名 4.0 国际许可协议](LICENSE-docs)。
+本网站内容采用 [知识共享署名 4.0 国际许可协议](LICENSE-docs)。
