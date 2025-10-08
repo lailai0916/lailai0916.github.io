@@ -42,7 +42,7 @@ int lca(int u,int v)
 	}
 	return dep[u]<dep[v]?u:v;
 }
-vector<pair<int,int>> H[N];
+vector<int> H[N];
 int a[N],s[N];
 bool tag[N];
 void build(int k)
@@ -57,29 +57,24 @@ void build(int k)
 		int l=lca(a[i],s[t]);
 		while(t>1&&dep[s[t-1]]>=dep[l])
 		{
-			int u=s[t-1],v=s[t--];
-			H[u].push_back({v,dis[v]});
+			H[s[t-1]].push_back(s[t--]);
 		}
 		if(s[t]!=l)
 		{
-			H[l].push_back({s[t],dis[s[t]]});
+			H[l].push_back(s[t]);
 			s[t]=l;
 		}
 		s[++t]=a[i];
 	}
-	while(t>1)
-	{
-		int u=s[t-1],v=s[t--];
-		H[u].push_back({v,dis[v]});
-	}
+	while(t>1)H[s[t-1]].push_back(s[t--]);
 }
 ll dfs(int u)
 {
 	ll res=0;
-	for(auto [v,w]:H[u])
+	for(auto v:H[u])
 	{
-		ll t=dfs(v);
-		res+=tag[v]?w:min(ll(w),t);
+		ll w=dis[v],t=dfs(v);
+		res+=tag[v]?w:min(w,t);
 	}
 	H[u].clear();
 	return res;
