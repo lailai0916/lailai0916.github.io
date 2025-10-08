@@ -34,7 +34,7 @@ void build(int k)
 	{
 		if(a[i]==1)continue;
 		int l=lca(a[i],s[t]);
-		while(t>1&&dep[s[t-1]]>=dep[l])H[s[t-1]].push_back(s[t--]);
+		while(dep[s[t-1]]>=dep[l])H[s[t-1]].push_back(s[t--]);
 		if(s[t]!=l){H[l].push_back(s[t]);s[t]=l;}
 		s[++t]=a[i];
 	}
