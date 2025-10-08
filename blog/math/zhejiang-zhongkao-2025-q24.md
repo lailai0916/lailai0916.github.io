@@ -84,17 +84,17 @@ $$
 求解：
 
 $$
-t_1=\frac{65-8\sqrt{39}}{95}\approx0.1583,t_2=\frac{65+8\sqrt{39}}{95}\approx1.2101
+t_1=\frac{65-8\sqrt{39}}{95}\approx 0.1583,t_2=\frac{65+8\sqrt{39}}{95}\approx 1.2101
 $$
 
 代入 $f(t)$：
 
 $$
-f(t_1)=\frac{44-3\sqrt{39}}{5}\approx5.0530,f(t_2)=\frac{3\sqrt{39}-4}{5}\approx2.9470
+f(t_1)=\frac{44-3\sqrt{39}}{5}\approx 5.0530,f(t_2)=\frac{3\sqrt{39}-4}{5}\approx 2.9470
 $$
 
 所以 $AP-BP$ 最小值为：
 
 $$
-(AP-BP)_{\min}=\frac{3\sqrt{39}-4}{5}
+(AP-BP)_{\min}=\frac{3\sqrt{39}-4}{5}\approx 2.9470
 $$
