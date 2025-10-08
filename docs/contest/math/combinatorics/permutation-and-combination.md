@@ -8,10 +8,10 @@
 
 ## 实现
 
-### 初始化（线性逆元）
+### 线性逆元
 
 $$
-i^{-1}=-\left\lfloor\frac{p}{i}\right\rfloor(p\bmod i)^{-1}
+i^{-1}\equiv-\left\lfloor\frac{p}{i}\right\rfloor(p\bmod i)^{-1}\pmod p
 $$
 
 ```cpp
