@@ -65,7 +65,7 @@ ll dfs(int u)
 	for(auto v:H[u])
 	{
 		ll w=dis[v],t=dfs(v);
-		res+=tag[v]?w:min(ll(w),t);
+		res+=tag[v]?w:min(w,t);
 	}
 	H[u].clear();
 	return res;
