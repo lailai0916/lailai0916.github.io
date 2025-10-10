@@ -1,9 +1,8 @@
 <div align="center">
-  <a href="https://lailai.one">
-    <img src="static/img/logo.svg" width="150" height="150">
-  </a>
   <h1>lailai's Home</h1>
   <p>English | <a href="README.zh-Hans.md">简体中文</a></p>
+  <img src="static/img/preview/home-light.png#gh-light-mode-only" />
+  <img src="static/img/preview/home-dark.png#gh-dark-mode-only" />
 </div>
 
 ## # Website Introduction
@@ -79,12 +78,6 @@ lailai0916.github.io
 ## # Blog Feeds
 
 Stay updated with the latest blog posts: [RSS Feed](https://lailai.one/blog/rss.xml) | [Atom Feed](https://lailai.one/blog/atom.xml) | [JSON Feed](https://lailai.one/blog/feed.json)
-
-## # Website Preview
-
-This is a preview of the website’s homepage.
-
-![](static/img/preview/home-light.png#gh-light-mode-only)![](static/img/preview/home-dark.png#gh-dark-mode-only)
 
 ## # Sponsor
 
