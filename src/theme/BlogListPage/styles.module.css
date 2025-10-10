@@ -1,6 +1,6 @@
 .container {
   /* 固定中间主列宽度（统一所有子页面），左侧栏与内容列固定 */
-  --main-col-width: 680px;
+  --main-col-width: 880px;
   --left-col-width: 320px;
   --grid-gap: 1.25rem;
 
@@ -15,10 +15,10 @@
   gap: var(--grid-gap);
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1300px) {
   .container {
-    --left-col-width: 300px;
     --main-col-width: 640px;
+    --left-col-width: 300px;
     max-width: calc(
       var(--left-col-width) + var(--main-col-width) + var(--grid-gap)
     );
