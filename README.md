@@ -12,6 +12,8 @@ lailai's personal website for sharing technical notes, project experience, and l
 
 Built with [Docusaurus](https://docusaurus.io) and open-sourced on [GitHub](https://github.com/lailai0916/lailai0916.github.io).
 
+![](static/img/preview/home-light.png#gh-light-mode-only)![](static/img/preview/home-dark.png#gh-dark-mode-only)
+
 ## # Website Features
 
 🦖 **Powered by Docusaurus** — Built with [Docusaurus](https://docusaurus.io), designed for documentation and blogs.
@@ -79,12 +81,6 @@ lailai0916.github.io
 ## # Blog Feeds
 
 Stay updated with the latest blog posts: [RSS Feed](https://lailai.one/blog/rss.xml) | [Atom Feed](https://lailai.one/blog/atom.xml) | [JSON Feed](https://lailai.one/blog/feed.json)
-
-## # Website Preview
-
-This is a preview of the website’s homepage.
-
-![](static/img/preview/home-light.png#gh-light-mode-only)![](static/img/preview/home-dark.png#gh-dark-mode-only)
 
 ## # Sponsor
 
