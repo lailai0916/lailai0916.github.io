@@ -9,7 +9,7 @@ tags: [personal]
 
 ## 说明
 
-1. 头像整体为 $1000\times 1000$ 像素，划分为 $5\times 5$ 个 $200\times 200$ 色块
+1. 头像整体为 $1000\times 1000$ 像素，划分为 $5\times 5$ 个 $200\times 200$ 色块。
 2. 颜色分别为：
 
 - 绿色（$G\to\textcolor{37A93C}{37A93C}$）
@@ -19,7 +19,7 @@ tags: [personal]
 - 白色（$W\to\textcolor{FFFFFF}{FFFFFF}$）
 - 黑色（$K\to\textcolor{000000}{000000}$）
 
-3. 色块的布局顺序为：
+3. 色块顺序为：
 
 ```text
 GYGYR
