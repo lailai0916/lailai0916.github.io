@@ -1,4 +1,5 @@
 .container {
+  /* 固定侧边栏宽度，主栏自适应最大宽度 */
   --left-col-width: 320px;
   --main-col-max-width: 880px;
   --grid-gap: 1.25rem;
@@ -24,6 +25,7 @@
 
 @media (max-width: 996px) {
   .container {
+    /* 移动端使用流式单列，避免固定宽度导致横向滚动 */
     grid-template-columns: 1fr;
     max-width: 100%;
   }
