@@ -12,8 +12,6 @@ lailai 的个人网站，分享技术笔记、项目经验与学习心得。
 
 本网站使用 [Docusaurus](https://docusaurus.io) 构建，源代码托管于 [GitHub](https://github.com/lailai0916/lailai0916.github.io)。
 
-![](static/img/preview/home-light.zh-Hans.png#gh-light-mode-only)![](static/img/preview/home-dark.zh-Hans.png#gh-dark-mode-only)
-
 ## # 网站特性
 
 🦖 **Docusaurus 构建**：使用 [Docusaurus](https://docusaurus.io) 构建，专为文档与博客设计。
@@ -81,6 +79,12 @@ lailai0916.github.io
 ## # 博客订阅
 
 获取最新博客文章更新：[RSS 订阅](https://lailai.one/blog/rss.xml) | [Atom 订阅](https://lailai.one/blog/atom.xml) | [JSON 订阅](https://lailai.one/blog/feed.json)
+
+## # 网站预览
+
+这是网站主页的预览。
+
+![](static/img/preview/home-light.zh-Hans.png#gh-light-mode-only)![](static/img/preview/home-dark.zh-Hans.png#gh-dark-mode-only)
 
 ## # 赞助支持
 
