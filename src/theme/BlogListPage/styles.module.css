@@ -1,28 +1,26 @@
 .container {
-  /* 固定中间主列宽度（统一所有子页面），左侧栏与内容列固定 */
-  --main-col-width: 880px;
+  /* 固定侧边栏宽度，主栏自适应最大宽度 */
   --left-col-width: 320px;
+  --main-col-max-width: 880px;
   --grid-gap: 1.25rem;
 
   width: 100%;
   max-width: calc(
-    var(--left-col-width) + var(--main-col-width) + var(--grid-gap)
+    var(--left-col-width) + var(--main-col-max-width) + var(--grid-gap)
   );
   margin: 0 auto;
   padding: 2rem 1rem;
   display: grid;
-  grid-template-columns: var(--left-col-width) var(--main-col-width);
-  gap: var(--grid-gap);
-}
-
-@media (max-width: 1300px) {
-  .container {
-    --main-col-width: 640px;
-    --left-col-width: 300px;
-    max-width: calc(
-      var(--left-col-width) + var(--main-col-width) + var(--grid-gap)
+  grid-template-columns:
+    var(--left-col-width)
+    minmax(
+      0,
+      min(
+        var(--main-col-max-width),
+        calc(100% - var(--left-col-width) - var(--grid-gap))
+      )
     );
-  }
+  gap: var(--grid-gap);
 }
 
 @media (max-width: 996px) {
