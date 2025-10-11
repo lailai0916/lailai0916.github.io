@@ -1,9 +1,13 @@
 import React from 'react';
 import Link from '@docusaurus/Link';
-import Translate from '@docusaurus/Translate';
 import clsx from 'clsx';
 import type { BlogPaginatedMetadata } from '@docusaurus/plugin-content-blog';
 import styles from '../BlogListPage/styles.module.css';
+
+type PageItem = {
+  label: string;
+  to?: string;
+};
 
 export default function Paginator({ meta }: { meta: BlogPaginatedMetadata }) {
   if (!meta?.totalPages || meta.totalPages <= 1) return null;
@@ -41,42 +45,30 @@ export default function Paginator({ meta }: { meta: BlogPaginatedMetadata }) {
   add(current + 1);
   add(totalPages);
   const pages = Array.from(set).sort((a, b) => a - b);
-  const items: Array<number> = [];
-  for (let i = 0; i < pages.length; i += 1) {
-    if (i > 0 && pages[i] - pages[i - 1] > 1) items.push(0);
-    items.push(pages[i]);
+  const items: PageItem[] = [];
+
+  items.push({ label: '←', to: meta.previousPage });
+  items.push({ label: `${pages[0]}`, to: `${firstBase}` });
+  for (let i = 1; i < pages.length; i += 1) {
+    if (pages[i] - pages[i - 1] > 1) items.push({ label: '…' });
+    items.push({ label: `${pages[i]}`, to: `${pageBase}/${pages[i]}` });
   }
+  items.push({ label: '→', to: meta.nextPage });
 
   return (
     <nav className={styles.paginator}>
-      {meta.previousPage && (
-        <Link className={styles.pageLink} to={meta.previousPage}>
-          ←
+      {items.map((it, idx) => (
+        <Link
+          key={idx}
+          to={it.to}
+          className={clsx(
+            styles.pageLink,
+            it.label === `${current}` && styles.pageLinkActive
+          )}
+        >
+          {it.label}
         </Link>
-      )}
-      {items.map((it, idx) =>
-        it ? (
-          <Link
-            key={`page-${it}`}
-            to={it === 1 ? firstBase : `${pageBase}/${it}`}
-            className={clsx(
-              styles.pageLink,
-              it === current && styles.pageLinkActive
-            )}
-          >
-            {it}
-          </Link>
-        ) : (
-          <span key={`ellipsis-${idx}`} className={styles.paginatorEllipsis}>
-            …
-          </span>
-        )
-      )}
-      {meta.nextPage && (
-        <Link className={styles.pageLink} to={meta.nextPage}>
-          →
-        </Link>
-      )}
+      ))}
     </nav>
   );
 }
