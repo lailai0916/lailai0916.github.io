@@ -224,7 +224,6 @@
 }
 
 .tagChip:hover {
-  background: var(--ifm-color-emphasis-200);
   border-color: var(--ifm-color-primary);
   transform: translateY(-1px);
 }
