@@ -447,38 +447,10 @@ html[data-theme='dark'] .archiveFilterButton {
 
 .paginator {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   gap: 0.5rem;
   margin-top: 0.5rem;
-}
-
-.paginatorBtn {
-  background: var(--ifm-card-background-color);
-  border: 1px solid var(--ifm-color-emphasis-200);
-  border-radius: 10px;
-  padding: 0.5rem 0.75rem;
-  text-decoration: none !important;
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.06);
-  transition:
-    transform 160ms ease,
-    box-shadow 160ms ease,
-    border-color 160ms ease;
-  /* Prevent grid from stretching the buttons to fill the 1fr columns */
-  justify-self: start;
-  white-space: nowrap;
-}
-
-.paginatorBtn:hover {
-  transform: translateY(-1px);
-  border-color: var(--ifm-color-primary);
-  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.09);
-}
-
-.paginatorMid {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
 }
 
 .pageLink {
