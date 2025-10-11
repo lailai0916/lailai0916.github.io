@@ -31,10 +31,7 @@ function AuthorCard() {
       <div className={styles.authorCardHeader}>
         <img
           src={useBaseUrl(author.imageURL)}
-          alt="avatar"
           className={styles.authorAvatar}
-          width={96}
-          height={96}
         />
         <div className={styles.authorName}>{author.name}</div>
         <div className={styles.authorDesc}>{author.title}</div>

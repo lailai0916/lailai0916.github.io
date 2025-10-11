@@ -1066,11 +1066,11 @@
   "blog.sidebar.stats.tags": {
     "message": "标签"
   },
-  "blog.sidebar.stats.views": {
-    "message": "浏览"
-  },
   "blog.sidebar.stats.visitors": {
     "message": "访客"
+  },
+  "blog.sidebar.stats.views": {
+    "message": "浏览"
   },
   "blog.sidebar.tags.title": {
     "message": "热门标签"
