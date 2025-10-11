@@ -1,7 +1,7 @@
 import React from 'react';
 import Translate from '@docusaurus/Translate';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
-import styles from '../BlogListPage/styles.module.css';
+import styles from '../BlogShared/styles.module.css';
 import { getTagsOfficialOrder } from '@site/src/utils/blogData';
 import TagChipList from './TagChipList';
 

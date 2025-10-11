@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from '@docusaurus/Link';
 import { translate } from '@docusaurus/Translate';
-import styles from '../BlogListPage/styles.module.css';
+import styles from '../BlogShared/styles.module.css';
 import { formatDate } from '@site/src/utils/date';
 
 export default function PostCard({ item }: { item: any }) {

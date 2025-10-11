@@ -6,7 +6,7 @@ import Translate from '@docusaurus/Translate';
 import { useLocation, useHistory } from '@docusaurus/router';
 import clsx from 'clsx';
 
-import styles from '../BlogListPage/styles.module.css';
+import styles from '../BlogShared/styles.module.css';
 import BlogScaffold from '../BlogShared/Scaffold';
 
 // page uses shared sidebars that fetch data; no direct utils here

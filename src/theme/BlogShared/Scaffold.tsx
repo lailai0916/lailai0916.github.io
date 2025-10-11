@@ -1,6 +1,6 @@
 import React from 'react';
 import Layout from '@theme/Layout';
-import styles from '../BlogListPage/styles.module.css';
+import styles from '../BlogShared/styles.module.css';
 import Sidebar from './Sidebar';
 
 type Props = {

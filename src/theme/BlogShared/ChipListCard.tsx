@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from '../BlogListPage/styles.module.css';
+import styles from '../BlogShared/styles.module.css';
 import TagChipList from './TagChipList';
 
 type Item = {

@@ -10,7 +10,7 @@ import {
   getArchiveByYear,
 } from '@site/src/utils/blogData';
 import TagChipList from './TagChipList';
-import styles from '../BlogListPage/styles.module.css';
+import styles from '../BlogShared/styles.module.css';
 
 const fixedId = 'lailai';
 const baseurl = 'https://analytics.lailai.one';
