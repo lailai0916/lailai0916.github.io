@@ -161,22 +161,22 @@ function StatsCard() {
     {
       value:
         analyticsLoaded && !analyticsError
-          ? formatLongNumber(analytics?.pageviews)
+          ? formatLongNumber(analytics?.visitors)
           : 'N/A',
       label: translate({
-        id: 'blog.sidebar.stats.views',
-        message: 'Views',
+        id: 'blog.sidebar.stats.visitors',
+        message: 'Visitors',
       }),
       href: shareurl,
     },
     {
       value:
         analyticsLoaded && !analyticsError
-          ? formatLongNumber(analytics?.visitors)
+          ? formatLongNumber(analytics?.pageviews)
           : 'N/A',
       label: translate({
-        id: 'blog.sidebar.stats.visitors',
-        message: 'Visitors',
+        id: 'blog.sidebar.stats.views',
+        message: 'Views',
       }),
       href: shareurl,
     },
