@@ -1,6 +1,7 @@
 import React from 'react';
 import Link from '@docusaurus/Link';
 import Translate from '@docusaurus/Translate';
+import clsx from 'clsx';
 import styles from '../BlogListPage/styles.module.css';
 
 type Meta = {
@@ -75,12 +76,10 @@ export default function Paginator({ meta }: { meta: Meta }) {
             <Link
               key={`page-${it}`}
               to={linkFor(it as number)}
-              className={
-                it === current
-                  ? `${styles.pageLink} ${styles.pageLinkActive}`
-                  : styles.pageLink
-              }
-              aria-current={it === current ? 'page' : undefined}
+              className={clsx(
+                styles.pageLink,
+                it === current && styles.pageLinkActive
+              )}
             >
               {it}
             </Link>
@@ -89,10 +88,7 @@ export default function Paginator({ meta }: { meta: Meta }) {
       </div>
 
       {meta.nextPage && (
-        <Link
-          className={`${styles.paginatorBtn} ${styles.paginatorNext}`}
-          to={meta.nextPage}
-        >
+        <Link className={styles.paginatorBtn} to={meta.nextPage}>
           <Translate id="theme.blog.paginator.olderEntries">Older</Translate> →
         </Link>
       )}

@@ -446,8 +446,8 @@ html[data-theme='dark'] .archiveFilterButton {
 }
 
 .paginator {
-  display: grid;
-  grid-template-columns: 1fr auto 1fr;
+  display: flex;
+  justify-content: space-between;
   align-items: center;
   gap: 0.5rem;
   margin-top: 0.5rem;
@@ -475,16 +475,10 @@ html[data-theme='dark'] .archiveFilterButton {
   box-shadow: 0 8px 18px rgba(0, 0, 0, 0.09);
 }
 
-/* Ensure "Older →" sticks to the right */
-.paginatorNext {
-  justify-self: end;
-}
-
 .paginatorMid {
   display: flex;
   align-items: center;
-  gap: 0.25rem;
-  justify-self: center;
+  gap: 0.5rem;
 }
 
 .pageLink {
