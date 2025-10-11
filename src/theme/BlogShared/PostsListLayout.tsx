@@ -47,15 +47,15 @@ function Paginator({ meta }: { meta: BlogPaginatedMetadata }) {
 
   return (
     <nav className={styles.paginator}>
-      {items.map((it, idx) => (
+      {items.map((item, idx) => (
         <Link
           key={idx}
-          to={it.to}
+          to={item.to}
           className={clsx(styles.pageLink, {
-            [styles.pageLinkActive]: it.label === String(page),
+            [styles.pageLinkActive]: item.label === String(page),
           })}
         >
-          {it.label}
+          {item.label}
         </Link>
       ))}
     </nav>
