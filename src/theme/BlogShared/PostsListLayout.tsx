@@ -51,10 +51,9 @@ function Paginator({ meta }: { meta: BlogPaginatedMetadata }) {
         <Link
           key={idx}
           to={it.to}
-          className={clsx(
-            styles.pageLink,
-            it.label === String(page) && styles.pageLinkActive
-          )}
+          className={clsx(styles.pageLink, {
+            [styles.pageLinkActive]: it.label === String(page),
+          })}
         >
           {it.label}
         </Link>
