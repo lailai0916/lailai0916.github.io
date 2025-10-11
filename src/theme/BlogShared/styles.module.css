@@ -73,11 +73,6 @@
   border-color: var(--ifm-color-primary);
 }
 
-html[data-theme='dark'] .card {
-  border-color: var(--ifm-color-emphasis-300);
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
-}
-
 .authorCardHeader {
   display: flex;
   align-items: center;
@@ -203,10 +198,6 @@ html[data-theme='dark'] .card {
   background: var(--ifm-color-primary);
   border-color: var(--ifm-color-primary);
   color: #fff;
-}
-
-html[data-theme='dark'] .archiveFilterButton {
-  border-color: var(--ifm-color-emphasis-300);
 }
 
 .tagList {
