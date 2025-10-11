@@ -185,14 +185,12 @@ function StatsCard() {
         <Translate id="blog.sidebar.stats.title">Statistics</Translate>
       </div>
       <div className={styles.authorStats}>
-        {statsItems.map((item) => {
-          return (
-            <Link key={item.label} to={item.href} className={styles.statItem}>
-              <div className={styles.statValue}>{item.value}</div>
-              <div className={styles.statLabel}>{item.label}</div>
-            </Link>
-          );
-        })}
+        {statsItems.map((item) => (
+          <Link key={item.label} to={item.href} className={styles.statItem}>
+            <div className={styles.statValue}>{item.value}</div>
+            <div className={styles.statLabel}>{item.label}</div>
+          </Link>
+        ))}
       </div>
     </div>
   );
