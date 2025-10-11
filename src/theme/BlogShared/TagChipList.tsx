@@ -12,31 +12,29 @@ type ChipItem = {
 
 interface TagChipListProps {
   items: ChipItem[];
-  className?: string;
 }
 
 export default function TagChipList({
   items,
-  className,
 }: TagChipListProps): React.ReactElement | null {
   if (!items.length) {
     return null;
   }
 
   return (
-    <div className={clsx(styles.tagList, className)}>
-      {items.map(({ to, label, count, active }) => (
+    <div className={styles.tagList}>
+      {items.map((item) => (
         <Link
-          key={to}
-          to={to}
+          key={item.to}
+          to={item.to}
           className={clsx(styles.tagChip, {
-            [styles.tagChipActive]: active,
+            [styles.tagChipActive]: item.active,
           })}
         >
           <span className={styles.tagDot} />
-          {label}
-          {count !== undefined && (
-            <span className={styles.tagCount}>{count}</span>
+          {item.label}
+          {item.count !== undefined && (
+            <span className={styles.tagCount}>{item.count}</span>
           )}
         </Link>
       ))}
