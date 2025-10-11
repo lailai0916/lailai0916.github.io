@@ -4,14 +4,9 @@ import clsx from 'clsx';
 import type { BlogPaginatedMetadata } from '@docusaurus/plugin-content-blog';
 import styles from '../BlogListPage/styles.module.css';
 
-type PageItem = {
-  label: string;
-  to?: string;
-};
-
 export default function Paginator({ meta }: { meta: BlogPaginatedMetadata }) {
   if (!meta?.totalPages || meta.totalPages <= 1) return null;
-  const { page: current, totalPages } = meta;
+  const { page, totalPages } = meta;
   const curPermalink = meta.permalink as string;
   const sample = meta.nextPage || meta.previousPage || '';
   // Derive pageBase and firstBase robustly for routes like:
@@ -35,17 +30,9 @@ export default function Paginator({ meta }: { meta: BlogPaginatedMetadata }) {
     pageBase = `${firstBase.replace(/\/?$/, '')}/page`;
   }
 
-  const set = new Set<number>();
-  const add = (n: number) => {
-    if (n >= 1 && n <= totalPages) set.add(n);
-  };
-  add(1);
-  add(current - 1);
-  add(current);
-  add(current + 1);
-  add(totalPages);
-  const pages = Array.from(set).sort((a, b) => a - b);
-  const items: PageItem[] = [];
+  const mid = Math.min(Math.max(page, 2), totalPages - 1);
+  const pages = Array.from(new Set([1, mid - 1, mid, mid + 1, totalPages]));
+  const items: { label: string; to?: string }[] = [];
 
   items.push({ label: '←', to: meta.previousPage });
   items.push({ label: `${pages[0]}`, to: `${firstBase}` });
@@ -63,7 +50,7 @@ export default function Paginator({ meta }: { meta: BlogPaginatedMetadata }) {
           to={it.to}
           className={clsx(
             styles.pageLink,
-            it.label === `${current}` && styles.pageLinkActive
+            it.label === String(page) && styles.pageLinkActive
           )}
         >
           {it.label}
