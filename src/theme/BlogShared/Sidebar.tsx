@@ -237,11 +237,11 @@ function ArchiveCard() {
 
 export default function Sidebar() {
   return (
-    <>
+    <div className={styles.sidebarStack}>
       <AuthorCard />
       <StatsCard />
       <PopularTagsCard />
       <ArchiveCard />
-    </>
+    </div>
   );
 }

@@ -1,5 +1,6 @@
 import React from 'react';
 import Layout from '@theme/Layout';
+import { PageContainer } from '@site/src/components/laikit/page';
 import styles from '../BlogShared/styles.module.css';
 import Sidebar from './Sidebar';
 
@@ -12,14 +13,14 @@ type Props = {
 export default function BlogScaffold({ title, description, children }: Props) {
   return (
     <Layout title={title} description={description}>
-      <div className={styles.container}>
-        <aside className={styles.leftCol}>
-          <div className={styles.sidebarStack}>
+      <PageContainer>
+        <div className={styles.container}>
+          <aside className={styles.leftCol}>
             <Sidebar />
-          </div>
-        </aside>
-        <main className={styles.mainCol}>{children}</main>
-      </div>
+          </aside>
+          <main className={styles.mainCol}>{children}</main>
+        </div>
+      </PageContainer>
     </Layout>
   );
 }
