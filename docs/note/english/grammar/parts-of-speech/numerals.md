@@ -256,6 +256,8 @@
 
 零的单词为“zero”，有时也可读成 “oh”（例如 $101$ 可读作 one-oh-one）
 
+第零的单词为“zeroth”，例如热力学第零定律（Zeroth law of thermodynamics）
+
 :::example
 
 - $0$：zero
