@@ -13,7 +13,6 @@ function PostCard({ item }: { item: any }) {
   const { content } = item;
   const { metadata, frontMatter } = content;
   const image = frontMatter?.image || content?.assets?.image;
-  const tagsText = metadata.tags?.map((tag) => tag.label).join(' / ') ?? 'None';
 
   return (
     <article className={styles.postCard}>
@@ -48,7 +47,7 @@ function PostCard({ item }: { item: any }) {
                     message: '{word} words',
                   },
                   {
-                    word: Math.max(1, Math.round(metadata.readingTime * 384)),
+                    word: Math.round(metadata.readingTime * 384),
                   }
                 )}
               </IconText>
@@ -70,7 +69,19 @@ function PostCard({ item }: { item: any }) {
             <>
               <span className={styles.dot}>·</span>
               <IconText icon="lucide:tag" colorMode="monochrome">
-                {tagsText}
+                {metadata.tags?.map((tag, i) => (
+                  <React.Fragment key={tag.label}>
+                    <Link
+                      to={tag.permalink}
+                      style={{
+                        color: 'inherit',
+                      }}
+                    >
+                      {tag.label}
+                    </Link>
+                    {i < metadata.tags.length - 1 && ' / '}
+                  </React.Fragment>
+                ))}
               </IconText>
             </>
           )}
