@@ -13,7 +13,6 @@ function PostCard({ item }: { item: any }) {
   const { content } = item;
   const { metadata, frontMatter } = content;
   const image = frontMatter?.image || content?.assets?.image;
-  const readingTimeValue = metadata.readingTime;
   const tagsText = metadata.tags?.map((tag) => tag.label).join(' / ') ?? 'None';
 
   return (
@@ -39,7 +38,7 @@ function PostCard({ item }: { item: any }) {
           <IconText icon="lucide:calendar" colorMode="monochrome">
             <time dateTime={metadata.date}>{formatDate(metadata.date)}</time>
           </IconText>
-          {readingTimeValue && (
+          {metadata.readingTime && (
             <>
               <span className={styles.dot}>·</span>
               <IconText icon="lucide:file-text" colorMode="monochrome">
@@ -49,7 +48,7 @@ function PostCard({ item }: { item: any }) {
                     message: '{word} words',
                   },
                   {
-                    word: Math.max(1, Math.round(readingTimeValue * 384)),
+                    word: Math.max(1, Math.round(metadata.readingTime * 384)),
                   }
                 )}
               </IconText>
@@ -61,7 +60,7 @@ function PostCard({ item }: { item: any }) {
                     message: '{readingTime} min',
                   },
                   {
-                    readingTime: Math.max(1, Math.round(readingTimeValue)),
+                    readingTime: Math.max(1, Math.round(metadata.readingTime)),
                   }
                 )}
               </IconText>
