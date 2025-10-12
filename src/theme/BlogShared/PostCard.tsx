@@ -3,6 +3,7 @@ import Link from '@docusaurus/Link';
 import { translate } from '@docusaurus/Translate';
 import styles from '../BlogShared/styles.module.css';
 import { formatDate } from '@site/src/utils/date';
+import IconText from '@site/src/components/laikit/widget/IconText';
 
 export default function PostCard({ item }: { item: any }) {
   const { content } = item;
@@ -23,11 +24,11 @@ export default function PostCard({ item }: { item: any }) {
 
   return (
     <article className={styles.postCard}>
-      {image ? (
+      {image && (
         <Link to={metadata.permalink} className={styles.postCoverWrap}>
           <img src={image} alt={metadata.title} className={styles.postCover} />
         </Link>
-      ) : null}
+      )}
       <div className={styles.postBody}>
         <div className={styles.postTitleRow}>
           <span className={`${styles.tagChip} ${styles.postInlineTag}`}>
@@ -41,9 +42,11 @@ export default function PostCard({ item }: { item: any }) {
           {metadata.description ?? content.excerpt}
         </p>
         <div className={styles.postMeta}>
-          <time dateTime={metadata.date} className={styles.postDate}>
-            {formatDate(metadata.date)}
-          </time>
+          <IconText icon="lucide:calendar" colorMode="monochrome">
+            <time dateTime={metadata.date} className={styles.postDate}>
+              {formatDate(metadata.date)}
+            </time>
+          </IconText>
           {readingTimeValue !== null && <span className={styles.dot}>·</span>}
           {readingTimeValue !== null && (
             <span className={styles.reading}>
