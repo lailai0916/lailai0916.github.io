@@ -32,22 +32,15 @@
   }
 }
 
-.container > :nth-child(1) {
+.sideCol {
   grid-area: a1;
-}
-.container > :nth-child(2) {
-  grid-area: a2;
-}
-
-.mainCol {
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  /* 固定列宽布局下仍避免内部内容溢出 */
-  min-width: 0;
 }
 
-.sidebarStack {
+.mainCol {
+  grid-area: a2;
   display: flex;
   flex-direction: column;
   gap: 1rem;

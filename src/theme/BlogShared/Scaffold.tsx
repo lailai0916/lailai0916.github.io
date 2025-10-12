@@ -290,14 +290,14 @@ export default function BlogScaffold({ title, description, children }: Props) {
     <Layout title={title} description={description}>
       <PageContainer>
         <div className={styles.container}>
-          <aside className={styles.sidebarStack}>
+          <aside className={styles.sideCol}>
             <AuthorCard />
             <StatsCard />
             <FeedCard />
             <PopularTagsCard />
             <ArchiveCard />
           </aside>
-          <main>{children}</main>
+          <main className={styles.mainCol}>{children}</main>
         </div>
       </PageContainer>
     </Layout>
