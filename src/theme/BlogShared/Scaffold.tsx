@@ -207,10 +207,10 @@ function PopularTagsCard() {
         <Translate id="blog.sidebar.tags.title">Popular Tags</Translate>
       </div>
       <TagChipList
-        items={tags.map((t) => ({
-          to: t.permalink,
-          label: t.label,
-          count: t.count,
+        items={tags.map((item) => ({
+          to: item.permalink,
+          label: item.label,
+          count: item.count,
         }))}
       />
     </div>
