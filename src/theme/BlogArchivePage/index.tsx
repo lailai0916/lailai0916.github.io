@@ -141,9 +141,7 @@ export default function BlogArchivePage(props: Props): React.ReactElement {
         ))}
         {selectedYear != null && !visibleGroups.length && (
           <div className={styles.card}>
-            <div className={styles.mutedText}>
-              <Translate id="blog.pages.archive.empty">No posts yet</Translate>
-            </div>
+            <Translate id="blog.pages.archive.empty">No posts yet</Translate>
           </div>
         )}
       </BlogScaffold>
