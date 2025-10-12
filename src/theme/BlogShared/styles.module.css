@@ -20,25 +20,23 @@
         calc(100% - var(--left-col-width) - var(--grid-gap))
       )
     );
+  grid-template-areas: 'a1 a2';
   gap: var(--grid-gap);
 }
 
 @media (max-width: 996px) {
   .container {
-    /* 移动端使用流式单列，避免固定宽度导致横向滚动 */
-    grid-template-columns: 1fr;
     max-width: 100%;
-  }
-  .leftCol {
-    order: 2;
-  }
-  .mainCol {
-    order: 1;
+    grid-template-columns: 1fr;
+    grid-template-areas: 'a2' 'a1';
   }
 }
 
-.leftCol {
-  display: block;
+.container > :nth-child(1) {
+  grid-area: a1;
+}
+.container > :nth-child(2) {
+  grid-area: a2;
 }
 
 .mainCol {

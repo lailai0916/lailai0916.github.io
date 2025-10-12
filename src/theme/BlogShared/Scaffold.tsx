@@ -5,7 +5,6 @@ import { PageContainer } from '@site/src/components/laikit/page';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import Translate, { translate } from '@docusaurus/Translate';
 import Link from '@docusaurus/Link';
-import clsx from 'clsx';
 import {
   getBlogPostCount,
   getTopTags,
@@ -282,14 +281,14 @@ export default function BlogScaffold({ title, description, children }: Props) {
     <Layout title={title} description={description}>
       <PageContainer>
         <div className={styles.container}>
-          <aside className={clsx(styles.leftCol, styles.sidebarStack)}>
+          <aside className={styles.sidebarStack}>
             <AuthorCard />
             <StatsCard />
             <FeedCard />
             <PopularTagsCard />
             <ArchiveCard />
           </aside>
-          <main className={styles.mainCol}>{children}</main>
+          <main>{children}</main>
         </div>
       </PageContainer>
     </Layout>
