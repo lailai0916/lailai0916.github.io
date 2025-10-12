@@ -242,7 +242,7 @@ function FeedCard() {
   const feeds = [
     {
       label: 'RSS Feed',
-      href: 'https://lailai.one/blog/rss.xml',
+      href: '/blog/rss.xml',
     },
     {
       label: 'Atom Feed',
