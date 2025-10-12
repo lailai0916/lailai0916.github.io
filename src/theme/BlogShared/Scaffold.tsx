@@ -238,11 +238,44 @@ function ArchiveCard() {
   );
 }
 
+function FeedCard() {
+  const feeds = [
+    {
+      label: 'RSS Feed',
+      href: 'https://lailai.one/blog/rss.xml',
+    },
+    {
+      label: 'Atom Feed',
+      href: 'https://lailai.one/blog/atom.xml',
+    },
+    {
+      label: 'JSON Feed',
+      href: 'https://lailai.one/blog/feed.json',
+    },
+  ];
+
+  return (
+    <div className={styles.card}>
+      <div className={styles.cardTitle}>
+        <Translate id="blog.sidebar.feed.title">Subscribe</Translate>
+      </div>
+      <div className={styles.feedButtonGroup}>
+        {feeds.map((feed) => (
+          <Link key={feed.href} href={feed.href} className={styles.feedButton}>
+            {feed.label}
+          </Link>
+        ))}
+      </div>
+    </div>
+  );
+}
+
 function Sidebar() {
   return (
     <div className={styles.sidebarStack}>
       <AuthorCard />
       <StatsCard />
+      <FeedCard />
       <PopularTagsCard />
       <ArchiveCard />
     </div>

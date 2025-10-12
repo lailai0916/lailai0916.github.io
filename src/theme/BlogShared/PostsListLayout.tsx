@@ -8,11 +8,15 @@ import { translate } from '@docusaurus/Translate';
 import { formatDate } from '@site/src/utils/date';
 import IconText from '@site/src/components/laikit/widget/IconText';
 import styles from '../BlogShared/styles.module.css';
+import MDXContent from '@theme/MDXContent';
 
 function PostCard({ item }: { item: any }) {
   const { content } = item;
   const { metadata, frontMatter } = content;
   const image = frontMatter?.image || content?.assets?.image;
+  const ContentComponent = content;
+  const fallbackExcerpt =
+    content.excerpt ?? metadata.description ?? frontMatter?.description ?? '';
 
   return (
     <article className={styles.postCard}>
@@ -30,9 +34,15 @@ function PostCard({ item }: { item: any }) {
             <h2 className={styles.postTitle}>{metadata.title}</h2>
           </Link>
         </div>
-        <p className={styles.postExcerpt}>
-          {metadata.description ?? content.excerpt}
-        </p>
+        <div className={styles.postExcerpt}>
+          {metadata.hasTruncateMarker ? (
+            <MDXContent>
+              <ContentComponent />
+            </MDXContent>
+          ) : (
+            <p>{fallbackExcerpt}</p>
+          )}
+        </div>
         <div className={styles.postMeta}>
           <IconText icon="lucide:calendar" colorMode="monochrome">
             <time dateTime={metadata.date}>{formatDate(metadata.date)}</time>

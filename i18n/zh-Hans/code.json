@@ -1063,6 +1063,9 @@
   "blog.postcard.readingTime": {
     "message": "{readingTime} 分钟"
   },
+  "blog.sidebar.feed.title": {
+    "message": "订阅"
+  },
   "blog.sidebar.stats.title": {
     "message": "统计"
   },
