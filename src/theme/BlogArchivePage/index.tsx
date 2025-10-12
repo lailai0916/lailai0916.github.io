@@ -2,12 +2,13 @@ import React from 'react';
 import { useTheme } from '@site/src/hooks/useTheme';
 import BlogArchivePageOriginal from '@theme-original/BlogArchivePage';
 import Link from '@docusaurus/Link';
-import Translate from '@docusaurus/Translate';
+import Translate, { translate } from '@docusaurus/Translate';
 import { useLocation, useHistory } from '@docusaurus/router';
 import clsx from 'clsx';
 
 import styles from '../BlogShared/styles.module.css';
 import BlogScaffold from '../BlogShared/Scaffold';
+import { Card } from '../BlogShared/components';
 
 // page uses shared sidebars that fetch data; no direct utils here
 
@@ -96,10 +97,12 @@ export default function BlogArchivePage(props: Props): React.ReactElement {
     return (
       <BlogScaffold title="Archive" description="Archive of lailai's blog">
         {!!yearList.length && (
-          <div className={styles.card}>
-            <div className={styles.cardTitle}>
-              <Translate id="theme.blog.archive.title">Archive</Translate>
-            </div>
+          <Card
+            title={translate({
+              id: 'theme.blog.archive.title',
+              message: 'Archive',
+            })}
+          >
             <div className={styles.archiveFilter}>
               <span className={styles.archiveFilterLabel}>
                 <Translate id="blog.pages.archive.yearSelect">Year</Translate>
@@ -120,11 +123,10 @@ export default function BlogArchivePage(props: Props): React.ReactElement {
                 ))}
               </div>
             </div>
-          </div>
+          </Card>
         )}
         {visibleGroups.map(([year, posts]) => (
-          <div key={year} className={styles.card} id={String(year)}>
-            <div className={styles.cardTitle}>{year}</div>
+          <Card key={year} title={year}>
             <ul className={styles.recentList}>
               {posts.map((p: any) => (
                 <li key={p.metadata.permalink} className={styles.recentItem}>
@@ -137,7 +139,7 @@ export default function BlogArchivePage(props: Props): React.ReactElement {
                 </li>
               ))}
             </ul>
-          </div>
+          </Card>
         ))}
         {selectedYear != null && !visibleGroups.length && (
           <div className={styles.card}>

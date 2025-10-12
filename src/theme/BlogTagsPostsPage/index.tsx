@@ -13,7 +13,7 @@ import { translate } from '@docusaurus/Translate';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import { getTagsOfficialOrder } from '@site/src/utils/blogData';
 import TagChipList from '../BlogShared/TagChipList';
-import Card from '../BlogShared/components';
+import { Card } from '../BlogShared/components';
 
 interface TagSelectorProps {
   activePermalink?: string;

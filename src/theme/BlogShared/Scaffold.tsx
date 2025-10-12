@@ -13,6 +13,7 @@ import {
   getArchiveByYear,
 } from '@site/src/utils/blogData';
 import TagChipList from './TagChipList';
+import { Card } from '../BlogShared/components';
 import styles from '../BlogShared/styles.module.css';
 
 const fixedId = 'lailai';
@@ -183,10 +184,12 @@ function StatsCard() {
   ];
 
   return (
-    <div className={styles.card}>
-      <div className={styles.cardTitle}>
-        <Translate id="blog.sidebar.stats.title">Statistics</Translate>
-      </div>
+    <Card
+      title={translate({
+        id: 'blog.sidebar.stats.title',
+        message: 'Statistics',
+      })}
+    >
       <div className={styles.authorStats}>
         {statsItems.map((item) => (
           <Link key={item.label} to={item.href} className={styles.statItem}>
@@ -195,17 +198,19 @@ function StatsCard() {
           </Link>
         ))}
       </div>
-    </div>
+    </Card>
   );
 }
 
 function PopularTagsCard() {
   const tags = React.useMemo(() => getTopTags(8), []);
   return (
-    <div className={styles.card}>
-      <div className={styles.cardTitle}>
-        <Translate id="blog.sidebar.tags.title">Popular Tags</Translate>
-      </div>
+    <Card
+      title={translate({
+        id: 'blog.sidebar.tags.title',
+        message: 'Popular Tags',
+      })}
+    >
       <TagChipList
         items={tags.map((item) => ({
           to: item.permalink,
@@ -213,17 +218,19 @@ function PopularTagsCard() {
           count: item.count,
         }))}
       />
-    </div>
+    </Card>
   );
 }
 
 function ArchiveCard() {
   const years = React.useMemo(() => getArchiveByYear(), []);
   return (
-    <div className={styles.card}>
-      <div className={styles.cardTitle}>
-        <Translate id="theme.blog.archive.title">Archive</Translate>
-      </div>
+    <Card
+      title={translate({
+        id: 'theme.blog.archive.title',
+        message: 'Archive',
+      })}
+    >
       <ul className={styles.archiveList}>
         {years.map((y) => (
           <li key={y.year} className={styles.archiveItem}>
@@ -234,7 +241,7 @@ function ArchiveCard() {
           </li>
         ))}
       </ul>
-    </div>
+    </Card>
   );
 }
 
@@ -255,10 +262,12 @@ function FeedCard() {
   ];
 
   return (
-    <div className={styles.card}>
-      <div className={styles.cardTitle}>
-        <Translate id="blog.sidebar.feed.title">Subscribe</Translate>
-      </div>
+    <Card
+      title={translate({
+        id: 'blog.sidebar.feed.title',
+        message: 'Subscribe',
+      })}
+    >
       <div className={styles.feedButtonGroup}>
         {feeds.map((feed) => (
           <Link key={feed.href} href={feed.href} className={styles.feedButton}>
@@ -266,7 +275,7 @@ function FeedCard() {
           </Link>
         ))}
       </div>
-    </div>
+    </Card>
   );
 }
 

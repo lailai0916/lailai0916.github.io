@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from '../BlogShared/styles.module.css';
+import { Card } from '../BlogShared/components';
 import TagChipList from './TagChipList';
 
 type Item = {
@@ -16,9 +17,8 @@ export default function ChipListCard({
   items: Item[];
 }) {
   return (
-    <div className={styles.card}>
-      <div className={styles.cardTitle}>{title}</div>
+    <Card title={title}>
       <TagChipList items={items} />
-    </div>
+    </Card>
   );
 }
