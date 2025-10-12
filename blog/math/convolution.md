@@ -5,6 +5,8 @@ authors: lailai
 tags: [math]
 ---
 
+卷积（Convolution）是透过两个函数 $f$ 和 $g$ 生成第三个函数的一种数学算子。
+
 <!-- truncate -->
 
 ## 参考资料
