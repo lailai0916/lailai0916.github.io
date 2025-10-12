@@ -5,6 +5,7 @@ import { PageContainer } from '@site/src/components/laikit/page';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import Translate, { translate } from '@docusaurus/Translate';
 import Link from '@docusaurus/Link';
+import clsx from 'clsx';
 import {
   getBlogPostCount,
   getTopTags,
@@ -270,18 +271,6 @@ function FeedCard() {
   );
 }
 
-function Sidebar() {
-  return (
-    <div className={styles.sidebarStack}>
-      <AuthorCard />
-      <StatsCard />
-      <FeedCard />
-      <PopularTagsCard />
-      <ArchiveCard />
-    </div>
-  );
-}
-
 type Props = {
   title?: string;
   description?: string;
@@ -293,8 +282,12 @@ export default function BlogScaffold({ title, description, children }: Props) {
     <Layout title={title} description={description}>
       <PageContainer>
         <div className={styles.container}>
-          <aside className={styles.leftCol}>
-            <Sidebar />
+          <aside className={clsx(styles.leftCol, styles.sidebarStack)}>
+            <AuthorCard />
+            <StatsCard />
+            <FeedCard />
+            <PopularTagsCard />
+            <ArchiveCard />
           </aside>
           <main className={styles.mainCol}>{children}</main>
         </div>
