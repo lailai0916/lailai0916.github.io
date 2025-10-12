@@ -1057,6 +1057,12 @@
   "pages.settings.item.quickactions.option.reset": {
     "message": "重置设置"
   },
+  "blog.postcard.word": {
+    "message": "{word} 字"
+  },
+  "blog.postcard.readingTime": {
+    "message": "{readingTime} 分钟"
+  },
   "blog.sidebar.stats.title": {
     "message": "统计"
   },
