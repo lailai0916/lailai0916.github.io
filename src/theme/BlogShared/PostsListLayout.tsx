@@ -13,19 +13,7 @@ function PostCard({ item }: { item: any }) {
   const { content } = item;
   const { metadata, frontMatter } = content;
   const image = frontMatter?.image || content?.assets?.image;
-
-  const readingTimeValue: number | null = (() => {
-    const rt = (metadata as any)?.readingTime;
-    if (typeof rt === 'number') return rt;
-    if (rt && typeof rt === 'object') {
-      const v = (rt.minutes ?? rt.value ?? rt.readingTime) as
-        | number
-        | undefined;
-      if (typeof v === 'number') return v;
-    }
-    return null;
-  })();
-
+  const readingTimeValue = metadata.readingTime;
   const tagsText = metadata.tags?.map((tag) => tag.label).join(' / ') ?? 'None';
 
   return (
@@ -57,7 +45,7 @@ function PostCard({ item }: { item: any }) {
               <IconText icon="lucide:file-text" colorMode="monochrome">
                 {translate(
                   {
-                    id: 'blog.postcard.word',
+                    id: 'blog.postcard.wordCount',
                     message: '{word} words',
                   },
                   {

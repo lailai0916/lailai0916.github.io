@@ -1057,7 +1057,7 @@
   "pages.settings.item.quickactions.option.reset": {
     "message": "重置设置"
   },
-  "blog.postcard.word": {
+  "blog.postcard.wordCount": {
     "message": "{word} 字"
   },
   "blog.postcard.readingTime": {
