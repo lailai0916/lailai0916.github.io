@@ -27,9 +27,11 @@ function PostCard({ item }) {
           <span className={`${styles.tagChip} ${styles.postInlineTag}`}>
             {metadata.tags?.[0]?.label ?? 'None'}
           </span>
-          <Link to={metadata.permalink} className={styles.postTitleLink}>
-            <h2 className={styles.postTitle}>{metadata.title}</h2>
-          </Link>
+          <h2 className={styles.postTitle}>
+            <Link to={metadata.permalink} className={styles.postTitleLink}>
+              {metadata.title}
+            </Link>
+          </h2>
         </div>
         <article className={styles.postExcerpt}>
           <MDXContent>
