@@ -12,7 +12,6 @@ const sidebars: SidebarsConfig = {
       },
       items: [
         'contest/personal/code-style',
-        'contest/personal/code-comparator',
         'contest/personal/common-templates',
         'contest/personal/luogu',
       ],
@@ -561,6 +560,8 @@ const sidebars: SidebarsConfig = {
         'project/lailai0916.github.io/tailwind',
       ],
     },
+    'project/code-comparator',
+    'project/hangzhou-highschool-map',
     {
       type: 'category',
       label: '指南',
