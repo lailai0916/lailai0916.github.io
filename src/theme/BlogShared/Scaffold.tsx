@@ -1,9 +1,8 @@
 import React from 'react';
-import Layout from '@theme/Layout';
-import { PageContainer } from '@site/src/components/laikit/page';
+import { DebugLayout } from '@site/src/components/laikit/page';
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
-import Translate, { translate } from '@docusaurus/Translate';
+import { translate } from '@docusaurus/Translate';
 import Link from '@docusaurus/Link';
 import {
   getBlogPostCount,
@@ -287,19 +286,17 @@ type Props = {
 
 export default function BlogScaffold({ title, description, children }: Props) {
   return (
-    <Layout title={title} description={description}>
-      <PageContainer>
-        <div className={styles.container}>
-          <aside className={styles.mainCol}>
-            <AuthorCard />
-            <StatsCard />
-            <FeedCard />
-            <PopularTagsCard />
-            <ArchiveCard />
-          </aside>
-          <main className={styles.mainCol}>{children}</main>
-        </div>
-      </PageContainer>
-    </Layout>
+    <DebugLayout title={title} description={description}>
+      <div className={styles.container}>
+        <aside className={styles.mainCol}>
+          <AuthorCard />
+          <StatsCard />
+          <FeedCard />
+          <PopularTagsCard />
+          <ArchiveCard />
+        </aside>
+        <main className={styles.mainCol}>{children}</main>
+      </div>
+    </DebugLayout>
   );
 }

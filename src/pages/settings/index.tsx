@@ -1,9 +1,8 @@
 import React, { type ReactNode } from 'react';
-import Layout from '@theme/Layout';
 
 import {
+  DebugLayout,
   PageTitle,
-  PageContainer,
   PageHeader,
 } from '@site/src/components/laikit/page';
 import DataCard from '@site/src/components/laikit/widget/DataCard';
@@ -134,11 +133,9 @@ function SettingsContainer() {
 
 export default function Settings(): ReactNode {
   return (
-    <Layout title={TITLE} description={DESCRIPTION}>
-      <PageContainer>
-        <SettingsHeader />
-        <SettingsContainer />
-      </PageContainer>
-    </Layout>
+    <DebugLayout title={TITLE} description={DESCRIPTION}>
+      <SettingsHeader />
+      <SettingsContainer />
+    </DebugLayout>
   );
 }

@@ -1,11 +1,25 @@
-import { useDebugMode } from '@site/src/hooks/useDebugMode';
+import React from 'react';
+import Layout from '@theme/Layout';
 import Heading from '@theme/Heading';
 import clsx from 'clsx';
+import { useDebugMode } from '@site/src/hooks/useDebugMode';
 import styles from './styles.module.css';
 
-export function PageContainer({ children }: { children: React.ReactNode }) {
+export function DebugLayout({
+  title,
+  description,
+  children,
+}: {
+  title: string;
+  description: string;
+  children: React.ReactNode;
+}) {
   const debugMode = useDebugMode();
-  return <main className={clsx(debugMode && styles.debug)}>{children}</main>;
+  return (
+    <Layout title={title} description={description}>
+      <main className={clsx(debugMode && styles.debug)}>{children}</main>
+    </Layout>
+  );
 }
 
 export function PageTitle({

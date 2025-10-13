@@ -1,9 +1,7 @@
 import React, { type ReactNode, useState } from 'react';
-import Layout from '@theme/Layout';
-
 import {
+  DebugLayout,
   PageTitle,
-  PageContainer,
   PageHeader,
   PageFooter,
 } from '@site/src/components/laikit/page';
@@ -97,12 +95,10 @@ function FriendsHeader() {
 
 export default function Friends(): ReactNode {
   return (
-    <Layout title={TITLE} description={DESCRIPTION}>
-      <PageContainer>
-        <FriendsHeader />
-        <FriendsMain />
-        <FriendsFooter />
-      </PageContainer>
-    </Layout>
+    <DebugLayout title={TITLE} description={DESCRIPTION}>
+      <FriendsHeader />
+      <FriendsMain />
+      <FriendsFooter />
+    </DebugLayout>
   );
 }

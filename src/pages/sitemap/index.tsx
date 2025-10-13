@@ -1,11 +1,10 @@
 import React, { type ReactNode } from 'react';
-import Layout from '@theme/Layout';
 
 import { SITEMAP_LIST } from '@site/src/data/sitemap';
 import Link from '@docusaurus/Link';
 import {
+  DebugLayout,
   PageTitle,
-  PageContainer,
   PageHeader,
 } from '@site/src/components/laikit/page';
 import DataCard from '@site/src/components/laikit/widget/DataCard';
@@ -59,11 +58,9 @@ function SitemapMain() {
 
 export default function Sitemap(): ReactNode {
   return (
-    <Layout title={TITLE} description={DESCRIPTION}>
-      <PageContainer>
-        <SitemapHeader />
-        <SitemapMain />
-      </PageContainer>
-    </Layout>
+    <DebugLayout title={TITLE} description={DESCRIPTION}>
+      <SitemapHeader />
+      <SitemapMain />
+    </DebugLayout>
   );
 }

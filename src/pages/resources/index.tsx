@@ -1,13 +1,12 @@
 import React, { type ReactNode, useState, useMemo } from 'react';
-import Layout from '@theme/Layout';
 
 import Link from '@docusaurus/Link';
 import { Icon } from '@iconify/react';
 import clsx from 'clsx';
 
 import {
+  DebugLayout,
   PageTitle,
-  PageContainer,
   PageHeader,
 } from '@site/src/components/laikit/page';
 import DataCard from '@site/src/components/laikit/widget/DataCard';
@@ -303,11 +302,9 @@ function ResourcesMain() {
 
 export default function Resources(): ReactNode {
   return (
-    <Layout title={TITLE} description={DESCRIPTION}>
-      <PageContainer>
-        <ResourcesHeader />
-        <ResourcesMain />
-      </PageContainer>
-    </Layout>
+    <DebugLayout title={TITLE} description={DESCRIPTION}>
+      <ResourcesHeader />
+      <ResourcesMain />
+    </DebugLayout>
   );
 }

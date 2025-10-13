@@ -1,8 +1,7 @@
 import React, { type ReactNode } from 'react';
-import Layout from '@theme/Layout';
 
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
-import { PageContainer } from '@site/src/components/laikit/page';
+import { DebugLayout } from '@site/src/components/laikit/page';
 import styles from './styles.module.css';
 
 import TopBanner from './_components/TopBanner';
@@ -23,22 +22,20 @@ export default function Home(): ReactNode {
   const { siteConfig } = useDocusaurusContext();
 
   return (
-    <Layout title={siteConfig.title} description={siteConfig.tagline}>
-      <PageContainer>
-        <TopBanner />
-        <HeroBanner />
-        <div className={styles.section}>
-          <Docs />
-          <Blog />
-          <Countdown />
-          <Project />
-          <Skills />
-          <Exploration />
-          <NeuralNetwork />
-          <Quotes />
-          <Community />
-        </div>
-      </PageContainer>
-    </Layout>
+    <DebugLayout title={siteConfig.title} description={siteConfig.tagline}>
+      <TopBanner />
+      <HeroBanner />
+      <div className={styles.section}>
+        <Docs />
+        <Blog />
+        <Countdown />
+        <Project />
+        <Skills />
+        <Exploration />
+        <NeuralNetwork />
+        <Quotes />
+        <Community />
+      </div>
+    </DebugLayout>
   );
 }
