@@ -15,7 +15,7 @@
 ### 等式性质
 
 - $a=a$（自反性）
-- ‌$a=b\Rightarrow b=a$（对称性）
+- $a=b\Rightarrow b=a$（对称性）
 - $a=b,b=c\Rightarrow a=c$（传递性）
 - $a=b\Rightarrow a\pm c=b\pm c,ac=bc,\frac{a}{c}=\frac{b}{c}$（$c\ne 0$）（替代性）
 
