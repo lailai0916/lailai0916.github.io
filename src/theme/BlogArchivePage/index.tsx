@@ -8,7 +8,7 @@ import clsx from 'clsx';
 
 import styles from '../BlogShared/styles.module.css';
 import BlogScaffold from '../BlogShared/Scaffold';
-import { Card } from '../BlogShared/components';
+import { Card } from '../BlogShared/Components';
 
 // page uses shared sidebars that fetch data; no direct utils here
 

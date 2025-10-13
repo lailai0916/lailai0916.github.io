@@ -12,7 +12,7 @@ import {
   getArchiveByYear,
 } from '@site/src/utils/blogData';
 import TagChipList from './TagChipList';
-import { Card } from '../BlogShared/components';
+import { Card } from '../BlogShared/Components';
 import styles from '../BlogShared/styles.module.css';
 
 const fixedId = 'lailai';

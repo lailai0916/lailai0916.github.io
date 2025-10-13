@@ -1,7 +1,7 @@
 import React from 'react';
 import { useTheme } from '@site/src/hooks/useTheme';
 
-import { Card } from '../BlogShared/components';
+import { Card } from '../BlogShared/Components';
 import TagChipList from '../BlogShared/TagChipList';
 import BlogTagsListPageOriginal from '@theme-original/BlogTagsListPage';
 import type { Props } from '@theme/BlogTagsListPage';
