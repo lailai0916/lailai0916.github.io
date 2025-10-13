@@ -1,5 +1,5 @@
 ---
-title: '地图集合'
+title: '地图'
 date: 2025-03-18T12:00
 authors: lailai
 tags: [misc]
@@ -9,6 +9,7 @@ tags: [misc]
 
 ## 参考资料
 
+- [OpenStreetMap](https://www.openstreetmap.org)
 - [标准地图服务系统](http://bzdt.ch.mnr.gov.cn/index.html)
 
 ## 世界地图
