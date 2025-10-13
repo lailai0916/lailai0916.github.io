@@ -7,8 +7,8 @@ import BlogScaffold from './Scaffold';
 import { translate } from '@docusaurus/Translate';
 import { formatDate } from '@site/src/utils/date';
 import IconText from '@site/src/components/laikit/widget/IconText';
-import styles from '../BlogShared/styles.module.css';
 import MDXContent from '@theme/MDXContent';
+import styles from '../BlogShared/styles.module.css';
 
 function PostCard({ item }) {
   const { content: MDXPageContent } = item;
@@ -31,11 +31,11 @@ function PostCard({ item }) {
             <h2 className={styles.postTitle}>{metadata.title}</h2>
           </Link>
         </div>
-        <div className={styles.postExcerpt}>
+        <article className={styles.postExcerpt}>
           <MDXContent>
             <MDXPageContent />
           </MDXContent>
-        </div>
+        </article>
         <div className={styles.postMeta}>
           <IconText icon="lucide:calendar" colorMode="monochrome">
             <time dateTime={metadata.date}>{formatDate(metadata.date)}</time>
