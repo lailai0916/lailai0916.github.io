@@ -17,7 +17,7 @@ export function DebugLayout({
   const debugMode = useDebugMode();
   return (
     <Layout title={title} description={description}>
-      <main className={clsx(debugMode && styles.debug)}>{children}</main>
+      <div className={clsx(debugMode && styles.debug)}>{children}</div>
     </Layout>
   );
 }
