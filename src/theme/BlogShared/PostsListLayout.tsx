@@ -123,7 +123,9 @@ function Paginator({ meta }: { meta: BlogPaginatedMetadata }) {
   }
 
   const mid = Math.min(Math.max(page, 2), totalPages - 1);
-  const pages = Array.from(new Set([1, mid - 1, mid, mid + 1, totalPages]));
+  const pages = Array.from(
+    new Set([1, mid - 1, mid, mid + 1, totalPages])
+  ).filter((p) => p >= 1 && p <= totalPages);
   const items: { label: string; to?: string }[] = [];
 
   items.push({ label: '←', to: meta.previousPage });
