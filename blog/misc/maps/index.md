@@ -1,5 +1,5 @@
 ---
-title: '地图'
+title: '地图合集'
 date: 2025-03-18T12:00
 authors: lailai
 tags: [misc]
