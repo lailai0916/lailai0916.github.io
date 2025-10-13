@@ -10,6 +10,9 @@ personal:
 travel:
   label: 旅行
 
+project:
+  label: 项目
+
 math:
   label: 数学
 

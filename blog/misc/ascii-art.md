@@ -2,7 +2,7 @@
 title: 'ASCII Art'
 date: 2025-06-24T13:24
 authors: lailai
-tags: [misc]
+tags: [project]
 ---
 
 <!-- truncate -->

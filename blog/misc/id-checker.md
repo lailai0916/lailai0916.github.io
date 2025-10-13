@@ -2,7 +2,7 @@
 title: '身份证校验器'
 date: 2024-09-20T10:34
 authors: lailai
-tags: [misc]
+tags: [project]
 ---
 
 <!-- truncate -->

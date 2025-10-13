@@ -10,6 +10,9 @@ personal:
 travel:
   label: Travel
 
+project:
+  label: Project
+
 math:
   label: Mathematics
 
