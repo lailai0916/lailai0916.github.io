@@ -269,7 +269,11 @@ function FeedCard() {
     >
       <div className={styles.feedButtonGroup}>
         {feeds.map((feed) => (
-          <Link key={feed.href} href={feed.href} className={`${styles.tagChip} ${styles.postInlineTag}`}>
+          <Link
+            key={feed.href}
+            href={feed.href}
+            className={`${styles.tagChip} ${styles.postInlineTag}`}
+          >
             {feed.label}
           </Link>
         ))}
