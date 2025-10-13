@@ -15,6 +15,8 @@ import { getTagsOfficialOrder } from '@site/src/utils/blogData';
 import TagChipList from '../BlogShared/TagChipList';
 import { Card } from '../BlogShared/components';
 
+const TITLE = translate({ id: 'blog.pages.tags.tagSelect', message: 'Tags' });
+
 interface TagSelectorProps {
   activePermalink?: string;
   limit?: number;
@@ -36,9 +38,7 @@ function TagSelector({ activePermalink, limit = 30 }: TagSelectorProps) {
   }
 
   return (
-    <Card
-      title={translate({ id: 'blog.pages.tags.tagSelect', message: 'Tags' })}
-    >
+    <Card title={TITLE}>
       <TagChipList
         items={tags.map((tag) => ({
           to: tag.permalink,

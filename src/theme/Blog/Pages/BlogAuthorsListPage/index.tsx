@@ -7,15 +7,16 @@ import TagChipList from '../../../BlogShared/TagChipList';
 import BlogScaffold from '../../../BlogShared/Scaffold';
 import type { Props } from '@theme/Blog/Pages/BlogAuthorsListPage';
 
+const TITLE = translate({
+  id: 'theme.blog.authorsList.pageTitle',
+  message: 'Authors',
+});
+const DESCRIPTION = "Authors of lailai's blog";
+
 export default function BlogAuthorsListPage({ authors, sidebar }: Props) {
   return (
-    <BlogScaffold title="Authors" description="Authors of lailai's blog">
-      <Card
-        title={translate({
-          id: 'theme.blog.authorsList.pageTitle',
-          message: 'Authors',
-        })}
-      >
+    <BlogScaffold title={TITLE} description={DESCRIPTION}>
+      <Card title={TITLE}>
         <TagChipList
           items={authors.map((author: any) => ({
             to: author.page.permalink,

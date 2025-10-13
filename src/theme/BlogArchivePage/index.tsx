@@ -15,6 +15,12 @@ import { Card } from '../BlogShared/components';
 import type { Props } from '@theme/BlogArchivePage';
 import { formatDate } from '@site/src/utils/date';
 
+const TITLE = translate({
+  id: 'theme.blog.archive.title',
+  message: 'Archive',
+});
+const DESCRIPTION = "Archive of lailai's blog";
+
 export default function BlogArchivePage(props: Props): React.ReactElement {
   const { isNewLayout } = useTheme();
   const { archive } = props;
@@ -95,14 +101,9 @@ export default function BlogArchivePage(props: Props): React.ReactElement {
 
   if (isNewLayout) {
     return (
-      <BlogScaffold title="Archive" description="Archive of lailai's blog">
+      <BlogScaffold title={TITLE} description={DESCRIPTION}>
         {!!yearList.length && (
-          <Card
-            title={translate({
-              id: 'theme.blog.archive.title',
-              message: 'Archive',
-            })}
-          >
+          <Card title={TITLE}>
             <div className={styles.archiveFilter}>
               <span className={styles.archiveFilterLabel}>
                 <Translate id="blog.pages.archive.yearSelect">Year</Translate>

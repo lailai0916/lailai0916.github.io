@@ -12,16 +12,17 @@ import { translate } from '@docusaurus/Translate';
 // shared sidebars handle their own data; no direct utils here
 // removed page-local sidebars/cards; using shared ones
 
+const TITLE = translate({ id: 'theme.tags.tagsPageTitle', message: 'Tags' });
+const DESCRIPTION = "Tags of lailai's blog";
+
 export default function BlogTagsListPage(props: Props): React.ReactElement {
   const { isNewLayout } = useTheme();
   const { tags } = props;
 
   if (isNewLayout) {
     return (
-      <BlogScaffold title="Tags" description="Tags of lailai's blog">
-        <Card
-          title={translate({ id: 'theme.tags.tagsPageTitle', message: 'Tags' })}
-        >
+      <BlogScaffold title={TITLE} description={DESCRIPTION}>
+        <Card title={TITLE}>
           <TagChipList
             items={tags.map((t: any) => ({
               to: t.permalink,
