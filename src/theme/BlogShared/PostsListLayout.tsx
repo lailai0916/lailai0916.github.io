@@ -57,7 +57,7 @@ function PostCard({ item }: { item: any }) {
                     message: '{word} words',
                   },
                   {
-                    word: Math.round(metadata.readingTime * 384),
+                    word: Math.round(metadata.readingTime * 200),
                   }
                 )}
               </IconText>
