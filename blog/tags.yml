@@ -16,6 +16,9 @@ project:
 math:
   label: Mathematics
 
+resource:
+  label: Resource
+
 misc:
   label: Miscellaneous
 

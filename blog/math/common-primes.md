@@ -2,7 +2,7 @@
 title: '常用质数'
 date: 2024-11-10T12:00
 authors: lailai
-tags: [math]
+tags: [math, resource]
 ---
 
 <!-- truncate -->

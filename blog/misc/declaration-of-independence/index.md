@@ -2,7 +2,7 @@
 title: '《美国独立宣言》'
 date: 2025-06-10T12:00
 authors: lailai
-tags: [misc]
+tags: [misc, resource]
 ---
 
 <!-- truncate -->

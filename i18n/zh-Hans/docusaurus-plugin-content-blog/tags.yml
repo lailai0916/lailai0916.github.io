@@ -16,6 +16,9 @@ project:
 math:
   label: 数学
 
+resource:
+  label: 资源
+
 misc:
   label: 杂项
 
