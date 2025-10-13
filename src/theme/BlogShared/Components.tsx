@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from '../BlogShared/styles.module.css';
+import styles from './styles.module.css';
 
 export function Card({ title, children }) {
   return (

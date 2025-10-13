@@ -8,7 +8,7 @@ import { translate } from '@docusaurus/Translate';
 import { formatDate } from '@site/src/utils/date';
 import IconText from '@site/src/components/laikit/widget/IconText';
 import MDXContent from '@theme/MDXContent';
-import styles from '../BlogShared/styles.module.css';
+import styles from './styles.module.css';
 
 function PostCard({ item }) {
   const { content: MDXPageContent } = item;

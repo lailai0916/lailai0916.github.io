@@ -1,7 +1,7 @@
 import React from 'react';
 import clsx from 'clsx';
 import Link from '@docusaurus/Link';
-import styles from '../BlogShared/styles.module.css';
+import styles from './styles.module.css';
 
 type ChipItem = {
   to: string;

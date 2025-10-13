@@ -12,8 +12,8 @@ import {
   getArchiveByYear,
 } from '@site/src/utils/blogData';
 import TagChipList from './TagChipList';
-import { Card } from '../BlogShared/Components';
-import styles from '../BlogShared/styles.module.css';
+import { Card } from './Components';
+import styles from './styles.module.css';
 
 const fixedId = 'lailai';
 const baseurl = 'https://analytics.lailai.one';
