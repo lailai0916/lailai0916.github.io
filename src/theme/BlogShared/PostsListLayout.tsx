@@ -10,13 +10,10 @@ import IconText from '@site/src/components/laikit/widget/IconText';
 import styles from '../BlogShared/styles.module.css';
 import MDXContent from '@theme/MDXContent';
 
-function PostCard({ item }: { item: any }) {
-  const { content } = item;
-  const { metadata, frontMatter } = content;
-  const image = frontMatter?.image || content?.assets?.image;
-  const ContentComponent = content;
-  const fallbackExcerpt =
-    content.excerpt ?? metadata.description ?? frontMatter?.description ?? '';
+function PostCard({ item }) {
+  const { content: MDXPageContent } = item;
+  const { metadata, assets, frontMatter } = MDXPageContent;
+  const image = assets.image ?? frontMatter.image;
 
   return (
     <article className={styles.postCard}>
@@ -35,13 +32,9 @@ function PostCard({ item }: { item: any }) {
           </Link>
         </div>
         <div className={styles.postExcerpt}>
-          {metadata.hasTruncateMarker ? (
-            <MDXContent>
-              <ContentComponent />
-            </MDXContent>
-          ) : (
-            <p>{fallbackExcerpt}</p>
-          )}
+          <MDXContent>
+            <MDXPageContent />
+          </MDXContent>
         </div>
         <div className={styles.postMeta}>
           <IconText icon="lucide:calendar" colorMode="monochrome">
@@ -172,8 +165,8 @@ export default function PostsListLayout({
   return (
     <BlogScaffold title={title} description={description}>
       {topSlot}
-      {items.map((it: any) => (
-        <PostCard key={it.content.metadata.permalink} item={it} />
+      {items.map((item) => (
+        <PostCard key={item.content.metadata.permalink} item={item} />
       ))}
       <Paginator meta={meta} />
     </BlogScaffold>
