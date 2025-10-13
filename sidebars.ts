@@ -561,7 +561,7 @@ const sidebars: SidebarsConfig = {
       ],
     },
     'project/code-comparator',
-    'project/hangzhou-highschool-map',
+    'project/hangzhou-highschool-map/index',
     {
       type: 'category',
       label: '指南',
