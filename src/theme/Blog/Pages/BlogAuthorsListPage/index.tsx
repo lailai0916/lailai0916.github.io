@@ -1,11 +1,10 @@
 import React from 'react';
 import { translate } from '@docusaurus/Translate';
 
-// styles are handled by shared components
+import type { Props } from '@theme/Blog/Pages/BlogAuthorsListPage';
 import { Card } from '../../../BlogShared/components';
 import TagChipList from '../../../BlogShared/TagChipList';
 import BlogScaffold from '../../../BlogShared/Scaffold';
-import type { Props } from '@theme/Blog/Pages/BlogAuthorsListPage';
 
 const TITLE = translate({
   id: 'theme.blog.authorsList.pageTitle',

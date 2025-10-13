@@ -1,18 +1,13 @@
 import React from 'react';
+import type { Props } from '@theme/Blog/Pages/BlogAuthorsPostsPage';
 import PostsListLayout from '../../../BlogShared/PostsListLayout';
 
-import type { Props } from '@theme/Blog/Pages/BlogAuthorsPostsPage';
-
-// use shared PostCard & Sidebars
-
 export default function BlogAuthorsPostsPage(props: Props) {
-  const { items, listMetadata, author } = props;
-  const title = author.name;
-  const description = author.title ?? '';
+  const { author, items, listMetadata } = props;
   return (
     <PostsListLayout
-      title={title}
-      description={description}
+      title={author.name}
+      description={author.title ?? ''}
       items={items}
       meta={listMetadata}
     />
