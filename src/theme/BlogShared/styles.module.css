@@ -290,36 +290,6 @@
   gap: 0.35rem;
 }
 
-.feedButton {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0.35rem 0.65rem;
-  border-radius: 999px;
-  border: 1px solid var(--ifm-color-emphasis-200);
-  background: var(--ifm-card-background-color);
-  color: var(--ifm-font-color-base);
-  text-decoration: none !important;
-  font-size: 0.85rem;
-  line-height: 1.3;
-  transition:
-    color 160ms ease,
-    border-color 160ms ease,
-    box-shadow 160ms ease,
-    background 160ms ease;
-}
-
-.feedButton:hover {
-  color: var(--ifm-color-primary);
-  border-color: var(--ifm-color-primary);
-  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.06);
-}
-
-.feedButton:focus-visible {
-  outline: 2px solid rgba(0, 106, 255, 0.25);
-  outline-offset: 2px;
-}
-
 .archiveList {
   display: flex;
   flex-direction: column;
