@@ -10,7 +10,7 @@ export function MDTitle({ title, description }) {
         {title === 'About' ? (
           <>
             {'🎉\xa0'}
-            <Link className={styles.topBannerTitleText} to="/">
+            <Link to="/" className={styles.topBannerTitleText}>
               <Translate id="home.topbanner.title">
                 {"Hello,\xa0I'm\xa0lailai"}
               </Translate>
