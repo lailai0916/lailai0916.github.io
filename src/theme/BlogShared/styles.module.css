@@ -9,7 +9,7 @@
     var(--left-col-width) + var(--main-col-max-width) + var(--grid-gap)
   );
   margin: 0 auto;
-  padding: 2rem 1rem;
+  padding: 2rem 0;
   display: grid;
   grid-template-columns:
     var(--left-col-width)
