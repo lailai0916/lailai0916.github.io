@@ -19,23 +19,28 @@ export type ChipItem = {
   active?: boolean;
 };
 
+function TagChip({ item }: { item: ChipItem }) {
+  return (
+    <Link
+      to={item.to}
+      className={clsx(styles.tagChip, {
+        [styles.tagChipActive]: item.active,
+      })}
+    >
+      <span className={styles.tagDot} />
+      {item.label}
+      {item.count !== undefined && (
+        <span className={styles.tagCount}>{item.count}</span>
+      )}
+    </Link>
+  );
+}
+
 export function TagChipList({ items }: { items: ChipItem[] }) {
   return (
     <div className={styles.tagList}>
       {items.map((item) => (
-        <Link
-          key={item.to}
-          to={item.to}
-          className={clsx(styles.tagChip, {
-            [styles.tagChipActive]: item.active,
-          })}
-        >
-          <span className={styles.tagDot} />
-          {item.label}
-          {item.count !== undefined && (
-            <span className={styles.tagCount}>{item.count}</span>
-          )}
-        </Link>
+        <TagChip key={item.to} item={item} />
       ))}
     </div>
   );
