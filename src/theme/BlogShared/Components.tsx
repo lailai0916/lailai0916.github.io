@@ -19,7 +19,7 @@ export type ChipItem = {
   active?: boolean;
 };
 
-function TagChip({ item }: { item: ChipItem }) {
+export function TagChip({ item }: { item: ChipItem }) {
   return (
     <Link
       to={item.to}

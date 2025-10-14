@@ -24,7 +24,7 @@ function PostCard({ item }) {
       )}
       <div className={styles.postBody}>
         <div className={styles.postTitleRow}>
-          <span className={`${styles.tagChip} ${styles.postInlineTag}`}>
+          <span className={clsx(styles.tagChip, styles.postInlineTag)}>
             {metadata.tags?.[0]?.label ?? 'None'}
           </span>
           <h2 className={styles.postTitle}>

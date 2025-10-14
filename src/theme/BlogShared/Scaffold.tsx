@@ -1,4 +1,5 @@
 import React from 'react';
+import clsx from 'clsx';
 import { DebugLayout } from '@site/src/components/laikit/page';
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -273,7 +274,7 @@ function FeedCard() {
           <Link
             key={feed.href}
             href={feed.href}
-            className={`${styles.tagChip} ${styles.postInlineTag}`}
+            className={clsx(styles.tagChip, styles.postInlineTag)}
           >
             {feed.label}
           </Link>
