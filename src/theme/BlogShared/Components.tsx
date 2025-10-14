@@ -19,11 +19,7 @@ export type ChipItem = {
   active?: boolean;
 };
 
-interface TagChipListProps {
-  items: ChipItem[];
-}
-
-export function TagChipList({ items }: TagChipListProps) {
+export function TagChipList({ items }: { items: ChipItem[] }) {
   return (
     <div className={styles.tagList}>
       {items.map((item) => (
