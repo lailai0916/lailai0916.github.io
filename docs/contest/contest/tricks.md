@@ -1,8 +1,9 @@
-# 骗分技巧
+# 比赛技巧
 
 ## 参考资料
 
 - [骗分导论 - Vijos](https://vijos.org/discuss/5343eb6c48c5fc86468b457d)
+- [n方过百万 暴力碾标算——指令集优化的基础使用 - ouuan的博客](https://ouuan.github.io/post/n方过百万-暴力碾标算指令集优化的基础使用/)
 
 ## 人类智慧
 
