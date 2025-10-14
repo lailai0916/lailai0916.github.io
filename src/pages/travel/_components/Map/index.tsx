@@ -1,4 +1,5 @@
 import React, { useMemo, useState } from 'react';
+import clsx from 'clsx';
 import {
   ComposableMap,
   Geographies,
@@ -367,7 +368,7 @@ export default function TravelMap() {
         <div className={styles.mapLegend}>
           <span className={styles.legendItem}>
             <span
-              className={`${styles.legendColor} ${styles.legendColorVisited}`}
+              className={clsx(styles.legendColor, styles.legendColorVisited)}
             />
             {translate({
               id: 'pages.travel.map.legend.visited',
@@ -376,7 +377,7 @@ export default function TravelMap() {
           </span>
           <span className={styles.legendItem}>
             <span
-              className={`${styles.legendColor} ${styles.legendColorUnvisited}`}
+              className={clsx(styles.legendColor, styles.legendColorUnvisited)}
             />
             {translate({
               id: 'pages.travel.map.legend.unvisited',
