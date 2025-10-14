@@ -1,4 +1,5 @@
 import React from 'react';
+import clsx from 'clsx';
 import { useTheme } from '@site/src/hooks/useTheme';
 import BlogPostPageOriginal from '@theme-original/BlogPostPage';
 import BlogScaffold from '../BlogShared/Scaffold';
@@ -26,7 +27,10 @@ export default function BlogPostPage(props: Props): React.ReactElement {
     return (
       <BlogPostProvider content={props.content} isBlogPostPage>
         <HtmlClassNameProvider
-          className={`${ThemeClassNames.wrapper.blogPages} ${ThemeClassNames.page.blogPostPage}`}
+          className={clsx(
+            ThemeClassNames.wrapper.blogPages,
+            ThemeClassNames.page.blogPostPage
+          )}
         >
           <BlogPostPageMetadata />
           <BlogPostPageStructuredData />
