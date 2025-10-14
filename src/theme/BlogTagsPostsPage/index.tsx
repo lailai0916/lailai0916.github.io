@@ -55,12 +55,10 @@ export default function BlogTagsPostsPage(props: Props): React.ReactElement {
   const { items, listMetadata, tag } = props;
 
   if (isNewLayout) {
-    const title = `${tag.label}`;
-    const description = tag.description ?? '';
     return (
       <PostsListLayout
-        title={title}
-        description={description}
+        title={tag.label}
+        description={tag.description}
         items={items}
         meta={listMetadata}
         topSlot={<TagSelector activePermalink={tag.permalink} />}
