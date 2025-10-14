@@ -120,25 +120,8 @@ export function getAllPostMetadata(): any[] {
   return list;
 }
 
-/**
- * 自定义排序：按日期降序，但将置顶文章排在最后
- */
-function sortPostsWithPinnedLast(
-  posts: (ProcessedBlogPost & { isPinned: boolean })[]
-): (ProcessedBlogPost & { isPinned: boolean })[] {
-  return posts.sort((a, b) => {
-    // 如果一个是置顶，一个不是，非置顶的排在前面
-    if (a.isPinned !== b.isPinned) {
-      return a.isPinned ? 1 : -1;
-    }
-    // 如果都是置顶或都不是置顶，按日期降序排列
-    return new Date(b.date).getTime() - new Date(a.date).getTime();
-  });
-}
-
 export function getRecentBlogPosts(maxCount: number = 4): ProcessedBlogPost[] {
   const items = getAllBlogItems();
-  if (!items.length) return [];
 
   // 获取文章的完整元数据（包含标签信息）
   const allMetadata = getAllPostMetadata();
@@ -166,21 +149,18 @@ export function getRecentBlogPosts(maxCount: number = 4): ProcessedBlogPost[] {
       Boolean(post.permalink && post.title && post.date)
     );
 
-  const sortedPosts = sortPostsWithPinnedLast(postsWithMetadata);
+  const sortedPosts = postsWithMetadata.sort((a, b) => {
+    if (a.isPinned !== b.isPinned) {
+      return a.isPinned ? 1 : -1;
+    }
+    return new Date(b.date).getTime() - new Date(a.date).getTime();
+  });
 
   return sortedPosts.slice(0, maxCount).map(({ isPinned, ...post }) => post); // 移除 isPinned 属性
 }
 
-/**
- * 返回所有文章数量
- */
-export function getBlogPostCount(): number {
-  return getAllBlogItems().length;
-}
-
 export function getArchiveByYear(): { year: number; count: number }[] {
   const items = getAllBlogItems();
-  if (!items.length) return [];
 
   const counts = new Map<number, number>();
   items

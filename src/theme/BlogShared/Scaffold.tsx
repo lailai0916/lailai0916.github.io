@@ -5,7 +5,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import { translate } from '@docusaurus/Translate';
 import Link from '@docusaurus/Link';
 import {
-  getBlogPostCount,
+  getAllBlogItems,
   getTopTags,
   getAllTagCount,
   getAllPostMetadata,
@@ -143,7 +143,7 @@ function StatsCard() {
 
   const statsItems = [
     {
-      value: getBlogPostCount(),
+      value: getAllBlogItems().length,
       label: translate({
         id: 'blog.sidebar.stats.posts',
         message: 'Posts',
