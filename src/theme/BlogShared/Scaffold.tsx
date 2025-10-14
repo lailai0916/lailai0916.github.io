@@ -9,7 +9,7 @@ import {
   getAllPostMetadata,
   getArchiveByYear,
 } from '@site/src/utils/blogData';
-import { Card, TagChipList } from './Components';
+import { Card, TagChipList, type ChipItem } from './Components';
 import styles from './styles.module.css';
 
 const fixedId = 'lailai';
@@ -203,11 +203,11 @@ function StatsCard() {
 }
 
 function PopularTagsCard() {
-  const map = new Map<string, { label: string; to: string; count: number }>();
+  const map = new Map<string, ChipItem>();
   getAllPostMetadata().forEach((meta) => {
     meta.tags.forEach((tag) => {
       const prev = map.get(tag.label) ?? {
-        to: tag.to,
+        to: tag.permalink,
         label: tag.label,
         count: 0,
       };

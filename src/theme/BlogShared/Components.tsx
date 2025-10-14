@@ -12,10 +12,10 @@ export function Card({ title, children }) {
   );
 }
 
-type ChipItem = {
+export type ChipItem = {
   to: string;
-  label: React.ReactNode;
-  count?: React.ReactNode;
+  label: string;
+  count?: number;
   active?: boolean;
 };
 
@@ -23,13 +23,7 @@ interface TagChipListProps {
   items: ChipItem[];
 }
 
-export function TagChipList({
-  items,
-}: TagChipListProps): React.ReactElement | null {
-  if (!items.length) {
-    return null;
-  }
-
+export function TagChipList({ items }: TagChipListProps) {
   return (
     <div className={styles.tagList}>
       {items.map((item) => (
