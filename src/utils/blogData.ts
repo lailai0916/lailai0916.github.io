@@ -42,17 +42,6 @@ function globJsonModules<T>(pattern: string): T[] {
     .filter((value): value is T => value !== null);
 }
 
-function getBlogListData(): any {
-  try {
-    const data = require('@generated/docusaurus-plugin-content-blog/default/blog-post-list-prop-default.json');
-    // 静默加载博客数据
-    return data;
-  } catch (error) {
-    // 静默处理博客数据加载失败
-    return null;
-  }
-}
-
 /**
  * 汇总所有分页中的博客列表（更完整统计）
  * 通过 require.context 收集 default 目录下所有 blog-post-list-prop-*.json
@@ -88,8 +77,7 @@ export function getAllBlogItems(): any[] {
         }
       });
     } else {
-      // 再退化为 default 页面数据
-      const data = getBlogListData();
+      const data = require('@generated/docusaurus-plugin-content-blog/default/blog-post-list-prop-default.json');
       if (data?.items) collected.push(...data.items);
     }
   }
@@ -132,21 +120,6 @@ export function getAllPostMetadata(): any[] {
   return list;
 }
 
-// 博客配置常量
-const BLOG_CONFIG = {
-  PINNED_TAG_LABEL: 'Pinned',
-} as const;
-
-/**
- * 检查文章是否为置顶文章
- */
-function isPinnedPost(tags: any[]): boolean {
-  return tags.some(
-    (tag: any) =>
-      (tag.label || tag.name || tag) === BLOG_CONFIG.PINNED_TAG_LABEL
-  );
-}
-
 /**
  * 自定义排序：按日期降序，但将置顶文章排在最后
  */
@@ -186,7 +159,7 @@ export function getRecentBlogPosts(maxCount: number = 4): ProcessedBlogPost[] {
         title: item.title ?? item.metadata?.title,
         date: item.date ?? item.metadata?.date,
         permalink,
-        isPinned: isPinnedPost(tags),
+        isPinned: tags.some((tag) => tag.permalink === '/blog/tags/pinned'),
       };
     })
     .filter((post): post is ProcessedBlogPost & { isPinned: boolean } =>
