@@ -257,34 +257,3 @@ export function getTagsOfficialOrder({
   }
   return tags;
 }
-
-/**
- * 读取标签统计（若生成数据不可用，则返回空列表）。
- * 返回格式：label、permalink、count
- */
-export function getTopTags(limit: number = 20): Array<{
-  label: string;
-  permalink: string;
-  count: number;
-}> {
-  // 使用全量 metadata（包含 tags）进行统计，官方推荐的 ~blog 别名生成物
-  const metas = getAllPostMetadata();
-  const map = new Map<
-    string,
-    { label: string; permalink: string; count: number }
-  >();
-  metas.forEach((meta: any) => {
-    const tags: any[] = meta.tags ?? [];
-    tags.forEach((t) => {
-      const label = t.label ?? t.name ?? String(t);
-      const permalink =
-        t.permalink ?? `/blog/tags/${(t.name || label).toLowerCase()}`;
-      const prev = map.get(label) ?? { label, permalink, count: 0 };
-      prev.count += 1;
-      map.set(label, prev);
-    });
-  });
-  return Array.from(map.values())
-    .sort((a, b) => b.count - a.count)
-    .slice(0, limit);
-}

@@ -6,7 +6,6 @@ import { translate } from '@docusaurus/Translate';
 import Link from '@docusaurus/Link';
 import {
   getAllBlogItems,
-  getTopTags,
   getAllPostMetadata,
   getArchiveByYear,
 } from '@site/src/utils/blogData';
@@ -205,7 +204,22 @@ function StatsCard() {
 }
 
 function PopularTagsCard() {
-  const tags = React.useMemo(() => getTopTags(8), []);
+  const map = new Map<string, { label: string; to: string; count: number }>();
+  getAllPostMetadata().forEach((meta) => {
+    meta.tags.forEach((tag) => {
+      const prev = map.get(tag.label) ?? {
+        to: tag.to,
+        label: tag.label,
+        count: 0,
+      };
+      prev.count += 1;
+      map.set(tag.label, prev);
+    });
+  });
+  const tags = Array.from(map.values())
+    .sort((a, b) => b.count - a.count)
+    .slice(0, 8);
+
   return (
     <Card
       title={translate({
@@ -213,13 +227,7 @@ function PopularTagsCard() {
         message: 'Popular Tags',
       })}
     >
-      <TagChipList
-        items={tags.map((item) => ({
-          to: item.permalink,
-          label: item.label,
-          count: item.count,
-        }))}
-      />
+      <TagChipList items={tags} />
     </Card>
   );
 }
