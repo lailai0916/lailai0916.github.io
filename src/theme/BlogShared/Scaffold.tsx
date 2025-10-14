@@ -7,7 +7,6 @@ import Link from '@docusaurus/Link';
 import {
   getAllBlogItems,
   getTopTags,
-  getAllTagCount,
   getAllPostMetadata,
   getArchiveByYear,
 } from '@site/src/utils/blogData';
@@ -151,7 +150,11 @@ function StatsCard() {
       href: '/blog/archive',
     },
     {
-      value: getAllTagCount(),
+      value: new Set(
+        getAllPostMetadata().flatMap((meta) =>
+          meta.tags.map((tag) => tag.permalink)
+        )
+      ).size,
       label: translate({
         id: 'blog.sidebar.stats.tags',
         message: 'Tags',

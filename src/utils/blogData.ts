@@ -269,7 +269,6 @@ export function getTopTags(limit: number = 20): Array<{
 }> {
   // 使用全量 metadata（包含 tags）进行统计，官方推荐的 ~blog 别名生成物
   const metas = getAllPostMetadata();
-  if (!metas.length) return [];
   const map = new Map<
     string,
     { label: string; permalink: string; count: number }
@@ -288,21 +287,4 @@ export function getTopTags(limit: number = 20): Array<{
   return Array.from(map.values())
     .sort((a, b) => b.count - a.count)
     .slice(0, limit);
-}
-
-/**
- * 统计全站去重后的标签总数
- */
-export function getAllTagCount(): number {
-  const metas = getAllPostMetadata();
-  if (!metas.length) return 0;
-  const set = new Set<string>();
-  metas.forEach((meta: any) => {
-    const tags: any[] = meta.tags ?? [];
-    tags.forEach((t) => {
-      const label = t.label ?? t.name ?? String(t);
-      set.add(label);
-    });
-  });
-  return set.size;
 }
