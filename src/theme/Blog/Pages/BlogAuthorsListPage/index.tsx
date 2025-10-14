@@ -2,8 +2,7 @@ import React from 'react';
 import { translate } from '@docusaurus/Translate';
 
 import type { Props } from '@theme/Blog/Pages/BlogAuthorsListPage';
-import { Card } from '../../../BlogShared/Components';
-import TagChipList from '../../../BlogShared/TagChipList';
+import { Card, TagChipList } from '../../../BlogShared/Components';
 import BlogScaffold from '../../../BlogShared/Scaffold';
 
 const TITLE = translate({
@@ -17,7 +16,7 @@ export default function BlogAuthorsListPage({ authors }: Props) {
     <BlogScaffold title={TITLE} description={DESCRIPTION}>
       <Card title={TITLE}>
         <TagChipList
-          items={authors.map((author: any) => ({
+          items={authors.map((author) => ({
             to: author.page.permalink,
             label: author.name,
             count: author.count,

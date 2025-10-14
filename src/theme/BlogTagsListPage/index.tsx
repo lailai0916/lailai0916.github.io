@@ -1,8 +1,7 @@
 import React from 'react';
 import { useTheme } from '@site/src/hooks/useTheme';
 
-import { Card } from '../BlogShared/Components';
-import TagChipList from '../BlogShared/TagChipList';
+import { Card, TagChipList } from '../BlogShared/Components';
 import BlogTagsListPageOriginal from '@theme-original/BlogTagsListPage';
 import type { Props } from '@theme/BlogTagsListPage';
 import BlogScaffold from '../BlogShared/Scaffold';
@@ -24,10 +23,10 @@ export default function BlogTagsListPage(props: Props): React.ReactElement {
       <BlogScaffold title={TITLE} description={DESCRIPTION}>
         <Card title={TITLE}>
           <TagChipList
-            items={tags.map((t: any) => ({
-              to: t.permalink,
-              label: t.label,
-              count: t.count,
+            items={tags.map((tag) => ({
+              to: tag.permalink,
+              label: tag.label,
+              count: tag.count,
             }))}
           />
         </Card>

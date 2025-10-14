@@ -12,8 +12,7 @@ import type { Props } from '@theme/BlogTagsPostsPage';
 import { translate } from '@docusaurus/Translate';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import { getTagsOfficialOrder } from '@site/src/utils/blogData';
-import TagChipList from '../BlogShared/TagChipList';
-import { Card } from '../BlogShared/Components';
+import { Card, TagChipList } from '../BlogShared/Components';
 
 const TITLE = translate({ id: 'blog.pages.tags.tagSelect', message: 'Tags' });
 

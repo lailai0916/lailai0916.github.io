@@ -9,8 +9,7 @@ import {
   getAllPostMetadata,
   getArchiveByYear,
 } from '@site/src/utils/blogData';
-import TagChipList from './TagChipList';
-import { Card } from './Components';
+import { Card, TagChipList } from './Components';
 import styles from './styles.module.css';
 
 const fixedId = 'lailai';
