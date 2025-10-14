@@ -16,23 +16,20 @@ const DESCRIPTION = "Tags of lailai's blog";
 
 export default function BlogTagsListPage(props: Props): React.ReactElement {
   const { isNewLayout } = useTheme();
+  if (!isNewLayout) return <BlogTagsListPageOriginal {...props} />;
+
   const { tags } = props;
-
-  if (isNewLayout) {
-    return (
-      <BlogScaffold title={TITLE} description={DESCRIPTION}>
-        <Card title={TITLE}>
-          <TagChipList
-            items={tags.map((tag) => ({
-              to: tag.permalink,
-              label: tag.label,
-              count: tag.count,
-            }))}
-          />
-        </Card>
-      </BlogScaffold>
-    );
-  }
-
-  return <BlogTagsListPageOriginal {...props} />;
+  return (
+    <BlogScaffold title={TITLE} description={DESCRIPTION}>
+      <Card title={TITLE}>
+        <TagChipList
+          items={tags.map((tag) => ({
+            to: tag.permalink,
+            label: tag.label,
+            count: tag.count,
+          }))}
+        />
+      </Card>
+    </BlogScaffold>
+  );
 }

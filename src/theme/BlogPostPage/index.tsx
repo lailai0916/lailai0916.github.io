@@ -21,38 +21,36 @@ import type { Props } from '@theme/BlogPostPage';
 
 export default function BlogPostPage(props: Props): React.ReactElement {
   const { isNewLayout } = useTheme();
+  if (!isNewLayout) return <BlogPostPageOriginal {...props} />;
+
   const BlogPostContent = props.content;
 
-  if (isNewLayout) {
-    return (
-      <BlogPostProvider content={props.content} isBlogPostPage>
-        <HtmlClassNameProvider
-          className={clsx(
-            ThemeClassNames.wrapper.blogPages,
-            ThemeClassNames.page.blogPostPage
-          )}
+  return (
+    <BlogPostProvider content={props.content} isBlogPostPage>
+      <HtmlClassNameProvider
+        className={clsx(
+          ThemeClassNames.wrapper.blogPages,
+          ThemeClassNames.page.blogPostPage
+        )}
+      >
+        <BlogPostPageMetadata />
+        <BlogPostPageStructuredData />
+        <BlogScaffold
+          title={props.content.metadata.title}
+          description={props.content.metadata.description}
         >
-          <BlogPostPageMetadata />
-          <BlogPostPageStructuredData />
-          <BlogScaffold
-            title={props.content.metadata.title}
-            description={props.content.metadata.description}
-          >
-            <BlogPostItem>
-              <BlogPostContent />
-            </BlogPostItem>
-            {(props.content.metadata.nextItem ||
-              props.content.metadata.prevItem) && (
-              <BlogPostPaginator
-                nextItem={props.content.metadata.nextItem}
-                prevItem={props.content.metadata.prevItem}
-              />
-            )}
-          </BlogScaffold>
-        </HtmlClassNameProvider>
-      </BlogPostProvider>
-    );
-  }
-
-  return <BlogPostPageOriginal {...props} />;
+          <BlogPostItem>
+            <BlogPostContent />
+          </BlogPostItem>
+          {(props.content.metadata.nextItem ||
+            props.content.metadata.prevItem) && (
+            <BlogPostPaginator
+              nextItem={props.content.metadata.nextItem}
+              prevItem={props.content.metadata.prevItem}
+            />
+          )}
+        </BlogScaffold>
+      </HtmlClassNameProvider>
+    </BlogPostProvider>
+  );
 }

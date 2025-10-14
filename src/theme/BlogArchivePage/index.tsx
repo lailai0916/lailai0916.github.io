@@ -23,6 +23,7 @@ const DESCRIPTION = "Archive of lailai's blog";
 
 export default function BlogArchivePage(props: Props): React.ReactElement {
   const { isNewLayout } = useTheme();
+  if (!isNewLayout) return <BlogArchivePageOriginal {...props} />;
   const { archive } = props;
   const location = useLocation();
   const history = useHistory();
@@ -99,57 +100,53 @@ export default function BlogArchivePage(props: Props): React.ReactElement {
     return groups.filter(([year]) => year === selectedYear);
   }, [groups, selectedYear]);
 
-  if (isNewLayout) {
-    return (
-      <BlogScaffold title={TITLE} description={DESCRIPTION}>
-        {!!yearList.length && (
-          <Card title={TITLE}>
-            <div className={styles.archiveFilter}>
-              <span className={styles.archiveFilterLabel}>
-                <Translate id="blog.pages.archive.yearSelect">Year</Translate>
-              </span>
-              <div className={styles.archiveFilterOptions}>
-                {yearList.map((year) => (
-                  <button
-                    key={year}
-                    type="button"
-                    className={clsx(styles.archiveFilterButton, {
-                      [styles.archiveFilterButtonActive]: year === selectedYear,
-                    })}
-                    onClick={() => handleYearChange(year)}
-                    aria-pressed={year === selectedYear}
-                  >
-                    {year}
-                  </button>
-                ))}
-              </div>
-            </div>
-          </Card>
-        )}
-        {visibleGroups.map(([year, posts]) => (
-          <Card key={year} title={String(year)}>
-            <ul className={styles.recentList}>
-              {posts.map((p: any) => (
-                <li key={p.metadata.permalink} className={styles.recentItem}>
-                  <div className={styles.recentDate}>
-                    {formatDate(p.metadata.date)}
-                  </div>
-                  <Link to={p.metadata.permalink} className={styles.recentLink}>
-                    {p.metadata.title}
-                  </Link>
-                </li>
+  return (
+    <BlogScaffold title={TITLE} description={DESCRIPTION}>
+      {!!yearList.length && (
+        <Card title={TITLE}>
+          <div className={styles.archiveFilter}>
+            <span className={styles.archiveFilterLabel}>
+              <Translate id="blog.pages.archive.yearSelect">Year</Translate>
+            </span>
+            <div className={styles.archiveFilterOptions}>
+              {yearList.map((year) => (
+                <button
+                  key={year}
+                  type="button"
+                  className={clsx(styles.archiveFilterButton, {
+                    [styles.archiveFilterButtonActive]: year === selectedYear,
+                  })}
+                  onClick={() => handleYearChange(year)}
+                  aria-pressed={year === selectedYear}
+                >
+                  {year}
+                </button>
               ))}
-            </ul>
-          </Card>
-        ))}
-        {selectedYear != null && !visibleGroups.length && (
-          <Card>
-            <Translate id="blog.pages.archive.empty">No posts yet</Translate>
-          </Card>
-        )}
-      </BlogScaffold>
-    );
-  }
-
-  return <BlogArchivePageOriginal {...props} />;
+            </div>
+          </div>
+        </Card>
+      )}
+      {visibleGroups.map(([year, posts]) => (
+        <Card key={year} title={String(year)}>
+          <ul className={styles.recentList}>
+            {posts.map((p: any) => (
+              <li key={p.metadata.permalink} className={styles.recentItem}>
+                <div className={styles.recentDate}>
+                  {formatDate(p.metadata.date)}
+                </div>
+                <Link to={p.metadata.permalink} className={styles.recentLink}>
+                  {p.metadata.title}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </Card>
+      ))}
+      {selectedYear != null && !visibleGroups.length && (
+        <Card>
+          <Translate id="blog.pages.archive.empty">No posts yet</Translate>
+        </Card>
+      )}
+    </BlogScaffold>
+  );
 }

@@ -52,19 +52,19 @@ function TagSelector({ activePermalink, limit = 30 }: TagSelectorProps) {
 
 export default function BlogTagsPostsPage(props: Props): React.ReactElement {
   const { isNewLayout } = useTheme();
+  if (!isNewLayout) <BlogTagsPostsPageOriginal {...props} />;
+
   const { items, listMetadata, tag } = props;
 
-  if (isNewLayout) {
-    return (
-      <PostsListLayout
-        title={tag.label}
-        description={tag.description}
-        items={items}
-        meta={listMetadata}
-        topSlot={<TagSelector activePermalink={tag.permalink} />}
-      />
-    );
-  }
+  return (
+    <PostsListLayout
+      title={tag.label}
+      description={tag.description}
+      items={items}
+      meta={listMetadata}
+      topSlot={<TagSelector activePermalink={tag.permalink} />}
+    />
+  );
 
-  return <BlogTagsPostsPageOriginal {...props} />;
+  return;
 }
