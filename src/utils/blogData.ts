@@ -160,20 +160,11 @@ export function getRecentBlogPosts(maxCount: number = 4): ProcessedBlogPost[] {
 }
 
 export function getArchiveByYear(): { year: number; count: number }[] {
-  const items = getAllBlogItems();
-
   const counts = new Map<number, number>();
-  items
-    .filter((it: any) => {
-      const link = it.permalink ?? it.metadata?.permalink;
-      return link; // 移除硬编码排除，显示所有文章
-    })
-    .forEach((it: any) => {
-      const dateStr = it.date ?? it.metadata?.date;
-      const y = new Date(dateStr).getUTCFullYear();
-      if (!Number.isFinite(y)) return;
-      counts.set(y, (counts.get(y) ?? 0) + 1);
-    });
+  getAllBlogItems().forEach((item) => {
+    const year = new Date(item.date).getUTCFullYear();
+    counts.set(year, (counts.get(year) ?? 0) + 1);
+  });
 
   return Array.from(counts.entries())
     .map(([year, count]) => ({ year, count }))
