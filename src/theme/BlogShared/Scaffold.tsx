@@ -257,9 +257,9 @@ function ArchiveCard() {
 
 function FeedCard() {
   const feeds = [
-    { label: 'RSS Feed', href: '/blog/rss.xml' },
-    { label: 'Atom Feed', href: '/blog/atom.xml' },
-    { label: 'JSON Feed', href: '/blog/feed.json' },
+    { label: 'RSS Feed', href: 'https://lailai.one/blog/rss.xml' },
+    { label: 'Atom Feed', href: 'https://lailai.one/blog/atom.xml' },
+    { label: 'JSON Feed', href: 'https://lailai.one/blog/feed.json' },
   ];
 
   return (
@@ -273,7 +273,7 @@ function FeedCard() {
         {feeds.map((feed) => (
           <Link
             key={feed.href}
-            href={useBaseUrl(feed.href)}
+            href={feed.href}
             className={`${styles.tagChip} ${styles.postInlineTag}`}
           >
             {feed.label}
