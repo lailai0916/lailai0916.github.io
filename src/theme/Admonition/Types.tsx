@@ -1,14 +1,11 @@
 import React from 'react';
 import DefaultAdmonitionTypes from '@theme-original/Admonition/Types';
 
-function ExampleAdmonition(props: any) {
-  const Info = DefaultAdmonitionTypes.info;
-  return <Info {...props} type="info" title={props.title ?? 'Example'} />;
-}
+const AdmonitionTypeInfo = DefaultAdmonitionTypes.info;
 
-const AdmonitionTypes = {
+const admonitionTypes = {
   ...DefaultAdmonitionTypes,
-  example: ExampleAdmonition,
+  example: (props) => <AdmonitionTypeInfo title="Example" {...props} />,
 };
 
-export default AdmonitionTypes;
+export default admonitionTypes;
