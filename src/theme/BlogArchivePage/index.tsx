@@ -127,7 +127,7 @@ export default function BlogArchivePage(props: Props): React.ReactElement {
           </Card>
         )}
         {visibleGroups.map(([year, posts]) => (
-          <Card key={year} title={year}>
+          <Card key={year} title={String(year)}>
             <ul className={styles.recentList}>
               {posts.map((p: any) => (
                 <li key={p.metadata.permalink} className={styles.recentItem}>
@@ -143,9 +143,9 @@ export default function BlogArchivePage(props: Props): React.ReactElement {
           </Card>
         ))}
         {selectedYear != null && !visibleGroups.length && (
-          <div className={styles.card}>
+          <Card>
             <Translate id="blog.pages.archive.empty">No posts yet</Translate>
-          </div>
+          </Card>
         )}
       </BlogScaffold>
     );

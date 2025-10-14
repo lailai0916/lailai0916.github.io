@@ -3,10 +3,16 @@ import clsx from 'clsx';
 import Link from '@docusaurus/Link';
 import styles from './styles.module.css';
 
-export function Card({ title, children }) {
+export function Card({
+  title,
+  children,
+}: {
+  title?: string;
+  children: React.ReactNode;
+}) {
   return (
     <div className={styles.card}>
-      <div className={styles.cardTitle}>{title}</div>
+      {title && <div className={styles.cardTitle}>{title}</div>}
       {children}
     </div>
   );
@@ -29,9 +35,7 @@ export function TagChip({ item }: { item: ChipItem }) {
     >
       <span className={styles.tagDot} />
       {item.label}
-      {item.count !== undefined && (
-        <span className={styles.tagCount}>{item.count}</span>
-      )}
+      {item.count !== undefined && <span>{item.count}</span>}
     </Link>
   );
 }

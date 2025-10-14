@@ -33,11 +33,11 @@ function PostCard({ item }) {
             </Link>
           </h2>
         </div>
-        <article className={styles.postExcerpt}>
+        <div className={styles.postExcerpt}>
           <MDXContent>
             <MDXPageContent />
           </MDXContent>
-        </article>
+        </div>
         <div className={styles.postMeta}>
           <IconText icon="lucide:calendar" colorMode="monochrome">
             <time dateTime={metadata.date}>{formatDate(metadata.date)}</time>

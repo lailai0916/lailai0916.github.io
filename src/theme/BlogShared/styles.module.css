@@ -230,7 +230,7 @@
   transform: translateY(-1px);
 }
 
-.tagChipActive .tagCount {
+.tagChipActive {
   color: inherit;
 }
 
@@ -243,10 +243,6 @@
   height: 6px;
   background: var(--ifm-color-primary);
   border-radius: 50%;
-}
-
-.tagCount {
-  color: var(--ifm-color-emphasis-700);
 }
 
 .recentList {

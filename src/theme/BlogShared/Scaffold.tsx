@@ -26,7 +26,7 @@ function AuthorCard() {
     .flatMap((m) => m.authors)
     .find((a) => a.key === fixedId);
   return (
-    <div className={styles.card}>
+    <Card>
       <div className={styles.authorCardHeader}>
         <img
           src={useBaseUrl(author.imageURL)}
@@ -35,7 +35,7 @@ function AuthorCard() {
         <div className={styles.authorName}>{author.name}</div>
         <div className={styles.authorDesc}>{author.title}</div>
       </div>
-    </div>
+    </Card>
   );
 }
 
