@@ -21,7 +21,7 @@ import type { Props } from '@theme/BlogPostPage';
 
 export default function BlogPostPage(props: Props): React.ReactElement {
   const { isNewLayout } = useTheme();
-  if (!isNewLayout) return <BlogPostPageOriginal {...props} />;
+  if (isNewLayout) return <BlogPostPageOriginal {...props} />;
 
   const BlogPostContent = props.content;
 

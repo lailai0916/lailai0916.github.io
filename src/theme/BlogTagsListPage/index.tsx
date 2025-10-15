@@ -16,7 +16,7 @@ const DESCRIPTION = "Tags of lailai's blog";
 
 export default function BlogTagsListPage(props: Props): React.ReactElement {
   const { isNewLayout } = useTheme();
-  if (!isNewLayout) return <BlogTagsListPageOriginal {...props} />;
+  if (isNewLayout) return <BlogTagsListPageOriginal {...props} />;
 
   const { tags } = props;
   return (

@@ -8,7 +8,7 @@ export default function BlogListPage(
   props: BlogListPageProps
 ): React.ReactElement {
   const { isNewLayout } = useTheme();
-  if (!isNewLayout) return <BlogListPageOriginal {...props} />;
+  if (isNewLayout) return <BlogListPageOriginal {...props} />;
 
   const { metadata, items } = props;
   return (
