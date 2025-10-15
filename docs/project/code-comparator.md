@@ -19,7 +19,7 @@
 ## 项目结构
 
 ```bash
-code-comparator
+code-comparator/
 ├── main.bat                       # 批处理脚本
 ├── lite.bat                       # 批处理脚本（轻量版）
 ├── lite.sh                        # 批处理脚本（Shell 版）
