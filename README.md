@@ -5,13 +5,13 @@
   <img src="static/img/preview/home-dark.png#gh-dark-mode-only" />
 </div>
 
-## # Website Introduction
+## Website Introduction
 
 lailai's personal website for sharing technical notes, project experience, and learning insights.
 
 Built with [Docusaurus](https://docusaurus.io) and open-sourced on [GitHub](https://github.com/lailai0916/lailai0916.github.io).
 
-## # Website Features
+## Website Features
 
 🦖 **Powered by Docusaurus** — Built with [Docusaurus](https://docusaurus.io), designed for documentation and blogs.
 
@@ -37,7 +37,7 @@ Built with [Docusaurus](https://docusaurus.io) and open-sourced on [GitHub](http
 
 📊 **Analytics Integrated** — [Google Analytics](https://analytics.google.com) tracking included.
 
-## # Getting Started
+## Getting Started
 
 ```bash
 git clone https://github.com/lailai0916/lailai0916.github.io.git
@@ -46,24 +46,24 @@ npm install
 npm start
 ```
 
-## # Project Structure
+## Project Structure
 
 ```text
-lailai0916.github.io
-├── blog                           # Blog
+lailai0916.github.io/
+├── blog/                          # Blog
 │   ├── authors.yml                # Author settings
 │   └── tags.yml                   # Tag settings
-├── docs                           # Documentation
-├── i18n                           # Internationalization
-├── src                            # Source code
-│   ├── components                 # Custom components
-│   ├── css                        # Custom styles
-│   ├── data                       # Data files
-│   ├── pages                      # Custom pages
-│   ├── theme                      # Custom theme
-│   └── utils                      # Utility functions
-├── static                         # Static assets
-│   ├── img                        # Image files
+├── docs/                          # Documentation
+├── i18n/                          # Internationalization
+├── src/                           # Source code
+│   ├── components/                # Custom components
+│   ├── css/                       # Custom styles
+│   ├── data/                      # Data files
+│   ├── pages/                     # Custom pages
+│   ├── theme/                     # Custom theme
+│   └── utils/                     # Utility functions
+├── static/                        # Static assets
+│   ├── img/                       # Image files
 │   └── CNAME                      # Domain settings
 ├── docusaurus.config.ts           # Docusaurus config
 ├── LICENSE                        # Code License
@@ -75,11 +75,11 @@ lailai0916.github.io
 └── tsconfig.json                  # TypeScript config
 ```
 
-## # Subscribe
+## Subscribe
 
 Stay updated with the latest blog posts: [RSS Feed](https://lailai.one/blog/rss.xml) | [Atom Feed](https://lailai.one/blog/atom.xml) | [JSON Feed](https://lailai.one/blog/feed.json)
 
-## # Sponsor
+## Sponsor
 
 You can buy me a coffee, and I'll do better. Thanks!
 
@@ -87,7 +87,7 @@ You can buy me a coffee, and I'll do better. Thanks!
 | :--------------------------------: | :--------------------------------: | :--------------------------------: |
 | ![](static/img/sponsor/paypal.svg) | ![](static/img/sponsor/alipay.svg) | ![](static/img/sponsor/wechat.svg) |
 
-## # License
+## License
 
 This project's code licensed under [MIT License](LICENSE).
 
