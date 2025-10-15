@@ -14,9 +14,9 @@
     "write-translations": "docusaurus write-translations",
     "write-translations:zh-Hans": "docusaurus write-translations --locale zh-Hans",
     "write-heading-ids": "docusaurus write-heading-ids",
-    "typecheck": "tsc",
     "i18n": "npm run write-translations:zh-Hans",
-    "format": "npx prettier --write ."
+    "format": "npx prettier --write .",
+    "typecheck": "tsc"
   },
   "dependencies": {
     "@docusaurus/core": "^3.9.1",
