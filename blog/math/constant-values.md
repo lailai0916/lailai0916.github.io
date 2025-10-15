@@ -12,9 +12,9 @@ tags: [math, resource]
 - [圆周率 - 维基百科](https://zh.wikipedia.org/zh-cn/圓周率)
 - [e (数学常数) - 维基百科](<https://zh.wikipedia.org/zh-cn/E_(数学常数)>)
 
-## 圆周率 $\pi$
+## 圆周率
 
-- [洛谷 P1727 计算π](https://www.luogu.com.cn/problem/P1727)
+<Problem id="P1727" />
 
 <details>
 <summary>小数点后 $10000$ 位</summary>
@@ -225,9 +225,9 @@ tags: [math, resource]
 
 </details>
 
-## 自然常数 $e$
+## 自然常数
 
-- [洛谷 P1729 计算e](https://www.luogu.com.cn/problem/P1729)
+<Problem id="P1729" />
 
 <details>
 <summary>小数点后 $10000$ 位</summary>
