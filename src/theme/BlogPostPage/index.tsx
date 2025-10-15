@@ -20,8 +20,8 @@ import type { Props } from '@theme/BlogPostPage';
 // Use the official BlogPostItem to render content and metadata
 
 export default function BlogPostPage(props: Props): React.ReactElement {
-  const { isNewLayout } = useTheme();
-  if (isNewLayout) return <BlogPostPageOriginal {...props} />;
+  const { isOriginalLayout } = useTheme();
+  if (isOriginalLayout) return <BlogPostPageOriginal {...props} />;
 
   const BlogPostContent = props.content;
 

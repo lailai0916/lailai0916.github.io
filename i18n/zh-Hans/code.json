@@ -1045,7 +1045,7 @@
   "pages.settings.item.font.current": {
     "message": "当前：{size}px"
   },
-  "pages.settings.item.experimental.option.newLayout": {
+  "pages.settings.item.experimental.option.originalLayout": {
     "message": "新版布局"
   },
   "pages.settings.item.experimental.option.debugMode": {

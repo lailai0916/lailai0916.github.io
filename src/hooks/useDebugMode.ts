@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 
 interface ExperimentalSettings {
-  newLayout: boolean;
+  originalLayout: boolean;
   debugMode: boolean;
 }
 

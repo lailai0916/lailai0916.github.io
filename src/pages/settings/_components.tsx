@@ -188,10 +188,10 @@ export function FontSettings() {
 export function ExperimentalFeatures() {
   const buttonOptions = [
     {
-      key: 'newLayout' as const,
+      key: 'originalLayout' as const,
       label: translate({
-        id: 'pages.settings.item.experimental.option.newLayout',
-        message: 'New Layout',
+        id: 'pages.settings.item.experimental.option.originalLayout',
+        message: 'Original Layout',
       }),
     },
     {
@@ -203,7 +203,7 @@ export function ExperimentalFeatures() {
     },
   ];
   const [toggles, setToggles] = usePersistentState('settings-experimental', {
-    newLayout: false,
+    originalLayout: false,
     debugMode: false,
   });
 

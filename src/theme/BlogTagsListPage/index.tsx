@@ -15,8 +15,8 @@ const TITLE = translate({ id: 'theme.tags.tagsPageTitle', message: 'Tags' });
 const DESCRIPTION = "Tags of lailai's blog";
 
 export default function BlogTagsListPage(props: Props): React.ReactElement {
-  const { isNewLayout } = useTheme();
-  if (isNewLayout) return <BlogTagsListPageOriginal {...props} />;
+  const { isOriginalLayout } = useTheme();
+  if (isOriginalLayout) return <BlogTagsListPageOriginal {...props} />;
 
   const { tags } = props;
   return (

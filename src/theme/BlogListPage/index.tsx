@@ -7,8 +7,8 @@ import type { Props as BlogListPageProps } from '@theme/BlogListPage';
 export default function BlogListPage(
   props: BlogListPageProps
 ): React.ReactElement {
-  const { isNewLayout } = useTheme();
-  if (isNewLayout) return <BlogListPageOriginal {...props} />;
+  const { isOriginalLayout } = useTheme();
+  if (isOriginalLayout) return <BlogListPageOriginal {...props} />;
 
   const { metadata, items } = props;
   return (

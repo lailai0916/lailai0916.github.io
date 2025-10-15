@@ -2,18 +2,18 @@ import React, { useState, useEffect } from 'react';
 import { ThemeContext } from '@site/src/hooks/useTheme';
 
 export default function Root({ children }) {
-  const [isNewLayout, setIsNewLayout] = useState(false);
+  const [isOriginalLayout, setIsOriginalLayout] = useState(false);
 
   useEffect(() => {
     const storedSettings = localStorage.getItem('settings-experimental');
     if (storedSettings) {
       const settings = JSON.parse(storedSettings);
-      setIsNewLayout(settings.newLayout === true);
+      setIsOriginalLayout(settings.originalLayout === true);
     }
 
     const handleSettingsChange = (event) => {
-      if (event.detail.key === 'newLayout') {
-        setIsNewLayout(event.detail.checked);
+      if (event.detail.key === 'originalLayout') {
+        setIsOriginalLayout(event.detail.checked);
       }
     };
 
@@ -31,7 +31,7 @@ export default function Root({ children }) {
   }, []);
 
   return (
-    <ThemeContext.Provider value={{ isNewLayout, setIsNewLayout }}>
+    <ThemeContext.Provider value={{ isOriginalLayout, setIsOriginalLayout }}>
       {children}
     </ThemeContext.Provider>
   );

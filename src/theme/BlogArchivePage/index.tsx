@@ -22,8 +22,8 @@ const TITLE = translate({
 const DESCRIPTION = "Archive of lailai's blog";
 
 export default function BlogArchivePage(props: Props): React.ReactElement {
-  const { isNewLayout } = useTheme();
-  if (isNewLayout) return <BlogArchivePageOriginal {...props} />;
+  const { isOriginalLayout } = useTheme();
+  if (isOriginalLayout) return <BlogArchivePageOriginal {...props} />;
 
   const { archive } = props;
   const location = useLocation();
