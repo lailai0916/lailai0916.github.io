@@ -1,6 +1,12 @@
 # LGS Paintboard 2026 Winter Paintboard Event
 
-[中文版本](pb) | English Version（Translated by GPT-5.）
+[中文版本](pb) | English Version
+
+:::warning
+
+English Version is translated by GPT-5, for reference only, the actual content is based on the Chinese version.
+
+:::
 
 The **LGS Paintboard 2026** Winter Paintboard Event will be hosted by **Luogu Saver**!
 
@@ -68,27 +74,33 @@ Let us wish the Winter Paintboard continued success, and may our Winter Paintboa
 
 — Luogu [@RDFZchenyy](https://www.luogu.com.cn/user/567610) Contribution
 
-## More Information
-
-### Server Information
+## Server Information
 
 - Location: United States (please note possible instability due to cross-border traffic)
 - Configuration: Mac mini M4 Dedicated Server (10-core CPU + 16G RAM)
 - Bandwidth: 1 Gbps
 
-### Unofficial Plans
+## Unofficial Plans
 
 - [Winter Paintboard Destruction Plan](https://www.luogu.me/article/bxrvfth2)
 - [2026 Preservation Station Winter Paintboard Union Plan](https://www.luogu.me/article/pya455q0)
 
-Sorted by release date. You may contact the person in charge, Federico2903, to add your plan.
+(Sorted by release date. You may contact the person in charge, Federico2903, to add your plan)
 
-### Historical Paintboards
+## Historical Paintboards
+
+### 2022
 
 ![](https://cdn.luogu.com.cn/upload/image_hosting/v0d3gyds.png)
 
+### 2023
+
 ![](https://cdn.luogu.com.cn/upload/image_hosting/tehocpmu.png)
 
+### 2024
+
 ![](https://cdn.luogu.com.cn/upload/image_hosting/b46ef52o.png)
+
+### 2025
 
 ![](https://cdn.luogu.com.cn/upload/image_hosting/ubp9cvd8.png)

@@ -1,6 +1,6 @@
 # LGS Paintboard 2026 冬日绘板活动
 
-中文版本 | [English Version](pb.en)（Translated by GPT-5.）
+中文版本 | [English Version](pb.en)
 
 **LGS Paintboard 2026** 冬日绘板活动将由 **洛谷保存站** 主办！
 
@@ -65,27 +65,33 @@
 
 —— Luogu [@RDFZchenyy](https://www.luogu.com.cn/user/567610) 贡献
 
-## 更多信息
-
-### 服务器信息
+## 服务器信息
 
 - 位置：美国（请注意流量穿墙可能带来的不稳定性问题）
 - 配置：Mac mini M4 Dedicated Server（10-core CPU + 16G RAM）
 - 带宽：1 Gbps
 
-### 非官方计划
+## 非官方计划
 
 - [冬日绘版破坏计划](https://www.luogu.me/article/bxrvfth2)
 - [2026 保存站冬日绘版联合协会计划](https://www.luogu.me/article/pya455q0)
 
-按发布时间排序，可以联系负责人 Federico2903 添加。
+（按发布时间排序，可以联系负责人 Federico2903 添加）
 
-### 历年绘板
+## 历年绘板
+
+### 2022
 
 ![](https://cdn.luogu.com.cn/upload/image_hosting/v0d3gyds.png)
 
+### 2023
+
 ![](https://cdn.luogu.com.cn/upload/image_hosting/tehocpmu.png)
 
+### 2024
+
 ![](https://cdn.luogu.com.cn/upload/image_hosting/b46ef52o.png)
+
+### 2025
 
 ![](https://cdn.luogu.com.cn/upload/image_hosting/ubp9cvd8.png)
