@@ -1,6 +1,5 @@
 import React from 'react';
 import { useTheme } from '@site/src/hooks/useTheme';
-
 import { Card, TagChipList } from '../BlogShared/Components';
 import BlogTagsListPageOriginal from '@theme-original/BlogTagsListPage';
 import type { Props } from '@theme/BlogTagsListPage';
