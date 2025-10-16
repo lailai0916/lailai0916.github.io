@@ -11,7 +11,6 @@ import GithubSlugger from 'github-slugger';
 import { SKILL_LIST } from '@site/src/data/skills';
 import { DEVICE_LIST } from '@site/src/data/devices';
 import { COMMUNITY_LIST } from '@site/src/data/community';
-
 import styles from './styles.module.css';
 
 export function Skills() {
