@@ -806,7 +806,7 @@
     "message": "神经网络"
   },
   "home.neuralnetwork.description": {
-    "message": "在下方绘制数字 0~9，神经网络会实时识别您的手写数字"
+    "message": "在下方绘制数字 0~9，神经网络会识别您的手写数字"
   },
   "pages.sitemap.title": {
     "message": "地图"
