@@ -5,7 +5,7 @@ authors: lailai
 tags: [project]
 ---
 
-使用 ASCII 字符拼接成的艺术字体，灵感来源于 [Claude Code](<(https://www.anthropic.com/claude-code)>) 官网。
+使用 ASCII 字符拼接成的艺术字体，灵感来源于 [Claude Code](https://www.anthropic.com/claude-code) 官网。
 
 <!-- truncate -->
 
