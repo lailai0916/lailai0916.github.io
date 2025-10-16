@@ -366,7 +366,7 @@ $$
 
 但这不是最简答案，还需要进一步化简。
 
-<img src={require('././assets/de1e7a219492200560905ce9d47c614a.jpg').default} style={{maxWidth: '500px'}} />
+<img src={require('././assets/de1e7a219492200560905ce9d47c614a.jpg').default} style={{ maxWidth: '500px' }} />
 
 ### 定义
 

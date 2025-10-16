@@ -15,13 +15,13 @@
 
 ## 视频展示
 
-<video src={require('./assets/iclock.mp4').default} style={{maxWidth: '500px'}} controls />
+<video src={require('./assets/iclock.mp4').default} style={{ maxWidth: '500px' }} controls />
 
 ## 获奖证书
 
 <iframe
   src="https://www.desmos.com/winner-certificate-2024?hash=p4i42jkcp1"
-  style={{width: '100%', height: '100vh'}}
+  style={{ width: '100%', height: '100vh' }}
 />
 
 ## 效果展示
