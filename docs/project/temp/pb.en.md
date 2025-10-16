@@ -1,6 +1,6 @@
 # LGS Paintboard 2026 Winter Paintboard Event
 
-[中文版本](pb) | English Version
+[中文版本](./pb) | English Version
 
 :::warning
 

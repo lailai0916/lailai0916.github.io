@@ -1,6 +1,6 @@
 # LGS Paintboard 2026 冬日绘板活动
 
-中文版本 | [English Version](pb.en)
+中文版本 | [English Version](./pb.en)
 
 **LGS Paintboard 2026** 冬日绘板活动将由 **洛谷保存站** 主办！
 
