@@ -127,9 +127,7 @@ export default function Project() {
 
         <GridLayout columns={GridConfigs.projects}>
           {PROJECT_LIST.map((project, idx) => (
-            <div key={idx}>
-              <ProjectCard {...project} />
-            </div>
+            <ProjectCard key={idx} {...project} />
           ))}
         </GridLayout>
       </div>
