@@ -11,4 +11,4 @@ Technology evolves rapidly, and we need to maintain keen learning abilities and 
 
 <!-- truncate -->
 
-![](/img/hez/logo-light.png#gh-light-mode-only)![](/img/hez/logo-dark.png#gh-dark-mode-only)
+![](/img/docs/hez-light.png#gh-light-mode-only)![](/img/docs/hez-dark.png#gh-dark-mode-only)
