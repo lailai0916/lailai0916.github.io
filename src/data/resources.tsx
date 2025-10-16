@@ -737,6 +737,11 @@ export const RESOURCE_LIST: ResourceCategoryItem[] = [
         href: 'https://game.hullqin.cn',
         description: '在线桌游合集',
       },
+      {
+        title: 'Neal.fun',
+        href: 'https://neal.fun',
+        description: 'Neal 的游戏合集',
+      },
     ],
   },
   {
