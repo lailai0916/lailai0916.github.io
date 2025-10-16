@@ -44,11 +44,7 @@ export function PageTitle({
 }
 
 export function PageHeader({ children }: { children: React.ReactNode }) {
-  return (
-    <div className={styles.headerSection}>
-      <div className={styles.headerInner}>{children}</div>
-    </div>
-  );
+  return <div className={styles.header}>{children}</div>;
 }
 
 export function PageFooter({ children }: { children: React.ReactNode }) {
