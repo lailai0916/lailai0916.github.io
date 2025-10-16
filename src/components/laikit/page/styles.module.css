@@ -2,24 +2,20 @@
   outline: 1px solid red;
 }
 
-.header {
+.headerSection {
   background-color: var(--ifm-background-color);
   border-bottom: 1px solid var(--ifm-color-emphasis-200);
-  padding: 4rem 2rem;
+  padding: 4rem 0;
+}
+
+.headerInner {
   max-width: 1200px;
   margin: 0 auto;
+  padding: 0 2rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 3rem;
-}
-
-@media (max-width: 768px) {
-  .header {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 2rem;
-  }
 }
 
 .pageFooter {
@@ -60,4 +56,12 @@
   color: var(--ifm-color-emphasis-700);
   margin: 0;
   line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .headerInner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2rem;
+  }
 }
