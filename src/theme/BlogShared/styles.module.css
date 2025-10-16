@@ -1,7 +1,7 @@
 .container {
   /* 固定侧边栏宽度，主栏自适应最大宽度 */
   --left-col-width: 320px;
-  --main-col-max-width: 840px;
+  --main-col-max-width: 880px;
   --grid-gap: 1.25rem;
 
   width: 100%;
@@ -230,7 +230,7 @@
   transform: translateY(-1px);
 }
 
-.tagChipActive {
+.tagChipActive .tagCount {
   color: inherit;
 }
 
