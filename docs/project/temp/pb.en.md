@@ -41,11 +41,11 @@ Users need to draw by calling the **API**. Each **PaintKey** can modify the colo
 
 ## Event Plan
 
-|  Event Stage   | Start Date | Duration  | Cooldown | Reset Paintboard |
-| :------------: | :--------: | :-------: | :------: | :--------------: |
-| Public Test Ⅰ  | 2025-10-12 | $30$ days |  $1$ ms  |        /         |
-| Public Test Ⅱ  | 2025-11-01 | $35$ days |  $30$ s  |      Weekly      |
-| Official Event | 2026-02-16 | $3$ days  |  $30$ s  |        /         |
+|  Event Stage   |      Start Date       | Duration  | Cooldown | Reset Paintboard |
+| :------------: | :-------------------: | :-------: | :------: | :--------------: |
+| Public Test Ⅰ  |      2025-10-12       | $30$ days |  $1$ ms  |        /         |
+| Public Test Ⅱ  | End of November (TBD) | $35$ days |  $30$ s  |      Weekly      |
+| Official Event |      2026-02-16       | $3$ days  |  $30$ s  |        /         |
 
 :::tip
 
