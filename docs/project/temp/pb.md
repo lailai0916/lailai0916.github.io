@@ -1,6 +1,6 @@
 # LGS Paintboard 2026 冬日绘板活动
 
-中文版本 | [English Version](./pb.en)
+<!-- 中文版本 | [English Version](./pb.en) -->
 
 :::warning
 
@@ -38,6 +38,10 @@ English Version is translated by GPT-5, for reference only, the actual content i
 - 禁止进行 RMB 交易，违者将封禁 IP 和同 IP 下所有 Token。
 
 :::
+
+## 活动奖励
+
+ 冬绘结束过后将评选最乐计划（需要在 2025/12/31 前发布属于自己势力的宣传专栏），得票数前三名的计划组织者将分别获得 100/60/40CNY 的奖励。
 
 ## 活动规划
 

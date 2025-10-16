@@ -11,14 +11,14 @@ export interface ProjectItem {
 
 export const PROJECT_LIST: ProjectItem[] = [
   {
-    title: "lailai's Home",
+    title: 'Luogu Saver',
     description: translate({
       id: 'data.project.p1.description',
       message:
-        'My personal website for sharing technical notes, project experience, and learning insights.',
+        'A reliable platform for saving Luogu columns and clipboards, permanently free and ad-free.',
     }),
-    href: 'https://github.com/lailai0916/lailai0916.github.io',
-    tech: 'TypeScript · Docusaurus',
+    href: 'https://www.luogu.me',
+    tech: 'Node.js · MySQL',
     status: {
       text: translate({
         id: 'data.project.p1.status',
