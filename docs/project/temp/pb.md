@@ -2,6 +2,12 @@
 
 中文版本 | [English Version](./pb.en)
 
+:::warning
+
+English Version is translated by GPT-5, for reference only, the actual content is based on the Chinese version.
+
+:::
+
 **LGS Paintboard 2026** 冬日绘板活动将由 **洛谷保存站** 主办！
 
 ## 活动详情
@@ -64,7 +70,7 @@
 让我们一起祝愿冬日绘板越办越好，祝愿我们的冬日绘板永存！
 
 <div align="right">
-  —— 洛谷用户 [@RDFZchenyy](https://www.luogu.com.cn/user/567610) 贡献
+  <p>—— 洛谷用户 [@RDFZchenyy](https://www.luogu.com.cn/user/567610) 贡献</p>
 </div>
 
 ## 服务器信息
