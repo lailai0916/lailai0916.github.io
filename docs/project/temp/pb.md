@@ -62,7 +62,6 @@
 
 —— Luogu [@RDFZchenyy](https://www.luogu.com.cn/user/567610) 贡献
 
-
 ## 更多信息
 
 ### 非官方计划
