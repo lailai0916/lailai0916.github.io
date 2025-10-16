@@ -5,6 +5,8 @@ authors: lailai
 tags: [math]
 ---
 
+数学、科学中的符号与单位思想。
+
 <!-- truncate -->
 
 ## 符号

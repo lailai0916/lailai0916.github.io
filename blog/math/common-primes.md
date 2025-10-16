@@ -5,6 +5,8 @@ authors: lailai
 tags: [math, resource]
 ---
 
+一些常用质数的数据。
+
 <!-- truncate -->
 
 ## 参考资料

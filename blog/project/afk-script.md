@@ -7,9 +7,13 @@ tags: [project]
 
 我的游戏挂机脚本，可执行简单的重复点击操作。
 
-采用 AppleScript 编写，仅适用于 macOS 系统。
-
 <!-- truncate -->
+
+:::warning
+
+采用 AppleScript 编写，因此仅适用于 macOS 系统。
+
+:::
 
 ## 安装
 

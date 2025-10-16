@@ -5,6 +5,8 @@ authors: lailai
 tags: [project]
 ---
 
+中国公民身份号码校验码计算器。
+
 <!-- truncate -->
 
 ## 参考资料

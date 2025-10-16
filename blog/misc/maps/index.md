@@ -5,6 +5,8 @@ authors: lailai
 tags: [misc, resource]
 ---
 
+清晰的世界地图和中国地图。
+
 <!-- truncate -->
 
 ## 参考资料

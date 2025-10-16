@@ -5,7 +5,7 @@ authors: lailai
 tags: [personal]
 ---
 
-使用线条动画生成器制作了一个 Apple 风格的个人签名。
+使用线条动画生成器制作的 Apple 风格的个人签名。
 
 <!-- truncate -->
 

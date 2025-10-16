@@ -5,6 +5,8 @@ authors: lailai
 tags: [math]
 ---
 
+给中学生的微积分入门教程。
+
 <!-- truncate -->
 
 ## 参考资料

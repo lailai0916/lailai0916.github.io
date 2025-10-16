@@ -5,6 +5,8 @@ authors: lailai
 tags: [personal]
 ---
 
+我的个人头像代码。
+
 <!-- truncate -->
 
 ## 说明

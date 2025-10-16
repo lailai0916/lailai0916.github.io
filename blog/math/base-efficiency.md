@@ -5,16 +5,14 @@ authors: lailai
 tags: [math]
 ---
 
+为什么 $e$ 进制理论效率最高？
+
 <!-- truncate -->
 
 ## 参考资料
 
 - [为什么3进制效率较高？ - bilibili](https://www.bilibili.com/video/BV1jS4y167h1)
 - [三进位电脑 - 维基百科](https://zh.wikipedia.org/zh-cn/三進位電腦)
-
-## 引入
-
-为什么 $e$ 进制理论效率最高？
 
 ## 思想
 

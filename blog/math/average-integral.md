@@ -5,6 +5,8 @@ authors: lailai
 tags: [math]
 ---
 
+一个与平均有关的定积分，可以推导出均值不等式。
+
 <!-- truncate -->
 
 ## 参考资料

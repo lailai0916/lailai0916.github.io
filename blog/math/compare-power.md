@@ -5,17 +5,15 @@ authors: lailai
 tags: [math]
 ---
 
+对于两个正实数 $x$ 和 $y$，如何比较 $x^y$ 和 $y^x$ 的大小？
+
 <!-- truncate -->
 
-## 引入
-
-对于两个正实数 $x$ 和 $y$，如何比较 $x^y$ 和 $y^x$ 的大小？
+## 思想
 
 $$
 x^y\gtreqless y^x
 $$
-
-## 思想
 
 两边同时取自然对数：
 

@@ -5,6 +5,8 @@ authors: lailai
 tags: [math]
 ---
 
+多项式方程的求根公式和推导过程。
+
 <!-- truncate -->
 
 ## 参考资料

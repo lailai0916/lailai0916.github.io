@@ -5,6 +5,8 @@ authors: lailai
 tags: [misc]
 ---
 
+一些有关 C++ 的冷知识。
+
 <!-- truncate -->
 
 ## 数组下标
