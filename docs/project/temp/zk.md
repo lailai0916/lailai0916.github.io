@@ -70,7 +70,7 @@
       <td>$120$ 分</td>
     </tr>
     <tr>
-      <td colspan="2">3 月 $\sim$ 4 月</td>
+      <td colspan="2">3 月 – 4 月</td>
       <td>体育</td>
       <td colspan="3">另行通知</td>
       <td>$30$ 分</td>
