@@ -15,6 +15,17 @@ sidebar_position: 0
 - [维基百科，自由的百科全书](https://zh.wikipedia.org/zh-cn/Wikipedia:首页)
 - [国家中小学智慧教育平台](https://basic.smartedu.cn)
 
+## 倒计时
+
+export const today = new Date().toISOString().split("T")[0];
+export const daysUntil = (target) => Math.ceil((new Date(target) - new Date()) / 86400000);
+
+今天是 **{today}**，距离：
+
+- **2026 年高考** 还有 **{daysUntil('2026-06-07')}** 天
+- **2027 年高考** 还有 **{daysUntil('2027-06-07')}** 天
+- **2028 年高考** 还有 **{daysUntil('2028-06-07')}** 天
+
 ## 目录
 
 <DocCardList />
