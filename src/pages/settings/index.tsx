@@ -110,22 +110,33 @@ const SettingItems = [
   },
 ];
 
+function Card({ title, subtitle, icon, children }) {
+  return (
+    <div className={styles.settingCard}>
+      <div className={styles.cardHeader}>
+        <Icon icon={icon} className={styles.cardIcon} />
+        <div className={styles.cardTitleGroup}>
+          <h3 className={styles.cardTitle}>{title}</h3>
+          <span className={styles.cardSubtitle}>{subtitle}</span>
+        </div>
+      </div>
+      <div className={styles.cardBody}>{children}</div>
+    </div>
+  );
+}
+
 function SettingsContainer() {
   return (
     <div className={styles.container}>
       {SettingItems.map((item) => (
-        <div key={item.title} className={styles.settingCard}>
-          <div className={styles.cardHeader}>
-            <Icon icon={item.icon} className={styles.cardIcon} />
-            <div className={styles.cardTitleGroup}>
-              <h3 className={styles.cardTitle}>{item.title}</h3>
-              <span className={styles.cardSubtitle}>{item.subtitle}</span>
-            </div>
-          </div>
-          <div className={styles.cardBody}>
-            <item.component />
-          </div>
-        </div>
+        <Card
+          key={item.title}
+          title={item.title}
+          subtitle={item.subtitle}
+          icon={item.icon}
+        >
+          <item.component />
+        </Card>
       ))}
     </div>
   );
