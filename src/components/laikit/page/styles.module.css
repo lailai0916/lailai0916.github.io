@@ -5,7 +5,7 @@
 .headerSection {
   background-color: var(--ifm-background-color);
   border-bottom: 1px solid var(--ifm-color-emphasis-200);
-  padding: 2.5rem 0;
+  padding: 4rem 0;
 }
 
 .headerInner {
@@ -15,6 +15,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 3rem;
 }
 
 .pageFooter {
