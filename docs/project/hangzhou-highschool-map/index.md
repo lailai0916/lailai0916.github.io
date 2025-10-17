@@ -8,7 +8,7 @@
 
 ## 说明
 
-### 杭州高中分布地图
+### 杭州高中分布地图 <sub><small>0.2.0-beta · 2025-10-16</small></sub>
 
 学校定位数据来自 **Google Maps Platform**，所有经纬度信息均已人工审查。
 
@@ -16,11 +16,13 @@
 
 已公开 **Mapbox API** 密钥，免费额度有限，**请勿滥用**。
 
-渲染图由 **网页版截图** 获取素材，后期使用 **Photoshop** 进行调整。
+渲染图的素材来自 **网页版截图**，后期使用 **Photoshop** 进行调整。
 
-所有代码、数据和素材均已在 **GitHub** 上开源：https://github.com/lailai0916/hangzhou-highschool-map
+以上所有代码、数据和素材均已在 **GitHub** 上开源：
 
-数据包含杭州市区 **第一段招生学校名单** 中的 $51$ 所学校。
+https://github.com/lailai0916/hangzhou-highschool-map
+
+默认数据包含杭州市区 **第一段招生学校名单** 中的 $51$ 所学校。
 
 如果需要 **修改或添加学校**，可以 **私信我** 或 **提交 PR**。
 
