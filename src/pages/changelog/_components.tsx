@@ -43,12 +43,13 @@ export function Changelog() {
         <section key={year}>
           <h2>{year}</h2>
           {months.map(({ month, items }) => {
-            const monthTitle = monthFmt.format(
-              new Date(Number(year), Number(month) - 1, 1)
-            );
             return (
               <section key={`${year}-${month}`}>
-                <h3>{monthTitle}</h3>
+                <h3>
+                  {monthFmt.format(
+                    new Date(Number(year), Number(month) - 1, 1)
+                  )}
+                </h3>
                 <ul>
                   {items.map((item, i) => {
                     return (
