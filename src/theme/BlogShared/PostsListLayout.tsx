@@ -15,6 +15,7 @@ function PostCard({ item }) {
   const { content: MDXPageContent } = item;
   const { metadata, assets, frontMatter } = MDXPageContent;
   const image = assets.image ?? frontMatter.image;
+  const firstTag = metadata.tags?.[0] ?? null;
 
   return (
     <article className={styles.postCard}>
@@ -28,12 +29,12 @@ function PostCard({ item }) {
           <span className={clsx(styles.tagChip, styles.postInlineTag)}>
             <Icon
               icon={
-                metadata.tags[0].permalink === '/blog/tags/pinned'
+                firstTag?.permalink === '/blog/tags/pinned'
                   ? 'lucide:pin'
                   : 'lucide:bookmark'
               }
             />
-            {metadata.tags[0].label ?? 'None'}
+            {firstTag?.label ?? 'None'}
           </span>
           <h2 className={styles.postTitle}>
             <Link to={metadata.permalink} className={styles.postTitleLink}>
