@@ -2,6 +2,7 @@
 using namespace std;
 
 const int mod=10000;
+stack<int> s;
 int main()
 {
 	ios::sync_with_stdio(false);
@@ -10,7 +11,6 @@ int main()
 	cin>>x;
 	s.push(x);
 	char f;
-	stack<int> s;
 	while(cin>>f>>x)
 	{
 		if(f=='*')
