@@ -237,7 +237,7 @@ function StatsCard() {
   );
 }
 
-function PopularTagsCard() {
+function TagsCard() {
   const map = new Map<string, ChipItem>();
   getAllPostMetadata().forEach((meta) => {
     meta.tags.forEach((tag) => {
@@ -342,7 +342,7 @@ export default function BlogScaffold({
             <>
               <StatsCard />
               <FeedCard />
-              <PopularTagsCard />
+              <TagsCard />
               <ArchiveCard />
             </>
           )}
