@@ -38,18 +38,28 @@ function SitemapHeader() {
 }
 
 function SitemapMain() {
+  const groupsPerColumn = 2;
+  const columns = [];
+  for (let i = 0; i < SITEMAP_LIST.length; i += groupsPerColumn) {
+    columns.push(SITEMAP_LIST.slice(i, i + groupsPerColumn));
+  }
+
   return (
     <div className={styles.container}>
-      {SITEMAP_LIST.map((category) => (
-        <div key={category.title}>
-          <h3>{category.title}</h3>
-          <ul>
-            {category.sitemaps.map((sitemap) => (
-              <li key={sitemap.title}>
-                <Link to={sitemap.href}>{sitemap.title}</Link>
-              </li>
-            ))}
-          </ul>
+      {columns.map((column, colIndex) => (
+        <div key={colIndex} className={styles.column}>
+          {column.map((category) => (
+            <div key={category.title}>
+              <h3>{category.title}</h3>
+              <ul>
+                {category.sitemaps.map((sitemap) => (
+                  <li key={sitemap.title}>
+                    <Link to={sitemap.href}>{sitemap.title}</Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
         </div>
       ))}
     </div>

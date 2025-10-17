@@ -13,13 +13,18 @@
   max-width: 1200px;
   margin: 0 auto;
   padding: 2rem;
-  /* Desktop-first: three columns by default */
-  column-count: 3;
-  column-gap: 2rem;
+  display: flex;
+  gap: 2rem;
   animation: fadeIn 0.3s ease-out;
 }
 
-.container > div {
+.column {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.column > div {
   break-inside: avoid;
   page-break-inside: avoid;
   -webkit-column-break-inside: avoid;
@@ -29,13 +34,6 @@
 /* ≤991px: two columns */
 @media (max-width: 991px) {
   .container {
-    column-count: 2;
-  }
-}
-
-/* ≤575px: one column */
-@media (max-width: 575px) {
-  .container {
-    column-count: 1;
+    flex-direction: column;
   }
 }

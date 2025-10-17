@@ -19,13 +19,6 @@ export const SITEMAP_LIST: SitemapCategoryItem[] = [
     sitemaps: [
       {
         title: translate({
-          id: 'data.sitemap.pages.home',
-          message: 'Home',
-        }),
-        href: '/',
-      },
-      {
-        title: translate({
           id: 'data.sitemap.pages.about',
           message: 'About',
         }),
