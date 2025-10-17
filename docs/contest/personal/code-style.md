@@ -26,10 +26,10 @@
 bool operator<(const Node &rhs) const
 ```
 
-### 缩进与大括号
+### 大括号与缩进
 
-- C++ 代码使用 <kbd>Tab</kbd> 缩进。
 - 大括号通常单独成行，简短语句可写在同一行或省略大括号。
+- C++ 代码使用 <kbd>Tab</kbd> 缩进。
 
 ```cpp
 for(int i=1;i<=n;i++)

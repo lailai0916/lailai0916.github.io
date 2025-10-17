@@ -20,7 +20,7 @@
 
 以上的所有代码、数据和素材均已在 **GitHub** 开源：
 
-https://github.com/lailai0916/hangzhou-highschool-map
+**https://github.com/lailai0916/hangzhou-highschool-map**
 
 默认数据包含杭州市区 **第一段招生学校名单** 的 $51$ 所学校。
 
