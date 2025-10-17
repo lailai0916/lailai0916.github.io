@@ -1,6 +1,7 @@
 import React from 'react';
 import clsx from 'clsx';
 import Link from '@docusaurus/Link';
+import { Icon } from '@iconify/react';
 import type { BlogPaginatedMetadata } from '@docusaurus/plugin-content-blog';
 import BlogScaffold from './Scaffold';
 
@@ -25,7 +26,14 @@ function PostCard({ item }) {
       <div className={styles.postBody}>
         <div className={styles.postTitleRow}>
           <span className={clsx(styles.tagChip, styles.postInlineTag)}>
-            {metadata.tags?.[0]?.label ?? 'None'}
+            <Icon
+              icon={
+                metadata.tags[0].permalink === '/blog/tags/pinned'
+                  ? 'lucide:pin'
+                  : 'lucide:bookmark'
+              }
+            />
+            {metadata.tags[0].label ?? 'None'}
           </span>
           <h2 className={styles.postTitle}>
             <Link to={metadata.permalink} className={styles.postTitleLink}>
