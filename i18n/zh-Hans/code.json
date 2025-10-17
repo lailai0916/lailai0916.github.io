@@ -880,6 +880,9 @@
   "data.sitemap.blog.sidebar.tags": {
     "message": "标签"
   },
+  "blog.sidebar.toc.title": {
+    "message": "目录"
+  },
   "data.sitemap.function.title": {
     "message": "功能"
   },
