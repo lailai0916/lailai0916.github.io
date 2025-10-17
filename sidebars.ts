@@ -258,6 +258,7 @@ const sidebars: SidebarsConfig = {
             'contest/graph/connectivity/bcc',
           ],
         },
+        'contest/graph/rings-count',
         'contest/graph/2sat',
         'contest/graph/flow',
         'contest/graph/bigraph-match',
