@@ -1,6 +1,12 @@
 <div align="center">
   <h1>lailai's Home</h1>
   <p>English | <a href="README.zh-Hans.md">简体中文</a></p>
+  <p>
+    <img src="https://img.shields.io/badge/node-v22.18.0-brightgreen" />
+    <img src="https://img.shields.io/github/last-commit/lailai0916/lailai0916.github.io" />
+    <img src="https://www.codefactor.io/repository/github/lailai0916/lailai0916.github.io/badge" />
+    <img src="https://img.shields.io/github/license/lailai0916/lailai0916.github.io" />
+  </p>
   <img src="static/img/preview/home-light.png#gh-light-mode-only" />
   <img src="static/img/preview/home-dark.png#gh-dark-mode-only" />
 </div>
