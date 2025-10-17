@@ -464,3 +464,11 @@
   color: #fff;
   border-color: var(--ifm-color-primary);
 }
+
+.tocItem {
+  margin-bottom: 0.5rem;
+}
+
+.tocLink {
+  color: var(--ifm-font-color-base);
+}

@@ -1,10 +1,11 @@
 import React from 'react';
 import clsx from 'clsx';
-import { DebugLayout } from '@site/src/components/laikit/page';
-
-import useBaseUrl from '@docusaurus/useBaseUrl';
-import { translate } from '@docusaurus/Translate';
 import Link from '@docusaurus/Link';
+import useBaseUrl from '@docusaurus/useBaseUrl';
+import { DebugLayout } from '@site/src/components/laikit/page';
+import type { TOCItem } from '@docusaurus/mdx-loader';
+
+import { translate } from '@docusaurus/Translate';
 import {
   getAllBlogItems,
   getAllPostMetadata,
@@ -12,6 +13,33 @@ import {
 } from '@site/src/utils/blogData';
 import { Card, TagChipList, type ChipItem } from './Components';
 import styles from './styles.module.css';
+
+function TocCard({ toc }: { toc: readonly TOCItem[] }) {
+  if (toc.length === 0) {
+    return null;
+  }
+  return (
+    <Card
+      title={translate({
+        id: 'blog.sidebar.toc.title',
+        message: 'Contents',
+      })}
+    >
+      <ul>
+        {toc.map((item) => (
+          <li key={item.id} className={styles.tocItem}>
+            <Link
+              href={`#${item.id}`}
+              className={styles.tocLink}
+              style={{ paddingLeft: `${item.level - 2}rem` }}
+              dangerouslySetInnerHTML={{ __html: item.value }}
+            />
+          </li>
+        ))}
+      </ul>
+    </Card>
+  );
+}
 
 const fixedId = 'lailai';
 const baseUrl = 'https://analytics.lailai.one';
@@ -286,18 +314,30 @@ type Props = {
   title?: string;
   description?: string;
   children: React.ReactNode;
+  toc?: readonly TOCItem[];
 };
 
-export default function BlogScaffold({ title, description, children }: Props) {
+export default function BlogScaffold({
+  title,
+  description,
+  children,
+  toc,
+}: Props) {
   return (
     <DebugLayout title={title} description={description}>
       <div className={styles.container}>
         <aside className={styles.mainCol}>
           <AuthorCard />
-          <StatsCard />
-          <FeedCard />
-          <PopularTagsCard />
-          <ArchiveCard />
+          {toc ? (
+            <TocCard toc={toc} />
+          ) : (
+            <>
+              <StatsCard />
+              <FeedCard />
+              <PopularTagsCard />
+              <ArchiveCard />
+            </>
+          )}
         </aside>
         <main className={styles.mainCol}>{children}</main>
       </div>

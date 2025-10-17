@@ -36,6 +36,7 @@ export default function BlogPostPage(props: Props): React.ReactElement {
         <BlogPostPageMetadata />
         <BlogPostPageStructuredData />
         <BlogScaffold
+          toc={props.content.toc}
           title={props.content.metadata.title}
           description={props.content.metadata.description}
         >
