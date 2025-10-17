@@ -15,7 +15,7 @@
   padding: 2rem;
   /* Desktop-first: three columns by default */
   column-count: 3;
-  column-gap: 1.5rem;
+  column-gap: 2rem;
   animation: fadeIn 0.3s ease-out;
 }
 
