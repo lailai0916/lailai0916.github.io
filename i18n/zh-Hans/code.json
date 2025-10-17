@@ -880,16 +880,13 @@
   "data.sitemap.blog.sidebar.tags": {
     "message": "标签"
   },
-  "data.sitemap.search.title": {
+  "data.sitemap.function.title": {
+    "message": "功能"
+  },
+  "data.sitemap.function.search": {
     "message": "搜索"
   },
-  "data.sitemap.search.search": {
-    "message": "搜索"
-  },
-  "data.sitemap.test.title": {
-    "message": "测试"
-  },
-  "data.sitemap.test.test": {
+  "data.sitemap.function.test": {
     "message": "测试"
   },
   "data.sitemap.more.title": {

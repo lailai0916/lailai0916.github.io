@@ -157,28 +157,20 @@ export const SITEMAP_LIST: SitemapCategoryItem[] = [
   },
   {
     title: translate({
-      id: 'data.sitemap.search.title',
-      message: 'Search',
+      id: 'data.sitemap.function.title',
+      message: 'Function',
     }),
     sitemaps: [
       {
         title: translate({
-          id: 'data.sitemap.search.search',
+          id: 'data.sitemap.function.search',
           message: 'Search',
         }),
         href: '/search',
       },
-    ],
-  },
-  {
-    title: translate({
-      id: 'data.sitemap.test.title',
-      message: 'Test',
-    }),
-    sitemaps: [
       {
         title: translate({
-          id: 'data.sitemap.test.test',
+          id: 'data.sitemap.function.test',
           message: 'Test',
         }),
         href: '/test',
