@@ -44,6 +44,8 @@ int kruskal(int n)
 }
 ```
 
+## Kruskal 重构树
+
 ## 例题
 
 ### 洛谷 P3366 【模板】最小生成树
