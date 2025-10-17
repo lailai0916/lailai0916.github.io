@@ -54,16 +54,24 @@ function AuthorCard() {
     .flatMap((m) => m.authors)
     .find((a) => a.key === fixedId);
   return (
-    <Card>
-      <div className={styles.authorCardHeader}>
-        <img
-          src={useBaseUrl(author.imageURL)}
-          className={styles.authorAvatar}
-        />
-        <div className={styles.authorName}>{author.name}</div>
-        <div className={styles.authorDesc}>{author.title}</div>
-      </div>
-    </Card>
+    <Link
+      to="/blog"
+      style={{
+        textDecoration: 'none',
+        color: 'inherit',
+      }}
+    >
+      <Card>
+        <div className={styles.authorCardHeader}>
+          <img
+            src={useBaseUrl(author.imageURL)}
+            className={styles.authorAvatar}
+          />
+          <div className={styles.authorName}>{author.name}</div>
+          <div className={styles.authorDesc}>{author.title}</div>
+        </div>
+      </Card>
+    </Link>
   );
 }
 
