@@ -30,10 +30,6 @@ export const daysUntil = (target) => Math.ceil((new Date(target) - new Date()) /
 - **IOI 2026** 还有 **{daysUntil('2026-08-09')}** 天
 - **CSP-J/S 2026 第一轮** 还有 **{daysUntil('2026-09-20')}** 天
 
-## 目录
-
-<DocCardList />
-
 ## 知识点
 
 ### 算法基础
@@ -71,3 +67,7 @@ Pick 定理、三角剖分、凸包、扫描线、旋转卡壳、半平面交、
 ### 杂项
 
 离散化、双指针、RMQ（Range Minimum Query）、莫队算法（普通莫队、带修改莫队、树上莫队、回滚莫队、二维莫队、莫队二次离线）、CDQ 分治、分数规划、整体二分、随机化（爬山算法、模拟退火）、悬线法、有限状态自动机、计算理论、计算理论、字节顺序、约瑟夫问题、格雷码、表达式求值、主元素问题、Garsia–Wachs 算法、15-puzzle、Kahan 求和、珂朵莉树（ODT）、空间优化
+
+## 目录
+
+<DocCardList />
