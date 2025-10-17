@@ -13,7 +13,7 @@ import styles from './styles.module.css';
 import { TRAVEL_LIST } from '@site/src/data/travel';
 
 // Local constants and helpers (kept in-file by request)
-const MAP_FILE = '/datamaps.world.json';
+const MAP_FILE = '/json/datamaps.world.json';
 const FLAG_REGEX = /[\u{1F1E6}-\u{1F1FF}]{2}/gu;
 
 export function flagEmojiToISO2(flag: string): string | null {

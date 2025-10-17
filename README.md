@@ -72,6 +72,7 @@ lailai0916.github.io/
 │   └── utils/                     # Utility functions
 ├── static/                        # Static assets
 │   ├── img/                       # Image files
+│   ├── json/                      # JSON files
 │   └── CNAME                      # Domain settings
 ├── docusaurus.config.ts           # Docusaurus config
 ├── LICENSE                        # Code License

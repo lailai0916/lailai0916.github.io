@@ -72,6 +72,7 @@ lailai0916.github.io/
 │   └── utils/                     # 工具函数
 ├── static/                        # 静态资源
 │   ├── img/                       # 图片文件
+│   ├── json/                      # JSON 文件
 │   └── CNAME                      # 域名配置
 ├── docusaurus.config.ts           # Docusaurus 配置
 ├── LICENSE                        # 代码许可协议
