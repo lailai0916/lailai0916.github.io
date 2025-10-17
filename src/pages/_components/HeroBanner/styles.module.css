@@ -1,13 +1,17 @@
 .hero {
   background-color: var(--ifm-color-emphasis-100);
   padding: 48px;
+}
 
-  /* --grid-size: 26px;
-  --grid-fade-radius: 62% 56%;
-  --grid-line: rgba(0, 0, 0, 0.09); */
+html[data-theme='dark'] .hero {
+  background-color: #2b3137;
 }
 
 /* .hero::before {
+  --grid-size: 26px;
+  --grid-fade-radius: 62% 56%;
+  --grid-line: rgba(0, 0, 0, 0.09);
+
   content: '';
   position: absolute;
   inset: 0;
@@ -38,12 +42,11 @@
     white 35%,
     transparent 80%
   );
-} */
-
-html[data-theme='dark'] .hero {
-  background-color: #2b3137;
-  /* --grid-line: rgba(255, 255, 255, 0.09); */
 }
+
+html[data-theme='dark'] .hero::before {
+  --grid-line: rgba(255, 255, 255, 0.09);
+} */
 
 .heroInner {
   margin: 0 auto;
