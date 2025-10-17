@@ -1,4 +1,4 @@
-# 杭州高中地图
+# Hangzhou HighSchool Map
 
 中国杭州的高中分布地图。
 
