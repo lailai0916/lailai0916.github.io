@@ -32,7 +32,6 @@ export const RESOURCE_LIST: ResourceCategoryItem[] = [
       },
     ],
   },
-
   {
     title: 'AI 助手与生成',
     icon: 'lucide:bot',
