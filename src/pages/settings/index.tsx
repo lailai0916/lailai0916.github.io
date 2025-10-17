@@ -238,9 +238,9 @@ function FontSettings() {
         </span>
         <input
           type="range"
-          min="12"
-          max="20"
-          step="1"
+          min={12}
+          max={20}
+          step={1}
           value={fontSize}
           onChange={(e) => handleSizeChange(parseInt(e.target.value, 10))}
           className={styles.slider}

@@ -108,7 +108,7 @@
 .sliderContainer {
   display: flex;
   flex-direction: column;
-  gap: 0.75rem;
+  gap: 1rem;
 }
 
 .sliderLabel {
@@ -139,10 +139,11 @@
   cursor: pointer;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   transition: all 0.2s ease;
+  transform: scale(0.8);
 }
 
 .slider::-webkit-slider-thumb:hover {
-  transform: scale(1.1);
+  transform: scale(1);
 }
 
 .slider::-moz-range-thumb {
@@ -160,7 +161,6 @@
   justify-content: space-between;
   font-size: 0.8rem;
   color: var(--ifm-color-emphasis-600);
-  margin-top: 0.5rem;
 }
 
 /* 切换列表 */
