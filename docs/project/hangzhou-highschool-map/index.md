@@ -18,7 +18,7 @@
 
 渲染图的素材来自 **网页版截图**，后期使用 **Photoshop** 进行调整。
 
-以上的所有代码、数据和素材均已在 **GitHub** 上开源：
+以上的所有代码、数据和素材均已在 **GitHub** 开源：
 
 https://github.com/lailai0916/hangzhou-highschool-map
 
