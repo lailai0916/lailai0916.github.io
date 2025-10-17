@@ -84,7 +84,7 @@ function PostCard({ item }) {
                     >
                       {tag.label}
                     </Link>
-                    {i < metadata.tags.length - 1 && ' / '}
+                    {i < metadata.tags.length - 1 && ' | '}
                   </React.Fragment>
                 ))}
               </IconText>
