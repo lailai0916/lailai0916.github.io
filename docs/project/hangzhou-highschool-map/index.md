@@ -10,13 +10,13 @@
 
 ### 杭州高中分布地图
 
-学校定位数据来自 **Google Maps Platform**，所有经纬度信息均已经过人工审查。
+学校定位数据来自 **Google Maps Platform**，所有经纬度信息均已人工审查。
 
 地图底图使用 **OpenStreetMap** 开源数据，通过 **Mapbox** 实现交互式渲染。
 
-已公开 **Mapbox API** 密钥，免费额度有限，请勿滥用。
+已公开 **Mapbox API** 密钥，免费额度有限，**请勿滥用**。
 
-渲染图由截图素材后期使用 **Photoshop** 进行调整。
+渲染图由 **网页版截图** 获取素材，后期使用 **Photoshop** 进行调整。
 
 所有代码、数据和素材均已在 **GitHub** 上开源：https://github.com/lailai0916/hangzhou-highschool-map
 
