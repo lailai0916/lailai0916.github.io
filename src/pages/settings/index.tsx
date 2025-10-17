@@ -46,7 +46,7 @@ function Card({ title, subtitle, icon, children }) {
   );
 }
 
-export function ThemeSettings() {
+function ThemeSettings() {
   const themeOptions = [
     {
       key: null,
@@ -107,7 +107,7 @@ export function ThemeSettings() {
   );
 }
 
-export function ColorGenerator() {
+function ColorGenerator() {
   const presetColors = [
     '#1d9bf0',
     '#7856ff',
@@ -194,7 +194,7 @@ export function ColorGenerator() {
   );
 }
 
-export function FontSettings() {
+function FontSettings() {
   const [fontSize, setFontSize] = useState<number>(16);
 
   useEffect(() => {
@@ -255,7 +255,7 @@ export function FontSettings() {
   );
 }
 
-export function ExperimentalFeatures() {
+function ExperimentalFeatures() {
   const buttonOptions = [
     {
       key: 'originalLayout' as const,
@@ -320,7 +320,7 @@ export function ExperimentalFeatures() {
   );
 }
 
-export function QuickActions() {
+function QuickActions() {
   function Confetti() {
     const count = 200;
     const defaults = { origin: { y: 0.7 } };
