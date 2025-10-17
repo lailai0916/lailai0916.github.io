@@ -34,9 +34,7 @@ export function PageTitle({
       <Heading
         as="h1"
         className={styles.mainTitle}
-        dangerouslySetInnerHTML={{
-          __html: title,
-        }}
+        dangerouslySetInnerHTML={{ __html: title }}
       />
       <p className={styles.mainDescription}>{description}</p>
     </div>

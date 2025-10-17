@@ -1,28 +1,6 @@
 import React, { useMemo } from 'react';
 import { CHANGELOG_LIST, TYPE_LABEL } from '@site/src/data/changelog';
-import ReactMarkdown from 'react-markdown';
-import remarkGfm from 'remark-gfm';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
-
-function MarkdownText({ text }: { text: string }) {
-  const components = useMemo(
-    () => ({
-      p: ({ children }: { children: React.ReactNode }) => <>{children}</>,
-      a: (
-        props: React.DetailedHTMLProps<
-          React.AnchorHTMLAttributes<HTMLAnchorElement>,
-          HTMLAnchorElement
-        >
-      ) => <a {...props} target="_blank" rel="noopener noreferrer" />,
-    }),
-    []
-  );
-  return (
-    <ReactMarkdown remarkPlugins={[remarkGfm]} components={components}>
-      {text}
-    </ReactMarkdown>
-  );
-}
 
 export function Changelog() {
   const { i18n } = useDocusaurusContext();
@@ -76,7 +54,9 @@ export function Changelog() {
                     return (
                       <li key={`${item.date}-${item.type}-${i}`}>
                         <strong>[{TYPE_LABEL[item.type]}]</strong>{' '}
-                        <MarkdownText text={item.content} />
+                        <span
+                          dangerouslySetInnerHTML={{ __html: item.content }}
+                        />
                       </li>
                     );
                   })}
