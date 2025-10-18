@@ -56,24 +56,24 @@ void dfs1(int u)
 		if(siz[v]>siz[sonn[u]])sonn[u]=v;
 	}
 }
-void dfs2(int u,int h)
+void dfs2(int u,int t)
 {
-	top[u]=h;
-	if(sonn[u])dfs2(sonn[u],h);
+	top[u]=t;
+	if(sonn[u])dfs2(sonn[u],t);
 	for(auto v:G[u])
 	{
 		if(v==fa[u]||v==sonn[u])continue;
 		dfs2(v,v);
 	}
 }
-int lca(int x,int y)
+int lca(int u,int v)
 {
-	while(top[x]!=top[y])
+	while(top[u]!=top[v])
 	{
-		if(dep[top[x]]>dep[top[y]])x=fa[top[x]];
-		else y=fa[top[y]];
+		if(dep[top[u]]<dep[top[v]])swap(u,v);
+		u=fa[top[u]];
 	}
-	return dep[x]<dep[y]?x:y;
+	return dep[u]<dep[v]?u:v;
 }
 int main()
 {
