@@ -1,5 +1,10 @@
 # 连通性问题
 
+## 参考资料
+
+- [强连通分量 - OI Wiki](https://oi-wiki.org/graph/scc/)
+- [双连通分量 - OI Wiki](https://oi-wiki.org/graph/bcc/)
+
 ## 强连通分量（SCC）
 
 ### Tarjan 算法
