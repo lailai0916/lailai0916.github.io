@@ -5,7 +5,9 @@
 - [最小生成树 - OI Wiki](https://oi-wiki.org/graph/mst/)
 - [最小生成树 - 维基百科](https://zh.wikipedia.org/zh-cn/最小生成树)
 
-## 算法对比
+## 最小生成树
+
+### 算法对比
 
 $n$ 代表图的点数，$m$ 代表图的边数。
 
@@ -15,7 +17,7 @@ $n$ 代表图的点数，$m$ 代表图的边数。
 |  Prim 算法   | $O((n+m)\log n)$ |
 | Boruvka 算法 |   $O(m\log n)$   |
 
-## Kruskal 算法
+### Kruskal 算法
 
 ```cpp
 struct Edge
@@ -44,7 +46,9 @@ int kruskal(int n)
 }
 ```
 
-## Kruskal 重构树
+## 瓶颈生成树
+
+### Kruskal 重构树
 
 ```cpp
 struct Edge
