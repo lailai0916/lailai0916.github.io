@@ -46,6 +46,36 @@ int kruskal(int n)
 
 ## Kruskal 重构树
 
+```cpp
+struct Edge
+{
+	int u,v,w;
+	bool operator<(const Edge &x) const{return w<x.w;}
+};
+vector<Edge> E;
+vector<int> G[N];
+int fa[N],val[N];
+int find(int u){return u==fa[u]?u:fa[u]=find(fa[u]);}
+int kruskal(int n)
+{
+	for(int i=1;i<=n<<1;i++)fa[i]=i;
+	sort(E.begin(),E.end());
+	int cnt=0,t=n;
+	for(auto [u,v,w]:E)
+	{
+		if(cnt==n-1)break;
+		int x=find(u),y=find(v);
+		if(x==y)continue;
+		fa[x]=fa[y]=++t;
+		G[t].push_back(x);
+		G[t].push_back(y);
+		val[t]=w;
+		cnt++;
+	}
+	return t;
+}
+```
+
 ## 例题
 
 ### 洛谷 P3366 【模板】最小生成树
