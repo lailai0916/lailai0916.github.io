@@ -27,6 +27,7 @@ $$
 - This is a footnote test. [^1][^2]
 
 [^1]: test #1
+
 [^2]: test #2
 
 ## 实时编辑器
