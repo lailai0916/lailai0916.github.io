@@ -1,11 +1,9 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-const int L=1;
-const int R=1000000000;
 int main()
 {
-	int l=L,r=R+1;
+	int l=1,r=1000000000+1;
 	while(l<r)
 	{
 		int mid=l+r>>1;
