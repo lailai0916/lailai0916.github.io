@@ -246,18 +246,7 @@ const sidebars: SidebarsConfig = {
         'contest/graph/topo',
         'contest/graph/shortest-path',
         'contest/graph/spanning-tree',
-        {
-          type: 'category',
-          label: '连通性',
-          link: {
-            type: 'generated-index',
-            description: '本章介绍图的连通性问题，包括强连通分量和双连通分量。',
-          },
-          items: [
-            'contest/graph/connectivity/scc',
-            'contest/graph/connectivity/bcc',
-          ],
-        },
+        'contest/graph/connectivity',
         'contest/graph/rings-count',
         'contest/graph/2sat',
         'contest/graph/flow',

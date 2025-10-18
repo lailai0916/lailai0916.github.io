@@ -119,14 +119,6 @@
     "message": "树是一类特殊的图，即无环连通图。",
     "description": "The generated-index page description for category 树上问题 in sidebar sidebar1"
   },
-  "sidebar.sidebar1.category.连通性": {
-    "message": "连通性",
-    "description": "The label for category 连通性 in sidebar sidebar1"
-  },
-  "sidebar.sidebar1.category.连通性.link.generated-index.description": {
-    "message": "本章介绍图的连通性问题，包括强连通分量和双连通分量。",
-    "description": "The generated-index page description for category 连通性 in sidebar sidebar1"
-  },
   "sidebar.sidebar1.category.计算几何": {
     "message": "计算几何",
     "description": "The label for category 计算几何 in sidebar sidebar1"
