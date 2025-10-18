@@ -46,7 +46,7 @@ void tarjan(int u)
 
 ### 应用
 
-详见 [2-SAT](../2sat)
+详见 [2-SAT](./2sat)
 
 ## 双连通分量（BCC）
 
