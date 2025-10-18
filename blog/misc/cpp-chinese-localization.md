@@ -51,6 +51,7 @@ tags: [misc]
 #define 中断 break
 #define 继续 continue
 #define 返回 return
+#define 操作符 operator
 ```
 
 ## 标准库容器
