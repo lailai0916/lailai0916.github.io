@@ -53,25 +53,18 @@ function AuthorCard() {
   const author = getAllPostMetadata()
     .flatMap((m) => m.authors)
     .find((a) => a.key === fixedId);
+
   return (
-    <Link
-      to="/blog"
-      style={{
-        textDecoration: 'none',
-        color: 'inherit',
-      }}
-    >
-      <Card>
-        <div className={styles.authorCardHeader}>
-          <img
-            src={useBaseUrl(author.imageURL)}
-            className={styles.authorAvatar}
-          />
-          <div className={styles.authorName}>{author.name}</div>
-          <div className={styles.authorDesc}>{author.title}</div>
-        </div>
-      </Card>
-    </Link>
+    <Card>
+      <div className={styles.authorCardHeader}>
+        <img
+          src={useBaseUrl(author.imageURL)}
+          className={styles.authorAvatar}
+        />
+        <div className={styles.authorName}>{author.name}</div>
+        <div className={styles.authorDesc}>{author.title}</div>
+      </div>
+    </Card>
   );
 }
 
@@ -318,6 +311,31 @@ function FeedCard() {
   );
 }
 
+function MenuCard() {
+  const page = [
+    { label: 'Blog', href: '/blog' },
+    { label: 'Archive', href: '/blog/archive' },
+    { label: 'Authors', href: '/blog/authors' },
+    { label: 'Tags', href: '/blog/tags' },
+  ];
+
+  return (
+    <Card>
+      <div className={styles.feedButtonGroup}>
+        {page.map((item) => (
+          <Link
+            key={item.href}
+            to={item.href}
+            className={clsx(styles.tagChip, styles.postInlineTag)}
+          >
+            {item.label}
+          </Link>
+        ))}
+      </div>
+    </Card>
+  );
+}
+
 type Props = {
   title?: string;
   description?: string;
@@ -336,7 +354,7 @@ export default function BlogScaffold({
       <div className={styles.container}>
         <aside className={styles.mainCol}>
           <AuthorCard />
-          {toc ? (
+          {toc && toc.length > 0 ? (
             <TocCard toc={toc} />
           ) : (
             <>
@@ -347,7 +365,10 @@ export default function BlogScaffold({
             </>
           )}
         </aside>
-        <main className={styles.mainCol}>{children}</main>
+        <main className={styles.mainCol}>
+          <MenuCard />
+          {children}
+        </main>
       </div>
     </DebugLayout>
   );
