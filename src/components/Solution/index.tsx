@@ -15,12 +15,12 @@ export default function Solution({ pid, aid }: { pid: string; aid: string }) {
     <>
       <Link to={`https://www.luogu.com.cn/problem/${pid}`}>
         <img
-          src={`https://img.shields.io/badge/Luogu-${pidEscaped}-${color}?style=for-the-badge&logo=codeforces`}
+          src={`https://img.shields.io/badge/Luogu-${pidEscaped}-${color}?style=for-the-badge&logo=luogu`}
         />
       </Link>{' '}
       <Link to={`https://www.luogu.com.cn/article/${aid}`}>
         <img
-          src={`https://img.shields.io/badge/Luogu-Solution-${color}?style=for-the-badge&logo=markdown`}
+          src={`https://img.shields.io/badge/Luogu-Solution-${color}?style=for-the-badge&logo=luogu`}
         />
       </Link>{' '}
       <Link to={`https://lailai.one/blog/solution/${pid}`}>
