@@ -43,6 +43,11 @@ export const CHANGELOG_LIST: ChangelogItem[] = [
     content: '<code>:::example</code> 示例告示框',
   },
   {
+    date: '2025-08-25',
+    type: 'added',
+    content: '<b>Umami</b> 分析',
+  },
+  {
     date: '2025-08-14',
     type: 'added',
     content: '<b>debug</b> 调试模式（实验性）',
