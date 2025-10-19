@@ -624,6 +624,11 @@ export const RESOURCE_LIST: ResourceCategoryItem[] = [
         description: '地图路线动画与视频生成工具',
       },
       {
+        title: 'OpenCut',
+        href: 'https://opencut.app',
+        description: '开源视频剪辑与生成工具',
+      },
+      {
         title: 'CodeSnap',
         href: 'https://codesnap.dev',
         description: '开发者代码美化截图工具',
