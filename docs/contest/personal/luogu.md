@@ -17,8 +17,8 @@
 ### 题解模板
 
 ````markdown
-[![](https://img.shields.io/badge/Luogu-{pid}-blue?style=for-the-badge&logo=codeforces)](https://www.luogu.com.cn/problem/{pid})
-[![](https://img.shields.io/badge/Luogu-Solution-blue?style=for-the-badge&logo=markdown)](https://www.luogu.com.cn/article/{aid})
+[![](https://img.shields.io/badge/Luogu-{pid}-blue?style=for-the-badge&logo=luogu)](https://www.luogu.com.cn/problem/{pid})
+[![](https://img.shields.io/badge/Luogu-Solution-blue?style=for-the-badge&logo=luogu)](https://www.luogu.com.cn/article/{aid})
 [![](https://img.shields.io/badge/Blog-Solution-blue?style=for-the-badge&logo=markdown)](https://lailai.one/blog/solution/{pid})
 
 ## 参考资料
@@ -53,8 +53,8 @@
 <TabItem value="题解示例">
 
 ````markdown
-[![](https://img.shields.io/badge/Luogu-P1001-blue?style=for-the-badge&logo=codeforces)](https://www.luogu.com.cn/problem/P1001)
-[![](https://img.shields.io/badge/Luogu-Solution-blue?style=for-the-badge&logo=markdown)](https://www.luogu.com.cn/article/a1b2c3d4)
+[![](https://img.shields.io/badge/Luogu-P1001-blue?style=for-the-badge&logo=luogu)](https://www.luogu.com.cn/problem/P1001)
+[![](https://img.shields.io/badge/Luogu-Solution-blue?style=for-the-badge&logo=luogu)](https://www.luogu.com.cn/article/a1b2c3d4)
 [![](https://img.shields.io/badge/Blog-Solution-blue?style=for-the-badge&logo=markdown)](https://lailai.one/blog/solution/P1001)
 
 ## 参考资料
