@@ -96,7 +96,6 @@ function StatsCard() {
 
   React.useEffect(() => {
     const controller = new AbortController();
-    let didCancel = false;
 
     async function loadAnalytics() {
       try {
@@ -104,12 +103,7 @@ function StatsCard() {
           `${ANALYTICS_BASE_URL}?startAt=0&endAt=${Date.now()}`,
           {
             signal: controller.signal,
-            headers: {
-              Authorization: TOKEN,
-              Accept: 'application/json',
-            },
-            credentials: 'omit',
-            mode: 'cors',
+            headers: { Authorization: TOKEN },
           }
         );
 
@@ -124,14 +118,10 @@ function StatsCard() {
         const visitors = statsData?.visitors?.value;
         const pageviews = statsData?.pageviews?.value;
 
-        if (!didCancel) {
-          setAnalytics({ visitors, pageviews });
-          setAnalyticsLoaded(true);
-        }
+        setAnalytics({ visitors, pageviews });
+        setAnalyticsLoaded(true);
       } catch (error) {
-        if (controller.signal.aborted || didCancel) {
-          return;
-        }
+        if (controller.signal.aborted) return;
         console.error('Failed to load analytics (external API)', error);
         setAnalyticsError(true);
         setAnalyticsLoaded(true);
@@ -139,11 +129,7 @@ function StatsCard() {
     }
 
     loadAnalytics();
-
-    return () => {
-      didCancel = true;
-      controller.abort();
-    };
+    return () => controller.abort();
   }, []);
 
   const statsItems = [
