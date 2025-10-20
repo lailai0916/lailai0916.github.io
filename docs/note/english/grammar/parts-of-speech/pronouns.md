@@ -12,13 +12,7 @@ $$
 
 ### 表格
 
-<style>{`
-  .center-table th, .center-table td {
-    text-align: center;
-  }
-`}</style>
-
-<table className="center-table">
+<table style={{ textAlign: 'center' }}>
   <thead>
     <tr>
       <th rowSpan="2" colSpan="2">人称 / 类别</th>

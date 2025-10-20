@@ -132,13 +132,7 @@ $$
 
 ### 常用值速查表
 
-<style>{`
-  .center-table th, .center-table td {
-    text-align: center;
-  }
-`}</style>
-
-<table className="center-table">
+<table style={{ textAlign: 'center' }}>
   <thead>
     <tr>
       <th>角度</th>
