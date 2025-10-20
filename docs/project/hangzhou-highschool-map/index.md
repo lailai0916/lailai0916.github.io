@@ -6,6 +6,10 @@
 
 - [Mapbox](https://www.mapbox.com)
 
+## 项目链接
+
+<GitHub repo="lailai0916/hangzhou-highschool-map" />
+
 ## 说明
 
 ### 杭州高中分布地图 <sub><small>0.2.0-beta · 2025-10-16</small></sub>
@@ -27,10 +31,6 @@
 如果需要 **修改或添加学校**，可以 **私信我** 或 **提交 PR**。
 
 目前已添加 $4$ 所学校：学军文渊、天元钱路、天元和睦、桐庐中学
-
-## 项目链接
-
-<GitHub repo="lailai0916/hangzhou-highschool-map" />
 
 ## 效果展示
 
