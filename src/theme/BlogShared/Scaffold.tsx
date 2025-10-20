@@ -42,9 +42,6 @@ function AuthorCard() {
 }
 
 function TocCard({ toc }: { toc: readonly TOCItem[] }) {
-  if (toc.length === 0) {
-    return null;
-  }
   const TITLE = translate({
     id: 'blog.sidebar.toc.title',
     message: 'Contents',
