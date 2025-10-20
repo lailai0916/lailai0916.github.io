@@ -120,7 +120,7 @@ function StatsCard() {
         setStatus('success');
       } catch (error) {
         if (controller.signal.aborted) return;
-        console.error('Analytics fetch failed: ', error);
+        console.error(error);
         setStatus('error');
       }
     })();
