@@ -90,7 +90,7 @@ function StatsCard() {
   const [analytics, setAnalytics] = React.useState<{
     visitors?: number;
     pageviews?: number;
-  } | null>(null);
+  }>({});
   const [status, setStatus] = React.useState<
     'idle' | 'loading' | 'success' | 'error'
   >('idle');
@@ -98,7 +98,7 @@ function StatsCard() {
   React.useEffect(() => {
     const controller = new AbortController();
 
-    async function loadAnalytics() {
+    (async () => {
       try {
         setStatus('loading');
         const res = await fetch(
@@ -123,9 +123,8 @@ function StatsCard() {
         console.error('Failed to load analytics (external API)', error);
         setStatus('error');
       }
-    }
+    })();
 
-    loadAnalytics();
     return () => controller.abort();
   }, []);
 
@@ -152,7 +151,7 @@ function StatsCard() {
     },
     {
       value:
-        status === 'success' ? formatLongNumber(analytics?.visitors) : 'N/A',
+        status === 'success' ? formatLongNumber(analytics.visitors) : 'N/A',
       label: translate({
         id: 'blog.sidebar.stats.visitors',
         message: 'Visitors',
@@ -161,7 +160,7 @@ function StatsCard() {
     },
     {
       value:
-        status === 'success' ? formatLongNumber(analytics?.pageviews) : 'N/A',
+        status === 'success' ? formatLongNumber(analytics.pageviews) : 'N/A',
       label: translate({
         id: 'blog.sidebar.stats.views',
         message: 'Views',
