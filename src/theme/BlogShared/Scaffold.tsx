@@ -91,14 +91,16 @@ function StatsCard() {
     visitors?: number;
     pageviews?: number;
   } | null>(null);
-  const [analyticsLoaded, setAnalyticsLoaded] = React.useState(false);
-  const [analyticsError, setAnalyticsError] = React.useState(false);
+  const [status, setStatus] = React.useState<
+    'idle' | 'loading' | 'success' | 'error'
+  >('idle');
 
   React.useEffect(() => {
     const controller = new AbortController();
 
     async function loadAnalytics() {
       try {
+        setStatus('loading');
         const res = await fetch(
           `${ANALYTICS_BASE_URL}?startAt=0&endAt=${Date.now()}`,
           {
@@ -107,11 +109,7 @@ function StatsCard() {
           }
         );
 
-        if (!res.ok) {
-          throw new Error(
-            `Share stats request failed with status ${res.status}`
-          );
-        }
+        if (!res.ok) throw new Error(`Stats request failed: ${res.status}`);
 
         const statsData = await res.json();
 
@@ -119,12 +117,11 @@ function StatsCard() {
         const pageviews = statsData?.pageviews?.value;
 
         setAnalytics({ visitors, pageviews });
-        setAnalyticsLoaded(true);
+        setStatus('success');
       } catch (error) {
         if (controller.signal.aborted) return;
         console.error('Failed to load analytics (external API)', error);
-        setAnalyticsError(true);
-        setAnalyticsLoaded(true);
+        setStatus('error');
       }
     }
 
@@ -155,9 +152,7 @@ function StatsCard() {
     },
     {
       value:
-        analyticsLoaded && !analyticsError
-          ? formatLongNumber(analytics?.visitors)
-          : 'N/A',
+        status === 'success' ? formatLongNumber(analytics?.visitors) : 'N/A',
       label: translate({
         id: 'blog.sidebar.stats.visitors',
         message: 'Visitors',
@@ -166,9 +161,7 @@ function StatsCard() {
     },
     {
       value:
-        analyticsLoaded && !analyticsError
-          ? formatLongNumber(analytics?.pageviews)
-          : 'N/A',
+        status === 'success' ? formatLongNumber(analytics?.pageviews) : 'N/A',
       label: translate({
         id: 'blog.sidebar.stats.views',
         message: 'Views',
