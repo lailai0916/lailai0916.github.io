@@ -95,10 +95,6 @@ function StatsCard() {
   const [analyticsError, setAnalyticsError] = React.useState(false);
 
   React.useEffect(() => {
-    if (typeof window === 'undefined') {
-      return;
-    }
-
     const controller = new AbortController();
     let didCancel = false;
 
