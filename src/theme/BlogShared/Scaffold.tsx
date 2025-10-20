@@ -126,11 +126,7 @@ function StatsCard() {
 
         const statsData = await res.json();
 
-        const visitorsRaw =
-          statsData?.visitors?.value ??
-          statsData?.visitors ??
-          statsData?.sessions?.value ??
-          statsData?.sessions;
+        const visitorsRaw = statsData?.visitors?.value ?? statsData?.visitors;
         const pageviewsRaw =
           statsData?.pageviews?.value ?? statsData?.pageviews;
 
