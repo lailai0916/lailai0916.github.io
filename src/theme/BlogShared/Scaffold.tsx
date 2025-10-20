@@ -113,10 +113,10 @@ function StatsCard() {
 
         const statsData = await res.json();
 
-        const visitors = statsData?.visitors?.value;
-        const pageviews = statsData?.pageviews?.value;
-
-        setAnalytics({ visitors, pageviews });
+        setAnalytics({
+          visitors: statsData?.visitors?.value,
+          pageviews: statsData?.pageviews?.value,
+        });
         setStatus('success');
       } catch (error) {
         if (controller.signal.aborted) return;
