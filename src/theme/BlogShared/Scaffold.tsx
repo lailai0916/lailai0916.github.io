@@ -15,10 +15,9 @@ import { Card, TagChipList, type ChipItem } from './Components';
 import styles from './styles.module.css';
 
 const fixedId = 'lailai';
-const baseUrl = 'https://analytics.lailai.one';
-const shareUrl = `${baseUrl}/share/DDd09iBEYOQw2k9L`;
+const shareUrl = `https://analytics.lailai.one/share/DDd09iBEYOQw2k9L`;
 const WEBSITE_ID = '69d3b7de-90e4-4be4-a355-633620ecefdb';
-const ANALYTICS_BASE_URL = `${baseUrl}/api/websites/${WEBSITE_ID}/stats?startAt=0`;
+const ANALYTICS_BASE_URL = `https://analytics.lailai.one/api/websites/${WEBSITE_ID}/stats`;
 const TOKEN =
   'Bearer mXASurmA0JxF4bm+aeWM458Rk3hKZJUoYm4aSFdVUp1LzlZ96vwe2RcV6b19yqwgwmPIo3q2jvqLlBqLhNrkW+AlPZ/CgTIfAkeMrg+NWpcYD9waQRngwntf5maKEt/oBwKm9C3wd3dCm7m0BSXddT8q8vDMYSRYeJ+tcwkcbEOCtsgAHs28V+qT30mGz6yCh02gctP3RrPDeIvq3A4az1n87MlUZDiLxI8YwX8aVhSOml6WKnKtFOWgqTCXt9si79sLuw8vWT+FySCkes47gl0JlgOz/gFGZPwCGa2LKP1N0evzma5tvUtKLJsQfcBp/JZVoxDRmMUp2B1PaKoUyAn4ELxQzLpaFkVyMdA/p1AO72N2vhlNHILC4/kI';
 
@@ -105,18 +104,18 @@ function StatsCard() {
 
     async function loadAnalytics() {
       try {
-        const endAt = Date.now();
-        const url = `${ANALYTICS_BASE_URL}&endAt=${endAt}&unit=month&timezone=Asia%2FShanghai&compare=false`;
-
-        const res = await fetch(url, {
-          signal: controller.signal,
-          headers: {
-            Authorization: TOKEN,
-            Accept: 'application/json',
-          },
-          credentials: 'omit',
-          mode: 'cors',
-        });
+        const res = await fetch(
+          `${ANALYTICS_BASE_URL}?startAt=0&endAt=${Date.now()}`,
+          {
+            signal: controller.signal,
+            headers: {
+              Authorization: TOKEN,
+              Accept: 'application/json',
+            },
+            credentials: 'omit',
+            mode: 'cors',
+          }
+        );
 
         if (!res.ok) {
           throw new Error(
@@ -126,16 +125,8 @@ function StatsCard() {
 
         const statsData = await res.json();
 
-        const visitorsRaw = statsData?.visitors?.value ?? statsData?.visitors;
-        const pageviewsRaw =
-          statsData?.pageviews?.value ?? statsData?.pageviews;
-
-        const visitors = Number.isFinite(Number(visitorsRaw))
-          ? Number(visitorsRaw)
-          : undefined;
-        const pageviews = Number.isFinite(Number(pageviewsRaw))
-          ? Number(pageviewsRaw)
-          : undefined;
+        const visitors = statsData?.visitors?.value;
+        const pageviews = statsData?.pageviews?.value;
 
         if (!didCancel) {
           setAnalytics({ visitors, pageviews });
