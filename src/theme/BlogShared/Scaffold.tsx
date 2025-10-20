@@ -99,8 +99,8 @@ function StatsCard() {
     const controller = new AbortController();
 
     (async () => {
+      setStatus('loading');
       try {
-        setStatus('loading');
         const res = await fetch(
           `${ANALYTICS_BASE_URL}?startAt=0&endAt=${Date.now()}`,
           {
@@ -120,7 +120,7 @@ function StatsCard() {
         setStatus('success');
       } catch (error) {
         if (controller.signal.aborted) return;
-        console.error('Failed to load analytics (external API)', error);
+        console.error('Analytics fetch failed: ', error);
         setStatus('error');
       }
     })();
