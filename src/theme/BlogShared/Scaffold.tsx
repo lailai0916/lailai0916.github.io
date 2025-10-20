@@ -14,33 +14,6 @@ import {
 import { Card, TagChipList, type ChipItem } from './Components';
 import styles from './styles.module.css';
 
-function TocCard({ toc }: { toc: readonly TOCItem[] }) {
-  if (toc.length === 0) {
-    return null;
-  }
-  return (
-    <Card
-      title={translate({
-        id: 'blog.sidebar.toc.title',
-        message: 'Contents',
-      })}
-    >
-      <ul>
-        {toc.map((item) => (
-          <li key={item.id} className={styles.tocItem}>
-            <Link
-              href={`#${item.id}`}
-              className={styles.tocLink}
-              style={{ paddingLeft: `${item.level - 2}rem` }}
-              dangerouslySetInnerHTML={{ __html: item.value }}
-            />
-          </li>
-        ))}
-      </ul>
-    </Card>
-  );
-}
-
 const fixedId = 'lailai';
 const baseUrl = 'https://analytics.lailai.one';
 const shareUrl = `${baseUrl}/share/DDd09iBEYOQw2k9L`;
@@ -64,6 +37,33 @@ function AuthorCard() {
         <div className={styles.authorName}>{author.name}</div>
         <div className={styles.authorDesc}>{author.title}</div>
       </div>
+    </Card>
+  );
+}
+
+function TocCard({ toc }: { toc: readonly TOCItem[] }) {
+  if (toc.length === 0) {
+    return null;
+  }
+  const TITLE = translate({
+    id: 'blog.sidebar.toc.title',
+    message: 'Contents',
+  });
+
+  return (
+    <Card title={TITLE}>
+      <ul>
+        {toc.map((item) => (
+          <li key={item.id} className={styles.tocItem}>
+            <Link
+              href={`#${item.id}`}
+              className={styles.tocLink}
+              style={{ paddingLeft: `${item.level - 2}rem` }}
+              dangerouslySetInnerHTML={{ __html: item.value }}
+            />
+          </li>
+        ))}
+      </ul>
     </Card>
   );
 }
@@ -210,14 +210,13 @@ function StatsCard() {
       href: shareUrl,
     },
   ];
+  const TITLE = translate({
+    id: 'blog.sidebar.stats.title',
+    message: 'Statistics',
+  });
 
   return (
-    <Card
-      title={translate({
-        id: 'blog.sidebar.stats.title',
-        message: 'Statistics',
-      })}
-    >
+    <Card title={TITLE}>
       <div className={styles.authorStats}>
         {statsItems.map((item) => (
           <Link key={item.label} to={item.href} className={styles.statItem}>
@@ -246,14 +245,13 @@ function TagsCard() {
   const tags = Array.from(map.values())
     .sort((a, b) => b.count - a.count)
     .slice(0, 8);
+  const TITLE = translate({
+    id: 'blog.sidebar.tags.title',
+    message: 'Popular Tags',
+  });
 
   return (
-    <Card
-      title={translate({
-        id: 'blog.sidebar.tags.title',
-        message: 'Popular Tags',
-      })}
-    >
+    <Card title={TITLE}>
       <TagChipList items={tags} />
     </Card>
   );
@@ -261,13 +259,13 @@ function TagsCard() {
 
 function ArchiveCard() {
   const years = React.useMemo(() => getArchiveByYear(), []);
+  const TITLE = translate({
+    id: 'theme.blog.archive.title',
+    message: 'Archive',
+  });
+
   return (
-    <Card
-      title={translate({
-        id: 'theme.blog.archive.title',
-        message: 'Archive',
-      })}
-    >
+    <Card title={TITLE}>
       <ul className={styles.archiveList}>
         {years.map((y) => (
           <li key={y.year} className={styles.archiveItem}>
@@ -288,14 +286,13 @@ function FeedCard() {
     { label: 'Atom Feed', href: 'https://lailai.one/blog/atom.xml' },
     { label: 'JSON Feed', href: 'https://lailai.one/blog/feed.json' },
   ];
+  const TITLE = translate({
+    id: 'blog.sidebar.feed.title',
+    message: 'Subscribe',
+  });
 
   return (
-    <Card
-      title={translate({
-        id: 'blog.sidebar.feed.title',
-        message: 'Subscribe',
-      })}
-    >
+    <Card title={TITLE}>
       <div className={styles.feedButtonGroup}>
         {feeds.map((feed) => (
           <Link
