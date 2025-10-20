@@ -95,7 +95,7 @@ export default function BlogArchivePage(props: Props): React.ReactElement {
   );
 
   const visibleGroups = React.useMemo(() => {
-    if (selectedYear == null) {
+    if (selectedYear === null) {
       return [] as typeof groups;
     }
     return groups.filter(([year]) => year === selectedYear);
@@ -143,7 +143,7 @@ export default function BlogArchivePage(props: Props): React.ReactElement {
           </ul>
         </Card>
       ))}
-      {selectedYear != null && !visibleGroups.length && (
+      {selectedYear !== null && !visibleGroups.length && (
         <Card>
           <Translate id="blog.pages.archive.empty">No posts yet</Translate>
         </Card>
