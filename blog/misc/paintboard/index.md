@@ -15,6 +15,6 @@ tags: [misc]
 - [活动公告](https://www.luogu.me/article/pssi9ceo)
 - [冬日绘板](https://www.luogu.me/paintboard)
 
-## 海报
+## 活动海报
 
 ![](./assets/poster.png)
