@@ -4,6 +4,9 @@ pinned:
 notice:
   label: 公告
 
+event:
+  label: 活动
+
 personal:
   label: 个人
 
