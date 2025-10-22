@@ -5,4 +5,6 @@ authors: lailai
 tags: [event]
 ---
 
+lailai's Home 一周年纪念日！
+
 <!-- truncate -->
