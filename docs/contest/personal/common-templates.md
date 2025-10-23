@@ -11,7 +11,7 @@
 
 ### 文件
 
-联赛文件模板：[name.zip](./assets/name.zip)
+联赛文件模板：[name.zip](./name.zip)
 
 ### 框架
 
