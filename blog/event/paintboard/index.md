@@ -5,7 +5,7 @@ authors: lailai
 tags: [event]
 ---
 
-![](./assets/header.png)
+<Assets file="header.png" />
 
 <!-- truncate -->
 
@@ -17,4 +17,4 @@ tags: [event]
 
 ## 活动海报
 
-![](./assets/poster.png)
+<Assets file="poster.png" />

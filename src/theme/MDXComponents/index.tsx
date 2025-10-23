@@ -6,6 +6,7 @@ import TabItem from '@theme/TabItem';
 import BrowserWindow from '@site/src/components/BrowserWindow';
 import IframeWindow from '@site/src/components/BrowserWindow/IframeWindow';
 import ImageWindow from '@site/src/components/BrowserWindow/ImageWindow';
+import Assets from '@site/src/components/Assets';
 
 import Notation from '@site/src/components/Notation';
 import GitHub from '@site/src/components/GitHub';
@@ -21,6 +22,7 @@ export default {
   BrowserWindow,
   IframeWindow,
   ImageWindow,
+  Assets,
   Notation,
   GitHub,
   Desmos,
