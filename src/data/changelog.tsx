@@ -10,6 +10,11 @@ export interface ChangelogItem {
 
 export const CHANGELOG_LIST: ChangelogItem[] = [
   {
+    date: '2025-10-23',
+    type: 'added',
+    content: '<code>&lt;Assets /&gt;</code> 资源优化组件',
+  },
+  {
     date: '2025-10-17',
     type: 'added',
     content: '网站一周年',

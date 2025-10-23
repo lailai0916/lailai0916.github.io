@@ -809,7 +809,7 @@
     "message": "在下方绘制数字 0~9，神经网络会识别您的手写数字"
   },
   "pages.sitemap.title": {
-    "message": "地图"
+    "message": "网站地图"
   },
   "pages.sitemap.description": {
     "message": "lailai.one 的网站地图"
@@ -842,7 +842,7 @@
     "message": "设置"
   },
   "data.sitemap.site.sitemap": {
-    "message": "地图"
+    "message": "网站地图"
   },
   "data.sitemap.site.privacy": {
     "message": "隐私政策"

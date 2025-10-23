@@ -36,7 +36,7 @@
     "description": "The label of footer link with label=Settings linking to /settings"
   },
   "link.item.label.Sitemap": {
-    "message": "地图",
+    "message": "网站地图",
     "description": "The label of footer link with label=Sitemap linking to /sitemap"
   },
   "link.item.label.Privacy Policy": {
