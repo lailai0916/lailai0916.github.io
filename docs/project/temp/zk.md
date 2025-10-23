@@ -307,6 +307,6 @@ $1$ 分钟跳绳随便都有 $200+$ 个，极限可以到 $240$ 个。
 
 :::warning
 
-本文采用 <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/">CC BY-NC-ND 4.0</a><img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg" alt="" style={{ maxWidth: '1em', maxHeight:'1em', marginLeft: '.2em' }} /><img src="https://mirrors.creativecommons.org/presskit/icons/by.svg" alt="" style={{ maxWidth: '1em', maxHeight:'1em', marginLeft: '.2em' }} /><img src="https://mirrors.creativecommons.org/presskit/icons/nc.svg" alt="" style={{ maxWidth: '1em', maxHeight:'1em', marginLeft: '.2em' }} /><img src="https://mirrors.creativecommons.org/presskit/icons/nd.svg" alt="" style={{ maxWidth: '1em', maxHeight:'1em', marginLeft: '.2em' }} />。转载或引用请注明作者及出处，禁止商业用途，不得修改或改编。
+本文采用 <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/">CC BY-NC-ND 4.0</a><img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg" style={{ maxWidth: '1em', maxHeight:'1em', marginLeft: '.2em' }} /><img src="https://mirrors.creativecommons.org/presskit/icons/by.svg" style={{ maxWidth: '1em', maxHeight:'1em', marginLeft: '.2em' }} /><img src="https://mirrors.creativecommons.org/presskit/icons/nc.svg" style={{ maxWidth: '1em', maxHeight:'1em', marginLeft: '.2em' }} /><img src="https://mirrors.creativecommons.org/presskit/icons/nd.svg" style={{ maxWidth: '1em', maxHeight:'1em', marginLeft: '.2em' }} />。转载或引用请注明作者及出处，禁止商业用途，不得修改或改编。
 
 :::

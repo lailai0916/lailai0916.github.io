@@ -16,8 +16,8 @@ tags: [misc, resource]
 
 ## 世界地图
 
-![](./assets/世界地图.jpg)
+<Assets file="世界地图.jpg" />
 
 ## 中国地图
 
-![](./assets/中国地图.jpg)
+<Assets file="中国地图.jpg" />

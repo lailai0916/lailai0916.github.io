@@ -94,7 +94,7 @@ $$
 \mathbb{N}\subseteq\mathbb{Z}\subseteq\mathbb{Q}\subseteq\mathbb{R}\subseteq\mathbb{C}
 $$
 
-![](./assets/NumberSetinC.svg)
+<Assets file="NumberSetinC.svg" />
 
 :::tip
 
@@ -387,4 +387,4 @@ $$
 h=a+bi+cj+dk
 $$
 
-![](./assets/v2-063e3b991174c594a19458c606f0ea1b_1440w.webp)
+<Assets file="v2-063e3b991174c594a19458c606f0ea1b_1440w.webp" />

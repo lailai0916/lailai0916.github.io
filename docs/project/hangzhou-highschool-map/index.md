@@ -34,4 +34,4 @@
 
 ## 效果展示
 
-![](./assets/map.png)
+<Assets file="map.png" />

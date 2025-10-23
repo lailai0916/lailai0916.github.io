@@ -96,7 +96,7 @@ $$
 S=\int_a^b f(x)\mathrm{d}x=|S_\text{蓝色}|-|S_\text{黄色}|
 $$
 
-![](./assets/Integral_example.svg-1024722.png)
+<Assets file="Integral_example.svg-1024722.png" />
 
 ### 有向面积
 
@@ -333,7 +333,7 @@ $$
 
 如果已知函数 $F(x)$ 的导数是 $f(x)$，那么 $F(x)$ 就是不定积分 $f(x)$ 的一个原函数。
 
-![](./assets/400px-Integral_approximations-3-steps.png)
+<Assets file="400px-Integral_approximations-3-steps.png" />
 
 ## 例题
 

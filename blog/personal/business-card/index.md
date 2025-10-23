@@ -13,7 +13,7 @@ tags: [personal]
 
 |                                                            正面                                                            |                                                           反面                                                           |
 | :------------------------------------------------------------------------------------------------------------------------: | :----------------------------------------------------------------------------------------------------------------------: |
-| ![](./assets/business-card-front-light.png#gh-light-mode-only)![](./assets/business-card-front-dark.png#gh-dark-mode-only) | ![](./assets/business-card-back-light.png#gh-light-mode-only)![](./assets/business-card-back-dark.png#gh-dark-mode-only) |
+| <Assets file="business-card-front-light.png#gh-light-mode-only" /><Assets file="business-card-front-dark.png#gh-dark-mode-only" /> | <Assets file="business-card-back-light.png#gh-light-mode-only" /><Assets file="business-card-back-dark.png#gh-dark-mode-only" /> |
 
 ## 代码
 

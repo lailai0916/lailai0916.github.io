@@ -17,4 +17,4 @@ tags: [personal]
 
 ## 效果展示
 
-![](./assets/signature.svg)
+<Assets file="signature.svg" />

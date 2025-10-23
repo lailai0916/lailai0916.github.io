@@ -27,7 +27,7 @@ $$
 
 ## 正切与斜率
 
-![](./assets/Wiki_slope_in_2d.svg)
+<Assets file="Wiki_slope_in_2d.svg" />
 
 如图，带入正切 $\tan$ 的锐角三角函数的定义：
 
@@ -332,7 +332,7 @@ $$
 
 容易知道，这是一个以 $(3\cos\theta,3\sin\theta)$ 为圆心、半径为 $1$ 的圆，
 
-![](./assets/image-6.png)
+<Assets file="image-6.png" />
 
 这样的圆有无穷多个，围成了一个圆环。
 
@@ -428,11 +428,11 @@ $$
 
 - 圆与圆的位置关系：
 
-  ![](./assets/image-4.png)
+  <Assets file="image-4.png" />
 
   对应距离图示如下：
 
-  ![](./assets/image-5.png)
+  <Assets file="image-5.png" />
 
   除了用圆心距离，同样可以联立，解方程可以用加减消元。两个二次项系数相等的圆的直线方程的差，就是交点所确定的直线的方程。
 
@@ -505,7 +505,7 @@ $$
 
 圆的两条弦 $AB,CD$ 相交于点 $P$，如图
 
-![](./assets/image-25.png)
+<Assets file="image-25.png" />
 
 则
 
@@ -531,18 +531,18 @@ $$
 
 这个乘积，是 $P$ 对于 $\Gamma$ 的圆幂，故定理以此为名。
 
-![](./assets/Power_point_simple.svg)
+<Assets file="Power_point_simple.svg" />
 
 ### 西姆松定理
 
 点 $P$ 到 $\triangle ABC$ 各边的投影共线，当且仅当 $P$ 位于该三角形的外接圆上。
 
-![](./assets/image-21.png)
+<Assets file="image-21.png" />
 
 斯坦纳线定理：一个三角形外接圆上任意一点（该点不为三角形顶点）关于三角形三边的对称点，这三个对称点是共线的，并且这条直线（称为斯坦纳线）必经过该三角形的垂心。
 
 假设点 $P$ 位于三角形 $ABC$ 的外接圆上。在外接圆上选择一点 $B'$，使得直线 $PB'$ 垂直于 $AC$。那么 $BB'$ 平行于 $P$ 的西姆松线。
 
-![](./assets/image-23.png)
+<Assets file="image-23.png" />
 
 推论：当点 $P$ 沿圆周移动时，西姆松线以弧 $PA$ 变化率的一半的速率向相反方向旋转。

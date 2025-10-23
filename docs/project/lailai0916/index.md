@@ -21,7 +21,7 @@
 
 <ImageWindow url="https://github.com/new">
 
-![](./assets/create-repository-light.png#gh-light-mode-only)![](./assets/create-repository-dark.png#gh-dark-mode-only)
+<Assets file="create-repository-light.png#gh-light-mode-only" /><Assets file="create-repository-dark.png#gh-dark-mode-only" />
 
 </ImageWindow>
 
@@ -31,7 +31,7 @@
 
 <ImageWindow url="https://github.com/lailai0916/lailai0916">
 
-![](./assets/repository-homepage-light.png#gh-light-mode-only)![](./assets/repository-homepage-dark.png#gh-dark-mode-only)
+<Assets file="repository-homepage-light.png#gh-light-mode-only" /><Assets file="repository-homepage-dark.png#gh-dark-mode-only" />
 
 </ImageWindow>
 
@@ -39,7 +39,7 @@
 
 <ImageWindow url="https://github.com/lailai0916/lailai0916/edit/main/README.md">
 
-![](./assets/edit-readme-light.png#gh-light-mode-only)![](./assets/edit-readme-dark.png#gh-dark-mode-only)
+<Assets file="edit-readme-light.png#gh-light-mode-only" /><Assets file="edit-readme-dark.png#gh-dark-mode-only" />
 
 </ImageWindow>
 
@@ -150,7 +150,7 @@
 
 <ImageWindow url="https://github.com/settings/tokens">
 
-![](./assets/setting-token-light.png#gh-light-mode-only)![](./assets/setting-token-dark.png#gh-dark-mode-only)
+<Assets file="setting-token-light.png#gh-light-mode-only" /><Assets file="setting-token-dark.png#gh-dark-mode-only" />
 
 </ImageWindow>
 
@@ -160,7 +160,7 @@
 
 <ImageWindow url="https://github.com/settings/tokens/new">
 
-![](./assets/generate-token-light.png#gh-light-mode-only)![](./assets/generate-token-dark.png#gh-dark-mode-only)
+<Assets file="generate-token-light.png#gh-light-mode-only" /><Assets file="generate-token-dark.png#gh-dark-mode-only" />
 
 </ImageWindow>
 
@@ -174,7 +174,7 @@
 
 <ImageWindow url="https://github.com/new?template_name=github-stats&template_owner=jstrieb">
 
-![](./assets/copy-repository-light.png#gh-light-mode-only)![](./assets/copy-repository-dark.png#gh-dark-mode-only)
+<Assets file="copy-repository-light.png#gh-light-mode-only" /><Assets file="copy-repository-dark.png#gh-dark-mode-only" />
 
 </ImageWindow>
 
@@ -182,7 +182,7 @@
 
 <ImageWindow url="https://github.com/lailai0916/github-stats">
 
-![](./assets/github-stats-homepage-light.png#gh-light-mode-only)![](./assets/github-stats-homepage-dark.png#gh-dark-mode-only)
+<Assets file="github-stats-homepage-light.png#gh-light-mode-only" /><Assets file="github-stats-homepage-dark.png#gh-dark-mode-only" />
 
 </ImageWindow>
 
@@ -193,7 +193,7 @@
 
 <ImageWindow url="https://github.com/lailai0916/github-stats/settings/secrets/actions">
 
-![](./assets/setting-secret-light.png#gh-light-mode-only)![](./assets/setting-secret-dark.png#gh-dark-mode-only)
+<Assets file="setting-secret-light.png#gh-light-mode-only" /><Assets file="setting-secret-dark.png#gh-dark-mode-only" />
 
 </ImageWindow>
 
@@ -202,7 +202,7 @@
 
 <ImageWindow url="https://github.com/lailai0916/github-stats/settings/secrets/actions">
 
-![](./assets/add-secret-light.png#gh-light-mode-only)![](./assets/add-secret-dark.png#gh-dark-mode-only)
+<Assets file="add-secret-light.png#gh-light-mode-only" /><Assets file="add-secret-dark.png#gh-dark-mode-only" />
 
 </ImageWindow>
 
@@ -218,7 +218,7 @@
 
 <ImageWindow url="https://github.com/lailai0916/github-stats/actions/workflows/main.yml">
 
-![](./assets/run-workflow-light.png#gh-light-mode-only)![](./assets/run-workflow-dark.png#gh-dark-mode-only)
+<Assets file="run-workflow-light.png#gh-light-mode-only" /><Assets file="run-workflow-dark.png#gh-dark-mode-only" />
 
 </ImageWindow>
 
@@ -226,7 +226,7 @@
 
 <ImageWindow url="https://github.com/lailai0916/github-stats/actions">
 
-![](./assets/workflow-success-light.png#gh-light-mode-only)![](./assets/workflow-success-dark.png#gh-dark-mode-only)
+<Assets file="workflow-success-light.png#gh-light-mode-only" /><Assets file="workflow-success-dark.png#gh-dark-mode-only" />
 
 </ImageWindow>
 

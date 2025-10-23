@@ -15,7 +15,7 @@
 
 ## 视频展示
 
-<video src={require('./assets/iclock.mp4').default} style={{ maxWidth: '500px' }} controls />
+<!-- <video src={require('./assets/iclock.mp4').default} style={{ maxWidth: '500px' }} controls /> -->
 
 ## 获奖证书
 

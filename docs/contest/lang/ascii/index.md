@@ -11,4 +11,4 @@
 
 ## ASCII 表
 
-![](./assets/asciifull.gif)
+<Assets file="asciifull.gif" />

@@ -93,7 +93,7 @@ client (webpack 5.99.9) compiled successfully
 
 <ImageWindow url="http://localhost:3000">
 
-![](./assets/my-website-light.png#gh-light-mode-only)![](./assets/my-website-dark.png#gh-dark-mode-only)
+<Assets file="my-website-light.png#gh-light-mode-only" /><Assets file="my-website-dark.png#gh-dark-mode-only" />
 
 </ImageWindow>
 

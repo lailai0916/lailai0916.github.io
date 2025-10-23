@@ -21,7 +21,7 @@
 
 函数 $f$ 类似一台“加工机器”，每个输入 $x$，都会输出 **唯一** 的 $y$，我们用 $f(x)$ 表示这个输出值。
 
-![](./assets/Function_machine2.svg)
+<Assets file="Function_machine2.svg" />
 
 :::tip
 

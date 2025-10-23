@@ -19,7 +19,7 @@
 
 但在更高层次的数学中，我们发现同一角的 **弧长** 与 **半径** 的比值是一个常数，据此引入了另一种角度单位——**弧度制**。
 
-![](./assets/Circle_radians.gif)
+<Assets file="Circle_radians.gif" />
 
 一个 $360^\circ$ 的周角对应整个圆周，其弧长为 $2\pi r$，半径为 $r$，所以比值为 $\frac{2\pi r}{r}=2\pi$，因此 $360^\circ=2\pi$ 弧度。
 
@@ -49,7 +49,7 @@ $$
 
 在初中阶段，我们学过锐角三角形的定义：在 **直角三角形** 中，以一个 **锐角** $\theta$ 为基准，定义 **对边** $a$、**邻边** $b$ 和 **斜边** $c$ 中两边之比的函数。
 
-![](./assets/TrigonometryTriangle.svg)
+<Assets file="TrigonometryTriangle.svg" />
 
 图中 $\theta=\angle BAC,a=|BC|,b=|AC|,c=|AB|$，每个三角函数的定义为：
 
@@ -95,7 +95,7 @@ $$
 
 所以
 
-![](./assets/Unit_circle.svg)
+<Assets file="Unit_circle.svg" />
 
 ## 性质
 
@@ -263,7 +263,7 @@ $$
 
 一个精妙的无字证明：
 
-![](./assets/AngleAdditionDiagramSine.svg)
+<Assets file="AngleAdditionDiagramSine.svg" />
 
 $$
 \sin{(\alpha+\beta)}=\sin{\alpha}\cos{\beta}+\cos{\alpha}\sin{\beta}
@@ -273,7 +273,7 @@ $$
 \cos{(\alpha+\beta)}=\cos{\alpha}\cos{\beta}-\sin{\alpha}\sin{\beta}
 $$
 
-![](./assets/AngleAdditionDiagramTangent.svg)
+<Assets file="AngleAdditionDiagramTangent.svg" />
 
 $$
 \tan{(\alpha+\beta)}=\frac{\tan{\alpha}+\tan{\beta}}{1-\tan{\alpha}\tan{\beta}}
@@ -291,7 +291,7 @@ $$
 
 :::
 
-![](./assets/graph10.svg)
+<Assets file="graph10.svg" />
 
 如图，设 $\angle AOB'=\alpha,\angle BOB'=\beta$。
 

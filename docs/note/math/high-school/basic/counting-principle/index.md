@@ -345,8 +345,8 @@ $$
 
 我们将二项式系数排列为三角形，就得到了 **杨辉三角形**。
 
-![](./assets/3ea3411611c51fa98bfb8b3fa7d8ca0222527ab9.svg)
+<Assets file="3ea3411611c51fa98bfb8b3fa7d8ca0222527ab9.svg" />
 
 杨辉三角形中的每个数都对应一个 **组合数**，而每个数是它 **左上方** 和 **右上方** 的数的和。
 
-![](./assets/PascalTriangleAnimated2.gif)
+<Assets file="PascalTriangleAnimated2.gif" />
