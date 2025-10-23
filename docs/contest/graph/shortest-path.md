@@ -47,9 +47,8 @@ bool vis[N];
 void dijkstra(int s)
 {
 	memset(dis,0x3f,sizeof dis);
-	dis[s]=0;
 	priority_queue<pair<int,int>> q;
-	q.push({0,s});
+	q.push({dis[s]=0,s});
 	while(!q.empty())
 	{
 		int u=q.top().second;
