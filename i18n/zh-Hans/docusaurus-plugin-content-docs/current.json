@@ -5,274 +5,286 @@
   },
   "sidebar.sidebar1.category.个人": {
     "message": "个人",
-    "description": "The label for category 个人 in sidebar sidebar1"
+    "description": "The label for category '个人' in sidebar 'sidebar1'"
+  },
+  "sidebar.sidebar1.category.个人.link.generated-index.description": {
+    "message": "本章主要记录我在 OI 中的个人经验，包括风格规范、对拍工具、常用模板库以及实用技巧等。",
+    "description": "The generated-index page description for category '个人' in sidebar 'sidebar1'"
   },
   "sidebar.sidebar1.category.比赛相关": {
     "message": "比赛相关",
-    "description": "The label for category 比赛相关 in sidebar sidebar1"
+    "description": "The label for category '比赛相关' in sidebar 'sidebar1'"
+  },
+  "sidebar.sidebar1.category.比赛相关.link.generated-index.description": {
+    "message": "本章主要介绍计算机编程比赛直接相关的知识，包括各种赛事、赛制、题型，以及赛场上常见的坑点与技巧。",
+    "description": "The generated-index page description for category '比赛相关' in sidebar 'sidebar1'"
   },
   "sidebar.sidebar1.category.语言基础": {
     "message": "语言基础",
-    "description": "The label for category 语言基础 in sidebar sidebar1"
+    "description": "The label for category '语言基础' in sidebar 'sidebar1'"
   },
   "sidebar.sidebar1.category.语言基础.link.generated-index.description": {
     "message": "本章介绍编程相关的知识，包括 C++ 从入门到进阶教程和一些其他语言的简介。",
-    "description": "The generated-index page description for category 语言基础 in sidebar sidebar1"
+    "description": "The generated-index page description for category '语言基础' in sidebar 'sidebar1'"
   },
   "sidebar.sidebar1.category.算法基础": {
     "message": "算法基础",
-    "description": "The label for category 算法基础 in sidebar sidebar1"
+    "description": "The label for category '算法基础' in sidebar 'sidebar1'"
   },
   "sidebar.sidebar1.category.算法基础.link.generated-index.description": {
     "message": "本章介绍一些基础算法。",
-    "description": "The generated-index page description for category 算法基础 in sidebar sidebar1"
+    "description": "The generated-index page description for category '算法基础' in sidebar 'sidebar1'"
   },
   "sidebar.sidebar1.category.搜索": {
     "message": "搜索",
-    "description": "The label for category 搜索 in sidebar sidebar1"
+    "description": "The label for category '搜索' in sidebar 'sidebar1'"
   },
   "sidebar.sidebar1.category.搜索.link.generated-index.description": {
     "message": "搜索，也就是对状态空间进行枚举，通过穷尽所有的可能来找到最优解，或者统计合法解的个数。",
-    "description": "The generated-index page description for category 搜索 in sidebar sidebar1"
+    "description": "The generated-index page description for category '搜索' in sidebar 'sidebar1'"
   },
   "sidebar.sidebar1.category.动态规划": {
     "message": "动态规划",
-    "description": "The label for category 动态规划 in sidebar sidebar1"
+    "description": "The label for category '动态规划' in sidebar 'sidebar1'"
+  },
+  "sidebar.sidebar1.category.动态规划.link.generated-index.description": {
+    "message": "动态规划是一种通过把原问题分解为相对简单的子问题的方式求解复杂问题的方法。",
+    "description": "The generated-index page description for category '动态规划' in sidebar 'sidebar1'"
   },
   "sidebar.sidebar1.category.字符串": {
     "message": "字符串",
-    "description": "The label for category 字符串 in sidebar sidebar1"
+    "description": "The label for category '字符串' in sidebar 'sidebar1'"
   },
   "sidebar.sidebar1.category.字符串.link.generated-index.description": {
     "message": "字符串，就是由字符连接而成的序列。",
-    "description": "The generated-index page description for category 字符串 in sidebar sidebar1"
+    "description": "The generated-index page description for category '字符串' in sidebar 'sidebar1'"
   },
   "sidebar.sidebar1.category.数学": {
     "message": "数学",
-    "description": "The label for category 数学 in sidebar sidebar1"
+    "description": "The label for category '数学' in sidebar 'sidebar1'"
   },
   "sidebar.sidebar1.category.数学.link.generated-index.description": {
     "message": "本章介绍 OI 中可能会用到的数学知识。",
-    "description": "The generated-index page description for category 数学 in sidebar sidebar1"
+    "description": "The generated-index page description for category '数学' in sidebar 'sidebar1'"
   },
   "sidebar.sidebar1.category.数论": {
     "message": "数论",
-    "description": "The label for category 数论 in sidebar sidebar1"
+    "description": "The label for category '数论' in sidebar 'sidebar1'"
   },
   "sidebar.sidebar1.category.数论.link.generated-index.description": {
     "message": "数论是纯粹数学的分支之一，主要研究整数的性质。",
-    "description": "The generated-index page description for category 数论 in sidebar sidebar1"
+    "description": "The generated-index page description for category '数论' in sidebar 'sidebar1'"
   },
   "sidebar.sidebar1.category.多项式与生成函数": {
     "message": "多项式与生成函数",
-    "description": "The label for category 多项式与生成函数 in sidebar sidebar1"
+    "description": "The label for category '多项式与生成函数' in sidebar 'sidebar1'"
   },
   "sidebar.sidebar1.category.多项式与生成函数.link.generated-index.description": {
     "message": "本章介绍多项式与生成函数。",
-    "description": "The generated-index page description for category 多项式与生成函数 in sidebar sidebar1"
+    "description": "The generated-index page description for category '多项式与生成函数' in sidebar 'sidebar1'"
   },
   "sidebar.sidebar1.category.组合数学": {
     "message": "组合数学",
-    "description": "The label for category 组合数学 in sidebar sidebar1"
+    "description": "The label for category '组合数学' in sidebar 'sidebar1'"
   },
   "sidebar.sidebar1.category.组合数学.link.generated-index.description": {
     "message": "本章介绍组合数学。",
-    "description": "The generated-index page description for category 组合数学 in sidebar sidebar1"
+    "description": "The generated-index page description for category '组合数学' in sidebar 'sidebar1'"
   },
   "sidebar.sidebar1.category.线性代数": {
     "message": "线性代数",
-    "description": "The label for category 线性代数 in sidebar sidebar1"
+    "description": "The label for category '线性代数' in sidebar 'sidebar1'"
   },
   "sidebar.sidebar1.category.线性代数.link.generated-index.description": {
     "message": "本章介绍线性代数。",
-    "description": "The generated-index page description for category 线性代数 in sidebar sidebar1"
+    "description": "The generated-index page description for category '线性代数' in sidebar 'sidebar1'"
   },
   "sidebar.sidebar1.category.数值算法": {
     "message": "数值算法",
-    "description": "The label for category 数值算法 in sidebar sidebar1"
+    "description": "The label for category '数值算法' in sidebar 'sidebar1'"
   },
   "sidebar.sidebar1.category.数值算法.link.generated-index.description": {
     "message": "数值算法是指用计算机对数学问题进行近似数值计算的方法。",
-    "description": "The generated-index page description for category 数值算法 in sidebar sidebar1"
+    "description": "The generated-index page description for category '数值算法' in sidebar 'sidebar1'"
   },
   "sidebar.sidebar1.category.数据结构": {
     "message": "数据结构",
-    "description": "The label for category 数据结构 in sidebar sidebar1"
+    "description": "The label for category '数据结构' in sidebar 'sidebar1'"
   },
   "sidebar.sidebar1.category.数据结构.link.generated-index.description": {
     "message": "数据结构是在计算机中存储、组织数据的方式。",
-    "description": "The generated-index page description for category 数据结构 in sidebar sidebar1"
+    "description": "The generated-index page description for category '数据结构' in sidebar 'sidebar1'"
   },
   "sidebar.sidebar1.category.图论": {
     "message": "图论",
-    "description": "The label for category 图论 in sidebar sidebar1"
+    "description": "The label for category '图论' in sidebar 'sidebar1'"
   },
   "sidebar.sidebar1.category.图论.link.generated-index.description": {
     "message": "图论是数学的一个分支，图是图论的主要研究对象。",
-    "description": "The generated-index page description for category 图论 in sidebar sidebar1"
+    "description": "The generated-index page description for category '图论' in sidebar 'sidebar1'"
   },
   "sidebar.sidebar1.category.树上问题": {
     "message": "树上问题",
-    "description": "The label for category 树上问题 in sidebar sidebar1"
+    "description": "The label for category '树上问题' in sidebar 'sidebar1'"
   },
   "sidebar.sidebar1.category.树上问题.link.generated-index.description": {
     "message": "树是一类特殊的图，即无环连通图。",
-    "description": "The generated-index page description for category 树上问题 in sidebar sidebar1"
+    "description": "The generated-index page description for category '树上问题' in sidebar 'sidebar1'"
   },
   "sidebar.sidebar1.category.计算几何": {
     "message": "计算几何",
-    "description": "The label for category 计算几何 in sidebar sidebar1"
+    "description": "The label for category '计算几何' in sidebar 'sidebar1'"
   },
   "sidebar.sidebar1.category.计算几何.link.generated-index.description": {
     "message": "利用计算机建立数学模型解决几何问题。",
-    "description": "The generated-index page description for category 计算几何 in sidebar sidebar1"
+    "description": "The generated-index page description for category '计算几何' in sidebar 'sidebar1'"
   },
   "sidebar.sidebar1.category.杂项": {
     "message": "杂项",
-    "description": "The label for category 杂项 in sidebar sidebar1"
+    "description": "The label for category '杂项' in sidebar 'sidebar1'"
   },
   "sidebar.sidebar1.category.杂项.link.generated-index.description": {
     "message": "本章介绍的是一些难以分类的算法及 OI 相关知识。",
-    "description": "The generated-index page description for category 杂项 in sidebar sidebar1"
+    "description": "The generated-index page description for category '杂项' in sidebar 'sidebar1'"
   },
   "sidebar.sidebar2.category.数学": {
     "message": "数学",
-    "description": "The label for category 数学 in sidebar sidebar2"
+    "description": "The label for category '数学' in sidebar 'sidebar2'"
   },
   "sidebar.sidebar2.category.数学.link.generated-index.description": {
     "message": "本章记录我的数学笔记。",
-    "description": "The generated-index page description for category 数学 in sidebar sidebar2"
+    "description": "The generated-index page description for category '数学' in sidebar 'sidebar2'"
   },
   "sidebar.sidebar2.category.高中数学": {
     "message": "高中数学",
-    "description": "The label for category 高中数学 in sidebar sidebar2"
+    "description": "The label for category '高中数学' in sidebar 'sidebar2'"
   },
   "sidebar.sidebar2.category.基础与杂项": {
     "message": "基础与杂项",
-    "description": "The label for category 基础与杂项 in sidebar sidebar2"
+    "description": "The label for category '基础与杂项' in sidebar 'sidebar2'"
   },
   "sidebar.sidebar2.category.代数与函数": {
     "message": "代数与函数",
-    "description": "The label for category 代数与函数 in sidebar sidebar2"
+    "description": "The label for category '代数与函数' in sidebar 'sidebar2'"
   },
   "sidebar.sidebar2.category.几何与解析": {
     "message": "几何与解析",
-    "description": "The label for category 几何与解析 in sidebar sidebar2"
+    "description": "The label for category '几何与解析' in sidebar 'sidebar2'"
   },
   "sidebar.sidebar2.category.统计与概率": {
     "message": "统计与概率",
-    "description": "The label for category 统计与概率 in sidebar sidebar2"
+    "description": "The label for category '统计与概率' in sidebar 'sidebar2'"
   },
   "sidebar.sidebar2.category.高等数学": {
     "message": "高等数学",
-    "description": "The label for category 高等数学 in sidebar sidebar2"
+    "description": "The label for category '高等数学' in sidebar 'sidebar2'"
   },
   "sidebar.sidebar2.category.《线性代数》": {
     "message": "《线性代数》",
-    "description": "The label for category 《线性代数》 in sidebar sidebar2"
+    "description": "The label for category '《线性代数》' in sidebar 'sidebar2'"
   },
   "sidebar.sidebar2.category.英语": {
     "message": "英语",
-    "description": "The label for category 英语 in sidebar sidebar2"
+    "description": "The label for category '英语' in sidebar 'sidebar2'"
   },
   "sidebar.sidebar2.category.英语.link.generated-index.description": {
     "message": "本章记录我的英语笔记。",
-    "description": "The generated-index page description for category 英语 in sidebar sidebar2"
+    "description": "The generated-index page description for category '英语' in sidebar 'sidebar2'"
   },
   "sidebar.sidebar2.category.英语语音": {
     "message": "英语语音",
-    "description": "The label for category 英语语音 in sidebar sidebar2"
+    "description": "The label for category '英语语音' in sidebar 'sidebar2'"
   },
   "sidebar.sidebar2.category.英语词汇": {
     "message": "英语词汇",
-    "description": "The label for category 英语词汇 in sidebar sidebar2"
+    "description": "The label for category '英语词汇' in sidebar 'sidebar2'"
   },
   "sidebar.sidebar2.category.英语语法": {
     "message": "英语语法",
-    "description": "The label for category 英语语法 in sidebar sidebar2"
+    "description": "The label for category '英语语法' in sidebar 'sidebar2'"
   },
   "sidebar.sidebar2.category.动词": {
     "message": "动词",
-    "description": "The label for category 动词 in sidebar sidebar2"
+    "description": "The label for category '动词' in sidebar 'sidebar2'"
   },
   "sidebar.sidebar2.category.动词.link.generated-index.description": {
     "message": "本章介绍英语动词的相关知识，包括动词分类、时态、语气等。",
-    "description": "The generated-index page description for category 动词 in sidebar sidebar2"
+    "description": "The generated-index page description for category '动词' in sidebar 'sidebar2'"
   },
   "sidebar.sidebar2.category.词性": {
     "message": "词性",
-    "description": "The label for category 词性 in sidebar sidebar2"
+    "description": "The label for category '词性' in sidebar 'sidebar2'"
   },
   "sidebar.sidebar2.category.词性.link.generated-index.description": {
     "message": "本章介绍英语各种词性的用法，包括名词、代词、形容词等。",
-    "description": "The generated-index page description for category 词性 in sidebar sidebar2"
+    "description": "The generated-index page description for category '词性' in sidebar 'sidebar2'"
   },
   "sidebar.sidebar2.category.句子": {
     "message": "句子",
-    "description": "The label for category 句子 in sidebar sidebar2"
+    "description": "The label for category '句子' in sidebar 'sidebar2'"
   },
   "sidebar.sidebar2.category.句子.link.generated-index.description": {
     "message": "本章介绍英语句子结构，包括句子分类、从句、语态等。",
-    "description": "The generated-index page description for category 句子 in sidebar sidebar2"
+    "description": "The generated-index page description for category '句子' in sidebar 'sidebar2'"
   },
   "sidebar.sidebar2.category.其他": {
     "message": "其他",
-    "description": "The label for category 其他 in sidebar sidebar2"
+    "description": "The label for category '其他' in sidebar 'sidebar2'"
   },
   "sidebar.sidebar2.category.其他.link.generated-index.description": {
     "message": "本章介绍其他英语语法相关知识，包括构词法和标点符号。",
-    "description": "The generated-index page description for category 其他 in sidebar sidebar2"
+    "description": "The generated-index page description for category '其他' in sidebar 'sidebar2'"
   },
   "sidebar.sidebar2.category.推荐": {
     "message": "推荐",
-    "description": "The label for category 推荐 in sidebar sidebar2"
+    "description": "The label for category '推荐' in sidebar 'sidebar2'"
   },
   "sidebar.sidebar3.category.lailai's Home": {
     "message": "lailai's Home",
-    "description": "The label for category lailai's Home in sidebar sidebar3"
+    "description": "The label for category 'lailai's Home' in sidebar 'sidebar3'"
   },
   "sidebar.sidebar3.category.指南": {
     "message": "指南",
-    "description": "The label for category 指南 in sidebar sidebar3"
+    "description": "The label for category '指南' in sidebar 'sidebar3'"
   },
   "sidebar.sidebar3.category.指南.link.generated-index.description": {
     "message": "本章收录各种实用的文档指南。",
-    "description": "The generated-index page description for category 指南 in sidebar sidebar3"
+    "description": "The generated-index page description for category '指南' in sidebar 'sidebar3'"
   },
   "sidebar.sidebar3.category.终端": {
     "message": "终端",
-    "description": "The label for category 终端 in sidebar sidebar3"
+    "description": "The label for category '终端' in sidebar 'sidebar3'"
   },
   "sidebar.sidebar3.category.终端.link.generated-index.description": {
     "message": "本章展示基于终端的项目和教程。",
-    "description": "The generated-index page description for category 终端 in sidebar sidebar3"
+    "description": "The generated-index page description for category '终端' in sidebar 'sidebar3'"
   },
   "sidebar.sidebar3.category.Desmos": {
     "message": "Desmos",
-    "description": "The label for category Desmos in sidebar sidebar3"
+    "description": "The label for category 'Desmos' in sidebar 'sidebar3'"
   },
   "sidebar.sidebar3.category.Desmos.link.generated-index.description": {
     "message": "本章展示使用 Desmos 图形计算器创作的各种项目。",
-    "description": "The generated-index page description for category Desmos in sidebar sidebar3"
+    "description": "The generated-index page description for category 'Desmos' in sidebar 'sidebar3'"
   },
   "sidebar.sidebar3.category.图形": {
     "message": "图形",
-    "description": "The label for category 图形 in sidebar sidebar3"
+    "description": "The label for category '图形' in sidebar 'sidebar3'"
   },
   "sidebar.sidebar3.category.几何": {
     "message": "几何",
-    "description": "The label for category 几何 in sidebar sidebar3"
+    "description": "The label for category '几何' in sidebar 'sidebar3'"
   },
   "sidebar.sidebar3.category.艺术博览会": {
     "message": "艺术博览会",
-    "description": "The label for category 艺术博览会 in sidebar sidebar3"
+    "description": "The label for category '艺术博览会' in sidebar 'sidebar3'"
   },
   "sidebar.sidebar3.category.其他": {
     "message": "其他",
-    "description": "The label for category 其他 in sidebar sidebar3"
+    "description": "The label for category '其他' in sidebar 'sidebar3'"
   },
   "sidebar.sidebar3.category.其他.link.generated-index.description": {
     "message": "其他分类的项目和分享。",
-    "description": "The generated-index page description for category 其他 in sidebar sidebar3"
+    "description": "The generated-index page description for category '其他' in sidebar 'sidebar3'"
   }
 }
