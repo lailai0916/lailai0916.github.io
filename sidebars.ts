@@ -7,8 +7,9 @@ const sidebars: SidebarsConfig = {
       type: 'category',
       label: '个人',
       link: {
-        type: 'doc',
-        id: 'contest/personal/index',
+        type: 'generated-index',
+        description:
+          '本章主要记录我在 OI 中的个人经验，包括风格规范、对拍工具、常用模板库以及实用技巧等。',
       },
       items: [
         'contest/personal/code-style',
@@ -20,8 +21,9 @@ const sidebars: SidebarsConfig = {
       type: 'category',
       label: '比赛相关',
       link: {
-        type: 'doc',
-        id: 'contest/contest/index',
+        type: 'generated-index',
+        description:
+          '本章主要介绍计算机编程比赛直接相关的知识，包括各种赛事、赛制、题型，以及赛场上常见的坑点与技巧。',
       },
       items: [
         'contest/contest/events',
@@ -41,7 +43,7 @@ const sidebars: SidebarsConfig = {
       items: [
         'contest/lang/helloworld',
         'contest/lang/op',
-        'contest/lang/ascii/index',
+        'contest/lang/ascii',
         'contest/lang/csl',
       ],
     },
@@ -84,8 +86,9 @@ const sidebars: SidebarsConfig = {
       type: 'category',
       label: '动态规划',
       link: {
-        type: 'doc',
-        id: 'contest/dp/index',
+        type: 'generated-index',
+        description:
+          '动态规划是一种通过把原问题分解为相对简单的子问题的方式求解复杂问题的方法。',
       },
       items: [
         'contest/dp/basic',
@@ -309,33 +312,33 @@ const sidebars: SidebarsConfig = {
               type: 'category',
               label: '基础与杂项',
               items: [
-                'note/math/high-school/basic/transition/index',
-                'note/math/high-school/basic/set/index',
+                'note/math/high-school/basic/transition',
+                'note/math/high-school/basic/set',
                 'note/math/high-school/basic/logic',
-                'note/math/high-school/basic/inequality/index',
-                'note/math/high-school/basic/vector/index',
-                'note/math/high-school/basic/complex/index',
-                'note/math/high-school/basic/counting-principle/index',
+                'note/math/high-school/basic/inequality',
+                'note/math/high-school/basic/vector',
+                'note/math/high-school/basic/complex',
+                'note/math/high-school/basic/counting-principle',
               ],
             },
             {
               type: 'category',
               label: '代数与函数',
               items: [
-                'note/math/high-school/function/function/index',
-                'note/math/high-school/function/trigonometric-function/index',
+                'note/math/high-school/function/function',
+                'note/math/high-school/function/trigonometric-function',
                 'note/math/high-school/function/sequence',
-                'note/math/high-school/function/derivative/index',
+                'note/math/high-school/function/derivative',
               ],
             },
             {
               type: 'category',
               label: '几何与解析',
               items: [
-                'note/math/high-school/geometry/triangle-solving/index',
-                'note/math/high-school/geometry/solid-geometry/index',
-                'note/math/high-school/geometry/line-and-circle/index',
-                'note/math/high-school/geometry/conic/index',
+                'note/math/high-school/geometry/triangle-solving',
+                'note/math/high-school/geometry/solid-geometry',
+                'note/math/high-school/geometry/line-and-circle',
+                'note/math/high-school/geometry/conic',
               ],
             },
             {
@@ -536,7 +539,7 @@ const sidebars: SidebarsConfig = {
   ],
   sidebar3: [
     'project/index',
-    'project/lailai0916/index',
+    'project/lailai0916',
     {
       type: 'category',
       label: "lailai's Home",
@@ -545,14 +548,14 @@ const sidebars: SidebarsConfig = {
         id: 'project/lailai0916.github.io/index',
       },
       items: [
-        'project/lailai0916.github.io/setup/index',
+        'project/lailai0916.github.io/setup',
         'project/lailai0916.github.io/plugins',
         'project/lailai0916.github.io/design',
         'project/lailai0916.github.io/tailwind',
       ],
     },
     'project/code-comparator',
-    'project/hangzhou-highschool-map/index',
+    'project/hangzhou-highschool-map',
     {
       type: 'category',
       label: '指南',
@@ -612,7 +615,7 @@ const sidebars: SidebarsConfig = {
         {
           type: 'category',
           label: '艺术博览会',
-          items: ['project/desmos/art-expo/iclock/index'],
+          items: ['project/desmos/art-expo/iclock'],
         },
       ],
     },
@@ -624,8 +627,8 @@ const sidebars: SidebarsConfig = {
         description: '其他分类的项目和分享。',
       },
       items: [
-        'project/other/devices/index',
-        'project/other/edc/index',
+        'project/other/devices',
+        'project/other/edc',
         'project/other/desk-setup',
         'project/other/software',
       ],
