@@ -126,7 +126,7 @@ tags: [travel]
 97. **Samarkand and Bukhara, Uzbekistan — 乌兹别克斯坦 撒马尔罕与布哈拉**
 98. **Terra Cotta Army, China — 中国 兵马俑**
 99. Taj Mahal, India — 印度 泰姬陵
-100. Vatican City — 梵蒂冈城
+100.  Vatican City — 梵蒂冈城
 
 ## 第 51 个终生之地（51st Place of a Lifetime）
 
