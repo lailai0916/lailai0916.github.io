@@ -5,7 +5,7 @@ authors: lailai
 tags: [event]
 ---
 
-<Assets file="header.png" />
+<Assets file="header.png" path="/blog/event/paintboard" />
 
 <!-- truncate -->
 
