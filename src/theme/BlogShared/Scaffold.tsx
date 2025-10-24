@@ -276,17 +276,29 @@ function MenuCard() {
 
   return (
     <Card>
-      <div className={styles.feedButtonGroup}>
+      <ul className={styles.menuList}>
         {page.map((item) => (
-          <Link
-            key={item.href}
-            to={item.href}
-            className={clsx(styles.tagChip, styles.postInlineTag)}
-          >
-            {item.label}
-          </Link>
+          <li key={item.href} className={styles.menuListItem}>
+            <Link to={item.href} className={styles.menuLink}>
+              <span className={styles.menuLinkLabel}>{item.label}</span>
+              <svg
+                className={styles.menuLinkIcon}
+                viewBox="0 0 16 16"
+                aria-hidden="true"
+              >
+                <path
+                  d="M6 4l4 4-4 4"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="1.5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+            </Link>
+          </li>
         ))}
-      </div>
+      </ul>
     </Card>
   );
 }
