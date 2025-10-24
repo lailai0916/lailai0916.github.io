@@ -251,6 +251,7 @@ const sidebars: SidebarsConfig = {
         'contest/graph/spanning-tree',
         'contest/graph/connectivity',
         'contest/graph/rings-count',
+        'contest/graph/min-cycle',
         'contest/graph/2sat',
         'contest/graph/flow',
         'contest/graph/bigraph-match',
