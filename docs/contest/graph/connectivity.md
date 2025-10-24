@@ -4,6 +4,7 @@
 
 - [强连通分量 - OI Wiki](https://oi-wiki.org/graph/scc/)
 - [双连通分量 - OI Wiki](https://oi-wiki.org/graph/bcc/)
+- [割点和桥 - OI Wiki](https://oi-wiki.org/graph/cut/)
 
 ## 强连通分量（SCC）
 
