@@ -60,15 +60,13 @@ int main()
 	int k=0;
 	for(int i=1;i<=scc_cnt;i++)
 	{
-		if(!deg[i])
+		if(deg[i])continue;
+		if(k)
 		{
-			if(k)
-			{
-				cout<<0<<'\n';
-				return 0;
-			}
-			k=i;
+			cout<<0<<'\n';
+			return 0;
 		}
+		k=i;
 	}
 	int ans=0;
 	for(int i=1;i<=n;i++)
