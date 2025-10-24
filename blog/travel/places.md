@@ -9,7 +9,7 @@ tags: [travel]
 
 ## 参考资料
 
-- [Editor’s Letter: 50 Places of a Lifetime | National Geographic](https://www.nationalgeographic.com/travel/article/50_places_of_a_lifetime_1?utm_source=chatgpt.com)
+- [Editor’s Letter: 50 Places of a Lifetime | National Geographic](https://www.nationalgeographic.com/travel/article/50_places_of_a_lifetime_1)
 
 ## 城市空间（Urban Spaces）
 
