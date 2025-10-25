@@ -38,6 +38,38 @@ void floyd(int n)
 }
 ```
 
+### Bellman–Ford 算法
+
+SPFA（Shortest Path Faster Algorithm）是 Bellman–Ford 算法的一种实现。
+
+```cpp
+vector<pair<int,int>> G[N];
+int dis[N],cnt[N];
+bool vis[N];
+bool spfa(int s,int n)
+{
+	memset(dis,0x3f,sizeof dis);
+	dis[s]=0;vis[s]=1;
+	queue<int> q;
+	q.push(s);
+	while(!q.empty())
+	{
+		int u=q.front();
+		q.pop();
+		vis[u]=0;
+		for(auto [v,w]:G[u])
+		{
+			if(dis[v]<=dis[u]+w)continue;
+			dis[v]=dis[u]+w;
+			cnt[v]=cnt[u]+1;
+			if(cnt[v]>=n)return 0;
+			if(!vis[v]){q.push(v);vis[v]=1;}
+		}
+	}
+	return 1;
+}
+```
+
 ### Dijkstra 算法
 
 ```cpp
