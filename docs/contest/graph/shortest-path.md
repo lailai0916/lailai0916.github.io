@@ -107,6 +107,10 @@ void dijkstra(int s)
 
 <Problem id="B3647" />
 
+### 洛谷 P3371 【模板】单源最短路径（弱化版）
+
+<Problem id="P3371" />
+
 ### 洛谷 P4779 【模板】单源最短路径（标准版）
 
 <Problem id="P4779" />
