@@ -84,7 +84,7 @@ int main()
 	dijkstra(a[s]+K);
 	for(int i=1;i<=n;i++)
 	{
-		cout<<(dis[a[i]]==inf?-1:dis[a[i]])<<' ';
+		cout<<(dis[a[i]]!=inf?dis[a[i]]:-1)<<' ';
 	}
 	return 0;
 }
