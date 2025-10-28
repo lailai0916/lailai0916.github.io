@@ -13,8 +13,7 @@ void kmp(string s,string t)
 		if(t[i]==t[j])j++;
 		nxt[i]=j;
 	}
-	int j=0;
-	for(int i=0;i<n;i++)
+	for(int i=0,j=0;i<n;i++)
 	{
 		while(j&&s[i]!=t[j])j=nxt[j-1];
 		if(s[i]==t[j])j++;
