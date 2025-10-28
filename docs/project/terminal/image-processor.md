@@ -38,7 +38,7 @@ int a[N][M][3];
 void write(int id)
 {
 	string tmp=to_string(id);
-	tmp.insert(tmp.begin(),5-tmp.length(),'0');
+	tmp.insert(tmp.begin(),5-tmp.size(),'0');
 	ofstream fout("test/"+tmp+".ppm",ios::out|ios::binary);
 	if(!fout.is_open())return;
 	fout<<"P6"<<'\n'<<M<<' '<<N<<'\n'<<255<<'\n';
@@ -162,7 +162,7 @@ int a[N][M][3];
 void read(int id)
 {
 	string tmp=to_string(id);
-	tmp.insert(tmp.begin(),5-tmp.length(),'0');
+	tmp.insert(tmp.begin(),5-tmp.size(),'0');
 	ifstream fin("test/"+tmp+".ppm",ios::in|ios::binary);
 	if(!fin.is_open())return;
 	string header;

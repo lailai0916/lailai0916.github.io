@@ -31,7 +31,7 @@ int main()
 	cin.tie(nullptr);
 	string s1,s2;
 	cin>>s1>>s2;
-	int n=s1.length()-1,m=s2.length()-1;
+	int n=s1.size()-1,m=s2.size()-1;
 	for(int i=0;i<=n;i++)a[i]=Comp(s1[n-i]-'0',0);
 	for(int i=0;i<=m;i++)b[i]=Comp(s2[m-i]-'0',0);
 	int lim=1,cnt=0;
