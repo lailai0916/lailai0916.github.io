@@ -486,13 +486,18 @@ export const RESOURCE_LIST: ResourceCategoryItem[] = [
         description: '拼音缩写翻译工具',
       },
       {
+        title: 'Solution Formatter',
+        href: 'https://tj.imken.dev',
+        description: '洛谷题解格式化工具',
+      },
+      {
         title: 'Password Monster',
-        href: 'https://passwordmonster.com/',
+        href: 'https://passwordmonster.com',
         description: '密码强度检测工具',
       },
       {
         title: 'CPS 测试',
-        href: 'https://clickspeedtest.com/',
+        href: 'https://clickspeedtest.com',
         description: '鼠标点击速度测试',
       },
       {
