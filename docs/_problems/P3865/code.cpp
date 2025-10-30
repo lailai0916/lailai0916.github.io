@@ -25,10 +25,7 @@ int main()
 	cin.tie(nullptr);
 	int n,m;
 	cin>>n>>m;
-	for(int i=1;i<=n;i++)
-	{
-		cin>>a[i][0];
-	}
+	for(int i=1;i<=n;i++)cin>>a[i][0];
 	init(n);
 	while(m--)
 	{
