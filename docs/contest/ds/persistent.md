@@ -6,7 +6,7 @@
 
 ## 可持久化线段树
 
-可持久化线段树又称为主席树，详见 [知乎讨论](https://www.zhihu.com/question/59195374)。
+可持久化线段树也称为 **主席树**，详见 [知乎讨论](https://www.zhihu.com/question/59195374)。
 
 ```cpp
 #include <bits/stdc++.h>
