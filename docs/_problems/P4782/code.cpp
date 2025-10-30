@@ -47,7 +47,7 @@ int main()
 		G[u+n*(1-x)].push_back(v+n*y);
 		G[v+n*(1-y)].push_back(u+n*x);
 	}
-	for(int i=1;i<=(n<<1);i++)
+	for(int i=1;i<=n<<1;i++)
 	{
 		if(!dfn[i])tarjan(i);
 	}

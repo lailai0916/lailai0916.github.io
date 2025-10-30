@@ -47,7 +47,7 @@ int main()
 	sort(a+1,a+m+1);
 	m=unique(a+1,a+m+1)-a-1;
 	ll ans=0;
-	for(int i=1;i<=(n<<1);i++)
+	for(int i=1;i<=n<<1;i++)
 	{
 		int l=lower_bound(a+1,a+m+1,node[i].l)-a;
 		int r=lower_bound(a+1,a+m+1,node[i].r)-a;

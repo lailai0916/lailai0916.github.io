@@ -9,7 +9,7 @@ int main()
 {
 	int n,m;
 	cin>>n>>m;
-	for(int i=1;i<=(n<<1);i++)fa[i]=i;
+	for(int i=1;i<=n<<1;i++)fa[i]=i;
 	for(int i=1;i<=m;i++)
 	{
 		char op;
