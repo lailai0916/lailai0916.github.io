@@ -329,7 +329,7 @@ $$
 
 ## 计数
 
-详见 [计数原理](counting-principle)
+详见 [计数原理](counting-principle)。
 
 ### 元素个数
 

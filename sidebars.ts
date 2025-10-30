@@ -219,7 +219,7 @@ const sidebars: SidebarsConfig = {
         'contest/ds/fenwick',
         'contest/ds/seg',
         'contest/ds/bst',
-        'contest/ds/persistent-seg',
+        'contest/ds/persistent',
       ],
     },
     {

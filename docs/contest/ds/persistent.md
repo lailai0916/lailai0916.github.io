@@ -1,6 +1,12 @@
-# 可持久化线段树
+# 可持久化数据结构
 
-## 实现
+## 参考资料
+
+- [可持久化数据结构简介 - OI Wiki](https://oi-wiki.org/ds/persistent/)
+
+## 可持久化线段树
+
+可持久化线段树又称为主席树，详见 [知乎讨论](https://www.zhihu.com/question/59195374)。
 
 ```cpp
 #include <bits/stdc++.h>

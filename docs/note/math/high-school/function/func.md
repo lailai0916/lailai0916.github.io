@@ -138,7 +138,7 @@ $$
 1. 涉及多个函数时，可以用 $f(x)$、$g(x)$、$h(x)$ 等不同函数名表示。
 2. 可以定义 $f(-x)$、$f(2x)$、$f(x+1)$ 等函数，表达更灵活。
 
-详见 [都表示函数，为啥初中用y，高中用f(x)?【初高中衔接】 - bilibili](https://www.bilibili.com/video/BV1Cd4y1S7Sx/)
+详见 [都表示函数，为啥初中用y，高中用f(x)?【初高中衔接】 - bilibili](https://www.bilibili.com/video/BV1Cd4y1S7Sx/)。
 
 :::
 
@@ -276,7 +276,7 @@ $$
 y=\sin(x)/\cos(x)/\tan(x)/\cot(x)/\sec(x)/\csc(x)
 $$
 
-详见 [三角函数](trigonometric-function)
+详见 [三角函数](trigonometric-function)。
 
 三角函数的图像（红色为 $\sin$，蓝色为 $\cos$，绿色为 $\tan$，橙色为 $\cot$，紫色为 $\sec$，黑色为 $\csc$）：
 

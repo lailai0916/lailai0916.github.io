@@ -89,7 +89,7 @@ int main()
 
 ## 读写
 
-详见 [读写优化](../contest/io)
+详见 [读写优化](../contest/io)。
 
 ### 关闭同步 & 解除关联
 
@@ -142,7 +142,7 @@ cout.flush();
 
 ### 二分
 
-详见 [二分](../basic/binary)
+详见 [二分](../basic/binary)。
 
 ```cpp
 int l=x,r=y+1;
@@ -158,7 +158,7 @@ while(l<r)
 
 ### KMP 算法
 
-详见 [字符串匹配](../string/match)
+详见 [字符串匹配](../string/match)。
 
 ```cpp
 int kmp(string s,string t)
@@ -184,7 +184,7 @@ int kmp(string s,string t)
 
 ### 字典树
 
-详见 [字典树](../string/trie)
+详见 [字典树](../string/trie)。
 
 ```cpp
 struct Trie
@@ -228,7 +228,7 @@ struct Trie
 
 ### 快速幂
 
-详见 [快速幂](../math/binary-exponentiation)
+详见 [快速幂](../math/binary-exponentiation)。
 
 ```cpp
 ll Pow(ll x,ll y)
@@ -247,7 +247,7 @@ ll Pow(ll x,ll y)
 
 ### 排列组合
 
-详见 [排列组合](../math/combinatorics/permutation-and-combination)
+详见 [排列组合](../math/combinatorics/permutation-and-combination)。
 
 ```cpp
 ll inv[N],fac[N],jv[N];
@@ -275,7 +275,7 @@ ll A(ll n,ll m)
 
 ### 筛法
 
-详见 [筛法](../math/number-theory/sieve)
+详见 [筛法](../math/number-theory/sieve)。
 
 ```cpp
 void init()
@@ -405,7 +405,7 @@ struct Frac
 
 ### 并查集
 
-详见 [并查集](../ds/dsu)
+详见 [并查集](../ds/dsu)。
 
 ```cpp
 struct DSU
@@ -420,7 +420,7 @@ struct DSU
 
 ### ST 表
 
-详见 [ST 表](../ds/sparse-table)
+详见 [ST 表](../ds/sparse-table)。
 
 ```cpp
 struct ST
@@ -446,7 +446,7 @@ struct ST
 
 ### 树状数组
 
-详见 [树状数组](../ds/fenwick)
+详见 [树状数组](../ds/fenwick)。
 
 ```cpp
 struct BIT
@@ -459,7 +459,7 @@ struct BIT
 
 ### 线段树
 
-详见 [线段树](../ds/seg)
+详见 [线段树](../ds/seg)。
 
 ```cpp
 struct SEG

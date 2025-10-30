@@ -6,9 +6,9 @@
 
 ## 应用
 
-详见 [ST 表](../ds/sparse-table)
+详见 [ST 表](../ds/sparse-table)。
 
-详见 [最近公共祖先（LCA）](../graph/tree/lca)
+详见 [最近公共祖先（LCA）](../graph/tree/lca)。
 
 ## 例题
 

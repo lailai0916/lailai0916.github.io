@@ -342,10 +342,6 @@ int main()
 
 ## 扩展
 
-### LaTeX 公式
+详见 [LaTeX 指南](latex)。
 
-详见 [LaTeX 指南](latex)
-
-### Mermaid 图表
-
-详见 [Mermaid 指南](mermaid)
+详见 [Mermaid 指南](mermaid)。

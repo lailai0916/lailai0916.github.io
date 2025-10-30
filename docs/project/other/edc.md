@@ -24,7 +24,7 @@
 
 ## 数码设备
 
-详见 [lailai's Devices](devices)
+详见 [lailai's Devices](devices)。
 
 ## 数码配件
 

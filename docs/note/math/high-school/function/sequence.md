@@ -102,7 +102,7 @@ $$
 d_n=k(n)
 $$
 
-详见 [微积分](/blog/math/calculus)
+详见 [微积分](/blog/math/calculus)。
 
 ## 表示
 

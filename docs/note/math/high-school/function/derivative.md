@@ -412,4 +412,4 @@ $$
 
 ### 微积分
 
-详见 [微积分](/blog/math/calculus)
+详见 [微积分](/blog/math/calculus)。

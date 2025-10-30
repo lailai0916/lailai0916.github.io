@@ -446,7 +446,7 @@ $$
 - 两圆内切 ⇔ 公切线有 $1$ 条；
 - 两圆内含 ⇔ 公切线有 $0$ 条。
 
-过圆（下面的内容详见 [GeoGebra](https://www.geogebra.org/calculator/z27tcbb5)）：
+详见 [GeoGebra](https://www.geogebra.org/calculator/z27tcbb5)。
 
 $$
 (x−a)^2+(y−b)^2=r^2
