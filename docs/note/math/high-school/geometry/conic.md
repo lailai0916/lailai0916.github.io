@@ -4,6 +4,7 @@
 
 - [圆锥曲线 - 维基百科](https://zh.wikipedia.org/zh-cn/圆锥曲线)
 - [椭圆的第零定义【StarSky】 - bilibili](https://www.bilibili.com/video/BV1Ny4y1o7xZ)
+- [圆锥曲线的离心率到底离了什么心？【MaExpo获奖作品】 - bilibili](https://www.bilibili.com/video/BV1CvPyeaEMv?vd_source=46d5d4353c0a8915d163627c6c7a5642)
 
 ## 概述
 
