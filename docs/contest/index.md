@@ -10,12 +10,6 @@ sidebar_position: 0
 
 ![](/img/docs/contest-light.svg#gh-light-mode-only)![](/img/docs/contest-dark.svg#gh-dark-mode-only)
 
-## 参考资料
-
-- [OI Wiki](https://oi-wiki.org)
-- [算法 - 维基百科](https://zh.wikipedia.org/zh-cn/算法)
-- [cppreference.com](https://zh.cppreference.com/w/首页)
-
 ## 倒计时
 
 export const today = new Date().toISOString().split("T")[0];

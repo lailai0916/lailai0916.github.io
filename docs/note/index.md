@@ -10,11 +10,6 @@ sidebar_position: 0
 
 ![](/img/docs/note-light.svg#gh-light-mode-only)![](/img/docs/note-dark.svg#gh-dark-mode-only)
 
-## 参考资料
-
-- [维基百科，自由的百科全书](https://zh.wikipedia.org/zh-cn/Wikipedia:首页)
-- [国家中小学智慧教育平台](https://basic.smartedu.cn)
-
 ## 倒计时
 
 export const today = new Date().toISOString().split("T")[0];
