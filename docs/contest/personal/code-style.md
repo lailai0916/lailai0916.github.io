@@ -1,6 +1,6 @@
-# lailai's Code Style
+# lailai's Code Style Guide
 
-本文是我在 OI 中使用的 C++ 代码风格规范，旨在提升代码的可读性、一致性与简洁性。
+本文是我在 OI 中的 C++ 代码风格指南，旨在提升代码的可读性、一致性与简洁性。
 
 ## 参考资料
 
