@@ -5,6 +5,6 @@ authors: lailai
 tags: [misc]
 ---
 
-<Assets />
+<Assets file="C2EFD80728EE0EEADC7D2BDA3759BB6B.png" />
 
 <!-- truncate -->
