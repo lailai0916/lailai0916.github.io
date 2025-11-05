@@ -28,6 +28,7 @@ const sidebars: SidebarsConfig = {
       items: [
         'contest/contest/events',
         'contest/contest/noi-outline',
+        'contest/contest/noi-written',
         'contest/contest/io',
         'contest/contest/tricks',
       ],
@@ -43,7 +44,6 @@ const sidebars: SidebarsConfig = {
       items: [
         'contest/lang/helloworld',
         'contest/lang/op',
-        'contest/lang/ascii',
         'contest/lang/csl',
       ],
     },
