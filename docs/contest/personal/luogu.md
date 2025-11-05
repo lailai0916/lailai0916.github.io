@@ -142,7 +142,7 @@ int main()
 
 - [题目测试点配置文件 | 洛谷帮助中心](https://help.luogu.com.cn/manual/luogu/problem/testcase-config)
 
-以下程序可以根据时间限制、空间限制、子任务的分值和数量，自动生成标准格式的题目配置文件。
+以下程序可以调整 **时间限制**、**内存限制**、**子任务的分值和数量**，并生成标准格式的 **题目测试点配置文件**。
 
 ```cpp title="main.cpp"
 #include <bits/stdc++.h>

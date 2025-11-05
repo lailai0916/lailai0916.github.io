@@ -267,6 +267,7 @@ const sidebars: SidebarsConfig = {
       items: [
         'contest/geometry/2d',
         'contest/geometry/3d',
+        'contest/geometry/distance',
         'contest/geometry/convex-hull',
         'contest/geometry/scanning',
         'contest/geometry/rotating-calipers',

@@ -5,14 +5,13 @@
 - [旋转卡壳 - OI Wiki](https://oi-wiki.org/geometry/rotating-calipers/)
 - [关于为什么最远点对一定在凸包上的证明 - 博客园](https://www.cnblogs.com/Ishtar/p/10010792.html)
 
-## 实现
-
-读音：旋（xuán）转（zhuǎn）卡（kǎ）壳（ké）
+## 说明
 
 凸包的直径就是平面最远点对的距离。
 
-<Tabs>
-<TabItem value="Andrew 算法">
+读音：旋（xuán）转（zhuǎn）卡（kǎ）壳（ké）
+
+## Andrew 算法
 
 ```cpp
 #include <bits/stdc++.h>
@@ -71,8 +70,7 @@ int main()
 }
 ```
 
-</TabItem>
-<TabItem value="Graham 扫描法">
+## Graham 扫描法
 
 ```cpp
 #include <bits/stdc++.h>
@@ -125,9 +123,6 @@ int main()
 	return 0;
 }
 ```
-
-</TabItem>
-</Tabs>
 
 ## 例题
 
