@@ -3,6 +3,7 @@
 ## 参考资料
 
 - [距离 - OI Wiki](https://oi-wiki.org/geometry/distance/)
+- [距离 - 维基百科](https://zh.wikipedia.org/zh-cn/距离)
 
 ## 度量
 
@@ -20,9 +21,9 @@ $$
 0=d(x,x)\le d(x,y)+d(y,x)=2d(x,y)\Longrightarrow d(x,y)\ge 0
 $$
 
-## 欧氏距离
+## 欧几里得距离
 
-**欧氏距离**（Euclidean distance）是数学中最常见的距离，可以用 **勾股定理** 推导。
+**欧几里得距离**（Euclidean distance）是数学中最常见的距离，可以用 **勾股定理** 推导。
 
 $$
 d(A,B)=\sqrt{(x_0-x_1)^2+(y_0-y_1)^2}
