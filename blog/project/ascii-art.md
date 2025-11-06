@@ -66,8 +66,6 @@ tags: [project]
 
 ## 代码
 
-### main.cpp
-
 ```cpp title="main.cpp"
 #include <bits/stdc++.h>
 using namespace std;
