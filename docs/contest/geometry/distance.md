@@ -10,10 +10,15 @@
 
 设集合 $X$ 上的函数 $d(x,y)$ 是一个度量，当且仅当对任意 $x,y,z\in X$：
 
-1. 非负性（Non-negativity）：$d(x,y)\ge 0$；
-2. 同一性（Identity of indiscernibles）：$d(x,y)=0\iff x=y$；
-3. 对称性（Symmetry）：$d(x,y)=d(y,x)$；
-4. 三角不等式（Triangle inequality）：$d(x,z)\le d(x,y)+d(y,z)$。
+1. **同一性**（Identity of indiscernibles）：$d(x,y)=0\iff x=y$；
+2. **对称性**（Symmetry）：$d(x,y)=d(y,x)$；
+3. **三角不等式**（Triangle inequality）：$d(x,z)\le d(x,y)+d(y,z)$。
+
+**非负性**（Non-negativity）可以用以上三个性质推导得出：
+
+$$
+0=d(x,x)\le d(x,y)+d(y,x)=2d(x,y)\Longrightarrow d(x,y)\ge 0
+$$
 
 ## 欧氏距离
 
