@@ -71,7 +71,7 @@ $$
 \theta=\angle BAC,a=|BC|,b=|AC|,c=|AB|=1
 $$
 
-带入 $\sin$ 和 $\cos$ 的锐角三角函数的定义：
+代入 $\sin$ 和 $\cos$ 的锐角三角函数的定义：
 
 $$
 \cos\theta=\frac{b}{c}=b,\sin\theta=\frac{a}{c}=a
@@ -243,7 +243,7 @@ $$
 \cot^2{\alpha}+1=\csc^2{\alpha}
 $$
 
-对于其他三组恒等式，将锐角三角函数的定义带入即可证明：
+对于其他三组恒等式，将锐角三角函数的定义代入即可证明：
 
 $$
 \sin{\theta}=\frac{a}{c},\cos{\theta}=\frac{b}{c},\tan{\theta}=\frac{a}{b},\cot{\theta}=\frac{b}{a},\sec{\theta}=\frac{c}{b},\csc{\theta}=\frac{c}{a}
@@ -822,7 +822,7 @@ $$
 
 令 $\alpha+\beta=A,\alpha-\beta=B$，则 $\alpha=\frac{A+B}{2},\beta=\frac{A-B}{2}$。
 
-带入积化和差公式：
+代入积化和差公式：
 
 $$
 \sin{\frac{A+B}{2}}\cos{\frac{A-B}{2}}=\frac{1}{2}[\sin{A}+\sin{B}]
