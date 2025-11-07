@@ -1,7 +1,46 @@
 import React from 'react';
 import { useLocation } from '@docusaurus/router';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
-import { assets as buildUrl } from '@site/src/utils/assets';
+
+export type AssetsCtx = {
+  pathname: string;
+  assetsCdnBase: string;
+  baseUrl?: string;
+  locale?: string;
+};
+
+const trimSlashes = (s: string) => s.replace(/^\/+|\/+$/g, '');
+const joinUrl = (...parts: string[]) =>
+  parts
+    .filter(Boolean)
+    .map((p, i) => (i === 0 ? p.replace(/\/+$/, '') : trimSlashes(p)))
+    .join('/');
+
+function normalizeLogicalPath(
+  pathname: string,
+  baseUrl = '/',
+  locale = ''
+): string {
+  let p = pathname;
+  if (baseUrl !== '/' && p.startsWith(baseUrl)) p = p.slice(baseUrl.length - 1);
+
+  const pref = `/${locale}`;
+  if (p === pref) return '/';
+  if (p.startsWith(`${pref}/`)) {
+    p = p.slice(pref.length);
+  }
+
+  if (p.endsWith('.html')) p = p.replace(/\.html$/, '');
+  if (p.length > 1 && p.endsWith('/')) p = p.slice(0, -1);
+  return p || '/';
+}
+
+function buildUrl(file: string, ctx: AssetsCtx): string {
+  const { pathname, assetsCdnBase, baseUrl = '/', locale = '' } = ctx;
+  const logical = normalizeLogicalPath(pathname, baseUrl, locale);
+  const fileClean = file.replace(/^\/+/, '');
+  return joinUrl(assetsCdnBase, logical === '/' ? '' : logical, fileClean);
+}
 
 const cdnBase = 'https://raw.githubusercontent.com/lailai0916/assets/main';
 
