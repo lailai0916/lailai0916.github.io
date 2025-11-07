@@ -5,19 +5,7 @@ import { assets as buildUrl } from '@site/src/utils/assets';
 
 const cdnBase = 'https://raw.githubusercontent.com/lailai0916/assets/main';
 
-interface AssetsProps {
-  file: string;
-  path?: string;
-  type?: 'image' | 'video';
-  [key: string]: any;
-}
-
-export default function Assets({
-  file,
-  path,
-  type = 'image',
-  ...props
-}: AssetsProps) {
+export default function Assets({ file, path, type = 'image', ...props }) {
   const { pathname } = useLocation();
   const { siteConfig, i18n } = useDocusaurusContext();
 
@@ -31,6 +19,6 @@ export default function Assets({
   return type === 'video' ? (
     <video src={src} {...props} />
   ) : (
-    <img src={src} {...props} />
+    <img src={src} loading="lazy" {...props} />
   );
 }
