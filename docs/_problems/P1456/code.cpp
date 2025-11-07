@@ -46,11 +46,7 @@ int main()
 			int x,y;
 			cin>>x>>y;
 			x=find(x);y=find(y);
-			if(x==y)
-			{
-				cout<<"-1"<<'\n';
-				continue;
-			}
+			if(x==y){cout<<-1<<'\n';continue;}
 			x=change(x);y=change(y);
 			cout<<t[fa[x]=fa[y]=merge(x,y)].val<<'\n';
 		}

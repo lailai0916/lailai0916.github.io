@@ -18,7 +18,7 @@ int main()
 		ll a,b,c,x,y;
 		cin>>a>>b>>c;
 		ll d=exgcd(a,b,x,y);
-		if(c%d){cout<<"-1"<<'\n';continue;}
+		if(c%d){cout<<-1<<'\n';continue;}
 		x*=c/d;y*=c/d;
 		ll x1=b/d,y1=a/d;
 		ll x_min=(x%x1+x1-1)%x1+1,y_min=(y%y1+y1-1)%y1+1;

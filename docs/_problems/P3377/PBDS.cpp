@@ -37,11 +37,7 @@ int main()
 		else if(op==2)
 		{
 			cin>>x;
-			if(del[x])
-			{
-				cout<<"-1"<<'\n';
-				continue;
-			}
+			if(del[x]){cout<<-1<<'\n';continue;}
 			x=find(x);
 			cout<<q[x].top().first<<'\n';
 			del[q[x].top().second]=1;

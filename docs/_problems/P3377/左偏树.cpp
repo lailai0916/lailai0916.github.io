@@ -46,11 +46,7 @@ int main()
 		else if(op==2)
 		{
 			cin>>x;
-			if(del[x])
-			{
-				cout<<"-1"<<'\n';
-				continue;
-			}
+			if(del[x]){cout<<-1<<'\n';continue;}
 			x=find(x);
 			cout<<t[x].val<<'\n';
 			del[x]=1;
