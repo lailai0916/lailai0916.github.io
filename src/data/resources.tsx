@@ -751,6 +751,11 @@ export const RESOURCE_LIST: ResourceCategoryItem[] = [
         href: 'https://neal.fun',
         description: 'Neal 的游戏合集',
       },
+      {
+        title: 'Kiomet',
+        href: 'https://kiomet.com',
+        description: '在线实时战略游戏',
+      },
     ],
   },
   {
