@@ -18,7 +18,9 @@ export const daysUntil = (target) => Math.ceil((new Date(target) - new Date()) /
 今天是 **{today}**，距离：
 
 - **NOIP 2025** 还有 **{daysUntil('2025-11-29')}** 天
+- **NOIWC 2026** 还有 **~{daysUntil('2026-01-17')}** 天
 - **省选 2026** 还有 **~{daysUntil('2026-03-01')}** 天
+- **APIO 2026** 还有 **~{daysUntil('2026-05-15')}** 天
 - **NOI 2026** 还有 **~{daysUntil('2026-07-12')}** 天
 - **IOI 2026** 还有 **~{daysUntil('2026-08-09')}** 天
 - **CSP-J/S 2026 第一轮** 还有 **~{daysUntil('2026-09-20')}** 天
