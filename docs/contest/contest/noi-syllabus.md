@@ -5,6 +5,7 @@
 - [NOI大纲正式发布](https://www.noi.cn/xw/2021-04-02/724387.shtml)
 - [NOI 大纲（2023年修订版）正式发布](https://www.noi.cn/xw/2023-03-15/788060.shtml)
 - [NOI 大纲（2025年修订版）正式发布](https://www.noi.cn/xw/2025-04-18/841584.shtml)
+- [NOI 大纲 - Baoshuo's OI Blog](https://oi.baoshuo.ren/noi-outline/)
 
 ## 说明
 
