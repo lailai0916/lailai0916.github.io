@@ -19,14 +19,14 @@
 <Tabs>
 <TabItem value="TypeScript">
 
-```bash
+```bash npm2yarn
 npx create-docusaurus@latest my-website classic --typescript
 ```
 
 </TabItem>
 <TabItem value="JavaScript">
 
-```bash
+```bash npm2yarn
 npx create-docusaurus@latest my-website classic --javascript
 ```
 
@@ -64,7 +64,7 @@ Happy building awesome websites!
 
 等待创建完成后，切换到项目目录，并启动本地服务器。
 
-```bash
+```bash npm2yarn
 cd my-website
 npm start
 ```
@@ -128,7 +128,7 @@ module.exports = {
 
 - 安装 `gh-pages` 依赖：
 
-```bash
+```bash npm2yarn
 npm install --save-dev gh-pages
 ```
 
@@ -143,7 +143,7 @@ npm install --save-dev gh-pages
 
 - 运行以下命令，部署到 GitHub Pages：
 
-```bash
+```bash npm2yarn
 npm run deploy
 ```
 

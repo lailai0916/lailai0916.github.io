@@ -16,9 +16,8 @@ tags: [project]
 
 ## 自动化脚本（Playwright）
 
-```bash
+```bash npm2yarn
 npm install playwright
-npx playwright install
 ```
 
 ## 登录账号
