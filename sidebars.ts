@@ -249,8 +249,8 @@ const sidebars: SidebarsConfig = {
         'contest/graph/rings-count',
         'contest/graph/min-cycle',
         'contest/graph/2sat',
+        'contest/graph/bi-graph',
         'contest/graph/flow',
-        'contest/graph/bigraph-match',
       ],
     },
     {
