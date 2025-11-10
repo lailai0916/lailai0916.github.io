@@ -1,6 +1,6 @@
 # 常用模板
 
-本文是我的竞赛常用模板。
+本文是我在 OI 中的常用模板。
 
 ## 参考资料
 
@@ -306,6 +306,8 @@ int k=dist(gen);
 
 ### 矩阵
 
+详见 [矩阵](../math/linear-algebra/matrix)。
+
 ```cpp
 struct Mat
 {
@@ -502,10 +504,51 @@ struct SEG
 
 ### 平衡树（`__gnu_pbds::tree`）
 
+详见 [平衡树](../ds/bst)。
+
 ```cpp
 #include <bits/extc++.h>
 using namespace __gnu_pbds;
 __gnu_pbds::tree<pair<int,int>,null_type,less<pair<int,int>>,rb_tree_tag,tree_order_statistics_node_update> T;
+```
+
+## 图论
+
+### 树链剖分
+
+详见 [树链剖分](../graph/tree/hld)。
+
+```cpp
+vector<int> G[N];
+int fa[N],son[N],siz[N],dep[N];
+int top[N],dfn[N],rnk[N],out[N];
+int cnt=0;
+void dfs1(int u)
+{
+	siz[u]=1;
+	dep[u]=dep[fa[u]]+1;
+	for(auto v:G[u])
+	{
+		if(v==fa[u])continue;
+		fa[v]=u;
+		dfs1(v);
+		siz[u]+=siz[v];
+		if(siz[v]>siz[son[u]])son[u]=v;
+	}
+}
+void dfs2(int u,int t)
+{
+	top[u]=t;
+	dfn[u]=++cnt;
+	rnk[cnt]=u;
+	if(son[u])dfs2(son[u],t);
+	for(auto v:G[u])
+	{
+		if(v==fa[u]||v==son[u])continue;
+		dfs2(v,v);
+	}
+	out[u]=cnt;
+}
 ```
 
 ## 计算几何
