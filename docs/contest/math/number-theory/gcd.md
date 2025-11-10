@@ -5,7 +5,9 @@
 - [最大公约数 - OI Wiki](https://oi-wiki.org/math/number-theory/gcd/)
 - [扩展欧几里得算法 - 最大公约数 - OI Wiki](https://oi-wiki.org/math/number-theory/gcd/#扩展欧几里得算法)
 
-## 欧几里得算法（辗转相除法）
+## 欧几里得算法
+
+欧几里得算法（辗转相除法）可以求两个数 $a$ 和 $b$ 的最大公约数。
 
 $$
 \gcd{(a,b)}=\gcd{(b,a\bmod b)}
@@ -40,10 +42,12 @@ ll Gcd(ll a,ll b)
 </TabItem>
 </Tabs>
 
-## 扩展欧几里得（EXGCD）
+## 扩展欧几里得算法
+
+扩展欧几里得算法（Extended Euclidean algorithm，EXGCD），常用于求 $ax+by=\gcd(a,b)$ 的一组可行解。
 
 $$
-ax+by=\gcd{(a,b)}
+ax+by=\gcd(a,b)
 $$
 
 ```cpp
