@@ -340,3 +340,4 @@ Permute 3 是一款多媒体格式转换工具，支持视频、音频与图像�
 - GitHub Copilot：代码生成工具
 - Codex：OpenAI 的编码 Agent
 - Prettier：代码格式化插件
+- vscode-pdf：PDF 查看插件
