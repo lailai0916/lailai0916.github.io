@@ -10,11 +10,11 @@
 欧几里得算法（辗转相除法）可以求两个数 $a$ 和 $b$ 的最大公约数。
 
 $$
-\gcd{(a,b)}=\gcd{(b,a\bmod b)}
+\gcd(a,b)=\gcd(b,a\bmod b)
 $$
 
 <Tabs>
-<TabItem value="递归实现">
+<TabItem value="递归">
 
 ```cpp
 ll Gcd(ll a,ll b)
@@ -24,7 +24,7 @@ ll Gcd(ll a,ll b)
 ```
 
 </TabItem>
-<TabItem value="迭代实现">
+<TabItem value="迭代">
 
 ```cpp
 ll Gcd(ll a,ll b)
