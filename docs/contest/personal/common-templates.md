@@ -427,21 +427,21 @@ struct DSU
 ```cpp
 struct ST
 {
-	ll a[N][25];
+	int a[N][30];
 	void init(int n)
 	{
-		for(int j=1;j<=__lg(n);j++)
+		for(int i=1;i<=__lg(n);i++)
 		{
-			for(int i=1;i<=n-(1<<j)+1;i++)
+			for(int j=1;j<=n-(1<<i)+1;j++)
 			{
-				a[i][j]=max(a[i][j-1],a[i+(1<<(j-1))][j-1]);
+				a[i][j]=max(a[i-1][j],a[i-1][j+(1<<(i-1))]);
 			}
 		}
 	}
-	ll query(int l,int r)
+	int query(int l,int r)
 	{
 		int k=__lg(r-l+1);
-		return max(a[l][k],a[r-(1<<k)+1][k]);
+		return max(a[k][l],a[k][r-(1<<k)+1]);
 	}
 };
 ```
