@@ -4,6 +4,10 @@
 
 - [ST 表 - OI Wiki](https://oi-wiki.org/ds/sparse-table/)
 
+## 简介
+
+ST 表（Sparse Table，稀疏表）是用于解决 **可重复贡献问题** 的数据结构。
+
 ## 实现
 
 ```cpp
