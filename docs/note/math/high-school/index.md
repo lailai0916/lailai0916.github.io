@@ -2,6 +2,8 @@
 
 本章是我的高中数学笔记。
 
+包含较多 **数学公式** 和 **交互组件**，建议在电脑上查看。手机上可能显示异常，不建议打印。
+
 ![](/img/notbyai/Written-By-Humans-Not-By-AI-Badge-white.svg#gh-light-mode-only)![](/img/notbyai/Written-By-Humans-Not-By-AI-Badge-black.svg#gh-dark-mode-only)
 
 ## 参考资料
@@ -21,13 +23,7 @@
 
 写下这份笔记，就是想把自己的理解整理出来，希望能对你有所帮助。
 
-若有不明白的地方，欢迎随时找我交流。<Notation>**祝你好运！**</Notation>
-
-:::tip
-
-本章包含较多 **数学公式** 和 **交互组件**，建议在电脑上查看。手机上可能显示异常，不建议打印。
-
-:::
+如果有不明白的地方，欢迎随时找我交流。<Notation>**祝你好运！**</Notation>
 
 ## 教材
 
