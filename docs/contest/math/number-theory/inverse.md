@@ -68,6 +68,10 @@ void init()
 
 <Problem id="P5431" />
 
+### 洛谷 P2613 【模板】有理数取余
+
+<Problem id="P2613" />
+
 ### 洛谷 P1082 [NOIP 2012 提高组] 同余方程
 
 <Problem id="P1082" />
