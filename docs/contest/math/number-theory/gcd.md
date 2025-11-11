@@ -7,7 +7,7 @@
 
 ## 欧几里得算法
 
-欧几里得算法（辗转相除法）可以求两个数的 **最大公约数**（Greatest Common Divisor，GCD）。
+欧几里得算法（辗转相除法）可以求两个整数的 **最大公约数**（Greatest Common Divisor，GCD）。
 
 $$
 \gcd(a,b)=\gcd(b,a\bmod b)
