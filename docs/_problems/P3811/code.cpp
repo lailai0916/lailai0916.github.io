@@ -7,10 +7,9 @@ int mod;
 ll inv[N];
 void init()
 {
-	inv[1]=1;
-	for(int i=2;i<N;i++)
+	for(int i=1;i<N;i++)
 	{
-		inv[i]=(mod-mod/i)*inv[mod%i]%mod;
+		inv[i]=i==1?1:(mod-mod/i)*inv[mod%i]%mod;
 	}
 }
 int main()
