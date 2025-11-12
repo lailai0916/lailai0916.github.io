@@ -2072,7 +2072,7 @@
 - mood：n. 心情，情绪
 - mop：n. / v. 拖把拖地
 - moral：adj. 道德的n. 寓意，道德启示
-- more：more（much或的比较级）adj. / adv. 另外的；附加的；较多的再；另外；而且；更n. 更多的量；另外的一些
+- more：more（much或many的比较级）adj. / adv. 另外的；附加的；较多的再；另外；而且；更n. 更多的量；另外的一些
 - moreover：adv. 而且，再者，此外
 - morning：n. 早晨，上午
 - Mosquito：n. 蚊子
@@ -2425,7 +2425,7 @@
 - pin：n. 别针v. 别住，钉住
 - pine：n. 松树
 - pineapple：n. 菠萝
-- ping-pong：ping-n. 乒乓球
+- ping-pong：n. 乒乓球
 - pink：adj. 粉红色的
 - pint：n. （液量单位）品脱
 - pioneer：n. 先锋，开拓者

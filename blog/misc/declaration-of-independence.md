@@ -71,7 +71,7 @@ He has refused for a long time, after such dissolutions, to cause others to be e
 
 He has endeavoured to prevent the population of these States; for that purpose obstructing the Laws for Naturalization of Foreigners; refusing to pass others to encourage their migrations hither, and raising the conditions of new Appropriations of Lands.
 
-他竭力抑制各殖民地增加人囗，为此，他阻挠《外国人归化法律》的通过，拒绝批准其他鼓励外国人移居各邦的法律，并提高分配新土地的条件。
+他竭力抑制各殖民地增加人口，为此，他阻挠《外国人归化法律》的通过，拒绝批准其他鼓励外国人移居各邦的法律，并提高分配新土地的条件。
 
 He has obstructed the Administration of Justice by refusing his Assent to Laws for establishing Judiciary Powers.
 
