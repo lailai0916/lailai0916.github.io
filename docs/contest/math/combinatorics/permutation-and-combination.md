@@ -6,9 +6,7 @@
 - [卢卡斯定理 - OI Wiki](https://oi-wiki.org/math/number-theory/lucas/)
 - [组合数学 - 维基百科](https://zh.wikipedia.org/zh-cn/组合数学)
 
-## 实现
-
-### 线性逆元
+## 线性逆元
 
 $$
 i^{-1}\equiv-\left\lfloor\frac{p}{i}\right\rfloor(p\bmod i)^{-1}\pmod p
@@ -30,7 +28,7 @@ void init()
 }
 ```
 
-### 组合
+## 组合
 
 $$
 C_{n}^{m}=\frac{n!}{m!(n-m)!}
@@ -44,7 +42,7 @@ ll C(ll n,ll m)
 }
 ```
 
-### 排列
+## 排列
 
 $$
 A_{n}^{m}=\frac{n!}{(n-m)!}
@@ -58,7 +56,7 @@ ll A(ll n,ll m)
 }
 ```
 
-### 卢卡斯定理
+## 卢卡斯定理
 
 $$
 C_{n}^{m}=C_{m/p}^{n/p}\cdot C_{m\bmod p}^{n\bmod p}\pmod p
