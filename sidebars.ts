@@ -532,7 +532,7 @@ const sidebars: SidebarsConfig = {
         type: 'doc',
         id: 'note/recommend/index',
       },
-      items: ['note/recommend/bilibili'],
+      items: ['note/recommend/bilibili', 'note/recommend/software'],
     },
   ],
   sidebar3: [
@@ -628,7 +628,6 @@ const sidebars: SidebarsConfig = {
         'project/other/devices',
         'project/other/edc',
         'project/other/desk-setup',
-        'project/other/software',
       ],
     },
   ],

@@ -1,5 +1,7 @@
 # 软件
 
+推荐一些我使用过的软件，包括 iOS、macOS、Windows、Linux、Android、Web 等多个平台。
+
 ## 说明
 
 推荐一个正版软件商店 [数码荔枝](https://lizhi.shop)，我有很多软件都是在此购买的。
@@ -13,10 +15,6 @@
 3. ~~购买盗版软件。~~
 
 :::
-
-## 综合
-
-推荐一些我使用过的软件，包括 iOS、macOS、Windows、Linux、Android、Web 等多个平台。
 
 ### 订阅服务
 
