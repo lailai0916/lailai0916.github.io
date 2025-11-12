@@ -50,6 +50,21 @@ $$
 ax+by=\gcd(a,b)
 $$
 
+<Tabs>
+<TabItem value="元组">
+
+```cpp
+tuple<ll,ll,ll> exgcd(ll a,ll b)
+{
+	if(b==0)return {a,1,0};
+	auto [d,x,y]=exgcd(b,a%b);
+	return {d,y,x-(a/b)*y};
+}
+```
+
+</TabItem>
+<TabItem value="引用">
+
 ```cpp
 ll exgcd(ll a,ll b,ll &x,ll &y)
 {
@@ -59,6 +74,9 @@ ll exgcd(ll a,ll b,ll &x,ll &y)
 	return d;
 }
 ```
+
+</TabItem>
+</Tabs>
 
 ## 例题
 
