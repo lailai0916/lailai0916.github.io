@@ -14,11 +14,11 @@
 根据费马小定理（Fermat's Little Theorem）：
 
 $$
-\begin{aligned}
-  & aa^{-1}\equiv 1\pmod p \\
-  & aa^{-1}\equiv a^{p-1}\pmod p \\
-  & a^{-1}\equiv a^{p-2}\pmod p
-\end{aligned}
+aa^{p-2}=a^{p-1}\equiv 1\pmod p
+$$
+
+$$
+x=a^{p-2}
 $$
 
 快速幂：`Pow(a,mod-2)`。
