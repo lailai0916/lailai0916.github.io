@@ -57,8 +57,8 @@ $$
 tuple<ll,ll,ll> exgcd(ll a,ll b)
 {
 	if(b==0)return {a,1,0};
-	auto [d,x,y]=exgcd(b,a%b);
-	return {d,y,x-(a/b)*y};
+	auto [g,x,y]=exgcd(b,a%b);
+	return {g,y,x-(a/b)*y};
 }
 ```
 
@@ -69,9 +69,9 @@ tuple<ll,ll,ll> exgcd(ll a,ll b)
 ll exgcd(ll a,ll b,ll &x,ll &y)
 {
 	if(b==0){x=1;y=0;return a;}
-	ll d=exgcd(b,a%b,y,x);
+	ll g=exgcd(b,a%b,y,x);
 	y-=a/b*x;
-	return d;
+	return g;
 }
 ```
 
