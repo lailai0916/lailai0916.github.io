@@ -1447,7 +1447,7 @@
 - Germany：n. 德国
 - gesture：n. 姿势，手势
 - get：vt. 成为；得到；具有；到达
-- get-together：get-n. 聚会
+- get-together：n. 聚会
 - gift：n. 赠品；礼物
 - gifted：adj. 有天赋的；有才华的
 - giraffe：n. 长颈鹿
@@ -1662,7 +1662,7 @@
 
 - I：pron. 我
 - ice：n. 冰
-- ice-cream：ice-n. 冰淇淋
+- ice-cream：n. 冰淇淋
 - idea：n. 主意，想法；知道，了解
 - ideal：adj. 理想的，完满的；想像的，空想的
 - identity：n. 身份，特征
@@ -2152,7 +2152,7 @@
 - nice：adj. 令人愉快；好的漂亮的
 - niece：n. 侄女，甥女
 - night：n. 夜；夜间
-- night-club：night-n. 夜总会
+- night-club：n. 夜总会
 - nine：num. 九
 - nineteen：num. 十九
 - ninety：num. 九十
@@ -2349,7 +2349,7 @@
 - pass：vt. 传，递；经过；通过
 - passage：n. （文章等的）一节，一段；通道；走廊
 - passenger：n. 乘客，旅客
-- passer-by：passer-n. 过客，过路人
+- passer-by：n. 过客，过路人
 - passive：adj. 被动的
 - passport：n. 护照
 - past：adv. 过n. 过去，昔日，往事prep. 过…，走过某处
@@ -3328,12 +3328,12 @@
 - till：conj. & prep. 直到，直到…为止
 - time：n. 时间；时期；钟点，次，回vt. 测定…的时间，记录…的时间
 - timetable：n. （火车、公共汽车等）时间表；（学校）课表
-- tin：n. （英）罐头，听头
-- tiny：adj. tinier，adj. 极小的，微小的
+- tin：n. （英）罐头，听装
+- tiny：adj. 极小的，微小的；
 - tip：n. & v. 顶端，尖端；告诫；提示（给）小费
 - tire：vi. 使疲劳
 - tired：adj. 疲劳的，累的
-- tiresomev：adj. 令人厌倦的
+- tiresome：adj. 令人厌倦的
 - tissue：n. （人，动植物的）组织，纸巾
 - title：n. 标题，题目
 - to：prep. （动词不定式符号，无词义）；（表示接受动作的人或物）给；对，向，到；在…之前
@@ -3412,7 +3412,7 @@
 - trust：vt. 相信，信任，信赖
 - truth：n. 真理，事实，真相，实际
 - try：v. 试，试图，努力
-- T-shirt：T-n. T恤衫
+- T-shirt：n. T恤衫
 - tube：n. 管，管状物
 - tune：n. 曲调，曲子
 - tunnel：n. 隧道，地道
@@ -3547,7 +3547,7 @@
 - waist：n. 腰，腰部，腰围
 - wait：vi. 等，等候
 - waiter：n. （餐厅）男服务员
-- waiting：-n. 候诊室，候车室
+- waiting：n. 候诊室，候车室
 - waitress：n. 女服务员
 - wake：v. 醒来，叫醒
 - walk：n. & v. 步行；散步
