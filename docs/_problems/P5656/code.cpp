@@ -10,6 +10,8 @@ tuple<ll,ll,ll> exgcd(ll a,ll b)
 }
 int main()
 {
+	ios::sync_with_stdio(false);
+	cin.tie(nullptr);
 	int T;
 	cin>>T;
 	while(T--)
