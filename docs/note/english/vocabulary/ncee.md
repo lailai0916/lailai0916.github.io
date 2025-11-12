@@ -11,7 +11,7 @@
 - abnormal：adj. 反常的
 - aboard：prep. 上（船，飞机，火车，汽车等）
 - abolish：v. 废除，废止
-- abortion：v. 人工流产，堕胎
+- abortion：n. 人工流产，堕胎
 - about：adv. 大约；到处；四处prep. 关于；在各处；四处
 - above：prep. 在……上面adj. 上面的adv. 在……之上
 - abroad：adv. 到（在）国外
@@ -30,7 +30,7 @@
 - accent：n. 口音，音调
 - accept：vt. 接受
 - acceptable：adj. 可以接受的
-- access：n. / v. 接近（的机会），使用之权，通道、
+- access：n. / v. 接近（的机会），使用权，通道、入口
 - accessible：adj. 可得到的，易接近的，可进入的
 - accident：n. 事故，意外的事
 - accommodation：n. 住宿，膳宿
@@ -197,7 +197,7 @@
 - anything：pron. 什么事（物）；任何事（物）
 - anyway：adv. 不管怎样
 - anywhere：adv. 任何地方
-- apart：ad， / adj. 相隔，相距，除外
+- apart：adv. / adj. 相隔，相距，除外
 - apartment：n. （美）楼中单元房，一套房间；房间
 - apologize：vi. 道歉，谢罪
 - apology：n. 道歉；歉意
@@ -1019,7 +1019,7 @@
 - disturb：vt. 扰乱；打扰
 - disturbing：adj. 令人不安的，引起恐慌的
 - dive：vi. 跳水
-- diverse：v. 不同的，多种多样，形形色色的
+- diverse：adj. 不同的，多种多样，形形色色的
 - divide：vt. 分，划分
 - division：n. （算术用语）除
 - divorce：v. 离婚
@@ -1113,7 +1113,7 @@
 - element：n. 元素；成分
 - elephant：n. 象
 - else：adv. 别的，其他的
-- e-mail / e：e-mail / n. 电子邮件
+- e-mail：n. 电子邮件
 - embarrass：v. 使窘迫，尴尬
 - embassy：n. 大使馆
 - emergency：n. 紧急情况或状态
@@ -1407,7 +1407,7 @@
 - frontier：n. 前沿，边界；前线
 - frost：n. 霜
 - fruit：n. 水果；果实
-- fruitjuice：n. 果汁
+- fruit juice：n. 果汁
 - fry：vt. 用油煎；用油炸
 - fuel：n. 燃料
 - full：adj. 满的，充满的；完全的
@@ -1470,7 +1470,7 @@
 - goldfish：n. 金鱼
 - golf：n. 高尔夫球
 - good：adj. 好；良好
-- good-bye：good-int. 再见；再会
+- good-bye：int. 再见；再会
 - goodness：n. 善良，美德
 - goods：n. 商品，货物
 - goose：n. 鹅
