@@ -7,33 +7,31 @@
 
 ## 定义
 
-如果线性同余方程 $ax\equiv1\pmod b$，则 $x$ 称为 $a\bmod b$ 的逆元，记为 $a^{-1}$。
+如果线性同余方程 $ax\equiv 1\pmod p$，则 $x$ 称为 $a$ 在模 $p$ 意义下的 **逆元**（Inverse），记为 $x=a^{-1}$。
 
-## 费马小定理
+## 快速幂法
+
+根据费马小定理（Fermat's Little Theorem）：
 
 $$
 \begin{aligned}
-  & ii^{-1}\equiv 1 \pmod p \\
-  & ii^{-1}\equiv i^{p-1} \pmod p \\
-  & i^{-1}\equiv i^{p-2} \pmod p
+  & aa^{-1}\equiv 1\pmod p \\
+  & aa^{-1}\equiv a^{p-1}\pmod p \\
+  & a^{-1}\equiv a^{p-2}\pmod p
 \end{aligned}
 $$
 
-快速幂：`Pow(i,mod-2)`。
+快速幂：`Pow(a,mod-2)`。
 
-## 扩展欧几里得
+详见 [快速幂](./../binary-exponentiation)。
 
-如果 $ax\equiv1\pmod b$，说明 $\exists y$ 满足 $ax+by=1$。
+## 扩展欧几里得算法
 
-```cpp
-ll exgcd(ll a,ll b,ll &x,ll &y)
-{
-	if(b==0){x=1;y=0;return a;}
-	ll d=exgcd(b,a%b,y,x);
-	y-=a/b*x;
-	return d;
-}
-```
+如果 $ax\equiv 1\pmod p$，说明存在整数 $x,y$ 满足 $ax+py=1$。
+
+扩展欧几里得算法：`exgcd(a,mod,x,y);`。
+
+详见 [最大公约数](./gcd)。
 
 ## 线性逆元
 
