@@ -99,13 +99,13 @@
     "message": "本章介绍线性代数。",
     "description": "The generated-index page description for category '线性代数' in sidebar 'sidebar1'"
   },
-  "sidebar.sidebar1.category.数值算法": {
-    "message": "数值算法",
-    "description": "The label for category '数值算法' in sidebar 'sidebar1'"
+  "sidebar.sidebar1.category.数值分析": {
+    "message": "数值分析",
+    "description": "The label for category '数值分析' in sidebar 'sidebar1'"
   },
-  "sidebar.sidebar1.category.数值算法.link.generated-index.description": {
-    "message": "数值算法是指用计算机对数学问题进行近似数值计算的方法。",
-    "description": "The generated-index page description for category '数值算法' in sidebar 'sidebar1'"
+  "sidebar.sidebar1.category.数值分析.link.generated-index.description": {
+    "message": "数值分析是指用计算机对数学问题进行近似数值计算的方法。",
+    "description": "The generated-index page description for category '数值分析' in sidebar 'sidebar1'"
   },
   "sidebar.sidebar1.category.数据结构": {
     "message": "数据结构",

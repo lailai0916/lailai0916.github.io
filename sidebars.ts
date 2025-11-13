@@ -183,11 +183,11 @@ const sidebars: SidebarsConfig = {
         },
         {
           type: 'category',
-          label: '数值算法',
+          label: '数值分析',
           link: {
             type: 'generated-index',
             description:
-              '数值算法是指用计算机对数学问题进行近似数值计算的方法。',
+              '数值分析是指用计算机对数学问题进行近似数值计算的方法。',
           },
           items: [
             'contest/math/numerical/interp',
