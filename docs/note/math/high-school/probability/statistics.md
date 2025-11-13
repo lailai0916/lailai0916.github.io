@@ -115,8 +115,8 @@ $$
 $$
 \begin{aligned}
 D(a)&=E(a^2)-(Ea)^2\\
-&=\frac{nE(X^2)+mE(Y^2)}{n+m}-\left(\frac{nEX+mEY}{n+m}\right)^2\\
-&=\frac{nD(x)+mD(Y)}{n+m}+\frac{nm(EX-EY)^2}{(n+m)^2}
+&=\frac{nE(X^2)+mE(Y^2)}{n+m}-\left(\frac{nE(X)+mE(Y)}{n+m}\right)^2\\
+&=\frac{nD(X)+mD(Y)}{n+m}+\frac{nm(EX-EY)^2}{(n+m)^2}
 \end{aligned}
 $$
 
