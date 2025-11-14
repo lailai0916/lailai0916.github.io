@@ -20,7 +20,7 @@ export const FRIEND_LIST: FriendItem[] = [
     title: 'Sintle',
     description: 'Code, Learn, Share',
     href: 'https://sintle.github.io',
-    avatar: 'https://github.com/sintle.png',
+    avatar: 'https://q1.qlogo.cn/g?b=qq&nk=3545418095&s=640',
   },
   {
     title: 'YunLuo',
@@ -79,7 +79,13 @@ export const FRIEND_LIST: FriendItem[] = [
   {
     title: 'Castamere',
     description: '代码美学',
-    href: 'https://www.castamerego.com/',
+    href: 'https://www.castamerego.com',
     avatar: 'https://github.com/Casta-mere.png',
+  },
+  {
+    title: 'Jasonshan10',
+    description: '',
+    href: 'https://www.cnblogs.com/Jasonshan10',
+    avatar: 'https://q1.qlogo.cn/g?b=qq&nk=342200890&s=640',
   },
 ];
