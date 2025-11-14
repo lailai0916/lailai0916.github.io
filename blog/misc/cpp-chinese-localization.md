@@ -189,7 +189,7 @@ tags: [misc]
 #define 亿 *100000000
 ```
 
-## 其他
+## 杂项
 
 ```cpp
 #define 主函数 main
