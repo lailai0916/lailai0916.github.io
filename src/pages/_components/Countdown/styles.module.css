@@ -13,6 +13,14 @@
   display: flex;
 }
 
+.progressCircle {
+  transition: stroke-dasharray 0.4s ease-out;
+}
+
+.progressDot {
+  transition: cx 0.4s ease-out, cy 0.4s ease-out;
+}
+
 .pxanchor {
   position: absolute;
   top: 50%;

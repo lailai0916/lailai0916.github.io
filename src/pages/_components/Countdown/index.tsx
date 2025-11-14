@@ -87,12 +87,14 @@ function ProgressCircle({
           pathLength={1}
           strokeDasharray={`${progress} ${1 - progress}`}
           strokeDashoffset={0}
+          className={styles.progressCircle}
         />
         <circle
           cx={SVG_CONFIG.size / 2 + dotX}
           cy={SVG_CONFIG.size / 2 + dotY}
           r={SVG_CONFIG.dotSize / 2}
           fill="var(--ifm-color-primary)"
+          className={styles.progressDot}
         />
       </svg>
       <div className={styles.pxanchor}>
