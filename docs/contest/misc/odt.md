@@ -1,12 +1,16 @@
-# 珂朵莉树（ODT）
-
-把值相同的区间合并成一个结点保存在 `set` 里面。
+# 珂朵莉树
 
 ## 参考资料
 
 - [珂朵莉树/颜色段均摊 - OI Wiki](https://oi-wiki.org/misc/odt/)
 - [珂朵莉树的复杂度分析 - 知乎](https://zhuanlan.zhihu.com/p/102786071)
 - [【信竞】珂朵莉树（推平树）数据结构全网最详细食用指南！！！ - bilibili](https://www.bilibili.com/video/BV18u411N7P8)
+
+## 简介
+
+珂朵莉树（Chtholly Tree），又名老司机树（Old Driver Tree，ODT），起源于 [CF896C](https://codeforces.com/problemset/problem/896/C)。
+
+核心思想是将值相同的区间合并为一个结点保存在 `set` 中。
 
 ## 实现
 
