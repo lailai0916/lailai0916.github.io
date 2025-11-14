@@ -592,6 +592,11 @@ const sidebars: SidebarsConfig = {
       items: [
         {
           type: 'category',
+          label: '艺术',
+          items: ['project/desmos/art/iclock'],
+        },
+        {
+          type: 'category',
           label: '图形',
           items: [
             'project/desmos/calculator/france-flag',
@@ -609,11 +614,6 @@ const sidebars: SidebarsConfig = {
             'project/desmos/geometry/apple-logo',
             'project/desmos/geometry/china-flag',
           ],
-        },
-        {
-          type: 'category',
-          label: '艺术博览会',
-          items: ['project/desmos/art-expo/iclock'],
         },
       ],
     },
