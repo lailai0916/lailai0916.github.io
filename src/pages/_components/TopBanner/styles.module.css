@@ -32,6 +32,7 @@
 }
 
 .topBannerTitleText {
+  /* background: linear-gradient(to right, #0090f7, #ba62fc, #f2416b); */
   background: linear-gradient(
     108deg,
     #0894ff,
