@@ -1,8 +1,12 @@
-# 最近公共祖先（LCA）
+# 最近公共祖先
 
 ## 参考资料
 
 - [最近公共祖先 - OI Wiki](https://oi-wiki.org/graph/lca/)
+
+## 简介
+
+两个节点的最近公共祖先（Lowest Common Ancestor，LCA）指两个点的公共祖先中距离根节点最远的点。
 
 ## 倍增
 
