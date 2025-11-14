@@ -5,12 +5,13 @@ import { translate } from '@docusaurus/Translate';
 import useIsBrowser from '@docusaurus/useIsBrowser';
 import styles from './styles.module.css';
 
-const TARGET_DATE = '2026-01-01T00:00:00';
+const DATE = '2026-01-01T00:00:00';
 const EVENT = translate({ id: 'home.countdown.event', message: '2026' });
 const FINAL = translate({
   id: 'home.countdown.final',
   message: 'Happy New Year!',
 });
+
 const TITLE = translate({ id: 'home.countdown.title', message: 'Countdown' });
 const DESCRIPTION = translate(
   { id: 'home.countdown.description', message: 'Time left until {event}' },
@@ -122,7 +123,7 @@ const INITIAL_STATE: CountdownState = {
 };
 
 function calculateTimeLeft(): CountdownState {
-  const distance = new Date(TARGET_DATE).getTime() - Date.now();
+  const distance = new Date(DATE).getTime() - Date.now();
 
   return {
     days: Math.floor(distance / (24 * 60 * 60 * 1000)),
