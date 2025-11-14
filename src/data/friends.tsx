@@ -55,7 +55,7 @@ export const FRIEND_LIST: FriendItem[] = [
   {
     title: 'Dream__maker',
     description: '一息尚存，方能涅槃而生',
-    href: 'https://www.luogu.com.cn/user/718017',
+    href: 'https://www.cnblogs.com/jdzhzw',
     avatar: 'https://cdn.luogu.com.cn/upload/usericon/718017.png',
   },
   {
