@@ -88,4 +88,10 @@ export const FRIEND_LIST: FriendItem[] = [
     href: 'https://www.cnblogs.com/Jasonshan10',
     avatar: 'https://q1.qlogo.cn/g?b=qq&nk=342200890&s=640',
   },
+  {
+    title: 'SJZ2010',
+    description: '初心不改，求索依然。',
+    href: 'https://www.cnblogs.com/decimal10',
+    avatar: 'https://cdn.luogu.com.cn/upload/usericon/809729.png',
+  },
 ];
