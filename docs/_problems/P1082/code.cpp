@@ -6,7 +6,7 @@ tuple<ll,ll,ll> exgcd(ll a,ll b)
 {
 	if(b==0)return {a,1,0};
 	auto [g,x,y]=exgcd(b,a%b);
-	return {g,y,x-(a/b)*y};
+	return {g,y,x-a/b*y};
 }
 int main()
 {
