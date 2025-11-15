@@ -373,7 +373,7 @@ export const RESOURCE_LIST: ResourceCategoryItem[] = [
       },
       {
         title: 'OIerDb',
-        href: 'https://oierdb.com',
+        href: 'https://oier.baoshuo.dev',
         description: '信息学竞赛记录库',
       },
       {
