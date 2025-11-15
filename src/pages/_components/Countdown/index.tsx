@@ -134,21 +134,6 @@ function calculateTimeLeft(): CountdownState {
   };
 }
 
-function CountdownContent({ timeLeft }: { timeLeft: CountdownState }) {
-  return (
-    <div className={styles.countdownLayout}>
-      {TIME_UNITS.map(({ key, total, label }) => (
-        <ProgressCircle
-          key={key}
-          total={total}
-          value={timeLeft[key]}
-          unitText={label}
-        />
-      ))}
-    </div>
-  );
-}
-
 export default function Countdown() {
   const isBrowser = useIsBrowser();
   const [state, setState] = useState<CountdownState>(INITIAL_STATE);
@@ -198,7 +183,18 @@ export default function Countdown() {
         title={state.isTimeUp ? EVENT : TITLE}
         description={state.isTimeUp ? FINAL : DESCRIPTION}
       />
-      {!state.isTimeUp && <CountdownContent timeLeft={state} />}
+      {!state.isTimeUp && (
+        <div className={styles.countdownLayout}>
+          {TIME_UNITS.map(({ key, total, label }) => (
+            <ProgressCircle
+              key={key}
+              total={total}
+              value={state[key]}
+              unitText={label}
+            />
+          ))}
+        </div>
+      )}
     </SectionContainer>
   );
 }
