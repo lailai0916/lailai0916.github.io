@@ -22,7 +22,8 @@ int main()
 	queue<int> q;
 	for(int i=1;i<=n;i++)
 	{
-		if(!in[i])q.push(i);
+		if(in[i])continue;
+		q.push(i);
 	}
 	while(!q.empty())
 	{
@@ -31,8 +32,8 @@ int main()
 		cout<<u<<' ';
 		for(auto v:G[u])
 		{
-			in[v]--;
-			if(!in[v])q.push(v);
+			if(--in[v])continue;
+			q.push(v);
 		}
 	}
 	return 0;
