@@ -14,7 +14,7 @@ void dijkstra(int s)
 	while(!q.empty())
 	{
 		int u=q.top().second;
-		q.pop(); 
+		q.pop();
 		if(vis[u])continue;
 		vis[u]=1;
 		for(auto [v,w]:G[u])
