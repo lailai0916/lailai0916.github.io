@@ -756,6 +756,11 @@ export const RESOURCE_LIST: ResourceCategoryItem[] = [
         href: 'https://kiomet.com',
         description: '在线实时战略游戏',
       },
+      {
+        title: 'LINKR',
+        href: 'https://www.playlinkr.net',
+        description: '每日连线游戏挑战',
+      },
     ],
   },
   {
