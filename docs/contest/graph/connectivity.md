@@ -5,6 +5,7 @@
 - [强连通分量 - OI Wiki](https://oi-wiki.org/graph/scc/)
 - [双连通分量 - OI Wiki](https://oi-wiki.org/graph/bcc/)
 - [割点和桥 - OI Wiki](https://oi-wiki.org/graph/cut/)
+- [2-SAT - OI Wiki](https://oi-wiki.org/graph/2-sat/)
 
 ## 强连通分量（SCC）
 
@@ -191,6 +192,12 @@ int main()
 }
 ```
 
+## 2-SAT
+
+SAT 是适定性（Satisfiability）问题的简称。一般形式为 k - 适定性问题，简称 k-SAT。而当 $k>2$ 时该问题为 NP 完全的。所以我们只研究 $k=2$ 的情况。
+
+2-SAT，简单的说就是给出 $n$ 个布尔方程，每个方程和两个变量相关，如 $a\vee b$，表示变量 $a, b$ 至少满足一个。然后判断是否存在可行方案，显然可能有多种选择方案，一般题中只需要求出一种即可。另外，$\neg a$ 表示 $a$ 取反。
+
 ## 例题
 
 ### 洛谷 P2341 [USACO03FALL / HAOI2006] 受欢迎的牛 G
@@ -212,3 +219,7 @@ int main()
 ### 洛谷 P3388 【模板】割点（割顶）
 
 <Problem id="P3388" />
+
+### 洛谷 P4782 【模板】2-SAT
+
+<Problem id="P4782" />
