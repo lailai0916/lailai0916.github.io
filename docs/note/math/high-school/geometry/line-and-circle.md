@@ -209,7 +209,7 @@ $$
 $$
 \begin{aligned}
   \rho^2 &= x^2 + y^2\\
-  \tan \varphi &= \frac{y}{x}(x\not =0)
+  \tan \varphi &= \frac{y}{x}(x\nq 0)
 \end{aligned}
 $$
 
