@@ -7,7 +7,7 @@ int main()
 	while(l<r)
 	{
 		int mid=l+r>>1;
-		cout<<mid<<'\n'<<flush;
+		cout<<mid<<endl;
 		int t;
 		cin>>t;
 		if(t==0)break;
