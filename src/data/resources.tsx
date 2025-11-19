@@ -88,9 +88,9 @@ export const RESOURCE_LIST: ResourceCategoryItem[] = [
         description: 'Google 前沿 AI 研究',
       },
       {
-        title: 'Google AI',
-        href: 'https://ai.google',
-        description: 'Google AI 研究项目',
+        title: 'Google AI Studio',
+        href: 'https://aistudio.google.com',
+        description: 'Google AI 开发平台',
       },
       {
         title: 'Meta AI',
