@@ -30,7 +30,9 @@ $n$ 代表数据的规模，$m$ 代表数据的极差，$k$ 代表数值的数�
 
 ### 时间复杂度
 
-任何基于比较的排序算法，其最坏情况下的时间复杂度至少为 $\Omega(n\log n)$，因为 $\log_2{(n!)}=\Theta(n\log n)$。（[证明](https://en.wikipedia.org/wiki/Comparison_sort)）
+基于 **比较** 的排序算法的最坏时间复杂度下限为 $\Omega(n\log n)$，因为 $\log_2(n!)=\Theta(n\log n)$。
+
+详见 [Comparison sort - Wikipedia](https://en.wikipedia.org/wiki/Comparison_sort)。
 
 ![](https://oi-wiki.org/basic/images/sort-intro-1.apng)
 
