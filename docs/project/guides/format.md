@@ -1,5 +1,7 @@
 # 格式指南
 
+本文是我的文章排版格式指南。
+
 ## 参考资料
 
 - [格式手册 - OI Wiki](https://oi-wiki.org/intro/format/)
@@ -9,3 +11,5 @@
 - [中文文案排版指北（简体中文版） - 码志](https://mazhuang.org/wiki/chinese-copywriting-guidelines/)
 - [中文文案风格指南 - PDFE GUIDELINE](https://pdfe.github.io/GUIDELINE/#/others/copywriter)
 - [一份（不太）简短的 LaTeX2ε 介绍 - CTeX-org/lshort-zh-cn - GitHub](https://github.com/CTeX-org/lshort-zh-cn)
+
+## 空格
