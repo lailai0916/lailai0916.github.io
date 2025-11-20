@@ -12,4 +12,13 @@
 - [中文文案风格指南 - PDFE GUIDELINE](https://pdfe.github.io/GUIDELINE/#/others/copywriter)
 - [一份（不太）简短的 LaTeX2ε 介绍 - CTeX-org/lshort-zh-cn - GitHub](https://github.com/CTeX-org/lshort-zh-cn)
 
+## 文件
+
+- 文件名使用小写字母和数字，避免使用中文或拼音。
+- 文件名使用 `-` 连接，避免使用 `_`。
+
+> text-format.md
+
+- 文件必须以一个空行结束。
+
 ## 空格
