@@ -195,6 +195,9 @@ cout.flush();
 
 详见 [二分](../basic/binary)。
 
+<Tabs>
+<TabItem value="整数">
+
 ```cpp
 int l=x,r=y+1;
 while(l<r)
@@ -204,6 +207,22 @@ while(l<r)
 	else l=mid+1;
 }
 ```
+
+</TabItem>
+<TabItem value="实数">
+
+```cpp
+double l=x,r=y;
+while(r-l>eps)
+{
+	double mid=(l+r)/2;
+	if(check(mid))r=mid;
+	else l=mid;
+}
+```
+
+</TabItem>
+</Tabs>
 
 ## 字符串
 
