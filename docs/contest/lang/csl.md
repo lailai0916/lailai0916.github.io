@@ -29,12 +29,12 @@
 
 > The “ueue” in “queue” is silent — but not in “deque.”
 
-##### 访问
+访问：
 
 - `front()` 返回队首元素
 - `back()` 返回队尾元素
 
-##### 修改
+修改：
 
 - `push_back()` 将元素添加到容器末尾
 - `pop_back()` 移除末元素
@@ -44,7 +44,7 @@
 - `insert()` 在指定位置前插入元素（传入迭代器和元素，$O(n)$）
 - `erase()` 擦除指定位置的元素（传入迭代器，$O(n)$）
 
-##### 容量
+容量：
 
 - `empty()` 检查容器是否为空
 - `size()` 返回元素数
@@ -99,16 +99,16 @@
 
 - [`std::stack`](https://en.cppreference.com/w/cpp/container/stack.html)
 
-##### 访问
+访问：
 
 - `top()` 访问栈顶元素
 
-##### 修改
+修改：
 
 - `push()` 向栈顶插入元素
 - `pop()` 移除栈顶元素
 
-##### 容器
+容器：
 
 - `empty()` 检查容器适配器是否为空
 - `size()` 返回元素数
@@ -117,17 +117,17 @@
 
 - [`std::queue`](https://en.cppreference.com/w/cpp/container/queue.html)
 
-##### 访问
+访问：
 
 - `front()` 访问第一个元素
 - `back()` 访问最后一个元素
 
-##### 修改
+修改：
 
 - `push()` 向队列尾部插入元素
 - `pop()` 移除首个元素
 
-##### 容器
+容器：
 
 - `empty()` 检查容器适配器是否为空
 - `size()` 返回元素数
