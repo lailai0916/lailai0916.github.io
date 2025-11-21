@@ -42,7 +42,7 @@
 
 :::
 
-### 例题（洛谷 P1001 A+B Problem）
+### 洛谷 P1001 A+B Problem
 
 <Problem id="P1001" />
 

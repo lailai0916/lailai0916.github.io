@@ -84,13 +84,13 @@ $$
 ### 求和
 
 ```latex
-\sum_{i=1}^{n} a_i
+\sum_{i=1}^{n}a_i
 ```
 
 <BrowserWindow>
 
 $$
-\sum_{i=1}^{n} a_i
+\sum_{i=1}^{n}a_i
 $$
 
 </BrowserWindow>
@@ -98,13 +98,13 @@ $$
 ### 求积
 
 ```latex
-\prod_{i=1}^{n} a_i
+\prod_{i=1}^{n}a_i
 ```
 
 <BrowserWindow>
 
 $$
-\prod_{i=1}^{n} a_i
+\prod_{i=1}^{n}a_i
 $$
 
 </BrowserWindow>
@@ -112,13 +112,13 @@ $$
 ### 积分
 
 ```latex
-\int_{a}^{b} f(x) \mathrm{d}x
+\int_{a}^{b}f(x)\mathrm{d}x
 ```
 
 <BrowserWindow>
 
 $$
-\int_{a}^{b} f(x) \mathrm{d}x
+\int_{a}^{b}f(x)\mathrm{d}x
 $$
 
 </BrowserWindow>
@@ -126,13 +126,13 @@ $$
 ### 极限
 
 ```latex
-\lim_{x\to\infty} f(x)
+\lim_{x\to\infty}f(x)
 ```
 
 <BrowserWindow>
 
 $$
-\lim_{x\to\infty} f(x)
+\lim_{x\to\infty}f(x)
 $$
 
 </BrowserWindow>
@@ -189,9 +189,9 @@ $$
 
 ```latex
 \begin{cases}
-  a_1x + b_1y + c_1z = d_1 \\
-  a_2x + b_2y + c_2z = d_2 \\
-  a_3x + b_3y + c_3z = d_3
+  a_1x+b_1y+c_1z=d_1 \\
+  a_2x+b_2y+c_2z=d_2 \\
+  a_3x+b_3y+c_3z=d_3
 \end{cases}
 ```
 
@@ -199,9 +199,9 @@ $$
 
 $$
 \begin{cases}
-  a_1x + b_1y + c_1z = d_1 \\
-  a_2x + b_2y + c_2z = d_2 \\
-  a_3x + b_3y + c_3z = d_3
+  a_1x+b_1y+c_1z=d_1 \\
+  a_2x+b_2y+c_2z=d_2 \\
+  a_3x+b_3y+c_3z=d_3
 \end{cases}
 $$
 
@@ -211,9 +211,9 @@ $$
 
 ```latex
 \begin{array}{l}
-  \cos \pi = 1 \\
-  \sin^2 a + \cos^2 a = 1 \\
-  \sin 2a = 2 \sin a \cos a
+  \cos\pi=1 \\
+  \sin^2a+\cos^2a=1 \\
+  \sin2a=2\sin a\cos a
 \end{array}
 ```
 
@@ -221,9 +221,9 @@ $$
 
 $$
 \begin{array}{l}
-  \cos \pi = 1 \\
-  \sin^2 a + \cos^2 a = 1 \\
-  \sin 2a = 2 \sin a \cos a
+  \cos\pi=1 \\
+  \sin^2a+\cos^2a=1 \\
+  \sin2a=2\sin a\cos a
 \end{array}
 $$
 
@@ -324,13 +324,13 @@ $$
 #### 自定义运算符
 
 ```latex
-\operatorname{lca}{(6,8)}=24
+\operatorname{lca}(6,8)=24
 ```
 
 <BrowserWindow>
 
 $$
-\operatorname{lca}{(6,8)}=24
+\operatorname{lca}(6,8)=24
 $$
 
 </BrowserWindow>
@@ -338,13 +338,13 @@ $$
 ### 编号
 
 ```latex
-\tag{1} (a+b)^2=a^2+2ab+b^2
+\tag{1}(a+b)^2=a^2+2ab+b^2
 ```
 
 <BrowserWindow>
 
 $$
-\tag{1} (a+b)^2=a^2+2ab+b^2
+\tag{1}(a+b)^2=a^2+2ab+b^2
 $$
 
 </BrowserWindow>
