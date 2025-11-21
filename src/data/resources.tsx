@@ -302,7 +302,7 @@ export const RESOURCE_LIST: ResourceCategoryItem[] = [
       {
         title: 'Overleaf',
         href: 'https://www.overleaf.com',
-        description: '在线LaTeX编辑器',
+        description: '在线 LaTeX 编辑器',
       },
     ],
   },

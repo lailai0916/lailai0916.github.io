@@ -188,7 +188,7 @@ $$
 z_1z_2=(a+bi)(c+di)=ac+adi+bci+bdi^2=(ac-bd)+(ad+bc)i
 $$
 
-在几何上，复数乘法遵循 **模长相乘**、**辐角相加**。
+在几何上，复数乘法遵循 **模长相乘、辐角相加**。
 
 $$
 r_1(\cos\theta_{1}+i\sin\theta_{1})\cdot r_2(\cos\theta_{2}+i\sin\theta_{2})=r_1r_2[\cos(\theta_{1}+\theta_{2})+i\sin(\theta_{1}+\theta_{2})]
@@ -210,7 +210,7 @@ $$
 \frac{(a+bi)(c-di)}{(c+di)(c-di)}=\frac{(a+bi)(c-di)}{c^2+d^2}=\frac{ac+bd}{c^2+d^2}+\frac{bc-ad}{c^2+d^2}i
 $$
 
-在几何上，复数除法遵循 **模长相除**、**辐角相减**。
+在几何上，复数除法遵循 **模长相除、辐角相减**。
 
 $$
 \frac{r_1(\cos\theta_{1}+i\sin\theta_{1})}{r_2(\cos\theta_{2}+i\sin\theta_{2})}=\frac{r_1}{r_2}[\cos(\theta_{1}+\theta_{2})+i\sin(\theta_{1}+\theta_{2})]
