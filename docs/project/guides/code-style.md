@@ -32,9 +32,14 @@
 bool operator<(const Node &rhs) const
 ```
 
-### 缩进 & 大括号
+## 结构
 
-- 使用 <kbd>Tab</kbd> 缩进。
+### 缩进
+
+- C++ 代码应使用 <kbd>Tab</kbd> 缩进。
+
+### 大括号
+
 - 大括号通常单独成行，简短语句可写在同一行或省略大括号。
 
 ```cpp
@@ -45,8 +50,6 @@ for(int i=1;i<=n;i++)
 if(x<=l&&r<=y){gx(u,v,r-l+1);return;}
 if(n%i==0)return 0;
 ```
-
-## 文件结构
 
 ### 头文件
 
@@ -101,7 +104,7 @@ using Comp=complex<double>;
 const int N=100005;
 ```
 
-## 主体结构
+## 主体
 
 ### 主函数
 
