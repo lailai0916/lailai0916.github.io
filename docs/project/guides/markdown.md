@@ -8,6 +8,7 @@
 - [Markdown - 维基百科](https://zh.wikipedia.org/zh-cn/Markdown)
 - [Markdown 书写风格指南](http://einverne.github.io/markdown-style-guide/zh.html)
 - [洛谷 Markdown 格式手册 | 洛谷帮助中心](https://help.luogu.com.cn/rules/academic/handbook/markdown)
+- [Markdown style guide - google/styleguide - GitHub](https://github.com/google/styleguide/blob/3591b2e540cbcb07423e02d20eee482165776603/docguide/style.md)
 
 ## 简介
 
