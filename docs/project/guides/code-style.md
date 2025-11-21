@@ -37,6 +37,7 @@ bool operator<(const Node &rhs) const
 ### 缩进
 
 - C++ 代码应使用 <kbd>Tab</kbd> 缩进。
+- 空行不应有缩进。
 
 ### 大括号
 
