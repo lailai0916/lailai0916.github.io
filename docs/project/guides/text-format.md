@@ -2,11 +2,14 @@
 
 本文为我的中文文本格式指南。
 
+> 不以规矩，不成方圆。
+
 ## 参考资料
 
 - [格式手册 - OI Wiki](https://oi-wiki.org/intro/format/)
 - [标点符号用法（GB/T 15834—2011）](http://www.moe.gov.cn/jyb_sjzl/ziliao/A19/201001/W020190128580990138234.pdf)
 - [中文出版物夹用英文的编辑规范（CY/T 154-2017）](https://www.nppa.gov.cn/xxgk/fdzdgknr/hybz/202210/P020221004608768453140.pdf)
+- [精品工具书数据库 - 商务印书馆](https://bjzs.vdict.com.cn/SY)
 - [维基百科:格式手册/标点符号 - 维基百科](https://zh.wikipedia.org/zh-cn/Wikipedia:格式手册/标点符号)
 - [中文文案排版指北（简体中文版） - 码志](https://mazhuang.org/wiki/chinese-copywriting-guidelines/)
 - [中文文案风格指南 - PDFE GUIDELINE](https://pdfe.github.io/GUIDELINE/#/others/copywriter)
@@ -40,8 +43,8 @@
 
 ### 全角 & 半角
 
-- 使用全角中文标点。
-- 数字使用半角字符。
+- 应使用全角中文标点。
+- 数字应使用半角字符。
 - 不重复使用标点符号。
 
 ### 用法
