@@ -1,16 +1,22 @@
 # LaTeX 指南
 
+本文为 LaTeX 使用指南，仅说明语法规则，不包含格式与排版建议。
+
 ## 参考资料
 
-- [Supported Functions - KaTeX](https://katex.org/docs/supported.html)
+- [LaTeX - A document preparation system](https://www.latex-project.org)
+- [KaTeX – The fastest math typesetting library for the web](https://katex.org)
+- [TeX - 维基百科](https://zh.wikipedia.org/zh-cn/TeX)
+- [LaTeX - 维基百科](https://zh.wikipedia.org/wiki/LaTeX)
+- [KaTeX - 维基百科](https://zh.wikipedia.org/wiki/KaTeX)
 - [LaTeX 数学公式大全 - 洛谷专栏](https://www.luogu.com.cn/article/1gxob6zc)
 - [常用数学符号 - Baoshuo's OI Blog](https://oi.baoshuo.ren/math-formulas/)
 
 ## 简介
 
-[$\LaTeX$](https://zh.wikipedia.org/zh-cn/LaTeX) 是一种基于 [$\TeX$](https://zh.wikipedia.org/zh-cn/TeX) 的排版系统，用于编写包含数学公式的文档。
+$\LaTeX$ 是一种基于 $\TeX$ 的排版系统，用于编写包含数学公式的文档。
 
-[$\KaTeX$](https://zh.wikipedia.org/wiki/KaTeX) 是一个在浏览器中运行的 JavaScript 数学公式渲染库，可以在网页上渲染使用 $\LaTeX$ 语法编写的数学公式。
+$\KaTeX$ 是一个在浏览器中运行的 JavaScript 数学公式渲染库，可以在网页上渲染使用 $\LaTeX$ 语法编写的数学公式。
 
 推荐两个我常用的 LaTeX 排版网站 [Overleaf](https://www.overleaf.com) 和 [在线 LaTeX 公式编辑器](https://www.latexlive.com)。
 
