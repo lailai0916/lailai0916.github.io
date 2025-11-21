@@ -1,18 +1,18 @@
 # LaTeX 指南
 
-[$\LaTeX$](https://zh.wikipedia.org/zh-cn/LaTeX) 是一种基于 [$\TeX$](https://zh.wikipedia.org/zh-cn/TeX) 的排版系统，用于编写包含数学公式的文档。
-
-[$\KaTeX$](https://zh.wikipedia.org/wiki/KaTeX) 是一个在浏览器中运行的 JavaScript 数学公式渲染库，可以在网页上渲染使用 $\LaTeX$ 语法编写的数学公式。
-
 ## 参考资料
 
 - [Supported Functions - KaTeX](https://katex.org/docs/supported.html)
 - [LaTeX 数学公式大全 - 洛谷专栏](https://www.luogu.com.cn/article/1gxob6zc)
 - [常用数学符号 - Baoshuo's OI Blog](https://oi.baoshuo.ren/math-formulas/)
 
-## 推荐资源
+## 简介
 
-- [在线 LaTeX 公式编辑器](https://www.latexlive.com)
+[$\LaTeX$](https://zh.wikipedia.org/zh-cn/LaTeX) 是一种基于 [$\TeX$](https://zh.wikipedia.org/zh-cn/TeX) 的排版系统，用于编写包含数学公式的文档。
+
+[$\KaTeX$](https://zh.wikipedia.org/wiki/KaTeX) 是一个在浏览器中运行的 JavaScript 数学公式渲染库，可以在网页上渲染使用 $\LaTeX$ 语法编写的数学公式。
+
+推荐两个我常用的 LaTeX 排版网站 [Overleaf](https://www.overleaf.com) 和 [在线 LaTeX 公式编辑器](https://www.latexlive.com)。
 
 ## 公式类型
 
