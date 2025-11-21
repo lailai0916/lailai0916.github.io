@@ -17,45 +17,67 @@ Markdown 文档以纯文本格式存储，这意味着，它们可以用几乎�
 
 推荐一个我常用的 Markdown 排版软件 [Typora](https://typora.io)。
 
-## 段落和换行
+## 段落
 
-一个 Markdown 段落是由一个或多个连续的文本行组成，它的前后要有一个以上的空行。
-
-## 标题
-
-使用 `#` 号来表示标题。一个 `#` 表示一级标题，两个 `#` 表示二级标题，依此类推。
+一个 **段落** 是由一个或多个连续的 **文本行** 组成，它的前后要有至少一个的 **空行**。
 
 ```markdown
-# 一级标题
+第一段话
+第一句话
+第二句话
 
-## 二级标题
-
-### 三级标题
-
-#### 四级标题
-
-##### 五级标题
-
-###### 六级标题
-
-普通文本
+第二段话
+第三句话
+第四句话
 ```
 
 <BrowserWindow>
 
-<h1>一级标题</h1>
+第一段话
+第一句话
+第二句话
 
-<h2>二级标题</h2>
+第二段话
+第三句话
+第四句话
 
-<h3>三级标题</h3>
+</BrowserWindow>
 
-<h4>四级标题</h4>
+## 标题
 
-<h5>五级标题</h5>
+使用井号（`#`）表示 **标题**，$1\sim 6$ 个井号（`#`）分别对应 $1\sim 6$ 级标题。
 
-<h6>六级标题</h6>
+```markdown
+# 一级标题示例
 
-普通文本
+## 二级标题示例
+
+### 三级标题示例
+
+#### 四级标题示例
+
+##### 五级标题示例
+
+###### 六级标题示例
+
+普通文本示例
+```
+
+<BrowserWindow>
+
+<h1>一级标题示例</h1>
+
+<h2>二级标题示例</h2>
+
+<h3>三级标题示例</h3>
+
+<h4>四级标题示例</h4>
+
+<h5>五级标题示例</h5>
+
+<h6>六级标题示例</h6>
+
+普通文本示例
 
 </BrowserWindow>
 
@@ -63,165 +85,73 @@ Markdown 文档以纯文本格式存储，这意味着，它们可以用几乎�
 
 ### 加粗
 
-使用 `**` 或 `__` 包围文字来表示加粗。
+使用 **两个星号**（`**`）或 **下划线**（`__`）包围文字表示 **加粗**。
 
 ```markdown
-**双星号加粗**
-
-<!-- or -->
-
-**双下划线加粗**
+这是一个 **加粗** 示例。
 ```
 
 <BrowserWindow>
 
-**双星号加粗**
-
-<!-- or -->
-
-**双下划线加粗**
+这是一个 **加粗** 示例。
 
 </BrowserWindow>
 
 ### 斜体
 
-使用 `*` 或 `_` 包围文字来表示斜体。
+使用 **一个星号**（`*`）或 **下划线**（`_`）包围文字表示 **斜体**。
 
 ```markdown
-_单星号斜体_
-
-<!-- or -->
-
-_单下划线斜体_
+这是一个 _斜体_ 示例。
 ```
 
 <BrowserWindow>
 
-_单星号斜体_
-
-<!-- or -->
-
-_单下划线斜体_
+这是一个 _斜体_ 示例。
 
 </BrowserWindow>
 
 ### 删除线
 
-使用 `~~` 包围文字来表示删除线。
+使用 **两个波浪线**（`~~`）包围文字表示 **删除线**。
 
 ```markdown
-~~删除线~~
+这是一个 ~~删除线~~ 示例。
 ```
 
 <BrowserWindow>
 
-~~删除线~~
+这是一个 ~~删除线~~ 示例。
 
 </BrowserWindow>
 
 :::tip
 
-推荐使用双星号加粗和单星号斜体。
+推荐使用 **两个星号**（`**`）表示 **加粗**；**一个下划线**（`_`）表示 **斜体**。
 
 :::
-
-## 列表
-
-### 无序列表
-
-使用 `-`、`*` 或 `+` 表示无序列表。
-
-```markdown
-- 项目 1
-- 项目 2
-- 项目 3
-<!-- or -->
-
-* 项目 1
-* 项目 2
-* 项目 3
-<!-- or -->
-
-- 项目 1
-- 项目 2
-- 项目 3
-```
-
-<BrowserWindow>
-
-- 项目 1
-- 项目 2
-- 项目 3
-<!-- or -->
-
-* 项目 1
-* 项目 2
-* 项目 3
-<!-- or -->
-
-- 项目 1
-- 项目 2
-- 项目 3
-
-</BrowserWindow>
-
-:::tip
-
-推荐使用 `-` 表示无序列表。
-
-:::
-
-### 有序列表
-
-使用数字加点表示有序列表。
-
-```markdown
-1. 项目 1
-2. 项目 2
-3. 项目 3
-<!-- or -->
-4. 项目 1
-5. 项目 2
-6. 项目 3
-```
-
-<BrowserWindow>
-
-1. 项目 1
-2. 项目 2
-3. 项目 3
-<!-- or -->
-4. 项目 1
-5. 项目 2
-6. 项目 3
-
-</BrowserWindow>
-
-### 任务列表
-
-使用无序列表和 `[ ]` 或 `[x]` 表示任务列表。
-
-```markdown
-- [x] 项目 1
-- [ ] 项目 2
-- [x] 项目 3
-```
-
-<BrowserWindow>
-
-- [x] 项目 1
-- [ ] 项目 2
-- [x] 项目 3
-
-</BrowserWindow>
 
 ## 代码块
 
-使用反引号 `` ` `` 包围代码片段，使用三个反引号包围多行代码。
+### 行内代码
 
-````markdown
+使用 **一个反引号**（`` ` ``）表示 **行内代码**。
+
+```markdown
+`Lorem ipsum`
+```
+
+<BrowserWindow>
+
 `Lorem ipsum`
 
+</BrowserWindow>
+
+### 行间代码
+
+使用 **三个反引号**（` ``` `）表示 **行间代码**。
+
+````markdown
 ```cpp
 #include <bits/stdc++.h>
 using namespace std;
@@ -236,8 +166,6 @@ int main()
 
 <BrowserWindow>
 
-`Lorem ipsum`
-
 ```cpp
 #include <bits/stdc++.h>
 using namespace std;
@@ -251,53 +179,113 @@ int main()
 
 </BrowserWindow>
 
-## 链接
+## 列表
 
-使用 `[链接文本](链接地址)` 来创建超链接。
+### 无序列表
+
+使用 **一个连接符**（`-`）、**星号**（`*`）或 **加号**（`+`）表示 **无序列表**。
 
 ```markdown
-[Google](https://www.google.com)
+- 无序列表 1
+- 无序列表 2
+- 无序列表 3
 ```
 
 <BrowserWindow>
 
-[Google](https://www.google.com)
+- 无序列表 1
+- 无序列表 2
+- 无序列表 3
+
+</BrowserWindow>
+
+:::tip
+
+推荐使用 **分隔符**（`-`）表示 **无序列表**。
+
+:::
+
+### 有序列表
+
+使用 **数字和句点** 表示 **有序列表**。
+
+```markdown
+1. 有序列表 1
+2. 有序列表 2
+3. 有序列表 3
+```
+
+<BrowserWindow>
+
+1. 有序列表 1
+2. 有序列表 2
+3. 有序列表 3
+
+</BrowserWindow>
+
+### 任务列表
+
+使用 `[ ]` 或 `[x]` 表示 **任务列表**。
+
+```markdown
+- [x] 任务列表 1
+- [ ] 任务列表 2
+- [x] 任务列表 3
+```
+
+<BrowserWindow>
+
+- [x] 任务列表 1
+- [ ] 任务列表 2
+- [x] 任务列表 3
+
+</BrowserWindow>
+
+## 链接
+
+使用 `[链接文本](链接地址)` 插入 **超链接**。
+
+```markdown
+[Apple](https://www.apple.com)
+```
+
+<BrowserWindow>
+
+[Apple](https://www.apple.com)
 
 </BrowserWindow>
 
 ## 图片
 
-使用 `![替代文本](图片地址)` 来插入图片。
+使用 `![替代文本](图片地址)` 插入 **图片**。
 
 ```markdown
-![Logo](https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png)
+![The Apple Store Shopping Event](https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/ase-header-hero-202511?wid=1392&hei=640&fmt=png-alpha&.v=YnRtS1pvZW0xTkRGTDArTFMxM1dkK2Y5c091MFJuNmVhOUl2Q2RwT0ZMOXZtdlBGOXJXZFNaUWV3K0pQbC96YXV3M2NIN0pZV0NOZE9oVm8rOFczOVM3MzU2aDRJWlJuTHd3RzJsT3JDc0k)
 ```
 
 <BrowserWindow>
 
-![Logo](https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png)
+![The Apple Store Shopping Event](https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/ase-header-hero-202511?wid=1392&hei=640&fmt=png-alpha&.v=YnRtS1pvZW0xTkRGTDArTFMxM1dkK2Y5c091MFJuNmVhOUl2Q2RwT0ZMOXZtdlBGOXJXZFNaUWV3K0pQbC96YXV3M2NIN0pZV0NOZE9oVm8rOFczOVM3MzU2aDRJWlJuTHd3RzJsT3JDc0k)
 
 </BrowserWindow>
 
 ## 引用
 
-使用 `>` 表示引用。
+使用 **大于号**（`>`）表示 **引用**。
 
 ```markdown
-> 这是一个引用
+> 这是一个引用示例。
 ```
 
 <BrowserWindow>
 
-> 这是一个引用
+> 这是一个引用示例。
 
 </BrowserWindow>
 
 ## 分隔线
 
-在一行中使用三个以上的 `-` 或 `*` 来建立一个分隔线。
-
-行内不能有其他内容，但可以在星号或是减号中间插入空格。
+使用 **至少三个连接符**（`-`）或 **星号**（`*`）表示 **分隔线**。
 
 ```markdown
 ---
@@ -308,3 +296,9 @@ int main()
 ---
 
 </BrowserWindow>
+
+:::tip
+
+分隔行内不能有其他内容，但可以插入空格。
+
+:::
