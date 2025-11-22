@@ -90,5 +90,5 @@
 - 大数字应使用 **科学计数法**。
 - 时间复杂度记号中不应带有常数。
 - 未定义但约定俗成的函数应使用 `\operatorname`，例如 `\operatorname{lca}`。
-- 横项省略号应使用 `\dots`，避免使用 `\cdots` 和 `\ldots`。
-- 逻辑关系应使用 `\impliedby`、`\implies` 和 `\iff`。
+- 横向省略号应使用 `\dots`，避免使用 `\cdots` 和 `\ldots`。
+- 逻辑关系应使用 `\implies`、`\impliedby` 和 `\iff`。
