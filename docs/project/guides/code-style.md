@@ -19,7 +19,7 @@
 ### 兼容
 
 - 修改代码风格时不得改变原有逻辑。
-- 使用 [C++17](https://cppreference.com/w/cpp/17.html) 标准，避免使用不兼容特性。
+- 应使用 [C++17](https://cppreference.com/w/cpp/17.html) 标准，避免使用不兼容特性。
 
 ### 简洁
 
