@@ -510,15 +510,15 @@ const sidebars: SidebarsConfig = {
             },
             {
               type: 'category',
-              label: '其他',
+              label: '杂项',
               link: {
                 type: 'generated-index',
                 description:
                   '本章介绍其他英语语法相关知识，包括构词法和标点符号。',
               },
               items: [
-                'note/english/grammar/miscellaneous/word-formation',
-                'note/english/grammar/miscellaneous/punctuation',
+                'note/english/grammar/misc/word-formation',
+                'note/english/grammar/misc/punctuation',
               ],
             },
           ],
