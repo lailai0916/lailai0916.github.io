@@ -42,11 +42,6 @@ export const RESOURCE_LIST: ResourceCategoryItem[] = [
         description: 'OpenAI 大语言模型',
       },
       {
-        title: 'Claude',
-        href: 'https://claude.ai',
-        description: 'Anthropic 安全 AI 助手',
-      },
-      {
         title: 'Gemini',
         href: 'https://gemini.google.com',
         description: 'Google 多模态 AI 助手',
@@ -55,6 +50,11 @@ export const RESOURCE_LIST: ResourceCategoryItem[] = [
         title: 'Grok',
         href: 'https://grok.com',
         description: 'xAI 实时信息 AI 助手',
+      },
+      {
+        title: 'Claude',
+        href: 'https://claude.ai',
+        description: 'Anthropic 安全 AI 助手',
       },
       {
         title: 'DeepSeek',

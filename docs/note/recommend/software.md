@@ -86,14 +86,6 @@ Obsidian 是一款基于本地 Markdown 文件的笔记工具，支持双链、�
 - 平台：iOS / macOS / Android / Web
 - 价格：ChatGPT Plus - \$20/月
 
-#### Claude
-
-Anthropic 开发的对齐导向 AI 助手，擅长处理复杂逻辑、文档分析与编程任务，界面简洁易用。
-
-- 官网：[Claude](https://claude.ai)
-- 平台：iOS / Android / Web
-- 价格：Claude Pro - \$20/月
-
 #### Gemini
 
 Google 推出的 AI 助手，集成于搜索、Gmail、Docs 等服务中，适合处理信息查询与文本生成任务。
@@ -109,6 +101,14 @@ Google 推出的 AI 助手，集成于搜索、Gmail、Docs 等服务中，适�
 - 官网：[Grok](https://grok.com)
 - 平台：iOS / Android / Web
 - 价格：SuperGrok - \$30/月
+
+#### Claude
+
+Anthropic 开发的对齐导向 AI 助手，擅长处理复杂逻辑、文档分析与编程任务，界面简洁易用。
+
+- 官网：[Claude](https://claude.ai)
+- 平台：iOS / Android / Web
+- 价格：Claude Pro - \$20/月
 
 #### DeepSeek
 
