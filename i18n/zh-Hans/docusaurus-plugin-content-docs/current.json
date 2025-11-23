@@ -227,13 +227,13 @@
     "message": "本章介绍英语句子结构，包括句子分类、从句、语态等。",
     "description": "The generated-index page description for category '句子' in sidebar 'sidebar2'"
   },
-  "sidebar.sidebar2.category.其他": {
-    "message": "其他",
-    "description": "The label for category '其他' in sidebar 'sidebar2'"
+  "sidebar.sidebar2.category.杂项": {
+    "message": "杂项",
+    "description": "The label for category '杂项' in sidebar 'sidebar2'"
   },
-  "sidebar.sidebar2.category.其他.link.generated-index.description": {
+  "sidebar.sidebar2.category.杂项.link.generated-index.description": {
     "message": "本章介绍其他英语语法相关知识，包括构词法和标点符号。",
-    "description": "The generated-index page description for category '其他' in sidebar 'sidebar2'"
+    "description": "The generated-index page description for category '杂项' in sidebar 'sidebar2'"
   },
   "sidebar.sidebar2.category.推荐": {
     "message": "推荐",
