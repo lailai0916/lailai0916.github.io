@@ -598,6 +598,36 @@ $$
 x_0^4+px_0^2+qx_0+r=0
 $$
 
+### 求根公式
+
+$$
+\Delta_1=c^2-3bd+12ae
+$$
+
+$$
+\Delta_2=2c^3-9bcd+27ad^2+27b^2e-72ace
+$$
+
+$$
+\Delta=\frac{\sqrt[3]{2}\Delta_1}{3a\sqrt[3]{\Delta_2+\sqrt{-4\Delta_1^3+\Delta_2^2}}}+\frac{\sqrt[3]{\Delta_2+\sqrt{-4\Delta_1^3+\Delta_2^2}}}{3\sqrt[3]{2}a}
+$$
+
+$$
+x_1=-\frac{b}{4a}-\frac{1}{2}\sqrt{\frac{b^2}{4a^2}-\frac{2c}{3a}+\Delta}-\frac{1}{2}\sqrt{\frac{b^2}{2a^2}-\frac{4c}{3a}-\Delta-\frac{-\frac{b^3}{a^3}+\frac{4bc}{a^2}-\frac{8d}{a}}{4\sqrt{\frac{b^2}{4a^2}-\frac{2c}{3a}+\Delta}}}
+$$
+
+$$
+x_2=-\frac{b}{4a}-\frac{1}{2}\sqrt{\frac{b^2}{4a^2}-\frac{2c}{3a}+\Delta}+\frac{1}{2}\sqrt{\frac{b^2}{2a^2}-\frac{4c}{3a}-\Delta-\frac{-\frac{b^3}{a^3}+\frac{4bc}{a^2}-\frac{8d}{a}}{4\sqrt{\frac{b^2}{4a^2}-\frac{2c}{3a}+\Delta}}}
+$$
+
+$$
+x_3=-\frac{b}{4a}+\frac{1}{2}\sqrt{\frac{b^2}{4a^2}-\frac{2c}{3a}+\Delta}-\frac{1}{2}\sqrt{\frac{b^2}{2a^2}-\frac{4c}{3a}-\Delta-\frac{-\frac{b^3}{a^3}+\frac{4bc}{a^2}-\frac{8d}{a}}{4\sqrt{\frac{b^2}{4a^2}-\frac{2c}{3a}+\Delta}}}
+$$
+
+$$
+x_4=-\frac{b}{4a}+\frac{1}{2}\sqrt{\frac{b^2}{4a^2}-\frac{2c}{3a}+\Delta}+\frac{1}{2}\sqrt{\frac{b^2}{2a^2}-\frac{4c}{3a}-\Delta-\frac{-\frac{b^3}{a^3}+\frac{4bc}{a^2}-\frac{8d}{a}}{4\sqrt{\frac{b^2}{4a^2}-\frac{2c}{3a}+\Delta}}}
+$$
+
 ## 五次及以上方程
 
 伽罗瓦理论指出，对于一般五次以及五次以上的方程，不存在一般的代数解。
