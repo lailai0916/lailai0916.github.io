@@ -35,4 +35,12 @@
 
 ## 文具
 
-- 笔袋：KOKUYO HACO（黑色）
+- 国誉 KOKUYO HACO 系列笔袋（黑色）
+- 国誉 KOKUYO 亚克力波浪尺
+- 国誉 KOKUYO 实验室用记号笔（黑色）
+- 樱花 Sakura Ballsign iD plus 中性笔（纯黑）
+- 樱花 Sakura XRFW-60 橡皮
+- 辉柏嘉 Faber-Castell 考试涂卡笔（白色）
+- 三菱铅笔 uni UBA-188 直液式签字笔（红色 & 蓝色）
+- 三菱铅笔 9800DX 绘图素描铅笔（HB）
+- 蜻蜓 Tombow MONO AIR 修正带（薰衣草紫）
