@@ -101,8 +101,8 @@ using Comp=complex<double>;
 
 ### 修饰
 
-- 使用 `const` 定义常量，避免使用宏。
-- 避免使用 `static`、`register`、`inline` 等修饰。
+- 使用 `const` 定义常量，避免使用宏定义。
+- 避免使用 `static`、`register`、`inline` 等修饰符。
 
 ```cpp
 const int N=100005;
