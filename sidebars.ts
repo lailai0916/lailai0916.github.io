@@ -42,7 +42,12 @@ const sidebars: SidebarsConfig = {
         description:
           '本章介绍编程相关的知识，包括 C++ 从入门到进阶教程和一些其他语言的简介。',
       },
-      items: ['contest/lang/helloworld', 'contest/lang/op', 'contest/lang/csl'],
+      items: [
+        'contest/lang/helloworld',
+        'contest/lang/var',
+        'contest/lang/op',
+        'contest/lang/csl',
+      ],
     },
     {
       type: 'category',
