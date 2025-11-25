@@ -3210,7 +3210,7 @@
 - sustainable：adj. 可持续的；可忍受的
 - swallow：vt. 吞下；咽下
 - swap：v. 交换（东西）
-- swear：v. 咒骂. ，诅咒
+- swear：v. 咒骂，诅咒
 - sweat：n. 汗，汗水
 - sweater：n. 厚运动衫，毛衣
 - sweep：v. 扫除，扫

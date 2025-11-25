@@ -20,7 +20,7 @@
 国际大学生程序设计竞赛（International Collegiate Programming Contest，ICPC）由 ICPC 基金会（ICPC Foundation）举办，是最具影响力的大学生计算机竞赛。
 
 - [The ICPC International Collegiate Programming Contest](https://icpc.global)
-- [中国大学生程序设计竞赛(CCPC)-官网](https://oi-wiki.org/contest/icpc/)
+- [中国大学生程序设计竞赛(CCPC)-官网](https://ccpc.io)
 
 ## 赛制
 
