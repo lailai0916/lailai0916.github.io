@@ -9,7 +9,7 @@ void f(bool type)
 	deque<pair<int,int>> q;
 	for(int i=1;i<=n;i++)
 	{
-		while(!q.empty()&&(a[i]<=q.back().second)^type)q.pop_back();
+		while(!q.empty()&&(q.back().second>=a[i])^type)q.pop_back();
 		q.push_back({i,a[i]});
 		while(q.front().first<=i-k)q.pop_front();
 		if(i>=k)ans[i]=q.front().second;
