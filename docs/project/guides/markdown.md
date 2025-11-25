@@ -126,54 +126,6 @@ Markdown 文档以纯文本格式存储，这意味着，它们可以用几乎�
 
 </BrowserWindow>
 
-## 代码块
-
-### 行内代码
-
-使用 **一个反引号**（`` ` ``）表示 **行内代码**。
-
-```markdown
-`Lorem ipsum`
-```
-
-<BrowserWindow>
-
-`Lorem ipsum`
-
-</BrowserWindow>
-
-### 行间代码
-
-使用 **三个反引号**（` ``` `）表示 **行间代码**。
-
-````markdown
-```cpp
-#include <bits/stdc++.h>
-using namespace std;
-
-int main()
-{
-	cout<<"Hello, world!"<<'\n';
-	return 0;
-}
-```
-````
-
-<BrowserWindow>
-
-```cpp
-#include <bits/stdc++.h>
-using namespace std;
-
-int main()
-{
-	cout<<"Hello, world!"<<'\n';
-	return 0;
-}
-```
-
-</BrowserWindow>
-
 ## 列表
 
 ### 无序列表
@@ -227,6 +179,54 @@ int main()
 - [x] 任务列表 1
 - [ ] 任务列表 2
 - [x] 任务列表 3
+
+</BrowserWindow>
+
+## 代码块
+
+### 行内代码
+
+使用 **一个反引号**（`` ` ``）表示 **行内代码**。
+
+```markdown
+`Lorem ipsum`
+```
+
+<BrowserWindow>
+
+`Lorem ipsum`
+
+</BrowserWindow>
+
+### 行间代码
+
+使用 **三个反引号**（` ``` `）表示 **行间代码**。
+
+````markdown
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+	cout<<"Hello, world!"<<'\n';
+	return 0;
+}
+```
+````
+
+<BrowserWindow>
+
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+	cout<<"Hello, world!"<<'\n';
+	return 0;
+}
+```
 
 </BrowserWindow>
 
