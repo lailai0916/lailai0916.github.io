@@ -38,27 +38,6 @@ struct Mat
 		}
 		return res;
 	}
-	void read()
-	{
-		for(int i=0;i<n;i++)
-		{
-			for(int j=0;j<n;j++)
-			{
-				cin>>a[i][j];
-			}
-		}
-	}
-	void print()
-	{
-		for(int i=0;i<n;i++)
-		{
-			for(int j=0;j<n;j++)
-			{
-				cout<<a[i][j]<<' ';
-			}
-			cout<<'\n';
-		}
-	}
 };
 int main()
 {
@@ -67,8 +46,21 @@ int main()
 	ll k;
 	Mat mat;
 	cin>>mat.n>>k;
-	mat.read();
+	for(int i=0;i<mat.n;i++)
+	{
+		for(int j=0;j<mat.n;j++)
+		{
+			cin>>mat.a[i][j];
+		}
+	}
 	mat=mat^k;
-	mat.print();
+	for(int i=0;i<mat.n;i++)
+	{
+		for(int j=0;j<mat.n;j++)
+		{
+			cout<<mat.a[i][j]<<' ';
+		}
+		cout<<'\n';
+	}
 	return 0;
 }

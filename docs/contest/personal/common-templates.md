@@ -413,27 +413,6 @@ struct Mat
 		}
 		return res;
 	}
-	void read()
-	{
-		for(int i=0;i<n;i++)
-		{
-			for(int j=0;j<n;j++)
-			{
-				cin>>a[i][j];
-			}
-		}
-	}
-	void print()
-	{
-		for(int i=0;i<n;i++)
-		{
-			for(int j=0;j<n;j++)
-			{
-				cout<<a[i][j]<<' ';
-			}
-			cout<<'\n';
-		}
-	}
 };
 ```
 
