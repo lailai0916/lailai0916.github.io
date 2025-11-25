@@ -63,7 +63,8 @@ string gen_user()
 	uniform_int_distribution<int> f(0,(int)first.size()-1),l(0,(int)last.size()-1),n(0,9999);
 	string fname=cap(first[f(rng)]);
 	string lname=cap(last[l(rng)]);
-	stringstream ss; ss<<setw(4)<<setfill('0')<<n(rng);
+	stringstream ss;
+	ss<<setw(4)<<setfill('0')<<n(rng);
 	string user=fname+lname+ss.str();
 	if(user.size()>16)user=user.substr(0,16);
 	return user;
