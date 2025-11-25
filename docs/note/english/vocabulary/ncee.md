@@ -2820,7 +2820,7 @@
 - saleswoman：n. 女售货员
 - salt：n. 盐
 - salty：adj. 盐的，咸的，含盐的
-- same：n. 同样的事a同样的，同一
+- same：n. 同样的事adj. 同样的，同一
 - sand：n. 沙，沙子
 - sandwich：n. 三明治（夹心面包片）
 - satellite：n. 卫星
