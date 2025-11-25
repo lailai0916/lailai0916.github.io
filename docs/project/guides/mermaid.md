@@ -6,6 +6,7 @@
 
 - [Mermaid | Diagramming and charting tool](https://mermaid.js.org)
 - [Mermaid (software) - Wikipedia](https://en.wikipedia.org/wiki/Mermaid_%28software%29)
+- [Online FlowChart & Diagrams Editor - Mermaid Live Editor](https://mermaid.live)
 
 ## 简介
 
