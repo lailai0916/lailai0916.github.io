@@ -4,19 +4,20 @@ using namespace std;
 using ll=long long;
 const int mod=1000000007;
 const int N=105;
-int n;
 struct Mat
 {
+	int n;
 	ll a[N][N];
+	Mat(){memset(a,0,sizeof a);n=0;}
 	Mat operator*(const Mat &rhs) const
 	{
 		Mat res;
+		res.n=n;
 		for(int i=0;i<n;i++)
 		{
 			for(int j=0;j<n;j++)
 			{
-				res.a[i][j]=0;
-				for(int k=0;k<N;k++)
+				for(int k=0;k<n;k++)
 				{
 					res.a[i][j]=(res.a[i][j]+a[i][k]*rhs.a[k][j])%mod;
 				}
@@ -24,16 +25,11 @@ struct Mat
 		}
 		return res;
 	}
-	Mat operator^(ll rhs)
+	Mat operator^(ll rhs) const
 	{
 		Mat res,tmp=*this;
-		for(int i=0;i<N;i++)
-		{
-			for(int j=0;j<N;j++)
-			{
-				res.a[i][j]=i==j;
-			}
-		}
+		res.n=n;
+		for(int i=0;i<n;i++)res.a[i][i]=1;
 		while(rhs)
 		{
 			if(rhs&1)res=res*tmp;
@@ -42,29 +38,37 @@ struct Mat
 		}
 		return res;
 	}
+	void read()
+	{
+		for(int i=0;i<n;i++)
+		{
+			for(int j=0;j<n;j++)
+			{
+				cin>>a[i][j];
+			}
+		}
+	}
+	void print()
+	{
+		for(int i=0;i<n;i++)
+		{
+			for(int j=0;j<n;j++)
+			{
+				cout<<a[i][j]<<' ';
+			}
+			cout<<'\n';
+		}
+	}
 };
 int main()
 {
 	ios::sync_with_stdio(false);
 	cin.tie(nullptr);
 	ll k;
-	cin>>n>>k;
 	Mat mat;
-	for(int i=0;i<n;i++)
-	{
-		for(int j=0;j<n;j++)
-		{
-			cin>>mat.a[i][j];
-		}
-	}
+	cin>>mat.n>>k;
+	mat.read();
 	mat=mat^k;
-	for(int i=0;i<n;i++)
-	{
-		for(int j=0;j<n;j++)
-		{
-			cout<<mat.a[i][j]<<' ';
-		}
-		cout<<'\n';
-	}
+	mat.print();
 	return 0;
 }
