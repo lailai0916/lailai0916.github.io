@@ -50,7 +50,7 @@ while(r-l>eps)
 double l=x,r=y;
 while(r-l>eps)
 {
-	double m1=(l*2+r)/3,m2=(r*2+l)/3;
+	double m1=(l*2+r)/3,m2=(l+r*2)/3;
 	if(f(m1)>f(m2))r=m2;
 	else l=m1;
 }
