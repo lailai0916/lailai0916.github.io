@@ -21,11 +21,11 @@ int main()
 		s.push_back({l-1,x,i,-1});
 	}
 	sort(s.begin(),s.end());
-	int i=1;
-	for(auto [p,x,id,f]:s)
+	int j=1;
+	for(auto [u,x,i,f]:s)
 	{
-		while(i<=p)add(a[i++]);
-		ans[id]+=sum(x)*f;
+		while(j<=u)add(a[j++]);
+		ans[i]+=sum(x)*f;
 	}
 	for(int i=1;i<=m;i++)cout<<ans[i]<<'\n';
 	return 0;
