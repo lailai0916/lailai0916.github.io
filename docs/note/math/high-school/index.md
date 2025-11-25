@@ -25,9 +25,7 @@
 
 如果有不明白的地方，欢迎随时找我交流。<Notation>**祝你好运！**</Notation>
 
-## 教材
-
-### 版本
+## 版本
 
 人教版 **高中数学** 教材分为 **A 版** 和 **B 版**：
 
@@ -37,14 +35,6 @@
 浙江高中通常使用 **A 版** 教材，因此我的笔记也是基于 **A 版**。
 
 下文有 **A 版** 和 **B 版** 教材的目录，可供参考。
-
-### 资源
-
-GitHub 上的开源仓库 **TapXWorld/ChinaTextbook** 收录了几乎所有小学、初中、高中和大学的 **PDF 教材**。
-
-如果你 **无法访问 GitHub** 或 **不会下载资源**，也可以到 [人民教育出版社](https://jc.pep.com.cn) 或 [国家中小学智慧教育平台](https://basic.smartedu.cn/tchMaterial) 在线预览 **电子课本**。
-
-<GitHub repo="TapXWorld/ChinaTextbook" />
 
 ## A 版
 
