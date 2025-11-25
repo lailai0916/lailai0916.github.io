@@ -36,8 +36,7 @@ bool operator<(const Node &rhs) const
 
 ### 缩进
 
-- C++ 代码应使用 <kbd>Tab</kbd> 缩进。
-- 空行不应使用缩进。
+- C++ 代码应使用 <kbd>Tab</kbd> 缩进，空行不应使用缩进。
 
 ### 大括号
 
@@ -54,7 +53,7 @@ if(n%i==0)return 0;
 
 ### 头文件
 
-- 通常只使用万能头文件 `<bits/stdc++.h>`，若有特殊需求可补充其他头文件。
+- 头文件通常只使用万能头文件 `<bits/stdc++.h>`，若有特殊需求可补充其他头文件。
 
 ```cpp
 #include <bits/stdc++.h>
@@ -63,7 +62,7 @@ if(n%i==0)return 0;
 
 ### 宏定义
 
-- 若有需要可使用宏定义。
+- 宏定义可以按需使用。
 
 ```cpp
 #define ls (u<<1)
