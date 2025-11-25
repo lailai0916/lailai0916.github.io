@@ -508,7 +508,7 @@ $$
 \end{aligned}
 $$
 
-类似的，若 $C$ 是线段 $AB$ 中点，则对于任意一点 $O$，有，
+类似地，若 $C$ 是线段 $AB$ 中点，则对于任意一点 $O$，有，
 
 $$
 \overrightarrow{OC}={1\over2}\overrightarrow{OA}+{1\over2}\overrightarrow{OB}
