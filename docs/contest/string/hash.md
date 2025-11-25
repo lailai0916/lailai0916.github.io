@@ -23,6 +23,10 @@ ull get_hash(string s)
 
 ## 例题
 
+### 洛谷 P3370 【模板】字符串哈希
+
+<Problem id="P3370" />
+
 ### 洛谷 U461211 字符串 Hash（数据加强）
 
 <Problem id="U461211" />
