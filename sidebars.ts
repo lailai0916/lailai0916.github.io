@@ -217,6 +217,7 @@ const sidebars: SidebarsConfig = {
         'contest/ds/heap',
         'contest/ds/block',
         'contest/ds/monotonous-stack',
+        'contest/ds/monotonous-queue',
         'contest/ds/sparse-table',
         'contest/ds/fenwick',
         'contest/ds/seg',
