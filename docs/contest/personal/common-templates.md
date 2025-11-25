@@ -579,7 +579,7 @@ struct SEG
 ```cpp
 #include <bits/extc++.h>
 using namespace __gnu_pbds;
-__gnu_pbds::tree<pair<int,int>,null_type,less<pair<int,int>>,rb_tree_tag,tree_order_statistics_node_update> T;
+tree<pair<int,int>,null_type,less<pair<int,int>>,rb_tree_tag,tree_order_statistics_node_update> T;
 ```
 
 ## 图论

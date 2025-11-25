@@ -9,7 +9,7 @@
 ```cpp
 #include <bits/extc++.h>
 using namespace __gnu_pbds;
-__gnu_pbds::tree<pair<int,int>,null_type,less<pair<int,int>>,rb_tree_tag,tree_order_statistics_node_update> T;
+tree<pair<int,int>,null_type,less<pair<int,int>>,rb_tree_tag,tree_order_statistics_node_update> T;
 ```
 
 ## 笛卡尔树
@@ -30,6 +30,10 @@ for(int i=1;i<=n;i++)
 ### 洛谷 P3369 【模板】普通平衡树
 
 <Problem id="P3369" />
+
+### 洛谷 P6136 【模板】普通平衡树（数据加强版）
+
+<Problem id="P6136" />
 
 ### 洛谷 P5854 【模板】笛卡尔树
 
