@@ -130,15 +130,15 @@ freopen("problem.in","r",stdin);
 freopen("problem.out","w",stdout);
 ```
 
-- 若 I/O 数据量较大，应添加关闭同步和优化读写。
+- 若 I/O 数据量较大，应添加 **关闭同步和优化读写**。
 
 ```cpp
 ios::sync_with_stdio(false);
 cin.tie(nullptr);
 ```
 
-- 优先使用 `cin` 和 `cout` 读写，避免使用 `scanf` 和 `printf`，若无法满足读写需求可以使用 `getline` 等函数。
-- 换行使用 `'\n'`，避免使用 `"\n"` 或 `endl`。
+- 优先使用 `cin` 和 `cout` 读写，避免使用 `scanf` 和 `printf`；按需使用 `getline` 等函数。
+- 换行使用 `'\n'`，避免使用 `"\n"` 和 `endl`。
 
 ```cpp
 cout<<"Yes"<<'\n';
@@ -147,7 +147,7 @@ cout<<"Yes"<<'\n';
 ### 存储
 
 - 小变量定义在局部作用域，避免使用全局变量；大数组使用全局变量。
-- 默认使用静态数组；仅在确有必要时使用 `vector`（例如邻接表存图）。
+- 优先使用静态数组；按需使用 `vector`，例如邻接表存图。
 
 ```cpp
 const int N=100005;
