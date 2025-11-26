@@ -555,7 +555,6 @@ const sidebars: SidebarsConfig = {
       items: [
         'project/lailai0916.github.io/tutorial',
         'project/lailai0916.github.io/plugins',
-        'project/lailai0916.github.io/design',
         'project/lailai0916.github.io/tailwind',
       ],
     },
@@ -571,6 +570,7 @@ const sidebars: SidebarsConfig = {
       items: [
         'project/guides/text-format',
         'project/guides/code-style',
+        'project/guides/design-style',
         'project/guides/markdown',
         'project/guides/latex',
         'project/guides/mermaid',
