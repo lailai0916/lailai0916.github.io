@@ -183,7 +183,6 @@
   }
 }
 
-/* 降低动效：尊重系统“减少动态效果”设置 */
 @media (prefers-reduced-motion: reduce) {
   .wrapper :global(.react-chrono-tree),
   .wrapper :global(.timeline-card-content),

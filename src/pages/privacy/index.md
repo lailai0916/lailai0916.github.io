@@ -232,7 +232,7 @@ We do not share any information with third parties for any content, marketing pu
 
 :::warning
 
-To the fullest extent permitted by law, the Site and the Service (and any other associated services, information, data, features, and other content or materials) are provided on an “as-is” and “as-available” basis. To the fullest extent permitted by law, IMI excludes all warranties, including but not limited to the implied warranties of merchantability, fitness for a particular purpose, and non-infringement.
+To the fullest extent permitted by law, the Site and the Service (and any other associated services, information, data, features, and other content or materials) are provided on an 「as-is」 and 「as-available」 basis. To the fullest extent permitted by law, IMI excludes all warranties, including but not limited to the implied warranties of merchantability, fitness for a particular purpose, and non-infringement.
 
 :::
 
