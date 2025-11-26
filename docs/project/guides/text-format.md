@@ -2,8 +2,6 @@
 
 本文为我的中文文本格式指南。
 
-> 不以规矩，不成方圆。
-
 ## 参考资料
 
 - [标点符号用法（GB/T 15834-2011）](http://www.moe.gov.cn/jyb_sjzl/ziliao/A19/201001/W020190128580990138234.pdf)
@@ -17,10 +15,12 @@
 - [中文文案风格指南 - PDFE GUIDELINE](https://pdfe.github.io/GUIDELINE/#/others/copywriter)
 - [一份（不太）简短的 LaTeX2ε 介绍 - CTeX-org/lshort-zh-cn - GitHub](https://github.com/CTeX-org/lshort-zh-cn)
 - [中文技术文档的写作规范 - ruanyf/document-style-guide - GitHub](https://github.com/ruanyf/document-style-guide)
+- [Google developer documentation style guide](https://developers.google.com/style)
 
 ## 通用
 
 - 使用 **生成式人工智能**（GenAI）辅助文本写作应经过 **人工审查**。
+- 内容应保持 **统一和简练**。
 
 ## 文件
 
