@@ -12,8 +12,6 @@ const sidebars: SidebarsConfig = {
           '本章主要记录我在 OI 中的个人经验，包括风格规范、对拍工具、常用模板库以及实用技巧等。',
       },
       items: [
-        'project/guides/text-format',
-        'project/guides/code-style',
         'contest/personal/common-templates',
         'contest/personal/luogu',
       ],
