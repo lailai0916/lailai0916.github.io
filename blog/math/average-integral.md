@@ -12,6 +12,7 @@ tags: [math]
 ## 参考资料
 
 - [与平均有关的定积分 - 知乎](https://zhuanlan.zhihu.com/p/601496318)
+- [[证毕QED]一个积分六个平均数 - bilibili](https://www.bilibili.com/video/BV1DW421w7Z8)
 
 ## 公式
 
