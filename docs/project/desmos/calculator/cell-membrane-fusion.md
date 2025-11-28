@@ -8,7 +8,7 @@
 
 ## 项目链接
 
-- [细胞膜融合 | Desmos](https://www.desmos.com/calculator/bsweyrd7l7)
+- [细胞膜融合 | Desmos](https://www.desmos.com/calculator/8e0f85822a)
 
 ## 原理
 
@@ -26,4 +26,4 @@ $$
 
 ## 效果展示
 
-<IframeWindow url="https://www.desmos.com/calculator/bsweyrd7l7?embed" />
+<IframeWindow url="https://www.desmos.com/calculator/8e0f85822a?embed" />

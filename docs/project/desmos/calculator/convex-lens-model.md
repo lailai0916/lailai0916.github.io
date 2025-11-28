@@ -8,7 +8,7 @@
 
 ## 项目链接
 
-- [凸透镜模型 | Desmos](https://www.desmos.com/calculator/jgwzcw32ub)
+- [凸透镜模型 | Desmos](https://www.desmos.com/calculator/547f9a06b9)
 
 ## 原理
 
@@ -28,4 +28,4 @@ $$
 
 ## 效果展示
 
-<IframeWindow url="https://www.desmos.com/calculator/jgwzcw32ub?embed" />
+<IframeWindow url="https://www.desmos.com/calculator/547f9a06b9?embed" />
