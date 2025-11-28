@@ -23,7 +23,8 @@ export function GetCode({ id }: { id: string }) {
           title: p
             .split('/')
             .pop()!
-            .replace(/\.cpp$/, ''),
+            .replace(/\.cpp$/, '')
+            .replace(/_/g, ' '),
           code: ctx(p).default,
         }))
         .sort((a, b) => a.title.localeCompare(b.title)),
@@ -47,7 +48,7 @@ export function GetCode({ id }: { id: string }) {
           ) : (
             <Tabs>
               {codes.map(({ title, code }) => (
-                <TabItem key={title} value={title} label={title}>
+                <TabItem key={title} value={title}>
                   <CodeBlock language="cpp">{code}</CodeBlock>
                 </TabItem>
               ))}
