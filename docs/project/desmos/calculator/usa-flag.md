@@ -6,7 +6,7 @@
 
 ## 项目链接
 
-- [美国国旗 | Desmos](https://www.desmos.com/calculator/nicdfuwxaq)
+- [美国国旗 | Desmos](https://www.desmos.com/calculator/fd87371622)
 
 ## 原理
 
@@ -14,4 +14,4 @@
 
 ## 效果展示
 
-<IframeWindow url="https://www.desmos.com/calculator/nicdfuwxaq?embed" />
+<IframeWindow url="https://www.desmos.com/calculator/fd87371622?embed" />

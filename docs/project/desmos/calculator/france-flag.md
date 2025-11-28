@@ -6,12 +6,12 @@
 
 ## 项目链接
 
-- [法国国旗 | Desmos](https://www.desmos.com/calculator/e6hr6rngfp)
+- [法国国旗 | Desmos](https://www.desmos.com/calculator/da95805f70)
 
 ## 原理
 
-图案非常简单，由三个大色块组成。
+简单的国旗图案，由三个色块组成。
 
 ## 效果展示
 
-<IframeWindow url="https://www.desmos.com/calculator/e6hr6rngfp?embed" />
+<IframeWindow url="https://www.desmos.com/calculator/da95805f70?embed" />
