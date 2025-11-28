@@ -448,7 +448,7 @@ title: Temp
 
 然后用 ChatGPT 辅助 Mathematica 建系完成了计算，得到答案是 $\frac{3\sqrt{39}-4}{5}\approx 2.9470$，并把过程发到了群里。
 
-如果你对过程感兴趣，可以看看这篇我的文章：https://lailai.one/blog/math/zjzk-2025-q24
+如果你对过程感兴趣，可以看看这篇我的文章：https://lailai.one/blog/math/zjzk-2025-math-q24
 
 > 求不出的 $\frac{3\sqrt{39}-4}{5}$，会不会又成为后来心底的坎？
 
