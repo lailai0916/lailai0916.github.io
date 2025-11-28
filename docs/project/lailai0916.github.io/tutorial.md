@@ -117,7 +117,7 @@ git push -u origin main
 
 - 在 `docusaurus.config.js` 文件中，配置 `url` 和 `baseUrl`：
 
-```javascript
+```js
 module.exports = {
   // ...existing code...
   url: 'https://username.github.io',
