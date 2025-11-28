@@ -7,6 +7,7 @@
 ## 参考资料
 
 - [2024 Desmos Studio Math Art Expo](https://blog.desmos.com/articles/art-expo-launch-2024/)
+- [Desmos | Art Contest Finalists](https://www.desmos.com/art-2024)
 - [Desmos | Your Certificate](https://www.desmos.com/winner-certificate-2024?hash=p4i42jkcp1)
 
 ## 项目链接
