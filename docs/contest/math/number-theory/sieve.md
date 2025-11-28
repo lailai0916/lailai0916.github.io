@@ -19,21 +19,19 @@
 void init()
 {
 	vis[0]=vis[1]=1;
+	for(int i=2;i*i<N;i++)
+	{
+		if(vis[i])continue;
+		for(int j=i*i;j<N;j+=i)vis[j]=1;
+	}
 	int cnt=0;
-	for(ll i=2;i<N;i++)
+	for(int i=2;i<N;i++)
 	{
 		if(vis[i])continue;
 		pri[++cnt]=i;
-		for(ll j=i*i;j<N;j+=i)vis[j]=1;
 	}
 }
 ```
-
-:::tip
-
-使用 `long long` 类型避免 `i*i` 溢出。
-
-:::
 
 ## 欧拉筛法
 
