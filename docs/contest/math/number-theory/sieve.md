@@ -15,6 +15,8 @@
 
 ## 埃拉托斯特尼筛法
 
+埃拉托斯特尼筛法（Sieve of Eratosthenes）简称埃氏筛法。
+
 ```cpp
 void init()
 {
@@ -34,6 +36,8 @@ void init()
 ```
 
 ## 欧拉筛法
+
+欧拉筛法（Sieve of Euler）也称为线性筛法。
 
 ### 素数
 
