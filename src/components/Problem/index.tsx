@@ -14,22 +14,22 @@ const ctx = require.context(
 );
 
 export function GetCode({ id }: { id: string }) {
-  const codes = useMemo(
-    () =>
-      ctx
-        .keys()
-        .filter((p) => p.includes(`/${id}/`))
-        .map((p) => ({
-          title: p
-            .split('/')
-            .pop()!
-            .replace(/\.cpp$/, '')
-            .replace(/_/g, ' '),
-          code: ctx(p).default,
-        }))
-        .sort((a, b) => a.title.localeCompare(b.title)),
-    [id]
-  );
+  const formatTitle = (p: string) =>
+    p
+      .slice(p.lastIndexOf('/') + 1)
+      .replace(/\.cpp$/, '')
+      .replace(/_/g, ' ');
+
+  const codes = useMemo(() => {
+    return ctx
+      .keys()
+      .filter((p) => p.includes(`/${id}/`))
+      .map((p) => ({
+        title: formatTitle(p),
+        code: ctx(p).default,
+      }))
+      .sort((a, b) => a.title.localeCompare(b.title));
+  }, [id]);
 
   return (
     <>
