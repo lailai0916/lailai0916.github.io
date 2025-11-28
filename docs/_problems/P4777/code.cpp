@@ -16,7 +16,7 @@ ll mul(ll a,ll b,ll m)
 }
 tuple<ll,ll,ll> exgcd(ll a,ll b)
 {
-	if(b==0)return {a,1,0};
+	if(!b)return {a,1,0};
 	auto [g,x,y]=exgcd(b,a%b);
 	return {g,y,x-a/b*y};
 }
