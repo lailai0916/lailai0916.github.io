@@ -21,7 +21,7 @@ tags: [math]
 
 ② 求 $PA-PB$ 的最小值。
 
-<Desmos id="a2tyhmhdji" />
+<Desmos id="6vt0crynhk" />
 
 <Desmos id="mytob81jzx" />
 
