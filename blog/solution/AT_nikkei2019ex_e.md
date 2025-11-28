@@ -32,14 +32,12 @@ using namespace std;
 using ll=long long;
 int main()
 {
+	ios::sync_with_stdio(false);
+	cin.tie(nullptr);
 	int p;
 	cin>>p;
 	ll f=1789997546303;
-	for(int i=999;i>=p;i--)
-	{
-		if(f&1)f=f*3+1;
-		else f>>=1;
-	}
+	for(int i=1000;i>p;i--)f=f&1?f*3+1:f>>1;
 	cout<<f<<'\n';
 	return 0;
 }
