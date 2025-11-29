@@ -27,7 +27,7 @@ int manacher(string s)
 		if(i+p[i]-1>r)r=i+p[i]-1,l=i;
 	}
 	int res=0;
-	for(int i=1;i<=n;i++)// get answer.
+	for(int i=1;i<=n;i++)/* code */
 	return res;
 }
 ```
