@@ -26,9 +26,7 @@ int manacher(string s)
 		while(s[i-p[i]]==s[i+p[i]])p[i]++;
 		if(i+p[i]-1>r)r=i+p[i]-1,l=i;
 	}
-	int res=0;
-	for(int i=1;i<=n;i++)/* code */
-	return res;
+	return n;
 }
 ```
 
