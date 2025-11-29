@@ -2,7 +2,7 @@
 using namespace std;
 
 using Comp=complex<double>;
-const double pi=acos(-1.0);
+const double pi=acos(-1);
 const int N=1<<20;
 Comp a[N<<1],b[N<<1],t[N<<1];
 int c[N<<1];

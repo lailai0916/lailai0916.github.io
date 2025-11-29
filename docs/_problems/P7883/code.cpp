@@ -2,7 +2,7 @@
 using namespace std;
 
 using ll=long long;
-const double pi=acos(-1.0);
+const double pi=acos(-1);
 const ll inf=0x3f3f3f3f3f3f3f3f;
 const int N=400005;
 struct Point
