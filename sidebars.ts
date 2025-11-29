@@ -11,10 +11,7 @@ const sidebars: SidebarsConfig = {
         description:
           '本章主要记录我在 OI 中的个人经验，包括风格规范、对拍工具、常用模板库以及实用技巧等。',
       },
-      items: [
-        'contest/personal/common-templates',
-        'contest/personal/luogu',
-      ],
+      items: ['contest/personal/common-templates', 'contest/personal/luogu'],
     },
     {
       type: 'category',
@@ -296,6 +293,15 @@ const sidebars: SidebarsConfig = {
     'note/index',
     {
       type: 'category',
+      label: '推荐',
+      link: {
+        type: 'doc',
+        id: 'note/recommend/index',
+      },
+      items: ['note/recommend/bilibili', 'note/recommend/software'],
+    },
+    {
+      type: 'category',
       label: '数学',
       link: {
         type: 'generated-index',
@@ -421,6 +427,7 @@ const sidebars: SidebarsConfig = {
         },
       ],
     },
+    'note/physics/index',
     {
       type: 'category',
       label: '英语',
@@ -529,15 +536,6 @@ const sidebars: SidebarsConfig = {
           ],
         },
       ],
-    },
-    {
-      type: 'category',
-      label: '推荐',
-      link: {
-        type: 'doc',
-        id: 'note/recommend/index',
-      },
-      items: ['note/recommend/bilibili', 'note/recommend/software'],
     },
   ],
   sidebar3: [
