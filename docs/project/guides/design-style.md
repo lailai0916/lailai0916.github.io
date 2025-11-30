@@ -4,8 +4,9 @@
 
 ## 参考资料
 
-- [Human Interface Guidelines](https://developer.apple.com/design/human-interface-guidelines/)
+- [Apple Human Interface Guidelines](https://developer.apple.com/design/human-interface-guidelines/)
 - [Apple Design Resources](https://developer.apple.com/design/resources/)
+- [Google Material Design 3](https://m3.material.io)
 
 ## 设计理念
 
