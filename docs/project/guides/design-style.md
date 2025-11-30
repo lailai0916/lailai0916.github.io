@@ -8,12 +8,17 @@
 - [Apple Design Resources](https://developer.apple.com/design/resources/)
 - [Google Material Design 3](https://m3.material.io)
 
-## 设计理念
+## 理念
 
-理念：统一 · 简约 · 现代（Unified · Simple · Modern）
+统一 · 简约 · 现代（Unified · Simple · Modern）
 
 ## 通用
 
+- 设计风格应保持统一，统一优先于美观。
+- 应使用视觉强度表达层级，而非使用复杂装饰。
+- 使用柔和中性色和轻量强调色，避免饱和与冲突。
+- 外观必须与功能相匹配，界面必须忠于内容。
+- 设计不是展示，而是帮助用户完成任务。
 - 背景不应使用渐变色和半透明。
 
 ## 改进概述
