@@ -18,13 +18,13 @@ export const daysUntil = (target) => Math.ceil((new Date(target) - new Date()) /
 今天是 **{today}**，距离：
 
 - **NOIWC 2026** 还有 **{daysUntil('2026-02-06')}** 天
-- **省选 2026** 还有 **{daysUntil('2026-03-07')}** 天
+- **浙江省选 2026** 还有 **{daysUntil('2026-03-07')}** 天
 - **APIO 2026** 还有 **~{daysUntil('2026-05-15')}** 天
 - **NOI 2026** 还有 **~{daysUntil('2026-07-12')}** 天
-- **IOI 2026** 还有 **~{daysUntil('2026-08-09')}** 天
-- **CSP-J/S 2026 第一轮** 还有 **~{daysUntil('2026-09-20')}** 天
-- **CSP-J/S 2026 第二轮** 还有 **~{daysUntil('2026-11-01')}** 天
-- **NOIP 2026** 还有 **~{daysUntil('2026-11-29')}** 天
+- **IOI 2026** 还有 **{daysUntil('2026-08-09')}** 天
+- **CSP-J/S 2026 第一轮** 还有 **{daysUntil('2026-09-19')}** 天
+- **CSP-J/S 2026 第二轮** 还有 **{daysUntil('2026-10-31')}** 天
+- **NOIP 2026** 还有 **{daysUntil('2026-11-28')}** 天
 
 ## 知识点
 
