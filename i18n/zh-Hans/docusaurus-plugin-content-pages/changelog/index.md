@@ -1,10 +1,10 @@
 ---
-title: Changelog
+title: 更新日志
 ---
 
 import { MDTitle } from '@site/src/components/laikit/markdown';
 import { Changelog } from '@site/src/pages/changelog/\_components';
 
-<MDTitle title="Changelog" description="Changelog of lailai.one" />
+<MDTitle title="更新日志" description="lailai.one 的更新日志" />
 
 <Changelog />
