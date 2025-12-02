@@ -64,7 +64,7 @@ function TocCard({ toc }: { toc: readonly TOCItem[] }) {
   );
 }
 
-function formatLongNumber(value: number) {
+function formatLongNumber(value) {
   const n = Number(value);
 
   if (n >= 1000000000) {
@@ -150,8 +150,7 @@ function StatsCard() {
       href: '/blog/tags',
     },
     {
-      value:
-        status === 'success' ? formatLongNumber(analytics.visitors) : 'N/A',
+      value: status === 'success' ? analytics.visitors : 'N/A',
       label: translate({
         id: 'blog.sidebar.stats.visitors',
         message: 'Visitors',
@@ -159,8 +158,7 @@ function StatsCard() {
       href: shareUrl,
     },
     {
-      value:
-        status === 'success' ? formatLongNumber(analytics.pageviews) : 'N/A',
+      value: status === 'success' ? analytics.pageviews : 'N/A',
       label: translate({
         id: 'blog.sidebar.stats.views',
         message: 'Views',
@@ -178,7 +176,9 @@ function StatsCard() {
       <div className={styles.authorStats}>
         {statsItems.map((item) => (
           <Link key={item.label} to={item.href} className={styles.statItem}>
-            <div className={styles.statValue}>{item.value}</div>
+            <div className={styles.statValue}>
+              {formatLongNumber(item.value)}
+            </div>
             <div className={styles.statLabel}>{item.label}</div>
           </Link>
         ))}
