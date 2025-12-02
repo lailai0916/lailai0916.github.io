@@ -42,11 +42,11 @@ export const daysUntil = (target) => Math.ceil((new Date(target) - new Date()) /
 
 ### 动态规划
 
-记忆化搜索、线性 DP、背包 DP（0-1 背包、完全背包、多重背包、混合背包、分组背包、二进制分组优化）、区间 DP、DAG上的 DP、树形 DP、状压 DP、数位 DP、插头 DP、计数 DP、动态 DP、概率 DP、DP 优化（斜率优化、四边形不等式优化）
+记忆化搜索、线性 DP、背包 DP（0-1 背包、完全背包、多重背包、混合背包、分组背包、二进制分组优化）、区间 DP、DAG 上的 DP、树形 DP、状压 DP、数位 DP、插头 DP、计数 DP、动态 DP、概率 DP、DP 优化（斜率优化、四边形不等式优化）
 
 ### 字符串
 
-字符串匹配、字符串哈希（Hash）、滚动哈希、字典树（Trie）、KMP、Boyer–Moore 算法、Z 函数（扩展 KMP）、AC自动机、后缀数组（SA）、后缀自动机（SAM）、后缀平衡树、广义后缀自动机、后缀树、Manacher、回文树、回文自动机、序列自动机、最小表示法、Lyndon 分解、Main–Lorentz 算法
+字符串匹配、字符串哈希（Hash）、滚动哈希、字典树（Trie）、KMP、Boyer–Moore 算法、Z 函数（扩展 KMP）、AC 自动机、后缀数组（SA）、后缀自动机（SAM）、后缀平衡树、广义后缀自动机、后缀树、Manacher、回文树、回文自动机、序列自动机、最小表示法、Lyndon 分解、Main–Lorentz 算法
 
 ### 数学
 
