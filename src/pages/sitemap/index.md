@@ -20,14 +20,14 @@ import { MDTitle } from '@site/src/components/laikit/markdown';
 
 - [Settings](/settings)
 - [Sitemap](/sitemap)
-- [Privacy Policy](/privacy)
 - [Changelog](/changelog)
+- [Privacy Policy](/privacy)
 
 ## Docs
 
-- [Contest](/contest)
-- [Note](/note)
-- [Project](/project)
+- [Contest](/docs/contest)
+- [Note](/docs/note)
+- [Project](/docs/project)
 
 ## Blog
 

@@ -39,13 +39,13 @@
     "message": "网站地图",
     "description": "The label of footer link with label=Sitemap linking to /sitemap"
   },
-  "link.item.label.Privacy Policy": {
-    "message": "隐私政策",
-    "description": "The label of footer link with label=Privacy Policy linking to /privacy"
-  },
   "link.item.label.Changelog": {
     "message": "更新日志",
     "description": "The label of footer link with label=Changelog linking to /changelog"
+  },
+  "link.item.label.Privacy Policy": {
+    "message": "隐私政策",
+    "description": "The label of footer link with label=Privacy Policy linking to /privacy"
   },
   "link.item.label.X (Twitter)": {
     "message": "X (Twitter)",

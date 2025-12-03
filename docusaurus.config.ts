@@ -168,8 +168,8 @@ const config: Config = {
           items: [
             { label: 'Settings', to: '/settings' },
             { label: 'Sitemap', to: '/sitemap' },
-            { label: 'Privacy Policy', to: '/privacy' },
             { label: 'Changelog', to: '/changelog' },
+            { label: 'Privacy Policy', to: '/privacy' },
           ],
         },
         {
