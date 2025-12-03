@@ -808,102 +808,6 @@
   "home.neuralnetwork.description": {
     "message": "在下方绘制数字 0~9，神经网络会识别您的手写数字"
   },
-  "pages.sitemap.title": {
-    "message": "网站地图"
-  },
-  "pages.sitemap.description": {
-    "message": "lailai's Home 的网站地图"
-  },
-  "pages.sitemap.modification": {
-    "message": "网站<b>地图</b>"
-  },
-  "pages.sitemap.datacard.label": {
-    "message": "个页面"
-  },
-  "data.sitemap.pages.title": {
-    "message": "页面"
-  },
-  "data.sitemap.pages.about": {
-    "message": "关于"
-  },
-  "data.sitemap.pages.travel": {
-    "message": "旅行"
-  },
-  "data.sitemap.pages.friends": {
-    "message": "友链"
-  },
-  "data.sitemap.pages.resources": {
-    "message": "资源"
-  },
-  "data.sitemap.site.title": {
-    "message": "网站"
-  },
-  "data.sitemap.site.settings": {
-    "message": "设置"
-  },
-  "data.sitemap.site.sitemap": {
-    "message": "网站地图"
-  },
-  "data.sitemap.site.privacy": {
-    "message": "隐私政策"
-  },
-  "data.sitemap.site.changelog": {
-    "message": "更新日志"
-  },
-  "data.sitemap.docs.title": {
-    "message": "文档"
-  },
-  "data.sitemap.docs.contest": {
-    "message": "竞赛"
-  },
-  "data.sitemap.docs.note": {
-    "message": "笔记"
-  },
-  "data.sitemap.docs.project": {
-    "message": "项目"
-  },
-  "data.sitemap.blog.title": {
-    "message": "博客"
-  },
-  "data.sitemap.blog.blog": {
-    "message": "博客"
-  },
-  "data.sitemap.blog.archive": {
-    "message": "归档"
-  },
-  "data.sitemap.blog.authors": {
-    "message": "作者"
-  },
-  "data.sitemap.blog.sidebar.tags": {
-    "message": "标签"
-  },
-  "blog.sidebar.toc.title": {
-    "message": "目录"
-  },
-  "data.sitemap.function.title": {
-    "message": "功能"
-  },
-  "data.sitemap.function.search": {
-    "message": "搜索"
-  },
-  "data.sitemap.function.test": {
-    "message": "测试"
-  },
-  "data.sitemap.more.title": {
-    "message": "更多"
-  },
-  "data.sitemap.more.status": {
-    "message": "lailai's Status"
-  },
-  "data.sitemap.more.analytics": {
-    "message": "lailai's Analytics"
-  },
-  "data.sitemap.more.cloud": {
-    "message": "lailai's Cloud"
-  },
-  "data.sitemap.more.ai": {
-    "message": "lailai's AI"
-  },
   "pages.travel.title": {
     "message": "旅行"
   },
@@ -1059,6 +963,9 @@
   },
   "blog.postcard.readingTime": {
     "message": "{readingTime} 分钟"
+  },
+  "blog.sidebar.toc.title": {
+    "message": "目录"
   },
   "blog.sidebar.feed.title": {
     "message": "订阅"
