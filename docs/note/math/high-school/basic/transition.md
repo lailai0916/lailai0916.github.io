@@ -374,7 +374,7 @@ $$
 
 但这还不是最简答案，需要进一步简化。
 
-<Assets file="de1e7a219492200560905ce9d47c614a.jpg" style={{ maxWidth: '500px' }} />
+![](https://cloud.lailai.one/f/x9cn/transition-sqrt.jpg)
 
 ### 推导
 
