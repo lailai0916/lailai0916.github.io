@@ -327,7 +327,7 @@ const sidebars: SidebarsConfig = {
                 'note/math/high-school/basic/inequality',
                 'note/math/high-school/basic/vector',
                 'note/math/high-school/basic/complex',
-                'note/math/high-school/basic/counting-principle',
+                'note/math/high-school/basic/counting',
               ],
             },
             {

@@ -20,7 +20,7 @@ $$
 X\sim B(n,p)
 $$
 
-由 [二项式定理](../basic/counting-principle#二项式定理)，容易得到：
+由 [二项式定理](../basic/counting#二项式定理)，容易得到：
 
 $$
 \sum_{k=0}^n P(X=k)=\sum_{k=0}^n C_n^kp^k(1-p)^{n-k}=\left[p+(1-p)\right]^n=1
