@@ -74,7 +74,7 @@ $$
 
 《人教版高中数学 · 必修一》的表格总结了各种情况的对应关系：
 
-<Assets file="table.png" />
+![](https://cloud.lailai.one/f/ybCP/inequality-table.png)
 
 :::example
 
