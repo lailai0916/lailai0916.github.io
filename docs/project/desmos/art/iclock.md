@@ -16,7 +16,7 @@
 
 ## 视频展示
 
-<Assets file="iclock.mp4" type="video" style={{ maxWidth: '500px' }} controls />
+![](https://cloud.lailai.one/f/6o9s5/desmos-iclock.mp4)
 
 ## 获奖证书
 
