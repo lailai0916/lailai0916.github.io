@@ -964,7 +964,7 @@ $$
 
 三角函数在几何中被广泛应用：
 
-详见 [解三角形](../geometry/triangle-solving)。
+详见 [解三角形](../geometry/triangle)。
 
 详见 [直线和圆](../geometry/line-and-circle)。
 
