@@ -34,4 +34,4 @@
 
 ## 效果展示
 
-<Assets file="map.png" />
+![](https://cloud.lailai.one/f/nMdSq/hangzhou-highschool-map.png)

@@ -93,7 +93,7 @@ client (webpack 5.99.9) compiled successfully
 
 <ImageWindow url="http://localhost:3000">
 
-<Assets file="my-website-light.png#gh-light-mode-only" /><Assets file="my-website-dark.png#gh-dark-mode-only" />
+![](https://cloud.lailai.one/f/RojUX/lailai0916.github.io-my-website-light.png#gh-light-mode-only)![](https://cloud.lailai.one/f/3XYFE/lailai0916.github.io-my-website-dark.png#gh-dark-mode-only)
 
 </ImageWindow>
 
