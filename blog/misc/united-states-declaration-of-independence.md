@@ -1,5 +1,5 @@
 ---
-title: '《美国独立宣言》'
+title: '美国独立宣言'
 date: 2025-06-10T12:00
 authors: lailai
 tags: [misc, resource]
@@ -15,7 +15,7 @@ tags: [misc, resource]
 
 ## 原件摹本
 
-<Assets file="United_States_Declaration_of_Independence.jpg" />
+![](https://cloud.lailai.one/f/O4ig/united-states-declaration-of-independence.jpg)
 
 ## 宣言原文
 

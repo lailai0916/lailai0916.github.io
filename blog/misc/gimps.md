@@ -5,6 +5,8 @@ authors: lailai
 tags: [misc]
 ---
 
-<Assets file="C2EFD80728EE0EEADC7D2BDA3759BB6B.png" path="/blog/misc/gimps" />
+![](https://cloud.lailai.one/f/wrhg/gimps.png)
 
 <!-- truncate -->
+
+[TODO]
