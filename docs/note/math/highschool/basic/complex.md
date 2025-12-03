@@ -132,7 +132,7 @@ $$
 
 我们将向量 $\overrightarrow{OZ}$ 与 **实轴正方向** 的夹角定义为 **辐角**，记作 $\operatorname{arg}z$，取值范围通常为 $[0,2\pi)$。
 
-这类似于任意角 [三角函数](../function/trigonometric-function) 的定义。
+这类似于任意角 [三角函数](../function/trigonometric) 的定义。
 
 ### 共轭复数
 
@@ -286,7 +286,7 @@ $$
 
 假设点 $A$ 的直角坐标为 $A(x,y)$，极坐标为 $A(r,\theta)$，考虑如何进行坐标转换。
 
-从 **极坐标系** 转换到 **直角坐标系** 可以使用 [三角函数](../function/trigonometric-function)：
+从 **极坐标系** 转换到 **直角坐标系** 可以使用 [三角函数](../function/trigonometric)：
 
 $$
 x=r\cos\theta,y=r\sin\theta

@@ -335,7 +335,7 @@ const sidebars: SidebarsConfig = {
               label: '代数与函数',
               items: [
                 'note/math/highschool/function/func',
-                'note/math/highschool/function/trigonometric-function',
+                'note/math/highschool/function/trigonometric',
                 'note/math/highschool/function/sequence',
                 'note/math/highschool/function/derivative',
               ],
@@ -344,8 +344,8 @@ const sidebars: SidebarsConfig = {
               type: 'category',
               label: '几何与解析',
               items: [
-                'note/math/highschool/geometry/triangle-solving',
-                'note/math/highschool/geometry/solid-geometry',
+                'note/math/highschool/geometry/triangle',
+                'note/math/highschool/geometry/solid',
                 'note/math/highschool/geometry/line-and-circle',
                 'note/math/highschool/geometry/conic',
               ],

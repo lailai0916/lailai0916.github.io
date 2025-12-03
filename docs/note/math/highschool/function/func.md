@@ -276,7 +276,7 @@ $$
 y=\sin(x)/\cos(x)/\tan(x)/\cot(x)/\sec(x)/\csc(x)
 $$
 
-详见 [三角函数](trigonometric-function)。
+详见 [三角函数](trigonometric)。
 
 三角函数的图像（红色为 $\sin$，蓝色为 $\cos$，绿色为 $\tan$，橙色为 $\cot$，紫色为 $\sec$，黑色为 $\csc$）：
 
