@@ -11,9 +11,9 @@ tags: [personal]
 
 ## 效果展示
 
-|                                                                正面                                                                |                                                               反面                                                               |
-| :--------------------------------------------------------------------------------------------------------------------------------: | :------------------------------------------------------------------------------------------------------------------------------: |
-| <Assets file="business-card-front-light.png#gh-light-mode-only" /><Assets file="business-card-front-dark.png#gh-dark-mode-only" /> | <Assets file="business-card-back-light.png#gh-light-mode-only" /><Assets file="business-card-back-dark.png#gh-dark-mode-only" /> |
+|                                                                                   正面                                                                                   |                                                                                  反面                                                                                  |
+| :----------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
+| ![](https://cloud.lailai.one/f/P3Iy/business-card-front-light.png#gh-light-mode-only)![](https://cloud.lailai.one/f/YJcA/business-card-front-dark.png#gh-dark-mode-only) | ![](https://cloud.lailai.one/f/NjTg/business-card-back-light.png#gh-light-mode-only)![](https://cloud.lailai.one/f/eQuw/business-card-back-dark.png#gh-dark-mode-only) |
 
 ## 代码
 

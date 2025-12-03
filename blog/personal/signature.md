@@ -17,4 +17,6 @@ tags: [personal]
 
 ## 效果展示
 
-<Assets file="signature.svg" />
+![](https://cloud.lailai.one/f/dbfJ/signature.svg)
+
+![](https://cloud.lailai.one/f/5bsb/signature-2x.svg)

@@ -1,10 +1,10 @@
 ---
-title: '16th'
+title: '16th Birthday'
 date: 2025-09-16T00:00
 authors: lailai
 tags: [personal]
 ---
 
-<Assets file="Birthday.png" path="/blog/personal/birthday-16" />
+![](https://cloud.lailai.one/f/r4HM/birthday-16.png)
 
 <!-- truncate -->
