@@ -14,4 +14,4 @@
 - [ASCII - 维基百科](https://zh.wikipedia.org/zh-cn/ASCII)
 - [ASCII Table](https://www.asciitable.com)
 
-<Assets file="asciifull.gif" />
+![](https://cloud.lailai.one/f/69T5/noi-written-ascii.gif)
