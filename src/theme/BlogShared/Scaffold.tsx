@@ -114,8 +114,8 @@ function StatsCard() {
         const statsData = await res.json();
 
         setAnalytics({
-          visitors: statsData?.visitors?.value,
-          pageviews: statsData?.pageviews?.value,
+          visitors: statsData?.visitors,
+          pageviews: statsData?.pageviews,
         });
         setStatus('success');
       } catch (error) {
