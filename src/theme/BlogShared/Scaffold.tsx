@@ -18,7 +18,7 @@ const fixedId = 'lailai';
 const shareUrl = `https://analytics.lailai.one/share/DDd09iBEYOQw2k9L`;
 const WEBSITE_ID = '69d3b7de-90e4-4be4-a355-633620ecefdb';
 const ANALYTICS_BASE_URL = `https://analytics.lailai.one/api/websites/${WEBSITE_ID}/stats`;
-const TOKEN =
+const Authorization =
   'Bearer mXASurmA0JxF4bm+aeWM458Rk3hKZJUoYm4aSFdVUp1LzlZ96vwe2RcV6b19yqwgwmPIo3q2jvqLlBqLhNrkW+AlPZ/CgTIfAkeMrg+NWpcYD9waQRngwntf5maKEt/oBwKm9C3wd3dCm7m0BSXddT8q8vDMYSRYeJ+tcwkcbEOCtsgAHs28V+qT30mGz6yCh02gctP3RrPDeIvq3A4az1n87MlUZDiLxI8YwX8aVhSOml6WKnKtFOWgqTCXt9si79sLuw8vWT+FySCkes47gl0JlgOz/gFGZPwCGa2LKP1N0evzma5tvUtKLJsQfcBp/JZVoxDRmMUp2B1PaKoUyAn4ELxQzLpaFkVyMdA/p1AO72N2vhlNHILC4/kI';
 
 function AuthorCard() {
@@ -66,24 +66,12 @@ function TocCard({ toc }: { toc: readonly TOCItem[] }) {
 
 function formatLongNumber(value) {
   const n = Number(value);
-
-  if (n >= 1000000000) {
-    return `${(n / 1000000).toFixed(1)}b`;
-  }
-  if (n >= 1000000) {
-    return `${(n / 1000000).toFixed(1)}m`;
-  }
-  if (n >= 100000) {
-    return `${(n / 1000).toFixed(0)}k`;
-  }
-  if (n >= 10000) {
-    return `${(n / 1000).toFixed(1)}k`;
-  }
-  if (n >= 1000) {
-    return `${(n / 1000).toFixed(2)}k`;
-  }
-
-  return String(n);
+  if (Number.isNaN(n)) return value;
+  return new Intl.NumberFormat('en-US', {
+    notation: 'compact',
+    compactDisplay: 'short',
+    maximumSignificantDigits: 3,
+  }).format(n);
 }
 
 function StatsCard() {
@@ -105,7 +93,7 @@ function StatsCard() {
           `${ANALYTICS_BASE_URL}?startAt=0&endAt=${Date.now()}`,
           {
             signal: controller.signal,
-            headers: { Authorization: TOKEN },
+            headers: { Authorization },
           }
         );
 
