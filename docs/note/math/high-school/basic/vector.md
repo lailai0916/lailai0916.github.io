@@ -154,7 +154,7 @@ $$
 
   起点为两个向量共有的起点，方向沿平行四边形对角线方向。
 
-<Assets file="image-2.png" />
+![](https://cloud.lailai.one/f/v1uM/vector-addition.png)
 
 这样，向量的加法就具有了几何意义。并且向量的加法满足交换律与结合律。
 
@@ -518,8 +518,8 @@ $$
 
 ### 等系数和线
 
-<Assets file="等系数和线.png" />
+![](https://cloud.lailai.one/f/p1TW/vector-image-1.png)
 
 证明过程：
 
-<Assets file="image-1.png" />
+![](https://cloud.lailai.one/f/91fB/vector-image-2.png)
