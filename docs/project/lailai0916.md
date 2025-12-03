@@ -23,7 +23,7 @@ GitHub 个人主页仓库教程。
 
 <ImageWindow url="https://github.com/new">
 
-<Assets file="create-repository-light.png#gh-light-mode-only" /><Assets file="create-repository-dark.png#gh-dark-mode-only" />
+![](https://cloud.lailai.one/f/8bOiq/lailai0916-create-repository-light.png#gh-light-mode-only)![](https://cloud.lailai.one/f/k36cX/lailai0916-create-repository-dark.png#gh-dark-mode-only)
 
 </ImageWindow>
 
@@ -33,7 +33,7 @@ GitHub 个人主页仓库教程。
 
 <ImageWindow url="https://github.com/lailai0916/lailai0916">
 
-<Assets file="repository-homepage-light.png#gh-light-mode-only" /><Assets file="repository-homepage-dark.png#gh-dark-mode-only" />
+![](https://cloud.lailai.one/f/z0oSA/lailai0916-repository-homepage-light.png#gh-light-mode-only)![](https://cloud.lailai.one/f/OD4tg/lailai0916-repository-homepage-dark.png#gh-dark-mode-only)
 
 </ImageWindow>
 
@@ -41,7 +41,7 @@ GitHub 个人主页仓库教程。
 
 <ImageWindow url="https://github.com/lailai0916/lailai0916/edit/main/README.md">
 
-<Assets file="edit-readme-light.png#gh-light-mode-only" /><Assets file="edit-readme-dark.png#gh-dark-mode-only" />
+![](https://cloud.lailai.one/f/AJ1HA/lailai0916-edit-readme-light.png#gh-light-mode-only)![](https://cloud.lailai.one/f/wkrIg/lailai0916-edit-readme-dark.png#gh-dark-mode-only)
 
 </ImageWindow>
 
@@ -152,7 +152,7 @@ GitHub 个人主页仓库教程。
 
 <ImageWindow url="https://github.com/settings/tokens">
 
-<Assets file="setting-token-light.png#gh-light-mode-only" /><Assets file="setting-token-dark.png#gh-dark-mode-only" />
+![](https://cloud.lailai.one/f/rK4cM/lailai0916-setting-token-light.png#gh-light-mode-only)![](https://cloud.lailai.one/f/P53sy/lailai0916-setting-token-dark.png#gh-dark-mode-only)
 
 </ImageWindow>
 
@@ -162,7 +162,7 @@ GitHub 个人主页仓库教程。
 
 <ImageWindow url="https://github.com/settings/tokens/new">
 
-<Assets file="generate-token-light.png#gh-light-mode-only" /><Assets file="generate-token-dark.png#gh-dark-mode-only" />
+![](https://cloud.lailai.one/f/YwJTA/lailai0916-generate-token-light.png#gh-light-mode-only)![](https://cloud.lailai.one/f/ePQfw/lailai0916-generate-token-dark.png#gh-dark-mode-only)
 
 </ImageWindow>
 
@@ -176,7 +176,7 @@ GitHub 个人主页仓库教程。
 
 <ImageWindow url="https://github.com/new?template_name=github-stats&template_owner=jstrieb">
 
-<Assets file="copy-repository-light.png#gh-light-mode-only" /><Assets file="copy-repository-dark.png#gh-dark-mode-only" />
+![](https://cloud.lailai.one/f/Nrjsg/lailai0916-copy-repository-light.png#gh-light-mode-only)![](https://cloud.lailai.one/f/dwbSJ/lailai0916-copy-repository-dark.png#gh-dark-mode-only)
 
 </ImageWindow>
 
@@ -184,7 +184,7 @@ GitHub 个人主页仓库教程。
 
 <ImageWindow url="https://github.com/lailai0916/github-stats">
 
-<Assets file="github-stats-homepage-light.png#gh-light-mode-only" /><Assets file="github-stats-homepage-dark.png#gh-dark-mode-only" />
+![](https://cloud.lailai.one/f/55bCb/lailai0916-github-stats-homepage-light.png#gh-light-mode-only)![](https://cloud.lailai.one/f/g8OFJ/lailai0916-github-stats-homepage-dark.png#gh-dark-mode-only)
 
 </ImageWindow>
 
@@ -195,7 +195,7 @@ GitHub 个人主页仓库教程。
 
 <ImageWindow url="https://github.com/lailai0916/github-stats/settings/secrets/actions">
 
-<Assets file="setting-secret-light.png#gh-light-mode-only" /><Assets file="setting-secret-dark.png#gh-dark-mode-only" />
+![](https://cloud.lailai.one/f/EnOi8/lailai0916-setting-secret-light.png#gh-light-mode-only)![](https://cloud.lailai.one/f/ozACB/lailai0916-setting-secret-dark.png#gh-dark-mode-only)
 
 </ImageWindow>
 
@@ -204,7 +204,7 @@ GitHub 个人主页仓库教程。
 
 <ImageWindow url="https://github.com/lailai0916/github-stats/settings/secrets/actions">
 
-<Assets file="add-secret-light.png#gh-light-mode-only" /><Assets file="add-secret-dark.png#gh-dark-mode-only" />
+![](https://cloud.lailai.one/f/LoatV/lailai0916-add-secret-light.png#gh-light-mode-only)![](https://cloud.lailai.one/f/yxbhP/lailai0916-add-secret-dark.png#gh-dark-mode-only)
 
 </ImageWindow>
 
@@ -220,7 +220,7 @@ GitHub 个人主页仓库教程。
 
 <ImageWindow url="https://github.com/lailai0916/github-stats/actions/workflows/main.yml">
 
-<Assets file="run-workflow-light.png#gh-light-mode-only" /><Assets file="run-workflow-dark.png#gh-dark-mode-only" />
+![](https://cloud.lailai.one/f/aQjH8/lailai0916-run-workflow-light.png#gh-light-mode-only)![](https://cloud.lailai.one/f/VoyIE/lailai0916-run-workflow-dark.png#gh-dark-mode-only)
 
 </ImageWindow>
 
@@ -228,7 +228,7 @@ GitHub 个人主页仓库教程。
 
 <ImageWindow url="https://github.com/lailai0916/github-stats/actions">
 
-<Assets file="workflow-success-light.png#gh-light-mode-only" /><Assets file="workflow-success-dark.png#gh-dark-mode-only" />
+![](https://cloud.lailai.one/f/JYgun/lailai0916-workflow-success-light.png#gh-light-mode-only)![](https://cloud.lailai.one/f/KPpcJ/lailai0916-workflow-success-dark.png#gh-dark-mode-only)
 
 </ImageWindow>
 
