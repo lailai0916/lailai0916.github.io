@@ -57,7 +57,7 @@ $$
 \mathbb{N}\subseteq\mathbb{Z}\subseteq\mathbb{Q}\subseteq\mathbb{R}\subseteq\mathbb{C}
 $$
 
-<Assets file="NumberSetinC.svg" />
+![](https://cloud.lailai.one/f/gOSJ/complex-number-set-in-c.svg)
 
 这些数集符号还可以添加 **角标**，通过 $+$ 和 $-$ 表示正负。
 
@@ -254,7 +254,7 @@ $$
 A\cup B=C=\set{x|x\in A\text{或}x\in B}
 $$
 
-<Assets file="Venn0111.svg" />
+![](https://cloud.lailai.one/f/ajt8/set-venn-0111.svg)
 
 :::tip
 
@@ -270,7 +270,7 @@ $$
 A\cap B=C=\set{x|x\in A\text{且}x\in B}
 $$
 
-<Assets file="Venn0001.svg" />
+![](https://cloud.lailai.one/f/VyhE/set-venn-0001.svg)
 
 ### 补集
 
@@ -280,7 +280,7 @@ $$
 \complement_U A=B=\set{x|x\notin A}
 $$
 
-<Assets file="Venn10.svg" />
+![](https://cloud.lailai.one/f/KpHJ/set-venn-10.svg)
 
 :::tip
 
@@ -406,4 +406,4 @@ $$
 |A\cup B\cup C|=|A|+|B|+|C|-|A\cap B|-|A\cap C|-|B\cap C|+|A\cap B\cap C|
 $$
 
-<Assets file="Inclusion-exclusion.svg" />
+![](https://cloud.lailai.one/f/JgIn/set-inclusion-exclusion.svg)
