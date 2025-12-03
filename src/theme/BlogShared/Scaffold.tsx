@@ -203,29 +203,6 @@ function TagsCard() {
   );
 }
 
-function ArchiveCard() {
-  const years = React.useMemo(() => getArchiveByYear(), []);
-  const TITLE = translate({
-    id: 'theme.blog.archive.title',
-    message: 'Archive',
-  });
-
-  return (
-    <Card title={TITLE}>
-      <ul className={styles.archiveList}>
-        {years.map((y) => (
-          <li key={y.year} className={styles.archiveItem}>
-            <Link to={`/blog/archive#${y.year}`} className={styles.archiveLink}>
-              <span className={styles.archiveYear}>{y.year}</span>
-              <span className={styles.archiveCount}>{y.count}</span>
-            </Link>
-          </li>
-        ))}
-      </ul>
-    </Card>
-  );
-}
-
 function FeedCard() {
   const feeds = [
     { label: 'RSS Feed', href: 'https://lailai.one/blog/rss.xml' },
@@ -316,7 +293,6 @@ export default function BlogScaffold({
               <StatsCard />
               <FeedCard />
               <TagsCard />
-              <ArchiveCard />
             </>
           )}
         </aside>

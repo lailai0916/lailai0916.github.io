@@ -361,53 +361,6 @@
   transform: translateX(0);
 }
 
-.archiveList {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-  /* Reset default UL styles to avoid extra left indentation */
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.archiveItem {
-  list-style: none;
-}
-
-.archiveLink {
-  text-decoration: none !important;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0.35rem 0.5rem; /* 还原：保持与整体卡片风格一致 */
-  border-radius: 8px;
-  transition:
-    background 160ms ease,
-    transform 80ms ease;
-}
-
-.archiveLink:hover {
-  background: var(--ifm-color-emphasis-100);
-  transform: translateY(-1px);
-}
-
-.archiveLink:focus-visible {
-  outline: 2px solid var(--ifm-color-primary);
-  outline-offset: 2px;
-}
-
-.archiveYear {
-  color: inherit;
-}
-
-.archiveCount {
-  background: var(--ifm-color-emphasis-200);
-  border-radius: 999px;
-  padding: 0.05rem 0.5rem;
-  font-size: 0.75rem;
-}
-
 .postCard {
   background: var(--ifm-card-background-color);
   border: 1px solid var(--ifm-color-emphasis-200);
