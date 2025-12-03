@@ -43,7 +43,7 @@ $$
 其描述的是辛普森积分法（一种数值积分方法）：
 
 $$
-\int_{a}^{b}f(x)\mathrm dx\approx {\frac {b-a}{6}}\left[f(a)+4f\left({\frac {a+b}{2}}\right)+f(b)\right]
+\int_{a}^{b}f(x)\mathrm\mathrm{d}x\approx {\frac {b-a}{6}}\left[f(a)+4f\left({\frac {a+b}{2}}\right)+f(b)\right]
 $$
 
 ### 欧拉公式

@@ -96,7 +96,7 @@ $$
 S=\int_a^b f(x)\mathrm{d}x=|S_\text{蓝色}|-|S_\text{黄色}|
 $$
 
-<Assets file="Integral_example.svg-1024722.png" />
+![](https://cloud.lailai.one/f/k6FX/calculus-integral-example.png)
 
 ### 有向面积
 
@@ -198,7 +198,7 @@ $$
 
 这个类似“前缀和”过程叫做 **积分**，由于 $c$ 可以是任意常数，所以原函数有 **无穷多个**。
 
-**不定积分** $\displaystyle\int f(x)dx$ 表示所有可能的原函数，它们之间相差一个常数 $C$，称为 **积分常数**：
+**不定积分** $\displaystyle\int f(x)\mathrm{d}x$ 表示所有可能的原函数，它们之间相差一个常数 $C$，称为 **积分常数**：
 
 $$
 \int f(x)\mathrm{d}x=F(x)+C
@@ -333,7 +333,7 @@ $$
 
 如果已知函数 $F(x)$ 的导数是 $f(x)$，那么 $F(x)$ 就是不定积分 $f(x)$ 的一个原函数。
 
-<Assets file="400px-Integral_approximations-3-steps.png" />
+![](https://cloud.lailai.one/f/8OUq/calculus-integral-step.png)
 
 ## 例题
 
