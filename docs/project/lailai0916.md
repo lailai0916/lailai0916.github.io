@@ -12,7 +12,7 @@ GitHub 个人主页仓库教程。
 
 ## 创建仓库
 
-1. 打开 [GitHub](https://github.com)，并登录你的账户。
+1. 打开 [GitHub](https://github.com) 并登录账户。
 
 2. 在 GitHub 首页右上角点击加号 + 按钮，点击 [New repository](https://github.com/new)（新建仓库）。
 
