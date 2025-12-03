@@ -94,7 +94,7 @@ $$
 \mathbb{N}\subseteq\mathbb{Z}\subseteq\mathbb{Q}\subseteq\mathbb{R}\subseteq\mathbb{C}
 $$
 
-<Assets file="NumberSetinC.svg" />
+![](https://cloud.lailai.one/f/gOSJ/complex-number-set-in-c.svg)
 
 :::tip
 
@@ -387,4 +387,4 @@ $$
 h=a+bi+cj+dk
 $$
 
-<Assets file="v2-063e3b991174c594a19458c606f0ea1b_1440w.webp" />
+![](https://cloud.lailai.one/f/EOU8/complex-number-set-in-v.webp)
