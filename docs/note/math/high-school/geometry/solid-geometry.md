@@ -8,7 +8,7 @@
 
 ### 分类
 
-<Assets file="空间几何体.png" />
+![](https://cloud.lailai.one/f/WZhe/solid-geometry-classification.png)
 
 多面体是指三维空间中由平面多边形、直边和顶点组成的几何形状。多面体表面积通用公式就是将每一个平面多边形的面积相加求和。
 
@@ -43,7 +43,7 @@ $$
 其描述的是辛普森积分法（一种数值积分方法）：
 
 $$
-\int_{a}^{b}f(x)\mathrm\mathrm{d}x\approx {\frac {b-a}{6}}\left[f(a)+4f\left({\frac {a+b}{2}}\right)+f(b)\right]
+\int_{a}^{b}f(x)\mathrm{d}x\approx {\frac {b-a}{6}}\left[f(a)+4f\left({\frac {a+b}{2}}\right)+f(b)\right]
 $$
 
 ### 欧拉公式
@@ -62,7 +62,7 @@ $$
 
 ### 棱柱
 
-<Assets file="image-1.png" />
+![](https://cloud.lailai.one/f/DWrHK/solid-geometry-prism.png)
 
 - 棱柱：上下底面平行（且全等），各侧面都是四边形，侧面的公共边相互平行。
 
@@ -240,11 +240,11 @@ $$
 
 ### 截面问题
 
-<Assets file="image.png" />
+![](https://cloud.lailai.one/f/1dzcZ/solid-geometry-section-1.png)
 
 找截面有交线法和平行线法两个常用的方法，我喜欢先用平行线，然后找交线。
 
-<Assets file="截面问题.png" />
+![](https://cloud.lailai.one/f/jJzuq/solid-geometry-section-2.png)
 
 1. 连接被截的若干点。
 2. 做面上的平行线、延长线。

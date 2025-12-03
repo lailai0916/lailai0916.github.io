@@ -249,7 +249,9 @@ $$
 
 :::example
 
-- $\frac{\sin{\theta}}{\cos{\theta}}=\frac{a/c}{b/c}=\frac{a}{b}=\tan{\theta}$
+$$
+\frac{\sin{\theta}}{\cos{\theta}}=\frac{a/c}{b/c}=\frac{a}{b}=\tan{\theta}
+$$
 
 :::
 
