@@ -21,4 +21,3 @@ tags: [misc, resource]
 ## 中国地图
 
 ![](https://cloud.lailai.one/f/zoCA/china-map.jpg)
-
