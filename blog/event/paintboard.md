@@ -5,7 +5,7 @@ authors: lailai
 tags: [event]
 ---
 
-<Assets file="header.png" path="/blog/event/paintboard" />
+![](https://cloud.lailai.one/f/RjsX/paintboard-header.png)
 
 <!-- truncate -->
 
@@ -14,6 +14,10 @@ tags: [event]
 - [洛谷保存站](https://www.luogu.me)
 - [活动公告](https://www.luogu.me/article/pssi9ceo)
 - [冬日绘板](https://www.luogu.me/paintboard)
+
+## 活动海报
+
+![](https://cloud.lailai.one/f/ndfq/paintboard-poster.png)
 
 ## 八校计划
 
@@ -42,7 +46,3 @@ tags: [event]
 - **浙江省杭州第二中学**
 
 （按拼音字典顺序）
-
-## 活动海报
-
-<Assets file="poster.png" />
