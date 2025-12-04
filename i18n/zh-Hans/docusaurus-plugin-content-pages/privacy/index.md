@@ -213,7 +213,7 @@ import { MDTitle } from '@site/src/components/laikit/markdown';
 
 :::tip
 
-在遵守此类请求之前，我们会用尽我们的法律补救措施，尽可能最小化我们不得不分享的信息
+在遵守此类请求之前，我们会用尽我们的法律补救措施，尽可能最小化我们不得不分享的信息。
 
 :::
 
