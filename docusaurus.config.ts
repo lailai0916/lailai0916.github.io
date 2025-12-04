@@ -207,6 +207,7 @@ const config: Config = {
       darkTheme: prismThemes.dracula,
       // theme: prismThemes.oneLight,
       // darkTheme: prismThemes.oneDark,
+      additionalLanguages: ['java', 'pascal'],
     },
     docs: {
       sidebar: {

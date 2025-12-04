@@ -48,6 +48,12 @@ public class Main
 }
 ```
 
+## JavaScript
+
+```js
+console.log("Hello, World!");
+```
+
 ## Pascal
 
 ```pascal
