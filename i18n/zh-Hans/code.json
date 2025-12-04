@@ -991,9 +991,6 @@
   "blog.pages.archive.empty": {
     "message": "暂无文章"
   },
-  "blog.pages.archive.yearSelect": {
-    "message": "年份"
-  },
   "blog.pages.tags.tagSelect": {
     "message": "标签"
   },
