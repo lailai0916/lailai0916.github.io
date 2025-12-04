@@ -34,11 +34,9 @@ export default function BlogArchivePage(props: Props): React.ReactElement {
     return Array.from(map.entries()).sort((a, b) => b[0] - a[0]);
   }, [archive]);
 
-  const visibleGroups = groups;
-
   return (
     <BlogScaffold title={TITLE} description={DESCRIPTION}>
-      {visibleGroups.map(([year, posts]) => (
+      {groups.map(([year, posts]) => (
         <Card key={year} title={String(year)}>
           <ul className={styles.recentList}>
             {posts.map((p: any) => (
@@ -54,7 +52,7 @@ export default function BlogArchivePage(props: Props): React.ReactElement {
           </ul>
         </Card>
       ))}
-      {!visibleGroups.length && (
+      {!groups.length && (
         <Card>
           <Translate id="blog.pages.archive.empty">No posts yet</Translate>
         </Card>

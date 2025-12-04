@@ -146,50 +146,6 @@
   margin-bottom: 0.75rem;
 }
 
-.archiveFilter {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  flex-wrap: wrap;
-}
-
-.archiveFilterLabel {
-  font-weight: 600;
-  color: var(--ifm-color-emphasis-700);
-}
-
-.archiveFilterOptions {
-  display: flex;
-  gap: 0.5rem;
-  flex-wrap: wrap;
-}
-
-.archiveFilterButton {
-  border: 1px solid var(--ifm-color-emphasis-200);
-  border-radius: 999px;
-  background: var(--ifm-card-background-color);
-  color: inherit;
-  padding: 0.35rem 0.9rem;
-  font-size: 0.9rem;
-  cursor: pointer;
-  transition:
-    background 160ms ease,
-    border-color 160ms ease,
-    color 160ms ease,
-    transform 120ms ease;
-}
-
-.archiveFilterButton:hover {
-  transform: translateY(-1px);
-  border-color: var(--ifm-color-primary);
-}
-
-.archiveFilterButtonActive {
-  background: var(--ifm-color-primary);
-  border-color: var(--ifm-color-primary);
-  color: #fff;
-}
-
 .tagList {
   display: flex;
   flex-wrap: wrap;
