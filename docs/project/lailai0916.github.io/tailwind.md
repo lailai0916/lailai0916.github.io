@@ -199,7 +199,7 @@ const item = {
 3. **`i18n/zh-Hans/docusaurus-plugin-content-pages/about/index.md`** - 翻译版本
 4. **`README.md`** - 项目结构说明
 5. **`README.zh-Hans.md`** - 中文版README说明
-6. **`docs/project/github/lailais-home/index.md`** - 待办事项列表
+6. **`docs/project/lailai0916.github.io/index.md`** - 待办事项列表
 
 ### CSS注释更新
 
