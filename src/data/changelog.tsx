@@ -10,7 +10,7 @@ export interface ChangelogItem {
 
 export const CHANGELOG_LIST: ChangelogItem[] = [
   {
-    date: '2025-12-02',
+    date: '2025-12-05',
     type: 'removed',
     content: '<code>&lt;Assets /&gt;</code> 资源优化组件',
   },
