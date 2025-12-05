@@ -12,14 +12,14 @@
 
 用一平面去截双顶圆锥，得到的截线就是圆锥曲线。
 
-<Assets file="Secciones_Conicas.svg" />
+![](https://cloud.lailai.one/f/kD6IX/conic-section-1.svg)
 
 不妨设 $\alpha$ 指母线与轴的夹角（$0<\alpha<90^\circ$），切平面与轴的夹角为 $\beta$（$0\le\beta\le90^\circ$）。
 
 则所得截线的离心率 $e$ 仅由这两个角决定：
 
 $$
-e = \frac{\cos\beta}{\cos\alpha}
+e=\frac{\cos\beta}{\cos\alpha}
 $$
 
 角度—类型—离心率的对照：
@@ -30,7 +30,7 @@ $$
 
 更加具体的几何构造，由于代数手段可以简单地解决，请自行查阅丹德林球。
 
-<Assets file="image-15.png" />
+![](https://cloud.lailai.one/f/DneHK/conic-section-2.png)
 
 离心率与行星运动，以牛顿大炮为例：
 
@@ -147,11 +147,11 @@ $$
 
 - 如果 $b/c$ 等于 $1$，则是伯努利双扭线。
 
-<Assets file="Cassini-3kurv.svg" />
+![](https://cloud.lailai.one/f/MjdIy/conic-cassini-oval-line-1.svg)
 
 伯努利双纽线的形状类似无穷大的符号，是双曲线关于圆心在双曲线中心的圆的反演图形。
 
-<Assets file="992px-Lemniskate_hyperbel.svg.png" />
+![](https://cloud.lailai.one/f/1zDcZ/conic-cassini-oval-line-2.png)
 
 ## 椭圆
 
@@ -397,7 +397,7 @@ $$
 
 其图像如图
 
-<Assets file="Sinh_cosh_tanh.svg" />
+<Desmos id="xp2ivmrm4f" />
 
 我们在复数部分推导了欧拉公式，因此不难知道
 
@@ -452,7 +452,7 @@ $$
 
 平面内与一个定点 $F$ 和一条定直线 $\ell$（不过 $F$）的距离相等的点的轨迹叫做抛物线。点 $F$ 叫做抛物线的焦点，直线 $\ell$ 叫做抛物线的准线。
 
-<Assets file="desmos-graph.svg" />
+<Desmos id="1b8og1zhau" />
 
 不妨设 $F$ 到准线的距离（焦准距）为 $p$ 且垂足为 $K$，容易知道，抛物线的顶点就是 $FK$ 的中点，即 $F=(\frac{p}{2},0),K=(-\frac{p}{2},0)$，不难得到抛物线的标准方程为
 
@@ -490,7 +490,7 @@ $$
 
 过焦点的直线交抛物线与点 $A,B$ 过 $A,B$ 做准线 $\ell$ 的垂线 $AC,BC$，所围成的直角梯形称为抛物线的特征直角梯形。
 
-<Assets file="image-1.png" />
+![](https://cloud.lailai.one/f/jPaSq/conic-characteristic-trapezoid.png)
 
 $$
 \angle CED=90^\circ
@@ -514,19 +514,19 @@ $$
 
 即焦点弦公式。
 
-<Assets file="image-40.png" />
+![](https://cloud.lailai.one/f/Qr8fX/conic-image-40.png)
 
-<Assets file="image-41.png" />
+![](https://cloud.lailai.one/f/68zs5/conic-image-41.png)
 
-<Assets file="image-42.png" />
+![](https://cloud.lailai.one/f/neATq/conic-image-42.png)
 
-<Assets file="image-43.png" />
+![](https://cloud.lailai.one/f/RJnTX/conic-image-43.png)
 
-<Assets file="image-44.png" />
+![](https://cloud.lailai.one/f/3wRFE/conic-image-44.png)
 
-<Assets file="image-45.png" />
+![](https://cloud.lailai.one/f/84qTq/conic-image-45.png)
 
-<Assets file="image-46.png" />
+![](https://cloud.lailai.one/f/kDrhX/conic-image-46.png)
 
 ### 几何性质
 
@@ -534,7 +534,7 @@ $$
 
    证明：做 $PP'\perp\ell$，根据椭圆的性质，$FP=PP'$。
 
-   <Assets file="image-16.png" />
+![](https://cloud.lailai.one/f/OwKtg/conic-image-16.png)
 
    因为 $FP'\perp\ell'$，因此 $\ell'$ 是 $\angle FPP'$ 角平分线，所以，$F$ 关于 $\ell'$ 的反射点即为 $P'$ 在准线上。
 
@@ -544,7 +544,7 @@ $$
 
    证明：根据上一条，这两条切线分别是线段 $FX'$ 和 $FY'$ 的中垂线。因此，它们的交点即为三角形 $FX'Y'$ 的外接圆圆心。
 
-   <Assets file="image-17.png" />
+![](https://cloud.lailai.one/f/zwphA/conic-image-17.png)
 
    推论：如果 $PX$ 和 $PY$ 是抛物线的切线，那么点 $P$ 在准线上的投影，是 $X$ 和 $Y$ 在准线上的投影点所构成线段的中点。
 
@@ -552,13 +552,13 @@ $$
 
    证明：设 $X',Y'$ 为 $X,Y$ 到准线上的投影，因为 $P$ 在准线上，
 
-   <Assets file="image-18.png" />
+![](https://cloud.lailai.one/f/A30iA/conic-image-18.png)
 
    那么 $XF=XX',YF=YY'$，因此可以得到两个三角形全等，那么 $\angle XPY=90^\circ$。
 
 4. 我们做推广，两条切线为 $\varphi$ 或 $180^\circ-\varphi$ 的点的集合是一个以 $F$ 焦点，抛物线准线 $\ell$ 为准线的双曲线，其离心率等于 $|\cos\varphi|$。
 
-   <Assets file="image-19.png" />
+![](https://cloud.lailai.one/f/wJpCg/conic-image-19.png)
 
    注意到 $P$ 为 $\triangle FX'Y'$ 外心，因此 $\angle X'PY'=360^\circ-2\varphi$，那么 $P$ 到准线的距离为 $PF|\cos(180^\circ-\varphi)|=PF|\cos\varphi|$，证毕。
 
@@ -566,7 +566,7 @@ $$
 
    设 $X'$ 和 $Y'$ 是 $X$ 和 $Y$ 在准线上的投影。那么，点 $F$、$X'$ 和 $Y'$位于一个以 $P$ 为圆心的圆上，
 
-   <Assets file="image-20.png" />
+![](https://cloud.lailai.one/f/rzNcM/conic-image-20.png)
 
    因此 $\angle X'Y'F = \frac{1}{2}\angle X'PF = \angle XPF$。因为 $\ell$ 垂直于 $X'Y'$，因此 $PY$ 与 $\ell$ 的夹角等于 $Y'F$ 与 $X'Y'$ 的夹角，而 $Y'F$ 垂直于 $PY$。
 
@@ -574,7 +574,7 @@ $$
 
 6. 假设 $\triangle ABC$ 外切于一条抛物线，即直线 $AB$，$BC$，$CA$ 均与抛物线相切，那么 $\triangle ABC$ 的垂心始终过抛物线的准线。
 
-   <Assets file="image-22.png" />
+![](https://cloud.lailai.one/f/Pwyuy/conic-image-22.png)
 
    兰伯特定理：由抛物线的三条切线所围成的三角形，其外接圆必经过抛物线的焦点。
 
@@ -593,7 +593,7 @@ $$
 
 设光线从 $F_1$ 经过直线 $\ell$ 的反射到达 $F_2$ 点，我们将 $F_1$ 关于 $\ell$ 对称的点设为 $F_1'$
 
-<Assets file="image-10.png" />
+![](https://cloud.lailai.one/f/YXpHA/conic-image-10.png)
 
 则 $P$ 点位于 $F_1'F_2$ 与 $\ell$ 的交点上，这就是将军饮马模型，也容易证明，入射角和出射角是相等的。
 
@@ -606,7 +606,7 @@ $$
 
 如图，容易知道，我们只需要证明 $\angle DAF_1=\angle DAF_2$ 即可，
 
-<Assets file="image-3.png" />
+![](https://cloud.lailai.one/f/eDLSw/conic-image-3.png)
 
 根据角平分线逆定理，只需要证
 
@@ -616,7 +616,7 @@ $$
 
 但是这比较复杂，我们发现费马定理可以非常容易地解决这个问题。
 
-<Assets file="image-11.png" />
+![](https://cloud.lailai.one/f/NmZFg/conic-image-11.png)
 
 不妨设 $X$ 是 $\ell$ 上任意一点，则根据 $P$ 在椭圆上、$X$ 在椭圆外，
 
@@ -635,7 +635,7 @@ $$
 
 假设 $P$ 为抛物线上一点，做到准线的垂线，垂足为 $P'$，如图
 
-<Assets file="image-9.png" />
+![](https://cloud.lailai.one/f/5akFb/conic-image-9.png)
 
 我们不妨证明锅 $P$ 点的切线 $\ell$ 恰好平分 $\angle FPP'$。
 
@@ -643,7 +643,7 @@ $$
 
 我们也可以证明角相等，
 
-<Assets file="image-8.png" />
+![](https://cloud.lailai.one/f/gJzfJ/conic-image-8.png)
 
 不难得到，只需要证 $\angle FPQ=\angle FQP$ 即可。
 
@@ -670,7 +670,7 @@ $$
 
 椭圆的等角共轭：过椭圆外一点 $P$ 做切线 $PX,PY$，切点为 $X,Y$。连接 $PF_1,PF_2$，则 $\angle XPF_1=\angle YPF_2$。
 
-<Assets file="image-12.png" />
+![](https://cloud.lailai.one/f/daxUJ/conic-image-12.png)
 
 我们将 $F_1,F_2$ 分别关于 $PX,PY$ 对称，得到 $F_1',F_2'$，根据初中几何容易知道，$\triangle PF_1'F_2\cong\triangle PF_1F_2'$，两顶角减去公共部分 $\angle F_1PF_2$，即可得到。
 
@@ -678,7 +678,7 @@ $$
 
 双曲线有着类似的性质，但是需要注意切点是否位于同一分支上。
 
-<Assets file="image-13.png" />
+![](https://cloud.lailai.one/f/EDxt8/conic-image-13.png)
 
 此时有 $\angle F_1PX = \pi - \angle F_2PY$。
 
@@ -690,7 +690,7 @@ $$
 
 证明：不妨做 $F_1$ 关于 $PX$ 的对称点 $F_1'$，不难得到 $\angle F_1'PF_2=\angle XPY=90^\circ$，
 
-<Assets file="image-14.png" />
+![](https://cloud.lailai.one/f/oNnuB/conic-image-14.png)
 
 又因为 $PF_1'=PF_1$，也就是说只需要令
 
@@ -728,7 +728,7 @@ $$
 
 而我们称仿射变换是指在对一个向量空间进行一次线性变换并接上一个 **平移**，变换为另一个向量空间。伸缩、平移、对称等都是仿射变换，
 
-<Assets file="image-2.png" />
+![](https://cloud.lailai.one/f/mzrTZ/conic-affine-transformation.png)
 
 事实上：
 
