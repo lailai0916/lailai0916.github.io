@@ -8,7 +8,7 @@ sidebar_position: 0
 
 内容涵盖不同学科的核心知识点与实用技巧，系统反映个人学习与理解过程。
 
-![](/img/docs/note-light.svg#gh-light-mode-only)![](/img/docs/note-dark.svg#gh-dark-mode-only)
+![](https://cloud.lailai.one/f/4RZhK/header-note-light.svg#gh-light-mode-only)![](https://cloud.lailai.one/f/b3qs3/header-note-dark.svg#gh-dark-mode-only)
 
 ## 倒计时
 

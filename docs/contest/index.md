@@ -8,7 +8,7 @@ sidebar_position: 0
 
 内容聚焦实际竞赛环境，强调算法技巧、编程实践和竞赛能力的综合提升。
 
-![](/img/docs/contest-light.svg#gh-light-mode-only)![](/img/docs/contest-dark.svg#gh-dark-mode-only)
+![](https://cloud.lailai.one/f/0nviJ/header-contest-light.svg#gh-light-mode-only)![](https://cloud.lailai.one/f/XJNfN/header-contest-dark.svg#gh-dark-mode-only)
 
 ## 倒计时
 
