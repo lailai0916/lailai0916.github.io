@@ -381,6 +381,11 @@ export const RESOURCE_LIST: ResourceCategoryItem[] = [
         href: 'http://yuantiji.ac/zh/',
         description: '编程题目溯源工具',
       },
+      {
+        title: 'Big-O Algorithm Complexity Cheat Sheet',
+        href: 'https://www.bigocheatsheet.com',
+        description: '算法复杂度速查表',
+      },
     ],
   },
   {
