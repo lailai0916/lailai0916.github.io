@@ -4,7 +4,7 @@
 
 包含较多 **数学公式** 和 **交互组件**，建议在电脑上查看。手机上可能显示异常，不建议打印。
 
-![](/img/notbyai/Written-By-Humans-Not-By-AI-Badge-white.svg#gh-light-mode-only)![](/img/notbyai/Written-By-Humans-Not-By-AI-Badge-black.svg#gh-dark-mode-only)
+![](/icons/notbyai/Written-By-Humans-Not-By-AI-Badge-white.svg#gh-light-mode-only)![](/icons/notbyai/Written-By-Humans-Not-By-AI-Badge-black.svg#gh-dark-mode-only)
 
 ## 参考资料
 

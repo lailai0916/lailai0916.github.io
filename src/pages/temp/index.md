@@ -4,8 +4,6 @@ title: Temp
 
 # 中考回忆录
 
-![](/img/notbyai/Written-By-Humans-Not-By-AI-Badge-white.svg#gh-light-mode-only)![](/img/notbyai/Written-By-Humans-Not-By-AI-Badge-black.svg#gh-dark-mode-only)
-
 ## 参考资料
 
 - [杭州市教育局关于2025年杭州市区各类高中招生工作的通知](https://www.hangzhou.gov.cn/art/2025/4/11/art_1228974658_59111501.html)
