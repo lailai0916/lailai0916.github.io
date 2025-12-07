@@ -345,9 +345,9 @@
 #### 2.4.7 图论算法
 
 - 【 6 】最小生成树：Prim 和 Kruskal 等算法
-- 【 6 】单源最短路：Bellman-Ford、Dijkstra、SPFA 等算法
+- 【 6 】单源最短路：Bellman–Ford、Dijkstra、SPFA 等算法
 - 【 7 】单源次短路
-- 【 6 】Floyd-Warshall 算法
+- 【 6 】Floyd–Warshall 算法
 - 【 6 】有向无环图的拓扑排序
 - 【 6 】欧拉道路和欧拉回路
 - 【 6 】二分图的判定
