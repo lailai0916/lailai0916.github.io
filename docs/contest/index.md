@@ -51,7 +51,7 @@ export const daysUntil = (target) => Math.ceil((new Date(target) - new Date()) /
 
 ### 数学
 
-位运算、快速幂、矩阵快速幂、置换和排列、复数、素数（Fermat 素性测试、Miller–Rabin 素性测试）、最大公约数（GCD）、扩展欧几里得（EXGCD）、数论分块、欧拉函数、筛法（埃拉托斯特尼筛法、线性筛法）、Meissel–Lehmer 算法、分解质因数（Pollard Rho 算法）、裴蜀定理、类欧几里德算法、欧拉定理、扩展欧拉定理、费马小定理、乘法逆元、线性同余方程、中国剩余定理（CRT）、升幂引理、阶乘取模、卢卡斯定理、扩展卢卡斯定理（exLucas 算法）、同余方程、二次剩余（Cipolla 算法）、原根、离散对数（BSGS 算法）、剩余、莫比乌斯反演、杜教筛、Powerful Number 筛、Min_25 筛、洲阁筛、连分数、Stern–Brocot 树、Farey 序列、二次域、Pell 方程、快速傅里叶变换（FFT）、离散傅里叶变换（DFT）、数论变换（NTT）、快速数论变换（FNTT）、快速沃尔什变换（FWT）、Chirp Z 变换、多项式运算、Lagrange 反演、形式幂级数、生成函数、排列组合、抽屉原理、容斥原理、斐波那契数列、卡特兰数、斯特林数、贝尔数、伯努利数、Entringer Number、Eulerian Number、分拆数、范德蒙德卷积、Pólya 计数、图论计数、线性代数（线性基）、线性规划、抽象代数（Schreier–Sims 算法）、概率论、博弈论（SG 函数、Nim 游戏）、拉格朗日插值、自适应辛普森法、高斯消元、牛顿迭代法、傅里叶-莫茨金消元法、序理论、杨氏矩阵、拟阵、Berlekamp–Massey 算法
+位运算、快速幂、矩阵快速幂、置换和排列、复数、素数（Fermat 素性测试、Miller–Rabin 素性测试）、最大公约数（GCD）、扩展欧几里得（EXGCD）、数论分块、欧拉函数、筛法（埃拉托斯特尼筛法、线性筛法）、Meissel–Lehmer 算法、分解质因数（Pollard Rho 算法）、裴蜀定理、类欧几里德算法、欧拉定理、扩展欧拉定理、费马小定理、乘法逆元、线性同余方程、中国剩余定理（CRT）、升幂引理、阶乘取模、卢卡斯定理、扩展卢卡斯定理（exLucas 算法）、同余方程、二次剩余（Cipolla 算法）、原根、离散对数（BSGS 算法）、剩余、莫比乌斯反演、杜教筛、Powerful Number 筛、Min_25 筛、洲阁筛、连分数、Stern–Brocot 树、Farey 序列、二次域、Pell 方程、快速傅里叶变换（FFT）、离散傅里叶变换（DFT）、数论变换（NTT）、快速数论变换（FNTT）、快速沃尔什变换（FWT）、Chirp Z 变换、多项式运算、Lagrange 反演、形式幂级数、生成函数、排列组合、抽屉原理、容斥原理、斐波那契数列、卡特兰数、斯特林数、贝尔数、伯努利数、Entringer Number、Eulerian Number、分拆数、范德蒙德卷积、Pólya 计数、图论计数、线性代数（线性基）、线性规划、抽象代数（Schreier–Sims 算法）、概率论、博弈论（SG 函数、Nim 游戏）、拉格朗日插值、自适应辛普森法、高斯消元、牛顿迭代法、傅里叶–莫茨金消元法、序理论、杨氏矩阵、拟阵、Berlekamp–Massey 算法
 
 ### 数据结构
 
