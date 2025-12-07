@@ -39,7 +39,7 @@ tags: [travel]
 ## 野性之地（Wild Place）
 
 21. **Aleutian Islands, Alaska — 美国 阿拉斯加 阿留申群岛**
-22. Amazon Forest — 亚马孙雨林
+22. Amazon Forest — 亚马逊雨林
 23. Antarctica — 南极洲
 24. **Arnhem Land, Australia — 澳大利亚 阿纳姆地**
 25. Australian Outback — 澳大利亚 内陆地区
