@@ -105,7 +105,7 @@
 - against：prep. 对着，反对
 - age：n. 年龄；时代
 - agency：n. 代理机构
-- agent：n. 代理人，经济人
+- agent：n. 代理人，经纪人
 - agenda：n. （会议）议程表，议事日程
 - aggression：n. 侵略
 - aggressive：adj. 侵略的；咄咄逼人

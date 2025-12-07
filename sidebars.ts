@@ -109,6 +109,7 @@ const sidebars: SidebarsConfig = {
         'contest/string/z-func',
         'contest/string/ac-automaton',
         'contest/string/manacher',
+        'contest/string/minimal-string',
       ],
     },
     {
