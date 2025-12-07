@@ -147,7 +147,9 @@
 - **横向省略号** 应使用 `\dots` 而非 `\cdots` 和 `\ldots`。
 - **未定义但约定俗成的函数** 应使用 `\operatorname`，例如「 `\operatorname{lca}`」。
 - **赋值** 应使用 `\to` 和 `\gets`。
+- **空集** 应使用 `\varnothing` 而非 `\emptyset`。
 - **逻辑关系** 应使用 `\implies`、`\impliedby` 和 `\iff`。
+- **包裹大高度公式** 的括号应使用 `\left` 和 `\right`。
 - **时间复杂度记号** 不应带有常数。
 
 ## lailai's Home
