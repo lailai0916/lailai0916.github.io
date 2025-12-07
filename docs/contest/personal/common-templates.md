@@ -618,6 +618,22 @@ void dfs2(int u,int t)
 }
 ```
 
+### 最近公共祖先
+
+详见 [最近公共祖先](../graph/tree/lca)。
+
+```cpp
+int lca(int u,int v)
+{
+	while(top[u]!=top[v])
+	{
+		if(dep[top[u]]<dep[top[v]])swap(u,v);
+		u=fa[top[u]];
+	}
+	return dep[u]<dep[v]?u:v;
+}
+```
+
 ## 计算几何
 
 ```cpp
