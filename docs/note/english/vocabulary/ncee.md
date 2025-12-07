@@ -885,7 +885,7 @@
 - dance：n. & vi. 跳舞
 - danger：n. 危险
 - dangerous：adj. 危险的
-- dare：v. & aux. . （后接不带to的不定式；主要用于疑问，否定或条件句）敢，敢于
+- dare：v. & aux. （后接不带to的不定式；主要用于疑问，否定或条件句）敢，敢于
 - dark：n. 黑暗；暗处；日暮adj. 黑暗的；暗淡的；深色的
 - darkness：n. 黑暗，阴暗
 - darling：亲爱的；心爱的人adj. 可（心）爱的
@@ -975,7 +975,7 @@
 - difficulty：n. 困难，费力
 - dig：v. 挖（洞沟），掘
 - digest：v. 消化，领会
-- digital：adj. . 数字的，数码的
+- digital：adj. 数字的，数码的
 - dignity：n. 庄重，庄严，尊严。尊贵，高尚
 - dimension：n. 量度，尺寸，面积，程度，范围
 - dinner：n. 正餐，宴会
@@ -987,7 +987,7 @@
 - director：n. 所长，处长，主任；董事；导演
 - directory：n. 姓名地址录
 - dirty：adj. 脏的
-- disability：n. . 残疾；无能
+- disability：n. 残疾；无能
 - disabled：adj. 残废的，残疾的
 - disadvantage：n. 不利条件；弱点
 - disagree：vi. 意见不一致，持不同意见

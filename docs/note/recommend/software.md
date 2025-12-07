@@ -207,7 +207,7 @@ MenubarX 是一款菜单栏浏览器，允许用户将任意网页固定在菜�
 
 #### AlDente
 
-AlDente 是一款电池管理工具，允许用户设置 MacBook 的最大充电百分比，以延长电池寿命。 ​
+AlDente 是一款电池管理工具，允许用户设置 MacBook 的最大充电百分比，以延长电池寿命。
 
 - 官网：[AlDente](https://apphousekitchen.com/aldente-overview/)
 - 平台：macOS
@@ -233,7 +233,7 @@ Macs Fan Control 是一款风扇控制软件，允许用户实时监控和自定
 
 #### Bartender 6
 
-Bartender 6 是一款菜单栏管理工具，帮助用户整理和隐藏菜单栏图标，保持桌面整洁。 ​
+Bartender 6 是一款菜单栏管理工具，帮助用户整理和隐藏菜单栏图标，保持桌面整洁。
 
 - 官网：[Bartender 6](https://www.macbartender.com)
 - 平台：macOS
