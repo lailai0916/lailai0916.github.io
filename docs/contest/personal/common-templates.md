@@ -191,6 +191,26 @@ cout.flush();
 
 ## 算法基础
 
+### 排序
+
+详见 [排序](../basic/sort)。
+
+```cpp
+void msort(int l,int r)
+{
+	if(l==r)return;
+	msort(l,mid);
+	msort(mid+1,r);
+	int p1=l,p2=mid+1;
+	for(int i=l;i<=r;i++)
+	{
+		bool t=p1<=mid&&(p2>r||a[p1]<=a[p2]);
+		b[i]=t?a[p1++]:a[p2++];
+	}
+	for(int i=l;i<=r;i++)a[i]=b[i];
+}
+```
+
 ### 二分
 
 详见 [二分](../basic/binary)。
