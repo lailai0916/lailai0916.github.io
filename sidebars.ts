@@ -208,6 +208,7 @@ const sidebars: SidebarsConfig = {
         description: '数据结构是在计算机中存储、组织数据的方式。',
       },
       items: [
+        'contest/ds/hash',
         'contest/ds/dsu',
         'contest/ds/heap',
         'contest/ds/block',
