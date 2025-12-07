@@ -714,7 +714,7 @@
 - comfortable：adj. 舒服的；安逸的；舒服自在的
 - command：n. & v. 命令
 - comment：n. 评论
-- commericial：adj. 贸易的，商业的
+- commercial：adj. 贸易的，商业的
 - commission：n. 委任，委托，代办（权），代理（权），犯（罪），佣金
 - commit：v. 犯（罪，错），自杀
 - commitment：n. 承诺，允诺，承担
