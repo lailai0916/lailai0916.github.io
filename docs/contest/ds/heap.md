@@ -7,7 +7,7 @@
 ## `std::priority_queue`
 
 ```cpp
-std::priority_queue<pair<int,int>> q[N];
+std::priority_queue<pair<int,int>> q;
 ```
 
 ## `__gnu_pbds::priority_queue`
@@ -15,7 +15,7 @@ std::priority_queue<pair<int,int>> q[N];
 ```cpp
 #include <bits/extc++.h>
 using namespace __gnu_pbds;
-__gnu_pbds::priority_queue<pair<int,int>,greater<pair<int,int>>> q[N];
+__gnu_pbds::priority_queue<pair<int,int>,greater<pair<int,int>>> q;
 ```
 
 ## 左偏树

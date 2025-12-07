@@ -128,7 +128,7 @@ bool spfa(int s,int n)
 			if(h[v]<=h[u]+w)continue;
 			h[v]=h[u]+w;
 			cnt[v]=cnt[u]+1;
-			if(cnt[v]>n)return 0;
+			if(cnt[v]>=n)return 0;
 			if(!vis[v]){q.push(v);vis[v]=1;}
 		}
 	}
@@ -169,7 +169,7 @@ int main()
 		G[u].push_back({v,w});
 	}
 	for(int i=1;i<=n;i++)G[0].push_back({i,0});
-	if(!spfa(0,n))
+	if(!spfa(0,n+1))
 	{
 		cout<<-1<<'\n';
 		return 0;
