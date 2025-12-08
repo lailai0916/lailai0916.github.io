@@ -54,7 +54,7 @@ ll mul(ll a,ll b,ll mod)
 ```
 
 </TabItem>
-<TabItem value="double">
+<TabItem value="long double">
 
 ```cpp
 ll mul(ll a,ll b,ll mod)
