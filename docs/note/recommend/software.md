@@ -18,8 +18,6 @@
 
 ### 订阅服务
 
-我常用的订阅服务。
-
 #### iCloud+
 
 Apple 的云存储服务，支持照片、文件、备份等内容的自动同步与加密保护。
@@ -48,8 +46,6 @@ Setapp 是由 MacPaw 推出的订阅服务，提供超过 250 款精选的 macOS
 
 ### 办公效率
 
-我在日常写作、笔记与文档处理中的常用工具软件。
-
 #### Microsoft 365
 
 Microsoft 的办公套件，包含 Word、Excel、PowerPoint 等应用，并整合 OneDrive、Teams 及 AI 辅助工具 Copilot，提供更强大的云端协作与安全功能。
@@ -75,8 +71,6 @@ Obsidian 是一款基于本地 Markdown 文件的笔记工具，支持双链、�
 - 价格：高级版 - \$4/月
 
 ### AI
-
-我在学术、写作与编程中常用的 AI 工具。
 
 #### ChatGPT
 
@@ -143,7 +137,7 @@ StressWatch 是一款压力与疲劳监测工具，通过分析心率变异性�
 - 官网：[StressWatch](https://100badideas.com/stresswatch)
 - 平台：watchOS / iPhone
 
-### 天文
+### Apple Watch
 
 #### Lumy
 
@@ -151,8 +145,6 @@ Lumy 是一款日照与月相追踪应用，提供日出日落、蓝光时段等
 
 - 官网：[Lumy](https://lumy.app)
 - 平台：watchOS / iOS / iPadOS / macOS
-
-### Apple Watch
 
 #### Petey
 
@@ -329,7 +321,7 @@ Permute 3 是一款多媒体格式转换工具，支持视频、音频与图像�
 - 平台：macOS
 - 价格：¥79
 
-## 配置
+## 插件
 
 ### VSCode
 
