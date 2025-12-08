@@ -29,7 +29,7 @@ $$
 
 如果 $ax\equiv 1\pmod p$，说明存在整数 $x,y$ 满足 $ax+py=1$。
 
-扩展欧几里得算法：`exgcd(a,mod,x,y);`。
+扩展欧几里得算法：`exgcd(a,mod)`。
 
 详见 [最大公约数](./gcd)。
 
