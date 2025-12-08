@@ -20,7 +20,7 @@ int main()
 		ll a,b;
 		cin>>a>>b;
 		auto [g,x,y]=exgcd(sum,a);
-		ans-=sum*x*(ans-b)/g;
+		ans-=(ans-b)/g*x*sum;
 		sum*=a/g;
 		ans=(ans%sum+sum)%sum;
 	}
