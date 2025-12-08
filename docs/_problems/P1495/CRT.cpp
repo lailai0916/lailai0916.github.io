@@ -3,13 +3,13 @@ using namespace std;
 
 using ll=long long;
 const int N=15;
-ll a[N],b[N];
 tuple<ll,ll,ll> exgcd(ll a,ll b)
 {
 	if(!b)return {a,1,0};
 	auto [g,x,y]=exgcd(b,a%b);
 	return {g,y,x-a/b*y};
 }
+ll a[N],b[N];
 int main()
 {
 	ios::sync_with_stdio(false);

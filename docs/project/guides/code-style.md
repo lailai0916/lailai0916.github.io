@@ -201,6 +201,7 @@ for(int $=1;$<=T;$++)
 		cin>>op;
 		if(op==1)/* code */
 		else if(op==2)/* code */
+		else if(op==3)/* code */
 		// ...
 	}
 	cout<<"Case #"<<$<<'\n';
