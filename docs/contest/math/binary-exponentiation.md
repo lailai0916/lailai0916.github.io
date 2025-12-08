@@ -24,7 +24,7 @@ ll Pow(ll x,ll y)
 
 ## 龟速乘
 
-龟速乘用于计算 $xy\bmod p$，可以防止直接计算 $xy$ 过大导致溢出。
+龟速乘用于计算 $x\times y\bmod p$，可以防止直接计算 $x\times y$ 过大导致溢出。
 
 ```cpp
 ll mul(ll x,ll y)
@@ -40,6 +40,31 @@ ll mul(ll x,ll y)
 	return res;
 }
 ```
+
+另外两种实现：
+
+<Tabs>
+<TabItem value="__int128">
+
+```cpp
+ll mul(ll a,ll b,ll mod)
+{
+	return __int128(a)*b%mod;
+}
+```
+
+</TabItem>
+<TabItem value="double">
+
+```cpp
+ll mul(ll a,ll b,ll mod)
+{
+	return (a*b-ll(ld(a)/mod*b+0.5)*mod+mod)%mod;
+}
+```
+
+</TabItem>
+</Tabs>
 
 ## 例题
 
