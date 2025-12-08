@@ -15,7 +15,7 @@ int main()
 	int n;
 	cin>>n;
 	__int128 ans=0,sum=1;
-	for(int i=1;i<=n;i++)
+	while(n--)
 	{
 		ll a,b;
 		cin>>a>>b;
