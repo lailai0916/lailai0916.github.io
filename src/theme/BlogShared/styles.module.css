@@ -290,25 +290,6 @@
   font-weight: 600;
 }
 
-.menuLinkIcon {
-  width: 1rem;
-  height: 1rem;
-  flex-shrink: 0;
-  color: var(--ifm-color-primary);
-  opacity: 0;
-  transform: translateX(-4px);
-  transition:
-    opacity 160ms ease,
-    transform 160ms ease,
-    color 160ms ease;
-}
-
-.menuLink:hover .menuLinkIcon,
-.menuLink:focus-visible .menuLinkIcon {
-  opacity: 1;
-  transform: translateX(0);
-}
-
 .postCard {
   background: var(--ifm-card-background-color);
   border: 1px solid var(--ifm-color-emphasis-200);
