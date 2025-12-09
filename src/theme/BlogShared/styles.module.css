@@ -55,7 +55,7 @@
   border-color: var(--ifm-color-primary);
 }
 
-.authorCardHeader {
+.authorCard {
   display: flex;
   align-items: center;
   flex-direction: column;

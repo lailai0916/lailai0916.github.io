@@ -25,9 +25,11 @@ function AuthorCard() {
 
   return (
     <Card>
-      <div className={styles.authorCardHeader}>
+      <div className={styles.authorCard}>
         <img
           src={useBaseUrl(author.imageURL)}
+          width={96}
+          height={96}
           className={styles.authorAvatar}
         />
         <div className={styles.authorName}>{author.name}</div>
