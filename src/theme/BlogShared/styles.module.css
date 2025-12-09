@@ -32,9 +32,7 @@
 @media (max-width: 996px) {
   .container {
     grid-template-columns: 100%;
-    grid-template-areas:
-      'main'
-      'sidebar';
+    grid-template-areas: 'main' 'sidebar';
   }
 }
 
