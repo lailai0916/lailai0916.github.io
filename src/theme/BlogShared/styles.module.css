@@ -4,9 +4,9 @@
   --main-col-max-width: 880px;
   --grid-gap: 1.25rem;
 
-  width: 100%;
-  max-width: calc(
-    var(--left-col-width) + var(--main-col-max-width) + var(--grid-gap)
+  width: min(
+    calc(var(--left-col-width) + var(--main-col-max-width) + var(--grid-gap)),
+    100%
   );
   margin: 0 auto;
   padding: 2rem;
