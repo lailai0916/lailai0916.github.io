@@ -1,5 +1,7 @@
 # Hello, World!
 
+一切从这里开始……
+
 ## 参考资料
 
 - [Hello World - 维基百科](https://zh.wikipedia.org/zh-cn/Hello_World)
