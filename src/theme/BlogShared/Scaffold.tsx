@@ -10,7 +10,6 @@ import { translate } from '@docusaurus/Translate';
 import {
   getAllBlogItems,
   getAllPostMetadata,
-  getArchiveByYear,
 } from '@site/src/utils/blogData';
 import { Card, TagChipList, type ChipItem } from './Components';
 import styles from './styles.module.css';

@@ -159,18 +159,6 @@ export function getRecentBlogPosts(maxCount: number = 4): ProcessedBlogPost[] {
   return sortedPosts.slice(0, maxCount).map(({ isPinned, ...post }) => post); // 移除 isPinned 属性
 }
 
-export function getArchiveByYear(): { year: number; count: number }[] {
-  const counts = new Map<number, number>();
-  getAllBlogItems().forEach((item) => {
-    const year = new Date(item.date).getUTCFullYear();
-    counts.set(year, (counts.get(year) ?? 0) + 1);
-  });
-
-  return Array.from(counts.entries())
-    .map(([year, count]) => ({ year, count }))
-    .sort((a, b) => b.year - a.year);
-}
-
 /**
  * 读取官方生成的标签列表，保持与 Docusaurus 默认顺序一致。
  */
