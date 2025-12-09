@@ -3,6 +3,7 @@ import clsx from 'clsx';
 import Link from '@docusaurus/Link';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import { DebugLayout } from '@site/src/components/laikit/page';
+import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import type { TOCItem } from '@docusaurus/mdx-loader';
 
 import { translate } from '@docusaurus/Translate';
@@ -65,9 +66,10 @@ function TocCard({ toc }: { toc: readonly TOCItem[] }) {
 }
 
 function formatLongNumber(value) {
+  const { i18n } = useDocusaurusContext();
   const n = Number(value);
   if (Number.isNaN(n)) return value;
-  return new Intl.NumberFormat('en-US', {
+  return new Intl.NumberFormat(i18n.currentLocale, {
     notation: 'compact',
     compactDisplay: 'short',
     maximumSignificantDigits: 3,
