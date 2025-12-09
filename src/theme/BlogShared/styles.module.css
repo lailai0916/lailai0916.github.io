@@ -422,10 +422,29 @@
   border-color: var(--ifm-color-primary);
 }
 
+.tocContainer {
+  position: sticky;
+  top: 5rem;
+}
+
+.tocList {
+  max-height: calc(100vh - 11rem);
+  overflow-y: auto;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  scrollbar-width: none;
+}
+
+.tocList::-webkit-scrollbar {
+  display: none;
+}
+
 .tocItem {
   margin-bottom: 0.5rem;
 }
 
 .tocLink {
   color: var(--ifm-font-color-base);
+  display: block;
 }

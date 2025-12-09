@@ -47,20 +47,22 @@ function TocCard({ toc }: { toc: readonly TOCItem[] }) {
   });
 
   return (
-    <Card title={TITLE}>
-      <ul>
-        {toc.map((item) => (
-          <li key={item.id} className={styles.tocItem}>
-            <Link
-              href={`#${item.id}`}
-              className={styles.tocLink}
-              style={{ paddingLeft: `${item.level - 2}rem` }}
-              dangerouslySetInnerHTML={{ __html: item.value }}
-            />
-          </li>
-        ))}
-      </ul>
-    </Card>
+    <div className={styles.tocContainer}>
+      <Card title={TITLE}>
+        <ul className={styles.tocList}>
+          {toc.map((item) => (
+            <li key={item.id} className={styles.tocItem}>
+              <Link
+                href={`#${item.id}`}
+                className={styles.tocLink}
+                style={{ paddingLeft: `${item.level - 2}rem` }}
+                dangerouslySetInnerHTML={{ __html: item.value }}
+              />
+            </li>
+          ))}
+        </ul>
+      </Card>
+    </div>
   );
 }
 
