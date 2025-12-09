@@ -15,14 +15,14 @@
   grid-template-areas: 'sidebar main';
 }
 
-.mainCol {
+.main {
   grid-area: main;
   display: flex;
   flex-direction: column;
   gap: 1.25rem;
 }
 
-.sidebarCol {
+.sidebar {
   grid-area: sidebar;
   display: flex;
   flex-direction: column;

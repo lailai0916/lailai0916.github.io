@@ -270,6 +270,23 @@ function MenuCard() {
   );
 }
 
+function Sidebar({ toc }: { toc?: readonly TOCItem[] }) {
+  return (
+    <aside className={styles.sidebar}>
+      <AuthorCard />
+      {toc?.length ? (
+        <TocCard toc={toc} />
+      ) : (
+        <>
+          <StatsCard />
+          <FeedCard />
+          <TagsCard />
+        </>
+      )}
+    </aside>
+  );
+}
+
 type Props = {
   title?: string;
   description?: string;
@@ -286,22 +303,11 @@ export default function BlogScaffold({
   return (
     <DebugLayout title={title} description={description}>
       <div className={styles.container}>
-        <main className={styles.mainCol}>
+        <main className={styles.main}>
           <MenuCard />
           {children}
         </main>
-        <aside className={styles.sidebarCol}>
-          <AuthorCard />
-          {toc && toc.length > 0 ? (
-            <TocCard toc={toc} />
-          ) : (
-            <>
-              <StatsCard />
-              <FeedCard />
-              <TagsCard />
-            </>
-          )}
-        </aside>
+        <Sidebar toc={toc} />
       </div>
     </DebugLayout>
   );
