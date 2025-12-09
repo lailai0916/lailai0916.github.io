@@ -1,43 +1,41 @@
 .container {
   /* 固定侧边栏宽度，主栏自适应最大宽度 */
-  --left-col-width: 320px;
-  --main-col-max-width: 880px;
-  --grid-gap: 1.25rem;
+  --sidebar-width: 320px;
+  --main-max-width: 880px;
+  --gap: 1.25rem;
 
   width: 100%;
-  max-width: calc(
-    var(--left-col-width) + var(--main-col-max-width) + var(--grid-gap)
-  );
-  margin: 0 auto;
+  max-width: calc(var(--sidebar-width) + var(--main-max-width) + var(--gap));
+  margin-inline: auto;
   padding: 2rem;
+
   display: grid;
-  grid-template-columns: var(--left-col-width) minmax(0, 1fr);
-  gap: var(--grid-gap);
+  gap: var(--gap);
+  grid-template-columns: var(--sidebar-width) minmax(0, 1fr);
+  grid-template-areas: 'sidebar main';
 }
 
-.container > :nth-child(1) {
-  order: 1;
+.mainCol {
+  grid-area: main;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
 }
-.container > :nth-child(2) {
-  order: 2;
+
+.sidebarCol {
+  grid-area: sidebar;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
 }
 
 @media (max-width: 996px) {
   .container {
-    grid-template-columns: none;
+    grid-template-columns: 100%;
+    grid-template-areas:
+      'main'
+      'sidebar';
   }
-  .container > :nth-child(1) {
-    order: 2;
-  }
-  .container > :nth-child(2) {
-    order: 1;
-  }
-}
-
-.mainCol {
-  display: flex;
-  flex-direction: column;
-  gap: 1.25rem;
 }
 
 .card {

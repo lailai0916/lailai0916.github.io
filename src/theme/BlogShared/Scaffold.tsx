@@ -286,7 +286,11 @@ export default function BlogScaffold({
   return (
     <DebugLayout title={title} description={description}>
       <div className={styles.container}>
-        <aside className={styles.mainCol}>
+        <main className={styles.mainCol}>
+          <MenuCard />
+          {children}
+        </main>
+        <aside className={styles.sidebarCol}>
           <AuthorCard />
           {toc && toc.length > 0 ? (
             <TocCard toc={toc} />
@@ -298,10 +302,6 @@ export default function BlogScaffold({
             </>
           )}
         </aside>
-        <main className={styles.mainCol}>
-          <MenuCard />
-          {children}
-        </main>
       </div>
     </DebugLayout>
   );
