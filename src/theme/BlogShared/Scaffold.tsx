@@ -7,14 +7,11 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import type { TOCItem } from '@docusaurus/mdx-loader';
 
 import { translate } from '@docusaurus/Translate';
-import {
-  getAllBlogItems,
-  getAllPostMetadata,
-} from '@site/src/utils/blogData';
+import { getAllBlogItems, getAllPostMetadata } from '@site/src/utils/blogData';
 import { Card, TagChipList, type ChipItem } from './Components';
 import styles from './styles.module.css';
 
-const fixedId = 'lailai';
+const authorId = 'lailai';
 const shareUrl = `https://analytics.lailai.one/share/DDd09iBEYOQw2k9L`;
 const WEBSITE_ID = '69d3b7de-90e4-4be4-a355-633620ecefdb';
 const ANALYTICS_BASE_URL = `https://analytics.lailai.one/api/websites/${WEBSITE_ID}/stats`;
@@ -24,7 +21,7 @@ const Authorization =
 function AuthorCard() {
   const author = getAllPostMetadata()
     .flatMap((m) => m.authors)
-    .find((a) => a.key === fixedId);
+    .find((a) => a.key === authorId);
 
   return (
     <Card>
@@ -246,8 +243,7 @@ function MenuCard() {
         {page.map((item) => (
           <li key={item.href} className={styles.menuListItem}>
             <Link to={item.href} className={styles.menuLink}>
-              <span className={styles.menuLinkLabel}>{item.label}</span>
-              →
+              <span className={styles.menuLinkLabel}>{item.label}</span>→
             </Link>
           </li>
         ))}
