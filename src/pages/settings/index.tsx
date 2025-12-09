@@ -184,10 +184,7 @@ function ColorGenerator() {
           }}
         />
         <button className={styles.resetButton} onClick={resetColors}>
-          {translate({
-            id: 'pages.settings.item.color.reset',
-            message: 'Reset',
-          })}
+          <Icon icon="lucide:refresh-ccw" />
         </button>
       </div>
     </Card>

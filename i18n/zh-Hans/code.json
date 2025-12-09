@@ -940,9 +940,6 @@
   "pages.settings.item.theme.option.dark": {
     "message": "深色模式"
   },
-  "pages.settings.item.color.reset": {
-    "message": "重置"
-  },
   "pages.settings.item.font.current": {
     "message": "当前：{size}px"
   },
