@@ -38,32 +38,32 @@ GGYBR
 ```svg
 <svg xmlns="http://www.w3.org/2000/svg" width="1000" height="1000" viewBox="0 0 1000 1000">
   <style>.R{fill:#F44336;}.Y{fill:#FFC107;}.B{fill:#2196F3;}.G{fill:#37A93C;}.W{fill:#FFFFFF;}.K{fill:#000000;}</style>
-  <rect class="G" x="0" y="0" width="200" height="200"/>
-  <rect class="Y" x="200" y="0" width="200" height="200"/>
-  <rect class="G" x="400" y="0" width="200" height="200"/>
-  <rect class="Y" x="600" y="0" width="200" height="200"/>
-  <rect class="R" x="800" y="0" width="200" height="200"/>
-  <rect class="R" x="0" y="200" width="200" height="200"/>
-  <rect class="B" x="200" y="200" width="200" height="200"/>
-  <rect class="Y" x="400" y="200" width="200" height="200"/>
-  <rect class="Y" x="600" y="200" width="200" height="200"/>
-  <rect class="R" x="800" y="200" width="200" height="200"/>
-  <rect class="B" x="0" y="400" width="200" height="200"/>
-  <rect class="G" x="200" y="400" width="200" height="200"/>
-  <rect class="W" x="400" y="400" width="200" height="200"/>
-  <rect class="R" x="600" y="400" width="200" height="200"/>
-  <rect class="B" x="800" y="400" width="200" height="200"/>
-  <rect class="R" x="0" y="600" width="200" height="200"/>
-  <rect class="G" x="200" y="600" width="200" height="200"/>
-  <rect class="R" x="400" y="600" width="200" height="200"/>
-  <rect class="Y" x="600" y="600" width="200" height="200"/>
-  <rect class="G" x="800" y="600" width="200" height="200"/>
-  <rect class="G" x="0" y="800" width="200" height="200"/>
-  <rect class="G" x="200" y="800" width="200" height="200"/>
-  <rect class="Y" x="400" y="800" width="200" height="200"/>
-  <rect class="B" x="600" y="800" width="200" height="200"/>
-  <rect class="R" x="800" y="800" width="200" height="200"/>
-  <rect class="K" x="440" y="420" width="40" height="120"/>
-  <rect class="K" x="440" y="540" width="120" height="40"/>
+  <rect class="G" x="0" y="0" width="200" height="200" />
+  <rect class="Y" x="200" y="0" width="200" height="200" />
+  <rect class="G" x="400" y="0" width="200" height="200" />
+  <rect class="Y" x="600" y="0" width="200" height="200" />
+  <rect class="R" x="800" y="0" width="200" height="200" />
+  <rect class="R" x="0" y="200" width="200" height="200" />
+  <rect class="B" x="200" y="200" width="200" height="200" />
+  <rect class="Y" x="400" y="200" width="200" height="200" />
+  <rect class="Y" x="600" y="200" width="200" height="200" />
+  <rect class="R" x="800" y="200" width="200" height="200" />
+  <rect class="B" x="0" y="400" width="200" height="200" />
+  <rect class="G" x="200" y="400" width="200" height="200" />
+  <rect class="W" x="400" y="400" width="200" height="200" />
+  <rect class="R" x="600" y="400" width="200" height="200" />
+  <rect class="B" x="800" y="400" width="200" height="200" />
+  <rect class="R" x="0" y="600" width="200" height="200" />
+  <rect class="G" x="200" y="600" width="200" height="200" />
+  <rect class="R" x="400" y="600" width="200" height="200" />
+  <rect class="Y" x="600" y="600" width="200" height="200" />
+  <rect class="G" x="800" y="600" width="200" height="200" />
+  <rect class="G" x="0" y="800" width="200" height="200" />
+  <rect class="G" x="200" y="800" width="200" height="200" />
+  <rect class="Y" x="400" y="800" width="200" height="200" />
+  <rect class="B" x="600" y="800" width="200" height="200" />
+  <rect class="R" x="800" y="800" width="200" height="200" />
+  <rect class="K" x="440" y="420" width="40" height="120" />
+  <rect class="K" x="440" y="540" width="120" height="40" />
 </svg>
 ```
