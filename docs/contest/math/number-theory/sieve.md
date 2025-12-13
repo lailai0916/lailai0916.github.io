@@ -18,7 +18,7 @@
 埃拉托斯特尼筛法（Sieve of Eratosthenes）简称埃氏筛法。
 
 ```cpp
-void init()
+void sieve()
 {
 	vis[0]=vis[1]=1;
 	for(int i=2;i*i<N;i++)
@@ -34,7 +34,7 @@ void init()
 	}
 }
 ```
-
+sieve
 ## 欧拉筛法
 
 欧拉筛法（Sieve of Euler）也称为线性筛法。
@@ -42,7 +42,7 @@ void init()
 ### 素数
 
 ```cpp
-void init()
+void sieve()
 {
 	vis[0]=vis[1]=1;
 	int cnt=0;
@@ -65,7 +65,7 @@ void init()
 <TabItem value="欧拉函数">
 
 ```cpp
-void init()
+void sieve()
 {
 	vis[0]=vis[1]=1;
 	phi[1]=1;
@@ -96,7 +96,7 @@ void init()
 <TabItem value="莫比乌斯函数">
 
 ```cpp
-void init()
+void sieve()
 {
 	vis[0]=vis[1]=1;
 	mu[1]=1;
@@ -127,7 +127,7 @@ void init()
 <TabItem value="约数个数函数">
 
 ```cpp
-void init()
+void sieve()
 {
 	vis[0]=vis[1]=1;
 	num[1]=d[1]=1;
@@ -160,7 +160,7 @@ void init()
 <TabItem value="约数和函数">
 
 ```cpp
-void init()
+void sieve()
 {
 	vis[0]=vis[1]=1;
 	num[1]=sigma[1]=1;

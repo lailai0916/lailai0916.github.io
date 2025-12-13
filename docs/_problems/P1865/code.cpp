@@ -4,10 +4,10 @@ using namespace std;
 const int N=1000005;
 bool vis[N];
 int pri[N],sum[N];
-void init()
+void sieve()
 {
-	int cnt=0;
 	vis[0]=vis[1]=1;
+	int cnt=0;
 	for(int i=2;i<N;i++)
 	{
 		sum[i]=sum[i-1];
@@ -28,7 +28,7 @@ int main()
 {
 	ios::sync_with_stdio(false);
 	cin.tie(nullptr);
-	init();
+	sieve();
 	int n,m;
 	cin>>n>>m;
 	while(n--)

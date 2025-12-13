@@ -363,12 +363,12 @@ ll A(ll n,ll m)
 }
 ```
 
-### 筛法
+### 欧拉筛法
 
 详见 [筛法](../math/number-theory/sieve)。
 
 ```cpp
-void init()
+void sieve()
 {
 	vis[0]=vis[1]=1;
 	int cnt=0;

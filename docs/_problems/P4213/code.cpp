@@ -6,7 +6,7 @@ const int N=5000005;
 bool vis[N];
 ll pri[N],phi[N],mu[N];
 unordered_map<ll,ll> sum_phi,sum_mu;
-void init()
+void sieve()
 {
 	vis[0]=vis[1]=1;
 	phi[1]=mu[1]=1;
@@ -71,7 +71,7 @@ int main()
 {
 	ios::sync_with_stdio(false);
 	cin.tie(nullptr);
-	init();
+	sieve();
 	int T;
 	cin>>T;
 	while(T--)

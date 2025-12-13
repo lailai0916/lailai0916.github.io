@@ -4,7 +4,7 @@ using namespace std;
 const int N=100000005;
 bool vis[N];
 int pri[N];
-void init()
+void sieve()
 {
 	vis[0]=vis[1]=1;
 	int cnt=0;
@@ -23,7 +23,7 @@ int main()
 {
 	ios::sync_with_stdio(false);
 	cin.tie(nullptr);
-	init();
+	sieve();
 	int n,q;
 	cin>>n>>q;
 	while(q--)
