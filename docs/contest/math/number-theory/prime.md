@@ -27,7 +27,7 @@ bool prime(int n)
 时间复杂度为 $O(k\log n)$。
 
 ```cpp
-ll Pow(ll x,ll y,int mod)
+ll Pow(ll x,ll y,ll mod)
 {
 	x%=mod;
 	ll res=1;
@@ -55,7 +55,7 @@ bool prime(int n,int k)
 时间复杂度为 $O(k\log^3{n})$。
 
 ```cpp
-ll Pow(ll x,ll y,int mod)
+ll Pow(ll x,ll y,ll mod)
 {
 	x%=mod;
 	ll res=1;
