@@ -644,7 +644,7 @@
     "message": "代码（{num}）"
   },
   "components.problems.error": {
-    "message": "无法加载题目 {id}：请检查文件 \"docs/contest/_problems/{id}.md\" 是否存在。"
+    "message": "无法加载题目 {id}：请检查文件是否存在。"
   },
   "home.project.title": {
     "message": "我的项目"
