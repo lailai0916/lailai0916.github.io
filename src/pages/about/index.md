@@ -36,13 +36,6 @@ To solve this, I usually add my birthday digits **0916**, forming **lailai0916**
 
 If that is also taken, I convert the digits to hexadecimal **0x394**, forming **lailai0x394**.
 
-:::warning
-
-- **lailai** should always be typeset with all lowercase letters, even when it is the first word in a sentence, paragraph, or title.
-- **lailai** is untranslatable content and should always be set in English, even when it appears within text in a language other than English.
-
-:::
-
 ## My Skills
 
 <Skills />

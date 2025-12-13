@@ -36,13 +36,6 @@ import { Skills, Devices, Community, Comments } from '@site/src/pages/about/\_co
 
 如果这个昵称也被占用，我会将数字转换为十六进制 **0x394**，组成 **lailai0x394**。
 
-:::warning
-
-- **lailai** 始终应排印为小写，即使它出现在句首、段落开头或标题中。
-- **lailai** 为不翻译内容，始终以英语排印，即使它出现在非英语的语言文本中也是如此。
-
-:::
-
 ## 我的技能
 
 <Skills />
