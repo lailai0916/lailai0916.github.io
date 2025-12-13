@@ -59,7 +59,7 @@ void init()
 }
 ```
 
-### 其他函数
+### 数论函数
 
 <Tabs>
 <TabItem value="欧拉函数">
