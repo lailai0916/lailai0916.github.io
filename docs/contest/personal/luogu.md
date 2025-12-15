@@ -209,7 +209,7 @@ $$dp_{S \cup \{u\}} \gets dp_{S}+w_u$$
   - 同余符号应使用 `\equiv` 与 `\pmod`，如 $a \equiv c \pmod b$（`$a \equiv c \pmod b$`）。
 - 应正确使用数学结构符号，如 $\frac{a}{b}, \sqrt{a}, \overline{a}, \{a\}$（`$\frac{a}{b}, \sqrt{a}, \overline{a}, \{a\}$`）。
 - 应正确使用箭头符号，用 $\to, \gets$（`$\to, \gets$`）表示赋值，用 $\Leftarrow, \Rightarrow$（`$\Leftarrow, \Rightarrow$`）表示因果关系。
-- 省略号应使用 $\dots, \cdots, \ldots$（`$\dots, \cdots, \ldots$`），特别地，矩阵中其它方向的省略号应使用 $\vdots, \ddots$（`$\vdots, \ddots$`）。
+- 省略号应使用 $\dots, \cdots, \ldots$（`$\dots, \cdots, \ldots$`），特别地，矩阵中其他方向的省略号应使用 $\vdots, \ddots$（`$\vdots, \ddots$`）。
 - 波浪线应使用 $\sim$（`$\sim$`）。
 - 连等式应使用 `\aligned` 环境，分段函数应使用 `\cases` 环境，矩阵应使用 `\bmatrix` 环境。以下是一些例子：
 
