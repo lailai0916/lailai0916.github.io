@@ -54,7 +54,7 @@ $$
 图中 $\theta=\angle BAC,a=|BC|,b=|AC|,c=|AB|$，每个三角函数的定义为：
 
 $$
-\sin{\theta}=\frac{a}{c},\cos{\theta}=\frac{b}{c},\tan{\theta}=\frac{a}{b},\cot{\theta}=\frac{b}{a},\sec{\theta}=\frac{c}{b},\csc{\theta}=\frac{c}{a}
+\sin\theta=\frac{a}{c},\cos\theta=\frac{b}{c},\tan\theta=\frac{a}{b},\cot\theta=\frac{b}{a},\sec\theta=\frac{c}{b},\csc\theta=\frac{c}{a}
 $$
 
 ### 单位圆定义（任意角）
@@ -99,7 +99,7 @@ $$
 
 ### 基本性质
 
-|  函数  |    $\sin{x}$     |    $\cos{x}$     |        $\tan{x}$         |    $\cot{x}$     |        $\sec{x}$         |     $\csc{x}$      |
+|  函数  |     $\sin x$     |     $\cos x$     |         $\tan x$         |     $\cot x$     |         $\sec x$         |      $\csc x$      |
 | :----: | :--------------: | :--------------: | :----------------------: | :--------------: | :----------------------: | :----------------: |
 |  名称  |       正弦       |       余弦       |           正切           |       余切       |           正割           |        余割        |
 |  定义  |  $\frac{a}{c}$   |  $\frac{b}{c}$   |      $\frac{a}{b}$       |  $\frac{b}{a}$   |      $\frac{c}{b}$       |   $\frac{c}{a}$    |
