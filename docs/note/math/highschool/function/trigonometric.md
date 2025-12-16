@@ -283,19 +283,13 @@ $$
 
 余弦差角公式推导：
 
-:::tip
-
-余弦差角公式是本文 **唯一** 需要通过几何推导来证明的公式。
-
-其他公式都可以通过代入已有公式推导得出。
-
-:::
-
 <Desmos id="2iz3b7qxzr" />
 
-如图，设 $\angle AOB'=\alpha,\angle BOB'=\beta$。
+如图，设 $\angle AOB'=\alpha,\angle BOB'=\beta$，则 $A,B$ 两点的坐标分别为 $A(\cos{\alpha},\sin{\alpha}),B(\cos{\beta},\sin{\beta})$。
 
-则 $A,B$ 两点的坐标分别为 $A(\cos{\alpha},\sin{\alpha}),B(\cos{\beta},\sin{\beta})$。
+将 $OA$ 和 $OB$ 同时绕原点顺时针旋转 $\beta$，得到 $OA'$ 和 $OB'$。此时 $OB'$ 和 $x$ 轴重合，而 $\angle A'OB'=\alpha-\beta$。
+
+所以 $A',B'$ 两点的坐标分别为 $A'(\cos{(\alpha-\beta)},\sin{(\alpha-\beta)}),B'(1,0)$。
 
 根据距离公式：
 
@@ -307,14 +301,6 @@ $$
 \end{aligned}
 $$
 
-让 $OA$ 和 $OB$ 同时绕原点顺时针旋转 $\beta$，得到 $OA'$ 和 $OB'$。
-
-此时 $OB$ 和 $x$ 轴重合，$\angle A'OB'=\alpha-\beta$。
-
-所以 $A',B'$ 两点的坐标分别为 $A'(\cos{(\alpha-\beta)},\sin{(\alpha-\beta)}),B'(1,0)$。
-
-根据距离公式：
-
 $$
 \begin{aligned}
   |A'B'|^2 &= (\cos{(\alpha-\beta)}-1)^2+(\sin{(\alpha-\beta)}-0)^2 \\
@@ -323,9 +309,23 @@ $$
 \end{aligned}
 $$
 
-不难证明 $\triangle ABO\cong\triangle A'B'O$，所以 $|AB|=|A'B'|$。
+显然 $\triangle ABO\cong\triangle A'B'O$，因此：
 
-所以 $|AB|^2=|A'B'|^2=\cos{(\alpha-\beta)}=\cos{\alpha}\cos{\beta}+\sin{\alpha}\sin{\beta}$。
+$$
+|AB|^2=|A'B'|^2
+$$
+
+$$
+\cos{(\alpha-\beta)}=\cos{\alpha}\cos{\beta}+\sin{\alpha}\sin{\beta}
+$$
+
+:::tip
+
+余弦差角公式是本文 **唯一** 需要通过几何推导来证明的公式。
+
+其他公式都可以通过代入已有公式推导得出。
+
+:::
 
 余弦和角公式推导：
 
