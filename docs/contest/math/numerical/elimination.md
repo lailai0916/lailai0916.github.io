@@ -104,7 +104,7 @@ $$
 
 ```cpp
 double a[N][N],x[N];
-int sgn(double u){return (u>eps)-(u<-eps);}
+int sgn(double x){return (x>eps)-(x<-eps);}
 int gauss(int n)
 {
 	int r,c;
