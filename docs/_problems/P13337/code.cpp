@@ -1,32 +1,23 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-using ld=long double;
-const int N=110;
-const ld eps=1e-9;
-
+const double eps=1e-9;
+const int N=105;
 int n,m,neg;
 int p[N],q[N];
-ld a[N][N];
-
-int sgn(ld x)
-{
-	if(x>=-eps&&x<=eps)return 0;
-	return x<0?-1:1;
-}
-
-ld val(int x,int y)
+double a[N][N],ans[N];
+int sgn(double x){return (x>eps)-(x<-eps);}
+double val(int x,int y)
 {
 	if(sgn(a[x][y])>=0)return 0;
-	ld s=0;
+	double s=0;
 	for(int i=0;i<m;i++)s+=a[x][i]*a[x][i];
 	return a[x][y]*a[x][y]/s;
 }
-
 void pivot(int x,int y)
 {
 	swap(p[x],q[y]);
-	ld v=-1/a[x][y];
+	double v=-1/a[x][y];
 	for(int j=0;j<=m+1;j++)a[x][j]=(j==y?-v:v*a[x][j]);
 	for(int i=0;i<=n;i++)
 	{
@@ -38,16 +29,15 @@ void pivot(int x,int y)
 		}
 	}
 }
-
 int init()
 {
 	while(neg)
 	{
 		int x=-1;
-		ld mx=0;
+		double mx=0;
 		for(int i=0;i<n;i++)
 		{
-			ld s=val(i,m+1);
+			double s=val(i,m+1);
 			if(s>mx)mx=s,x=i;
 		}
 		if(x<0)return 0;
@@ -77,16 +67,15 @@ int init()
 	}
 	return 1;
 }
-
 int simplex()
 {
 	while(1)
 	{
 		int x=-1;
-		ld mx=0;
+		double mx=0;
 		for(int i=0;i<n;i++)
 		{
-			ld s=val(i,m);
+			double s=val(i,m);
 			if(s>mx)mx=s,x=i;
 		}
 		if(x<0)return 1;
@@ -105,16 +94,14 @@ int simplex()
 		pivot(x,y);
 	}
 }
-
 int main()
 {
 	ios::sync_with_stdio(false);
 	cin.tie(nullptr);
-	cout<<fixed<<setprecision(10);
 	cin>>n>>m;
 	for(int i=0;i<n;i++)
 	{
-		ld t;
+		double t;
 		cin>>t;
 		a[i][m]=-t;
 	}
@@ -131,14 +118,18 @@ int main()
 		q[j]=~q[j];
 		neg++;
 	}
-	if(!init())cout<<"Infeasible"<<'\n';
-	else if(!simplex())cout<<"Unbounded"<<'\n';
-	else
+	if(!init())
 	{
-		cout<<a[n][m]<<'\n';
-		static ld ans[N];
-		for(int i=0;i<m;i++)if(q[i]<n)ans[q[i]]=a[n][i];
-		for(int i=0;i<n;i++)cout<<ans[i]<<(i==n-1?'\n':' ');
+		cout<<"Infeasible"<<'\n';
+		return 0;
 	}
+	if(!simplex())
+	{
+		cout<<"Unbounded"<<'\n';
+		return 0;
+	}
+	cout<<fixed<<setprecision(10)<<a[n][m]<<'\n';
+	for(int i=0;i<m;i++)if(q[i]<n)ans[q[i]]=a[n][i];
+	for(int i=0;i<n;i++)cout<<ans[i]<<' ';
 	return 0;
 }
