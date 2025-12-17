@@ -18,15 +18,13 @@ void pivot(int x,int y)
 {
 	swap(p[x],q[y]);
 	double v=-1/a[x][y];
-	for(int j=0;j<=m+1;j++)a[x][j]=(j==y?-v:v*a[x][j]);
+	for(int j=0;j<=m+1;j++)a[x][j]=j==y?-v:v*a[x][j];
 	for(int i=0;i<=n;i++)
 	{
-		if(i!=x)
-		{
-			v=a[i][y];
-			a[i][y]=0;
-			for(int j=0;j<=m+1;j++)a[i][j]+=v*a[x][j];
-		}
+		if(i==x)continue;
+		v=a[i][y];
+		a[i][y]=0;
+		for(int j=0;j<=m+1;j++)a[i][j]+=v*a[x][j];
 	}
 }
 int init()
