@@ -184,6 +184,7 @@ const sidebars: SidebarsConfig = {
             'contest/math/linear-algebra/basis',
           ],
         },
+        'contest/math/linear-programming',
         {
           type: 'category',
           label: '数值分析',
