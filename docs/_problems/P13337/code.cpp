@@ -3,55 +3,79 @@ using namespace std;
 
 using ld=long double;
 const int N=110;
-const ld eps=1e-12l; 
+const ld eps=1e-9;
 
-int n,m;
+int n,m,neg;
+int p[N],q[N];
 ld a[N][N];
-int id_b[N],id_n[N];
+
+int sgn(ld x)
+{
+	if(x>=-eps&&x<=eps)return 0;
+	return x<0?-1:1;
+}
+
+ld val(int x,int y)
+{
+	if(sgn(a[x][y])>=0)return 0;
+	ld s=0;
+	for(int i=0;i<m;i++)s+=a[x][i]*a[x][i];
+	return a[x][y]*a[x][y]/s;
+}
 
 void pivot(int x,int y)
 {
-	swap(id_n[x],id_b[y]);
+	swap(p[x],q[y]);
 	ld v=-1/a[x][y];
 	for(int j=0;j<=m+1;j++)a[x][j]=(j==y?-v:v*a[x][j]);
 	for(int i=0;i<=n;i++)
 	{
-		if(i==x)continue;
-		v=a[i][y];
-		a[i][y]=0;
-		for(int j=0;j<=m+1;j++)a[i][j]+=v*a[x][j];
+		if(i!=x)
+		{
+			v=a[i][y];
+			a[i][y]=0;
+			for(int j=0;j<=m+1;j++)a[i][j]+=v*a[x][j];
+		}
 	}
 }
 
 int init()
 {
-	int cnt=0;
-	for(int j=0;j<m;j++)if(a[n][j]<-eps)
-	{
-		for(int i=0;i<=n;i++)a[i][m+1]+=a[i][j];
-		id_b[j]=~id_b[j];
-		cnt++;
-	}
-	while(cnt)
+	while(neg)
 	{
 		int x=-1;
-		ld mn=-eps;
-		for(int i=0;i<n;i++)if(a[i][m+1]<mn)mn=a[i][m+1],x=i;
-		if(x==-1)return -1;
-		int y=-1;
-		mn=INFINITY;
+		ld mx=0;
+		for(int i=0;i<n;i++)
+		{
+			ld s=val(i,m+1);
+			if(s>mx)mx=s,x=i;
+		}
+		if(x<0)return 0;
+		int y=-1,sy=-1;
 		for(int j=0;j<m;j++)
 		{
-			if((id_b[j]<0&&a[x][j]<-eps)||(id_b[j]>=0&&a[x][j]>eps))
+			int sj=sgn(a[x][j]);
+			if(sj==(q[j]<0?-1:1))
 			{
-				ld t=a[n][j]/a[x][j]+(id_b[j]<0?-eps:eps);
-				if(t<mn)mn=t,y=j;
+				if(y<0)y=j,sy=sj;
+				else
+				{
+					int s=sj*sy*sgn(a[n][j]*a[x][y]-a[n][y]*a[x][j]);
+					if(!s)s=(q[j]<q[y]?-1:1);
+					if(s<0)y=j,sy=sj;
+				}
 			}
 		}
-		if(id_b[y]<0)cnt--,id_b[y]=~id_b[y],pivot(x,y),a[x][m+1]++;
+		if(q[y]<0)
+		{
+			neg--;
+			q[y]=~q[y];
+			pivot(x,y);
+			a[x][m+1]+=1;
+		}
 		else pivot(x,y);
 	}
-	return 0;
+	return 1;
 }
 
 int simplex()
@@ -59,45 +83,61 @@ int simplex()
 	while(1)
 	{
 		int x=-1;
-		ld mn=-eps;
-		for(int i=0;i<n;i++)if(a[i][m]<mn)mn=a[i][m],x=i;
-		if(x==-1)break;
-		int y=-1;
-		mn=INFINITY;
-		for(int j=0;j<m;j++)if(a[x][j]>eps)
+		ld mx=0;
+		for(int i=0;i<n;i++)
 		{
-			ld t=a[n][j]/a[x][j];
-			if(t<mn)mn=t,y=j;
+			ld s=val(i,m);
+			if(s>mx)mx=s,x=i;
 		}
-		if(y==-1)return 1;
+		if(x<0)return 1;
+		int y=-1;
+		for(int j=0;j<m;j++)if(sgn(a[x][j])>0)
+		{
+			if(y<0)y=j;
+			else
+			{
+				int s=sgn(a[n][j]*a[x][y]-a[n][y]*a[x][j]);
+				if(!s)s=(q[j]<q[y]?-1:1);
+				if(s<0)y=j;
+			}
+		}
+		if(y<0)return 0;
 		pivot(x,y);
 	}
-	return 0;
 }
 
 int main()
 {
 	ios::sync_with_stdio(false);
 	cin.tie(nullptr);
-	cout<<fixed<<setprecision(8);
+	cout<<fixed<<setprecision(10);
 	cin>>n>>m;
-	for(int i=0;i<n;i++)cin>>a[i][m],a[i][m]=-a[i][m];
+	for(int i=0;i<n;i++)
+	{
+		ld t;
+		cin>>t;
+		a[i][m]=-t;
+	}
 	for(int j=0;j<m;j++)
 	{
-		for(int i=0;i<=n;i++)cin>>a[i][j];
+		for(int i=0;i<n;i++)cin>>a[i][j];
+		cin>>a[n][j];
 	}
-	iota(id_b,id_b+m,n);
-	iota(id_n,id_n+n,0);
-	int res=init();
-	if(res==0)res=simplex();
-	
-	if(res==-1)cout<<"Infeasible"<<'\n';
-	else if(res==1)cout<<"Unbounded"<<'\n';
+	for(int i=0;i<n;i++)p[i]=i;
+	for(int j=0;j<m;j++)q[j]=n+j;
+	for(int j=0;j<m;j++)if(sgn(a[n][j])<0)
+	{
+		for(int i=0;i<n;i++)a[i][m+1]+=a[i][j];
+		q[j]=~q[j];
+		neg++;
+	}
+	if(!init())cout<<"Infeasible"<<'\n';
+	else if(!simplex())cout<<"Unbounded"<<'\n';
 	else
 	{
 		cout<<a[n][m]<<'\n';
 		static ld ans[N];
-		for(int j=0;j<m;j++)if(id_b[j]<n)ans[id_b[j]]=a[n][j];
+		for(int i=0;i<m;i++)if(q[i]<n)ans[q[i]]=a[n][i];
 		for(int i=0;i<n;i++)cout<<ans[i]<<(i==n-1?'\n':' ');
 	}
 	return 0;
