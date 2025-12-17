@@ -112,8 +112,9 @@ int main()
 	}
 	for(int i=0;i<n;i++)p[i]=i;
 	for(int j=0;j<m;j++)q[j]=n+j;
-	for(int j=0;j<m;j++)if(sgn(a[n][j])<0)
+	for(int j=0;j<m;j++)
 	{
+		if(sgn(a[n][j])>=0)continue;
 		for(int i=0;i<n;i++)a[i][m+1]+=a[i][j];
 		q[j]=~q[j];
 		neg++;
