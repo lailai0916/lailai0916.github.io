@@ -1,11 +1,11 @@
 ---
-title: '微积分'
+title: '微积分入门指南'
 date: 2024-02-17T12:00
 authors: lailai
 tags: [math]
 ---
 
-面向中学生的微积分入门教程。
+面向中学生的微积分入门指南。
 
 <!-- truncate -->
 
