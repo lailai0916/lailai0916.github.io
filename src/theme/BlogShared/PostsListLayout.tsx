@@ -11,6 +11,15 @@ import IconText from '@site/src/components/laikit/widget/IconText';
 import MDXContent from '@theme/MDXContent';
 import styles from './styles.module.css';
 
+function Badge({ icon, label }) {
+  return (
+    <span className={clsx(styles.tagChip, styles.postInlineTag)}>
+      <Icon icon={icon} />
+      {label}
+    </span>
+  );
+}
+
 function PostCard({ item }) {
   const { content: MDXPageContent } = item;
   const { metadata, assets, frontMatter } = MDXPageContent;
@@ -26,16 +35,14 @@ function PostCard({ item }) {
       )}
       <div className={styles.postBody}>
         <div className={styles.postTitleRow}>
-          <span className={clsx(styles.tagChip, styles.postInlineTag)}>
-            <Icon
-              icon={
-                firstTag?.permalink === '/blog/tags/pinned'
-                  ? 'lucide:pin'
-                  : 'lucide:bookmark'
-              }
-            />
-            {firstTag?.label ?? 'None'}
-          </span>
+          <Badge
+            icon={
+              firstTag?.permalink === '/blog/tags/pinned'
+                ? 'lucide:pin'
+                : 'lucide:bookmark'
+            }
+            label={firstTag?.label ?? 'None'}
+          />
           <h2 className={styles.postTitle}>
             <Link to={metadata.permalink} className={styles.postTitleLink}>
               {metadata.title}
