@@ -34,7 +34,7 @@ void sieve()
 	}
 }
 ```
-sieve
+
 ## 欧拉筛法
 
 欧拉筛法（Sieve of Euler）也称为线性筛法。
