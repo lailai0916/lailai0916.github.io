@@ -353,11 +353,11 @@
 
 /* Inline label before title */
 .postInlineTag {
-  font-size: 0.9rem;
-  padding: 0.3rem 0.6rem;
-  line-height: 1; /* 避免撑高 */
   display: inline-flex;
-  align-items: center; /* 垂直居中文字 */
+  align-items: center;
+  font-size: 0.9rem;
+  padding: 0.3rem 0.5rem;
+  line-height: 1;
 }
 
 .postExcerpt {
