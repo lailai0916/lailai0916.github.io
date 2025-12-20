@@ -348,7 +348,6 @@
   align-items: baseline; /* 以文本基线对齐 */
   gap: 0.6rem;
   flex-wrap: wrap;
-  margin-bottom: 0.5rem;
 }
 
 /* Inline label before title */
