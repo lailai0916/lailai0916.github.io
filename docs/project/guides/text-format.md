@@ -129,14 +129,17 @@
 - 公式应使用 **数学语言** 而非代码语言。
   - **赋值** 应使用 `\to` 或 `\gets` 而非 `=`。
   - **取模** 应使用 `\bmod` 或 `\pmod` 而非 `%` 和 `\mod`。
-- 公式文本应使用 `\text`，字符串应使用 `\texttt`。
+  - **整除** 应使用 `\lfloor` 和 `\rfloor`。
+  - **数列** 应使用 `a_i` 而非 `a[i]`。
+  - **位运算** 应使用 `\operatorname{and}`、`\operatorname{or}` 或 `\operatorname{xor}`。
+- **公式文本** 应使用 `\text`，**字符串** 应使用 `\texttt`。
 - **变量名** 应使用 $1$ 个字母，不应使用多个字母。
 - **乘法** 应使用 `\times` 或 `\cdot` 而非 `*`。
 - **分数** 应使用 `\frac` 而非 `\dfrac`。
-- **横向省略号** 应使用 `\dots` 而非 `\cdots` 和 `\ldots`，纵向省略号应使用 `\vdots`，斜向省略号应使用 `\ddots`。
+- **横向省略号** 应使用 `\dots` 而非 `\cdots` 和 `\ldots`，**纵向省略号** 应使用 `\vdots`，**斜向省略号** 应使用 `\ddots`。
 - **未定义但约定俗成的函数** 应使用 `\operatorname`，例如「 `\operatorname{lca}`」。
 - **空集** 应使用 `\varnothing` 而非 `\emptyset`。
-- **逻辑** 应使用 `\implies`、`\impliedby` 和 `\iff`。
+- **逻辑** 应使用 `\implies`、`\impliedby` 或 `\iff`。
 - **包裹大高度公式的括号** 应使用 `\left` 和 `\right`。
 - **复杂度** 应使用大 $O$ 记号，不应带有常数。
 
