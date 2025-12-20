@@ -26,7 +26,7 @@ export const daysUntil = (target) => Math.ceil((new Date(target) - new Date()) /
 
 ## 教材
 
-GitHub 上的开源仓库 **TapXWorld/ChinaTextbook** 收录了几乎所有小学、初中、高中和大学的 **PDF 教材**。
+GitHub 上的开源仓库 **TapXWorld/ChinaTextbook** 收录了几乎所有中小学和大学的 **PDF 教材**。
 
 如果你 **无法访问 GitHub** 或 **不会下载资源**，可以到 [人民教育出版社官网](https://jc.pep.com.cn) 或 [国家中小学智慧教育平台](https://basic.smartedu.cn/tchMaterial) 在线预览 **电子课本**。
 
