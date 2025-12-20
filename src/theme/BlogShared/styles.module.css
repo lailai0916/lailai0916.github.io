@@ -335,6 +335,7 @@
 }
 
 .postTitle {
+  margin: 0;
   font-size: 1.5rem;
   font-weight: 700;
   display: flex;
@@ -344,9 +345,10 @@
 
 .postTitleRow {
   display: flex;
-  align-items: baseline; /* 以文本基线对齐 */
-  gap: 0.6rem;
+  align-items: center;
+  gap: 0.5rem;
   flex-wrap: wrap;
+  margin-bottom: 1rem;
 }
 
 /* Inline label before title */
