@@ -357,6 +357,11 @@ export const RESOURCE_LIST: ResourceCategoryItem[] = [
         description: '多平台虚拟判题系统',
       },
       {
+        title: '洛谷保存站',
+        href: 'https://www.luogu.me',
+        description: '可靠的洛谷专栏和剪贴板保存平台',
+      },
+      {
         title: 'Algorithm Duels Online',
         href: 'https://algorithm-duels.online',
         description: '组队算法对决平台',
