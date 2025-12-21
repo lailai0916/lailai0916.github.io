@@ -3,6 +3,7 @@ import clsx from 'clsx';
 import { useTheme } from '@site/src/hooks/useTheme';
 import BlogPostPageOriginal from '@theme-original/BlogPostPage';
 import BlogScaffold from '../BlogShared/Scaffold';
+import { Card } from '../BlogShared/Components';
 import {
   HtmlClassNameProvider,
   ThemeClassNames,
@@ -40,9 +41,11 @@ export default function BlogPostPage(props: Props): React.ReactElement {
           title={props.content.metadata.title}
           description={props.content.metadata.description}
         >
-          <BlogPostItem>
-            <BlogPostContent />
-          </BlogPostItem>
+          <Card>
+            <BlogPostItem>
+              <BlogPostContent />
+            </BlogPostItem>
+          </Card>
           {(props.content.metadata.nextItem ||
             props.content.metadata.prevItem) && (
             <BlogPostPaginator
