@@ -11,7 +11,6 @@ import { Card } from '../BlogShared/Components';
 // page uses shared sidebars that fetch data; no direct utils here
 
 import type { Props } from '@theme/BlogArchivePage';
-import { formatDate } from '@site/src/utils/date';
 
 const TITLE = translate({
   id: 'theme.blog.archive.title',
@@ -42,7 +41,7 @@ export default function BlogArchivePage(props: Props): React.ReactElement {
             {posts.map((p: any) => (
               <li key={p.metadata.permalink} className={styles.recentItem}>
                 <div className={styles.recentDate}>
-                  {formatDate(p.metadata.date)}
+                  {p.metadata.date.slice(5, 10)}
                 </div>
                 <Link to={p.metadata.permalink} className={styles.recentLink}>
                   {p.metadata.title}

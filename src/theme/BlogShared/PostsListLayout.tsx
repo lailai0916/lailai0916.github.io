@@ -6,7 +6,6 @@ import type { BlogPaginatedMetadata } from '@docusaurus/plugin-content-blog';
 import BlogScaffold from './Scaffold';
 
 import { translate } from '@docusaurus/Translate';
-import { formatDate } from '@site/src/utils/date';
 import IconText from '@site/src/components/laikit/widget/IconText';
 import MDXContent from '@theme/MDXContent';
 import styles from './styles.module.css';
@@ -55,7 +54,7 @@ function PostCard({ item }) {
       </div>
       <div className={styles.postMeta}>
         <IconText icon="lucide:calendar" colorMode="monochrome">
-          <time dateTime={metadata.date}>{formatDate(metadata.date)}</time>
+          <time dateTime={metadata.date}>{metadata.date.slice(0, 10)}</time>
         </IconText>
         {metadata.readingTime && (
           <>
