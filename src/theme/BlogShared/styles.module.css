@@ -47,7 +47,8 @@
 
 .cardTitle {
   font-weight: 700;
-  margin-bottom: 0.75rem;
+  line-height: 1;
+  margin-bottom: 1rem;
 }
 
 .authorCard {
