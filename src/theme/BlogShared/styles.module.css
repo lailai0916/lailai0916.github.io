@@ -43,16 +43,12 @@
   border-radius: 16px;
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
   padding: 1rem;
-  transition:
-    transform 160ms ease,
-    box-shadow 160ms ease,
-    border-color 160ms ease;
+  overflow: hidden;
 }
 
-.card:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.08);
-  border-color: var(--ifm-color-primary);
+.cardTitle {
+  font-weight: 700;
+  margin-bottom: 0.75rem;
 }
 
 .authorCard {
@@ -131,11 +127,6 @@
 .statLabel {
   color: var(--ifm-color-emphasis-700);
   font-size: 0.8rem;
-}
-
-.cardTitle {
-  font-weight: 700;
-  margin-bottom: 0.75rem;
 }
 
 .tagList {
@@ -290,24 +281,6 @@
   font-weight: 600;
 }
 
-.postCard {
-  background: var(--ifm-card-background-color);
-  border: 1px solid var(--ifm-color-emphasis-200);
-  border-radius: 16px;
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
-  overflow: hidden;
-  transition:
-    transform 180ms ease,
-    box-shadow 180ms ease,
-    border-color 180ms ease;
-}
-
-.postCard:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.09);
-  border-color: var(--ifm-color-primary);
-}
-
 .postCoverWrap {
   display: block;
 }
@@ -316,10 +289,6 @@
   width: 100%;
   height: auto;
   display: block;
-}
-
-.postBody {
-  padding: 1rem 1rem 0.75rem 1rem;
 }
 
 .postTitleLink {

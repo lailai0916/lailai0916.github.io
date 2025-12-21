@@ -27,86 +27,84 @@ function PostCard({ item }) {
   const firstTag = metadata.tags?.[0] ?? null;
 
   return (
-    <article className={styles.postCard}>
+    <article className={styles.card}>
       {image && (
         <Link to={metadata.permalink} className={styles.postCoverWrap}>
           <img src={image} alt={metadata.title} className={styles.postCover} />
         </Link>
       )}
-      <div className={styles.postBody}>
-        <div className={styles.postTitleRow}>
-          <Badge
-            icon={
-              firstTag?.permalink === '/blog/tags/pinned'
-                ? 'lucide:pin'
-                : 'lucide:bookmark'
-            }
-            label={firstTag?.label ?? 'None'}
-          />
-          <h2 className={styles.postTitle}>
-            <Link to={metadata.permalink} className={styles.postTitleLink}>
-              {metadata.title}
-            </Link>
-          </h2>
-        </div>
-        <div className={styles.postExcerpt}>
-          <MDXContent>
-            <MDXPageContent />
-          </MDXContent>
-        </div>
-        <div className={styles.postMeta}>
-          <IconText icon="lucide:calendar" colorMode="monochrome">
-            <time dateTime={metadata.date}>{formatDate(metadata.date)}</time>
-          </IconText>
-          {metadata.readingTime && (
-            <>
-              <span className={styles.dot}>·</span>
-              <IconText icon="lucide:file-text" colorMode="monochrome">
-                {translate(
-                  {
-                    id: 'blog.postcard.wordCount',
-                    message: '{word} words',
-                  },
-                  {
-                    word: Math.round(metadata.readingTime * 200),
-                  }
-                )}
-              </IconText>
-              <span className={styles.dot}>·</span>
-              <IconText icon="lucide:clock" colorMode="monochrome">
-                {translate(
-                  {
-                    id: 'blog.postcard.readingTime',
-                    message: '{readingTime} min',
-                  },
-                  {
-                    readingTime: Math.max(1, Math.round(metadata.readingTime)),
-                  }
-                )}
-              </IconText>
-            </>
-          )}
-          {metadata.tags?.length > 0 && (
-            <>
-              <span className={styles.dot}>·</span>
-              <IconText icon="lucide:tag" colorMode="monochrome">
-                {metadata.tags?.map((tag, i) => (
-                  <React.Fragment key={tag.label}>
-                    <Link
-                      to={tag.permalink}
-                      style={{
-                        color: 'inherit',
-                      }}
-                    >
-                      {tag.label}
-                    </Link>
-                    {i < metadata.tags.length - 1 && ' | '}
-                  </React.Fragment>
-                ))}
-              </IconText>
-            </>
-          )}
-        </div>
+      <div className={styles.postTitleRow}>
+        <Badge
+          icon={
+            firstTag?.permalink === '/blog/tags/pinned'
+              ? 'lucide:pin'
+              : 'lucide:bookmark'
+          }
+          label={firstTag?.label ?? 'None'}
+        />
+        <h2 className={styles.postTitle}>
+          <Link to={metadata.permalink} className={styles.postTitleLink}>
+            {metadata.title}
+          </Link>
+        </h2>
+      </div>
+      <div className={styles.postExcerpt}>
+        <MDXContent>
+          <MDXPageContent />
+        </MDXContent>
+      </div>
+      <div className={styles.postMeta}>
+        <IconText icon="lucide:calendar" colorMode="monochrome">
+          <time dateTime={metadata.date}>{formatDate(metadata.date)}</time>
+        </IconText>
+        {metadata.readingTime && (
+          <>
+            <span className={styles.dot}>·</span>
+            <IconText icon="lucide:file-text" colorMode="monochrome">
+              {translate(
+                {
+                  id: 'blog.postcard.wordCount',
+                  message: '{word} words',
+                },
+                {
+                  word: Math.round(metadata.readingTime * 200),
+                }
+              )}
+            </IconText>
+            <span className={styles.dot}>·</span>
+            <IconText icon="lucide:clock" colorMode="monochrome">
+              {translate(
+                {
+                  id: 'blog.postcard.readingTime',
+                  message: '{readingTime} min',
+                },
+                {
+                  readingTime: Math.max(1, Math.round(metadata.readingTime)),
+                }
+              )}
+            </IconText>
+          </>
+        )}
+        {metadata.tags?.length > 0 && (
+          <>
+            <span className={styles.dot}>·</span>
+            <IconText icon="lucide:tag" colorMode="monochrome">
+              {metadata.tags?.map((tag, i) => (
+                <React.Fragment key={tag.label}>
+                  <Link
+                    to={tag.permalink}
+                    style={{
+                      color: 'inherit',
+                    }}
+                  >
+                    {tag.label}
+                  </Link>
+                  {i < metadata.tags.length - 1 && ' | '}
+                </React.Fragment>
+              ))}
+            </IconText>
+          </>
+        )}
       </div>
     </article>
   );
