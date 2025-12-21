@@ -43,7 +43,6 @@
   border-radius: 16px;
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
   padding: 1rem;
-  overflow: hidden;
 }
 
 .cardTitle {
@@ -291,6 +290,14 @@
   display: block;
 }
 
+.postTitleRow {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+
 .postTitleLink {
   color: inherit;
   text-decoration: none !important;
@@ -310,14 +317,6 @@
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-}
-
-.postTitleRow {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  flex-wrap: wrap;
-  margin-bottom: 1rem;
 }
 
 /* Inline label before title */
