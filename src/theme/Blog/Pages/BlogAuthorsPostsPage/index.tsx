@@ -7,7 +7,7 @@ export default function BlogAuthorsPostsPage(props: Props) {
   return (
     <PostsListLayout
       title={author.name}
-      description={author.title ?? ''}
+      description={author.title}
       items={items}
       meta={listMetadata}
     />
