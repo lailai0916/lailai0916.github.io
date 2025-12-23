@@ -17,7 +17,7 @@ export default function BlogAuthorsListPage({ authors }: Props) {
       <Card title={TITLE}>
         <TagChipList
           items={authors.map((author) => ({
-            to: author.page.permalink,
+            to: author.page?.permalink,
             label: author.name,
             count: author.count,
           }))}
