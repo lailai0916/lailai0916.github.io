@@ -82,15 +82,14 @@ function StatsCard() {
     visitors?: number;
     pageviews?: number;
   }>({});
-  const [status, setStatus] = React.useState<
-    'idle' | 'loading' | 'success' | 'error'
-  >('idle');
+  const [status, setStatus] = React.useState<'loading' | 'success' | 'error'>(
+    'loading'
+  );
 
   React.useEffect(() => {
     const controller = new AbortController();
 
     (async () => {
-      setStatus('loading');
       try {
         const res = await fetch(
           `${ANALYTICS_BASE_URL}?startAt=0&endAt=${Date.now()}`,
