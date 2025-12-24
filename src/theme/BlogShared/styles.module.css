@@ -87,7 +87,7 @@
 .statItem {
   text-align: center;
   border: 1px dashed var(--ifm-color-emphasis-200);
-  border-radius: 12px;
+  border-radius: 6px;
   padding: 0.5rem 0.25rem;
   text-decoration: none !important;
   color: var(--ifm-font-color-base);
