@@ -90,12 +90,7 @@ function PostCard({ item }) {
             <IconText icon="lucide:tag" colorMode="monochrome">
               {metadata.tags?.map((tag, i) => (
                 <React.Fragment key={tag.label}>
-                  <Link
-                    to={tag.permalink}
-                    style={{
-                      color: 'inherit',
-                    }}
-                  >
+                  <Link to={tag.permalink} style={{ color: 'inherit' }}>
                     {tag.label}
                   </Link>
                   {i < metadata.tags.length - 1 && ' / '}
