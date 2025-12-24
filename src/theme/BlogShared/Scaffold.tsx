@@ -113,7 +113,7 @@ function useAnalytics(rawPath: string = '') {
     })();
 
     return () => controller.abort();
-  }, [queryPath]);
+  }, [rawPath]);
 
   return { analytics, status };
 }
