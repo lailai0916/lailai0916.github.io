@@ -92,7 +92,7 @@ function StatsCard() {
     (async () => {
       try {
         const res = await fetch(
-          `${ANALYTICS_BASE_URL}?startAt=0&endAt=${Date.now()}`,
+          `${ANALYTICS_BASE_URL}?startAt=0&endAt=${Date.now()}&path=eq./blog/welcome`,
           {
             signal: controller.signal,
             headers: { Authorization },
@@ -101,12 +101,7 @@ function StatsCard() {
 
         if (!res.ok) throw new Error(`Stats request failed: ${res.status}`);
 
-        const statsData = await res.json();
-
-        setAnalytics({
-          visitors: statsData?.visitors,
-          pageviews: statsData?.pageviews,
-        });
+        setAnalytics(await res.json());
         setStatus('success');
       } catch (error) {
         if (controller.signal.aborted) return;
@@ -140,7 +135,12 @@ function StatsCard() {
       href: '/blog/tags',
     },
     {
-      value: status === 'success' ? analytics.visitors : 'N/A',
+      value:
+        status === 'success'
+          ? analytics.visitors
+          : status === 'error'
+            ? 'N/A'
+            : '---',
       label: translate({
         id: 'blog.sidebar.stats.visitors',
         message: 'Visitors',
@@ -148,7 +148,12 @@ function StatsCard() {
       href: shareUrl,
     },
     {
-      value: status === 'success' ? analytics.pageviews : 'N/A',
+      value:
+        status === 'success'
+          ? analytics.pageviews
+          : status === 'error'
+            ? 'N/A'
+            : '---',
       label: translate({
         id: 'blog.sidebar.stats.views',
         message: 'Views',
