@@ -77,7 +77,7 @@ function formatLongNumber(value) {
   }).format(n);
 }
 
-function StatsCard() {
+function useAnalytics(rawPath: string = '') {
   const [analytics, setAnalytics] = React.useState<{
     visitors?: number;
     pageviews?: number;
@@ -88,11 +88,13 @@ function StatsCard() {
 
   React.useEffect(() => {
     const controller = new AbortController();
+    const query = rawPath ? `&path=eq.${encodeURIComponent(rawPath)}` : '';
 
     (async () => {
+      setStatus('loading');
       try {
         const res = await fetch(
-          `${ANALYTICS_BASE_URL}?startAt=0&endAt=${Date.now()}`,
+          `${ANALYTICS_BASE_URL}?startAt=0&endAt=${Date.now()}${query}`,
           {
             signal: controller.signal,
             headers: { Authorization },
@@ -111,8 +113,13 @@ function StatsCard() {
     })();
 
     return () => controller.abort();
-  }, []);
+  }, [queryPath]);
 
+  return { analytics, status };
+}
+
+function StatsCard() {
+  const { analytics, status } = useAnalytics();
   const statsItems = [
     {
       value: getAllBlogItems().length,
