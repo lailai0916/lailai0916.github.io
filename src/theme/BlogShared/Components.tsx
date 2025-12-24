@@ -2,6 +2,7 @@ import React from 'react';
 import clsx from 'clsx';
 import Link from '@docusaurus/Link';
 import styles from './styles.module.css';
+import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 
 const WEBSITE_ID = '69d3b7de-90e4-4be4-a355-633620ecefdb';
 const ANALYTICS_BASE_URL = `https://analytics.lailai.one/api/websites/${WEBSITE_ID}/stats`;
@@ -53,6 +54,17 @@ export function TagChipList({ items }: { items: ChipItem[] }) {
       ))}
     </div>
   );
+}
+
+export function formatLongNumber(value) {
+  const { i18n } = useDocusaurusContext();
+  const n = Number(value);
+  if (Number.isNaN(n)) return value;
+  return new Intl.NumberFormat(i18n.currentLocale, {
+    notation: 'compact',
+    compactDisplay: 'short',
+    maximumSignificantDigits: 3,
+  }).format(n);
 }
 
 export function useAnalytics(rawPath: string = '') {

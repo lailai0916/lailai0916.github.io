@@ -3,12 +3,17 @@ import clsx from 'clsx';
 import Link from '@docusaurus/Link';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import { DebugLayout } from '@site/src/components/laikit/page';
-import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import type { TOCItem } from '@docusaurus/mdx-loader';
 
 import { translate } from '@docusaurus/Translate';
 import { getAllBlogItems, getAllPostMetadata } from '@site/src/utils/blogData';
-import { Card, TagChipList, useAnalytics, type ChipItem } from './Components';
+import {
+  Card,
+  TagChipList,
+  formatLongNumber,
+  useAnalytics,
+  type ChipItem,
+} from './Components';
 import styles from './styles.module.css';
 
 const authorId = 'lailai';
@@ -60,17 +65,6 @@ function TocCard({ toc }: { toc: readonly TOCItem[] }) {
       </Card>
     </div>
   );
-}
-
-function formatLongNumber(value) {
-  const { i18n } = useDocusaurusContext();
-  const n = Number(value);
-  if (Number.isNaN(n)) return value;
-  return new Intl.NumberFormat(i18n.currentLocale, {
-    notation: 'compact',
-    compactDisplay: 'short',
-    maximumSignificantDigits: 3,
-  }).format(n);
 }
 
 function StatsCard() {
