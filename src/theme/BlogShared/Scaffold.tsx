@@ -92,7 +92,7 @@ function StatsCard() {
     (async () => {
       try {
         const res = await fetch(
-          `${ANALYTICS_BASE_URL}?startAt=0&endAt=${Date.now()}&path=eq./blog/welcome`,
+          `${ANALYTICS_BASE_URL}?startAt=0&endAt=${Date.now()}`,
           {
             signal: controller.signal,
             headers: { Authorization },
