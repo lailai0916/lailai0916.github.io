@@ -134,6 +134,7 @@ export function Comments() {
           inputPosition="top"
           theme={colorMode}
           lang={i18n.currentLocale}
+          loading="lazy"
         />
       )}
     </BrowserOnly>
