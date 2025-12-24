@@ -135,12 +135,7 @@ function StatsCard() {
       href: '/blog/tags',
     },
     {
-      value:
-        status === 'success'
-          ? analytics.visitors
-          : status === 'error'
-            ? 'N/A'
-            : '---',
+      value: status === 'success' ? analytics.visitors : '–',
       label: translate({
         id: 'blog.sidebar.stats.visitors',
         message: 'Visitors',
@@ -148,12 +143,7 @@ function StatsCard() {
       href: shareUrl,
     },
     {
-      value:
-        status === 'success'
-          ? analytics.pageviews
-          : status === 'error'
-            ? 'N/A'
-            : '---',
+      value: status === 'success' ? analytics.pageviews : '–',
       label: translate({
         id: 'blog.sidebar.stats.views',
         message: 'Views',
