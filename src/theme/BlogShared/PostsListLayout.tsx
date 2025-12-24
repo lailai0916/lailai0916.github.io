@@ -20,6 +20,17 @@ function Badge({ icon, label }) {
   );
 }
 
+function IconData({ icon, children }) {
+  return (
+    <>
+      <span className={styles.dot}>·</span>
+      <IconText icon={icon} colorMode="monochrome">
+        {children}
+      </IconText>
+    </>
+  );
+}
+
 function PostCard({ item }) {
   const { content: MDXPageContent } = item;
   const { metadata, assets, frontMatter } = MDXPageContent;
@@ -60,8 +71,7 @@ function PostCard({ item }) {
         </IconText>
         {metadata.readingTime && (
           <>
-            <span className={styles.dot}>·</span>
-            <IconText icon="lucide:file-text" colorMode="monochrome">
+            <IconData icon="lucide:file-text">
               {translate(
                 {
                   id: 'blog.postcard.wordCount',
@@ -71,9 +81,8 @@ function PostCard({ item }) {
                   word: Math.round(metadata.readingTime * 200),
                 }
               )}
-            </IconText>
-            <span className={styles.dot}>·</span>
-            <IconText icon="lucide:clock" colorMode="monochrome">
+            </IconData>
+            <IconData icon="lucide:clock">
               {translate(
                 {
                   id: 'blog.postcard.readingTime',
@@ -83,35 +92,26 @@ function PostCard({ item }) {
                   readingTime: Math.max(1, Math.round(metadata.readingTime)),
                 }
               )}
-            </IconText>
+            </IconData>
           </>
         )}
         {status === 'success' && (
           <>
-            <span className={styles.dot}>·</span>
-            <IconText icon="lucide:user" colorMode="monochrome">
-              {analytics.visitors}
-            </IconText>
-            <span className={styles.dot}>·</span>
-            <IconText icon="lucide:eye" colorMode="monochrome">
-              {analytics.pageviews}
-            </IconText>
+            <IconData icon="lucide:user">{analytics.visitors}</IconData>
+            <IconData icon="lucide:eye">{analytics.pageviews}</IconData>
           </>
         )}
         {metadata.tags?.length > 0 && (
-          <>
-            <span className={styles.dot}>·</span>
-            <IconText icon="lucide:tag" colorMode="monochrome">
-              {metadata.tags?.map((tag, i) => (
-                <React.Fragment key={tag.label}>
-                  <Link to={tag.permalink} style={{ color: 'inherit' }}>
-                    {tag.label}
-                  </Link>
-                  {i < metadata.tags.length - 1 && ' / '}
-                </React.Fragment>
-              ))}
-            </IconText>
-          </>
+          <IconData icon="lucide:tag">
+            {metadata.tags?.map((tag, i) => (
+              <React.Fragment key={tag.label}>
+                <Link to={tag.permalink} style={{ color: 'inherit' }}>
+                  {tag.label}
+                </Link>
+                {i < metadata.tags.length - 1 && ' / '}
+              </React.Fragment>
+            ))}
+          </IconData>
         )}
       </div>
     </article>
