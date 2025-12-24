@@ -4,6 +4,7 @@ import Link from '@docusaurus/Link';
 import { Icon } from '@iconify/react';
 import type { BlogPaginatedMetadata } from '@docusaurus/plugin-content-blog';
 import BlogScaffold from './Scaffold';
+import { useAnalytics } from './Components';
 
 import { translate } from '@docusaurus/Translate';
 import IconText from '@site/src/components/laikit/widget/IconText';
@@ -24,6 +25,7 @@ function PostCard({ item }) {
   const { metadata, assets, frontMatter } = MDXPageContent;
   const image = assets.image ?? frontMatter.image;
   const firstTag = metadata.tags?.[0] ?? null;
+  const { analytics, status } = useAnalytics(metadata.permalink);
 
   return (
     <article className={styles.card}>
@@ -81,6 +83,18 @@ function PostCard({ item }) {
                   readingTime: Math.max(1, Math.round(metadata.readingTime)),
                 }
               )}
+            </IconText>
+          </>
+        )}
+        {status === 'success' && (
+          <>
+            <span className={styles.dot}>·</span>
+            <IconText icon="lucide:user" colorMode="monochrome">
+              {analytics.visitors}
+            </IconText>
+            <span className={styles.dot}>·</span>
+            <IconText icon="lucide:eye" colorMode="monochrome">
+              {analytics.pageviews}
             </IconText>
           </>
         )}
