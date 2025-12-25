@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { type ReactNode } from 'react';
 import { translate } from '@docusaurus/Translate';
 
 import type { Props } from '@theme/Blog/Pages/BlogAuthorsListPage';
@@ -11,7 +11,7 @@ const TITLE = translate({
 });
 const DESCRIPTION = "Authors of lailai's blog";
 
-export default function BlogAuthorsListPage({ authors }: Props) {
+export default function BlogAuthorsListPage({ authors }: Props): ReactNode {
   return (
     <BlogScaffold title={TITLE} description={DESCRIPTION}>
       <Card title={TITLE}>
