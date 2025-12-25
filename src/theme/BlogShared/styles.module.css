@@ -1,12 +1,16 @@
 .container {
   --sidebar-width: 320px;
-  --main-max-width: 880px;
+  --main-max-width: 840px;
   --gap: 1rem;
+  --padding: 2rem;
 
   width: 100%;
-  max-width: calc(var(--sidebar-width) + var(--main-max-width) + var(--gap));
+  max-width: calc(
+    var(--sidebar-width) + var(--main-max-width) + var(--gap) +
+      (var(--padding) * 2)
+  );
   margin-inline: auto;
-  padding: 2rem;
+  padding: var(--padding);
 
   display: grid;
   gap: var(--gap);
