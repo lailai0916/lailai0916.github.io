@@ -869,7 +869,7 @@
     "message": "精选<b>资源</b>"
   },
   "pages.resources.search.placeholder": {
-    "message": "搜索资源名称、描述或 URL..."
+    "message": "搜索资源"
   },
   "pages.resources.category.all": {
     "message": "全部"

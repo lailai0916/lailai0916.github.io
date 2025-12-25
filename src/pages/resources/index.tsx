@@ -79,7 +79,7 @@ function SearchBar({
         type="text"
         placeholder={translate({
           id: 'pages.resources.search.placeholder',
-          message: 'Search for resources by name, description or URL...',
+          message: 'Search Resources',
         })}
         value={value}
         onChange={(e) => onChange(e.target.value)}
