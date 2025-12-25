@@ -184,29 +184,6 @@ function FeedCard() {
   );
 }
 
-function MenuCard() {
-  const page = [
-    { label: 'Blog', href: '/blog' },
-    { label: 'Archive', href: '/blog/archive' },
-    { label: 'Authors', href: '/blog/authors' },
-    { label: 'Tags', href: '/blog/tags' },
-  ];
-
-  return (
-    <Card>
-      <ul className={styles.menuList}>
-        {page.map((item) => (
-          <li key={item.href} className={styles.menuListItem}>
-            <Link to={item.href} className={styles.menuLink}>
-              <span className={styles.menuLinkLabel}>{item.label}</span>→
-            </Link>
-          </li>
-        ))}
-      </ul>
-    </Card>
-  );
-}
-
 function Sidebar({ toc }: { toc?: readonly TOCItem[] }) {
   return (
     <aside className={styles.sidebar}>
@@ -240,10 +217,7 @@ export default function BlogScaffold({
   return (
     <DebugLayout title={title} description={description}>
       <div className={styles.container}>
-        <main className={styles.main}>
-          <MenuCard />
-          {children}
-        </main>
+        <main className={styles.main}>{children}</main>
         <Sidebar toc={toc} />
       </div>
     </DebugLayout>

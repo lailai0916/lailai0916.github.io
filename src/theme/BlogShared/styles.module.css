@@ -14,13 +14,6 @@
   grid-template-areas: 'sidebar main';
 }
 
-.main,
-.sidebar {
-  display: flex;
-  flex-direction: column;
-  gap: 1.25rem;
-}
-
 .main {
   grid-area: main;
   min-width: 0;
@@ -28,6 +21,9 @@
 
 .sidebar {
   grid-area: sidebar;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
 }
 
 @media (max-width: 996px) {
@@ -223,62 +219,6 @@
   display: flex;
   width: 100%;
   justify-content: space-between;
-}
-
-.menuList {
-  list-style: none;
-  margin: 0;
-  padding: 0.25rem 0;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-}
-
-.menuListItem {
-  list-style: none;
-  flex: 1 1 calc(25% - 0.5rem);
-  min-width: 120px;
-}
-
-.menuLink {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 0.75rem;
-  padding: 0.65rem 0.75rem;
-  border-radius: 12px;
-  border: 1px solid var(--ifm-color-emphasis-200);
-  background: transparent;
-  color: var(--ifm-font-color-base);
-  text-decoration: none !important;
-  transition:
-    background 160ms ease,
-    border-color 160ms ease,
-    color 160ms ease,
-    transform 120ms ease,
-    box-shadow 160ms ease;
-}
-
-.menuLink:hover {
-  background: var(--ifm-color-emphasis-100);
-  border-color: var(--ifm-color-primary);
-  color: var(--ifm-color-primary);
-  transform: translateY(-1px);
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
-}
-
-.menuLink:active {
-  transform: translateY(0);
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
-}
-
-.menuLink:focus-visible {
-  outline: 2px solid var(--ifm-color-primary);
-  outline-offset: 2px;
-}
-
-.menuLinkLabel {
-  font-weight: 600;
 }
 
 .postCoverWrap {
