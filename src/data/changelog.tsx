@@ -30,6 +30,11 @@ export const CHANGELOG_LIST: ChangelogItem[] = [
     content: '网站一周年',
   },
   {
+    date: '2025-10-15',
+    type: 'changed',
+    content: '新版博客布局',
+  },
+  {
     date: '2025-10-01',
     type: 'added',
     content: '<code>&lt;Solution /&gt;</code> 题解标题组件',
@@ -55,7 +60,7 @@ export const CHANGELOG_LIST: ChangelogItem[] = [
   {
     date: '2025-09-01',
     type: 'added',
-    content: '博客新版布局（实验性）',
+    content: '新版博客布局（实验性）',
   },
   {
     date: '2025-08-31',
@@ -70,7 +75,7 @@ export const CHANGELOG_LIST: ChangelogItem[] = [
   {
     date: '2025-08-14',
     type: 'added',
-    content: '<b>debug</b> 调试模式（实验性）',
+    content: '<b>debug</b> 调试模式',
   },
   {
     date: '2025-08-13',
