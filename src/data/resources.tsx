@@ -521,9 +521,9 @@ export const RESOURCE_LIST: ResourceCategoryItem[] = [
         description: '在线打字练习平台',
       },
       {
-        title: 'WildCard 野卡',
-        href: 'https://yeka.ai',
-        description: '虚拟信用卡服务',
+        title: 'WildCard',
+        href: 'https://bewildcard.com',
+        description: 'AI 自动订阅服务',
       },
       {
         title: 'Luban SMS',
