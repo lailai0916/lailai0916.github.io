@@ -339,17 +339,17 @@ export const RESOURCE_LIST: ResourceCategoryItem[] = [
       {
         title: '洛谷',
         href: 'https://www.luogu.com.cn',
-        description: '国内编程竞赛平台',
+        description: '中国的编程竞赛平台',
       },
       {
         title: 'Codeforces',
         href: 'https://codeforces.com',
-        description: '全球编程竞赛平台',
+        description: '俄罗斯的编程竞赛平台',
       },
       {
         title: 'AtCoder',
         href: 'https://atcoder.jp',
-        description: '日本编程竞赛平台',
+        description: '日本的编程竞赛平台',
       },
       {
         title: 'Virtual Judge',
@@ -365,6 +365,11 @@ export const RESOURCE_LIST: ResourceCategoryItem[] = [
         title: 'Algorithm Duels Online',
         href: 'https://algorithm-duels.online',
         description: '组队算法对决平台',
+      },
+      {
+        title: 'Solution Formatter',
+        href: 'https://tj.imken.dev',
+        description: '洛谷题解格式化工具',
       },
       {
         title: 'Code Golf',
@@ -481,39 +486,9 @@ export const RESOURCE_LIST: ResourceCategoryItem[] = [
         description: '开源软件镜像与下载',
       },
       {
-        title: 'Speedtest',
-        href: 'https://www.speedtest.net',
-        description: '网络速度测试工具',
-      },
-      {
-        title: 'volumeshader_bm',
-        href: 'https://cznull.github.io/vsbm',
-        description: '毒蘑菇 GPU 渲染性能测试',
-      },
-      {
         title: '能不能好好说话？',
         href: 'https://lab.magiconch.com/nbnhhsh/',
         description: '拼音缩写翻译工具',
-      },
-      {
-        title: 'Solution Formatter',
-        href: 'https://tj.imken.dev',
-        description: '洛谷题解格式化工具',
-      },
-      {
-        title: 'Password Monster',
-        href: 'https://passwordmonster.com',
-        description: '密码强度检测工具',
-      },
-      {
-        title: 'CPS 测试',
-        href: 'https://clickspeedtest.com',
-        description: '鼠标点击速度测试',
-      },
-      {
-        title: '政治倾向测试',
-        href: 'https://luckyfuy.top/compass/',
-        description: '政治倾向分析测试',
       },
       {
         title: 'dazidazi',
@@ -549,6 +524,37 @@ export const RESOURCE_LIST: ResourceCategoryItem[] = [
         title: 'QR Code Generator',
         href: 'https://www.qr-code-generator.com',
         description: '在线二维码生成工具',
+      },
+    ],
+  },
+  {
+    title: '测试与分析',
+    icon: 'lucide:bar-chart-2',
+    resources: [
+      {
+        title: 'Speedtest',
+        href: 'https://www.speedtest.net',
+        description: '网络速度测试工具',
+      },
+      {
+        title: 'Password Monster',
+        href: 'https://passwordmonster.com',
+        description: '密码强度检测工具',
+      },
+      {
+        title: 'volumeshader_bm',
+        href: 'https://cznull.github.io/vsbm',
+        description: '毒蘑菇 GPU 渲染性能测试',
+      },
+      {
+        title: 'CPS 测试',
+        href: 'https://clickspeedtest.com',
+        description: '鼠标点击速度测试',
+      },
+      {
+        title: '政治倾向测试',
+        href: 'https://luckyfuy.top/compass/',
+        description: '政治倾向分析测试',
       },
     ],
   },
