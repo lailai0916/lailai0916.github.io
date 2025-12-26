@@ -486,9 +486,9 @@ export const RESOURCE_LIST: ResourceCategoryItem[] = [
         description: '网络速度测试工具',
       },
       {
-        title: '毒蘑菇测试',
+        title: 'volumeshader_bm',
         href: 'https://cznull.github.io/vsbm',
-        description: 'GPU 渲染性能测试',
+        description: '毒蘑菇 GPU 渲染性能测试',
       },
       {
         title: '能不能好好说话？',
