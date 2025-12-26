@@ -10,6 +10,11 @@ export interface ChangelogItem {
 
 export const CHANGELOG_LIST: ChangelogItem[] = [
   {
+    date: '2025-12-26',
+    type: 'fixed',
+    content: 'KaTeX 公式宽度问题',
+  },
+  {
     date: '2025-12-05',
     type: 'removed',
     content: '<code>&lt;Assets /&gt;</code> 资源优化组件',
@@ -26,7 +31,7 @@ export const CHANGELOG_LIST: ChangelogItem[] = [
   },
   {
     date: '2025-10-01',
-    type: 'changed',
+    type: 'added',
     content: '<code>&lt;Solution /&gt;</code> 题解标题组件',
   },
   {
