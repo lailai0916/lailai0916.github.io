@@ -547,6 +547,11 @@ export const RESOURCE_LIST: ResourceCategoryItem[] = [
         description: '毒蘑菇 GPU 渲染性能测试',
       },
       {
+        title: 'A Real Me',
+        href: 'https://www.arealme.com',
+        description: '测试了解自己',
+      },
+      {
         title: 'CPS 测试',
         href: 'https://clickspeedtest.com',
         description: '鼠标点击速度测试',
