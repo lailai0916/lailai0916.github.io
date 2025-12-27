@@ -21,7 +21,7 @@
 .container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 2.5rem 0;
+  padding: 2rem;
   display: grid;
   gap: 2rem;
   animation: fadeIn 0.3s ease-out;
