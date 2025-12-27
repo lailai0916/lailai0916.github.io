@@ -12,10 +12,7 @@ import { Card } from '../BlogShared/Components';
 
 import type { Props } from '@theme/BlogArchivePage';
 
-const TITLE = translate({
-  id: 'theme.blog.archive.title',
-  message: 'Archive',
-});
+const TITLE = translate({ id: 'theme.blog.archive.title', message: 'Archive' });
 const DESCRIPTION = "Archive of lailai's blog";
 
 export default function BlogArchivePage(props: Props): React.ReactElement {
