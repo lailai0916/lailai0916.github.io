@@ -309,7 +309,7 @@
   color: var(--ifm-font-color-base);
 }
 
-.cardSubtitle {
+.cardDescription {
   font-size: 0.875rem;
   color: var(--ifm-color-emphasis-600);
   font-weight: 500;

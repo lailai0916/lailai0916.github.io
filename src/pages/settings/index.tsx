@@ -31,14 +31,14 @@ const MODIFICATION = translate({
   message: 'Personalized <b>Settings</b>',
 });
 
-function Card({ title, subtitle, icon, children }) {
+function Card({ title, description, icon, children }) {
   return (
     <div className={styles.settingCard}>
       <div className={styles.cardHeader}>
         <Icon icon={icon} className={styles.cardIcon} />
         <div className={styles.cardTitleGroup}>
           <h3 className={styles.cardTitle}>{title}</h3>
-          <span className={styles.cardSubtitle}>{subtitle}</span>
+          <span className={styles.cardDescription}>{description}</span>
         </div>
       </div>
       <div className={styles.cardBody}>{children}</div>
@@ -81,8 +81,8 @@ function ThemeSettings() {
         id: 'pages.settings.item.theme.title',
         message: 'Theme',
       })}
-      subtitle={translate({
-        id: 'pages.settings.item.theme.subtitle',
+      description={translate({
+        id: 'pages.settings.item.theme.description',
         message: 'Select a theme mode that suits you',
       })}
       icon="lucide:monitor"
@@ -127,8 +127,8 @@ function ColorGenerator() {
         id: 'pages.settings.item.color.title',
         message: 'Color Generator',
       })}
-      subtitle={translate({
-        id: 'pages.settings.item.color.subtitle',
+      description={translate({
+        id: 'pages.settings.item.color.description',
         message:
           'Customize the main color of the website, preview the effect in real time',
       })}
@@ -217,8 +217,8 @@ function FontSettings() {
         id: 'pages.settings.item.font.title',
         message: 'Font Size',
       })}
-      subtitle={translate({
-        id: 'pages.settings.item.font.subtitle',
+      description={translate({
+        id: 'pages.settings.item.font.description',
         message: 'Adjust the interface font to get the best reading experience',
       })}
       icon="lucide:type"
@@ -296,8 +296,8 @@ function ExperimentalFeatures() {
         id: 'pages.settings.item.experimental.title',
         message: 'Experimental Content',
       })}
-      subtitle={translate({
-        id: 'pages.settings.item.experimental.subtitle',
+      description={translate({
+        id: 'pages.settings.item.experimental.description',
         message: 'Try new features that are still under development',
       })}
       icon="lucide:flask-conical"
@@ -372,8 +372,8 @@ function QuickActions() {
         id: 'pages.settings.item.quickactions.title',
         message: 'Quick Actions',
       })}
-      subtitle={translate({
-        id: 'pages.settings.item.quickactions.subtitle',
+      description={translate({
+        id: 'pages.settings.item.quickactions.description',
         message: 'Quickly manage your personalized configuration',
       })}
       icon="lucide:zap"
