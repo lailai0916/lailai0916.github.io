@@ -23,7 +23,7 @@
   margin: 0 auto;
   padding: 2rem;
   display: grid;
-  gap: 2rem;
+  gap: 1rem;
   animation: fadeIn 0.3s ease-out;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-areas: 'a1 a2 a2' 'a3 a4 a5';

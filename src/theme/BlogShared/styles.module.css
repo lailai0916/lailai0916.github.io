@@ -11,7 +11,6 @@
   );
   margin-inline: auto;
   padding: var(--padding);
-
   display: grid;
   gap: var(--gap);
   grid-template-columns: var(--sidebar-width) minmax(0, 1fr);
