@@ -42,14 +42,14 @@ function AuthorCard() {
 }
 
 function TocCard({ toc }: { toc: readonly TOCItem[] }) {
-  const TITLE = translate({
-    id: 'blog.sidebar.toc.title',
-    message: 'Contents',
-  });
-
   return (
     <div className={styles.tocContainer}>
-      <Card title={TITLE}>
+      <Card
+        title={translate({
+          id: 'blog.sidebar.toc.title',
+          message: 'Contents',
+        })}
+      >
         <ul className={styles.tocList}>
           {toc.map((item) => (
             <li key={item.id} className={styles.tocItem}>
@@ -107,13 +107,14 @@ function StatsCard() {
       href: shareUrl,
     },
   ];
-  const TITLE = translate({
-    id: 'blog.sidebar.stats.title',
-    message: 'Statistics',
-  });
 
   return (
-    <Card title={TITLE}>
+    <Card
+      title={translate({
+        id: 'blog.sidebar.stats.title',
+        message: 'Statistics',
+      })}
+    >
       <div className={styles.authorStats}>
         {statsItems.map((item) => (
           <Link key={item.label} to={item.href} className={styles.statItem}>
@@ -144,13 +145,14 @@ function TagsCard() {
   const tags = Array.from(map.values())
     .sort((a, b) => b.count - a.count)
     .slice(0, 8);
-  const TITLE = translate({
-    id: 'blog.sidebar.tags.title',
-    message: 'Popular Tags',
-  });
 
   return (
-    <Card title={TITLE}>
+    <Card
+      title={translate({
+        id: 'blog.sidebar.tags.title',
+        message: 'Popular Tags',
+      })}
+    >
       <TagChipList items={tags} />
     </Card>
   );
@@ -162,13 +164,14 @@ function FeedCard() {
     { label: 'Atom Feed', href: 'https://lailai.one/blog/atom.xml' },
     { label: 'JSON Feed', href: 'https://lailai.one/blog/feed.json' },
   ];
-  const TITLE = translate({
-    id: 'blog.sidebar.feed.title',
-    message: 'Subscribe',
-  });
 
   return (
-    <Card title={TITLE}>
+    <Card
+      title={translate({
+        id: 'blog.sidebar.feed.title',
+        message: 'Subscribe',
+      })}
+    >
       <div className={styles.feedButtonGroup}>
         {feeds.map((feed) => (
           <Link
