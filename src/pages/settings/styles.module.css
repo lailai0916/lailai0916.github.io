@@ -262,21 +262,10 @@
 /* SettingCard 组件样式 */
 .settingCard {
   background: var(--ifm-card-background-color);
-  border: 2px solid var(--ifm-color-emphasis-200);
+  border: 1px solid var(--ifm-color-emphasis-200);
   border-radius: 16px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
   padding: 1.5rem;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  position: relative;
-  overflow: hidden;
-}
-
-.settingCard:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  border-color: var(--ifm-color-primary);
 }
 
 .cardHeader {
