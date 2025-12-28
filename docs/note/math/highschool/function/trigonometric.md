@@ -41,7 +41,7 @@ $$
 x^2+y^2=1
 $$
 
-<Desmos id="wocs5bz2f4" />
+<Desmos id="tria47yr6h" />
 
 ## 定义
 
