@@ -306,10 +306,3 @@
   display: flex;
   flex-direction: column;
 }
-
-/* 响应式设计 */
-@media (max-width: 768px) {
-  .settingCard {
-    padding: 1rem;
-  }
-}
