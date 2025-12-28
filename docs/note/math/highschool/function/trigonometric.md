@@ -127,7 +127,7 @@ $$
 余弦函数同理。更一般的形式如下：
 
 $$
-y=A\cos{(\omega x+\varphi)}
+y=A\cos(\omega x+\varphi)
 $$
 
 <Desmos id="qckplvwpkk" />
@@ -166,65 +166,65 @@ $$
 ### 平方恒等式
 
 $$
-\sin^2{\alpha}+\cos^2{\alpha}=1
+\sin^2\alpha+\cos^2\alpha=1
 $$
 
 $$
-1+\tan^2{\alpha}=\sec^2{\alpha}
+1+\tan^2\alpha=\sec^2\alpha
 $$
 
 $$
-\cot^2{\alpha}+1=\csc^2{\alpha}
+\cot^2\alpha+1=\csc^2\alpha
 $$
 
 ### 商数恒等式
 
 $$
-\tan{\alpha}=\frac{\sin{\alpha}}{\cos{\alpha}}
+\tan{\alpha}=\frac{\sin\alpha}{\cos\alpha}
 $$
 
 $$
-\cot{\alpha}=\frac{\cos{\alpha}}{\sin{\alpha}}
+\cot{\alpha}=\frac{\cos\alpha}{\sin\alpha}
 $$
 
 ### 倒数恒等式
 
 $$
-\sin{\alpha}=\frac{1}{\csc{\alpha}}
+\sin\alpha=\frac{1}{\csc\alpha}
 $$
 
 $$
-\cos{\alpha}=\frac{1}{\sec{\alpha}}
+\cos\alpha=\frac{1}{\sec\alpha}
 $$
 
 $$
-\tan{\alpha}=\frac{1}{\cot{\alpha}}
+\tan\alpha=\frac{1}{\cot\alpha}
 $$
 
 ### 积的恒等式
 
 $$
-\sin{\alpha}=\tan{\alpha}\cos{\alpha}
+\sin\alpha=\tan\alpha\cos\alpha
 $$
 
 $$
-\cos{\alpha}=\cot{\alpha}\sin{\alpha}
+\cos\alpha=\cot\alpha\sin\alpha
 $$
 
 $$
-\tan{\alpha}=\sin{\alpha}\sec{\alpha}
+\tan\alpha=\sin\alpha\sec\alpha
 $$
 
 $$
-\cot{\alpha}=\cos{\alpha}\csc{\alpha}
+\cot\alpha=\cos\alpha\csc\alpha
 $$
 
 $$
-\sec{\alpha}=\tan{\alpha}\csc{\alpha}
+\sec\alpha=\tan\alpha\csc\alpha
 $$
 
 $$
-\csc{\alpha}=\sec{\alpha}\cot{\alpha}
+\csc\alpha=\sec\alpha\cot\alpha
 $$
 
 ### 推导过程
@@ -232,17 +232,17 @@ $$
 在 $\triangle ABC$ 中，根据勾股定理：
 
 $$
-\sin^2{\theta}+\cos^2{\theta}=1
+\sin^2\theta+\cos^2\theta=1
 $$
 
-等式两边同时除以 $\sin^2{\theta}$ 或 $\cos^2{\theta}$ 可得：
+等式两边同时除以 $\sin^2\theta$ 或 $\cos^2\theta$ 可得：
 
 $$
-1+\tan^2{\alpha}=\sec^2{\alpha}
+1+\tan^2\alpha=\sec^2\alpha
 $$
 
 $$
-\cot^2{\alpha}+1=\csc^2{\alpha}
+\cot^2\alpha+1=\csc^2\alpha
 $$
 
 对于其他三组恒等式，将三角函数的定义代入即可证明。
@@ -250,7 +250,7 @@ $$
 :::example
 
 $$
-\frac{\sin{\theta}}{\cos{\theta}}=\frac{a/c}{b/c}=\frac{a}{b}=\tan{\theta}
+\frac{\sin\theta}{\cos\theta}=\frac{a/c}{b/c}=\frac{a}{b}=\tan\theta
 $$
 
 :::
@@ -261,51 +261,59 @@ $$
 
 #### 无字证明
 
-一个精妙的无字证明：
+一个优雅的无字证明：
 
 ![](https://cloud.lailai.one/f/1zzTZ/trigonometric-wordless-proof-sin.svg)
 
 $$
-\sin{(\alpha+\beta)}=\sin{\alpha}\cos{\beta}+\cos{\alpha}\sin{\beta}
+\sin(\alpha+\beta)=\sin\alpha\cos\beta+\cos\alpha\sin\beta
 $$
 
 $$
-\cos{(\alpha+\beta)}=\cos{\alpha}\cos{\beta}-\sin{\alpha}\sin{\beta}
+\cos(\alpha+\beta)=\cos\alpha\cos\beta-\sin\alpha\sin\beta
 $$
 
 ![](https://cloud.lailai.one/f/jPzFq/trigonometric-wordless-proof-tan.svg)
 
 $$
-\tan{(\alpha+\beta)}=\frac{\tan{\alpha}+\tan{\beta}}{1-\tan{\alpha}\tan{\beta}}
+\tan(\alpha+\beta)=\frac{\tan\alpha+\tan\beta}{1-\tan\alpha\tan\beta}
 $$
 
 #### 推导过程
+
+:::tip
+
+**余弦差角公式** 是本文 **唯一** 需要通过几何推导来证明的公式。
+
+其他公式都可以通过代入已有公式推导得出。
+
+:::
 
 余弦差角公式推导：
 
 <Desmos id="2iz3b7qxzr" />
 
-如图，设 $\angle AOB'=\alpha,\angle BOB'=\beta$，则 $A,B$ 两点的坐标分别为 $A(\cos{\alpha},\sin{\alpha}),B(\cos{\beta},\sin{\beta})$。
+如图，设 $\angle AOB'=\alpha,\angle BOB'=\beta$，则 $A,B$ 两点的坐标分别为 $A(\cos\alpha,\sin\alpha),B(\cos\beta,\sin\beta)$。
 
 将 $OA$ 和 $OB$ 同时绕原点顺时针旋转 $\beta$，得到 $OA'$ 和 $OB'$。此时 $OB'$ 和 $x$ 轴重合，而 $\angle A'OB'=\alpha-\beta$。
 
-所以 $A',B'$ 两点的坐标分别为 $A'(\cos{(\alpha-\beta)},\sin{(\alpha-\beta)}),B'(1,0)$。
+所以 $A',B'$ 两点的坐标分别为 $A'(\cos(\alpha-\beta),\sin(\alpha-\beta)),B'(1,0)$。
 
 根据距离公式：
 
 $$
 \begin{aligned}
-  |AB|^2 &= (\cos{\alpha}-\cos{\beta})^2+(\sin{\alpha}-\sin{\beta})^2 \\
-  &= \cos^2{\alpha}-2\cos{\alpha}\cos{\beta}+\cos^2{\beta}+sin^2{\alpha}-2\sin{\alpha}\sin{\beta}+sin^2{\beta} \\
-  &= 2-2(\cos{\alpha}\cos{\beta}+\sin{\alpha}\sin{\beta})
+  |AB|^2 &= (\cos\alpha-\cos\beta)^2+(\sin\alpha-\sin\beta)^2 \\
+  &= \cos^2\alpha-2\cos\alpha\cos\beta+\cos^2\beta+sin^2\alpha-2\sin\alpha\sin\beta+sin^2\beta \\
+  &= 2-2(\cos\alpha\cos\beta+\sin\alpha\sin\beta)
 \end{aligned}
 $$
 
 $$
 \begin{aligned}
-  |A'B'|^2 &= (\cos{(\alpha-\beta)}-1)^2+(\sin{(\alpha-\beta)}-0)^2 \\
-  &= \cos^2{(\alpha-\beta)}-2\cos{(\alpha-\beta)}+1+\sin^2{(\alpha+\beta)} \\
-  &= 2-2\cos{(\alpha-\beta)}
+  |A'B'|^2 &= (\cos(\alpha-\beta)-1)^2+(\sin(\alpha-\beta)-0)^2 \\
+  &= \cos^2(\alpha-\beta)-2\cos(\alpha-\beta)+1+\sin^2(\alpha+\beta) \\
+  &= 2-2\cos(\alpha-\beta)
 \end{aligned}
 $$
 
@@ -316,16 +324,8 @@ $$
 $$
 
 $$
-\cos{(\alpha-\beta)}=\cos{\alpha}\cos{\beta}+\sin{\alpha}\sin{\beta}
+\cos(\alpha-\beta)=\cos\alpha\cos\beta+\sin\alpha\sin\beta
 $$
-
-:::tip
-
-余弦差角公式是本文 **唯一** 需要通过几何推导来证明的公式。
-
-其他公式都可以通过代入已有公式推导得出。
-
-:::
 
 余弦和角公式推导：
 
