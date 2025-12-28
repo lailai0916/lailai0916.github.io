@@ -147,7 +147,7 @@ $$
 \mathrm{A}_n^m=\mathrm{P}_n^m
 $$
 
-组合数还可以使用 $\dbinom{n}{m}$ 表示，请注意 $n$ 和 $m$ 的位置顺序。
+组合数还可以使用 $\dbinom{n}{m}$ 表示，注意 $n$ 和 $m$ 的位置顺序。
 
 $$
 \mathrm{C}_n^m=\dbinom{n}{m}

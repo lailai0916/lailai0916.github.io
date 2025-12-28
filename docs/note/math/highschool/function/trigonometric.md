@@ -45,19 +45,25 @@ $$
 
 ## 定义
 
-### 直角三角形定义（锐角）
+### 锐角三角函数（直角三角形）
 
 在初中阶段，我们学过 **锐角** 三角函数的定义：在 **直角三角形** 中，以一个 **锐角** $\theta$ 为基准，定义 **对边** $a$、**邻边** $b$ 和 **斜边** $c$ 中两边之比的函数。
 
 ![](https://cloud.lailai.one/f/DnrcK/trigonometric-definition-triangle.svg)
 
-图中 $\theta=\angle BAC,a=|BC|,b=|AC|,c=|AB|$，每个三角函数的定义为：
+如果，令：
+
+$$
+\theta=\angle BAC,a=|BC|,b=|AC|,c=|AB|
+$$
+
+每个三角函数的定义为：
 
 $$
 \sin\theta=\frac{a}{c},\cos\theta=\frac{b}{c},\tan\theta=\frac{a}{b},\cot\theta=\frac{b}{a},\sec\theta=\frac{c}{b},\csc\theta=\frac{c}{a}
 $$
 
-### 单位圆定义（任意角）
+### 任意角三角函数（单位圆）
 
 锐角三角函数定义是基于 **直角三角形** 的，但直角三角形的锐角只能在 $(0,\frac{\pi}{2})$ 范围内。
 
@@ -65,11 +71,7 @@ $$
 
 <Desmos id="zloryluyup" />
 
-如图，将斜边为 $1$ 的直角三角形放入单位圆内，令：
-
-$$
-\theta=\angle BAC,a=|BC|,b=|AC|,c=|AB|=1
-$$
+如图，将斜边为 $1$ 的直角三角形 $\triangle ABC$ 放入单位圆内。
 
 代入 $\sin$ 和 $\cos$ 的锐角三角函数的定义：
 
@@ -85,13 +87,13 @@ $$
 B(\cos\theta,\sin\theta)
 $$
 
-这就是 $\cos$ 和 $\sin$ 的定义，其他三角函数都可以通过它们计算得出。
-
 :::tip
 
-这个点的坐标是 $(\cos\theta,\sin\theta)$，请注意 $\cos$ 和 $\sin$ 的位置顺序。
+这个点的坐标是 $(\cos\theta,\sin\theta)$，注意 $\cos$ 和 $\sin$ 的位置顺序。
 
 :::
+
+这就是 $\sin$ 和 $\cos$ 的定义，其他三角函数都可以通过它们计算得出。
 
 ![](https://cloud.lailai.one/f/Mjnuy/trigonometric-definition-circle.svg)
 
