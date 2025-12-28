@@ -227,7 +227,7 @@ $$
 
 ### 推导过程
 
-上图中蓝色三角形是直角三角形，根据勾股定理：
+在 $\triangle ABC$ 中，根据勾股定理：
 
 $$
 \sin^2{\theta}+\cos^2{\theta}=1
@@ -243,11 +243,7 @@ $$
 \cot^2{\alpha}+1=\csc^2{\alpha}
 $$
 
-对于其他三组恒等式，将锐角三角函数的定义代入即可证明：
-
-$$
-\sin{\theta}=\frac{a}{c},\cos{\theta}=\frac{b}{c},\tan{\theta}=\frac{a}{b},\cot{\theta}=\frac{b}{a},\sec{\theta}=\frac{c}{b},\csc{\theta}=\frac{c}{a}
-$$
+对于其他三组恒等式，将三角函数的定义代入即可证明。
 
 :::example
 
