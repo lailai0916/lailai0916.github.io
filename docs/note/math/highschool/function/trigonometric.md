@@ -137,12 +137,12 @@ $$
     <tr>
       <th>角度</th>
       <th>弧度</th>
-      <th>$\sin{\theta}$</th>
-      <th>$\cos{\theta}$</th>
-      <th>$\tan{\theta}$</th>
-      <th>$\cot{\theta}$</th>
-      <th>$\sec{\theta}$</th>
-      <th>$\csc{\theta}$</th>
+      <th>$\sin\theta$</th>
+      <th>$\cos\theta$</th>
+      <th>$\tan\theta$</th>
+      <th>$\cot\theta$</th>
+      <th>$\sec\theta$</th>
+      <th>$\csc\theta$</th>
     </tr>
   </thead>
   <tbody>
