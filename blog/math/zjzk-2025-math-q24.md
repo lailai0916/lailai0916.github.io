@@ -5,7 +5,7 @@ authors: lailai
 tags: [math]
 ---
 
-求不出的 $\frac{3\sqrt{39}-4}{5}$，会不会又成为后来心底的坎？
+> 求不出的 $\frac{3\sqrt{39}-4}{5}$，会不会又成为后来心底的坎？
 
 <!-- truncate -->
 
