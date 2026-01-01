@@ -5,8 +5,8 @@ import { translate } from '@docusaurus/Translate';
 import useIsBrowser from '@docusaurus/useIsBrowser';
 import styles from './styles.module.css';
 
-const DATE = '2026-01-01T00:00:00';
-const EVENT = translate({ id: 'home.countdown.event', message: '2026' });
+const DATE = '2027-01-01T00:00:00';
+const EVENT = translate({ id: 'home.countdown.event', message: '2027' });
 const FINAL = translate({
   id: 'home.countdown.final',
   message: 'Happy New Year!',
