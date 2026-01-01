@@ -6,7 +6,6 @@ export interface FriendItem {
 }
 
 /*
-Example:
 {
   title: 'lailai',
   description: 'Student & Developer',
