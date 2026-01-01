@@ -121,7 +121,6 @@ function PostCard({ item }) {
 function Paginator({ meta }: { meta: BlogPaginatedMetadata }) {
   if (!meta?.totalPages || meta.totalPages <= 1) return null;
   const { page, totalPages } = meta;
-  const curPermalink = meta.permalink as string;
   const sample = meta.nextPage || meta.previousPage || '';
   // Derive pageBase and firstBase robustly for routes like:
   //  - /blog/page/3
@@ -139,8 +138,8 @@ function Paginator({ meta }: { meta: BlogPaginatedMetadata }) {
     pageBase = `${firstBase.replace(/\/?$/, '')}/page`;
   } else {
     // no sample at all: infer from current permalink when possible
-    const m2 = curPermalink.match(/(.*)\/page\/\d+\/?$/);
-    firstBase = m2 ? m2[1] : curPermalink;
+    const m2 = meta.permalink.match(/(.*)\/page\/\d+\/?$/);
+    firstBase = m2 ? m2[1] : meta.permalink;
     pageBase = `${firstBase.replace(/\/?$/, '')}/page`;
   }
 
