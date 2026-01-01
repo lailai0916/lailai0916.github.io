@@ -347,10 +347,9 @@
   margin: 0;
   padding: 0;
   list-style: none;
-}
-
-.tocItem {
-  margin-bottom: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
 }
 
 .tocLink {

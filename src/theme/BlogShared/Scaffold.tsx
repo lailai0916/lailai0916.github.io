@@ -52,7 +52,7 @@ function TocCard({ toc }: { toc: readonly TOCItem[] }) {
       >
         <ul className={styles.tocList}>
           {toc.map((item) => (
-            <li key={item.id} className={styles.tocItem}>
+            <li key={item.id}>
               <Link
                 to={`#${item.id}`}
                 className={styles.tocLink}
