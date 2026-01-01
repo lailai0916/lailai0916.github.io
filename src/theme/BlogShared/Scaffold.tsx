@@ -160,9 +160,18 @@ function TagsCard() {
 
 function FeedCard() {
   const feeds = [
-    { label: 'RSS Feed', href: '/blog/rss.xml' },
-    { label: 'Atom Feed', href: '/blog/atom.xml' },
-    { label: 'JSON Feed', href: '/blog/feed.json' },
+    {
+      label: 'RSS Feed',
+      href: useBaseUrl('/blog/rss.xml', { absolute: true }),
+    },
+    {
+      label: 'Atom Feed',
+      href: useBaseUrl('/blog/atom.xml', { absolute: true }),
+    },
+    {
+      label: 'JSON Feed',
+      href: useBaseUrl('/blog/feed.json', { absolute: true }),
+    },
   ];
 
   return (
