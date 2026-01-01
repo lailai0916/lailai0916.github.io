@@ -56,7 +56,7 @@ function TocCard({ toc }: { toc: readonly TOCItem[] }) {
               <Link
                 to={`#${item.id}`}
                 className={styles.tocLink}
-                style={{ paddingLeft: `${item.level - 2}rem` }}
+                style={{ paddingLeft: `${(item.level - 2) * 1}rem` }}
                 dangerouslySetInnerHTML={{ __html: item.value }}
               />
             </li>
