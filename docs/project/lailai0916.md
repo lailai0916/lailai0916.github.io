@@ -70,8 +70,6 @@ GitHub 个人主页仓库教程。
 
 <GitHub repo="tandpfun/skill-icons" />
 
-### Skill Icons
-
 1. 用 Markdown 或 HTML 格式嵌入图片。
 
 ```markdown
@@ -137,13 +135,13 @@ GitHub 个人主页仓库教程。
 
 ```markdown
 ![](https://github-profile-summary-cards.vercel.app/api/cards/stats?username=lailai0916&theme=2077)
-![](https://github-profile-summary-cards.vercel.app/api/cards/productive-time?username=lailai0916&theme=tokyonight&utcOffset=8)
+![](https://github-profile-summary-cards.vercel.app/api/cards/productive-time?username=lailai0916&theme=tokyonight)
 ```
 
 <BrowserWindow>
 
 ![](https://github-profile-summary-cards.vercel.app/api/cards/stats?username=lailai0916&theme=2077)
-![](https://github-profile-summary-cards.vercel.app/api/cards/productive-time?username=lailai0916&theme=tokyonight&utcOffset=8)
+![](https://github-profile-summary-cards.vercel.app/api/cards/productive-time?username=lailai0916&theme=tokyonight)
 
 </BrowserWindow>
 
