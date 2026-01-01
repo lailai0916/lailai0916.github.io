@@ -117,7 +117,7 @@ function StatsCard() {
     >
       <div className={styles.authorStats}>
         {statsItems.map((item) => (
-          <Link key={item.label} to={item.href} className={styles.statItem}>
+          <Link key={item.label} href={item.href} className={styles.statItem}>
             <div className={styles.statValue}>
               {formatLongNumber(item.value)}
             </div>

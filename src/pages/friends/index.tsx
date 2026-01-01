@@ -35,7 +35,7 @@ function FriendCard({ friend }: { friend: FriendItem }) {
   const [imageError, setImageError] = useState(false);
 
   return (
-    <Link to={friend.href} className={styles.friendCard}>
+    <Link href={friend.href} className={styles.friendCard}>
       <div className={styles.friendCardContent}>
         <div className={styles.friendCardHeader}>
           <div className={styles.friendCardAvatar}>
