@@ -160,9 +160,9 @@ function TagsCard() {
 
 function FeedCard() {
   const feeds = [
-    { label: 'RSS Feed', href: 'https://lailai.one/blog/rss.xml' },
-    { label: 'Atom Feed', href: 'https://lailai.one/blog/atom.xml' },
-    { label: 'JSON Feed', href: 'https://lailai.one/blog/feed.json' },
+    { label: 'RSS Feed', href: '/blog/rss.xml' },
+    { label: 'Atom Feed', href: '/blog/atom.xml' },
+    { label: 'JSON Feed', href: '/blog/feed.json' },
   ];
 
   return (
