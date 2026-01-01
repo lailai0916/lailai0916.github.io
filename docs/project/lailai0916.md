@@ -2,7 +2,9 @@
 
 GitHub 个人主页仓库教程。
 
-`username/username` 是一个特殊的 GitHub 仓库，其 `README.md` 文件会显示在你的个人主页上。
+## 简介
+
+`username/username` 是一个特殊的 [GitHub](https://github.com) 仓库，其 `README.md` 文件会显示在个人主页。
 
 你可以在这个文件中展示个人简介、项目简介、技术栈图标、状态统计图等各种信息。
 
@@ -12,11 +14,11 @@ GitHub 个人主页仓库教程。
 
 ## 创建仓库
 
-1. 打开 [GitHub](https://github.com) 并登录账号。
+1. 打开 GitHub 并登录账号。
 
 2. 在 GitHub 首页右上角点击加号 `+` 按钮，点击 [New repository](https://github.com/new)（新建仓库）。
 
-- **Repository name**（仓库名称）必须与你的 GitHub 用户名相同，例如 `lailai0916/lailai0916`（将 `lailai0916` 替换为你的 GitHub 用户名）。
+- **Repository name**（仓库名称）必须与你的 GitHub 用户名相同，例如 `lailai0916/lailai0916`。
 - **Description**（描述）为可选项，例如 `lailai's Profile`。
 - 勾选 **Add a README file**（添加 README 文件）。
 - 点击 **Create repository**（创建仓库）。
@@ -66,6 +68,8 @@ GitHub 个人主页仓库教程。
 
 技术栈图标推荐使用 [Skill Icons](https://skillicons.dev)。
 
+<GitHub repo="tandpfun/skill-icons" />
+
 ### Skill Icons
 
 1. 用 Markdown 或 HTML 格式嵌入图片。
@@ -102,6 +106,8 @@ GitHub 个人主页仓库教程。
 ### GitHub Profile Summary Cards
 
 [GitHub Profile Summary Cards](https://github-profile-summary-cards.vercel.app/demo.html) 的优点是使用方便，直接修改链接即可使用。
+
+<GitHub repo="vn7n24fzkq/github-profile-summary-cards" />
 
 1. 用 Markdown 或 HTML 格式嵌入图片。
 
@@ -143,7 +149,9 @@ GitHub 个人主页仓库教程。
 
 ### GitHub Stats Visualization
 
-[GitHub Stats Visualization](https://github.com/jstrieb/github-stats) 的优点是带有动画，但需要自行构建，会相对比较麻烦。
+[GitHub Stats Visualization](https://github.com/jstrieb/github-stats) 的优点是带有动画，但需要自行构建，相对会比较麻烦。
+
+<GitHub repo="jstrieb/github-stats" />
 
 1. 创建一个具有 `read:user` 和 `repo` 权限的 **Personal access tokens**（个人访问令牌）。
 
