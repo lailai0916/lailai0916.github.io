@@ -1,7 +1,7 @@
 .container {
   --sidebar-width: 320px;
   --main-max-width: 820px;
-  --gap: 2rem;
+  --gap: 1rem;
   --padding: 2rem;
 
   width: 100%;
