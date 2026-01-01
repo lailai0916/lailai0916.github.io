@@ -87,7 +87,7 @@ GitHub 个人主页仓库教程。
 2. 通过参数和标记实现深浅模式切换。
 
 - 参数 `&theme=light` 和 `&theme=dark` 可以指定图标的深浅模式。
-- 标记 `#gh-light-mode-only` 和 `#gh-dark-mode-only` 可以指定某个元素仅在 GitHub 的 Light 或 Dark 模式下显示。
+- 标记 `#gh-light-mode-only` 和 `#gh-dark-mode-only` 可以指定某个元素仅在 GitHub 的 **Light mode**（浅色模式）或 **Dark mode**（深色模式）模式下显示。
 
 ```markdown
 ![](https://skillicons.dev/icons?i=java,kotlin,nodejs,figma&theme=light#gh-light-mode-only)![](https://skillicons.dev/icons?i=java,kotlin,nodejs,figma&theme=dark#gh-dark-mode-only)
@@ -155,7 +155,7 @@ GitHub 个人主页仓库教程。
 
 1. 创建一个具有 `read:user` 和 `repo` 权限的 **Personal access tokens**（个人访问令牌）。
 
-- 在 GitHub 首页右上方点击头像，并点击 **Settings**。
+- 在 GitHub 首页右上方点击头像，并点击 **Settings**（设置）。
 - 依次点击 **Developer settings** $\to$ **Personal access tokens** $\to$ **Tokens (classic)** $\to$ **Generate new token** $\to$ **Generate new token (classic)**。
 
 <ImageWindow url="https://github.com/settings/tokens">
@@ -198,7 +198,7 @@ GitHub 个人主页仓库教程。
 
 4. 将访问令牌添加到 Secrets（密钥）。
 
-- 在仓库上方点击 **Settings**。
+- 在仓库上方点击 **Settings**（设置）。
 - 依次点击 **Secrets and variables** $\to$ **Actions** $\to$ **New repository secret**。
 
 <ImageWindow url="https://github.com/lailai0916/github-stats/settings/secrets/actions">
