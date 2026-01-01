@@ -544,7 +544,6 @@ const sidebars: SidebarsConfig = {
   ],
   sidebar3: [
     'project/index',
-    'project/lailai0916',
     {
       type: 'category',
       label: "lailai's Home",
@@ -558,6 +557,7 @@ const sidebars: SidebarsConfig = {
         'project/lailai0916.github.io/tailwind',
       ],
     },
+    'project/lailai0916',
     'project/code-comparator',
     'project/hangzhou-highschool-map',
     {
