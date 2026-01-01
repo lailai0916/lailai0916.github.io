@@ -13,17 +13,17 @@ export default function Solution({ pid, aid }: { pid: string; aid: string }) {
 
   return (
     <>
-      <Link to={`https://www.luogu.com.cn/problem/${pid}`}>
+      <Link href={`https://www.luogu.com.cn/problem/${pid}`}>
         <img
           src={`https://img.shields.io/badge/Luogu-${pidEscaped}-${color}?style=for-the-badge&logo=luogu`}
         />
       </Link>{' '}
-      <Link to={`https://www.luogu.com.cn/article/${aid}`}>
+      <Link href={`https://www.luogu.com.cn/article/${aid}`}>
         <img
           src={`https://img.shields.io/badge/Luogu-Solution-${color}?style=for-the-badge&logo=luogu`}
         />
       </Link>{' '}
-      <Link to={`https://lailai.one/blog/solution/${pid}`}>
+      <Link href={`https://lailai.one/blog/solution/${pid}`}>
         <img
           src={`https://img.shields.io/badge/Blog-Solution-${color}?style=for-the-badge&logo=markdown`}
         />
