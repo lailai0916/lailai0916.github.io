@@ -350,10 +350,6 @@
   scrollbar-width: none;
 }
 
-.tocList::-webkit-scrollbar {
-  display: none;
-}
-
 .tocItem {
   margin-bottom: 0.5rem;
 }
