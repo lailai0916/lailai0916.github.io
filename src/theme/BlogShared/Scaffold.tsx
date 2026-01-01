@@ -54,7 +54,7 @@ function TocCard({ toc }: { toc: readonly TOCItem[] }) {
           {toc.map((item) => (
             <li key={item.id} className={styles.tocItem}>
               <Link
-                href={`#${item.id}`}
+                to={`#${item.id}`}
                 className={styles.tocLink}
                 style={{ paddingLeft: `${item.level - 2}rem` }}
                 dangerouslySetInnerHTML={{ __html: item.value }}
