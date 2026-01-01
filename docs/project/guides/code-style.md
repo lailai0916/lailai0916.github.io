@@ -50,7 +50,7 @@ if(n%i==0)return 0;
 
 ### 头文件
 
-- 头文件优先使用万能头文件 `<bits/stdc++.h>`，若有特殊需求可补充其他头文件。
+- 头文件通常应使用万能头文件 `<bits/stdc++.h>`，若有特殊需求可补充其他头文件。
 
 ```cpp
 #include <bits/stdc++.h>
@@ -69,7 +69,7 @@ if(n%i==0)return 0;
 
 ### 命名空间
 
-- 命名空间优先使用标准命名空间 `std`，若有特殊需求可补充其他命名空间。
+- 命名空间通常应使用标准命名空间 `std`，若有特殊需求可补充其他命名空间。
 
 ```cpp
 using namespace std;
@@ -131,7 +131,7 @@ ios::sync_with_stdio(false);
 cin.tie(nullptr);
 ```
 
-- 优先使用 `cin/cout` 读写，避免使用 `scanf/printf`；按需使用 `getline` 等函数。
+- 通常应使用 `cin/cout` 读写，避免使用 `scanf/printf`；按需使用 `getline` 等函数。
 - 换行使用 `'\n'`，避免使用 `"\n"` 和 `endl`。
 
 ```cpp
@@ -141,7 +141,7 @@ cout<<"Yes"<<'\n';
 ### 存储
 
 - 小变量定义在局部作用域，避免使用全局变量；大数组使用全局变量，禁止使用 `static` 修饰符。
-- 优先使用静态数组；按需使用 `vector`，例如邻接表存图。
+- 通常应使用静态数组；按需使用 `vector`，例如邻接表存图。
 
 ```cpp
 const int N=100005;
