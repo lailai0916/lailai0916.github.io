@@ -152,7 +152,7 @@ function Paginator({ meta }: { meta: BlogPaginatedMetadata }) {
   items.push({ label: '←', to: meta.previousPage });
   items.push({ label: `${pages[0]}`, to: firstBase });
   for (let i = 1; i < pages.length; i += 1) {
-    if (pages[i] - pages[i - 1] > 1) items.push({ label: '…' });
+    if (pages[i] - pages[i - 1] > 1) items.push({ label: '...' });
     items.push({ label: `${pages[i]}`, to: `${pageBase}/${pages[i]}` });
   }
   items.push({ label: '→', to: meta.nextPage });
