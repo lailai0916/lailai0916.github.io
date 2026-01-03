@@ -755,7 +755,7 @@ export const RESOURCE_LIST: ResourceCategoryItem[] = [
       {
         title: 'WPlace',
         href: 'https://wplace.live',
-        description: '一个巨大的实时像素画布',
+        description: '巨大的实时像素画布',
       },
       {
         title: 'sandspiel',
@@ -781,6 +781,11 @@ export const RESOURCE_LIST: ResourceCategoryItem[] = [
         title: 'LINKR',
         href: 'https://www.playlinkr.net',
         description: '每日连线游戏挑战',
+      },
+      {
+        title: 'diep.io',
+        description: '坦克射击游戏',
+        href: 'https://diep.io',
       },
     ],
   },
