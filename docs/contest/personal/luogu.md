@@ -11,6 +11,7 @@
 - [洛谷主题库题目规范 | 洛谷帮助中心](https://help.luogu.com.cn/rules/academic/problem-standard)
 - [洛谷主题库题解规范 | 洛谷帮助中心](https://help.luogu.com.cn/rules/academic/solution-standard)
 - [如何用 Markdown 和 LaTeX 写一篇排版整齐的题解？ | 洛谷帮助中心](https://help.luogu.com.cn/rules/academic/guide/solution)
+- [洛谷词典 - 洛谷专栏](https://www.luogu.com.cn/article/jj9chw4i)
 
 ## 题解
 

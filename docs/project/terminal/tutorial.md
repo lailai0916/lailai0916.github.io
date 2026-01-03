@@ -2,7 +2,7 @@
 
 ## 参考资料
 
-- [【全网唯一 纯C++动画游戏编程指南】完结！编你自己的游戏！ - 洛谷专栏](https://www.luogu.com/article/y8ii19eq)
+- [【全网唯一 纯C++动画游戏编程指南】完结！编你自己的游戏！ - 洛谷专栏](https://www.luogu.com.cn/article/y8ii19eq)
 - [游戏小技巧\_L('ω')┘脏脏包└('ω')｣的博客-CSDN博客](https://blog.csdn.net/weixin_57427186/category_12107615.html)
 
 ## 说明
