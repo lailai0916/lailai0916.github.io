@@ -399,18 +399,6 @@ graph TD;
 
 :::
 
-### 形容词
-
-详见 [形容词](grammar/parts-of-speech/adjectives)。
-
-修饰名词或代词。
-
-:::example
-
-- There is a **big** house.
-
-:::
-
 ### 数词
 
 详见 [数词](grammar/parts-of-speech/numerals)。
@@ -420,6 +408,18 @@ graph TD;
 :::example
 
 - I have **two** books.
+
+:::
+
+### 形容词
+
+详见 [形容词](grammar/parts-of-speech/adjectives)。
+
+修饰名词或代词。
+
+:::example
+
+- There is a **big** house.
 
 :::
 
