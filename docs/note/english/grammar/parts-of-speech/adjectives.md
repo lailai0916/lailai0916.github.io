@@ -5,6 +5,22 @@
 ### 构成规则
 
 1. 单音节词及部分双音节词：在词尾加 -er（比较级）或 -est（最高级）。
+2. 部分双音节词及多音节词：在词前加 more（比较级）或 most（最高级）。
+3. 特殊拼写规则（为保持发音或拼写规律）。
+   1. 以 e 结尾：去除重复的 e。
+   2. 以「辅音+y」结尾：将 y 改为 i。
+   3. 重读闭音节单词（以“单元音+单辅音”结尾）：双写末尾辅音。
+4. 不规则变化。
+
+:::tip
+
+双音节形容词和副词的比较级和最高级：
+
+- 一般以 -le, -ow, -er 或 -y 结尾的双音节词发音轻且结构简单，通常用 -er / -est。
+- 而结构复杂的双音节词，通常用 more / most。
+- 有些双音节词的两种形式都可以接受（例如 polite $\to$ politer / more polite $\to$ politest / most polite，但 more polite 更常用）。
+
+:::
 
 :::example
 
@@ -14,8 +30,6 @@
 
 :::
 
-2. 部分双音节词及多音节词：在词前加 more（比较级）或 most（最高级）。
-
 :::example
 
 - modern $\to$ more modern $\to$ most modern
@@ -24,30 +38,28 @@
 
 :::
 
-3. 特殊拼写规则（为保持发音或拼写规律）。
-   1. 以 e 结尾：去除重复的 e。
+:::example
 
-   :::example
-   - nice $\to$ nicer $\to$ nicest
-   - large $\to$ larger $\to$ largest
-   - late $\to$ later $\to$ latest
+- nice $\to$ nicer $\to$ nicest
+- large $\to$ larger $\to$ largest
+- late $\to$ later $\to$ latest
 
-   ::: 2. 以“辅音+y”结尾：将 y 改为 i。
+:::
 
-   :::example
-   - happy $\to$ happier $\to$ happiest
-   - easy $\to$ easier $\to$ easiest
-   - busy $\to$ busier $\to$ busiest
+:::example
 
-   ::: 3. 重读闭音节单词（以“单元音+单辅音”结尾）：双写末尾辅音。
+- happy $\to$ happier $\to$ happiest
+- easy $\to$ easier $\to$ easiest
+- busy $\to$ busier $\to$ busiest
 
-   :::example
-   - big $\to$ bigger $\to$ biggest
-   - fat $\to$ fatter $\to$ fattest
+:::
 
-   :::
+:::example
 
-4. 不规则变化。
+- big $\to$ bigger $\to$ biggest
+- fat $\to$ fatter $\to$ fattest
+
+:::
 
 :::example
 
@@ -56,15 +68,5 @@
 - many / much $\to$ more $\to$ most
 - little $\to$ less $\to$ least
 - far $\to$ farther $\to$ farthest（距离远）/ far $\to$ further $\to$ furthest（程度深）
-
-:::
-
-:::tip
-
-双音节形容词和副词的比较级和最高级：
-
-- 一般以 -le, -ow, -er 或 -y 结尾的双音节词发音轻且结构简单，通常用 -er / -est。
-- 而结构复杂的双音节词，通常用 more / most。
-- 有些双音节词的两种形式都可以接受（例如 polite $\to$ politer / more polite $\to$ politest / most polite，但 more polite 更常用）。
 
 :::
