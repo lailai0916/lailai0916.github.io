@@ -12,7 +12,21 @@
 
 #### 构成规则
 
-1. 通常情况：在词尾加 -s。
+1. 一般情况：加 -s。
+2. 特殊规则。
+   1. 以 -s, -x, -sh, -ch 结尾：加 -es。
+   2. 以「辅音+y」结尾：将 y 改为 i，再加 -es。
+   3. 以 f 或 fe 结尾：将 f 改为 v，再加 -es。
+   4. 以 o 结尾：加 -s 或 -es。
+3. 不规则变化。
+
+:::tip
+
+以 o 结尾的名词的复数形式：
+
+英语本身的普通名词（前为辅音字母），通常加 -es；外来词、缩写、科技词或音节轻的词，通常加 -s。
+
+:::
 
 :::example
 
@@ -21,41 +35,40 @@
 
 :::
 
-2. 特殊拼写规则。
-   1. 以 s, x, sh, ch 结尾：加 -es。
+:::example
 
-   :::example
-   - box $\to$ boxes
-   - wish $\to$ wishes
-   - bus $\to$ buses
-   - watch $\to$ watches
+- box $\to$ boxes
+- wish $\to$ wishes
+- bus $\to$ buses
+- watch $\to$ watches
 
-   ::: 2. 以“辅音+y”结尾：将 y 改为 i，再加 -es。
+:::
 
-   :::example
-   - city $\to$ cities
-   - century $\to$ centuries
-   - baby $\to$ babies
-   - country $\to$ countries
+:::example
 
-   ::: 3. 以 f 或 fe 结尾：将 f 改为 v，再加 -es。
+- city $\to$ cities
+- century $\to$ centuries
+- baby $\to$ babies
+- country $\to$ countries
 
-   :::example
-   - knife $\to$ knives
-   - wife $\to$ wives
-   - leaf $\to$ leaves
+:::
 
-   ::: 4. 以 o 结尾：加 -s 或 -es。
+:::example
 
-   :::example
-   - tomato $\to$ tomatoes
-   - potato $\to$ potatoes
-   - hero $\to$ heroes
-   - mango $\to$ mangoes
+- knife $\to$ knives
+- wife $\to$ wives
+- leaf $\to$ leaves
 
-   :::
+:::
 
-3. 不规则变化。
+:::example
+
+- tomato $\to$ tomatoes
+- potato $\to$ potatoes
+- hero $\to$ heroes
+- mango $\to$ mangoes
+
+:::
 
 :::example
 
@@ -63,15 +76,6 @@
 - foot $\to$ feet
 - mouse $\to$ mice
 - child $\to$ children
-
-:::
-
-:::tip
-
-以 o 结尾的名词的复数形式：
-
-- 英语本身的普通名词（前为辅音字母），通常加 -es。
-- 外来词、缩写、科技词或音节轻的词，通常加 -s。
 
 :::
 
