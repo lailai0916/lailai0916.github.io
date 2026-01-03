@@ -7,6 +7,7 @@
 - [Apple Human Interface Guidelines](https://developer.apple.com/design/human-interface-guidelines/)
 - [Apple Design Resources](https://developer.apple.com/design/resources/)
 - [Google Material Design 3](https://m3.material.io)
+- [WCAG 2 Overview | Web Accessibility Initiative (WAI) | W3C](https://www.w3.org/WAI/standards-guidelines/wcag/)
 
 ## 理念
 
