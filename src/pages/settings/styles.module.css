@@ -20,13 +20,15 @@
 
 .container {
   display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-areas: 'a1 a2 a2' 'a3 a4 a5';
+  gap: 1rem;
+
   width: 100%;
   max-width: 1200px;
   margin: auto;
   padding: 2rem;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-areas: 'a1 a2 a2' 'a3 a4 a5';
-  gap: 1rem;
+
   animation: fadeIn 0.3s ease-out;
 }
 
