@@ -19,14 +19,15 @@
 }
 
 .container {
+  display: grid;
+  width: 100%;
   max-width: 1200px;
   margin: auto;
   padding: 2rem;
-  display: grid;
-  gap: 1rem;
-  animation: fadeIn 0.3s ease-out;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-areas: 'a1 a2 a2' 'a3 a4 a5';
+  gap: 1rem;
+  animation: fadeIn 0.3s ease-out;
 }
 
 @media (max-width: 1199px) {
