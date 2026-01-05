@@ -101,7 +101,7 @@ const BlogCardList = React.memo<{ posts: ProcessedBlogPost[]; locale: string }>(
         <div className="--tw-w-full --tw-text-center --tw-py-12">
           <p className={`${TEXT_COLORS.MUTED} --tw-text-lg`}>
             <Translate id="home.blog.noPosts">
-              No articles yet, stay tuned for more exciting content...
+              No articles yet, please look forward to more content...
             </Translate>
           </p>
         </div>
