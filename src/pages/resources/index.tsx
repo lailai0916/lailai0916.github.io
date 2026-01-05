@@ -219,10 +219,6 @@ function CategorySection({ category }: { category: ResourceCategoryItem }) {
 }
 
 function ResourcesHeader() {
-  const totalResources = RESOURCE_LIST.reduce(
-    (sum, cat) => sum + cat.resources.length,
-    0
-  );
   return (
     <PageHeader>
       <PageTitle title={MODIFICATION} description={DESCRIPTION} />
@@ -237,7 +233,7 @@ function ResourcesHeader() {
             icon: 'lucide:folder',
           },
           {
-            value: totalResources,
+            value: RESOURCE_LIST.flatMap((cat) => cat.resources).length,
             label: translate({
               id: 'pages.resources.datacard.label2',
               message: 'Resources',
