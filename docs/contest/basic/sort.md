@@ -169,7 +169,7 @@ void msort(int l,int r)
 	for(int i=l;i<=r;i++)
 	{
 		bool t=p1<=mid&&(p2>r||a[p1]<=a[p2]);
-		b[i]=t?a[p1++]:a[p2++];
+		b[i]=a[t?p1++:p2++];
 	}
 	for(int i=l;i<=r;i++)a[i]=b[i];
 }
