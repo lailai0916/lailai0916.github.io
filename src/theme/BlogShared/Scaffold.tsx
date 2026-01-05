@@ -24,18 +24,20 @@ function AuthorCard() {
     .flatMap((m) => m.authors)
     .find((a) => a.key === authorId);
 
+  if (!author) return null;
+
   return (
     <Card>
       <div className={styles.authorCard}>
         <img
-          src={useBaseUrl(author?.imageURL)}
-          alt={author?.name}
+          src={useBaseUrl(author.imageURL)}
+          alt={author.name}
           width={96}
           height={96}
           className={styles.authorAvatar}
         />
-        <div className={styles.authorName}>{author?.name}</div>
-        <div className={styles.authorDesc}>{author?.title}</div>
+        <div className={styles.authorName}>{author.name}</div>
+        <div className={styles.authorDesc}>{author.title}</div>
       </div>
     </Card>
   );
