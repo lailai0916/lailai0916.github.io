@@ -5,7 +5,7 @@ import {
   Geographies,
   Geography,
   ZoomableGroup,
-} from '@vnedyalk0v/react19-simple-maps';
+} from 'react-simple-maps';
 import SectionHeader from '@site/src/components/laikit/section/SectionHeader';
 import SectionContainer from '@site/src/components/laikit/section/SectionContainer1';
 import { translate } from '@docusaurus/Translate';
