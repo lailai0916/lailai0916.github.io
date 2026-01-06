@@ -44,7 +44,7 @@ ll Gcd(ll a,ll b)
 
 ## 扩展欧几里得算法
 
-扩展欧几里得算法（Extended Euclidean algorithm，EXGCD）可以求 $ax+by=\gcd(a,b)$ 的一组整数解。
+扩展欧几里得算法（Extended Euclidean Algorithm，EXGCD）可以求 $ax+by=\gcd(a,b)$ 的一组整数解。
 
 $$
 ax+by=\gcd(a,b)
