@@ -261,34 +261,32 @@ function ResourcesMain() {
         activeCategory={activeCategory}
         onCategoryChange={setActiveCategory}
       />
-      <div className={styles.content}>
-        {filteredCategories.length > 0 ? (
-          filteredCategories.map((category) => (
-            <CategorySection key={category.title} category={category} />
-          ))
-        ) : (
-          <div className={styles.noResults}>
-            <p>
-              {translate(
-                {
-                  id: 'pages.resources.noresults.description',
-                  message: 'No resources found matching "{query}".',
-                },
-                { query: searchQuery }
-              )}
-            </p>
-            <button
-              className={styles.clearSearchButton}
-              onClick={() => setSearchQuery('')}
-            >
-              {translate({
-                id: 'pages.resources.noresults.clear',
-                message: 'Clear Search',
-              })}
-            </button>
-          </div>
-        )}
-      </div>
+      {filteredCategories.length > 0 ? (
+        filteredCategories.map((category) => (
+          <CategorySection key={category.title} category={category} />
+        ))
+      ) : (
+        <div className={styles.noResults}>
+          <p>
+            {translate(
+              {
+                id: 'pages.resources.noresults.description',
+                message: 'No resources found matching "{query}".',
+              },
+              { query: searchQuery }
+            )}
+          </p>
+          <button
+            className={styles.clearSearchButton}
+            onClick={() => setSearchQuery('')}
+          >
+            {translate({
+              id: 'pages.resources.noresults.clear',
+              message: 'Clear Search',
+            })}
+          </button>
+        </div>
+      )}
     </div>
   );
 }
