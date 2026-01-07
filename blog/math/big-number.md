@@ -5,7 +5,7 @@ authors: lailai
 tags: [math]
 ---
 
-很大很大的数……
+一些很大很大的数……
 
 <!-- truncate -->
 

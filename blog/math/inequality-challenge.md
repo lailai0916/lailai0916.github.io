@@ -5,7 +5,7 @@ authors: lailai
 tags: [math]
 ---
 
-网络上一个不等式闯关挑战。
+网上一个不等式挑战闯关。
 
 <!-- truncate -->
 

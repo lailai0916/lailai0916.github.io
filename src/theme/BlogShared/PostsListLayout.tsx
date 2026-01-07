@@ -69,7 +69,7 @@ function PostCard({ item }) {
         <IconText icon="lucide:calendar" colorMode="monochrome">
           <time dateTime={metadata.date}>{metadata.date.slice(0, 10)}</time>
         </IconText>
-        {metadata.readingTime && (
+        {!!metadata.readingTime && (
           <>
             <IconData icon="lucide:file-text">
               {translate(

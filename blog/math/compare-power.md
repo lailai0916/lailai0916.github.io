@@ -1,11 +1,11 @@
 ---
-title: '比较 x^y 与 y^x'
+title: '比较 x^y & y^x'
 date: 2025-08-23T15:17
 authors: lailai
 tags: [math]
 ---
 
-对于两个正实数 $x$ 和 $y$，如何比较 $x^y$ 和 $y^x$ 的大小？
+如何比较两个正实数 $x$ 和 $y$ 的 $x^y$ 和 $y^x$ 的大小？
 
 <!-- truncate -->
 
@@ -18,7 +18,7 @@ $$
 两边同时取自然对数：
 
 $$
-\ln{x^y}\gtreqless \ln{y^x}\iff y\ln{x}\gtreqless x\ln{y}\iff \frac{\ln{x}}{x}\gtreqless \frac{\ln{y}}{y}
+\ln x^y\gtreqless\ln y^x\iff y\ln x\gtreqless x\ln y\iff \frac{\ln x}{x}\gtreqless\frac{\ln y}{y}
 $$
 
 由此构造函数：
