@@ -12,6 +12,18 @@
   gap: 2rem;
 }
 
+@media (max-width: 1199px) {
+  .container {
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 1rem;
+  }
+}
+
 .content {
   display: flex;
   flex-direction: column;
@@ -266,10 +278,6 @@
 
   .resourceGrid {
     grid-template-columns: 1fr;
-  }
-
-  .container {
-    padding: 0 1rem 4rem 1rem;
   }
 }
 
