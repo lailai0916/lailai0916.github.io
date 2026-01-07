@@ -255,14 +255,12 @@ function ResourcesMain() {
   }, [activeCategory, searchQuery]);
   return (
     <div className={styles.container}>
-      <div className={styles.stickyControls}>
-        <CategoryNav
-          categories={RESOURCE_LIST}
-          activeCategory={activeCategory}
-          onCategoryChange={setActiveCategory}
-        />
-        <SearchBar value={searchQuery} onChange={setSearchQuery} />
-      </div>
+      <SearchBar value={searchQuery} onChange={setSearchQuery} />
+      <CategoryNav
+        categories={RESOURCE_LIST}
+        activeCategory={activeCategory}
+        onCategoryChange={setActiveCategory}
+      />
       <div className={styles.content}>
         {filteredCategories.length > 0 ? (
           filteredCategories.map((category) => (

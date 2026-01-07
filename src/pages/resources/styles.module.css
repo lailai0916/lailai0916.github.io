@@ -3,9 +3,13 @@
    ========================================================================== */
 
 .container {
+  width: 100%;
   max-width: 1200px;
-  margin: 0 auto;
+  margin: auto;
   padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
 }
 
 .content {
@@ -17,13 +21,6 @@
 /* ==========================================================================
    2. Sticky Controls (Navigation & Search)
    ========================================================================== */
-
-.stickyControls {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-  margin-bottom: 3rem;
-}
 
 .searchBarContainer {
   position: relative;
