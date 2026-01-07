@@ -11,10 +11,22 @@ tags: [misc]
 
 ## 参考资料
 
+- [同化 - 维基百科](https://zh.wikipedia.org/zh-cn/同化_(消歧義))
+- [异化 - 维基百科](https://zh.wikipedia.org/zh-cn/異化)
 - [[英语语音技巧] 连读: 同化 & 异化(Assimilation & Dissimilation)(语音地道的人都懂!) - bilibili](https://www.bilibili.com/video/BV1PQ4y1P7g4)
 
 ## 语言学
 
+语音同化
+
 ## 生命科学
 
+同化作用
+
+## 社会学
+
+文化同化
+
 ## 心理学
+
+## 哲学
