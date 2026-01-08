@@ -65,6 +65,4 @@ export default function BlogTagsPostsPage(props: Props): React.ReactElement {
       topSlot={<TagSelector activePermalink={tag.permalink} />}
     />
   );
-
-  return;
 }
