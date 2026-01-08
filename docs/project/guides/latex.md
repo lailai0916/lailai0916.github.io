@@ -280,13 +280,13 @@ $$
 ### 边框
 
 ```latex
-\boxed{a^2+b^2=c^2}
+\boxed{x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}}
 ```
 
 <BrowserWindow>
 
 $$
-\boxed{a^2+b^2=c^2}
+\boxed{x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}}
 $$
 
 </BrowserWindow>
@@ -294,13 +294,13 @@ $$
 ### 颜色
 
 ```latex
-{\color{White}\colorbox{Red}{FBI WARNING}}
+{\color{white}\colorbox{red}{FBI WARNING}}
 ```
 
 <BrowserWindow>
 
 $$
-{\color{White}\colorbox{Red}{FBI WARNING}}
+{\color{white}\colorbox{red}{FBI WARNING}}
 $$
 
 </BrowserWindow>
