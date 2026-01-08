@@ -226,8 +226,8 @@ $$
 ```latex
 \begin{array}{l}
   \cos\pi=1 \\
-  \sin^2a+\cos^2a=1 \\
-  \sin2a=2\sin a\cos a
+  \sin^2\alpha+\cos^2\alpha=1 \\
+  \sin 2\alpha=2\sin\alpha\cos\alpha
 \end{array}
 ```
 
@@ -236,8 +236,8 @@ $$
 $$
 \begin{array}{l}
   \cos\pi=1 \\
-  \sin^2a+\cos^2a=1 \\
-  \sin2a=2\sin a\cos a
+  \sin^2\alpha+\cos^2\alpha=1 \\
+  \sin 2\alpha=2\sin\alpha\cos\alpha
 \end{array}
 $$
 
