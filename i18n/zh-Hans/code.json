@@ -956,7 +956,7 @@
     "message": "重置设置"
   },
   "blog.postcard.wordCount": {
-    "message": "{word} 字"
+    "message": "{word} 词数"
   },
   "blog.postcard.readingTime": {
     "message": "{readingTime} 分钟"
@@ -986,7 +986,7 @@
     "message": "标签"
   },
   "blog.sidebar.stats.words": {
-    "message": "字数"
+    "message": "词数"
   },
   "blog.sidebar.stats.minutes": {
     "message": "分钟"
