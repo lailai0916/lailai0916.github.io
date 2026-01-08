@@ -22,9 +22,8 @@ interface TagSelectorProps {
 }
 
 function TagSelector({ activePermalink, limit = 30 }: TagSelectorProps) {
-  const {
-    i18n: { currentLocale, defaultLocale },
-  } = useDocusaurusContext();
+  const { i18n } = useDocusaurusContext();
+  const { currentLocale, defaultLocale } = i18n;
   const localeKey = currentLocale === defaultLocale ? undefined : currentLocale;
 
   const tags = React.useMemo(
@@ -32,9 +31,7 @@ function TagSelector({ activePermalink, limit = 30 }: TagSelectorProps) {
     [limit, localeKey]
   );
 
-  if (!tags.length) {
-    return null;
-  }
+  if (!tags.length) return null;
 
   return (
     <Card title={TITLE}>
