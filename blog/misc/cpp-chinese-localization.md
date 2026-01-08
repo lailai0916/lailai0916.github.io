@@ -9,7 +9,41 @@ tags: [misc]
 
 <!-- truncate -->
 
-## 变量类型
+## 通用
+
+### 基础
+
+```cpp
+#define 主函数 main
+#define 使用 using
+#define 命名空间 namespace
+#define 标准 std
+```
+
+### 数字
+
+```cpp
+#define 零 +0
+#define 一 +1
+#define 二 +2
+#define 两 +2
+#define 三 +3
+#define 四 +4
+#define 五 +5
+#define 六 +6
+#define 七 +7
+#define 八 +8
+#define 九 +9
+#define 十 *10
+#define 百 *100
+#define 千 *1000
+#define 万 *10000
+#define 亿 *100000000
+```
+
+## 关键词
+
+### 类型
 
 ```cpp
 #define 无类型 void
@@ -25,7 +59,7 @@ tags: [misc]
 #define 类 class
 ```
 
-## 修饰符
+### 修饰符
 
 ```cpp
 #define 有符号 signed
@@ -35,7 +69,7 @@ tags: [misc]
 #define 寄存器 register
 ```
 
-## 关键词
+### 控制
 
 ```cpp
 #define 真 true
@@ -54,7 +88,71 @@ tags: [misc]
 #define 操作符 operator
 ```
 
-## 标准库容器
+## 运算符号
+
+### 算术运算符
+
+```cpp
+#define 正 +
+#define 负 -
+#define 加 +
+#define 减 -
+#define 乘 *
+#define 除 /
+#define 模 %
+#define 自增 ++
+#define 自减 --
+```
+
+### 位运算符
+
+```cpp
+#define 取反 ~
+#define 按位与 &
+#define 按位或 |
+#define 按位异或 ^
+#define 左移 <<
+#define 右移 >>
+```
+
+### 逻辑运算符
+
+```cpp
+#define 非 !
+#define 并且 &&
+#define 或者 ||
+```
+
+### 赋值运算符
+
+```cpp
+#define 赋值 =
+#define 加赋值 +=
+#define 减赋值 -=
+#define 乘赋值 *=
+#define 除赋值 /=
+#define 模赋值 %=
+#define 左移赋值 <<=
+#define 右移赋值 >>=
+#define 与赋值 &=
+#define 或赋值 |=
+#define 异或赋值 ^=
+```
+
+### 比较运算符
+
+```cpp
+#define 小于 <
+#define 小于等于 <=
+#define 大于 >
+#define 大于等于 >=
+#define 等于 ==
+#define 不等于 !=
+```
+
+## 标准库
+
+### 标准库容器
 
 ```cpp
 #define 数组 array
@@ -79,7 +177,7 @@ tags: [misc]
 #define 元组 tuple
 ```
 
-## 容器函数
+### 容器函数
 
 ```cpp
 #define 迭代器 iterator
@@ -93,7 +191,7 @@ tags: [misc]
 #define 擦出 erase
 ```
 
-## 标准库函数
+### 标准库函数
 
 ```cpp
 #define 输入 cin
@@ -106,94 +204,4 @@ tags: [misc]
 #define 最大值 max
 #define 绝对值 abs
 #define 平方根 sqrt
-```
-
-## 算术运算符
-
-```cpp
-#define 正 +
-#define 负 -
-#define 加 +
-#define 减 -
-#define 乘 *
-#define 除 /
-#define 模 %
-#define 自增 ++
-#define 自减 --
-```
-
-## 逻辑运算符
-
-```cpp
-#define 非 !
-#define 并且 &&
-#define 或者 ||
-```
-
-## 位运算符
-
-```cpp
-#define 取反 ~
-#define 按位与 &
-#define 按位或 |
-#define 按位异或 ^
-#define 左移 <<
-#define 右移 >>
-```
-
-## 赋值运算符
-
-```cpp
-#define 赋值 =
-#define 加赋值 +=
-#define 减赋值 -=
-#define 乘赋值 *=
-#define 除赋值 /=
-#define 模赋值 %=
-#define 左移赋值 <<=
-#define 右移赋值 >>=
-#define 与赋值 &=
-#define 或赋值 |=
-#define 异或赋值 ^=
-```
-
-## 比较运算符
-
-```cpp
-#define 小于 <
-#define 小于等于 <=
-#define 大于 >
-#define 大于等于 >=
-#define 等于 ==
-#define 不等于 !=
-```
-
-## 数字
-
-```cpp
-#define 零 +0
-#define 一 +1
-#define 二 +2
-#define 两 +2
-#define 三 +3
-#define 四 +4
-#define 五 +5
-#define 六 +6
-#define 七 +7
-#define 八 +8
-#define 九 +9
-#define 十 *10
-#define 百 *100
-#define 千 *1000
-#define 万 *10000
-#define 亿 *100000000
-```
-
-## 杂项
-
-```cpp
-#define 主函数 main
-#define 使用 using
-#define 命名空间 namespace
-#define 标准 std
 ```
