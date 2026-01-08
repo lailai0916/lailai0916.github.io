@@ -6,7 +6,11 @@ import { DebugLayout } from '@site/src/components/laikit/page';
 import type { TOCItem } from '@docusaurus/mdx-loader';
 
 import { translate } from '@docusaurus/Translate';
-import { getAllBlogItems, getAllPostMetadata } from '@site/src/utils/blogData';
+import {
+  getAllBlogItems,
+  getAllPostMetadata,
+  getTotalReadingTime,
+} from '@site/src/utils/blogData';
 import {
   Card,
   TagChipList,
@@ -91,6 +95,22 @@ function StatsCard() {
         message: 'Tags',
       }),
       href: '/blog/tags',
+    },
+    {
+      value: getTotalReadingTime() * 200,
+      label: translate({
+        id: 'blog.sidebar.stats.words',
+        message: 'Words',
+      }),
+      href: shareUrl,
+    },
+    {
+      value: getTotalReadingTime(),
+      label: translate({
+        id: 'blog.sidebar.stats.minutes',
+        message: 'Minutes',
+      }),
+      href: shareUrl,
     },
     {
       value: status === 'success' ? analytics.visitors : '–',

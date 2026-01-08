@@ -236,3 +236,7 @@ export function getTagsOfficialOrder({
   }
   return tags;
 }
+
+export function getTotalReadingTime(): number {
+  return getAllPostMetadata().reduce((sum, meta) => sum + meta.readingTime, 0);
+}
