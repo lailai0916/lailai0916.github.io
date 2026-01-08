@@ -67,6 +67,7 @@ $$
 | 大于等于 |          $\geq$           |          `\ge`、`\geq`           |
 | 小于等于 |          $\leq$           |          `\le`、`\leq`           |
 |  正负号  |           $\pm$           |         `\pm`、`\plusmn`         |
+|  负正号  |           $\mp$           |              `\mp`               |
 |   无穷   |         $\infty$          |             `\infty`             |
 |   根号   | $\sqrt{x}$，$\sqrt[y]{x}$ |    `\sqrt{x}`，`\sqrt[y]{x}`     |
 |   分数   |      $\tfrac{a}{b}$       |          `\frac{a}{b}`           |
