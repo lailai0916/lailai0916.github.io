@@ -264,18 +264,18 @@
    ========================================================================== */
 
 @media (max-width: 768px) {
-  .categoryHeader {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 1rem;
-  }
-
   .resourceGrid {
     grid-template-columns: 1fr;
   }
 }
 
 @media (max-width: 480px) {
+  .categoryHeader {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
   .categoryButton {
     padding: 0.5rem 1rem;
     font-size: 0.85rem;
