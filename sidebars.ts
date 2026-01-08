@@ -431,7 +431,6 @@ const sidebars: SidebarsConfig = {
         },
       ],
     },
-    'note/physics/index',
     {
       type: 'category',
       label: '英语',
