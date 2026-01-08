@@ -967,6 +967,15 @@
   "blog.sidebar.feed.title": {
     "message": "订阅"
   },
+  "blog.sidebar.feed.rss": {
+    "message": "RSS 订阅"
+  },
+  "blog.sidebar.feed.atom": {
+    "message": "Atom 订阅"
+  },
+  "blog.sidebar.feed.json": {
+    "message": "JSON 订阅"
+  },
   "blog.sidebar.stats.title": {
     "message": "统计"
   },
