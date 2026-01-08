@@ -3,13 +3,14 @@
    ========================================================================== */
 
 .container {
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 2rem 2.5rem;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
   gap: 1.5rem;
+
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+  padding: 2rem;
 }
 
 /* ==========================================================================
@@ -119,9 +120,15 @@
    6. Responsive Design
    ========================================================================== */
 
+@media (max-width: 1199px) {
+  .container {
+    padding: 1.5rem;
+  }
+}
+
 @media (max-width: 768px) {
   .container {
-    padding: 0 1.25rem 1.75rem;
+    padding: 1rem;
   }
 
   .friendCardHeader {
@@ -136,17 +143,6 @@
 
   .friendCardInfo {
     width: 100%;
-  }
-}
-
-@media (max-width: 600px) {
-  .container {
-    padding: 0 1rem 1.5rem;
-    gap: 1.25rem;
-  }
-
-  .friendCardContent {
-    padding: 1.25rem;
   }
 }
 
