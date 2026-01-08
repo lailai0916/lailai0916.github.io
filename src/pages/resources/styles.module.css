@@ -263,12 +263,6 @@
    7. Responsive Design
    ========================================================================== */
 
-@media (max-width: 768px) {
-  .resourceGrid {
-    grid-template-columns: 1fr;
-  }
-}
-
 @media (max-width: 480px) {
   .categoryHeader {
     flex-direction: column;
