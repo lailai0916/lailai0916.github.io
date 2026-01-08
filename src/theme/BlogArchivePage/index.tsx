@@ -33,7 +33,7 @@ export default function BlogArchivePage(props: Props): React.ReactElement {
   return (
     <BlogScaffold title={TITLE} description={DESCRIPTION}>
       {groups.map(([year, posts]) => (
-        <Card key={year} title={String(year)}>
+        <Card key={year} title={`${year} (${posts.length})`}>
           <ul className={styles.recentList}>
             {posts.map((p: any) => (
               <li key={p.metadata.permalink} className={styles.recentItem}>
