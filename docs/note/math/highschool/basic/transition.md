@@ -691,12 +691,12 @@ $$
 
 $$
 \begin{aligned}
-  S_{\text{Australia}} &= 7.692×10^6\mathrm{km^2} \\
+  S_{\text{Australia}} &= 7.6923×10^6\mathrm{km^2} \\
   &> 10^5\times\mathrm{t}\cdot\mathrm{ly}/\mathrm{mmHg}/\mathrm{year}/30\mathrm{s} \\
-  &= 10^5\times\frac{1000\mathrm{kg}\cdot9.4607\times 10^{15}\mathrm{m}}{133.322387415\mathrm{Pa}\cdot 31556926\mathrm{s}\cdot 30\mathrm{s}} \\
-  &= 10^5\times\frac{1000\cdot9.4607\times 10^{15}}{133.322387415\cdot 31556926\cdot 30}\times\frac{\mathrm{kg}\cdot\mathrm{m}}{\mathrm{Pa}\cdot\mathrm{s}\cdot\mathrm{s}} \\
+  &= 10^5\times\frac{1000\mathrm{kg}\cdot 9.4607\times 10^{15}\mathrm{m}}{133.322387415\mathrm{Pa}\cdot 31556926\mathrm{s}\cdot 30\mathrm{s}} \\
+  &= 10^5\times\frac{1000\times 9.4607\times 10^{15}}{133.322387415\times 31556926\times 30}\times\frac{\mathrm{kg}\cdot\mathrm{m}}{\mathrm{Pa}\cdot\mathrm{s}\cdot\mathrm{s}} \\
   &= 10^5\times\frac{9.4607\times 10^{18}}{1.2617\times 10^{11}}\times\frac{\mathrm{kg}\cdot\mathrm{m}}{\mathrm{N}\cdot\mathrm{m^{-2}}\cdot\mathrm{s}\cdot\mathrm{s}} \\
   &= 10^5\times 7.4983\times 10^7\times\frac{\mathrm{kg}\cdot\mathrm{m}}{\mathrm{kg}\cdot\mathrm{m}\cdot\mathrm{s^{-2}}\cdot\mathrm{m^{-2}}\cdot\mathrm{s}\cdot\mathrm{s}} \\
-  &= 10^{12}\times 7.4983\mathrm{m^2}=10^6\times 7.4983\mathrm{km^2}
+  &= 7.4983\times 10^{12}\mathrm{m^2}=7.4983\times 10^6\mathrm{km^2}
 \end{aligned}
 $$
