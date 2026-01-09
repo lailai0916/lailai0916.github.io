@@ -80,26 +80,14 @@
 }
 
 .authorStats {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  display: flex;
+  flex-direction: column;
   gap: 0.75rem;
   margin-top: 0.75rem;
 }
 
 .statItem {
   text-align: center;
-  border: 1px dashed var(--ifm-color-emphasis-200);
-  border-radius: 6px;
-  padding: 0.5rem 0.25rem;
-  text-decoration: none !important;
-  color: var(--ifm-font-color-base);
-  display: block;
-  cursor: pointer;
-  transition:
-    background 160ms ease,
-    transform 80ms ease,
-    border-color 160ms ease,
-    box-shadow 160ms ease;
 }
 
 .statItem:hover {
@@ -113,11 +101,6 @@
   background: var(--ifm-color-emphasis-200);
   transform: translateY(0);
   box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.12);
-}
-
-.statItem:focus-visible {
-  outline: 2px solid var(--ifm-color-primary);
-  outline-offset: 2px;
 }
 
 .statValue {
