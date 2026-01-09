@@ -78,50 +78,56 @@ function StatsCard() {
   const { analytics, status } = useAnalytics();
   const statsItems = [
     {
-      value: getAllBlogItems().length,
       label: translate({
         id: 'blog.sidebar.stats.posts',
         message: 'Posts',
       }),
+      icon: 'lucide:newspaper',
+      value: getAllBlogItems().length,
     },
     {
+      label: translate({
+        id: 'blog.sidebar.stats.tags',
+        message: 'Tags',
+      }),
+      icon: 'lucide:tag',
       value: new Set(
         getAllPostMetadata().flatMap((meta) =>
           meta.tags.map((tag) => tag.permalink)
         )
       ).size,
-      label: translate({
-        id: 'blog.sidebar.stats.tags',
-        message: 'Tags',
-      }),
     },
     {
-      value: getTotalReadingTime() * 200,
       label: translate({
         id: 'blog.sidebar.stats.words',
         message: 'Words',
       }),
+      icon: 'lucide:file-text',
+      value: getTotalReadingTime() * 200,
     },
     {
-      value: getTotalReadingTime(),
       label: translate({
         id: 'blog.sidebar.stats.minutes',
         message: 'Minutes',
       }),
+      icon: 'lucide:clock',
+      value: getTotalReadingTime(),
     },
     {
-      value: status === 'success' ? analytics.visitors : '–',
       label: translate({
         id: 'blog.sidebar.stats.visitors',
         message: 'Visitors',
       }),
+      icon: 'lucide:users',
+      value: status === 'success' ? analytics.visitors : '–',
     },
     {
-      value: status === 'success' ? analytics.pageviews : '–',
       label: translate({
         id: 'blog.sidebar.stats.views',
         message: 'Views',
       }),
+      icon: 'lucide:eye',
+      value: status === 'success' ? analytics.pageviews : '–',
     },
   ];
 
@@ -135,7 +141,7 @@ function StatsCard() {
       <div className={styles.authorStats}>
         {statsItems.map((item) => (
           <div key={item.label} className={styles.statItem}>
-            <IconText icon="lucide:clock">{item.label}</IconText>
+            <IconText icon={item.icon}>{item.label}</IconText>
             <span className={styles.statValue}>
               {formatLongNumber(item.value)}
             </span>

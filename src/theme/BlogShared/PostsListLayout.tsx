@@ -97,7 +97,7 @@ function PostCard({ item }) {
         )}
         {status === 'success' && (
           <>
-            <IconData icon="lucide:user">{analytics.visitors}</IconData>
+            <IconData icon="lucide:users">{analytics.visitors}</IconData>
             <IconData icon="lucide:eye">{analytics.pageviews}</IconData>
           </>
         )}
