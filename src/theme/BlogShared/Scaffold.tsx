@@ -19,6 +19,7 @@ import {
   type ChipItem,
 } from './Components';
 import styles from './styles.module.css';
+import IconText from '@site/src/components/laikit/widget/IconText';
 
 const authorId = 'lailai';
 const shareUrl = `https://analytics.lailai.one/share/DDd09iBEYOQw2k9L`;
@@ -82,7 +83,6 @@ function StatsCard() {
         id: 'blog.sidebar.stats.posts',
         message: 'Posts',
       }),
-      href: '/blog/archive',
     },
     {
       value: new Set(
@@ -94,7 +94,6 @@ function StatsCard() {
         id: 'blog.sidebar.stats.tags',
         message: 'Tags',
       }),
-      href: '/blog/tags',
     },
     {
       value: getTotalReadingTime() * 200,
@@ -102,7 +101,6 @@ function StatsCard() {
         id: 'blog.sidebar.stats.words',
         message: 'Words',
       }),
-      href: shareUrl,
     },
     {
       value: getTotalReadingTime(),
@@ -110,7 +108,6 @@ function StatsCard() {
         id: 'blog.sidebar.stats.minutes',
         message: 'Minutes',
       }),
-      href: shareUrl,
     },
     {
       value: status === 'success' ? analytics.visitors : '–',
@@ -118,7 +115,6 @@ function StatsCard() {
         id: 'blog.sidebar.stats.visitors',
         message: 'Visitors',
       }),
-      href: shareUrl,
     },
     {
       value: status === 'success' ? analytics.pageviews : '–',
@@ -126,7 +122,6 @@ function StatsCard() {
         id: 'blog.sidebar.stats.views',
         message: 'Views',
       }),
-      href: shareUrl,
     },
   ];
 
@@ -139,12 +134,12 @@ function StatsCard() {
     >
       <div className={styles.authorStats}>
         {statsItems.map((item) => (
-          <Link key={item.label} href={item.href} className={styles.statItem}>
-            <div className={styles.statValue}>
+          <div key={item.label} className={styles.statItem}>
+            <IconText icon="lucide:clock">{item.label}</IconText>
+            <span className={styles.statValue}>
               {formatLongNumber(item.value)}
-            </div>
-            <div className={styles.statLabel}>{item.label}</div>
-          </Link>
+            </span>
+          </div>
         ))}
       </div>
     </Card>
