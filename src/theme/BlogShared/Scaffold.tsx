@@ -21,13 +21,10 @@ import {
 import styles from './styles.module.css';
 import IconText from '@site/src/components/laikit/widget/IconText';
 
-const authorId = 'lailai';
-const shareUrl = `https://analytics.lailai.one/share/DDd09iBEYOQw2k9L`;
-
 function AuthorCard() {
   const author = getAllPostMetadata()
     .flatMap((m) => m.authors)
-    .find((a) => a.key === authorId);
+    .find((a) => a.key === 'lailai');
 
   if (!author) return null;
 
