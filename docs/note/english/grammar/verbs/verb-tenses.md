@@ -17,19 +17,19 @@ $$
 时间有 $4$ 种：现在、过去、将来、过去将来。
 
 $$
-\text{时间}=\set{\text{现在},\text{过去},\text{将来},\text{过去将来}}
+S_\text{时间}=\set{\text{现在},\text{过去},\text{将来},\text{过去将来}}
 $$
 
 状态有 $4$ 种：一般、进行、完成、完成进行。
 
 $$
-\text{状态}=\set{\text{一般},\text{进行},\text{完成},\text{完成进行}}
+S_\text{状态}=\set{\text{一般},\text{进行},\text{完成},\text{完成进行}}
 $$
 
 根据乘法原理，英语中有 $16$ 种时态。
 
 $$
-\text{时态}=\text{时间}\times\text{状态}
+S_\text{时态}=S_\text{时间}\times S_\text{状态}
 $$
 
 ## 表格
