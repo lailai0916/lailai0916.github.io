@@ -176,11 +176,17 @@
   padding: 0.5rem 0;
 }
 
+.colorGeneratorContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1.25rem;
+}
+
 .colorInputContainer {
   display: flex;
   gap: 0.75rem;
   align-items: center;
-  margin-bottom: 1rem;
 }
 
 .textcolorInput {
@@ -189,7 +195,7 @@
   border: 2px solid var(--ifm-color-emphasis-300);
   border-radius: 8px;
   font-family: monospace;
-  font-size: 0.875rem;
+  font-size: 0.9rem;
 }
 
 .colorPickerInput {
@@ -206,8 +212,6 @@
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  margin-bottom: 1rem;
-  padding: 0 0.5rem;
 }
 
 .presetColorButton {
@@ -227,7 +231,6 @@
   display: flex;
   align-items: center;
   gap: 0.75rem;
-  margin-top: 1rem;
 }
 
 .colorPreview {

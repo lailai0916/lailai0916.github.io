@@ -131,58 +131,60 @@ function ColorGenerator() {
       })}
       icon="lucide:palette"
     >
-      {/* 颜色输入 */}
-      <div className={styles.colorInputContainer}>
-        <input
-          type="text"
-          value={inputColor}
-          onChange={(e) => updateColor(e.target.value)}
-          className={styles.textcolorInput}
-        />
-        <input
-          type="color"
-          value={colorState.baseColor}
-          onChange={(e) => updateColor(e.target.value)}
-          className={styles.colorPickerInput}
-        />
-      </div>
+      <div className={styles.colorGeneratorContainer}>
+        {/* 颜色输入 */}
+        <div className={styles.colorInputContainer}>
+          <input
+            type="text"
+            value={inputColor}
+            onChange={(e) => updateColor(e.target.value)}
+            className={styles.textcolorInput}
+          />
+          <input
+            type="color"
+            value={colorState.baseColor}
+            onChange={(e) => updateColor(e.target.value)}
+            className={styles.colorPickerInput}
+          />
+        </div>
 
-      {/* 预设颜色 */}
-      <div className={styles.presetColors}>
-        {presetColors.map((color) => (
-          <button
-            key={color}
-            className={styles.presetColorButton}
-            style={{ backgroundColor: color }}
-            onClick={() => updateColor(color)}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.borderColor = color;
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.borderColor =
-                'var(--ifm-color-emphasis-300)';
+        {/* 预设颜色 */}
+        <div className={styles.presetColors}>
+          {presetColors.map((color) => (
+            <button
+              key={color}
+              className={styles.presetColorButton}
+              style={{ backgroundColor: color }}
+              onClick={() => updateColor(color)}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.borderColor = color;
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.borderColor =
+                  'var(--ifm-color-emphasis-300)';
+              }}
+            />
+          ))}
+        </div>
+
+        {/* 色阶预览与重置按钮 */}
+        <div className={styles.colorPreviewContainer}>
+          <div
+            className={styles.colorPreview}
+            style={{
+              background: `linear-gradient(to right, ${getAdjustedColors(
+                colorState.shades,
+                colorState.baseColor
+              )
+                .sort((a, b) => a.displayOrder - b.displayOrder)
+                .map((value) => value.hex)
+                .join(', ')})`,
             }}
           />
-        ))}
-      </div>
-
-      {/* 色阶预览与重置按钮 */}
-      <div className={styles.colorPreviewContainer}>
-        <div
-          className={styles.colorPreview}
-          style={{
-            background: `linear-gradient(to right, ${getAdjustedColors(
-              colorState.shades,
-              colorState.baseColor
-            )
-              .sort((a, b) => a.displayOrder - b.displayOrder)
-              .map((value) => value.hex)
-              .join(', ')})`,
-          }}
-        />
-        <button className={styles.resetButton} onClick={resetColors}>
-          <Icon icon="lucide:refresh-ccw" />
-        </button>
+          <button className={styles.resetButton} onClick={resetColors}>
+            <Icon icon="lucide:refresh-ccw" />
+          </button>
+        </div>
       </div>
     </Card>
   );
