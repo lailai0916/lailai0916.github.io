@@ -1,11 +1,5 @@
-export interface FriendItem {
-  title: string;
-  description: string;
-  href: string;
-  avatar: string;
-}
-
 /*
+Example:
 {
   title: 'lailai',
   description: 'Student & Developer',
@@ -13,6 +7,13 @@ export interface FriendItem {
   avatar: 'https://lailai.one/img/logo.png',
 },
 */
+
+export interface FriendItem {
+  title: string;
+  description: string;
+  href: string;
+  avatar: string;
+}
 
 export const FRIEND_LIST: FriendItem[] = [
   {
