@@ -34,12 +34,12 @@ $$
 
 ## 表格
 
-| 时间 / 状态  |              一般              |                  进行                  |                 完成                  |                    完成进行                     |
-| :----------: | :----------------------------: | :------------------------------------: | :-----------------------------------: | :---------------------------------------------: |
-|   **现在**   | ★**一般现在时态**<br />do/does | ★**现在进行时态**<br />am/is/are doing | ★**现在完成时态**<br />have/has done  |    现在完成进行时态<br />have/has been doing    |
-|   **过去**   |   ★**一般过去时态**<br />did   | ★**过去进行时态**<br />was/were doing  |    ★**过去完成时态**<br />had done    |      过去完成进行时态<br />had been doing       |
-|   **将来**   | ★**一般将来时态**<br />will do |    将来进行时态<br />will be doing     |   将来完成时态<br />will have done    |   将来完成进行时态<br />will have been doing    |
-| **过去将来** | 一般过去将来时态<br />would do |  过去将来进行时态<br />would be doing  | 过去将来完成时态<br />would have done | 过去将来完成进行时态<br />would have been doing |
+| 时间 / 状态  |              一般              |                 进行                  |                 完成                  |                    完成进行                     |
+| :----------: | :----------------------------: | :-----------------------------------: | :-----------------------------------: | :---------------------------------------------: |
+|   **现在**   | **一般现在时态**<br />do/does  | **现在进行时态**<br />am/is/are doing |  **现在完成时态**<br />have/has done  |    现在完成进行时态<br />have/has been doing    |
+|   **过去**   |   **一般过去时态**<br />did    | **过去进行时态**<br />was/were doing  |    **过去完成时态**<br />had done     |      过去完成进行时态<br />had been doing       |
+|   **将来**   | **一般将来时态**<br />will do  |    将来进行时态<br />will be doing    |   将来完成时态<br />will have done    |   将来完成进行时态<br />will have been doing    |
+| **过去将来** | 一般过去将来时态<br />would do | 过去将来进行时态<br />would be doing  | 过去将来完成时态<br />would have done | 过去将来完成进行时态<br />would have been doing |
 
 ## 时间
 
