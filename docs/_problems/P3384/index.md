@@ -1,4 +1,4 @@
-:::info[[洛谷 P3384 【模板】重链剖分/树链剖分](https://www.luogu.com.cn/problem/P3384)]
+:::info[[洛谷 P3384 【模板】重链剖分 / 树链剖分](https://www.luogu.com.cn/problem/P3384)]
 
 给定一棵 $n$ 个结点的树，每个节点上包含一个数值，支持以下操作：
 
