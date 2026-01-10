@@ -552,7 +552,6 @@ const sidebars: SidebarsConfig = {
       },
       items: [
         'project/lailai0916.github.io/tutorial',
-        'project/lailai0916.github.io/plugins',
         'project/lailai0916.github.io/tailwind',
       ],
     },
