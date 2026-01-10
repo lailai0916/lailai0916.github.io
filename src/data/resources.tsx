@@ -430,7 +430,7 @@ export const RESOURCE_LIST: ResourceCategoryItem[] = [
       {
         title: 'OEIS',
         href: 'https://oeis.org',
-        description: '整数序列百科全书',
+        description: '整数序列在线百科全书',
       },
     ],
   },
