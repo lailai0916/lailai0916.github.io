@@ -12,6 +12,7 @@ tags: [math]
 ## 参考资料
 
 - [多项式 - 维基百科](https://zh.wikipedia.org/zh-cn/多項式)
+- [[证毕QED]你真的理解判别式了吗?高次方程判别式怎么来的? - bilibili](https://www.bilibili.com/video/BV19KrMB1Ec2)
 - [500 years of NOT teaching THE CUBIC FORMULA. What is it they think you can't handle? - YouTube](https://www.youtube.com/watch?v=N-KXStupwsc)
 
 ## 约定
