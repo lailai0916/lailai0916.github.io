@@ -10,23 +10,19 @@
 
 ## 前言
 
-我曾经使用过 [CSDN](https://www.csdn.net)、[博客园](https://www.cnblogs.com) 等现成的博客平台，但它们的自由度低，功能受限，还经常有广告。
+我以前用过 [CSDN](https://www.csdn.net)、[博客园](https://www.cnblogs.com) 等现成的博客平台，但它们自由度较低、功能受限，而且经常有广告。
 
-后来也尝试过 [WordPress](https://wordpress.org)、[Hexo](https://hexo.io) 等博客框架，但效果始终不是很满意。
+后来我也尝试过 [WordPress](https://wordpress.org)、[Hexo](https://hexo.io) 等博客框架，但整体效果始终不够满意。
 
-一个重要原因是，在学习算法竞赛的过程中，我需要管理大量模板。若采用普通博客架构，文章会按时间顺序排列，查找并不方便；相比之下，我更偏好文档式的树状架构。
+还有一个重要原因是，我在学习算法竞赛的过程中，需要整理知识点和模板。传统博客的时间线结构不方便检索与归档；相比之下，我更偏好文档式的树状结构。
 
-直到我发现了 [Docusaurus](https://docusaurus.io)，一个由 Facebook 开发的开源静态网站生成器，它简洁美观、易于使用，而且扩展性强。
+直到我发现了 [Docusaurus](https://docusaurus.io)，一个由 Facebook 开发并开源的静态网站生成器。它简洁美观、易于使用，而且扩展性很强。
 
-但 Docusaurus 在国内比较冷门，相关的资料和教程也很少，因此我花费了不少时间研究。
+但 Docusaurus 在国内比较冷门，相关的资料和教程并不多，因此我花费了不少时间研究。
 
-在此之前，我几乎没有学习过 HTML、CSS、JavaScript 和 TypeScript，但凭借其他编程语言的基础，我通过搭建网站掌握了这些语言的基本语法。
+在此之前，我没有系统学习过 HTML、CSS 和 JavaScript；但凭借 C++ 和 Python 的基础，我在搭建网站的过程中，逐渐掌握了这些语言的基本语法。
 
-:::tip
-
-[Material for MkDocs](https://squidfunk.github.io/mkdocs-material/) 和 [VitePress](https://vitepress.dev) 也是很好的选择，例如 [OI Wiki](https://oi-wiki.org) 就是基于前者搭建的。
-
-:::
+此外 [Material for MkDocs](https://squidfunk.github.io/mkdocs-material) 和 [VitePress](https://vitepress.dev) 也是不错的选择，例如 [OI Wiki](https://oi-wiki.org) 就是基于前者搭建的。
 
 ## 待办事项
 

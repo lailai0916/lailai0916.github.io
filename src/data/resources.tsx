@@ -460,7 +460,7 @@ export const RESOURCE_LIST: ResourceCategoryItem[] = [
       },
       {
         title: 'Material for MkDocs',
-        href: 'https://squidfunk.github.io/mkdocs-material/',
+        href: 'https://squidfunk.github.io/mkdocs-material',
         description: 'Python 文档网站生成器',
       },
       { title: 'Hexo', href: 'https://hexo.io', description: '快速博客框架' },
