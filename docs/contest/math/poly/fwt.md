@@ -50,9 +50,10 @@ void fwt_xor(ll *a,int n,int type)
 	ll *a0=a,*a1=a+mid;
 	fwt_xor(a0,mid,type);
 	fwt_xor(a1,mid,type);
+	ll t=type==1?1:mod+1>>1;
 	for(int i=0;i<mid;i++)
 	{
-		ll x=a0[i],y=a1[i],t=type==1?1:mod+1>>1;
+		ll x=a0[i],y=a1[i];
 		a0[i]=(x+y)*t%mod;
 		a1[i]=(x-y+mod)*t%mod;
 	}
@@ -70,9 +71,10 @@ void fwt_xnor(ll *a,int n,int type)
 	ll *a0=a,*a1=a+mid;
 	fwt_xnor(a0,mid,type);
 	fwt_xnor(a1,mid,type);
+	ll t=type==1?1:mod+1>>1;
 	for(int i=0;i<mid;i++)
 	{
-		ll x=a0[i],y=a1[i],t=type==1?1:mod+1>>1;
+		ll x=a0[i],y=a1[i];
 		a0[i]=(y-x+mod)*t%mod;
 		a1[i]=(y+x)*t%mod;
 	}
@@ -128,13 +130,14 @@ void fmt_and(ll *a,int n,int type)
 ```cpp
 void fwt_xor(ll *a,int n,int type)
 {
+	ll t=type==1?1:mod+1>>1;
 	for(int k=1;k<n;k<<=1)
 	{
 		for(int i=0;i<n;i+=k<<1)
 		{
 			for(int j=0;j<k;j++)
 			{
-				ll x=a[i+j],y=a[i+j+k],t=type==1?1:mod+1>>1;
+				ll x=a[i+j],y=a[i+j+k];
 				a[i+j]=(x+y)*t%mod;
 				a[i+j+k]=(x-y+mod)*t%mod;
 			}
@@ -149,13 +152,14 @@ void fwt_xor(ll *a,int n,int type)
 ```cpp
 void fwt_xnor(ll *a,int n,int type)
 {
+	ll t=type==1?1:mod+1>>1;
 	for(int k=1;k<n;k<<=1)
 	{
 		for(int i=0;i<n;i+=k<<1)
 		{
 			for(int j=0;j<k;j++)
 			{
-				ll x=a[i+j],y=a[i+j+k],t=type==1?1:mod+1>>1;
+				ll x=a[i+j],y=a[i+j+k];
 				a[i+j]=(y-x+mod)*t%mod;
 				a[i+j+k]=(y+x)*t%mod;
 			}
