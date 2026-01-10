@@ -1,7 +1,5 @@
 import React from 'react';
 import Heading from '@theme/Heading';
-import Layout from '@theme/Layout';
-import type { Props } from '@theme/Layout';
 import styles from './styles.module.css';
 
 export function PageTitle({
