@@ -205,8 +205,6 @@ const config: Config = {
     prism: {
       theme: prismThemes.github,
       darkTheme: prismThemes.dracula,
-      // theme: prismThemes.oneLight,
-      // darkTheme: prismThemes.oneDark,
     },
     docs: {
       sidebar: {
