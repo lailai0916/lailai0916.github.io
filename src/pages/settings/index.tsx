@@ -2,6 +2,7 @@ import React, { useState, useEffect, type ReactNode } from 'react';
 import clsx from 'clsx';
 import confetti from 'canvas-confetti';
 import { translate } from '@docusaurus/Translate';
+import Layout from '@theme/Layout';
 
 import IconText from '@site/src/components/laikit/widget/IconText';
 import Switch from '@site/src/components/laikit/widget/Switch';
@@ -11,11 +12,7 @@ import { usePersistentState } from '@site/src/hooks/usePersistentState';
 import { getAdjustedColors } from '@site/src/utils/colorUtils';
 import { useThemeColors } from '@site/src/hooks/useThemeColors';
 import { Icon } from '@iconify/react';
-import {
-  DebugLayout,
-  PageTitle,
-  PageHeader,
-} from '@site/src/components/laikit/page';
+import { PageTitle, PageHeader } from '@site/src/components/laikit/page';
 import styles from './styles.module.css';
 
 const TITLE = translate({
@@ -425,9 +422,9 @@ function SettingsContainer() {
 
 export default function Settings(): ReactNode {
   return (
-    <DebugLayout title={TITLE} description={DESCRIPTION}>
+    <Layout title={TITLE} description={DESCRIPTION}>
       <SettingsHeader />
       <SettingsContainer />
-    </DebugLayout>
+    </Layout>
   );
 }

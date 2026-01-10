@@ -1,19 +1,8 @@
 import React from 'react';
-import clsx from 'clsx';
 import Heading from '@theme/Heading';
 import Layout from '@theme/Layout';
 import type { Props } from '@theme/Layout';
-import { useDebugMode } from '@site/src/hooks/useDebugMode';
 import styles from './styles.module.css';
-
-export function DebugLayout(props: Props) {
-  const debugMode = useDebugMode();
-  return (
-    <div className={clsx(debugMode && styles.debug)}>
-      <Layout {...props} />
-    </div>
-  );
-}
 
 export function PageTitle({
   title,

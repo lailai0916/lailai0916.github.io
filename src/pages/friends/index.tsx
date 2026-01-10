@@ -1,6 +1,6 @@
 import React, { type ReactNode, useState } from 'react';
+import Layout from '@theme/Layout';
 import {
-  DebugLayout,
   PageTitle,
   PageHeader,
   PageFooter,
@@ -95,10 +95,10 @@ function FriendsHeader() {
 
 export default function Friends(): ReactNode {
   return (
-    <DebugLayout title={TITLE} description={DESCRIPTION}>
+    <Layout title={TITLE} description={DESCRIPTION}>
       <FriendsHeader />
       <FriendsMain />
       <FriendsFooter />
-    </DebugLayout>
+    </Layout>
   );
 }

@@ -2,7 +2,7 @@ import React from 'react';
 import clsx from 'clsx';
 import Link from '@docusaurus/Link';
 import useBaseUrl from '@docusaurus/useBaseUrl';
-import { DebugLayout } from '@site/src/components/laikit/page';
+import Layout from '@theme/Layout';
 import type { TOCItem } from '@docusaurus/mdx-loader';
 
 import { translate } from '@docusaurus/Translate';
@@ -256,11 +256,11 @@ export default function BlogScaffold({
   toc,
 }: Props) {
   return (
-    <DebugLayout title={title} description={description}>
+    <Layout title={title} description={description}>
       <div className={styles.container}>
         <main className={styles.main}>{children}</main>
         <Sidebar toc={toc} />
       </div>
-    </DebugLayout>
+    </Layout>
   );
 }

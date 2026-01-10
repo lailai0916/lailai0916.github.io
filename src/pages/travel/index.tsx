@@ -1,7 +1,6 @@
 import React, { type ReactNode } from 'react';
-
+import Layout from '@theme/Layout';
 import {
-  DebugLayout,
   PageTitle,
   PageHeader,
   PageFooter,
@@ -71,11 +70,11 @@ function TravelHeader() {
 
 export default function Travel(): ReactNode {
   return (
-    <DebugLayout title={TITLE} description={DESCRIPTION}>
+    <Layout title={TITLE} description={DESCRIPTION}>
       <TravelHeader />
       <TravelMap />
       <TravelTimeline />
       <TravelFooter />
-    </DebugLayout>
+    </Layout>
   );
 }
