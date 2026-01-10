@@ -63,7 +63,7 @@ $$
       <td>yourselves</td>
     </tr>
     <tr>
-      <td rowSpan="3">第三人称</td>
+      <td rowSpan="4">第三人称</td>
       <td rowSpan="3">单数</td>
       <td>he</td>
       <td>him</td>
@@ -86,7 +86,6 @@ $$
       <td>itself</td>
     </tr>
     <tr>
-      <td>第三人称</td>
       <td>复数</td>
       <td>they</td>
       <td>them</td>
