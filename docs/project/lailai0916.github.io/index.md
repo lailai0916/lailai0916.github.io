@@ -10,9 +10,9 @@
 
 ## 前言
 
-我以前用过 [CSDN](https://www.csdn.net)、[博客园](https://www.cnblogs.com) 等现成的博客平台，但它们自由度较低、功能受限，而且经常有广告。
+我以前用过 [CSDN](https://www.csdn.net) 和 [博客园](https://www.cnblogs.com) 等现成的博客平台，但它们自由度较低、功能受限，而且经常有广告。
 
-后来我也尝试过 [WordPress](https://wordpress.org)、[Hexo](https://hexo.io) 等博客框架，但整体效果始终不够满意。
+后来我也尝试过 [WordPress](https://wordpress.org) 和 [Hexo](https://hexo.io) 等博客框架，但整体效果始终不够满意。
 
 还有一个重要原因是，我在学习算法竞赛的过程中，需要整理知识点和模板。传统博客的时间线结构不方便检索与归档；相比之下，我更偏好文档式的树状结构。
 
