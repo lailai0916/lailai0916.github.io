@@ -21,7 +21,6 @@
   .container {
     grid-template-columns: 100%;
     grid-template-areas: 'main' 'sidebar';
-    padding: 1rem;
   }
 }
 
@@ -29,14 +28,14 @@
   grid-area: main;
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: var(--gap);
 }
 
 .sidebar {
   grid-area: sidebar;
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: var(--gap);
 }
 
 .card {
