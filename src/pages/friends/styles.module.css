@@ -128,6 +128,7 @@
 
 @media (max-width: 768px) {
   .container {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     padding: 1rem;
   }
 
