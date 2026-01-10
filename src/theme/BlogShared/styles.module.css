@@ -21,6 +21,7 @@
   .container {
     grid-template-columns: 100%;
     grid-template-areas: 'main' 'sidebar';
+    --padding: 1rem;
   }
 }
 
