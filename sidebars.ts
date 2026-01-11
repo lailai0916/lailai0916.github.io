@@ -141,6 +141,7 @@ const sidebars: SidebarsConfig = {
             'contest/math/number-theory/sqrt-decomposition',
             'contest/math/number-theory/du',
             'contest/math/number-theory/min-25',
+            'contest/math/number-theory/stern-brocot',
           ],
         },
         {
@@ -197,7 +198,6 @@ const sidebars: SidebarsConfig = {
             'contest/math/numerical/interp',
             'contest/math/numerical/integral',
             'contest/math/numerical/elimination',
-            'contest/math/numerical/approximation',
           ],
         },
         'contest/math/game-theory',
