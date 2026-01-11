@@ -18,7 +18,7 @@ $\LaTeX$ 是一种基于 $\TeX$ 的排版系统，用于编写包含数学公式
 
 $\KaTeX$ 是一个在浏览器中运行的 JavaScript 数学公式渲染库，可以在网页上渲染使用 $\LaTeX$ 语法编写的数学公式。
 
-推荐两个我常用的 $\LaTeX$ 排版网站 [Overleaf](https://www.overleaf.com) 和 [在线 LaTeX 公式编辑器](https://www.latexlive.com)。
+推荐两个我常用的 $\LaTeX$ 排版工具网站：[Overleaf](https://www.overleaf.com) 和 [在线 LaTeX 公式编辑器](https://www.latexlive.com)。
 
 ## 公式类型
 
