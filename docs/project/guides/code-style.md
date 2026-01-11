@@ -109,6 +109,7 @@ cin.tie(nullptr);
 
 - 通常使用 `cin/cout` 读写，避免使用 `scanf/printf`；按需使用 `getline` 等函数。
 - 换行使用 `'\n'`，避免使用 `"\n"` 和 `endl`。
+- 忽略 **每一行结尾的空格** 和 **最后一行之后多余的换行符**。
 
 ```cpp
 cout<<"Yes"<<'\n';
