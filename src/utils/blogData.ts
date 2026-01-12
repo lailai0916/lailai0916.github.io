@@ -222,7 +222,3 @@ export function loadOfficialTags(locale?: string): TagAggregate[] {
   cachedOfficialTags.set(cacheKey, []);
   return [];
 }
-
-export function getTotalReadingTime(): number {
-  return getAllPostMetadata().reduce((sum, meta) => sum + meta.readingTime, 0);
-}

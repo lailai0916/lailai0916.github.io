@@ -6,11 +6,7 @@ import Layout from '@theme/Layout';
 import type { TOCItem } from '@docusaurus/mdx-loader';
 
 import { translate } from '@docusaurus/Translate';
-import {
-  getAllBlogItems,
-  getAllPostMetadata,
-  getTotalReadingTime,
-} from '@site/src/utils/blogData';
+import { getAllBlogItems, getAllPostMetadata } from '@site/src/utils/blogData';
 import {
   Card,
   TagChipList,
@@ -73,6 +69,10 @@ function TocCard({ toc }: { toc: readonly TOCItem[] }) {
 
 function StatsCard() {
   const { analytics, status } = useAnalytics();
+  const readintTime = getAllPostMetadata().reduce(
+    (sum, meta) => sum + meta.readingTime,
+    0
+  );
   const statsItems = [
     {
       label: translate({
@@ -100,7 +100,7 @@ function StatsCard() {
         message: 'Words',
       }),
       icon: 'lucide:file-text',
-      value: getTotalReadingTime() * 200,
+      value: readintTime * 200,
     },
     {
       label: translate({
@@ -108,7 +108,7 @@ function StatsCard() {
         message: 'Minutes',
       }),
       icon: 'lucide:clock',
-      value: getTotalReadingTime(),
+      value: readintTime,
     },
     {
       label: translate({
