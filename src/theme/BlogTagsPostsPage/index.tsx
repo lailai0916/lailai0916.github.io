@@ -11,7 +11,7 @@ import type { Props } from '@theme/BlogTagsPostsPage';
 
 import { translate } from '@docusaurus/Translate';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
-import { getTagsOfficialOrder } from '@site/src/utils/blogData';
+import { loadOfficialTags } from '@site/src/utils/blogData';
 import { Card, TagChipList } from '../BlogShared/Components';
 
 const TITLE = translate({ id: 'blog.pages.tags.tagSelect', message: 'Tags' });
@@ -25,11 +25,7 @@ function TagSelector({ activePermalink, limit = 30 }: TagSelectorProps) {
   const { i18n } = useDocusaurusContext();
   const { currentLocale, defaultLocale } = i18n;
   const localeKey = currentLocale === defaultLocale ? undefined : currentLocale;
-
-  const tags = React.useMemo(
-    () => getTagsOfficialOrder({ limit, locale: localeKey }),
-    [limit, localeKey]
-  );
+  const tags = React.useMemo(() => loadOfficialTags(localeKey), [localeKey]);
 
   if (!tags.length) return null;
 

@@ -176,7 +176,7 @@ const getLocaleCacheKey = (locale?: string) =>
 const getLocaleFilePrefix = (locale?: string) =>
   locale ? `${locale.toLowerCase().replace(/_/g, '-')}-` : '';
 
-function loadOfficialTags(locale?: string): TagAggregate[] {
+export function loadOfficialTags(locale?: string): TagAggregate[] {
   const cacheKey = getLocaleCacheKey(locale);
   const cached = cachedOfficialTags.get(cacheKey);
   if (cached) {
@@ -221,20 +221,6 @@ function loadOfficialTags(locale?: string): TagAggregate[] {
 
   cachedOfficialTags.set(cacheKey, []);
   return [];
-}
-
-export function getTagsOfficialOrder({
-  limit,
-  locale,
-}: {
-  limit?: number;
-  locale?: string;
-} = {}): TagAggregate[] {
-  const tags = loadOfficialTags(locale);
-  if (typeof limit === 'number') {
-    return tags.slice(0, Math.max(0, limit));
-  }
-  return tags;
 }
 
 export function getTotalReadingTime(): number {
