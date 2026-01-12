@@ -16,12 +16,7 @@ import { Card, TagChipList } from '../BlogShared/Components';
 
 const TITLE = translate({ id: 'blog.pages.tags.tagSelect', message: 'Tags' });
 
-interface TagSelectorProps {
-  activePermalink?: string;
-  limit?: number;
-}
-
-function TagSelector({ activePermalink, limit = 30 }: TagSelectorProps) {
+function TagSelector({ activePermalink }: { activePermalink: string }) {
   const { i18n } = useDocusaurusContext();
   const { currentLocale, defaultLocale } = i18n;
   const localeKey = currentLocale === defaultLocale ? undefined : currentLocale;
