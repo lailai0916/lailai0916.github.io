@@ -35,13 +35,16 @@ export default function BlogArchivePage(props: Props): React.ReactElement {
       {groups.map(([year, posts]) => (
         <Card key={year} title={`${year} (${posts.length})`}>
           <ul className={styles.recentList}>
-            {posts.map((p: any) => (
-              <li key={p.metadata.permalink} className={styles.recentItem}>
+            {posts.map((post) => (
+              <li key={post.metadata.permalink} className={styles.recentItem}>
                 <div className={styles.recentDate}>
-                  {p.metadata.date.slice(5, 10)}
+                  {post.metadata.date.slice(5, 10)}
                 </div>
-                <Link to={p.metadata.permalink} className={styles.recentLink}>
-                  {p.metadata.title}
+                <Link
+                  to={post.metadata.permalink}
+                  className={styles.recentLink}
+                >
+                  {post.metadata.title}
                 </Link>
               </li>
             ))}
