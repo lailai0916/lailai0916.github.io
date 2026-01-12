@@ -28,7 +28,7 @@ function TagSelector({ activePermalink }: { activePermalink: string }) {
     <Card title={TITLE}>
       <TagChipList
         items={tags.map((tag) => ({
-          to: tag.permalink,
+          to: tag.permalink === activePermalink ? '/blog/tags' : tag.permalink,
           label: tag.label,
           count: tag.count,
           active: tag.permalink === activePermalink,
