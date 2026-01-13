@@ -1,8 +1,9 @@
 import React from 'react';
 import { useTheme } from '@site/src/hooks/useTheme';
 import BlogTagsPostsPageOriginal from '@theme-original/BlogTagsPostsPage';
-import PostsListLayout from '../BlogShared/PostsListLayout';
 import type { Props } from '@theme/BlogTagsPostsPage';
+import BlogScaffold from '../BlogShared/Scaffold';
+import { BlogArchiveList } from '../BlogShared/ArchiveList';
 
 import { translate } from '@docusaurus/Translate';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
@@ -37,15 +38,17 @@ export default function BlogTagsPostsPage(props: Props): React.ReactElement {
   const { isOriginalLayout } = useTheme();
   if (isOriginalLayout) return <BlogTagsPostsPageOriginal {...props} />;
 
-  const { items, listMetadata, tag } = props;
+  const { items, tag } = props;
+
+  const posts = React.useMemo(
+    () => (items as any[]).map((it) => (it.content ? it.content : it)),
+    [items]
+  );
 
   return (
-    <PostsListLayout
-      title={tag.label}
-      description={tag.description}
-      items={items}
-      meta={listMetadata}
-      topSlot={<TagSelector activePermalink={tag.permalink} />}
-    />
+    <BlogScaffold title={tag.label} description={tag.description}>
+      <TagSelector activePermalink={tag.permalink} />
+      <BlogArchiveList posts={posts} />
+    </BlogScaffold>
   );
 }
