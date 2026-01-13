@@ -39,7 +39,6 @@ export default function BlogTagsPostsPage(props: Props): React.ReactElement {
   if (isOriginalLayout) return <BlogTagsPostsPageOriginal {...props} />;
 
   const { items, tag } = props;
-
   const posts = React.useMemo(
     () => (items as any[]).map((it) => (it.content ? it.content : it)),
     [items]
