@@ -15,10 +15,7 @@ import type { Props } from '@theme/BlogArchivePage';
 const TITLE = translate({ id: 'theme.blog.archive.title', message: 'Archive' });
 const DESCRIPTION = "Archive of lailai's blog";
 
-export default function BlogArchivePage(props: Props): React.ReactElement {
-  const { isOriginalLayout } = useTheme();
-  if (isOriginalLayout) return <BlogArchivePageOriginal {...props} />;
-
+export function BlogArchiveContent({ props }: { props: Props }) {
   const { archive } = props;
   const groups = React.useMemo(() => {
     const map = new Map<number, any[]>();
@@ -30,8 +27,16 @@ export default function BlogArchivePage(props: Props): React.ReactElement {
     return Array.from(map.entries()).sort((a, b) => b[0] - a[0]);
   }, [archive]);
 
+  if (!groups.length) {
+    return (
+      <Card>
+        <Translate id="blog.pages.archive.empty">No posts yet</Translate>
+      </Card>
+    );
+  }
+
   return (
-    <BlogScaffold title={TITLE} description={DESCRIPTION}>
+    <>
       {groups.map(([year, posts]) => (
         <Card key={year} title={`${year} (${posts.length})`}>
           <ul className={styles.recentList}>
@@ -51,11 +56,17 @@ export default function BlogArchivePage(props: Props): React.ReactElement {
           </ul>
         </Card>
       ))}
-      {!groups.length && (
-        <Card>
-          <Translate id="blog.pages.archive.empty">No posts yet</Translate>
-        </Card>
-      )}
+    </>
+  );
+}
+
+export default function BlogArchivePage(props: Props): React.ReactElement {
+  const { isOriginalLayout } = useTheme();
+  if (isOriginalLayout) return <BlogArchivePageOriginal {...props} />;
+
+  return (
+    <BlogScaffold title={TITLE} description={DESCRIPTION}>
+      <BlogArchiveContent props={props} />
     </BlogScaffold>
   );
 }
