@@ -30,7 +30,7 @@ export function BlogArchiveList({ posts }: { posts: PostLike[] }) {
   if (!groups.length) {
     return (
       <Card>
-        <Translate id="blog.pages.archive.empty">
+        <Translate id="blog.post.empty">
           No posts yet, please look forward to more content...
         </Translate>
       </Card>

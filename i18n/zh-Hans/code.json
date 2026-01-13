@@ -1000,7 +1000,7 @@
   "blog.sidebar.tags.title": {
     "message": "热门标签"
   },
-  "blog.pages.archive.empty": {
+  "blog.post.empty": {
     "message": "暂无文章"
   },
   "blog.pages.tags.tagSelect": {
