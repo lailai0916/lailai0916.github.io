@@ -47,7 +47,7 @@ function TravelHeader() {
       <DataCard
         items={[
           {
-            value: `${countryCount}`,
+            value: countryCount,
             label: translate({
               id: 'pages.travel.datacard.label1',
               message: 'Countries',
@@ -55,7 +55,7 @@ function TravelHeader() {
             icon: 'lucide:globe',
           },
           {
-            value: `${yearCount}`,
+            value: yearCount,
             label: translate({
               id: 'pages.travel.datacard.label2',
               message: 'Years',
