@@ -7,11 +7,13 @@ interface DataCardProps {
   icon: string;
 }
 
-export default function DataCard(props: DataCardProps | DataCardProps[]) {
-  if (Array.isArray(props)) {
+export default function DataCard(
+  props: DataCardProps | { items: DataCardProps[] }
+) {
+  if ('items' in props) {
     return (
       <div className={styles.statsGrid}>
-        {props.map((item, index) => (
+        {props.items.map((item, index) => (
           <DataCard key={index} {...item} />
         ))}
       </div>
