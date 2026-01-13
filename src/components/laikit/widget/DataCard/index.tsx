@@ -2,7 +2,7 @@ import { Icon } from '@iconify/react';
 import styles from './styles.module.css';
 
 interface DataCardProps {
-  value: number | string;
+  value: number;
   label: string;
   icon: string;
 }
