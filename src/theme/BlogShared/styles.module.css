@@ -162,7 +162,6 @@
 
 .recentItem {
   display: grid;
-  /* 使用内容宽度而非固定 92px，避免多余留白 */
   grid-template-columns: max-content 1fr;
   align-items: baseline;
   gap: 0.5rem;
