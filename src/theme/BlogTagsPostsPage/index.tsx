@@ -40,7 +40,7 @@ function TagSelector({ activePermalink }: { activePermalink: string }) {
 
 export default function BlogTagsPostsPage(props: Props): React.ReactElement {
   const { isOriginalLayout } = useTheme();
-  if (isOriginalLayout) <BlogTagsPostsPageOriginal {...props} />;
+  if (isOriginalLayout) return <BlogTagsPostsPageOriginal {...props} />;
 
   const { items, listMetadata, tag } = props;
 
