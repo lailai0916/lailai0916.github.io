@@ -30,7 +30,9 @@ export function BlogArchiveContent({ props }: { props: Props }) {
   if (!groups.length) {
     return (
       <Card>
-        <Translate id="blog.pages.archive.empty">No posts yet</Translate>
+        <Translate id="blog.pages.archive.empty">
+          No posts yet, please look forward to more content...
+        </Translate>
       </Card>
     );
   }

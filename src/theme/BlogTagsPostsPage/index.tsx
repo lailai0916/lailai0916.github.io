@@ -2,12 +2,7 @@ import React from 'react';
 import { useTheme } from '@site/src/hooks/useTheme';
 import BlogTagsPostsPageOriginal from '@theme-original/BlogTagsPostsPage';
 import PostsListLayout from '../BlogShared/PostsListLayout';
-
-// no direct data utils needed here; sidebars handle their own data
-
 import type { Props } from '@theme/BlogTagsPostsPage';
-
-// use shared PostCard / Sidebars / Paginator
 
 import { translate } from '@docusaurus/Translate';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';

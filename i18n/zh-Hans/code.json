@@ -610,7 +610,7 @@
   "home.blog.more": {
     "message": "查看更多文章 →"
   },
-  "home.blog.noPosts": {
+  "home.blog.empty": {
     "message": "暂无文章，敬请期待更多内容..."
   },
   "home.countdown.title": {
