@@ -70,12 +70,12 @@ export const CHANGELOG_LIST: ChangelogItem[] = [
   {
     date: '2025-08-25',
     type: 'added',
-    content: '<b>Umami</b> 分析',
+    content: '<b>Umami</b> 分析 <a href="https://analytics.lailai.one">lailai's Analytics</a>',
   },
   {
     date: '2025-08-14',
     type: 'added',
-    content: '<b>debug</b> 调试模式',
+    content: '网站调试模式',
   },
   {
     date: '2025-08-13',
@@ -90,17 +90,17 @@ export const CHANGELOG_LIST: ChangelogItem[] = [
   {
     date: '2025-06-23',
     type: 'changed',
-    content: '默认语言从 <b>简体中文</b> 更改为 <b>English</b>',
+    content: '默认语言更改至 <b>English</b>',
   },
   {
     date: '2025-06-23',
     type: 'added',
-    content: '<b>English</b> 国际化支持',
+    content: '<b>English</b> 国际化',
   },
   {
     date: '2025-01-08',
     type: 'added',
-    content: '<b>Mermaid</b> 图表支持',
+    content: '<b>Mermaid</b> 图表',
   },
   {
     date: '2025-01-08',
