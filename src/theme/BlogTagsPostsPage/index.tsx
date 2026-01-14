@@ -22,7 +22,7 @@ function TagSelector({ activePermalink }: { activePermalink: string }) {
   if (!tags.length) return null;
 
   return (
-    <Card title={TITLE}>
+    <Card title={`${TITLE} (${tags.length})`}>
       <TagChipList
         items={tags.map((tag) => ({
           to: tag.permalink === activePermalink ? '/blog/tags' : tag.permalink,

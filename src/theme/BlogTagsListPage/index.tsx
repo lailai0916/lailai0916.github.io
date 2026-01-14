@@ -20,7 +20,7 @@ export default function BlogTagsListPage(props: Props): React.ReactElement {
   const { tags } = props;
   return (
     <BlogScaffold title={TITLE} description={DESCRIPTION}>
-      <Card title={TITLE}>
+      <Card title={`${TITLE} (${tags.length})`}>
         <TagChipList
           items={tags.map((tag) => ({
             to: tag.permalink,
