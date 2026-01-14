@@ -235,12 +235,12 @@ int main()
 使用 `[链接文本](链接地址)` 插入 **链接**。
 
 ```markdown
-[Google](https://www.google.com)
+[示例链接](https://example.com)
 ```
 
 <BrowserWindow>
 
-[Google](https://www.google.com)
+[示例链接](https://example.com)
 
 </BrowserWindow>
 
@@ -249,12 +249,12 @@ int main()
 使用 `![替代文本](图片链接)` 插入 **图片**。
 
 ```markdown
-![图片示例](https://dummyimage.com/250.png&text=Image)
+![示例图片](https://dummyimage.com/250.png&text=Image)
 ```
 
 <BrowserWindow>
 
-![图片示例](https://dummyimage.com/250.png&text=Image)
+![示例图片](https://dummyimage.com/250.png&text=Image)
 
 </BrowserWindow>
 
@@ -288,6 +288,7 @@ int main()
 | 此列左对齐 | 此列居中对齐 | 此列右对齐 |
 | :--------- | :----------: | ---------: |
 | 内容示例 1 |  内容示例 2  | 内容示例 3 |
+| 内容示例 4 |  内容示例 5  | 内容示例 6 |
 ```
 
 <BrowserWindow>
@@ -295,6 +296,7 @@ int main()
 | 此列左对齐 | 此列居中对齐 | 此列右对齐 |
 | :--------- | :----------: | ---------: |
 | 内容示例 1 |  内容示例 2  | 内容示例 3 |
+| 内容示例 4 |  内容示例 5  | 内容示例 6 |
 
 </BrowserWindow>
 
