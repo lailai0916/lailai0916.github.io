@@ -43,13 +43,13 @@ export const CHANGELOG_LIST: ChangelogItem[] = [
     date: '2025-09-26',
     type: 'changed',
     content:
-      '更新至 <a href="https://docsearch.algolia.com/docs/what-is-docsearch">DocSearch v4</a>',
+      '搜索更新至 <a href="https://docsearch.algolia.com/docs/what-is-docsearch">DocSearch v4</a>',
   },
   {
     date: '2025-09-25',
     type: 'changed',
     content:
-      '更新至 <a href="https://docusaurus.io/blog/releases/3.9">Docusaurus 3.9</a>',
+      '网站更新至 <a href="https://docusaurus.io/blog/releases/3.9">Docusaurus 3.9</a>',
   },
   {
     date: '2025-09-05',
