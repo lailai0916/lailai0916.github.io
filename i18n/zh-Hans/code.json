@@ -637,13 +637,13 @@
   "home.countdown.unit.seconds": {
     "message": "秒"
   },
-  "components.problems.solution": {
+  "components.problem.solution": {
     "message": "题解"
   },
-  "components.problems.code": {
+  "components.problem.code": {
     "message": "代码（{num}）"
   },
-  "components.problems.error": {
+  "components.problem.error": {
     "message": "无法加载题目 {id}：请检查文件是否存在。"
   },
   "home.project.title": {
