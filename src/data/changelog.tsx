@@ -1,6 +1,6 @@
 import { translate } from '@docusaurus/Translate';
 
-// https://keepachangelog.com/
+// https://keepachangelog.com
 
 export interface ChangelogItem {
   date: string;
@@ -17,22 +17,22 @@ export const CHANGELOG_LIST: ChangelogItem[] = [
   {
     date: '2025-12-05',
     type: 'removed',
-    content: '<code>&lt;Assets /&gt;</code> 资源优化组件',
+    content: '<code>&lt;Assets /&gt;</code> 资源管理组件',
+  },
+  {
+    date: '2025-12-02',
+    type: 'changed',
+    content: '资源迁移至 <a href="https://cloud.lailai.one">lailai\'s Cloud</a>',
   },
   {
     date: '2025-10-23',
     type: 'added',
-    content: '<code>&lt;Assets /&gt;</code> 资源优化组件',
-  },
-  {
-    date: '2025-10-17',
-    type: 'added',
-    content: '网站一周年',
+    content: '<code>&lt;Assets /&gt;</code> 资源管理组件',
   },
   {
     date: '2025-10-15',
     type: 'changed',
-    content: '新版博客布局',
+    content: '博客新版布局',
   },
   {
     date: '2025-10-01',
@@ -43,24 +43,24 @@ export const CHANGELOG_LIST: ChangelogItem[] = [
     date: '2025-09-26',
     type: 'changed',
     content:
-      '更新至 <a href="https://docsearch.algolia.com/docs/what-is-docsearch">DocSearch v4</a>',
+      '搜索更新至 <a href="https://docsearch.algolia.com/docs/what-is-docsearch">DocSearch v4</a>',
   },
   {
     date: '2025-09-25',
     type: 'changed',
     content:
-      '更新至 <a href="https://docusaurus.io/blog/releases/3.9">Docusaurus 3.9</a>',
+      '网站更新至 <a href="https://docusaurus.io/blog/releases/3.9">Docusaurus v3.9</a>',
   },
   {
     date: '2025-09-05',
     type: 'added',
     content:
-      '搜索引擎收录平台（<a href="https://search.google.com/search-console/welcome">Google Search Console</a>、<a href="https://www.bing.com/webmasters">Bing Webmaster Tools</a>、<a href="https://ziyuan.baidu.com/linksubmit/url">百度搜索资源平台</a>）',
+      '网站收录至 <a href="https://search.google.com/search-console/welcome">Google Search Console</a>、<a href="https://www.bing.com/webmasters">Bing Webmaster Tools</a>、<a href="https://ziyuan.baidu.com/linksubmit/url">百度搜索资源平台</a>',
   },
   {
     date: '2025-09-01',
     type: 'added',
-    content: '新版博客布局（实验性）',
+    content: '博客新版布局（实验性）',
   },
   {
     date: '2025-08-31',
@@ -70,12 +70,12 @@ export const CHANGELOG_LIST: ChangelogItem[] = [
   {
     date: '2025-08-25',
     type: 'added',
-    content: '<b>Umami</b> 分析',
+    content: '<b>Umami</b> 分析 <a href="https://analytics.lailai.one">lailai\'s Analytics</a>',
   },
   {
     date: '2025-08-14',
     type: 'added',
-    content: '<b>debug</b> 调试模式',
+    content: '网站调试模式',
   },
   {
     date: '2025-08-13',
@@ -90,17 +90,17 @@ export const CHANGELOG_LIST: ChangelogItem[] = [
   {
     date: '2025-06-23',
     type: 'changed',
-    content: '默认语言从 <b>简体中文</b> 更改为 <b>English</b>',
+    content: '默认语言更改至 <b>English</b>',
   },
   {
     date: '2025-06-23',
     type: 'added',
-    content: '<b>English</b> 国际化支持',
+    content: '国际化支持 <b>English</b>',
   },
   {
     date: '2025-01-08',
     type: 'added',
-    content: '<b>Mermaid</b> 图表支持',
+    content: '<b>Mermaid</b> 图表',
   },
   {
     date: '2025-01-08',

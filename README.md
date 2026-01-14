@@ -89,7 +89,11 @@ lailai0916.github.io/
 
 ## Subscribe
 
-Stay updated with the latest blog posts: [RSS Feed](https://lailai.one/blog/rss.xml) | [Atom Feed](https://lailai.one/blog/atom.xml) | [JSON Feed](https://lailai.one/blog/feed.json)
+Stay updated with the latest blog posts:
+
+- [RSS Feed](https://lailai.one/blog/rss.xml)
+- [Atom Feed](https://lailai.one/blog/atom.xml)
+- [JSON Feed](https://lailai.one/blog/feed.json)
 
 ## Sponsor
 
