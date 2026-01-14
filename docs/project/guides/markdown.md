@@ -249,12 +249,12 @@ int main()
 使用 `![替代文本](图片链接)` 插入 **图片**。
 
 ```markdown
-![The Apple Store Shopping Event](https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/ase-header-hero-202511?wid=1392&hei=640&fmt=png-alpha&.v=YnRtS1pvZW0xTkRGTDArTFMxM1dkK2Y5c091MFJuNmVhOUl2Q2RwT0ZMOXZtdlBGOXJXZFNaUWV3K0pQbC96YXV3M2NIN0pZV0NOZE9oVm8rOFczOVM3MzU2aDRJWlJuTHd3RzJsT3JDc0k)
+![图片示例](https://dummyimage.com/250.png&text=Image)
 ```
 
 <BrowserWindow>
 
-![The Apple Store Shopping Event](https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/ase-header-hero-202511?wid=1392&hei=640&fmt=png-alpha&.v=YnRtS1pvZW0xTkRGTDArTFMxM1dkK2Y5c091MFJuNmVhOUl2Q2RwT0ZMOXZtdlBGOXJXZFNaUWV3K0pQbC96YXV3M2NIN0pZV0NOZE9oVm8rOFczOVM3MzU2aDRJWlJuTHd3RzJsT3JDc0k)
+![图片示例](https://dummyimage.com/250.png&text=Image)
 
 </BrowserWindow>
 
