@@ -2,7 +2,7 @@
 title: 'National Geographic: 50 Places of a Lifetime'
 date: 2025-10-24T09:09
 authors: lailai
-tags: [travel]
+tags: [resource, travel]
 ---
 
 《美国国家地理杂志：一生必去的 50 个地方》中文翻译。
