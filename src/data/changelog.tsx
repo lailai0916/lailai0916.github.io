@@ -49,7 +49,7 @@ export const CHANGELOG_LIST: ChangelogItem[] = [
     date: '2025-09-25',
     type: 'changed',
     content:
-      '网站更新至 <a href="https://docusaurus.io/blog/releases/3.9">Docusaurus 3.9</a>',
+      '网站更新至 <a href="https://docusaurus.io/blog/releases/3.9">Docusaurus v3.9</a>',
   },
   {
     date: '2025-09-05',
