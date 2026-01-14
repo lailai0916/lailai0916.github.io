@@ -1,3 +1,5 @@
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 export interface BlogPost {
   title: string;
   permalink: string;
@@ -142,7 +144,9 @@ export function getRecentBlogPosts(maxCount: number = 4): ProcessedBlogPost[] {
         title: item.title ?? item.metadata?.title,
         date: item.date ?? item.metadata?.date,
         permalink,
-        isPinned: tags.some((tag) => tag.permalink === '/blog/tags/pinned'),
+        isPinned: tags.some(
+          (tag) => tag.permalink === useBaseUrl('/blog/tags/pinned')
+        ),
       };
     })
     .filter((post): post is ProcessedBlogPost & { isPinned: boolean } =>
