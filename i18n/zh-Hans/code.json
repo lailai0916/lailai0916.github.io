@@ -646,6 +646,15 @@
   "components.problem.error": {
     "message": "无法加载题目 {id}：请检查文件是否存在。"
   },
+  "components.solution.luogu": {
+    "message": "洛谷"
+  },
+  "components.solution.blog": {
+    "message": "博客"
+  },
+  "components.solution.solution": {
+    "message": "题解"
+  },
   "home.project.title": {
     "message": "我的项目"
   },
