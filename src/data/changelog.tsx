@@ -22,7 +22,8 @@ export const CHANGELOG_LIST: ChangelogItem[] = [
   {
     date: '2025-12-02',
     type: 'changed',
-    content: '资源迁移至 <a href="https://cloud.lailai.one">lailai\'s Cloud</a>',
+    content:
+      '资源迁移至 <a href="https://cloud.lailai.one">lailai\'s Cloud</a>',
   },
   {
     date: '2025-10-23',
@@ -70,7 +71,8 @@ export const CHANGELOG_LIST: ChangelogItem[] = [
   {
     date: '2025-08-25',
     type: 'added',
-    content: '<b>Umami</b> 分析 <a href="https://analytics.lailai.one">lailai\'s Analytics</a>',
+    content:
+      '<b>Umami</b> 分析 <a href="https://analytics.lailai.one">lailai\'s Analytics</a>',
   },
   {
     date: '2025-08-14',
