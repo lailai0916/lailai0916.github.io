@@ -5,6 +5,7 @@ import { Icon } from '@iconify/react';
 import type { BlogPaginatedMetadata } from '@docusaurus/plugin-content-blog';
 import BlogScaffold from './Scaffold';
 import { useAnalytics } from './Components';
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
 import { translate } from '@docusaurus/Translate';
 import IconText from '@site/src/components/laikit/widget/IconText';
@@ -48,7 +49,7 @@ function PostCard({ item }) {
       <div className={styles.postTitleRow}>
         <Badge
           icon={
-            firstTag?.permalink === '/blog/tags/pinned'
+            firstTag?.permalink === useBaseUrl('/blog/tags/pinned')
               ? 'lucide:pin'
               : 'lucide:bookmark'
           }
