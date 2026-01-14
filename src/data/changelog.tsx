@@ -55,7 +55,7 @@ export const CHANGELOG_LIST: ChangelogItem[] = [
     date: '2025-09-05',
     type: 'added',
     content:
-      '搜索引擎收录平台（<a href="https://search.google.com/search-console/welcome">Google Search Console</a>、<a href="https://www.bing.com/webmasters">Bing Webmaster Tools</a>、<a href="https://ziyuan.baidu.com/linksubmit/url">百度搜索资源平台</a>）',
+      '网站收录至 <a href="https://search.google.com/search-console/welcome">Google Search Console</a>、<a href="https://www.bing.com/webmasters">Bing Webmaster Tools</a>、<a href="https://ziyuan.baidu.com/linksubmit/url">百度搜索资源平台</a>',
   },
   {
     date: '2025-09-01',
@@ -95,7 +95,7 @@ export const CHANGELOG_LIST: ChangelogItem[] = [
   {
     date: '2025-06-23',
     type: 'added',
-    content: '<b>English</b> 国际化',
+    content: '国际化支持 <b>English</b>',
   },
   {
     date: '2025-01-08',
