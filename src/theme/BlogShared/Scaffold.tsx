@@ -225,23 +225,6 @@ function FeedCard() {
   );
 }
 
-function Sidebar({ toc }: { toc?: readonly TOCItem[] }) {
-  return (
-    <aside className={styles.sidebar}>
-      <AuthorCard />
-      {toc?.length ? (
-        <TocCard toc={toc} />
-      ) : (
-        <>
-          <StatsCard />
-          <FeedCard />
-          <TagsCard />
-        </>
-      )}
-    </aside>
-  );
-}
-
 type Props = {
   title?: string;
   description?: string;
@@ -259,7 +242,20 @@ export default function BlogScaffold({
     <Layout title={title} description={description}>
       <div className={styles.container}>
         <main className={styles.main}>{children}</main>
-        <Sidebar toc={toc} />
+        <aside className={styles.sidebar}>
+          <AuthorCard />
+          <>
+            {toc?.length ? (
+              <TocCard toc={toc} />
+            ) : (
+              <>
+                <StatsCard />
+                <FeedCard />
+                <TagsCard />
+              </>
+            )}
+          </>
+        </aside>
       </div>
     </Layout>
   );
