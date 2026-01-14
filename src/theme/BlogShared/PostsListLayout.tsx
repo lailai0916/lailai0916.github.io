@@ -118,7 +118,7 @@ function PostCard({ item }) {
   );
 }
 
-function Paginator({ meta }: { meta: BlogPaginatedMetadata }) {
+export function Paginator({ meta }: { meta: BlogPaginatedMetadata }) {
   if (!meta?.totalPages || meta.totalPages <= 1) return null;
   const { page, totalPages } = meta;
   const sample = meta.nextPage || meta.previousPage || '';
