@@ -1,5 +1,5 @@
 ---
-title: '16th Birthday'
+title: '16th Birthday! 🎉'
 date: 2025-09-16T00:00
 authors: lailai
 tags: [personal]
