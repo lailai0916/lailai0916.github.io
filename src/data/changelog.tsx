@@ -17,22 +17,22 @@ export const CHANGELOG_LIST: ChangelogItem[] = [
   {
     date: '2025-12-05',
     type: 'removed',
-    content: '<code>&lt;Assets /&gt;</code> 资源优化组件',
+    content: '<code>&lt;Assets /&gt;</code> 资源管理组件',
   },
   {
     date: '2025-12-02',
-    type: 'change',
+    type: 'changed',
     content: '资源迁移至 <a href="https://cloud.lailai.one">lailai\'s Cloud</a>',
   },
   {
     date: '2025-10-23',
     type: 'added',
-    content: '<code>&lt;Assets /&gt;</code> 资源优化组件',
+    content: '<code>&lt;Assets /&gt;</code> 资源管理组件',
   },
   {
     date: '2025-10-15',
     type: 'changed',
-    content: '新版博客布局',
+    content: '博客新版布局',
   },
   {
     date: '2025-10-01',
@@ -60,7 +60,7 @@ export const CHANGELOG_LIST: ChangelogItem[] = [
   {
     date: '2025-09-01',
     type: 'added',
-    content: '新版博客布局（实验性）',
+    content: '博客新版布局（实验性）',
   },
   {
     date: '2025-08-31',
