@@ -1,6 +1,6 @@
 import { translate } from '@docusaurus/Translate';
 
-// https://keepachangelog.com/
+// https://keepachangelog.com
 
 export interface ChangelogItem {
   date: string;
@@ -22,7 +22,7 @@ export const CHANGELOG_LIST: ChangelogItem[] = [
   {
     date: '2025-12-02',
     type: 'change',
-    content: "资源迁移至 <a href="https://cloud.lailai.one">lailai's Cloud</a>",
+    content: '资源迁移至 <a href="https://cloud.lailai.one">lailai\'s Cloud</a>',
   },
   {
     date: '2025-10-23',
