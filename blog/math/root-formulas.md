@@ -280,23 +280,9 @@ $$
 \Delta=b^2-4ac
 $$
 
-若 $\Delta>0$，有两个不等实数根：
-
-$$
-x_1=\frac{-b+\sqrt{\Delta}}{2a},x_2=\frac{-b-\sqrt{\Delta}}{2a}
-$$
-
-若 $\Delta=0$，有两个相等实数根：
-
-$$
-x_1=x_2=-\frac{b}{2a}
-$$
-
-若 $\Delta<0$，有两个共轭复数根：
-
-$$
-x_1=-\frac{b}{2a}+\frac{\sqrt{-\Delta}}{2a}i,x_2=-\frac{b}{2a}-\frac{\sqrt{-\Delta}}{2a}i
-$$
+- 若 $\Delta>0$，有两个不等实数根 $x_1=\frac{-b+\sqrt{\Delta}}{2a},x_2=\frac{-b-\sqrt{\Delta}}{2a}$；
+- 若 $\Delta=0$，有两个相等实数根 $x_1=x_2=-\frac{b}{2a}$；
+- 若 $\Delta<0$，有两个共轭复数根 $x_1=-\frac{b}{2a}+\frac{\sqrt{-\Delta}}{2a}i,x_2=-\frac{b}{2a}-\frac{\sqrt{-\Delta}}{2a}i$。
 
 :::warning
 
@@ -537,9 +523,9 @@ $$
 
 ### 分类讨论
 
-根据 [介值定理](https://zh.wikipedia.org/zh-cn/介值定理) 三次方程至少有一个实数根：
+根据 [介值定理](https://zh.wikipedia.org/zh-cn/介值定理)，三次方程至少有一个实数根：
 
-> 介值定理：假设 $f:[a,b]\to \mathbb{R}$ 为一连续函数。若一实数 $u$ 满足 $(f(a)-u)(f(b)-u)\le0$，则存在一实数 $c \in [a,b]$ 使得 $f(c)=u$。
+> 介值定理：假设 $f:[a,b]\to\mathbb{R}$ 为一连续函数。若一实数 $u$ 满足 $(f(a)-u)(f(b)-u)\le 0$，则存在实数 $c\in[a,b]$ 使得 $f(c)=u$。
 
 令判别式：
 
@@ -547,11 +533,9 @@ $$
 \Delta=18abcd-4b^3d+b^2c^2-4ac^3-27a^2d^2
 $$
 
-若 $\Delta>0$，有三个不相等实数根。
-
-若 $\Delta=0$，有实数重根（即至少两个实根相等）。
-
-若 $\Delta<0$，有一个实根和两个共轭复根。
+- 若 $\Delta>0$，有三个不相等实数根；
+- 若 $\Delta=0$，有实数重根（即至少两个实根相等）；
+- 若 $\Delta<0$，有一个实根和两个共轭复数根。
 
 ## 四次方程
 
