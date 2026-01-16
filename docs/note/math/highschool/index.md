@@ -2,7 +2,7 @@
 
 本章是我的高中数学笔记。
 
-包含较多 **数学公式** 和 **交互组件**，建议在电脑上查看。手机上可能显示异常，不建议打印。
+本章包含较多 **数学公式** 和 **交互组件**，建议在电脑上查看，手机上可能显示异常，不建议打印。
 
 ![](/icons/notbyai/Written-By-Humans-Not-By-AI-Badge-white.svg#gh-light-mode-only)![](/icons/notbyai/Written-By-Humans-Not-By-AI-Badge-black.svg#gh-dark-mode-only)
 
@@ -10,7 +10,7 @@
 
 - [高中数学 - 维基教科书](https://zh.wikibooks.org/wiki/高中数学)
 - [whk wiki](https://whk-wiki.github.io/whk-wiki/)
-- [RainPPR's WHK Blog](https://blog.rainppr.dns-dynamic.net/whk/)
+- [RainPPR's WHK Blog](https://raineblog.dpdns.org/whk/)
 - [liuhaopeng543/MathBook](https://github.com/liuhaopeng543/MathBook)
 
 ## 前言
