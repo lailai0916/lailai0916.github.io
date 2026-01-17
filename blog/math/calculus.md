@@ -359,16 +359,24 @@ $$
 
 计算 $\displaystyle\int_1^3 \frac{x}{2}\mathrm{d}x$。
 
+<details>
+<summary>题解</summary>
+
 $$
 \int_1^3\frac{x}{2}\mathrm{d}x=\left.\frac{x^2}{4}\right|_{1}^{3}=\frac{3^2}{4}-\frac{1^2}{4}=2
 $$
 
 <Desmos id="ywcdneien2" />
 
+</details>
+
 </TabItem>
 <TabItem value="Example 2">
 
 计算 $\displaystyle\int_{-2}^3 2x\mathrm{d}x$。
+
+<details>
+<summary>题解</summary>
 
 $$
 \int_{-2}^3 2x\mathrm{d}x=\left.x^2\right|_{-2}^{3}=3^2-(-2)^2=5
@@ -376,10 +384,15 @@ $$
 
 <Desmos id="xlwjbick4u" />
 
+</details>
+
 </TabItem>
 <TabItem value="Example 3">
 
 计算 $\displaystyle\int_{-2}^2\sqrt{4-x^2}\mathrm{d}x$。
+
+<details>
+<summary>题解</summary>
 
 $$
 \int_{-2}^2\sqrt{4-x^2}\mathrm{d}x
@@ -387,6 +400,8 @@ $$
 $$
 
 <Desmos id="dxjwvtqsdl" />
+
+</details>
 
 </TabItem>
 </Tabs>
