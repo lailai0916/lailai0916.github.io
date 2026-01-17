@@ -49,9 +49,6 @@
 
 <Problem id="P1001" />
 
-<details>
-<summary>Solution</summary>
-
 <Tabs>
 <TabItem value="题解示例">
 
@@ -136,8 +133,6 @@ int main()
 
 </TabItem>
 </Tabs>
-
-</details>
 
 ### 提示词
 
