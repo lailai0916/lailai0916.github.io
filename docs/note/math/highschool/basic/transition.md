@@ -352,8 +352,6 @@ $$
 
 利用等式变形方法（**乘法公式** 和 **因式分解**），可以化简 **二重根式**（嵌套根式）。
 
-### 定义
-
 一般的二重根式的形式如下：
 
 $$
@@ -378,7 +376,7 @@ $$
 
 ### 推导
 
-我们设化简结果为：
+我们将化简结果设为：
 
 $$
 \sqrt{8+4\sqrt{3}}=\sqrt{x}+\sqrt{y}
@@ -457,7 +455,7 @@ $$
 $$
 \begin{aligned}
   \sqrt{4-\sqrt{15}} &= \frac{\sqrt{8-2\sqrt{15}}}{\sqrt{2}} \\
-  &= \left(\sqrt{5}-\sqrt{3}\right)\cdot\frac{\sqrt{2}}{2} \\
+  &= \left|\sqrt{5}-\sqrt{3}\right|\cdot\frac{\sqrt{2}}{2} \\
   &= \frac{\sqrt{10}-\sqrt 6}{2}
 \end{aligned}
 $$
@@ -491,7 +489,7 @@ $$
 
 ## 符号
 
-### 正负号
+### 正负号 & 负正号
 
 **正负号** $\pm$ 可以表示 **近似值的精确度** 或 **两个可能的数值**。
 
@@ -513,7 +511,7 @@ $$
 a^3\pm b^3=(a\pm b)(a^2\mp ab+b^2)
 $$
 
-### 连加记号
+### 连加记号 & 连乘记号
 
 在数学中，经常遇到 $n$ 个数累加的式子：
 
@@ -538,8 +536,6 @@ $$
 $$
 
 :::
-
-### 连乘记号
 
 而 $\prod$ 表示 **连乘记号**（求积符号），用法与 **连加记号** 类似。
 
@@ -607,15 +603,9 @@ $$
 \frac{1}{a-\sqrt{b}}=\frac{a+\sqrt{b}}{\left(a-\sqrt{b}\right)\left(a+\sqrt{b}\right)}=\frac{a+\sqrt{b}}{a^2-b}
 $$
 
-## 不等式
-
-有些课程和教辅中会讲解 **不等式**，而高中阶段也会系统学习相关内容，因此在此一并整理。
-
-详见 [不等式](inequality)。
-
 ## 思想
 
-### 符号
+### 符号 & 单位
 
 带符号的量在数学、科学，甚至生活中都很常见。
 
@@ -685,9 +675,9 @@ $$
 
 :::
 
-### 单位
+与带符号运算类似，许多情况下也可以带单位运算。
 
-澳大利亚的陆地面积略大于 **十万公吨光年每毫米汞柱每年每三十秒**。
+举个极端的例子，你甚至可以这样表达：澳大利亚的陆地面积略大于 **十万公吨光年每毫米汞柱每年每三十秒**。
 
 $$
 \begin{aligned}
@@ -697,6 +687,21 @@ $$
   &= 10^5\times\frac{1000\times 9.4607\times 10^{15}}{133.322387415\times 31556926\times 30}\times\frac{\mathrm{kg}\cdot\mathrm{m}}{\mathrm{Pa}\cdot\mathrm{s}\cdot\mathrm{s}} \\
   &= 10^5\times\frac{9.4607\times 10^{18}}{1.2617\times 10^{11}}\times\frac{\mathrm{kg}\cdot\mathrm{m}}{\mathrm{N}\cdot\mathrm{m^{-2}}\cdot\mathrm{s}\cdot\mathrm{s}} \\
   &= 10^5\times 7.4983\times 10^7\times\frac{\mathrm{kg}\cdot\mathrm{m}}{\mathrm{kg}\cdot\mathrm{m}\cdot\mathrm{s^{-2}}\cdot\mathrm{m^{-2}}\cdot\mathrm{s}\cdot\mathrm{s}} \\
-  &= 7.4983\times 10^{12}\mathrm{m^2}=7.4983\times 10^6\mathrm{km^2}
+  &= 7.4983\times 10^{12}\mathrm{m^2} \\
+  &= 7.4983\times 10^6\mathrm{km^2}
 \end{aligned}
 $$
+
+### 增量 & 变化量
+
+**增量**（Increment）指变量或函数在变化过程中所取的 **改变量**，通常用 $\Delta$ 表示。
+
+例如 $x$ 的增量记为 $\Delta x$，$f(x)$ 的增量记为 $\Delta f(x)$。
+
+**变化量**（Change）指量在初末两个状态之间的 **差值**，反映最终结果，与中间变化过程无关。
+
+## 不等式
+
+有些课程和教辅中会讲解 **不等式**，而高中阶段也会系统学习相关内容，因此在此一并整理。
+
+详见 [不等式](inequality)。
