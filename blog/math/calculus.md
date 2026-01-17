@@ -127,16 +127,24 @@ $$
 
 计算 $\displaystyle\int_1^3 \frac{x}{2}\mathrm{d}x$。
 
+<details>
+<summary>题解</summary>
+
 这个积分表达式表示图中 **直角梯形** 的有向面积。
 
 所以 $\displaystyle\int_1^3 \frac{x}{2}\mathrm{d}x=\frac{h(a+b)}{2}=\frac{2\cdot(0.5+1.5)}{2}=2$。
 
 <Desmos id="ywcdneien2" />
 
+</details>
+
 </TabItem>
 <TabItem value="Example 2">
 
 计算 $\displaystyle\int_{-2}^3 2x\mathrm{d}x$。
+
+<details>
+<summary>题解</summary>
 
 这个积分表达式表示图中两个 **三角形** 的有向面积。
 
@@ -144,16 +152,23 @@ $$
 
 <Desmos id="xlwjbick4u" />
 
+</details>
+
 </TabItem>
 <TabItem value="Example 3">
 
-计算 $\displaystyle\int_{-2}^2 \sqrt{4-x^2}\mathrm{d}x$。
+计算 $\displaystyle\int_{-2}^2\sqrt{4-x^2}\mathrm{d}x$。
+
+<details>
+<summary>题解</summary>
 
 这个积分表达式表示图中 **半圆形** 的有向面积。
 
-所以 $\displaystyle\int_{-2}^2 \sqrt{4-x^2}\mathrm{d}x=\frac{1}{2}\pi r^2=\frac{1}{2}\pi\cdot 2^2=2\pi$。
+所以 $\displaystyle\int_{-2}^2\sqrt{4-x^2}\mathrm{d}x=\frac{1}{2}\pi r^2=\frac{1}{2}\pi\cdot 2^2=2\pi$。
 
 <Desmos id="dxjwvtqsdl" />
+
+</details>
 
 </TabItem>
 </Tabs>
@@ -364,7 +379,7 @@ $$
 </TabItem>
 <TabItem value="Example 3">
 
-计算 $\displaystyle\int_{-2}^2 \sqrt{4-x^2}\mathrm{d}x$。
+计算 $\displaystyle\int_{-2}^2\sqrt{4-x^2}\mathrm{d}x$。
 
 $$
 \int_{-2}^2\sqrt{4-x^2}\mathrm{d}x
