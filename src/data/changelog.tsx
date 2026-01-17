@@ -100,6 +100,12 @@ export const CHANGELOG_LIST: ChangelogItem[] = [
     content: '国际化支持 <b>English</b>',
   },
   {
+    date: '2025-05-31',
+    type: 'changed',
+    content:
+      '网站更新至 <a href="https://docusaurus.io/blog/releases/3.8">Docusaurus v3.8</a>',
+  },
+  {
     date: '2025-01-08',
     type: 'added',
     content: '<b>Mermaid</b> 图表',
