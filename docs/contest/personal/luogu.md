@@ -313,7 +313,7 @@ $$\begin{bmatrix} f_{i + 1} \\ f_i \end{bmatrix} = \begin{bmatrix} 1 & 1 \\ 1 & 
 
 ### NOISG 搬题记录
 
-我搬运的 **新加坡全国信息学奥林匹克竞赛**（Singapore National Olympiad in Informatics，NOISG）的 $7$ 场比赛 $30$ 道题目。
+我搬运了 **新加坡全国信息学奥林匹克竞赛**（Singapore National Olympiad in Informatics，NOISG）的 $7$ 场比赛 $30$ 道题目。
 
 <GitHub repo="noisg/sg_noi_archive" />
 
@@ -383,7 +383,7 @@ $$\begin{bmatrix} f_{i + 1} \\ f_i \end{bmatrix} = \begin{bmatrix} 1 & 1 \\ 1 & 
 
 - [洛谷 P11349 [NOISG 2024 Finals] Problem Setter](https://www.luogu.com.cn/problem/P11349)
 - [洛谷 P11350 [NOISG 2024 Finals] Shops](https://www.luogu.com.cn/problem/P11350)
-- [洛谷 P11351 [NOISG 2024 Finals] Toxic Gene 2（交互题，暂时无法评测）](https://www.luogu.com.cn/problem/P11351)
+- [洛谷 P11351 [NOISG 2024 Finals] Toxic Gene 2](https://www.luogu.com.cn/problem/P11351)
 - [洛谷 P11352 [NOISG 2024 Finals] Coin](https://www.luogu.com.cn/problem/P11352)
 - [洛谷 P11353 [NOISG 2024 Finals] Field](https://www.luogu.com.cn/problem/P11353)
 
