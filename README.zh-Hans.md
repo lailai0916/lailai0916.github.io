@@ -1,6 +1,6 @@
 <div align="center">
   <h1>lailai's Home</h1>
-  <p><a href="README.md">English</a> | 简体中文</p>
+  <p><a href="README.md">English</a> | <span>简体中文</span></p>
   <p>
     <img src="https://img.shields.io/github/actions/workflow/status/lailai0916/lailai0916.github.io/deploy.yml?style=flat-square" />
     <img src="https://img.shields.io/github/last-commit/lailai0916/lailai0916.github.io?style=flat-square" />
@@ -10,9 +10,9 @@
     <img src="https://img.shields.io/github/license/lailai0916/lailai0916.github.io?style=flat-square" />
   </p>
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://cloud.lailai.one/f/DJetK/preview-dark.zh-Hans.png">
-    <source media="(prefers-color-scheme: light)" srcset="https://cloud.lailai.one/f/MrdIy/preview-light.zh-Hans.png">
-    <img src="https://cloud.lailai.one/f/MrdIy/preview-light.zh-Hans.png">
+    <source media="(prefers-color-scheme: dark)" srcset="https://cloud.lailai.one/f/DJetK/preview-dark.zh-Hans.png" />
+    <source media="(prefers-color-scheme: light)" srcset="https://cloud.lailai.one/f/MrdIy/preview-light.zh-Hans.png" />
+    <img src="https://cloud.lailai.one/f/MrdIy/preview-light.zh-Hans.png" />
   </picture>
 </div>
 
