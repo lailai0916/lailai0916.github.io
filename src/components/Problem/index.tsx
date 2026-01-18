@@ -58,7 +58,7 @@ function GetCode({ id }: { id: string }) {
 function GetSolution({ id }: { id: string }) {
   let mdxModule: any;
   try {
-    mdxModule = require(`@site/src/solution/${id}.md`);
+    mdxModule = require(`@site/blog/solution/${id}.md`);
   } catch {
     return <></>;
   }
@@ -79,7 +79,7 @@ function GetSolution({ id }: { id: string }) {
 export default function Problem({ id }: { id: string }) {
   let mdxModule: any;
   try {
-    mdxModule = require(`@site/docs/problems/${id}/index.md`);
+    mdxModule = require(`@site/src/problems/${id}/index.md`);
   } catch {
     return (
       <Admonition type="warning">
