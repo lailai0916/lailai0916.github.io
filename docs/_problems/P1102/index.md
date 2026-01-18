@@ -1,5 +1,6 @@
-:::info[[洛谷 P1102 A-B 数对](https://www.luogu.com.cn/problem/P1102)]
+---
+title: '洛谷 P1102 A-B 数对'
+link: 'https://www.luogu.com.cn/problem/P1102'
+---
 
 给出一串正整数数列以及一个正整数 $C$，要求计算出所有满足 $A - B = C$ 的数对的个数（不同位置的数字一样的数对算不同的数对）。
-
-:::

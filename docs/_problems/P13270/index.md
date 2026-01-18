@@ -1,7 +1,8 @@
-:::info[[洛谷 P13270 【模板】最小表示法](https://www.luogu.com.cn/problem/P13270)]
+---
+title: '洛谷 P13270 【模板】最小表示法'
+link: 'https://www.luogu.com.cn/problem/P13270'
+---
 
 若长度为 $n$ 的字符串 $s$ 中可以选择一个位置 $i$，使得 $\overline{s_i\cdots s_ns_1\cdots s_{i-1}}=t$，则称 $s$ 与 $t$ **循环同构**。字符串 $s$ 的**最小表示**为与 $s$ 循环同构的所有字符串中字典序最小的字符串。
 
 给定一个长度为 $n$ 的字符串 $s$，请求出 $s$ 的最小表示。
-
-:::

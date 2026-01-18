@@ -1,4 +1,7 @@
-:::info[[洛谷 P12509 【模板】通信题](https://www.luogu.com.cn/problem/P12509)]
+---
+title: '洛谷 P12509 【模板】通信题'
+link: 'https://www.luogu.com.cn/problem/P12509'
+---
 
 这是一道通信题，只支持 C++ 语言。请不要使用 C++14 (GCC 9) 提交。
 
@@ -9,5 +12,3 @@ Bob 想要确定 $S,T$ 字符不同的那个位置。为了达成这一目的，
 具体来说，Alice 可以向 Bob 传递一个整数 $X$，满足 $X \in [0, 2^{20})$。
 
 特别地，如果 $S=T$，Bob 应返回 0。
-
-:::

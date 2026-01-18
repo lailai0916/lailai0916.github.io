@@ -1,7 +1,8 @@
-:::info[[洛谷 P2245 星际导航](https://www.luogu.com.cn/problem/P2245)]
+---
+title: '洛谷 P2245 星际导航'
+link: 'https://www.luogu.com.cn/problem/P2245'
+---
 
 $\text{sideman}$ 做好了回到 $\text{Gliese}$ 星球的硬件准备，但是 $\text{sideman}$ 的导航系统还没有完全设计好。为了方便起见，我们可以认为宇宙是一张有 $N$ 个顶点和 $M$ 条边的带权无向图，顶点表示各个星系，两个星系之间有边就表示两个星系之间可以直航，而边权则是航行的危险程度。
 
 $\text{sideman}$ 现在想把危险程度降到最小，具体地来说，就是对于若干个询问 $(A, B)$，$\text{sideman}$ 想知道从顶点 $A$ 航行到顶点 $B$ 所经过的最危险的边的危险程度值最小可能是多少。作为 $\text{sideman}$ 的同学，你们要帮助 $\text{sideman}$ 返回家园，兼享受安全美妙的宇宙航行。所以这个任务就交给你了。
-
-:::

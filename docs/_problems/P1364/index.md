@@ -1,5 +1,6 @@
-:::info[[洛谷 P1364 医院设置](https://www.luogu.com.cn/problem/P1364)]
+---
+title: '洛谷 P1364 医院设置'
+link: 'https://www.luogu.com.cn/problem/P1364'
+---
 
 给定一张无向图，现在要求在某个结点上建立一个医院，使所有居民所走的路程之和为最小。
-
-:::

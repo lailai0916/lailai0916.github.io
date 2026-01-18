@@ -1,8 +1,9 @@
-:::info[[洛谷 P13825 【模板】线段树 1.5](https://www.luogu.com.cn/problem/P13825)]
+---
+title: '洛谷 P13825 【模板】线段树 1.5'
+link: 'https://www.luogu.com.cn/problem/P13825'
+---
 
 如题，已知一个长度为 $n$ 的数列 $\{a_i\}$（$1 \leq i \leq n$），初始时 $a$ 序列满足 $a_i = i$。你需要进行下面两种操作：
 
 1. 将某区间每一个数加上 $k$。
 2. 求出某区间每一个数的和。
-
-:::

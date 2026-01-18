@@ -1,5 +1,6 @@
-:::info[[洛谷 P1008 [NOIP 1998 普及组] 三连击](https://www.luogu.com.cn/problem/P1008)]
+---
+title: '洛谷 P1008 [NOIP 1998 普及组] 三连击'
+link: 'https://www.luogu.com.cn/problem/P1008'
+---
 
 将 $1,2,\dots,9$ 共 $9$ 个数分成 $3$ 组，分别组成 $3$ 个三位数，且使这 $3$ 个三位数构成 $1:2:3$ 的比例，试求出所有满足条件的 $3$ 个三位数。
-
-:::

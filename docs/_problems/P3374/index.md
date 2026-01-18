@@ -1,8 +1,9 @@
-:::info[[洛谷 P3374 【模板】树状数组 1](https://www.luogu.com.cn/problem/P3374)]
+---
+title: '洛谷 P3374 【模板】树状数组 1'
+link: 'https://www.luogu.com.cn/problem/P3374'
+---
 
 如题，已知一个数列，你需要进行下面两种操作：
 
 - 将某一个数加上 $x$；
 - 求出某区间每一个数的和。
-
-:::

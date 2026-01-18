@@ -1,4 +1,7 @@
-:::info[[洛谷 P1216 [IOI 1994] 数字三角形 Number Triangles](https://www.luogu.com.cn/problem/P1216)]
+---
+title: '洛谷 P1216 [IOI 1994] 数字三角形 Number Triangles'
+link: 'https://www.luogu.com.cn/problem/P1216'
+---
 
 给定一个 $r$ 行的数字三角形（$r \leq 1000$），需要找到一条从最高点到底部任意处结束的路径，使路径经过数字的和最大。每一步可以走到当前点左下方的点或右下方的点。在下面这个示例中，最优路径是 $7 \to 3 \to 8 \to 7 \to 5$。
 
@@ -9,5 +12,3 @@
   2   7   4   4
 4   5   2   6   5
 ```
-
-:::

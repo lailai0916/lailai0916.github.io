@@ -1,5 +1,6 @@
-:::info[[洛谷 P8435 【模板】点双连通分量](https://www.luogu.com.cn/problem/P8435)]
+---
+title: '洛谷 P8435 【模板】点双连通分量'
+link: 'https://www.luogu.com.cn/problem/P8435'
+---
 
 对于一个 $n$ 个节点 $m$ 条无向边的图，请输出其点双连通分量的个数，并且输出每个点双连通分量。
-
-:::

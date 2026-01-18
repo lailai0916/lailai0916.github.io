@@ -1,4 +1,7 @@
-:::info[[洛谷 P5431 【模板】模意义下的乘法逆元 2](https://www.luogu.com.cn/problem/P5431)]
+---
+title: '洛谷 P5431 【模板】模意义下的乘法逆元 2'
+link: 'https://www.luogu.com.cn/problem/P5431'
+---
 
 给定 $n$ 个正整数 $a_i$，求它们在模 $p$ 意义下的乘法逆元。
 
@@ -9,5 +12,3 @@ $$
 $$
 
 答案对 $p$ 取模。
-
-:::

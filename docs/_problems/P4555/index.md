@@ -1,5 +1,6 @@
-:::info[[洛谷 P4555 [国家集训队] 最长双回文串](https://www.luogu.com.cn/problem/P4555)]
+---
+title: '洛谷 P4555 [国家集训队] 最长双回文串'
+link: 'https://www.luogu.com.cn/problem/P4555'
+---
 
 给定长度为 $n$ 的字符串 $S$，求 $S$ 的最长双回文子串 $T$，即可将 $T$ 分为两部分 $X, Y$（$|X|,|Y|\ge1$）且 $X$ 和 $Y$ 都是回文串。
-
-:::

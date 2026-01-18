@@ -10,6 +10,11 @@ export interface ChangelogItem {
 
 export const CHANGELOG_LIST: ChangelogItem[] = [
   {
+    date: '2026-01-18',
+    type: 'changed',
+    content: '优化 <code>&lt;Problem /&gt;</code> 组件标题信息',
+  },
+  {
     date: '2025-12-26',
     type: 'fixed',
     content: 'KaTeX 公式宽度问题',

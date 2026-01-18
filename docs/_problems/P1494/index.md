@@ -1,5 +1,6 @@
-:::info[[洛谷 P1494 [国家集训队] 小 Z 的袜子](https://www.luogu.com.cn/problem/P1494)]
+---
+title: '洛谷 P1494 [国家集训队] 小 Z 的袜子'
+link: 'https://www.luogu.com.cn/problem/P1494'
+---
 
 有一个长度为 $n$ 的序列 $c_i$。现在给出 $m$ 个询问，每次给出两个数 $l,r$，从编号在 $l$ 到 $r$ 之间的数中随机选出两个不同的数，求两个数相等的概率。
-
-:::

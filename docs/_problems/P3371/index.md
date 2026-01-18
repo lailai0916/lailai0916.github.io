@@ -1,5 +1,6 @@
-:::info[[洛谷 P3371 【模板】单源最短路径（弱化版）](https://www.luogu.com.cn/problem/P3371)]
+---
+title: '洛谷 P3371 【模板】单源最短路径（弱化版）'
+link: 'https://www.luogu.com.cn/problem/P3371'
+---
 
 给出一个有向图，请输出从某一点出发到所有点的最短路径长度。
-
-:::

@@ -1,8 +1,9 @@
-:::info[[洛谷 P3372 【模板】线段树 1](https://www.luogu.com.cn/problem/P3372)]
+---
+title: '洛谷 P3372 【模板】线段树 1'
+link: 'https://www.luogu.com.cn/problem/P3372'
+---
 
 如题，已知一个数列 $\{a_i\}$，你需要进行下面两种操作：
 
 1. 将某区间每一个数加上 $k$。
 2. 求出某区间每一个数的和。
-
-:::

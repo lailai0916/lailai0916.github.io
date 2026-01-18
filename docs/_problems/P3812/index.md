@@ -1,5 +1,6 @@
-:::info[[洛谷 P3812 【模板】线性基](https://www.luogu.com.cn/problem/P3812)]
+---
+title: '洛谷 P3812 【模板】线性基'
+link: 'https://www.luogu.com.cn/problem/P3812'
+---
 
 给定 $n$ 个整数（数字可能重复），求在这些数中选取任意个，使得他们的异或和最大。
-
-:::

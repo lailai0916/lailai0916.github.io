@@ -1,4 +1,7 @@
-:::info[[洛谷 P2455 [SDOI2006] 线性方程组](https://www.luogu.com.cn/problem/P2455)]
+---
+title: '洛谷 P2455 [SDOI2006] 线性方程组'
+link: 'https://www.luogu.com.cn/problem/P2455'
+---
 
 已知 $n$ 元线性一次方程组。
 
@@ -7,5 +10,3 @@ $$
 $$
 
 请根据输入的数据，编程输出方程组的解的情况。
-
-:::

@@ -1,6 +1,7 @@
-:::info[[洛谷 P3808 AC 自动机（简单版）](https://www.luogu.com.cn/problem/P3808)]
+---
+title: '洛谷 P3808 AC 自动机（简单版）'
+link: 'https://www.luogu.com.cn/problem/P3808'
+---
 
 给定 $n$ 个模式串 $s_i$ 和一个文本串 $t$，求有多少个不同的模式串在文本串里出现过。
 两个模式串不同当且仅当他们 **编号** 不同。
-
-:::

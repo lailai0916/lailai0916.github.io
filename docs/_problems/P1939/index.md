@@ -1,4 +1,7 @@
-:::info[[洛谷 P1939 矩阵加速（数列）](https://www.luogu.com.cn/problem/P1939)]
+---
+title: '洛谷 P1939 矩阵加速（数列）'
+link: 'https://www.luogu.com.cn/problem/P1939'
+---
 
 已知一个数列 $a$，它满足：
 
@@ -11,5 +14,3 @@ a_x=
 $$
 
 求 $a$ 数列的第 $n$ 项对 $10^9+7$ 取余的值。
-
-:::
