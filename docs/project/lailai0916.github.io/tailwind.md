@@ -274,7 +274,6 @@ const item = {
   height: 100%;
   width: 100%;
   border-radius: 1rem;
-  outline: none;
   text-decoration: none;
   transition: all 0.2s ease-out;
   border: 1px solid var(--ifm-color-emphasis-200);

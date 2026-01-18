@@ -129,7 +129,6 @@
   height: 6px;
   border-radius: 3px;
   background: var(--ifm-color-emphasis-300);
-  outline: none;
   -webkit-appearance: none;
   appearance: none;
 }
@@ -217,10 +216,10 @@
 .presetColorButton {
   width: 32px;
   height: 32px;
-  border: 2px solid var(--ifm-color-emphasis-300);
-  border-radius: 8px;
+  border: 0;
+  border-radius: 50%;
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: transform 0.2s;
 }
 
 .presetColorButton:hover {

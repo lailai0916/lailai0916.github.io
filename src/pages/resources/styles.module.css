@@ -40,13 +40,10 @@
   border: 2px solid var(--ifm-color-emphasis-300);
   color: var(--ifm-font-color-base);
   font-size: 1rem;
-  transition:
-    border-color 0.2s,
-    box-shadow 0.2s;
+  transition: border-color 0.2s;
 }
 
 .searchBar:focus {
-  outline: none;
   border-color: var(--ifm-color-primary);
 }
 
