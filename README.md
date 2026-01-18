@@ -59,7 +59,7 @@ npm start
 
 ## Project Structure
 
-```text
+```bash
 lailai0916.github.io/
 ├── blog/                          # Blog
 │   ├── authors.yml                # Author settings

@@ -8,11 +8,7 @@ import Admonition from '@theme/Admonition';
 import { translate } from '@docusaurus/Translate';
 
 declare const require: any;
-const ctx = require.context(
-  '!!raw-loader!@site/docs/problems',
-  true,
-  /\.cpp$/
-);
+const ctx = require.context('!!raw-loader!@site/docs/problems', true, /\.cpp$/);
 
 function GetCode({ id }: { id: string }) {
   const formatTitle = (p: string) =>

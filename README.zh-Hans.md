@@ -59,7 +59,7 @@ npm start
 
 ## 项目结构
 
-```text
+```bash
 lailai0916.github.io/
 ├── blog/                          # 博客
 │   ├── authors.yml                # 作者配置
