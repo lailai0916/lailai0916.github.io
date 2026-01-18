@@ -200,26 +200,14 @@ SAT 是适定性（Satisfiability）问题的简称。一般形式为 k - 适定
 
 ## 例题
 
-### 洛谷 P2341 [USACO03FALL / HAOI2006] 受欢迎的牛 G
-
 <Problem id="P2341" />
-
-### 洛谷 P8436 【模板】边双连通分量
 
 <Problem id="P8436" />
 
-### 洛谷 P8435 【模板】点双连通分量
-
 <Problem id="P8435" />
-
-### 洛谷 P3387 【模板】缩点
 
 <Problem id="P3387" />
 
-### 洛谷 P3388 【模板】割点（割顶）
-
 <Problem id="P3388" />
-
-### 洛谷 P4782 【模板】2-SAT
 
 <Problem id="P4782" />

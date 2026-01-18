@@ -50,6 +50,4 @@ int main()
 
 ## 例题
 
-### 洛谷 SP1437 PT07Z - Longest path in a tree
-
 <Problem id="SP1437" />

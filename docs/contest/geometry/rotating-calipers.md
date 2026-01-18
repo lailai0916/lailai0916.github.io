@@ -126,6 +126,4 @@ int main()
 
 ## 例题
 
-### 洛谷 P1452 【模板】旋转卡壳 | [USACO03FALL] Beauty Contest G
-
 <Problem id="P1452" />

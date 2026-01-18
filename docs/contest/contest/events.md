@@ -77,15 +77,11 @@ Codeforces 同时提供另外一种赛制，称作扩展 ICPC（Extended ICPC �
 
 :::
 
-#### 洛谷 P1001 A+B Problem
-
 <Problem id="P1001" />
 
 ### 交互题
 
 交互题近年来没有在省选以下的比赛中出现。
-
-#### 洛谷 P1733 猜数（IO交互版）
 
 <Problem id="P1733" />
 
@@ -93,16 +89,8 @@ Codeforces 同时提供另外一种赛制，称作扩展 ICPC（Extended ICPC �
 
 通信题是需要两个程序进行通信，合作完成某项任务的题目。第一个程序接收问题的输入，并产生某些输出；第二个程序的输入会与第一个的输出相关。
 
-#### 洛谷 P12509 【模板】通信题
-
 <Problem id="P12509" />
 
-#### UOJ #178. 新年的贺电
-
 <Problem id="UOJ178" />
-
-### 自产生程序（Quine）
-
-#### LibreOJ #4. Quine
 
 <Problem id="LOJ4" />

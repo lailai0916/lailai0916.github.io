@@ -34,6 +34,4 @@ struct ST
 
 ## 例题
 
-### 洛谷 P3865 【模板】ST 表 && RMQ 问题
-
 <Problem id="P3865" />

@@ -118,10 +118,6 @@ int main()
 
 ## 例题
 
-### 洛谷 B3715 分解质因子 2
-
 <Problem id="B3715" />
-
-### 洛谷 P4718 【模板】Pollard-Rho
 
 <Problem id="P4718" />

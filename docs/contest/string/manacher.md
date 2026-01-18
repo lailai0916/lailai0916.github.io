@@ -32,10 +32,6 @@ int manacher(string s)
 
 ## 例题
 
-### 洛谷 P3805 【模板】manacher
-
 <Problem id="P3805" />
-
-### 洛谷 P4555 [国家集训队] 最长双回文串
 
 <Problem id="P4555" />

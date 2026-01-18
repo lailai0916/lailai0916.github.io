@@ -38,26 +38,14 @@ int merge(int x,int y)
 
 ## 例题
 
-### 洛谷 P3378 【模板】堆
-
 <Problem id="P3378" />
-
-### 洛谷 P3377 【模板】左偏树/可并堆
 
 <Problem id="P3377" />
 
-### 洛谷 P11266 【模板】可并堆 2
-
 <Problem id="P11266" />
-
-### 洛谷 P2713 罗马游戏
 
 <Problem id="P2713" />
 
-### 洛谷 P1456 Monkey King
-
 <Problem id="P1456" />
-
-### 洛谷 P10641 BZOJ3252 攻略
 
 <Problem id="P10641" />

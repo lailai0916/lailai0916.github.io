@@ -210,10 +210,6 @@ void fmt_and(ll *a,int n,int type)
 
 ## 例题
 
-### 洛谷 P4717 【模板】快速莫比乌斯 / 沃尔什变换 (FMT / FWT)
-
 <Problem id="P4717" />
-
-### 洛谷 P6097 【模板】子集卷积
 
 <Problem id="P6097" />

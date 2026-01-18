@@ -53,14 +53,8 @@ for(int i=1;i<=n;i++)
 
 ## 例题
 
-### 洛谷 B3637 最长上升子序列
-
 <Problem id="B3637" />
 
-### 洛谷 P1216 [IOI 1994] 数字三角形 Number Triangles
-
 <Problem id="P1216" />
-
-### 洛谷 P2758 编辑距离
 
 <Problem id="P2758" />

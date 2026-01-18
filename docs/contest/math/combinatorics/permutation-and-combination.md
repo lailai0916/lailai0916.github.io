@@ -72,6 +72,4 @@ ll lucas(ll n,ll m)
 
 ## 例题
 
-### 洛谷 P3807 【模板】卢卡斯定理/Lucas 定理
-
 <Problem id="P3807" />

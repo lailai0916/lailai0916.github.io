@@ -31,6 +31,4 @@ ll lagrange(int n,int k)
 
 ## 例题
 
-### 洛谷 P4781 【模板】拉格朗日插值
-
 <Problem id="P4781" />

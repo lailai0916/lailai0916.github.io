@@ -46,6 +46,4 @@ struct Trie
 
 ## 例题
 
-### 洛谷 P8306 【模板】字典树
-
 <Problem id="P8306" />

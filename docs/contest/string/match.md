@@ -55,10 +55,6 @@ int RK(string s,string t)
 
 ## 例题
 
-### 洛谷 P3375 【模板】KMP
-
 <Problem id="P3375" />
-
-### 洛谷 P3618 误会
 
 <Problem id="P3618" />

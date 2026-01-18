@@ -66,10 +66,6 @@ void fft(Comp *f,int n,int type)
 
 ## 例题
 
-### 洛谷 P3803 【模板】多项式乘法（FFT）
-
 <Problem id="P3803" />
-
-### 洛谷 P1919 【模板】高精度乘法 | A\*B Problem 升级版
 
 <Problem id="P1919" />

@@ -42,6 +42,4 @@ void build(int k)
 
 ## 例题
 
-### 洛谷 P2495 [SDOI2011] 消耗战 /【模板】虚树
-
 <Problem id="P2495" />

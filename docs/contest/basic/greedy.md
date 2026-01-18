@@ -17,10 +17,6 @@
 
 ## 例题
 
-### 洛谷 P1209 [USACO1.3] 修理牛棚 Barn Repair
-
 <Problem id="P1209" />
-
-### 洛谷 P1792 [国家集训队] 种树
 
 <Problem id="P1792" />

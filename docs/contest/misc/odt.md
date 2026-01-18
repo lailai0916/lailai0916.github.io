@@ -92,6 +92,4 @@ ll sum(int l,int r)
 
 ## 例题
 
-### 洛谷 CF896C Willem, Chtholly and Seniorious
-
 <Problem id="CF896C" />

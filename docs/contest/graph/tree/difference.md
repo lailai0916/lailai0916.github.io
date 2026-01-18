@@ -6,6 +6,4 @@
 
 ## 例题
 
-### 洛谷 P3128 [USACO15DEC] Max Flow P
-
 <Problem id="P3128" />

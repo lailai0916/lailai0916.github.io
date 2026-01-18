@@ -194,10 +194,6 @@ void sieve()
 
 ## 例题
 
-### 洛谷 P3383 【模板】线性筛素数
-
 <Problem id="P3383" />
-
-### 洛谷 P1865 A % B Problem
 
 <Problem id="P1865" />

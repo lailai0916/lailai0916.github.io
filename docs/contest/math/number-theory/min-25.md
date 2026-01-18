@@ -6,10 +6,6 @@
 
 ## 例题
 
-### 洛谷 P5325 【模板】Min_25 筛
-
 <Problem id="P5325" />
-
-### 洛谷 P7884 【模板】Meissel-Lehmer
 
 <Problem id="P7884" />

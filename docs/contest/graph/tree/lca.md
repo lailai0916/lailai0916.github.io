@@ -47,6 +47,4 @@ int lca(int u,int v)
 
 ## 例题
 
-### 洛谷 P3379 【模板】最近公共祖先（LCA）
-
 <Problem id="P3379" />

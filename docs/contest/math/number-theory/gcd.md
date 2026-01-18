@@ -80,10 +80,6 @@ ll exgcd(ll a,ll b,ll &x,ll &y)
 
 ## 例题
 
-### 洛谷 P5656 【模板】二元一次不定方程 (exgcd)
-
 <Problem id="P5656" />
-
-### 洛谷 P1082 [NOIP 2012 提高组] 同余方程
 
 <Problem id="P1082" />

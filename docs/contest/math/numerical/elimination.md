@@ -213,18 +213,10 @@ int main()
 
 ## 例题
 
-### 洛谷 P3389 【模板】高斯消元法
-
 <Problem id="P3389" />
-
-### 洛谷 P2455 [SDOI2006] 线性方程组
 
 <Problem id="P2455" />
 
-### 洛谷 P7112 【模板】行列式求值
-
 <Problem id="P7112" />
-
-### POJ 3532 Resistance
 
 <Problem id="POJ3532" />

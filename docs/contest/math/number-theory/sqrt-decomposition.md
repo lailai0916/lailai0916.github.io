@@ -16,6 +16,4 @@ for(ll l=1,r;l<=n;l=r+1)
 
 ## 例题
 
-### 洛谷 UVA11526 H(n)
-
 <Problem id="UVA11526" />

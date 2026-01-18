@@ -12,10 +12,6 @@
 
 ## 例题
 
-### 洛谷 P1217 [USACO1.5] 回文质数 Prime Palindromes
-
 <Problem id="P1217" />
-
-### 洛谷 P2241 统计方形（数据加强版）
 
 <Problem id="P2241" />

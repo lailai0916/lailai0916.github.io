@@ -88,6 +88,4 @@ namespace IO
 
 ## 例题
 
-### 洛谷 P10815 【模板】快速读入
-
 <Problem id="P10815" />

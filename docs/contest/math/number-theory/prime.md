@@ -91,6 +91,4 @@ bool prime(int n,int k)
 
 ## 例题
 
-### 洛谷 P1217 [USACO1.5] 回文质数 Prime Palindromes
-
 <Problem id="P1217" />

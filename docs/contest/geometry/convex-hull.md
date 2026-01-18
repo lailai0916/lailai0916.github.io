@@ -106,18 +106,10 @@ int main()
 
 ## 例题
 
-### 洛谷 P2742 [USACO5.1] 圈奶牛Fencing the Cows /【模板】二维凸包
-
 <Problem id="P2742" />
-
-### 洛谷 P2116 城墙
 
 <Problem id="P2116" />
 
-### 洛谷 P3829 [SHOI2012] 信用卡凸包
-
 <Problem id="P3829" />
-
-### 洛谷 UVA1303 Wall
 
 <Problem id="UVA1303" />

@@ -45,18 +45,10 @@ void dfs2(int u,int t)
 
 ## 例题
 
-### 洛谷 P3384 【模板】重链剖分 / 树链剖分
-
 <Problem id="P3384" />
-
-### 洛谷 P5903 【模板】树上 K 级祖先
 
 <Problem id="P5903" />
 
-### 洛谷 P3379 【模板】最近公共祖先（LCA）
-
 <Problem id="P3379" />
-
-### 洛谷 P2590 [ZJOI2008] 树的统计
 
 <Problem id="P2590" />

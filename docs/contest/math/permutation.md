@@ -24,10 +24,6 @@ for(int i=n;i>=1;i--)
 
 ## 例题
 
-### 洛谷 P5367 【模板】康托展开
-
 <Problem id="P5367" />
-
-### 洛谷 UVA11525 Permutation
 
 <Problem id="UVA11525" />

@@ -68,6 +68,4 @@ ll mul(ll a,ll b,ll mod)
 
 ## 例题
 
-### 洛谷 P1226 【模板】快速幂
-
 <Problem id="P1226" />

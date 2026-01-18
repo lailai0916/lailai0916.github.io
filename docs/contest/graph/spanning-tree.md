@@ -84,18 +84,10 @@ int kruskal(int n)
 
 ## 例题
 
-### 洛谷 P3366 【模板】最小生成树
-
 <Problem id="P3366" />
-
-### 洛谷 P1195 口袋的天空
 
 <Problem id="P1195" />
 
-### 洛谷 P1967 [NOIP 2013 提高组] 货车运输
-
 <Problem id="P1967" />
-
-### 洛谷 P2245 星际导航
 
 <Problem id="P2245" />
