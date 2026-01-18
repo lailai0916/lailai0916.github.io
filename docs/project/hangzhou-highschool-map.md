@@ -5,6 +5,7 @@
 ## 参考资料
 
 - [Mapbox](https://www.mapbox.com)
+- [OpenStreetMap](https://www.openstreetmap.org)
 
 ## 项目链接
 

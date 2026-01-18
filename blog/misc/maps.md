@@ -11,7 +11,6 @@ tags: [misc, resource]
 
 ## 参考资料
 
-- [OpenStreetMap](https://www.openstreetmap.org)
 - [标准地图服务系统 - 自然资源部](http://bzdt.ch.mnr.gov.cn/index.html)
 
 ## 世界地图
