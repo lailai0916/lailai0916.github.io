@@ -45,6 +45,8 @@
 <Tabs>
 <TabItem value="Example 1">
 
+计算时间复杂度：
+
 ```cpp
 for(int i=1;i<n;i++)
 {
@@ -55,10 +57,17 @@ for(int i=1;i<n;i++)
 }
 ```
 
+<details>
+<summary>题解</summary>
+
 时间复杂度为 $\Theta(n^2)$。
+
+</details>
 
 </TabItem>
 <TabItem value="Example 2">
+
+计算时间复杂度：
 
 ```cpp
 for(int i=1;i<=n;i++)
@@ -70,10 +79,17 @@ for(int i=1;i<=n;i++)
 }
 ```
 
-时间复杂度为 $\Theta\left(\sum_{i=1}^{n} \left\lfloor \frac{n}{i} \right\rfloor\right)=\Theta(n\log n)$。（[调和级数](https://zh.wikipedia.org/zh-cn/调和级数)）
+<details>
+<summary>题解</summary>
+
+时间复杂度为 $\Theta\left(\sum_{i=1}^{n}\left\lfloor\frac{n}{i} \right\rfloor\right)=\Theta(n\log n)$。（[调和级数](https://zh.wikipedia.org/zh-cn/调和级数)）
+
+</details>
 
 </TabItem>
 <TabItem value="Example 3">
+
+计算时间复杂度：
 
 ```cpp
 for(int i=1;i<=n;i++)
@@ -88,7 +104,12 @@ for(int i=1;i<=n;i++)
 }
 ```
 
+<details>
+<summary>题解</summary>
+
 时间复杂度为 $\Theta(n^2)$。
+
+</details>
 
 </TabItem>
 </Tabs>
@@ -123,29 +144,50 @@ $$
 <Tabs>
 <TabItem value="Example 1">
 
+计算时间复杂度：
+
 $$
 T(n)=2T\left(\frac{n}{2}\right)+\Theta(1)
 $$
 
+<details>
+<summary>题解</summary>
+
 时间复杂度为 $\Theta(n)$。
+
+</details>
 
 </TabItem>
 <TabItem value="Example 2">
+
+计算时间复杂度：
 
 $$
 T(n)=2T\left(\frac{n}{2}\right)+\Theta(n)
 $$
 
+<details>
+<summary>题解</summary>
+
 时间复杂度为 $\Theta(n\log n)$。
+
+</details>
 
 </TabItem>
 <TabItem value="Example 3">
+
+计算时间复杂度：
 
 $$
 T(n)=2T\left(\frac{n}{2}\right)+\Theta(n\log n)
 $$
 
+<details>
+<summary>题解</summary>
+
 时间复杂度为 $\Theta(n\log^2 n)$。
+
+</details>
 
 </TabItem>
 </Tabs>
