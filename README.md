@@ -9,8 +9,6 @@
     <img src="https://img.shields.io/badge/code_style-prettier-ff69b4?style=flat-square" />
     <img src="https://img.shields.io/github/license/lailai0916/lailai0916.github.io?style=flat-square" />
   </p>
-  <img src="https://cloud.lailai.one/f/BQPuA/preview-light.png#gh-light-mode-only" />
-  <img src="https://cloud.lailai.one/f/Wr3he/preview-dark.png#gh-dark-mode-only" />
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="https://cloud.lailai.one/f/Wr3he/preview-dark.png" />
     <source media="(prefers-color-scheme: light)" srcset="https://cloud.lailai.one/f/BQPuA/preview-light.png" />
