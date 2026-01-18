@@ -8,7 +8,11 @@ import Admonition from '@theme/Admonition';
 import { translate } from '@docusaurus/Translate';
 
 declare const require: any;
-const ctx = require.context('!!raw-loader!@site/src/problems', true, /\.cpp$/);
+const ctx = require.context(
+  '!!raw-loader!@site/docs/contest/problems',
+  true,
+  /\.cpp$/
+);
 
 function GetCode({ id }: { id: string }) {
   const formatTitle = (p: string) =>
@@ -79,7 +83,7 @@ function GetSolution({ id }: { id: string }) {
 export default function Problem({ id }: { id: string }) {
   let mdxModule: any;
   try {
-    mdxModule = require(`@site/src/problems/${id}/index.md`);
+    mdxModule = require(`@site/docs/contest/problems/${id}/index.md`);
   } catch {
     return (
       <Admonition type="warning">
