@@ -38,6 +38,7 @@ const config: Config = {
       {
         docs: {
           sidebarPath: './sidebars.ts',
+          exclude: ['**/problems/**'],
 
           // showLastUpdateAuthor: true,
           showLastUpdateTime: true,
