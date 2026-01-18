@@ -101,16 +101,13 @@ export default function Problem({ id }: { id: string }) {
   const { title = id, link } = frontMatter;
 
   return (
-    <>
-      <h3>{title}</h3>
-      <Admonition
-        type="example"
-        title={link ? <Link href={link}>{title}</Link> : title}
-      >
-        {React.createElement(MDX)}
-        <GetSolution id={id} />
-        <GetCode id={id} />
-      </Admonition>
-    </>
+    <Admonition
+      type="example"
+      title={link ? <Link href={link}>{title}</Link> : title}
+    >
+      {React.createElement(MDX)}
+      <GetSolution id={id} />
+      <GetCode id={id} />
+    </Admonition>
   );
 }
