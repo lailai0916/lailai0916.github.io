@@ -188,13 +188,14 @@
   align-items: center;
 }
 
-.textcolorInput {
+.textColorInput {
   flex: 1;
   padding: 0.5rem;
   border: 2px solid var(--ifm-color-emphasis-300);
   border-radius: 8px;
   font-family: monospace;
   font-size: 0.9rem;
+  outline: none;
 }
 
 .colorPickerInput {

@@ -45,6 +45,7 @@
 
 .searchBar:focus {
   border-color: var(--ifm-color-primary);
+  outline: none;
 }
 
 .searchIcon {
