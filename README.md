@@ -59,6 +59,34 @@ npm start
 
 ## Project Structure
 
+```text
+lailai0916.github.io/
+├── blog/                          # Blog
+│   ├── authors.yml                # Author settings
+│   └── tags.yml                   # Tag settings
+├── docs/                          # Documentation
+├── i18n/                          # Internationalization
+├── src/                           # Source code
+│   ├── components/                # Custom components
+│   ├── css/                       # Custom styles
+│   ├── data/                      # Data files
+│   ├── pages/                     # Custom pages
+│   ├── theme/                     # Custom theme
+│   └── utils/                     # Utility functions
+├── static/                        # Static assets
+│   ├── img/                       # Image files
+│   ├── json/                      # JSON files
+│   └── CNAME                      # Domain settings
+├── docusaurus.config.ts           # Docusaurus config
+├── LICENSE                        # Code License
+├── LICENSE-docs                   # Docs License
+├── package-lock.json              # Dependency lock file
+├── package.json                   # Project dependencies
+├── sidebars.ts                    # Sidebar config
+├── tailwind.config.ts             # Tailwind CSS config
+└── tsconfig.json                  # TypeScript config
+```
+
 ```bash
 lailai0916.github.io/
 ├── blog/                          # Blog
