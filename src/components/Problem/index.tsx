@@ -9,7 +9,7 @@ import { translate } from '@docusaurus/Translate';
 
 declare const require: any;
 const ctx = require.context(
-  '!!raw-loader!@site/docs/_problems',
+  '!!raw-loader!@site/docs/problems',
   true,
   /\.cpp$/
 );
@@ -83,7 +83,7 @@ function GetSolution({ id }: { id: string }) {
 export default function Problem({ id }: { id: string }) {
   let mdxModule: any;
   try {
-    mdxModule = require(`@site/docs/_problems/${id}/index.md`);
+    mdxModule = require(`@site/docs/problems/${id}/index.md`);
   } catch {
     return (
       <Admonition type="warning">
