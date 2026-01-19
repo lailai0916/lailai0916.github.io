@@ -2,32 +2,31 @@
 using namespace std;
 
 using ll=long long;
-const int N=15;
 tuple<ll,ll,ll> exgcd(ll a,ll b)
 {
 	if(!b)return {a,1,0};
 	auto [g,x,y]=exgcd(b,a%b);
 	return {g,y,x-a/b*y};
 }
-ll a[N],b[N];
 int main()
 {
 	ios::sync_with_stdio(false);
 	cin.tie(nullptr);
 	int n;
 	cin>>n;
+	vector<pair<ll,ll>> a(n);
 	__int128 sum=1;
-	for(int i=1;i<=n;i++)
+	for(auto &[u,v]:a)
 	{
-		cin>>a[i]>>b[i];
-		sum*=a[i];
+		cin>>u>>v;
+		sum*=u;
 	}
 	__int128 ans=0;
-	for(int i=1;i<=n;i++)
+	for(auto [u,v]:a)
 	{
-		ll k=sum/a[i];
-		auto [g,x,y]=exgcd(k,a[i]);
-		ans=(ans+k*x%sum*b[i]%sum+sum)%sum;
+		ll k=sum/u;
+		auto [g,x,y]=exgcd(k,u);
+		ans=(ans+k*x%sum*v%sum+sum)%sum;
 	}
 	cout<<ll(ans)<<'\n';
 	return 0;
