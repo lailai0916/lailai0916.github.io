@@ -1,5 +1,6 @@
 .debug div {
   outline: 1px solid red;
+  /* filter: grayscale(100%); */
 }
 
 html,
