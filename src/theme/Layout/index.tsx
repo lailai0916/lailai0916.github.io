@@ -31,7 +31,7 @@ export default function Layout(props: Props): ReactNode {
   useKeyboardNavigation();
 
   return (
-    <div className={clsx(debugMode && styles.debug)}>
+    <div className={clsx(debugMode && styles.debugMode)}>
       <LayoutProvider>
         <PageMetadata title={title} description={description} />
 

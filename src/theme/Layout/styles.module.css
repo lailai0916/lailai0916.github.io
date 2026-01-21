@@ -1,7 +1,10 @@
-.debug div {
+.debugMode div {
   outline: 1px solid red;
-  /* filter: grayscale(100%); */
 }
+
+/* .grayMode {
+  filter: grayscale(100%);
+} */
 
 html,
 body {
