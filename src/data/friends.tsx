@@ -10,7 +10,7 @@ Example:
 
 export interface FriendItem {
   title: string;
-  description: string;
+  description?: string;
   href: string;
   avatar: string;
 }
@@ -72,7 +72,6 @@ export const FRIEND_LIST: FriendItem[] = [
   },
   {
     title: '0513DTY',
-    description: '',
     href: 'https://www.luogu.com.cn/user/1031108',
     avatar: 'https://cdn.luogu.com.cn/upload/usericon/1031108.png',
   },
@@ -84,7 +83,6 @@ export const FRIEND_LIST: FriendItem[] = [
   },
   {
     title: 'Jasonshan10',
-    description: '',
     href: 'https://www.cnblogs.com/Jasonshan10',
     avatar: 'https://q1.qlogo.cn/g?b=qq&nk=342200890&s=640',
   },

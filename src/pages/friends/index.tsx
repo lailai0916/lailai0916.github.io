@@ -54,7 +54,9 @@ function FriendCard({ friend }: { friend: FriendItem }) {
           </div>
           <div className={styles.friendCardInfo}>
             <h3 className={styles.friendCardTitle}>{friend.title}</h3>
-            <p className={styles.friendCardDescription}>{friend.description}</p>
+            <p className={styles.friendCardDescription}>
+              {friend.description ?? friend.href}
+            </p>
           </div>
         </div>
       </div>
