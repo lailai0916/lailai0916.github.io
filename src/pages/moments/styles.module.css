@@ -1,0 +1,16 @@
+.headerSection {
+  background-color: var(--ifm-color-primary);
+  color: #ffffff;
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+.title {
+  font-size: 2rem;
+  margin: 0;
+}
+
+.description {
+  opacity: 0.9;
+  margin: 0;
+}
