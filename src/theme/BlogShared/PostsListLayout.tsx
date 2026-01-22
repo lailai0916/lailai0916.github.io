@@ -98,8 +98,28 @@ function PostCard({ item }) {
         )}
         {status === 'success' && (
           <>
-            <IconData icon="lucide:users">{analytics.visitors}</IconData>
-            <IconData icon="lucide:eye">{analytics.pageviews}</IconData>
+            <IconData icon="lucide:users">
+              {translate(
+                {
+                  id: 'blog.postcard.visitorCount',
+                  message: '{visitorCount} visitors',
+                },
+                {
+                  visitorCount: analytics.visitors,
+                }
+              )}
+            </IconData>
+            <IconData icon="lucide:eye">
+              {translate(
+                {
+                  id: 'blog.postcard.viewCount',
+                  message: '{viewCount} views',
+                },
+                {
+                  viewCount: analytics.pageviews,
+                }
+              )}
+            </IconData>
           </>
         )}
         {metadata.tags?.length > 0 && (

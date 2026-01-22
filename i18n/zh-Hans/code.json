@@ -970,6 +970,12 @@
   "blog.postcard.readingTime": {
     "message": "{readingTime} 分钟"
   },
+  "blog.postcard.visitorCount": {
+    "message": "{visitorCount} 访客"
+  },
+  "blog.postcard.viewCount": {
+    "message": "{viewCount} 浏览"
+  },
   "blog.sidebar.toc.title": {
     "message": "目录"
   },
