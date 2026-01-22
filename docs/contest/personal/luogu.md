@@ -57,11 +57,11 @@
 
 ## 参考资料
 
-- [加法 - 维基百科](https://zh.wikipedia.org/zh-cn/加法)
+- [Addition - Wikipedia](https://en.wikipedia.org/wiki/Addition)
 
 ## 题意简述
 
-给定两个整数 $a,b$，求它们的和。（$|a|,|b| \le {10}^9$）
+给定两个整数 $a,b$，求它们的和。（$|a|,|b|\le 10^9$）
 
 ## 基础知识
 
@@ -98,11 +98,11 @@ int main()
 
 <h2>参考资料</h2>
 
-- [加法 - 维基百科](https://zh.wikipedia.org/zh-cn/加法)
+- [Addition - Wikipedia](https://en.wikipedia.org/wiki/Addition)
 
 <h2>题意简述</h2>
 
-给定两个整数 $a,b$，求它们的和。（$|a|,|b| \le {10}^9$）
+给定两个整数 $a,b$，求它们的和。（$|a|,|b|\le 10^9$）
 
 <h2>基础知识</h2>
 
