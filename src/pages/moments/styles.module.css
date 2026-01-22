@@ -23,3 +23,8 @@
 .hr {
   margin: 0.5rem 0;
 }
+
+.momentMeta {
+  color: var(--ifm-color-emphasis-700);
+  font-size: 0.9rem;
+}
