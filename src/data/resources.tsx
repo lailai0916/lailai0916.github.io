@@ -695,6 +695,11 @@ export const RESOURCE_LIST: ResourceCategoryItem[] = [
         href: 'https://www.bilibili.com',
         description: '中国年轻人文化社区',
       },
+      {
+        title: 'Polymarket',
+        description: '市场预测平台',
+        href: 'https://polymarket.com',
+      },
     ],
   },
   {
