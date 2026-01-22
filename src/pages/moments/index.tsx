@@ -17,10 +17,7 @@ export default function moments() {
       </Card>
       {MOMENT_LIST.map((moment) => (
         <Card key={moment.content}>
-          <span
-            className={styles.moment}
-            dangerouslySetInnerHTML={{ __html: moment.content }}
-          />
+          <span dangerouslySetInnerHTML={{ __html: moment.content }} />
           <hr className={styles.hr} />
           <span>
             {new Date(moment.date).toLocaleDateString('en-US', {
