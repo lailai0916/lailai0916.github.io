@@ -6,7 +6,7 @@ export interface MomentItem {
 
 export const MOMENT_LIST: MomentItem[] = [
   {
-    date: '2025-01-15T10:30:00',
-    content: 'This is a moment.',
+    date: '2026-01-22T10:30:00',
+    content: 'Hello, World!',
   },
 ];
