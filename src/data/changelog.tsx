@@ -121,6 +121,11 @@ export const CHANGELOG_LIST: ChangelogItem[] = [
     content: '<b>Google Analytics</b> 分析',
   },
   {
+    date: '2024-11-05',
+    type: 'added',
+    content: '<b>Giscus</b> 评论',
+  },
+  {
     date: '2024-10-17',
     type: 'added',
     content: '网站建立',

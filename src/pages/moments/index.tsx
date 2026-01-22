@@ -16,7 +16,9 @@ export default function moments() {
         </div>
       </Card>
       {MOMENT_LIST.map((moment) => (
-        <Card key={moment.content}>{moment.content}</Card>
+        <Card key={moment.content}>
+          <div>{moment.content}</div>
+        </Card>
       ))}
     </BlogScaffold>
   );
