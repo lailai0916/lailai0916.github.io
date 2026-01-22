@@ -11,6 +11,11 @@
 }
 
 .description {
+  font-weight: 700;
   opacity: 0.9;
   margin: 0;
+}
+
+.hr {
+  margin: 0.5rem 0;
 }

@@ -17,7 +17,18 @@ export default function moments() {
       </Card>
       {MOMENT_LIST.map((moment) => (
         <Card key={moment.content}>
-          <div>{moment.content}</div>
+          <span
+            className={styles.moment}
+            dangerouslySetInnerHTML={{ __html: moment.content }}
+          />
+          <hr className={styles.hr} />
+          <span>
+            {new Date(moment.date).toLocaleDateString('en-US', {
+              year: 'numeric',
+              month: 'long',
+              day: 'numeric',
+            })}
+          </span>
         </Card>
       ))}
     </BlogScaffold>
