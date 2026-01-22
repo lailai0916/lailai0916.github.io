@@ -11,7 +11,7 @@
 
 ### 文件
 
-联赛文件模板：[name.zip](https://cloud.lailai.one/s/DOT3)
+联赛文件模板下载：[name.zip](https://cloud.lailai.one/s/DOT3)
 
 ### 框架
 

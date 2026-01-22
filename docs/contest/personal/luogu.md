@@ -211,88 +211,66 @@ int main()
 
 我搬运了 **新加坡全国信息学奥林匹克竞赛**（Singapore National Olympiad in Informatics，NOISG）的 $7$ 场比赛 $30$ 道题目。
 
-<GitHub repo="noisg/sg_noi_archive" />
-
-#### NOISG 搬题表
-
-| 年份 / 后缀 |                       (null)                        |                       Qualification                        |                        Prelim                         |                       Finals                        | Practice / Prelim Practice |
-| :---------: | :-------------------------------------------------: | :--------------------------------------------------------: | :---------------------------------------------------: | :-------------------------------------------------: | :------------------------: |
-|    1998     |                       待搬运️                        |                             –                              |                           –                           |                          –                          |             –              |
-|    1999     |                       待搬运️                        |                             –                              |                           –                           |                          –                          |             –              |
-|    2000     |                       待搬运️                        |                             –                              |                           –                           |                          –                          |             –              |
-|    2001     |                       待搬运️                        |                             –                              |                           –                           |                          –                          |             –              |
-|    2002     |                       待搬运️                        |                             –                              |                           –                           |                          –                          |             –              |
-|    2003     |                       待搬运️                        |                             –                              |                           –                           |                          –                          |             –              |
-|    2004     |                       待搬运️                        |                             –                              |                           –                           |                          –                          |             –              |
-|    2005     |                       待搬运️                        |                           待搬运️                           |                           –                           |                          –                          |             –              |
-|    2006     |                       待搬运️                        |                           待搬运️                           |                           –                           |                          –                          |             –              |
-|    2007     |                       待搬运️                        |                             –                              |                           –                           |                          –                          |             –              |
-|    2008     |                       待搬运️                        |                             –                              |                           –                           |                          –                          |             –              |
-|    2009     |                       待搬运️                        |                             –                              |                           –                           |                          –                          |             –              |
-|    2010     |                       待搬运️                        |                             –                              |                           –                           |                          –                          |             –              |
-|    2011     |                       待搬运️                        |                             –                              |                           –                           |                          –                          |             –              |
-|    2012     |                       待搬运️                        |                             –                              |                           –                           |                          –                          |             –              |
-|    2013     |                       待搬运️                        |                             –                              |                           –                           |                          –                          |             –              |
-|    2014     |                       待搬运️                        |                             –                              |                           –                           |                          –                          |             –              |
-|    2015     |                       待搬运                        |                             –                              |                           –                           |                          –                          |             –              |
-|    2016     |   [@chen_zhe](https://www.luogu.com.cn/user/8457)   |                             –                              |                           –                           |                          –                          |             –              |
-|    2017     |   [677609](https://www.luogu.com.cn/user/677609)    |                             –                              |                           –                           |                          –                          |             –              |
-|    2018     | [@Shunpower](https://www.luogu.com.cn/user/399150)  |                             –                              |  [@ToastBread](https://www.luogu.com.cn/user/545809)  |                          –                          |           待搬运️           |
-|    2019     | [@lailai0916](https://www.luogu.com.cn/user/455474) |                             –                              |  [@ToastBread](https://www.luogu.com.cn/user/545809)  |                          –                          |             –              |
-|    2020     |                          –                          |    [@lailai0916](https://www.luogu.com.cn/user/455474)     |  [@lailai0916](https://www.luogu.com.cn/user/455474)  | [@lailai0916](https://www.luogu.com.cn/user/455474) |             –              |
-|    2021     |                          –                          | [@Mortidesperatslav](https://www.luogu.com.cn/user/482610) |                           –                           | [@lailai0916](https://www.luogu.com.cn/user/455474) |             –              |
-|    2022     |                          –                          |    [@lailai0916](https://www.luogu.com.cn/user/455474)     |                           –                           | [@Eason_cyx](https://www.luogu.com.cn/user/741244)  |             –              |
-|    2023     |                          –                          |     [@Eason_cyx](https://www.luogu.com.cn/user/741244)     |                           –                           | [@StayAlone](https://www.luogu.com.cn/user/409236)  |             –              |
-|    2024     |                          –                          |                             –                              |  [@Eason_cyx](https://www.luogu.com.cn/user/741244)   | [@lailai0916](https://www.luogu.com.cn/user/455474) |             –              |
-|    2025     |                          –                          |                             –                              | [@Starrykiller](https://www.luogu.com.cn/user/235125) |   [@Milmon](https://www.luogu.com.cn/user/234641)   |             –              |
-
-#### NOISG 2022 Qualification
-
 - [洛谷 P11293 [NOISG 2022 Qualification] L-Board](https://www.luogu.com.cn/problem/P11293)
 - [洛谷 P11294 [NOISG 2022 Qualification] Tree Cutting](https://www.luogu.com.cn/problem/P11294)
 - [洛谷 P11295 [NOISG 2022 Qualification] Dragonfly](https://www.luogu.com.cn/problem/P11295)
-
-#### NOISG 2021 Finals
-
 - [洛谷 P11299 [NOISG 2021 Finals] Fraud](https://www.luogu.com.cn/problem/P11299)
 - [洛谷 P11300 [NOISG 2021 Finals] Archaeologist](https://www.luogu.com.cn/problem/P11300)
 - [洛谷 P11301 [NOISG 2021 Finals] Password](https://www.luogu.com.cn/problem/P11301)
 - [洛谷 P11302 [NOISG 2021 Finals] Tiles](https://www.luogu.com.cn/problem/P11302)
 - [洛谷 P11303 [NOISG 2021 Finals] Pond](https://www.luogu.com.cn/problem/P11303)
-
-#### NOISG 2020 Qualification
-
 - [洛谷 P11319 [NOISG 2020 Qualification] Cryptography](https://www.luogu.com.cn/problem/P11319)
 - [洛谷 P11320 [NOISG 2020 Qualification] Fuel Station](https://www.luogu.com.cn/problem/P11320)
 - [洛谷 P11321 [NOISG 2020 Qualification] Relay Marathon](https://www.luogu.com.cn/problem/P11321)
 - [洛谷 P11322 [NOISG 2020 Qualification] Firefighting](https://www.luogu.com.cn/problem/P11322)
-
-#### NOISG 2020 Finals
-
 - [洛谷 P11332 [NOISG 2020 Finals] Labels](https://www.luogu.com.cn/problem/P11332)
 - [洛谷 P11333 [NOISG 2020 Finals] Discharging](https://www.luogu.com.cn/problem/P11333)
 - [洛谷 P11334 [NOISG 2020 Finals] Progression](https://www.luogu.com.cn/problem/P11334)
 - [洛谷 P11335 [NOISG 2020 Finals] Arcade](https://www.luogu.com.cn/problem/P11335)
 - [洛谷 P11336 [NOISG 2020 Finals] Aesthetic](https://www.luogu.com.cn/problem/P11336)
-
-#### NOISG 2024 Finals
-
 - [洛谷 P11349 [NOISG 2024 Finals] Problem Setter](https://www.luogu.com.cn/problem/P11349)
 - [洛谷 P11350 [NOISG 2024 Finals] Shops](https://www.luogu.com.cn/problem/P11350)
 - [洛谷 P11351 [NOISG 2024 Finals] Toxic Gene 2](https://www.luogu.com.cn/problem/P11351)
 - [洛谷 P11352 [NOISG 2024 Finals] Coin](https://www.luogu.com.cn/problem/P11352)
 - [洛谷 P11353 [NOISG 2024 Finals] Field](https://www.luogu.com.cn/problem/P11353)
-
-#### NOISG 2020 Prelim
-
 - [洛谷 P12931 [NOISG 2020 Prelim] Mountains](https://www.luogu.com.cn/problem/P12931)
 - [洛谷 P12932 [NOISG 2020 Prelim] Visiting Singapore](https://www.luogu.com.cn/problem/P12932)
 - [洛谷 P12933 [NOISG 2020 Prelim] Mountains](https://www.luogu.com.cn/problem/P12933)
-
-#### NOISG 2019
-
 - [洛谷 P13075 [NOISG 2019] Pilot](https://www.luogu.com.cn/problem/P13075)
 - [洛谷 P13076 [NOISG 2019] Lasers](https://www.luogu.com.cn/problem/P13076)
 - [洛谷 P13077 [NOISG 2019] Feast](https://www.luogu.com.cn/problem/P13077)
 - [洛谷 P13078 [NOISG 2019] Rigged Roads](https://www.luogu.com.cn/problem/P13078)
 - [洛谷 P13079 [NOISG 2019] Shuffle](https://www.luogu.com.cn/problem/P13079)
+
+<GitHub repo="noisg/sg_noi_archive" />
+
+| NOISG 搬题表 |                       (null)                        |                       Qualification                        |                        Prelim                         |                       Finals                        | Practice |
+| :----------: | :-------------------------------------------------: | :--------------------------------------------------------: | :---------------------------------------------------: | :-------------------------------------------------: | :------: |
+|     1998     |                       待搬运️                        |                             –                              |                           –                           |                          –                          |    –     |
+|     1999     |                       待搬运️                        |                             –                              |                           –                           |                          –                          |    –     |
+|     2000     |                       待搬运️                        |                             –                              |                           –                           |                          –                          |    –     |
+|     2001     |                       待搬运️                        |                             –                              |                           –                           |                          –                          |    –     |
+|     2002     |                       待搬运️                        |                             –                              |                           –                           |                          –                          |    –     |
+|     2003     |                       待搬运️                        |                             –                              |                           –                           |                          –                          |    –     |
+|     2004     |                       待搬运️                        |                             –                              |                           –                           |                          –                          |    –     |
+|     2005     |                       待搬运️                        |                           待搬运️                           |                           –                           |                          –                          |    –     |
+|     2006     |                       待搬运️                        |                           待搬运️                           |                           –                           |                          –                          |    –     |
+|     2007     |                       待搬运️                        |                             –                              |                           –                           |                          –                          |    –     |
+|     2008     |                       待搬运️                        |                             –                              |                           –                           |                          –                          |    –     |
+|     2009     |                       待搬运️                        |                             –                              |                           –                           |                          –                          |    –     |
+|     2010     |                       待搬运️                        |                             –                              |                           –                           |                          –                          |    –     |
+|     2011     |                       待搬运️                        |                             –                              |                           –                           |                          –                          |    –     |
+|     2012     |                       待搬运️                        |                             –                              |                           –                           |                          –                          |    –     |
+|     2013     |                       待搬运️                        |                             –                              |                           –                           |                          –                          |    –     |
+|     2014     |                       待搬运️                        |                             –                              |                           –                           |                          –                          |    –     |
+|     2015     |                       待搬运                        |                             –                              |                           –                           |                          –                          |    –     |
+|     2016     |   [@chen_zhe](https://www.luogu.com.cn/user/8457)   |                             –                              |                           –                           |                          –                          |    –     |
+|     2017     |   [677609](https://www.luogu.com.cn/user/677609)    |                             –                              |                           –                           |                          –                          |    –     |
+|     2018     | [@Shunpower](https://www.luogu.com.cn/user/399150)  |                             –                              |  [@ToastBread](https://www.luogu.com.cn/user/545809)  |                          –                          |  待搬运️  |
+|     2019     | [@lailai0916](https://www.luogu.com.cn/user/455474) |                             –                              |  [@ToastBread](https://www.luogu.com.cn/user/545809)  |                          –                          |    –     |
+|     2020     |                          –                          |    [@lailai0916](https://www.luogu.com.cn/user/455474)     |  [@lailai0916](https://www.luogu.com.cn/user/455474)  | [@lailai0916](https://www.luogu.com.cn/user/455474) |    –     |
+|     2021     |                          –                          | [@Mortidesperatslav](https://www.luogu.com.cn/user/482610) |                           –                           | [@lailai0916](https://www.luogu.com.cn/user/455474) |    –     |
+|     2022     |                          –                          |    [@lailai0916](https://www.luogu.com.cn/user/455474)     |                           –                           | [@Eason_cyx](https://www.luogu.com.cn/user/741244)  |    –     |
+|     2023     |                          –                          |     [@Eason_cyx](https://www.luogu.com.cn/user/741244)     |                           –                           | [@StayAlone](https://www.luogu.com.cn/user/409236)  |    –     |
+|     2024     |                          –                          |                             –                              |  [@Eason_cyx](https://www.luogu.com.cn/user/741244)   | [@lailai0916](https://www.luogu.com.cn/user/455474) |    –     |
+|     2025     |                          –                          |                             –                              | [@Starrykiller](https://www.luogu.com.cn/user/235125) |   [@Milmon](https://www.luogu.com.cn/user/234641)   |    –     |

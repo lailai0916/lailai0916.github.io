@@ -339,17 +339,17 @@ export const RESOURCE_LIST: ResourceCategoryItem[] = [
       {
         title: '洛谷',
         href: 'https://www.luogu.com.cn',
-        description: '中国的编程竞赛平台',
+        description: '中国的算法竞赛平台',
       },
       {
         title: 'Codeforces',
         href: 'https://codeforces.com',
-        description: '俄罗斯的编程竞赛平台',
+        description: '俄罗斯的算法竞赛平台',
       },
       {
         title: 'AtCoder',
         href: 'https://atcoder.jp',
-        description: '日本的编程竞赛平台',
+        description: '日本的算法竞赛平台',
       },
       {
         title: 'Virtual Judge',

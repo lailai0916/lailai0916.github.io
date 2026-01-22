@@ -46,11 +46,13 @@ APIO、IOI 都是 IOI 赛制。目前国内比赛也在逐渐向 IOI 赛制靠�
 
 ### CF 赛制
 
-[Codeforces](https://codeforces.com) 是一个在线评测系统，会定期举办比赛。
+[Codeforces](https://codeforces.com) 是一个俄罗斯的在线评测系统，会定期举办比赛。
 
 它的比赛特点是在比赛过程中只测试一部分数据（Pretests），而在比赛结束后返回完整的所有测试点的测试结果（System Tests）。比赛时可以多次提交，允许 Hack 别人的代码（此处 Hack 的意思是提交一个测试数据，使得别人的代码无法给出正确答案）。如果想要 Hack，选手必须要锁定自己的代码（换言之，比赛时无法重新提交该题）。Hack 时不允许将选手程序拷贝到本地进行测试，源代码会被转换成图片。
 
 Codeforces 同时提供另外一种赛制，称作扩展 ICPC（Extended ICPC 或 ICPC+）。在这一赛制中，在比赛过程中会测试全部数据，但比赛结束以后会有 12 小时的全网 Hack 时间。Hack 时允许将选手程序拷贝到本地进行测试。
+
+- [洛谷与 Codeforces 的难度评级 - Dinshey - 博客园](https://www.cnblogs.com/Dinshey/p/luogu-codeforces-difficulty.html)
 
 ## 题型
 
