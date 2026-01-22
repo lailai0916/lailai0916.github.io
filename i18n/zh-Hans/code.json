@@ -985,6 +985,9 @@
   "blog.sidebar.feed.json": {
     "message": "JSON 订阅"
   },
+  "blog.sidebar.info.title": {
+    "message": "信息"
+  },
   "blog.sidebar.stats.title": {
     "message": "统计"
   },

@@ -67,6 +67,50 @@ function TocCard({ toc }: { toc: readonly TOCItem[] }) {
   );
 }
 
+function InfoCard() {
+  const d = new Date();
+  const hhmm = new Intl.DateTimeFormat('en-GB', {
+    timeZone: 'Asia/Shanghai',
+    hour: '2-digit',
+    minute: '2-digit',
+    hour12: false,
+  }).format(d);
+  const infoItems = [
+    {
+      label: 'Hangzhou, China',
+      icon: 'lucide:map-pin',
+      href: 'https://www.google.com/maps/search/?api=1&query=Hangzhou%2C%20China',
+    },
+    {
+      label: `${hhmm} (UTC+08:00)`,
+      icon: 'lucide:clock',
+      href: 'https://time.is/UTC+8',
+    },
+    {
+      label: '91A7 EF5A 1391 223E',
+      icon: 'lucide:key-round',
+      href: 'https://github.com/lailai0916.gpg',
+    },
+  ];
+
+  return (
+    <Card
+      title={translate({
+        id: 'blog.sidebar.info.title',
+        message: 'Information',
+      })}
+    >
+      <div className={styles.infoStats}>
+        {infoItems.map((item) => (
+          <Link key={item.label} href={item.href} style={{ color: 'inherit' }}>
+            <IconText icon={item.icon}>{item.label}</IconText>
+          </Link>
+        ))}
+      </div>
+    </Card>
+  );
+}
+
 function StatsCard() {
   const { analytics, status } = useAnalytics();
   const readintTime = getAllPostMetadata().reduce(
@@ -249,6 +293,7 @@ export default function BlogScaffold({
               <TocCard toc={toc} />
             ) : (
               <>
+                <InfoCard />
                 <StatsCard />
                 <FeedCard />
                 <TagsCard />
