@@ -151,7 +151,7 @@ function StatsCard() {
         id: 'blog.sidebar.stats.minutes',
         message: 'Minutes',
       }),
-      icon: 'lucide:clock',
+      icon: 'lucide:timer',
       value: readintTime,
     },
     {

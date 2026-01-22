@@ -83,7 +83,7 @@ function PostCard({ item }) {
                 }
               )}
             </IconData>
-            <IconData icon="lucide:clock">
+            <IconData icon="lucide:timer">
               {translate(
                 {
                   id: 'blog.postcard.readingTime',
