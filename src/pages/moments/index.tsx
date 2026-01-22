@@ -13,8 +13,13 @@ export default function moments() {
     <BlogScaffold title={TITLE} description={DESCRIPTION}>
       <Card>
         <div className={styles.headerSection}>
-          <h1 className={styles.title}>{TITLE}</h1>
-          <p className={styles.description}>{DESCRIPTION}</p>
+          <div>
+            <h1 className={styles.title}>{TITLE}</h1>
+            <p className={styles.description}>{DESCRIPTION}</p>
+          </div>
+          <div
+            className={styles.momentCount}
+          >{`${MOMENT_LIST.length} moments`}</div>
         </div>
       </Card>
       {MOMENT_LIST.map((moment) => (

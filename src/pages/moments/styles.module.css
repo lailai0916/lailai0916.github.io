@@ -1,7 +1,11 @@
 .headerSection {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+
   background-color: var(--ifm-color-primary);
   color: #ffffff;
-  padding: 1rem;
   border-radius: 8px;
 }
 
@@ -14,6 +18,12 @@
   font-weight: 700;
   opacity: 0.8;
   margin: 0;
+}
+
+.momentCount {
+  font-size: 1.2rem;
+  font-weight: 700;
+  opacity: 0.8;
 }
 
 .imageContainer {
