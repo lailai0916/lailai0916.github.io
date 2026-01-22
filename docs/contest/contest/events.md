@@ -58,7 +58,7 @@ Codeforces 同时提供另外一种赛制，称作扩展 ICPC（Extended ICPC �
 
 ### 传统题
 
-#### 评测结果
+评测结果：
 
 - AC（Accept）：程序通过。
 - CE（Compile Error）：编译错误。
