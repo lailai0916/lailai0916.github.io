@@ -667,23 +667,7 @@ export const RESOURCE_LIST: ResourceCategoryItem[] = [
     ],
   },
   {
-    title: '视频与媒体',
-    icon: 'lucide:video',
-    resources: [
-      {
-        title: 'YouTube',
-        href: 'https://www.youtube.com',
-        description: '全球最大视频平台',
-      },
-      {
-        title: 'bilibili',
-        href: 'https://www.bilibili.com',
-        description: '中国年轻人文化社区',
-      },
-    ],
-  },
-  {
-    title: '社交与社区',
+    title: '媒体与社区',
     icon: 'lucide:users',
     resources: [
       {
@@ -700,6 +684,16 @@ export const RESOURCE_LIST: ResourceCategoryItem[] = [
         title: 'Telegram Web',
         href: 'https://web.telegram.org',
         description: 'Telegram 网页版',
+      },
+      {
+        title: 'YouTube',
+        href: 'https://www.youtube.com',
+        description: '全球最大视频平台',
+      },
+      {
+        title: 'bilibili',
+        href: 'https://www.bilibili.com',
+        description: '中国年轻人文化社区',
       },
     ],
   },
