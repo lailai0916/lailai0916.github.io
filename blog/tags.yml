@@ -4,9 +4,6 @@ pinned:
 notice:
   label: Notice
 
-event:
-  label: Event
-
 personal:
   label: Personal
 

@@ -2,7 +2,7 @@
 title: 'LGS Paintboard 2026'
 date: 2025-10-22T14:08
 authors: lailai
-tags: [event]
+tags: [project]
 ---
 
 ![](https://cloud.lailai.one/f/RjsX/paintboard-header.png)
