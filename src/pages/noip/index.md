@@ -16,13 +16,13 @@ T2 推式子两小时做不出来，T3 和 T4 乱搞，最后十几分钟 T2 写
 
 ## 报名
 
-NOIP 考试操作系统能选 Windows 7 或 NOI Linux 2.0（基于 Ubuntu 20.04.1）。
+NOIP 考试操作系统能选 Windows 7 或 NOI Linux 2.0。
 
-大部分同学系统都选 Linux，因为和 CCF 测评一致，不容易出错。
+大部分同学系统都选 Linux，因为和 CCF 测评一致，不容易有神秘问题。
 
-我平时的电脑是 MacBook Pro（ARM 架构），但 NOI Linux 2.0 只提供 x86 版本，架构不同装虚拟机也跑不了。
+我日常用的电脑是 MacBook Pro（ARM 架构），但 NOI Linux 2.0 只有 x86 版本，架构不同装虚拟机也跑不了。
 
-我不能提前适应系统，就选了 Windows，虽然我 Windows 也一年多没用过了。
+我不能提前适应系统，就选了 Windows 7，虽然我 Windows 也一年多没用过了。
 
 ## Day 1
 
@@ -44,7 +44,7 @@ NOIP 考试操作系统能选 Windows 7 或 NOI Linux 2.0（基于 Ubuntu 20.04.
 
 今年考场机位明显比前几年宽敞，腿终于可以伸直了。
 
-CSP我坐在某一排的最后一个，一边没人很舒服，而另一边是 zjy。
+CSP 我坐在某一排的最后一个，一边没人很舒服，而另一边是同学 zjy。
 
 ### 开考
 
