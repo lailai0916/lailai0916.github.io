@@ -18,8 +18,13 @@ export default function moments() {
       {MOMENT_LIST.map((moment) => (
         <Card key={moment.content}>
           <span dangerouslySetInnerHTML={{ __html: moment.content }} />
-          {moment.images &&
-            moment.images.map((image) => <img key={image} src={image} />)}
+          {moment.images && (
+            <div className={styles.imageContainer}>
+              {moment.images.map((image) => (
+                <img key={image} src={image} />
+              ))}
+            </div>
+          )}
           <hr className={styles.hr} />
           <span>
             {new Date(moment.date).toLocaleDateString('en-US', {

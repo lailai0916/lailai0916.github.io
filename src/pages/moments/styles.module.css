@@ -16,6 +16,10 @@
   margin: 0;
 }
 
+.imageContainer {
+  margin: 0.5rem 0;
+}
+
 .hr {
   margin: 0.5rem 0;
 }
