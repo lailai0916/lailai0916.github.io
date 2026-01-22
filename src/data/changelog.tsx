@@ -76,8 +76,7 @@ export const CHANGELOG_LIST: ChangelogItem[] = [
   {
     date: '2025-08-25',
     type: 'added',
-    content:
-      '<b>Umami</b> 分析',
+    content: '<b>Umami</b> 分析',
   },
   {
     date: '2025-08-14',
