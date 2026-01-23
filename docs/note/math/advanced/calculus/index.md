@@ -1,4 +1,6 @@
-# 《微积分》
+---
+title: '《微积分》'
+---
 
 $$
 \frac{\displaystyle\frac{

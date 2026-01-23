@@ -1,4 +1,6 @@
-# Hello, World!
+---
+title: 'Hello, World!'
+---
 
 一切从这里开始……
 

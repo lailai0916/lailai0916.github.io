@@ -1,4 +1,6 @@
-# lailai's Home
+---
+title: "lailai's Home"
+---
 
 ## 说明
 

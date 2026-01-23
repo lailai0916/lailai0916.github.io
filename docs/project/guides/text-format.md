@@ -1,4 +1,6 @@
-# lailai's Text Format Guide
+---
+title: "lailai's Text Format Guide"
+---
 
 本文为我的文本格式指南。
 

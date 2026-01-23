@@ -1,4 +1,6 @@
-# Mermaid 指南
+---
+title: 'Mermaid 指南'
+---
 
 本文为 Mermaid 使用指南，仅说明语法规则，不包含格式与排版建议。
 

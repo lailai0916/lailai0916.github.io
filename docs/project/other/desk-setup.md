@@ -1,4 +1,6 @@
-# lailai's Desk Setup
+---
+title: "lailai's Desk Setup"
+---
 
 等以后有固定的桌子再考虑吧……
 

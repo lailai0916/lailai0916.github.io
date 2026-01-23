@@ -1,4 +1,6 @@
-# 软件
+---
+title: '软件'
+---
 
 推荐一些我使用过的软件，包括 iOS、macOS、Windows、Linux、Android、Web 等多个平台。
 

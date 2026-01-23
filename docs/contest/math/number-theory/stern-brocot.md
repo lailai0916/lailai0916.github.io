@@ -1,4 +1,6 @@
-# Stern–Brocot 树
+---
+title: 'Stern–Brocot 树'
+---
 
 ## 参考资料
 

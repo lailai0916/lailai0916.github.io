@@ -1,4 +1,6 @@
-# lailai0916
+---
+title: 'lailai0916'
+---
 
 GitHub 个人主页仓库教程。
 
