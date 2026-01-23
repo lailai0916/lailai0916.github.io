@@ -2,7 +2,7 @@
 title: 'lailai0916'
 ---
 
-GitHub 个人主页仓库教程。
+GitHub 个人主页仓库搭建教程。
 
 ## 简介
 
