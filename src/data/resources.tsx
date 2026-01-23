@@ -542,11 +542,6 @@ export const RESOURCE_LIST: ResourceCategoryItem[] = [
         description: '密码强度检测工具',
       },
       {
-        title: 'volumeshader_bm',
-        href: 'https://cznull.github.io/vsbm',
-        description: '毒蘑菇 GPU 渲染性能测试',
-      },
-      {
         title: 'A Real Me',
         href: 'https://www.arealme.com',
         description: '测试了解自己',
@@ -607,6 +602,21 @@ export const RESOURCE_LIST: ResourceCategoryItem[] = [
         title: '数码荔枝',
         href: 'https://lizhi.shop',
         description: '正版软件商店',
+      },
+      {
+        title: 'volumeshader_bm',
+        href: 'https://cznull.github.io/vsbm',
+        description: 'GPU 毒蘑菇测试',
+      },
+      {
+        title: 'HTML5 Fish Bowl',
+        href: 'https://eucscore.com/demos/HTML5-Fishbowl/index.html',
+        description: 'HTML 金鱼缸测试',
+      },
+      {
+        title: 'WebGL Aquarium',
+        href: 'https://webglsamples.org/aquarium/aquarium.html',
+        description: 'WebGL 水族馆测试',
       },
     ],
   },
