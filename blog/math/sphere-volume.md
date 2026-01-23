@@ -1,7 +1,6 @@
 ---
 title: '球体体积'
 date: 2024-07-03T12:00
-authors: lailai
 tags: [math]
 ---
 

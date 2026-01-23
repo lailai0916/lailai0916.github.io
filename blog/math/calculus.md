@@ -1,7 +1,6 @@
 ---
 title: '微积分入门指南'
 date: 2024-02-17T12:00
-authors: lailai
 tags: [math]
 ---
 

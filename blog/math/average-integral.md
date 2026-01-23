@@ -1,7 +1,6 @@
 ---
 title: '与平均有关的定积分'
 date: 2025-07-22T11:00
-authors: lailai
 tags: [math]
 ---
 

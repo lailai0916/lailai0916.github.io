@@ -1,7 +1,6 @@
 ---
 title: '同化 & 异化'
 date: 2025-11-22T20:00
-authors: lailai
 tags: [misc]
 ---
 

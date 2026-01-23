@@ -1,7 +1,6 @@
 ---
 title: '比较 x^y & y^x'
 date: 2025-08-23T15:17
-authors: lailai
 tags: [math]
 ---
 

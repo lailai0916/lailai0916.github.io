@@ -1,7 +1,6 @@
 ---
 title: 'C++ 冷知识'
 date: 2024-12-24T15:30
-authors: lailai
 tags: [misc]
 ---
 

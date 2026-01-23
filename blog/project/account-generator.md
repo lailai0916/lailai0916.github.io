@@ -1,7 +1,6 @@
 ---
 title: '账号生成器'
 date: 2025-10-21T20:21
-authors: lailai
 tags: [project]
 ---
 

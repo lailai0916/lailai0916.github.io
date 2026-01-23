@@ -1,7 +1,6 @@
 ---
 title: '挂机脚本'
 date: 2025-02-17T15:02
-authors: lailai
 tags: [project]
 ---
 

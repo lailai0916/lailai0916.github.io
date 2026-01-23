@@ -1,7 +1,6 @@
 ---
 title: '尺规作图'
 date: 2025-10-09T09:17
-authors: lailai
 tags: [math]
 ---
 

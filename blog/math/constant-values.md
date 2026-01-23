@@ -1,7 +1,6 @@
 ---
 title: '常数数据'
 date: 2023-03-17T12:00
-authors: lailai
 tags: [math, resource]
 ---
 

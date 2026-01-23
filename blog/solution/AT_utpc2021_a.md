@@ -1,7 +1,6 @@
 ---
 title: 'AT_utpc2021_a Make UTPC'
 date: 2023-05-20T15:33
-authors: lailai
 tags: [solution, atcoder]
 ---
 

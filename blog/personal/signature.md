@@ -1,7 +1,6 @@
 ---
 title: '个人签名'
 date: 2024-08-30T05:20
-authors: lailai
 tags: [personal]
 ---
 

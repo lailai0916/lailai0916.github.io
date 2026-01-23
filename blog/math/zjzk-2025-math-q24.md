@@ -1,7 +1,6 @@
 ---
 title: '2025 年浙江中考数学第 24 题'
 date: 2025-06-22T12:00
-authors: lailai
 tags: [math]
 ---
 

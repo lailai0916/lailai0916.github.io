@@ -1,7 +1,6 @@
 ---
 title: 'AT_past202203_g 方程式'
 date: 2023-05-27T10:14
-authors: lailai
 tags: [solution, atcoder]
 ---
 

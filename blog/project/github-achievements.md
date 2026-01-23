@@ -1,7 +1,6 @@
 ---
 title: 'GitHub 成就工具'
 date: 2025-07-17T15:48
-authors: lailai
 tags: [project]
 ---
 

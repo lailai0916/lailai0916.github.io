@@ -1,7 +1,6 @@
 ---
 title: '卷积'
 date: 2025-09-12T09:05
-authors: lailai
 tags: [math]
 ---
 
