@@ -9,6 +9,13 @@
   border-radius: 8px;
 }
 
+@media (max-width: 576px) {
+  .headerSection {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
 .title {
   font-size: 2rem;
   margin: 0;
