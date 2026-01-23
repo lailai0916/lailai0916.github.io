@@ -186,15 +186,3 @@ html[data-theme='dark'] .friendCardFallback {
 .friendCard {
   animation: fadeIn 0.3s ease-out;
 }
-
-/* 禁用动画对于喜欢减少动画的用户 */
-@media (prefers-reduced-motion: reduce) {
-  .friendCard,
-  .friendsSection {
-    animation: none !important;
-  }
-
-  .friendCard:hover {
-    transform: none;
-  }
-}

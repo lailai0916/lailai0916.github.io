@@ -182,15 +182,3 @@
     border-width: 1px !important;
   }
 }
-
-@media (prefers-reduced-motion: reduce) {
-  .wrapper :global(.react-chrono-tree),
-  .wrapper :global(.timeline-card-content),
-  .wrapper :global(.travel-timeline-card),
-  .wrapper :global(.react-chrono-tree-branch),
-  .wrapper :global(.timeline-vertical-circle),
-  .wrapper :global(.travel-timeline-title) {
-    animation: none !important;
-    transition: none !important;
-  }
-}
