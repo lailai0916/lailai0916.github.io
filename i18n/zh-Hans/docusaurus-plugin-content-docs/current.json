@@ -8,7 +8,7 @@
     "description": "The label for category '个人' in sidebar 'sidebar1'"
   },
   "sidebar.sidebar1.category.个人.link.generated-index.description": {
-    "message": "本章主要记录我在 OI 中的个人经验，包括风格规范、对拍工具、常用模板库以及实用技巧等。",
+    "message": "本章记录我在 OI 中的个人经验，包括风格规范、对拍工具、常用模板库以及实用技巧等。",
     "description": "The generated-index page description for category '个人' in sidebar 'sidebar1'"
   },
   "sidebar.sidebar1.category.比赛相关": {
@@ -16,7 +16,7 @@
     "description": "The label for category '比赛相关' in sidebar 'sidebar1'"
   },
   "sidebar.sidebar1.category.比赛相关.link.generated-index.description": {
-    "message": "本章主要介绍计算机编程比赛直接相关的知识，包括各种赛事、赛制、题型，以及赛场上常见的坑点与技巧。",
+    "message": "本章介绍计算机编程比赛直接相关的知识，包括各种赛事、赛制、题型，以及赛场上常见的坑点与技巧。",
     "description": "The generated-index page description for category '比赛相关' in sidebar 'sidebar1'"
   },
   "sidebar.sidebar1.category.语言基础": {
@@ -72,7 +72,7 @@
     "description": "The label for category '数论' in sidebar 'sidebar1'"
   },
   "sidebar.sidebar1.category.数论.link.generated-index.description": {
-    "message": "数论是纯粹数学的分支之一，主要研究整数的性质。",
+    "message": "数论是纯粹数学的一个分支，主要研究整数的性质。",
     "description": "The generated-index page description for category '数论' in sidebar 'sidebar1'"
   },
   "sidebar.sidebar1.category.多项式与生成函数": {

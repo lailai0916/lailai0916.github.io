@@ -9,7 +9,7 @@ const sidebars: SidebarsConfig = {
       link: {
         type: 'generated-index',
         description:
-          '本章主要记录我在 OI 中的个人经验，包括风格规范、对拍工具、常用模板库以及实用技巧等。',
+          '本章记录我在 OI 中的个人经验，包括风格规范、对拍工具、常用模板库以及实用技巧等。',
       },
       items: ['contest/personal/common-templates', 'contest/personal/luogu'],
     },
@@ -19,7 +19,7 @@ const sidebars: SidebarsConfig = {
       link: {
         type: 'generated-index',
         description:
-          '本章主要介绍计算机编程比赛直接相关的知识，包括各种赛事、赛制、题型，以及赛场上常见的坑点与技巧。',
+          '本章介绍计算机编程比赛直接相关的知识，包括各种赛事、赛制、题型，以及赛场上常见的坑点与技巧。',
       },
       items: [
         'contest/contest/events',
@@ -128,7 +128,7 @@ const sidebars: SidebarsConfig = {
           label: '数论',
           link: {
             type: 'generated-index',
-            description: '数论是纯粹数学的分支之一，主要研究整数的性质。',
+            description: '数论是纯粹数学的一个分支，主要研究整数的性质。',
           },
           items: [
             'contest/math/number-theory/prime',
