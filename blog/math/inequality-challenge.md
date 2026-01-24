@@ -39,7 +39,7 @@ $$
 根据均值不等式：
 
 $$
-\frac{a+b}{2}\le \sqrt{\frac{a^2+b^2}{2}}=\sqrt{\frac{1}{2}}
+\frac{a+b}{2}\le\sqrt{\frac{a^2+b^2}{2}}=\sqrt{\frac{1}{2}}
 $$
 
 所以 $a+b$ 的最大值为 $\sqrt{2}$。
