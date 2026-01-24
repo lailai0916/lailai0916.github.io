@@ -8,9 +8,7 @@ title: '最短路'
 - [最短路问题 - 维基百科](https://zh.wikipedia.org/zh-cn/最短路问题)
 - [差分约束 - OI Wiki](https://oi-wiki.org/graph/diff-constraints/)
 
-## 最短路
-
-### 算法对比
+## 算法对比
 
 $n$ 代表图的点数，$m$ 代表图的边数。
 
@@ -21,7 +19,7 @@ $n$ 代表图的点数，$m$ 代表图的边数。
 |   Dijkstra 算法   | $O(m\log m)$  | 单源最短路 |   否   |
 |   Johnson 算法    | $O(nm\log m)$ | 全源最短路 |   能   |
 
-### Floyd 算法
+## Floyd 算法
 
 ```cpp
 int a[N][N];
@@ -40,7 +38,7 @@ void floyd(int n)
 }
 ```
 
-### Bellman–Ford 算法
+## Bellman–Ford 算法
 
 SPFA（Shortest Path Faster Algorithm）是 Bellman–Ford 算法的一种实现。
 
@@ -72,7 +70,7 @@ bool spfa(int s,int n)
 }
 ```
 
-### Dijkstra 算法
+## Dijkstra 算法
 
 ```cpp
 vector<pair<int,int>> G[N];
@@ -101,7 +99,7 @@ void dijkstra(int s)
 }
 ```
 
-### Johnson 算法
+## Johnson 算法
 
 ```cpp
 #include <bits/stdc++.h>
@@ -191,6 +189,49 @@ int main()
 }
 ```
 
+## 传递闭包
+
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+
+const int N=105;
+bool a[N][N];
+int main()
+{
+	ios::sync_with_stdio(false);
+	cin.tie(nullptr);
+	int n;
+	cin>>n;
+	for(int i=1;i<=n;i++)
+	{
+		for(int j=1;j<=n;j++)
+		{
+			cin>>a[i][j];
+		}
+	}
+	for(int k=1;k<=n;k++)
+	{
+		for(int i=1;i<=n;i++)
+		{
+			for(int j=1;j<=n;j++)
+			{
+				a[i][j]|=a[i][k]&a[k][j];
+			}
+		}
+	}
+	for(int i=1;i<=n;i++)
+	{
+		for(int j=1;j<=n;j++)
+		{
+			cout<<a[i][j]<<' ';
+		}
+		cout<<'\n';
+	}
+	return 0;
+}
+```
+
 ## 差分约束
 
 ```cpp
@@ -253,6 +294,8 @@ int main()
 ## 例题
 
 <Problem id="B3647" />
+
+<Problem id="B3611" />
 
 <Problem id="P3371" />
 
