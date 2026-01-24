@@ -1,6 +1,6 @@
 <div align="center">
   <h1>lailai's Home</h1>
-  <p><span>English</span> | <a href="README.zh-Hans.md">简体中文</a></p>
+  <p>English | <a href="README.zh-Hans.md">简体中文</a></p>
   <p>
     <img src="https://img.shields.io/github/actions/workflow/status/lailai0916/lailai0916.github.io/deploy.yml?style=flat-square" />
     <img src="https://img.shields.io/github/last-commit/lailai0916/lailai0916.github.io?style=flat-square" />
