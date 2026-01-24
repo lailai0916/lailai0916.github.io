@@ -26,7 +26,7 @@ import { Skills, Devices, Community, Comments } from '@site/src/pages/about/\_co
 
 我的个人网站，分享技术笔记、项目经验与学习心得。
 
-本网站使用 [Docusaurus](https://docusaurus.io) 构建，源代码托管于 [GitHub](https://github.com/lailai0916/lailai0916.github.io)。
+使用 [Docusaurus](https://docusaurus.io) 构建，源代码托管于 [GitHub](https://github.com/lailai0916/lailai0916.github.io)，并部署在 [GitHub Pages](https://pages.github.com)。
 
 ## 我的昵称
 

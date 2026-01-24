@@ -26,7 +26,7 @@ import { Skills, Devices, Community, Comments } from '@site/src/pages/about/\_co
 
 My personal website for sharing technical notes, project experience, and learning insights.
 
-Built with [Docusaurus](https://docusaurus.io) and open-sourced on [GitHub](https://github.com/lailai0916/lailai0916.github.io).
+Built with [Docusaurus](https://docusaurus.io), source code hosted on [GitHub](https://github.com/lailai0916/lailai0916.github.io), and deployed on [GitHub Pages](https://pages.github.com).
 
 ## My Nickname
 
