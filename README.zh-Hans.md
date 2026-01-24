@@ -68,7 +68,7 @@ lailai0916.github.io/
 │   └── tags.yml                   # 标签配置
 ├── docs/                          # 文档
 ├── i18n/                          # 国际化配置
-├── src/                           # 源码
+├── src/                           # 源代码
 │   ├── components/                # 自定义组件
 │   ├── css/                       # 自定义样式
 │   ├── data/                      # 数据文件

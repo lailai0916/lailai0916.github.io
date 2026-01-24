@@ -99,6 +99,6 @@ Codeforces 同时提供另外一种赛制，称作扩展 ICPC（Extended ICPC �
 
 ### 自产生程序
 
-自产生程序（Quine）指的是输出结果为程序自身源码的程序。
+自产生程序（Quine）指的是输出结果为程序自身代码的程序。
 
 <Problem id="LOJ4" />
