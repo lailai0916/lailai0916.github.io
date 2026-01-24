@@ -107,6 +107,6 @@ You can buy me a coffee, and I'll do better. Thanks!
 
 ## License
 
-This project's code licensed under [MIT License](LICENSE).
+This project's code is licensed under [MIT License](LICENSE).
 
 This website's content is licensed under [CC BY 4.0](LICENSE-docs).
