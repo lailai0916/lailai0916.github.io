@@ -2,8 +2,24 @@ import React, { useRef, useEffect, useState } from 'react';
 import styles from './styles.module.css';
 
 // 全局配置
-const THEME_HUE = 280; // 紫色色相
 const STATE = { DRAWING: 1, PLAYING: 2 };
+
+// 从 CSS 变量获取主题色
+function getPrimaryColor(): { r: number; g: number; b: number } {
+  if (typeof window === 'undefined') {
+    return { r: 29, g: 155, b: 240 }; // 默认 #1d9bf0
+  }
+  const style = getComputedStyle(document.documentElement);
+  const primaryColor = style.getPropertyValue('--ifm-color-primary').trim();
+  
+  // 解析 hex 颜色
+  const hex = primaryColor.replace('#', '');
+  return {
+    r: parseInt(hex.substring(0, 2), 16),
+    g: parseInt(hex.substring(2, 4), 16),
+    b: parseInt(hex.substring(4, 6), 16),
+  };
+}
 
 interface Complex {
   re: number;
@@ -40,25 +56,6 @@ function dft(x: Complex[]): FourierCoefficient[] {
     };
   }
   return X;
-}
-
-function hsbToRgb(
-  h: number,
-  s: number,
-  b: number,
-  a: number = 1,
-): [number, number, number, number] {
-  s /= 100;
-  b /= 100;
-  const k = (n: number) => (n + h / 60) % 6;
-  const f = (n: number) =>
-    b * (1 - s * Math.max(0, Math.min(k(n), 4 - k(n), 1)));
-  return [
-    Math.round(f(5) * 255),
-    Math.round(f(3) * 255),
-    Math.round(f(1) * 255),
-    a,
-  ];
 }
 
 function rgbaString(r: number, g: number, b: number, a: number = 1): string {
@@ -160,6 +157,9 @@ export default function FourierTransformCanvas() {
     }
 
     let animationId: number;
+    
+    // 获取主题色
+    const primaryColor = getPrimaryColor();
 
     const drawEpicycles = (): Point => {
       let x = 0,
@@ -176,9 +176,7 @@ export default function FourierTransformCanvas() {
 
         // Draw circles for main harmonics
         if (amp > 2 || i < 15) {
-          ctx.strokeStyle = rgbaString(
-            ...hsbToRgb(THEME_HUE, 0, 100, 0.15),
-          );
+          ctx.strokeStyle = rgbaString(255, 255, 255, 0.15);
           ctx.lineWidth = 1;
           ctx.beginPath();
           ctx.arc(prevx, prevy, amp, 0, 2 * Math.PI);
@@ -186,24 +184,18 @@ export default function FourierTransformCanvas() {
         }
 
         // Draw connecting line
-        ctx.strokeStyle = rgbaString(
-          ...hsbToRgb(THEME_HUE, 0, 100, 0.3),
-        );
+        ctx.strokeStyle = rgbaString(255, 255, 255, 0.3);
         ctx.beginPath();
         ctx.moveTo(prevx, prevy);
         ctx.lineTo(x, y);
         ctx.stroke();
       }
 
-      // Draw glowing pen tip
-      const [r, g, b] = hsbToRgb(THEME_HUE, 50, 100);
-      ctx.shadowBlur = 20;
-      ctx.shadowColor = rgbaString(r, g, b, 1);
-      ctx.fillStyle = 'white';
+      // Draw pen tip
+      ctx.fillStyle = rgbaString(primaryColor.r, primaryColor.g, primaryColor.b, 1);
       ctx.beginPath();
       ctx.arc(x, y, 3, 0, 2 * Math.PI);
       ctx.fill();
-      ctx.shadowBlur = 0;
 
       return { x, y };
     };
@@ -211,10 +203,7 @@ export default function FourierTransformCanvas() {
     const drawGlowingPath = () => {
       if (state.path.length < 2) return;
 
-      const [r, g, b] = hsbToRgb(THEME_HUE, 90, 100);
-      ctx.shadowBlur = 15;
-      ctx.shadowColor = rgbaString(r, g, b, 1);
-      ctx.strokeStyle = rgbaString(...hsbToRgb(THEME_HUE, 60, 100));
+      ctx.strokeStyle = rgbaString(primaryColor.r, primaryColor.g, primaryColor.b, 1);
       ctx.lineWidth = 2;
       ctx.beginPath();
       ctx.moveTo(state.path[0].x, state.path[0].y);
@@ -222,12 +211,11 @@ export default function FourierTransformCanvas() {
         ctx.lineTo(state.path[i].x, state.path[i].y);
       }
       ctx.stroke();
-      ctx.shadowBlur = 0;
     };
 
-    const drawPath = (points: Point[], hue: number, bri: number) => {
+    const drawPath = (points: Point[]) => {
       if (points.length < 2) return;
-      ctx.strokeStyle = rgbaString(...hsbToRgb(hue, 80, bri));
+      ctx.strokeStyle = rgbaString(primaryColor.r, primaryColor.g, primaryColor.b, 0.8);
       ctx.lineWidth = 2;
       ctx.beginPath();
       ctx.moveTo(points[0].x, points[0].y);
@@ -250,19 +238,19 @@ export default function FourierTransformCanvas() {
       ctx.translate(width / 2, height / 2);
 
       // Draw center point
-      ctx.fillStyle = rgbaString(...hsbToRgb(0, 0, 100, 0.2));
+      ctx.fillStyle = rgbaString(255, 255, 255, 0.2);
       ctx.beginPath();
       ctx.arc(0, 0, 2, 0, 2 * Math.PI);
       ctx.fill();
 
       if (state.currentState === STATE.DRAWING) {
-        drawPath(state.drawing, THEME_HUE, 80);
+        drawPath(state.drawing);
       } else if (
         state.currentState === STATE.PLAYING &&
         state.fourierX.length > 0
       ) {
         // Draw original shape faintly
-        ctx.strokeStyle = rgbaString(...hsbToRgb(THEME_HUE, 60, 20));
+        ctx.strokeStyle = rgbaString(primaryColor.r, primaryColor.g, primaryColor.b, 0.2);
         ctx.lineWidth = 1;
         ctx.beginPath();
         if (state.drawing.length > 0) {
