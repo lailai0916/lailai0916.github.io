@@ -150,6 +150,10 @@ export default function FourierTransformCanvas() {
     if (!ctx) return;
 
     const state = stateRef.current;
+    
+    // 处理高 DPI 屏幕
+    const dpr = window.devicePixelRatio || 1;
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
 
     // Initialize butterfly on first load
     if (state.drawing.length === 0) {
@@ -226,8 +230,8 @@ export default function FourierTransformCanvas() {
     };
 
     const render = () => {
-      const width = canvas.width;
-      const height = canvas.height;
+      const width = canvasSize;
+      const height = canvasSize;
 
       // Clear canvas
       ctx.fillStyle = '#000';
@@ -355,8 +359,9 @@ export default function FourierTransformCanvas() {
     <div ref={containerRef} className={styles.container}>
       <canvas
         ref={canvasRef}
-        width={canvasSize}
-        height={canvasSize}
+        width={canvasSize * (typeof window !== 'undefined' ? window.devicePixelRatio : 1)}
+        height={canvasSize * (typeof window !== 'undefined' ? window.devicePixelRatio : 1)}
+        style={{ width: canvasSize, height: canvasSize }}
         className={styles.canvas}
         onMouseDown={handleStart}
         onMouseMove={handleMove}
