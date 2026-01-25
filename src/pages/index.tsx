@@ -4,7 +4,7 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import styles from './styles.module.css';
 
 import TopBanner from './_components/TopBanner';
-import HeroBanner from './_components/HeroBanner'
+import HeroBanner from './_components/HeroBanner';
 import Docs from './_components/Docs';
 import Blog from './_components/Blog';
 import Countdown from './_components/Countdown';
