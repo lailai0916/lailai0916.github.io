@@ -7,9 +7,6 @@ const STATE = { DRAWING: 1, PLAYING: 2 };
 
 // 从 CSS 变量获取主题色
 function getPrimaryColor(): { r: number; g: number; b: number } {
-  if (typeof window === 'undefined') {
-    return { r: 29, g: 155, b: 240 }; // 默认 #1d9bf0
-  }
   const style = getComputedStyle(document.documentElement);
   const primaryColor = style.getPropertyValue('--ifm-color-primary').trim();
 
