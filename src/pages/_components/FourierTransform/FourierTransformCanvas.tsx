@@ -2,52 +2,36 @@ import React, { useRef, useEffect, useState } from 'react';
 import { useColorMode } from '@docusaurus/theme-common';
 import styles from './styles.module.css';
 
-// 全局配置
-const STATE = { DRAWING: 1, PLAYING: 2 };
+// Constants
+const TWO_PI = 2 * Math.PI;
+const STATE = { DRAWING: 1, PLAYING: 2 } as const;
 
-// 从 CSS 变量获取主题色
-function getPrimaryColor(): { r: number; g: number; b: number } {
+// Get primary color from CSS variable
+function getPrimaryColor(): string {
   const style = getComputedStyle(document.documentElement);
-  const primaryColor = style.getPropertyValue('--ifm-color-primary').trim();
-
-  // 解析 hex 颜色
-  const hex = primaryColor.replace('#', '');
-  return {
-    r: parseInt(hex.substring(0, 2), 16),
-    g: parseInt(hex.substring(2, 4), 16),
-    b: parseInt(hex.substring(4, 6), 16),
-  };
+  return style.getPropertyValue('--ifm-color-primary').trim();
 }
 
-// 主题颜色配置
-interface ThemeColors {
-  background: string;
-  circleStroke: string;
-  lineStroke: string;
-  centerPoint: string;
-}
+// Theme colors configuration
+const THEME_COLORS = {
+  dark: {
+    background: '#000000',
+    circleStroke: 'rgba(255, 255, 255, 0.15)',
+    lineStroke: 'rgba(255, 255, 255, 0.3)',
+    centerPoint: 'rgba(255, 255, 255, 0.2)',
+  },
+  light: {
+    background: '#ffffff',
+    circleStroke: 'rgba(0, 0, 0, 0.1)',
+    lineStroke: 'rgba(0, 0, 0, 0.2)',
+    centerPoint: 'rgba(0, 0, 0, 0.15)',
+  },
+} as const;
 
-function getThemeColors(isDark: boolean): ThemeColors {
-  if (isDark) {
-    return {
-      background: '#000000',
-      circleStroke: 'rgba(255, 255, 255, 0.15)',
-      lineStroke: 'rgba(255, 255, 255, 0.3)',
-      centerPoint: 'rgba(255, 255, 255, 0.2)',
-    };
-  } else {
-    return {
-      background: '#ffffff',
-      circleStroke: 'rgba(0, 0, 0, 0.1)',
-      lineStroke: 'rgba(0, 0, 0, 0.2)',
-      centerPoint: 'rgba(0, 0, 0, 0.15)',
-    };
-  }
-}
-
-interface Complex {
-  re: number;
-  im: number;
+// Types
+interface Point {
+  x: number;
+  y: number;
 }
 
 interface FourierCoefficient {
@@ -56,34 +40,31 @@ interface FourierCoefficient {
   phase: number;
 }
 
-interface Point {
-  x: number;
-  y: number;
-}
+// Discrete Fourier Transform
+function dft(points: Point[]): FourierCoefficient[] {
+  const N = points.length;
+  const result: FourierCoefficient[] = [];
 
-function dft(x: Complex[]): FourierCoefficient[] {
-  const N = x.length;
-  const X: FourierCoefficient[] = [];
   for (let k = 0; k < N; k++) {
-    let sumRe = 0;
-    let sumIm = 0;
-    for (let n = 0; n < N; n++) {
-      const phi = (2 * Math.PI * k * n) / N;
-      const c = { re: Math.cos(phi), im: -Math.sin(phi) };
-      sumRe += x[n].re * c.re - x[n].im * c.im;
-      sumIm += x[n].re * c.im + x[n].im * c.re;
-    }
-    X[k] = {
-      freq: k,
-      amp: Math.sqrt(sumRe ** 2 + sumIm ** 2) / N,
-      phase: Math.atan2(sumIm / N, sumRe / N),
-    };
-  }
-  return X;
-}
+    let re = 0;
+    let im = 0;
 
-function rgbaString(r: number, g: number, b: number, a: number = 1): string {
-  return `rgba(${r}, ${g}, ${b}, ${a})`;
+    for (let n = 0; n < N; n++) {
+      const phi = (TWO_PI * k * n) / N;
+      const cos = Math.cos(phi);
+      const sin = Math.sin(phi);
+      re += points[n].x * cos + points[n].y * sin;
+      im += points[n].y * cos - points[n].x * sin;
+    }
+
+    result.push({
+      freq: k,
+      amp: Math.hypot(re, im) / N,
+      phase: Math.atan2(im, re),
+    });
+  }
+
+  return result.sort((a, b) => b.amp - a.amp);
 }
 
 export default function FourierTransformCanvas() {
@@ -94,7 +75,7 @@ export default function FourierTransformCanvas() {
   const isDark = colorMode === 'dark';
 
   const stateRef = useRef({
-    currentState: STATE.PLAYING,
+    currentState: STATE.PLAYING as (typeof STATE)[keyof typeof STATE],
     drawing: [] as Point[],
     fourierX: [] as FourierCoefficient[],
     path: [] as Point[],
@@ -109,7 +90,7 @@ export default function FourierTransformCanvas() {
     const scale = width / 11;
 
     for (let i = 0; i < total; i++) {
-      const angle = (i / total) * 2 * Math.PI;
+      const angle = (i / total) * TWO_PI;
       const r =
         Math.exp(Math.cos(angle)) -
         2 * Math.cos(4 * angle) -
@@ -125,12 +106,7 @@ export default function FourierTransformCanvas() {
 
   const calcFourier = () => {
     const state = stateRef.current;
-    const complexData: Complex[] = state.drawing.map((p) => ({
-      re: p.x,
-      im: p.y,
-    }));
-    state.fourierX = dft(complexData);
-    state.fourierX.sort((a, b) => b.amp - a.amp);
+    state.fourierX = dft(state.drawing);
     state.currentState = STATE.PLAYING;
     state.path = [];
     state.time = 0;
@@ -190,7 +166,7 @@ export default function FourierTransformCanvas() {
 
     // 获取主题色和主题颜色配置
     const primaryColor = getPrimaryColor();
-    const themeColors = getThemeColors(isDark);
+    const themeColors = isDark ? THEME_COLORS.dark : THEME_COLORS.light;
 
     const drawEpicycles = (): Point => {
       let x = 0,
@@ -210,7 +186,7 @@ export default function FourierTransformCanvas() {
           ctx.strokeStyle = themeColors.circleStroke;
           ctx.lineWidth = 1;
           ctx.beginPath();
-          ctx.arc(prevx, prevy, amp, 0, 2 * Math.PI);
+          ctx.arc(prevx, prevy, amp, 0, TWO_PI);
           ctx.stroke();
         }
 
@@ -223,14 +199,9 @@ export default function FourierTransformCanvas() {
       }
 
       // Draw pen tip
-      ctx.fillStyle = rgbaString(
-        primaryColor.r,
-        primaryColor.g,
-        primaryColor.b,
-        1
-      );
+      ctx.fillStyle = primaryColor;
       ctx.beginPath();
-      ctx.arc(x, y, 3, 0, 2 * Math.PI);
+      ctx.arc(x, y, 3, 0, TWO_PI);
       ctx.fill();
 
       return { x, y };
@@ -239,12 +210,7 @@ export default function FourierTransformCanvas() {
     const drawGlowingPath = () => {
       if (state.path.length < 2) return;
 
-      ctx.strokeStyle = rgbaString(
-        primaryColor.r,
-        primaryColor.g,
-        primaryColor.b,
-        1
-      );
+      ctx.strokeStyle = primaryColor;
       ctx.lineWidth = 2;
       ctx.beginPath();
       ctx.moveTo(state.path[0].x, state.path[0].y);
@@ -256,12 +222,8 @@ export default function FourierTransformCanvas() {
 
     const drawPath = (points: Point[]) => {
       if (points.length < 2) return;
-      ctx.strokeStyle = rgbaString(
-        primaryColor.r,
-        primaryColor.g,
-        primaryColor.b,
-        0.8
-      );
+      ctx.strokeStyle = primaryColor;
+      ctx.globalAlpha = 0.8;
       ctx.lineWidth = 2;
       ctx.beginPath();
       ctx.moveTo(points[0].x, points[0].y);
@@ -269,6 +231,7 @@ export default function FourierTransformCanvas() {
         ctx.lineTo(points[i].x, points[i].y);
       }
       ctx.stroke();
+      ctx.globalAlpha = 1;
     };
 
     const render = () => {
@@ -286,7 +249,7 @@ export default function FourierTransformCanvas() {
       // Draw center point
       ctx.fillStyle = themeColors.centerPoint;
       ctx.beginPath();
-      ctx.arc(0, 0, 2, 0, 2 * Math.PI);
+      ctx.arc(0, 0, 2, 0, TWO_PI);
       ctx.fill();
 
       if (state.currentState === STATE.DRAWING) {
@@ -296,12 +259,8 @@ export default function FourierTransformCanvas() {
         state.fourierX.length > 0
       ) {
         // Draw original shape faintly
-        ctx.strokeStyle = rgbaString(
-          primaryColor.r,
-          primaryColor.g,
-          primaryColor.b,
-          0.2
-        );
+        ctx.strokeStyle = primaryColor;
+        ctx.globalAlpha = 0.2;
         ctx.lineWidth = 1;
         ctx.beginPath();
         if (state.drawing.length > 0) {
@@ -312,6 +271,7 @@ export default function FourierTransformCanvas() {
           ctx.closePath();
           ctx.stroke();
         }
+        ctx.globalAlpha = 1;
 
         // Calculate and draw epicycles
         const v = drawEpicycles();
@@ -326,9 +286,9 @@ export default function FourierTransformCanvas() {
         }
 
         // Time step
-        const dt = (2 * Math.PI) / state.fourierX.length;
+        const dt = TWO_PI / state.fourierX.length;
         state.time += dt;
-        if (state.time > 2 * Math.PI) {
+        if (state.time > TWO_PI) {
           state.time = 0;
           state.path = [];
         }
