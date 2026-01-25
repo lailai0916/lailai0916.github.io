@@ -16,15 +16,15 @@ function getPrimaryColor(): string {
 const THEME_COLORS = {
   dark: {
     background: '#000000',
-    circleStroke: 'rgba(255, 255, 255, 0.15)',
-    lineStroke: 'rgba(255, 255, 255, 0.3)',
-    centerPoint: 'rgba(255, 255, 255, 0.2)',
+    circleStroke: 'rgba(255, 255, 255, 0.2)',
+    lineStroke: 'rgba(255, 255, 255, 0.5)',
+    centerPoint: 'rgba(255, 255, 255, 0.3)',
   },
   light: {
     background: '#ffffff',
-    circleStroke: 'rgba(0, 0, 0, 0.1)',
-    lineStroke: 'rgba(0, 0, 0, 0.2)',
-    centerPoint: 'rgba(0, 0, 0, 0.15)',
+    circleStroke: 'rgba(0, 0, 0, 0.15)',
+    lineStroke: 'rgba(0, 0, 0, 0.3)',
+    centerPoint: 'rgba(0, 0, 0, 0.2)',
   },
 } as const;
 
