@@ -14,6 +14,7 @@ import Project from './_components/Project';
 
 import Skills from './_components/Skills';
 import Exploration from './_components/Exploration';
+import FourierTransform from './_components/FourierTransform';
 import NeuralNetwork from './_components/NeuralNetwork';
 import Quotes from './_components/Quotes';
 import Community from './_components/Community';
@@ -33,6 +34,7 @@ export default function Home(): ReactNode {
         <Skills />
         <Exploration />
         <NeuralNetwork />
+        <FourierTransform />
         <Quotes />
         <Community />
       </div>
