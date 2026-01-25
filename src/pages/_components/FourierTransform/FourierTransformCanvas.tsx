@@ -306,8 +306,8 @@ export default function FourierTransformCanvas() {
     if (!canvas) return null;
     const rect = canvas.getBoundingClientRect();
     return {
-      x: e.clientX - rect.left - canvas.width / 2,
-      y: e.clientY - rect.top - canvas.height / 2,
+      x: e.clientX - rect.left - rect.width / 2,
+      y: e.clientY - rect.top - rect.height / 2,
     };
   };
 
