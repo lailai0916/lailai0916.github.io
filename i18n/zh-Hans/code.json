@@ -817,6 +817,12 @@
   "home.neuralnetwork.description": {
     "message": "在下方绘制数字 0~9，神经网络会识别您的手写数字"
   },
+  "home.fouriertransform.title": {
+    "message": "傅立叶变换"
+  },
+  "home.fouriertransform.description": {
+    "message": "在下方绘制任意形状，观察其傅立叶级数的旋转圆可视化"
+  },
   "pages.travel.title": {
     "message": "旅行"
   },
