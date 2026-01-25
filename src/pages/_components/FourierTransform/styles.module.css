@@ -9,9 +9,9 @@
 
 .canvas {
   display: block;
-  background-color: #000;
   border-radius: 12px;
   cursor: crosshair;
   touch-action: none;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  border: 1px solid var(--ifm-color-emphasis-300);
 }

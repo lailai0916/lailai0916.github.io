@@ -1,4 +1,5 @@
 import React, { useRef, useEffect, useState } from 'react';
+import { useColorMode } from '@docusaurus/theme-common';
 import styles from './styles.module.css';
 
 // 全局配置
@@ -11,7 +12,7 @@ function getPrimaryColor(): { r: number; g: number; b: number } {
   }
   const style = getComputedStyle(document.documentElement);
   const primaryColor = style.getPropertyValue('--ifm-color-primary').trim();
-  
+
   // 解析 hex 颜色
   const hex = primaryColor.replace('#', '');
   return {
@@ -19,6 +20,32 @@ function getPrimaryColor(): { r: number; g: number; b: number } {
     g: parseInt(hex.substring(2, 4), 16),
     b: parseInt(hex.substring(4, 6), 16),
   };
+}
+
+// 主题颜色配置
+interface ThemeColors {
+  background: string;
+  circleStroke: string;
+  lineStroke: string;
+  centerPoint: string;
+}
+
+function getThemeColors(isDark: boolean): ThemeColors {
+  if (isDark) {
+    return {
+      background: '#000000',
+      circleStroke: 'rgba(255, 255, 255, 0.15)',
+      lineStroke: 'rgba(255, 255, 255, 0.3)',
+      centerPoint: 'rgba(255, 255, 255, 0.2)',
+    };
+  } else {
+    return {
+      background: '#ffffff',
+      circleStroke: 'rgba(0, 0, 0, 0.1)',
+      lineStroke: 'rgba(0, 0, 0, 0.2)',
+      centerPoint: 'rgba(0, 0, 0, 0.15)',
+    };
+  }
 }
 
 interface Complex {
@@ -66,6 +93,8 @@ export default function FourierTransformCanvas() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const [canvasSize, setCanvasSize] = useState(400);
+  const { colorMode } = useColorMode();
+  const isDark = colorMode === 'dark';
 
   const stateRef = useRef({
     currentState: STATE.PLAYING,
@@ -150,7 +179,7 @@ export default function FourierTransformCanvas() {
     if (!ctx) return;
 
     const state = stateRef.current;
-    
+
     // 处理高 DPI 屏幕
     const dpr = window.devicePixelRatio || 1;
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
@@ -161,9 +190,10 @@ export default function FourierTransformCanvas() {
     }
 
     let animationId: number;
-    
-    // 获取主题色
+
+    // 获取主题色和主题颜色配置
     const primaryColor = getPrimaryColor();
+    const themeColors = getThemeColors(isDark);
 
     const drawEpicycles = (): Point => {
       let x = 0,
@@ -180,7 +210,7 @@ export default function FourierTransformCanvas() {
 
         // Draw circles for main harmonics
         if (amp > 2 || i < 15) {
-          ctx.strokeStyle = rgbaString(255, 255, 255, 0.15);
+          ctx.strokeStyle = themeColors.circleStroke;
           ctx.lineWidth = 1;
           ctx.beginPath();
           ctx.arc(prevx, prevy, amp, 0, 2 * Math.PI);
@@ -188,7 +218,7 @@ export default function FourierTransformCanvas() {
         }
 
         // Draw connecting line
-        ctx.strokeStyle = rgbaString(255, 255, 255, 0.3);
+        ctx.strokeStyle = themeColors.lineStroke;
         ctx.beginPath();
         ctx.moveTo(prevx, prevy);
         ctx.lineTo(x, y);
@@ -196,7 +226,12 @@ export default function FourierTransformCanvas() {
       }
 
       // Draw pen tip
-      ctx.fillStyle = rgbaString(primaryColor.r, primaryColor.g, primaryColor.b, 1);
+      ctx.fillStyle = rgbaString(
+        primaryColor.r,
+        primaryColor.g,
+        primaryColor.b,
+        1
+      );
       ctx.beginPath();
       ctx.arc(x, y, 3, 0, 2 * Math.PI);
       ctx.fill();
@@ -207,7 +242,12 @@ export default function FourierTransformCanvas() {
     const drawGlowingPath = () => {
       if (state.path.length < 2) return;
 
-      ctx.strokeStyle = rgbaString(primaryColor.r, primaryColor.g, primaryColor.b, 1);
+      ctx.strokeStyle = rgbaString(
+        primaryColor.r,
+        primaryColor.g,
+        primaryColor.b,
+        1
+      );
       ctx.lineWidth = 2;
       ctx.beginPath();
       ctx.moveTo(state.path[0].x, state.path[0].y);
@@ -219,7 +259,12 @@ export default function FourierTransformCanvas() {
 
     const drawPath = (points: Point[]) => {
       if (points.length < 2) return;
-      ctx.strokeStyle = rgbaString(primaryColor.r, primaryColor.g, primaryColor.b, 0.8);
+      ctx.strokeStyle = rgbaString(
+        primaryColor.r,
+        primaryColor.g,
+        primaryColor.b,
+        0.8
+      );
       ctx.lineWidth = 2;
       ctx.beginPath();
       ctx.moveTo(points[0].x, points[0].y);
@@ -234,7 +279,7 @@ export default function FourierTransformCanvas() {
       const height = canvasSize;
 
       // Clear canvas
-      ctx.fillStyle = '#000';
+      ctx.fillStyle = themeColors.background;
       ctx.fillRect(0, 0, width, height);
 
       // Translate to center
@@ -242,7 +287,7 @@ export default function FourierTransformCanvas() {
       ctx.translate(width / 2, height / 2);
 
       // Draw center point
-      ctx.fillStyle = rgbaString(255, 255, 255, 0.2);
+      ctx.fillStyle = themeColors.centerPoint;
       ctx.beginPath();
       ctx.arc(0, 0, 2, 0, 2 * Math.PI);
       ctx.fill();
@@ -254,7 +299,12 @@ export default function FourierTransformCanvas() {
         state.fourierX.length > 0
       ) {
         // Draw original shape faintly
-        ctx.strokeStyle = rgbaString(primaryColor.r, primaryColor.g, primaryColor.b, 0.2);
+        ctx.strokeStyle = rgbaString(
+          primaryColor.r,
+          primaryColor.g,
+          primaryColor.b,
+          0.2
+        );
         ctx.lineWidth = 1;
         ctx.beginPath();
         if (state.drawing.length > 0) {
@@ -296,12 +346,10 @@ export default function FourierTransformCanvas() {
     return () => {
       cancelAnimationFrame(animationId);
     };
-  }, [canvasSize]);
+  }, [canvasSize, isDark]);
 
   // Mouse/touch handlers
-  const getCanvasCoords = (
-    e: React.MouseEvent | React.Touch,
-  ): Point | null => {
+  const getCanvasCoords = (e: React.MouseEvent | React.Touch): Point | null => {
     const canvas = canvasRef.current;
     if (!canvas) return null;
     const rect = canvas.getBoundingClientRect();
@@ -359,8 +407,14 @@ export default function FourierTransformCanvas() {
     <div ref={containerRef} className={styles.container}>
       <canvas
         ref={canvasRef}
-        width={canvasSize * (typeof window !== 'undefined' ? window.devicePixelRatio : 1)}
-        height={canvasSize * (typeof window !== 'undefined' ? window.devicePixelRatio : 1)}
+        width={
+          canvasSize *
+          (typeof window !== 'undefined' ? window.devicePixelRatio : 1)
+        }
+        height={
+          canvasSize *
+          (typeof window !== 'undefined' ? window.devicePixelRatio : 1)
+        }
         style={{ width: canvasSize, height: canvasSize }}
         className={styles.canvas}
         onMouseDown={handleStart}
