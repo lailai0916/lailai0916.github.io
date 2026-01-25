@@ -769,48 +769,6 @@
   "data.exploration.p4.skill3": {
     "message": "学术阅读"
   },
-  "home.quote.title": {
-    "message": "思想启迪"
-  },
-  "home.quote.description": {
-    "message": "智者的话语如明灯，照亮前行的道路。这些箴言见证着思想的力量"
-  },
-  "data.quote.p1.quote": {
-    "message": "Stay hungry. Stay foolish."
-  },
-  "data.quote.p1.author": {
-    "message": "Steve Jobs"
-  },
-  "data.quote.p1.context": {
-    "message": "斯坦福大学毕业典礼演讲"
-  },
-  "data.quote.p1.category": {
-    "message": "创新思维"
-  },
-  "data.quote.p2.quote": {
-    "message": "The only way to do great work is to love what you do."
-  },
-  "data.quote.p2.author": {
-    "message": "Steve Jobs"
-  },
-  "data.quote.p2.context": {
-    "message": "关于工作与热情"
-  },
-  "data.quote.p2.category": {
-    "message": "职业理念"
-  },
-  "data.quote.p3.quote": {
-    "message": "Talk is cheap. Show me the code."
-  },
-  "data.quote.p3.author": {
-    "message": "Linus Torvalds"
-  },
-  "data.quote.p3.context": {
-    "message": "Linus Torvalds 的编程哲学"
-  },
-  "data.quote.p3.category": {
-    "message": "技术态度"
-  },
   "home.neuralnetwork.title": {
     "message": "神经网络"
   },
