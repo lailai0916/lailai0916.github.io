@@ -10,6 +10,16 @@ export interface ChangelogItem {
 
 export const CHANGELOG_LIST: ChangelogItem[] = [
   {
+    date: '2026-01-25',
+    type: 'removed',
+    content: '主页 <b>Inspiring Thoughts</b> 组件',
+  },
+  {
+    date: '2026-01-25',
+    type: 'added',
+    content: '主页 <b>Fourier Transform</b> 组件',
+  },
+  {
     date: '2026-01-18',
     type: 'changed',
     content: '优化 <code>&lt;Problem /&gt;</code> 组件标题信息',
