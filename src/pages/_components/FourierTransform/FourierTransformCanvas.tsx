@@ -345,7 +345,7 @@ export default function FourierTransformCanvas() {
     const lastPoint = state.drawing[state.drawing.length - 1];
     if (
       !lastPoint ||
-      Math.hypot(point.x - lastPoint.x, point.y - lastPoint.y) > 3
+      Math.hypot(point.x - lastPoint.x, point.y - lastPoint.y) > 1
     ) {
       state.drawing.push(point);
     }
