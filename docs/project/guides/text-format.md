@@ -6,6 +6,7 @@ title: "lailai's Text Format Guide"
 
 ## 参考资料
 
+- [Google developer documentation style guide](https://developers.google.com/style)
 - [标点符号用法（GB/T 15834-2011）](http://www.moe.gov.cn/jyb_sjzl/ziliao/A19/201001/W020190128580990138234.pdf)
 - [出版物上数字用法 (GB/T 15835-2011)](http://www.moe.gov.cn/ewebeditor/uploadfile/2015/01/13/20150113091154536.pdf)
 - [中文出版物夹用英文的编辑规范（CY/T 154-2017）](https://www.nppa.gov.cn/xxgk/fdzdgknr/hybz/202210/P020221004608768453140.pdf)
@@ -15,9 +16,9 @@ title: "lailai's Text Format Guide"
 - [洛谷主题库题解规范 | 洛谷帮助中心](https://help.luogu.com.cn/rules/academic/solution-standard)
 - [中文文案排版指北（简体中文版） - 码志](https://mazhuang.org/wiki/chinese-copywriting-guidelines/)
 - [中文文案风格指南 - PDFE GUIDELINE](https://pdfe.github.io/GUIDELINE/#/others/copywriter)
-- [一份（不太）简短的 LaTeX2ε 介绍 - CTeX-org/lshort-zh-cn - GitHub](https://github.com/CTeX-org/lshort-zh-cn)
-- [中文技术文档的写作规范 - ruanyf/document-style-guide - GitHub](https://github.com/ruanyf/document-style-guide)
-- [Google developer documentation style guide](https://developers.google.com/style)
+- [CTeX-org/lshort-zh-cn: A Chi­nese edi­tion of the Not So Short Introduction to LaTeX2ε - GitHub](https://github.com/CTeX-org/lshort-zh-cn)
+- [ruanyf/document-style-guide:中文技术文档的写作规范 - GitHub](https://github.com/ruanyf/document-style-guide)
+- [vinta/pangu.js: Opinionated paranoid text spacing in JavaScript - GitHub](https://github.com/vinta/pangu.js)
 
 ## 通用
 
@@ -110,8 +111,9 @@ title: "lailai's Text Format Guide"
 - 不应使用相同的上下级标题。
 - 不应孤立标题编号，即上级标题中不应仅有 $1$ 个下级标题。
 - 表示 **加粗** 应使用 $2$ 个 **星号**（`**`）。
-- 表示 **斜体** 应使用 $1$ 个 **下划线**（`_`）。
+- 表示 **斜体** 应使用 $1$ 个 **下划线**（`_`），避免使用斜体。
 - 表示 **无序列表** 应使用 **连字符**（`-`）。
+- **表格** 应使用 **居中对齐**（`:-:`）。
 - 表示 **分割线** 应使用 $3$ 个 **连字符**（`---`）。
 - 列表项目若为完整句子，末尾应使用句号；若为短语或单词，末尾不应使用标点。
 - 行间代码应标记 **代码语言**，纯文本应标记为 `text`。
