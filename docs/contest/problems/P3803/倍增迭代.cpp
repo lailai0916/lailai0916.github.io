@@ -31,18 +31,8 @@ int main()
 	cin.tie(nullptr);
 	int n,m;
 	cin>>n>>m;
-	for(int i=0;i<=n;i++)
-	{
-		double x;
-		cin>>x;
-		a[i]=Comp(x,0);
-	}
-	for(int i=0;i<=m;i++)
-	{
-		double x;
-		cin>>x;
-		b[i]=Comp(x,0);
-	}
+	for(int i=0;i<=n;i++){double x;cin>>x;a[i]=Comp(x,0);}
+	for(int i=0;i<=m;i++){double x;cin>>x;b[i]=Comp(x,0);}
 	int lim=1,cnt=0;
 	while(lim<=n+m){lim<<=1;cnt++;}
 	for(int i=0;i<lim;i++)r[i]=r[i>>1]>>1|(i&1)<<cnt-1;
