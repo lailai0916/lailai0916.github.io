@@ -57,8 +57,9 @@ function dft(points: Point[]): FourierCoefficient[] {
       im += points[n].y * cos - points[n].x * sin;
     }
 
+    const freq = k <= N / 2 ? k : k - N;
     result.push({
-      freq: k,
+      freq,
       amp: Math.hypot(re, im) / N,
       phase: Math.atan2(im, re),
     });
@@ -86,7 +87,7 @@ export default function FourierTransformCanvas() {
   const initButterfly = (width: number) => {
     const state = stateRef.current;
     state.drawing = [];
-    const total = 500;
+    const total = 300;
     const scale = width / 10;
 
     for (let i = 0; i < total; i++) {
@@ -281,7 +282,8 @@ export default function FourierTransformCanvas() {
         drawGlowingPath();
 
         // Time step
-        const dt = TWO_PI / state.fourierX.length;
+        const speed = 1;
+        const dt = (TWO_PI / state.fourierX.length) * speed;
         state.time += dt;
         if (state.time > TWO_PI) {
           state.time = 0;
