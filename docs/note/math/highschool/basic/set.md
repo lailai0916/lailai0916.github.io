@@ -230,10 +230,10 @@ $$
 
 集合之间的关系可以类比为数之间的关系：
 
-- 子集（$\subseteq$）对应小于等于（$\le$）
-- 超集（$\supseteq$）对应大于等于（$\ge$）
-- 真子集（$\subsetneqq$）对应小于（$<$）
-- 真超集（$\supsetneqq$）对应大于（$>$）
+- 子集（$\subseteq$）$\leftrightarrow$ 小于等于（$\le$）
+- 超集（$\supseteq$）$\leftrightarrow$ 大于等于（$\ge$）
+- 真子集（$\subsetneqq$）$\leftrightarrow$ 小于（$<$）
+- 真超集（$\supsetneqq$）$\leftrightarrow$ 大于（$>$）
 
 :::
 
