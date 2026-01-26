@@ -275,7 +275,7 @@ export default function FourierTransformCanvas() {
 
         // Calculate and draw epicycles
         const v = drawEpicycles();
-        state.path.unshift(v);
+        state.path.push(v);
 
         // Draw glowing path
         drawGlowingPath();
