@@ -44,10 +44,7 @@ void fft(Comp *f,int n,int type)
 ```cpp
 void fft(Comp *f,int n,int type)
 {
-	for(int i=0;i<n;i++)
-	{
-		if(i<r[i])swap(f[i],f[r[i]]);
-	}
+	for(int i=0;i<n;i++)if(i<r[i])swap(f[i],f[r[i]]);
 	for(int k=1;k<n;k<<=1)
 	{
 		Comp step(cos(pi/k),sin(pi/k)*type);
