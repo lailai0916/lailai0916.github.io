@@ -280,11 +280,6 @@ export default function FourierTransformCanvas() {
         // Draw glowing path
         drawGlowingPath();
 
-        // Limit path length
-        if (state.path.length > state.fourierX.length * 0.95) {
-          state.path.pop();
-        }
-
         // Time step
         const dt = TWO_PI / state.fourierX.length;
         state.time += dt;
