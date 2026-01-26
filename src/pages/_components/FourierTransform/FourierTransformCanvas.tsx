@@ -87,7 +87,7 @@ export default function FourierTransformCanvas() {
     const state = stateRef.current;
     state.drawing = [];
     const total = 500;
-    const scale = width / 11;
+    const scale = width / 10;
 
     for (let i = 0; i < total; i++) {
       const angle = (i / total) * TWO_PI;
@@ -98,7 +98,7 @@ export default function FourierTransformCanvas() {
 
       state.drawing.push({
         x: r * Math.sin(angle) * scale,
-        y: -r * Math.cos(angle) * scale - scale * 0.25,
+        y: -r * Math.cos(angle) * scale - scale * 0.25 + 30,
       });
     }
     calcFourier();
