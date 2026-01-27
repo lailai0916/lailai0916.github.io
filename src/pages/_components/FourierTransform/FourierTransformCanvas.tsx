@@ -71,7 +71,7 @@ function dft(points: Point[]): FourierCoefficient[] {
 export default function FourierTransformCanvas() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
-  const [canvasSize, setCanvasSize] = useState(400);
+  const [canvasSize, setCanvasSize] = useState(1000);
   const { colorMode } = useColorMode();
   const isDark = colorMode === 'dark';
 
@@ -88,7 +88,7 @@ export default function FourierTransformCanvas() {
     const state = stateRef.current;
     state.drawing = [];
     const total = 300;
-    const scale = width / 10;
+    const scale = width / 30;
 
     for (let i = 0; i < total; i++) {
       const angle = (i / total) * TWO_PI;
