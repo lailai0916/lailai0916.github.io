@@ -8,7 +8,7 @@ title: '中国剩余定理'
 
 ## 简介
 
-中国剩余定理 (Chinese Remainder Theorem，CRT) 可求解如下形式的一元线性同余方程组：
+**中国剩余定理** (Chinese Remainder Theorem，CRT) 可求解如下形式的一元线性同余方程组：
 
 $$
 \begin{cases}
@@ -20,6 +20,8 @@ $$
 $$
 
 其中 $n_1,n_2,\dots,n_k$ 两两互质。
+
+**扩展中国剩余定理**（EXCRT）可以解决模数不互质的情况。
 
 ## 例题
 
