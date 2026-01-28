@@ -522,11 +522,11 @@ $$
 
 ### 分类讨论
 
-根据 [介值定理](https://zh.wikipedia.org/zh-cn/介值定理)（Intermediate Value Theorem），三次方程至少有一个实数根：
+根据 [介值定理](https://zh.wikipedia.org/zh-cn/介值定理)，三次方程至少有一个实数根。
 
-> 介值定理：假设 $f:[a,b]\to\mathbb{R}$ 为一连续函数。若实数 $u$ 满足 $(f(a)-u)(f(b)-u)\le 0$，则存在实数 $c\in[a,b]$ 使得 $f(c)=u$。
-
-特别地，当 $u=0$ 时即为 **波尔查诺定理**（Bolzano's Theorem），也称为 **零点存在定理**（Existence of a Zero）。
+> **介值定理**（Intermediate Value Theorem）：假设 $f:[a,b]\to\mathbb{R}$ 为一连续函数。若实数 $u$ 满足 $(f(a)-u)(f(b)-u)\le 0$，则存在实数 $c\in[a,b]$ 使得 $f(c)=u$。
+>
+> 特别地，当 $u=0$ 时即为 **波尔查诺定理**（Bolzano's Theorem），也称为 **零点存在定理**（Existence of a Zero）。
 
 令判别式：
 
