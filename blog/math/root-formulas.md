@@ -469,17 +469,17 @@ $$
 解得：
 
 $$
-U,V=X_1,X_2=\frac{-q\pm\sqrt{q^2+\frac{4p^3}{27}}}{2}=-\frac{q}{2}\pm\sqrt{\left(\frac{q}{2}\right)^2+\left(\frac{p}{3}\right)^3}
+X_1,X_2=\frac{-q\pm\sqrt{q^2+\frac{4p^3}{27}}}{2}=-\frac{q}{2}\pm\sqrt{\left(\frac{q}{2}\right)^2+\left(\frac{p}{3}\right)^3}
 $$
 
 令：
 
 $$
-U=-\frac{q}{2}+\sqrt{\left(\frac{q}{2}\right)^2+\left(\frac{p}{3}\right)^3}
+U=X_1=-\frac{q}{2}+\sqrt{\left(\frac{q}{2}\right)^2+\left(\frac{p}{3}\right)^3}
 $$
 
 $$
-V=-\frac{q}{2}-\sqrt{\left(\frac{q}{2}\right)^2+\left(\frac{p}{3}\right)^3}
+V=X_2=-\frac{q}{2}-\sqrt{\left(\frac{q}{2}\right)^2+\left(\frac{p}{3}\right)^3}
 $$
 
 还原：
