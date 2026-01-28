@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import clsx from 'clsx';
 import Link from '@docusaurus/Link';
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -41,14 +41,35 @@ function AuthorCard() {
   );
 }
 
+const ProgressBar = () => {
+  const [progress, setProgress] = useState(0);
+
+  const handleScroll = () => {
+    const scrollTop = window.scrollY;
+    const scrollHeight =
+      document.documentElement.scrollHeight -
+      document.documentElement.clientHeight;
+    setProgress(scrollTop / scrollHeight);
+  };
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
+  return Math.min(1, Math.max(0, progress));
+};
+
 function TocCard({ toc }: { toc: readonly TOCItem[] }) {
   return (
     <div className={styles.tocContainer}>
       <Card
-        title={translate({
+        title={`${translate({
           id: 'blog.sidebar.toc.title',
-          message: 'Contents',
-        })}
+          message: `Contents`,
+        })} (${Math.round(ProgressBar() * 100)}%)`}
       >
         <ul className={styles.tocList}>
           {toc.map((item) => (
