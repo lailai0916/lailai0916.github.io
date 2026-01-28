@@ -422,6 +422,8 @@ $$
 x_0^3+px_0+q=0
 $$
 
+#### 拆分
+
 令 $x_0=u+v$，代入：
 
 $$
@@ -438,12 +440,14 @@ $$
 u^3+v^3+(3uv+p)(u+v)+q=0
 $$
 
+#### 赋值
+
 为了让它成立，可以令：
 
 $$
 \begin{cases}
   u^3+v^3=-q \\
-  3uv+p=0 \Rightarrow uv=-\frac{p}{3}
+  3uv+p=0\implies u^3v^3=\left(-\frac{p}{3}\right)^3
 \end{cases}
 $$
 
@@ -452,7 +456,7 @@ $$
 $$
 \begin{cases}
   U+V=-q \\
-  UV=(-\frac{p}{3})^3
+  UV=\left(-\frac{p}{3}\right)^3
 \end{cases}
 $$
 
@@ -487,6 +491,8 @@ $$
 $$
 v=\sqrt[3]{V}=\sqrt[3]{-\frac{q}{2}-\sqrt{\left(\frac{q}{2}\right)^2+\left(\frac{p}{3}\right)^3}}
 $$
+
+#### 整理
 
 解得：
 
