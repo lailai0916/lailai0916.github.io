@@ -1,0 +1,361 @@
+.hero {
+  padding: 3rem 1.5rem 4rem;
+  min-height: calc(100vh - var(--ifm-navbar-height));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ========== Bento Grid ========== */
+.bento {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: auto auto auto;
+  gap: 1rem;
+  max-width: 800px;
+  width: 100%;
+}
+
+/* ========== Card Base ========== */
+.card {
+  background: var(--ifm-card-background-color);
+  border: 1px solid var(--ifm-color-emphasis-200);
+  border-radius: 20px;
+  padding: 1.25rem;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+}
+
+html[data-theme='dark'] .card:hover {
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
+}
+
+/* ========== Main Card ========== */
+.cardMain {
+  grid-column: span 2;
+  grid-row: span 2;
+  padding: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.cardMainInner {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  margin-bottom: 1.5rem;
+}
+
+.avatar {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  object-fit: cover;
+  filter: drop-shadow(0 4px 12px rgba(29, 155, 240, 0.3));
+}
+
+.intro {
+  flex: 1;
+}
+
+.name {
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin: 0;
+  letter-spacing: -0.02em;
+}
+
+.role {
+  font-size: 0.95rem;
+  color: var(--ifm-color-emphasis-600);
+  margin: 0.25rem 0 0;
+}
+
+.bio {
+  font-size: 0.95rem;
+  color: var(--ifm-color-emphasis-700);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ========== Navigation Cards ========== */
+.cardNav {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  text-decoration: none !important;
+  color: inherit !important;
+  position: relative;
+  overflow: hidden;
+  min-height: 100px;
+}
+
+.cardNav::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  border-radius: 20px;
+}
+
+.cardNav:hover::before {
+  opacity: 1;
+}
+
+.cardNav1::before {
+  background: linear-gradient(
+    135deg,
+    rgba(251, 191, 36, 0.1),
+    rgba(245, 158, 11, 0.05)
+  );
+}
+.cardNav2::before {
+  background: linear-gradient(
+    135deg,
+    rgba(16, 185, 129, 0.1),
+    rgba(6, 182, 212, 0.05)
+  );
+}
+.cardNav3::before {
+  background: linear-gradient(
+    135deg,
+    rgba(139, 92, 246, 0.1),
+    rgba(168, 85, 247, 0.05)
+  );
+}
+.cardNav4::before {
+  background: linear-gradient(
+    135deg,
+    rgba(244, 63, 94, 0.1),
+    rgba(236, 72, 153, 0.05)
+  );
+}
+
+.cardNav:hover {
+  border-color: transparent;
+}
+
+.cardNav1:hover {
+  border-color: rgba(251, 191, 36, 0.5);
+}
+.cardNav2:hover {
+  border-color: rgba(16, 185, 129, 0.5);
+}
+.cardNav3:hover {
+  border-color: rgba(139, 92, 246, 0.5);
+}
+.cardNav4:hover {
+  border-color: rgba(244, 63, 94, 0.5);
+}
+
+.cardNavIcon {
+  font-size: 1.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+.cardNav1 .cardNavIcon {
+  color: #f59e0b;
+}
+.cardNav2 .cardNavIcon {
+  color: #10b981;
+}
+.cardNav3 .cardNavIcon {
+  color: #8b5cf6;
+}
+.cardNav4 .cardNavIcon {
+  color: #f43f5e;
+}
+
+.cardNavTitle {
+  font-size: 1rem;
+  font-weight: 600;
+  position: relative;
+  z-index: 1;
+}
+
+.cardNavArrow {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 1rem;
+  color: var(--ifm-color-emphasis-400);
+  opacity: 0;
+  transform: translate(-4px, 4px);
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease;
+}
+
+.cardNav:hover .cardNavArrow {
+  opacity: 1;
+  transform: translate(0, 0);
+}
+
+/* ========== Social Card ========== */
+.cardSocial {
+  grid-column: span 2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.cardSocialLabel {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--ifm-color-emphasis-600);
+}
+
+.socialLinks {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.socialLink {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  color: var(--ifm-color-emphasis-600);
+  background: var(--ifm-color-emphasis-100);
+  transition: all 0.15s ease;
+}
+
+.socialLink:hover {
+  color: var(--ifm-color-primary);
+  background: var(--ifm-color-emphasis-200);
+}
+
+/* ========== Location Card ========== */
+.cardLocation {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.locationIcon {
+  font-size: 1.25rem;
+  color: var(--ifm-color-emphasis-500);
+}
+
+.locationText {
+  font-size: 0.875rem;
+  color: var(--ifm-color-emphasis-700);
+  font-weight: 500;
+}
+
+/* ========== Status Card ========== */
+.cardStatus {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.statusDot {
+  width: 8px;
+  height: 8px;
+  background: #22c55e;
+  border-radius: 50%;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.6;
+    transform: scale(1.1);
+  }
+}
+
+.statusText {
+  font-size: 0.875rem;
+  color: var(--ifm-color-emphasis-700);
+  font-weight: 500;
+}
+
+/* ========== Responsive ========== */
+@media (max-width: 768px) {
+  .hero {
+    padding: 2rem 1rem 3rem;
+    min-height: auto;
+  }
+
+  .bento {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+  }
+
+  .cardMain {
+    grid-column: span 2;
+    grid-row: span 1;
+  }
+
+  .cardMainInner {
+    gap: 1rem;
+  }
+
+  .avatar {
+    width: 56px;
+    height: 56px;
+  }
+
+  .name {
+    font-size: 1.5rem;
+  }
+
+  .cardSocial {
+    grid-column: span 2;
+  }
+
+  .cardLocation,
+  .cardStatus {
+    grid-column: span 1;
+  }
+}
+
+@media (max-width: 480px) {
+  .bento {
+    grid-template-columns: 1fr;
+  }
+
+  .cardMain,
+  .cardSocial,
+  .cardLocation,
+  .cardStatus,
+  .cardNav {
+    grid-column: span 1;
+  }
+
+  .cardNav {
+    flex-direction: row;
+    align-items: center;
+    min-height: auto;
+    gap: 1rem;
+  }
+
+  .cardNavArrow {
+    position: static;
+    opacity: 1;
+    transform: none;
+    margin-left: auto;
+  }
+}
