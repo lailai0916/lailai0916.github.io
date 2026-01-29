@@ -4,6 +4,7 @@ import confetti from 'canvas-confetti';
 import { translate } from '@docusaurus/Translate';
 import Layout from '@theme/Layout';
 
+import Card from '@site/src/components/laikit/widget/Card';
 import IconText from '@site/src/components/laikit/widget/IconText';
 import Switch from '@site/src/components/laikit/widget/Switch';
 import DataCard from '@site/src/components/laikit/widget/DataCard';
@@ -28,9 +29,9 @@ const MODIFICATION = translate({
   message: 'Personalized <b>Settings</b>',
 });
 
-function Card({ title, description, icon, children }) {
+function SettingCard({ title, description, icon, children }) {
   return (
-    <div className={styles.settingCard}>
+    <Card padding="1.5rem">
       <div className={styles.cardHeader}>
         <Icon icon={icon} className={styles.cardIcon} />
         <div className={styles.cardTitleGroup}>
@@ -39,7 +40,7 @@ function Card({ title, description, icon, children }) {
         </div>
       </div>
       <div className={styles.cardBody}>{children}</div>
-    </div>
+    </Card>
   );
 }
 
@@ -73,7 +74,7 @@ function ThemeSettings() {
   const { colorModeChoice, setColorMode } = useColorMode();
 
   return (
-    <Card
+    <SettingCard
       title={translate({
         id: 'pages.settings.item.theme.title',
         message: 'Theme',
@@ -100,7 +101,7 @@ function ThemeSettings() {
           </button>
         ))}
       </div>
-    </Card>
+    </SettingCard>
   );
 }
 
@@ -119,7 +120,7 @@ function ColorGenerator() {
   );
 
   return (
-    <Card
+    <SettingCard
       title={translate({
         id: 'pages.settings.item.color.title',
         message: 'Color Generator',
@@ -179,7 +180,7 @@ function ColorGenerator() {
           </button>
         </div>
       </div>
-    </Card>
+    </SettingCard>
   );
 }
 
@@ -204,7 +205,7 @@ function FontSettings() {
   };
 
   return (
-    <Card
+    <SettingCard
       title={translate({
         id: 'pages.settings.item.font.title',
         message: 'Font Size',
@@ -240,7 +241,7 @@ function FontSettings() {
           <span>20px</span>
         </div>
       </div>
-    </Card>
+    </SettingCard>
   );
 }
 
@@ -283,7 +284,7 @@ function ExperimentalFeatures() {
   };
 
   return (
-    <Card
+    <SettingCard
       title={translate({
         id: 'pages.settings.item.experimental.title',
         message: 'Experimental Content',
@@ -305,7 +306,7 @@ function ExperimentalFeatures() {
           </div>
         ))}
       </div>
-    </Card>
+    </SettingCard>
   );
 }
 
@@ -359,7 +360,7 @@ function QuickActions() {
   ];
 
   return (
-    <Card
+    <SettingCard
       title={translate({
         id: 'pages.settings.item.quickactions.title',
         message: 'Quick Actions',
@@ -383,7 +384,7 @@ function QuickActions() {
           </button>
         ))}
       </div>
-    </Card>
+    </SettingCard>
   );
 }
 
