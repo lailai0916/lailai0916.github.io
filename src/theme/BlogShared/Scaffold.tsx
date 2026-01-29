@@ -8,7 +8,6 @@ import type { TOCItem } from '@docusaurus/mdx-loader';
 import { translate } from '@docusaurus/Translate';
 import { getAllBlogItems, getAllPostMetadata } from '@site/src/utils/blogData';
 import {
-  Card,
   TagChipList,
   formatLongNumber,
   useAnalytics,
@@ -16,6 +15,7 @@ import {
 } from './Components';
 import styles from './styles.module.css';
 import IconText from '@site/src/components/laikit/widget/IconText';
+import Card from '@site/src/components/laikit/widget/Card';
 
 function AuthorCard() {
   const author = getAllPostMetadata()

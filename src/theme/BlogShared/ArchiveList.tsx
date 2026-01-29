@@ -1,9 +1,8 @@
 import React from 'react';
 import Link from '@docusaurus/Link';
 import Translate from '@docusaurus/Translate';
-
+import Card from '@site/src/components/laikit/widget/Card';
 import styles from './styles.module.css';
-import { Card } from './Components';
 
 type PostLike = {
   metadata: {

@@ -39,20 +39,6 @@
   gap: var(--gap);
 }
 
-.card {
-  background: var(--ifm-card-background-color);
-  border: 1px solid var(--ifm-color-emphasis-200);
-  border-radius: 16px;
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
-  padding: 1rem;
-}
-
-.cardTitle {
-  font-weight: 700;
-  line-height: 1;
-  margin-bottom: 1rem;
-}
-
 .authorCard {
   display: flex;
   align-items: center;

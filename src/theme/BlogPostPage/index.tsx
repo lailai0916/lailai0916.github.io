@@ -3,7 +3,7 @@ import clsx from 'clsx';
 import { useTheme } from '@site/src/hooks/useTheme';
 import BlogPostPageOriginal from '@theme-original/BlogPostPage';
 import BlogScaffold from '../BlogShared/Scaffold';
-import { Card } from '../BlogShared/Components';
+import Card from '@site/src/components/laikit/widget/Card';
 import {
   HtmlClassNameProvider,
   ThemeClassNames,

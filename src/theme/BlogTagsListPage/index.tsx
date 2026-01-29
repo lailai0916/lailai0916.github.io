@@ -1,6 +1,7 @@
 import React from 'react';
 import { useTheme } from '@site/src/hooks/useTheme';
-import { Card, TagChipList } from '../BlogShared/Components';
+import { TagChipList } from '../BlogShared/Components';
+import Card from '@site/src/components/laikit/widget/Card';
 import BlogTagsListPageOriginal from '@theme-original/BlogTagsListPage';
 import type { Props } from '@theme/BlogTagsListPage';
 import BlogScaffold from '../BlogShared/Scaffold';

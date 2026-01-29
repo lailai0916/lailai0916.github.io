@@ -2,7 +2,8 @@ import React, { type ReactNode } from 'react';
 import { translate } from '@docusaurus/Translate';
 
 import type { Props } from '@theme/Blog/Pages/BlogAuthorsListPage';
-import { Card, TagChipList } from '../../../BlogShared/Components';
+import Card from '@site/src/components/laikit/widget/Card';
+import { TagChipList } from '../../../BlogShared/Components';
 import BlogScaffold from '../../../BlogShared/Scaffold';
 
 const TITLE = translate({

@@ -8,7 +8,8 @@ import { BlogArchiveList } from '../BlogShared/ArchiveList';
 import { translate } from '@docusaurus/Translate';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import { loadOfficialTags } from '@site/src/utils/blogData';
-import { Card, TagChipList } from '../BlogShared/Components';
+import { TagChipList } from '../BlogShared/Components';
+import Card from '@site/src/components/laikit/widget/Card';
 import { Paginator } from '../BlogShared/PostsListLayout';
 
 const TITLE = translate({ id: 'blog.pages.tags.tagSelect', message: 'Tags' });

@@ -9,21 +9,6 @@ const ANALYTICS_BASE_URL = `https://analytics.lailai.one/api/websites/${WEBSITE_
 const Authorization =
   'Bearer mXASurmA0JxF4bm+aeWM458Rk3hKZJUoYm4aSFdVUp1LzlZ96vwe2RcV6b19yqwgwmPIo3q2jvqLlBqLhNrkW+AlPZ/CgTIfAkeMrg+NWpcYD9waQRngwntf5maKEt/oBwKm9C3wd3dCm7m0BSXddT8q8vDMYSRYeJ+tcwkcbEOCtsgAHs28V+qT30mGz6yCh02gctP3RrPDeIvq3A4az1n87MlUZDiLxI8YwX8aVhSOml6WKnKtFOWgqTCXt9si79sLuw8vWT+FySCkes47gl0JlgOz/gFGZPwCGa2LKP1N0evzma5tvUtKLJsQfcBp/JZVoxDRmMUp2B1PaKoUyAn4ELxQzLpaFkVyMdA/p1AO72N2vhlNHILC4/kI';
 
-export function Card({
-  title,
-  children,
-}: {
-  title?: string;
-  children: React.ReactNode;
-}) {
-  return (
-    <div className={styles.card}>
-      {title && <div className={styles.cardTitle}>{title}</div>}
-      {children}
-    </div>
-  );
-}
-
 export type ChipItem = {
   to: string;
   label: string;
