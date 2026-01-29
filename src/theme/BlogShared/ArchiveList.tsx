@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from '@docusaurus/Link';
 import Translate from '@docusaurus/Translate';
-import Card from '@site/src/components/laikit/widget/Card';
+import { BlogCard } from '../BlogShared/Components';
 import styles from './styles.module.css';
 
 type PostLike = {
@@ -28,11 +28,11 @@ export function BlogArchiveList({ posts }: { posts: PostLike[] }) {
 
   if (!groups.length) {
     return (
-      <Card>
+      <BlogCard>
         <Translate id="blog.post.empty">
           No posts yet, please look forward to more content...
         </Translate>
-      </Card>
+      </BlogCard>
     );
   }
 

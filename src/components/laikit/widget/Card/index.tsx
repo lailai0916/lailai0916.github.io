@@ -3,7 +3,6 @@ import clsx from 'clsx';
 import styles from './styles.module.css';
 
 type CardProps = {
-  title?: string;
   children: React.ReactNode;
   padding?: React.CSSProperties['padding'];
   style?: React.CSSProperties;
@@ -11,7 +10,6 @@ type CardProps = {
 };
 
 export default function Card({
-  title,
   children,
   padding,
   style,
@@ -29,7 +27,6 @@ export default function Card({
             } as React.CSSProperties)
       }
     >
-      {title && <div className={styles.cardTitle}>{title}</div>}
       {children}
     </div>
   );

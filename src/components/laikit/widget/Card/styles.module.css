@@ -5,9 +5,3 @@
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
   padding: var(--card-padding, 1rem);
 }
-
-.cardTitle {
-  font-weight: 700;
-  line-height: 1;
-  margin-bottom: 1rem;
-}

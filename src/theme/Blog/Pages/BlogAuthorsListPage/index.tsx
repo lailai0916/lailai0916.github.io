@@ -2,8 +2,7 @@ import React, { type ReactNode } from 'react';
 import { translate } from '@docusaurus/Translate';
 
 import type { Props } from '@theme/Blog/Pages/BlogAuthorsListPage';
-import Card from '@site/src/components/laikit/widget/Card';
-import { TagChipList } from '../../../BlogShared/Components';
+import { BlogCard, TagChipList } from '../../../BlogShared/Components';
 import BlogScaffold from '../../../BlogShared/Scaffold';
 
 const TITLE = translate({
@@ -15,7 +14,7 @@ const DESCRIPTION = "Authors of lailai's blog";
 export default function BlogAuthorsListPage({ authors }: Props): ReactNode {
   return (
     <BlogScaffold title={TITLE} description={DESCRIPTION}>
-      <Card title={TITLE}>
+      <BlogCard title={TITLE}>
         <TagChipList
           items={authors.map((author) => ({
             to: author.page?.permalink,
@@ -23,7 +22,7 @@ export default function BlogAuthorsListPage({ authors }: Props): ReactNode {
             count: author.count,
           }))}
         />
-      </Card>
+      </BlogCard>
     </BlogScaffold>
   );
 }

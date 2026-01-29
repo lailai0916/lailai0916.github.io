@@ -4,9 +4,8 @@ import Link from '@docusaurus/Link';
 import { Icon } from '@iconify/react';
 import type { BlogPaginatedMetadata } from '@docusaurus/plugin-content-blog';
 import BlogScaffold from './Scaffold';
-import { useAnalytics } from './Components';
+import { BlogCard, useAnalytics } from './Components';
 import useBaseUrl from '@docusaurus/useBaseUrl';
-import Card from '@site/src/components/laikit/widget/Card';
 
 import { translate } from '@docusaurus/Translate';
 import IconText from '@site/src/components/laikit/widget/IconText';
@@ -41,7 +40,7 @@ function PostCard({ item }) {
   const { analytics, status } = useAnalytics(metadata.permalink);
 
   return (
-    <Card>
+    <BlogCard>
       {image && (
         <Link to={metadata.permalink} className={styles.postCoverWrap}>
           <img src={image} alt={metadata.title} className={styles.postCover} />
@@ -136,7 +135,7 @@ function PostCard({ item }) {
           </IconData>
         )}
       </div>
-    </Card>
+    </BlogCard>
   );
 }
 

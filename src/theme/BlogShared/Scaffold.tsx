@@ -8,14 +8,14 @@ import type { TOCItem } from '@docusaurus/mdx-loader';
 import { translate } from '@docusaurus/Translate';
 import { getAllBlogItems, getAllPostMetadata } from '@site/src/utils/blogData';
 import {
+  BlogCard,
   TagChipList,
   formatLongNumber,
   useAnalytics,
   type ChipItem,
 } from './Components';
-import styles from './styles.module.css';
 import IconText from '@site/src/components/laikit/widget/IconText';
-import Card from '@site/src/components/laikit/widget/Card';
+import styles from './styles.module.css';
 
 function AuthorCard() {
   const author = getAllPostMetadata()
@@ -25,7 +25,7 @@ function AuthorCard() {
   if (!author) return null;
 
   return (
-    <Card>
+    <BlogCard>
       <div className={styles.authorCard}>
         <img
           src={useBaseUrl(author.imageURL)}
@@ -37,7 +37,7 @@ function AuthorCard() {
         <div className={styles.authorName}>{author.name}</div>
         <div className={styles.authorDesc}>{author.title}</div>
       </div>
-    </Card>
+    </BlogCard>
   );
 }
 
@@ -65,7 +65,7 @@ const ProgressBar = () => {
 function TocCard({ toc }: { toc: readonly TOCItem[] }) {
   return (
     <div className={styles.tocContainer}>
-      <Card
+      <BlogCard
         title={`${translate({
           id: 'blog.sidebar.toc.title',
           message: `Contents`,
@@ -83,7 +83,7 @@ function TocCard({ toc }: { toc: readonly TOCItem[] }) {
             </li>
           ))}
         </ul>
-      </Card>
+      </BlogCard>
     </div>
   );
 }
@@ -115,7 +115,7 @@ function InfoCard() {
   ];
 
   return (
-    <Card
+    <BlogCard
       title={translate({
         id: 'blog.sidebar.info.title',
         message: 'Information',
@@ -128,7 +128,7 @@ function InfoCard() {
           </Link>
         ))}
       </div>
-    </Card>
+    </BlogCard>
   );
 }
 
@@ -194,7 +194,7 @@ function StatsCard() {
   ];
 
   return (
-    <Card
+    <BlogCard
       title={translate({
         id: 'blog.sidebar.stats.title',
         message: 'Statistics',
@@ -210,7 +210,7 @@ function StatsCard() {
           </div>
         ))}
       </div>
-    </Card>
+    </BlogCard>
   );
 }
 
@@ -232,14 +232,14 @@ function TagsCard() {
     .slice(0, 8);
 
   return (
-    <Card
+    <BlogCard
       title={translate({
         id: 'blog.sidebar.tags.title',
         message: 'Popular Tags',
       })}
     >
       <TagChipList items={tags} />
-    </Card>
+    </BlogCard>
   );
 }
 
@@ -269,7 +269,7 @@ function FeedCard() {
   ];
 
   return (
-    <Card
+    <BlogCard
       title={translate({
         id: 'blog.sidebar.feed.title',
         message: 'Subscribe',
@@ -286,7 +286,7 @@ function FeedCard() {
           </Link>
         ))}
       </div>
-    </Card>
+    </BlogCard>
   );
 }
 

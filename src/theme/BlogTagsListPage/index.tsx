@@ -1,7 +1,6 @@
 import React from 'react';
 import { useTheme } from '@site/src/hooks/useTheme';
-import { TagChipList } from '../BlogShared/Components';
-import Card from '@site/src/components/laikit/widget/Card';
+import { BlogCard, TagChipList } from '../BlogShared/Components';
 import BlogTagsListPageOriginal from '@theme-original/BlogTagsListPage';
 import type { Props } from '@theme/BlogTagsListPage';
 import BlogScaffold from '../BlogShared/Scaffold';
@@ -21,7 +20,7 @@ export default function BlogTagsListPage(props: Props): React.ReactElement {
   const { tags } = props;
   return (
     <BlogScaffold title={TITLE} description={DESCRIPTION}>
-      <Card title={`${TITLE} (${tags.length})`}>
+      <BlogCard title={`${TITLE} (${tags.length})`}>
         <TagChipList
           items={tags.map((tag) => ({
             to: tag.permalink,
@@ -29,7 +28,7 @@ export default function BlogTagsListPage(props: Props): React.ReactElement {
             count: tag.count,
           }))}
         />
-      </Card>
+      </BlogCard>
     </BlogScaffold>
   );
 }
