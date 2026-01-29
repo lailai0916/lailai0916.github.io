@@ -59,7 +59,6 @@ html[data-theme='dark'] .card:hover {
   height: 72px;
   border-radius: 50%;
   object-fit: cover;
-  filter: drop-shadow(0 4px 12px rgba(29, 155, 240, 0.3));
 }
 
 .intro {
