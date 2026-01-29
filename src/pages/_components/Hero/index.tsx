@@ -1,7 +1,9 @@
 import React from 'react';
 import Link from '@docusaurus/Link';
+import clsx from 'clsx';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import { Icon } from '@iconify/react';
+import Card from '@site/src/components/laikit/widget/Card';
 import styles from './styles.module.css';
 
 const NAV_ITEMS = [
@@ -46,8 +48,7 @@ export default function Hero() {
   return (
     <section className={styles.hero}>
       <div className={styles.bento}>
-        {/* Main intro card */}
-        <div className={`${styles.card} ${styles.cardMain}`}>
+        <Card className={styles.cardMain} padding="1.25rem">
           <div className={styles.cardMainInner}>
             <img
               src={useBaseUrl('/img/logo.svg')}
@@ -63,26 +64,23 @@ export default function Hero() {
             Building things for the web. Interested in algorithms and crafting
             delightful experiences.
           </p>
-        </div>
-
-        {/* Navigation cards */}
+        </Card>
         {NAV_ITEMS.map((item, index) => (
-          <Link
-            key={item.title}
-            to={item.href}
-            className={`${styles.card} ${styles.cardNav} ${styles[`cardNav${index + 1}`]}`}
-          >
-            <Icon icon={item.icon} className={styles.cardNavIcon} />
-            <span className={styles.cardNavTitle}>{item.title}</span>
-            <Icon
-              icon="lucide:arrow-up-right"
-              className={styles.cardNavArrow}
-            />
+          <Link key={item.title} to={item.href} className={styles.cardNavLink}>
+            <Card
+              className={clsx(styles.cardNav, styles[`cardNav${index + 1}`])}
+              padding="1.25rem"
+            >
+              <Icon icon={item.icon} className={styles.cardNavIcon} />
+              <span className={styles.cardNavTitle}>{item.title}</span>
+              <Icon
+                icon="lucide:arrow-up-right"
+                className={styles.cardNavArrow}
+              />
+            </Card>
           </Link>
         ))}
-
-        {/* Social card */}
-        <div className={`${styles.card} ${styles.cardSocial}`}>
+        <Card className={styles.cardSocial} padding="1.25rem">
           <span className={styles.cardSocialLabel}>Connect</span>
           <div className={styles.socialLinks}>
             {SOCIALS.map((social) => (
@@ -98,19 +96,15 @@ export default function Hero() {
               </a>
             ))}
           </div>
-        </div>
-
-        {/* Location card */}
-        <div className={`${styles.card} ${styles.cardLocation}`}>
+        </Card>
+        <Card className={styles.cardLocation} padding="1.25rem">
           <Icon icon="lucide:map-pin" className={styles.locationIcon} />
           <span className={styles.locationText}>Hangzhou, China</span>
-        </div>
-
-        {/* Status card */}
-        <div className={`${styles.card} ${styles.cardStatus}`}>
+        </Card>
+        <Card className={styles.cardStatus} padding="1.25rem">
           <span className={styles.statusDot} />
           <span className={styles.statusText}>Available</span>
-        </div>
+        </Card>
       </div>
     </section>
   );

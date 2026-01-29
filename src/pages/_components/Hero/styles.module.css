@@ -16,15 +16,6 @@
   width: 100%;
 }
 
-/* ========== Card Base ========== */
-.card {
-  background: var(--ifm-card-background-color);
-  border: 1px solid var(--ifm-color-emphasis-200);
-  border-radius: 16px;
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
-  padding: 1.25rem;
-}
-
 /* ========== Main Card ========== */
 .cardMain {
   grid-column: span 2;
@@ -74,13 +65,17 @@
 }
 
 /* ========== Navigation Cards ========== */
+.cardNavLink {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
 .cardNav {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: space-between;
-  text-decoration: none !important;
-  color: inherit !important;
   position: relative;
   overflow: hidden;
   min-height: 100px;
