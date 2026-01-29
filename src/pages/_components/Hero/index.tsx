@@ -43,15 +43,17 @@ const SOCIALS = [
 ];
 
 export default function Hero() {
-  const logoUrl = useBaseUrl('/img/logo.svg');
-
   return (
     <section className={styles.hero}>
       <div className={styles.bento}>
         {/* Main intro card */}
         <div className={`${styles.card} ${styles.cardMain}`}>
           <div className={styles.cardMainInner}>
-            <img src={logoUrl} alt="lailai" className={styles.avatar} />
+            <img
+              src={useBaseUrl('/img/logo.svg')}
+              alt="lailai"
+              className={styles.avatar}
+            />
             <div className={styles.intro}>
               <h1 className={styles.name}>lailai</h1>
               <p className={styles.role}>Student & Developer</p>
