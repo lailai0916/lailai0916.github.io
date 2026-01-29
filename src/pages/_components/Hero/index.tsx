@@ -107,7 +107,7 @@ export default function Hero() {
         {/* Status card */}
         <div className={`${styles.card} ${styles.cardStatus}`}>
           <span className={styles.statusDot} />
-          <span className={styles.statusText}>Open to opportunities</span>
+          <span className={styles.statusText}>Available</span>
         </div>
       </div>
     </section>
