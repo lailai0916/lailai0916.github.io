@@ -39,6 +39,12 @@
   gap: var(--gap);
 }
 
+.cardTitle {
+  font-weight: 700;
+  line-height: 1;
+  margin-bottom: 1rem;
+}
+
 .authorCard {
   display: flex;
   align-items: center;
