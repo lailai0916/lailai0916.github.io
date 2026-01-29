@@ -36,6 +36,14 @@ Apple 的音乐流媒体服务，提供海量曲库与无损音质，支持多�
 - 平台：iOS / macOS
 - 价格：个人 - ¥11/月
 
+#### Apple Creator Studio
+
+Apple 的创作类 App 服务，满足各种创作所需。
+
+- 官网：[Apple Creator Studio](https://www.apple.com.cn/apple-creator-studio/)
+- 平台：iOS / macOS
+- 价格：个人 - ¥38/月
+
 #### Setapp
 
 Setapp 是由 MacPaw 推出的订阅服务，提供超过 250 款精选的 macOS 和 iOS 应用，涵盖生产力、开发、创意等多个领域，用户可通过统一订阅获取所有应用的完整功能和更新。
