@@ -3,6 +3,7 @@ import Link from '@docusaurus/Link';
 import clsx from 'clsx';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import { Icon } from '@iconify/react';
+import { COMMUNITY_LIST } from '@site/src/data/community';
 import Card from '@site/src/components/laikit/widget/Card';
 import styles from './styles.module.css';
 
@@ -27,21 +28,6 @@ const NAV_ITEMS = [
     href: '/blog',
     icon: 'lucide:pen-line',
   },
-];
-
-const SOCIALS = [
-  {
-    icon: 'simple-icons:github',
-    href: 'https://github.com/lailai0916',
-    label: 'GitHub',
-  },
-  { icon: 'simple-icons:x', href: 'https://x.com/lailai0x394', label: 'X' },
-  {
-    icon: 'simple-icons:linkedin',
-    href: 'https://www.linkedin.com/in/lailai0916',
-    label: 'LinkedIn',
-  },
-  { icon: 'lucide:mail', href: 'mailto:lailai0x394@gmail.com', label: 'Email' },
 ];
 
 export default function Hero() {
@@ -83,17 +69,15 @@ export default function Hero() {
         <Card className={styles.cardSocial} padding="1.25rem">
           <span className={styles.cardSocialLabel}>Connect</span>
           <div className={styles.socialLinks}>
-            {SOCIALS.map((social) => (
-              <a
-                key={social.label}
+            {COMMUNITY_LIST.map((social) => (
+              <Link
+                key={social.title}
                 href={social.href}
-                target="_blank"
-                rel="noopener noreferrer"
                 className={styles.socialLink}
-                aria-label={social.label}
+                aria-label={social.title}
               >
                 <Icon icon={social.icon} width={20} height={20} />
-              </a>
+              </Link>
             ))}
           </div>
         </Card>
