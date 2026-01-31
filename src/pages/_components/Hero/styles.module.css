@@ -224,6 +224,11 @@
   background: var(--ifm-color-emphasis-200);
 }
 
+.cardTemp {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+
 /* ========== Location Card ========== */
 .cardLocation {
   display: flex;

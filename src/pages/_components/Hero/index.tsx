@@ -81,13 +81,16 @@ export default function Hero() {
             ))}
           </div>
         </Card>
-        <Card className={styles.cardLocation} padding="1.25rem">
-          <Icon icon="lucide:map-pin" className={styles.locationIcon} />
-          <span className={styles.locationText}>Hangzhou, China</span>
+        <Card className={styles.cardTemp} padding="1.25rem">
+          <></>
         </Card>
         <Card className={styles.cardStatus} padding="1.25rem">
           <span className={styles.statusDot} />
           <span className={styles.statusText}>Available</span>
+        </Card>
+        <Card className={styles.cardLocation} padding="1.25rem">
+          <Icon icon="lucide:map-pin" className={styles.locationIcon} />
+          <span className={styles.locationText}>Hangzhou, China</span>
         </Card>
       </div>
     </section>
