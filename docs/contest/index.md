@@ -15,7 +15,6 @@ export const daysUntil = (target) => Math.ceil((new Date(target) - new Date()) /
 
 今天是 **{today}**，距离：
 
-- **USACO 2025-2026 Second Contest** 还有 **{daysUntil('2026-01-30')}** 天
 - **NOIWC 2026** 还有 **{daysUntil('2026-02-06')}** 天
 - **USACO 2025-2026 Third Contest** 还有 **{daysUntil('2026-02-20')}** 天
 - **浙江省选 2026** 还有 **{daysUntil('2026-03-07')}** 天
