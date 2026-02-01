@@ -17,7 +17,7 @@ title: 'Hangzhou HighSchool Map'
 
 ### 杭州高中分布地图 <sub><small>0.2.0-beta · 2025-10-16</small></sub>
 
-学校定位数据来自 **Google Maps Platform**，所有经纬度信息均已 **人工核查**。
+学校定位数据来自 **Google Maps Platform**，所有经纬度信息均已 **人工审核**。
 
 地图底图使用 **OpenStreetMap** 开源数据，使用 **Mapbox** 实现交互式渲染。
 
