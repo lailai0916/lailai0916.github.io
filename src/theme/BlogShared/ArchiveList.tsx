@@ -39,7 +39,7 @@ export function BlogArchiveList({ posts }: { posts: PostLike[] }) {
   return (
     <>
       {groups.map(([year, yearPosts]) => (
-        <Card key={year} title={`${year} (${yearPosts.length})`}>
+        <BlogCard key={year} title={`${year} (${yearPosts.length})`}>
           <ul className={styles.recentList}>
             {yearPosts.map((post) => (
               <li key={post.metadata.permalink} className={styles.recentItem}>
@@ -55,7 +55,7 @@ export function BlogArchiveList({ posts }: { posts: PostLike[] }) {
               </li>
             ))}
           </ul>
-        </Card>
+        </BlogCard>
       ))}
     </>
   );
