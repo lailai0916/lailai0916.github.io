@@ -1,5 +1,5 @@
 ---
-title: '洛谷 P4556 [Vani有约会] 雨天的尾巴 /【模板】线段树合并'
+title: '洛谷 P4556 【模板】线段树合并 / [Vani 有约会] 雨天的尾巴'
 link: 'https://www.luogu.com.cn/problem/P4556'
 ---
 

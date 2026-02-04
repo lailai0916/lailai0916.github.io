@@ -1,5 +1,5 @@
 ---
-title: '洛谷 P2495 [SDOI2011] 消耗战 /【模板】虚树'
+title: '洛谷 P2495 【模板】虚树 / [SDOI2011] 消耗战'
 link: 'https://www.luogu.com.cn/problem/P2495'
 ---
 
