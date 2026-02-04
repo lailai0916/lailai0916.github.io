@@ -13,6 +13,8 @@ title: "lailai's Design Style Guide"
 
 ## 理念
 
+我并不是专业的设计师，所做的一切都是基于直觉。
+
 统一 · 简约 · 现代（Unified · Simple · Modern）
 
 ## 通用
