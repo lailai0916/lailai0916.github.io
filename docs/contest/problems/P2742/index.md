@@ -1,5 +1,5 @@
 ---
-title: '洛谷 P2742 [USACO5.1] 圈奶牛Fencing the Cows /【模板】二维凸包'
+title: '洛谷 P2742 【模板】二维凸包 / [USACO5.1] 圈奶牛Fencing the Cows'
 link: 'https://www.luogu.com.cn/problem/P2742'
 ---
 
