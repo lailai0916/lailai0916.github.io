@@ -83,6 +83,11 @@ export const RESOURCE_LIST: ResourceCategoryItem[] = [
         description: 'AI 模型对比竞技场',
       },
       {
+        title: 'GPTZero',
+        href: 'https://gptzero.me',
+        description: 'AI 生成文本检测工具',
+      },
+      {
         title: 'Google DeepMind',
         href: 'https://deepmind.com',
         description: 'Google 前沿 AI 研究',
