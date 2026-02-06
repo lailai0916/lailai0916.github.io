@@ -138,6 +138,7 @@ const sidebars: SidebarsConfig = {
             'contest/math/number-theory/pollard-rho',
             'contest/math/number-theory/inverse',
             'contest/math/number-theory/crt',
+            'contest/math/number-theory/primitive-root',
             'contest/math/number-theory/sqrt-decomposition',
             'contest/math/number-theory/du',
             'contest/math/number-theory/min-25',
