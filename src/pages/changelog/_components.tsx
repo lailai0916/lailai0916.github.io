@@ -54,7 +54,7 @@ export function Changelog() {
                   {items.map((item, i) => {
                     return (
                       <li key={`${item.date}-${item.type}-${i}`}>
-                        <strong>[{TYPE_LABEL[item.type]}]</strong>{' '}
+                        <strong>{TYPE_LABEL[item.type]}</strong>{' '}
                         <span
                           dangerouslySetInnerHTML={{ __html: item.content }}
                         />
