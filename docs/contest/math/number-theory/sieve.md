@@ -66,6 +66,10 @@ void sieve()
 <Tabs>
 <TabItem value="欧拉函数">
 
+$$
+\varphi(n)=n\prod_{d\mid n}\frac{d-1}{d}
+$$
+
 ```cpp
 void sieve()
 {
@@ -97,6 +101,15 @@ void sieve()
 </TabItem>
 <TabItem value="莫比乌斯函数">
 
+$$
+\mu(n)=
+\begin{cases}
+  1 & n=1 \\
+  0 & \exists d>1,d^2\mid n \\
+  (-1)^{\omega(n)} & \text{otherwise}
+\end{cases}
+$$
+
 ```cpp
 void sieve()
 {
@@ -127,6 +140,10 @@ void sieve()
 
 </TabItem>
 <TabItem value="约数个数函数">
+
+$$
+d(n)=\sum_{d\mid n}1=\prod_{i=1}^{k}(a_i+1)
+$$
 
 ```cpp
 void sieve()
@@ -160,6 +177,10 @@ void sieve()
 
 </TabItem>
 <TabItem value="约数和函数">
+
+$$
+\sigma(n)=\sum_{d\mid n}d=\prod_{i=1}^{k}\left(1+p_i+p_i^2+\dots+p_i^{a_i}\right)
+$$
 
 ```cpp
 void sieve()
