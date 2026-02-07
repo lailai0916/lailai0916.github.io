@@ -147,6 +147,7 @@ title: "lailai's Text Format Guide"
 
 ## lailai's Home
 
+- 资源应使用 [lailai's Cloud](https://cloud.lailai.one)。
 - **尚未撰写和未完成的内容** 应使用 `[TODO]` 标记。
 - 表示 **告示** 应使用 $3$ 个 **冒号**（`:::`）和类型标签。
 - **lailai** 始终应排印为小写，即使它出现在句首、段落开头或标题中。**lailai** should always be typeset with all lowercase letters, even when it is the first word in a sentence, paragraph, or title.
