@@ -958,6 +958,15 @@
   "blog.sidebar.info.title": {
     "message": "信息"
   },
+  "blog.sidebar.info.location": {
+    "message": "位置"
+  },
+  "blog.sidebar.info.localTime": {
+    "message": "本地时间"
+  },
+  "blog.sidebar.info.fingerprint": {
+    "message": "GPG 指纹"
+  },
   "blog.sidebar.stats.title": {
     "message": "统计"
   },

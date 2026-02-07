@@ -4,6 +4,7 @@ import Link from '@docusaurus/Link';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import Layout from '@theme/Layout';
 import type { TOCItem } from '@docusaurus/mdx-loader';
+import { Icon } from '@iconify/react';
 
 import { translate } from '@docusaurus/Translate';
 import { getAllBlogItems, getAllPostMetadata } from '@site/src/utils/blogData';
@@ -14,7 +15,6 @@ import {
   useAnalytics,
   type ChipItem,
 } from './Components';
-import IconText from '@site/src/components/laikit/widget/IconText';
 import styles from './styles.module.css';
 
 function AuthorCard() {
@@ -98,17 +98,32 @@ function InfoCard() {
   }).format(d);
   const infoItems = [
     {
-      label: 'Hangzhou, China',
+      key: 'location',
+      label: translate({
+        id: 'blog.sidebar.info.location',
+        message: 'Location',
+      }),
+      value: 'Hangzhou, China',
       icon: 'lucide:map-pin',
       href: 'https://www.google.com/maps/search/?api=1&query=Hangzhou%2C%20China',
     },
     {
-      label: `${hhmm} (UTC+08:00)`,
+      key: 'time',
+      label: translate({
+        id: 'blog.sidebar.info.localTime',
+        message: 'Local Time',
+      }),
+      value: `${hhmm} (UTC+08:00)`,
       icon: 'lucide:clock',
       href: 'https://time.is/UTC+8',
     },
     {
-      label: '91A7 EF5A 1391 223E',
+      key: 'fingerprint',
+      label: translate({
+        id: 'blog.sidebar.info.fingerprint',
+        message: 'GPG Fingerprint',
+      }),
+      value: '91A7 EF5A 1391 223E',
       icon: 'lucide:key-round',
       href: 'https://github.com/lailai0916.gpg',
     },
@@ -121,10 +136,22 @@ function InfoCard() {
         message: 'Information',
       })}
     >
-      <div className={styles.infoStats}>
+      <div className={styles.infoCard}>
         {infoItems.map((item) => (
-          <Link key={item.label} href={item.href} style={{ color: 'inherit' }}>
-            <IconText icon={item.icon}>{item.label}</IconText>
+          <Link key={item.key} href={item.href} className={styles.infoItem}>
+            <span className={styles.infoItemIcon}>
+              <Icon icon={item.icon} width="1.1em" height="1.1em" />
+            </span>
+            <span className={styles.infoItemText}>
+              <span className={styles.infoItemLabel}>{item.label}</span>
+              <span className={styles.infoItemValue}>{item.value}</span>
+            </span>
+            <Icon
+              icon="lucide:chevron-right"
+              width="0.95em"
+              height="0.95em"
+              className={styles.infoItemArrow}
+            />
           </Link>
         ))}
       </div>
@@ -134,9 +161,8 @@ function InfoCard() {
 
 function StatsCard() {
   const { analytics, status } = useAnalytics();
-  const readintTime = getAllPostMetadata().reduce(
-    (sum, meta) => sum + meta.readingTime,
-    0
+  const readingMinutes = Math.round(
+    getAllPostMetadata().reduce((sum, meta) => sum + meta.readingTime, 0)
   );
   const statsItems = [
     {
@@ -165,7 +191,7 @@ function StatsCard() {
         message: 'Words',
       }),
       icon: 'lucide:file-text',
-      value: readintTime * 200,
+      value: readingMinutes * 200,
     },
     {
       label: translate({
@@ -173,7 +199,7 @@ function StatsCard() {
         message: 'Minutes',
       }),
       icon: 'lucide:timer',
-      value: readintTime,
+      value: readingMinutes,
     },
     {
       label: translate({
@@ -181,7 +207,7 @@ function StatsCard() {
         message: 'Visitors',
       }),
       icon: 'lucide:users',
-      value: status === 'success' ? analytics.visitors : '–',
+      value: status === 'success' ? (analytics.visitors ?? '–') : '–',
     },
     {
       label: translate({
@@ -189,7 +215,7 @@ function StatsCard() {
         message: 'Views',
       }),
       icon: 'lucide:eye',
-      value: status === 'success' ? analytics.pageviews : '–',
+      value: status === 'success' ? (analytics.pageviews ?? '–') : '–',
     },
   ];
 
@@ -200,10 +226,15 @@ function StatsCard() {
         message: 'Statistics',
       })}
     >
-      <div className={styles.authorStats}>
+      <div className={styles.statsGrid}>
         {statsItems.map((item) => (
-          <div key={item.label} className={styles.statItem}>
-            <IconText icon={item.icon}>{item.label}</IconText>
+          <div key={item.label} className={styles.statTile}>
+            <div className={styles.statHead}>
+              <span className={styles.statIcon}>
+                <Icon icon={item.icon} width="1em" height="1em" />
+              </span>
+              <span className={styles.statLabel}>{item.label}</span>
+            </div>
             <span className={styles.statValue}>
               {formatLongNumber(item.value)}
             </span>
