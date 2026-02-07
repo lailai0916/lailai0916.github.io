@@ -559,6 +559,7 @@ const sidebars: SidebarsConfig = {
     'project/lailai0916',
     'project/code-comparator',
     'project/hangzhou-highschool-map',
+    'project/sun-path-atlas',
     {
       type: 'category',
       label: '指南',
