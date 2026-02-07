@@ -16,7 +16,7 @@ tags: [project]
 
 ## 活动海报
 
-![](https://cloud.lailai.one/f/ndfq/paintboard-poster.png)
+![](https://cloud.lailai.one/f/RenSX/paintboard-poster.png)
 
 ## 八校计划
 
