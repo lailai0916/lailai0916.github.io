@@ -15,9 +15,8 @@ title: '字符串匹配'
 int kmp(string s,string t)
 {
 	int n=s.size(),m=t.size();
-	for(int i=1;i<m;i++)
+	for(int i=1,j=0;i<m;i++)
 	{
-		int j=nxt[i-1];
 		while(j&&t[i]!=t[j])j=nxt[j-1];
 		if(t[i]==t[j])j++;
 		nxt[i]=j;

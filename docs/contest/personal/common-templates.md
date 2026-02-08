@@ -256,15 +256,13 @@ while(r-l>eps)
 int kmp(string s,string t)
 {
 	int n=s.size(),m=t.size();
-	for(int i=1;i<m;i++)
+	for(int i=1,j=0;i<m;i++)
 	{
-		int j=nxt[i-1];
 		while(j&&t[i]!=t[j])j=nxt[j-1];
 		if(t[i]==t[j])j++;
 		nxt[i]=j;
 	}
-	int j=0;
-	for(int i=0;i<n;i++)
+	for(int i=0,j=0;i<n;i++)
 	{
 		while(j&&s[i]!=t[j])j=nxt[j-1];
 		if(s[i]==t[j])j++;
