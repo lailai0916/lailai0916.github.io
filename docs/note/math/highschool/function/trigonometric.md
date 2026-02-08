@@ -456,7 +456,7 @@ $$
 1. $\frac{3\pi}{2}=3\cdot\frac{\pi}{2}$，系数 $3$ 是奇数，所以要将 $\sin$ 变为 $\cos$。
 2. 把 $\alpha$ 看作第一象限角，则 $\frac{3\pi}{2}-\alpha$ 为第三象限角，$\cos$ 在第三象限为负数，所以为负号。
 
-综上所述 $\sin{(\frac{3\pi}{2}-\alpha)}=-\cos{\alpha}$。
+综上所述，$\sin{(\frac{3\pi}{2}-\alpha)}=-\cos{\alpha}$。
 
 :::
 
