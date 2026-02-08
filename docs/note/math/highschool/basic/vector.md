@@ -365,7 +365,7 @@ $$
 
 就可以求出向量夹角。
 
-特殊的，
+特殊地，
 
 $$
 \theta=0\,(\cos\theta=1),\,\bm a\cdot\bm b=|\bm a|\cdot|\bm b|
