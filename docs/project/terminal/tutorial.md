@@ -134,9 +134,7 @@ char f=getch();
 
 :::tip
 
-`getch()` 相比直接输入，不需要按回车键，可以减少玩家操作复杂度。
-
-`getch()` 函数需要头文件 `#include <conio.h>`
+`#include <conio.h>` 头文件中的 `getch()` 函数相比直接输入，不需要按回车键，可以减少玩家操作复杂度。
 
 :::
 
