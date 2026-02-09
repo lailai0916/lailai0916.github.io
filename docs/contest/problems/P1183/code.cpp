@@ -15,7 +15,7 @@ int main()
 	cin>>n;
 	for(int i=1;i<=n;i++)cin>>a[i].x>>a[i].y;
 	double ans=0;
-	for(int i=1;i<=n;i++)ans+=Cross(a[i],a[i%n+1])/2;
-	cout<<fabs(ans)<<'\n';
+	for(int i=1;i<=n;i++)ans+=Cross(a[i],a[i%n+1]);
+	cout<<fabs(ans)/2<<'\n';
 	return 0;
 }
