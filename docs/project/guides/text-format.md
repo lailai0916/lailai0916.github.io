@@ -39,9 +39,9 @@ title: "lailai's Text Format Guide"
 - 文件名包含多个部分时，应使用 **连字符**（`-`）分隔，避免使用下划线（`_`），例如「`text-format.md`」。
 - 纯文本文件的扩展名应使用 `.txt`；Markdown 文件的扩展名应使用 `.md`；$\LaTeX$ 源文件的扩展名应使用 `.tex`。
 - Markdown 和 $\LaTeX$ 文本应使用 $2$ 个 <kbd>Space</kbd> 缩进，空行不应缩进。
-- 文件应以 **front matter** 开头，应包含 `title` 和 `description` 字段。
-  - `title` 字段应为 **文本标题**，不应使用一级标题。
-  - `description` 字段应为 **内容概述**，例如「本文将介绍……」「本文为……」。
+- 文件应以 **front matter** 开头，应包含以下字段。
+  - `title` 应为 **文本标题**，不应使用一级标题。
+  - `description` 应为 **内容概述**，例如「本文将介绍……」「本文为……」。
 - 文件应以 $1$ 个 **空行** 结尾。
 - 不应连续使用 $2$ 个空行。
 
