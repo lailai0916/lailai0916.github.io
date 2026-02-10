@@ -21,7 +21,7 @@ tags: [math]
 
 ## 引入
 
-有一个 **固定** 的数列 $\set{A_1,A_2,\dots,A_n}$，需要 **频繁** 计算某个区间 $[a,b]$ 上的总和 $T$。
+有一个 **固定** 的数列 $\set{A_1,A_2,\dots,A_n}$，需要 **频繁** 计算某个区间 $[a,b]$ 中的总和 $T$。
 
 $$
 T=\sum_{i=a}^b A_i=A_a+A_{a+1}+\dots+A_b
@@ -89,7 +89,7 @@ $$
 
 其中 $\displaystyle\int$ 称为 **积分号**，$a$ 称为 **积分下界**，$b$ 称为 **积分上界**，$f(x)$ 称为 **被积函数**，$\mathrm{d}x$ 称为 **微分元**。
 
-定积分 $\displaystyle\int_a^b f(x)\mathrm{d}x$ 表示函数 $f(x)$ 图像在区间 $[a,b]$ 上与 $x$ 轴所围成图形的 **有向面积**：
+定积分 $\displaystyle\int_a^b f(x)\mathrm{d}x$ 表示函数 $f(x)$ 图像在区间 $[a,b]$ 中与 $x$ 轴所围成图形的 **有向面积**：
 
 $$
 S=\int_a^b f(x)\mathrm{d}x=|S_\text{蓝色}|-|S_\text{黄色}|
