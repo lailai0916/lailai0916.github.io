@@ -69,16 +69,13 @@ title: "lailai's Text Format Guide"
   - `—`（U+2014，Em dash，长破折号）。
 - 不应重复使用标点符号。
 
-## 用词
+## 词句
 
 - 用词应遵循 [用词规范表](#用词规范表)。
 - 避免不必要的 **形容词和语气词**。
 - 避免不必要的 **网络流行语和谐音错别字**。
 - 代词应指代清晰，避免产生歧义。
 - 不应使用冷僻、生造和文言文词语。
-
-## 句子
-
 - 应使用 **现代汉语** 的常用表达方式，不应使用 **非正式** 的语言风格。
 - 避免使用 **长句**，每句不应超过 $40$ 字。
 - 应使用 **简单句和并列句**，避免使用复合句。
@@ -155,8 +152,6 @@ title: "lailai's Text Format Guide"
 - **lailai** 为不翻译内容，始终以英语排印，即使它出现在非英语的语言文本中也是如此。**lailai** is untranslatable content and should always be set in English, even when it appears within text in a language other than English.
 
 ## 用词规范表
-
-[TODO]
 
 - 正确使用「的」「地」「得」。
 - 正确使用「他」「她」「它」。
