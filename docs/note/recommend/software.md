@@ -275,7 +275,7 @@ One Switch 是一款 macOS 菜单栏工具，集成多个常用系统开关，�
 
 #### MediaMate
 
-MediaMate 是一款 macOS 工具，用于美化系统的音量、亮度等 HUD 显示，并新增“正在播放”悬浮窗，界面现代，交互优雅。
+MediaMate 是一款 macOS 工具，用于美化系统的音量、亮度等 HUD 显示，并新增正在播放悬浮窗，界面现代，交互优雅。
 
 - 官网：[MediaMate](https://wouter01.github.io/MediaMate/)
 - 平台：macOS
