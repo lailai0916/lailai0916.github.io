@@ -11,7 +11,7 @@ const TITLE = translate({
 const DESCRIPTION = translate({
   id: 'home.neuralnetwork.description',
   message:
-    'Draw digits 0~9 below, and the neural network will recognize your handwriting',
+    'Draw digits 0–9 below, and the neural network will recognize your handwriting',
 });
 
 export default function NeuralNetwork() {

@@ -773,7 +773,7 @@
     "message": "神经网络"
   },
   "home.neuralnetwork.description": {
-    "message": "在下方绘制数字 0~9，神经网络会识别您的手写数字"
+    "message": "在下方绘制数字 0–9，神经网络会识别您的手写数字"
   },
   "home.fouriertransform.title": {
     "message": "傅立叶变换"
