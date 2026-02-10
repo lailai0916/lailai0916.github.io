@@ -53,6 +53,7 @@ if(n%i==0)return 0;
 ### 头文件
 
 - 头文件应使用万能头文件 `<bits/stdc++.h>`，若有特殊需求可补充其他头文件。
+- `#include` 和头文件之间应有 $1$ 个空格。
 
 ```cpp
 #include <bits/stdc++.h>
@@ -83,7 +84,7 @@ using namespace __gnu_pbds;
 ### 主函数
 
 - 主函数应放在代码的末尾。
-- 主函数的返回类型应为 `int`，并以 `return 0;` 结束。
+- 主函数的返回类型应为 `int`，并以 `return 0` 结束。
 
 ```cpp
 int main()
