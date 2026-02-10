@@ -15,4 +15,6 @@ $$
 
 ## 例题
 
+<Problem id="P4525" />
+
 <Problem id="P4526" />
