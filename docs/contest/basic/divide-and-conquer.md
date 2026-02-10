@@ -4,7 +4,7 @@ title: '递归 & 分治'
 
 ## 参考资料
 
-- [递归 - 维基百科](https://zh.wikipedia.org/zh-hans/递归)
+- [递归 - 维基百科](https://zh.wikipedia.org/wiki/递归)
 - [递归 & 分治 - OI Wiki](https://oi-wiki.org/basic/divide-and-conquer/)
 
 ## 递归

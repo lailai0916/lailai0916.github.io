@@ -4,8 +4,8 @@ title: '导数'
 
 ## 参考资料
 
-- [导数 - 维基百科](https://zh.wikipedia.org/zh-cn/导数)
-- [链式法则 - 维基百科](https://zh.wikipedia.org/zh-cn/链式法则)
+- [导数 - 维基百科](https://zh.wikipedia.org/wiki/导数)
+- [链式法则 - 维基百科](https://zh.wikipedia.org/wiki/链式法则)
 - [[Manim动画]导！导！导！初中生也能理解的导数的概念 - bilibili](https://www.bilibili.com/video/BV1Ja411x7fB)
 
 ## 极限
@@ -50,7 +50,7 @@ $$
 | $0.0001$  | $0.0000999999998333$  | $0.999999998333$ |
 | $0.00001$ | $0.00000999999999983$ | $0.999999999983$ |
 
-随着 $x$ 趋近于 $0$，函数值逐渐趋近 $1$，所以 $\lim_{x\to 0}\frac{\sin x}{x}=1$。（[洛必达法则](https://zh.wikipedia.org/zh-cn/洛必达法则)）
+随着 $x$ 趋近于 $0$，函数值逐渐趋近 $1$，所以 $\lim_{x\to 0}\frac{\sin x}{x}=1$。（[洛必达法则](https://zh.wikipedia.org/wiki/洛必达法则)）
 
 <Desmos id="zmjoejqeoi" />
 

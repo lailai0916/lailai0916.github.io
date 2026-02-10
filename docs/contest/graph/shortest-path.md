@@ -5,7 +5,7 @@ title: '最短路'
 ## 参考资料
 
 - [最短路 - OI Wiki](https://oi-wiki.org/graph/shortest-path/)
-- [最短路问题 - 维基百科](https://zh.wikipedia.org/zh-cn/最短路问题)
+- [最短路问题 - 维基百科](https://zh.wikipedia.org/wiki/最短路问题)
 - [差分约束 - OI Wiki](https://oi-wiki.org/graph/diff-constraints/)
 
 ## 算法对比

@@ -11,7 +11,7 @@ title: "lailai's Text Format Guide"
 - [出版物上数字用法 (GB/T 15835-2011)](http://www.moe.gov.cn/ewebeditor/uploadfile/2015/01/13/20150113091154536.pdf)
 - [中文出版物夹用英文的编辑规范（CY/T 154-2017）](https://www.nppa.gov.cn/xxgk/fdzdgknr/hybz/202210/P020221004608768453140.pdf)
 - [精品工具书数据库 - 商务印书馆](https://bjzs.vdict.com.cn/SY)
-- [维基百科:格式手册/标点符号 - 维基百科](https://zh.wikipedia.org/zh-cn/Wikipedia:格式手册/标点符号)
+- [维基百科:格式手册/标点符号 - 维基百科](https://zh.wikipedia.org/wiki/Wikipedia:格式手册/标点符号)
 - [格式手册 - OI Wiki](https://oi-wiki.org/intro/format/)
 - [洛谷主题库题解规范 | 洛谷帮助中心](https://help.luogu.com.cn/rules/academic/solution-standard)
 - [中文文案排版指北（简体中文版） - 码志](https://mazhuang.org/wiki/chinese-copywriting-guidelines/)

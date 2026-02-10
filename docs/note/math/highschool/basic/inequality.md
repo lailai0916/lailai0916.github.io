@@ -4,7 +4,7 @@ title: '不等式'
 
 ## 参考资料
 
-- [不等式 - 维基百科](https://zh.wikipedia.org/zh-cn/不等式)
+- [不等式 - 维基百科](https://zh.wikipedia.org/wiki/不等式)
 
 ## 性质
 

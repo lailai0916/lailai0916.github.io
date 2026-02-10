@@ -10,7 +10,7 @@ tags: [project]
 
 ## 参考资料
 
-[公民身份号码 - 维基百科](https://zh.wikipedia.org/zh-cn/公民身份号码)
+[公民身份号码 - 维基百科](https://zh.wikipedia.org/wiki/公民身份号码)
 
 ## 原理
 

@@ -5,7 +5,7 @@ title: '博弈论'
 ## 参考资料
 
 - [博弈论简介 - OI Wiki](https://oi-wiki.org/math/game-theory/intro/)
-- [博弈论 - 维基百科](https://zh.wikipedia.org/zh-cn/博弈论)
+- [博弈论 - 维基百科](https://zh.wikipedia.org/wiki/博弈论)
 
 ## 简介
 

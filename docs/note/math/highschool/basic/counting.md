@@ -4,7 +4,7 @@ title: '计数'
 
 ## 参考资料
 
-- [组合数学 - 维基百科](https://zh.wikipedia.org/zh-cn/组合数学)
+- [组合数学 - 维基百科](https://zh.wikipedia.org/wiki/组合数学)
 - [【漫士】这是你学明白组合数学最好的机会 - bilibili](https://www.bilibili.com/video/BV1iT92YAEfs)
 - [[Manim动画]如何以可视化视角直观理解排列组合？ - bilibili](https://www.bilibili.com/video/BV17N4y1F7CL)
 

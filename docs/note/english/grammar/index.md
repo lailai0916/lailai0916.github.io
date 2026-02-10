@@ -6,7 +6,7 @@ title: '英语语法'
 
 ## 参考资料
 
-- [英语语法 - 维基百科](https://zh.wikipedia.org/zh-cn/英語文法)
+- [英语语法 - 维基百科](https://zh.wikipedia.org/wiki/英語文法)
 - [一个视频说清整个英语语法体系(重塑你的语法认知框架) - bilibili](https://www.bilibili.com/video/BV1r54y1m7gd)
 - [英语语法笔记 | 𝐿𝑖𝑢𝑤𝑒𝑖'𝑠 𝐷𝑜𝑐𝑠](https://docs.liuwei.vin/notes/engilsh/yingyutu/)
 

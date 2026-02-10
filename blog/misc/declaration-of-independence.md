@@ -10,7 +10,7 @@ tags: [misc, resource]
 
 ## 参考资料
 
-- [美国独立宣言](https://zh.wikipedia.org/zh-cn/美國獨立宣言)
+- [美国独立宣言](https://zh.wikipedia.org/wiki/美國獨立宣言)
 
 ## 原件摹本
 

@@ -10,7 +10,7 @@ tags: [math]
 
 ## 参考资料
 
-- [积分 - 维基百科](https://zh.wikipedia.org/zh-cn/积分)
+- [积分 - 维基百科](https://zh.wikipedia.org/wiki/积分)
 
 ## 约定
 
@@ -264,7 +264,7 @@ $$
 
 ## 微积分基本定理
 
-**微积分基本定理** 是微积分学中的一条重要定理，由 [艾萨克·牛顿](https://zh.wikipedia.org/zh-cn/艾萨克·牛顿)（Isaac Newton）和 [戈特弗里德·威廉·莱布尼茨](https://zh.wikipedia.org/zh-cn/戈特弗里德·莱布尼茨)（Gottfried Wilhelm Leibniz）在十七世纪分别独立发现，描述了微积分的两个主要运算——**微分** 和 **积分** 之间的关系。
+**微积分基本定理** 是微积分学中的一条重要定理，由 [艾萨克·牛顿](https://zh.wikipedia.org/wiki/艾萨克·牛顿)（Isaac Newton）和 [戈特弗里德·威廉·莱布尼茨](https://zh.wikipedia.org/wiki/戈特弗里德·莱布尼茨)（Gottfried Wilhelm Leibniz）在十七世纪分别独立发现，描述了微积分的两个主要运算——**微分** 和 **积分** 之间的关系。
 
 $$
 \text{微积分}=\text{微分}+\text{积分}

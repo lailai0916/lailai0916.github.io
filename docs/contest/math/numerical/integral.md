@@ -5,6 +5,11 @@ title: '积分'
 ## 参考资料
 
 - [数值积分 - OI Wiki](https://oi-wiki.org/math/numerical/integral/)
+- [辛普森積分法 - 维基百科](https://zh.wikipedia.org/wiki/辛普森積分法)
+
+## 辛普森积分法
+
+
 
 ## 自适应辛普森法
 

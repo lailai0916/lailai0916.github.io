@@ -5,7 +5,7 @@ title: '快速沃尔什变换（FWT）'
 ## 参考资料
 
 - [快速沃尔什变换 - OI Wiki](https://oi-wiki.org/math/poly/fwt/)
-- [沃尔什转换 - 维基百科](https://zh.wikipedia.org/zh-cn/沃爾什轉換)
+- [沃尔什转换 - 维基百科](https://zh.wikipedia.org/wiki/沃爾什轉換)
 
 ## 实现
 

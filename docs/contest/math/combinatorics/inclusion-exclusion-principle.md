@@ -4,7 +4,7 @@ title: '容斥原理'
 
 ## 参考资料
 
-- [容斥原理 - 维基百科](https://zh.wikipedia.org/zh-cn/排容原理)
+- [容斥原理 - 维基百科](https://zh.wikipedia.org/wiki/排容原理)
 - [容斥原理 - OI Wiki](https://oi-wiki.org/math/combinatorics/inclusion-exclusion-principle/)
 
 ## 容斥原理

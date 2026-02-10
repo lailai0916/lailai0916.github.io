@@ -5,7 +5,7 @@ title: '凸包'
 ## 参考资料
 
 - [凸包 - OI Wiki](https://oi-wiki.org/geometry/convex-hull/)
-- [凸包 - 维基百科](https://zh.wikipedia.org/zh-cn/凸包)
+- [凸包 - 维基百科](https://zh.wikipedia.org/wiki/凸包)
 
 ## Andrew 算法
 

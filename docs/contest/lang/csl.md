@@ -5,7 +5,7 @@ title: '标准库'
 ## 参考资料
 
 - [C++ 标准库简介 - OI Wiki](https://oi-wiki.org/lang/csl/)
-- [标准模板库 - 维基百科](https://zh.wikipedia.org/zh-cn/标准模板库)
+- [标准模板库 - 维基百科](https://zh.wikipedia.org/wiki/标准模板库)
 
 ## 标准模板库
 

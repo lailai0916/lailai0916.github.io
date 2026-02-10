@@ -10,6 +10,6 @@ tags: [math]
 
 ## 参考资料
 
-- [尺规作图 - 维基百科](https://zh.wikipedia.org/zh-cn/尺规作图)
+- [尺规作图 - 维基百科](https://zh.wikipedia.org/wiki/尺规作图)
 - [【漫士】凭什么我就不能尺规作图三等分角？ - bilibili](https://www.bilibili.com/video/BV1jjGdzAEE8)
 - [古希腊三大尺规不能问题 高斯为何说正十七边形可以尺规作图？ - bilibili](https://www.bilibili.com/video/BV1hb411q7RJ)

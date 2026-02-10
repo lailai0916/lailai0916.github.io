@@ -6,7 +6,7 @@ title: '排列组合'
 
 - [排列组合 - OI Wiki](https://oi-wiki.org/math/combinatorics/combination/)
 - [卢卡斯定理 - OI Wiki](https://oi-wiki.org/math/number-theory/lucas/)
-- [组合数学 - 维基百科](https://zh.wikipedia.org/zh-cn/组合数学)
+- [组合数学 - 维基百科](https://zh.wikipedia.org/wiki/组合数学)
 
 ## 线性逆元
 

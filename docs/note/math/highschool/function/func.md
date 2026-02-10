@@ -4,7 +4,7 @@ title: '函数'
 
 ## 参考资料
 
-- [函数 - 维基百科](https://zh.wikipedia.org/zh-cn/函数)
+- [函数 - 维基百科](https://zh.wikipedia.org/wiki/函数)
 
 ## 概念
 

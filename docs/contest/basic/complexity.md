@@ -5,8 +5,8 @@ title: '复杂度'
 ## 参考资料
 
 - [复杂度简介 - OI Wiki](https://oi-wiki.org/basic/complexity/)
-- [时间复杂度 - 维基百科](https://zh.wikipedia.org/zh-cn/时间复杂度)
-- [主定理 - 维基百科](https://zh.wikipedia.org/zh-cn/主定理)
+- [时间复杂度 - 维基百科](https://zh.wikipedia.org/wiki/时间复杂度)
+- [主定理 - 维基百科](https://zh.wikipedia.org/wiki/主定理)
 - [重谈主定理（master定理）及其证明 - 洛谷专栏](https://www.luogu.com.cn/article/w3avh1ku)
 
 ## 定义
@@ -84,7 +84,7 @@ for(int i=1;i<=n;i++)
 <details>
 <summary>题解</summary>
 
-时间复杂度为 $\Theta\left(\sum_{i=1}^{n}\left\lfloor\frac{n}{i} \right\rfloor\right)=\Theta(n\log n)$。（[调和级数](https://zh.wikipedia.org/zh-cn/调和级数)）
+时间复杂度为 $\Theta\left(\sum_{i=1}^{n}\left\lfloor\frac{n}{i} \right\rfloor\right)=\Theta(n\log n)$。（[调和级数](https://zh.wikipedia.org/wiki/调和级数)）
 
 </details>
 

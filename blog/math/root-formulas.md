@@ -10,7 +10,7 @@ tags: [math]
 
 ## 参考资料
 
-- [多项式 - 维基百科](https://zh.wikipedia.org/zh-cn/多項式)
+- [多项式 - 维基百科](https://zh.wikipedia.org/wiki/多項式)
 - [[证毕QED]你真的理解判别式了吗?高次方程判别式怎么来的? - bilibili](https://www.bilibili.com/video/BV19KrMB1Ec2)
 - [500 years of NOT teaching THE CUBIC FORMULA. What is it they think you can't handle? - YouTube](https://www.youtube.com/watch?v=N-KXStupwsc)
 
@@ -39,7 +39,7 @@ tags: [math]
 
 ### 代数基本定理
 
-:::info[[代数基本定理](https://zh.wikipedia.org/zh-cn/代数基本定理)]
+:::info[[代数基本定理](https://zh.wikipedia.org/wiki/代数基本定理)]
 
 任何一个复系数多项式方程至少有一个复数根。（注意：实数也属于复数）
 
@@ -47,7 +47,7 @@ tags: [math]
 
 设 $f(x)$ 是 $n$ 次复系数多项式，根据代数基本定理，它至少有一个根 $x_1$。
 
-因此根据 [因式定理](https://zh.wikipedia.org/zh-cn/因式定理)，$f(x)$ 可表示为：
+因此根据 [因式定理](https://zh.wikipedia.org/wiki/因式定理)，$f(x)$ 可表示为：
 
 $$
 f(x)=(x-x_1)g(x)
@@ -80,7 +80,7 @@ $$
 
 代入任意根 $x_i$，均有 $f(x_i)=0$，方程显然成立。
 
-通过这个定理可以轻松推导出 [韦达定理](https://zh.wikipedia.org/zh-cn/韦达定理)。
+通过这个定理可以轻松推导出 [韦达定理](https://zh.wikipedia.org/wiki/韦达定理)。
 
 将因式分解式展开：
 
@@ -530,7 +530,7 @@ $$
 
 ### 分类讨论
 
-根据 [介值定理](https://zh.wikipedia.org/zh-cn/介值定理)，三次方程至少有一个实数根。
+根据 [介值定理](https://zh.wikipedia.org/wiki/介值定理)，三次方程至少有一个实数根。
 
 > **介值定理**（Intermediate Value Theorem）：假设 $f:[a,b]\to\mathbb{R}$ 为连续函数。若实数 $u$ 满足 $(f(a)-u)(f(b)-u)\le 0$，则存在实数 $c\in[a,b]$ 使得 $f(c)=u$。
 >
@@ -748,7 +748,7 @@ $$
 
 ## 五次及以上方程
 
-[伽罗瓦理论](https://zh.wikipedia.org/zh-cn/伽羅瓦理論) 指出，对于「一般五次及以上方程」，不存在类似二次/三次/四次那样的 **通用求根公式**。
+[伽罗瓦理论](https://zh.wikipedia.org/wiki/伽羅瓦理論) 指出，对于「一般五次及以上方程」，不存在类似二次/三次/四次那样的 **通用求根公式**。
 
 更严格地说（Abel–Ruffini 定理）：一般五次方程的根无法用有限次四则运算与开方（根式）表示。
 

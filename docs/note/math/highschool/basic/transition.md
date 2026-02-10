@@ -6,9 +6,9 @@ title: '衔接'
 
 ## 参考资料
 
-- [乘法公式 - 维基百科](https://zh.wikipedia.org/zh-cn/乘法公式)
-- [因式分解 - 维基百科](https://zh.wikipedia.org/zh-cn/因式分解)
-- [韦达定理 - 维基百科](https://zh.wikipedia.org/zh-cn/韦达定理)
+- [乘法公式 - 维基百科](https://zh.wikipedia.org/wiki/乘法公式)
+- [因式分解 - 维基百科](https://zh.wikipedia.org/wiki/因式分解)
+- [韦达定理 - 维基百科](https://zh.wikipedia.org/wiki/韦达定理)
 
 ## 乘法公式
 
@@ -311,7 +311,7 @@ $$
 这样可以降低次数，方便继续求解：
 
 1. 先找到多项式方程 $f(x)=0$ 的一个根 $a$。（~~瞪眼法：注意到……~~ **猜根法**：尝试代入一些数，看结果是否为 $0$）
-2. 根据 [因式定理](https://zh.wikipedia.org/zh-cn/因式定理)，如果 $f(a)=0$，那么 $(x-a)$ 就是 $f(x)$ 的一个因式。
+2. 根据 [因式定理](https://zh.wikipedia.org/wiki/因式定理)，如果 $f(a)=0$，那么 $(x-a)$ 就是 $f(x)$ 的一个因式。
 3. 将 $f(x)$ 除以 $(x-a)$，得到一个新的多项式 $g(x)$，此时 $f(x)=(x-a)g(x)$。
 4. 而 $g(x)$ 的次数比 $f(x)$ 低 $1$，继续分解会更简单。
 

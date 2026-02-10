@@ -6,8 +6,8 @@ title: '字符串匹配'
 
 - [字符串匹配 - OI Wiki](https://oi-wiki.org/string/match/)
 - [前缀函数与 KMP 算法 - OI Wiki](https://oi-wiki.org/string/kmp/)
-- [KMP算法 - 维基百科](https://zh.wikipedia.org/zh-cn/KMP算法)
-- [拉宾-卡普算法 - 维基百科](https://zh.wikipedia.org/zh-cn/拉宾-卡普算法)
+- [KMP算法 - 维基百科](https://zh.wikipedia.org/wiki/KMP算法)
+- [拉宾-卡普算法 - 维基百科](https://zh.wikipedia.org/wiki/拉宾-卡普算法)
 
 ## KMP 算法
 

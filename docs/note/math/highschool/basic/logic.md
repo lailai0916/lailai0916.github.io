@@ -6,7 +6,7 @@ title: '逻辑'
 
 ## 参考资料
 
-- [逻辑 - 维基百科](https://zh.wikipedia.org/zh-cn/逻辑)
+- [逻辑 - 维基百科](https://zh.wikipedia.org/wiki/逻辑)
 
 ## 命题
 

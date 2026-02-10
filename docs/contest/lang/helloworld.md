@@ -6,7 +6,7 @@ title: 'Hello, World!'
 
 ## 参考资料
 
-- [Hello World - 维基百科](https://zh.wikipedia.org/zh-cn/Hello_World)
+- [Hello World - 维基百科](https://zh.wikipedia.org/wiki/Hello_World)
 - [Hello, World! - OI Wiki](https://oi-wiki.org/lang/helloworld/)
 
 ## C++

@@ -10,7 +10,7 @@ tags: [math, resource]
 
 ## 参考资料
 
-- [素数列表 - 维基百科](https://zh.wikipedia.org/zh-cn/質數列表)
+- [素数列表 - 维基百科](https://zh.wikipedia.org/wiki/質數列表)
 
 ## 100 以内 (25)
 

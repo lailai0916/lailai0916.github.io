@@ -4,8 +4,8 @@ title: '直线 & 圆'
 
 ## 参考资料
 
-- [直线 - 维基百科](https://zh.wikipedia.org/zh-cn/直线)
-- [圆 - 维基百科](https://zh.wikipedia.org/zh-cn/圆)
+- [直线 - 维基百科](https://zh.wikipedia.org/wiki/直线)
+- [圆 - 维基百科](https://zh.wikipedia.org/wiki/圆)
 
 ## 基础知识
 

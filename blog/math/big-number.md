@@ -10,7 +10,7 @@ tags: [math]
 
 ## 参考资料
 
-- [大数 (数学) - 维基百科](<https://zh.wikipedia.org/zh-cn/大数_(数学)>)
+- [大数 (数学) - 维基百科](<https://zh.wikipedia.org/wiki/大数_(数学)>)
 - [How Big is Graham's Number? (feat Ron Graham) - Youtube](https://www.youtube.com/watch?v=GuigptwlVHo)
 - [葛立恒数是什么？有多大？一个穷尽所有算力也无法计算出来的大数 - bilibili](https://www.bilibili.com/video/BV1Yt411z7dR)
 - [比葛立恒数还大的TREE(3)究竟有多大？教你用超运算表示大数 - bilibili](https://www.bilibili.com/video/BV1Kt411z7fB)

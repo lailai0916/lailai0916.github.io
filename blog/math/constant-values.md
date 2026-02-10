@@ -10,8 +10,8 @@ tags: [math, resource]
 
 ## 参考资料
 
-- [圆周率 - 维基百科](https://zh.wikipedia.org/zh-cn/圓周率)
-- [e (数学常数) - 维基百科](<https://zh.wikipedia.org/zh-cn/E_(数学常数)>)
+- [圆周率 - 维基百科](https://zh.wikipedia.org/wiki/圓周率)
+- [e (数学常数) - 维基百科](<https://zh.wikipedia.org/wiki/E_(数学常数)>)
 
 ## 圆周率
 

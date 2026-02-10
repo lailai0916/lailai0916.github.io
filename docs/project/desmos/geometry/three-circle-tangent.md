@@ -4,7 +4,7 @@ title: '三圆公切线'
 
 ## 参考资料
 
-- [圆 - 维基百科](https://zh.wikipedia.org/zh-cn/圆)
+- [圆 - 维基百科](https://zh.wikipedia.org/wiki/圆)
 
 ## 项目链接
 

@@ -6,7 +6,7 @@ title: 'iGame'
 
 ## 前言
 
-我第一次接触文本编程时使用的 IDE 是 [Dev-C++](https://zh.wikipedia.org/zh-cn/Dev-C%2B%2B)，并且在接下来的很长一段时间里，我一直在使用它。
+我第一次接触文本编程时使用的 IDE 是 [Dev-C++](https://zh.wikipedia.org/wiki/Dev-C%2B%2B)，并且在接下来的很长一段时间里，我一直在使用它。
 
 在学习算法的过程中，我也萌生了制作游戏的想法。
 

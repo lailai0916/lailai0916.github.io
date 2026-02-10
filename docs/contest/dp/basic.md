@@ -5,7 +5,7 @@ title: '动态规划基础'
 ## 参考资料
 
 - [动态规划基础 - OI Wiki](https://oi-wiki.org/dp/basic/)
-- [最长递增子序列 - 维基百科](https://zh.wikipedia.org/zh-cn/最长递增子序列)
+- [最长递增子序列 - 维基百科](https://zh.wikipedia.org/wiki/最长递增子序列)
 
 ## 最长上升子序列（LIS）
 

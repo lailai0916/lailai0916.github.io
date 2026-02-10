@@ -8,7 +8,7 @@ title: 'LaTeX 指南'
 
 - [LaTeX - A document preparation system](https://www.latex-project.org)
 - [KaTeX – The fastest math typesetting library for the web](https://katex.org)
-- [TeX - 维基百科](https://zh.wikipedia.org/zh-cn/TeX)
+- [TeX - 维基百科](https://zh.wikipedia.org/wiki/TeX)
 - [LaTeX - 维基百科](https://zh.wikipedia.org/wiki/LaTeX)
 - [KaTeX - 维基百科](https://zh.wikipedia.org/wiki/KaTeX)
 - [LaTeX 数学公式大全 - 洛谷专栏](https://www.luogu.com.cn/article/1gxob6zc)

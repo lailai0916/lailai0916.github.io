@@ -10,8 +10,8 @@ title: '集合'
 
 ## 参考资料
 
-- [集合 (数学) - 维基百科](<https://zh.wikipedia.org/zh-cn/集合_(数学)>)
-- [数 - 维基百科](https://zh.wikipedia.org/zh-cn/数)
+- [集合 (数学) - 维基百科](<https://zh.wikipedia.org/wiki/集合_(数学)>)
+- [数 - 维基百科](https://zh.wikipedia.org/wiki/数)
 
 ## 概念
 

@@ -5,7 +5,7 @@ title: '生成树'
 ## 参考资料
 
 - [最小生成树 - OI Wiki](https://oi-wiki.org/graph/mst/)
-- [最小生成树 - 维基百科](https://zh.wikipedia.org/zh-cn/最小生成树)
+- [最小生成树 - 维基百科](https://zh.wikipedia.org/wiki/最小生成树)
 
 ## 最小生成树
 

@@ -7,7 +7,7 @@ title: '赛事 & 题型'
 - [OI 赛事与赛制 - OI Wiki](https://oi-wiki.org/contest/oi/)
 - [ICPC/CCPC 赛事与赛制 - OI Wiki](https://oi-wiki.org/contest/icpc/)
 - [题型概述 - OI Wiki](https://oi-wiki.org/contest/problems/)
-- [自产生程序 - 维基百科](https://zh.wikipedia.org/zh-cn/自產生程式)
+- [自产生程序 - 维基百科](https://zh.wikipedia.org/wiki/自產生程式)
 
 ## 赛事
 

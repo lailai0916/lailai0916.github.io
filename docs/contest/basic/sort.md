@@ -5,7 +5,7 @@ title: '排序'
 ## 参考资料
 
 - [排序简介 - OI Wiki](https://oi-wiki.org/basic/sort-intro/)
-- [排序算法 - 维基百科](https://zh.wikipedia.org/zh-cn/排序算法)
+- [排序算法 - 维基百科](https://zh.wikipedia.org/wiki/排序算法)
 
 ## 简介
 

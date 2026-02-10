@@ -4,7 +4,7 @@ title: '向量'
 
 ## 参考资料
 
-- [向量 - 维基百科](https://zh.wikipedia.org/zh-cn/向量)
+- [向量 - 维基百科](https://zh.wikipedia.org/wiki/向量)
 
 ## 概念
 

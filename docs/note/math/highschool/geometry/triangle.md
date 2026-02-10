@@ -4,7 +4,7 @@ title: '解三角形'
 
 ## 参考资料
 
-- [三角形 - 维基百科](https://zh.wikipedia.org/zh-cn/三角形)
+- [三角形 - 维基百科](https://zh.wikipedia.org/wiki/三角形)
 - [【最全汇总】最全三角形面积公式！我赌你只会五个（doge） - bilibili](https://www.bilibili.com/video/BV1RTg5zgE1m)
 
 ## 约定

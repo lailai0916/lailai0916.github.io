@@ -5,7 +5,7 @@ title: '距离'
 ## 参考资料
 
 - [距离 - OI Wiki](https://oi-wiki.org/geometry/distance/)
-- [距离 - 维基百科](https://zh.wikipedia.org/zh-cn/距离)
+- [距离 - 维基百科](https://zh.wikipedia.org/wiki/距离)
 
 ## 度量
 
