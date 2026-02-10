@@ -129,7 +129,7 @@ title: '名词'
 :::
 
 - 通常不说 `two waters`，而说 `two glasses of water`
-- 若 water 表示“水域”时可数，如：**international waters**
+- 若 water 表示「水域」时可数，例如：**international waters**
 
 #### 抽象名词
 
@@ -147,7 +147,7 @@ title: '名词'
 
 - Thank you → It's a pleasure.
 
-此时 pleasure 表示“一件愉快的事”，即具体化。
+此时 pleasure 表示「一件愉快的事」，即具体化。
 
 :::
 
