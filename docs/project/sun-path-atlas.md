@@ -13,4 +13,3 @@ title: 'Sun Path Atlas'
 本项目除 README 外，均由 GPT-5.3-Codex Extra High 独立完成。
 
 :::
-
