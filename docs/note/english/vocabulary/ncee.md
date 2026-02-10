@@ -3296,7 +3296,7 @@ title: '高考词汇'
 - then：adv. 当时，那时，然后，那么
 - theoretical：adj. 理论的
 - theory：n. 理论
-- there：int. 那！你瞧（表示引起注意）n. 那里，那儿adv. 在那里，往那里；（作引导词）表”存在
+- there：int. 那！你瞧（表示引起注意）n. 那里，那儿adv. 在那里，往那里；（作引导词）表存在
 - therefore：adv. 因此，所以
 - these：adj. & pron. 这些
 - they：pron. 他（她）们；它们
