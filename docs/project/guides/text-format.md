@@ -16,9 +16,9 @@ title: "lailai's Text Format Guide"
 - [洛谷主题库题解规范 | 洛谷帮助中心](https://help.luogu.com.cn/rules/academic/solution-standard)
 - [中文文案排版指北（简体中文版） - 码志](https://mazhuang.org/wiki/chinese-copywriting-guidelines/)
 - [中文文案风格指南 - PDFE GUIDELINE](https://pdfe.github.io/GUIDELINE/#/others/copywriter)
+- [vinta/pangu.js: Opinionated paranoid text spacing in JavaScript - GitHub](https://github.com/vinta/pangu.js)
 - [CTeX-org/lshort-zh-cn: A Chi­nese edi­tion of the Not So Short Introduction to LaTeX2ε - GitHub](https://github.com/CTeX-org/lshort-zh-cn)
 - [ruanyf/document-style-guide:中文技术文档的写作规范 - GitHub](https://github.com/ruanyf/document-style-guide)
-- [vinta/pangu.js: Opinionated paranoid text spacing in JavaScript - GitHub](https://github.com/vinta/pangu.js)
 
 ## 通用
 
