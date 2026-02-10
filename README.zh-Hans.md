@@ -9,7 +9,7 @@
     <img src="https://img.shields.io/badge/code_style-prettier-ff69b4?style=flat-square" />
     <img src="https://img.shields.io/github/license/lailai0916/lailai0916.github.io?style=flat-square" />
   </p>
-  <a href="https://lailai.one">
+  <a href="https://lailai.one/zh-Hans/">
     <picture>
       <source media="(prefers-color-scheme: dark)" srcset="https://cloud.lailai.one/f/DJetK/preview-dark.zh-Hans.png" />
       <source media="(prefers-color-scheme: light)" srcset="https://cloud.lailai.one/f/MrdIy/preview-light.zh-Hans.png" />
@@ -93,9 +93,9 @@ lailai0916.github.io/
 
 获取最新博客文章更新：
 
-- [RSS 订阅](https://lailai.one/blog/rss.xml)
-- [Atom 订阅](https://lailai.one/blog/atom.xml)
-- [JSON 订阅](https://lailai.one/blog/feed.json)
+- [RSS 订阅](https://lailai.one/zh-Hans/blog/rss.xml)
+- [Atom 订阅](https://lailai.one/zh-Hans/blog/atom.xml)
+- [JSON 订阅](https://lailai.one/zh-Hans/blog/feed.json)
 
 ## 赞助支持
 
