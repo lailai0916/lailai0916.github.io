@@ -270,6 +270,9 @@ $$
 
 ### 球的体积表面积
 
+- [球 (数学) - 维基百科](<https://zh.wikipedia.org/wiki/球_(数学)>)
+- [祖暅原理 - 维基百科](https://zh.wikipedia.org/wiki/祖暅原理)
+
 根据辛普森法则：
 
 $$
