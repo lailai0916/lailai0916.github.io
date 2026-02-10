@@ -9,6 +9,10 @@ title: '二分'
 
 ## 二分
 
+`check` 函数的返回值应为 $\set{0,0,\dots,0,0,1,1,\dots,1,1}$。
+
+二分结束后，$l$ 为第一个 $1$ 的位置，$l-1$ 为最后一个 $0$ 的位置。
+
 <Tabs>
 <TabItem value="整数">
 
@@ -38,15 +42,9 @@ while(r-l>eps)
 </TabItem>
 </Tabs>
 
-:::tip
-
-函数 `check` 的返回值应为 $\set{0,0,\dots,0,0,1,1,\dots,1,1}$。
-
-二分后 $l$ 为第一个 $1$ 的位置；$l-1$ 为最后一个 $0$ 的位置。
-
-:::
-
 ## 三分
+
+单峰函数如果找最大值 `f(m1)>f(m2)`，找最小值 `f(m1)<f(m2)`。
 
 ```cpp
 double l=x,r=y;
@@ -58,12 +56,6 @@ while(r-l>eps)
 }
 ```
 
-:::tip
-
-单峰函数如果有最大值 `f(m1)>f(m2)`；如果有最小值 `f(m1)<f(m2)`。
-
-:::
-
 ## 例题
 
 <Problem id="P2249" />
@@ -71,3 +63,5 @@ while(r-l>eps)
 <Problem id="P1883" />
 
 <Problem id="P3382" />
+
+<Problem id="SP4871" />
