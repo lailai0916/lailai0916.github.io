@@ -9,7 +9,9 @@ title: '积分'
 
 ## 辛普森积分法
 
-
+$$
+\int_a^b f(x)\mathrm{d}x\approx\frac{b-a}{6}\left[f(a)+4f\left(\frac{a+b}{2}\right)+f(b)\right]
+$$
 
 ## 自适应辛普森法
 
