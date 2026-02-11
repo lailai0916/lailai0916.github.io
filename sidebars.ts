@@ -390,16 +390,7 @@ const sidebars: SidebarsConfig = {
                 type: 'doc',
                 id: 'note/math/advanced/linear-algebra/index',
               },
-              items: [
-                'note/math/advanced/linear-algebra/l1',
-                'note/math/advanced/linear-algebra/l2',
-                'note/math/advanced/linear-algebra/l3',
-                'note/math/advanced/linear-algebra/l4',
-                'note/math/advanced/linear-algebra/l5',
-                'note/math/advanced/linear-algebra/l6',
-                'note/math/advanced/linear-algebra/l7',
-                'note/math/advanced/linear-algebra/l8',
-              ],
+              items: [],
             },
             {
               type: 'category',
