@@ -183,10 +183,6 @@
     "message": "高等数学",
     "description": "The label for category '高等数学' in sidebar 'sidebar2'"
   },
-  "sidebar.sidebar2.category.《线性代数》": {
-    "message": "《线性代数》",
-    "description": "The label for category '《线性代数》' in sidebar 'sidebar2'"
-  },
   "sidebar.sidebar2.category.英语": {
     "message": "英语",
     "description": "The label for category '英语' in sidebar 'sidebar2'"
