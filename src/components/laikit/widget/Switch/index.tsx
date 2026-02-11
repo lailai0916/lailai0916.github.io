@@ -4,7 +4,6 @@ import styles from './styles.module.css';
 interface SwitchProps {
   checked: boolean;
   onChange: (checked: boolean) => void;
-  ariaLabel?: string;
 }
 
 export default function Switch({ checked, onChange }: SwitchProps) {
