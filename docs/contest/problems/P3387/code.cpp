@@ -34,7 +34,7 @@ void tarjan(int u)
 		}
 	}
 }
-int a[N],b[N],dp[N];
+int a[N],b[N],f[N];
 int main()
 {
 	ios::sync_with_stdio(false);
@@ -55,26 +55,23 @@ int main()
 	{
 		if(!dfn[i])tarjan(i);
 	}
-	for(int i=1;i<=n;i++)
+	for(int u=1;u<=n;u++)
 	{
-		b[scc[i]]+=a[i];
-		for(auto j:G[i])
+		b[scc[u]]+=a[u];
+		for(auto v:G[u])
 		{
-			if(scc[i]!=scc[j])
+			if(scc[u]!=scc[v])
 			{
-				H[scc[i]].push_back(scc[j]);
+				H[scc[u]].push_back(scc[v]);
 			}
 		}
 	}
 	int ans=0;
-	for(int i=1;i<=scc_cnt;i++)
+	for(int u=1;u<=scc_cnt;u++)
 	{
-		dp[i]=b[i];
-		for(auto j:H[i])
-		{
-			dp[i]=max(dp[i],dp[j]+b[i]);
-		}
-		ans=max(ans,dp[i]);
+		f[u]=b[u];
+		for(auto v:H[u])f[u]=max(f[u],f[v]+b[u]);
+		ans=max(ans,f[u]);
 	}
 	cout<<ans<<'\n';
 	return 0;
