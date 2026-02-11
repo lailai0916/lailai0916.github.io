@@ -133,7 +133,6 @@ function ColorGenerator() {
       icon="lucide:palette"
     >
       <div className={styles.colorGeneratorContainer}>
-        {/* 颜色输入 */}
         <div className={styles.colorInputContainer}>
           <input
             type="text"
@@ -148,8 +147,6 @@ function ColorGenerator() {
             className={styles.colorPickerInput}
           />
         </div>
-
-        {/* 预设颜色 */}
         <div className={styles.presetColors}>
           {presetColors.map((color) => (
             <button
@@ -160,8 +157,6 @@ function ColorGenerator() {
             />
           ))}
         </div>
-
-        {/* 色阶预览与重置按钮 */}
         <div className={styles.colorPreviewContainer}>
           <div
             className={styles.colorPreview}
