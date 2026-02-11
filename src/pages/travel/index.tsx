@@ -1,10 +1,6 @@
 import React, { type ReactNode } from 'react';
 import Layout from '@theme/Layout';
-import {
-  PageTitle,
-  PageHeader,
-  PageFooter,
-} from '@site/src/components/laikit/page';
+import { PageTitle, PageHeader } from '@site/src/components/laikit/page';
 import DataCard from '@site/src/components/laikit/widget/DataCard';
 import TravelTimeline from '@site/src/pages/travel/_components/Timeline';
 import TravelMap from '@site/src/pages/travel/_components/Map';
@@ -24,15 +20,6 @@ const MODIFICATION = translate({
   id: 'pages.travel.modification',
   message: '<b>Travel</b> Record',
 });
-const FOOTER = translate({
-  id: 'pages.travel.footer',
-  message:
-    'Read ten thousand books and travel ten thousand miles. Only by walking far can you truly look the world in the eye—neither looking up to wealthy nations nor looking down on poorer lands. The world is not what the news shows, nor what others tell you, but what you see with your own eyes and feel with your own heart. The more you see, the broader your vision and the greater your mind.',
-});
-
-function TravelFooter() {
-  return <PageFooter>{FOOTER}</PageFooter>;
-}
 
 function TravelHeader() {
   const countryCount = new Set(
@@ -74,7 +61,6 @@ export default function Travel(): ReactNode {
       <TravelHeader />
       <TravelMap />
       <TravelTimeline />
-      <TravelFooter />
     </Layout>
   );
 }

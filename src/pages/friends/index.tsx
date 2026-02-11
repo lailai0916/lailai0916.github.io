@@ -1,10 +1,6 @@
 import React, { type ReactNode, useState } from 'react';
 import Layout from '@theme/Layout';
-import {
-  PageTitle,
-  PageHeader,
-  PageFooter,
-} from '@site/src/components/laikit/page';
+import { PageTitle, PageHeader } from '@site/src/components/laikit/page';
 import DataCard from '@site/src/components/laikit/widget/DataCard';
 import Link from '@docusaurus/Link';
 import { Icon } from '@iconify/react';
@@ -23,11 +19,6 @@ const DESCRIPTION = translate({
 const MODIFICATION = translate({
   id: 'pages.friends.modification',
   message: 'My <b>Friends</b>',
-});
-const FOOTER = translate({
-  id: 'pages.friends.footer',
-  message:
-    'Thank you for the companionship and support of each friend, and welcome everyone to contact me to add a friend link.',
 });
 
 // 友链卡片组件
@@ -74,10 +65,6 @@ function FriendsMain() {
   );
 }
 
-function FriendsFooter() {
-  return <PageFooter>{FOOTER}</PageFooter>;
-}
-
 function FriendsHeader() {
   const totalFriends = FRIEND_LIST.length;
   return (
@@ -100,7 +87,6 @@ export default function Friends(): ReactNode {
     <Layout title={TITLE} description={DESCRIPTION}>
       <FriendsHeader />
       <FriendsMain />
-      <FriendsFooter />
     </Layout>
   );
 }

@@ -28,11 +28,3 @@ export function PageHeader({ children }: { children: React.ReactNode }) {
     </div>
   );
 }
-
-export function PageFooter({ children }: { children: React.ReactNode }) {
-  return (
-    <div className={styles.pageFooter}>
-      <div className={styles.footerContent}>{children}</div>
-    </div>
-  );
-}

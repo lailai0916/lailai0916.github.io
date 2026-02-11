@@ -14,21 +14,6 @@
   gap: 3rem;
 }
 
-.pageFooter {
-  padding: 2rem;
-  border-top: 1px solid var(--ifm-color-emphasis-200);
-  text-align: center;
-}
-
-.footerContent {
-  max-width: 800px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1rem;
-}
-
 .headerContent {
   flex: 1;
   max-width: 600px;
