@@ -74,29 +74,23 @@
 .infoCard {
   display: flex;
   flex-direction: column;
-  gap: 0.6rem;
+  gap: 0.55rem;
 }
 
 .infoItem {
   display: grid;
   grid-template-columns: 2rem minmax(0, 1fr) auto;
-  gap: 0.65rem;
+  gap: 0.7rem;
   align-items: center;
-  padding: 0.55rem 0.6rem;
+  padding: 0.62rem 0.7rem;
   border-radius: 12px;
   border: 1px solid var(--ifm-color-emphasis-200);
-  background:
-    linear-gradient(
-      110deg,
-      rgba(29, 155, 240, 0.09),
-      rgba(29, 155, 240, 0.02) 55%,
-      transparent
-    ),
-    var(--ifm-card-background-color);
+  background: var(--ifm-color-emphasis-100);
   color: var(--ifm-font-color-base);
   text-decoration: none !important;
   transition:
     border-color 160ms ease,
+    background-color 160ms ease,
     transform 160ms ease,
     box-shadow 160ms ease;
 }
@@ -104,8 +98,9 @@
 .infoItem:hover {
   color: inherit;
   border-color: var(--ifm-color-primary);
+  background: var(--ifm-card-background-color);
   transform: translateY(-1px);
-  box-shadow: 0 10px 18px rgba(29, 155, 240, 0.12);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
 }
 
 .infoItemIcon {
@@ -116,19 +111,16 @@
   align-items: center;
   justify-content: center;
   color: var(--ifm-color-primary);
-  background: rgba(29, 155, 240, 0.13);
-}
-
-html[data-theme='dark'] .infoItemIcon {
-  color: var(--ifm-color-primary-light);
-  background: rgba(67, 172, 243, 0.18);
+  background: var(--ifm-card-background-color);
+  border: 1px solid var(--ifm-color-emphasis-200);
+  flex-shrink: 0;
 }
 
 .infoItemText {
   min-width: 0;
   display: flex;
   flex-direction: column;
-  gap: 0.1rem;
+  gap: 0.14rem;
 }
 
 .infoItemLabel {
@@ -161,39 +153,46 @@ html[data-theme='dark'] .infoItemIcon {
 .statsGrid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 0.6rem;
+  gap: 0.55rem;
 }
 
 .statTile {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  gap: 0.5rem;
-  min-height: 5rem;
-  padding: 0.65rem 0.7rem;
+  gap: 0.45rem;
+  min-height: 4.8rem;
+  padding: 0.62rem 0.7rem;
   border-radius: 12px;
   border: 1px solid var(--ifm-color-emphasis-200);
-  background:
-    linear-gradient(
-      155deg,
-      rgba(29, 155, 240, 0.08),
-      rgba(29, 155, 240, 0.01) 60%,
-      transparent
-    ),
-    var(--ifm-card-background-color);
+  background: var(--ifm-color-emphasis-100);
+  transition:
+    border-color 160ms ease,
+    background-color 160ms ease;
+}
+
+.statTile:hover {
+  border-color: var(--ifm-color-primary);
+  background: var(--ifm-card-background-color);
 }
 
 .statHead {
   display: flex;
   align-items: center;
-  gap: 0.35rem;
+  gap: 0.45rem;
 }
 
 .statIcon {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  width: 1.35rem;
+  height: 1.35rem;
+  border-radius: 8px;
   color: var(--ifm-color-primary);
+  background: var(--ifm-card-background-color);
+  border: 1px solid var(--ifm-color-emphasis-200);
+  flex-shrink: 0;
 }
 
 .statLabel {
@@ -210,8 +209,10 @@ html[data-theme='dark'] .infoItemIcon {
 
 .statValue {
   font-weight: 700;
-  font-size: 1.16rem;
+  font-size: 1.12rem;
   line-height: 1;
+  color: var(--ifm-color-emphasis-900);
+  font-variant-numeric: tabular-nums;
 }
 
 @media (max-width: 420px) {
