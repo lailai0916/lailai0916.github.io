@@ -7,18 +7,13 @@ interface SwitchProps {
   ariaLabel?: string;
 }
 
-export default function Switch({
-  checked,
-  onChange,
-  ariaLabel = 'Toggle setting',
-}: SwitchProps) {
+export default function Switch({ checked, onChange }: SwitchProps) {
   return (
     <label className={styles.switch}>
       <input
         type="checkbox"
         checked={checked}
         onChange={(e) => onChange(e.target.checked)}
-        aria-label={ariaLabel}
       />
       <span className={styles.slider}></span>
     </label>
