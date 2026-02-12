@@ -14,7 +14,7 @@ tags: [solution, atcoder]
 
 ## 解题思路
 
-设 $f(i)$ 为把 $S_i\sim S_{i+3}$ 改为 `UTPC` 的操作次数，则最终的答案为：
+设 $f(i)$ 为把 $S_i\sim S_{i+3}$ 改为 `UTPC` 的操作次数，则最终答案为：
 
 $$
 \min_{i=0}^{|S|-4}f(i)
