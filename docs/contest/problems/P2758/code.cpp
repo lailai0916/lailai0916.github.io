@@ -16,8 +16,8 @@ int main()
 	{
 		for(int j=1;j<=m;j++)
 		{
-			if(a[i-1]==b[j-1])f[i][j]=f[i-1][j-1];
-			else f[i][j]=min(f[i-1][j-1],min(f[i-1][j],f[i][j-1]))+1;
+			if(a[i-1]==b[j-1]){f[i][j]=f[i-1][j-1];continue;}
+			f[i][j]=min({f[i-1][j-1],f[i-1][j],f[i][j-1]})+1;
 		}
 	}
 	cout<<f[n][m]<<'\n';
