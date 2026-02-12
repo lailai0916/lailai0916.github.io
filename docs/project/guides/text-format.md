@@ -134,6 +134,7 @@ title: "lailai's Text Format Guide"
 - **变量名** 应使用 $1$ 个字母，不应使用多个字母。
 - **乘法** 应使用 `\times` 或 `\cdot` 而非 `*`。
 - **分数** 应使用 `\frac` 而非 `\dfrac`。
+- **绝对值** 应使用 `||` 而非 `\lvert` 和 `\rvert`。
 - **横向省略号** 应使用 `\dots` 而非 `\cdots` 和 `\ldots`，**纵向省略号** 应使用 `\vdots`，**斜向省略号** 应使用 `\ddots`。
 - **未定义但约定俗成的函数** 应使用 `\operatorname`，例如「 `\operatorname{lca}`」。
 - **空集** 应使用 `\varnothing` 而非 `\emptyset`。
