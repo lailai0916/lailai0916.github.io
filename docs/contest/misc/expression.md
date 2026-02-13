@@ -6,7 +6,7 @@ title: '表达式求值'
 
 - [表达式求值 - OI Wiki](https://oi-wiki.org/misc/expression/)
 
-## 多项式
+## 多项式计算
 
 ```cpp
 #include <bits/stdc++.h>
