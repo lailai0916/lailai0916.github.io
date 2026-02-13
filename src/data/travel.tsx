@@ -210,4 +210,9 @@ export const TRAVEL_LIST: TravelItem[] = [
     cardTitle: '🇭🇰 香港 & 🇨🇳 广东',
     cardDetailedText: '香港、深圳、广州',
   },
+  {
+    title: '2026-02',
+    cardTitle: '🇹🇭 泰国',
+    cardDetailedText: '清迈、清莱',
+  },
 ];

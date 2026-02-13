@@ -99,7 +99,6 @@
   color: inherit;
   border-color: var(--ifm-color-primary);
   background: var(--ifm-card-background-color);
-  transform: translateY(-1px);
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
 }
 
