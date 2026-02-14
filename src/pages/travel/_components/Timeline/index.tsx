@@ -63,38 +63,15 @@ const CLASS_NAMES = {
   title: 'travel-timeline-title',
 } as const;
 
-/**
- * 格式化 YYYY-MM 日期为 "Month Year"
- * @param dateStr - 日期字符串，格式为 YYYY-MM
- * @param locale - 语言环境
- * @returns 格式化后的日期字符串
- */
-
 const formatTravelDate = (dateStr: string, locale: string): string => {
-  // 验证日期格式
-  if (!/^\d{4}-\d{2}$/.test(dateStr)) {
-    console.warn(`Invalid date format: ${dateStr}. Expected format: YYYY-MM`);
-    return dateStr;
-  }
+  const [year, month] = dateStr.split('-');
+  const date = new Date(Date.UTC(Number(year), Number(month) - 1, 1));
 
-  try {
-    const [year, month] = dateStr.split('-');
-    const date = new Date(Date.UTC(Number(year), Number(month) - 1, 1));
-
-    // 验证日期是否有效
-    if (isNaN(date.getTime())) {
-      throw new Error(`Invalid date: ${dateStr}`);
-    }
-
-    return date.toLocaleDateString(locale, {
-      year: 'numeric',
-      month: 'long',
-      timeZone: 'UTC',
-    });
-  } catch (error) {
-    console.error(`Error formatting date ${dateStr}:`, error);
-    return dateStr; // 降级处理，返回原始字符串
-  }
+  return date.toLocaleDateString(locale, {
+    year: 'numeric',
+    month: 'long',
+    timeZone: 'UTC',
+  });
 };
 
 const TITLE = translate({
