@@ -79,7 +79,7 @@ const formatTravelDate = (dateStr: string, locale: string): string => {
 
   try {
     const [year, month] = dateStr.split('-');
-    const date = new Date(Number(year), Number(month) - 1);
+    const date = new Date(Date.UTC(Number(year), Number(month) - 1, 1));
 
     // 验证日期是否有效
     if (isNaN(date.getTime())) {
