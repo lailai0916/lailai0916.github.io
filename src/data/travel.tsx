@@ -212,7 +212,7 @@ export const TRAVEL_LIST: TravelItem[] = [
   },
   {
     title: '2026-02',
-    cardTitle: '🇹🇭 泰国',
-    cardDetailedText: '清迈、清莱',
+    cardTitle: '🇹🇭 泰国 & 🇱🇦 老挝',
+    cardDetailedText: '清迈、清莱、金三角',
   },
 ];
