@@ -6,7 +6,7 @@ title: 'lailai0916'
 
 ## 简介
 
-`username/username` 是一个特殊的 GitHub 仓库，其 `README.md` 文件会显示在个人主页。
+`username/username` 是一个特殊的 GitHub 仓库，其中的 `README.md` 文件会显示在个人主页。
 
 你可以在这个文件中展示个人简介、项目简介、技术栈图标、状态统计图等各种信息。
 

@@ -393,7 +393,7 @@ export const RESOURCE_LIST: ResourceCategoryItem[] = [
       },
       {
         title: '原题机',
-        href: 'http://yuantiji.ac/zh/',
+        href: 'https://yuantiji.ac/zh/',
         description: '编程题目溯源工具',
       },
       {
