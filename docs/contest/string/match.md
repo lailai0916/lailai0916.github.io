@@ -31,7 +31,9 @@ int kmp(string s,string t)
 }
 ```
 
-## Rabin–Karp 算法（Hash）
+## Rabin–Karp 算法
+
+详见 [字符串哈希](./hash)。
 
 ```cpp
 int RK(string s,string t)
