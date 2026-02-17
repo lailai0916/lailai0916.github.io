@@ -69,12 +69,12 @@ title: "lailai's Text Format Guide"
   - 连字符（`-`，Hyphen，U+002D）：连接复合词。
   - 短破折号（`–`，En dash，U+2013）：连接对等专有名词、表示范围。
   - 长破折号（`—`，Em dash，U+2014）：表示句内破折号。
-- 不应重复使用标点符号，例如「`？！` ~~`？？！！`~~」。
+- 不应重复使用标点符号，例如「`真的？！` ~~`真的？？！！`~~」。
 
 ## 词句
 
 - 用词应遵循 [用词规范表](#用词规范表)。
-- **代词** 应指代清晰，避免产生歧义。
+- 代词应指代清晰，避免产生歧义。
 - 避免使用 **不必要的形容词和语气词**。
 - 避免使用 **网络流行语、谐音错别字、Emoji 表情包、颜文字**。
 - 避免使用 **冷僻、生造、文言文** 词语。
@@ -86,8 +86,8 @@ title: "lailai's Text Format Guide"
 
 ## 翻译
 
-- 译法 **存在争议的专有名词** 应使用原文。
 - 翻译应遵循 **信达雅**，使用可以读懂的 **翻译和缩写**。
+- 不应使用 **译法存在争议的专有名词**。
 - 不应使用 **不地道的翻译和缩写**，例如「`USB` ~~`通用串行总线`~~」「`NBA` ~~`美国职业篮球联赛`~~」。
 - 应使用 **大小写正确的专有名词**，例如「GitHub」「iPhone」。
 - 首次出现 **专业术语** 应使用 `中文全称（原文全称，缩写）` 的格式，例如「快速傅里叶变换（Fast Fourier Transform，FFT）」「国内生产总值（Gross Domestic Product，GDP）」。
@@ -117,6 +117,7 @@ title: "lailai's Text Format Guide"
 - 行间代码应标记 **代码语言**，纯文本应标记为 `text`。
 - 链接文本应具有 **描述性**，相对路径应省略前缀 `./`。
 - 图片应添加 **替代文本**。
+- 表示 **键盘按键** 应使用 `<kbd>`，例如「`<kbd>⌘</kbd> + <kbd>C</kbd>`」。
 
 ## LaTeX
 
@@ -150,6 +151,7 @@ title: "lailai's Text Format Guide"
 - 表示 **告示** 应使用 $3$ 个 **冒号**（`:::`）和类型标签。
 - **lailai** 始终应排印为小写，即使它出现在句首、段落开头或标题中。**lailai** should always be typeset with all lowercase letters, even when it is the first word in a sentence, paragraph, or title.
 - **lailai** 为不翻译内容，始终以英语排印，即使它出现在非英语的语言文本中也是如此。**lailai** is untranslatable content and should always be set in English, even when it appears within text in a language other than English.
+- 包含 **lailai's** 的短语为不翻译内容。
 
 ## 用词规范表
 
@@ -166,6 +168,8 @@ title: "lailai's Text Format Guide"
 - 使用「扩展」而非「拓展」。
 - 使用「模板」而非「模版」。
 - 使用「源代码」而非「源码」。
+- 使用「包含」而非「含有」。
+- 标题使用「关于」，正文使用「有关」。
 - 使用「依此类推」而非「以此类推」。
 - 使用「显然」「易得」「不难发现」等。
 - 使用「例如」「示例」。
