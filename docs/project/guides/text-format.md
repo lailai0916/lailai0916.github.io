@@ -106,6 +106,7 @@ title: "lailai's Text Format Guide"
 
 ## Markdown
 
+- Markdown 应遵循 [Markdown 指南](markdown)。
 - 应使用 **二级、三级、四级标题**，避免使用 **五级、六级标题**，不应使用 **一级标题**。
 - 不应跳过标题等级，不应使用相同的上下级标题。
 - 不应孤立标题编号，即上级标题中不应仅有 $1$ 个下级标题。
@@ -120,6 +121,7 @@ title: "lailai's Text Format Guide"
 
 ## LaTeX
 
+- $\LaTeX$ 应遵循 [LaTeX 指南](latex)。
 - 数学公式应使用 $\LaTeX$。
 - 行间公式前后的 $2$ 个 **美元符号**（`$$`）应 **单独一行**。
 - 公式不应放在 **标题、加粗、斜体、链接** 等格式中。
