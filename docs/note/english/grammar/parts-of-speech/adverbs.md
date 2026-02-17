@@ -6,4 +6,4 @@ title: '副词'
 
 ### 构成规则
 
-详见 [形容词](./adjectives#构成规则)。
+详见 [形容词](adjectives)。

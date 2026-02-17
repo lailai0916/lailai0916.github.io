@@ -8,4 +8,4 @@ title: '英语词汇'
 
 ## 高考词汇
 
-详见 [高考词汇](./vocabulary/ncee)。
+详见 [高考词汇](vocabulary/ncee)。

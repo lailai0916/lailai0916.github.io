@@ -14,7 +14,7 @@ $$
 i^{-1}\equiv-\left\lfloor\frac{p}{i}\right\rfloor(p\bmod i)^{-1}\pmod p
 $$
 
-详见 [模逆元](./../number-theory/inverse)。
+详见 [模逆元](../number-theory/inverse)。
 
 ```cpp
 ll inv[N],fac[N],jv[N];

@@ -25,7 +25,7 @@ $$
 
 快速幂：`Pow(a,mod-2)`。
 
-详见 [快速幂](./../binary-exponentiation)。
+详见 [快速幂](../binary-exponentiation)。
 
 ## 扩展欧几里得算法
 
@@ -33,7 +33,7 @@ $$
 
 扩展欧几里得算法：`exgcd(a,mod)`。
 
-详见 [最大公约数](./gcd)。
+详见 [最大公约数](gcd)。
 
 ## 线性逆元
 
