@@ -20,8 +20,8 @@ title: 'lailai0916'
 
 2. 在 GitHub 首页右上角点击加号 `+` 按钮，点击 [New repository](https://github.com/new)（新建仓库）。
 
-- **Repository name**（仓库名称）必须与你的 GitHub 用户名相同，例如 `lailai0916/lailai0916`。
-- **Description**（描述）为可选项，例如 `lailai's Profile`。
+- **Repository name**（仓库名称）必须与你的 GitHub 用户名相同，例如「`lailai0916/lailai0916`」。
+- **Description**（描述）为可选项，例如「`lailai's Profile`」。
 - 勾选 **Add a README file**（添加 README 文件）。
 - 点击 **Create repository**（创建仓库）。
 
@@ -31,7 +31,7 @@ title: 'lailai0916'
 
 </ImageWindow>
 
-3. 创建完仓库后，会跳转到仓库主页，例如 `https://github.com/lailai0916/lailai0916`。
+3. 创建完仓库后，会跳转到仓库主页，例如「`https://github.com/lailai0916/lailai0916`」。
 
 - 仓库的根目录下有一个 `README.md` 文件，会在你的个人主页展示。
 
@@ -179,7 +179,7 @@ title: 'lailai0916'
 2. 复制 [GitHub Stats Visualization](https://github.com/jstrieb/github-stats) 的 GitHub 仓库。
 
 - 点击 [Create a new repository](https://github.com/jstrieb/github-stats/generate) 创建一个副本，注意不是直接 fork，这样避免了大规模的提交历史。
-- **Repository name**（仓库名称）和 **Description**（描述）可以随意填写，例如 `lailai0916/github-stats` 和 `lailai's GitHub Stats`。
+- **Repository name**（仓库名称）和 **Description**（描述）可以随意填写，例如「`lailai0916/github-stats`」和「`lailai's GitHub Stats`」。
 - 点击 **Create repository**（创建仓库）。
 
 <ImageWindow url="https://github.com/new?template_name=github-stats&template_owner=jstrieb">
@@ -188,7 +188,7 @@ title: 'lailai0916'
 
 </ImageWindow>
 
-3. 创建完仓库后，会跳转到仓库主页，例如 `https://github.com/lailai0916/github-stats`。
+3. 创建完仓库后，会跳转到仓库主页，例如「`https://github.com/lailai0916/github-stats`」。
 
 <ImageWindow url="https://github.com/lailai0916/github-stats">
 
