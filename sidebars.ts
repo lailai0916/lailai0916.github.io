@@ -93,6 +93,7 @@ const sidebars: SidebarsConfig = {
         'contest/dp/tree',
         'contest/dp/state',
         'contest/dp/number',
+        'contest/dp/probability',
       ],
     },
     {

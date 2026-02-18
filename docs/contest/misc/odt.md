@@ -12,11 +12,11 @@ title: '珂朵莉树'
 
 珂朵莉树（Chtholly Tree），又名老司机树（Old Driver Tree，ODT），起源于 [CF896C](https://codeforces.com/problemset/problem/896/C)。
 
-核心思想是将值相同的区间合并为一个结点保存在 `set` 中。
+核心思想是将值相同的区间合并为一个节点，并保存在 `set` 中。
 
 ## 实现
 
-### 保存结点
+### 保存节点
 
 ```cpp
 struct Node
