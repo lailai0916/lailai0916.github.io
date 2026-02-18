@@ -1,10 +1,9 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-const int N=205;
 const int inf=0x3f3f3f3f;
-int a[N],s[N][N];
-int f1[N][N],f2[N][N];
+const int N=205;
+int a[N],s[N],mn[N][N],mx[N][N];
 int main()
 {
 	ios::sync_with_stdio(false);
@@ -14,38 +13,32 @@ int main()
 	for(int i=1;i<=n;i++)
 	{
 		cin>>a[i];
-		a[i]+=a[i-1];
+		a[i+n]=a[i];
 	}
-	for(int i=1;i<=n;i++)
+	for(int i=1;i<=n<<1;i++)
 	{
-		s[i][i]=i;
-		s[i+n][i+n]=i+n;
-		a[i+n]=a[i]+a[n];
+		s[i]=s[i-1]+a[i];
+		for(int j=1;j<=n<<1;j++)mn[i][j]=inf;
+		mn[i][i]=0;
 	}
-	for(int i=n*2;i>=1;i--)
+	for(int len=1;len<n;len++)
 	{
-		for(int j=i+1;j<=n*2;j++)
+		for(int i=1;i+len<=n<<1;i++)
 		{
-			f2[i][j]=max(f2[i+1][j],f2[i][j-1])+a[j]-a[i-1];
-			int tmp=inf,qwq;
-			for(int k=s[i][j-1];k<=s[i+1][j];k++)
+			int j=i+len;
+			for(int k=i;k<j;k++)
 			{
-				if(tmp>f1[i][k]+f1[k+1][j]+a[j]-a[i-1])
-				{
-					tmp=f1[i][k]+f1[k+1][j]+a[j]-a[i-1];
-					qwq=k;
-				}
+				mn[i][j]=min(mn[i][j],mn[i][k]+mn[k+1][j]+s[j]-s[i-1]);
+				mx[i][j]=max(mx[i][j],mx[i][k]+mx[k+1][j]+s[j]-s[i-1]);
 			}
-			f1[i][j]=tmp;
-			s[i][j]=qwq;
 		}
 	}
-	int mx=0,mn=inf;
+	int ans1=inf,ans2=0;
 	for(int i=1;i<=n;i++)
 	{
-		mn=min(mn,f1[i][i+n-1]);
-		mx=max(mx,f2[i][i+n-1]);
+		ans1=min(ans1,mn[i][i+n-1]);
+		ans2=max(ans2,mx[i][i+n-1]);
 	}
-	cout<<mn<<'\n'<<mx<<'\n';
+	cout<<ans1<<'\n'<<ans2<<'\n';
 	return 0;
 }
