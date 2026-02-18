@@ -140,6 +140,7 @@ title: "lailai's Text Format Guide"
 - **横向省略号** 应使用 `\dots` 而非 `\cdots` 和 `\ldots`，**纵向省略号** 应使用 `\vdots`，**斜向省略号** 应使用 `\ddots`。
 - **未定义但约定俗成的函数** 应使用 `\operatorname`，例如「 `\operatorname{lca}`」。
 - **物理单位** 应使用 `\mathrm`，例如「`\mathrm{m/s^2}`」。
+- **特殊数集** 应使用 `\mathbb`，例如「`\mathbb{R}`」。
 - **空集** 应使用 `\varnothing` 而非 `\emptyset`。
 - **逻辑** 应使用 `\implies`、`\impliedby`、`\iff`。
 - **包裹大高度公式的括号** 应使用 `\left` 和 `\right`。
