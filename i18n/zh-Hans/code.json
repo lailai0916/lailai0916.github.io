@@ -644,7 +644,7 @@
     "message": "代码（{num}）"
   },
   "components.problem.error": {
-    "message": "无法加载题目 {id}。"
+    "message": "无法加载题目「{id}」。"
   },
   "components.solution.luogu": {
     "message": "洛谷"

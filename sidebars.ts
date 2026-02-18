@@ -90,6 +90,7 @@ const sidebars: SidebarsConfig = {
       items: [
         'contest/dp/basic',
         'contest/dp/knapsack',
+        'contest/dp/interval',
         'contest/dp/tree',
         'contest/dp/state',
         'contest/dp/number',

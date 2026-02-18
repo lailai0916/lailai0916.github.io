@@ -90,7 +90,7 @@ export default function Problem({ id }: { id: string }) {
         {translate(
           {
             id: 'components.problem.error',
-            message: 'Unable to load problem {id}.',
+            message: 'Unable to load problem "{id}".',
           },
           { id }
         )}
