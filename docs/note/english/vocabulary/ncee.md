@@ -641,7 +641,7 @@ title: '高考词汇'
 - choke：n. & v. 窒息
 - choose：vt. 选择
 - chopsticks：n. 筷子
-- Christmas：n. 圣诞节（12月25日）
+- Christmas：n. 圣诞节（12 月 25 日）
 - church：n. 教堂；教会
 - cigar：n. 雪茄烟
 - cigarette：n. 纸烟，香烟
