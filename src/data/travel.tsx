@@ -203,7 +203,7 @@ export const TRAVEL_LIST: TravelItem[] = [
   {
     title: '2025-01',
     cardTitle: '🇲🇾 马来西亚',
-    cardDetailedText: '吉隆坡、怡保、槟城（乔治）',
+    cardDetailedText: '吉隆坡、霹雳州（怡保）、槟城州（乔治）',
   },
   {
     title: '2025-07',
