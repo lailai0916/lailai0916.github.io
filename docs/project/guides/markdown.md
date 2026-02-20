@@ -2,7 +2,7 @@
 title: 'Markdown 指南'
 ---
 
-本文为 Markdown 使用指南，仅说明语法规则，不包含格式与排版建议。
+本文为 Markdown 使用指南。
 
 ## 参考资料
 
@@ -19,6 +19,8 @@ title: 'Markdown 指南'
 Markdown 文档以纯文本格式存储，这意味着，它们可以用几乎任一文本编辑器打开。同时，又能通过 Markdown 编辑器导出为带排版的富文本文档、HTML 网页等等。纯粹、简洁、易用、灵活，都是人们喜欢 Markdown 的原因。
 
 推荐一个我常用的 Markdown 排版工具软件：[Typora](https://typora.io)。
+
+本文仅说明语法规则，不包含格式与排版建议。
 
 ## 段落
 
