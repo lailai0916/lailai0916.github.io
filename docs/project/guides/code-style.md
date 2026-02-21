@@ -116,7 +116,7 @@ cin.tie(nullptr);
 - 忽略 **每一行结尾的空格** 和 **最后一行之后多余的换行符**。
 
 ```cpp
-cout<<"Yes"<<'\n';
+cout<<"Hello, World!"<<'\n';
 ```
 
 ## 类型
