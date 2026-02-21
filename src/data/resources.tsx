@@ -801,6 +801,11 @@ export const RESOURCE_LIST: ResourceCategoryItem[] = [
         description: '坦克射击游戏',
         href: 'https://diep.io',
       },
+      {
+        title: '信任的进化',
+        description: '信任的进化游戏',
+        href: 'https://dccxi.com/trust/',
+      },
     ],
   },
   {
