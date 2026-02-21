@@ -163,9 +163,9 @@ vector<int> G[N];
 
 ```cpp
 const int N=100005; // const int K=5005;
-const int mod=998244353;
+const int mod=998244353; // const mod=1000000007;
 const int inf=0x3f3f3f3f; // const ll inf=0x3f3f3f3f3f3f3f3f;
-const double eps=1e-10;
+const double eps=1e-8; // const double eps=1e-10;
 ```
 
 - 圆周率使用 `pi=acos(-1)`。
