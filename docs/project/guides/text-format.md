@@ -154,7 +154,7 @@ title: "lailai's Text Format Guide"
 - 表示 **告示** 应使用 $3$ 个 **冒号**（`:::`）和类型标签。
 - **lailai** 始终应排印为小写，即使它出现在句首、段落开头或标题中。**lailai** should always be typeset with all lowercase letters, even when it is the first word in a sentence, paragraph, or title.
 - **lailai** 为不翻译内容，始终以英语排印，即使它出现在非英语的语言文本中也是如此。**lailai** is untranslatable content and should always be set in English, even when it appears within text in a language other than English.
-- 包含 **lailai's** 的短语为不翻译内容。
+- 包含 **lailai's** 的短语为不翻译内容，例如「lailai's Home」「lailai's Text Format Guide」。
 
 ## 用词规范表
 
