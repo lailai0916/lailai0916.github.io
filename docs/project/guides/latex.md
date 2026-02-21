@@ -11,6 +11,7 @@ title: 'LaTeX 指南'
 - [TeX - 维基百科](https://zh.wikipedia.org/wiki/TeX)
 - [LaTeX - 维基百科](https://zh.wikipedia.org/wiki/LaTeX)
 - [KaTeX - 维基百科](https://zh.wikipedia.org/wiki/KaTeX)
+- [LaTeX 入门 - 洛谷专栏](https://www.luogu.com.cn/article/ng1a5i5k)
 - [LaTeX 数学公式大全 - 洛谷专栏](https://www.luogu.com.cn/article/1gxob6zc)
 - [常用数学符号 - Baoshuo's OI Blog](https://oi.baoshuo.ren/math-formulas/)
 
