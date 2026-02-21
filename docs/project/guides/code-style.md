@@ -12,7 +12,7 @@ title: "lailai's Code Style Guide"
 
 ## 通用
 
-- 本指南仅适用于 OI 中的 C++ 代码。
+- 本指南仅适用于 **算法竞赛中的 C++ 代码**。
 - 代码应遵循 [C++17](https://cppreference.com/w/cpp/17.html) 标准，避免使用不兼容特性。
 - 修改代码风格不应改变原有逻辑。
 
@@ -140,6 +140,7 @@ using Comp=complex<double>;
 - 避免使用 `static`、`register`、`inline` 等修饰符。
 - 小型变量定义在局部作用域，避免使用全局变量；大型数组使用全局变量。
 - 通常使用静态数组；按需使用 `vector`，例如邻接表存图。
+- 避免频繁使用临时变量。
 
 ```cpp
 const int N=100005;
