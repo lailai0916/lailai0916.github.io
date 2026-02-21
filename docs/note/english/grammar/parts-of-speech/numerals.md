@@ -8,27 +8,27 @@ title: '数词'
 
 ### 构成形式
 
-#### 两位数
+#### 一位数 & 两位数
 
-| 数值 |  几   | 数值 |   十几    | 数值 |  几十   |
-| :--: | :---: | :--: | :-------: | :--: | :-----: |
-| $1$  |  one  | $11$ |  eleven   | $10$ |   ten   |
-| $2$  |  two  | $12$ |  twelve   | $20$ | twenty  |
-| $3$  | three | $13$ | thirteen  | $30$ | thirty  |
-| $4$  | four  | $14$ | fourteen  | $40$ |  forty  |
-| $5$  | five  | $15$ |  fifteen  | $50$ |  fifty  |
-| $6$  |  six  | $16$ |  sixteen  | $60$ |  sixty  |
-| $7$  | seven | $17$ | seventeen | $70$ | seventy |
-| $8$  | eight | $18$ | eighteen  | $80$ | eighty  |
-| $9$  | nine  | $19$ | nineteen  | $90$ | ninety  |
+以下是「几」「十几」「几十」的单词，将「几十几」拆分为「几十+几」，并在中间添加连字符。
+
+| 数值 | 「几」 | 数值 | 「十几」  | 数值 | 「几十」 |
+| :--: | :----: | :--: | :-------: | :--: | :------: |
+| $1$  |  one   | $11$ |  eleven   | $10$ |   ten    |
+| $2$  |  two   | $12$ |  twelve   | $20$ |  twenty  |
+| $3$  | three  | $13$ | thirteen  | $30$ |  thirty  |
+| $4$  |  four  | $14$ | fourteen  | $40$ |  forty   |
+| $5$  |  five  | $15$ |  fifteen  | $50$ |  fifty   |
+| $6$  |  six   | $16$ |  sixteen  | $60$ |  sixty   |
+| $7$  | seven  | $17$ | seventeen | $70$ | seventy  |
+| $8$  | eight  | $18$ | eighteen  | $80$ |  eighty  |
+| $9$  |  nine  | $19$ | nineteen  | $90$ |  ninety  |
 
 :::tip
 
 「十几」通常以 -teen 结尾，「几十」通常以 -ty 结尾，但拼写略有变化。
 
 :::
-
-将「几十几」拆分为「几十+几」，并在中间添加连字符。
 
 :::example
 
