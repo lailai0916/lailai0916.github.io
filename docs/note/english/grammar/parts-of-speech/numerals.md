@@ -328,10 +328,10 @@ title: '数词'
 
 :::example
 
-- $2+2=4$：2 plus 2 is 4.
-- $4-2=2$：4 minus 2 is 2.
-- $2\times 3=6$：2 times 3 is 6. / 2 multiplied by 3 is 6.
-- $8\div 4=2$：8 divided by 4 is 2.
+- $2+2=4$：2 **plus** 2 is 4.
+- $4-2=2$：4 **minus** 2 is 2.
+- $2\times 3=6$：2 **times / multiplied** by 3 is 6.
+- $8\div 4=2$：8 **divided by** 4 is 2.
 
 :::
 
@@ -339,11 +339,11 @@ title: '数词'
 
 :::example
 
-- $3^2=9$：3 squared is 9.
-- $2^3=8$：2 cubed is 8.
-- $2^{10}=1024$：2 to the power of 10 is 1024.
-- $\sqrt{25}=5$：The square root of 25 is 5.
-- $\sqrt[3]{64}=4$：The cube root of 64 is 4.
+- $3^2=9$：3 **squared** is 9.
+- $2^3=8$：2 **cubed** is 8.
+- $2^{10}=1024$：2 **to the power of 10** is 1024.
+- $\sqrt{25}=5$：**The square root of** 25 is 5.
+- $\sqrt[3]{64}=4$：**The cube root** of 64 is 4.
 
 :::
 
@@ -351,10 +351,10 @@ title: '数词'
 
 :::example
 
-- $x=5$：x is 5. / x equals 5.
-- $4>3$：4 is more than 3.
-- $2<3$：2 is less than 3.
-- $a\ge 1$：a is greater than or equal to 1.
+- $x=5$：x **is / equals** 5.
+- $4>3$：4 **is more than** 3.
+- $2<3$：2 **is less than** 3.
+- $a\ge 1$：a **is greater than or equal to** 1.
 
 :::
 
