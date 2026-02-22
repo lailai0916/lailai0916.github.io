@@ -385,7 +385,7 @@ void sieve()
 }
 ```
 
-### 随机数（`mt19937`）
+### 随机数
 
 ```cpp
 random_device rd;
