@@ -967,14 +967,8 @@
   "blog.sidebar.stats.posts": {
     "message": "文章"
   },
-  "blog.sidebar.stats.tags": {
-    "message": "标签"
-  },
   "blog.sidebar.stats.words": {
     "message": "词数"
-  },
-  "blog.sidebar.stats.minutes": {
-    "message": "分钟"
   },
   "blog.sidebar.stats.visitors": {
     "message": "访客"

@@ -175,31 +175,11 @@ function StatsCard() {
     },
     {
       label: translate({
-        id: 'blog.sidebar.stats.tags',
-        message: 'Tags',
-      }),
-      icon: 'lucide:tag',
-      value: new Set(
-        getAllPostMetadata().flatMap((meta) =>
-          meta.tags.map((tag) => tag.permalink)
-        )
-      ).size,
-    },
-    {
-      label: translate({
         id: 'blog.sidebar.stats.words',
         message: 'Words',
       }),
       icon: 'lucide:file-text',
       value: readingMinutes * 200,
-    },
-    {
-      label: translate({
-        id: 'blog.sidebar.stats.minutes',
-        message: 'Minutes',
-      }),
-      icon: 'lucide:timer',
-      value: readingMinutes,
     },
     {
       label: translate({
