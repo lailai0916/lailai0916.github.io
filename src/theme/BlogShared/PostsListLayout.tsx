@@ -24,7 +24,7 @@ function Badge({ icon, label }) {
 function IconData({ icon, children }) {
   return (
     <>
-      <span className={styles.dot}>·</span>
+      <span className={styles.dot}>|</span>
       <IconText icon={icon} colorMode="monochrome">
         {children}
       </IconText>
@@ -97,30 +97,17 @@ function PostCard({ item }) {
           </>
         )}
         {status === 'success' && (
-          <>
-            <IconData icon="lucide:users">
-              {translate(
-                {
-                  id: 'blog.postcard.visitorCount',
-                  message: '{visitorCount} visitors',
-                },
-                {
-                  visitorCount: analytics.visitors,
-                }
-              )}
-            </IconData>
-            <IconData icon="lucide:eye">
-              {translate(
-                {
-                  id: 'blog.postcard.viewCount',
-                  message: '{viewCount} views',
-                },
-                {
-                  viewCount: analytics.pageviews,
-                }
-              )}
-            </IconData>
-          </>
+          <IconData icon="lucide:eye">
+            {translate(
+              {
+                id: 'blog.postcard.viewCount',
+                message: '{viewCount} views',
+              },
+              {
+                viewCount: analytics.pageviews,
+              }
+            )}
+          </IconData>
         )}
         {metadata.tags?.length > 0 && (
           <IconData icon="lucide:tag">
