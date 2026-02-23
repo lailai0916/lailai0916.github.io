@@ -31,3 +31,5 @@ title: 'bilibili'
 ## 课程
 
 - [李永乐老师：从一到无穷大](https://www.bilibili.com/cheese/play/ss115)
+- [【语言区NO.1】英语兔：早该这样学英语！](https://www.bilibili.com/cheese/play/ss710811134)
+- [【影视飓风】只看8节课，用iPhone拍出电影感](https://www.bilibili.com/cheese/play/ss190402215)
