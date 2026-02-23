@@ -5,10 +5,13 @@ title: '可持久化数据结构'
 ## 参考资料
 
 - [可持久化数据结构简介 - OI Wiki](https://oi-wiki.org/ds/persistent/)
+- [可持久化线段树 - 维基百科](https://zh.wikipedia.org/wiki/可持久化线段树)
 
 ## 可持久化线段树
 
-**可持久化线段树**（Persistent Segment Tree）也称为 **主席树**，详见 [知乎问题](https://www.zhihu.com/question/59195374)。
+**可持久化线段树**（Persistent Segment Tree）是一种支持保留历史版本的线段树，每次修改只复制访问路径上的节点，从而得到一个新版本并共享未修改的部分，它常用于处理静态区间查询与离线版本查询。
+
+由于其引入者「黄嘉泰」姓名缩写与某位国家主席相同，因此也称为 **主席树**，详见 [知乎问题](https://www.zhihu.com/question/59195374)。
 
 ```cpp
 #include <bits/stdc++.h>
