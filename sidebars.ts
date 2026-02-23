@@ -300,15 +300,6 @@ const sidebars: SidebarsConfig = {
     'note/index',
     {
       type: 'category',
-      label: '推荐',
-      link: {
-        type: 'doc',
-        id: 'note/recommend/index',
-      },
-      items: ['note/recommend/bilibili', 'note/recommend/software'],
-    },
-    {
-      type: 'category',
       label: '数学',
       link: {
         type: 'generated-index',
@@ -533,6 +524,15 @@ const sidebars: SidebarsConfig = {
           ],
         },
       ],
+    },
+    {
+      type: 'category',
+      label: '推荐',
+      link: {
+        type: 'doc',
+        id: 'note/recommend/index',
+      },
+      items: ['note/recommend/bilibili', 'note/recommend/software'],
     },
   ],
   sidebar3: [
