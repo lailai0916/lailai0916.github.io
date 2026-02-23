@@ -12,8 +12,7 @@ title: "lailai's EDC"
 
 ## 数码
 
-详见 [lailai's Devices](devices)。
-
+- 设备：详见 [lailai's Devices](devices)。
 - 鼠标：Logitech G PRO X SUPERLIGHT 2
 - U 盘：SanDisk Extreme PRO USB 3.2 Solid State Flash Drive (256GB)：我平时主要使用 AirDrop 传输数据，但还是会准备一个 U 盘备用。
 - Apple 140W USB-C 电源适配器
