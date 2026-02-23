@@ -4,11 +4,9 @@ title: 'bilibili'
 
 推荐一些 bilibili 的 UP 主、视频、课程和纪录片。
 
-## 参考资料
-
-- [lailai0916 个人主页 - bilibili](https://space.bilibili.com/1796257032)
-
 ## 关注
+
+详见 [lailai0916 的关注列表](https://space.bilibili.com/1796257032/relation/follow)。
 
 - [3Blue1Brown](https://space.bilibili.com/88461692)
 - [妈咪说MommyTalk](https://space.bilibili.com/223146252)
@@ -20,6 +18,10 @@ title: 'bilibili'
 - [小Lin说](https://space.bilibili.com/520819684)
 - [影视飓风](https://space.bilibili.com/946974)
 - [Veritasium真理元素](https://space.bilibili.com/94742590)
+
+## 收藏
+
+详见 [lailai0916 的收藏夹](https://space.bilibili.com/1796257032/favlist)。
 
 ## 课程
 
