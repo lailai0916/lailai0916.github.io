@@ -8,14 +8,16 @@ title: 'bilibili'
 
 ## 关注
 
-- 3Blue1Brown
-- 妈咪说MommyTalk
-- 一数
-- 英语兔
-- 毕导
-- 漫士沉思录
-- 科技3D视界
-- 小Lin说
+- [3Blue1Brown](https://space.bilibili.com/88461692)
+- [妈咪说MommyTalk](https://space.bilibili.com/223146252)
+- [一数](https://space.bilibili.com/14229967)
+- [英语兔](https://space.bilibili.com/483162496)
+- [毕导](https://space.bilibili.com/254463269)
+- [漫士沉思录](https://space.bilibili.com/266765166)
+- [科技3D视界](https://space.bilibili.com/400365390)
+- [小Lin说](https://space.bilibili.com/520819684)
+- [影视飓风](https://space.bilibili.com/946974)
+- [Veritasium真理元素](https://space.bilibili.com/94742590)
 
 ## 纪录片
 
