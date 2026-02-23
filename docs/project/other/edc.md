@@ -41,7 +41,8 @@ title: "lailai's EDC"
 - 国誉 KOKUYO 实验室用记号笔（黑色）
 - 樱花 Sakura Ballsign iD plus 中性笔（纯黑）
 - 樱花 Sakura XRFW-60 橡皮
-- 三菱铅笔 uni UBA-188 直液式签字笔（红色 & 蓝色）
+- 三菱铅笔 uni UBA-188 直液式签字笔（红色）
+- 三菱铅笔 uni UBA-188 直液式签字笔（蓝色）
 - 三菱铅笔 uni 9800DX 绘图素描铅笔（HB）
 - 蜻蜓 Tombow MONO AIR 修正带（薰衣草紫）
 - 辉柏嘉 Faber-Castell 考试涂卡笔（白色）
