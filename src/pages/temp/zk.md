@@ -84,7 +84,7 @@ title: Temp
       <td>$120$ 分</td>
     </tr>
     <tr>
-      <td colspan="2">3 月 21 日 – 3 月 30 日<br />4 月 18 日 – 4 月 20 日</td>
+      <td colspan="2">3 月 21 日 — 3 月 30 日<br />4 月 18 日 — 4 月 20 日</td>
       <td>体育</td>
       <td colspan="3">详见下文</td>
       <td>$30$ 分</td>
