@@ -70,11 +70,11 @@ title: "lailai's Home"
 
 以下是一些我认为非常出色的个人网站。
 
-- [峰华前端工程师 - 让你学会前端开发](https://zxuqian.cn)
+- [峰华前端工程师](https://zxuqian.cn)
 - [愧怍](https://kuizuo.cn)
 - [老车的个人网站](https://cheyujie.art)
-- [JIEJOE | 视觉设计者](https://www.jiejoe.com)
-- [AcoFork Blog - 技术分享与实践](https://2x.nz)
+- [JIEJOE](https://www.jiejoe.com)
+- [AcoFork Blog](https://2x.nz)
 - [Sukka (@sukkaw)](https://skk.moe)
 - [Alan Wang](https://www.alanwang.site)
 - [Baoshuo (@renbaoshuo)](https://baoshuo.ren)
