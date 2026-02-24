@@ -561,9 +561,10 @@ const sidebars: SidebarsConfig = {
         description: '本章收录各种实用的文档指南。',
       },
       items: [
-        'project/guides/text-format',
-        'project/guides/code-style',
-        'project/guides/design-style',
+        'project/guides/text',
+        'project/guides/code',
+        'project/guides/design',
+        'project/guides/wording',
         'project/guides/markdown',
         'project/guides/latex',
         'project/guides/mermaid',

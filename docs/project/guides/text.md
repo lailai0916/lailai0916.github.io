@@ -73,7 +73,7 @@ title: "lailai's Text Format Guide"
 
 ## 词句
 
-- 用词应遵循 [用词规范表](#用词规范表)。
+- 用词应遵循 [用词规范指南](wording)。
 - 代词应指代清晰，避免产生歧义。
 - 避免使用 **不必要的形容词和语气词**。
 - 避免使用 **网络流行语、谐音错别字、Emoji 表情包、颜文字**。
@@ -156,27 +156,3 @@ title: "lailai's Text Format Guide"
 - **lailai** 始终应排印为小写，即使它出现在句首、段落开头或标题中。**lailai** should always be typeset with all lowercase letters, even when it is the first word in a sentence, paragraph, or title.
 - **lailai** 为不翻译内容，始终以英语排印，即使它出现在非英语的语言文本中也是如此。**lailai** is untranslatable content and should always be set in English, even when it appears within text in a language other than English.
 - 包含 **lailai's** 的短语为不翻译内容，例如「lailai's Home」「lailai's Text Format Guide」。
-
-## 用词规范表
-
-- 正确使用「的」「地」「得」。
-- 正确使用「他」「她」「它」。
-- 正确使用「与」「和」「或」。
-- 使用「你」而非「您」。
-- 使用「仅」而非「只」。
-- 使用「若」而非「如果」。
-- 使用「其他」而非「其它」。
-- 使用「必然」而非「必定」。
-- 使用「然后」而非「接下来」。
-- 使用「连通」而非「联通」。
-- 使用「扩展」而非「拓展」。
-- 使用「模板」而非「模版」。
-- 使用「登录」而非「登陆」。
-- 使用「账号」而非「帐号」。
-- 使用「源代码」而非「源码」。
-- 使用「包含」而非「含有」。
-- 使用「相互」而非「互相」。
-- 标题使用「关于」，正文使用「有关」。
-- 使用「依此类推」而非「以此类推」。
-- 避免使用「显然」「易得」「不难发现」。
-- 使用「例如」「示例」。
