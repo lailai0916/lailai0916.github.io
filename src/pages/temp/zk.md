@@ -15,7 +15,7 @@ title: Temp
 - [杭州市教育局办公室关于2025年杭州市区各类高中招生志愿填报和集中统一招生录取工作的通知](https://edu.hangzhou.gov.cn/art/2025/5/17/art_1228921941_58945719.html)
 - [杭州市教育局办公室关于2025年杭州市区普通高中名额分配招生工作的通知](https://edu.hangzhou.gov.cn/art/2025/4/27/art_1228921851_58945584.html)
 
-关于全省其他市县的中考情况，可以看看这篇微信文章：https://mp.weixin.qq.com/s/5G23ajEuWKAzPK5dxo9E7Q。
+关于全省其他市县的中考情况，可以看看这篇微信文章：https://mp.weixin.qq.com/s/5G23ajEuWKAzPK5dxo9E7Q
 
 杭州的 **重高** 狭义上指 **省一级重点普通高中**，包括 $11$ 所高中：
 
