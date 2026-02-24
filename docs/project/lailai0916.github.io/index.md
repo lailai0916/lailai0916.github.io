@@ -32,10 +32,10 @@ title: "lailai's Home"
 - [ ] 维护无障碍功能
 - [ ] 添加 React 图片展示组件
 - [ ] 弃用 Tailwind CSS
-- [ ] 优化网站性能
+- [ ] 优化网站资源性能
 - [ ] 添加 Status 组件
 - [ ] 添加 Analytics 组件
-- [ ] 添加 AI 总结
+- [ ] 添加文章 AI 总结
 
 ## 提示词
 
