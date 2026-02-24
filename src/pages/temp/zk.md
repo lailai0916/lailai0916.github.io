@@ -33,7 +33,7 @@ title: Temp
 <table style={{ textAlign: 'center' }}>
   <thead>
     <tr>
-      <th colspan="2">日期</th>
+      <th colSpan="2">日期</th>
       <th>科目</th>
       <th>形式</th>
       <th>时间</th>
@@ -43,7 +43,7 @@ title: Temp
   </thead>
   <tbody>
     <tr>
-      <td rowspan="2">6 月 21 日<br />周六</td>
+      <td rowSpan="2">6 月 21 日<br />周六</td>
       <td>上午</td>
       <td>语文</td>
       <td>闭卷</td>
@@ -60,7 +60,7 @@ title: Temp
       <td>$160$ 分</td>
     </tr>
     <tr>
-      <td rowspan="3">6 月 22 日<br />周日</td>
+      <td rowSpan="3">6 月 22 日<br />周日</td>
       <td>上午</td>
       <td>数学</td>
       <td>闭卷</td>
@@ -69,7 +69,7 @@ title: Temp
       <td>$120$ 分</td>
     </tr>
     <tr>
-      <td rowspan="2">下午</td>
+      <td rowSpan="2">下午</td>
       <td>社会</td>
       <td>开卷</td>
       <td>$13:30\sim 15:10$</td>
@@ -84,9 +84,9 @@ title: Temp
       <td>$120$ 分</td>
     </tr>
     <tr>
-      <td colspan="2">3 月 21 日 — 3 月 30 日<br />4 月 18 日 — 4 月 20 日</td>
+      <td colSpan="2">3 月 21 日 — 3 月 30 日<br />4 月 18 日 — 4 月 20 日</td>
       <td>体育</td>
-      <td colspan="3">详见下文</td>
+      <td colSpan="3">详见下文</td>
       <td>$30$ 分</td>
     </tr>
   </tbody>
