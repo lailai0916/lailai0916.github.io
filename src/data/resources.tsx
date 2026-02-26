@@ -122,6 +122,11 @@ export const RESOURCE_LIST: ResourceCategoryItem[] = [
         href: 'https://keras.io',
         description: '深度学习高层 API 框架',
       },
+      {
+        title: 'TensorFlow',
+        href: 'https://www.tensorflow.org',
+        description: '深度学习训练与部署框架',
+      },
     ],
   },
   {
