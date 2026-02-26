@@ -125,7 +125,7 @@ export const RESOURCE_LIST: ResourceCategoryItem[] = [
     ],
   },
   {
-    title: '云与 CDN',
+    title: '云与网络',
     icon: 'lucide:cloud',
     resources: [
       {
@@ -143,12 +143,6 @@ export const RESOURCE_LIST: ResourceCategoryItem[] = [
         href: 'https://www.cloudflare.com',
         description: 'CDN 与边缘安全网络',
       },
-    ],
-  },
-  {
-    title: '域名与 DNS',
-    icon: 'lucide:globe-2',
-    resources: [
       {
         title: 'Namecheap',
         href: 'https://www.namecheap.com',
