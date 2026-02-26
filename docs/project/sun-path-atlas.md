@@ -8,8 +8,8 @@ title: 'Sun Path Atlas'
 
 <GitHub repo="lailai0916/sun-path-atlas" />
 
-:::warning
+## 说明
+
+我的高中地理作业，用 AI 制作地理项目。
 
 本项目除 README 外，均由 GPT-5.3-Codex Extra High 独立完成。
-
-:::
