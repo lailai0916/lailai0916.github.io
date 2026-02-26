@@ -122,11 +122,6 @@ export const RESOURCE_LIST: ResourceCategoryItem[] = [
         href: 'https://keras.io',
         description: '深度学习高层 API',
       },
-      {
-        title: 'GPTZero',
-        href: 'https://gptzero.me',
-        description: 'AI 生成文本检测工具',
-      },
     ],
   },
   {
