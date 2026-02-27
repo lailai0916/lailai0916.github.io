@@ -105,7 +105,7 @@ $$
 int gauss(int n)
 {
 	int r,c;
-	for(r=1,c=1;r<=n&&c<=n;r++,c++)
+	for(r=1,c=1;r<=n&&c<=n;c++)
 	{
 		int t=r;
 		for(int j=r+1;j<=n;j++)
@@ -113,11 +113,7 @@ int gauss(int n)
 			if(fabs(a[j][c])>fabs(a[t][c]))t=j;
 		}
 		swap(a[r],a[t]);
-		if(fabs(a[r][c])<eps)
-		{
-			r--;
-			continue;
-		}
+		if(fabs(a[r][c])<eps)continue;
 		for(int j=r+1;j<=n;j++)
 		{
 			if(fabs(a[j][c])<eps)continue;
@@ -125,6 +121,7 @@ int gauss(int n)
 			for(int k=c;k<=n+1;k++)a[j][k]-=a[r][k]*f;
 			a[j][c]=0;
 		}
+		r++;
 	}
 	for(int i=r;i<=n;i++)
 	{
