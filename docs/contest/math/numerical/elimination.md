@@ -14,7 +14,7 @@ $$
 ## 参考资料
 
 - [高斯消元 - OI Wiki](https://oi-wiki.org/math/numerical/gauss/)
-- [高斯消去法 - 维基百科](https://zh.wikipedia.org/wiki/高斯消去法)
+- [高斯消元法 - 维基百科](https://zh.wikipedia.org/wiki/高斯消去法)
 
 ## 简介
 
