@@ -81,7 +81,7 @@ export const CHANGELOG_LIST: ChangelogItem[] = [
     date: '2025-09-05',
     type: 'added',
     content:
-      '网站收录至 <a href="https://search.google.com/search-console/welcome">Google Search Console</a>、<a href="https://www.bing.com/webmasters">Bing Webmaster Tools</a>、<a href="https://ziyuan.baidu.com/linksubmit/url">百度搜索资源平台</a>',
+      '网站接入至 <a href="https://search.google.com/search-console/welcome">Google Search Console</a>、<a href="https://www.bing.com/webmasters">Bing Webmaster Tools</a>、<a href="https://ziyuan.baidu.com/linksubmit/url">百度搜索资源平台</a>',
   },
   {
     date: '2025-09-01',
