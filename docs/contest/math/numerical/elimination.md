@@ -16,6 +16,10 @@ $$
 - [高斯消元 - OI Wiki](https://oi-wiki.org/math/numerical/gauss/)
 - [高斯消去法 - 维基百科](https://zh.wikipedia.org/wiki/高斯消去法)
 
+## 简介
+
+高斯消元法（Gaussian Elimination）是求解线性方程组的经典算法，它在当代数学中有着重要的地位和价值，是线性代数课程教学的重要组成部分。
+
 ## 算法对比
 
 |    算法名称     | 时间复杂度 | 需要回代 | 区分无解和无穷多解 |  代码长度  |
@@ -98,7 +102,6 @@ $$
 - 无穷多解：最后结果为 $0$。（$0+0+\dots+0=0$）
 
 ```cpp
-double a[N][N],x[N];
 int sgn(double x){return (x>eps)-(x<-eps);}
 int gauss(int n)
 {
