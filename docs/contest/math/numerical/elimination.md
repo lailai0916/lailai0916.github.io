@@ -2,15 +2,6 @@
 title: '消元'
 ---
 
-$$
-\begin{cases}
-  a_{1,1}x_1+a_{1,2}x_2+\dots+a_{1,n}x_n=a_{1,n+1} \\
-  a_{2,1}x_1+a_{2,2}x_2+\dots+a_{2,n}x_n=a_{2,n+1} \\
-  \vdots \\
-  a_{n,1}x_1+a_{n,2}x_2+\dots+a_{n,n}x_n=a_{n,n+1} \\
-\end{cases}
-$$
-
 ## 参考资料
 
 - [高斯消元 - OI Wiki](https://oi-wiki.org/math/numerical/gauss/)
@@ -19,6 +10,15 @@ $$
 ## 简介
 
 高斯消元法（Gaussian Elimination）是求解线性方程组的经典算法，它在当代数学中有着重要的地位和价值，是线性代数课程教学的重要组成部分。
+
+$$
+\begin{cases}
+  a_{1,1}x_1+a_{1,2}x_2+\dots+a_{1,n}x_n=a_{1,n+1} \\
+  a_{2,1}x_1+a_{2,2}x_2+\dots+a_{2,n}x_n=a_{2,n+1} \\
+  \vdots \\
+  a_{n,1}x_1+a_{n,2}x_2+\dots+a_{n,n}x_n=a_{n,n+1} \\
+\end{cases}
+$$
 
 ## 算法对比
 
