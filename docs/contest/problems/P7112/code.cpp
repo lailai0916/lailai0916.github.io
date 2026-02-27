@@ -2,7 +2,6 @@
 using namespace std;
 
 using ll=long long;
-const int inf=0x3f3f3f3f;
 const int N=605;
 ll a[N][N];
 int main()
@@ -25,10 +24,10 @@ int main()
 		{
 			while(a[i][i])
 			{
-				int tmp=a[j][i]/a[i][i];
+				int f=a[j][i]/a[i][i];
 				for(int k=i;k<=n;k++)
 				{
-					a[j][k]=(a[j][k]-a[i][k]*tmp%mod)%mod;
+					a[j][k]=(a[j][k]-a[i][k]*f%mod)%mod;
 				}
 				swap(a[i],a[j]);
 				ans=-ans;
@@ -37,10 +36,7 @@ int main()
 			ans=-ans;
 		}
 	}
-	for(int i=1;i<=n;i++)
-	{
-		ans=ans*a[i][i]%mod;
-	}
+	for(int i=1;i<=n;i++)ans=ans*a[i][i]%mod;
 	cout<<(ans+mod)%mod<<'\n';
 	return 0;
 }

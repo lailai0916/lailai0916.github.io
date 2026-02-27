@@ -140,6 +140,53 @@ int gauss(int n)
 }
 ```
 
+## 行列式求值
+
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+
+using ll=long long;
+const int N=605;
+ll a[N][N];
+int main()
+{
+	ios::sync_with_stdio(false);
+	cin.tie(nullptr);
+	int n,mod;
+	cin>>n>>mod;
+	for(int i=1;i<=n;i++)
+	{
+		for(int j=1;j<=n;j++)
+		{
+			cin>>a[i][j];
+		}
+	}
+	ll ans=1;
+	for(int i=1;i<=n;i++)
+	{
+		for(int j=i+1;j<=n;j++)
+		{
+			while(a[i][i])
+			{
+				int f=a[j][i]/a[i][i];
+				for(int k=i;k<=n;k++)
+				{
+					a[j][k]=(a[j][k]-a[i][k]*f%mod)%mod;
+				}
+				swap(a[i],a[j]);
+				ans=-ans;
+			}
+			swap(a[i],a[j]);
+			ans=-ans;
+		}
+	}
+	for(int i=1;i<=n;i++)ans=ans*a[i][i]%mod;
+	cout<<(ans+mod)%mod<<'\n';
+	return 0;
+}
+```
+
 ## 电阻计算器
 
 给定两个正整数 $u$ 和 $v$ 以及一个实数 $w$，表示节点 $u$ 和 $v$ 之间有一个 $w$ 的电阻。
