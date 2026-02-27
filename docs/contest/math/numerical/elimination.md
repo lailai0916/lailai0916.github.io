@@ -46,7 +46,6 @@ $$
 $$
 
 ```cpp
-double a[N][N];
 bool gauss(int n)
 {
 	for(int i=1;i<=n;i++)
@@ -54,20 +53,17 @@ bool gauss(int n)
 		int t=i;
 		for(int j=i+1;j<=n;j++)
 		{
-			if(fabs(a[t][i])<fabs(a[j][i]))t=j;
+			if(fabs(a[j][i])>fabs(a[t][i]))t=j;
 		}
 		if(fabs(a[t][i])<eps)return 0;
 		swap(a[i],a[t]);
-		double tmp=a[i][i];
-		for(int j=1;j<=n+1;j++)a[i][j]/=tmp;
+		double f=a[i][i];
+		for(int j=i;j<=n+1;j++)a[i][j]/=f;
 		for(int j=1;j<=n;j++)
 		{
 			if(i==j)continue;
-			tmp=a[j][i]/a[i][i];
-			for(int k=1;k<=n+1;k++)
-			{
-				a[j][k]-=a[i][k]*tmp;
-			}
+			f=a[j][i];
+			for(int k=i;k<=n+1;k++)a[j][k]-=a[i][k]*f;
 		}
 	}
 	return 1;
