@@ -147,7 +147,12 @@ export const CHANGELOG_LIST: ChangelogItem[] = [
   {
     date: '2024-10-17',
     type: 'added',
-    content: '个人网站建立',
+    content: '建立个人网站 <a href="https://lailai.one">lailai\'s Home</a>',
+  },
+  {
+    date: '2024-10-16',
+    type: 'added',
+    content: '注册域名 <code>lailai.one</code>',
   },
 ];
 
