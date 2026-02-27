@@ -102,7 +102,6 @@ $$
 - 无穷多解：最后结果为 $0$。（$0+0+\dots+0=0$）
 
 ```cpp
-int sgn(double x){return (x>eps)-(x<-eps);}
 int gauss(int n)
 {
 	int r,c;
@@ -111,37 +110,31 @@ int gauss(int n)
 		int t=r;
 		for(int j=r+1;j<=n;j++)
 		{
-			if(fabs(a[t][c])<fabs(a[j][c]))t=j;
+			if(fabs(a[j][c])>fabs(a[t][c]))t=j;
 		}
 		swap(a[r],a[t]);
-		if(sgn(a[r][c])==0)
+		if(fabs(a[r][c])<eps)
 		{
 			r--;
 			continue;
 		}
 		for(int j=r+1;j<=n;j++)
 		{
-			if(sgn(a[j][c])==0)continue;
-			double tmp=a[j][c]/a[r][c];
-			for(int k=c;k<=n+1;k++)
-			{
-				a[j][k]-=a[r][k]*tmp;
-			}
+			if(fabs(a[j][c])<eps)continue;
+			double f=a[j][c]/a[r][c];
+			for(int k=c;k<=n+1;k++)a[j][k]-=a[r][k]*f;
 			a[j][c]=0;
 		}
 	}
 	for(int i=r;i<=n;i++)
 	{
-		if(sgn(a[i][c])!=0)return -1;
+		if(fabs(a[i][n+1])>eps)return -1;
 	}
 	if(r<=n)return n-r+1;
 	for(int i=n;i>=1;i--)
 	{
-		for(int j=i+1;j<=n;j++)
-		{
-			a[i][n+1]-=a[i][j]*x[j];
-		}
-		x[i]=a[i][n+1]/a[i][i];
+		for(int j=i+1;j<=n;j++)a[i][n+1]-=a[i][j]*a[j][0];
+		a[i][0]=a[i][n+1]/a[i][i];
 	}
 	return 0;
 }
@@ -149,7 +142,7 @@ int gauss(int n)
 
 ## 电阻计算器
 
-每行输入两个正整数 $u$ 和 $v$ 以及一个实数 $w$，表示节点 $u$ 和 $v$ 之间有一个 $w$ 的电阻。
+给定两个正整数 $u$ 和 $v$ 以及一个实数 $w$，表示节点 $u$ 和 $v$ 之间有一个 $w$ 的电阻。
 
 本程序可以计算节点 $s$ 到节点 $t$ 的等效电阻。
 
