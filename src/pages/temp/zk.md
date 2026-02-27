@@ -689,8 +689,8 @@ $4$ 月初，我买了近千元的全学科《万唯中考》复习资料，其�
   <p>陈家治 (@lailai)<br />2025 年 11 月</p>
 </div>
 
-:::warning
+:::warning[版权声明]
 
-本文采用 <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/">CC BY-NC-ND 4.0</a><img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg" style={{ maxWidth: '1em', maxHeight:'1em', marginLeft: '.2em' }} /><img src="https://mirrors.creativecommons.org/presskit/icons/by.svg" style={{ maxWidth: '1em', maxHeight:'1em', marginLeft: '.2em' }} /><img src="https://mirrors.creativecommons.org/presskit/icons/nc.svg" style={{ maxWidth: '1em', maxHeight:'1em', marginLeft: '.2em' }} /><img src="https://mirrors.creativecommons.org/presskit/icons/nd.svg" style={{ maxWidth: '1em', maxHeight:'1em', marginLeft: '.2em' }} />。转载或引用请注明作者及出处，禁止商业用途，不得修改或改编。
+本文版权归作者所有，保留所有权利。未经作者授权，禁止以任何形式转载、改编或用于商业用途。
 
 :::

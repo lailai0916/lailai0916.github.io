@@ -147,7 +147,7 @@ export const CHANGELOG_LIST: ChangelogItem[] = [
   {
     date: '2024-10-17',
     type: 'added',
-    content: '网站建立',
+    content: '个人网站建立',
   },
 ];
 
