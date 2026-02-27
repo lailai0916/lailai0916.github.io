@@ -17,7 +17,7 @@ export const CHANGELOG_LIST: ChangelogItem[] = [
   {
     date: '2026-01-28',
     type: 'added',
-    content: '文章阅读进度显示',
+    content: '博客文章阅读进度显示',
   },
   {
     date: '2026-01-25',
