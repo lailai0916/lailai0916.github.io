@@ -64,11 +64,8 @@ g_n=3\uparrow^{g_{n-1}}3
 $$
 
 $$
-G=g_{64}
-$$
-
-$$
-G = \left.
+G=g_{64}=
+\left.
 \begin{matrix}
   3\underbrace{\uparrow \uparrow \dots \dots \dots \dots \dots \uparrow}3 \\
   3\underbrace{\uparrow \uparrow \dots \dots \dots \dots \uparrow}3 \\
@@ -76,9 +73,9 @@ G = \left.
   3\underbrace{\uparrow \uparrow \dots \dots \uparrow}3 \\
   3\uparrow \uparrow \uparrow \uparrow 3
 \end{matrix}
-\right \} 64\text{ layers}
+\right\}64\text{ layers}
 $$
 
-## TREE 数列
+## TREE 函数
 
 ## 无穷
