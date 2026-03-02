@@ -152,4 +152,4 @@ $$
 
 ## 无穷
 
-推荐阅读乔治·伽莫夫的《从一到无穷大》，也可以观看李永乐老师的讲解课程 [从一到无穷大](https://www.bilibili.com/cheese/play/ss115)。
+推荐阅读乔治 · 伽莫夫的《从一到无穷大》，也可以观看李永乐老师的讲解课程 [从一到无穷大](https://www.bilibili.com/cheese/play/ss115)。
