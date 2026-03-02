@@ -1,5 +1,5 @@
 ---
-title: '大数'
+title: '大数 & 无穷'
 date: 2025-07-20T10:00
 tags: [math]
 ---

@@ -1,5 +1,5 @@
 ---
-title: '比较 x^y & y^x'
+title: '比较 x^y 和 y^x'
 date: 2025-08-23T15:17
 tags: [math]
 ---
