@@ -124,7 +124,20 @@ $$
 
 - [康威链式箭号表示法 - 维基百科](https://zh.wikipedia.org/wiki/康威鏈式箭號表示法)
 
-康威链式箭号表示法（Conway Chained Arrow Notation）是由约翰 · 何顿 · 康威（John Horton Conway）发明的一种大数的表示方法。其形式是一串用箭头（$\to$）连接的数字。
+康威链式箭号表示法（Conway Chained Arrow Notation）是由约翰 · 何顿 · 康威（John Horton Conway）发明的一种大数的表示方法。
+
+其形式是一串用箭头（$\to$）连接的数字，定义如下：
+
+1. $a$ 表示正整数 $a$；
+2. $a\to b$ 表示 $a^b$；
+3. $a\to b\to 1$ 等价于 $a\to b$；
+4. $a\to b\to(c+1)$ 等价于 $\underbrace{a\to(a\to(\dots(a\to(a)\to c)\dots)\to q)\to q}_b$。
+
+康威链式箭号表示法和其他记号的关系：
+
+$$
+a\to b\to c=H_{c+2}(a,b)=a\uparrow^c b
+$$
 
 ### 阿克曼函数
 
@@ -155,13 +168,13 @@ int A(int m,int n)
 阿克曼函数和其他记号的关系：
 
 $$
-A(m,n)=2\uparrow^{m-2}(n+3)-3=H_{m}(2,n+3)-3
+A(m,n)=H_{m}(2,n+3)-3=2\uparrow^{m-2}(n+3)-3
 $$
 
-我们通常用 $A(n)$ 代替 $A(n,n)$，还可以通过嵌套函数快速提高增长速度：
+我们通常用 $f(n)$ 代替 $A(n,n)$，还可以通过嵌套函数快速提高增长速度：
 
 $$
-A^3(n)=A(A(A(n)))
+f^3(n)=f(f(f(n)))
 $$
 
 ## 常见大数
@@ -193,6 +206,12 @@ G=g_{64}=
   3\underbrace{\uparrow\uparrow\dots\uparrow}3 \\
   3\uparrow\uparrow\uparrow\uparrow 3
 \end{matrix}\right\}64
+$$
+
+葛立恒数的大致范围：
+
+$$
+3\to 3\to 64\to 2<G<3\to 3\to 65\to 2
 $$
 
 ### TREE 函数
