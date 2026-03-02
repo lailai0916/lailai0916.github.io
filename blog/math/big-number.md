@@ -62,13 +62,13 @@ $$
 a[4]b=H_4(a,b)={}^b a=\underbrace{a^{a^{\cdot^{\cdot^{\cdot^a}}}}}_b
 $$
 
-五级运算（超-5 运算）其实也有特殊记号 ${}_b a$，但并不常用：
+五级运算（超-5 运算）其实也有特殊记号，但并不常用：
 
 $$
 a[5]b=H_5(a,b)={}_b a=\underbrace{{}^{{}^{{}^{{}^{{}^a\cdot}\cdot}\cdot}a}a}_b
 $$
 
-再往后可以根据递推公式计算。
+再往后就要用 $a[n]b$ 或 $H_n(a,b)$ 表示，并根据递推公式计算。
 
 ## 大数记号
 
@@ -104,7 +104,20 @@ $$
 
 ### 康威链式箭号表示法
 
-### Ackermann 函数
+### 阿克曼函数
+
+- [阿克曼函数 - 维基百科](https://zh.wikipedia.org/wiki/阿克曼函數)
+
+阿克曼函数（Ackermann Function）对于接触过算法竞赛的读者，应该并不陌生。
+
+```cpp
+int A(int m,int n)
+{
+	if(m==0)return n+1;
+	if(n==0)return A(m-1,1);
+	return A(m-1,A(m,n-1));
+}
+```
 
 ## 葛立恒数
 
