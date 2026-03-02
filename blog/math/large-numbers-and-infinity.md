@@ -128,6 +128,15 @@ $$
 
 阿克曼函数（Ackermann Function）对于接触过算法竞赛的读者，应该并不陌生。
 
+$$
+A(m,n)=
+\begin{cases}
+  n+1 & m=0 \\
+  A(m-1,1) & m>0\land n=0 \\
+  A(m-1,A(m,n-1)) & m>0\land n>0
+\end{cases}
+$$
+
 ```cpp
 int A(int m,int n)
 {
@@ -139,9 +148,15 @@ int A(int m,int n)
 
 ## 常见大数
 
-## 葛立恒数
+### 葛立恒数
 
 - [葛立恒数 - 维基百科](https://zh.wikipedia.org/wiki/葛立恆數)
+
+葛立恒数曾是以下问题中 $n$ 的上界，但现在已经压缩到 $2\uparrow\uparrow\uparrow 5$ 了。
+
+> 考虑一个 $n$ 维超立方体，在连接所有顶点后，将形成一个 $2^n$ 个顶点的完全图。将每条边红蓝染色，求最小的 $n$ 使得所有染色方案中，都必定存在一个四点共面且六边同色的单色完全子图。
+
+其定义为：
 
 $$
 g_1=3\uparrow\uparrow\uparrow\uparrow 3
@@ -154,15 +169,15 @@ $$
 $$
 G=g_{64}=
 \left.\begin{matrix}
-  3\underbrace{\uparrow\uparrow\dots\dots\dots\dots\dots\uparrow}3 \\
-  3\underbrace{\uparrow\uparrow\dots\dots\dots\dots\uparrow}3 \\
-  \underbrace{\qquad\quad\vdots\qquad\quad} \\
-  3\underbrace{\uparrow\uparrow\dots\dots\uparrow}3 \\
+  3\underbrace{\uparrow\uparrow\dots\uparrow}3 \\
+  3\underbrace{\uparrow\uparrow\dots\uparrow}3 \\
+  \vdots \\
+  3\underbrace{\uparrow\uparrow\dots\uparrow}3 \\
   3\uparrow\uparrow\uparrow\uparrow 3
 \end{matrix}\right\}64
 $$
 
-## TREE 函数
+### TREE 函数
 
 ## 无穷
 
