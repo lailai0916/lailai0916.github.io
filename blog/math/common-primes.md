@@ -1,10 +1,10 @@
 ---
-title: '常用质数'
+title: '常见质数'
 date: 2022-11-10T12:00
 tags: [math, resource]
 ---
 
-一些常用质数的数据。
+一些常见质数的数据。
 
 <!-- truncate -->
 

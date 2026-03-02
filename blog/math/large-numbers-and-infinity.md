@@ -80,34 +80,44 @@ $$
 
 - [高德纳箭号表示法 - 维基百科](https://zh.wikipedia.org/wiki/高德納箭號表示法)
 
-高德纳箭号表示法（Knuth's Up-arrow Notation）也是一种用来表示大数的方法，由高德纳于1976年设计。它的概念来自幂是重复的乘法，乘法是重复的加法。
+高德纳箭号表示法（Knuth's Up-arrow Notation）是一种大数的表示方法，其定义为：
+
+$$
+a\uparrow^n b=a[n+2]b=H_{n+2}(a,b)
+$$
+
+例如：
 
 $$
 a\uparrow b=a^b
 $$
 
 $$
-a\uparrow^n b=a\underbrace{\uparrow\uparrow\dots\uparrow}_n b
+a\uparrow\uparrow b=\underbrace{a^{a^{\cdot^{\cdot^{\cdot^a}}}}}_b
+$$
+
+高德纳箭号符合右结合律，可以得到递推关系：
+
+$$
+a\uparrow^n b=a\underbrace{\uparrow\uparrow\dots\uparrow}_n b=\underbrace{a\uparrow^{n-1}a\uparrow^{n-1}\dots\uparrow^{n-1}a}_b
+$$
+
+例如：
+
+$$
+3\uparrow 3=3^3=27
 $$
 
 $$
-a\uparrow^n b=\underbrace{a\uparrow^{n-1}a\uparrow^{n-1}\dots\uparrow^{n-1}a}_b
+3\uparrow\uparrow 3=3\uparrow 3\uparrow 3=3\uparrow 27=3^{3^3}=3^{27}\approx 7.63\times 10^{12}
 $$
 
 $$
-a\uparrow\uparrow b=\underbrace{a^{a^{\dots^a}}}_b
+3\uparrow\uparrow\uparrow 3=3\uparrow\uparrow 3\uparrow\uparrow 3=3\uparrow\uparrow 3^{27}=\underbrace{3^{3^{\cdot^{\cdot^{\cdot^3}}}}}_{3^{27}}
 $$
 
 $$
-3\uparrow\uparrow 3=3^{3^3}=3^{27}\approx7.6\times10^{12}
-$$
-
-$$
-3\uparrow\uparrow\uparrow 3=3\uparrow\uparrow 3\uparrow\uparrow 3=3\uparrow\uparrow 3^{27}=\underbrace{3^{3^{\dots^3}}}_{3^{27}}
-$$
-
-$$
-3\uparrow\uparrow\uparrow\uparrow 3=3\uparrow\uparrow\uparrow 3\uparrow\uparrow\uparrow 3
+3\uparrow\uparrow\uparrow\uparrow 3=3\uparrow\uparrow\uparrow 3\uparrow\uparrow\uparrow 3=3\uparrow\uparrow\uparrow\underbrace{3^{3^{\cdot^{\cdot^{\cdot^3}}}}}_{3^{27}}=\left.\left.\underbrace{3^{3^{\cdot^{\cdot^{\cdot^3}}}}}_{\underbrace{3^{3^{\cdot^{\cdot^{\cdot^3}}}}}_{\underbrace{\vdots}_3}}\right\}\underbrace{3^{3^{\cdot^{\cdot^{\cdot^3}}}}}_{\underbrace{3^{3^{\cdot^{\cdot^{\cdot^3}}}}}_{\underbrace{\vdots}_3}}\right\}3
 $$
 
 ### 康威链式箭号表示法
@@ -127,7 +137,11 @@ int A(int m,int n)
 }
 ```
 
+## 常见大数
+
 ## 葛立恒数
+
+- [葛立恒数 - 维基百科](https://zh.wikipedia.org/wiki/葛立恆數)
 
 $$
 g_1=3\uparrow\uparrow\uparrow\uparrow 3
