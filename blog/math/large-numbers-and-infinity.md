@@ -124,7 +124,7 @@ $$
 
 - [康威链式箭号表示法 - 维基百科](https://zh.wikipedia.org/wiki/康威鏈式箭號表示法)
 
-康威链式箭号表示法（Conway Chained Arrow Notation）是由约翰 · 何顿 · 康威（John Horton Conway）发明的一种大数的表示方法。
+康威链式箭号表示法（Conway Chained Arrow Notation）是由约翰 · 何顿 · 康威（John Horton Conway）发明的一种大数的表示方法。其形式是一串用箭头（$\to$）连接的数字。
 
 ### 阿克曼函数
 
@@ -156,6 +156,12 @@ int A(int m,int n)
 
 $$
 A(m,n)=2\uparrow^{m-2}(n+3)-3=H_{m}(2,n+3)-3
+$$
+
+我们通常用 $A(n)$ 代替 $A(n,n)$，还可以通过嵌套函数快速提高增长速度：
+
+$$
+A^3(n)=A(A(A(n)))
 $$
 
 ## 常见大数

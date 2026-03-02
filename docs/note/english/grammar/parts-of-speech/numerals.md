@@ -87,9 +87,9 @@ title: '数词'
 
 :::example
 
-- $65536\rightarrow 65,536$：sixty-five **thousand** five hundred (and) thirty-six
-- $16777216\rightarrow 16,777,216$：sixteen **million** seven hundred (and) seventy-seven **thousand** two hundred (and) sixteen
-- $4294967296\rightarrow 4,294,967,296$：four **billion** two hundred (and) ninety-four **million** nine hundred (and) sixty-seven **thousand** two hundred (and) ninety-six
+- $65536\to 65,536$：sixty-five **thousand** five hundred (and) thirty-six
+- $16777216\to 16,777,216$：sixteen **million** seven hundred (and) seventy-seven **thousand** two hundred (and) sixteen
+- $4294967296\to 4,294,967,296$：four **billion** two hundred (and) ninety-four **million** nine hundred (and) sixty-seven **thousand** two hundred (and) ninety-six
 
 :::
 
@@ -189,9 +189,9 @@ title: '数词'
 
 :::example
 
-- 第 $7$：$\text{seventh}\rightarrow 7\text{th}$
-- 第 $13$：$\text{thirteenth}\rightarrow 13\text{th}$
-- 第 $28$：$\text{twenty-eighth}\rightarrow 28\text{th}$
+- 第 $7$：$\text{seventh}\to 7\text{th}$
+- 第 $13$：$\text{thirteenth}\to 13\text{th}$
+- 第 $28$：$\text{twenty-eighth}\to 28\text{th}$
 
 :::
 
@@ -199,13 +199,13 @@ title: '数词'
 
 :::example
 
-- 第 $1$：$\text{first}\rightarrow 1\text{st}$
-- 第 $2$：$\text{second}\rightarrow 2\text{nd}$
-- 第 $3$：$\text{third}\rightarrow 3\text{rd}$
-- 第 $21$：$\text{twenty-first}\rightarrow 21\text{st}$
-- 第 $52$：$\text{fifty-second}\rightarrow 52\text{nd}$
-- 第 $63$：$\text{sixty-third}\rightarrow 63\text{rd}$
-- 第 $101$：$\text{one hundred (and) first}\rightarrow 101\text{st}$
+- 第 $1$：$\text{first}\to 1\text{st}$
+- 第 $2$：$\text{second}\to 2\text{nd}$
+- 第 $3$：$\text{third}\to 3\text{rd}$
+- 第 $21$：$\text{twenty-first}\to 21\text{st}$
+- 第 $52$：$\text{fifty-second}\to 52\text{nd}$
+- 第 $63$：$\text{sixty-third}\to 63\text{rd}$
+- 第 $101$：$\text{one hundred (and) first}\to 101\text{st}$
 
 :::
 

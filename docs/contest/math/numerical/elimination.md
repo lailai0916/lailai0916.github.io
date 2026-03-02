@@ -38,7 +38,7 @@ $$
   a_{n,1} & a_{n,2} & \dots & a_{n,n} & \mid a_{n,n+1}
 \end{matrix}
 \right.
-\rightarrow
+\to
 \left\{
 \begin{matrix}
   1 & 0 & \dots & 0 & \mid a'_{1,n+1} \\
@@ -85,7 +85,7 @@ $$
   a_{n,1} & a_{n,2} & \dots & a_{n,n} & \mid a_{n,n+1}
 \end{matrix}
 \right.
-\rightarrow
+\to
 \left\{
 \begin{matrix}
   a'_{1,1} & a'_{1,2} & \dots & a_{1,n} & \mid a'_{1,n+1} \\
