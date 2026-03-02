@@ -96,7 +96,7 @@ $$
 a\uparrow\uparrow b=\underbrace{a^{a^{\cdot^{\cdot^{\cdot^a}}}}}_b
 $$
 
-高德纳箭号符合右结合律，可以得到递推关系：
+约定高德纳箭号符合右结合律，可以得到递推关系：
 
 $$
 a\uparrow^n b=a\underbrace{\uparrow\uparrow\dots\uparrow}_n b=\underbrace{a\uparrow^{n-1}a\uparrow^{n-1}\dots\uparrow^{n-1}a}_b
