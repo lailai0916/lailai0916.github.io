@@ -4,7 +4,7 @@ date: 2025-07-20T10:00
 tags: [math]
 ---
 
-一些很大很大的数……
+一些很大很大的数……以及从有限走向无穷。
 
 <!-- truncate -->
 
@@ -14,6 +14,10 @@ tags: [math]
 - [How Big is Graham's Number? (feat Ron Graham) - Youtube](https://www.youtube.com/watch?v=GuigptwlVHo)
 - [葛立恒数是什么？有多大？一个穷尽所有算力也无法计算出来的大数 - bilibili](https://www.bilibili.com/video/BV1Yt411z7dR)
 - [比葛立恒数还大的TREE(3)究竟有多大？教你用超运算表示大数 - bilibili](https://www.bilibili.com/video/BV1Kt411z7fB)
+
+## 简介
+
+我们每天都在用数字，平时会用「天文数字」形容极大的数字。但再往后还有很多更大的数字，「大数」是指远超出了日常生活使用范围的数字。
 
 ## 超运算
 
@@ -73,6 +77,10 @@ $$
 ## 大数记号
 
 ### 高德纳箭号表示法
+
+- [高德纳箭号表示法 - 维基百科](https://zh.wikipedia.org/wiki/高德納箭號表示法)
+
+高德纳箭号表示法（Knuth's Up-arrow Notation）也是一种用来表示大数的方法，由高德纳于1976年设计。它的概念来自幂是重复的乘法，乘法是重复的加法。
 
 $$
 a\uparrow b=a^b
@@ -143,3 +151,5 @@ $$
 ## TREE 函数
 
 ## 无穷
+
+推荐阅读乔治·伽莫夫的《从一到无穷大》，也可以观看李永乐老师的讲解课程 [从一到无穷大](https://www.bilibili.com/cheese/play/ss115)。
