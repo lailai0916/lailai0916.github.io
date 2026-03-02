@@ -126,7 +126,7 @@ $$
 
 - [阿克曼函数 - 维基百科](https://zh.wikipedia.org/wiki/阿克曼函數)
 
-阿克曼函数（Ackermann Function）对于接触过算法竞赛的读者，应该并不陌生。
+阿克曼函数（Ackermann Function）是由威廉 · 阿克曼（Wilhelm Ackermann）提出的一个非原始递归函数。
 
 $$
 A(m,n)=
@@ -137,6 +137,8 @@ A(m,n)=
 \end{cases}
 $$
 
+对于接触过算法竞赛的读者，应该并不陌生。
+
 ```cpp
 int A(int m,int n)
 {
@@ -145,6 +147,12 @@ int A(int m,int n)
 	return A(m-1,A(m,n-1));
 }
 ```
+
+阿克曼函数和其他记号的关系：
+
+$$
+A(m,n)=2\uparrow^{m-2}(n+3)-3=H_{m}(2,n+3)-3
+$$
 
 ## 常见大数
 
