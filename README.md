@@ -46,7 +46,7 @@ Built with [Docusaurus](https://docusaurus.io), source code hosted on [GitHub](h
 
 📚 **Version Management** — Supports multiple document versions.
 
-💯 **SEO Optimized** — Built-in SEO enhancements for better visibility.
+💯 **Search Engine Optimization** — Built-in SEO enhancements for better visibility.
 
 📊 **Analytics Integrated** — [Google Analytics](https://analytics.google.com) tracking included.
 
