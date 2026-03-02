@@ -62,7 +62,7 @@ $$
 a[4]b=H_4(a,b)={}^b a=\underbrace{a^{a^{\cdot^{\cdot^{\cdot^a}}}}}_b
 $$
 
-而五级运算（超-5 运算）也有特殊的记号 ${}_b a$：
+五级运算（超-5 运算）其实也有特殊记号 ${}_b a$，但并不常用：
 
 $$
 a[5]b=H_5(a,b)={}_b a=\underbrace{{}^{{}^{{}^{{}^{{}^a\cdot}\cdot}\cdot}a}a}_b
