@@ -131,9 +131,9 @@ $$
 1. $a$ 表示正整数 $a$；
 2. $a\to b$ 表示 $a^b$；
 3. $a\to b\to 1$ 等价于 $a\to b$；
-4. $a\to b\to(c+1)$ 等价于 $\underbrace{a\to(a\to(\dots(a\to(a)\to c)\dots)\to q)\to q}_b$。
+4. $a\to b\to(c+1)$ 等价于 $\underbrace{a\to(a\to(\dots(a\to(a)\to c)\dots)\to c)\to c}_b$。
 
-康威链式箭号表示法和其他记号的关系：
+三项链的康威链式箭号表示法和其他记号的关系：
 
 $$
 a\to b\to c=H_{c+2}(a,b)=a\uparrow^c b
