@@ -21,6 +21,10 @@ export const DEVICE_LIST: DeviceItem[] = [
     icon: '/icons/devices/applewatch.svg',
   },
   {
+    title: 'AirPods Pro 2',
+    icon: '/icons/devices/airpods.pro.svg',
+  },
+  {
     title: 'AirPods Max',
     icon: '/icons/devices/airpods.max.svg',
   },
