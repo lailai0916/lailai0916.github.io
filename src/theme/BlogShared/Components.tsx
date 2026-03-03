@@ -1,7 +1,6 @@
 import React from 'react';
 import clsx from 'clsx';
 import Link from '@docusaurus/Link';
-import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Card from '@site/src/components/laikit/widget/Card';
 import styles from './styles.module.css';
 
@@ -57,11 +56,13 @@ export function TagChipList({ items }: { items: ChipItem[] }) {
   );
 }
 
-export function formatLongNumber(value) {
-  const { i18n } = useDocusaurusContext();
+export function formatLongNumber(
+  value: number | string,
+  locale: string
+): number | string {
   const n = Number(value);
   if (Number.isNaN(n)) return value;
-  return new Intl.NumberFormat(i18n.currentLocale, {
+  return new Intl.NumberFormat(locale, {
     notation: 'compact',
     compactDisplay: 'short',
     maximumSignificantDigits: 3,

@@ -37,6 +37,7 @@ function PostCard({ item }) {
   const { metadata, assets, frontMatter } = MDXPageContent;
   const image = assets.image ?? frontMatter.image;
   const firstTag = metadata.tags?.[0] ?? null;
+  const pinnedTagPermalink = useBaseUrl('/blog/tags/pinned');
   const { analytics, status } = useAnalytics(metadata.permalink);
 
   return (
@@ -49,7 +50,7 @@ function PostCard({ item }) {
       <div className={styles.postTitleRow}>
         <Badge
           icon={
-            firstTag?.permalink === useBaseUrl('/blog/tags/pinned')
+            firstTag?.permalink === pinnedTagPermalink
               ? 'lucide:pin'
               : 'lucide:bookmark'
           }

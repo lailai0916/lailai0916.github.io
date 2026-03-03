@@ -1,5 +1,3 @@
-import useBaseUrl from '@docusaurus/useBaseUrl';
-
 export interface BlogPost {
   title: string;
   permalink: string;
@@ -15,6 +13,8 @@ export interface ProcessedBlogPost {
 }
 
 type JsonModule<T> = { default?: T } | T | undefined;
+
+const PINNED_TAG_PATH_SUFFIX = '/blog/tags/pinned';
 
 function resolveJsonModule<T>(mod: JsonModule<T>): T | null {
   if (!mod) {
@@ -42,6 +42,29 @@ function globJsonModules<T>(pattern: string): T[] {
   return Object.values(modules)
     .map((mod) => resolveJsonModule<T>(mod) ?? null)
     .filter((value): value is T => value !== null);
+}
+
+function normalizePathname(input: string): string {
+  if (!input) return '';
+  try {
+    const { pathname } = new URL(input, 'https://example.invalid');
+    return pathname.replace(/\/+$/, '');
+  } catch {
+    return input.replace(/[?#].*$/, '').replace(/\/+$/, '');
+  }
+}
+
+function isPinnedTag(
+  tag: { permalink?: string } | string | undefined | null
+): boolean {
+  if (!tag || typeof tag !== 'object') return false;
+  const permalink = tag.permalink;
+  if (!permalink) return false;
+  const normalized = normalizePathname(permalink);
+  return (
+    normalized === PINNED_TAG_PATH_SUFFIX ||
+    normalized.endsWith(PINNED_TAG_PATH_SUFFIX)
+  );
 }
 
 /**
@@ -144,9 +167,7 @@ export function getRecentBlogPosts(maxCount: number = 4): ProcessedBlogPost[] {
         title: item.title ?? item.metadata?.title,
         date: item.date ?? item.metadata?.date,
         permalink,
-        isPinned: tags.some(
-          (tag) => tag.permalink === useBaseUrl('/blog/tags/pinned')
-        ),
+        isPinned: tags.some(isPinnedTag),
       };
     })
     .filter((post): post is ProcessedBlogPost & { isPinned: boolean } =>

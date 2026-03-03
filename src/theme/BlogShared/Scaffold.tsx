@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import clsx from 'clsx';
 import Link from '@docusaurus/Link';
+import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import Layout from '@theme/Layout';
 import type { TOCItem } from '@docusaurus/mdx-loader';
@@ -23,12 +24,13 @@ function AuthorCard() {
     .find((a) => a.key === 'lailai');
 
   if (!author) return null;
+  const authorImageUrl = useBaseUrl(author.imageURL);
 
   return (
     <BlogCard>
       <div className={styles.authorCard}>
         <img
-          src={useBaseUrl(author.imageURL)}
+          src={authorImageUrl}
           alt={author.name}
           width={96}
           height={96}
@@ -41,18 +43,19 @@ function AuthorCard() {
   );
 }
 
-const ProgressBar = () => {
+function useScrollProgress() {
   const [progress, setProgress] = useState(0);
 
-  const handleScroll = () => {
-    const scrollTop = window.scrollY;
-    const scrollHeight =
-      document.documentElement.scrollHeight -
-      document.documentElement.clientHeight;
-    setProgress(scrollTop / scrollHeight);
-  };
-
   useEffect(() => {
+    const handleScroll = () => {
+      const scrollTop = window.scrollY;
+      const scrollHeight =
+        document.documentElement.scrollHeight -
+        document.documentElement.clientHeight;
+      setProgress(scrollHeight > 0 ? scrollTop / scrollHeight : 0);
+    };
+
+    handleScroll();
     window.addEventListener('scroll', handleScroll);
     return () => {
       window.removeEventListener('scroll', handleScroll);
@@ -60,16 +63,18 @@ const ProgressBar = () => {
   }, []);
 
   return Math.min(1, Math.max(0, progress));
-};
+}
 
 function TocCard({ toc }: { toc: readonly TOCItem[] }) {
+  const progress = useScrollProgress();
+
   return (
     <div className={styles.tocContainer}>
       <BlogCard
         title={`${translate({
           id: 'blog.sidebar.toc.title',
           message: `Contents`,
-        })} (${Math.round(ProgressBar() * 100)}%)`}
+        })} (${Math.round(progress * 100)}%)`}
       >
         <ul className={styles.tocList}>
           {toc.map((item) => (
@@ -160,6 +165,7 @@ function InfoCard() {
 }
 
 function StatsCard() {
+  const { i18n } = useDocusaurusContext();
   const { analytics, status } = useAnalytics();
   const readingMinutes = Math.round(
     getAllPostMetadata().reduce((sum, meta) => sum + meta.readingTime, 0)
@@ -216,7 +222,7 @@ function StatsCard() {
               <span className={styles.statLabel}>{item.label}</span>
             </div>
             <span className={styles.statValue}>
-              {formatLongNumber(item.value)}
+              {formatLongNumber(item.value, i18n.currentLocale)}
             </span>
           </div>
         ))}
