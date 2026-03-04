@@ -7,7 +7,7 @@ It's something only Apple can do!
 ## MacBook Pro (M3 Max)
 
 - 类型：笔记本电脑
-- 配置：16 英寸 / 银色 / M3 Max / 14+30 / 36GB / 1TB
+- 配置：16 英寸 / 银色 / M3 Max / 14 CPU / 30 GPU / 36GB / 1TB
 - 配件：Incase 硬质保护壳
 - 技术规格：[MacBook Pro - Apple 支持](https://support.apple.com/zh-cn/117737)
 
