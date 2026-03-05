@@ -9,6 +9,7 @@ title: 'Hangzhou HighSchool Map'
 - [Mapbox](https://www.mapbox.com)
 - [OpenStreetMap](https://www.openstreetmap.org)
 - [2025年市区高中集中统一招生第一段录取完成](https://edu.hangzhou.gov.cn/col/col1228921941/art/2025/art_3542f22624614ea5ad32401ac1e9264d.html)
+- [2025年各类高中集中统一招生第二段录取完成](https://edu.hangzhou.gov.cn/col/col1228921941/art/2025/art_81c7d882474247b6a3980d321a8b4a57.html)
 
 ## 项目链接
 
