@@ -1,5 +1,5 @@
 ---
-title: '洛谷 P1989 【模版】无向图三元环计数'
+title: '洛谷 P1989 【模板】无向图三元环计数'
 link: 'https://www.luogu.com.cn/problem/P1989'
 ---
 
