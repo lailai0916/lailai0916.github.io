@@ -524,7 +524,7 @@ title: '高考词汇'
 
 - cab：n. （美）出租车
 - cabbage：n. 卷心菜，洋白菜
-- café：cafén. 咖啡馆；餐馆
+- café：n. 咖啡馆；餐馆
 - cafeteria：n. 自助餐厅
 - cage：笼；鸟笼
 - calculate：v. 计算，核算，推测
@@ -566,14 +566,14 @@ title: '高考词汇'
 - carve：vt. 刻；雕刻
 - case：n. 情况；病例；案件；真相n. 箱；盒；容器
 - cash：n. 现金，现钞v. 兑现
-- cassettle：n. 磁带
+- cassette：n. 磁带
 - cast：v. 扔，抛，撒
 - castle：n. 城堡
 - casual：adj. 漫不经心的，不经意的，非正式的
 - cat：n. 猫
 - catalogue：n. 目录
 - catastrophe：n. 灾难，灾祸，不幸事件
-- catchv.：catchv. 接住；捉住；赶上；染上（疾病）
+- catch：v. 接住；捉住；赶上；染上（疾病）
 - category：n. 类别，种类
 - cater：v. 提供饮食，承办酒席
 - catholic：adj. 天主教的
@@ -1248,7 +1248,7 @@ title: '高考词汇'
 - false：adj. 不正确的；假的
 - familiar：adj. 熟悉的
 - family：n. 家庭；家族；子女
-- familyname：姓氏
+- family name：姓氏
 - famous：adj. 著名的
 - fan：n. （电影、运动等的）迷；热心的爱好者（支持者）n. 风扇
 - fancy：adj. 花式；装饰的；奇特的
@@ -1271,10 +1271,10 @@ title: '高考词汇'
 - feast：n. 盛宴，宴会，（宗教的）节日
 - feather：n. 羽毛
 - February：n. 2月
-- federa：adj. 中央的（政府）联邦的
+- federal：adj. 中央的（政府）联邦的
 - fee：n. 费，费用
 - feed：vt. 喂（养）；饲（养）
-- feel：v. & 感觉，觉得；摸，触
+- feel：v. & n. 感觉，觉得；摸，触
 - feeling：n. 感情；感觉
 - fellow：n. 同伴；伙伴
 - female：adj. 女的；女性的；雌性的
@@ -2247,7 +2247,7 @@ title: '高考词汇'
 - opener：n. 开具，启子
 - opening：n. 开放，口子
 - opera：n. 歌剧
-- operahouse：n. 歌剧院，艺术剧院
+- opera house：n. 歌剧院，艺术剧院
 - operate：v. 做手术，运转；实施，负责，经营，管理
 - operation：n. 手术，操作
 - operator：n. 接线员
@@ -2961,7 +2961,7 @@ title: '高考词汇'
 - significance：n. 重要性，意义
 - significant：adj. 重要的
 - silence：n. 安静，沉默
-- silent：silentˈsaɪlənt]adj. 无声的，无对话的
+- silent：[ˈsaɪlənt] adj. 无声的，无对话的
 - silk：n. （蚕）丝，丝织品
 - silly：adj. 傻的，愚蠢的
 - silver：n. 银
@@ -3510,7 +3510,7 @@ title: '高考词汇'
 - vehicle：n. 交通工具，车辆
 - version：n. 变体，变种，改写本
 - vertical：adj. 垂直的，纵向的
-- very：vadv. 很，非常
+- very：adv. 很，非常
 - vest：n. 背心，内衣
 - via：prep. 经过（某地），通过
 - vice：n. 罪行，不道德行为
