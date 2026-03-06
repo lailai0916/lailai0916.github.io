@@ -42,8 +42,7 @@ int main()
 		a[v][u]-=g;
 	}
 	a[1][n+1]=1;
-	a[n][n+1]=-1;
-	for(int i=1;i<=n+1;i++)a[n][i]=0;
+	for(int i=1;i<n;i++)a[n][i]=0;
 	a[n][n]=1;
 	a[n][n+1]=0;
 	gauss(n);
