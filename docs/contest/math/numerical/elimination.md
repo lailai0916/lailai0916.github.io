@@ -65,7 +65,7 @@ bool gauss(int n)
 		for(int j=1;j<=n;j++)
 		{
 			if(i==j)continue;
-			for(int k=n+1;k>=i;k--)a[j][k]-=a[i][k]*a[j][i];
+			for(int k=n+1;k>i;k--)a[j][k]-=a[i][k]*a[j][i];
 		}
 	}
 	return 1;
