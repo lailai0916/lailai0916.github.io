@@ -25,19 +25,9 @@ int main()
 	int n;
 	cin>>n;
 	int m=1<<n;
-	for(int i=0;i<m;i++)
-	{
-		cin>>a[__builtin_popcount(i)][i];
-	}
-	for(int i=0;i<m;i++)
-	{
-		cin>>b[__builtin_popcount(i)][i];
-	}
-	for(int i=0;i<=n;i++)
-	{
-		fmt(a[i],m,1);
-		fmt(b[i],m,1);
-	}
+	for(int i=0;i<m;i++)cin>>a[__builtin_popcount(i)][i];
+	for(int i=0;i<m;i++)cin>>b[__builtin_popcount(i)][i];
+	for(int i=0;i<=n;i++){fmt(a[i],m,1);fmt(b[i],m,1);}
 	for(int i=0;i<=n;i++)
 	{
 		for(int j=0;j<=i;j++)
@@ -48,13 +38,7 @@ int main()
 			}
 		}
 	}
-	for(int i=0;i<=n;i++)
-	{
-		fmt(c[i],m,-1);
-	}
-	for(int i=0;i<m;i++)
-	{
-		cout<<c[__builtin_popcount(i)][i]<<' ';
-	}
+	for(int i=0;i<=n;i++)fmt(c[i],m,-1);
+	for(int i=0;i<m;i++)cout<<c[__builtin_popcount(i)][i]<<' ';
 	return 0;
 }
