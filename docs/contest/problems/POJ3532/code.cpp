@@ -35,14 +35,18 @@ int main()
 		int u,v;
 		double r;
 		cin>>u>>v>>r;
-		a[u][v]+=1/r;
-		a[v][u]+=1/r;
-		a[u][u]-=1/r;
-		a[v][v]-=1/r;
+		double g=1/r;
+		a[u][u]+=g;
+		a[u][v]-=g;
+		a[v][v]+=g;
+		a[v][u]-=g;
 	}
-	for(int i=1;i<=n;i++)a[n][i]=i==1;
 	a[1][n+1]=1;
+	a[n][n+1]=-1;
+	for(int i=1;i<=n+1;i++)a[n][i]=0;
+	a[n][n]=1;
+	a[n][n+1]=0;
 	gauss(n);
-	cout<<fixed<<setprecision(2)<<a[n][n+1]<<'\n';
+	cout<<fixed<<setprecision(2)<<a[1][n+1]<<'\n';
 	return 0;
 }
