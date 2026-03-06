@@ -775,7 +775,7 @@ namespace Duel
 			{
 				for(int j=-w;j<=w;j++)
 				{
-					screen[Count].s[i+w][j+w]=(i==0&&j==0)?'@':look(player.h,player.x+i,player.y+j);
+					screen[Count].s[i+w][j+w]=i==0&&j==0?'@':look(player.h,player.x+i,player.y+j);
 					if(screen[Count].s[i+w][j+w]!=screen[Count-1].s[i+w][j+w])
 					{
 						gotoxy(j*2+33,i+12);

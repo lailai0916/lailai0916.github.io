@@ -41,7 +41,7 @@ int main()
 		a[u][v]+=g;
 		a[v][u]+=g;
 	}
-	for(int i=1;i<=n;i++)a[n][i]=(i==1);
+	for(int i=1;i<=n;i++)a[n][i]=i==1;
 	a[1][n+1]=1;
 	gauss(n);
 	cout<<fixed<<setprecision(2)<<a[n][n+1]<<'\n';
