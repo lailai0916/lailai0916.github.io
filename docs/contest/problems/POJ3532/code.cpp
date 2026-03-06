@@ -35,11 +35,10 @@ int main()
 		int u,v;
 		double r;
 		cin>>u>>v>>r;
-		double g=1/r;
-		a[u][u]-=g;
-		a[v][v]-=g;
-		a[u][v]+=g;
-		a[v][u]+=g;
+		a[u][v]+=1/r;
+		a[v][u]+=1/r;
+		a[u][u]-=1/r;
+		a[v][v]-=1/r;
 	}
 	for(int i=1;i<=n;i++)a[n][i]=i==1;
 	a[1][n+1]=1;

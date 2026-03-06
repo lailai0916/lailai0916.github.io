@@ -223,11 +223,10 @@ int main()
 	double r;
 	while(cin>>u>>v>>r)
 	{
-		double g=1/r;
-		a[u][u]-=g;
-		a[v][v]-=g;
-		a[u][v]+=g;
-		a[v][u]+=g;
+		a[u][v]+=1/r;
+		a[v][u]+=1/r;
+		a[u][u]-=1/r;
+		a[v][v]-=1/r;
 		n=max(n,max(u,v));
 	}
 	int s=1,t=n;
