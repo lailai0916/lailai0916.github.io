@@ -61,13 +61,11 @@ bool gauss(int n)
 		}
 		if(fabs(a[t][i])<eps)return 0;
 		swap(a[i],a[t]);
-		double f=a[i][i];
-		for(int j=i;j<=n+1;j++)a[i][j]/=f;
+		for(int j=n+1;j>=i;j--)a[i][j]/=a[i][i];
 		for(int j=1;j<=n;j++)
 		{
 			if(i==j)continue;
-			f=a[j][i];
-			for(int k=i;k<=n+1;k++)a[j][k]-=a[i][k]*f;
+			for(int k=n+1;k>=i;k--)a[j][k]-=a[i][k]*a[j][i];
 		}
 	}
 	return 1;
@@ -208,13 +206,11 @@ bool gauss(int n)
 		}
 		if(fabs(a[t][i])<eps)return 0;
 		swap(a[i],a[t]);
-		double f=a[i][i];
-		for(int j=i;j<=n+1;j++)a[i][j]/=f;
+		for(int j=n+1;j>=i;j--)a[i][j]/=a[i][i];
 		for(int j=1;j<=n;j++)
 		{
 			if(i==j)continue;
-			f=a[j][i];
-			for(int k=i;k<=n+1;k++)a[j][k]-=a[i][k]*f;
+			for(int k=n+1;k>=i;k--)a[j][k]-=a[i][k]*a[j][i];
 		}
 	}
 	return 1;
