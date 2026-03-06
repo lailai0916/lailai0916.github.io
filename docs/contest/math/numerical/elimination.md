@@ -231,7 +231,7 @@ int main()
 		n=max(n,max(u,v));
 	}
 	int s=1,t=n;
-	for(int i=1;i<=n;i++)a[t][i]=(i==s);
+	for(int i=1;i<=n;i++)a[t][i]=i==s;
 	a[s][n+1]=1;
 	gauss(n);
 	cout<<fixed<<setprecision(6)<<a[t][n+1]<<'\n';
