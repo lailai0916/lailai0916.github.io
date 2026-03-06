@@ -113,17 +113,12 @@
   font-weight: 500 !important;
   font-size: 0.9rem !important;
   padding: 0.4rem 0.8rem !important;
-  border-radius: 6px !important;
+  border-radius: 999px !important;
   text-transform: none !important;
   letter-spacing: normal !important;
   box-shadow: none !important;
   display: inline-block !important;
   line-height: 1.2 !important;
-}
-
-.wrapper :global(.travel-timeline-title:hover) {
-  background: var(--ifm-color-primary-dark) !important;
-  transform: translateY(-1px) !important;
 }
 
 /* 暗色模式时间线元素优化 */
