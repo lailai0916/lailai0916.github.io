@@ -8,23 +8,14 @@ import SectionContainer from '@site/src/components/laikit/section/SectionContain
 import { translate } from '@docusaurus/Translate';
 import styles from './styles.module.css';
 
-const LAYOUT_CONSTANTS = {
-  BREAKPOINT_MOBILE: 768,
-  CARD_WIDTH: 400,
-  CARD_HEIGHT: 160,
-  CONTENT_HEIGHT: 120,
-  LINE_WIDTH: 3,
-  POINT_SIZE: 18,
-} as const;
-
 const TIMELINE_CONFIG = {
-  cardWidth: LAYOUT_CONSTANTS.CARD_WIDTH,
-  cardHeight: LAYOUT_CONSTANTS.CARD_HEIGHT,
-  contentDetailsHeight: LAYOUT_CONSTANTS.CONTENT_HEIGHT,
-  lineWidth: LAYOUT_CONSTANTS.LINE_WIDTH,
-  timelinePointDimension: LAYOUT_CONSTANTS.POINT_SIZE,
+  cardWidth: 360,
+  cardHeight: 120,
+  contentDetailsHeight: 120,
+  lineWidth: 3,
+  timelinePointDimension: 18,
   // react-chrono v2 uses verticalBreakPoint for VERTICAL_ALTERNATING auto-switch
-  verticalBreakPoint: LAYOUT_CONSTANTS.BREAKPOINT_MOBILE,
+  verticalBreakPoint: 768,
 
   hideControls: true,
   useReadMore: false,

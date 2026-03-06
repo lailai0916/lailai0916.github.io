@@ -62,7 +62,7 @@ export const TRAVEL_LIST: TravelItem[] = [
   },
   {
     title: '2015-05',
-    cardTitle: '🇯🇵 日本（本州）',
+    cardTitle: '🇯🇵 日本',
     cardDetailedText: '大阪、京都、名古屋、箱根、东京、成田',
   },
   {
@@ -99,8 +99,8 @@ export const TRAVEL_LIST: TravelItem[] = [
   },
   {
     title: '2017-01',
-    cardTitle: '🇯🇵 日本（九州）',
-    cardDetailedText: '上海⇌熊本（量子号游轮）',
+    cardTitle: '🇯🇵 日本',
+    cardDetailedText: '上海 ⇌ 熊本（量子号游轮）',
   },
   {
     title: '2017-02',
@@ -141,7 +141,7 @@ export const TRAVEL_LIST: TravelItem[] = [
   },
   {
     title: '2018-08',
-    cardTitle: '🇯🇵 日本（北海道）',
+    cardTitle: '🇯🇵 日本',
     cardDetailedText: '函馆、登别、洞爷湖、富良野（富田农场）、小樽、札幌',
   },
   {
