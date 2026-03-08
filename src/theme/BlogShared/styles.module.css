@@ -256,7 +256,6 @@
 .tagChipActive:hover {
   background: var(--ifm-color-primary);
   border-color: var(--ifm-color-primary);
-  transform: translateY(-1px);
 }
 
 .tagChipActive .tagCount {
