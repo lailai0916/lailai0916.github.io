@@ -2,6 +2,7 @@ export interface TravelItem {
   title: string;
   cardTitle: string;
   cardDetailedText: string;
+  url?: string;
 }
 
 export const TRAVEL_LIST: TravelItem[] = [
@@ -209,10 +210,12 @@ export const TRAVEL_LIST: TravelItem[] = [
     title: '2025-07',
     cardTitle: '🇭🇰 香港 & 🇨🇳 广东',
     cardDetailedText: '香港、深圳、广州',
+    url: '/blog/travel/hk-gd',
   },
   {
     title: '2026-02',
     cardTitle: '🇹🇭 泰国 & 🇱🇦 老挝',
     cardDetailedText: '清迈、清莱、金三角',
+    url: '/blog/travel/th-la',
   },
 ];
