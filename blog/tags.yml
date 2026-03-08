@@ -7,6 +7,9 @@ notice:
 personal:
   label: Personal
 
+record:
+  label: Record
+
 travel:
   label: Travel
 

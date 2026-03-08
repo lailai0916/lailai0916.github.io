@@ -7,6 +7,9 @@ notice:
 personal:
   label: 个人
 
+record:
+  label: 记录
+
 travel:
   label: 旅行
 
