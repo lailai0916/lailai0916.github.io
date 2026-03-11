@@ -37,9 +37,6 @@
   background: var(--ifm-card-background-color) !important;
   padding: 1.5rem !important;
   position: relative !important;
-}
-
-.wrapper :global(.travel-timeline-card) {
   transition:
     transform var(--tt-motion-duration) var(--tt-motion-ease),
     box-shadow var(--tt-motion-duration) var(--tt-motion-ease),
