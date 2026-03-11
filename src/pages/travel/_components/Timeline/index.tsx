@@ -28,7 +28,6 @@ const TIMELINE_THEME = {
   secondary: 'var(--ifm-color-primary-light)',
   cardBgColor: 'var(--ifm-card-background-color)',
   cardTitleColor: 'var(--ifm-color-emphasis-800)',
-  cardSubtitleColor: 'var(--ifm-color-emphasis-700)',
   cardDetailsColor: 'var(--ifm-color-emphasis-700)',
   titleColor: 'var(--ifm-color-emphasis-700)',
   titleColorActive: 'var(--ifm-color-primary)',
@@ -37,7 +36,6 @@ const TIMELINE_THEME = {
 
 const CLASS_NAMES = {
   card: 'travel-timeline-card',
-  cardSubTitle: 'travel-timeline-card-subtitle',
   cardText: 'travel-timeline-card-text',
   cardTitle: 'travel-timeline-card-title',
   title: 'travel-timeline-title',

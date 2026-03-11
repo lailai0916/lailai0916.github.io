@@ -39,8 +39,7 @@
   position: relative !important;
 }
 
-.wrapper :global(.travel-timeline-card),
-.wrapper :global(.travel-timeline-title) {
+.wrapper :global(.travel-timeline-card) {
   transition:
     transform var(--tt-motion-duration) var(--tt-motion-ease),
     box-shadow var(--tt-motion-duration) var(--tt-motion-ease),
@@ -56,8 +55,6 @@
 }
 
 :global(html[data-theme='dark']) .wrapper :global(.travel-timeline-card:hover) {
-  background: var(--ifm-background-surface-color) !important;
-  border-color: var(--ifm-color-primary) !important;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3) !important;
 }
 
@@ -73,16 +70,12 @@
   color: var(--ifm-color-emphasis-900) !important;
 }
 
-.wrapper :global(.travel-timeline-card-subtitle),
 .wrapper :global(.travel-timeline-card-text) {
   color: var(--ifm-color-emphasis-600) !important;
   font-size: 1rem !important;
   line-height: 1.5 !important;
 }
 
-:global(html[data-theme='dark'])
-  .wrapper
-  :global(.travel-timeline-card-subtitle),
 :global(html[data-theme='dark']) .wrapper :global(.travel-timeline-card-text) {
   color: var(--ifm-color-emphasis-700) !important;
 }
@@ -119,11 +112,6 @@
   margin: auto !important;
 }
 
-.wrapper :global(.travel-timeline-card::after),
-.wrapper :global(.travel-timeline-card::before) {
-  display: none !important;
-}
-
 @media (max-width: 768px) {
   .wrapper :global(.react-chrono-tree) {
     padding: 1rem 0.5rem !important;
@@ -138,7 +126,6 @@
     font-size: 1.1rem !important;
   }
 
-  .wrapper :global(.travel-timeline-card-subtitle),
   .wrapper :global(.travel-timeline-card-text) {
     font-size: 0.9rem !important;
   }
@@ -162,8 +149,7 @@
     animation: none;
   }
 
-  .wrapper :global(.travel-timeline-card),
-  .wrapper :global(.travel-timeline-title) {
+  .wrapper :global(.travel-timeline-card) {
     transition: none;
   }
 
