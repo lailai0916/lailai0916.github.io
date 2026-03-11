@@ -1,17 +1,9 @@
-/*
-  Scoped Timeline styles
-  - Keep visuals identical
-  - Scope overrides within `.wrapper` to avoid leaking to other pages
-  - Use motion variables for consistency and easier tuning
-*/
-
 .wrapper {
   --tt-motion-duration: 0.3s;
   --tt-motion-ease: cubic-bezier(0.25, 0.46, 0.45, 0.94);
   width: 100%;
 }
 
-/* Timeline 容器 */
 .wrapper :global(.react-chrono-tree) {
   font-family: var(--ifm-font-family-base) !important;
   background: transparent !important;
@@ -30,9 +22,7 @@
   }
 }
 
-/* 统一动画 */
 .wrapper :global(.react-chrono-tree),
-.wrapper :global(.timeline-card-content),
 .wrapper :global(.travel-timeline-card),
 .wrapper :global(.react-chrono-tree-branch),
 .wrapper :global(.timeline-vertical-circle),
@@ -40,8 +30,6 @@
   animation: fadeIn var(--tt-motion-duration) ease-out;
 }
 
-/* 卡片基础样式 */
-.wrapper :global(.timeline-card-content),
 .wrapper :global(.travel-timeline-card) {
   border-radius: 1rem !important;
   box-shadow: none !important;
@@ -51,8 +39,6 @@
   position: relative !important;
 }
 
-/* 通用过渡效果 */
-.wrapper :global(.timeline-card-content),
 .wrapper :global(.travel-timeline-card),
 .wrapper :global(.travel-timeline-title) {
   transition:
@@ -62,8 +48,6 @@
     background var(--tt-motion-duration) var(--tt-motion-ease) !important;
 }
 
-/* 卡片悬停效果 */
-.wrapper :global(.timeline-card-content:hover),
 .wrapper :global(.travel-timeline-card:hover) {
   transform: translateY(-2px) !important;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1) !important;
@@ -71,14 +55,12 @@
   background: var(--ifm-background-surface-color) !important;
 }
 
-:global(html[data-theme='dark']) .wrapper :global(.timeline-card-content:hover),
 :global(html[data-theme='dark']) .wrapper :global(.travel-timeline-card:hover) {
   background: var(--ifm-background-surface-color) !important;
   border-color: var(--ifm-color-primary) !important;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3) !important;
 }
 
-/* 卡片标题样式 */
 .wrapper :global(.travel-timeline-card-title) {
   font-weight: 600 !important;
   margin-bottom: 0.5rem !important;
@@ -91,7 +73,6 @@
   color: var(--ifm-color-emphasis-900) !important;
 }
 
-/* 卡片副标题和文本 */
 .wrapper :global(.travel-timeline-card-subtitle),
 .wrapper :global(.travel-timeline-card-text) {
   color: var(--ifm-color-emphasis-600) !important;
@@ -106,7 +87,6 @@
   color: var(--ifm-color-emphasis-700) !important;
 }
 
-/* 时间标签样式 */
 .wrapper :global(.travel-timeline-title) {
   background: var(--ifm-color-primary) !important;
   color: white !important;
@@ -121,12 +101,10 @@
   line-height: 1.2 !important;
 }
 
-/* 暗色模式时间线元素优化 */
 :global(html[data-theme='dark']) .wrapper :global(.react-chrono-tree-branch) {
   border-color: var(--ifm-color-emphasis-400) !important;
 }
 
-/* 时间线连接元素 */
 .wrapper :global(.react-chrono-tree-branch) {
   border-color: var(--ifm-color-emphasis-300) !important;
   border-width: 2px !important;
@@ -141,19 +119,16 @@
   margin: auto !important;
 }
 
-/* 使用官方 borderLessCards 配置，隐藏默认装饰 */
-.wrapper :global(.timeline-card-content::after),
-.wrapper :global(.timeline-card-content::before) {
+.wrapper :global(.travel-timeline-card::after),
+.wrapper :global(.travel-timeline-card::before) {
   display: none !important;
 }
 
-/* 响应式设计 */
 @media (max-width: 768px) {
   .wrapper :global(.react-chrono-tree) {
     padding: 1rem 0.5rem !important;
   }
 
-  .wrapper :global(.timeline-card-content),
   .wrapper :global(.travel-timeline-card) {
     padding: 1rem !important;
     margin: 0.5rem 0 !important;
@@ -175,5 +150,24 @@
 
   .wrapper :global(.timeline-vertical-circle) {
     border-width: 1px !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .wrapper :global(.react-chrono-tree),
+  .wrapper :global(.travel-timeline-card),
+  .wrapper :global(.react-chrono-tree-branch),
+  .wrapper :global(.timeline-vertical-circle),
+  .wrapper :global(.travel-timeline-title) {
+    animation: none;
+  }
+
+  .wrapper :global(.travel-timeline-card),
+  .wrapper :global(.travel-timeline-title) {
+    transition: none;
+  }
+
+  .wrapper :global(.travel-timeline-card:hover) {
+    transform: none;
   }
 }

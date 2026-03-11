@@ -21,7 +21,6 @@ const TIMELINE_CONFIG = {
   useReadMore: false,
   enableBreakPoint: true,
   borderLessCards: true,
-  disableToolbar: true,
 } as const;
 
 const TIMELINE_THEME = {
@@ -29,26 +28,16 @@ const TIMELINE_THEME = {
   secondary: 'var(--ifm-color-primary-light)',
   cardBgColor: 'var(--ifm-card-background-color)',
   cardTitleColor: 'var(--ifm-color-emphasis-800)',
+  cardSubtitleColor: 'var(--ifm-color-emphasis-700)',
   cardDetailsColor: 'var(--ifm-color-emphasis-700)',
   titleColor: 'var(--ifm-color-emphasis-700)',
   titleColorActive: 'var(--ifm-color-primary)',
-  toolbarBgColor: 'var(--ifm-background-surface-color)',
-  toolbarBtnBgColor: 'var(--ifm-button-background-color)',
-  toolbarTextColor: 'var(--ifm-color-emphasis-800)',
-  iconColor: 'var(--ifm-color-primary-light)',
-  buttonHoverBgColor: 'var(--ifm-color-emphasis-200)',
-  buttonActiveBgColor: 'var(--ifm-color-primary)',
-  buttonActiveIconColor: 'var(--ifm-color-content-inverse)',
-  buttonBorderColor: 'var(--ifm-color-emphasis-300)',
-  buttonHoverBorderColor: 'var(--ifm-color-primary-lighter)',
-  buttonActiveBorderColor: 'var(--ifm-color-primary)',
-  shadowColor: 'var(--ifm-global-shadow-lw)',
-  glowColor: 'var(--ifm-color-primary-lightest)',
+  iconBackgroundColor: 'var(--ifm-color-primary)',
 } as const;
 
 const CLASS_NAMES = {
   card: 'travel-timeline-card',
-  cardMedia: 'travel-timeline-card-media',
+  cardSubTitle: 'travel-timeline-card-subtitle',
   cardText: 'travel-timeline-card-text',
   cardTitle: 'travel-timeline-card-title',
   title: 'travel-timeline-title',
