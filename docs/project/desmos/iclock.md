@@ -2,7 +2,7 @@
 title: 'iClock'
 ---
 
-使用 [Desmos](https://www.desmos.com) 构建的数学艺术作品，通过函数图形展现时间之美。
+使用 Desmos 构建的数学艺术作品，通过函数图形展现时间之美。
 
 此作品为 [Desmos 2024 Art Expo](https://www.desmos.com/art) 获奖作品。
 
