@@ -4,6 +4,10 @@ title: '软件'
 
 推荐一些我使用过的软件，包括 iOS、macOS、Windows、Linux、Android、Web 等多个平台。
 
+## 参考资料
+
+- [【Mac】Mac软件库 - 飞书云文档](https://my.feishu.cn/wiki/ZVKtwAqo7iijQKkTsSpcKYdpn4e?table=tblMpToRGHkgYmxy&view=vewQkmvMUv)
+
 ## 说明
 
 推荐一个我常用的软件商店：[数码荔枝](https://lizhi.shop)。
