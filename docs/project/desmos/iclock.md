@@ -1,5 +1,5 @@
 ---
-title: 'Desmos 2024 Art Expo | iClock'
+title: 'iClock'
 ---
 
 使用 [Desmos](https://www.desmos.com) 构建的数学艺术作品，通过函数图形展现时间之美。
