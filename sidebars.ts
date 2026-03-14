@@ -592,7 +592,7 @@ const sidebars: SidebarsConfig = {
         description: '本章展示使用 Desmos 图形计算器创作的各种项目。',
       },
       items: [
-        'project/desmos/art/iclock',
+        'project/desmos/iclock',
         {
           type: 'category',
           label: '图形',
