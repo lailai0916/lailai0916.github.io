@@ -1,11 +1,12 @@
 ---
-title: '洛谷题目'
+title: '洛谷贡献'
 ---
 
 本文为我的洛谷 **题解模板** 和 **搬题记录**。
 
 ## 参考资料
 
+- [lailai0916 - 个人中心 - 洛谷](https://www.luogu.com.cn/user/455474)
 - [洛谷主题库题目规范 | 洛谷帮助中心](https://help.luogu.com.cn/rules/academic/problem-standard)
 - [洛谷主题库题解规范 | 洛谷帮助中心](https://help.luogu.com.cn/rules/academic/solution-standard)
 - [如何用 Markdown 和 LaTeX 写一篇排版整齐的题解？ | 洛谷帮助中心](https://help.luogu.com.cn/rules/academic/guide/solution)
@@ -13,9 +14,7 @@ title: '洛谷题目'
 
 ## 说明
 
-洛谷的 [咕值系统](https://help.luogu.com.cn/manual/luogu/account/guzhi) 有一个 **社区贡献** 指标，满分为 $100$ 分，其中 $70$ 分来自 **题解**，$30$ 分来自 **搬题**。
-
-每搬运 $1$ 道主题库题目可获得 $1$ 分 **永久** 咕值，搬满 $30$ 道题即可拿满 **搬题** 部分的 $30$ 分咕值。
+洛谷的 [咕值系统](https://help.luogu.com.cn/manual/luogu/account/guzhi) 包含 **社区贡献** 指标，满分为 $100$ 分，其中 $70$ 分来自 **题解**，$30$ 分来自 **搬题**。每搬运 $1$ 道主题库题目可获得 $1$ 分 永久咕值，搬满 $30$ 道题即可拿满搬题部分的 $30$ 分咕值。
 
 ## 题解
 
