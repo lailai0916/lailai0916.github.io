@@ -1,7 +1,7 @@
 ---
 title: 🇹🇭 泰国 & 🇱🇦 老挝
 date: 2026-02-19T00:00
-tags: [travel]
+tags: [travel, record]
 ---
 
 到泰国清迈过农历新年，这是我们连续第 $4$ 年在外地过年了。

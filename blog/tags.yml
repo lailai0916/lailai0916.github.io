@@ -10,6 +10,9 @@ personal:
 record:
   label: Record
 
+memory:
+  label: Memory
+
 travel:
   label: Travel
 
