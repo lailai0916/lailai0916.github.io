@@ -1,5 +1,5 @@
 ---
-title: 'GitHub 成就工具'
+title: GitHub 成就工具
 date: 2025-07-17T15:48
 tags: [project]
 ---

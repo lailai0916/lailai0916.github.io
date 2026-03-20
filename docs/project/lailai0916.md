@@ -1,5 +1,5 @@
 ---
-title: 'lailai0916'
+title: lailai0916
 ---
 
 我的 GitHub 个人主页仓库和搭建教程。

@@ -1,6 +1,6 @@
 ---
-title: '洛谷 P2333 [SCOI2006] 一孔之见'
-link: 'https://www.luogu.com.cn/problem/P2333'
+title: 洛谷 P2333 [SCOI2006] 一孔之见
+link: https://www.luogu.com.cn/problem/P2333
 ---
 
 从一个圆孔里看一个凸多边形，为了让看到的面积至少为 $S$，孔的半径至少需要多大？

@@ -1,5 +1,5 @@
 ---
-title: 'LGS Paintboard 2026'
+title: LGS Paintboard 2026
 date: 2025-10-22T14:08
 tags: [project]
 ---

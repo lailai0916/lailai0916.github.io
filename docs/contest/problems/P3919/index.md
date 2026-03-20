@@ -1,6 +1,6 @@
 ---
-title: '洛谷 P3919 【模板】可持久化线段树 1（可持久化数组）'
-link: 'https://www.luogu.com.cn/problem/P3919'
+title: 洛谷 P3919 【模板】可持久化线段树 1（可持久化数组）
+link: https://www.luogu.com.cn/problem/P3919
 ---
 
 如题，你需要维护这样的一个长度为 $ N $ 的数组，支持如下两种操作：

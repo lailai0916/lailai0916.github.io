@@ -1,6 +1,6 @@
 ---
-title: '洛谷 P6091 【模板】原根'
-link: 'https://www.luogu.com.cn/problem/P6091'
+title: 洛谷 P6091 【模板】原根
+link: https://www.luogu.com.cn/problem/P6091
 ---
 
 给定整数 $n$，求它的所有原根。

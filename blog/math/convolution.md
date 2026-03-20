@@ -1,5 +1,5 @@
 ---
-title: '卷积'
+title: 卷积
 date: 2025-09-12T09:05
 tags: [math]
 ---

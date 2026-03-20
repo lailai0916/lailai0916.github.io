@@ -1,6 +1,6 @@
 ---
-title: '洛谷 P3369 【模板】普通平衡树'
-link: 'https://www.luogu.com.cn/problem/P3369'
+title: 洛谷 P3369 【模板】普通平衡树
+link: https://www.luogu.com.cn/problem/P3369
 ---
 
 你需要写一种数据结构，来维护一些数，并且提供以下操作：

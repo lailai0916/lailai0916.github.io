@@ -1,6 +1,6 @@
 ---
-title: '洛谷 P11615 【模板】哈希表'
-link: 'https://www.luogu.com.cn/problem/P11615'
+title: 洛谷 P11615 【模板】哈希表
+link: https://www.luogu.com.cn/problem/P11615
 ---
 
 你需要维护一个映射 $f:[0,2^{64})\to[0,2^{64})$，初始 $\forall x\in [0,2^{64}),f(x)=0$。

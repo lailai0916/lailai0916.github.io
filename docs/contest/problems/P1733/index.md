@@ -1,6 +1,6 @@
 ---
-title: '洛谷 P1733 猜数（IO交互版）'
-link: 'https://www.luogu.com.cn/problem/P1733'
+title: 洛谷 P1733 猜数（IO交互版）
+link: https://www.luogu.com.cn/problem/P1733
 ---
 
 评测机会在区间 $[1,10^9]$ 中选择一个整数，你应该写一个代码来猜测它。你最多可以问评测机 $50$ 个问题。

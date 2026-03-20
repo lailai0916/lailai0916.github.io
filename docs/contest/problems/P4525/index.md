@@ -1,6 +1,6 @@
 ---
-title: '洛谷 P4525 【模板】自适应辛普森法 1'
-link: 'https://www.luogu.com.cn/problem/P4525'
+title: 洛谷 P4525 【模板】自适应辛普森法 1
+link: https://www.luogu.com.cn/problem/P4525
 ---
 
 试计算积分：

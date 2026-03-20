@@ -1,5 +1,5 @@
 ---
-title: 'Pólya 计数'
+title: Pólya 计数
 ---
 
 ## 参考资料

@@ -1,6 +1,6 @@
 ---
-title: '洛谷 P5960 【模板】差分约束'
-link: 'https://www.luogu.com.cn/problem/P5960'
+title: 洛谷 P5960 【模板】差分约束
+link: https://www.luogu.com.cn/problem/P5960
 ---
 
 给出一组包含 $m$ 个不等式，有 $n$ 个未知数的形如：

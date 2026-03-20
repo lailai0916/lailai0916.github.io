@@ -1,6 +1,6 @@
 ---
-title: '洛谷 P2024 [NOI2001] 食物链'
-link: 'https://www.luogu.com.cn/problem/P2024'
+title: 洛谷 P2024 [NOI2001] 食物链
+link: https://www.luogu.com.cn/problem/P2024
 ---
 
 动物王国中有三类动物 $A,B,C$，这三类动物的食物链构成了有趣的环形。$A$ 吃 $B$，$B$ 吃 $C$，$C$ 吃 $A$。

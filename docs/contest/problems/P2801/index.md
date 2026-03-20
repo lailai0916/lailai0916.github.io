@@ -1,6 +1,6 @@
 ---
-title: '洛谷 P2801 教主的魔法'
-link: 'https://www.luogu.com.cn/problem/P2801'
+title: 洛谷 P2801 教主的魔法
+link: https://www.luogu.com.cn/problem/P2801
 ---
 
 教主最近学会了一种神奇的魔法，能够使人长高。于是他准备演示给 XMYZ 信息组每个英雄看。于是 $N$ 个英雄们又一次聚集在了一起，这次他们排成了一列，被编号为 $1, 2, \dots, N$。

@@ -1,5 +1,5 @@
 ---
-title: '求根公式'
+title: 求根公式
 date: 2023-11-27T12:00
 tags: [math]
 ---

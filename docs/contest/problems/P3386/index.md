@@ -1,6 +1,6 @@
 ---
-title: '洛谷 P3386 【模板】二分图最大匹配'
-link: 'https://www.luogu.com.cn/problem/P3386'
+title: 洛谷 P3386 【模板】二分图最大匹配
+link: https://www.luogu.com.cn/problem/P3386
 ---
 
 给定一个二分图，其左部点的个数为 $n$，右部点的个数为 $m$，边数为 $e$，求其最大匹配的边数。

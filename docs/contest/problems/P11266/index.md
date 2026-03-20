@@ -1,6 +1,6 @@
 ---
-title: '洛谷 P11266 【模板】可并堆 2'
-link: 'https://www.luogu.com.cn/problem/P11266'
+title: 洛谷 P11266 【模板】可并堆 2
+link: https://www.luogu.com.cn/problem/P11266
 ---
 
 给定正整数 $n$ 和 $m$ 以及一个长为 $n$ 的整数序列 $a_{1,\dots,n}$。

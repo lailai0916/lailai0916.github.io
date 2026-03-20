@@ -1,5 +1,5 @@
 ---
-title: 'GIMPS | Lucas–Lehmer Primality Test'
+title: GIMPS | Lucas–Lehmer Primality Test
 date: 2025-10-05T19:45
 tags: [misc]
 ---

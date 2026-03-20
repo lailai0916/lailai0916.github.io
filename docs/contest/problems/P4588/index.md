@@ -1,6 +1,6 @@
 ---
-title: '洛谷 P4588 [TJOI2018] 数学计算'
-link: 'https://www.luogu.com.cn/problem/P4588'
+title: 洛谷 P4588 [TJOI2018] 数学计算
+link: https://www.luogu.com.cn/problem/P4588
 ---
 
 小豆现在有一个数 $x$，初始值为 $1$。小豆有 $Q$ 次操作，操作有两种类型：

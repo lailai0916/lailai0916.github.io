@@ -1,5 +1,5 @@
 ---
-title: "lailai's EDC"
+title: lailai's EDC
 ---
 
 我日常外出时随身携带的物品。

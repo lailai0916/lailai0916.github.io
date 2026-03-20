@@ -1,5 +1,5 @@
 ---
-title: 'C++ 汉化包'
+title: C++ 汉化包
 date: 2024-11-25T20:00
 tags: [misc]
 ---

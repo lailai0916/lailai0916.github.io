@@ -1,6 +1,6 @@
 ---
-title: "洛谷 CF1899F Alex's whims"
-link: 'https://www.luogu.com.cn/problem/CF1899F'
+title: 洛谷 CF1899F Alex's whims
+link: https://www.luogu.com.cn/problem/CF1899F
 ---
 
 树中两个顶点 $u$ 和 $v$ 之间的距离是指顶点 $u$ 到顶点 $v$ 必须经过的最小边数。

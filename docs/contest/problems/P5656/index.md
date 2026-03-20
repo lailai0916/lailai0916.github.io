@@ -1,6 +1,6 @@
 ---
-title: '洛谷 P5656 【模板】二元一次不定方程 (exgcd)'
-link: 'https://www.luogu.com.cn/problem/P5656'
+title: 洛谷 P5656 【模板】二元一次不定方程 (exgcd)
+link: https://www.luogu.com.cn/problem/P5656
 ---
 
 给定不定方程 $ax+by=c$。（$a,b,c\le 10^9$）

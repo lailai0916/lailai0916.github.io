@@ -1,6 +1,6 @@
 ---
-title: '洛谷 P3373 【模板】线段树 2'
-link: 'https://www.luogu.com.cn/problem/P3373'
+title: 洛谷 P3373 【模板】线段树 2
+link: https://www.luogu.com.cn/problem/P3373
 ---
 
 如题，已知一个数列 $a$，你需要进行下面三种操作：

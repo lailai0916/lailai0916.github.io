@@ -1,6 +1,6 @@
 ---
-title: '洛谷 P6136 【模板】普通平衡树（数据加强版）'
-link: 'https://www.luogu.com.cn/problem/P6136'
+title: 洛谷 P6136 【模板】普通平衡树（数据加强版）
+link: https://www.luogu.com.cn/problem/P6136
 ---
 
 您需要动态地维护一个可重集合 $M$，并且提供以下操作：

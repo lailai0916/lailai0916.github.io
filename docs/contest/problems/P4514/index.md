@@ -1,6 +1,6 @@
 ---
-title: '洛谷 P4514 上帝造题的七分钟'
-link: 'https://www.luogu.com.cn/problem/P4514'
+title: 洛谷 P4514 上帝造题的七分钟
+link: https://www.luogu.com.cn/problem/P4514
 ---
 
 维护一个二维矩阵，需要支持以下两种操作：

@@ -1,6 +1,6 @@
 ---
-title: '洛谷 P3385 【模板】负环'
-link: 'https://www.luogu.com.cn/problem/P3385'
+title: 洛谷 P3385 【模板】负环
+link: https://www.luogu.com.cn/problem/P3385
 ---
 
 给定一个 $n$ 个点的有向图，请求出图中是否存在**从顶点 $1$ 出发能到达**的负环。

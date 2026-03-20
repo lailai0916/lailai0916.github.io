@@ -1,6 +1,6 @@
 ---
-title: '洛谷 P1471 方差'
-link: 'https://www.luogu.com.cn/problem/P1471'
+title: 洛谷 P1471 方差
+link: https://www.luogu.com.cn/problem/P1471
 ---
 
 第一行包含两个正整数 $N,M$，分别表示数列中实数的个数和操作的个数。

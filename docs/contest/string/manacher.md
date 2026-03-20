@@ -1,5 +1,5 @@
 ---
-title: 'Manacher'
+title: Manacher
 ---
 
 ## 参考资料

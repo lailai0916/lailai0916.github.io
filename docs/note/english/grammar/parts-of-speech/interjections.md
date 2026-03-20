@@ -1,5 +1,5 @@
 ---
-title: '叹词'
+title: 叹词
 ---
 
 [TODO]

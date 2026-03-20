@@ -1,6 +1,6 @@
 ---
-title: '洛谷 P3807 【模板】卢卡斯定理/Lucas 定理'
-link: 'https://www.luogu.com.cn/problem/P3807'
+title: 洛谷 P3807 【模板】卢卡斯定理/Lucas 定理
+link: https://www.luogu.com.cn/problem/P3807
 ---
 
 给定整数 $n, m, p$ 的值，求出 $C_{n + m}^n \bmod p$ 的值。

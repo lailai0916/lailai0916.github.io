@@ -1,6 +1,6 @@
 ---
-title: '洛谷 P1209 [USACO1.3] 修理牛棚 Barn Repair'
-link: 'https://www.luogu.com.cn/problem/P1209'
+title: 洛谷 P1209 [USACO1.3] 修理牛棚 Barn Repair
+link: https://www.luogu.com.cn/problem/P1209
 ---
 
 牛棚一个紧挨着另一个被排成一行，牛就住在里面过夜。有些牛棚里有牛，有些没有。所有的牛棚有相同的宽度。

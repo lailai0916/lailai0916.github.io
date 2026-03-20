@@ -1,6 +1,6 @@
 ---
-title: '洛谷 P3377 【模板】左偏树/可并堆'
-link: 'https://www.luogu.com.cn/problem/P3377'
+title: 洛谷 P3377 【模板】左偏树/可并堆
+link: https://www.luogu.com.cn/problem/P3377
 ---
 
 有 $n$ 个小根堆，每个堆包含一个数。需要支持两种操作：

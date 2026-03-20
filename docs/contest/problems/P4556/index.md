@@ -1,6 +1,6 @@
 ---
-title: '洛谷 P4556 【模板】线段树合并 / [Vani 有约会] 雨天的尾巴'
-link: 'https://www.luogu.com.cn/problem/P4556'
+title: 洛谷 P4556 【模板】线段树合并 / [Vani 有约会] 雨天的尾巴
+link: https://www.luogu.com.cn/problem/P4556
 ---
 
 村落里一共有 $n$ 座房屋，并形成一个树状结构。然后救济粮分 $m$ 次发放，每次选择两个房屋 $(x, y)$，然后对于 $x$ 到 $y$ 的路径上（含 $x$ 和 $y$）每座房子里发放一袋 $z$ 类型的救济粮。

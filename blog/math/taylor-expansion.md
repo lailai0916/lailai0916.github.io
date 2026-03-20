@@ -1,5 +1,5 @@
 ---
-title: '泰勒展开'
+title: 泰勒展开
 date: 2023-06-03T19:30
 tags: [math]
 ---

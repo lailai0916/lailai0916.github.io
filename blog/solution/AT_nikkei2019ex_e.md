@@ -1,5 +1,5 @@
 ---
-title: 'AT_nikkei2019ex_e コラッツ問題'
+title: AT_nikkei2019ex_e コラッツ問題
 date: 2023-05-31T21:10
 tags: [solution, atcoder]
 ---

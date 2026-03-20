@@ -1,6 +1,6 @@
 ---
-title: '洛谷 P4980 【模板】Pólya 定理'
-link: 'https://www.luogu.com.cn/problem/P4980'
+title: 洛谷 P4980 【模板】Pólya 定理
+link: https://www.luogu.com.cn/problem/P4980
 ---
 
 给定一个 $n$ 个点，$n$ 条边的环，有 $n$ 种颜色，给每个顶点染色，问有多少种**本质不同**的染色方案，答案对 $10^9+7$ 取模。

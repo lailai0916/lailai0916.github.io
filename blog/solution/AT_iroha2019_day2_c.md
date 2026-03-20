@@ -1,5 +1,5 @@
 ---
-title: 'AT_iroha2019_day2_c 陽気な妖姫'
+title: AT_iroha2019_day2_c 陽気な妖姫
 date: 2023-05-27T16:27
 tags: [solution, atcoder]
 ---

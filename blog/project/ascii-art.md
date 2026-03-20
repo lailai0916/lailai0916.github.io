@@ -1,5 +1,5 @@
 ---
-title: 'ASCII Art'
+title: ASCII Art
 date: 2025-06-24T13:24
 tags: [project]
 ---

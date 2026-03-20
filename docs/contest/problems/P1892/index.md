@@ -1,6 +1,6 @@
 ---
-title: '洛谷 P1892 [BalticOI 2003] 团伙'
-link: 'https://www.luogu.com.cn/problem/P1892'
+title: 洛谷 P1892 [BalticOI 2003] 团伙
+link: https://www.luogu.com.cn/problem/P1892
 ---
 
 现在有 $n$ 个人，他们之间有两种关系：朋友和敌人。我们知道：

@@ -1,5 +1,5 @@
 ---
-title: "lailai's Design Style Guide"
+title: lailai's Design Style Guide
 ---
 
 本文为我的设计风格指南。

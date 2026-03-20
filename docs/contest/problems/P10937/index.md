@@ -1,6 +1,6 @@
 ---
-title: '洛谷 P10937 車的放置'
-link: 'https://www.luogu.com.cn/problem/P10937'
+title: 洛谷 P10937 車的放置
+link: https://www.luogu.com.cn/problem/P10937
 ---
 
 给定一个 $N$ 行 $M$ 列的棋盘，已知某些格子禁止放置。

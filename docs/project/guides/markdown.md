@@ -1,5 +1,5 @@
 ---
-title: 'Markdown 指南'
+title: Markdown 指南
 ---
 
 本文为 Markdown 使用指南。

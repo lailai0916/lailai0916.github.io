@@ -1,5 +1,5 @@
 ---
-title: 'iClock'
+title: iClock
 ---
 
 使用 Desmos 构建的数学艺术作品，通过函数图形展现时间之美。

@@ -1,6 +1,6 @@
 ---
-title: '洛谷 CF786B Legacy'
-link: 'https://www.luogu.com.cn/problem/CF786B'
+title: 洛谷 CF786B Legacy
+link: https://www.luogu.com.cn/problem/CF786B
 ---
 
 Rick 和他的同事们做出了一种新的放射性配方，与此同时很多坏人正追赶着他们。因此 Rick 想在坏人们捉到他之前把他的遗产留给 Morty。

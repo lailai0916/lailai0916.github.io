@@ -1,5 +1,5 @@
 ---
-title: 'Hangzhou HighSchool Map'
+title: Hangzhou HighSchool Map
 ---
 
 中国杭州高中分布地图。

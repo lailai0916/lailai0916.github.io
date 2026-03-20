@@ -1,6 +1,6 @@
 ---
-title: '洛谷 P1306 斐波那契公约数'
-link: 'https://www.luogu.com.cn/problem/P1306'
+title: 洛谷 P1306 斐波那契公约数
+link: https://www.luogu.com.cn/problem/P1306
 ---
 
 对于 Fibonacci 数列：

@@ -1,6 +1,6 @@
 ---
-title: '洛谷 P1352 没有上司的舞会'
-link: 'https://www.luogu.com.cn/problem/P1352'
+title: 洛谷 P1352 没有上司的舞会
+link: https://www.luogu.com.cn/problem/P1352
 ---
 
 某大学有 $n$ 个职员，编号为 $1\dots n$。

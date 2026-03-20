@@ -1,5 +1,5 @@
 ---
-title: '尺规作图'
+title: 尺规作图
 date: 2025-10-09T09:17
 tags: [math]
 ---

@@ -1,5 +1,5 @@
 ---
-title: 'AT_arc168_a [ARC168A] <Inversion>'
+title: AT_arc168_a [ARC168A] <Inversion>
 date: 2023-11-28T21:25
 tags: [solution, atcoder]
 ---

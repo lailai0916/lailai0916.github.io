@@ -1,6 +1,6 @@
 ---
-title: '洛谷 P1310 [NOIP 2011 普及组] 表达式的值'
-link: 'https://www.luogu.com.cn/problem/P1310'
+title: 洛谷 P1310 [NOIP 2011 普及组] 表达式的值
+link: https://www.luogu.com.cn/problem/P1310
 ---
 
 对于 $1$ 位二进制变量定义两种运算：

@@ -1,6 +1,6 @@
 ---
-title: '洛谷 P1962 斐波那契数列'
-link: 'https://www.luogu.com.cn/problem/P1962'
+title: 洛谷 P1962 斐波那契数列
+link: https://www.luogu.com.cn/problem/P1962
 ---
 
 大家都知道，斐波那契数列是满足如下性质的一个数列：

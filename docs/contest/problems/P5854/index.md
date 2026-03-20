@@ -1,6 +1,6 @@
 ---
-title: '洛谷 P5854 【模板】笛卡尔树'
-link: 'https://www.luogu.com.cn/problem/P5854'
+title: 洛谷 P5854 【模板】笛卡尔树
+link: https://www.luogu.com.cn/problem/P5854
 ---
 
 给定一个 $1 \sim n$ 的排列 $p$，构建其笛卡尔树。

@@ -1,6 +1,6 @@
 ---
-title: '洛谷 P1939 矩阵加速（数列）'
-link: 'https://www.luogu.com.cn/problem/P1939'
+title: 洛谷 P1939 矩阵加速（数列）
+link: https://www.luogu.com.cn/problem/P1939
 ---
 
 已知一个数列 $a$，它满足：

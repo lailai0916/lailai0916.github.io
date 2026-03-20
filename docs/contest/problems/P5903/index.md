@@ -1,6 +1,6 @@
 ---
-title: '洛谷 P5903 【模板】树上 K 级祖先'
-link: 'https://www.luogu.com.cn/problem/P5903'
+title: 洛谷 P5903 【模板】树上 K 级祖先
+link: https://www.luogu.com.cn/problem/P5903
 ---
 
 给定一棵 $n$ 个点的有根树。

@@ -1,6 +1,6 @@
 ---
-title: '洛谷 CF896C Willem, Chtholly and Seniorious'
-link: 'https://www.luogu.com.cn/problem/CF896C'
+title: 洛谷 CF896C Willem, Chtholly and Seniorious
+link: https://www.luogu.com.cn/problem/CF896C
 ---
 
 请你写一种奇怪的数据结构，支持 $4$ 种操作：

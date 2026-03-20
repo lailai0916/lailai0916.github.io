@@ -1,6 +1,6 @@
 ---
-title: '洛谷 P1967 [NOIP 2013 提高组] 货车运输'
-link: 'https://www.luogu.com.cn/problem/P1967'
+title: 洛谷 P1967 [NOIP 2013 提高组] 货车运输
+link: https://www.luogu.com.cn/problem/P1967
 ---
 
 A 国有 $n$ 座城市，编号从 $1$ 到 $n$，城市之间有 $m$ 条双向道路。每一条道路对车辆都有重量限制，简称限重。

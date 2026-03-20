@@ -1,6 +1,6 @@
 ---
-title: '洛谷 P2758 编辑距离'
-link: 'https://www.luogu.com.cn/problem/P2758'
+title: 洛谷 P2758 编辑距离
+link: https://www.luogu.com.cn/problem/P2758
 ---
 
 设 $A$ 和 $B$ 是两个字符串。我们要用最少的字符操作次数，将字符串 $A$ 转换为字符串 $B$。这里所说的字符操作共有三种：

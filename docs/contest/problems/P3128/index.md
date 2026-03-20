@@ -1,6 +1,6 @@
 ---
-title: '洛谷 P3128 [USACO15DEC] Max Flow P'
-link: 'https://www.luogu.com.cn/problem/P3128'
+title: 洛谷 P3128 [USACO15DEC] Max Flow P
+link: https://www.luogu.com.cn/problem/P3128
 ---
 
 Farmer John 在他的谷仓中安装了 $N-1$ 条管道，用于在 $N$ 个牛棚之间运输牛奶（$2 \leq N \leq 50,000$），牛棚方便地编号为 $1 \dots N$。每条管道连接一对牛棚，所有牛棚通过这些管道相互连接。

@@ -1,5 +1,5 @@
 ---
-title: '强调'
+title: 强调
 ---
 
 [TODO]

@@ -1,6 +1,6 @@
 ---
-title: '洛谷 P13337 【模板】线性规划'
-link: 'https://www.luogu.com.cn/problem/P13337'
+title: 洛谷 P13337 【模板】线性规划
+link: https://www.luogu.com.cn/problem/P13337
 ---
 
 本题中你需要求解一个标准型线性规划：

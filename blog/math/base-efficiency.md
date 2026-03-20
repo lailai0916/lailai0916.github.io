@@ -1,5 +1,5 @@
 ---
-title: '进制效率'
+title: 进制效率
 date: 2023-05-21T12:00
 tags: [math]
 ---

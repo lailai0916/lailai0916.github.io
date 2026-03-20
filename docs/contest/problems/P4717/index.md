@@ -1,6 +1,6 @@
 ---
-title: '洛谷 P4717 【模板】快速莫比乌斯 / 沃尔什变换 (FMT / FWT)'
-link: 'https://www.luogu.com.cn/problem/P4717'
+title: 洛谷 P4717 【模板】快速莫比乌斯 / 沃尔什变换 (FMT / FWT)
+link: https://www.luogu.com.cn/problem/P4717
 ---
 
 给定长度为 $2^n$ 的两个序列 $A,B$，设：

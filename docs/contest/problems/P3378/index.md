@@ -1,6 +1,6 @@
 ---
-title: '洛谷 P3378 【模板】堆'
-link: 'https://www.luogu.com.cn/problem/P3378'
+title: 洛谷 P3378 【模板】堆
+link: https://www.luogu.com.cn/problem/P3378
 ---
 
 给定一个数列，初始为空，请支持下面三种操作：

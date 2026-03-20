@@ -1,5 +1,5 @@
 ---
-title: "lailai's Code Style Guide"
+title: lailai's Code Style Guide
 ---
 
 本文为我的代码风格指南。

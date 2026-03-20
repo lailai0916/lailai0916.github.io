@@ -1,6 +1,6 @@
 ---
-title: '洛谷 P1141 01迷宫'
-link: 'https://www.luogu.com.cn/problem/P1141'
+title: 洛谷 P1141 01迷宫
+link: https://www.luogu.com.cn/problem/P1141
 ---
 
 有一个仅由数字 $0$ 与 $1$ 组成的 $n \times n$ 格迷宫。若你位于一格 $0$ 上，那么你可以移动到相邻 $4$ 格中的某一格 $1$ 上，同样若你位于一格 $1$ 上，那么你可以移动到相邻 $4$ 格中的某一格 $0$ 上。

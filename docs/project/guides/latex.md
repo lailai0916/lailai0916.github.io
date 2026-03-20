@@ -1,5 +1,5 @@
 ---
-title: 'LaTeX 指南'
+title: LaTeX 指南
 ---
 
 本文为 $\LaTeX$ 使用指南。

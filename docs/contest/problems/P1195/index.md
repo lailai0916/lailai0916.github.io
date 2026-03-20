@@ -1,6 +1,6 @@
 ---
-title: '洛谷 P1195 口袋的天空'
-link: 'https://www.luogu.com.cn/problem/P1195'
+title: 洛谷 P1195 口袋的天空
+link: https://www.luogu.com.cn/problem/P1195
 ---
 
 给你云朵的个数 $N$，再给你 $M$ 个关系，表示哪些云朵可以连在一起。

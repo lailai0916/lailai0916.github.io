@@ -1,6 +1,6 @@
 ---
-title: '洛谷 P1366 有序表的合并'
-link: 'https://www.luogu.com.cn/problem/P1366'
+title: 洛谷 P1366 有序表的合并
+link: https://www.luogu.com.cn/problem/P1366
 ---
 
 给出两个数列 $a,b$，均按不降序排序。其中保证 $a$ 中没有重复的数字。

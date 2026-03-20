@@ -1,5 +1,5 @@
 ---
-title: 'C++ 冷知识'
+title: C++ 冷知识
 date: 2024-12-24T15:30
 tags: [misc]
 ---

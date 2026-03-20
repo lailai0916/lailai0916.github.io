@@ -1,6 +1,6 @@
 ---
-title: '洛谷 P1368 工艺'
-link: 'https://www.luogu.com.cn/problem/P1368'
+title: 洛谷 P1368 工艺
+link: https://www.luogu.com.cn/problem/P1368
 ---
 
 小敏和小燕是一对好朋友。

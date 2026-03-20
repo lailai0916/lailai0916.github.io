@@ -1,5 +1,5 @@
 ---
-title: 'Code Comparator'
+title: Code Comparator
 ---
 
 一个用于信息学奥林匹克竞赛（OI）的轻量级代码对拍器。

@@ -1,6 +1,6 @@
 ---
-title: '洛谷 P8306 【模板】字典树'
-link: 'https://www.luogu.com.cn/problem/P8306'
+title: 洛谷 P8306 【模板】字典树
+link: https://www.luogu.com.cn/problem/P8306
 ---
 
 给定 $n$ 个模式串 $s_1, s_2, \dots, s_n$ 和 $q$ 次询问，每次询问给定一个文本串 $t_i$，请回答 $s_1 \sim s_n$ 中有多少个字符串 $s_j$ 满足 $t_i$ 是 $s_j$ 的**前缀**。

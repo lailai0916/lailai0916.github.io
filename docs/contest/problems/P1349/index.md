@@ -1,6 +1,6 @@
 ---
-title: '洛谷 P1349 广义斐波那契数列'
-link: 'https://www.luogu.com.cn/problem/P1349'
+title: 洛谷 P1349 广义斐波那契数列
+link: https://www.luogu.com.cn/problem/P1349
 ---
 
 广义的斐波那契数列是指形如 $a_n=p\times a_{n-1}+q\times a_{n-2}$ 的数列。

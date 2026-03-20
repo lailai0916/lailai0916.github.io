@@ -1,6 +1,6 @@
 ---
-title: '洛谷 P3389 【模板】高斯消元法'
-link: 'https://www.luogu.com.cn/problem/P3389'
+title: 洛谷 P3389 【模板】高斯消元法
+link: https://www.luogu.com.cn/problem/P3389
 ---
 
 给定一个线性方程组，对其求解。

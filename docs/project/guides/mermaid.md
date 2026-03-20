@@ -1,5 +1,5 @@
 ---
-title: 'Mermaid 指南'
+title: Mermaid 指南
 ---
 
 本文为 Mermaid 使用指南。

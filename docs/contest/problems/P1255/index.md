@@ -1,6 +1,6 @@
 ---
-title: '洛谷 P1255 数楼梯'
-link: 'https://www.luogu.com.cn/problem/P1255'
+title: 洛谷 P1255 数楼梯
+link: https://www.luogu.com.cn/problem/P1255
 ---
 
 楼梯有 $N$ 阶，上楼可以一步上一阶，也可以一步上二阶。

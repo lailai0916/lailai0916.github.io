@@ -1,6 +1,6 @@
 ---
-title: '洛谷 P3618 误会'
-link: 'https://www.luogu.com.cn/problem/P3618'
+title: 洛谷 P3618 误会
+link: https://www.luogu.com.cn/problem/P3618
 ---
 
 给定 $T$ 组数据，每组包含一个长度为 $n$ 的字符串 $s$ 和一个长度为 $m$ 的字符串 $t$。

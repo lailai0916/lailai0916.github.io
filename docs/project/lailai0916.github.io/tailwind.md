@@ -1,5 +1,5 @@
 ---
-title: 'Tailwind CSS 弃用计划'
+title: Tailwind CSS 弃用计划
 ---
 
 [TODO]

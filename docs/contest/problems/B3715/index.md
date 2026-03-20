@@ -1,6 +1,6 @@
 ---
-title: '洛谷 B3715 分解质因子 2'
-link: 'https://www.luogu.com.cn/problem/B3715'
+title: 洛谷 B3715 分解质因子 2
+link: https://www.luogu.com.cn/problem/B3715
 ---
 
 给定一个正整数 $n$，设 $n = p_1 \times p_2 \times \dots p_k$，其中 $p_i$ 均为质数，对 $1 \leq i < k$，$p_i \leq p_{i + 1}$。

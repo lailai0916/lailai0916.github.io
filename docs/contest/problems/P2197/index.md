@@ -1,6 +1,6 @@
 ---
-title: '洛谷 P2197 【模板】Nim 游戏'
-link: 'https://www.luogu.com.cn/problem/P2197'
+title: 洛谷 P2197 【模板】Nim 游戏
+link: https://www.luogu.com.cn/problem/P2197
 ---
 
 甲，乙两个人玩 nim 取石子游戏。

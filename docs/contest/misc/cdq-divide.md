@@ -1,5 +1,5 @@
 ---
-title: 'CDQ 分治'
+title: CDQ 分治
 ---
 
 ## 参考资料

@@ -1,5 +1,5 @@
 ---
-title: 'NOI 笔试'
+title: NOI 笔试
 ---
 
 ## 参考资料

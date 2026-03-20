@@ -1,5 +1,5 @@
 ---
-title: "lailai's Devices"
+title: lailai's Devices
 ---
 
 It's something only Apple can do!

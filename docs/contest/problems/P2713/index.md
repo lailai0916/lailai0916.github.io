@@ -1,6 +1,6 @@
 ---
-title: '洛谷 P2713 罗马游戏'
-link: 'https://www.luogu.com.cn/problem/P2713'
+title: 洛谷 P2713 罗马游戏
+link: https://www.luogu.com.cn/problem/P2713
 ---
 
 罗马皇帝的军队 $n$ 个士兵，每个士兵都是一个独立的团，每个士兵都有一个分数。

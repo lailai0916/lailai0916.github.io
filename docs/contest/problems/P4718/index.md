@@ -1,6 +1,6 @@
 ---
-title: '洛谷 P4718 【模板】Pollard-Rho'
-link: 'https://www.luogu.com.cn/problem/P4718'
+title: 洛谷 P4718 【模板】Pollard-Rho
+link: https://www.luogu.com.cn/problem/P4718
 ---
 
 Miller Rabin 算法是一种高效的质数判断方法。虽然是一种不确定的质数判断法，但是在选择多种底数的情况下，正确率是可以接受的。

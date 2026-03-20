@@ -1,5 +1,5 @@
 ---
-title: 'Sun Path Atlas'
+title: Sun Path Atlas
 ---
 
 面向建筑、摄影与户外规划的简洁可信工具。

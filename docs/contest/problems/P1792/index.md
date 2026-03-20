@@ -1,6 +1,6 @@
 ---
-title: '洛谷 P1792 [国家集训队] 种树'
-link: 'https://www.luogu.com.cn/problem/P1792'
+title: 洛谷 P1792 [国家集训队] 种树
+link: https://www.luogu.com.cn/problem/P1792
 ---
 
 A城市有一个巨大的圆形广场，为了绿化环境和净化空气，市政府决定沿圆形广场外圈种一圈树。

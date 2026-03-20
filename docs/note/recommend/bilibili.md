@@ -1,5 +1,5 @@
 ---
-title: 'bilibili'
+title: bilibili
 ---
 
 推荐一些 bilibili 的 UP 主、视频、课程和纪录片。

@@ -1,6 +1,6 @@
 ---
-title: '洛谷 P12509 【模板】通信题'
-link: 'https://www.luogu.com.cn/problem/P12509'
+title: 洛谷 P12509 【模板】通信题
+link: https://www.luogu.com.cn/problem/P12509
 ---
 
 这是一道通信题，只支持 C++ 语言。请不要使用 C++14 (GCC 9) 提交。

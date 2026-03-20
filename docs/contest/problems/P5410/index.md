@@ -1,6 +1,6 @@
 ---
-title: '洛谷 P5410 【模板】扩展 KMP/exKMP（Z 函数）'
-link: 'https://www.luogu.com.cn/problem/P5410'
+title: 洛谷 P5410 【模板】扩展 KMP/exKMP（Z 函数）
+link: https://www.luogu.com.cn/problem/P5410
 ---
 
 给定两个字符串 $a,b$，你要求出两个数组：

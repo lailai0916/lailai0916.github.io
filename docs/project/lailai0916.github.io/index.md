@@ -1,5 +1,5 @@
 ---
-title: "lailai's Home"
+title: lailai's Home
 ---
 
 我的个人网站项目。
