@@ -16,7 +16,7 @@ NOIP 考试操作系统能选 Windows 7 或 NOI Linux 2.0。
 
 大部分同学系统都选 Linux，因为和 CCF 测评一致，不容易有神秘问题。
 
-我日常用的电脑是 MacBook Pro（ARM 架构），但 NOI Linux 2.0 只有 x86 版本，架构不同装虚拟机也跑不了。
+我日常用的电脑是 MacBook Pro (M3 Max)，是 ARM 架构的，但 NOI Linux 2.0 只提供 x86 版本，架构不同用虚拟机也跑不了。
 
 我不能提前适应系统，就选了 Windows 7，虽然我 Windows 也一年多没用过了。
 
