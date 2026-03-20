@@ -1,6 +1,5 @@
 ---
-title: >-
-  National Geographic: 50 Places of a Lifetime
+title: 'National Geographic: 50 Places of a Lifetime'
 date: 2025-10-24T09:09
 tags: [resource, travel]
 ---

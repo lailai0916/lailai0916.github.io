@@ -1,6 +1,5 @@
 ---
-title: >-
-  UOJ #178. 新年的贺电
+title: 'UOJ #178. 新年的贺电'
 link: https://uoj.ac/problem/178
 ---
 

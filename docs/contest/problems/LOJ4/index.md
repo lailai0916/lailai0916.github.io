@@ -1,6 +1,5 @@
 ---
-title: >-
-  LibreOJ #4. Quine
+title: 'LibreOJ #4. Quine'
 link: https://loj.ac/p/4
 ---
 
