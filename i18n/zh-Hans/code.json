@@ -952,6 +952,9 @@
   "blog.sidebar.info.location": {
     "message": "位置"
   },
+  "blog.sidebar.info.locationValue": {
+    "message": "中国杭州"
+  },
   "blog.sidebar.info.localTime": {
     "message": "本地时间"
   },

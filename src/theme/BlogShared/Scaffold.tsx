@@ -108,7 +108,10 @@ function InfoCard() {
         id: 'blog.sidebar.info.location',
         message: 'Location',
       }),
-      value: 'Hangzhou, China',
+      value: translate({
+        id: 'blog.sidebar.info.locationValue',
+        message: 'Hangzhou, China',
+      }),
       icon: 'lucide:map-pin',
       href: 'https://maps.app.goo.gl/pjqPSMzrVqRcEM6J8',
     },
