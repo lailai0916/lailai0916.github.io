@@ -85,7 +85,6 @@
   padding: 0.62rem 0.7rem;
   border-radius: 12px;
   border: 1px solid var(--ifm-color-emphasis-200);
-  background: var(--ifm-color-emphasis-100);
   color: var(--ifm-font-color-base);
   text-decoration: none !important;
   transition:
@@ -98,7 +97,6 @@
 .infoItem:hover {
   color: inherit;
   border-color: var(--ifm-color-primary);
-  background: var(--ifm-card-background-color);
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
 }
 
@@ -164,7 +162,6 @@
   padding: 0.62rem 0.7rem;
   border-radius: 12px;
   border: 1px solid var(--ifm-color-emphasis-200);
-  background: var(--ifm-color-emphasis-100);
   transition:
     border-color 160ms ease,
     background-color 160ms ease;
@@ -172,7 +169,6 @@
 
 .statTile:hover {
   border-color: var(--ifm-color-primary);
-  background: var(--ifm-card-background-color);
 }
 
 .statHead {
@@ -187,10 +183,7 @@
   justify-content: center;
   width: 1.35rem;
   height: 1.35rem;
-  border-radius: 8px;
   color: var(--ifm-color-primary);
-  background: var(--ifm-card-background-color);
-  border: 1px solid var(--ifm-color-emphasis-200);
   flex-shrink: 0;
 }
 
