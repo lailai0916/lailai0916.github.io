@@ -110,7 +110,7 @@ function InfoCard() {
       }),
       value: 'Hangzhou, China',
       icon: 'lucide:map-pin',
-      href: 'https://www.google.com/maps/search/?api=1&query=Hangzhou%2C%20China',
+      href: 'https://maps.app.goo.gl/pjqPSMzrVqRcEM6J8',
     },
     {
       key: 'time',
