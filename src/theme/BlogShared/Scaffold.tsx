@@ -94,13 +94,13 @@ function TocCard({ toc }: { toc: readonly TOCItem[] }) {
 }
 
 function InfoCard() {
-  const d = new Date();
-  const hhmm = new Intl.DateTimeFormat('en-GB', {
-    timeZone: 'Asia/Shanghai',
+  const timeZone = '+08:00';
+  const localTime = new Intl.DateTimeFormat('en-GB', {
+    timeZone,
     hour: '2-digit',
     minute: '2-digit',
     hour12: false,
-  }).format(d);
+  }).format(new Date());
   const infoItems = [
     {
       key: 'location',
@@ -121,7 +121,7 @@ function InfoCard() {
         id: 'blog.sidebar.info.localTime',
         message: 'Local Time',
       }),
-      value: `${hhmm} (UTC+08:00)`,
+      value: `${localTime} (UTC${timeZone})`,
       icon: 'lucide:clock',
       href: 'https://time.is/UTC+8',
     },
