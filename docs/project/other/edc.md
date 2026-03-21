@@ -2,7 +2,7 @@
 title: lailai's EDC
 ---
 
-我日常外出时随身携带的物品。
+这是我日常外出时可能会随身携带的物品。
 
 ## 收纳
 
@@ -34,7 +34,7 @@ title: lailai's EDC
 - 口罩
 - 雨伞
 
-## 文具
+## 文教
 
 - 国誉 KOKUYO HACO 笔袋（黑色）
 - 国誉 KOKUYO 亚克力波浪尺
@@ -47,3 +47,5 @@ title: lailai's EDC
 - 蜻蜓 Tombow MONO AIR 修正带（薰衣草紫）
 - 辉柏嘉 Faber-Castell 考试涂卡笔（白色）
 - 施德楼 Staedtler 551 01 精准中车圆规
+- 卡西欧 CASIO fx-999CN CW 计算器（黑色）
+- 卡西欧 CASIO E-S200 电子辞典（雪瓷白）
