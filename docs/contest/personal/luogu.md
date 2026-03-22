@@ -275,3 +275,14 @@ int main()
 |     2023     |                          –                          |     [@Eason_cyx](https://www.luogu.com.cn/user/741244)     |                           –                           | [@StayAlone](https://www.luogu.com.cn/user/409236)  |    –     |
 |     2024     |                          –                          |                             –                              |  [@Eason_cyx](https://www.luogu.com.cn/user/741244)   | [@lailai0916](https://www.luogu.com.cn/user/455474) |    –     |
 |     2025     |                          –                          |                             –                              | [@Starrykiller](https://www.luogu.com.cn/user/235125) |   [@Milmon](https://www.luogu.com.cn/user/234641)   |    –     |
+
+## 管理员
+
+我于 2025 年 11 月 16 日入选为 **洛谷专栏管理志愿者**。
+
+我的管理员上任记录：
+
+1. 2025-11-24 $\sim$ 2025-12-01
+2. 2025-12-15 $\sim$ 2025-12-21
+3. 2026-01-09 $\sim$ 2026-01-19
+3. 2026-03-01 $\sim$ 2026-03-08
