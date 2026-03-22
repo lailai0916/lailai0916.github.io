@@ -24,7 +24,7 @@ void del(int i)
 	cnt[i]--;
 	sum-=cnt[i];
 }
-ll ans1[N],ans2[N];
+pair<ll,ll> ans[N];
 int main()
 {
 	ios::sync_with_stdio(false);
@@ -44,26 +44,25 @@ int main()
 	{
 		if(a[i].l==a[i].r)
 		{
-			ans1[a[i].id]=0;
-			ans2[a[i].id]=1;
+			ans[a[i].id]={0,1};
 			continue;
 		}
 		while(l>a[i].l)add(c[--l]);
 		while(r<a[i].r)add(c[++r]);
 		while(l<a[i].l)del(c[l++]);
 		while(r>a[i].r)del(c[r--]);
-		ans1[a[i].id]=sum;
-		ans2[a[i].id]=(r-l+1ll)*(r-l)/2;
+		ans[a[i].id]={sum,(r-l+1ll)*(r-l)/2};
 	}
 	for(int i=1;i<=m;i++)
 	{
-		if(ans1[i]==0)
+		auto [p,q]=ans[i];
+		if(p==0)
 		{
 			cout<<0<<'/'<<1<<'\n';
 			continue;
 		}
-		ll g=__gcd(ans1[i],ans2[i]);
-		cout<<ans1[i]/g<<'/'<<ans2[i]/g<<'\n';
+		ll g=__gcd(p,q);
+		cout<<p/g<<'/'<<q/g<<'\n';
 	}
 	return 0;
 }
