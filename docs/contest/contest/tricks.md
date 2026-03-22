@@ -6,7 +6,6 @@ title: 比赛技巧
 
 - [骗分导论 - Vijos](https://vijos.org/discuss/5343eb6c48c5fc86468b457d)
 - [n方过百万 暴力碾标算——指令集优化的基础使用 - ouuan的博客](https://ouuan.github.io/post/n方过百万-暴力碾标算指令集优化的基础使用/)
-- [部分 OI 方言及其起源 - astra🌧️infinita 的博客](https://qoj.ac/blog/fr/blog/1546)
 
 ## 打表
 
