@@ -225,6 +225,7 @@ const sidebars: SidebarsConfig = {
         'contest/ds/seg',
         'contest/ds/bst',
         'contest/ds/persistent',
+        'contest/ds/huffman-tree',
       ],
     },
     {
