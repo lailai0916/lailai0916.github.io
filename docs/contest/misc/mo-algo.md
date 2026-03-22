@@ -8,4 +8,6 @@ title: 莫队算法
 
 ## 例题
 
+<Problem id="P2709" />
+
 <Problem id="P1494" />
