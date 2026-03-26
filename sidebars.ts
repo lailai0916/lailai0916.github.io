@@ -553,7 +553,15 @@ const sidebars: SidebarsConfig = {
     'project/lailai0916',
     'project/code-comparator',
     'project/hangzhou-highschool-map',
-    'project/sun-path-atlas',
+    {
+      type: 'category',
+      label: 'AI Lab',
+      link: {
+        type: 'generated-index',
+        description: '本章为 AI 制作的小项目。',
+      },
+      items: ['project/ai/sun-path-atlas'],
+    },
     {
       type: 'category',
       label: '指南',

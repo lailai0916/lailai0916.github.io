@@ -147,10 +147,6 @@
     "message": "本章介绍的是一些难以分类的算法及 OI 相关知识。",
     "description": "The generated-index page description for category '杂项' in sidebar 'sidebar1'"
   },
-  "sidebar.sidebar2.category.推荐": {
-    "message": "推荐",
-    "description": "The label for category '推荐' in sidebar 'sidebar2'"
-  },
   "sidebar.sidebar2.category.数学": {
     "message": "数学",
     "description": "The label for category '数学' in sidebar 'sidebar2'"
@@ -235,9 +231,21 @@
     "message": "本章介绍其他英语语法相关知识，包括构词法和标点符号。",
     "description": "The generated-index page description for category '杂项' in sidebar 'sidebar2'"
   },
+  "sidebar.sidebar2.category.推荐": {
+    "message": "推荐",
+    "description": "The label for category '推荐' in sidebar 'sidebar2'"
+  },
   "sidebar.sidebar3.category.lailai's Home": {
     "message": "lailai's Home",
     "description": "The label for category 'lailai's Home' in sidebar 'sidebar3'"
+  },
+  "sidebar.sidebar3.category.AI Lab": {
+    "message": "AI Lab",
+    "description": "The label for category 'AI Lab' in sidebar 'sidebar3'"
+  },
+  "sidebar.sidebar3.category.AI Lab.link.generated-index.description": {
+    "message": "本章为 AI 制作的小项目。",
+    "description": "The generated-index page description for category 'AI Lab' in sidebar 'sidebar3'"
   },
   "sidebar.sidebar3.category.指南": {
     "message": "指南",
@@ -262,10 +270,6 @@
   "sidebar.sidebar3.category.Desmos.link.generated-index.description": {
     "message": "本章展示使用 Desmos 图形计算器创作的各种项目。",
     "description": "The generated-index page description for category 'Desmos' in sidebar 'sidebar3'"
-  },
-  "sidebar.sidebar3.category.艺术": {
-    "message": "艺术",
-    "description": "The label for category '艺术' in sidebar 'sidebar3'"
   },
   "sidebar.sidebar3.category.图形": {
     "message": "图形",
