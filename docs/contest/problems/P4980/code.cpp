@@ -2,9 +2,7 @@
 using namespace std;
 
 using ll=long long;
-const int inf=0x3f3f3f3f;
 const int mod=1e9+7;
-const int N=100005;
 ll Pow(ll a,ll b)
 {
 	a%=mod;
@@ -33,16 +31,14 @@ ll phi(ll n)
 }
 ll polya(ll n,ll m)
 {
-	ll sum=0;
+	ll res=0;
 	for(int i=1;i*i<=m;i++)
 	{
-		if(m%i==0)
-		{
-			sum=(sum+phi(i)*Pow(n,m/i-1)%mod)%mod;
-			if(i*i!=n)sum=(sum+phi(n/i)*Pow(n,i-1)%mod)%mod;
-		}
+		if(m%i)continue;
+		res=(res+phi(i)*Pow(n,m/i-1)%mod)%mod;
+		if(i*i!=n)res=(res+phi(n/i)*Pow(n,i-1)%mod)%mod;
 	}
-	return sum;
+	return res;
 }
 int main()
 {
