@@ -560,7 +560,7 @@ const sidebars: SidebarsConfig = {
         type: 'generated-index',
         description: '本章为 AI 制作的小项目。',
       },
-      items: ['project/ai/sun-path-atlas'],
+      items: ['project/ai/sun-path-atlas', 'project/ai/hydrocarbon-namer'],
     },
     {
       type: 'category',
