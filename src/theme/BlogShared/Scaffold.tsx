@@ -94,7 +94,7 @@ function TocCard({ toc }: { toc: readonly TOCItem[] }) {
 }
 
 function InfoCard() {
-  const timeZone = '+08:00';
+  const timeZone = 'Asia/Shanghai';
   const localTime = new Intl.DateTimeFormat('en-GB', {
     timeZone,
     hour: '2-digit',
@@ -121,7 +121,7 @@ function InfoCard() {
         id: 'blog.sidebar.info.localTime',
         message: 'Local Time',
       }),
-      value: `${localTime} (UTC${timeZone})`,
+      value: `${localTime} (UTC+08:00)`,
       icon: 'lucide:clock',
       href: 'https://time.is/UTC+8',
     },
