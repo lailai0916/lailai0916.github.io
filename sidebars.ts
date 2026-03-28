@@ -544,18 +544,7 @@ const sidebars: SidebarsConfig = {
   ],
   sidebar3: [
     'project/index',
-    {
-      type: 'category',
-      label: "lailai's Home",
-      link: {
-        type: 'doc',
-        id: 'project/lailai0916.github.io/index',
-      },
-      items: [
-        'project/lailai0916.github.io/tutorial',
-        'project/lailai0916.github.io/tailwind',
-      ],
-    },
+    'project/lailai0916.github.io',
     'project/lailai0916',
     'project/code-comparator',
     'project/hangzhou-highschool-map',

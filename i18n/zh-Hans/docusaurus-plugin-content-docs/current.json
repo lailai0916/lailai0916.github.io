@@ -235,10 +235,6 @@
     "message": "推荐",
     "description": "The label for category '推荐' in sidebar 'sidebar2'"
   },
-  "sidebar.sidebar3.category.lailai's Home": {
-    "message": "lailai's Home",
-    "description": "The label for category 'lailai's Home' in sidebar 'sidebar3'"
-  },
   "sidebar.sidebar3.category.AI Lab": {
     "message": "AI Lab",
     "description": "The label for category 'AI Lab' in sidebar 'sidebar3'"
