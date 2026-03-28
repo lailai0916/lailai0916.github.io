@@ -68,7 +68,7 @@ title: lailai's Home
 
 ## 参考
 
-以下是一些我认为非常出色的个人网站。
+这是一些我认为比较优秀的个人网站，可供参考。
 
 - [峰华前端工程师](https://zxuqian.cn)
 - [愧怍](https://kuizuo.cn)
