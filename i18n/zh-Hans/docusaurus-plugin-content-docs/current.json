@@ -247,21 +247,13 @@
     "message": "本章为 AI 制作的小项目。",
     "description": "The generated-index page description for category 'AI Lab' in sidebar 'sidebar3'"
   },
-  "sidebar.sidebar3.category.指南": {
-    "message": "指南",
-    "description": "The label for category '指南' in sidebar 'sidebar3'"
+  "sidebar.sidebar3.category.Terminal": {
+    "message": "Terminal",
+    "description": "The label for category 'Terminal' in sidebar 'sidebar3'"
   },
-  "sidebar.sidebar3.category.指南.link.generated-index.description": {
-    "message": "本章收录各种实用的文档指南。",
-    "description": "The generated-index page description for category '指南' in sidebar 'sidebar3'"
-  },
-  "sidebar.sidebar3.category.终端": {
-    "message": "终端",
-    "description": "The label for category '终端' in sidebar 'sidebar3'"
-  },
-  "sidebar.sidebar3.category.终端.link.generated-index.description": {
+  "sidebar.sidebar3.category.Terminal.link.generated-index.description": {
     "message": "本章展示基于终端的项目和教程。",
-    "description": "The generated-index page description for category '终端' in sidebar 'sidebar3'"
+    "description": "The generated-index page description for category 'Terminal' in sidebar 'sidebar3'"
   },
   "sidebar.sidebar3.category.Desmos": {
     "message": "Desmos",
@@ -279,12 +271,12 @@
     "message": "几何",
     "description": "The label for category '几何' in sidebar 'sidebar3'"
   },
-  "sidebar.sidebar3.category.其他": {
-    "message": "其他",
-    "description": "The label for category '其他' in sidebar 'sidebar3'"
+  "sidebar.sidebar3.category.指南": {
+    "message": "指南",
+    "description": "The label for category '指南' in sidebar 'sidebar3'"
   },
-  "sidebar.sidebar3.category.其他.link.generated-index.description": {
-    "message": "其他分类的项目和分享。",
-    "description": "The generated-index page description for category '其他' in sidebar 'sidebar3'"
+  "sidebar.sidebar3.category.指南.link.generated-index.description": {
+    "message": "本章收录各种实用的文档指南。",
+    "description": "The generated-index page description for category '指南' in sidebar 'sidebar3'"
   }
 }
