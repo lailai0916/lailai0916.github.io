@@ -210,7 +210,7 @@
 /* ========== Social Card ========== */
 .cardSocial {
   grid-column: 1 / span 2;
-  grid-row: 3 / span 2;
+  grid-row: 3;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -247,38 +247,80 @@
   background: var(--ifm-color-emphasis-200);
 }
 
-.cardTemp {
+.cardLatestPost {
   grid-column: 3 / span 2;
   grid-row: 3;
 }
 
-/* ========== Location Card ========== */
-.cardLocation {
-  grid-column: 4;
-  grid-row: 4;
+.latestPostLink {
   display: flex;
-  align-items: center;
-  gap: 0.75rem;
+  flex-direction: column;
+  gap: 0.6rem;
+  height: 100%;
+  text-decoration: none !important;
+  color: inherit;
 }
 
-.locationIcon {
-  font-size: 1.25rem;
+.latestPostLink:hover {
+  color: inherit;
+}
+
+.latestPostHead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.latestPostLabel {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ifm-color-emphasis-600);
+}
+
+.latestPostArrow {
+  font-size: 1rem;
+  color: var(--ifm-color-emphasis-500);
+  transition: transform 0.2s ease;
+}
+
+.latestPostLink:hover .latestPostArrow {
+  transform: translate(2px, -2px);
+}
+
+.latestPostTitle {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.4;
+  color: var(--ifm-color-emphasis-900);
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.latestPostMeta {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.8rem;
+  font-weight: 500;
+  line-height: 1.3;
+  color: var(--ifm-color-emphasis-800);
+}
+
+.latestPostMetaIcon {
+  font-size: 0.9rem;
   color: var(--ifm-color-emphasis-500);
 }
 
-.locationText {
-  font-size: 0.875rem;
+.latestPostEmpty {
+  font-size: 0.9rem;
   color: var(--ifm-color-emphasis-700);
-  font-weight: 500;
-}
-
-/* ========== Status Card ========== */
-.cardStatus {
-  grid-column: 3;
-  grid-row: 4;
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
 }
 
 .statusDot {
@@ -343,14 +385,8 @@
     grid-row: auto;
   }
 
-  .cardTemp {
+  .cardLatestPost {
     grid-column: span 2;
-    grid-row: auto;
-  }
-
-  .cardLocation,
-  .cardStatus {
-    grid-column: span 1;
     grid-row: auto;
   }
 }
@@ -362,9 +398,7 @@
 
   .cardMain,
   .cardSocial,
-  .cardTemp,
-  .cardLocation,
-  .cardStatus,
+  .cardLatestPost,
   .cardNav {
     grid-column: span 1;
   }

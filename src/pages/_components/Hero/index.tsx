@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import Link from '@docusaurus/Link';
 import clsx from 'clsx';
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import { Icon } from '@iconify/react';
 import { COMMUNITY_LIST } from '@site/src/data/community';
+import { getRecentBlogPosts } from '@site/src/utils/blogData';
 import Card from '@site/src/components/laikit/widget/Card';
 import styles from './styles.module.css';
 
@@ -31,6 +33,17 @@ const NAV_ITEMS = [
 ];
 
 export default function Hero() {
+  const { i18n } = useDocusaurusContext();
+  const latestPost = useMemo(() => getRecentBlogPosts(1)[0] ?? null, []);
+  const latestPostDate = latestPost
+    ? new Date(latestPost.date).toLocaleDateString(i18n.currentLocale, {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric',
+        timeZone: 'UTC',
+      })
+    : '';
+
   return (
     <section className={styles.hero}>
       <div className={styles.bento}>
@@ -87,15 +100,25 @@ export default function Hero() {
             ))}
           </div>
         </Card>
-        <Card className={styles.cardTemp} padding="1.25rem">
-          <></>
-        </Card>
-        <Card className={styles.cardStatus} padding="1.25rem">
-          <></>
-        </Card>
-        <Card className={styles.cardLocation} padding="1.25rem">
-          <Icon icon="lucide:map-pin" className={styles.locationIcon} />
-          <span className={styles.locationText}>Hangzhou, China</span>
+        <Card className={styles.cardLatestPost} padding="1.25rem">
+          {latestPost ? (
+            <Link to={latestPost.permalink} className={styles.latestPostLink}>
+              <div className={styles.latestPostHead}>
+                <span className={styles.latestPostLabel}>Latest Post</span>
+                <Icon
+                  icon="lucide:arrow-up-right"
+                  className={styles.latestPostArrow}
+                />
+              </div>
+              <p className={styles.latestPostTitle}>{latestPost.title}</p>
+              <p className={styles.latestPostMeta}>
+                <Icon icon="lucide:calendar" className={styles.latestPostMetaIcon} />
+                <span>{latestPostDate}</span>
+              </p>
+            </Link>
+          ) : (
+            <div className={styles.latestPostEmpty}>No posts yet.</div>
+          )}
         </Card>
       </div>
     </section>
