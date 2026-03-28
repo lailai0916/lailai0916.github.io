@@ -10,9 +10,9 @@ title: lailai's Home
 
 2023 年暑假，我尝试了 [WordPress](https://wordpress.org) 和 [Hexo](https://hexo.io) 等博客框架，但整体效果始终不够满意。主要原因是，我在学习算法竞赛的过程中，需要整理知识点和模板。而传统博客的时间线结构不方便检索与归档；相比之下，我更偏好文档式的树状结构。
 
-2024 年 3 月，我发现了一个由 Facebook 开发的 [Docusaurus](https://docusaurus.io) 静态网站生成器，它简洁美观、易于使用、扩展性强。
+2024 年 3 月，我发现了由 Facebook 开发的 [Docusaurus](https://docusaurus.io) 静态网站生成器，它简洁美观、易于使用、扩展性强。
 
-我从 2024 年 10 月开始搭建，但 Docusaurus 在国内互联网比较冷门，相关的资料和教程并不多，我花费了不少时间研究。在此之前，我没有系统学习过 HTML、CSS 和 JavaScript；但凭借 C++ 和 Python 等语言的基础，在搭建网站的过程中逐渐掌握了这些语言的基本语法。
+我从 2024 年 10 月正式开始搭建，但 Docusaurus 在国内互联网比较冷门，相关的资料和教程并不多，我花费了不少时间研究。在此之前，我没有系统学习过 HTML、CSS 和 JavaScript，但凭借 C++ 和 Python 等语言的基础，在搭建网站的过程中逐渐掌握了它们的基本语法。
 
 此外 [Material for MkDocs](https://squidfunk.github.io/mkdocs-material) 和 [VitePress](https://vitepress.dev) 也是不错的选择，例如 [OI Wiki](https://oi-wiki.org) 就是基于前者搭建的。
 
@@ -219,7 +219,7 @@ npm run deploy
 - 📦 [plugin-pwa](https://docusaurus.io/docs/api/plugins/@docusaurus/plugin-pwa)：创建支持离线模式和应用安装的 PWA 文档站点。如果你的浏览器支持，可以把网站当作应用安装。
 - 📦 [remark-plugin-npm2yarn](https://github.com/facebook/docusaurus/blob/main/packages/docusaurus-remark-plugin-npm2yarn/README.md)：将 Markdown 中标记为 `bash npm2yarn` 的代码块中的 npm 命令转换为 Docusaurus 选项卡形式，展示多种包管理工具（如 npm、yarn、pnpm 等）的等效命令。
 
-## 参考资料
+## 网站推荐
 
 这是一些我认为比较优秀的个人网站，可供参考。
 
