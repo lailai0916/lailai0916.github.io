@@ -11,15 +11,15 @@ title: Hangzhou HighSchool Map
 - [2025年市区高中集中统一招生第一段录取完成](https://edu.hangzhou.gov.cn/col/col1228921941/art/2025/art_3542f22624614ea5ad32401ac1e9264d.html)
 - [2025年各类高中集中统一招生第二段录取完成](https://edu.hangzhou.gov.cn/col/col1228921941/art/2025/art_81c7d882474247b6a3980d321a8b4a57.html)
 
+## 说明
+
+学校定位数据来自 **Google Maps Platform**，所有经纬度信息均已人工审核。地图底图使用 **OpenStreetMap** 数据，使用 **Mapbox** 实现交互式渲染。渲染效果图素材来自网页截图，后期使用 **Photoshop** 进行调整。
+
+初始数据包含 **杭州市区 2025 年第一段招生学校名单** 中的 $51$ 所学校。如果需要修改或添加学校信息，可以联系我或提交 PR。目前已添加 $4$ 所学校：学军文渊、天元钱路、天元和睦、桐庐中学。
+
 ## 项目链接
 
 <GitHub repo="lailai0916/hangzhou-highschool-map" />
-
-## 说明
-
-学校定位数据来自 **Google Maps Platform**，所有经纬度信息均已 **人工审核**。地图底图使用 **OpenStreetMap** 数据，使用 **Mapbox** 实现交互式渲染。渲染图素材来自 **网页截图**，后期使用 **Photoshop** 进行调整。
-
-数据包含杭州市区 2025 年 **第一段招生学校名单** 中的 $51$ 所学校。如果需要 **修改或添加** 学校，可以 **联系我或提交 PR**。目前已添加 $4$ 所学校：学军文渊、天元钱路、天元和睦、桐庐中学。
 
 ## 效果展示
 

@@ -8,15 +8,15 @@ title: Code Comparator
 
 - [CYaRon：测试数据生成利器 - 洛谷](https://www.luogu.com.cn/discuss/11410)
 
-## 项目链接
-
-<GitHub repo="lailai0916/code-comparator" />
-
-## 对拍简介
+## 说明
 
 对拍是一种验证代码正确性的方法。它通过编写两份代码：一份是待验证的代码，另一份是已知正确但效率较低的暴力解法。
 
 代码对拍器会自动生成随机数据并处理，比较两份代码的输出结果，以判断待验证代码的正确性。
+
+## 项目链接
+
+<GitHub repo="lailai0916/code-comparator" />
 
 ## 项目结构
 
