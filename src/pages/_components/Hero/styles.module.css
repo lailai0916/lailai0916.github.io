@@ -20,7 +20,6 @@
 .cardMain {
   grid-column: span 2;
   grid-row: span 2;
-  padding: 1.75rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -92,6 +91,8 @@
 }
 
 .cardNav {
+  --nav-accent: #1d9bf0;
+  --nav-accent-rgb: 29, 155, 240;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -111,75 +112,46 @@
   opacity: 0;
   transition: opacity 0.2s ease;
   border-radius: 20px;
+  background: linear-gradient(
+    135deg,
+    rgba(var(--nav-accent-rgb), 0.1),
+    rgba(var(--nav-accent-rgb), 0.05)
+  );
 }
 
 .cardNav:hover::before {
   opacity: 1;
 }
 
-.cardNav1::before {
-  background: linear-gradient(
-    135deg,
-    rgba(251, 191, 36, 0.1),
-    rgba(245, 158, 11, 0.05)
-  );
-}
-.cardNav2::before {
-  background: linear-gradient(
-    135deg,
-    rgba(16, 185, 129, 0.1),
-    rgba(6, 182, 212, 0.05)
-  );
-}
-.cardNav3::before {
-  background: linear-gradient(
-    135deg,
-    rgba(139, 92, 246, 0.1),
-    rgba(168, 85, 247, 0.05)
-  );
-}
-.cardNav4::before {
-  background: linear-gradient(
-    135deg,
-    rgba(244, 63, 94, 0.1),
-    rgba(236, 72, 153, 0.05)
-  );
-}
-
-.cardNav:hover {
-  border-color: transparent;
-}
-
-.cardNav1:hover {
-  border-color: rgba(251, 191, 36, 0.5);
-}
-.cardNav2:hover {
-  border-color: rgba(16, 185, 129, 0.5);
-}
-.cardNav3:hover {
-  border-color: rgba(139, 92, 246, 0.5);
-}
-.cardNav4:hover {
-  border-color: rgba(244, 63, 94, 0.5);
-}
-
 .cardNavIcon {
   font-size: 1.5rem;
   position: relative;
   z-index: 1;
+  color: var(--nav-accent);
 }
 
-.cardNav1 .cardNavIcon {
-  color: #f59e0b;
+.cardNav:hover {
+  border-color: rgba(var(--nav-accent-rgb), 0.5);
 }
-.cardNav2 .cardNavIcon {
-  color: #10b981;
+
+.cardNav1 {
+  --nav-accent: #f59e0b;
+  --nav-accent-rgb: 245, 158, 11;
 }
-.cardNav3 .cardNavIcon {
-  color: #8b5cf6;
+
+.cardNav2 {
+  --nav-accent: #10b981;
+  --nav-accent-rgb: 16, 185, 129;
 }
-.cardNav4 .cardNavIcon {
-  color: #f43f5e;
+
+.cardNav3 {
+  --nav-accent: #8b5cf6;
+  --nav-accent-rgb: 139, 92, 246;
+}
+
+.cardNav4 {
+  --nav-accent: #f43f5e;
+  --nav-accent-rgb: 244, 63, 94;
 }
 
 .cardNavTitle {

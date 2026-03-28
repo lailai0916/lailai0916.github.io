@@ -47,7 +47,7 @@ export default function Hero() {
   return (
     <section className={styles.hero}>
       <div className={styles.bento}>
-        <Card className={styles.cardMain} padding="1.25rem">
+        <Card className={styles.cardMain} padding="1.75rem">
           <div className={styles.cardMainInner}>
             <img
               src={useBaseUrl('/img/logo.svg')}
