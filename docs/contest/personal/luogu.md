@@ -214,7 +214,7 @@ int main()
 
 ### 提示词
 
-以下提示词可用于 AI 翻译整理英文 PDF 题面为规范格式。
+以下提示词可用于 AI 翻译英文 PDF 题面并整理为规范格式。
 
 ```text title="提示词"
 请你将提供的算法竞赛题目的英文 PDF 翻译成中文，并严格遵循《洛谷主题库题目规范》（https://help.luogu.com.cn/rules/academic/problem-standard）整理成 Markdown 格式。
