@@ -142,6 +142,42 @@ int main()
 
 <GitHub repo="MikeMirzayanov/testlib" />
 
+### 配置文件生成器
+
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+
+const int TL=1000; // Unit: ms
+const int ML=256*1024; // Unit: kb
+int main()
+{
+	ios::sync_with_stdio(false);
+	cin.tie(nullptr);
+	int id=0,sum=0,cnt=0;
+	int score,num;
+	while(cin>>score>>num)
+	{
+		for(int i=1;i<=num;i++)
+		{
+			cout<<id<<setfill('0')<<setw(2)<<i<<".in:"<<'\n';
+			cout<<"  timeLimit: "<<TL<<'\n';
+			cout<<"  memoryLimit: "<<ML<<'\n';
+			cout<<"  score: "<<score<<'\n';
+			cout<<"  subtaskId: "<<id<<'\n';
+			cout<<'\n';
+		}
+		id++;
+		sum+=score;
+		cnt+=num;
+	}
+	cerr<<"config.yml"<<'\n';
+	cerr<<"Total Score: "<<sum<<'\n';
+	cerr<<"Total File: "<<(cnt<<1)<<'\n';
+	return 0;
+}
+```
+
 ### 搬题记录
 
 我搬运了 **新加坡全国信息学奥林匹克竞赛**（Singapore National Olympiad in Informatics，NOISG）的 $7$ 场比赛 $30$ 道题目。
