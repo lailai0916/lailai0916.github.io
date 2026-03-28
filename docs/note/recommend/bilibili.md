@@ -6,7 +6,7 @@ title: bilibili
 
 ## 关注
 
-详见 [lailai0916 的关注列表](https://space.bilibili.com/1796257032/relation/follow)。
+详见 [lailai0916 的关注列表 - bilibili](https://space.bilibili.com/1796257032/relation/follow)。
 
 - [3Blue1Brown](https://space.bilibili.com/88461692)
 - [妈咪说MommyTalk](https://space.bilibili.com/223146252)
@@ -21,7 +21,7 @@ title: bilibili
 
 ## 收藏
 
-详见 [lailai0916 的收藏夹](https://space.bilibili.com/1796257032/favlist)。
+详见 [lailai0916 的收藏夹 - bilibili](https://space.bilibili.com/1796257032/favlist)。
 
 ## 课程
 

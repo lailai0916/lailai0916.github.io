@@ -533,7 +533,13 @@ const sidebars: SidebarsConfig = {
     {
       type: 'category',
       label: '推荐',
-      items: ['note/recommend/bilibili', 'note/recommend/software'],
+      items: [
+        'note/recommend/devices',
+        'note/recommend/edc',
+        'note/recommend/desk-setup',
+        'note/recommend/software',
+        'note/recommend/bilibili',
+      ],
     },
   ],
   sidebar3: [
@@ -622,19 +628,6 @@ const sidebars: SidebarsConfig = {
             'project/desmos/geometry/china-flag',
           ],
         },
-      ],
-    },
-    {
-      type: 'category',
-      label: '其他',
-      link: {
-        type: 'generated-index',
-        description: '其他分类的项目和分享。',
-      },
-      items: [
-        'project/other/devices',
-        'project/other/edc',
-        'project/other/desk-setup',
       ],
     },
   ],
