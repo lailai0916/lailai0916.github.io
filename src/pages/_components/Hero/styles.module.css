@@ -47,7 +47,7 @@
   display: flex;
   align-items: center;
   gap: 0.625rem;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
 }
 
 .name {
@@ -61,13 +61,11 @@
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
+  margin-left: auto;
   padding: 0.2rem 0.55rem;
   border-radius: 999px;
-  background: color-mix(
-    in srgb,
-    var(--ifm-color-emphasis-100) 85%,
-    transparent
-  );
+  border: 1px solid var(--ifm-color-emphasis-200);
+  background: var(--ifm-color-emphasis-100);
 }
 
 .role {
@@ -76,11 +74,29 @@
   margin: 0.25rem 0 0;
 }
 
-.bio {
-  font-size: 0.95rem;
-  color: var(--ifm-color-emphasis-700);
-  line-height: 1.6;
-  margin: 0;
+.profileTags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+}
+
+.profileTag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.38rem;
+  padding: 0.35rem 0.65rem;
+  border-radius: 999px;
+  border: 1px solid var(--ifm-color-emphasis-200);
+  background: var(--ifm-color-emphasis-100);
+  color: var(--ifm-color-emphasis-800);
+  font-size: 0.82rem;
+  line-height: 1.15;
+  font-weight: 500;
+}
+
+.profileTagIcon {
+  font-size: 0.85rem;
+  color: var(--ifm-color-emphasis-600);
 }
 
 /* ========== Navigation Cards ========== */
@@ -240,7 +256,6 @@
 .latestPostHead {
   display: flex;
   align-items: center;
-  justify-content: space-between;
 }
 
 .latestPostLabel {
@@ -249,16 +264,6 @@
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--ifm-color-emphasis-600);
-}
-
-.latestPostArrow {
-  font-size: 1rem;
-  color: var(--ifm-color-emphasis-500);
-  transition: transform 0.2s ease;
-}
-
-.latestPostLink:hover .latestPostArrow {
-  transform: translate(2px, -2px);
 }
 
 .latestPostTitle {
@@ -275,7 +280,8 @@
 }
 
 .latestPostMeta {
-  margin: 0;
+  margin: 0 0 0;
+  margin-top: auto;
   display: flex;
   align-items: center;
   gap: 0.35rem;

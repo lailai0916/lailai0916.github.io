@@ -32,6 +32,13 @@ const NAV_ITEMS = [
   },
 ];
 
+const PROFILE_TAGS = [
+  { label: 'China', icon: 'lucide:map-pin' },
+  { label: 'Chinese & English', icon: 'lucide:languages' },
+  { label: 'THU University', icon: 'lucide:graduation-cap' },
+  { label: 'Hello', icon: 'lucide:message-circle' },
+];
+
 export default function Hero() {
   const { i18n } = useDocusaurusContext();
   const latestPost = useMemo(() => getRecentBlogPosts(1)[0] ?? null, []);
@@ -65,10 +72,14 @@ export default function Hero() {
               <p className={styles.role}>Student & Developer</p>
             </div>
           </div>
-          <p className={styles.bio}>
-            Building things for the web. Interested in algorithms and crafting
-            delightful experiences.
-          </p>
+          <div className={styles.profileTags}>
+            {PROFILE_TAGS.map((tag) => (
+              <span key={tag.label} className={styles.profileTag}>
+                <Icon icon={tag.icon} className={styles.profileTagIcon} />
+                <span>{tag.label}</span>
+              </span>
+            ))}
+          </div>
         </Card>
         {NAV_ITEMS.map((item, index) => (
           <Link key={item.title} to={item.href} className={styles.cardNavLink}>
@@ -105,10 +116,6 @@ export default function Hero() {
             <Link to={latestPost.permalink} className={styles.latestPostLink}>
               <div className={styles.latestPostHead}>
                 <span className={styles.latestPostLabel}>Latest Post</span>
-                <Icon
-                  icon="lucide:arrow-up-right"
-                  className={styles.latestPostArrow}
-                />
               </div>
               <p className={styles.latestPostTitle}>{latestPost.title}</p>
               <p className={styles.latestPostMeta}>
