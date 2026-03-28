@@ -142,9 +142,11 @@ int main()
 
 <GitHub repo="MikeMirzayanov/testlib" />
 
-### NOISG 搬题记录
+### 搬题记录
 
 我搬运了 **新加坡全国信息学奥林匹克竞赛**（Singapore National Olympiad in Informatics，NOISG）的 $7$ 场比赛 $30$ 道题目。
+
+<GitHub repo="noisg/sg_noi_archive" />
 
 1. [洛谷 P11293 [NOISG 2022 Qualification] L-Board](https://www.luogu.com.cn/problem/P11293)
 2. [洛谷 P11294 [NOISG 2022 Qualification] Tree Cutting](https://www.luogu.com.cn/problem/P11294)
@@ -177,7 +179,7 @@ int main()
 29. [洛谷 P13078 [NOISG 2019] Rigged Roads](https://www.luogu.com.cn/problem/P13078)
 30. [洛谷 P13079 [NOISG 2019] Shuffle](https://www.luogu.com.cn/problem/P13079)
 
-<GitHub repo="noisg/sg_noi_archive" />
+### NOISG 搬题表
 
 | NOISG 搬题表 |                       (null)                        |                       Qualification                        |                        Prelim                         |                       Finals                        | Practice |
 | :----------: | :-------------------------------------------------: | :--------------------------------------------------------: | :---------------------------------------------------: | :-------------------------------------------------: | :------: |
