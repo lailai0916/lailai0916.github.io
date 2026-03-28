@@ -8,7 +8,7 @@ title: lailai's Home
 
 <GitHub repo="lailai0916/lailai0916.github.io" />
 
-## 前言
+## 说明
 
 我以前使用 [CSDN](https://www.csdn.net) 和 [博客园](https://www.cnblogs.com) 等现成的博客平台，但自由度低、功能受限，而且经常有广告，无法满足我的需求。
 
