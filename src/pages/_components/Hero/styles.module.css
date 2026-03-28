@@ -74,6 +74,28 @@
   margin: 0.25rem 0 0;
 }
 
+.roleTyping {
+  color: var(--ifm-color-primary);
+  font-weight: 600;
+}
+
+.roleCursor {
+  color: var(--ifm-color-emphasis-600);
+  margin-left: 0.04rem;
+  animation: blink 1s steps(1, end) infinite;
+}
+
+@keyframes blink {
+  0%,
+  49% {
+    opacity: 1;
+  }
+  50%,
+  100% {
+    opacity: 0;
+  }
+}
+
 .profileTags {
   display: flex;
   flex-wrap: wrap;
@@ -83,19 +105,19 @@
 .profileTag {
   display: inline-flex;
   align-items: center;
-  gap: 0.38rem;
-  padding: 0.35rem 0.65rem;
+  gap: 0.3rem;
+  padding: 0.25rem 0.55rem;
   border-radius: 999px;
   border: 1px solid var(--ifm-color-emphasis-200);
   background: var(--ifm-color-emphasis-100);
   color: var(--ifm-color-emphasis-800);
-  font-size: 0.82rem;
-  line-height: 1.15;
+  font-size: 0.75rem;
+  line-height: 1.1;
   font-weight: 500;
 }
 
 .profileTagIcon {
-  font-size: 0.85rem;
+  font-size: 0.75rem;
   color: var(--ifm-color-emphasis-600);
 }
 
