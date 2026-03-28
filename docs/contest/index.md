@@ -20,9 +20,9 @@ export const daysUntil = (target) => Math.ceil((new Date(target) - new Date()) /
 - **USACO 2025-2026 Second Contest** 还有 **{daysUntil('2026-01-30')}** 天
 - **NOIWC 2026** 还有 **{daysUntil('2026-02-06')}** 天
 - **USACO 2025-2026 Third Contest** 还有 **{daysUntil('2026-02-20')}** 天
-- **联合省选 2026** 还有 **{daysUntil('2026-03-07')}** 天 -->
+- **联合省选 2026** 还有 **{daysUntil('2026-03-07')}** 天
+- **USACO 2025-2026 US Open** 还有 **{daysUntil('2026-03-28')}** 天 -->
 
-- **USACO 2025-2026 US Open** 还有 **{daysUntil('2026-03-28')}** 天
 - **APIO 2026** 还有 **{daysUntil('2026-05-07')}** 天
 - **NOI 2026** 还有 **{daysUntil('2026-07-18')}** 天
 - **IOI 2026** 还有 **{daysUntil('2026-08-09')}** 天
@@ -71,3 +71,7 @@ Pick 定理、三角剖分、凸包、扫描线、旋转卡壳、半平面交、
 ## 目录
 
 <DocCardList />
+
+$$
+\large\color{blue}\text{—\ 我常常追忆过去\ —}\\\scriptsize\color{blue}\texttt{I often recall the past.}
+$$
