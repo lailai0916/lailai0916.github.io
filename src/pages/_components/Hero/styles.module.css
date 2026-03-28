@@ -44,11 +44,31 @@
   flex: 1;
 }
 
+.nameRow {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  flex-wrap: wrap;
+}
+
 .name {
   font-size: 1.75rem;
   font-weight: 700;
   margin: 0;
   letter-spacing: -0.02em;
+}
+
+.statusInline {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.2rem 0.55rem;
+  border-radius: 999px;
+  background: color-mix(
+    in srgb,
+    var(--ifm-color-emphasis-100) 85%,
+    transparent
+  );
 }
 
 .role {
@@ -189,7 +209,8 @@
 
 /* ========== Social Card ========== */
 .cardSocial {
-  grid-column: span 2;
+  grid-column: 1 / span 2;
+  grid-row: 3 / span 2;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -203,8 +224,10 @@
 
 .socialLinks {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(4, 40px);
+  grid-template-rows: repeat(2, 40px);
   gap: 0.5rem;
+  justify-content: end;
 }
 
 .socialLink {
@@ -225,12 +248,14 @@
 }
 
 .cardTemp {
-  grid-column: span 2;
-  grid-row: span 2;
+  grid-column: 3 / span 2;
+  grid-row: 3;
 }
 
 /* ========== Location Card ========== */
 .cardLocation {
+  grid-column: 4;
+  grid-row: 4;
   display: flex;
   align-items: center;
   gap: 0.75rem;
@@ -249,6 +274,8 @@
 
 /* ========== Status Card ========== */
 .cardStatus {
+  grid-column: 3;
+  grid-row: 4;
   display: flex;
   align-items: center;
   gap: 0.75rem;
@@ -278,6 +305,7 @@
   font-size: 0.875rem;
   color: var(--ifm-color-emphasis-700);
   font-weight: 500;
+  line-height: 1;
 }
 
 /* ========== Responsive ========== */
@@ -312,11 +340,18 @@
 
   .cardSocial {
     grid-column: span 2;
+    grid-row: auto;
+  }
+
+  .cardTemp {
+    grid-column: span 2;
+    grid-row: auto;
   }
 
   .cardLocation,
   .cardStatus {
     grid-column: span 1;
+    grid-row: auto;
   }
 }
 
@@ -327,6 +362,7 @@
 
   .cardMain,
   .cardSocial,
+  .cardTemp,
   .cardLocation,
   .cardStatus,
   .cardNav {

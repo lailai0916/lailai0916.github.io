@@ -42,7 +42,13 @@ export default function Hero() {
               className={styles.avatar}
             />
             <div className={styles.intro}>
-              <h1 className={styles.name}>lailai</h1>
+              <div className={styles.nameRow}>
+                <h1 className={styles.name}>lailai</h1>
+                <span className={styles.statusInline}>
+                  <span className={styles.statusDot} />
+                  <span className={styles.statusText}>Available</span>
+                </span>
+              </div>
               <p className={styles.role}>Student & Developer</p>
             </div>
           </div>
@@ -85,8 +91,7 @@ export default function Hero() {
           <></>
         </Card>
         <Card className={styles.cardStatus} padding="1.25rem">
-          <span className={styles.statusDot} />
-          <span className={styles.statusText}>Available</span>
+          <></>
         </Card>
         <Card className={styles.cardLocation} padding="1.25rem">
           <Icon icon="lucide:map-pin" className={styles.locationIcon} />
