@@ -33,7 +33,8 @@ const NAV_ITEMS = [
 ];
 
 const PROFILE_TAGS = [
-  { label: 'Hangzhou, China', icon: 'lucide:map-pin' },
+  { label: 'China', icon: 'lucide:map-pin' },
+  { label: 'CST', icon: 'lucide:clock' },
   { label: 'Chinese & English', icon: 'lucide:languages' },
   { label: 'Hangzhou No.2 High School', icon: 'lucide:graduation-cap' },
   { label: 'Friendly', icon: 'lucide:message-circle' },
