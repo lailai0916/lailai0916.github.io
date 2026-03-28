@@ -570,24 +570,7 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: 'category',
-      label: '指南',
-      link: {
-        type: 'generated-index',
-        description: '本章收录各种实用的文档指南。',
-      },
-      items: [
-        'project/guides/text',
-        'project/guides/code',
-        'project/guides/design',
-        'project/guides/wording',
-        'project/guides/markdown',
-        'project/guides/latex',
-        'project/guides/mermaid',
-      ],
-    },
-    {
-      type: 'category',
-      label: '终端',
+      label: 'Terminal',
       link: {
         type: 'generated-index',
         description: '本章展示基于终端的项目和教程。',
@@ -628,6 +611,23 @@ const sidebars: SidebarsConfig = {
             'project/desmos/geometry/china-flag',
           ],
         },
+      ],
+    },
+    {
+      type: 'category',
+      label: '指南',
+      link: {
+        type: 'generated-index',
+        description: '本章收录各种实用的文档指南。',
+      },
+      items: [
+        'project/guides/text',
+        'project/guides/code',
+        'project/guides/design',
+        'project/guides/wording',
+        'project/guides/markdown',
+        'project/guides/latex',
+        'project/guides/mermaid',
       ],
     },
   ],
