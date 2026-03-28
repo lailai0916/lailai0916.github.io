@@ -67,7 +67,7 @@ title: 洛谷贡献
 
 ## 基础知识
 
-加法是基本的算术运算之一，两个自然数相加是将他们组合起来的总量。
+加法是基本的算术运算之一，两个自然数相加是将它们组合起来的总量。
 
 ## 解题思路
 
@@ -108,7 +108,7 @@ int main()
 
 <h2>基础知识</h2>
 
-加法是基本的算术运算之一，两个自然数相加是将他们组合起来的总量。
+加法是基本的算术运算之一，两个自然数相加是将它们组合起来的总量。
 
 <h2>解题思路</h2>
 
@@ -217,36 +217,252 @@ int main()
 
 ### NOISG 搬题表
 
-| 年份 / 后缀 |                       (null)                        |                       Qualification                        |                        Prelim                         |                       Finals                        | Practice |
-| :---------: | :-------------------------------------------------: | :--------------------------------------------------------: | :---------------------------------------------------: | :-------------------------------------------------: | :------: |
-|    1998     |                      暂未搬运                       |                             –                              |                           –                           |                          –                          |    –     |
-|    1999     |                      暂未搬运                       |                             –                              |                           –                           |                          –                          |    –     |
-|    2000     |                      暂未搬运                       |                             –                              |                           –                           |                          –                          |    –     |
-|    2001     |                      暂未搬运                       |                             –                              |                           –                           |                          –                          |    –     |
-|    2002     |                      暂未搬运                       |                             –                              |                           –                           |                          –                          |    –     |
-|    2003     |                      暂未搬运                       |                             –                              |                           –                           |                          –                          |    –     |
-|    2004     |                      暂未搬运                       |                             –                              |                           –                           |                          –                          |    –     |
-|    2005     |                      暂未搬运                       |                          暂未搬运                          |                           –                           |                          –                          |    –     |
-|    2006     |                      暂未搬运                       |                          暂未搬运                          |                           –                           |                          –                          |    –     |
-|    2007     |                      暂未搬运                       |                             –                              |                           –                           |                          –                          |    –     |
-|    2008     |                      暂未搬运                       |                             –                              |                           –                           |                          –                          |    –     |
-|    2009     |                      暂未搬运                       |                             –                              |                           –                           |                          –                          |    –     |
-|    2010     |                      暂未搬运                       |                             –                              |                           –                           |                          –                          |    –     |
-|    2011     |                      暂未搬运                       |                             –                              |                           –                           |                          –                          |    –     |
-|    2012     |                      暂未搬运                       |                             –                              |                           –                           |                          –                          |    –     |
-|    2013     |                      暂未搬运                       |                             –                              |                           –                           |                          –                          |    –     |
-|    2014     |                      暂未搬运                       |                             –                              |                           –                           |                          –                          |    –     |
-|    2015     |                      暂未搬运                       |                             –                              |                           –                           |                          –                          |    –     |
-|    2016     |   [@chen_zhe](https://www.luogu.com.cn/user/8457)   |                             –                              |                           –                           |                          –                          |    –     |
-|    2017     |   [@许卿安](https://www.luogu.com.cn/user/677609)   |                             –                              |                           –                           |                          –                          |    –     |
-|    2018     | [@Shunpower](https://www.luogu.com.cn/user/399150)  |                             –                              |  [@ToastBread](https://www.luogu.com.cn/user/545809)  |                          –                          | 暂未搬运 |
-|    2019     | [@lailai0916](https://www.luogu.com.cn/user/455474) |                             –                              |  [@ToastBread](https://www.luogu.com.cn/user/545809)  |                          –                          |    –     |
-|    2020     |                          –                          |    [@lailai0916](https://www.luogu.com.cn/user/455474)     |  [@lailai0916](https://www.luogu.com.cn/user/455474)  | [@lailai0916](https://www.luogu.com.cn/user/455474) |    –     |
-|    2021     |                          –                          | [@Tiat_Siba_Ignareo](https://www.luogu.com.cn/user/482610) |                           –                           | [@lailai0916](https://www.luogu.com.cn/user/455474) |    –     |
-|    2022     |                          –                          |    [@lailai0916](https://www.luogu.com.cn/user/455474)     |                           –                           | [@Eason_cyx](https://www.luogu.com.cn/user/741244)  |    –     |
-|    2023     |                          –                          |     [@Eason_cyx](https://www.luogu.com.cn/user/741244)     |                           –                           | [@StayAlone](https://www.luogu.com.cn/user/409236)  |    –     |
-|    2024     |                          –                          |                             –                              |  [@Eason_cyx](https://www.luogu.com.cn/user/741244)   | [@lailai0916](https://www.luogu.com.cn/user/455474) |    –     |
-|    2025     |                          –                          |                             –                              | [@Starrykiller](https://www.luogu.com.cn/user/235125) |   [@Milmon](https://www.luogu.com.cn/user/234641)   |    –     |
+<table style={{ textAlign: 'center' }}>
+  <thead>
+    <tr>
+      <th>年份 / 后缀</th>
+      <th>(null)</th>
+      <th>Qualification</th>
+      <th>Prelim</th>
+      <th>Finals</th>
+      <th>Practice</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1998</td>
+      <td>暂未搬运</td>
+      <td>–</td>
+      <td>–</td>
+      <td>–</td>
+      <td>–</td>
+    </tr>
+    <tr>
+      <td>1999</td>
+      <td>暂未搬运</td>
+      <td>–</td>
+      <td>–</td>
+      <td>–</td>
+      <td>–</td>
+    </tr>
+    <tr>
+      <td>2000</td>
+      <td>暂未搬运</td>
+      <td>–</td>
+      <td>–</td>
+      <td>–</td>
+      <td>–</td>
+    </tr>
+    <tr>
+      <td>2001</td>
+      <td>暂未搬运</td>
+      <td>–</td>
+      <td>–</td>
+      <td>–</td>
+      <td>–</td>
+    </tr>
+    <tr>
+      <td>2002</td>
+      <td>暂未搬运</td>
+      <td>–</td>
+      <td>–</td>
+      <td>–</td>
+      <td>–</td>
+    </tr>
+    <tr>
+      <td>2003</td>
+      <td>暂未搬运</td>
+      <td>–</td>
+      <td>–</td>
+      <td>–</td>
+      <td>–</td>
+    </tr>
+    <tr>
+      <td>2004</td>
+      <td>暂未搬运</td>
+      <td>–</td>
+      <td>–</td>
+      <td>–</td>
+      <td>–</td>
+    </tr>
+    <tr>
+      <td>2005</td>
+      <td>暂未搬运</td>
+      <td>暂未搬运</td>
+      <td>–</td>
+      <td>–</td>
+      <td>–</td>
+    </tr>
+    <tr>
+      <td>2006</td>
+      <td>暂未搬运</td>
+      <td>暂未搬运</td>
+      <td>–</td>
+      <td>–</td>
+      <td>–</td>
+    </tr>
+    <tr>
+      <td>2007</td>
+      <td>暂未搬运</td>
+      <td>–</td>
+      <td>–</td>
+      <td>–</td>
+      <td>–</td>
+    </tr>
+    <tr>
+      <td>2008</td>
+      <td>暂未搬运</td>
+      <td>–</td>
+      <td>–</td>
+      <td>–</td>
+      <td>–</td>
+    </tr>
+    <tr>
+      <td>2009</td>
+      <td>暂未搬运</td>
+      <td>–</td>
+      <td>–</td>
+      <td>–</td>
+      <td>–</td>
+    </tr>
+    <tr>
+      <td>2010</td>
+      <td>暂未搬运</td>
+      <td>–</td>
+      <td>–</td>
+      <td>–</td>
+      <td>–</td>
+    </tr>
+    <tr>
+      <td>2011</td>
+      <td>暂未搬运</td>
+      <td>–</td>
+      <td>–</td>
+      <td>–</td>
+      <td>–</td>
+    </tr>
+    <tr>
+      <td>2012</td>
+      <td>暂未搬运</td>
+      <td>–</td>
+      <td>–</td>
+      <td>–</td>
+      <td>–</td>
+    </tr>
+    <tr>
+      <td>2013</td>
+      <td>暂未搬运</td>
+      <td>–</td>
+      <td>–</td>
+      <td>–</td>
+      <td>–</td>
+    </tr>
+    <tr>
+      <td>2014</td>
+      <td>暂未搬运</td>
+      <td>–</td>
+      <td>–</td>
+      <td>–</td>
+      <td>–</td>
+    </tr>
+    <tr>
+      <td>2015</td>
+      <td>暂未搬运</td>
+      <td>–</td>
+      <td>–</td>
+      <td>–</td>
+      <td>–</td>
+    </tr>
+    <tr>
+      <td>2016</td>
+      <td><a href="https://www.luogu.com.cn/user/8457">@chen_zhe</a></td>
+      <td>–</td>
+      <td>–</td>
+      <td>–</td>
+      <td>–</td>
+    </tr>
+    <tr>
+      <td>2017</td>
+      <td><a href="https://www.luogu.com.cn/user/677609">@许卿安</a></td>
+      <td>–</td>
+      <td>–</td>
+      <td>–</td>
+      <td>–</td>
+    </tr>
+    <tr>
+      <td>2018</td>
+      <td><a href="https://www.luogu.com.cn/user/399150">@Shunpower</a></td>
+      <td>–</td>
+      <td><a href="https://www.luogu.com.cn/user/545809">@ToastBread</a></td>
+      <td>–</td>
+      <td>暂未搬运</td>
+    </tr>
+    <tr>
+      <td>2019</td>
+      <td><a href="https://www.luogu.com.cn/user/455474">@lailai0916</a></td>
+      <td>–</td>
+      <td><a href="https://www.luogu.com.cn/user/545809">@ToastBread</a></td>
+      <td>–</td>
+      <td>–</td>
+    </tr>
+    <tr>
+      <td>2020</td>
+      <td>–</td>
+      <td><a href="https://www.luogu.com.cn/user/455474">@lailai0916</a></td>
+      <td><a href="https://www.luogu.com.cn/user/455474">@lailai0916</a></td>
+      <td><a href="https://www.luogu.com.cn/user/455474">@lailai0916</a></td>
+      <td>–</td>
+    </tr>
+    <tr>
+      <td>2021</td>
+      <td>–</td>
+      <td><a href="https://www.luogu.com.cn/user/482610">@Tiat_Siba_Ignareo</a></td>
+      <td>–</td>
+      <td><a href="https://www.luogu.com.cn/user/455474">@lailai0916</a></td>
+      <td>–</td>
+    </tr>
+    <tr>
+      <td>2022</td>
+      <td>–</td>
+      <td><a href="https://www.luogu.com.cn/user/455474">@lailai0916</a></td>
+      <td>–</td>
+      <td><a href="https://www.luogu.com.cn/user/741244">@Eason_cyx</a></td>
+      <td>–</td>
+    </tr>
+    <tr>
+      <td>2023</td>
+      <td>–</td>
+      <td><a href="https://www.luogu.com.cn/user/741244">@Eason_cyx</a></td>
+      <td>–</td>
+      <td><a href="https://www.luogu.com.cn/user/409236">@StayAlone</a></td>
+      <td>–</td>
+    </tr>
+    <tr>
+      <td>2024</td>
+      <td>–</td>
+      <td>–</td>
+      <td><a href="https://www.luogu.com.cn/user/741244">@Eason_cyx</a></td>
+      <td><a href="https://www.luogu.com.cn/user/455474">@lailai0916</a></td>
+      <td>–</td>
+    </tr>
+    <tr>
+      <td>2025</td>
+      <td>–</td>
+      <td>–</td>
+      <td><a href="https://www.luogu.com.cn/user/235125">@Starrykiller</a></td>
+      <td><a href="https://www.luogu.com.cn/user/234641">@Milmon</a></td>
+      <td>–</td>
+    </tr>
+    <tr>
+      <td>2026</td>
+      <td>–</td>
+      <td>–</td>
+      <td><a href="https://www.luogu.com.cn/user/8457">@chen_zhe</a></td>
+      <td><a href="https://www.luogu.com.cn/user/8457">@chen_zhe</a></td>
+      <td>–</td>
+    </tr>
+  </tbody>
+</table>
 
 ### 提示词
 
@@ -307,7 +523,7 @@ int main()
 - 最终仅输出 Markdown 源文本，**不得** 添加额外解释、图示或格式改动。
 ```
 
-## 管理员
+## 审核
 
 ### 上任记录
 
