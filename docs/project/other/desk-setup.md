@@ -2,9 +2,7 @@
 title: lailai's Desk Setup
 ---
 
-等以后有固定的桌子再考虑吧……
-
-可以考虑用 Blender、SketchUp 或 Rhinoceros 建模。
+等以后有固定的桌子再考虑吧，可以考虑先用 Blender、SketchUp 或 Rhinoceros 等软件建模。
 
 ## 参考资料
 
