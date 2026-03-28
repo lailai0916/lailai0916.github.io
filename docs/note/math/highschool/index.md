@@ -10,6 +10,7 @@ title: 高中数学
 - [whk wiki](https://whk-wiki.github.io/whk-wiki/)
 - [RainPPR's WHK Blog](https://raineblog.dpdns.org/whk/)
 - [liuhaopeng543/MathBook](https://github.com/liuhaopeng543/MathBook)
+- [ChinaTextbook/高中/数学 at master · TapXWorld/ChinaTextbook](https://github.com/TapXWorld/ChinaTextbook/tree/master/高中/数学)
 
 ## 前言
 
@@ -27,12 +28,12 @@ title: 高中数学
 
 ## 教材
 
-人教版 **高中数学** 教材分为 **A 版** 和 **B 版**：
+人教版高中数学教材分为 **A 版** 和 **B 版**：
 
 - **A 版**：包含 $2$ 册必修和 $3$ 册选择性必修。
 - **B 版**：包含 $4$ 册必修和 $3$ 册选择性必修。
 
-浙江高中通常使用 A 版，因此我的笔记也是基于 **A 版**。下文有教材目录，可供参考。
+浙江的高中通常使用 A 版，因此我的笔记也是基于 **A 版**。下文有教材目录，可供参考。
 
 ## A 版
 
