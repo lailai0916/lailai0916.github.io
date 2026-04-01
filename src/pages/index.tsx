@@ -24,7 +24,7 @@ const SCROLL_GUIDE_LABEL = translate({
   message: 'Scroll Down to Home',
 });
 
-const COVER_TRANSITION_DURATION_MS = 520;
+const COVER_TRANSITION_DURATION_MS = 720;
 
 export default function Home(): ReactNode {
   const { siteConfig } = useDocusaurusContext();

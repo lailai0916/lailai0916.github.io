@@ -12,14 +12,12 @@
   background: var(--ifm-background-color);
   overflow: auto;
   transform: translateY(0);
-  transition:
-    transform 0.52s cubic-bezier(0.2, 0.9, 0.2, 1),
-    opacity 0.35s ease;
+  will-change: transform;
+  transition: transform 0.72s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .coverHomeClosing {
-  transform: translateY(-100%);
-  opacity: 0;
+  transform: translateY(calc(-100% - 24px));
   pointer-events: none;
 }
 
@@ -41,6 +39,9 @@
   letter-spacing: 0.02em;
   line-height: 1;
   cursor: pointer;
+  transition:
+    color 0.2s ease,
+    border-color 0.2s ease;
 }
 
 .scrollGuide:hover {
@@ -57,5 +58,11 @@
     bottom: 0.85rem;
     padding: 0.4rem 0.75rem;
     font-size: 0.72rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .coverHome {
+    transition: none;
   }
 }
