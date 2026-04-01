@@ -1,3 +1,61 @@
+.classicHome {
+  scroll-margin-top: calc(var(--ifm-navbar-height) + 0.75rem);
+}
+
+.coverHome {
+  position: fixed;
+  top: var(--ifm-navbar-height);
+  right: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 20;
+  background: var(--ifm-background-color);
+  overflow: auto;
+  transform: translateY(0);
+  transition:
+    transform 0.52s cubic-bezier(0.2, 0.9, 0.2, 1),
+    opacity 0.35s ease;
+}
+
+.coverHomeClosing {
+  transform: translateY(-100%);
+  opacity: 0;
+  pointer-events: none;
+}
+
+.scrollGuide {
+  position: fixed;
+  left: 50%;
+  bottom: 1.25rem;
+  transform: translateX(-50%);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.45rem 0.9rem;
+  border-radius: 999px;
+  border: 1px solid var(--ifm-color-emphasis-300);
+  background: var(--ifm-background-color);
+  color: var(--ifm-color-emphasis-700);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.scrollGuide:hover {
+  color: var(--ifm-color-primary);
+  border-color: var(--ifm-color-primary);
+}
+
 .section > *:nth-child(even) {
   background: var(--ifm-color-emphasis-100);
+}
+
+@media (max-width: 768px) {
+  .scrollGuide {
+    bottom: 0.85rem;
+    padding: 0.4rem 0.75rem;
+    font-size: 0.72rem;
+  }
 }
