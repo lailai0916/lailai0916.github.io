@@ -11,8 +11,6 @@
   z-index: 20;
   background: var(--ifm-background-color);
   overflow: auto;
-  transform: translateY(0);
-  will-change: transform;
   transition: transform 0.72s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
@@ -24,7 +22,7 @@
 .scrollGuide {
   position: fixed;
   left: 50%;
-  bottom: 1.25rem;
+  bottom: calc(1rem + env(safe-area-inset-bottom, 0px));
   transform: translateX(-50%);
   display: inline-flex;
   align-items: center;
@@ -55,7 +53,7 @@
 
 @media (max-width: 768px) {
   .scrollGuide {
-    bottom: 0.85rem;
+    bottom: calc(0.75rem + env(safe-area-inset-bottom, 0px));
     padding: 0.4rem 0.75rem;
     font-size: 0.72rem;
   }
