@@ -1,10 +1,10 @@
 ---
-title: 与均值有关的定积分
+title: 与均值有关的定积分函数
 date: 2025-07-22T11:00
 tags: [math]
 ---
 
-一个与均值有关的定积分，并推广均值不等式。
+一个与均值有关的定积分函数，并推广均值不等式。
 
 <!-- truncate -->
 
@@ -13,7 +13,7 @@ tags: [math]
 - [与平均有关的定积分 - 知乎](https://zhuanlan.zhihu.com/p/601496318)
 - [[证毕QED]一个积分六个平均数 - bilibili](https://www.bilibili.com/video/BV1DW421w7Z8)
 
-## 公式
+## 函数
 
 设：
 
@@ -27,7 +27,9 @@ $$
 f(t)=\frac{(t+1)(b^{t+2}-a^{t+2})}{(t+2)(b^{t+1}-a^{t+1})}
 $$
 
-函数 $f(t)$ 是单调不减的。
+显然，函数 $f(t)$ 是单调不减的。
+
+## 图像
 
 <Desmos id="jqbeguzcnr" />
 
