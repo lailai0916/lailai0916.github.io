@@ -31,14 +31,18 @@ $$
 
 ## 图像
 
-<Desmos id="jqbeguzcnr" />
+<Desmos id="5gkcu5nq4c" />
 
 ## 均值
 
 该函数可以并推广 [均值不等式](/docs/note/math/highschool/basic/inequality#均值不等式)。
 
 $$
-H(a,b)\le G(a,b)\le N(a,b)\le A(a,b)\le T(a,b)
+0<a\le b
+$$
+
+$$
+a\le H(a,b)\le G(a,b)\le L(a,b)\le N(a,b)\le A(a,b)\le T(a,b)\le b
 $$
 
 ### 调和平均数
@@ -51,6 +55,12 @@ $$
 
 $$
 G(a,b)=f(-1.5)=\frac{-0.5(b^{0.5}-a^{0.5})}{0.5(b^{-0.5}-a^{-0.5})}=\sqrt{ab}
+$$
+
+### 对数平均数
+
+$$
+L(a,b)=f(-1)=\frac{\int_a^b x^0\mathrm{d}x}{\int_a^b x^{-1}\mathrm{d}x}=\frac{b-a}{\ln b-\ln a}
 $$
 
 ### 海伦平均数
