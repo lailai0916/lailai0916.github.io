@@ -806,8 +806,13 @@ export const RESOURCE_LIST: ResourceCategoryItem[] = [
       },
       {
         title: '信任的进化',
-        description: '互动游戏：信任与博弈',
+        description: '信任与博弈互动游戏',
         href: 'https://dccxi.com/trust/',
+      },
+      {
+        title: 'Gridspech',
+        description: '网格连线益智小游戏',
+        href: 'https://gridspech.baublejar.com',
       },
     ],
   },
