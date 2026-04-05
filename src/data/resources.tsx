@@ -533,6 +533,11 @@ export const RESOURCE_LIST: ResourceCategoryItem[] = [
         href: 'https://www.qr-code-generator.com',
         description: '二维码在线生成工具',
       },
+      {
+        title: 'iLovePDF',
+        href: 'https://www.ilovepdf.com',
+        description: 'PDF 在线编辑与转换工具',
+      },
     ],
   },
   {
