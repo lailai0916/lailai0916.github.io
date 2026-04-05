@@ -2,6 +2,10 @@
   outline: 1px solid red;
 }
 
+.debugMode span {
+  outline: 1px solid orange;
+}
+
 /* .grayMode {
   filter: grayscale(100%);
 } */

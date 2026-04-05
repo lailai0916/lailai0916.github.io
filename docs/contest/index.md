@@ -74,7 +74,7 @@ Pick 定理、三角剖分、凸包、扫描线、旋转卡壳、半平面交、
 
 $$
 \begin{array}{c}
-  \large\color{blue}\text{— 我常常追忆过去 —} \\
-  \scriptsize\color{blue}\texttt{I often recall the past.}
+  \large\color{royalblue}\text{— 我常常追忆过去 —} \\
+  \scriptsize\color{royalblue}\texttt{I often recall the past.}
 \end{array}
 $$
