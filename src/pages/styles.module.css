@@ -32,19 +32,20 @@
   border: 1px solid var(--ifm-color-emphasis-300);
   background: var(--ifm-background-color);
   color: var(--ifm-color-emphasis-700);
+  opacity: 0.45;
   font-size: 0.8rem;
   font-weight: 600;
   letter-spacing: 0.02em;
   line-height: 1;
   cursor: pointer;
   transition:
-    color 0.2s ease,
-    border-color 0.2s ease;
+    border-color 0.2s ease,
+    opacity 0.2s ease;
 }
 
 .scrollGuide:hover {
-  color: var(--ifm-color-primary);
   border-color: var(--ifm-color-primary);
+  opacity: 1;
 }
 
 .section > *:nth-child(even) {
