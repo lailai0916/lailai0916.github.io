@@ -32,7 +32,7 @@ export const PROJECT_LIST: ProjectItem[] = [
     description: translate({
       id: 'data.project.p2.description',
       message:
-        'A collection of terminal mini-games developed in C++, featuring a variety of classic gameplay.',
+        'A collection of terminal mini-games developed in C++, featuring a variety of classic game modes.',
     }),
     href: '/docs/project/terminal/igame',
     tech: 'C++ · Terminal',
@@ -49,7 +49,7 @@ export const PROJECT_LIST: ProjectItem[] = [
     description: translate({
       id: 'data.project.p3.description',
       message:
-        'A unified, simple, and modern UI component library for building clean interface experiences.',
+        'A unified, simple, and modern UI component library for building clean user interfaces.',
     }),
     href: '',
     tech: 'TypeScript · React',

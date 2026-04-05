@@ -668,13 +668,13 @@
     "message": "维护中"
   },
   "data.project.p2.description": {
-    "message": "一款使用 C++ 开发的终端小游戏合集，包含多种经典玩法。"
+    "message": "一款用C++开发的终端小游戏合集，包含多种经典游戏模式。"
   },
   "data.project.p2.status": {
     "message": "更新中"
   },
   "data.project.p3.description": {
-    "message": "一个统一、简约、现代的 UI 组件库，构建纯净的界面体验。"
+    "message": "一个统一、简洁、现代的 UI 组件库，用于构建清晰用户界面。"
   },
   "data.project.p3.status": {
     "message": "敬请期待"
