@@ -138,40 +138,6 @@ export default function Hero() {
       message: 'OIer',
     }),
   ];
-  const socialLabels: Record<string, string> = {
-    Phone: translate({
-      id: 'home.new.hero.social.phone',
-      message: 'Phone',
-    }),
-    Email: translate({
-      id: 'home.new.hero.social.email',
-      message: 'Email',
-    }),
-    'X (Twitter)': translate({
-      id: 'home.new.hero.social.twitter',
-      message: 'X (Twitter)',
-    }),
-    Telegram: translate({
-      id: 'home.new.hero.social.telegram',
-      message: 'Telegram',
-    }),
-    LinkedIn: translate({
-      id: 'home.new.hero.social.linkedin',
-      message: 'LinkedIn',
-    }),
-    GitHub: translate({
-      id: 'home.new.hero.social.github',
-      message: 'GitHub',
-    }),
-    QQ: translate({
-      id: 'home.new.hero.social.qq',
-      message: 'QQ',
-    }),
-    WeChat: translate({
-      id: 'home.new.hero.social.wechat',
-      message: 'WeChat',
-    }),
-  };
   const { text: identity, currentWord } = useTypewriter(identities);
   const roleArticle = /^[aeiou]/i.test(currentWord) ? 'an' : 'a';
   const availabilityLabel = translate({
@@ -264,7 +230,7 @@ export default function Hero() {
                 key={social.title}
                 href={social.href}
                 className={styles.socialLink}
-                aria-label={socialLabels[social.title] ?? social.title}
+                aria-label={social.title}
               >
                 <Icon icon={social.icon} width={20} height={20} />
               </Link>

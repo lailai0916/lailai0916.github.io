@@ -607,30 +607,6 @@
   "home.new.hero.identity.oier": {
     "message": "OIer"
   },
-  "home.new.hero.social.phone": {
-    "message": "电话"
-  },
-  "home.new.hero.social.email": {
-    "message": "邮箱"
-  },
-  "home.new.hero.social.twitter": {
-    "message": "X（Twitter）"
-  },
-  "home.new.hero.social.telegram": {
-    "message": "Telegram"
-  },
-  "home.new.hero.social.linkedin": {
-    "message": "LinkedIn"
-  },
-  "home.new.hero.social.github": {
-    "message": "GitHub"
-  },
-  "home.new.hero.social.qq": {
-    "message": "QQ"
-  },
-  "home.new.hero.social.wechat": {
-    "message": "微信"
-  },
   "home.new.hero.available": {
     "message": "可联系"
   },
