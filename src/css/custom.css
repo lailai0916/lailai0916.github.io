@@ -72,5 +72,6 @@ article,
   overflow-x: auto;
   overflow-y: hidden;
   max-width: 100%;
+  padding: 0.2em 0;
   -webkit-overflow-scrolling: touch;
 }
