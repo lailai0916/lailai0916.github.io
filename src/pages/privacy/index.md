@@ -71,12 +71,12 @@ We generally use this information in aggregate or service-operations form and do
 
 The Site uses browser storage to remember preferences and support certain interface features. Examples currently include:
 
-| Storage item | Purpose | Duration |
-| --- | --- | --- |
-| `theme` | Remembers light, dark, or system theme preference | Until you clear it |
-| `global-font-size` | Remembers font size preference on the settings page | Until you clear it |
-| `settings-experimental` | Remembers optional experimental feature switches | Until you clear it |
-| `ifm-theme-colors-light` / `ifm-theme-colors-dark` | Stores temporary custom color settings for the current session | Session only |
+| Storage item                                       | Purpose                                                        | Duration           |
+| -------------------------------------------------- | -------------------------------------------------------------- | ------------------ |
+| `theme`                                            | Remembers light, dark, or system theme preference              | Until you clear it |
+| `global-font-size`                                 | Remembers font size preference on the settings page            | Until you clear it |
+| `settings-experimental`                            | Remembers optional experimental feature switches               | Until you clear it |
+| `ifm-theme-colors-light` / `ifm-theme-colors-dark` | Stores temporary custom color settings for the current session | Session only       |
 
 In addition, third-party services embedded in or loaded by the Site may use cookies, local storage, or similar technologies under their own policies.
 
@@ -114,15 +114,15 @@ To operate the Site, we use a limited number of third-party services. When those
 
 Depending on the service and context, those providers may act as processors, service providers, or independent controllers of their own processing activities.
 
-| Provider / service | Why it is used | Examples of information involved |
-| --- | --- | --- |
-| GitHub Pages and related delivery infrastructure | Hosting, caching, and content delivery for the Site | IP address, request URL, headers, timestamps, user agent |
-| Google Analytics | Website traffic measurement and usage analytics | Online identifiers, IP address, browser/device data, page views, interactions |
-| `analytics.lailai.one` (Umami-based self-hosted analytics) | Privacy-focused website analytics and page statistics | Page URL, referrer, browser/device/language/screen data, technical request data |
-| Algolia DocSearch | Site search | Search queries, search interactions, technical metadata |
-| GitHub Discussions / Giscus | Public comments and reactions | GitHub account information, public comment content, timestamps, and related metadata |
-| jsDelivr | Delivery of KaTeX assets used by the Site | IP address, user agent, and asset requests |
-| Google favicon service (`www.google.com/s2/favicons`) | Fetching website icons shown on the Resources page | IP address, user agent, and requests triggered when the Resources page loads |
+| Provider / service                                         | Why it is used                                        | Examples of information involved                                                     |
+| ---------------------------------------------------------- | ----------------------------------------------------- | ------------------------------------------------------------------------------------ |
+| GitHub Pages and related delivery infrastructure           | Hosting, caching, and content delivery for the Site   | IP address, request URL, headers, timestamps, user agent                             |
+| Google Analytics                                           | Website traffic measurement and usage analytics       | Online identifiers, IP address, browser/device data, page views, interactions        |
+| `analytics.lailai.one` (Umami-based self-hosted analytics) | Privacy-focused website analytics and page statistics | Page URL, referrer, browser/device/language/screen data, technical request data      |
+| Algolia DocSearch                                          | Site search                                           | Search queries, search interactions, technical metadata                              |
+| GitHub Discussions / Giscus                                | Public comments and reactions                         | GitHub account information, public comment content, timestamps, and related metadata |
+| jsDelivr                                                   | Delivery of KaTeX assets used by the Site             | IP address, user agent, and asset requests                                           |
+| Google favicon service (`www.google.com/s2/favicons`)      | Fetching website icons shown on the Resources page    | IP address, user agent, and requests triggered when the Resources page loads         |
 
 Additional detail about key third-party services:
 
@@ -166,13 +166,13 @@ We keep information only for as long as reasonably necessary for the purposes de
 
 Retention depends on the category of data:
 
-| Category | Retention approach |
-| --- | --- |
-| Browser storage and local preferences | Kept on your device until you clear them, or until the browser or session removes them |
-| Analytics and security logs | Retained for limited periods determined by operational need, provider settings, and legal requirements |
-| Search queries and related search telemetry | Retained according to Algolia's settings and policies |
-| Contact emails and correspondence | Retained as long as needed to respond, keep reasonable records, and protect our rights |
-| Public comments and reactions | Remain public until deleted by you, GitHub, or us from the underlying discussion where applicable |
+| Category                                    | Retention approach                                                                                     |
+| ------------------------------------------- | ------------------------------------------------------------------------------------------------------ |
+| Browser storage and local preferences       | Kept on your device until you clear them, or until the browser or session removes them                 |
+| Analytics and security logs                 | Retained for limited periods determined by operational need, provider settings, and legal requirements |
+| Search queries and related search telemetry | Retained according to Algolia's settings and policies                                                  |
+| Contact emails and correspondence           | Retained as long as needed to respond, keep reasonable records, and protect our rights                 |
+| Public comments and reactions               | Remain public until deleted by you, GitHub, or us from the underlying discussion where applicable      |
 
 Because the Site does not maintain a normal end-user account database for browsing, we may not always be able to link anonymous technical or analytics records back to a specific person.
 
