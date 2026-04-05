@@ -1,5 +1,6 @@
 import React, { useMemo } from 'react';
 import Link from '@docusaurus/Link';
+import { translate } from '@docusaurus/Translate';
 import clsx from 'clsx';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
@@ -8,39 +9,6 @@ import { COMMUNITY_LIST } from '@site/src/data/community';
 import { getRecentBlogPosts } from '@site/src/utils/blogData';
 import Card from '@site/src/components/laikit/widget/Card';
 import styles from './styles.module.css';
-
-const NAV_ITEMS = [
-  {
-    title: 'Contest',
-    href: '/docs/contest',
-    icon: 'lucide:trophy',
-  },
-  {
-    title: 'Note',
-    href: '/docs/note',
-    icon: 'lucide:book-open',
-  },
-  {
-    title: 'Project',
-    href: '/docs/project',
-    icon: 'lucide:folder-code',
-  },
-  {
-    title: 'Blog',
-    href: '/blog',
-    icon: 'lucide:pen-line',
-  },
-];
-
-const PROFILE_TAGS = [
-  { label: 'China', icon: 'lucide:map-pin' },
-  { label: 'CST', icon: 'lucide:clock' },
-  { label: 'Chinese & English', icon: 'lucide:languages' },
-  { label: 'Hangzhou No.2 High School', icon: 'lucide:graduation-cap' },
-  { label: 'Friendly', icon: 'lucide:message-circle' },
-];
-
-const IDENTITIES = ['Student', 'Developer', 'Designer', 'OIer'];
 
 function useTypewriter(words: string[]) {
   const [index, setIndex] = React.useState(0);
@@ -81,8 +49,154 @@ function useTypewriter(words: string[]) {
 
 export default function Hero() {
   const { i18n } = useDocusaurusContext();
-  const { text: identity, currentWord } = useTypewriter(IDENTITIES);
+  const navItems = [
+    {
+      title: translate({
+        id: 'home.new.hero.nav.contest',
+        message: 'Contest',
+      }),
+      href: '/docs/contest',
+      icon: 'lucide:trophy',
+    },
+    {
+      title: translate({
+        id: 'home.new.hero.nav.note',
+        message: 'Note',
+      }),
+      href: '/docs/note',
+      icon: 'lucide:book-open',
+    },
+    {
+      title: translate({
+        id: 'home.new.hero.nav.project',
+        message: 'Project',
+      }),
+      href: '/docs/project',
+      icon: 'lucide:folder-code',
+    },
+    {
+      title: translate({
+        id: 'home.new.hero.nav.blog',
+        message: 'Blog',
+      }),
+      href: '/blog',
+      icon: 'lucide:pen-line',
+    },
+  ];
+  const profileTags = [
+    {
+      label: translate({
+        id: 'home.new.hero.tag.china',
+        message: 'China',
+      }),
+      icon: 'lucide:map-pin',
+    },
+    {
+      label: translate({
+        id: 'home.new.hero.tag.cst',
+        message: 'CST',
+      }),
+      icon: 'lucide:clock',
+    },
+    {
+      label: translate({
+        id: 'home.new.hero.tag.languages',
+        message: 'Chinese & English',
+      }),
+      icon: 'lucide:languages',
+    },
+    {
+      label: translate({
+        id: 'home.new.hero.tag.school',
+        message: 'Hangzhou No.2 High School',
+      }),
+      icon: 'lucide:graduation-cap',
+    },
+    {
+      label: translate({
+        id: 'home.new.hero.tag.friendly',
+        message: 'Friendly',
+      }),
+      icon: 'lucide:message-circle',
+    },
+  ];
+  const identities = [
+    translate({
+      id: 'home.new.hero.identity.student',
+      message: 'Student',
+    }),
+    translate({
+      id: 'home.new.hero.identity.developer',
+      message: 'Developer',
+    }),
+    translate({
+      id: 'home.new.hero.identity.designer',
+      message: 'Designer',
+    }),
+    translate({
+      id: 'home.new.hero.identity.oier',
+      message: 'OIer',
+    }),
+  ];
+  const socialLabels: Record<string, string> = {
+    Phone: translate({
+      id: 'home.new.hero.social.phone',
+      message: 'Phone',
+    }),
+    Email: translate({
+      id: 'home.new.hero.social.email',
+      message: 'Email',
+    }),
+    'X (Twitter)': translate({
+      id: 'home.new.hero.social.twitter',
+      message: 'X (Twitter)',
+    }),
+    Telegram: translate({
+      id: 'home.new.hero.social.telegram',
+      message: 'Telegram',
+    }),
+    LinkedIn: translate({
+      id: 'home.new.hero.social.linkedin',
+      message: 'LinkedIn',
+    }),
+    GitHub: translate({
+      id: 'home.new.hero.social.github',
+      message: 'GitHub',
+    }),
+    QQ: translate({
+      id: 'home.new.hero.social.qq',
+      message: 'QQ',
+    }),
+    WeChat: translate({
+      id: 'home.new.hero.social.wechat',
+      message: 'WeChat',
+    }),
+  };
+  const { text: identity, currentWord } = useTypewriter(identities);
   const roleArticle = /^[aeiou]/i.test(currentWord) ? 'an' : 'a';
+  const availabilityLabel = translate({
+    id: 'home.new.hero.available',
+    message: 'Available',
+  });
+  const rolePrefix = translate(
+    {
+      id: 'home.new.hero.rolePrefix',
+      message: "I'm {article} ",
+    },
+    { article: roleArticle }
+  );
+  const connectLabel = translate({
+    id: 'home.new.hero.connect',
+    message: 'Connect',
+  });
+  const latestPostLabel = translate({
+    id: 'home.new.hero.latestPost',
+    message: 'Latest Post',
+  });
+  const noPostsLabel = translate({
+    id: 'home.new.hero.noPosts',
+    message: 'No posts yet.',
+  });
   const latestPost = useMemo(() => getRecentBlogPosts(1)[0] ?? null, []);
   const latestPostDate = latestPost
     ? new Date(latestPost.date).toLocaleDateString(i18n.currentLocale, {
@@ -108,18 +222,18 @@ export default function Hero() {
                 <h1 className={styles.name}>lailai</h1>
                 <span className={styles.statusInline}>
                   <span className={styles.statusDot} />
-                  <span className={styles.statusText}>Available</span>
+                  <span className={styles.statusText}>{availabilityLabel}</span>
                 </span>
               </div>
               <p className={styles.role}>
-                I&apos;m {roleArticle}{' '}
+                {rolePrefix}
                 <span className={styles.roleTyping}>{identity}</span>
                 <span className={styles.roleCursor}>|</span>
               </p>
             </div>
           </div>
           <div className={styles.profileTags}>
-            {PROFILE_TAGS.map((tag) => (
+            {profileTags.map((tag) => (
               <span key={tag.label} className={styles.profileTag}>
                 <Icon icon={tag.icon} className={styles.profileTagIcon} />
                 <span>{tag.label}</span>
@@ -127,8 +241,8 @@ export default function Hero() {
             ))}
           </div>
         </Card>
-        {NAV_ITEMS.map((item, index) => (
-          <Link key={item.title} to={item.href} className={styles.cardNavLink}>
+        {navItems.map((item, index) => (
+          <Link key={item.href} to={item.href} className={styles.cardNavLink}>
             <Card
               className={clsx(styles.cardNav, styles[`cardNav${index + 1}`])}
               padding="1.25rem"
@@ -143,14 +257,14 @@ export default function Hero() {
           </Link>
         ))}
         <Card className={styles.cardSocial} padding="1.25rem">
-          <span className={styles.cardSocialLabel}>Connect</span>
+          <span className={styles.cardSocialLabel}>{connectLabel}</span>
           <div className={styles.socialLinks}>
             {COMMUNITY_LIST.map((social) => (
               <Link
                 key={social.title}
                 href={social.href}
                 className={styles.socialLink}
-                aria-label={social.title}
+                aria-label={socialLabels[social.title] ?? social.title}
               >
                 <Icon icon={social.icon} width={20} height={20} />
               </Link>
@@ -161,7 +275,9 @@ export default function Hero() {
           {latestPost ? (
             <Link to={latestPost.permalink} className={styles.latestPostLink}>
               <div className={styles.latestPostHead}>
-                <span className={styles.latestPostLabel}>Latest Post</span>
+                <span className={styles.latestPostLabel}>
+                  {latestPostLabel}
+                </span>
               </div>
               <p className={styles.latestPostTitle}>{latestPost.title}</p>
               <p className={styles.latestPostMeta}>
@@ -173,7 +289,7 @@ export default function Hero() {
               </p>
             </Link>
           ) : (
-            <div className={styles.latestPostEmpty}>No posts yet.</div>
+            <div className={styles.latestPostEmpty}>{noPostsLabel}</div>
           )}
         </Card>
       </div>
