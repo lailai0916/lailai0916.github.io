@@ -296,7 +296,7 @@ title: 软件
 
 ## 插件
 
-### VSCode
+### Visual Studio Code
 
 - CodeSnap：代码片段截图插件
 - Material Icon Theme：文件图表主题

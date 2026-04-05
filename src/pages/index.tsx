@@ -21,7 +21,7 @@ import Community from './_components/Community';
 
 const SCROLL_GUIDE_LABEL = translate({
   id: 'home.new.scrollGuide',
-  message: 'Scroll Down to Home',
+  message: 'Scroll Down',
 });
 
 const COVER_TRANSITION_DURATION_MS = 720;

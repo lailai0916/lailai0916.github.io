@@ -203,7 +203,7 @@ export const RESOURCE_LIST: ResourceCategoryItem[] = [
       {
         title: 'GitHub Codespaces',
         href: 'https://github.com/codespaces',
-        description: '云端开发环境（VS Code）',
+        description: '云端开发环境',
       },
       {
         title: 'Gitpod',
@@ -228,7 +228,7 @@ export const RESOURCE_LIST: ResourceCategoryItem[] = [
       {
         title: 'vscode.dev',
         href: 'https://vscode.dev',
-        description: 'VS Code 网页版编辑器',
+        description: '网页版编辑器',
       },
       {
         title: 'Sandpack',
