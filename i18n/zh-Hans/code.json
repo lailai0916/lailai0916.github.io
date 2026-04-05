@@ -565,6 +565,9 @@
     "message": "标签",
     "description": "The title of the tag list page"
   },
+  "home.new.scrollGuide": {
+    "message": "向下滚动"
+  },
   "home.topbanner.title": {
     "message": "Hello, I'm lailai"
   },
