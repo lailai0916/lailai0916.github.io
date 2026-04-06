@@ -391,6 +391,21 @@
 }
 
 @media (max-width: 480px) {
+  .cardNav {
+    flex-direction: row;
+    align-items: center;
+    min-height: auto;
+    gap: 1rem;
+  }
+
+  .cardNavArrow {
+    position: static;
+    transform: none;
+    margin-left: auto;
+  }
+}
+
+@media (max-width: 440px) {
   .bento {
     grid-template-columns: 1fr;
   }
@@ -402,17 +417,7 @@
     grid-column: span 1;
   }
 
-  .cardNav {
-    flex-direction: row;
-    align-items: center;
-    min-height: auto;
-    gap: 1rem;
-  }
-
   .cardNavArrow {
-    position: static;
     opacity: 1;
-    transform: none;
-    margin-left: auto;
   }
 }
