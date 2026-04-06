@@ -93,10 +93,10 @@ export default function Hero() {
     },
     {
       label: translate({
-        id: 'home.new.hero.tag.cst',
-        message: 'CST',
+        id: 'home.new.hero.tag.school',
+        message: 'Hangzhou No.2 High School',
       }),
-      icon: 'lucide:clock',
+      icon: 'lucide:graduation-cap',
     },
     {
       label: translate({
@@ -107,17 +107,17 @@ export default function Hero() {
     },
     {
       label: translate({
-        id: 'home.new.hero.tag.school',
-        message: 'Hangzhou No.2 High School',
-      }),
-      icon: 'lucide:graduation-cap',
-    },
-    {
-      label: translate({
         id: 'home.new.hero.tag.friendly',
         message: 'Friendly',
       }),
       icon: 'lucide:message-circle',
+    },
+    {
+      label: translate({
+        id: 'home.new.hero.tag.mbti',
+        message: 'INTJ',
+      }),
+      icon: 'lucide:fingerprint',
     },
   ];
   const identities = [
