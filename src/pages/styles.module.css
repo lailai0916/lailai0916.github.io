@@ -44,7 +44,6 @@
 }
 
 .scrollGuide:hover {
-  border-color: var(--ifm-color-primary);
   opacity: 1;
 }
 
