@@ -90,8 +90,7 @@ function SearchBar({
 // 获取网站图标
 function getFavicon(url: string): string | null {
   try {
-    const urlObj = new URL(url);
-    return `https://www.google.com/s2/favicons?sz=64&domain=${urlObj.hostname}`;
+    return `https://www.google.com/s2/favicons?sz=64&domain=${new URL(url).hostname}`;
   } catch {
     return null;
   }
