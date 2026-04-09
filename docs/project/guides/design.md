@@ -40,7 +40,7 @@ $$
 
 ## 文本
 
-- 文本应遵循 [lailai's Text Format Guide](text)。
+- 文本格式应遵循 [lailai's Text Format Guide](text)。
 - 小文字对比度不低于 $4.5:1$，大文字对比度不低于 $3:1$。
 - 不应孤字成行。
 - 不应大面积留白。
