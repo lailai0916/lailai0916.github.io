@@ -1,4 +1,5 @@
 import { Icon } from '@iconify/react';
+import Card from '@site/src/components/laikit/widget/Card';
 import styles from './styles.module.css';
 
 interface DataCardProps {
@@ -21,14 +22,16 @@ export default function DataCard(
   }
 
   return (
-    <div className={styles.statCard}>
-      <div className={styles.statIcon}>
-        <Icon icon={props.icon} width={20} height={20} />
+    <Card padding="1.5rem">
+      <div className={styles.statCard}>
+        <div className={styles.statIcon}>
+          <Icon icon={props.icon} width={20} height={20} />
+        </div>
+        <div className={styles.statContent}>
+          <div className={styles.statNumber}>{props.value}</div>
+          <div className={styles.statLabel}>{props.label}</div>
+        </div>
       </div>
-      <div className={styles.statContent}>
-        <div className={styles.statNumber}>{props.value}</div>
-        <div className={styles.statLabel}>{props.label}</div>
-      </div>
-    </div>
+    </Card>
   );
 }
