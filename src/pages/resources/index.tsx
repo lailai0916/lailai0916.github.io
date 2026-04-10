@@ -146,38 +146,33 @@ function ResourceCard({
       className={styles.resourceCard}
       title={resource.title}
     >
-      {/* <div> */}
-        <div className={styles.resourceCardIcon}>
-          {iconUrl && (
-            <img
-              src={iconUrl}
-              alt={resource.title}
-              className={styles.resourceCardImage}
-              onError={(e) => {
-                e.currentTarget.style.display = 'none';
-                const fallback = e.currentTarget
-                  .nextElementSibling as HTMLElement | null;
-                if (fallback) fallback.style.display = 'flex';
-              }}
-            />
+      <div className={styles.resourceCardIcon}>
+        {iconUrl && (
+          <img
+            src={iconUrl}
+            alt={resource.title}
+            className={styles.resourceCardImage}
+            onError={(e) => {
+              e.currentTarget.style.display = 'none';
+              const fallback = e.currentTarget
+                .nextElementSibling as HTMLElement | null;
+              if (fallback) fallback.style.display = 'flex';
+            }}
+          />
+        )}
+        <div
+          className={clsx(
+            styles.resourceCardFallback,
+            !iconUrl && styles.resourceCardFallbackVisible
           )}
-          <div
-            className={clsx(
-              styles.resourceCardFallback,
-              !iconUrl && styles.resourceCardFallbackVisible
-            )}
-          >
-            <Icon icon="lucide:globe" width={24} height={24} />
-          </div>
+        >
+          <Icon icon="lucide:globe" width={24} height={24} />
         </div>
-
-        <div className={styles.resourceCardBody}>
-          <h3 className={styles.resourceCardTitle}>{resource.title}</h3>
-          <p className={styles.resourceCardDescription}>
-            {resource.description}
-          </p>
-        </div>
-      {/* </div> */}
+      </div>
+      <div className={styles.resourceCardBody}>
+        <h3 className={styles.resourceCardTitle}>{resource.title}</h3>
+        <p className={styles.resourceCardDescription}>{resource.description}</p>
+      </div>
     </Link>
   );
 }
