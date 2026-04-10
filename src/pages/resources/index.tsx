@@ -4,6 +4,7 @@ import { Icon } from '@iconify/react';
 import clsx from 'clsx';
 import Layout from '@theme/Layout';
 
+import Card from '@site/src/components/laikit/widget/Card';
 import { PageTitle, PageHeader } from '@site/src/components/laikit/page';
 import DataCard from '@site/src/components/laikit/widget/DataCard';
 import IconText from '@site/src/components/laikit/widget/IconText';
@@ -39,16 +40,13 @@ function filterResourceCategories(
 ): ResourceCategoryItem[] {
   const query = searchQuery.toLowerCase().trim();
 
-  // 按分类过滤
   const filteredByCategory =
     activeCategory === 'all'
       ? [...categories]
       : categories.filter((cat) => cat.title === activeCategory);
 
-  // 如果没有搜索查询，直接返回
   if (!query) return filteredByCategory;
 
-  // 按搜索关键词过滤
   return filteredByCategory
     .map((category) => ({
       ...category,
@@ -62,7 +60,6 @@ function filterResourceCategories(
     .filter((category) => category.resources.length > 0);
 }
 
-// 搜索栏组件
 function SearchBar({
   value,
   onChange,
@@ -87,7 +84,6 @@ function SearchBar({
   );
 }
 
-// 获取网站图标
 function getFavicon(url: string): string | null {
   try {
     return `https://www.google.com/s2/favicons?sz=64&domain=${new URL(url).hostname}`;
@@ -96,7 +92,6 @@ function getFavicon(url: string): string | null {
   }
 }
 
-// 分类导航组件
 function CategoryNav({
   categories,
   activeCategory,
@@ -138,7 +133,6 @@ function CategoryNav({
   );
 }
 
-// 资源卡片组件
 function ResourceCard({
   resource,
 }: {
@@ -147,8 +141,12 @@ function ResourceCard({
   const iconUrl = getFavicon(resource.href);
 
   return (
-    <Link to={resource.href} className={styles.resourceCard}>
-      <div className={styles.resourceCardContent}>
+    <Link
+      to={resource.href}
+      className={styles.resourceCard}
+      title={resource.title}
+    >
+      {/* <div> */}
         <div className={styles.resourceCardIcon}>
           {iconUrl && (
             <img
@@ -158,7 +156,7 @@ function ResourceCard({
               onError={(e) => {
                 e.currentTarget.style.display = 'none';
                 const fallback = e.currentTarget
-                  .nextElementSibling as HTMLElement;
+                  .nextElementSibling as HTMLElement | null;
                 if (fallback) fallback.style.display = 'flex';
               }}
             />
@@ -172,20 +170,21 @@ function ResourceCard({
             <Icon icon="lucide:globe" width={24} height={24} />
           </div>
         </div>
+
         <div className={styles.resourceCardBody}>
           <h3 className={styles.resourceCardTitle}>{resource.title}</h3>
           <p className={styles.resourceCardDescription}>
             {resource.description}
           </p>
         </div>
-      </div>
+      {/* </div> */}
     </Link>
   );
 }
 
-// 分类区块组件
 function CategorySection({ category }: { category: ResourceCategoryItem }) {
   const { selectMessage } = usePluralForm();
+
   return (
     <section className={styles.categorySection}>
       <div className={styles.categoryHeader}>
@@ -205,6 +204,7 @@ function CategorySection({ category }: { category: ResourceCategoryItem }) {
           )}
         </div>
       </div>
+
       <div className={styles.resourceGrid}>
         {category.resources.map((resource) => (
           <ResourceCard key={resource.title} resource={resource} />
@@ -249,14 +249,17 @@ function ResourcesMain() {
   const filteredCategories = useMemo(() => {
     return filterResourceCategories(RESOURCE_LIST, activeCategory, searchQuery);
   }, [activeCategory, searchQuery]);
+
   return (
     <div className={styles.container}>
       <SearchBar value={searchQuery} onChange={setSearchQuery} />
+
       <CategoryNav
         categories={RESOURCE_LIST}
         activeCategory={activeCategory}
         onCategoryChange={setActiveCategory}
       />
+
       {filteredCategories.length > 0 ? (
         filteredCategories.map((category) => (
           <CategorySection key={category.title} category={category} />
