@@ -10,6 +10,12 @@ export interface ChangelogItem {
 
 export const CHANGELOG_LIST: ChangelogItem[] = [
   {
+    date: '2026-04-10',
+    type: 'changed',
+    content:
+      '网站更新至 <a href="https://docusaurus.io/blog/releases/3.10">Docusaurus v3.10</a>',
+  },
+  {
     date: '2026-04-02',
     type: 'changed',
     content: '主页新版布局',
