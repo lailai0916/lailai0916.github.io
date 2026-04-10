@@ -6,7 +6,7 @@ tags: [math]
 
 如何比较两个正实数 $x$ 和 $y$ 的 $x^y$ 和 $y^x$ 的大小？
 
-<!-- truncate -->
+{/* truncate */}
 
 ## 思想
 

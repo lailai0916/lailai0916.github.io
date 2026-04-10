@@ -6,7 +6,7 @@ tags: [math]
 
 为什么 $e$ 进制理论效率最高？
 
-<!-- truncate -->
+{/* truncate */}
 
 ## 参考资料
 

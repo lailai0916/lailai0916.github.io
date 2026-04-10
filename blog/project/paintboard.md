@@ -6,7 +6,7 @@ tags: [project]
 
 ![](https://cloud.lailai.one/f/RjsX/paintboard-header.png)
 
-<!-- truncate -->
+{/* truncate */}
 
 ## 参考资料
 

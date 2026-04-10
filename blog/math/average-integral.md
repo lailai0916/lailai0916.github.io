@@ -6,7 +6,7 @@ tags: [math]
 
 一些与均值有关的定积分函数。
 
-<!-- truncate -->
+{/* truncate */}
 
 ## 参考资料
 

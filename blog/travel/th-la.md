@@ -8,7 +8,7 @@ tags: [travel, record]
 
 2023 福建泉州，2024 广东潮汕，2025 马来西亚槟城，2026 泰国清迈。
 
-<!-- truncate -->
+{/* truncate */}
 
 ## 交通
 

@@ -6,7 +6,7 @@ tags: [misc]
 
 使用宏定义实现的 C++ 汉化包。
 
-<!-- truncate -->
+{/* truncate */}
 
 ## 通用
 

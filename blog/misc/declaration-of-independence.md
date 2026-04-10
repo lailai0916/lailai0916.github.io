@@ -6,7 +6,7 @@ tags: [misc, resource]
 
 《美国独立宣言》（United States Declaration of Independence）是北美洲十三个英属殖民地宣告自大不列颠王国独立，并宣明此举正当性之文告，为美国最重要的立国文书之一。
 
-<!-- truncate -->
+{/* truncate */}
 
 ## 参考资料
 

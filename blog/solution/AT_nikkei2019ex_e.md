@@ -6,7 +6,7 @@ tags: [solution, atcoder]
 
 <Solution pid="AT_nikkei2019ex_e" aid="437ulbdi" />
 
-<!-- truncate -->
+{/* truncate */}
 
 ## 解题思路
 

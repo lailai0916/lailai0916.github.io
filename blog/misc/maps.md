@@ -6,7 +6,7 @@ tags: [misc, resource]
 
 高清的世界地图和中国地图。
 
-<!-- truncate -->
+{/* truncate */}
 
 ## 参考资料
 

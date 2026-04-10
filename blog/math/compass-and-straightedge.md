@@ -6,7 +6,7 @@ tags: [math]
 
 尺规作图（Compass-and-straightedge Construction）是起源于古希腊的数学课题。只使用圆规和直尺，并且只准许使用有限次，来解决不同的平面几何作图题。
 
-<!-- truncate -->
+{/* truncate */}
 
 ## 参考资料
 

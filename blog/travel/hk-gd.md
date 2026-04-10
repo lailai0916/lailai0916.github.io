@@ -8,7 +8,7 @@ tags: [travel, record]
 
 本系列文章为「旅行记录」，更接近「日志」（Log）而非「游记」（Travelogue）。
 
-<!-- truncate -->
+{/* truncate */}
 
 ## 交通
 

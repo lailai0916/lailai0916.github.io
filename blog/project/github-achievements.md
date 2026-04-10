@@ -6,7 +6,7 @@ tags: [project]
 
 [GitHub](https://github.com) 个人主页中有一个 **Achievements** 板块，可以通过自动化脚本获取成就。
 
-<!-- truncate -->
+{/* truncate */}
 
 ## 参考资料
 

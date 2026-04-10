@@ -6,7 +6,7 @@ tags: [solution, atcoder]
 
 <Solution pid="AT_wupc2012_6" aid="mloeaze9" />
 
-<!-- truncate -->
+{/* truncate */}
 
 ## 题意简述
 

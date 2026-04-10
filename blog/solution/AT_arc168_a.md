@@ -6,7 +6,7 @@ tags: [solution, atcoder]
 
 <Solution pid="AT_arc168_a" aid="hm72ngsq" />
 
-<!-- truncate -->
+{/* truncate */}
 
 ## 解题思路
 

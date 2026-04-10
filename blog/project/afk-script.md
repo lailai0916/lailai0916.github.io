@@ -6,7 +6,7 @@ tags: [project]
 
 我的游戏挂机脚本，可执行简单的重复点击操作。
 
-<!-- truncate -->
+{/* truncate */}
 
 :::warning
 

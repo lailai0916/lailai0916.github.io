@@ -6,7 +6,7 @@ tags: [solution, atcoder]
 
 <Solution pid="AT_cpsco2019_s1_c" aid="7ag0p8ey" />
 
-<!-- truncate -->
+{/* truncate */}
 
 ## 题意简述
 

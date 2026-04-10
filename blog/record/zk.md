@@ -8,7 +8,7 @@ tags: [memory, record]
 
 本文发布于 2026 年 3 月 8 日，记录范围大致为 2025 年 2 月至 7 月。
 
-<!-- truncate -->
+{/* truncate */}
 
 ## 中考政策
 

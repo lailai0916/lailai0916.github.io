@@ -6,7 +6,7 @@ tags: [math]
 
 面向中学生的微积分入门指南。
 
-<!-- truncate -->
+{/* truncate */}
 
 ## 参考资料
 

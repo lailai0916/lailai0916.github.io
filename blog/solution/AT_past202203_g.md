@@ -6,7 +6,7 @@ tags: [solution, atcoder]
 
 <Solution pid="AT_past202203_g" aid="r7cpvq1g" />
 
-<!-- truncate -->
+{/* truncate */}
 
 ## 题意简述
 

@@ -6,6 +6,6 @@ tags: [misc]
 
 ![](https://cloud.lailai.one/f/wrhg/gimps.png)
 
-<!-- truncate -->
+{/* truncate */}
 
 [TODO]

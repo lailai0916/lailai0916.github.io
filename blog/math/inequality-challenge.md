@@ -6,7 +6,7 @@ tags: [math]
 
 网上一个不等式挑战闯关。
 
-<!-- truncate -->
+{/* truncate */}
 
 ## 题目
 

@@ -6,7 +6,7 @@ tags: [math, resource]
 
 一些数学常数的精确数据。
 
-<!-- truncate -->
+{/* truncate */}
 
 ## 参考资料
 

@@ -6,7 +6,7 @@ tags: [resource, travel]
 
 《美国国家地理杂志：一生必去的 50 个地方》中文翻译。
 
-<!-- truncate -->
+{/* truncate */}
 
 ## 参考资料
 

@@ -6,7 +6,7 @@ tags: [solution, atcoder]
 
 <Solution pid="AT_iroha2019_day2_c" aid="zwqdlgue" />
 
-<!-- truncate -->
+{/* truncate */}
 
 ## 解题思路
 
