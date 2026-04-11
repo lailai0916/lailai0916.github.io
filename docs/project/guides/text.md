@@ -133,7 +133,7 @@ title: lailai's Text Format Guide
   - **赋值** 应使用 `\to` 或 `\gets` 而非 `=`。
   - **取模** 应使用 `\bmod` 或 `\pmod` 而非 `%` 和 `\mod`。
   - **数列** 应使用 `a_i` 而非 `a[i]`。
-  - **整除** 应使用 `\lfloor\rfloor`。
+  - **向下取整** 应使用 `\lfloor\rfloor`，**向上取整** 应使用 `\lceil\rceil`。
   - **位运算** 应使用 `\operatorname{and}`、`\operatorname{or}`、`\operatorname{xor}`。
 - **文本** 应使用 `\text`，**字符串** 应使用 `\texttt`。
 - **变量名** 应使用 $1$ 个字母和上下标，不应使用多个字母。
