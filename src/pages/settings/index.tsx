@@ -1,6 +1,7 @@
 import React, { useState, useEffect, type ReactNode } from 'react';
 import clsx from 'clsx';
 import confetti from 'canvas-confetti';
+import Color from 'color';
 import { translate } from '@docusaurus/Translate';
 import Layout from '@theme/Layout';
 
@@ -152,7 +153,9 @@ function ColorGenerator() {
             <button
               key={color}
               className={styles.presetColorButton}
-              style={{ backgroundColor: color }}
+              style={{
+                background: `linear-gradient(to right, ${color} 0 50%, ${Color(color).mix(Color('#fff'), 0.3).hex()} 50% 100%)`,
+              }}
               onClick={() => updateColor(color)}
             />
           ))}
