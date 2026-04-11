@@ -68,7 +68,7 @@ $$
 
 - 棱柱：上下底面平行（且全等），各侧面都是四边形，侧面的公共边相互平行。
 
-- 棱柱分为直棱柱和**斜棱柱**（右图）。
+- 棱柱分为直棱柱和 **斜棱柱**（右图）。
 
 - 底面是 $n$ 边形，叫做 $n$ 棱柱。
 
@@ -226,12 +226,12 @@ $$
 
 三棱锥 $ P-ABC $ 中，点 $ P $ 在平面 $ ABC $ 中的射影为 $ O $：
 
-1. 若 $ PA=PB=PC $，则 $ O $ 是 $ \triangle ABC $ 的**外心**。
-2. 若 $ PA $, $ PB $, $ PC $ 与平面 $ ABC $ 所成角相等，则 $ O $ 是 $ \triangle ABC $ 的**外心**。
-3. 若 $ P $ 到 $ \triangle ABC $ 各边的距离相等，则 $ O $ 是 $ \triangle ABC $ 的**内心**。
-4. 若三侧面与底面所成的二面角相等，则 $ O $ 是 $ \triangle ABC $ 的**内心**。
-5. 若 $ PA \perp PB $, $ PA \perp PC $, $ PB \perp PC $，则 $ O $ 是 $ \triangle ABC $ 的**垂心**。
-6. 若 $ PA \perp BC $, $ PB \perp AC $, $ PC \perp AB $，则 $ O $ 是 $ \triangle ABC $ 的**垂心**。
+1. 若 $ PA=PB=PC $，则 $ O $ 是 $ \triangle ABC $ 的 **外心**。
+2. 若 $ PA $, $ PB $, $ PC $ 与平面 $ ABC $ 所成角相等，则 $ O $ 是 $ \triangle ABC $ 的 **外心**。
+3. 若 $ P $ 到 $ \triangle ABC $ 各边的距离相等，则 $ O $ 是 $ \triangle ABC $ 的 **内心**。
+4. 若三侧面与底面所成的二面角相等，则 $ O $ 是 $ \triangle ABC $ 的 **内心**。
+5. 若 $ PA \perp PB $, $ PA \perp PC $, $ PB \perp PC $，则 $ O $ 是 $ \triangle ABC $ 的 **垂心**。
+6. 若 $ PA \perp BC $, $ PB \perp AC $, $ PC \perp AB $，则 $ O $ 是 $ \triangle ABC $ 的 **垂心**。
 
 ### 补形补体
 

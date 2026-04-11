@@ -38,7 +38,7 @@ bool operator<(const Node &rhs) const
 
 ### 大括号
 
-- 大括号应单独成行，简短语句通常 **写在同一行或省略大括号**。
+- 大括号应单独成行，简短语句通常 **写在同一行** 或 **省略大括号**。
 
 ```cpp
 for(int i=1;i<=n;i++)
@@ -102,7 +102,7 @@ freopen("problem.in","r",stdin);
 freopen("problem.out","w",stdout);
 ```
 
-- 若 I/O 数据量较大，应添加 **关闭同步和优化读写**。
+- 若 I/O 数据量较大，应添加 **关闭同步** 和 **优化读写**。
 
 ```cpp
 ios::sync_with_stdio(false);

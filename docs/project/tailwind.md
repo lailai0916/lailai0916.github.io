@@ -24,22 +24,24 @@ title: Tailwind CSS 弃用计划
 
 ### 核心重灾区清单
 
-| 文件路径 | 类名统计 | 复杂度 | 状态 |
-| :--- | :--- | :--- | :--- |
-| `src/components/laikit/section/constants.tsx` | 70 次 | ⭐⭐⭐⭐⭐ | 待重构为 CSS 变量 |
-| `src/pages/_components/Blog/index.tsx` | 69 次 | ⭐⭐⭐⭐⭐ | 待迁移至 CSS Modules |
-| `src/pages/_components/Countdown/index.tsx` | 35 次 | ⭐⭐⭐⭐ | 待迁移至 CSS Modules |
-| `src/components/laikit/section/BaseCard.tsx` | 32 次 | ⭐⭐⭐⭐ | 待迁移至 CSS Modules |
-| `src/pages/_components/Exploration/index.tsx` | 24 次 | ⭐⭐⭐ | 待迁移 |
+| 文件路径                                      | 类名统计 | 复杂度     | 状态                 |
+| :-------------------------------------------- | :------- | :--------- | :------------------- |
+| `src/components/laikit/section/constants.tsx` | 70 次    | ⭐⭐⭐⭐⭐ | 待重构为 CSS 变量    |
+| `src/pages/_components/Blog/index.tsx`        | 69 次    | ⭐⭐⭐⭐⭐ | 待迁移至 CSS Modules |
+| `src/pages/_components/Countdown/index.tsx`   | 35 次    | ⭐⭐⭐⭐   | 待迁移至 CSS Modules |
+| `src/components/laikit/section/BaseCard.tsx`  | 32 次    | ⭐⭐⭐⭐   | 待迁移至 CSS Modules |
+| `src/pages/_components/Exploration/index.tsx` | 24 次    | ⭐⭐⭐     | 待迁移               |
 
 ---
 
 ## 🛠️ 迁移策略
 
 ### 1. 样式抽象化 (Constants -> CSS Variables)
+
 不再在 JS 常量中直接定义 Tailwind 类名，而是定义语义化的 CSS 变量或类名。
 
 **Before (`constants.tsx`):**
+
 ```tsx
 export const STATUS_COLORS = {
   GREEN: '--tw-text-green-600 dark:--tw-text-green-400 --tw-bg-green-50 ...',
@@ -48,6 +50,7 @@ export const STATUS_COLORS = {
 
 **After (推荐):**
 在 `custom.css` 中定义：
+
 ```css
 .status-badge-green {
   color: var(--ifm-color-success);
@@ -56,14 +59,17 @@ export const STATUS_COLORS = {
 ```
 
 ### 2. 组件样式隔离 (Inline -> CSS Modules)
+
 对于复杂组件，建立对应的 `.module.css` 文件，将原子类合并为语义化的类名。
 
 **Before:**
+
 ```tsx
 <div className="--tw-flex --tw-items-center --tw-gap-3 --tw-p-4">...</div>
 ```
 
 **After:**
+
 ```css
 /* Component.module.css */
 .container {
@@ -79,20 +85,24 @@ export const STATUS_COLORS = {
 ## 📝 执行路线图 (Roadmap)
 
 ### 第一阶段：核心颜色系统重构 (Priority: High)
+
 - [ ] 重写 `src/components/laikit/section/constants.tsx`。
 - [ ] 在 `src/css/custom.css` 中提取状态颜色（Green, Orange, Violet 等）的语义类。
 - [ ] 确保 `STATUS_COLORS` 的调用方（如 `quotes.tsx`, `projects.tsx`）在不修改代码的情况下完成视觉迁移。
 
 ### 第二阶段：高频复杂组件迁移
+
 - [ ] **Blog**: 提取所有卡片和列表样式。
 - [ ] **Countdown**: 转换环形进度条和文字排版样式。
 - [ ] **BaseCard**: 统一 Laikit 的基础交互样式。
 
 ### 第三阶段：全组件扫尾
+
 - [ ] 迁移 `Exploration`, `GridLayout`, `Quote`, `Project`, `SectionHeader` 等。
 - [ ] 处理动画效果：将 `tailwind.config.ts` 中的 `marquee` 动画转为 CSS `@keyframes`。
 
 ### 第四阶段：环境清理 (Final Step)
+
 - [ ] 移除 `src/css/custom.css` 中的 `@tailwind` 指令。
 - [ ] 删除 `tailwind.config.ts`。
 - [ ] 在 `docusaurus.config.ts` 中移除 Tailwind 插件配置。
@@ -101,6 +111,7 @@ export const STATUS_COLORS = {
 ---
 
 ## ⚠️ 注意事项
+
 1. **深色模式适配**：Tailwind 的 `dark:` 前缀需转换为 CSS Modules 中的 `[data-theme='dark'] .className`。
 2. **Infima 变量优先**：优先使用 `var(--ifm-*)` 变量以保持站点视觉一致性。
 3. **响应式断点**：
