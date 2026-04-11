@@ -149,12 +149,17 @@ export const RESOURCE_LIST: ResourceCategoryItem[] = [
         description: 'CDN、DNS 与边缘安全网络',
       },
       {
+        title: 'GoDaddy',
+        href: 'https://www.godaddy.com',
+        description: '域名注册与管理平台',
+      },
+      {
         title: 'Namecheap',
         href: 'https://www.namecheap.com',
         description: '域名注册与管理平台',
       },
       {
-        title: 'Namesilo',
+        title: 'NameSilo',
         href: 'https://www.namesilo.com',
         description: '域名注册与管理平台',
       },
