@@ -7,6 +7,8 @@ title: 细胞膜融合
 ## 参考资料
 
 - [用desmos模拟细胞的分裂与融合 - bilibili](https://www.bilibili.com/video/BV1kr42187eE)
+- [卡西尼卵形线 - 维基百科](https://zh.wikipedia.org/wiki/卡西尼卵形线)
+- [伯努利双纽线 - 维基百科](https://zh.wikipedia.org/wiki/伯努利双纽线)
 
 ## 项目链接
 
@@ -14,7 +16,7 @@ title: 细胞膜融合
 
 ## 原理
 
-计算到三点的距离乘积为定值的点集：
+计算到三个定点的距离乘积为定值的点集：
 
 $$
 \sqrt{(x-x_1)^2+(y-y_1)^2}\cdot\sqrt{(x-x_2)^2+(y-y_2)^2}\cdot\sqrt{(x-x_3)^2+(y-y_3)^2}=r^3
