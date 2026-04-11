@@ -27,7 +27,7 @@
   width: 100%;
   max-width: 1200px;
   margin: auto;
-  padding: 2rem;
+  padding: 2rem 2rem 4rem;
 
   animation: fadeIn 0.3s ease-out;
 }
