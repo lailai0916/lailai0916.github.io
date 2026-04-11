@@ -42,8 +42,8 @@ title: lailai's Text Format Guide
 - Markdown 文件应以 **YAML front matter** 开头，包含以下字段：
   - `title`：**文本标题**，不应使用一级标题。
   - `description`：**内容概述**，例如「本文将介绍……」「本文为……」。
-- Markdown 和 $\LaTeX$ 文本应使用 $2$ 个 <kbd>Space</kbd> 缩进，空行不应缩进。
 - 文件应以 $1$ 个 **空行** 结尾。
+- Markdown 和 $\LaTeX$ 文本应使用 $2$ 个 <kbd>Space</kbd> 缩进，空行不应缩进。
 - 不应连续使用 $2$ 个空行。
 
 ## 空格
@@ -111,10 +111,10 @@ title: lailai's Text Format Guide
 - 不应跳过标题等级。
 - 不应使用相同的上下级标题。
 - 不应孤立标题编号，即上级标题中不应仅有 $1$ 个下级标题。
-- 表示 **加粗** 应使用 $2$ 个 **星号**（`**`），不应使用引号。
-- 表示 **斜体** 应使用 $1$ 个 **下划线**（`_`），避免使用斜体。
-- 表示 **无序列表** 应使用 **连字符**（`-`）。
-- 行间代码应标记 **代码语言**，纯文本应标记为 `text`。
+- **加粗** 应使用 $2$ 个 **星号**（`**`），不应使用引号。
+- **斜体** 应使用 $1$ 个 **下划线**（`_`），避免使用斜体。
+- **无序列表** 应使用 **连字符**（`-`）。
+- **行间代码** 应标记 **代码语言**，纯文本应标记为 `text`。
 - 代码风格应遵循 [lailai's Code Style Guide](code)。
 - 链接文本应具有 **描述性**，相对路径应省略前缀 `./`。
 - 图片应添加 **替代文本**。
@@ -155,7 +155,7 @@ title: lailai's Text Format Guide
 - 本章仅适用于 [lailai's Home](https://lailai.one)。
 - 资源应使用 [lailai's Cloud](https://cloud.lailai.one)。
 - **尚未撰写或完成的内容** 应使用 `[TODO]` 标记。
-- 表示 **告示** 应使用 $3$ 个 **冒号**（`:::`）和类型标签。
+- **告示** 应使用 $3$ 个 **冒号**（`:::`）和类型标签。
 - **lailai** 始终应排印为小写，即使它出现在句首、段落开头或标题中。**lailai** should always be typeset with all lowercase letters, even when it is the first word in a sentence, paragraph, or title.
 - **lailai** 为不翻译内容，始终以英语排印，即使它出现在非英语的语言文本中也是如此。**lailai** is untranslatable content and should always be set in English, even when it appears within text in a language other than English.
 - 包含 **lailai's** 的短语为不翻译内容，始终以英语排印，后面每个单词应首字母大写，例如「lailai's Home」「lailai's Text Format Guide」。
