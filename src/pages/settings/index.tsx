@@ -109,11 +109,13 @@ function ThemeSettings() {
 function ColorGenerator() {
   const presetColors = [
     '#1d9bf0',
-    '#7856ff',
-    '#f91880',
-    '#ff7a00',
-    '#ffd400',
-    '#00ba7c',
+    '#7f52f6',
+    '#e557bd',
+    '#df5634',
+    '#f1a255',
+    '#f7cb5d',
+    '#83d37f',
+    '#7dd5cc',
   ];
   const { colorMode } = useColorMode();
   const { colorState, inputColor, updateColor, resetColors } = useThemeColors(

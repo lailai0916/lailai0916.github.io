@@ -129,8 +129,6 @@
 }
 
 .cardNav {
-  --nav-accent: #1d9bf0;
-  --nav-accent-rgb: 29, 155, 240;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
