@@ -6,8 +6,8 @@ import { useColorMode } from '@docusaurus/theme-common';
 import SectionHeader from '@site/src/components/laikit/section/SectionHeader';
 import SectionContainer from '@site/src/components/laikit/section/SectionContainer1';
 import { TRAVEL_LIST } from '@site/src/data/travel';
-import { getTravelCountryCodes } from '@site/src/utils/travel';
 import {
+  getTravelCountryCodes,
   getTravelPolygons,
   type TravelPolygon,
 } from '@site/src/utils/travelGlobe';

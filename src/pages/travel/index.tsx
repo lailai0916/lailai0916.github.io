@@ -6,7 +6,7 @@ import TravelTimeline from '@site/src/pages/travel/_components/Timeline';
 import TravelMap from '@site/src/pages/travel/_components/Map';
 import { translate } from '@docusaurus/Translate';
 import { TRAVEL_LIST } from '@site/src/data/travel';
-import { getTravelCountryCodes } from '@site/src/utils/travel';
+import { getTravelCountryCodes } from '@site/src/utils/travelGlobe';
 
 const TITLE = translate({
   id: 'pages.travel.title',
