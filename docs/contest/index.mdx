@@ -10,8 +10,9 @@ title: 竞赛
 
 ## 倒计时
 
-export const today = new Date().toISOString().split("T")[0];
-export const daysUntil = (target) => Math.ceil((new Date(target) - new Date()) / 86400000);
+export const today = new Date().toISOString().split('T')[0];
+export const daysUntil = (target) =>
+  Math.ceil((new Date(target) - new Date()) / 86400000);
 
 今天是 **{today}**，距离：
 
