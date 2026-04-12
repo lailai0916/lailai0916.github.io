@@ -62,7 +62,7 @@ function GetCode({ id }: { id: string }) {
 function GetSolution({ id }: { id: string }) {
   let mdxModule: any;
   try {
-    mdxModule = require(`@site/blog/solution/${id}`);
+    mdxModule = require(`@site/blog/solution/${id}.mdx`);
   } catch {
     return <></>;
   }
