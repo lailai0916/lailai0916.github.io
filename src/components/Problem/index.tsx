@@ -83,7 +83,7 @@ function GetSolution({ id }: { id: string }) {
 export default function Problem({ id }: { id: string }) {
   let mdxModule: any;
   try {
-    mdxModule = require(`@site/docs/contest/problems/${id}/index`);
+    mdxModule = require(`@site/docs/contest/problems/${id}`);
   } catch {
     return (
       <Admonition type="warning">
