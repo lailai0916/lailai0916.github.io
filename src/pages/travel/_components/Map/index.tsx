@@ -67,35 +67,26 @@ function TravelGlobeClient({ Globe }: { Globe: GlobeComponent }) {
     () => getTravelPolygons(visitedCountries),
     [visitedCountries]
   );
+
   const colors = useMemo(
     () => ({
       ocean: colorMode === 'dark' ? '#2d3440' : '#dfe4ea',
       visited: readCssVar('--ifm-color-primary', '#1d9bf0'),
       unvisited: colorMode === 'dark' ? '#66707d' : '#b8c0cb',
-      stroke: colorMode === 'dark' ? 'rgba(255,255,255,0.4)' : 'rgba(0,0,0,0.15)',
+      // 边界线颜色：深色模式用浅灰，浅色模式用深灰
+      stroke:
+        colorMode === 'dark' ? 'rgba(255,255,255,0.6)' : 'rgba(0,0,0,0.2)',
     }),
     [colorMode]
   );
+
+  // 海洋材质保持自定义以确保背景通透
   const globeMaterial = useMemo(
     () =>
       new MeshBasicMaterial({
         color: colors.ocean,
       }),
     [colors.ocean]
-  );
-  const visitedPolygonMaterial = useMemo(
-    () =>
-      new MeshBasicMaterial({
-        color: colors.visited,
-      }),
-    [colors.visited]
-  );
-  const unvisitedPolygonMaterial = useMemo(
-    () =>
-      new MeshBasicMaterial({
-        color: colors.unvisited,
-      }),
-    [colors.unvisited]
   );
 
   useEffect(() => {
@@ -145,18 +136,19 @@ function TravelGlobeClient({ Globe }: { Globe: GlobeComponent }) {
           backgroundColor="rgba(0,0,0,0)"
           showGlobe
           globeMaterial={globeMaterial}
+          // --- 文档推荐配置：陆地、侧边与边界线 ---
           polygonsData={polygons}
-          polygonCapMaterial={(polygon) =>
-            (polygon as TravelPolygon).visited
-              ? visitedPolygonMaterial
-              : unvisitedPolygonMaterial
+          // 使用 Color Accessors 而非 Material，以允许库渲染边界线
+          polygonCapColor={(d: any) =>
+            d.visited ? colors.visited : colors.unvisited
           }
-          polygonSideMaterial={(polygon) =>
-            (polygon as TravelPolygon).visited
-              ? visitedPolygonMaterial
-              : unvisitedPolygonMaterial
+          polygonSideColor={(d: any) =>
+            d.visited ? colors.visited : colors.unvisited
           }
-          polygonStrokeColor={false}
+          // 开启内置边界线
+          polygonStrokeColor={() => colors.stroke}
+          polygonStrokeWidth={0.5}
+          // 保持物理高度
           polygonAltitude={0.01}
           polygonsTransitionDuration={180}
           polygonLabel={(polygon) => {
