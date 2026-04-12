@@ -156,7 +156,7 @@ function TravelGlobeClient({ Globe }: { Globe: GlobeComponent }) {
               : unvisitedPolygonMaterial
           }
           polygonStrokeColor={false}
-          polygonAltitude={0.01}
+          polygonAltitude={0.005}
           polygonsTransitionDuration={180}
           polygonLabel={(polygon) => {
             const item = polygon as CustomGlobePolygon;

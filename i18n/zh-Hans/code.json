@@ -513,6 +513,10 @@
     "message": "结果",
     "description": "The result label of the live codeblocks"
   },
+  "theme.Playground.buttons.reset": {
+    "message": "重置",
+    "description": "The reset button label for live code blocks"
+  },
   "theme.blog.post.plurals": {
     "message": "{count} 篇文章",
     "description": "Pluralized label for \"{count} posts\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
