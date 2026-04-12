@@ -12,6 +12,11 @@ export const CHANGELOG_LIST: ChangelogItem[] = [
   {
     date: '2026-04-12',
     type: 'changed',
+    content: '文档扩展名改至 <code>.mdx</code>',
+  },
+  {
+    date: '2026-04-12',
+    type: 'changed',
     content: '旅行 <b>Travel Map</b> 组件',
   },
   {
