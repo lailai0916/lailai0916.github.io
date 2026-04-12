@@ -9,6 +9,10 @@ import Card from '@site/src/components/laikit/widget/Card';
 import IconText from '@site/src/components/laikit/widget/IconText';
 import Switch from '@site/src/components/laikit/widget/Switch';
 import DataCard from '@site/src/components/laikit/widget/DataCard';
+import {
+  SETTINGS_EXPERIMENTAL_DEFAULT,
+  SETTINGS_PRESET_COLOR_LIST,
+} from '@site/src/data/settings';
 import { useColorMode } from '@docusaurus/theme-common';
 import { usePersistentState } from '@site/src/hooks/usePersistentState';
 import { getAdjustedColors } from '@site/src/utils/colorUtils';
@@ -107,16 +111,6 @@ function ThemeSettings() {
 }
 
 function ColorGenerator() {
-  const presetColors = [
-    '#1d9bf0',
-    '#7f52f6',
-    '#e557bd',
-    '#df5634',
-    '#f1a255',
-    '#f7cb5d',
-    '#83d37f',
-    '#7dd5cc',
-  ];
   const { colorMode } = useColorMode();
   const { colorState, inputColor, updateColor, resetColors } = useThemeColors(
     colorMode === 'dark'
@@ -151,7 +145,7 @@ function ColorGenerator() {
           />
         </div>
         <div className={styles.presetColors}>
-          {presetColors.map((color) => (
+          {SETTINGS_PRESET_COLOR_LIST.map((color) => (
             <button
               key={color}
               className={styles.presetColorButton}
@@ -262,12 +256,14 @@ function ExperimentalFeatures() {
       }),
     },
   ];
-  const [toggles, setToggles] = usePersistentState('settings-experimental', {
-    originalLayout: false,
-    debugMode: false,
-  });
+  const [toggles, setToggles] = usePersistentState<
+    typeof SETTINGS_EXPERIMENTAL_DEFAULT
+  >('settings-experimental', SETTINGS_EXPERIMENTAL_DEFAULT);
 
-  const handleToggle = (key: keyof typeof toggles, checked: boolean) => {
+  const handleToggle = (
+    key: keyof typeof SETTINGS_EXPERIMENTAL_DEFAULT,
+    checked: boolean
+  ) => {
     setToggles((prev) => {
       const newState = { ...prev, [key]: checked };
 
