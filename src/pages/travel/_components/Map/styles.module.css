@@ -98,7 +98,7 @@
   background: var(--ifm-color-emphasis-200);
 }
 
-@media (max-width: 600px) {
+@media (max-width: 576px) {
   .mapLegend {
     flex-direction: column;
     gap: 0.75rem;
