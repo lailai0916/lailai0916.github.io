@@ -25,7 +25,11 @@ export default function LinkCard({
 }: LinkCardProps) {
   return (
     <Link {...linkProps} className={clsx(styles.linkCard, linkClassName)}>
-      <Card className={className} padding={padding} style={style}>
+      <Card
+        className={clsx(styles.surface, className)}
+        padding={padding}
+        style={style}
+      >
         {children}
       </Card>
     </Link>

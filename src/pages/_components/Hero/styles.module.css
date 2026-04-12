@@ -150,8 +150,8 @@
   border-radius: 20px;
   background: linear-gradient(
     135deg,
-    rgba(var(--nav-accent-rgb), 0.1),
-    rgba(var(--nav-accent-rgb), 0.05)
+    rgba(var(--link-card-accent-rgb), 0.1),
+    rgba(var(--link-card-accent-rgb), 0.05)
   );
 }
 
@@ -163,31 +163,27 @@
   font-size: 1.5rem;
   position: relative;
   z-index: 1;
-  color: var(--nav-accent);
-}
-
-.cardNav:hover {
-  border-color: rgba(var(--nav-accent-rgb), 0.5);
+  color: var(--link-card-accent);
 }
 
 .cardNav1 {
-  --nav-accent: #f59e0b;
-  --nav-accent-rgb: 245, 158, 11;
+  --link-card-accent: #f59e0b;
+  --link-card-accent-rgb: 245, 158, 11;
 }
 
 .cardNav2 {
-  --nav-accent: #10b981;
-  --nav-accent-rgb: 16, 185, 129;
+  --link-card-accent: #10b981;
+  --link-card-accent-rgb: 16, 185, 129;
 }
 
 .cardNav3 {
-  --nav-accent: #8b5cf6;
-  --nav-accent-rgb: 139, 92, 246;
+  --link-card-accent: #8b5cf6;
+  --link-card-accent-rgb: 139, 92, 246;
 }
 
 .cardNav4 {
-  --nav-accent: #f43f5e;
-  --nav-accent-rgb: 244, 63, 94;
+  --link-card-accent: #f43f5e;
+  --link-card-accent-rgb: 244, 63, 94;
 }
 
 .cardNavTitle {
