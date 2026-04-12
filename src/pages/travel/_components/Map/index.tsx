@@ -72,6 +72,7 @@ function TravelGlobeClient({ Globe }: { Globe: GlobeComponent }) {
       ocean: colorMode === 'dark' ? '#2d3440' : '#dfe4ea',
       visited: readCssVar('--ifm-color-primary', '#1d9bf0'),
       unvisited: colorMode === 'dark' ? '#66707d' : '#b8c0cb',
+      stroke: colorMode === 'dark' ? 'rgba(255,255,255,0.4)' : 'rgba(0,0,0,0.15)',
     }),
     [colorMode]
   );
@@ -156,7 +157,7 @@ function TravelGlobeClient({ Globe }: { Globe: GlobeComponent }) {
               : unvisitedPolygonMaterial
           }
           polygonStrokeColor={false}
-          polygonAltitude={0.005}
+          polygonAltitude={0.01}
           polygonsTransitionDuration={180}
           polygonLabel={(polygon) => {
             const item = polygon as CustomGlobePolygon;
