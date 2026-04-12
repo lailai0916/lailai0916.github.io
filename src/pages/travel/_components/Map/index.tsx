@@ -59,9 +59,9 @@ function TravelGlobeClient({ Globe }: { Globe: GlobeComponent }) {
   );
   const colors = useMemo(
     () => ({
-      ocean: '#dfe4ea',
+      ocean: colorMode === 'dark' ? '#2d3440' : '#dfe4ea',
       visited: readCssVar('--ifm-color-primary', '#1d9bf0'),
-      unvisited: '#b8c0cb',
+      unvisited: colorMode === 'dark' ? '#66707d' : '#b8c0cb',
     }),
     [colorMode]
   );
