@@ -81,7 +81,13 @@
 
 .roleCursor {
   color: var(--ifm-color-emphasis-600);
-  margin-left: 0.04rem;
+  display: inline-block;
+  width: 0.08em;
+  height: 1em;
+  margin-left: 0.08rem;
+  vertical-align: -0.12em;
+  background: currentColor;
+  border-radius: 999px;
   animation: blink 1s steps(1, end) infinite;
 }
 

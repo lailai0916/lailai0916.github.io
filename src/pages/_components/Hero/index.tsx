@@ -194,7 +194,7 @@ export default function Hero() {
               <p className={styles.role}>
                 {rolePrefix}
                 <span className={styles.roleTyping}>{identity}</span>
-                <span className={styles.roleCursor}>|</span>
+                <span className={styles.roleCursor} aria-hidden="true" />
               </p>
             </div>
           </div>
