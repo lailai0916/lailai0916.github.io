@@ -1,5 +1,6 @@
 import React, { useEffect, useMemo, useRef, useState } from 'react';
 import BrowserOnly from '@docusaurus/BrowserOnly';
+import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import { translate } from '@docusaurus/Translate';
 import { useColorMode } from '@docusaurus/theme-common';
 import SectionHeader from '@site/src/components/laikit/section/SectionHeader';
@@ -17,6 +18,14 @@ import { MeshBasicMaterial } from 'three';
 type GlobeComponent = React.ComponentType<
   GlobeProps & { ref?: React.MutableRefObject<GlobeMethods | undefined> }
 >;
+
+interface CustomGlobePolygon extends TravelPolygon {
+  properties: {
+    name: string;
+    name_zh?: string;
+    name_en?: string;
+  };
+}
 
 const TITLE = translate({
   id: 'pages.travel.map.title',
@@ -44,6 +53,7 @@ function readCssVar(name: string, fallback: string) {
 }
 
 function TravelGlobeClient({ Globe }: { Globe: GlobeComponent }) {
+  const { i18n } = useDocusaurusContext();
   const { colorMode } = useColorMode();
   const containerRef = useRef<HTMLDivElement | null>(null);
   const globeRef = useRef<GlobeMethods | undefined>(undefined);
@@ -149,8 +159,12 @@ function TravelGlobeClient({ Globe }: { Globe: GlobeComponent }) {
           polygonAltitude={0.01}
           polygonsTransitionDuration={180}
           polygonLabel={(polygon) => {
-            const item = polygon as TravelPolygon;
-            return `${item.properties.name}<br />${item.visited ? VISITED_LABEL : NOT_VISITED_LABEL}`;
+            const item = polygon as CustomGlobePolygon;
+            const isZh = i18n.currentLocale === 'zh-Hans';
+            const localizedName = isZh
+              ? item.properties.name_zh || item.properties.name
+              : item.properties.name_en || item.properties.name;
+            return `${localizedName}<br />${item.visited ? VISITED_LABEL : NOT_VISITED_LABEL}`;
           }}
           onGlobeReady={handleReady}
         />
