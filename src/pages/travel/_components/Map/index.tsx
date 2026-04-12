@@ -121,7 +121,7 @@ function TravelGlobeClient({ Globe }: { Globe: GlobeComponent }) {
     controls.enableDamping = true;
     controls.dampingFactor = 0.08;
 
-    globe.pointOfView({ lat: 20, lng: 108, altitude: 2 }, 0);
+    globe.pointOfView({ lat: 20, lng: 110, altitude: 2 }, 0);
   };
 
   return (
