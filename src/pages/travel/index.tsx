@@ -6,7 +6,7 @@ import TravelTimeline from '@site/src/pages/travel/_components/Timeline';
 import TravelMap from '@site/src/pages/travel/_components/Map';
 import { translate } from '@docusaurus/Translate';
 import { TRAVEL_LIST } from '@site/src/data/travel';
-import { iso2FromText } from '@site/src/pages/travel/_components/Map';
+import { getTravelCountryCodes } from '@site/src/utils/travel';
 
 const TITLE = translate({
   id: 'pages.travel.title',
@@ -22,9 +22,7 @@ const MODIFICATION = translate({
 });
 
 function TravelHeader() {
-  const countryCount = new Set(
-    TRAVEL_LIST.flatMap((i) => iso2FromText(i.cardTitle))
-  ).size;
+  const countryCount = new Set(getTravelCountryCodes(TRAVEL_LIST)).size;
   const yearCount =
     new Date().getFullYear() - parseInt(TRAVEL_LIST[0].title.substring(0, 4));
 
