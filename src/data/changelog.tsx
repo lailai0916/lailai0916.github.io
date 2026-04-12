@@ -12,7 +12,7 @@ export const CHANGELOG_LIST: ChangelogItem[] = [
   {
     date: '2026-04-12',
     type: 'changed',
-    content: '文档扩展名改至 <code>.mdx</code>',
+    content: '文档扩展名改为 <code>.mdx</code>',
   },
   {
     date: '2026-04-12',
@@ -137,7 +137,7 @@ export const CHANGELOG_LIST: ChangelogItem[] = [
   {
     date: '2025-06-23',
     type: 'changed',
-    content: '默认语言更改至 <b>English</b>',
+    content: '默认语言更改为 <b>English</b>',
   },
   {
     date: '2025-06-23',
