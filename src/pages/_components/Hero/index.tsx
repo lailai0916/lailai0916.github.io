@@ -25,20 +25,20 @@ function useTypewriter(words: string[]) {
     if (!deleting && text.length < current.length) {
       timer = setTimeout(() => {
         setText(current.slice(0, text.length + 1));
-      }, 110);
+      }, 120);
     } else if (!deleting && text.length === current.length) {
       timer = setTimeout(() => {
         setDeleting(true);
-      }, 1100);
+      }, 1200);
     } else if (deleting && text.length > 0) {
       timer = setTimeout(() => {
         setText(current.slice(0, text.length - 1));
-      }, 70);
+      }, 80);
     } else {
       timer = setTimeout(() => {
         setDeleting(false);
         setIndex((prev) => (prev + 1) % words.length);
-      }, 220);
+      }, 240);
     }
 
     return () => clearTimeout(timer);
