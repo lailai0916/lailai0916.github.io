@@ -1,0 +1,10 @@
+.linkCard {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+}
+
+.linkCard:hover {
+  color: inherit;
+  text-decoration: none;
+}

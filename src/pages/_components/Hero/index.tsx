@@ -8,6 +8,7 @@ import { Icon } from '@iconify/react';
 import { COMMUNITY_LIST } from '@site/src/data/community';
 import { getRecentBlogPosts } from '@site/src/utils/blogData';
 import Card from '@site/src/components/laikit/widget/Card';
+import LinkCard from '@site/src/components/laikit/widget/LinkCard';
 import styles from './styles.module.css';
 
 function useTypewriter(words: string[]) {
@@ -208,19 +209,19 @@ export default function Hero() {
           </div>
         </Card>
         {navItems.map((item, index) => (
-          <Link key={item.href} to={item.href} className={styles.cardNavLink}>
-            <Card
-              className={clsx(styles.cardNav, styles[`cardNav${index + 1}`])}
-              padding="1.25rem"
-            >
-              <Icon icon={item.icon} className={styles.cardNavIcon} />
-              <span className={styles.cardNavTitle}>{item.title}</span>
-              <Icon
-                icon="lucide:arrow-up-right"
-                className={styles.cardNavArrow}
-              />
-            </Card>
-          </Link>
+          <LinkCard
+            key={item.href}
+            to={item.href}
+            className={clsx(styles.cardNav, styles[`cardNav${index + 1}`])}
+            padding="1.25rem"
+          >
+            <Icon icon={item.icon} className={styles.cardNavIcon} />
+            <span className={styles.cardNavTitle}>{item.title}</span>
+            <Icon
+              icon="lucide:arrow-up-right"
+              className={styles.cardNavArrow}
+            />
+          </LinkCard>
         ))}
         <Card className={styles.cardSocial} padding="1.25rem">
           <span className={styles.cardSocialLabel}>{connectLabel}</span>

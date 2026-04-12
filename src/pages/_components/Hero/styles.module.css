@@ -128,12 +128,6 @@
 }
 
 /* ========== Navigation Cards ========== */
-.cardNavLink {
-  text-decoration: none;
-  color: inherit;
-  display: block;
-}
-
 .cardNav {
   display: flex;
   flex-direction: column;
