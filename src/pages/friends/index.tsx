@@ -2,7 +2,7 @@ import React, { type ReactNode, useState } from 'react';
 import Layout from '@theme/Layout';
 import { PageTitle, PageHeader } from '@site/src/components/laikit/page';
 import DataCard from '@site/src/components/laikit/widget/DataCard';
-import Link from '@docusaurus/Link';
+import LinkCard from '@site/src/components/laikit/widget/LinkCard';
 import { Icon } from '@iconify/react';
 import { FriendItem, FRIEND_LIST } from '@site/src/data/friends';
 import { translate } from '@docusaurus/Translate';
@@ -26,32 +26,35 @@ function FriendCard({ friend }: { friend: FriendItem }) {
   const [imageError, setImageError] = useState(false);
 
   return (
-    <Link href={friend.href} className={styles.friendCard}>
-      <div className={styles.friendCardContent}>
-        <div className={styles.friendCardHeader}>
-          <div className={styles.friendCardAvatar}>
-            {!imageError && friend.avatar ? (
-              <img
-                src={friend.avatar}
-                alt={friend.title}
-                className={styles.friendCardImage}
-                onError={() => setImageError(true)}
-              />
-            ) : (
-              <div className={styles.friendCardFallback}>
-                <Icon icon="lucide:user" width={24} height={24} />
-              </div>
-            )}
-          </div>
-          <div className={styles.friendCardInfo}>
-            <h3 className={styles.friendCardTitle}>{friend.title}</h3>
-            <p className={styles.friendCardDescription}>
-              {friend.description ?? friend.href}
-            </p>
+    <LinkCard
+      href={friend.href}
+      linkClassName={styles.friendCard}
+      className={styles.friendCardContent}
+      padding="1.5rem"
+    >
+      <div className={styles.friendCardHeader}>
+        <div className={styles.friendCardAvatar}>
+          {!imageError && friend.avatar ? (
+            <img
+              src={friend.avatar}
+              alt={friend.title}
+              className={styles.friendCardImage}
+              onError={() => setImageError(true)}
+            />
+          ) : (
+            <div className={styles.friendCardFallback}>
+              <Icon icon="lucide:user" width={24} height={24} />
+            </div>
+          )}
+        </div>
+        <div className={styles.friendCardInfo}>
+          <h3 className={styles.friendCardTitle}>{friend.title}</h3>
+          <p className={styles.friendCardDescription}>
+            {friend.description ?? friend.href}
+          </p>
           </div>
         </div>
-      </div>
-    </Link>
+    </LinkCard>
   );
 }
 

@@ -18,40 +18,14 @@
    ========================================================================== */
 
 .friendCard {
-  display: block;
-  text-decoration: none;
-  color: inherit;
-  border-radius: 16px;
-  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-}
-
-.friendCard:hover {
-  text-decoration: none;
-  color: inherit;
-  transform: translateY(-4px);
-}
-
-.friendCard:focus {
-  text-decoration: none;
-  color: inherit;
-  box-shadow: 0 0 0 3px var(--ifm-color-primary-lightest);
+  height: 100%;
 }
 
 .friendCardContent {
-  background: var(--ifm-card-background-color);
-  border: 2px solid var(--ifm-color-emphasis-200);
-  border-radius: 16px;
-  padding: 1.5rem;
   height: 100%;
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-}
-
-.friendCard:hover .friendCardContent {
-  border-color: var(--ifm-color-primary);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
 }
 
 .friendCardHeader {
@@ -149,15 +123,6 @@
 /* ==========================================================================
    7. Dark Mode
    ========================================================================== */
-
-html[data-theme='dark'] .friendCardContent {
-  background: var(--ifm-card-background-color);
-  border-color: var(--ifm-color-emphasis-300);
-}
-
-html[data-theme='dark'] .friendCard:hover .friendCardContent {
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
-}
 
 html[data-theme='dark'] .friendCardFallback {
   background: var(--ifm-color-emphasis-200);
