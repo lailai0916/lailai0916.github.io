@@ -23,6 +23,18 @@ export default function LinkCard({
   linkClassName,
   ...linkProps
 }: LinkCardProps) {
+  if (!linkProps.to && !linkProps.href) {
+    return (
+      <Card
+        className={clsx(styles.surface, className, linkClassName)}
+        padding={padding}
+        style={style}
+      >
+        {children}
+      </Card>
+    );
+  }
+
   return (
     <Link {...linkProps} className={clsx(styles.linkCard, linkClassName)}>
       <Card
