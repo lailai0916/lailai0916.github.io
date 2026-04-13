@@ -58,6 +58,7 @@ function TravelGlobeClient({ Globe }: { Globe: GlobeComponent }) {
   const containerRef = useRef<HTMLDivElement | null>(null);
   const globeRef = useRef<GlobeMethods | undefined>(undefined);
   const [size, setSize] = useState({ width: 720, height: 500 });
+  const [isGlobeReady, setIsGlobeReady] = useState(false);
 
   const visitedCountries = useMemo(
     () => new Set(getTravelCountryCodes(TRAVEL_LIST)),
@@ -109,6 +110,34 @@ function TravelGlobeClient({ Globe }: { Globe: GlobeComponent }) {
     return () => observer.disconnect();
   }, []);
 
+  useEffect(() => {
+    if (!isGlobeReady) return;
+
+    const globe = globeRef.current;
+    const canvas = globe?.renderer()?.domElement;
+    if (!globe || !canvas) return;
+
+    const handlePointerDownCapture = (event: PointerEvent) => {
+      const rect = canvas.getBoundingClientRect();
+      if (!rect.width || !rect.height) return;
+
+      const x = ((event.clientX - rect.left) / rect.width) * size.width;
+      const y = ((event.clientY - rect.top) / rect.height) * size.height;
+
+      if (globe.toGlobeCoords(x, y)) return;
+
+      event.preventDefault();
+      event.stopPropagation();
+      event.stopImmediatePropagation();
+    };
+
+    canvas.addEventListener('pointerdown', handlePointerDownCapture, true);
+
+    return () => {
+      canvas.removeEventListener('pointerdown', handlePointerDownCapture, true);
+    };
+  }, [isGlobeReady, size.height, size.width]);
+
   const handleReady = () => {
     const globe = globeRef.current;
     if (!globe) return;
@@ -122,6 +151,7 @@ function TravelGlobeClient({ Globe }: { Globe: GlobeComponent }) {
     controls.dampingFactor = 0.08;
 
     globe.pointOfView({ lat: 20, lng: 110, altitude: 2 }, 0);
+    setIsGlobeReady(true);
   };
 
   return (
