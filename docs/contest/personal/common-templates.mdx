@@ -67,13 +67,32 @@ int main()
 }
 ```
 
-### 文件
+### 联赛
 
-联赛文件模板：[name.zip](https://cloud.lailai.one/s/DOT3)
+联赛文件结构模板：[name.zip](https://cloud.lailai.one/s/DOT3)
+
+```bash
+name/
+├── A/
+│   └── A.cpp
+├── B/
+│   └── B.cpp
+├── C/
+│   └── C.cpp
+└── D/
+    └── D.cpp
+```
 
 ## 读写
 
 详见 [读写优化](../contest/io)。
+
+### 文件读写
+
+```cpp
+freopen("problem.in","r",stdin);
+freopen("problem.out","w",stdout);
+```
 
 ### 关闭同步 & 解除关联
 
@@ -150,13 +169,6 @@ namespace IO
 
 </TabItem>
 </Tabs>
-
-### 文件读写
-
-```cpp
-freopen("problem.in","r",stdin);
-freopen("problem.out","w",stdout);
-```
 
 ### cout 格式化
 
