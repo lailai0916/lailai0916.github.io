@@ -3,6 +3,7 @@ import clsx from 'clsx';
 import Link from '@docusaurus/Link';
 import { Icon } from '@iconify/react';
 import type { BlogPaginatedMetadata } from '@docusaurus/plugin-content-blog';
+import type { Props as BlogListPageProps } from '@theme/BlogListPage';
 import BlogScaffold from './Scaffold';
 import { BlogCard, useAnalytics } from './Components';
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -12,7 +13,28 @@ import IconText from '@site/src/components/laikit/widget/IconText';
 import MDXContent from '@theme/MDXContent';
 import styles from './styles.module.css';
 
-function Badge({ icon, label }) {
+type PostListItem = BlogListPageProps['items'][number];
+
+interface BadgeProps {
+  icon: string;
+  label: string;
+}
+
+interface IconDataProps {
+  icon: string;
+  children: React.ReactNode;
+}
+
+interface PostCardProps {
+  item: PostListItem;
+}
+
+type PaginationItem = {
+  label: string;
+  to?: string;
+};
+
+function Badge({ icon, label }: BadgeProps) {
   return (
     <span className={clsx(styles.tagChip, styles.postInlineTag)}>
       <Icon icon={icon} />
@@ -21,7 +43,7 @@ function Badge({ icon, label }) {
   );
 }
 
-function IconData({ icon, children }) {
+function IconData({ icon, children }: IconDataProps) {
   return (
     <>
       <span className={styles.dot}>|</span>
@@ -32,7 +54,7 @@ function IconData({ icon, children }) {
   );
 }
 
-function PostCard({ item }) {
+function PostCard({ item }: PostCardProps) {
   const { content: MDXPageContent } = item;
   const { metadata, assets, frontMatter } = MDXPageContent;
   const image = assets.image ?? frontMatter.image;
@@ -105,7 +127,7 @@ function PostCard({ item }) {
                 message: '{viewCount} views',
               },
               {
-                viewCount: analytics.pageviews,
+                viewCount: analytics.pageviews ?? '–',
               }
             )}
           </IconData>
@@ -156,7 +178,7 @@ export function Paginator({ meta }: { meta: BlogPaginatedMetadata }) {
   const pages = Array.from(
     new Set([1, mid - 1, mid, mid + 1, totalPages])
   ).filter((p) => p >= 1 && p <= totalPages);
-  const items: { label: string; to?: string }[] = [];
+  const items: PaginationItem[] = [];
 
   items.push({ label: '←', to: meta.previousPage });
   items.push({ label: `${pages[0]}`, to: firstBase });
@@ -168,17 +190,23 @@ export function Paginator({ meta }: { meta: BlogPaginatedMetadata }) {
 
   return (
     <nav className={styles.paginator}>
-      {items.map((item, idx) => (
-        <Link
-          key={idx}
-          to={item.to}
-          className={clsx(styles.pageLink, {
-            [styles.pageLinkActive]: item.label === String(page),
-          })}
-        >
-          {item.label}
-        </Link>
-      ))}
+      {items.map((item, idx) =>
+        item.to ? (
+          <Link
+            key={idx}
+            to={item.to}
+            className={clsx(styles.pageLink, {
+              [styles.pageLinkActive]: item.label === String(page),
+            })}
+          >
+            {item.label}
+          </Link>
+        ) : (
+          <span key={idx} className={styles.pageLink}>
+            {item.label}
+          </span>
+        )
+      )}
     </nav>
   );
 }
@@ -192,7 +220,7 @@ export default function PostsListLayout({
 }: {
   title: string;
   description?: string;
-  items: readonly any[];
+  items: readonly PostListItem[];
   meta: BlogPaginatedMetadata;
   topSlot?: React.ReactNode;
 }) {

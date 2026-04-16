@@ -12,6 +12,36 @@ export interface ProcessedBlogPost {
   permalink: string;
 }
 
+export interface BlogListItem {
+  title?: string;
+  date?: string;
+  permalink?: string;
+  metadata?: {
+    title?: string;
+    date?: string;
+    permalink?: string;
+  };
+}
+
+export interface BlogAuthorSummary {
+  key: string;
+  name?: string;
+  title?: string;
+  imageURL?: string;
+}
+
+export interface BlogTagSummary {
+  label?: string;
+  permalink?: string;
+}
+
+export interface BlogPostMetadataSummary {
+  permalink: string;
+  tags: BlogTagSummary[];
+  authors?: BlogAuthorSummary[];
+  readingTime?: number;
+}
+
 type JsonModule<T> = { default?: T } | T | undefined;
 
 const PINNED_TAG_PATH_SUFFIX = '/blog/tags/pinned';
@@ -39,9 +69,10 @@ function globJsonModules<T>(pattern: string): T[] {
     return [];
   }
   const modules = glob(pattern, { eager: true });
-  return Object.values(modules)
-    .map((mod) => resolveJsonModule<T>(mod) ?? null)
-    .filter((value): value is T => value !== null);
+  const resolvedModules = Object.values(modules).map((mod) =>
+    resolveJsonModule<T>(mod)
+  );
+  return resolvedModules.filter((value): value is T => value !== null);
 }
 
 function normalizePathname(input: string): string {
@@ -71,8 +102,8 @@ function isPinnedTag(
  * 汇总所有分页中的博客列表（更完整统计）
  * 通过 require.context 收集 default 目录下所有 blog-post-list-prop-*.json
  */
-export function getAllBlogItems(): any[] {
-  const collected: any[] = [];
+export function getAllBlogItems(): BlogListItem[] {
+  const collected: BlogListItem[] = [];
   try {
     const ctx = (require as any).context(
       '@generated/docusaurus-plugin-content-blog/default',
@@ -82,7 +113,7 @@ export function getAllBlogItems(): any[] {
     ctx.keys().forEach((key: string) => {
       try {
         const mod = ctx(key);
-        const resolved = resolveJsonModule<any>(mod);
+        const resolved = resolveJsonModule<{ items?: BlogListItem[] }>(mod);
         const items = resolved?.items ?? [];
         if (Array.isArray(items)) collected.push(...items);
       } catch {
@@ -91,7 +122,7 @@ export function getAllBlogItems(): any[] {
     });
   } catch {
     // context 不可用时（如非 Webpack/Rspack 环境），尝试使用 import.meta.glob
-    const modules = globJsonModules<any>(
+    const modules = globJsonModules<{ items?: BlogListItem[] }>(
       '@generated/docusaurus-plugin-content-blog/default/blog-post-list-prop-*.json'
     );
     if (modules.length) {
@@ -102,7 +133,10 @@ export function getAllBlogItems(): any[] {
         }
       });
     } else {
-      const data = require('@generated/docusaurus-plugin-content-blog/default/blog-post-list-prop-default.json');
+      const data =
+        require('@generated/docusaurus-plugin-content-blog/default/blog-post-list-prop-default.json') as {
+          items?: BlogListItem[];
+        };
       if (data?.items) collected.push(...data.items);
     }
   }
@@ -120,20 +154,20 @@ export function getAllBlogItems(): any[] {
  * 读取所有博文的 metadata（包含 tags），通过 ~blog 别名读取编译期生成的数据。
  * 这是官方插件在 routes 构建阶段以 `createData(hash).json` 形式写入的 BlogPostMetadata。
  */
-export function getAllPostMetadata(): any[] {
-  const list: any[] = [];
+export function getAllPostMetadata(): BlogPostMetadataSummary[] {
+  const list: BlogPostMetadataSummary[] = [];
   try {
     const ctx = (require as any).context('~blog/default', false, /\.json$/);
     ctx.keys().forEach((key: string) => {
       const mod = ctx(key);
-      const data = resolveJsonModule<any>(mod);
+      const data = resolveJsonModule<BlogPostMetadataSummary>(mod);
       if (data && data.permalink && Array.isArray(data.tags)) {
         list.push(data);
       }
     });
   } catch {
     // context 不可用时，使用 import.meta.glob 作为兼容实现
-    const modules = globJsonModules<any>(
+    const modules = globJsonModules<BlogPostMetadataSummary>(
       '@generated/docusaurus-plugin-content-blog/default/site-blog-*.json'
     );
     modules.forEach((data) => {
@@ -150,7 +184,7 @@ export function getRecentBlogPosts(maxCount: number = 4): ProcessedBlogPost[] {
 
   // 获取文章的完整元数据（包含标签信息）
   const allMetadata = getAllPostMetadata();
-  const metadataMap = new Map<string, any>();
+  const metadataMap = new Map<string, BlogPostMetadataSummary>();
   allMetadata.forEach((meta) => {
     if (meta.permalink) {
       metadataMap.set(meta.permalink, meta);
@@ -158,10 +192,10 @@ export function getRecentBlogPosts(maxCount: number = 4): ProcessedBlogPost[] {
   });
 
   const postsWithMetadata = items
-    .map((item: any) => {
+    .map((item) => {
       const permalink = item.permalink ?? item.metadata?.permalink;
-      const metadata = metadataMap.get(permalink);
-      const tags = metadata?.tags || [];
+      const metadata = permalink ? metadataMap.get(permalink) : undefined;
+      const tags = metadata?.tags ?? [];
 
       return {
         title: item.title ?? item.metadata?.title,

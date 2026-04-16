@@ -18,25 +18,29 @@ import {
 } from './Components';
 import styles from './styles.module.css';
 
+type PopularTagItem = ChipItem & {
+  count: number;
+};
+
 function AuthorCard() {
   const author = getAllPostMetadata()
-    .flatMap((m) => m.authors)
+    .flatMap((m) => m.authors ?? [])
     .find((a) => a.key === 'lailai');
 
   if (!author) return null;
-  const authorImageUrl = useBaseUrl(author.imageURL);
+  const authorImageUrl = useBaseUrl(author.imageURL ?? '/img/logo.png');
 
   return (
     <BlogCard>
       <div className={styles.authorCard}>
         <img
           src={authorImageUrl}
-          alt={author.name}
+          alt={author.name ?? author.key}
           width={96}
           height={96}
           className={styles.authorAvatar}
         />
-        <div className={styles.authorName}>{author.name}</div>
+        <div className={styles.authorName}>{author.name ?? author.key}</div>
         <div className={styles.authorDesc}>{author.title}</div>
       </div>
     </BlogCard>
@@ -171,7 +175,7 @@ function StatsCard() {
   const { i18n } = useDocusaurusContext();
   const { analytics, status } = useAnalytics();
   const readingMinutes = Math.round(
-    getAllPostMetadata().reduce((sum, meta) => sum + meta.readingTime, 0)
+    getAllPostMetadata().reduce((sum, meta) => sum + (meta.readingTime ?? 0), 0)
   );
   const statsItems = [
     {
@@ -235,9 +239,13 @@ function StatsCard() {
 }
 
 function TagsCard() {
-  const map = new Map<string, ChipItem>();
+  const map = new Map<string, PopularTagItem>();
   getAllPostMetadata().forEach((meta) => {
     meta.tags.forEach((tag) => {
+      if (!tag.label || !tag.permalink) {
+        return;
+      }
+
       const prev = map.get(tag.label) ?? {
         to: tag.permalink,
         label: tag.label,

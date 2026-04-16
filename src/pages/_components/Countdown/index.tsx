@@ -18,7 +18,13 @@ const DESCRIPTION = translate(
   { event: EVENT }
 );
 
-const TIME_UNITS = [
+type CountdownUnitKey = 'days' | 'hours' | 'minutes' | 'seconds';
+
+const TIME_UNITS: Array<{
+  key: CountdownUnitKey;
+  total: number;
+  label: string;
+}> = [
   {
     key: 'days',
     total: 366,

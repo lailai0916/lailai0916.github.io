@@ -16,11 +16,19 @@ export default function BlogAuthorsListPage({ authors }: Props): ReactNode {
     <BlogScaffold title={TITLE} description={DESCRIPTION}>
       <BlogCard title={TITLE}>
         <TagChipList
-          items={authors.map((author) => ({
-            to: author.page?.permalink,
-            label: author.name,
-            count: author.count,
-          }))}
+          items={authors.flatMap((author) => {
+            if (!author.page?.permalink) {
+              return [];
+            }
+
+            return [
+              {
+                to: author.page.permalink,
+                label: author.name ?? author.key,
+                count: author.count,
+              },
+            ];
+          })}
         />
       </BlogCard>
     </BlogScaffold>

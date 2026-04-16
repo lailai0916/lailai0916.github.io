@@ -3,7 +3,12 @@ import Link from '@docusaurus/Link';
 import Translate from '@docusaurus/Translate';
 import styles from '@site/src/pages/_components/TopBanner/styles.module.css';
 
-export function MDTitle({ title, description }) {
+interface MDTitleProps {
+  title: string;
+  description?: string;
+}
+
+export function MDTitle({ title, description }: MDTitleProps) {
   return (
     <section className="margin-top--lg margin-bottom--lg text--center">
       <Heading as="h1">

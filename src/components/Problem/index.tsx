@@ -8,11 +8,25 @@ import Admonition from '@theme/Admonition';
 import { translate } from '@docusaurus/Translate';
 
 declare const require: any;
+type RawCodeModule = { default: string };
+type RawCodeContext = {
+  keys: () => string[];
+  (key: string): RawCodeModule;
+};
+type ProblemFrontMatter = {
+  title?: string;
+  link?: string;
+};
+type ProblemMdxModule = {
+  default: React.ComponentType;
+  frontMatter?: ProblemFrontMatter;
+};
+
 const ctx = require.context(
   '!!raw-loader!@site/docs/contest/problems',
   true,
   /\.cpp$/
-);
+) as RawCodeContext;
 
 function GetCode({ id }: { id: string }) {
   const formatTitle = (p: string) =>
@@ -21,15 +35,20 @@ function GetCode({ id }: { id: string }) {
       .replace(/\.cpp$/, '')
       .replace(/_/g, ' ');
 
-  const codes = useMemo(() => {
+  const codes = useMemo<Array<{ title: string; code: string }>>(() => {
     return ctx
       .keys()
-      .filter((p) => p.includes(`/${id}/`))
-      .map((p) => ({
+      .filter((p: string) => p.includes(`/${id}/`))
+      .map((p: string) => ({
         title: formatTitle(p),
         code: ctx(p).default,
       }))
-      .sort((a, b) => a.title.localeCompare(b.title));
+      .sort(
+        (
+          a: { title: string; code: string },
+          b: { title: string; code: string }
+        ) => a.title.localeCompare(b.title)
+      );
   }, [id]);
 
   if (codes.length === 0) return <></>;
@@ -60,9 +79,11 @@ function GetCode({ id }: { id: string }) {
 }
 
 function GetSolution({ id }: { id: string }) {
-  let mdxModule: any;
+  let mdxModule: { default: React.ComponentType };
   try {
-    mdxModule = require(`@site/blog/solution/${id}.mdx`);
+    mdxModule = require(`@site/blog/solution/${id}.mdx`) as {
+      default: React.ComponentType;
+    };
   } catch {
     return <></>;
   }
@@ -81,9 +102,11 @@ function GetSolution({ id }: { id: string }) {
 }
 
 export default function Problem({ id }: { id: string }) {
-  let mdxModule: any;
+  let mdxModule: ProblemMdxModule;
   try {
-    mdxModule = require(`@site/docs/contest/problems/${id}/index.mdx`);
+    mdxModule = require(
+      `@site/docs/contest/problems/${id}/index.mdx`
+    ) as ProblemMdxModule;
   } catch {
     return (
       <Admonition type="warning">
@@ -98,7 +121,7 @@ export default function Problem({ id }: { id: string }) {
     );
   }
   const { default: MDX, frontMatter } = mdxModule;
-  const { title = id, link } = frontMatter;
+  const { title = id, link } = frontMatter ?? {};
 
   return (
     <Admonition

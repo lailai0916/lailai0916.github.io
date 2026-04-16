@@ -20,7 +20,7 @@ export default function IconText({
         icon={icon}
         width={size}
         height={size}
-        className={colorMode === 'theme' && styles.iconTheme}
+        className={colorMode === 'theme' ? styles.iconTheme : undefined}
       />
       <span>{children}</span>
     </span>

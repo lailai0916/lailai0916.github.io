@@ -34,7 +34,14 @@ const MODIFICATION = translate({
   message: 'Personalized <b>Settings</b>',
 });
 
-function SettingCard({ title, description, icon, children }) {
+interface SettingCardProps {
+  title: string;
+  description: string;
+  icon: string;
+  children: ReactNode;
+}
+
+function SettingCard({ title, description, icon, children }: SettingCardProps) {
   return (
     <Card padding="1.5rem">
       <div className={styles.cardHeader}>

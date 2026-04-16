@@ -7,7 +7,7 @@ export default function BlogAuthorsPostsPage(props: Props): ReactNode {
 
   return (
     <PostsListLayout
-      title={author.name}
+      title={author.name ?? author.key}
       description={author.title}
       items={items}
       meta={listMetadata}
