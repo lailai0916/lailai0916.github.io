@@ -13,11 +13,18 @@ import {
 } from '@site/src/utils/travelGlobe';
 import styles from './styles.module.css';
 import type { GlobeMethods, GlobeProps } from 'react-globe.gl';
-import { MeshBasicMaterial } from 'three';
 
 type GlobeComponent = React.ComponentType<
   GlobeProps & { ref?: React.MutableRefObject<GlobeMethods | undefined> }
 >;
+type GlobeMaterial = NonNullable<GlobeProps['globeMaterial']>;
+type MeshBasicMaterialCtor = new (parameters: {
+  color: string;
+}) => GlobeMaterial;
+
+const { MeshBasicMaterial } = require('three') as {
+  MeshBasicMaterial: MeshBasicMaterialCtor;
+};
 
 interface CustomGlobePolygon extends TravelPolygon {
   properties: {
@@ -64,8 +71,8 @@ function TravelGlobeClient({ Globe }: { Globe: GlobeComponent }) {
     () => new Set(getTravelCountryCodes(TRAVEL_LIST)),
     []
   );
-  const polygons = useMemo(
-    () => getTravelPolygons(visitedCountries),
+  const polygons = useMemo<CustomGlobePolygon[]>(
+    () => getTravelPolygons(visitedCountries) as CustomGlobePolygon[],
     [visitedCountries]
   );
 
@@ -80,7 +87,7 @@ function TravelGlobeClient({ Globe }: { Globe: GlobeComponent }) {
     [colorMode]
   );
 
-  const globeMaterial = useMemo(
+  const globeMaterial = useMemo<GlobeMaterial>(
     () =>
       new MeshBasicMaterial({
         color: colors.ocean,
@@ -164,17 +171,18 @@ function TravelGlobeClient({ Globe }: { Globe: GlobeComponent }) {
           backgroundColor="rgba(0,0,0,0)"
           showGlobe
           globeMaterial={globeMaterial}
-          // 核心修改：使用内置颜色属性，不再使用 Material 对象
           polygonsData={polygons}
-          polygonCapColor={(d: any) =>
-            d.visited ? colors.visited : colors.unvisited
+          polygonCapColor={(polygon) =>
+            (polygon as CustomGlobePolygon).visited
+              ? colors.visited
+              : colors.unvisited
           }
-          polygonSideColor={(d: any) =>
-            d.visited ? colors.visited : colors.unvisited
+          polygonSideColor={(polygon) =>
+            (polygon as CustomGlobePolygon).visited
+              ? colors.visited
+              : colors.unvisited
           }
-          // 启用内置边界线
           polygonStrokeColor={() => colors.stroke}
-          polygonStrokeWidth={0.5}
           polygonAltitude={0.01}
           polygonsTransitionDuration={180}
           polygonLabel={(polygon) => {
