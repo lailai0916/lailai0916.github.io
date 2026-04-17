@@ -1,0 +1,90 @@
+---
+title: P2508 [HAOI2008] 圆上的整点
+date: 2026-04-15T00:09
+tags: [solution, luogu]
+---
+
+<Solution pid="P2508" aid="0a77vs7f" />
+
+{/* truncate */}
+
+## 参考资料
+
+- [Fermat's theorem on sums of two squares - Wikipedia](https://en.wikipedia.org/wiki/Fermat%27s_theorem_on_sums_of_two_squares)
+- [【官方双语】隐藏在素数规律中的π - bilibili](https://www.bilibili.com/video/av12131743)
+
+## 题意简述
+
+求以下方程的整数解个数：
+
+$$
+x^2+y^2=r^2
+$$
+
+## 基础知识
+
+**费马平方和定理**（Fermat's theorem on sums of two squares）表明：奇素数 $p$ 能表示为两个平方数之和，当且仅当 $p\equiv 1\pmod 4$。
+
+若：
+
+$$
+n=2^a\prod p_i^{\alpha_i}\prod q_j^{\beta_j}
+$$
+
+则 $n$ 的两平方和表示数为：
+
+$$
+4\prod(\alpha_i+1)
+$$
+
+其中 $p_i\equiv 1\pmod 4,q_j\equiv 3\pmod 4$，且所有 $\beta_j$ 均为偶数。
+
+## 解题思路
+
+本题即求 $r^2$ 的两平方和表示数，设：
+
+$$
+r=2^a\prod p_i^{k_i}\prod q_j^{m_j}
+$$
+
+则：
+
+$$
+r^2=2^{2a}\prod p_i^{2k_i}\prod q_j^{2m_j}
+$$
+
+由于已经是平方，所有 $q_j\equiv 3\pmod 4$ 的指数均为偶数，故答案为：
+
+$$
+4\prod(2k_i+1)
+$$
+
+因此只需要分解 $r$，统计所有 $4k+1$ 型质因子的指数即可。
+
+时间复杂度为 $O(\sqrt r)$。
+
+## 参考代码
+
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+	ios::sync_with_stdio(false);
+	cin.tie(nullptr);
+	int r;
+	cin>>r;
+	int ans=4;
+	for(int i=2;i*i<=r;i++)
+	{
+		if(r%i)continue;
+		int k=0;
+		while(r%i==0){r/=i;k++;}
+		if(i%4==1)ans*=k*2+1;
+	}
+	if(r>1&&r%4==1)ans*=3;
+	cout<<ans<<'\n';
+	return 0;
+}
+```
