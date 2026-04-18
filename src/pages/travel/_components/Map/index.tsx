@@ -153,7 +153,7 @@ function TravelGlobeClient({ Globe }: { Globe: GlobeComponent }) {
 
     const controls = globe.controls();
     controls.autoRotate = true;
-    controls.autoRotateSpeed = 0.4;
+    controls.autoRotateSpeed = 0.5;
     controls.enablePan = false;
     controls.enableZoom = false;
     controls.enableDamping = true;
