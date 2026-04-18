@@ -1,0 +1,44 @@
+.sectionOuter {
+  contain: content;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+}
+
+.sectionInner {
+  width: 100%;
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 4rem auto;
+  padding: 0 1rem;
+}
+
+.header {
+  width: 100%;
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+.title {
+  margin: 0 0 1rem;
+  font-size: 2.25rem;
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+.description {
+  max-width: 48rem;
+  margin: 0 auto;
+  font-size: 1.125rem;
+  line-height: 1.625;
+}
+
+@media (min-width: 1024px) {
+  .description {
+    font-size: 1.25rem;
+  }
+}

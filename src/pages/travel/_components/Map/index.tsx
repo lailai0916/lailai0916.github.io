@@ -3,14 +3,16 @@ import BrowserOnly from '@docusaurus/BrowserOnly';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import { translate } from '@docusaurus/Translate';
 import { useColorMode } from '@docusaurus/theme-common';
-import SectionHeader from '@site/src/components/laikit/section/SectionHeader';
-import SectionContainer from '@site/src/components/laikit/section/SectionContainer1';
 import { TRAVEL_LIST } from '@site/src/data/travel';
 import {
   getTravelCountryCodes,
   getTravelPolygons,
   type TravelPolygon,
 } from '@site/src/utils/travelGlobe';
+import {
+  TravelSection,
+  TravelSectionHeader,
+} from '@site/src/pages/travel/_components/Section';
 import styles from './styles.module.css';
 import type { GlobeMethods, GlobeProps } from 'react-globe.gl';
 
@@ -202,14 +204,14 @@ function TravelGlobeClient({ Globe }: { Globe: GlobeComponent }) {
 
 export default function TravelMap() {
   return (
-    <SectionContainer>
-      <SectionHeader title={TITLE} description={DESCRIPTION} />
+    <TravelSection>
+      <TravelSectionHeader title={TITLE} description={DESCRIPTION} />
       <BrowserOnly>
         {() => {
           const Globe = require('react-globe.gl').default as GlobeComponent;
           return <TravelGlobeClient Globe={Globe} />;
         }}
       </BrowserOnly>
-    </SectionContainer>
+    </TravelSection>
   );
 }

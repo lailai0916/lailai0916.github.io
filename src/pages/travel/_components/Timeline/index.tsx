@@ -3,10 +3,12 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import { Chrono } from 'react-chrono';
 import BrowserOnly from '@docusaurus/BrowserOnly';
 import LinkCard from '@site/src/components/laikit/widget/LinkCard';
-import { TRAVEL_LIST, type TravelItem } from '@site/src/data/travel';
-import SectionHeader from '@site/src/components/laikit/section/SectionHeader';
-import SectionContainer from '@site/src/components/laikit/section/SectionContainer1';
 import { translate } from '@docusaurus/Translate';
+import { TRAVEL_LIST, type TravelItem } from '@site/src/data/travel';
+import {
+  TravelSection,
+  TravelSectionHeader,
+} from '@site/src/pages/travel/_components/Section';
 import styles from './styles.module.css';
 
 const TIMELINE_CONFIG = {
@@ -107,8 +109,8 @@ export default function TravelTimeline() {
   );
 
   return (
-    <SectionContainer>
-      <SectionHeader title={TITLE} description={DESCRIPTION} />
+    <TravelSection>
+      <TravelSectionHeader title={TITLE} description={DESCRIPTION} />
       <BrowserOnly>
         {() => (
           <div className={styles.wrapper}>
@@ -129,6 +131,6 @@ export default function TravelTimeline() {
           </div>
         )}
       </BrowserOnly>
-    </SectionContainer>
+    </TravelSection>
   );
 }
