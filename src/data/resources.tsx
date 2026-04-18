@@ -47,14 +47,14 @@ export const RESOURCE_LIST: ResourceCategoryItem[] = [
         description: '多模态 AI 助手',
       },
       {
-        title: 'Grok',
-        href: 'https://grok.com',
-        description: '实时信息检索型 AI 助手',
-      },
-      {
         title: 'Claude',
         href: 'https://claude.ai',
         description: '通用对话式 AI 助手',
+      },
+      {
+        title: 'Grok',
+        href: 'https://grok.com',
+        description: '实时信息检索型 AI 助手',
       },
       {
         title: 'DeepSeek',
