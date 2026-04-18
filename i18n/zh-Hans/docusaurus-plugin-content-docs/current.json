@@ -235,13 +235,13 @@
     "message": "推荐",
     "description": "The label for category '推荐' in sidebar 'sidebar2'"
   },
-  "sidebar.sidebar3.category.AI Lab": {
-    "message": "AI Lab",
-    "description": "The label for category 'AI Lab' in sidebar 'sidebar3'"
+  "sidebar.sidebar3.category.lailai's AI Lab": {
+    "message": "lailai's AI Lab",
+    "description": "The label for category 'lailai's AI Lab' in sidebar 'sidebar3'"
   },
-  "sidebar.sidebar3.category.AI Lab.link.generated-index.description": {
-    "message": "本章为 AI 制作的小项目。",
-    "description": "The generated-index page description for category 'AI Lab' in sidebar 'sidebar3'"
+  "sidebar.sidebar3.category.lailai's AI Lab.link.generated-index.description": {
+    "message": "本章为使用 AI 制作的项目。",
+    "description": "The generated-index page description for category 'lailai's AI Lab' in sidebar 'sidebar3'"
   },
   "sidebar.sidebar3.category.Terminal": {
     "message": "Terminal",

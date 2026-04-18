@@ -550,10 +550,10 @@ const sidebars: SidebarsConfig = {
     'project/hangzhou-highschool-map',
     {
       type: 'category',
-      label: 'AI Lab',
+      label: "lailai's AI Lab",
       link: {
         type: 'generated-index',
-        description: '本章为 AI 制作的小项目。',
+        description: '本章为使用 AI 制作的项目。',
       },
       items: ['project/ai/sun-path-atlas', 'project/ai/hydrocarbon-namer'],
     },
