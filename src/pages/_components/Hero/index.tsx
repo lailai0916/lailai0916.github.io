@@ -177,37 +177,41 @@ export default function Hero() {
   return (
     <section className={styles.hero}>
       <div className={styles.bento}>
-        <Card className={styles.cardMain} padding="1.75rem">
-          <div className={styles.cardMainInner}>
-            <img
-              src={useBaseUrl('/img/logo.svg')}
-              alt="lailai"
-              className={styles.avatar}
-            />
-            <div className={styles.intro}>
-              <div className={styles.nameRow}>
-                <h1 className={styles.name}>lailai</h1>
-                <span className={styles.statusInline}>
-                  <span className={styles.statusDot} />
-                  <span className={styles.statusText}>{availabilityLabel}</span>
-                </span>
+        <Link to="/about" className={styles.cardMainLink}>
+          <Card className={styles.cardMain} padding="1.75rem">
+            <div className={styles.cardMainInner}>
+              <img
+                src={useBaseUrl('/img/logo.svg')}
+                alt="lailai"
+                className={styles.avatar}
+              />
+              <div className={styles.intro}>
+                <div className={styles.nameRow}>
+                  <h1 className={styles.name}>lailai</h1>
+                  <span className={styles.statusInline}>
+                    <span className={styles.statusDot} />
+                    <span className={styles.statusText}>
+                      {availabilityLabel}
+                    </span>
+                  </span>
+                </div>
+                <p className={styles.role}>
+                  {rolePrefix}
+                  <span className={styles.roleTyping}>{identity}</span>
+                  <span className={styles.roleCursor} aria-hidden="true" />
+                </p>
               </div>
-              <p className={styles.role}>
-                {rolePrefix}
-                <span className={styles.roleTyping}>{identity}</span>
-                <span className={styles.roleCursor} aria-hidden="true" />
-              </p>
             </div>
-          </div>
-          <div className={styles.profileTags}>
-            {profileTags.map((tag) => (
-              <span key={tag.label} className={styles.profileTag}>
-                <Icon icon={tag.icon} className={styles.profileTagIcon} />
-                <span>{tag.label}</span>
-              </span>
-            ))}
-          </div>
-        </Card>
+            <div className={styles.profileTags}>
+              {profileTags.map((tag) => (
+                <span key={tag.label} className={styles.profileTag}>
+                  <Icon icon={tag.icon} className={styles.profileTagIcon} />
+                  <span>{tag.label}</span>
+                </span>
+              ))}
+            </div>
+          </Card>
+        </Link>
         {navItems.map((item, index) => (
           <LinkCard
             key={item.href}

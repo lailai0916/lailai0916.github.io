@@ -18,11 +18,22 @@
 
 /* ========== Main Card ========== */
 .cardMain {
-  grid-column: span 2;
-  grid-row: span 2;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+}
+
+.cardMainLink {
+  grid-column: span 2;
+  grid-row: span 2;
+  display: block;
+  color: inherit;
+  text-decoration: none !important;
+}
+
+.cardMainLink:hover {
+  color: inherit;
+  text-decoration: none !important;
 }
 
 .cardMainInner {

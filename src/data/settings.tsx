@@ -10,6 +10,6 @@ export const SETTINGS_PRESET_COLOR_LIST = [
 ];
 
 export const SETTINGS_EXPERIMENTAL_DEFAULT = {
-  originalLayout: true,
-  debugMode: true,
+  originalLayout: false,
+  debugMode: false,
 };
