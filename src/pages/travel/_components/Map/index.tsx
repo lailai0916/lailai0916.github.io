@@ -189,10 +189,10 @@ function TravelGlobeClient({ Globe }: { Globe: GlobeComponent }) {
           polygonsTransitionDuration={180}
           polygonLabel={(polygon) => {
             const item = polygon as CustomGlobePolygon;
-            const isZh = i18n.currentLocale === 'zh-Hans';
-            const localizedName = isZh
-              ? item.properties.name_zh || item.properties.name
-              : item.properties.name_en || item.properties.name;
+            const localizedName =
+              i18n.currentLocale === 'zh-Hans'
+                ? item.properties.name_zh || item.properties.name
+                : item.properties.name_en || item.properties.name;
             return `${localizedName}<br />${item.visited ? VISITED_LABEL : NOT_VISITED_LABEL}`;
           }}
           onGlobeReady={handleReady}
