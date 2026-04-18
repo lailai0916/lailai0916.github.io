@@ -555,6 +555,11 @@ export const RESOURCE_LIST: ResourceCategoryItem[] = [
         description: '网络测速与延迟测试',
       },
       {
+        title: 'Net.Coffee',
+        href: 'https://ip.net.coffee',
+        description: '网络质量与路由分析工具',
+      },
+      {
         title: 'Password Monster',
         href: 'https://passwordmonster.com',
         description: '密码强度评估工具',
