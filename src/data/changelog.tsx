@@ -1,7 +1,5 @@
 import { translate } from '@docusaurus/Translate';
 
-// https://keepachangelog.com
-
 export interface ChangelogItem {
   date: string;
   type: 'added' | 'changed' | 'deprecated' | 'removed' | 'fixed' | 'security';
