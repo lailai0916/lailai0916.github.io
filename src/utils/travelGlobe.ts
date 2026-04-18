@@ -304,13 +304,10 @@ export function getTravelCountryCodes(items: readonly TravelItem[]): string[] {
 export function getTravelPolygons(
   visitedCountries: ReadonlySet<string>
 ): TravelPolygon[] {
-  return WORLD_GEOJSON.features
-    .filter((feature) => feature.id !== 'ATA')
-    .map((feature) => ({
-      ...feature,
-      visited: Boolean(
-        ISO2_BY_ISO3[feature.id] &&
-        visitedCountries.has(ISO2_BY_ISO3[feature.id])
-      ),
-    }));
+  return WORLD_GEOJSON.features.map((feature) => ({
+    ...feature,
+    visited: Boolean(
+      ISO2_BY_ISO3[feature.id] && visitedCountries.has(ISO2_BY_ISO3[feature.id])
+    ),
+  }));
 }
