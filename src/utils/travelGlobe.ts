@@ -24,15 +24,6 @@ const WORLD_GEOJSON = require('@site/static/json/datamaps.world.json') as {
   features: GlobeCountryFeature[];
 };
 
-// Some values in the travel data and GeoJSON source are not standard ISO 3166-1.
-const ISO2_TO_ISO3_OVERRIDES: Record<string, string> = {
-  XK: 'XKX',
-};
-
-const GEOJSON_ISO3_OVERRIDES: Record<string, string> = {
-  '-99': 'SOM',
-};
-
 const FLAG_REGEX = /[\u{1F1E6}-\u{1F1FF}]{2}/gu;
 
 export function flagEmojiToISO2(flag: string): string | null {
@@ -53,15 +44,7 @@ export function flagEmojiToISO2(flag: string): string | null {
 export function iso2ToISO3(code: string): string | null {
   const normalizedCode = code.toUpperCase();
 
-  return (
-    ISO2_TO_ISO3_OVERRIDES[normalizedCode] ||
-    countries.alpha2ToAlpha3(normalizedCode) ||
-    null
-  );
-}
-
-export function normalizeGeoJSONISO3(code: string): string {
-  return GEOJSON_ISO3_OVERRIDES[code] || code;
+  return countries.alpha2ToAlpha3(normalizedCode) || null;
 }
 
 export function iso3FromText(text: string): string[] {
@@ -83,6 +66,6 @@ export function getTravelPolygons(
 ): TravelPolygon[] {
   return WORLD_GEOJSON.features.map((feature) => ({
     ...feature,
-    visited: visitedCountries.has(normalizeGeoJSONISO3(feature.id)),
+    visited: visitedCountries.has(feature.id),
   }));
 }
