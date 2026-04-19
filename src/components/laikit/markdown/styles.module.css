@@ -1,0 +1,20 @@
+.topBannerTitleText {
+  /* background: linear-gradient(to right, #0090f7, #ba62fc, #f2416b); */
+  background: linear-gradient(
+    108deg,
+    #0894ff,
+    #c959dd 34%,
+    #ff2e54 68%,
+    #ff9004
+  );
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+
+.topBannerTitleText:hover {
+  border-bottom: solid 2px;
+  border-color: rgb(152 0 255);
+  text-decoration: none;
+}

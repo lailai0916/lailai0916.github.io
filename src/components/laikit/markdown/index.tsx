@@ -1,7 +1,7 @@
 import Heading from '@theme/Heading';
 import Link from '@docusaurus/Link';
 import Translate from '@docusaurus/Translate';
-import styles from '@site/src/pages/_components/TopBanner/styles.module.css';
+import styles from './styles.module.css';
 
 interface MDTitleProps {
   title: string;
