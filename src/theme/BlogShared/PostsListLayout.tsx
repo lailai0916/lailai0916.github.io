@@ -150,7 +150,7 @@ function PostCard({ item }: PostCardProps) {
 }
 
 export function Paginator({ meta }: { meta: BlogPaginatedMetadata }) {
-  if (!meta?.totalPages || meta.totalPages <= 1) return null;
+  if (meta.totalPages <= 1) return null;
   const { page, totalPages } = meta;
   const sample = meta.nextPage || meta.previousPage || '';
   // Derive pageBase and firstBase robustly for routes like:
