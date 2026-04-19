@@ -10,6 +10,11 @@ export const CHANGELOG_LIST: ChangelogItem[] = [
   {
     date: '2026-04-19',
     type: 'removed',
+    content: 'Tailwind CSS',
+  },
+  {
+    date: '2026-04-19',
+    type: 'removed',
     content: '主页旧版布局',
   },
   {
