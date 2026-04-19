@@ -6,18 +6,11 @@ import { translate } from '@docusaurus/Translate';
 import clsx from 'clsx';
 import styles from './styles.module.css';
 
-import Hero from './_components/Hero';
-import TopBanner from './_components/TopBanner';
-import HeroBanner from './_components/HeroBanner';
-import Docs from './_components/Docs';
 import Blog from './_components/Blog';
 import Countdown from './_components/Countdown';
-import Project from './_components/Project';
-import Skills from './_components/Skills';
-import Exploration from './_components/Exploration';
 import FourierTransform from './_components/FourierTransform';
 import NeuralNetwork from './_components/NeuralNetwork';
-import Community from './_components/Community';
+import Hero from './_components/Hero';
 
 const SCROLL_GUIDE_LABEL = translate({
   id: 'home.new.scrollGuide',
@@ -66,20 +59,11 @@ export default function Home(): ReactNode {
 
   return (
     <Layout title={siteConfig.title} description={siteConfig.tagline}>
-      <section id="classic-home" className={styles.classicHome}>
-        <TopBanner />
-        <HeroBanner />
-        <div className={styles.section}>
-          <Docs />
-          <Blog />
-          <Countdown />
-          <Project />
-          <Skills />
-          <Exploration />
-          <NeuralNetwork />
-          <FourierTransform />
-          <Community />
-        </div>
+      <section>
+        <Countdown />
+        <Blog />
+        <NeuralNetwork />
+        <FourierTransform />
       </section>
 
       {!isCoverDismissed && (

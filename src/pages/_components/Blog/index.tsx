@@ -118,47 +118,51 @@ export default function Blog() {
 
   return (
     <SectionContainer>
-      <div className={styles.sectionContent}>
-        <div className={styles.layout}>
-          <div className={styles.copy}>
-            <h2 className={styles.title}>
-              <IconText icon="lucide:graduation-cap">
-                <Translate id="home.blog.title">Learning & Practice</Translate>
-              </IconText>
-            </h2>
-            <p className={styles.description}>
-              <Translate id="home.blog.description.p1">
-                Technology evolves rapidly, and we need to maintain keen
-                learning abilities and curiosity. Every mastery of new
-                technology is an investment in the future. Here we record
-                thoughts and summaries in the learning process, sharing methods
-                and experiences for solving problems.
-              </Translate>
-            </p>
-            <p className={styles.description}>
-              <Translate id="home.blog.description.p2">
-                Through continuous practice and summarization, we transform
-                knowledge into real skills. Only practice‑validated methods and
-                technologies truly help solve real problems. You can find
-                algorithm solutions, technical notes, and project practices
-                here.
-              </Translate>
-            </p>
-            <Link to="/blog" className={styles.moreLink}>
-              <strong>
-                <Translate id="home.blog.more">View More Posts →</Translate>
-              </strong>
-            </Link>
-          </div>
+      <div className={styles.sectionSurface}>
+        <div className={styles.sectionContent}>
+          <div className={styles.layout}>
+            <div className={styles.copy}>
+              <h2 className={styles.title}>
+                <IconText icon="lucide:graduation-cap">
+                  <Translate id="home.blog.title">
+                    Learning & Practice
+                  </Translate>
+                </IconText>
+              </h2>
+              <p className={styles.description}>
+                <Translate id="home.blog.description.p1">
+                  Technology evolves rapidly, and we need to maintain keen
+                  learning abilities and curiosity. Every mastery of new
+                  technology is an investment in the future. Here we record
+                  thoughts and summaries in the learning process, sharing
+                  methods and experiences for solving problems.
+                </Translate>
+              </p>
+              <p className={styles.description}>
+                <Translate id="home.blog.description.p2">
+                  Through continuous practice and summarization, we transform
+                  knowledge into real skills. Only practice‑validated methods
+                  and technologies truly help solve real problems. You can find
+                  algorithm solutions, technical notes, and project practices
+                  here.
+                </Translate>
+              </p>
+              <Link to="/blog" className={styles.moreLink}>
+                <strong>
+                  <Translate id="home.blog.more">View More Posts →</Translate>
+                </strong>
+              </Link>
+            </div>
 
-          <div className={styles.posts}>
-            <p className={styles.postsHeading}>
-              <IconText icon="lucide:chevron-right" colorMode="monochrome">
-                <Translate id="home.blog.latest">Latest Posts</Translate>
-              </IconText>
-            </p>
-            <div className={styles.grid}>
-              <BlogCardList posts={recentPosts} locale={i18n.currentLocale} />
+            <div className={styles.posts}>
+              <p className={styles.postsHeading}>
+                <IconText icon="lucide:chevron-right" colorMode="monochrome">
+                  <Translate id="home.blog.latest">Latest Posts</Translate>
+                </IconText>
+              </p>
+              <div className={styles.grid}>
+                <BlogCardList posts={recentPosts} locale={i18n.currentLocale} />
+              </div>
             </div>
           </div>
         </div>

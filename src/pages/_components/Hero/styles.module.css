@@ -6,7 +6,6 @@
   justify-content: center;
 }
 
-/* ========== Bento Grid ========== */
 .bento {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -16,7 +15,6 @@
   width: 100%;
 }
 
-/* ========== Main Card ========== */
 .cardMain {
   display: flex;
   flex-direction: column;
@@ -138,7 +136,6 @@
   color: var(--ifm-color-emphasis-600);
 }
 
-/* ========== Navigation Cards ========== */
 .cardNav {
   display: flex;
   flex-direction: column;
@@ -222,7 +219,6 @@
   transform: translate(0, 0);
 }
 
-/* ========== Social Card ========== */
 .cardSocial {
   grid-column: 1 / span 2;
   grid-row: 3;
@@ -306,7 +302,7 @@
 }
 
 .latestPostMeta {
-  margin: 0 0 0;
+  margin: 0;
   margin-top: auto;
   display: flex;
   align-items: center;
@@ -354,7 +350,6 @@
   line-height: 1;
 }
 
-/* ========== Responsive ========== */
 @media (max-width: 768px) {
   .hero {
     padding: 2rem 1rem 3rem;
