@@ -85,7 +85,6 @@ lailai0916.github.io/
 ├── package-lock.json              # Dependency lock file
 ├── package.json                   # Project dependencies
 ├── sidebars.ts                    # Sidebar config
-├── tailwind.config.ts             # Tailwind CSS config
 └── tsconfig.json                  # TypeScript config
 ```
 

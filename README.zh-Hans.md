@@ -85,7 +85,6 @@ lailai0916.github.io/
 ├── package-lock.json              # 依赖锁定文件
 ├── package.json                   # 项目依赖
 ├── sidebars.ts                    # 文档侧边栏配置
-├── tailwind.config.ts             # Tailwind CSS 配置
 └── tsconfig.json                  # TypeScript 配置
 ```
 
