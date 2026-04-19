@@ -26,21 +26,21 @@ function AuthorCard() {
   const author = getAllPostMetadata()
     .flatMap((m) => m.authors ?? [])
     .find((a) => a.key === 'lailai');
+  const authorImageUrl = useBaseUrl(author?.imageURL);
 
   if (!author) return null;
-  const authorImageUrl = useBaseUrl(author.imageURL ?? '/img/logo.png');
 
   return (
     <BlogCard>
       <div className={styles.authorCard}>
         <img
           src={authorImageUrl}
-          alt={author.name ?? author.key}
+          alt={author.name}
           width={96}
           height={96}
           className={styles.authorAvatar}
         />
-        <div className={styles.authorName}>{author.name ?? author.key}</div>
+        <div className={styles.authorName}>{author.name}</div>
         <div className={styles.authorDesc}>{author.title}</div>
       </div>
     </BlogCard>

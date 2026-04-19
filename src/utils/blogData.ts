@@ -48,33 +48,10 @@ function resolveJsonModule<T>(mod: JsonModule<T>): T | null {
   return mod as T;
 }
 
-function globJsonModules<T>(pattern: string): T[] {
-  const glob = (
-    import.meta as unknown as {
-      glob?: (
-        pattern: string,
-        options?: { eager?: boolean; import?: string }
-      ) => Record<string, JsonModule<T>>;
-    }
-  ).glob;
-  if (typeof glob !== 'function') {
-    return [];
-  }
-  const modules = glob(pattern, { eager: true });
-  const resolvedModules = Object.values(modules).map((mod) =>
-    resolveJsonModule<T>(mod)
-  );
-  return resolvedModules.filter((value): value is T => value !== null);
-}
-
 function normalizePathname(input: string): string {
   if (!input) return '';
-  try {
-    const { pathname } = new URL(input, 'https://example.invalid');
-    return pathname.replace(/\/+$/, '');
-  } catch {
-    return input.replace(/[?#].*$/, '').replace(/\/+$/, '');
-  }
+  const { pathname } = new URL(input, 'https://example.invalid');
+  return pathname.replace(/\/+$/, '');
 }
 
 function isPinnedTag(
@@ -95,43 +72,17 @@ function isPinnedTag(
  * 通过 require.context 收集 default 目录下所有 blog-post-list-prop-*.json
  */
 export function getAllBlogItems(): BlogListItem[] {
+  const ctx = (require as any).context(
+    '@generated/docusaurus-plugin-content-blog/default',
+    false,
+    /blog-post-list-prop-.*\.json$/
+  );
   const collected: BlogListItem[] = [];
-  try {
-    const ctx = (require as any).context(
-      '@generated/docusaurus-plugin-content-blog/default',
-      false,
-      /blog-post-list-prop-.*\.json$/
-    );
-    ctx.keys().forEach((key: string) => {
-      try {
-        const mod = ctx(key);
-        const resolved = resolveJsonModule<{ items?: BlogListItem[] }>(mod);
-        const items = resolved?.items ?? [];
-        if (Array.isArray(items)) collected.push(...items);
-      } catch {
-        // ignore single file read error
-      }
-    });
-  } catch {
-    // context 不可用时（如非 Webpack/Rspack 环境），尝试使用 import.meta.glob
-    const modules = globJsonModules<{ items?: BlogListItem[] }>(
-      '@generated/docusaurus-plugin-content-blog/default/blog-post-list-prop-*.json'
-    );
-    if (modules.length) {
-      modules.forEach((mod) => {
-        const items = mod?.items ?? [];
-        if (Array.isArray(items)) {
-          collected.push(...items);
-        }
-      });
-    } else {
-      const data =
-        require('@generated/docusaurus-plugin-content-blog/default/blog-post-list-prop-default.json') as {
-          items?: BlogListItem[];
-        };
-      if (data?.items) collected.push(...data.items);
-    }
-  }
+  ctx.keys().forEach((key: string) => {
+    const mod = ctx(key);
+    const resolved = resolveJsonModule<{ items?: BlogListItem[] }>(mod);
+    collected.push(...(resolved?.items ?? []));
+  });
   // 去重（按 permalink）
   const seen = new Set<string>();
   return collected.filter((it) => {
@@ -148,26 +99,14 @@ export function getAllBlogItems(): BlogListItem[] {
  */
 export function getAllPostMetadata(): BlogPostMetadataSummary[] {
   const list: BlogPostMetadataSummary[] = [];
-  try {
-    const ctx = (require as any).context('~blog/default', false, /\.json$/);
-    ctx.keys().forEach((key: string) => {
-      const mod = ctx(key);
-      const data = resolveJsonModule<BlogPostMetadataSummary>(mod);
-      if (data && data.permalink && Array.isArray(data.tags)) {
-        list.push(data);
-      }
-    });
-  } catch {
-    // context 不可用时，使用 import.meta.glob 作为兼容实现
-    const modules = globJsonModules<BlogPostMetadataSummary>(
-      '@generated/docusaurus-plugin-content-blog/default/site-blog-*.json'
-    );
-    modules.forEach((data) => {
-      if (data && data.permalink && Array.isArray(data.tags)) {
-        list.push(data);
-      }
-    });
-  }
+  const ctx = (require as any).context('~blog/default', false, /\.json$/);
+  ctx.keys().forEach((key: string) => {
+    const mod = ctx(key);
+    const data = resolveJsonModule<BlogPostMetadataSummary>(mod);
+    if (data && data.permalink && Array.isArray(data.tags)) {
+      list.push(data);
+    }
+  });
   return list;
 }
 
@@ -230,9 +169,7 @@ const getLocaleFilePrefix = (locale?: string) =>
 export function loadOfficialTags(locale?: string): TagAggregate[] {
   const cacheKey = getLocaleCacheKey(locale);
   const cached = cachedOfficialTags.get(cacheKey);
-  if (cached) {
-    return cached;
-  }
+  if (cached) return cached;
 
   const filePrefix = getLocaleFilePrefix(locale);
   const basePattern = new RegExp(
@@ -240,28 +177,21 @@ export function loadOfficialTags(locale?: string): TagAggregate[] {
     'i'
   );
 
-  try {
-    const ctx = (require as any).context(
-      '@generated/docusaurus-plugin-content-blog/default/p',
-      false,
-      /blog-tags-.*\.json$/
-    );
-    const candidates = ctx.keys();
-    for (const key of candidates) {
-      if (!basePattern.test(key)) {
-        continue;
-      }
-      const mod = ctx(key);
-      const data = (mod && (mod.tags ?? mod.default?.tags)) as
-        | TagAggregate[]
-        | undefined;
-      if (Array.isArray(data)) {
-        cachedOfficialTags.set(cacheKey, data);
-        return data;
-      }
+  const ctx = (require as any).context(
+    '@generated/docusaurus-plugin-content-blog/default/p',
+    false,
+    /blog-tags-.*\.json$/
+  );
+  for (const key of ctx.keys()) {
+    if (!basePattern.test(key)) continue;
+    const mod = ctx(key);
+    const data = (mod && (mod.tags ?? mod.default?.tags)) as
+      | TagAggregate[]
+      | undefined;
+    if (Array.isArray(data)) {
+      cachedOfficialTags.set(cacheKey, data);
+      return data;
     }
-  } catch {
-    // ignore if generated data unavailable during tests/SSR
   }
 
   if (locale) {
