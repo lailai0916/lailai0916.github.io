@@ -25,22 +25,17 @@ const TEXT_CLAMP_STYLES = {
 } as const;
 
 const formatDate = (dateString: string, locale: string): string => {
-  try {
-    const date = new Date(dateString);
-    if (isNaN(date.getTime())) {
-      // 静默处理无效日期
-      return dateString;
-    }
-    return date.toLocaleDateString(locale, {
-      year: 'numeric',
-      month: 'long',
-      day: 'numeric',
-      timeZone: 'UTC',
-    });
-  } catch (error) {
-    // 静默处理日期格式化错误
+  const date = new Date(dateString);
+  if (isNaN(date.getTime())) {
     return dateString;
   }
+
+  return date.toLocaleDateString(locale, {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+    timeZone: 'UTC',
+  });
 };
 
 const BlogCard = React.memo<ProcessedBlogPost & { locale: string }>(

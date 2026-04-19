@@ -83,14 +83,6 @@ function SearchBar({
   );
 }
 
-function getFavicon(url: string): string | null {
-  try {
-    return `https://www.google.com/s2/favicons?sz=64&domain=${new URL(url).hostname}`;
-  } catch {
-    return null;
-  }
-}
-
 function CategoryNav({
   categories,
   activeCategory,
@@ -137,7 +129,7 @@ function ResourceCard({
 }: {
   resource: { title: string; description: string; href: string };
 }) {
-  const iconUrl = getFavicon(resource.href);
+  const iconUrl = `https://www.google.com/s2/favicons?sz=64&domain=${new URL(resource.href).hostname}`;
 
   return (
     <Card

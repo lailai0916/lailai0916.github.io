@@ -15,7 +15,7 @@ export function useDebugMode(): boolean {
         const settings = localStorage.getItem('settings-experimental');
         if (settings) {
           const parsed: ExperimentalSettings = JSON.parse(settings);
-          setDebugMode(parsed.debugMode || false);
+          setDebugMode(Boolean(parsed.debugMode));
         }
       } catch {
         setDebugMode(false);

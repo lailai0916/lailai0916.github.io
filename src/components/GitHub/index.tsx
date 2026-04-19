@@ -28,17 +28,12 @@ type GitHubRepoData = {
 
 function compactNumber(n?: number) {
   if (typeof n !== 'number' || Number.isNaN(n)) return '0';
-  try {
-    // remove narrow no-break space like original
-    return Intl.NumberFormat('en-US', {
-      notation: 'compact',
-      maximumFractionDigits: 1,
-    })
-      .format(n)
-      .replace(/\u202f/g, '');
-  } catch {
-    return String(n);
-  }
+  return Intl.NumberFormat('en-US', {
+    notation: 'compact',
+    maximumFractionDigits: 1,
+  })
+    .format(n)
+    .replace(/\u202f/g, '');
 }
 
 function stripGitHubEmojiShortcodes(text?: string | null) {
@@ -74,10 +69,7 @@ export default function GitHub(props: GitHubProps) {
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState<boolean>(true);
 
-  const [owner, repoName] = useMemo(() => {
-    const parts = (repo || '').split('/');
-    return [parts[0] || '', parts[1] || ''];
-  }, [repo]);
+  const [owner = '', repoName = ''] = useMemo(() => repo.split('/'), [repo]);
 
   useEffect(() => {
     if (!owner || !repoName) {
@@ -105,17 +97,17 @@ export default function GitHub(props: GitHubProps) {
   const href = `https://github.com/${owner}/${repoName}`;
   const description =
     stripGitHubEmojiShortcodes(data?.description) || 'Description not set';
-  const stars = compactNumber(data?.stargazers_count || 0);
-  const forks = compactNumber(data?.forks || 0);
-  const license = data?.license?.spdx_id || 'no-license';
-  const language = data?.language || '';
-  const avatarUrl = data?.owner?.avatar_url || undefined;
+  const stars = compactNumber(data?.stargazers_count ?? 0);
+  const forks = compactNumber(data?.forks ?? 0);
+  const license = data?.license?.spdx_id ?? 'no-license';
+  const language = data?.language;
+  const avatarUrl = data?.owner?.avatar_url;
 
   const classes = [
     styles.card,
     loading ? styles.loading : '',
     error ? styles.error : '',
-    className || '',
+    className,
   ]
     .filter(Boolean)
     .join(' ');

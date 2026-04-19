@@ -135,7 +135,7 @@ export function getAllBlogItems(): BlogListItem[] {
   // 去重（按 permalink）
   const seen = new Set<string>();
   return collected.filter((it) => {
-    const link: string = (it?.permalink || it?.metadata?.permalink) ?? '';
+    const link = it?.permalink ?? it?.metadata?.permalink ?? '';
     if (!link || seen.has(link)) return false;
     seen.add(link);
     return true;
@@ -222,7 +222,7 @@ type TagAggregate = {
 const cachedOfficialTags = new Map<string, TagAggregate[]>();
 
 const getLocaleCacheKey = (locale?: string) =>
-  (locale && locale.toLowerCase()) || 'default';
+  locale?.toLowerCase() ?? 'default';
 
 const getLocaleFilePrefix = (locale?: string) =>
   locale ? `${locale.toLowerCase().replace(/_/g, '-')}-` : '';

@@ -30,9 +30,8 @@ function flagEmojiToISO2(flag: string): string | null {
   const chars = Array.from(flag);
   if (chars.length < 2) return null;
 
-  const a = chars[0].codePointAt(0);
-  const b = chars[1].codePointAt(0);
-  if (!a || !b) return null;
+  const a = chars[0].codePointAt(0)!;
+  const b = chars[1].codePointAt(0)!;
   if (a < 0x1f1e6 || a > 0x1f1ff || b < 0x1f1e6 || b > 0x1f1ff) return null;
 
   return (
