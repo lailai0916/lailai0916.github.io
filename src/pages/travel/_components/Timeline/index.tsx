@@ -6,9 +6,9 @@ import LinkCard from '@site/src/components/laikit/widget/LinkCard';
 import { translate } from '@docusaurus/Translate';
 import { TRAVEL_LIST, type TravelItem } from '@site/src/data/travel';
 import {
-  TravelSection,
-  TravelSectionHeader,
-} from '@site/src/pages/travel/_components/Section';
+  default as SectionContainer,
+} from '@site/src/components/laikit/section/SectionContainer1';
+import SectionHeader from '@site/src/components/laikit/section/SectionHeader';
 import styles from './styles.module.css';
 
 const TIMELINE_CONFIG = {
@@ -109,8 +109,8 @@ export default function TravelTimeline() {
   );
 
   return (
-    <TravelSection>
-      <TravelSectionHeader title={TITLE} description={DESCRIPTION} />
+    <SectionContainer>
+      <SectionHeader title={TITLE} description={DESCRIPTION} />
       <BrowserOnly>
         {() => (
           <div className={styles.wrapper}>
@@ -131,6 +131,6 @@ export default function TravelTimeline() {
           </div>
         )}
       </BrowserOnly>
-    </TravelSection>
+    </SectionContainer>
   );
 }

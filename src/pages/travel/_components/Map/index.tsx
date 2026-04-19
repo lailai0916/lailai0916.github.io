@@ -10,9 +10,9 @@ import {
   type TravelPolygon,
 } from '@site/src/utils/travelGlobe';
 import {
-  TravelSection,
-  TravelSectionHeader,
-} from '@site/src/pages/travel/_components/Section';
+  default as SectionContainer,
+} from '@site/src/components/laikit/section/SectionContainer1';
+import SectionHeader from '@site/src/components/laikit/section/SectionHeader';
 import styles from './styles.module.css';
 import type { GlobeMethods, GlobeProps } from 'react-globe.gl';
 
@@ -204,14 +204,14 @@ function TravelGlobeClient({ Globe }: { Globe: GlobeComponent }) {
 
 export default function TravelMap() {
   return (
-    <TravelSection>
-      <TravelSectionHeader title={TITLE} description={DESCRIPTION} />
+    <SectionContainer>
+      <SectionHeader title={TITLE} description={DESCRIPTION} />
       <BrowserOnly>
         {() => {
           const Globe = require('react-globe.gl').default as GlobeComponent;
           return <TravelGlobeClient Globe={Globe} />;
         }}
       </BrowserOnly>
-    </TravelSection>
+    </SectionContainer>
   );
 }
