@@ -275,12 +275,10 @@ function ExperimentalFeatures() {
       const newState = { ...prev, [key]: checked };
 
       // 触发自定义事件通知状态变化
-      if (typeof window !== 'undefined') {
-        const event = new CustomEvent('experimentalSettingsChanged', {
-          detail: { key, checked, newState },
-        });
-        window.dispatchEvent(event);
-      }
+      const event = new CustomEvent('experimentalSettingsChanged', {
+        detail: { key, checked, newState },
+      });
+      window.dispatchEvent(event);
 
       return newState;
     });

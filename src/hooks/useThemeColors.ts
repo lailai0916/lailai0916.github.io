@@ -46,9 +46,6 @@ export function useThemeColors(isDarkTheme: boolean) {
 
   // 当主题切换时重新加载数据
   useEffect(() => {
-    // 只在客户端执行
-    if (typeof window === 'undefined') return;
-
     try {
       const newStorage = getThemeStorage(isDarkTheme);
       const newDefaults = getThemeDefaults(isDarkTheme);
@@ -79,9 +76,6 @@ export function useThemeColors(isDarkTheme: boolean) {
 
   // 应用颜色变化并保存
   useEffect(() => {
-    // 只在客户端执行
-    if (typeof window === 'undefined') return;
-
     try {
       updateDOMColors(colorState, isDarkTheme);
       const storage = getThemeStorage(isDarkTheme);

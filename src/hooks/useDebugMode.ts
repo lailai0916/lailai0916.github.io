@@ -9,9 +9,6 @@ export function useDebugMode(): boolean {
   const [debugMode, setDebugMode] = useState(false);
 
   useEffect(() => {
-    // 只在客户端执行
-    if (typeof window === 'undefined') return;
-
     // 读取localStorage中的调试模式状态
     const loadDebugMode = () => {
       try {

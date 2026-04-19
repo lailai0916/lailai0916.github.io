@@ -25,8 +25,6 @@ export default function Home(): ReactNode {
   const [isCoverDismissed, setIsCoverDismissed] = useState(false);
 
   useEffect(() => {
-    if (typeof window === 'undefined') return;
-
     if (isCoverDismissed) return;
 
     const previousHtmlOverflow = document.documentElement.style.overflow;
@@ -41,7 +39,7 @@ export default function Home(): ReactNode {
   }, [isCoverDismissed]);
 
   useEffect(() => {
-    if (typeof window === 'undefined' || !isCoverClosing) return;
+    if (!isCoverClosing) return;
 
     const timer = window.setTimeout(() => {
       setIsCoverDismissed(true);

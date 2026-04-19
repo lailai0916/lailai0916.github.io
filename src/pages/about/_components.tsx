@@ -33,11 +33,9 @@ export function Skills() {
       setPerline(newPerline);
     };
 
-    if (typeof window !== 'undefined') {
-      handleResize();
-      window.addEventListener('resize', handleResize);
-      return () => window.removeEventListener('resize', handleResize);
-    }
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
   }, []);
 
   const skills = SKILL_LIST.map((skill) => skill.icon).join(',');
