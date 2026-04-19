@@ -2,7 +2,7 @@ import React, { useMemo } from 'react';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import { Chrono } from 'react-chrono';
 import BrowserOnly from '@docusaurus/BrowserOnly';
-import Card from '@site/src/components/laikit/widget/Card';
+import Card from '@site/src/components/laikit/Card';
 import { translate } from '@docusaurus/Translate';
 import { TRAVEL_LIST, type TravelItem } from '@site/src/data/travel';
 import SectionContainer, {

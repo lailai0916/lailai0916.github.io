@@ -9,7 +9,7 @@ import { BlogCard, useAnalytics } from './Components';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 import { translate } from '@docusaurus/Translate';
-import IconText from '@site/src/components/laikit/widget/IconText';
+import IconText from '@site/src/components/laikit/IconText';
 import MDXContent from '@theme/MDXContent';
 import styles from './styles.module.css';
 

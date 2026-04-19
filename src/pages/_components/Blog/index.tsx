@@ -2,8 +2,8 @@ import React, { useMemo } from 'react';
 import Link from '@docusaurus/Link';
 import Translate from '@docusaurus/Translate';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
-import Card from '@site/src/components/laikit/widget/Card';
-import IconText from '@site/src/components/laikit/widget/IconText';
+import Card from '@site/src/components/laikit/Card';
+import IconText from '@site/src/components/laikit/IconText';
 
 import {
   getRecentBlogPosts,

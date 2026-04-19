@@ -3,7 +3,7 @@ import React, { useMemo, useState, useEffect } from 'react';
 import BrowserOnly from '@docusaurus/BrowserOnly';
 import Link from '@docusaurus/Link';
 import Giscus from '@giscus/react';
-import IconText from '@site/src/components/laikit/widget/IconText';
+import IconText from '@site/src/components/laikit/IconText';
 import { useColorMode } from '@docusaurus/theme-common';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 

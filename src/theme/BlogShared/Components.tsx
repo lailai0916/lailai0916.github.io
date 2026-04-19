@@ -1,7 +1,7 @@
 import React from 'react';
 import clsx from 'clsx';
 import Link from '@docusaurus/Link';
-import Card from '@site/src/components/laikit/widget/Card';
+import Card from '@site/src/components/laikit/Card';
 import styles from './styles.module.css';
 
 const WEBSITE_ID = '69d3b7de-90e4-4be4-a355-633620ecefdb';

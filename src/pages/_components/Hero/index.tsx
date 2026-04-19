@@ -7,7 +7,7 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import { Icon } from '@iconify/react';
 import { COMMUNITY_LIST } from '@site/src/data/community';
 import { getRecentBlogPosts } from '@site/src/utils/blogData';
-import Card from '@site/src/components/laikit/widget/Card';
+import Card from '@site/src/components/laikit/Card';
 import styles from './styles.module.css';
 
 function useTypewriter(words: string[]) {

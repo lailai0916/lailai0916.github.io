@@ -3,10 +3,10 @@ import { Icon } from '@iconify/react';
 import clsx from 'clsx';
 import Layout from '@theme/Layout';
 
-import { PageTitle, PageHeader } from '@site/src/components/laikit/page';
-import DataCard from '@site/src/components/laikit/widget/DataCard';
-import Card from '@site/src/components/laikit/widget/Card';
-import IconText from '@site/src/components/laikit/widget/IconText';
+import { PageTitle, PageHeader } from '@site/src/components/laikit/Page';
+import DataCard from '@site/src/components/laikit/DataCard';
+import Card from '@site/src/components/laikit/Card';
+import IconText from '@site/src/components/laikit/IconText';
 
 import { usePluralForm } from '@docusaurus/theme-common';
 import {

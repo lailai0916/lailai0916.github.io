@@ -3,7 +3,7 @@ import BlogScaffold from '@site/src/theme/BlogShared/Scaffold';
 import { BlogCard } from '@site/src/theme/BlogShared/Components';
 import { MOMENT_LIST } from '@site/src/data/moments';
 import styles from './styles.module.css';
-import IconText from '@site/src/components/laikit/widget/IconText';
+import IconText from '@site/src/components/laikit/IconText';
 
 const TITLE = 'Moments';
 const DESCRIPTION = 'Share life, anytime, anywhere';

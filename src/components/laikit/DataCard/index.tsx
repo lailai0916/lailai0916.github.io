@@ -1,5 +1,5 @@
 import { Icon } from '@iconify/react';
-import Card from '@site/src/components/laikit/widget/Card';
+import Card from '@site/src/components/laikit/Card';
 import styles from './styles.module.css';
 
 interface DataCardProps {

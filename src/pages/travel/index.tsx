@@ -1,7 +1,7 @@
 import React, { type ReactNode } from 'react';
 import Layout from '@theme/Layout';
-import { PageTitle, PageHeader } from '@site/src/components/laikit/page';
-import DataCard from '@site/src/components/laikit/widget/DataCard';
+import { PageTitle, PageHeader } from '@site/src/components/laikit/Page';
+import DataCard from '@site/src/components/laikit/DataCard';
 import TravelTimeline from '@site/src/pages/travel/_components/Timeline';
 import TravelMap from '@site/src/pages/travel/_components/Map';
 import { translate } from '@docusaurus/Translate';

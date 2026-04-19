@@ -1,8 +1,8 @@
 import React, { type ReactNode, useState } from 'react';
 import Layout from '@theme/Layout';
-import { PageTitle, PageHeader } from '@site/src/components/laikit/page';
-import DataCard from '@site/src/components/laikit/widget/DataCard';
-import Card from '@site/src/components/laikit/widget/Card';
+import { PageTitle, PageHeader } from '@site/src/components/laikit/Page';
+import DataCard from '@site/src/components/laikit/DataCard';
+import Card from '@site/src/components/laikit/Card';
 import { Icon } from '@iconify/react';
 import { FriendItem, FRIEND_LIST } from '@site/src/data/friends';
 import { translate } from '@docusaurus/Translate';

@@ -5,10 +5,10 @@ import Color from 'color';
 import { translate } from '@docusaurus/Translate';
 import Layout from '@theme/Layout';
 
-import Card from '@site/src/components/laikit/widget/Card';
-import IconText from '@site/src/components/laikit/widget/IconText';
-import Switch from '@site/src/components/laikit/widget/Switch';
-import DataCard from '@site/src/components/laikit/widget/DataCard';
+import Card from '@site/src/components/laikit/Card';
+import IconText from '@site/src/components/laikit/IconText';
+import Switch from '@site/src/components/laikit/Switch';
+import DataCard from '@site/src/components/laikit/DataCard';
 import {
   SETTINGS_EXPERIMENTAL_DEFAULT,
   SETTINGS_PRESET_COLOR_LIST,
@@ -18,7 +18,7 @@ import { usePersistentState } from '@site/src/hooks/usePersistentState';
 import { getAdjustedColors } from '@site/src/utils/colorUtils';
 import { useThemeColors } from '@site/src/hooks/useThemeColors';
 import { Icon } from '@iconify/react';
-import { PageTitle, PageHeader } from '@site/src/components/laikit/page';
+import { PageTitle, PageHeader } from '@site/src/components/laikit/Page';
 import styles from './styles.module.css';
 
 const TITLE = translate({
