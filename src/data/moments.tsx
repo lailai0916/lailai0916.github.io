@@ -1,4 +1,4 @@
-export interface MomentItem {
+interface MomentItem {
   date: string;
   content: string;
   images?: string[];

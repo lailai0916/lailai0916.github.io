@@ -1,4 +1,4 @@
-export interface CommunityItem {
+interface CommunityItem {
   title: string;
   text: string;
   icon: string;

@@ -1,7 +1,7 @@
 import React, { useEffect, useMemo, useState } from 'react';
 import styles from './styles.module.css';
 
-export type GitHubProps = {
+type GitHubProps = {
   /** owner/repo */
   repo: string;
   className?: string;
@@ -17,7 +17,7 @@ export type GitHubProps = {
   fetcher?: (repo: string, signal: AbortSignal) => Promise<GitHubRepoData>;
 };
 
-export type GitHubRepoData = {
+type GitHubRepoData = {
   description?: string | null;
   language?: string | null;
   forks?: number;

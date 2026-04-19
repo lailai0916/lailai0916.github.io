@@ -6,7 +6,7 @@ interface SectionContainerProps {
   children: React.ReactNode;
 }
 
-export interface SectionHeaderProps {
+interface SectionHeaderProps {
   title: string;
   description: string;
   align?: 'left' | 'center';

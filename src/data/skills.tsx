@@ -1,4 +1,4 @@
-export interface SkillItem {
+interface SkillItem {
   title: string;
   icon: string;
   hide?: boolean;

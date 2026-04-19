@@ -1,4 +1,4 @@
-export interface DeviceItem {
+interface DeviceItem {
   title: string;
   icon: string;
 }

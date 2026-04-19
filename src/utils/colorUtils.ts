@@ -62,7 +62,7 @@ export const COLOR_SHADES: Shades = {
 };
 
 // 主题配置
-export const THEME_CONFIG = {
+const THEME_CONFIG = {
   light: {
     primary: '#1d9bf0',
     background: '#ffffff',
@@ -74,10 +74,10 @@ export const THEME_CONFIG = {
 } as const;
 
 // sessionStorage allows resetting everything next time users visit the site
-export const lightStorage = createStorageSlot('ifm-theme-colors-light', {
+const lightStorage = createStorageSlot('ifm-theme-colors-light', {
   persistence: 'sessionStorage',
 });
-export const darkStorage = createStorageSlot('ifm-theme-colors-dark', {
+const darkStorage = createStorageSlot('ifm-theme-colors-dark', {
   persistence: 'sessionStorage',
 });
 

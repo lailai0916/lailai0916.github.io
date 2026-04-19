@@ -1,6 +1,6 @@
 import { translate } from '@docusaurus/Translate';
 
-export interface ChangelogItem {
+interface ChangelogItem {
   date: string;
   type: 'added' | 'changed' | 'deprecated' | 'removed' | 'fixed' | 'security';
   content: string;

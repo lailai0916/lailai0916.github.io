@@ -1,4 +1,4 @@
-export interface ResourceItem {
+interface ResourceItem {
   title: string;
   href: string;
   description: string;

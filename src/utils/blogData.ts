@@ -1,18 +1,10 @@
-export interface BlogPost {
-  title: string;
-  permalink: string;
-  date: string;
-  // optional fields
-  tags?: Array<{ label?: string; name?: string; permalink?: string } | string>;
-}
-
 export interface ProcessedBlogPost {
   title: string;
   date: string;
   permalink: string;
 }
 
-export interface BlogListItem {
+interface BlogListItem {
   title?: string;
   date?: string;
   permalink?: string;
@@ -23,19 +15,19 @@ export interface BlogListItem {
   };
 }
 
-export interface BlogAuthorSummary {
+interface BlogAuthorSummary {
   key: string;
   name?: string;
   title?: string;
   imageURL?: string;
 }
 
-export interface BlogTagSummary {
+interface BlogTagSummary {
   label?: string;
   permalink?: string;
 }
 
-export interface BlogPostMetadataSummary {
+interface BlogPostMetadataSummary {
   permalink: string;
   tags: BlogTagSummary[];
   authors?: BlogAuthorSummary[];

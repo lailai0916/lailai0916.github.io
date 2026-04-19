@@ -1,12 +1,12 @@
 import * as countries from 'i18n-iso-countries';
 import type { TravelItem } from '@site/src/data/travel';
 
-export type GlobeGeometry = {
+type GlobeGeometry = {
   type: string;
   coordinates: unknown[];
 };
 
-export type GlobeCountryFeature = {
+type GlobeCountryFeature = {
   id: string;
   properties: {
     name: string;
@@ -26,7 +26,7 @@ const WORLD_GEOJSON = require('@site/static/json/datamaps.world.json') as {
 
 const FLAG_REGEX = /[\u{1F1E6}-\u{1F1FF}]{2}/gu;
 
-export function flagEmojiToISO2(flag: string): string | null {
+function flagEmojiToISO2(flag: string): string | null {
   const chars = Array.from(flag);
   if (chars.length < 2) return null;
 
@@ -41,13 +41,13 @@ export function flagEmojiToISO2(flag: string): string | null {
   );
 }
 
-export function iso2ToISO3(code: string): string | null {
+function iso2ToISO3(code: string): string | null {
   const normalizedCode = code.toUpperCase();
 
   return countries.alpha2ToAlpha3(normalizedCode) || null;
 }
 
-export function iso3FromText(text: string): string[] {
+function iso3FromText(text: string): string[] {
   const flags = text.match(FLAG_REGEX) ?? [];
 
   return flags
