@@ -2,12 +2,10 @@ import React, { useMemo } from 'react';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import { Chrono } from 'react-chrono';
 import BrowserOnly from '@docusaurus/BrowserOnly';
-import LinkCard from '@site/src/components/laikit/widget/LinkCard';
+import Card from '@site/src/components/laikit/widget/Card';
 import { translate } from '@docusaurus/Translate';
 import { TRAVEL_LIST, type TravelItem } from '@site/src/data/travel';
-import {
-  default as SectionContainer,
-} from '@site/src/components/laikit/section/SectionContainer1';
+import { default as SectionContainer } from '@site/src/components/laikit/section/SectionContainer1';
 import SectionHeader from '@site/src/components/laikit/section/SectionHeader';
 import styles from './styles.module.css';
 
@@ -76,15 +74,23 @@ function TimelineCard({ item }: { item: TimelineCardItem }) {
     </div>
   );
 
+  if (item.url) {
+    return (
+      <Card
+        to={item.url}
+        className={styles.timelineCardSurface}
+        wrapperClassName={styles.timelineCardLink}
+        padding="1.5rem"
+      >
+        {content}
+      </Card>
+    );
+  }
+
   return (
-    <LinkCard
-      {...(item.url ? { to: item.url } : {})}
-      className={styles.timelineCardSurface}
-      linkClassName={styles.timelineCardLink}
-      padding="1.5rem"
-    >
+    <Card className={styles.timelineCardSurface} padding="1.5rem">
       {content}
-    </LinkCard>
+    </Card>
   );
 }
 

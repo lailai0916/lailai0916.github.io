@@ -13,8 +13,7 @@ export default function SectionHeader({
   description,
   align = 'center',
 }: SectionHeaderProps) {
-  const alignClass =
-    align === 'center' ? styles.alignCenter : styles.alignLeft;
+  const alignClass = align === 'center' ? styles.alignCenter : styles.alignLeft;
 
   return (
     <div className={clsx(styles.header, alignClass)}>

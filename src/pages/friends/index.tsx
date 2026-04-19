@@ -2,7 +2,7 @@ import React, { type ReactNode, useState } from 'react';
 import Layout from '@theme/Layout';
 import { PageTitle, PageHeader } from '@site/src/components/laikit/page';
 import DataCard from '@site/src/components/laikit/widget/DataCard';
-import LinkCard from '@site/src/components/laikit/widget/LinkCard';
+import Card from '@site/src/components/laikit/widget/Card';
 import { Icon } from '@iconify/react';
 import { FriendItem, FRIEND_LIST } from '@site/src/data/friends';
 import { translate } from '@docusaurus/Translate';
@@ -26,9 +26,9 @@ function FriendCard({ friend }: { friend: FriendItem }) {
   const [imageError, setImageError] = useState(false);
 
   return (
-    <LinkCard
+    <Card
       href={friend.href}
-      linkClassName={styles.friendCard}
+      wrapperClassName={styles.friendCard}
       className={styles.friendCardContent}
       padding="1.5rem"
     >
@@ -54,7 +54,7 @@ function FriendCard({ friend }: { friend: FriendItem }) {
           </p>
         </div>
       </div>
-    </LinkCard>
+    </Card>
   );
 }
 

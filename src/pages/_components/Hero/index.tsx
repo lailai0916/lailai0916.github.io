@@ -8,7 +8,6 @@ import { Icon } from '@iconify/react';
 import { COMMUNITY_LIST } from '@site/src/data/community';
 import { getRecentBlogPosts } from '@site/src/utils/blogData';
 import Card from '@site/src/components/laikit/widget/Card';
-import LinkCard from '@site/src/components/laikit/widget/LinkCard';
 import styles from './styles.module.css';
 
 function useTypewriter(words: string[]) {
@@ -213,7 +212,7 @@ export default function Hero() {
           </Card>
         </Link>
         {navItems.map((item, index) => (
-          <LinkCard
+          <Card
             key={item.href}
             to={item.href}
             className={clsx(styles.cardNav, styles[`cardNav${index + 1}`])}
@@ -225,7 +224,7 @@ export default function Hero() {
               icon="lucide:arrow-up-right"
               className={styles.cardNavArrow}
             />
-          </LinkCard>
+          </Card>
         ))}
         <Card className={styles.cardSocial} padding="1.25rem">
           <span className={styles.cardSocialLabel}>{connectLabel}</span>

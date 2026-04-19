@@ -5,8 +5,8 @@ import Layout from '@theme/Layout';
 
 import { PageTitle, PageHeader } from '@site/src/components/laikit/page';
 import DataCard from '@site/src/components/laikit/widget/DataCard';
+import Card from '@site/src/components/laikit/widget/Card';
 import IconText from '@site/src/components/laikit/widget/IconText';
-import LinkCard from '@site/src/components/laikit/widget/LinkCard';
 
 import { usePluralForm } from '@docusaurus/theme-common';
 import {
@@ -140,10 +140,10 @@ function ResourceCard({
   const iconUrl = getFavicon(resource.href);
 
   return (
-    <LinkCard
+    <Card
       to={resource.href}
       className={styles.resourceCard}
-      linkClassName={styles.resourceCardLink}
+      wrapperClassName={styles.resourceCardLink}
       title={resource.title}
     >
       <div className={styles.resourceCardIcon}>
@@ -173,7 +173,7 @@ function ResourceCard({
         <h3 className={styles.resourceCardTitle}>{resource.title}</h3>
         <p className={styles.resourceCardDescription}>{resource.description}</p>
       </div>
-    </LinkCard>
+    </Card>
   );
 }
 
