@@ -5,8 +5,9 @@ import BrowserOnly from '@docusaurus/BrowserOnly';
 import Card from '@site/src/components/laikit/widget/Card';
 import { translate } from '@docusaurus/Translate';
 import { TRAVEL_LIST, type TravelItem } from '@site/src/data/travel';
-import { default as SectionContainer } from '@site/src/components/laikit/section/SectionContainer1';
-import SectionHeader from '@site/src/components/laikit/section/SectionHeader';
+import SectionContainer, {
+  SectionHeader,
+} from '@site/src/components/laikit/Section';
 import styles from './styles.module.css';
 
 const TIMELINE_CONFIG = {

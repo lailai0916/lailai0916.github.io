@@ -1,7 +1,8 @@
 import React from 'react';
 import FourierTransformCanvas from './FourierTransformCanvas';
-import SectionContainer from '@site/src/components/laikit/section/SectionContainer1';
-import SectionHeader from '@site/src/components/laikit/section/SectionHeader';
+import SectionContainer, {
+  SectionHeader,
+} from '@site/src/components/laikit/Section';
 import { translate } from '@docusaurus/Translate';
 
 const TITLE = translate({

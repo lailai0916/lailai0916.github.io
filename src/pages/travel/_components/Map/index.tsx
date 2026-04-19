@@ -9,8 +9,9 @@ import {
   getTravelPolygons,
   type TravelPolygon,
 } from '@site/src/utils/travelGlobe';
-import { default as SectionContainer } from '@site/src/components/laikit/section/SectionContainer1';
-import SectionHeader from '@site/src/components/laikit/section/SectionHeader';
+import SectionContainer, {
+  SectionHeader,
+} from '@site/src/components/laikit/Section';
 import styles from './styles.module.css';
 import type { GlobeMethods, GlobeProps } from 'react-globe.gl';
 

@@ -9,7 +9,7 @@ import {
   getRecentBlogPosts,
   type ProcessedBlogPost,
 } from '@site/src/utils/blogData';
-import SectionContainer from '@site/src/components/laikit/section/SectionContainer1';
+import SectionContainer from '@site/src/components/laikit/Section';
 import styles from './styles.module.css';
 
 const TEXT_CLAMP_STYLES = {

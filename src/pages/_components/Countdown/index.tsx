@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useRef } from 'react';
-import SectionContainer from '@site/src/components/laikit/section/SectionContainer1';
-import SectionHeader from '@site/src/components/laikit/section/SectionHeader';
+import SectionContainer, {
+  SectionHeader,
+} from '@site/src/components/laikit/Section';
 import { translate } from '@docusaurus/Translate';
 import useIsBrowser from '@docusaurus/useIsBrowser';
 import styles from './styles.module.css';

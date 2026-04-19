@@ -2,13 +2,17 @@ import React from 'react';
 import clsx from 'clsx';
 import styles from './styles.module.css';
 
-interface SectionHeaderProps {
+interface SectionContainerProps {
+  children: React.ReactNode;
+}
+
+export interface SectionHeaderProps {
   title: string;
   description: string;
   align?: 'left' | 'center';
 }
 
-export default function SectionHeader({
+export function SectionHeader({
   title,
   description,
   align = 'center',
@@ -19,6 +23,14 @@ export default function SectionHeader({
     <div className={clsx(styles.header, alignClass)}>
       <h2 className={styles.title}>{title}</h2>
       <p className={styles.description}>{description}</p>
+    </div>
+  );
+}
+
+export default function SectionContainer({ children }: SectionContainerProps) {
+  return (
+    <div className={styles.sectionOuter}>
+      <div className={styles.sectionInner}>{children}</div>
     </div>
   );
 }
