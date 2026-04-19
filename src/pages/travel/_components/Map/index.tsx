@@ -27,14 +27,6 @@ const { MeshBasicMaterial } = require('three') as {
   MeshBasicMaterial: MeshBasicMaterialCtor;
 };
 
-interface CustomGlobePolygon extends TravelPolygon {
-  properties: {
-    name: string;
-    name_zh?: string;
-    name_en?: string;
-  };
-}
-
 const TITLE = translate({
   id: 'pages.travel.map.title',
   message: 'Travel Map',
@@ -72,8 +64,8 @@ function TravelGlobeClient({ Globe }: { Globe: GlobeComponent }) {
     () => new Set(getTravelCountryCodes(TRAVEL_LIST)),
     []
   );
-  const polygons = useMemo<CustomGlobePolygon[]>(
-    () => getTravelPolygons(visitedCountries) as CustomGlobePolygon[],
+  const polygons = useMemo(
+    () => getTravelPolygons(visitedCountries),
     [visitedCountries]
   );
 
@@ -174,12 +166,12 @@ function TravelGlobeClient({ Globe }: { Globe: GlobeComponent }) {
           globeMaterial={globeMaterial}
           polygonsData={polygons}
           polygonCapColor={(polygon) =>
-            (polygon as CustomGlobePolygon).visited
+            (polygon as TravelPolygon).visited
               ? colors.visited
               : colors.unvisited
           }
           polygonSideColor={(polygon) =>
-            (polygon as CustomGlobePolygon).visited
+            (polygon as TravelPolygon).visited
               ? colors.visited
               : colors.unvisited
           }
@@ -187,7 +179,7 @@ function TravelGlobeClient({ Globe }: { Globe: GlobeComponent }) {
           polygonAltitude={0.01}
           polygonsTransitionDuration={180}
           polygonLabel={(polygon) => {
-            const item = polygon as CustomGlobePolygon;
+            const item = polygon as TravelPolygon;
             const localizedName =
               i18n.currentLocale === 'zh-Hans'
                 ? item.properties.name_zh || item.properties.name
