@@ -614,7 +614,6 @@ const sidebars: SidebarsConfig = {
         'project/guides/code',
         'project/guides/project',
         'project/guides/design',
-        'project/guides/wording',
         'project/guides/markdown',
         'project/guides/latex',
         'project/guides/mermaid',
