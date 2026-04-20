@@ -27,8 +27,13 @@
 */
 
 import React, { useState, useEffect, useCallback, useMemo } from 'react';
-import { threeImage, weights, biases } from './data';
+import useBaseUrl from '@docusaurus/useBaseUrl';
 import styles from './styles.module.css';
+
+// Module-level cache so the JSON is only fetched once across remounts
+let weights: number[][][] | null = null;
+let biases: number[][] | null = null;
+let threeImage: { x: number; y: number }[] | null = null;
 
 // This array defines which neurons are visible on screen.
 // The null values indicate empty spaces (where the ... lives)
@@ -51,14 +56,38 @@ function getNeuronPosition(layerIndex, visibleNeuronIndex) {
 }
 
 export default function NeuralNetworkInteractive({ instant = false }) {
-  const [points, setPoints] = useState(threeImage);
+  const dataUrl = useBaseUrl('/json/neural-network-data.json');
+  const [dataLoaded, setDataLoaded] = useState(false);
+
+  useEffect(() => {
+    if (weights !== null) {
+      setDataLoaded(true);
+      return;
+    }
+    fetch(dataUrl)
+      .then((r) => r.json())
+      .then((data) => {
+        weights = data.weights;
+        biases = data.biases;
+        threeImage = data.threeImage;
+        setDataLoaded(true);
+      });
+  }, [dataUrl]);
+
+  const [points, setPoints] = useState<{ x: number; y: number }[]>([]);
   const [isNormalized, setIsNormalized] = useState(true);
   const [normalizing, setNormalizing] = useState(false);
 
   const [animating, setAnimating] = useState(false);
 
+  useEffect(() => {
+    if (dataLoaded && threeImage && points.length === 0) {
+      setPoints(threeImage);
+    }
+  }, [dataLoaded]);
+
   // Update neuron values based on points the user draws
-  const [neurons, setNeurons] = useState(getNeuronValues(points));
+  const [neurons, setNeurons] = useState<number[][]>([[], [], [], []]);
   useEffect(() => {
     if (instant || animating) {
       setNeurons(getNeuronValues(points));
@@ -110,6 +139,10 @@ export default function NeuralNetworkInteractive({ instant = false }) {
   }
 
   const [selectedNeuron, setSelectedNeuron] = useState(null);
+
+  if (!dataLoaded) {
+    return <div className={styles.container} style={{ minHeight: 480 }} />;
+  }
 
   return (
     <div className={styles.container}>
@@ -860,6 +893,7 @@ function sigmoid(x) {
 
 // a_1 = sigma(W * a_0 + b)
 function getAllNeuronValues(firstLayer) {
+  if (!weights || !biases) return [firstLayer, [], [], []];
   let layers = [firstLayer];
 
   while (layers.length <= weights.length) {
