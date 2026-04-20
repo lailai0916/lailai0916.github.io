@@ -569,7 +569,7 @@
     "message": "标签",
     "description": "The title of the tag list page"
   },
-  "home.new.scrollGuide": {
+  "home.scrollGuide": {
     "message": "向下滚动"
   },
   "home.new.hero.nav.contest": {

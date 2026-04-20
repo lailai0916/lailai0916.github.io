@@ -13,7 +13,7 @@ import NeuralNetwork from './_components/NeuralNetwork';
 import Hero from './_components/Hero';
 
 const SCROLL_GUIDE_LABEL = translate({
-  id: 'home.new.scrollGuide',
+  id: 'home.scrollGuide',
   message: 'Scroll Down',
 });
 
