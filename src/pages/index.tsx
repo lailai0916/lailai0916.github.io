@@ -10,7 +10,7 @@ import Blog from './_components/Blog';
 import Countdown from './_components/Countdown';
 import FourierTransform from './_components/FourierTransform';
 import NeuralNetwork from './_components/NeuralNetwork';
-import Hero from './_components/Hero';
+import Bento from './_components/Bento';
 
 const SCROLL_GUIDE_LABEL = translate({
   id: 'home.scrollGuide',
@@ -71,7 +71,7 @@ export default function Home(): ReactNode {
             isCoverClosing && styles.coverHomeClosing
           )}
         >
-          <Hero />
+          <Bento />
           <button
             type="button"
             className={styles.scrollGuide}

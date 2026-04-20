@@ -47,12 +47,12 @@ function useTypewriter(words: string[]) {
   return { text, currentWord };
 }
 
-export default function Hero() {
+export default function Bento() {
   const { i18n } = useDocusaurusContext();
   const navItems = [
     {
       title: translate({
-        id: 'home.new.hero.nav.contest',
+        id: 'home.bento.nav.contest',
         message: 'Contest',
       }),
       href: '/docs/contest',
@@ -60,7 +60,7 @@ export default function Hero() {
     },
     {
       title: translate({
-        id: 'home.new.hero.nav.note',
+        id: 'home.bento.nav.note',
         message: 'Note',
       }),
       href: '/docs/note',
@@ -68,7 +68,7 @@ export default function Hero() {
     },
     {
       title: translate({
-        id: 'home.new.hero.nav.project',
+        id: 'home.bento.nav.project',
         message: 'Project',
       }),
       href: '/docs/project',
@@ -76,7 +76,7 @@ export default function Hero() {
     },
     {
       title: translate({
-        id: 'home.new.hero.nav.blog',
+        id: 'home.bento.nav.blog',
         message: 'Blog',
       }),
       href: '/blog',
@@ -86,35 +86,35 @@ export default function Hero() {
   const profileTags = [
     {
       label: translate({
-        id: 'home.new.hero.tag.china',
+        id: 'home.bento.tag.china',
         message: 'China',
       }),
       icon: 'lucide:map-pin',
     },
     {
       label: translate({
-        id: 'home.new.hero.tag.school',
+        id: 'home.bento.tag.school',
         message: 'Hangzhou No.2 High School',
       }),
       icon: 'lucide:graduation-cap',
     },
     {
       label: translate({
-        id: 'home.new.hero.tag.languages',
+        id: 'home.bento.tag.languages',
         message: 'Chinese & English',
       }),
       icon: 'lucide:languages',
     },
     {
       label: translate({
-        id: 'home.new.hero.tag.friendly',
+        id: 'home.bento.tag.friendly',
         message: 'Friendly',
       }),
       icon: 'lucide:message-circle',
     },
     {
       label: translate({
-        id: 'home.new.hero.tag.mbti',
+        id: 'home.bento.tag.mbti',
         message: 'INTJ',
       }),
       icon: 'lucide:fingerprint',
@@ -122,45 +122,45 @@ export default function Hero() {
   ];
   const identities = [
     translate({
-      id: 'home.new.hero.identity.student',
+      id: 'home.bento.identity.student',
       message: 'Student',
     }),
     translate({
-      id: 'home.new.hero.identity.developer',
+      id: 'home.bento.identity.developer',
       message: 'Developer',
     }),
     translate({
-      id: 'home.new.hero.identity.designer',
+      id: 'home.bento.identity.designer',
       message: 'Designer',
     }),
     translate({
-      id: 'home.new.hero.identity.oier',
+      id: 'home.bento.identity.oier',
       message: 'OIer',
     }),
   ];
   const { text: identity, currentWord } = useTypewriter(identities);
   const roleArticle = /^[aeiou]/i.test(currentWord) ? 'an' : 'a';
   const availabilityLabel = translate({
-    id: 'home.new.hero.available',
+    id: 'home.bento.available',
     message: 'Available',
   });
   const rolePrefix = translate(
     {
-      id: 'home.new.hero.rolePrefix',
+      id: 'home.bento.rolePrefix',
       message: "I'm {article} ",
     },
     { article: roleArticle }
   );
   const connectLabel = translate({
-    id: 'home.new.hero.connect',
+    id: 'home.bento.connect',
     message: 'Connect',
   });
   const latestPostLabel = translate({
-    id: 'home.new.hero.latestPost',
+    id: 'home.bento.latestPost',
     message: 'Latest Post',
   });
   const noPostsLabel = translate({
-    id: 'home.new.hero.noPosts',
+    id: 'home.bento.noPosts',
     message: 'No posts yet.',
   });
   const latestPost = useMemo(() => getRecentBlogPosts(1)[0] ?? null, []);

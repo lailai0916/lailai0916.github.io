@@ -572,58 +572,58 @@
   "home.scrollGuide": {
     "message": "向下滚动"
   },
-  "home.new.hero.nav.contest": {
+  "home.bento.nav.contest": {
     "message": "竞赛"
   },
-  "home.new.hero.nav.note": {
+  "home.bento.nav.note": {
     "message": "笔记"
   },
-  "home.new.hero.nav.project": {
+  "home.bento.nav.project": {
     "message": "项目"
   },
-  "home.new.hero.nav.blog": {
+  "home.bento.nav.blog": {
     "message": "博客"
   },
-  "home.new.hero.tag.china": {
+  "home.bento.tag.china": {
     "message": "中国"
   },
-  "home.new.hero.tag.school": {
+  "home.bento.tag.school": {
     "message": "杭州第二中学"
   },
-  "home.new.hero.tag.languages": {
+  "home.bento.tag.languages": {
     "message": "中英双语"
   },
-  "home.new.hero.tag.friendly": {
+  "home.bento.tag.friendly": {
     "message": "友好"
   },
-  "home.new.hero.tag.mbti": {
+  "home.bento.tag.mbti": {
     "message": "INTJ"
   },
-  "home.new.hero.identity.student": {
+  "home.bento.identity.student": {
     "message": "学生"
   },
-  "home.new.hero.identity.developer": {
+  "home.bento.identity.developer": {
     "message": "开发者"
   },
-  "home.new.hero.identity.designer": {
+  "home.bento.identity.designer": {
     "message": "设计师"
   },
-  "home.new.hero.identity.oier": {
+  "home.bento.identity.oier": {
     "message": "OIer"
   },
-  "home.new.hero.available": {
+  "home.bento.available": {
     "message": "可联系"
   },
-  "home.new.hero.rolePrefix": {
+  "home.bento.rolePrefix": {
     "message": "我是一名 "
   },
-  "home.new.hero.connect": {
+  "home.bento.connect": {
     "message": "联系"
   },
-  "home.new.hero.latestPost": {
+  "home.bento.latestPost": {
     "message": "最新文章"
   },
-  "home.new.hero.noPosts": {
+  "home.bento.noPosts": {
     "message": "暂无文章。"
   },
   "home.topbanner.title": {
