@@ -20,12 +20,17 @@ export const CHANGELOG_LIST: ChangelogItem[] = [
   {
     date: '2026-04-12',
     type: 'changed',
-    content: '文档扩展名改为 <code>.mdx</code>',
+    content: '文档扩展名更改为 <code>.mdx</code>',
   },
   {
     date: '2026-04-12',
     type: 'changed',
     content: '<b>Travel Map</b> 组件',
+  },
+  {
+    date: '2026-04-11',
+    type: 'changed',
+    content: '非 Apple 设备的默认字体更改为 <code>Inter</code>',
   },
   {
     date: '2026-04-10',
