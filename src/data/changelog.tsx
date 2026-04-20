@@ -59,6 +59,11 @@ export const CHANGELOG_LIST: ChangelogItem[] = [
     content: '主页 <b>Fourier Transform</b> 组件',
   },
   {
+    date: '2026-01-21',
+    type: 'added',
+    content: '<b>Moments</b> 页面',
+  },
+  {
     date: '2026-01-18',
     type: 'changed',
     content: '优化 <code>&lt;Problem /&gt;</code> 组件标题信息',
