@@ -82,7 +82,7 @@ lailai0916.github.io/
 │   └── CNAME                      # Domain settings
 ├── docusaurus.config.ts           # Docusaurus config
 ├── LICENSE                        # Code License
-├── LICENSE-docs                   # Docs License
+├── LICENSE-docs                   # Documentation License
 ├── package-lock.json              # Dependency lock file
 ├── package.json                   # Project dependencies
 ├── sidebars.ts                    # Sidebar config
