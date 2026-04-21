@@ -184,10 +184,15 @@ export const CHANGELOG_LIST: ChangelogItem[] = [
     content: '<b>Giscus</b> 评论',
   },
   {
+    date: '2024-10-29',
+    type: 'added',
+    content: 'Tailwind CSS',
+  },
+  {
     date: '2024-10-17',
     type: 'added',
     content:
-      '建立个人网站 <a href="https://lailai.one">lailai\'s Home</a>，使用 <a href="https://docusaurus.io/blog/releases/3.7">Docusaurus v3.7</a> 构建，源代码托管于 <a href="https://github.com/lailai0916/lailai0916.github.io">GitHub</a>，并部署在 <a href="https://pages.github.com">GitHub Pages</a>。',
+      '建立个人网站 <a href="https://lailai.one">lailai\'s Home</a>，使用 <a href="https://docusaurus.io/blog/releases/3.7">Docusaurus v3.7</a> 构建，部署在 <a href="https://pages.github.com">GitHub Pages</a>',
   },
   {
     date: '2024-10-16',
