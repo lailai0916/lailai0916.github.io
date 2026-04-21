@@ -361,7 +361,7 @@
     gap: 0.75rem;
   }
 
-  .cardMain {
+  .cardMainLink {
     grid-column: span 2;
     grid-row: span 1;
   }
@@ -377,6 +377,15 @@
 
   .name {
     font-size: 1.5rem;
+  }
+
+  .nameRow {
+    flex-wrap: wrap;
+    gap: 0.4rem;
+  }
+
+  .statusInline {
+    margin-left: 0;
   }
 
   .cardSocial {
@@ -410,11 +419,12 @@
     grid-template-columns: 1fr;
   }
 
-  .cardMain,
+  .cardMainLink,
   .cardSocial,
   .cardLatestPost,
   .cardNav {
     grid-column: span 1;
+    grid-row: span 1;
   }
 
   .cardNavArrow {
