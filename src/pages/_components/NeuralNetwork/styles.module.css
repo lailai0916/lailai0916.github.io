@@ -51,34 +51,34 @@
   justify-content: center;
 }
 
-/* Light Mode Theme */
+/* Light Mode Theme — "Blueprint" style */
 [data-theme='light'] .container {
   /* Background Colors */
   --nn-bg-primary: #ffffff;
-  --nn-bg-overlay: rgba(255, 255, 255, 0.8);
+  --nn-bg-overlay: rgba(255, 255, 255, 0.88);
   --nn-transparent: transparent;
 
   /* Text Colors */
-  --nn-text-primary: #1a1a1a;
+  --nn-text-primary: #1e2040;
   --nn-text-secondary: #ffffff;
-  --nn-text-accent: #e67e00;
+  --nn-text-accent: var(--ifm-color-primary);
 
   /* Neuron Colors */
-  --nn-neuron-border-selected: #e67e00;
-  --nn-neuron-border-default: #333333;
+  --nn-neuron-border-selected: var(--ifm-color-primary);
+  --nn-neuron-border-default: #94a3b8;
   --nn-neuron-fill-default: #ffffff;
 
-  /* Neuron Gray Color Mapping (Light Mode: 0->255, 1->0) */
-  --nn-neuron-gray-base: 255;
-  --nn-neuron-gray-multiplier: -255;
+  /* Neuron Gray Color Mapping (Light Mode: 0->light, 1->dark) */
+  --nn-neuron-gray-base: 230;
+  --nn-neuron-gray-multiplier: -195;
 
   /* Connection Colors (RGB values for rgba() usage) */
-  --nn-connection-negative-rgb: 220, 53, 69;
-  --nn-connection-positive-rgb: 13, 110, 253;
-  --nn-connection-animation: rgba(230, 126, 0, 0.6);
-  --nn-connection-default: #999999;
+  --nn-connection-negative-rgb: 239, 68, 68;
+  --nn-connection-positive-rgb: 59, 130, 246;
+  --nn-connection-animation: rgba(99, 102, 241, 0.75);
+  --nn-connection-default: #c7d2fe;
 
-  /* Button Colors - 现代卡片风格 */
+  /* Button Colors */
   --nn-button-clear: var(--ifm-card-background-color);
   --nn-button-clear-border: var(--ifm-color-emphasis-200);
   --nn-button-primary: var(--ifm-color-primary);
@@ -86,12 +86,12 @@
 
   /* Border Colors */
   --nn-stroke-primary: var(--ifm-color-primary);
-  --nn-stroke-accent: #e67e00;
+  --nn-stroke-accent: var(--ifm-color-primary);
 
   /* Grid Colors */
-  --nn-grid-white: #1a1a1a;
-  --nn-grid-white-rgb: 26, 26, 26;
-  --nn-grid-stroke: #e67e00;
+  --nn-grid-white: #1e2040;
+  --nn-grid-white-rgb: 30, 32, 64;
+  --nn-grid-stroke: var(--ifm-color-primary);
   --nn-grid-fill: #ffffff;
 }
 
