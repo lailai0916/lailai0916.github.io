@@ -1,69 +1,46 @@
-/*
-  Neural Network Interactive Component
-  Originally created by Grant Sanderson (3Blue1Brown)
-  Adapted for Docusaurus/TypeScript environment
-  
-  This interactive works, but it isn't exactly a shining example of elegant code.
-
-  I don't expect this to be edited a whole lot going forward, so I don't think
-  it's worth taking the time to make the code beautiful. (Hopefully this doesn't come
-  back to bite me.)
-
-  So instead, here are a few noteworthy quirks to be aware of if you dive into this:
-  - The entire interface is just one big SVG with event handlers to make it interactive.
-    I chose to use an SVG because positioning everything with CSS sounds kind of nightmarish.
-
-  - The entire animation process happens with pure CSS transitions. The only javascript
-    involved is a single boolean called "animating" that turns on when the animation
-    begins. I use transition-delay to orchestrate all the changes over time, so that not
-    everything appears immediately when "animating" becomes true. I can't decide if this
-    solution is really elegant or really ugly.
-
-  - This was originally written as pretty much just one giant component that rendered
-    everything. I've since split it up into smaller components, but the concerns aren't
-    really separated as much as they should be. These components aren't really reusable;
-    they're designed to do one thing and one thing only. In an ideal world, you might
-    split these components up more nicely so they aren't quite as intertwined.
-*/
+// Adapted from the interactive on 3Blue1Brown's neural network series: https://www.3blue1brown.com/lessons/neural-networks
 
 import React, { useState, useEffect, useCallback, useMemo } from 'react';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import styles from './styles.module.css';
 
+type Point = { x: number; y: number };
+type NormData = { scale: number; centerX: number; centerY: number };
+type SelectedNeuron = { layerIndex: number; neuronId: number } | null;
+
 // Module-level cache so the JSON is only fetched once across remounts
 let weights: number[][][] | null = null;
 let biases: number[][] | null = null;
-let threeImage: { x: number; y: number }[] | null = null;
+let threeImage: Point[] | null = null;
 
-// This array defines which neurons are visible on screen.
-// The null values indicate empty spaces (where the ... lives)
-// It is used by many components, along with...
-const visibleNeurons = [
+// null entries mark the ellipsis gaps between visible neurons
+const visibleNeurons: (number | null)[][] = [
   [0, 1, 2, 3, 4, 5, null, null, 778, 779, 780, 781, 782, 783],
   [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15],
   [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15],
   [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
 ];
 
-// ...this function, which spits out the on-screen x/y coordinates
-// of a given neuron in the array above.
-function getNeuronPosition(layerIndex, visibleNeuronIndex) {
-  const visibleNeuronsInLayer = visibleNeurons[layerIndex].length;
+function getNeuronPosition(layerIndex: number, visibleNeuronIndex: number) {
+  const count = visibleNeurons[layerIndex].length;
   return {
     x: 230 + 115 * layerIndex,
-    y: 240 + 28 * (visibleNeuronIndex - (visibleNeuronsInLayer - 1) / 2),
+    y: 240 + 28 * (visibleNeuronIndex - (count - 1) / 2),
   };
 }
 
-export default function NeuralNetworkInteractive({ instant = false }) {
+export default function NeuralNetworkInteractive({ instant = false }: { instant?: boolean }) {
   const dataUrl = useBaseUrl('/json/neural-network-data.json');
   const [dataLoaded, setDataLoaded] = useState(false);
+  const [points, setPoints] = useState<Point[]>([]);
+  const [isNormalized, setIsNormalized] = useState(true);
+  const [normalizing, setNormalizing] = useState(false);
+  const [animating, setAnimating] = useState(false);
+  const [selectedNeuron, setSelectedNeuron] = useState<SelectedNeuron>(null);
+  const [neurons, setNeurons] = useState<number[][]>([[], [], [], []]);
 
   useEffect(() => {
-    if (weights !== null) {
-      setDataLoaded(true);
-      return;
-    }
+    if (weights !== null) { setDataLoaded(true); return; }
     fetch(dataUrl)
       .then((r) => r.json())
       .then((data) => {
@@ -74,75 +51,58 @@ export default function NeuralNetworkInteractive({ instant = false }) {
       });
   }, [dataUrl]);
 
-  const [points, setPoints] = useState<{ x: number; y: number }[]>([]);
-  const [isNormalized, setIsNormalized] = useState(true);
-  const [normalizing, setNormalizing] = useState(false);
-
-  const [animating, setAnimating] = useState(false);
-
   useEffect(() => {
     if (dataLoaded && threeImage && points.length === 0) {
       setPoints(threeImage);
     }
   }, [dataLoaded]);
 
-  // Update neuron values based on points the user draws
-  const [neurons, setNeurons] = useState<number[][]>([[], [], [], []]);
   useEffect(() => {
     if (instant || animating) {
       setNeurons(getNeuronValues(points));
     }
   }, [points, instant, animating]);
 
-  const normalizePointsAnimated = (duration = 1.0) => {
-    setNormalizing(true);
+  const normalizePointsAnimated = useCallback(
+    (duration = 1.0): Promise<void> => {
+      setNormalizing(true);
+      const normData = collectNormalizationData(points);
+      const startTime = Date.now();
+      const ease = (t: number) =>
+        t < 0.5 ? 4 * t ** 3 : 1 - (-2 * t + 2) ** 3 / 2;
 
-    const data = collectNormalizationData(points);
+      return new Promise((resolve) => {
+        const frame = () => {
+          const t = (Date.now() - startTime) / 1000;
+          setPoints(applyNormalizationTransformation(points, normData, ease(Math.min(1, t / duration))));
+          setIsNormalized(true);
+          if (t < duration) {
+            requestAnimationFrame(frame);
+          } else {
+            setNormalizing(false);
+            resolve();
+          }
+        };
+        frame();
+      });
+    },
+    [points]
+  );
 
-    const startTime = Date.now();
-    const ease = (t) => (t < 0.5 ? 4 * t ** 3 : 1 - (-2 * t + 2) ** 3 / 2);
-
-    return new Promise<void>((resolve) => {
-      const frame = () => {
-        const t = (Date.now() - startTime) / 1000;
-
-        const newPoints = applyNormalizationTransformation(
-          points,
-          data,
-          ease(Math.min(1, t / duration))
-        );
-        setPoints(newPoints);
-        setIsNormalized(true);
-
-        if (t < duration) {
-          requestAnimationFrame(frame);
-        } else {
-          setNormalizing(false);
-          resolve();
-        }
-      };
-
-      frame();
-    });
-  };
-
-  function animate() {
+  const animate = useCallback(() => {
     setAnimating(false);
-
     if (isNormalized) {
       setTimeout(() => setAnimating(true), 1);
     } else {
-      normalizePointsAnimated().then(() => {
-        setTimeout(() => setAnimating(true), 200);
-      });
+      normalizePointsAnimated().then(() => setTimeout(() => setAnimating(true), 200));
     }
-  }
-
-  const [selectedNeuron, setSelectedNeuron] = useState(null);
+  }, [isNormalized, normalizePointsAnimated]);
 
   if (!dataLoaded) {
     return <div className={styles.container} style={{ minHeight: 480 }} />;
   }
+
+  const compact = animating || instant;
 
   return (
     <div className={styles.container}>
@@ -151,18 +111,10 @@ export default function NeuralNetworkInteractive({ instant = false }) {
         width={640}
         height={480}
         viewBox="0 0 640 480"
-        style={{
-          touchAction: 'none', // Prevent scrolling on mobile while drawing
-        }}
+        style={{ touchAction: 'none' }}
       >
-        <NeuronConnections
-          selectedNeuron={selectedNeuron}
-          animating={animating}
-          instant={instant}
-        />
-
+        <NeuronConnections selectedNeuron={selectedNeuron} animating={animating} instant={instant} />
         <VerticalEllipsis cx={230} cy={240} />
-
         <Neurons
           neurons={neurons}
           selectedNeuron={selectedNeuron}
@@ -170,46 +122,29 @@ export default function NeuralNetworkInteractive({ instant = false }) {
           animating={animating}
           instant={instant}
         />
-
         <OutputDigitLabels />
+        <WinningOutputNeuronBox neurons={neurons} animating={animating} instant={instant} />
 
-        <WinningOutputNeuronBox
-          neurons={neurons}
-          animating={animating}
-          instant={instant}
-        />
+        {selectedNeuron?.layerIndex === 1 && (() => {
+          const pos = getNeuronPosition(selectedNeuron.layerIndex, selectedNeuron.neuronId);
+          return (
+            <WeightGrid
+              x={pos.x + 20}
+              y={-40 + (pos.y - 240) * 0.85 + 240}
+              width={85}
+              height={85}
+              weights={weights![0][selectedNeuron.neuronId]}
+              inputNeurons={neurons[0]}
+            />
+          );
+        })()}
 
-        {/* Weight grid for neurons in 2nd layer */}
-        {selectedNeuron &&
-          selectedNeuron.layerIndex === 1 &&
-          (() => {
-            const position = getNeuronPosition(
-              selectedNeuron.layerIndex,
-              selectedNeuron.neuronId
-            );
-
-            return (
-              <WeightGrid
-                x={position.x + 20}
-                y={-40 + (position.y - 240) * 0.85 + 240}
-                width={85}
-                height={85}
-                weights={weights[0][selectedNeuron.neuronId]}
-                inputNeurons={neurons[0]}
-              />
-            );
-          })()}
-
-        {/* Background overlay while drawing (covers everything else) */}
         {!instant && (
           <rect
-            x="0"
-            y="0"
-            width="640"
-            height="480"
+            x="0" y="0" width="640" height="480"
             fill="var(--ifm-background-color)"
             style={{
-              opacity: animating ? 0.0 : 1.0,
+              opacity: animating ? 0 : 1,
               pointerEvents: animating ? 'none' : undefined,
               transition: 'opacity 300ms ease-in-out',
             }}
@@ -219,41 +154,37 @@ export default function NeuralNetworkInteractive({ instant = false }) {
         <ImageGrid
           instant={instant}
           editing={!animating || instant}
-          startEditing={() => {
-            setAnimating(false);
-            setPoints([]);
-            setIsNormalized(false);
-          }}
-          x={animating || instant ? 10 : 125}
-          y={animating || instant ? 10 : 10}
-          width={animating || instant ? 190 : 390}
-          height={animating || instant ? 190 : 390}
+          startEditing={() => { setAnimating(false); setPoints([]); setIsNormalized(false); }}
+          x={compact ? 10 : 125}
+          y={10}
+          width={compact ? 190 : 390}
+          height={compact ? 190 : 390}
           points={points}
-          setPoints={(newPoints) => {
-            setPoints(newPoints);
-            setIsNormalized(false);
-          }}
+          setPoints={(newPoints) => { setPoints(newPoints); setIsNormalized(false); }}
           normalizing={normalizing}
           isNormalized={isNormalized}
           normalizePointsAnimated={normalizePointsAnimated}
           beginAnimation={animate}
-          highlightedTile={
-            selectedNeuron && selectedNeuron.layerIndex === 0
-              ? selectedNeuron.neuronId
-              : null
-          }
+          highlightedTile={selectedNeuron?.layerIndex === 0 ? selectedNeuron.neuronId : null}
         />
       </svg>
     </div>
   );
 }
 
-function NeuronConnections({ selectedNeuron, animating, instant }) {
-  let connections = [];
+function NeuronConnections({
+  selectedNeuron,
+  animating,
+  instant,
+}: {
+  selectedNeuron: SelectedNeuron;
+  animating: boolean;
+  instant: boolean;
+}) {
+  const connections: React.ReactNode[] = [];
 
   for (let layerIndex = 1; layerIndex < visibleNeurons.length; layerIndex++) {
     const layer = visibleNeurons[layerIndex];
-
     const prevLayerIndex = layerIndex - 1;
     const prevLayer = visibleNeurons[prevLayerIndex];
 
@@ -263,61 +194,42 @@ function NeuronConnections({ selectedNeuron, animating, instant }) {
       prevLayer.forEach((prevNeuronId, prevNeuronIndex) => {
         if (prevNeuronId === null) return;
 
-        const weight = weights[prevLayerIndex][neuronId][prevNeuronId];
-
+        const weight = weights![prevLayerIndex][neuronId][prevNeuronId];
         const layerIsHighlighted = selectedNeuron?.layerIndex === layerIndex;
+        const neuronIsHighlighted = layerIsHighlighted && selectedNeuron?.neuronId === neuronId;
 
-        const neuronIsHighlighted =
-          layerIsHighlighted && selectedNeuron?.neuronId === neuronId;
-
-        const maxAlpha = neuronIsHighlighted
-          ? 1.0
-          : layerIsHighlighted
-            ? 0.1
-            : 0.3;
+        const maxAlpha = neuronIsHighlighted ? 1.0 : layerIsHighlighted ? 0.1 : 0.3;
         const alpha = maxAlpha * Math.abs(weight * 0.6);
-        const color =
-          weight < 0
-            ? `rgba(var(--nn-connection-negative-rgb), ${alpha})`
-            : `rgba(var(--nn-connection-positive-rgb), ${alpha})`;
+        const color = weight < 0
+          ? `rgba(var(--nn-connection-negative-rgb), ${alpha})`
+          : `rgba(var(--nn-connection-positive-rgb), ${alpha})`;
         const lineWidth = neuronIsHighlighted ? 3 : 1;
 
-        const prevNeuronPos = getNeuronPosition(
-          prevLayerIndex,
-          prevNeuronIndex
-        );
-        const nextNeuronPos = getNeuronPosition(layerIndex, neuronIndex);
+        const prevPos = getNeuronPosition(prevLayerIndex, prevNeuronIndex);
+        const nextPos = getNeuronPosition(layerIndex, neuronIndex);
+        const lineLength = Math.hypot(prevPos.x - nextPos.x, prevPos.y - nextPos.y);
+        const canAnimate = (prevNeuronId * layer.length + neuronId) % 7 === 2;
 
-        const lineLength = Math.hypot(
-          prevNeuronPos.x - nextNeuronPos.x,
-          prevNeuronPos.y - nextNeuronPos.y
-        );
-
-        const thisLineCanAnimate =
-          (prevNeuronId * layer.length + neuronId) % 7 === 2;
+        const lineProps = {
+          x1: prevPos.x, x2: nextPos.x,
+          y1: prevPos.y, y2: nextPos.y,
+          strokeWidth: lineWidth,
+        };
 
         connections.push(
           <line
             key={`${prevLayerIndex}-${prevNeuronId}-${layerIndex}-${neuronId}`}
-            x1={prevNeuronPos.x}
-            x2={nextNeuronPos.x}
-            y1={prevNeuronPos.y}
-            y2={nextNeuronPos.y}
+            {...lineProps}
             stroke={color}
-            strokeWidth={lineWidth}
           />
         );
 
-        if (thisLineCanAnimate && !instant) {
+        if (canAnimate && !instant) {
           connections.push(
             <line
               key={`${prevLayerIndex}-${prevNeuronId}-${layerIndex}-${neuronId}-anim`}
-              x1={prevNeuronPos.x}
-              x2={nextNeuronPos.x}
-              y1={prevNeuronPos.y}
-              y2={nextNeuronPos.y}
+              {...lineProps}
               stroke="var(--nn-connection-animation)"
-              strokeWidth={lineWidth}
               strokeDasharray={`${lineLength} ${lineLength}`}
               strokeDashoffset={(animating ? -1 : 1) * lineLength}
               style={{
@@ -341,6 +253,12 @@ function Neurons({
   setSelectedNeuron,
   animating,
   instant,
+}: {
+  neurons: number[][];
+  selectedNeuron: SelectedNeuron;
+  setSelectedNeuron: (n: SelectedNeuron) => void;
+  animating: boolean;
+  instant: boolean;
 }) {
   return (
     <g>
@@ -351,42 +269,27 @@ function Neurons({
           const neuronValue = neurons[layerIndex][neuronId];
           const grayCalc = `calc(var(--nn-neuron-gray-base) + var(--nn-neuron-gray-multiplier) * ${neuronValue})`;
           const fill = `rgb(${grayCalc}, ${grayCalc}, ${grayCalc})`;
-
-          const neuronPos = getNeuronPosition(layerIndex, neuronIndex);
-
+          const pos = getNeuronPosition(layerIndex, neuronIndex);
           const isSelected =
-            selectedNeuron &&
-            selectedNeuron.layerIndex === layerIndex &&
-            selectedNeuron.neuronId === neuronId;
+            selectedNeuron?.layerIndex === layerIndex &&
+            selectedNeuron?.neuronId === neuronId;
 
           return (
             <circle
               key={`${layerIndex}-${neuronId}`}
-              cx={neuronPos.x}
-              cy={neuronPos.y}
+              cx={pos.x}
+              cy={pos.y}
               r={10}
-              stroke={
-                isSelected
-                  ? 'var(--nn-neuron-border-selected)'
-                  : 'var(--nn-neuron-border-default)'
-              }
+              stroke={isSelected ? 'var(--nn-neuron-border-selected)' : 'var(--nn-neuron-border-default)'}
               strokeWidth={isSelected ? 2 : 1}
               style={{
-                fill:
-                  animating || instant ? fill : 'var(--nn-neuron-fill-default)',
-                transition:
-                  animating && !instant
-                    ? `fill 600ms ease-in-out ${1200 * layerIndex + 100}ms`
-                    : 'none',
+                fill: animating || instant ? fill : 'var(--nn-neuron-fill-default)',
+                transition: animating && !instant
+                  ? `fill 600ms ease-in-out ${1200 * layerIndex + 100}ms`
+                  : 'none',
                 cursor: 'pointer',
               }}
-              onClick={() => {
-                if (isSelected) {
-                  setSelectedNeuron(null);
-                } else {
-                  setSelectedNeuron({ layerIndex, neuronId });
-                }
-              }}
+              onClick={() => setSelectedNeuron(isSelected ? null : { layerIndex, neuronId })}
             />
           );
         })
@@ -395,20 +298,24 @@ function Neurons({
   );
 }
 
-function WinningOutputNeuronBox({ neurons, animating, instant }) {
-  const winningValue = Math.max(...neurons[3]);
-  const winningNeuron = neurons[3].indexOf(winningValue);
-  const position = getNeuronPosition(3, winningNeuron);
+function WinningOutputNeuronBox({
+  neurons,
+  animating,
+  instant,
+}: {
+  neurons: number[][];
+  animating: boolean;
+  instant: boolean;
+}) {
+  const outputLayer = neurons[3];
+  const winningNeuron = outputLayer.indexOf(Math.max(...outputLayer));
+  const pos = getNeuronPosition(3, winningNeuron);
   return (
     <rect
-      x={position.x - 18}
-      y={position.y - 16}
-      width={56}
-      height={32}
-      stroke="var(--nn-stroke-accent)"
-      strokeWidth={2}
-      strokeLinecap="round"
-      strokeLinejoin="round"
+      x={pos.x - 18} y={pos.y - 16}
+      width={56} height={32}
+      stroke="var(--nn-stroke-accent)" strokeWidth={2}
+      strokeLinecap="round" strokeLinejoin="round"
       fill="none"
       strokeDasharray="176 176"
       strokeDashoffset={(animating || instant ? 0 : 1) * 176}
@@ -422,131 +329,121 @@ function WinningOutputNeuronBox({ neurons, animating, instant }) {
 }
 
 function OutputDigitLabels() {
+  const lastLayerIndex = visibleNeurons.length - 1;
   return (
     <g>
-      {visibleNeurons[visibleNeurons.length - 1].map(
-        (neuronId, neuronIndex) => {
-          const position = getNeuronPosition(
-            visibleNeurons.length - 1,
-            neuronIndex
-          );
-
-          return (
-            <text
-              key={neuronId}
-              x={position.x + 25}
-              y={position.y + 2}
-              style={{ fill: 'var(--nn-text-primary)' }}
-              fontSize={20}
-              dominantBaseline="middle"
-              textAnchor="middle"
-            >
-              {neuronId}
-            </text>
-          );
-        }
-      )}
+      {visibleNeurons[lastLayerIndex].map((neuronId, neuronIndex) => {
+        const pos = getNeuronPosition(lastLayerIndex, neuronIndex);
+        return (
+          <text
+            key={neuronId}
+            x={pos.x + 25} y={pos.y + 2}
+            style={{ fill: 'var(--nn-text-primary)' }}
+            fontSize={20}
+            dominantBaseline="middle"
+            textAnchor="middle"
+          >
+            {neuronId}
+          </text>
+        );
+      })}
     </g>
   );
 }
 
+interface ImageGridProps {
+  x: number;
+  y: number;
+  width: number;
+  height: number;
+  points: Point[];
+  setPoints: (points: Point[]) => void;
+  normalizing: boolean;
+  isNormalized: boolean;
+  normalizePointsAnimated: (duration?: number) => Promise<void>;
+  instant: boolean;
+  editing: boolean;
+  startEditing: () => void;
+  beginAnimation: () => void;
+  highlightedTile: number | null;
+}
+
 function ImageGrid({
-  x,
-  y,
-  width,
-  height,
-  points,
-  setPoints,
-  normalizing,
-  isNormalized,
-  normalizePointsAnimated,
-  instant,
-  editing,
-  startEditing,
-  beginAnimation,
+  x, y, width, height,
+  points, setPoints,
+  normalizing, isNormalized, normalizePointsAnimated,
+  instant, editing, startEditing, beginAnimation,
   highlightedTile,
-}) {
+}: ImageGridProps) {
   const [dragging, setDragging] = useState(false);
 
   const fillAtPoint = useCallback(
-    (x, y, drag) => {
-      setPoints((points) => {
-        let newPoints = [];
-        if (drag && points.length > 0) {
-          const prevPoint = points[points.length - 1];
-          for (let d = 1; d <= 2; d++) {
-            newPoints.push({
-              x: prevPoint.x + (x - prevPoint.x) * (d / 3),
-              y: prevPoint.y + (y - prevPoint.y) * (d / 3),
-            });
-          }
+    (px: number, py: number, drag: boolean) => {
+      const interpolated: Point[] = [];
+      if (drag && points.length > 0) {
+        const last = points[points.length - 1];
+        for (let d = 1; d <= 2; d++) {
+          interpolated.push({
+            x: last.x + (px - last.x) * (d / 3),
+            y: last.y + (py - last.y) * (d / 3),
+          });
         }
-
-        newPoints.push({ x, y });
-
-        return [...points, ...newPoints];
-      });
+      }
+      setPoints([...points, ...interpolated, { x: px, y: py }]);
     },
-    [setPoints]
+    [points, setPoints]
   );
 
   const fillAtClientPixel = useCallback(
-    (screenX, screenY, target, drag) => {
-      const rect = target.getBoundingClientRect();
-      const x = ((screenX - rect.left) / (rect.right - rect.left)) * 28;
-      const y = ((screenY - rect.top) / (rect.bottom - rect.top)) * 28;
-
-      fillAtPoint(x, y, drag);
+    (screenX: number, screenY: number, target: EventTarget, drag: boolean) => {
+      const rect = (target as Element).getBoundingClientRect();
+      fillAtPoint(
+        ((screenX - rect.left) / (rect.right - rect.left)) * 28,
+        ((screenY - rect.top) / (rect.bottom - rect.top)) * 28,
+        drag
+      );
     },
     [fillAtPoint]
   );
 
-  const fillAtEventLocation = useCallback(
-    (event, drag = false) => {
-      if (event.touches) {
-        for (const touch of event.touches) {
-          // This code is supposed to handle multi-touch (drawing with two
-          // fingers at once) but on my phone it only seems to deal with
-          // one touch at a time. Not sure why.
-          fillAtClientPixel(touch.clientX, touch.clientY, event.target, drag);
-        }
+  const fillAtEvent = useCallback(
+    (event: React.MouseEvent | React.TouchEvent, drag = false) => {
+      if ('touches' in event) {
+        Array.from(event.touches).forEach((touch) =>
+          fillAtClientPixel(touch.clientX, touch.clientY, event.target, drag)
+        );
       } else {
-        // This was a mouse event
         fillAtClientPixel(event.clientX, event.clientY, event.target, drag);
       }
     },
     [fillAtClientPixel]
   );
 
-  const onMouseUp = useCallback((event) => {
-    setDragging(false);
-  }, []);
+  const onMouseUp = useCallback(() => setDragging(false), []);
 
   const onMouseDown = useCallback(
-    (event) => {
+    (event: React.MouseEvent | React.TouchEvent) => {
       if (editing) {
         setDragging(true);
-        fillAtEventLocation(event);
+        fillAtEvent(event);
         event.preventDefault();
       }
     },
-    [editing, fillAtEventLocation]
+    [editing, fillAtEvent]
   );
 
   const onMouseMove = useCallback(
-    (event) => {
+    (event: React.MouseEvent | React.TouchEvent) => {
       if (dragging && editing) {
-        fillAtEventLocation(event, true);
+        fillAtEvent(event, true);
         event.preventDefault();
       }
     },
-    [dragging, editing, fillAtEventLocation]
+    [dragging, editing, fillAtEvent]
   );
 
   const onClick = useCallback(() => {
-    if (!editing) {
-      startEditing();
-    }
+    if (!editing) startEditing();
   }, [editing, startEditing]);
 
   useEffect(() => {
@@ -559,8 +456,7 @@ function ImageGrid({
   }, [onMouseUp]);
 
   const values = useMemo(() => getInputNeuronValues(points), [points]);
-
-  const isEmpty = !values.some((value) => value > 0.1);
+  const isEmpty = !values.some((v) => v > 0.1);
 
   return (
     <g
@@ -572,66 +468,36 @@ function ImageGrid({
       <rect x={0} y={0} width={400} height={400} fill="var(--nn-bg-primary)" />
 
       <g>
-        {values.map((value, n) => {
-          const tileX = n % 28;
-          const tileY = Math.floor(n / 28);
-
-          return (
-            <rect
-              key={`${tileX}-${tileY}`}
-              x={(tileX * 400) / 28}
-              y={(tileY * 400) / 28}
-              width={400 / 28}
-              height={400 / 28}
-              fill={`rgba(var(--nn-grid-white-rgb), ${value})`}
-              stroke={
-                highlightedTile === n ? 'var(--nn-stroke-accent)' : 'none'
-              }
-              strokeWidth="2"
-            />
-          );
-        })}
+        {values.map((value, n) => (
+          <rect
+            key={n}
+            x={(n % 28) * (400 / 28)}
+            y={Math.floor(n / 28) * (400 / 28)}
+            width={400 / 28}
+            height={400 / 28}
+            fill={`rgba(var(--nn-grid-white-rgb), ${value})`}
+            stroke={highlightedTile === n ? 'var(--nn-stroke-accent)' : 'none'}
+            strokeWidth="2"
+          />
+        ))}
       </g>
 
-      <g
-        style={{
-          opacity: normalizing ? 1.0 : 0.0,
-          pointerEvents: 'none',
-          transition: 'opacity 200ms ease-in-out',
-        }}
-      >
-        <rect
-          x={50}
-          y={0}
-          width={300}
-          height={80}
-          fill="var(--nn-bg-overlay)"
-        />
+      <g style={{ opacity: normalizing ? 1 : 0, pointerEvents: 'none', transition: 'opacity 200ms ease-in-out' }}>
+        <rect x={50} y={0} width={300} height={80} fill="var(--nn-bg-overlay)" />
         <text
-          x={200}
-          y={50}
-          dominantBaseline="middle"
-          textAnchor="middle"
-          fill="var(--nn-text-accent)"
-          fontFamily="sans-serif"
-          fontSize={36}
+          x={200} y={50}
+          dominantBaseline="middle" textAnchor="middle"
+          fill="var(--nn-text-accent)" fontFamily="sans-serif" fontSize={36}
         >
           Pre-processing...
         </text>
       </g>
 
       <rect
-        x={0}
-        y={0}
-        width={400}
-        height={400}
-        stroke="var(--nn-stroke-primary)"
-        strokeWidth="2"
-        rx="2"
+        x={0} y={0} width={400} height={400}
+        stroke="var(--nn-stroke-primary)" strokeWidth="2" rx="2"
         fill="var(--nn-transparent)"
-        style={{
-          cursor: editing ? 'crosshair' : 'pointer',
-        }}
+        style={{ cursor: editing ? 'crosshair' : 'pointer' }}
         onClick={onClick}
         onMouseDown={onMouseDown}
         onTouchStart={onMouseDown}
@@ -642,149 +508,65 @@ function ImageGrid({
       <g
         transform="translate(0 410)"
         style={{
-          opacity: editing ? 1.0 : 0.0,
+          opacity: editing ? 1 : 0,
           pointerEvents: editing ? undefined : 'none',
           transition: 'opacity 500ms ease-in-out',
         }}
       >
-        <g>
-          <rect
-            className={styles.clearButton}
-            x={0}
-            y={0}
-            width={150}
-            height={60}
-            tabIndex={0}
-            rx={12}
-            onClick={() => {
-              if (!isEmpty) {
-                setPoints([]);
-              }
-            }}
-            style={{
-              fill: 'var(--nn-button-clear)',
-              stroke: 'var(--nn-button-clear-border)',
-              strokeWidth: 2,
-              cursor: isEmpty ? 'default' : 'pointer',
-              opacity: isEmpty ? 0.5 : 1.0,
-              transition: 'all 0.2s ease',
-            }}
+        <SvgButton
+          x={0} y={0} width={150} height={60}
+          label="Clear" primary={false} disabled={isEmpty}
+          onClick={() => setPoints([])}
+        />
+        {!instant ? (
+          <SvgButton
+            x={200} y={0} width={200} height={60}
+            label="Check digit" primary disabled={isEmpty}
+            onClick={beginAnimation}
           />
-
-          <text
-            x={75}
-            y={32}
-            dominantBaseline="middle"
-            textAnchor="middle"
-            fill="var(--ifm-font-color-base)"
-            fontFamily="sans-serif"
-            fontSize={24}
-            style={{
-              pointerEvents: 'none',
-              opacity: isEmpty ? 0.5 : 1.0,
-            }}
-          >
-            Clear
-          </text>
-        </g>
-
-        {!instant && (
-          <g>
-            <rect
-              className={styles.checkButton}
-              x={200}
-              y={0}
-              width={200}
-              height={60}
-              tabIndex={0}
-              rx={12}
-              onClick={() => {
-                if (!isEmpty) {
-                  beginAnimation();
-                }
-              }}
-              style={{
-                fill: 'var(--nn-button-primary)',
-                stroke: 'var(--nn-button-primary-border)',
-                strokeWidth: 2,
-                cursor: isEmpty ? 'default' : 'pointer',
-                opacity: isEmpty ? 0.5 : 1.0,
-                transition: 'all 0.2s ease',
-              }}
-            />
-
-            <text
-              x={300}
-              y={32}
-              dominantBaseline="middle"
-              textAnchor="middle"
-              fill="white"
-              fontFamily="sans-serif"
-              fontSize={24}
-              style={{
-                pointerEvents: 'none',
-                opacity: isEmpty ? 0.5 : 1.0,
-              }}
-            >
-              Check digit
-            </text>
-          </g>
-        )}
-
-        {instant && (
-          <g>
-            <rect
-              className={styles.checkButton}
-              x={200}
-              y={0}
-              width={200}
-              height={60}
-              tabIndex={0}
-              rx={12}
-              onClick={() => {
-                if (!(isEmpty || isNormalized)) {
-                  normalizePointsAnimated(1);
-                }
-              }}
-              style={{
-                fill: 'var(--nn-button-primary)',
-                stroke: 'var(--nn-button-primary-border)',
-                strokeWidth: 2,
-                cursor: isEmpty || isNormalized ? 'default' : 'pointer',
-                opacity: isEmpty || isNormalized ? 0.5 : 1.0,
-                transition: 'all 0.2s ease',
-              }}
-            />
-
-            <text
-              x={300}
-              y={32}
-              dominantBaseline="middle"
-              textAnchor="middle"
-              fill="white"
-              fontFamily="sans-serif"
-              fontSize={24}
-              style={{
-                pointerEvents: 'none',
-                opacity: isEmpty || isNormalized ? 0.5 : 1.0,
-              }}
-            >
-              Pre-process
-            </text>
-          </g>
+        ) : (
+          <SvgButton
+            x={200} y={0} width={200} height={60}
+            label="Pre-process" primary disabled={isEmpty || isNormalized}
+            onClick={() => normalizePointsAnimated(1)}
+          />
         )}
       </g>
     </g>
   );
 }
 
-const VerticalEllipsis = React.memo(function VerticalEllipsis({
-  cx = 0,
-  cy = 0,
+function SvgButton({
+  x, y, width, height,
+  label, primary, disabled, onClick,
 }: {
-  cx?: number;
-  cy?: number;
+  x: number; y: number; width: number; height: number;
+  label: string; primary: boolean; disabled: boolean;
+  onClick: () => void;
 }) {
+  return (
+    <g>
+      <rect
+        className={primary ? styles.checkButton : styles.clearButton}
+        x={x} y={y} width={width} height={height}
+        tabIndex={0} rx={12}
+        onClick={disabled ? undefined : onClick}
+        style={{ cursor: disabled ? 'default' : 'pointer', opacity: disabled ? 0.5 : 1, transition: 'all 0.2s ease' }}
+      />
+      <text
+        x={x + width / 2} y={y + height / 2 + 2}
+        dominantBaseline="middle" textAnchor="middle"
+        fill={primary ? 'white' : 'var(--ifm-font-color-base)'}
+        fontFamily="sans-serif" fontSize={24}
+        style={{ pointerEvents: 'none', opacity: disabled ? 0.5 : 1 }}
+      >
+        {label}
+      </text>
+    </g>
+  );
+}
+
+const VerticalEllipsis = React.memo(function VerticalEllipsis({ cx = 0, cy = 0 }: { cx?: number; cy?: number }) {
   return (
     <g>
       <circle cx={cx} cy={cy - 12} r={3} fill="var(--nn-grid-white)" />
@@ -794,207 +576,112 @@ const VerticalEllipsis = React.memo(function VerticalEllipsis({
   );
 });
 
-function WeightGrid({ x, y, width, height, weights, inputNeurons }) {
-  const maxWeight = Math.max(...weights.map(Math.abs));
+function WeightGrid({
+  x, y, width, height, weights: w, inputNeurons,
+}: {
+  x: number; y: number; width: number; height: number;
+  weights: number[]; inputNeurons: number[];
+}) {
+  const maxWeight = Math.max(...w.map(Math.abs));
 
   return (
     <g transform={`translate(${x} ${y}) scale(${width / 28} ${height / 28})`}>
-      <rect
-        x="-1"
-        y="-1"
-        width="30"
-        height="30"
-        fill="var(--nn-grid-fill)"
-        stroke="var(--nn-grid-stroke)"
-        strokeWidth="0.5"
-      />
-      {weights.map((weight, n) => {
-        const weightX = n % 28;
-        const weightY = Math.floor(n / 28);
-
-        const alpha = Math.abs(weight / maxWeight) ** 0.3;
-        const color =
-          weight < 0
-            ? `rgba(var(--nn-connection-negative-rgb), ${alpha})`
-            : `rgba(var(--nn-connection-positive-rgb), ${alpha})`;
-
+      {[{ ox: -1 }, { ox: 31 }].map(({ ox }) => (
+        <rect key={ox} x={ox} y="-1" width="30" height="30"
+          fill="var(--nn-grid-fill)" stroke="var(--nn-grid-stroke)" strokeWidth="0.5" />
+      ))}
+      {w.map((weight, n) => {
+        const wx = n % 28;
+        const wy = Math.floor(n / 28);
+        const alpha = (Math.abs(weight) / maxWeight) ** 0.3;
+        const colorVar = weight < 0 ? 'var(--nn-connection-negative-rgb)' : 'var(--nn-connection-positive-rgb)';
         return (
-          <rect
-            key={n}
-            x={weightX}
-            y={weightY}
-            width="1"
-            height="1"
-            fill={color}
-          />
-        );
-      })}
-      <rect
-        x="31"
-        y="-1"
-        width="30"
-        height="30"
-        fill="var(--nn-grid-fill)"
-        stroke="var(--nn-grid-stroke)"
-        strokeWidth="0.5"
-      />
-      {weights.map((weight, n) => {
-        const weightX = n % 28;
-        const weightY = Math.floor(n / 28);
-
-        const alpha = Math.abs(weight / maxWeight) ** 0.3 * inputNeurons[n];
-        const color =
-          weight < 0
-            ? `rgba(var(--nn-connection-negative-rgb), ${alpha})`
-            : `rgba(var(--nn-connection-positive-rgb), ${alpha})`;
-
-        return (
-          <rect
-            key={`weighted-${n}`}
-            x={32 + weightX}
-            y={weightY}
-            width="1"
-            height="1"
-            fill={color}
-          />
+          <React.Fragment key={n}>
+            <rect x={wx} y={wy} width="1" height="1"
+              fill={`rgba(${colorVar}, ${alpha})`} />
+            <rect x={32 + wx} y={wy} width="1" height="1"
+              fill={`rgba(${colorVar}, ${alpha * inputNeurons[n]})`} />
+          </React.Fragment>
         );
       })}
     </g>
   );
 }
 
-function dotProduct(vec1, vec2) {
-  let result = 0;
-  for (let i = 0; i < vec1.length; i++) {
-    result += vec1[i] * vec2[i];
-  }
-  return result;
+// ── Math utilities ──────────────────────────────────────────────────────────
+
+function dotProduct(a: number[], b: number[]): number {
+  let sum = 0;
+  for (let i = 0; i < a.length; i++) sum += a[i] * b[i];
+  return sum;
 }
 
-function matrixVectorMult(matrix, vector) {
-  let result = [];
-  for (let row = 0; row < matrix.length; row++) {
-    result.push(dotProduct(matrix[row], vector));
-  }
-  return result;
+function matMulVec(matrix: number[][], vec: number[]): number[] {
+  return matrix.map((row) => dotProduct(row, vec));
 }
 
-function vectorAdd(vec1, vec2) {
-  let result = [];
-  for (let i = 0; i < vec1.length; i++) {
-    result.push(vec1[i] + vec2[i]);
-  }
-  return result;
+function vecAdd(a: number[], b: number[]): number[] {
+  return a.map((v, i) => v + b[i]);
 }
 
-function sigmoid(x) {
+function sigmoid(x: number): number {
   return 1 / (1 + Math.exp(-x));
 }
 
-// a_1 = sigma(W * a_0 + b)
-function getAllNeuronValues(firstLayer) {
+// a_1 = σ(W · a_0 + b)
+function getAllNeuronValues(firstLayer: number[]): number[][] {
   if (!weights || !biases) return [firstLayer, [], [], []];
-  let layers = [firstLayer];
-
+  const layers: number[][] = [firstLayer];
   while (layers.length <= weights.length) {
-    const previousLayer = layers[layers.length - 1];
-    const weightMatrix = weights[layers.length - 1];
-    const biasVector = biases[layers.length - 1];
-    layers.push(
-      vectorAdd(matrixVectorMult(weightMatrix, previousLayer), biasVector).map(
-        sigmoid
-      )
-    );
+    const prev = layers[layers.length - 1];
+    layers.push(vecAdd(matMulVec(weights[layers.length - 1], prev), biases[layers.length - 1]).map(sigmoid));
   }
-
   return layers;
 }
 
-function getInputNeuronValues(points) {
-  let values = new Array(28 ** 2).fill(0);
-
-  for (const point of points) {
-    const { x, y } = point;
-
-    values = values.map((value, n) => {
-      const tileX = n % 28;
-      const tileY = Math.floor(n / 28);
-
-      const dist = Math.hypot(tileX - x, tileY - y);
-
-      let penValue = 0.8 - (dist / 2) ** 2;
-      penValue = Math.min(Math.max(0, penValue), 1);
-      return value + (1 - value) * penValue;
+function getInputNeuronValues(points: Point[]): number[] {
+  let values = new Array<number>(28 * 28).fill(0);
+  for (const { x, y } of points) {
+    values = values.map((v, n) => {
+      const penValue = Math.min(Math.max(0, 0.8 - (Math.hypot(n % 28 - x, Math.floor(n / 28) - y) / 2) ** 2), 1);
+      return v + (1 - v) * penValue;
     });
   }
-
   return values;
 }
 
-function getNeuronValues(points) {
-  const inputNeurons = getInputNeuronValues(points);
-  return getAllNeuronValues(inputNeurons);
+function getNeuronValues(points: Point[]): number[][] {
+  return getAllNeuronValues(getInputNeuronValues(points));
 }
 
-function collectNormalizationData(points) {
+function collectNormalizationData(points: Point[]): NormData {
   const values = getInputNeuronValues(points);
+  let left = Infinity, right = -Infinity, top = Infinity, bottom = -Infinity;
+  let centerX = 0, centerY = 0, total = 0;
 
-  let left = Infinity;
-  let right = -Infinity;
-  let top = Infinity;
-  let bottom = -Infinity;
-
-  let centerX = 0;
-  let centerY = 0;
-  let totalValue = 0;
-
-  for (let n = 0; n < values.length; n++) {
-    const x = n % 28;
-    const y = Math.floor(n / 28);
-    const value = values[n];
-
-    centerX += x * value;
-    centerY += y * value;
-    totalValue += value;
-
-    if (value > 0.05) {
-      left = Math.min(left, x);
-      right = Math.max(right, x);
-      top = Math.min(top, y);
-      bottom = Math.max(bottom, y);
+  values.forEach((v, n) => {
+    const x = n % 28, y = Math.floor(n / 28);
+    centerX += x * v;
+    centerY += y * v;
+    total += v;
+    if (v > 0.05) {
+      left = Math.min(left, x); right = Math.max(right, x);
+      top = Math.min(top, y);   bottom = Math.max(bottom, y);
     }
-  }
+  });
 
-  centerX /= totalValue;
-  centerY /= totalValue;
-
-  const width = right - left;
-  const height = bottom - top;
-
-  const scale = 20 / Math.max(width, height);
-
-  return { scale, centerX, centerY };
+  return {
+    scale: 20 / Math.max(right - left, bottom - top),
+    centerX: centerX / total,
+    centerY: centerY / total,
+  };
 }
 
-function applyNormalizationTransformation(points, data, time = 1) {
+function applyNormalizationTransformation(points: Point[], data: NormData, time = 1): Point[] {
   const { scale, centerX, centerY } = data;
-
-  return points.map((point) => {
-    let { x, y } = point;
-
-    x -= centerX;
-    y -= centerY;
-
-    x *= scale;
-    y *= scale;
-
-    x += 14;
-    y += 14;
-
-    return {
-      ...point,
-      x: point.x + (x - point.x) * time,
-      y: point.y + (y - point.y) * time,
-    };
+  return points.map((p) => {
+    const tx = (p.x - centerX) * scale + 14;
+    const ty = (p.y - centerY) * scale + 14;
+    return { x: p.x + (tx - p.x) * time, y: p.y + (ty - p.y) * time };
   });
 }
