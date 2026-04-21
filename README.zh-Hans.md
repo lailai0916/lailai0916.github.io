@@ -67,7 +67,7 @@ lailai0916.github.io/
 │   ├── authors.yml                # 作者配置
 │   └── tags.yml                   # 标签配置
 ├── docs/                          # 文档
-├── i18n/                          # 国际化配置
+├── i18n/                          # 国际化文件
 ├── src/                           # 源代码
 │   ├── components/                # 自定义组件
 │   ├── css/                       # 自定义样式
@@ -85,7 +85,7 @@ lailai0916.github.io/
 ├── LICENSE                        # 代码许可协议
 ├── LICENSE-docs                   # 文档许可协议
 ├── package-lock.json              # 依赖锁定文件
-├── package.json                   # 项目依赖
+├── package.json                   # 依赖配置
 ├── sidebars.ts                    # 文档侧边栏配置
 └── tsconfig.json                  # TypeScript 配置
 ```

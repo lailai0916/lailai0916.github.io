@@ -64,10 +64,10 @@ npm start
 ```bash
 lailai0916.github.io/
 ├── blog/                          # Blog
-│   ├── authors.yml                # Author settings
-│   └── tags.yml                   # Tag settings
+│   ├── authors.yml                # Author config
+│   └── tags.yml                   # Tag config
 ├── docs/                          # Documentation
-├── i18n/                          # Internationalization
+├── i18n/                          # Internationalization files
 ├── src/                           # Source code
 │   ├── components/                # Custom components
 │   ├── css/                       # Custom styles
@@ -80,13 +80,13 @@ lailai0916.github.io/
 │   ├── icon/                      # Icon files
 │   ├── img/                       # Image files
 │   ├── json/                      # JSON files
-│   └── CNAME                      # Domain settings
+│   └── CNAME                      # Domain config
 ├── docusaurus.config.ts           # Docusaurus config
-├── LICENSE                        # Code License
-├── LICENSE-docs                   # Documentation License
+├── LICENSE                        # Code license
+├── LICENSE-docs                   # Documentation license
 ├── package-lock.json              # Dependency lock file
-├── package.json                   # Project dependencies
-├── sidebars.ts                    # Sidebar config
+├── package.json                   # Dependency config
+├── sidebars.ts                    # Documentation sidebar config
 └── tsconfig.json                  # TypeScript config
 ```
 
