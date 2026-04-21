@@ -10,7 +10,7 @@ export const CHANGELOG_LIST: ChangelogItem[] = [
   {
     date: '2026-04-19',
     type: 'removed',
-    content: 'Tailwind CSS',
+    content: '<b>Tailwind CSS</b> 依赖',
   },
   {
     date: '2026-04-19',
@@ -186,7 +186,7 @@ export const CHANGELOG_LIST: ChangelogItem[] = [
   {
     date: '2024-10-29',
     type: 'added',
-    content: 'Tailwind CSS',
+    content: '<b>Tailwind CSS</b> 依赖',
   },
   {
     date: '2024-10-17',
