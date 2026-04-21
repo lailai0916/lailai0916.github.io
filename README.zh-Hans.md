@@ -77,6 +77,7 @@ lailai0916.github.io/
 │   ├── theme/                     # 自定义主题
 │   └── utils/                     # 工具函数
 ├── static/                        # 静态资源
+│   ├── icon/                      # 图标文件
 │   ├── img/                       # 图片文件
 │   ├── json/                      # JSON 文件
 │   └── CNAME                      # 域名配置
