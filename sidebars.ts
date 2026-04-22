@@ -81,6 +81,7 @@ const sidebars: SidebarsConfig = {
         'contest/search/bfs',
         'contest/search/bidirectional',
         'contest/search/heuristic',
+        'contest/search/dlx',
       ],
     },
     {
