@@ -113,33 +113,53 @@ export default function FourierTransformCanvas() {
     state.time = 0;
   };
 
-  // Handle resize
+  // Handle resize — keep the canvas square, fluid, and usable at narrow widths
   useEffect(() => {
+    if (!containerRef.current) return;
+
+    const MAX_SIZE = 500;
+    const MIN_SIZE = 120; // prevents divide-by-zero & degenerate layout
+    const RESIZE_THRESHOLD = 8;
+
     const updateSize = () => {
-      if (containerRef.current) {
-        const containerWidth = containerRef.current.clientWidth;
-        const newSize = Math.min(containerWidth - 32, 500);
-        const oldSize = canvasSize;
+      if (!containerRef.current) return;
+      const containerWidth = containerRef.current.clientWidth;
+      // Fit the container exactly (container width already excludes the
+      // parent Section padding) so CSS pixel space and drawing coordinate
+      // space stay aligned, which keeps touch/mouse mapping accurate.
+      const nextSize = Math.max(
+        MIN_SIZE,
+        Math.min(Math.floor(containerWidth), MAX_SIZE)
+      );
+      const oldSize = canvasSize;
 
-        if (Math.abs(newSize - oldSize) > 10) {
-          const ratio = newSize / oldSize;
-          const state = stateRef.current;
+      if (Math.abs(nextSize - oldSize) >= RESIZE_THRESHOLD) {
+        const ratio = nextSize / oldSize;
+        const state = stateRef.current;
 
-          // Scale existing drawing
-          if (state.drawing.length > 0) {
-            state.drawing = state.drawing.map((p) => ({
-              x: p.x * ratio,
-              y: p.y * ratio,
-            }));
-            calcFourier();
-          }
-
-          setCanvasSize(newSize);
+        if (state.drawing.length > 0) {
+          state.drawing = state.drawing.map((p) => ({
+            x: p.x * ratio,
+            y: p.y * ratio,
+          }));
+          calcFourier();
         }
+
+        setCanvasSize(nextSize);
       }
     };
 
     updateSize();
+
+    // Prefer ResizeObserver — fires for any container change (flex/grid reflow,
+    // orientation change, parent padding change) not just window resize.
+    const RO = (window as any).ResizeObserver;
+    if (typeof RO === 'function') {
+      const ro = new RO(updateSize);
+      ro.observe(containerRef.current);
+      return () => ro.disconnect();
+    }
+
     window.addEventListener('resize', updateSize);
     return () => window.removeEventListener('resize', updateSize);
   }, [canvasSize]);

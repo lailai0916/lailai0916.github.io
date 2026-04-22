@@ -5,6 +5,11 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  min-width: 0;
+  /* Horizontal safety net: if the canvas ever exceeds the parent
+     (e.g. MIN_SIZE > container), allow scrolling instead of clipping. */
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 .canvas {
@@ -14,4 +19,6 @@
   touch-action: none;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   border: 1px solid var(--ifm-color-emphasis-300);
+  max-width: 100%;
+  height: auto;
 }
