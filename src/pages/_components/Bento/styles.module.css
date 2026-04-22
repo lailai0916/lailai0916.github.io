@@ -432,4 +432,8 @@
   .cardSocialLabel {
     display: none;
   }
+
+  .statusInline {
+    display: none;
+  }
 }
