@@ -99,7 +99,9 @@ int main()
 	{
 		for(int j=0;j<9;j++)
 		{
-			cin>>a[i][j];
+			char f;
+			cin>>f;
+			a[i][j]=f=='.'?0:f-'0';
 		}
 	}
 	for(int i=0;i<9;i++)
@@ -127,7 +129,7 @@ int main()
 	{
 		for(int j=0;j<9;j++)
 		{
-			cout<<a[i][j]<<' ';
+			cout<<a[i][j];
 		}
 		cout<<'\n';
 	}
