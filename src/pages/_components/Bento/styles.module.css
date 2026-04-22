@@ -397,9 +397,7 @@
     grid-column: span 2;
     grid-row: auto;
   }
-}
 
-@media (max-width: 480px) {
   .cardNav {
     flex-direction: row;
     align-items: center;
@@ -429,5 +427,9 @@
 
   .cardNavArrow {
     opacity: 1;
+  }
+
+  .cardSocialLabel {
+    display: none;
   }
 }
