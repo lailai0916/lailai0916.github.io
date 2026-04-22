@@ -4,7 +4,6 @@
   display: flex;
   flex-direction: column;
   margin: 0 auto;
-  min-width: 0;
 }
 
 .sectionInner {
@@ -14,14 +13,13 @@
   flex-direction: column;
   align-items: center;
   gap: 0.5rem;
-  margin: clamp(2rem, 6vw, 4rem) auto;
-  padding: 0 clamp(0.75rem, 3vw, 1rem);
-  min-width: 0;
+  margin: 4rem auto;
+  padding: 0 1rem;
 }
 
 .header {
   width: 100%;
-  margin-bottom: clamp(1.5rem, 5vw, 3rem);
+  margin-bottom: 3rem;
 }
 
 .alignCenter {
@@ -35,19 +33,17 @@
 .title {
   margin: 0 0 1rem;
   color: var(--ifm-font-color-base);
-  font-size: clamp(1.5rem, 5vw, 2.25rem);
+  font-size: 2.25rem;
   font-weight: 700;
   line-height: 1.25;
-  overflow-wrap: anywhere;
 }
 
 .description {
   max-width: 48rem;
   margin: 0;
   color: var(--ifm-color-emphasis-700);
-  font-size: clamp(0.95rem, 2.6vw, 1.125rem);
+  font-size: 1.125rem;
   line-height: 1.625;
-  overflow-wrap: anywhere;
 }
 
 .alignCenter .description {

@@ -7,8 +7,6 @@
   z-index: 20;
   background: var(--ifm-background-color);
   overflow: auto;
-  overscroll-behavior: contain;
-  -webkit-overflow-scrolling: touch;
   transition: transform 0.72s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
@@ -19,16 +17,13 @@
 
 .scrollGuide {
   position: fixed;
-  /* Keep the pill centered but never let it touch the viewport edges */
   left: 50%;
-  right: auto;
   bottom: calc(1rem + env(safe-area-inset-bottom, 0px));
   transform: translateX(-50%);
   display: inline-flex;
   align-items: center;
   gap: 0.35rem;
   padding: 0.45rem 0.9rem;
-  max-width: calc(100vw - 1.5rem);
   border-radius: 999px;
   border: 1px solid var(--ifm-color-emphasis-300);
   background: var(--ifm-background-color);
@@ -38,16 +33,12 @@
   font-weight: 600;
   letter-spacing: 0.02em;
   line-height: 1;
-  white-space: nowrap;
   cursor: pointer;
   transition: opacity 0.2s ease;
-  z-index: 21;
 }
 
-.scrollGuide:hover,
-.scrollGuide:focus-visible {
+.scrollGuide:hover {
   opacity: 1;
-  outline: none;
 }
 
 @media (max-width: 768px) {
@@ -55,15 +46,6 @@
     bottom: calc(0.75rem + env(safe-area-inset-bottom, 0px));
     padding: 0.4rem 0.75rem;
     font-size: 0.72rem;
-  }
-}
-
-@media (max-width: 360px) {
-  .scrollGuide {
-    bottom: calc(0.5rem + env(safe-area-inset-bottom, 0px));
-    padding: 0.35rem 0.65rem;
-    gap: 0.25rem;
-    font-size: 0.68rem;
   }
 }
 

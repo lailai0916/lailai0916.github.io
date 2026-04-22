@@ -1,10 +1,6 @@
 .sectionSurface {
-  /* Cancel the Section's fluid inline padding so the backdrop stays
-     edge-to-edge across all viewport widths (200–1440+) without relying
-     on 100vw, which can overshoot when a classic scrollbar is present. */
-  --surface-bleed: clamp(0.75rem, 3vw, 1rem);
-  width: calc(100% + 2 * var(--surface-bleed));
-  margin-inline: calc(var(--surface-bleed) * -1);
+  width: calc(100% + 2rem);
+  margin: 0 -1rem;
   background: var(--ifm-color-emphasis-100);
 }
 
@@ -15,8 +11,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: clamp(2rem, 5vw, 4rem) clamp(0.75rem, 3vw, 1.25rem) 2rem;
-  min-width: 0;
+  padding: 4rem 1.25rem 2rem;
 }
 
 .layout {
@@ -26,7 +21,6 @@
   flex-direction: column;
   gap: 1.25rem;
   margin: 0 auto;
-  min-width: 0;
 }
 
 .copy {
@@ -36,27 +30,22 @@
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
-  min-width: 0;
 }
 
 .title {
   display: flex;
   align-items: center;
   gap: 0.75rem;
-  margin: 0 0 clamp(1rem, 3vw, 2rem);
+  margin: 0 0 2rem;
   color: var(--ifm-font-color-base);
-  font-size: clamp(1.375rem, 4.5vw, 1.875rem);
+  font-size: 1.875rem;
   font-weight: 700;
   line-height: 1.25;
-  flex-wrap: wrap;
-  overflow-wrap: anywhere;
 }
 
 .description {
   margin: 0 0 1.5rem;
   line-height: 1.625;
-  font-size: clamp(0.9rem, 2.4vw, 1rem);
-  overflow-wrap: anywhere;
 }
 
 .moreLink {
@@ -65,7 +54,6 @@
 
 .posts {
   width: 100%;
-  min-width: 0;
 }
 
 .postsHeading {
@@ -77,21 +65,19 @@
   color: var(--ifm-color-emphasis-700);
   font-size: 0.875rem;
   font-weight: 700;
-  flex-wrap: wrap;
 }
 
 .grid {
   display: grid;
-  grid-template-columns: minmax(0, 1fr);
-  gap: clamp(1rem, 2.5vw, 1.5rem);
-  margin: clamp(1.25rem, 3vw, 2rem) 0;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  margin: 2rem 0;
   text-align: left;
   width: 100%;
 }
 
 .gridItem {
   height: 100%;
-  min-width: 0;
 }
 
 .gridItemHidden {
@@ -126,16 +112,14 @@
 
 .card {
   height: 100%;
-  min-width: 0;
 }
 
 .cardBody {
   display: flex;
   flex: 1;
   flex-direction: column;
-  gap: clamp(1rem, 2.5vw, 1.5rem);
+  gap: 1.5rem;
   height: 100%;
-  min-width: 0;
 }
 
 .cardTitle {
@@ -144,13 +128,12 @@
   margin: 0;
   overflow: hidden;
   color: var(--ifm-font-color-base);
-  font-size: clamp(1rem, 2.6vw, 1.125rem);
+  font-size: 1.125rem;
   font-weight: 600;
   line-height: 1.375;
   text-overflow: ellipsis;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
-  overflow-wrap: anywhere;
 }
 
 .cardMeta {
@@ -159,7 +142,6 @@
   gap: 0.5rem;
   color: var(--ifm-color-emphasis-700);
   font-size: 0.875rem;
-  flex-wrap: wrap;
 }
 
 .time {
@@ -167,6 +149,10 @@
 }
 
 @media (min-width: 768px) {
+  .title {
+    font-size: 2.25rem;
+  }
+
   .grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }

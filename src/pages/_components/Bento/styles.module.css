@@ -1,6 +1,5 @@
 .hero {
-  padding: clamp(1.5rem, 4vw, 3rem) clamp(0.75rem, 3vw, 1.5rem)
-    clamp(2rem, 5vw, 4rem);
+  padding: 3rem 1.5rem 4rem;
   min-height: calc(100vh - var(--ifm-navbar-height));
   display: flex;
   align-items: center;
@@ -9,9 +8,9 @@
 
 .bento {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(4, 1fr);
   grid-template-rows: auto auto auto;
-  gap: clamp(0.5rem, 1.5vw, 1rem);
+  gap: 1rem;
   max-width: 800px;
   width: 100%;
 }
@@ -20,17 +19,12 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  min-width: 0;
-  /* Fluid padding override for the Card wrapper — eats less horizontal
-     space on narrow viewports while keeping the desktop feel. */
-  --card-padding: clamp(1rem, 3.5vw, 1.75rem);
 }
 
 .cardMainLink {
   grid-column: span 2;
   grid-row: span 2;
   display: block;
-  min-width: 0;
   color: inherit;
   text-decoration: none !important;
 }
@@ -43,56 +37,50 @@
 .cardMainInner {
   display: flex;
   align-items: center;
-  gap: clamp(0.75rem, 2vw, 1.25rem);
-  margin-bottom: clamp(1rem, 2.5vw, 1.5rem);
-  min-width: 0;
-  flex-wrap: wrap;
+  gap: 1.25rem;
+  margin-bottom: 1.5rem;
 }
 
 .avatar {
-  width: clamp(48px, 10vw, 72px);
-  height: clamp(48px, 10vw, 72px);
+  width: 72px;
+  height: 72px;
   border-radius: 50%;
   object-fit: cover;
-  flex-shrink: 0;
 }
 
 .intro {
   flex: 1;
-  min-width: 0;
 }
 
 .nameRow {
   display: flex;
   align-items: center;
-  gap: 0.5rem 0.625rem;
-  flex-wrap: wrap;
+  gap: 0.625rem;
+  flex-wrap: nowrap;
 }
 
 .name {
-  font-size: clamp(1.25rem, 4vw, 1.75rem);
+  font-size: 1.75rem;
   font-weight: 700;
   margin: 0;
   letter-spacing: -0.02em;
-  word-break: break-word;
 }
 
 .statusInline {
   display: inline-flex;
   align-items: center;
-  gap: 0.4rem;
+  gap: 0.5rem;
+  margin-left: auto;
   padding: 0.2rem 0.55rem;
   border-radius: 999px;
   border: 1px solid var(--ifm-color-emphasis-200);
   background: var(--ifm-color-emphasis-100);
-  max-width: 100%;
 }
 
 .role {
-  font-size: clamp(0.85rem, 2.2vw, 0.95rem);
+  font-size: 0.95rem;
   color: var(--ifm-color-emphasis-600);
   margin: 0.25rem 0 0;
-  overflow-wrap: anywhere;
 }
 
 .roleTyping {
@@ -126,7 +114,7 @@
 .profileTags {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.4rem 0.55rem;
+  gap: 0.55rem;
 }
 
 .profileTag {
@@ -141,14 +129,11 @@
   font-size: 0.75rem;
   line-height: 1.1;
   font-weight: 500;
-  max-width: 100%;
-  overflow-wrap: anywhere;
 }
 
 .profileTagIcon {
   font-size: 0.75rem;
   color: var(--ifm-color-emphasis-600);
-  flex-shrink: 0;
 }
 
 .cardNav {
@@ -158,10 +143,7 @@
   justify-content: space-between;
   position: relative;
   overflow: hidden;
-  min-width: 0;
-  min-height: clamp(84px, 14vw, 100px);
-  gap: 0.5rem;
-  --card-padding: clamp(0.85rem, 3vw, 1.25rem);
+  min-height: 100px;
 }
 
 .cardNav::before {
@@ -186,11 +168,10 @@
 }
 
 .cardNavIcon {
-  font-size: clamp(1.25rem, 3.5vw, 1.5rem);
+  font-size: 1.5rem;
   position: relative;
   z-index: 1;
   color: var(--link-card-accent);
-  flex-shrink: 0;
 }
 
 .cardNav1 {
@@ -214,18 +195,16 @@
 }
 
 .cardNavTitle {
-  font-size: clamp(0.875rem, 2.5vw, 1rem);
+  font-size: 1rem;
   font-weight: 600;
   position: relative;
   z-index: 1;
-  min-width: 0;
-  overflow-wrap: anywhere;
 }
 
 .cardNavArrow {
   position: absolute;
-  top: 0.85rem;
-  right: 0.85rem;
+  top: 1rem;
+  right: 1rem;
   font-size: 1rem;
   color: var(--ifm-color-emphasis-400);
   opacity: 0;
@@ -246,27 +225,20 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 0.75rem;
-  min-width: 0;
-  --card-padding: clamp(0.85rem, 3vw, 1.25rem);
 }
 
 .cardSocialLabel {
   font-size: 0.875rem;
   font-weight: 500;
   color: var(--ifm-color-emphasis-600);
-  flex-shrink: 0;
 }
 
 .socialLinks {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(4, 40px);
+  grid-template-rows: repeat(2, 40px);
   gap: 0.5rem;
-  justify-content: flex-end;
-  flex: 1 1 auto;
-  min-width: 0;
-  margin-left: auto;
+  justify-content: end;
 }
 
 .socialLink {
@@ -275,7 +247,6 @@
   justify-content: center;
   width: 40px;
   height: 40px;
-  flex-shrink: 0;
   border-radius: 12px;
   color: var(--ifm-color-emphasis-600);
   background: var(--ifm-color-emphasis-100);
@@ -289,8 +260,6 @@
 .cardLatestPost {
   grid-column: 3 / span 2;
   grid-row: 3;
-  min-width: 0;
-  --card-padding: clamp(0.85rem, 3vw, 1.25rem);
 }
 
 .latestPostLink {
@@ -321,7 +290,7 @@
 
 .latestPostTitle {
   margin: 0;
-  font-size: clamp(0.9rem, 2.4vw, 1rem);
+  font-size: 1rem;
   font-weight: 600;
   line-height: 1.4;
   color: var(--ifm-color-emphasis-900);
@@ -330,7 +299,6 @@
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
-  overflow-wrap: anywhere;
 }
 
 .latestPostMeta {
@@ -343,13 +311,11 @@
   font-weight: 500;
   line-height: 1.3;
   color: var(--ifm-color-emphasis-800);
-  flex-wrap: wrap;
 }
 
 .latestPostMetaIcon {
   font-size: 0.9rem;
   color: var(--ifm-color-emphasis-500);
-  flex-shrink: 0;
 }
 
 .latestPostEmpty {
@@ -363,7 +329,6 @@
   background: #22c55e;
   border-radius: 50%;
   animation: pulse 2s ease-in-out infinite;
-  flex-shrink: 0;
 }
 
 @keyframes pulse {
@@ -379,21 +344,44 @@
 }
 
 .statusText {
-  font-size: 0.8rem;
+  font-size: 0.875rem;
   color: var(--ifm-color-emphasis-700);
   font-weight: 500;
   line-height: 1;
 }
 
-/* ≤768px: collapse to 2 cols; main card spans full row */
 @media (max-width: 768px) {
+  .hero {
+    padding: 2rem 1rem 3rem;
+    min-height: auto;
+  }
+
   .bento {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
   }
 
   .cardMainLink {
     grid-column: span 2;
     grid-row: span 1;
+  }
+
+  .cardMainInner {
+    gap: 1rem;
+  }
+
+  .avatar {
+    width: 56px;
+    height: 56px;
+  }
+
+  .name {
+    font-size: 1.5rem;
+  }
+
+  .nameRow {
+    flex-wrap: wrap;
+    gap: 0.4rem;
   }
 
   .statusInline {
@@ -411,43 +399,24 @@
   }
 }
 
-/* ≤480px: nav cards become horizontal rows so they stay compact */
 @media (max-width: 480px) {
   .cardNav {
     flex-direction: row;
     align-items: center;
     min-height: auto;
-    gap: 0.75rem;
-    padding-right: 2.25rem;
+    gap: 1rem;
   }
 
   .cardNavArrow {
-    position: absolute;
-    top: 50%;
-    right: 0.85rem;
-    transform: translateY(-50%);
-    opacity: 0.5;
-  }
-
-  .cardNav:hover .cardNavArrow {
-    transform: translateY(-50%);
-    opacity: 1;
-  }
-
-  .cardSocial {
-    justify-content: flex-start;
-  }
-
-  .socialLinks {
-    margin-left: 0;
-    justify-content: flex-start;
+    position: static;
+    transform: none;
+    margin-left: auto;
   }
 }
 
-/* ≤440px: single column, everything stacks */
 @media (max-width: 440px) {
   .bento {
-    grid-template-columns: minmax(0, 1fr);
+    grid-template-columns: 1fr;
   }
 
   .cardMainLink,
@@ -457,57 +426,8 @@
     grid-column: span 1;
     grid-row: span 1;
   }
-}
-
-/* ≤360px: further tighten to keep everything readable down to 200px */
-@media (max-width: 360px) {
-  .cardMainInner {
-    gap: 0.65rem;
-  }
-
-  .nameRow {
-    gap: 0.35rem 0.5rem;
-  }
-
-  .profileTag {
-    padding: 0.2rem 0.45rem;
-    font-size: 0.7rem;
-  }
-
-  .socialLinks {
-    gap: 0.35rem;
-  }
-
-  .socialLink {
-    width: 36px;
-    height: 36px;
-    border-radius: 10px;
-  }
-
-  .cardNav {
-    padding-right: 2rem;
-  }
 
   .cardNavArrow {
-    right: 0.65rem;
-  }
-}
-
-/* ≤260px: extreme case — collapse avatar row to vertical */
-@media (max-width: 260px) {
-  .cardMainInner {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.6rem;
-  }
-
-  .statusInline {
-    padding: 0.15rem 0.45rem;
-    font-size: 0.7rem;
-  }
-
-  .socialLink {
-    width: 32px;
-    height: 32px;
+    opacity: 1;
   }
 }

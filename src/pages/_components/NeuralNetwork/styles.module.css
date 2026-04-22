@@ -49,12 +49,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  min-width: 0;
-  /* Let the SVG scale gracefully down to very narrow viewports; below
-     ~320px horizontal scrolling keeps interactive elements usable. */
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
-  scrollbar-width: thin;
 }
 
 /* Light Mode Theme — "Blueprint" style */
@@ -103,20 +97,14 @@
 
 .svg {
   display: block;
-  /* Stay fluid but guarantee enough internal space to preserve touch
-     targets and legibility. Below ~320px the parent will scroll. */
   width: 100%;
-  min-width: 320px;
-  max-width: 640px;
   height: auto;
-  aspect-ratio: 640 / 480;
+  max-width: 640px;
   touch-action: none;
   user-select: none;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
-  flex: 0 0 auto;
-  margin: 0 auto;
 }
 
 /* 神经元样式 */
