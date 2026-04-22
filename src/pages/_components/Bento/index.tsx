@@ -140,10 +140,6 @@ export default function Bento() {
   ];
   const { text: identity, currentWord } = useTypewriter(identities);
   const roleArticle = /^[aeiou]/i.test(currentWord) ? 'an' : 'a';
-  const availabilityLabel = translate({
-    id: 'home.bento.available',
-    message: 'Available',
-  });
   const rolePrefix = translate(
     {
       id: 'home.bento.rolePrefix',
@@ -151,18 +147,6 @@ export default function Bento() {
     },
     { article: roleArticle }
   );
-  const connectLabel = translate({
-    id: 'home.bento.connect',
-    message: 'Connect',
-  });
-  const latestPostLabel = translate({
-    id: 'home.bento.latestPost',
-    message: 'Latest Post',
-  });
-  const noPostsLabel = translate({
-    id: 'home.bento.noPosts',
-    message: 'No posts yet.',
-  });
   const latestPost = useMemo(() => getRecentBlogPosts(1)[0] ?? null, []);
   const latestPostDate = latestPost
     ? new Date(latestPost.date).toLocaleDateString(i18n.currentLocale, {
@@ -190,7 +174,10 @@ export default function Bento() {
                   <span className={styles.statusInline}>
                     <span className={styles.statusDot} />
                     <span className={styles.statusText}>
-                      {availabilityLabel}
+                      {translate({
+                        id: 'home.bento.available',
+                        message: 'Available',
+                      })}
                     </span>
                   </span>
                 </div>
@@ -227,7 +214,12 @@ export default function Bento() {
           </Card>
         ))}
         <Card className={styles.cardSocial} padding="1.25rem">
-          <span className={styles.cardSocialLabel}>{connectLabel}</span>
+          <span className={styles.cardSocialLabel}>
+            {translate({
+              id: 'home.bento.connect',
+              message: 'Connect',
+            })}
+          </span>
           <div className={styles.socialLinks}>
             {COMMUNITY_LIST.map((social) => (
               <Link
@@ -246,7 +238,10 @@ export default function Bento() {
             <Link to={latestPost.permalink} className={styles.latestPostLink}>
               <div className={styles.latestPostHead}>
                 <span className={styles.latestPostLabel}>
-                  {latestPostLabel}
+                  {translate({
+                    id: 'home.bento.latestPost',
+                    message: 'Latest Post',
+                  })}
                 </span>
               </div>
               <p className={styles.latestPostTitle}>{latestPost.title}</p>
@@ -259,7 +254,12 @@ export default function Bento() {
               </p>
             </Link>
           ) : (
-            <div className={styles.latestPostEmpty}>{noPostsLabel}</div>
+            <div className={styles.latestPostEmpty}>
+              {translate({
+                id: 'home.bento.noPosts',
+                message: 'No posts yet.',
+              })}
+            </div>
           )}
         </Card>
       </div>
