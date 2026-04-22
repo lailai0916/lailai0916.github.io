@@ -18,6 +18,8 @@ struct DLX
 		l[0]=324;
 		r[324]=0;
 		cnt=324;
+		memset(fst,0,sizeof fst);
+		memset(siz,0,sizeof siz);
 	}
 	void ins(int x,int y)
 	{
