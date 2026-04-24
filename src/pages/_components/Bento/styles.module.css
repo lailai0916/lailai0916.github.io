@@ -71,7 +71,7 @@
   align-items: center;
   gap: 0.5rem;
   margin-left: auto;
-  padding: 0.2rem 0.55rem;
+  padding: 0.2rem 0.3875rem;
   border-radius: 999px;
   border: 1px solid var(--ifm-color-emphasis-200);
   background: var(--ifm-color-emphasis-100);
