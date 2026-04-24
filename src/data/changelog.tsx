@@ -8,12 +8,6 @@ interface ChangelogItem {
 
 export const CHANGELOG_LIST: ChangelogItem[] = [
   {
-    date: '2026-04-24',
-    type: 'added',
-    content:
-      '国际化支持 <b>繁體中文</b>、<b>日本語</b>、<b>한국어</b>、<b>Español</b>、<b>Français</b>、<b>Русский</b>',
-  },
-  {
     date: '2026-04-19',
     type: 'removed',
     content: '<b>Tailwind CSS</b> 依赖',
