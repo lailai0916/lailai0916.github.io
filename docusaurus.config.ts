@@ -32,8 +32,8 @@ const config: Config = {
     locales: [
       defaultLocale,
       'zh-Hans',
-      //   'zh-Hant',
-      //   'ja',
+      'zh-Hant',
+      'ja',
       //   'ko',
       //   'es',
       //   'fr',
