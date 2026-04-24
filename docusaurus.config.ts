@@ -32,7 +32,7 @@ const config: Config = {
     locales: [
       defaultLocale,
       'zh-Hans',
-      'zh-Hant',
+      //   'zh-Hant',
       //   'ja',
       //   'ko',
       //   'es',
