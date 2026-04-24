@@ -162,9 +162,7 @@
   padding: 0.62rem 0.7rem;
   border-radius: 12px;
   border: 1px solid var(--ifm-color-emphasis-200);
-  transition:
-    border-color 160ms ease,
-    background-color 160ms ease;
+  transition: border-color 160ms ease;
 }
 
 .statTile:hover {
