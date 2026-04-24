@@ -35,7 +35,7 @@ const config: Config = {
       'zh-Hant',
       'ja',
       'ko',
-      //   'es',
+      'es',
       //   'fr',
       //   'ru',
     ],
