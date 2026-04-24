@@ -8,7 +8,7 @@ interface ChangelogItem {
 
 export const CHANGELOG_LIST: ChangelogItem[] = [
   {
-    date: '2025-04-24',
+    date: '2026-04-24',
     type: 'added',
     content:
       '国际化支持 <b>繁體中文</b>、<b>日本語</b>、<b>한국어</b>、<b>Español</b>、<b>Français</b>、<b>Русский</b>',
