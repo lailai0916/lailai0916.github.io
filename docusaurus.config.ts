@@ -164,24 +164,21 @@ const config: Config = {
           ],
         },
         {
+          title: 'Pages',
+          items: [
+            { label: 'About', to: '/about' },
+            { label: 'Travel', to: '/travel' },
+            { label: 'Friends', to: '/friends' },
+            { label: 'Resources', to: '/resources' },
+          ],
+        },
+        {
           title: 'Site',
           items: [
             { label: 'Settings', to: '/settings' },
             { label: 'Sitemap', to: '/sitemap' },
             { label: 'Changelog', to: '/changelog' },
             { label: 'Privacy Policy', to: '/privacy' },
-          ],
-        },
-        {
-          title: 'Community',
-          items: [
-            { label: 'X (Twitter)', href: 'https://x.com/lailai0x394' },
-            { label: 'Telegram', href: 'https://t.me/lailai0916' },
-            {
-              label: 'LinkedIn',
-              href: 'https://www.linkedin.com/in/lailai0916',
-            },
-            { label: 'GitHub', href: 'https://github.com/lailai0916' },
           ],
         },
         {
