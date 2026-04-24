@@ -78,8 +78,8 @@ export const RESOURCE_LIST: ResourceCategoryItem[] = [
         description: '开源模型与数据集社区',
       },
       {
-        title: 'LMArena',
-        href: 'https://lmarena.ai',
+        title: 'Arena',
+        href: 'https://arena.ai',
         description: '大模型对战评测平台',
       },
       {
