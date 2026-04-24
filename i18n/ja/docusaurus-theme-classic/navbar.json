@@ -1,0 +1,46 @@
+{
+  "title": {
+    "message": "lailai's Home",
+    "description": "The title in the navbar"
+  },
+  "logo.alt": {
+    "message": "lailai's Logo",
+    "description": "The alt text of navbar logo"
+  },
+  "item.label.Contest": {
+    "message": "競技",
+    "description": "Navbar item with label Contest"
+  },
+  "item.label.Note": {
+    "message": "ノート",
+    "description": "Navbar item with label Note"
+  },
+  "item.label.Project": {
+    "message": "プロジェクト",
+    "description": "Navbar item with label Project"
+  },
+  "item.label.Blog": {
+    "message": "ブログ",
+    "description": "Navbar item with label Blog"
+  },
+  "item.label.More": {
+    "message": "その他",
+    "description": "Navbar item with label More"
+  },
+  "item.label.About": {
+    "message": "プロフィール",
+    "description": "Navbar item with label About"
+  },
+  "item.label.Travel": {
+    "message": "旅行",
+    "description": "Navbar item with label Travel"
+  },
+  "item.label.Friends": {
+    "message": "友人",
+    "description": "Navbar item with label Friends"
+  },
+  "item.label.Resources": {
+    "message": "リソース",
+    "description": "Navbar item with label Resources"
+  }
+}

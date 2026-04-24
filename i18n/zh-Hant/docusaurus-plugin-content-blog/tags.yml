@@ -1,0 +1,47 @@
+pinned:
+  label: 置頂
+
+notice:
+  label: 公告
+
+personal:
+  label: 個人
+
+record:
+  label: 記錄
+
+memory:
+  label: 回憶
+
+travel:
+  label: 旅行
+
+project:
+  label: 項目
+
+math:
+  label: 數學
+
+resource:
+  label: 資源
+
+misc:
+  label: 雜項
+
+solution:
+  label: 題解
+
+luogu:
+  label: 洛谷
+
+codeforces:
+  label: Codeforces
+
+atcoder:
+  label: AtCoder
+
+spoj:
+  label: SPOJ
+
+uva:
+  label: UVA

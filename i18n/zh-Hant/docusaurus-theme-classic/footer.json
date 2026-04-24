@@ -1,0 +1,86 @@
+{
+  "link.title.Docs": {
+    "message": "文檔",
+    "description": "The title of the footer links column with title=Docs in the footer"
+  },
+  "link.title.Site": {
+    "message": "網站",
+    "description": "The title of the footer links column with title=Site in the footer"
+  },
+  "link.title.Community": {
+    "message": "社區",
+    "description": "The title of the footer links column with title=Community in the footer"
+  },
+  "link.title.More": {
+    "message": "更多",
+    "description": "The title of the footer links column with title=More in the footer"
+  },
+  "link.item.label.Contest": {
+    "message": "競賽",
+    "description": "The label of footer link with label=Contest linking to /docs/contest"
+  },
+  "link.item.label.Note": {
+    "message": "筆記",
+    "description": "The label of footer link with label=Note linking to /docs/note"
+  },
+  "link.item.label.Project": {
+    "message": "項目",
+    "description": "The label of footer link with label=Project linking to /docs/project"
+  },
+  "link.item.label.Blog": {
+    "message": "博客",
+    "description": "The label of footer link with label=Blog linking to /blog"
+  },
+  "link.item.label.Settings": {
+    "message": "設置",
+    "description": "The label of footer link with label=Settings linking to /settings"
+  },
+  "link.item.label.Sitemap": {
+    "message": "網站地圖",
+    "description": "The label of footer link with label=Sitemap linking to /sitemap"
+  },
+  "link.item.label.Changelog": {
+    "message": "更新日誌",
+    "description": "The label of footer link with label=Changelog linking to /changelog"
+  },
+  "link.item.label.Privacy Policy": {
+    "message": "隱私政策",
+    "description": "The label of footer link with label=Privacy Policy linking to /privacy"
+  },
+  "link.item.label.X (Twitter)": {
+    "message": "X (Twitter)",
+    "description": "The label of footer link with label=X (Twitter) linking to https://x.com/lailai0x394"
+  },
+  "link.item.label.Telegram": {
+    "message": "Telegram",
+    "description": "The label of footer link with label=Telegram linking to https://t.me/lailai0916"
+  },
+  "link.item.label.LinkedIn": {
+    "message": "LinkedIn",
+    "description": "The label of footer link with label=LinkedIn linking to https://www.linkedin.com/in/lailai0916"
+  },
+  "link.item.label.GitHub": {
+    "message": "GitHub",
+    "description": "The label of footer link with label=GitHub linking to https://github.com/lailai0916"
+  },
+  "link.item.label.lailai's Status": {
+    "message": "lailai's Status",
+    "description": "The label of footer link with label=lailai's Status linking to https://status.lailai.one"
+  },
+  "link.item.label.lailai's Analytics": {
+    "message": "lailai's Analytics",
+    "description": "The label of footer link with label=lailai's Analytics linking to https://analytics.lailai.one/share/DDd09iBEYOQw2k9L"
+  },
+  "link.item.label.lailai's Cloud": {
+    "message": "lailai's Cloud",
+    "description": "The label of footer link with label=lailai's Cloud linking to https://cloud.lailai.one"
+  },
+  "link.item.label.lailai's AI": {
+    "message": "lailai's AI",
+    "description": "The label of footer link with label=lailai's AI linking to https://ai.lailai.one"
+  },
+  "copyright": {
+    "message": "版權所有 © 2021–2026 lailai，使用 <a href=\"https://docusaurus.io\" target=\"_blank\">Docusaurus</a> 構建。<br />本網站內容採用 <a href=\"https://creativecommons.org/licenses/by/4.0/\">知識共享 署名 4.0 國際許可協議</a><img src=\"https://mirrors.creativecommons.org/presskit/icons/cc.svg\" alt=\"\" style=\"max-width: 1em;max-height:1em;margin-left: .2em;\"><img src=\"https://mirrors.creativecommons.org/presskit/icons/by.svg\" alt=\"\" style=\"max-width: 1em;max-height:1em;margin-left: .2em;\">",
+    "description": "The footer copyright"
+  }
+}

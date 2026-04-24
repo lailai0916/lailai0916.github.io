@@ -1,0 +1,14 @@
+{
+  "title": {
+    "message": "블로그",
+    "description": "The title for the blog used in SEO"
+  },
+  "description": {
+    "message": "lailai's Blog",
+    "description": "The description for the blog used in SEO"
+  },
+  "sidebar.title": {
+    "message": "게시물 목록",
+    "description": "The label for the left sidebar"
+  }
+}

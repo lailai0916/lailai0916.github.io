@@ -1,0 +1,270 @@
+{
+  "version.label": {
+    "message": "Next",
+    "description": "The label for version current"
+  },
+  "sidebar.sidebar1.category.个人": {
+    "message": "個人",
+    "description": "The label for category '個人' in sidebar 'sidebar1'"
+  },
+  "sidebar.sidebar1.category.个人.link.generated-index.description": {
+    "message": "本章記錄我在 OI 中的個人經驗，包括風格規範、對拍工具、常用模板庫以及實用技巧等。",
+    "description": "The generated-index page description for category '個人' in sidebar 'sidebar1'"
+  },
+  "sidebar.sidebar1.category.比赛相关": {
+    "message": "比賽相關",
+    "description": "The label for category '比賽相關' in sidebar 'sidebar1'"
+  },
+  "sidebar.sidebar1.category.比赛相关.link.generated-index.description": {
+    "message": "本章介紹計算機編程比賽直接相關的知識，包括各種賽事、賽制、題型，以及賽場上常見的坑點與技巧。",
+    "description": "The generated-index page description for category '比賽相關' in sidebar 'sidebar1'"
+  },
+  "sidebar.sidebar1.category.语言基础": {
+    "message": "語言基礎",
+    "description": "The label for category '語言基礎' in sidebar 'sidebar1'"
+  },
+  "sidebar.sidebar1.category.语言基础.link.generated-index.description": {
+    "message": "本章介紹編程相關的知識，包括 C++ 從入門到進階教程和一些其他語言的簡介。",
+    "description": "The generated-index page description for category '語言基礎' in sidebar 'sidebar1'"
+  },
+  "sidebar.sidebar1.category.算法基础": {
+    "message": "算法基礎",
+    "description": "The label for category '算法基礎' in sidebar 'sidebar1'"
+  },
+  "sidebar.sidebar1.category.算法基础.link.generated-index.description": {
+    "message": "本章介紹一些基礎算法。",
+    "description": "The generated-index page description for category '算法基礎' in sidebar 'sidebar1'"
+  },
+  "sidebar.sidebar1.category.搜索": {
+    "message": "搜索",
+    "description": "The label for category '搜索' in sidebar 'sidebar1'"
+  },
+  "sidebar.sidebar1.category.搜索.link.generated-index.description": {
+    "message": "搜索，也就是對狀態空間進行枚舉，通過窮盡所有的可能來找到最優解，或者統計合法解的個數。",
+    "description": "The generated-index page description for category '搜索' in sidebar 'sidebar1'"
+  },
+  "sidebar.sidebar1.category.动态规划": {
+    "message": "動態規劃",
+    "description": "The label for category '動態規劃' in sidebar 'sidebar1'"
+  },
+  "sidebar.sidebar1.category.动态规划.link.generated-index.description": {
+    "message": "動態規劃是一種通過把原問題分解爲相對簡單的子問題的方式求解複雜問題的方法。",
+    "description": "The generated-index page description for category '動態規劃' in sidebar 'sidebar1'"
+  },
+  "sidebar.sidebar1.category.字符串": {
+    "message": "字符串",
+    "description": "The label for category '字符串' in sidebar 'sidebar1'"
+  },
+  "sidebar.sidebar1.category.字符串.link.generated-index.description": {
+    "message": "字符串，就是由字符連接而成的序列。",
+    "description": "The generated-index page description for category '字符串' in sidebar 'sidebar1'"
+  },
+  "sidebar.sidebar1.category.数学": {
+    "message": "數學",
+    "description": "The label for category '數學' in sidebar 'sidebar1'"
+  },
+  "sidebar.sidebar1.category.数学.link.generated-index.description": {
+    "message": "本章介紹 OI 中可能會用到的數學知識。",
+    "description": "The generated-index page description for category '數學' in sidebar 'sidebar1'"
+  },
+  "sidebar.sidebar1.category.数论": {
+    "message": "數論",
+    "description": "The label for category '數論' in sidebar 'sidebar1'"
+  },
+  "sidebar.sidebar1.category.数论.link.generated-index.description": {
+    "message": "數論是純粹數學的一個分支，主要研究整數的性質。",
+    "description": "The generated-index page description for category '數論' in sidebar 'sidebar1'"
+  },
+  "sidebar.sidebar1.category.多项式与生成函数": {
+    "message": "多項式與生成函數",
+    "description": "The label for category '多項式與生成函數' in sidebar 'sidebar1'"
+  },
+  "sidebar.sidebar1.category.多项式与生成函数.link.generated-index.description": {
+    "message": "本章介紹多項式與生成函數。",
+    "description": "The generated-index page description for category '多項式與生成函數' in sidebar 'sidebar1'"
+  },
+  "sidebar.sidebar1.category.组合数学": {
+    "message": "組合數學",
+    "description": "The label for category '組合數學' in sidebar 'sidebar1'"
+  },
+  "sidebar.sidebar1.category.组合数学.link.generated-index.description": {
+    "message": "本章介紹組合數學。",
+    "description": "The generated-index page description for category '組合數學' in sidebar 'sidebar1'"
+  },
+  "sidebar.sidebar1.category.线性代数": {
+    "message": "線性代數",
+    "description": "The label for category '線性代數' in sidebar 'sidebar1'"
+  },
+  "sidebar.sidebar1.category.线性代数.link.generated-index.description": {
+    "message": "本章介紹線性代數。",
+    "description": "The generated-index page description for category '線性代數' in sidebar 'sidebar1'"
+  },
+  "sidebar.sidebar1.category.数值分析": {
+    "message": "數值分析",
+    "description": "The label for category '數值分析' in sidebar 'sidebar1'"
+  },
+  "sidebar.sidebar1.category.数值分析.link.generated-index.description": {
+    "message": "數值分析是指用計算機對數學問題進行近似數值計算的方法。",
+    "description": "The generated-index page description for category '數值分析' in sidebar 'sidebar1'"
+  },
+  "sidebar.sidebar1.category.数据结构": {
+    "message": "數據結構",
+    "description": "The label for category '數據結構' in sidebar 'sidebar1'"
+  },
+  "sidebar.sidebar1.category.数据结构.link.generated-index.description": {
+    "message": "數據結構是在計算機中存儲、組織數據的方式。",
+    "description": "The generated-index page description for category '數據結構' in sidebar 'sidebar1'"
+  },
+  "sidebar.sidebar1.category.图论": {
+    "message": "圖論",
+    "description": "The label for category '圖論' in sidebar 'sidebar1'"
+  },
+  "sidebar.sidebar1.category.图论.link.generated-index.description": {
+    "message": "圖論是數學的一個分支，圖是圖論的主要研究對象。",
+    "description": "The generated-index page description for category '圖論' in sidebar 'sidebar1'"
+  },
+  "sidebar.sidebar1.category.树上问题": {
+    "message": "樹上問題",
+    "description": "The label for category '樹上問題' in sidebar 'sidebar1'"
+  },
+  "sidebar.sidebar1.category.树上问题.link.generated-index.description": {
+    "message": "樹是一類特殊的圖，即無環連通圖。",
+    "description": "The generated-index page description for category '樹上問題' in sidebar 'sidebar1'"
+  },
+  "sidebar.sidebar1.category.计算几何": {
+    "message": "計算幾何",
+    "description": "The label for category '計算幾何' in sidebar 'sidebar1'"
+  },
+  "sidebar.sidebar1.category.计算几何.link.generated-index.description": {
+    "message": "利用計算機建立數學模型解決幾何問題。",
+    "description": "The generated-index page description for category '計算幾何' in sidebar 'sidebar1'"
+  },
+  "sidebar.sidebar1.category.杂项": {
+    "message": "雜項",
+    "description": "The label for category '雜項' in sidebar 'sidebar1'"
+  },
+  "sidebar.sidebar1.category.杂项.link.generated-index.description": {
+    "message": "本章介紹的是一些難以分類的算法及 OI 相關知識。",
+    "description": "The generated-index page description for category '雜項' in sidebar 'sidebar1'"
+  },
+  "sidebar.sidebar2.category.数学": {
+    "message": "數學",
+    "description": "The label for category '數學' in sidebar 'sidebar2'"
+  },
+  "sidebar.sidebar2.category.数学.link.generated-index.description": {
+    "message": "本章記錄我的數學筆記。",
+    "description": "The generated-index page description for category '數學' in sidebar 'sidebar2'"
+  },
+  "sidebar.sidebar2.category.高中数学": {
+    "message": "高中數學",
+    "description": "The label for category '高中數學' in sidebar 'sidebar2'"
+  },
+  "sidebar.sidebar2.category.基础与杂项": {
+    "message": "基礎與雜項",
+    "description": "The label for category '基礎與雜項' in sidebar 'sidebar2'"
+  },
+  "sidebar.sidebar2.category.代数与函数": {
+    "message": "代數與函數",
+    "description": "The label for category '代數與函數' in sidebar 'sidebar2'"
+  },
+  "sidebar.sidebar2.category.几何与解析": {
+    "message": "幾何與解析",
+    "description": "The label for category '幾何與解析' in sidebar 'sidebar2'"
+  },
+  "sidebar.sidebar2.category.统计与概率": {
+    "message": "統計與概率",
+    "description": "The label for category '統計與概率' in sidebar 'sidebar2'"
+  },
+  "sidebar.sidebar2.category.高等数学": {
+    "message": "高等數學",
+    "description": "The label for category '高等數學' in sidebar 'sidebar2'"
+  },
+  "sidebar.sidebar2.category.英语": {
+    "message": "英語",
+    "description": "The label for category '英語' in sidebar 'sidebar2'"
+  },
+  "sidebar.sidebar2.category.英语.link.generated-index.description": {
+    "message": "本章記錄我的英語筆記。",
+    "description": "The generated-index page description for category '英語' in sidebar 'sidebar2'"
+  },
+  "sidebar.sidebar2.category.英语语音": {
+    "message": "英語語音",
+    "description": "The label for category '英語語音' in sidebar 'sidebar2'"
+  },
+  "sidebar.sidebar2.category.英语词汇": {
+    "message": "英語詞彙",
+    "description": "The label for category '英語詞彙' in sidebar 'sidebar2'"
+  },
+  "sidebar.sidebar2.category.英语语法": {
+    "message": "英語語法",
+    "description": "The label for category '英語語法' in sidebar 'sidebar2'"
+  },
+  "sidebar.sidebar2.category.动词": {
+    "message": "動詞",
+    "description": "The label for category '動詞' in sidebar 'sidebar2'"
+  },
+  "sidebar.sidebar2.category.动词.link.generated-index.description": {
+    "message": "本章介紹英語動詞的相關知識，包括動詞分類、時態、語氣等。",
+    "description": "The generated-index page description for category '動詞' in sidebar 'sidebar2'"
+  },
+  "sidebar.sidebar2.category.词性": {
+    "message": "詞性",
+    "description": "The label for category '詞性' in sidebar 'sidebar2'"
+  },
+  "sidebar.sidebar2.category.词性.link.generated-index.description": {
+    "message": "本章介紹英語各種詞性的用法，包括名詞、冠詞、代詞、數詞、形容詞、副詞、介詞、連詞和嘆詞。",
+    "description": "The generated-index page description for category '詞性' in sidebar 'sidebar2'"
+  },
+  "sidebar.sidebar2.category.句子": {
+    "message": "句子",
+    "description": "The label for category '句子' in sidebar 'sidebar2'"
+  },
+  "sidebar.sidebar2.category.句子.link.generated-index.description": {
+    "message": "本章介紹英語句子結構，包括句子分類、從句、語態等。",
+    "description": "The generated-index page description for category '句子' in sidebar 'sidebar2'"
+  },
+  "sidebar.sidebar2.category.杂项": {
+    "message": "雜項",
+    "description": "The label for category '雜項' in sidebar 'sidebar2'"
+  },
+  "sidebar.sidebar2.category.杂项.link.generated-index.description": {
+    "message": "本章介紹其他英語語法相關知識，包括構詞法和標點符號。",
+    "description": "The generated-index page description for category '雜項' in sidebar 'sidebar2'"
+  },
+  "sidebar.sidebar2.category.推荐": {
+    "message": "推薦",
+    "description": "The label for category '推薦' in sidebar 'sidebar2'"
+  },
+  "sidebar.sidebar3.category.lailai's AI Lab": {
+    "message": "lailai's AI Lab",
+    "description": "The label for category 'lailai's AI Lab' in sidebar 'sidebar3'"
+  },
+  "sidebar.sidebar3.category.lailai's AI Lab.link.generated-index.description": {
+    "message": "本章爲使用 AI 製作的項目。",
+    "description": "The generated-index page description for category 'lailai's AI Lab' in sidebar 'sidebar3'"
+  },
+  "sidebar.sidebar3.category.Terminal": {
+    "message": "Terminal",
+    "description": "The label for category 'Terminal' in sidebar 'sidebar3'"
+  },
+  "sidebar.sidebar3.category.Terminal.link.generated-index.description": {
+    "message": "本章展示基於終端的項目和教程。",
+    "description": "The generated-index page description for category 'Terminal' in sidebar 'sidebar3'"
+  },
+  "sidebar.sidebar3.category.Desmos": {
+    "message": "Desmos",
+    "description": "The label for category 'Desmos' in sidebar 'sidebar3'"
+  },
+  "sidebar.sidebar3.category.Desmos.link.generated-index.description": {
+    "message": "本章展示使用 Desmos 圖形計算器創作的各種項目。",
+    "description": "The generated-index page description for category 'Desmos' in sidebar 'sidebar3'"
+  },
+  "sidebar.sidebar3.category.指南": {
+    "message": "指南",
+    "description": "The label for category '指南' in sidebar 'sidebar3'"
+  },
+  "sidebar.sidebar3.category.指南.link.generated-index.description": {
+    "message": "本章收錄各種實用的文檔指南。",
+    "description": "The generated-index page description for category '指南' in sidebar 'sidebar3'"
+  }
+}

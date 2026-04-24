@@ -1,0 +1,926 @@
+{
+  "data.changelog.type.added": {
+    "message": "[Добавлено]"
+  },
+  "data.changelog.type.changed": {
+    "message": "[Изменено]"
+  },
+  "data.changelog.type.deprecated": {
+    "message": "[Устарело]"
+  },
+  "data.changelog.type.removed": {
+    "message": "[Удалено]"
+  },
+  "data.changelog.type.fixed": {
+    "message": "[Исправлено]"
+  },
+  "data.changelog.type.security": {
+    "message": "[Безопасность]"
+  },
+  "home.scrollGuide": {
+    "message": "Прокрутить вниз"
+  },
+  "components.problem.code": {
+    "message": "Код ({num})"
+  },
+  "components.problem.solution": {
+    "message": "Решение"
+  },
+  "components.problem.error": {
+    "message": "Не удалось загрузить задачу «{id}»."
+  },
+  "components.solution.luogu": {
+    "message": "Luogu"
+  },
+  "components.solution.blog": {
+    "message": "Блог"
+  },
+  "components.solution.solution": {
+    "message": "Решение"
+  },
+  "theme.blog.archive.title": {
+    "message": "Архив",
+    "description": "The page & hero title of the blog archive page"
+  },
+  "blog.post.empty": {
+    "message": "Пока нет публикаций, скоро появится новый контент..."
+  },
+  "blog.postcard.wordCount": {
+    "message": "{word} слов"
+  },
+  "blog.postcard.readingTime": {
+    "message": "{readingTime} мин"
+  },
+  "blog.postcard.viewCount": {
+    "message": "{viewCount} просмотров"
+  },
+  "blog.sidebar.toc.title": {
+    "message": "Содержание"
+  },
+  "blog.sidebar.info.location": {
+    "message": "Местоположение"
+  },
+  "blog.sidebar.info.locationValue": {
+    "message": "Ханчжоу, Китай"
+  },
+  "blog.sidebar.info.localTime": {
+    "message": "Местное время"
+  },
+  "blog.sidebar.info.fingerprint": {
+    "message": "Отпечаток GPG"
+  },
+  "blog.sidebar.info.title": {
+    "message": "Информация"
+  },
+  "blog.sidebar.stats.posts": {
+    "message": "Публикации"
+  },
+  "blog.sidebar.stats.words": {
+    "message": "Слова"
+  },
+  "blog.sidebar.stats.visitors": {
+    "message": "Посетители"
+  },
+  "blog.sidebar.stats.views": {
+    "message": "Просмотры"
+  },
+  "blog.sidebar.stats.title": {
+    "message": "Статистика"
+  },
+  "blog.sidebar.tags.title": {
+    "message": "Популярные теги"
+  },
+  "blog.sidebar.feed.rss": {
+    "message": "RSS-лента"
+  },
+  "blog.sidebar.feed.atom": {
+    "message": "Atom-лента"
+  },
+  "blog.sidebar.feed.json": {
+    "message": "JSON-лента"
+  },
+  "blog.sidebar.feed.title": {
+    "message": "Подписка"
+  },
+  "theme.tags.tagsPageTitle": {
+    "message": "Теги",
+    "description": "The title of the tag list page"
+  },
+  "blog.pages.tags.tagSelect": {
+    "message": "Теги"
+  },
+  "pages.friends.title": {
+    "message": "Друзья"
+  },
+  "pages.friends.description": {
+    "message": "Настоящая дружба — самая редкая вещь в мире"
+  },
+  "pages.friends.modification": {
+    "message": "Мои <b>друзья</b>"
+  },
+  "pages.friends.datacard.label": {
+    "message": "Друзья"
+  },
+  "pages.resources.title": {
+    "message": "Ресурсы"
+  },
+  "pages.resources.description": {
+    "message": "Качественные инструменты и платформы"
+  },
+  "pages.resources.modification": {
+    "message": "Избранные <b>ресурсы</b>"
+  },
+  "pages.resources.search.placeholder": {
+    "message": "Поиск ресурсов"
+  },
+  "pages.resources.category.all": {
+    "message": "Все"
+  },
+  "pages.resources.category.count": {
+    "message": "{count} ресурс|{count} ресурса|{count} ресурсов|{count} ресурса"
+  },
+  "pages.resources.datacard.label1": {
+    "message": "Категории"
+  },
+  "pages.resources.datacard.label2": {
+    "message": "Ресурсы"
+  },
+  "pages.resources.noresults.description": {
+    "message": "Ресурсы по запросу «{query}» не найдены."
+  },
+  "pages.resources.noresults.clear": {
+    "message": "Очистить поиск"
+  },
+  "pages.settings.title": {
+    "message": "Настройки"
+  },
+  "pages.settings.description": {
+    "message": "Настройте функции и предпочтения сайта"
+  },
+  "pages.settings.modification": {
+    "message": "Персональные <b>настройки</b>"
+  },
+  "pages.settings.item.theme.option.system": {
+    "message": "Системный режим"
+  },
+  "pages.settings.item.theme.option.light": {
+    "message": "Светлый режим"
+  },
+  "pages.settings.item.theme.option.dark": {
+    "message": "Темный режим"
+  },
+  "pages.settings.item.theme.title": {
+    "message": "Тема"
+  },
+  "pages.settings.item.theme.description": {
+    "message": "Выберите удобный режим темы"
+  },
+  "pages.settings.item.color.title": {
+    "message": "Генератор цвета"
+  },
+  "pages.settings.item.color.description": {
+    "message": "Настройте основной цвет сайта и просматривайте результат в реальном времени"
+  },
+  "pages.settings.item.font.title": {
+    "message": "Размер шрифта"
+  },
+  "pages.settings.item.font.description": {
+    "message": "Настройте шрифт интерфейса для комфортного чтения"
+  },
+  "pages.settings.item.font.current": {
+    "message": "Текущий: {size}px"
+  },
+  "pages.settings.item.experimental.option.originalLayout": {
+    "message": "Исходный макет"
+  },
+  "pages.settings.item.experimental.option.debugMode": {
+    "message": "Режим отладки"
+  },
+  "pages.settings.item.experimental.title": {
+    "message": "Экспериментальный контент"
+  },
+  "pages.settings.item.experimental.description": {
+    "message": "Попробуйте новые функции, которые еще находятся в разработке"
+  },
+  "pages.settings.item.quickactions.option.confetti": {
+    "message": "Удиви меня"
+  },
+  "pages.settings.item.quickactions.option.reset": {
+    "message": "Сбросить настройки"
+  },
+  "pages.settings.item.quickactions.title": {
+    "message": "Быстрые действия"
+  },
+  "pages.settings.item.quickactions.description": {
+    "message": "Быстро управляйте персональной конфигурацией"
+  },
+  "pages.settings.datacard.label": {
+    "message": "Настройки"
+  },
+  "pages.travel.title": {
+    "message": "Путешествия"
+  },
+  "pages.travel.description": {
+    "message": "Каждая поездка дает новые взгляды и идеи"
+  },
+  "pages.travel.modification": {
+    "message": "Записи о <b>путешествиях</b>"
+  },
+  "pages.travel.datacard.label1": {
+    "message": "Страны"
+  },
+  "pages.travel.datacard.label2": {
+    "message": "Лет"
+  },
+  "home.topbanner.title": {
+    "message": "Hello, I'm lailai"
+  },
+  "home.bento.nav.contest": {
+    "message": "Соревнования"
+  },
+  "home.bento.nav.note": {
+    "message": "Заметки"
+  },
+  "home.bento.nav.project": {
+    "message": "Проекты"
+  },
+  "home.bento.nav.blog": {
+    "message": "Блог"
+  },
+  "home.bento.tag.china": {
+    "message": "Китай"
+  },
+  "home.bento.tag.school": {
+    "message": "Средняя школа № 2 Ханчжоу"
+  },
+  "home.bento.tag.languages": {
+    "message": "Китайский и английский"
+  },
+  "home.bento.tag.friendly": {
+    "message": "Дружелюбный"
+  },
+  "home.bento.tag.mbti": {
+    "message": "INTJ"
+  },
+  "home.bento.identity.student": {
+    "message": "ученик"
+  },
+  "home.bento.identity.developer": {
+    "message": "разработчик"
+  },
+  "home.bento.identity.designer": {
+    "message": "дизайнер"
+  },
+  "home.bento.identity.oier": {
+    "message": "OIer"
+  },
+  "home.bento.rolePrefix": {
+    "message": "Я {article}"
+  },
+  "home.bento.available": {
+    "message": "Доступен"
+  },
+  "home.bento.connect": {
+    "message": "Связаться"
+  },
+  "home.bento.latestPost": {
+    "message": "Последняя публикация"
+  },
+  "home.bento.noPosts": {
+    "message": "Пока нет публикаций."
+  },
+  "home.blog.empty": {
+    "message": "Пока нет публикаций, скоро появится новый контент..."
+  },
+  "home.blog.title": {
+    "message": "Учеба и практика"
+  },
+  "home.blog.description.p1": {
+    "message": "Технологии быстро развиваются, поэтому важно сохранять острую способность к обучению и любопытство. Освоение каждой новой технологии — это инвестиция в будущее. Здесь я записываю мысли и выводы из процесса обучения, а также делюсь методами и опытом решения задач."
+  },
+  "home.blog.description.p2": {
+    "message": "Через постоянную практику и обобщение мы превращаем знания в реальные навыки. Только проверенные практикой методы и технологии действительно помогают решать реальные проблемы. Здесь можно найти решения алгоритмических задач, технические заметки и опыт проектов."
+  },
+  "home.blog.more": {
+    "message": "Больше публикаций →"
+  },
+  "home.blog.latest": {
+    "message": "Последние публикации"
+  },
+  "home.countdown.event": {
+    "message": "2027"
+  },
+  "home.countdown.final": {
+    "message": "С Новым годом!"
+  },
+  "home.countdown.title": {
+    "message": "Обратный отсчет"
+  },
+  "home.countdown.description": {
+    "message": "Осталось до {event}"
+  },
+  "home.countdown.unit.days": {
+    "message": "Дней"
+  },
+  "home.countdown.unit.hours": {
+    "message": "Часов"
+  },
+  "home.countdown.unit.minutes": {
+    "message": "Минут"
+  },
+  "home.countdown.unit.seconds": {
+    "message": "Секунд"
+  },
+  "home.fouriertransform.title": {
+    "message": "Преобразование Фурье"
+  },
+  "home.fouriertransform.description": {
+    "message": "Нарисуйте любую фигуру ниже, чтобы увидеть визуализацию ее ряда Фурье с вращающимися окружностями"
+  },
+  "home.neuralnetwork.title": {
+    "message": "Нейронная сеть"
+  },
+  "home.neuralnetwork.description": {
+    "message": "Нарисуйте цифры 0–9 ниже, и нейронная сеть распознает ваш почерк"
+  },
+  "theme.blog.authorsList.pageTitle": {
+    "message": "Авторы",
+    "description": "The title of the authors page"
+  },
+  "pages.travel.timeline.title": {
+    "message": "Хронология путешествий"
+  },
+  "pages.travel.timeline.description": {
+    "message": "То, что узнано на бумаге, всегда кажется поверхностным; чтобы понять по-настоящему, нужно пережить это самому."
+  },
+  "pages.travel.map.title": {
+    "message": "Карта путешествий"
+  },
+  "pages.travel.map.description": {
+    "message": "Интерактивная карта стран мира, которые я посетил"
+  },
+  "pages.travel.map.legend.visited": {
+    "message": "Посещено"
+  },
+  "pages.travel.map.legend.unvisited": {
+    "message": "Не посещено"
+  },
+  "theme.ErrorPageContent.title": {
+    "message": "На странице произошёл сбой.",
+    "description": "The title of the fallback page when the page crashed"
+  },
+  "theme.BackToTopButton.buttonAriaLabel": {
+    "message": "Прокрутка к началу",
+    "description": "The ARIA label for the back to top button"
+  },
+  "theme.blog.archive.description": {
+    "message": "Архив",
+    "description": "The page & hero description of the blog archive page"
+  },
+  "theme.blog.paginator.navAriaLabel": {
+    "message": "Навигация по странице списка блогов",
+    "description": "The ARIA label for the blog pagination"
+  },
+  "theme.blog.paginator.newerEntries": {
+    "message": "Следующие записи",
+    "description": "The label used to navigate to the newer blog posts page (previous page)"
+  },
+  "theme.blog.paginator.olderEntries": {
+    "message": "Предыдущие записи",
+    "description": "The label used to navigate to the older blog posts page (next page)"
+  },
+  "theme.blog.post.paginator.navAriaLabel": {
+    "message": "Навигация по странице поста блога",
+    "description": "The ARIA label for the blog posts pagination"
+  },
+  "theme.blog.post.paginator.newerPost": {
+    "message": "Следующий пост",
+    "description": "The blog post button label to navigate to the newer/previous post"
+  },
+  "theme.blog.post.paginator.olderPost": {
+    "message": "Предыдущий пост",
+    "description": "The blog post button label to navigate to the older/next post"
+  },
+  "theme.tags.tagsPageLink": {
+    "message": "Посмотреть все теги",
+    "description": "The label of the link targeting the tag list page"
+  },
+  "theme.colorToggle.ariaLabel.mode.system": {
+    "message": "системный режим",
+    "description": "The name for the system color mode"
+  },
+  "theme.colorToggle.ariaLabel.mode.light": {
+    "message": "Светлый режим",
+    "description": "The name for the light color mode"
+  },
+  "theme.colorToggle.ariaLabel.mode.dark": {
+    "message": "Тёмный режим",
+    "description": "The name for the dark color mode"
+  },
+  "theme.colorToggle.ariaLabel": {
+    "message": "Переключение между темным и светлым режимом (сейчас используется {mode})",
+    "description": "The ARIA label for the color mode toggle"
+  },
+  "theme.docs.breadcrumbs.navAriaLabel": {
+    "message": "Навигационная цепочка текущей страницы",
+    "description": "The ARIA label for the breadcrumbs"
+  },
+  "theme.docs.paginator.navAriaLabel": {
+    "message": "Страница документа",
+    "description": "The ARIA label for the docs pagination"
+  },
+  "theme.docs.paginator.previous": {
+    "message": "Предыдущая страница",
+    "description": "The label used to navigate to the previous doc"
+  },
+  "theme.docs.paginator.next": {
+    "message": "Следующая страница",
+    "description": "The label used to navigate to the next doc"
+  },
+  "theme.docs.tagDocListPageTitle.nDocsTagged": {
+    "message": "Одна страница|{count} страницы|{count} страниц",
+    "description": "Pluralized label for \"{count} docs tagged\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
+  },
+  "theme.docs.tagDocListPageTitle": {
+    "message": "{nDocsTagged} с тегом \"{tagName}\"",
+    "description": "The title of the page for a docs tag"
+  },
+  "theme.docs.versionBadge.label": {
+    "message": "Версия: {versionLabel}"
+  },
+  "theme.docs.versions.unreleasedVersionLabel": {
+    "message": "Это документация для будущей версии {siteTitle} {versionLabel}.",
+    "description": "The label used to tell the user that he's browsing an unreleased doc version"
+  },
+  "theme.docs.versions.unmaintainedVersionLabel": {
+    "message": "Это документация {siteTitle} для версии {versionLabel}, которая уже не поддерживается.",
+    "description": "The label used to tell the user that he's browsing an unmaintained doc version"
+  },
+  "theme.docs.versions.latestVersionSuggestionLabel": {
+    "message": "Актуальная документация находится на странице {latestVersionLink} ({versionLabel}).",
+    "description": "The label used to tell the user to check the latest version"
+  },
+  "theme.docs.versions.latestVersionLinkLabel": {
+    "message": "последней версии",
+    "description": "The label used for the latest version suggestion link label"
+  },
+  "theme.common.editThisPage": {
+    "message": "Отредактировать эту страницу",
+    "description": "The link label to edit the current page"
+  },
+  "theme.common.headingLinkTitle": {
+    "message": "Прямая ссылка на {heading}",
+    "description": "Title for link to heading"
+  },
+  "theme.lastUpdated.atDate": {
+    "message": " {date}",
+    "description": "The words used to describe on which date a page has been last updated"
+  },
+  "theme.lastUpdated.byUser": {
+    "message": " от {user}",
+    "description": "The words used to describe by who the page has been last updated"
+  },
+  "theme.lastUpdated.lastUpdatedAtBy": {
+    "message": "Последнее обновление{atDate}{byUser}",
+    "description": "The sentence used to display when a page has been last updated, and by who"
+  },
+  "theme.NotFound.title": {
+    "message": "Страница не найдена",
+    "description": "The title of the 404 page"
+  },
+  "theme.navbar.mobileVersionsDropdown.label": {
+    "message": "Версии",
+    "description": "The label for the navbar versions dropdown on mobile view"
+  },
+  "theme.tags.tagsListLabel": {
+    "message": "Теги:",
+    "description": "The label alongside a tag list"
+  },
+  "theme.admonition.caution": {
+    "message": "предупреждение",
+    "description": "The default label used for the Caution admonition (:::caution)"
+  },
+  "theme.admonition.danger": {
+    "message": "осторожно",
+    "description": "The default label used for the Danger admonition (:::danger)"
+  },
+  "theme.admonition.info": {
+    "message": "к сведению",
+    "description": "The default label used for the Info admonition (:::info)"
+  },
+  "theme.admonition.note": {
+    "message": "примечание",
+    "description": "The default label used for the Note admonition (:::note)"
+  },
+  "theme.admonition.tip": {
+    "message": "подсказка",
+    "description": "The default label used for the Tip admonition (:::tip)"
+  },
+  "theme.admonition.warning": {
+    "message": "предупреждение",
+    "description": "The default label used for the Warning admonition (:::warning)"
+  },
+  "theme.AnnouncementBar.closeButtonAriaLabel": {
+    "message": "Закрыть",
+    "description": "The ARIA label for close button of announcement bar"
+  },
+  "theme.blog.sidebar.navAriaLabel": {
+    "message": "Навигация по последним постам в блоге",
+    "description": "The ARIA label for recent posts in the blog sidebar"
+  },
+  "theme.DocSidebarItem.expandCategoryAriaLabel": {
+    "message": "Развернуть категорию боковой панели «{label}»",
+    "description": "The ARIA label to expand the sidebar category"
+  },
+  "theme.DocSidebarItem.collapseCategoryAriaLabel": {
+    "message": "Свернуть категорию боковой панели «{label}»",
+    "description": "The ARIA label to collapse the sidebar category"
+  },
+  "theme.IconExternalLink.ariaLabel": {
+    "message": "(откроется в новой вкладке)",
+    "description": "The ARIA label for the external link icon"
+  },
+  "theme.NavBar.navAriaLabel": {
+    "message": "Основная навигация",
+    "description": "The ARIA label for the main navigation"
+  },
+  "theme.NotFound.p1": {
+    "message": "К сожалению, мы не смогли найти запрашиваемую вами страницу.",
+    "description": "The first paragraph of the 404 page"
+  },
+  "theme.NotFound.p2": {
+    "message": "Пожалуйста, обратитесь к владельцу сайта, с которого вы перешли на эту ссылку, чтобы сообщить ему, что ссылка не работает.",
+    "description": "The 2nd paragraph of the 404 page"
+  },
+  "theme.navbar.mobileLanguageDropdown.label": {
+    "message": "Языки",
+    "description": "The label for the mobile language switcher dropdown"
+  },
+  "theme.TOCCollapsible.toggleButtonLabel": {
+    "message": "Содержание этой страницы",
+    "description": "The label used by the button on the collapsible TOC component"
+  },
+  "theme.blog.post.readMore": {
+    "message": "Читать дальше",
+    "description": "The label used in blog post item excerpts to link to full blog posts"
+  },
+  "theme.blog.post.readMoreLabel": {
+    "message": "Подробнее о {title}",
+    "description": "The ARIA label for the link to full blog posts from excerpts"
+  },
+  "theme.blog.post.readingTime.plurals": {
+    "message": "{readingTime} мин. чтения|{readingTime} мин. чтения|{readingTime} мин. чтения",
+    "description": "Pluralized label for \"{readingTime} min read\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
+  },
+  "theme.CodeBlock.copy": {
+    "message": "Скопировать",
+    "description": "The copy button label on code blocks"
+  },
+  "theme.CodeBlock.copied": {
+    "message": "Скопировано",
+    "description": "The copied button label on code blocks"
+  },
+  "theme.CodeBlock.copyButtonAriaLabel": {
+    "message": "Скопировать в буфер обмена",
+    "description": "The ARIA label for copy code blocks button"
+  },
+  "theme.docs.breadcrumbs.home": {
+    "message": "Главная страница",
+    "description": "The ARIA label for the home page in the breadcrumbs"
+  },
+  "theme.CodeBlock.wordWrapToggle": {
+    "message": "Переключить перенос по строкам",
+    "description": "The title attribute for toggle word wrapping button of code block lines"
+  },
+  "theme.docs.sidebar.collapseButtonTitle": {
+    "message": "Свернуть сайдбар",
+    "description": "The title attribute for collapse button of doc sidebar"
+  },
+  "theme.docs.sidebar.collapseButtonAriaLabel": {
+    "message": "Свернуть сайдбар",
+    "description": "The title attribute for collapse button of doc sidebar"
+  },
+  "theme.docs.sidebar.navAriaLabel": {
+    "message": "Боковая панель документации",
+    "description": "The ARIA label for the sidebar navigation"
+  },
+  "theme.docs.sidebar.closeSidebarButtonAriaLabel": {
+    "message": "Закрыть панель навигации",
+    "description": "The ARIA label for close button of mobile sidebar"
+  },
+  "theme.navbar.mobileSidebarSecondaryMenu.backButtonLabel": {
+    "message": "← Перейти к главному меню",
+    "description": "The label of the back button to return to main menu, inside the mobile navbar sidebar secondary menu (notably used to display the docs sidebar)"
+  },
+  "theme.docs.sidebar.toggleSidebarButtonAriaLabel": {
+    "message": "Переключить навигационную панель",
+    "description": "The ARIA label for hamburger menu button of mobile navigation"
+  },
+  "theme.navbar.mobileDropdown.collapseButton.expandAriaLabel": {
+    "message": "Развернуть выпадающее меню",
+    "description": "The ARIA label of the button to expand the mobile dropdown navbar item"
+  },
+  "theme.navbar.mobileDropdown.collapseButton.collapseAriaLabel": {
+    "message": "Свернуть выпадающее меню",
+    "description": "The ARIA label of the button to collapse the mobile dropdown navbar item"
+  },
+  "theme.docs.sidebar.expandButtonTitle": {
+    "message": "Развернуть сайдбар",
+    "description": "The ARIA label and title attribute for expand button of doc sidebar"
+  },
+  "theme.docs.sidebar.expandButtonAriaLabel": {
+    "message": "Развернуть сайдбар",
+    "description": "The ARIA label and title attribute for expand button of doc sidebar"
+  },
+  "theme.SearchBar.seeAll": {
+    "message": "Посмотреть все результаты ({count})"
+  },
+  "theme.SearchPage.documentsFound.plurals": {
+    "message": "{count} документ|{count} документа|{count} документов",
+    "description": "Pluralized label for \"{count} documents found\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
+  },
+  "theme.SearchPage.existingResultsTitle": {
+    "message": "Результаты поиска по запросу \"{query}\"",
+    "description": "The search page title for non-empty query"
+  },
+  "theme.SearchPage.emptyResultsTitle": {
+    "message": "Поиск по сайту",
+    "description": "The search page title for empty query"
+  },
+  "theme.SearchPage.inputPlaceholder": {
+    "message": "Введите фразу для поиска",
+    "description": "The placeholder for search page input"
+  },
+  "theme.SearchPage.inputLabel": {
+    "message": "Поиск",
+    "description": "The ARIA label for search page input"
+  },
+  "theme.SearchPage.algoliaLabel": {
+    "message": "При поддержке Algolia",
+    "description": "The description label for Algolia mention"
+  },
+  "theme.SearchPage.noResultsText": {
+    "message": "По запросу ничего не найдено",
+    "description": "The paragraph for empty search result"
+  },
+  "theme.SearchPage.fetchingNewResults": {
+    "message": "Загрузка новых результатов поиска...",
+    "description": "The paragraph for fetching new search results"
+  },
+  "theme.SearchBar.label": {
+    "message": "Поиск",
+    "description": "The ARIA label and placeholder for search button"
+  },
+  "theme.SearchModal.searchBox.resetButtonTitle": {
+    "message": "Очистить",
+    "description": "The label and ARIA label for search box reset button"
+  },
+  "theme.SearchModal.searchBox.cancelButtonText": {
+    "message": "Отменить",
+    "description": "The label and ARIA label for search box cancel button"
+  },
+  "theme.SearchModal.searchBox.placeholderText": {
+    "message": "Поиск по документации",
+    "description": "The placeholder text for the main search input field"
+  },
+  "theme.SearchModal.searchBox.placeholderTextAskAi": {
+    "message": "Задать другой вопрос...",
+    "description": "The placeholder text when in AI question mode"
+  },
+  "theme.SearchModal.searchBox.placeholderTextAskAiStreaming": {
+    "message": "Ответ формируется...",
+    "description": "The placeholder text for search box when AI is streaming an answer"
+  },
+  "theme.SearchModal.searchBox.enterKeyHint": {
+    "message": "поиск",
+    "description": "The hint for the search box enter key text"
+  },
+  "theme.SearchModal.searchBox.enterKeyHintAskAi": {
+    "message": "отправить",
+    "description": "The hint for the Ask AI search box enter key text"
+  },
+  "theme.SearchModal.searchBox.searchInputLabel": {
+    "message": "Поиск",
+    "description": "The ARIA label for search input"
+  },
+  "theme.SearchModal.searchBox.backToKeywordSearchButtonText": {
+    "message": "Вернуться к поиску по ключевым словам",
+    "description": "The text for back to keyword search button"
+  },
+  "theme.SearchModal.searchBox.backToKeywordSearchButtonAriaLabel": {
+    "message": "Вернуться к поиску по ключевым словам",
+    "description": "The ARIA label for back to keyword search button"
+  },
+  "theme.SearchModal.startScreen.recentSearchesTitle": {
+    "message": "Недавнее",
+    "description": "The title for recent searches"
+  },
+  "theme.SearchModal.startScreen.noRecentSearchesText": {
+    "message": "Нет истории поиска",
+    "description": "The text when there are no recent searches"
+  },
+  "theme.SearchModal.startScreen.saveRecentSearchButtonTitle": {
+    "message": "Сохранить поисковый запрос",
+    "description": "The title for save recent search button"
+  },
+  "theme.SearchModal.startScreen.removeRecentSearchButtonTitle": {
+    "message": "Удалить запись из историю",
+    "description": "The title for remove recent search button"
+  },
+  "theme.SearchModal.startScreen.favoriteSearchesTitle": {
+    "message": "Избранное",
+    "description": "The title for favorite searches"
+  },
+  "theme.SearchModal.startScreen.removeFavoriteSearchButtonTitle": {
+    "message": "Удалить запись из избранное",
+    "description": "The title for remove favorite search button"
+  },
+  "theme.SearchModal.startScreen.recentConversationsTitle": {
+    "message": "Недавние разговоры",
+    "description": "The title for recent conversations"
+  },
+  "theme.SearchModal.startScreen.removeRecentConversationButtonTitle": {
+    "message": "Удалить этот разговор из истории",
+    "description": "The title for remove recent conversation button"
+  },
+  "theme.SearchModal.errorScreen.titleText": {
+    "message": "Невозможно загрузить результаты поиска",
+    "description": "The title for error screen"
+  },
+  "theme.SearchModal.errorScreen.helpText": {
+    "message": "Проверьте подключение к интернету.",
+    "description": "The help text for error screen"
+  },
+  "theme.SearchModal.resultsScreen.askAiPlaceholder": {
+    "message": "Спросить AI: ",
+    "description": "The placeholder text for Ask AI input"
+  },
+  "theme.SearchModal.askAiScreen.disclaimerText": {
+    "message": "Ответы создаются AI и могут содержать ошибки. Проверяйте ответы.",
+    "description": "The disclaimer text for AI answers"
+  },
+  "theme.SearchModal.askAiScreen.relatedSourcesText": {
+    "message": "Связанные источники",
+    "description": "The text for related sources"
+  },
+  "theme.SearchModal.askAiScreen.thinkingText": {
+    "message": "Думаю...",
+    "description": "The text when AI is thinking"
+  },
+  "theme.SearchModal.askAiScreen.copyButtonText": {
+    "message": "Копировать",
+    "description": "The text for copy button"
+  },
+  "theme.SearchModal.askAiScreen.copyButtonCopiedText": {
+    "message": "Скопировано!",
+    "description": "The text for copy button when copied"
+  },
+  "theme.SearchModal.askAiScreen.copyButtonTitle": {
+    "message": "Копировать",
+    "description": "The title for copy button"
+  },
+  "theme.SearchModal.askAiScreen.likeButtonTitle": {
+    "message": "Нравится",
+    "description": "The title for like button"
+  },
+  "theme.SearchModal.askAiScreen.dislikeButtonTitle": {
+    "message": "Не нравится",
+    "description": "The title for dislike button"
+  },
+  "theme.SearchModal.askAiScreen.thanksForFeedbackText": {
+    "message": "Спасибо за отзыв!",
+    "description": "The text for thanks for feedback"
+  },
+  "theme.SearchModal.askAiScreen.preToolCallText": {
+    "message": "Поиск...",
+    "description": "The text before tool call"
+  },
+  "theme.SearchModal.askAiScreen.duringToolCallText": {
+    "message": "Поиск ",
+    "description": "The text during tool call"
+  },
+  "theme.SearchModal.askAiScreen.afterToolCallText": {
+    "message": "Выполнен поиск",
+    "description": "The text after tool call"
+  },
+  "theme.SearchModal.footer.selectText": {
+    "message": "выбрать",
+    "description": "The select text for footer"
+  },
+  "theme.SearchModal.footer.submitQuestionText": {
+    "message": "Отправить вопрос",
+    "description": "The submit question text for footer"
+  },
+  "theme.SearchModal.footer.selectKeyAriaLabel": {
+    "message": "Клавиша Enter",
+    "description": "The ARIA label for select key in footer"
+  },
+  "theme.SearchModal.footer.navigateText": {
+    "message": "навигация",
+    "description": "The navigate text for footer"
+  },
+  "theme.SearchModal.footer.navigateUpKeyAriaLabel": {
+    "message": "Клавиша стрелка вверх",
+    "description": "The ARIA label for navigate up key in footer"
+  },
+  "theme.SearchModal.footer.navigateDownKeyAriaLabel": {
+    "message": "Клавиша стрелка вниз",
+    "description": "The ARIA label for navigate down key in footer"
+  },
+  "theme.SearchModal.footer.closeText": {
+    "message": "закрыть",
+    "description": "The close text for footer"
+  },
+  "theme.SearchModal.footer.closeKeyAriaLabel": {
+    "message": "Клавиша Escape",
+    "description": "The ARIA label for close key in footer"
+  },
+  "theme.SearchModal.footer.searchByText": {
+    "message": "Поиск от",
+    "description": "The 'Powered by' text for footer"
+  },
+  "theme.SearchModal.footer.backToSearchText": {
+    "message": "Назад к поиску",
+    "description": "The back to search text for footer"
+  },
+  "theme.SearchModal.noResultsScreen.noResultsText": {
+    "message": "Нет результатов по запросу",
+    "description": "The text when there are no results"
+  },
+  "theme.SearchModal.noResultsScreen.suggestedQueryText": {
+    "message": "Попробуйте",
+    "description": "The text for suggested query"
+  },
+  "theme.SearchModal.noResultsScreen.reportMissingResultsText": {
+    "message": "Нет подходящего результата поиска?",
+    "description": "The text for reporting missing results"
+  },
+  "theme.SearchModal.noResultsScreen.reportMissingResultsLinkText": {
+    "message": "Сообщите нам.",
+    "description": "The link text for reporting missing results"
+  },
+  "theme.SearchModal.placeholder": {
+    "message": "Поиск",
+    "description": "The placeholder of the input of the DocSearch pop-up modal"
+  },
+  "theme.Playground.liveEditor": {
+    "message": "Интерактивный редактор",
+    "description": "The live editor label of the live codeblocks"
+  },
+  "theme.Playground.result": {
+    "message": "Результат",
+    "description": "The result label of the live codeblocks"
+  },
+  "theme.Playground.buttons.reset": {
+    "message": "Сбросить",
+    "description": "The reset button label for live code blocks"
+  },
+  "theme.blog.post.plurals": {
+    "message": "{count} запись|{count} записи|{count} записей",
+    "description": "Pluralized label for \"{count} posts\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
+  },
+  "theme.blog.tagTitle": {
+    "message": "{nPosts} с тегом \"{tagName}\"",
+    "description": "The title of the page for a blog tag"
+  },
+  "theme.blog.author.pageTitle": {
+    "message": "{authorName} - {nPosts}",
+    "description": "The title of the page for a blog author"
+  },
+  "theme.blog.authorsList.viewAll": {
+    "message": "View All Authors",
+    "description": "The label of the link targeting the blog authors page"
+  },
+  "theme.blog.author.noPosts": {
+    "message": "Этот автор еще не написал ни одной публикации.",
+    "description": "The text for authors with 0 blog post"
+  },
+  "theme.contentVisibility.unlistedBanner.title": {
+    "message": "Страница не в списке",
+    "description": "The unlisted content banner title"
+  },
+  "theme.contentVisibility.unlistedBanner.message": {
+    "message": "Эта страница не находится в списке. Поисковые системы не будут ее индексировать, а доступ получат только пользователи с прямой ссылкой.",
+    "description": "The unlisted content banner message"
+  },
+  "theme.contentVisibility.draftBanner.title": {
+    "message": "Черновик страницы",
+    "description": "The draft content banner title"
+  },
+  "theme.contentVisibility.draftBanner.message": {
+    "message": "Эта страница является черновиком. Она будет видна только в режиме разработки и исключена из production-сборки.",
+    "description": "The draft content banner message"
+  },
+  "theme.docs.DocCard.categoryDescription.plurals": {
+    "message": "{count} элемент|{count} элемента|{count} элементов",
+    "description": "The default description for a category card in the generated index about how many items this category includes"
+  },
+  "theme.ErrorPageContent.tryAgain": {
+    "message": "Попробуйте ещё раз",
+    "description": "The label of the button to try again rendering when the React error boundary captures an error"
+  },
+  "theme.common.skipToMainContent": {
+    "message": "Перейти к основному содержимому",
+    "description": "The skip to content label used for accessibility, allowing to rapidly navigate to main content with keyboard tab/enter navigation"
+  }
+}

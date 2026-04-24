@@ -29,7 +29,16 @@ const config: Config = {
 
   i18n: {
     defaultLocale,
-    locales: [defaultLocale, 'zh-Hans'],
+    locales: [
+      defaultLocale,
+      'zh-Hans',
+      'zh-Hant',
+      'ja',
+      'ko',
+      'es',
+      'fr',
+      'ru',
+    ],
   },
 
   presets: [

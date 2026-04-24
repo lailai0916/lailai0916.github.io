@@ -1,0 +1,46 @@
+{
+  "title": {
+    "message": "lailai's Home",
+    "description": "The title in the navbar"
+  },
+  "logo.alt": {
+    "message": "lailai's Logo",
+    "description": "The alt text of navbar logo"
+  },
+  "item.label.Contest": {
+    "message": "Соревнования",
+    "description": "Navbar item with label Contest"
+  },
+  "item.label.Note": {
+    "message": "Заметки",
+    "description": "Navbar item with label Note"
+  },
+  "item.label.Project": {
+    "message": "Проекты",
+    "description": "Navbar item with label Project"
+  },
+  "item.label.Blog": {
+    "message": "Блог",
+    "description": "Navbar item with label Blog"
+  },
+  "item.label.More": {
+    "message": "Еще",
+    "description": "Navbar item with label More"
+  },
+  "item.label.About": {
+    "message": "Обо мне",
+    "description": "Navbar item with label About"
+  },
+  "item.label.Travel": {
+    "message": "Путешествия",
+    "description": "Navbar item with label Travel"
+  },
+  "item.label.Friends": {
+    "message": "Друзья",
+    "description": "Navbar item with label Friends"
+  },
+  "item.label.Resources": {
+    "message": "Ресурсы",
+    "description": "Navbar item with label Resources"
+  }
+}
