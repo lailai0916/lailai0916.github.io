@@ -3,6 +3,7 @@
     "message": "文档",
     "description": "The title of the footer links column with title=Docs in the footer"
   },
+  "link.title.Pages": {
     "message": "页面",
     "description": "The title of the footer links column with title=Pages in the footer"
   },
@@ -33,12 +34,18 @@
   "link.item.label.About": {
     "message": "关于",
     "description": "The label of footer link with label=About linking to /about"
+  },
+  "link.item.label.Travel": {
     "message": "旅行",
     "description": "The label of footer link with label=Travel linking to /travel"
   },
+  "link.item.label.Friends": {
+    "message": "友链",
     "description": "The label of footer link with label=Friends linking to /friends"
   },
   "link.item.label.Resources": {
+    "message": "资源",
+    "description": "The label of footer link with label=Resources linking to /resources"
   },
   "link.item.label.Settings": {
     "message": "设置",
