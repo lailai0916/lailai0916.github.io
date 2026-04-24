@@ -581,26 +581,8 @@ const sidebars: SidebarsConfig = {
       },
       items: [
         'project/desmos/iclock',
-        {
-          type: 'category',
-          label: '图形',
-          items: [
-            'project/desmos/calculator/france-flag',
-            'project/desmos/calculator/usa-flag',
-            'project/desmos/calculator/cell-membrane-fusion',
-            'project/desmos/calculator/convex-lens-model',
-          ],
-        },
-        {
-          type: 'category',
-          label: '几何',
-          items: [
-            'project/desmos/geometry/heptadecagon',
-            'project/desmos/geometry/three-circle-tangent',
-            'project/desmos/geometry/apple-logo',
-            'project/desmos/geometry/china-flag',
-          ],
-        },
+        'project/desmos/calculator',
+        'project/desmos/geometry',
       ],
     },
     {
