@@ -36,7 +36,7 @@ export const CHANGELOG_LIST: ChangelogItem[] = [
     date: '2026-04-10',
     type: 'changed',
     content:
-      '网站更新至 <a href="https://docusaurus.io/blog/releases/3.10">Docusaurus v3.10</a>',
+      '网站更新至 <a href="https://docusaurus.io/changelog/3.10.0">Docusaurus v3.10.0</a>',
   },
   {
     date: '2026-04-02',
@@ -95,6 +95,12 @@ export const CHANGELOG_LIST: ChangelogItem[] = [
     content: '<code>&lt;Assets /&gt;</code> 资源管理组件',
   },
   {
+    date: '2025-10-19',
+    type: 'changed',
+    content:
+      '网站更新至 <a href="https://docusaurus.io/changelog/3.9.2">Docusaurus v3.9.2</a>',
+  },
+  {
     date: '2025-10-15',
     type: 'changed',
     content: '博客新版布局',
@@ -105,16 +111,22 @@ export const CHANGELOG_LIST: ChangelogItem[] = [
     content: '<code>&lt;Solution /&gt;</code> 题解标题组件',
   },
   {
+    date: '2025-09-30',
+    type: 'changed',
+    content:
+      '网站更新至 <a href="https://docusaurus.io/changelog/3.9.1">Docusaurus v3.9.1</a>',
+  },
+  {
     date: '2025-09-26',
     type: 'changed',
     content:
       '搜索更新至 <a href="https://docsearch.algolia.com/docs/what-is-docsearch">DocSearch v4</a>',
   },
   {
-    date: '2025-09-25',
+    date: '2025-09-26',
     type: 'changed',
     content:
-      '网站更新至 <a href="https://docusaurus.io/blog/releases/3.9">Docusaurus v3.9</a>',
+      '网站更新至 <a href="https://docusaurus.io/changelog/3.9.0">Docusaurus v3.9.0</a>',
   },
   {
     date: '2025-09-05',
@@ -166,7 +178,7 @@ export const CHANGELOG_LIST: ChangelogItem[] = [
     date: '2025-05-31',
     type: 'changed',
     content:
-      '网站更新至 <a href="https://docusaurus.io/blog/releases/3.8">Docusaurus v3.8</a>',
+      '网站更新至 <a href="https://docusaurus.io/changelog/3.8.0">Docusaurus v3.8.0</a>',
   },
   {
     date: '2025-01-08',
@@ -192,7 +204,7 @@ export const CHANGELOG_LIST: ChangelogItem[] = [
     date: '2024-10-17',
     type: 'added',
     content:
-      '建立个人网站 <a href="https://lailai.one">lailai\'s Home</a>，使用 <a href="https://docusaurus.io/blog/releases/3.7">Docusaurus v3.7</a> 构建，部署在 <a href="https://pages.github.com">GitHub Pages</a>，默认语言为 <b>简体中文</b>',
+      '建立个人网站 <a href="https://lailai.one">lailai\'s Home</a>，使用 <a href="https://docusaurus.io/changelog/3.5.2">Docusaurus v3.5.2</a> 构建，部署在 <a href="https://pages.github.com">GitHub Pages</a>，默认语言为 <b>简体中文</b>',
   },
   {
     date: '2024-10-16',
