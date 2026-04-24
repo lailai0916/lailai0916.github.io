@@ -259,14 +259,6 @@
     "message": "本章展示使用 Desmos 图形计算器创作的各种项目。",
     "description": "The generated-index page description for category 'Desmos' in sidebar 'sidebar3'"
   },
-  "sidebar.sidebar3.category.图形": {
-    "message": "图形",
-    "description": "The label for category '图形' in sidebar 'sidebar3'"
-  },
-  "sidebar.sidebar3.category.几何": {
-    "message": "几何",
-    "description": "The label for category '几何' in sidebar 'sidebar3'"
-  },
   "sidebar.sidebar3.category.指南": {
     "message": "指南",
     "description": "The label for category '指南' in sidebar 'sidebar3'"

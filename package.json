@@ -16,7 +16,8 @@
     "write-heading-ids": "docusaurus write-heading-ids",
     "i18n": "npm run write-translations:zh-Hans",
     "format": "npx prettier --write .",
-    "typecheck": "tsc"
+    "typecheck": "tsc",
+    "check": "npm run i18n && npm run format && npm run typecheck"
   },
   "dependencies": {
     "@docusaurus/core": "3.10.0",
