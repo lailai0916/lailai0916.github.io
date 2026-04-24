@@ -8,6 +8,12 @@ interface ChangelogItem {
 
 export const CHANGELOG_LIST: ChangelogItem[] = [
   {
+    date: '2025-04-24',
+    type: 'added',
+    content:
+      '国际化支持 <b>繁體中文</b>、<b>日本語</b>、<b>한국어</b>、<b>Español</b>、<b>Français</b>、<b>Русский</b>',
+  },
+  {
     date: '2026-04-19',
     type: 'removed',
     content: '<b>Tailwind CSS</b> 依赖',
@@ -192,7 +198,7 @@ export const CHANGELOG_LIST: ChangelogItem[] = [
     date: '2024-10-17',
     type: 'added',
     content:
-      '建立个人网站 <a href="https://lailai.one">lailai\'s Home</a>，使用 <a href="https://docusaurus.io/blog/releases/3.7">Docusaurus v3.7</a> 构建，部署在 <a href="https://pages.github.com">GitHub Pages</a>',
+      '建立个人网站 <a href="https://lailai.one">lailai\'s Home</a>，使用 <a href="https://docusaurus.io/blog/releases/3.7">Docusaurus v3.7</a> 构建，部署在 <a href="https://pages.github.com">GitHub Pages</a>，默认语言为 <b>简体中文</b>',
   },
   {
     date: '2024-10-16',
