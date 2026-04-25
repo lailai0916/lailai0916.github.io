@@ -220,6 +220,11 @@ export const CHANGELOG_LIST: ChangelogItem[] = [
   {
     date: '2024-10-29',
     type: 'added',
+    content: '<b>Iconify</b> 图标',
+  },
+  {
+    date: '2024-10-29',
+    type: 'added',
     content: '<b>Tailwind CSS</b> 依赖',
   },
   {
