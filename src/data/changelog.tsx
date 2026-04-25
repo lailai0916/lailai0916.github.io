@@ -173,7 +173,7 @@ export const CHANGELOG_LIST: ChangelogItem[] = [
   {
     date: '2025-08-13',
     type: 'added',
-    content: '<b>copy-tex</b> 公式复制优化插件',
+    content: '<b>copy-tex</b> 公式复制优化',
   },
   {
     date: '2025-07-22',
@@ -221,6 +221,11 @@ export const CHANGELOG_LIST: ChangelogItem[] = [
     date: '2024-10-29',
     type: 'added',
     content: '<b>Tailwind CSS</b> 依赖',
+  },
+  {
+    date: '2024-10-19',
+    type: 'added',
+    content: '<b>docusaurus-search-local</b> 本地搜索',
   },
   {
     date: '2024-10-18',
