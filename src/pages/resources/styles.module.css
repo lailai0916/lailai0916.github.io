@@ -120,11 +120,6 @@
   align-items: center;
 }
 
-.categoryIcon {
-  color: var(--ifm-color-primary);
-  flex-shrink: 0;
-}
-
 .categoryCount {
   background: var(--ifm-color-emphasis-200);
   color: var(--ifm-color-emphasis-800);

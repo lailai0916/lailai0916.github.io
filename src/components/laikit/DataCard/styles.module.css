@@ -5,23 +5,6 @@
   gap: 1rem;
 }
 
-.statIcon {
-  flex-shrink: 0;
-  width: 40px;
-  height: 40px;
-  background: var(--ifm-color-emphasis-100);
-  border-radius: 8px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--ifm-color-emphasis-600);
-}
-
-html[data-theme='dark'] .statIcon {
-  background: var(--ifm-color-emphasis-200);
-  color: var(--ifm-color-emphasis-600);
-}
-
 .statContent {
   flex: 1;
 }

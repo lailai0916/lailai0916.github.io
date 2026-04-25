@@ -1,11 +1,13 @@
 import React, { useState, useEffect, type ReactNode } from 'react';
-import clsx from 'clsx';
 import confetti from 'canvas-confetti';
 import Color from 'color';
 import { translate } from '@docusaurus/Translate';
 import Layout from '@theme/Layout';
 
-import Card from '@site/src/components/laikit/Card';
+import IconCard from '@site/src/components/laikit/IconCard';
+import Segmented, {
+  type SegmentedItem,
+} from '@site/src/components/laikit/Segmented';
 import Switch from '@site/src/components/laikit/Switch';
 import DataCard from '@site/src/components/laikit/DataCard';
 import {
@@ -33,34 +35,12 @@ const MODIFICATION = translate({
   message: 'Personalized <b>Settings</b>',
 });
 
-interface SettingCardProps {
-  title: string;
-  description: string;
-  icon: string;
-  children: ReactNode;
-}
-
-function SettingCard({ title, description, icon, children }: SettingCardProps) {
-  return (
-    <Card padding="1.5rem" className={styles.settingCard}>
-      <div className={styles.cardHeader}>
-        <div className={styles.cardIconWrapper}>
-          <Icon icon={icon} className={styles.cardIcon} />
-        </div>
-        <div className={styles.cardTitleGroup}>
-          <h3 className={styles.cardTitle}>{title}</h3>
-          <span className={styles.cardDescription}>{description}</span>
-        </div>
-      </div>
-      <div className={styles.cardBody}>{children}</div>
-    </Card>
-  );
-}
+type ThemeChoice = 'light' | 'dark' | null;
 
 function ThemeSettings() {
-  const themeOptions = [
+  const themeOptions: SegmentedItem<ThemeChoice>[] = [
     {
-      key: null,
+      value: null,
       label: translate({
         id: 'pages.settings.item.theme.option.system',
         message: 'System Mode',
@@ -68,7 +48,7 @@ function ThemeSettings() {
       icon: 'lucide:monitor',
     },
     {
-      key: 'light' as const,
+      value: 'light',
       label: translate({
         id: 'pages.settings.item.theme.option.light',
         message: 'Light Mode',
@@ -76,7 +56,7 @@ function ThemeSettings() {
       icon: 'lucide:sun',
     },
     {
-      key: 'dark' as const,
+      value: 'dark',
       label: translate({
         id: 'pages.settings.item.theme.option.dark',
         message: 'Dark Mode',
@@ -87,7 +67,8 @@ function ThemeSettings() {
   const { colorModeChoice, setColorMode } = useColorMode();
 
   return (
-    <SettingCard
+    <IconCard
+      icon="lucide:monitor"
       title={translate({
         id: 'pages.settings.item.theme.title',
         message: 'Theme',
@@ -96,26 +77,14 @@ function ThemeSettings() {
         id: 'pages.settings.item.theme.description',
         message: 'Switch between light, dark, or system',
       })}
-      icon="lucide:monitor"
+      bodyAlign="bottom"
     >
-      <div className={styles.segmented}>
-        {themeOptions.map((option) => (
-          <button
-            key={option.key ?? 'system'}
-            type="button"
-            className={clsx(
-              styles.segmentItem,
-              colorModeChoice === option.key && styles.segmentItemActive
-            )}
-            onClick={() => setColorMode(option.key)}
-            aria-pressed={colorModeChoice === option.key}
-          >
-            <Icon icon={option.icon} className={styles.segmentIcon} />
-            <span className={styles.segmentLabel}>{option.label}</span>
-          </button>
-        ))}
-      </div>
-    </SettingCard>
+      <Segmented<ThemeChoice>
+        value={colorModeChoice as ThemeChoice}
+        items={themeOptions}
+        onChange={(v) => setColorMode(v)}
+      />
+    </IconCard>
   );
 }
 
@@ -126,7 +95,7 @@ function AccentColor() {
   );
 
   return (
-    <SettingCard
+    <IconCard
       title={translate({
         id: 'pages.settings.item.color.title',
         message: 'Accent Color',
@@ -136,6 +105,7 @@ function AccentColor() {
         message: "Customize the site's primary color",
       })}
       icon="lucide:palette"
+      bodyAlign="bottom"
     >
       <div className={styles.colorGeneratorContainer}>
         <div className={styles.colorInputContainer}>
@@ -189,7 +159,7 @@ function AccentColor() {
           </button>
         </div>
       </div>
-    </SettingCard>
+    </IconCard>
   );
 }
 
@@ -204,8 +174,7 @@ function FontSize() {
     root.style.setProperty('--global-font-size', `${initialSize}px`);
   }, []);
 
-  const handleSizeChange = (size: number) => {
-    setFontSize(size);
+  const commitSize = (size: number) => {
     document.documentElement.style.setProperty(
       '--global-font-size',
       `${size}px`
@@ -218,7 +187,7 @@ function FontSize() {
   const progress = ((fontSize - min) / (max - min)) * 100;
 
   return (
-    <SettingCard
+    <IconCard
       title={translate({
         id: 'pages.settings.item.font.title',
         message: 'Font Size',
@@ -228,6 +197,7 @@ function FontSize() {
         message: 'Adjust interface text size',
       })}
       icon="lucide:type"
+      bodyAlign="bottom"
     >
       <div className={styles.sliderContainer}>
         <span className={styles.sliderLabel}>
@@ -245,7 +215,13 @@ function FontSize() {
           max={max}
           step={1}
           value={fontSize}
-          onChange={(e) => handleSizeChange(parseInt(e.target.value, 10))}
+          onChange={(e) => setFontSize(parseInt(e.target.value, 10))}
+          onPointerUp={(e) =>
+            commitSize(parseInt((e.target as HTMLInputElement).value, 10))
+          }
+          onKeyUp={(e) =>
+            commitSize(parseInt((e.target as HTMLInputElement).value, 10))
+          }
           className={styles.slider}
           style={{ '--slider-progress': `${progress}%` } as React.CSSProperties}
         />
@@ -255,7 +231,7 @@ function FontSize() {
           <span>20px</span>
         </div>
       </div>
-    </SettingCard>
+    </IconCard>
   );
 }
 
@@ -308,7 +284,7 @@ function ExperimentalFeatures() {
   };
 
   return (
-    <SettingCard
+    <IconCard
       title={translate({
         id: 'pages.settings.item.experimental.title',
         message: 'Experimental Features',
@@ -318,6 +294,7 @@ function ExperimentalFeatures() {
         message: 'Try features still in development',
       })}
       icon="lucide:flask-conical"
+      bodyAlign="bottom"
     >
       <ul className={styles.toggleList}>
         {buttonOptions.map((option) => (
@@ -333,7 +310,7 @@ function ExperimentalFeatures() {
           </li>
         ))}
       </ul>
-    </SettingCard>
+    </IconCard>
   );
 }
 
@@ -387,7 +364,7 @@ function QuickActions() {
   ];
 
   return (
-    <SettingCard
+    <IconCard
       title={translate({
         id: 'pages.settings.item.quickactions.title',
         message: 'Quick Actions',
@@ -397,6 +374,7 @@ function QuickActions() {
         message: 'Run common actions instantly',
       })}
       icon="lucide:zap"
+      bodyAlign="bottom"
     >
       <ul className={styles.actionList}>
         {quickActionOptions.map((option) => (
@@ -412,7 +390,7 @@ function QuickActions() {
           </li>
         ))}
       </ul>
-    </SettingCard>
+    </IconCard>
   );
 }
 

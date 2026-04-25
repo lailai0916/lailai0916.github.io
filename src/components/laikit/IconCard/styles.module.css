@@ -1,0 +1,45 @@
+.iconCard {
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.titleGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+  flex: 1;
+  min-width: 0;
+}
+
+.title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin: 0;
+  line-height: 1.3;
+  color: var(--ifm-font-color-base);
+}
+
+.description {
+  font-size: 0.875rem;
+  color: var(--ifm-color-emphasis-600);
+  font-weight: 500;
+  line-height: 1.2;
+  margin: 0;
+}
+
+.body {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.bodyBottom {
+  justify-content: flex-end;
+}

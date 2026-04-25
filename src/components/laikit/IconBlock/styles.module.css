@@ -1,0 +1,42 @@
+.iconBlock {
+  flex-shrink: 0;
+  width: var(--icon-block-size, 40px);
+  height: var(--icon-block-size, 40px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  line-height: 1;
+}
+
+/* Primary tinted variant - for highlighted/feature icons */
+.accent {
+  background: linear-gradient(
+    135deg,
+    rgba(var(--ifm-color-primary-rgb), 0.16),
+    rgba(var(--ifm-color-primary-rgb), 0.08)
+  );
+  color: var(--ifm-color-primary);
+  border: 1px solid rgba(var(--ifm-color-primary-rgb), 0.18);
+}
+
+html[data-theme='dark'] .accent {
+  background: linear-gradient(
+    135deg,
+    rgba(var(--ifm-color-primary-rgb), 0.22),
+    rgba(var(--ifm-color-primary-rgb), 0.1)
+  );
+  color: var(--ifm-color-primary-light);
+  border-color: rgba(var(--ifm-color-primary-rgb), 0.28);
+}
+
+/* Neutral variant - for stat/metric icons */
+.muted {
+  background: var(--ifm-color-emphasis-100);
+  color: var(--ifm-color-emphasis-600);
+}
+
+html[data-theme='dark'] .muted {
+  background: var(--ifm-color-emphasis-200);
+  color: var(--ifm-color-emphasis-600);
+}

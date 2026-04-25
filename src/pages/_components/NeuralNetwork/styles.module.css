@@ -107,24 +107,6 @@
   -ms-user-select: none;
 }
 
-/* 神经元样式 */
-.neuron {
-  cursor: pointer;
-}
-
-/* 连接线样式 */
-.connection {
-  stroke: var(--nn-connection-default);
-  stroke-width: 0.5;
-  fill: none;
-  opacity: 0.3;
-  transition: opacity 0.3s ease;
-}
-
-.connection.active {
-  opacity: 0.8;
-}
-
 /* 按钮样式 - 匹配 3B1B 原版 */
 .clearButton {
   fill: var(--nn-button-clear);
@@ -151,29 +133,6 @@
   fill: var(--ifm-color-primary-dark);
   stroke: var(--ifm-color-primary-dark);
   filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.1));
-}
-
-/* 权重网格样式 */
-.weightGrid {
-  stroke: var(--nn-grid-stroke);
-  stroke-width: 0.5;
-  fill: var(--nn-grid-fill);
-}
-
-/* 动画样式 */
-.animating {
-  transition: transform 0.5s ease-in-out;
-}
-
-/* 预处理提示 */
-.processingOverlay {
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 200ms ease-in-out;
-}
-
-.processingOverlay.active {
-  opacity: 1;
 }
 
 /* 响应式设计 */
