@@ -1,7 +1,7 @@
 import React, { useState, useEffect, type ReactNode } from 'react';
 import BrowserOnly from '@docusaurus/BrowserOnly';
 import { ThemeContext } from '@site/src/hooks/useTheme';
-import CookieConsent from '@site/src/components/laikit/CookieConsent';
+import CookieConsent from '@site/src/components/CookieConsent';
 
 interface RootProps {
   children: ReactNode;
