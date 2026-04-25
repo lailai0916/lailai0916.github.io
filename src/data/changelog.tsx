@@ -162,7 +162,8 @@ export const CHANGELOG_LIST: ChangelogItem[] = [
   {
     date: '2025-08-25',
     type: 'added',
-    content: '<b>Umami</b> 分析',
+    content:
+      '<b>Umami</b> 分析 <a href="https://analytics.lailai.one/share/DDd09iBEYOQw2k9L">lailai\'s Analytics</a>',
   },
   {
     date: '2025-08-14',
@@ -220,6 +221,11 @@ export const CHANGELOG_LIST: ChangelogItem[] = [
     date: '2024-10-29',
     type: 'added',
     content: '<b>Tailwind CSS</b> 依赖',
+  },
+  {
+    date: '2024-10-18',
+    type: 'added',
+    content: '<b>LaTeX</b> 数学公式',
   },
   {
     date: '2024-10-17',
