@@ -8,6 +8,11 @@ interface ChangelogItem {
 
 export const CHANGELOG_LIST: ChangelogItem[] = [
   {
+    date: '2026-04-25',
+    type: 'added',
+    content: '网站灰色模式',
+  },
+  {
     date: '2026-04-19',
     type: 'removed',
     content: '<b>Tailwind CSS</b> 依赖',

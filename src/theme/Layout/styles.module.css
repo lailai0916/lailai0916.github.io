@@ -6,9 +6,9 @@
   outline: 1px solid orange;
 }
 
-/* .grayMode {
+.grayMode {
   filter: grayscale(100%);
-} */
+}
 
 html,
 body {

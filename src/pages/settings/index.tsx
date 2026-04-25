@@ -6,7 +6,6 @@ import { translate } from '@docusaurus/Translate';
 import Layout from '@theme/Layout';
 
 import Card from '@site/src/components/laikit/Card';
-import IconText from '@site/src/components/laikit/IconText';
 import Switch from '@site/src/components/laikit/Switch';
 import DataCard from '@site/src/components/laikit/DataCard';
 import {
@@ -43,9 +42,11 @@ interface SettingCardProps {
 
 function SettingCard({ title, description, icon, children }: SettingCardProps) {
   return (
-    <Card padding="1.5rem">
+    <Card padding="1.5rem" className={styles.settingCard}>
       <div className={styles.cardHeader}>
-        <Icon icon={icon} className={styles.cardIcon} />
+        <div className={styles.cardIconWrapper}>
+          <Icon icon={icon} className={styles.cardIcon} />
+        </div>
         <div className={styles.cardTitleGroup}>
           <h3 className={styles.cardTitle}>{title}</h3>
           <span className={styles.cardDescription}>{description}</span>
@@ -93,23 +94,24 @@ function ThemeSettings() {
       })}
       description={translate({
         id: 'pages.settings.item.theme.description',
-        message: 'Select a theme mode that suits you',
+        message: 'Switch between light, dark, or system',
       })}
       icon="lucide:monitor"
     >
-      <div className={styles.buttonGroup}>
+      <div className={styles.segmented}>
         {themeOptions.map((option) => (
           <button
-            key={option.key}
+            key={option.key ?? 'system'}
+            type="button"
             className={clsx(
-              styles.button,
-              colorModeChoice === option.key && styles.buttonActive
+              styles.segmentItem,
+              colorModeChoice === option.key && styles.segmentItemActive
             )}
             onClick={() => setColorMode(option.key)}
+            aria-pressed={colorModeChoice === option.key}
           >
-            <IconText icon={option.icon} colorMode="monochrome">
-              {option.label}
-            </IconText>
+            <Icon icon={option.icon} className={styles.segmentIcon} />
+            <span className={styles.segmentLabel}>{option.label}</span>
           </button>
         ))}
       </div>
@@ -117,7 +119,7 @@ function ThemeSettings() {
   );
 }
 
-function ColorGenerator() {
+function AccentColor() {
   const { colorMode } = useColorMode();
   const { colorState, inputColor, updateColor, resetColors } = useThemeColors(
     colorMode === 'dark'
@@ -127,12 +129,11 @@ function ColorGenerator() {
     <SettingCard
       title={translate({
         id: 'pages.settings.item.color.title',
-        message: 'Color Generator',
+        message: 'Accent Color',
       })}
       description={translate({
         id: 'pages.settings.item.color.description',
-        message:
-          'Customize the main color of the website, preview the effect in real time',
+        message: "Customize the site's primary color",
       })}
       icon="lucide:palette"
     >
@@ -176,8 +177,15 @@ function ColorGenerator() {
                 .join(', ')})`,
             }}
           />
-          <button className={styles.resetButton} onClick={resetColors}>
-            <Icon icon="lucide:refresh-ccw" />
+          <button
+            type="button"
+            className={styles.resetButton}
+            onClick={resetColors}
+          >
+            {translate({
+              id: 'pages.settings.item.color.reset',
+              message: 'Reset',
+            })}
           </button>
         </div>
       </div>
@@ -185,7 +193,7 @@ function ColorGenerator() {
   );
 }
 
-function FontSettings() {
+function FontSize() {
   const [fontSize, setFontSize] = useState<number>(16);
 
   useEffect(() => {
@@ -205,6 +213,10 @@ function FontSettings() {
     localStorage.setItem('global-font-size', size.toString());
   };
 
+  const min = 12;
+  const max = 20;
+  const progress = ((fontSize - min) / (max - min)) * 100;
+
   return (
     <SettingCard
       title={translate({
@@ -213,7 +225,7 @@ function FontSettings() {
       })}
       description={translate({
         id: 'pages.settings.item.font.description',
-        message: 'Adjust the interface font to get the best reading experience',
+        message: 'Adjust interface text size',
       })}
       icon="lucide:type"
     >
@@ -229,12 +241,13 @@ function FontSettings() {
         </span>
         <input
           type="range"
-          min={12}
-          max={20}
+          min={min}
+          max={max}
           step={1}
           value={fontSize}
           onChange={(e) => handleSizeChange(parseInt(e.target.value, 10))}
           className={styles.slider}
+          style={{ '--slider-progress': `${progress}%` } as React.CSSProperties}
         />
         <div className={styles.sliderTicks}>
           <span>12px</span>
@@ -254,6 +267,7 @@ function ExperimentalFeatures() {
         id: 'pages.settings.item.experimental.option.originalLayout',
         message: 'Original Layout',
       }),
+      icon: 'lucide:layout-dashboard',
     },
     {
       key: 'debugMode' as const,
@@ -261,6 +275,15 @@ function ExperimentalFeatures() {
         id: 'pages.settings.item.experimental.option.debugMode',
         message: 'Debug Mode',
       }),
+      icon: 'lucide:terminal',
+    },
+    {
+      key: 'grayMode' as const,
+      label: translate({
+        id: 'pages.settings.item.experimental.option.grayMode',
+        message: 'Gray Mode',
+      }),
+      icon: 'lucide:contrast',
     },
   ];
   const [toggles, setToggles] = usePersistentState<
@@ -288,25 +311,28 @@ function ExperimentalFeatures() {
     <SettingCard
       title={translate({
         id: 'pages.settings.item.experimental.title',
-        message: 'Experimental Content',
+        message: 'Experimental Features',
       })}
       description={translate({
         id: 'pages.settings.item.experimental.description',
-        message: 'Try new features that are still under development',
+        message: 'Try features still in development',
       })}
       icon="lucide:flask-conical"
     >
-      <div className={styles.buttonGroup}>
+      <ul className={styles.toggleList}>
         {buttonOptions.map((option) => (
-          <div key={option.key} className={styles.toggleItem}>
-            <span>{option.label}</span>
+          <li key={option.key} className={styles.toggleItem}>
+            <span className={styles.toggleItemLabel}>
+              <Icon icon={option.icon} className={styles.toggleItemIcon} />
+              <span>{option.label}</span>
+            </span>
             <Switch
               checked={toggles[option.key]}
               onChange={(checked) => handleToggle(option.key, checked)}
             />
-          </div>
+          </li>
         ))}
-      </div>
+      </ul>
     </SettingCard>
   );
 }
@@ -368,23 +394,24 @@ function QuickActions() {
       })}
       description={translate({
         id: 'pages.settings.item.quickactions.description',
-        message: 'Quickly manage your personalized configuration',
+        message: 'Run common actions instantly',
       })}
       icon="lucide:zap"
     >
-      <div className={styles.buttonGroup}>
+      <ul className={styles.actionList}>
         {quickActionOptions.map((option) => (
-          <button
-            key={option.key}
-            className={styles.button}
-            onClick={option.onClick}
-          >
-            <IconText icon={option.icon} colorMode="monochrome">
-              {option.label}
-            </IconText>
-          </button>
+          <li key={option.key}>
+            <button
+              type="button"
+              className={styles.actionItem}
+              onClick={option.onClick}
+            >
+              <Icon icon={option.icon} className={styles.actionItemIcon} />
+              <span>{option.label}</span>
+            </button>
+          </li>
         ))}
-      </div>
+      </ul>
     </SettingCard>
   );
 }
@@ -409,8 +436,8 @@ function SettingsContainer() {
   return (
     <div className={styles.container}>
       <ThemeSettings />
-      <ColorGenerator />
-      <FontSettings />
+      <AccentColor />
+      <FontSize />
       <ExperimentalFeatures />
       <QuickActions />
     </div>

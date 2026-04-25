@@ -789,34 +789,37 @@
     "message": "项设置"
   },
   "pages.settings.item.theme.title": {
-    "message": "外观主题"
+    "message": "主题"
   },
   "pages.settings.item.theme.description": {
-    "message": "选择一个适合您的主题模式"
+    "message": "切换浅色、深色或跟随系统"
   },
   "pages.settings.item.color.title": {
-    "message": "主题色生成器"
+    "message": "主题色"
   },
   "pages.settings.item.color.description": {
-    "message": "自定义网站的主色调，实时预览效果"
+    "message": "自定义网站主色调"
+  },
+  "pages.settings.item.color.reset": {
+    "message": "重置"
   },
   "pages.settings.item.font.title": {
     "message": "字体大小"
   },
   "pages.settings.item.font.description": {
-    "message": "调整界面字体以获得最佳阅读体验"
+    "message": "调整界面文字大小"
   },
   "pages.settings.item.experimental.title": {
-    "message": "实验性内容"
+    "message": "实验性功能"
   },
   "pages.settings.item.experimental.description": {
-    "message": "尝试仍在开发的新功能"
+    "message": "试用开发中的新功能"
   },
   "pages.settings.item.quickactions.title": {
     "message": "快捷操作"
   },
   "pages.settings.item.quickactions.description": {
-    "message": "快速管理您的个性化配置"
+    "message": "一键执行常用操作"
   },
   "pages.settings.item.theme.option.system": {
     "message": "系统模式"
@@ -835,6 +838,9 @@
   },
   "pages.settings.item.experimental.option.debugMode": {
     "message": "调试模式"
+  },
+  "pages.settings.item.experimental.option.grayMode": {
+    "message": "灰色模式"
   },
   "pages.settings.item.quickactions.option.confetti": {
     "message": "给我惊喜"

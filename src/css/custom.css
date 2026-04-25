@@ -6,6 +6,7 @@
   --ifm-color-primary-light: #36a6f2;
   --ifm-color-primary-lighter: #43acf3;
   --ifm-color-primary-lightest: #69bcf5;
+  --ifm-color-primary-rgb: 29, 155, 240;
   --ifm-font-family-base:
     'SF Pro Text', 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Inter',
     system-ui, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif,
