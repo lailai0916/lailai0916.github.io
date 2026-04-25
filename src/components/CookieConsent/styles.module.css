@@ -3,18 +3,16 @@
   z-index: 200;
   left: 1rem;
   bottom: 1rem;
-  right: auto;
   max-width: 380px;
   width: calc(100% - 2rem);
-  background: var(--ifm-card-background-color, var(--ifm-background-color));
-  border: 1px solid var(--ifm-color-emphasis-200);
-  border-radius: 16px;
-  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
-  padding: 1rem 1.125rem;
   animation: cookieConsentIn 200ms ease-out;
 }
 
-html[data-theme='dark'] .banner {
+.card {
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
+}
+
+html[data-theme='dark'] .card {
   box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4);
 }
 
