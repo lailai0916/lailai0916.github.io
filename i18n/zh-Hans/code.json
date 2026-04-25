@@ -928,5 +928,20 @@
   },
   "data.changelog.type.security": {
     "message": "【安全】"
+  },
+  "cookieConsent.title": {
+    "message": "Cookie 设置"
+  },
+  "cookieConsent.description": {
+    "message": "本站使用 Cookie 记录你的偏好，以改善浏览体验。{learnMore}。"
+  },
+  "cookieConsent.learnMore": {
+    "message": "了解更多"
+  },
+  "cookieConsent.accept": {
+    "message": "接受"
+  },
+  "cookieConsent.reject": {
+    "message": "拒绝"
   }
 }
