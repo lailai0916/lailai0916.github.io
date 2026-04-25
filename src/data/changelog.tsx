@@ -213,7 +213,7 @@ export const CHANGELOG_LIST: ChangelogItem[] = [
     content: '<b>Google Analytics</b> 分析',
   },
   {
-    date: '2024-11-05',
+    date: '2024-10-29',
     type: 'added',
     content: '<b>Giscus</b> 评论',
   },
