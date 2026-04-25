@@ -144,10 +144,6 @@ html[data-theme='dark'] .friendCardFallback {
   }
 }
 
-.friendsSection {
-  animation: fadeIn 0.3s ease-out;
-}
-
 .friendCard {
   animation: fadeIn 0.3s ease-out;
 }

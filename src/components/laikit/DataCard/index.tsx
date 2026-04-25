@@ -1,5 +1,5 @@
-import { Icon } from '@iconify/react';
 import Card from '@site/src/components/laikit/Card';
+import IconBlock from '@site/src/components/laikit/IconBlock';
 import styles from './styles.module.css';
 
 interface DataCardProps {
@@ -24,9 +24,7 @@ export default function DataCard(
   return (
     <Card padding="1.5rem">
       <div className={styles.statCard}>
-        <div className={styles.statIcon}>
-          <Icon icon={props.icon} width={20} height={20} />
-        </div>
+        <IconBlock icon={props.icon} variant="muted" />
         <div className={styles.statContent}>
           <div className={styles.statNumber}>{props.value}</div>
           <div className={styles.statLabel}>{props.label}</div>
