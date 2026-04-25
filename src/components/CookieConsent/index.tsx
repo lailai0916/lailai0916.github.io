@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Link from '@docusaurus/Link';
 import Translate from '@docusaurus/Translate';
+import Card from '@site/src/components/laikit/Card';
 import styles from './styles.module.css';
 
 const STORAGE_KEY = 'cookie-consent';
@@ -41,43 +42,47 @@ export default function CookieConsent() {
       aria-live="polite"
       aria-label="Cookie consent"
     >
-      <div className={styles.content}>
-        <div className={styles.title}>
-          <Translate id="cookieConsent.title">Cookie Settings</Translate>
+      <Card padding="1rem 1.125rem" className={styles.card}>
+        <div className={styles.content}>
+          <div className={styles.title}>
+            <Translate id="cookieConsent.title">Cookie Settings</Translate>
+          </div>
+          <p className={styles.description}>
+            <Translate
+              id="cookieConsent.description"
+              values={{
+                learnMore: (
+                  <Link to="/privacy" className={styles.link}>
+                    <Translate id="cookieConsent.learnMore">
+                      Learn more
+                    </Translate>
+                  </Link>
+                ),
+              }}
+            >
+              {
+                'This site uses cookies to remember your preferences and improve your browsing experience. {learnMore}.'
+              }
+            </Translate>
+          </p>
+          <div className={styles.actions}>
+            <button
+              type="button"
+              className={`${styles.button} ${styles.reject}`}
+              onClick={() => handleChoice('rejected')}
+            >
+              <Translate id="cookieConsent.reject">Reject</Translate>
+            </button>
+            <button
+              type="button"
+              className={`${styles.button} ${styles.accept}`}
+              onClick={() => handleChoice('accepted')}
+            >
+              <Translate id="cookieConsent.accept">Accept</Translate>
+            </button>
+          </div>
         </div>
-        <p className={styles.description}>
-          <Translate
-            id="cookieConsent.description"
-            values={{
-              learnMore: (
-                <Link to="/privacy" className={styles.link}>
-                  <Translate id="cookieConsent.learnMore">Learn more</Translate>
-                </Link>
-              ),
-            }}
-          >
-            {
-              'This site uses cookies to remember your preferences and improve your browsing experience. {learnMore}.'
-            }
-          </Translate>
-        </p>
-        <div className={styles.actions}>
-          <button
-            type="button"
-            className={`${styles.button} ${styles.reject}`}
-            onClick={() => handleChoice('rejected')}
-          >
-            <Translate id="cookieConsent.reject">Reject</Translate>
-          </button>
-          <button
-            type="button"
-            className={`${styles.button} ${styles.accept}`}
-            onClick={() => handleChoice('accepted')}
-          >
-            <Translate id="cookieConsent.accept">Accept</Translate>
-          </button>
-        </div>
-      </div>
+      </Card>
     </div>
   );
 }
