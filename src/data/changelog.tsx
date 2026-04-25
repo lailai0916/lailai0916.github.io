@@ -8,9 +8,19 @@ interface ChangelogItem {
 
 export const CHANGELOG_LIST: ChangelogItem[] = [
   {
+    date: '2026-04-26',
+    type: 'added',
+    content: 'Cookie 授权弹窗',
+  },
+  {
     date: '2026-04-25',
     type: 'added',
     content: '网站灰色模式',
+  },
+  {
+    date: '2026-04-25',
+    type: 'added',
+    content: '备用网站 <code>lailai0916.com</code>',
   },
   {
     date: '2026-04-19',

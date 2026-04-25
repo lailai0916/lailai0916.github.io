@@ -1,5 +1,7 @@
 import React, { useState, useEffect, type ReactNode } from 'react';
+import BrowserOnly from '@docusaurus/BrowserOnly';
 import { ThemeContext } from '@site/src/hooks/useTheme';
+import CookieConsent from '@site/src/components/laikit/CookieConsent';
 
 interface RootProps {
   children: ReactNode;
@@ -49,6 +51,7 @@ export default function Root({ children }: RootProps) {
   return (
     <ThemeContext.Provider value={{ isOriginalLayout, setIsOriginalLayout }}>
       {children}
+      <BrowserOnly>{() => <CookieConsent />}</BrowserOnly>
     </ThemeContext.Provider>
   );
 }
