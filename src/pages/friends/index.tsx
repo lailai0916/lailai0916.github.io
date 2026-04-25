@@ -3,7 +3,7 @@ import Layout from '@theme/Layout';
 import { PageTitle, PageHeader } from '@site/src/components/laikit/Page';
 import DataCard from '@site/src/components/laikit/DataCard';
 import Card from '@site/src/components/laikit/Card';
-import { Icon } from '@iconify/react';
+import IconBlock from '@site/src/components/laikit/IconBlock';
 import { FriendItem, FRIEND_LIST } from '@site/src/data/friends';
 import { translate } from '@docusaurus/Translate';
 import styles from './styles.module.css';
@@ -33,20 +33,23 @@ function FriendCard({ friend }: { friend: FriendItem }) {
       padding="1.5rem"
     >
       <div className={styles.friendCardHeader}>
-        <div className={styles.friendCardAvatar}>
-          {!imageError && friend.avatar ? (
+        {!imageError && friend.avatar ? (
+          <IconBlock variant="muted" size={60}>
             <img
               src={friend.avatar}
               alt={friend.title}
               className={styles.friendCardImage}
               onError={() => setImageError(true)}
             />
-          ) : (
-            <div className={styles.friendCardFallback}>
-              <Icon icon="lucide:user" width={24} height={24} />
-            </div>
-          )}
-        </div>
+          </IconBlock>
+        ) : (
+          <IconBlock
+            icon="lucide:user"
+            variant="muted"
+            size={60}
+            iconSize={24}
+          />
+        )}
         <div className={styles.friendCardInfo}>
           <h3 className={styles.friendCardTitle}>{friend.title}</h3>
           <p className={styles.friendCardDescription}>

@@ -4,11 +4,12 @@ import { Icon } from '@iconify/react';
 import styles from './styles.module.css';
 
 interface IconBlockProps {
-  icon: string;
+  icon?: string;
   variant?: 'accent' | 'muted';
   size?: number;
   iconSize?: number;
   className?: string;
+  children?: React.ReactNode;
 }
 
 export default function IconBlock({
@@ -17,6 +18,7 @@ export default function IconBlock({
   size = 40,
   iconSize,
   className,
+  children,
 }: IconBlockProps) {
   const resolvedIconSize = iconSize ?? Math.round(size * 0.5);
   return (
@@ -24,7 +26,11 @@ export default function IconBlock({
       className={clsx(styles.iconBlock, styles[variant], className)}
       style={{ '--icon-block-size': `${size}px` } as React.CSSProperties}
     >
-      <Icon icon={icon} width={resolvedIconSize} height={resolvedIconSize} />
+      {icon ? (
+        <Icon icon={icon} width={resolvedIconSize} height={resolvedIconSize} />
+      ) : (
+        children
+      )}
     </div>
   );
 }

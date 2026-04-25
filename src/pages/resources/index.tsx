@@ -6,6 +6,7 @@ import Layout from '@theme/Layout';
 import { PageTitle, PageHeader } from '@site/src/components/laikit/Page';
 import DataCard from '@site/src/components/laikit/DataCard';
 import Card from '@site/src/components/laikit/Card';
+import IconBlock from '@site/src/components/laikit/IconBlock';
 import IconText from '@site/src/components/laikit/IconText';
 
 import { usePluralForm } from '@docusaurus/theme-common';
@@ -130,6 +131,7 @@ function ResourceCard({
   resource: { title: string; description: string; href: string };
 }) {
   const iconUrl = `https://www.google.com/s2/favicons?sz=64&domain=${new URL(resource.href).hostname}`;
+  const [imageError, setImageError] = useState(false);
 
   return (
     <Card
@@ -138,29 +140,23 @@ function ResourceCard({
       wrapperClassName={styles.resourceCardLink}
       title={resource.title}
     >
-      <div className={styles.resourceCardIcon}>
-        {iconUrl && (
+      {imageError ? (
+        <IconBlock
+          icon="lucide:globe"
+          variant="muted"
+          size={48}
+          iconSize={24}
+        />
+      ) : (
+        <IconBlock variant="muted" size={48}>
           <img
             src={iconUrl}
             alt={resource.title}
             className={styles.resourceCardImage}
-            onError={(e) => {
-              e.currentTarget.style.display = 'none';
-              const fallback = e.currentTarget
-                .nextElementSibling as HTMLElement | null;
-              if (fallback) fallback.style.display = 'flex';
-            }}
+            onError={() => setImageError(true)}
           />
-        )}
-        <div
-          className={clsx(
-            styles.resourceCardFallback,
-            !iconUrl && styles.resourceCardFallbackVisible
-          )}
-        >
-          <Icon icon="lucide:globe" width={24} height={24} />
-        </div>
-      </div>
+        </IconBlock>
+      )}
       <div className={styles.resourceCardBody}>
         <h3 className={styles.resourceCardTitle}>{resource.title}</h3>
         <p className={styles.resourceCardDescription}>{resource.description}</p>
