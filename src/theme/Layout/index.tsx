@@ -14,10 +14,12 @@ import LayoutProvider from '@theme/Layout/Provider';
 import ErrorPageContent from '@theme/ErrorPageContent';
 import type { Props } from '@theme/Layout';
 import { useDebugMode } from '@site/src/hooks/useDebugMode';
+import { useGrayMode } from '@site/src/hooks/useGrayMode';
 import styles from './styles.module.css';
 
 export default function Layout(props: Props): ReactNode {
   const debugMode = useDebugMode();
+  const grayMode = useGrayMode();
   const {
     children,
     noFooter,
@@ -28,7 +30,12 @@ export default function Layout(props: Props): ReactNode {
   } = props;
 
   return (
-    <div className={clsx(debugMode && styles.debugMode)}>
+    <div
+      className={clsx(
+        debugMode && styles.debugMode,
+        grayMode && styles.grayMode
+      )}
+    >
       <LayoutProvider>
         <PageMetadata title={title} description={description} />
 

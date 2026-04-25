@@ -98,7 +98,7 @@ export function getAdjustedColors(
   return Object.keys(shades).map((shade) => ({
     ...shades[shade]!,
     variableName: shade,
-    hex: Color(baseColor).darken(shades[shade]!.adjustment).hex(),
+    hex: Color(baseColor).darken(shades[shade]!.adjustment).hex().toLowerCase(),
   }));
 }
 
@@ -131,12 +131,16 @@ export function updateDOMColors(
       ? `\n  --ifm-background-color: ${background};`
       : '';
 
+  // 同步更新 --ifm-color-primary-rgb，让依赖该变量的 rgba 颜色跟随主题色
+  const rgb = Color(baseColor).rgb().array();
+  const rgbRule = `\n  --ifm-color-primary-rgb: ${Math.round(rgb[0]!)}, ${Math.round(rgb[1]!)}, ${Math.round(rgb[2]!)};`;
+
   const overrideStyle = `${
     isDarkTheme ? '[data-theme="dark"]' : '[data-theme="light"]'
   } {
   ${getAdjustedColors(shades, baseColor)
     .map((value) => `  ${value.variableName}: ${value.hex};`)
-    .join('\n')}${backgroundRule}
+    .join('\n')}${rgbRule}${backgroundRule}
 }`;
   styleSheet.insertRule(overrideStyle, styleSheet.cssRules.length - 1);
 }

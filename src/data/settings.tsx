@@ -12,4 +12,5 @@ export const SETTINGS_PRESET_COLOR_LIST = [
 export const SETTINGS_EXPERIMENTAL_DEFAULT = {
   originalLayout: false,
   debugMode: false,
+  grayMode: false,
 };

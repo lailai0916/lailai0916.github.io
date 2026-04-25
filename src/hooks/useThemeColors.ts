@@ -56,11 +56,14 @@ export function useThemeColors(isDarkTheme: boolean) {
   const updateColor = useCallback((colorValue: string) => {
     const newColor = colorValue.replace(/^(?=[^#])/, '#');
     setInputColor(newColor);
+    let hex: string;
     try {
-      setColorState((prev) => ({ ...prev, baseColor: Color(newColor).hex() }));
+      hex = Color(newColor).hex().toLowerCase();
     } catch {
-      // user is still typing an incomplete color string
+      // user is still typing an incomplete or invalid color string
+      return;
     }
+    setColorState((prev) => ({ ...prev, baseColor: hex }));
   }, []);
 
   // 重置到默认颜色
