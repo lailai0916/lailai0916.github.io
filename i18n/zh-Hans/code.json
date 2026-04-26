@@ -943,5 +943,26 @@
   },
   "cookieConsent.reject": {
     "message": "拒绝"
+  },
+  "data.devices.macbook-pro.spec": {
+    "message": "16 英寸 / 银色 / 14 CPU / 30 GPU / 36GB / 1TB"
+  },
+  "data.devices.ipad-pro.spec": {
+    "message": "11 英寸 / 深空灰色 / 256GB"
+  },
+  "data.devices.iphone.spec": {
+    "message": "星光色 / A15 / 256GB"
+  },
+  "data.devices.apple-watch.spec": {
+    "message": "钛合金 / 石板色 / 46mm"
+  },
+  "data.devices.airpods-pro.spec": {
+    "message": "USB-C / H2 / U1"
+  },
+  "data.devices.airpods-max.spec": {
+    "message": "USB-C / 午夜色 / H1"
+  },
+  "data.devices.powerbeats-pro.spec": {
+    "message": "极速黑 / H2"
   }
 }
