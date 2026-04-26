@@ -1,13 +1,3 @@
-/*
-Example:
-{
-  title: 'lailai',
-  description: 'Student & Developer',
-  href: 'https://lailai.one',
-  avatar: 'https://lailai.one/img/logo.png',
-},
-*/
-
 export interface FriendItem {
   title: string;
   description?: string;
@@ -93,3 +83,12 @@ export const FRIEND_LIST: FriendItem[] = [
     avatar: 'https://cdn.luogu.com.cn/upload/usericon/809729.png',
   },
 ];
+
+/*
+{
+  title: 'lailai',
+  description: 'Student & Developer',
+  href: 'https://lailai.one',
+  avatar: 'https://lailai.one/img/logo.png',
+},
+*/

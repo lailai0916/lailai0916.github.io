@@ -15,7 +15,7 @@ export const MOMENT_LIST: MomentItem[] = [
     content: 'Hello, World!',
   },
   {
-    date: '2025-10-17T20:30',
+    date: '2025-10-17T00:00',
     content: "Website's 1st Anniversary! 🎉",
   },
   {
