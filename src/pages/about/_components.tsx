@@ -1,10 +1,9 @@
-import React, { useMemo, useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 
 import BrowserOnly from '@docusaurus/BrowserOnly';
-import Link from '@docusaurus/Link';
 import Giscus from '@giscus/react';
+import { Icon } from '@iconify/react';
 import Card from '@site/src/components/laikit/Card';
-import IconText from '@site/src/components/laikit/IconText';
 import { useColorMode } from '@docusaurus/theme-common';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 
@@ -54,6 +53,39 @@ export function Skills() {
   );
 }
 
+function DeviceImage({ src, alt }: { src: string; alt: string }) {
+  const ref = useRef<HTMLImageElement>(null);
+
+  useEffect(() => {
+    const img = ref.current;
+    if (!img) return;
+    const setAr = () => {
+      if (img.naturalWidth) {
+        img.style.setProperty(
+          '--ar',
+          String(img.naturalWidth / img.naturalHeight)
+        );
+      }
+    };
+    if (img.complete) {
+      setAr();
+      return;
+    }
+    img.addEventListener('load', setAr);
+    return () => img.removeEventListener('load', setAr);
+  }, []);
+
+  return (
+    <img
+      ref={ref}
+      src={src}
+      alt={alt}
+      className={styles.deviceImage}
+      loading="lazy"
+    />
+  );
+}
+
 export function Devices() {
   return (
     <div className={styles.deviceGrid}>
@@ -63,19 +95,7 @@ export function Devices() {
             <div className={styles.deviceName}>{item.title}</div>
             <div className={styles.deviceSpec}>{item.spec}</div>
           </div>
-          <img
-            src={item.image}
-            alt={item.title}
-            className={styles.deviceImage}
-            loading="lazy"
-            onLoad={(e) => {
-              const img = e.currentTarget;
-              img.style.setProperty(
-                '--ar',
-                String(img.naturalWidth / img.naturalHeight)
-              );
-            }}
-          />
+          <DeviceImage src={item.image} alt={item.title} />
         </Card>
       ))}
     </div>
@@ -83,27 +103,22 @@ export function Devices() {
 }
 
 export function Community() {
-  const columns = useMemo(() => {
-    return [
-      COMMUNITY_LIST.filter((_, i) => i % 2 === 0),
-      COMMUNITY_LIST.filter((_, i) => i % 2 === 1),
-    ];
-  }, []);
-
   return (
-    <div className={styles.twoColumnContainer}>
-      {columns.map((columnItems, index) => (
-        <div key={index} className={styles.column}>
-          {columnItems.map((item) => (
-            <div key={item.title} className={styles.listItem}>
-              <IconText icon={item.icon} colorMode="monochrome">
-                <Link to={item.href} style={{ color: 'inherit' }}>
-                  {item.text}
-                </Link>
-              </IconText>
-            </div>
-          ))}
-        </div>
+    <div className={styles.communityGrid}>
+      {COMMUNITY_LIST.map((item) => (
+        <Card
+          key={item.title}
+          href={item.href}
+          padding="0.75rem"
+          className={styles.communityCard}
+          wrapperClassName={styles.communityCardWrapper}
+        >
+          <div className={styles.communityCardBody}>
+            <div className={styles.communityName}>{item.title}</div>
+            <div className={styles.communitySpec}>{item.text}</div>
+          </div>
+          <Icon icon={item.icon} className={styles.communityIcon} />
+        </Card>
       ))}
     </div>
   );
