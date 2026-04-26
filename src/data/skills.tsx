@@ -1,7 +1,6 @@
 interface SkillItem {
   title: string;
   icon: string;
-  hide?: boolean;
 }
 
 export const SKILL_LIST: SkillItem[] = [
@@ -17,16 +16,16 @@ export const SKILL_LIST: SkillItem[] = [
   { title: 'TypeScript', icon: 'ts' },
   { title: 'React', icon: 'react' },
   { title: 'Tailwind CSS', icon: 'tailwind' },
-  { title: 'Qt', icon: 'qt', hide: true },
-  { title: 'CMake', icon: 'cmake', hide: true },
-  { title: 'npm', icon: 'npm', hide: true },
-  { title: 'Git', icon: 'git', hide: true },
-  { title: 'GitHub', icon: 'github', hide: true },
-  { title: 'Visual Studio Code', icon: 'vscode', hide: true },
-  { title: 'Visual Studio', icon: 'visualstudio', hide: true },
-  { title: 'Linux', icon: 'linux', hide: true },
-  { title: 'Windows', icon: 'windows', hide: true },
-  { title: 'Docker', icon: 'docker', hide: true },
-  { title: 'Cloudflare', icon: 'cloudflare', hide: true },
-  { title: 'WordPress', icon: 'wordpress', hide: true },
+  { title: 'Qt', icon: 'qt' },
+  { title: 'CMake', icon: 'cmake' },
+  { title: 'npm', icon: 'npm' },
+  { title: 'Git', icon: 'git' },
+  { title: 'GitHub', icon: 'github' },
+  { title: 'Visual Studio Code', icon: 'vscode' },
+  { title: 'Visual Studio', icon: 'visualstudio' },
+  { title: 'Linux', icon: 'linux' },
+  { title: 'Windows', icon: 'windows' },
+  { title: 'Docker', icon: 'docker' },
+  { title: 'Cloudflare', icon: 'cloudflare' },
+  { title: 'WordPress', icon: 'wordpress' },
 ];
