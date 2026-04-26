@@ -10,7 +10,12 @@ export const CHANGELOG_LIST: ChangelogItem[] = [
   {
     date: '2026-04-26',
     type: 'changed',
-    content: 'About 页面 <b>Travel Map</b> 组件',
+    content: 'About 页面 <b>Community</b> 组件',
+  },
+  {
+    date: '2026-04-26',
+    type: 'changed',
+    content: 'About 页面 <b>Devices</b> 组件',
   },
   {
     date: '2026-04-26',
