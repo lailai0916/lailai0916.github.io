@@ -35,7 +35,7 @@ export const DEVICE_LIST: DeviceItem[] = [
     title: 'Apple Watch S10',
     spec: translate({
       id: 'data.devices.apple-watch.spec',
-      message: 'Titanium / Slate / 46mm',
+      message: 'Titanium / Slate / 46mm / S10',
     }),
     image: '/img/devices/apple-watch.png',
   },

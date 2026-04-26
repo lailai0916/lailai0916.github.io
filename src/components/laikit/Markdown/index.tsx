@@ -15,11 +15,11 @@ export function MDTitle({ title, description }: MDTitleProps) {
         {title === 'About' ? (
           <>
             {'🎉\xa0'}
-            <Link to="/" className={styles.topBannerTitleText}>
+            <span className={styles.titleText}>
               <Translate id="home.topbanner.title">
                 {"Hello,\xa0I'm\xa0lailai"}
               </Translate>
-            </Link>
+            </span>
             {'\xa0🥳'}
           </>
         ) : (
