@@ -9,6 +9,11 @@ interface ChangelogItem {
 export const CHANGELOG_LIST: ChangelogItem[] = [
   {
     date: '2026-04-26',
+    type: 'changed',
+    content: 'About 页面 <b>Travel Map</b> 组件',
+  },
+  {
+    date: '2026-04-26',
     type: 'added',
     content: 'Cookie 授权弹窗',
   },
@@ -40,7 +45,7 @@ export const CHANGELOG_LIST: ChangelogItem[] = [
   {
     date: '2026-04-12',
     type: 'changed',
-    content: '<b>Travel Map</b> 组件',
+    content: 'Travel 页面 <b>Travel Map</b> 组件',
   },
   {
     date: '2026-04-11',

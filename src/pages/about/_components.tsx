@@ -72,7 +72,7 @@ export function Devices() {
               const img = e.currentTarget;
               img.style.setProperty(
                 '--ar',
-                String(img.naturalWidth / img.naturalHeight),
+                String(img.naturalWidth / img.naturalHeight)
               );
             }}
           />

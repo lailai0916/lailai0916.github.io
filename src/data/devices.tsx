@@ -2,7 +2,6 @@ import { translate } from '@docusaurus/Translate';
 
 interface DeviceItem {
   title: string;
-  icon: string;
   spec: string;
   image: string;
 }
@@ -10,7 +9,6 @@ interface DeviceItem {
 export const DEVICE_LIST: DeviceItem[] = [
   {
     title: 'MacBook Pro (M3 Max)',
-    icon: '/icons/devices/macbook.svg',
     spec: translate({
       id: 'data.devices.macbook-pro.spec',
       message: '16-inch / Silver / 14 CPU / 30 GPU / 36GB / 1TB',
@@ -19,7 +17,6 @@ export const DEVICE_LIST: DeviceItem[] = [
   },
   {
     title: 'iPad Pro (M1)',
-    icon: '/icons/devices/ipad.svg',
     spec: translate({
       id: 'data.devices.ipad-pro.spec',
       message: '11-inch / Space Gray / 256GB',
@@ -28,7 +25,6 @@ export const DEVICE_LIST: DeviceItem[] = [
   },
   {
     title: 'iPhone 13',
-    icon: '/icons/devices/iphone.svg',
     spec: translate({
       id: 'data.devices.iphone.spec',
       message: 'Starlight / A15 / 256GB',
@@ -37,7 +33,6 @@ export const DEVICE_LIST: DeviceItem[] = [
   },
   {
     title: 'Apple Watch S10',
-    icon: '/icons/devices/applewatch.svg',
     spec: translate({
       id: 'data.devices.apple-watch.spec',
       message: 'Titanium / Slate / 46mm',
@@ -46,7 +41,6 @@ export const DEVICE_LIST: DeviceItem[] = [
   },
   {
     title: 'AirPods Pro 2',
-    icon: '/icons/devices/airpods.pro.svg',
     spec: translate({
       id: 'data.devices.airpods-pro.spec',
       message: 'USB-C / H2 / U1',
@@ -55,7 +49,6 @@ export const DEVICE_LIST: DeviceItem[] = [
   },
   {
     title: 'AirPods Max 1',
-    icon: '/icons/devices/airpods.max.svg',
     spec: translate({
       id: 'data.devices.airpods-max.spec',
       message: 'USB-C / Midnight / H1',
@@ -64,7 +57,6 @@ export const DEVICE_LIST: DeviceItem[] = [
   },
   {
     title: 'Powerbeats Pro 2',
-    icon: '/icons/devices/beats.powerbeats.pro.svg',
     spec: translate({
       id: 'data.devices.powerbeats-pro.spec',
       message: 'Jet Black / H2',
