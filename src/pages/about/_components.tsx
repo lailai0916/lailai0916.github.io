@@ -3,6 +3,7 @@ import React, { useMemo, useState, useEffect } from 'react';
 import BrowserOnly from '@docusaurus/BrowserOnly';
 import Link from '@docusaurus/Link';
 import Giscus from '@giscus/react';
+import Card from '@site/src/components/laikit/Card';
 import IconText from '@site/src/components/laikit/IconText';
 import { useColorMode } from '@docusaurus/theme-common';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
@@ -54,28 +55,28 @@ export function Skills() {
 }
 
 export function Devices() {
-  const columns = useMemo(() => {
-    return [
-      DEVICE_LIST.filter((_, i) => i % 2 === 0),
-      DEVICE_LIST.filter((_, i) => i % 2 === 1),
-    ];
-  }, []);
-
   return (
-    <div className={styles.twoColumnContainer}>
-      {columns.map((columnItems, index) => (
-        <div key={index} className={styles.column}>
-          {columnItems.map((item) => (
-            <div key={item.title} className={styles.listItem}>
-              <img
-                src={item.icon}
-                alt={item.title}
-                className={styles.deviceIcon}
-              />
-              {item.title}
-            </div>
-          ))}
-        </div>
+    <div className={styles.deviceGrid}>
+      {DEVICE_LIST.map((item) => (
+        <Card key={item.title} padding="0" className={styles.deviceCard}>
+          <div className={styles.deviceCardBody}>
+            <div className={styles.deviceName}>{item.title}</div>
+            <div className={styles.deviceSpec}>{item.spec}</div>
+          </div>
+          <img
+            src={item.image}
+            alt={item.title}
+            className={styles.deviceImage}
+            loading="lazy"
+            onLoad={(e) => {
+              const img = e.currentTarget;
+              img.style.setProperty(
+                '--ar',
+                String(img.naturalWidth / img.naturalHeight),
+              );
+            }}
+          />
+        </Card>
       ))}
     </div>
   );

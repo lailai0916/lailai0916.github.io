@@ -31,3 +31,75 @@
 html[data-theme='dark'] .deviceIcon {
   filter: invert(1);
 }
+
+.deviceGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+@media (max-width: 576px) {
+  .deviceGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.deviceCard {
+  --card-height: 120px;
+  position: relative;
+  overflow: hidden;
+  min-height: var(--card-height);
+  display: flex;
+  flex-direction: column;
+}
+
+.deviceCardBody {
+  position: relative;
+  z-index: 1;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.deviceName {
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.3;
+  color: var(--ifm-heading-color);
+}
+
+.deviceSpec {
+  font-size: 0.78rem;
+  line-height: 1.45;
+  color: var(--ifm-color-emphasis-700);
+  word-break: break-word;
+  max-width: 60%;
+}
+
+.deviceImage {
+  --ar: 1;
+  --img-height: calc(var(--card-height) - 2rem);
+  --img-width: calc(var(--img-height) * var(--ar));
+  position: absolute;
+  top: 1rem;
+  height: var(--img-height);
+  width: var(--img-width);
+  right: min(1rem, calc(100px - var(--img-width)));
+  object-fit: contain;
+  object-position: left center;
+  pointer-events: none;
+  user-select: none;
+  opacity: 0.55;
+  transition: opacity 200ms ease;
+  z-index: 0;
+}
+
+html[data-theme='dark'] .deviceImage {
+  opacity: 0.45;
+}
+
+.deviceCard:hover .deviceImage {
+  opacity: 1;
+}
