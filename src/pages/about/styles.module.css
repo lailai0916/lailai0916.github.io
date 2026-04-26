@@ -1,38 +1,5 @@
-.twoColumnContainer {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-}
-
-@media (max-width: 576px) {
-  .twoColumnContainer {
-    grid-template-columns: 1fr;
-  }
-}
-
-.column {
-  display: flex;
-  flex-direction: column;
-}
-
-.listItem {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  margin-bottom: 1rem;
-}
-
-.deviceIcon {
-  width: 1.25rem;
-  height: 1.25rem;
-  user-select: none;
-  pointer-events: none;
-}
-
-html[data-theme='dark'] .deviceIcon {
-  filter: invert(1);
-}
-
-.deviceGrid {
+.deviceGrid,
+.communityGrid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 1rem;
@@ -40,7 +7,8 @@ html[data-theme='dark'] .deviceIcon {
 }
 
 @media (max-width: 576px) {
-  .deviceGrid {
+  .deviceGrid,
+  .communityGrid {
     grid-template-columns: 1fr;
   }
 }
@@ -91,15 +59,60 @@ html[data-theme='dark'] .deviceIcon {
   object-position: left center;
   pointer-events: none;
   user-select: none;
-  opacity: 0.55;
+  opacity: 0.5;
   transition: opacity 200ms ease;
   z-index: 0;
 }
 
-html[data-theme='dark'] .deviceImage {
-  opacity: 0.45;
-}
-
 .deviceCard:hover .deviceImage {
   opacity: 1;
+}
+
+.communityCardWrapper {
+  --link-card-accent: var(--ifm-color-emphasis-200);
+}
+
+.communityCard {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.communityIcon {
+  flex-shrink: 0;
+  width: 1.75rem;
+  height: 1.75rem;
+  color: var(--ifm-color-emphasis-700);
+  pointer-events: none;
+  opacity: 0.5;
+  transition: opacity 200ms ease;
+}
+
+.communityCardWrapper:hover .communityIcon,
+.communityCardWrapper:focus-visible .communityIcon {
+  opacity: 1;
+}
+
+.communityCardBody {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.communityName {
+  font-size: 0.9rem;
+  font-weight: 600;
+  line-height: 1.2;
+  color: var(--ifm-heading-color);
+}
+
+.communitySpec {
+  font-size: 0.78rem;
+  line-height: 1.3;
+  color: var(--ifm-color-emphasis-700);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
