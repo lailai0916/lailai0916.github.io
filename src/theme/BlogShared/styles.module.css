@@ -144,7 +144,6 @@
 
 .infoItem:hover .infoItemArrow {
   color: var(--ifm-color-primary);
-  transform: translateX(1px);
 }
 
 .statsGrid {

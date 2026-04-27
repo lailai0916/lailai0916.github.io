@@ -224,7 +224,7 @@
 }
 
 .slider::-webkit-slider-thumb:hover {
-  transform: scale(1.15);
+  transform: scale(1.1);
 }
 
 .slider::-moz-range-thumb {
