@@ -747,12 +747,17 @@ export const RESOURCE_LIST: ResourceCategoryItem[] = [
       {
         title: '.io Games',
         href: 'https://iogames.space',
-        description: '.io 游戏索引与导航',
+        description: 'IO 游戏索引与导航',
       },
       {
         title: 'generals.io',
         href: 'https://generals.io',
         description: '实时多人策略对战',
+      },
+      {
+        title: 'florr.io',
+        href: 'https://florr.io',
+        description: '在线植物养成与对战',
       },
       {
         title: 'TileMan.io',
