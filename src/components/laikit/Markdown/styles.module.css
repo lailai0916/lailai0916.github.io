@@ -1,11 +1,5 @@
 .titleText {
-  background: linear-gradient(
-    108deg,
-    #0894ff,
-    #c959dd 34%,
-    #ff2e54 68%,
-    #ff9004
-  );
+  background: linear-gradient(to right, #0090f7, #ba62fc, #f2416b);
   background-clip: text;
   -webkit-text-fill-color: transparent;
   overflow-wrap: break-word;
