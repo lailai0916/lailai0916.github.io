@@ -273,7 +273,7 @@ function ExperimentalFeatures() {
     setToggles((prev) => {
       const newState = { ...prev, [key]: checked };
 
-      // 触发自定义事件通知状态变化
+      // Notify same-tab listeners; cross-tab updates flow through the `storage` event.
       const event = new CustomEvent('experimentalSettingsChanged', {
         detail: { key, checked, newState },
       });

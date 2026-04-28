@@ -2,7 +2,6 @@ import React from 'react';
 
 import BrowserWindow from './index';
 
-// Quick and dirty component, to improve later if needed
 export default function IframeWindow({ url }: { url: string }) {
   return (
     <div>

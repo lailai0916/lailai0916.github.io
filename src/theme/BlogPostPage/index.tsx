@@ -14,11 +14,7 @@ import BlogPostPageStructuredData from '@theme/BlogPostPage/StructuredData';
 import BlogPostPaginator from '@theme/BlogPostPaginator';
 import BlogPostItem from '@theme/BlogPostItem';
 
-// styles are handled by shared components
-
 import type { Props } from '@theme/BlogPostPage';
-
-// Use the official BlogPostItem to render content and metadata
 
 export default function BlogPostPage(props: Props): React.ReactElement {
   const { isOriginalLayout } = useTheme();

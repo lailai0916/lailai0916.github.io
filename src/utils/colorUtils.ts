@@ -61,7 +61,6 @@ export const COLOR_SHADES: Shades = {
   },
 };
 
-// 主题配置
 const THEME_CONFIG = {
   light: {
     primary: '#1d9bf0',
@@ -73,7 +72,7 @@ const THEME_CONFIG = {
   },
 } as const;
 
-// sessionStorage allows resetting everything next time users visit the site
+// sessionStorage so customizations reset the next time users visit the site.
 const lightStorage = createStorageSlot('ifm-theme-colors-light', {
   persistence: 'sessionStorage',
 });
@@ -81,7 +80,6 @@ const darkStorage = createStorageSlot('ifm-theme-colors-dark', {
   persistence: 'sessionStorage',
 });
 
-// 获取主题配置的辅助函数
 export function getThemeDefaults(isDarkTheme: boolean) {
   const theme = isDarkTheme ? 'dark' : 'light';
   return THEME_CONFIG[theme];
@@ -122,16 +120,15 @@ export function updateDOMColors(
     styleSheet.deleteRule(ruleToDelete);
   }
 
-  // 获取默认背景色
   const defaultBackground = getThemeDefaults(isDarkTheme).background;
 
-  // 只有在背景色真的改变时才添加背景色变量
+  // Only emit a background override when it actually differs from the theme default.
   const backgroundRule =
     background !== defaultBackground
       ? `\n  --ifm-background-color: ${background};`
       : '';
 
-  // 同步更新 --ifm-color-primary-rgb，让依赖该变量的 rgba 颜色跟随主题色
+  // Keep --ifm-color-primary-rgb in sync so rgba() consumers follow the theme color.
   const rgb = Color(baseColor).rgb().array();
   const rgbRule = `\n  --ifm-color-primary-rgb: ${Math.round(rgb[0]!)}, ${Math.round(rgb[1]!)}, ${Math.round(rgb[2]!)};`;
 

@@ -9,7 +9,6 @@ export function useDebugMode(): boolean {
   const [debugMode, setDebugMode] = useState(false);
 
   useEffect(() => {
-    // 读取localStorage中的调试模式状态
     const loadDebugMode = () => {
       try {
         const settings = localStorage.getItem('settings-experimental');
@@ -22,17 +21,15 @@ export function useDebugMode(): boolean {
       }
     };
 
-    // 初始加载
     loadDebugMode();
 
-    // 监听localStorage变化（跨标签页同步）
+    // `storage` fires across tabs; the custom event covers same-tab updates.
     const handleStorageChange = (e: StorageEvent) => {
       if (e.key === 'settings-experimental') {
         loadDebugMode();
       }
     };
 
-    // 监听自定义事件（同一页面内的变化）
     const handleExperimentalSettingsChange = (e: CustomEvent) => {
       if (e.detail.key === 'debugMode') {
         setDebugMode(e.detail.checked);

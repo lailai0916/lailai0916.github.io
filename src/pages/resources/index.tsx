@@ -30,9 +30,6 @@ const MODIFICATION = translate({
   message: 'Selected <b>Resources</b>',
 });
 
-/**
- * 根据分类和搜索查询过滤资源数据
- */
 function filterResourceCategories(
   categories: readonly ResourceCategoryItem[],
   activeCategory: string,

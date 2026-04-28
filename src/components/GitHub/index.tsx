@@ -38,7 +38,6 @@ function compactNumber(n?: number) {
 
 function stripGitHubEmojiShortcodes(text?: string | null) {
   if (!text) return '';
-  // Convert :emoji_name: to empty string, keep readable description
   return text.replace(/:[a-zA-Z0-9_]+:/g, '').trim();
 }
 
@@ -48,7 +47,6 @@ async function defaultFetcher(
 ): Promise<GitHubRepoData> {
   const res = await fetch(`https://api.github.com/repos/${repo}`, {
     signal,
-    // align with original implementation behaviour
     referrerPolicy: 'no-referrer',
   });
   if (!res.ok) throw new Error(`GitHub API error: ${res.status}`);
