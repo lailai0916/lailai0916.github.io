@@ -216,6 +216,10 @@
   transform: scale(1.1);
 }
 
+.slider::-webkit-slider-thumb:hover:active {
+  transform: scale(1);
+}
+
 .slider::-moz-range-thumb {
   width: var(--slider-thumb-size);
   height: var(--slider-thumb-size);
