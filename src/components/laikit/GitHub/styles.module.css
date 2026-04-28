@@ -1,28 +1,24 @@
-.card {
-  display: block;
-  background: var(--license-block-bg, rgba(127, 127, 127, 0.06));
-  position: relative;
+.wrapper {
+  container-type: inline-size;
   margin: 0.5rem 0;
-  padding: 1.1rem 1.5rem;
+}
+
+.wrapper:hover .card.card {
+  border-color: var(--ifm-color-emphasis-200);
+}
+
+.card {
   color: var(--ifm-font-color-base, #2c2c2c);
-  border-radius: 12px;
-  text-decoration: none;
-  transition: all 0.15s ease-in-out;
-}
-
-.card:hover {
-  background: var(--ifm-hover-overlay, rgba(127, 127, 127, 0.12));
-}
-
-.card:active {
-  transform: scale(0.98);
 }
 
 .titleBar {
+  position: relative;
   display: flex;
+  flex-flow: row wrap;
   align-items: center;
-  justify-content: space-between;
+  gap: 0.25rem 0.5rem;
   margin-bottom: 0.5rem;
+  padding-right: 2rem;
   color: var(
     --ifm-heading-color,
     var(--ifm-color-emphasis-900, var(--ifm-font-color-base, #111))
@@ -33,13 +29,11 @@
 
 .titleLeft {
   display: flex;
-  flex-flow: row nowrap;
-  gap: 0.5rem;
-}
-
-.repo {
-  font-weight: 700;
-  color: inherit;
+  flex-flow: row wrap;
+  align-items: center;
+  gap: 0.25rem 0.5rem;
+  min-width: 0;
+  flex: 1 1 auto;
 }
 
 .owner {
@@ -48,17 +42,29 @@
   flex-flow: row nowrap;
   gap: 0.5rem;
   align-items: center;
+  min-width: 0;
 }
 
 .user {
   font-weight: 300;
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.repo {
+  font-weight: 700;
+  color: inherit;
+  min-width: 0;
+  overflow-wrap: anywhere;
 }
 
 .divider {
   opacity: 0.7;
+  flex: none;
 }
 
 .avatar {
+  flex: none;
   width: 1.5rem;
   height: 1.5rem;
   border-radius: 50%;
@@ -72,23 +78,28 @@
   font-weight: 300;
   line-height: 1.5rem;
   color: var(--ifm-font-color-base, #2c2c2c);
+  overflow-wrap: anywhere;
 }
 
 .infoBar {
   display: flex;
-  flex-flow: row nowrap;
-  gap: 1.5rem;
+  flex-flow: row wrap;
+  align-items: center;
+  gap: 0.4rem 1.25rem;
   color: var(--ifm-font-color-secondary, #666);
-  width: fit-content;
 }
 
 .language {
   display: inline-block;
+  max-width: 100%;
   padding: 0 0.5rem;
   font-size: 0.875rem;
   opacity: 0.9;
   border-radius: 0.4rem;
   background: var(--ifm-badge-background-color, rgba(127, 127, 127, 0.1));
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .stars,
@@ -98,6 +109,16 @@
   font-weight: 500;
   font-size: 0.875rem;
   opacity: 0.9;
+}
+
+.githubLogo {
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: 1.25rem;
+  color: inherit;
+  flex: none;
+  line-height: 1;
 }
 
 .stars::before,
@@ -129,15 +150,51 @@
   mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' aria-hidden='true' height='16' viewBox='0 0 16 16' version='1.1' width='16'%3E%3Cpath d='M5 5.372v.878c0 .414.336.75.75.75h4.5a.75.75 0 0 0 .75-.75v-.878a2.25 2.25 0 1 1 1.5 0v.878a2.25 2.25 0 0 1-2.25 2.25h-1.5v2.128a2.251 2.251 0 1 1-1.5 0V8.5h-1.5A2.25 2.25 0 0 1 3.5 6.25v-.878a2.25 2.25 0 1 1 1.5 0ZM5 3.25a.75.75 0 1 0-1.5 0 .75.75 0 0 0 1.5 0Zm6.75.75a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Zm-3 8.75a.75.75 0 1 0-1.5 0 .75.75 0 0 0 1.5 0Z'%3E%3C/path%3E%3C/svg%3E");
 }
 
-.githubLogo {
-  font-size: 1.25rem;
-  color: inherit;
-}
-
 .githubLogo::before {
   margin-right: 0;
   mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='31' height='32' viewBox='0 0 496 512'%3E%3Cpath d='M165.9 397.4c0 2-2.3 3.6-5.2 3.6c-3.3.3-5.6-1.3-5.6-3.6c0-2 2.3-3.6 5.2-3.6c3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9c2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9c.3 2 2.9 3.3 5.9 2.6c2.9-.7 4.9-2.6 4.6-4.6c-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2c12.8 2.3 17.3-5.6 17.3-12.1c0-6.2-.3-40.4-.3-61.4c0 0-70 15-84.7-29.8c0 0-11.4-29.1-27.8-36.6c0 0-22.9-15.7 1.6-15.4c0 0 24.9 2 38.6 25.8c21.9 38.6 58.6 27.5 72.9 20.9c2.3-16 8.8-27.1 16-33.7c-55.9-6.2-112.3-14.3-112.3-110.5c0-27.5 7.6-41.3 23.6-58.9c-2.6-6.5-11.1-33.3 2.6-67.9c20.9-6.5 69 27 69 27c20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27c13.7 34.7 5.2 61.4 2.6 67.9c16 17.7 25.8 31.5 25.8 58.9c0 96.5-58.9 104.2-114.8 110.5c9.2 7.9 17 22.9 17 46.4c0 33.7-.3 75.4-.3 83.6c0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252C496 113.3 383.5 8 244.8 8'/%3E%3C/svg%3E");
-  background-color: currentColor;
+}
+
+@container (max-width: 360px) {
+  .titleBar {
+    font-size: 1.1rem;
+    margin-bottom: 0.4rem;
+  }
+  .description {
+    font-size: 0.9rem;
+    line-height: 1.35rem;
+    margin-bottom: 0.55rem;
+  }
+  .infoBar {
+    gap: 0.35rem 0.9rem;
+  }
+}
+
+@container (max-width: 260px) {
+  .titleBar {
+    font-size: 1rem;
+    padding-right: 0;
+  }
+  .githubLogo {
+    display: none;
+  }
+  .avatar {
+    width: 1.25rem;
+    height: 1.25rem;
+  }
+  .description {
+    font-size: 0.85rem;
+    line-height: 1.25rem;
+  }
+  .stars,
+  .forks,
+  .license,
+  .language {
+    font-size: 0.8rem;
+  }
+  .infoBar {
+    gap: 0.3rem 0.7rem;
+  }
 }
 
 .loading {
