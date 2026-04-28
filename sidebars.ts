@@ -375,10 +375,10 @@ const sidebars: SidebarsConfig = {
           items: [
             {
               type: 'category',
-              label: '《微积分》',
+              label: '《高等数学》',
               link: {
                 type: 'doc',
-                id: 'note/math/university/calculus/index',
+                id: 'note/math/university/advanced-math/index',
               },
               items: [],
             },
