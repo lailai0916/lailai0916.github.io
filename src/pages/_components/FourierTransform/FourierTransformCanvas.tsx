@@ -164,7 +164,7 @@ export default function FourierTransformCanvas() {
     const updateSize = () => {
       if (!containerRef.current) return;
       const containerWidth = containerRef.current.clientWidth;
-      const newSize = Math.min(containerWidth - 32, BASE_SIZE);
+      const newSize = Math.min(containerWidth, BASE_SIZE);
       setCanvasSize((prev) => (Math.abs(newSize - prev) > 1 ? newSize : prev));
     };
     updateSize();

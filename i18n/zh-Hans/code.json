@@ -701,6 +701,15 @@
   "home.fouriertransform.description": {
     "message": "在下方绘制任意形状，观察其傅立叶级数的旋转圆可视化"
   },
+  "home.lorenz.title": {
+    "message": "洛伦兹吸引子"
+  },
+  "home.lorenz.description": {
+    "message": "拖动旋转视角并调整参数，探索确定性混沌与蝴蝶效应"
+  },
+  "home.lorenz.reset": {
+    "message": "重置"
+  },
   "pages.travel.title": {
     "message": "旅行"
   },

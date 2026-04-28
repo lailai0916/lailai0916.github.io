@@ -9,6 +9,7 @@ import styles from './styles.module.css';
 import Blog from './_components/Blog';
 import Countdown from './_components/Countdown';
 import FourierTransform from './_components/FourierTransform';
+import LorenzAttractor from './_components/LorenzAttractor';
 import NeuralNetwork from './_components/NeuralNetwork';
 import Bento from './_components/Bento';
 
@@ -62,6 +63,7 @@ export default function Home(): ReactNode {
         <Blog />
         <NeuralNetwork />
         <FourierTransform />
+        <LorenzAttractor />
       </section>
 
       {!isCoverDismissed && (
