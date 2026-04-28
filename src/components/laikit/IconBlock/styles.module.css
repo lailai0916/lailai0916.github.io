@@ -10,7 +10,7 @@
   overflow: hidden;
 }
 
-/* Primary tinted variant - for highlighted/feature icons */
+/* Primary-tinted variant for highlighted/feature icons. */
 .accent {
   background: linear-gradient(
     135deg,
@@ -31,7 +31,7 @@ html[data-theme='dark'] .accent {
   border-color: rgba(var(--ifm-color-primary-rgb), 0.28);
 }
 
-/* Neutral variant - for stat/metric icons */
+/* Neutral variant for stat/metric icons. */
 .muted {
   background: var(--ifm-color-emphasis-100);
   color: var(--ifm-color-emphasis-600);

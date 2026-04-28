@@ -153,22 +153,17 @@ export function Paginator({ meta }: { meta: BlogPaginatedMetadata }) {
   if (meta.totalPages <= 1) return null;
   const { page, totalPages } = meta;
   const sample = meta.nextPage || meta.previousPage || '';
-  // Derive pageBase and firstBase robustly for routes like:
-  //  - /blog/page/3
-  //  - /blog/tags/<tag>/page/3
-  //  - /blog/authors/<id>/authors/3
+  // Derive pageBase / firstBase across blog routes that use a trailing number,
+  // e.g. /blog/page/3, /blog/tags/<tag>/page/3, /blog/authors/<id>/authors/3.
   let pageBase: string;
   let firstBase: string;
   if (/(.*\/[^/]+)\/\d+\/?$/.test(sample)) {
-    // sample looks like "/.../<segment>/<n>"
     pageBase = sample.replace(/\/\d+\/?$/, '');
     firstBase = pageBase.replace(/\/[^/]+$/, '');
   } else if (sample) {
-    // sample is likely the first page (no trailing number)
     firstBase = sample;
     pageBase = `${firstBase.replace(/\/?$/, '')}/page`;
   } else {
-    // no sample at all: infer from current permalink when possible
     const m2 = meta.permalink.match(/(.*)\/page\/\d+\/?$/);
     firstBase = m2 ? m2[1] : meta.permalink;
     pageBase = `${firstBase.replace(/\/?$/, '')}/page`;

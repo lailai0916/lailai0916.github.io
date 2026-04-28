@@ -21,7 +21,6 @@ body {
   flex-direction: column;
 }
 
-/* Docusaurus-specific utility class */
 :global(.docusaurus-mt-lg) {
   margin-top: 3rem;
 }

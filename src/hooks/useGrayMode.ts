@@ -10,7 +10,6 @@ export function useGrayMode(): boolean {
   const [grayMode, setGrayMode] = useState(false);
 
   useEffect(() => {
-    // 读取localStorage中的灰色模式状态
     const loadGrayMode = () => {
       try {
         const settings = localStorage.getItem('settings-experimental');
@@ -23,17 +22,15 @@ export function useGrayMode(): boolean {
       }
     };
 
-    // 初始加载
     loadGrayMode();
 
-    // 监听localStorage变化（跨标签页同步）
+    // `storage` fires across tabs; the custom event covers same-tab updates.
     const handleStorageChange = (e: StorageEvent) => {
       if (e.key === 'settings-experimental') {
         loadGrayMode();
       }
     };
 
-    // 监听自定义事件（同一页面内的变化）
     const handleExperimentalSettingsChange = (e: CustomEvent) => {
       if (e.detail.key === 'grayMode') {
         setGrayMode(e.detail.checked);

@@ -21,7 +21,6 @@ const MODIFICATION = translate({
   message: 'My <b>Friends</b>',
 });
 
-// 友链卡片组件
 function FriendCard({ friend }: { friend: FriendItem }) {
   const [imageError, setImageError] = useState(false);
 

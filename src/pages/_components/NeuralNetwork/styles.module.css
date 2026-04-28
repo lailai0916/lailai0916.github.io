@@ -1,48 +1,39 @@
-/* Neural Network Component - Complete Color Variables */
+/* Dark theme (default). */
 .container {
-  /* Default Theme (Dark Mode) */
-  /* Background Colors */
   --nn-bg-primary: #000000;
   --nn-bg-overlay: rgba(0, 0, 0, 0.6);
   --nn-transparent: transparent;
 
-  /* Text Colors */
   --nn-text-primary: #ffffff;
   --nn-text-secondary: #000000;
   --nn-text-accent: #ffff00;
 
-  /* Neuron Colors */
   --nn-neuron-border-selected: #ffff00;
   --nn-neuron-border-default: #ffffff;
   --nn-neuron-fill-default: #000000;
 
-  /* Neuron Gray Color Mapping (Dark Mode: 0->0, 1->255) */
+  /* Neuron gray ramp: 0 -> 0, 1 -> 255. */
   --nn-neuron-gray-base: 0;
   --nn-neuron-gray-multiplier: 255;
 
-  /* Connection Colors (RGB values for rgba() usage) */
   --nn-connection-negative-rgb: 252, 98, 85;
   --nn-connection-positive-rgb: 88, 196, 221;
   --nn-connection-animation: rgba(255, 255, 0, 0.5);
   --nn-connection-default: #666666;
 
-  /* Button Colors - 现代卡片风格 */
   --nn-button-clear: var(--ifm-card-background-color);
   --nn-button-clear-border: var(--ifm-color-emphasis-300);
   --nn-button-primary: var(--ifm-color-primary);
   --nn-button-primary-border: var(--ifm-color-primary);
 
-  /* Border Colors */
   --nn-stroke-primary: var(--ifm-color-primary);
   --nn-stroke-accent: #ffff00;
 
-  /* Grid Colors */
   --nn-grid-white: #ffffff;
   --nn-grid-white-rgb: 255, 255, 255;
   --nn-grid-stroke: #ffff00;
   --nn-grid-fill: #000000;
 
-  /* Layout */
   width: 100%;
   max-width: 640px;
   margin: 0 auto;
@@ -51,44 +42,37 @@
   justify-content: center;
 }
 
-/* Light Mode Theme — "Blueprint" style */
+/* Light theme — "Blueprint" palette. */
 [data-theme='light'] .container {
-  /* Background Colors */
   --nn-bg-primary: #ffffff;
   --nn-bg-overlay: rgba(255, 255, 255, 0.88);
   --nn-transparent: transparent;
 
-  /* Text Colors */
   --nn-text-primary: #1e2040;
   --nn-text-secondary: #ffffff;
   --nn-text-accent: var(--ifm-color-primary);
 
-  /* Neuron Colors */
   --nn-neuron-border-selected: var(--ifm-color-primary);
   --nn-neuron-border-default: #94a3b8;
   --nn-neuron-fill-default: #ffffff;
 
-  /* Neuron Gray Color Mapping (Light Mode: 0->light, 1->dark) */
+  /* Neuron gray ramp: 0 -> light, 1 -> dark. */
   --nn-neuron-gray-base: 230;
   --nn-neuron-gray-multiplier: -195;
 
-  /* Connection Colors (RGB values for rgba() usage) */
   --nn-connection-negative-rgb: 239, 68, 68;
   --nn-connection-positive-rgb: 59, 130, 246;
   --nn-connection-animation: rgba(99, 102, 241, 0.75);
   --nn-connection-default: #c7d2fe;
 
-  /* Button Colors */
   --nn-button-clear: var(--ifm-card-background-color);
   --nn-button-clear-border: var(--ifm-color-emphasis-200);
   --nn-button-primary: var(--ifm-color-primary);
   --nn-button-primary-border: var(--ifm-color-primary);
 
-  /* Border Colors */
   --nn-stroke-primary: var(--ifm-color-primary);
   --nn-stroke-accent: var(--ifm-color-primary);
 
-  /* Grid Colors */
   --nn-grid-white: #1e2040;
   --nn-grid-white-rgb: 30, 32, 64;
   --nn-grid-stroke: var(--ifm-color-primary);
@@ -107,7 +91,6 @@
   -ms-user-select: none;
 }
 
-/* 按钮样式 - 匹配 3B1B 原版 */
 .clearButton {
   fill: var(--nn-button-clear);
   stroke: var(--nn-button-clear-border);
@@ -135,14 +118,12 @@
   filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.1));
 }
 
-/* 响应式设计 */
 @media (max-width: 768px) {
   .container {
     margin: 0;
   }
 }
 
-/* 深色模式适配 */
 html[data-theme='dark'] .clearButton:hover {
   stroke: var(--ifm-color-primary-light) !important;
   filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.3));

@@ -66,7 +66,6 @@ export function useThemeColors(isDarkTheme: boolean) {
     setColorState((prev) => ({ ...prev, baseColor: hex }));
   }, []);
 
-  // 重置到默认颜色
   const resetColors = useCallback(() => {
     const defaults = getThemeDefaults(isDarkTheme);
     const newState = {

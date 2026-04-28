@@ -1,6 +1,3 @@
-/* Countdown Component Styles */
-
-/* SVG styles */
 .circleSvg {
   position: absolute;
   transform: rotate(-90deg);
@@ -12,14 +9,6 @@
   height: 160px;
   display: flex;
 }
-
-/* .progressCircle {
-  transition: stroke-dasharray 0.4s ease-out;
-}
-
-.progressDot {
-  transition: cx 0.4s ease-out, cy 0.4s ease-out;
-} */
 
 .pxanchor {
   position: absolute;
@@ -47,7 +36,6 @@
   white-space: nowrap;
 }
 
-/* Circle background */
 .circleBackground {
   color: rgb(243 244 246);
 }
@@ -56,7 +44,6 @@
   color: rgb(38 38 38);
 }
 
-/* Countdown content layout */
 .countdownLayout {
   display: flex;
   gap: 2rem;
@@ -65,7 +52,6 @@
   margin: 0 auto;
 }
 
-/* Responsive grid for mobile */
 @media (max-width: 768px) {
   .countdownLayout {
     display: grid;

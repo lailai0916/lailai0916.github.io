@@ -6,10 +6,6 @@ import type { Props } from '@theme/BlogTagsListPage';
 import BlogScaffold from '../BlogShared/Scaffold';
 import { translate } from '@docusaurus/Translate';
 
-// styles are handled by shared components
-// shared sidebars handle their own data; no direct utils here
-// removed page-local sidebars/cards; using shared ones
-
 const TITLE = translate({ id: 'theme.tags.tagsPageTitle', message: 'Tags' });
 const DESCRIPTION = "Tags of lailai's blog";
 
