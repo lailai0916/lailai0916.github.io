@@ -93,6 +93,8 @@ export default function FourierTransformCanvas() {
     fourierX: [] as FourierCoefficient[],
     path: [] as Point[],
     time: 0,
+    phase: 'draw' as 'draw' | 'erase',
+    eraseIndex: 0,
   });
 
   // Theme colors live in a ref so theme changes don't restart the animation effect.
@@ -138,6 +140,8 @@ export default function FourierTransformCanvas() {
     state.currentState = STATE.PLAYING;
     state.path = [];
     state.time = 0;
+    state.phase = 'draw';
+    state.eraseIndex = 0;
   };
 
   const captureDrawing = (drawn: Point[]) => {
@@ -291,14 +295,25 @@ export default function FourierTransformCanvas() {
         }
 
         const v = drawEpicycles();
-        state.path.push(v);
-        drawPath(state.path);
+        if (state.phase === 'draw') {
+          state.path.push(v);
+          drawPath(state.path);
+        } else {
+          state.eraseIndex++;
+          drawPath(state.path.slice(state.eraseIndex));
+        }
 
         const dt = TWO_PI / state.fourierX.length;
         state.time += dt;
         if (state.time > TWO_PI) {
           state.time = 0;
-          state.path = [];
+          if (state.phase === 'draw') {
+            state.phase = 'erase';
+            state.eraseIndex = 0;
+          } else {
+            state.phase = 'draw';
+            state.path = [];
+          }
         }
       }
 
@@ -333,6 +348,8 @@ export default function FourierTransformCanvas() {
     state.drawing = [point];
     state.path = [];
     state.time = 0;
+    state.phase = 'draw';
+    state.eraseIndex = 0;
   };
 
   const handleMove = (e: React.MouseEvent | React.TouchEvent) => {
