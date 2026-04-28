@@ -326,22 +326,21 @@ export default function FourierTransformCanvas() {
     return () => cancelAnimationFrame(animationId);
   }, [canvasSize, dpr, isDark]);
 
-  const getCanvasCoords = (e: React.MouseEvent | React.Touch): Point | null => {
+  const getCanvasCoords = (clientX: number, clientY: number): Point | null => {
     const canvas = canvasRef.current;
     if (!canvas) return null;
     const rect = canvas.getBoundingClientRect();
     return {
-      x: e.clientX - rect.left - rect.width / 2,
-      y: e.clientY - rect.top - rect.height / 2,
+      x: clientX - rect.left - rect.width / 2,
+      y: clientY - rect.top - rect.height / 2,
     };
   };
 
-  const handleStart = (e: React.MouseEvent | React.TouchEvent) => {
-    const point =
-      'touches' in e
-        ? getCanvasCoords(e.touches[0])
-        : getCanvasCoords(e as React.MouseEvent);
+  const handleStart = (e: React.PointerEvent) => {
+    const point = getCanvasCoords(e.clientX, e.clientY);
     if (!point) return;
+
+    e.currentTarget.setPointerCapture(e.pointerId);
 
     const state = stateRef.current;
     state.currentState = STATE.DRAWING;
@@ -352,22 +351,31 @@ export default function FourierTransformCanvas() {
     state.eraseIndex = 0;
   };
 
-  const handleMove = (e: React.MouseEvent | React.TouchEvent) => {
+  const handleMove = (e: React.PointerEvent) => {
     const state = stateRef.current;
     if (state.currentState !== STATE.DRAWING) return;
 
-    const point =
-      'touches' in e
-        ? getCanvasCoords(e.touches[0])
-        : getCanvasCoords(e as React.MouseEvent);
-    if (!point) return;
+    // Use coalesced events for finer-grained samples on high-frequency input
+    // devices (Apple Pencil, drawing tablet). Falls back to the dispatched
+    // event itself when no extra samples are available.
+    const native = e.nativeEvent;
+    const coalesced =
+      typeof native.getCoalescedEvents === 'function'
+        ? native.getCoalescedEvents()
+        : [];
+    const samples: { clientX: number; clientY: number }[] =
+      coalesced.length > 0 ? coalesced : [native];
 
-    const lastPoint = state.drawing[state.drawing.length - 1];
-    if (
-      !lastPoint ||
-      Math.hypot(point.x - lastPoint.x, point.y - lastPoint.y) >= 1
-    ) {
-      state.drawing.push(point);
+    for (const sample of samples) {
+      const point = getCanvasCoords(sample.clientX, sample.clientY);
+      if (!point) continue;
+      const lastPoint = state.drawing[state.drawing.length - 1];
+      if (
+        !lastPoint ||
+        Math.hypot(point.x - lastPoint.x, point.y - lastPoint.y) >= 1
+      ) {
+        state.drawing.push(point);
+      }
     }
   };
 
@@ -389,13 +397,10 @@ export default function FourierTransformCanvas() {
         height={canvasSize * dpr}
         style={{ width: canvasSize, height: canvasSize }}
         className={styles.canvas}
-        onMouseDown={handleStart}
-        onMouseMove={handleMove}
-        onMouseUp={handleEnd}
-        onMouseLeave={handleEnd}
-        onTouchStart={handleStart}
-        onTouchMove={handleMove}
-        onTouchEnd={handleEnd}
+        onPointerDown={handleStart}
+        onPointerMove={handleMove}
+        onPointerUp={handleEnd}
+        onPointerCancel={handleEnd}
       />
     </div>
   );
