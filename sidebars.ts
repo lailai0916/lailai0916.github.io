@@ -367,10 +367,10 @@ const sidebars: SidebarsConfig = {
         },
         {
           type: 'category',
-          label: '高等数学',
+          label: '大学数学',
           link: {
             type: 'doc',
-            id: 'note/math/advanced/index',
+            id: 'note/math/university/index',
           },
           items: [
             {
@@ -378,7 +378,7 @@ const sidebars: SidebarsConfig = {
               label: '《微积分》',
               link: {
                 type: 'doc',
-                id: 'note/math/advanced/calculus/index',
+                id: 'note/math/university/calculus/index',
               },
               items: [],
             },
@@ -387,7 +387,7 @@ const sidebars: SidebarsConfig = {
               label: '《线性代数》',
               link: {
                 type: 'doc',
-                id: 'note/math/advanced/linear-algebra/index',
+                id: 'note/math/university/linear-algebra/index',
               },
               items: [],
             },
@@ -396,7 +396,7 @@ const sidebars: SidebarsConfig = {
               label: '《概率论与数理统计》',
               link: {
                 type: 'doc',
-                id: 'note/math/advanced/probability-statistics/index',
+                id: 'note/math/university/probability-statistics/index',
               },
               items: [],
             },
@@ -405,7 +405,7 @@ const sidebars: SidebarsConfig = {
               label: '《离散数学》',
               link: {
                 type: 'doc',
-                id: 'note/math/advanced/discrete-math/index',
+                id: 'note/math/university/discrete-math/index',
               },
               items: [],
             },
@@ -414,7 +414,7 @@ const sidebars: SidebarsConfig = {
               label: '《初等数论》',
               link: {
                 type: 'doc',
-                id: 'note/math/advanced/elementary-number-theory/index',
+                id: 'note/math/university/elementary-number-theory/index',
               },
               items: [],
             },

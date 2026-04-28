@@ -175,9 +175,9 @@
     "message": "统计与概率",
     "description": "The label for category '统计与概率' in sidebar 'sidebar2'"
   },
-  "sidebar.sidebar2.category.高等数学": {
-    "message": "高等数学",
-    "description": "The label for category '高等数学' in sidebar 'sidebar2'"
+  "sidebar.sidebar2.category.大学数学": {
+    "message": "大学数学",
+    "description": "The label for category '大学数学' in sidebar 'sidebar2'"
   },
   "sidebar.sidebar2.category.英语": {
     "message": "英语",

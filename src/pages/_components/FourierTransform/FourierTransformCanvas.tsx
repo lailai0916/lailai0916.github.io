@@ -98,7 +98,8 @@ export default function FourierTransformCanvas() {
   // Theme colors live in a ref so theme changes don't restart the animation effect.
   const themeRef = useRef({
     primary: '',
-    colors: THEME_COLORS.light as (typeof THEME_COLORS)[keyof typeof THEME_COLORS],
+    colors:
+      THEME_COLORS.light as (typeof THEME_COLORS)[keyof typeof THEME_COLORS],
   });
 
   const initDefault = () => {
