@@ -216,6 +216,10 @@
   transform: scale(1.1);
 }
 
+.slider::-webkit-slider-thumb:hover:active {
+  transform: scale(1);
+}
+
 .slider::-moz-range-thumb {
   width: var(--slider-thumb-size);
   height: var(--slider-thumb-size);
@@ -223,6 +227,15 @@
   background: white;
   border: 3px solid var(--ifm-color-primary);
   cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.slider::-moz-range-thumb:hover {
+  transform: scale(1.1);
+}
+
+.slider::-moz-range-thumb:hover:active {
+  transform: scale(1);
 }
 
 .sliderTicks {
