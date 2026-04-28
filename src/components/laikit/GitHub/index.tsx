@@ -1,4 +1,6 @@
 import React, { useEffect, useMemo, useState } from 'react';
+import clsx from 'clsx';
+import Card from '@site/src/components/laikit/Card';
 import styles from './styles.module.css';
 
 type GitHubProps = {
@@ -33,7 +35,7 @@ function compactNumber(n?: number) {
     maximumFractionDigits: 1,
   })
     .format(n)
-    .replace(/\u202f/g, '');
+    .replace(/ /g, '');
 }
 
 function stripGitHubEmojiShortcodes(text?: string | null) {
@@ -97,26 +99,24 @@ export default function GitHub(props: GitHubProps) {
     stripGitHubEmojiShortcodes(data?.description) || 'Description not set';
   const stars = compactNumber(data?.stargazers_count ?? 0);
   const forks = compactNumber(data?.forks ?? 0);
-  const license = data?.license?.spdx_id ?? 'no-license';
+  const licenseId = data?.license?.spdx_id;
+  const hasLicense = !!licenseId && licenseId !== 'NOASSERTION';
   const language = data?.language;
   const avatarUrl = data?.owner?.avatar_url;
 
-  const classes = [
-    styles.card,
-    loading ? styles.loading : '',
-    error ? styles.error : '',
-    className,
-  ]
-    .filter(Boolean)
-    .join(' ');
-
   return (
-    <a
-      className={classes}
+    <Card
       href={href}
       target={target}
       rel={target === '_blank' ? 'noopener noreferrer' : undefined}
       style={style}
+      wrapperClassName={styles.wrapper}
+      className={clsx(
+        styles.card,
+        loading && styles.loading,
+        error && styles.error,
+        className
+      )}
       aria-label={`Open ${owner}/${repoName} on GitHub`}
     >
       <div className={styles.titleBar}>
@@ -146,9 +146,11 @@ export default function GitHub(props: GitHubProps) {
         <div className={styles.forks} title="Forks">
           {forks}
         </div>
-        <div className={styles.license} title="License">
-          {license}
-        </div>
+        {hasLicense && (
+          <div className={styles.license} title="License">
+            {licenseId}
+          </div>
+        )}
         {showLanguage && language && (
           <span className={styles.language} title="Primary language">
             {language}
@@ -161,6 +163,6 @@ export default function GitHub(props: GitHubProps) {
           Failed to load GitHub data
         </div>
       )}
-    </a>
+    </Card>
   );
 }

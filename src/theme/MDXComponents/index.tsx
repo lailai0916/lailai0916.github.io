@@ -8,7 +8,7 @@ import IframeWindow from '@site/src/components/BrowserWindow/IframeWindow';
 import ImageWindow from '@site/src/components/BrowserWindow/ImageWindow';
 
 import Notation from '@site/src/components/Notation';
-import GitHub from '@site/src/components/GitHub';
+import GitHub from '@site/src/components/laikit/GitHub';
 import Desmos from '@site/src/components/Desmos';
 import Problem from '@site/src/components/Problem';
 import Solution from '@site/src/components/Solution';
