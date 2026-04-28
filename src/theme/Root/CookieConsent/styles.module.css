@@ -74,7 +74,7 @@ html[data-theme='dark'] .card {
 .accept {
   background: var(--ifm-color-primary);
   border: 1px solid var(--ifm-color-primary);
-  color: var(--ifm-button-color, #fff);
+  color: var(--ifm-button-color);
 }
 
 .accept:hover {
