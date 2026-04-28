@@ -2,14 +2,15 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem;
+  gap: clamp(0.5rem, 2vw, 1rem);
+  padding: clamp(0.75rem, 2vw, 1rem);
 
   background-color: var(--ifm-color-primary);
   color: #ffffff;
   border-radius: 8px;
 }
 
-@media (max-width: 576px) {
+@media (max-width: 768px) {
   .headerSection {
     flex-direction: column;
     align-items: flex-start;
@@ -17,18 +18,20 @@
 }
 
 .title {
-  font-size: 2rem;
+  font-size: clamp(1.5rem, 2vw + 1rem, 2rem);
   margin: 0;
+  line-height: 1.2;
 }
 
 .description {
+  font-size: clamp(0.9rem, 0.3vw + 0.85rem, 1rem);
   font-weight: 700;
   opacity: 0.8;
   margin: 0;
 }
 
 .momentCount {
-  font-size: 1.2rem;
+  font-size: clamp(1rem, 0.5vw + 0.9rem, 1.2rem);
   font-weight: 700;
   opacity: 0.8;
 }

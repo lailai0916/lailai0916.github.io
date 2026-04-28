@@ -1,17 +1,17 @@
 .headerSection {
   background-color: var(--ifm-background-color);
   border-bottom: 1px solid var(--ifm-color-emphasis-200);
-  padding: 4rem 0;
+  padding: clamp(2rem, 5vw, 4rem) 0;
 }
 
 .headerInner {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 2rem;
+  padding: 0 clamp(1rem, 3vw, 2rem);
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 3rem;
+  gap: clamp(1.5rem, 3vw, 3rem);
 }
 
 .headerContent {
@@ -20,7 +20,7 @@
 }
 
 .mainTitle {
-  font-size: 3rem;
+  font-size: clamp(2rem, 4vw + 1rem, 3rem);
   margin: 0 0 1rem 0;
   color: var(--ifm-font-color-base);
   line-height: 1.2;
@@ -32,7 +32,7 @@
 }
 
 .mainDescription {
-  font-size: 1.2rem;
+  font-size: clamp(1rem, 0.5vw + 0.9rem, 1.2rem);
   color: var(--ifm-color-emphasis-700);
   margin: 0;
   line-height: 1.6;
@@ -42,6 +42,5 @@
   .headerInner {
     flex-direction: column;
     align-items: flex-start;
-    gap: 2rem;
   }
 }
