@@ -64,7 +64,7 @@ function lorenzDerivative(
   s: Vec3,
   sigma: number,
   rho: number,
-  beta: number,
+  beta: number
 ): Vec3 {
   return {
     x: sigma * (s.y - s.x),
@@ -78,7 +78,7 @@ function rk4Step(
   sigma: number,
   rho: number,
   beta: number,
-  dt: number,
+  dt: number
 ): Vec3 {
   const k1 = lorenzDerivative(p, sigma, rho, beta);
   const k2 = lorenzDerivative(
@@ -89,7 +89,7 @@ function rk4Step(
     },
     sigma,
     rho,
-    beta,
+    beta
   );
   const k3 = lorenzDerivative(
     {
@@ -99,7 +99,7 @@ function rk4Step(
     },
     sigma,
     rho,
-    beta,
+    beta
   );
   const k4 = lorenzDerivative(
     {
@@ -109,7 +109,7 @@ function rk4Step(
     },
     sigma,
     rho,
-    beta,
+    beta
   );
   return {
     x: p.x + (dt / 6) * (k1.x + 2 * k2.x + 2 * k3.x + k4.x),
@@ -184,7 +184,7 @@ export default function LorenzAttractorCanvas() {
   });
 
   const themeRef = useRef(
-    THEME_COLORS.light as (typeof THEME_COLORS)[keyof typeof THEME_COLORS],
+    THEME_COLORS.light as (typeof THEME_COLORS)[keyof typeof THEME_COLORS]
   );
   useEffect(() => {
     themeRef.current = isDark ? THEME_COLORS.dark : THEME_COLORS.light;
@@ -233,9 +233,7 @@ export default function LorenzAttractorCanvas() {
 
     let animId = 0;
 
-    const project = (
-      p: Vec3,
-    ): { sx: number; sy: number; depth: number } => {
+    const project = (p: Vec3): { sx: number; sy: number; depth: number } => {
       const { yaw, pitch } = stateRef.current;
       // Center the attractor: it lives roughly within
       // x ∈ [-22, 22], y ∈ [-30, 30], z ∈ [0, 50].

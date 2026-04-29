@@ -68,7 +68,7 @@
   transform: translateX(-50%);
   white-space: nowrap;
   left: calc(
-    var(--slider-thumb-size) / 2 +
-      var(--slider-tick-ratio) * (100% - var(--slider-thumb-size))
+    var(--slider-thumb-size) / 2 + var(--slider-tick-ratio) *
+      (100% - var(--slider-thumb-size))
   );
 }
