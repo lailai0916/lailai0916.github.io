@@ -25,7 +25,10 @@ export function useThemeColors(isDarkTheme: boolean) {
     ) as Partial<ColorState>;
     return {
       baseColor: storedValues.baseColor ?? defaults.primary,
-      background: storedValues.background ?? defaults.background,
+      // Background is theme-specific (white in light, dark in dark) and not
+      // user-configurable, so always derive it from the active theme rather
+      // than the shared storage slot.
+      background: defaults.background,
       shades: storedValues.shades ?? COLOR_SHADES,
     };
   });
@@ -40,7 +43,7 @@ export function useThemeColors(isDarkTheme: boolean) {
     ) as Partial<ColorState>;
     const newState = {
       baseColor: storedValues.baseColor ?? newDefaults.primary,
-      background: storedValues.background ?? newDefaults.background,
+      background: newDefaults.background,
       shades: storedValues.shades ?? COLOR_SHADES,
     };
     setColorState(newState);
