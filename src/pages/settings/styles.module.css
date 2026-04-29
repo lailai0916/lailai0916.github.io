@@ -83,7 +83,7 @@
   gap: 0.5rem;
   padding: 0.25rem;
   border-radius: 10px;
-  border: 2px solid var(--ifm-color-emphasis-300);
+  border: 1px solid var(--ifm-color-emphasis-300);
   cursor: text;
   transition: border-color 0.2s ease;
 }
@@ -163,8 +163,8 @@
   align-items: center;
   justify-content: center;
   background: transparent;
-  border: 2px solid var(--ifm-color-emphasis-300);
-  border-radius: 8px;
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-radius: 10px;
   color: var(--ifm-color-emphasis-700);
   cursor: pointer;
   font-size: 0.85rem;

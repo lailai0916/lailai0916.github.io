@@ -56,9 +56,9 @@
   --nn-neuron-border-default: #94a3b8;
   --nn-neuron-fill-default: #ffffff;
 
-  /* Neuron gray ramp: 0 -> light, 1 -> dark. */
-  --nn-neuron-gray-base: 230;
-  --nn-neuron-gray-multiplier: -195;
+  /* Neuron gray ramp: 0 -> white, 1 -> black. */
+  --nn-neuron-gray-base: 255;
+  --nn-neuron-gray-multiplier: -255;
 
   --nn-connection-negative-rgb: 239, 68, 68;
   --nn-connection-positive-rgb: 59, 130, 246;
@@ -73,8 +73,8 @@
   --nn-stroke-primary: var(--ifm-color-primary);
   --nn-stroke-accent: var(--ifm-color-primary);
 
-  --nn-grid-white: #1e2040;
-  --nn-grid-white-rgb: 30, 32, 64;
+  --nn-grid-white: #000000;
+  --nn-grid-white-rgb: 0, 0, 0;
   --nn-grid-stroke: var(--ifm-color-primary);
   --nn-grid-fill: #ffffff;
 }

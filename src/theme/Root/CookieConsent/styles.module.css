@@ -51,7 +51,7 @@ html[data-theme='dark'] .card {
   border-radius: 999px;
   padding: 0.4rem 1rem;
   font-size: 0.875rem;
-  font-weight: 500;
+  font-weight: 600;
   cursor: pointer;
   transition:
     background-color 160ms ease,
@@ -72,14 +72,15 @@ html[data-theme='dark'] .card {
 }
 
 .accept {
-  background: transparent;
-  border: 1px solid var(--ifm-color-emphasis-300);
-  color: var(--ifm-color-emphasis-800);
+  background: var(--ifm-color-primary);
+  border: 1px solid var(--ifm-color-primary);
+  color: #fff;
 }
 
 .accept:hover {
-  border-color: var(--ifm-color-emphasis-500);
-  background: var(--ifm-color-emphasis-100);
+  background: var(--ifm-color-primary-dark);
+  border-color: var(--ifm-color-primary-dark);
+  color: #fff;
 }
 
 .button:focus-visible {
