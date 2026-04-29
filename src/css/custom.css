@@ -16,6 +16,7 @@
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
 
   --global-font-size: 16px;
+  --global-line-height: 1.65;
 }
 
 [data-theme='dark'] {
@@ -68,6 +69,7 @@ html,
 article,
 .markdown {
   font-size: var(--global-font-size);
+  line-height: var(--global-line-height);
 }
 
 .katex-display {

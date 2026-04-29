@@ -72,14 +72,14 @@ html[data-theme='dark'] .card {
 }
 
 .accept {
-  background: var(--ifm-color-primary);
-  border: 1px solid var(--ifm-color-primary);
-  color: var(--ifm-button-color);
+  background: transparent;
+  border: 1px solid var(--ifm-color-emphasis-300);
+  color: var(--ifm-color-emphasis-800);
 }
 
 .accept:hover {
-  background: var(--ifm-color-primary-dark);
-  border-color: var(--ifm-color-primary-dark);
+  border-color: var(--ifm-color-emphasis-500);
+  background: var(--ifm-color-emphasis-100);
 }
 
 .button:focus-visible {
