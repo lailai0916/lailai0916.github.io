@@ -1,19 +1,48 @@
 .browserWindow {
-  border: 3px solid var(--ifm-color-emphasis-200);
-  border-radius: var(--ifm-global-radius);
-  box-shadow: var(--ifm-global-shadow-lw);
+  background-color: var(--ifm-background-color);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  border-radius: 12px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
   margin-bottom: var(--ifm-leading);
+  overflow: hidden;
+}
+
+[data-theme='dark'] .browserWindow {
+  border-color: rgba(255, 255, 255, 0.08);
 }
 
 .browserWindowHeader {
   align-items: center;
-  background: var(--ifm-color-emphasis-200);
+  background-color: rgba(246, 246, 247, 0.85);
+  backdrop-filter: saturate(180%) blur(20px);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
   display: flex;
-  padding: 0.5rem 1rem;
+  height: 42px;
+  padding: 0 16px;
+}
+
+[data-theme='dark'] .browserWindowHeader {
+  background-color: rgba(40, 40, 42, 0.85);
 }
 
 .buttons {
+  align-items: center;
+  display: flex;
+  gap: 8px;
   white-space: nowrap;
+}
+
+.dot {
+  border-radius: 50%;
+  box-shadow: inset 0 0 0 0.5px rgba(0, 0, 0, 0.12);
+  display: inline-block;
+  height: 12px;
+  width: 12px;
+}
+
+.browserWindowSpacer {
+  width: 52px;
+  flex-shrink: 0;
 }
 
 [data-theme='light'] {
@@ -21,48 +50,27 @@
 }
 
 .browserWindowAddressBar {
+  color: rgba(60, 60, 67, 0.7);
   flex: 1 0;
-  margin: 0 1rem 0 0.5rem;
-  border-radius: 12.5px;
-  background-color: var(--ifm-background-color);
-  color: var(--ifm-color-gray-800);
-  padding: 5px 15px;
   font:
-    400 13px Arial,
+    500 13px -apple-system,
+    BlinkMacSystemFont,
+    'SF Pro Text',
+    'Segoe UI',
     sans-serif;
+  letter-spacing: -0.01em;
+  margin: 0 16px;
+  padding: 0;
+  text-align: center;
   user-select: none;
 }
 
 [data-theme='dark'] .browserWindowAddressBar {
-  color: var(--ifm-color-gray-300);
-}
-
-.dot {
-  margin-right: 6px;
-  margin-top: 4px;
-  height: 12px;
-  width: 12px;
-  background-color: #bbb;
-  border-radius: 50%;
-  display: inline-block;
-}
-
-.browserWindowMenuIcon {
-  margin-left: auto;
-}
-
-.bar {
-  width: 17px;
-  height: 3px;
-  background-color: #aaa;
-  margin: 3px 0;
-  display: block;
+  color: rgba(235, 235, 245, 0.6);
 }
 
 .browserWindowBody {
   background-color: var(--ifm-background-color);
-  border-bottom-left-radius: inherit;
-  border-bottom-right-radius: inherit;
   padding: 1rem;
 }
 
