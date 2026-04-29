@@ -1,7 +1,7 @@
 import React, { useRef, useEffect, useState, useCallback } from 'react';
 import { useColorMode } from '@docusaurus/theme-common';
-import { Icon } from '@iconify/react';
 import { translate } from '@docusaurus/Translate';
+import Slider from '@site/src/components/laikit/Slider';
 import styles from './styles.module.css';
 
 const TWO_PI = 2 * Math.PI;
@@ -137,22 +137,20 @@ function ParamSlider({
   precision,
   onChange,
 }: SliderProps) {
-  const pct = ((value - min) / (max - min)) * 100;
   return (
     <div className={styles.slider}>
       <div className={styles.sliderHead}>
         <span className={styles.sliderLabel}>{label}</span>
         <span className={styles.sliderValue}>{value.toFixed(precision)}</span>
       </div>
-      <input
-        type="range"
+      <Slider
+        value={value}
         min={min}
         max={max}
         step={step}
-        value={value}
-        onChange={(e) => onChange(parseFloat(e.target.value))}
-        className={styles.sliderInput}
-        style={{ ['--lz-slider-fill' as string]: `${pct}%` }}
+        onChange={onChange}
+        aria-label={label}
+        className={styles.sliderControl}
       />
     </div>
   );
@@ -429,8 +427,7 @@ export default function LorenzAttractorCanvas() {
           onClick={handleReset}
           aria-label={RESET_LABEL}
         >
-          <Icon icon="lucide:refresh-cw" width={14} height={14} />
-          <span>{RESET_LABEL}</span>
+          {RESET_LABEL}
         </button>
       </div>
     </div>

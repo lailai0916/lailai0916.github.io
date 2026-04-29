@@ -65,95 +65,34 @@ html[data-theme='dark'] .canvas {
   color: var(--ifm-color-emphasis-600);
 }
 
-.sliderInput {
-  --lz-slider-fill: 50%;
-  -webkit-appearance: none;
-  appearance: none;
-  width: 100%;
-  height: 4px;
-  border-radius: 999px;
-  background: linear-gradient(
-    to right,
-    var(--ifm-color-primary) 0%,
-    var(--ifm-color-primary) var(--lz-slider-fill),
-    var(--ifm-color-emphasis-300) var(--lz-slider-fill),
-    var(--ifm-color-emphasis-300) 100%
-  );
-  outline: none;
-  cursor: pointer;
-}
-
-.sliderInput::-webkit-slider-thumb {
-  -webkit-appearance: none;
-  appearance: none;
-  width: 16px;
-  height: 16px;
-  border-radius: 50%;
-  background: var(--ifm-color-primary);
-  border: 2px solid var(--ifm-card-background-color);
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
-  cursor: grab;
-  transition: transform 0.15s ease;
-}
-
-.sliderInput::-webkit-slider-thumb:hover {
-  transform: scale(1.15);
-}
-
-.sliderInput::-webkit-slider-thumb:active {
-  cursor: grabbing;
-  transform: scale(1.05);
-}
-
-.sliderInput::-moz-range-thumb {
-  width: 16px;
-  height: 16px;
-  border-radius: 50%;
-  background: var(--ifm-color-primary);
-  border: 2px solid var(--ifm-card-background-color);
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
-  cursor: grab;
-}
-
-.sliderInput::-moz-range-track {
-  height: 4px;
-  border-radius: 999px;
-  background: transparent;
-}
-
-.sliderInput:focus-visible::-webkit-slider-thumb {
-  box-shadow: 0 0 0 3px rgba(var(--ifm-color-primary-rgb), 0.3);
+.sliderControl {
+  --slider-track-height: 4px;
+  --slider-thumb-size: 14px;
 }
 
 .resetButton {
+  flex-shrink: 0;
+  height: 40px;
+  padding: 0 0.85rem;
   display: inline-flex;
   align-items: center;
-  gap: 0.4rem;
-  height: 36px;
-  padding: 0 0.85rem;
-  border-radius: 10px;
+  justify-content: center;
+  background: transparent;
   border: 1px solid var(--ifm-color-emphasis-300);
-  background: var(--ifm-card-background-color);
-  color: var(--ifm-color-emphasis-800);
+  border-radius: 10px;
+  color: var(--ifm-color-emphasis-700);
+  cursor: pointer;
   font-size: 0.85rem;
   font-weight: 600;
-  cursor: pointer;
+  letter-spacing: 0.01em;
   transition:
-    color 0.2s ease,
     border-color 0.2s ease,
-    box-shadow 0.2s ease,
-    background 0.2s ease;
+    color 0.2s ease;
 }
 
 .resetButton:hover {
-  color: var(--ifm-color-primary);
   border-color: var(--ifm-color-primary);
-  box-shadow: 0 2px 8px rgba(var(--ifm-color-primary-rgb), 0.15);
-}
-
-.resetButton:focus-visible {
-  outline: none;
-  box-shadow: 0 0 0 3px rgba(var(--ifm-color-primary-rgb), 0.3);
+  color: var(--ifm-color-primary);
 }
 
 @media (max-width: 500px) {
