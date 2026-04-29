@@ -1,0 +1,74 @@
+.slider {
+  --slider-thumb-size: 16px;
+  --slider-track-height: 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  width: 100%;
+}
+
+.input {
+  --slider-progress: 50%;
+  width: 100%;
+  height: var(--slider-track-height);
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 999px;
+  background: linear-gradient(
+    to right,
+    var(--ifm-color-primary) 0%,
+    var(--ifm-color-primary) var(--slider-progress),
+    var(--ifm-color-emphasis-200) var(--slider-progress),
+    var(--ifm-color-emphasis-200) 100%
+  );
+  -webkit-appearance: none;
+  appearance: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.input::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: var(--slider-thumb-size);
+  height: var(--slider-thumb-size);
+  border-radius: 50%;
+  background: white;
+  border: 2px solid var(--ifm-color-primary);
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.input::-webkit-slider-thumb:active {
+  transform: scale(0.9);
+}
+
+.input::-moz-range-thumb {
+  width: var(--slider-thumb-size);
+  height: var(--slider-thumb-size);
+  border-radius: 50%;
+  background: white;
+  border: 2px solid var(--ifm-color-primary);
+  cursor: pointer;
+}
+
+.ticks {
+  position: relative;
+  height: 0.78rem;
+  font-size: 0.78rem;
+  line-height: 1;
+  color: var(--ifm-color-emphasis-600);
+  font-weight: 500;
+  font-feature-settings: 'tnum';
+}
+
+.tick {
+  position: absolute;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  left: calc(
+    var(--slider-thumb-size) / 2 +
+      var(--slider-tick-ratio) * (100% - var(--slider-thumb-size))
+  );
+}

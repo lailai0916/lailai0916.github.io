@@ -9,14 +9,16 @@ import Segmented, {
   type SegmentedItem,
 } from '@site/src/components/laikit/Segmented';
 import Switch from '@site/src/components/laikit/Switch';
+import Slider from '@site/src/components/laikit/Slider';
 import DataCard from '@site/src/components/laikit/DataCard';
 import {
   SETTINGS_EXPERIMENTAL_DEFAULT,
   SETTINGS_PRESET_COLOR_LIST,
 } from '@site/src/data/settings';
 import { useColorMode } from '@docusaurus/theme-common';
+import { useAlternatePageUtils } from '@docusaurus/theme-common/internal';
+import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import { usePersistentState } from '@site/src/hooks/usePersistentState';
-import { getAdjustedColors } from '@site/src/utils/colorUtils';
 import { useThemeColors } from '@site/src/hooks/useThemeColors';
 import { Icon } from '@iconify/react';
 import { PageTitle, PageHeader } from '@site/src/components/laikit/Page';
@@ -109,18 +111,35 @@ function AccentColor() {
     >
       <div className={styles.colorGeneratorContainer}>
         <div className={styles.colorInputContainer}>
-          <input
-            type="text"
-            value={inputColor}
-            onChange={(e) => updateColor(e.target.value)}
-            className={styles.textColorInput}
-          />
-          <input
-            type="color"
-            value={colorState.baseColor}
-            onChange={(e) => updateColor(e.target.value)}
-            className={styles.colorPickerInput}
-          />
+          <label className={styles.colorField}>
+            <input
+              type="color"
+              value={colorState.baseColor}
+              onChange={(e) => updateColor(e.target.value)}
+              className={styles.colorPickerInput}
+              aria-label={translate({
+                id: 'pages.settings.item.color.picker',
+                message: 'Pick color',
+              })}
+            />
+            <input
+              type="text"
+              value={inputColor}
+              onChange={(e) => updateColor(e.target.value)}
+              className={styles.textColorInput}
+              size={8}
+            />
+          </label>
+          <button
+            type="button"
+            className={styles.resetButton}
+            onClick={resetColors}
+          >
+            {translate({
+              id: 'pages.settings.item.color.reset',
+              message: 'Reset',
+            })}
+          </button>
         </div>
         <div className={styles.presetColors}>
           {SETTINGS_PRESET_COLOR_LIST.map((color) => (
@@ -134,37 +153,14 @@ function AccentColor() {
             />
           ))}
         </div>
-        <div className={styles.colorPreviewContainer}>
-          <div
-            className={styles.colorPreview}
-            style={{
-              background: `linear-gradient(to right, ${getAdjustedColors(
-                colorState.shades,
-                colorState.baseColor
-              )
-                .sort((a, b) => a.displayOrder - b.displayOrder)
-                .map((value) => value.hex)
-                .join(', ')})`,
-            }}
-          />
-          <button
-            type="button"
-            className={styles.resetButton}
-            onClick={resetColors}
-          >
-            {translate({
-              id: 'pages.settings.item.color.reset',
-              message: 'Reset',
-            })}
-          </button>
-        </div>
       </div>
     </IconCard>
   );
 }
 
-function FontSize() {
+function Typography() {
   const [fontSize, setFontSize] = useState<number>(16);
+  const [lineHeight, setLineHeight] = useState<number>(1.65);
 
   useEffect(() => {
     const root = document.documentElement;
@@ -172,6 +168,13 @@ function FontSize() {
     const initialSize = savedSize ? parseInt(savedSize, 10) : 16;
     setFontSize(initialSize);
     root.style.setProperty('--global-font-size', `${initialSize}px`);
+
+    const savedLineHeight = localStorage.getItem('global-line-height');
+    const initialLineHeight = savedLineHeight
+      ? parseFloat(savedLineHeight)
+      : 1.65;
+    setLineHeight(initialLineHeight);
+    root.style.setProperty('--global-line-height', `${initialLineHeight}`);
   }, []);
 
   const commitSize = (size: number) => {
@@ -182,53 +185,81 @@ function FontSize() {
     localStorage.setItem('global-font-size', size.toString());
   };
 
-  const min = 12;
-  const max = 20;
-  const progress = ((fontSize - min) / (max - min)) * 100;
+  const commitLineHeight = (value: number) => {
+    const rounded = Math.round(value * 20) / 20;
+    document.documentElement.style.setProperty(
+      '--global-line-height',
+      `${rounded}`
+    );
+    localStorage.setItem('global-line-height', rounded.toString());
+  };
+
+  const sizeMin = 12;
+  const sizeMax = 20;
+  const lineHeightMin = 1.3;
+  const lineHeightMax = 2.0;
 
   return (
     <IconCard
       title={translate({
         id: 'pages.settings.item.font.title',
-        message: 'Font Size',
+        message: 'Typography',
       })}
       description={translate({
         id: 'pages.settings.item.font.description',
-        message: 'Adjust interface text size',
+        message: 'Adjust text size and line spacing',
       })}
       icon="lucide:type"
       bodyAlign="bottom"
     >
-      <div className={styles.sliderContainer}>
-        <span className={styles.sliderLabel}>
-          {translate(
-            {
-              id: 'pages.settings.item.font.current',
-              message: 'Current: {size}px',
-            },
-            { size: fontSize }
-          )}
-        </span>
-        <input
-          type="range"
-          min={min}
-          max={max}
-          step={1}
-          value={fontSize}
-          onChange={(e) => setFontSize(parseInt(e.target.value, 10))}
-          onPointerUp={(e) =>
-            commitSize(parseInt((e.target as HTMLInputElement).value, 10))
-          }
-          onKeyUp={(e) =>
-            commitSize(parseInt((e.target as HTMLInputElement).value, 10))
-          }
-          className={styles.slider}
-          style={{ '--slider-progress': `${progress}%` } as React.CSSProperties}
-        />
-        <div className={styles.sliderTicks}>
-          <span>12px</span>
-          <span>16px</span>
-          <span>20px</span>
+      <div className={styles.sliderGroup}>
+        <div className={styles.sliderContainer}>
+          <span className={styles.sliderLabel}>
+            {translate(
+              {
+                id: 'pages.settings.item.font.size.current',
+                message: 'Font Size: {size}px',
+              },
+              { size: fontSize }
+            )}
+          </span>
+          <Slider
+            value={fontSize}
+            min={sizeMin}
+            max={sizeMax}
+            step={1}
+            onChange={setFontSize}
+            onCommit={commitSize}
+            ticks={[
+              { value: 12, label: '12px' },
+              { value: 16, label: '16px' },
+              { value: 20, label: '20px' },
+            ]}
+          />
+        </div>
+        <div className={styles.sliderContainer}>
+          <span className={styles.sliderLabel}>
+            {translate(
+              {
+                id: 'pages.settings.item.font.lineheight.current',
+                message: 'Line Height: {value}',
+              },
+              { value: lineHeight.toFixed(2) }
+            )}
+          </span>
+          <Slider
+            value={lineHeight}
+            min={lineHeightMin}
+            max={lineHeightMax}
+            step={0.05}
+            onChange={(v) => setLineHeight(Math.round(v * 20) / 20)}
+            onCommit={commitLineHeight}
+            ticks={[
+              { value: 1.3, label: '1.30' },
+              { value: 1.65, label: '1.65' },
+              { value: 2.0, label: '2.00' },
+            ]}
+          />
         </div>
       </div>
     </IconCard>
@@ -337,6 +368,7 @@ function QuickActions() {
   function handleReset() {
     localStorage.removeItem('theme');
     localStorage.removeItem('global-font-size');
+    localStorage.removeItem('global-line-height');
     localStorage.removeItem('settings-notifications');
     localStorage.removeItem('settings-experimental');
     window.location.reload();
@@ -399,7 +431,7 @@ function SettingsHeader() {
     <PageHeader>
       <PageTitle title={MODIFICATION} description={DESCRIPTION} />
       <DataCard
-        value={5}
+        value={6}
         label={translate({
           id: 'pages.settings.datacard.label',
           message: 'Settings',
@@ -410,12 +442,53 @@ function SettingsHeader() {
   );
 }
 
+function LanguageSettings() {
+  const {
+    i18n: { currentLocale, locales, localeConfigs },
+  } = useDocusaurusContext();
+  const alternatePageUtils = useAlternatePageUtils();
+
+  const items: SegmentedItem<string>[] = locales.map((locale) => ({
+    value: locale,
+    label: localeConfigs[locale].label,
+    icon: 'lucide:languages',
+  }));
+
+  return (
+    <IconCard
+      title={translate({
+        id: 'pages.settings.item.language.title',
+        message: 'Language',
+      })}
+      description={translate({
+        id: 'pages.settings.item.language.description',
+        message: 'Switch the interface language',
+      })}
+      icon="lucide:languages"
+      bodyAlign="bottom"
+    >
+      <Segmented<string>
+        value={currentLocale}
+        items={items}
+        onChange={(locale) => {
+          if (locale === currentLocale) return;
+          window.location.href = alternatePageUtils.createUrl({
+            locale,
+            fullyQualified: false,
+          });
+        }}
+      />
+    </IconCard>
+  );
+}
+
 function SettingsContainer() {
   return (
     <div className={styles.container}>
       <ThemeSettings />
       <AccentColor />
-      <FontSize />
+      <LanguageSettings />
+      <Typography />
       <ExperimentalFeatures />
       <QuickActions />
     </div>

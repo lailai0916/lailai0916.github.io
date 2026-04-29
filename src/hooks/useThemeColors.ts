@@ -9,7 +9,7 @@ import {
 } from '@site/src/utils/colorUtils';
 
 export function useThemeColors(isDarkTheme: boolean) {
-  const storage = getThemeStorage(isDarkTheme);
+  const storage = getThemeStorage();
   const defaults = getThemeDefaults(isDarkTheme);
 
   const [colorState, setColorState] = useState<ColorState>(() => {
@@ -33,7 +33,7 @@ export function useThemeColors(isDarkTheme: boolean) {
   const [inputColor, setInputColor] = useState(colorState.baseColor);
 
   useEffect(() => {
-    const newStorage = getThemeStorage(isDarkTheme);
+    const newStorage = getThemeStorage();
     const newDefaults = getThemeDefaults(isDarkTheme);
     const storedValues = JSON.parse(
       newStorage.get() ?? '{}'
@@ -49,7 +49,7 @@ export function useThemeColors(isDarkTheme: boolean) {
 
   useEffect(() => {
     updateDOMColors(colorState, isDarkTheme);
-    const storage = getThemeStorage(isDarkTheme);
+    const storage = getThemeStorage();
     storage.set(JSON.stringify(colorState));
   }, [colorState, isDarkTheme]);
 

@@ -73,10 +73,8 @@ const THEME_CONFIG = {
 } as const;
 
 // sessionStorage so customizations reset the next time users visit the site.
-const lightStorage = createStorageSlot('ifm-theme-colors-light', {
-  persistence: 'sessionStorage',
-});
-const darkStorage = createStorageSlot('ifm-theme-colors-dark', {
+// Light and dark mode share a single accent color, so they share storage too.
+const themeStorage = createStorageSlot('ifm-theme-colors', {
   persistence: 'sessionStorage',
 });
 
@@ -85,8 +83,8 @@ export function getThemeDefaults(isDarkTheme: boolean) {
   return THEME_CONFIG[theme];
 }
 
-export function getThemeStorage(isDarkTheme: boolean) {
-  return isDarkTheme ? darkStorage : lightStorage;
+export function getThemeStorage() {
+  return themeStorage;
 }
 
 export function getAdjustedColors(

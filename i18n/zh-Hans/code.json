@@ -813,10 +813,10 @@
     "message": "重置"
   },
   "pages.settings.item.font.title": {
-    "message": "字体大小"
+    "message": "排版"
   },
   "pages.settings.item.font.description": {
-    "message": "调整界面文字大小"
+    "message": "调整文字大小与行间距"
   },
   "pages.settings.item.experimental.title": {
     "message": "实验性功能"
@@ -839,8 +839,11 @@
   "pages.settings.item.theme.option.dark": {
     "message": "深色模式"
   },
-  "pages.settings.item.font.current": {
-    "message": "当前：{size}px"
+  "pages.settings.item.font.size.current": {
+    "message": "字体大小：{size}px"
+  },
+  "pages.settings.item.font.lineheight.current": {
+    "message": "行间距：{value}"
   },
   "pages.settings.item.experimental.option.originalLayout": {
     "message": "原版布局"
@@ -973,5 +976,14 @@
   },
   "data.devices.powerbeats-pro.spec": {
     "message": "极速黑 / H2"
+  },
+  "pages.settings.item.color.picker": {
+    "message": "选择颜色"
+  },
+  "pages.settings.item.language.title": {
+    "message": "语言"
+  },
+  "pages.settings.item.language.description": {
+    "message": "切换界面语言"
   }
 }
