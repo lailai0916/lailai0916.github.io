@@ -556,7 +556,11 @@ const sidebars: SidebarsConfig = {
         type: 'generated-index',
         description: '本章为使用 AI 制作的项目。',
       },
-      items: ['project/ai/sun-path-atlas', 'project/ai/hydrocarbon-namer'],
+      items: [
+        'project/ai/sun-path-atlas',
+        'project/ai/hydrocarbon-namer',
+        'project/ai/hez-history',
+      ],
     },
     {
       type: 'category',
