@@ -20,12 +20,12 @@
     "check": "npm run i18n && npm run format && npm run typecheck"
   },
   "dependencies": {
-    "@docusaurus/core": "3.10.0",
-    "@docusaurus/faster": "3.10.0",
-    "@docusaurus/preset-classic": "3.10.0",
-    "@docusaurus/remark-plugin-npm2yarn": "3.10.0",
-    "@docusaurus/theme-live-codeblock": "3.10.0",
-    "@docusaurus/theme-mermaid": "3.10.0",
+    "@docusaurus/core": "^3.10.1",
+    "@docusaurus/faster": "^3.10.1",
+    "@docusaurus/preset-classic": "^3.10.1",
+    "@docusaurus/remark-plugin-npm2yarn": "^3.10.1",
+    "@docusaurus/theme-live-codeblock": "^3.10.1",
+    "@docusaurus/theme-mermaid": "^3.10.1",
     "@giscus/react": "^3.0.0",
     "@iconify/react": "^6.0.0",
     "@mdx-js/react": "^3.0.0",
@@ -44,9 +44,9 @@
     "rough-notation": "^0.5.1"
   },
   "devDependencies": {
-    "@docusaurus/module-type-aliases": "3.10.0",
-    "@docusaurus/tsconfig": "3.10.0",
-    "@docusaurus/types": "3.10.0",
+    "@docusaurus/module-type-aliases": "^3.10.1",
+    "@docusaurus/tsconfig": "^3.10.1",
+    "@docusaurus/types": "^3.10.1",
     "@types/canvas-confetti": "^1.9.0",
     "@types/react": "^19.1.8",
     "@types/react-dom": "^19.1.6",
