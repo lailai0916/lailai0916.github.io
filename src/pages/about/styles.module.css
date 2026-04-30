@@ -14,7 +14,7 @@
 }
 
 .deviceCard {
-  --card-height: 120px;
+  --card-height: 100px;
   position: relative;
   overflow: hidden;
   min-height: var(--card-height);
@@ -39,7 +39,7 @@
 }
 
 .deviceSpec {
-  font-size: 0.78rem;
+  font-size: 0.75rem;
   line-height: 1.45;
   color: var(--ifm-color-emphasis-700);
   word-break: break-word;
@@ -54,7 +54,7 @@
   top: 1rem;
   height: var(--img-height);
   width: var(--img-width);
-  right: min(1rem, calc(100px - var(--img-width)));
+  right: min(1rem, calc(80px - var(--img-width)));
   object-fit: contain;
   object-position: left center;
   pointer-events: none;
