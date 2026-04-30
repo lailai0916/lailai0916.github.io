@@ -6,9 +6,9 @@
 
   --nn-text-primary: #ffffff;
   --nn-text-secondary: #000000;
-  --nn-text-accent: #ffff00;
+  --nn-text-accent: var(--ifm-color-primary);
 
-  --nn-neuron-border-selected: #ffff00;
+  --nn-neuron-border-selected: var(--ifm-color-primary);
   --nn-neuron-border-default: #ffffff;
   --nn-neuron-fill-default: #000000;
 
@@ -16,43 +16,47 @@
   --nn-neuron-gray-base: 0;
   --nn-neuron-gray-multiplier: 255;
 
-  --nn-connection-negative-rgb: 252, 98, 85;
-  --nn-connection-positive-rgb: 88, 196, 221;
-  --nn-connection-animation: rgba(255, 255, 0, 0.5);
+  /* Aligned with Lorenz Attractor's blue/orange trail palette. */
+  --nn-connection-negative-rgb: 249, 115, 22;
+  --nn-connection-positive-rgb: 29, 155, 240;
+  --nn-connection-animation: rgba(var(--ifm-color-primary-rgb), 0.55);
   --nn-connection-default: #666666;
 
-  --nn-button-clear: var(--ifm-card-background-color);
-  --nn-button-clear-border: var(--ifm-color-emphasis-300);
-  --nn-button-primary: var(--ifm-color-primary);
-  --nn-button-primary-border: var(--ifm-color-primary);
-
-  --nn-stroke-primary: var(--ifm-color-primary);
-  --nn-stroke-accent: #ffff00;
+  --nn-stroke-accent: var(--ifm-color-primary);
+  --nn-stroke-subtle: var(--ifm-color-emphasis-300);
 
   --nn-grid-white: #ffffff;
   --nn-grid-white-rgb: 255, 255, 255;
-  --nn-grid-stroke: #ffff00;
+  --nn-grid-stroke: var(--ifm-color-primary);
   --nn-grid-fill: #000000;
 
   width: 100%;
-  max-width: 640px;
+  max-width: 500px;
   margin: 0 auto;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
+}
+
+.frame {
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+  aspect-ratio: 1 / 1;
+  background: var(--nn-bg-primary);
+  border-radius: 12px;
+  border: 1px solid var(--ifm-color-emphasis-300);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 
 /* Light theme — "Blueprint" palette. */
 [data-theme='light'] .container {
   --nn-bg-primary: #ffffff;
   --nn-bg-overlay: rgba(255, 255, 255, 0.88);
-  --nn-transparent: transparent;
 
   --nn-text-primary: #1e2040;
   --nn-text-secondary: #ffffff;
-  --nn-text-accent: var(--ifm-color-primary);
 
-  --nn-neuron-border-selected: var(--ifm-color-primary);
   --nn-neuron-border-default: #94a3b8;
   --nn-neuron-fill-default: #ffffff;
 
@@ -60,30 +64,18 @@
   --nn-neuron-gray-base: 255;
   --nn-neuron-gray-multiplier: -255;
 
-  --nn-connection-negative-rgb: 239, 68, 68;
-  --nn-connection-positive-rgb: 59, 130, 246;
-  --nn-connection-animation: rgba(99, 102, 241, 0.75);
+  --nn-connection-animation: rgba(var(--ifm-color-primary-rgb), 0.7);
   --nn-connection-default: #c7d2fe;
-
-  --nn-button-clear: var(--ifm-card-background-color);
-  --nn-button-clear-border: var(--ifm-color-emphasis-200);
-  --nn-button-primary: var(--ifm-color-primary);
-  --nn-button-primary-border: var(--ifm-color-primary);
-
-  --nn-stroke-primary: var(--ifm-color-primary);
-  --nn-stroke-accent: var(--ifm-color-primary);
 
   --nn-grid-white: #000000;
   --nn-grid-white-rgb: 0, 0, 0;
-  --nn-grid-stroke: var(--ifm-color-primary);
   --nn-grid-fill: #ffffff;
 }
 
 .svg {
   display: block;
   width: 100%;
-  height: auto;
-  max-width: 640px;
+  height: 100%;
   touch-action: none;
   user-select: none;
   -webkit-user-select: none;
@@ -91,46 +83,38 @@
   -ms-user-select: none;
 }
 
-.clearButton {
-  fill: var(--nn-button-clear);
-  stroke: var(--nn-button-clear-border);
-  stroke-width: 2;
-  cursor: pointer;
-  transition: all 0.2s ease;
+.controls {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 8%;
+  display: flex;
+  gap: 0.85rem;
+  justify-content: center;
+  align-items: stretch;
+  padding: 0 1.5rem;
+  opacity: 1;
+  pointer-events: auto;
+  transition:
+    opacity 300ms ease-in-out,
+    visibility 0s linear 0s;
 }
 
-.clearButton:hover {
-  stroke: var(--ifm-color-primary);
-  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.1));
+.controlsHidden {
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
+  transition:
+    opacity 300ms ease-in-out,
+    visibility 0s linear 300ms;
 }
 
-.checkButton {
-  fill: var(--nn-button-primary);
-  stroke: var(--nn-button-primary-border);
-  stroke-width: 2;
-  cursor: pointer;
-  transition: all 0.2s ease;
-}
-
-.checkButton:hover {
-  fill: var(--ifm-color-primary-dark);
-  stroke: var(--ifm-color-primary-dark);
-  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.1));
+.buttonSlot {
+  max-width: 200px;
 }
 
 @media (max-width: 768px) {
   .container {
     margin: 0;
   }
-}
-
-html[data-theme='dark'] .clearButton:hover {
-  stroke: var(--ifm-color-primary-light) !important;
-  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.3));
-}
-
-html[data-theme='dark'] .checkButton:hover {
-  fill: var(--ifm-color-primary-light) !important;
-  stroke: var(--ifm-color-primary-light) !important;
-  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.3));
 }

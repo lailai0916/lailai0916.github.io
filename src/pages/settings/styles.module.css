@@ -145,39 +145,19 @@
 .presetColorButton {
   width: 28px;
   height: 28px;
+  min-height: 0;
+  padding: 0;
   border: 0;
-  border-radius: 50%;
-  cursor: pointer;
   transition: transform 0.2s;
 }
 
 .presetColorButton:hover {
+  background: inherit !important;
   transform: scale(1.1);
 }
 
 .resetButton {
   flex-shrink: 0;
-  height: 40px;
-  padding: 0 0.85rem;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  background: transparent;
-  border: 1px solid var(--ifm-color-emphasis-300);
-  border-radius: 10px;
-  color: var(--ifm-color-emphasis-700);
-  cursor: pointer;
-  font-size: 0.85rem;
-  font-weight: 600;
-  letter-spacing: 0.01em;
-  transition:
-    border-color 0.2s ease,
-    color 0.2s ease;
-}
-
-.resetButton:hover {
-  border-color: var(--ifm-color-primary);
-  color: var(--ifm-color-primary);
 }
 
 /* Typography sliders */
@@ -246,53 +226,10 @@
 }
 
 .actionItem {
-  display: flex;
-  align-items: center;
-  gap: 0.6rem;
-  width: 100%;
-  padding: 0.75rem 0.95rem;
-  border: 1px solid var(--ifm-color-emphasis-200);
-  background: transparent;
-  border-radius: 10px;
-  cursor: pointer;
-  color: var(--ifm-font-color-base);
-  font-weight: 600;
-  font-size: 0.92rem;
-  letter-spacing: 0.01em;
+  justify-content: flex-start;
   text-align: left;
-  outline: none;
-  transition:
-    border-color 0.2s ease,
-    color 0.2s ease,
-    box-shadow 0.2s ease;
-}
-
-.actionItem:hover {
-  border-color: var(--ifm-color-primary);
-  color: var(--ifm-color-primary);
-}
-
-html[data-theme='dark'] .actionItem:hover {
-  color: var(--ifm-color-primary-light);
-  border-color: var(--ifm-color-primary-light);
-}
-
-.actionItem:focus-visible {
-  border-color: var(--ifm-color-primary);
-  box-shadow: 0 0 0 3px rgba(var(--ifm-color-primary-rgb), 0.2);
 }
 
 .actionItemIcon {
-  flex-shrink: 0;
   font-size: 1.05rem;
-  color: var(--ifm-color-emphasis-700);
-  transition: color 0.2s ease;
-}
-
-.actionItem:hover .actionItemIcon {
-  color: var(--ifm-color-primary);
-}
-
-html[data-theme='dark'] .actionItem:hover .actionItemIcon {
-  color: var(--ifm-color-primary-light);
 }

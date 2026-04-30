@@ -11,6 +11,7 @@ import Segmented, {
 import Switch from '@site/src/components/laikit/Switch';
 import Slider from '@site/src/components/laikit/Slider';
 import DataCard from '@site/src/components/laikit/DataCard';
+import Button from '@site/src/components/laikit/Button';
 import {
   SETTINGS_EXPERIMENTAL_DEFAULT,
   SETTINGS_PRESET_COLOR_LIST,
@@ -130,8 +131,9 @@ function AccentColor() {
               size={8}
             />
           </label>
-          <button
-            type="button"
+          <Button
+            variant="secondary"
+            size="sm"
             className={styles.resetButton}
             onClick={resetColors}
           >
@@ -139,12 +141,15 @@ function AccentColor() {
               id: 'pages.settings.item.color.reset',
               message: 'Reset',
             })}
-          </button>
+          </Button>
         </div>
         <div className={styles.presetColors}>
           {SETTINGS_PRESET_COLOR_LIST.map((color) => (
-            <button
+            <Button
               key={color}
+              variant="ghost"
+              rounded
+              aria-label={color}
               className={styles.presetColorButton}
               style={{
                 background: `linear-gradient(to right, ${color} 0 50%, ${Color(color).mix(Color('#fff'), 0.3).hex()} 50% 100%)`,
@@ -411,14 +416,17 @@ function QuickActions() {
       <ul className={styles.actionList}>
         {quickActionOptions.map((option) => (
           <li key={option.key}>
-            <button
-              type="button"
+            <Button
+              variant="secondary"
+              fullWidth
               className={styles.actionItem}
+              leftIcon={
+                <Icon icon={option.icon} className={styles.actionItemIcon} />
+              }
               onClick={option.onClick}
             >
-              <Icon icon={option.icon} className={styles.actionItemIcon} />
-              <span>{option.label}</span>
-            </button>
+              {option.label}
+            </Button>
           </li>
         ))}
       </ul>

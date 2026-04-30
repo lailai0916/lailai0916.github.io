@@ -59,35 +59,8 @@
   justify-content: center;
 }
 
-.categoryButton {
-  background: var(--ifm-background-color);
-  border: 2px solid var(--ifm-color-emphasis-300);
-  color: var(--ifm-font-color-base);
-  border-radius: 50px;
-  padding: 0.75rem 1rem;
-  font-size: 0.9rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  white-space: nowrap;
-}
-
 .categoryButton:hover {
-  border-color: var(--ifm-color-primary);
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-}
-
-.categoryButtonActive {
-  background: var(--ifm-color-primary);
-  border-color: var(--ifm-color-primary);
-  color: white;
-  box-shadow: 0 4px 12px rgba(var(--ifm-color-primary-rgb), 0.3);
-}
-
-.categoryButtonActive:hover {
-  background: var(--ifm-color-primary-dark);
-  border-color: var(--ifm-color-primary-dark);
-  color: white;
 }
 
 /* Category sections & resource grid */
@@ -191,21 +164,6 @@
 .noResults p {
   margin-bottom: 1.5rem;
   font-size: 1.1rem;
-}
-
-.clearSearchButton {
-  background-color: var(--ifm-color-primary);
-  color: white;
-  border: none;
-  padding: 0.6rem 1.2rem;
-  border-radius: 8px;
-  cursor: pointer;
-  font-size: 1rem;
-  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-}
-
-.clearSearchButton:hover {
-  background-color: var(--ifm-color-primary-dark);
 }
 
 /* Responsive */

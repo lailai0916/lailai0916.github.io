@@ -46,48 +46,6 @@ html[data-theme='dark'] .card {
   margin-top: 0.25rem;
 }
 
-.button {
-  appearance: none;
-  border-radius: 999px;
-  padding: 0.4rem 1rem;
-  font-size: 0.875rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition:
-    background-color 160ms ease,
-    border-color 160ms ease,
-    color 160ms ease,
-    box-shadow 160ms ease;
-}
-
-.reject {
-  background: transparent;
-  border: 1px solid var(--ifm-color-emphasis-300);
-  color: var(--ifm-color-emphasis-800);
-}
-
-.reject:hover {
-  border-color: var(--ifm-color-emphasis-500);
-  background: var(--ifm-color-emphasis-100);
-}
-
-.accept {
-  background: var(--ifm-color-primary);
-  border: 1px solid var(--ifm-color-primary);
-  color: #fff;
-}
-
-.accept:hover {
-  background: var(--ifm-color-primary-dark);
-  border-color: var(--ifm-color-primary-dark);
-  color: #fff;
-}
-
-.button:focus-visible {
-  outline: none;
-  box-shadow: 0 0 0 3px rgba(var(--ifm-color-primary-rgb), 0.24);
-}
-
 @media (max-width: 480px) {
   .banner {
     left: 0.75rem;

@@ -4,6 +4,7 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import { Icon } from '@iconify/react';
 import { translate } from '@docusaurus/Translate';
 import clsx from 'clsx';
+import Button from '@site/src/components/laikit/Button';
 import styles from './styles.module.css';
 
 import Blog from './_components/Blog';
@@ -74,14 +75,18 @@ export default function Home(): ReactNode {
           )}
         >
           <Bento />
-          <button
-            type="button"
+          <Button
+            variant="secondary"
+            size="sm"
+            rounded
             className={styles.scrollGuide}
+            rightIcon={
+              <Icon icon="lucide:chevrons-down" width={16} height={16} />
+            }
             onClick={handleRevealHome}
           >
-            <span>{SCROLL_GUIDE_LABEL}</span>
-            <Icon icon="lucide:chevrons-down" width={16} height={16} />
-          </button>
+            {SCROLL_GUIDE_LABEL}
+          </Button>
         </section>
       )}
     </Layout>

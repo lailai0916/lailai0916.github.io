@@ -72,27 +72,6 @@ html[data-theme='dark'] .canvas {
 
 .resetButton {
   flex-shrink: 0;
-  height: 40px;
-  padding: 0 0.85rem;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  background: transparent;
-  border: 1px solid var(--ifm-color-emphasis-300);
-  border-radius: 10px;
-  color: var(--ifm-color-emphasis-700);
-  cursor: pointer;
-  font-size: 0.85rem;
-  font-weight: 600;
-  letter-spacing: 0.01em;
-  transition:
-    border-color 0.2s ease,
-    color 0.2s ease;
-}
-
-.resetButton:hover {
-  border-color: var(--ifm-color-primary);
-  color: var(--ifm-color-primary);
 }
 
 @media (max-width: 500px) {
@@ -101,6 +80,6 @@ html[data-theme='dark'] .canvas {
   }
   .resetButton {
     grid-column: 1 / -1;
-    justify-content: center;
+    width: 100%;
   }
 }

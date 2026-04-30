@@ -2,7 +2,23 @@
 
 import React, { useState, useEffect, useCallback, useMemo } from 'react';
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import clsx from 'clsx';
+import { translate } from '@docusaurus/Translate';
+import Button from '@site/src/components/laikit/Button';
 import styles from './styles.module.css';
+
+const CLEAR_LABEL = translate({
+  id: 'home.neuralnetwork.clear',
+  message: 'Clear',
+});
+const CHECK_LABEL = translate({
+  id: 'home.neuralnetwork.check',
+  message: 'Check digit',
+});
+const PREPROCESS_LABEL = translate({
+  id: 'home.neuralnetwork.preprocess',
+  message: 'Pre-process',
+});
 
 type Point = { x: number; y: number };
 type NormData = { scale: number; centerX: number; centerY: number };
@@ -21,11 +37,15 @@ const visibleNeurons: (number | null)[][] = [
   [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
 ];
 
+// Square 500×500 canvas, matching Fourier Transform's canvas.
+const CANVAS_SIZE = 500;
+const CANVAS_CENTER = CANVAS_SIZE / 2;
+
 function getNeuronPosition(layerIndex: number, visibleNeuronIndex: number) {
   const count = visibleNeurons[layerIndex].length;
   return {
-    x: 230 + 115 * layerIndex,
-    y: 240 + 28 * (visibleNeuronIndex - (count - 1) / 2),
+    x: 175 + 90 * layerIndex,
+    y: CANVAS_CENTER + 25 * (visibleNeuronIndex - (count - 1) / 2),
   };
 }
 
@@ -113,19 +133,24 @@ export default function NeuralNetworkInteractive({
     }
   }, [isNormalized, normalizePointsAnimated]);
 
+  const inputValues = useMemo(() => getInputNeuronValues(points), [points]);
+  const isEmpty = !inputValues.some((v) => v > 0.1);
+
   if (!dataLoaded) {
-    return <div className={styles.container} style={{ minHeight: 480 }} />;
+    return <div className={styles.container} style={{ minHeight: CANVAS_SIZE }} />;
   }
 
   const compact = animating || instant;
+  const editing = !animating || instant;
 
   return (
     <div className={styles.container}>
+      <div className={styles.frame}>
       <svg
         className={styles.svg}
-        width={640}
-        height={480}
-        viewBox="0 0 640 480"
+        width={CANVAS_SIZE}
+        height={CANVAS_SIZE}
+        viewBox={`0 0 ${CANVAS_SIZE} ${CANVAS_SIZE}`}
         style={{ touchAction: 'none' }}
       >
         <NeuronConnections
@@ -133,7 +158,7 @@ export default function NeuralNetworkInteractive({
           animating={animating}
           instant={instant}
         />
-        <VerticalEllipsis cx={230} cy={240} />
+        <VerticalEllipsis cx={175} cy={CANVAS_CENTER} />
         <Neurons
           neurons={neurons}
           selectedNeuron={selectedNeuron}
@@ -156,10 +181,10 @@ export default function NeuralNetworkInteractive({
             );
             return (
               <WeightGrid
-                x={pos.x + 20}
-                y={-40 + (pos.y - 240) * 0.85 + 240}
-                width={85}
-                height={85}
+                x={pos.x + 14}
+                y={-30 + (pos.y - CANVAS_CENTER) * 0.85 + CANVAS_CENTER}
+                width={65}
+                height={65}
                 weights={weights![0][selectedNeuron.neuronId]}
                 inputNeurons={neurons[0]}
               />
@@ -170,8 +195,8 @@ export default function NeuralNetworkInteractive({
           <rect
             x="0"
             y="0"
-            width="640"
-            height="480"
+            width={CANVAS_SIZE}
+            height={CANVAS_SIZE}
             fill="var(--ifm-background-color)"
             style={{
               opacity: animating ? 0 : 1,
@@ -182,31 +207,68 @@ export default function NeuralNetworkInteractive({
         )}
 
         <ImageGrid
-          instant={instant}
-          editing={!animating || instant}
+          editing={editing}
           startEditing={() => {
             setAnimating(false);
             setPoints([]);
             setIsNormalized(false);
           }}
-          x={compact ? 10 : 125}
-          y={10}
-          width={compact ? 190 : 390}
-          height={compact ? 190 : 390}
+          x={compact ? 10 : 70}
+          y={compact ? 10 : 30}
+          width={compact ? 130 : 360}
+          height={compact ? 130 : 360}
           points={points}
+          inputValues={inputValues}
           setPoints={(newPoints) => {
             setPoints(newPoints);
             setIsNormalized(false);
           }}
           normalizing={normalizing}
-          isNormalized={isNormalized}
-          normalizePointsAnimated={normalizePointsAnimated}
-          beginAnimation={animate}
           highlightedTile={
             selectedNeuron?.layerIndex === 0 ? selectedNeuron.neuronId : null
           }
         />
       </svg>
+
+        <div
+          className={clsx(styles.controls, !editing && styles.controlsHidden)}
+          aria-hidden={!editing}
+        >
+          <Button
+            variant="secondary"
+            fullWidth
+            disabled={isEmpty}
+            className={styles.buttonSlot}
+            onClick={() => {
+              setPoints([]);
+              setIsNormalized(false);
+            }}
+          >
+            {CLEAR_LABEL}
+          </Button>
+          {instant ? (
+            <Button
+              variant="primary"
+              fullWidth
+              disabled={isEmpty || isNormalized}
+              className={styles.buttonSlot}
+              onClick={() => normalizePointsAnimated(1)}
+            >
+              {PREPROCESS_LABEL}
+            </Button>
+          ) : (
+            <Button
+              variant="primary"
+              fullWidth
+              disabled={isEmpty}
+              className={styles.buttonSlot}
+              onClick={animate}
+            >
+              {CHECK_LABEL}
+            </Button>
+          )}
+        </div>
+      </div>
     </div>
   );
 }
@@ -329,7 +391,7 @@ function Neurons({
               key={`${layerIndex}-${neuronId}`}
               cx={pos.x}
               cy={pos.y}
-              r={10}
+              r={8}
               stroke={
                 isSelected
                   ? 'var(--nn-neuron-border-selected)'
@@ -368,19 +430,22 @@ function WinningOutputNeuronBox({
   const outputLayer = neurons[3];
   const winningNeuron = outputLayer.indexOf(Math.max(...outputLayer));
   const pos = getNeuronPosition(3, winningNeuron);
+  const w = 44;
+  const h = 24;
+  const perimeter = 2 * (w + h);
   return (
     <rect
-      x={pos.x - 18}
-      y={pos.y - 16}
-      width={56}
-      height={32}
+      x={pos.x - 13}
+      y={pos.y - 12}
+      width={w}
+      height={h}
       stroke="var(--nn-stroke-accent)"
       strokeWidth={2}
       strokeLinecap="round"
       strokeLinejoin="round"
       fill="none"
-      strokeDasharray="176 176"
-      strokeDashoffset={(animating || instant ? 0 : 1) * 176}
+      strokeDasharray={`${perimeter} ${perimeter}`}
+      strokeDashoffset={(animating || instant ? 0 : 1) * perimeter}
       style={{
         transition: animating
           ? `stroke-dashoffset 800ms ease-in-out ${instant ? '0ms' : '4500ms'}`
@@ -399,10 +464,10 @@ function OutputDigitLabels() {
         return (
           <text
             key={neuronId}
-            x={pos.x + 25}
-            y={pos.y + 2}
+            x={pos.x + 22}
+            y={pos.y + 1}
             style={{ fill: 'var(--nn-text-primary)' }}
-            fontSize={20}
+            fontSize={16}
             dominantBaseline="middle"
             textAnchor="middle"
           >
@@ -420,14 +485,11 @@ interface ImageGridProps {
   width: number;
   height: number;
   points: Point[];
+  inputValues: number[];
   setPoints: (points: Point[]) => void;
   normalizing: boolean;
-  isNormalized: boolean;
-  normalizePointsAnimated: (duration?: number) => Promise<void>;
-  instant: boolean;
   editing: boolean;
   startEditing: () => void;
-  beginAnimation: () => void;
   highlightedTile: number | null;
 }
 
@@ -437,14 +499,11 @@ function ImageGrid({
   width,
   height,
   points,
+  inputValues,
   setPoints,
   normalizing,
-  isNormalized,
-  normalizePointsAnimated,
-  instant,
   editing,
   startEditing,
-  beginAnimation,
   highlightedTile,
 }: ImageGridProps) {
   const [dragging, setDragging] = useState(false);
@@ -527,9 +586,6 @@ function ImageGrid({
     };
   }, [onMouseUp]);
 
-  const values = useMemo(() => getInputNeuronValues(points), [points]);
-  const isEmpty = !values.some((v) => v > 0.1);
-
   return (
     <g
       style={{
@@ -540,7 +596,7 @@ function ImageGrid({
       <rect x={0} y={0} width={400} height={400} fill="var(--nn-bg-primary)" />
 
       <g>
-        {values.map((value, n) => (
+        {inputValues.map((value, n) => (
           <rect
             key={n}
             x={(n % 28) * (400 / 28)}
@@ -586,8 +642,8 @@ function ImageGrid({
         y={0}
         width={400}
         height={400}
-        stroke="var(--nn-stroke-primary)"
-        strokeWidth="2"
+        stroke="var(--nn-stroke-subtle)"
+        strokeWidth="1"
         rx="2"
         fill="var(--nn-transparent)"
         style={{ cursor: editing ? 'crosshair' : 'pointer' }}
@@ -597,101 +653,6 @@ function ImageGrid({
         onMouseMove={onMouseMove}
         onTouchMove={onMouseMove}
       />
-
-      <g
-        transform="translate(0 410)"
-        style={{
-          opacity: editing ? 1 : 0,
-          pointerEvents: editing ? undefined : 'none',
-          transition: 'opacity 500ms ease-in-out',
-        }}
-      >
-        <SvgButton
-          x={0}
-          y={0}
-          width={150}
-          height={60}
-          label="Clear"
-          primary={false}
-          disabled={isEmpty}
-          onClick={() => setPoints([])}
-        />
-        {!instant ? (
-          <SvgButton
-            x={200}
-            y={0}
-            width={200}
-            height={60}
-            label="Check digit"
-            primary
-            disabled={isEmpty}
-            onClick={beginAnimation}
-          />
-        ) : (
-          <SvgButton
-            x={200}
-            y={0}
-            width={200}
-            height={60}
-            label="Pre-process"
-            primary
-            disabled={isEmpty || isNormalized}
-            onClick={() => normalizePointsAnimated(1)}
-          />
-        )}
-      </g>
-    </g>
-  );
-}
-
-function SvgButton({
-  x,
-  y,
-  width,
-  height,
-  label,
-  primary,
-  disabled,
-  onClick,
-}: {
-  x: number;
-  y: number;
-  width: number;
-  height: number;
-  label: string;
-  primary: boolean;
-  disabled: boolean;
-  onClick: () => void;
-}) {
-  return (
-    <g>
-      <rect
-        className={primary ? styles.checkButton : styles.clearButton}
-        x={x}
-        y={y}
-        width={width}
-        height={height}
-        tabIndex={0}
-        rx={12}
-        onClick={disabled ? undefined : onClick}
-        style={{
-          cursor: disabled ? 'default' : 'pointer',
-          opacity: disabled ? 0.5 : 1,
-          transition: 'all 0.2s ease',
-        }}
-      />
-      <text
-        x={x + width / 2}
-        y={y + height / 2 + 2}
-        dominantBaseline="middle"
-        textAnchor="middle"
-        fill={primary ? 'white' : 'var(--ifm-font-color-base)'}
-        fontFamily="sans-serif"
-        fontSize={24}
-        style={{ pointerEvents: 'none', opacity: disabled ? 0.5 : 1 }}
-      >
-        {label}
-      </text>
     </g>
   );
 }
@@ -705,9 +666,9 @@ const VerticalEllipsis = React.memo(function VerticalEllipsis({
 }) {
   return (
     <g>
-      <circle cx={cx} cy={cy - 12} r={3} fill="var(--nn-grid-white)" />
-      <circle cx={cx} cy={cy} r={3} fill="var(--nn-grid-white)" />
-      <circle cx={cx} cy={cy + 12} r={3} fill="var(--nn-grid-white)" />
+      <circle cx={cx} cy={cy - 10} r={2.5} fill="var(--nn-grid-white)" />
+      <circle cx={cx} cy={cy} r={2.5} fill="var(--nn-grid-white)" />
+      <circle cx={cx} cy={cy + 10} r={2.5} fill="var(--nn-grid-white)" />
     </g>
   );
 });

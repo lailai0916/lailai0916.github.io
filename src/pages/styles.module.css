@@ -20,20 +20,8 @@
   left: 50%;
   bottom: calc(1rem + env(safe-area-inset-bottom, 0px));
   transform: translateX(-50%);
-  display: inline-flex;
-  align-items: center;
-  gap: 0.35rem;
-  padding: 0.45rem 0.9rem;
-  border-radius: 999px;
-  border: 1px solid var(--ifm-color-emphasis-300);
   background: var(--ifm-background-color);
-  color: var(--ifm-color-emphasis-700);
   opacity: 0.45;
-  font-size: 0.8rem;
-  font-weight: 600;
-  letter-spacing: 0.02em;
-  line-height: 1;
-  cursor: pointer;
   transition: opacity 0.2s ease;
 }
 
@@ -44,8 +32,6 @@
 @media (max-width: 768px) {
   .scrollGuide {
     bottom: calc(0.75rem + env(safe-area-inset-bottom, 0px));
-    padding: 0.4rem 0.75rem;
-    font-size: 0.72rem;
   }
 }
 
