@@ -10,7 +10,7 @@ export const CHANGELOG_LIST: ChangelogItem[] = [
   {
     date: '2026-04-30',
     type: 'added',
-    content: '<b>繁体中文</b> i18n 支持',
+    content: '国际化支持 <b>繁体中文</b>',
   },
   {
     date: '2026-04-28',
