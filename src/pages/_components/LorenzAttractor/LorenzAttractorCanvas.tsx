@@ -2,6 +2,7 @@ import React, { useRef, useEffect, useState, useCallback } from 'react';
 import { useColorMode } from '@docusaurus/theme-common';
 import { translate } from '@docusaurus/Translate';
 import Slider from '@site/src/components/laikit/Slider';
+import Button from '@site/src/components/laikit/Button';
 import styles from './styles.module.css';
 
 const TWO_PI = 2 * Math.PI;
@@ -419,14 +420,14 @@ export default function LorenzAttractorCanvas() {
           precision={2}
           onChange={setBeta}
         />
-        <button
-          type="button"
+        <Button
+          variant="secondary"
           className={styles.resetButton}
           onClick={handleReset}
           aria-label={RESET_LABEL}
         >
           {RESET_LABEL}
-        </button>
+        </Button>
       </div>
     </div>
   );

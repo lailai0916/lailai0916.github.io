@@ -1,0 +1,126 @@
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  border-radius: 10px;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  white-space: nowrap;
+  cursor: pointer;
+  appearance: none;
+  -webkit-tap-highlight-color: transparent;
+  transition:
+    background-color 160ms ease,
+    border-color 160ms ease,
+    color 160ms ease,
+    box-shadow 160ms ease,
+    opacity 160ms ease;
+}
+
+.button:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(var(--ifm-color-primary-rgb), 0.24);
+}
+
+.button:disabled,
+.button[aria-disabled='true'] {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+/* ── Sizes ─────────────────────────────────────────────────────────── */
+
+.size_sm {
+  height: 32px;
+  padding: 0 0.75rem;
+  font-size: 0.825rem;
+}
+
+.size_md {
+  height: 40px;
+  padding: 0 1rem;
+  font-size: 0.9rem;
+}
+
+.size_lg {
+  height: 48px;
+  padding: 0 1.25rem;
+  font-size: 1rem;
+}
+
+/* ── Shape & layout modifiers ──────────────────────────────────────── */
+
+.rounded {
+  border-radius: 999px;
+}
+
+.fullWidth {
+  width: 100%;
+}
+
+/* ── Variants ──────────────────────────────────────────────────────── */
+
+.variant_primary {
+  background: var(--ifm-color-primary);
+  border: 1px solid var(--ifm-color-primary);
+  color: #ffffff;
+}
+
+.variant_primary:not(:disabled):hover {
+  background: var(--ifm-color-primary-dark);
+  border-color: var(--ifm-color-primary-dark);
+  color: #ffffff;
+}
+
+.variant_secondary {
+  background: transparent;
+  border: 1px solid var(--ifm-color-emphasis-300);
+  color: var(--ifm-color-emphasis-800);
+}
+
+.variant_secondary:not(:disabled):hover {
+  border-color: var(--ifm-color-primary);
+  color: var(--ifm-color-primary);
+}
+
+.variant_ghost {
+  background: transparent;
+  border: 1px solid transparent;
+  color: var(--ifm-color-emphasis-700);
+}
+
+.variant_ghost:not(:disabled):hover {
+  background: var(--ifm-color-emphasis-100);
+  color: var(--ifm-font-color-base);
+}
+
+/* ── Active toggle: forces primary look on secondary/ghost ─────────── */
+
+.active.variant_secondary,
+.active.variant_ghost {
+  background: var(--ifm-color-primary);
+  border-color: var(--ifm-color-primary);
+  color: #ffffff;
+}
+
+.active.variant_secondary:not(:disabled):hover,
+.active.variant_ghost:not(:disabled):hover {
+  background: var(--ifm-color-primary-dark);
+  border-color: var(--ifm-color-primary-dark);
+  color: #ffffff;
+}
+
+/* ── Icon slots ────────────────────────────────────────────────────── */
+
+.icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.label {
+  display: inline-flex;
+  align-items: center;
+}

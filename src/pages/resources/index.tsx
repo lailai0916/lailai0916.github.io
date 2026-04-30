@@ -8,6 +8,7 @@ import DataCard from '@site/src/components/laikit/DataCard';
 import Card from '@site/src/components/laikit/Card';
 import IconBlock from '@site/src/components/laikit/IconBlock';
 import IconText from '@site/src/components/laikit/IconText';
+import Button from '@site/src/components/laikit/Button';
 
 import { usePluralForm } from '@docusaurus/theme-common';
 import {
@@ -93,29 +94,29 @@ function CategoryNav({
   return (
     <nav className={styles.categoryNav}>
       <div className={styles.categoryNavContent}>
-        <button
-          className={clsx(
-            styles.categoryButton,
-            activeCategory === 'all' && styles.categoryButtonActive
-          )}
+        <Button
+          variant="secondary"
+          rounded
+          active={activeCategory === 'all'}
+          className={styles.categoryButton}
           onClick={() => onCategoryChange('all')}
         >
           {translate({
             id: 'pages.resources.category.all',
             message: 'All',
           })}
-        </button>
+        </Button>
         {categories.map((category) => (
-          <button
+          <Button
             key={category.title}
-            className={clsx(
-              styles.categoryButton,
-              activeCategory === category.title && styles.categoryButtonActive
-            )}
+            variant="secondary"
+            rounded
+            active={activeCategory === category.title}
+            className={styles.categoryButton}
             onClick={() => onCategoryChange(category.title)}
           >
             {category.title}
-          </button>
+          </Button>
         ))}
       </div>
     </nav>
@@ -255,15 +256,16 @@ function ResourcesMain() {
               { query: searchQuery }
             )}
           </p>
-          <button
-            className={styles.clearSearchButton}
+          <Button
+            variant="primary"
+            rounded
             onClick={() => setSearchQuery('')}
           >
             {translate({
               id: 'pages.resources.noresults.clear',
               message: 'Clear Search',
             })}
-          </button>
+          </Button>
         </div>
       )}
     </div>

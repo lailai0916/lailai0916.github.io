@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Link from '@docusaurus/Link';
 import Translate from '@docusaurus/Translate';
 import Card from '@site/src/components/laikit/Card';
+import Button from '@site/src/components/laikit/Button';
 import styles from './styles.module.css';
 
 const STORAGE_KEY = 'cookie-consent';
@@ -42,7 +43,7 @@ export default function CookieConsent() {
       aria-live="polite"
       aria-label="Cookie consent"
     >
-      <Card padding="1rem 1.125rem" className={styles.card}>
+      <Card padding="1.25rem" className={styles.card}>
         <div className={styles.content}>
           <div className={styles.title}>
             <Translate id="cookieConsent.title">Cookie Settings</Translate>
@@ -66,20 +67,22 @@ export default function CookieConsent() {
             </Translate>
           </p>
           <div className={styles.actions}>
-            <button
-              type="button"
-              className={`${styles.button} ${styles.reject}`}
+            <Button
+              variant="secondary"
+              size="sm"
+              rounded
               onClick={() => handleChoice('rejected')}
             >
               <Translate id="cookieConsent.reject">Reject</Translate>
-            </button>
-            <button
-              type="button"
-              className={`${styles.button} ${styles.accept}`}
+            </Button>
+            <Button
+              variant="primary"
+              size="sm"
+              rounded
               onClick={() => handleChoice('accepted')}
             >
               <Translate id="cookieConsent.accept">Accept</Translate>
-            </button>
+            </Button>
           </div>
         </div>
       </Card>
