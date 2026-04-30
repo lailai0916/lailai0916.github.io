@@ -1,0 +1,86 @@
+{
+  "link.title.Docs": {
+    "message": "文件",
+    "description": "The title of the footer links column with title=Docs in the footer"
+  },
+  "link.title.Pages": {
+    "message": "頁面",
+    "description": "The title of the footer links column with title=Pages in the footer"
+  },
+  "link.title.Site": {
+    "message": "網站",
+    "description": "The title of the footer links column with title=Site in the footer"
+  },
+  "link.title.More": {
+    "message": "更多",
+    "description": "The title of the footer links column with title=More in the footer"
+  },
+  "link.item.label.Contest": {
+    "message": "競賽",
+    "description": "The label of footer link with label=Contest linking to /docs/contest"
+  },
+  "link.item.label.Note": {
+    "message": "筆記",
+    "description": "The label of footer link with label=Note linking to /docs/note"
+  },
+  "link.item.label.Project": {
+    "message": "專案",
+    "description": "The label of footer link with label=Project linking to /docs/project"
+  },
+  "link.item.label.Blog": {
+    "message": "部落格",
+    "description": "The label of footer link with label=Blog linking to /blog"
+  },
+  "link.item.label.About": {
+    "message": "關於",
+    "description": "The label of footer link with label=About linking to /about"
+  },
+  "link.item.label.Travel": {
+    "message": "旅行",
+    "description": "The label of footer link with label=Travel linking to /travel"
+  },
+  "link.item.label.Friends": {
+    "message": "友站",
+    "description": "The label of footer link with label=Friends linking to /friends"
+  },
+  "link.item.label.Resources": {
+    "message": "資源",
+    "description": "The label of footer link with label=Resources linking to /resources"
+  },
+  "link.item.label.Settings": {
+    "message": "設定",
+    "description": "The label of footer link with label=Settings linking to /settings"
+  },
+  "link.item.label.Sitemap": {
+    "message": "網站地圖",
+    "description": "The label of footer link with label=Sitemap linking to /sitemap"
+  },
+  "link.item.label.Changelog": {
+    "message": "更新日誌",
+    "description": "The label of footer link with label=Changelog linking to /changelog"
+  },
+  "link.item.label.Privacy Policy": {
+    "message": "隱私政策",
+    "description": "The label of footer link with label=Privacy Policy linking to /privacy"
+  },
+  "link.item.label.lailai's Status": {
+    "message": "lailai's Status",
+    "description": "The label of footer link with label=lailai's Status linking to https://status.lailai.one"
+  },
+  "link.item.label.lailai's Analytics": {
+    "message": "lailai's Analytics",
+    "description": "The label of footer link with label=lailai's Analytics linking to https://analytics.lailai.one/share/DDd09iBEYOQw2k9L"
+  },
+  "link.item.label.lailai's Cloud": {
+    "message": "lailai's Cloud",
+    "description": "The label of footer link with label=lailai's Cloud linking to https://cloud.lailai.one"
+  },
+  "link.item.label.lailai's AI": {
+    "message": "lailai's AI",
+    "description": "The label of footer link with label=lailai's AI linking to https://ai.lailai.one"
+  },
+  "copyright": {
+    "message": "版權所有 © 2021–2026 lailai，使用 <a href=\"https://docusaurus.io\" target=\"_blank\">Docusaurus</a> 建置。<br />本網站內容採用 <a href=\"https://creativecommons.org/licenses/by/4.0/\">創用 CC 姓名標示 4.0 國際授權條款</a><img src=\"https://mirrors.creativecommons.org/presskit/icons/cc.svg\" alt=\"\" style=\"max-width: 1em;max-height:1em;margin-left: .2em;\"><img src=\"https://mirrors.creativecommons.org/presskit/icons/by.svg\" alt=\"\" style=\"max-width: 1em;max-height:1em;margin-left: .2em;\">",
+    "description": "The footer copyright"
+  }
+}
