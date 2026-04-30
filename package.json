@@ -6,7 +6,6 @@
     "docusaurus": "docusaurus",
     "start": "docusaurus start",
     "start:zh-Hans": "docusaurus start --locale zh-Hans",
-    "start:zh-Hant": "docusaurus start --locale zh-Hant",
     "build": "docusaurus build",
     "swizzle": "docusaurus swizzle",
     "deploy": "docusaurus deploy",
@@ -14,9 +13,8 @@
     "serve": "docusaurus serve",
     "write-translations": "docusaurus write-translations",
     "write-translations:zh-Hans": "docusaurus write-translations --locale zh-Hans",
-    "write-translations:zh-Hant": "docusaurus write-translations --locale zh-Hant",
     "write-heading-ids": "docusaurus write-heading-ids",
-    "i18n": "docusaurus write-translations --locale zh-Hans && docusaurus write-translations --locale zh-Hant",
+    "i18n": "docusaurus write-translations --locale zh-Hans",
     "format": "npx prettier --write .",
     "typecheck": "tsc",
     "check": "npm run i18n && npm run format && npm run typecheck"
