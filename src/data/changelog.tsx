@@ -8,6 +8,11 @@ interface ChangelogItem {
 
 export const CHANGELOG_LIST: ChangelogItem[] = [
   {
+    date: '2026-04-30',
+    type: 'added',
+    content: '<b>繁体中文</b> i18n 支持',
+  },
+  {
     date: '2026-04-28',
     type: 'added',
     content: '主页 <b>Lorenz Attractor</b> 组件',

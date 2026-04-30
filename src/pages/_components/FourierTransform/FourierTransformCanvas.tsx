@@ -382,7 +382,7 @@ export default function FourierTransformCanvas() {
   const handleEnd = () => {
     const state = stateRef.current;
     if (state.currentState !== STATE.DRAWING) return;
-    if (state.drawing.length > 5) {
+    if (state.drawing.length >= 10) {
       captureDrawing(state.drawing);
     } else {
       initDefault();

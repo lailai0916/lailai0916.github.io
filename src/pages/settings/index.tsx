@@ -486,8 +486,8 @@ function SettingsContainer() {
   return (
     <div className={styles.container}>
       <ThemeSettings />
-      <AccentColor />
       <LanguageSettings />
+      <AccentColor />
       <Typography />
       <ExperimentalFeatures />
       <QuickActions />
