@@ -17,8 +17,6 @@ export function Skills() {
 
   useEffect(() => {
     const handleResize = () => {
-      const width = window.innerWidth;
-
       const breakpoints = [
         [668, 12],
         [448, 8],
@@ -27,12 +25,11 @@ export function Skills() {
         [168, 3],
         [112, 2],
       ];
-
-      const newPerline =
-        breakpoints.find(([minWidth]) => width >= minWidth)?.[1] || 1;
-      setPerline(newPerline);
+      setPerline(
+        breakpoints.find(([minWidth]) => window.innerWidth >= minWidth)?.[1] ||
+          1
+      );
     };
-
     handleResize();
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
