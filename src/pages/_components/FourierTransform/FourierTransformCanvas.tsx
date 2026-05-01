@@ -1,5 +1,6 @@
 import React, { useRef, useEffect, useState } from 'react';
 import { useColorMode } from '@docusaurus/theme-common';
+import Card from '@site/src/components/laikit/Card';
 import styles from './styles.module.css';
 
 const TWO_PI = 2 * Math.PI;
@@ -391,17 +392,19 @@ export default function FourierTransformCanvas() {
 
   return (
     <div ref={containerRef} className={styles.container}>
-      <canvas
-        ref={canvasRef}
-        width={canvasSize * dpr}
-        height={canvasSize * dpr}
-        style={{ width: canvasSize, height: canvasSize }}
-        className={styles.canvas}
-        onPointerDown={handleStart}
-        onPointerMove={handleMove}
-        onPointerUp={handleEnd}
-        onPointerCancel={handleEnd}
-      />
+      <Card padding="0" className={styles.cardSurface}>
+        <canvas
+          ref={canvasRef}
+          width={canvasSize * dpr}
+          height={canvasSize * dpr}
+          style={{ width: canvasSize, height: canvasSize }}
+          className={styles.canvas}
+          onPointerDown={handleStart}
+          onPointerMove={handleMove}
+          onPointerUp={handleEnd}
+          onPointerCancel={handleEnd}
+        />
+      </Card>
     </div>
   );
 }

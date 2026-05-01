@@ -7,11 +7,13 @@
   align-items: center;
 }
 
+.cardSurface {
+  overflow: hidden;
+  line-height: 0;
+}
+
 .canvas {
   display: block;
-  border-radius: 12px;
   cursor: crosshair;
   touch-action: none;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-  border: 1px solid var(--ifm-color-emphasis-300);
 }
