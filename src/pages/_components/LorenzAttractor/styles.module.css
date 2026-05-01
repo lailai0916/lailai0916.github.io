@@ -8,19 +8,22 @@
   gap: 1.25rem;
 }
 
-.canvas {
-  display: block;
+.cardSurface {
   width: 100%;
-  border-radius: 12px;
-  cursor: grab;
-  touch-action: none;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-  border: 1px solid var(--ifm-color-emphasis-300);
+  overflow: hidden;
+  line-height: 0;
   background: #ffffff;
 }
 
-html[data-theme='dark'] .canvas {
+html[data-theme='dark'] .cardSurface {
   background: #000000;
+}
+
+.canvas {
+  display: block;
+  width: 100%;
+  cursor: grab;
+  touch-action: none;
 }
 
 .canvas:active {

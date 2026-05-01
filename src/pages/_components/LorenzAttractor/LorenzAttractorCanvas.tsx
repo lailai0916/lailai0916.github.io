@@ -3,6 +3,7 @@ import { useColorMode } from '@docusaurus/theme-common';
 import { translate } from '@docusaurus/Translate';
 import Slider from '@site/src/components/laikit/Slider';
 import Button from '@site/src/components/laikit/Button';
+import Card from '@site/src/components/laikit/Card';
 import styles from './styles.module.css';
 
 const TWO_PI = 2 * Math.PI;
@@ -381,17 +382,19 @@ export default function LorenzAttractorCanvas() {
 
   return (
     <div ref={containerRef} className={styles.container}>
-      <canvas
-        ref={canvasRef}
-        width={canvasSize * dpr}
-        height={canvasSize * dpr}
-        style={{ width: canvasSize, height: canvasSize }}
-        className={styles.canvas}
-        onPointerDown={handlePointerDown}
-        onPointerMove={handlePointerMove}
-        onPointerUp={handlePointerUp}
-        onPointerCancel={handlePointerUp}
-      />
+      <Card padding="0" className={styles.cardSurface}>
+        <canvas
+          ref={canvasRef}
+          width={canvasSize * dpr}
+          height={canvasSize * dpr}
+          style={{ width: canvasSize, height: canvasSize }}
+          className={styles.canvas}
+          onPointerDown={handlePointerDown}
+          onPointerMove={handlePointerMove}
+          onPointerUp={handlePointerUp}
+          onPointerCancel={handlePointerUp}
+        />
+      </Card>
       <div className={styles.controls}>
         <ParamSlider
           label="σ"
