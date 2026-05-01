@@ -134,6 +134,11 @@ export const RESOURCE_LIST: ResourceCategoryItem[] = [
     icon: 'lucide:cloud',
     resources: [
       {
+        title: 'Cloudflare',
+        href: 'https://www.cloudflare.com',
+        description: 'CDN、DNS 与边缘安全网络',
+      },
+      {
         title: 'Amazon Web Services',
         href: 'https://aws.amazon.com',
         description: '云计算与托管服务平台',
@@ -144,9 +149,9 @@ export const RESOURCE_LIST: ResourceCategoryItem[] = [
         description: '企业级云计算服务平台',
       },
       {
-        title: 'Cloudflare',
-        href: 'https://www.cloudflare.com',
-        description: 'CDN、DNS 与边缘安全网络',
+        title: '雨云',
+        href: 'https://www.rainyun.com',
+        description: '新一代云服务提供商',
       },
       {
         title: 'GoDaddy',
