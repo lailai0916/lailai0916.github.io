@@ -394,7 +394,7 @@ function Neurons({
               r={8}
               stroke={
                 isSelected
-                  ? 'var(--nn-neuron-border-selected)'
+                  ? 'var(--ifm-color-primary)'
                   : 'var(--nn-neuron-border-default)'
               }
               strokeWidth={isSelected ? 2 : 1}
@@ -439,7 +439,7 @@ function WinningOutputNeuronBox({
       y={pos.y - 12}
       width={w}
       height={h}
-      stroke="var(--nn-stroke-accent)"
+      stroke="var(--ifm-color-primary)"
       strokeWidth={2}
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -604,7 +604,7 @@ function ImageGrid({
             width={400 / 28}
             height={400 / 28}
             fill={`rgba(var(--nn-grid-white-rgb), ${value})`}
-            stroke={highlightedTile === n ? 'var(--nn-stroke-accent)' : 'none'}
+            stroke={highlightedTile === n ? 'var(--ifm-color-primary)' : 'none'}
             strokeWidth="2"
           />
         ))}
@@ -629,7 +629,7 @@ function ImageGrid({
           y={50}
           dominantBaseline="middle"
           textAnchor="middle"
-          fill="var(--nn-text-accent)"
+          fill="var(--ifm-color-primary)"
           fontFamily="sans-serif"
           fontSize={36}
         >
@@ -642,7 +642,7 @@ function ImageGrid({
         y={0}
         width={400}
         height={400}
-        stroke="var(--nn-stroke-subtle)"
+        stroke="var(--ifm-color-emphasis-300)"
         strokeWidth="1"
         rx="2"
         fill="var(--nn-transparent)"
@@ -700,7 +700,7 @@ function WeightGrid({
           width="30"
           height="30"
           fill="var(--nn-grid-fill)"
-          stroke="var(--nn-grid-stroke)"
+          stroke="var(--ifm-color-primary)"
           strokeWidth="0.5"
         />
       ))}

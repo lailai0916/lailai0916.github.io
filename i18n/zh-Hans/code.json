@@ -695,6 +695,15 @@
   "home.neuralnetwork.description": {
     "message": "在下方绘制数字 0–9，神经网络会识别您的手写数字"
   },
+  "home.neuralnetwork.clear": {
+    "message": "清除"
+  },
+  "home.neuralnetwork.check": {
+    "message": "识别数字"
+  },
+  "home.neuralnetwork.preprocess": {
+    "message": "预处理"
+  },
   "home.fouriertransform.title": {
     "message": "傅立叶变换"
   },

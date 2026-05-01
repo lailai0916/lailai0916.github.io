@@ -1,14 +1,6 @@
 .browserWindow {
-  background-color: var(--ifm-background-color);
-  border: 1px solid rgba(0, 0, 0, 0.06);
-  border-radius: 12px;
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
   margin-bottom: var(--ifm-leading);
   overflow: hidden;
-}
-
-[data-theme='dark'] .browserWindow {
-  border-color: rgba(255, 255, 255, 0.08);
 }
 
 .browserWindowHeader {

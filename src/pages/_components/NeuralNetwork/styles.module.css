@@ -6,9 +6,7 @@
 
   --nn-text-primary: #ffffff;
   --nn-text-secondary: #000000;
-  --nn-text-accent: var(--ifm-color-primary);
 
-  --nn-neuron-border-selected: var(--ifm-color-primary);
   --nn-neuron-border-default: #ffffff;
   --nn-neuron-fill-default: #000000;
 
@@ -22,12 +20,8 @@
   --nn-connection-animation: rgba(var(--ifm-color-primary-rgb), 0.55);
   --nn-connection-default: #666666;
 
-  --nn-stroke-accent: var(--ifm-color-primary);
-  --nn-stroke-subtle: var(--ifm-color-emphasis-300);
-
   --nn-grid-white: #ffffff;
   --nn-grid-white-rgb: 255, 255, 255;
-  --nn-grid-stroke: var(--ifm-color-primary);
   --nn-grid-fill: #000000;
 
   width: 100%;
@@ -81,14 +75,13 @@
 
 .controls {
   position: absolute;
-  left: 0;
-  right: 0;
+  left: 14%;
+  right: 14%;
   bottom: 8%;
   display: flex;
   gap: 0.85rem;
   justify-content: center;
   align-items: stretch;
-  padding: 0 1.5rem;
   opacity: 1;
   pointer-events: auto;
   transition:

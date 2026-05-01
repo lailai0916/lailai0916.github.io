@@ -43,7 +43,7 @@ export default function CookieConsent() {
       aria-live="polite"
       aria-label="Cookie consent"
     >
-      <Card padding="1.25rem" className={styles.card}>
+      <Card padding="1.25rem">
         <div className={styles.content}>
           <div className={styles.title}>
             <Translate id="cookieConsent.title">Cookie Settings</Translate>

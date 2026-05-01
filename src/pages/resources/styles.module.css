@@ -59,10 +59,6 @@
   justify-content: center;
 }
 
-.categoryButton:hover {
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-}
-
 /* Category sections & resource grid */
 
 .categorySection {
@@ -101,56 +97,6 @@
   gap: 1.5rem;
 }
 
-/* Resource card */
-
-.resourceCard {
-  padding: 1.5rem;
-  min-height: 100%;
-  display: flex;
-  align-items: flex-start;
-  gap: 1rem;
-  box-sizing: border-box;
-  position: relative;
-  overflow: hidden;
-}
-
-.resourceCardLink {
-  height: 100%;
-}
-
-.resourceCardImage {
-  width: 24px;
-  height: 24px;
-  object-fit: contain;
-}
-
-.resourceCardBody {
-  flex: 1;
-  min-width: 0;
-}
-
-.resourceCardTitle {
-  font-size: 1.1rem;
-  font-weight: 700;
-  margin: 0 0 0.5rem 0;
-  color: var(--ifm-font-color-base);
-  line-height: 1.3;
-
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-.resourceCardDescription {
-  font-size: 0.9rem;
-  color: var(--ifm-color-emphasis-700);
-  margin: 0;
-  line-height: 1.5;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
 /* Empty / fallback state */
 
 .noResults {
@@ -174,15 +120,6 @@
     align-items: flex-start;
     gap: 1rem;
   }
-
-  .categoryButton {
-    padding: 0.5rem 1rem;
-    font-size: 0.85rem;
-  }
-
-  .resourceCard {
-    padding: 1rem;
-  }
 }
 
 /* Animations */
@@ -199,9 +136,5 @@
 }
 
 .categorySection {
-  animation: fadeIn 0.3s ease-out;
-}
-
-.resourceCard {
   animation: fadeIn 0.3s ease-out;
 }

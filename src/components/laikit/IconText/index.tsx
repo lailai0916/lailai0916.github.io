@@ -5,14 +5,14 @@ interface IconTextProps {
   icon: string;
   children: React.ReactNode;
   size?: string;
-  colorMode?: 'theme' | 'monochrome';
+  monochrome?: boolean;
 }
 
 export default function IconText({
   icon,
   children,
   size = '1.25em',
-  colorMode = 'theme',
+  monochrome = false,
 }: IconTextProps) {
   return (
     <span className={styles.iconText}>
@@ -20,7 +20,7 @@ export default function IconText({
         icon={icon}
         width={size}
         height={size}
-        className={colorMode === 'theme' ? styles.iconTheme : undefined}
+        className={monochrome ? undefined : styles.iconTheme}
       />
       <span>{children}</span>
     </span>

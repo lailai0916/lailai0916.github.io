@@ -145,11 +145,8 @@ function AccentColor() {
         </div>
         <div className={styles.presetColors}>
           {SETTINGS_PRESET_COLOR_LIST.map((color) => (
-            <Button
+            <button
               key={color}
-              variant="ghost"
-              rounded
-              aria-label={color}
               className={styles.presetColorButton}
               style={{
                 background: `linear-gradient(to right, ${color} 0 50%, ${Color(color).mix(Color('#fff'), 0.3).hex()} 50% 100%)`,

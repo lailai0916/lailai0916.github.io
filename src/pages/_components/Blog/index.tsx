@@ -56,7 +56,7 @@ const BlogCard = React.memo<ProcessedBlogPost & { locale: string }>(
             </header>
             <footer>
               <div className={styles.cardMeta}>
-                <IconText icon="lucide:calendar" colorMode="monochrome">
+                <IconText icon="lucide:calendar" monochrome>
                   <time className={styles.time} dateTime={date}>
                     {formattedDate}
                   </time>
@@ -151,7 +151,7 @@ export default function Blog() {
 
             <div className={styles.posts}>
               <p className={styles.postsHeading}>
-                <IconText icon="lucide:chevron-right" colorMode="monochrome">
+                <IconText icon="lucide:chevron-right" monochrome>
                   <Translate id="home.blog.latest">Latest Posts</Translate>
                 </IconText>
               </p>
