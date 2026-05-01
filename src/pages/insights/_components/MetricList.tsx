@@ -1,5 +1,6 @@
 import React from 'react';
 import { Icon } from '@iconify/react';
+import Card from '@site/src/components/laikit/Card';
 import styles from './MetricList.module.css';
 
 export interface MetricRow {
@@ -36,7 +37,7 @@ export default function MetricList({
   const max = items.length > 0 ? Math.max(...items.map((i) => i.y), 1) : 1;
 
   return (
-    <section className={styles.card}>
+    <Card padding="1.5rem 1.25rem" className={styles.card}>
       <header className={styles.head}>
         <Icon icon={icon} className={styles.icon} />
         <h3 className={styles.title}>{title}</h3>
@@ -70,6 +71,6 @@ export default function MetricList({
           </ol>
         )}
       </div>
-    </section>
+    </Card>
   );
 }
