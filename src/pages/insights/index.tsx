@@ -1,4 +1,4 @@
-import React, { type ReactNode, useEffect, useState } from 'react';
+import React, { type ReactNode, useState } from 'react';
 import clsx from 'clsx';
 import Layout from '@theme/Layout';
 import { translate } from '@docusaurus/Translate';

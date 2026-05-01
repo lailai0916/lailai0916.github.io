@@ -36,10 +36,7 @@ html[data-theme='dark'] .rangeTabs {
   font-size: 0.88rem;
   color: var(--ifm-color-emphasis-700);
   cursor: pointer;
-  transition:
-    color 200ms ease,
-    background 200ms ease,
-    box-shadow 200ms ease;
+  transition: color 200ms ease;
 }
 
 .rangeTab:hover {
@@ -74,11 +71,6 @@ html[data-theme='dark'] .rangeTabActive:hover {
   display: flex;
   flex-direction: column;
   gap: 0.4rem;
-  transition: transform 200ms ease;
-}
-
-.heroTile:hover {
-  transform: translateY(-2px);
 }
 
 .heroLabel {
