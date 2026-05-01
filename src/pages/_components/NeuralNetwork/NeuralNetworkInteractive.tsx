@@ -137,7 +137,9 @@ export default function NeuralNetworkInteractive({
   const isEmpty = !inputValues.some((v) => v > 0.1);
 
   if (!dataLoaded) {
-    return <div className={styles.container} style={{ minHeight: CANVAS_SIZE }} />;
+    return (
+      <div className={styles.container} style={{ minHeight: CANVAS_SIZE }} />
+    );
   }
 
   const compact = animating || instant;
@@ -146,89 +148,89 @@ export default function NeuralNetworkInteractive({
   return (
     <div className={styles.container}>
       <div className={styles.frame}>
-      <svg
-        className={styles.svg}
-        width={CANVAS_SIZE}
-        height={CANVAS_SIZE}
-        viewBox={`0 0 ${CANVAS_SIZE} ${CANVAS_SIZE}`}
-        style={{ touchAction: 'none' }}
-      >
-        <NeuronConnections
-          selectedNeuron={selectedNeuron}
-          animating={animating}
-          instant={instant}
-        />
-        <VerticalEllipsis cx={175} cy={CANVAS_CENTER} />
-        <Neurons
-          neurons={neurons}
-          selectedNeuron={selectedNeuron}
-          setSelectedNeuron={setSelectedNeuron}
-          animating={animating}
-          instant={instant}
-        />
-        <OutputDigitLabels />
-        <WinningOutputNeuronBox
-          neurons={neurons}
-          animating={animating}
-          instant={instant}
-        />
-
-        {selectedNeuron?.layerIndex === 1 &&
-          (() => {
-            const pos = getNeuronPosition(
-              selectedNeuron.layerIndex,
-              selectedNeuron.neuronId
-            );
-            return (
-              <WeightGrid
-                x={pos.x + 14}
-                y={-30 + (pos.y - CANVAS_CENTER) * 0.85 + CANVAS_CENTER}
-                width={65}
-                height={65}
-                weights={weights![0][selectedNeuron.neuronId]}
-                inputNeurons={neurons[0]}
-              />
-            );
-          })()}
-
-        {!instant && (
-          <rect
-            x="0"
-            y="0"
-            width={CANVAS_SIZE}
-            height={CANVAS_SIZE}
-            fill="var(--ifm-background-color)"
-            style={{
-              opacity: animating ? 0 : 1,
-              pointerEvents: animating ? 'none' : undefined,
-              transition: 'opacity 300ms ease-in-out',
-            }}
+        <svg
+          className={styles.svg}
+          width={CANVAS_SIZE}
+          height={CANVAS_SIZE}
+          viewBox={`0 0 ${CANVAS_SIZE} ${CANVAS_SIZE}`}
+          style={{ touchAction: 'none' }}
+        >
+          <NeuronConnections
+            selectedNeuron={selectedNeuron}
+            animating={animating}
+            instant={instant}
           />
-        )}
+          <VerticalEllipsis cx={175} cy={CANVAS_CENTER} />
+          <Neurons
+            neurons={neurons}
+            selectedNeuron={selectedNeuron}
+            setSelectedNeuron={setSelectedNeuron}
+            animating={animating}
+            instant={instant}
+          />
+          <OutputDigitLabels />
+          <WinningOutputNeuronBox
+            neurons={neurons}
+            animating={animating}
+            instant={instant}
+          />
 
-        <ImageGrid
-          editing={editing}
-          startEditing={() => {
-            setAnimating(false);
-            setPoints([]);
-            setIsNormalized(false);
-          }}
-          x={compact ? 10 : 70}
-          y={compact ? 10 : 30}
-          width={compact ? 130 : 360}
-          height={compact ? 130 : 360}
-          points={points}
-          inputValues={inputValues}
-          setPoints={(newPoints) => {
-            setPoints(newPoints);
-            setIsNormalized(false);
-          }}
-          normalizing={normalizing}
-          highlightedTile={
-            selectedNeuron?.layerIndex === 0 ? selectedNeuron.neuronId : null
-          }
-        />
-      </svg>
+          {selectedNeuron?.layerIndex === 1 &&
+            (() => {
+              const pos = getNeuronPosition(
+                selectedNeuron.layerIndex,
+                selectedNeuron.neuronId
+              );
+              return (
+                <WeightGrid
+                  x={pos.x + 14}
+                  y={-30 + (pos.y - CANVAS_CENTER) * 0.85 + CANVAS_CENTER}
+                  width={65}
+                  height={65}
+                  weights={weights![0][selectedNeuron.neuronId]}
+                  inputNeurons={neurons[0]}
+                />
+              );
+            })()}
+
+          {!instant && (
+            <rect
+              x="0"
+              y="0"
+              width={CANVAS_SIZE}
+              height={CANVAS_SIZE}
+              fill="var(--ifm-background-color)"
+              style={{
+                opacity: animating ? 0 : 1,
+                pointerEvents: animating ? 'none' : undefined,
+                transition: 'opacity 300ms ease-in-out',
+              }}
+            />
+          )}
+
+          <ImageGrid
+            editing={editing}
+            startEditing={() => {
+              setAnimating(false);
+              setPoints([]);
+              setIsNormalized(false);
+            }}
+            x={compact ? 10 : 70}
+            y={compact ? 10 : 30}
+            width={compact ? 130 : 360}
+            height={compact ? 130 : 360}
+            points={points}
+            inputValues={inputValues}
+            setPoints={(newPoints) => {
+              setPoints(newPoints);
+              setIsNormalized(false);
+            }}
+            normalizing={normalizing}
+            highlightedTile={
+              selectedNeuron?.layerIndex === 0 ? selectedNeuron.neuronId : null
+            }
+          />
+        </svg>
 
         <div
           className={clsx(styles.controls, !editing && styles.controlsHidden)}

@@ -994,5 +994,14 @@
   },
   "pages.settings.item.language.description": {
     "message": "切换界面语言"
+  },
+  "home.neuralnetwork.clear": {
+    "message": "Clear"
+  },
+  "home.neuralnetwork.check": {
+    "message": "Check digit"
+  },
+  "home.neuralnetwork.preprocess": {
+    "message": "Pre-process"
   }
 }

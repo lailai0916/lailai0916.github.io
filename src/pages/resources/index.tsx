@@ -231,11 +231,7 @@ function ResourcesMain() {
               { query: searchQuery }
             )}
           </p>
-          <Button
-            variant="primary"
-            rounded
-            onClick={() => setSearchQuery('')}
-          >
+          <Button variant="primary" rounded onClick={() => setSearchQuery('')}>
             {translate({
               id: 'pages.resources.noresults.clear',
               message: 'Clear Search',
