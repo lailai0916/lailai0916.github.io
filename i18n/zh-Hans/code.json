@@ -71,6 +71,97 @@
   "pages.friends.datacard.label": {
     "message": "位朋友"
   },
+
+  "pages.insights.title": {
+    "message": "实时洞察"
+  },
+  "pages.insights.description": {
+    "message": "网站的实时数据，每次访问自动刷新"
+  },
+  "pages.insights.modification": {
+    "message": "实时<b>洞察</b>"
+  },
+  "pages.insights.metric.pageviews": {
+    "message": "浏览量"
+  },
+  "pages.insights.metric.visitors": {
+    "message": "访客数"
+  },
+  "pages.insights.metric.visits": {
+    "message": "访问数"
+  },
+  "pages.insights.metric.avgVisit": {
+    "message": "平均时长"
+  },
+  "pages.insights.metric.bounceRate": {
+    "message": "跳出率"
+  },
+  "pages.insights.range.7d": {
+    "message": "近 7 天"
+  },
+  "pages.insights.range.30d": {
+    "message": "近 30 天"
+  },
+  "pages.insights.range.1y": {
+    "message": "近 1 年"
+  },
+  "pages.insights.chart.title": {
+    "message": "浏览量趋势"
+  },
+  "pages.insights.metricList.pages": {
+    "message": "热门页面"
+  },
+  "pages.insights.metricList.empty": {
+    "message": "暂无数据"
+  },
+  "pages.insights.metricList.referrers": {
+    "message": "来源站点"
+  },
+  "pages.insights.metricList.referrers.direct": {
+    "message": "直接访问"
+  },
+  "pages.insights.metricList.countries": {
+    "message": "访客地区"
+  },
+  "pages.insights.metricList.devices": {
+    "message": "设备类型"
+  },
+  "pages.insights.status.operational": {
+    "message": "全部服务正常"
+  },
+  "pages.insights.status.degraded": {
+    "message": "部分服务异常"
+  },
+  "pages.insights.status.major": {
+    "message": "服务中断"
+  },
+  "pages.insights.status.maintenance": {
+    "message": "维护中"
+  },
+  "pages.insights.status.unknown": {
+    "message": "状态未知"
+  },
+  "pages.insights.uptime.last24h": {
+    "message": "24 小时在线率"
+  },
+  "pages.insights.uptime.checks": {
+    "message": "近 {count} 次检测"
+  },
+  "pages.insights.uptime.avgPing": {
+    "message": "平均 {ping}ms"
+  },
+  "pages.insights.uptime.title": {
+    "message": "服务状态"
+  },
+  "pages.insights.status.loading": {
+    "message": "检测中…"
+  },
+  "pages.insights.status.error": {
+    "message": "无法连接监控服务"
+  },
+  "pages.insights.uptime.empty": {
+    "message": "暂无监控项"
+  },
   "pages.resources.title": {
     "message": "资源"
   },
@@ -994,95 +1085,5 @@
   "theme.common.skipToMainContent": {
     "message": "跳到主要内容",
     "description": "The skip to content label used for accessibility, allowing to rapidly navigate to main content with keyboard tab/enter navigation"
-  },
-  "pages.insights.title": {
-    "message": "实时洞察"
-  },
-  "pages.insights.description": {
-    "message": "网站的实时数据，每次访问自动刷新"
-  },
-  "pages.insights.modification": {
-    "message": "实时<b>洞察</b>"
-  },
-  "pages.insights.metric.pageviews": {
-    "message": "浏览量"
-  },
-  "pages.insights.metric.visitors": {
-    "message": "访客数"
-  },
-  "pages.insights.metric.visits": {
-    "message": "访问数"
-  },
-  "pages.insights.metric.avgVisit": {
-    "message": "平均时长"
-  },
-  "pages.insights.metric.bounceRate": {
-    "message": "跳出率"
-  },
-  "pages.insights.range.7d": {
-    "message": "近 7 天"
-  },
-  "pages.insights.range.30d": {
-    "message": "近 30 天"
-  },
-  "pages.insights.range.1y": {
-    "message": "近 1 年"
-  },
-  "pages.insights.chart.title": {
-    "message": "浏览量趋势"
-  },
-  "pages.insights.metricList.pages": {
-    "message": "热门页面"
-  },
-  "pages.insights.metricList.empty": {
-    "message": "暂无数据"
-  },
-  "pages.insights.metricList.referrers": {
-    "message": "来源站点"
-  },
-  "pages.insights.metricList.referrers.direct": {
-    "message": "直接访问"
-  },
-  "pages.insights.metricList.countries": {
-    "message": "访客地区"
-  },
-  "pages.insights.metricList.devices": {
-    "message": "设备类型"
-  },
-  "pages.insights.status.operational": {
-    "message": "全部服务正常"
-  },
-  "pages.insights.status.degraded": {
-    "message": "部分服务异常"
-  },
-  "pages.insights.status.major": {
-    "message": "服务中断"
-  },
-  "pages.insights.status.maintenance": {
-    "message": "维护中"
-  },
-  "pages.insights.status.unknown": {
-    "message": "状态未知"
-  },
-  "pages.insights.uptime.last24h": {
-    "message": "24 小时在线率"
-  },
-  "pages.insights.uptime.checks": {
-    "message": "近 {count} 次检测"
-  },
-  "pages.insights.uptime.avgPing": {
-    "message": "平均 {ping}ms"
-  },
-  "pages.insights.uptime.title": {
-    "message": "服务状态"
-  },
-  "pages.insights.status.loading": {
-    "message": "检测中…"
-  },
-  "pages.insights.status.error": {
-    "message": "无法连接监控服务"
-  },
-  "pages.insights.uptime.empty": {
-    "message": "暂无监控项"
   }
 }

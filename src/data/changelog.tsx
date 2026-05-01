@@ -10,8 +10,7 @@ export const CHANGELOG_LIST: ChangelogItem[] = [
   {
     date: '2026-05-01',
     type: 'added',
-    content:
-      '<a href="/insights"><b>实时洞察</b></a> 页面，整合 Umami 访问统计与 Uptime Kuma 服务状态',
+    content: '<b>实时洞察</b> 页面',
   },
   {
     date: '2026-05-01',
