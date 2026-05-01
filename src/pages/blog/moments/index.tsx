@@ -34,7 +34,7 @@ export default function moments() {
           )}
           <hr className={styles.hr} />
           <div className={styles.momentMeta}>
-            <IconText icon="lucide:calendar" colorMode="monochrome">
+            <IconText icon="lucide:calendar" monochrome>
               {new Date(moment.date).toLocaleDateString('en-US', {
                 year: 'numeric',
                 month: 'long',

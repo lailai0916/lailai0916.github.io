@@ -1,12 +1,10 @@
 import React, { type ReactNode, useState, useMemo } from 'react';
 import { Icon } from '@iconify/react';
-import clsx from 'clsx';
 import Layout from '@theme/Layout';
 
 import { PageTitle, PageHeader } from '@site/src/components/laikit/Page';
 import DataCard from '@site/src/components/laikit/DataCard';
-import Card from '@site/src/components/laikit/Card';
-import IconBlock from '@site/src/components/laikit/IconBlock';
+import LinkCard from '@site/src/components/laikit/LinkCard';
 import IconText from '@site/src/components/laikit/IconText';
 import Button from '@site/src/components/laikit/Button';
 
@@ -96,9 +94,9 @@ function CategoryNav({
       <div className={styles.categoryNavContent}>
         <Button
           variant="secondary"
+          size="sm"
           rounded
           active={activeCategory === 'all'}
-          className={styles.categoryButton}
           onClick={() => onCategoryChange('all')}
         >
           {translate({
@@ -110,9 +108,9 @@ function CategoryNav({
           <Button
             key={category.title}
             variant="secondary"
+            size="sm"
             rounded
             active={activeCategory === category.title}
-            className={styles.categoryButton}
             onClick={() => onCategoryChange(category.title)}
           >
             {category.title}
@@ -129,37 +127,14 @@ function ResourceCard({
   resource: { title: string; description: string; href: string };
 }) {
   const iconUrl = `https://www.google.com/s2/favicons?sz=64&domain=${new URL(resource.href).hostname}`;
-  const [imageError, setImageError] = useState(false);
-
   return (
-    <Card
+    <LinkCard
       to={resource.href}
-      className={styles.resourceCard}
-      wrapperClassName={styles.resourceCardLink}
       title={resource.title}
-    >
-      {imageError ? (
-        <IconBlock
-          icon="lucide:globe"
-          variant="muted"
-          size={48}
-          iconSize={24}
-        />
-      ) : (
-        <IconBlock variant="muted" size={48}>
-          <img
-            src={iconUrl}
-            alt={resource.title}
-            className={styles.resourceCardImage}
-            onError={() => setImageError(true)}
-          />
-        </IconBlock>
-      )}
-      <div className={styles.resourceCardBody}>
-        <h3 className={styles.resourceCardTitle}>{resource.title}</h3>
-        <p className={styles.resourceCardDescription}>{resource.description}</p>
-      </div>
-    </Card>
+      description={resource.description}
+      image={iconUrl}
+      fallbackIcon="lucide:globe"
+    />
   );
 }
 

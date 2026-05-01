@@ -1,5 +1,6 @@
 import React, { type CSSProperties, type ReactNode } from 'react';
 import clsx from 'clsx';
+import Card from '@site/src/components/laikit/Card';
 
 import styles from './styles.module.css';
 
@@ -19,7 +20,11 @@ export default function BrowserWindow({
   bodyStyle,
 }: Props) {
   return (
-    <div className={styles.browserWindow} style={{ ...style, minHeight }}>
+    <Card
+      padding={0}
+      className={styles.browserWindow}
+      style={{ ...style, minHeight }}
+    >
       <div className={styles.browserWindowHeader}>
         <div className={styles.buttons}>
           <span className={styles.dot} style={{ background: '#ff5f57' }} />
@@ -35,7 +40,7 @@ export default function BrowserWindow({
       <div className={styles.browserWindowBody} style={bodyStyle}>
         {children}
       </div>
-    </div>
+    </Card>
   );
 }
 

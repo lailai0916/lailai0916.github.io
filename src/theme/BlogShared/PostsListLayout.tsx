@@ -47,7 +47,7 @@ function IconData({ icon, children }: IconDataProps) {
   return (
     <>
       <span className={styles.dot}>|</span>
-      <IconText icon={icon} colorMode="monochrome">
+      <IconText icon={icon} monochrome>
         {children}
       </IconText>
     </>
@@ -90,7 +90,7 @@ function PostCard({ item }: PostCardProps) {
         </MDXContent>
       </div>
       <div className={styles.postMeta}>
-        <IconText icon="lucide:calendar" colorMode="monochrome">
+        <IconText icon="lucide:calendar" monochrome>
           <time dateTime={metadata.date}>{metadata.date.slice(0, 10)}</time>
         </IconText>
         {!!metadata.readingTime && (
