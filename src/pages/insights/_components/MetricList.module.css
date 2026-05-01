@@ -1,0 +1,137 @@
+.card {
+  background: var(--ifm-card-background-color);
+  border: 1px solid var(--ifm-color-emphasis-200);
+  border-radius: 18px;
+  padding: 1.5rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  min-height: 320px;
+  transition:
+    border-color 200ms ease,
+    box-shadow 200ms ease;
+}
+
+.card:hover {
+  border-color: var(--ifm-color-emphasis-300);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.06);
+}
+
+.head {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0 0.25rem;
+}
+
+.icon {
+  font-size: 1.1rem;
+  color: var(--ifm-color-primary);
+}
+
+.title {
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin: 0;
+  color: var(--ifm-font-color-base);
+}
+
+.body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.row {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 0.55rem 0.75rem;
+  border-radius: 10px;
+  font-size: 0.92rem;
+  transition: background 160ms ease;
+}
+
+.row:hover {
+  background: var(--ifm-color-emphasis-100);
+}
+
+.bar {
+  position: absolute;
+  inset: 4px auto 4px 0;
+  background: rgba(var(--ifm-color-primary-rgb), 0.08);
+  border-radius: 8px;
+  pointer-events: none;
+  transition: width 600ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.label {
+  position: relative;
+  flex: 1;
+  min-width: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: var(--ifm-color-emphasis-900);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.value {
+  position: relative;
+  font-variant-numeric: tabular-nums;
+  font-weight: 600;
+  color: var(--ifm-color-emphasis-700);
+  margin-left: 0.75rem;
+}
+
+.empty {
+  margin: 0;
+  padding: 1.5rem 0.75rem;
+  color: var(--ifm-color-emphasis-500);
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+.skeletonList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.skeletonRow {
+  height: 32px;
+  border-radius: 10px;
+  background: linear-gradient(
+    90deg,
+    var(--ifm-color-emphasis-100) 0%,
+    var(--ifm-color-emphasis-200) 50%,
+    var(--ifm-color-emphasis-100) 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.4s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+.flag {
+  font-size: 1.05rem;
+  flex-shrink: 0;
+}

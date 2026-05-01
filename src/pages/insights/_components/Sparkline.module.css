@@ -1,0 +1,65 @@
+.sparkline {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 14px;
+}
+
+.svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.line {
+  stroke-dasharray: 3000;
+  stroke-dashoffset: 3000;
+  animation: draw 1100ms cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+@keyframes draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.pulse {
+  transform-origin: center;
+  transform-box: fill-box;
+  animation: pulse 2.4s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.18;
+  }
+  50% {
+    transform: scale(1.6);
+    opacity: 0;
+  }
+}
+
+.skeleton {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    var(--ifm-color-emphasis-100) 0%,
+    var(--ifm-color-emphasis-200) 50%,
+    var(--ifm-color-emphasis-100) 100%
+  );
+  background-size: 200% 100%;
+  border-radius: 14px;
+  animation: shimmer 1.4s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}

@@ -1,0 +1,221 @@
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.title {
+  font-size: 1.05rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  margin: 0;
+  color: var(--ifm-font-color-base);
+}
+
+.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.45rem 0.9rem;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  border: 1px solid transparent;
+}
+
+.pillUp {
+  background: rgba(26, 135, 84, 0.1);
+  color: #1a8754;
+  border-color: rgba(26, 135, 84, 0.25);
+}
+
+.pillDown {
+  background: rgba(217, 56, 56, 0.1);
+  color: #d93838;
+  border-color: rgba(217, 56, 56, 0.25);
+}
+
+.pillMaintenance {
+  background: rgba(90, 141, 238, 0.1);
+  color: #5a8dee;
+  border-color: rgba(90, 141, 238, 0.25);
+}
+
+.pillEmpty {
+  background: var(--ifm-color-emphasis-100);
+  color: var(--ifm-color-emphasis-700);
+  border-color: var(--ifm-color-emphasis-200);
+}
+
+html[data-theme='dark'] .pillUp {
+  background: rgba(52, 199, 123, 0.16);
+  color: #34c77b;
+  border-color: rgba(52, 199, 123, 0.32);
+}
+
+html[data-theme='dark'] .pillDown {
+  background: rgba(255, 107, 107, 0.16);
+  color: #ff6b6b;
+  border-color: rgba(255, 107, 107, 0.32);
+}
+
+html[data-theme='dark'] .pillMaintenance {
+  background: rgba(122, 166, 255, 0.16);
+  color: #7aa6ff;
+  border-color: rgba(122, 166, 255, 0.32);
+}
+
+.spin {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.row {
+  background: var(--ifm-card-background-color);
+  border: 1px solid var(--ifm-color-emphasis-200);
+  border-radius: 16px;
+  padding: 1.1rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  transition:
+    border-color 200ms ease,
+    box-shadow 200ms ease;
+}
+
+.row:hover {
+  border-color: var(--ifm-color-emphasis-300);
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.05);
+}
+
+.rowHead {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  box-shadow: 0 0 0 4px rgba(0, 0, 0, 0);
+}
+
+.dotUp {
+  background: #1a8754;
+  box-shadow: 0 0 0 4px rgba(26, 135, 84, 0.18);
+}
+
+.dotDown {
+  background: #d93838;
+  box-shadow: 0 0 0 4px rgba(217, 56, 56, 0.2);
+}
+
+.dotPending {
+  background: #f0a52a;
+  box-shadow: 0 0 0 4px rgba(240, 165, 42, 0.2);
+}
+
+.dotMaintenance {
+  background: #5a8dee;
+  box-shadow: 0 0 0 4px rgba(90, 141, 238, 0.2);
+}
+
+.dotEmpty {
+  background: var(--ifm-color-emphasis-300);
+}
+
+html[data-theme='dark'] .dotUp {
+  background: #34c77b;
+  box-shadow: 0 0 0 4px rgba(52, 199, 123, 0.22);
+}
+
+html[data-theme='dark'] .dotDown {
+  background: #ff6b6b;
+  box-shadow: 0 0 0 4px rgba(255, 107, 107, 0.22);
+}
+
+.name {
+  flex: 1;
+  font-weight: 600;
+  color: var(--ifm-color-emphasis-900);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.uptime {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.uptimeValue {
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--ifm-font-color-base);
+}
+
+.uptimeLabel {
+  font-size: 0.75rem;
+  color: var(--ifm-color-emphasis-600);
+}
+
+.rowFoot {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.78rem;
+  color: var(--ifm-color-emphasis-600);
+  font-variant-numeric: tabular-nums;
+}
+
+.skeletonRow {
+  height: 96px;
+  border-radius: 16px;
+  background: linear-gradient(
+    90deg,
+    var(--ifm-color-emphasis-100) 0%,
+    var(--ifm-color-emphasis-200) 50%,
+    var(--ifm-color-emphasis-100) 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.4s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+.empty {
+  margin: 0;
+  padding: 1.5rem 0.75rem;
+  color: var(--ifm-color-emphasis-500);
+  text-align: center;
+  font-size: 0.9rem;
+}
