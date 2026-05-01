@@ -156,8 +156,11 @@
   transform: scale(1.1);
 }
 
-.resetButton {
+/* Doubled class to outweigh Button's .size_sm height. */
+.resetButton.resetButton {
   flex-shrink: 0;
+  height: auto;
+  align-self: stretch;
 }
 
 /* Typography sliders */
