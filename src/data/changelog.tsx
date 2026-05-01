@@ -9,8 +9,13 @@ interface ChangelogItem {
 export const CHANGELOG_LIST: ChangelogItem[] = [
   {
     date: '2026-05-01',
+    type: 'removed',
+    content: '<b>Sitemap</b> 页面',
+  },
+  {
+    date: '2026-05-01',
     type: 'added',
-    content: '<b>实时洞察</b> 页面',
+    content: '<b>Insights</b> 页面',
   },
   {
     date: '2026-05-01',
