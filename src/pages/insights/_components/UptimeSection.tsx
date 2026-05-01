@@ -1,6 +1,7 @@
 import React from 'react';
 import { Icon } from '@iconify/react';
 import { translate } from '@docusaurus/Translate';
+import Card from '@site/src/components/laikit/Card';
 import { useKumaStatus } from '@site/src/hooks/useKumaStatus';
 import type { KumaHeartbeat, KumaMonitor } from '@site/src/utils/kuma';
 import HeartbeatBar from './HeartbeatBar';
@@ -125,7 +126,7 @@ function MonitorRow({
             : styles.dotEmpty;
 
   return (
-    <div className={styles.row}>
+    <Card padding="1.1rem 1.25rem" className={styles.row}>
       <div className={styles.rowHead}>
         <span className={`${styles.dot} ${statusCls}`} aria-hidden="true" />
         <span className={styles.name}>{monitor.name}</span>
@@ -162,7 +163,7 @@ function MonitorRow({
           </span>
         )}
       </div>
-    </div>
+    </Card>
   );
 }
 

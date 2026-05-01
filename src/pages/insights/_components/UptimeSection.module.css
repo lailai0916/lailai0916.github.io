@@ -90,21 +90,9 @@ html[data-theme='dark'] .pillMaintenance {
 }
 
 .row {
-  background: var(--ifm-card-background-color);
-  border: 1px solid var(--ifm-color-emphasis-200);
-  border-radius: 16px;
-  padding: 1.1rem 1.25rem;
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
-  transition:
-    border-color 200ms ease,
-    box-shadow 200ms ease;
-}
-
-.row:hover {
-  border-color: var(--ifm-color-emphasis-300);
-  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.05);
 }
 
 .rowHead {

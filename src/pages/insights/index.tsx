@@ -6,6 +6,7 @@ import * as countries from 'i18n-iso-countries';
 import countriesEn from 'i18n-iso-countries/langs/en.json';
 import countriesZh from 'i18n-iso-countries/langs/zh.json';
 import { PageTitle, PageHeader } from '@site/src/components/laikit/Page';
+import Card from '@site/src/components/laikit/Card';
 import {
   useUmamiStats,
   type InsightsRange,
@@ -115,7 +116,7 @@ function HeroMetric({
     sign === 'flat' ? null : spec.invertDelta ? sign === 'down' : sign === 'up';
 
   return (
-    <div className={styles.heroTile}>
+    <Card padding="1.5rem 1.5rem 1.25rem" className={styles.heroTile}>
       <span className={styles.heroLabel}>{spec.label}</span>
       <span
         className={
@@ -134,7 +135,7 @@ function HeroMetric({
       {!loading && (delta == null || sign === 'flat') && (
         <span className={styles.heroDeltaFlat}>—</span>
       )}
-    </div>
+    </Card>
   );
 }
 
@@ -286,9 +287,9 @@ function PageviewsChart({ range }: { range: InsightsRange }) {
           })}
         </h2>
       </header>
-      <div className={styles.chartCard}>
+      <Card padding="1.25rem">
         <Sparkline data={series} loading={loading} />
-      </div>
+      </Card>
     </section>
   );
 }
