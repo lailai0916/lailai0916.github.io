@@ -9,6 +9,12 @@ interface ChangelogItem {
 export const CHANGELOG_LIST: ChangelogItem[] = [
   {
     date: '2026-05-01',
+    type: 'added',
+    content:
+      '<a href="/insights"><b>实时洞察</b></a> 页面，整合 Umami 访问统计与 Uptime Kuma 服务状态',
+  },
+  {
+    date: '2026-05-01',
     type: 'changed',
     content:
       '网站更新至 <a href="https://docusaurus.io/changelog/3.10.1">Docusaurus v3.10.1</a>',
