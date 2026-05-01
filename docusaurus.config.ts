@@ -176,7 +176,7 @@ const config: Config = {
           title: 'Site',
           items: [
             { label: 'Settings', to: '/settings' },
-            { label: 'Sitemap', to: '/sitemap' },
+            { label: 'Insights', to: '/insights' },
             { label: 'Changelog', to: '/changelog' },
             { label: 'Privacy Policy', to: '/privacy' },
           ],
