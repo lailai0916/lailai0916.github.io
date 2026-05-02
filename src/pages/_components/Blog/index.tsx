@@ -9,6 +9,7 @@ import {
   getRecentBlogPosts,
   type ProcessedBlogPost,
 } from '@site/src/utils/blogData';
+import { formatBeijingDate } from '@site/src/utils/format';
 import SectionContainer from '@site/src/components/laikit/Section';
 import styles from './styles.module.css';
 
@@ -30,11 +31,10 @@ const formatDate = (dateString: string, locale: string): string => {
     return dateString;
   }
 
-  return date.toLocaleDateString(locale, {
+  return formatBeijingDate(date, locale, {
     year: 'numeric',
     month: 'long',
     day: 'numeric',
-    timeZone: 'UTC',
   });
 };
 

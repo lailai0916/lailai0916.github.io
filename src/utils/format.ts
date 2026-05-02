@@ -9,3 +9,14 @@ export function formatCompact(
     maximumFractionDigits: precision,
   }).format(n);
 }
+
+export function formatBeijingDate(
+  date: Date | string | number,
+  locale: string = 'en-CA',
+  options: Intl.DateTimeFormatOptions = {}
+): string {
+  return new Date(date).toLocaleDateString(locale, {
+    timeZone: 'Asia/Shanghai',
+    ...options,
+  });
+}

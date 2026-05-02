@@ -7,6 +7,7 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import { Icon } from '@iconify/react';
 import { COMMUNITY_LIST } from '@site/src/data/community';
 import { getRecentBlogPosts } from '@site/src/utils/blogData';
+import { formatBeijingDate } from '@site/src/utils/format';
 import Card from '@site/src/components/laikit/Card';
 import styles from './styles.module.css';
 
@@ -149,11 +150,10 @@ export default function Bento() {
   );
   const latestPost = useMemo(() => getRecentBlogPosts(1)[0] ?? null, []);
   const latestPostDate = latestPost
-    ? new Date(latestPost.date).toLocaleDateString(i18n.currentLocale, {
+    ? formatBeijingDate(latestPost.date, i18n.currentLocale, {
         year: 'numeric',
         month: 'long',
         day: 'numeric',
-        timeZone: 'UTC',
       })
     : '';
 

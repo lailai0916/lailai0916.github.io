@@ -2,6 +2,7 @@ import React from 'react';
 import Link from '@docusaurus/Link';
 import Translate from '@docusaurus/Translate';
 import { BlogCard } from '../BlogShared/Components';
+import { formatBeijingDate } from '@site/src/utils/format';
 import styles from './styles.module.css';
 
 type PostLike = {
@@ -17,7 +18,7 @@ export function BlogArchiveList({ posts }: { posts: PostLike[] }) {
     const map = new Map<number, PostLike[]>();
 
     posts.forEach((p) => {
-      const year = new Date(p.metadata.date).getUTCFullYear();
+      const year = Number(formatBeijingDate(p.metadata.date).slice(0, 4));
       const arr = map.get(year);
       if (arr) arr.push(p);
       else map.set(year, [p]);
@@ -44,7 +45,7 @@ export function BlogArchiveList({ posts }: { posts: PostLike[] }) {
             {yearPosts.map((post) => (
               <li key={post.metadata.permalink} className={styles.recentItem}>
                 <div className={styles.recentDate}>
-                  {post.metadata.date.slice(5, 10)}
+                  {formatBeijingDate(post.metadata.date).slice(5, 10)}
                 </div>
                 <Link
                   to={post.metadata.permalink}
