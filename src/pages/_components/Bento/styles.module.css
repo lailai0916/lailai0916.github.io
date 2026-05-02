@@ -53,29 +53,10 @@
   flex: 1;
 }
 
-.nameRow {
-  display: flex;
-  align-items: center;
-  gap: 0.625rem;
-  flex-wrap: nowrap;
-}
-
 .name {
   font-size: 1.75rem;
   font-weight: 700;
   margin: 0;
-  letter-spacing: -0.02em;
-}
-
-.statusInline {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  margin-left: auto;
-  padding: 0.2rem 0.3875rem;
-  border-radius: 999px;
-  border: 1px solid var(--ifm-color-emphasis-200);
-  background: var(--ifm-color-emphasis-100);
 }
 
 .role {
@@ -324,33 +305,6 @@
   color: var(--ifm-color-emphasis-700);
 }
 
-.statusDot {
-  width: 8px;
-  height: 8px;
-  background: var(--lk-color-up);
-  border-radius: 50%;
-  animation: pulse 2s ease-in-out infinite;
-}
-
-@keyframes pulse {
-  0%,
-  100% {
-    opacity: 1;
-    transform: scale(1);
-  }
-  50% {
-    opacity: 0.6;
-    transform: scale(1.1);
-  }
-}
-
-.statusText {
-  font-size: 0.875rem;
-  color: var(--ifm-color-emphasis-700);
-  font-weight: 500;
-  line-height: 1;
-}
-
 @media (max-width: 768px) {
   .hero {
     padding: 2rem 1rem 3rem;
@@ -378,15 +332,6 @@
 
   .name {
     font-size: 1.5rem;
-  }
-
-  .nameRow {
-    flex-wrap: wrap;
-    gap: 0.4rem;
-  }
-
-  .statusInline {
-    margin-left: 0;
   }
 
   .cardSocial {
@@ -431,10 +376,6 @@
   }
 
   .cardSocialLabel {
-    display: none;
-  }
-
-  .statusInline {
     display: none;
   }
 }

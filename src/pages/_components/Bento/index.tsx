@@ -169,18 +169,7 @@ export default function Bento() {
                 className={styles.avatar}
               />
               <div className={styles.intro}>
-                <div className={styles.nameRow}>
-                  <h1 className={styles.name}>lailai</h1>
-                  <span className={styles.statusInline}>
-                    <span className={styles.statusDot} />
-                    <span className={styles.statusText}>
-                      {translate({
-                        id: 'home.bento.available',
-                        message: 'Available',
-                      })}
-                    </span>
-                  </span>
-                </div>
+                <h1 className={styles.name}>lailai</h1>
                 <p className={styles.role}>
                   {rolePrefix}
                   <span className={styles.roleTyping}>{identity}</span>

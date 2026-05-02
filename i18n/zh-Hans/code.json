@@ -367,9 +367,6 @@
   "home.bento.rolePrefix": {
     "message": "我是一名 "
   },
-  "home.bento.available": {
-    "message": "可联系"
-  },
   "home.bento.connect": {
     "message": "联系"
   },
