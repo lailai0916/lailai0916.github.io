@@ -128,7 +128,7 @@ function formatTooltipDate(
 
 export default function Sparkline({
   data,
-  height = 220,
+  height = 180,
   loading = false,
   unit = 'day',
 }: SparklineProps) {
