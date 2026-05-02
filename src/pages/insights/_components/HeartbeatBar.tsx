@@ -97,7 +97,10 @@ function formatTooltipDate(iso: string, locale: string): string {
   });
 }
 
-export default function HeartbeatBar({ beats, slots = 100 }: HeartbeatBarProps) {
+export default function HeartbeatBar({
+  beats,
+  slots = 100,
+}: HeartbeatBarProps) {
   const [hoverIdx, setHoverIdx] = useState<number | null>(null);
   const [wrapRef, fitSlots] = useResponsiveSlots(slots);
   const {

@@ -18,7 +18,8 @@
     color-mix(in srgb, var(--ifm-color-primary) 8%, transparent)
   );
   color: var(--ifm-color-primary);
-  border: 1px solid color-mix(in srgb, var(--ifm-color-primary) 18%, transparent);
+  border: 1px solid
+    color-mix(in srgb, var(--ifm-color-primary) 18%, transparent);
 }
 
 html[data-theme='dark'] .accent {

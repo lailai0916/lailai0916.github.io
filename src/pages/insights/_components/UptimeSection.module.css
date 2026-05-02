@@ -64,17 +64,20 @@
 
 .dotDown {
   background: var(--lk-color-down);
-  box-shadow: 0 0 0 4px color-mix(in srgb, var(--lk-color-down) 20%, transparent);
+  box-shadow: 0 0 0 4px
+    color-mix(in srgb, var(--lk-color-down) 20%, transparent);
 }
 
 .dotPending {
   background: var(--lk-color-pending);
-  box-shadow: 0 0 0 4px color-mix(in srgb, var(--lk-color-pending) 20%, transparent);
+  box-shadow: 0 0 0 4px
+    color-mix(in srgb, var(--lk-color-pending) 20%, transparent);
 }
 
 .dotMaintenance {
   background: var(--lk-color-maintenance);
-  box-shadow: 0 0 0 4px color-mix(in srgb, var(--lk-color-maintenance) 20%, transparent);
+  box-shadow: 0 0 0 4px
+    color-mix(in srgb, var(--lk-color-maintenance) 20%, transparent);
 }
 
 .dotEmpty {
@@ -86,7 +89,8 @@ html[data-theme='dark'] .dotUp {
 }
 
 html[data-theme='dark'] .dotDown {
-  box-shadow: 0 0 0 4px color-mix(in srgb, var(--lk-color-down) 22%, transparent);
+  box-shadow: 0 0 0 4px
+    color-mix(in srgb, var(--lk-color-down) 22%, transparent);
 }
 
 .nameWrap {

@@ -17,7 +17,11 @@
   /* Aligned with Lorenz Attractor's blue/orange trail palette. */
   --nn-connection-negative-rgb: 249, 115, 22;
   --nn-connection-positive-rgb: 29, 155, 240;
-  --nn-connection-animation: color-mix(in srgb, var(--ifm-color-primary) 55%, transparent);
+  --nn-connection-animation: color-mix(
+    in srgb,
+    var(--ifm-color-primary) 55%,
+    transparent
+  );
   --nn-connection-default: #666666;
 
   --nn-grid-white: #ffffff;
@@ -54,7 +58,11 @@
   --nn-neuron-gray-base: 255;
   --nn-neuron-gray-multiplier: -255;
 
-  --nn-connection-animation: color-mix(in srgb, var(--ifm-color-primary) 70%, transparent);
+  --nn-connection-animation: color-mix(
+    in srgb,
+    var(--ifm-color-primary) 70%,
+    transparent
+  );
   --nn-connection-default: #c7d2fe;
 
   --nn-grid-white: #000000;
