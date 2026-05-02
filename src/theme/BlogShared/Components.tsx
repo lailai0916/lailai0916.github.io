@@ -56,16 +56,3 @@ export function TagChipList({ items }: { items: ChipItem[] }) {
     </div>
   );
 }
-
-export function formatLongNumber(
-  value: number | string,
-  locale: string
-): number | string {
-  const n = Number(value);
-  if (Number.isNaN(n)) return value;
-  return new Intl.NumberFormat(locale, {
-    notation: 'compact',
-    compactDisplay: 'short',
-    maximumSignificantDigits: 3,
-  }).format(n);
-}

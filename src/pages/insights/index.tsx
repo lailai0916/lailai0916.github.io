@@ -22,6 +22,7 @@ import { useUmamiPageviewsSeries } from '@site/src/hooks/useUmamiPageviewsSeries
 import { useUmamiMetric } from '@site/src/hooks/useUmamiMetric';
 import { useAnimatedNumber } from '@site/src/hooks/useAnimatedNumber';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
+import { formatCompact } from '@site/src/utils/format';
 import { Icon } from '@iconify/react';
 import Sparkline from './_components/Sparkline';
 import MetricList from './_components/MetricList';
@@ -44,14 +45,6 @@ const MODIFICATION = translate({
   id: 'pages.insights.modification',
   message: 'Live <b>Insights</b>',
 });
-
-function formatCompact(n: number, locale?: string): string {
-  if (!Number.isFinite(n)) return '–';
-  return new Intl.NumberFormat(locale, {
-    notation: 'compact',
-    maximumFractionDigits: 1,
-  }).format(Math.round(n));
-}
 
 function formatDuration(seconds: number): string {
   if (!Number.isFinite(seconds) || seconds <= 0) return '0s';
@@ -149,14 +142,11 @@ function HeroMetric({
 
 function HeroGrid({ range }: { range: InsightsRange }) {
   const { data, status } = useUmamiStats(range);
-  const {
-    i18n: { currentLocale },
-  } = useDocusaurusContext();
-  const numberLocale = currentLocale === 'zh-Hans' ? 'zh' : 'en';
+  const { i18n } = useDocusaurusContext();
   const loading = status === 'loading';
   const errored = status === 'error';
 
-  const compact = (n: number) => formatCompact(n, numberLocale);
+  const compact = (n: number) => formatCompact(n, i18n.currentLocale);
 
   const specs: MetricSpec[] = [
     {

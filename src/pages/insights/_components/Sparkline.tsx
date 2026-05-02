@@ -2,6 +2,7 @@ import React, { useId, useMemo, useRef, useState } from 'react';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import type { SeriesPoint } from '@site/src/hooks/useUmamiPageviewsSeries';
 import Tooltip from '@site/src/components/laikit/Tooltip';
+import { formatCompact } from '@site/src/utils/format';
 import styles from './Sparkline.module.css';
 
 type SparklineUnit = 'hour' | '6h' | 'day' | 'week';
@@ -125,13 +126,6 @@ function formatTooltipDate(
   return formatYMD(d, locale);
 }
 
-function formatCompact(n: number, locale: string): string {
-  return new Intl.NumberFormat(locale, {
-    notation: 'compact',
-    maximumFractionDigits: 1,
-  }).format(n);
-}
-
 export default function Sparkline({
   data,
   height = 220,
@@ -144,9 +138,8 @@ export default function Sparkline({
   const containerRef = useRef<HTMLDivElement>(null);
   const [hoverIdx, setHoverIdx] = useState<number | null>(null);
   const {
-    i18n: { currentLocale },
+    i18n: { currentLocale: locale },
   } = useDocusaurusContext();
-  const locale = currentLocale === 'zh-Hans' ? 'zh' : 'en';
 
   const values = useMemo(() => data.map((d) => d.y), [data]);
   const { line, area } = useMemo(

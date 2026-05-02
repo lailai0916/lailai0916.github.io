@@ -1,6 +1,8 @@
 import React from 'react';
 import { Icon } from '@iconify/react';
+import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Card from '@site/src/components/laikit/Card';
+import { formatCompact } from '@site/src/utils/format';
 import styles from './MetricList.module.css';
 
 export interface MetricRow {
@@ -18,13 +20,6 @@ interface MetricListProps {
   formatValue?: (y: number) => string;
 }
 
-function defaultFormat(n: number): string {
-  return new Intl.NumberFormat('en', {
-    notation: 'compact',
-    maximumFractionDigits: 1,
-  }).format(n);
-}
-
 export default function MetricList({
   title,
   icon,
@@ -32,8 +27,11 @@ export default function MetricList({
   loading,
   emptyText,
   renderLabel,
-  formatValue = defaultFormat,
+  formatValue,
 }: MetricListProps) {
+  const { i18n } = useDocusaurusContext();
+  const format =
+    formatValue ?? ((n: number) => formatCompact(n, i18n.currentLocale));
   const max = items.length > 0 ? Math.max(...items.map((i) => i.y), 1) : 1;
 
   return (
@@ -64,7 +62,7 @@ export default function MetricList({
                   <span className={styles.label}>
                     {renderLabel ? renderLabel(item.x) : item.x}
                   </span>
-                  <span className={styles.value}>{formatValue(item.y)}</span>
+                  <span className={styles.value}>{format(item.y)}</span>
                 </li>
               );
             })}

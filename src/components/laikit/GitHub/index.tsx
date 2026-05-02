@@ -1,6 +1,7 @@
 import React, { useEffect, useMemo, useState } from 'react';
 import clsx from 'clsx';
 import Card from '@site/src/components/laikit/Card';
+import { formatCompact } from '@site/src/utils/format';
 import styles from './styles.module.css';
 
 type GitHubProps = {
@@ -27,16 +28,6 @@ type GitHubRepoData = {
   license?: { spdx_id?: string | null } | null;
   owner?: { avatar_url?: string | null } | null;
 };
-
-function compactNumber(n?: number) {
-  if (typeof n !== 'number' || Number.isNaN(n)) return '0';
-  return Intl.NumberFormat('en-US', {
-    notation: 'compact',
-    maximumFractionDigits: 1,
-  })
-    .format(n)
-    .replace(/ /g, '');
-}
 
 function stripGitHubEmojiShortcodes(text?: string | null) {
   if (!text) return '';
@@ -97,8 +88,8 @@ export default function GitHub(props: GitHubProps) {
   const href = `https://github.com/${owner}/${repoName}`;
   const description =
     stripGitHubEmojiShortcodes(data?.description) || 'Description not set';
-  const stars = compactNumber(data?.stargazers_count ?? 0);
-  const forks = compactNumber(data?.forks ?? 0);
+  const stars = formatCompact(data?.stargazers_count ?? 0);
+  const forks = formatCompact(data?.forks ?? 0);
   const licenseId = data?.license?.spdx_id;
   const hasLicense = !!licenseId && licenseId !== 'NOASSERTION';
   const language = data?.language;

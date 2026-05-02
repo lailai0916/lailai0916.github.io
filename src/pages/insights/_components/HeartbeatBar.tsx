@@ -104,9 +104,8 @@ export default function HeartbeatBar({
   const [hoverIdx, setHoverIdx] = useState<number | null>(null);
   const [wrapRef, fitSlots] = useResponsiveSlots(slots);
   const {
-    i18n: { currentLocale },
+    i18n: { currentLocale: locale },
   } = useDocusaurusContext();
-  const locale = currentLocale === 'zh-Hans' ? 'zh' : 'en';
 
   const effectiveSlots = Math.min(slots, fitSlots);
 
