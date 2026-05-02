@@ -6,6 +6,7 @@ export interface KumaMonitor {
   name: string;
   sendUrl?: number;
   type?: string;
+  url?: string;
 }
 
 export interface KumaPublicGroup {

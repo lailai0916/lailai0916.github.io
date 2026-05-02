@@ -45,9 +45,9 @@ const MODIFICATION = translate({
   message: 'Live <b>Insights</b>',
 });
 
-function formatCompact(n: number): string {
+function formatCompact(n: number, locale?: string): string {
   if (!Number.isFinite(n)) return '–';
-  return new Intl.NumberFormat('en', {
+  return new Intl.NumberFormat(locale, {
     notation: 'compact',
     maximumFractionDigits: 1,
   }).format(Math.round(n));
@@ -149,8 +149,14 @@ function HeroMetric({
 
 function HeroGrid({ range }: { range: InsightsRange }) {
   const { data, status } = useUmamiStats(range);
+  const {
+    i18n: { currentLocale },
+  } = useDocusaurusContext();
+  const numberLocale = currentLocale === 'zh-Hans' ? 'zh' : 'en';
   const loading = status === 'loading';
   const errored = status === 'error';
+
+  const compact = (n: number) => formatCompact(n, numberLocale);
 
   const specs: MetricSpec[] = [
     {
@@ -159,7 +165,7 @@ function HeroGrid({ range }: { range: InsightsRange }) {
         id: 'pages.insights.metric.pageviews',
         message: 'Pageviews',
       }),
-      format: formatCompact,
+      format: compact,
     },
     {
       key: 'visitors',
@@ -167,7 +173,7 @@ function HeroGrid({ range }: { range: InsightsRange }) {
         id: 'pages.insights.metric.visitors',
         message: 'Visitors',
       }),
-      format: formatCompact,
+      format: compact,
     },
     {
       key: 'visits',
@@ -175,7 +181,7 @@ function HeroGrid({ range }: { range: InsightsRange }) {
         id: 'pages.insights.metric.visits',
         message: 'Visits',
       }),
-      format: formatCompact,
+      format: compact,
     },
     {
       key: 'avgVisit',

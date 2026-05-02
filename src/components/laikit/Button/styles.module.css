@@ -20,7 +20,7 @@
 
 .button:focus-visible {
   outline: none;
-  box-shadow: 0 0 0 3px rgba(var(--ifm-color-primary-rgb), 0.24);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--ifm-color-primary) 24%, transparent);
 }
 
 .button:disabled,

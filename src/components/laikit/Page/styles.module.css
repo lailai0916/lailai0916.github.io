@@ -51,3 +51,12 @@
     align-items: flex-start;
   }
 }
+
+@media (max-width: 360px) {
+  .mainTitle {
+    font-size: clamp(1.4rem, 6vw, 1.8rem);
+  }
+  .mainDescription {
+    font-size: 0.92rem;
+  }
+}
