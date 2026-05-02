@@ -270,6 +270,18 @@ function RangeBar({
   );
 }
 
+const COUNTRY_NAME_OVERRIDES: Record<string, Record<string, string>> = {
+  TW: { en: 'Taiwan', zh: '台湾' },
+};
+
+function countryName(code: string, lang: string): string {
+  return (
+    COUNTRY_NAME_OVERRIDES[code]?.[lang] ??
+    countries.getName(code, lang) ??
+    code
+  );
+}
+
 function flagImageUrl(code: string): string {
   return `https://analytics.lailai.one/images/country/${code.toLowerCase()}.png`;
 }
@@ -379,7 +391,7 @@ function MetricsGrid({ range }: { range: InsightsRange }) {
               aria-hidden="true"
               loading="lazy"
             />
-            <span>{countries.getName(code, lang) || code}</span>
+            <span>{countryName(code, lang)}</span>
           </>
         )}
       />

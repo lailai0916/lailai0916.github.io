@@ -39,7 +39,5 @@ export function PageContent({
   className?: string;
   children: ReactNode;
 }) {
-  return (
-    <Tag className={clsx(styles.pageContent, className)}>{children}</Tag>
-  );
+  return <Tag className={clsx(styles.pageContent, className)}>{children}</Tag>;
 }

@@ -181,14 +181,18 @@ export default function Sparkline({
 
   const spanDays =
     data.length > 1
-      ? (parseDate(data[lastIndex].x).getTime() - parseDate(data[0].x).getTime()) /
+      ? (parseDate(data[lastIndex].x).getTime() -
+          parseDate(data[0].x).getTime()) /
         86400000
       : 0;
 
   const onPointerMove = (e: React.PointerEvent<HTMLDivElement>) => {
     if (!containerRef.current || values.length === 0) return;
     const rect = containerRef.current.getBoundingClientRect();
-    const ratio = Math.max(0, Math.min(1, (e.clientX - rect.left) / rect.width));
+    const ratio = Math.max(
+      0,
+      Math.min(1, (e.clientX - rect.left) / rect.width)
+    );
     setHoverIdx(Math.round(ratio * lastIndex));
   };
   const onPointerLeave = () => setHoverIdx(null);

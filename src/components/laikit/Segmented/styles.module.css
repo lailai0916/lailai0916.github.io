@@ -76,7 +76,8 @@ html[data-theme='dark'] .item:hover {
 }
 
 .item:focus-visible {
-  box-shadow: 0 0 0 2px color-mix(in srgb, var(--ifm-color-primary) 40%, transparent);
+  box-shadow: 0 0 0 2px
+    color-mix(in srgb, var(--ifm-color-primary) 40%, transparent);
 }
 
 .itemActive,
