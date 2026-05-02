@@ -26,7 +26,7 @@ function useTypewriter(words: string[]) {
     if (!deleting && text.length < current.length) {
       timer = setTimeout(() => {
         setText(current.slice(0, text.length + 1));
-      }, 120);
+      }, 140);
     } else if (!deleting && text.length === current.length) {
       timer = setTimeout(() => {
         setDeleting(true);
@@ -39,7 +39,7 @@ function useTypewriter(words: string[]) {
       timer = setTimeout(() => {
         setDeleting(false);
         setIndex((prev) => (prev + 1) % words.length);
-      }, 240);
+      }, 300);
     }
 
     return () => clearTimeout(timer);
