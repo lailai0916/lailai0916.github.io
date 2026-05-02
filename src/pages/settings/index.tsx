@@ -375,8 +375,8 @@ function QuickActions() {
     localStorage.removeItem('theme');
     localStorage.removeItem('global-font-size');
     localStorage.removeItem('global-line-height');
-    localStorage.removeItem('settings-notifications');
     localStorage.removeItem('settings-experimental');
+    localStorage.removeItem('ifm-theme-colors');
     window.location.reload();
   }
 
