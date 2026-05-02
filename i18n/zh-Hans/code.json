@@ -95,6 +95,9 @@
   "pages.insights.metric.bounceRate": {
     "message": "跳出率"
   },
+  "pages.insights.range.24h": {
+    "message": "近 24 小时"
+  },
   "pages.insights.range.7d": {
     "message": "近 7 天"
   },

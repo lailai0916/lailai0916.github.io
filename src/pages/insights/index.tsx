@@ -232,7 +232,7 @@ function RangeBar({
     {
       value: 1,
       label: translate({
-        id: 'pages.insights.range.1d',
+        id: 'pages.insights.range.24h',
         message: '24 hours',
       }),
     },
