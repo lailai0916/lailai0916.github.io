@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import clsx from 'clsx';
 import Link from '@docusaurus/Link';
-import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import Layout from '@theme/Layout';
 import type { TOCItem } from '@docusaurus/mdx-loader';
@@ -9,10 +8,11 @@ import { Icon } from '@iconify/react';
 
 import { translate } from '@docusaurus/Translate';
 import { getAllBlogItems, getAllPostMetadata } from '@site/src/utils/blogData';
+import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
+import { formatCompact } from '@site/src/utils/format';
 import {
   BlogCard,
   TagChipList,
-  formatLongNumber,
   useAnalytics,
   type ChipItem,
 } from './Components';
@@ -229,7 +229,9 @@ function StatsCard() {
               <span className={styles.statLabel}>{item.label}</span>
             </div>
             <span className={styles.statValue}>
-              {formatLongNumber(item.value, i18n.currentLocale)}
+              {typeof item.value === 'number'
+                ? formatCompact(item.value, i18n.currentLocale)
+                : item.value}
             </span>
           </div>
         ))}
