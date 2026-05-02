@@ -260,22 +260,6 @@ function RangeBar({
   );
 }
 
-const COUNTRY_NAME_OVERRIDES: Record<string, Record<string, string>> = {
-  TW: { en: 'Taiwan', zh: '中华民国' },
-};
-
-function countryName(code: string, lang: string): string {
-  return (
-    COUNTRY_NAME_OVERRIDES[code]?.[lang] ??
-    countries.getName(code, lang) ??
-    code
-  );
-}
-
-function flagImageUrl(code: string): string {
-  return `https://analytics.lailai.one/images/country/${code.toLowerCase()}.png`;
-}
-
 function PageviewsChart({ range }: { range: InsightsRange }) {
   const { data, status } = useUmamiPageviewsSeries(range);
   const series = data?.pageviews ?? [];
@@ -376,12 +360,12 @@ function MetricsGrid({ range }: { range: InsightsRange }) {
           <>
             <img
               className={metricListStyles.flag}
-              src={flagImageUrl(code)}
+              src={`https://analytics.lailai.one/images/country/${code.toLowerCase()}.png`}
               alt=""
               aria-hidden="true"
               loading="lazy"
             />
-            <span>{countryName(code, lang)}</span>
+            <span>{countries.getName(code, lang) ?? code}</span>
           </>
         )}
       />
