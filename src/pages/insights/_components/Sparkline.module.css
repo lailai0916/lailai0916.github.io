@@ -51,44 +51,6 @@ html[data-theme='dark'] .grid {
   pointer-events: none;
 }
 
-.tooltip {
-  position: absolute;
-  top: -8px;
-  transform: translate(-50%, -100%);
-  background: var(--ifm-card-background-color);
-  border: 1px solid var(--ifm-color-emphasis-200);
-  border-radius: 8px;
-  padding: 0.4rem 0.65rem;
-  display: flex;
-  flex-direction: column;
-  gap: 0.1rem;
-  white-space: nowrap;
-  box-shadow:
-    0 1px 2px rgba(0, 0, 0, 0.06),
-    0 8px 24px rgba(0, 0, 0, 0.08);
-  pointer-events: none;
-  z-index: 2;
-}
-
-html[data-theme='dark'] .tooltip {
-  box-shadow:
-    0 1px 2px rgba(0, 0, 0, 0.4),
-    0 8px 24px rgba(0, 0, 0, 0.35);
-}
-
-.tooltipDate {
-  font-size: 0.72rem;
-  color: var(--ifm-color-emphasis-600);
-  letter-spacing: 0.02em;
-}
-
-.tooltipValue {
-  font-size: 0.95rem;
-  font-weight: 700;
-  color: var(--ifm-font-color-base);
-  font-variant-numeric: tabular-nums;
-}
-
 .xAxis {
   position: relative;
   width: 100%;

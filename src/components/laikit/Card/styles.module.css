@@ -8,7 +8,6 @@
 
 .linkCard {
   --link-card-accent: var(--ifm-color-primary);
-  --link-card-accent-rgb: var(--ifm-color-primary-rgb);
   display: block;
   color: inherit;
   text-decoration: none;
@@ -36,12 +35,12 @@
 
 .linkCard:focus-visible .card {
   box-shadow:
-    0 0 0 3px rgba(var(--link-card-accent-rgb), 0.18),
+    0 0 0 3px color-mix(in srgb, var(--link-card-accent) 18%, transparent),
     0 6px 16px rgba(0, 0, 0, 0.06);
 }
 
 html[data-theme='dark'] .linkCard:focus-visible .card {
   box-shadow:
-    0 0 0 3px rgba(var(--link-card-accent-rgb), 0.24),
+    0 0 0 3px color-mix(in srgb, var(--link-card-accent) 24%, transparent),
     0 6px 16px rgba(0, 0, 0, 0.06);
 }

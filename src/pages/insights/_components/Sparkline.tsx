@@ -1,6 +1,7 @@
 import React, { useId, useMemo, useRef, useState } from 'react';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import type { SeriesPoint } from '@site/src/hooks/useUmamiPageviewsSeries';
+import Tooltip from '@site/src/components/laikit/Tooltip';
 import styles from './Sparkline.module.css';
 
 type SparklineUnit = 'hour' | '6h' | 'day' | 'week';
@@ -124,8 +125,8 @@ function formatTooltipDate(
   return formatYMD(d, locale);
 }
 
-function formatCompact(n: number): string {
-  return new Intl.NumberFormat('en', {
+function formatCompact(n: number, locale: string): string {
+  return new Intl.NumberFormat(locale, {
     notation: 'compact',
     maximumFractionDigits: 1,
   }).format(n);
@@ -295,17 +296,14 @@ export default function Sparkline({
         </svg>
 
         {hoverIdx !== null && (
-          <div
-            className={styles.tooltip}
-            style={{ left: `${tooltipLeftPct}%` }}
-          >
-            <span className={styles.tooltipDate}>
+          <Tooltip leftPct={tooltipLeftPct}>
+            <Tooltip.Label>
               {formatTooltipDate(data[activeIdx].x, unit, locale)}
-            </span>
-            <span className={styles.tooltipValue}>
-              {formatCompact(values[activeIdx])}
-            </span>
-          </div>
+            </Tooltip.Label>
+            <Tooltip.Value>
+              {formatCompact(values[activeIdx], locale)}
+            </Tooltip.Value>
+          </Tooltip>
         )}
       </div>
 

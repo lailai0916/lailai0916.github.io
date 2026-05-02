@@ -14,21 +14,21 @@
 .accent {
   background: linear-gradient(
     135deg,
-    rgba(var(--ifm-color-primary-rgb), 0.16),
-    rgba(var(--ifm-color-primary-rgb), 0.08)
+    color-mix(in srgb, var(--ifm-color-primary) 16%, transparent),
+    color-mix(in srgb, var(--ifm-color-primary) 8%, transparent)
   );
   color: var(--ifm-color-primary);
-  border: 1px solid rgba(var(--ifm-color-primary-rgb), 0.18);
+  border: 1px solid color-mix(in srgb, var(--ifm-color-primary) 18%, transparent);
 }
 
 html[data-theme='dark'] .accent {
   background: linear-gradient(
     135deg,
-    rgba(var(--ifm-color-primary-rgb), 0.22),
-    rgba(var(--ifm-color-primary-rgb), 0.1)
+    color-mix(in srgb, var(--ifm-color-primary) 22%, transparent),
+    color-mix(in srgb, var(--ifm-color-primary) 10%, transparent)
   );
   color: var(--ifm-color-primary-light);
-  border-color: rgba(var(--ifm-color-primary-rgb), 0.28);
+  border-color: color-mix(in srgb, var(--ifm-color-primary) 28%, transparent);
 }
 
 /* Neutral variant for stat/metric icons. */

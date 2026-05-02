@@ -17,10 +17,20 @@
 
   --global-font-size: 16px;
   --global-line-height: 1.65;
+
+  --lk-color-up: #1a8754;
+  --lk-color-down: #d93838;
+  --lk-color-pending: #f0a52a;
+  --lk-color-maintenance: #5a8dee;
 }
 
 [data-theme='dark'] {
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+
+  --lk-color-up: #34c77b;
+  --lk-color-down: #ff6b6b;
+  --lk-color-pending: #ffb84a;
+  --lk-color-maintenance: #7aa6ff;
 }
 
 .header-github-link::before {

@@ -17,7 +17,7 @@
 
 .heroGrid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(180px, 100%), 1fr));
   gap: 1rem;
 }
 
@@ -57,23 +57,15 @@
 }
 
 .heroDeltaUp {
-  color: #1a8754;
+  color: var(--lk-color-up);
 }
 
 .heroDeltaDown {
-  color: #d93838;
+  color: var(--lk-color-down);
 }
 
 .heroDeltaFlat {
   color: var(--ifm-color-emphasis-500);
-}
-
-html[data-theme='dark'] .heroDeltaUp {
-  color: #34c77b;
-}
-
-html[data-theme='dark'] .heroDeltaDown {
-  color: #ff6b6b;
 }
 
 .skeletonText {
@@ -86,12 +78,31 @@ html[data-theme='dark'] .heroDeltaDown {
 @media (max-width: 480px) {
   .heroGrid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.6rem;
   }
 }
 
 @media (max-width: 360px) {
   .heroGrid {
     grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .heroTile {
+    --card-padding: 0.9rem 1rem 0.75rem !important;
+  }
+  .chartCard {
+    --card-padding: 1rem 0.85rem 0.85rem !important;
+  }
+}
+
+@media (max-width: 360px) {
+  .heroTile {
+    --card-padding: 0.85rem 0.9rem 0.7rem !important;
+  }
+  .chartCard {
+    --card-padding: 0.85rem 0.7rem 0.7rem !important;
   }
 }
 
@@ -104,7 +115,7 @@ html[data-theme='dark'] .heroDeltaDown {
 
 .metricsGrid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
   gap: 1rem;
   margin-top: calc(1rem - clamp(2rem, 4vw, 3rem));
 }

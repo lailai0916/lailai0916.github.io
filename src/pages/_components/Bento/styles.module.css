@@ -159,8 +159,8 @@
   border-radius: 20px;
   background: linear-gradient(
     135deg,
-    rgba(var(--link-card-accent-rgb), 0.1),
-    rgba(var(--link-card-accent-rgb), 0.05)
+    color-mix(in srgb, var(--link-card-accent) 10%, transparent),
+    color-mix(in srgb, var(--link-card-accent) 5%, transparent)
   );
 }
 
@@ -327,7 +327,7 @@
 .statusDot {
   width: 8px;
   height: 8px;
-  background: #22c55e;
+  background: var(--lk-color-up);
   border-radius: 50%;
   animation: pulse 2s ease-in-out infinite;
 }
