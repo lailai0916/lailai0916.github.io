@@ -150,14 +150,6 @@ function HeroGrid({ range }: { range: InsightsRange }) {
 
   const specs: MetricSpec[] = [
     {
-      key: 'pageviews',
-      label: translate({
-        id: 'pages.insights.metric.pageviews',
-        message: 'Pageviews',
-      }),
-      format: compact,
-    },
-    {
       key: 'visitors',
       label: translate({
         id: 'pages.insights.metric.visitors',
@@ -174,12 +166,12 @@ function HeroGrid({ range }: { range: InsightsRange }) {
       format: compact,
     },
     {
-      key: 'avgVisit',
+      key: 'pageviews',
       label: translate({
-        id: 'pages.insights.metric.avgVisit',
-        message: 'Avg. Visit',
+        id: 'pages.insights.metric.pageviews',
+        message: 'Pageviews',
       }),
-      format: formatDuration,
+      format: compact,
     },
     {
       key: 'bounceRate',
@@ -189,6 +181,14 @@ function HeroGrid({ range }: { range: InsightsRange }) {
       }),
       format: formatPercent,
       invertDelta: true,
+    },
+    {
+      key: 'avgVisit',
+      label: translate({
+        id: 'pages.insights.metric.avgVisit',
+        message: 'Avg. Visit',
+      }),
+      format: formatDuration,
     },
   ];
 

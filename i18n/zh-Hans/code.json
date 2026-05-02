@@ -68,20 +68,20 @@
   "pages.insights.modification": {
     "message": "实时<b>洞察</b>"
   },
-  "pages.insights.metric.pageviews": {
-    "message": "浏览量"
-  },
   "pages.insights.metric.visitors": {
     "message": "访客数"
   },
   "pages.insights.metric.visits": {
     "message": "访问数"
   },
-  "pages.insights.metric.avgVisit": {
-    "message": "平均时长"
+  "pages.insights.metric.pageviews": {
+    "message": "浏览量"
   },
   "pages.insights.metric.bounceRate": {
     "message": "跳出率"
+  },
+  "pages.insights.metric.avgVisit": {
+    "message": "平均时长"
   },
   "pages.insights.range.24h": {
     "message": "近 24 小时"
