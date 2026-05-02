@@ -28,6 +28,7 @@ import Sparkline from './_components/Sparkline';
 import MetricList from './_components/MetricList';
 import metricListStyles from './_components/MetricList.module.css';
 import UptimeSection from './_components/UptimeSection';
+import SysStatusCard from './_components/SysStatusCard';
 import styles from './styles.module.css';
 
 countries.registerLocale(countriesEn);
@@ -385,6 +386,7 @@ export default function Insights(): ReactNode {
         <HeroGrid range={range} />
         <PageviewsChart range={range} />
         <MetricsGrid range={range} />
+        <SysStatusCard />
         <UptimeSection />
       </PageContent>
     </Layout>

@@ -98,6 +98,9 @@
   "pages.insights.chart.title": {
     "message": "浏览量趋势"
   },
+  "pages.insights.sysStatus.title": {
+    "message": "运行时快照"
+  },
   "pages.insights.metricList.pages": {
     "message": "热门页面"
   },
@@ -1072,5 +1075,8 @@
   "theme.common.skipToMainContent": {
     "message": "跳到主要内容",
     "description": "The skip to content label used for accessibility, allowing to rapidly navigate to main content with keyboard tab/enter navigation"
+  },
+  "pages.insights.sysStatus.srLabel": {
+    "message": "System status overview"
   }
 }
