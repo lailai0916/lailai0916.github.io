@@ -88,6 +88,11 @@ export const RESOURCE_LIST: ResourceCategoryItem[] = [
         description: 'AI 生成文本检测工具',
       },
       {
+        title: 'Not By AI',
+        href: 'https://notbyai.fyi',
+        description: '人类原创内容声明徽章',
+      },
+      {
         title: 'Google DeepMind',
         href: 'https://deepmind.com',
         description: 'AI 研究实验室与成果',
