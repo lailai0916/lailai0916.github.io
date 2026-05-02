@@ -174,35 +174,7 @@ function CategorySection({ category }: { category: ResourceCategoryItem }) {
   );
 }
 
-function ResourcesHeader() {
-  return (
-    <PageHeader>
-      <PageTitle title={MODIFICATION} description={DESCRIPTION} />
-      <DataCard
-        items={[
-          {
-            value: RESOURCE_LIST.length,
-            label: translate({
-              id: 'pages.resources.datacard.label1',
-              message: 'Categories',
-            }),
-            icon: 'lucide:folder',
-          },
-          {
-            value: RESOURCE_LIST.flatMap((cat) => cat.resources).length,
-            label: translate({
-              id: 'pages.resources.datacard.label2',
-              message: 'Resources',
-            }),
-            icon: 'lucide:database',
-          },
-        ]}
-      />
-    </PageHeader>
-  );
-}
-
-function ResourcesMain() {
+export default function Resources(): ReactNode {
   const [activeCategory, setActiveCategory] = useState('all');
   const [searchQuery, setSearchQuery] = useState('');
 
@@ -211,47 +183,67 @@ function ResourcesMain() {
   }, [activeCategory, searchQuery]);
 
   return (
-    <PageContent className={styles.layout}>
-      <SearchBar value={searchQuery} onChange={setSearchQuery} />
-
-      <CategoryNav
-        categories={RESOURCE_LIST}
-        activeCategory={activeCategory}
-        onCategoryChange={setActiveCategory}
-      />
-
-      {filteredCategories.length > 0 ? (
-        filteredCategories.map((category) => (
-          <CategorySection key={category.title} category={category} />
-        ))
-      ) : (
-        <div className={styles.noResults}>
-          <p>
-            {translate(
-              {
-                id: 'pages.resources.noresults.description',
-                message: 'No resources found matching "{query}".',
-              },
-              { query: searchQuery }
-            )}
-          </p>
-          <Button variant="primary" rounded onClick={() => setSearchQuery('')}>
-            {translate({
-              id: 'pages.resources.noresults.clear',
-              message: 'Clear Search',
-            })}
-          </Button>
-        </div>
-      )}
-    </PageContent>
-  );
-}
-
-export default function Resources(): ReactNode {
-  return (
     <Layout title={TITLE} description={DESCRIPTION}>
-      <ResourcesHeader />
-      <ResourcesMain />
+      <PageHeader>
+        <PageTitle title={MODIFICATION} description={DESCRIPTION} />
+        <DataCard
+          items={[
+            {
+              value: RESOURCE_LIST.length,
+              label: translate({
+                id: 'pages.resources.datacard.label1',
+                message: 'Categories',
+              }),
+              icon: 'lucide:folder',
+            },
+            {
+              value: RESOURCE_LIST.flatMap((cat) => cat.resources).length,
+              label: translate({
+                id: 'pages.resources.datacard.label2',
+                message: 'Resources',
+              }),
+              icon: 'lucide:database',
+            },
+          ]}
+        />
+      </PageHeader>
+      <PageContent className={styles.layout}>
+        <SearchBar value={searchQuery} onChange={setSearchQuery} />
+
+        <CategoryNav
+          categories={RESOURCE_LIST}
+          activeCategory={activeCategory}
+          onCategoryChange={setActiveCategory}
+        />
+
+        {filteredCategories.length > 0 ? (
+          filteredCategories.map((category) => (
+            <CategorySection key={category.title} category={category} />
+          ))
+        ) : (
+          <div className={styles.noResults}>
+            <p>
+              {translate(
+                {
+                  id: 'pages.resources.noresults.description',
+                  message: 'No resources found matching "{query}".',
+                },
+                { query: searchQuery }
+              )}
+            </p>
+            <Button
+              variant="primary"
+              rounded
+              onClick={() => setSearchQuery('')}
+            >
+              {translate({
+                id: 'pages.resources.noresults.clear',
+                message: 'Clear Search',
+              })}
+            </Button>
+          </div>
+        )}
+      </PageContent>
     </Layout>
   );
 }

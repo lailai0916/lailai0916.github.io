@@ -435,22 +435,6 @@ function QuickActions() {
   );
 }
 
-function SettingsHeader() {
-  return (
-    <PageHeader>
-      <PageTitle title={MODIFICATION} description={DESCRIPTION} />
-      <DataCard
-        value={6}
-        label={translate({
-          id: 'pages.settings.datacard.label',
-          message: 'Settings',
-        })}
-        icon="lucide:settings"
-      />
-    </PageHeader>
-  );
-}
-
 function LanguageSettings() {
   const {
     i18n: { currentLocale, locales, localeConfigs },
@@ -491,24 +475,28 @@ function LanguageSettings() {
   );
 }
 
-function SettingsContainer() {
-  return (
-    <PageContent className={styles.layout}>
-      <ThemeSettings />
-      <LanguageSettings />
-      <AccentColor />
-      <Typography />
-      <ExperimentalFeatures />
-      <QuickActions />
-    </PageContent>
-  );
-}
-
 export default function Settings(): ReactNode {
   return (
     <Layout title={TITLE} description={DESCRIPTION}>
-      <SettingsHeader />
-      <SettingsContainer />
+      <PageHeader>
+        <PageTitle title={MODIFICATION} description={DESCRIPTION} />
+        <DataCard
+          value={6}
+          label={translate({
+            id: 'pages.settings.datacard.label',
+            message: 'Settings',
+          })}
+          icon="lucide:settings"
+        />
+      </PageHeader>
+      <PageContent className={styles.layout}>
+        <ThemeSettings />
+        <LanguageSettings />
+        <AccentColor />
+        <Typography />
+        <ExperimentalFeatures />
+        <QuickActions />
+      </PageContent>
     </Layout>
   );
 }

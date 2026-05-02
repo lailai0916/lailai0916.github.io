@@ -7,7 +7,7 @@ import {
 } from '@site/src/components/laikit/Page';
 import DataCard from '@site/src/components/laikit/DataCard';
 import LinkCard from '@site/src/components/laikit/LinkCard';
-import { FriendItem, FRIEND_LIST } from '@site/src/data/friends';
+import { FRIEND_LIST } from '@site/src/data/friends';
 import { translate } from '@docusaurus/Translate';
 import styles from './styles.module.css';
 
@@ -24,51 +24,33 @@ const MODIFICATION = translate({
   message: 'My <b>Friends</b>',
 });
 
-function FriendCard({ friend }: { friend: FriendItem }) {
-  return (
-    <LinkCard
-      href={friend.href}
-      title={friend.title}
-      description={friend.description ?? friend.href}
-      image={friend.avatar}
-      imageVariant="avatar"
-      fallbackIcon="lucide:user"
-    />
-  );
-}
-
-function FriendsMain() {
-  return (
-    <PageContent className={styles.layout}>
-      {FRIEND_LIST.map((friend, index) => (
-        <FriendCard key={`${friend.title}-${index}`} friend={friend} />
-      ))}
-    </PageContent>
-  );
-}
-
-function FriendsHeader() {
-  const totalFriends = FRIEND_LIST.length;
-  return (
-    <PageHeader>
-      <PageTitle title={MODIFICATION} description={DESCRIPTION} />
-      <DataCard
-        value={totalFriends}
-        label={translate({
-          id: 'pages.friends.datacard.label',
-          message: 'Friends',
-        })}
-        icon="lucide:users"
-      />
-    </PageHeader>
-  );
-}
-
 export default function Friends(): ReactNode {
   return (
     <Layout title={TITLE} description={DESCRIPTION}>
-      <FriendsHeader />
-      <FriendsMain />
+      <PageHeader>
+        <PageTitle title={MODIFICATION} description={DESCRIPTION} />
+        <DataCard
+          value={FRIEND_LIST.length}
+          label={translate({
+            id: 'pages.friends.datacard.label',
+            message: 'Friends',
+          })}
+          icon="lucide:users"
+        />
+      </PageHeader>
+      <PageContent className={styles.layout}>
+        {FRIEND_LIST.map((friend, index) => (
+          <LinkCard
+            key={`${friend.title}-${index}`}
+            href={friend.href}
+            title={friend.title}
+            description={friend.description ?? friend.href}
+            image={friend.avatar}
+            imageVariant="avatar"
+            fallbackIcon="lucide:user"
+          />
+        ))}
+      </PageContent>
     </Layout>
   );
 }
