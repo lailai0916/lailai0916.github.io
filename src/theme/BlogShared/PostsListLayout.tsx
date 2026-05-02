@@ -10,6 +10,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 import { translate } from '@docusaurus/Translate';
 import IconText from '@site/src/components/laikit/IconText';
+import { formatBeijingDate } from '@site/src/utils/format';
 import MDXContent from '@theme/MDXContent';
 import styles from './styles.module.css';
 
@@ -91,7 +92,9 @@ function PostCard({ item }: PostCardProps) {
       </div>
       <div className={styles.postMeta}>
         <IconText icon="lucide:calendar" monochrome>
-          <time dateTime={metadata.date}>{metadata.date.slice(0, 10)}</time>
+          <time dateTime={metadata.date}>
+            {formatBeijingDate(metadata.date)}
+          </time>
         </IconText>
         {!!metadata.readingTime && (
           <>
