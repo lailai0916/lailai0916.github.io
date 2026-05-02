@@ -37,7 +37,7 @@ export default function MetricList({
   const max = items.length > 0 ? Math.max(...items.map((i) => i.y), 1) : 1;
 
   return (
-    <Card padding="1.5rem 1.25rem" className={styles.card}>
+    <Card padding="1.5rem 1.25rem 1.25rem" className={styles.card}>
       <header className={styles.head}>
         <Icon icon={icon} className={styles.icon} />
         <h3 className={styles.title}>{title}</h3>
@@ -45,7 +45,7 @@ export default function MetricList({
       <div className={styles.body}>
         {loading ? (
           <div className={styles.skeletonList}>
-            {Array.from({ length: 5 }).map((_, i) => (
+            {Array.from({ length: 8 }).map((_, i) => (
               <div key={i} className={styles.skeletonRow} />
             ))}
           </div>

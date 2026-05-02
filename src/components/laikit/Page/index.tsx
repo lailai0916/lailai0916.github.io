@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { type ElementType, type ReactNode } from 'react';
+import clsx from 'clsx';
 import Heading from '@theme/Heading';
 import styles from './styles.module.css';
 
@@ -26,5 +27,19 @@ export function PageHeader({ children }: { children: React.ReactNode }) {
     <div className={styles.headerSection}>
       <div className={styles.headerInner}>{children}</div>
     </div>
+  );
+}
+
+export function PageContent({
+  as: Tag = 'main',
+  className,
+  children,
+}: {
+  as?: ElementType;
+  className?: string;
+  children: ReactNode;
+}) {
+  return (
+    <Tag className={clsx(styles.pageContent, className)}>{children}</Tag>
   );
 }

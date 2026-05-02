@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { umamiFetchJson } from '@site/src/utils/umami';
 
-export type InsightsRange = 7 | 30 | 365;
+export type InsightsRange = 1 | 7 | 30 | 365;
 
 export interface UmamiStats {
   pageviews: number;
@@ -23,7 +23,10 @@ export function useUmamiStats(range: InsightsRange) {
 
   useEffect(() => {
     const controller = new AbortController();
-    const endAt = Date.now();
+    const endAt =
+      range === 1
+        ? Math.ceil(Date.now() / 3600_000) * 3600_000
+        : Date.now();
     const startAt = endAt - range * 24 * 60 * 60 * 1000;
 
     (async () => {
