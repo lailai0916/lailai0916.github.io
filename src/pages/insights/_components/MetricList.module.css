@@ -44,12 +44,20 @@
   display: flex;
   align-items: center;
   padding: 0.55rem 0.75rem;
-  border-radius: 10px;
   font-size: 0.92rem;
+}
+
+.row::before {
+  content: '';
+  position: absolute;
+  inset: 4px 0;
+  border-radius: 8px;
+  background: transparent;
+  pointer-events: none;
   transition: background 160ms ease;
 }
 
-.row:hover {
+.row:hover::before {
   background: var(--ifm-color-emphasis-100);
 }
 
@@ -70,6 +78,7 @@
   overflow: hidden;
   text-overflow: ellipsis;
   color: var(--ifm-color-emphasis-900);
+  font-weight: 500;
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
@@ -94,32 +103,20 @@
 .skeletonList {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 0.15rem;
 }
 
 .skeletonRow {
-  height: 32px;
-  border-radius: 10px;
-  background: linear-gradient(
-    90deg,
-    var(--ifm-color-emphasis-100) 0%,
-    var(--ifm-color-emphasis-200) 50%,
-    var(--ifm-color-emphasis-100) 100%
-  );
-  background-size: 200% 100%;
-  animation: shimmer 1.4s ease-in-out infinite;
-}
-
-@keyframes shimmer {
-  0% {
-    background-position: 200% 0;
-  }
-  100% {
-    background-position: -200% 0;
-  }
+  composes: skeleton from '../../../components/laikit/Skeleton/styles.module.css';
+  height: 42px;
+  border-radius: 8px;
 }
 
 .flag {
-  font-size: 1.05rem;
+  width: 20px;
+  height: 15px;
+  object-fit: cover;
+  border-radius: 2px;
   flex-shrink: 0;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.06);
 }

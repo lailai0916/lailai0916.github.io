@@ -1,6 +1,10 @@
 import React, { type ReactNode } from 'react';
 import Layout from '@theme/Layout';
-import { PageTitle, PageHeader } from '@site/src/components/laikit/Page';
+import {
+  PageTitle,
+  PageHeader,
+  PageContent,
+} from '@site/src/components/laikit/Page';
 import DataCard from '@site/src/components/laikit/DataCard';
 import LinkCard from '@site/src/components/laikit/LinkCard';
 import { FriendItem, FRIEND_LIST } from '@site/src/data/friends';
@@ -35,11 +39,11 @@ function FriendCard({ friend }: { friend: FriendItem }) {
 
 function FriendsMain() {
   return (
-    <div className={styles.container}>
+    <PageContent className={styles.layout}>
       {FRIEND_LIST.map((friend, index) => (
         <FriendCard key={`${friend.title}-${index}`} friend={friend} />
       ))}
-    </div>
+    </PageContent>
   );
 }
 

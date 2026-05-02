@@ -1,26 +1,5 @@
-/* Layout */
-
-.container {
+.layout {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
   gap: 1.5rem;
-
-  width: 100%;
-  max-width: 1200px;
-  margin: auto;
-  padding: 2rem;
-}
-
-/* Responsive */
-
-@media (max-width: 1199px) {
-  .container {
-    padding: 1.5rem;
-  }
-}
-
-@media (max-width: 768px) {
-  .container {
-    padding: 1rem;
-  }
 }

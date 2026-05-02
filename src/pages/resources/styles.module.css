@@ -1,25 +1,9 @@
 /* Layout */
 
-.container {
-  width: 100%;
-  max-width: 1200px;
-  margin: auto;
-  padding: 2rem;
+.layout {
   display: flex;
   flex-direction: column;
   gap: 2rem;
-}
-
-@media (max-width: 1199px) {
-  .container {
-    padding: 1.5rem;
-  }
-}
-
-@media (max-width: 768px) {
-  .container {
-    padding: 1rem;
-  }
 }
 
 /* Search & category nav */

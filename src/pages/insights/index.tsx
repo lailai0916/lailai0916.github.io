@@ -1,12 +1,18 @@
 import React, { type ReactNode, useState } from 'react';
-import clsx from 'clsx';
 import Layout from '@theme/Layout';
 import { translate } from '@docusaurus/Translate';
 import * as countries from 'i18n-iso-countries';
 import countriesEn from 'i18n-iso-countries/langs/en.json';
 import countriesZh from 'i18n-iso-countries/langs/zh.json';
-import { PageTitle, PageHeader } from '@site/src/components/laikit/Page';
+import {
+  PageTitle,
+  PageHeader,
+  PageContent,
+} from '@site/src/components/laikit/Page';
 import Card from '@site/src/components/laikit/Card';
+import Segmented, {
+  type SegmentedItem,
+} from '@site/src/components/laikit/Segmented';
 import {
   useUmamiStats,
   type InsightsRange,
@@ -16,6 +22,7 @@ import { useUmamiPageviewsSeries } from '@site/src/hooks/useUmamiPageviewsSeries
 import { useUmamiMetric } from '@site/src/hooks/useUmamiMetric';
 import { useAnimatedNumber } from '@site/src/hooks/useAnimatedNumber';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
+import { Icon } from '@iconify/react';
 import Sparkline from './_components/Sparkline';
 import MetricList from './_components/MetricList';
 import metricListStyles from './_components/MetricList.module.css';
@@ -125,14 +132,15 @@ function HeroMetric({
             : styles.heroValue
         }
       >
-        {loading ? '0' : spec.format(animated)}
+        {loading ? '     ' : spec.format(animated)}
       </span>
-      {!loading && delta != null && sign !== 'flat' && (
+      {loading ? (
+        <span className={styles.heroDeltaFlat}>&nbsp;</span>
+      ) : delta != null && sign !== 'flat' ? (
         <span className={positive ? styles.heroDeltaUp : styles.heroDeltaDown}>
           {sign === 'up' ? '↑' : '↓'} {Math.abs(delta * 100).toFixed(1)}%
         </span>
-      )}
-      {!loading && (delta == null || sign === 'flat') && (
+      ) : (
         <span className={styles.heroDeltaFlat}>—</span>
       )}
     </Card>
@@ -214,7 +222,14 @@ function RangeBar({
   range: InsightsRange;
   onChange: (r: InsightsRange) => void;
 }) {
-  const items: { value: InsightsRange; label: string }[] = [
+  const items: SegmentedItem<InsightsRange>[] = [
+    {
+      value: 1,
+      label: translate({
+        id: 'pages.insights.range.1d',
+        message: '24 hours',
+      }),
+    },
     {
       value: 7,
       label: translate({
@@ -239,37 +254,18 @@ function RangeBar({
   ];
   return (
     <div className={styles.rangeBar}>
-      <div className={styles.rangeTabs} role="tablist">
-        {items.map((item) => (
-          <button
-            key={item.value}
-            type="button"
-            role="tab"
-            aria-selected={range === item.value}
-            className={clsx(
-              styles.rangeTab,
-              range === item.value && styles.rangeTabActive
-            )}
-            onClick={() => onChange(item.value)}
-          >
-            {item.label}
-          </button>
-        ))}
-      </div>
+      <Segmented<InsightsRange>
+        value={range}
+        items={items}
+        onChange={onChange}
+        orientation="horizontal"
+      />
     </div>
   );
 }
 
-function flagEmoji(code: string): string {
-  if (!code || code.length !== 2) return '';
-  return String.fromCodePoint(
-    ...[...code.toUpperCase()].map((c) => c.charCodeAt(0) + 127397)
-  );
-}
-
-function capitalize(s: string): string {
-  if (!s) return s;
-  return s.charAt(0).toUpperCase() + s.slice(1);
+function flagImageUrl(code: string): string {
+  return `https://analytics.lailai.one/images/country/${code.toLowerCase()}.png`;
 }
 
 function PageviewsChart({ range }: { range: InsightsRange }) {
@@ -278,19 +274,30 @@ function PageviewsChart({ range }: { range: InsightsRange }) {
   const loading = status === 'loading';
 
   return (
-    <section className={styles.chartSection}>
-      <header className={styles.chartHead}>
-        <h2 className={styles.sectionTitle}>
+    <Card padding="1.5rem 1.25rem 1.25rem" className={styles.chartCard}>
+      <header className={metricListStyles.head}>
+        <Icon icon="lucide:line-chart" className={metricListStyles.icon} />
+        <h3 className={metricListStyles.title}>
           {translate({
             id: 'pages.insights.chart.title',
             message: 'Pageviews over time',
           })}
-        </h2>
+        </h3>
       </header>
-      <Card padding="1.25rem">
-        <Sparkline data={series} loading={loading} />
-      </Card>
-    </section>
+      <Sparkline
+        data={series}
+        loading={loading}
+        unit={
+          range === 1
+            ? 'hour'
+            : range === 7
+              ? '6h'
+              : range === 30
+                ? 'day'
+                : 'week'
+        }
+      />
+    </Card>
   );
 }
 
@@ -303,7 +310,6 @@ function MetricsGrid({ range }: { range: InsightsRange }) {
   const pages = useUmamiMetric('path', range);
   const referrers = useUmamiMetric('referrer', range);
   const countriesMetric = useUmamiMetric('country', range);
-  const devices = useUmamiMetric('device', range);
 
   return (
     <section className={styles.metricsGrid}>
@@ -360,57 +366,35 @@ function MetricsGrid({ range }: { range: InsightsRange }) {
         })}
         renderLabel={(code) => (
           <>
-            <span className={metricListStyles.flag} aria-hidden="true">
-              {flagEmoji(code)}
-            </span>
+            <img
+              className={metricListStyles.flag}
+              src={flagImageUrl(code)}
+              alt=""
+              aria-hidden="true"
+              loading="lazy"
+            />
             <span>{countries.getName(code, lang) || code}</span>
           </>
         )}
-      />
-      <MetricList
-        title={translate({
-          id: 'pages.insights.metricList.devices',
-          message: 'Devices',
-        })}
-        icon="lucide:smartphone"
-        items={devices.items}
-        loading={devices.status === 'loading'}
-        emptyText={translate({
-          id: 'pages.insights.metricList.empty',
-          message: 'No data yet',
-        })}
-        renderLabel={(d) => <span>{capitalize(d)}</span>}
       />
     </section>
   );
 }
 
-function InsightsHeader() {
-  return (
-    <PageHeader>
-      <PageTitle title={MODIFICATION} description={DESCRIPTION} />
-    </PageHeader>
-  );
-}
-
-function InsightsMain() {
-  const [range, setRange] = useState<InsightsRange>(30);
-  return (
-    <main className={styles.container}>
-      <UptimeSection />
-      <RangeBar range={range} onChange={setRange} />
-      <HeroGrid range={range} />
-      <PageviewsChart range={range} />
-      <MetricsGrid range={range} />
-    </main>
-  );
-}
-
 export default function Insights(): ReactNode {
+  const [range, setRange] = useState<InsightsRange>(1);
   return (
     <Layout title={TITLE} description={DESCRIPTION}>
-      <InsightsHeader />
-      <InsightsMain />
+      <PageHeader>
+        <PageTitle title={MODIFICATION} description={DESCRIPTION} />
+        <RangeBar range={range} onChange={setRange} />
+      </PageHeader>
+      <PageContent className={styles.layout}>
+        <HeroGrid range={range} />
+        <PageviewsChart range={range} />
+        <MetricsGrid range={range} />
+        <UptimeSection />
+      </PageContent>
     </Layout>
   );
 }

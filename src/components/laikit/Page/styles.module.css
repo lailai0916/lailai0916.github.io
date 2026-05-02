@@ -1,3 +1,10 @@
+.pageContent {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: clamp(2rem, 4vw, 3rem) clamp(1rem, 3vw, 2rem);
+}
+
 .headerSection {
   background-color: var(--ifm-background-color);
   border-bottom: 1px solid var(--ifm-color-emphasis-200);

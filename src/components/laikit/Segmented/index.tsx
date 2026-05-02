@@ -13,6 +13,7 @@ interface SegmentedProps<T> {
   value: T;
   items: SegmentedItem<T>[];
   onChange: (value: T) => void;
+  orientation?: 'vertical' | 'horizontal';
   className?: string;
 }
 
@@ -20,10 +21,17 @@ export default function Segmented<T>({
   value,
   items,
   onChange,
+  orientation = 'vertical',
   className,
 }: SegmentedProps<T>) {
   return (
-    <div className={clsx(styles.segmented, className)}>
+    <div
+      className={clsx(
+        styles.segmented,
+        orientation === 'horizontal' && styles.horizontal,
+        className
+      )}
+    >
       {items.map((item) => (
         <button
           key={String(item.value ?? '__null__')}

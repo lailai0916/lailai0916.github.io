@@ -22,7 +22,11 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import { usePersistentState } from '@site/src/hooks/usePersistentState';
 import { useThemeColors } from '@site/src/hooks/useThemeColors';
 import { Icon } from '@iconify/react';
-import { PageTitle, PageHeader } from '@site/src/components/laikit/Page';
+import {
+  PageTitle,
+  PageHeader,
+  PageContent,
+} from '@site/src/components/laikit/Page';
 import styles from './styles.module.css';
 
 const TITLE = translate({
@@ -489,14 +493,14 @@ function LanguageSettings() {
 
 function SettingsContainer() {
   return (
-    <div className={styles.container}>
+    <PageContent className={styles.layout}>
       <ThemeSettings />
       <LanguageSettings />
       <AccentColor />
       <Typography />
       <ExperimentalFeatures />
       <QuickActions />
-    </div>
+    </PageContent>
   );
 }
 

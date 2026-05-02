@@ -8,6 +8,39 @@
   border-radius: 14px;
 }
 
+.horizontal {
+  display: inline-flex;
+  flex-direction: row;
+  gap: 0.25rem;
+}
+
+.horizontal .item {
+  text-align: center;
+  padding: 0.5rem 1rem;
+}
+
+.horizontal .label {
+  flex: none;
+}
+
+@media (max-width: 480px) {
+  .horizontal {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 0.35rem;
+  }
+
+  .horizontal .item {
+    text-align: left;
+    padding: 0.6rem 0.85rem;
+  }
+
+  .horizontal .label {
+    flex: 1;
+  }
+}
+
 html[data-theme='dark'] .segmented {
   background: rgba(255, 255, 255, 0.03);
   border-color: var(--ifm-color-emphasis-200);

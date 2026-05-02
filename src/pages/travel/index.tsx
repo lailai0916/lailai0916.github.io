@@ -1,6 +1,10 @@
 import React, { type ReactNode } from 'react';
 import Layout from '@theme/Layout';
-import { PageTitle, PageHeader } from '@site/src/components/laikit/Page';
+import {
+  PageTitle,
+  PageHeader,
+  PageContent,
+} from '@site/src/components/laikit/Page';
 import DataCard from '@site/src/components/laikit/DataCard';
 import TravelTimeline from '@site/src/pages/travel/_components/Timeline';
 import TravelMap from '@site/src/pages/travel/_components/Map';
@@ -57,8 +61,10 @@ export default function Travel(): ReactNode {
   return (
     <Layout title={TITLE} description={DESCRIPTION}>
       <TravelHeader />
-      <TravelMap />
-      <TravelTimeline />
+      <PageContent>
+        <TravelMap />
+        <TravelTimeline />
+      </PageContent>
     </Layout>
   );
 }

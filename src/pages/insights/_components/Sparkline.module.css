@@ -1,8 +1,16 @@
+.wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
 .sparkline {
   position: relative;
   width: 100%;
-  overflow: hidden;
+  overflow: visible;
   border-radius: 14px;
+  cursor: crosshair;
 }
 
 .svg {
@@ -11,9 +19,21 @@
   display: block;
 }
 
+.grid {
+  stroke: var(--ifm-color-emphasis-300);
+  stroke-width: 1;
+  stroke-dasharray: 3 4;
+  opacity: 0.55;
+}
+
+html[data-theme='dark'] .grid {
+  stroke: var(--ifm-color-emphasis-400);
+  opacity: 0.4;
+}
+
 .line {
-  stroke-dasharray: 3000;
-  stroke-dashoffset: 3000;
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
   animation: draw 1100ms cubic-bezier(0.4, 0, 0.2, 1) forwards;
 }
 
@@ -23,43 +43,78 @@
   }
 }
 
-.pulse {
-  transform-origin: center;
-  transform-box: fill-box;
-  animation: pulse 2.4s ease-in-out infinite;
+.crosshair {
+  stroke: var(--ifm-color-emphasis-500);
+  stroke-width: 1;
+  stroke-dasharray: 4 4;
+  opacity: 0.7;
+  pointer-events: none;
 }
 
-@keyframes pulse {
-  0%,
-  100% {
-    transform: scale(1);
-    opacity: 0.18;
-  }
-  50% {
-    transform: scale(1.6);
-    opacity: 0;
-  }
+.tooltip {
+  position: absolute;
+  top: -8px;
+  transform: translate(-50%, -100%);
+  background: var(--ifm-card-background-color);
+  border: 1px solid var(--ifm-color-emphasis-200);
+  border-radius: 8px;
+  padding: 0.4rem 0.65rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+  white-space: nowrap;
+  box-shadow:
+    0 1px 2px rgba(0, 0, 0, 0.06),
+    0 8px 24px rgba(0, 0, 0, 0.08);
+  pointer-events: none;
+  z-index: 2;
+}
+
+html[data-theme='dark'] .tooltip {
+  box-shadow:
+    0 1px 2px rgba(0, 0, 0, 0.4),
+    0 8px 24px rgba(0, 0, 0, 0.35);
+}
+
+.tooltipDate {
+  font-size: 0.72rem;
+  color: var(--ifm-color-emphasis-600);
+  letter-spacing: 0.02em;
+}
+
+.tooltipValue {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--ifm-font-color-base);
+  font-variant-numeric: tabular-nums;
+}
+
+.xAxis {
+  position: relative;
+  width: 100%;
+  height: 1rem;
+}
+
+.xTick {
+  position: absolute;
+  transform: translateX(-50%);
+  font-size: 0.72rem;
+  color: var(--ifm-color-emphasis-600);
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+}
+
+.xTick:first-child {
+  transform: translateX(0);
+}
+
+.xTick:last-child {
+  transform: translateX(-100%);
 }
 
 .skeleton {
+  composes: skeleton from '../../../components/laikit/Skeleton/styles.module.css';
   width: 100%;
   height: 100%;
-  background: linear-gradient(
-    90deg,
-    var(--ifm-color-emphasis-100) 0%,
-    var(--ifm-color-emphasis-200) 50%,
-    var(--ifm-color-emphasis-100) 100%
-  );
-  background-size: 200% 100%;
   border-radius: 14px;
-  animation: shimmer 1.4s ease-in-out infinite;
-}
-
-@keyframes shimmer {
-  0% {
-    background-position: 200% 0;
-  }
-  100% {
-    background-position: -200% 0;
-  }
 }

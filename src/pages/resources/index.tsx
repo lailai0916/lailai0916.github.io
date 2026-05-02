@@ -2,7 +2,11 @@ import React, { type ReactNode, useState, useMemo } from 'react';
 import { Icon } from '@iconify/react';
 import Layout from '@theme/Layout';
 
-import { PageTitle, PageHeader } from '@site/src/components/laikit/Page';
+import {
+  PageTitle,
+  PageHeader,
+  PageContent,
+} from '@site/src/components/laikit/Page';
 import DataCard from '@site/src/components/laikit/DataCard';
 import LinkCard from '@site/src/components/laikit/LinkCard';
 import IconText from '@site/src/components/laikit/IconText';
@@ -207,7 +211,7 @@ function ResourcesMain() {
   }, [activeCategory, searchQuery]);
 
   return (
-    <div className={styles.container}>
+    <PageContent className={styles.layout}>
       <SearchBar value={searchQuery} onChange={setSearchQuery} />
 
       <CategoryNav
@@ -239,7 +243,7 @@ function ResourcesMain() {
           </Button>
         </div>
       )}
-    </div>
+    </PageContent>
   );
 }
 
