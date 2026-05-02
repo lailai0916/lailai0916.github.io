@@ -261,7 +261,7 @@ function RangeBar({
 }
 
 const COUNTRY_NAME_OVERRIDES: Record<string, Record<string, string>> = {
-  TW: { en: 'Taiwan', zh: '台湾' },
+  TW: { en: 'Taiwan', zh: '中华民国' },
 };
 
 function countryName(code: string, lang: string): string {
