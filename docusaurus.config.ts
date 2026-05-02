@@ -2,10 +2,26 @@ import { themes as prismThemes } from 'prism-react-renderer';
 import type { Config } from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
 
+import { execSync } from 'child_process';
 import remarkMath from 'remark-math';
 import rehypeKatex from 'rehype-katex';
 
 const defaultLocale = 'en';
+
+function safeGit(cmd: string, fallback = ''): string {
+  try {
+    return execSync(cmd, { stdio: ['ignore', 'pipe', 'ignore'] })
+      .toString()
+      .trim();
+  } catch {
+    return fallback;
+  }
+}
+
+const BUILD_TIME = new Date().toISOString();
+const GIT_SHA = safeGit('git rev-parse --short=8 HEAD', 'dev');
+const GIT_COUNT = safeGit('git rev-list --count HEAD', '0');
+const DEBUG_ID = `LAI#${GIT_SHA.toUpperCase()}.${GIT_COUNT}`;
 
 const config: Config = {
   title: "lailai's Home",
@@ -26,6 +42,11 @@ const config: Config = {
 
   trailingSlash: false,
   onBrokenLinks: 'throw',
+
+  customFields: {
+    buildTime: BUILD_TIME,
+    debugId: DEBUG_ID,
+  },
 
   i18n: {
     defaultLocale,
