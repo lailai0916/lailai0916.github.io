@@ -25,42 +25,36 @@ const MODIFICATION = translate({
   message: '<b>Travel</b> Record',
 });
 
-function TravelHeader() {
+export default function Travel(): ReactNode {
   const countryCount = new Set(getTravelCountryCodes(TRAVEL_LIST)).size;
   const yearCount =
     new Date().getFullYear() - parseInt(TRAVEL_LIST[0].title.substring(0, 4));
 
   return (
-    <PageHeader>
-      <PageTitle title={MODIFICATION} description={DESCRIPTION} />
-      <DataCard
-        items={[
-          {
-            value: countryCount,
-            label: translate({
-              id: 'pages.travel.datacard.label1',
-              message: 'Countries',
-            }),
-            icon: 'lucide:globe',
-          },
-          {
-            value: yearCount,
-            label: translate({
-              id: 'pages.travel.datacard.label2',
-              message: 'Years',
-            }),
-            icon: 'lucide:route',
-          },
-        ]}
-      />
-    </PageHeader>
-  );
-}
-
-export default function Travel(): ReactNode {
-  return (
     <Layout title={TITLE} description={DESCRIPTION}>
-      <TravelHeader />
+      <PageHeader>
+        <PageTitle title={MODIFICATION} description={DESCRIPTION} />
+        <DataCard
+          items={[
+            {
+              value: countryCount,
+              label: translate({
+                id: 'pages.travel.datacard.label1',
+                message: 'Countries',
+              }),
+              icon: 'lucide:globe',
+            },
+            {
+              value: yearCount,
+              label: translate({
+                id: 'pages.travel.datacard.label2',
+                message: 'Years',
+              }),
+              icon: 'lucide:route',
+            },
+          ]}
+        />
+      </PageHeader>
       <PageContent>
         <TravelMap />
         <TravelTimeline />
