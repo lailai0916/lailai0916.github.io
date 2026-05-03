@@ -3,7 +3,6 @@ import clsx from 'clsx';
 import Link from '@docusaurus/Link';
 import { translate } from '@docusaurus/Translate';
 import useBaseUrl from '@docusaurus/useBaseUrl';
-import { Icon } from '@iconify/react';
 import Card from '@site/src/components/laikit/Card';
 import styles from './styles.module.css';
 
@@ -65,22 +64,18 @@ export function BlogMenu() {
     {
       to: useBaseUrl('/blog'),
       label: translate({ id: 'blog.menu.latest', message: 'Latest' }),
-      icon: 'lucide:newspaper',
     },
     {
       to: useBaseUrl('/blog/archive'),
       label: translate({ id: 'blog.menu.archive', message: 'Archive' }),
-      icon: 'lucide:archive',
     },
     {
       to: useBaseUrl('/blog/tags'),
       label: translate({ id: 'blog.menu.tags', message: 'Tags' }),
-      icon: 'lucide:tag',
     },
     {
       to: useBaseUrl('/blog/authors'),
       label: translate({ id: 'blog.menu.authors', message: 'Authors' }),
-      icon: 'lucide:users-round',
     },
   ];
 
@@ -88,15 +83,8 @@ export function BlogMenu() {
     <Card padding="0.55rem 0.65rem">
       <nav className={styles.blogMenu}>
         {items.map((item) => (
-          <Link
-            key={item.to}
-            to={item.to}
-            aria-label={item.label}
-            title={item.label}
-            className={styles.blogMenuItem}
-          >
-            <Icon icon={item.icon} width="1em" height="1em" />
-            <span className={styles.blogMenuLabel}>{item.label}</span>
+          <Link key={item.to} to={item.to} className={styles.blogMenuItem}>
+            {item.label}
           </Link>
         ))}
       </nav>

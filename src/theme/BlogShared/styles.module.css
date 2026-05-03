@@ -219,7 +219,6 @@
 .blogMenuItem {
   display: inline-flex;
   align-items: center;
-  gap: 0.35rem;
   padding: 0.35rem 0.6rem;
   border-radius: 8px;
   border: 1px solid var(--ifm-color-emphasis-200);
@@ -236,15 +235,6 @@
 .blogMenuItem:hover {
   border-color: var(--ifm-color-primary);
   color: inherit;
-}
-
-@media (max-width: 360px) {
-  .blogMenuLabel {
-    display: none;
-  }
-  .blogMenuItem {
-    padding: 0.35rem 0.5rem;
-  }
 }
 
 .tagList {
