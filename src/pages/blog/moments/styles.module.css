@@ -10,10 +10,19 @@
 }
 
 .title {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
   font-size: 1.6rem;
   font-weight: 700;
   line-height: 1.15;
   margin: 0;
+}
+
+.titleIcon {
+  font-size: 1.2rem;
+  color: var(--ifm-color-primary);
+  flex-shrink: 0;
 }
 
 .description {
@@ -22,34 +31,25 @@
   color: var(--ifm-color-emphasis-700);
 }
 
-.countChip {
+.countMeta {
   flex-shrink: 0;
   display: inline-flex;
-  align-items: baseline;
+  align-items: center;
   gap: 0.35rem;
-  padding: 0.35rem 0.75rem;
-  border-radius: 999px;
-  border: 1px solid var(--ifm-color-emphasis-200);
-  background: var(--ifm-color-emphasis-100);
-  color: var(--ifm-color-emphasis-700);
   font-size: 0.85rem;
+  color: var(--ifm-color-emphasis-700);
   line-height: 1;
 }
 
-.countChipIcon {
-  align-self: center;
+.countMetaIcon {
   color: var(--ifm-color-primary);
+  flex-shrink: 0;
 }
 
-.countChipNumber {
+.countMetaNumber {
   font-weight: 700;
-  font-size: 0.95rem;
-  color: var(--ifm-color-primary);
+  color: var(--ifm-color-emphasis-900);
   font-variant-numeric: tabular-nums;
-}
-
-.countChipLabel {
-  letter-spacing: 0.04em;
 }
 
 @media (max-width: 480px) {

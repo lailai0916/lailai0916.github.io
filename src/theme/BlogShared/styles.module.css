@@ -101,11 +101,6 @@
   padding: 0.62rem 0.7rem;
   border-radius: 12px;
   border: 1px solid var(--ifm-color-emphasis-200);
-  transition: border-color 160ms ease;
-}
-
-.statTile:hover {
-  border-color: var(--ifm-color-primary);
 }
 
 .statHead {
@@ -268,7 +263,8 @@
 .feedGrid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 0.5rem;
+  gap: 0.55rem;
+  margin-top: 0.55rem;
 }
 
 .feedTile {

@@ -15,18 +15,19 @@ export default function moments() {
       <BlogCard>
         <div className={styles.headerCard}>
           <div className={styles.headerInfo}>
-            <h1 className={styles.title}>{TITLE}</h1>
+            <h1 className={styles.title}>
+              <Icon
+                icon="lucide:sparkles"
+                className={styles.titleIcon}
+                aria-hidden="true"
+              />
+              {TITLE}
+            </h1>
             <p className={styles.description}>{DESCRIPTION}</p>
           </div>
-          <div className={styles.countChip}>
-            <Icon
-              icon="lucide:sparkles"
-              width="0.95em"
-              height="0.95em"
-              className={styles.countChipIcon}
-            />
-            <span className={styles.countChipNumber}>{MOMENT_LIST.length}</span>
-            <span className={styles.countChipLabel}>moments</span>
+          <div className={styles.countMeta}>
+            <span className={styles.countMetaNumber}>{MOMENT_LIST.length}</span>
+            <span>moments</span>
           </div>
         </div>
       </BlogCard>
