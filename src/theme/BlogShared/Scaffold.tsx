@@ -12,6 +12,7 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import { formatCompact } from '@site/src/utils/format';
 import {
   BlogCard,
+  BlogMenu,
   TagChipList,
   useAnalytics,
   type ChipItem,
@@ -336,7 +337,10 @@ export default function BlogScaffold({
   return (
     <Layout title={title} description={description}>
       <div className={styles.container}>
-        <main className={styles.main}>{children}</main>
+        <main className={styles.main}>
+          <BlogMenu />
+          {children}
+        </main>
         <aside className={styles.sidebar}>
           <AuthorCard />
           <>

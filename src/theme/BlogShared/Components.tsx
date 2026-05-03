@@ -1,6 +1,10 @@
 import React from 'react';
 import clsx from 'clsx';
 import Link from '@docusaurus/Link';
+import { useLocation } from '@docusaurus/router';
+import { translate } from '@docusaurus/Translate';
+import useBaseUrl from '@docusaurus/useBaseUrl';
+import { Icon } from '@iconify/react';
 import Card from '@site/src/components/laikit/Card';
 import styles from './styles.module.css';
 
@@ -54,5 +58,62 @@ export function TagChipList({ items }: { items: ChipItem[] }) {
         <TagChip key={item.to} item={item} />
       ))}
     </div>
+  );
+}
+
+export function BlogMenu() {
+  const { pathname } = useLocation();
+  const blogBase = useBaseUrl('/blog');
+  const archiveBase = useBaseUrl('/blog/archive');
+  const tagsBase = useBaseUrl('/blog/tags');
+  const authorsBase = useBaseUrl('/blog/authors');
+
+  const items = [
+    {
+      to: blogBase,
+      label: translate({ id: 'blog.menu.latest', message: 'Latest' }),
+      icon: 'lucide:newspaper',
+      active:
+        pathname === blogBase ||
+        pathname === `${blogBase}/` ||
+        pathname.startsWith(`${blogBase}/page/`),
+    },
+    {
+      to: archiveBase,
+      label: translate({ id: 'blog.menu.archive', message: 'Archive' }),
+      icon: 'lucide:archive',
+      active: pathname.startsWith(archiveBase),
+    },
+    {
+      to: tagsBase,
+      label: translate({ id: 'blog.menu.tags', message: 'Tags' }),
+      icon: 'lucide:tag',
+      active: pathname.startsWith(tagsBase),
+    },
+    {
+      to: authorsBase,
+      label: translate({ id: 'blog.menu.authors', message: 'Authors' }),
+      icon: 'lucide:users-round',
+      active: pathname.startsWith(authorsBase),
+    },
+  ];
+
+  return (
+    <Card>
+      <nav className={styles.blogMenu}>
+        {items.map((item) => (
+          <Link
+            key={item.to}
+            to={item.to}
+            className={clsx(styles.blogMenuItem, {
+              [styles.blogMenuItemActive]: item.active,
+            })}
+          >
+            <Icon icon={item.icon} width="1em" height="1em" />
+            <span>{item.label}</span>
+          </Link>
+        ))}
+      </nav>
+    </Card>
   );
 }

@@ -321,6 +321,18 @@
   "blog.sidebar.feed.title": {
     "message": "订阅"
   },
+  "blog.menu.latest": {
+    "message": "最新"
+  },
+  "blog.menu.archive": {
+    "message": "归档"
+  },
+  "blog.menu.tags": {
+    "message": "标签"
+  },
+  "blog.menu.authors": {
+    "message": "作者"
+  },
   "theme.tags.tagsPageTitle": {
     "message": "标签",
     "description": "The title of the tag list page"
