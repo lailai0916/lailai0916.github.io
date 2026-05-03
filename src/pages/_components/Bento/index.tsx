@@ -1,13 +1,10 @@
-import React, { useMemo } from 'react';
+import React from 'react';
 import Link from '@docusaurus/Link';
 import { translate } from '@docusaurus/Translate';
 import clsx from 'clsx';
 import useBaseUrl from '@docusaurus/useBaseUrl';
-import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import { Icon } from '@iconify/react';
 import { COMMUNITY_LIST } from '@site/src/data/community';
-import { getRecentBlogPosts } from '@site/src/utils/blogData';
-import { formatBeijingDate } from '@site/src/utils/format';
 import Card from '@site/src/components/laikit/Card';
 import styles from './styles.module.css';
 
@@ -49,7 +46,6 @@ function useTypewriter(words: string[]) {
 }
 
 export default function Bento() {
-  const { i18n } = useDocusaurusContext();
   const navItems = [
     {
       title: translate({
@@ -148,14 +144,35 @@ export default function Bento() {
     },
     { article: roleArticle }
   );
-  const latestPost = useMemo(() => getRecentBlogPosts(1)[0] ?? null, []);
-  const latestPostDate = latestPost
-    ? formatBeijingDate(latestPost.date, i18n.currentLocale, {
-        year: 'numeric',
-        month: 'long',
-        day: 'numeric',
-      })
-    : '';
+  const localTime = new Intl.DateTimeFormat('en-GB', {
+    timeZone: 'Asia/Shanghai',
+    hour: '2-digit',
+    minute: '2-digit',
+    hour12: false,
+  }).format(new Date());
+  const infoItems = [
+    {
+      key: 'location',
+      value: translate({
+        id: 'blog.sidebar.info.locationValue',
+        message: 'Hangzhou, China',
+      }),
+      icon: 'lucide:map-pin',
+      href: 'https://maps.app.goo.gl/pjqPSMzrVqRcEM6J8',
+    },
+    {
+      key: 'time',
+      value: `${localTime} (UTC+08:00)`,
+      icon: 'lucide:clock',
+      href: 'https://time.is/UTC+8',
+    },
+    {
+      key: 'fingerprint',
+      value: '91A7 EF5A 1391 223E',
+      icon: 'lucide:key-round',
+      href: 'https://github.com/lailai0916.gpg',
+    },
+  ];
 
   return (
     <section className={styles.hero}>
@@ -222,34 +239,17 @@ export default function Bento() {
             ))}
           </div>
         </Card>
-        <Card className={styles.cardLatestPost} padding="1.25rem">
-          {latestPost ? (
-            <Link to={latestPost.permalink} className={styles.latestPostLink}>
-              <div className={styles.latestPostHead}>
-                <span className={styles.latestPostLabel}>
-                  {translate({
-                    id: 'home.bento.latestPost',
-                    message: 'Latest Post',
-                  })}
-                </span>
-              </div>
-              <p className={styles.latestPostTitle}>{latestPost.title}</p>
-              <p className={styles.latestPostMeta}>
-                <Icon
-                  icon="lucide:calendar"
-                  className={styles.latestPostMetaIcon}
-                />
-                <span>{latestPostDate}</span>
-              </p>
-            </Link>
-          ) : (
-            <div className={styles.latestPostEmpty}>
-              {translate({
-                id: 'home.bento.noPosts',
-                message: 'No posts yet.',
-              })}
-            </div>
-          )}
+        <Card className={styles.cardInfo} padding="1.25rem">
+          <ul className={styles.infoList}>
+            {infoItems.map((item) => (
+              <li key={item.key} className={styles.infoRow}>
+                <Icon icon={item.icon} className={styles.infoRowIcon} />
+                <Link href={item.href} className={styles.infoRowValue}>
+                  {item.value}
+                </Link>
+              </li>
+            ))}
+          </ul>
         </Card>
       </div>
     </section>

@@ -276,20 +276,8 @@
   "blog.sidebar.toc.title": {
     "message": "目录"
   },
-  "blog.sidebar.info.location": {
-    "message": "位置"
-  },
   "blog.sidebar.info.locationValue": {
     "message": "中国杭州"
-  },
-  "blog.sidebar.info.localTime": {
-    "message": "本地时间"
-  },
-  "blog.sidebar.info.fingerprint": {
-    "message": "GPG 指纹"
-  },
-  "blog.sidebar.info.title": {
-    "message": "信息"
   },
   "blog.sidebar.stats.posts": {
     "message": "文章"
@@ -393,12 +381,6 @@
   },
   "home.bento.connect": {
     "message": "联系"
-  },
-  "home.bento.latestPost": {
-    "message": "最新文章"
-  },
-  "home.bento.noPosts": {
-    "message": "暂无文章。"
   },
   "home.blog.empty": {
     "message": "暂无文章，敬请期待更多内容..."

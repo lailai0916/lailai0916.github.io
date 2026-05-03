@@ -43,6 +43,7 @@ function AuthorCard() {
           className={styles.authorAvatar}
         />
         <div className={styles.authorName}>{author.name}</div>
+        <span className={styles.authorAccent} aria-hidden="true" />
         <div className={styles.authorDesc}>{author.title}</div>
       </div>
     </BlogCard>
@@ -96,80 +97,6 @@ function TocCard({ toc }: { toc: readonly TOCItem[] }) {
         </ul>
       </BlogCard>
     </div>
-  );
-}
-
-function InfoCard() {
-  const timeZone = 'Asia/Shanghai';
-  const localTime = new Intl.DateTimeFormat('en-GB', {
-    timeZone,
-    hour: '2-digit',
-    minute: '2-digit',
-    hour12: false,
-  }).format(new Date());
-  const infoItems = [
-    {
-      key: 'location',
-      label: translate({
-        id: 'blog.sidebar.info.location',
-        message: 'Location',
-      }),
-      value: translate({
-        id: 'blog.sidebar.info.locationValue',
-        message: 'Hangzhou, China',
-      }),
-      icon: 'lucide:map-pin',
-      href: 'https://maps.app.goo.gl/pjqPSMzrVqRcEM6J8',
-    },
-    {
-      key: 'time',
-      label: translate({
-        id: 'blog.sidebar.info.localTime',
-        message: 'Local Time',
-      }),
-      value: `${localTime} (UTC+08:00)`,
-      icon: 'lucide:clock',
-      href: 'https://time.is/UTC+8',
-    },
-    {
-      key: 'fingerprint',
-      label: translate({
-        id: 'blog.sidebar.info.fingerprint',
-        message: 'GPG Fingerprint',
-      }),
-      value: '91A7 EF5A 1391 223E',
-      icon: 'lucide:key-round',
-      href: 'https://github.com/lailai0916.gpg',
-    },
-  ];
-
-  return (
-    <BlogCard
-      title={translate({
-        id: 'blog.sidebar.info.title',
-        message: 'Information',
-      })}
-    >
-      <div className={styles.infoCard}>
-        {infoItems.map((item) => (
-          <Link key={item.key} href={item.href} className={styles.infoItem}>
-            <span className={styles.infoItemIcon}>
-              <Icon icon={item.icon} width="1.1em" height="1.1em" />
-            </span>
-            <span className={styles.infoItemText}>
-              <span className={styles.infoItemLabel}>{item.label}</span>
-              <span className={styles.infoItemValue}>{item.value}</span>
-            </span>
-            <Icon
-              icon="lucide:chevron-right"
-              width="0.95em"
-              height="0.95em"
-              className={styles.infoItemArrow}
-            />
-          </Link>
-        ))}
-      </div>
-    </BlogCard>
   );
 }
 
@@ -278,21 +205,27 @@ function TagsCard() {
 function FeedCard() {
   const feeds = [
     {
-      label: translate({
+      name: 'RSS',
+      icon: 'lucide:rss',
+      ariaLabel: translate({
         id: 'blog.sidebar.feed.rss',
         message: 'RSS Feed',
       }),
       href: useBaseUrl('/blog/rss.xml', { absolute: true }),
     },
     {
-      label: translate({
+      name: 'Atom',
+      icon: 'lucide:atom',
+      ariaLabel: translate({
         id: 'blog.sidebar.feed.atom',
         message: 'Atom Feed',
       }),
       href: useBaseUrl('/blog/atom.xml', { absolute: true }),
     },
     {
-      label: translate({
+      name: 'JSON',
+      icon: 'lucide:braces',
+      ariaLabel: translate({
         id: 'blog.sidebar.feed.json',
         message: 'JSON Feed',
       }),
@@ -307,14 +240,21 @@ function FeedCard() {
         message: 'Subscribe',
       })}
     >
-      <div className={styles.feedButtonGroup}>
+      <div className={styles.feedGrid}>
         {feeds.map((feed) => (
           <Link
             key={feed.href}
             href={feed.href}
-            className={clsx(styles.tagChip, styles.postInlineTag)}
+            aria-label={feed.ariaLabel}
+            className={styles.feedTile}
           >
-            {feed.label}
+            <Icon
+              icon={feed.icon}
+              width="1.2em"
+              height="1.2em"
+              className={styles.feedTileIcon}
+            />
+            <span className={styles.feedTileLabel}>{feed.name}</span>
           </Link>
         ))}
       </div>
@@ -349,11 +289,10 @@ export default function BlogScaffold({
               <TocCard toc={toc} />
             ) : (
               <>
-                <InfoCard />
                 <CalendarCard />
                 <StatsCard />
-                <FeedCard />
                 <TagsCard />
+                <FeedCard />
               </>
             )}
           </>
