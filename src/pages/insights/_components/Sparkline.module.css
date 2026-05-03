@@ -19,18 +19,6 @@
   display: block;
 }
 
-.grid {
-  stroke: var(--ifm-color-emphasis-300);
-  stroke-width: 1;
-  stroke-dasharray: 3 4;
-  opacity: 0.55;
-}
-
-html[data-theme='dark'] .grid {
-  stroke: var(--ifm-color-emphasis-400);
-  opacity: 0.4;
-}
-
 .line {
   stroke-dasharray: 1;
   stroke-dashoffset: 1;

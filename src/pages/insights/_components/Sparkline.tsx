@@ -164,7 +164,6 @@ export default function Sparkline({
       ? { x: xAt(activeIdx), y: yAt(values[activeIdx]) }
       : null;
 
-  const gridLines = [0.25, 0.5, 0.75].map((r) => padding + innerH * r);
   const tickIdxs =
     values.length === 0
       ? []
@@ -233,18 +232,6 @@ export default function Sparkline({
               />
             </linearGradient>
           </defs>
-
-          {gridLines.map((y, i) => (
-            <line
-              key={i}
-              x1={padding}
-              x2={width - padding}
-              y1={y}
-              y2={y}
-              className={styles.grid}
-              vectorEffect="non-scaling-stroke"
-            />
-          ))}
 
           <path d={area} fill={`url(#${gradientId})`} />
           <path
