@@ -11,28 +11,6 @@
   margin-top: calc(1rem - clamp(2rem, 4vw, 3rem));
 }
 
-/* subtle terminal-like grid */
-.card::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  background-image:
-    linear-gradient(
-      to right,
-      color-mix(in srgb, var(--lk-color-up) 4%, transparent) 1px,
-      transparent 1px
-    ),
-    linear-gradient(
-      to bottom,
-      color-mix(in srgb, var(--lk-color-up) 4%, transparent) 1px,
-      transparent 1px
-    );
-  background-size: 22px 22px;
-  opacity: 0.55;
-  mask-image: radial-gradient(ellipse at center, black 50%, transparent 95%);
-}
-
 .body {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
