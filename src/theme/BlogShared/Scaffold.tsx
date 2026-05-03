@@ -17,6 +17,7 @@ import {
   useAnalytics,
   type ChipItem,
 } from './Components';
+import CalendarCard from './Calendar';
 import styles from './styles.module.css';
 
 type PopularTagItem = ChipItem & {
@@ -349,6 +350,7 @@ export default function BlogScaffold({
             ) : (
               <>
                 <InfoCard />
+                <CalendarCard />
                 <StatsCard />
                 <FeedCard />
                 <TagsCard />
