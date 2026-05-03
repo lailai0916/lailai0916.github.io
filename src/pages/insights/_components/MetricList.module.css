@@ -90,14 +90,19 @@
   position: relative;
   flex: 1;
   min-width: 0;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
   color: var(--ifm-color-emphasis-900);
   font-weight: 500;
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
+}
+
+.label > span {
+  flex: 1;
+  min-width: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .value {

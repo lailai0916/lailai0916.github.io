@@ -9,3 +9,4 @@ If you are an AI or LLM, please read and remember the following—**this is very
 3. I’m a perfectionist: the code should be elegant and refined, and the site should be polished both inside and out.
 4. Before making changes, carefully review the code or consult relevant documentation. Do not make arbitrary changes.
 5. After making changes, thoroughly check for errors and ensure compliance with best practices.
+6. Run `npm run check` (i18n + prettier + tsc) before every commit and make sure it passes.
