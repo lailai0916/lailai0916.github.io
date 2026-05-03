@@ -69,7 +69,6 @@
   margin-top: 0.95rem;
   font-size: 1.5rem;
   font-weight: 700;
-  letter-spacing: -0.01em;
   line-height: 1.1;
 }
 
@@ -83,10 +82,8 @@
 }
 
 .authorDesc {
-  font-size: 0.78rem;
+  font-size: 0.85rem;
   font-weight: 500;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
   color: var(--ifm-color-emphasis-700);
 }
 
@@ -154,15 +151,15 @@
 }
 
 .blogMenu {
-  display: flex;
-  align-items: stretch;
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
   gap: 0.35rem;
-  flex-wrap: wrap;
 }
 
 .blogMenuItem {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   padding: 0.35rem 0.6rem;
   border-radius: 8px;
   border: 1px solid var(--ifm-color-emphasis-200);
@@ -256,6 +253,7 @@
   color: var(--ifm-color-emphasis-700);
   font-size: 0.9rem;
   white-space: nowrap;
+  font-family: var(--ifm-font-family-monospace);
 }
 
 .recentLink {
@@ -424,15 +422,6 @@
   margin-bottom: 0.85rem;
 }
 
-.calendarTitleAccent {
-  display: inline-block;
-  width: 3px;
-  height: 1rem;
-  border-radius: 2px;
-  background: var(--ifm-color-primary);
-  flex-shrink: 0;
-}
-
 .calendarTitle {
   font-weight: 700;
   line-height: 1;
@@ -487,7 +476,7 @@
 }
 
 .calendarGrid {
-  row-gap: 0.15rem;
+  row-gap: 0.1rem;
 }
 
 .calendarCell {
@@ -495,7 +484,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  aspect-ratio: 1 / 1;
+  aspect-ratio: 1.2 / 1;
   padding: 0;
   border: none;
   background: transparent;
@@ -508,7 +497,7 @@
 .calendarCellNum {
   position: relative;
   z-index: 1;
-  font-size: 0.88rem;
+  font-size: 0.78rem;
   line-height: 1;
 }
 
@@ -527,7 +516,7 @@
 
 .calendarCellDot {
   position: absolute;
-  bottom: 0.32rem;
+  bottom: 0.22rem;
   left: 50%;
   transform: translateX(-50%);
   width: 3px;
@@ -539,16 +528,12 @@
     background 160ms ease;
 }
 
-.calendarCellToday .calendarCellNum {
-  color: var(--ifm-color-primary);
-}
-
 .calendarCellSelected .calendarCellNum {
   color: var(--ifm-color-primary);
 }
 
 .calendarCellSelected .calendarCellDot {
-  width: 12px;
+  width: 10px;
   border-radius: 2px;
 }
 

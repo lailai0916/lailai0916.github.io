@@ -1,4 +1,5 @@
 import React from 'react';
+import { Icon } from '@iconify/react';
 import BlogScaffold from '@site/src/theme/BlogShared/Scaffold';
 import { BlogCard } from '@site/src/theme/BlogShared/Components';
 import { MOMENT_LIST } from '@site/src/data/moments';
@@ -12,14 +13,21 @@ export default function moments() {
   return (
     <BlogScaffold title={TITLE} description={DESCRIPTION}>
       <BlogCard>
-        <div className={styles.headerSection}>
-          <div>
+        <div className={styles.headerCard}>
+          <div className={styles.headerInfo}>
             <h1 className={styles.title}>{TITLE}</h1>
             <p className={styles.description}>{DESCRIPTION}</p>
           </div>
-          <div
-            className={styles.momentCount}
-          >{`${MOMENT_LIST.length} moments`}</div>
+          <div className={styles.countChip}>
+            <Icon
+              icon="lucide:sparkles"
+              width="0.95em"
+              height="0.95em"
+              className={styles.countChipIcon}
+            />
+            <span className={styles.countChipNumber}>{MOMENT_LIST.length}</span>
+            <span className={styles.countChipLabel}>moments</span>
+          </div>
         </div>
       </BlogCard>
       {MOMENT_LIST.map((moment) => (

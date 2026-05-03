@@ -67,11 +67,6 @@ export default function CalendarCard() {
     return map;
   }, [posts]);
 
-  const todayKey = useMemo(() => {
-    const now = new Date();
-    return toDateKey(now.getFullYear(), now.getMonth(), now.getDate());
-  }, []);
-
   const initial = useMemo(() => {
     const now = new Date();
     return { y: now.getFullYear(), m: now.getMonth() };
@@ -166,7 +161,6 @@ export default function CalendarCard() {
   return (
     <Card>
       <div className={styles.calendarHeader}>
-        <span className={styles.calendarTitleAccent} />
         <span className={styles.calendarTitle}>{monthLabel}</span>
         <div className={styles.calendarNav}>
           <button
@@ -206,7 +200,6 @@ export default function CalendarCard() {
         {cells.map((cell) => {
           const has = postsByDate.has(cell.dateKey);
           const isSelected = selected === cell.dateKey;
-          const isToday = cell.dateKey === todayKey;
           return (
             <button
               key={`${cell.y}-${cell.m}-${cell.d}`}
@@ -217,7 +210,6 @@ export default function CalendarCard() {
                 [styles.calendarCellMuted]: !cell.inMonth,
                 [styles.calendarCellHasPost]: has,
                 [styles.calendarCellSelected]: isSelected,
-                [styles.calendarCellToday]: isToday,
               })}
             >
               <span className={styles.calendarCellNum}>{cell.d}</span>

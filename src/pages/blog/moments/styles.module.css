@@ -1,39 +1,62 @@
-.headerSection {
+.headerCard {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  gap: clamp(0.5rem, 2vw, 1rem);
-  padding: clamp(0.75rem, 2vw, 1rem);
-
-  background-color: var(--ifm-color-primary);
-  color: #ffffff;
-  border-radius: 8px;
+  justify-content: space-between;
+  gap: 1rem;
 }
 
-@media (max-width: 768px) {
-  .headerSection {
-    flex-direction: column;
-    align-items: flex-start;
-  }
+.headerInfo {
+  min-width: 0;
 }
 
 .title {
-  font-size: clamp(1.5rem, 2vw + 1rem, 2rem);
+  font-size: 1.6rem;
+  font-weight: 700;
+  line-height: 1.15;
   margin: 0;
-  line-height: 1.2;
 }
 
 .description {
-  font-size: clamp(0.9rem, 0.3vw + 0.85rem, 1rem);
-  font-weight: 700;
-  opacity: 0.8;
-  margin: 0;
+  margin: 0.4rem 0 0;
+  font-size: 0.92rem;
+  color: var(--ifm-color-emphasis-700);
 }
 
-.momentCount {
-  font-size: clamp(1rem, 0.5vw + 0.9rem, 1.2rem);
+.countChip {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.35rem;
+  padding: 0.35rem 0.75rem;
+  border-radius: 999px;
+  border: 1px solid var(--ifm-color-emphasis-200);
+  background: var(--ifm-color-emphasis-100);
+  color: var(--ifm-color-emphasis-700);
+  font-size: 0.85rem;
+  line-height: 1;
+}
+
+.countChipIcon {
+  align-self: center;
+  color: var(--ifm-color-primary);
+}
+
+.countChipNumber {
   font-weight: 700;
-  opacity: 0.8;
+  font-size: 0.95rem;
+  color: var(--ifm-color-primary);
+  font-variant-numeric: tabular-nums;
+}
+
+.countChipLabel {
+  letter-spacing: 0.04em;
+}
+
+@media (max-width: 480px) {
+  .headerCard {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 }
 
 .imageContainer {

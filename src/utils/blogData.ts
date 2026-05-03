@@ -202,3 +202,50 @@ export function loadOfficialTags(locale?: string): TagAggregate[] {
   cachedOfficialTags.set(cacheKey, []);
   return [];
 }
+
+export type AuthorAggregate = {
+  key: string;
+  name?: string;
+  page?: { permalink: string };
+  count: number;
+};
+
+const cachedOfficialAuthors = new Map<string, AuthorAggregate[]>();
+
+export function loadOfficialAuthors(locale?: string): AuthorAggregate[] {
+  const cacheKey = getLocaleCacheKey(locale);
+  const cached = cachedOfficialAuthors.get(cacheKey);
+  if (cached) return cached;
+
+  const filePrefix = getLocaleFilePrefix(locale);
+  const basePattern = new RegExp(
+    `^\\.\/${filePrefix}blog-authors-[a-z0-9]+\\.json$`,
+    'i'
+  );
+
+  const ctx = (require as any).context(
+    '@generated/docusaurus-plugin-content-blog/default/p',
+    false,
+    /blog-authors-.*\.json$/
+  );
+  for (const key of ctx.keys()) {
+    if (!basePattern.test(key)) continue;
+    const mod = ctx(key);
+    const data = (mod && (mod.authors ?? mod.default?.authors)) as
+      | AuthorAggregate[]
+      | undefined;
+    if (Array.isArray(data)) {
+      cachedOfficialAuthors.set(cacheKey, data);
+      return data;
+    }
+  }
+
+  if (locale) {
+    const fallback = loadOfficialAuthors();
+    cachedOfficialAuthors.set(cacheKey, fallback);
+    return fallback;
+  }
+
+  cachedOfficialAuthors.set(cacheKey, []);
+  return [];
+}

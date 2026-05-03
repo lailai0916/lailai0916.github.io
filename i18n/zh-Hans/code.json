@@ -318,14 +318,17 @@
   "blog.sidebar.feed.title": {
     "message": "订阅"
   },
-  "blog.menu.latest": {
-    "message": "最新"
+  "blog.menu.blog": {
+    "message": "博客"
   },
   "blog.menu.archive": {
     "message": "归档"
   },
   "blog.menu.tags": {
     "message": "标签"
+  },
+  "blog.menu.moments": {
+    "message": "动态"
   },
   "blog.menu.authors": {
     "message": "作者"
@@ -336,6 +339,9 @@
   },
   "blog.pages.tags.tagSelect": {
     "message": "标签"
+  },
+  "blog.pages.authors.authorSelect": {
+    "message": "作者"
   },
   "home.bento.nav.contest": {
     "message": "竞赛"
