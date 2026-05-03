@@ -309,6 +309,15 @@
   "blog.sidebar.tags.title": {
     "message": "热门标签"
   },
+  "blog.sidebar.calendar.prev": {
+    "message": "上个月"
+  },
+  "blog.sidebar.calendar.next": {
+    "message": "下个月"
+  },
+  "blog.sidebar.calendar.empty": {
+    "message": "暂无文章"
+  },
   "blog.sidebar.feed.rss": {
     "message": "RSS 订阅"
   },

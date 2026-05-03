@@ -437,6 +437,212 @@
   border-color: var(--ifm-color-primary);
 }
 
+.calendarHeader {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.85rem;
+}
+
+.calendarTitleAccent {
+  display: inline-block;
+  width: 3px;
+  height: 1rem;
+  border-radius: 2px;
+  background: var(--ifm-color-primary);
+  flex-shrink: 0;
+}
+
+.calendarTitle {
+  font-weight: 700;
+  line-height: 1;
+  font-size: 1rem;
+  flex: 1;
+  min-width: 0;
+}
+
+.calendarNav {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.15rem;
+}
+
+.calendarNavBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.6rem;
+  height: 1.6rem;
+  border-radius: 8px;
+  border: none;
+  background: transparent;
+  color: var(--ifm-color-emphasis-700);
+  cursor: pointer;
+  transition:
+    color 160ms ease,
+    background 160ms ease;
+}
+
+.calendarNavBtn:hover {
+  color: var(--ifm-color-primary);
+  background: var(--ifm-color-emphasis-100);
+}
+
+.calendarWeekdays,
+.calendarGrid {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+}
+
+.calendarWeekdays {
+  margin-bottom: 0.35rem;
+}
+
+.calendarWeekday {
+  text-align: center;
+  font-size: 0.78rem;
+  color: var(--ifm-color-emphasis-600);
+  padding: 0.3rem 0;
+  font-variant-numeric: tabular-nums;
+}
+
+.calendarGrid {
+  row-gap: 0.15rem;
+}
+
+.calendarCell {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 1 / 1;
+  padding: 0;
+  border: none;
+  background: transparent;
+  font: inherit;
+  color: var(--ifm-font-color-base);
+  cursor: default;
+  font-variant-numeric: tabular-nums;
+}
+
+.calendarCellNum {
+  position: relative;
+  z-index: 1;
+  font-size: 0.88rem;
+  line-height: 1;
+}
+
+.calendarCellMuted {
+  color: var(--ifm-color-emphasis-400);
+}
+
+.calendarCellHasPost {
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.calendarCellHasPost:hover .calendarCellNum {
+  color: var(--ifm-color-primary);
+}
+
+.calendarCellDot {
+  position: absolute;
+  bottom: 0.32rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: var(--ifm-color-primary);
+  transition:
+    width 160ms ease,
+    background 160ms ease;
+}
+
+.calendarCellToday .calendarCellNum {
+  color: var(--ifm-color-primary);
+}
+
+.calendarCellSelected .calendarCellNum {
+  color: var(--ifm-color-primary);
+}
+
+.calendarCellSelected .calendarCellDot {
+  width: 12px;
+  border-radius: 2px;
+}
+
+.calendarDivider {
+  height: 1px;
+  background: var(--ifm-color-emphasis-200);
+  margin: 0.85rem 0 0.5rem;
+}
+
+.calendarEmpty {
+  padding: 0.75rem 0.25rem;
+  text-align: center;
+  color: var(--ifm-color-emphasis-600);
+  font-size: 0.85rem;
+}
+
+.calendarPostList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  max-height: calc(3 * 2.6rem);
+  overflow-y: auto;
+  scrollbar-width: thin;
+}
+
+.calendarPostList::-webkit-scrollbar {
+  width: 4px;
+}
+
+.calendarPostList::-webkit-scrollbar-thumb {
+  background: var(--ifm-color-emphasis-300);
+  border-radius: 4px;
+}
+
+.calendarPostItem {
+  margin: 0;
+}
+
+.calendarPostLink {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.55rem 0.25rem;
+  height: 2.6rem;
+  color: var(--ifm-font-color-base);
+  text-decoration: none !important;
+  border-bottom: 1px dashed var(--ifm-color-emphasis-200);
+}
+
+.calendarPostItem:last-child .calendarPostLink {
+  border-bottom: none;
+}
+
+.calendarPostLink:hover {
+  color: var(--ifm-color-primary);
+}
+
+.calendarPostTitle {
+  flex: 1;
+  min-width: 0;
+  font-size: 0.92rem;
+  font-weight: 500;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.calendarPostDate {
+  flex-shrink: 0;
+  font-size: 0.78rem;
+  color: var(--ifm-color-emphasis-600);
+  font-variant-numeric: tabular-nums;
+}
+
 .tocContainer {
   position: sticky;
   top: 5rem;
