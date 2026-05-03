@@ -285,15 +285,6 @@
   "blog.sidebar.stats.words": {
     "message": "词数"
   },
-  "blog.sidebar.stats.visitors": {
-    "message": "访客"
-  },
-  "blog.sidebar.stats.views": {
-    "message": "浏览"
-  },
-  "blog.sidebar.stats.title": {
-    "message": "统计"
-  },
   "blog.sidebar.tags.title": {
     "message": "热门标签"
   },
@@ -314,9 +305,6 @@
   },
   "blog.sidebar.feed.json": {
     "message": "JSON 订阅"
-  },
-  "blog.sidebar.feed.title": {
-    "message": "订阅"
   },
   "blog.menu.blog": {
     "message": "博客"

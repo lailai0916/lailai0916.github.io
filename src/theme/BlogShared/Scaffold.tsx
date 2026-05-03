@@ -14,7 +14,6 @@ import {
   BlogCard,
   BlogMenu,
   TagChipList,
-  useAnalytics,
   type ChipItem,
 } from './Components';
 import CalendarCard from './Calendar';
@@ -102,7 +101,6 @@ function TocCard({ toc }: { toc: readonly TOCItem[] }) {
 
 function StatsCard() {
   const { i18n } = useDocusaurusContext();
-  const { analytics, status } = useAnalytics();
   const readingMinutes = Math.round(
     getAllPostMetadata().reduce((sum, meta) => sum + (meta.readingTime ?? 0), 0)
   );
@@ -123,31 +121,39 @@ function StatsCard() {
       icon: 'lucide:file-text',
       value: readingMinutes * 200,
     },
+  ];
+  const feeds = [
     {
-      label: translate({
-        id: 'blog.sidebar.stats.visitors',
-        message: 'Visitors',
+      name: 'RSS',
+      icon: 'lucide:rss',
+      ariaLabel: translate({
+        id: 'blog.sidebar.feed.rss',
+        message: 'RSS Feed',
       }),
-      icon: 'lucide:users',
-      value: status === 'success' ? (analytics.visitors ?? '–') : '–',
+      href: useBaseUrl('/blog/rss.xml', { absolute: true }),
     },
     {
-      label: translate({
-        id: 'blog.sidebar.stats.views',
-        message: 'Views',
+      name: 'Atom',
+      icon: 'lucide:atom',
+      ariaLabel: translate({
+        id: 'blog.sidebar.feed.atom',
+        message: 'Atom Feed',
       }),
-      icon: 'lucide:eye',
-      value: status === 'success' ? (analytics.pageviews ?? '–') : '–',
+      href: useBaseUrl('/blog/atom.xml', { absolute: true }),
+    },
+    {
+      name: 'JSON',
+      icon: 'lucide:braces',
+      ariaLabel: translate({
+        id: 'blog.sidebar.feed.json',
+        message: 'JSON Feed',
+      }),
+      href: useBaseUrl('/blog/feed.json', { absolute: true }),
     },
   ];
 
   return (
-    <BlogCard
-      title={translate({
-        id: 'blog.sidebar.stats.title',
-        message: 'Statistics',
-      })}
-    >
+    <BlogCard>
       <div className={styles.statsGrid}>
         {statsItems.map((item) => (
           <div key={item.label} className={styles.statTile}>
@@ -163,6 +169,24 @@ function StatsCard() {
                 : item.value}
             </span>
           </div>
+        ))}
+      </div>
+      <div className={styles.feedGrid}>
+        {feeds.map((feed) => (
+          <Link
+            key={feed.href}
+            href={feed.href}
+            aria-label={feed.ariaLabel}
+            className={styles.feedTile}
+          >
+            <Icon
+              icon={feed.icon}
+              width="1.2em"
+              height="1.2em"
+              className={styles.feedTileIcon}
+            />
+            <span className={styles.feedTileLabel}>{feed.name}</span>
+          </Link>
         ))}
       </div>
     </BlogCard>
@@ -202,66 +226,6 @@ function TagsCard() {
   );
 }
 
-function FeedCard() {
-  const feeds = [
-    {
-      name: 'RSS',
-      icon: 'lucide:rss',
-      ariaLabel: translate({
-        id: 'blog.sidebar.feed.rss',
-        message: 'RSS Feed',
-      }),
-      href: useBaseUrl('/blog/rss.xml', { absolute: true }),
-    },
-    {
-      name: 'Atom',
-      icon: 'lucide:atom',
-      ariaLabel: translate({
-        id: 'blog.sidebar.feed.atom',
-        message: 'Atom Feed',
-      }),
-      href: useBaseUrl('/blog/atom.xml', { absolute: true }),
-    },
-    {
-      name: 'JSON',
-      icon: 'lucide:braces',
-      ariaLabel: translate({
-        id: 'blog.sidebar.feed.json',
-        message: 'JSON Feed',
-      }),
-      href: useBaseUrl('/blog/feed.json', { absolute: true }),
-    },
-  ];
-
-  return (
-    <BlogCard
-      title={translate({
-        id: 'blog.sidebar.feed.title',
-        message: 'Subscribe',
-      })}
-    >
-      <div className={styles.feedGrid}>
-        {feeds.map((feed) => (
-          <Link
-            key={feed.href}
-            href={feed.href}
-            aria-label={feed.ariaLabel}
-            className={styles.feedTile}
-          >
-            <Icon
-              icon={feed.icon}
-              width="1.2em"
-              height="1.2em"
-              className={styles.feedTileIcon}
-            />
-            <span className={styles.feedTileLabel}>{feed.name}</span>
-          </Link>
-        ))}
-      </div>
-    </BlogCard>
-  );
-}
-
 type Props = {
   title?: string;
   description?: string;
@@ -292,7 +256,6 @@ export default function BlogScaffold({
                 <CalendarCard />
                 <StatsCard />
                 <TagsCard />
-                <FeedCard />
               </>
             )}
           </>
