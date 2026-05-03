@@ -1,5 +1,6 @@
 import React from 'react';
 import { Icon } from '@iconify/react';
+import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Card from '@site/src/components/laikit/Card';
 import { formatCompact } from '@site/src/utils/format';
@@ -18,6 +19,7 @@ interface MetricListProps {
   emptyText: string;
   renderLabel?: (x: string) => React.ReactNode;
   formatValue?: (y: number) => string;
+  href?: (x: string) => string | null | undefined;
 }
 
 export default function MetricList({
@@ -28,6 +30,7 @@ export default function MetricList({
   emptyText,
   renderLabel,
   formatValue,
+  href,
 }: MetricListProps) {
   const { i18n } = useDocusaurusContext();
   const format =
@@ -53,8 +56,9 @@ export default function MetricList({
           <ol className={styles.list}>
             {items.map((item, i) => {
               const ratio = item.y / max;
-              return (
-                <li key={`${item.x}-${i}`} className={styles.row}>
+              const url = href?.(item.x);
+              const inner = (
+                <>
                   <div
                     className={styles.bar}
                     style={{ width: `${ratio * 100}%` }}
@@ -63,6 +67,17 @@ export default function MetricList({
                     {renderLabel ? renderLabel(item.x) : item.x}
                   </span>
                   <span className={styles.value}>{format(item.y)}</span>
+                </>
+              );
+              return (
+                <li key={`${item.x}-${i}`} className={styles.rowItem}>
+                  {url ? (
+                    <Link to={url} className={styles.row}>
+                      {inner}
+                    </Link>
+                  ) : (
+                    <div className={styles.row}>{inner}</div>
+                  )}
                 </li>
               );
             })}

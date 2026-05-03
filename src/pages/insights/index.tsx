@@ -319,6 +319,7 @@ function MetricsGrid({ range }: { range: InsightsRange }) {
           message: 'No data yet',
         })}
         renderLabel={(p) => <span title={p}>{p === '/' ? '/' : p}</span>}
+        href={(p) => p}
       />
       <MetricList
         title={translate({
@@ -344,6 +345,7 @@ function MetricsGrid({ range }: { range: InsightsRange }) {
             </span>
           )
         }
+        href={(r) => (r ? (/^https?:\/\//.test(r) ? r : `https://${r}`) : null)}
       />
       <MetricList
         title={translate({

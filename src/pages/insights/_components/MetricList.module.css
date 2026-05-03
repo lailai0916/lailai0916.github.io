@@ -41,13 +41,27 @@
   gap: 0.15rem;
 }
 
+.rowItem {
+  display: flex;
+  min-width: 0;
+}
+
 .row {
   position: relative;
   display: flex;
   align-items: center;
+  flex: 1;
   padding: 0.55rem 0.75rem;
   font-size: 0.92rem;
   min-width: 0;
+  color: inherit;
+  text-decoration: none;
+}
+
+a.row:hover,
+a.row:focus-visible {
+  color: inherit;
+  text-decoration: none;
 }
 
 @media (max-width: 360px) {
