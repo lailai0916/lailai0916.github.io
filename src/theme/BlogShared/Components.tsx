@@ -63,7 +63,11 @@ export function BlogMenu() {
   const items = [
     {
       to: useBaseUrl('/blog'),
-      label: translate({ id: 'blog.menu.latest', message: 'Latest' }),
+      label: translate({ id: 'blog.menu.blog', message: 'Blog' }),
+    },
+    {
+      to: useBaseUrl('/blog/moments'),
+      label: translate({ id: 'blog.menu.moments', message: 'Moments' }),
     },
     {
       to: useBaseUrl('/blog/archive'),

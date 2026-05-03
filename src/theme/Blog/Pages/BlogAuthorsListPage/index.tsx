@@ -18,24 +18,24 @@ export default function BlogAuthorsListPage(props: Props): ReactNode {
   if (isOriginalLayout) return <BlogAuthorsListPageOriginal {...props} />;
 
   const { authors } = props;
+  const items = authors.flatMap((author) => {
+    if (!author.page?.permalink) {
+      return [];
+    }
+
+    return [
+      {
+        to: author.page.permalink,
+        label: author.name ?? author.key,
+        count: author.count,
+      },
+    ];
+  });
+
   return (
     <BlogScaffold title={TITLE} description={DESCRIPTION}>
-      <BlogCard title={TITLE}>
-        <TagChipList
-          items={authors.flatMap((author) => {
-            if (!author.page?.permalink) {
-              return [];
-            }
-
-            return [
-              {
-                to: author.page.permalink,
-                label: author.name ?? author.key,
-                count: author.count,
-              },
-            ];
-          })}
-        />
+      <BlogCard title={`${TITLE} (${items.length})`}>
+        <TagChipList items={items} />
       </BlogCard>
     </BlogScaffold>
   );
