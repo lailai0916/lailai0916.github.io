@@ -1,7 +1,6 @@
 import React from 'react';
 import clsx from 'clsx';
 import Link from '@docusaurus/Link';
-import { useLocation } from '@docusaurus/router';
 import { translate } from '@docusaurus/Translate';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import { Icon } from '@iconify/react';
@@ -62,55 +61,42 @@ export function TagChipList({ items }: { items: ChipItem[] }) {
 }
 
 export function BlogMenu() {
-  const { pathname } = useLocation();
-  const blogBase = useBaseUrl('/blog');
-  const archiveBase = useBaseUrl('/blog/archive');
-  const tagsBase = useBaseUrl('/blog/tags');
-  const authorsBase = useBaseUrl('/blog/authors');
-
   const items = [
     {
-      to: blogBase,
+      to: useBaseUrl('/blog'),
       label: translate({ id: 'blog.menu.latest', message: 'Latest' }),
       icon: 'lucide:newspaper',
-      active:
-        pathname === blogBase ||
-        pathname === `${blogBase}/` ||
-        pathname.startsWith(`${blogBase}/page/`),
     },
     {
-      to: archiveBase,
+      to: useBaseUrl('/blog/archive'),
       label: translate({ id: 'blog.menu.archive', message: 'Archive' }),
       icon: 'lucide:archive',
-      active: pathname.startsWith(archiveBase),
     },
     {
-      to: tagsBase,
+      to: useBaseUrl('/blog/tags'),
       label: translate({ id: 'blog.menu.tags', message: 'Tags' }),
       icon: 'lucide:tag',
-      active: pathname.startsWith(tagsBase),
     },
     {
-      to: authorsBase,
+      to: useBaseUrl('/blog/authors'),
       label: translate({ id: 'blog.menu.authors', message: 'Authors' }),
       icon: 'lucide:users-round',
-      active: pathname.startsWith(authorsBase),
     },
   ];
 
   return (
-    <Card>
+    <Card padding="0.55rem 0.65rem">
       <nav className={styles.blogMenu}>
         {items.map((item) => (
           <Link
             key={item.to}
             to={item.to}
-            className={clsx(styles.blogMenuItem, {
-              [styles.blogMenuItemActive]: item.active,
-            })}
+            aria-label={item.label}
+            title={item.label}
+            className={styles.blogMenuItem}
           >
             <Icon icon={item.icon} width="1em" height="1em" />
-            <span>{item.label}</span>
+            <span className={styles.blogMenuLabel}>{item.label}</span>
           </Link>
         ))}
       </nav>
