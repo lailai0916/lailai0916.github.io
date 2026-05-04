@@ -6,7 +6,6 @@ import type { BlogPaginatedMetadata } from '@docusaurus/plugin-content-blog';
 import type { Props as BlogListPageProps } from '@theme/BlogListPage';
 import BlogScaffold from './Scaffold';
 import { BlogCard, useAnalytics } from './Components';
-import useBaseUrl from '@docusaurus/useBaseUrl';
 
 import { translate } from '@docusaurus/Translate';
 import IconText from '@site/src/components/laikit/IconText';
@@ -15,11 +14,6 @@ import MDXContent from '@theme/MDXContent';
 import styles from './styles.module.css';
 
 type PostListItem = BlogListPageProps['items'][number];
-
-interface BadgeProps {
-  icon: string;
-  label: string;
-}
 
 interface IconDataProps {
   icon: string;
@@ -34,15 +28,6 @@ type PaginationItem = {
   label: string;
   to?: string;
 };
-
-function Badge({ icon, label }: BadgeProps) {
-  return (
-    <span className={clsx(styles.tagChip, styles.postInlineTag)}>
-      <Icon icon={icon} />
-      {label}
-    </span>
-  );
-}
 
 function IconData({ icon, children }: IconDataProps) {
   return (
@@ -59,8 +44,6 @@ function PostCard({ item }: PostCardProps) {
   const { content: MDXPageContent } = item;
   const { metadata, assets, frontMatter } = MDXPageContent;
   const image = assets.image ?? frontMatter.image;
-  const firstTag = metadata.tags?.[0] ?? null;
-  const pinnedTagPermalink = useBaseUrl('/blog/tags/pinned');
   const { analytics, status } = useAnalytics(metadata.permalink);
 
   return (
@@ -70,21 +53,11 @@ function PostCard({ item }: PostCardProps) {
           <img src={image} alt={metadata.title} className={styles.postCover} />
         </Link>
       )}
-      <div className={styles.postTitleRow}>
-        <Badge
-          icon={
-            firstTag?.permalink === pinnedTagPermalink
-              ? 'lucide:pin'
-              : 'lucide:bookmark'
-          }
-          label={firstTag?.label ?? 'None'}
-        />
-        <h2 className={styles.postTitle}>
-          <Link to={metadata.permalink} className={styles.postTitleLink}>
-            {metadata.title}
-          </Link>
-        </h2>
-      </div>
+      <h2 className={styles.postTitle}>
+        <Link to={metadata.permalink} className={styles.postTitleLink}>
+          {metadata.title}
+        </Link>
+      </h2>
       <div className={styles.postExcerpt}>
         <MDXContent>
           <MDXPageContent />

@@ -42,9 +42,10 @@ export function TagChip({ item }: { item: ChipItem }) {
         [styles.tagChipActive]: item.active,
       })}
     >
-      <span className={styles.tagDot} />
-      {item.label}
-      {item.count !== undefined && <span>{item.count}</span>}
+      <span className={styles.tagChipLabel}>{item.label}</span>
+      {item.count !== undefined && (
+        <span className={styles.tagChipCount}>{item.count}</span>
+      )}
     </Link>
   );
 }
