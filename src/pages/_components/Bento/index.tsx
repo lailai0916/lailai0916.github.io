@@ -219,6 +219,18 @@ export default function Bento() {
             />
           </Card>
         ))}
+        <Card className={styles.cardInfo} padding="1.25rem">
+          <ul className={styles.infoList}>
+            {infoItems.map((item) => (
+              <li key={item.key} className={styles.infoRow}>
+                <Icon icon={item.icon} className={styles.infoRowIcon} />
+                <Link href={item.href} className={styles.infoRowValue}>
+                  {item.value}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </Card>
         <Card className={styles.cardSocial} padding="1.25rem">
           <span className={styles.cardSocialLabel}>
             {translate({
@@ -238,18 +250,6 @@ export default function Bento() {
               </Link>
             ))}
           </div>
-        </Card>
-        <Card className={styles.cardInfo} padding="1.25rem">
-          <ul className={styles.infoList}>
-            {infoItems.map((item) => (
-              <li key={item.key} className={styles.infoRow}>
-                <Icon icon={item.icon} className={styles.infoRowIcon} />
-                <Link href={item.href} className={styles.infoRowValue}>
-                  {item.value}
-                </Link>
-              </li>
-            ))}
-          </ul>
         </Card>
       </div>
     </section>
