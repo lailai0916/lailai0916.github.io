@@ -41,7 +41,6 @@ Hankook 和 Jeong-ul 两个人将在釜山停留 $n$ 天，给定两个 $\texttt
 #include <bits/stdc++.h>
 using namespace std;
 
-const int inf=0x3f3f3f3f;
 const int N=2005;
 int f[N][N];
 int main()
@@ -57,10 +56,9 @@ int main()
 		for(int j=0;j<=n;j++)
 		{
 			if(i==0&&j==0){f[i][j]=0;continue;}
-			int t1=i==0?inf:min({f[i-1][j]+(a[i-1]-'0')*p1,f[max(0,i-3)][j]+p3,f[max(0,i-5)][j]+p5});
-			int t2=j==0?inf:min({f[i][j-1]+(b[j-1]-'0')*p1,f[i][max(0,j-3)]+p3,f[i][max(0,j-5)]+p5});
-			int t3=i!=j?inf:f[max(0,i-4)][max(0,j-4)]+pr;
-			f[i][j]=min({t1,t2,t3});
+			if(i>0)f[i][j]=min(f[i][j],min({f[i-1][j]+(a[i-1]-'0')*p1,f[max(i-3,0)][j]+p3,f[max(i-5,0)][j]+p5}));
+			if(j>0)f[i][j]=min(f[i][j],min({f[i][j-1]+(b[j-1]-'0')*p1,f[i][max(j-3,0)]+p3,f[i][max(j-5,0)]+p5}));
+			if(i==j)f[i][j]=min(f[i][j],f[max(i-4,0)][max(j-4,0)]+pr);
 		}
 	}
 	cout<<f[n][n]<<'\n';
