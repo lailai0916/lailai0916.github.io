@@ -244,6 +244,36 @@ export const CHANGELOG_LIST: ChangelogItem[] = [
     content: '<b>Google Analytics</b> 分析',
   },
   {
+    date: '2025-01-03',
+    type: 'changed',
+    content:
+      '网站更新至 <a href="https://docusaurus.io/changelog/3.7.0">Docusaurus v3.7.0</a>',
+  },
+  {
+    date: '2024-11-22',
+    type: 'changed',
+    content:
+      '网站更新至 <a href="https://docusaurus.io/changelog/3.6.3">Docusaurus v3.6.3</a>',
+  },
+  {
+    date: '2024-11-19',
+    type: 'changed',
+    content:
+      '网站更新至 <a href="https://docusaurus.io/changelog/3.6.2">Docusaurus v3.6.2</a>',
+  },
+  {
+    date: '2024-11-08',
+    type: 'changed',
+    content:
+      '网站更新至 <a href="https://docusaurus.io/changelog/3.6.1">Docusaurus v3.6.1</a>',
+  },
+  {
+    date: '2024-11-04',
+    type: 'changed',
+    content:
+      '网站更新至 <a href="https://docusaurus.io/changelog/3.6.0">Docusaurus v3.6.0</a>',
+  },
+  {
     date: '2024-10-29',
     type: 'added',
     content: '<b>Giscus</b> 评论',
