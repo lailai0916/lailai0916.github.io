@@ -551,6 +551,7 @@
   flex-shrink: 0;
   font-size: 0.78rem;
   color: var(--ifm-color-emphasis-600);
+  font-family: var(--ifm-font-family-monospace);
   font-variant-numeric: tabular-nums;
 }
 

@@ -156,7 +156,7 @@ export default function CalendarCard() {
     setSelected((s) => (s === cell.dateKey ? null : cell.dateKey));
   };
 
-  const formatDayLabel = (key: string) => key.slice(5).replace('-', '/');
+  const formatDayLabel = (key: string) => key.slice(5);
 
   return (
     <Card>
