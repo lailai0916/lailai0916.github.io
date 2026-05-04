@@ -5,6 +5,7 @@ import clsx from 'clsx';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import { Icon } from '@iconify/react';
 import { COMMUNITY_LIST } from '@site/src/data/community';
+import Badge from '@site/src/components/laikit/Badge';
 import Card from '@site/src/components/laikit/Card';
 import styles from './styles.module.css';
 
@@ -196,10 +197,9 @@ export default function Bento() {
             </div>
             <div className={styles.profileTags}>
               {profileTags.map((tag) => (
-                <span key={tag.label} className={styles.profileTag}>
-                  <Icon icon={tag.icon} className={styles.profileTagIcon} />
-                  <span>{tag.label}</span>
-                </span>
+                <Badge key={tag.label} icon={tag.icon}>
+                  {tag.label}
+                </Badge>
               ))}
             </div>
           </Card>

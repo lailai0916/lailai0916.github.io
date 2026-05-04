@@ -1,8 +1,8 @@
 import React from 'react';
-import clsx from 'clsx';
 import Link from '@docusaurus/Link';
 import { translate } from '@docusaurus/Translate';
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import Badge from '@site/src/components/laikit/Badge';
 import Card from '@site/src/components/laikit/Card';
 import styles from './styles.module.css';
 
@@ -36,16 +36,10 @@ export type ChipItem = {
 
 export function TagChip({ item }: { item: ChipItem }) {
   return (
-    <Link
-      to={item.to}
-      className={clsx(styles.tagChip, {
-        [styles.tagChipActive]: item.active,
-      })}
-    >
-      <span className={styles.tagChipLabel}>{item.label}</span>
-      {item.count !== undefined && (
-        <span className={styles.tagChipCount}>{item.count}</span>
-      )}
+    <Link to={item.to} className={styles.tagChipLink}>
+      <Badge active={item.active} hoverable={!item.active} count={item.count}>
+        {item.label}
+      </Badge>
     </Link>
   );
 }

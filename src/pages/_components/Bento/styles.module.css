@@ -99,25 +99,6 @@
   gap: 0.55rem;
 }
 
-.profileTag {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.3rem;
-  padding: 0.25rem 0.55rem;
-  border-radius: 999px;
-  border: 1px solid var(--ifm-color-emphasis-200);
-  background: var(--ifm-color-emphasis-100);
-  color: var(--ifm-color-emphasis-800);
-  font-size: 0.75rem;
-  line-height: 1.1;
-  font-weight: 500;
-}
-
-.profileTagIcon {
-  font-size: 0.75rem;
-  color: var(--ifm-color-emphasis-600);
-}
-
 .cardNav {
   display: flex;
   flex-direction: column;

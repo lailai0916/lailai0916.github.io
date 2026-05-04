@@ -1,0 +1,63 @@
+.badge {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.35rem;
+  padding: 0.25rem 0.55rem;
+  border-radius: 6px;
+  border: 1px solid var(--ifm-color-emphasis-200);
+  background: var(--ifm-color-emphasis-100);
+  color: var(--ifm-color-emphasis-800);
+  font-size: 0.85rem;
+  line-height: 1.15;
+  text-decoration: none !important;
+  transition:
+    background 160ms ease,
+    border-color 160ms ease,
+    color 160ms ease;
+}
+
+.badgeIcon {
+  align-self: center;
+  font-size: 0.95em;
+  flex-shrink: 0;
+  color: var(--ifm-color-emphasis-700);
+}
+
+.badgeLabel {
+  font-weight: 500;
+}
+
+.badgeCount {
+  font-size: 0.75rem;
+  color: var(--ifm-color-emphasis-600);
+  font-variant-numeric: tabular-nums;
+}
+
+.badgeHoverable:hover {
+  border-color: var(--ifm-color-primary);
+  color: var(--ifm-color-primary);
+}
+
+.badgeHoverable:hover .badgeIcon {
+  color: var(--ifm-color-primary);
+}
+
+.badgeActive {
+  background: var(--ifm-color-primary);
+  border-color: var(--ifm-color-primary);
+  color: #fff;
+}
+
+.badgeActive:hover {
+  border-color: var(--ifm-color-primary);
+  color: #fff;
+}
+
+.badgeActive .badgeIcon,
+.badgeActive:hover .badgeIcon {
+  color: #fff;
+}
+
+.badgeActive .badgeCount {
+  color: rgba(255, 255, 255, 0.8);
+}

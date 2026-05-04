@@ -176,53 +176,9 @@
   gap: 0.5rem;
 }
 
-.tagChip {
-  display: inline-flex;
-  align-items: baseline;
-  gap: 0.35rem;
-  background: var(--ifm-color-emphasis-100);
-  border: 1px solid var(--ifm-color-emphasis-200);
-  border-radius: 6px;
-  padding: 0.25rem 0.55rem;
-  font-size: 0.85rem;
-  line-height: 1.15;
-  color: var(--ifm-color-emphasis-800);
+.tagChipLink {
   text-decoration: none !important;
-  transition:
-    background 160ms ease,
-    border-color 160ms ease,
-    color 160ms ease;
-}
-
-.tagChip:hover {
-  border-color: var(--ifm-color-primary);
-  color: var(--ifm-color-primary);
-}
-
-.tagChipLabel {
-  font-weight: 500;
-}
-
-.tagChipCount {
-  font-size: 0.75rem;
-  color: var(--ifm-color-emphasis-600);
-  font-variant-numeric: tabular-nums;
-}
-
-.tagChipActive {
-  background: var(--ifm-color-primary);
-  border-color: var(--ifm-color-primary);
-  color: #fff;
-}
-
-.tagChipActive:hover {
-  background: var(--ifm-color-primary);
-  border-color: var(--ifm-color-primary);
-  color: #fff;
-}
-
-.tagChipActive .tagChipCount {
-  color: rgba(255, 255, 255, 0.8);
+  color: inherit;
 }
 
 .recentList {
