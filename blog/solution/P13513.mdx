@@ -31,7 +31,7 @@ Hankook 和 Jeong-ul 两个人将在釜山停留 $n$ 天，给定两个 $\texttt
 
 1. 覆盖 Hankook：$\min\set{f_{i-1,j}+[a_i=\texttt{1}]p_1,f_{i-3,j}+p_3,f_{i-5,j}+p_5}$；
 2. 覆盖 Jeong-ul：$\min\set{f_{i,j-1}+[b_j=\texttt{1}]p_1,f_{i,j-3}+p_3,f_{i,j-5}+p_5}$；
-3. 两人同时覆盖（$i=j$）：$f_{i-4,j-4}+p_\text{pair}$。
+3. 同时覆盖两人（$i=j$）：$f_{i-4,j-4}+p_\text{pair}$。
 
 时间复杂度为 $O(n^2)$。
 
