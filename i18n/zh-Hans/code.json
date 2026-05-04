@@ -331,6 +331,9 @@
   "blog.pages.authors.authorSelect": {
     "message": "作者"
   },
+  "blog.pages.archive.yearSelect": {
+    "message": "年份"
+  },
   "home.bento.nav.contest": {
     "message": "竞赛"
   },

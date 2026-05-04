@@ -9,8 +9,11 @@ import {
 } from '@site/src/components/laikit/Page';
 import DataCard from '@site/src/components/laikit/DataCard';
 import LinkCard from '@site/src/components/laikit/LinkCard';
+import clsx from 'clsx';
+
 import IconText from '@site/src/components/laikit/IconText';
 import Button from '@site/src/components/laikit/Button';
+import Card from '@site/src/components/laikit/Card';
 
 import { usePluralForm } from '@docusaurus/theme-common';
 import {
@@ -60,68 +63,76 @@ function filterResourceCategories(
     .filter((category) => category.resources.length > 0);
 }
 
-function SearchBar({
-  value,
-  onChange,
-}: {
-  value: string;
-  onChange: (value: string) => void;
-}) {
-  return (
-    <div className={styles.searchBarContainer}>
-      <input
-        type="text"
-        placeholder={translate({
-          id: 'pages.resources.search.placeholder',
-          message: 'Search Resources',
-        })}
-        value={value}
-        onChange={(e) => onChange(e.target.value)}
-        className={styles.searchBar}
-      />
-      <Icon icon="lucide:search" className={styles.searchIcon} />
-    </div>
-  );
-}
-
-function CategoryNav({
+function FilterBar({
   categories,
   activeCategory,
   onCategoryChange,
+  searchValue,
+  onSearchChange,
 }: {
   categories: ResourceCategoryItem[];
   activeCategory: string;
   onCategoryChange: (category: string) => void;
+  searchValue: string;
+  onSearchChange: (value: string) => void;
 }) {
   return (
-    <nav className={styles.categoryNav}>
-      <div className={styles.categoryNavContent}>
-        <Button
-          variant="secondary"
-          size="sm"
-          rounded
-          active={activeCategory === 'all'}
-          onClick={() => onCategoryChange('all')}
-        >
-          {translate({
-            id: 'pages.resources.category.all',
-            message: 'All',
+    <Card padding={0} className={styles.filterBar}>
+      <div className={styles.filterSearch}>
+        <Icon icon="lucide:search" className={styles.filterSearchIcon} />
+        <input
+          type="text"
+          value={searchValue}
+          onChange={(e) => onSearchChange(e.target.value)}
+          placeholder={translate({
+            id: 'pages.resources.search.placeholder',
+            message: 'Search Resources',
           })}
-        </Button>
-        {categories.map((category) => (
-          <Button
-            key={category.title}
-            variant="secondary"
-            size="sm"
-            rounded
-            active={activeCategory === category.title}
-            onClick={() => onCategoryChange(category.title)}
+          className={styles.filterSearchInput}
+        />
+        {searchValue && (
+          <button
+            type="button"
+            onClick={() => onSearchChange('')}
+            className={styles.filterSearchClear}
+            aria-label={translate({
+              id: 'pages.resources.search.clear',
+              message: 'Clear search',
+            })}
           >
-            {category.title}
-          </Button>
-        ))}
+            <Icon icon="lucide:x" />
+          </button>
+        )}
       </div>
-    </nav>
+      <div className={styles.filterRail}>
+        {categories.map((category) => {
+          const isActive = activeCategory === category.title;
+          return (
+            <button
+              key={category.title}
+              type="button"
+              onClick={() =>
+                onCategoryChange(isActive ? 'all' : category.title)
+              }
+              className={clsx(styles.filterRailItem, {
+                [styles.filterRailItemActive]: isActive,
+              })}
+            >
+              <Icon
+                icon={category.icon}
+                className={styles.filterRailItemIcon}
+              />
+              <span className={styles.filterRailItemLabel}>
+                {category.title}
+              </span>
+              <span className={styles.filterRailItemCount}>
+                {category.resources.length}
+              </span>
+            </button>
+          );
+        })}
+      </div>
+    </Card>
   );
 }
 
@@ -208,12 +219,12 @@ export default function Resources(): ReactNode {
         />
       </PageHeader>
       <PageContent className={styles.layout}>
-        <SearchBar value={searchQuery} onChange={setSearchQuery} />
-
-        <CategoryNav
+        <FilterBar
           categories={RESOURCE_LIST}
           activeCategory={activeCategory}
           onCategoryChange={setActiveCategory}
+          searchValue={searchQuery}
+          onSearchChange={setSearchQuery}
         />
 
         {filteredCategories.length > 0 ? (

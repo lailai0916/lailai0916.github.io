@@ -6,41 +6,124 @@
   gap: 2rem;
 }
 
-/* Search & category nav */
+/* Filter toolbar (search + category rail) */
 
-.searchBarContainer {
-  position: relative;
-  width: 100%;
+.filterBar {
+  overflow: hidden;
 }
 
-.searchBar {
-  width: 100%;
-  padding: 0.75rem 1rem 0.75rem 2.5rem;
-  border-radius: 12px;
-  border: 2px solid var(--ifm-color-emphasis-300);
-  color: var(--ifm-font-color-base);
-  font-size: 1rem;
-  transition: border-color 0.2s;
+.filterSearch {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid var(--ifm-color-emphasis-200);
 }
 
-.searchBar:focus {
-  border-color: var(--ifm-color-primary);
+.filterSearchIcon {
+  color: var(--ifm-color-emphasis-500);
+  font-size: 1.05rem;
+  flex-shrink: 0;
+}
+
+.filterSearchInput {
+  flex: 1;
+  min-width: 0;
+  border: none;
+  background: transparent;
   outline: none;
+  color: var(--ifm-font-color-base);
+  font-size: 0.95rem;
+  padding: 0;
 }
 
-.searchIcon {
-  position: absolute;
-  left: 0.8rem;
-  top: 50%;
-  transform: translateY(-50%);
+.filterSearchInput::placeholder {
   color: var(--ifm-color-emphasis-500);
 }
 
-.categoryNavContent {
+.filterSearchClear {
+  appearance: none;
+  border: none;
+  background: transparent;
+  padding: 0.2rem;
+  cursor: pointer;
+  display: inline-flex;
+  color: var(--ifm-color-emphasis-500);
+  border-radius: 4px;
+  transition: color 160ms ease;
+}
+
+.filterSearchClear:hover {
+  color: var(--ifm-color-emphasis-800);
+}
+
+.filterRail {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.75rem;
-  justify-content: center;
+  padding: 0 0.4rem;
+}
+
+.filterRailItem {
+  appearance: none;
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid transparent;
+  padding: 0.7rem 0.7rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: var(--ifm-color-emphasis-700);
+  font-size: 0.85rem;
+  font-weight: 500;
+  white-space: nowrap;
+  cursor: pointer;
+  transition:
+    color 160ms ease,
+    border-color 160ms ease;
+  flex-shrink: 0;
+}
+
+.filterRailItem:hover {
+  color: var(--ifm-color-emphasis-900);
+}
+
+.filterRailItemIcon {
+  font-size: 1em;
+  flex-shrink: 0;
+  color: var(--ifm-color-emphasis-600);
+  transition: color 160ms ease;
+}
+
+.filterRailItem:hover .filterRailItemIcon {
+  color: var(--ifm-color-emphasis-800);
+}
+
+.filterRailItemLabel {
+  letter-spacing: -0.005em;
+}
+
+.filterRailItemCount {
+  font-size: 0.75rem;
+  color: var(--ifm-color-emphasis-500);
+  font-variant-numeric: tabular-nums;
+}
+
+.filterRailItemActive {
+  color: var(--ifm-color-primary);
+  border-bottom-color: var(--ifm-color-primary);
+}
+
+.filterRailItemActive .filterRailItemIcon,
+.filterRailItemActive:hover .filterRailItemIcon {
+  color: var(--ifm-color-primary);
+}
+
+.filterRailItemActive .filterRailItemCount {
+  color: color-mix(in srgb, var(--ifm-color-primary) 75%, transparent);
+}
+
+.filterRailItemActive:hover {
+  color: var(--ifm-color-primary);
 }
 
 /* Category sections & resource grid */
@@ -54,8 +137,6 @@
   align-items: center;
   justify-content: space-between;
   margin-bottom: 2rem;
-  padding-bottom: 1rem;
-  border-bottom: 2px solid var(--ifm-color-emphasis-200);
 }
 
 .categoryTitle {
