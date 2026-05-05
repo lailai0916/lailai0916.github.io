@@ -140,9 +140,6 @@
   "pages.resources.search.placeholder": {
     "message": "搜索资源"
   },
-  "pages.resources.category.all": {
-    "message": "全部"
-  },
   "pages.resources.category.count": {
     "message": "{count} 项"
   },

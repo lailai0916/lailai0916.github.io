@@ -13,7 +13,7 @@ type PostLike = {
   };
 };
 
-export function BlogArchiveList({ posts }: { posts: PostLike[] }) {
+export function BlogArchiveList({ posts }: { posts: readonly PostLike[] }) {
   const groups = React.useMemo(() => {
     const map = new Map<number, PostLike[]>();
 

@@ -67,7 +67,7 @@ export default function BlogArchivePage(props: Props): React.ReactElement {
   const { isOriginalLayout } = useTheme();
   if (isOriginalLayout) return <BlogArchivePageOriginal {...props} />;
 
-  const posts = (props.archive?.blogPosts ?? []) as PostLike[];
+  const posts = (props.archive?.blogPosts ?? []) as readonly PostLike[];
 
   const years = useMemo(() => {
     const map = new Map<number, number>();
