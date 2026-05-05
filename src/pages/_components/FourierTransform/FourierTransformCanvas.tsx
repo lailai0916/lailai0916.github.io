@@ -211,7 +211,7 @@ export default function FourierTransformCanvas() {
     let animationId: number;
 
     const drawEpicycles = (): Point => {
-      const { colors } = themeRef.current;
+      const { primary, colors } = themeRef.current;
       let x = 0;
       let y = 0;
 
@@ -239,75 +239,26 @@ export default function FourierTransformCanvas() {
         ctx.stroke();
       }
 
+      ctx.fillStyle = primary;
+      ctx.beginPath();
+      ctx.arc(x, y, 3, 0, TWO_PI);
+      ctx.fill();
+
       return { x, y };
     };
 
-    // Calligraphic broad-nib stroke. Each curve segment becomes a parallelogram
-    // offset by ±nib/2 along a fixed angle: width perceived = nib · |sin θ|
-    // where θ is the angle between motion and the nib axis. When the curve runs
-    // parallel to the nib the parallelogram collapses, producing the negative-
-    // space gaps that define a 柳叶笔 willow-leaf stroke.
-    const drawCalligraphic = (points: Point[]) => {
+    const drawPath = (points: Point[], alpha = 1) => {
       if (points.length < 2) return;
-
-      const nibLen = Math.max(8, canvasSize * 0.028);
-      const nibAngle = -Math.PI / 4;
-      const cosA = Math.cos(nibAngle);
-      const sinA = Math.sin(nibAngle);
-
-      const tracePath = (fullLen: number) => {
-        const hx = cosA * fullLen * 0.5;
-        const hy = sinA * fullLen * 0.5;
-        ctx.beginPath();
-        for (let i = 0; i < points.length - 1; i++) {
-          const p1 = points[i];
-          const p2 = points[i + 1];
-          ctx.moveTo(p1.x + hx, p1.y + hy);
-          ctx.lineTo(p2.x + hx, p2.y + hy);
-          ctx.lineTo(p2.x - hx, p2.y - hy);
-          ctx.lineTo(p1.x - hx, p1.y - hy);
-          ctx.closePath();
-        }
-      };
-
-      const primary = themeRef.current.primary;
-
-      // Ink-bleed halo: same nib axis, longer length so gaps survive.
-      ctx.save();
-      ctx.globalAlpha = isDark ? 0.22 : 0.1;
-      if (isDark) ctx.globalCompositeOperation = 'lighter';
-      ctx.fillStyle = primary;
-      tracePath(nibLen * 1.45);
-      ctx.fill();
-      ctx.restore();
-
-      // Crisp ink.
-      ctx.fillStyle = primary;
-      tracePath(nibLen);
-      ctx.fill();
-    };
-
-    const drawTip = (x: number, y: number) => {
-      const primary = themeRef.current.primary;
-      ctx.save();
-      if (isDark) ctx.globalCompositeOperation = 'lighter';
-      ctx.fillStyle = primary;
-
-      ctx.globalAlpha = isDark ? 0.18 : 0.1;
+      ctx.strokeStyle = themeRef.current.primary;
+      ctx.globalAlpha = alpha;
+      ctx.lineWidth = 2;
       ctx.beginPath();
-      ctx.arc(x, y, canvasSize * 0.04, 0, TWO_PI);
-      ctx.fill();
-
-      ctx.globalAlpha = isDark ? 0.36 : 0.22;
-      ctx.beginPath();
-      ctx.arc(x, y, canvasSize * 0.022, 0, TWO_PI);
-      ctx.fill();
-
+      ctx.moveTo(points[0].x, points[0].y);
+      for (let i = 1; i < points.length; i++) {
+        ctx.lineTo(points[i].x, points[i].y);
+      }
+      ctx.stroke();
       ctx.globalAlpha = 1;
-      ctx.beginPath();
-      ctx.arc(x, y, Math.max(2, canvasSize * 0.008), 0, TWO_PI);
-      ctx.fill();
-      ctx.restore();
     };
 
     const render = () => {
@@ -325,17 +276,15 @@ export default function FourierTransformCanvas() {
       ctx.fill();
 
       if (state.currentState === STATE.DRAWING) {
-        drawCalligraphic(state.drawing);
+        drawPath(state.drawing, 0.8);
       } else if (
         state.currentState === STATE.PLAYING &&
         state.fourierX.length > 0
       ) {
         if (state.drawing.length > 1) {
-          ctx.save();
           ctx.strokeStyle = primary;
-          ctx.globalAlpha = 0.16;
+          ctx.globalAlpha = 0.2;
           ctx.lineWidth = 1;
-          ctx.setLineDash([3, 5]);
           ctx.beginPath();
           ctx.moveTo(state.drawing[0].x, state.drawing[0].y);
           for (let i = 1; i < state.drawing.length; i++) {
@@ -343,18 +292,17 @@ export default function FourierTransformCanvas() {
           }
           ctx.closePath();
           ctx.stroke();
-          ctx.restore();
+          ctx.globalAlpha = 1;
         }
 
         const v = drawEpicycles();
         if (state.phase === 'draw') {
           state.path.push(v);
-          drawCalligraphic(state.path);
+          drawPath(state.path);
         } else {
           state.eraseIndex++;
-          drawCalligraphic(state.path.slice(state.eraseIndex));
+          drawPath(state.path.slice(state.eraseIndex));
         }
-        drawTip(v.x, v.y);
 
         const dt = TWO_PI / state.fourierX.length;
         state.time += dt;
