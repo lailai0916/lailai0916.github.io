@@ -9,27 +9,29 @@
   max-width: 80rem;
   margin: 0 auto;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   padding: 4rem 1.25rem 2rem;
 }
 
 .layout {
   width: 100%;
-  max-width: 48rem;
+  max-width: 80rem;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   gap: 1.25rem;
   margin: 0 auto;
+  padding: 0 1.25rem;
 }
 
 .copy {
-  width: 100%;
+  width: 50%;
   max-width: 48rem;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
+  padding-inline: 1.25rem 2.5rem;
 }
 
 .title {
@@ -38,7 +40,7 @@
   gap: 0.75rem;
   margin: 0 0 2rem;
   color: var(--ifm-font-color-base);
-  font-size: 1.875rem;
+  font-size: 2.25rem;
   font-weight: 700;
   line-height: 1.25;
 }
@@ -53,7 +55,7 @@
 }
 
 .posts {
-  width: 100%;
+  width: 50%;
 }
 
 .postsHeading {
@@ -61,7 +63,7 @@
   align-items: center;
   gap: 0.5rem;
   width: 100%;
-  margin: 1.25rem 0 0;
+  margin: 0;
   color: var(--ifm-color-emphasis-700);
   font-size: 0.875rem;
   font-weight: 700;
@@ -69,7 +71,7 @@
 
 .grid {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 1.5rem;
   margin: 2rem 0;
   text-align: left;
@@ -81,7 +83,7 @@
 }
 
 .gridItemHidden {
-  display: none;
+  display: block;
 }
 
 .emptyState {
@@ -148,41 +150,41 @@
   text-decoration: none;
 }
 
-@media (min-width: 768px) {
-  .title {
-    font-size: 2.25rem;
-  }
-
-  .grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .gridItemHidden {
-    display: block;
-  }
-}
-
-@media (min-width: 1024px) {
+@media (max-width: 1023.98px) {
   .sectionContent {
-    flex-direction: row;
+    flex-direction: column;
   }
 
   .layout {
-    max-width: 80rem;
-    flex-direction: row;
-    padding: 0 1.25rem;
+    max-width: 48rem;
+    flex-direction: column;
+    padding: 0;
   }
 
   .copy,
   .posts {
-    width: 50%;
+    width: 100%;
   }
 
   .copy {
-    padding-inline: 1.25rem 2.5rem;
+    padding-inline: 0;
   }
 
   .postsHeading {
-    margin-top: 0;
+    margin-top: 1.25rem;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .title {
+    font-size: 1.875rem;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .gridItemHidden {
+    display: none;
   }
 }
