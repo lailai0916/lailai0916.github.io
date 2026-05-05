@@ -52,11 +52,7 @@ function YearSelector({
               onClick={() => onYearChange(isActive ? null : year)}
               className={styles.yearChipButton}
             >
-              <Badge
-                active={isActive}
-                hoverable={!isActive}
-                count={count}
-              >
+              <Badge active={isActive} hoverable={!isActive} count={count}>
                 {year}
               </Badge>
             </button>
@@ -99,9 +95,10 @@ export default function BlogArchivePage(props: Props): React.ReactElement {
   }, [validYears]);
 
   const handleYearChange = (year: number | null) => {
-    const url = year === null
-      ? window.location.pathname
-      : `${window.location.pathname}#${year}`;
+    const url =
+      year === null
+        ? window.location.pathname
+        : `${window.location.pathname}#${year}`;
     window.history.replaceState(null, '', url);
     setActiveYear(year);
   };

@@ -64,7 +64,7 @@
   padding: 4px;
   box-shadow:
     0 0 0 1px var(--ifm-color-emphasis-200),
-    0 8px 22px rgba(0, 0, 0, 0.10);
+    0 8px 22px rgba(0, 0, 0, 0.1);
 }
 
 .authorName {
