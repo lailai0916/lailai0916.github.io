@@ -211,7 +211,7 @@ export default function FourierTransformCanvas() {
     let animationId: number;
 
     const drawEpicycles = (): Point => {
-      const { primary, colors } = themeRef.current;
+      const { colors } = themeRef.current;
       let x = 0;
       let y = 0;
 
@@ -239,26 +239,124 @@ export default function FourierTransformCanvas() {
         ctx.stroke();
       }
 
-      ctx.fillStyle = primary;
-      ctx.beginPath();
-      ctx.arc(x, y, 3, 0, TWO_PI);
-      ctx.fill();
-
       return { x, y };
     };
 
-    const drawPath = (points: Point[], alpha = 1) => {
+    // Willow-leaf brush: bell-curve taper sin(π·t) along the *full* curve
+    // (offset shifts t when the slice no longer starts at 0, e.g. during erase).
+    // Three passes — wide+faint, mid, crisp — give a soft glow; dark mode
+    // uses 'lighter' so the halo blooms instead of stacking opaquely.
+    const drawWillowLeaf = (points: Point[], offset: number) => {
+      const total = state.fourierX.length;
+      if (points.length < 2 || total < 2) return;
+
+      const N = points.length;
+      const baseWidth = Math.max(2.5, canvasSize * 0.014);
+      const taper = new Float32Array(N);
+      const nx = new Float32Array(N);
+      const ny = new Float32Array(N);
+
+      for (let i = 0; i < N; i++) {
+        const t = (i + offset) / total;
+        const tc = t < 0 ? 0 : t > 1 ? 1 : t;
+        taper[i] = Math.pow(Math.sin(Math.PI * tc), 0.65);
+
+        let dx: number;
+        let dy: number;
+        if (i === 0) {
+          dx = points[1].x - points[0].x;
+          dy = points[1].y - points[0].y;
+        } else if (i === N - 1) {
+          dx = points[i].x - points[i - 1].x;
+          dy = points[i].y - points[i - 1].y;
+        } else {
+          dx = points[i + 1].x - points[i - 1].x;
+          dy = points[i + 1].y - points[i - 1].y;
+        }
+        const len = Math.hypot(dx, dy) || 1;
+        nx[i] = -dy / len;
+        ny[i] = dx / len;
+      }
+
+      const passes = isDark
+        ? [
+            { scale: 2.6, alpha: 0.1, comp: 'lighter' },
+            { scale: 1.5, alpha: 0.32, comp: 'lighter' },
+            { scale: 1.0, alpha: 1.0, comp: 'source-over' },
+          ]
+        : [
+            { scale: 1.8, alpha: 0.09, comp: 'source-over' },
+            { scale: 1.3, alpha: 0.22, comp: 'source-over' },
+            { scale: 1.0, alpha: 1.0, comp: 'source-over' },
+          ];
+
+      const primary = themeRef.current.primary;
+      for (const pass of passes) {
+        const w = baseWidth * pass.scale;
+        ctx.save();
+        ctx.globalCompositeOperation = pass.comp as GlobalCompositeOperation;
+        ctx.globalAlpha = pass.alpha;
+        ctx.fillStyle = primary;
+
+        ctx.beginPath();
+        const w0 = w * taper[0];
+        ctx.moveTo(points[0].x + nx[0] * w0, points[0].y + ny[0] * w0);
+        for (let i = 1; i < N; i++) {
+          const ww = w * taper[i];
+          ctx.lineTo(points[i].x + nx[i] * ww, points[i].y + ny[i] * ww);
+        }
+        for (let i = N - 1; i >= 0; i--) {
+          const ww = w * taper[i];
+          ctx.lineTo(points[i].x - nx[i] * ww, points[i].y - ny[i] * ww);
+        }
+        ctx.closePath();
+        ctx.fill();
+        ctx.restore();
+      }
+    };
+
+    const drawLiveStroke = (points: Point[]) => {
       if (points.length < 2) return;
+      ctx.save();
       ctx.strokeStyle = themeRef.current.primary;
-      ctx.globalAlpha = alpha;
-      ctx.lineWidth = 2;
+      ctx.lineCap = 'round';
+      ctx.lineJoin = 'round';
+      ctx.lineWidth = Math.max(2.5, canvasSize * 0.014);
+      ctx.globalAlpha = 0.92;
+      if (isDark) {
+        ctx.shadowColor = themeRef.current.primary;
+        ctx.shadowBlur = 12;
+      }
       ctx.beginPath();
       ctx.moveTo(points[0].x, points[0].y);
       for (let i = 1; i < points.length; i++) {
         ctx.lineTo(points[i].x, points[i].y);
       }
       ctx.stroke();
+      ctx.restore();
+    };
+
+    const drawTip = (x: number, y: number) => {
+      const primary = themeRef.current.primary;
+      ctx.save();
+      if (isDark) ctx.globalCompositeOperation = 'lighter';
+      ctx.fillStyle = primary;
+
+      ctx.globalAlpha = isDark ? 0.18 : 0.1;
+      ctx.beginPath();
+      ctx.arc(x, y, canvasSize * 0.04, 0, TWO_PI);
+      ctx.fill();
+
+      ctx.globalAlpha = isDark ? 0.36 : 0.22;
+      ctx.beginPath();
+      ctx.arc(x, y, canvasSize * 0.022, 0, TWO_PI);
+      ctx.fill();
+
       ctx.globalAlpha = 1;
+      ctx.beginPath();
+      ctx.arc(x, y, Math.max(2, canvasSize * 0.008), 0, TWO_PI);
+      ctx.fill();
+      ctx.restore();
     };
 
     const render = () => {
@@ -276,15 +374,17 @@ export default function FourierTransformCanvas() {
       ctx.fill();
 
       if (state.currentState === STATE.DRAWING) {
-        drawPath(state.drawing, 0.8);
+        drawLiveStroke(state.drawing);
       } else if (
         state.currentState === STATE.PLAYING &&
         state.fourierX.length > 0
       ) {
         if (state.drawing.length > 1) {
+          ctx.save();
           ctx.strokeStyle = primary;
-          ctx.globalAlpha = 0.2;
+          ctx.globalAlpha = 0.16;
           ctx.lineWidth = 1;
+          ctx.setLineDash([3, 5]);
           ctx.beginPath();
           ctx.moveTo(state.drawing[0].x, state.drawing[0].y);
           for (let i = 1; i < state.drawing.length; i++) {
@@ -292,17 +392,18 @@ export default function FourierTransformCanvas() {
           }
           ctx.closePath();
           ctx.stroke();
-          ctx.globalAlpha = 1;
+          ctx.restore();
         }
 
         const v = drawEpicycles();
         if (state.phase === 'draw') {
           state.path.push(v);
-          drawPath(state.path);
+          drawWillowLeaf(state.path, 0);
         } else {
           state.eraseIndex++;
-          drawPath(state.path.slice(state.eraseIndex));
+          drawWillowLeaf(state.path.slice(state.eraseIndex), state.eraseIndex);
         }
+        drawTip(v.x, v.y);
 
         const dt = TWO_PI / state.fourierX.length;
         state.time += dt;
