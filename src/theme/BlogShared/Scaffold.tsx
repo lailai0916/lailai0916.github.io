@@ -10,12 +10,7 @@ import { translate } from '@docusaurus/Translate';
 import { getAllBlogItems, getAllPostMetadata } from '@site/src/utils/blogData';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import { formatCompact } from '@site/src/utils/format';
-import {
-  BlogCard,
-  BlogMenu,
-  TagChipList,
-  type ChipItem,
-} from './Components';
+import { BlogCard, BlogMenu, TagChipList, type ChipItem } from './Components';
 import CalendarCard from './Calendar';
 import styles from './styles.module.css';
 

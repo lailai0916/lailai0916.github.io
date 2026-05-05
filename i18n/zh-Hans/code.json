@@ -389,7 +389,7 @@
     "message": "技术发展日新月异，我们需要保持敏锐的学习能力和好奇心。每一次新技术的掌握，都是对未来的投资。在这里记录学习过程中的思考与总结，分享解决问题的方法和经验。"
   },
   "home.blog.description.p2": {
-    "message": "通过不断的实践和总结，将知识转化为真正的技能。只有经过实践验证的技术和方法，才能真正帮助我们解决实际问题。你可以在这里找到算法题解、技术笔记和项目实践等内容。"
+    "message": "通过不断的实践和总结，将知识转化为真正的技能。只有经过实践验证的技术和方法，才能真正帮助我们解决实际问题。您可以在这里找到算法题解、技术笔记和项目实践等内容。"
   },
   "home.blog.more": {
     "message": "查看更多文章 →"
@@ -422,10 +422,10 @@
     "message": "秒"
   },
   "home.fouriertransform.title": {
-    "message": "傅立叶变换"
+    "message": "傅里叶变换"
   },
   "home.fouriertransform.description": {
-    "message": "在下方绘制任意形状，观察其傅立叶级数的旋转圆可视化"
+    "message": "在下方绘制任意形状，观察其傅里叶级数的旋转圆可视化"
   },
   "home.lorenz.reset": {
     "message": "重置"
@@ -485,7 +485,7 @@
     "message": "Cookie 设置"
   },
   "cookieConsent.description": {
-    "message": "本站使用 Cookie 记录你的偏好，以改善浏览体验。{learnMore}。"
+    "message": "本站使用 Cookie 记录您的偏好，以改善浏览体验。{learnMore}。"
   },
   "cookieConsent.learnMore": {
     "message": "了解更多"
@@ -901,7 +901,7 @@
     "description": "The title for error screen"
   },
   "theme.SearchModal.errorScreen.helpText": {
-    "message": "你可能需要检查网络连接。",
+    "message": "您可能需要检查网络连接。",
     "description": "The help text for error screen"
   },
   "theme.SearchModal.resultsScreen.askAiPlaceholder": {
@@ -925,7 +925,7 @@
     "description": "The text for copy button"
   },
   "theme.SearchModal.askAiScreen.copyButtonCopiedText": {
-    "message": "已复制!",
+    "message": "已复制！",
     "description": "The text for copy button when copied"
   },
   "theme.SearchModal.askAiScreen.copyButtonTitle": {
@@ -941,7 +941,7 @@
     "description": "The title for dislike button"
   },
   "theme.SearchModal.askAiScreen.thanksForFeedbackText": {
-    "message": "感谢您的反馈!",
+    "message": "感谢您的反馈！",
     "description": "The text for thanks for feedback"
   },
   "theme.SearchModal.askAiScreen.preToolCallText": {
@@ -1078,5 +1078,8 @@
   },
   "pages.insights.sysStatus.srLabel": {
     "message": "System status overview"
+  },
+  "pages.resources.search.clear": {
+    "message": "清空搜索"
   }
 }
