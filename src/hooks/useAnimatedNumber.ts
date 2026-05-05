@@ -17,11 +17,6 @@ export function useAnimatedNumber(
   useEffect(() => {
     if (target == null || !Number.isFinite(target)) return;
 
-    if (typeof window === 'undefined') {
-      setValue(target);
-      return;
-    }
-
     const from = fromRef.current;
     const delta = target - from;
     if (delta === 0) {
