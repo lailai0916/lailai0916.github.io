@@ -27,7 +27,7 @@ const { chromium } = require('playwright');
 async function loginWithAccount(accountName) {
   const storageFile = `${accountName}.json`;
 
-  console.log(`正在为账户 ${accountName} 启动登录流程...`);
+  console.log(`正在为账号 ${accountName} 启动登录流程...`);
 
   const browser = await chromium.launch({ headless: false });
 
@@ -43,7 +43,7 @@ async function loginWithAccount(accountName) {
   const page = await context.newPage();
   await page.goto('https://github.com');
 
-  console.log(`请在浏览器中操作，60秒后自动保存 ${accountName} 的登录状态`);
+  console.log(`请在浏览器中操作，60 秒后自动保存 ${accountName} 的登录状态`);
   await page.waitForTimeout(60000);
 
   await context.storageState({ path: storageFile });
@@ -54,12 +54,12 @@ async function loginWithAccount(accountName) {
 
 // 主程序
 (async () => {
-  // 从命令行参数获取账户名，默认为 account1
+  // 从命令行参数获取账号名，默认为 account1
   const accountName = process.argv[2] || 'account1';
 
-  // 验证账户名格式
+  // 验证账号名格式
   if (!accountName.match(/^account\d+$/)) {
-    console.error('错误：账户名格式应为 accountN（如 account1, account2）');
+    console.error('错误：账号名格式应为 accountN（如 account1, account2）');
     process.exit(1);
   }
 
