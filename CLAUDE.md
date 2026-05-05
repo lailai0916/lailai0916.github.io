@@ -26,6 +26,7 @@ There is no test runner. `npm run check` is the gate.
 ## Architecture
 
 ### Content vs. code
+
 - `docs/` — three doc sets (`contest/`, `note/`, `project/`) wired up in `sidebars.ts` as `sidebar1/2/3`. Sidebars are hand-curated, not auto-generated.
 - `blog/` — MDX posts grouped by topic folders; `authors.yml` and `tags.yml` define the controlled vocabularies (`onInlineTags`/`onInlineAuthors` warn if a post uses an unlisted value).
 - `src/pages/` — custom React pages (`about`, `travel`, `friends`, `resources`, `settings`, `insights`, `changelog`, `privacy`, plus the bespoke `index.tsx` cover/home). Page-local React lives in `src/pages/_components/` (the leading `_` stops Docusaurus from routing it).
@@ -36,13 +37,17 @@ There is no test runner. `npm run check` is the gate.
 - `static/` — copied verbatim to site root. Contains `CNAME`, `.nojekyll`, verification files, and image/JSON assets.
 
 ### Build-time metadata
+
 `docusaurus.config.ts` shells out to `git` (wrapped in `safeGit`) to compute `BUILD_TIME`, `GIT_SHA`, `GIT_COUNT`, and a `DEBUG_ID` exposed via `customFields`. Don't break that fallback path — code must still build outside a git checkout.
 
 ### Markdown pipeline
+
 Docs, blog, and pages all share the same plugin set: `remark-math` + `rehype-katex` for LaTeX, `@docusaurus/remark-plugin-npm2yarn` (sync) for install snippets, Mermaid via `@docusaurus/theme-mermaid`, and live React via `@docusaurus/theme-live-codeblock`. Admonitions are extended with a custom `example` keyword.
 
 ### i18n (critical)
+
 The site ships in `en` (default) and `zh-Hans`.
+
 - Every user-facing string in code must use `translate({ id, message })` (or `<Translate>`) from `@docusaurus/Translate`. After adding/changing strings, run `npm run i18n` and add the Chinese counterpart to `i18n/zh-Hans/code.json`.
 - Translated content lives under `i18n/zh-Hans/`:
   - `docusaurus-plugin-content-docs/current.json` — sidebar/category labels
@@ -51,6 +56,7 @@ The site ships in `en` (default) and `zh-Hans`.
 - `onBrokenLinks: 'throw'` is set, so missing translated targets will fail the build.
 
 ### Styling
+
 Components use CSS Modules (`styles.module.css` next to `index.tsx`). Global tokens and overrides live in `src/css/custom.css`. Per the contributing guide, prefer modern CSS (`grid`, `clamp()`, `color-mix()`, container queries) over JS layout.
 
 ## Conventions (from `.github/CONTRIBUTING.md`)
