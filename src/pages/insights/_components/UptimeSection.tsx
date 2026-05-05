@@ -16,12 +16,11 @@ function lastStatus(beats: KumaHeartbeat[] | undefined): number | undefined {
 function avgPing(beats: KumaHeartbeat[] | undefined): number | null {
   if (!beats || beats.length === 0) return null;
   const valid = beats.filter(
-    (b) => typeof b.ping === 'number' && Number.isFinite(b.ping)
+    (b): b is KumaHeartbeat & { ping: number } =>
+      typeof b.ping === 'number' && Number.isFinite(b.ping)
   );
   if (valid.length === 0) return null;
-  return Math.round(
-    valid.reduce((s, b) => s + (b.ping ?? 0), 0) / valid.length
-  );
+  return Math.round(valid.reduce((s, b) => s + b.ping, 0) / valid.length);
 }
 
 function MonitorRow({
