@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useState } from 'react';
+import React, { useMemo, useState } from 'react';
 import { useTheme } from '@site/src/hooks/useTheme';
 import BlogArchivePageOriginal from '@theme-original/BlogArchivePage';
 import { translate } from '@docusaurus/Translate';
@@ -80,28 +80,7 @@ export default function BlogArchivePage(props: Props): React.ReactElement {
       .map(([year, count]) => ({ year, count }));
   }, [posts]);
 
-  const validYears = useMemo(() => new Set(years.map((y) => y.year)), [years]);
   const [activeYear, setActiveYear] = useState<number | null>(null);
-
-  useEffect(() => {
-    const sync = () => {
-      const raw = window.location.hash.slice(1);
-      const y = Number(raw);
-      setActiveYear(Number.isFinite(y) && validYears.has(y) ? y : null);
-    };
-    sync();
-    window.addEventListener('hashchange', sync);
-    return () => window.removeEventListener('hashchange', sync);
-  }, [validYears]);
-
-  const handleYearChange = (year: number | null) => {
-    const url =
-      year === null
-        ? window.location.pathname
-        : `${window.location.pathname}#${year}`;
-    window.history.replaceState(null, '', url);
-    setActiveYear(year);
-  };
 
   const filteredPosts = useMemo(
     () =>
@@ -116,7 +95,7 @@ export default function BlogArchivePage(props: Props): React.ReactElement {
       <YearSelector
         years={years}
         activeYear={activeYear}
-        onYearChange={handleYearChange}
+        onYearChange={setActiveYear}
       />
       <BlogArchiveList posts={filteredPosts} />
     </BlogScaffold>
