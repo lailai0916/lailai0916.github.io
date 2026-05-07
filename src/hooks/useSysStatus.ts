@@ -18,7 +18,7 @@ export interface SysStatus {
 }
 
 const ENDPOINT = 'https://lailai.one/api/sys';
-const POLL_MS = 8000;
+const POLL_MS = 2000;
 
 export function useSysStatus() {
   const [data, setData] = useState<SysStatus | null>(null);

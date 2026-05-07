@@ -9,7 +9,7 @@ import metricListStyles from './MetricList.module.css';
 import styles from './SysStatusCard.module.css';
 
 const PING_TARGET = 'https://analytics.lailai.one/script.js';
-const PING_INTERVAL = 8000;
+const PING_INTERVAL = 2000;
 const TICK_INTERVAL = 1000;
 
 function detectBrowser(ua: string): string {
@@ -180,16 +180,16 @@ function SysStatusCardInner() {
         <Group
           cells={[
             { label: 'cpu', value: cpuStr, valueClassName: mutedIfNull(cpu) },
+            {
+              label: 'load',
+              value: loadStr,
+              valueClassName: mutedIfNull(load1),
+            },
             { label: 'mem', value: memStr, valueClassName: mutedIfNull(mem) },
             {
               label: 'swap',
               value: swapStr,
               valueClassName: mutedIfNull(swap),
-            },
-            {
-              label: 'load',
-              value: loadStr,
-              valueClassName: mutedIfNull(load1),
             },
             {
               label: 'disk',
@@ -200,35 +200,35 @@ function SysStatusCardInner() {
         />
         <Group
           cells={[
+            { label: 'ip', value: ipNode, valueClassName: mutedIfNull(ip) },
             {
               label: 'ping',
               value: pingStr,
               valueClassName: mutedIfNull(ping),
             },
-            { label: 'ip', value: ipNode, valueClassName: mutedIfNull(ip) },
-            { label: 'host', value: host },
             {
               label: 'uptime',
               value: uptimeStr,
               valueClassName: mutedIfNull(serverUptime),
             },
-            { label: 'browser', value: browser },
-          ]}
-        />
-        <Group
-          cells={[
             {
               label: 'last_deploy',
               value: lastDeployStr,
               valueClassName: mutedIfNull(lastDeploy),
             },
-            { label: 'build_time', value: formatBuildTime(buildTime) },
-            { label: 'debug_id', value: debugId },
             {
               label: 'tls_expires',
               value: tlsStr,
               valueClassName: mutedIfNull(tlsExpires),
             },
+          ]}
+        />
+        <Group
+          cells={[
+            { label: 'build_time', value: formatBuildTime(buildTime) },
+            { label: 'debug_id', value: debugId },
+            { label: 'host', value: host },
+            { label: 'browser', value: browser },
             { label: 'datetime', value: formatDateTime(now) },
           ]}
         />
