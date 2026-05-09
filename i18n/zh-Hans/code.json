@@ -1078,5 +1078,8 @@
   },
   "pages.resources.search.clear": {
     "message": "清空搜索"
+  },
+  "pages.resources.category.clear": {
+    "message": "清除分类"
   }
 }
