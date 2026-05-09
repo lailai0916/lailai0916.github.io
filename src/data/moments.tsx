@@ -19,6 +19,11 @@ export const MOMENT_LIST: MomentItem[] = [
     content: "Website's 1st Anniversary! 🎉",
   },
   {
+    date: '2025-10-05T19:45',
+    content: 'GIMPS | Lucas–Lehmer Primality Test',
+    images: ['https://cloud.lailai.one/f/wrhg/gimps.png'],
+  },
+  {
     date: '2025-09-16T00:00',
     content: '16th Birthday! 🎉',
     images: ['https://cloud.lailai.one/f/r4HM/birthday-16.png'],
