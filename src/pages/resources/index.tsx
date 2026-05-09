@@ -1,4 +1,10 @@
-import React, { type ReactNode, useState, useMemo } from 'react';
+import React, {
+  type ReactNode,
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+} from 'react';
 import { Icon } from '@iconify/react';
 import Layout from '@theme/Layout';
 
@@ -76,63 +82,132 @@ function FilterBar({
   searchValue: string;
   onSearchChange: (value: string) => void;
 }) {
+  const [open, setOpen] = useState(false);
+  const wrapperRef = useRef<HTMLDivElement>(null);
+  const inputRef = useRef<HTMLInputElement>(null);
+
+  const activeCat = useMemo(
+    () => categories.find((c) => c.title === activeCategory) ?? null,
+    [categories, activeCategory]
+  );
+
+  useEffect(() => {
+    if (!open) return;
+    const handleClick = (e: MouseEvent) => {
+      if (
+        wrapperRef.current &&
+        !wrapperRef.current.contains(e.target as Node)
+      ) {
+        setOpen(false);
+      }
+    };
+    const handleKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        setOpen(false);
+        inputRef.current?.blur();
+      }
+    };
+    document.addEventListener('mousedown', handleClick);
+    document.addEventListener('keydown', handleKey);
+    return () => {
+      document.removeEventListener('mousedown', handleClick);
+      document.removeEventListener('keydown', handleKey);
+    };
+  }, [open]);
+
   return (
-    <Card padding={0} className={styles.filterBar}>
-      <div className={styles.filterSearch}>
-        <Icon icon="lucide:search" className={styles.filterSearchIcon} />
-        <input
-          type="text"
-          value={searchValue}
-          onChange={(e) => onSearchChange(e.target.value)}
-          placeholder={translate({
-            id: 'pages.resources.search.placeholder',
-            message: 'Search Resources',
-          })}
-          className={styles.filterSearchInput}
-        />
-        {searchValue && (
-          <button
-            type="button"
-            onClick={() => onSearchChange('')}
-            className={styles.filterSearchClear}
-            aria-label={translate({
-              id: 'pages.resources.search.clear',
-              message: 'Clear search',
+    <div className={styles.filterBar} ref={wrapperRef}>
+      <Card
+        padding={0}
+        className={clsx(styles.filterSurface, {
+          [styles.filterSurfaceOpen]: open,
+        })}
+      >
+        <div className={styles.filterSearch}>
+          <Icon icon="lucide:search" className={styles.filterSearchIcon} />
+          {activeCat && (
+            <span className={styles.filterActiveCat}>
+              <Icon
+                icon={activeCat.icon}
+                className={styles.filterActiveCatIcon}
+              />
+              <span>{activeCat.title}</span>
+              <button
+                type="button"
+                className={styles.filterActiveCatClear}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  onCategoryChange('all');
+                }}
+                aria-label={translate({
+                  id: 'pages.resources.category.clear',
+                  message: 'Clear category',
+                })}
+              >
+                <Icon icon="lucide:x" />
+              </button>
+            </span>
+          )}
+          <input
+            ref={inputRef}
+            type="text"
+            value={searchValue}
+            onChange={(e) => onSearchChange(e.target.value)}
+            onFocus={() => setOpen(true)}
+            placeholder={translate({
+              id: 'pages.resources.search.placeholder',
+              message: 'Search Resources',
             })}
-          >
-            <Icon icon="lucide:x" />
-          </button>
-        )}
-      </div>
-      <div className={styles.filterRail}>
-        {categories.map((category) => {
-          const isActive = activeCategory === category.title;
-          return (
+            className={styles.filterSearchInput}
+          />
+          {searchValue && (
             <button
-              key={category.title}
               type="button"
-              onClick={() =>
-                onCategoryChange(isActive ? 'all' : category.title)
-              }
-              className={clsx(styles.filterRailItem, {
-                [styles.filterRailItemActive]: isActive,
+              onClick={() => onSearchChange('')}
+              className={styles.filterSearchClear}
+              aria-label={translate({
+                id: 'pages.resources.search.clear',
+                message: 'Clear search',
               })}
             >
-              <Icon
-                icon={category.icon}
-                className={styles.filterRailItemIcon}
-              />
-              <span className={styles.filterRailItemLabel}>
-                {category.title}
-              </span>
-              <span className={styles.filterRailItemCount}>
-                {category.resources.length}
-              </span>
+              <Icon icon="lucide:x" />
             </button>
-          );
-        })}
-      </div>
-    </Card>
+          )}
+        </div>
+      </Card>
+      {open && (
+        <div className={styles.filterPanel}>
+          <div className={styles.filterRail}>
+            {categories.map((category) => {
+              const isActive = activeCategory === category.title;
+              return (
+                <button
+                  key={category.title}
+                  type="button"
+                  onClick={() =>
+                    onCategoryChange(isActive ? 'all' : category.title)
+                  }
+                  className={clsx(styles.filterRailItem, {
+                    [styles.filterRailItemActive]: isActive,
+                  })}
+                >
+                  <Icon
+                    icon={category.icon}
+                    className={styles.filterRailItemIcon}
+                  />
+                  <span className={styles.filterRailItemLabel}>
+                    {category.title}
+                  </span>
+                  <span className={styles.filterRailItemCount}>
+                    {category.resources.length}
+                  </span>
+                </button>
+              );
+            })}
+          </div>
+        </div>
+      )}
+    </div>
   );
 }
 

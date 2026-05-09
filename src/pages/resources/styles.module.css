@@ -6,10 +6,24 @@
   gap: 2rem;
 }
 
-/* Filter toolbar (search + category rail) */
+/* Filter toolbar (search + dropdown category rail) */
 
 .filterBar {
+  position: relative;
+}
+
+.filterSurface {
   overflow: hidden;
+  transition:
+    border-color 160ms ease,
+    box-shadow 160ms ease;
+}
+
+.filterSurfaceOpen {
+  border-color: var(--ifm-color-primary);
+  box-shadow:
+    0 0 0 3px color-mix(in srgb, var(--ifm-color-primary) 16%, transparent),
+    0 12px 32px rgba(0, 0, 0, 0.06);
 }
 
 .filterSearch {
@@ -17,7 +31,55 @@
   align-items: center;
   gap: 0.6rem;
   padding: 0.75rem 1rem;
-  border-bottom: 1px solid var(--ifm-color-emphasis-200);
+}
+
+.filterActiveCat {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  height: 1.4rem;
+  padding: 0 0.4rem 0 0.5rem;
+  background: color-mix(in srgb, var(--ifm-color-primary) 12%, transparent);
+  color: var(--ifm-color-primary);
+  border-radius: 6px;
+  font-size: 0.78rem;
+  font-weight: 500;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.filterActiveCatIcon {
+  font-size: 0.9em;
+}
+
+.filterActiveCatClear {
+  appearance: none;
+  border: none;
+  background: transparent;
+  padding: 0;
+  margin-left: 0.15rem;
+  cursor: pointer;
+  display: inline-flex;
+  color: inherit;
+  opacity: 0.75;
+  transition: opacity 160ms ease;
+}
+
+.filterActiveCatClear:hover {
+  opacity: 1;
+}
+
+.filterPanel {
+  position: absolute;
+  top: calc(100% + 0.5rem);
+  left: 0;
+  right: 0;
+  z-index: 50;
+  background: var(--ifm-card-background-color);
+  border: 1px solid var(--ifm-color-emphasis-200);
+  border-radius: var(--ifm-card-border-radius, 12px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
 }
 
 .filterSearchIcon {
@@ -34,6 +96,7 @@
   outline: none;
   color: var(--ifm-font-color-base);
   font-size: 0.95rem;
+  line-height: 1.4rem;
   padding: 0;
 }
 
