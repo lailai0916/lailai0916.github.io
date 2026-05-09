@@ -106,23 +106,19 @@ function useNow(): Date {
   return now;
 }
 
-interface Cell {
+function Cell({
+  label,
+  value,
+  valueClassName,
+}: {
   label: string;
   value: React.ReactNode;
   valueClassName?: string;
-}
-
-function Group({ cells }: { cells: Cell[] }) {
+}) {
   return (
-    <div className={styles.group}>
-      {cells.map((c) => (
-        <div key={c.label} className={styles.cell}>
-          <span className={styles.key}>{c.label}</span>
-          <span className={`${styles.val} ${c.valueClassName ?? ''}`}>
-            {c.value}
-          </span>
-        </div>
-      ))}
+    <div className={styles.cell}>
+      <span className={styles.key}>{label}</span>
+      <span className={`${styles.val} ${valueClassName ?? ''}`}>{value}</span>
     </div>
   );
 }
@@ -177,61 +173,37 @@ function SysStatusCardInner() {
       </header>
 
       <div className={styles.body}>
-        <Group
-          cells={[
-            { label: 'cpu', value: cpuStr, valueClassName: mutedIfNull(cpu) },
-            {
-              label: 'load',
-              value: loadStr,
-              valueClassName: mutedIfNull(load1),
-            },
-            { label: 'mem', value: memStr, valueClassName: mutedIfNull(mem) },
-            {
-              label: 'swap',
-              value: swapStr,
-              valueClassName: mutedIfNull(swap),
-            },
-            {
-              label: 'disk',
-              value: diskStr,
-              valueClassName: mutedIfNull(disk),
-            },
-          ]}
+        <Cell label="cpu" value={cpuStr} valueClassName={mutedIfNull(cpu)} />
+        <Cell
+          label="load"
+          value={loadStr}
+          valueClassName={mutedIfNull(load1)}
         />
-        <Group
-          cells={[
-            { label: 'ip', value: ipNode, valueClassName: mutedIfNull(ip) },
-            {
-              label: 'ping',
-              value: pingStr,
-              valueClassName: mutedIfNull(ping),
-            },
-            {
-              label: 'uptime',
-              value: uptimeStr,
-              valueClassName: mutedIfNull(serverUptime),
-            },
-            {
-              label: 'last_deploy',
-              value: lastDeployStr,
-              valueClassName: mutedIfNull(lastDeploy),
-            },
-            {
-              label: 'tls_expires',
-              value: tlsStr,
-              valueClassName: mutedIfNull(tlsExpires),
-            },
-          ]}
+        <Cell label="mem" value={memStr} valueClassName={mutedIfNull(mem)} />
+        <Cell label="swap" value={swapStr} valueClassName={mutedIfNull(swap)} />
+        <Cell label="disk" value={diskStr} valueClassName={mutedIfNull(disk)} />
+        <Cell label="ip" value={ipNode} valueClassName={mutedIfNull(ip)} />
+        <Cell label="ping" value={pingStr} valueClassName={mutedIfNull(ping)} />
+        <Cell
+          label="uptime"
+          value={uptimeStr}
+          valueClassName={mutedIfNull(serverUptime)}
         />
-        <Group
-          cells={[
-            { label: 'build_time', value: formatBuildTime(buildTime) },
-            { label: 'debug_id', value: debugId },
-            { label: 'host', value: host },
-            { label: 'browser', value: browser },
-            { label: 'datetime', value: formatDateTime(now) },
-          ]}
+        <Cell
+          label="last_deploy"
+          value={lastDeployStr}
+          valueClassName={mutedIfNull(lastDeploy)}
         />
+        <Cell
+          label="tls_expires"
+          value={tlsStr}
+          valueClassName={mutedIfNull(tlsExpires)}
+        />
+        <Cell label="build_time" value={formatBuildTime(buildTime)} />
+        <Cell label="debug_id" value={debugId} />
+        <Cell label="host" value={host} />
+        <Cell label="browser" value={browser} />
+        <Cell label="datetime" value={formatDateTime(now)} />
       </div>
 
       <span className={styles.srOnly}>

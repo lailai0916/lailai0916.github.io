@@ -14,18 +14,13 @@
 .body {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 0.75rem 1.75rem;
+  grid-template-rows: repeat(5, auto);
+  grid-auto-flow: column;
+  gap: 0.55rem 1.75rem;
   position: relative;
   z-index: 1;
   font-size: 0.9rem;
   line-height: 1.4;
-}
-
-.group {
-  display: flex;
-  flex-direction: column;
-  gap: 0.55rem;
-  min-width: 0;
 }
 
 .cell {
@@ -77,7 +72,9 @@
 @media (max-width: 768px) {
   .body {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 0.75rem 1.25rem;
+    grid-template-rows: auto;
+    grid-auto-flow: row;
+    gap: 0.55rem 1.25rem;
   }
 }
 
