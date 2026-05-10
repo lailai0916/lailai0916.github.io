@@ -43,8 +43,8 @@
 }
 
 .avatar {
-  width: 72px;
-  height: 72px;
+  width: 80px;
+  height: 80px;
   border-radius: 50%;
   object-fit: cover;
 }
@@ -60,7 +60,6 @@
 }
 
 .role {
-  font-size: 0.95rem;
   color: var(--ifm-color-emphasis-600);
   margin: 0.25rem 0 0;
 }

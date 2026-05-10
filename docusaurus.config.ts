@@ -155,13 +155,23 @@ const config: Config = {
         },
         { label: 'Blog', to: '/blog', position: 'left' },
         {
-          label: 'More',
+          label: 'Pages',
           position: 'right',
           items: [
             { label: 'About', to: '/about' },
             { label: 'Travel', to: '/travel' },
             { label: 'Friends', to: '/friends' },
             { label: 'Resources', to: '/resources' },
+          ],
+        },
+        {
+          label: 'Site',
+          position: 'right',
+          items: [
+            { label: 'Settings', to: '/settings' },
+            { label: 'Insights', to: '/insights' },
+            { label: 'Changelog', to: '/changelog' },
+            { label: 'Privacy Policy', to: '/privacy' },
           ],
         },
         { type: 'localeDropdown', position: 'right' },

@@ -23,9 +23,9 @@
     "message": "博客",
     "description": "Navbar item with label Blog"
   },
-  "item.label.More": {
-    "message": "更多",
-    "description": "Navbar item with label More"
+  "item.label.Pages": {
+    "message": "页面",
+    "description": "Navbar item with label Pages"
   },
   "item.label.About": {
     "message": "关于",
@@ -42,5 +42,25 @@
   "item.label.Resources": {
     "message": "资源",
     "description": "Navbar item with label Resources"
+  },
+  "item.label.Site": {
+    "message": "站点",
+    "description": "Navbar item with label Site"
+  },
+  "item.label.Settings": {
+    "message": "设置",
+    "description": "Navbar item with label Settings"
+  },
+  "item.label.Insights": {
+    "message": "洞察",
+    "description": "Navbar item with label Insights"
+  },
+  "item.label.Changelog": {
+    "message": "更新日志",
+    "description": "Navbar item with label Changelog"
+  },
+  "item.label.Privacy Policy": {
+    "message": "隐私政策",
+    "description": "Navbar item with label Privacy Policy"
   }
 }
