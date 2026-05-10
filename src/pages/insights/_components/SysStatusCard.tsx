@@ -9,7 +9,7 @@ import metricListStyles from './MetricList.module.css';
 import styles from './SysStatusCard.module.css';
 
 const PING_TARGET = 'https://analytics.lailai.one/script.js';
-const PING_INTERVAL = 1000;
+const PING_INTERVAL = 2000;
 const TICK_INTERVAL = 1000;
 
 function detectBrowser(ua: string): string {
