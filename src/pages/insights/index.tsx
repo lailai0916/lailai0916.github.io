@@ -324,7 +324,7 @@ function MetricsGrid({ range }: { range: InsightsRange }) {
       />
       <MetricList
         title={translate({
-          id: 'pages.insights.metricList.referrers',
+          id: 'pages.insights.metricList.referrers.title',
           message: 'Top referrers',
         })}
         icon="lucide:link"

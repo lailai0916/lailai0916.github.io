@@ -110,10 +110,10 @@
   "components.countdown.unit.seconds": {
     "message": "秒"
   },
-  "components.fouriertransform.title": {
+  "components.fourierTransform.title": {
     "message": "傅里叶变换"
   },
-  "components.fouriertransform.description": {
+  "components.fourierTransform.description": {
     "message": "在下方绘制任意形状，观察其傅里叶级数的旋转圆可视化"
   },
   "components.lorenz.reset": {
@@ -125,29 +125,20 @@
   "components.lorenz.description": {
     "message": "拖动旋转视角并调整参数，探索确定性混沌与蝴蝶效应"
   },
-  "components.neuralnetwork.clear": {
+  "components.neuralNetwork.clear": {
     "message": "清除"
   },
-  "components.neuralnetwork.check": {
+  "components.neuralNetwork.check": {
     "message": "识别数字"
   },
-  "components.neuralnetwork.preprocess": {
+  "components.neuralNetwork.preprocess": {
     "message": "预处理"
   },
-  "components.neuralnetwork.title": {
+  "components.neuralNetwork.title": {
     "message": "神经网络"
   },
-  "components.neuralnetwork.description": {
+  "components.neuralNetwork.description": {
     "message": "在下方绘制数字 0–9，神经网络会识别您的手写数字"
-  },
-  "components.problem.code": {
-    "message": "代码（{num}）"
-  },
-  "components.problem.solution": {
-    "message": "题解"
-  },
-  "components.problem.error": {
-    "message": "无法加载题目「{id}」。"
   },
   "components.solution.luogu": {
     "message": "洛谷"
@@ -157,6 +148,15 @@
   },
   "components.solution.solution": {
     "message": "题解"
+  },
+  "components.problem.code": {
+    "message": "代码（{num}）"
+  },
+  "components.problem.solution": {
+    "message": "题解"
+  },
+  "components.problem.error": {
+    "message": "无法加载题目「{id}」。"
   },
   "pages.friends.title": {
     "message": "友链"
@@ -178,6 +178,9 @@
   },
   "pages.insights.modification": {
     "message": "实时<b>洞察</b>"
+  },
+  "pages.insights.metricList.empty": {
+    "message": "暂无数据"
   },
   "pages.insights.metric.visitors": {
     "message": "访客数"
@@ -212,10 +215,7 @@
   "pages.insights.metricList.pages": {
     "message": "热门页面"
   },
-  "pages.insights.metricList.empty": {
-    "message": "暂无数据"
-  },
-  "pages.insights.metricList.referrers": {
+  "pages.insights.metricList.referrers.title": {
     "message": "来源站点"
   },
   "pages.insights.metricList.referrers.direct": {
@@ -251,10 +251,10 @@
   "pages.resources.datacard.label2": {
     "message": "项资源"
   },
-  "pages.resources.noresults.description": {
+  "pages.resources.noResults.description": {
     "message": "找不到和“{query}”相符的资源。"
   },
-  "pages.resources.noresults.clear": {
+  "pages.resources.noResults.clear": {
     "message": "清空搜索"
   },
   "pages.settings.title": {
@@ -302,7 +302,7 @@
   "pages.settings.item.font.size.current": {
     "message": "字体大小：{size}px"
   },
-  "pages.settings.item.font.lineheight.current": {
+  "pages.settings.item.font.lineHeight.current": {
     "message": "行间距：{value}"
   },
   "pages.settings.item.experimental.option.originalLayout": {
@@ -320,16 +320,16 @@
   "pages.settings.item.experimental.description": {
     "message": "试用开发中的新功能"
   },
-  "pages.settings.item.quickactions.option.confetti": {
+  "pages.settings.item.quickActions.option.confetti": {
     "message": "给我惊喜"
   },
-  "pages.settings.item.quickactions.option.reset": {
+  "pages.settings.item.quickActions.option.reset": {
     "message": "重置设置"
   },
-  "pages.settings.item.quickactions.title": {
+  "pages.settings.item.quickActions.title": {
     "message": "快捷操作"
   },
-  "pages.settings.item.quickactions.description": {
+  "pages.settings.item.quickActions.description": {
     "message": "一键执行常用操作"
   },
   "pages.settings.item.language.title": {
@@ -635,6 +635,10 @@
     "message": "标签：",
     "description": "The label alongside a tag list"
   },
+  "theme.AnnouncementBar.closeButtonAriaLabel": {
+    "message": "关闭",
+    "description": "The ARIA label for close button of announcement bar"
+  },
   "theme.admonition.caution": {
     "message": "警告",
     "description": "The default label used for the Caution admonition (:::caution)"
@@ -658,10 +662,6 @@
   "theme.admonition.warning": {
     "message": "注意",
     "description": "The default label used for the Warning admonition (:::warning)"
-  },
-  "theme.AnnouncementBar.closeButtonAriaLabel": {
-    "message": "关闭",
-    "description": "The ARIA label for close button of announcement bar"
   },
   "theme.blog.sidebar.navAriaLabel": {
     "message": "最近文章导航",
@@ -703,14 +703,6 @@
     "message": "阅读需 {readingTime} 分钟",
     "description": "Pluralized label for \"{readingTime} min read\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
   },
-  "theme.blog.post.readMore": {
-    "message": "阅读更多",
-    "description": "The label used in blog post item excerpts to link to full blog posts"
-  },
-  "theme.blog.post.readMoreLabel": {
-    "message": "阅读 {title} 的全文",
-    "description": "The ARIA label for the link to full blog posts from excerpts"
-  },
   "theme.CodeBlock.copy": {
     "message": "复制",
     "description": "The copy button label on code blocks"
@@ -726,6 +718,14 @@
   "theme.CodeBlock.wordWrapToggle": {
     "message": "切换自动换行",
     "description": "The title attribute for toggle word wrapping button of code block lines"
+  },
+  "theme.blog.post.readMore": {
+    "message": "阅读更多",
+    "description": "The label used in blog post item excerpts to link to full blog posts"
+  },
+  "theme.blog.post.readMoreLabel": {
+    "message": "阅读 {title} 的全文",
+    "description": "The ARIA label for the link to full blog posts from excerpts"
   },
   "theme.docs.breadcrumbs.home": {
     "message": "主页面",

@@ -247,7 +247,7 @@ function Typography() {
           <span className={styles.sliderLabel}>
             {translate(
               {
-                id: 'pages.settings.item.font.lineheight.current',
+                id: 'pages.settings.item.font.lineHeight.current',
                 message: 'Line Height: {value}',
               },
               { value: lineHeight.toFixed(2) }
@@ -384,7 +384,7 @@ function QuickActions() {
     {
       key: 'surprise' as const,
       label: translate({
-        id: 'pages.settings.item.quickactions.option.confetti',
+        id: 'pages.settings.item.quickActions.option.confetti',
         message: 'Surprise Me',
       }),
       icon: 'lucide:sparkles',
@@ -393,7 +393,7 @@ function QuickActions() {
     {
       key: 'reset' as const,
       label: translate({
-        id: 'pages.settings.item.quickactions.option.reset',
+        id: 'pages.settings.item.quickActions.option.reset',
         message: 'Reset Settings',
       }),
       icon: 'lucide:rotate-ccw',
@@ -404,11 +404,11 @@ function QuickActions() {
   return (
     <IconCard
       title={translate({
-        id: 'pages.settings.item.quickactions.title',
+        id: 'pages.settings.item.quickActions.title',
         message: 'Quick Actions',
       })}
       description={translate({
-        id: 'pages.settings.item.quickactions.description',
+        id: 'pages.settings.item.quickActions.description',
         message: 'Run common actions instantly',
       })}
       icon="lucide:zap"

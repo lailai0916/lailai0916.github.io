@@ -6,11 +6,11 @@ import SectionContainer, {
 import { translate } from '@docusaurus/Translate';
 
 const TITLE = translate({
-  id: 'components.neuralnetwork.title',
+  id: 'components.neuralNetwork.title',
   message: 'Neural Network',
 });
 const DESCRIPTION = translate({
-  id: 'components.neuralnetwork.description',
+  id: 'components.neuralNetwork.description',
   message:
     'Draw digits 0–9 below, and the neural network will recognize your handwriting',
 });

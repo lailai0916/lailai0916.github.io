@@ -311,7 +311,7 @@ export default function Resources(): ReactNode {
             <p>
               {translate(
                 {
-                  id: 'pages.resources.noresults.description',
+                  id: 'pages.resources.noResults.description',
                   message: 'No resources found matching "{query}".',
                 },
                 { query: searchQuery }
@@ -323,7 +323,7 @@ export default function Resources(): ReactNode {
               onClick={() => setSearchQuery('')}
             >
               {translate({
-                id: 'pages.resources.noresults.clear',
+                id: 'pages.resources.noResults.clear',
                 message: 'Clear Search',
               })}
             </Button>

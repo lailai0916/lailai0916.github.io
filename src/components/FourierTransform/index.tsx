@@ -6,11 +6,11 @@ import SectionContainer, {
 import { translate } from '@docusaurus/Translate';
 
 const TITLE = translate({
-  id: 'components.fouriertransform.title',
+  id: 'components.fourierTransform.title',
   message: 'Fourier Transform',
 });
 const DESCRIPTION = translate({
-  id: 'components.fouriertransform.description',
+  id: 'components.fourierTransform.description',
   message:
     'Draw any shape below to see its Fourier series visualization with rotating circles',
 });
