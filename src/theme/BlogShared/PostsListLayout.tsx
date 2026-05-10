@@ -5,20 +5,14 @@ import { Icon } from '@iconify/react';
 import type { BlogPaginatedMetadata } from '@docusaurus/plugin-content-blog';
 import type { Props as BlogListPageProps } from '@theme/BlogListPage';
 import BlogScaffold from './Scaffold';
-import { BlogCard, useAnalytics } from './Components';
+import { BlogCard, TagChipList, useAnalytics } from './Components';
 
 import { translate } from '@docusaurus/Translate';
-import IconText from '@site/src/components/laikit/IconText';
 import { formatBeijingDate } from '@site/src/utils/format';
 import MDXContent from '@theme/MDXContent';
 import styles from './styles.module.css';
 
 type PostListItem = BlogListPageProps['items'][number];
-
-interface IconDataProps {
-  icon: string;
-  children: React.ReactNode;
-}
 
 interface PostCardProps {
   item: PostListItem;
@@ -29,99 +23,138 @@ type PaginationItem = {
   to?: string;
 };
 
-function IconData({ icon, children }: IconDataProps) {
-  return (
-    <>
-      <span className={styles.dot}>|</span>
-      <IconText icon={icon} monochrome>
-        {children}
-      </IconText>
-    </>
-  );
-}
-
 function PostCard({ item }: PostCardProps) {
   const { content: MDXPageContent } = item;
-  const { metadata, assets, frontMatter } = MDXPageContent;
-  const image = assets.image ?? frontMatter.image;
+  const { metadata, frontMatter } = MDXPageContent;
+  const rawImage = frontMatter.image as
+    | string
+    | { light?: string; dark?: string }
+    | undefined;
+  const isObj = !!rawImage && typeof rawImage === 'object';
+  const lightImage = isObj
+    ? (rawImage.light ?? rawImage.dark)
+    : (rawImage as string | undefined);
+  const darkImage = isObj
+    ? (rawImage.dark ?? rawImage.light)
+    : (rawImage as string | undefined);
+  const themed = lightImage && darkImage && lightImage !== darkImage;
   const { analytics, status } = useAnalytics(metadata.permalink);
 
+  const tagItems = (metadata.tags ?? [])
+    .filter((t) => !!t.label && !!t.permalink)
+    .map((t) => ({ to: t.permalink, label: t.label }));
+
   return (
-    <BlogCard>
-      {image && (
-        <Link to={metadata.permalink} className={styles.postCoverWrap}>
-          <img src={image} alt={metadata.title} className={styles.postCover} />
-        </Link>
-      )}
-      <h2 className={styles.postTitle}>
-        <Link to={metadata.permalink} className={styles.postTitleLink}>
-          {metadata.title}
-        </Link>
-      </h2>
-      <div className={styles.postExcerpt}>
-        <MDXContent>
-          <MDXPageContent />
-        </MDXContent>
-      </div>
-      <div className={styles.postMeta}>
-        <IconText icon="lucide:calendar" monochrome>
-          <time dateTime={metadata.date}>
-            {formatBeijingDate(metadata.date)}
-          </time>
-        </IconText>
-        {!!metadata.readingTime && (
-          <>
-            <IconData icon="lucide:file-text">
-              {translate(
-                {
-                  id: 'blog.postcard.wordCount',
-                  message: '{word} words',
-                },
-                {
-                  word: Math.round(metadata.readingTime * 200),
-                }
-              )}
-            </IconData>
-            <IconData icon="lucide:timer">
-              {translate(
-                {
-                  id: 'blog.postcard.readingTime',
-                  message: '{readingTime} min',
-                },
-                {
-                  readingTime: Math.max(1, Math.round(metadata.readingTime)),
-                }
-              )}
-            </IconData>
-          </>
-        )}
-        {status === 'success' && (
-          <IconData icon="lucide:eye">
-            {translate(
-              {
-                id: 'blog.postcard.viewCount',
-                message: '{viewCount} views',
-              },
-              {
-                viewCount: analytics.pageviews ?? '–',
-              }
+    <article className={styles.postCard}>
+      <BlogCard>
+        {lightImage && (
+          <Link
+            to={metadata.permalink}
+            className={styles.postCoverWrap}
+            tabIndex={-1}
+            aria-hidden="true"
+          >
+            {themed ? (
+              <>
+                <img
+                  src={lightImage}
+                  alt=""
+                  className={clsx(styles.postCover, styles.postCoverLight)}
+                  loading="lazy"
+                />
+                <img
+                  src={darkImage}
+                  alt=""
+                  className={clsx(styles.postCover, styles.postCoverDark)}
+                  loading="lazy"
+                />
+              </>
+            ) : (
+              <img
+                src={lightImage}
+                alt=""
+                className={styles.postCover}
+                loading="lazy"
+              />
             )}
-          </IconData>
+          </Link>
         )}
-        {metadata.tags?.length > 0 && (
-          <IconData icon="lucide:tag">
-            {metadata.tags?.map((tag, i) => (
-              <React.Fragment key={tag.label}>
-                <Link to={tag.permalink} style={{ color: 'inherit' }}>
-                  {tag.label}
-                </Link>
-                {i < metadata.tags.length - 1 && ' / '}
-              </React.Fragment>
-            ))}
-          </IconData>
+
+        <div className={styles.postEyebrow}>
+          <span className={styles.eyebrowItem}>
+            <Icon icon="lucide:calendar" width={13} height={13} />
+            <time dateTime={metadata.date}>
+              {formatBeijingDate(metadata.date)}
+            </time>
+          </span>
+          {!!metadata.readingTime && (
+            <>
+              <span className={styles.eyebrowDot} aria-hidden="true" />
+              <span className={styles.eyebrowItem}>
+                <Icon icon="lucide:file-text" width={13} height={13} />
+                {translate(
+                  {
+                    id: 'blog.postcard.wordCount',
+                    message: '{word} words',
+                  },
+                  {
+                    word: Math.round(metadata.readingTime * 200),
+                  }
+                )}
+              </span>
+              <span className={styles.eyebrowDot} aria-hidden="true" />
+              <span className={styles.eyebrowItem}>
+                <Icon icon="lucide:timer" width={13} height={13} />
+                {translate(
+                  {
+                    id: 'blog.postcard.readingTime',
+                    message: '{readingTime} min',
+                  },
+                  {
+                    readingTime: Math.max(1, Math.round(metadata.readingTime)),
+                  }
+                )}
+              </span>
+            </>
+          )}
+          {status === 'success' && (
+            <>
+              <span className={styles.eyebrowDot} aria-hidden="true" />
+              <span className={styles.eyebrowItem}>
+                <Icon icon="lucide:eye" width={13} height={13} />
+                {translate(
+                  {
+                    id: 'blog.postcard.viewCount',
+                    message: '{viewCount} views',
+                  },
+                  {
+                    viewCount: analytics.pageviews ?? '–',
+                  }
+                )}
+              </span>
+            </>
+          )}
+        </div>
+
+        <h2 className={styles.postTitle}>
+          <Link to={metadata.permalink} className={styles.postTitleLink}>
+            {metadata.title}
+          </Link>
+        </h2>
+
+        <div className={styles.postExcerpt}>
+          <MDXContent>
+            <MDXPageContent />
+          </MDXContent>
+        </div>
+
+        {tagItems.length > 0 && (
+          <div className={styles.postFooter}>
+            <TagChipList items={tagItems} />
+          </div>
         )}
-      </div>
-    </BlogCard>
+      </BlogCard>
+    </article>
   );
 }
 
