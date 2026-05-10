@@ -21,18 +21,10 @@ interface PostCardProps {
 function PostCard({ item }: PostCardProps) {
   const { content: MDXPageContent } = item;
   const { metadata, frontMatter } = MDXPageContent;
-  const rawImage = frontMatter.image as
-    | string
-    | { light?: string; dark?: string }
-    | undefined;
-  const isObj = !!rawImage && typeof rawImage === 'object';
-  const lightImage = isObj
-    ? (rawImage.light ?? rawImage.dark)
-    : (rawImage as string | undefined);
-  const darkImage = isObj
-    ? (rawImage.dark ?? rawImage.light)
-    : (rawImage as string | undefined);
-  const themed = lightImage && darkImage && lightImage !== darkImage;
+  const lightImage = frontMatter.image as string | undefined;
+  const darkImage =
+    (frontMatter.image_dark as string | undefined) ?? lightImage;
+  const themed = !!darkImage && darkImage !== lightImage;
   const { analytics, status } = useAnalytics(metadata.permalink);
 
   const tagItems = (metadata.tags ?? [])
