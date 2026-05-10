@@ -224,6 +224,39 @@
   "pages.insights.metricList.countries": {
     "message": "访客地区"
   },
+  "pages.resources.title": {
+    "message": "资源"
+  },
+  "pages.resources.description": {
+    "message": "精心筛选的优质工具与平台"
+  },
+  "pages.resources.modification": {
+    "message": "精选<b>资源</b>"
+  },
+  "pages.resources.category.clear": {
+    "message": "清除分类"
+  },
+  "pages.resources.search.placeholder": {
+    "message": "搜索资源"
+  },
+  "pages.resources.search.clear": {
+    "message": "清空搜索"
+  },
+  "pages.resources.category.count": {
+    "message": "{count} 项"
+  },
+  "pages.resources.datacard.label1": {
+    "message": "个分类"
+  },
+  "pages.resources.datacard.label2": {
+    "message": "项资源"
+  },
+  "pages.resources.noresults.description": {
+    "message": "找不到和“{query}”相符的资源。"
+  },
+  "pages.resources.noresults.clear": {
+    "message": "清空搜索"
+  },
   "pages.settings.title": {
     "message": "设置"
   },
@@ -307,39 +340,6 @@
   },
   "pages.settings.datacard.label": {
     "message": "项设置"
-  },
-  "pages.resources.title": {
-    "message": "资源"
-  },
-  "pages.resources.description": {
-    "message": "精心筛选的优质工具与平台"
-  },
-  "pages.resources.modification": {
-    "message": "精选<b>资源</b>"
-  },
-  "pages.resources.category.clear": {
-    "message": "清除分类"
-  },
-  "pages.resources.search.placeholder": {
-    "message": "搜索资源"
-  },
-  "pages.resources.search.clear": {
-    "message": "清空搜索"
-  },
-  "pages.resources.category.count": {
-    "message": "{count} 项"
-  },
-  "pages.resources.datacard.label1": {
-    "message": "个分类"
-  },
-  "pages.resources.datacard.label2": {
-    "message": "项资源"
-  },
-  "pages.resources.noresults.description": {
-    "message": "找不到和“{query}”相符的资源。"
-  },
-  "pages.resources.noresults.clear": {
-    "message": "清空搜索"
   },
   "pages.travel.title": {
     "message": "旅行"
@@ -507,13 +507,13 @@
     "message": "页面已崩溃。",
     "description": "The title of the fallback page when the page crashed"
   },
-  "theme.BackToTopButton.buttonAriaLabel": {
-    "message": "回到顶部",
-    "description": "The ARIA label for the back to top button"
-  },
   "theme.blog.archive.description": {
     "message": "历史文章",
     "description": "The page & hero description of the blog archive page"
+  },
+  "theme.BackToTopButton.buttonAriaLabel": {
+    "message": "回到顶部",
+    "description": "The ARIA label for the back to top button"
   },
   "theme.blog.paginator.navAriaLabel": {
     "message": "文章列表分页导航",
@@ -622,13 +622,13 @@
     "message": "最后{byUser}{atDate}更新",
     "description": "The sentence used to display when a page has been last updated, and by who"
   },
-  "theme.navbar.mobileVersionsDropdown.label": {
-    "message": "选择版本",
-    "description": "The label for the navbar versions dropdown on mobile view"
-  },
   "theme.NotFound.title": {
     "message": "找不到页面",
     "description": "The title of the 404 page"
+  },
+  "theme.navbar.mobileVersionsDropdown.label": {
+    "message": "选择版本",
+    "description": "The label for the navbar versions dropdown on mobile view"
   },
   "theme.tags.tagsListLabel": {
     "message": "标签：",
@@ -682,10 +682,6 @@
     "message": "主导航",
     "description": "The ARIA label for the main navigation"
   },
-  "theme.navbar.mobileLanguageDropdown.label": {
-    "message": "选择语言",
-    "description": "The label for the mobile language switcher dropdown"
-  },
   "theme.NotFound.p1": {
     "message": "我们找不到您要找的页面。",
     "description": "The first paragraph of the 404 page"
@@ -693,6 +689,10 @@
   "theme.NotFound.p2": {
     "message": "请联系原始链接来源网站的所有者，并告知他们链接已损坏。",
     "description": "The 2nd paragraph of the 404 page"
+  },
+  "theme.navbar.mobileLanguageDropdown.label": {
+    "message": "选择语言",
+    "description": "The label for the mobile language switcher dropdown"
   },
   "theme.TOCCollapsible.toggleButtonLabel": {
     "message": "本页总览",
@@ -710,6 +710,10 @@
     "message": "阅读需 {readingTime} 分钟",
     "description": "Pluralized label for \"{readingTime} min read\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
   },
+  "theme.CodeBlock.wordWrapToggle": {
+    "message": "切换自动换行",
+    "description": "The title attribute for toggle word wrapping button of code block lines"
+  },
   "theme.CodeBlock.copy": {
     "message": "复制",
     "description": "The copy button label on code blocks"
@@ -721,10 +725,6 @@
   "theme.CodeBlock.copyButtonAriaLabel": {
     "message": "复制代码到剪贴板",
     "description": "The ARIA label for copy code blocks button"
-  },
-  "theme.CodeBlock.wordWrapToggle": {
-    "message": "切换自动换行",
-    "description": "The title attribute for toggle word wrapping button of code block lines"
   },
   "theme.docs.breadcrumbs.home": {
     "message": "主页面",
@@ -746,13 +746,13 @@
     "message": "关闭导航栏",
     "description": "The ARIA label for close button of mobile sidebar"
   },
-  "theme.navbar.mobileSidebarSecondaryMenu.backButtonLabel": {
-    "message": "← 回到主菜单",
-    "description": "The label of the back button to return to main menu, inside the mobile navbar sidebar secondary menu (notably used to display the docs sidebar)"
-  },
   "theme.docs.sidebar.toggleSidebarButtonAriaLabel": {
     "message": "切换导航栏",
     "description": "The ARIA label for hamburger menu button of mobile navigation"
+  },
+  "theme.navbar.mobileSidebarSecondaryMenu.backButtonLabel": {
+    "message": "← 回到主菜单",
+    "description": "The label of the back button to return to main menu, inside the mobile navbar sidebar secondary menu (notably used to display the docs sidebar)"
   },
   "theme.navbar.mobileDropdown.collapseButton.expandAriaLabel": {
     "message": "展开下拉菜单",
