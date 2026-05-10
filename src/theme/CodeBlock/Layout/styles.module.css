@@ -1,11 +1,17 @@
 .codeBlock {
   border-radius: 16px;
   overflow: hidden;
+  border: 1px solid var(--ifm-color-emphasis-200);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
 }
 
 .header {
   align-items: center;
-  background-color: rgba(246, 246, 247, 0.85);
+  background-color: var(--ifm-card-background-color);
+  background-image: linear-gradient(
+    rgba(246, 246, 247, 0.85),
+    rgba(246, 246, 247, 0.85)
+  );
   backdrop-filter: saturate(180%) blur(20px);
   -webkit-backdrop-filter: saturate(180%) blur(20px);
   display: flex;
@@ -14,7 +20,10 @@
 }
 
 [data-theme='dark'] .header {
-  background-color: rgba(40, 40, 42, 0.85);
+  background-image: linear-gradient(
+    rgba(40, 40, 42, 0.85),
+    rgba(40, 40, 42, 0.85)
+  );
 }
 
 .dots {
