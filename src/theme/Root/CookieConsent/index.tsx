@@ -46,15 +46,17 @@ export default function CookieConsent() {
       <Card padding="1.25rem">
         <div className={styles.content}>
           <div className={styles.title}>
-            <Translate id="cookieConsent.title">Cookie Settings</Translate>
+            <Translate id="components.cookieConsent.title">
+              Cookie Settings
+            </Translate>
           </div>
           <p className={styles.description}>
             <Translate
-              id="cookieConsent.description"
+              id="components.cookieConsent.description"
               values={{
                 privacyPolicy: (
                   <Link to="/privacy" className={styles.link}>
-                    <Translate id="cookieConsent.privacyPolicy">
+                    <Translate id="components.cookieConsent.privacyPolicy">
                       Privacy Policy
                     </Translate>
                   </Link>
@@ -73,7 +75,7 @@ export default function CookieConsent() {
               rounded
               onClick={() => handleChoice('rejected')}
             >
-              <Translate id="cookieConsent.reject">Reject</Translate>
+              <Translate id="components.cookieConsent.reject">Reject</Translate>
             </Button>
             <Button
               variant="primary"
@@ -81,7 +83,7 @@ export default function CookieConsent() {
               rounded
               onClick={() => handleChoice('accepted')}
             >
-              <Translate id="cookieConsent.accept">Accept</Translate>
+              <Translate id="components.cookieConsent.accept">Accept</Translate>
             </Button>
           </div>
         </div>

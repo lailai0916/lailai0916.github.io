@@ -38,6 +38,108 @@
   "data.devices.powerbeats-pro.spec": {
     "message": "极速黑 / H2"
   },
+  "pages.home.nav.contest": {
+    "message": "竞赛"
+  },
+  "pages.home.nav.note": {
+    "message": "笔记"
+  },
+  "pages.home.nav.project": {
+    "message": "项目"
+  },
+  "pages.home.nav.blog": {
+    "message": "博客"
+  },
+  "pages.home.tag.china": {
+    "message": "中国"
+  },
+  "pages.home.tag.school": {
+    "message": "杭州第二中学"
+  },
+  "pages.home.tag.languages": {
+    "message": "中英双语"
+  },
+  "pages.home.tag.friendly": {
+    "message": "友好"
+  },
+  "pages.home.tag.mbti": {
+    "message": "INTJ"
+  },
+  "pages.home.identity.student": {
+    "message": "学生"
+  },
+  "pages.home.identity.developer": {
+    "message": "开发者"
+  },
+  "pages.home.identity.designer": {
+    "message": "设计师"
+  },
+  "pages.home.identity.oier": {
+    "message": "OIer"
+  },
+  "pages.home.rolePrefix": {
+    "message": "我是一名 "
+  },
+  "blog.sidebar.info.locationValue": {
+    "message": "中国杭州"
+  },
+  "pages.home.connect": {
+    "message": "联系"
+  },
+  "components.countdown.event": {
+    "message": "2027 年"
+  },
+  "components.countdown.final": {
+    "message": "新年快乐！"
+  },
+  "components.countdown.title": {
+    "message": "倒计时"
+  },
+  "components.countdown.description": {
+    "message": "距离 {event} 还有"
+  },
+  "components.countdown.unit.days": {
+    "message": "天"
+  },
+  "components.countdown.unit.hours": {
+    "message": "时"
+  },
+  "components.countdown.unit.minutes": {
+    "message": "分"
+  },
+  "components.countdown.unit.seconds": {
+    "message": "秒"
+  },
+  "components.fouriertransform.title": {
+    "message": "傅里叶变换"
+  },
+  "components.fouriertransform.description": {
+    "message": "在下方绘制任意形状，观察其傅里叶级数的旋转圆可视化"
+  },
+  "components.lorenz.reset": {
+    "message": "重置"
+  },
+  "components.lorenz.title": {
+    "message": "洛伦兹吸引子"
+  },
+  "components.lorenz.description": {
+    "message": "拖动旋转视角并调整参数，探索确定性混沌与蝴蝶效应"
+  },
+  "components.neuralnetwork.clear": {
+    "message": "清除"
+  },
+  "components.neuralnetwork.check": {
+    "message": "识别数字"
+  },
+  "components.neuralnetwork.preprocess": {
+    "message": "预处理"
+  },
+  "components.neuralnetwork.title": {
+    "message": "神经网络"
+  },
+  "components.neuralnetwork.description": {
+    "message": "在下方绘制数字 0–9，神经网络会识别您的手写数字"
+  },
   "components.problem.code": {
     "message": "代码（{num}）"
   },
@@ -55,6 +157,18 @@
   },
   "components.solution.solution": {
     "message": "题解"
+  },
+  "pages.friends.title": {
+    "message": "友链"
+  },
+  "pages.friends.description": {
+    "message": "真正的友谊是世上最稀有的东西"
+  },
+  "pages.friends.modification": {
+    "message": "我的<b>友链</b>"
+  },
+  "pages.friends.datacard.label": {
+    "message": "位朋友"
   },
   "pages.insights.title": {
     "message": "实时洞察"
@@ -95,9 +209,6 @@
   "pages.insights.chart.title": {
     "message": "浏览量趋势"
   },
-  "pages.insights.sysStatus.title": {
-    "message": "运行时快照"
-  },
   "pages.insights.metricList.pages": {
     "message": "热门页面"
   },
@@ -112,45 +223,6 @@
   },
   "pages.insights.metricList.countries": {
     "message": "访客地区"
-  },
-  "pages.friends.title": {
-    "message": "友链"
-  },
-  "pages.friends.description": {
-    "message": "真正的友谊是世上最稀有的东西"
-  },
-  "pages.friends.modification": {
-    "message": "我的<b>友链</b>"
-  },
-  "pages.friends.datacard.label": {
-    "message": "位朋友"
-  },
-  "pages.resources.title": {
-    "message": "资源"
-  },
-  "pages.resources.description": {
-    "message": "精心筛选的优质工具与平台"
-  },
-  "pages.resources.modification": {
-    "message": "精选<b>资源</b>"
-  },
-  "pages.resources.search.placeholder": {
-    "message": "搜索资源"
-  },
-  "pages.resources.category.count": {
-    "message": "{count} 项"
-  },
-  "pages.resources.datacard.label1": {
-    "message": "个分类"
-  },
-  "pages.resources.datacard.label2": {
-    "message": "项资源"
-  },
-  "pages.resources.noresults.description": {
-    "message": "找不到和“{query}”相符的资源。"
-  },
-  "pages.resources.noresults.clear": {
-    "message": "清空搜索"
   },
   "pages.settings.title": {
     "message": "设置"
@@ -227,14 +299,47 @@
   "pages.settings.item.quickactions.description": {
     "message": "一键执行常用操作"
   },
-  "pages.settings.datacard.label": {
-    "message": "项设置"
-  },
   "pages.settings.item.language.title": {
     "message": "语言"
   },
   "pages.settings.item.language.description": {
     "message": "切换界面语言"
+  },
+  "pages.settings.datacard.label": {
+    "message": "项设置"
+  },
+  "pages.resources.title": {
+    "message": "资源"
+  },
+  "pages.resources.description": {
+    "message": "精心筛选的优质工具与平台"
+  },
+  "pages.resources.modification": {
+    "message": "精选<b>资源</b>"
+  },
+  "pages.resources.category.clear": {
+    "message": "清除分类"
+  },
+  "pages.resources.search.placeholder": {
+    "message": "搜索资源"
+  },
+  "pages.resources.search.clear": {
+    "message": "清空搜索"
+  },
+  "pages.resources.category.count": {
+    "message": "{count} 项"
+  },
+  "pages.resources.datacard.label1": {
+    "message": "个分类"
+  },
+  "pages.resources.datacard.label2": {
+    "message": "项资源"
+  },
+  "pages.resources.noresults.description": {
+    "message": "找不到和“{query}”相符的资源。"
+  },
+  "pages.resources.noresults.clear": {
+    "message": "清空搜索"
   },
   "pages.travel.title": {
     "message": "旅行"
@@ -255,8 +360,35 @@
     "message": "历史文章",
     "description": "The page & hero title of the blog archive page"
   },
+  "blog.pages.archive.yearSelect": {
+    "message": "年份"
+  },
   "blog.post.empty": {
     "message": "暂无文章"
+  },
+  "blog.sidebar.calendar.prev": {
+    "message": "上个月"
+  },
+  "blog.sidebar.calendar.next": {
+    "message": "下个月"
+  },
+  "blog.sidebar.calendar.empty": {
+    "message": "暂无文章"
+  },
+  "blog.menu.blog": {
+    "message": "博客"
+  },
+  "blog.menu.moments": {
+    "message": "动态"
+  },
+  "blog.menu.archive": {
+    "message": "归档"
+  },
+  "blog.menu.tags": {
+    "message": "标签"
+  },
+  "blog.menu.authors": {
+    "message": "作者"
   },
   "blog.postcard.wordCount": {
     "message": "{word} 词数"
@@ -270,26 +402,11 @@
   "blog.sidebar.toc.title": {
     "message": "目录"
   },
-  "blog.sidebar.info.locationValue": {
-    "message": "中国杭州"
-  },
   "blog.sidebar.stats.posts": {
     "message": "文章"
   },
   "blog.sidebar.stats.words": {
     "message": "词数"
-  },
-  "blog.sidebar.tags.title": {
-    "message": "热门标签"
-  },
-  "blog.sidebar.calendar.prev": {
-    "message": "上个月"
-  },
-  "blog.sidebar.calendar.next": {
-    "message": "下个月"
-  },
-  "blog.sidebar.calendar.empty": {
-    "message": "暂无文章"
   },
   "blog.sidebar.feed.rss": {
     "message": "RSS 订阅"
@@ -300,20 +417,8 @@
   "blog.sidebar.feed.json": {
     "message": "JSON 订阅"
   },
-  "blog.menu.blog": {
-    "message": "博客"
-  },
-  "blog.menu.archive": {
-    "message": "归档"
-  },
-  "blog.menu.tags": {
-    "message": "标签"
-  },
-  "blog.menu.moments": {
-    "message": "动态"
-  },
-  "blog.menu.authors": {
-    "message": "作者"
+  "blog.sidebar.tags.title": {
+    "message": "热门标签"
   },
   "theme.tags.tagsPageTitle": {
     "message": "标签",
@@ -322,112 +427,7 @@
   "blog.pages.tags.tagSelect": {
     "message": "标签"
   },
-  "blog.pages.authors.authorSelect": {
-    "message": "作者"
-  },
-  "blog.pages.archive.yearSelect": {
-    "message": "年份"
-  },
-  "home.bento.nav.contest": {
-    "message": "竞赛"
-  },
-  "home.bento.nav.note": {
-    "message": "笔记"
-  },
-  "home.bento.nav.project": {
-    "message": "项目"
-  },
-  "home.bento.nav.blog": {
-    "message": "博客"
-  },
-  "home.bento.tag.china": {
-    "message": "中国"
-  },
-  "home.bento.tag.school": {
-    "message": "杭州第二中学"
-  },
-  "home.bento.tag.languages": {
-    "message": "中英双语"
-  },
-  "home.bento.tag.friendly": {
-    "message": "友好"
-  },
-  "home.bento.tag.mbti": {
-    "message": "INTJ"
-  },
-  "home.bento.identity.student": {
-    "message": "学生"
-  },
-  "home.bento.identity.developer": {
-    "message": "开发者"
-  },
-  "home.bento.identity.designer": {
-    "message": "设计师"
-  },
-  "home.bento.identity.oier": {
-    "message": "OIer"
-  },
-  "home.bento.rolePrefix": {
-    "message": "我是一名 "
-  },
-  "home.bento.connect": {
-    "message": "联系"
-  },
-  "home.countdown.event": {
-    "message": "2027 年"
-  },
-  "home.countdown.final": {
-    "message": "新年快乐！"
-  },
-  "home.countdown.title": {
-    "message": "倒计时"
-  },
-  "home.countdown.description": {
-    "message": "距离 {event} 还有"
-  },
-  "home.countdown.unit.days": {
-    "message": "天"
-  },
-  "home.countdown.unit.hours": {
-    "message": "时"
-  },
-  "home.countdown.unit.minutes": {
-    "message": "分"
-  },
-  "home.countdown.unit.seconds": {
-    "message": "秒"
-  },
-  "home.fouriertransform.title": {
-    "message": "傅里叶变换"
-  },
-  "home.fouriertransform.description": {
-    "message": "在下方绘制任意形状，观察其傅里叶级数的旋转圆可视化"
-  },
-  "home.lorenz.reset": {
-    "message": "重置"
-  },
-  "home.lorenz.title": {
-    "message": "洛伦兹吸引子"
-  },
-  "home.lorenz.description": {
-    "message": "拖动旋转视角并调整参数，探索确定性混沌与蝴蝶效应"
-  },
-  "home.neuralnetwork.clear": {
-    "message": "清除"
-  },
-  "home.neuralnetwork.check": {
-    "message": "识别数字"
-  },
-  "home.neuralnetwork.preprocess": {
-    "message": "预处理"
-  },
-  "home.neuralnetwork.title": {
-    "message": "神经网络"
-  },
-  "home.neuralnetwork.description": {
-    "message": "在下方绘制数字 0–9，神经网络会识别您的手写数字"
-  },
-  "home.topbanner.title": {
+  "components.markdown.title": {
     "message": "Hello, I'm lailai"
   },
   "pages.insights.heartbeat.up": {
@@ -448,6 +448,12 @@
   "pages.insights.heartbeat.noData": {
     "message": "暂无数据"
   },
+  "pages.insights.sysStatus.title": {
+    "message": "运行时快照"
+  },
+  "pages.insights.sysStatus.srLabel": {
+    "message": "System status overview"
+  },
   "pages.insights.uptime.avgPing": {
     "message": "平均 {ping}ms"
   },
@@ -457,19 +463,19 @@
   "pages.insights.uptime.empty": {
     "message": "暂无监控项"
   },
-  "cookieConsent.title": {
+  "components.cookieConsent.title": {
     "message": "Cookie 设置"
   },
-  "cookieConsent.description": {
+  "components.cookieConsent.description": {
     "message": "本站使用 Cookie 记录您的偏好，以改善浏览体验。查看 {privacyPolicy} 了解更多信息。"
   },
-  "cookieConsent.privacyPolicy": {
+  "components.cookieConsent.privacyPolicy": {
     "message": "隐私政策"
   },
-  "cookieConsent.reject": {
+  "components.cookieConsent.reject": {
     "message": "拒绝"
   },
-  "cookieConsent.accept": {
+  "components.cookieConsent.accept": {
     "message": "接受"
   },
   "pages.travel.map.title": {
@@ -493,6 +499,9 @@
   "theme.blog.authorsList.pageTitle": {
     "message": "作者",
     "description": "The title of the authors page"
+  },
+  "blog.pages.authors.authorSelect": {
+    "message": "作者"
   },
   "theme.ErrorPageContent.title": {
     "message": "页面已崩溃。",
@@ -1051,14 +1060,5 @@
   "theme.common.skipToMainContent": {
     "message": "跳到主要内容",
     "description": "The skip to content label used for accessibility, allowing to rapidly navigate to main content with keyboard tab/enter navigation"
-  },
-  "pages.insights.sysStatus.srLabel": {
-    "message": "System status overview"
-  },
-  "pages.resources.search.clear": {
-    "message": "清空搜索"
-  },
-  "pages.resources.category.clear": {
-    "message": "清除分类"
   }
 }

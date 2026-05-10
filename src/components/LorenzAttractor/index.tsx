@@ -6,11 +6,11 @@ import SectionContainer, {
 import { translate } from '@docusaurus/Translate';
 
 const TITLE = translate({
-  id: 'home.lorenz.title',
+  id: 'components.lorenz.title',
   message: 'Lorenz Attractor',
 });
 const DESCRIPTION = translate({
-  id: 'home.lorenz.description',
+  id: 'components.lorenz.description',
   message:
     'Drag to rotate the view and tune the parameters to explore deterministic chaos and the butterfly effect',
 });

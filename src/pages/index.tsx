@@ -54,7 +54,7 @@ export default function Home(): ReactNode {
   const navItems = [
     {
       title: translate({
-        id: 'home.bento.nav.contest',
+        id: 'pages.home.nav.contest',
         message: 'Contest',
       }),
       href: '/docs/contest',
@@ -62,7 +62,7 @@ export default function Home(): ReactNode {
     },
     {
       title: translate({
-        id: 'home.bento.nav.note',
+        id: 'pages.home.nav.note',
         message: 'Note',
       }),
       href: '/docs/note',
@@ -70,7 +70,7 @@ export default function Home(): ReactNode {
     },
     {
       title: translate({
-        id: 'home.bento.nav.project',
+        id: 'pages.home.nav.project',
         message: 'Project',
       }),
       href: '/docs/project',
@@ -78,7 +78,7 @@ export default function Home(): ReactNode {
     },
     {
       title: translate({
-        id: 'home.bento.nav.blog',
+        id: 'pages.home.nav.blog',
         message: 'Blog',
       }),
       href: '/blog',
@@ -88,35 +88,35 @@ export default function Home(): ReactNode {
   const profileTags = [
     {
       label: translate({
-        id: 'home.bento.tag.china',
+        id: 'pages.home.tag.china',
         message: 'China',
       }),
       icon: 'lucide:map-pin',
     },
     {
       label: translate({
-        id: 'home.bento.tag.school',
+        id: 'pages.home.tag.school',
         message: 'Hangzhou No.2 High School',
       }),
       icon: 'lucide:graduation-cap',
     },
     {
       label: translate({
-        id: 'home.bento.tag.languages',
+        id: 'pages.home.tag.languages',
         message: 'Chinese & English',
       }),
       icon: 'lucide:languages',
     },
     {
       label: translate({
-        id: 'home.bento.tag.friendly',
+        id: 'pages.home.tag.friendly',
         message: 'Friendly',
       }),
       icon: 'lucide:message-circle',
     },
     {
       label: translate({
-        id: 'home.bento.tag.mbti',
+        id: 'pages.home.tag.mbti',
         message: 'INTJ',
       }),
       icon: 'lucide:fingerprint',
@@ -124,19 +124,19 @@ export default function Home(): ReactNode {
   ];
   const identities = [
     translate({
-      id: 'home.bento.identity.student',
+      id: 'pages.home.identity.student',
       message: 'Student',
     }),
     translate({
-      id: 'home.bento.identity.developer',
+      id: 'pages.home.identity.developer',
       message: 'Developer',
     }),
     translate({
-      id: 'home.bento.identity.designer',
+      id: 'pages.home.identity.designer',
       message: 'Designer',
     }),
     translate({
-      id: 'home.bento.identity.oier',
+      id: 'pages.home.identity.oier',
       message: 'OIer',
     }),
   ];
@@ -144,7 +144,7 @@ export default function Home(): ReactNode {
   const roleArticle = /^[aeiou]/i.test(currentWord) ? 'an' : 'a';
   const rolePrefix = translate(
     {
-      id: 'home.bento.rolePrefix',
+      id: 'pages.home.rolePrefix',
       message: "I'm {article} ",
     },
     { article: roleArticle }
@@ -239,7 +239,7 @@ export default function Home(): ReactNode {
           <Card className={styles.cardSocial} padding="1.25rem">
             <span className={styles.cardSocialLabel}>
               {translate({
-                id: 'home.bento.connect',
+                id: 'pages.home.connect',
                 message: 'Connect',
               })}
             </span>

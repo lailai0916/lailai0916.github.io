@@ -7,15 +7,21 @@ import useIsBrowser from '@docusaurus/useIsBrowser';
 import styles from './styles.module.css';
 
 const DATE = '2027-01-01T00:00:00';
-const EVENT = translate({ id: 'home.countdown.event', message: '2027' });
+const EVENT = translate({ id: 'components.countdown.event', message: '2027' });
 const FINAL = translate({
-  id: 'home.countdown.final',
+  id: 'components.countdown.final',
   message: 'Happy New Year!',
 });
 
-const TITLE = translate({ id: 'home.countdown.title', message: 'Countdown' });
+const TITLE = translate({
+  id: 'components.countdown.title',
+  message: 'Countdown',
+});
 const DESCRIPTION = translate(
-  { id: 'home.countdown.description', message: 'Time left until {event}' },
+  {
+    id: 'components.countdown.description',
+    message: 'Time left until {event}',
+  },
   { event: EVENT }
 );
 
@@ -29,22 +35,31 @@ const TIME_UNITS: Array<{
   {
     key: 'days',
     total: 366,
-    label: translate({ id: 'home.countdown.unit.days', message: 'Days' }),
+    label: translate({ id: 'components.countdown.unit.days', message: 'Days' }),
   },
   {
     key: 'hours',
     total: 24,
-    label: translate({ id: 'home.countdown.unit.hours', message: 'Hours' }),
+    label: translate({
+      id: 'components.countdown.unit.hours',
+      message: 'Hours',
+    }),
   },
   {
     key: 'minutes',
     total: 60,
-    label: translate({ id: 'home.countdown.unit.minutes', message: 'Minutes' }),
+    label: translate({
+      id: 'components.countdown.unit.minutes',
+      message: 'Minutes',
+    }),
   },
   {
     key: 'seconds',
     total: 60,
-    label: translate({ id: 'home.countdown.unit.seconds', message: 'Seconds' }),
+    label: translate({
+      id: 'components.countdown.unit.seconds',
+      message: 'Seconds',
+    }),
   },
 ];
 

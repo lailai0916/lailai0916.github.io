@@ -8,15 +8,15 @@ import Button from '@site/src/components/laikit/Button';
 import styles from './styles.module.css';
 
 const CLEAR_LABEL = translate({
-  id: 'home.neuralnetwork.clear',
+  id: 'components.neuralnetwork.clear',
   message: 'Clear',
 });
 const CHECK_LABEL = translate({
-  id: 'home.neuralnetwork.check',
+  id: 'components.neuralnetwork.check',
   message: 'Check digit',
 });
 const PREPROCESS_LABEL = translate({
-  id: 'home.neuralnetwork.preprocess',
+  id: 'components.neuralnetwork.preprocess',
   message: 'Pre-process',
 });
 

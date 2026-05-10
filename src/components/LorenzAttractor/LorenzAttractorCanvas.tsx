@@ -32,7 +32,7 @@ const INITIAL_CONDITIONS: Vec3[] = [
 ];
 
 const RESET_LABEL = translate({
-  id: 'home.lorenz.reset',
+  id: 'components.lorenz.reset',
   message: 'Reset',
 });
 
