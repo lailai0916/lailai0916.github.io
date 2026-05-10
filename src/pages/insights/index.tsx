@@ -46,6 +46,10 @@ const MODIFICATION = translate({
   id: 'pages.insights.modification',
   message: 'Live <b>Insights</b>',
 });
+const METRIC_LIST_EMPTY = translate({
+  id: 'pages.insights.metricList.empty',
+  message: 'No data yet',
+});
 
 function formatDuration(seconds: number): string {
   if (!Number.isFinite(seconds) || seconds <= 0) return '0s';
@@ -314,10 +318,7 @@ function MetricsGrid({ range }: { range: InsightsRange }) {
         icon="lucide:file-text"
         items={pages.items}
         loading={pages.status === 'loading'}
-        emptyText={translate({
-          id: 'pages.insights.metricList.empty',
-          message: 'No data yet',
-        })}
+        emptyText={METRIC_LIST_EMPTY}
         renderLabel={(p) => <span title={p}>{p === '/' ? '/' : p}</span>}
         href={(p) => p}
       />
@@ -329,10 +330,7 @@ function MetricsGrid({ range }: { range: InsightsRange }) {
         icon="lucide:link"
         items={referrers.items}
         loading={referrers.status === 'loading'}
-        emptyText={translate({
-          id: 'pages.insights.metricList.empty',
-          message: 'No data yet',
-        })}
+        emptyText={METRIC_LIST_EMPTY}
         renderLabel={(r) =>
           r ? (
             <span title={r}>{r}</span>
@@ -355,10 +353,7 @@ function MetricsGrid({ range }: { range: InsightsRange }) {
         icon="lucide:globe"
         items={countriesMetric.items}
         loading={countriesMetric.status === 'loading'}
-        emptyText={translate({
-          id: 'pages.insights.metricList.empty',
-          message: 'No data yet',
-        })}
+        emptyText={METRIC_LIST_EMPTY}
         renderLabel={(code) => (
           <>
             <img

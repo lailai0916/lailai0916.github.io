@@ -8,7 +8,7 @@ import { BlogCard, TagChipList } from '../../../BlogShared/Components';
 import BlogScaffold from '../../../BlogShared/Scaffold';
 
 const TITLE = translate({
-  id: 'theme.blog.authorsList.pageTitle',
+  id: 'blog.pages.authors.title',
   message: 'Authors',
 });
 const DESCRIPTION = "Authors of lailai's blog";

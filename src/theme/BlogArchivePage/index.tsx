@@ -10,7 +10,7 @@ import { formatBeijingDate } from '@site/src/utils/format';
 import type { Props } from '@theme/BlogArchivePage';
 import styles from './styles.module.css';
 
-const TITLE = translate({ id: 'theme.blog.archive.title', message: 'Archive' });
+const TITLE = translate({ id: 'blog.pages.archive.title', message: 'Archive' });
 const DESCRIPTION = "Archive of lailai's blog";
 const YEAR_SELECT_TITLE = translate({
   id: 'blog.pages.archive.yearSelect',

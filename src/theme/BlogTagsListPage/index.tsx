@@ -6,7 +6,7 @@ import type { Props } from '@theme/BlogTagsListPage';
 import BlogScaffold from '../BlogShared/Scaffold';
 import { translate } from '@docusaurus/Translate';
 
-const TITLE = translate({ id: 'theme.tags.tagsPageTitle', message: 'Tags' });
+const TITLE = translate({ id: 'blog.pages.tags.title', message: 'Tags' });
 const DESCRIPTION = "Tags of lailai's blog";
 
 export default function BlogTagsListPage(props: Props): React.ReactElement {
