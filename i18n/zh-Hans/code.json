@@ -461,10 +461,10 @@
     "message": "Cookie 设置"
   },
   "cookieConsent.description": {
-    "message": "本站使用 Cookie 记录您的偏好，以改善浏览体验。{learnMore}。"
+    "message": "本站使用 Cookie 记录您的偏好，以改善浏览体验。查看 {privacyPolicy} 了解更多信息。"
   },
-  "cookieConsent.learnMore": {
-    "message": "了解更多"
+  "cookieConsent.privacyPolicy": {
+    "message": "隐私政策"
   },
   "cookieConsent.reject": {
     "message": "拒绝"

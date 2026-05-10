@@ -52,17 +52,17 @@ export default function CookieConsent() {
             <Translate
               id="cookieConsent.description"
               values={{
-                learnMore: (
+                privacyPolicy: (
                   <Link to="/privacy" className={styles.link}>
-                    <Translate id="cookieConsent.learnMore">
-                      Learn more
+                    <Translate id="cookieConsent.privacyPolicy">
+                      Privacy Policy
                     </Translate>
                   </Link>
                 ),
               }}
             >
               {
-                'This site uses cookies to remember your preferences and improve your browsing experience. {learnMore}.'
+                'This site uses cookies to remember your preferences and improve your browsing experience. See the {privacyPolicy} for more information.'
               }
             </Translate>
           </p>
