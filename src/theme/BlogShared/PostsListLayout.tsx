@@ -18,11 +18,6 @@ interface PostCardProps {
   item: PostListItem;
 }
 
-type PaginationItem = {
-  label: string;
-  to?: string;
-};
-
 function PostCard({ item }: PostCardProps) {
   const { content: MDXPageContent } = item;
   const { metadata, frontMatter } = MDXPageContent;
@@ -182,34 +177,83 @@ export function Paginator({ meta }: { meta: BlogPaginatedMetadata }) {
   const pages = Array.from(
     new Set([1, mid - 1, mid, mid + 1, totalPages])
   ).filter((p) => p >= 1 && p <= totalPages);
-  const items: PaginationItem[] = [];
 
-  items.push({ label: '←', to: meta.previousPage });
-  items.push({ label: `${pages[0]}`, to: firstBase });
-  for (let i = 1; i < pages.length; i += 1) {
-    if (pages[i] - pages[i - 1] > 1) items.push({ label: '...' });
-    items.push({ label: `${pages[i]}`, to: `${pageBase}/${pages[i]}` });
-  }
-  items.push({ label: '→', to: meta.nextPage });
+  const hrefForPage = (p: number) => (p === 1 ? firstBase : `${pageBase}/${p}`);
+
+  const PrevLabel = translate({
+    id: 'blog.pagination.prev',
+    message: 'Previous',
+  });
+  const NextLabel = translate({
+    id: 'blog.pagination.next',
+    message: 'Next',
+  });
 
   return (
-    <nav className={styles.paginator}>
-      {items.map((item, idx) =>
-        item.to ? (
-          <Link
-            key={idx}
-            to={item.to}
-            className={clsx(styles.pageLink, {
-              [styles.pageLinkActive]: item.label === String(page),
-            })}
-          >
-            {item.label}
-          </Link>
-        ) : (
-          <span key={idx} className={styles.pageLink}>
-            {item.label}
-          </span>
-        )
+    <nav className={styles.paginator} aria-label="Pagination">
+      {meta.previousPage ? (
+        <Link
+          to={meta.previousPage}
+          className={styles.pageNav}
+          rel="prev"
+          aria-label={PrevLabel}
+        >
+          {'←'}
+        </Link>
+      ) : (
+        <span
+          className={clsx(styles.pageNav, styles.pageNavDisabled)}
+          aria-label={PrevLabel}
+        >
+          {'←'}
+        </span>
+      )}
+
+      <ol className={styles.pageList}>
+        {pages.map((p, i) => {
+          const showEllipsis = i > 0 && p - pages[i - 1] > 1;
+          return (
+            <React.Fragment key={p}>
+              {showEllipsis && (
+                <li className={styles.pageEllipsis} aria-hidden="true">
+                  {'…'}
+                </li>
+              )}
+              <li>
+                {p === page ? (
+                  <span
+                    className={clsx(styles.pageNumber, styles.pageNumberActive)}
+                    aria-current="page"
+                  >
+                    {p}
+                  </span>
+                ) : (
+                  <Link to={hrefForPage(p)} className={styles.pageNumber}>
+                    {p}
+                  </Link>
+                )}
+              </li>
+            </React.Fragment>
+          );
+        })}
+      </ol>
+
+      {meta.nextPage ? (
+        <Link
+          to={meta.nextPage}
+          className={styles.pageNav}
+          rel="next"
+          aria-label={NextLabel}
+        >
+          {'→'}
+        </Link>
+      ) : (
+        <span
+          className={clsx(styles.pageNav, styles.pageNavDisabled)}
+          aria-label={NextLabel}
+        >
+          {'→'}
+        </span>
       )}
     </nav>
   );
