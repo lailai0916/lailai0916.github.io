@@ -66,6 +66,7 @@ These are project rules, not general advice — follow them:
 - **Reuse `laikit` primitives** before adding new components. New UI should be visually and behaviourally indistinguishable from existing parts.
 - **Edit, don't rewrite.** Prefer minimal targeted edits; one coherent change per commit; do not reformat or refactor unrelated code.
 - **No decorative noise.** Do not introduce emoji, decorative animations, or visual flourishes unless explicitly requested.
+- **No hover motion.** Never add hover-triggered transforms — no `translateY`/`translateX` lifts, no `scale()` zooms on cards or images, no animated arrow slides, no width-animated underlines that grow from 0 to 100%. These are AI-tells and the maintainer hates them. Hover state should change at most: `border-color`, `color`, `background-color`, plain `text-decoration: underline`. Anything that moves on hover must be removed.
 - **i18n is mandatory.** Any new user-facing string requires both a `translate()` call and a Chinese entry in `i18n/zh-Hans/code.json`.
 - **Verify before committing.** Run `npm run check` and ensure it exits cleanly. For UI changes, also confirm in the `npm start` dev server.
 
