@@ -21,7 +21,7 @@ export default function CodeBlockLayout({
       <div className={styles.header}>
         <div className={styles.dots}>
           <span className={styles.dot} style={{ background: '#ff5f57' }} />
-          <span className={styles.dot} style={{ background: '#febc2e' }} />
+          <span className={styles.dot} style={{ background: '#ffbd2e' }} />
           <span className={styles.dot} style={{ background: '#28c840' }} />
         </div>
         <div className={styles.title}>

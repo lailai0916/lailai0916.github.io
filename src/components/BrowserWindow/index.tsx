@@ -28,7 +28,7 @@ export default function BrowserWindow({
       <div className={styles.browserWindowHeader}>
         <div className={styles.buttons}>
           <span className={styles.dot} style={{ background: '#ff5f57' }} />
-          <span className={styles.dot} style={{ background: '#febc2e' }} />
+          <span className={styles.dot} style={{ background: '#ffbd2e' }} />
           <span className={styles.dot} style={{ background: '#28c840' }} />
         </div>
         <div className={clsx(styles.browserWindowAddressBar, 'text--truncate')}>
