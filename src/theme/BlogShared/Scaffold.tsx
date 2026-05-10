@@ -57,7 +57,7 @@ function useScrollProgress() {
     };
 
     handleScroll();
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
@@ -66,7 +66,42 @@ function useScrollProgress() {
   return Math.min(1, Math.max(0, progress));
 }
 
+function useActiveHeading(toc: readonly TOCItem[]): string | null {
+  const [activeId, setActiveId] = useState<string | null>(null);
+
+  useEffect(() => {
+    if (!toc.length) return undefined;
+    const ids = toc.map((item) => item.id);
+
+    const updateActive = () => {
+      const offset = window.innerHeight * 0.25;
+      let current: string | null = null;
+      for (const id of ids) {
+        const el = document.getElementById(id);
+        if (!el) continue;
+        if (el.getBoundingClientRect().top - offset <= 0) {
+          current = id;
+        } else {
+          break;
+        }
+      }
+      setActiveId(current ?? ids[0] ?? null);
+    };
+
+    updateActive();
+    window.addEventListener('scroll', updateActive, { passive: true });
+    window.addEventListener('resize', updateActive);
+    return () => {
+      window.removeEventListener('scroll', updateActive);
+      window.removeEventListener('resize', updateActive);
+    };
+  }, [toc]);
+
+  return activeId;
+}
+
 function TocCard({ toc }: { toc: readonly TOCItem[] }) {
+  const activeId = useActiveHeading(toc);
   const progress = useScrollProgress();
 
   return (
@@ -74,20 +109,31 @@ function TocCard({ toc }: { toc: readonly TOCItem[] }) {
       <BlogCard
         title={`${translate({
           id: 'blog.sidebar.toc.title',
-          message: `Contents`,
+          message: 'Contents',
         })} (${Math.round(progress * 100)}%)`}
       >
         <ul className={styles.tocList}>
-          {toc.map((item) => (
-            <li key={item.id}>
-              <Link
-                to={`#${item.id}`}
-                className={styles.tocLink}
-                style={{ paddingLeft: `${(item.level - 2) * 1}rem` }}
-                dangerouslySetInnerHTML={{ __html: item.value }}
-              />
-            </li>
-          ))}
+          {toc.map((item) => {
+            const isActive = item.id === activeId;
+            const level = Math.min(Math.max(item.level, 2), 6);
+            return (
+              <li
+                key={item.id}
+                className={clsx(
+                  styles.tocItem,
+                  styles[`tocItemL${level}`],
+                  isActive && styles.tocItemActive
+                )}
+              >
+                <Link
+                  to={`#${item.id}`}
+                  className={styles.tocLink}
+                  aria-current={isActive ? 'true' : undefined}
+                  dangerouslySetInnerHTML={{ __html: item.value }}
+                />
+              </li>
+            );
+          })}
         </ul>
       </BlogCard>
     </div>

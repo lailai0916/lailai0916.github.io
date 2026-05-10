@@ -566,12 +566,55 @@
   margin: 0;
   padding: 0;
   list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
+  border-left: 1px solid var(--ifm-color-emphasis-200);
+}
+
+.tocItem {
+  position: relative;
+  font-size: 0.875rem;
+  line-height: 1.45;
+}
+
+.tocItemL2 {
+  padding-left: 0.875rem;
+}
+.tocItemL3 {
+  padding-left: 1.625rem;
+}
+.tocItemL4 {
+  padding-left: 2.375rem;
+}
+.tocItemL5 {
+  padding-left: 3.125rem;
+}
+.tocItemL6 {
+  padding-left: 3.875rem;
+}
+
+.tocItemActive::before {
+  content: '';
+  position: absolute;
+  left: -1px;
+  top: 0.4rem;
+  bottom: 0.4rem;
+  width: 2px;
+  background: var(--ifm-color-primary);
+  border-radius: 1px;
 }
 
 .tocLink {
-  color: var(--ifm-font-color-base);
   display: block;
+  padding: 0.3rem 0;
+  color: var(--ifm-color-emphasis-700);
+  text-decoration: none !important;
+  transition: color 160ms ease;
+}
+
+.tocLink:hover {
+  color: var(--ifm-color-primary);
+}
+
+.tocItemActive .tocLink {
+  color: var(--ifm-color-primary);
+  font-weight: 600;
 }
