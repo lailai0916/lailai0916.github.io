@@ -23,7 +23,9 @@ function PostCard({ item }: PostCardProps) {
   const { metadata, frontMatter } = MDXPageContent;
   const lightImage = frontMatter.image as string | undefined;
   const darkImage =
-    (frontMatter.image_dark as string | undefined) ?? lightImage;
+    ((frontMatter as Record<string, unknown>).image_dark as
+      | string
+      | undefined) ?? lightImage;
   const themed = !!darkImage && darkImage !== lightImage;
   const { analytics, status } = useAnalytics(metadata.permalink);
 
