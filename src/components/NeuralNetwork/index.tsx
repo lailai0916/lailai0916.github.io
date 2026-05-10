@@ -1,5 +1,5 @@
 import React from 'react';
-import NeuralNetworkInteractive from '@site/src/pages/_components/NeuralNetwork/NeuralNetworkInteractive';
+import NeuralNetworkInteractive from '@site/src/components/NeuralNetwork/NeuralNetworkInteractive';
 import SectionContainer, {
   SectionHeader,
 } from '@site/src/components/laikit/Section';
