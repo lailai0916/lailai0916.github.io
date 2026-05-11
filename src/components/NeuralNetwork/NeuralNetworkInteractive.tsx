@@ -13,7 +13,7 @@ const CLEAR_LABEL = translate({
 });
 const CHECK_LABEL = translate({
   id: 'components.neuralNetwork.check',
-  message: 'Check digit',
+  message: 'Check Digit',
 });
 const PREPROCESS_LABEL = translate({
   id: 'components.neuralNetwork.preprocess',

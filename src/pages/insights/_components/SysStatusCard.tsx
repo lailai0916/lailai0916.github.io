@@ -167,7 +167,7 @@ function SysStatusCardInner() {
         <h3 className={metricListStyles.title}>
           {translate({
             id: 'pages.insights.sysStatus.title',
-            message: 'Runtime snapshot',
+            message: 'Runtime Snapshot',
           })}
         </h3>
       </header>

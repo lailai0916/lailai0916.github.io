@@ -41,7 +41,7 @@ const VISITED_LABEL = translate({
 });
 const NOT_VISITED_LABEL = translate({
   id: 'pages.travel.map.legend.unvisited',
-  message: 'Not visited',
+  message: 'Not Visited',
 });
 
 function readCssVar(name: string, fallback: string) {

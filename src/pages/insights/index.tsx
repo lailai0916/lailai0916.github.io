@@ -48,7 +48,7 @@ const MODIFICATION = translate({
 });
 const METRIC_LIST_EMPTY = translate({
   id: 'pages.insights.metricList.empty',
-  message: 'No data yet',
+  message: 'No Data Yet',
 });
 
 function formatDuration(seconds: number): string {
@@ -277,7 +277,7 @@ function PageviewsChart({ range }: { range: InsightsRange }) {
         <h3 className={metricListStyles.title}>
           {translate({
             id: 'pages.insights.chart.title',
-            message: 'Pageviews over time',
+            message: 'Pageviews Over Time',
           })}
         </h3>
       </header>
@@ -313,7 +313,7 @@ function MetricsGrid({ range }: { range: InsightsRange }) {
       <MetricList
         title={translate({
           id: 'pages.insights.metricList.pages',
-          message: 'Top pages',
+          message: 'Top Pages',
         })}
         icon="lucide:file-text"
         items={pages.items}
@@ -325,7 +325,7 @@ function MetricsGrid({ range }: { range: InsightsRange }) {
       <MetricList
         title={translate({
           id: 'pages.insights.metricList.referrers.title',
-          message: 'Top referrers',
+          message: 'Top Referrers',
         })}
         icon="lucide:link"
         items={referrers.items}
@@ -348,7 +348,7 @@ function MetricsGrid({ range }: { range: InsightsRange }) {
       <MetricList
         title={translate({
           id: 'pages.insights.metricList.countries',
-          message: 'Top countries',
+          message: 'Top Countries',
         })}
         icon="lucide:globe"
         items={countriesMetric.items}

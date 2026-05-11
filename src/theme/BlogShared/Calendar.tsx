@@ -225,7 +225,7 @@ export default function CalendarCard() {
         <div className={styles.calendarEmpty}>
           {translate({
             id: 'blog.sidebar.calendar.empty',
-            message: 'No posts',
+            message: 'No Posts',
           })}
         </div>
       ) : (

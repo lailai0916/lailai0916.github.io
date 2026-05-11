@@ -75,7 +75,7 @@ function statusLabel(status: number | undefined): string {
     default:
       return translate({
         id: 'pages.insights.heartbeat.unknown',
-        message: 'No data',
+        message: 'No Data',
       });
   }
 }
@@ -146,7 +146,7 @@ export default function HeartbeatBar({
               ? formatTooltipDate(active.time, locale)
               : translate({
                   id: 'pages.insights.heartbeat.noData',
-                  message: 'No data',
+                  message: 'No Data',
                 })}
           </Tooltip.Label>
           <Tooltip.Value>
