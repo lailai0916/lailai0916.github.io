@@ -109,10 +109,10 @@ export default function Home(): ReactNode {
     },
     {
       label: translate({
-        id: 'pages.home.tag.friendly',
-        message: 'Friendly',
+        id: 'pages.home.tag.pronouns',
+        message: 'He/Him',
       }),
-      icon: 'lucide:message-circle',
+      icon: 'lucide:user-round',
     },
     {
       label: translate({
