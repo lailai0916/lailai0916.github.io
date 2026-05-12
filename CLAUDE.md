@@ -74,6 +74,7 @@ These are project rules, not general advice — follow them:
 - **No hover motion.** Never add hover-triggered transforms — no `translateY`/`translateX` lifts, no `scale()` zooms on cards or images, no animated arrow slides, no width-animated underlines that grow from 0 to 100%. These are AI-tells and the maintainer hates them. Hover state should change at most: `border-color`, `color`, `background-color`, plain `text-decoration: underline`. Anything that moves on hover must be removed.
 - **i18n is mandatory.** Any new user-facing string requires both a `translate()` call and a Chinese entry in `i18n/zh-Hans/code.json`.
 - **Verify before committing.** Run `npm run check` and ensure it exits cleanly. For UI changes, also confirm in the `npm start` dev server.
+- **Small changes go straight to `main`.** Do not create a feature branch or open a PR for minor edits (copy tweaks, single-component refactors, style fixes, etc.) — commit directly on `main`. Reserve branches and PRs for substantial multi-file work the maintainer explicitly asks to be reviewed.
 
 Prettier config: `printWidth: 80`, `singleQuote: true`, `trailingComma: 'es5'`. TypeScript is `strict`.
 

@@ -20,6 +20,7 @@ import clsx from 'clsx';
 import IconText from '@site/src/components/laikit/IconText';
 import Button from '@site/src/components/laikit/Button';
 import Card from '@site/src/components/laikit/Card';
+import Badge from '@site/src/components/laikit/Badge';
 
 import { usePluralForm } from '@docusaurus/theme-common';
 import {
@@ -126,12 +127,8 @@ function FilterBar({
         <div className={styles.filterSearch}>
           <Icon icon="lucide:search" className={styles.filterSearchIcon} />
           {activeCat && (
-            <span className={styles.filterActiveCat}>
-              <Icon
-                icon={activeCat.icon}
-                className={styles.filterActiveCatIcon}
-              />
-              <span>{activeCat.title}</span>
+            <Badge icon={activeCat.icon} className={styles.filterActiveCat}>
+              {activeCat.title}
               <button
                 type="button"
                 className={styles.filterActiveCatClear}
@@ -146,7 +143,7 @@ function FilterBar({
               >
                 <Icon icon="lucide:x" />
               </button>
-            </span>
+            </Badge>
           )}
           <input
             ref={inputRef}
