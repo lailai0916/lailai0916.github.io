@@ -63,10 +63,10 @@
   color: rgba(235, 235, 245, 0.6);
 }
 
-.language {
-  min-width: 52px;
+.meta {
+  align-items: baseline;
+  display: inline-flex;
   flex-shrink: 0;
-  text-align: right;
   font:
     500 12px -apple-system,
     BlinkMacSystemFont,
@@ -75,11 +75,19 @@
     sans-serif;
   letter-spacing: 0.01em;
   color: rgba(60, 60, 67, 0.55);
-  text-transform: lowercase;
   font-variant-numeric: tabular-nums;
 }
 
-[data-theme='dark'] .language {
+.size::after {
+  content: '·';
+  margin: 0 6px;
+}
+
+.language {
+  text-transform: lowercase;
+}
+
+[data-theme='dark'] .meta {
   color: rgba(235, 235, 245, 0.45);
 }
 
