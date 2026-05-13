@@ -62,8 +62,7 @@ function downsample(arr: SeriesPoint[], windowSize: number): SeriesPoint[] {
 
 function weekKey(iso: string): string {
   const d = new Date(iso.replace(' ', 'T'));
-  const offset = (d.getDay() + 6) % 7;
-  d.setDate(d.getDate() - offset);
+  d.setDate(d.getDate() - d.getDay());
   return bucketKey(d, 'day');
 }
 
