@@ -246,17 +246,6 @@ export default function Sparkline({
             className={styles.line}
           />
 
-          {hoverIdx === null && activePoint && (
-            <circle
-              cx={activePoint.x}
-              cy={activePoint.y}
-              r="4"
-              fill="var(--ifm-color-primary)"
-              stroke="var(--ifm-card-background-color)"
-              strokeWidth="2"
-            />
-          )}
-
           {hoverIdx !== null && activePoint && (
             <>
               <line

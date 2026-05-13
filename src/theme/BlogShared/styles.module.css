@@ -125,8 +125,6 @@
   min-width: 0;
   font-size: 0.72rem;
   line-height: 1.2;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
   color: var(--ifm-color-emphasis-700);
   white-space: nowrap;
   overflow: hidden;
