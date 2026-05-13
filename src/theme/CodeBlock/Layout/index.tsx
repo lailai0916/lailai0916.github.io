@@ -7,12 +7,19 @@ import Content from '@theme/CodeBlock/Content';
 import Buttons from '@theme/CodeBlock/Buttons';
 import styles from './styles.module.css';
 
+function formatBytes(bytes: number): string {
+  if (bytes < 1024) return `${bytes} B`;
+  if (bytes < 1024 * 1024) return `${(bytes / 1024).toFixed(1)} KB`;
+  return `${(bytes / (1024 * 1024)).toFixed(1)} MB`;
+}
+
 export default function CodeBlockLayout({
   className,
 }: {
   className?: string;
 }): React.ReactElement {
   const { metadata } = useCodeBlockContext();
+  const size = formatBytes(new TextEncoder().encode(metadata.code).length);
   return (
     <Container
       as="div"
@@ -27,8 +34,11 @@ export default function CodeBlockLayout({
         <div className={styles.title}>
           {metadata.title && <Title>{metadata.title}</Title>}
         </div>
-        <span className={styles.language}>
-          {metadata.language?.toLowerCase() ?? ''}
+        <span className={styles.meta}>
+          <span className={styles.size}>{size}</span>
+          <span className={styles.language}>
+            {metadata.language?.toLowerCase() ?? ''}
+          </span>
         </span>
       </div>
       <div className={styles.body}>
