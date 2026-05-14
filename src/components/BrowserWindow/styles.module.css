@@ -62,3 +62,8 @@
 .browserWindowBody > *:last-child {
   margin-bottom: 0;
 }
+
+.imageWindow img {
+  display: block;
+  max-width: 100%;
+}

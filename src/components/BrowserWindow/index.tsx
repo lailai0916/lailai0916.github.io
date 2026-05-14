@@ -75,7 +75,7 @@ export function ImageWindow({
   url = 'http://localhost:3000',
 }: ImageWindowProps) {
   return (
-    <div>
+    <div className={styles.imageWindow}>
       <BrowserWindow url={url} bodyStyle={{ padding: 0 }}>
         {children}
       </BrowserWindow>
