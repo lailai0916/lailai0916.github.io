@@ -14,7 +14,9 @@
   );
   backdrop-filter: saturate(180%) blur(20px);
   -webkit-backdrop-filter: saturate(180%) blur(20px);
-  display: flex;
+  display: grid;
+  gap: 16px;
+  grid-template-columns: 1fr auto 1fr;
   height: 42px;
   padding: 0 16px;
 }
@@ -30,6 +32,7 @@
   align-items: center;
   display: flex;
   gap: 8px;
+  justify-self: start;
   white-space: nowrap;
 }
 
@@ -43,7 +46,6 @@
 
 .title {
   color: rgba(60, 60, 67, 0.7);
-  flex: 1 0;
   font:
     500 13px -apple-system,
     BlinkMacSystemFont,
@@ -51,7 +53,8 @@
     'Segoe UI',
     sans-serif;
   letter-spacing: -0.01em;
-  margin: 0 16px;
+  margin: 0;
+  min-width: 0;
   padding: 0;
   text-align: center;
   overflow: hidden;
@@ -67,6 +70,7 @@
   align-items: baseline;
   display: inline-flex;
   flex-shrink: 0;
+  justify-self: end;
   font:
     500 12px -apple-system,
     BlinkMacSystemFont,
