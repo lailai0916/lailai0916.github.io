@@ -34,7 +34,6 @@ export default function BrowserWindow({
         <div className={clsx(styles.browserWindowAddressBar, 'text--truncate')}>
           {url}
         </div>
-        <span className={styles.browserWindowSpacer} aria-hidden />
       </div>
 
       <div className={styles.browserWindowBody} style={bodyStyle}>
