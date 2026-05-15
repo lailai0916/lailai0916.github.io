@@ -44,7 +44,7 @@
     "description": "Navbar item with label Resources"
   },
   "item.label.Site": {
-    "message": "站点",
+    "message": "网站",
     "description": "Navbar item with label Site"
   },
   "item.label.Settings": {
