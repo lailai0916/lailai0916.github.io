@@ -1,11 +1,13 @@
-import React, { useMemo } from 'react';
+import React, { useMemo, useRef, useState } from 'react';
+import clsx from 'clsx';
 import Link from '@docusaurus/Link';
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
-import Details from '@theme/Details';
 import CodeBlock from '@theme/CodeBlock';
 import Admonition from '@theme/Admonition';
 import { translate } from '@docusaurus/Translate';
+import Card from '@site/src/components/laikit/Card';
+import { formatBytes } from '@site/src/utils/format';
+
+import styles from './styles.module.css';
 
 declare const require: any;
 type RawCodeModule = { default: string };
@@ -28,76 +30,108 @@ const ctx = require.context(
   /\.cpp$/
 ) as RawCodeContext;
 
-function GetCode({ id }: { id: string }) {
-  const formatTitle = (p: string) =>
-    p
-      .slice(p.lastIndexOf('/') + 1)
-      .replace(/\.cpp$/, '')
-      .replace(/_/g, ' ');
+type Tab =
+  | { kind: 'statement'; label: string; Render: React.ComponentType }
+  | { kind: 'solution'; label: string; Render: React.ComponentType }
+  | { kind: 'code'; label: string; code: string };
 
-  const codes = useMemo<Array<{ title: string; code: string }>>(() => {
-    return ctx
-      .keys()
-      .filter((p: string) => p.includes(`/${id}/`))
-      .map((p: string) => ({
-        title: formatTitle(p),
-        code: ctx(p).default,
-      }))
-      .sort(
-        (
-          a: { title: string; code: string },
-          b: { title: string; code: string }
-        ) => a.title.localeCompare(b.title)
-      );
-  }, [id]);
-
-  if (codes.length === 0) return <></>;
-
-  return (
-    <Details
-      summary={translate(
-        {
-          id: 'components.problem.code',
-          message: 'Code ({num})',
-        },
-        { num: codes.length }
-      )}
-    >
-      {codes.length === 1 ? (
-        <CodeBlock language="cpp">{codes[0].code}</CodeBlock>
-      ) : (
-        <Tabs>
-          {codes.map(({ title, code }) => (
-            <TabItem key={title} value={title}>
-              <CodeBlock language="cpp">{code}</CodeBlock>
-            </TabItem>
-          ))}
-        </Tabs>
-      )}
-    </Details>
-  );
+function formatCodeTitle(p: string): string {
+  return p
+    .slice(p.lastIndexOf('/') + 1)
+    .replace(/\.cpp$/, '')
+    .replace(/_/g, ' ');
 }
 
-function GetSolution({ id }: { id: string }) {
-  let mdxModule: { default: React.ComponentType };
-  try {
-    mdxModule = require(`@site/blog/solution/${id}.mdx`) as {
-      default: React.ComponentType;
-    };
-  } catch {
-    return <></>;
-  }
-  const { default: SOL } = mdxModule;
+function ProblemPanel({ tabs }: { tabs: Tab[] }) {
+  const [active, setActive] = useState<number | null>(0);
+  const lastIdx = useRef(0);
+  if (active !== null) lastIdx.current = active;
+  const open = active !== null;
+  const displayed = tabs[active ?? lastIdx.current];
+  const showMeta = open && displayed.kind === 'code';
 
   return (
-    <Details
-      summary={translate({
-        id: 'components.problem.solution',
-        message: 'Solution',
-      })}
-    >
-      {React.createElement(SOL)}
-    </Details>
+    <Card padding={0} className={clsx(styles.panel, open && styles.panelOpen)}>
+      <div className={styles.header}>
+        <div className={styles.dots} aria-hidden="true">
+          <span className={styles.dot} style={{ background: '#ff5f57' }} />
+          <span className={styles.dot} style={{ background: '#ffbd2e' }} />
+          <span className={styles.dot} style={{ background: '#28c840' }} />
+        </div>
+        <div className={styles.tabs} role="tablist">
+          {tabs.map((t, i) => (
+            <button
+              key={i}
+              type="button"
+              role="tab"
+              aria-selected={i === active}
+              className={clsx(styles.tab, i === active && styles.tabActive)}
+              onClick={() => setActive((cur) => (cur === i ? null : i))}
+            >
+              {t.label}
+            </button>
+          ))}
+        </div>
+        <div className={styles.right}>
+          {showMeta && displayed.kind === 'code' && (
+            <span className={styles.meta} aria-hidden="true">
+              <span className={styles.size}>
+                {formatBytes(new TextEncoder().encode(displayed.code).length)}
+              </span>
+              <span className={styles.language}>cpp</span>
+            </span>
+          )}
+          <button
+            type="button"
+            className={styles.toggle}
+            aria-expanded={open}
+            aria-label={
+              open
+                ? translate({
+                    id: 'components.problem.collapse',
+                    message: 'Collapse',
+                  })
+                : translate({
+                    id: 'components.problem.expand',
+                    message: 'Expand',
+                  })
+            }
+            onClick={() => setActive((cur) => (cur === null ? 0 : null))}
+          >
+            <svg
+              className={styles.chevron}
+              viewBox="0 0 20 20"
+              aria-hidden="true"
+            >
+              <path
+                d="M5 8l5 5 5-5"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.6"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
+          </button>
+        </div>
+      </div>
+      <div
+        className={clsx(styles.collapse, open && styles.collapseOpen)}
+        aria-hidden={!open}
+      >
+        <div className={styles.body} role="tabpanel">
+          {displayed.kind === 'code' ? (
+            <CodeBlock language="cpp" className="codeBlockBare">
+              {displayed.code}
+            </CodeBlock>
+          ) : (
+            <div className={styles.bodyInner}>
+              <displayed.Render />
+            </div>
+          )}
+        </div>
+      </div>
+    </Card>
   );
 }
 
@@ -123,14 +157,58 @@ export default function Problem({ id }: { id: string }) {
   const { default: MDX, frontMatter } = mdxModule;
   const { title = id, link } = frontMatter ?? {};
 
-  return (
-    <Admonition
-      type="example"
-      title={link ? <Link href={link}>{title}</Link> : title}
-    >
-      {React.createElement(MDX)}
-      <GetSolution id={id} />
-      <GetCode id={id} />
-    </Admonition>
-  );
+  const tabs = useMemo<Tab[]>(() => {
+    const list: Tab[] = [
+      {
+        kind: 'statement',
+        label: translate({
+          id: 'components.problem.statement',
+          message: 'Problem',
+        }),
+        Render: () => (
+          <>
+            <div className={styles.title}>
+              {link ? (
+                <Link href={link} className={styles.titleLink}>
+                  {title}
+                </Link>
+              ) : (
+                title
+              )}
+            </div>
+            <MDX />
+          </>
+        ),
+      },
+    ];
+
+    try {
+      const sol = require(`@site/blog/solution/${id}.mdx`) as {
+        default: React.ComponentType;
+      };
+      list.push({
+        kind: 'solution',
+        label: translate({
+          id: 'components.problem.solution',
+          message: 'Solution',
+        }),
+        Render: sol.default,
+      });
+    } catch {
+      // no solution available
+    }
+
+    const codes = ctx
+      .keys()
+      .filter((p) => p.includes(`/${id}/`))
+      .map((p) => ({ label: formatCodeTitle(p), code: ctx(p).default }))
+      .sort((a, b) => a.label.localeCompare(b.label));
+    for (const c of codes) {
+      list.push({ kind: 'code', label: c.label, code: c.code });
+    }
+
+    return list;
+  }, [id, link, title, MDX]);
+
+  return <ProblemPanel tabs={tabs} />;
 }

@@ -10,6 +10,19 @@ export function formatCompact(
   }).format(n);
 }
 
+export function formatBytes(bytes: number): string {
+  if (bytes < 1024) return `${bytes} B`;
+  let n = bytes / 1024;
+  let unit = 'KB';
+  if (n >= 1024) {
+    n /= 1024;
+    unit = 'MB';
+  }
+  const formatted =
+    n >= 100 ? Math.round(n).toString() : n.toFixed(n >= 10 ? 1 : 2);
+  return `${formatted} ${unit}`;
+}
+
 export function formatBeijingDate(
   date: Date | string | number,
   locale: string = 'en-CA',
