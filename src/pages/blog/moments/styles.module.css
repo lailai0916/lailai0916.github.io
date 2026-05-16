@@ -3,29 +3,20 @@
 .headerCard {
   display: flex;
   align-items: center;
-  justify-content: space-between;
   gap: 1rem;
 }
 
 .headerInfo {
+  flex: 1;
   min-width: 0;
 }
 
 .title {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
   font-size: 1.6rem;
   font-weight: 700;
   line-height: 1.15;
   letter-spacing: -0.01em;
   margin: 0;
-}
-
-.titleIcon {
-  font-size: 1.2rem;
-  color: var(--ifm-color-primary);
-  flex-shrink: 0;
 }
 
 .description {

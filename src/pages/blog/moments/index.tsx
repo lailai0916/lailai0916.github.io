@@ -1,5 +1,4 @@
 import React from 'react';
-import { Icon } from '@iconify/react';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import BlogScaffold from '@site/src/theme/BlogShared/Scaffold';
 import {
@@ -7,6 +6,7 @@ import {
   MetaBar,
   type MetaBarItem,
 } from '@site/src/theme/BlogShared/Components';
+import IconBlock from '@site/src/components/laikit/IconBlock';
 import { MOMENT_LIST } from '@site/src/data/moments';
 import {
   formatLocalizedDate,
@@ -26,15 +26,9 @@ export default function Moments() {
     <BlogScaffold title={TITLE} description={DESCRIPTION}>
       <BlogCard>
         <div className={styles.headerCard}>
+          <IconBlock icon="lucide:sparkles" variant="accent" size={48} />
           <div className={styles.headerInfo}>
-            <h1 className={styles.title}>
-              <Icon
-                icon="lucide:sparkles"
-                className={styles.titleIcon}
-                aria-hidden="true"
-              />
-              {TITLE}
-            </h1>
+            <h1 className={styles.title}>{TITLE}</h1>
             <p className={styles.description}>{DESCRIPTION}</p>
           </div>
           <div className={styles.count}>
