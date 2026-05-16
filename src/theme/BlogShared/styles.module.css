@@ -99,8 +99,8 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  gap: 0.6rem;
-  padding: 0.62rem 0.7rem;
+  gap: 0.7rem;
+  padding: 0.75rem 0.85rem;
   border-radius: 12px;
   border: 1px solid var(--ifm-color-emphasis-200);
 }
@@ -108,23 +108,22 @@
 .statHead {
   display: flex;
   align-items: center;
-  gap: 0.45rem;
+  gap: 0.4rem;
 }
 
 .statIcon {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 1.35rem;
-  height: 1.35rem;
+  font-size: 0.95rem;
   color: var(--ifm-color-primary);
   flex-shrink: 0;
 }
 
 .statLabel {
   min-width: 0;
-  font-size: 0.72rem;
-  line-height: 1.2;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  font-variant-numeric: tabular-nums;
+  line-height: 1;
   color: var(--ifm-color-emphasis-700);
   white-space: nowrap;
   overflow: hidden;
@@ -133,7 +132,7 @@
 
 .statValue {
   font-weight: 700;
-  font-size: 1.12rem;
+  font-size: 1.2rem;
   line-height: 1;
   color: var(--ifm-color-emphasis-900);
   font-variant-numeric: tabular-nums;

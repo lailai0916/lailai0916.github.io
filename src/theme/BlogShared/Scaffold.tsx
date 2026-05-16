@@ -199,9 +199,12 @@ function StatsCard() {
         {statsItems.map((item) => (
           <div key={item.label} className={styles.statTile}>
             <div className={styles.statHead}>
-              <span className={styles.statIcon}>
-                <Icon icon={item.icon} width="1em" height="1em" />
-              </span>
+              <Icon
+                icon={item.icon}
+                width="1em"
+                height="1em"
+                className={styles.statIcon}
+              />
               <span className={styles.statLabel}>{item.label}</span>
             </div>
             <span className={styles.statValue}>

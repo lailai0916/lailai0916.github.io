@@ -12,7 +12,7 @@ export interface ResourceCategoryItem {
 
 export const RESOURCE_LIST: ResourceCategoryItem[] = [
   {
-    title: '搜索与导航',
+    title: '搜索与百科',
     icon: 'lucide:search',
     resources: [
       {
@@ -23,7 +23,7 @@ export const RESOURCE_LIST: ResourceCategoryItem[] = [
       {
         title: 'Microsoft Bing',
         href: 'https://www.bing.com',
-        description: '微软搜索引擎与 AI 入口',
+        description: '微软网页搜索引擎',
       },
       {
         title: '百度',
@@ -39,37 +39,37 @@ export const RESOURCE_LIST: ResourceCategoryItem[] = [
       {
         title: 'ChatGPT',
         href: 'https://chatgpt.com',
-        description: '对话式大语言模型助手',
+        description: 'OpenAI 通用对话助手',
       },
       {
         title: 'Gemini',
         href: 'https://gemini.google.com',
-        description: '多模态 AI 助手',
+        description: '谷歌多模态对话助手',
       },
       {
         title: 'Claude',
         href: 'https://claude.ai',
-        description: '通用对话式 AI 助手',
+        description: 'Anthropic 对话助手',
       },
       {
         title: 'Grok',
         href: 'https://grok.com',
-        description: '实时信息检索型 AI 助手',
+        description: 'xAI 对话助手',
       },
       {
         title: 'DeepSeek',
         href: 'https://deepseek.com',
-        description: '中文友好大模型与 API',
+        description: '深度求索开源大模型',
       },
       {
         title: 'Sora',
         href: 'https://sora.com',
-        description: '文本到视频生成模型',
+        description: 'OpenAI 文本生成视频工具',
       },
     ],
   },
   {
-    title: 'AI 研发与生态',
+    title: 'AI 平台与生态',
     icon: 'lucide:microscope',
     resources: [
       {
@@ -80,7 +80,7 @@ export const RESOURCE_LIST: ResourceCategoryItem[] = [
       {
         title: 'Arena',
         href: 'https://arena.ai',
-        description: '大模型对战评测平台',
+        description: '大模型对战排行榜',
       },
       {
         title: 'GPTZero',
@@ -90,94 +90,119 @@ export const RESOURCE_LIST: ResourceCategoryItem[] = [
       {
         title: 'Not By AI',
         href: 'https://notbyai.fyi',
-        description: '人类原创内容声明徽章',
+        description: '人类原创内容标识徽章',
       },
       {
         title: 'Google DeepMind',
         href: 'https://deepmind.com',
-        description: 'AI 研究实验室与成果',
+        description: '谷歌人工智能研究机构',
       },
       {
         title: 'Google AI Studio',
         href: 'https://aistudio.google.com',
-        description: 'Gemini API 调试与开发平台',
+        description: 'Gemini 模型开发平台',
       },
       {
         title: 'Meta AI',
         href: 'https://ai.facebook.com',
-        description: 'AI 研究与开源模型发布',
+        description: 'Meta 人工智能研究门户',
       },
       {
         title: 'Microsoft AI',
         href: 'https://www.microsoft.com/ai',
-        description: 'AI 产品与研究入口页',
+        description: '微软人工智能产品门户',
       },
       {
         title: 'DeepLearning.AI',
         href: 'https://deeplearning.ai',
-        description: 'AI 课程与学习资源平台',
+        description: '吴恩达深度学习课程',
       },
       {
         title: 'PyTorch',
         href: 'https://pytorch.org',
-        description: '深度学习训练与推理框架',
+        description: '深度学习框架',
       },
       {
         title: 'Keras',
         href: 'https://keras.io',
-        description: '深度学习高层 API 框架',
+        description: '高层神经网络 API',
       },
       {
         title: 'TensorFlow',
         href: 'https://www.tensorflow.org',
-        description: '深度学习训练与部署框架',
+        description: '谷歌机器学习框架',
       },
     ],
   },
   {
-    title: '云与网络',
+    title: '云、网络与代理',
     icon: 'lucide:cloud',
     resources: [
       {
         title: 'Cloudflare',
         href: 'https://www.cloudflare.com',
-        description: 'CDN、DNS 与边缘安全网络',
+        description: 'CDN 与网络安全服务',
       },
       {
         title: 'Amazon Web Services',
         href: 'https://aws.amazon.com',
-        description: '云计算与托管服务平台',
+        description: '亚马逊云计算平台',
       },
       {
         title: 'Microsoft Azure',
         href: 'https://azure.microsoft.com',
-        description: '企业级云计算服务平台',
+        description: '微软云计算平台',
       },
       {
         title: '雨云',
         href: 'https://www.rainyun.com',
-        description: '新一代云服务提供商',
+        description: '国内云服务器与游戏托管',
       },
       {
         title: 'GoDaddy',
         href: 'https://www.godaddy.com',
-        description: '域名注册与管理平台',
+        description: '老牌域名注册与建站商',
       },
       {
         title: 'Namecheap',
         href: 'https://www.namecheap.com',
-        description: '域名注册与管理平台',
+        description: '低价域名与隐私保护',
       },
       {
         title: 'NameSilo',
         href: 'https://www.namesilo.com',
-        description: '域名注册与管理平台',
+        description: '免费隐私保护域名注册',
+      },
+      {
+        title: '墙妈妈',
+        href: 'https://www.wallmama.com',
+        description: '翻墙工具评测与教程',
+      },
+      {
+        title: 'ExpressVPN',
+        href: 'https://www.expressvpn.com',
+        description: '英属维京群岛高速 VPN',
+      },
+      {
+        title: 'NordVPN',
+        href: 'https://nordvpn.com',
+        description: '巴拿马多协议 VPN',
+      },
+      {
+        title: 'AstrillVPN',
+        href: 'https://www.astrill.com',
+        description: '塞舌尔抗封锁 VPN',
+      },
+      {
+        title: 'Taishan Net',
+        href: 'https://taishan.pro',
+        description: '多协议网络代理服务',
       },
     ],
   },
   {
-    title: '代码托管与统计',
-    icon: 'lucide:github',
+    title: '开发工具与平台',
+    icon: 'lucide:terminal',
     resources: [
       {
         title: 'GitHub',
@@ -187,116 +212,129 @@ export const RESOURCE_LIST: ResourceCategoryItem[] = [
       {
         title: 'GitStar 排行榜',
         href: 'https://gitstar-ranking.com',
-        description: 'GitHub Star 排行榜',
+        description: 'GitHub 用户与仓库星标榜',
       },
       {
         title: 'Committers Top',
         href: 'https://committers.top',
-        description: 'GitHub 活跃贡献榜单',
+        description: 'GitHub 贡献者活跃度排行',
       },
       {
         title: 'GitHub Metrics',
         href: 'https://github.com/lowlighter/metrics',
-        description: 'GitHub 账号信息图生成器',
+        description: 'GitHub 个人数据可视化生成器',
       },
       {
         title: 'GitHub Stats',
         href: 'https://github.com/jstrieb/github-stats',
-        description: 'GitHub 个人统计卡片生成器',
+        description: 'GitHub 账号统计图表生成',
       },
       {
         title: 'Shields.io',
         href: 'https://shields.io',
-        description: '徽章（Badge）生成服务',
+        description: '项目徽章生成服务',
       },
-    ],
-  },
-  {
-    title: '在线 IDE 与沙盒',
-    icon: 'lucide:terminal',
-    resources: [
       {
         title: 'GitHub Codespaces',
         href: 'https://github.com/codespaces',
-        description: '云端开发环境',
+        description: 'GitHub 官方云端开发环境',
       },
       {
         title: 'Gitpod',
         href: 'https://www.gitpod.io',
-        description: '云端 IDE 与开发环境',
+        description: '云端按需开发工作区',
       },
       {
         title: 'CodeSandbox',
         href: 'https://codesandbox.io',
-        description: '在线代码沙盒与协作编辑',
+        description: '在线前端项目沙盒',
       },
       {
         title: 'CodePen',
         href: 'https://codepen.io',
-        description: '前端代码演示与分享平台',
+        description: '前端代码片段分享社区',
       },
       {
         title: 'StackBlitz',
         href: 'https://stackblitz.com',
-        description: '浏览器内前端 IDE',
+        description: '浏览器内运行的全栈 IDE',
       },
       {
         title: 'vscode.dev',
         href: 'https://vscode.dev',
-        description: '网页版编辑器',
+        description: 'VS Code 网页版编辑器',
       },
       {
         title: 'Sandpack',
         href: 'https://sandpack.codesandbox.io',
-        description: '可嵌入代码编辑器组件',
+        description: '可嵌入的代码沙盒组件库',
       },
-    ],
-  },
-  {
-    title: '编译与调试',
-    icon: 'lucide:bug',
-    resources: [
       {
         title: 'OnlineGDB',
         href: 'https://www.onlinegdb.com/online_python_compiler',
-        description: '多语言在线编译与运行',
+        description: '在线编译器与调试器',
       },
       {
         title: 'Compiler Explorer',
         href: 'https://godbolt.org',
-        description: '编译结果与汇编对照分析',
+        description: '在线汇编输出查看工具',
       },
-      {
-        title: 'Diff Tool',
-        href: 'https://csacademy.com/app/diffing_tool/',
-        description: '在线文本与代码差异对比',
-      },
-      {
-        title: 'Graph Editor',
-        href: 'https://csacademy.com/app/graph_editor/',
-        description: '图论结构可视化编辑器',
-      },
-    ],
-  },
-  {
-    title: '开发工具与 IDE',
-    icon: 'lucide:code-2',
-    resources: [
       {
         title: 'PyCharm',
         href: 'https://www.jetbrains.com/pycharm',
-        description: 'Python 桌面 IDE',
+        description: 'JetBrains Python 集成开发环境',
       },
       {
         title: 'Jupyter',
         href: 'https://jupyter.org',
-        description: '交互式 Notebook 环境',
+        description: '交互式笔记本计算环境',
       },
     ],
   },
   {
-    title: '学术与论文',
-    icon: 'lucide:book-open',
+    title: '前端与文档站',
+    icon: 'lucide:layout-template',
+    resources: [
+      {
+        title: 'React',
+        href: 'https://react.dev',
+        description: '前端用户界面构建库',
+      },
+      {
+        title: 'Docusaurus',
+        href: 'https://docusaurus.io',
+        description: 'React 文档站点生成器',
+      },
+      {
+        title: 'VitePress',
+        href: 'https://vitepress.vuejs.org',
+        description: '基于 Vite 的 Vue 文档框架',
+      },
+      {
+        title: 'VuePress',
+        href: 'https://vuepress.vuejs.org',
+        description: 'Vue 官方文档站点框架',
+      },
+      {
+        title: 'Material for MkDocs',
+        href: 'https://squidfunk.github.io/mkdocs-material',
+        description: 'MkDocs 的 Material 设计主题',
+      },
+      {
+        title: 'Hexo',
+        href: 'https://hexo.io',
+        description: 'Node.js 静态博客生成器',
+      },
+      {
+        title: 'WordPress',
+        href: 'https://wordpress.org',
+        description: '开源博客与内容管理系统',
+      },
+    ],
+  },
+  {
+    title: '学术与学习',
+    icon: 'lucide:graduation-cap',
     resources: [
       {
         title: 'Google Scholar',
@@ -306,48 +344,42 @@ export const RESOURCE_LIST: ResourceCategoryItem[] = [
       {
         title: 'Science',
         href: 'https://www.science.org/journal/science',
-        description: '科学期刊与论文平台',
+        description: '《科学》期刊官网',
       },
       {
         title: 'Nature',
         href: 'https://www.nature.com',
-        description: '多学科期刊与论文平台',
+        description: '《自然》期刊官网',
       },
       {
         title: 'arXiv',
         href: 'https://arxiv.org',
-        description: '开放预印本论文库',
+        description: '学术论文预印本仓库',
       },
       {
         title: 'Overleaf',
         href: 'https://www.overleaf.com',
-        description: '在线 LaTeX 写作与协作',
+        description: '在线 LaTeX 协作编辑器',
       },
-    ],
-  },
-  {
-    title: '在线学习',
-    icon: 'lucide:graduation-cap',
-    resources: [
       {
         title: 'Coursera',
         href: 'https://www.coursera.org',
-        description: '在线课程与证书平台',
+        description: '高校在线课程平台',
       },
       {
         title: 'edX',
         href: 'https://www.edx.org',
-        description: '高校在线课程平台',
+        description: '高校公开课学习平台',
       },
       {
         title: 'MIT OpenCourseWare',
         href: 'https://ocw.mit.edu',
-        description: 'MIT 公开课程资源库',
+        description: '麻省理工开放课程',
       },
       {
         title: 'Class Central',
         href: 'https://www.classcentral.com',
-        description: '在线课程聚合与搜索',
+        description: '在线课程聚合检索',
       },
     ],
   },
@@ -358,32 +390,32 @@ export const RESOURCE_LIST: ResourceCategoryItem[] = [
       {
         title: '洛谷',
         href: 'https://www.luogu.com.cn',
-        description: '算法竞赛训练与社区平台',
+        description: '中文信息学竞赛 OJ',
       },
       {
         title: 'Codeforces',
         href: 'https://codeforces.com',
-        description: '算法竞赛平台与题库',
+        description: '俄罗斯算法竞赛平台',
       },
       {
         title: 'AtCoder',
         href: 'https://atcoder.jp',
-        description: '算法竞赛平台与题库',
+        description: '日本算法竞赛平台',
       },
       {
         title: 'Virtual Judge',
         href: 'https://vjudge.net',
-        description: '多平台题目聚合与判题',
+        description: '跨 OJ 题目聚合提交',
       },
       {
         title: '洛谷保存站',
         href: 'https://www.luogu.me',
-        description: '洛谷专栏与剪贴板备份',
+        description: '洛谷题目社区镜像',
       },
       {
         title: 'Algorithm Duels Online',
         href: 'https://algorithm-duels.online',
-        description: '组队算法对战平台',
+        description: '算法题在线对战',
       },
       {
         title: 'Solution Formatter',
@@ -393,7 +425,7 @@ export const RESOURCE_LIST: ResourceCategoryItem[] = [
       {
         title: 'Code Golf',
         href: 'https://code.golf',
-        description: '最短代码挑战平台',
+        description: '最短代码挑战游戏',
       },
       {
         title: 'OI Wiki',
@@ -403,17 +435,27 @@ export const RESOURCE_LIST: ResourceCategoryItem[] = [
       {
         title: 'OIerDb',
         href: 'https://oier.baoshuo.dev',
-        description: '信息学竞赛记录数据库',
+        description: 'OI 选手获奖数据库',
       },
       {
         title: '原题机',
         href: 'https://yuantiji.ac/zh/',
-        description: '题目来源溯源与检索',
+        description: '竞赛原题相似度检索',
       },
       {
         title: 'Big-O Algorithm Complexity Cheat Sheet',
         href: 'https://www.bigocheatsheet.com',
         description: '算法复杂度速查表',
+      },
+      {
+        title: 'Diff Tool',
+        href: 'https://csacademy.com/app/diffing_tool/',
+        description: '在线文本差异比对',
+      },
+      {
+        title: 'Graph Editor',
+        href: 'https://csacademy.com/app/graph_editor/',
+        description: '在线图论可视化编辑',
       },
     ],
   },
@@ -424,17 +466,17 @@ export const RESOURCE_LIST: ResourceCategoryItem[] = [
       {
         title: 'Desmos',
         href: 'https://www.desmos.com',
-        description: '在线图形计算器',
+        description: '在线函数图像计算器',
       },
       {
         title: 'Wolfram Alpha',
         href: 'https://www.wolframalpha.com',
-        description: '计算型知识引擎',
+        description: '计算知识引擎',
       },
       {
         title: 'GeoGebra',
         href: 'https://www.geogebra.org',
-        description: '交互式数学与几何工具',
+        description: '动态数学几何软件',
       },
       {
         title: 'NumPy',
@@ -444,130 +486,89 @@ export const RESOURCE_LIST: ResourceCategoryItem[] = [
       {
         title: 'LaTeX 公式编辑器',
         href: 'https://www.latexlive.com',
-        description: 'LaTeX 公式在线编辑器',
+        description: '在线 LaTeX 公式编辑',
       },
       {
         title: 'OEIS',
         href: 'https://oeis.org',
-        description: '整数序列在线数据库',
+        description: '整数数列在线百科',
+      },
+      {
+        title: 'cppreference',
+        href: 'https://cppreference.com',
+        description: 'C++ 标准库参考文档',
       },
     ],
   },
   {
-    title: '前端与站点构建',
-    icon: 'lucide:layout-template',
+    title: '设计与创意',
+    icon: 'lucide:palette',
     resources: [
       {
-        title: 'React',
-        href: 'https://react.dev',
-        description: '前端 UI 框架',
+        title: 'Colorable',
+        href: 'https://colorable.jxnblk.com',
+        description: '配色对比度可访问性检测工具',
       },
       {
-        title: 'Docusaurus',
-        href: 'https://docusaurus.io',
-        description: 'React 文档站点生成器',
+        title: 'Skill Icons',
+        href: 'https://skillicons.dev',
+        description: '开发技能图标生成服务',
       },
       {
-        title: 'VitePress',
-        href: 'https://vitepress.vuejs.org',
-        description: 'Vite 驱动的文档站点生成器',
+        title: 'BrandColors',
+        href: 'https://brandcolors.net',
+        description: '知名品牌官方配色查询库',
       },
       {
-        title: 'VuePress',
-        href: 'https://vuepress.vuejs.org',
-        description: 'Vue 文档站点生成器',
+        title: 'Maker World',
+        href: 'https://makerworld.com.cn',
+        description: '拓竹 3D 打印模型分享社区',
       },
       {
-        title: 'Material for MkDocs',
-        href: 'https://squidfunk.github.io/mkdocs-material',
-        description: 'MkDocs 主题与文档站点框架',
+        title: 'amCharts Pixel Map',
+        href: 'https://pixelmap.amcharts.com',
+        description: '像素风世界地图在线编辑器',
       },
       {
-        title: 'Hexo',
-        href: 'https://hexo.io',
-        description: '静态博客生成框架',
+        title: 'Recraft',
+        href: 'https://www.recraft.ai',
+        description: 'AI 矢量图与插画生成',
       },
       {
-        title: 'WordPress',
-        href: 'https://wordpress.org',
-        description: '开源内容管理系统（CMS）',
+        title: 'Mult',
+        href: 'https://mult.dev',
+        description: '旅行路线动画地图制作',
+      },
+      {
+        title: 'OpenCut',
+        href: 'https://opencut.app',
+        description: '开源在线视频剪辑工具',
+      },
+      {
+        title: 'CodeSnap',
+        href: 'https://codesnap.dev',
+        description: '代码截图美化生成工具',
+      },
+      {
+        title: 'Bento Grids',
+        href: 'https://bentogrids.com',
+        description: '便当网格布局设计灵感集',
       },
     ],
   },
   {
-    title: '实用工具',
-    icon: 'lucide:bolt',
-    resources: [
-      {
-        title: 'Google 翻译',
-        href: 'https://translate.google.com',
-        description: '在线翻译与语音输入',
-      },
-      {
-        title: '清华大学开源软件镜像站',
-        href: 'https://mirrors.tuna.tsinghua.edu.cn',
-        description: '开源软件镜像下载站',
-      },
-      {
-        title: '能不能好好说话？',
-        href: 'https://lab.magiconch.com/nbnhhsh/',
-        description: '缩写与黑话解释工具',
-      },
-      {
-        title: 'dazidazi',
-        href: 'https://dazidazi.com',
-        description: '在线打字练习平台',
-      },
-      {
-        title: 'WildCard',
-        href: 'https://bewildcard.com',
-        description: '订阅与支付辅助服务',
-      },
-      {
-        title: 'Luban SMS',
-        href: 'https://lubansms.com',
-        description: '短信接码与验证平台',
-      },
-      {
-        title: 'Class Widgets',
-        href: 'https://classwidgets.rinlit.cn',
-        description: '桌面课表与小组件工具',
-      },
-      {
-        title: '电子教室终结者',
-        href: 'https://dzjszjz.nkxingxh.top',
-        description: '电子教室限制绕过工具',
-      },
-      {
-        title: 'Note.ms',
-        href: 'https://note.ms',
-        description: '公共剪贴板与临时笔记',
-      },
-      {
-        title: 'QR Code Generator',
-        href: 'https://www.qr-code-generator.com',
-        description: '二维码在线生成工具',
-      },
-      {
-        title: 'iLovePDF',
-        href: 'https://www.ilovepdf.com',
-        description: 'PDF 在线编辑与转换工具',
-      },
-    ],
-  },
-  {
-    title: '测试与分析',
+    title: '测试与基准',
     icon: 'lucide:bar-chart-2',
     resources: [
       {
         title: 'Speedtest',
         href: 'https://www.speedtest.net',
-        description: '网络测速与延迟测试',
+        description: '网络带宽速度测试',
       },
       {
         title: 'Net.Coffee',
         href: 'https://ip.net.coffee',
-        description: '网络质量与路由分析工具',
+        description: 'IP 归属与网络分流检测',
       },
       {
         title: 'Password Monster',
@@ -577,7 +578,7 @@ export const RESOURCE_LIST: ResourceCategoryItem[] = [
       {
         title: 'A Real Me',
         href: 'https://www.arealme.com',
-        description: '趣味测试与量表集合',
+        description: '综合趣味在线测试合集',
       },
       {
         title: 'CPS 测试',
@@ -587,125 +588,22 @@ export const RESOURCE_LIST: ResourceCategoryItem[] = [
       {
         title: '政治倾向测试',
         href: 'https://luckyfuy.top/compass/',
-        description: '政治立场光谱测试',
-      },
-    ],
-  },
-  {
-    title: '知识与参考',
-    icon: 'lucide:library',
-    resources: [
-      {
-        title: '维基百科',
-        href: 'https://zh.wikipedia.org',
-        description: '自由百科与知识条目',
-      },
-      {
-        title: 'cppreference',
-        href: 'https://cppreference.com',
-        description: 'C++ 标准库参考文档',
-      },
-      {
-        title: 'Passport Index',
-        href: 'https://www.passportindex.org',
-        description: '护照免签与通行排名',
-      },
-    ],
-  },
-  {
-    title: '数码与硬件',
-    icon: 'lucide:smartphone',
-    resources: [
-      {
-        title: 'Apple',
-        href: 'https://www.apple.com',
-        description: 'Apple 官方网站与产品页',
-      },
-      {
-        title: 'Apple 产品参数中心',
-        href: 'https://hubweb.cn',
-        description: 'Apple 参数对比与检索',
-      },
-      {
-        title: 'SOCPK',
-        href: 'https://socpk.com',
-        description: '移动芯片参数与性能对比',
-      },
-      {
-        title: '数码荔枝',
-        href: 'https://lizhi.shop',
-        description: '正版软件购买平台',
+        description: '基于 8Values 的政治倾向测验',
       },
       {
         title: 'volumeshader_bm',
         href: 'https://cznull.github.io/vsbm',
-        description: 'GPU 压力测试（毒蘑菇）',
+        description: 'WebGL 体积着色器性能基准',
       },
       {
         title: 'HTML5 Fish Bowl',
         href: 'https://eucscore.com/demos/HTML5-Fishbowl/index.html',
-        description: 'Canvas/GPU 渲染测试',
+        description: 'HTML5 鱼缸渲染性能演示',
       },
       {
         title: 'WebGL Aquarium',
         href: 'https://webglsamples.org/aquarium/aquarium.html',
-        description: 'WebGL 渲染性能测试',
-      },
-    ],
-  },
-  {
-    title: '设计与可视化',
-    icon: 'lucide:palette',
-    resources: [
-      {
-        title: 'Colorable',
-        href: 'https://colorable.jxnblk.com',
-        description: '颜色对比度与可读性检测',
-      },
-      {
-        title: 'Skill Icons',
-        href: 'https://skillicons.dev',
-        description: '技能图标生成服务',
-      },
-      {
-        title: 'BrandColors',
-        href: 'https://brandcolors.net',
-        description: '品牌配色与色值库',
-      },
-      {
-        title: 'Maker World',
-        href: 'https://makerworld.com.cn',
-        description: '设计资源与创意社区',
-      },
-      {
-        title: 'amCharts Pixel Map',
-        href: 'https://pixelmap.amcharts.com',
-        description: '像素地图在线编辑器',
-      },
-      {
-        title: 'Recraft',
-        href: 'https://www.recraft.ai',
-        description: 'AI 矢量图生成工具',
-      },
-      {
-        title: 'Mult',
-        href: 'https://mult.dev',
-        description: '路线动画与视频生成工具',
-      },
-      {
-        title: 'OpenCut',
-        href: 'https://opencut.app',
-        description: '开源视频剪辑工具',
-      },
-      {
-        title: 'CodeSnap',
-        href: 'https://codesnap.dev',
-        description: '代码截图与排版美化工具',
-      },
-      {
-        title: 'Bento Grids',
-        href: 'https://bentogrids.com',
-        description: 'Bento 网格布局灵感库',
+        description: 'WebGL 水族馆图形性能演示',
       },
     ],
   },
@@ -716,164 +614,224 @@ export const RESOURCE_LIST: ResourceCategoryItem[] = [
       {
         title: 'X (Twitter)',
         href: 'https://x.com',
-        description: '实时信息与社交平台',
+        description: 'X 社交媒体平台',
       },
       {
         title: 'Facebook',
         href: 'https://www.facebook.com',
-        description: '社交网络平台',
+        description: 'Facebook 社交网络',
       },
       {
         title: 'Telegram Web',
         href: 'https://web.telegram.org',
-        description: 'Telegram 网页版客户端',
+        description: 'Telegram 即时通讯网页版',
       },
       {
         title: 'YouTube',
         href: 'https://www.youtube.com',
-        description: '视频平台与创作者生态',
+        description: '全球视频分享平台',
       },
       {
         title: 'bilibili',
         href: 'https://www.bilibili.com',
-        description: '视频社区与弹幕平台',
+        description: '国内弹幕视频社区',
       },
       {
         title: 'Polymarket',
-        description: '预测市场与事件赔率平台',
         href: 'https://polymarket.com',
+        description: '链上事件预测交易市场',
       },
     ],
   },
   {
-    title: '在线娱乐',
+    title: '网页游戏',
     icon: 'lucide:gamepad',
     resources: [
       {
         title: 'CrazyGames',
         href: 'https://www.crazygames.com',
-        description: '网页小游戏平台',
+        description: '免下载浏览器小游戏平台',
       },
       {
         title: '.io Games',
         href: 'https://iogames.space',
-        description: 'IO 游戏索引与导航',
+        description: 'io 多人网页游戏聚合站',
       },
       {
         title: 'generals.io',
         href: 'https://generals.io',
-        description: '实时多人策略对战',
+        description: '回合制占领将军格战棋',
       },
       {
         title: 'florr.io',
         href: 'https://florr.io',
-        description: '在线植物养成与对战',
+        description: '花朵养成多人对战',
       },
       {
         title: 'TileMan.io',
         href: 'https://tileman.io',
-        description: '领土扩张策略游戏',
+        description: '方格占地盘多人对战',
       },
       {
         title: 'YORG.io',
         href: 'https://yorg.io',
-        description: '塔防与资源管理游戏',
+        description: '僵尸塔防与资源管理',
       },
       {
         title: 'Bloxd.io',
         href: 'https://bloxd.io',
-        description: '在线沙盒与跑酷对战',
+        description: '类 Minecraft 多人沙盒',
       },
       {
         title: '名字竞技场',
         href: 'https://namerena.github.io',
-        description: '文本对战小游戏',
+        description: '给名字加后缀的文本对战',
       },
       {
         title: '图寻',
         href: 'https://tuxun.fun',
-        description: '地理位置猜测游戏',
+        description: '中文街景猜位置游戏',
       },
       {
         title: '猜盐',
         href: 'https://xiaoce.fun',
-        description: '趣味问答与挑战平台',
+        description: '互动答题小测平台',
       },
       {
         title: 'WPlace',
         href: 'https://wplace.live',
-        description: '多人协作像素画布',
+        description: '多人协作像素绘制画布',
       },
       {
         title: 'sandspiel',
         href: 'https://sandspiel.club',
-        description: '粒子沙盒模拟器',
+        description: '元素粒子物理沙盒',
       },
       {
         title: 'HullQin Game',
         href: 'https://game.hullqin.cn',
-        description: '在线桌游合集平台',
+        description: '五子棋四国军棋桌游合集',
       },
       {
         title: 'Neal.fun',
         href: 'https://neal.fun',
-        description: '互动网页小游戏合集',
+        description: 'Neal Agarwal 互动实验合集',
       },
       {
         title: 'Kiomet',
         href: 'https://kiomet.com',
-        description: '在线即时战略游戏',
+        description: '实时多人策略对战',
       },
       {
         title: 'LINKR',
         href: 'https://www.playlinkr.net',
-        description: '每日连线挑战游戏',
+        description: '每日字词连线解谜',
       },
       {
         title: 'diep.io',
-        description: '多人坦克射击对战',
         href: 'https://diep.io',
+        description: '多人坦克升级射击',
       },
       {
         title: '信任的进化',
-        description: '信任与博弈互动游戏',
         href: 'https://dccxi.com/trust/',
+        description: '博弈论交互叙事',
       },
       {
         title: 'Gridspech',
-        description: '网格连线益智小游戏',
         href: 'https://gridspech.baublejar.com',
+        description: '格子染色益智解谜',
       },
     ],
   },
   {
-    title: '网络与访问',
-    icon: 'lucide:globe',
+    title: '实用工具',
+    icon: 'lucide:bolt',
     resources: [
       {
-        title: '墙妈妈',
-        href: 'https://www.wallmama.com',
-        description: '网络访问与工具导航',
+        title: '维基百科',
+        href: 'https://zh.wikipedia.org',
+        description: '自由协作的多语言在线百科',
       },
       {
-        title: 'ExpressVPN',
-        href: 'https://www.expressvpn.com',
-        description: 'VPN 服务提供商',
+        title: 'Apple',
+        href: 'https://www.apple.com',
+        description: '苹果公司官方网站',
       },
       {
-        title: 'NordVPN',
-        href: 'https://nordvpn.com',
-        description: 'VPN 服务提供商',
+        title: 'Apple 产品参数中心',
+        href: 'https://hubweb.cn',
+        description: '苹果产品规格查询与对比',
       },
       {
-        title: 'AstrillVPN',
-        href: 'https://www.astrill.com',
-        description: 'VPN 服务提供商',
+        title: 'SOCPK',
+        href: 'https://socpk.com',
+        description: '手机芯片性能跑分对比',
       },
       {
-        title: 'Taishan Net',
-        href: 'https://taishan.pro',
-        description: '多协议网络代理服务',
+        title: '数码荔枝',
+        href: 'https://lizhi.shop',
+        description: '国内正版软件零售平台',
+      },
+      {
+        title: 'Passport Index',
+        href: 'https://www.passportindex.org',
+        description: '全球护照免签排名与比较',
+      },
+      {
+        title: 'Google 翻译',
+        href: 'https://translate.google.com',
+        description: '谷歌多语言在线翻译',
+      },
+      {
+        title: '清华大学开源软件镜像站',
+        href: 'https://mirrors.tuna.tsinghua.edu.cn',
+        description: '开源软件与系统镜像源',
+      },
+      {
+        title: '能不能好好说话？',
+        href: 'https://lab.magiconch.com/nbnhhsh/',
+        description: '中文网络拼音缩写还原',
+      },
+      {
+        title: 'dazidazi',
+        href: 'https://dazidazi.com',
+        description: '在线打字练习平台',
+      },
+      {
+        title: 'WildCard',
+        href: 'https://bewildcard.com',
+        description: '海外订阅虚拟信用卡服务',
+      },
+      {
+        title: 'Luban SMS',
+        href: 'https://lubansms.com',
+        description: '短信接码与验证平台',
+      },
+      {
+        title: 'Class Widgets',
+        href: 'https://classwidgets.rinlit.cn',
+        description: 'Windows 桌面课程表小组件',
+      },
+      {
+        title: '电子教室终结者',
+        href: 'https://dzjszjz.nkxingxh.top',
+        description: '反极域电子教室控制工具',
+      },
+      {
+        title: 'Note.ms',
+        href: 'https://note.ms',
+        description: '公共剪贴板与临时笔记',
+      },
+      {
+        title: 'QR Code Generator',
+        href: 'https://www.qr-code-generator.com',
+        description: '在线二维码生成工具',
+      },
+      {
+        title: 'iLovePDF',
+        href: 'https://www.ilovepdf.com',
+        description: '在线 PDF 转换与编辑工具',
       },
     ],
   },
