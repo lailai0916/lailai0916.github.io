@@ -6,7 +6,7 @@ type GlobeGeometry = {
   coordinates: unknown[];
 };
 
-type GlobeCountryFeature = {
+export type GlobeCountryFeature = {
   id: string;
   properties: {
     name: string;
@@ -16,12 +16,12 @@ type GlobeCountryFeature = {
   geometry: GlobeGeometry;
 };
 
-export type TravelPolygon = GlobeCountryFeature & {
-  visited: boolean;
+export type WorldGeoJson = {
+  features: GlobeCountryFeature[];
 };
 
-const WORLD_GEOJSON = require('@site/static/json/datamaps.world.json') as {
-  features: GlobeCountryFeature[];
+export type TravelPolygon = GlobeCountryFeature & {
+  visited: boolean;
 };
 
 const FLAG_REGEX = /[\u{1F1E6}-\u{1F1FF}]{2}/gu;
@@ -60,10 +60,11 @@ export function getTravelCountryCodes(items: readonly TravelItem[]): string[] {
   return items.flatMap((item) => iso3FromText(item.cardTitle));
 }
 
-export function getTravelPolygons(
+export function buildTravelPolygons(
+  features: readonly GlobeCountryFeature[],
   visitedCountries: ReadonlySet<string>
 ): TravelPolygon[] {
-  return WORLD_GEOJSON.features.map((feature) => ({
+  return features.map((feature) => ({
     ...feature,
     visited: visitedCountries.has(feature.id),
   }));

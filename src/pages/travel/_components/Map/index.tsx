@@ -1,13 +1,16 @@
 import React, { useEffect, useMemo, useRef, useState } from 'react';
 import BrowserOnly from '@docusaurus/BrowserOnly';
+import useBaseUrl from '@docusaurus/useBaseUrl';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import { translate } from '@docusaurus/Translate';
 import { useColorMode } from '@docusaurus/theme-common';
 import { TRAVEL_LIST } from '@site/src/data/travel';
 import {
+  buildTravelPolygons,
   getTravelCountryCodes,
-  getTravelPolygons,
+  type GlobeCountryFeature,
   type TravelPolygon,
+  type WorldGeoJson,
 } from '@site/src/utils/travelGlobe';
 import SectionContainer, {
   SectionHeader,
@@ -59,14 +62,28 @@ function TravelGlobeClient({ Globe }: { Globe: GlobeComponent }) {
   const globeRef = useRef<GlobeMethods | undefined>(undefined);
   const [size, setSize] = useState({ width: 720, height: 500 });
   const [isGlobeReady, setIsGlobeReady] = useState(false);
+  const [features, setFeatures] = useState<readonly GlobeCountryFeature[]>([]);
+
+  const worldUrl = useBaseUrl('/json/datamaps.world.json');
+  useEffect(() => {
+    let cancelled = false;
+    fetch(worldUrl)
+      .then((r) => r.json() as Promise<WorldGeoJson>)
+      .then((data) => {
+        if (!cancelled) setFeatures(data.features);
+      });
+    return () => {
+      cancelled = true;
+    };
+  }, [worldUrl]);
 
   const visitedCountries = useMemo(
     () => new Set(getTravelCountryCodes(TRAVEL_LIST)),
     []
   );
   const polygons = useMemo(
-    () => getTravelPolygons(visitedCountries),
-    [visitedCountries]
+    () => buildTravelPolygons(features, visitedCountries),
+    [features, visitedCountries]
   );
 
   const colors = useMemo(
