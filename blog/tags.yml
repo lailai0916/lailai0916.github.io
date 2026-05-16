@@ -28,6 +28,9 @@ resource:
 misc:
   label: Miscellaneous
 
+oi:
+  label: OI
+
 solution:
   label: Solution
 

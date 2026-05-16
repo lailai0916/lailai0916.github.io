@@ -28,6 +28,9 @@ resource:
 misc:
   label: 杂项
 
+oi:
+  label: OI
+
 solution:
   label: 题解
 
