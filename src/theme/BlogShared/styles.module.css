@@ -472,7 +472,7 @@
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  margin-bottom: 0.85rem;
+  margin-bottom: 0.6rem;
 }
 
 .calendarTitle {
@@ -529,9 +529,10 @@
 
 .calendarWeekday {
   text-align: center;
-  font-size: 0.78rem;
+  font-size: 0.8rem;
+  font-weight: 600;
   color: var(--ifm-color-emphasis-600);
-  padding: 0.3rem 0;
+  padding: 0.2rem 0;
   font-variant-numeric: tabular-nums;
 }
 
@@ -544,7 +545,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  aspect-ratio: 1.2 / 1;
+  aspect-ratio: 1.3 / 1;
   padding: 0;
   border: none;
   background: transparent;
@@ -557,7 +558,7 @@
 .calendarCellNum {
   position: relative;
   z-index: 1;
-  font-size: 0.78rem;
+  font-size: 0.8rem;
   line-height: 1;
 }
 
@@ -600,7 +601,7 @@
 .calendarDivider {
   height: 1px;
   background: var(--ifm-color-emphasis-200);
-  margin: 0.85rem 0 0.5rem;
+  margin: 0.6rem 0 0.35rem;
 }
 
 .calendarEmpty {
