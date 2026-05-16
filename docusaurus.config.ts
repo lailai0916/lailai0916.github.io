@@ -137,19 +137,19 @@ const config: Config = {
       items: [
         {
           type: 'docSidebar',
-          sidebarId: 'sidebar1',
+          sidebarId: 'contestSidebar',
           position: 'left',
           label: 'Contest',
         },
         {
           type: 'docSidebar',
-          sidebarId: 'sidebar2',
+          sidebarId: 'noteSidebar',
           position: 'left',
           label: 'Note',
         },
         {
           type: 'docSidebar',
-          sidebarId: 'sidebar3',
+          sidebarId: 'projectSidebar',
           position: 'left',
           label: 'Project',
         },

@@ -1,7 +1,7 @@
 import type { SidebarsConfig } from '@docusaurus/plugin-content-docs';
 
 const sidebars: SidebarsConfig = {
-  sidebar1: [
+  contestSidebar: [
     'contest/index',
     {
       type: 'category',
@@ -302,7 +302,7 @@ const sidebars: SidebarsConfig = {
       ],
     },
   ],
-  sidebar2: [
+  noteSidebar: [
     'note/index',
     {
       type: 'category',
@@ -526,7 +526,7 @@ const sidebars: SidebarsConfig = {
       ],
     },
   ],
-  sidebar3: [
+  projectSidebar: [
     'project/index',
     'project/lailai0916.github.io',
     'project/lailai0916',

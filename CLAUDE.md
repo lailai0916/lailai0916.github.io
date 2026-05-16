@@ -27,7 +27,7 @@ There is no test runner. `npm run check` is the gate.
 
 ### Content vs. code
 
-- `docs/` — three doc sets (`contest/`, `note/`, `project/`) wired up in `sidebars.ts` as `sidebar1/2/3`. Sidebars are hand-curated, not auto-generated.
+- `docs/` — three doc sets (`contest/`, `note/`, `project/`) wired up in `sidebars.ts` as `contestSidebar` / `noteSidebar` / `projectSidebar`. Sidebars are hand-curated, not auto-generated.
 - `blog/` — MDX posts grouped by topic folders; `authors.yml` and `tags.yml` define the controlled vocabularies (`onInlineTags`/`onInlineAuthors` warn if a post uses an unlisted value).
 - `src/pages/` — custom React pages (`about`, `travel`, `friends`, `resources`, `settings`, `insights`, `changelog`, `privacy`, plus the bespoke `index.tsx` cover/home). Page-local React lives in `src/pages/_components/` (the leading `_` stops Docusaurus from routing it).
 - `src/theme/` — swizzled Docusaurus theme overrides (Layout, Blog\*, MDXComponents, Admonition, Root). Use `npm run swizzle` rather than copying files by hand.
