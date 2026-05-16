@@ -1,7 +1,9 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Card from '@site/src/components/laikit/Card';
 import IconBlock from '@site/src/components/laikit/IconBlock';
 import styles from './styles.module.css';
+
+const IMAGE_LOAD_TIMEOUT_MS = 1500;
 
 type LinkCardLinkProps =
   | { to: string; href?: never }
@@ -27,8 +29,23 @@ export default function LinkCard({
   imageVariant = 'icon',
   ...linkProps
 }: LinkCardProps) {
-  const [imageError, setImageError] = useState(false);
-  const showImage = !!image && !imageError;
+  const [imageStatus, setImageStatus] = useState<
+    'loading' | 'loaded' | 'error'
+  >(image ? 'loading' : 'error');
+
+  useEffect(() => {
+    if (!image) {
+      setImageStatus('error');
+      return;
+    }
+    setImageStatus('loading');
+    const timer = window.setTimeout(() => {
+      setImageStatus((status) => (status === 'loading' ? 'error' : status));
+    }, IMAGE_LOAD_TIMEOUT_MS);
+    return () => window.clearTimeout(timer);
+  }, [image]);
+
+  const showImage = !!image && imageStatus !== 'error';
 
   return (
     <Card
@@ -45,7 +62,8 @@ export default function LinkCard({
             className={
               imageVariant === 'avatar' ? styles.imageAvatar : styles.image
             }
-            onError={() => setImageError(true)}
+            onLoad={() => setImageStatus('loaded')}
+            onError={() => setImageStatus('error')}
           />
         </IconBlock>
       ) : (
