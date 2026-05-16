@@ -44,45 +44,50 @@ export default function Moments() {
         </div>
       </BlogCard>
 
-      {MOMENT_LIST.map((moment, i) => (
-        <BlogCard key={`${moment.date}-${i}`}>
-          <MetaBar
-            items={
-              [
-                {
-                  icon: 'lucide:calendar',
-                  dateTime: moment.date,
-                  label: formatLocalizedDate(moment.date, currentLocale),
-                },
-                {
-                  icon: 'lucide:clock',
-                  label: formatLocalizedTime(moment.date, currentLocale),
-                },
-              ] satisfies MetaBarItem[]
-            }
-          />
-          <div
-            className={styles.momentContent}
-            dangerouslySetInnerHTML={{ __html: moment.content }}
-          />
-          {moment.images && moment.images.length > 0 && (
+      {MOMENT_LIST.map((moment, i) => {
+        const metaItems: MetaBarItem[] = [
+          {
+            icon: 'lucide:calendar',
+            dateTime: moment.date,
+            label: formatLocalizedDate(moment.date, currentLocale),
+          },
+          {
+            icon: 'lucide:clock',
+            label: formatLocalizedTime(moment.date, currentLocale),
+          },
+        ];
+        if (moment.location) {
+          metaItems.push({
+            icon: 'lucide:map-pin',
+            label: moment.location,
+          });
+        }
+        return (
+          <BlogCard key={`${moment.date}-${i}`}>
+            <MetaBar items={metaItems} />
             <div
-              className={styles.momentImages}
-              data-count={moment.images.length}
-            >
-              {moment.images.map((image) => (
-                <img
-                  key={image}
-                  src={image}
-                  alt=""
-                  className={styles.momentImage}
-                  loading="lazy"
-                />
-              ))}
-            </div>
-          )}
-        </BlogCard>
-      ))}
+              className={styles.momentContent}
+              dangerouslySetInnerHTML={{ __html: moment.content }}
+            />
+            {moment.images && moment.images.length > 0 && (
+              <div
+                className={styles.momentImages}
+                data-count={moment.images.length}
+              >
+                {moment.images.map((image) => (
+                  <img
+                    key={image}
+                    src={image}
+                    alt=""
+                    className={styles.momentImage}
+                    loading="lazy"
+                  />
+                ))}
+              </div>
+            )}
+          </BlogCard>
+        );
+      })}
     </BlogScaffold>
   );
 }
