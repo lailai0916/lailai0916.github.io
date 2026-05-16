@@ -1,14 +1,20 @@
 import React from 'react';
 import clsx from 'clsx';
 import Link from '@docusaurus/Link';
-import { Icon } from '@iconify/react';
 import type { BlogPaginatedMetadata } from '@docusaurus/plugin-content-blog';
 import type { Props as BlogListPageProps } from '@theme/BlogListPage';
 import BlogScaffold from './Scaffold';
-import { BlogCard, TagChipList, useAnalytics } from './Components';
+import {
+  BlogCard,
+  MetaBar,
+  type MetaBarItem,
+  TagChipList,
+  useAnalytics,
+} from './Components';
 
 import { translate } from '@docusaurus/Translate';
-import { formatBeijingDate } from '@site/src/utils/format';
+import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
+import { formatLocalizedDate } from '@site/src/utils/format';
 import MDXContent from '@theme/MDXContent';
 import styles from './styles.module.css';
 
@@ -28,10 +34,48 @@ function PostCard({ item }: PostCardProps) {
       | undefined) ?? lightImage;
   const themed = !!darkImage && darkImage !== lightImage;
   const { analytics, status } = useAnalytics(metadata.permalink);
+  const {
+    i18n: { currentLocale },
+  } = useDocusaurusContext();
 
   const tagItems = (metadata.tags ?? [])
     .filter((t) => !!t.label && !!t.permalink)
     .map((t) => ({ to: t.permalink, label: t.label }));
+
+  const metaItems: MetaBarItem[] = [
+    {
+      icon: 'lucide:calendar',
+      dateTime: metadata.date,
+      label: formatLocalizedDate(metadata.date, currentLocale),
+    },
+  ];
+  if (metadata.readingTime) {
+    metaItems.push(
+      {
+        icon: 'lucide:file-text',
+        label: translate(
+          { id: 'blog.postcard.wordCount', message: '{word} words' },
+          { word: Math.round(metadata.readingTime * 200) }
+        ),
+      },
+      {
+        icon: 'lucide:timer',
+        label: translate(
+          { id: 'blog.postcard.readingTime', message: '{readingTime} min' },
+          { readingTime: Math.max(1, Math.round(metadata.readingTime)) }
+        ),
+      }
+    );
+  }
+  if (status === 'success') {
+    metaItems.push({
+      icon: 'lucide:eye',
+      label: translate(
+        { id: 'blog.postcard.viewCount', message: '{viewCount} views' },
+        { viewCount: analytics.pageviews ?? '–' }
+      ),
+    });
+  }
 
   return (
     <article className={styles.postCard}>
@@ -69,61 +113,7 @@ function PostCard({ item }: PostCardProps) {
           </Link>
         )}
 
-        <div className={styles.postEyebrow}>
-          <span className={styles.eyebrowItem}>
-            <Icon icon="lucide:calendar" width={13} height={13} />
-            <time dateTime={metadata.date}>
-              {formatBeijingDate(metadata.date)}
-            </time>
-          </span>
-          {!!metadata.readingTime && (
-            <>
-              <span className={styles.eyebrowDot} aria-hidden="true" />
-              <span className={styles.eyebrowItem}>
-                <Icon icon="lucide:file-text" width={13} height={13} />
-                {translate(
-                  {
-                    id: 'blog.postcard.wordCount',
-                    message: '{word} words',
-                  },
-                  {
-                    word: Math.round(metadata.readingTime * 200),
-                  }
-                )}
-              </span>
-              <span className={styles.eyebrowDot} aria-hidden="true" />
-              <span className={styles.eyebrowItem}>
-                <Icon icon="lucide:timer" width={13} height={13} />
-                {translate(
-                  {
-                    id: 'blog.postcard.readingTime',
-                    message: '{readingTime} min',
-                  },
-                  {
-                    readingTime: Math.max(1, Math.round(metadata.readingTime)),
-                  }
-                )}
-              </span>
-            </>
-          )}
-          {status === 'success' && (
-            <>
-              <span className={styles.eyebrowDot} aria-hidden="true" />
-              <span className={styles.eyebrowItem}>
-                <Icon icon="lucide:eye" width={13} height={13} />
-                {translate(
-                  {
-                    id: 'blog.postcard.viewCount',
-                    message: '{viewCount} views',
-                  },
-                  {
-                    viewCount: analytics.pageviews ?? '–',
-                  }
-                )}
-              </span>
-            </>
-          )}
-        </div>
+        <MetaBar items={metaItems} />
 
         <h2 className={styles.postTitle}>
           <Link to={metadata.permalink} className={styles.postTitleLink}>

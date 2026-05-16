@@ -2,6 +2,7 @@ import React from 'react';
 import Link from '@docusaurus/Link';
 import { translate } from '@docusaurus/Translate';
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import { Icon } from '@iconify/react';
 import Badge from '@site/src/components/laikit/Badge';
 import Card from '@site/src/components/laikit/Card';
 import styles from './styles.module.css';
@@ -24,6 +25,32 @@ export function BlogCard({
       {title && <div className={styles.cardTitle}>{title}</div>}
       {children}
     </Card>
+  );
+}
+
+export type MetaBarItem = {
+  icon: string;
+  label: React.ReactNode;
+  dateTime?: string;
+};
+
+export function MetaBar({ items }: { items: MetaBarItem[] }) {
+  return (
+    <div className={styles.postEyebrow}>
+      {items.map((item, i) => (
+        <React.Fragment key={i}>
+          {i > 0 && <span className={styles.eyebrowDot} aria-hidden="true" />}
+          <span className={styles.eyebrowItem}>
+            <Icon icon={item.icon} width={13} height={13} />
+            {item.dateTime ? (
+              <time dateTime={item.dateTime}>{item.label}</time>
+            ) : (
+              item.label
+            )}
+          </span>
+        </React.Fragment>
+      ))}
+    </div>
   );
 }
 

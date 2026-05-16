@@ -10,6 +10,10 @@ type PostLike = {
     date: string;
     permalink: string;
     title: string;
+    tags?: ReadonlyArray<{
+      label: string;
+      permalink: string;
+    }>;
   };
 };
 
@@ -53,6 +57,19 @@ export function BlogArchiveList({ posts }: { posts: readonly PostLike[] }) {
                 >
                   {post.metadata.title}
                 </Link>
+                {post.metadata.tags && post.metadata.tags.length > 0 && (
+                  <div className={styles.recentTags}>
+                    {post.metadata.tags.map((tag) => (
+                      <Link
+                        key={tag.permalink}
+                        to={tag.permalink}
+                        className={styles.recentTag}
+                      >
+                        #{tag.label}
+                      </Link>
+                    ))}
+                  </div>
+                )}
               </li>
             ))}
           </ul>

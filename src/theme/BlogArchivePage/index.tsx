@@ -22,6 +22,10 @@ type PostLike = {
     date: string;
     permalink: string;
     title: string;
+    tags?: ReadonlyArray<{
+      label: string;
+      permalink: string;
+    }>;
   };
 };
 

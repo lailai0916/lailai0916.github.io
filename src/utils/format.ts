@@ -33,3 +33,27 @@ export function formatBeijingDate(
     ...options,
   });
 }
+
+export function formatLocalizedDate(
+  date: Date | string | number,
+  locale: string
+): string {
+  return new Date(date).toLocaleDateString(locale, {
+    timeZone: 'Asia/Shanghai',
+    year: 'numeric',
+    month: 'short',
+    day: 'numeric',
+  });
+}
+
+export function formatLocalizedTime(
+  date: Date | string | number,
+  locale: string
+): string {
+  return new Date(date).toLocaleTimeString(locale, {
+    timeZone: 'Asia/Shanghai',
+    hour: '2-digit',
+    minute: '2-digit',
+    hour12: false,
+  });
+}

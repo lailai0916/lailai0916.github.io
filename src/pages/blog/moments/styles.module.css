@@ -63,62 +63,6 @@
   }
 }
 
-/* Year separator — eyebrow style */
-
-.yearLabel {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  margin: 1.25rem 0.25rem 0.25rem;
-}
-
-.yearText {
-  font-size: 1rem;
-  font-weight: 700;
-  letter-spacing: -0.01em;
-  color: var(--ifm-color-emphasis-900);
-  font-variant-numeric: tabular-nums;
-}
-
-.yearLine {
-  flex: 1;
-  height: 1px;
-  background: var(--ifm-color-emphasis-200);
-}
-
-.yearCount {
-  font-size: 0.72rem;
-  font-weight: 600;
-  letter-spacing: 0.04em;
-  font-variant-numeric: tabular-nums;
-  color: var(--ifm-color-emphasis-600);
-}
-
-/* Moment meta line (date + time) */
-
-.momentMeta {
-  display: flex;
-  align-items: center;
-  gap: 0.45rem;
-  margin-bottom: 0.85rem;
-  font-size: 0.78rem;
-  font-weight: 600;
-  letter-spacing: 0.04em;
-  color: var(--ifm-color-emphasis-600);
-  font-variant-numeric: tabular-nums;
-  white-space: nowrap;
-}
-
-.momentMetaIcon {
-  font-size: 0.95rem;
-  color: var(--ifm-color-primary);
-  flex-shrink: 0;
-}
-
-.momentDot {
-  opacity: 0.5;
-}
-
 /* Moment content body */
 
 .momentContent {
