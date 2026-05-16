@@ -17,6 +17,7 @@ import DataCard from '@site/src/components/laikit/DataCard';
 import LinkCard from '@site/src/components/laikit/LinkCard';
 import clsx from 'clsx';
 
+import IconBlock from '@site/src/components/laikit/IconBlock';
 import IconText from '@site/src/components/laikit/IconText';
 import Button from '@site/src/components/laikit/Button';
 import Card from '@site/src/components/laikit/Card';
@@ -230,11 +231,10 @@ function CategorySection({ category }: { category: ResourceCategoryItem }) {
 
   return (
     <section className={styles.categorySection}>
-      <div className={styles.categoryHeader}>
-        <h2 className={styles.categoryTitle}>
-          <IconText icon={category.icon}>{category.title}</IconText>
-        </h2>
-        <div className={styles.categoryCount}>
+      <header className={styles.categoryHeader}>
+        <IconBlock icon={category.icon} variant="accent" size={40} />
+        <h2 className={styles.categoryTitle}>{category.title}</h2>
+        <span className={styles.categoryCount}>
           {selectMessage(
             category.resources.length,
             translate(
@@ -245,8 +245,8 @@ function CategorySection({ category }: { category: ResourceCategoryItem }) {
               { count: category.resources.length }
             )
           )}
-        </div>
-      </div>
+        </span>
+      </header>
 
       <div className={styles.resourceGrid}>
         {category.resources.map((resource) => (

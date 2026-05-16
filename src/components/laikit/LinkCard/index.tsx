@@ -3,7 +3,7 @@ import Card from '@site/src/components/laikit/Card';
 import IconBlock from '@site/src/components/laikit/IconBlock';
 import styles from './styles.module.css';
 
-const IMAGE_LOAD_TIMEOUT_MS = 1500;
+const IMAGE_LOAD_TIMEOUT_MS = 3000;
 
 type LinkCardLinkProps =
   | { to: string; href?: never }
