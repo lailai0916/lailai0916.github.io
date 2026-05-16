@@ -431,24 +431,8 @@ const sidebars: SidebarsConfig = {
       },
       collapsed: false,
       items: [
-        {
-          type: 'category',
-          label: '英语语音',
-          link: {
-            type: 'doc',
-            id: 'note/english/pronunciation/index',
-          },
-          items: ['note/english/pronunciation/phonics'],
-        },
-        {
-          type: 'category',
-          label: '英语词汇',
-          link: {
-            type: 'doc',
-            id: 'note/english/vocabulary/index',
-          },
-          items: ['note/english/vocabulary/ncee'],
-        },
+        'note/english/pronunciation',
+        'note/english/vocabulary',
         {
           type: 'category',
           label: '英语语法',
@@ -537,7 +521,6 @@ const sidebars: SidebarsConfig = {
       items: [
         'note/other/devices',
         'note/other/edc',
-        'note/other/desk-setup',
         'note/other/software',
         'note/other/bilibili',
       ],
