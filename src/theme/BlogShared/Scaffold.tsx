@@ -7,7 +7,11 @@ import type { TOCItem } from '@docusaurus/mdx-loader';
 import { Icon } from '@iconify/react';
 
 import { translate } from '@docusaurus/Translate';
-import { getAllBlogItems, getAllPostMetadata } from '@site/src/utils/blogData';
+import {
+  getAllBlogItems,
+  getAllPostMetadata,
+  loadOfficialTags,
+} from '@site/src/utils/blogData';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import { formatCompact } from '@site/src/utils/format';
 import { BlogCard, BlogMenu, TagChipList, type ChipItem } from './Components';
@@ -238,25 +242,23 @@ function StatsCard() {
 }
 
 function TagsCard() {
-  const map = new Map<string, PopularTagItem>();
-  getAllPostMetadata().forEach((meta) => {
-    meta.tags.forEach((tag) => {
-      if (!tag.label || !tag.permalink) {
-        return;
-      }
-
-      const prev = map.get(tag.label) ?? {
-        to: tag.permalink,
-        label: tag.label,
-        count: 0,
-      };
-      prev.count += 1;
-      map.set(tag.label, prev);
-    });
-  });
-  const tags = Array.from(map.values())
-    .sort((a, b) => b.count - a.count)
-    .slice(0, 8);
+  const { i18n } = useDocusaurusContext();
+  const { currentLocale, defaultLocale } = i18n;
+  const localeKey = currentLocale === defaultLocale ? undefined : currentLocale;
+  const tags = React.useMemo(
+    () =>
+      [...loadOfficialTags(localeKey)]
+        .sort((a, b) => b.count - a.count)
+        .slice(0, 8)
+        .map(
+          (tag): PopularTagItem => ({
+            to: tag.permalink,
+            label: tag.label,
+            count: tag.count,
+          })
+        ),
+    [localeKey]
+  );
 
   return (
     <BlogCard
