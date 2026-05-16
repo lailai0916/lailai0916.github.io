@@ -28,6 +28,9 @@ resource:
 misc:
   label: 杂项
 
+school:
+  label: 学校
+
 oi:
   label: OI
 

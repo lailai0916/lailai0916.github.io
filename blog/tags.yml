@@ -28,6 +28,9 @@ resource:
 misc:
   label: Miscellaneous
 
+school:
+  label: School
+
 oi:
   label: OI
 
