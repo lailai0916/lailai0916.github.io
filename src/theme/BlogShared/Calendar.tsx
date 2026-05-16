@@ -146,6 +146,11 @@ export default function CalendarCard() {
     setView((v) => shiftMonth(v.y, v.m, 1));
     setSelected(null);
   };
+  const goToday = () => {
+    setView(initial);
+    setSelected(null);
+  };
+  const isOnCurrentMonth = view.y === initial.y && view.m === initial.m;
 
   const handlePick = (cell: Cell) => {
     const has = postsByDate.has(cell.dateKey);
@@ -163,6 +168,18 @@ export default function CalendarCard() {
       <div className={styles.calendarHeader}>
         <span className={styles.calendarTitle}>{monthLabel}</span>
         <div className={styles.calendarNav}>
+          <button
+            type="button"
+            className={styles.calendarNavBtn}
+            onClick={goToday}
+            disabled={isOnCurrentMonth}
+            aria-label={translate({
+              id: 'blog.sidebar.calendar.today',
+              message: 'Today',
+            })}
+          >
+            <Icon icon="lucide:calendar-clock" width="1em" height="1em" />
+          </button>
           <button
             type="button"
             className={styles.calendarNavBtn}

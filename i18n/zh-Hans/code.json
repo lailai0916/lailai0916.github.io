@@ -377,6 +377,9 @@
   "blog.sidebar.calendar.next": {
     "message": "下个月"
   },
+  "blog.sidebar.calendar.today": {
+    "message": "本月"
+  },
   "blog.sidebar.calendar.empty": {
     "message": "暂无文章"
   },

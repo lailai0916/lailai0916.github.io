@@ -479,7 +479,6 @@
   font-weight: 700;
   line-height: 1;
   font-size: 1rem;
-  flex: 1;
   min-width: 0;
 }
 
@@ -487,6 +486,7 @@
   display: inline-flex;
   align-items: center;
   gap: 0.15rem;
+  margin-left: auto;
 }
 
 .calendarNavBtn {
@@ -495,6 +495,7 @@
   justify-content: center;
   width: 1.6rem;
   height: 1.6rem;
+  font-size: 1.2rem;
   border-radius: 8px;
   border: none;
   background: transparent;
@@ -505,9 +506,15 @@
     background 160ms ease;
 }
 
-.calendarNavBtn:hover {
+.calendarNavBtn:hover:not(:disabled) {
   color: var(--ifm-color-primary);
   background: var(--ifm-color-emphasis-100);
+}
+
+.calendarNavBtn:disabled {
+  color: var(--ifm-color-emphasis-400);
+  cursor: not-allowed;
+  background: transparent;
 }
 
 .calendarWeekdays,
@@ -597,10 +604,10 @@
 }
 
 .calendarEmpty {
-  padding: 0.75rem 0.25rem;
+  padding: 0.55rem 0.25rem;
   text-align: center;
   color: var(--ifm-color-emphasis-600);
-  font-size: 0.85rem;
+  font-size: 0.92rem;
 }
 
 .calendarPostList {
@@ -630,14 +637,8 @@
   align-items: center;
   gap: 0.5rem;
   padding: 0.55rem 0.25rem;
-  height: 2.6rem;
   color: var(--ifm-font-color-base);
   text-decoration: none !important;
-  border-bottom: 1px dashed var(--ifm-color-emphasis-200);
-}
-
-.calendarPostItem:last-child .calendarPostLink {
-  border-bottom: none;
 }
 
 .calendarPostLink:hover {
@@ -656,8 +657,8 @@
 
 .calendarPostDate {
   flex-shrink: 0;
-  font-size: 0.78rem;
-  color: var(--ifm-color-emphasis-600);
+  font-size: 0.9rem;
+  color: var(--ifm-color-emphasis-700);
   font-family: var(--ifm-font-family-monospace);
   font-variant-numeric: tabular-nums;
 }
