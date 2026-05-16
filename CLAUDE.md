@@ -70,8 +70,7 @@ These are project rules, not general advice — follow them:
 
 - **Reuse `laikit` primitives** before adding new components. New UI should be visually and behaviourally indistinguishable from existing parts.
 - **Edit, don't rewrite.** Prefer minimal targeted edits; one coherent change per commit; do not reformat or refactor unrelated code.
-- **No decorative noise.** Do not introduce emoji, decorative animations, or visual flourishes unless explicitly requested.
-- **No hover motion.** Never add hover-triggered transforms — no `translateY`/`translateX` lifts, no `scale()` zooms on cards or images, no animated arrow slides, no width-animated underlines that grow from 0 to 100%. These are AI-tells and the maintainer hates them. Hover state should change at most: `border-color`, `color`, `background-color`, plain `text-decoration: underline`. Anything that moves on hover must be removed.
+- **No whole-card hover lift.** Never add hover-triggered `translateY`/`translateX` to whole cards (or other large container blocks) — that "card floats up on hover" effect is an AI-tell and the maintainer hates it. Smaller hover motion on internal elements (e.g. an arrow nudging, a small `scale()` on an icon or active control) is fine when it serves a clear interaction cue.
 - **i18n is mandatory.** Any new user-facing string requires both a `translate()` call and a Chinese entry in `i18n/zh-Hans/code.json`.
 - **Verify before committing.** Run `npm run check` and ensure it exits cleanly. For UI changes, also confirm in the `npm start` dev server.
 - **Small changes go straight to `main`.** Do not create a feature branch or open a PR for minor edits (copy tweaks, single-component refactors, style fixes, etc.) — commit directly on `main`. Reserve branches and PRs for substantial multi-file work the maintainer explicitly asks to be reviewed.
