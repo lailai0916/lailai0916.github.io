@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import Card from '@site/src/components/laikit/Card';
 import IconBlock from '@site/src/components/laikit/IconBlock';
 import styles from './styles.module.css';
@@ -29,6 +29,7 @@ export default function LinkCard({
   imageVariant = 'icon',
   ...linkProps
 }: LinkCardProps) {
+  const imgRef = useRef<HTMLImageElement>(null);
   const [imageStatus, setImageStatus] = useState<
     'loading' | 'loaded' | 'error'
   >(image ? 'loading' : 'error');
@@ -36,6 +37,14 @@ export default function LinkCard({
   useEffect(() => {
     if (!image) {
       setImageStatus('error');
+      return;
+    }
+    // If the browser already finished loading the image before React attached
+    // its handlers (common on SSR + fast cache hits), onLoad/onError will
+    // never fire — sync state from the DOM here.
+    const img = imgRef.current;
+    if (img && img.complete) {
+      setImageStatus(img.naturalWidth > 0 ? 'loaded' : 'error');
       return;
     }
     setImageStatus('loading');
@@ -57,6 +66,7 @@ export default function LinkCard({
       {showImage ? (
         <IconBlock variant="muted" size={ICON_BOX_SIZE}>
           <img
+            ref={imgRef}
             src={image}
             alt={title}
             className={
