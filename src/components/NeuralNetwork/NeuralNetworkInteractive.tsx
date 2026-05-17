@@ -199,7 +199,7 @@ export default function NeuralNetworkInteractive({
               y="0"
               width={CANVAS_SIZE}
               height={CANVAS_SIZE}
-              fill="var(--ifm-background-color)"
+              fill="var(--nn-cover)"
               style={{
                 opacity: animating ? 0 : 1,
                 pointerEvents: animating ? 'none' : undefined,

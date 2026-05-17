@@ -110,20 +110,8 @@
   "components.countdown.unit.seconds": {
     "message": "秒"
   },
-  "components.fourierTransform.title": {
-    "message": "傅里叶变换"
-  },
-  "components.fourierTransform.description": {
-    "message": "在下方绘制任意形状，观察其傅里叶级数的旋转圆可视化"
-  },
   "components.lorenz.reset": {
     "message": "重置"
-  },
-  "components.lorenz.title": {
-    "message": "洛伦兹吸引子"
-  },
-  "components.lorenz.description": {
-    "message": "拖动旋转视角并调整参数，探索确定性混沌与蝴蝶效应"
   },
   "components.neuralNetwork.clear": {
     "message": "清除"
@@ -133,12 +121,6 @@
   },
   "components.neuralNetwork.preprocess": {
     "message": "预处理"
-  },
-  "components.neuralNetwork.title": {
-    "message": "神经网络"
-  },
-  "components.neuralNetwork.description": {
-    "message": "在下方绘制数字 0–9，神经网络会识别您的手写数字"
   },
   "components.problem.statement": {
     "message": "题面"

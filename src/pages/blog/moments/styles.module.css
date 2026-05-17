@@ -47,6 +47,16 @@
   color: var(--ifm-color-emphasis-600);
 }
 
+.headerWeather {
+  margin-top: 0.9rem;
+  padding-top: 0.85rem;
+  border-top: 1px solid var(--ifm-color-emphasis-200);
+}
+
+.headerWeather > div {
+  margin-bottom: 0;
+}
+
 @media (max-width: 480px) {
   .headerCard {
     flex-direction: column;

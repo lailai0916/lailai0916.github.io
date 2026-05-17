@@ -1,0 +1,125 @@
+.card {
+  display: flex;
+  gap: 1.25rem;
+  align-items: flex-start;
+  padding: 1.25rem;
+  margin: 0 0 1rem;
+  border: 1px solid var(--ifm-color-emphasis-200);
+  border-radius: 12px;
+  background: var(--ifm-card-background-color);
+}
+
+.avatarLink {
+  flex-shrink: 0;
+  display: block;
+  line-height: 0;
+}
+
+.avatar {
+  width: 84px;
+  height: 84px;
+  border-radius: 50%;
+  display: block;
+  border: 1px solid var(--ifm-color-emphasis-200);
+  background: var(--ifm-color-emphasis-100);
+}
+
+.main {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.nameRow {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.name {
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: var(--ifm-color-emphasis-900);
+}
+
+.handle {
+  font-size: 0.9rem;
+  color: var(--ifm-color-emphasis-600);
+  font-family: var(--ifm-font-family-monospace);
+  text-decoration: none !important;
+  transition: color 160ms ease;
+}
+
+.handle:hover {
+  color: var(--ifm-color-primary);
+}
+
+.bio {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--ifm-color-emphasis-800);
+  line-height: 1.55;
+}
+
+.meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 1rem;
+  font-size: 0.83rem;
+  color: var(--ifm-color-emphasis-700);
+}
+
+.metaItem {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  text-decoration: none !important;
+  color: inherit;
+  transition: color 160ms ease;
+}
+
+a.metaItem:hover {
+  color: var(--ifm-color-primary);
+}
+
+.social {
+  font-size: 0.83rem;
+  color: var(--ifm-color-emphasis-600);
+  margin-top: 0.15rem;
+}
+
+.social strong {
+  color: var(--ifm-color-emphasis-900);
+  font-weight: 700;
+}
+
+.loading {
+  color: var(--ifm-color-emphasis-500);
+  font-style: italic;
+  font-size: 0.85rem;
+}
+
+.error {
+  color: #c92a2a;
+  font-size: 0.85rem;
+  font-family: var(--ifm-font-family-monospace);
+}
+
+@media (max-width: 480px) {
+  .card {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .main {
+    align-items: center;
+  }
+  .meta,
+  .nameRow {
+    justify-content: center;
+  }
+}

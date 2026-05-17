@@ -16,9 +16,6 @@ memory:
 travel:
   label: Travel
 
-project:
-  label: Project
-
 math:
   label: Mathematics
 
