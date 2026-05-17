@@ -24,8 +24,11 @@ function Inner() {
     )
       .then((r) => (r.ok ? r.json() : Promise.reject(`${r.status}`)))
       .then((j) => {
-        const rows: { repo_name: string; description?: string; stars: string }[] =
-          j?.data?.rows ?? [];
+        const rows: {
+          repo_name: string;
+          description?: string;
+          stars: string;
+        }[] = j?.data?.rows ?? [];
         setItems(
           rows
             .slice(0, 10)
