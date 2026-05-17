@@ -7,11 +7,11 @@ type GlobeGeometry = {
 };
 
 export type GlobeCountryFeature = {
-  id: string;
   properties: {
-    name: string;
-    name_zh?: string;
-    name_en?: string;
+    NAME?: string;
+    ISO_A3?: string;
+    ADM0_A3?: string;
+    [key: string]: unknown;
   };
   geometry: GlobeGeometry;
 };
@@ -23,6 +23,12 @@ export type WorldGeoJson = {
 export type TravelPolygon = GlobeCountryFeature & {
   visited: boolean;
 };
+
+export function getFeatureIso3(feature: GlobeCountryFeature): string {
+  const iso = feature.properties.ISO_A3;
+  if (iso && iso !== '-99') return iso;
+  return feature.properties.ADM0_A3 ?? '';
+}
 
 const FLAG_REGEX = /[\u{1F1E6}-\u{1F1FF}]{2}/gu;
 
@@ -66,6 +72,6 @@ export function buildTravelPolygons(
 ): TravelPolygon[] {
   return features.map((feature) => ({
     ...feature,
-    visited: visitedCountries.has(feature.id),
+    visited: visitedCountries.has(getFeatureIso3(feature)),
   }));
 }

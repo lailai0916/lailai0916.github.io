@@ -4,14 +4,21 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import { translate } from '@docusaurus/Translate';
 import { useColorMode } from '@docusaurus/theme-common';
+import * as countries from 'i18n-iso-countries';
+import countriesEn from 'i18n-iso-countries/langs/en.json';
+import countriesZh from 'i18n-iso-countries/langs/zh.json';
 import { TRAVEL_LIST } from '@site/src/data/travel';
 import {
   buildTravelPolygons,
+  getFeatureIso3,
   getTravelCountryCodes,
   type GlobeCountryFeature,
   type TravelPolygon,
   type WorldGeoJson,
 } from '@site/src/utils/travelGlobe';
+
+countries.registerLocale(countriesEn);
+countries.registerLocale(countriesZh);
 import SectionContainer, {
   SectionHeader,
 } from '@site/src/components/laikit/Section';
@@ -194,13 +201,13 @@ function TravelGlobeClient({ Globe }: { Globe: GlobeComponent }) {
           }
           polygonStrokeColor={() => colors.stroke}
           polygonAltitude={0.01}
-          polygonsTransitionDuration={180}
+          polygonsTransitionDuration={0}
           polygonLabel={(polygon) => {
             const item = polygon as TravelPolygon;
+            const lang = i18n.currentLocale === 'zh-Hans' ? 'zh' : 'en';
+            const code = getFeatureIso3(item);
             const localizedName =
-              i18n.currentLocale === 'zh-Hans'
-                ? item.properties.name_zh || item.properties.name
-                : item.properties.name_en || item.properties.name;
+              countries.getName(code, lang) ?? item.properties.NAME ?? '';
             return `${localizedName}<br />${item.visited ? VISITED_LABEL : NOT_VISITED_LABEL}`;
           }}
           onGlobeReady={handleReady}
