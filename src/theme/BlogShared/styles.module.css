@@ -87,7 +87,7 @@
 .statsGrid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 0.55rem;
+  gap: 0.5rem;
 }
 
 .statTile {
@@ -127,7 +127,7 @@
 
 .statValue {
   font-weight: 700;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   line-height: 1;
   color: var(--ifm-color-emphasis-900);
   font-variant-numeric: tabular-nums;
@@ -596,7 +596,7 @@
 .calendarDivider {
   height: 1px;
   background: var(--ifm-color-emphasis-200);
-  margin: 0.6rem 0 0.35rem;
+  margin: 0.6rem 0;
 }
 
 .calendarEmpty {
@@ -613,6 +613,10 @@
   max-height: calc(3 * 2.6rem);
   overflow-y: auto;
   scrollbar-width: thin;
+
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
 }
 
 .calendarPostList::-webkit-scrollbar {
@@ -632,7 +636,7 @@
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  padding: 0.55rem 0.25rem;
+  padding: 0 0.25rem;
   color: var(--ifm-font-color-base);
   text-decoration: none !important;
 }
