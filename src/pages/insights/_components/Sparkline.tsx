@@ -1,9 +1,15 @@
 import React, { useId, useMemo, useRef, useState } from 'react';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
+import { translate } from '@docusaurus/Translate';
 import type { SeriesPoint } from '@site/src/hooks/useUmamiPageviewsSeries';
 import Tooltip from '@site/src/components/laikit/Tooltip';
 import { formatCompact } from '@site/src/utils/format';
 import styles from './Sparkline.module.css';
+
+const SPARKLINE_ARIA_LABEL = translate({
+  id: 'pages.insights.sparkline.ariaLabel',
+  message: 'Pageviews over time',
+});
 
 type SparklineUnit = 'hour' | '6h' | 'day' | 'week';
 
@@ -211,7 +217,7 @@ export default function Sparkline({
         onPointerMove={onPointerMove}
         onPointerLeave={onPointerLeave}
         role="img"
-        aria-label="Pageviews over time"
+        aria-label={SPARKLINE_ARIA_LABEL}
       >
         <svg
           className={styles.svg}

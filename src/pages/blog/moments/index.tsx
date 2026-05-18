@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
+import { translate } from '@docusaurus/Translate';
 import BlogScaffold from '@site/src/theme/BlogShared/Scaffold';
 import {
   BlogCard,
@@ -14,8 +15,22 @@ import {
 } from '@site/src/utils/format';
 import styles from './styles.module.css';
 
-const TITLE = 'Moments';
-const DESCRIPTION = 'Share life, anytime, anywhere';
+const TITLE = translate({
+  id: 'pages.moments.title',
+  message: 'Moments',
+});
+const DESCRIPTION = translate({
+  id: 'pages.moments.description',
+  message: 'Share life, anytime, anywhere',
+});
+const COUNT_LABEL = translate({
+  id: 'pages.moments.countLabel',
+  message: 'moments',
+});
+const HANGZHOU_LABEL = translate({
+  id: 'pages.moments.location.hangzhou',
+  message: 'Hangzhou',
+});
 
 // Hangzhou
 const WEATHER_LAT = 30.27;
@@ -29,24 +44,81 @@ type WeatherCurrent = {
   wind_speed_10m: number;
 };
 
+const WEATHER_LABELS = {
+  clear: translate({ id: 'pages.moments.weather.clear', message: 'Clear' }),
+  mainlyClear: translate({
+    id: 'pages.moments.weather.mainlyClear',
+    message: 'Mainly clear',
+  }),
+  partlyCloudy: translate({
+    id: 'pages.moments.weather.partlyCloudy',
+    message: 'Partly cloudy',
+  }),
+  overcast: translate({
+    id: 'pages.moments.weather.overcast',
+    message: 'Overcast',
+  }),
+  fog: translate({ id: 'pages.moments.weather.fog', message: 'Fog' }),
+  depositingRimeFog: translate({
+    id: 'pages.moments.weather.depositingRimeFog',
+    message: 'Depositing rime fog',
+  }),
+  drizzle: translate({
+    id: 'pages.moments.weather.drizzle',
+    message: 'Drizzle',
+  }),
+  lightRain: translate({
+    id: 'pages.moments.weather.lightRain',
+    message: 'Light rain',
+  }),
+  moderateRain: translate({
+    id: 'pages.moments.weather.moderateRain',
+    message: 'Moderate rain',
+  }),
+  heavyRain: translate({
+    id: 'pages.moments.weather.heavyRain',
+    message: 'Heavy rain',
+  }),
+  lightSnow: translate({
+    id: 'pages.moments.weather.lightSnow',
+    message: 'Light snow',
+  }),
+  moderateSnow: translate({
+    id: 'pages.moments.weather.moderateSnow',
+    message: 'Moderate snow',
+  }),
+  heavySnow: translate({
+    id: 'pages.moments.weather.heavySnow',
+    message: 'Heavy snow',
+  }),
+  rainShowers: translate({
+    id: 'pages.moments.weather.rainShowers',
+    message: 'Rain showers',
+  }),
+  thunderstorm: translate({
+    id: 'pages.moments.weather.thunderstorm',
+    message: 'Thunderstorm',
+  }),
+};
+
 const WMO: Record<number, { text: string; icon: string }> = {
-  0: { text: '晴', icon: 'lucide:sun' },
-  1: { text: '少云', icon: 'lucide:cloud-sun' },
-  2: { text: '多云', icon: 'lucide:cloud' },
-  3: { text: '阴', icon: 'lucide:cloudy' },
-  45: { text: '雾', icon: 'lucide:cloud-fog' },
-  48: { text: '冻雾', icon: 'lucide:cloud-fog' },
-  51: { text: '毛毛雨', icon: 'lucide:cloud-drizzle' },
-  53: { text: '毛毛雨', icon: 'lucide:cloud-drizzle' },
-  55: { text: '毛毛雨', icon: 'lucide:cloud-drizzle' },
-  61: { text: '小雨', icon: 'lucide:cloud-rain' },
-  63: { text: '中雨', icon: 'lucide:cloud-rain' },
-  65: { text: '大雨', icon: 'lucide:cloud-rain-wind' },
-  71: { text: '小雪', icon: 'lucide:cloud-snow' },
-  73: { text: '中雪', icon: 'lucide:cloud-snow' },
-  75: { text: '大雪', icon: 'lucide:cloud-snow' },
-  80: { text: '阵雨', icon: 'lucide:cloud-rain' },
-  95: { text: '雷暴', icon: 'lucide:cloud-lightning' },
+  0: { text: WEATHER_LABELS.clear, icon: 'lucide:sun' },
+  1: { text: WEATHER_LABELS.mainlyClear, icon: 'lucide:cloud-sun' },
+  2: { text: WEATHER_LABELS.partlyCloudy, icon: 'lucide:cloud' },
+  3: { text: WEATHER_LABELS.overcast, icon: 'lucide:cloudy' },
+  45: { text: WEATHER_LABELS.fog, icon: 'lucide:cloud-fog' },
+  48: { text: WEATHER_LABELS.depositingRimeFog, icon: 'lucide:cloud-fog' },
+  51: { text: WEATHER_LABELS.drizzle, icon: 'lucide:cloud-drizzle' },
+  53: { text: WEATHER_LABELS.drizzle, icon: 'lucide:cloud-drizzle' },
+  55: { text: WEATHER_LABELS.drizzle, icon: 'lucide:cloud-drizzle' },
+  61: { text: WEATHER_LABELS.lightRain, icon: 'lucide:cloud-rain' },
+  63: { text: WEATHER_LABELS.moderateRain, icon: 'lucide:cloud-rain' },
+  65: { text: WEATHER_LABELS.heavyRain, icon: 'lucide:cloud-rain-wind' },
+  71: { text: WEATHER_LABELS.lightSnow, icon: 'lucide:cloud-snow' },
+  73: { text: WEATHER_LABELS.moderateSnow, icon: 'lucide:cloud-snow' },
+  75: { text: WEATHER_LABELS.heavySnow, icon: 'lucide:cloud-snow' },
+  80: { text: WEATHER_LABELS.rainShowers, icon: 'lucide:cloud-rain' },
+  95: { text: WEATHER_LABELS.thunderstorm, icon: 'lucide:cloud-lightning' },
 };
 
 function useHangzhouWeather(): WeatherCurrent | null {
@@ -80,7 +152,7 @@ export default function Moments() {
   const weatherItems: MetaBarItem[] =
     weather && weatherInfo
       ? [
-          { icon: 'lucide:map-pin', label: 'Hangzhou' },
+          { icon: 'lucide:map-pin', label: HANGZHOU_LABEL },
           {
             icon: weatherInfo.icon,
             label: `${weatherInfo.text} ${weather.temperature_2m.toFixed(1)}°C`,
@@ -107,7 +179,7 @@ export default function Moments() {
           </div>
           <div className={styles.count}>
             <span className={styles.countNumber}>{MOMENT_LIST.length}</span>
-            <span className={styles.countLabel}>moments</span>
+            <span className={styles.countLabel}>{COUNT_LABEL}</span>
           </div>
         </div>
         {weather && (

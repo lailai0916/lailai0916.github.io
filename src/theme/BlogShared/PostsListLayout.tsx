@@ -172,9 +172,13 @@ export function Paginator({ meta }: { meta: BlogPaginatedMetadata }) {
     id: 'blog.pagination.next',
     message: 'Next',
   });
+  const PaginationLabel = translate({
+    id: 'blog.pagination.ariaLabel',
+    message: 'Pagination',
+  });
 
   return (
-    <nav className={styles.paginator} aria-label="Pagination">
+    <nav className={styles.paginator} aria-label={PaginationLabel}>
       {meta.previousPage ? (
         <Link
           to={meta.previousPage}

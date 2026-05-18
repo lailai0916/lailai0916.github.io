@@ -134,6 +134,21 @@
   "components.solution.solution": {
     "message": "题解"
   },
+  "pages.changelog.empty": {
+    "message": "暂无更新日志"
+  },
+  "pages.friends.title": {
+    "message": "友链"
+  },
+  "pages.friends.description": {
+    "message": "真正的友谊是世上最稀有的东西"
+  },
+  "pages.friends.modification": {
+    "message": "我的<b>友链</b>"
+  },
+  "pages.friends.datacard.label": {
+    "message": "位朋友"
+  },
   "pages.insights.title": {
     "message": "实时洞察"
   },
@@ -187,18 +202,6 @@
   },
   "pages.insights.metricList.countries": {
     "message": "访客地区"
-  },
-  "pages.friends.title": {
-    "message": "友链"
-  },
-  "pages.friends.description": {
-    "message": "真正的友谊是世上最稀有的东西"
-  },
-  "pages.friends.modification": {
-    "message": "我的<b>友链</b>"
-  },
-  "pages.friends.datacard.label": {
-    "message": "位朋友"
   },
   "pages.resources.title": {
     "message": "资源"
@@ -338,6 +341,9 @@
   "blog.pages.archive.yearSelect": {
     "message": "年份"
   },
+  "blog.pages.tags.title": {
+    "message": "标签"
+  },
   "blog.post.empty": {
     "message": "暂无文章"
   },
@@ -383,6 +389,9 @@
   "blog.pagination.next": {
     "message": "下一页"
   },
+  "blog.pagination.ariaLabel": {
+    "message": "分页"
+  },
   "blog.sidebar.toc.title": {
     "message": "目录"
   },
@@ -404,11 +413,23 @@
   "blog.sidebar.tags.title": {
     "message": "热门标签"
   },
-  "blog.pages.tags.title": {
-    "message": "标签"
-  },
   "blog.pages.tags.tagSelect": {
     "message": "标签"
+  },
+  "components.laikit.github.stars": {
+    "message": "Star 数"
+  },
+  "components.laikit.github.forks": {
+    "message": "Fork 数"
+  },
+  "components.laikit.github.license": {
+    "message": "许可证"
+  },
+  "components.laikit.github.language": {
+    "message": "主要语言"
+  },
+  "components.laikit.github.error": {
+    "message": "加载 GitHub 数据失败"
   },
   "components.markdown.title": {
     "message": "Hello, I'm lailai"
@@ -431,6 +452,63 @@
   "components.playground.lorenz.reset": {
     "message": "重置"
   },
+  "pages.moments.title": {
+    "message": "动态"
+  },
+  "pages.moments.description": {
+    "message": "随时随地，分享生活"
+  },
+  "pages.moments.countLabel": {
+    "message": "条动态"
+  },
+  "pages.moments.location.hangzhou": {
+    "message": "杭州"
+  },
+  "pages.moments.weather.clear": {
+    "message": "晴"
+  },
+  "pages.moments.weather.mainlyClear": {
+    "message": "少云"
+  },
+  "pages.moments.weather.partlyCloudy": {
+    "message": "多云"
+  },
+  "pages.moments.weather.overcast": {
+    "message": "阴"
+  },
+  "pages.moments.weather.fog": {
+    "message": "雾"
+  },
+  "pages.moments.weather.depositingRimeFog": {
+    "message": "冻雾"
+  },
+  "pages.moments.weather.drizzle": {
+    "message": "毛毛雨"
+  },
+  "pages.moments.weather.lightRain": {
+    "message": "小雨"
+  },
+  "pages.moments.weather.moderateRain": {
+    "message": "中雨"
+  },
+  "pages.moments.weather.heavyRain": {
+    "message": "大雨"
+  },
+  "pages.moments.weather.lightSnow": {
+    "message": "小雪"
+  },
+  "pages.moments.weather.moderateSnow": {
+    "message": "中雪"
+  },
+  "pages.moments.weather.heavySnow": {
+    "message": "大雪"
+  },
+  "pages.moments.weather.rainShowers": {
+    "message": "阵雨"
+  },
+  "pages.moments.weather.thunderstorm": {
+    "message": "雷暴"
+  },
   "components.playground.neuralNetwork.clear": {
     "message": "清除"
   },
@@ -439,6 +517,9 @@
   },
   "components.playground.neuralNetwork.preprocess": {
     "message": "预处理"
+  },
+  "pages.insights.heartbeat.ariaLabel": {
+    "message": "近期监测状态"
   },
   "pages.insights.heartbeat.up": {
     "message": "正常"
@@ -457,6 +538,9 @@
   },
   "pages.insights.heartbeat.noData": {
     "message": "暂无数据"
+  },
+  "pages.insights.sparkline.ariaLabel": {
+    "message": "浏览量随时间变化"
   },
   "pages.insights.sysStatus.title": {
     "message": "运行时快照"
@@ -520,14 +604,6 @@
     "message": "回到顶部",
     "description": "The ARIA label for the back to top button"
   },
-  "theme.blog.archive.title": {
-    "message": "历史文章",
-    "description": "The page & hero title of the blog archive page"
-  },
-  "theme.blog.archive.description": {
-    "message": "历史文章",
-    "description": "The page & hero description of the blog archive page"
-  },
   "theme.blog.paginator.navAriaLabel": {
     "message": "文章列表分页导航",
     "description": "The ARIA label for the blog pagination"
@@ -539,6 +615,14 @@
   "theme.blog.paginator.olderEntries": {
     "message": "较旧的文章",
     "description": "The label used to navigate to the older blog posts page (next page)"
+  },
+  "theme.blog.archive.title": {
+    "message": "历史文章",
+    "description": "The page & hero title of the blog archive page"
+  },
+  "theme.blog.archive.description": {
+    "message": "历史文章",
+    "description": "The page & hero description of the blog archive page"
   },
   "theme.blog.post.paginator.navAriaLabel": {
     "message": "文章分页导航",
@@ -635,21 +719,17 @@
     "message": "最后{byUser}{atDate}更新",
     "description": "The sentence used to display when a page has been last updated, and by who"
   },
-  "theme.NotFound.title": {
-    "message": "找不到页面",
-    "description": "The title of the 404 page"
-  },
   "theme.navbar.mobileVersionsDropdown.label": {
     "message": "选择版本",
     "description": "The label for the navbar versions dropdown on mobile view"
   },
+  "theme.NotFound.title": {
+    "message": "找不到页面",
+    "description": "The title of the 404 page"
+  },
   "theme.tags.tagsListLabel": {
     "message": "标签：",
     "description": "The label alongside a tag list"
-  },
-  "theme.AnnouncementBar.closeButtonAriaLabel": {
-    "message": "关闭",
-    "description": "The ARIA label for close button of announcement bar"
   },
   "theme.admonition.caution": {
     "message": "警告",
@@ -675,6 +755,10 @@
     "message": "注意",
     "description": "The default label used for the Warning admonition (:::warning)"
   },
+  "theme.AnnouncementBar.closeButtonAriaLabel": {
+    "message": "关闭",
+    "description": "The ARIA label for close button of announcement bar"
+  },
   "theme.blog.sidebar.navAriaLabel": {
     "message": "最近文章导航",
     "description": "The ARIA label for recent posts in the blog sidebar"
@@ -695,6 +779,10 @@
     "message": "主导航",
     "description": "The ARIA label for the main navigation"
   },
+  "theme.navbar.mobileLanguageDropdown.label": {
+    "message": "选择语言",
+    "description": "The label for the mobile language switcher dropdown"
+  },
   "theme.NotFound.p1": {
     "message": "我们找不到您要找的页面。",
     "description": "The first paragraph of the 404 page"
@@ -703,21 +791,9 @@
     "message": "请联系原始链接来源网站的所有者，并告知他们链接已损坏。",
     "description": "The 2nd paragraph of the 404 page"
   },
-  "theme.navbar.mobileLanguageDropdown.label": {
-    "message": "选择语言",
-    "description": "The label for the mobile language switcher dropdown"
-  },
   "theme.TOCCollapsible.toggleButtonLabel": {
     "message": "本页总览",
     "description": "The label used by the button on the collapsible TOC component"
-  },
-  "theme.blog.post.readMore": {
-    "message": "阅读更多",
-    "description": "The label used in blog post item excerpts to link to full blog posts"
-  },
-  "theme.blog.post.readMoreLabel": {
-    "message": "阅读 {title} 的全文",
-    "description": "The ARIA label for the link to full blog posts from excerpts"
   },
   "theme.blog.post.readingTime.plurals": {
     "message": "阅读需 {readingTime} 分钟",
@@ -738,6 +814,14 @@
   "theme.CodeBlock.wordWrapToggle": {
     "message": "切换自动换行",
     "description": "The title attribute for toggle word wrapping button of code block lines"
+  },
+  "theme.blog.post.readMore": {
+    "message": "阅读更多",
+    "description": "The label used in blog post item excerpts to link to full blog posts"
+  },
+  "theme.blog.post.readMoreLabel": {
+    "message": "阅读 {title} 的全文",
+    "description": "The ARIA label for the link to full blog posts from excerpts"
   },
   "theme.docs.breadcrumbs.home": {
     "message": "主页面",
@@ -1026,18 +1110,6 @@
     "message": "重置",
     "description": "The reset button label for live code blocks"
   },
-  "theme.ErrorPageContent.tryAgain": {
-    "message": "重试",
-    "description": "The label of the button to try again rendering when the React error boundary captures an error"
-  },
-  "theme.common.skipToMainContent": {
-    "message": "跳到主要内容",
-    "description": "The skip to content label used for accessibility, allowing to rapidly navigate to main content with keyboard tab/enter navigation"
-  },
-  "theme.tags.tagsPageTitle": {
-    "message": "标签",
-    "description": "The title of the tag list page"
-  },
   "theme.blog.post.plurals": {
     "message": "{count} 篇文章",
     "description": "Pluralized label for \"{count} posts\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
@@ -1081,5 +1153,17 @@
   "theme.docs.DocCard.categoryDescription.plurals": {
     "message": "{count} 个项目",
     "description": "The default description for a category card in the generated index about how many items this category includes"
+  },
+  "theme.ErrorPageContent.tryAgain": {
+    "message": "重试",
+    "description": "The label of the button to try again rendering when the React error boundary captures an error"
+  },
+  "theme.common.skipToMainContent": {
+    "message": "跳到主要内容",
+    "description": "The skip to content label used for accessibility, allowing to rapidly navigate to main content with keyboard tab/enter navigation"
+  },
+  "theme.tags.tagsPageTitle": {
+    "message": "标签",
+    "description": "The title of the tag list page"
   }
 }

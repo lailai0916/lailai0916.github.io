@@ -13,6 +13,11 @@ interface HeartbeatBarProps {
 const CELL_MIN = 2;
 const GAP = 2;
 
+const HEARTBEAT_ARIA_LABEL = translate({
+  id: 'pages.insights.heartbeat.ariaLabel',
+  message: 'Recent heartbeat status',
+});
+
 function useResponsiveSlots(maxSlots: number) {
   const ref = useRef<HTMLDivElement>(null);
   const [slots, setSlots] = useState(maxSlots);
@@ -125,7 +130,7 @@ export default function HeartbeatBar({
       <div
         className={styles.bar}
         role="img"
-        aria-label="Recent heartbeat status"
+        aria-label={HEARTBEAT_ARIA_LABEL}
         onPointerLeave={() => setHoverIdx(null)}
       >
         {padded.map((beat, i) => (

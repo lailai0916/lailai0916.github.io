@@ -1,6 +1,12 @@
 import React, { useMemo } from 'react';
+import { translate } from '@docusaurus/Translate';
 import { CHANGELOG_LIST, TYPE_LABEL } from '@site/src/data/changelog';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
+
+const EMPTY_LABEL = translate({
+  id: 'pages.changelog.empty',
+  message: 'No changelog entries yet',
+});
 
 export function Changelog() {
   const { i18n } = useDocusaurusContext();
@@ -35,7 +41,7 @@ export function Changelog() {
       }));
   }, []);
 
-  if (!grouped.length) return <p>暂无更新日志</p>;
+  if (!grouped.length) return <p>{EMPTY_LABEL}</p>;
 
   return (
     <div>
