@@ -212,9 +212,7 @@ function StatsCard() {
               <span className={styles.statLabel}>{item.label}</span>
             </div>
             <span className={styles.statValue}>
-              {typeof item.value === 'number'
-                ? formatCompact(item.value, i18n.currentLocale)
-                : item.value}
+              {formatCompact(item.value, i18n.currentLocale)}
             </span>
           </div>
         ))}
