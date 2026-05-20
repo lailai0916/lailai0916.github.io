@@ -697,7 +697,6 @@
   background: var(--ifm-color-emphasis-200);
   border-radius: 2px;
   overflow: hidden;
-  margin-bottom: 1rem;
 }
 
 .tocProgressFill {
@@ -713,7 +712,7 @@
 .tocList {
   max-height: calc(100vh - 10.5rem);
   overflow-y: auto;
-  margin: 0;
+  margin: 1rem 0 0;
   padding: 0;
   list-style: none;
   border-left: 1px solid var(--ifm-color-emphasis-200);

@@ -153,29 +153,31 @@ function TocCard({
           </span>
         </div>
         <TocProgress progress={progress} />
-        <ul className={styles.tocList}>
-          {toc.map((item) => {
-            const isActive = item.id === activeId;
-            const level = Math.min(Math.max(item.level, 2), 6);
-            return (
-              <li
-                key={item.id}
-                className={clsx(
-                  styles.tocItem,
-                  styles[`tocItemL${level}`],
-                  isActive && styles.tocItemActive
-                )}
-              >
-                <Link
-                  to={`#${item.id}`}
-                  className={styles.tocLink}
-                  aria-current={isActive ? 'true' : undefined}
-                  dangerouslySetInnerHTML={{ __html: item.value }}
-                />
-              </li>
-            );
-          })}
-        </ul>
+        {toc.length > 0 && (
+          <ul className={styles.tocList}>
+            {toc.map((item) => {
+              const isActive = item.id === activeId;
+              const level = Math.min(Math.max(item.level, 2), 6);
+              return (
+                <li
+                  key={item.id}
+                  className={clsx(
+                    styles.tocItem,
+                    styles[`tocItemL${level}`],
+                    isActive && styles.tocItemActive
+                  )}
+                >
+                  <Link
+                    to={`#${item.id}`}
+                    className={styles.tocLink}
+                    aria-current={isActive ? 'true' : undefined}
+                    dangerouslySetInnerHTML={{ __html: item.value }}
+                  />
+                </li>
+              );
+            })}
+          </ul>
+        )}
       </BlogCard>
     </div>
   );
@@ -315,7 +317,7 @@ type Props = {
 };
 
 function ScaffoldWithProgress({ title, description, children, toc }: Props) {
-  const hasToc = !!toc?.length;
+  const isPostPage = toc !== undefined;
   const progress = useScrollProgress();
   return (
     <Layout title={title} description={description}>
@@ -326,17 +328,15 @@ function ScaffoldWithProgress({ title, description, children, toc }: Props) {
         </main>
         <aside className={styles.sidebar}>
           <AuthorCard />
-          <>
-            {hasToc ? (
-              <TocCard toc={toc} progress={progress} />
-            ) : (
-              <>
-                <CalendarCard />
-                <StatsCard />
-                <TagsCard />
-              </>
-            )}
-          </>
+          {isPostPage ? (
+            <TocCard toc={toc} progress={progress} />
+          ) : (
+            <>
+              <CalendarCard />
+              <StatsCard />
+              <TagsCard />
+            </>
+          )}
         </aside>
       </div>
     </Layout>
