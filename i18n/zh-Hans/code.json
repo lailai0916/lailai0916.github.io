@@ -230,7 +230,7 @@
   "pages.resources.datacard.items": {
     "message": "项资源"
   },
-  "pages.resources.noResults.description": {
+  "pages.resources.search.empty": {
     "message": "找不到和“{query}”相符的资源。"
   },
   "pages.settings.title": {

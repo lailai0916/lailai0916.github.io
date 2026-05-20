@@ -309,7 +309,7 @@ export default function Resources(): ReactNode {
             <p>
               {translate(
                 {
-                  id: 'pages.resources.noResults.description',
+                  id: 'pages.resources.search.empty',
                   message: 'No resources found matching "{query}".',
                 },
                 { query: searchQuery }
