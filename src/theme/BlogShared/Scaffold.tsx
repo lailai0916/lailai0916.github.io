@@ -104,18 +104,55 @@ function useActiveHeading(toc: readonly TOCItem[]): string | null {
   return activeId;
 }
 
-function TocCard({ toc }: { toc: readonly TOCItem[] }) {
+function TocProgress({ progress }: { progress: number }) {
+  const pct = Math.round(progress * 100);
+  return (
+    <div
+      className={styles.tocProgress}
+      role="progressbar"
+      aria-valuenow={pct}
+      aria-valuemin={0}
+      aria-valuemax={100}
+      aria-label={translate(
+        {
+          id: 'blog.sidebar.toc.progress',
+          message: 'Reading progress: {percent}%',
+        },
+        { percent: String(pct) }
+      )}
+    >
+      <div
+        className={styles.tocProgressFill}
+        style={{ transform: `scaleX(${progress})` }}
+      />
+    </div>
+  );
+}
+
+function TocCard({
+  toc,
+  progress,
+}: {
+  toc: readonly TOCItem[];
+  progress: number;
+}) {
   const activeId = useActiveHeading(toc);
-  const progress = useScrollProgress();
 
   return (
     <div className={styles.tocContainer}>
-      <BlogCard
-        title={`${translate({
-          id: 'blog.sidebar.toc.title',
-          message: 'Contents',
-        })} (${Math.round(progress * 100)}%)`}
-      >
+      <BlogCard>
+        <div className={styles.tocHeader}>
+          <span className={styles.tocHeaderTitle}>
+            {translate({
+              id: 'blog.sidebar.toc.title',
+              message: 'Contents',
+            })}
+          </span>
+          <span className={styles.tocHeaderPercent}>
+            {Math.round(progress * 100)}%
+          </span>
+        </div>
+        <TocProgress progress={progress} />
         <ul className={styles.tocList}>
           {toc.map((item) => {
             const isActive = item.id === activeId;
@@ -277,12 +314,9 @@ type Props = {
   toc?: readonly TOCItem[];
 };
 
-export default function BlogScaffold({
-  title,
-  description,
-  children,
-  toc,
-}: Props) {
+function ScaffoldWithProgress({ title, description, children, toc }: Props) {
+  const hasToc = !!toc?.length;
+  const progress = useScrollProgress();
   return (
     <Layout title={title} description={description}>
       <div className={styles.container}>
@@ -293,8 +327,8 @@ export default function BlogScaffold({
         <aside className={styles.sidebar}>
           <AuthorCard />
           <>
-            {toc?.length ? (
-              <TocCard toc={toc} />
+            {hasToc ? (
+              <TocCard toc={toc} progress={progress} />
             ) : (
               <>
                 <CalendarCard />
@@ -307,4 +341,8 @@ export default function BlogScaffold({
       </div>
     </Layout>
   );
+}
+
+export default function BlogScaffold(props: Props) {
+  return <ScaffoldWithProgress {...props} />;
 }

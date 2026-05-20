@@ -395,6 +395,9 @@
   "blog.sidebar.toc.title": {
     "message": "目录"
   },
+  "blog.sidebar.toc.progress": {
+    "message": "阅读进度：{percent}%"
+  },
   "blog.sidebar.stats.posts": {
     "message": "文章"
   },
