@@ -39,7 +39,7 @@ export default function Travel(): ReactNode {
             {
               value: countryCount,
               label: translate({
-                id: 'pages.travel.datacard.label1',
+                id: 'pages.travel.datacard.countries',
                 message: 'Countries',
               }),
               icon: 'lucide:globe',
@@ -47,7 +47,7 @@ export default function Travel(): ReactNode {
             {
               value: yearCount,
               label: translate({
-                id: 'pages.travel.datacard.label2',
+                id: 'pages.travel.datacard.years',
                 message: 'Years',
               }),
               icon: 'lucide:route',

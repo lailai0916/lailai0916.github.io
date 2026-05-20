@@ -166,7 +166,7 @@ function SysStatusCardInner() {
         <Icon icon="lucide:activity" className={metricListStyles.icon} />
         <h3 className={metricListStyles.title}>
           {translate({
-            id: 'pages.insights.sysStatus.title',
+            id: 'pages.insights.systemStatus.title',
             message: 'Runtime Snapshot',
           })}
         </h3>
@@ -208,7 +208,7 @@ function SysStatusCardInner() {
 
       <span className={styles.srOnly}>
         {translate({
-          id: 'pages.insights.sysStatus.srLabel',
+          id: 'pages.insights.systemStatus.srLabel',
           message: 'System status overview',
         })}
       </span>

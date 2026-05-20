@@ -5,7 +5,7 @@ import { translate } from '@docusaurus/Translate';
 const luogu = translate({ id: 'components.solution.luogu', message: 'Luogu' });
 const blog = translate({ id: 'components.solution.blog', message: 'Blog' });
 const solution = translate({
-  id: 'components.solution.solution',
+  id: 'components.solution.label',
   message: 'Solution',
 });
 

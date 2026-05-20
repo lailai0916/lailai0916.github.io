@@ -517,6 +517,15 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: 'category',
+      label: '语文',
+      link: {
+        type: 'generated-index',
+        description: '本章记录我的语文笔记。',
+      },
+      items: ['note/chinese/required-texts'],
+    },
+    {
+      type: 'category',
       label: '其他',
       items: [
         'note/other/devices',

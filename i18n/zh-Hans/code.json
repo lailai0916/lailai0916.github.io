@@ -80,7 +80,7 @@
   "pages.home.rolePrefix": {
     "message": "我是一名 "
   },
-  "blog.sidebar.info.locationValue": {
+  "pages.home.location": {
     "message": "中国杭州"
   },
   "pages.home.connect": {
@@ -131,7 +131,7 @@
   "components.solution.blog": {
     "message": "博客"
   },
-  "components.solution.solution": {
+  "components.solution.label": {
     "message": "题解"
   },
   "pages.changelog.empty": {
@@ -224,17 +224,14 @@
   "pages.resources.category.count": {
     "message": "{count} 项"
   },
-  "pages.resources.datacard.label1": {
+  "pages.resources.datacard.categories": {
     "message": "个分类"
   },
-  "pages.resources.datacard.label2": {
+  "pages.resources.datacard.items": {
     "message": "项资源"
   },
   "pages.resources.noResults.description": {
     "message": "找不到和“{query}”相符的资源。"
-  },
-  "pages.resources.noResults.clear": {
-    "message": "清空搜索"
   },
   "pages.settings.title": {
     "message": "设置"
@@ -329,10 +326,10 @@
   "pages.travel.modification": {
     "message": "旅行<b>记录</b>"
   },
-  "pages.travel.datacard.label1": {
+  "pages.travel.datacard.countries": {
     "message": "国家/地区"
   },
-  "pages.travel.datacard.label2": {
+  "pages.travel.datacard.years": {
     "message": "年历程"
   },
   "blog.pages.archive.title": {
@@ -434,7 +431,7 @@
   "components.laikit.github.error": {
     "message": "加载 GitHub 数据失败"
   },
-  "components.markdown.title": {
+  "components.markdown.aboutGreeting": {
     "message": "Hello, I'm lailai"
   },
   "components.playground.gameOfLife.play": {
@@ -545,10 +542,10 @@
   "pages.insights.sparkline.ariaLabel": {
     "message": "浏览量随时间变化"
   },
-  "pages.insights.sysStatus.title": {
+  "pages.insights.systemStatus.title": {
     "message": "运行时快照"
   },
-  "pages.insights.sysStatus.srLabel": {
+  "pages.insights.systemStatus.srLabel": {
     "message": "System status overview"
   },
   "pages.insights.uptime.avgPing": {
