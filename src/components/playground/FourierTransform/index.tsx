@@ -78,7 +78,7 @@ function centerPoints(points: Point[]): Point[] {
   return points.map((p) => ({ x: p.x - cx, y: p.y - cy }));
 }
 
-export default function FourierTransformCanvas() {
+export default function FourierTransform() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const [canvasSize, setCanvasSize] = useState(BASE_SIZE);

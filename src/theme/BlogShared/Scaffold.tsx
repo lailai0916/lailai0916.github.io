@@ -7,7 +7,11 @@ import type { TOCItem } from '@docusaurus/mdx-loader';
 import { Icon } from '@iconify/react';
 
 import { translate } from '@docusaurus/Translate';
-import { getAllBlogItems, getAllPostMetadata } from '@site/src/utils/blogData';
+import {
+  getAllBlogItems,
+  getAllPostMetadata,
+  loadOfficialTags,
+} from '@site/src/utils/blogData';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import { formatCompact } from '@site/src/utils/format';
 import { BlogCard, BlogMenu, TagChipList, type ChipItem } from './Components';
@@ -100,41 +104,80 @@ function useActiveHeading(toc: readonly TOCItem[]): string | null {
   return activeId;
 }
 
-function TocCard({ toc }: { toc: readonly TOCItem[] }) {
+function TocProgress({ progress }: { progress: number }) {
+  const pct = Math.round(progress * 100);
+  return (
+    <div
+      className={styles.tocProgress}
+      role="progressbar"
+      aria-valuenow={pct}
+      aria-valuemin={0}
+      aria-valuemax={100}
+      aria-label={translate(
+        {
+          id: 'blog.sidebar.toc.progress',
+          message: 'Reading progress: {percent}%',
+        },
+        { percent: String(pct) }
+      )}
+    >
+      <div
+        className={styles.tocProgressFill}
+        style={{ transform: `scaleX(${progress})` }}
+      />
+    </div>
+  );
+}
+
+function TocCard({
+  toc,
+  progress,
+}: {
+  toc: readonly TOCItem[];
+  progress: number;
+}) {
   const activeId = useActiveHeading(toc);
-  const progress = useScrollProgress();
 
   return (
     <div className={styles.tocContainer}>
-      <BlogCard
-        title={`${translate({
-          id: 'blog.sidebar.toc.title',
-          message: 'Contents',
-        })} (${Math.round(progress * 100)}%)`}
-      >
-        <ul className={styles.tocList}>
-          {toc.map((item) => {
-            const isActive = item.id === activeId;
-            const level = Math.min(Math.max(item.level, 2), 6);
-            return (
-              <li
-                key={item.id}
-                className={clsx(
-                  styles.tocItem,
-                  styles[`tocItemL${level}`],
-                  isActive && styles.tocItemActive
-                )}
-              >
-                <Link
-                  to={`#${item.id}`}
-                  className={styles.tocLink}
-                  aria-current={isActive ? 'true' : undefined}
-                  dangerouslySetInnerHTML={{ __html: item.value }}
-                />
-              </li>
-            );
-          })}
-        </ul>
+      <BlogCard>
+        <div className={styles.tocHeader}>
+          <span className={styles.tocHeaderTitle}>
+            {translate({
+              id: 'blog.sidebar.toc.title',
+              message: 'Contents',
+            })}
+          </span>
+          <span className={styles.tocHeaderPercent}>
+            {Math.round(progress * 100)}%
+          </span>
+        </div>
+        <TocProgress progress={progress} />
+        {toc.length > 0 && (
+          <ul className={styles.tocList}>
+            {toc.map((item) => {
+              const isActive = item.id === activeId;
+              const level = Math.min(Math.max(item.level, 2), 6);
+              return (
+                <li
+                  key={item.id}
+                  className={clsx(
+                    styles.tocItem,
+                    styles[`tocItemL${level}`],
+                    isActive && styles.tocItemActive
+                  )}
+                >
+                  <Link
+                    to={`#${item.id}`}
+                    className={styles.tocLink}
+                    aria-current={isActive ? 'true' : undefined}
+                    dangerouslySetInnerHTML={{ __html: item.value }}
+                  />
+                </li>
+              );
+            })}
+          </ul>
+        )}
       </BlogCard>
     </div>
   );
@@ -199,15 +242,16 @@ function StatsCard() {
         {statsItems.map((item) => (
           <div key={item.label} className={styles.statTile}>
             <div className={styles.statHead}>
-              <span className={styles.statIcon}>
-                <Icon icon={item.icon} width="1em" height="1em" />
-              </span>
+              <Icon
+                icon={item.icon}
+                width="1em"
+                height="1em"
+                className={styles.statIcon}
+              />
               <span className={styles.statLabel}>{item.label}</span>
             </div>
             <span className={styles.statValue}>
-              {typeof item.value === 'number'
-                ? formatCompact(item.value, i18n.currentLocale)
-                : item.value}
+              {formatCompact(item.value, i18n.currentLocale)}
             </span>
           </div>
         ))}
@@ -235,25 +279,23 @@ function StatsCard() {
 }
 
 function TagsCard() {
-  const map = new Map<string, PopularTagItem>();
-  getAllPostMetadata().forEach((meta) => {
-    meta.tags.forEach((tag) => {
-      if (!tag.label || !tag.permalink) {
-        return;
-      }
-
-      const prev = map.get(tag.label) ?? {
-        to: tag.permalink,
-        label: tag.label,
-        count: 0,
-      };
-      prev.count += 1;
-      map.set(tag.label, prev);
-    });
-  });
-  const tags = Array.from(map.values())
-    .sort((a, b) => b.count - a.count)
-    .slice(0, 8);
+  const { i18n } = useDocusaurusContext();
+  const { currentLocale, defaultLocale } = i18n;
+  const localeKey = currentLocale === defaultLocale ? undefined : currentLocale;
+  const tags = React.useMemo(
+    () =>
+      [...loadOfficialTags(localeKey)]
+        .sort((a, b) => b.count - a.count)
+        .slice(0, 8)
+        .map(
+          (tag): PopularTagItem => ({
+            to: tag.permalink,
+            label: tag.label,
+            count: tag.count,
+          })
+        ),
+    [localeKey]
+  );
 
   return (
     <BlogCard
@@ -274,12 +316,9 @@ type Props = {
   toc?: readonly TOCItem[];
 };
 
-export default function BlogScaffold({
-  title,
-  description,
-  children,
-  toc,
-}: Props) {
+function ScaffoldWithProgress({ title, description, children, toc }: Props) {
+  const isPostPage = toc !== undefined;
+  const progress = useScrollProgress();
   return (
     <Layout title={title} description={description}>
       <div className={styles.container}>
@@ -289,19 +328,21 @@ export default function BlogScaffold({
         </main>
         <aside className={styles.sidebar}>
           <AuthorCard />
-          <>
-            {toc?.length ? (
-              <TocCard toc={toc} />
-            ) : (
-              <>
-                <CalendarCard />
-                <StatsCard />
-                <TagsCard />
-              </>
-            )}
-          </>
+          {isPostPage ? (
+            <TocCard toc={toc} progress={progress} />
+          ) : (
+            <>
+              <CalendarCard />
+              <StatsCard />
+              <TagsCard />
+            </>
+          )}
         </aside>
       </div>
     </Layout>
   );
+}
+
+export default function BlogScaffold(props: Props) {
+  return <ScaffoldWithProgress {...props} />;
 }

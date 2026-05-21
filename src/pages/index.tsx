@@ -15,11 +15,9 @@ function useTypewriter(words: string[]) {
   const [index, setIndex] = React.useState(0);
   const [text, setText] = React.useState('');
   const [deleting, setDeleting] = React.useState(false);
-  const currentWord = words.length ? words[index % words.length] : '';
+  const currentWord = words[index % words.length];
 
   React.useEffect(() => {
-    if (!words.length) return undefined;
-
     const current = words[index % words.length];
     let timer: ReturnType<typeof setTimeout>;
 

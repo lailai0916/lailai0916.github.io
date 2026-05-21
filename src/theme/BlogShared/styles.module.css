@@ -1,16 +1,11 @@
 .container {
-  --sidebar-width: 320px;
-  --content-max-width: 1200px;
-  --gap: 1rem;
-  --padding: 2rem;
-
   width: 100%;
-  max-width: calc(var(--content-max-width) + var(--padding) * 2);
+  max-width: 1200px;
   margin-inline: auto;
-  padding: var(--padding);
+  padding: 2rem;
   display: grid;
-  gap: var(--gap);
-  grid-template-columns: var(--sidebar-width) minmax(0, 1fr);
+  gap: 1rem;
+  grid-template-columns: 300px minmax(0, 1fr);
   grid-template-areas: 'sidebar main';
 }
 
@@ -18,21 +13,21 @@
   grid-area: main;
   display: flex;
   flex-direction: column;
-  gap: var(--gap);
+  gap: 1rem;
 }
 
 .sidebar {
   grid-area: sidebar;
   display: flex;
   flex-direction: column;
-  gap: var(--gap);
+  gap: 1rem;
 }
 
 @media (max-width: 996px) {
   .container {
     grid-template-columns: 100%;
     grid-template-areas: 'main' 'sidebar';
-    --padding: 1rem;
+    padding: 1rem;
   }
 
   .sidebar {
@@ -92,15 +87,15 @@
 .statsGrid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 0.55rem;
+  gap: 0.5rem;
 }
 
 .statTile {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  gap: 0.6rem;
-  padding: 0.62rem 0.7rem;
+  gap: 0.7rem;
+  padding: 0.75rem 0.85rem;
   border-radius: 12px;
   border: 1px solid var(--ifm-color-emphasis-200);
 }
@@ -108,23 +103,22 @@
 .statHead {
   display: flex;
   align-items: center;
-  gap: 0.45rem;
+  gap: 0.4rem;
 }
 
 .statIcon {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 1.35rem;
-  height: 1.35rem;
+  font-size: 0.95rem;
   color: var(--ifm-color-primary);
   flex-shrink: 0;
 }
 
 .statLabel {
   min-width: 0;
-  font-size: 0.72rem;
-  line-height: 1.2;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  font-variant-numeric: tabular-nums;
+  line-height: 1;
   color: var(--ifm-color-emphasis-700);
   white-space: nowrap;
   overflow: hidden;
@@ -133,7 +127,7 @@
 
 .statValue {
   font-weight: 700;
-  font-size: 1.12rem;
+  font-size: 1.1rem;
   line-height: 1;
   color: var(--ifm-color-emphasis-900);
   font-variant-numeric: tabular-nums;
@@ -201,14 +195,15 @@
 }
 
 .recentItem {
-  display: grid;
-  grid-template-columns: max-content 1fr;
+  display: flex;
+  flex-wrap: wrap;
   align-items: baseline;
-  gap: 0.5rem;
+  gap: 0.4rem 0.5rem;
   padding: 0.25rem 0;
 }
 
 .recentDate {
+  flex-shrink: 0;
   color: var(--ifm-color-emphasis-700);
   font-size: 0.9rem;
   white-space: nowrap;
@@ -216,11 +211,34 @@
 }
 
 .recentLink {
+  flex: 1;
+  min-width: 0;
   text-decoration: none !important;
   color: var(--ifm-font-color-base);
 }
 
 .recentLink:hover {
+  color: var(--ifm-color-primary);
+}
+
+.recentTags {
+  flex-shrink: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-left: auto;
+}
+
+.recentTag {
+  font-size: 0.78rem;
+  color: var(--ifm-color-emphasis-600);
+  text-decoration: none !important;
+  white-space: nowrap;
+  letter-spacing: -0.005em;
+  transition: color 160ms ease;
+}
+
+.recentTag:hover {
   color: var(--ifm-color-primary);
 }
 
@@ -449,14 +467,13 @@
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  margin-bottom: 0.85rem;
+  margin-bottom: 0.6rem;
 }
 
 .calendarTitle {
   font-weight: 700;
   line-height: 1;
   font-size: 1rem;
-  flex: 1;
   min-width: 0;
 }
 
@@ -464,6 +481,7 @@
   display: inline-flex;
   align-items: center;
   gap: 0.15rem;
+  margin-left: auto;
 }
 
 .calendarNavBtn {
@@ -472,6 +490,7 @@
   justify-content: center;
   width: 1.6rem;
   height: 1.6rem;
+  font-size: 1.2rem;
   border-radius: 8px;
   border: none;
   background: transparent;
@@ -482,9 +501,15 @@
     background 160ms ease;
 }
 
-.calendarNavBtn:hover {
+.calendarNavBtn:hover:not(:disabled) {
   color: var(--ifm-color-primary);
   background: var(--ifm-color-emphasis-100);
+}
+
+.calendarNavBtn:disabled {
+  color: var(--ifm-color-emphasis-400);
+  cursor: not-allowed;
+  background: transparent;
 }
 
 .calendarWeekdays,
@@ -499,9 +524,10 @@
 
 .calendarWeekday {
   text-align: center;
-  font-size: 0.78rem;
+  font-size: 0.8rem;
+  font-weight: 600;
   color: var(--ifm-color-emphasis-600);
-  padding: 0.3rem 0;
+  padding: 0.2rem 0;
   font-variant-numeric: tabular-nums;
 }
 
@@ -514,7 +540,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  aspect-ratio: 1.2 / 1;
+  aspect-ratio: 1.3 / 1;
   padding: 0;
   border: none;
   background: transparent;
@@ -527,7 +553,7 @@
 .calendarCellNum {
   position: relative;
   z-index: 1;
-  font-size: 0.78rem;
+  font-size: 0.8rem;
   line-height: 1;
 }
 
@@ -570,23 +596,27 @@
 .calendarDivider {
   height: 1px;
   background: var(--ifm-color-emphasis-200);
-  margin: 0.85rem 0 0.5rem;
+  margin: 0.6rem 0;
 }
 
 .calendarEmpty {
-  padding: 0.75rem 0.25rem;
+  padding: 0.2rem 0.25rem;
   text-align: center;
   color: var(--ifm-color-emphasis-600);
-  font-size: 0.85rem;
+  font-size: 0.92rem;
 }
 
 .calendarPostList {
   list-style: none;
   margin: 0;
   padding: 0;
-  max-height: calc(3 * 2.6rem);
+  max-height: calc(3 * 1.8rem);
   overflow-y: auto;
   scrollbar-width: thin;
+
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
 }
 
 .calendarPostList::-webkit-scrollbar {
@@ -606,15 +636,9 @@
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  padding: 0.55rem 0.25rem;
-  height: 2.6rem;
+  padding: 0 0.25rem;
   color: var(--ifm-font-color-base);
   text-decoration: none !important;
-  border-bottom: 1px dashed var(--ifm-color-emphasis-200);
-}
-
-.calendarPostItem:last-child .calendarPostLink {
-  border-bottom: none;
 }
 
 .calendarPostLink:hover {
@@ -633,8 +657,8 @@
 
 .calendarPostDate {
   flex-shrink: 0;
-  font-size: 0.78rem;
-  color: var(--ifm-color-emphasis-600);
+  font-size: 0.9rem;
+  color: var(--ifm-color-emphasis-700);
   font-family: var(--ifm-font-family-monospace);
   font-variant-numeric: tabular-nums;
 }
@@ -644,10 +668,51 @@
   top: 5rem;
 }
 
+.tocHeader {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-bottom: 0.6rem;
+}
+
+.tocHeaderTitle {
+  font-weight: 700;
+  line-height: 1;
+}
+
+.tocHeaderPercent {
+  font-size: 0.8rem;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: 'tnum';
+  color: var(--ifm-color-primary);
+  line-height: 1;
+}
+
+.tocProgress {
+  position: relative;
+  width: 100%;
+  height: 4px;
+  background: var(--ifm-color-emphasis-200);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.tocProgressFill {
+  position: absolute;
+  inset: 0;
+  background: var(--ifm-color-primary);
+  border-radius: 2px;
+  transform-origin: 0 50%;
+  transform: scaleX(0);
+  will-change: transform;
+}
+
 .tocList {
   max-height: calc(100vh - 10.5rem);
   overflow-y: auto;
-  margin: 0;
+  margin: 1rem 0 0;
   padding: 0;
   list-style: none;
   border-left: 1px solid var(--ifm-color-emphasis-200);

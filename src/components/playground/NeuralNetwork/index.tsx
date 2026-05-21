@@ -8,15 +8,15 @@ import Button from '@site/src/components/laikit/Button';
 import styles from './styles.module.css';
 
 const CLEAR_LABEL = translate({
-  id: 'components.neuralNetwork.clear',
+  id: 'components.playground.neuralNetwork.clear',
   message: 'Clear',
 });
 const CHECK_LABEL = translate({
-  id: 'components.neuralNetwork.check',
+  id: 'components.playground.neuralNetwork.check',
   message: 'Check Digit',
 });
 const PREPROCESS_LABEL = translate({
-  id: 'components.neuralNetwork.preprocess',
+  id: 'components.playground.neuralNetwork.preprocess',
   message: 'Pre-process',
 });
 
@@ -49,7 +49,7 @@ function getNeuronPosition(layerIndex: number, visibleNeuronIndex: number) {
   };
 }
 
-export default function NeuralNetworkInteractive({
+export default function NeuralNetwork({
   instant = false,
 }: {
   instant?: boolean;
@@ -199,7 +199,7 @@ export default function NeuralNetworkInteractive({
               y="0"
               width={CANVAS_SIZE}
               height={CANVAS_SIZE}
-              fill="var(--ifm-background-color)"
+              fill="var(--nn-cover)"
               style={{
                 opacity: animating ? 0 : 1,
                 pointerEvents: animating ? 'none' : undefined,

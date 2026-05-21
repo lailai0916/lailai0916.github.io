@@ -28,6 +28,8 @@
   --nn-grid-white-rgb: 255, 255, 255;
   --nn-grid-fill: #000000;
 
+  --nn-cover: #1b1b1d;
+
   width: 100%;
   max-width: 500px;
   margin: 0 auto;
@@ -68,6 +70,8 @@
   --nn-grid-white: #000000;
   --nn-grid-white-rgb: 0, 0, 0;
   --nn-grid-fill: #ffffff;
+
+  --nn-cover: #ffffff;
 }
 
 .svg {

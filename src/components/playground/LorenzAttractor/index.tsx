@@ -32,7 +32,7 @@ const INITIAL_CONDITIONS: Vec3[] = [
 ];
 
 const RESET_LABEL = translate({
-  id: 'components.lorenz.reset',
+  id: 'components.playground.lorenz.reset',
   message: 'Reset',
 });
 
@@ -158,7 +158,7 @@ function ParamSlider({
   );
 }
 
-export default function LorenzAttractorCanvas() {
+export default function LorenzAttractor() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const [canvasSize, setCanvasSize] = useState(BASE_SIZE);

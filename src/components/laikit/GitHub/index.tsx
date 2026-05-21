@@ -1,8 +1,30 @@
 import React, { useEffect, useMemo, useState } from 'react';
 import clsx from 'clsx';
+import { translate } from '@docusaurus/Translate';
 import Card from '@site/src/components/laikit/Card';
 import { formatCompact } from '@site/src/utils/format';
 import styles from './styles.module.css';
+
+const STARS_LABEL = translate({
+  id: 'components.laikit.github.stars',
+  message: 'Stars',
+});
+const FORKS_LABEL = translate({
+  id: 'components.laikit.github.forks',
+  message: 'Forks',
+});
+const LICENSE_LABEL = translate({
+  id: 'components.laikit.github.license',
+  message: 'License',
+});
+const LANGUAGE_LABEL = translate({
+  id: 'components.laikit.github.language',
+  message: 'Primary language',
+});
+const ERROR_LABEL = translate({
+  id: 'components.laikit.github.error',
+  message: 'Failed to load GitHub data',
+});
 
 type GitHubProps = {
   /** owner/repo */
@@ -131,19 +153,19 @@ export default function GitHub(props: GitHubProps) {
       <div className={styles.description}>{description}</div>
 
       <div className={styles.infoBar}>
-        <div className={styles.stars} title="Stars">
+        <div className={styles.stars} title={STARS_LABEL}>
           {stars}
         </div>
-        <div className={styles.forks} title="Forks">
+        <div className={styles.forks} title={FORKS_LABEL}>
           {forks}
         </div>
         {hasLicense && (
-          <div className={styles.license} title="License">
+          <div className={styles.license} title={LICENSE_LABEL}>
             {licenseId}
           </div>
         )}
         {showLanguage && language && (
-          <span className={styles.language} title="Primary language">
+          <span className={styles.language} title={LANGUAGE_LABEL}>
             {language}
           </span>
         )}
@@ -151,7 +173,7 @@ export default function GitHub(props: GitHubProps) {
 
       {error && (
         <div className={styles.errorText} aria-live="polite">
-          Failed to load GitHub data
+          {ERROR_LABEL}
         </div>
       )}
     </Card>
