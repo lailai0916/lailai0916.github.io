@@ -17,6 +17,7 @@ import DataCard from '@site/src/components/laikit/DataCard';
 import LinkCard from '@site/src/components/laikit/LinkCard';
 import clsx from 'clsx';
 
+import IconBlock from '@site/src/components/laikit/IconBlock';
 import IconText from '@site/src/components/laikit/IconText';
 import Button from '@site/src/components/laikit/Button';
 import Card from '@site/src/components/laikit/Card';
@@ -41,6 +42,10 @@ const DESCRIPTION = translate({
 const MODIFICATION = translate({
   id: 'pages.resources.modification',
   message: 'Selected <b>Resources</b>',
+});
+const CLEAR_SEARCH = translate({
+  id: 'pages.resources.search.clear',
+  message: 'Clear search',
 });
 
 function filterResourceCategories(
@@ -162,10 +167,7 @@ function FilterBar({
               type="button"
               onClick={() => onSearchChange('')}
               className={styles.filterSearchClear}
-              aria-label={translate({
-                id: 'pages.resources.search.clear',
-                message: 'Clear search',
-              })}
+              aria-label={CLEAR_SEARCH}
             >
               <Icon icon="lucide:x" />
             </button>
@@ -230,11 +232,10 @@ function CategorySection({ category }: { category: ResourceCategoryItem }) {
 
   return (
     <section className={styles.categorySection}>
-      <div className={styles.categoryHeader}>
-        <h2 className={styles.categoryTitle}>
-          <IconText icon={category.icon}>{category.title}</IconText>
-        </h2>
-        <div className={styles.categoryCount}>
+      <header className={styles.categoryHeader}>
+        <IconBlock icon={category.icon} variant="accent" size={40} />
+        <h2 className={styles.categoryTitle}>{category.title}</h2>
+        <span className={styles.categoryCount}>
           {selectMessage(
             category.resources.length,
             translate(
@@ -245,8 +246,8 @@ function CategorySection({ category }: { category: ResourceCategoryItem }) {
               { count: category.resources.length }
             )
           )}
-        </div>
-      </div>
+        </span>
+      </header>
 
       <div className={styles.resourceGrid}>
         {category.resources.map((resource) => (
@@ -274,7 +275,7 @@ export default function Resources(): ReactNode {
             {
               value: RESOURCE_LIST.length,
               label: translate({
-                id: 'pages.resources.datacard.label1',
+                id: 'pages.resources.datacard.categories',
                 message: 'Categories',
               }),
               icon: 'lucide:folder',
@@ -282,7 +283,7 @@ export default function Resources(): ReactNode {
             {
               value: RESOURCE_LIST.flatMap((cat) => cat.resources).length,
               label: translate({
-                id: 'pages.resources.datacard.label2',
+                id: 'pages.resources.datacard.items',
                 message: 'Resources',
               }),
               icon: 'lucide:database',
@@ -308,7 +309,7 @@ export default function Resources(): ReactNode {
             <p>
               {translate(
                 {
-                  id: 'pages.resources.noResults.description',
+                  id: 'pages.resources.search.empty',
                   message: 'No resources found matching "{query}".',
                 },
                 { query: searchQuery }
@@ -319,10 +320,7 @@ export default function Resources(): ReactNode {
               rounded
               onClick={() => setSearchQuery('')}
             >
-              {translate({
-                id: 'pages.resources.noResults.clear',
-                message: 'Clear Search',
-              })}
+              {CLEAR_SEARCH}
             </Button>
           </div>
         )}

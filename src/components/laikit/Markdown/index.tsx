@@ -16,7 +16,7 @@ export function MDTitle({ title, description }: MDTitleProps) {
           <>
             {'🎉\xa0'}
             <span className={styles.titleText}>
-              <Translate id="components.markdown.title">
+              <Translate id="components.markdown.aboutGreeting">
                 {"Hello,\xa0I'm\xa0lailai"}
               </Translate>
             </span>

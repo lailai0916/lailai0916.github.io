@@ -1,7 +1,9 @@
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import Card from '@site/src/components/laikit/Card';
 import IconBlock from '@site/src/components/laikit/IconBlock';
 import styles from './styles.module.css';
+
+const IMAGE_LOAD_TIMEOUT_MS = 3000;
 
 type LinkCardLinkProps =
   | { to: string; href?: never }
@@ -27,8 +29,32 @@ export default function LinkCard({
   imageVariant = 'icon',
   ...linkProps
 }: LinkCardProps) {
-  const [imageError, setImageError] = useState(false);
-  const showImage = !!image && !imageError;
+  const imgRef = useRef<HTMLImageElement>(null);
+  const [imageStatus, setImageStatus] = useState<
+    'loading' | 'loaded' | 'error'
+  >(image ? 'loading' : 'error');
+
+  useEffect(() => {
+    if (!image) {
+      setImageStatus('error');
+      return;
+    }
+    // If the browser already finished loading the image before React attached
+    // its handlers (common on SSR + fast cache hits), onLoad/onError will
+    // never fire — sync state from the DOM here.
+    const img = imgRef.current;
+    if (img && img.complete) {
+      setImageStatus(img.naturalWidth > 0 ? 'loaded' : 'error');
+      return;
+    }
+    setImageStatus('loading');
+    const timer = window.setTimeout(() => {
+      setImageStatus((status) => (status === 'loading' ? 'error' : status));
+    }, IMAGE_LOAD_TIMEOUT_MS);
+    return () => window.clearTimeout(timer);
+  }, [image]);
+
+  const showImage = !!image && imageStatus !== 'error';
 
   return (
     <Card
@@ -40,12 +66,14 @@ export default function LinkCard({
       {showImage ? (
         <IconBlock variant="muted" size={ICON_BOX_SIZE}>
           <img
+            ref={imgRef}
             src={image}
             alt={title}
             className={
               imageVariant === 'avatar' ? styles.imageAvatar : styles.image
             }
-            onError={() => setImageError(true)}
+            onLoad={() => setImageStatus('loaded')}
+            onError={() => setImageStatus('error')}
           />
         </IconBlock>
       ) : (

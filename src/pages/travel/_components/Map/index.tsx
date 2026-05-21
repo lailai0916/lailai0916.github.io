@@ -200,7 +200,7 @@ function TravelGlobeClient({ Globe }: { Globe: GlobeComponent }) {
               : colors.unvisited
           }
           polygonStrokeColor={() => colors.stroke}
-          polygonAltitude={0}
+          polygonAltitude={0.01}
           polygonsTransitionDuration={0}
           polygonLabel={(polygon) => {
             const item = polygon as TravelPolygon;

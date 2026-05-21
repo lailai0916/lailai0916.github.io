@@ -14,11 +14,15 @@ export default function BlogTagsListPage(props: Props): React.ReactElement {
   if (isOriginalLayout) return <BlogTagsListPageOriginal {...props} />;
 
   const { tags } = props;
+  const sortedTags = React.useMemo(
+    () => [...tags].sort((a, b) => b.count - a.count),
+    [tags]
+  );
   return (
     <BlogScaffold title={TITLE} description={DESCRIPTION}>
-      <BlogCard title={`${TITLE} (${tags.length})`}>
+      <BlogCard title={`${TITLE} (${sortedTags.length})`}>
         <TagChipList
-          items={tags.map((tag) => ({
+          items={sortedTags.map((tag) => ({
             to: tag.permalink,
             label: tag.label,
             count: tag.count,

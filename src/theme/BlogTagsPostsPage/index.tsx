@@ -17,7 +17,10 @@ function TagSelector({ activePermalink }: { activePermalink: string }) {
   const { i18n } = useDocusaurusContext();
   const { currentLocale, defaultLocale } = i18n;
   const localeKey = currentLocale === defaultLocale ? undefined : currentLocale;
-  const tags = React.useMemo(() => loadOfficialTags(localeKey), [localeKey]);
+  const tags = React.useMemo(
+    () => [...loadOfficialTags(localeKey)].sort((a, b) => b.count - a.count),
+    [localeKey]
+  );
 
   if (!tags.length) return null;
 

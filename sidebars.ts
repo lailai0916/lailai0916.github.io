@@ -1,7 +1,7 @@
 import type { SidebarsConfig } from '@docusaurus/plugin-content-docs';
 
 const sidebars: SidebarsConfig = {
-  sidebar1: [
+  contestSidebar: [
     'contest/index',
     {
       type: 'category',
@@ -302,7 +302,7 @@ const sidebars: SidebarsConfig = {
       ],
     },
   ],
-  sidebar2: [
+  noteSidebar: [
     'note/index',
     {
       type: 'category',
@@ -431,24 +431,8 @@ const sidebars: SidebarsConfig = {
       },
       collapsed: false,
       items: [
-        {
-          type: 'category',
-          label: '英语语音',
-          link: {
-            type: 'doc',
-            id: 'note/english/pronunciation/index',
-          },
-          items: ['note/english/pronunciation/phonics'],
-        },
-        {
-          type: 'category',
-          label: '英语词汇',
-          link: {
-            type: 'doc',
-            id: 'note/english/vocabulary/index',
-          },
-          items: ['note/english/vocabulary/ncee'],
-        },
+        'note/english/pronunciation',
+        'note/english/vocabulary',
         {
           type: 'category',
           label: '英语语法',
@@ -533,17 +517,25 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: 'category',
+      label: '语文',
+      link: {
+        type: 'generated-index',
+        description: '本章记录我的语文笔记。',
+      },
+      items: ['note/chinese/required-texts'],
+    },
+    {
+      type: 'category',
       label: '其他',
       items: [
         'note/other/devices',
         'note/other/edc',
-        'note/other/desk-setup',
         'note/other/software',
         'note/other/bilibili',
       ],
     },
   ],
-  sidebar3: [
+  projectSidebar: [
     'project/index',
     'project/lailai0916.github.io',
     'project/lailai0916',

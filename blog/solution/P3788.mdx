@@ -1,0 +1,144 @@
+---
+title: P3788 幽幽子吃西瓜
+date: 2026-05-12T23:30:24
+tags: [oi, solution, luogu]
+---
+
+<Solution pid="P3788" aid="o0s6hdtj" />
+
+{/* truncate */}
+
+## 解题思路
+
+这是一道初中数学题。
+
+由于只考虑面积比例，不妨设每个截面半圆的面积为 $1$。整个图形关于视线左右对称且相互独立，因此左右两半可以分别计算。
+
+设 $s(x)$ 表示角度为 $x$ 的半圆的可视面积，即投影面积：
+
+$$
+s(x)=\cos\left(90^\circ-x\right)=\sin x
+$$
+
+注意代码中需要将角度转为弧度。
+
+```cpp
+double s(int x){return sin(x*pi/180);}
+```
+
+考虑一个半圆内的情况，即 $0\le a,b\le 180$。左右两侧的边界分别可以表示为 $a$ 和 $180-b$。
+
+定义函数 $f(a,b)$ 计算一个半圆对 $S_{\text{sum}}$ 和 $S_{\text{red}}$ 的贡献，分类讨论：
+
+1. $a\le b$：表示切去中间一段。
+
+总可见面积为：
+
+$$
+s(\min(\max(a,180-b),90))
+$$
+
+若 $a<180-b$，红色可见，贡献为：
+
+$$
+s(b)-s(a)
+$$
+
+否则红色被绿色瓜皮挡住，贡献为 $0$。
+
+2. $a>b$：表示切去的区间跨过正面方向。
+
+此时红色一定可见，总可见面积为：
+
+$$
+s(\min(\min(a,180-b),90))
+$$
+
+红色面积为：
+
+$$
+s(b)
+$$
+
+得到核心函数：
+
+```cpp
+void f(int a,int b)
+{
+	if(a<=b)
+	{
+		sum+=s(min(max(a,180-b),90));
+		if(a<180-b)red+=s(b)-s(a);
+	}
+	else
+	{
+		sum+=s(min(min(a,180-b),90));
+		red+=s(b);
+	}
+}
+```
+
+接下来只需要把整圆按 $180^\circ$ 分成两个半圆。后半圆通过 $x\mapsto 360^\circ-x$ 对称到前半圆处理。
+
+若某个半圆没有被切到，则它完整可见，直接令：
+
+$$
+S_{\text{sum}}\gets S_{\text{sum}}+1
+$$
+
+最后答案为：
+
+$$
+\frac{S_{\text{red}}}{S_{\text{sum}}}\times 100\%
+$$
+
+## 参考代码
+
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+
+const double pi=acos(-1);
+double s(int x){return sin(x*pi/180);}
+double sum=0,red=0;
+void f(int a,int b)
+{
+	if(a<=b)
+	{
+		sum+=s(min(max(a,180-b),90));
+		if(a<180-b)red+=s(b)-s(a);
+	}
+	else
+	{
+		sum+=s(min(min(a,180-b),90));
+		red+=s(b);
+	}
+}
+int main()
+{
+	ios::sync_with_stdio(false);
+	cin.tie(nullptr);
+	int T;
+	cin>>T;
+	while(T--)
+	{
+		int a,b;
+		cin>>a>>b;
+		sum=red=0;
+		if(a<b)
+		{
+			if(a<180&&b<180){f(a,b);sum+=1;}
+			else if(a<180&&b>=180){f(a,180);f(360-b,180);}
+			else if(a>=180&&b>=180){f(360-b,360-a);sum+=1;}
+		}
+		else
+		{
+			if(a<180&&b<180)f(a,b);
+			if(a>=180&&b<180){f(0,b);f(0,360-a);}
+			else if(a>=180&&b>=180)f(360-b,360-a);
+		}
+		cout<<fixed<<setprecision(1)<<red*100/sum<<'%'<<'\n';
+	}
+	return 0;
+}
+```

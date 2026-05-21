@@ -1,28 +1,22 @@
+/* Header card */
+
 .headerCard {
   display: flex;
   align-items: center;
-  justify-content: space-between;
   gap: 1rem;
 }
 
 .headerInfo {
+  flex: 1;
   min-width: 0;
 }
 
 .title {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
   font-size: 1.6rem;
   font-weight: 700;
   line-height: 1.15;
+  letter-spacing: -0.01em;
   margin: 0;
-}
-
-.titleIcon {
-  font-size: 1.2rem;
-  color: var(--ifm-color-primary);
-  flex-shrink: 0;
 }
 
 .description {
@@ -31,25 +25,36 @@
   color: var(--ifm-color-emphasis-700);
 }
 
-.countMeta {
+.count {
   flex-shrink: 0;
   display: inline-flex;
-  align-items: center;
-  gap: 0.35rem;
-  font-size: 0.85rem;
-  color: var(--ifm-color-emphasis-700);
+  align-items: baseline;
+  gap: 0.4rem;
   line-height: 1;
 }
 
-.countMetaIcon {
-  color: var(--ifm-color-primary);
-  flex-shrink: 0;
-}
-
-.countMetaNumber {
+.countNumber {
   font-weight: 700;
+  font-size: 1.2rem;
   color: var(--ifm-color-emphasis-900);
   font-variant-numeric: tabular-nums;
+}
+
+.countLabel {
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--ifm-color-emphasis-600);
+}
+
+.headerWeather {
+  margin-top: 0.9rem;
+  padding-top: 0.85rem;
+  border-top: 1px solid var(--ifm-color-emphasis-200);
+}
+
+.headerWeather > div {
+  margin-bottom: 0;
 }
 
 @media (max-width: 480px) {
@@ -59,15 +64,56 @@
   }
 }
 
-.imageContainer {
-  margin: 0.5rem 0;
+/* Moment content body */
+
+.momentContent {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: var(--ifm-font-color-base);
+  word-wrap: break-word;
 }
 
-.hr {
-  margin: 0.5rem 0;
+.momentContent p {
+  margin: 0 0 0.6rem;
 }
 
-.momentMeta {
-  color: var(--ifm-color-emphasis-700);
-  font-size: 0.9rem;
+.momentContent p:last-child {
+  margin-bottom: 0;
+}
+
+/* Moment image grid */
+
+.momentImages {
+  display: grid;
+  gap: 0.5rem;
+  margin-top: 0.85rem;
+}
+
+.momentImages[data-count='2'],
+.momentImages[data-count='4'] {
+  grid-template-columns: 1fr 1fr;
+}
+
+.momentImages[data-count='3'] {
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.momentImage {
+  display: block;
+  width: 100%;
+  border-radius: 10px;
+  background: var(--ifm-color-emphasis-100);
+}
+
+/* Single image: natural aspect, capped height */
+.momentImages[data-count='1'] .momentImage {
+  height: auto;
+  max-height: 30rem;
+  object-fit: contain;
+}
+
+/* Multi-image: square thumbnails */
+.momentImages:not([data-count='1']) .momentImage {
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
 }

@@ -16,9 +16,6 @@ memory:
 travel:
   label: 旅行
 
-project:
-  label: 项目
-
 math:
   label: 数学
 
@@ -27,6 +24,12 @@ resource:
 
 misc:
   label: 杂项
+
+school:
+  label: 学校
+
+oi:
+  label: OI
 
 solution:
   label: 题解

@@ -157,7 +157,7 @@ export default function Home(): ReactNode {
     {
       key: 'location',
       value: translate({
-        id: 'blog.sidebar.info.locationValue',
+        id: 'pages.home.location',
         message: 'Hangzhou, China',
       }),
       icon: 'lucide:map-pin',
