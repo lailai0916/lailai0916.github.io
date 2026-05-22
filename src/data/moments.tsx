@@ -1,15 +1,25 @@
 import { translate } from '@docusaurus/Translate';
 import { getAllBlogItems } from '@site/src/utils/blogData';
+import type { ShareCardProps } from '@site/src/components/laikit/ShareCard';
 
-interface MomentItem {
+export interface MomentItem {
   date: string;
-  content: string;
+  content?: string;
   event?: string;
   location?: string;
   images?: string[];
+  share?: ShareCardProps;
 }
 
 const STATIC_MOMENTS: MomentItem[] = [
+  {
+    date: '2026-02-21T19:49',
+    share: {
+      url: 'https://www.bilibili.com/video/BV1R4fnBhELd',
+      title: 'LGS Paintboard 2026 延时动画',
+      description: 'lailai0916 · LGS Paintboard 2026',
+    },
+  },
   {
     date: '2026-03-30T18:30',
     content:

@@ -8,6 +8,7 @@ import {
   type MetaBarItem,
 } from '@site/src/theme/BlogShared/Components';
 import IconBlock from '@site/src/components/laikit/IconBlock';
+import ShareCard from '@site/src/components/laikit/ShareCard';
 import { MOMENT_LIST } from '@site/src/data/moments';
 import {
   formatLocalizedDate,
@@ -216,10 +217,13 @@ export default function Moments() {
         return (
           <BlogCard key={`${moment.date}-${i}`}>
             <MetaBar items={metaItems} />
-            <div
-              className={styles.momentContent}
-              dangerouslySetInnerHTML={{ __html: moment.content }}
-            />
+            {moment.content && (
+              <div
+                className={styles.momentContent}
+                dangerouslySetInnerHTML={{ __html: moment.content }}
+              />
+            )}
+            {moment.share && <ShareCard {...moment.share} />}
             {moment.images && moment.images.length > 0 && (
               <div
                 className={styles.momentImages}

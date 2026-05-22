@@ -1,0 +1,123 @@
+.shareCardWrap {
+  display: block;
+  margin-top: 0.85rem;
+  --link-card-accent: var(--ifm-color-primary);
+}
+
+.shareCard {
+  display: flex;
+  gap: 0.85rem;
+  align-items: stretch;
+  padding: 0.75rem;
+  background: var(--ifm-color-emphasis-100);
+  border-color: transparent;
+  box-shadow: none;
+  border-radius: 12px;
+  overflow: hidden;
+  transition:
+    background-color 160ms ease,
+    border-color 160ms ease;
+}
+
+.shareCardWrap:hover .shareCard,
+.shareCardWrap:focus-visible .shareCard {
+  background: var(--ifm-color-emphasis-200);
+  border-color: transparent;
+}
+
+.thumb {
+  flex: 0 0 auto;
+  width: 64px;
+  height: 64px;
+  border-radius: 8px;
+  overflow: hidden;
+  background: var(--ifm-color-emphasis-200);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--ifm-color-emphasis-600);
+}
+
+.shareCardWrap:hover .thumb,
+.shareCardWrap:focus-visible .thumb {
+  background: var(--ifm-color-emphasis-300);
+}
+
+.thumbImage {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.thumbFallback {
+  width: 28px;
+  height: 28px;
+}
+
+.body {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.title {
+  margin: 0;
+  font-size: 0.95rem;
+  font-weight: 600;
+  line-height: 1.4;
+  color: var(--ifm-font-color-base);
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  word-break: break-word;
+}
+
+.description {
+  margin: 0;
+  font-size: 0.82rem;
+  line-height: 1.45;
+  color: var(--ifm-color-emphasis-700);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.source {
+  margin-top: auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.75rem;
+  color: var(--ifm-color-emphasis-600);
+  letter-spacing: 0.01em;
+}
+
+.sourceIcon {
+  width: 14px;
+  height: 14px;
+  flex: 0 0 auto;
+}
+
+.sourceLabel {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+@media (max-width: 480px) {
+  .shareCard {
+    gap: 0.65rem;
+    padding: 0.65rem;
+  }
+  .thumb {
+    width: 56px;
+    height: 56px;
+  }
+  .title {
+    font-size: 0.9rem;
+  }
+}
