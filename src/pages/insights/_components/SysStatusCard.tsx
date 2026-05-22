@@ -4,6 +4,7 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import { translate } from '@docusaurus/Translate';
 import { Icon } from '@iconify/react';
 import Card from '@site/src/components/laikit/Card';
+import Skeleton from '@site/src/components/laikit/Skeleton';
 import { useSysStatus } from '@site/src/hooks/useSysStatus';
 import metricListStyles from './MetricList.module.css';
 import styles from './SysStatusCard.module.css';
@@ -218,7 +219,7 @@ function SysStatusCardInner() {
 
 export default function SysStatusCard() {
   return (
-    <BrowserOnly fallback={<div className={styles.cardSkeleton} />}>
+    <BrowserOnly fallback={<Skeleton height={240} radius={16} />}>
       {() => <SysStatusCardInner />}
     </BrowserOnly>
   );

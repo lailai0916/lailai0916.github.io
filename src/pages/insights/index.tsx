@@ -10,6 +10,7 @@ import {
   PageContent,
 } from '@site/src/components/laikit/Page';
 import Card from '@site/src/components/laikit/Card';
+import Skeleton from '@site/src/components/laikit/Skeleton';
 import Segmented, {
   type SegmentedItem,
 } from '@site/src/components/laikit/Segmented';
@@ -123,15 +124,13 @@ function HeroMetric({
   return (
     <Card padding="1.5rem 1.5rem 1.25rem" className={styles.heroTile}>
       <span className={styles.heroLabel}>{spec.label}</span>
-      <span
-        className={
-          loading
-            ? `${styles.heroValue} ${styles.skeletonText}`
-            : styles.heroValue
-        }
-      >
-        {loading ? '     ' : spec.format(animated)}
-      </span>
+      {loading ? (
+        <Skeleton className={styles.heroValue} radius="8px">
+          {'     '}
+        </Skeleton>
+      ) : (
+        <span className={styles.heroValue}>{spec.format(animated)}</span>
+      )}
       {loading ? (
         <span className={styles.heroDeltaFlat}>&nbsp;</span>
       ) : delta != null && sign !== 'flat' ? (

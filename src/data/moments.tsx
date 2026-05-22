@@ -1,3 +1,6 @@
+import { translate } from '@docusaurus/Translate';
+import { getAllBlogItems } from '@site/src/utils/blogData';
+
 interface MomentItem {
   date: string;
   content: string;
@@ -6,7 +9,7 @@ interface MomentItem {
   images?: string[];
 }
 
-export const MOMENT_LIST: MomentItem[] = [
+const STATIC_MOMENTS: MomentItem[] = [
   {
     date: '2026-03-30T18:30',
     content:
@@ -38,3 +41,37 @@ export const MOMENT_LIST: MomentItem[] = [
     images: ['https://cloud.lailai.one/f/r4HM/birthday-16.png'],
   },
 ];
+
+function escapeHtml(s: string): string {
+  return s
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;');
+}
+
+function getBlogMoments(): MomentItem[] {
+  return getAllBlogItems()
+    .map((it): MomentItem | null => {
+      const title = it.title ?? it.metadata?.title;
+      const date = it.date ?? it.metadata?.date;
+      const permalink = it.permalink ?? it.metadata?.permalink;
+      if (!title || !date || !permalink) return null;
+      const content = translate(
+        {
+          id: 'data.moments.blogPublished',
+          message:
+            'Published a new post <a href="{permalink}">《{title}》</a>',
+        },
+        { permalink: escapeHtml(permalink), title: escapeHtml(title) }
+      );
+      return { date, content };
+    })
+    .filter((x): x is MomentItem => x !== null);
+}
+
+export const MOMENT_LIST: MomentItem[] = [
+  ...STATIC_MOMENTS,
+  ...getBlogMoments(),
+].sort((a, b) => (a.date < b.date ? 1 : -1));

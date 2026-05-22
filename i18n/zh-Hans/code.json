@@ -38,6 +38,9 @@
   "data.devices.powerbeats-pro.spec": {
     "message": "极速黑 / H2"
   },
+  "data.moments.blogPublished": {
+    "message": "发布了新博文 <a href=\"{permalink}\">《{title}》</a>"
+  },
   "pages.home.nav.contest": {
     "message": "竞赛"
   },

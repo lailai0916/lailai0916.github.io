@@ -1,4 +1,4 @@
-import React, { type CSSProperties } from 'react';
+import React, { type CSSProperties, type ReactNode } from 'react';
 import clsx from 'clsx';
 import styles from './styles.module.css';
 
@@ -8,6 +8,7 @@ interface SkeletonProps {
   radius?: number | string;
   className?: string;
   style?: CSSProperties;
+  children?: ReactNode;
 }
 
 export default function Skeleton({
@@ -16,11 +17,20 @@ export default function Skeleton({
   radius,
   className,
   style,
+  children,
 }: SkeletonProps) {
   return (
     <div
       className={clsx(styles.skeleton, className)}
-      style={{ width, height, borderRadius: radius, ...style }}
-    />
+      style={{
+        width,
+        height,
+        borderRadius: radius,
+        ...(children !== undefined && { color: 'transparent' }),
+        ...style,
+      }}
+    >
+      {children}
+    </div>
   );
 }

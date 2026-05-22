@@ -63,12 +63,6 @@
   border: 0;
 }
 
-.cardSkeleton {
-  composes: skeleton from '../../../components/laikit/Skeleton/styles.module.css';
-  height: 240px;
-  border-radius: 16px;
-}
-
 @media (max-width: 768px) {
   .body {
     grid-template-columns: repeat(2, minmax(0, 1fr));

@@ -1,9 +1,3 @@
-export interface ProcessedBlogPost {
-  title: string;
-  date: string;
-  permalink: string;
-}
-
 interface BlogListItem {
   title?: string;
   date?: string;
@@ -36,8 +30,6 @@ interface BlogPostMetadataSummary {
 
 type JsonModule<T> = { default?: T } | T | undefined;
 
-const PINNED_TAG_PATH_SUFFIX = '/blog/tags/pinned';
-
 function resolveJsonModule<T>(mod: JsonModule<T>): T | null {
   if (!mod) {
     return null;
@@ -46,25 +38,6 @@ function resolveJsonModule<T>(mod: JsonModule<T>): T | null {
     return mod.default as T;
   }
   return mod as T;
-}
-
-function normalizePathname(input: string): string {
-  if (!input) return '';
-  const { pathname } = new URL(input, 'https://example.invalid');
-  return pathname.replace(/\/+$/, '');
-}
-
-function isPinnedTag(
-  tag: { permalink?: string } | string | undefined | null
-): boolean {
-  if (!tag || typeof tag !== 'object') return false;
-  const permalink = tag.permalink;
-  if (!permalink) return false;
-  const normalized = normalizePathname(permalink);
-  return (
-    normalized === PINNED_TAG_PATH_SUFFIX ||
-    normalized.endsWith(PINNED_TAG_PATH_SUFFIX)
-  );
 }
 
 /**
@@ -108,44 +81,6 @@ export function getAllPostMetadata(): BlogPostMetadataSummary[] {
     }
   });
   return list;
-}
-
-export function getRecentBlogPosts(maxCount: number = 4): ProcessedBlogPost[] {
-  const items = getAllBlogItems();
-
-  const allMetadata = getAllPostMetadata();
-  const metadataMap = new Map<string, BlogPostMetadataSummary>();
-  allMetadata.forEach((meta) => {
-    if (meta.permalink) {
-      metadataMap.set(meta.permalink, meta);
-    }
-  });
-
-  const postsWithMetadata = items
-    .map((item) => {
-      const permalink = item.permalink ?? item.metadata?.permalink;
-      const metadata = permalink ? metadataMap.get(permalink) : undefined;
-      const tags = metadata?.tags ?? [];
-
-      return {
-        title: item.title ?? item.metadata?.title,
-        date: item.date ?? item.metadata?.date,
-        permalink,
-        isPinned: tags.some(isPinnedTag),
-      };
-    })
-    .filter((post): post is ProcessedBlogPost & { isPinned: boolean } =>
-      Boolean(post.permalink && post.title && post.date)
-    );
-
-  const sortedPosts = postsWithMetadata.sort((a, b) => {
-    if (a.isPinned !== b.isPinned) {
-      return a.isPinned ? 1 : -1;
-    }
-    return new Date(b.date).getTime() - new Date(a.date).getTime();
-  });
-
-  return sortedPosts.slice(0, maxCount).map(({ isPinned, ...post }) => post);
 }
 
 /**
@@ -203,7 +138,7 @@ export function loadOfficialTags(locale?: string): TagAggregate[] {
   return [];
 }
 
-export type AuthorAggregate = {
+type AuthorAggregate = {
   key: string;
   name?: string;
   page?: { permalink: string };

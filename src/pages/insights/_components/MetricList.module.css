@@ -141,12 +141,6 @@ a.row:focus-visible {
   gap: 0.15rem;
 }
 
-.skeletonRow {
-  composes: skeleton from '../../../components/laikit/Skeleton/styles.module.css';
-  height: 42px;
-  border-radius: 8px;
-}
-
 .flag {
   width: 20px;
   height: 15px;

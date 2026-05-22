@@ -142,12 +142,6 @@ html[data-theme='dark'] .dotDown {
   font-variant-numeric: tabular-nums;
 }
 
-.skeletonRow {
-  composes: skeleton from '../../../components/laikit/Skeleton/styles.module.css';
-  height: 96px;
-  border-radius: 16px;
-}
-
 .empty {
   margin: 0;
   padding: 1.5rem 0.75rem;

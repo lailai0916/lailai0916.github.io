@@ -66,13 +66,6 @@
   color: var(--ifm-color-emphasis-500);
 }
 
-.skeletonText {
-  composes: skeleton from '../../components/laikit/Skeleton/styles.module.css';
-  position: relative;
-  color: transparent;
-  border-radius: 8px;
-}
-
 @media (max-width: 480px) {
   .heroGrid {
     grid-template-columns: repeat(2, minmax(0, 1fr));

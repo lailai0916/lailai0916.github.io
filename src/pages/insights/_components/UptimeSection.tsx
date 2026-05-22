@@ -3,6 +3,7 @@ import { Icon } from '@iconify/react';
 import Link from '@docusaurus/Link';
 import { translate } from '@docusaurus/Translate';
 import Card from '@site/src/components/laikit/Card';
+import Skeleton from '@site/src/components/laikit/Skeleton';
 import { useKumaStatus } from '@site/src/hooks/useKumaStatus';
 import type { KumaHeartbeat, KumaMonitor } from '@site/src/utils/kuma';
 import HeartbeatBar from './HeartbeatBar';
@@ -108,7 +109,7 @@ export default function UptimeSection() {
         <div className={styles.list}>
           {loading ? (
             Array.from({ length: 4 }).map((_, i) => (
-              <div key={i} className={styles.skeletonRow} />
+              <Skeleton key={i} height={96} radius={16} />
             ))
           ) : monitors.length === 0 ? (
             <p className={styles.empty}>

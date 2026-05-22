@@ -2,6 +2,7 @@ import React, { useId, useMemo, useRef, useState } from 'react';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import { translate } from '@docusaurus/Translate';
 import type { SeriesPoint } from '@site/src/hooks/useUmamiPageviewsSeries';
+import Skeleton from '@site/src/components/laikit/Skeleton';
 import Tooltip from '@site/src/components/laikit/Tooltip';
 import { formatCompact } from '@site/src/utils/format';
 import styles from './Sparkline.module.css';
@@ -199,7 +200,7 @@ export default function Sparkline({
     return (
       <div className={styles.wrapper}>
         <div className={styles.sparkline} style={{ height }}>
-          <div className={styles.skeleton} />
+          <Skeleton width="100%" height="100%" radius={14} />
         </div>
         <div className={styles.xAxis} aria-hidden="true" />
       </div>

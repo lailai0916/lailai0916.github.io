@@ -3,6 +3,7 @@ import { Icon } from '@iconify/react';
 import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Card from '@site/src/components/laikit/Card';
+import Skeleton from '@site/src/components/laikit/Skeleton';
 import { formatCompact } from '@site/src/utils/format';
 import styles from './MetricList.module.css';
 
@@ -47,7 +48,7 @@ export default function MetricList({
         {loading ? (
           <div className={styles.skeletonList}>
             {Array.from({ length: 8 }).map((_, i) => (
-              <div key={i} className={styles.skeletonRow} />
+              <Skeleton key={i} height={42} radius={8} />
             ))}
           </div>
         ) : items.length === 0 ? (
