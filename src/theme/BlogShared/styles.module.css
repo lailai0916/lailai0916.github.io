@@ -133,13 +133,6 @@
   font-variant-numeric: tabular-nums;
 }
 
-@media (max-width: 320px) {
-  .statsGrid,
-  .feedGrid {
-    grid-template-columns: 1fr;
-  }
-}
-
 .blogMenu {
   display: grid;
   grid-template-columns: repeat(5, minmax(0, 1fr));
@@ -283,6 +276,13 @@
   letter-spacing: 0.04em;
   font-variant-numeric: tabular-nums;
   line-height: 1;
+}
+
+@media (max-width: 280px) {
+  .statsGrid,
+  .feedGrid {
+    grid-template-columns: 1fr;
+  }
 }
 
 .postCard {
