@@ -201,6 +201,12 @@ export default function Moments() {
             label: formatLocalizedTime(moment.date, currentLocale),
           },
         ];
+        if (moment.event) {
+          metaItems.push({
+            icon: 'lucide:flag',
+            label: moment.event,
+          });
+        }
         if (moment.location) {
           metaItems.push({
             icon: 'lucide:map-pin',
