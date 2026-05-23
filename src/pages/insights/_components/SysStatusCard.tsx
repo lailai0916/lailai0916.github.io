@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import clsx from 'clsx';
 import BrowserOnly from '@docusaurus/BrowserOnly';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import { translate } from '@docusaurus/Translate';
@@ -119,7 +120,7 @@ function Cell({
   return (
     <div className={styles.cell}>
       <span className={styles.key}>{label}</span>
-      <span className={`${styles.val} ${valueClassName ?? ''}`}>{value}</span>
+      <span className={clsx(styles.val, valueClassName)}>{value}</span>
     </div>
   );
 }

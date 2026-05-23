@@ -1,3 +1,4 @@
+import clsx from 'clsx';
 import { Icon } from '@iconify/react';
 import Link from '@docusaurus/Link';
 import { translate } from '@docusaurus/Translate';
@@ -51,7 +52,7 @@ function MonitorRow({
   return (
     <Card padding="1.1rem 1.25rem" className={styles.row}>
       <div className={styles.rowHead}>
-        <span className={`${styles.dot} ${statusCls}`} aria-hidden="true" />
+        <span className={clsx(styles.dot, statusCls)} aria-hidden="true" />
         <div className={styles.nameWrap}>
           {monitor.url ? (
             <Link className={styles.name} href={monitor.url}>

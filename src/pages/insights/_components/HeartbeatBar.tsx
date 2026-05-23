@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
+import clsx from 'clsx';
 import { translate } from '@docusaurus/Translate';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import type { KumaHeartbeat } from '@site/src/utils/kuma';
@@ -136,9 +137,10 @@ export default function HeartbeatBar({
         {padded.map((beat, i) => (
           <span
             key={i}
-            className={`${styles.cell} ${
+            className={clsx(
+              styles.cell,
               beat ? statusClass(beat.status) : styles.empty
-            }`}
+            )}
             onPointerEnter={() => setHoverIdx(i)}
           />
         ))}
@@ -156,9 +158,10 @@ export default function HeartbeatBar({
           </Tooltip.Label>
           <Tooltip.Value>
             <span
-              className={`${styles.dot} ${
+              className={clsx(
+                styles.dot,
                 active ? statusClass(active.status) : styles.empty
-              }`}
+              )}
               aria-hidden="true"
             />
             {statusLabel(active?.status)}
