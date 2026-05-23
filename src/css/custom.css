@@ -89,3 +89,10 @@ article,
   padding: 0.2em 0;
   -webkit-overflow-scrolling: touch;
 }
+
+/* KaTeX 0.13.24 没给 .katex 设 position: relative，导致内部 position:absolute
+   的 .katex-mathml（screen-reader 用的隐藏 MathML）逃逸到 <html>，在含有
+   宽表格的页面上会把整页撑出横向滚动条。KaTeX 0.16+ 已经修复，这里补回。 */
+.katex {
+  position: relative;
+}
