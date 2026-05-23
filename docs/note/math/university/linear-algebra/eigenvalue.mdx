@@ -1,0 +1,163 @@
+---
+title: 特征值与相似矩阵
+---
+
+## 参考资料
+
+- [特征值和特征向量 - 维基百科](https://zh.wikipedia.org/wiki/特征值和特征向量)
+- [对角化 - 维基百科](https://zh.wikipedia.org/wiki/对角化)
+
+## 引入
+
+把矩阵看作 **线性变换**，**特征向量** 就是「方向不变」的向量，**特征值** 是它被拉伸的倍数：
+
+$$
+A\vec\xi=\lambda\vec\xi
+$$
+
+特征值分解把复杂的矩阵变换 **分解为各个方向上的简单伸缩**，是线代后半段的核心。
+
+## 特征值与特征向量
+
+### 定义
+
+设 $A$ 为 $n$ 阶方阵，若存在数 $\lambda$ 和 **非零向量** $\vec\xi$ 使：
+
+$$
+A\vec\xi=\lambda\vec\xi
+$$
+
+则 $\lambda$ 是 $A$ 的 **特征值**，$\vec\xi$ 是对应于 $\lambda$ 的 **特征向量**。
+
+### 求解
+
+由 $(A-\lambda E)\vec\xi=\vec 0$ 有非零解，得 **特征方程**：
+
+$$
+|A-\lambda E|=0
+$$
+
+展开得 **特征多项式**，求根得到所有特征值。对每个 $\lambda_i$ 解 $(A-\lambda_i E)\vec x=\vec 0$ 得特征向量。
+
+### 性质
+
+设 $A$ 的特征值为 $\lambda_1,\lambda_2,\dots,\lambda_n$，则：
+
+$$
+\sum_{i=1}^{n}\lambda_i=\operatorname{tr}(A)=\sum_{i=1}^{n}a_{ii}
+$$
+
+$$
+\prod_{i=1}^{n}\lambda_i=|A|
+$$
+
+|         矩阵         |          特征值          |
+| :------------------: | :----------------------: |
+|         $A$          |        $\lambda$         |
+|         $kA$         |        $k\lambda$        |
+|        $A^m$         |       $\lambda^m$        |
+| $A^{-1}$（$A$ 可逆） |   $\dfrac{1}{\lambda}$   |
+|        $A^T$         | $\lambda$（与 $A$ 相同） |
+|        $f(A)$        |       $f(\lambda)$       |
+
+特征向量在以上变换下 **保持不变**。
+
+### 重要结论
+
+- 不同特征值对应的特征向量 **线性无关**。
+- $k$ 重特征值 $\lambda$ 对应的线性无关特征向量个数 $\le k$。
+
+## 相似矩阵
+
+### 定义
+
+若存在可逆矩阵 $P$ 使：
+
+$$
+P^{-1}AP=B
+$$
+
+则称 $A$ **相似于** $B$，记为 $A\sim B$。
+
+### 性质
+
+相似矩阵具有相同的：
+
+- 行列式：$|A|=|B|$。
+- 秩：$r(A)=r(B)$。
+- 迹：$\operatorname{tr}(A)=\operatorname{tr}(B)$。
+- 特征多项式与特征值。
+- 可逆性。
+
+:::tip
+
+相似的本质：**同一个线性变换** 在 **不同基下** 的矩阵表示。
+$P$ 就是基变换矩阵。
+
+:::
+
+## 相似对角化
+
+### 定义
+
+若 $A\sim\Lambda$（$\Lambda$ 为对角阵），称 $A$ 可 **对角化**。
+
+### 充要条件
+
+$A$ 可对角化 $\iff A$ 有 $n$ 个 **线性无关** 的特征向量。
+
+等价表述：每个 $k$ 重特征值对应恰好 $k$ 个线性无关特征向量。
+
+### 对角化步骤
+
+1. 求特征值 $\lambda_1,\dots,\lambda_n$。
+2. 对每个 $\lambda_i$ 求特征向量。
+3. 若得到 $n$ 个线性无关特征向量 $\vec\xi_1,\dots,\vec\xi_n$，令 $P=(\vec\xi_1,\dots,\vec\xi_n)$，则：
+
+$$
+P^{-1}AP=\operatorname{diag}(\lambda_1,\dots,\lambda_n)
+$$
+
+### 应用：求矩阵的幂
+
+若 $A=P\Lambda P^{-1}$，则：
+
+$$
+A^k=P\Lambda^k P^{-1}=P\operatorname{diag}(\lambda_1^k,\dots,\lambda_n^k)P^{-1}
+$$
+
+## 实对称矩阵
+
+实对称矩阵（$A^T=A$）具有特别好的性质：
+
+- 所有特征值都是 **实数**。
+- 不同特征值的特征向量 **互相正交**。
+- 一定可以 **正交对角化**：存在正交矩阵 $Q$ 使：
+
+$$
+Q^T A Q=Q^{-1}AQ=\Lambda
+$$
+
+### 正交对角化步骤
+
+1. 求特征值与特征向量。
+2. 对每个 $k$ 重特征值，把对应的 $k$ 个特征向量用 **施密特正交化**。
+3. 把所有特征向量 **单位化**，拼成正交矩阵 $Q$。
+
+### 施密特正交化
+
+设线性无关组 $\vec\alpha_1,\vec\alpha_2,\dots$：
+
+$$
+\vec\beta_1=\vec\alpha_1
+$$
+
+$$
+\vec\beta_2=\vec\alpha_2-\frac{(\vec\alpha_2,\vec\beta_1)}{(\vec\beta_1,\vec\beta_1)}\vec\beta_1
+$$
+
+$$
+\vec\beta_k=\vec\alpha_k-\sum_{i=1}^{k-1}\frac{(\vec\alpha_k,\vec\beta_i)}{(\vec\beta_i,\vec\beta_i)}\vec\beta_i
+$$
+
+再单位化：$\vec e_i=\dfrac{\vec\beta_i}{\|\vec\beta_i\|}$。

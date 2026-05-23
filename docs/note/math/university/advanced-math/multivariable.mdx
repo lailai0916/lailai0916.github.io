@@ -1,0 +1,185 @@
+---
+title: 多元函数微积分
+---
+
+## 参考资料
+
+- [多元微积分 - 维基百科](https://zh.wikipedia.org/wiki/多元微积分)
+- [向量分析 - 维基百科](https://zh.wikipedia.org/wiki/向量分析)
+
+## 引入
+
+一元微积分推广到多元：
+
+- **导数** $\to$ **偏导数** / **方向导数** / **梯度**。
+- **定积分** $\to$ **二重 / 三重积分** / **曲线积分** / **曲面积分**。
+- **微积分基本定理** $\to$ **格林公式** / **高斯公式** / **斯托克斯公式**。
+
+## 多元函数
+
+### 极限与连续
+
+$$
+\lim_{(x,y)\to(x_0,y_0)}f(x,y)=A
+$$
+
+要求 $(x,y)$ 沿 **任何路径** 趋近 $(x_0,y_0)$ 时极限都相同。
+
+### 偏导数
+
+$$
+f_x(x_0,y_0)=\lim_{\Delta x\to 0}\frac{f(x_0+\Delta x,y_0)-f(x_0,y_0)}{\Delta x}
+$$
+
+记号：$\dfrac{\partial f}{\partial x}$、$f_x$、$\partial_x f$。
+
+### 全微分
+
+$$
+\mathrm{d}z=\frac{\partial z}{\partial x}\,\mathrm{d}x+\frac{\partial z}{\partial y}\,\mathrm{d}y
+$$
+
+**可微 $\Rightarrow$ 连续、偏导存在**；偏导连续 $\Rightarrow$ 可微。注意 **偏导存在不一定可微**。
+
+### 链式法则
+
+若 $z=f(u,v),u=u(x,y),v=v(x,y)$：
+
+$$
+\frac{\partial z}{\partial x}=\frac{\partial z}{\partial u}\frac{\partial u}{\partial x}+\frac{\partial z}{\partial v}\frac{\partial v}{\partial x}
+$$
+
+### 隐函数求导
+
+由 $F(x,y)=0$ 确定 $y=y(x)$：
+
+$$
+\frac{\mathrm{d}y}{\mathrm{d}x}=-\frac{F_x}{F_y}
+$$
+
+由 $F(x,y,z)=0$ 确定 $z=z(x,y)$：
+
+$$
+\frac{\partial z}{\partial x}=-\frac{F_x}{F_z},\quad \frac{\partial z}{\partial y}=-\frac{F_y}{F_z}
+$$
+
+## 方向导数与梯度
+
+**方向导数**：函数沿单位向量 $\vec l=(\cos\alpha,\cos\beta)$ 的变化率。
+
+$$
+\frac{\partial f}{\partial \vec l}=f_x\cos\alpha+f_y\cos\beta=\nabla f\cdot\vec l
+$$
+
+**梯度**：
+
+$$
+\nabla f=\left(\frac{\partial f}{\partial x},\frac{\partial f}{\partial y},\frac{\partial f}{\partial z}\right)
+$$
+
+梯度方向是函数 **增长最快** 的方向，其模是该方向的方向导数。
+
+## 多元函数极值
+
+### 无条件极值
+
+必要条件：$f_x=f_y=0$（驻点）。
+
+设 $A=f_{xx},B=f_{xy},C=f_{yy}$，$\Delta=AC-B^2$：
+
+|       $\Delta>0$       |   $\Delta<0$   |  $\Delta=0$  |
+| :--------------------: | :------------: | :----------: |
+| $A>0$ 极小，$A<0$ 极大 | 非极值（鞍点） | 不定，需另判 |
+
+### 条件极值：拉格朗日乘数法
+
+求 $f(x,y)$ 在约束 $g(x,y)=0$ 下的极值，构造：
+
+$$
+L(x,y,\lambda)=f(x,y)+\lambda g(x,y)
+$$
+
+令 $L_x=L_y=L_\lambda=0$ 求解。
+
+## 重积分
+
+### 二重积分
+
+$$
+\iint_D f(x,y)\,\mathrm{d}\sigma
+$$
+
+- **直角坐标**：$\mathrm{d}\sigma=\mathrm{d}x\,\mathrm{d}y$，按 $X$-型或 $Y$-型区域化为二次积分。
+- **极坐标**：$\mathrm{d}\sigma=r\,\mathrm{d}r\,\mathrm{d}\theta$。
+
+### 三重积分
+
+$$
+\iiint_\Omega f(x,y,z)\,\mathrm{d}V
+$$
+
+| 坐标系   | 体积元                                                                               |
+| :------- | :----------------------------------------------------------------------------------- |
+| 直角坐标 | $\mathrm{d}V=\mathrm{d}x\,\mathrm{d}y\,\mathrm{d}z$                                  |
+| 柱坐标   | $\mathrm{d}V=r\,\mathrm{d}r\,\mathrm{d}\theta\,\mathrm{d}z$                          |
+| 球坐标   | $\mathrm{d}V=\rho^2\sin\varphi\,\mathrm{d}\rho\,\mathrm{d}\varphi\,\mathrm{d}\theta$ |
+
+## 曲线积分
+
+### 第一类（对弧长）
+
+$$
+\int_L f(x,y)\,\mathrm{d}s=\int_\alpha^\beta f(\varphi(t),\psi(t))\sqrt{\varphi'^2+\psi'^2}\,\mathrm{d}t
+$$
+
+与 **方向无关**。
+
+### 第二类（对坐标）
+
+$$
+\int_L P\,\mathrm{d}x+Q\,\mathrm{d}y
+$$
+
+与 **方向有关**，反向取负号。
+
+## 曲面积分
+
+### 第一类（对面积）
+
+$$
+\iint_\Sigma f(x,y,z)\,\mathrm{d}S
+$$
+
+### 第二类（对坐标）
+
+$$
+\iint_\Sigma P\,\mathrm{d}y\,\mathrm{d}z+Q\,\mathrm{d}z\,\mathrm{d}x+R\,\mathrm{d}x\,\mathrm{d}y
+$$
+
+与 **侧** 有关，反侧取负。
+
+## 三大公式
+
+### 格林公式（平面）
+
+$$
+\oint_L P\,\mathrm{d}x+Q\,\mathrm{d}y=\iint_D\left(\frac{\partial Q}{\partial x}-\frac{\partial P}{\partial y}\right)\mathrm{d}\sigma
+$$
+
+### 高斯公式（散度定理）
+
+$$
+\oiint_\Sigma P\,\mathrm{d}y\,\mathrm{d}z+Q\,\mathrm{d}z\,\mathrm{d}x+R\,\mathrm{d}x\,\mathrm{d}y=\iiint_\Omega\left(\frac{\partial P}{\partial x}+\frac{\partial Q}{\partial y}+\frac{\partial R}{\partial z}\right)\mathrm{d}V
+$$
+
+### 斯托克斯公式
+
+$$
+\oint_L P\,\mathrm{d}x+Q\,\mathrm{d}y+R\,\mathrm{d}z=\iint_\Sigma(\nabla\times\vec F)\cdot\mathrm{d}\vec S
+$$
+
+:::tip
+
+三大公式是同一思想的不同维度：把 **边界上的积分** 转化为 **内部的积分**。一维情形就是牛顿-莱布尼茨公式。
+
+:::

@@ -380,7 +380,14 @@ const sidebars: SidebarsConfig = {
                 type: 'doc',
                 id: 'note/math/university/advanced-math/index',
               },
-              items: [],
+              items: [
+                'note/math/university/advanced-math/limit',
+                'note/math/university/advanced-math/derivative',
+                'note/math/university/advanced-math/integral',
+                'note/math/university/advanced-math/ode',
+                'note/math/university/advanced-math/multivariable',
+                'note/math/university/advanced-math/series',
+              ],
             },
             {
               type: 'category',
@@ -389,7 +396,13 @@ const sidebars: SidebarsConfig = {
                 type: 'doc',
                 id: 'note/math/university/linear-algebra/index',
               },
-              items: [],
+              items: [
+                'note/math/university/linear-algebra/determinant',
+                'note/math/university/linear-algebra/matrix',
+                'note/math/university/linear-algebra/linear-equation',
+                'note/math/university/linear-algebra/eigenvalue',
+                'note/math/university/linear-algebra/quadratic-form',
+              ],
             },
             {
               type: 'category',
@@ -398,7 +411,13 @@ const sidebars: SidebarsConfig = {
                 type: 'doc',
                 id: 'note/math/university/probability-statistics/index',
               },
-              items: [],
+              items: [
+                'note/math/university/probability-statistics/event',
+                'note/math/university/probability-statistics/distribution',
+                'note/math/university/probability-statistics/numerical-feature',
+                'note/math/university/probability-statistics/limit-theorem',
+                'note/math/university/probability-statistics/statistics',
+              ],
             },
             {
               type: 'category',
@@ -407,7 +426,12 @@ const sidebars: SidebarsConfig = {
                 type: 'doc',
                 id: 'note/math/university/discrete-math/index',
               },
-              items: [],
+              items: [
+                'note/math/university/discrete-math/logic',
+                'note/math/university/discrete-math/set-relation',
+                'note/math/university/discrete-math/graph',
+                'note/math/university/discrete-math/algebra',
+              ],
             },
             {
               type: 'category',
@@ -416,7 +440,12 @@ const sidebars: SidebarsConfig = {
                 type: 'doc',
                 id: 'note/math/university/elementary-number-theory/index',
               },
-              items: [],
+              items: [
+                'note/math/university/elementary-number-theory/divisibility',
+                'note/math/university/elementary-number-theory/congruence',
+                'note/math/university/elementary-number-theory/multiplicative',
+                'note/math/university/elementary-number-theory/diophantine',
+              ],
             },
           ],
         },

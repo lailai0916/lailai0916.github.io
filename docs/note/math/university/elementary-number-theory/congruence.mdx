@@ -1,0 +1,177 @@
+---
+title: 同余
+---
+
+## 参考资料
+
+- [同余 - 维基百科](https://zh.wikipedia.org/wiki/同余)
+- [费马小定理 - 维基百科](https://zh.wikipedia.org/wiki/费马小定理)
+
+## 引入
+
+**同余** 是数论的「分类工具」——把所有整数按 **除以 $m$ 的余数** 归类。它把整数的乘法结构搬到了有限集 $\set{0,1,\dots,m-1}$ 上，成为现代密码学（RSA、椭圆曲线）的核心。
+
+## 同余的定义
+
+整数 $a,b$，正整数 $m$，若 $m\mid(a-b)$，称 $a$ **同余于** $b$ 模 $m$，记为：
+
+$$
+a\equiv b\pmod m
+$$
+
+等价表述：$a$ 与 $b$ 除以 $m$ **余数相同**。
+
+## 性质
+
+### 等价关系
+
+模 $m$ 同余满足 **自反、对称、传递**，是 $\mathbb{Z}$ 上的 [等价关系](../discrete-math/set-relation.mdx)。
+
+### 运算保持
+
+设 $a\equiv b,c\equiv d\pmod m$：
+
+$$
+a\pm c\equiv b\pm d,\quad ac\equiv bd\pmod m
+$$
+
+$$
+a^k\equiv b^k\pmod m\,(k\in\mathbb{N})
+$$
+
+### 除法不自动成立
+
+$ac\equiv bc\pmod m\nRightarrow a\equiv b\pmod m$。
+
+正确除法：
+
+$$
+ac\equiv bc\pmod m\Rightarrow a\equiv b\pmod{\frac{m}{\gcd(c,m)}}
+$$
+
+特别地，若 $\gcd(c,m)=1$，则可正常约去。
+
+## 剩余类
+
+模 $m$ 的所有同余类构成 **剩余类环** $\mathbb{Z}_m=\set{[0],[1],\dots,[m-1]}$。
+
+### 完全剩余系
+
+$m$ 个整数，模 $m$ 两两不同余。最常用的是 $\set{0,1,\dots,m-1}$。
+
+### 既约剩余系
+
+完全剩余系中与 $m$ 互素的部分。其大小为 **欧拉函数** $\varphi(m)$。
+
+## 欧拉函数
+
+$\varphi(m)$ 表示 $\set{1,2,\dots,m}$ 中与 $m$ 互素的整数个数。
+
+### 公式
+
+$$
+\varphi(m)=m\prod_{p\mid m}\left(1-\frac{1}{p}\right)
+$$
+
+其中 $p$ 取遍 $m$ 的素因子。
+
+### 性质
+
+- $\varphi(p)=p-1$（$p$ 为素数）。
+- $\varphi(p^k)=p^k-p^{k-1}$。
+- **积性**：$\gcd(a,b)=1\Rightarrow\varphi(ab)=\varphi(a)\varphi(b)$。
+
+详见 [积性函数](multiplicative.mdx)。
+
+## 三大定理
+
+### 费马小定理
+
+设 $p$ 是素数，$\gcd(a,p)=1$：
+
+$$
+a^{p-1}\equiv 1\pmod p
+$$
+
+更一般地，$a^p\equiv a\pmod p$ 对任意 $a$ 成立。
+
+### 欧拉定理
+
+费马小定理的推广。设 $\gcd(a,m)=1$：
+
+$$
+a^{\varphi(m)}\equiv 1\pmod m
+$$
+
+:::tip
+
+欧拉定理的实用价值：求 $a^N\bmod m$ 时，可以把指数对 $\varphi(m)$ 取模，**大大降阶**。这是 RSA 加密的数学基础。
+
+:::
+
+### 威尔逊定理
+
+$p$ 是素数 $\iff$
+
+$$
+(p-1)!\equiv -1\pmod p
+$$
+
+## 线性同余方程
+
+形式：
+
+$$
+ax\equiv b\pmod m
+$$
+
+**解的存在性**：有解 $\iff\gcd(a,m)\mid b$。
+
+**解的个数**：若有解，模 $m$ 意义下恰有 $\gcd(a,m)$ 个解。
+
+**求解**：用 [扩展欧几里得](divisibility.mdx) 求 $a^{-1}\bmod m$（要求 $\gcd(a,m)=1$），然后 $x\equiv a^{-1}b\pmod m$。
+
+## 中国剩余定理（CRT）
+
+设 $m_1,m_2,\dots,m_k$ **两两互素**，方程组：
+
+$$
+\begin{cases}
+x\equiv a_1\pmod{m_1} \\
+x\equiv a_2\pmod{m_2} \\
+\vdots \\
+x\equiv a_k\pmod{m_k}
+\end{cases}
+$$
+
+在模 $M=m_1m_2\cdots m_k$ 意义下有 **唯一解**。
+
+### 构造解
+
+令 $M_i=M/m_i$，$M_i^{-1}$ 是 $M_i$ 模 $m_i$ 的逆元，则：
+
+$$
+x\equiv\sum_{i=1}^{k}a_iM_iM_i^{-1}\pmod M
+$$
+
+:::example
+
+求 $x$ 使 $x\equiv 2\pmod 3,\,x\equiv 3\pmod 5,\,x\equiv 2\pmod 7$。
+
+$M=105$，$M_1=35,M_2=21,M_3=15$。
+
+求逆元：$35\equiv 2\pmod 3$，$2^{-1}\equiv 2\pmod 3$；$21\equiv 1\pmod 5$，逆元为 $1$；$15\equiv 1\pmod 7$，逆元为 $1$。
+
+$x\equiv 2\cdot 35\cdot 2+3\cdot 21\cdot 1+2\cdot 15\cdot 1\equiv 140+63+30\equiv 233\equiv 23\pmod{105}$。
+
+:::
+
+## 快速幂
+
+求 $a^n\bmod m$ 时，用 **二进制分解** $n$：
+
+$$
+a^n=a^{2^{k_1}}\cdot a^{2^{k_2}}\cdots
+$$
+
+边乘边取模，复杂度 $O(\log n)$。这是 RSA、ECDSA 等密码算法的基础操作。

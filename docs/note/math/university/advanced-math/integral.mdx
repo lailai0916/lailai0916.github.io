@@ -1,0 +1,159 @@
+---
+title: 一元积分学
+---
+
+## 参考资料
+
+- [积分 - 维基百科](https://zh.wikipedia.org/wiki/积分)
+- [牛顿-莱布尼茨公式 - 维基百科](https://zh.wikipedia.org/wiki/牛顿-莱布尼茨公式)
+
+## 引入
+
+**积分** 是 [导数](derivative) 的逆运算，几何上是 **面积** 的极限累加。一元积分学包含两条主线：
+
+- **不定积分**：求原函数。
+- **定积分**：求曲边梯形面积，通过 **牛顿-莱布尼茨公式** 与不定积分挂钩。
+
+## 不定积分
+
+### 定义
+
+若 $F'(x)=f(x)$，则 $F(x)$ 是 $f(x)$ 的一个原函数。$f(x)$ 的全体原函数：
+
+$$
+\int f(x)\,\mathrm{d}x=F(x)+C
+$$
+
+### 基本积分表
+
+$$
+\int x^a\,\mathrm{d}x=\frac{x^{a+1}}{a+1}+C\,(a\ne -1),\quad
+\int\frac{1}{x}\,\mathrm{d}x=\ln|x|+C
+$$
+
+$$
+\int e^x\,\mathrm{d}x=e^x+C,\quad
+\int a^x\,\mathrm{d}x=\frac{a^x}{\ln a}+C
+$$
+
+$$
+\int\sin x\,\mathrm{d}x=-\cos x+C,\quad
+\int\cos x\,\mathrm{d}x=\sin x+C
+$$
+
+$$
+\int\sec^2 x\,\mathrm{d}x=\tan x+C,\quad
+\int\csc^2 x\,\mathrm{d}x=-\cot x+C
+$$
+
+$$
+\int\frac{1}{1+x^2}\,\mathrm{d}x=\arctan x+C,\quad
+\int\frac{1}{\sqrt{1-x^2}}\,\mathrm{d}x=\arcsin x+C
+$$
+
+### 三大积分法
+
+| 方法                     | 公式                                                                                   |
+| :----------------------- | :------------------------------------------------------------------------------------- |
+| **第一类换元（凑微分）** | $\int f(\varphi(x))\varphi'(x)\,\mathrm{d}x=\int f(u)\,\mathrm{d}u$                    |
+| **第二类换元**           | 令 $x=\varphi(t)$，$\int f(x)\,\mathrm{d}x=\int f(\varphi(t))\varphi'(t)\,\mathrm{d}t$ |
+| **分部积分**             | $\int u\,\mathrm{d}v=uv-\int v\,\mathrm{d}u$                                           |
+
+:::tip
+
+分部积分的口诀：**反对幂三指**（反三角、对数、幂、三角、指数），越靠前的越优先选作 $u$。
+
+:::
+
+### 特殊技巧
+
+- **三角代换**：$\sqrt{a^2-x^2}$ 令 $x=a\sin t$；$\sqrt{a^2+x^2}$ 令 $x=a\tan t$；$\sqrt{x^2-a^2}$ 令 $x=a\sec t$。
+- **有理函数积分**：部分分式分解。
+- **三角有理式**：万能代换 $t=\tan\dfrac{x}{2}$。
+
+## 定积分
+
+### 定义
+
+$$
+\int_a^b f(x)\,\mathrm{d}x=\lim_{\lambda\to 0}\sum_{i=1}^{n}f(\xi_i)\Delta x_i
+$$
+
+其中 $\lambda=\max\Delta x_i$。
+
+### 性质
+
+$$
+\int_a^b f\,\mathrm{d}x=-\int_b^a f\,\mathrm{d}x,\quad \int_a^a f\,\mathrm{d}x=0
+$$
+
+$$
+\int_a^b(f\pm g)\,\mathrm{d}x=\int_a^b f\,\mathrm{d}x\pm\int_a^b g\,\mathrm{d}x
+$$
+
+$$
+\int_a^b f\,\mathrm{d}x=\int_a^c f\,\mathrm{d}x+\int_c^b f\,\mathrm{d}x
+$$
+
+### 积分中值定理
+
+设 $f\in C[a,b]$，则 $\exists\xi\in[a,b]$ 使：
+
+$$
+\int_a^b f(x)\,\mathrm{d}x=f(\xi)(b-a)
+$$
+
+### 牛顿-莱布尼茨公式
+
+设 $F$ 是 $f$ 的原函数，$f\in C[a,b]$，则：
+
+$$
+\int_a^b f(x)\,\mathrm{d}x=F(b)-F(a)
+$$
+
+这是 **微积分基本定理**，把定积分计算转化为求原函数。
+
+### 变上限积分
+
+$$
+\Phi(x)=\int_a^x f(t)\,\mathrm{d}t\Rightarrow \Phi'(x)=f(x)
+$$
+
+复合形式：
+
+$$
+\frac{\mathrm{d}}{\mathrm{d}x}\int_{\varphi(x)}^{\psi(x)}f(t)\,\mathrm{d}t=f(\psi(x))\psi'(x)-f(\varphi(x))\varphi'(x)
+$$
+
+## 反常积分
+
+### 无穷区间
+
+$$
+\int_a^{+\infty}f(x)\,\mathrm{d}x=\lim_{b\to+\infty}\int_a^b f(x)\,\mathrm{d}x
+$$
+
+### 无界函数
+
+若 $f$ 在 $x=c$ 处无界：
+
+$$
+\int_a^b f(x)\,\mathrm{d}x=\lim_{\varepsilon\to 0^+}\left(\int_a^{c-\varepsilon}+\int_{c+\varepsilon}^b\right)
+$$
+
+### 常用敛散性结论
+
+$$
+\int_1^{+\infty}\frac{1}{x^p}\,\mathrm{d}x\,:\, p>1\text{ 收敛};\quad
+\int_0^1\frac{1}{x^p}\,\mathrm{d}x\,:\, p<1\text{ 收敛}
+$$
+
+## 定积分的几何应用
+
+| 应用                        | 公式                                               |
+| :-------------------------- | :------------------------------------------------- |
+| **平面图形面积**            | $A=\int_a^b\lvert f(x)-g(x)\rvert\,\mathrm{d}x$    |
+| **旋转体体积（绕 $x$ 轴）** | $V=\pi\int_a^b f^2(x)\,\mathrm{d}x$                |
+| **旋转体体积（柱壳法）**    | $V=2\pi\int_a^b x f(x)\,\mathrm{d}x$               |
+| **曲线弧长**                | $L=\int_a^b\sqrt{1+f'^2(x)}\,\mathrm{d}x$          |
+| **旋转曲面面积**            | $S=2\pi\int_a^b f(x)\sqrt{1+f'^2(x)}\,\mathrm{d}x$ |

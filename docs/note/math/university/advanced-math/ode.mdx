@@ -1,0 +1,124 @@
+---
+title: 微分方程
+---
+
+## 参考资料
+
+- [微分方程 - 维基百科](https://zh.wikipedia.org/wiki/微分方程)
+- [常微分方程 - 维基百科](https://zh.wikipedia.org/wiki/常微分方程)
+
+## 引入
+
+**微分方程**（ODE）是含 **未知函数及其导数** 的方程。求解就是反向地从「变化率」还原出 **函数本身**。
+
+最高阶导数的阶数称为方程的 **阶**。本节只讨论 **常微分方程**（自变量只有一个）。
+
+## 基本概念
+
+- **通解**：含 $n$ 个任意常数的解（$n$ 为方程阶数）。
+- **特解**：满足初始条件、常数被确定的解。
+- **初值问题**（Cauchy 问题）：方程 + 初始条件。
+
+## 一阶 ODE
+
+### 可分离变量
+
+$$
+\frac{\mathrm{d}y}{\mathrm{d}x}=f(x)g(y)\Rightarrow \int\frac{\mathrm{d}y}{g(y)}=\int f(x)\,\mathrm{d}x+C
+$$
+
+### 齐次方程
+
+形如 $\dfrac{\mathrm{d}y}{\mathrm{d}x}=\varphi\!\left(\dfrac{y}{x}\right)$，令 $u=\dfrac{y}{x}$ 化为可分离变量。
+
+### 一阶线性方程
+
+$$
+\frac{\mathrm{d}y}{\mathrm{d}x}+P(x)y=Q(x)
+$$
+
+**通解公式**：
+
+$$
+y=e^{-\int P\,\mathrm{d}x}\left(\int Q(x)\,e^{\int P\,\mathrm{d}x}\,\mathrm{d}x+C\right)
+$$
+
+:::tip
+
+记忆方式：「乘积求导」反推。把 $e^{\int P\,\mathrm{d}x}$ 视为 **积分因子**，乘到方程两边后左侧恰是 $(y\cdot e^{\int P\,\mathrm{d}x})'$。
+
+:::
+
+### 伯努利方程
+
+$$
+\frac{\mathrm{d}y}{\mathrm{d}x}+P(x)y=Q(x)y^n\,(n\ne 0,1)
+$$
+
+令 $z=y^{1-n}$ 化为一阶线性。
+
+### 全微分方程
+
+$M(x,y)\,\mathrm{d}x+N(x,y)\,\mathrm{d}y=0$，若 $\dfrac{\partial M}{\partial y}=\dfrac{\partial N}{\partial x}$，则存在 $u(x,y)$ 使原方程为 $\mathrm{d}u=0$。
+
+## 可降阶的高阶 ODE
+
+| 形式                        | 处理                                               |
+| :-------------------------- | :------------------------------------------------- |
+| $y^{(n)}=f(x)$              | 直接 $n$ 次积分                                    |
+| $y''=f(x,y')$（不显含 $y$） | 令 $p=y'$，化为关于 $p$ 的一阶                     |
+| $y''=f(y,y')$（不显含 $x$） | 令 $p=y'$，$y''=p\dfrac{\mathrm{d}p}{\mathrm{d}y}$ |
+
+## 线性高阶 ODE
+
+### 解的结构
+
+二阶齐次线性方程 $y''+p(x)y'+q(x)y=0$：
+
+- 若 $y_1,y_2$ 是两个 **线性无关** 解，则通解 $y=C_1y_1+C_2y_2$。
+
+非齐次方程 $y''+py'+qy=f(x)$：
+
+- 通解 = 对应齐次方程通解 + **一个特解**。
+
+## 常系数线性 ODE
+
+### 二阶齐次
+
+$$
+y''+py'+qy=0
+$$
+
+**特征方程**：$r^2+pr+q=0$，根据判别式分三种情形：
+
+| $\Delta$ | 根                      | 通解                                            |
+| :------: | :---------------------- | :---------------------------------------------- |
+|   $>0$   | $r_1\ne r_2$ 实根       | $y=C_1e^{r_1 x}+C_2e^{r_2 x}$                   |
+|   $=0$   | $r_1=r_2$ 重根          | $y=(C_1+C_2 x)e^{rx}$                           |
+|   $<0$   | $\alpha\pm\beta i$ 复根 | $y=e^{\alpha x}(C_1\cos\beta x+C_2\sin\beta x)$ |
+
+### 非齐次特解（待定系数法）
+
+设 $f(x)=e^{\lambda x}P_m(x)$，特解形式为：
+
+$$
+y^*=x^k e^{\lambda x}Q_m(x)
+$$
+
+$k$ 是 $\lambda$ 作为特征根的重数（不是根则 $k=0$）。
+
+若 $f(x)=e^{\lambda x}[P_l(x)\cos\omega x+Q_n(x)\sin\omega x]$，设 $m=\max(l,n)$：
+
+$$
+y^*=x^k e^{\lambda x}[R_m(x)\cos\omega x+S_m(x)\sin\omega x]
+$$
+
+$k$ 是 $\lambda+\omega i$ 作为特征根的重数。
+
+## 欧拉方程
+
+$$
+x^n y^{(n)}+a_1 x^{n-1}y^{(n-1)}+\dots+a_n y=f(x)
+$$
+
+令 $x=e^t$（$t=\ln x$）化为常系数线性 ODE。
