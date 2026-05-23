@@ -371,11 +371,14 @@
   "blog.menu.archive": {
     "message": "归档"
   },
-  "blog.menu.tags": {
-    "message": "标签"
+  "blog.archive.tab.year": {
+    "message": "按年份"
   },
-  "blog.menu.authors": {
-    "message": "作者"
+  "blog.archive.tab.tags": {
+    "message": "按标签"
+  },
+  "blog.archive.tab.authors": {
+    "message": "按作者"
   },
   "blog.postcard.wordCount": {
     "message": "{word} 词数"

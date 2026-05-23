@@ -97,14 +97,6 @@ export function BlogMenu() {
       to: useBaseUrl('/blog/archive'),
       label: translate({ id: 'blog.menu.archive', message: 'Archive' }),
     },
-    {
-      to: useBaseUrl('/blog/tags'),
-      label: translate({ id: 'blog.menu.tags', message: 'Tags' }),
-    },
-    {
-      to: useBaseUrl('/blog/authors'),
-      label: translate({ id: 'blog.menu.authors', message: 'Authors' }),
-    },
   ];
 
   return (

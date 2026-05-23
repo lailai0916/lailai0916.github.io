@@ -1,34 +1,47 @@
 import React from 'react';
 import { useTheme } from '@site/src/hooks/useTheme';
-import { BlogCard, TagChipList } from '../BlogShared/Components';
 import BlogTagsListPageOriginal from '@theme-original/BlogTagsListPage';
 import type { Props } from '@theme/BlogTagsListPage';
-import BlogScaffold from '../BlogShared/Scaffold';
-import { translate } from '@docusaurus/Translate';
-
-const TITLE = translate({ id: 'blog.pages.tags.title', message: 'Tags' });
-const DESCRIPTION = "Tags of lailai's blog";
+import ArchiveTabs, {
+  type ArchiveTagItem,
+  type ArchiveAuthorItem,
+} from '../BlogShared/ArchiveTabs';
+import { getAllBlogItems, loadOfficialAuthors } from '@site/src/utils/blogData';
 
 export default function BlogTagsListPage(props: Props): React.ReactElement {
   const { isOriginalLayout } = useTheme();
   if (isOriginalLayout) return <BlogTagsListPageOriginal {...props} />;
 
-  const { tags } = props;
-  const sortedTags = React.useMemo(
-    () => [...tags].sort((a, b) => b.count - a.count),
-    [tags]
-  );
+  const posts = getAllBlogItems()
+    .filter(
+      (it) => it.metadata?.date && it.metadata?.permalink && it.metadata?.title
+    )
+    .map((it) => ({
+      metadata: {
+        date: it.metadata!.date as string,
+        permalink: it.metadata!.permalink as string,
+        title: it.metadata!.title as string,
+      },
+    }));
+  const tags: ArchiveTagItem[] = props.tags.map((t) => ({
+    label: t.label,
+    permalink: t.permalink,
+    count: t.count,
+  }));
+  const authors: ArchiveAuthorItem[] = loadOfficialAuthors()
+    .filter((a) => !!a.page?.permalink)
+    .map((a) => ({
+      label: a.name ?? a.key,
+      permalink: a.page!.permalink,
+      count: a.count,
+    }));
+
   return (
-    <BlogScaffold title={TITLE} description={DESCRIPTION}>
-      <BlogCard title={`${TITLE} (${sortedTags.length})`}>
-        <TagChipList
-          items={sortedTags.map((tag) => ({
-            to: tag.permalink,
-            label: tag.label,
-            count: tag.count,
-          }))}
-        />
-      </BlogCard>
-    </BlogScaffold>
+    <ArchiveTabs
+      initialTab="tags"
+      posts={posts}
+      tags={tags}
+      authors={authors}
+    />
   );
 }

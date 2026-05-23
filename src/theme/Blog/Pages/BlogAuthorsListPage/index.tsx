@@ -1,42 +1,53 @@
 import { type ReactNode } from 'react';
-import { translate } from '@docusaurus/Translate';
 
 import { useTheme } from '@site/src/hooks/useTheme';
 import BlogAuthorsListPageOriginal from '@theme-original/Blog/Pages/BlogAuthorsListPage';
 import type { Props } from '@theme/Blog/Pages/BlogAuthorsListPage';
-import { BlogCard, TagChipList } from '../../../BlogShared/Components';
-import BlogScaffold from '../../../BlogShared/Scaffold';
-
-const TITLE = translate({
-  id: 'blog.pages.authors.title',
-  message: 'Authors',
-});
-const DESCRIPTION = "Authors of lailai's blog";
+import ArchiveTabs, {
+  type ArchiveTagItem,
+  type ArchiveAuthorItem,
+} from '../../../BlogShared/ArchiveTabs';
+import { getAllBlogItems, loadOfficialTags } from '@site/src/utils/blogData';
 
 export default function BlogAuthorsListPage(props: Props): ReactNode {
   const { isOriginalLayout } = useTheme();
   if (isOriginalLayout) return <BlogAuthorsListPageOriginal {...props} />;
 
-  const { authors } = props;
-  const items = authors.flatMap((author) => {
-    if (!author.page?.permalink) {
-      return [];
-    }
+  const posts = getAllBlogItems()
+    .filter(
+      (it) => it.metadata?.date && it.metadata?.permalink && it.metadata?.title
+    )
+    .map((it) => ({
+      metadata: {
+        date: it.metadata!.date as string,
+        permalink: it.metadata!.permalink as string,
+        title: it.metadata!.title as string,
+      },
+    }));
 
+  const tags: ArchiveTagItem[] = loadOfficialTags().map((t) => ({
+    label: t.label,
+    permalink: t.permalink,
+    count: t.count,
+  }));
+
+  const authors: ArchiveAuthorItem[] = props.authors.flatMap((author) => {
+    if (!author.page?.permalink) return [];
     return [
       {
-        to: author.page.permalink,
         label: author.name ?? author.key,
+        permalink: author.page.permalink,
         count: author.count,
       },
     ];
   });
 
   return (
-    <BlogScaffold title={TITLE} description={DESCRIPTION}>
-      <BlogCard title={`${TITLE} (${items.length})`}>
-        <TagChipList items={items} />
-      </BlogCard>
-    </BlogScaffold>
+    <ArchiveTabs
+      initialTab="authors"
+      posts={posts}
+      tags={tags}
+      authors={authors}
+    />
   );
 }
