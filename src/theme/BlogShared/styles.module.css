@@ -135,14 +135,8 @@
 
 .blogMenu {
   display: grid;
-  grid-template-columns: repeat(5, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 0.35rem;
-}
-
-@media (max-width: 480px) {
-  .blogMenu {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
 }
 
 .blogMenuItem {

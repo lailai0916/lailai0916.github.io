@@ -322,12 +322,10 @@ function ScaffoldWithProgress({ title, description, children, toc }: Props) {
   return (
     <Layout title={title} description={description}>
       <div className={styles.container}>
-        <main className={styles.main}>
-          <BlogMenu />
-          {children}
-        </main>
+        <main className={styles.main}>{children}</main>
         <aside className={styles.sidebar}>
           <AuthorCard />
+          <BlogMenu />
           {isPostPage ? (
             <TocCard toc={toc} progress={progress} />
           ) : (
