@@ -85,6 +85,7 @@ function PostCard({ item }: PostCardProps) {
     metaItems.unshift({
       icon: 'lucide:pin',
       label: pinnedMetaLabel,
+      className: styles.eyebrowItemPinned,
     });
   }
 

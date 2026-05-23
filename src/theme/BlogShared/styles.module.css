@@ -339,6 +339,11 @@
   gap: 0.3rem;
 }
 
+.eyebrowItemPinned {
+  color: var(--ifm-color-primary);
+  font-weight: 600;
+}
+
 .eyebrowDot {
   width: 3px;
   height: 3px;

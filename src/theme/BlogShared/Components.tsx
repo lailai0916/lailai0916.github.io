@@ -1,4 +1,5 @@
 import React from 'react';
+import clsx from 'clsx';
 import Link from '@docusaurus/Link';
 import { translate } from '@docusaurus/Translate';
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -32,6 +33,7 @@ export type MetaBarItem = {
   icon: string;
   label: React.ReactNode;
   dateTime?: string;
+  className?: string;
 };
 
 export function MetaBar({ items }: { items: MetaBarItem[] }) {
@@ -40,7 +42,7 @@ export function MetaBar({ items }: { items: MetaBarItem[] }) {
       {items.map((item, i) => (
         <React.Fragment key={i}>
           {i > 0 && <span className={styles.eyebrowDot} aria-hidden="true" />}
-          <span className={styles.eyebrowItem}>
+          <span className={clsx(styles.eyebrowItem, item.className)}>
             <Icon icon={item.icon} width={13} height={13} />
             {item.dateTime ? (
               <time dateTime={item.dateTime}>{item.label}</time>
