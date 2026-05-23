@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import clsx from 'clsx';
 import Link from '@docusaurus/Link';
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import { useLocation } from '@docusaurus/router';
 import Layout from '@theme/Layout';
 import type { TOCItem } from '@docusaurus/mdx-loader';
 import { Icon } from '@iconify/react';
@@ -14,35 +15,109 @@ import {
 } from '@site/src/utils/blogData';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import { formatCompact } from '@site/src/utils/format';
-import { BlogCard, BlogMenu, TagChipList, type ChipItem } from './Components';
+import { BlogCard, TagChipList, type ChipItem } from './Components';
 import CalendarCard from './Calendar';
 import styles from './styles.module.css';
+
+type BlogNavKey = 'blog' | 'moments' | 'archive';
 
 type PopularTagItem = ChipItem & {
   count: number;
 };
 
-function AuthorCard() {
+function useActiveBlogNav(): BlogNavKey {
+  const { pathname } = useLocation();
+  const momentsBase = useBaseUrl('/blog/moments');
+  const archiveBase = useBaseUrl('/blog/archive');
+  const tagsBase = useBaseUrl('/blog/tags');
+  const authorsBase = useBaseUrl('/blog/authors');
+
+  const startsWith = (base: string) =>
+    pathname === base ||
+    pathname === `${base}/` ||
+    pathname.startsWith(`${base}/`);
+
+  if (startsWith(momentsBase)) return 'moments';
+  if (
+    startsWith(archiveBase) ||
+    startsWith(tagsBase) ||
+    startsWith(authorsBase)
+  )
+    return 'archive';
+  return 'blog';
+}
+
+function ProfileCard() {
   const author = getAllPostMetadata()
     .flatMap((m) => m.authors ?? [])
     .find((a) => a.key === 'lailai');
   const authorImageUrl = useBaseUrl(author?.imageURL);
+  const blogHref = useBaseUrl('/blog');
+  const momentsHref = useBaseUrl('/blog/moments');
+  const archiveHref = useBaseUrl('/blog/archive');
+  const active = useActiveBlogNav();
 
   if (!author) return null;
 
   return (
     <BlogCard>
-      <div className={styles.authorCard}>
-        <img
-          src={authorImageUrl}
-          alt={author.name}
-          width={96}
-          height={96}
-          className={styles.authorAvatar}
-        />
-        <div className={styles.authorName}>{author.name}</div>
-        <span className={styles.authorAccent} aria-hidden="true" />
-        <div className={styles.authorDesc}>{author.title}</div>
+      <div className={styles.profileCard}>
+        <div className={styles.profileHeader}>
+          <img
+            src={authorImageUrl}
+            alt={author.name}
+            width={96}
+            height={96}
+            className={styles.profileAvatar}
+          />
+          <div className={styles.profileName}>{author.name}</div>
+          <span className={styles.profileAccent} aria-hidden="true" />
+          {author.title && (
+            <div className={styles.profileTitle}>{author.title}</div>
+          )}
+        </div>
+        <nav className={styles.profileNav} aria-label="Blog sections">
+          {(
+            [
+              {
+                value: 'blog' as BlogNavKey,
+                label: translate({ id: 'blog.menu.blog', message: 'Blog' }),
+                href: blogHref,
+              },
+              {
+                value: 'moments' as BlogNavKey,
+                label: translate({
+                  id: 'blog.menu.moments',
+                  message: 'Moments',
+                }),
+                href: momentsHref,
+              },
+              {
+                value: 'archive' as BlogNavKey,
+                label: translate({
+                  id: 'blog.menu.archive',
+                  message: 'Archive',
+                }),
+                href: archiveHref,
+              },
+            ] as const
+          ).map((item) => {
+            const isActive = item.value === active;
+            return (
+              <Link
+                key={item.value}
+                to={item.href}
+                className={clsx(
+                  styles.profileNavItem,
+                  isActive && styles.profileNavItemActive
+                )}
+                aria-current={isActive ? 'page' : undefined}
+              >
+                {item.label}
+              </Link>
+            );
+          })}
+        </nav>
       </div>
     </BlogCard>
   );
@@ -324,8 +399,7 @@ function ScaffoldWithProgress({ title, description, children, toc }: Props) {
       <div className={styles.container}>
         <main className={styles.main}>{children}</main>
         <aside className={styles.sidebar}>
-          <AuthorCard />
-          <BlogMenu />
+          <ProfileCard />
           {isPostPage ? (
             <TocCard toc={toc} progress={progress} />
           ) : (

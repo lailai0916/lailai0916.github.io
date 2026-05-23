@@ -1,8 +1,6 @@
 import React from 'react';
 import clsx from 'clsx';
 import Link from '@docusaurus/Link';
-import { translate } from '@docusaurus/Translate';
-import useBaseUrl from '@docusaurus/useBaseUrl';
 import { Icon } from '@iconify/react';
 import Badge from '@site/src/components/laikit/Badge';
 import Card from '@site/src/components/laikit/Card';
@@ -80,34 +78,5 @@ export function TagChipList({ items }: { items: ChipItem[] }) {
         <TagChip key={item.to} item={item} />
       ))}
     </div>
-  );
-}
-
-export function BlogMenu() {
-  const items = [
-    {
-      to: useBaseUrl('/blog'),
-      label: translate({ id: 'blog.menu.blog', message: 'Blog' }),
-    },
-    {
-      to: useBaseUrl('/blog/moments'),
-      label: translate({ id: 'blog.menu.moments', message: 'Moments' }),
-    },
-    {
-      to: useBaseUrl('/blog/archive'),
-      label: translate({ id: 'blog.menu.archive', message: 'Archive' }),
-    },
-  ];
-
-  return (
-    <Card padding="0.55rem 0.65rem">
-      <nav className={styles.blogMenu}>
-        {items.map((item) => (
-          <Link key={item.to} to={item.to} className={styles.blogMenuItem}>
-            {item.label}
-          </Link>
-        ))}
-      </nav>
-    </Card>
   );
 }
