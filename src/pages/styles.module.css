@@ -268,7 +268,7 @@
 
 @media (max-width: 768px) {
   .hero {
-    padding: 1rem 1rem 4rem;
+    padding: 1rem;
     min-height: auto;
   }
 
