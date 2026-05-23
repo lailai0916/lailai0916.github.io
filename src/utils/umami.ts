@@ -4,7 +4,7 @@ const UMAMI_SHARE_SLUG = 'DDd09iBEYOQw2k9L';
 const SESSION_STORAGE_KEY = 'umami_share_session_v1';
 const SESSION_TTL_MS = 60 * 60 * 1000;
 
-export interface ShareSession {
+interface ShareSession {
   token: string;
   websiteId: string;
 }
@@ -69,7 +69,7 @@ async function fetchShareSession(): Promise<ShareSession> {
   return session;
 }
 
-export async function getShareSession(): Promise<ShareSession> {
+async function getShareSession(): Promise<ShareSession> {
   const cached = readSessionCache();
   if (cached) return cached;
   if (pendingSession) return pendingSession;
@@ -95,7 +95,7 @@ function buildSearch(params?: Record<string, SearchParamValue>): string {
   return `?${usp.toString()}`;
 }
 
-export async function umamiFetch(
+async function umamiFetch(
   pathTemplate: string,
   params?: Record<string, SearchParamValue>,
   init?: Omit<RequestInit, 'headers'>

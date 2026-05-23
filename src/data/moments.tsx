@@ -2,7 +2,7 @@ import { translate } from '@docusaurus/Translate';
 import { getAllBlogItems } from '@site/src/utils/blogData';
 import type { ShareCardProps } from '@site/src/components/laikit/ShareCard';
 
-export interface MomentItem {
+interface MomentItem {
   date: string;
   content?: string;
   event?: string;

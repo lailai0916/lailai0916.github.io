@@ -1,4 +1,3 @@
-import React from 'react';
 import DefaultAdmonitionTypes from '@theme-original/Admonition/Types';
 import type { Props as AdmonitionTypeInfoProps } from '@theme/Admonition/Type/Info';
 

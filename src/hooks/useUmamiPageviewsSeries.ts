@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { umamiFetchJson } from '@site/src/utils/umami';
 import type { InsightsRange, FetchStatus } from './useUmamiStats';
 
-export type SeriesUnit = 'day' | 'hour' | 'month';
+type SeriesUnit = 'day' | 'hour' | 'month';
 
 export interface SeriesPoint {
   x: string;

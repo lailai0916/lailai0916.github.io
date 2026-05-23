@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import type { FetchStatus } from './useUmamiStats';
 
-export interface SysStatus {
+interface SysStatus {
   cpu: number | null;
   mem: number | null;
   mem_used_mb?: number;

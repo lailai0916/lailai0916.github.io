@@ -1,10 +1,4 @@
-import React, {
-  type ReactNode,
-  useEffect,
-  useMemo,
-  useRef,
-  useState,
-} from 'react';
+import { type ReactNode, useEffect, useMemo, useRef, useState } from 'react';
 import { Icon } from '@iconify/react';
 import Layout from '@theme/Layout';
 
@@ -18,7 +12,6 @@ import LinkCard from '@site/src/components/laikit/LinkCard';
 import clsx from 'clsx';
 
 import IconBlock from '@site/src/components/laikit/IconBlock';
-import IconText from '@site/src/components/laikit/IconText';
 import Button from '@site/src/components/laikit/Button';
 import Card from '@site/src/components/laikit/Card';
 import Badge from '@site/src/components/laikit/Badge';

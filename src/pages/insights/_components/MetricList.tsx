@@ -7,7 +7,7 @@ import Skeleton from '@site/src/components/laikit/Skeleton';
 import { formatCompact } from '@site/src/utils/format';
 import styles from './MetricList.module.css';
 
-export interface MetricRow {
+interface MetricRow {
   x: string;
   y: number;
 }

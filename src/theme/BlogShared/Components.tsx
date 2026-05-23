@@ -61,7 +61,7 @@ export type ChipItem = {
   active?: boolean;
 };
 
-export function TagChip({ item }: { item: ChipItem }) {
+function TagChip({ item }: { item: ChipItem }) {
   return (
     <Link to={item.to} className={styles.tagChipLink}>
       <Badge active={item.active} hoverable={!item.active} count={item.count}>

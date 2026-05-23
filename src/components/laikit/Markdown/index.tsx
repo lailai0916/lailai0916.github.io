@@ -1,5 +1,4 @@
 import Heading from '@theme/Heading';
-import Link from '@docusaurus/Link';
 import Translate from '@docusaurus/Translate';
 import styles from './styles.module.css';
 

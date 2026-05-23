@@ -10,7 +10,7 @@ export const DEVICE_LIST: DeviceItem[] = [
   {
     title: 'MacBook Pro (M3 Max)',
     spec: translate({
-      id: 'data.devices.macbook-pro.spec',
+      id: 'data.devices.macbookPro',
       message: '16-inch / Silver / 14 CPU / 30 GPU / 36GB / 1TB',
     }),
     image: 'https://cloud.lailai.one/f/8mqIq/devices-macbook-pro.png',
@@ -18,7 +18,7 @@ export const DEVICE_LIST: DeviceItem[] = [
   {
     title: 'iPad Pro (M1)',
     spec: translate({
-      id: 'data.devices.ipad-pro.spec',
+      id: 'data.devices.ipadPro',
       message: '11-inch / Space Gray / 256GB',
     }),
     image: 'https://cloud.lailai.one/f/kJrfX/devices-ipad-pro.png',
@@ -26,7 +26,7 @@ export const DEVICE_LIST: DeviceItem[] = [
   {
     title: 'iPhone 13',
     spec: translate({
-      id: 'data.devices.iphone.spec',
+      id: 'data.devices.iphone',
       message: 'Starlight / A15 / 256GB',
     }),
     image: 'https://cloud.lailai.one/f/OrKtg/devices-iphone.png',
@@ -34,7 +34,7 @@ export const DEVICE_LIST: DeviceItem[] = [
   {
     title: 'Apple Watch Series 10',
     spec: translate({
-      id: 'data.devices.apple-watch.spec',
+      id: 'data.devices.appleWatch',
       message: 'Titanium / Slate / 46mm / S10',
     }),
     image: 'https://cloud.lailai.one/f/zxpSA/devices-apple-watch.png',
@@ -42,7 +42,7 @@ export const DEVICE_LIST: DeviceItem[] = [
   {
     title: 'AirPods Pro 2',
     spec: translate({
-      id: 'data.devices.airpods-pro.spec',
+      id: 'data.devices.airpodsPro',
       message: 'USB-C / H2 / U1',
     }),
     image: 'https://cloud.lailai.one/f/Aj0UA/devices-airpods-pro.png',
@@ -50,7 +50,7 @@ export const DEVICE_LIST: DeviceItem[] = [
   {
     title: 'AirPods Max 1',
     spec: translate({
-      id: 'data.devices.airpods-max.spec',
+      id: 'data.devices.airpodsMax',
       message: 'USB-C / Midnight / H1',
     }),
     image: 'https://cloud.lailai.one/f/w0phg/devices-airpods-max.png',
@@ -58,7 +58,7 @@ export const DEVICE_LIST: DeviceItem[] = [
   {
     title: 'Powerbeats Pro 2',
     spec: translate({
-      id: 'data.devices.powerbeats-pro.spec',
+      id: 'data.devices.powerbeatsPro',
       message: 'Jet Black / H2',
     }),
     image: 'https://cloud.lailai.one/f/rXNHM/devices-powerbeats-pro.png',

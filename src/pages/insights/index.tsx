@@ -1,4 +1,4 @@
-import React, { type ReactNode, useState } from 'react';
+import { type ReactNode, useState } from 'react';
 import Layout from '@theme/Layout';
 import { translate } from '@docusaurus/Translate';
 import * as countries from 'i18n-iso-countries';

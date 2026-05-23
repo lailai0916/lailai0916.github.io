@@ -1,4 +1,3 @@
-import React from 'react';
 import clsx from 'clsx';
 import { Icon } from '@iconify/react';
 import styles from './styles.module.css';

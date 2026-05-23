@@ -7,7 +7,7 @@ export interface ColorState {
   shades: Shades;
 }
 
-export interface Shades {
+interface Shades {
   [cssVar: string]: {
     adjustment: number;
     adjustmentInput: string;
@@ -87,7 +87,7 @@ export function getThemeStorage() {
   return themeStorage;
 }
 
-export function getAdjustedColors(
+function getAdjustedColors(
   shades: Shades,
   baseColor: string
 ): (Shades[string] & { variableName: string; hex: string })[] {

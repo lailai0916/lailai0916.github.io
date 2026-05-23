@@ -1,4 +1,4 @@
-import React, { type ReactNode } from 'react';
+import { type ReactNode } from 'react';
 import clsx from 'clsx';
 import { Icon } from '@iconify/react';
 import styles from './styles.module.css';

@@ -2,7 +2,7 @@ import React, { type ReactNode } from 'react';
 import clsx from 'clsx';
 import styles from './styles.module.css';
 
-export interface SliderTick {
+interface SliderTick {
   value: number;
   label: ReactNode;
 }

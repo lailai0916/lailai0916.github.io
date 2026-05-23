@@ -1,4 +1,4 @@
-import React, { useState, useEffect, type ReactNode } from 'react';
+import { useState, useEffect, type ReactNode } from 'react';
 import confetti from 'canvas-confetti';
 import Color from 'color';
 import { translate } from '@docusaurus/Translate';

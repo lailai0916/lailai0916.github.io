@@ -6,23 +6,23 @@ import { formatCompact } from '@site/src/utils/format';
 import styles from './styles.module.css';
 
 const STARS_LABEL = translate({
-  id: 'components.laikit.github.stars',
+  id: 'components.github.stars',
   message: 'Stars',
 });
 const FORKS_LABEL = translate({
-  id: 'components.laikit.github.forks',
+  id: 'components.github.forks',
   message: 'Forks',
 });
 const LICENSE_LABEL = translate({
-  id: 'components.laikit.github.license',
+  id: 'components.github.license',
   message: 'License',
 });
 const LANGUAGE_LABEL = translate({
-  id: 'components.laikit.github.language',
+  id: 'components.github.language',
   message: 'Primary language',
 });
 const ERROR_LABEL = translate({
-  id: 'components.laikit.github.error',
+  id: 'components.github.error',
   message: 'Failed to load GitHub data',
 });
 

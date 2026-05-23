@@ -2,10 +2,10 @@ import React from 'react';
 import clsx from 'clsx';
 import styles from './styles.module.css';
 
-export type ButtonVariant = 'primary' | 'secondary' | 'ghost';
-export type ButtonSize = 'sm' | 'md' | 'lg';
+type ButtonVariant = 'primary' | 'secondary' | 'ghost';
+type ButtonSize = 'sm' | 'md' | 'lg';
 
-export type ButtonProps = Omit<
+type ButtonProps = Omit<
   React.ButtonHTMLAttributes<HTMLButtonElement>,
   'type'
 > & {

@@ -7,7 +7,7 @@ import {
 } from '@site/src/utils/kuma';
 import type { FetchStatus } from './useUmamiStats';
 
-export interface KumaCombined {
+interface KumaCombined {
   page: KumaStatusPageData;
   heartbeats: KumaHeartbeatData;
 }

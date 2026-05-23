@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef } from 'react';
 
 import BrowserOnly from '@docusaurus/BrowserOnly';
 import Giscus from '@giscus/react';

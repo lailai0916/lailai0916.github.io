@@ -134,14 +134,6 @@ html[data-theme='dark'] .dotDown {
   color: var(--ifm-color-emphasis-600);
 }
 
-.rowFoot {
-  display: flex;
-  justify-content: space-between;
-  font-size: 0.78rem;
-  color: var(--ifm-color-emphasis-600);
-  font-variant-numeric: tabular-nums;
-}
-
 .empty {
   margin: 0;
   padding: 1.5rem 0.75rem;

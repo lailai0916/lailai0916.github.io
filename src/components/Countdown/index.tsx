@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import SectionContainer, {
   SectionHeader,
 } from '@site/src/components/laikit/Section';

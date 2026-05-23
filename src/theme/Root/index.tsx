@@ -1,4 +1,4 @@
-import React, { useState, useEffect, type ReactNode } from 'react';
+import { useState, useEffect, type ReactNode } from 'react';
 import BrowserOnly from '@docusaurus/BrowserOnly';
 import { ThemeContext } from '@site/src/hooks/useTheme';
 import CookieConsent from './CookieConsent';

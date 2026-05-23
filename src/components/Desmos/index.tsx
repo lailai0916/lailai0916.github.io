@@ -1,5 +1,3 @@
-import React from 'react';
-
 export default function Desmos({ id }: { id: string }) {
   const url = `https://www.desmos.com/calculator/${id}?embed`;
 

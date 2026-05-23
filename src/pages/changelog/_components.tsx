@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react';
+import { useMemo } from 'react';
 import { translate } from '@docusaurus/Translate';
 import { CHANGELOG_LIST, TYPE_LABEL } from '@site/src/data/changelog';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';

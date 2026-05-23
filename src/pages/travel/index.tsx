@@ -1,4 +1,4 @@
-import React, { type ReactNode } from 'react';
+import { type ReactNode } from 'react';
 import Layout from '@theme/Layout';
 import {
   PageTitle,

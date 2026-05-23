@@ -312,22 +312,22 @@ export const CHANGELOG_LIST: ChangelogItem[] = [
 ];
 
 export const TYPE_LABEL = {
-  added: translate({ id: 'data.changelog.type.added', message: '[Added]' }),
+  added: translate({ id: 'data.changelog.added', message: '[Added]' }),
   changed: translate({
-    id: 'data.changelog.type.changed',
+    id: 'data.changelog.changed',
     message: '[Changed]',
   }),
   deprecated: translate({
-    id: 'data.changelog.type.deprecated',
+    id: 'data.changelog.deprecated',
     message: '[Deprecated]',
   }),
   removed: translate({
-    id: 'data.changelog.type.removed',
+    id: 'data.changelog.removed',
     message: '[Removed]',
   }),
-  fixed: translate({ id: 'data.changelog.type.fixed', message: '[Fixed]' }),
+  fixed: translate({ id: 'data.changelog.fixed', message: '[Fixed]' }),
   security: translate({
-    id: 'data.changelog.type.security',
+    id: 'data.changelog.security',
     message: '[Security]',
   }),
 } as const;

@@ -1,11 +1,11 @@
-import React, { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Icon } from '@iconify/react';
 import Card from '@site/src/components/laikit/Card';
 import styles from './styles.module.css';
 
 const IMAGE_LOAD_TIMEOUT_MS = 3000;
 
-export interface ShareSource {
+interface ShareSource {
   label: string;
   icon?: string;
 }

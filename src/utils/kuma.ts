@@ -9,7 +9,7 @@ export interface KumaMonitor {
   url?: string;
 }
 
-export interface KumaPublicGroup {
+interface KumaPublicGroup {
   id: number;
   name: string;
   weight: number;

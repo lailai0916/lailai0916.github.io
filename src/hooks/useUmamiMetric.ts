@@ -2,9 +2,9 @@ import { useEffect, useState } from 'react';
 import { umamiFetchJson } from '@site/src/utils/umami';
 import type { InsightsRange, FetchStatus } from './useUmamiStats';
 
-export type MetricType = 'path' | 'referrer' | 'country' | 'device' | 'browser';
+type MetricType = 'path' | 'referrer' | 'country' | 'device' | 'browser';
 
-export interface MetricItem {
+interface MetricItem {
   x: string;
   y: number;
 }

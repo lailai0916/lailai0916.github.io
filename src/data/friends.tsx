@@ -1,4 +1,4 @@
-export interface FriendItem {
+interface FriendItem {
   title: string;
   description?: string;
   href: string;
