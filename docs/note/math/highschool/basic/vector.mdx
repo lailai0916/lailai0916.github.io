@@ -525,3 +525,227 @@ $$
 证明过程：
 
 ![](https://cloud.lailai.one/f/91fB/vector-image-2.png)
+
+## 应用
+
+向量将 **代数运算** 与 **几何关系** 统一，是处理长度、角度、共线、共面问题的有力工具。
+
+### 余弦定理的向量证明
+
+在 $\triangle ABC$ 中，记 $|BC|=a,|CA|=b,|AB|=c$，求证：
+
+$$
+a^2=b^2+c^2-2bc\cos A
+$$
+
+设 $\overrightarrow{AB}=\vec c,\overrightarrow{AC}=\vec b$，则 $\overrightarrow{BC}=\vec b-\vec c$。两边平方：
+
+$$
+\begin{aligned}
+|BC|^2&=(\vec b-\vec c)\cdot(\vec b-\vec c)\\
+&=|\vec b|^2-2\vec b\cdot\vec c+|\vec c|^2\\
+&=b^2+c^2-2bc\cos A
+\end{aligned}
+$$
+
+即 $a^2=b^2+c^2-2bc\cos A$。$\blacksquare$
+
+### 正弦定理的向量证明
+
+在 $\triangle ABC$ 中，求证：
+
+$$
+\frac{a}{\sin A}=\frac{b}{\sin B}=\frac{c}{\sin C}
+$$
+
+由 $\overrightarrow{AB}+\overrightarrow{BC}+\overrightarrow{CA}=\vec 0$，两边同时与某一向量做点积构造关系；更直接的方法是用面积统一表达：
+
+$$
+S_{\triangle ABC}=\frac{1}{2}|\overrightarrow{AB}||\overrightarrow{AC}|\sin A=\frac{1}{2}bc\sin A
+$$
+
+同理 $S=\frac{1}{2}ac\sin B=\frac{1}{2}ab\sin C$，比较即得：
+
+$$
+\frac{\sin A}{a}=\frac{\sin B}{b}=\frac{\sin C}{c}
+$$
+
+详见 [解三角形](../geometry/triangle)。
+
+### 几何位置关系的判定
+
+|    问题    |                                       向量条件                                       |
+| :--------: | :----------------------------------------------------------------------------------: |
+|  三点共线  |                  $\overrightarrow{AB}\parallel\overrightarrow{AC}$                   |
+| 两向量垂直 |                                $\vec a\cdot\vec b=0$                                 |
+| 两向量平行 |                     $\vec a=\lambda\vec b$（$\vec b\ne\vec 0$）                      |
+| 求线段长度 | $\lvert\overrightarrow{AB}\rvert=\sqrt{\overrightarrow{AB}\cdot\overrightarrow{AB}}$ |
+| 求向量夹角 |     $\cos\theta=\dfrac{\vec a\cdot\vec b}{\lvert\vec a\rvert\lvert\vec b\rvert}$     |
+
+### 物理应用
+
+向量也是描述物理量（力、速度、位移、加速度等）的标准工具：
+
+- **合力 / 合速度**：用 **三角形法则** 或 **平行四边形法则** 求和。
+- **力做功**：$W=\vec F\cdot\vec s$，恰为向量数量积。
+- **力的分解**：在斜面、悬挂等问题中，将力沿正交方向分解。
+
+## 空间向量
+
+上文的向量概念、线性运算与数量积可以自然推广到三维空间。**空间向量法** 是新高考立体几何大题的标准解法：把几何问题转化为坐标计算。
+
+### 基本概念
+
+在空间中，具有 **大小** 和 **方向** 的量称为 **空间向量**。
+
+空间向量的加法、减法、数乘运算法则与平面向量完全相同，**平行四边形法则** 和 **三角形法则** 在空间仍然成立。
+
+- **共线向量**：方向 **相同或相反** 的两个非零向量。
+- **共面向量**：可以平移到 **同一平面内** 的若干向量。
+
+**共线向量定理**：对空间任意两个向量 $\vec a,\vec b\ (\vec b\ne\vec 0)$，
+
+$$
+\vec a\parallel\vec b\iff\exists\lambda\in\mathbb{R},\ \vec a=\lambda\vec b
+$$
+
+**共面向量定理**：若 $\vec a,\vec b$ 不共线，则向量 $\vec p$ 与 $\vec a,\vec b$ 共面当且仅当
+
+$$
+\exists x,y\in\mathbb{R},\ \vec p=x\vec a+y\vec b
+$$
+
+### 空间向量基本定理
+
+如果三个向量 $\vec a,\vec b,\vec c$ **不共面**，那么对空间中任意向量 $\vec p$，存在 **唯一** 的有序实数组 $(x,y,z)$ 使得：
+
+$$
+\vec p=x\vec a+y\vec b+z\vec c
+$$
+
+称 $\{\vec a,\vec b,\vec c\}$ 为空间的一组 **基底**，特别地，当三者 **两两垂直且为单位向量** 时，称为 **单位正交基底**，记作 $\{\vec i,\vec j,\vec k\}$。
+
+### 空间直角坐标系
+
+在空间中取一点 $O$ 作为原点，作三条 **两两垂直** 的数轴 $x,y,z$（一般按 **右手系**：右手伸开，拇指、食指、中指依次指向 $x,y,z$ 正方向），称为 **空间直角坐标系** $O$-$xyz$。
+
+空间任意一点 $P$ 都可由有序实数组 $(x,y,z)$ 唯一表示。
+
+### 空间向量的坐标运算
+
+设 $\vec a=(x_1,y_1,z_1)$，$\vec b=(x_2,y_2,z_2)$，$\lambda\in\mathbb{R}$。
+
+|     运算     |                                             坐标公式                                              |
+| :----------: | :-----------------------------------------------------------------------------------------------: |
+|   **加法**   |                             $\vec a+\vec b=(x_1+x_2,y_1+y_2,z_1+z_2)$                             |
+|   **减法**   |                             $\vec a-\vec b=(x_1-x_2,y_1-y_2,z_1-z_2)$                             |
+|   **数乘**   |                       $\lambda\vec a=(\lambda x_1,\lambda y_1,\lambda z_1)$                       |
+|  **数量积**  |                             $\vec a\cdot\vec b=x_1x_2+y_1y_2+z_1z_2$                              |
+|    **模**    |                           $\lvert\vec a\rvert=\sqrt{x_1^2+y_1^2+z_1^2}$                           |
+| **夹角余弦** | $\cos\langle\vec a,\vec b\rangle=\dfrac{\vec a\cdot\vec b}{\lvert\vec a\rvert\lvert\vec b\rvert}$ |
+
+设 $\vec a,\vec b$ 都是非零向量，
+
+$$
+\vec a\parallel\vec b\iff\vec a=\lambda\vec b\iff\frac{x_1}{x_2}=\frac{y_1}{y_2}=\frac{z_1}{z_2}
+$$
+
+$$
+\vec a\perp\vec b\iff\vec a\cdot\vec b=0\iff x_1x_2+y_1y_2+z_1z_2=0
+$$
+
+设 $A(x_1,y_1,z_1)$、$B(x_2,y_2,z_2)$，两点间距离：
+
+$$
+|AB|=\sqrt{(x_1-x_2)^2+(y_1-y_2)^2+(z_1-z_2)^2}
+$$
+
+### 立体几何中的应用
+
+将立体几何中的位置与度量关系全部转化为向量运算，是 **空间向量法** 的核心思想。
+
+- **直线的方向向量**：与直线 **平行** 的任意非零向量。
+- **平面的法向量**：与平面 **垂直** 的任意非零向量，记作 $\vec n$。
+
+**求平面法向量** 的标准步骤（设 $\vec n=(x,y,z)$）：
+
+1. 在平面内取两个 **不共线** 的向量 $\vec a,\vec b$。
+2. 联立方程组 $\begin{cases}\vec n\cdot\vec a=0\\\vec n\cdot\vec b=0\end{cases}$。
+3. 令其中一个分量为特殊值（如 $1$），解出 $\vec n$。
+
+设直线 $l_1,l_2$ 的方向向量分别为 $\vec u_1,\vec u_2$，平面 $\alpha,\beta$ 的法向量分别为 $\vec n_1,\vec n_2$。
+
+|          关系          |                      条件                      |
+| :--------------------: | :--------------------------------------------: |
+|   $l_1\parallel l_2$   |          $\vec u_1\parallel\vec u_2$           |
+|     $l_1\perp l_2$     |            $\vec u_1\perp\vec u_2$             |
+|   $l\parallel\alpha$   | $\vec u\perp\vec n$（且 $l$ 不在 $\alpha$ 内） |
+|     $l\perp\alpha$     |            $\vec u\parallel\vec n$             |
+| $\alpha\parallel\beta$ |          $\vec n_1\parallel\vec n_2$           |
+|   $\alpha\perp\beta$   |            $\vec n_1\perp\vec n_2$             |
+
+### 空间角度计算
+
+**结果均取锐角或直角**。
+
+**异面直线 $l_1$ 与 $l_2$ 所成角** $\theta\in(0,\frac{\pi}{2}]$：
+
+$$
+\cos\theta=\frac{\lvert\vec u_1\cdot\vec u_2\rvert}{\lvert\vec u_1\rvert\lvert\vec u_2\rvert}
+$$
+
+**直线 $l$ 与平面 $\alpha$ 所成角**（线面角）$\theta\in[0,\frac{\pi}{2}]$：
+
+$$
+\sin\theta=\frac{\lvert\vec u\cdot\vec n\rvert}{\lvert\vec u\rvert\lvert\vec n\rvert}
+$$
+
+:::tip
+
+线面角是 **方向向量** 与 **法向量** 夹角的 **余角**，所以是 **sin** 而不是 cos。
+
+:::
+
+**二面角** $\alpha$-$l$-$\beta$ 的大小 $\theta\in[0,\pi]$：
+
+$$
+\cos\theta=\pm\frac{\vec n_1\cdot\vec n_2}{\lvert\vec n_1\rvert\lvert\vec n_2\rvert}
+$$
+
+正负号由 **二面角的实际开合方向** 决定：若两法向量同时指向二面角 **内部** 或同时指向 **外部**，取 $-$；否则取 $+$。建模时常通过观察图形或验证特殊点位置确定符号。
+
+### 空间距离计算
+
+设 $P$ 为空间一点，$\vec n$ 为平面 $\alpha$ 的法向量，$A$ 为平面 $\alpha$ 内任意一点。
+
+**点到平面的距离**：
+
+$$
+d=\frac{\lvert\overrightarrow{AP}\cdot\vec n\rvert}{\lvert\vec n\rvert}
+$$
+
+**点到直线的距离**：设 $\vec u$ 为直线 $l$ 的方向向量，$A\in l$，
+
+$$
+d=\sqrt{\lvert\overrightarrow{AP}\rvert^2-\left(\frac{\overrightarrow{AP}\cdot\vec u}{\lvert\vec u\rvert}\right)^2}
+$$
+
+**两异面直线的距离**：设 $\vec u_1,\vec u_2$ 分别为两直线方向向量，$A,B$ 分别为两直线上任意点。取与 $\vec u_1,\vec u_2$ 均垂直的公垂向量 $\vec n$，
+
+$$
+d=\frac{\lvert\overrightarrow{AB}\cdot\vec n\rvert}{\lvert\vec n\rvert}
+$$
+
+### 空间向量法解题流程
+
+1. **建系**：选取「三线两两垂直」的顶点为原点，构造右手系，**优先利用已有的直角关系**。
+2. **写点**：写出所有关键点的坐标。
+3. **写向量**：写出所需直线的方向向量、平面的法向量。
+4. **代公式**：按所求量代入夹角或距离公式。
+5. **检验**：核对答案的几何意义（角度范围、距离正值等）。
+
+:::tip
+
+并非所有题目都适合建系，当几何体中找不到天然的两两垂直关系时（如一般四面体），传统的 **综合法** 反而更简洁。
+
+:::
