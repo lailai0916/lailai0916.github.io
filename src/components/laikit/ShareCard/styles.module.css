@@ -27,8 +27,9 @@
 
 .thumb {
   flex: 0 0 auto;
-  width: 64px;
-  height: 64px;
+  align-self: center;
+  width: 48px;
+  height: 48px;
   border-radius: 8px;
   overflow: hidden;
   background: var(--ifm-color-emphasis-200);
@@ -51,8 +52,8 @@
 }
 
 .thumbFallback {
-  width: 28px;
-  height: 28px;
+  width: 22px;
+  height: 22px;
 }
 
 .body {
@@ -60,14 +61,15 @@
   min-width: 0;
   display: flex;
   flex-direction: column;
-  gap: 0.25rem;
+  justify-content: center;
+  gap: 0.3rem;
 }
 
 .title {
   margin: 0;
   font-size: 0.95rem;
   font-weight: 600;
-  line-height: 1.4;
+  line-height: 1.35;
   color: var(--ifm-font-color-base);
   display: -webkit-box;
   -webkit-line-clamp: 2;
@@ -76,33 +78,37 @@
   word-break: break-word;
 }
 
-.description {
-  margin: 0;
-  font-size: 0.82rem;
-  line-height: 1.45;
+.meta {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.78rem;
+  line-height: 1.4;
+  letter-spacing: 0.01em;
+  min-width: 0;
+}
+
+.sourceLabel {
+  flex: 0 0 auto;
+  font-weight: 500;
   color: var(--ifm-color-emphasis-700);
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
 
-.source {
-  margin-top: auto;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.35rem;
-  font-size: 0.75rem;
-  color: var(--ifm-color-emphasis-600);
-  letter-spacing: 0.01em;
-}
-
-.sourceIcon {
-  width: 14px;
-  height: 14px;
+.metaDot {
   flex: 0 0 auto;
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: var(--ifm-color-emphasis-400);
 }
 
-.sourceLabel {
+.description {
+  flex: 1 1 auto;
+  min-width: 0;
+  color: var(--ifm-color-emphasis-600);
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -114,8 +120,8 @@
     padding: 0.65rem;
   }
   .thumb {
-    width: 56px;
-    height: 56px;
+    width: 44px;
+    height: 44px;
   }
   .title {
     font-size: 0.9rem;

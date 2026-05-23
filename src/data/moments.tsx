@@ -17,7 +17,7 @@ const STATIC_MOMENTS: MomentItem[] = [
     share: {
       url: 'https://www.bilibili.com/video/BV1R4fnBhELd',
       title: 'LGS Paintboard 2026 延时动画',
-      description: 'lailai0916 · LGS Paintboard 2026',
+      description: 'lailai0916',
     },
   },
   {
