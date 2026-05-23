@@ -4,6 +4,7 @@ import BlogTagsPostsPageOriginal from '@theme-original/BlogTagsPostsPage';
 import type { Props } from '@theme/BlogTagsPostsPage';
 import BlogScaffold from '../BlogShared/Scaffold';
 import { BlogArchiveList } from '../BlogShared/ArchiveList';
+import { ArchiveTabsNav } from '../BlogShared/ArchiveTabs';
 
 import { translate } from '@docusaurus/Translate';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
@@ -54,6 +55,7 @@ function CustomBlogTagsPostsPage(props: Props): React.ReactElement {
 
   return (
     <BlogScaffold title={tag.label} description={tag.description}>
+      <ArchiveTabsNav activeTab="tags" />
       <TagSelector activePermalink={tag.permalink} />
       <BlogArchiveList posts={posts} />
       <Paginator meta={listMetadata} />

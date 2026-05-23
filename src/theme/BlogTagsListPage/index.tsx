@@ -37,11 +37,6 @@ export default function BlogTagsListPage(props: Props): React.ReactElement {
     }));
 
   return (
-    <ArchiveTabs
-      initialTab="tags"
-      posts={posts}
-      tags={tags}
-      authors={authors}
-    />
+    <ArchiveTabs activeTab="tags" posts={posts} tags={tags} authors={authors} />
   );
 }

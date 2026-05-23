@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useState } from 'react';
+import React, { useMemo, useState } from 'react';
 import Head from '@docusaurus/Head';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import { translate } from '@docusaurus/Translate';
@@ -32,8 +32,6 @@ export type ArchiveAuthorItem = {
   count: number;
 };
 
-const TABS: ArchiveTab[] = ['year', 'tags', 'authors'];
-
 const PAGE_TITLE = translate({
   id: 'blog.pages.archive.title',
   message: 'Archive',
@@ -66,39 +64,27 @@ function getPostYear(post: PostLike): number {
   return Number(formatBeijingDate(post.metadata.date).slice(0, 4));
 }
 
-function parseHash(hash: string): ArchiveTab | null {
-  const v = hash.replace(/^#/, '') as ArchiveTab;
-  return (TABS as string[]).includes(v) ? v : null;
-}
+/**
+ * Link-based segmented bar shared by archive list pages and tag/author
+ * detail pages. Each tab navigates to its canonical landing URL; the active
+ * state is driven by `activeTab` (derived from the current page's context).
+ */
+export function ArchiveTabsNav({ activeTab }: { activeTab: ArchiveTab }) {
+  const yearHref = useBaseUrl('/blog/archive');
+  const tagsHref = useBaseUrl('/blog/tags');
+  const authorsHref = useBaseUrl('/blog/authors');
 
-function useHashTab(
-  initial: ArchiveTab
-): [ArchiveTab, (t: ArchiveTab) => void] {
-  const [tab, setTab] = useState<ArchiveTab>(initial);
-
-  // Sync from initial hash on mount
-  useEffect(() => {
-    if (typeof window === 'undefined') return;
-    const fromHash = parseHash(window.location.hash);
-    if (fromHash && fromHash !== tab) setTab(fromHash);
-    const onHashChange = () => {
-      const next = parseHash(window.location.hash);
-      if (next) setTab(next);
-    };
-    window.addEventListener('hashchange', onHashChange);
-    return () => window.removeEventListener('hashchange', onHashChange);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
-
-  const update = (next: ArchiveTab) => {
-    setTab(next);
-    if (typeof window !== 'undefined') {
-      const url = `${window.location.pathname}${window.location.search}#${next}`;
-      window.history.replaceState(null, '', url);
-    }
-  };
-
-  return [tab, update];
+  return (
+    <Segmented<ArchiveTab>
+      value={activeTab}
+      orientation="horizontal"
+      items={[
+        { value: 'year', label: TAB_LABEL_YEAR, href: yearHref },
+        { value: 'tags', label: TAB_LABEL_TAGS, href: tagsHref },
+        { value: 'authors', label: TAB_LABEL_AUTHORS, href: authorsHref },
+      ]}
+    />
+  );
 }
 
 function YearView({ posts }: { posts: readonly PostLike[] }) {
@@ -184,19 +170,18 @@ function AuthorsView({ authors }: { authors: readonly ArchiveAuthorItem[] }) {
 }
 
 interface ArchiveTabsProps {
-  initialTab: ArchiveTab;
+  activeTab: ArchiveTab;
   posts: readonly PostLike[];
   tags: readonly ArchiveTagItem[];
   authors: readonly ArchiveAuthorItem[];
 }
 
 export default function ArchiveTabs({
-  initialTab,
+  activeTab,
   posts,
   tags,
   authors,
 }: ArchiveTabsProps) {
-  const [tab, setTab] = useHashTab(initialTab);
   const canonical = useBaseUrl('/blog/archive');
 
   return (
@@ -204,19 +189,10 @@ export default function ArchiveTabs({
       <Head>
         <link rel="canonical" href={canonical} />
       </Head>
-      <Segmented<ArchiveTab>
-        value={tab}
-        onChange={setTab}
-        orientation="horizontal"
-        items={[
-          { value: 'year', label: TAB_LABEL_YEAR },
-          { value: 'tags', label: TAB_LABEL_TAGS },
-          { value: 'authors', label: TAB_LABEL_AUTHORS },
-        ]}
-      />
-      {tab === 'year' && <YearView posts={posts} />}
-      {tab === 'tags' && <TagsView tags={tags} />}
-      {tab === 'authors' && <AuthorsView authors={authors} />}
+      <ArchiveTabsNav activeTab={activeTab} />
+      {activeTab === 'year' && <YearView posts={posts} />}
+      {activeTab === 'tags' && <TagsView tags={tags} />}
+      {activeTab === 'authors' && <AuthorsView authors={authors} />}
     </BlogScaffold>
   );
 }

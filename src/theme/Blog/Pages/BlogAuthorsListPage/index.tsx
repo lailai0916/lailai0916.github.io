@@ -44,7 +44,7 @@ export default function BlogAuthorsListPage(props: Props): ReactNode {
 
   return (
     <ArchiveTabs
-      initialTab="authors"
+      activeTab="authors"
       posts={posts}
       tags={tags}
       authors={authors}

@@ -8,6 +8,7 @@ import BlogAuthorsPostsPageOriginal from '@theme-original/Blog/Pages/BlogAuthors
 import type { Props } from '@theme/Blog/Pages/BlogAuthorsPostsPage';
 import PostsListLayout from '../../../BlogShared/PostsListLayout';
 import { BlogCard, TagChipList } from '../../../BlogShared/Components';
+import { ArchiveTabsNav } from '../../../BlogShared/ArchiveTabs';
 
 const TITLE = translate({
   id: 'blog.pages.authors.authorSelect',
@@ -59,9 +60,12 @@ export default function BlogAuthorsPostsPage(props: Props): ReactNode {
       items={items}
       meta={listMetadata}
       topSlot={
-        author.page?.permalink ? (
-          <AuthorSelector activePermalink={author.page.permalink} />
-        ) : null
+        <>
+          <ArchiveTabsNav activeTab="authors" />
+          {author.page?.permalink && (
+            <AuthorSelector activePermalink={author.page.permalink} />
+          )}
+        </>
       }
     />
   );

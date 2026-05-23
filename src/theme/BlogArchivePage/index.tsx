@@ -30,11 +30,6 @@ export default function BlogArchivePage(props: Props): React.ReactElement {
     }));
 
   return (
-    <ArchiveTabs
-      initialTab="year"
-      posts={posts}
-      tags={tags}
-      authors={authors}
-    />
+    <ArchiveTabs activeTab="year" posts={posts} tags={tags} authors={authors} />
   );
 }

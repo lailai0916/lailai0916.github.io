@@ -56,9 +56,14 @@ html[data-theme='dark'] .segmented {
   border-radius: 10px;
   cursor: pointer;
   color: var(--ifm-color-emphasis-700);
+  /* Normalize button vs link: both inherit body font; lock line-height
+     so <a> doesn't pick up the document's taller line-height (43px vs 38px). */
+  font-family: inherit;
   font-weight: 600;
   font-size: 0.92rem;
+  line-height: 1.2;
   text-align: left;
+  text-decoration: none !important;
   outline: none;
   transition:
     color 0.2s ease,
