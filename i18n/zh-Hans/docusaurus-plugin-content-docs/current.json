@@ -266,5 +266,33 @@
   "sidebar.projectSidebar.category.指南.link.generated-index.description": {
     "message": "本章收录各种实用的文档指南。",
     "description": "The generated-index page description for category '指南' in sidebar 'projectSidebar'"
+  },
+  "sidebar.noteSidebar.category.《高等数学》": {
+    "message": "《高等数学》",
+    "description": "The label for category '《高等数学》' in sidebar 'noteSidebar'"
+  },
+  "sidebar.noteSidebar.category.《线性代数》": {
+    "message": "《线性代数》",
+    "description": "The label for category '《线性代数》' in sidebar 'noteSidebar'"
+  },
+  "sidebar.noteSidebar.category.语文": {
+    "message": "语文",
+    "description": "The label for category '语文' in sidebar 'noteSidebar'"
+  },
+  "sidebar.noteSidebar.category.语文.link.generated-index.description": {
+    "message": "本章记录我的语文笔记。",
+    "description": "The generated-index page description for category '语文' in sidebar 'noteSidebar'"
+  },
+  "sidebar.noteSidebar.category.《概率论与数理统计》": {
+    "message": "《概率论与数理统计》",
+    "description": "The label for category '《概率论与数理统计》' in sidebar 'noteSidebar'"
+  },
+  "sidebar.noteSidebar.category.《离散数学》": {
+    "message": "《离散数学》",
+    "description": "The label for category '《离散数学》' in sidebar 'noteSidebar'"
+  },
+  "sidebar.noteSidebar.category.《初等数论》": {
+    "message": "《初等数论》",
+    "description": "The label for category '《初等数论》' in sidebar 'noteSidebar'"
   }
 }

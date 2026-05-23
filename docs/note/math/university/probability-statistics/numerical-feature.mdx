@@ -1,0 +1,140 @@
+---
+title: 数字特征
+---
+
+## 参考资料
+
+- [期望值 - 维基百科](https://zh.wikipedia.org/wiki/期望值)
+- [方差 - 维基百科](https://zh.wikipedia.org/wiki/方差)
+
+## 引入
+
+完整的分布信息往往太繁，**数字特征** 用少量数字抓住分布的本质：
+
+- **期望**：分布的「中心」。
+- **方差**：分布的「离散程度」。
+- **协方差 / 相关系数**：两个变量的「联动程度」。
+
+## 数学期望
+
+### 定义
+
+离散：$E(X)=\sum_i x_i p_i$（要求级数 **绝对收敛**）。
+
+连续：$E(X)=\int_{-\infty}^{+\infty}xf(x)\,\mathrm{d}x$（要求积分 **绝对收敛**）。
+
+### 随机变量函数的期望
+
+$$
+E(g(X))=\sum_i g(x_i)p_i=\int_{-\infty}^{+\infty}g(x)f(x)\,\mathrm{d}x
+$$
+
+### 性质
+
+$$
+E(c)=c,\quad E(cX)=cE(X),\quad E(X+Y)=E(X)+E(Y)
+$$
+
+$X,Y$ **独立** 时：
+
+$$
+E(XY)=E(X)E(Y)
+$$
+
+## 方差与标准差
+
+### 定义
+
+$$
+D(X)=\operatorname{Var}(X)=E\big((X-E(X))^2\big)=E(X^2)-[E(X)]^2
+$$
+
+**标准差** $\sigma(X)=\sqrt{D(X)}$，与 $X$ 同量纲。
+
+### 性质
+
+$$
+D(c)=0,\quad D(cX)=c^2 D(X),\quad D(X\pm c)=D(X)
+$$
+
+$X,Y$ **独立** 时：
+
+$$
+D(X\pm Y)=D(X)+D(Y)
+$$
+
+### 标准化变量
+
+$$
+X^*=\frac{X-E(X)}{\sigma(X)}\Rightarrow E(X^*)=0,D(X^*)=1
+$$
+
+## 常见分布的期望与方差
+
+| 分布     |       记号        |        $E(X)$        |         $D(X)$         |
+| :------- | :---------------: | :------------------: | :--------------------: |
+| 0-1 分布 |     $B(1,p)$      |         $p$          |        $p(1-p)$        |
+| 二项分布 |     $B(n,p)$      |         $np$         |       $np(1-p)$        |
+| 泊松分布 |   $P(\lambda)$    |      $\lambda$       |       $\lambda$        |
+| 几何分布 |      $G(p)$       |    $\dfrac{1}{p}$    |   $\dfrac{1-p}{p^2}$   |
+| 均匀分布 |     $U(a,b)$      |   $\dfrac{a+b}{2}$   | $\dfrac{(b-a)^2}{12}$  |
+| 指数分布 |   $E(\lambda)$    | $\dfrac{1}{\lambda}$ | $\dfrac{1}{\lambda^2}$ |
+| 正态分布 | $N(\mu,\sigma^2)$ |        $\mu$         |       $\sigma^2$       |
+
+:::tip
+
+记忆口诀：**泊松分布的期望和方差都等于 $\lambda$**——这是它最显著的标志。
+
+正态分布的两个参数就是它的期望和方差，记号 $N(\mu,\sigma^2)$ 直接告诉你答案。
+
+:::
+
+## 协方差与相关系数
+
+### 协方差
+
+$$
+\operatorname{Cov}(X,Y)=E\big((X-E(X))(Y-E(Y))\big)=E(XY)-E(X)E(Y)
+$$
+
+性质：
+
+$$
+\operatorname{Cov}(X,X)=D(X),\quad \operatorname{Cov}(X,Y)=\operatorname{Cov}(Y,X)
+$$
+
+$$
+\operatorname{Cov}(aX+b,cY+d)=ac\operatorname{Cov}(X,Y)
+$$
+
+$$
+D(X\pm Y)=D(X)+D(Y)\pm 2\operatorname{Cov}(X,Y)
+$$
+
+### 相关系数
+
+$$
+\rho_{XY}=\frac{\operatorname{Cov}(X,Y)}{\sqrt{D(X)D(Y)}}
+$$
+
+$\rho_{XY}\in[-1,1]$，刻画 **线性相关程度**：
+
+- $\rho_{XY}=1$：完全正相关（$Y=aX+b,a>0$）。
+- $\rho_{XY}=-1$：完全负相关。
+- $\rho_{XY}=0$：**线性不相关**（注意不是「独立」）。
+
+### 独立与不相关
+
+$X,Y$ 独立 $\Rightarrow$ 不相关（$\operatorname{Cov}=0$）；**反之不成立**。
+
+唯一例外：若 $(X,Y)$ 服从 **二维正态分布**，则「不相关」与「独立」等价。
+
+## 矩
+
+$X$ 的 **$k$ 阶原点矩**：$E(X^k)$。
+
+$X$ 的 **$k$ 阶中心矩**：$E((X-E(X))^k)$。
+
+- 一阶原点矩 = 期望。
+- 二阶中心矩 = 方差。
+- 三阶中心矩与 **偏度**、四阶中心矩与 **峰度** 相关。

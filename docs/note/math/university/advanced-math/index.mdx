@@ -6,11 +6,74 @@ title: 《高等数学》
 
 - [《高等数学上》3小时期末不挂科|微积分|附赠讲义 - 蜂考 - bilibili](https://www.bilibili.com/cheese/play/ss66)
 - [《高等数学下》4小时期末不挂科|微积分|附赠讲义 - 蜂考 - bilibili](https://www.bilibili.com/cheese/play/ss72)
+- [微积分的本质 - 3Blue1Brown - bilibili](https://www.bilibili.com/video/BV1qW411N7FU)
+
+## 引入
+
+**高等数学**（俗称「高数」）的核心是 **微积分**：用极限把「无限细分」与「无限累加」严格化，从而处理 **连续变化** 的问题。
+
+整门课的逻辑链条非常清晰：
 
 $$
-\frac{\frac{\int_{0}^{+\infty}e^{-s}s^{5}\mathrm{d}s}{2}+\frac{\int_{-\infty}^{+\infty}e^{-\frac{t^2}{2}}\mathrm{d}t}{\int_{0}^{+\infty}\sin t^{2}\mathrm{d}t}\cdot\left(\frac{\sum_{n=0}^{\infty}\frac{(-1)^{n}}{2n+1}}{\int_{0}^{+\infty}\frac{\sin x}{x}\mathrm{d}x}+\frac{\sum_{n=1}^{\infty}\arctan\frac{2}{n^2}}{\lim_{t\to 0^+}\int_{-2020}^{2020}\frac{t\cos x}{x^2+t^2}\mathrm{d}x}\right)}{\lim_{n\to\infty}\left(n\int_{0}^{1}\frac{x^{n-1}}{1+x}\mathrm{d}x-\frac{1}{2}\right)\cdot\frac{n}{2}}=520
+\text{极限}\to\text{连续}\to\text{导数}\to\text{积分}\to\text{级数}\to\text{多元推广}
+$$
+
+后面的每一步都建立在前一步之上，因此 **极限** 是真正的地基。
+
+## 章节大纲
+
+### 上册（一元微积分）
+
+- [函数与极限](limit.mdx)：函数、数列极限、函数极限、连续、间断点。
+- [导数与微分](derivative.mdx)：导数定义、求导法则、高阶导数、中值定理、洛必达、泰勒展开。
+- [一元积分学](integral.mdx)：不定积分、定积分、牛顿-莱布尼茨公式、反常积分、定积分应用。
+- [微分方程](ode.mdx)：一阶 ODE、可降阶高阶 ODE、线性 ODE 与常系数。
+
+### 下册（多元微积分与级数）
+
+- [多元函数微积分](multivariable.mdx)：偏导、全微分、多元极值、重积分、曲线曲面积分、场论。
+- [无穷级数](series.mdx)：数项级数、幂级数、傅里叶级数。
+
+## 速查表
+
+### 常见极限
+
+$$
+\lim_{x\to 0}\frac{\sin x}{x}=1,\quad
+\lim_{x\to\infty}\left(1+\frac{1}{x}\right)^x=e,\quad
+\lim_{x\to 0}(1+x)^{\frac{1}{x}}=e
+$$
+
+### 基本求导
+
+$$
+(x^a)'=ax^{a-1},\quad
+(\sin x)'=\cos x,\quad
+(e^x)'=e^x,\quad
+(\ln x)'=\frac{1}{x}
+$$
+
+### 基本积分
+
+$$
+\int x^a\mathrm{d}x=\frac{x^{a+1}}{a+1}+C\,(a\ne -1),\quad
+\int\frac{1}{x}\mathrm{d}x=\ln|x|+C
 $$
 
 $$
-\lim_{x\to\infty}\left(\frac{\sqrt[x]{2}+\sqrt[x]{53}+\sqrt[x]{49069}}{3}\right)^{3x}=5201314
+\int e^x\mathrm{d}x=e^x+C,\quad
+\int\sin x\mathrm{d}x=-\cos x+C
 $$
+
+:::tip
+
+公式记忆建议：导数与积分互为逆运算，**只记一组、推另一组**。
+基本初等函数的求导熟练后，积分公式表大半可以「反着背」。
+
+:::
+
+## 学习建议
+
+- **先理解定义、再记公式。** 高数所有公式都能从极限定义推出，硬背容易遗漏成立条件。
+- **多做计算题。** 求极限 / 求导 / 求积分三类基本功必须熟练，否则后续无法专注于推理。
+- **善用几何直观。** 切线、面积、旋转体、向量场等都有清晰的图像，配合代数推导事半功倍。
