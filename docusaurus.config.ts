@@ -79,6 +79,17 @@ const config: Config = {
           // postsPerPage: 'ALL',
           blogSidebarTitle: 'Post List',
           blogSidebarCount: 'ALL',
+          // Logical pinning: frontmatter `pinned: true` floats the post to the
+          // top of the listing while preserving its real publish date.
+          processBlogPosts: async ({ blogPosts }) => {
+            const pinned = blogPosts.filter(
+              (p) => p.metadata.frontMatter.pinned === true
+            );
+            const rest = blogPosts.filter(
+              (p) => p.metadata.frontMatter.pinned !== true
+            );
+            return [...pinned, ...rest];
+          },
           feedOptions: {
             type: 'all',
             xslt: true,

@@ -18,6 +18,11 @@ import { formatLocalizedDate } from '@site/src/utils/format';
 import MDXContent from '@theme/MDXContent';
 import styles from './styles.module.css';
 
+const pinnedMetaLabel = translate({
+  id: 'blog.post.pinned',
+  message: 'Pinned',
+});
+
 type PostListItem = BlogListPageProps['items'][number];
 
 interface PostCardProps {
@@ -74,6 +79,12 @@ function PostCard({ item }: PostCardProps) {
         { id: 'blog.postcard.viewCount', message: '{viewCount} views' },
         { viewCount: analytics.pageviews ?? '–' }
       ),
+    });
+  }
+  if (frontMatter.pinned === true) {
+    metaItems.unshift({
+      icon: 'lucide:pin',
+      label: pinnedMetaLabel,
     });
   }
 

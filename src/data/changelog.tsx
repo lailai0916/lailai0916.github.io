@@ -302,7 +302,7 @@ export const CHANGELOG_LIST: ChangelogItem[] = [
     date: '2024-10-17',
     type: 'added',
     content:
-      '建立个人网站 <a href="https://lailai.one">lailai\'s Home</a>，使用 <a href="https://docusaurus.io/changelog/3.5.2">Docusaurus v3.5.2</a> 构建，部署在 <a href="https://pages.github.com">GitHub Pages</a>，默认语言为 <b>简体中文</b>',
+      '建立个人网站 <a href="https://lailai.one">lailai\'s Home</a>，使用 <a href="https://docusaurus.io/changelog/3.5.2">Docusaurus v3.5.2</a> 构建，部署在 <a href="https://pages.github.com">GitHub Pages</a>',
   },
   {
     date: '2024-10-16',

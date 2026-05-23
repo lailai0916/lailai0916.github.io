@@ -347,6 +347,9 @@
   "blog.post.empty": {
     "message": "暂无文章"
   },
+  "blog.post.pinned": {
+    "message": "置顶"
+  },
   "blog.sidebar.calendar.today": {
     "message": "本月"
   },
