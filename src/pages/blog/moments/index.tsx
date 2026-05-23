@@ -16,6 +16,8 @@ import {
 } from '@site/src/utils/format';
 import styles from './styles.module.css';
 
+const PAGE_SIZE = 20;
+
 const TITLE = translate({
   id: 'pages.moments.title',
   message: 'Moments',
@@ -31,6 +33,14 @@ const COUNT_LABEL = translate({
 const HANGZHOU_LABEL = translate({
   id: 'pages.moments.location.hangzhou',
   message: 'Hangzhou',
+});
+const LOAD_MORE_LABEL = translate({
+  id: 'pages.moments.loadMore',
+  message: 'Load more',
+});
+const NO_MORE_LABEL = translate({
+  id: 'pages.moments.noMore',
+  message: 'No more moments',
 });
 
 // Hangzhou
@@ -144,6 +154,10 @@ export default function Moments() {
     i18n: { currentLocale },
   } = useDocusaurusContext();
   const weather = useHangzhouWeather();
+  const [visibleCount, setVisibleCount] = useState(PAGE_SIZE);
+  const totalCount = MOMENT_LIST.length;
+  const visibleMoments = MOMENT_LIST.slice(0, visibleCount);
+  const hasMore = visibleCount < totalCount;
   const weatherInfo = weather
     ? (WMO[weather.weather_code] ?? {
         text: `code ${weather.weather_code}`,
@@ -190,7 +204,7 @@ export default function Moments() {
         )}
       </BlogCard>
 
-      {MOMENT_LIST.map((moment, i) => {
+      {visibleMoments.map((moment, i) => {
         const metaItems: MetaBarItem[] = [
           {
             icon: 'lucide:calendar',
@@ -243,6 +257,24 @@ export default function Moments() {
           </BlogCard>
         );
       })}
+
+      <div className={styles.loadMore}>
+        {hasMore ? (
+          <button
+            type="button"
+            className={styles.loadMoreLink}
+            onClick={() =>
+              setVisibleCount((c) => Math.min(c + PAGE_SIZE, totalCount))
+            }
+          >
+            {LOAD_MORE_LABEL}
+          </button>
+        ) : (
+          totalCount > PAGE_SIZE && (
+            <span className={styles.loadMoreDone}>{NO_MORE_LABEL}</span>
+          )
+        )}
+      </div>
     </BlogScaffold>
   );
 }

@@ -473,6 +473,12 @@
   "pages.moments.location.hangzhou": {
     "message": "杭州"
   },
+  "pages.moments.loadMore": {
+    "message": "加载更多"
+  },
+  "pages.moments.noMore": {
+    "message": "没有更多动态了"
+  },
   "pages.moments.weather.clear": {
     "message": "晴"
   },
