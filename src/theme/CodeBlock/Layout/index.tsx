@@ -5,6 +5,7 @@ import Container from '@theme/CodeBlock/Container';
 import Title from '@theme/CodeBlock/Title';
 import Content from '@theme/CodeBlock/Content';
 import Buttons from '@theme/CodeBlock/Buttons';
+import TrafficLights from '@site/src/components/laikit/TrafficLights';
 import { formatBytes } from '@site/src/utils/format';
 import styles from './styles.module.css';
 
@@ -23,11 +24,7 @@ export default function CodeBlockLayout({
     >
       {!bare && (
         <div className={styles.header}>
-          <div className={styles.dots}>
-            <span className={styles.dot} style={{ background: '#ff5f57' }} />
-            <span className={styles.dot} style={{ background: '#ffbd2e' }} />
-            <span className={styles.dot} style={{ background: '#28c840' }} />
-          </div>
+          <TrafficLights className={styles.dots} />
           <div className={styles.title}>
             {metadata.title && <Title>{metadata.title}</Title>}
           </div>

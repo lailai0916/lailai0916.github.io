@@ -5,6 +5,7 @@ import CodeBlock from '@theme/CodeBlock';
 import Admonition from '@theme/Admonition';
 import { translate } from '@docusaurus/Translate';
 import Card from '@site/src/components/laikit/Card';
+import TrafficLights from '@site/src/components/laikit/TrafficLights';
 import { formatBytes } from '@site/src/utils/format';
 
 import styles from './styles.module.css';
@@ -53,11 +54,7 @@ function ProblemPanel({ tabs }: { tabs: Tab[] }) {
   return (
     <Card padding={0} className={clsx(styles.panel, open && styles.panelOpen)}>
       <div className={styles.header}>
-        <div className={styles.dots} aria-hidden="true">
-          <span className={styles.dot} style={{ background: '#ff5f57' }} />
-          <span className={styles.dot} style={{ background: '#ffbd2e' }} />
-          <span className={styles.dot} style={{ background: '#28c840' }} />
-        </div>
+        <TrafficLights className={styles.dots} />
         <div className={styles.tabs} role="tablist">
           {tabs.map((t, i) => (
             <button
