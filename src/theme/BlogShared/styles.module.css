@@ -446,10 +446,16 @@
   min-width: 2rem;
   height: 2rem;
   padding: 0 0.4rem;
+  appearance: none;
+  border: none;
+  background: transparent;
+  font: inherit;
   font-size: 0.9rem;
   color: var(--ifm-color-emphasis-700);
+  cursor: pointer;
   text-decoration: none !important;
   user-select: none;
+  outline: none;
   transition: color 160ms ease;
 }
 
@@ -477,10 +483,16 @@
   align-items: center;
   height: 2rem;
   padding: 0 0.5rem;
+  appearance: none;
+  border: none;
+  background: transparent;
+  font: inherit;
   font-size: 0.9rem;
   color: var(--ifm-color-emphasis-700);
+  cursor: pointer;
   text-decoration: none !important;
   user-select: none;
+  outline: none;
   transition: color 160ms ease;
 }
 

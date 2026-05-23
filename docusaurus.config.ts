@@ -76,7 +76,7 @@ const config: Config = {
           showReadingTime: true,
           blogTitle: 'Blog',
           blogDescription: "lailai's Blog",
-          // postsPerPage: 'ALL',
+          postsPerPage: 'ALL',
           blogSidebarTitle: 'Post List',
           blogSidebarCount: 'ALL',
           // Logical pinning: frontmatter `pinned: true` floats the post to the

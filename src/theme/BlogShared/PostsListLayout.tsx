@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import clsx from 'clsx';
 import Link from '@docusaurus/Link';
 import type { BlogPaginatedMetadata } from '@docusaurus/plugin-content-blog';
@@ -22,6 +22,8 @@ const pinnedMetaLabel = translate({
   id: 'blog.post.pinned',
   message: 'Pinned',
 });
+
+const PAGE_SIZE = 10;
 
 type PostListItem = BlogListPageProps['items'][number];
 
@@ -149,32 +151,21 @@ function PostCard({ item }: PostCardProps) {
   );
 }
 
-export function Paginator({ meta }: { meta: BlogPaginatedMetadata }) {
-  if (meta.totalPages <= 1) return null;
-  const { page, totalPages } = meta;
-  const sample = meta.nextPage || meta.previousPage || '';
-  // Derive pageBase / firstBase across blog routes that use a trailing number,
-  // e.g. /blog/page/3, /blog/tags/<tag>/page/3, /blog/authors/<id>/authors/3.
-  let pageBase: string;
-  let firstBase: string;
-  if (/(.*\/[^/]+)\/\d+\/?$/.test(sample)) {
-    pageBase = sample.replace(/\/\d+\/?$/, '');
-    firstBase = pageBase.replace(/\/[^/]+$/, '');
-  } else if (sample) {
-    firstBase = sample;
-    pageBase = `${firstBase.replace(/\/?$/, '')}/page`;
-  } else {
-    const m2 = meta.permalink.match(/(.*)\/page\/\d+\/?$/);
-    firstBase = m2 ? m2[1] : meta.permalink;
-    pageBase = `${firstBase.replace(/\/?$/, '')}/page`;
-  }
+export function Paginator({
+  page,
+  totalPages,
+  onPageChange,
+}: {
+  page: number;
+  totalPages: number;
+  onPageChange: (page: number) => void;
+}) {
+  if (totalPages <= 1) return null;
 
   const mid = Math.min(Math.max(page, 2), totalPages - 1);
   const pages = Array.from(
     new Set([1, mid - 1, mid, mid + 1, totalPages])
   ).filter((p) => p >= 1 && p <= totalPages);
-
-  const hrefForPage = (p: number) => (p === 1 ? firstBase : `${pageBase}/${p}`);
 
   const PrevLabel = translate({
     id: 'blog.pagination.prev',
@@ -189,17 +180,20 @@ export function Paginator({ meta }: { meta: BlogPaginatedMetadata }) {
     message: 'Pagination',
   });
 
+  const hasPrev = page > 1;
+  const hasNext = page < totalPages;
+
   return (
     <nav className={styles.paginator} aria-label={PaginationLabel}>
-      {meta.previousPage ? (
-        <Link
-          to={meta.previousPage}
+      {hasPrev ? (
+        <button
+          type="button"
           className={styles.pageNav}
-          rel="prev"
+          onClick={() => onPageChange(page - 1)}
           aria-label={PrevLabel}
         >
           {'←'}
-        </Link>
+        </button>
       ) : (
         <span
           className={clsx(styles.pageNav, styles.pageNavDisabled)}
@@ -228,9 +222,13 @@ export function Paginator({ meta }: { meta: BlogPaginatedMetadata }) {
                     {p}
                   </span>
                 ) : (
-                  <Link to={hrefForPage(p)} className={styles.pageNumber}>
+                  <button
+                    type="button"
+                    className={styles.pageNumber}
+                    onClick={() => onPageChange(p)}
+                  >
                     {p}
-                  </Link>
+                  </button>
                 )}
               </li>
             </React.Fragment>
@@ -238,15 +236,15 @@ export function Paginator({ meta }: { meta: BlogPaginatedMetadata }) {
         })}
       </ol>
 
-      {meta.nextPage ? (
-        <Link
-          to={meta.nextPage}
+      {hasNext ? (
+        <button
+          type="button"
           className={styles.pageNav}
-          rel="next"
+          onClick={() => onPageChange(page + 1)}
           aria-label={NextLabel}
         >
           {'→'}
-        </Link>
+        </button>
       ) : (
         <span
           className={clsx(styles.pageNav, styles.pageNavDisabled)}
@@ -263,7 +261,7 @@ export default function PostsListLayout({
   title,
   description,
   items,
-  meta,
+  meta: _meta,
   topSlot,
 }: {
   title: string;
@@ -272,13 +270,32 @@ export default function PostsListLayout({
   meta: BlogPaginatedMetadata;
   topSlot?: React.ReactNode;
 }) {
+  const totalPages = Math.max(1, Math.ceil(items.length / PAGE_SIZE));
+  const [page, setPage] = useState(1);
+
+  // Reset to page 1 whenever the underlying item list changes
+  // (e.g. switching tags / authors via the in-card chip selectors).
+  useEffect(() => {
+    setPage(1);
+  }, [items]);
+
+  const safePage = Math.min(page, totalPages);
+  const visibleItems = items.slice(
+    (safePage - 1) * PAGE_SIZE,
+    safePage * PAGE_SIZE
+  );
+
   return (
     <BlogScaffold title={title} description={description}>
       {topSlot}
-      {items.map((item) => (
+      {visibleItems.map((item) => (
         <PostCard key={item.content.metadata.permalink} item={item} />
       ))}
-      <Paginator meta={meta} />
+      <Paginator
+        page={safePage}
+        totalPages={totalPages}
+        onPageChange={setPage}
+      />
     </BlogScaffold>
   );
 }

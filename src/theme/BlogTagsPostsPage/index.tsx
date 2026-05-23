@@ -10,7 +10,6 @@ import { translate } from '@docusaurus/Translate';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import { loadOfficialTags } from '@site/src/utils/blogData';
 import { BlogCard, TagChipList } from '../BlogShared/Components';
-import { Paginator } from '../BlogShared/PostsListLayout';
 
 const TITLE = translate({ id: 'blog.pages.tags.tagSelect', message: 'Tags' });
 
@@ -47,7 +46,7 @@ export default function BlogTagsPostsPage(props: Props): React.ReactElement {
 }
 
 function CustomBlogTagsPostsPage(props: Props): React.ReactElement {
-  const { items, listMetadata, tag } = props;
+  const { items, tag } = props;
   const posts = React.useMemo(
     () => (items as any[]).map((it) => it.content),
     [items]
@@ -58,7 +57,6 @@ function CustomBlogTagsPostsPage(props: Props): React.ReactElement {
       <ArchiveTabsNav activeTab="tags" />
       <TagSelector activePermalink={tag.permalink} />
       <BlogArchiveList posts={posts} />
-      <Paginator meta={listMetadata} />
     </BlogScaffold>
   );
 }
