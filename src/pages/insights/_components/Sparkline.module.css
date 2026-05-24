@@ -35,7 +35,7 @@
   stroke: var(--ifm-color-emphasis-500);
   stroke-width: 1;
   stroke-dasharray: 4 4;
-  opacity: 0.7;
+  opacity: 0.75;
   pointer-events: none;
 }
 

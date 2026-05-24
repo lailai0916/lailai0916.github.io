@@ -59,7 +59,7 @@
   object-position: left center;
   pointer-events: none;
   user-select: none;
-  opacity: 0.5;
+  opacity: 0.55;
   transition: opacity 200ms ease;
   z-index: 0;
 }
@@ -84,7 +84,7 @@
   height: 1.75rem;
   color: var(--ifm-color-emphasis-700);
   pointer-events: none;
-  opacity: 0.5;
+  opacity: 0.55;
   transition: opacity 200ms ease;
 }
 
