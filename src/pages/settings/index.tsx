@@ -479,7 +479,6 @@ function FontFamily() {
         id: 'pages.settings.item.fontFamily.option.system',
         message: 'System',
       }),
-      icon: 'lucide:monitor',
       style: { fontFamily: FONT_STACKS.system },
     },
     {
@@ -488,7 +487,6 @@ function FontFamily() {
         id: 'pages.settings.item.fontFamily.option.sans',
         message: 'Sans',
       }),
-      icon: 'lucide:type',
       style: { fontFamily: FONT_STACKS.sans },
     },
     {
@@ -497,7 +495,6 @@ function FontFamily() {
         id: 'pages.settings.item.fontFamily.option.serif',
         message: 'Serif',
       }),
-      icon: 'lucide:baseline',
       style: { fontFamily: FONT_STACKS.serif },
     },
   ];
@@ -540,8 +537,8 @@ export default function Settings(): ReactNode {
       </PageHeader>
       <PageContent className={styles.layout}>
         <ThemeSettings />
-        <FontFamily />
         <AccentColor />
+        <FontFamily />
         <Typography />
         <ExperimentalFeatures />
         <QuickActions />
