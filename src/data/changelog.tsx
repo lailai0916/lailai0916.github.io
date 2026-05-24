@@ -18,7 +18,7 @@ export const CHANGELOG_LIST: ChangelogItem[] = [
     content: '<b>KaTeX</b> 从 CDN 迁移到 npm，升级至 <code>0.16.47</code>',
   },
   {
-    date: '2026-05-15',
+    date: '2026-05-23',
     type: 'added',
     content: '博客文章置顶机制',
   },
