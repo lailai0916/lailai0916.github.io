@@ -284,22 +284,9 @@ const config: Config = {
           },
         ]
       : []),
-    {
-      src: 'https://cdn.jsdelivr.net/npm/katex@0.13.24/dist/contrib/copy-tex.min.js',
-      defer: true,
-    },
   ],
 
-  stylesheets: [
-    'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap',
-    {
-      href: 'https://cdn.jsdelivr.net/npm/katex@0.13.24/dist/katex.min.css',
-      type: 'text/css',
-      integrity:
-        'sha384-odtC+0UGzzFL/6PNoE8rX/SPcQDXBJ+uRepguP4QkPCm2LBxH3FA3y+fKSiJ+AmM',
-      crossorigin: 'anonymous',
-    },
-  ],
+  clientModules: [require.resolve('./src/clientModules/katexCopyTex.ts')],
 
   themes: ['@docusaurus/theme-mermaid', '@docusaurus/theme-live-codeblock'],
 
