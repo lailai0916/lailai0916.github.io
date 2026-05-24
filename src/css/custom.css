@@ -83,10 +83,7 @@ article,
 }
 
 .katex-display {
-  overflow-x: auto;
-  overflow-y: hidden;
-  max-width: 100%;
-  padding: 0.2em 0;
+  overflow: auto hidden;
 }
 
 /* KaTeX 0.13.24 没给 .katex 设 position: relative，导致内部 position:absolute
