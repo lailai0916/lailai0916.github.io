@@ -1,6 +1,7 @@
 lailai:
   name: lailai
   title: Student & Developer
+  description: A high school student from Hangzhou.
   image_url: /img/logo.png
   email: lailai0x394@gmail.com
   page: true
