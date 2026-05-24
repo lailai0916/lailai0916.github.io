@@ -8,6 +8,21 @@ interface ChangelogItem {
 
 export const CHANGELOG_LIST: ChangelogItem[] = [
   {
+    date: '2026-05-24',
+    type: 'changed',
+    content: '代码块主题更改为 <code>vsLight</code> 和 <code>vsDark</code>',
+  },
+  {
+    date: '2026-05-24',
+    type: 'changed',
+    content: '<b>KaTeX</b> 从 CDN 迁移到 npm，升级至 <code>0.16.47</code>',
+  },
+  {
+    date: '2026-05-15',
+    type: 'added',
+    content: '博客文章置顶机制',
+  },
+  {
     date: '2026-05-01',
     type: 'removed',
     content: '<b>Sitemap</b> 页面',
@@ -76,7 +91,7 @@ export const CHANGELOG_LIST: ChangelogItem[] = [
   {
     date: '2026-04-11',
     type: 'changed',
-    content: '非 Apple 设备的默认字体更改为 <code>Inter</code>',
+    content: '非 Apple 设备的默认字体更改为 <b>Inter</b>',
   },
   {
     date: '2026-04-10',
