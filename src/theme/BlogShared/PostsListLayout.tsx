@@ -8,8 +8,14 @@ import { BlogCard, MetaBar, TagChipList } from './Components';
 import { usePostMetaItems } from './PostMeta';
 
 import { translate } from '@docusaurus/Translate';
+import { Icon } from '@iconify/react';
 import MDXContent from '@theme/MDXContent';
 import styles from './styles.module.css';
+
+const READ_MORE_LABEL = translate({
+  id: 'blog.postcard.readMore',
+  message: 'Read more',
+});
 
 const PAGE_SIZE = 10;
 
@@ -90,11 +96,17 @@ function PostCard({ item }: PostCardProps) {
           </MDXContent>
         </div>
 
-        {tagItems.length > 0 && (
-          <div className={styles.postFooter}>
-            <TagChipList items={tagItems} />
-          </div>
-        )}
+        <div className={styles.postFooter}>
+          {tagItems.length > 0 && <TagChipList items={tagItems} />}
+          <Link
+            to={metadata.permalink}
+            className={styles.postFooterReadMore}
+            aria-label={READ_MORE_LABEL}
+          >
+            <span>{READ_MORE_LABEL}</span>
+            <Icon icon="lucide:arrow-right" width={14} height={14} />
+          </Link>
+        </div>
       </BlogCard>
     </article>
   );
