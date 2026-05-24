@@ -22,11 +22,17 @@ resource:
 misc:
   label: 杂项
 
+life:
+  label: 生活
+
 school:
   label: 学校
 
 oi:
   label: OI
+
+ai:
+  label: AI
 
 solution:
   label: 题解

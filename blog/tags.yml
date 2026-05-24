@@ -22,11 +22,17 @@ resource:
 misc:
   label: Miscellaneous
 
+life:
+  label: Life
+
 school:
   label: School
 
 oi:
   label: OI
+
+ai:
+  label: AI
 
 solution:
   label: Solution
