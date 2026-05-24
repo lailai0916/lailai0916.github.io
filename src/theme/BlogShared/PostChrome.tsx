@@ -11,6 +11,7 @@ import { formatLocalizedDate } from '@site/src/utils/format';
 import Card from '@site/src/components/laikit/Card';
 import { MetaBar, TagChipList } from './Components';
 import { usePostMetaItems } from './PostMeta';
+import CopyMarkdownButton from './CopyMarkdownButton';
 import styles from './styles.module.css';
 
 type PostMetadata = BlogPostPageProps['content']['metadata'];
@@ -141,7 +142,13 @@ export function PostFooter({ metadata }: PostFooterProps) {
 
   const hasUpdated = !!metadata.lastUpdatedAt;
   const hasEdit = !!metadata.editUrl;
-  if (!hasUpdated && !hasEdit) return null;
+  const hasSource = !!metadata.source;
+  if (!hasUpdated && !hasEdit && !hasSource) return null;
+
+  const editLabel = translate({
+    id: 'blog.post.editPage',
+    message: 'Edit this page',
+  });
 
   return (
     <footer className={styles.articleFooter}>
@@ -165,20 +172,24 @@ export function PostFooter({ metadata }: PostFooterProps) {
             </time>
           </span>
         )}
-        {hasEdit && (
-          <Link
-            href={metadata.editUrl!}
-            className={clsx(
-              styles.articleFooterMetaItem,
-              styles.articleFooterMetaLink
+        {(hasSource || hasEdit) && (
+          <div className={styles.articleFooterMetaActions}>
+            {hasSource && <CopyMarkdownButton source={metadata.source!} />}
+            {hasEdit && (
+              <Link
+                href={metadata.editUrl!}
+                aria-label={editLabel}
+                title={editLabel}
+                className={clsx(
+                  styles.articleFooterMetaItem,
+                  styles.articleFooterMetaLink,
+                  styles.articleFooterMetaIconBtn
+                )}
+              >
+                <Icon icon="lucide:pencil" width={16} height={16} />
+              </Link>
             )}
-          >
-            <Icon icon="lucide:pencil" width={14} height={14} />
-            {translate({
-              id: 'blog.post.editPage',
-              message: 'Edit this page',
-            })}
-          </Link>
+          </div>
         )}
       </div>
     </footer>
