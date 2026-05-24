@@ -5,14 +5,18 @@ import BlogPostPageOriginal from '@theme-original/BlogPostPage';
 import BlogScaffold from '../BlogShared/Scaffold';
 import { BlogCard } from '../BlogShared/Components';
 import {
+  PostHeader,
+  PostFooter,
+  PostPaginator,
+} from '../BlogShared/PostChrome';
+import {
   HtmlClassNameProvider,
   ThemeClassNames,
 } from '@docusaurus/theme-common';
 import { BlogPostProvider } from '@docusaurus/plugin-content-blog/client';
 import BlogPostPageMetadata from '@theme/BlogPostPage/Metadata';
 import BlogPostPageStructuredData from '@theme/BlogPostPage/StructuredData';
-import BlogPostPaginator from '@theme/BlogPostPaginator';
-import BlogPostItem from '@theme/BlogPostItem';
+import MDXContent from '@theme/MDXContent';
 
 import type { Props } from '@theme/BlogPostPage';
 
@@ -21,6 +25,7 @@ export default function BlogPostPage(props: Props): React.ReactElement {
   if (isOriginalLayout) return <BlogPostPageOriginal {...props} />;
 
   const BlogPostContent = props.content;
+  const { metadata, frontMatter } = props.content;
 
   return (
     <BlogPostProvider content={props.content} isBlogPostPage>
@@ -34,21 +39,25 @@ export default function BlogPostPage(props: Props): React.ReactElement {
         <BlogPostPageStructuredData />
         <BlogScaffold
           toc={props.content.toc}
-          title={props.content.metadata.title}
-          description={props.content.metadata.description}
+          title={metadata.title}
+          description={metadata.description}
         >
           <BlogCard>
-            <BlogPostItem>
-              <BlogPostContent />
-            </BlogPostItem>
-          </BlogCard>
-          {(props.content.metadata.nextItem ||
-            props.content.metadata.prevItem) && (
-            <BlogPostPaginator
-              nextItem={props.content.metadata.nextItem}
-              prevItem={props.content.metadata.prevItem}
+            <PostHeader
+              metadata={metadata}
+              frontMatter={frontMatter as Record<string, unknown>}
             />
-          )}
+            <article className="markdown">
+              <MDXContent>
+                <BlogPostContent />
+              </MDXContent>
+            </article>
+            <PostFooter metadata={metadata} />
+          </BlogCard>
+          <PostPaginator
+            prevItem={metadata.prevItem}
+            nextItem={metadata.nextItem}
+          />
         </BlogScaffold>
       </HtmlClassNameProvider>
     </BlogPostProvider>

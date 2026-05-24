@@ -4,24 +4,12 @@ import Link from '@docusaurus/Link';
 import type { BlogPaginatedMetadata } from '@docusaurus/plugin-content-blog';
 import type { Props as BlogListPageProps } from '@theme/BlogListPage';
 import BlogScaffold from './Scaffold';
-import {
-  BlogCard,
-  MetaBar,
-  type MetaBarItem,
-  TagChipList,
-  useAnalytics,
-} from './Components';
+import { BlogCard, MetaBar, TagChipList } from './Components';
+import { usePostMetaItems } from './PostMeta';
 
 import { translate } from '@docusaurus/Translate';
-import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
-import { formatLocalizedDate } from '@site/src/utils/format';
 import MDXContent from '@theme/MDXContent';
 import styles from './styles.module.css';
-
-const pinnedMetaLabel = translate({
-  id: 'blog.post.pinned',
-  message: 'Pinned',
-});
 
 const PAGE_SIZE = 10;
 
@@ -40,56 +28,18 @@ function PostCard({ item }: PostCardProps) {
       | string
       | undefined) ?? lightImage;
   const themed = !!darkImage && darkImage !== lightImage;
-  const { analytics, status } = useAnalytics(metadata.permalink);
-  const {
-    i18n: { currentLocale },
-  } = useDocusaurusContext();
 
   const tagItems = (metadata.tags ?? [])
     .filter((t) => !!t.label && !!t.permalink)
     .map((t) => ({ to: t.permalink, label: t.label }));
 
-  const metaItems: MetaBarItem[] = [
-    {
-      icon: 'lucide:calendar',
-      dateTime: metadata.date,
-      label: formatLocalizedDate(metadata.date, currentLocale),
-    },
-  ];
-  if (metadata.readingTime) {
-    metaItems.push(
-      {
-        icon: 'lucide:file-text',
-        label: translate(
-          { id: 'blog.postcard.wordCount', message: '{word} words' },
-          { word: Math.round(metadata.readingTime * 200) }
-        ),
-      },
-      {
-        icon: 'lucide:timer',
-        label: translate(
-          { id: 'blog.postcard.readingTime', message: '{readingTime} min' },
-          { readingTime: Math.max(1, Math.round(metadata.readingTime)) }
-        ),
-      }
-    );
-  }
-  if (status === 'success') {
-    metaItems.push({
-      icon: 'lucide:eye',
-      label: translate(
-        { id: 'blog.postcard.viewCount', message: '{viewCount} views' },
-        { viewCount: analytics.pageviews ?? '–' }
-      ),
-    });
-  }
-  if (frontMatter.pinned === true) {
-    metaItems.unshift({
-      icon: 'lucide:pin',
-      label: pinnedMetaLabel,
-      className: styles.eyebrowItemPinned,
-    });
-  }
+  const metaItems = usePostMetaItems({
+    permalink: metadata.permalink,
+    date: metadata.date,
+    readingTime: metadata.readingTime,
+    pinned:
+      (frontMatter as Record<string, unknown>).pinned === true,
+  });
 
   return (
     <article className={styles.postCard}>

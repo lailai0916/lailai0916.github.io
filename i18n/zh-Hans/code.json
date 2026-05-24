@@ -380,6 +380,21 @@
   "blog.sidebar.calendar.empty": {
     "message": "暂无文章"
   },
+  "blog.post.lastUpdated": {
+    "message": "最后更新于 {date}"
+  },
+  "blog.post.editPage": {
+    "message": "编辑此页面"
+  },
+  "blog.post.paginator.newer": {
+    "message": "上一篇"
+  },
+  "blog.post.paginator.older": {
+    "message": "下一篇"
+  },
+  "blog.post.paginator.ariaLabel": {
+    "message": "博客文章导航"
+  },
   "blog.post.pinned": {
     "message": "置顶"
   },
@@ -455,33 +470,6 @@
   "components.markdown.aboutGreeting": {
     "message": "Hello, I'm lailai"
   },
-  "components.playground.gameOfLife.play": {
-    "message": "播放"
-  },
-  "components.playground.gameOfLife.pause": {
-    "message": "暂停"
-  },
-  "components.playground.gameOfLife.step": {
-    "message": "单步"
-  },
-  "components.playground.gameOfLife.random": {
-    "message": "随机"
-  },
-  "components.playground.gameOfLife.clear": {
-    "message": "清空"
-  },
-  "components.playground.lorenz.reset": {
-    "message": "重置"
-  },
-  "components.playground.neuralNetwork.clear": {
-    "message": "清除"
-  },
-  "components.playground.neuralNetwork.check": {
-    "message": "识别数字"
-  },
-  "components.playground.neuralNetwork.preprocess": {
-    "message": "预处理"
-  },
   "pages.moments.title": {
     "message": "动态"
   },
@@ -544,6 +532,33 @@
   },
   "pages.moments.weather.thunderstorm": {
     "message": "雷暴"
+  },
+  "components.playground.gameOfLife.play": {
+    "message": "播放"
+  },
+  "components.playground.gameOfLife.pause": {
+    "message": "暂停"
+  },
+  "components.playground.gameOfLife.step": {
+    "message": "单步"
+  },
+  "components.playground.gameOfLife.random": {
+    "message": "随机"
+  },
+  "components.playground.gameOfLife.clear": {
+    "message": "清空"
+  },
+  "components.playground.lorenz.reset": {
+    "message": "重置"
+  },
+  "components.playground.neuralNetwork.clear": {
+    "message": "清除"
+  },
+  "components.playground.neuralNetwork.check": {
+    "message": "识别数字"
+  },
+  "components.playground.neuralNetwork.preprocess": {
+    "message": "预处理"
   },
   "pages.insights.heartbeat.ariaLabel": {
     "message": "近期监测状态"
@@ -743,21 +758,17 @@
     "message": "最后{byUser}{atDate}更新",
     "description": "The sentence used to display when a page has been last updated, and by who"
   },
-  "theme.navbar.mobileVersionsDropdown.label": {
-    "message": "选择版本",
-    "description": "The label for the navbar versions dropdown on mobile view"
-  },
   "theme.NotFound.title": {
     "message": "找不到页面",
     "description": "The title of the 404 page"
   },
+  "theme.navbar.mobileVersionsDropdown.label": {
+    "message": "选择版本",
+    "description": "The label for the navbar versions dropdown on mobile view"
+  },
   "theme.tags.tagsListLabel": {
     "message": "标签：",
     "description": "The label alongside a tag list"
-  },
-  "theme.AnnouncementBar.closeButtonAriaLabel": {
-    "message": "关闭",
-    "description": "The ARIA label for close button of announcement bar"
   },
   "theme.admonition.caution": {
     "message": "警告",
@@ -783,6 +794,10 @@
     "message": "注意",
     "description": "The default label used for the Warning admonition (:::warning)"
   },
+  "theme.AnnouncementBar.closeButtonAriaLabel": {
+    "message": "关闭",
+    "description": "The ARIA label for close button of announcement bar"
+  },
   "theme.blog.sidebar.navAriaLabel": {
     "message": "最近文章导航",
     "description": "The ARIA label for recent posts in the blog sidebar"
@@ -803,10 +818,6 @@
     "message": "主导航",
     "description": "The ARIA label for the main navigation"
   },
-  "theme.navbar.mobileLanguageDropdown.label": {
-    "message": "选择语言",
-    "description": "The label for the mobile language switcher dropdown"
-  },
   "theme.NotFound.p1": {
     "message": "我们找不到您要找的页面。",
     "description": "The first paragraph of the 404 page"
@@ -815,17 +826,13 @@
     "message": "请联系原始链接来源网站的所有者，并告知他们链接已损坏。",
     "description": "The 2nd paragraph of the 404 page"
   },
+  "theme.navbar.mobileLanguageDropdown.label": {
+    "message": "选择语言",
+    "description": "The label for the mobile language switcher dropdown"
+  },
   "theme.TOCCollapsible.toggleButtonLabel": {
     "message": "本页总览",
     "description": "The label used by the button on the collapsible TOC component"
-  },
-  "theme.blog.post.readMore": {
-    "message": "阅读更多",
-    "description": "The label used in blog post item excerpts to link to full blog posts"
-  },
-  "theme.blog.post.readMoreLabel": {
-    "message": "阅读 {title} 的全文",
-    "description": "The ARIA label for the link to full blog posts from excerpts"
   },
   "theme.blog.post.readingTime.plurals": {
     "message": "阅读需 {readingTime} 分钟",
@@ -846,6 +853,14 @@
   "theme.CodeBlock.wordWrapToggle": {
     "message": "切换自动换行",
     "description": "The title attribute for toggle word wrapping button of code block lines"
+  },
+  "theme.blog.post.readMore": {
+    "message": "阅读更多",
+    "description": "The label used in blog post item excerpts to link to full blog posts"
+  },
+  "theme.blog.post.readMoreLabel": {
+    "message": "阅读 {title} 的全文",
+    "description": "The ARIA label for the link to full blog posts from excerpts"
   },
   "theme.docs.breadcrumbs.home": {
     "message": "主页面",
@@ -1122,13 +1137,13 @@
     "message": "搜索文档",
     "description": "The placeholder of the input of the DocSearch pop-up modal"
   },
-  "theme.Playground.result": {
-    "message": "结果",
-    "description": "The result label of the live codeblocks"
-  },
   "theme.Playground.liveEditor": {
     "message": "实时编辑器",
     "description": "The live editor label of the live codeblocks"
+  },
+  "theme.Playground.result": {
+    "message": "结果",
+    "description": "The result label of the live codeblocks"
   },
   "theme.Playground.buttons.reset": {
     "message": "重置",
