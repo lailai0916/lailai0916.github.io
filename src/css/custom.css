@@ -87,7 +87,6 @@ article,
   overflow-y: hidden;
   max-width: 100%;
   padding: 0.2em 0;
-  -webkit-overflow-scrolling: touch;
 }
 
 /* KaTeX 0.13.24 没给 .katex 设 position: relative，导致内部 position:absolute
