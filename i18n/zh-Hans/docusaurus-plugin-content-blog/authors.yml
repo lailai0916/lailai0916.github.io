@@ -1,7 +1,7 @@
 lailai:
   name: lailai
   title: 学生 & 开发者
-  description: 来自中国杭州的高中生。
+  description: 来自中国杭州的高中生
   image_url: /img/logo.png
   email: lailai0x394@gmail.com
   page: true
