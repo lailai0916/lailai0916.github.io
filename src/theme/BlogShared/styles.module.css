@@ -826,7 +826,8 @@
 .articleCoverWrap {
   display: block;
   position: relative;
-  margin: 0;
+  /* 0.75 + parent flex gap 0.5 = 1.25rem, matching .postCoverWrap in list view */
+  margin: 0 0 0.75rem;
   border-radius: 12px;
   overflow: hidden;
   background: var(--ifm-color-emphasis-100);
