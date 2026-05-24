@@ -39,8 +39,7 @@ export function PostHeader({ metadata, frontMatter }: PostHeaderProps) {
   // Frontmatter `authors:` is still preserved (for RSS / JSON-LD / future
   // guest posts). Multi-author or non-`lailai` posts will surface naturally.
   const allAuthors = (metadata.authors ?? []).filter((a) => !!a.name);
-  const isSoloOwner =
-    allAuthors.length === 1 && allAuthors[0].key === 'lailai';
+  const isSoloOwner = allAuthors.length === 1 && allAuthors[0].key === 'lailai';
   const authors = isSoloOwner ? [] : allAuthors;
 
   const hasSource = !!metadata.source;
