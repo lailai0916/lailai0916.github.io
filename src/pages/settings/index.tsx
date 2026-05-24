@@ -17,8 +17,6 @@ import {
   SETTINGS_PRESET_COLOR_LIST,
 } from '@site/src/data/settings';
 import { useColorMode } from '@docusaurus/theme-common';
-import { useAlternatePageUtils } from '@docusaurus/theme-common/internal';
-import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import { usePersistentState } from '@site/src/hooks/usePersistentState';
 import { useThemeColors } from '@site/src/hooks/useThemeColors';
 import { Icon } from '@iconify/react';
@@ -435,41 +433,73 @@ function QuickActions() {
   );
 }
 
-function LanguageSettings() {
-  const {
-    i18n: { currentLocale, locales, localeConfigs },
-  } = useDocusaurusContext();
-  const alternatePageUtils = useAlternatePageUtils();
+type FontFamilyChoice = 'system' | 'sans' | 'serif';
 
-  const items: SegmentedItem<string>[] = locales.map((locale) => ({
-    value: locale,
-    label: localeConfigs[locale].label,
-    icon: 'lucide:languages',
-  }));
+const FONT_STACKS: Record<FontFamilyChoice, string> = {
+  system:
+    "-apple-system, BlinkMacSystemFont, 'PingFang SC', 'Microsoft YaHei', system-ui, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'",
+  sans: "'Inter', -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Microsoft YaHei', system-ui, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'",
+  serif:
+    "Georgia, 'Times New Roman', 'Songti SC', '宋体', SimSun, serif",
+};
+
+function FontFamily() {
+  const [choice, setChoice] = usePersistentState<FontFamilyChoice>(
+    'font-family',
+    'system'
+  );
+
+  useEffect(() => {
+    document.documentElement.style.setProperty(
+      '--ifm-font-family-base',
+      FONT_STACKS[choice]
+    );
+  }, [choice]);
+
+  const items: SegmentedItem<FontFamilyChoice>[] = [
+    {
+      value: 'system',
+      label: translate({
+        id: 'pages.settings.item.fontFamily.option.system',
+        message: 'System',
+      }),
+      icon: 'lucide:monitor',
+    },
+    {
+      value: 'sans',
+      label: translate({
+        id: 'pages.settings.item.fontFamily.option.sans',
+        message: 'Sans',
+      }),
+      icon: 'lucide:type',
+    },
+    {
+      value: 'serif',
+      label: translate({
+        id: 'pages.settings.item.fontFamily.option.serif',
+        message: 'Serif',
+      }),
+      icon: 'lucide:baseline',
+    },
+  ];
 
   return (
     <IconCard
       title={translate({
-        id: 'pages.settings.item.language.title',
-        message: 'Language',
+        id: 'pages.settings.item.fontFamily.title',
+        message: 'Font Family',
       })}
       description={translate({
-        id: 'pages.settings.item.language.description',
-        message: 'Switch the interface language',
+        id: 'pages.settings.item.fontFamily.description',
+        message: 'Choose between system, sans serif, or serif',
       })}
-      icon="lucide:languages"
+      icon="lucide:case-sensitive"
       bodyAlign="bottom"
     >
-      <Segmented<string>
-        value={currentLocale}
+      <Segmented<FontFamilyChoice>
+        value={choice}
         items={items}
-        onChange={(locale) => {
-          if (locale === currentLocale) return;
-          window.location.href = alternatePageUtils.createUrl({
-            locale,
-            fullyQualified: false,
-          });
-        }}
+        onChange={setChoice}
       />
     </IconCard>
   );
@@ -491,7 +521,7 @@ export default function Settings(): ReactNode {
       </PageHeader>
       <PageContent className={styles.layout}>
         <ThemeSettings />
-        <LanguageSettings />
+        <FontFamily />
         <AccentColor />
         <Typography />
         <ExperimentalFeatures />

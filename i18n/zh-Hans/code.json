@@ -137,6 +137,99 @@
   "components.solution.label": {
     "message": "题解"
   },
+  "blog.post.empty": {
+    "message": "暂无文章"
+  },
+  "blog.pages.archive.title": {
+    "message": "历史文章"
+  },
+  "blog.pages.archive.yearSelect": {
+    "message": "年份"
+  },
+  "blog.pages.tags.title": {
+    "message": "标签"
+  },
+  "blog.pages.authors.title": {
+    "message": "作者"
+  },
+  "blog.archive.tab.year": {
+    "message": "按年份"
+  },
+  "blog.archive.tab.tags": {
+    "message": "按标签"
+  },
+  "blog.archive.tab.authors": {
+    "message": "按作者"
+  },
+  "blog.sidebar.calendar.today": {
+    "message": "本月"
+  },
+  "blog.sidebar.calendar.prev": {
+    "message": "上个月"
+  },
+  "blog.sidebar.calendar.next": {
+    "message": "下个月"
+  },
+  "blog.sidebar.calendar.empty": {
+    "message": "暂无文章"
+  },
+  "blog.post.pinned": {
+    "message": "置顶"
+  },
+  "blog.postcard.wordCount": {
+    "message": "{word} 词数"
+  },
+  "blog.postcard.readingTime": {
+    "message": "{readingTime} 分钟"
+  },
+  "blog.postcard.viewCount": {
+    "message": "{viewCount} 浏览"
+  },
+  "blog.pagination.prev": {
+    "message": "上一页"
+  },
+  "blog.pagination.next": {
+    "message": "下一页"
+  },
+  "blog.pagination.ariaLabel": {
+    "message": "分页"
+  },
+  "blog.menu.blog": {
+    "message": "博客"
+  },
+  "blog.menu.moments": {
+    "message": "动态"
+  },
+  "blog.menu.archive": {
+    "message": "归档"
+  },
+  "blog.sidebar.toc.progress": {
+    "message": "阅读进度：{percent}%"
+  },
+  "blog.sidebar.toc.title": {
+    "message": "目录"
+  },
+  "blog.sidebar.stats.posts": {
+    "message": "文章"
+  },
+  "blog.sidebar.stats.words": {
+    "message": "词数"
+  },
+  "blog.sidebar.feed.rss": {
+    "message": "RSS 订阅"
+  },
+  "blog.sidebar.feed.atom": {
+    "message": "Atom 订阅"
+  },
+  "blog.sidebar.feed.json": {
+    "message": "JSON 订阅"
+  },
+  "blog.sidebar.tags.title": {
+    "message": "热门标签"
+  },
+  "blog.pages.tags.tagSelect": {
+    "message": "标签"
+  },
   "pages.changelog.empty": {
     "message": "暂无更新日志"
   },
@@ -215,14 +308,14 @@
   "pages.resources.modification": {
     "message": "精选<b>资源</b>"
   },
+  "pages.resources.search.clear": {
+    "message": "清空搜索"
+  },
   "pages.resources.category.clear": {
     "message": "清除分类"
   },
   "pages.resources.search.placeholder": {
     "message": "搜索资源"
-  },
-  "pages.resources.search.clear": {
-    "message": "清空搜索"
   },
   "pages.resources.category.count": {
     "message": "{count} 项"
@@ -311,11 +404,20 @@
   "pages.settings.item.quickActions.description": {
     "message": "一键执行常用操作"
   },
-  "pages.settings.item.language.title": {
-    "message": "语言"
+  "pages.settings.item.fontFamily.option.system": {
+    "message": "系统"
   },
-  "pages.settings.item.language.description": {
-    "message": "切换界面语言"
+  "pages.settings.item.fontFamily.option.sans": {
+    "message": "无衬线"
+  },
+  "pages.settings.item.fontFamily.option.serif": {
+    "message": "衬线"
+  },
+  "pages.settings.item.fontFamily.title": {
+    "message": "字体"
+  },
+  "pages.settings.item.fontFamily.description": {
+    "message": "选择系统、无衬线或衬线字体"
   },
   "pages.settings.datacard.label": {
     "message": "项设置"
@@ -335,95 +437,32 @@
   "pages.travel.datacard.years": {
     "message": "年历程"
   },
-  "blog.pages.archive.title": {
-    "message": "历史文章"
+  "components.playground.gameOfLife.play": {
+    "message": "播放"
   },
-  "blog.pages.archive.yearSelect": {
-    "message": "年份"
+  "components.playground.gameOfLife.pause": {
+    "message": "暂停"
   },
-  "blog.pages.tags.title": {
-    "message": "标签"
+  "components.playground.gameOfLife.step": {
+    "message": "单步"
   },
-  "blog.post.empty": {
-    "message": "暂无文章"
+  "components.playground.gameOfLife.random": {
+    "message": "随机"
   },
-  "blog.post.pinned": {
-    "message": "置顶"
+  "components.playground.gameOfLife.clear": {
+    "message": "清空"
   },
-  "blog.sidebar.calendar.today": {
-    "message": "本月"
+  "components.playground.lorenz.reset": {
+    "message": "重置"
   },
-  "blog.sidebar.calendar.prev": {
-    "message": "上个月"
+  "components.playground.neuralNetwork.clear": {
+    "message": "清除"
   },
-  "blog.sidebar.calendar.next": {
-    "message": "下个月"
+  "components.playground.neuralNetwork.check": {
+    "message": "识别数字"
   },
-  "blog.sidebar.calendar.empty": {
-    "message": "暂无文章"
-  },
-  "blog.menu.blog": {
-    "message": "博客"
-  },
-  "blog.menu.moments": {
-    "message": "动态"
-  },
-  "blog.menu.archive": {
-    "message": "归档"
-  },
-  "blog.archive.tab.year": {
-    "message": "按年份"
-  },
-  "blog.archive.tab.tags": {
-    "message": "按标签"
-  },
-  "blog.archive.tab.authors": {
-    "message": "按作者"
-  },
-  "blog.postcard.wordCount": {
-    "message": "{word} 词数"
-  },
-  "blog.postcard.readingTime": {
-    "message": "{readingTime} 分钟"
-  },
-  "blog.postcard.viewCount": {
-    "message": "{viewCount} 浏览"
-  },
-  "blog.pagination.prev": {
-    "message": "上一页"
-  },
-  "blog.pagination.next": {
-    "message": "下一页"
-  },
-  "blog.pagination.ariaLabel": {
-    "message": "分页"
-  },
-  "blog.sidebar.toc.title": {
-    "message": "目录"
-  },
-  "blog.sidebar.toc.progress": {
-    "message": "阅读进度：{percent}%"
-  },
-  "blog.sidebar.stats.posts": {
-    "message": "文章"
-  },
-  "blog.sidebar.stats.words": {
-    "message": "词数"
-  },
-  "blog.sidebar.feed.rss": {
-    "message": "RSS 订阅"
-  },
-  "blog.sidebar.feed.atom": {
-    "message": "Atom 订阅"
-  },
-  "blog.sidebar.feed.json": {
-    "message": "JSON 订阅"
-  },
-  "blog.sidebar.tags.title": {
-    "message": "热门标签"
-  },
-  "blog.pages.tags.tagSelect": {
-    "message": "标签"
+  "components.playground.neuralNetwork.preprocess": {
+    "message": "预处理"
   },
   "components.github.stars": {
     "message": "Star 数"
@@ -443,23 +482,20 @@
   "components.markdown.aboutGreeting": {
     "message": "Hello, I'm lailai"
   },
-  "components.playground.gameOfLife.play": {
-    "message": "播放"
+  "components.cookieConsent.title": {
+    "message": "Cookie 设置"
   },
-  "components.playground.gameOfLife.pause": {
-    "message": "暂停"
+  "components.cookieConsent.description": {
+    "message": "本站使用 Cookie 记录您的偏好，以改善浏览体验。查看 {privacyPolicy} 了解更多信息。"
   },
-  "components.playground.gameOfLife.step": {
-    "message": "单步"
+  "components.cookieConsent.privacyPolicy": {
+    "message": "隐私政策"
   },
-  "components.playground.gameOfLife.random": {
-    "message": "随机"
+  "components.cookieConsent.reject": {
+    "message": "拒绝"
   },
-  "components.playground.gameOfLife.clear": {
-    "message": "清空"
-  },
-  "components.playground.lorenz.reset": {
-    "message": "重置"
+  "components.cookieConsent.accept": {
+    "message": "接受"
   },
   "pages.moments.title": {
     "message": "动态"
@@ -524,15 +560,6 @@
   "pages.moments.weather.thunderstorm": {
     "message": "雷暴"
   },
-  "components.playground.neuralNetwork.clear": {
-    "message": "清除"
-  },
-  "components.playground.neuralNetwork.check": {
-    "message": "识别数字"
-  },
-  "components.playground.neuralNetwork.preprocess": {
-    "message": "预处理"
-  },
   "pages.insights.heartbeat.ariaLabel": {
     "message": "近期监测状态"
   },
@@ -572,20 +599,8 @@
   "pages.insights.uptime.empty": {
     "message": "暂无监控项"
   },
-  "components.cookieConsent.title": {
-    "message": "Cookie 设置"
-  },
-  "components.cookieConsent.description": {
-    "message": "本站使用 Cookie 记录您的偏好，以改善浏览体验。查看 {privacyPolicy} 了解更多信息。"
-  },
-  "components.cookieConsent.privacyPolicy": {
-    "message": "隐私政策"
-  },
-  "components.cookieConsent.reject": {
-    "message": "拒绝"
-  },
-  "components.cookieConsent.accept": {
-    "message": "接受"
+  "blog.pages.authors.authorSelect": {
+    "message": "作者"
   },
   "pages.travel.map.title": {
     "message": "旅行地图"
@@ -605,12 +620,6 @@
   "pages.travel.timeline.description": {
     "message": "纸上得来终觉浅，绝知此事要躬行"
   },
-  "blog.pages.authors.title": {
-    "message": "作者"
-  },
-  "blog.pages.authors.authorSelect": {
-    "message": "作者"
-  },
   "theme.ErrorPageContent.title": {
     "message": "页面已崩溃。",
     "description": "The title of the fallback page when the page crashed"
@@ -618,6 +627,14 @@
   "theme.BackToTopButton.buttonAriaLabel": {
     "message": "回到顶部",
     "description": "The ARIA label for the back to top button"
+  },
+  "theme.blog.archive.title": {
+    "message": "历史文章",
+    "description": "The page & hero title of the blog archive page"
+  },
+  "theme.blog.archive.description": {
+    "message": "历史文章",
+    "description": "The page & hero description of the blog archive page"
   },
   "theme.blog.paginator.navAriaLabel": {
     "message": "文章列表分页导航",
@@ -630,14 +647,6 @@
   "theme.blog.paginator.olderEntries": {
     "message": "较旧的文章",
     "description": "The label used to navigate to the older blog posts page (next page)"
-  },
-  "theme.blog.archive.title": {
-    "message": "历史文章",
-    "description": "The page & hero title of the blog archive page"
-  },
-  "theme.blog.archive.description": {
-    "message": "历史文章",
-    "description": "The page & hero description of the blog archive page"
   },
   "theme.blog.post.paginator.navAriaLabel": {
     "message": "文章分页导航",
@@ -810,6 +819,14 @@
     "message": "本页总览",
     "description": "The label used by the button on the collapsible TOC component"
   },
+  "theme.blog.post.readMore": {
+    "message": "阅读更多",
+    "description": "The label used in blog post item excerpts to link to full blog posts"
+  },
+  "theme.blog.post.readMoreLabel": {
+    "message": "阅读 {title} 的全文",
+    "description": "The ARIA label for the link to full blog posts from excerpts"
+  },
   "theme.blog.post.readingTime.plurals": {
     "message": "阅读需 {readingTime} 分钟",
     "description": "Pluralized label for \"{readingTime} min read\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
@@ -829,14 +846,6 @@
   "theme.CodeBlock.wordWrapToggle": {
     "message": "切换自动换行",
     "description": "The title attribute for toggle word wrapping button of code block lines"
-  },
-  "theme.blog.post.readMore": {
-    "message": "阅读更多",
-    "description": "The label used in blog post item excerpts to link to full blog posts"
-  },
-  "theme.blog.post.readMoreLabel": {
-    "message": "阅读 {title} 的全文",
-    "description": "The ARIA label for the link to full blog posts from excerpts"
   },
   "theme.docs.breadcrumbs.home": {
     "message": "主页面",
@@ -882,9 +891,6 @@
     "message": "展开侧边栏",
     "description": "The ARIA label and title attribute for expand button of doc sidebar"
   },
-  "theme.SearchBar.seeAll": {
-    "message": "查看全部 {count} 个结果"
-  },
   "theme.SearchPage.documentsFound.plurals": {
     "message": "找到 {count} 份文件",
     "description": "Pluralized label for \"{count} documents found\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
@@ -916,6 +922,9 @@
   "theme.SearchPage.fetchingNewResults": {
     "message": "正在获取新的搜索结果...",
     "description": "The paragraph for fetching new search results"
+  },
+  "theme.SearchBar.seeAll": {
+    "message": "查看全部 {count} 个结果"
   },
   "theme.SearchBar.label": {
     "message": "搜索",
