@@ -12,10 +12,6 @@ import Switch from '@site/src/components/laikit/Switch';
 import Slider from '@site/src/components/laikit/Slider';
 import DataCard from '@site/src/components/laikit/DataCard';
 import Button from '@site/src/components/laikit/Button';
-import {
-  SETTINGS_EXPERIMENTAL_DEFAULT,
-  SETTINGS_PRESET_COLOR_LIST,
-} from '@site/src/data/settings';
 import { useColorMode } from '@docusaurus/theme-common';
 import { usePersistentState } from '@site/src/hooks/usePersistentState';
 import { useThemeColors } from '@site/src/hooks/useThemeColors';
@@ -39,6 +35,27 @@ const MODIFICATION = translate({
   id: 'pages.settings.modification',
   message: 'Personalized <b>Settings</b>',
 });
+
+const SETTINGS_PRESET_COLOR_LIST = [
+  '#1d9bf0', // blue
+  '#6366f1', // indigo
+  '#a855f7', // purple
+  '#d946ef', // fuchsia
+  '#ec4899', // pink
+  '#ef4444', // red
+  '#f97316', // orange
+  '#eab308', // yellow
+  '#84cc16', // lime
+  '#22c55e', // green
+  '#14b8a6', // teal
+  '#06b6d4', // cyan
+];
+
+const SETTINGS_EXPERIMENTAL_DEFAULT = {
+  originalLayout: false,
+  debugMode: false,
+  grayMode: false,
+};
 
 type ThemeChoice = 'light' | 'dark' | null;
 
