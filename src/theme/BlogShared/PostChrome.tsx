@@ -1,7 +1,5 @@
-import React from 'react';
 import clsx from 'clsx';
 import Link from '@docusaurus/Link';
-import useBaseUrl from '@docusaurus/useBaseUrl';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import { translate } from '@docusaurus/Translate';
 import { Icon } from '@iconify/react';
@@ -12,6 +10,7 @@ import Card from '@site/src/components/laikit/Card';
 import { MetaBar, TagChipList } from './Components';
 import { usePostMetaItems } from './PostMeta';
 import CopyMarkdownButton from './CopyMarkdownButton';
+import Author from './PostAuthor';
 import styles from './styles.module.css';
 
 type PostMetadata = BlogPostPageProps['content']['metadata'];
@@ -89,46 +88,6 @@ export function PostHeader({ metadata, frontMatter }: PostHeaderProps) {
         </div>
       )}
     </header>
-  );
-}
-
-function Author({ author }: { author: PostMetadata['authors'][number] }) {
-  const avatarUrl = useBaseUrl(author.imageURL);
-  // Match Docusaurus's official link-resolution priority chain:
-  // page (auto-generated author page) → url → mailto:email → no link.
-  const link =
-    author.page?.permalink ||
-    author.url ||
-    (author.email ? `mailto:${author.email}` : undefined);
-  const inner = (
-    <>
-      {avatarUrl && (
-        <img
-          src={avatarUrl}
-          alt=""
-          className={styles.articleAuthorAvatar}
-          width={36}
-          height={36}
-          loading="lazy"
-        />
-      )}
-      <span className={styles.articleAuthorMeta}>
-        <span className={styles.articleAuthorName}>{author.name}</span>
-        {author.title && (
-          <span className={styles.articleAuthorTitle}>{author.title}</span>
-        )}
-      </span>
-    </>
-  );
-  return link ? (
-    <Link
-      href={link}
-      className={clsx(styles.articleAuthor, styles.articleAuthorLink)}
-    >
-      {inner}
-    </Link>
-  ) : (
-    <span className={styles.articleAuthor}>{inner}</span>
   );
 }
 
@@ -211,6 +170,49 @@ interface PostPaginatorProps {
   nextItem?: PaginatorItem;
 }
 
+type Direction = 'left' | 'right';
+
+function PaginatorCard({
+  item,
+  label,
+  direction,
+}: {
+  item: PaginatorItem;
+  label: string;
+  direction: Direction;
+}) {
+  const isRight = direction === 'right';
+  const arrow = (
+    <Icon
+      icon={isRight ? 'lucide:arrow-right' : 'lucide:arrow-left'}
+      width={14}
+      height={14}
+    />
+  );
+  return (
+    <Card to={item.permalink} padding="0.85rem 1.1rem">
+      <div
+        className={clsx(
+          styles.articlePaginatorLabel,
+          isRight && styles.articlePaginatorLabelRight
+        )}
+      >
+        {!isRight && arrow}
+        <span>{label}</span>
+        {isRight && arrow}
+      </div>
+      <div
+        className={clsx(
+          styles.articlePaginatorTitle,
+          isRight && styles.articlePaginatorTitleRight
+        )}
+      >
+        {item.title}
+      </div>
+    </Card>
+  );
+}
+
 export function PostPaginator({ prevItem, nextItem }: PostPaginatorProps) {
   if (!prevItem && !nextItem) return null;
 
@@ -238,13 +240,7 @@ export function PostPaginator({ prevItem, nextItem }: PostPaginatorProps) {
         )}
       >
         {prevItem && (
-          <Card to={prevItem.permalink} padding="0.85rem 1.1rem">
-            <div className={styles.articlePaginatorLabel}>
-              <Icon icon="lucide:arrow-left" width={14} height={14} />
-              <span>{newerLabel}</span>
-            </div>
-            <div className={styles.articlePaginatorTitle}>{prevItem.title}</div>
-          </Card>
+          <PaginatorCard item={prevItem} label={newerLabel} direction="left" />
         )}
       </div>
       <div
@@ -255,25 +251,7 @@ export function PostPaginator({ prevItem, nextItem }: PostPaginatorProps) {
         )}
       >
         {nextItem && (
-          <Card to={nextItem.permalink} padding="0.85rem 1.1rem">
-            <div
-              className={clsx(
-                styles.articlePaginatorLabel,
-                styles.articlePaginatorLabelRight
-              )}
-            >
-              <span>{olderLabel}</span>
-              <Icon icon="lucide:arrow-right" width={14} height={14} />
-            </div>
-            <div
-              className={clsx(
-                styles.articlePaginatorTitle,
-                styles.articlePaginatorTitleRight
-              )}
-            >
-              {nextItem.title}
-            </div>
-          </Card>
+          <PaginatorCard item={nextItem} label={olderLabel} direction="right" />
         )}
       </div>
     </nav>
