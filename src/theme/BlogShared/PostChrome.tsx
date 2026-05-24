@@ -94,9 +94,12 @@ export function PostHeader({ metadata, frontMatter }: PostHeaderProps) {
 
 function Author({ author }: { author: PostMetadata['authors'][number] }) {
   const avatarUrl = useBaseUrl(author.imageURL);
-  const nameNode = (
-    <span className={styles.articleAuthorName}>{author.name}</span>
-  );
+  // Match Docusaurus's official link-resolution priority chain:
+  // page (auto-generated author page) → url → mailto:email → no link.
+  const link =
+    author.page?.permalink ||
+    author.url ||
+    (author.email ? `mailto:${author.email}` : undefined);
   const inner = (
     <>
       {avatarUrl && (
@@ -110,16 +113,16 @@ function Author({ author }: { author: PostMetadata['authors'][number] }) {
         />
       )}
       <span className={styles.articleAuthorMeta}>
-        {nameNode}
+        <span className={styles.articleAuthorName}>{author.name}</span>
         {author.title && (
           <span className={styles.articleAuthorTitle}>{author.title}</span>
         )}
       </span>
     </>
   );
-  return author.url ? (
+  return link ? (
     <Link
-      href={author.url}
+      href={link}
       className={clsx(styles.articleAuthor, styles.articleAuthorLink)}
     >
       {inner}
