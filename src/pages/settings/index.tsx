@@ -36,27 +36,6 @@ const MODIFICATION = translate({
   message: 'Personalized <b>Settings</b>',
 });
 
-const SETTINGS_PRESET_COLOR_LIST = [
-  '#1d9bf0', // blue
-  '#6366f1', // indigo
-  '#a855f7', // purple
-  '#d946ef', // fuchsia
-  '#ec4899', // pink
-  '#ef4444', // red
-  '#f97316', // orange
-  '#eab308', // yellow
-  '#84cc16', // lime
-  '#22c55e', // green
-  '#14b8a6', // teal
-  '#06b6d4', // cyan
-];
-
-const SETTINGS_EXPERIMENTAL_DEFAULT = {
-  originalLayout: false,
-  debugMode: false,
-  grayMode: false,
-};
-
 type ThemeChoice = 'light' | 'dark' | null;
 
 function ThemeSettings() {
@@ -109,6 +88,21 @@ function ThemeSettings() {
     </IconCard>
   );
 }
+
+const SETTINGS_PRESET_COLOR_LIST = [
+  '#1d9bf0', // blue
+  '#6366f1', // indigo
+  '#a855f7', // purple
+  '#d946ef', // fuchsia
+  '#ec4899', // pink
+  '#ef4444', // red
+  '#f97316', // orange
+  '#eab308', // yellow
+  '#84cc16', // lime
+  '#22c55e', // green
+  '#14b8a6', // teal
+  '#06b6d4', // cyan
+];
 
 function AccentColor() {
   const { colorMode } = useColorMode();
@@ -175,6 +169,77 @@ function AccentColor() {
           ))}
         </div>
       </div>
+    </IconCard>
+  );
+}
+
+type FontFamilyChoice = 'system' | 'sans' | 'serif';
+
+const FONT_STACKS: Record<FontFamilyChoice, string> = {
+  system:
+    "-apple-system, BlinkMacSystemFont, 'PingFang SC', 'Microsoft YaHei', system-ui, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'",
+  sans: "'Inter', -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Microsoft YaHei', system-ui, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'",
+  serif: "Georgia, 'Times New Roman', 'Kaiti SC', STKaiti, KaiTi, 楷体, serif",
+};
+
+function FontFamily() {
+  const [choice, setChoice] = usePersistentState<FontFamilyChoice>(
+    'font-family',
+    'system'
+  );
+
+  useEffect(() => {
+    document.documentElement.style.setProperty(
+      '--ifm-font-family-base',
+      FONT_STACKS[choice]
+    );
+  }, [choice]);
+
+  const items: SegmentedItem<FontFamilyChoice>[] = [
+    {
+      value: 'system',
+      label: translate({
+        id: 'pages.settings.item.fontFamily.option.system',
+        message: 'System',
+      }),
+      style: { fontFamily: FONT_STACKS.system },
+    },
+    {
+      value: 'sans',
+      label: translate({
+        id: 'pages.settings.item.fontFamily.option.sans',
+        message: 'Sans',
+      }),
+      style: { fontFamily: FONT_STACKS.sans },
+    },
+    {
+      value: 'serif',
+      label: translate({
+        id: 'pages.settings.item.fontFamily.option.serif',
+        message: 'Serif',
+      }),
+      style: { fontFamily: FONT_STACKS.serif },
+    },
+  ];
+
+  return (
+    <IconCard
+      title={translate({
+        id: 'pages.settings.item.fontFamily.title',
+        message: 'Font Family',
+      })}
+      description={translate({
+        id: 'pages.settings.item.fontFamily.description',
+        message: 'Choose between system, sans, or serif',
+      })}
+      icon="lucide:case-sensitive"
+      bodyAlign="bottom"
+    >
+      <Segmented<FontFamilyChoice>
+        value={choice}
+        items={items}
+        onChange={setChoice}
+      />
     </IconCard>
   );
 }
@@ -287,6 +352,12 @@ function Typography() {
   );
 }
 
+const SETTINGS_EXPERIMENTAL_DEFAULT = {
+  originalLayout: false,
+  debugMode: false,
+  grayMode: false,
+};
+
 function ExperimentalFeatures() {
   const buttonOptions = [
     {
@@ -388,10 +459,11 @@ function QuickActions() {
 
   function handleReset() {
     localStorage.removeItem('theme');
+    localStorage.removeItem('ifm-theme-colors');
+    localStorage.removeItem('font-family');
     localStorage.removeItem('global-font-size');
     localStorage.removeItem('global-line-height');
     localStorage.removeItem('settings-experimental');
-    localStorage.removeItem('ifm-theme-colors');
     window.location.reload();
   }
 
@@ -446,77 +518,6 @@ function QuickActions() {
           </li>
         ))}
       </ul>
-    </IconCard>
-  );
-}
-
-type FontFamilyChoice = 'system' | 'sans' | 'serif';
-
-const FONT_STACKS: Record<FontFamilyChoice, string> = {
-  system:
-    "-apple-system, BlinkMacSystemFont, 'PingFang SC', 'Microsoft YaHei', system-ui, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'",
-  sans: "'Inter', -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Microsoft YaHei', system-ui, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'",
-  serif: "Georgia, 'Times New Roman', 'Kaiti SC', STKaiti, KaiTi, 楷体, serif",
-};
-
-function FontFamily() {
-  const [choice, setChoice] = usePersistentState<FontFamilyChoice>(
-    'font-family',
-    'system'
-  );
-
-  useEffect(() => {
-    document.documentElement.style.setProperty(
-      '--ifm-font-family-base',
-      FONT_STACKS[choice]
-    );
-  }, [choice]);
-
-  const items: SegmentedItem<FontFamilyChoice>[] = [
-    {
-      value: 'system',
-      label: translate({
-        id: 'pages.settings.item.fontFamily.option.system',
-        message: 'System',
-      }),
-      style: { fontFamily: FONT_STACKS.system },
-    },
-    {
-      value: 'sans',
-      label: translate({
-        id: 'pages.settings.item.fontFamily.option.sans',
-        message: 'Sans',
-      }),
-      style: { fontFamily: FONT_STACKS.sans },
-    },
-    {
-      value: 'serif',
-      label: translate({
-        id: 'pages.settings.item.fontFamily.option.serif',
-        message: 'Serif',
-      }),
-      style: { fontFamily: FONT_STACKS.serif },
-    },
-  ];
-
-  return (
-    <IconCard
-      title={translate({
-        id: 'pages.settings.item.fontFamily.title',
-        message: 'Font Family',
-      })}
-      description={translate({
-        id: 'pages.settings.item.fontFamily.description',
-        message: 'Choose between system, sans, or serif',
-      })}
-      icon="lucide:case-sensitive"
-      bodyAlign="bottom"
-    >
-      <Segmented<FontFamilyChoice>
-        value={choice}
-        items={items}
-        onChange={setChoice}
-      />
     </IconCard>
   );
 }
