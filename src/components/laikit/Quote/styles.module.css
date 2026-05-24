@@ -1,0 +1,52 @@
+.quote {
+  margin: 2.5rem 0;
+  padding: 0.5rem 1rem;
+  text-align: center;
+}
+
+.icon {
+  display: block;
+  margin: 0 auto 0.6rem;
+  color: var(--ifm-color-primary);
+  opacity: 0.55;
+}
+
+/* Reset Infima's blockquote chrome (border-left, padding, font tweaks) — we
+   want a clean centered pull-quote, not the default left-bordered call-out. */
+.body {
+  margin: 0 0 0.7rem;
+  padding: 0;
+  border: 0;
+  font-size: 1.15rem;
+  line-height: 1.7;
+  color: var(--ifm-color-emphasis-900);
+  font-weight: 400;
+  background: transparent;
+}
+
+.body :global(p) {
+  margin: 0;
+}
+
+.body :global(p + p) {
+  margin-top: 0.5rem;
+}
+
+.attribution {
+  font-size: 0.85rem;
+  color: var(--ifm-color-emphasis-600);
+}
+
+.attribution::before {
+  content: '— ';
+}
+
+.author {
+  font-weight: 500;
+  color: var(--ifm-color-emphasis-700);
+}
+
+.separator {
+  margin: 0 0.4rem;
+  opacity: 0.5;
+}

@@ -10,6 +10,7 @@ import BrowserWindow, {
 
 import Notation from '@site/src/components/Notation';
 import GitHub from '@site/src/components/laikit/GitHub';
+import Quote from '@site/src/components/laikit/Quote';
 import Desmos from '@site/src/components/Desmos';
 import Problem from '@site/src/components/Problem';
 import Solution from '@site/src/components/Solution';
@@ -24,6 +25,7 @@ export default {
   ImageWindow,
   Notation,
   GitHub,
+  Quote,
   Desmos,
   Problem,
   Solution,
