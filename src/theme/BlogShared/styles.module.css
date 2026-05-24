@@ -325,7 +325,7 @@
 
 .postCoverWrap {
   display: block;
-  margin: -0.5rem -0.5rem 1.25rem;
+  margin: 0 0 1.25rem;
   border-radius: 12px;
   overflow: hidden;
   background: var(--ifm-color-emphasis-100);
@@ -826,7 +826,7 @@
 .articleCoverWrap {
   display: block;
   position: relative;
-  margin: -0.5rem -0.5rem 0;
+  margin: 0;
   border-radius: 12px;
   overflow: hidden;
   background: var(--ifm-color-emphasis-100);
