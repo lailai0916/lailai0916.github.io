@@ -46,7 +46,7 @@ Docs, blog, and pages all share the same plugin set: `remark-math` + `rehype-kat
 
 ### i18n (critical)
 
-The site ships in `en` (default) and `zh-Hans`. Every user-facing string must go through `translate({ id, message })` from `@docusaurus/Translate`, and `i18n/zh-Hans/code.json` must carry the Chinese counterpart. The full ruleset — prefix taxonomy, key-shape conventions, orphan-cleanup workflow, translated-content layout — lives in @.claude/i18n.md. Read it before touching any `translate()` call or `code.json` entry.
+The site ships in `en` (default) and `zh-Hans`. Every user-facing string must go through `translate({ id, message })` from `@docusaurus/Translate`, and `i18n/zh-Hans/code.json` must carry the Chinese counterpart. The full ruleset — prefix taxonomy, key-shape conventions, orphan-cleanup workflow, translated-content layout — lives in `.claude/rules/i18n.md`, auto-loaded by Claude Code whenever files under `src/**` or `i18n/**` are touched.
 
 ### Styling
 
