@@ -816,7 +816,7 @@
 .articleHeader {
   display: flex;
   flex-direction: column;
-  gap: 0.85rem;
+  gap: 0.5rem;
   padding-bottom: 1.25rem;
   margin-bottom: 1.5rem;
   border-bottom: 1px solid
@@ -900,10 +900,20 @@
   color: var(--ifm-color-emphasis-600);
 }
 
-.articleHeaderTags {
+/* Row above the title: MetaBar on the left, action buttons on the right. */
+.articleHeaderInfoRow {
   display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem 1rem;
   flex-wrap: wrap;
-  gap: 0.4rem;
+}
+
+.articleHeaderActions {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-left: auto;
 }
 
 .articleFooter {
@@ -940,11 +950,9 @@
   text-decoration: none;
 }
 
-/* Right-aligned cluster for icon-only actions (copy / edit). */
-.articleFooterMetaActions {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
+/* Push the "last updated" meta to the right of the footer row.
+   Works whether or not tags are present on the left. */
+.articleFooterMetaUpdated {
   margin-left: auto;
 }
 

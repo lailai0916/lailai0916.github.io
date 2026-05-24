@@ -35,10 +35,20 @@ export function PostHeader({ metadata, frontMatter }: PostHeaderProps) {
     pinned: frontMatter.pinned === true,
   });
 
-  const authors = (metadata.authors ?? []).filter((a) => !!a.name);
-  const tagItems = (metadata.tags ?? [])
-    .filter((t) => !!t.label && !!t.permalink)
-    .map((t) => ({ to: t.permalink, label: t.label }));
+  // Hide the author block when this post is by the site owner alone.
+  // Frontmatter `authors:` is still preserved (for RSS / JSON-LD / future
+  // guest posts). Multi-author or non-`lailai` posts will surface naturally.
+  const allAuthors = (metadata.authors ?? []).filter((a) => !!a.name);
+  const isSoloOwner =
+    allAuthors.length === 1 && allAuthors[0].key === 'lailai';
+  const authors = isSoloOwner ? [] : allAuthors;
+
+  const hasSource = !!metadata.source;
+  const hasEdit = !!metadata.editUrl;
+  const editLabel = translate({
+    id: 'blog.post.editPage',
+    message: 'Edit this page',
+  });
 
   return (
     <header className={styles.articleHeader}>
@@ -70,13 +80,28 @@ export function PostHeader({ metadata, frontMatter }: PostHeaderProps) {
         </div>
       )}
 
-      {tagItems.length > 0 && (
-        <div className={styles.articleHeaderTags}>
-          <TagChipList items={tagItems} />
-        </div>
-      )}
-
-      <MetaBar items={metaItems} />
+      <div className={styles.articleHeaderInfoRow}>
+        <MetaBar items={metaItems} />
+        {(hasSource || hasEdit) && (
+          <div className={styles.articleHeaderActions}>
+            {hasSource && <CopyMarkdownButton source={metadata.source!} />}
+            {hasEdit && (
+              <Link
+                href={metadata.editUrl!}
+                aria-label={editLabel}
+                title={editLabel}
+                className={clsx(
+                  styles.articleFooterMetaItem,
+                  styles.articleFooterMetaLink,
+                  styles.articleFooterMetaIconBtn
+                )}
+              >
+                <Icon icon="lucide:pencil" width={16} height={16} />
+              </Link>
+            )}
+          </div>
+        )}
+      </div>
 
       <h1 className={styles.articleTitle}>{metadata.title}</h1>
 
@@ -102,21 +127,24 @@ export function PostFooter({ metadata }: PostFooterProps) {
     i18n: { currentLocale },
   } = useDocusaurusContext();
 
+  const tagItems = (metadata.tags ?? [])
+    .filter((t) => !!t.label && !!t.permalink)
+    .map((t) => ({ to: t.permalink, label: t.label }));
+  const hasTags = tagItems.length > 0;
   const hasUpdated = !!metadata.lastUpdatedAt;
-  const hasEdit = !!metadata.editUrl;
-  const hasSource = !!metadata.source;
-  if (!hasUpdated && !hasEdit && !hasSource) return null;
-
-  const editLabel = translate({
-    id: 'blog.post.editPage',
-    message: 'Edit this page',
-  });
+  if (!hasTags && !hasUpdated) return null;
 
   return (
     <footer className={styles.articleFooter}>
       <div className={styles.articleFooterMeta}>
+        {hasTags && <TagChipList items={tagItems} />}
         {hasUpdated && (
-          <span className={styles.articleFooterMetaItem}>
+          <span
+            className={clsx(
+              styles.articleFooterMetaItem,
+              styles.articleFooterMetaUpdated
+            )}
+          >
             <Icon icon="lucide:history" width={14} height={14} />
             <time dateTime={new Date(metadata.lastUpdatedAt!).toISOString()}>
               {translate(
@@ -133,25 +161,6 @@ export function PostFooter({ metadata }: PostFooterProps) {
               )}
             </time>
           </span>
-        )}
-        {(hasSource || hasEdit) && (
-          <div className={styles.articleFooterMetaActions}>
-            {hasSource && <CopyMarkdownButton source={metadata.source!} />}
-            {hasEdit && (
-              <Link
-                href={metadata.editUrl!}
-                aria-label={editLabel}
-                title={editLabel}
-                className={clsx(
-                  styles.articleFooterMetaItem,
-                  styles.articleFooterMetaLink,
-                  styles.articleFooterMetaIconBtn
-                )}
-              >
-                <Icon icon="lucide:pencil" width={16} height={16} />
-              </Link>
-            )}
-          </div>
         )}
       </div>
     </footer>
