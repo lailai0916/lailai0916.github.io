@@ -37,8 +37,7 @@ function PostCard({ item }: PostCardProps) {
     permalink: metadata.permalink,
     date: metadata.date,
     readingTime: metadata.readingTime,
-    pinned:
-      (frontMatter as Record<string, unknown>).pinned === true,
+    pinned: (frontMatter as Record<string, unknown>).pinned === true,
   });
 
   return (
