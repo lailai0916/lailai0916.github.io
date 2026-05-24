@@ -71,8 +71,7 @@ function getBlogMoments(): MomentItem[] {
       const content = translate(
         {
           id: 'data.moments.blogPublished',
-          message:
-            'Published a new post <a href="{permalink}">《{title}》</a>',
+          message: 'Published a new post <a href="{permalink}">《{title}》</a>',
         },
         { permalink: escapeHtml(permalink), title: escapeHtml(title) }
       );
