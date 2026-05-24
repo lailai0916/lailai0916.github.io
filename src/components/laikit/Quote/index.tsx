@@ -10,39 +10,51 @@ interface QuoteProps {
   author?: string;
   /** Optional source / event / publication, appended after a middot. */
   source?: string;
+  /**
+   * Visual variant.
+   * - `centered` (default): short, epigraph-style. Decorative quote icon on top.
+   * - `block`: longer multi-line passages. Left-aligned with a primary-colored
+   *   left rule; no icon. Use this whenever the quote runs to 3+ lines so the
+   *   text doesn't end up double-ragged.
+   */
+  variant?: 'centered' | 'block';
   className?: string;
 }
 
-/**
- * A restrained pull-quote primitive. Use it for short, deliberate quotations
- * (an epigraph, a tagline, a remembered line) — not as a substitute for the
- * regular Markdown blockquote.
- *
- *     <Quote author="Steve Jobs" source="Stanford, 2005">
- *       Stay hungry, stay foolish.
- *     </Quote>
- */
 export default function Quote({
   children,
   author,
   source,
+  variant = 'centered',
   className,
 }: QuoteProps) {
   const hasAttribution = !!(author || source);
   return (
-    <figure className={clsx(styles.quote, className)}>
-      <Icon
-        icon="lucide:quote"
-        width={22}
-        height={22}
-        className={styles.icon}
-        aria-hidden="true"
-      />
+    <figure
+      className={clsx(
+        styles.quote,
+        variant === 'block' ? styles.variantBlock : styles.variantCentered,
+        className
+      )}
+    >
+      {variant === 'centered' && (
+        <Icon
+          icon="lucide:quote"
+          width={22}
+          height={22}
+          className={styles.icon}
+          aria-hidden="true"
+        />
+      )}
       <blockquote className={styles.body}>{children}</blockquote>
       {hasAttribution && (
         <figcaption className={styles.attribution}>
           {author && <span className={styles.author}>{author}</span>}
-          {author && source && <span className={styles.separator}>·</span>}
+          {author && source && (
+            <span className={styles.separator} aria-hidden="true">
+              ·
+            </span>
+          )}
           {source && <span className={styles.source}>{source}</span>}
         </figcaption>
       )}
