@@ -1,3 +1,4 @@
+import type { CSSProperties } from 'react';
 import clsx from 'clsx';
 import Link from '@docusaurus/Link';
 import { Icon } from '@iconify/react';
@@ -12,6 +13,8 @@ export interface SegmentedItem<T> {
    * `onChange` is not invoked for href items — navigation drives the next value.
    */
   href?: string;
+  /** Inline style applied to the item's button/link element. */
+  style?: CSSProperties;
 }
 
 interface SegmentedProps<T> {
@@ -55,6 +58,7 @@ export default function Segmented<T>({
               key={key}
               to={item.href}
               className={itemClass}
+              style={item.style}
               aria-current={isActive ? 'page' : undefined}
             >
               {inner}
@@ -67,6 +71,7 @@ export default function Segmented<T>({
             key={key}
             type="button"
             className={itemClass}
+            style={item.style}
             onClick={() => onChange?.(item.value)}
             aria-pressed={isActive}
           >

@@ -480,6 +480,7 @@ function FontFamily() {
         message: 'System',
       }),
       icon: 'lucide:monitor',
+      style: { fontFamily: FONT_STACKS.system },
     },
     {
       value: 'sans',
@@ -488,6 +489,7 @@ function FontFamily() {
         message: 'Sans',
       }),
       icon: 'lucide:type',
+      style: { fontFamily: FONT_STACKS.sans },
     },
     {
       value: 'serif',
@@ -496,6 +498,7 @@ function FontFamily() {
         message: 'Serif',
       }),
       icon: 'lucide:baseline',
+      style: { fontFamily: FONT_STACKS.serif },
     },
   ];
 
