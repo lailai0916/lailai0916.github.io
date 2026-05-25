@@ -799,8 +799,8 @@ export const RESOURCE_LIST: ResourceCategoryItem[] = [
         description: '在线打字练习平台',
       },
       {
-        title: 'WildCard',
-        href: 'https://bewildcard.com',
+        title: 'WildAI',
+        href: 'https://bewild.ai',
         description: '海外订阅虚拟信用卡服务',
       },
       {
