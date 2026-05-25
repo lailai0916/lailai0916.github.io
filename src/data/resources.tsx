@@ -713,6 +713,11 @@ export const RESOURCE_LIST: ResourceCategoryItem[] = [
         description: '五子棋四国军棋桌游合集',
       },
       {
+        title: 'Lichess',
+        href: 'https://lichess.org',
+        description: '免费开源国际象棋平台',
+      },
+      {
         title: 'Neal.fun',
         href: 'https://neal.fun',
         description: 'Neal Agarwal 互动实验合集',
