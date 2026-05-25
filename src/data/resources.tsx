@@ -174,9 +174,9 @@ export const RESOURCE_LIST: ResourceCategoryItem[] = [
         description: '免费隐私保护域名注册',
       },
       {
-        title: '墙妈妈',
-        href: 'https://www.wallmama.com',
-        description: '翻墙工具评测与教程',
+        title: 'Nexitally',
+        href: 'https://nxonearth.com',
+        description: '优质全球网络加速服务',
       },
       {
         title: 'ExpressVPN',
