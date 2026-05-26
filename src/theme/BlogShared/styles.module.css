@@ -52,43 +52,35 @@
   flex-direction: column;
   align-items: center;
   text-align: center;
-  padding: 0.75rem 0 0.5rem;
+  padding: 1rem 0 0.75rem;
 }
 
 .profileAvatar {
-  width: 96px;
-  height: 96px;
+  width: 80px;
+  height: 80px;
   border-radius: 50%;
   object-fit: cover;
-  background: var(--ifm-card-background-color);
-  padding: 4px;
-  box-shadow:
-    0 0 0 1px var(--ifm-color-emphasis-200),
-    0 10px 28px -6px rgba(0, 0, 0, 0.12),
-    0 2px 6px rgba(0, 0, 0, 0.04);
 }
 
 .profileName {
-  margin: 0.95rem;
+  margin: 1.15rem 0 0;
   font-size: 1.5rem;
   font-weight: 700;
-  letter-spacing: -0.015em;
   line-height: 1.1;
 }
 
 .profileTitle {
-  font-size: 0.85rem;
-  font-weight: 500;
-  letter-spacing: 0.005em;
-  color: var(--ifm-color-emphasis-700);
+  margin: 0.45rem 0 0;
+  font-size: 0.9rem;
+  color: var(--ifm-color-emphasis-600);
 }
 
 .profileNav {
   position: relative;
   display: flex;
   justify-content: space-around;
-  margin-top: 0.85rem;
-  padding-top: 0.7rem;
+  margin-top: 0.5rem;
+  padding-top: 0.9rem;
   border-top: 1px solid
     color-mix(in srgb, var(--ifm-color-emphasis-300) 65%, transparent);
 }
@@ -99,7 +91,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 0.3rem 0.5rem 0.55rem;
+  padding: 0.4rem 0.5rem 0.65rem;
   font-size: 0.875rem;
   font-weight: 500;
   letter-spacing: 0.02em;

@@ -47,33 +47,41 @@ function useActiveBlogNav(): BlogNavKey {
   return 'blog';
 }
 
+// Hardcoded site-owner profile, matching the homepage hero card. Keeping this
+// in sync with blog/authors.yml is the author's responsibility — Docusaurus's
+// author API is per-post / per-author-page context, not globally accessible,
+// and tapping internal generated files (loadAuthor-style) ties us to private
+// implementation details. For a single-owner personal site, copying the few
+// fields the sidebar actually needs is simpler than either alternative.
+const PROFILE_AVATAR = '/img/logo.svg';
+const PROFILE_NAME = 'lailai';
+const PROFILE_TITLE_ID = 'blog.sidebar.profileCard.title';
+const PROFILE_TITLE_DEFAULT = 'Student & Developer';
+
 function ProfileCard() {
-  const author = getAllPostMetadata()
-    .flatMap((m) => m.authors ?? [])
-    .find((a) => a.key === 'lailai'); // 这是获取作者的最优方式吗？去中文注释！
-  const authorImageUrl = useBaseUrl(author?.imageURL);
+  const avatarUrl = useBaseUrl(PROFILE_AVATAR);
   const blogHref = useBaseUrl('/blog');
   const momentsHref = useBaseUrl('/blog/moments');
   const archiveHref = useBaseUrl('/blog/archive');
   const active = useActiveBlogNav();
-
-  if (!author) return null;
+  const title = translate({
+    id: PROFILE_TITLE_ID,
+    message: PROFILE_TITLE_DEFAULT,
+  });
 
   return (
     <BlogCard>
       <div className={styles.profileCard}>
         <div className={styles.profileHeader}>
           <img
-            src={authorImageUrl}
-            alt={author.name}
-            width={96}
-            height={96}
+            src={avatarUrl}
+            alt={PROFILE_NAME}
+            width={80}
+            height={80}
             className={styles.profileAvatar}
           />
-          <div className={styles.profileName}>{author.name}</div>
-          {author.title && (
-            <div className={styles.profileTitle}>{author.title}</div>
-          )}
+          <div className={styles.profileName}>{PROFILE_NAME}</div>
+          <div className={styles.profileTitle}>{title}</div>
         </div>
         <nav className={styles.profileNav} aria-label="Blog sections">
           {(
