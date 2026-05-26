@@ -50,7 +50,7 @@ function useActiveBlogNav(): BlogNavKey {
 function ProfileCard() {
   const author = getAllPostMetadata()
     .flatMap((m) => m.authors ?? [])
-    .find((a) => a.key === 'lailai');
+    .find((a) => a.key === 'lailai'); // 这是获取作者的最优方式吗？去中文注释！
   const authorImageUrl = useBaseUrl(author?.imageURL);
   const blogHref = useBaseUrl('/blog');
   const momentsHref = useBaseUrl('/blog/moments');
@@ -71,7 +71,6 @@ function ProfileCard() {
             className={styles.profileAvatar}
           />
           <div className={styles.profileName}>{author.name}</div>
-          <span className={styles.profileAccent} aria-hidden="true" />
           {author.title && (
             <div className={styles.profileTitle}>{author.title}</div>
           )}

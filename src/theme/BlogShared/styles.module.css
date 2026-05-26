@@ -69,20 +69,11 @@
 }
 
 .profileName {
-  margin-top: 0.95rem;
+  margin: 0.95rem;
   font-size: 1.5rem;
   font-weight: 700;
   letter-spacing: -0.015em;
   line-height: 1.1;
-}
-
-.profileAccent {
-  display: block;
-  width: 28px;
-  height: 2px;
-  margin: 0.65rem 0;
-  border-radius: 999px;
-  background: var(--ifm-color-primary);
 }
 
 .profileTitle {
