@@ -16,10 +16,29 @@
 }
 
 .cardMain {
+  position: relative;
   height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+}
+
+.cardMainArrow {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 1rem;
+  color: var(--ifm-color-emphasis-400);
+  opacity: 0;
+  transform: translate(-4px, 4px);
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease;
+}
+
+.cardMainLink:hover .cardMainArrow {
+  opacity: 1;
+  transform: translate(0, 0);
 }
 
 .cardMainLink {

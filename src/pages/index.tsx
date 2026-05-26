@@ -183,6 +183,10 @@ export default function Home(): ReactNode {
         <div className={styles.bento}>
           <Link to="/about" className={styles.cardMainLink}>
             <Card className={styles.cardMain} padding="1.75rem">
+              <Icon
+                icon="lucide:arrow-up-right"
+                className={styles.cardMainArrow}
+              />
               <div className={styles.cardMainInner}>
                 <img
                   src={useBaseUrl('/img/logo.svg')}
