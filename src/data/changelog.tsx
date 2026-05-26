@@ -311,7 +311,7 @@ export const CHANGELOG_LIST: ChangelogItem[] = [
   {
     date: '2024-10-18',
     type: 'added',
-    content: '<b>LaTeX</b> 数学公式',
+    content: '<b>KaTeX</b> 数学公式',
   },
   {
     date: '2024-10-17',
