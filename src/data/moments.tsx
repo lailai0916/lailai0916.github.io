@@ -38,6 +38,11 @@ const STATIC_MOMENTS: MomentItem[] = [
     content: 'Hello, World!',
   },
   {
+    date: '2025-12-26T23:23',
+    content: 'ChatGPT 2025',
+    images: ['https://cloud.lailai.one/f/PVyuy/chatgpt-2025.png'],
+  },
+  {
     date: '2025-10-17T00:00',
     content: "Website's 1st Anniversary! 🎉",
   },

@@ -16,7 +16,7 @@ import {
 } from '@site/src/utils/format';
 import styles from './styles.module.css';
 
-const PAGE_SIZE = 20;
+const PAGE_SIZE = 10;
 
 const TITLE = translate({
   id: 'pages.moments.title',
