@@ -91,4 +91,5 @@ article,
 
 .katex-display {
   overflow: auto hidden;
+  scrollbar-width: thin;
 }
