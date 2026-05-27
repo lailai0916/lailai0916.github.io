@@ -83,6 +83,7 @@ Acronym after a full-width comma inside the parentheses, not after a slash or da
   ```
 
   **Allman braces** (opening brace on its own line), **tabs for indentation**, **no spaces around `=` or operators** in main code (`using ll=long long;`, `if(n%i==0)`). Single-line `if`/`for` bodies inline without braces.
+
 - Comments inside C++ are essentially **never present**; the surrounding prose explains. Don't add `// xxx` lines.
 - Language tag is `cpp`, never `c++`. Other languages: `python`, `bash`, `text`, `svg`, `json`, `js`.
 - Code-fence title (`title="main.cpp"`) only when file identity matters. Solution posts omit it.
