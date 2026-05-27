@@ -535,6 +535,11 @@ export const RESOURCE_LIST: ResourceCategoryItem[] = [
         description: 'AI 矢量图与插画生成',
       },
       {
+        title: 'Quiver AI',
+        href: 'https://quiver.ai',
+        description: 'AI 矢量图生成与动效平台',
+      },
+      {
         title: 'Mult',
         href: 'https://mult.dev',
         description: '旅行路线动画地图制作',
