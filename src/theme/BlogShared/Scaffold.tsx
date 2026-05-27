@@ -60,6 +60,7 @@ const PROFILE_TITLE_DEFAULT = 'Student & Developer';
 
 function ProfileCard() {
   const avatarUrl = useBaseUrl(PROFILE_AVATAR);
+  const aboutHref = useBaseUrl('/about');
   const blogHref = useBaseUrl('/blog');
   const momentsHref = useBaseUrl('/blog/moments');
   const archiveHref = useBaseUrl('/blog/archive');
@@ -72,7 +73,7 @@ function ProfileCard() {
   return (
     <BlogCard>
       <div className={styles.profileCard}>
-        <div className={styles.profileHeader}>
+        <Link to={aboutHref} className={styles.profileHeader}>
           <img
             src={avatarUrl}
             alt={PROFILE_NAME}
@@ -82,7 +83,7 @@ function ProfileCard() {
           />
           <div className={styles.profileName}>{PROFILE_NAME}</div>
           <div className={styles.profileTitle}>{title}</div>
-        </div>
+        </Link>
         <nav className={styles.profileNav} aria-label="Blog sections">
           {(
             [

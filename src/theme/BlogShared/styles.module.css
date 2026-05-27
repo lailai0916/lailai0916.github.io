@@ -53,6 +53,8 @@
   align-items: center;
   text-align: center;
   padding: 1rem 0 0.75rem;
+  color: inherit;
+  text-decoration: none !important;
 }
 
 .profileAvatar {
