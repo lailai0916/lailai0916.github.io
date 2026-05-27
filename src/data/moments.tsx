@@ -40,11 +40,17 @@ const STATIC_MOMENTS: MomentItem[] = [
   {
     date: '2025-12-26T23:23',
     content: 'ChatGPT 2025',
+    event: 'Your Year with ChatGPT',
     images: ['https://cloud.lailai.one/f/PVyuy/chatgpt-2025.png'],
   },
   {
     date: '2025-10-17T00:00',
     content: "Website's 1st Anniversary! 🎉",
+  },
+  {
+    date: '2025-10-16T19:50',
+    content: '图灵测试',
+    images: ['https://cloud.lailai.one/f/YvpHA/certificate.png'],
   },
   {
     date: '2025-10-05T19:45',
@@ -55,6 +61,10 @@ const STATIC_MOMENTS: MomentItem[] = [
     date: '2025-09-16T00:00',
     content: '16th Birthday! 🎉',
     images: ['https://cloud.lailai.one/f/r4HM/birthday-16.png'],
+  },
+  {
+    date: '2025-05-23T22:22',
+    content: 'Java 30th!',
   },
 ];
 
