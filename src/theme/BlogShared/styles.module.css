@@ -62,6 +62,11 @@
   height: 80px;
   border-radius: 50%;
   object-fit: cover;
+  flex-shrink: 0;
+}
+
+.profileIntro {
+  min-width: 0;
 }
 
 .profileName {
@@ -75,6 +80,33 @@
   margin: 0.45rem 0 0;
   font-size: 0.9rem;
   color: var(--ifm-color-emphasis-600);
+}
+
+@media (max-width: 996px) {
+  .profileHeader {
+    flex-direction: row;
+    align-items: center;
+    text-align: left;
+    gap: 1rem;
+    padding: 0.5rem 0;
+  }
+
+  .profileAvatar {
+    width: 64px;
+    height: 64px;
+  }
+
+  .profileIntro {
+    flex: 1;
+  }
+
+  .profileName {
+    margin: 0;
+  }
+
+  .profileTitle {
+    margin: 0.3rem 0 0;
+  }
 }
 
 .profileNav {

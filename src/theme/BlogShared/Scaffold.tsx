@@ -81,8 +81,10 @@ function ProfileCard() {
             height={80}
             className={styles.profileAvatar}
           />
-          <div className={styles.profileName}>{PROFILE_NAME}</div>
-          <div className={styles.profileTitle}>{title}</div>
+          <div className={styles.profileIntro}>
+            <div className={styles.profileName}>{PROFILE_NAME}</div>
+            <div className={styles.profileTitle}>{title}</div>
+          </div>
         </Link>
         <nav className={styles.profileNav} aria-label="Blog sections">
           {(
