@@ -26,29 +26,37 @@
 
 ## 网站特性
 
-🦖 **Docusaurus 构建**：使用 [Docusaurus](https://docusaurus.io) 构建，专为文档与博客设计。
+🎨 **定制首页**：基于便当格布局的自定义首页，配有动态 Lorenz Attractor 与打字机式的身份介绍。
 
-📝 **Markdown 支持**：支持 [Markdown](https://daringfireball.net/projects/markdown/) 语法和 [KaTeX](https://katex.org) 数学公式渲染。
+📰 **重塑博客**：全面重新设计的博客，配有丰富的侧边栏与增强的文章页。
 
-🌐 **多语言支持**：内置国际化功能，支持多语言内容。
+📄 **自定义页面**：博客与文档之外的精心定制页面，如 About、Travel、Resources 等。
 
-🔍 **全文搜索**：集成 [Algolia DocSearch](https://docsearch.algolia.com)，快速检索内容。
+🧩 **自定义组件**：面向题目、题解、嵌入等场景的领域 MDX 组件。
 
-📱 **响应式设计**：适配各种设备，优化阅读体验。
+📐 **数学、图表与实时代码**：自托管 [KaTeX](https://katex.org) 并支持公式复制，集成 [Mermaid](https://mermaid.js.org) 图表与可实时运行的 [React](https://react.dev) 代码块。
 
-⚛️ **React 组件**：支持嵌入自定义 [React](https://react.dev) 组件。
+🔍 **全文搜索**：由 [Algolia DocSearch](https://docsearch.algolia.com) 提供的全站快速检索。
 
-🎨 **主题系统**：支持深浅主题切换，可灵活自定义。
+📱 **响应式设计**：从手机到桌面的各类屏幕均经过适配。
 
-🌙 **简单易用**：配置简洁，易于部署和维护。
+⚙️ **用户设置**：运行时切换主题、强调色、字体等。
 
-🚀 **自动部署**：支持一键部署到 [GitHub Pages](https://pages.github.com)。
+🌐 **完整双语**：英文与简体中文，连博客正文都已翻译。
 
-📚 **版本管理**：支持多版本文档管理。
+🛡️ **隐私与评论**：内置 Cookie 同意弹窗与 [Giscus](https://giscus.app) 评论系统。
 
-💯 **搜索引擎优化**：内置搜索引擎优化，提升搜索可见性。
+📡 **订阅源**：通过 RSS、Atom 或 JSON 订阅最新文章。
 
-📊 **数据统计**：集成 [Google Analytics](https://analytics.google.com) 访问统计。
+🛠️ **自建设计系统**：手工打造的组件库（`laikit`），统一全站 UI 风格。
+
+📊 **分析与 SEO**：双重统计（[Google Analytics](https://analytics.google.com) + 公开的 [Umami](https://umami.is) 看板），并已在主流搜索引擎验证。
+
+📦 **资源自托管**：媒体与字体均自托管，运行时无第三方 CDN 依赖。
+
+🔧 **现代技术栈**：基于严格 TypeScript 与现代 CSS 构建。
+
+🚀 **稳健部署**：GitHub Actions 每次提交都同步发布到 [GitHub Pages](https://pages.github.com) 与自建服务器，并配有备用域名。
 
 ## 快速开始
 

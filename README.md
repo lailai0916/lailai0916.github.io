@@ -26,29 +26,37 @@ Built with [Docusaurus](https://docusaurus.io), source code hosted on [GitHub](h
 
 ## Website Features
 
-🦖 **Powered by Docusaurus** — Built with [Docusaurus](https://docusaurus.io), designed for documentation and blogs.
+🎨 **Bespoke Home** — A custom bento-grid homepage with an animated Lorenz Attractor and a typewriter intro.
 
-📝 **Markdown & Math Support** — Supports [Markdown](https://daringfireball.net/projects/markdown/) and [KaTeX](https://katex.org) for math rendering.
+📰 **Reimagined Blog** — A fully redesigned blog with a rich sidebar and enhanced article pages.
 
-🌐 **Multi-language Ready** — Built-in internationalization for multilingual content.
+📄 **Custom Pages** — Handcrafted pages beyond the blog and docs, such as About, Travel, and Resources.
 
-🔍 **Full-Text Search** — Integrated with [Algolia DocSearch](https://docsearch.algolia.com) for fast content search.
+🧩 **Custom Components** — Domain-specific MDX components for problems, solutions, embeds, and more.
 
-📱 **Responsive Design** — Optimized for all devices.
+📐 **Math, Diagrams & Live Code** — Self-hosted [KaTeX](https://katex.org) with copy-tex, [Mermaid](https://mermaid.js.org) diagrams, and live [React](https://react.dev) code blocks.
 
-⚛️ **Custom React Components** — Easily embed custom [React](https://react.dev) components.
+🔍 **Full-Text Search** — Fast site-wide search powered by [Algolia DocSearch](https://docsearch.algolia.com).
 
-🎨 **Theme System** — Light/dark mode toggle with flexible customization.
+📱 **Responsive Design** — Layouts tuned for everything from phone to desktop.
 
-🌙 **Simple & Easy to Use** — Clean configuration, easy to deploy and maintain.
+⚙️ **User Settings** — Runtime controls for theme, accent color, font, and more.
 
-🚀 **One-Click Deployment** — Supports seamless deployment to [GitHub Pages](https://pages.github.com).
+🌐 **Fully Bilingual** — English and Simplified Chinese, with even blog posts fully translated.
 
-📚 **Version Management** — Supports multiple document versions.
+🛡️ **Privacy & Comments** — Cookie consent banner and [Giscus](https://giscus.app) comments built in.
 
-💯 **Search Engine Optimization** — Built-in SEO enhancements for better visibility.
+📡 **Subscribable Feeds** — Follow new posts via RSS, Atom, or JSON feeds.
 
-📊 **Analytics Integrated** — [Google Analytics](https://analytics.google.com) tracking included.
+🛠️ **In-House Design System** — A handcrafted component library (`laikit`) for a consistent UI.
+
+📊 **Analytics & SEO** — Dual analytics ([Google Analytics](https://analytics.google.com) + a public [Umami](https://umami.is) dashboard) and verification on major search engines.
+
+📦 **Self-Hosted Assets** — Media and fonts served without third-party CDNs at runtime.
+
+🔧 **Type-Safe & Modern Stack** — Built with strict TypeScript and modern CSS.
+
+🚀 **Robust Deployment** — GitHub Actions ships every commit to [GitHub Pages](https://pages.github.com) and a custom server, with a backup domain.
 
 ## Getting Started
 
