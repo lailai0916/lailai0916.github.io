@@ -108,7 +108,7 @@ export default function UptimeSection() {
       ) : (
         <div className={styles.list}>
           {loading ? (
-            Array.from({ length: 4 }).map((_, i) => (
+            Array.from({ length: 6 }).map((_, i) => (
               <Skeleton key={i} height={96} radius={16} />
             ))
           ) : monitors.length === 0 ? (
