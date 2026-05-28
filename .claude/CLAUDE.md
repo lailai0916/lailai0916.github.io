@@ -56,6 +56,7 @@ Components use CSS Modules (`styles.module.css` next to `index.tsx`). Global tok
 
 These are project rules, not general advice — follow them:
 
+- **Strive for excellence (精益求精).** This is a personal site the maintainer cares about deeply — "good enough" is not the bar. Sweat the details: spacing, wording, ordering, EN/ZH parity, visual rhythm. When something is functional but not yet refined, keep polishing rather than declaring it done. Proactively point out rough edges instead of waiting to be asked.
 - **Reuse `laikit` primitives** before adding new components. New UI should be visually and behaviourally indistinguishable from existing parts.
 - **Edit, don't rewrite.** Prefer minimal targeted edits; one coherent change per commit; do not reformat or refactor unrelated code.
 - **No whole-card hover lift.** Never add hover-triggered `translateY`/`translateX` to whole cards (or other large container blocks) — that "card floats up on hover" effect is an AI-tell and the maintainer hates it. Smaller hover motion on internal elements (e.g. an arrow nudging, a small `scale()` on an icon or active control) is fine when it serves a clear interaction cue.
