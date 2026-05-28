@@ -52,6 +52,10 @@ The site ships in `en` (default) and `zh-Hans`. Every user-facing string must go
 
 Components use CSS Modules (`styles.module.css` next to `index.tsx`). Global tokens and overrides live in `src/css/custom.css`. Per the contributing guide, prefer modern CSS (`grid`, `clamp()`, `color-mix()`, container queries) over JS layout.
 
+### Path alias
+
+`@site` resolves to the project root (Docusaurus default), e.g. `import Button from '@site/src/components/laikit/Button'`.
+
 ## Conventions (from `.github/CONTRIBUTING.md`)
 
 These are project rules, not general advice — follow them:
@@ -65,7 +69,3 @@ These are project rules, not general advice — follow them:
 - **Small changes go straight to `main`.** Do not create a feature branch or open a PR for minor edits (copy tweaks, single-component refactors, style fixes, etc.) — commit directly on `main`. Reserve branches and PRs for substantial multi-file work the maintainer explicitly asks to be reviewed.
 
 Prettier config: `printWidth: 80`, `singleQuote: true`, `trailingComma: 'es5'`. TypeScript is `strict`.
-
-## Path alias
-
-`@site` resolves to the project root (Docusaurus default), e.g. `import Button from '@site/src/components/laikit/Button'`.
