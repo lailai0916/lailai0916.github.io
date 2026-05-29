@@ -382,8 +382,8 @@ export default function Insights(): ReactNode {
         <HeroGrid range={range} />
         <PageviewsChart range={range} />
         <MetricsGrid range={range} />
-        <SysStatusCard />
         <UptimeSection />
+        <SysStatusCard />
       </PageContent>
     </Layout>
   );
