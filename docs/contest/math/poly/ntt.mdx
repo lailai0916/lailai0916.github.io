@@ -5,3 +5,52 @@ title: 快速数论变换（FNTT）
 ## 参考资料
 
 - [快速数论变换 - OI Wiki](https://oi-wiki.org/math/poly/ntt/)
+- [原根 - OI Wiki](https://oi-wiki.org/math/number-theory/primitive-root/)
+
+## 思想
+
+[快速傅里叶变换（FFT）](/docs/contest/math/poly/fft) 在复数域上用单位根 $\omega_n=e^{2\pi i/n}$ 做变换，浮点运算存在精度误差。**快速数论变换**（Fast Number Theoretic Transform，FNTT）把整个过程搬到模 $p$ 的整数域上，用 **原根**（Primitive Root）的幂代替单位根，既精确又天然适合带取模的题目。
+
+要求模数 $p$ 为 **NTT 模数**，形如 $p=q\cdot 2^c+1$。设 $g$ 是模 $p$ 的原根，则 $g_n=g^{\frac{p-1}{n}}$ 在模 $p$ 意义下扮演 $n$ 次单位根的角色，前提是变换长度 $n\mid(p-1)$，即 $n$ 是 $2$ 的幂且 $2^c\ge n$。
+
+常用的 NTT 模数及其原根：
+
+|   模数 $p$   |         分解         | 原根 $g$ |
+| :----------: | :------------------: | :------: |
+| $998244353$  | $119\times 2^{23}+1$ |   $3$    |
+| $1004535809$ | $479\times 2^{21}+1$ |   $3$    |
+| $469762049$  |  $7\times 2^{26}+1$  |   $3$    |
+
+单位根的折半引理、消去引理在原根下同样成立，因此 FFT 的蝶形结构可以原样套用：只需把 $\omega_n$ 换成 $g^{\frac{p-1}{n}}$，逆变换时换成它的逆元 $g^{-\frac{p-1}{n}}$，最后整体乘上 $n^{-1}$。
+
+## 实现
+
+```cpp
+using ll=long long;
+const int mod=998244353,G=3,Gi=332748118;
+void ntt(int *f,int n,int type)
+{
+	for(int i=0;i<n;i++)if(i<r[i])swap(f[i],f[r[i]]);
+	for(int k=1;k<n;k<<=1)
+	{
+		int step=qpow(type==1?G:Gi,(mod-1)/(k<<1));
+		for(int i=0;i<n;i+=k<<1)
+		{
+			int cur=1;
+			for(int j=0;j<k;j++)
+			{
+				int x=f[i+j],y=(ll)cur*f[i+j+k]%mod;
+				f[i+j]=(x+y)%mod;
+				f[i+j+k]=(x-y+mod)%mod;
+				cur=(ll)cur*step%mod;
+			}
+		}
+	}
+}
+```
+
+其中 $Gi=332748118$ 是原根 $3$ 在模 $998244353$ 下的逆元。逆变换后还需将每一项乘以 $n$ 的逆元。
+
+## 例题
+
+<Problem id="P3803" />
