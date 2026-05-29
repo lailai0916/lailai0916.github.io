@@ -1,6 +1,6 @@
 import Link from '@docusaurus/Link';
 import { translate } from '@docusaurus/Translate';
-import { Icon } from '@iconify/react';
+import Badge from '@site/src/components/laikit/Badge';
 import styles from './styles.module.css';
 
 const PROBLEM = translate({
@@ -17,19 +17,21 @@ export default function Solution({ pid, aid }: { pid: string; aid: string }) {
     <div className={styles.solution}>
       <Link
         href={`https://www.luogu.com.cn/problem/${pid}`}
-        className={styles.chip}
+        className={styles.link}
         aria-label={`${PROBLEM} · ${pid}`}
       >
-        <Icon icon="simple-icons:luogu" className={styles.logo} />
-        <span className={styles.label}>{pid}</span>
+        <Badge icon="simple-icons:luogu" hoverable>
+          {pid}
+        </Badge>
       </Link>
       <Link
         href={`https://www.luogu.com.cn/article/${aid}`}
-        className={styles.chip}
+        className={styles.link}
         aria-label={SOLUTION}
       >
-        <Icon icon="simple-icons:luogu" className={styles.logo} />
-        <span className={styles.label}>{SOLUTION}</span>
+        <Badge icon="simple-icons:luogu" hoverable>
+          {SOLUTION}
+        </Badge>
       </Link>
     </div>
   );
