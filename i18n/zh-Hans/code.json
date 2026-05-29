@@ -128,11 +128,8 @@
   "components.problem.solution": {
     "message": "题解"
   },
-  "components.solution.luogu": {
-    "message": "洛谷"
-  },
-  "components.solution.blog": {
-    "message": "博客"
+  "components.solution.problem": {
+    "message": "题目"
   },
   "components.solution.label": {
     "message": "题解"

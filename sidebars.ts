@@ -43,8 +43,7 @@ const sidebars: SidebarsConfig = {
       },
       items: [
         'contest/lang/helloworld',
-        'contest/lang/var',
-        'contest/lang/op',
+        'contest/lang/var-op',
         'contest/lang/csl',
       ],
     },
