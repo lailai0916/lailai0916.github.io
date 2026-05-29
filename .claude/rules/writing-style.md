@@ -15,7 +15,7 @@ lailai's site is mostly in Simplified Chinese, with three content streams (`blog
 - **Blog post** fields, in order: `title`, `date`, `authors: lailai` (scalar, never an array), `tags` (always array, even single-tag). Optional: `image` / `image_dark` / `pinned` — used only on `welcome.mdx`. Never use `slug` — the filename is the slug.
 - **Doc page** carries only `title:`. No date, no authors, no tags.
 - Dates are `YYYY-MM-DDTHH:MM` (wall-clock Asia/Shanghai, no seconds, no timezone): `date: 2025-08-04T15:30`.
-- Title pattern is `<category>：<name>` with a **full-width colon**. Category prefix vocabulary is fixed: `题解：` / `数学：` / `项目：` / `资源：` / `个人：` / `旅行：` / `游记：` / `杂谈：`. The prefix is the real taxonomy — `blog/misc/` holds both `项目：` and `资源：` posts.
+- Title pattern is `<category>：<name>` with a **full-width colon**. Category prefix vocabulary is fixed: `题解：` / `数学：` / `项目：` / `资源：` / `个人：` / `旅行：` / `记录：` / `杂谈：`. The prefix is the real taxonomy, not the folder — `blog/misc/` holds both `项目：` and `资源：` posts; `blog/record/` holds both `记录：` and `杂谈：`.
 - Quote the title in YAML only when it contains a `:` that would confuse the parser, e.g. `title: '旅行：National Geographic: 50 Places of a Lifetime'`.
 - Tags come from `blog/tags.yml` only. Solution posts always tag `[oi, solution, <oj>]` where `<oj>` ∈ `luogu` / `codeforces` / `atcoder` / `spoj` / `uva`. Math posts tag `[math]`. Records combine `[life, record, memory]` or `[school, record, memory]`. Don't invent tags.
 
