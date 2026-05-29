@@ -1,3 +1,52 @@
+.timelineCardContent {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.timelineCardHeading {
+  margin: 0;
+  color: var(--ifm-color-emphasis-800);
+  font-size: 1.25rem;
+  font-weight: 600;
+  line-height: 1.375;
+}
+
+:global(html[data-theme='dark']) .timelineCardHeading {
+  color: var(--ifm-color-emphasis-900);
+}
+
+@media (max-width: 768px) {
+  .timelineCardHeading {
+    font-size: 1.1rem !important;
+  }
+}
+
+.timelineCardDescription {
+  margin: 0;
+  color: var(--ifm-color-emphasis-600);
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+:global(html[data-theme='dark']) .timelineCardDescription {
+  color: var(--ifm-color-emphasis-700);
+}
+
+@media (max-width: 768px) {
+  .timelineCardDescription {
+    font-size: 0.9rem !important;
+  }
+}
+
+.timelineCardSurface {
+  width: 100%;
+}
+
+.timelineCardLink {
+  width: 100%;
+}
+
 .wrapper {
   --tt-motion-duration: 0.3s;
   --tt-motion-ease: cubic-bezier(0.25, 0.46, 0.45, 0.94);
@@ -9,6 +58,81 @@
   background: transparent !important;
   padding: 2rem 1rem !important;
   max-width: 100% !important;
+}
+
+@media (max-width: 768px) {
+  .wrapper :global(.react-chrono-tree) {
+    padding: 1rem 0.5rem !important;
+  }
+}
+
+.wrapper :global(.travel-timeline-card) {
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  border: 0 !important;
+  background: transparent !important;
+  padding: 0 !important;
+  position: relative !important;
+}
+
+@media (max-width: 768px) {
+  .wrapper :global(.travel-timeline-card) {
+    margin: 0.5rem 0 !important;
+  }
+}
+
+.wrapper :global(.travel-timeline-card-text) {
+  width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  align-items: stretch !important;
+  overflow: visible !important;
+  max-height: none !important;
+}
+
+.wrapper :global(.travel-timeline-title) {
+  background: var(--ifm-color-primary) !important;
+  color: white !important;
+  font-weight: 500 !important;
+  font-size: 0.9rem !important;
+  padding: 0.4rem 0.8rem !important;
+  border-radius: 999px !important;
+  text-transform: none !important;
+  letter-spacing: normal !important;
+  box-shadow: none !important;
+  display: inline-block !important;
+  line-height: 1.2 !important;
+}
+
+@media (max-width: 768px) {
+  .wrapper :global(.travel-timeline-title) {
+    font-size: 0.8rem !important;
+    padding: 0.3rem 0.6rem !important;
+  }
+}
+
+.wrapper :global(.react-chrono-tree-branch) {
+  border-color: var(--ifm-color-emphasis-300) !important;
+  border-width: 2px !important;
+}
+
+:global(html[data-theme='dark']) .wrapper :global(.react-chrono-tree-branch) {
+  border-color: var(--ifm-color-emphasis-400) !important;
+}
+
+.wrapper :global(.timeline-vertical-circle) {
+  background: var(--ifm-color-primary) !important;
+  border: 2px solid var(--ifm-background-color) !important;
+  box-shadow: none !important;
+  border-radius: 50% !important;
+  position: relative !important;
+  margin: auto !important;
+}
+
+@media (max-width: 768px) {
+  .wrapper :global(.timeline-vertical-circle) {
+    border-width: 1px !important;
+  }
 }
 
 @keyframes fadeIn {
@@ -28,120 +152,6 @@
 .wrapper :global(.timeline-vertical-circle),
 .wrapper :global(.travel-timeline-title) {
   animation: fadeIn var(--tt-motion-duration) ease-out;
-}
-
-.wrapper :global(.travel-timeline-card) {
-  border-radius: 0 !important;
-  box-shadow: none !important;
-  border: 0 !important;
-  background: transparent !important;
-  padding: 0 !important;
-  position: relative !important;
-}
-
-.wrapper :global(.travel-timeline-card-text) {
-  width: 100% !important;
-  margin: 0 !important;
-  padding: 0 !important;
-  align-items: stretch !important;
-  overflow: visible !important;
-  max-height: none !important;
-}
-
-.timelineCardLink {
-  width: 100%;
-}
-
-.timelineCardSurface {
-  width: 100%;
-}
-
-.timelineCardContent {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-}
-
-.timelineCardHeading {
-  margin: 0;
-  color: var(--ifm-color-emphasis-800);
-  font-size: 1.25rem;
-  font-weight: 600;
-  line-height: 1.375;
-}
-
-.timelineCardDescription {
-  margin: 0;
-  color: var(--ifm-color-emphasis-600);
-  font-size: 1rem;
-  line-height: 1.5;
-}
-
-:global(html[data-theme='dark']) .timelineCardHeading {
-  color: var(--ifm-color-emphasis-900);
-}
-
-:global(html[data-theme='dark']) .timelineCardDescription {
-  color: var(--ifm-color-emphasis-700);
-}
-
-.wrapper :global(.travel-timeline-title) {
-  background: var(--ifm-color-primary) !important;
-  color: white !important;
-  font-weight: 500 !important;
-  font-size: 0.9rem !important;
-  padding: 0.4rem 0.8rem !important;
-  border-radius: 999px !important;
-  text-transform: none !important;
-  letter-spacing: normal !important;
-  box-shadow: none !important;
-  display: inline-block !important;
-  line-height: 1.2 !important;
-}
-
-:global(html[data-theme='dark']) .wrapper :global(.react-chrono-tree-branch) {
-  border-color: var(--ifm-color-emphasis-400) !important;
-}
-
-.wrapper :global(.react-chrono-tree-branch) {
-  border-color: var(--ifm-color-emphasis-300) !important;
-  border-width: 2px !important;
-}
-
-.wrapper :global(.timeline-vertical-circle) {
-  background: var(--ifm-color-primary) !important;
-  border: 2px solid var(--ifm-background-color) !important;
-  box-shadow: none !important;
-  border-radius: 50% !important;
-  position: relative !important;
-  margin: auto !important;
-}
-
-@media (max-width: 768px) {
-  .wrapper :global(.react-chrono-tree) {
-    padding: 1rem 0.5rem !important;
-  }
-
-  .wrapper :global(.travel-timeline-card) {
-    margin: 0.5rem 0 !important;
-  }
-
-  .timelineCardHeading {
-    font-size: 1.1rem !important;
-  }
-
-  .timelineCardDescription {
-    font-size: 0.9rem !important;
-  }
-
-  .wrapper :global(.travel-timeline-title) {
-    font-size: 0.8rem !important;
-    padding: 0.3rem 0.6rem !important;
-  }
-
-  .wrapper :global(.timeline-vertical-circle) {
-    border-width: 1px !important;
-  }
 }
 
 @media (prefers-reduced-motion: reduce) {

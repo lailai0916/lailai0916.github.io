@@ -7,6 +7,7 @@
 .iconTheme {
   color: var(--ifm-color-primary);
 }
+
 html[data-theme='dark'] .iconTheme {
   color: var(--ifm-color-primary-light);
 }

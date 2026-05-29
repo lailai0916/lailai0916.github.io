@@ -27,6 +27,22 @@
   object-fit: cover;
 }
 
+/* Row above the title: MetaBar on the left, action buttons on the right. */
+.articleHeaderInfoRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem 1rem;
+  flex-wrap: wrap;
+}
+
+.articleHeaderActions {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-left: auto;
+}
+
 .articleTitle {
   margin: 0;
   font-size: clamp(1.75rem, 1.2rem + 2vw, 2.5rem);
@@ -42,21 +58,6 @@
   gap: 0.75rem 1.25rem;
   align-items: center;
   margin-top: 0.4rem;
-}
-/* Row above the title: MetaBar on the left, action buttons on the right. */
-.articleHeaderInfoRow {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 0.5rem 1rem;
-  flex-wrap: wrap;
-}
-
-.articleHeaderActions {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  margin-left: auto;
 }
 
 .articleFooter {
@@ -78,34 +79,11 @@
   font-size: 0.85rem;
   color: var(--ifm-color-emphasis-600);
 }
+
 /* Push the "last updated" meta to the right of the footer row.
    Works whether or not tags are present on the left. */
 .articleFooterMetaUpdated {
   margin-left: auto;
-}
-.articlePaginator {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 1rem;
-}
-
-.articlePaginatorSlot {
-  display: flex;
-  min-width: 0;
-}
-
-.articlePaginatorSlot > :global(.linkCard_kfYz),
-.articlePaginatorSlot > :global([class*='linkCard']) {
-  flex: 1;
-  min-width: 0;
-}
-
-.articlePaginatorSlotRight {
-  justify-content: flex-end;
-}
-
-.articlePaginatorSlotEmpty {
-  visibility: hidden;
 }
 
 .articlePaginatorLabel {
@@ -138,11 +116,39 @@
   text-align: right;
 }
 
+.articlePaginator {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
 @media (max-width: 600px) {
   .articlePaginator {
     grid-template-columns: 1fr;
   }
+}
+
+.articlePaginatorSlot {
+  display: flex;
+  min-width: 0;
+}
+
+.articlePaginatorSlot > :global(.linkCard_kfYz),
+.articlePaginatorSlot > :global([class*='linkCard']) {
+  flex: 1;
+  min-width: 0;
+}
+
+.articlePaginatorSlotEmpty {
+  visibility: hidden;
+}
+
+@media (max-width: 600px) {
   .articlePaginatorSlotEmpty {
     display: none;
   }
+}
+
+.articlePaginatorSlotRight {
+  justify-content: flex-end;
 }

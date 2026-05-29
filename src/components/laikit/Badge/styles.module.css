@@ -16,32 +16,6 @@
     color 160ms ease;
 }
 
-.badgeIcon {
-  align-self: center;
-  font-size: 0.95em;
-  flex-shrink: 0;
-  color: var(--ifm-color-emphasis-700);
-}
-
-.badgeLabel {
-  font-weight: 500;
-}
-
-.badgeCount {
-  font-size: 0.75rem;
-  color: var(--ifm-color-emphasis-600);
-  font-variant-numeric: tabular-nums;
-}
-
-.badgeHoverable:hover {
-  border-color: var(--ifm-color-primary);
-  color: var(--ifm-color-primary);
-}
-
-.badgeHoverable:hover .badgeIcon {
-  color: var(--ifm-color-primary);
-}
-
 .badgeActive {
   background: var(--ifm-color-primary);
   border-color: var(--ifm-color-primary);
@@ -60,4 +34,30 @@
 
 .badgeActive .badgeCount {
   color: rgba(255, 255, 255, 0.8);
+}
+
+.badgeHoverable:hover {
+  border-color: var(--ifm-color-primary);
+  color: var(--ifm-color-primary);
+}
+
+.badgeHoverable:hover .badgeIcon {
+  color: var(--ifm-color-primary);
+}
+
+.badgeIcon {
+  align-self: center;
+  font-size: 0.95em;
+  flex-shrink: 0;
+  color: var(--ifm-color-emphasis-700);
+}
+
+.badgeLabel {
+  font-weight: 500;
+}
+
+.badgeCount {
+  font-size: 0.75rem;
+  color: var(--ifm-color-emphasis-600);
+  font-variant-numeric: tabular-nums;
 }

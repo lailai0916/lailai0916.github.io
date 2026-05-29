@@ -6,8 +6,11 @@
   max-width: 60ch;
 }
 
-.variantCentered {
-  text-align: center;
+@media (max-width: 600px) {
+  .quote {
+    margin: 1.75rem auto;
+    padding: 0.25rem 0.5rem;
+  }
 }
 
 .variantBlock {
@@ -15,6 +18,20 @@
   padding: 0.5rem 0 0.5rem 1.5rem;
   border-left: 3px solid
     color-mix(in srgb, var(--ifm-color-primary) 60%, transparent);
+}
+
+.variantBlock .attribution {
+  text-align: right;
+}
+
+@media (max-width: 600px) {
+  .variantBlock {
+    padding-left: 1rem;
+  }
+}
+
+.variantCentered {
+  text-align: center;
 }
 
 .icon {
@@ -36,6 +53,13 @@
   background: transparent;
 }
 
+@media (max-width: 600px) {
+  .body {
+    font-size: 1.05rem;
+    line-height: 1.6;
+  }
+}
+
 .body :global(p) {
   margin: 0;
 }
@@ -47,10 +71,6 @@
 .attribution {
   font-size: 0.85rem;
   color: var(--ifm-color-emphasis-600);
-}
-
-.variantBlock .attribution {
-  text-align: right;
 }
 
 .attribution::before {
@@ -65,19 +85,4 @@
 .separator {
   margin: 0 0.4rem;
   opacity: 0.55;
-}
-
-/* Mobile: tighter spacing, slightly smaller body. */
-@media (max-width: 600px) {
-  .quote {
-    margin: 1.75rem auto;
-    padding: 0.25rem 0.5rem;
-  }
-  .variantBlock {
-    padding-left: 1rem;
-  }
-  .body {
-    font-size: 1.05rem;
-    line-height: 1.6;
-  }
 }

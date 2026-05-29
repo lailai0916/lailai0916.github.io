@@ -30,36 +30,6 @@
   cursor: not-allowed;
 }
 
-/* ── Sizes ─────────────────────────────────────────────────────────── */
-
-.size_sm {
-  height: 32px;
-  padding: 0 0.75rem;
-  font-size: 0.825rem;
-}
-
-.size_md {
-  height: 40px;
-  padding: 0 1rem;
-  font-size: 0.9rem;
-}
-
-.size_lg {
-  height: 48px;
-  padding: 0 1.25rem;
-  font-size: 1rem;
-}
-
-/* ── Shape & layout modifiers ──────────────────────────────────────── */
-
-.rounded {
-  border-radius: 999px;
-}
-
-.fullWidth {
-  width: 100%;
-}
-
 /* ── Variants ──────────────────────────────────────────────────────── */
 
 .variant_primary {
@@ -96,6 +66,32 @@
   color: var(--ifm-font-color-base);
 }
 
+/* ── Sizes ─────────────────────────────────────────────────────────── */
+
+.size_sm {
+  height: 32px;
+  padding: 0 0.75rem;
+  font-size: 0.825rem;
+}
+
+.size_md {
+  height: 40px;
+  padding: 0 1rem;
+  font-size: 0.9rem;
+}
+
+.size_lg {
+  height: 48px;
+  padding: 0 1.25rem;
+  font-size: 1rem;
+}
+
+/* ── Shape modifier ────────────────────────────────────────────────── */
+
+.rounded {
+  border-radius: 999px;
+}
+
 /* ── Active toggle: forces primary look on secondary/ghost ─────────── */
 
 .active.variant_secondary,
@@ -110,6 +106,12 @@
   background: var(--ifm-color-primary-dark);
   border-color: var(--ifm-color-primary-dark);
   color: #ffffff;
+}
+
+/* ── Width modifier ────────────────────────────────────────────────── */
+
+.fullWidth {
+  width: 100%;
 }
 
 /* ── Icon slots ────────────────────────────────────────────────────── */

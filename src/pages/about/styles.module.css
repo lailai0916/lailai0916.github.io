@@ -1,3 +1,21 @@
+.deviceImage {
+  --ar: 1;
+  --img-height: calc(var(--card-height) - 2rem);
+  --img-width: calc(var(--img-height) * var(--ar));
+  position: absolute;
+  top: 1rem;
+  height: var(--img-height);
+  width: var(--img-width);
+  right: min(1rem, calc(80px - var(--img-width)));
+  object-fit: contain;
+  object-position: left center;
+  pointer-events: none;
+  user-select: none;
+  opacity: 0.55;
+  transition: opacity 200ms ease;
+  z-index: 0;
+}
+
 .deviceGrid,
 .communityGrid {
   display: grid;
@@ -20,6 +38,10 @@
   min-height: var(--card-height);
   display: flex;
   flex-direction: column;
+}
+
+.deviceCard:hover .deviceImage {
+  opacity: 1;
 }
 
 .deviceCardBody {
@@ -46,46 +68,14 @@
   max-width: 60%;
 }
 
-.deviceImage {
-  --ar: 1;
-  --img-height: calc(var(--card-height) - 2rem);
-  --img-width: calc(var(--img-height) * var(--ar));
-  position: absolute;
-  top: 1rem;
-  height: var(--img-height);
-  width: var(--img-width);
-  right: min(1rem, calc(80px - var(--img-width)));
-  object-fit: contain;
-  object-position: left center;
-  pointer-events: none;
-  user-select: none;
-  opacity: 0.55;
-  transition: opacity 200ms ease;
-  z-index: 0;
-}
-
-.deviceCard:hover .deviceImage {
-  opacity: 1;
-}
-
-.communityCardWrapper {
-  --link-card-accent: var(--ifm-color-emphasis-200);
-}
-
 .communityCard {
   display: flex;
   align-items: center;
   gap: 0.75rem;
 }
 
-.communityIcon {
-  flex-shrink: 0;
-  width: 1.75rem;
-  height: 1.75rem;
-  color: var(--ifm-color-emphasis-700);
-  pointer-events: none;
-  opacity: 0.55;
-  transition: opacity 200ms ease;
+.communityCardWrapper {
+  --link-card-accent: var(--ifm-color-emphasis-200);
 }
 
 .communityCardWrapper:hover .communityIcon,
@@ -115,4 +105,14 @@
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+.communityIcon {
+  flex-shrink: 0;
+  width: 1.75rem;
+  height: 1.75rem;
+  color: var(--ifm-color-emphasis-700);
+  pointer-events: none;
+  opacity: 0.55;
+  transition: opacity 200ms ease;
 }

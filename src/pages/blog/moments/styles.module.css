@@ -6,6 +6,13 @@
   gap: 1rem;
 }
 
+@media (max-width: 480px) {
+  .headerCard {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
 .headerInfo {
   flex: 1;
   min-width: 0;
@@ -57,13 +64,6 @@
   margin-bottom: 0;
 }
 
-@media (max-width: 480px) {
-  .headerCard {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-}
-
 /* Moment content body */
 
 .momentContent {
@@ -98,13 +98,6 @@
   grid-template-columns: 1fr 1fr 1fr;
 }
 
-.momentImage {
-  display: block;
-  width: 100%;
-  border-radius: 10px;
-  background: var(--ifm-color-emphasis-100);
-}
-
 /* Single image: natural aspect, capped height */
 .momentImages[data-count='1'] .momentImage {
   height: auto;
@@ -116,6 +109,13 @@
 .momentImages:not([data-count='1']) .momentImage {
   aspect-ratio: 1 / 1;
   object-fit: cover;
+}
+
+.momentImage {
+  display: block;
+  width: 100%;
+  border-radius: 10px;
+  background: var(--ifm-color-emphasis-100);
 }
 
 /* Load-more footer */

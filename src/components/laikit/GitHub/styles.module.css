@@ -11,6 +11,39 @@
   color: var(--ifm-font-color-base);
 }
 
+.loading {
+  pointer-events: none;
+  opacity: 0.7;
+}
+
+.loading .description,
+.loading .infoBar,
+.loading .avatar {
+  background-color: var(--ifm-font-color-base);
+  color: transparent;
+  opacity: 0.5;
+  user-select: none;
+  border-radius: 8px;
+  animation: pulsate 2s infinite linear;
+}
+
+@keyframes pulsate {
+  0% {
+    opacity: 0.15;
+  }
+  50% {
+    opacity: 0.25;
+  }
+  100% {
+    opacity: 0.15;
+  }
+}
+
+.error {
+  pointer-events: auto;
+  opacity: 1;
+}
+
 .titleBar {
   position: relative;
   display: flex;
@@ -22,6 +55,20 @@
   color: var(--ifm-heading-color);
   font-size: 1.25rem;
   font-weight: 500;
+}
+
+@container (max-width: 360px) {
+  .titleBar {
+    font-size: 1.1rem;
+    margin-bottom: 0.4rem;
+  }
+}
+
+@container (max-width: 260px) {
+  .titleBar {
+    font-size: 1rem;
+    padding-right: 0;
+  }
 }
 
 .titleLeft {
@@ -42,24 +89,6 @@
   min-width: 0;
 }
 
-.user {
-  font-weight: 300;
-  min-width: 0;
-  overflow-wrap: anywhere;
-}
-
-.repo {
-  font-weight: 700;
-  color: inherit;
-  min-width: 0;
-  overflow-wrap: anywhere;
-}
-
-.divider {
-  opacity: 0.7;
-  flex: none;
-}
-
 .avatar {
   flex: none;
   width: 1.5rem;
@@ -69,36 +98,33 @@
   background-size: cover;
 }
 
-.description {
-  margin-bottom: 0.7rem;
-  font-size: 1rem;
+@container (max-width: 260px) {
+  .avatar {
+    width: 1.25rem;
+    height: 1.25rem;
+  }
+}
+
+.user {
   font-weight: 300;
-  line-height: 1.5rem;
-  color: var(--ifm-font-color-base);
+  min-width: 0;
   overflow-wrap: anywhere;
 }
 
-.infoBar {
-  display: flex;
-  flex-flow: row wrap;
-  align-items: center;
-  gap: 0.4rem 1.25rem;
-  color: var(--ifm-font-color-secondary);
+.divider {
+  opacity: 0.7;
+  flex: none;
 }
 
-.language {
-  display: inline-block;
-  max-width: 100%;
-  padding: 0 0.5rem;
-  font-size: 0.875rem;
-  opacity: 0.9;
-  border-radius: 0.4rem;
-  background: var(--ifm-color-emphasis-200);
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+.repo {
+  font-weight: 700;
+  color: inherit;
+  min-width: 0;
+  overflow-wrap: anywhere;
 }
 
+/* Shared info-icon typography — must precede .githubLogo so its own
+   font-size (1.25rem) keeps overriding this 0.875rem default. */
 .stars,
 .forks,
 .license,
@@ -116,6 +142,56 @@
   color: inherit;
   flex: none;
   line-height: 1;
+}
+
+@container (max-width: 260px) {
+  .githubLogo {
+    display: none;
+  }
+}
+
+.description {
+  margin-bottom: 0.7rem;
+  font-size: 1rem;
+  font-weight: 300;
+  line-height: 1.5rem;
+  color: var(--ifm-font-color-base);
+  overflow-wrap: anywhere;
+}
+
+@container (max-width: 360px) {
+  .description {
+    font-size: 0.9rem;
+    line-height: 1.35rem;
+    margin-bottom: 0.55rem;
+  }
+}
+
+@container (max-width: 260px) {
+  .description {
+    font-size: 0.85rem;
+    line-height: 1.25rem;
+  }
+}
+
+.infoBar {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  gap: 0.4rem 1.25rem;
+  color: var(--ifm-font-color-secondary);
+}
+
+@container (max-width: 360px) {
+  .infoBar {
+    gap: 0.35rem 0.9rem;
+  }
+}
+
+@container (max-width: 260px) {
+  .infoBar {
+    gap: 0.3rem 0.7rem;
+  }
 }
 
 .stars::before,
@@ -152,83 +228,30 @@
   mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='31' height='32' viewBox='0 0 496 512'%3E%3Cpath d='M165.9 397.4c0 2-2.3 3.6-5.2 3.6c-3.3.3-5.6-1.3-5.6-3.6c0-2 2.3-3.6 5.2-3.6c3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9c2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9c.3 2 2.9 3.3 5.9 2.6c2.9-.7 4.9-2.6 4.6-4.6c-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2c12.8 2.3 17.3-5.6 17.3-12.1c0-6.2-.3-40.4-.3-61.4c0 0-70 15-84.7-29.8c0 0-11.4-29.1-27.8-36.6c0 0-22.9-15.7 1.6-15.4c0 0 24.9 2 38.6 25.8c21.9 38.6 58.6 27.5 72.9 20.9c2.3-16 8.8-27.1 16-33.7c-55.9-6.2-112.3-14.3-112.3-110.5c0-27.5 7.6-41.3 23.6-58.9c-2.6-6.5-11.1-33.3 2.6-67.9c20.9-6.5 69 27 69 27c20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27c13.7 34.7 5.2 61.4 2.6 67.9c16 17.7 25.8 31.5 25.8 58.9c0 96.5-58.9 104.2-114.8 110.5c9.2 7.9 17 22.9 17 46.4c0 33.7-.3 75.4-.3 83.6c0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252C496 113.3 383.5 8 244.8 8'/%3E%3C/svg%3E");
 }
 
-@container (max-width: 360px) {
-  .titleBar {
-    font-size: 1.1rem;
-    margin-bottom: 0.4rem;
-  }
-  .description {
-    font-size: 0.9rem;
-    line-height: 1.35rem;
-    margin-bottom: 0.55rem;
-  }
-  .infoBar {
-    gap: 0.35rem 0.9rem;
-  }
+.language {
+  display: inline-block;
+  max-width: 100%;
+  padding: 0 0.5rem;
+  font-size: 0.875rem;
+  opacity: 0.9;
+  border-radius: 0.4rem;
+  background: var(--ifm-color-emphasis-200);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 @container (max-width: 260px) {
-  .titleBar {
-    font-size: 1rem;
-    padding-right: 0;
-  }
-  .githubLogo {
-    display: none;
-  }
-  .avatar {
-    width: 1.25rem;
-    height: 1.25rem;
-  }
-  .description {
-    font-size: 0.85rem;
-    line-height: 1.25rem;
-  }
   .stars,
   .forks,
   .license,
   .language {
     font-size: 0.8rem;
   }
-  .infoBar {
-    gap: 0.3rem 0.7rem;
-  }
-}
-
-.loading {
-  pointer-events: none;
-  opacity: 0.7;
-}
-
-.loading .description,
-.loading .infoBar,
-.loading .avatar {
-  background-color: var(--ifm-font-color-base);
-  color: transparent;
-  opacity: 0.5;
-  user-select: none;
-  border-radius: 8px;
-  animation: pulsate 2s infinite linear;
-}
-
-.error {
-  pointer-events: auto;
-  opacity: 1;
 }
 
 .errorText {
   margin-top: 0.25rem;
   font-size: 0.75rem;
   color: var(--ifm-color-danger);
-}
-
-@keyframes pulsate {
-  0% {
-    opacity: 0.15;
-  }
-  50% {
-    opacity: 0.25;
-  }
-  100% {
-    opacity: 0.15;
-  }
 }

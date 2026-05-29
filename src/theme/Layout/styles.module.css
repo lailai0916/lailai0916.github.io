@@ -10,15 +10,15 @@
   filter: grayscale(100%);
 }
 
-html,
-body {
-  height: 100%;
-}
-
 .mainWrapper {
   flex: 1 0 auto;
   display: flex;
   flex-direction: column;
+}
+
+html,
+body {
+  height: 100%;
 }
 
 :global(.docusaurus-mt-lg) {
