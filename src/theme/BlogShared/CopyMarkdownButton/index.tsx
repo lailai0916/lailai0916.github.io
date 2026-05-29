@@ -3,6 +3,7 @@ import clsx from 'clsx';
 import { Icon } from '@iconify/react';
 import { translate } from '@docusaurus/Translate';
 import styles from './styles.module.css';
+import shared from '../styles.module.css';
 
 declare const require: any;
 
@@ -80,9 +81,9 @@ export default function CopyMarkdownButton({ source }: { source: string }) {
       aria-label={label}
       title={label}
       className={clsx(
-        styles.articleFooterMetaItem,
-        styles.articleFooterMetaLink,
-        styles.articleFooterMetaIconBtn,
+        shared.articleFooterMetaItem,
+        shared.articleFooterMetaLink,
+        shared.articleFooterMetaIconBtn,
         styles.copyMarkdownButton
       )}
     >

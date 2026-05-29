@@ -3,15 +3,16 @@ import clsx from 'clsx';
 import Link from '@docusaurus/Link';
 import type { BlogPaginatedMetadata } from '@docusaurus/plugin-content-blog';
 import type { Props as BlogListPageProps } from '@theme/BlogListPage';
-import BlogScaffold from './Scaffold';
+import BlogScaffold from '../Scaffold';
 import Card from '@site/src/components/laikit/Card';
-import { MetaBar, TagChipList } from './Components';
-import { usePostMetaItems } from './PostMeta';
+import { MetaBar, TagChipList } from '../BlogUI';
+import { usePostMetaItems } from '../PostMeta';
 
 import { translate } from '@docusaurus/Translate';
 import { Icon } from '@iconify/react';
 import MDXContent from '@theme/MDXContent';
 import styles from './styles.module.css';
+import shared from '../styles.module.css';
 
 const READ_MORE_LABEL = translate({
   id: 'blog.postcard.readMore',
@@ -62,13 +63,13 @@ function PostCard({ item }: PostCardProps) {
                 <img
                   src={lightImage}
                   alt=""
-                  className={clsx(styles.postCover, styles.postCoverLight)}
+                  className={clsx(styles.postCover, shared.postCoverLight)}
                   loading="lazy"
                 />
                 <img
                   src={darkImage}
                   alt=""
-                  className={clsx(styles.postCover, styles.postCoverDark)}
+                  className={clsx(styles.postCover, shared.postCoverDark)}
                   loading="lazy"
                 />
               </>

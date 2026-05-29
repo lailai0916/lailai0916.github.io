@@ -1,0 +1,43 @@
+.articleAuthor {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  text-decoration: none;
+  color: inherit;
+}
+
+.articleAuthorLink:hover .articleAuthorName {
+  color: var(--ifm-color-primary);
+}
+
+.articleAuthorLink:hover {
+  text-decoration: none;
+}
+
+.articleAuthorAvatar {
+  flex: none;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: var(--ifm-color-emphasis-200);
+  object-fit: cover;
+}
+
+.articleAuthorMeta {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.25;
+  min-width: 0;
+}
+
+.articleAuthorName {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--ifm-font-color-base);
+  transition: color 160ms ease;
+}
+
+.articleAuthorTitle {
+  font-size: 0.8rem;
+  color: var(--ifm-color-emphasis-600);
+}

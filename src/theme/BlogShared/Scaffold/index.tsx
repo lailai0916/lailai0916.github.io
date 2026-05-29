@@ -17,8 +17,8 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import { formatCompact } from '@site/src/utils/format';
 import Card from '@site/src/components/laikit/Card';
 import TitleCard from '@site/src/components/laikit/TitleCard';
-import { TagChipList, type ChipItem } from './Components';
-import CalendarCard from './Calendar';
+import { TagChipList, type ChipItem } from '../BlogUI';
+import CalendarCard from '../Calendar';
 import styles from './styles.module.css';
 
 type BlogNavKey = 'blog' | 'moments' | 'archive';

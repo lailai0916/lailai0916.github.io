@@ -7,11 +7,12 @@ import { Icon } from '@iconify/react';
 import type { Props as BlogPostPageProps } from '@theme/BlogPostPage';
 import { formatLocalizedDate } from '@site/src/utils/format';
 import Card from '@site/src/components/laikit/Card';
-import { MetaBar, TagChipList } from './Components';
-import { usePostMetaItems } from './PostMeta';
-import CopyMarkdownButton from './CopyMarkdownButton';
-import Author from './PostAuthor';
+import { MetaBar, TagChipList } from '../BlogUI';
+import { usePostMetaItems } from '../PostMeta';
+import CopyMarkdownButton from '../CopyMarkdownButton';
+import Author from '../PostAuthor';
 import styles from './styles.module.css';
+import shared from '../styles.module.css';
 
 type PostMetadata = BlogPostPageProps['content']['metadata'];
 
@@ -58,13 +59,13 @@ export function PostHeader({ metadata, frontMatter }: PostHeaderProps) {
               <img
                 src={lightImage}
                 alt=""
-                className={clsx(styles.articleCover, styles.postCoverLight)}
+                className={clsx(styles.articleCover, shared.postCoverLight)}
                 loading="eager"
               />
               <img
                 src={darkImage}
                 alt=""
-                className={clsx(styles.articleCover, styles.postCoverDark)}
+                className={clsx(styles.articleCover, shared.postCoverDark)}
                 loading="eager"
               />
             </>
@@ -90,9 +91,9 @@ export function PostHeader({ metadata, frontMatter }: PostHeaderProps) {
                 aria-label={editLabel}
                 title={editLabel}
                 className={clsx(
-                  styles.articleFooterMetaItem,
-                  styles.articleFooterMetaLink,
-                  styles.articleFooterMetaIconBtn
+                  shared.articleFooterMetaItem,
+                  shared.articleFooterMetaLink,
+                  shared.articleFooterMetaIconBtn
                 )}
               >
                 <Icon icon="lucide:pencil" width={16} height={16} />
@@ -140,7 +141,7 @@ export function PostFooter({ metadata }: PostFooterProps) {
         {hasUpdated && (
           <span
             className={clsx(
-              styles.articleFooterMetaItem,
+              shared.articleFooterMetaItem,
               styles.articleFooterMetaUpdated
             )}
           >

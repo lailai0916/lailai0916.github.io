@@ -1,0 +1,56 @@
+.recentList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.recentItem {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.4rem 0.5rem;
+  padding: 0.25rem 0;
+}
+
+.recentDate {
+  flex-shrink: 0;
+  color: var(--ifm-color-emphasis-700);
+  font-size: 0.9rem;
+  white-space: nowrap;
+  font-family: var(--ifm-font-family-monospace);
+}
+
+.recentLink {
+  flex: 1;
+  min-width: 0;
+  text-decoration: none !important;
+  color: var(--ifm-font-color-base);
+}
+
+.recentLink:hover {
+  color: var(--ifm-color-primary);
+}
+
+.recentTags {
+  flex-shrink: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-left: auto;
+}
+
+.recentTag {
+  font-size: 0.78rem;
+  color: var(--ifm-color-emphasis-600);
+  text-decoration: none !important;
+  white-space: nowrap;
+  letter-spacing: -0.005em;
+  transition: color 160ms ease;
+}
+
+.recentTag:hover {
+  color: var(--ifm-color-primary);
+}

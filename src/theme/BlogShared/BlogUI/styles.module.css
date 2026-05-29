@@ -1,0 +1,39 @@
+.tagList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.tagChipLink {
+  text-decoration: none !important;
+  color: inherit;
+}
+.postEyebrow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.45rem 0.55rem;
+  font-size: 0.825rem;
+  color: var(--ifm-color-emphasis-600);
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.005em;
+  margin-bottom: 0.65rem;
+}
+
+.eyebrowItem {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.eyebrowItemPinned {
+  color: var(--ifm-color-primary);
+  font-weight: 600;
+}
+
+.eyebrowDot {
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: var(--ifm-color-emphasis-400);
+}

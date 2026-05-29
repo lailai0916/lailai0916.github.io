@@ -1,8 +1,8 @@
 import { translate } from '@docusaurus/Translate';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import { formatLocalizedDate } from '@site/src/utils/format';
-import { type MetaBarItem, useAnalytics } from './Components';
-import styles from './styles.module.css';
+import { type MetaBarItem } from '../BlogUI';
+import { useAnalytics } from '@site/src/hooks/useAnalytics';
 
 // Hoisted so the literal `translate({ id: 'blog.post.pinned' })` only appears
 // in one place across the codebase (i18n rule).
@@ -72,7 +72,7 @@ export function usePostMetaItems({
     items.unshift({
       icon: 'lucide:pin',
       label: pinnedMetaLabel,
-      className: styles.eyebrowItemPinned,
+      pinned: true,
     });
   }
   return items;

@@ -5,17 +5,11 @@ import { Icon } from '@iconify/react';
 import Badge from '@site/src/components/laikit/Badge';
 import styles from './styles.module.css';
 
-export { useAnalytics } from '@site/src/hooks/useAnalytics';
-export type {
-  AnalyticsData,
-  AnalyticsStatus,
-} from '@site/src/hooks/useAnalytics';
-
 export type MetaBarItem = {
   icon: string;
   label: React.ReactNode;
   dateTime?: string;
-  className?: string;
+  pinned?: boolean;
 };
 
 export function MetaBar({ items }: { items: MetaBarItem[] }) {
@@ -24,7 +18,12 @@ export function MetaBar({ items }: { items: MetaBarItem[] }) {
       {items.map((item, i) => (
         <React.Fragment key={i}>
           {i > 0 && <span className={styles.eyebrowDot} aria-hidden="true" />}
-          <span className={clsx(styles.eyebrowItem, item.className)}>
+          <span
+            className={clsx(
+              styles.eyebrowItem,
+              item.pinned && styles.eyebrowItemPinned
+            )}
+          >
             <Icon icon={item.icon} width={13} height={13} />
             {item.dateTime ? (
               <time dateTime={item.dateTime}>{item.label}</time>

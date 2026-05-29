@@ -8,7 +8,7 @@ import BlogAuthorsPostsPageOriginal from '@theme-original/Blog/Pages/BlogAuthors
 import type { Props } from '@theme/Blog/Pages/BlogAuthorsPostsPage';
 import PostsListLayout from '../../../BlogShared/PostsListLayout';
 import TitleCard from '@site/src/components/laikit/TitleCard';
-import { TagChipList } from '../../../BlogShared/Components';
+import { TagChipList } from '../../../BlogShared/BlogUI';
 import { ArchiveTabsNav } from '../../../BlogShared/ArchiveTabs';
 
 const TITLE = translate({

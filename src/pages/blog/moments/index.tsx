@@ -2,10 +2,7 @@ import { useEffect, useState } from 'react';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import { translate } from '@docusaurus/Translate';
 import BlogScaffold from '@site/src/theme/BlogShared/Scaffold';
-import {
-  MetaBar,
-  type MetaBarItem,
-} from '@site/src/theme/BlogShared/Components';
+import { MetaBar, type MetaBarItem } from '@site/src/theme/BlogShared/BlogUI';
 import Card from '@site/src/components/laikit/Card';
 import IconBlock from '@site/src/components/laikit/IconBlock';
 import ShareCard from '@site/src/components/laikit/ShareCard';
