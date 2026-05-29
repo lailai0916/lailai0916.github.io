@@ -1,22 +1,3 @@
-.sectionOuter {
-  contain: content;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  margin: 0 auto;
-}
-
-.sectionInner {
-  width: 100%;
-  display: flex;
-  flex-grow: 1;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.5rem;
-  margin: 4rem auto;
-  padding: 0 1rem;
-}
-
 .header {
   width: 100%;
   margin-bottom: 3rem;
@@ -24,6 +5,10 @@
 
 .alignCenter {
   text-align: center;
+}
+
+.alignCenter .description {
+  margin-inline: auto;
 }
 
 .alignLeft {
@@ -46,13 +31,27 @@
   line-height: 1.625;
 }
 
-.alignCenter .description {
-  margin-left: auto;
-  margin-right: auto;
-}
-
 @media (max-width: 1023.98px) {
   .description {
     font-size: 1.125rem;
   }
+}
+
+.sectionOuter {
+  contain: content;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+}
+
+.sectionInner {
+  width: 100%;
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 4rem auto;
+  padding: 0 1rem;
 }

@@ -1,3 +1,15 @@
+.loading {
+  color: var(--ifm-color-emphasis-500);
+  font-style: italic;
+  font-size: 0.85rem;
+}
+
+.error {
+  color: #c92a2a;
+  font-size: 0.85rem;
+  font-family: var(--ifm-font-family-monospace);
+}
+
 .list {
   list-style: none;
   margin: 0;
@@ -47,16 +59,4 @@
   font-size: 0.78rem;
   font-variant-numeric: tabular-nums;
   flex-shrink: 0;
-}
-
-.loading {
-  color: var(--ifm-color-emphasis-500);
-  font-style: italic;
-  font-size: 0.85rem;
-}
-
-.error {
-  color: #c92a2a;
-  font-size: 0.85rem;
-  font-family: var(--ifm-font-family-monospace);
 }

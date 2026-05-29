@@ -9,6 +9,12 @@
   padding: 1.5rem;
 }
 
+@media (max-width: 480px) {
+  .root {
+    padding: 0.75rem;
+  }
+}
+
 .backdrop {
   position: absolute;
   inset: 0;
@@ -21,6 +27,15 @@
 
 [data-theme='dark'] .backdrop {
   background: rgba(0, 0, 0, 0.18);
+}
+
+@keyframes cookieFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 .sheet {
@@ -55,6 +70,24 @@
     0 6px 16px rgba(0, 0, 0, 0.25);
 }
 
+@media (max-width: 480px) {
+  .sheet {
+    padding: 1.25rem;
+    border-radius: 20px;
+  }
+}
+
+@keyframes cookieSheetIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .title {
   margin: 0 0 0.5rem;
   font-size: 1.0625rem;
@@ -79,35 +112,4 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 0.6rem;
-}
-
-@media (max-width: 480px) {
-  .root {
-    padding: 0.75rem;
-  }
-
-  .sheet {
-    padding: 1.25rem;
-    border-radius: 20px;
-  }
-}
-
-@keyframes cookieFadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-@keyframes cookieSheetIn {
-  from {
-    opacity: 0;
-    transform: translateY(12px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
 }

@@ -1,3 +1,38 @@
+.slider {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  min-width: 0;
+}
+
+.sliderHead {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  font-size: 0.85rem;
+  color: var(--ifm-color-emphasis-700);
+}
+
+.sliderLabel {
+  font-weight: 600;
+  font-family: 'KaTeX_Math', 'Cambria Math', 'Times New Roman', serif;
+  font-style: italic;
+  font-size: 1rem;
+  color: var(--ifm-font-color-base);
+}
+
+.sliderValue {
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: 'tnum';
+  font-size: 0.85rem;
+  color: var(--ifm-color-emphasis-600);
+}
+
+.sliderControl {
+  --slider-track-height: 4px;
+  --slider-thumb-size: 14px;
+}
+
 .container {
   width: 100%;
   max-width: 500px;
@@ -38,39 +73,10 @@ html[data-theme='dark'] .cardSurface {
   align-items: end;
 }
 
-.slider {
-  display: flex;
-  flex-direction: column;
-  gap: 0.4rem;
-  min-width: 0;
-}
-
-.sliderHead {
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  font-size: 0.85rem;
-  color: var(--ifm-color-emphasis-700);
-}
-
-.sliderLabel {
-  font-weight: 600;
-  font-family: 'KaTeX_Math', 'Cambria Math', 'Times New Roman', serif;
-  font-style: italic;
-  font-size: 1rem;
-  color: var(--ifm-font-color-base);
-}
-
-.sliderValue {
-  font-variant-numeric: tabular-nums;
-  font-feature-settings: 'tnum';
-  font-size: 0.85rem;
-  color: var(--ifm-color-emphasis-600);
-}
-
-.sliderControl {
-  --slider-track-height: 4px;
-  --slider-thumb-size: 14px;
+@media (max-width: 500px) {
+  .controls {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 
 .resetButton {
@@ -78,9 +84,6 @@ html[data-theme='dark'] .cardSurface {
 }
 
 @media (max-width: 500px) {
-  .controls {
-    grid-template-columns: repeat(3, 1fr);
-  }
   .resetButton {
     grid-column: 1 / -1;
     width: 100%;

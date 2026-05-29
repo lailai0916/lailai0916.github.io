@@ -1,13 +1,21 @@
-.circleSvg {
-  position: absolute;
-  transform: rotate(-90deg);
-}
-
 .pxcontainer {
   position: relative;
   width: 160px;
   height: 160px;
   display: flex;
+}
+
+.circleSvg {
+  position: absolute;
+  transform: rotate(-90deg);
+}
+
+.circleBackground {
+  color: rgb(243 244 246);
+}
+
+[data-theme='dark'] .circleBackground {
+  color: rgb(38 38 38);
 }
 
 .pxanchor {
@@ -34,14 +42,6 @@
   font-weight: 400;
   opacity: 0.85;
   white-space: nowrap;
-}
-
-.circleBackground {
-  color: rgb(243 244 246);
-}
-
-[data-theme='dark'] .circleBackground {
-  color: rgb(38 38 38);
 }
 
 .countdownLayout {

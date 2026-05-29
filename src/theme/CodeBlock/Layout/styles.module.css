@@ -5,6 +5,13 @@
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
 }
 
+:global(.codeBlockBare).codeBlock {
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+  margin: 0;
+}
+
 .header {
   align-items: center;
   background-color: var(--ifm-card-background-color);
@@ -71,6 +78,10 @@
   font-variant-numeric: tabular-nums;
 }
 
+[data-theme='dark'] .meta {
+  color: rgba(235, 235, 245, 0.45);
+}
+
 .size::after {
   content: '·';
   margin: 0 6px;
@@ -80,18 +91,7 @@
   text-transform: lowercase;
 }
 
-[data-theme='dark'] .meta {
-  color: rgba(235, 235, 245, 0.45);
-}
-
 .body {
   position: relative;
   direction: ltr;
-}
-
-:global(.codeBlockBare).codeBlock {
-  border: none;
-  border-radius: 0;
-  box-shadow: none;
-  margin: 0;
 }

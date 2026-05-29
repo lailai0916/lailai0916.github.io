@@ -3,24 +3,8 @@
   overflow: hidden;
 }
 
-.title {
-  font-size: 1.0625rem;
-  font-weight: 600;
-  letter-spacing: -0.005em;
-  line-height: 1.45;
-  margin-bottom: 0.75rem;
-}
-
-.titleLink {
-  color: var(--ifm-color-content);
-  text-decoration: none;
-  word-break: break-word;
-}
-
-.titleLink:hover {
-  color: var(--ifm-color-primary);
-  text-decoration: underline;
-  text-underline-offset: 0.2em;
+.panelOpen .chevron {
+  transform: rotate(180deg);
 }
 
 .header {
@@ -180,10 +164,6 @@
   width: 16px;
 }
 
-.panelOpen .chevron {
-  transform: rotate(180deg);
-}
-
 .collapse {
   display: grid;
   grid-template-rows: 0fr;
@@ -195,13 +175,13 @@
   grid-template-rows: 1fr;
 }
 
+.collapseOpen .body {
+  border-top: 1px solid var(--ifm-color-emphasis-200);
+}
+
 .body {
   background-color: var(--ifm-card-background-color);
   min-height: 0;
-}
-
-.collapseOpen .body {
-  border-top: 1px solid var(--ifm-color-emphasis-200);
 }
 
 .bodyInner {
@@ -210,4 +190,24 @@
 
 .bodyInner > :last-child {
   margin-bottom: 0;
+}
+
+.title {
+  font-size: 1.0625rem;
+  font-weight: 600;
+  letter-spacing: -0.005em;
+  line-height: 1.45;
+  margin-bottom: 0.75rem;
+}
+
+.titleLink {
+  color: var(--ifm-color-content);
+  text-decoration: none;
+  word-break: break-word;
+}
+
+.titleLink:hover {
+  color: var(--ifm-color-primary);
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
 }

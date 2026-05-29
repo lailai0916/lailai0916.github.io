@@ -1,3 +1,23 @@
+.up {
+  background: var(--lk-color-up);
+}
+
+.down {
+  background: var(--lk-color-down);
+}
+
+.pending {
+  background: var(--lk-color-pending);
+}
+
+.maintenance {
+  background: var(--lk-color-maintenance);
+}
+
+.empty {
+  background: var(--ifm-color-emphasis-200);
+}
+
 .wrap {
   position: relative;
   width: 100%;
@@ -23,24 +43,11 @@
   transform: scaleY(1.1);
 }
 
-.up {
-  background: var(--lk-color-up);
-}
-
-.down {
-  background: var(--lk-color-down);
-}
-
-.pending {
-  background: var(--lk-color-pending);
-}
-
-.maintenance {
-  background: var(--lk-color-maintenance);
-}
-
-.empty {
-  background: var(--ifm-color-emphasis-200);
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  display: inline-block;
 }
 
 .tooltipPing {
@@ -53,11 +60,4 @@
   color: var(--ifm-color-emphasis-600);
   max-width: 280px;
   white-space: normal;
-}
-
-.dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  display: inline-block;
 }

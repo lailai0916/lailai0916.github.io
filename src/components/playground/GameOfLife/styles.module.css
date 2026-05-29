@@ -34,12 +34,12 @@ html[data-theme='dark'] .cardSurface {
   align-items: stretch;
 }
 
-.controls > * {
-  width: 100%;
-}
-
 @media (max-width: 500px) {
   .controls {
     grid-template-columns: repeat(2, 1fr);
   }
+}
+
+.controls > * {
+  width: 100%;
 }

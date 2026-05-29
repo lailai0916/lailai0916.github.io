@@ -1,57 +1,3 @@
-/* Layout */
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(8px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.layout {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  grid-template-areas: 'a1 a2 a3' 'a4 a5 a6';
-  gap: 1.5rem;
-  animation: fadeIn 0.3s ease-out;
-}
-
-@media (max-width: 1199px) {
-  .layout {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    grid-template-areas: 'a1 a4' 'a2 a3' 'a5 a6';
-  }
-}
-
-@media (max-width: 768px) {
-  .layout {
-    grid-template-columns: 1fr;
-    grid-template-areas: 'a1' 'a2' 'a3' 'a4' 'a5' 'a6';
-  }
-}
-
-.layout > :nth-child(1) {
-  grid-area: a1;
-}
-.layout > :nth-child(2) {
-  grid-area: a2;
-}
-.layout > :nth-child(3) {
-  grid-area: a3;
-}
-.layout > :nth-child(4) {
-  grid-area: a4;
-}
-.layout > :nth-child(5) {
-  grid-area: a5;
-}
-.layout > :nth-child(6) {
-  grid-area: a6;
-}
-
 /* Color generator */
 
 .colorGeneratorContainer {
@@ -84,18 +30,6 @@
   border-color: var(--ifm-color-primary);
 }
 
-.textColorInput {
-  flex: 1;
-  min-width: 0;
-  padding: 0;
-  border: none;
-  background: transparent;
-  outline: none;
-  font-size: 0.9rem;
-  font-family: monospace;
-  color: inherit;
-}
-
 .colorPickerInput {
   flex-shrink: 0;
   width: 28px;
@@ -119,6 +53,25 @@
 .colorPickerInput::-moz-color-swatch {
   border: none;
   border-radius: 6px;
+}
+
+.textColorInput {
+  flex: 1;
+  min-width: 0;
+  padding: 0;
+  border: none;
+  background: transparent;
+  outline: none;
+  font-size: 0.9rem;
+  font-family: monospace;
+  color: inherit;
+}
+
+/* Doubled class to outweigh Button's .size_sm height. */
+.resetButton.resetButton {
+  flex-shrink: 0;
+  height: auto;
+  align-self: stretch;
 }
 
 .presetColors {
@@ -145,13 +98,6 @@
 
 .presetColorButton:hover {
   transform: scale(1.1);
-}
-
-/* Doubled class to outweigh Button's .size_sm height. */
-.resetButton.resetButton {
-  flex-shrink: 0;
-  height: auto;
-  align-self: stretch;
 }
 
 /* Typography sliders */
@@ -226,4 +172,58 @@
 
 .actionItemIcon {
   font-size: 1.05rem;
+}
+
+/* Layout */
+
+.layout {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-areas: 'a1 a2 a3' 'a4 a5 a6';
+  gap: 1.5rem;
+  animation: fadeIn 0.3s ease-out;
+}
+
+@media (max-width: 1199px) {
+  .layout {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-areas: 'a1 a4' 'a2 a3' 'a5 a6';
+  }
+}
+
+@media (max-width: 768px) {
+  .layout {
+    grid-template-columns: 1fr;
+    grid-template-areas: 'a1' 'a2' 'a3' 'a4' 'a5' 'a6';
+  }
+}
+
+.layout > :nth-child(1) {
+  grid-area: a1;
+}
+.layout > :nth-child(2) {
+  grid-area: a2;
+}
+.layout > :nth-child(3) {
+  grid-area: a3;
+}
+.layout > :nth-child(4) {
+  grid-area: a4;
+}
+.layout > :nth-child(5) {
+  grid-area: a5;
+}
+.layout > :nth-child(6) {
+  grid-area: a6;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

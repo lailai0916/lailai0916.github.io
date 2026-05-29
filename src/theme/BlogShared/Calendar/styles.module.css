@@ -85,13 +85,6 @@
   font-variant-numeric: tabular-nums;
 }
 
-.calendarCellNum {
-  position: relative;
-  z-index: 1;
-  font-size: 0.8rem;
-  line-height: 1;
-}
-
 .calendarCellMuted {
   color: var(--ifm-color-emphasis-400);
 }
@@ -103,6 +96,22 @@
 
 .calendarCellHasPost:hover .calendarCellNum {
   color: var(--ifm-color-primary);
+}
+
+.calendarCellSelected .calendarCellNum {
+  color: var(--ifm-color-primary);
+}
+
+.calendarCellSelected .calendarCellDot {
+  width: 10px;
+  border-radius: 2px;
+}
+
+.calendarCellNum {
+  position: relative;
+  z-index: 1;
+  font-size: 0.8rem;
+  line-height: 1;
 }
 
 .calendarCellDot {
@@ -117,15 +126,6 @@
   transition:
     width 160ms ease,
     background 160ms ease;
-}
-
-.calendarCellSelected .calendarCellNum {
-  color: var(--ifm-color-primary);
-}
-
-.calendarCellSelected .calendarCellDot {
-  width: 10px;
-  border-radius: 2px;
 }
 
 .calendarDivider {

@@ -38,13 +38,6 @@
   align-items: center;
 }
 
-.frame {
-  position: relative;
-  width: 100%;
-  max-width: 500px;
-  aspect-ratio: 1 / 1;
-}
-
 /* Light theme — "Blueprint" palette. */
 [data-theme='light'] .container {
   --nn-bg-primary: #ffffff;
@@ -74,6 +67,19 @@
   --nn-cover: #ffffff;
 }
 
+@media (max-width: 768px) {
+  .container {
+    margin: 0;
+  }
+}
+
+.frame {
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+  aspect-ratio: 1 / 1;
+}
+
 .svg {
   display: block;
   width: 100%;
@@ -87,9 +93,7 @@
 
 .controls {
   position: absolute;
-  left: 14%;
-  right: 14%;
-  bottom: 8%;
+  inset: auto 14% 8%;
   display: flex;
   gap: 0.85rem;
   justify-content: center;
@@ -112,10 +116,4 @@
 
 .buttonSlot {
   max-width: 200px;
-}
-
-@media (max-width: 768px) {
-  .container {
-    margin: 0;
-  }
 }
