@@ -69,3 +69,17 @@ These are project rules, not general advice — follow them:
 - **Small changes go straight to `main`.** Do not create a feature branch or open a PR for minor edits (copy tweaks, single-component refactors, style fixes, etc.) — commit directly on `main`. Reserve branches and PRs for substantial multi-file work the maintainer explicitly asks to be reviewed.
 
 Prettier config: `printWidth: 80`, `singleQuote: true`, `trailingComma: 'es5'`. TypeScript is `strict`.
+
+## Keep `.claude/` current
+
+`.claude/CLAUDE.md` and `.claude/rules/*.md` are living documentation — they only help if they stay true. Maintaining them is part of every change, not an afterthought. Do it proactively, without being asked:
+
+- **Update the doc in the same change that invalidates it.** When you alter something these files describe, fix the description before declaring the task done. Common triggers:
+  - Rename / move / delete a component → `rules/components.md` (and any inventory list in this file).
+  - Change the blog title-prefix or tag taxonomy, or an authoring convention → `rules/writing-style.md`.
+  - Add / remove an i18n prefix, key-shape rule, or workflow → `rules/i18n.md`.
+  - Register a new MDX author-facing widget → `rules/components.md`.
+  - Change commands, build/deploy, architecture, or directory layout → this file.
+- **Record durable conventions, not transient state.** A rule that will still be true next month belongs here; a one-off task note does not. These docs hold the same `精益求精` and "edit, don't rewrite" bar as the code — keep entries accurate and tight, prune what goes stale, and never bloat them with redundant prose.
+- **Verify before writing.** Confirm a convention against the actual codebase (grep, read the files) rather than recording it from memory — stale or wrong guidance is worse than none.
+- **When unsure whether something is worth recording, surface it to the maintainer** instead of silently adding or omitting it.
