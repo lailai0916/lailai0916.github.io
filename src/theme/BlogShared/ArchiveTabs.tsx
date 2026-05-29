@@ -5,7 +5,8 @@ import { translate } from '@docusaurus/Translate';
 import Segmented from '@site/src/components/laikit/Segmented';
 import Badge from '@site/src/components/laikit/Badge';
 import { formatBeijingDate } from '@site/src/utils/format';
-import { BlogCard, TagChipList } from './Components';
+import TitleCard from '@site/src/components/laikit/TitleCard';
+import { TagChipList } from './Components';
 import BlogScaffold from './Scaffold';
 import { BlogArchiveList } from './ArchiveList';
 import styles from './ArchiveTabs.module.css';
@@ -112,7 +113,10 @@ function YearView({ posts }: { posts: readonly PostLike[] }) {
   return (
     <>
       {years.length > 0 && (
-        <BlogCard title={`${YEAR_SELECT_TITLE} (${years.length})`}>
+        <TitleCard
+          padding="1rem"
+          title={`${YEAR_SELECT_TITLE} (${years.length})`}
+        >
           <div className={styles.yearList}>
             {years.map(({ year, count }) => {
               const isActive = year === activeYear;
@@ -130,7 +134,7 @@ function YearView({ posts }: { posts: readonly PostLike[] }) {
               );
             })}
           </div>
-        </BlogCard>
+        </TitleCard>
       )}
       <BlogArchiveList posts={filteredPosts} />
     </>
@@ -143,7 +147,7 @@ function TagsView({ tags }: { tags: readonly ArchiveTagItem[] }) {
     [tags]
   );
   return (
-    <BlogCard title={`${TAGS_TITLE} (${sorted.length})`}>
+    <TitleCard padding="1rem" title={`${TAGS_TITLE} (${sorted.length})`}>
       <TagChipList
         items={sorted.map((t) => ({
           to: t.permalink,
@@ -151,13 +155,13 @@ function TagsView({ tags }: { tags: readonly ArchiveTagItem[] }) {
           count: t.count,
         }))}
       />
-    </BlogCard>
+    </TitleCard>
   );
 }
 
 function AuthorsView({ authors }: { authors: readonly ArchiveAuthorItem[] }) {
   return (
-    <BlogCard title={`${AUTHORS_TITLE} (${authors.length})`}>
+    <TitleCard padding="1rem" title={`${AUTHORS_TITLE} (${authors.length})`}>
       <TagChipList
         items={authors.map((a) => ({
           to: a.permalink,
@@ -165,7 +169,7 @@ function AuthorsView({ authors }: { authors: readonly ArchiveAuthorItem[] }) {
           count: a.count,
         }))}
       />
-    </BlogCard>
+    </TitleCard>
   );
 }
 

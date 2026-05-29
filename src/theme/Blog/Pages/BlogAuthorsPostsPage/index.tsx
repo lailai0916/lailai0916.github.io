@@ -7,7 +7,8 @@ import { loadOfficialAuthors } from '@site/src/utils/blogData';
 import BlogAuthorsPostsPageOriginal from '@theme-original/Blog/Pages/BlogAuthorsPostsPage';
 import type { Props } from '@theme/Blog/Pages/BlogAuthorsPostsPage';
 import PostsListLayout from '../../../BlogShared/PostsListLayout';
-import { BlogCard, TagChipList } from '../../../BlogShared/Components';
+import TitleCard from '@site/src/components/laikit/TitleCard';
+import { TagChipList } from '../../../BlogShared/Components';
 import { ArchiveTabsNav } from '../../../BlogShared/ArchiveTabs';
 
 const TITLE = translate({
@@ -41,9 +42,9 @@ function AuthorSelector({ activePermalink }: { activePermalink: string }) {
   if (!items.length) return null;
 
   return (
-    <BlogCard title={`${TITLE} (${items.length})`}>
+    <TitleCard padding="1rem" title={`${TITLE} (${items.length})`}>
       <TagChipList items={items} />
-    </BlogCard>
+    </TitleCard>
   );
 }
 

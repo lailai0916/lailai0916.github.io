@@ -3,10 +3,10 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import { translate } from '@docusaurus/Translate';
 import BlogScaffold from '@site/src/theme/BlogShared/Scaffold';
 import {
-  BlogCard,
   MetaBar,
   type MetaBarItem,
 } from '@site/src/theme/BlogShared/Components';
+import Card from '@site/src/components/laikit/Card';
 import IconBlock from '@site/src/components/laikit/IconBlock';
 import ShareCard from '@site/src/components/laikit/ShareCard';
 import { MOMENT_LIST } from '@site/src/data/moments';
@@ -185,7 +185,7 @@ export default function Moments() {
 
   return (
     <BlogScaffold title={TITLE} description={DESCRIPTION}>
-      <BlogCard>
+      <Card>
         <div className={styles.headerCard}>
           <IconBlock icon="lucide:sparkles" variant="accent" size={48} />
           <div className={styles.headerInfo}>
@@ -202,7 +202,7 @@ export default function Moments() {
             <MetaBar items={weatherItems} />
           </div>
         )}
-      </BlogCard>
+      </Card>
 
       {visibleMoments.map((moment, i) => {
         const metaItems: MetaBarItem[] = [
@@ -229,7 +229,7 @@ export default function Moments() {
           });
         }
         return (
-          <BlogCard key={`${moment.date}-${i}`}>
+          <Card key={`${moment.date}-${i}`}>
             <MetaBar items={metaItems} />
             {moment.content && (
               <div
@@ -254,7 +254,7 @@ export default function Moments() {
                 ))}
               </div>
             )}
-          </BlogCard>
+          </Card>
         );
       })}
 

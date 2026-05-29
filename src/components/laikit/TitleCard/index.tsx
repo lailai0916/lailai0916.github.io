@@ -4,32 +4,34 @@ import Card from '@site/src/components/laikit/Card';
 import IconBlock from '@site/src/components/laikit/IconBlock';
 import styles from './styles.module.css';
 
-interface IconCardProps {
-  icon: string;
+interface TitleCardProps {
   title: string;
-  description: string;
+  icon?: string;
+  description?: string;
   children: ReactNode;
   padding?: React.CSSProperties['padding'];
   bodyAlign?: 'top' | 'bottom';
   className?: string;
 }
 
-export default function IconCard({
-  icon,
+export default function TitleCard({
   title,
+  icon,
   description,
   children,
   padding = '1.5rem',
   bodyAlign = 'top',
   className,
-}: IconCardProps) {
+}: TitleCardProps) {
   return (
-    <Card padding={padding} className={clsx(styles.iconCard, className)}>
+    <Card padding={padding} className={clsx(styles.titleCard, className)}>
       <div className={styles.header}>
-        <IconBlock icon={icon} variant="accent" />
+        {icon && <IconBlock icon={icon} variant="accent" />}
         <div className={styles.titleGroup}>
           <h3 className={styles.title}>{title}</h3>
-          <span className={styles.description}>{description}</span>
+          {description && (
+            <span className={styles.description}>{description}</span>
+          )}
         </div>
       </div>
       <div

@@ -3,7 +3,7 @@ import clsx from 'clsx';
 import { useTheme } from '@site/src/hooks/useTheme';
 import BlogPostPageOriginal from '@theme-original/BlogPostPage';
 import BlogScaffold from '../BlogShared/Scaffold';
-import { BlogCard } from '../BlogShared/Components';
+import Card from '@site/src/components/laikit/Card';
 import {
   PostHeader,
   PostFooter,
@@ -42,7 +42,7 @@ export default function BlogPostPage(props: Props): React.ReactElement {
           title={metadata.title}
           description={metadata.description}
         >
-          <BlogCard>
+          <Card>
             <PostHeader
               metadata={metadata}
               frontMatter={frontMatter as Record<string, unknown>}
@@ -53,7 +53,7 @@ export default function BlogPostPage(props: Props): React.ReactElement {
               </MDXContent>
             </article>
             <PostFooter metadata={metadata} />
-          </BlogCard>
+          </Card>
           <PostPaginator
             prevItem={metadata.prevItem}
             nextItem={metadata.nextItem}

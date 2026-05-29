@@ -4,7 +4,8 @@ import Link from '@docusaurus/Link';
 import type { BlogPaginatedMetadata } from '@docusaurus/plugin-content-blog';
 import type { Props as BlogListPageProps } from '@theme/BlogListPage';
 import BlogScaffold from './Scaffold';
-import { BlogCard, MetaBar, TagChipList } from './Components';
+import Card from '@site/src/components/laikit/Card';
+import { MetaBar, TagChipList } from './Components';
 import { usePostMetaItems } from './PostMeta';
 
 import { translate } from '@docusaurus/Translate';
@@ -48,7 +49,7 @@ function PostCard({ item }: PostCardProps) {
 
   return (
     <article className={styles.postCard}>
-      <BlogCard>
+      <Card>
         {lightImage && (
           <Link
             to={metadata.permalink}
@@ -107,7 +108,7 @@ function PostCard({ item }: PostCardProps) {
             <Icon icon="lucide:arrow-right" width={14} height={14} />
           </Link>
         </div>
-      </BlogCard>
+      </Card>
     </article>
   );
 }

@@ -1,7 +1,8 @@
 import React from 'react';
 import Link from '@docusaurus/Link';
 import Translate from '@docusaurus/Translate';
-import { BlogCard } from '../BlogShared/Components';
+import Card from '@site/src/components/laikit/Card';
+import TitleCard from '@site/src/components/laikit/TitleCard';
 import { formatBeijingDate } from '@site/src/utils/format';
 import styles from './styles.module.css';
 
@@ -33,18 +34,22 @@ export function BlogArchiveList({ posts }: { posts: readonly PostLike[] }) {
 
   if (!groups.length) {
     return (
-      <BlogCard>
+      <Card>
         <Translate id="blog.post.empty">
           No posts yet, please look forward to more content...
         </Translate>
-      </BlogCard>
+      </Card>
     );
   }
 
   return (
     <>
       {groups.map(([year, yearPosts]) => (
-        <BlogCard key={year} title={`${year} (${yearPosts.length})`}>
+        <TitleCard
+          key={year}
+          padding="1rem"
+          title={`${year} (${yearPosts.length})`}
+        >
           <ul className={styles.recentList}>
             {yearPosts.map((post) => (
               <li key={post.metadata.permalink} className={styles.recentItem}>
@@ -73,7 +78,7 @@ export function BlogArchiveList({ posts }: { posts: readonly PostLike[] }) {
               </li>
             ))}
           </ul>
-        </BlogCard>
+        </TitleCard>
       ))}
     </>
   );

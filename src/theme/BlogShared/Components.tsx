@@ -3,7 +3,6 @@ import clsx from 'clsx';
 import Link from '@docusaurus/Link';
 import { Icon } from '@iconify/react';
 import Badge from '@site/src/components/laikit/Badge';
-import Card from '@site/src/components/laikit/Card';
 import styles from './styles.module.css';
 
 export { useAnalytics } from '@site/src/hooks/useAnalytics';
@@ -11,21 +10,6 @@ export type {
   AnalyticsData,
   AnalyticsStatus,
 } from '@site/src/hooks/useAnalytics';
-
-export function BlogCard({
-  title,
-  children,
-}: {
-  title?: string;
-  children: React.ReactNode;
-}) {
-  return (
-    <Card>
-      {title && <div className={styles.cardTitle}>{title}</div>}
-      {children}
-    </Card>
-  );
-}
 
 export type MetaBarItem = {
   icon: string;

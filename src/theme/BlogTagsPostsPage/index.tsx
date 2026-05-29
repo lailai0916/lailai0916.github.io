@@ -9,7 +9,8 @@ import { ArchiveTabsNav } from '../BlogShared/ArchiveTabs';
 import { translate } from '@docusaurus/Translate';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import { loadOfficialTags } from '@site/src/utils/blogData';
-import { BlogCard, TagChipList } from '../BlogShared/Components';
+import TitleCard from '@site/src/components/laikit/TitleCard';
+import { TagChipList } from '../BlogShared/Components';
 
 const TITLE = translate({ id: 'blog.pages.tags.tagSelect', message: 'Tags' });
 
@@ -25,7 +26,7 @@ function TagSelector({ activePermalink }: { activePermalink: string }) {
   if (!tags.length) return null;
 
   return (
-    <BlogCard title={`${TITLE} (${tags.length})`}>
+    <TitleCard padding="1rem" title={`${TITLE} (${tags.length})`}>
       <TagChipList
         items={tags.map((tag) => ({
           to: tag.permalink === activePermalink ? '/blog/tags' : tag.permalink,
@@ -34,7 +35,7 @@ function TagSelector({ activePermalink }: { activePermalink: string }) {
           active: tag.permalink === activePermalink,
         }))}
       />
-    </BlogCard>
+    </TitleCard>
   );
 }
 

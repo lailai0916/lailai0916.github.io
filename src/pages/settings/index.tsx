@@ -4,7 +4,7 @@ import Color from 'color';
 import { translate } from '@docusaurus/Translate';
 import Layout from '@theme/Layout';
 
-import IconCard from '@site/src/components/laikit/IconCard';
+import TitleCard from '@site/src/components/laikit/TitleCard';
 import Segmented, {
   type SegmentedItem,
 } from '@site/src/components/laikit/Segmented';
@@ -68,7 +68,7 @@ function ThemeSettings() {
   const { colorModeChoice, setColorMode } = useColorMode();
 
   return (
-    <IconCard
+    <TitleCard
       icon="lucide:monitor"
       title={translate({
         id: 'pages.settings.item.theme.title',
@@ -85,7 +85,7 @@ function ThemeSettings() {
         items={themeOptions}
         onChange={(v) => setColorMode(v)}
       />
-    </IconCard>
+    </TitleCard>
   );
 }
 
@@ -111,7 +111,7 @@ function AccentColor() {
   );
 
   return (
-    <IconCard
+    <TitleCard
       title={translate({
         id: 'pages.settings.item.color.title',
         message: 'Accent Color',
@@ -169,7 +169,7 @@ function AccentColor() {
           ))}
         </div>
       </div>
-    </IconCard>
+    </TitleCard>
   );
 }
 
@@ -223,7 +223,7 @@ function FontFamily() {
   ];
 
   return (
-    <IconCard
+    <TitleCard
       title={translate({
         id: 'pages.settings.item.fontFamily.title',
         message: 'Font Family',
@@ -240,7 +240,7 @@ function FontFamily() {
         items={items}
         onChange={setChoice}
       />
-    </IconCard>
+    </TitleCard>
   );
 }
 
@@ -286,7 +286,7 @@ function Typography() {
   const lineHeightMax = 2.0;
 
   return (
-    <IconCard
+    <TitleCard
       title={translate({
         id: 'pages.settings.item.font.title',
         message: 'Typography',
@@ -348,7 +348,7 @@ function Typography() {
           />
         </div>
       </div>
-    </IconCard>
+    </TitleCard>
   );
 }
 
@@ -407,7 +407,7 @@ function ExperimentalFeatures() {
   };
 
   return (
-    <IconCard
+    <TitleCard
       title={translate({
         id: 'pages.settings.item.experimental.title',
         message: 'Experimental Features',
@@ -433,7 +433,7 @@ function ExperimentalFeatures() {
           </li>
         ))}
       </ul>
-    </IconCard>
+    </TitleCard>
   );
 }
 
@@ -489,7 +489,7 @@ function QuickActions() {
   ];
 
   return (
-    <IconCard
+    <TitleCard
       title={translate({
         id: 'pages.settings.item.quickActions.title',
         message: 'Quick Actions',
@@ -518,7 +518,7 @@ function QuickActions() {
           </li>
         ))}
       </ul>
-    </IconCard>
+    </TitleCard>
   );
 }
 

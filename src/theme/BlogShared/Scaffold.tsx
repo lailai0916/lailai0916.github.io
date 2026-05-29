@@ -15,7 +15,9 @@ import {
 } from '@site/src/utils/blogData';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import { formatCompact } from '@site/src/utils/format';
-import { BlogCard, TagChipList, type ChipItem } from './Components';
+import Card from '@site/src/components/laikit/Card';
+import TitleCard from '@site/src/components/laikit/TitleCard';
+import { TagChipList, type ChipItem } from './Components';
 import CalendarCard from './Calendar';
 import styles from './styles.module.css';
 
@@ -71,7 +73,7 @@ function ProfileCard() {
   });
 
   return (
-    <BlogCard>
+    <Card>
       <div className={styles.profileCard}>
         <Link to={aboutHref} className={styles.profileHeader}>
           <img
@@ -129,7 +131,7 @@ function ProfileCard() {
           })}
         </nav>
       </div>
-    </BlogCard>
+    </Card>
   );
 }
 
@@ -225,7 +227,7 @@ function TocCard({
 
   return (
     <div className={styles.tocContainer}>
-      <BlogCard>
+      <Card>
         <div className={styles.tocHeader}>
           <span className={styles.tocHeaderTitle}>
             {translate({
@@ -263,7 +265,7 @@ function TocCard({
             })}
           </ul>
         )}
-      </BlogCard>
+      </Card>
     </div>
   );
 }
@@ -322,7 +324,7 @@ function StatsCard() {
   ];
 
   return (
-    <BlogCard>
+    <Card>
       <div className={styles.statsGrid}>
         {statsItems.map((item) => (
           <div key={item.label} className={styles.statTile}>
@@ -359,7 +361,7 @@ function StatsCard() {
           </Link>
         ))}
       </div>
-    </BlogCard>
+    </Card>
   );
 }
 
@@ -383,14 +385,15 @@ function TagsCard() {
   );
 
   return (
-    <BlogCard
+    <TitleCard
+      padding="1rem"
       title={translate({
         id: 'blog.sidebar.tags.title',
         message: 'Popular Tags',
       })}
     >
       <TagChipList items={tags} />
-    </BlogCard>
+    </TitleCard>
   );
 }
 
