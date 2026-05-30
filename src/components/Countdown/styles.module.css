@@ -58,10 +58,9 @@
 }
 
 .label {
-  font-size: clamp(0.625rem, 2.2cqi, 0.7rem);
-  font-weight: 600;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
+  font-size: clamp(0.7rem, 2.4cqi, 0.8rem);
+  font-weight: 500;
+  letter-spacing: 0.01em;
   color: var(--ifm-color-emphasis-500);
 }
 
