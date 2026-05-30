@@ -3,11 +3,9 @@ import clsx from 'clsx';
 import BrowserOnly from '@docusaurus/BrowserOnly';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import { translate } from '@docusaurus/Translate';
-import { Icon } from '@iconify/react';
-import Card from '@site/src/components/laikit/Card';
+import TitleCard from '@site/src/components/laikit/TitleCard';
 import Skeleton from '@site/src/components/laikit/Skeleton';
 import { useSysStatus } from '@site/src/hooks/useSysStatus';
-import metricListStyles from './MetricList.module.css';
 import styles from './SysStatusCard.module.css';
 
 const PING_TARGET = 'https://analytics.lailai.one/script.js';
@@ -163,17 +161,16 @@ function SysStatusCardInner() {
   const mutedIfNull = (v: unknown) => (v == null ? styles.muted : undefined);
 
   return (
-    <Card padding="1.5rem 1.25rem 1.25rem" className={styles.card}>
-      <header className={metricListStyles.head}>
-        <Icon icon="lucide:activity" className={metricListStyles.icon} />
-        <h3 className={metricListStyles.title}>
-          {translate({
-            id: 'pages.insights.systemStatus.title',
-            message: 'Runtime Snapshot',
-          })}
-        </h3>
-      </header>
-
+    <TitleCard
+      size="sm"
+      icon="lucide:activity"
+      title={translate({
+        id: 'pages.insights.systemStatus.title',
+        message: 'Runtime Snapshot',
+      })}
+      padding="1.5rem 1.25rem 1.25rem"
+      className={styles.card}
+    >
       <div className={styles.body}>
         <Cell label="cpu" value={cpuStr} valueClassName={mutedIfNull(cpu)} />
         <Cell
@@ -214,7 +211,7 @@ function SysStatusCardInner() {
           message: 'System status overview',
         })}
       </span>
-    </Card>
+    </TitleCard>
   );
 }
 

@@ -2,11 +2,18 @@ import { useEffect, useState, useRef } from 'react';
 import SectionContainer, {
   SectionHeader,
 } from '@site/src/components/laikit/Section';
+import Card from '@site/src/components/laikit/Card';
 import { translate } from '@docusaurus/Translate';
 import useIsBrowser from '@docusaurus/useIsBrowser';
 import styles from './styles.module.css';
 
-const DATE = '2027-01-01T00:00:00';
+const TARGET = '2027-01-01T00:00:00';
+const ORIGIN = '2026-01-01T00:00:00';
+
+const TARGET_MS = new Date(TARGET).getTime();
+const ORIGIN_MS = new Date(ORIGIN).getTime();
+const SPAN_MS = TARGET_MS - ORIGIN_MS;
+
 const EVENT = translate({ id: 'components.countdown.event', message: '2027' });
 const FINAL = translate({
   id: 'components.countdown.final',
@@ -29,17 +36,17 @@ type CountdownUnitKey = 'days' | 'hours' | 'minutes' | 'seconds';
 
 const TIME_UNITS: Array<{
   key: CountdownUnitKey;
-  total: number;
+  pad: number;
   label: string;
 }> = [
   {
     key: 'days',
-    total: 366,
+    pad: 2,
     label: translate({ id: 'components.countdown.unit.days', message: 'Days' }),
   },
   {
     key: 'hours',
-    total: 24,
+    pad: 2,
     label: translate({
       id: 'components.countdown.unit.hours',
       message: 'Hours',
@@ -47,7 +54,7 @@ const TIME_UNITS: Array<{
   },
   {
     key: 'minutes',
-    total: 60,
+    pad: 2,
     label: translate({
       id: 'components.countdown.unit.minutes',
       message: 'Minutes',
@@ -55,7 +62,7 @@ const TIME_UNITS: Array<{
   },
   {
     key: 'seconds',
-    total: 60,
+    pad: 2,
     label: translate({
       id: 'components.countdown.unit.seconds',
       message: 'Seconds',
@@ -63,76 +70,12 @@ const TIME_UNITS: Array<{
   },
 ];
 
-const SVG_CONFIG = {
-  size: 160,
-  radius: 72,
-  strokeWidth: 8,
-  dotSize: 16,
-} as const;
-
-function ProgressCircle({
-  total,
-  value,
-  unitText,
-}: {
-  total: number;
-  value: number;
-  unitText: string;
-}) {
-  const progress = value / total;
-  const angleRad = progress * 2 * Math.PI;
-  const dotX = SVG_CONFIG.radius * Math.cos(angleRad);
-  const dotY = SVG_CONFIG.radius * Math.sin(angleRad);
-
-  return (
-    <div className={styles.pxcontainer}>
-      <svg
-        className={styles.circleSvg}
-        viewBox={`0 0 ${SVG_CONFIG.size} ${SVG_CONFIG.size}`}
-      >
-        <circle
-          cx={SVG_CONFIG.size / 2}
-          cy={SVG_CONFIG.size / 2}
-          r={SVG_CONFIG.radius}
-          fill="none"
-          stroke="currentColor"
-          strokeWidth={SVG_CONFIG.strokeWidth}
-          className={styles.circleBackground}
-        />
-        <circle
-          cx={SVG_CONFIG.size / 2}
-          cy={SVG_CONFIG.size / 2}
-          r={SVG_CONFIG.radius}
-          fill="none"
-          stroke="var(--ifm-color-primary)"
-          strokeWidth={SVG_CONFIG.strokeWidth}
-          strokeLinecap="round"
-          pathLength={1}
-          strokeDasharray={`${progress} ${1 - progress}`}
-          strokeDashoffset={0}
-          className={styles.progressCircle}
-        />
-        <circle
-          cx={SVG_CONFIG.size / 2 + dotX}
-          cy={SVG_CONFIG.size / 2 + dotY}
-          r={SVG_CONFIG.dotSize / 2}
-          fill="var(--ifm-color-primary)"
-          className={styles.progressDot}
-        />
-      </svg>
-      <div className={styles.pxanchor}>
-        <div className={styles.pxtitle}>{value}</div>
-        <div className={styles.pxsub}>{unitText}</div>
-      </div>
-    </div>
-  );
-}
-
 interface CountdownState {
   days: number;
   hours: number;
   minutes: number;
   seconds: number;
+  progress: number;
   isTimeUp: boolean;
 }
 
@@ -141,17 +84,21 @@ const INITIAL_STATE: CountdownState = {
   hours: 0,
   minutes: 0,
   seconds: 0,
+  progress: 0,
   isTimeUp: false,
 };
 
 function calculateTimeLeft(): CountdownState {
-  const distance = new Date(DATE).getTime() - Date.now();
+  const now = Date.now();
+  const distance = TARGET_MS - now;
+  const elapsed = now - ORIGIN_MS;
 
   return {
     days: Math.floor(distance / (24 * 60 * 60 * 1000)),
     hours: Math.floor((distance / (60 * 60 * 1000)) % 24),
     minutes: Math.floor((distance / (60 * 1000)) % 60),
     seconds: Math.floor((distance / 1000) % 60),
+    progress: Math.min(Math.max(elapsed / SPAN_MS, 0), 1),
     isTimeUp: distance <= 0,
   };
 }
@@ -206,16 +153,37 @@ export default function Countdown() {
         description={state.isTimeUp ? FINAL : DESCRIPTION}
       />
       {!state.isTimeUp && (
-        <div className={styles.countdownLayout}>
-          {TIME_UNITS.map(({ key, total, label }) => (
-            <ProgressCircle
-              key={key}
-              total={total}
-              value={state[key]}
-              unitText={label}
+        <Card className={styles.panel} padding="0">
+          <div className={styles.clock}>
+            {TIME_UNITS.map(({ key, pad, label }, index) => (
+              <div className={styles.group} key={key}>
+                {index > 0 && (
+                  <span className={styles.separator} aria-hidden="true">
+                    :
+                  </span>
+                )}
+                <div className={styles.unit}>
+                  <span className={styles.value}>
+                    {String(state[key]).padStart(pad, '0')}
+                  </span>
+                  <span className={styles.label}>{label}</span>
+                </div>
+              </div>
+            ))}
+          </div>
+          <div
+            className={styles.track}
+            role="progressbar"
+            aria-valuemin={0}
+            aria-valuemax={100}
+            aria-valuenow={Math.round(state.progress * 100)}
+          >
+            <span
+              className={styles.bar}
+              style={{ width: `${state.progress * 100}%` }}
             />
-          ))}
-        </div>
+          </div>
+        </Card>
       )}
     </SectionContainer>
   );

@@ -10,6 +10,7 @@ import {
   PageContent,
 } from '@site/src/components/laikit/Page';
 import Card from '@site/src/components/laikit/Card';
+import TitleCard from '@site/src/components/laikit/TitleCard';
 import Skeleton from '@site/src/components/laikit/Skeleton';
 import Segmented, {
   type SegmentedItem,
@@ -24,7 +25,6 @@ import { useUmamiMetric } from '@site/src/hooks/useUmamiMetric';
 import { useAnimatedNumber } from '@site/src/hooks/useAnimatedNumber';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import { formatCompact } from '@site/src/utils/format';
-import { Icon } from '@iconify/react';
 import Sparkline from './_components/Sparkline';
 import MetricList from './_components/MetricList';
 import metricListStyles from './_components/MetricList.module.css';
@@ -270,16 +270,16 @@ function PageviewsChart({ range }: { range: InsightsRange }) {
   const loading = status === 'loading';
 
   return (
-    <Card padding="1.5rem 1.25rem 1.25rem" className={styles.chartCard}>
-      <header className={metricListStyles.head}>
-        <Icon icon="lucide:line-chart" className={metricListStyles.icon} />
-        <h3 className={metricListStyles.title}>
-          {translate({
-            id: 'pages.insights.chart.title',
-            message: 'Pageviews Over Time',
-          })}
-        </h3>
-      </header>
+    <TitleCard
+      size="sm"
+      icon="lucide:line-chart"
+      title={translate({
+        id: 'pages.insights.chart.title',
+        message: 'Pageviews Over Time',
+      })}
+      padding="1.5rem 1.25rem 1.25rem"
+      className={styles.chartCard}
+    >
       <Sparkline
         data={series}
         loading={loading}
@@ -293,7 +293,7 @@ function PageviewsChart({ range }: { range: InsightsRange }) {
                 : 'week'
         }
       />
-    </Card>
+    </TitleCard>
   );
 }
 

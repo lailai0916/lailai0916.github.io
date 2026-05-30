@@ -31,9 +31,6 @@
     ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono',
     monospace;
   font-variant-numeric: tabular-nums;
-  display: flex;
-  flex-direction: column;
-  gap: 0.85rem;
   position: relative;
   overflow: hidden;
   margin-top: calc(1rem - clamp(2rem, 4vw, 3rem));

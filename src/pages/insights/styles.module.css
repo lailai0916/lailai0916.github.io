@@ -86,9 +86,6 @@
 }
 
 .chartCard {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
   margin-top: calc(1rem - clamp(2rem, 4vw, 3rem));
 }
 

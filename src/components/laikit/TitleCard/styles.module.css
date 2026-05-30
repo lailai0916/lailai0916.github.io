@@ -43,3 +43,22 @@
 .bodyBottom {
   justify-content: flex-end;
 }
+
+/* Compact size — inline primary icon + smaller title (Insights panels). */
+.sm .header {
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 1rem;
+  padding: 0 0.25rem;
+}
+
+.sm .icon {
+  flex-shrink: 0;
+  font-size: 1.1rem;
+  color: var(--ifm-color-primary);
+}
+
+.sm .title {
+  font-size: 0.95rem;
+  font-weight: 600;
+}

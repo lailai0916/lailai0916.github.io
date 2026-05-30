@@ -1,68 +1,79 @@
-.pxcontainer {
-  position: relative;
-  width: 160px;
-  height: 160px;
-  display: flex;
-}
-
-.circleSvg {
-  position: absolute;
-  transform: rotate(-90deg);
-}
-
-.circleBackground {
-  color: rgb(243 244 246);
-}
-
-[data-theme='dark'] .circleBackground {
-  color: rgb(38 38 38);
-}
-
-.pxanchor {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.pxtitle {
-  font-size: 40px;
-  font-weight: 600;
-  line-height: 32px;
-  text-align: center;
-}
-
-.pxsub {
-  position: absolute;
-  top: 100%;
-  left: 50%;
-  transform: translateX(-50%);
-  margin-top: 4px;
-  font-size: 12px;
-  font-weight: 400;
-  opacity: 0.85;
-  white-space: nowrap;
-}
-
-.countdownLayout {
-  display: flex;
-  gap: 2rem;
-  justify-content: center;
+.panel {
   width: fit-content;
+  max-width: 100%;
   margin: 0 auto;
+  overflow: hidden;
 }
 
-@media (max-width: 768px) {
-  .countdownLayout {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1.5rem;
+.clock {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: clamp(0.5rem, 2.5vw, 1.25rem);
+  padding: clamp(1.5rem, 5vw, 2.75rem) clamp(1.5rem, 6vw, 3.5rem);
+}
+
+.group {
+  display: flex;
+  align-items: flex-start;
+  gap: clamp(0.5rem, 2.5vw, 1.25rem);
+}
+
+.unit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.value {
+  font-size: clamp(2.5rem, 11vw, 4.5rem);
+  font-weight: 700;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.02em;
+  color: var(--ifm-font-color-base);
+}
+
+.label {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ifm-color-emphasis-500);
+}
+
+.separator {
+  font-size: clamp(2.5rem, 11vw, 4.5rem);
+  font-weight: 300;
+  line-height: 1;
+  color: var(--ifm-color-emphasis-300);
+  user-select: none;
+}
+
+.track {
+  position: relative;
+  height: 3px;
+  background: var(--ifm-color-emphasis-200);
+}
+
+.bar {
+  position: absolute;
+  inset: 0 auto 0 0;
+  background: var(--ifm-color-primary);
+  transition: width 700ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@media (max-width: 480px) {
+  .value {
+    font-size: clamp(2rem, 13vw, 2.75rem);
   }
-}
 
-@media (max-width: 400px) {
-  .countdownLayout {
-    grid-template-columns: 1fr;
-    gap: 1rem;
+  .separator {
+    font-size: clamp(2rem, 13vw, 2.75rem);
+  }
+
+  .label {
+    font-size: 0.625rem;
   }
 }

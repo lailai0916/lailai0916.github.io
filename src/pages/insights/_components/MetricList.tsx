@@ -1,8 +1,7 @@
 import React from 'react';
-import { Icon } from '@iconify/react';
 import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
-import Card from '@site/src/components/laikit/Card';
+import TitleCard from '@site/src/components/laikit/TitleCard';
 import Skeleton from '@site/src/components/laikit/Skeleton';
 import { formatCompact } from '@site/src/utils/format';
 import styles from './MetricList.module.css';
@@ -39,52 +38,52 @@ export default function MetricList({
   const max = items.length > 0 ? Math.max(...items.map((i) => i.y), 1) : 1;
 
   return (
-    <Card padding="1.5rem 1.25rem 1.25rem" className={styles.card}>
-      <header className={styles.head}>
-        <Icon icon={icon} className={styles.icon} />
-        <h3 className={styles.title}>{title}</h3>
-      </header>
-      <div className={styles.body}>
-        {loading ? (
-          <div className={styles.skeletonList}>
-            {Array.from({ length: 8 }).map((_, i) => (
-              <Skeleton key={i} height={42} radius={8} />
-            ))}
-          </div>
-        ) : items.length === 0 ? (
-          <p className={styles.empty}>{emptyText}</p>
-        ) : (
-          <ol className={styles.list}>
-            {items.map((item, i) => {
-              const ratio = item.y / max;
-              const url = href?.(item.x);
-              const inner = (
-                <>
-                  <div
-                    className={styles.bar}
-                    style={{ width: `${ratio * 100}%` }}
-                  />
-                  <span className={styles.label}>
-                    {renderLabel ? renderLabel(item.x) : item.x}
-                  </span>
-                  <span className={styles.value}>{format(item.y)}</span>
-                </>
-              );
-              return (
-                <li key={`${item.x}-${i}`} className={styles.rowItem}>
-                  {url ? (
-                    <Link to={url} className={styles.row}>
-                      {inner}
-                    </Link>
-                  ) : (
-                    <div className={styles.row}>{inner}</div>
-                  )}
-                </li>
-              );
-            })}
-          </ol>
-        )}
-      </div>
-    </Card>
+    <TitleCard
+      size="sm"
+      icon={icon}
+      title={title}
+      padding="1.5rem 1.25rem 1.25rem"
+      className={styles.card}
+    >
+      {loading ? (
+        <div className={styles.skeletonList}>
+          {Array.from({ length: 8 }).map((_, i) => (
+            <Skeleton key={i} height={42} radius={8} />
+          ))}
+        </div>
+      ) : items.length === 0 ? (
+        <p className={styles.empty}>{emptyText}</p>
+      ) : (
+        <ol className={styles.list}>
+          {items.map((item, i) => {
+            const ratio = item.y / max;
+            const url = href?.(item.x);
+            const inner = (
+              <>
+                <div
+                  className={styles.bar}
+                  style={{ width: `${ratio * 100}%` }}
+                />
+                <span className={styles.label}>
+                  {renderLabel ? renderLabel(item.x) : item.x}
+                </span>
+                <span className={styles.value}>{format(item.y)}</span>
+              </>
+            );
+            return (
+              <li key={`${item.x}-${i}`} className={styles.rowItem}>
+                {url ? (
+                  <Link to={url} className={styles.row}>
+                    {inner}
+                  </Link>
+                ) : (
+                  <div className={styles.row}>{inner}</div>
+                )}
+              </li>
+            );
+          })}
+        </ol>
+      )}
+    </TitleCard>
   );
 }
