@@ -97,7 +97,6 @@ Acronym after a full-width comma inside the parentheses, not after a slash or da
 - **`<Desmos id="..." />`** — for any equation with a geometric companion.
 - **`<Notation>**...**</Notation>`** — visual highlight of a milestone phrase, very sparing use.
 - **`<GitHub repo="owner/repo" />`** — card link for a repo.
-- **`<Deadlines items={[...]} />`** — countdown card on the `contest` / `note` landing pages; each item is `{ label, date: 'YYYY-MM-DD', approx? }` and renders days remaining (a leading `~` when `approx`). Used in place of hand-written `daysUntil` lists.
 - **`<Tabs>` / `<TabItem>`** — wraps `<details><summary>题解</summary>…</details>` for worked examples in math posts.
 
 ## Admonitions

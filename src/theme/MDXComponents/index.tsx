@@ -14,7 +14,6 @@ import Quote from '@site/src/components/laikit/Quote';
 import Desmos from '@site/src/components/Desmos';
 import Problem from '@site/src/components/Problem';
 import Solution from '@site/src/components/Solution';
-import Deadlines from '@site/src/components/Deadlines';
 
 export default {
   ...MDXComponents,
@@ -30,5 +29,4 @@ export default {
   Desmos,
   Problem,
   Solution,
-  Deadlines,
 };
