@@ -1,5 +1,4 @@
 import { useEffect, useState, useRef } from 'react';
-import SectionContainer from '@site/src/components/laikit/Section';
 import Card from '@site/src/components/laikit/Card';
 import { translate } from '@docusaurus/Translate';
 import useIsBrowser from '@docusaurus/useIsBrowser';
@@ -141,40 +140,36 @@ export default function Countdown() {
   }, [isBrowser]);
 
   return (
-    <SectionContainer>
-      <Card className={styles.panel} padding="0">
-        <div className={styles.body}>
-          <p className={styles.caption}>
-            {state.isTimeUp ? FINAL : DESCRIPTION}
-          </p>
-          {!state.isTimeUp && (
-            <div className={styles.clock}>
-              {TIME_UNITS.map(({ key, pad, label }) => (
-                <div className={styles.unit} key={key}>
-                  <span className={styles.value}>
-                    {String(state[key]).padStart(pad, '0')}
-                  </span>
-                  <span className={styles.label}>{label}</span>
-                </div>
-              ))}
-            </div>
-          )}
-        </div>
+    <Card className={styles.panel} padding="0">
+      <div className={styles.body}>
+        <p className={styles.caption}>{state.isTimeUp ? FINAL : DESCRIPTION}</p>
         {!state.isTimeUp && (
-          <div
-            className={styles.progress}
-            role="progressbar"
-            aria-valuemin={0}
-            aria-valuemax={100}
-            aria-valuenow={Math.round(state.progress * 100)}
-          >
-            <span
-              className={styles.bar}
-              style={{ transform: `scaleX(${state.progress})` }}
-            />
+          <div className={styles.clock}>
+            {TIME_UNITS.map(({ key, pad, label }) => (
+              <div className={styles.unit} key={key}>
+                <span className={styles.value}>
+                  {String(state[key]).padStart(pad, '0')}
+                </span>
+                <span className={styles.label}>{label}</span>
+              </div>
+            ))}
           </div>
         )}
-      </Card>
-    </SectionContainer>
+      </div>
+      {!state.isTimeUp && (
+        <div
+          className={styles.progress}
+          role="progressbar"
+          aria-valuemin={0}
+          aria-valuemax={100}
+          aria-valuenow={Math.round(state.progress * 100)}
+        >
+          <span
+            className={styles.bar}
+            style={{ transform: `scaleX(${state.progress})` }}
+          />
+        </div>
+      )}
+    </Card>
   );
 }
