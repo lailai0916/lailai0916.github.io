@@ -9,8 +9,8 @@
 .body {
   display: flex;
   flex-direction: column;
-  gap: clamp(0.75rem, 3cqi, 1.1rem);
-  padding: clamp(1.25rem, 5cqi, 2rem) clamp(1.5rem, 7cqi, 2.75rem)
+  gap: clamp(1rem, 4cqi, 1.4rem);
+  padding: clamp(1.5rem, 6cqi, 2.35rem) clamp(1.5rem, 7cqi, 2.75rem)
     clamp(1.5rem, 6cqi, 2.25rem);
 }
 
