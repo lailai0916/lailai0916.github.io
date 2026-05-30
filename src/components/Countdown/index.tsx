@@ -78,14 +78,15 @@ function calculateTimeLeft(): CountdownState {
   const now = Date.now();
   const distance = TARGET_MS - now;
   const elapsed = now - ORIGIN_MS;
+  const isTimeUp = distance <= 0;
 
   return {
-    days: Math.floor(distance / (24 * 60 * 60 * 1000)),
-    hours: Math.floor((distance / (60 * 60 * 1000)) % 24),
-    minutes: Math.floor((distance / (60 * 1000)) % 60),
-    seconds: Math.floor((distance / 1000) % 60),
-    progress: Math.min(Math.max(elapsed / SPAN_MS, 0), 1),
-    isTimeUp: distance <= 0,
+    days: isTimeUp ? 0 : Math.floor(distance / (24 * 60 * 60 * 1000)),
+    hours: isTimeUp ? 0 : Math.floor((distance / (60 * 60 * 1000)) % 24),
+    minutes: isTimeUp ? 0 : Math.floor((distance / (60 * 1000)) % 60),
+    seconds: isTimeUp ? 0 : Math.floor((distance / 1000) % 60),
+    progress: isTimeUp ? 1 : Math.min(Math.max(elapsed / SPAN_MS, 0), 1),
+    isTimeUp,
   };
 }
 
@@ -154,33 +155,29 @@ export default function Countdown() {
             </Translate>
           )}
         </p>
-        {!state.isTimeUp && (
-          <div className={styles.clock}>
-            {TIME_UNITS.map(({ key, pad, label }) => (
-              <div className={styles.unit} key={key}>
-                <span className={styles.value}>
-                  {String(state[key]).padStart(pad, '0')}
-                </span>
-                <span className={styles.label}>{label}</span>
-              </div>
-            ))}
-          </div>
-        )}
-      </div>
-      {!state.isTimeUp && (
-        <div
-          className={styles.progress}
-          role="progressbar"
-          aria-valuemin={0}
-          aria-valuemax={100}
-          aria-valuenow={Math.round(state.progress * 100)}
-        >
-          <span
-            className={styles.bar}
-            style={{ transform: `scaleX(${state.progress})` }}
-          />
+        <div className={styles.clock}>
+          {TIME_UNITS.map(({ key, pad, label }) => (
+            <div className={styles.unit} key={key}>
+              <span className={styles.value}>
+                {String(state[key]).padStart(pad, '0')}
+              </span>
+              <span className={styles.label}>{label}</span>
+            </div>
+          ))}
         </div>
-      )}
+      </div>
+      <div
+        className={styles.progress}
+        role="progressbar"
+        aria-valuemin={0}
+        aria-valuemax={100}
+        aria-valuenow={Math.round(state.progress * 100)}
+      >
+        <span
+          className={styles.bar}
+          style={{ transform: `scaleX(${state.progress})` }}
+        />
+      </div>
     </Card>
   );
 }
