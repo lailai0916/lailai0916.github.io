@@ -5,7 +5,7 @@ import Translate, { translate } from '@docusaurus/Translate';
 import useIsBrowser from '@docusaurus/useIsBrowser';
 import styles from './styles.module.css';
 
-const TARGET = '2027-01-01T00:00:00';
+const TARGET = '2026-09-16T00:00:00';
 
 const TARGET_MS = new Date(TARGET).getTime();
 // Progress starts on the same day one year before the target (year − 1,
@@ -15,10 +15,13 @@ ORIGIN_DATE.setFullYear(ORIGIN_DATE.getFullYear() - 1);
 const ORIGIN_MS = ORIGIN_DATE.getTime();
 const SPAN_MS = TARGET_MS - ORIGIN_MS;
 
-const EVENT = translate({ id: 'components.countdown.event', message: '2027' });
+const EVENT = translate({
+  id: 'components.countdown.event',
+  message: 'My Birthday',
+});
 const FINAL = translate({
   id: 'components.countdown.final',
-  message: 'Happy New Year!',
+  message: 'Happy Birthday!',
 });
 
 type CountdownUnitKey = 'days' | 'hours' | 'minutes' | 'seconds';

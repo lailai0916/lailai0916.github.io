@@ -90,10 +90,10 @@
     "message": "联系"
   },
   "components.countdown.event": {
-    "message": "2027 年"
+    "message": "我的生日"
   },
   "components.countdown.final": {
-    "message": "新年快乐！"
+    "message": "生日快乐！"
   },
   "components.countdown.description": {
     "message": "距离 {event} 还有"
