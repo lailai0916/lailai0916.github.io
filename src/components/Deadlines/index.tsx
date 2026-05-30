@@ -11,6 +11,10 @@ interface DeadlineItem {
 
 const UNIT = translate({ id: 'components.deadlines.unit', message: 'days' });
 const ENDED = translate({ id: 'components.deadlines.ended', message: 'Ended' });
+const ABOUT = translate({
+  id: 'components.deadlines.approximate',
+  message: 'about',
+});
 
 export default function Deadlines({ items }: { items: DeadlineItem[] }) {
   const [nowMs, setNowMs] = useState<number | null>(null);
@@ -41,8 +45,11 @@ export default function Deadlines({ items }: { items: DeadlineItem[] }) {
                 <span className={styles.ended}>{ENDED}</span>
               ) : (
                 <span className={styles.remain}>
+                  {approx && days != null && (
+                    <span className={styles.approx}>{ABOUT}</span>
+                  )}
                   <span className={styles.num}>
-                    {days == null ? '–' : `${approx ? '~' : ''}${days}`}
+                    {days == null ? '–' : days}
                   </span>
                   <span className={styles.unit}>{UNIT}</span>
                 </span>

@@ -1219,5 +1219,8 @@
   },
   "components.deadlines.ended": {
     "message": "已结束"
+  },
+  "components.deadlines.approximate": {
+    "message": "约"
   }
 }

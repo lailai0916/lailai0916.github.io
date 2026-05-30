@@ -580,6 +580,7 @@ const sidebars: SidebarsConfig = {
         'project/ai/sun-path-atlas',
         'project/ai/hydrocarbon-namer',
         'project/ai/hez-history',
+        'project/ai/oi-school-rank',
       ],
     },
     {
