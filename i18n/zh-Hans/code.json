@@ -501,7 +501,7 @@
     "message": "清除"
   },
   "components.playground.neuralNetwork.check": {
-    "message": "识别数字"
+    "message": "识别"
   },
   "components.playground.neuralNetwork.preprocess": {
     "message": "预处理"
