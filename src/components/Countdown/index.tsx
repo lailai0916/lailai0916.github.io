@@ -155,24 +155,22 @@ export default function Countdown() {
       {!state.isTimeUp && (
         <Card className={styles.panel} padding="0">
           <div className={styles.clock}>
-            {TIME_UNITS.map(({ key, pad, label }, index) => (
-              <div className={styles.group} key={key}>
-                {index > 0 && (
-                  <span className={styles.separator} aria-hidden="true">
-                    :
-                  </span>
-                )}
-                <div className={styles.unit}>
-                  <span className={styles.value}>
-                    {String(state[key]).padStart(pad, '0')}
+            {TIME_UNITS.map(({ key, pad, label }) => {
+              const text = String(state[key]).padStart(pad, '0');
+              return (
+                <div className={styles.unit} key={key}>
+                  <span className={styles.digits}>
+                    <span className={styles.value} key={text}>
+                      {text}
+                    </span>
                   </span>
                   <span className={styles.label}>{label}</span>
                 </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
           <div
-            className={styles.track}
+            className={styles.progress}
             role="progressbar"
             aria-valuemin={0}
             aria-valuemax={100}
@@ -180,7 +178,7 @@ export default function Countdown() {
           >
             <span
               className={styles.bar}
-              style={{ width: `${state.progress * 100}%` }}
+              style={{ transform: `scaleX(${state.progress})` }}
             />
           </div>
         </Card>
