@@ -67,10 +67,11 @@
   --nn-cover: #ffffff;
 }
 
-@media (max-width: 768px) {
-  .container {
-    margin: 0;
-  }
+.cardSurface {
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  background: var(--nn-bg-primary);
 }
 
 .frame {
