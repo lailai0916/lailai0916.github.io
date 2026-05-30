@@ -36,7 +36,7 @@ Before adding a component, check whether an existing primitive (optionally with 
 
 ## MDX author-facing widgets
 
-Components registered in `src/theme/MDXComponents.tsx` are globally available in every `.mdx` file with no import. Current set: `BrowserWindow` (+ `IframeWindow`, `ImageWindow`), `Notation`, `GitHub`, `Quote`, `Desmos`, `Problem`, `Solution`, plus the Docusaurus `Tabs` / `TabItem` / `DocCardList`. When you add a widget meant for authors, register it here; otherwise it must be imported explicitly in the MDX. Author-side usage conventions for these widgets live in `.claude/rules/writing-style.md`.
+Components registered in `src/theme/MDXComponents.tsx` are globally available in every `.mdx` file with no import. Current set: `BrowserWindow` (+ `IframeWindow`, `ImageWindow`), `Notation`, `GitHub`, `Quote`, `Desmos`, `Problem`, `Solution`, `Deadlines`, plus the Docusaurus `Tabs` / `TabItem` / `DocCardList`. When you add a widget meant for authors, register it here; otherwise it must be imported explicitly in the MDX. Author-side usage conventions for these widgets live in `.claude/rules/writing-style.md`.
 
 ## Theme overrides
 

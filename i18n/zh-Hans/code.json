@@ -1213,5 +1213,11 @@
   "theme.tags.tagsPageTitle": {
     "message": "标签",
     "description": "The title of the tag list page"
+  },
+  "components.deadlines.unit": {
+    "message": "天"
+  },
+  "components.deadlines.ended": {
+    "message": "已结束"
   }
 }

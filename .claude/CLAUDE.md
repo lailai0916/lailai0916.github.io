@@ -32,7 +32,7 @@ There is no test runner. `npm run check` is the gate.
 - `src/pages/` — custom React pages (`about`, `travel`, `friends`, `resources`, `settings`, `insights`, `changelog`, `privacy`, plus the bespoke `index.tsx` cover/home). Page-local React lives in `src/pages/_components/` (the leading `_` stops Docusaurus from routing it).
 - `src/theme/` — swizzled Docusaurus theme overrides (Layout, Blog\*, MDXComponents, Admonition, Root). Use `npm run swizzle` rather than copying files by hand.
 - `src/components/laikit/` — the in-house design system (`Card`, `TitleCard`, `LinkCard`, `DataCard`, `Badge`, `Button`, `Segmented`, `Slider`, `Switch`, `Tooltip`, `Skeleton`, `IconBlock`, `Page`, `Section`, etc.). Reuse these primitives before creating new components. The full design-system ruleset — primitive inventory, per-component-folder layout, hover-motion limits, the CSS-Module silent-failure caveat — lives in `.claude/rules/components.md`, auto-loaded whenever files under `src/**` are touched.
-- `src/components/` (non-laikit) — MDX-only widgets exposed to authors (`BrowserWindow`, `Desmos`, `Notation`, `Problem`, `Solution`).
+- `src/components/` (non-laikit) — MDX-only widgets exposed to authors (`BrowserWindow`, `Desmos`, `Notation`, `Problem`, `Solution`, `Deadlines`).
 - `src/hooks/`, `src/utils/`, `src/data/` — shared hooks, helpers, and static data (e.g. `data/resources.tsx`, `data/changelog.tsx`) consumed by the custom pages.
 - `static/` — copied verbatim to site root. Contains `CNAME`, `.nojekyll`, verification files, and image/JSON assets.
 
