@@ -155,19 +155,14 @@ export default function Countdown() {
       {!state.isTimeUp && (
         <Card className={styles.panel} padding="0">
           <div className={styles.clock}>
-            {TIME_UNITS.map(({ key, pad, label }) => {
-              const text = String(state[key]).padStart(pad, '0');
-              return (
-                <div className={styles.unit} key={key}>
-                  <span className={styles.digits}>
-                    <span className={styles.value} key={text}>
-                      {text}
-                    </span>
-                  </span>
-                  <span className={styles.label}>{label}</span>
-                </div>
-              );
-            })}
+            {TIME_UNITS.map(({ key, pad, label }) => (
+              <div className={styles.unit} key={key}>
+                <span className={styles.value}>
+                  {String(state[key]).padStart(pad, '0')}
+                </span>
+                <span className={styles.label}>{label}</span>
+              </div>
+            ))}
           </div>
           <div
             className={styles.progress}
