@@ -20,7 +20,7 @@
   font-size: clamp(0.9rem, 3cqi, 1.05rem);
   line-height: 1.5;
   font-weight: 500;
-  color: var(--ifm-color-emphasis-500);
+  color: var(--ifm-color-emphasis-700);
 }
 
 .year {
