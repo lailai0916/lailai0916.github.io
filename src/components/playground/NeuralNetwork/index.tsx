@@ -216,10 +216,11 @@ export default function NeuralNetwork({
                 setPoints([]);
                 setIsNormalized(false);
               }}
-              x={compact ? 10 : 70}
-              y={compact ? 10 : 30}
-              width={compact ? 130 : 360}
-              height={compact ? 130 : 360}
+              x={compact ? 10 : 0}
+              y={compact ? 10 : 0}
+              width={compact ? 130 : CANVAS_SIZE}
+              height={compact ? 130 : CANVAS_SIZE}
+              bordered={compact}
               points={points}
               inputValues={inputValues}
               setPoints={(newPoints) => {
@@ -261,7 +262,7 @@ export default function NeuralNetwork({
           </Button>
         ) : (
           <Button
-            variant="primary"
+            variant="secondary"
             fullWidth
             disabled={isEmpty}
             onClick={animate}
@@ -485,6 +486,7 @@ interface ImageGridProps {
   y: number;
   width: number;
   height: number;
+  bordered: boolean;
   points: Point[];
   inputValues: number[];
   setPoints: (points: Point[]) => void;
@@ -499,6 +501,7 @@ function ImageGrid({
   y,
   width,
   height,
+  bordered,
   points,
   inputValues,
   setPoints,
@@ -643,7 +646,7 @@ function ImageGrid({
         y={0}
         width={400}
         height={400}
-        stroke="var(--ifm-color-emphasis-300)"
+        stroke={bordered ? 'var(--ifm-color-emphasis-300)' : 'none'}
         strokeWidth="1"
         rx="2"
         fill="var(--nn-transparent)"
