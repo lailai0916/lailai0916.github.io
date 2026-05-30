@@ -2,7 +2,6 @@
 
 import React, { useState, useEffect, useCallback, useMemo } from 'react';
 import useBaseUrl from '@docusaurus/useBaseUrl';
-import clsx from 'clsx';
 import { translate } from '@docusaurus/Translate';
 import Button from '@site/src/components/laikit/Button';
 import Card from '@site/src/components/laikit/Card';
@@ -235,47 +234,42 @@ export default function NeuralNetwork({
               }
             />
           </svg>
-
-          <div
-            className={clsx(styles.controls, !editing && styles.controlsHidden)}
-            aria-hidden={!editing}
-          >
-            <Button
-              variant="secondary"
-              fullWidth
-              disabled={isEmpty}
-              className={styles.buttonSlot}
-              onClick={() => {
-                setPoints([]);
-                setIsNormalized(false);
-              }}
-            >
-              {CLEAR_LABEL}
-            </Button>
-            {instant ? (
-              <Button
-                variant="primary"
-                fullWidth
-                disabled={isEmpty || isNormalized}
-                className={styles.buttonSlot}
-                onClick={() => normalizePointsAnimated(1)}
-              >
-                {PREPROCESS_LABEL}
-              </Button>
-            ) : (
-              <Button
-                variant="primary"
-                fullWidth
-                disabled={isEmpty}
-                className={styles.buttonSlot}
-                onClick={animate}
-              >
-                {CHECK_LABEL}
-              </Button>
-            )}
-          </div>
         </div>
       </Card>
+
+      <div className={styles.controls}>
+        <Button
+          variant="secondary"
+          fullWidth
+          disabled={isEmpty}
+          onClick={() => {
+            setAnimating(false);
+            setPoints([]);
+            setIsNormalized(false);
+          }}
+        >
+          {CLEAR_LABEL}
+        </Button>
+        {instant ? (
+          <Button
+            variant="primary"
+            fullWidth
+            disabled={isEmpty || isNormalized}
+            onClick={() => normalizePointsAnimated(1)}
+          >
+            {PREPROCESS_LABEL}
+          </Button>
+        ) : (
+          <Button
+            variant="primary"
+            fullWidth
+            disabled={isEmpty}
+            onClick={animate}
+          >
+            {CHECK_LABEL}
+          </Button>
+        )}
+      </div>
     </div>
   );
 }

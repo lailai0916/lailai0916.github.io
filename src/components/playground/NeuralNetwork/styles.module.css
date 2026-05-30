@@ -36,6 +36,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 1.25rem;
 }
 
 /* Light theme — "Blueprint" palette. */
@@ -93,28 +94,13 @@
 }
 
 .controls {
-  position: absolute;
-  inset: auto 14% 8%;
-  display: flex;
-  gap: 0.85rem;
-  justify-content: center;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.6rem;
   align-items: stretch;
-  opacity: 1;
-  pointer-events: auto;
-  transition:
-    opacity 300ms ease-in-out,
-    visibility 0s linear 0s;
 }
 
-.controlsHidden {
-  opacity: 0;
-  pointer-events: none;
-  visibility: hidden;
-  transition:
-    opacity 300ms ease-in-out,
-    visibility 0s linear 300ms;
-}
-
-.buttonSlot {
-  max-width: 200px;
+.controls > * {
+  width: 100%;
 }
