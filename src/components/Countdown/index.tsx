@@ -1,6 +1,7 @@
 import { useEffect, useState, useRef } from 'react';
+import clsx from 'clsx';
 import Card from '@site/src/components/laikit/Card';
-import { translate } from '@docusaurus/Translate';
+import Translate, { translate } from '@docusaurus/Translate';
 import useIsBrowser from '@docusaurus/useIsBrowser';
 import styles from './styles.module.css';
 
@@ -16,14 +17,6 @@ const FINAL = translate({
   id: 'components.countdown.final',
   message: 'Happy New Year!',
 });
-
-const DESCRIPTION = translate(
-  {
-    id: 'components.countdown.description',
-    message: 'Time left until {event}',
-  },
-  { event: EVENT }
-);
 
 type CountdownUnitKey = 'days' | 'hours' | 'minutes' | 'seconds';
 
@@ -142,7 +135,25 @@ export default function Countdown() {
   return (
     <Card className={styles.panel} padding="0">
       <div className={styles.body}>
-        <p className={styles.caption}>{state.isTimeUp ? FINAL : DESCRIPTION}</p>
+        <p
+          className={clsx(
+            styles.caption,
+            state.isTimeUp && styles.captionFinal
+          )}
+        >
+          {state.isTimeUp ? (
+            FINAL
+          ) : (
+            <Translate
+              id="components.countdown.description"
+              values={{
+                event: <span className={styles.year}>{EVENT}</span>,
+              }}
+            >
+              {'Time left until {event}'}
+            </Translate>
+          )}
+        </p>
         {!state.isTimeUp && (
           <div className={styles.clock}>
             {TIME_UNITS.map(({ key, pad, label }) => (

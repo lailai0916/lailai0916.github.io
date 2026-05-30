@@ -19,7 +19,19 @@
   text-align: center;
   font-size: clamp(0.9rem, 3cqi, 1.05rem);
   line-height: 1.5;
-  color: var(--ifm-color-emphasis-600);
+  font-weight: 500;
+  color: var(--ifm-color-emphasis-500);
+}
+
+.year {
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  color: var(--ifm-color-primary);
+}
+
+.captionFinal {
+  font-weight: 600;
+  color: var(--ifm-color-primary);
 }
 
 .clock {
