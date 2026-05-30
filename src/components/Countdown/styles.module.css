@@ -65,12 +65,18 @@
 }
 
 @media (max-width: 480px) {
-  .value {
-    font-size: clamp(2rem, 13vw, 2.75rem);
+  .clock {
+    gap: clamp(0.25rem, 1.5vw, 0.6rem);
+    padding: clamp(1.25rem, 6vw, 2rem) clamp(0.75rem, 4vw, 1.5rem);
   }
 
+  .group {
+    gap: clamp(0.25rem, 1.5vw, 0.6rem);
+  }
+
+  .value,
   .separator {
-    font-size: clamp(2rem, 13vw, 2.75rem);
+    font-size: clamp(1.5rem, 8.5vw, 2.5rem);
   }
 
   .label {
