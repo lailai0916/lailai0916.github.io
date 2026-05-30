@@ -1,3 +1,11 @@
+.caption {
+  margin: 0 0 clamp(1rem, 3vw, 1.5rem);
+  text-align: center;
+  font-size: clamp(1rem, 1.5vw, 1.15rem);
+  line-height: 1.6;
+  color: var(--ifm-color-emphasis-700);
+}
+
 .panel {
   container-type: inline-size;
   width: 100%;

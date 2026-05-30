@@ -5,9 +5,7 @@ import BrowserOnly from '@docusaurus/BrowserOnly';
 import Card from '@site/src/components/laikit/Card';
 import { translate } from '@docusaurus/Translate';
 import { TRAVEL_LIST, type TravelItem } from '@site/src/data/travel';
-import SectionContainer, {
-  SectionHeader,
-} from '@site/src/components/laikit/Section';
+import SectionContainer from '@site/src/components/laikit/Section';
 import styles from './styles.module.css';
 
 const TIMELINE_CONFIG = {
@@ -117,7 +115,10 @@ export default function TravelTimeline() {
 
   return (
     <SectionContainer>
-      <SectionHeader title={TITLE} description={DESCRIPTION} />
+      <div className={styles.header}>
+        <h2 className={styles.title}>{TITLE}</h2>
+        <p className={styles.description}>{DESCRIPTION}</p>
+      </div>
       <BrowserOnly>
         {() => (
           <div className={styles.wrapper}>

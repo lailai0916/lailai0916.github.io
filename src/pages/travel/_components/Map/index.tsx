@@ -19,9 +19,7 @@ import {
 
 countries.registerLocale(countriesEn);
 countries.registerLocale(countriesZh);
-import SectionContainer, {
-  SectionHeader,
-} from '@site/src/components/laikit/Section';
+import SectionContainer from '@site/src/components/laikit/Section';
 import styles from './styles.module.css';
 import type { GlobeMethods, GlobeProps } from 'react-globe.gl';
 
@@ -220,7 +218,10 @@ function TravelGlobeClient({ Globe }: { Globe: GlobeComponent }) {
 export default function TravelMap() {
   return (
     <SectionContainer>
-      <SectionHeader title={TITLE} description={DESCRIPTION} />
+      <div className={styles.header}>
+        <h2 className={styles.title}>{TITLE}</h2>
+        <p className={styles.description}>{DESCRIPTION}</p>
+      </div>
       <BrowserOnly>
         {() => {
           const Globe = require('react-globe.gl').default as GlobeComponent;

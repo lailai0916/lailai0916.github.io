@@ -1,7 +1,5 @@
 import { useEffect, useState, useRef } from 'react';
-import SectionContainer, {
-  SectionHeader,
-} from '@site/src/components/laikit/Section';
+import SectionContainer from '@site/src/components/laikit/Section';
 import Card from '@site/src/components/laikit/Card';
 import { translate } from '@docusaurus/Translate';
 import useIsBrowser from '@docusaurus/useIsBrowser';
@@ -20,10 +18,6 @@ const FINAL = translate({
   message: 'Happy New Year!',
 });
 
-const TITLE = translate({
-  id: 'components.countdown.title',
-  message: 'Countdown',
-});
 const DESCRIPTION = translate(
   {
     id: 'components.countdown.description',
@@ -148,10 +142,7 @@ export default function Countdown() {
 
   return (
     <SectionContainer>
-      <SectionHeader
-        title={state.isTimeUp ? EVENT : TITLE}
-        description={state.isTimeUp ? FINAL : DESCRIPTION}
-      />
+      <p className={styles.caption}>{state.isTimeUp ? FINAL : DESCRIPTION}</p>
       {!state.isTimeUp && (
         <Card className={styles.panel} padding="0">
           <div className={styles.clock}>

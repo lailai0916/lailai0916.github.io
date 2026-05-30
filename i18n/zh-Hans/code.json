@@ -95,9 +95,6 @@
   "components.countdown.final": {
     "message": "新年快乐！"
   },
-  "components.countdown.title": {
-    "message": "倒计时"
-  },
   "components.countdown.description": {
     "message": "距离 {event} 还有"
   },

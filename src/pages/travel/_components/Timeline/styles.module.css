@@ -1,3 +1,26 @@
+.header {
+  width: 100%;
+  max-width: 48rem;
+  margin: 0 auto clamp(2rem, 5vw, 3rem);
+  text-align: center;
+}
+
+.title {
+  margin: 0 0 0.75rem;
+  font-size: clamp(1.75rem, 3vw, 2.5rem);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: var(--ifm-font-color-base);
+}
+
+.description {
+  margin: 0;
+  font-size: clamp(1rem, 1.5vw, 1.15rem);
+  line-height: 1.6;
+  color: var(--ifm-color-emphasis-700);
+}
+
 .timelineCardContent {
   display: flex;
   flex-direction: column;
