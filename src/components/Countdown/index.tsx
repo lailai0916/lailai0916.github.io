@@ -6,10 +6,13 @@ import useIsBrowser from '@docusaurus/useIsBrowser';
 import styles from './styles.module.css';
 
 const TARGET = '2027-01-01T00:00:00';
-const ORIGIN = '2026-01-01T00:00:00';
 
 const TARGET_MS = new Date(TARGET).getTime();
-const ORIGIN_MS = new Date(ORIGIN).getTime();
+// Progress starts on the same day one year before the target (year − 1,
+// regardless of leap/common-year length).
+const ORIGIN_DATE = new Date(TARGET);
+ORIGIN_DATE.setFullYear(ORIGIN_DATE.getFullYear() - 1);
+const ORIGIN_MS = ORIGIN_DATE.getTime();
 const SPAN_MS = TARGET_MS - ORIGIN_MS;
 
 const EVENT = translate({ id: 'components.countdown.event', message: '2027' });
