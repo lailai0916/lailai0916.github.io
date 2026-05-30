@@ -14,7 +14,7 @@
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
-  padding: 0.85rem 1.25rem;
+  padding: 0.7rem 1.1rem;
 }
 
 .row + .row {
@@ -49,8 +49,8 @@
 }
 
 .num {
-  font-size: 1.6rem;
-  font-weight: 700;
+  font-size: 1.45rem;
+  font-weight: 600;
   line-height: 1;
   font-variant-numeric: tabular-nums;
   letter-spacing: -0.02em;
