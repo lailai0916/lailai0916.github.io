@@ -9,11 +9,11 @@ interface DeadlineItem {
   approx?: boolean;
 }
 
-const UNIT = translate({ id: 'components.deadlines.unit', message: 'days' });
+const UNIT = translate({ id: 'components.deadlines.unit', message: 'Days' });
 const ENDED = translate({ id: 'components.deadlines.ended', message: 'Ended' });
 const ABOUT = translate({
   id: 'components.deadlines.approximate',
-  message: 'about',
+  message: 'About',
 });
 
 export default function Deadlines({ items }: { items: DeadlineItem[] }) {
