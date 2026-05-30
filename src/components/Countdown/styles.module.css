@@ -23,10 +23,9 @@
 }
 
 .clock {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  gap: 4cqi;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  align-items: start;
 }
 
 .unit {
@@ -38,7 +37,7 @@
 }
 
 .value {
-  font-size: clamp(2.25rem, 11cqi, 3.75rem);
+  font-size: clamp(2rem, 10cqi, 3.5rem);
   font-weight: 600;
   line-height: 1.08;
   font-variant-numeric: tabular-nums;
