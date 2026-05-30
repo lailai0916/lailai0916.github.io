@@ -50,7 +50,7 @@ The site ships in `en` (default) and `zh-Hans`. Every user-facing string must go
 
 ### Styling
 
-Components use CSS Modules (`styles.module.css` next to `index.tsx`). Global tokens and overrides live in `src/css/custom.css`. Per the contributing guide, prefer modern CSS (`grid`, `clamp()`, `color-mix()`, container queries) over JS layout.
+Components use CSS Modules (`styles.module.css` next to `index.tsx`). Global tokens and overrides live in `src/css/custom.css`. Per the contributing guide, prefer modern CSS (`grid`, `clamp()`, `color-mix()`, container queries) over JS layout. The stylesheet-organization ruleset — rule order by JSX call order, responsive co-location with one selector per `@media`, equivalent-shorthand merges, and the cascade-safety constraint — lives in `.claude/rules/components.md` (auto-loaded whenever files under `src/**` are touched).
 
 ### Path alias
 
