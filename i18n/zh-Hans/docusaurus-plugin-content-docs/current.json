@@ -255,14 +255,6 @@
     "message": "其他",
     "description": "The label for category '其他' in sidebar 'noteSidebar'"
   },
-  "sidebar.projectSidebar.category.lailai's AI Lab": {
-    "message": "lailai's AI Lab",
-    "description": "The label for category 'lailai's AI Lab' in sidebar 'projectSidebar'"
-  },
-  "sidebar.projectSidebar.category.lailai's AI Lab.link.generated-index.description": {
-    "message": "本章为使用 AI 制作的项目。",
-    "description": "The generated-index page description for category 'lailai's AI Lab' in sidebar 'projectSidebar'"
-  },
   "sidebar.projectSidebar.category.Terminal": {
     "message": "Terminal",
     "description": "The label for category 'Terminal' in sidebar 'projectSidebar'"
