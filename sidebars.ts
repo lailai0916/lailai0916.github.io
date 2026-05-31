@@ -569,7 +569,7 @@ const sidebars: SidebarsConfig = {
     'project/lailai0916',
     'project/code-comparator',
     'project/hangzhou-highschool-map',
-    'project/oi-school-rank',
+    'project/oi-chart-race',
     {
       type: 'category',
       label: "lailai's AI Lab",
