@@ -1,11 +1,11 @@
 ---
-title: 题解：P6598 烷烃计数
-date: 2026-05-31T22:30
+title: 题解：P6597 烯烃计数
+date: 2026-05-31T23:11
 authors: lailai
 tags: [oi, solution, luogu]
 ---
 
-<Solution pid="P6598" aid="quzrnylv" />
+<Solution pid="P6597" aid="3p91ae3j" />
 
 {/* truncate */}
 
@@ -14,13 +14,13 @@ tags: [oi, solution, luogu]
 - [多项式牛顿迭代 - OI Wiki](https://oi-wiki.org/math/poly/newton/)
 - [Pólya enumeration theorem - Wikipedia](https://en.wikipedia.org/wiki/Pólya_enumeration_theorem)
 - [Burnside's lemma - Wikipedia](https://en.wikipedia.org/wiki/Burnside%27s_lemma)
-- [A000602 - OEIS](https://oeis.org/A000602)
+- [A000631 - OEIS](https://oeis.org/A000631)
 
 ## 题意简述
 
-求 $n$ 个碳原子的烷烃的同分异构体数量，对 $998244353$ 取模。
+求化学式为 $\text{C}_n\text{H}_{2n}$ 的烯烃的同分异构体数量，对 $998244353$ 取模。
 
-等价于求 $n$ 个点、每个点度数 $\le 4$ 的无标号无根树的个数。
+不考虑空间异构与顺反异构。输出 $n-1$ 行，依次为碳原子数 $2\sim n$ 的答案。
 
 ## 烷基计数
 
@@ -54,41 +54,23 @@ $$
 
 **数论变换**（NTT）配上多项式求逆，$O(n\log n)$ 即可求出 $A(x)\bmod x^{n+1}$。
 
-## 烷烃计数
+## 烯烃计数
 
-烷烃是度数 $\le 4$ 的无标号无根树。无根树不好直接数，钦定重心为根，转成有根树再容斥。
+烯烃有且仅有一个碳碳双键。从双键处把分子拎起来，两端各是一个碳，每个碳再挂两个烷基（可以是氢）。
 
-对一棵无根树数三样东西：
-
-- 每个点轮流作根，得到的本质不同有根树数，记为点等价类数 $p$；
-- 每条边作根（两端各挂一棵有根树），得到的本质不同方案数，记为边等价类数 $q$；
-- 树恰有两个重心、且两重心等价时 $s=1$，否则 $s=0$。
-
-那么任意一棵无根树都满足 $p-q+s=1$。
-
-> $s=0$ 时以重心为根，除重心外每个点唯一对应它的父亲边，两点等价当且仅当父亲边等价，这部分贡献两两抵消，只剩重心自身的 $1$，即 $p-q=1$。$s=1$ 时两重心互相等价，$p-q=-1$，$p-q+s=1$ 照样成立。
-
-对所有无根树求和，记 $\sum p,\sum q,\sum s$ 的生成函数为 $P(x),Q(x),S(x)$。$\sum(p-q+s)$ 就是无根树总数，于是答案是 $[x^n]\big(P(x)-Q(x)+S(x)\big)$。
-
-$P(x)$ 是点等价类：以某点为根，根的度数 $\le 4$，即根下挂一个大小 $\le 4$ 的烷基可重集。对 $S_4$ 用 Burnside 引理，循环型 $(1^4)$、$(2,1^2)$、$(2^2)$、$(3,1)$、$(4)$ 各有 $1,6,3,8,6$ 个置换：
+先数一端：一个碳下挂大小 $\le 2$ 的烷基可重集。乘上 $x$ 计入这个碳，对 $S_2$ 用 Burnside 引理，得到一端的生成函数 $P(x)$：
 
 $$
-P(x)=\frac{x}{24}\left(A^4(x)+6A^2(x)A(x^2)+3A^2(x^2)+8A(x)A(x^3)+6A(x^4)\right)
+P(x)=\frac{x}{2}\left(A^2(x)+A(x^2)\right)
 $$
 
-$Q(x)$ 是边等价类：一条边两端各挂一个烷基，两端无序，端点是碳所以烷基非空。对 $S_2$ 用 Burnside 引理：
+双键把两端对称地连起来，再对 $S_2$ 用一次 Burnside 引理，得到答案的生成函数 $G(x)$：
 
 $$
-Q(x)=\frac{(A(x)-1)^2+(A(x^2)-1)}{2}
+G(x)=\frac{P^2(x)+P(x^2)}{2}
 $$
 
-$S(x)$ 对应双重心：两端挂同一个烷基：
-
-$$
-S(x)=A(x^2)
-$$
-
-答案就是 $[x^n]\big(P(x)-Q(x)+S(x)\big)$。时间复杂度为 $O(n\log n)$。
+$P(x)$ 含一个 $x$ 因子，没有常数项（每端至少有一个碳），所以这里不必再去掉空的情况。碳数为 $k$ 的烯烃数即 $[x^k]G(x)$，依次输出 $k=2\sim n$。时间复杂度为 $O(n\log n)$。
 
 ## 参考代码
 
@@ -113,7 +95,6 @@ ll Pow(ll x,ll y)
 }
 const ll inv2=(mod+1)/2;
 const ll inv3=Pow(3,mod-2);
-const ll inv24=Pow(24,mod-2);
 void ntt(vector<ll> &a,int type)
 {
 	int n=a.size();
@@ -210,17 +191,17 @@ int main()
 	cin>>n;
 	int m=n+1;
 	vector<ll> A=alkyl(m);
-	vector<ll> A2=comp(A,2,m),A3=comp(A,3,m),A4=comp(A,4,m);
+	vector<ll> A2=comp(A,2,m);
 	vector<ll> a2=mul(A,A,m);
-	vector<ll> P=mul(a2,a2,m);
-	vector<ll> p2=mul(a2,A2,m),p3=mul(A2,A2,m),p4=mul(A,A3,m);
-	for(int i=0;i<m;i++)P[i]=(P[i]+6*p2[i]+3*p3[i]+8*p4[i]+6*A4[i])%mod*inv24%mod;
-	vector<ll> B=A;
-	B[0]=(B[0]-1+mod)%mod;
-	vector<ll> Q=mul(B,B,m);
-	for(int i=0;i<m;i++)Q[i]=(Q[i]+A2[i])%mod*inv2%mod;
-	ll ans=((P[n-1]-Q[n]+A2[n])%mod+mod)%mod;
-	cout<<ans<<'\n';
+	vector<ll> P(m,0);
+	for(int i=0;i<m;i++)P[i]=(a2[i]+A2[i])%mod*inv2%mod;
+	for(int i=m-1;i>=1;i--)P[i]=P[i-1];
+	P[0]=0;
+	vector<ll> P2=comp(P,2,m);
+	vector<ll> p2=mul(P,P,m);
+	vector<ll> G(m,0);
+	for(int i=0;i<m;i++)G[i]=(p2[i]+P2[i])%mod*inv2%mod;
+	for(int i=2;i<=n;i++)cout<<G[i]<<'\n';
 	return 0;
 }
 ```
