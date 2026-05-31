@@ -16,7 +16,7 @@ import shared from '../styles.module.css';
 
 type PostMetadata = BlogPostPageProps['content']['metadata'];
 
-// ----- PostHeader -----
+// PostHeader
 
 interface PostHeaderProps {
   metadata: PostMetadata;
@@ -116,7 +116,7 @@ export function PostHeader({ metadata, frontMatter }: PostHeaderProps) {
   );
 }
 
-// ----- PostFooter -----
+// PostFooter
 
 interface PostFooterProps {
   metadata: PostMetadata;
@@ -167,7 +167,7 @@ export function PostFooter({ metadata }: PostFooterProps) {
   );
 }
 
-// ----- PostPaginator -----
+// PostPaginator
 
 interface PaginatorItem {
   title: string;

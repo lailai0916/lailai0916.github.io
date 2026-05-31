@@ -192,7 +192,7 @@ export default function Problem({ id }: { id: string }) {
         Render: sol.default,
       });
     } catch {
-      // no solution available
+      // No solution available
     }
 
     const codes = ctx

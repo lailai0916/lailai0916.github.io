@@ -65,6 +65,7 @@ These are project rules, not general advice — follow them:
 - **Edit, don't rewrite.** Prefer minimal targeted edits; one coherent change per commit; do not reformat or refactor unrelated code.
 - **No whole-card hover lift.** Never add hover-triggered `translateY`/`translateX` to whole cards (or other large container blocks) — that "card floats up on hover" effect is an AI-tell and the maintainer hates it. Smaller hover motion on internal elements (e.g. an arrow nudging, a small `scale()` on an icon or active control) is fine when it serves a clear interaction cue.
 - **i18n is mandatory.** Any new user-facing string requires both a `translate()` call and a Chinese entry in `i18n/zh-Hans/code.json`.
+- **Comments are few, uniform, and explain _why_.** No ASCII-art dividers, no banner headers, no commented-out code. The full ruleset lives in `.claude/rules/comments.md` (auto-loaded whenever files under `src/**` are touched).
 - **Verify before committing.** Run `npm run check` and ensure it exits cleanly. For UI changes, also confirm in the `npm start` dev server.
 - **Small changes go straight to `main`.** Do not create a feature branch or open a PR for minor edits (copy tweaks, single-component refactors, style fixes, etc.) — commit directly on `main`. Reserve branches and PRs for substantial multi-file work the maintainer explicitly asks to be reviewed.
 
@@ -79,6 +80,7 @@ Prettier config: `printWidth: 80`, `singleQuote: true`, `trailingComma: 'es5'`. 
   - Change the blog title-prefix or tag taxonomy, or an authoring convention → `rules/writing-style.md`.
   - Add / remove an i18n prefix, key-shape rule, or workflow → `rules/i18n.md`.
   - Register a new MDX author-facing widget → `rules/components.md`.
+  - Change a code-comment convention (forms, section labels, what to keep) → `rules/comments.md`.
   - Change commands, build/deploy, architecture, or directory layout → this file.
 - **Record durable conventions, not transient state.** A rule that will still be true next month belongs here; a one-off task note does not. These docs hold the same `精益求精` and "edit, don't rewrite" bar as the code — keep entries accurate and tight, prune what goes stale, and never bloat them with redundant prose.
 - **Verify before writing.** Confirm a convention against the actual codebase (grep, read the files) rather than recording it from memory — stale or wrong guidance is worse than none.

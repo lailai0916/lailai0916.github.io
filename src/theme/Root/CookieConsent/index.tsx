@@ -26,7 +26,7 @@ export default function CookieConsent() {
     try {
       localStorage.setItem(STORAGE_KEY, value);
     } catch {
-      // ignore storage errors (private mode, etc.)
+      // Ignore storage errors (private mode, etc.)
     }
     setVisible(false);
   };

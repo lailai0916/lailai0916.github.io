@@ -63,7 +63,7 @@ export function useThemeColors(isDarkTheme: boolean) {
     try {
       hex = Color(newColor).hex().toLowerCase();
     } catch {
-      // user is still typing an incomplete or invalid color string
+      // User is still typing an incomplete or invalid color string
       return;
     }
     setColorState((prev) => ({ ...prev, baseColor: hex }));

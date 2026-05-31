@@ -739,7 +739,7 @@ function WeightGrid({
   );
 }
 
-// ── Math utilities ──────────────────────────────────────────────────────────
+// Math utilities
 
 function dotProduct(a: number[], b: number[]): number {
   let sum = 0;

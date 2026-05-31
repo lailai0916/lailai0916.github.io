@@ -30,7 +30,7 @@
   cursor: not-allowed;
 }
 
-/* ── Variants ──────────────────────────────────────────────────────── */
+/* Variants */
 
 .variant_primary {
   background: var(--ifm-color-primary);
@@ -66,7 +66,7 @@
   color: var(--ifm-font-color-base);
 }
 
-/* ── Sizes ─────────────────────────────────────────────────────────── */
+/* Sizes */
 
 .size_sm {
   height: 32px;
@@ -86,13 +86,13 @@
   font-size: 1rem;
 }
 
-/* ── Shape modifier ────────────────────────────────────────────────── */
+/* Shape modifier */
 
 .rounded {
   border-radius: 999px;
 }
 
-/* ── Active toggle: forces primary look on secondary/ghost ─────────── */
+/* Active toggle: forces primary look on secondary/ghost */
 
 .active.variant_secondary,
 .active.variant_ghost {
@@ -108,13 +108,13 @@
   color: #ffffff;
 }
 
-/* ── Width modifier ────────────────────────────────────────────────── */
+/* Width modifier */
 
 .fullWidth {
   width: 100%;
 }
 
-/* ── Icon slots ────────────────────────────────────────────────────── */
+/* Icon slots */
 
 .icon {
   display: inline-flex;
