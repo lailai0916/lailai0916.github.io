@@ -61,7 +61,7 @@ Acronym after a full-width comma inside the parentheses, not after a slash or da
 
 - Inline `$...$` is the default for any variable, short expression, or numeric quantity.
 - Display `$$...$$` for standalone equations. Use `\begin{aligned}` for multi-step derivations. Never number equations; cross-reference by prose.
-- Roman differential: `\mathrm{d}x`. Cross-out: `\sout{}`. Set builder: `\set{...}`. Modular: `\bmod`. Force size in cells: `\displaystyle`.
+- Roman differential: `\mathrm{d}x`. Cross-out: `\cancel{}` (math-mode diagonal strike — not `\sout`, which is text-mode-only and trips KaTeX's `mathVsSout` strict warning). Set builder: `\set{...}`. Modular: `\bmod`. Force size in cells: `\displaystyle`.
 
 ## Code blocks
 
