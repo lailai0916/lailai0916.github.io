@@ -567,6 +567,7 @@ const sidebars: SidebarsConfig = {
     'project/index',
     'project/lailai0916.github.io',
     'project/lailai0916',
+    'project/lailai-skill',
     {
       type: 'category',
       label: 'Tools',
