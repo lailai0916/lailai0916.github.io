@@ -95,9 +95,6 @@
   "components.countdown.final": {
     "message": "生日快乐！"
   },
-  "components.countdown.description": {
-    "message": "距离 {event} 还有"
-  },
   "components.countdown.unit.days": {
     "message": "天"
   },
@@ -109,6 +106,9 @@
   },
   "components.countdown.unit.seconds": {
     "message": "秒"
+  },
+  "components.countdown.description": {
+    "message": "距离 {event} 还有"
   },
   "components.problem.collapse": {
     "message": "收起"
@@ -199,36 +199,6 @@
   },
   "pages.insights.metricList.countries": {
     "message": "访客地区"
-  },
-  "pages.resources.title": {
-    "message": "资源"
-  },
-  "pages.resources.description": {
-    "message": "精心筛选的优质工具与平台"
-  },
-  "pages.resources.modification": {
-    "message": "精选<b>资源</b>"
-  },
-  "pages.resources.search.clear": {
-    "message": "清空搜索"
-  },
-  "pages.resources.category.clear": {
-    "message": "清除分类"
-  },
-  "pages.resources.search.placeholder": {
-    "message": "搜索资源"
-  },
-  "pages.resources.category.count": {
-    "message": "{count} 项"
-  },
-  "pages.resources.datacard.categories": {
-    "message": "个分类"
-  },
-  "pages.resources.datacard.items": {
-    "message": "项资源"
-  },
-  "pages.resources.search.empty": {
-    "message": "找不到和“{query}”相符的资源。"
   },
   "pages.settings.title": {
     "message": "设置"
@@ -323,6 +293,36 @@
   "pages.settings.datacard.label": {
     "message": "项设置"
   },
+  "pages.resources.title": {
+    "message": "资源"
+  },
+  "pages.resources.description": {
+    "message": "精心筛选的优质工具与平台"
+  },
+  "pages.resources.modification": {
+    "message": "精选<b>资源</b>"
+  },
+  "pages.resources.search.clear": {
+    "message": "清空搜索"
+  },
+  "pages.resources.category.clear": {
+    "message": "清除分类"
+  },
+  "pages.resources.search.placeholder": {
+    "message": "搜索资源"
+  },
+  "pages.resources.category.count": {
+    "message": "{count} 项"
+  },
+  "pages.resources.datacard.categories": {
+    "message": "个分类"
+  },
+  "pages.resources.datacard.items": {
+    "message": "项资源"
+  },
+  "pages.resources.search.empty": {
+    "message": "找不到和“{query}”相符的资源。"
+  },
   "pages.travel.title": {
     "message": "旅行"
   },
@@ -337,6 +337,156 @@
   },
   "pages.travel.datacard.years": {
     "message": "年历程"
+  },
+  "blog.pages.tags.tagSelect": {
+    "message": "标签"
+  },
+  "components.github.stars": {
+    "message": "Star 数"
+  },
+  "components.github.forks": {
+    "message": "Fork 数"
+  },
+  "components.github.license": {
+    "message": "许可证"
+  },
+  "components.github.language": {
+    "message": "主要语言"
+  },
+  "components.github.error": {
+    "message": "加载 GitHub 数据失败"
+  },
+  "components.markdown.aboutGreeting": {
+    "message": "Hello, I'm lailai"
+  },
+  "components.playground.gameOfLife.play": {
+    "message": "播放"
+  },
+  "components.playground.gameOfLife.pause": {
+    "message": "暂停"
+  },
+  "components.playground.gameOfLife.step": {
+    "message": "单步"
+  },
+  "components.playground.gameOfLife.random": {
+    "message": "随机"
+  },
+  "components.playground.gameOfLife.clear": {
+    "message": "清空"
+  },
+  "components.playground.neuralNetwork.clear": {
+    "message": "清除"
+  },
+  "components.playground.neuralNetwork.check": {
+    "message": "识别"
+  },
+  "components.playground.neuralNetwork.preprocess": {
+    "message": "预处理"
+  },
+  "components.playground.lorenz.reset": {
+    "message": "重置"
+  },
+  "pages.moments.title": {
+    "message": "动态"
+  },
+  "pages.moments.description": {
+    "message": "随时随地，分享生活"
+  },
+  "pages.moments.countLabel": {
+    "message": "条动态"
+  },
+  "pages.moments.location.hangzhou": {
+    "message": "杭州"
+  },
+  "pages.moments.loadMore": {
+    "message": "加载更多"
+  },
+  "pages.moments.noMore": {
+    "message": "没有更多动态了"
+  },
+  "pages.moments.weather.clear": {
+    "message": "晴"
+  },
+  "pages.moments.weather.mainlyClear": {
+    "message": "少云"
+  },
+  "pages.moments.weather.partlyCloudy": {
+    "message": "多云"
+  },
+  "pages.moments.weather.overcast": {
+    "message": "阴"
+  },
+  "pages.moments.weather.fog": {
+    "message": "雾"
+  },
+  "pages.moments.weather.depositingRimeFog": {
+    "message": "冻雾"
+  },
+  "pages.moments.weather.drizzle": {
+    "message": "毛毛雨"
+  },
+  "pages.moments.weather.lightRain": {
+    "message": "小雨"
+  },
+  "pages.moments.weather.moderateRain": {
+    "message": "中雨"
+  },
+  "pages.moments.weather.heavyRain": {
+    "message": "大雨"
+  },
+  "pages.moments.weather.lightSnow": {
+    "message": "小雪"
+  },
+  "pages.moments.weather.moderateSnow": {
+    "message": "中雪"
+  },
+  "pages.moments.weather.heavySnow": {
+    "message": "大雪"
+  },
+  "pages.moments.weather.rainShowers": {
+    "message": "阵雨"
+  },
+  "pages.moments.weather.thunderstorm": {
+    "message": "雷暴"
+  },
+  "pages.insights.heartbeat.ariaLabel": {
+    "message": "近期监测状态"
+  },
+  "pages.insights.heartbeat.up": {
+    "message": "正常"
+  },
+  "pages.insights.heartbeat.down": {
+    "message": "故障"
+  },
+  "pages.insights.heartbeat.pending": {
+    "message": "待定"
+  },
+  "pages.insights.heartbeat.maintenance": {
+    "message": "维护中"
+  },
+  "pages.insights.heartbeat.unknown": {
+    "message": "暂无数据"
+  },
+  "pages.insights.heartbeat.noData": {
+    "message": "暂无数据"
+  },
+  "pages.insights.sparkline.ariaLabel": {
+    "message": "浏览量随时间变化"
+  },
+  "pages.insights.systemStatus.title": {
+    "message": "运行时快照"
+  },
+  "pages.insights.systemStatus.srLabel": {
+    "message": "System status overview"
+  },
+  "pages.insights.uptime.avgPing": {
+    "message": "平均 {ping}ms"
+  },
+  "pages.insights.status.error": {
+    "message": "无法连接监控服务"
+  },
+  "pages.insights.uptime.empty": {
+    "message": "暂无监控项"
   },
   "blog.post.empty": {
     "message": "暂无文章"
@@ -458,156 +608,6 @@
   "blog.sidebar.tags.title": {
     "message": "热门标签"
   },
-  "blog.pages.tags.tagSelect": {
-    "message": "标签"
-  },
-  "components.github.stars": {
-    "message": "Star 数"
-  },
-  "components.github.forks": {
-    "message": "Fork 数"
-  },
-  "components.github.license": {
-    "message": "许可证"
-  },
-  "components.github.language": {
-    "message": "主要语言"
-  },
-  "components.github.error": {
-    "message": "加载 GitHub 数据失败"
-  },
-  "components.markdown.aboutGreeting": {
-    "message": "Hello, I'm lailai"
-  },
-  "components.playground.gameOfLife.play": {
-    "message": "播放"
-  },
-  "components.playground.gameOfLife.pause": {
-    "message": "暂停"
-  },
-  "components.playground.gameOfLife.step": {
-    "message": "单步"
-  },
-  "components.playground.gameOfLife.random": {
-    "message": "随机"
-  },
-  "components.playground.gameOfLife.clear": {
-    "message": "清空"
-  },
-  "components.playground.lorenz.reset": {
-    "message": "重置"
-  },
-  "components.playground.neuralNetwork.clear": {
-    "message": "清除"
-  },
-  "components.playground.neuralNetwork.check": {
-    "message": "识别"
-  },
-  "components.playground.neuralNetwork.preprocess": {
-    "message": "预处理"
-  },
-  "pages.moments.title": {
-    "message": "动态"
-  },
-  "pages.moments.description": {
-    "message": "随时随地，分享生活"
-  },
-  "pages.moments.countLabel": {
-    "message": "条动态"
-  },
-  "pages.moments.location.hangzhou": {
-    "message": "杭州"
-  },
-  "pages.moments.loadMore": {
-    "message": "加载更多"
-  },
-  "pages.moments.noMore": {
-    "message": "没有更多动态了"
-  },
-  "pages.moments.weather.clear": {
-    "message": "晴"
-  },
-  "pages.moments.weather.mainlyClear": {
-    "message": "少云"
-  },
-  "pages.moments.weather.partlyCloudy": {
-    "message": "多云"
-  },
-  "pages.moments.weather.overcast": {
-    "message": "阴"
-  },
-  "pages.moments.weather.fog": {
-    "message": "雾"
-  },
-  "pages.moments.weather.depositingRimeFog": {
-    "message": "冻雾"
-  },
-  "pages.moments.weather.drizzle": {
-    "message": "毛毛雨"
-  },
-  "pages.moments.weather.lightRain": {
-    "message": "小雨"
-  },
-  "pages.moments.weather.moderateRain": {
-    "message": "中雨"
-  },
-  "pages.moments.weather.heavyRain": {
-    "message": "大雨"
-  },
-  "pages.moments.weather.lightSnow": {
-    "message": "小雪"
-  },
-  "pages.moments.weather.moderateSnow": {
-    "message": "中雪"
-  },
-  "pages.moments.weather.heavySnow": {
-    "message": "大雪"
-  },
-  "pages.moments.weather.rainShowers": {
-    "message": "阵雨"
-  },
-  "pages.moments.weather.thunderstorm": {
-    "message": "雷暴"
-  },
-  "pages.insights.heartbeat.ariaLabel": {
-    "message": "近期监测状态"
-  },
-  "pages.insights.heartbeat.up": {
-    "message": "正常"
-  },
-  "pages.insights.heartbeat.down": {
-    "message": "故障"
-  },
-  "pages.insights.heartbeat.pending": {
-    "message": "待定"
-  },
-  "pages.insights.heartbeat.maintenance": {
-    "message": "维护中"
-  },
-  "pages.insights.heartbeat.unknown": {
-    "message": "暂无数据"
-  },
-  "pages.insights.heartbeat.noData": {
-    "message": "暂无数据"
-  },
-  "pages.insights.sparkline.ariaLabel": {
-    "message": "浏览量随时间变化"
-  },
-  "pages.insights.systemStatus.title": {
-    "message": "运行时快照"
-  },
-  "pages.insights.systemStatus.srLabel": {
-    "message": "System status overview"
-  },
-  "pages.insights.uptime.avgPing": {
-    "message": "平均 {ping}ms"
-  },
-  "pages.insights.status.error": {
-    "message": "无法连接监控服务"
-  },
-  "pages.insights.uptime.empty": {
-    "message": "暂无监控项"
-  },
   "components.cookieConsent.title": {
     "message": "Cookie 设置"
   },
@@ -652,6 +652,14 @@
     "message": "回到顶部",
     "description": "The ARIA label for the back to top button"
   },
+  "theme.blog.archive.title": {
+    "message": "历史文章",
+    "description": "The page & hero title of the blog archive page"
+  },
+  "theme.blog.archive.description": {
+    "message": "历史文章",
+    "description": "The page & hero description of the blog archive page"
+  },
   "theme.blog.paginator.navAriaLabel": {
     "message": "文章列表分页导航",
     "description": "The ARIA label for the blog pagination"
@@ -663,14 +671,6 @@
   "theme.blog.paginator.olderEntries": {
     "message": "较旧的文章",
     "description": "The label used to navigate to the older blog posts page (next page)"
-  },
-  "theme.blog.archive.title": {
-    "message": "历史文章",
-    "description": "The page & hero title of the blog archive page"
-  },
-  "theme.blog.archive.description": {
-    "message": "历史文章",
-    "description": "The page & hero description of the blog archive page"
   },
   "theme.blog.post.paginator.navAriaLabel": {
     "message": "文章分页导航",
@@ -843,10 +843,6 @@
     "message": "本页总览",
     "description": "The label used by the button on the collapsible TOC component"
   },
-  "theme.blog.post.readingTime.plurals": {
-    "message": "阅读需 {readingTime} 分钟",
-    "description": "Pluralized label for \"{readingTime} min read\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
-  },
   "theme.blog.post.readMore": {
     "message": "阅读更多",
     "description": "The label used in blog post item excerpts to link to full blog posts"
@@ -854,6 +850,10 @@
   "theme.blog.post.readMoreLabel": {
     "message": "阅读 {title} 的全文",
     "description": "The ARIA label for the link to full blog posts from excerpts"
+  },
+  "theme.blog.post.readingTime.plurals": {
+    "message": "阅读需 {readingTime} 分钟",
+    "description": "Pluralized label for \"{readingTime} min read\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
   },
   "theme.CodeBlock.copy": {
     "message": "复制",
@@ -875,6 +875,10 @@
     "message": "主页面",
     "description": "The ARIA label for the home page in the breadcrumbs"
   },
+  "theme.docs.sidebar.navAriaLabel": {
+    "message": "文档侧边栏",
+    "description": "The ARIA label for the sidebar navigation"
+  },
   "theme.docs.sidebar.collapseButtonTitle": {
     "message": "收起侧边栏",
     "description": "The title attribute for collapse button of doc sidebar"
@@ -882,10 +886,6 @@
   "theme.docs.sidebar.collapseButtonAriaLabel": {
     "message": "收起侧边栏",
     "description": "The title attribute for collapse button of doc sidebar"
-  },
-  "theme.docs.sidebar.navAriaLabel": {
-    "message": "文档侧边栏",
-    "description": "The ARIA label for the sidebar navigation"
   },
   "theme.docs.sidebar.closeSidebarButtonAriaLabel": {
     "message": "关闭导航栏",

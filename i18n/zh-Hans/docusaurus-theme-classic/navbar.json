@@ -27,6 +27,10 @@
     "message": "页面",
     "description": "Navbar item with label Pages"
   },
+  "item.label.Site": {
+    "message": "网站",
+    "description": "Navbar item with label Site"
+  },
   "item.label.About": {
     "message": "关于",
     "description": "Navbar item with label About"
@@ -42,10 +46,6 @@
   "item.label.Resources": {
     "message": "资源",
     "description": "Navbar item with label Resources"
-  },
-  "item.label.Site": {
-    "message": "网站",
-    "description": "Navbar item with label Site"
   },
   "item.label.Settings": {
     "message": "设置",
