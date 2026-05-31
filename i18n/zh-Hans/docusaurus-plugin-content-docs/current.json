@@ -255,6 +255,22 @@
     "message": "其他",
     "description": "The label for category '其他' in sidebar 'noteSidebar'"
   },
+  "sidebar.projectSidebar.category.Tools": {
+    "message": "Tools",
+    "description": "The label for category 'Tools' in sidebar 'projectSidebar'"
+  },
+  "sidebar.projectSidebar.category.Tools.link.generated-index.description": {
+    "message": "本章展示各类实用工具项目。",
+    "description": "The generated-index page description for category 'Tools' in sidebar 'projectSidebar'"
+  },
+  "sidebar.projectSidebar.category.Data": {
+    "message": "Data",
+    "description": "The label for category 'Data' in sidebar 'projectSidebar'"
+  },
+  "sidebar.projectSidebar.category.Data.link.generated-index.description": {
+    "message": "本章展示数据可视化与数据相关项目。",
+    "description": "The generated-index page description for category 'Data' in sidebar 'projectSidebar'"
+  },
   "sidebar.projectSidebar.category.Terminal": {
     "message": "Terminal",
     "description": "The label for category 'Terminal' in sidebar 'projectSidebar'"
@@ -278,21 +294,5 @@
   "sidebar.projectSidebar.category.指南.link.generated-index.description": {
     "message": "本章收录各种实用的文档指南。",
     "description": "The generated-index page description for category '指南' in sidebar 'projectSidebar'"
-  },
-  "sidebar.projectSidebar.category.Tools": {
-    "message": "Tools",
-    "description": "The label for category 'Tools' in sidebar 'projectSidebar'"
-  },
-  "sidebar.projectSidebar.category.Tools.link.generated-index.description": {
-    "message": "本章展示各类实用工具项目。",
-    "description": "The generated-index page description for category 'Tools' in sidebar 'projectSidebar'"
-  },
-  "sidebar.projectSidebar.category.Data": {
-    "message": "Data",
-    "description": "The label for category 'Data' in sidebar 'projectSidebar'"
-  },
-  "sidebar.projectSidebar.category.Data.link.generated-index.description": {
-    "message": "本章展示数据可视化与数据相关项目。",
-    "description": "The generated-index page description for category 'Data' in sidebar 'projectSidebar'"
   }
 }
