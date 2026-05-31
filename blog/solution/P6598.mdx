@@ -1,0 +1,227 @@
+---
+title: 题解：P6598 烷烃计数
+date: 2026-05-31T22:30
+authors: lailai
+tags: [oi, solution, luogu]
+---
+
+<Solution pid="P6598" aid="quzrnylv" />
+
+{/* truncate */}
+
+## 参考资料
+
+- [A000602 - OEIS](https://oeis.org/A000602)
+- [Pólya enumeration theorem - Wikipedia](https://en.wikipedia.org/wiki/Pólya_enumeration_theorem)
+- [Burnside's lemma - Wikipedia](https://en.wikipedia.org/wiki/Burnside%27s_lemma)
+- [树的重心 - OI Wiki](https://oi-wiki.org/graph/tree-centroid/)
+- [多项式牛顿迭代 - OI Wiki](https://oi-wiki.org/math/poly/newton/)
+
+## 题意简述
+
+求 $n$ 个碳原子的烷烃的同分异构体数量，对 $998244353$ 取模。
+
+等价于求 $n$ 个点、每个点度数 $\le 4$ 的无标号无根树的个数。其中 $1\le n\le 10^5$。
+
+## 烷基计数
+
+**烷基**（Alkyl）是烷烃去掉一个氢原子得到的基团。从断键处把分子拎起来，失去氢的碳作根，它还能连 $3$ 个碳，其余每个碳有一个父亲、至多 $3$ 个儿子。于是烷基就是每个节点至多 $3$ 个儿子的无标号有根树。
+
+设 $A(x)=\sum_{n\ge 0}a_nx^n$，$a_n$ 为 $n$ 个碳的烷基数。令 $a_0=1$，对应空烷基，也就是一个氢原子。
+
+根下挂一个大小 $\le 3$ 的烷基可重集。$A(x)$ 已含空元素，所以「恰好挂 $3$ 个」等同于「挂 $\le 3$ 个非空烷基」。对 $S_3$ 用 **Burnside 引理**（Burnside's Lemma），循环型 $(1,1,1)$、$(1,2)$、$(3)$ 各有 $1,3,2$ 个置换：
+
+$$
+A(x)=1+\frac{x}{6}\left(A^3(x)+3A(x)A(x^2)+2A(x^3)\right)
+$$
+
+这是关于 $A(x)$ 的方程，用 **牛顿迭代**（Newton's Iteration）解。精度从 $x^m$ 倍增到 $x^{2m}$ 时，$A(x^2)$、$A(x^3)$ 只用到更低次的系数，当成常数。设：
+
+$$
+G(A)=A-1-\frac{x}{6}\left(A^3+3A(x^2)A+2A(x^3)\right)
+$$
+
+对 $A$ 求形式导数：
+
+$$
+G'(A)=1-\frac{x}{2}\left(A^2+A(x^2)\right)
+$$
+
+代入 $A\gets A-\dfrac{G(A)}{G'(A)}$ 化简：
+
+$$
+A(x)\gets\dfrac{1-\dfrac{x}{3}\left(A^3(x)-A(x^3)\right)}{1-\dfrac{x}{2}\left(A^2(x)+A(x^2)\right)}
+$$
+
+**数论变换**（NTT）配上多项式求逆，$O(n\log n)$ 即可求出 $A(x)\bmod x^{n+1}$。
+
+## 烷烃计数
+
+烷烃是度数 $\le 4$ 的无标号无根树。无根树不好直接数，钦定重心为根，转成有根树再容斥。
+
+对一棵无根树数三样东西：
+
+- 每个点轮流作根，得到的本质不同有根树数，记为点等价类数 $p$；
+- 每条边作根（两端各挂一棵有根树），得到的本质不同方案数，记为边等价类数 $q$；
+- 树恰有两个重心、且两重心等价时 $s=1$，否则 $s=0$。
+
+那么任意一棵无根树都满足 $p-q+s=1$。
+
+> $s=0$ 时以重心为根，除重心外每个点唯一对应它的父亲边，两点等价当且仅当父亲边等价，这部分贡献两两抵消，只剩重心自身的 $1$，即 $p-q=1$。$s=1$ 时两重心互相等价，$p-q=-1$，$p-q+s=1$ 照样成立。
+
+对所有无根树求和，记 $\sum p,\sum q,\sum s$ 的生成函数为 $P(x),Q(x),S(x)$。$\sum(p-q+s)$ 就是无根树总数，于是答案是 $[x^n]\big(P(x)-Q(x)+S(x)\big)$。
+
+$P(x)$ 是点等价类：以某点为根，根的度数 $\le 4$，即根下挂一个大小 $\le 4$ 的烷基可重集。对 $S_4$ 用 Burnside 引理，循环型 $(1^4)$、$(2,1^2)$、$(2^2)$、$(3,1)$、$(4)$ 各有 $1,6,3,8,6$ 个置换：
+
+$$
+P(x)=\frac{x}{24}\left(A^4(x)+6A^2(x)A(x^2)+3A^2(x^2)+8A(x)A(x^3)+6A(x^4)\right)
+$$
+
+$Q(x)$ 是边等价类：一条边两端各挂一个烷基，两端无序，端点是碳所以烷基非空。对 $S_2$ 用 Burnside 引理：
+
+$$
+Q(x)=\frac{(A(x)-1)^2+(A(x^2)-1)}{2}
+$$
+
+$S(x)$ 对应双重心：两端挂同一个烷基：
+
+$$
+S(x)=A(x^2)
+$$
+
+答案就是 $[x^n]\big(P(x)-Q(x)+S(x)\big)$。时间复杂度为 $O(n\log n)$。
+
+## 参考代码
+
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+
+using ll=long long;
+const int mod=998244353;
+const int g=3;
+ll Pow(ll x,ll y)
+{
+	x%=mod;
+	ll res=1;
+	while(y)
+	{
+		if(y&1)res=res*x%mod;
+		x=x*x%mod;
+		y>>=1;
+	}
+	return res;
+}
+const ll inv2=(mod+1)/2;
+const ll inv3=Pow(3,mod-2);
+const ll inv24=Pow(24,mod-2);
+void ntt(vector<ll> &a,int type)
+{
+	int n=a.size();
+	for(int i=1,j=0;i<n;i++)
+	{
+		int bit=n>>1;
+		for(;j&bit;bit>>=1)j^=bit;
+		j^=bit;
+		if(i<j)swap(a[i],a[j]);
+	}
+	for(int len=2;len<=n;len<<=1)
+	{
+		ll wn=Pow(type==1?g:Pow(g,mod-2),(mod-1)/len);
+		for(int i=0;i<n;i+=len)
+		{
+			ll w=1;
+			for(int j=0;j<(len>>1);j++)
+			{
+				ll u=a[i+j],v=a[i+j+(len>>1)]*w%mod;
+				a[i+j]=(u+v)%mod;
+				a[i+j+(len>>1)]=(u-v+mod)%mod;
+				w=w*wn%mod;
+			}
+		}
+	}
+	if(type==-1)
+	{
+		ll iv=Pow(n,mod-2);
+		for(int i=0;i<n;i++)a[i]=a[i]*iv%mod;
+	}
+}
+vector<ll> mul(vector<ll> a,vector<ll> b,int len)
+{
+	int tot=a.size()+b.size()-1;
+	int n=1;
+	while(n<tot)n<<=1;
+	a.resize(n);
+	b.resize(n);
+	ntt(a,1);
+	ntt(b,1);
+	for(int i=0;i<n;i++)a[i]=a[i]*b[i]%mod;
+	ntt(a,-1);
+	a.resize(min(len,tot));
+	return a;
+}
+vector<ll> inv(vector<ll> a,int len)
+{
+	vector<ll> b={Pow(a[0],mod-2)};
+	for(int k=2;k<(len<<1);k<<=1)
+	{
+		vector<ll> c(a.begin(),a.begin()+min((int)a.size(),k));
+		c.resize(k);
+		vector<ll> t=mul(mul(b,b,k),c,k);
+		b.resize(k);
+		for(int i=0;i<k;i++)b[i]=(2*b[i]%mod-t[i]+mod)%mod;
+	}
+	b.resize(len);
+	return b;
+}
+vector<ll> comp(const vector<ll> &a,int s,int len)
+{
+	vector<ll> res(len,0);
+	for(int i=0;i<(int)a.size()&&(ll)i*s<len;i++)res[i*s]=a[i];
+	return res;
+}
+vector<ll> alkyl(int len)
+{
+	vector<ll> A={1};
+	for(int k=2;k<(len<<1);k<<=1)
+	{
+		vector<ll> A2=comp(A,2,k),A3=comp(A,3,k);
+		vector<ll> a2=mul(A,A,k),a3=mul(a2,A,k);
+		vector<ll> num(k,0),den(k,0);
+		for(int i=0;i<k;i++)
+		{
+			num[i]=(a3[i]-A3[i]+mod)%mod*inv3%mod;
+			den[i]=(a2[i]+A2[i])%mod*inv2%mod;
+		}
+		for(int i=k-1;i>=1;i--){num[i]=num[i-1];den[i]=den[i-1];}
+		num[0]=den[0]=0;
+		for(int i=0;i<k;i++){num[i]=(mod-num[i])%mod;den[i]=(mod-den[i])%mod;}
+		num[0]=(num[0]+1)%mod;
+		den[0]=(den[0]+1)%mod;
+		A=mul(num,inv(den,k),k);
+	}
+	A.resize(len);
+	return A;
+}
+int main()
+{
+	ios::sync_with_stdio(false);
+	cin.tie(nullptr);
+	int n;
+	cin>>n;
+	int m=n+1;
+	vector<ll> A=alkyl(m);
+	vector<ll> A2=comp(A,2,m),A3=comp(A,3,m),A4=comp(A,4,m);
+	vector<ll> a2=mul(A,A,m);
+	vector<ll> P=mul(a2,a2,m);
+	vector<ll> p2=mul(a2,A2,m),p3=mul(A2,A2,m),p4=mul(A,A3,m);
+	for(int i=0;i<m;i++)P[i]=(P[i]+6*p2[i]+3*p3[i]+8*p4[i]+6*A4[i])%mod*inv24%mod;
+	vector<ll> B=A;
+	B[0]=(B[0]-1+mod)%mod;
+	vector<ll> Q=mul(B,B,m);
+	for(int i=0;i<m;i++)Q[i]=(Q[i]+A2[i])%mod*inv2%mod;
+	ll ans=((P[n-1]-Q[n]+A2[n])%mod+mod)%mod;
+	cout<<ans<<'\n';
+	return 0;
+}
+```

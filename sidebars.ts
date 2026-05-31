@@ -567,20 +567,30 @@ const sidebars: SidebarsConfig = {
     'project/index',
     'project/lailai0916.github.io',
     'project/lailai0916',
-    'project/code-comparator',
-    'project/hangzhou-highschool-map',
-    'project/oi-chart-race',
     {
       type: 'category',
-      label: "lailai's AI Lab",
+      label: 'Tools',
       link: {
         type: 'generated-index',
-        description: '本章为使用 AI 制作的项目。',
+        description: '本章展示各类实用工具项目。',
       },
       items: [
-        'project/ai/sun-path-atlas',
-        'project/ai/hydrocarbon-namer',
-        'project/ai/hez-history',
+        'project/tools/code-comparator',
+        'project/tools/sun-path-atlas',
+        'project/tools/hydrocarbon-namer',
+      ],
+    },
+    {
+      type: 'category',
+      label: 'Data',
+      link: {
+        type: 'generated-index',
+        description: '本章展示数据可视化与数据相关项目。',
+      },
+      items: [
+        'project/data/hangzhou-highschool-map',
+        'project/data/hez-history',
+        'project/data/oi-chart-race',
       ],
     },
     {
