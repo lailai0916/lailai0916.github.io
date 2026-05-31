@@ -13,6 +13,14 @@ interface MomentItem {
 
 const STATIC_MOMENTS: MomentItem[] = [
   {
+    date: '2026-05-31T15:55',
+    share: {
+      url: 'https://www.bilibili.com/video/BV1mkVn63EYQ',
+      title: '信息学奥林匹克竞赛学校排名变迁动画',
+      description: 'lailai0916',
+    },
+  },
+  {
     date: '2026-03-30T18:30',
     content:
       'bilibili LV6! <a href="https://space.bilibili.com/1796257032">@lailai0916</a>',
