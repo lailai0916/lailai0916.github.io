@@ -346,9 +346,10 @@ function NeuronConnections({
               stroke="var(--nn-connection-animation)"
               strokeDasharray={`${lineLength} ${lineLength}`}
               strokeDashoffset={(animating ? -1 : 1) * lineLength}
+              // Deterministic stagger — Math.random() here breaks SSR hydration.
               style={{
                 transition: animating
-                  ? `stroke-dashoffset 1200ms ease-in-out ${1200 * (layerIndex - 1) + 500 + 100 * Math.random()}ms`
+                  ? `stroke-dashoffset 1200ms ease-in-out ${1200 * (layerIndex - 1) + 500 + ((prevNeuronId * 7 + neuronId * 13) % 11) * 10}ms`
                   : 'none',
               }}
             />

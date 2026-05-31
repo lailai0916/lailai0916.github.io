@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import clsx from 'clsx';
 import Link from '@docusaurus/Link';
 import { Icon } from '@iconify/react';
@@ -41,7 +41,7 @@ function shiftMonth(y: number, m: number, delta: number) {
 }
 
 export default function CalendarCard() {
-  const { i18n } = useDocusaurusContext();
+  const { i18n, siteConfig } = useDocusaurusContext();
   const locale = i18n.currentLocale;
 
   const posts = useMemo<CalPost[]>(() => {
@@ -67,12 +67,22 @@ export default function CalendarCard() {
     return map;
   }, [posts]);
 
-  const initial = useMemo(() => {
-    const now = new Date();
-    return { y: now.getFullYear(), m: now.getMonth() };
-  }, []);
-  const [view, setView] = useState(initial);
+  // Seed from build time so SSR and hydration agree; correct to the real
+  // current month after mount (they differ only across a month boundary).
+  const buildMonth = useMemo(() => {
+    const d = new Date(String(siteConfig.customFields?.buildTime ?? ''));
+    return { y: d.getFullYear(), m: d.getMonth() };
+  }, [siteConfig]);
+  const [today, setToday] = useState(buildMonth);
+  const [view, setView] = useState(buildMonth);
   const [selected, setSelected] = useState<string | null>(null);
+
+  useEffect(() => {
+    const now = new Date();
+    const current = { y: now.getFullYear(), m: now.getMonth() };
+    setToday(current);
+    setView(current);
+  }, []);
 
   const monthLabel = useMemo(
     () =>
@@ -147,10 +157,10 @@ export default function CalendarCard() {
     setSelected(null);
   };
   const goToday = () => {
-    setView(initial);
+    setView(today);
     setSelected(null);
   };
-  const isOnCurrentMonth = view.y === initial.y && view.m === initial.m;
+  const isOnCurrentMonth = view.y === today.y && view.m === today.m;
 
   const handlePick = (cell: Cell) => {
     const has = postsByDate.has(cell.dateKey);

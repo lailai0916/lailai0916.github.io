@@ -46,6 +46,27 @@ function useTypewriter(words: string[]) {
   return { text, currentWord };
 }
 
+// Resolve the clock on the client only; rendering `new Date()` during SSR
+// produces a build-time string that never matches the visitor's local time.
+function useLocalTime() {
+  const [time, setTime] = React.useState('--:--');
+  React.useEffect(() => {
+    const update = () =>
+      setTime(
+        new Intl.DateTimeFormat('en-GB', {
+          timeZone: 'Asia/Shanghai',
+          hour: '2-digit',
+          minute: '2-digit',
+          hour12: false,
+        }).format(new Date())
+      );
+    update();
+    const timer = setInterval(update, 60000);
+    return () => clearInterval(timer);
+  }, []);
+  return time;
+}
+
 export default function Home(): ReactNode {
   const { siteConfig } = useDocusaurusContext();
 
@@ -147,12 +168,7 @@ export default function Home(): ReactNode {
     },
     { article: roleArticle }
   );
-  const localTime = new Intl.DateTimeFormat('en-GB', {
-    timeZone: 'Asia/Shanghai',
-    hour: '2-digit',
-    minute: '2-digit',
-    hour12: false,
-  }).format(new Date());
+  const localTime = useLocalTime();
   const infoItems = [
     {
       key: 'location',

@@ -1,5 +1,6 @@
-import { type ReactNode } from 'react';
+import { useEffect, useState, type ReactNode } from 'react';
 import Layout from '@theme/Layout';
+import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import {
   PageTitle,
   PageHeader,
@@ -26,9 +27,16 @@ const MODIFICATION = translate({
 });
 
 export default function Travel(): ReactNode {
+  const { siteConfig } = useDocusaurusContext();
+  const startYear = parseInt(TRAVEL_LIST[0].title.substring(0, 4));
   const countryCount = new Set(getTravelCountryCodes(TRAVEL_LIST)).size;
-  const yearCount =
-    new Date().getFullYear() - parseInt(TRAVEL_LIST[0].title.substring(0, 4));
+  // Seed from build time so SSR and hydration agree; correct to the real
+  // current year after mount (matters only across a year boundary).
+  const [currentYear, setCurrentYear] = useState(() =>
+    new Date(String(siteConfig.customFields?.buildTime ?? '')).getFullYear()
+  );
+  useEffect(() => setCurrentYear(new Date().getFullYear()), []);
+  const yearCount = currentYear - startYear;
 
   return (
     <Layout title={TITLE} description={DESCRIPTION}>
