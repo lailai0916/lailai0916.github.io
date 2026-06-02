@@ -1,7 +1,7 @@
 import { type ReactNode } from 'react';
 
 import { useTheme } from '@site/src/hooks/useTheme';
-import BlogAuthorsListPageOriginal from '@theme-original/Blog/Pages/BlogAuthorsListPage';
+import BlogAuthorsListPageClassic from '@theme-original/Blog/Pages/BlogAuthorsListPage';
 import type { Props } from '@theme/Blog/Pages/BlogAuthorsListPage';
 import ArchiveTabs, {
   type ArchiveTagItem,
@@ -10,8 +10,8 @@ import ArchiveTabs, {
 import { getAllBlogItems, loadOfficialTags } from '@site/src/utils/blogData';
 
 export default function BlogAuthorsListPage(props: Props): ReactNode {
-  const { isOriginalLayout } = useTheme();
-  if (isOriginalLayout) return <BlogAuthorsListPageOriginal {...props} />;
+  const { isClassicDesign } = useTheme();
+  if (isClassicDesign) return <BlogAuthorsListPageClassic {...props} />;
 
   const posts = getAllBlogItems()
     .filter(

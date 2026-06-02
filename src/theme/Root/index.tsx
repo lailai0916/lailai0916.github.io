@@ -8,7 +8,7 @@ interface RootProps {
 }
 
 interface ExperimentalSettings {
-  originalLayout?: boolean;
+  classicDesign?: boolean;
 }
 
 interface ExperimentalSettingsChangedDetail {
@@ -17,21 +17,21 @@ interface ExperimentalSettingsChangedDetail {
 }
 
 export default function Root({ children }: RootProps) {
-  const [isOriginalLayout, setIsOriginalLayout] = useState(false);
+  const [isClassicDesign, setIsClassicDesign] = useState(false);
 
   useEffect(() => {
     const storedSettings = localStorage.getItem('settings-experimental');
     if (storedSettings) {
       const settings = JSON.parse(storedSettings) as ExperimentalSettings;
-      setIsOriginalLayout(settings.originalLayout === true);
+      setIsClassicDesign(settings.classicDesign === true);
     }
 
     const handleSettingsChange: EventListener = (event) => {
       const { detail } =
         event as CustomEvent<ExperimentalSettingsChangedDetail>;
 
-      if (detail.key === 'originalLayout') {
-        setIsOriginalLayout(detail.checked);
+      if (detail.key === 'classicDesign') {
+        setIsClassicDesign(detail.checked);
       }
     };
 
@@ -49,7 +49,7 @@ export default function Root({ children }: RootProps) {
   }, []);
 
   return (
-    <ThemeContext.Provider value={{ isOriginalLayout, setIsOriginalLayout }}>
+    <ThemeContext.Provider value={{ isClassicDesign, setIsClassicDesign }}>
       {children}
       <BrowserOnly>{() => <CookieConsent />}</BrowserOnly>
     </ThemeContext.Provider>

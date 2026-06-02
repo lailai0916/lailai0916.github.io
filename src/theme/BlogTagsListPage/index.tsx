@@ -1,6 +1,6 @@
 import React from 'react';
 import { useTheme } from '@site/src/hooks/useTheme';
-import BlogTagsListPageOriginal from '@theme-original/BlogTagsListPage';
+import BlogTagsListPageClassic from '@theme-original/BlogTagsListPage';
 import type { Props } from '@theme/BlogTagsListPage';
 import ArchiveTabs, {
   type ArchiveTagItem,
@@ -9,8 +9,8 @@ import ArchiveTabs, {
 import { getAllBlogItems, loadOfficialAuthors } from '@site/src/utils/blogData';
 
 export default function BlogTagsListPage(props: Props): React.ReactElement {
-  const { isOriginalLayout } = useTheme();
-  if (isOriginalLayout) return <BlogTagsListPageOriginal {...props} />;
+  const { isClassicDesign } = useTheme();
+  if (isClassicDesign) return <BlogTagsListPageClassic {...props} />;
 
   const posts = getAllBlogItems()
     .filter(

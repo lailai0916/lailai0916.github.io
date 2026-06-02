@@ -263,8 +263,8 @@
   "pages.settings.item.font.lineHeight.current": {
     "message": "行间距：{value}"
   },
-  "pages.settings.item.experimental.option.originalLayout": {
-    "message": "原版布局"
+  "pages.settings.item.experimental.option.classicDesign": {
+    "message": "经典设计"
   },
   "pages.settings.item.experimental.option.debugMode": {
     "message": "调试模式"

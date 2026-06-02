@@ -1,6 +1,6 @@
 import React from 'react';
 import { useTheme } from '@site/src/hooks/useTheme';
-import BlogArchivePageOriginal from '@theme-original/BlogArchivePage';
+import BlogArchivePageClassic from '@theme-original/BlogArchivePage';
 import type { Props } from '@theme/BlogArchivePage';
 import ArchiveTabs, {
   type ArchiveTagItem,
@@ -12,8 +12,8 @@ import {
 } from '@site/src/utils/blogData';
 
 export default function BlogArchivePage(props: Props): React.ReactElement {
-  const { isOriginalLayout } = useTheme();
-  if (isOriginalLayout) return <BlogArchivePageOriginal {...props} />;
+  const { isClassicDesign } = useTheme();
+  if (isClassicDesign) return <BlogArchivePageClassic {...props} />;
 
   const posts = props.archive?.blogPosts ?? [];
   const tags: ArchiveTagItem[] = loadOfficialTags().map((t) => ({

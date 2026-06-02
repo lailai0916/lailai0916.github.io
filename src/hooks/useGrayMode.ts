@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 
 interface ExperimentalSettings {
-  originalLayout: boolean;
+  classicDesign: boolean;
   debugMode: boolean;
   grayMode: boolean;
 }

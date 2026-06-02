@@ -354,7 +354,7 @@ function Typography() {
 }
 
 const SETTINGS_EXPERIMENTAL_DEFAULT = {
-  originalLayout: false,
+  classicDesign: false,
   debugMode: false,
   grayMode: false,
 };
@@ -362,12 +362,12 @@ const SETTINGS_EXPERIMENTAL_DEFAULT = {
 function ExperimentalFeatures() {
   const buttonOptions = [
     {
-      key: 'originalLayout' as const,
+      key: 'classicDesign' as const,
       label: translate({
-        id: 'pages.settings.item.experimental.option.originalLayout',
-        message: 'Original Layout',
+        id: 'pages.settings.item.experimental.option.classicDesign',
+        message: 'Classic Design',
       }),
-      icon: 'lucide:layout-dashboard',
+      icon: 'lucide:palette',
     },
     {
       key: 'debugMode' as const,

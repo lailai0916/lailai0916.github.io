@@ -4,7 +4,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import { useTheme } from '@site/src/hooks/useTheme';
 import { loadOfficialAuthors } from '@site/src/utils/blogData';
-import BlogAuthorsPostsPageOriginal from '@theme-original/Blog/Pages/BlogAuthorsPostsPage';
+import BlogAuthorsPostsPageClassic from '@theme-original/Blog/Pages/BlogAuthorsPostsPage';
 import type { Props } from '@theme/Blog/Pages/BlogAuthorsPostsPage';
 import PostsListLayout from '../../../BlogShared/PostsListLayout';
 import TitleCard from '@site/src/components/laikit/TitleCard';
@@ -49,8 +49,8 @@ function AuthorSelector({ activePermalink }: { activePermalink: string }) {
 }
 
 export default function BlogAuthorsPostsPage(props: Props): ReactNode {
-  const { isOriginalLayout } = useTheme();
-  if (isOriginalLayout) return <BlogAuthorsPostsPageOriginal {...props} />;
+  const { isClassicDesign } = useTheme();
+  if (isClassicDesign) return <BlogAuthorsPostsPageClassic {...props} />;
 
   const { author, items, listMetadata } = props;
 

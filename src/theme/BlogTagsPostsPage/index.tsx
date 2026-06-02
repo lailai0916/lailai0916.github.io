@@ -1,6 +1,6 @@
 import React from 'react';
 import { useTheme } from '@site/src/hooks/useTheme';
-import BlogTagsPostsPageOriginal from '@theme-original/BlogTagsPostsPage';
+import BlogTagsPostsPageClassic from '@theme-original/BlogTagsPostsPage';
 import type { Props } from '@theme/BlogTagsPostsPage';
 import BlogScaffold from '../BlogShared/Scaffold';
 import { BlogArchiveList } from '../BlogShared/ArchiveList';
@@ -40,8 +40,8 @@ function TagSelector({ activePermalink }: { activePermalink: string }) {
 }
 
 export default function BlogTagsPostsPage(props: Props): React.ReactElement {
-  const { isOriginalLayout } = useTheme();
-  if (isOriginalLayout) return <BlogTagsPostsPageOriginal {...props} />;
+  const { isClassicDesign } = useTheme();
+  if (isClassicDesign) return <BlogTagsPostsPageClassic {...props} />;
 
   return <CustomBlogTagsPostsPage {...props} />;
 }

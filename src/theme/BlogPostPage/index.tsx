@@ -1,7 +1,7 @@
 import React from 'react';
 import clsx from 'clsx';
 import { useTheme } from '@site/src/hooks/useTheme';
-import BlogPostPageOriginal from '@theme-original/BlogPostPage';
+import BlogPostPageClassic from '@theme-original/BlogPostPage';
 import BlogScaffold from '../BlogShared/Scaffold';
 import Card from '@site/src/components/laikit/Card';
 import {
@@ -21,8 +21,8 @@ import MDXContent from '@theme/MDXContent';
 import type { Props } from '@theme/BlogPostPage';
 
 export default function BlogPostPage(props: Props): React.ReactElement {
-  const { isOriginalLayout } = useTheme();
-  if (isOriginalLayout) return <BlogPostPageOriginal {...props} />;
+  const { isClassicDesign } = useTheme();
+  if (isClassicDesign) return <BlogPostPageClassic {...props} />;
 
   const BlogPostContent = props.content;
   const { metadata, frontMatter } = props.content;
