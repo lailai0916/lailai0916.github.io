@@ -11,7 +11,7 @@ tags: [oi, solution, codeforces]
 
 ## 题意简述
 
-给定长度为 $n-1$ 的数列 $x_i$，构造长度为 $n$ 的数列 $a_i$，满足 $x_i=a_i \bmod a_{i-1}$。
+给定长度为 $n-1$ 的数列 $x_i$，构造长度为 $n$ 的数列 $a_i$，满足 $x_i=a_i\bmod a_{i-1}$。
 
 ## 解题思路
 
@@ -25,16 +25,15 @@ $$
 
 $$
 \begin{aligned}
-x_i &= a_i \bmod a_{i-1} \\
-  &= (a_{i-1}+x_i) \bmod a_{i-1} \\
-  &= a_{i-1} \bmod a_{i-1} + x_i \bmod a_{i-1} \\
-  &= x_i \bmod a_{i-1}
+x_i &= a_i\bmod a_{i-1} \\
+  &= (a_{i-1}+x_i)\bmod a_{i-1} \\
+  &= x_i\bmod a_{i-1}
 \end{aligned}
 $$
 
 不难发现，当 $a_{i-1}$ 较大时即可满足条件。
 
-由于 $x_i \le 500$，$a_i \le 10^9$，所以不妨令 $a_1$ 为一个较大的数。
+由于 $x_i\le 500,a_i\le 10^9$，所以不妨令 $a_1$ 为一个较大的数。
 
 ## 参考代码
 
