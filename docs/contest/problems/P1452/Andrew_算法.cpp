@@ -46,7 +46,7 @@ int main()
 	int j=2;
 	for(int i=1;i<=m;i++)
 	{
-		while(abs(Cross(b[i]-b[j],b[i%m+1]-b[j]))<abs(Cross(b[i]-b[j+1],b[i%m+1]-b[j%m+1])))j=j%m+1;
+		while(abs(Cross(b[i]-b[j],b[i%m+1]-b[j]))<abs(Cross(b[i]-b[j%m+1],b[i%m+1]-b[j%m+1])))j=j%m+1;
 		ans=max(ans,max(Dis2(b[i],b[j]),Dis2(b[i%m+1],b[j])));
 	}
 	cout<<ans<<'\n';

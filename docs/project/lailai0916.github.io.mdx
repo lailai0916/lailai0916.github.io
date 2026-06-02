@@ -196,10 +196,10 @@ git remote add origin https://github.com/username/my-website.git
 git push -u origin main
 ```
 
-- 在 `docusaurus.config.js` 文件中，配置 `url` 和 `baseUrl`：
+- 在 `docusaurus.config.ts` 文件中，配置 `url` 和 `baseUrl`：
 
-```js
-module.exports = {
+```ts
+export default {
   // ...existing code...
   url: 'https://username.github.io',
   baseUrl: '/my-website/',
