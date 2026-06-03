@@ -14,6 +14,12 @@ import DataCard from '@site/src/components/laikit/DataCard';
 import Button from '@site/src/components/laikit/Button';
 import { useColorMode } from '@docusaurus/theme-common';
 import { usePersistentState } from '@site/src/hooks/usePersistentState';
+import {
+  EXPERIMENTAL_STORAGE_KEY,
+  EXPERIMENTAL_EVENT,
+  SETTINGS_EXPERIMENTAL_DEFAULT,
+  type ExperimentalSettings,
+} from '@site/src/hooks/useExperimentalFlag';
 import { useThemeColors } from '@site/src/hooks/useThemeColors';
 import { Icon } from '@iconify/react';
 import {
@@ -353,12 +359,6 @@ function Typography() {
   );
 }
 
-const SETTINGS_EXPERIMENTAL_DEFAULT = {
-  classicDesign: false,
-  debugMode: false,
-  grayMode: false,
-};
-
 function ExperimentalFeatures() {
   const buttonOptions = [
     {
@@ -386,20 +386,18 @@ function ExperimentalFeatures() {
       icon: 'lucide:contrast',
     },
   ];
-  const [toggles, setToggles] = usePersistentState<
-    typeof SETTINGS_EXPERIMENTAL_DEFAULT
-  >('settings-experimental', SETTINGS_EXPERIMENTAL_DEFAULT);
+  const [toggles, setToggles] = usePersistentState<ExperimentalSettings>(
+    EXPERIMENTAL_STORAGE_KEY,
+    SETTINGS_EXPERIMENTAL_DEFAULT
+  );
 
-  const handleToggle = (
-    key: keyof typeof SETTINGS_EXPERIMENTAL_DEFAULT,
-    checked: boolean
-  ) => {
+  const handleToggle = (key: keyof ExperimentalSettings, checked: boolean) => {
     setToggles((prev) => {
       const newState = { ...prev, [key]: checked };
 
       // Notify same-tab listeners; cross-tab updates flow through the `storage` event.
-      const event = new CustomEvent('experimentalSettingsChanged', {
-        detail: { key, checked, newState },
+      const event = new CustomEvent(EXPERIMENTAL_EVENT, {
+        detail: { key, checked },
       });
       window.dispatchEvent(event);
 
@@ -464,7 +462,7 @@ function QuickActions() {
     localStorage.removeItem('font-family');
     localStorage.removeItem('global-font-size');
     localStorage.removeItem('global-line-height');
-    localStorage.removeItem('settings-experimental');
+    localStorage.removeItem(EXPERIMENTAL_STORAGE_KEY);
     window.location.reload();
   }
 

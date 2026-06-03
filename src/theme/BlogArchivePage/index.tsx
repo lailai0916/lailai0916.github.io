@@ -1,5 +1,5 @@
 import React from 'react';
-import { useTheme } from '@site/src/hooks/useTheme';
+import { useExperimentalFlag } from '@site/src/hooks/useExperimentalFlag';
 import BlogArchivePageClassic from '@theme-original/BlogArchivePage';
 import type { Props } from '@theme/BlogArchivePage';
 import ArchiveTabs, {
@@ -12,7 +12,7 @@ import {
 } from '@site/src/utils/blogData';
 
 export default function BlogArchivePage(props: Props): React.ReactElement {
-  const { isClassicDesign } = useTheme();
+  const isClassicDesign = useExperimentalFlag('classicDesign');
   if (isClassicDesign) return <BlogArchivePageClassic {...props} />;
 
   const posts = props.archive?.blogPosts ?? [];

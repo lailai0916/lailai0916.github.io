@@ -2,7 +2,7 @@ import React, { type ReactNode } from 'react';
 import { translate } from '@docusaurus/Translate';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
-import { useTheme } from '@site/src/hooks/useTheme';
+import { useExperimentalFlag } from '@site/src/hooks/useExperimentalFlag';
 import { loadOfficialAuthors } from '@site/src/utils/blogData';
 import BlogAuthorsPostsPageClassic from '@theme-original/Blog/Pages/BlogAuthorsPostsPage';
 import type { Props } from '@theme/Blog/Pages/BlogAuthorsPostsPage';
@@ -49,7 +49,7 @@ function AuthorSelector({ activePermalink }: { activePermalink: string }) {
 }
 
 export default function BlogAuthorsPostsPage(props: Props): ReactNode {
-  const { isClassicDesign } = useTheme();
+  const isClassicDesign = useExperimentalFlag('classicDesign');
   if (isClassicDesign) return <BlogAuthorsPostsPageClassic {...props} />;
 
   const { author, items, listMetadata } = props;

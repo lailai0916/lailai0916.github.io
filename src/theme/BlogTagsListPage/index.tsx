@@ -1,5 +1,5 @@
 import React from 'react';
-import { useTheme } from '@site/src/hooks/useTheme';
+import { useExperimentalFlag } from '@site/src/hooks/useExperimentalFlag';
 import BlogTagsListPageClassic from '@theme-original/BlogTagsListPage';
 import type { Props } from '@theme/BlogTagsListPage';
 import ArchiveTabs, {
@@ -9,7 +9,7 @@ import ArchiveTabs, {
 import { getAllBlogItems, loadOfficialAuthors } from '@site/src/utils/blogData';
 
 export default function BlogTagsListPage(props: Props): React.ReactElement {
-  const { isClassicDesign } = useTheme();
+  const isClassicDesign = useExperimentalFlag('classicDesign');
   if (isClassicDesign) return <BlogTagsListPageClassic {...props} />;
 
   const posts = getAllBlogItems()

@@ -1,5 +1,5 @@
 import React from 'react';
-import { useTheme } from '@site/src/hooks/useTheme';
+import { useExperimentalFlag } from '@site/src/hooks/useExperimentalFlag';
 import BlogListPageClassic from '@theme-original/BlogListPage';
 import PostsListLayout from '../BlogShared/PostsListLayout';
 import type { Props as BlogListPageProps } from '@theme/BlogListPage';
@@ -7,7 +7,7 @@ import type { Props as BlogListPageProps } from '@theme/BlogListPage';
 export default function BlogListPage(
   props: BlogListPageProps
 ): React.ReactElement {
-  const { isClassicDesign } = useTheme();
+  const isClassicDesign = useExperimentalFlag('classicDesign');
   if (isClassicDesign) return <BlogListPageClassic {...props} />;
 
   const { metadata, items } = props;

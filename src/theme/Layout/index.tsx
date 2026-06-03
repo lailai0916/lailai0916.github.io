@@ -13,13 +13,12 @@ import Footer from '@theme/Footer';
 import LayoutProvider from '@theme/Layout/Provider';
 import ErrorPageContent from '@theme/ErrorPageContent';
 import type { Props } from '@theme/Layout';
-import { useDebugMode } from '@site/src/hooks/useDebugMode';
-import { useGrayMode } from '@site/src/hooks/useGrayMode';
+import { useExperimentalFlag } from '@site/src/hooks/useExperimentalFlag';
 import styles from './styles.module.css';
 
 export default function Layout(props: Props): ReactNode {
-  const debugMode = useDebugMode();
-  const grayMode = useGrayMode();
+  const debugMode = useExperimentalFlag('debugMode');
+  const grayMode = useExperimentalFlag('grayMode');
   const {
     children,
     noFooter,

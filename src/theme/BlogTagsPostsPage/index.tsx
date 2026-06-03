@@ -1,5 +1,5 @@
 import React from 'react';
-import { useTheme } from '@site/src/hooks/useTheme';
+import { useExperimentalFlag } from '@site/src/hooks/useExperimentalFlag';
 import BlogTagsPostsPageClassic from '@theme-original/BlogTagsPostsPage';
 import type { Props } from '@theme/BlogTagsPostsPage';
 import BlogScaffold from '../BlogShared/Scaffold';
@@ -40,7 +40,7 @@ function TagSelector({ activePermalink }: { activePermalink: string }) {
 }
 
 export default function BlogTagsPostsPage(props: Props): React.ReactElement {
-  const { isClassicDesign } = useTheme();
+  const isClassicDesign = useExperimentalFlag('classicDesign');
   if (isClassicDesign) return <BlogTagsPostsPageClassic {...props} />;
 
   return <CustomBlogTagsPostsPage {...props} />;

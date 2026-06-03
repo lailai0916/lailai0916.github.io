@@ -1,6 +1,6 @@
 import { type ReactNode } from 'react';
 
-import { useTheme } from '@site/src/hooks/useTheme';
+import { useExperimentalFlag } from '@site/src/hooks/useExperimentalFlag';
 import BlogAuthorsListPageClassic from '@theme-original/Blog/Pages/BlogAuthorsListPage';
 import type { Props } from '@theme/Blog/Pages/BlogAuthorsListPage';
 import ArchiveTabs, {
@@ -10,7 +10,7 @@ import ArchiveTabs, {
 import { getAllBlogItems, loadOfficialTags } from '@site/src/utils/blogData';
 
 export default function BlogAuthorsListPage(props: Props): ReactNode {
-  const { isClassicDesign } = useTheme();
+  const isClassicDesign = useExperimentalFlag('classicDesign');
   if (isClassicDesign) return <BlogAuthorsListPageClassic {...props} />;
 
   const posts = getAllBlogItems()
