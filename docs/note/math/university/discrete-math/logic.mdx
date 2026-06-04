@@ -83,6 +83,19 @@ $$
 
 判断一个公式属于哪类，最朴素的办法就是列真值表。「公式是否可满足」这个问题（SAT）是计算机科学里第一个被证明 NP-完全的问题，地位很特殊。
 
+例：判断 $(p\to q)\to(\neg q\to\neg p)$ 是哪类公式。逐行列真值表（记 $A=p\to q$、$B=\neg q\to\neg p$）：
+
+| $p$ | $q$ | $p\to q$ | $\neg q\to\neg p$ | $A\to B$ |
+| :-: | :-: | :------: | :---------------: | :------: |
+|  0  |  0  |    1     |         1         |    1     |
+|  0  |  1  |    1     |         1         |    1     |
+|  1  |  0  |    0     |         0         |    1     |
+|  1  |  1  |    1     |         1         |    1     |
+
+最后一列恒为 $1$，故它是 **重言式**——这正是逆否等价 $p\to q\Leftrightarrow\neg q\to\neg p$ 的另一种说法。
+
+例：用真值表判断 $p\to(q\to r)$ 与 $(p\land q)\to r$ 是否等值。两式各有 $2^3=8$ 行，只需比较输出列。对照后会发现两列逐行相同（如 $p=q=1,r=0$ 时，左边 $1\to(1\to0)=1\to0=0$，右边 $(1\land1)\to0=1\to0=0；$ 其余各行同理），故二者 **等值**。这条规律叫 **输出律**（exportation），编程里「嵌套 `if` 等价于条件用 `&&` 连起来」就是它。
+
 ### 重要等值式
 
 若 $A\leftrightarrow B$ 是重言式，称 $A,B$ **等值**，记 $A\Leftrightarrow B$。等值式是公式化简的「运算法则」，相当于代数里的恒等式。
@@ -109,6 +122,47 @@ $$
 **蕴含等价** $p\to q\Leftrightarrow\neg p\lor q$ 是化简里最常用的一步：它把不好处理的 $\to$ 消成 $\neg$ 和 $\lor$，剩下的就能套德摩根律和分配律了。
 
 :::
+
+### 等值演算
+
+不列真值表、纯靠等值式一步步替换来证明等值或化简，称 **等值演算**。每一步都把局部子式换成等值的形式，整体真值不变。
+
+例：化简 $(p\lor q)\land(p\lor\neg q)$。
+
+$$
+\begin{aligned}
+(p\lor q)\land(p\lor\neg q)
+&\Leftrightarrow p\lor(q\land\neg q) &&\text{分配律（提取 }p\text{）}\\
+&\Leftrightarrow p\lor 0 &&\text{矛盾律}\\
+&\Leftrightarrow p &&\text{同一律}
+\end{aligned}
+$$
+
+例：证明 $\neg(p\to q)\Leftrightarrow p\land\neg q$，这是「否定一个蕴含」的标准结果。
+
+$$
+\begin{aligned}
+\neg(p\to q)
+&\Leftrightarrow\neg(\neg p\lor q) &&\text{蕴含等价}\\
+&\Leftrightarrow\neg\neg p\land\neg q &&\text{德摩根律}\\
+&\Leftrightarrow p\land\neg q &&\text{双重否定}
+\end{aligned}
+$$
+
+直觉上「并非『若 $p$ 则 $q$』」就是「$p$ 成立却 $q$ 不成立」——承诺被违背的唯一情形。
+
+例：证明 $(p\to q)\land(p\to r)\Leftrightarrow p\to(q\land r)$。
+
+$$
+\begin{aligned}
+(p\to q)\land(p\to r)
+&\Leftrightarrow(\neg p\lor q)\land(\neg p\lor r) &&\text{蕴含等价}\\
+&\Leftrightarrow\neg p\lor(q\land r) &&\text{分配律}\\
+&\Leftrightarrow p\to(q\land r) &&\text{蕴含等价}
+\end{aligned}
+$$
+
+化简到最后若得到 $1$ 就是重言式、得到 $0$ 就是矛盾式，所以等值演算也能用来判别公式类型。
 
 ### 范式
 
@@ -146,6 +200,50 @@ $$
 记口诀：**主析取看真行、用极小项**；**主合取看假行、用极大项**。两者互补，知道一个就能写出另一个。
 
 :::
+
+### 极小项与极大项的编号
+
+约定一个变元顺序（如 $p,q,r$），把每个极小项里的变元 **正则号为 $1$、否定号为 $0$**，读成二进制就是它的编号 $m_i$。极大项相反：变元正则号为 $0$、否定号为 $1$。
+
+例：三变元下 $m_5=m_{101}=p\land\neg q\land r$（它只在 $p=1,q=0,r=1$ 这行为真）；$M_5=M_{101}=\neg p\lor q\lor\neg r$（它只在 $p=1,q=0,r=1$ 这行为假）。同一编号的极小项与极大项互为否定：$\neg m_i\Leftrightarrow M_i$。
+
+由此有一条对偶关系：若真值表里真的行编号集合是 $S$，则
+
+$$
+\text{主析取范式}=\bigvee_{i\in S}m_i,\qquad
+\text{主合取范式}=\bigwedge_{i\notin S}M_i
+$$
+
+### 求主范式完整算例
+
+例：求 $p\to(q\land r)$ 的主析取范式与主合取范式。先列真值表（变元序 $p,q,r$，编号 $0\sim7$）：
+
+| 编号 | $p$ | $q$ | $r$ | $q\land r$ | $p\to(q\land r)$ |
+| :--: | :-: | :-: | :-: | :--------: | :--------------: |
+|  0   |  0  |  0  |  0  |     0      |        1         |
+|  1   |  0  |  0  |  1  |     0      |        1         |
+|  2   |  0  |  1  |  0  |     0      |        1         |
+|  3   |  0  |  1  |  1  |     1      |        1         |
+|  4   |  1  |  0  |  0  |     0      |        0         |
+|  5   |  1  |  0  |  1  |     0      |        0         |
+|  6   |  1  |  1  |  0  |     0      |        0         |
+|  7   |  1  |  1  |  1  |     1      |        1         |
+
+真的行是 $\set{0,1,2,3,7}$，假的行是 $\set{4,5,6}$。于是主析取范式取这五行的极小项：
+
+$$
+m_0\lor m_1\lor m_2\lor m_3\lor m_7
+=\neg p\land\neg q\land\neg r\ \lor\ \dots\ \lor\ p\land q\land r
+$$
+
+主合取范式取另外三行的极大项（编号 $4=100$、$5=101$、$6=110$）：
+
+$$
+M_4\land M_5\land M_6
+=(\neg p\lor q\lor r)\land(\neg p\lor q\lor\neg r)\land(\neg p\lor\neg q\lor r)
+$$
+
+两者所用的编号正好互补（$\set{0,1,2,3,7}$ 与 $\set{4,5,6}$ 并起来是全部 $8$ 个），这是检验有没有写漏的好办法。也可不画真值表、直接由等值演算化成主析取范式：把公式化成析取范式后，对每个缺变元的简单合取式补上 $(x\lor\neg x)$ 再展开即可。
 
 ## 推理
 
@@ -185,6 +283,56 @@ $$
 
 :::
 
+#### 直接证法算例
+
+例：前提 $p\to q$、$q\to r$、$p$，证结论 $r$。从前提正向推：
+
+$$
+\begin{aligned}
+&(1)\ p &&\text{前提}\\
+&(2)\ p\to q &&\text{前提}\\
+&(3)\ q &&(1)(2)\ \text{假言推理}\\
+&(4)\ q\to r &&\text{前提}\\
+&(5)\ r &&(3)(4)\ \text{假言推理}
+\end{aligned}
+$$
+
+#### 附加前提法算例
+
+例：前提 $p\to(q\to r)$、$p$，证结论 $q\to r$。结论是蕴含式，把前件 $q$ 当附加前提加入：
+
+$$
+\begin{aligned}
+&(1)\ q &&\text{附加前提}\\
+&(2)\ p &&\text{前提}\\
+&(3)\ p\to(q\to r) &&\text{前提}\\
+&(4)\ q\to r &&(2)(3)\ \text{假言推理}\\
+&(5)\ r &&(1)(4)\ \text{假言推理}
+\end{aligned}
+$$
+
+推出 $r$，故附加前提下结论成立，由 CP 规则原结论 $q\to r$ 得证。
+
+#### 归谬法算例
+
+例：前提 $p\lor q$、$p\to r$、$q\to r$，证结论 $r$（这正是「构造性二难」的一个特例）。把结论的否定 $\neg r$ 加入前提找矛盾：
+
+$$
+\begin{aligned}
+&(1)\ \neg r &&\text{否定结论}\\
+&(2)\ p\to r &&\text{前提}\\
+&(3)\ \neg p &&(1)(2)\ \text{拒取式}\\
+&(4)\ q\to r &&\text{前提}\\
+&(5)\ \neg q &&(1)(4)\ \text{拒取式}\\
+&(6)\ \neg p\land\neg q &&(3)(5)\ \text{合取}\\
+&(7)\ p\lor q &&\text{前提}\\
+&(8)\ \neg(p\lor q) &&(6)\ \text{德摩根律}\\
+&(9)\ (p\lor q)\land\neg(p\lor q) &&(7)(8)\ \text{矛盾}
+\end{aligned}
+$$
+
+得到矛盾 $0$，故 $\neg r$ 与前提不相容，结论 $r$ 成立。
+
 ## 谓词逻辑
 
 命题逻辑把整句话当成一个不可分的真值，于是无法刻画「**所有人都会死**」与「**苏格拉底是人**」推出「**苏格拉底会死**」这种推理——因为这里的关键是句子内部的「所有」和「是人」。**谓词逻辑**（Predicate Logic，又称一阶逻辑）深入句子内部，引入 **谓词** 和 **量词**。
@@ -206,6 +354,26 @@ $$
 - 存在量词通常配 **合取**：「有学生努力」是 $\exists x\,(S(x)\land H(x))$，而不是 $\exists x\,(S(x)\to H(x))$。
 
 :::
+
+### 翻译算例
+
+设个体域为全体人，$S(x)$：「$x$ 是学生」，$P(x)$：「$x$ 用功」，$M(x,y)$：「$x$ 认识 $y$」。
+
+例：「所有学生都用功」译为 $\forall x\,(S(x)\to P(x))$。若误写成 $\forall x\,(S(x)\land P(x))$，意思变成「每个人既是学生又用功」——把非学生也卷进来了，错。
+
+例：「有的学生用功」译为 $\exists x\,(S(x)\land P(x))$。若误写成 $\exists x\,(S(x)\to P(x))$，因为蕴含「前件假即真」，只要存在 **任何一个非学生**（让 $S(x)$ 假）整句就为真，跟「有学生用功」毫无关系，错得离谱。
+
+例：「没有学生不用功」。先直译为 $\neg\exists x\,(S(x)\land\neg P(x))$，再用量词否定律推进否定：
+
+$$
+\neg\exists x\,(S(x)\land\neg P(x))
+\Leftrightarrow\forall x\,\neg(S(x)\land\neg P(x))
+\Leftrightarrow\forall x\,(S(x)\to P(x))
+$$
+
+化回了「所有学生都用功」——两种说法等值，这也验证了翻译没错。
+
+例：「每个学生都认识某个用功的人」译为 $\forall x\,\bigl(S(x)\to\exists y\,(P(y)\land M(x,y))\bigr)$。注意 $\exists y$ 在 $\forall x$ 的辖域内，所以「某个用功的人」可以因学生而异——这正是 $\forall\exists$ 次序的含义。
 
 ### 约束变元与自由变元
 
@@ -293,3 +461,17 @@ $$
 4. 用辖域扩张律把量词逐个提到最前。
 
 前束范式把「量词结构」和「命题结构」彻底分开，是判定、模型论里进一步处理（如 Skolem 化）的标准起点。
+
+例：求 $\forall x\,P(x)\to\exists x\,Q(x)$ 的前束范式。两个量词都用了 $x$，直接提取会冲突，所以先换名再提取：
+
+$$
+\begin{aligned}
+\forall x\,P(x)\to\exists x\,Q(x)
+&\Leftrightarrow\neg\forall x\,P(x)\lor\exists x\,Q(x) &&\text{蕴含等价}\\
+&\Leftrightarrow\exists x\,\neg P(x)\lor\exists x\,Q(x) &&\text{量词否定}\\
+&\Leftrightarrow\exists x\,\neg P(x)\lor\exists y\,Q(y) &&\text{换名}\\
+&\Leftrightarrow\exists x\,\exists y\,(\neg P(x)\lor Q(y)) &&\text{辖域扩张}
+\end{aligned}
+$$
+
+母式 $\neg P(x)\lor Q(y)$ 已不含量词，前缀 $\exists x\,\exists y$ 即为所求。若中途不换名、把两个 $\exists x$ 直接合并，会错误地强迫「不用功」和「用功」指同一个 $x$，含义就变了——这是求前束范式最常见的错。

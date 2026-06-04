@@ -79,6 +79,12 @@ $$
 
 **凑微分** 是链式法则的逆用，核心是 **看出某部分恰是另一部分的导数**，把它「收」进微分号里。比如 $\int 2x\,e^{x^2}\,\mathrm{d}x$ 中，$2x\,\mathrm{d}x=\mathrm{d}(x^2)$，于是积分变成 $\int e^{x^2}\,\mathrm{d}(x^2)=e^{x^2}+C$。常用凑法：$x\,\mathrm{d}x=\dfrac12\mathrm{d}(x^2)$、$\dfrac{1}{x}\mathrm{d}x=\mathrm{d}(\ln x)$、$\dfrac{1}{\sqrt x}\mathrm{d}x=2\,\mathrm{d}(\sqrt x)$、$\cos x\,\mathrm{d}x=\mathrm{d}(\sin x)$。
 
+例（凑对数）：$\int\dfrac{\mathrm{d}x}{x\ln x}$。$\dfrac{\mathrm{d}x}{x}=\mathrm{d}(\ln x)$，化为 $\int\dfrac{\mathrm{d}(\ln x)}{\ln x}=\ln|\ln x|+C$。
+
+例（凑三角）：$\int\tan x\,\mathrm{d}x=\int\dfrac{\sin x}{\cos x}\,\mathrm{d}x=-\int\dfrac{\mathrm{d}(\cos x)}{\cos x}=-\ln|\cos x|+C$。
+
+例（凑成 $\arctan$）：$\int\dfrac{\mathrm{d}x}{x^2+2x+5}=\int\dfrac{\mathrm{d}(x+1)}{(x+1)^2+4}=\dfrac12\arctan\dfrac{x+1}{2}+C$。**先配方** 把分母凑成 $u^2+a^2$ 是这类题的通用前置步骤。
+
 **分部积分** 是乘积求导法则的逆用，适合 **两类不同函数相乘**（如多项式乘指数、多项式乘三角、对数 / 反三角单独出现）。它把一个难积的积分换成另一个（希望更易积的）积分。
 
 :::tip
@@ -87,11 +93,87 @@ $$
 
 :::
 
+例（多项式乘指数）：$\int x e^x\,\mathrm{d}x$。按口诀取 $u=x$、$\mathrm{d}v=e^x\,\mathrm{d}x$：
+
+$$
+\int x e^x\,\mathrm{d}x=x e^x-\int e^x\,\mathrm{d}x=x e^x-e^x+C=(x-1)e^x+C
+$$
+
+例（对数单独出现）：$\int\ln x\,\mathrm{d}x$。取 $u=\ln x$、$\mathrm{d}v=\mathrm{d}x$：
+
+$$
+\int\ln x\,\mathrm{d}x=x\ln x-\int x\cdot\frac1x\,\mathrm{d}x=x\ln x-x+C
+$$
+
+例（循环法）：$I=\int e^x\sin x\,\mathrm{d}x$。两次分部后原积分 **自己冒出来**，移项即解：
+
+$$
+\begin{aligned}
+I&=\int\sin x\,\mathrm{d}(e^x)=e^x\sin x-\int e^x\cos x\,\mathrm{d}x\\
+&=e^x\sin x-\left(e^x\cos x+\int e^x\sin x\,\mathrm{d}x\right)=e^x(\sin x-\cos x)-I
+\end{aligned}
+$$
+
+故 $2I=e^x(\sin x-\cos x)$，$I=\dfrac{e^x(\sin x-\cos x)}{2}+C$。**两次分部要朝同一方向（都把 $e^x$ 凑进微分），否则会转回原样。**
+
+例（递推降幂）：$I_n=\int\sin^n x\,\mathrm{d}x$。拆 $\sin^n=\sin^{n-1}\sin$，对 $\sin x\,\mathrm{d}x=-\mathrm{d}(\cos x)$ 分部，得递推
+
+$$
+I_n=-\frac{1}{n}\sin^{n-1}x\cos x+\frac{n-1}{n}I_{n-2}
+$$
+
+由 $I_0=x$、$I_1=-\cos x$ 逐级降幂即可积出任意 $\sin^n x$。
+
 ### 特殊技巧
 
 - **三角代换**：消去根号。$\sqrt{a^2-x^2}$ 令 $x=a\sin t$；$\sqrt{a^2+x^2}$ 令 $x=a\tan t$；$\sqrt{x^2-a^2}$ 令 $x=a\sec t$。借助 $\sin^2+\cos^2=1$、$1+\tan^2=\sec^2$ 把根号「开」出来。
 - **有理函数积分**：先用 **部分分式分解** 把分式拆成简单分式之和，再逐项积。任何有理函数原则上都能这样积出。
 - **三角有理式**：万能代换 $t=\tan\dfrac{x}{2}$，把 $\sin x,\cos x$ 全部有理化。
+
+#### 部分分式分解算例
+
+例：$\int\dfrac{\mathrm{d}x}{x^2-1}$。分母因式分解 $x^2-1=(x-1)(x+1)$，设
+
+$$
+\frac{1}{(x-1)(x+1)}=\frac{A}{x-1}+\frac{B}{x+1}
+$$
+
+两边乘 $(x-1)(x+1)$ 得 $1=A(x+1)+B(x-1)$。代 $x=1$ 得 $A=\dfrac12$，代 $x=-1$ 得 $B=-\dfrac12$（**「赋值法」**：代入让某因子为零的点，瞬间定出系数）。于是
+
+$$
+\int\frac{\mathrm{d}x}{x^2-1}=\frac12\int\frac{\mathrm{d}x}{x-1}-\frac12\int\frac{\mathrm{d}x}{x+1}=\frac12\ln\left|\frac{x-1}{x+1}\right|+C
+$$
+
+例（含不可约二次因子）：$\dfrac{x+1}{x(x^2+1)}=\dfrac{A}{x}+\dfrac{Bx+C}{x^2+1}$。通分对照得 $A=1,B=-1,C=1$，于是
+
+$$
+\int\frac{x+1}{x(x^2+1)}\,\mathrm{d}x=\ln|x|-\frac12\ln(x^2+1)+\arctan x+C
+$$
+
+不可约二次因子上方要配 **一次式** $Bx+C$，积出来是「$\ln$ + $\arctan$」的组合。
+
+#### 三角代换算例
+
+例：$\int\sqrt{a^2-x^2}\,\mathrm{d}x$（$a>0$）。令 $x=a\sin t$（$t\in[-\frac\pi2,\frac\pi2]$），则 $\sqrt{a^2-x^2}=a\cos t$、$\mathrm{d}x=a\cos t\,\mathrm{d}t$：
+
+$$
+\begin{aligned}
+\int\sqrt{a^2-x^2}\,\mathrm{d}x&=\int a\cos t\cdot a\cos t\,\mathrm{d}t=a^2\int\cos^2 t\,\mathrm{d}t\\
+&=\frac{a^2}{2}\left(t+\frac{\sin 2t}{2}\right)+C=\frac{a^2}{2}\arcsin\frac xa+\frac{x\sqrt{a^2-x^2}}{2}+C
+\end{aligned}
+$$
+
+最后用 $\sin 2t=2\sin t\cos t=\dfrac{2x}{a}\cdot\dfrac{\sqrt{a^2-x^2}}{a}$ **变量回代**——三角代换收尾务必画直角三角形把 $t$ 换回 $x$。
+
+#### 万能代换算例
+
+例：$\int\dfrac{\mathrm{d}x}{1+\sin x}$。令 $t=\tan\dfrac x2$，则 $\sin x=\dfrac{2t}{1+t^2}$、$\mathrm{d}x=\dfrac{2}{1+t^2}\,\mathrm{d}t$：
+
+$$
+\int\frac{\mathrm{d}x}{1+\sin x}=\int\frac{\frac{2}{1+t^2}}{1+\frac{2t}{1+t^2}}\,\mathrm{d}t=\int\frac{2}{(1+t)^2}\,\mathrm{d}t=-\frac{2}{1+t}+C=-\frac{2}{1+\tan\frac x2}+C
+$$
+
+万能代换 **必能** 把三角有理式化成有理函数，但常使式子变复杂；若被积函数关于 $\sin x$ 或 $\cos x$ 有特殊奇偶性，优先用更省力的凑微分。
 
 ## 定积分
 
@@ -179,6 +261,54 @@ $$
 \frac{\mathrm{d}}{\mathrm{d}x}\int_{\varphi(x)}^{\psi(x)}f(t)\,\mathrm{d}t=f(\psi(x))\psi'(x)-f(\varphi(x))\varphi'(x)
 $$
 
+例（变上限求导求极限）：$\lim\limits_{x\to 0}\dfrac{\int_0^x\sin t^2\,\mathrm{d}t}{x^3}$ 是 $\dfrac00$ 型，洛必达对分子用变上限求导公式：
+
+$$
+\lim_{x\to 0}\frac{\int_0^x\sin t^2\,\mathrm{d}t}{x^3}\xlongequal{\frac00}\lim_{x\to 0}\frac{\sin x^2}{3x^2}\overset{\sin x^2\sim x^2}{=}\frac13
+$$
+
+## 定积分计算技巧
+
+定积分常常 **不必先求原函数**，靠对称性、区间变换能直接出结果。
+
+### 对称性与奇偶性
+
+被积区间关于原点对称 $[-a,a]$ 时，先看被积函数的奇偶（见前文性质）。
+
+例：$\displaystyle\int_{-1}^{1}\dfrac{x^2\sin x}{1+x^4}\,\mathrm{d}x$。被积函数是奇函数（分子 $x^2\sin x$ 奇、分母偶），故积分为 $0$，一步到位。
+
+### 区间再现公式
+
+令 $x\to a+b-x$ 做换元，积分值不变，得 **区间再现**（又称 King 性质）：
+
+$$
+\int_a^b f(x)\,\mathrm{d}x=\int_a^b f(a+b-x)\,\mathrm{d}x
+$$
+
+把原式与代换后的式子 **相加**，常能让难算的部分对消。
+
+例：$I=\displaystyle\int_0^{\pi/2}\dfrac{\sin x}{\sin x+\cos x}\,\mathrm{d}x$。令 $x\to\dfrac\pi2-x$，$\sin\leftrightarrow\cos$ 互换得 $I=\displaystyle\int_0^{\pi/2}\dfrac{\cos x}{\cos x+\sin x}\,\mathrm{d}x$。两式相加：
+
+$$
+2I=\int_0^{\pi/2}\frac{\sin x+\cos x}{\sin x+\cos x}\,\mathrm{d}x=\int_0^{\pi/2}1\,\mathrm{d}x=\frac\pi2\Rightarrow I=\frac\pi4
+$$
+
+### 点火公式（Wallis 公式）
+
+$$
+\int_0^{\pi/2}\sin^n x\,\mathrm{d}x=\int_0^{\pi/2}\cos^n x\,\mathrm{d}x=
+\begin{cases}
+\dfrac{(n-1)!!}{n!!}\cdot\dfrac\pi2, & n\text{ 为偶数}\\[6pt]
+\dfrac{(n-1)!!}{n!!}, & n\text{ 为奇数}
+\end{cases}
+$$
+
+口诀「**偶数加 $\frac\pi2$、奇数不加**」：$n$ 为偶才点上 $\dfrac\pi2$ 这把「火」。其中 $n!!$ 是双阶乘（隔一个相乘）。它由前面 $\sin^n$ 的递推公式代入上下限得到。
+
+例：$\displaystyle\int_0^{\pi/2}\sin^6 x\,\mathrm{d}x=\dfrac{5!!}{6!!}\cdot\dfrac\pi2=\dfrac{5\cdot3\cdot1}{6\cdot4\cdot2}\cdot\dfrac\pi2=\dfrac{15}{48}\cdot\dfrac\pi2=\dfrac{5\pi}{32}$。
+
+例：$\displaystyle\int_0^{\pi/2}\cos^5 x\,\mathrm{d}x=\dfrac{4!!}{5!!}=\dfrac{4\cdot2}{5\cdot3\cdot1}=\dfrac{8}{15}$（奇数不加 $\frac\pi2$）。
+
 ## 反常积分
 
 把定积分推广到 **无穷区间** 或 **无界函数**，都靠取极限来定义；极限存在叫 **收敛**，否则 **发散**。
@@ -219,6 +349,32 @@ $$
 
 实用做法是把被积函数与 $\dfrac{1}{x^p}$ 比较：在 $+\infty$ 处看「分母最高阶」定 $p$，在瑕点处看「奇性强弱」定 $p$，再对照上面的临界值。
 
+例（无穷区间判敛）：$\displaystyle\int_1^{+\infty}\dfrac{\mathrm{d}x}{x^2+x}$。当 $x\to+\infty$ 时 $\dfrac{1}{x^2+x}\sim\dfrac{1}{x^2}$，取 $g=\dfrac{1}{x^2}$，极限 $\lim\limits_{x\to+\infty}\dfrac{1/(x^2+x)}{1/x^2}=1\in(0,\infty)$，与 $p=2>1$ 的 $p$ 积分同敛散，故 **收敛**。
+
+例（瑕积分判敛）：$\displaystyle\int_0^1\dfrac{\mathrm{d}x}{\sqrt{x}\,(1+x)}$，瑕点在 $x=0$。当 $x\to 0^+$ 时被积函数 $\sim\dfrac{1}{\sqrt x}=\dfrac{1}{x^{1/2}}$，对应 $p=\dfrac12<1$，故 **收敛**。判瑕积分只需看 **瑕点附近** 的奇性强弱。
+
+### $\Gamma$ 函数
+
+阶乘向实数的推广是 **$\Gamma$ 函数**（Gamma Function）：
+
+$$
+\Gamma(s)=\int_0^{+\infty}x^{s-1}e^{-x}\,\mathrm{d}x\quad(s>0)
+$$
+
+它是一个含参变量的反常积分，在 $s>0$ 时收敛。对 $\Gamma(s+1)=\int_0^\infty x^s e^{-x}\,\mathrm{d}x$ 分部积分可得 **递推关系**：
+
+$$
+\Gamma(s+1)=s\,\Gamma(s),\qquad \Gamma(n+1)=n!\ (n\in\mathbb{N})
+$$
+
+所以 $\Gamma$ 正是阶乘的连续版本。一个常用的特殊值是 $\Gamma\!\left(\dfrac12\right)=\sqrt\pi$，它等价于著名的 **高斯积分**：令 $x=t^2$ 得
+
+$$
+\Gamma\!\left(\frac12\right)=\int_0^{+\infty}x^{-1/2}e^{-x}\,\mathrm{d}x=2\int_0^{+\infty}e^{-t^2}\,\mathrm{d}t=\sqrt\pi
+$$
+
+即 $\displaystyle\int_{-\infty}^{+\infty}e^{-t^2}\,\mathrm{d}t=\sqrt\pi$——它在概率论的正态分布里反复登场。
+
 ## 定积分的几何应用
 
 定积分应用的统一思路是 **微元法**：在区间上取一小段 $[x,x+\mathrm{d}x]$，写出该微元对应的量 $\mathrm{d}A$（面积 / 体积 / 弧长……），再积分累加。关键是把「微元」近似成最规则的形状。
@@ -232,6 +388,18 @@ $$
 | **旋转曲面面积**            | $S=2\pi\int_a^b f(x)\sqrt{1+f'^2(x)}\,\mathrm{d}x$ |
 
 弧长公式来自勾股定理：一小段弧近似为斜边 $\sqrt{(\mathrm{d}x)^2+(\mathrm{d}y)^2}=\sqrt{1+f'^2}\,\mathrm{d}x$。绕 $x$ 轴旋转时，微元是半径 $f(x)$、厚 $\mathrm{d}x$ 的薄圆盘，体积 $\pi f^2\,\mathrm{d}x$。
+
+例（两曲线围成面积）：$y=x^2$ 与 $y=\sqrt{x}$ 在 $[0,1]$ 上围成的面积。$\sqrt x\ge x^2$，故
+
+$$
+A=\int_0^1(\sqrt x-x^2)\,\mathrm{d}x=\left[\frac23 x^{3/2}-\frac13 x^3\right]_0^1=\frac23-\frac13=\frac13
+$$
+
+例（旋转体体积）：$y=\sin x$（$0\le x\le\pi$）绕 $x$ 轴旋转。用点火公式算 $\int_0^\pi\sin^2 x\,\mathrm{d}x=\dfrac\pi2$：
+
+$$
+V=\pi\int_0^\pi\sin^2 x\,\mathrm{d}x=\pi\cdot\frac\pi2=\frac{\pi^2}{2}
+$$
 
 ## 定积分的物理应用
 

@@ -71,6 +71,34 @@ $$
 
 :::
 
+例（比较法）：判 $\sum\dfrac{1}{n^2+n}$。通项 $\dfrac{1}{n^2+n}<\dfrac{1}{n^2}$，而 $\sum\dfrac{1}{n^2}$（$p=2>1$）收敛，由比较法 **收敛**。这里也可用裂项算出和：$\sum\dfrac{1}{n(n+1)}=\sum\left(\dfrac1n-\dfrac{1}{n+1}\right)=1$。
+
+例（比较极限形式）：判 $\sum\sin\dfrac{1}{n}$。$n\to\infty$ 时 $\sin\dfrac1n\sim\dfrac1n$，与调和级数 $\sum\dfrac1n$ 同敛散，故 **发散**。取等价无穷小定标尺，是比较极限形式的常用前置。
+
+例（比值法）：判 $\sum\dfrac{2^n}{n!}$。
+
+$$
+\rho=\lim_{n\to\infty}\frac{2^{n+1}/(n+1)!}{2^n/n!}=\lim_{n\to\infty}\frac{2}{n+1}=0<1
+$$
+
+故 **收敛**。带阶乘、指数的通项，相邻一比大片约掉——这是比值法的主场。
+
+例（根值法）：判 $\sum\left(\dfrac{n}{2n+1}\right)^n$。
+
+$$
+\rho=\lim_{n\to\infty}\sqrt[n]{\left(\frac{n}{2n+1}\right)^n}=\lim_{n\to\infty}\frac{n}{2n+1}=\frac12<1
+$$
+
+故 **收敛**。整体是 $n$ 次方时，开 $n$ 次方一步到位。
+
+例（积分判别法）：判 $\sum\dfrac{1}{n\ln n}$（$n\ge 2$）。取 $f(x)=\dfrac{1}{x\ln x}$（正、单减），
+
+$$
+\int_2^{+\infty}\frac{\mathrm{d}x}{x\ln x}=\Big[\ln\ln x\Big]_2^{+\infty}=+\infty
+$$
+
+积分发散，故级数 **发散**。这类「$\dfrac1n$ 再乘对数」的通项，比值根值都失效（$\rho=1$），积分判别法最利落。
+
 ## 任意项级数
 
 项有正有负时，相消可能帮上忙，判别要换思路。
@@ -87,6 +115,8 @@ $$
 若 $u_n>0$ **单调递减** 且 $\lim u_n=0$，则交错级数 $\sum(-1)^{n-1}u_n$ 收敛。
 
 直觉：部分和像钟摆一样左右摆动，每次摆幅 $u_n$ 越来越小且趋于零，于是越摆越窄、夹逼到一个极限。两个条件「单调递减」「趋于零」缺一不可。
+
+例：判 $\sum\dfrac{(-1)^{n-1}}{\sqrt n}$ 的敛散性与类型。$u_n=\dfrac{1}{\sqrt n}$ 单调递减且趋于零，由莱布尼茨判别法 **收敛**；但 $\sum|u_n|=\sum\dfrac{1}{\sqrt n}$（$p=\dfrac12<1$）发散，故是 **条件收敛**。**任意项级数的标准流程：先查绝对（看 $\sum|u_n|$），再用莱布尼茨补判条件收敛。**
 
 ## 幂级数
 
@@ -112,6 +142,21 @@ $$
 
 确定 $R$ 后，把两个端点逐一代入化成数项级数判敛散，才能写出完整 **收敛域**。
 
+例（求收敛域，含端点判定）：$\sum\dfrac{x^n}{n}$。$a_n=\dfrac1n$，收敛半径
+
+$$
+R=\lim_{n\to\infty}\left|\frac{a_n}{a_{n+1}}\right|=\lim_{n\to\infty}\frac{n+1}{n}=1
+$$
+
+故 $|x|<1$ 收敛。再 **逐一代入端点**：
+
+- $x=1$：$\sum\dfrac1n$ 是调和级数，**发散**。
+- $x=-1$：$\sum\dfrac{(-1)^n}{n}$ 由莱布尼茨判别 **收敛**。
+
+故收敛域为 $[-1,1)$——左闭右开。**两端点必须分别代入判断，敛散常常不对称。**
+
+例（缺项级数）：$\sum\dfrac{x^{2n}}{2^n}$ 缺奇次项，直接套 $\dfrac{a_n}{a_{n+1}}$ 公式会出错，改用 **对变量直接做比值法**：$\lim\left|\dfrac{x^{2n+2}/2^{n+1}}{x^{2n}/2^n}\right|=\dfrac{x^2}{2}<1$，得 $|x|<\sqrt2$，即 $R=\sqrt2$。缺项幂级数一律回到「对 $x$ 直接用比值 / 根值」最稳。
+
 ### 运算性质
 
 在收敛区间内，幂级数可 **逐项求导** 和 **逐项积分**，收敛半径不变（端点的敛散性可能改变）。
@@ -122,6 +167,22 @@ $$
 
 幂级数在收敛域上定义了一个函数 $S(x)$，称 **和函数**。求和函数的常用招数：通过逐项求导 / 积分把陌生级数 **凑成几何级数** $\sum x^n=\dfrac{1}{1-x}$，求出闭形式后再积 / 导回去。
 
+例（逐项积分求和）：求 $S(x)=\sum\limits_{n=1}^{\infty}\dfrac{x^n}{n}$（$|x|<1$）。逐项求导把分母的 $n$ 消掉，凑成几何级数：
+
+$$
+S'(x)=\sum_{n=1}^{\infty}x^{n-1}=\frac{1}{1-x}
+$$
+
+再积回去，注意 $S(0)=0$：$S(x)=\displaystyle\int_0^x\dfrac{\mathrm{d}t}{1-t}=-\ln(1-x)$。**求导消去 $n$、积分消去 $\dfrac1n$——分母 / 分子带 $n$ 时分别对应这两招。**
+
+例（逐项求导求和）：求 $S(x)=\sum\limits_{n=1}^{\infty}nx^{n-1}$（$|x|<1$）。它正是 $\sum x^n=\dfrac{1}{1-x}$ 的逐项导数，故
+
+$$
+S(x)=\left(\frac{1}{1-x}\right)'=\frac{1}{(1-x)^2}
+$$
+
+由此还能算数项级数：取 $x=\dfrac12$ 得 $\sum\limits_{n=1}^{\infty}\dfrac{n}{2^{n-1}}=\dfrac{1}{(1/2)^2}=4$。
+
 ### 函数展开为幂级数
 
 反过来，把一个函数写成幂级数，用 **泰勒级数**：
@@ -131,6 +192,20 @@ f(x)=\sum_{n=0}^{\infty}\frac{f^{(n)}(x_0)}{n!}(x-x_0)^n
 $$
 
 注意「能写出泰勒级数」和「级数真等于 $f$」是两回事——还需余项 $R_n\to 0$。实用中很少硬算各阶导数，而是 **套用已知展开 + 变量代换 + 四则 / 逐项求导积分** 来凑。
+
+例（变量代换）：把 $\dfrac{1}{1+x^2}$ 展成幂级数。在 $\dfrac{1}{1-t}=\sum t^n$ 里令 $t=-x^2$：
+
+$$
+\frac{1}{1+x^2}=\sum_{n=0}^{\infty}(-x^2)^n=\sum_{n=0}^{\infty}(-1)^n x^{2n}\quad(|x|<1)
+$$
+
+例（逐项积分得新展开）：对上式逐项积分（从 $0$ 到 $x$）得 $\arctan x$ 的展开：
+
+$$
+\arctan x=\int_0^x\frac{\mathrm{d}t}{1+t^2}=\sum_{n=0}^{\infty}\frac{(-1)^n x^{2n+1}}{2n+1}\quad(-1\le x\le 1)
+$$
+
+代 $x=1$ 顺带得到著名的 **莱布尼茨级数** $\dfrac\pi4=1-\dfrac13+\dfrac15-\dfrac17+\cdots$。**新展开很少硬求导，多半是从已知式代换、求导、积分变出来的。**
 
 ### 常用展开（参见 [导数与微分](derivative)）
 
@@ -212,3 +287,65 @@ $$
 - **奇延拓**：补成奇函数，展开成只含正弦的 **正弦级数**。
 
 延拓的选择取决于需要——比如解一端固定的弦振动 / 热传导边值问题时，边界条件决定了该用正弦还是余弦延拓。
+
+### 傅里叶展开算例
+
+例（周期 $2\pi$ 函数）：把 $f(x)=x$（$-\pi<x<\pi$，按 $2\pi$ 周期延拓）展成傅里叶级数。$f$ 是 **奇函数**，故 $a_n=0$，只算 $b_n$：
+
+$$
+b_n=\frac{1}{\pi}\int_{-\pi}^{\pi}x\sin nx\,\mathrm{d}x=\frac{2}{\pi}\int_0^{\pi}x\sin nx\,\mathrm{d}x
+$$
+
+分部积分（$u=x$、$\mathrm{d}v=\sin nx\,\mathrm{d}x$）：
+
+$$
+\int_0^\pi x\sin nx\,\mathrm{d}x=\left[-\frac{x\cos nx}{n}\right]_0^\pi+\frac1n\int_0^\pi\cos nx\,\mathrm{d}x=-\frac{\pi\cos n\pi}{n}=\frac{(-1)^{n-1}\pi}{n}
+$$
+
+故 $b_n=\dfrac{2(-1)^{n-1}}{n}$，得展开
+
+$$
+x=2\sum_{n=1}^{\infty}\frac{(-1)^{n-1}}{n}\sin nx\quad(-\pi<x<\pi)
+$$
+
+在间断点 $x=\pi$（跳跃）处，级数收敛于左右极限平均值 $\dfrac{\pi+(-\pi)}{2}=0$，正与 $\sin n\pi=0$ 吻合，印证了狄利克雷收敛定理。
+
+例（半区间正弦延拓）：把 $f(x)=1$（$0<x<\pi$）展成 **正弦级数**。作奇延拓后只有 $b_n$：
+
+$$
+b_n=\frac{2}{\pi}\int_0^\pi 1\cdot\sin nx\,\mathrm{d}x=\frac{2}{\pi}\cdot\frac{1-\cos n\pi}{n}=\frac{2}{\pi}\cdot\frac{1-(-1)^n}{n}
+$$
+
+$n$ 为偶时为 $0$、$n$ 为奇时为 $\dfrac{4}{n\pi}$，故 $1=\dfrac4\pi\sum\limits_{k=0}^{\infty}\dfrac{\sin(2k+1)x}{2k+1}$（$0<x<\pi$）——这正是方波的傅里叶展开。
+
+## 数项级数求和技巧
+
+判完敛散，有时还要 **求出和**。除了借幂级数和函数（上文），常用三招。
+
+### 裂项相消
+
+把通项拆成 **相邻两项之差**，求和时中间大片对消，只剩头尾。
+
+例：$\sum\limits_{n=1}^{\infty}\dfrac{1}{n(n+1)}=\sum\limits_{n=1}^{\infty}\left(\dfrac1n-\dfrac{1}{n+1}\right)$。部分和 $S_N=1-\dfrac{1}{N+1}\to 1$，故和为 $1$。
+
+例：$\sum\limits_{n=1}^{\infty}\dfrac{1}{n(n+2)}=\dfrac12\sum\left(\dfrac1n-\dfrac{1}{n+2}\right)$。隔一项相消，留下 $\dfrac12\left(1+\dfrac12\right)=\dfrac34$。
+
+### 错位相减
+
+形如 $\sum n x^n$（**等差 × 等比**）的和，用 $S-xS$ 错开一位相减，把等差因子「磨平」成等比。
+
+例：求 $S=\sum\limits_{n=1}^{N}n\,x^n$（$x\ne 1$）。
+
+$$
+\begin{aligned}
+S&=x+2x^2+3x^3+\dots+Nx^N\\
+xS&=\phantom{x+}\ x^2+2x^3+\dots+(N-1)x^N+Nx^{N+1}\\
+S-xS&=x+x^2+\dots+x^N-Nx^{N+1}=\frac{x(1-x^N)}{1-x}-Nx^{N+1}
+\end{aligned}
+$$
+
+故 $S=\dfrac{1}{1-x}\left[\dfrac{x(1-x^N)}{1-x}-Nx^{N+1}\right]$。当 $|x|<1$、$N\to\infty$ 时 $S\to\dfrac{x}{(1-x)^2}$，与前面逐项求导的结果一致。
+
+### Abel 求和
+
+**Abel 求和**（Abel Summation，分部求和）是积分分部的离散版：把 $\sum a_n b_n$ 中一个因子换成它的部分和，重排求和次序。它常用来证 **Dirichlet 判别法 / Abel 判别法**——当 $\sum a_n$ 部分和有界、$b_n$ 单调趋零时，$\sum a_n b_n$ 收敛。莱布尼茨判别法正是它最简单的特例（取 $a_n=(-1)^{n-1}$，部分和在 $0,1$ 间有界）。

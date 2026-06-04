@@ -40,6 +40,18 @@ $$
 
 :::
 
+用定义证极限的套路是 **「逆推 $N$」**：从要证的 $|a_n-A|<\varepsilon$ 出发，把它放大成一个关于 $n$ 的简单不等式，再反解出 $n$ 应该多大。
+
+例：证 $\lim\limits_{n\to\infty}\dfrac{n}{n+1}=1$。对任意 $\varepsilon>0$，
+
+$$
+\left|\frac{n}{n+1}-1\right|=\frac{1}{n+1}<\frac{1}{n}<\varepsilon
+$$
+
+只要 $n>\dfrac{1}{\varepsilon}$ 即可。于是取 $N=\left\lfloor\dfrac{1}{\varepsilon}\right\rfloor$，当 $n>N$ 时上式成立，故极限为 $1$。这里把 $\dfrac{1}{n+1}$ 放大成 $\dfrac{1}{n}$ 是为了让反解 $n$ 更干净——证明里 **放大要适度**，放过头会反解不出来。
+
+例：证 $\lim\limits_{n\to\infty}\sqrt[n]{a}=1$（$a>1$）。记 $\sqrt[n]{a}-1=t_n>0$，则 $a=(1+t_n)^n\ge 1+nt_n$（伯努利不等式），得 $t_n\le\dfrac{a-1}{n}$。对任意 $\varepsilon>0$，取 $N=\left\lfloor\dfrac{a-1}{\varepsilon}\right\rfloor$，当 $n>N$ 时 $|\sqrt[n]{a}-1|=t_n<\varepsilon$。
+
 ### 收敛准则
 
 - **单调有界准则**：单调有界数列必有极限。
@@ -49,6 +61,41 @@ $$
 单调有界准则的直觉很形象：一个一直往上走（递增）却又被天花板（上界）挡住的数列，没法发散到无穷，也没法来回震荡，只能越挤越紧地逼近某个值——那个值就是极限。它的好处是 **不需要事先知道极限是多少** 就能断定收敛，这是后面定义 $e$ 的关键。
 
 柯西准则同样不依赖极限值本身：它说收敛等价于「项与项之间最终要无限靠拢」。这把「收敛」从「靠近某个外部的 $A$」改写成了数列 **自身的内部性质**。
+
+### Stolz 定理
+
+**Stolz 定理**（Stolz–Cesàro Theorem）是「数列版的洛必达」，专治 $\dfrac\infty\infty$ 与 $\dfrac00$ 型的数列极限。$\dfrac\ast\infty$ 型（$\set{b_n}$ 严格单调递增趋于 $+\infty$）的版本是：
+
+$$
+\lim_{n\to\infty}\frac{a_n}{b_n}=\lim_{n\to\infty}\frac{a_n-a_{n-1}}{b_n-b_{n-1}}\quad(\text{右端存在时})
+$$
+
+把「求和的整体」换成「相邻两项的差」，往往一下子化简。它特别适合处理 **带 $\sum$ 或递推累加** 的数列极限。
+
+例：$\lim\limits_{n\to\infty}\dfrac{1+2+\dots+n}{n^2}$。取 $a_n=\sum_{k=1}^n k$、$b_n=n^2$（严格增趋于 $\infty$），
+
+$$
+\frac{a_n-a_{n-1}}{b_n-b_{n-1}}=\frac{n}{n^2-(n-1)^2}=\frac{n}{2n-1}\xrightarrow{n\to\infty}\frac{1}{2}
+$$
+
+故原极限为 $\dfrac12$。它也能证 **算术平均收敛**：若 $a_n\to A$，则 $\dfrac{a_1+\dots+a_n}{n}\to A$（取 $b_n=n$，差商即 $a_n\to A$）。
+
+### 典型数列极限
+
+例（$\sqrt[n]{n}\to 1$）：记 $\sqrt[n]{n}=1+t_n$（$t_n>0$），则 $n=(1+t_n)^n\ge\dbinom{n}{2}t_n^2=\dfrac{n(n-1)}{2}t_n^2$，得 $t_n^2\le\dfrac{2}{n-1}\to 0$，故 $t_n\to 0$，即 $\sqrt[n]{n}\to 1$。这里用二项展开取 **第三项** 来夹（取第二项 $nt_n$ 只能得到 $t_n\le 1$，不够）。
+
+例（$n$ 项根式和）：$\lim\limits_{n\to\infty}\sqrt[n]{1^n+2^n+\dots+n^n}$ 介于 $\sqrt[n]{n^n}=n$ 与 $\sqrt[n]{n\cdot n^n}=n\sqrt[n]{n}$ 之间，量级是 $n$；更细地，$\lim\limits_{n\to\infty}\sqrt[n]{a^n+b^n}=\max(a,b)$（$a,b>0$），因为 $\max\le\sqrt[n]{a^n+b^n}\le\sqrt[n]{2}\max\to\max$。
+
+例（递推单调有界）：设 $a_1=\sqrt{2}$，$a_{n+1}=\sqrt{2+a_n}$，求 $\lim a_n$。
+
+$$
+\begin{aligned}
+\text{有界：}&\ \text{归纳证 }a_n<2.\ a_1<2;\ \text{若 }a_n<2\text{ 则 }a_{n+1}=\sqrt{2+a_n}<\sqrt{4}=2.\\
+\text{单调：}&\ a_{n+1}^2-a_n^2=2+a_n-a_n^2=-(a_n-2)(a_n+1)>0\ (\text{因 }0<a_n<2),\ \text{故递增。}
+\end{aligned}
+$$
+
+单调递增且有上界 $2$，由单调有界准则极限 $L$ 存在。对递推式两边取极限得 $L=\sqrt{2+L}$，即 $L^2-L-2=0$，解得 $L=2$（舍去负根）。**递推数列求极限的标准三步：证有界、证单调、对递推式取极限解方程。**
 
 ## 函数极限
 
@@ -67,6 +114,16 @@ $$
 $$
 
 跟数列那套是同一个套路，只是把「项数足够大」换成了「$x$ 足够靠近 $x_0$」。条件里的 $0<|x-x_0|$ 就是「去心」——明确排除 $x=x_0$。
+
+例：证 $\lim\limits_{x\to 2}(3x-1)=5$。对任意 $\varepsilon>0$，
+
+$$
+|(3x-1)-5|=3|x-2|<\varepsilon\iff |x-2|<\frac{\varepsilon}{3}
+$$
+
+取 $\delta=\dfrac{\varepsilon}{3}$，当 $0<|x-2|<\delta$ 时即有 $|(3x-1)-5|<\varepsilon$。线性函数的 $\delta$ 总能这样「精确」反解出来。
+
+例：证 $\lim\limits_{x\to 1}x^2=1$。难点是 $|x^2-1|=|x+1|\,|x-1|$ 里 $|x+1|$ 不是常数，需 **先限定范围再放大**。先约定 $|x-1|<1$（即 $0<x<2$），此时 $|x+1|<3$，于是 $|x^2-1|<3|x-1|$。要它 $<\varepsilon$，只需 $|x-1|<\dfrac{\varepsilon}{3}$。综合取 $\delta=\min\!\left(1,\dfrac{\varepsilon}{3}\right)$ 即可。这个「$\min$ 取小」是非线性函数 $\varepsilon$-$\delta$ 证明的标准动作：一个 $\delta$ 用来框住放大系数，另一个用来压误差，取最小让两者都满足。
 
 ### $x\to\infty$ 的情形
 
@@ -200,6 +257,117 @@ $$
 - 第一个 $\dfrac{\sin x}{x}\to 1$ 说明 **在原点附近，正弦和它的弧度几乎一样长**。它是所有三角函数等价无穷小的根，也是 $(\sin x)'=\cos x$ 这条求导公式的来源——离开它，三角函数的微积分无从谈起。凡是看到 $\dfrac{\sin\square}{\square}$（$\square\to 0$）的结构，都往这里靠。
 - 第二个定义了自然常数 $e$，刻画的是 **连续复利 / 指数增长** 的极限形态：本金不断以越来越小的间隔滚动复利，最终增长因子收敛到 $e$。它是 $1^\infty$ 型未定式的标准模型，也是 $e^x$ 求导后不变这一奇妙性质的根。
 
+例：$\lim\limits_{x\to 0}\dfrac{\sin 3x}{\sin 5x}$。凑第一个重要极限的结构，分子分母同时配上变量：
+
+$$
+\frac{\sin 3x}{\sin 5x}=\frac{\sin 3x}{3x}\cdot\frac{5x}{\sin 5x}\cdot\frac{3x}{5x}\xrightarrow{x\to 0}1\cdot 1\cdot\frac{3}{5}=\frac{3}{5}
+$$
+
+例：$\lim\limits_{x\to\infty}\left(\dfrac{x+1}{x-1}\right)^x$。底数 $\to 1$、指数 $\to\infty$，是 $1^\infty$ 型，用凑 $e$ 捷径 $\lim u^v=e^{\lim v(u-1)}$：
+
+$$
+v(u-1)=x\cdot\frac{(x+1)-(x-1)}{x-1}=\frac{2x}{x-1}\xrightarrow{x\to\infty}2,\quad\text{原式}=e^2
+$$
+
+## 极限计算方法全家桶
+
+求极限没有万能钥匙，但有一套「先看类型、再挑工具」的固定流程。下面把常用方法逐一配算例，并讲清 **何时用哪种**。
+
+### 直接代入与四则化简
+
+被积函数是初等函数、代入不出未定式时，**直接代入** 即得（连续性）。代入出 $\dfrac00$ 时，多半能靠 **约分、有理化、通分** 把「制造零」的公因子消掉。
+
+例：$\lim\limits_{x\to 1}\dfrac{x^2-1}{x^2-3x+2}=\lim\limits_{x\to 1}\dfrac{(x-1)(x+1)}{(x-1)(x-2)}=\lim\limits_{x\to 1}\dfrac{x+1}{x-2}=\dfrac{2}{-1}=-2$。
+
+例（有理化）：$\lim\limits_{x\to 0}\dfrac{\sqrt{1+x}-1}{x}$。分子有理化，乘 $\dfrac{\sqrt{1+x}+1}{\sqrt{1+x}+1}$：
+
+$$
+\frac{\sqrt{1+x}-1}{x}=\frac{(1+x)-1}{x(\sqrt{1+x}+1)}=\frac{1}{\sqrt{1+x}+1}\xrightarrow{x\to 0}\frac{1}{2}
+$$
+
+### 等价无穷小代换
+
+只要式子是 **乘除结构**、且因子在该过程下是无穷小，就把它换成最简替身——这是 $\dfrac00$ 型最快的一招。
+
+例：$\lim\limits_{x\to 0}\dfrac{\tan x-\sin x}{x^3}$。先提公因子 $\tan x-\sin x=\tan x(1-\cos x)$，再用 $\tan x\sim x$、$1-\cos x\sim\dfrac{x^2}{2}$（这两步都在 **乘法** 里，合法）：
+
+$$
+\frac{\tan x-\sin x}{x^3}=\frac{\tan x\,(1-\cos x)}{x^3}\sim\frac{x\cdot\frac{x^2}{2}}{x^3}=\frac{1}{2}
+$$
+
+对比前面等价无穷小一节的警示：若一上来就把 $\tan x,\sin x$ 都换成 $x$ 去做减法，会错成 $0$。**先把减法化成乘法，再代换。**
+
+例：$\lim\limits_{x\to 0}\dfrac{e^{x^2}-1}{\cos x-1}$。用 $e^{x^2}-1\sim x^2$、$\cos x-1\sim-\dfrac{x^2}{2}$：
+
+$$
+\frac{e^{x^2}-1}{\cos x-1}\sim\frac{x^2}{-\frac{x^2}{2}}=-2
+$$
+
+### 泰勒展开
+
+当等价无穷小因「加减抵消主部」而失效时，**泰勒展开** 是最稳的武器：把每个函数展开到 **足够高的阶**（一般展到分母同阶），让该消的项自然抵消、该留的项浮出来。
+
+例：$\lim\limits_{x\to 0}\dfrac{\cos x-e^{-x^2/2}}{x^4}$。两者一阶等价无穷小都是 $1-\dfrac{x^2}{2}$，相减后主部抵消，必须展到 $x^4$：
+
+$$
+\cos x=1-\frac{x^2}{2}+\frac{x^4}{24}+o(x^4),\quad
+e^{-x^2/2}=1-\frac{x^2}{2}+\frac{x^4}{8}+o(x^4)
+$$
+
+相减得 $\cos x-e^{-x^2/2}=\left(\dfrac{1}{24}-\dfrac{1}{8}\right)x^4+o(x^4)=-\dfrac{x^4}{12}+o(x^4)$，故极限为 $-\dfrac{1}{12}$。
+
+### 洛必达法则
+
+$\dfrac00$、$\dfrac\infty\infty$ 型，且求导后变简单时用洛必达（详见 [导数与微分](derivative)）。它和泰勒常可互相替代——**函数求导后形态变好就用洛必达，求导越求越乱（如含根号、三角嵌套）就用泰勒。**
+
+例：$\lim\limits_{x\to 0}\dfrac{x-\sin x}{x^3}\xlongequal{\frac00}\lim\limits_{x\to 0}\dfrac{1-\cos x}{3x^2}\xlongequal{\frac00}\lim\limits_{x\to 0}\dfrac{\sin x}{6x}=\dfrac{1}{6}$。连用两次，每次都验型是 $\dfrac00$。
+
+:::tip
+
+洛必达不是「越多越好」。用前务必验型，用后若仍是未定式才继续。一旦中途变成「非未定式」就该停手代入；含 $\dfrac{\sin x}{x}$ 这类已知极限时，**先抽出来用掉** 比继续求导省事得多。
+
+:::
+
+### 夹逼准则
+
+通项被两个同极限的式子夹住时用夹逼，**带 $\sin\frac1x$、含取整、$n$ 项求和** 的极限尤其常见。
+
+例：$\lim\limits_{x\to 0}x^2\sin\dfrac{1}{x}$。由 $\left|\sin\dfrac1x\right|\le 1$ 得 $-x^2\le x^2\sin\dfrac1x\le x^2$，两边都 $\to 0$，故极限为 $0$。
+
+例（数列求和夹逼）：$\lim\limits_{n\to\infty}\sum\limits_{k=1}^{n}\dfrac{n}{n^2+k}$。每一项的分母在 $n^2+1$ 与 $n^2+n$ 之间，于是
+
+$$
+\frac{n\cdot n}{n^2+n}\le\sum_{k=1}^{n}\frac{n}{n^2+k}\le\frac{n\cdot n}{n^2+1}
+$$
+
+左端 $\dfrac{n^2}{n^2+n}\to 1$，右端 $\dfrac{n^2}{n^2+1}\to 1$，故和的极限为 $1$。
+
+### 各型未定式的标准算例
+
+化归思路见 [未定式的化归](#未定式的化归)，这里给每型一个带步骤的样板。
+
+- **$\dfrac00$**：$\lim\limits_{x\to 0}\dfrac{\ln(1+x)}{x}\overset{\ln(1+x)\sim x}{=}1$。
+
+- **$\dfrac\infty\infty$**：$\lim\limits_{x\to+\infty}\dfrac{\ln x}{x}\xlongequal{\frac\infty\infty}\lim\limits_{x\to+\infty}\dfrac{1/x}{1}=0$（印证「对数 $\ll$ 幂」）。
+
+- **$0\cdot\infty$**：$\lim\limits_{x\to 0^+}x\ln x$。把 $x$ 写到分母化成 $\dfrac\infty\infty$：
+
+$$
+\lim_{x\to 0^+}x\ln x=\lim_{x\to 0^+}\frac{\ln x}{1/x}\xlongequal{\frac\infty\infty}\lim_{x\to 0^+}\frac{1/x}{-1/x^2}=\lim_{x\to 0^+}(-x)=0
+$$
+
+- **$\infty-\infty$**：$\lim\limits_{x\to 0}\left(\dfrac{1}{\sin x}-\dfrac{1}{x}\right)$。通分凑成一个分式：
+
+$$
+\frac{1}{\sin x}-\frac{1}{x}=\frac{x-\sin x}{x\sin x}\sim\frac{x-\sin x}{x^2}\overset{x-\sin x\sim\frac{x^3}{6}}{\sim}\frac{x^3/6}{x^2}=\frac{x}{6}\to 0
+$$
+
+- **$1^\infty$**：$\lim\limits_{x\to 0}(1+\sin x)^{1/x}$。用 $\lim u^v=e^{\lim v(u-1)}$，$v(u-1)=\dfrac{\sin x}{x}\to 1$，故极限为 $e$。
+
+- **$0^0$**：$\lim\limits_{x\to 0^+}x^x$。取对数 $\ln x^x=x\ln x\to 0$（见上面 $0\cdot\infty$ 算例），故 $x^x\to e^0=1$。
+
+- **$\infty^0$**：$\lim\limits_{x\to+\infty}x^{1/x}$。取对数 $\dfrac{\ln x}{x}\to 0$，故极限为 $e^0=1$。
+
 ## 连续与间断
 
 ### 连续的定义
@@ -235,6 +403,8 @@ $$
 
 前两类合称 **第一类间断点**（特征是 **左右极限都存在**），后两类合称 **第二类间断点**（至少一侧极限不存在或为无穷）。「可去」之所以叫可去，是因为只要补充或修改 $f(x_0)$ 的值就能把它「接上」，让函数变连续。
 
+例（判间断点类型）：$f(x)=\dfrac{x^2-1}{x-1}$ 在 $x=1$ 处无定义，但 $\lim\limits_{x\to 1}f(x)=\lim\limits_{x\to 1}(x+1)=2$ 存在，是 **可去间断点**（补上 $f(1)=2$ 即连续）。$g(x)=\dfrac{|x|}{x}$ 在 $x=0$ 处左极限 $-1$、右极限 $+1$，是 **跳跃间断点**。$h(x)=\dfrac{1}{x}$ 在 $x=0$ 处一侧极限为 $\infty$，是 **无穷间断点**。
+
 ### 闭区间连续函数性质
 
 设 $f\in C[a,b]$，则有：
@@ -245,3 +415,13 @@ $$
 - **零点定理**：若 $f(a)f(b)<0$，则 $\exists\xi\in(a,b)$ 使 $f(\xi)=0$。
 
 这几条性质都依赖 **闭区间** 和 **连续** 两个条件，缺一不可。零点定理是连续性最直观的体现：一条连续曲线从横轴下方走到上方，中途必然穿过横轴。它是数值求根（二分法）和证明方程有解的理论基础；介值定理则是它的推广——连续函数取值「不跳格」，中间值一个都不漏。
+
+例（用零点定理证方程有根）：证 $x^3-3x+1=0$ 在 $(0,1)$ 内至少有一根。令 $f(x)=x^3-3x+1$，它在 $[0,1]$ 上连续，且
+
+$$
+f(0)=1>0,\quad f(1)=1-3+1=-1<0
+$$
+
+由 $f(0)f(1)<0$ 及零点定理，存在 $\xi\in(0,1)$ 使 $f(\xi)=0$。**证「方程有解」的常规套路：把方程移项成 $f(x)=0$，找两个让 $f$ 异号的点，套零点定理。**
+
+例（介值定理 / 不动点）：设 $f\in C[0,1]$ 且 $0\le f(x)\le 1$，证存在 $\xi$ 使 $f(\xi)=\xi$（不动点）。令 $g(x)=f(x)-x$，则 $g$ 连续，$g(0)=f(0)\ge 0$、$g(1)=f(1)-1\le 0$。若两端有一个取等则该端点即为不动点；否则 $g(0)>0$、$g(1)<0$ 异号，由零点定理得 $g(\xi)=0$，即 $f(\xi)=\xi$。**构造辅助函数 $g=f-x$ 是处理「$f(\xi)=\xi$」一类问题的钥匙。**
