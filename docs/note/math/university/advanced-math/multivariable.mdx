@@ -5,6 +5,7 @@ title: 多元函数微积分
 ## 参考资料
 
 - [多元微积分 - 维基百科](https://zh.wikipedia.org/wiki/多元微积分)
+- [偏导数 - 维基百科](https://zh.wikipedia.org/wiki/偏导数)
 - [向量分析 - 维基百科](https://zh.wikipedia.org/wiki/向量分析)
 
 ## 引入
@@ -14,6 +15,8 @@ title: 多元函数微积分
 - **导数** $\to$ **偏导数** / **方向导数** / **梯度**。
 - **定积分** $\to$ **二重 / 三重积分** / **曲线积分** / **曲面积分**。
 - **微积分基本定理** $\to$ **格林公式** / **高斯公式** / **斯托克斯公式**。
+
+推广的难点在于「方向变多了」。一元函数在一点只能左右走，多元函数却能朝无穷多个方向走，于是「变化率」这件事必须先说清「沿哪个方向」——偏导数、方向导数、梯度都是为回答这个问题而生。
 
 ## 多元函数
 
@@ -25,6 +28,8 @@ $$
 
 要求 $(x,y)$ 沿 **任何路径** 趋近 $(x_0,y_0)$ 时极限都相同。
 
+这是多元极限最棘手的地方：一元只有左右两条路，多元有无穷多条路（直线、抛物线、螺旋……）。**只要找到两条路径让极限值不同，极限就不存在。** 经典反例 $f=\dfrac{xy}{x^2+y^2}$ 在原点，沿 $y=kx$ 趋近会得到随 $k$ 变化的值 $\dfrac{k}{1+k^2}$，故极限不存在。连续的定义照旧：$\lim\limits_{(x,y)\to(x_0,y_0)}f=f(x_0,y_0)$，初等函数在定义区域内仍处处连续。
+
 ### 偏导数
 
 $$
@@ -33,13 +38,26 @@ $$
 
 记号：$\dfrac{\partial f}{\partial x}$、$f_x$、$\partial_x f$。
 
+偏导的做法就一句话：**对哪个变量求导，就把其余变量统统当常数。** 几何上，$f_x(x_0,y_0)$ 是曲面 $z=f(x,y)$ 被平面 $y=y_0$ 截出的那条曲线在该点的切线斜率——只沿 $x$ 轴方向看曲面的陡峭程度。$f_y$ 同理沿 $y$ 方向。
+
+混合偏导 $f_{xy}$ 与 $f_{yx}$ 在二者连续时相等（求导次序可交换）。
+
 ### 全微分
 
 $$
 \mathrm{d}z=\frac{\partial z}{\partial x}\,\mathrm{d}x+\frac{\partial z}{\partial y}\,\mathrm{d}y
 $$
 
-**可微 $\Rightarrow$ 连续、偏导存在**；偏导连续 $\Rightarrow$ 可微。注意 **偏导存在不一定可微**。
+全微分是用 **切平面** 代替曲面：函数的真实增量 $\Delta z$ 约等于沿 $x$、$y$ 两个方向的线性增量之和。它把一元的「切线近似」升级成「切平面近似」。
+
+可微性的逻辑链需要分清：
+
+$$
+\text{偏导连续}\Rightarrow\text{可微}\Rightarrow
+\begin{cases}\text{连续}\\\text{偏导存在}\end{cases}
+$$
+
+反向都不成立。特别注意 **偏导存在不一定可微**——偏导只管住 $x$、$y$ 两个坐标方向，可微却要求切平面在 **所有方向** 都贴合曲面，是强得多的条件。
 
 ### 链式法则
 
@@ -48,6 +66,8 @@ $$
 $$
 \frac{\partial z}{\partial x}=\frac{\partial z}{\partial u}\frac{\partial u}{\partial x}+\frac{\partial z}{\partial v}\frac{\partial v}{\partial x}
 $$
+
+和一元链式法则同理，只是 $x$ 通过 **多条路径**（经 $u$、经 $v$）影响 $z$，每条路径贡献一项，最后 **求和**。画一张「变量依赖图」，从 $z$ 到 $x$ 有几条通路就有几个加项，每条通路上的偏导相乘——这是多元求导不出错的实用技巧。
 
 ### 隐函数求导
 
@@ -63,6 +83,8 @@ $$
 \frac{\partial z}{\partial x}=-\frac{F_x}{F_z},\quad \frac{\partial z}{\partial y}=-\frac{F_y}{F_z}
 $$
 
+这些公式由「对 $F=0$ 两端求全微分、再解出待求偏导」得到，避免了显式解出 $y$ 或 $z$。前提是分母（如 $F_y$、$F_z$）不为零，这正是 **隐函数定理** 保证局部能解出函数的条件。
+
 ## 方向导数与梯度
 
 **方向导数**：函数沿单位向量 $\vec l=(\cos\alpha,\cos\beta)$ 的变化率。
@@ -71,35 +93,49 @@ $$
 \frac{\partial f}{\partial \vec l}=f_x\cos\alpha+f_y\cos\beta=\nabla f\cdot\vec l
 $$
 
+偏导只测坐标轴方向的陡度，方向导数测 **任意指定方向** 的陡度——把它写成梯度与方向向量的点积，是理解梯度的钥匙。
+
 **梯度**：
 
 $$
 \nabla f=\left(\frac{\partial f}{\partial x},\frac{\partial f}{\partial y},\frac{\partial f}{\partial z}\right)
 $$
 
-梯度方向是函数 **增长最快** 的方向，其模是该方向的方向导数。
+:::tip
+
+梯度指向函数 **上升最快** 的方向，其模 $|\nabla f|$ 是该方向的（最大）变化率。原因藏在点积里：$\dfrac{\partial f}{\partial \vec l}=\nabla f\cdot\vec l=|\nabla f|\cos\theta$，$\theta$ 是 $\vec l$ 与梯度的夹角。当 $\vec l$ 与梯度同向（$\theta=0$）时变化率最大、反向最小、垂直时为零。所以「站在山坡上、朝梯度方向迈步爬升最快」，而 **梯度处处垂直于等值线 / 等高面**。这是机器学习里梯度下降法的几何根基。
+
+:::
 
 ## 多元函数极值
 
 ### 无条件极值
 
-必要条件：$f_x=f_y=0$（驻点）。
+必要条件：$f_x=f_y=0$（**驻点**，对应切平面水平）。
 
-设 $A=f_{xx},B=f_{xy},C=f_{yy}$，$\Delta=AC-B^2$：
+充分条件用二阶偏导判别（类比一元的 $f''$）。设 $A=f_{xx},B=f_{xy},C=f_{yy}$，$\Delta=AC-B^2$：
 
 |       $\Delta>0$       |   $\Delta<0$   |  $\Delta=0$  |
 | :--------------------: | :------------: | :----------: |
 | $A>0$ 极小，$A<0$ 极大 | 非极值（鞍点） | 不定，需另判 |
 
+$\Delta<0$ 对应 **鞍点**——形如马鞍，沿一个方向是谷底、沿另一方向是山顶，所以不是极值。这是多元才有的新现象，一元没有对应物。
+
 ### 条件极值：拉格朗日乘数法
 
-求 $f(x,y)$ 在约束 $g(x,y)=0$ 下的极值，构造：
+求 $f(x,y)$ 在约束 $g(x,y)=0$ 下的极值，构造 **拉格朗日函数**（Lagrange Function）：
 
 $$
 L(x,y,\lambda)=f(x,y)+\lambda g(x,y)
 $$
 
-令 $L_x=L_y=L_\lambda=0$ 求解。
+令 $L_x=L_y=L_\lambda=0$ 联立求解，得到候选点。
+
+:::tip
+
+几何直觉：在约束曲线上找 $f$ 的极值，相当于看着 $f$ 的等高线沿约束线移动。极值出现在等高线 **恰好与约束线相切** 的地方——此时若再沿约束线挪一点，$f$ 不再增减。相切意味着两条曲线的法向量平行，即 $\nabla f=-\lambda\nabla g$，这正是拉格朗日条件。乘数 $\lambda$ 衡量「放松约束一点点能让 $f$ 改善多少」。
+
+:::
 
 ## 重积分
 
@@ -109,8 +145,12 @@ $$
 \iint_D f(x,y)\,\mathrm{d}\sigma
 $$
 
-- **直角坐标**：$\mathrm{d}\sigma=\mathrm{d}x\,\mathrm{d}y$，按 $X$-型或 $Y$-型区域化为二次积分。
-- **极坐标**：$\mathrm{d}\sigma=r\,\mathrm{d}r\,\mathrm{d}\theta$。
+几何上是 **曲顶柱体的体积**：底是平面区域 $D$，顶是曲面 $z=f(x,y)$。计算思路是「切成片再累加」，化为 **二次积分**（先对一个变量积分、把结果再对另一个积分）。
+
+- **直角坐标**：$\mathrm{d}\sigma=\mathrm{d}x\,\mathrm{d}y$，按 $X$-型或 $Y$-型区域定内外层积分限。选哪种次序取决于 **哪种区域描述更简单**，必要时交换次序。
+- **极坐标**：$\mathrm{d}\sigma=r\,\mathrm{d}r\,\mathrm{d}\theta$。当区域是圆 / 扇形、被积函数含 $x^2+y^2$ 时首选。那个多出来的 $r$ 是 **面积元的拉伸因子**（极坐标下小块面积是 $r\,\mathrm{d}r\,\mathrm{d}\theta$，离原点越远扇环越宽）。
+
+**对称性** 能大幅简化计算：若区域关于 $x$ 轴对称、被积函数关于 $y$ 为奇函数，则积分为 $0$；为偶函数则取一半区域积分再乘 $2$。
 
 ### 三重积分
 
@@ -118,11 +158,13 @@ $$
 \iiint_\Omega f(x,y,z)\,\mathrm{d}V
 $$
 
-| 坐标系   | 体积元                                                                               |
-| :------- | :----------------------------------------------------------------------------------- |
-| 直角坐标 | $\mathrm{d}V=\mathrm{d}x\,\mathrm{d}y\,\mathrm{d}z$                                  |
-| 柱坐标   | $\mathrm{d}V=r\,\mathrm{d}r\,\mathrm{d}\theta\,\mathrm{d}z$                          |
-| 球坐标   | $\mathrm{d}V=\rho^2\sin\varphi\,\mathrm{d}\rho\,\mathrm{d}\varphi\,\mathrm{d}\theta$ |
+| 坐标系   | 体积元                                                                               | 适用                            |
+| :------- | :----------------------------------------------------------------------------------- | :------------------------------ |
+| 直角坐标 | $\mathrm{d}V=\mathrm{d}x\,\mathrm{d}y\,\mathrm{d}z$                                  | 长方体类区域                    |
+| 柱坐标   | $\mathrm{d}V=r\,\mathrm{d}r\,\mathrm{d}\theta\,\mathrm{d}z$                          | 圆柱、旋转体（绕轴对称）        |
+| 球坐标   | $\mathrm{d}V=\rho^2\sin\varphi\,\mathrm{d}\rho\,\mathrm{d}\varphi\,\mathrm{d}\theta$ | 球、含 $x^2+y^2+z^2$ 的被积函数 |
+
+柱坐标 = 极坐标加一根 $z$ 轴；球坐标用「到原点距离 $\rho$ + 两个角度」定位。体积元里的 $r$ 和 $\rho^2\sin\varphi$ 都是坐标变换的 **雅可比因子**，本质是「换坐标后小体积块被拉伸了多少」。
 
 ## 曲线积分
 
@@ -132,7 +174,7 @@ $$
 \int_L f(x,y)\,\mathrm{d}s=\int_\alpha^\beta f(\varphi(t),\psi(t))\sqrt{\varphi'^2+\psi'^2}\,\mathrm{d}t
 $$
 
-与 **方向无关**。
+物理意义是 **变密度曲线的质量**：$f$ 是线密度，沿曲线累加。它 **与方向无关**（弧长 $\mathrm{d}s$ 永远为正）。
 
 ### 第二类（对坐标）
 
@@ -140,7 +182,7 @@ $$
 \int_L P\,\mathrm{d}x+Q\,\mathrm{d}y
 $$
 
-与 **方向有关**，反向取负号。
+物理意义是 **变力沿曲线做的功**：$\vec F=(P,Q)$ 是力场，沿路径累加力在位移方向的分量。它 **与方向有关**，反向取负号——逆着走，做的功反号。
 
 ## 曲面积分
 
@@ -150,15 +192,19 @@ $$
 \iint_\Sigma f(x,y,z)\,\mathrm{d}S
 $$
 
+是曲线积分对弧长的升维：**变密度曲面的质量**，与侧无关。
+
 ### 第二类（对坐标）
 
 $$
 \iint_\Sigma P\,\mathrm{d}y\,\mathrm{d}z+Q\,\mathrm{d}z\,\mathrm{d}x+R\,\mathrm{d}x\,\mathrm{d}y
 $$
 
-与 **侧** 有关，反侧取负。
+物理意义是 **流量 / 通量**：向量场 $\vec F=(P,Q,R)$ 穿过曲面 $\Sigma$ 的净流量。它 **与侧有关**，反侧取负——流入还是流出，符号相反。
 
 ## 三大公式
+
+这三个公式是多元微积分的顶峰，把 **边界上的积分** 等于 **内部的积分**，都是牛顿-莱布尼茨公式在高维的化身。
 
 ### 格林公式（平面）
 
@@ -166,11 +212,15 @@ $$
 \oint_L P\,\mathrm{d}x+Q\,\mathrm{d}y=\iint_D\left(\frac{\partial Q}{\partial x}-\frac{\partial P}{\partial y}\right)\mathrm{d}\sigma
 $$
 
+把平面闭曲线 $L$ 上的第二类曲线积分，换成它围住区域 $D$ 上的二重积分。右端的 $\dfrac{\partial Q}{\partial x}-\dfrac{\partial P}{\partial y}$ 是向量场的 **旋度**（平面版），度量场的「打旋」程度；左端是沿边界的 **环量**。
+
 ### 高斯公式（散度定理）
 
 $$
 \oiint_\Sigma P\,\mathrm{d}y\,\mathrm{d}z+Q\,\mathrm{d}z\,\mathrm{d}x+R\,\mathrm{d}x\,\mathrm{d}y=\iiint_\Omega\left(\frac{\partial P}{\partial x}+\frac{\partial Q}{\partial y}+\frac{\partial R}{\partial z}\right)\mathrm{d}V
 $$
+
+把闭曲面 $\Sigma$ 上的 **通量**，换成它围住的立体 $\Omega$ 内部 **散度** 的体积分。散度 $\nabla\cdot\vec F$ 度量某点是「源」（向外冒）还是「汇」（向内吸）。直觉：穿过表面的净流量，等于内部所有源汇的总和——内部冒出来的，最终都得从表面流出去。
 
 ### 斯托克斯公式
 
@@ -178,8 +228,16 @@ $$
 \oint_L P\,\mathrm{d}x+Q\,\mathrm{d}y+R\,\mathrm{d}z=\iint_\Sigma(\nabla\times\vec F)\cdot\mathrm{d}\vec S
 $$
 
+是格林公式的空间推广：空间闭曲线 $L$ 上的 **环量**，等于以 $L$ 为边界的曲面 $\Sigma$ 上 **旋度的通量**。旋度 $\nabla\times\vec F$ 是个向量，指向「旋转轴」方向、模为旋转强度。
+
 :::tip
 
-三大公式是同一思想的不同维度：把 **边界上的积分** 转化为 **内部的积分**。一维情形就是牛顿-莱布尼茨公式。
+把三大公式连同牛顿-莱布尼茨公式放在一起看，是同一个思想在不同维度的复奏：**边界上的积分 = 内部某种「导数」的积分。**
+
+- 一维：$\displaystyle\int_a^b F'(x)\,\mathrm{d}x=F(b)-F(a)$（区间内部 vs 两端点）。
+- 格林 / 斯托克斯：曲线环量 vs 曲面旋度。
+- 高斯：曲面通量 vs 体积散度。
+
+它们在微分形式的语言里统一为一条 **广义斯托克斯公式** $\int_{\partial\Omega}\omega=\int_\Omega\mathrm{d}\omega$。
 
 :::
