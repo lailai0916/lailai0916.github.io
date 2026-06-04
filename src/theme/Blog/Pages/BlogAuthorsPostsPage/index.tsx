@@ -43,7 +43,7 @@ function AuthorSelector({ activePermalink }: { activePermalink: string }) {
   if (!items.length) return null;
 
   return (
-    <TitleCard padding="1rem" title={`${TITLE} (${items.length})`}>
+    <TitleCard size="sm" padding="1rem" title={`${TITLE} (${items.length})`}>
       <TagChipList items={items} />
     </TitleCard>
   );

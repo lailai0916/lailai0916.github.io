@@ -19,7 +19,7 @@ Each primitive is a folder with `index.tsx` + `styles.module.css`. Import via th
 Before adding a component, check whether an existing primitive (optionally with an extra optional prop) covers the case.
 
 - **`Card` vs `TitleCard`.** `TitleCard` is `Card` plus a header; `icon` and `description` are both optional. A card with no title uses plain `Card` — do not reach for `TitleCard` and leave the title empty. (`TitleCard` absorbed the former `IconCard` and `BlogCard`; neither exists any more.)
-  - **`size` prop** picks the header scale: `md` (default) is the settings-tile look — IconBlock accent chip + 1.25rem title; `sm` is the compact panel look — inline primary icon + 0.95rem title, used by the Insights cards (chart, metric lists, runtime snapshot). `description` is only meaningful at `md`. `TitleCard` owns header→body spacing via the header's `margin-bottom`, so a consumer passing `className` should not also set `gap` on the card.
+  - **`size` prop** picks the header scale: `md` (default) is the settings-tile look — IconBlock accent chip + 1.25rem title; `sm` is the compact panel look — inline primary icon + 0.95rem title, used by the Insights cards (chart, metric lists, runtime snapshot) and every blog sidebar/archive/selector panel (`BlogShared/*`, the tag/author posts pages — the cards that were the former `BlogCard`). These blog panels must stay `sm`; the default `md` makes their titles jump to 1.25rem. `description` is only meaningful at `md`. `TitleCard` owns header→body spacing via the header's `margin-bottom`, so a consumer passing `className` should not also set `gap` on the card.
 
 ## File & CSS layout
 

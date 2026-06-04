@@ -114,6 +114,7 @@ function YearView({ posts }: { posts: readonly PostLike[] }) {
     <>
       {years.length > 0 && (
         <TitleCard
+          size="sm"
           padding="1rem"
           title={`${YEAR_SELECT_TITLE} (${years.length})`}
         >
@@ -147,7 +148,11 @@ function TagsView({ tags }: { tags: readonly ArchiveTagItem[] }) {
     [tags]
   );
   return (
-    <TitleCard padding="1rem" title={`${TAGS_TITLE} (${sorted.length})`}>
+    <TitleCard
+      size="sm"
+      padding="1rem"
+      title={`${TAGS_TITLE} (${sorted.length})`}
+    >
       <TagChipList
         items={sorted.map((t) => ({
           to: t.permalink,
@@ -161,7 +166,11 @@ function TagsView({ tags }: { tags: readonly ArchiveTagItem[] }) {
 
 function AuthorsView({ authors }: { authors: readonly ArchiveAuthorItem[] }) {
   return (
-    <TitleCard padding="1rem" title={`${AUTHORS_TITLE} (${authors.length})`}>
+    <TitleCard
+      size="sm"
+      padding="1rem"
+      title={`${AUTHORS_TITLE} (${authors.length})`}
+    >
       <TagChipList
         items={authors.map((a) => ({
           to: a.permalink,
