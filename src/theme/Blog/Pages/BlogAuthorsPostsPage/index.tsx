@@ -6,7 +6,8 @@ import { useExperimentalFlag } from '@site/src/hooks/useExperimentalFlag';
 import { loadOfficialAuthors } from '@site/src/utils/blogData';
 import BlogAuthorsPostsPageClassic from '@theme-original/Blog/Pages/BlogAuthorsPostsPage';
 import type { Props } from '@theme/Blog/Pages/BlogAuthorsPostsPage';
-import PostsListLayout from '../../../BlogShared/PostsListLayout';
+import BlogScaffold from '../../../BlogShared/Scaffold';
+import { BlogArchiveList } from '../../../BlogShared/ArchiveList';
 import TitleCard from '@site/src/components/laikit/TitleCard';
 import { TagChipList } from '../../../BlogShared/BlogUI';
 import { ArchiveTabsNav } from '../../../BlogShared/ArchiveTabs';
@@ -52,22 +53,23 @@ export default function BlogAuthorsPostsPage(props: Props): ReactNode {
   const isClassicDesign = useExperimentalFlag('classicDesign');
   if (isClassicDesign) return <BlogAuthorsPostsPageClassic {...props} />;
 
-  const { author, items, listMetadata } = props;
+  return <CustomBlogAuthorsPostsPage {...props} />;
+}
+
+function CustomBlogAuthorsPostsPage(props: Props): ReactNode {
+  const { author, items } = props;
+  const posts = React.useMemo(
+    () => (items as any[]).map((it) => it.content),
+    [items]
+  );
 
   return (
-    <PostsListLayout
-      title={author.name ?? author.key}
-      description={author.title}
-      items={items}
-      meta={listMetadata}
-      topSlot={
-        <>
-          <ArchiveTabsNav activeTab="authors" />
-          {author.page?.permalink && (
-            <AuthorSelector activePermalink={author.page.permalink} />
-          )}
-        </>
-      }
-    />
+    <BlogScaffold title={author.name ?? author.key} description={author.title}>
+      <ArchiveTabsNav activeTab="authors" />
+      {author.page?.permalink && (
+        <AuthorSelector activePermalink={author.page.permalink} />
+      )}
+      <BlogArchiveList posts={posts} />
+    </BlogScaffold>
   );
 }
