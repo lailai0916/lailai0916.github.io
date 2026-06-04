@@ -294,5 +294,13 @@
   "sidebar.projectSidebar.category.指南.link.generated-index.description": {
     "message": "本章收录各种实用的文档指南。",
     "description": "The generated-index page description for category '指南' in sidebar 'projectSidebar'"
+  },
+  "sidebar.noteSidebar.category.英语词汇": {
+    "message": "英语词汇",
+    "description": "The label for category '英语词汇' in sidebar 'noteSidebar'"
+  },
+  "sidebar.noteSidebar.category.英语词汇.link.generated-index.description": {
+    "message": "本章介绍英语词汇相关知识，包括构词法和高考词汇表。",
+    "description": "The generated-index page description for category '英语词汇' in sidebar 'noteSidebar'"
   }
 }

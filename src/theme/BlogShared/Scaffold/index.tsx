@@ -386,7 +386,7 @@ function TagsCard() {
 
   return (
     <TitleCard
-      size="sm"
+      size="plain"
       padding="1rem"
       title={translate({
         id: 'blog.sidebar.tags.title',

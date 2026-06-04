@@ -469,7 +469,18 @@ const sidebars: SidebarsConfig = {
       collapsed: false,
       items: [
         'note/english/pronunciation',
-        'note/english/vocabulary',
+        {
+          type: 'category',
+          label: '英语词汇',
+          link: {
+            type: 'generated-index',
+            description: '本章介绍英语词汇相关知识，包括构词法和高考词汇表。',
+          },
+          items: [
+            'note/english/vocabulary/word-formation',
+            'note/english/vocabulary/gaokao',
+          ],
+        },
         {
           type: 'category',
           label: '英语语法',
@@ -533,19 +544,7 @@ const sidebars: SidebarsConfig = {
                 'note/english/grammar/sentences/inversion',
                 'note/english/grammar/sentences/emphasis',
                 'note/english/grammar/sentences/ellipsis',
-              ],
-            },
-            {
-              type: 'category',
-              label: '杂项',
-              link: {
-                type: 'generated-index',
-                description:
-                  '本章介绍其他英语语法相关知识，包括构词法和标点符号。',
-              },
-              items: [
-                'note/english/grammar/misc/word-formation',
-                'note/english/grammar/misc/punctuation',
+                'note/english/grammar/sentences/punctuation',
               ],
             },
           ],

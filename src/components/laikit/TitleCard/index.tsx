@@ -17,8 +17,10 @@ interface TitleCardProps {
    * - `md` (default): IconBlock accent chip + 1.25rem title. Settings-tile style.
    * - `sm`: inline primary-tinted icon + 0.95rem title. Compact panel header used
    *   by the Insights cards (chart, metric lists, runtime snapshot).
+   * - `plain`: bold body-size (1rem/700) title, no icon — the former `BlogCard`
+   *   look used by the blog sidebar/archive/selector panels.
    */
-  size?: 'md' | 'sm';
+  size?: 'md' | 'sm' | 'plain';
   className?: string;
 }
 
@@ -35,7 +37,12 @@ export default function TitleCard({
   return (
     <Card
       padding={padding}
-      className={clsx(styles.titleCard, size === 'sm' && styles.sm, className)}
+      className={clsx(
+        styles.titleCard,
+        size === 'sm' && styles.sm,
+        size === 'plain' && styles.plain,
+        className
+      )}
     >
       <div className={styles.header}>
         {icon &&

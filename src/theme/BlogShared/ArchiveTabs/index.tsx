@@ -114,7 +114,7 @@ function YearView({ posts }: { posts: readonly PostLike[] }) {
     <>
       {years.length > 0 && (
         <TitleCard
-          size="sm"
+          size="plain"
           padding="1rem"
           title={`${YEAR_SELECT_TITLE} (${years.length})`}
         >
@@ -149,7 +149,7 @@ function TagsView({ tags }: { tags: readonly ArchiveTagItem[] }) {
   );
   return (
     <TitleCard
-      size="sm"
+      size="plain"
       padding="1rem"
       title={`${TAGS_TITLE} (${sorted.length})`}
     >
@@ -167,7 +167,7 @@ function TagsView({ tags }: { tags: readonly ArchiveTagItem[] }) {
 function AuthorsView({ authors }: { authors: readonly ArchiveAuthorItem[] }) {
   return (
     <TitleCard
-      size="sm"
+      size="plain"
       padding="1rem"
       title={`${AUTHORS_TITLE} (${authors.length})`}
     >

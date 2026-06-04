@@ -62,3 +62,14 @@
   font-size: 0.95rem;
   font-weight: 600;
 }
+
+/* Plain size — bold body-size title, no icon (former BlogCard / blog panels). */
+.plain .header {
+  margin-bottom: 1rem;
+}
+
+.plain .title {
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1;
+}

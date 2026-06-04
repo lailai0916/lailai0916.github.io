@@ -47,7 +47,7 @@ export function BlogArchiveList({ posts }: { posts: readonly PostLike[] }) {
       {groups.map(([year, yearPosts]) => (
         <TitleCard
           key={year}
-          size="sm"
+          size="plain"
           padding="1rem"
           title={`${year} (${yearPosts.length})`}
         >
