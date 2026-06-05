@@ -29,6 +29,10 @@
   --lk-color-down: #d93838;
   --lk-color-pending: #f0a52a;
   --lk-color-maintenance: #5a8dee;
+
+  /* Restrained low-saturation amber, paired with the blue primary as the
+     playground's single second series (two trajectories, start/end, etc.). */
+  --lk-color-accent: #c08a3a;
 }
 
 [data-theme='dark'] {
@@ -38,6 +42,8 @@
   --lk-color-down: #ff6b6b;
   --lk-color-pending: #ffb84a;
   --lk-color-maintenance: #7aa6ff;
+
+  --lk-color-accent: #d4a55e;
 }
 
 .header-github-link::before {
