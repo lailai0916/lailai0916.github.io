@@ -2,6 +2,18 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
+## Personal style — defer to lailai.skill
+
+lailai's **general, cross-project personal style** lives in the **lailai.skill** submodule at [`.claude/skills/lailai-skill/`](skills/lailai-skill/SKILL.md). Read its `SKILL.md`, then the relevant `references/` for any task touching personal voice, writing, code, or design:
+
+- Chinese writing voice, wording (你/仅/若, no 显然/易得), Markdown, LaTeX math (`$...$`), AI-tone blacklist → `references/{writing-style,wording,markdown-style,latex-math-style,ai-tone-blacklist}.md`
+- OI C++ style, engineering-code comments, design principles (统一·简约·现代), project/README/commit conventions → `references/{cpp-oi-style,engineering-code-style,design-style,project-docs-style}.md`
+- Who lailai is, how he thinks/decides → `profile/`
+
+**This repo's `.claude/` holds only project-specific config** — site architecture, commands, deploy, and the path-scoped `rules/` for _this_ Docusaurus site (i18n, laikit components, site-authoring conventions). It does **not** duplicate the general rules; those live in the skill. When a `rules/*.md` covers only the site-specific slice, it points to the skill for the general part.
+
+After cloning, init the submodule: `git submodule update --init`. Update it later with `git submodule update --remote .claude/skills/lailai-skill`.
+
 ## Project
 
 Source for [lailai's personal website](https://lailai.one), built with Docusaurus 3 (TypeScript). Deployed via GitHub Actions to GitHub Pages and rsynced to a custom server (see `.github/workflows/deploy.yml`). Requires Node `>=20` (CI uses Node 24).
@@ -60,12 +72,11 @@ Components use CSS Modules (`styles.module.css` next to `index.tsx`). Global tok
 
 These are project rules, not general advice — follow them:
 
-- **Strive for excellence (精益求精).** This is a personal site the maintainer cares about deeply — "good enough" is not the bar. Sweat the details: spacing, wording, ordering, EN/ZH parity, visual rhythm. When something is functional but not yet refined, keep polishing rather than declaring it done. Proactively point out rough edges instead of waiting to be asked.
+- **General taste & working principles → lailai.skill.** 精益求精 (sweat the details, keep polishing), edit-don't-rewrite (minimal targeted edits, one coherent change per commit), comment the _why_ not the _what_, no AI-tells — these cross-project rules live in the skill (`profile/`, `references/engineering-code-style.md`, `references/design-style.md`), not duplicated here. The bullets below are **site-specific**:
 - **Reuse `laikit` primitives** before adding new components. New UI should be visually and behaviourally indistinguishable from existing parts.
-- **Edit, don't rewrite.** Prefer minimal targeted edits; one coherent change per commit; do not reformat or refactor unrelated code.
-- **No whole-card hover lift.** Never add hover-triggered `translateY`/`translateX` to whole cards (or other large container blocks) — that "card floats up on hover" effect is an AI-tell and the maintainer hates it. Smaller hover motion on internal elements (e.g. an arrow nudging, a small `scale()` on an icon or active control) is fine when it serves a clear interaction cue.
+- **No whole-card hover lift.** Never add hover-triggered `translateY`/`translateX` to whole cards (or other large container blocks) — that "card floats up on hover" effect is an AI-tell and the maintainer hates it. Smaller hover motion on internal elements (e.g. an arrow nudging, a small `scale()` on an icon or active control) is fine when it serves a clear interaction cue. (Also in the skill's `design-style.md`.)
 - **i18n is mandatory.** Any new user-facing string requires both a `translate()` call and a Chinese entry in `i18n/zh-Hans/code.json`.
-- **Comments are few, uniform, and explain _why_.** No ASCII-art dividers, no banner headers, no commented-out code. The full ruleset lives in `.claude/rules/comments.md` (auto-loaded whenever files under `src/**` are touched).
+- **Code comments** follow the skill's `engineering-code-style.md`; the site-specific slice (the one allowed config-toggle exception) is in `.claude/rules/comments.md` (auto-loaded under `src/**`).
 - **Verify before committing.** Run `npm run check` and ensure it exits cleanly. For UI changes, also confirm in the `npm start` dev server.
 - **Small changes go straight to `main`.** Do not create a feature branch or open a PR for minor edits (copy tweaks, single-component refactors, style fixes, etc.) — commit directly on `main`. Reserve branches and PRs for substantial multi-file work the maintainer explicitly asks to be reviewed.
 

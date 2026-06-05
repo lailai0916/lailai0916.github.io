@@ -8,6 +8,8 @@ paths:
 
 The site has an in-house design system, `laikit` (`src/components/laikit/`). New UI must be visually and behaviourally indistinguishable from what already exists. Reuse before you build.
 
+> General **design principles** (统一·简约·现代, no whole-card hover lift, modern CSS, color/spacing tokens, contrast) live in lailai.skill's [`design-style.md`](../skills/lailai-skill/references/design-style.md). This file is the **site-specific** `laikit` inventory, CSS-Module layout, and MDX-widget rules.
+
 ## laikit inventory
 
 Each primitive is a folder with `index.tsx` + `styles.module.css`. Import via the `@site` alias, e.g. `import Button from '@site/src/components/laikit/Button'`.

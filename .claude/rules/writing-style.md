@@ -10,6 +10,8 @@ paths:
 
 lailai's site is mostly in Simplified Chinese, with three content streams (`blog/`, `docs/`, translated MDX under `i18n/zh-Hans/`). Voice is **understated, dry, occasionally wry** — short declarative sentences, no exclamation, no "本文将……" preambles. Match these conventions when authoring or editing.
 
+> **General writing rules live in lailai.skill.** The cross-project voice, punctuation/spacing, wording (你/仅/若, no 显然/易得/不难发现), bilingual term format, LaTeX math (`$...$`, `\frac` not `\dfrac`), and the C++ code template are in [`.claude/skills/lailai-skill/references/`](../skills/lailai-skill/references/) (`writing-style`, `wording`, `markdown-style`, `latex-math-style`, `cpp-oi-style`). **This file holds only the site-specific authoring layer** below — frontmatter taxonomy, MDX widgets, admonitions, image hosting, internal links, and the solution-post template.
+
 ## Frontmatter
 
 - **Blog post** fields, in order: `title`, `date`, `authors: lailai` (scalar, never an array), `tags` (always array, even single-tag). Optional: `image` / `image_dark` / `pinned` — used only on `welcome.mdx`. Never use `slug` — the filename is the slug.
@@ -59,35 +61,12 @@ Acronym after a full-width comma inside the parentheses, not after a slash or da
 
 ## Math (KaTeX)
 
-- Inline `$...$` is the default for any variable, short expression, or numeric quantity.
-- Display `$$...$$` for standalone equations. Use `\begin{aligned}` for multi-step derivations. Never number equations; cross-reference by prose.
-- Roman differential: `\mathrm{d}x`. Cross-out: `\cancel{}` (math-mode diagonal strike — not `\sout`, which is text-mode-only and trips KaTeX's `mathVsSout` strict warning). Set builder: `\set{...}`. Modular: `\bmod`. Force size in cells: `\displaystyle`.
+General math rules → skill [`latex-math-style.md`](../skills/lailai-skill/references/latex-math-style.md) (`$...$` inline, `$$...$$` display on its own line, `\frac` not `\dfrac`, `\dots`, single-letter vars, big-O without constants, wrap every numeric quantity in math). **Site gotcha:** cross-out is `\cancel{}` (math-mode), **not** `\sout` (text-mode-only — trips KaTeX's `mathVsSout` strict warning). Other site macros in use: `\mathrm{d}x`, `\set{...}`, `\bmod`, `\displaystyle` for cell sizing.
 
 ## Code blocks
 
-- C++ is dominant. The template is invariant — match it exactly:
-
-  ```cpp
-  #include <bits/stdc++.h>
-  using namespace std;
-
-  using ll=long long;
-  ...
-  int main()
-  {
-  	ios::sync_with_stdio(false);
-  	cin.tie(nullptr);
-  	...
-  	return 0;
-  }
-  ```
-
-  **Allman braces** (opening brace on its own line), **tabs for indentation**, **no spaces around `=` or operators** in main code (`using ll=long long;`, `if(n%i==0)`). Single-line `if`/`for` bodies inline without braces.
-
-- Comments inside C++ are essentially **never present**; the surrounding prose explains. Don't add `// xxx` lines.
-- Language tag is `cpp`, never `c++`. Other languages: `python`, `bash`, `text`, `svg`, `json`, `js`.
-- Code-fence title (`title="main.cpp"`) only when file identity matters. Solution posts omit it.
-- `showLineNumbers` and line highlighting are not used.
+- C++ style (invariant template, Allman braces, tabs, no comments, `bits/stdc++.h`, `cin/cout`, `return 0;`) → skill [`cpp-oi-style.md`](../skills/lailai-skill/references/cpp-oi-style.md). Other code → [`engineering-code-style.md`](../skills/lailai-skill/references/engineering-code-style.md).
+- **Site fence conventions:** language tag is `cpp`, never `c++` (also `python` / `bash` / `text` / `svg` / `json` / `js`). Code-fence title (`title="main.cpp"`) only when file identity matters; solution posts omit it. `showLineNumbers` and line highlighting are not used.
 
 ## MDX components
 

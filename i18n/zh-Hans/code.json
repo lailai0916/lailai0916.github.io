@@ -200,6 +200,36 @@
   "pages.insights.metricList.countries": {
     "message": "访客地区"
   },
+  "pages.resources.title": {
+    "message": "资源"
+  },
+  "pages.resources.description": {
+    "message": "精心筛选的优质工具与平台"
+  },
+  "pages.resources.modification": {
+    "message": "精选<b>资源</b>"
+  },
+  "pages.resources.search.clear": {
+    "message": "清空搜索"
+  },
+  "pages.resources.category.clear": {
+    "message": "清除分类"
+  },
+  "pages.resources.search.placeholder": {
+    "message": "搜索资源"
+  },
+  "pages.resources.category.count": {
+    "message": "{count} 项"
+  },
+  "pages.resources.datacard.categories": {
+    "message": "个分类"
+  },
+  "pages.resources.datacard.items": {
+    "message": "项资源"
+  },
+  "pages.resources.search.empty": {
+    "message": "找不到和“{query}”相符的资源。"
+  },
   "pages.settings.title": {
     "message": "设置"
   },
@@ -293,36 +323,6 @@
   "pages.settings.datacard.label": {
     "message": "项设置"
   },
-  "pages.resources.title": {
-    "message": "资源"
-  },
-  "pages.resources.description": {
-    "message": "精心筛选的优质工具与平台"
-  },
-  "pages.resources.modification": {
-    "message": "精选<b>资源</b>"
-  },
-  "pages.resources.search.clear": {
-    "message": "清空搜索"
-  },
-  "pages.resources.category.clear": {
-    "message": "清除分类"
-  },
-  "pages.resources.search.placeholder": {
-    "message": "搜索资源"
-  },
-  "pages.resources.category.count": {
-    "message": "{count} 项"
-  },
-  "pages.resources.datacard.categories": {
-    "message": "个分类"
-  },
-  "pages.resources.datacard.items": {
-    "message": "项资源"
-  },
-  "pages.resources.search.empty": {
-    "message": "找不到和“{query}”相符的资源。"
-  },
   "pages.travel.title": {
     "message": "旅行"
   },
@@ -341,24 +341,6 @@
   "blog.pages.tags.tagSelect": {
     "message": "标签"
   },
-  "components.github.stars": {
-    "message": "Star 数"
-  },
-  "components.github.forks": {
-    "message": "Fork 数"
-  },
-  "components.github.license": {
-    "message": "许可证"
-  },
-  "components.github.language": {
-    "message": "主要语言"
-  },
-  "components.github.error": {
-    "message": "加载 GitHub 数据失败"
-  },
-  "components.markdown.aboutGreeting": {
-    "message": "Hello, I'm lailai"
-  },
   "components.playground.gameOfLife.play": {
     "message": "播放"
   },
@@ -374,6 +356,12 @@
   "components.playground.gameOfLife.clear": {
     "message": "清空"
   },
+  "components.playground.lorenz.reset": {
+    "message": "重置"
+  },
+  "components.playground.nBody.reset": {
+    "message": "重置"
+  },
   "components.playground.neuralNetwork.clear": {
     "message": "清除"
   },
@@ -382,9 +370,6 @@
   },
   "components.playground.neuralNetwork.preprocess": {
     "message": "预处理"
-  },
-  "components.playground.lorenz.reset": {
-    "message": "重置"
   },
   "pages.moments.title": {
     "message": "动态"
@@ -448,6 +433,30 @@
   },
   "pages.moments.weather.thunderstorm": {
     "message": "雷暴"
+  },
+  "components.playground.pathfinding.random": {
+    "message": "随机"
+  },
+  "components.playground.pathfinding.clear": {
+    "message": "清空"
+  },
+  "components.github.stars": {
+    "message": "Star 数"
+  },
+  "components.github.forks": {
+    "message": "Fork 数"
+  },
+  "components.github.license": {
+    "message": "许可证"
+  },
+  "components.github.language": {
+    "message": "主要语言"
+  },
+  "components.github.error": {
+    "message": "加载 GitHub 数据失败"
+  },
+  "components.markdown.aboutGreeting": {
+    "message": "Hello, I'm lailai"
   },
   "pages.insights.heartbeat.ariaLabel": {
     "message": "近期监测状态"
@@ -608,6 +617,18 @@
   "blog.sidebar.tags.title": {
     "message": "热门标签"
   },
+  "pages.travel.map.title": {
+    "message": "旅行地图"
+  },
+  "pages.travel.map.description": {
+    "message": "世界那么大，我想去看看。足迹遍布的国家和城市"
+  },
+  "pages.travel.map.legend.visited": {
+    "message": "已到访"
+  },
+  "pages.travel.map.legend.unvisited": {
+    "message": "未到访"
+  },
   "components.cookieConsent.title": {
     "message": "Cookie 设置"
   },
@@ -622,18 +643,6 @@
   },
   "components.cookieConsent.accept": {
     "message": "接受"
-  },
-  "pages.travel.map.title": {
-    "message": "旅行地图"
-  },
-  "pages.travel.map.description": {
-    "message": "世界那么大，我想去看看。足迹遍布的国家和城市"
-  },
-  "pages.travel.map.legend.visited": {
-    "message": "已到访"
-  },
-  "pages.travel.map.legend.unvisited": {
-    "message": "未到访"
   },
   "pages.travel.timeline.title": {
     "message": "旅行足迹"
@@ -720,6 +729,9 @@
     "message": "下一页",
     "description": "The label used to navigate to the next doc"
   },
+  "theme.docs.versionBadge.label": {
+    "message": "版本：{versionLabel}"
+  },
   "theme.docs.tagDocListPageTitle.nDocsTagged": {
     "message": "{count} 篇文档带有标签",
     "description": "Pluralized label for \"{count} docs tagged\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
@@ -727,9 +739,6 @@
   "theme.docs.tagDocListPageTitle": {
     "message": "{nDocsTagged}「{tagName}」",
     "description": "The title of the page for a docs tag"
-  },
-  "theme.docs.versionBadge.label": {
-    "message": "版本：{versionLabel}"
   },
   "theme.docs.versions.unreleasedVersionLabel": {
     "message": "此为 {siteTitle} {versionLabel} 版尚未发行的文档。",
@@ -767,13 +776,13 @@
     "message": "最后{byUser}{atDate}更新",
     "description": "The sentence used to display when a page has been last updated, and by who"
   },
-  "theme.NotFound.title": {
-    "message": "找不到页面",
-    "description": "The title of the 404 page"
-  },
   "theme.navbar.mobileVersionsDropdown.label": {
     "message": "选择版本",
     "description": "The label for the navbar versions dropdown on mobile view"
+  },
+  "theme.NotFound.title": {
+    "message": "找不到页面",
+    "description": "The title of the 404 page"
   },
   "theme.tags.tagsListLabel": {
     "message": "标签：",
@@ -827,6 +836,10 @@
     "message": "主导航",
     "description": "The ARIA label for the main navigation"
   },
+  "theme.navbar.mobileLanguageDropdown.label": {
+    "message": "选择语言",
+    "description": "The label for the mobile language switcher dropdown"
+  },
   "theme.NotFound.p1": {
     "message": "我们找不到您要找的页面。",
     "description": "The first paragraph of the 404 page"
@@ -835,13 +848,13 @@
     "message": "请联系原始链接来源网站的所有者，并告知他们链接已损坏。",
     "description": "The 2nd paragraph of the 404 page"
   },
-  "theme.navbar.mobileLanguageDropdown.label": {
-    "message": "选择语言",
-    "description": "The label for the mobile language switcher dropdown"
-  },
   "theme.TOCCollapsible.toggleButtonLabel": {
     "message": "本页总览",
     "description": "The label used by the button on the collapsible TOC component"
+  },
+  "theme.blog.post.readingTime.plurals": {
+    "message": "阅读需 {readingTime} 分钟",
+    "description": "Pluralized label for \"{readingTime} min read\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
   },
   "theme.blog.post.readMore": {
     "message": "阅读更多",
@@ -850,10 +863,6 @@
   "theme.blog.post.readMoreLabel": {
     "message": "阅读 {title} 的全文",
     "description": "The ARIA label for the link to full blog posts from excerpts"
-  },
-  "theme.blog.post.readingTime.plurals": {
-    "message": "阅读需 {readingTime} 分钟",
-    "description": "Pluralized label for \"{readingTime} min read\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
   },
   "theme.CodeBlock.copy": {
     "message": "复制",
@@ -875,10 +884,6 @@
     "message": "主页面",
     "description": "The ARIA label for the home page in the breadcrumbs"
   },
-  "theme.docs.sidebar.navAriaLabel": {
-    "message": "文档侧边栏",
-    "description": "The ARIA label for the sidebar navigation"
-  },
   "theme.docs.sidebar.collapseButtonTitle": {
     "message": "收起侧边栏",
     "description": "The title attribute for collapse button of doc sidebar"
@@ -886,6 +891,10 @@
   "theme.docs.sidebar.collapseButtonAriaLabel": {
     "message": "收起侧边栏",
     "description": "The title attribute for collapse button of doc sidebar"
+  },
+  "theme.docs.sidebar.navAriaLabel": {
+    "message": "文档侧边栏",
+    "description": "The ARIA label for the sidebar navigation"
   },
   "theme.docs.sidebar.closeSidebarButtonAriaLabel": {
     "message": "关闭导航栏",

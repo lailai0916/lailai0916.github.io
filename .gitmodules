@@ -1,0 +1,3 @@
+[submodule ".claude/skills/lailai-skill"]
+	path = .claude/skills/lailai-skill
+	url = https://github.com/lailai0916/lailai-skill.git
