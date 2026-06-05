@@ -22,8 +22,12 @@ const STATIC_MOMENTS: MomentItem[] = [
   },
   {
     date: '2026-03-30T18:30',
-    content:
-      'bilibili LV6! <a href="https://space.bilibili.com/1796257032">@lailai0916</a>',
+    content: 'bilibili LV6!',
+    share: {
+      url: 'https://space.bilibili.com/1796257032',
+      title: 'lailai0916 的个人主页',
+      description: 'lailai0916',
+    },
   },
   {
     date: '2026-03-07T14:30',
