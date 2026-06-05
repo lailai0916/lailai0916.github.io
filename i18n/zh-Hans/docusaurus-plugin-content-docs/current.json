@@ -215,6 +215,14 @@
     "message": "本章记录我的英语笔记。",
     "description": "The generated-index page description for category '英语' in sidebar 'noteSidebar'"
   },
+  "sidebar.noteSidebar.category.英语词汇": {
+    "message": "英语词汇",
+    "description": "The label for category '英语词汇' in sidebar 'noteSidebar'"
+  },
+  "sidebar.noteSidebar.category.英语词汇.link.generated-index.description": {
+    "message": "本章介绍英语词汇相关知识，包括构词法和高考词汇表。",
+    "description": "The generated-index page description for category '英语词汇' in sidebar 'noteSidebar'"
+  },
   "sidebar.noteSidebar.category.英语语法": {
     "message": "英语语法",
     "description": "The label for category '英语语法' in sidebar 'noteSidebar'"
@@ -243,17 +251,17 @@
     "message": "本章介绍英语句子结构，包括句子分类、从句、语态等。",
     "description": "The generated-index page description for category '句子' in sidebar 'noteSidebar'"
   },
-  "sidebar.noteSidebar.category.杂项": {
-    "message": "杂项",
-    "description": "The label for category '杂项' in sidebar 'noteSidebar'"
-  },
-  "sidebar.noteSidebar.category.杂项.link.generated-index.description": {
-    "message": "本章介绍其他英语语法相关知识，包括构词法和标点符号。",
-    "description": "The generated-index page description for category '杂项' in sidebar 'noteSidebar'"
-  },
   "sidebar.noteSidebar.category.其他": {
     "message": "其他",
     "description": "The label for category '其他' in sidebar 'noteSidebar'"
+  },
+  "sidebar.projectSidebar.category.Personal": {
+    "message": "Personal",
+    "description": "The label for category 'Personal' in sidebar 'projectSidebar'"
+  },
+  "sidebar.projectSidebar.category.Personal.link.generated-index.description": {
+    "message": "本章展示与我个人相关的项目。",
+    "description": "The generated-index page description for category 'Personal' in sidebar 'projectSidebar'"
   },
   "sidebar.projectSidebar.category.Tools": {
     "message": "Tools",
@@ -294,13 +302,5 @@
   "sidebar.projectSidebar.category.指南.link.generated-index.description": {
     "message": "本章收录各种实用的文档指南。",
     "description": "The generated-index page description for category '指南' in sidebar 'projectSidebar'"
-  },
-  "sidebar.noteSidebar.category.英语词汇": {
-    "message": "英语词汇",
-    "description": "The label for category '英语词汇' in sidebar 'noteSidebar'"
-  },
-  "sidebar.noteSidebar.category.英语词汇.link.generated-index.description": {
-    "message": "本章介绍英语词汇相关知识，包括构词法和高考词汇表。",
-    "description": "The generated-index page description for category '英语词汇' in sidebar 'noteSidebar'"
   }
 }

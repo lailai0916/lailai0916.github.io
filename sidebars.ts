@@ -564,9 +564,19 @@ const sidebars: SidebarsConfig = {
   ],
   projectSidebar: [
     'project/index',
-    'project/lailai0916.github.io',
-    'project/lailai0916',
-    'project/lailai-skill',
+    {
+      type: 'category',
+      label: 'Personal',
+      link: {
+        type: 'generated-index',
+        description: '本章展示与我个人相关的项目。',
+      },
+      items: [
+        'project/personal/lailai0916.github.io',
+        'project/personal/lailai0916',
+        'project/personal/lailai-skill',
+      ],
+    },
     {
       type: 'category',
       label: 'Tools',
