@@ -364,7 +364,7 @@ $$
 总结一下，一般写为，
 
 $$
-S_n={[2a_1+(n-1)]d\over2}\cdot n={n(a_1+a_n)\over2}
+S_n={[2a_1+(n-1)d]\over2}\cdot n={n(a_1+a_n)\over2}
 $$
 
 常用二次函数的思想：
@@ -454,7 +454,7 @@ $$
 $$
 
 $$
-2b+2\sqrt{ac}+2\sqrt b(\sqrt a+\sqrt c)=2\sqrt b(\sqrt a+\sqrt c)+a+c+\sqrt ac
+2b+2\sqrt{ac}+2\sqrt b(\sqrt a+\sqrt c)=2\sqrt b(\sqrt a+\sqrt c)+a+c+2\sqrt{ac}
 $$
 
 $$
@@ -740,7 +740,7 @@ $$
 容易发现，
 
 $$
-2S=1+{1\over2}-{1\over n+1}-{1\over n-2}
+2S=1+{1\over2}-{1\over n+1}-{1\over n+2}
 $$
 
 或者用求和符号简单的表示，下文再说。
@@ -922,7 +922,7 @@ $$
 容易发现，
 
 $$
-{1\over n}-{1\over n-1}={1\over n(n+1)}<{1\over n^2}<{1\over n(n-1)}={1\over n-1}-{1\over n}
+{1\over n}-{1\over n+1}={1\over n(n+1)}<{1\over n^2}<{1\over n(n-1)}={1\over n-1}-{1\over n}
 $$
 
 于是，我们可以以此估计。
@@ -1116,8 +1116,8 @@ $$
 $$
 \begin{aligned}
 a_n=2a_{n-1}+1\\
-2a_{n-1}=4a_{n-1}+2\\
-4a_{n=2}=8a_{n-2}+4\\
+2a_{n-1}=4a_{n-2}+2\\
+4a_{n-2}=8a_{n-3}+4\\
 \dots\\
 2^{n-3}a_3=2^{n-2}a_2+2^{n-3}\\
 2^{n-2}a_2=2^{n-1}a_1+2^{n-2}
@@ -1444,7 +1444,7 @@ a_n=a_{n-1}+n
 $$
 
 $$
-a_{n-1}=a{n-2}+n-1
+a_{n-1}=a_{n-2}+n-1
 $$
 
 $$
