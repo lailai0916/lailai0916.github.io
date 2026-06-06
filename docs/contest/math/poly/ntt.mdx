@@ -1,5 +1,5 @@
 ---
-title: 快速数论变换（FNTT）
+title: 快速数论变换（NTT）
 ---
 
 ## 参考资料
@@ -9,7 +9,7 @@ title: 快速数论变换（FNTT）
 
 ## 思想
 
-[快速傅里叶变换（FFT）](/docs/contest/math/poly/fft) 在复数域上用单位根 $\omega_n=e^{2\pi i/n}$ 做变换，浮点运算存在精度误差。**快速数论变换**（Fast Number Theoretic Transform，FNTT）把整个过程搬到模 $p$ 的整数域上，用 **原根**（Primitive Root）的幂代替单位根，既精确又天然适合带取模的题目。
+[快速傅里叶变换（FFT）](/docs/contest/math/poly/fft) 在复数域上用单位根 $\omega_n=e^{2\pi i/n}$ 做变换，浮点运算存在精度误差。**快速数论变换**（Number Theoretic Transform，NTT）把整个过程搬到模 $p$ 的整数域上，用 **原根**（Primitive Root）的幂代替单位根，既精确又天然适合带取模的题目。
 
 要求模数 $p$ 为 **NTT 模数**，形如 $p=q\cdot 2^c+1$。设 $g$ 是模 $p$ 的原根，则 $g_n=g^{\frac{p-1}{n}}$ 在模 $p$ 意义下扮演 $n$ 次单位根的角色，前提是变换长度 $n\mid(p-1)$，即 $n$ 是 $2$ 的幂且 $2^c\ge n$。
 

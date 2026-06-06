@@ -57,7 +57,9 @@ $$
 H_n(a,b)=a[n]b=
 \begin{cases}
   b+1 & n=0 \\
-  a & n\ge 1\land b=1 \\
+  a & n=1\land b=0 \\
+  0 & n=2\land b=0 \\
+  1 & n\ge 3\land b=0 \\
   H_{n-1}(a,H_n(a,b-1)) & \text{otherwise}
 \end{cases}
 $$
@@ -133,7 +135,7 @@ $$
 1. $a$ 表示正整数 $a$；
 2. $a\to b$ 表示 $a^b$；
 3. $a\to b\to 1$ 等价于 $a\to b$；
-4. $a\to b\to(c+1)$ 等价于 $\underbrace{a\to(a\to(\dots(a\to(a)\to c)\dots)\to c)\to c}_b$。
+4. $a\to b\to(c+1)$ 等价于 $a\to\bigl(a\to(b-1)\to(c+1)\bigr)\to c$（其中 $a\to 1\to(c+1)=a$）。
 
 三项链的康威链式箭号表示法和其他记号的关系：
 
@@ -185,7 +187,7 @@ $$
 
 - [葛立恒数 - 维基百科](https://zh.wikipedia.org/wiki/葛立恆數)
 
-葛立恒数曾是以下问题中 $n$ 极其宽松的上界，但现在已经压缩到 $2\uparrow\uparrow\uparrow 5$ 了。
+葛立恒数曾是以下问题中 $n$ 极其宽松的上界，但现在已经压缩到 $2\uparrow\uparrow\uparrow 6$ 了。
 
 > 考虑一个 $n$ 维超立方体，在连接所有顶点后，将形成一个 $2^n$ 个顶点的完全图。将每条边红蓝染色，求最小的 $n$ 使得所有染色方案中，都必定存在一个四点共面且六边同色的单色完全子图。
 

@@ -128,7 +128,7 @@ $$
 
 公理二：$P(\Omega)=1,P(\varnothing)=0$。
 
-公理三：$A\cap B=\varnothing\iff P(A\cup B)=P(A)+P(B)$。
+公理三：$A\cap B=\varnothing\Rightarrow P(A\cup B)=P(A)+P(B)$。
 
 推论：
 
@@ -177,7 +177,7 @@ P(B\cup C)=P(B)+P(C)
 $$
 
 $$
-P(BC|A)=P(B|A)+P(C|A)
+P(B\cup C|A)=P(B|A)+P(C|A)
 $$
 
 $$
@@ -198,7 +198,7 @@ $$
 
 ### 全概率公式
 
-全概率公式指出，对于 $A,B$ 两组对立事件，
+全概率公式指出，对于对立事件 $A$ 与 $\bar A$ 及任意事件 $B$，
 
 $$
 P(B)=P(A)P(B|A)+P(\bar A)P(B|\bar A)
@@ -206,7 +206,7 @@ $$
 
 可以理解为，$A$ 发生后 $B$ 发生，和 $A$ 不发生但是 $B$ 发生概率之和。
 
-In general，若一组事件 $A_1, \dots, A_n$ 共同对立（两两不交、相互独立且和为 $\Omega$），则对任意事件 $B$ 都有：
+In general，若一组事件 $A_1, \dots, A_n$ 共同对立（两两不交且和为 $\Omega$），则对任意事件 $B$ 都有：
 
 $$
 P(B) = \sum_{i=1}^{n} P(A_i)P(B|A_i)
