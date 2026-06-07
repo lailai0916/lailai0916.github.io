@@ -302,5 +302,9 @@
   "sidebar.projectSidebar.category.指南.link.generated-index.description": {
     "message": "本章收录各种实用的文档指南。",
     "description": "The generated-index page description for category '指南' in sidebar 'projectSidebar'"
+  },
+  "sidebar.noteSidebar.category.历史": {
+    "message": "历史",
+    "description": "The label for category '历史' in sidebar 'noteSidebar'"
   }
 }

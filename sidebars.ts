@@ -553,6 +553,15 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: 'category',
+      label: '历史',
+      link: {
+        type: 'doc',
+        id: 'note/history/index',
+      },
+      items: ['note/history/china', 'note/history/world'],
+    },
+    {
+      type: 'category',
       label: '其他',
       items: [
         'note/other/devices',
@@ -564,6 +573,7 @@ const sidebars: SidebarsConfig = {
   ],
   projectSidebar: [
     'project/index',
+    'project/personal/lailai0916.github.io',
     {
       type: 'category',
       label: 'Personal',
@@ -572,7 +582,6 @@ const sidebars: SidebarsConfig = {
         description: '本章展示与我个人相关的项目。',
       },
       items: [
-        'project/personal/lailai0916.github.io',
         'project/personal/lailai0916',
         'project/personal/lailai-skill',
       ],
@@ -599,7 +608,6 @@ const sidebars: SidebarsConfig = {
       },
       items: [
         'project/data/hangzhou-highschool-map',
-        'project/data/hez-history',
         'project/data/oi-chart-race',
       ],
     },
