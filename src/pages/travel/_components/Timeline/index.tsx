@@ -46,13 +46,13 @@ type TimelineCardItem = TravelItem & {
 
 const formatTravelDate = (dateStr: string, locale: string): string => {
   const [year, month] = dateStr.split('-');
-  const date = new Date(Date.UTC(Number(year), Number(month) - 1, 1));
 
-  return date.toLocaleDateString(locale, {
+  // Year/month are taken literally from the string; the Date only drives the
+  // localized month name, so no timezone conversion is involved (cf. changelog).
+  return new Intl.DateTimeFormat(locale, {
     year: 'numeric',
     month: 'long',
-    timeZone: 'UTC',
-  });
+  }).format(new Date(Number(year), Number(month) - 1, 1));
 };
 
 const TITLE = translate({
