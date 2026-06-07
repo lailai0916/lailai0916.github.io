@@ -843,6 +843,11 @@ export const RESOURCE_LIST: ResourceCategoryItem[] = [
         href: 'https://www.ilovepdf.com',
         description: '在线 PDF 转换与编辑工具',
       },
+      {
+        title: 'Forensically',
+        href: 'https://29a.ch/photo-forensics',
+        description: '在线图片篡改取证分析工具',
+      },
     ],
   },
 ];
