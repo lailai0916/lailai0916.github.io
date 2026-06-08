@@ -1,27 +1,40 @@
+.cardWrap {
+  min-width: 0;
+}
+
+/* Stack the label over the title. Titles are single-line (see .title), so
+   every card is naturally the same height; height:100% just guards equality
+   against any stray sub-pixel difference across the row. */
+.cardSurface {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
 .label {
   display: inline-flex;
   align-items: center;
-  gap: 0.35rem;
-  font-size: 0.8rem;
+  gap: 0.3rem;
+  font-size: 0.78rem;
   font-weight: 500;
+  line-height: 1;
   color: var(--ifm-color-emphasis-600);
-  margin-bottom: 0.25rem;
 }
 
 .labelRight {
-  justify-content: flex-end;
-  width: 100%;
+  align-self: flex-end;
 }
 
 .title {
+  min-width: 0;
   font-size: 0.95rem;
   font-weight: 600;
+  line-height: 1.35;
   color: var(--ifm-font-color-base);
-  line-height: 1.3;
   overflow: hidden;
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 
 .titleRight {
@@ -31,6 +44,7 @@
 .paginator {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: stretch;
   gap: 1rem;
 }
 
@@ -40,26 +54,12 @@
   }
 }
 
-.slot {
-  display: flex;
-  min-width: 0;
-}
-
-.slot > :global([class*='linkCard']) {
-  flex: 1;
-  min-width: 0;
-}
-
-.slotEmpty {
-  visibility: hidden;
+.empty {
+  display: block;
 }
 
 @media (max-width: 600px) {
-  .slotEmpty {
+  .empty {
     display: none;
   }
-}
-
-.slotRight {
-  justify-content: flex-end;
 }

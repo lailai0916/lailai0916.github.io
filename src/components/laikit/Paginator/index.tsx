@@ -27,20 +27,25 @@ function PaginatorCard({
   const arrow = (
     <Icon
       icon={isRight ? 'lucide:arrow-right' : 'lucide:arrow-left'}
-      width={14}
-      height={14}
+      width={15}
+      height={15}
     />
   );
   return (
-    <Card to={item.permalink} padding="0.85rem 1.1rem">
-      <div className={clsx(styles.label, isRight && styles.labelRight)}>
+    <Card
+      to={item.permalink}
+      padding="0.85rem 1rem"
+      wrapperClassName={styles.cardWrap}
+      className={styles.cardSurface}
+    >
+      <span className={clsx(styles.label, isRight && styles.labelRight)}>
         {!isRight && arrow}
         <span>{item.label}</span>
         {isRight && arrow}
-      </div>
-      <div className={clsx(styles.title, isRight && styles.titleRight)}>
+      </span>
+      <span className={clsx(styles.title, isRight && styles.titleRight)}>
         {item.title}
-      </div>
+      </span>
     </Card>
   );
 }
@@ -55,18 +60,16 @@ export default function Paginator({
 
   return (
     <nav className={clsx(styles.paginator, className)} aria-label={ariaLabel}>
-      <div className={clsx(styles.slot, !prevItem && styles.slotEmpty)}>
-        {prevItem && <PaginatorCard item={prevItem} direction="left" />}
-      </div>
-      <div
-        className={clsx(
-          styles.slot,
-          styles.slotRight,
-          !nextItem && styles.slotEmpty
-        )}
-      >
-        {nextItem && <PaginatorCard item={nextItem} direction="right" />}
-      </div>
+      {prevItem ? (
+        <PaginatorCard item={prevItem} direction="left" />
+      ) : (
+        <div className={styles.empty} aria-hidden="true" />
+      )}
+      {nextItem ? (
+        <PaginatorCard item={nextItem} direction="right" />
+      ) : (
+        <div className={styles.empty} aria-hidden="true" />
+      )}
     </nav>
   );
 }
