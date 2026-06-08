@@ -31,6 +31,7 @@ export default function Layout(props: Props): ReactNode {
   return (
     <div
       className={clsx(
+        styles.layout,
         debugMode && styles.debugMode,
         grayMode && styles.grayMode
       )}

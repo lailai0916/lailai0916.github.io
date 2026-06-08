@@ -1,0 +1,65 @@
+.label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--ifm-color-emphasis-600);
+  margin-bottom: 0.25rem;
+}
+
+.labelRight {
+  justify-content: flex-end;
+  width: 100%;
+}
+
+.title {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--ifm-font-color-base);
+  line-height: 1.3;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.titleRight {
+  text-align: right;
+}
+
+.paginator {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+@media (max-width: 600px) {
+  .paginator {
+    grid-template-columns: 1fr;
+  }
+}
+
+.slot {
+  display: flex;
+  min-width: 0;
+}
+
+.slot > :global([class*='linkCard']) {
+  flex: 1;
+  min-width: 0;
+}
+
+.slotEmpty {
+  visibility: hidden;
+}
+
+@media (max-width: 600px) {
+  .slotEmpty {
+    display: none;
+  }
+}
+
+.slotRight {
+  justify-content: flex-end;
+}

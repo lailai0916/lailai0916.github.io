@@ -1,0 +1,77 @@
+.notFound {
+  /* Grow to fill the space the navbar and footer leave, but never shrink below
+     the content — so the footer sits exactly at the window's bottom edge while
+     the block keeps a natural minimum height (and the page scrolls if shorter). */
+  flex: 1 0 auto;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: clamp(2rem, 6vh, 4rem) clamp(1rem, 3vw, 2rem);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 0.75rem;
+}
+
+.code {
+  font-size: clamp(4.5rem, 18vw, 9rem);
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.04em;
+  font-variant-numeric: tabular-nums;
+  color: var(--ifm-color-emphasis-200);
+}
+
+.title {
+  margin: 0;
+  font-size: clamp(1.5rem, 1rem + 2vw, 2rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  color: var(--ifm-heading-color);
+}
+
+.description {
+  max-width: 28rem;
+  margin: 0;
+  color: var(--ifm-color-emphasis-700);
+  line-height: 1.6;
+}
+
+.homeButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  height: 40px;
+  margin-top: 1rem;
+  padding: 0 1.1rem;
+  border: 1px solid var(--ifm-color-primary);
+  border-radius: 10px;
+  background: var(--ifm-color-primary);
+  color: #ffffff;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  text-decoration: none !important;
+  transition:
+    background-color 160ms ease,
+    border-color 160ms ease;
+}
+
+.homeButton:hover {
+  background: var(--ifm-color-primary-dark);
+  border-color: var(--ifm-color-primary-dark);
+  color: #ffffff;
+}
+
+.homeButton:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px
+    color-mix(in srgb, var(--ifm-color-primary) 24%, transparent);
+}

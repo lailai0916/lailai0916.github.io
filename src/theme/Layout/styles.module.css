@@ -6,6 +6,16 @@
   outline: 1px solid orange;
 }
 
+/* The flag classes above sit on the outermost wrapper div. Without a layout of
+   its own that div is `display: block`, which severs Docusaurus's sticky-footer
+   chain (#__docusaurus → main-wrapper `flex: 1` → footer). Re-establish the
+   column flow here so `.mainWrapper`'s grow can push the footer to the bottom. */
+.layout {
+  flex: 1 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
 .grayMode {
   filter: grayscale(100%);
 }

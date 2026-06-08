@@ -6,7 +6,7 @@ import { Icon } from '@iconify/react';
 
 import type { Props as BlogPostPageProps } from '@theme/BlogPostPage';
 import { formatLocalizedDate } from '@site/src/utils/format';
-import Card from '@site/src/components/laikit/Card';
+import Paginator from '@site/src/components/laikit/Paginator';
 import { MetaBar, TagChipList } from '../BlogUI';
 import { usePostMetaItems } from '../PostMeta';
 import CopyMarkdownButton from '../CopyMarkdownButton';
@@ -169,62 +169,17 @@ export function PostFooter({ metadata }: PostFooterProps) {
 
 // PostPaginator
 
-interface PaginatorItem {
+interface PostPaginatorItem {
   title: string;
   permalink: string;
 }
 
 interface PostPaginatorProps {
-  prevItem?: PaginatorItem;
-  nextItem?: PaginatorItem;
-}
-
-type Direction = 'left' | 'right';
-
-function PaginatorCard({
-  item,
-  label,
-  direction,
-}: {
-  item: PaginatorItem;
-  label: string;
-  direction: Direction;
-}) {
-  const isRight = direction === 'right';
-  const arrow = (
-    <Icon
-      icon={isRight ? 'lucide:arrow-right' : 'lucide:arrow-left'}
-      width={14}
-      height={14}
-    />
-  );
-  return (
-    <Card to={item.permalink} padding="0.85rem 1.1rem">
-      <div
-        className={clsx(
-          styles.articlePaginatorLabel,
-          isRight && styles.articlePaginatorLabelRight
-        )}
-      >
-        {!isRight && arrow}
-        <span>{label}</span>
-        {isRight && arrow}
-      </div>
-      <div
-        className={clsx(
-          styles.articlePaginatorTitle,
-          isRight && styles.articlePaginatorTitleRight
-        )}
-      >
-        {item.title}
-      </div>
-    </Card>
-  );
+  prevItem?: PostPaginatorItem;
+  nextItem?: PostPaginatorItem;
 }
 
 export function PostPaginator({ prevItem, nextItem }: PostPaginatorProps) {
-  if (!prevItem && !nextItem) return null;
-
   const newerLabel = translate({
     id: 'blog.post.paginator.newer',
     message: 'Newer post',
@@ -235,34 +190,13 @@ export function PostPaginator({ prevItem, nextItem }: PostPaginatorProps) {
   });
 
   return (
-    <nav
-      className={styles.articlePaginator}
-      aria-label={translate({
+    <Paginator
+      prevItem={prevItem && { ...prevItem, label: newerLabel }}
+      nextItem={nextItem && { ...nextItem, label: olderLabel }}
+      ariaLabel={translate({
         id: 'blog.post.paginator.ariaLabel',
         message: 'Blog post navigation',
       })}
-    >
-      <div
-        className={clsx(
-          styles.articlePaginatorSlot,
-          !prevItem && styles.articlePaginatorSlotEmpty
-        )}
-      >
-        {prevItem && (
-          <PaginatorCard item={prevItem} label={newerLabel} direction="left" />
-        )}
-      </div>
-      <div
-        className={clsx(
-          styles.articlePaginatorSlot,
-          styles.articlePaginatorSlotRight,
-          !nextItem && styles.articlePaginatorSlotEmpty
-        )}
-      >
-        {nextItem && (
-          <PaginatorCard item={nextItem} label={olderLabel} direction="right" />
-        )}
-      </div>
-    </nav>
+    />
   );
 }

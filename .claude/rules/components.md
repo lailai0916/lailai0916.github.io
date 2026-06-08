@@ -17,6 +17,7 @@ Each primitive is a folder with `index.tsx` + `styles.module.css`. Import via th
 - **Layout / surfaces:** `Card`, `TitleCard`, `LinkCard`, `DataCard`, `ShareCard`, `Page`, `Section`.
 - **Controls:** `Button`, `Segmented`, `Slider`, `Switch`.
 - **Atoms / display:** `Badge`, `IconBlock`, `IconText`, `Tooltip`, `Skeleton`, `TrafficLights`, `Markdown`, `Quote`, `GitHub`.
+- **Navigation:** `Paginator` (Card-based prev/next pair — blog `PostChrome`'s `PostPaginator` and the swizzled `@theme/DocPaginator` both render it, so blog and docs share one paginator).
 
 Before adding a component, check whether an existing primitive (optionally with an extra optional prop) covers the case.
 
@@ -53,4 +54,4 @@ Components registered in `src/theme/MDXComponents.tsx` are globally available in
 
 ## Theme overrides
 
-Swizzled Docusaurus overrides live in `src/theme/` (Layout, Blog\*, MDXComponents, Admonition, Root). Use `npm run swizzle` rather than hand-copying framework files. `src/theme/BlogShared/` is **not** an official Docusaurus slot — it is a local helper folder of blog building blocks, each following the same per-component-folder layout as `laikit`.
+Swizzled Docusaurus overrides live in `src/theme/` (Layout, Blog\*, MDXComponents, Admonition, Root, `DocPaginator`, `NotFound/Content`). Use `npm run swizzle` rather than hand-copying framework files. A swizzled override reuses its own framework `theme.*` strings (e.g. `DocPaginator` keeps `theme.docs.paginator.*`); genuinely new strings take a project prefix (`NotFound/Content`'s home button is `components.notFound.*`, mirroring the `Root/CookieConsent` → `components.cookieConsent.*` precedent). `src/theme/BlogShared/` is **not** an official Docusaurus slot — it is a local helper folder of blog building blocks, each following the same per-component-folder layout as `laikit`.
