@@ -306,5 +306,9 @@
   "sidebar.noteSidebar.category.历史": {
     "message": "历史",
     "description": "The label for category '历史' in sidebar 'noteSidebar'"
+  },
+  "sidebar.noteSidebar.category.生物": {
+    "message": "生物",
+    "description": "The label for category '生物' in sidebar 'noteSidebar'"
   }
 }

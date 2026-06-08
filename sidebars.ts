@@ -562,6 +562,15 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: 'category',
+      label: '生物',
+      link: {
+        type: 'doc',
+        id: 'note/biology/index',
+      },
+      items: ['note/biology/molecule-cell', 'note/biology/heredity-evolution'],
+    },
+    {
+      type: 'category',
       label: '其他',
       items: [
         'note/other/devices',
