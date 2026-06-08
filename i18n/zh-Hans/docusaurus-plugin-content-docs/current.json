@@ -310,5 +310,9 @@
   "sidebar.noteSidebar.category.生物": {
     "message": "生物",
     "description": "The label for category '生物' in sidebar 'noteSidebar'"
+  },
+  "sidebar.noteSidebar.category.地理": {
+    "message": "地理",
+    "description": "The label for category '地理' in sidebar 'noteSidebar'"
   }
 }

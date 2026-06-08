@@ -571,6 +571,15 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: 'category',
+      label: '地理',
+      link: {
+        type: 'doc',
+        id: 'note/geography/index',
+      },
+      items: ['note/geography/physical', 'note/geography/human'],
+    },
+    {
+      type: 'category',
       label: '其他',
       items: [
         'note/other/devices',
