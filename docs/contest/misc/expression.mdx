@@ -85,7 +85,7 @@ void print(Poly a)
 	if(tmp)cout<<0;
 	cout<<'\n';
 }
-bool isoption(char f){return f=='+'||f=='-'||f=='*'||f=='^';}
+bool isoperator(char f){return f=='+'||f=='-'||f=='*'||f=='^';}
 bool isvariable(char f){return f==ch;}
 int priority(char f)
 {
@@ -160,7 +160,7 @@ Poly calc(string s)
 		{
 			P.push(Poly({0,1}));
 		}
-		else if(isoption(s[i]))
+		else if(isoperator(s[i]))
 		{
 			while(!F.empty()&&priority(s[i])<=priority(F.top()))pop();
 			F.push(s[i]);
