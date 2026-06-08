@@ -21,6 +21,7 @@ import {
   type ExperimentalSettings,
 } from '@site/src/hooks/useExperimentalFlag';
 import { useThemeColors } from '@site/src/hooks/useThemeColors';
+import { getThemeStorage } from '@site/src/utils/colorUtils';
 import { Icon } from '@iconify/react';
 import {
   PageTitle,
@@ -458,7 +459,7 @@ function QuickActions() {
 
   function handleReset() {
     localStorage.removeItem('theme');
-    localStorage.removeItem('ifm-theme-colors');
+    getThemeStorage().del();
     localStorage.removeItem('font-family');
     localStorage.removeItem('global-font-size');
     localStorage.removeItem('global-line-height');
