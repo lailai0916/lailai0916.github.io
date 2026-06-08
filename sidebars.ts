@@ -581,10 +581,7 @@ const sidebars: SidebarsConfig = {
         type: 'generated-index',
         description: '本章展示与我个人相关的项目。',
       },
-      items: [
-        'project/personal/lailai0916',
-        'project/personal/lailai-skill',
-      ],
+      items: ['project/personal/lailai0916', 'project/personal/lailai-skill'],
     },
     {
       type: 'category',
