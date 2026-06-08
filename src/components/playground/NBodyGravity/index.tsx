@@ -1,4 +1,10 @@
-import React, { useRef, useEffect, useState, useCallback } from 'react';
+import {
+  useRef,
+  useEffect,
+  useState,
+  useCallback,
+  type PointerEvent as ReactPointerEvent,
+} from 'react';
 import { useColorMode } from '@docusaurus/theme-common';
 import { translate } from '@docusaurus/Translate';
 import Button from '@site/src/components/laikit/Button';
@@ -234,7 +240,7 @@ export default function NBodyGravity() {
     return () => cancelAnimationFrame(animId);
   }, [canvasSize, dpr, isDark]);
 
-  const pointerAt = (e: React.PointerEvent) => {
+  const pointerAt = (e: ReactPointerEvent) => {
     const canvas = canvasRef.current;
     if (!canvas) return { x: 0, y: 0 };
     const rect = canvas.getBoundingClientRect();
@@ -244,13 +250,13 @@ export default function NBodyGravity() {
     };
   };
 
-  const handlePointerDown = (e: React.PointerEvent) => {
+  const handlePointerDown = (e: ReactPointerEvent) => {
     e.currentTarget.setPointerCapture(e.pointerId);
     const p = pointerAt(e);
     dragRef.current = { active: true, sx: p.x, sy: p.y, cx: p.x, cy: p.y };
   };
 
-  const handlePointerMove = (e: React.PointerEvent) => {
+  const handlePointerMove = (e: ReactPointerEvent) => {
     if (!dragRef.current.active) return;
     const p = pointerAt(e);
     dragRef.current.cx = p.x;

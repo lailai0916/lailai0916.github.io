@@ -34,10 +34,10 @@
   width: var(--slider-thumb-size);
   height: var(--slider-thumb-size);
   border-radius: 50%;
-  background: white;
+  background: #fff;
   border: 2px solid var(--ifm-color-primary);
   cursor: pointer;
-  transition: transform 0.2s ease;
+  transition: transform 160ms ease;
 }
 
 .input::-webkit-slider-thumb:active {

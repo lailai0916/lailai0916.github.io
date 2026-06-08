@@ -10,24 +10,17 @@
   overflow: hidden;
 }
 
-/* Primary-tinted variant for highlighted/feature icons. */
+/* Primary-tinted variant for highlighted/feature icons. Flat tint (no
+   gradient) per the design rule — reads as one calm surface, Apple-style. */
 .accent {
-  background: linear-gradient(
-    135deg,
-    color-mix(in srgb, var(--ifm-color-primary) 16%, transparent),
-    color-mix(in srgb, var(--ifm-color-primary) 8%, transparent)
-  );
+  background: color-mix(in srgb, var(--ifm-color-primary) 12%, transparent);
   color: var(--ifm-color-primary);
   border: 1px solid
     color-mix(in srgb, var(--ifm-color-primary) 18%, transparent);
 }
 
 html[data-theme='dark'] .accent {
-  background: linear-gradient(
-    135deg,
-    color-mix(in srgb, var(--ifm-color-primary) 22%, transparent),
-    color-mix(in srgb, var(--ifm-color-primary) 10%, transparent)
-  );
+  background: color-mix(in srgb, var(--ifm-color-primary) 16%, transparent);
   color: var(--ifm-color-primary-light);
   border-color: color-mix(in srgb, var(--ifm-color-primary) 28%, transparent);
 }

@@ -1,4 +1,10 @@
-import React, { useEffect, useMemo, useState } from 'react';
+import {
+  useEffect,
+  useMemo,
+  useState,
+  type CSSProperties,
+  type HTMLAttributeAnchorTarget,
+} from 'react';
 import clsx from 'clsx';
 import { translate } from '@docusaurus/Translate';
 import Card from '@site/src/components/laikit/Card';
@@ -30,9 +36,9 @@ type GitHubProps = {
   /** owner/repo */
   repo: string;
   className?: string;
-  style?: React.CSSProperties;
+  style?: CSSProperties;
   /** open link target, default: _blank */
-  target?: React.HTMLAttributeAnchorTarget;
+  target?: HTMLAttributeAnchorTarget;
   /** whether to show language badge, default: true */
   showLanguage?: boolean;
   /**

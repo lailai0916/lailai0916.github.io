@@ -1,9 +1,7 @@
-import { useEffect, useRef, useState } from 'react';
 import Card from '@site/src/components/laikit/Card';
 import IconBlock from '@site/src/components/laikit/IconBlock';
+import { useImageStatus } from '@site/src/hooks/useImageStatus';
 import styles from './styles.module.css';
-
-const IMAGE_LOAD_TIMEOUT_MS = 3000;
 
 type LinkCardLinkProps =
   | { to: string; href?: never }
@@ -29,32 +27,8 @@ export default function LinkCard({
   imageVariant = 'icon',
   ...linkProps
 }: LinkCardProps) {
-  const imgRef = useRef<HTMLImageElement>(null);
-  const [imageStatus, setImageStatus] = useState<
-    'loading' | 'loaded' | 'error'
-  >(image ? 'loading' : 'error');
-
-  useEffect(() => {
-    if (!image) {
-      setImageStatus('error');
-      return;
-    }
-    // If the browser already finished loading the image before React attached
-    // its handlers (common on SSR + fast cache hits), onLoad/onError will
-    // never fire — sync state from the DOM here.
-    const img = imgRef.current;
-    if (img && img.complete) {
-      setImageStatus(img.naturalWidth > 0 ? 'loaded' : 'error');
-      return;
-    }
-    setImageStatus('loading');
-    const timer = window.setTimeout(() => {
-      setImageStatus((status) => (status === 'loading' ? 'error' : status));
-    }, IMAGE_LOAD_TIMEOUT_MS);
-    return () => window.clearTimeout(timer);
-  }, [image]);
-
-  const showImage = !!image && imageStatus !== 'error';
+  const { imgRef, status, onLoad, onError } = useImageStatus(image);
+  const showImage = !!image && status !== 'error';
 
   return (
     <Card
@@ -72,8 +46,8 @@ export default function LinkCard({
             className={
               imageVariant === 'avatar' ? styles.imageAvatar : styles.image
             }
-            onLoad={() => setImageStatus('loaded')}
-            onError={() => setImageStatus('error')}
+            onLoad={onLoad}
+            onError={onError}
           />
         </IconBlock>
       ) : (

@@ -1,8 +1,8 @@
-import React from 'react';
+import { type HTMLAttributes } from 'react';
 import clsx from 'clsx';
 import styles from './styles.module.css';
 
-interface TooltipProps extends React.HTMLAttributes<HTMLDivElement> {
+interface TooltipProps extends HTMLAttributes<HTMLDivElement> {
   leftPct?: number;
 }
 
@@ -26,17 +26,11 @@ function Tooltip({
   );
 }
 
-function TooltipLabel({
-  className,
-  ...rest
-}: React.HTMLAttributes<HTMLSpanElement>) {
+function TooltipLabel({ className, ...rest }: HTMLAttributes<HTMLSpanElement>) {
   return <span {...rest} className={clsx(styles.label, className)} />;
 }
 
-function TooltipValue({
-  className,
-  ...rest
-}: React.HTMLAttributes<HTMLSpanElement>) {
+function TooltipValue({ className, ...rest }: HTMLAttributes<HTMLSpanElement>) {
   return <span {...rest} className={clsx(styles.value, className)} />;
 }
 

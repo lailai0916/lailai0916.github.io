@@ -1,4 +1,4 @@
-import React from 'react';
+import { useMemo } from 'react';
 import Link from '@docusaurus/Link';
 import Translate from '@docusaurus/Translate';
 import Card from '@site/src/components/laikit/Card';
@@ -19,7 +19,7 @@ type PostLike = {
 };
 
 export function BlogArchiveList({ posts }: { posts: readonly PostLike[] }) {
-  const groups = React.useMemo(() => {
+  const groups = useMemo(() => {
     const map = new Map<number, PostLike[]>();
 
     posts.forEach((p) => {

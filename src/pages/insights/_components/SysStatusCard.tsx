@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState, type ReactNode } from 'react';
 import clsx from 'clsx';
 import BrowserOnly from '@docusaurus/BrowserOnly';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
@@ -112,7 +112,7 @@ function Cell({
   valueClassName,
 }: {
   label: string;
-  value: React.ReactNode;
+  value: ReactNode;
   valueClassName?: string;
 }) {
   return (

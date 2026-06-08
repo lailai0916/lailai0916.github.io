@@ -1,4 +1,4 @@
-import React, { type ReactNode } from 'react';
+import { useMemo, type ReactNode } from 'react';
 import { translate } from '@docusaurus/Translate';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
@@ -21,10 +21,7 @@ function AuthorSelector({ activePermalink }: { activePermalink: string }) {
   const { i18n } = useDocusaurusContext();
   const { currentLocale, defaultLocale } = i18n;
   const localeKey = currentLocale === defaultLocale ? undefined : currentLocale;
-  const authors = React.useMemo(
-    () => loadOfficialAuthors(localeKey),
-    [localeKey]
-  );
+  const authors = useMemo(() => loadOfficialAuthors(localeKey), [localeKey]);
   const authorsListUrl = useBaseUrl('/blog/authors');
 
   const items = authors.flatMap((author) => {
@@ -58,7 +55,7 @@ export default function BlogAuthorsPostsPage(props: Props): ReactNode {
 
 function CustomBlogAuthorsPostsPage(props: Props): ReactNode {
   const { author, items } = props;
-  const posts = React.useMemo(
+  const posts = useMemo(
     () => (items as any[]).map((it) => it.content),
     [items]
   );

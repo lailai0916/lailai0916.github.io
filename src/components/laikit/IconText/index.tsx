@@ -1,9 +1,10 @@
+import { type ReactNode } from 'react';
 import { Icon } from '@iconify/react';
 import styles from './styles.module.css';
 
 interface IconTextProps {
   icon: string;
-  children: React.ReactNode;
+  children: ReactNode;
   size?: string;
   monochrome?: boolean;
 }

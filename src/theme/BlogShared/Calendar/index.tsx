@@ -8,6 +8,10 @@ import Card from '@site/src/components/laikit/Card';
 import { getAllBlogItems } from '@site/src/utils/blogData';
 import styles from './styles.module.css';
 
+// A month grid is always 6 rows × 7 days, so the cell count is fixed — this
+// keeps the calendar's height stable as you page between months.
+const CALENDAR_CELLS = 42;
+
 type CalPost = {
   title: string;
   permalink: string;
@@ -129,7 +133,7 @@ export default function CalendarCard() {
       });
     }
     let nd = 1;
-    while (arr.length < 42) {
+    while (arr.length < CALENDAR_CELLS) {
       arr.push({
         y: next.y,
         m: next.m,

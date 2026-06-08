@@ -1,4 +1,4 @@
-import React from 'react';
+import { Fragment, type ReactNode } from 'react';
 import clsx from 'clsx';
 import Link from '@docusaurus/Link';
 import { Icon } from '@iconify/react';
@@ -7,7 +7,7 @@ import styles from './styles.module.css';
 
 export type MetaBarItem = {
   icon: string;
-  label: React.ReactNode;
+  label: ReactNode;
   dateTime?: string;
   pinned?: boolean;
 };
@@ -16,7 +16,7 @@ export function MetaBar({ items }: { items: MetaBarItem[] }) {
   return (
     <div className={styles.postEyebrow}>
       {items.map((item, i) => (
-        <React.Fragment key={i}>
+        <Fragment key={item.icon}>
           {i > 0 && <span className={styles.eyebrowDot} aria-hidden="true" />}
           <span
             className={clsx(
@@ -31,7 +31,7 @@ export function MetaBar({ items }: { items: MetaBarItem[] }) {
               item.label
             )}
           </span>
-        </React.Fragment>
+        </Fragment>
       ))}
     </div>
   );

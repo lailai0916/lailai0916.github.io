@@ -1,0 +1,7 @@
+.frame {
+  display: block;
+  width: min(100%, 500px);
+  aspect-ratio: 1 / 1;
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-radius: 12px;
+}

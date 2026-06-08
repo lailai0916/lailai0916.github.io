@@ -1,4 +1,4 @@
-import React from 'react';
+import { type ReactElement } from 'react';
 import { useExperimentalFlag } from '@site/src/hooks/useExperimentalFlag';
 import BlogTagsListPageClassic from '@theme-original/BlogTagsListPage';
 import type { Props } from '@theme/BlogTagsListPage';
@@ -8,7 +8,7 @@ import ArchiveTabs, {
 } from '../BlogShared/ArchiveTabs';
 import { getAllBlogItems, loadOfficialAuthors } from '@site/src/utils/blogData';
 
-export default function BlogTagsListPage(props: Props): React.ReactElement {
+export default function BlogTagsListPage(props: Props): ReactElement {
   const isClassicDesign = useExperimentalFlag('classicDesign');
   if (isClassicDesign) return <BlogTagsListPageClassic {...props} />;
 

@@ -1,9 +1,7 @@
-import { useEffect, useRef, useState } from 'react';
 import { Icon } from '@iconify/react';
 import Card from '@site/src/components/laikit/Card';
+import { useImageStatus } from '@site/src/hooks/useImageStatus';
 import styles from './styles.module.css';
-
-const IMAGE_LOAD_TIMEOUT_MS = 3000;
 
 interface ShareSource {
   label: string;
@@ -103,30 +101,9 @@ export default function ShareCard({
   image,
   source,
 }: ShareCardProps) {
-  const imgRef = useRef<HTMLImageElement>(null);
-  const [imageStatus, setImageStatus] = useState<
-    'loading' | 'loaded' | 'error'
-  >(image ? 'loading' : 'error');
-
-  useEffect(() => {
-    if (!image) {
-      setImageStatus('error');
-      return;
-    }
-    const img = imgRef.current;
-    if (img && img.complete) {
-      setImageStatus(img.naturalWidth > 0 ? 'loaded' : 'error');
-      return;
-    }
-    setImageStatus('loading');
-    const timer = window.setTimeout(() => {
-      setImageStatus((s) => (s === 'loading' ? 'error' : s));
-    }, IMAGE_LOAD_TIMEOUT_MS);
-    return () => window.clearTimeout(timer);
-  }, [image]);
-
+  const { imgRef, status, onLoad, onError } = useImageStatus(image);
   const resolvedSource = source ?? inferSource(url);
-  const showImage = !!image && imageStatus !== 'error';
+  const showImage = !!image && status !== 'error';
 
   return (
     <Card
@@ -143,8 +120,8 @@ export default function ShareCard({
             alt=""
             className={styles.thumbImage}
             loading="lazy"
-            onLoad={() => setImageStatus('loaded')}
-            onError={() => setImageStatus('error')}
+            onLoad={onLoad}
+            onError={onError}
           />
         ) : (
           <Icon

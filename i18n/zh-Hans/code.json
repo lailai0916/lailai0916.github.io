@@ -1225,5 +1225,8 @@
   },
   "components.notFound.backToHome": {
     "message": "返回首页"
+  },
+  "components.desmos.frameTitle": {
+    "message": "Desmos 图形计算器"
   }
 }

@@ -1,12 +1,12 @@
-import React from 'react';
+import { type ComponentProps, type CSSProperties, type ReactNode } from 'react';
 import Link from '@docusaurus/Link';
 import clsx from 'clsx';
 import styles from './styles.module.css';
 
 type BaseCardProps = {
-  children: React.ReactNode;
-  padding?: React.CSSProperties['padding'];
-  style?: React.CSSProperties;
+  children: ReactNode;
+  padding?: CSSProperties['padding'];
+  style?: CSSProperties;
   className?: string;
   wrapperClassName?: string;
 };
@@ -17,7 +17,7 @@ type StaticCardProps = BaseCardProps & {
 };
 
 type LinkedCardProps = BaseCardProps &
-  Omit<React.ComponentProps<typeof Link>, 'children' | 'className' | 'style'> &
+  Omit<ComponentProps<typeof Link>, 'children' | 'className' | 'style'> &
   (
     | {
         to: string;
@@ -46,7 +46,7 @@ function CardSurface({
           : ({
               ...style,
               '--card-padding': padding,
-            } as React.CSSProperties)
+            } as CSSProperties)
       }
     >
       {children}

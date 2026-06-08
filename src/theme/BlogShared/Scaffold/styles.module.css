@@ -96,7 +96,7 @@
   color: var(--ifm-color-emphasis-700);
   text-decoration: none !important;
   outline: none;
-  transition: color 180ms ease;
+  transition: color 160ms ease;
 }
 
 .profileNavItem:hover {

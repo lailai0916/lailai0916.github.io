@@ -1,4 +1,4 @@
-import React from 'react';
+import { type ReactElement } from 'react';
 import { useExperimentalFlag } from '@site/src/hooks/useExperimentalFlag';
 import BlogArchivePageClassic from '@theme-original/BlogArchivePage';
 import type { Props } from '@theme/BlogArchivePage';
@@ -11,7 +11,7 @@ import {
   loadOfficialAuthors,
 } from '@site/src/utils/blogData';
 
-export default function BlogArchivePage(props: Props): React.ReactElement {
+export default function BlogArchivePage(props: Props): ReactElement {
   const isClassicDesign = useExperimentalFlag('classicDesign');
   if (isClassicDesign) return <BlogArchivePageClassic {...props} />;
 

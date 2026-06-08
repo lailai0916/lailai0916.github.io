@@ -234,7 +234,7 @@
   padding: 0 0.5rem;
   font-size: 0.875rem;
   opacity: 0.9;
-  border-radius: 0.4rem;
+  border-radius: 6px;
   background: var(--ifm-color-emphasis-200);
   white-space: nowrap;
   overflow: hidden;

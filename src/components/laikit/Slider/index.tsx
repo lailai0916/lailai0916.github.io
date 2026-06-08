@@ -1,4 +1,4 @@
-import React, { type ReactNode } from 'react';
+import { type CSSProperties, type ReactNode, type SyntheticEvent } from 'react';
 import clsx from 'clsx';
 import styles from './styles.module.css';
 
@@ -32,7 +32,7 @@ export default function Slider({
 }: SliderProps) {
   const progress = ((value - min) / (max - min)) * 100;
 
-  const handleCommit = (e: React.SyntheticEvent<HTMLInputElement>) => {
+  const handleCommit = (e: SyntheticEvent<HTMLInputElement>) => {
     if (!onCommit) return;
     onCommit(parseFloat((e.target as HTMLInputElement).value));
   };
@@ -50,7 +50,7 @@ export default function Slider({
         onPointerUp={handleCommit}
         onKeyUp={handleCommit}
         className={styles.input}
-        style={{ '--slider-progress': `${progress}%` } as React.CSSProperties}
+        style={{ '--slider-progress': `${progress}%` } as CSSProperties}
       />
       {ticks && ticks.length > 0 && (
         <div className={styles.ticks}>
@@ -63,7 +63,7 @@ export default function Slider({
                 style={
                   {
                     '--slider-tick-ratio': ratio,
-                  } as React.CSSProperties
+                  } as CSSProperties
                 }
               >
                 {tick.label}

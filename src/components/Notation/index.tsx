@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from 'react';
+import { useEffect, useRef, type ReactNode } from 'react';
 import { annotate } from 'rough-notation';
 
 type AnnotationType =
@@ -10,21 +10,24 @@ type AnnotationType =
   | 'crossed-off'
   | 'bracket';
 
+// `rough-notation` doesn't re-export its instance type, so derive it.
+type Annotation = ReturnType<typeof annotate>;
+
 interface NotationProps {
-  children: React.ReactNode;
+  children: ReactNode;
   type?: AnnotationType;
   color?: string;
   show?: boolean;
 }
 
-const Notation = ({
+export default function Notation({
   children,
   type = 'underline',
   color = 'red',
   show = true,
-}: NotationProps) => {
-  const ref = useRef<HTMLElement | null>(null);
-  const annotationRef = useRef<any>(null);
+}: NotationProps) {
+  const ref = useRef<HTMLSpanElement>(null);
+  const annotationRef = useRef<Annotation | null>(null);
 
   useEffect(() => {
     if (ref.current && show) {
@@ -33,14 +36,10 @@ const Notation = ({
     }
 
     return () => {
-      if (annotationRef.current) {
-        annotationRef.current.remove();
-        annotationRef.current = null;
-      }
+      annotationRef.current?.remove();
+      annotationRef.current = null;
     };
   }, [show, type, color]);
 
   return <span ref={ref}>{children}</span>;
-};
-
-export default Notation;
+}

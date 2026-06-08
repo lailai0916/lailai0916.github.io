@@ -1,4 +1,4 @@
-import React from 'react';
+import { useMemo, type ReactElement } from 'react';
 import { useExperimentalFlag } from '@site/src/hooks/useExperimentalFlag';
 import BlogTagsPostsPageClassic from '@theme-original/BlogTagsPostsPage';
 import type { Props } from '@theme/BlogTagsPostsPage';
@@ -18,7 +18,7 @@ function TagSelector({ activePermalink }: { activePermalink: string }) {
   const { i18n } = useDocusaurusContext();
   const { currentLocale, defaultLocale } = i18n;
   const localeKey = currentLocale === defaultLocale ? undefined : currentLocale;
-  const tags = React.useMemo(
+  const tags = useMemo(
     () => [...loadOfficialTags(localeKey)].sort((a, b) => b.count - a.count),
     [localeKey]
   );
@@ -39,16 +39,16 @@ function TagSelector({ activePermalink }: { activePermalink: string }) {
   );
 }
 
-export default function BlogTagsPostsPage(props: Props): React.ReactElement {
+export default function BlogTagsPostsPage(props: Props): ReactElement {
   const isClassicDesign = useExperimentalFlag('classicDesign');
   if (isClassicDesign) return <BlogTagsPostsPageClassic {...props} />;
 
   return <CustomBlogTagsPostsPage {...props} />;
 }
 
-function CustomBlogTagsPostsPage(props: Props): React.ReactElement {
+function CustomBlogTagsPostsPage(props: Props): ReactElement {
   const { items, tag } = props;
-  const posts = React.useMemo(
+  const posts = useMemo(
     () => (items as any[]).map((it) => it.content),
     [items]
   );

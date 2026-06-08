@@ -1,4 +1,10 @@
-import React, { useRef, useEffect, useState, useCallback } from 'react';
+import {
+  useRef,
+  useEffect,
+  useState,
+  useCallback,
+  type PointerEvent as ReactPointerEvent,
+} from 'react';
 import { useColorMode } from '@docusaurus/theme-common';
 import { translate } from '@docusaurus/Translate';
 import Slider from '@site/src/components/laikit/Slider';
@@ -349,7 +355,7 @@ export default function LorenzAttractor() {
 
   const interactionRef = useRef({ x: 0, y: 0, active: false, moved: false });
 
-  const handlePointerDown = (e: React.PointerEvent) => {
+  const handlePointerDown = (e: ReactPointerEvent) => {
     e.currentTarget.setPointerCapture(e.pointerId);
     interactionRef.current = {
       x: e.clientX,
@@ -360,7 +366,7 @@ export default function LorenzAttractor() {
     stateRef.current.autoRotate = false;
   };
 
-  const handlePointerMove = (e: React.PointerEvent) => {
+  const handlePointerMove = (e: ReactPointerEvent) => {
     const inter = interactionRef.current;
     if (!inter.active) return;
     const dx = e.clientX - inter.x;

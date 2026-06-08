@@ -1,4 +1,4 @@
-import React, { type ReactNode } from 'react';
+import { type CSSProperties, type ReactNode } from 'react';
 import clsx from 'clsx';
 import { Icon } from '@iconify/react';
 import Card from '@site/src/components/laikit/Card';
@@ -10,7 +10,7 @@ interface TitleCardProps {
   icon?: string;
   description?: string;
   children: ReactNode;
-  padding?: React.CSSProperties['padding'];
+  padding?: CSSProperties['padding'];
   bodyAlign?: 'top' | 'bottom';
   /**
    * Header scale.

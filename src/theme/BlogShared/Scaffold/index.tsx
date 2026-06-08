@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useMemo, useState, type ReactNode } from 'react';
 import clsx from 'clsx';
 import Link from '@docusaurus/Link';
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -161,7 +161,7 @@ function useActiveHeading(toc: readonly TOCItem[]): string | null {
   const [activeId, setActiveId] = useState<string | null>(null);
 
   useEffect(() => {
-    if (!toc.length) return undefined;
+    if (!toc.length) return;
     const ids = toc.map((item) => item.id);
 
     const updateActive = () => {
@@ -369,7 +369,7 @@ function TagsCard() {
   const { i18n } = useDocusaurusContext();
   const { currentLocale, defaultLocale } = i18n;
   const localeKey = currentLocale === defaultLocale ? undefined : currentLocale;
-  const tags = React.useMemo(
+  const tags = useMemo(
     () =>
       [...loadOfficialTags(localeKey)]
         .sort((a, b) => b.count - a.count)
@@ -401,7 +401,7 @@ function TagsCard() {
 type Props = {
   title?: string;
   description?: string;
-  children: React.ReactNode;
+  children: ReactNode;
   toc?: readonly TOCItem[];
 };
 

@@ -1,4 +1,4 @@
-import React from 'react';
+import { type ReactElement } from 'react';
 import clsx from 'clsx';
 import { useCodeBlockContext } from '@docusaurus/theme-common/internal';
 import Container from '@theme/CodeBlock/Container';
@@ -13,7 +13,7 @@ export default function CodeBlockLayout({
   className,
 }: {
   className?: string;
-}): React.ReactElement {
+}): ReactElement {
   const { metadata } = useCodeBlockContext();
   const bare = metadata.className?.split(/\s+/).includes('codeBlockBare');
   const size = formatBytes(new TextEncoder().encode(metadata.code).length);

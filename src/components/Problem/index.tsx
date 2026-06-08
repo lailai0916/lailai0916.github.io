@@ -1,4 +1,4 @@
-import React, { useMemo, useRef, useState } from 'react';
+import { useMemo, useRef, useState, type ComponentType } from 'react';
 import clsx from 'clsx';
 import Link from '@docusaurus/Link';
 import CodeBlock from '@theme/CodeBlock';
@@ -21,7 +21,7 @@ type ProblemFrontMatter = {
   link?: string;
 };
 type ProblemMdxModule = {
-  default: React.ComponentType;
+  default: ComponentType;
   frontMatter?: ProblemFrontMatter;
 };
 
@@ -32,8 +32,8 @@ const ctx = require.context(
 ) as RawCodeContext;
 
 type Tab =
-  | { kind: 'statement'; label: string; Render: React.ComponentType }
-  | { kind: 'solution'; label: string; Render: React.ComponentType }
+  | { kind: 'statement'; label: string; Render: ComponentType }
+  | { kind: 'solution'; label: string; Render: ComponentType }
   | { kind: 'code'; label: string; code: string };
 
 function formatCodeTitle(p: string): string {
@@ -181,7 +181,7 @@ export default function Problem({ id }: { id: string }) {
 
     try {
       const sol = require(`@site/blog/solution/${id}.mdx`) as {
-        default: React.ComponentType;
+        default: ComponentType;
       };
       list.push({
         kind: 'solution',

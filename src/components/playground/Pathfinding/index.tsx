@@ -1,4 +1,10 @@
-import React, { useRef, useEffect, useState, useCallback } from 'react';
+import {
+  useRef,
+  useEffect,
+  useState,
+  useCallback,
+  type PointerEvent as ReactPointerEvent,
+} from 'react';
 import { useColorMode } from '@docusaurus/theme-common';
 import { translate } from '@docusaurus/Translate';
 import Button from '@site/src/components/laikit/Button';
@@ -293,7 +299,7 @@ export default function Pathfinding() {
     return () => cancelAnimationFrame(animId);
   }, [canvasSize, dpr, isDark]);
 
-  const cellAt = (e: React.PointerEvent) => {
+  const cellAt = (e: ReactPointerEvent) => {
     const canvas = canvasRef.current;
     if (!canvas) return -1;
     const rect = canvas.getBoundingClientRect();
@@ -303,7 +309,7 @@ export default function Pathfinding() {
     return y * GRID + x;
   };
 
-  const handlePointerDown = (e: React.PointerEvent) => {
+  const handlePointerDown = (e: ReactPointerEvent) => {
     e.currentTarget.setPointerCapture(e.pointerId);
     const i = cellAt(e);
     if (i < 0 || i === START || i === END) return;
@@ -312,7 +318,7 @@ export default function Pathfinding() {
     wallsRef.current[i] = mode;
   };
 
-  const handlePointerMove = (e: React.PointerEvent) => {
+  const handlePointerMove = (e: ReactPointerEvent) => {
     if (!paintingRef.current.active) return;
     const i = cellAt(e);
     if (i < 0 || i === START || i === END) return;

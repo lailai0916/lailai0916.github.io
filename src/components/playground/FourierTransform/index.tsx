@@ -1,4 +1,9 @@
-import React, { useRef, useEffect, useState } from 'react';
+import {
+  useRef,
+  useEffect,
+  useState,
+  type PointerEvent as ReactPointerEvent,
+} from 'react';
 import { useColorMode } from '@docusaurus/theme-common';
 import Card from '@site/src/components/laikit/Card';
 import styles from './styles.module.css';
@@ -337,7 +342,7 @@ export default function FourierTransform() {
     };
   };
 
-  const handleStart = (e: React.PointerEvent) => {
+  const handleStart = (e: ReactPointerEvent) => {
     const point = getCanvasCoords(e.clientX, e.clientY);
     if (!point) return;
 
@@ -352,7 +357,7 @@ export default function FourierTransform() {
     state.eraseIndex = 0;
   };
 
-  const handleMove = (e: React.PointerEvent) => {
+  const handleMove = (e: ReactPointerEvent) => {
     const state = stateRef.current;
     if (state.currentState !== STATE.DRAWING) return;
 

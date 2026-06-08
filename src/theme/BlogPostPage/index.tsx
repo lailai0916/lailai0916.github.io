@@ -1,4 +1,4 @@
-import React from 'react';
+import { type ReactElement } from 'react';
 import clsx from 'clsx';
 import { useExperimentalFlag } from '@site/src/hooks/useExperimentalFlag';
 import BlogPostPageClassic from '@theme-original/BlogPostPage';
@@ -20,7 +20,7 @@ import MDXContent from '@theme/MDXContent';
 
 import type { Props } from '@theme/BlogPostPage';
 
-export default function BlogPostPage(props: Props): React.ReactElement {
+export default function BlogPostPage(props: Props): ReactElement {
   const isClassicDesign = useExperimentalFlag('classicDesign');
   if (isClassicDesign) return <BlogPostPageClassic {...props} />;
 

@@ -1,4 +1,4 @@
-import React from 'react';
+import { type CSSProperties, type ReactNode } from 'react';
 import clsx from 'clsx';
 import { Icon } from '@iconify/react';
 import styles from './styles.module.css';
@@ -9,7 +9,7 @@ interface IconBlockProps {
   size?: number;
   iconSize?: number;
   className?: string;
-  children?: React.ReactNode;
+  children?: ReactNode;
 }
 
 export default function IconBlock({
@@ -24,7 +24,7 @@ export default function IconBlock({
   return (
     <div
       className={clsx(styles.iconBlock, styles[variant], className)}
-      style={{ '--icon-block-size': `${size}px` } as React.CSSProperties}
+      style={{ '--icon-block-size': `${size}px` } as CSSProperties}
     >
       {icon ? (
         <Icon icon={icon} width={resolvedIconSize} height={resolvedIconSize} />

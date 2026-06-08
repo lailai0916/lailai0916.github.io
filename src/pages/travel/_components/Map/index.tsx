@@ -1,4 +1,11 @@
-import React, { useEffect, useMemo, useRef, useState } from 'react';
+import {
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+  type ComponentType,
+  type MutableRefObject,
+} from 'react';
 import BrowserOnly from '@docusaurus/BrowserOnly';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
@@ -23,8 +30,8 @@ import SectionContainer from '@site/src/components/laikit/Section';
 import styles from './styles.module.css';
 import type { GlobeMethods, GlobeProps } from 'react-globe.gl';
 
-type GlobeComponent = React.ComponentType<
-  GlobeProps & { ref?: React.MutableRefObject<GlobeMethods | undefined> }
+type GlobeComponent = ComponentType<
+  GlobeProps & { ref?: MutableRefObject<GlobeMethods | undefined> }
 >;
 type GlobeMaterial = NonNullable<GlobeProps['globeMaterial']>;
 type MeshBasicMaterialCtor = new (parameters: {

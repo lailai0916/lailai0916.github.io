@@ -1,4 +1,4 @@
-import React, { type ReactNode } from 'react';
+import { useEffect, useState, type ReactNode } from 'react';
 import Layout from '@theme/Layout';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Link from '@docusaurus/Link';
@@ -12,12 +12,12 @@ import Card from '@site/src/components/laikit/Card';
 import styles from './styles.module.css';
 
 function useTypewriter(words: string[]) {
-  const [index, setIndex] = React.useState(0);
-  const [text, setText] = React.useState('');
-  const [deleting, setDeleting] = React.useState(false);
+  const [index, setIndex] = useState(0);
+  const [text, setText] = useState('');
+  const [deleting, setDeleting] = useState(false);
   const currentWord = words[index % words.length];
 
-  React.useEffect(() => {
+  useEffect(() => {
     const current = words[index % words.length];
     let timer: ReturnType<typeof setTimeout>;
 
@@ -49,8 +49,8 @@ function useTypewriter(words: string[]) {
 // Resolve the clock on the client only; rendering `new Date()` during SSR
 // produces a build-time string that never matches the visitor's local time.
 function useLocalTime() {
-  const [time, setTime] = React.useState('--:--');
-  React.useEffect(() => {
+  const [time, setTime] = useState('--:--');
+  useEffect(() => {
     const update = () =>
       setTime(
         new Intl.DateTimeFormat('en-GB', {

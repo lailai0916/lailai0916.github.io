@@ -1,4 +1,4 @@
-import React, { type ElementType, type ReactNode } from 'react';
+import { type ElementType, type ReactNode } from 'react';
 import clsx from 'clsx';
 import Heading from '@theme/Heading';
 import styles from './styles.module.css';
@@ -22,7 +22,7 @@ export function PageTitle({
   );
 }
 
-export function PageHeader({ children }: { children: React.ReactNode }) {
+export function PageHeader({ children }: { children: ReactNode }) {
   return (
     <div className={styles.headerSection}>
       <div className={styles.headerInner}>{children}</div>

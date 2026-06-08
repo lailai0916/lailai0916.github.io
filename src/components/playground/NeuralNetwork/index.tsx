@@ -1,6 +1,16 @@
 // Adapted from the interactive on 3Blue1Brown's neural network series: https://www.3blue1brown.com/lessons/neural-networks
 
-import React, { useState, useEffect, useCallback, useMemo } from 'react';
+import {
+  useState,
+  useEffect,
+  useCallback,
+  useMemo,
+  memo,
+  Fragment,
+  type ReactNode,
+  type MouseEvent as ReactMouseEvent,
+  type TouchEvent as ReactTouchEvent,
+} from 'react';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import { translate } from '@docusaurus/Translate';
 import Button from '@site/src/components/laikit/Button';
@@ -284,7 +294,7 @@ function NeuronConnections({
   animating: boolean;
   instant: boolean;
 }) {
-  const connections: React.ReactNode[] = [];
+  const connections: ReactNode[] = [];
 
   for (let layerIndex = 1; layerIndex < visibleNeurons.length; layerIndex++) {
     const layer = visibleNeurons[layerIndex];
@@ -543,7 +553,7 @@ function ImageGrid({
   );
 
   const fillAtEvent = useCallback(
-    (event: React.MouseEvent | React.TouchEvent, drag = false) => {
+    (event: ReactMouseEvent | ReactTouchEvent, drag = false) => {
       if ('touches' in event) {
         Array.from(event.touches).forEach((touch) =>
           fillAtClientPixel(touch.clientX, touch.clientY, event.target, drag)
@@ -558,7 +568,7 @@ function ImageGrid({
   const onMouseUp = useCallback(() => setDragging(false), []);
 
   const onMouseDown = useCallback(
-    (event: React.MouseEvent | React.TouchEvent) => {
+    (event: ReactMouseEvent | ReactTouchEvent) => {
       if (editing) {
         setDragging(true);
         fillAtEvent(event);
@@ -569,7 +579,7 @@ function ImageGrid({
   );
 
   const onMouseMove = useCallback(
-    (event: React.MouseEvent | React.TouchEvent) => {
+    (event: ReactMouseEvent | ReactTouchEvent) => {
       if (dragging && editing) {
         fillAtEvent(event, true);
         event.preventDefault();
@@ -662,7 +672,7 @@ function ImageGrid({
   );
 }
 
-const VerticalEllipsis = React.memo(function VerticalEllipsis({
+const VerticalEllipsis = memo(function VerticalEllipsis({
   cx = 0,
   cy = 0,
 }: {
@@ -718,7 +728,7 @@ function WeightGrid({
             ? 'var(--nn-connection-negative-rgb)'
             : 'var(--nn-connection-positive-rgb)';
         return (
-          <React.Fragment key={n}>
+          <Fragment key={n}>
             <rect
               x={wx}
               y={wy}
@@ -733,7 +743,7 @@ function WeightGrid({
               height="1"
               fill={`rgba(${colorVar}, ${alpha * inputNeurons[n]})`}
             />
-          </React.Fragment>
+          </Fragment>
         );
       })}
     </g>

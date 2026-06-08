@@ -1,4 +1,10 @@
-import React, { useId, useMemo, useRef, useState } from 'react';
+import {
+  useId,
+  useMemo,
+  useRef,
+  useState,
+  type PointerEvent as ReactPointerEvent,
+} from 'react';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import { translate } from '@docusaurus/Translate';
 import type { SeriesPoint } from '@site/src/hooks/useUmamiPageviewsSeries';
@@ -185,7 +191,7 @@ export default function Sparkline({
         86400000
       : 0;
 
-  const onPointerMove = (e: React.PointerEvent<HTMLDivElement>) => {
+  const onPointerMove = (e: ReactPointerEvent<HTMLDivElement>) => {
     if (!containerRef.current || values.length === 0) return;
     const rect = containerRef.current.getBoundingClientRect();
     const ratio = Math.max(

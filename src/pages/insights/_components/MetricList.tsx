@@ -1,4 +1,4 @@
-import React from 'react';
+import { type ReactNode } from 'react';
 import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import TitleCard from '@site/src/components/laikit/TitleCard';
@@ -17,7 +17,7 @@ interface MetricListProps {
   items: MetricRow[];
   loading?: boolean;
   emptyText: string;
-  renderLabel?: (x: string) => React.ReactNode;
+  renderLabel?: (x: string) => ReactNode;
   formatValue?: (y: number) => string;
   href?: (x: string) => string | null | undefined;
 }

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { Fragment, useEffect, useState, type ReactNode } from 'react';
 import clsx from 'clsx';
 import Link from '@docusaurus/Link';
 import type { BlogPaginatedMetadata } from '@docusaurus/plugin-content-blog';
@@ -170,7 +170,7 @@ export function Paginator({
         {pages.map((p, i) => {
           const showEllipsis = i > 0 && p - pages[i - 1] > 1;
           return (
-            <React.Fragment key={p}>
+            <Fragment key={p}>
               {showEllipsis && (
                 <li className={styles.pageEllipsis} aria-hidden="true">
                   {'…'}
@@ -194,7 +194,7 @@ export function Paginator({
                   </button>
                 )}
               </li>
-            </React.Fragment>
+            </Fragment>
           );
         })}
       </ol>
@@ -231,7 +231,7 @@ export default function PostsListLayout({
   description?: string;
   items: readonly PostListItem[];
   meta: BlogPaginatedMetadata;
-  topSlot?: React.ReactNode;
+  topSlot?: ReactNode;
 }) {
   const totalPages = Math.max(1, Math.ceil(items.length / PAGE_SIZE));
   const [page, setPage] = useState(1);

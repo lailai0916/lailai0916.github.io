@@ -1,4 +1,10 @@
-import React, { useRef, useEffect, useState, useCallback } from 'react';
+import {
+  useRef,
+  useEffect,
+  useState,
+  useCallback,
+  type PointerEvent as ReactPointerEvent,
+} from 'react';
 import { useColorMode } from '@docusaurus/theme-common';
 import { translate } from '@docusaurus/Translate';
 import Button from '@site/src/components/laikit/Button';
@@ -181,7 +187,7 @@ export default function GameOfLife() {
     mode: 1,
   });
 
-  const cellAt = (e: React.PointerEvent) => {
+  const cellAt = (e: ReactPointerEvent) => {
     const canvas = canvasRef.current;
     if (!canvas) return null;
     const rect = canvas.getBoundingClientRect();
@@ -191,7 +197,7 @@ export default function GameOfLife() {
     return { x, y };
   };
 
-  const handlePointerDown = (e: React.PointerEvent) => {
+  const handlePointerDown = (e: ReactPointerEvent) => {
     e.currentTarget.setPointerCapture(e.pointerId);
     const cell = cellAt(e);
     if (!cell) return;
@@ -202,7 +208,7 @@ export default function GameOfLife() {
     draw();
   };
 
-  const handlePointerMove = (e: React.PointerEvent) => {
+  const handlePointerMove = (e: ReactPointerEvent) => {
     if (!paintRef.current.active) return;
     const cell = cellAt(e);
     if (!cell) return;
