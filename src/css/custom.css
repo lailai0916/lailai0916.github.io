@@ -33,6 +33,20 @@
   /* Restrained low-saturation amber, paired with the blue primary as the
      playground's single second series (two trajectories, start/end, etc.). */
   --lk-color-accent: #c08a3a;
+
+  /* Elevation — layered ambient + key shadows for Apple-style depth.
+     One scale, theme-aware, so every surface shares the same light logic. */
+  --lk-shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.04);
+  --lk-shadow-raised:
+    0 1px 2px rgba(0, 0, 0, 0.04), 0 4px 12px rgba(0, 0, 0, 0.06);
+  --lk-shadow-md: 0 1px 2px rgba(0, 0, 0, 0.04), 0 6px 16px rgba(0, 0, 0, 0.06);
+  --lk-shadow-lg: 0 1px 2px rgba(0, 0, 0, 0.06), 0 8px 24px rgba(0, 0, 0, 0.08);
+  --lk-shadow-overlay:
+    0 20px 50px -16px rgba(0, 0, 0, 0.22), 0 6px 16px rgba(0, 0, 0, 0.06);
+
+  /* Focus ring — one definition shared by every interactive surface. */
+  --lk-focus-ring: 0 0 0 3px
+    color-mix(in srgb, var(--ifm-color-primary) 22%, transparent);
 }
 
 [data-theme='dark'] {
@@ -44,6 +58,18 @@
   --lk-color-maintenance: #7aa6ff;
 
   --lk-color-accent: #d4a55e;
+
+  /* Dark surfaces sit on near-black; shadows go deeper to read as depth. */
+  --lk-shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
+  --lk-shadow-raised:
+    0 1px 2px rgba(0, 0, 0, 0.3), 0 4px 12px rgba(0, 0, 0, 0.25);
+  --lk-shadow-md: 0 1px 2px rgba(0, 0, 0, 0.3), 0 6px 16px rgba(0, 0, 0, 0.22);
+  --lk-shadow-lg: 0 1px 2px rgba(0, 0, 0, 0.4), 0 8px 24px rgba(0, 0, 0, 0.35);
+  --lk-shadow-overlay:
+    0 20px 50px -16px rgba(0, 0, 0, 0.6), 0 6px 16px rgba(0, 0, 0, 0.25);
+
+  --lk-focus-ring: 0 0 0 3px
+    color-mix(in srgb, var(--ifm-color-primary) 30%, transparent);
 }
 
 .header-github-link::before {

@@ -2,7 +2,7 @@
   background: var(--ifm-card-background-color);
   border: 1px solid var(--ifm-color-emphasis-200);
   border-radius: 16px;
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
+  box-shadow: var(--lk-shadow-md);
   padding: var(--card-padding, 1rem);
 }
 
@@ -35,12 +35,12 @@
 
 .linkCard:focus-visible .card {
   box-shadow:
-    0 0 0 3px color-mix(in srgb, var(--link-card-accent) 18%, transparent),
-    0 6px 16px rgba(0, 0, 0, 0.06);
+    0 0 0 3px color-mix(in srgb, var(--link-card-accent) 22%, transparent),
+    var(--lk-shadow-md);
 }
 
 html[data-theme='dark'] .linkCard:focus-visible .card {
   box-shadow:
-    0 0 0 3px color-mix(in srgb, var(--link-card-accent) 24%, transparent),
-    0 6px 16px rgba(0, 0, 0, 0.06);
+    0 0 0 3px color-mix(in srgb, var(--link-card-accent) 30%, transparent),
+    var(--lk-shadow-md);
 }

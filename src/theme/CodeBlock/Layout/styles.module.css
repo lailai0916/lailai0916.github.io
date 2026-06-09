@@ -2,7 +2,7 @@
   border-radius: 16px;
   overflow: hidden;
   border: 1px solid var(--ifm-color-emphasis-200);
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
+  box-shadow: var(--lk-shadow-md);
 }
 
 :global(.codeBlockBare).codeBlock {
