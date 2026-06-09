@@ -13,6 +13,11 @@ interface MomentItem {
 
 const STATIC_MOMENTS: MomentItem[] = [
   {
+    date: '2026-06-09T07:40:00+08:00',
+    content: 'Goodbye, macOS 26!',
+    images: ['https://cloud.lailai.one/f/eOLuw/macos26-dock.png'],
+  },
+  {
     date: '2026-05-31T15:55:00+08:00',
     share: {
       url: 'https://www.bilibili.com/video/BV1mkVn63EYQ',
