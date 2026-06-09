@@ -85,17 +85,18 @@
 
 .momentImages {
   display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
   gap: 0.5rem;
   margin-top: 0.85rem;
+}
+
+.momentImages[data-count='1'] {
+  grid-template-columns: 1fr;
 }
 
 .momentImages[data-count='2'],
 .momentImages[data-count='4'] {
   grid-template-columns: 1fr 1fr;
-}
-
-.momentImages[data-count='3'] {
-  grid-template-columns: 1fr 1fr 1fr;
 }
 
 /* Single image: natural aspect, capped height */
