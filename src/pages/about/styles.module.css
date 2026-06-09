@@ -12,7 +12,7 @@
   pointer-events: none;
   user-select: none;
   opacity: 0.55;
-  transition: opacity 200ms ease;
+  transition: opacity 160ms ease;
   z-index: 0;
 }
 
@@ -114,5 +114,5 @@
   color: var(--ifm-color-emphasis-700);
   pointer-events: none;
   opacity: 0.55;
-  transition: opacity 200ms ease;
+  transition: opacity 160ms ease;
 }

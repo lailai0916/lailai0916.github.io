@@ -84,8 +84,8 @@
   opacity: 0;
   transform: translate(-4px, 4px);
   transition:
-    opacity 0.2s ease,
-    transform 0.2s ease;
+    opacity 160ms ease,
+    transform 160ms ease;
 }
 
 .cardMainInner {
@@ -263,8 +263,8 @@
   opacity: 0;
   transform: translate(-4px, 4px);
   transition:
-    opacity 0.2s ease,
-    transform 0.2s ease;
+    opacity 160ms ease,
+    transform 160ms ease;
 }
 
 @media (max-width: 768px) {
@@ -392,7 +392,7 @@
   border-radius: 12px;
   color: var(--ifm-color-emphasis-600);
   background: var(--ifm-color-emphasis-100);
-  transition: all 0.15s ease;
+  transition: color 160ms ease;
 }
 
 .socialLink:hover {

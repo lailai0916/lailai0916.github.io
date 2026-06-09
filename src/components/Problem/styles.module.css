@@ -160,7 +160,7 @@
 
 .chevron {
   height: 16px;
-  transition: transform 0.2s ease;
+  transition: transform 160ms ease;
   width: 16px;
 }
 
@@ -168,7 +168,7 @@
   display: grid;
   grid-template-rows: 0fr;
   overflow: hidden;
-  transition: grid-template-rows 0.28s ease;
+  transition: grid-template-rows 160ms ease;
 }
 
 .collapseOpen {

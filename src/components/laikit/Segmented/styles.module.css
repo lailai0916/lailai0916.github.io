@@ -70,9 +70,9 @@ html[data-theme='dark'] .segmented {
   text-decoration: none !important;
   outline: none;
   transition:
-    color 0.2s ease,
-    background 0.25s ease,
-    box-shadow 0.25s ease;
+    color 160ms ease,
+    background-color 160ms ease,
+    box-shadow 160ms ease;
 }
 
 .item:hover {

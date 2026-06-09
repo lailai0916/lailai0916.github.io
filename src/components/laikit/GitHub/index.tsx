@@ -104,8 +104,8 @@ export default function GitHub(props: GitHubProps) {
         const fetchImpl = fetcher ?? defaultFetcher;
         const json = await fetchImpl(`${owner}/${repoName}`, ac.signal);
         setData(json);
-      } catch (e: any) {
-        setError(e?.message || 'Failed to load');
+      } catch (e) {
+        setError(e instanceof Error ? e.message : 'Failed to load');
       } finally {
         setLoading(false);
       }
