@@ -16,7 +16,7 @@ const STATIC_MOMENTS: MomentItem[] = [
     date: '2026-06-10T01:30:00+08:00',
     share: {
       url: 'https://www.anthropic.com/news/claude-fable-5-mythos-5',
-      title: 'Claude Fable 5 and Claude Mythos 5 \ Anthropic',
+      title: 'Claude Fable 5 and Claude Mythos 5',
       description: 'Announcements',
     },
   },
