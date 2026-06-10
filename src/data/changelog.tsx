@@ -8,6 +8,11 @@ interface ChangelogItem {
 
 export const CHANGELOG_LIST: ChangelogItem[] = [
   {
+    date: '2026-06-09',
+    type: 'added',
+    content: '<b>docusaurus-plugin-image-zoom</b> 图片缩放',
+  },
+  {
     date: '2026-05-24',
     type: 'changed',
     content: '代码块主题更改为 <code>vsLight</code> 和 <code>vsDark</code>',
