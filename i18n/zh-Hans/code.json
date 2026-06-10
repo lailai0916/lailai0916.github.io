@@ -359,9 +359,6 @@
   "components.playground.lorenz.reset": {
     "message": "重置"
   },
-  "components.playground.nBody.reset": {
-    "message": "重置"
-  },
   "components.playground.neuralNetwork.clear": {
     "message": "清除"
   },
@@ -433,12 +430,6 @@
   },
   "pages.moments.weather.thunderstorm": {
     "message": "雷暴"
-  },
-  "components.playground.pathfinding.random": {
-    "message": "随机"
-  },
-  "components.playground.pathfinding.clear": {
-    "message": "清空"
   },
   "components.github.stars": {
     "message": "Star 数"
