@@ -56,6 +56,8 @@ There is no test runner. `npm run check` is the gate.
 
 Docs, blog, and pages all share the same plugin set: `remark-math` + `rehype-katex` for LaTeX, `@docusaurus/remark-plugin-npm2yarn` (sync) for install snippets, Mermaid via `@docusaurus/theme-mermaid`, and live React via `@docusaurus/theme-live-codeblock`. Admonitions are extended with a custom `example` keyword.
 
+Content images are click-to-zoom (lightbox) via `docusaurus-plugin-image-zoom` (medium-zoom) — configured in `docusaurus.config.ts` under `themeConfig.zoom`. The `selector` is deliberately scoped to `.markdown img`, so **only docs/blog body images zoom**; custom React pages (`src/pages/**`, e.g. `moments`) are intentionally excluded (their CSS-Module classnames are hashed and out of `.markdown`). To extend zoom to a custom page, give its images a stable hook (a `:global` class or `data-` attribute) and widen the selector. Backdrop colors track the site theme (light `#fff`, dark `#1b1b1d`). It is single-image zoom, not a swipe gallery.
+
 ### i18n (critical)
 
 The site ships in `en` (default) and `zh-Hans`. Every user-facing string must go through `translate({ id, message })` from `@docusaurus/Translate`, and `i18n/zh-Hans/code.json` must carry the Chinese counterpart. The full ruleset — prefix taxonomy, key-shape conventions, orphan-cleanup workflow, translated-content layout — lives in `.claude/rules/i18n.md`, auto-loaded by Claude Code whenever files under `src/**` or `i18n/**` are touched.

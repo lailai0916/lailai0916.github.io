@@ -128,6 +128,13 @@ const config: Config = {
 
   themeConfig: {
     image: 'img/logo.svg',
+    zoom: {
+      selector: '.markdown img',
+      background: {
+        light: 'rgb(255, 255, 255)',
+        dark: 'rgb(27, 27, 29)',
+      },
+    },
     algolia: {
       appId: '5RCTMT18J0',
       apiKey: '14ba8b9ca7ed34dbbc3852d690b15473',
@@ -298,6 +305,7 @@ const config: Config = {
         anonymizeIP: true,
       },
     ],
+    require.resolve('docusaurus-plugin-image-zoom'),
   ],
 };
 
