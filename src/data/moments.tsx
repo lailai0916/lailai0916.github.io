@@ -13,6 +13,14 @@ interface MomentItem {
 
 const STATIC_MOMENTS: MomentItem[] = [
   {
+    date: '2026-06-10T01:30:00+08:00',
+    share: {
+      url: 'https://www.anthropic.com/news/claude-fable-5-mythos-5',
+      title: 'Claude Fable 5 and Claude Mythos 5 \ Anthropic',
+      description: 'Announcements',
+    },
+  },
+  {
     date: '2026-06-09T07:40:00+08:00',
     content: 'Goodbye, macOS 26!',
     images: ['https://cloud.lailai.one/f/eOLuw/macos26-dock.png'],
@@ -104,7 +112,7 @@ function getBlogMoments(): MomentItem[] {
       const content = translate(
         {
           id: 'data.moments.blogPublished',
-          message: 'Published a new post <a href="{permalink}">《{title}》</a>',
+          message: 'Published a new post <a href="{permalink}">{title}</a>',
         },
         { permalink: escapeHtml(permalink), title: escapeHtml(title) }
       );

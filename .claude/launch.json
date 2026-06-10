@@ -24,6 +24,12 @@
       "runtimeExecutable": "npm",
       "runtimeArgs": ["run", "start:zh-Hans"],
       "port": 3000
+    },
+    {
+      "name": "Docusaurus (zh-Hans, 3003)",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "start:zh-Hans", "--", "--port", "3003"],
+      "port": 3003
     }
   ]
 }

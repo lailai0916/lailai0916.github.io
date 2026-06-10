@@ -81,6 +81,11 @@ const SOURCE_RULES: Array<{ test: RegExp; label: string; icon: string }> = [
     label: 'Codeforces',
     icon: 'simple-icons:codeforces',
   },
+  {
+    test: /(?:^|\.)anthropic\.com$/i,
+    label: 'Anthropic',
+    icon: 'simple-icons:anthropic',
+  },
 ];
 
 function inferSource(url: string): ShareSource {
