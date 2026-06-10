@@ -247,6 +247,7 @@ export default function Moments() {
                     alt=""
                     className={styles.momentImage}
                     loading="lazy"
+                    data-zoomable
                   />
                 ))}
               </div>

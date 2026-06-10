@@ -129,7 +129,7 @@ const config: Config = {
   themeConfig: {
     image: 'img/logo.svg',
     zoom: {
-      selector: '.markdown img',
+      selector: '.markdown img, img[data-zoomable]',
       background: {
         light: 'rgb(255, 255, 255)',
         dark: 'rgb(27, 27, 29)',
