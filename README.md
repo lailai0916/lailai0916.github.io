@@ -71,30 +71,30 @@ npm start
 
 ```bash
 lailai0916.github.io/
-├── blog/                          # Blog
-│   ├── authors.yml                # Author config
-│   └── tags.yml                   # Tag config
-├── docs/                          # Documentation
-├── i18n/                          # Internationalization files
-├── src/                           # Source code
-│   ├── components/                # Custom components
-│   ├── css/                       # Custom styles
-│   ├── data/                      # Data files
-│   ├── hooks/                     # Custom hooks
-│   ├── pages/                     # Custom pages
-│   ├── theme/                     # Custom theme
-│   └── utils/                     # Utility functions
-├── static/                        # Static assets
-│   ├── img/                       # Image files
-│   ├── json/                      # JSON files
-│   └── CNAME                      # Domain config
-├── docusaurus.config.ts           # Docusaurus config
-├── LICENSE                        # Code license
-├── LICENSE-docs                   # Documentation license
-├── package-lock.json              # Dependency lock file
-├── package.json                   # Dependency config
-├── sidebars.ts                    # Documentation sidebar config
-└── tsconfig.json                  # TypeScript config
+├── blog/                           # Blog
+│   ├── authors.yml                 # Author config
+│   └── tags.yml                    # Tag config
+├── docs/                           # Documentation
+├── i18n/                           # Internationalization files
+├── src/                            # Source code
+│   ├── components/                 # Custom components
+│   ├── css/                        # Custom styles
+│   ├── data/                       # Data files
+│   ├── hooks/                      # Custom hooks
+│   ├── pages/                      # Custom pages
+│   ├── theme/                      # Custom theme
+│   └── utils/                      # Utility functions
+├── static/                         # Static assets
+│   ├── img/                        # Image files
+│   ├── json/                       # JSON files
+│   └── CNAME                       # Domain config
+├── docusaurus.config.ts            # Docusaurus config
+├── LICENSE                         # Code license
+├── LICENSE-docs                    # Documentation license
+├── package-lock.json               # Dependency lock file
+├── package.json                    # Dependency config
+├── sidebars.ts                     # Documentation sidebar config
+└── tsconfig.json                   # TypeScript config
 ```
 
 ## Subscribe

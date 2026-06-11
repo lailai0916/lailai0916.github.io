@@ -71,30 +71,30 @@ npm start
 
 ```bash
 lailai0916.github.io/
-├── blog/                          # 博客
-│   ├── authors.yml                # 作者配置
-│   └── tags.yml                   # 标签配置
-├── docs/                          # 文档
-├── i18n/                          # 国际化文件
-├── src/                           # 源代码
-│   ├── components/                # 自定义组件
-│   ├── css/                       # 自定义样式
-│   ├── data/                      # 数据文件
-│   ├── hooks/                     # 自定义钩子
-│   ├── pages/                     # 自定义页面
-│   ├── theme/                     # 自定义主题
-│   └── utils/                     # 工具函数
-├── static/                        # 静态资源
-│   ├── img/                       # 图片文件
-│   ├── json/                      # JSON 文件
-│   └── CNAME                      # 域名配置
-├── docusaurus.config.ts           # Docusaurus 配置
-├── LICENSE                        # 代码许可协议
-├── LICENSE-docs                   # 文档许可协议
-├── package-lock.json              # 依赖锁定文件
-├── package.json                   # 依赖配置
-├── sidebars.ts                    # 文档侧边栏配置
-└── tsconfig.json                  # TypeScript 配置
+├── blog/                           # 博客
+│   ├── authors.yml                 # 作者配置
+│   └── tags.yml                    # 标签配置
+├── docs/                           # 文档
+├── i18n/                           # 国际化文件
+├── src/                            # 源代码
+│   ├── components/                 # 自定义组件
+│   ├── css/                        # 自定义样式
+│   ├── data/                       # 数据文件
+│   ├── hooks/                      # 自定义钩子
+│   ├── pages/                      # 自定义页面
+│   ├── theme/                      # 自定义主题
+│   └── utils/                      # 工具函数
+├── static/                         # 静态资源
+│   ├── img/                        # 图片文件
+│   ├── json/                       # JSON 文件
+│   └── CNAME                       # 域名配置
+├── docusaurus.config.ts            # Docusaurus 配置
+├── LICENSE                         # 代码许可协议
+├── LICENSE-docs                    # 文档许可协议
+├── package-lock.json               # 依赖锁定文件
+├── package.json                    # 依赖配置
+├── sidebars.ts                     # 文档侧边栏配置
+└── tsconfig.json                   # TypeScript 配置
 ```
 
 ## 博客订阅
