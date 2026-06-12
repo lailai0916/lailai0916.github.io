@@ -1,0 +1,108 @@
+---
+title: 题解：P6753 [BalticOI 2013] Ball Machine
+date: 2021-11-15T19:32:00+08:00
+authors: lailai
+tags: [oi, solution, luogu]
+---
+
+<Solution pid="P6753" aid="epms2d1m" />
+
+{/* truncate */}
+
+## 题意简述
+
+给定一棵 $n$ 个节点的有根树。球从根落下，每到分叉处选子树编号最小值最小的儿子，停在第一个空位。$q$ 次操作：$opt=1$ 在根放 $num$ 个球，求最后一个球的落点；$opt=2$ 取走 $num$ 号节点的球，上方的球随之下落，求滚落的球数。
+
+## 解题思路
+
+每个节点的儿子按子树编号最小值排序，**后序遍历** 得到的次序就是落球次序。记节点 $u$ 的遍历序为 $dfn_u$，每个球都停在当前 $dfn$ 最小的空位。
+
+一个节点有球，它的子树必然填满：子树内的 $dfn$ 都比它小，填到它时这些位置已经占满。于是从任意节点向上，有球的祖先是连续的一段。
+
+每次操作 $2$ 只空出一个位置，放球总数不超过 $n+q$，逐个放入即可。用 **小根堆** 维护所有空位的 $dfn$：
+
+- 操作 $1$：取出堆顶 $num$ 次并标记，输出最后取出的节点。
+- 操作 $2$：取走 $x$ 的球后，它向上的有球祖先整体下移一格，最上面的一个空出。用 **倍增** 找到这个节点 $y$，答案为 $dep_x-dep_y$，再把 $dfn_y$ 放回堆。
+
+时间复杂度为 $O((n+q)\log n)$。
+
+## 参考代码
+
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+
+const int N=100005;
+const int L=17;
+int mn[N],dep[N],dfn[N],id[N],fa[N][L];
+bool vis[N];
+vector<int> e[N];
+priority_queue<int,vector<int>,greater<int>> q;
+int n,m,rt,cnt;
+void dfs1(int u)
+{
+	mn[u]=u;
+	for(int i=1;i<L;i++)fa[u][i]=fa[fa[u][i-1]][i-1];
+	for(int v:e[u])
+	{
+		dep[v]=dep[u]+1;
+		dfs1(v);
+		mn[u]=min(mn[u],mn[v]);
+	}
+}
+bool cmp(int x,int y)
+{
+	return mn[x]<mn[y];
+}
+void dfs2(int u)
+{
+	sort(e[u].begin(),e[u].end(),cmp);
+	for(int v:e[u])dfs2(v);
+	dfn[u]=++cnt;
+	id[cnt]=u;
+}
+int main()
+{
+	ios::sync_with_stdio(false);
+	cin.tie(nullptr);
+	cin>>n>>m;
+	for(int i=1;i<=n;i++)
+	{
+		cin>>fa[i][0];
+		if(fa[i][0])e[fa[i][0]].push_back(i);
+		else rt=i;
+	}
+	dep[rt]=1;
+	dfs1(rt);
+	dfs2(rt);
+	for(int i=1;i<=n;i++)q.push(i);
+	while(m--)
+	{
+		int op,x;
+		cin>>op>>x;
+		if(op==1)
+		{
+			int u=0;
+			while(x--)
+			{
+				u=id[q.top()];
+				q.pop();
+				vis[u]=true;
+			}
+			cout<<u<<'\n';
+		}
+		else
+		{
+			int y=x;
+			for(int i=L-1;i>=0;i--)
+			{
+				if(vis[fa[y][i]])y=fa[y][i];
+			}
+			vis[y]=false;
+			q.push(dfn[y]);
+			cout<<dep[x]-dep[y]<<'\n';
+		}
+	}
+	return 0;
+}
+```
