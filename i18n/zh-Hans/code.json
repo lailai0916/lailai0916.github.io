@@ -89,9 +89,6 @@
   "pages.home.connect": {
     "message": "联系"
   },
-  "components.desmos.frameTitle": {
-    "message": "Desmos 图形计算器"
-  },
   "components.countdown.event": {
     "message": "我的生日"
   },
@@ -112,6 +109,9 @@
   },
   "components.countdown.description": {
     "message": "距离 {event} 还有"
+  },
+  "components.desmos.frameTitle": {
+    "message": "Desmos 图形计算器"
   },
   "components.problem.collapse": {
     "message": "收起"
@@ -356,6 +356,9 @@
     "message": "文件选项卡",
     "description": "The ARIA label for the docs pagination"
   },
+  "components.article.editPage": {
+    "message": "编辑此页面"
+  },
   "components.article.copyMarkdown": {
     "message": "复制 Markdown"
   },
@@ -364,9 +367,6 @@
   },
   "components.article.copyMarkdownError": {
     "message": "复制失败"
-  },
-  "components.article.editPage": {
-    "message": "编辑此页面"
   },
   "components.article.lastUpdated": {
     "message": "最后更新于 {date}"
@@ -404,6 +404,15 @@
   "components.playground.gameOfLife.clear": {
     "message": "清空"
   },
+  "components.playground.neuralNetwork.clear": {
+    "message": "清除"
+  },
+  "components.playground.neuralNetwork.check": {
+    "message": "识别"
+  },
+  "components.playground.neuralNetwork.preprocess": {
+    "message": "预处理"
+  },
   "components.playground.lorenz.reset": {
     "message": "重置"
   },
@@ -419,20 +428,11 @@
   "components.playground.nim.aiWins": {
     "message": "AI 赢了"
   },
-  "components.playground.nim.reset": {
-    "message": "重置"
+  "components.playground.nim.random": {
+    "message": "随机"
   },
   "components.playground.nim.tip": {
     "message": "提示"
-  },
-  "components.playground.neuralNetwork.clear": {
-    "message": "清除"
-  },
-  "components.playground.neuralNetwork.check": {
-    "message": "识别"
-  },
-  "components.playground.neuralNetwork.preprocess": {
-    "message": "预处理"
   },
   "pages.moments.title": {
     "message": "动态"
@@ -593,18 +593,6 @@
   "blog.postcard.viewCount": {
     "message": "{viewCount} 浏览"
   },
-  "blog.postcard.readMore": {
-    "message": "阅读更多"
-  },
-  "blog.pagination.prev": {
-    "message": "上一页"
-  },
-  "blog.pagination.next": {
-    "message": "下一页"
-  },
-  "blog.pagination.ariaLabel": {
-    "message": "分页"
-  },
   "blog.sidebar.profileCard.title": {
     "message": "学生 & 开发者"
   },
@@ -640,6 +628,18 @@
   },
   "blog.sidebar.tags.title": {
     "message": "热门标签"
+  },
+  "blog.postcard.readMore": {
+    "message": "阅读更多"
+  },
+  "blog.pagination.prev": {
+    "message": "上一页"
+  },
+  "blog.pagination.next": {
+    "message": "下一页"
+  },
+  "blog.pagination.ariaLabel": {
+    "message": "分页"
   },
   "theme.NotFound.title": {
     "message": "找不到页面",
@@ -679,14 +679,14 @@
   "pages.travel.map.legend.unvisited": {
     "message": "未到访"
   },
-  "blog.pages.authors.authorSelect": {
-    "message": "作者"
-  },
   "pages.travel.timeline.title": {
     "message": "旅行足迹"
   },
   "pages.travel.timeline.description": {
     "message": "纸上得来终觉浅，绝知此事要躬行"
+  },
+  "blog.pages.authors.authorSelect": {
+    "message": "作者"
   },
   "theme.ErrorPageContent.title": {
     "message": "页面已崩溃。",
@@ -760,6 +760,9 @@
     "message": "{nDocsTagged}「{tagName}」",
     "description": "The title of the page for a docs tag"
   },
+  "theme.docs.versionBadge.label": {
+    "message": "版本：{versionLabel}"
+  },
   "theme.docs.versions.unreleasedVersionLabel": {
     "message": "此为 {siteTitle} {versionLabel} 版尚未发行的文档。",
     "description": "The label used to tell the user that he's browsing an unreleased doc version"
@@ -775,9 +778,6 @@
   "theme.docs.versions.latestVersionLinkLabel": {
     "message": "最新版本",
     "description": "The label used for the latest version suggestion link label"
-  },
-  "theme.docs.versionBadge.label": {
-    "message": "版本：{versionLabel}"
   },
   "theme.common.editThisPage": {
     "message": "编辑此页",
@@ -807,10 +807,6 @@
     "message": "标签：",
     "description": "The label alongside a tag list"
   },
-  "theme.AnnouncementBar.closeButtonAriaLabel": {
-    "message": "关闭",
-    "description": "The ARIA label for close button of announcement bar"
-  },
   "theme.admonition.caution": {
     "message": "警告",
     "description": "The default label used for the Caution admonition (:::caution)"
@@ -834,6 +830,10 @@
   "theme.admonition.warning": {
     "message": "注意",
     "description": "The default label used for the Warning admonition (:::warning)"
+  },
+  "theme.AnnouncementBar.closeButtonAriaLabel": {
+    "message": "关闭",
+    "description": "The ARIA label for close button of announcement bar"
   },
   "theme.blog.sidebar.navAriaLabel": {
     "message": "最近文章导航",
@@ -891,13 +891,17 @@
     "message": "复制代码到剪贴板",
     "description": "The ARIA label for copy code blocks button"
   },
+  "theme.CodeBlock.wordWrapToggle": {
+    "message": "切换自动换行",
+    "description": "The title attribute for toggle word wrapping button of code block lines"
+  },
   "theme.docs.breadcrumbs.home": {
     "message": "主页面",
     "description": "The ARIA label for the home page in the breadcrumbs"
   },
-  "theme.CodeBlock.wordWrapToggle": {
-    "message": "切换自动换行",
-    "description": "The title attribute for toggle word wrapping button of code block lines"
+  "theme.docs.sidebar.navAriaLabel": {
+    "message": "文档侧边栏",
+    "description": "The ARIA label for the sidebar navigation"
   },
   "theme.docs.sidebar.collapseButtonTitle": {
     "message": "收起侧边栏",
@@ -906,10 +910,6 @@
   "theme.docs.sidebar.collapseButtonAriaLabel": {
     "message": "收起侧边栏",
     "description": "The title attribute for collapse button of doc sidebar"
-  },
-  "theme.docs.sidebar.navAriaLabel": {
-    "message": "文档侧边栏",
-    "description": "The ARIA label for the sidebar navigation"
   },
   "theme.docs.sidebar.closeSidebarButtonAriaLabel": {
     "message": "关闭导航栏",

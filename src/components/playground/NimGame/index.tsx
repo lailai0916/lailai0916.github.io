@@ -28,9 +28,9 @@ const AI_WINS_LABEL = translate({
   id: 'components.playground.nim.aiWins',
   message: 'AI wins',
 });
-const RESET_LABEL = translate({
-  id: 'components.playground.nim.reset',
-  message: 'Reset',
+const RANDOM_LABEL = translate({
+  id: 'components.playground.nim.random',
+  message: 'Random',
 });
 const TIP_LABEL = translate({
   id: 'components.playground.nim.tip',
@@ -234,8 +234,8 @@ export default function NimGame() {
       </Card>
 
       <div className={styles.controls}>
-        <Button variant="secondary" onClick={restart} aria-label={RESET_LABEL}>
-          {RESET_LABEL}
+        <Button variant="secondary" onClick={restart} aria-label={RANDOM_LABEL}>
+          {RANDOM_LABEL}
         </Button>
         <Button
           variant="secondary"
