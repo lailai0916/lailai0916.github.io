@@ -182,8 +182,7 @@ export default function NimGame() {
         <div
           className={clsx(
             styles.status,
-            turn === 'over' && winner === 'you' && styles.win,
-            turn === 'over' && winner === 'ai' && styles.lose
+            turn === 'over' && winner === 'you' && styles.win
           )}
         >
           {status}

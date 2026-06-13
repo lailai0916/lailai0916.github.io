@@ -37,10 +37,6 @@ html[data-theme='dark'] .container {
   color: var(--ifm-color-primary);
 }
 
-.lose {
-  color: var(--ifm-color-emphasis-500);
-}
-
 .board {
   flex: 1;
   min-height: 0;
