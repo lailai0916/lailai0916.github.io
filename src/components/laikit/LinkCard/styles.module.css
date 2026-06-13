@@ -17,18 +17,6 @@
 
 .linkCardWrap {
   height: 100%;
-  animation: linkCardFadeIn 0.3s ease-out;
-}
-
-@keyframes linkCardFadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(8px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
 }
 
 .imageAvatar {

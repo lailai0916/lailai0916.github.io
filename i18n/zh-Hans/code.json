@@ -110,6 +110,9 @@
   "components.countdown.description": {
     "message": "距离 {event} 还有"
   },
+  "components.desmos.frameTitle": {
+    "message": "Desmos 图形计算器"
+  },
   "components.problem.collapse": {
     "message": "收起"
   },
@@ -133,18 +136,6 @@
   },
   "pages.changelog.empty": {
     "message": "暂无更新日志"
-  },
-  "pages.friends.title": {
-    "message": "友链"
-  },
-  "pages.friends.description": {
-    "message": "真正的友谊是世上最稀有的东西"
-  },
-  "pages.friends.modification": {
-    "message": "我的<b>友链</b>"
-  },
-  "pages.friends.datacard.label": {
-    "message": "位朋友"
   },
   "pages.insights.title": {
     "message": "实时洞察"
@@ -200,6 +191,18 @@
   "pages.insights.metricList.countries": {
     "message": "访客地区"
   },
+  "pages.friends.title": {
+    "message": "友链"
+  },
+  "pages.friends.description": {
+    "message": "真正的友谊是世上最稀有的东西"
+  },
+  "pages.friends.modification": {
+    "message": "我的<b>友链</b>"
+  },
+  "pages.friends.datacard.label": {
+    "message": "位朋友"
+  },
   "pages.resources.title": {
     "message": "资源"
   },
@@ -229,6 +232,21 @@
   },
   "pages.resources.search.empty": {
     "message": "找不到和“{query}”相符的资源。"
+  },
+  "pages.travel.title": {
+    "message": "旅行"
+  },
+  "pages.travel.description": {
+    "message": "每一次旅行都能带来新的视野和感悟"
+  },
+  "pages.travel.modification": {
+    "message": "旅行<b>记录</b>"
+  },
+  "pages.travel.datacard.countries": {
+    "message": "国家/地区"
+  },
+  "pages.travel.datacard.years": {
+    "message": "年历程"
   },
   "pages.settings.title": {
     "message": "设置"
@@ -323,23 +341,38 @@
   "pages.settings.datacard.label": {
     "message": "项设置"
   },
-  "pages.travel.title": {
-    "message": "旅行"
-  },
-  "pages.travel.description": {
-    "message": "每一次旅行都能带来新的视野和感悟"
-  },
-  "pages.travel.modification": {
-    "message": "旅行<b>记录</b>"
-  },
-  "pages.travel.datacard.countries": {
-    "message": "国家/地区"
-  },
-  "pages.travel.datacard.years": {
-    "message": "年历程"
-  },
   "blog.pages.tags.tagSelect": {
     "message": "标签"
+  },
+  "theme.docs.paginator.previous": {
+    "message": "上一页",
+    "description": "The label used to navigate to the previous doc"
+  },
+  "theme.docs.paginator.next": {
+    "message": "下一页",
+    "description": "The label used to navigate to the next doc"
+  },
+  "theme.docs.paginator.navAriaLabel": {
+    "message": "文件选项卡",
+    "description": "The ARIA label for the docs pagination"
+  },
+  "components.github.stars": {
+    "message": "Star 数"
+  },
+  "components.github.forks": {
+    "message": "Fork 数"
+  },
+  "components.github.license": {
+    "message": "许可证"
+  },
+  "components.github.language": {
+    "message": "主要语言"
+  },
+  "components.github.error": {
+    "message": "加载 GitHub 数据失败"
+  },
+  "components.markdown.aboutGreeting": {
+    "message": "Hello, I'm lailai"
   },
   "components.playground.gameOfLife.play": {
     "message": "播放"
@@ -367,6 +400,24 @@
   },
   "components.playground.neuralNetwork.preprocess": {
     "message": "预处理"
+  },
+  "components.playground.nim.yourTurn": {
+    "message": "你的回合"
+  },
+  "components.playground.nim.aiThinking": {
+    "message": "AI 思考中……"
+  },
+  "components.playground.nim.youWin": {
+    "message": "你赢了！"
+  },
+  "components.playground.nim.aiWins": {
+    "message": "AI 赢了"
+  },
+  "components.playground.nim.newGame": {
+    "message": "新游戏"
+  },
+  "components.playground.nim.tip": {
+    "message": "提示"
   },
   "pages.moments.title": {
     "message": "动态"
@@ -431,24 +482,6 @@
   "pages.moments.weather.thunderstorm": {
     "message": "雷暴"
   },
-  "components.github.stars": {
-    "message": "Star 数"
-  },
-  "components.github.forks": {
-    "message": "Fork 数"
-  },
-  "components.github.license": {
-    "message": "许可证"
-  },
-  "components.github.language": {
-    "message": "主要语言"
-  },
-  "components.github.error": {
-    "message": "加载 GitHub 数据失败"
-  },
-  "components.markdown.aboutGreeting": {
-    "message": "Hello, I'm lailai"
-  },
   "pages.insights.heartbeat.ariaLabel": {
     "message": "近期监测状态"
   },
@@ -512,6 +545,15 @@
   "blog.archive.tab.authors": {
     "message": "按作者"
   },
+  "blog.post.copyMarkdown": {
+    "message": "复制 Markdown"
+  },
+  "blog.post.copyMarkdownCopied": {
+    "message": "已复制！"
+  },
+  "blog.post.copyMarkdownError": {
+    "message": "复制失败"
+  },
   "blog.sidebar.calendar.today": {
     "message": "本月"
   },
@@ -524,14 +566,17 @@
   "blog.sidebar.calendar.empty": {
     "message": "暂无文章"
   },
-  "blog.post.copyMarkdown": {
-    "message": "复制 Markdown"
+  "blog.post.pinned": {
+    "message": "置顶"
   },
-  "blog.post.copyMarkdownCopied": {
-    "message": "已复制！"
+  "blog.postcard.wordCount": {
+    "message": "{word} 词数"
   },
-  "blog.post.copyMarkdownError": {
-    "message": "复制失败"
+  "blog.postcard.readingTime": {
+    "message": "{readingTime} 分钟"
+  },
+  "blog.postcard.viewCount": {
+    "message": "{viewCount} 浏览"
   },
   "blog.post.editPage": {
     "message": "编辑此页面"
@@ -547,18 +592,6 @@
   },
   "blog.post.paginator.ariaLabel": {
     "message": "博客文章导航"
-  },
-  "blog.post.pinned": {
-    "message": "置顶"
-  },
-  "blog.postcard.wordCount": {
-    "message": "{word} 词数"
-  },
-  "blog.postcard.readingTime": {
-    "message": "{readingTime} 分钟"
-  },
-  "blog.postcard.viewCount": {
-    "message": "{viewCount} 浏览"
   },
   "blog.postcard.readMore": {
     "message": "阅读更多"
@@ -608,17 +641,16 @@
   "blog.sidebar.tags.title": {
     "message": "热门标签"
   },
-  "pages.travel.map.title": {
-    "message": "旅行地图"
+  "theme.NotFound.title": {
+    "message": "找不到页面",
+    "description": "The title of the 404 page"
   },
-  "pages.travel.map.description": {
-    "message": "世界那么大，我想去看看。足迹遍布的国家和城市"
+  "theme.NotFound.p1": {
+    "message": "我们找不到您要找的页面。",
+    "description": "The first paragraph of the 404 page"
   },
-  "pages.travel.map.legend.visited": {
-    "message": "已到访"
-  },
-  "pages.travel.map.legend.unvisited": {
-    "message": "未到访"
+  "components.notFound.backToHome": {
+    "message": "返回首页"
   },
   "components.cookieConsent.title": {
     "message": "Cookie 设置"
@@ -640,6 +672,18 @@
   },
   "pages.travel.timeline.description": {
     "message": "纸上得来终觉浅，绝知此事要躬行"
+  },
+  "pages.travel.map.title": {
+    "message": "旅行地图"
+  },
+  "pages.travel.map.description": {
+    "message": "世界那么大，我想去看看。足迹遍布的国家和城市"
+  },
+  "pages.travel.map.legend.visited": {
+    "message": "已到访"
+  },
+  "pages.travel.map.legend.unvisited": {
+    "message": "未到访"
   },
   "blog.pages.authors.authorSelect": {
     "message": "作者"
@@ -708,21 +752,6 @@
     "message": "页面路径",
     "description": "The ARIA label for the breadcrumbs"
   },
-  "theme.docs.paginator.navAriaLabel": {
-    "message": "文件选项卡",
-    "description": "The ARIA label for the docs pagination"
-  },
-  "theme.docs.paginator.previous": {
-    "message": "上一页",
-    "description": "The label used to navigate to the previous doc"
-  },
-  "theme.docs.paginator.next": {
-    "message": "下一页",
-    "description": "The label used to navigate to the next doc"
-  },
-  "theme.docs.versionBadge.label": {
-    "message": "版本：{versionLabel}"
-  },
   "theme.docs.tagDocListPageTitle.nDocsTagged": {
     "message": "{count} 篇文档带有标签",
     "description": "Pluralized label for \"{count} docs tagged\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
@@ -730,6 +759,9 @@
   "theme.docs.tagDocListPageTitle": {
     "message": "{nDocsTagged}「{tagName}」",
     "description": "The title of the page for a docs tag"
+  },
+  "theme.docs.versionBadge.label": {
+    "message": "版本：{versionLabel}"
   },
   "theme.docs.versions.unreleasedVersionLabel": {
     "message": "此为 {siteTitle} {versionLabel} 版尚未发行的文档。",
@@ -770,10 +802,6 @@
   "theme.navbar.mobileVersionsDropdown.label": {
     "message": "选择版本",
     "description": "The label for the navbar versions dropdown on mobile view"
-  },
-  "theme.NotFound.title": {
-    "message": "找不到页面",
-    "description": "The title of the 404 page"
   },
   "theme.tags.tagsListLabel": {
     "message": "标签：",
@@ -831,10 +859,6 @@
     "message": "选择语言",
     "description": "The label for the mobile language switcher dropdown"
   },
-  "theme.NotFound.p1": {
-    "message": "我们找不到您要找的页面。",
-    "description": "The first paragraph of the 404 page"
-  },
   "theme.NotFound.p2": {
     "message": "请联系原始链接来源网站的所有者，并告知他们链接已损坏。",
     "description": "The 2nd paragraph of the 404 page"
@@ -843,10 +867,6 @@
     "message": "本页总览",
     "description": "The label used by the button on the collapsible TOC component"
   },
-  "theme.blog.post.readingTime.plurals": {
-    "message": "阅读需 {readingTime} 分钟",
-    "description": "Pluralized label for \"{readingTime} min read\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
-  },
   "theme.blog.post.readMore": {
     "message": "阅读更多",
     "description": "The label used in blog post item excerpts to link to full blog posts"
@@ -854,6 +874,10 @@
   "theme.blog.post.readMoreLabel": {
     "message": "阅读 {title} 的全文",
     "description": "The ARIA label for the link to full blog posts from excerpts"
+  },
+  "theme.blog.post.readingTime.plurals": {
+    "message": "阅读需 {readingTime} 分钟",
+    "description": "Pluralized label for \"{readingTime} min read\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
   },
   "theme.CodeBlock.copy": {
     "message": "复制",
@@ -1213,11 +1237,5 @@
   "theme.tags.tagsPageTitle": {
     "message": "标签",
     "description": "The title of the tag list page"
-  },
-  "components.notFound.backToHome": {
-    "message": "返回首页"
-  },
-  "components.desmos.frameTitle": {
-    "message": "Desmos 图形计算器"
   }
 }

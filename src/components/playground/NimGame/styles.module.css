@@ -1,0 +1,95 @@
+.container {
+  --nim-tip: #34c759;
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+html[data-theme='dark'] .container {
+  --nim-tip: #30d158;
+}
+
+.cardSurface {
+  width: 100%;
+  aspect-ratio: 1;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  overflow: hidden;
+}
+
+.status {
+  flex-shrink: 0;
+  text-align: center;
+  font-size: 1.05rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  line-height: 1.6;
+  color: var(--ifm-color-emphasis-700);
+}
+
+.win {
+  color: var(--ifm-color-primary);
+}
+
+.lose {
+  color: var(--ifm-color-emphasis-500);
+}
+
+.board {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.grid {
+  display: grid;
+}
+
+.token {
+  border: none;
+  padding: 0;
+  border-radius: 30%;
+  background: var(--ifm-color-primary);
+  cursor: pointer;
+  transition:
+    background 160ms ease,
+    opacity 160ms ease,
+    transform 160ms ease;
+}
+
+.token:not(:disabled):active {
+  transform: scale(0.9);
+}
+
+.token:disabled {
+  cursor: default;
+}
+
+.faded {
+  opacity: 0.16;
+}
+
+.recommend {
+  background: var(--nim-tip);
+}
+
+.controls {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.6rem;
+  align-items: stretch;
+}
+
+.controls > * {
+  width: 100%;
+}
