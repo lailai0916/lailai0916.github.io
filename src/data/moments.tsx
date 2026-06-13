@@ -13,6 +13,15 @@ interface MomentItem {
 
 const STATIC_MOMENTS: MomentItem[] = [
   {
+    date: '2026-06-13T16:55:00+08:00',
+    share: {
+      url: 'https://www.anthropic.com/news/fable-mythos-access',
+      title:
+        'Statement on the US government directive to suspend access to Fable 5 and Mythos 5',
+      description: 'Announcements',
+    },
+  },
+  {
     date: '2026-06-10T01:30:00+08:00',
     share: {
       url: 'https://www.anthropic.com/news/claude-fable-5-mythos-5',
