@@ -234,11 +234,7 @@ export default function NimGame() {
       </Card>
 
       <div className={styles.controls}>
-        <Button
-          variant="secondary"
-          onClick={restart}
-          aria-label={RESET_LABEL}
-        >
+        <Button variant="secondary" onClick={restart} aria-label={RESET_LABEL}>
           {RESET_LABEL}
         </Button>
         <Button

@@ -1,0 +1,31 @@
+/* Carried over from the stock DocItem/Layout so the doc column width and the
+   first-child margin reset are unchanged. */
+.docItemContainer header + *,
+.docItemContainer article > *:first-child {
+  margin-top: 0;
+}
+
+@media (min-width: 997px) {
+  .docItemCol {
+    max-width: 75% !important;
+  }
+}
+
+/* Breadcrumbs on the left, the article actions pinned to the right. The
+   breadcrumb's own bottom margin is moved onto the row so both sides stay
+   vertically centered (and the spacing survives when breadcrumbs are absent). */
+.docTopRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem 1rem;
+  margin-bottom: 0.8rem;
+}
+
+.docTopRow :global(.theme-doc-breadcrumbs) {
+  margin-bottom: 0;
+}
+
+.docTopRow > :last-child {
+  margin-left: auto;
+}

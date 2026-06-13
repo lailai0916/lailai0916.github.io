@@ -1,7 +1,7 @@
-/* Classes genuinely shared across blog components:
-   theme-toggled cover images (list + detail) and the article meta action
-   buttons (PostChrome's edit link + CopyMarkdownButton). Component-exclusive
-   styles live in each component's own folder. */
+/* Classes genuinely shared across blog list + detail components: the
+   theme-toggled cover images. Component-exclusive styles live in each
+   component's own folder; the article action/meta icon buttons now live in
+   src/components/Article (shared with docs). */
 
 [data-theme='light'] .postCoverDark {
   display: none;
@@ -9,35 +9,4 @@
 
 [data-theme='dark'] .postCoverLight {
   display: none;
-}
-
-.articleFooterMetaItem {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-  text-decoration: none;
-  color: inherit;
-  transition: color 160ms ease;
-}
-
-.articleFooterMetaLink:hover {
-  color: var(--ifm-color-primary);
-  text-decoration: none;
-}
-
-/* Square icon-only button (no text). */
-.articleFooterMetaIconBtn {
-  width: 28px;
-  height: 28px;
-  justify-content: center;
-  border-radius: 8px;
-  color: var(--ifm-color-emphasis-600);
-  transition:
-    color 160ms ease,
-    background-color 160ms ease;
-}
-
-.articleFooterMetaIconBtn:hover {
-  color: var(--ifm-color-primary);
-  background: var(--ifm-hover-overlay);
 }

@@ -89,6 +89,9 @@
   "pages.home.connect": {
     "message": "联系"
   },
+  "components.desmos.frameTitle": {
+    "message": "Desmos 图形计算器"
+  },
   "components.countdown.event": {
     "message": "我的生日"
   },
@@ -109,9 +112,6 @@
   },
   "components.countdown.description": {
     "message": "距离 {event} 还有"
-  },
-  "components.desmos.frameTitle": {
-    "message": "Desmos 图形计算器"
   },
   "components.problem.collapse": {
     "message": "收起"
@@ -202,6 +202,36 @@
   },
   "pages.insights.metricList.countries": {
     "message": "访客地区"
+  },
+  "pages.resources.title": {
+    "message": "资源"
+  },
+  "pages.resources.description": {
+    "message": "精心筛选的优质工具与平台"
+  },
+  "pages.resources.modification": {
+    "message": "精选<b>资源</b>"
+  },
+  "pages.resources.search.clear": {
+    "message": "清空搜索"
+  },
+  "pages.resources.category.clear": {
+    "message": "清除分类"
+  },
+  "pages.resources.search.placeholder": {
+    "message": "搜索资源"
+  },
+  "pages.resources.category.count": {
+    "message": "{count} 项"
+  },
+  "pages.resources.datacard.categories": {
+    "message": "个分类"
+  },
+  "pages.resources.datacard.items": {
+    "message": "项资源"
+  },
+  "pages.resources.search.empty": {
+    "message": "找不到和“{query}”相符的资源。"
   },
   "pages.settings.title": {
     "message": "设置"
@@ -296,36 +326,6 @@
   "pages.settings.datacard.label": {
     "message": "项设置"
   },
-  "pages.resources.title": {
-    "message": "资源"
-  },
-  "pages.resources.description": {
-    "message": "精心筛选的优质工具与平台"
-  },
-  "pages.resources.modification": {
-    "message": "精选<b>资源</b>"
-  },
-  "pages.resources.search.clear": {
-    "message": "清空搜索"
-  },
-  "pages.resources.category.clear": {
-    "message": "清除分类"
-  },
-  "pages.resources.search.placeholder": {
-    "message": "搜索资源"
-  },
-  "pages.resources.category.count": {
-    "message": "{count} 项"
-  },
-  "pages.resources.datacard.categories": {
-    "message": "个分类"
-  },
-  "pages.resources.datacard.items": {
-    "message": "项资源"
-  },
-  "pages.resources.search.empty": {
-    "message": "找不到和“{query}”相符的资源。"
-  },
   "pages.travel.title": {
     "message": "旅行"
   },
@@ -355,6 +355,21 @@
   "theme.docs.paginator.navAriaLabel": {
     "message": "文件选项卡",
     "description": "The ARIA label for the docs pagination"
+  },
+  "components.article.copyMarkdown": {
+    "message": "复制 Markdown"
+  },
+  "components.article.copyMarkdownCopied": {
+    "message": "已复制！"
+  },
+  "components.article.copyMarkdownError": {
+    "message": "复制失败"
+  },
+  "components.article.editPage": {
+    "message": "编辑此页面"
+  },
+  "components.article.lastUpdated": {
+    "message": "最后更新于 {date}"
   },
   "components.github.stars": {
     "message": "Star 数"
@@ -392,15 +407,6 @@
   "components.playground.lorenz.reset": {
     "message": "重置"
   },
-  "components.playground.neuralNetwork.clear": {
-    "message": "清除"
-  },
-  "components.playground.neuralNetwork.check": {
-    "message": "识别"
-  },
-  "components.playground.neuralNetwork.preprocess": {
-    "message": "预处理"
-  },
   "components.playground.nim.yourTurn": {
     "message": "你的回合"
   },
@@ -418,6 +424,15 @@
   },
   "components.playground.nim.tip": {
     "message": "提示"
+  },
+  "components.playground.neuralNetwork.clear": {
+    "message": "清除"
+  },
+  "components.playground.neuralNetwork.check": {
+    "message": "识别"
+  },
+  "components.playground.neuralNetwork.preprocess": {
+    "message": "预处理"
   },
   "pages.moments.title": {
     "message": "动态"
@@ -557,21 +572,6 @@
   "blog.sidebar.calendar.empty": {
     "message": "暂无文章"
   },
-  "blog.post.copyMarkdown": {
-    "message": "复制 Markdown"
-  },
-  "blog.post.copyMarkdownCopied": {
-    "message": "已复制！"
-  },
-  "blog.post.copyMarkdownError": {
-    "message": "复制失败"
-  },
-  "blog.post.editPage": {
-    "message": "编辑此页面"
-  },
-  "blog.post.lastUpdated": {
-    "message": "最后更新于 {date}"
-  },
   "blog.post.paginator.newer": {
     "message": "上一篇"
   },
@@ -641,6 +641,17 @@
   "blog.sidebar.tags.title": {
     "message": "热门标签"
   },
+  "theme.NotFound.title": {
+    "message": "找不到页面",
+    "description": "The title of the 404 page"
+  },
+  "theme.NotFound.p1": {
+    "message": "我们找不到您要找的页面。",
+    "description": "The first paragraph of the 404 page"
+  },
+  "components.notFound.backToHome": {
+    "message": "返回首页"
+  },
   "components.cookieConsent.title": {
     "message": "Cookie 设置"
   },
@@ -656,17 +667,6 @@
   "components.cookieConsent.accept": {
     "message": "接受"
   },
-  "theme.NotFound.title": {
-    "message": "找不到页面",
-    "description": "The title of the 404 page"
-  },
-  "theme.NotFound.p1": {
-    "message": "我们找不到您要找的页面。",
-    "description": "The first paragraph of the 404 page"
-  },
-  "components.notFound.backToHome": {
-    "message": "返回首页"
-  },
   "pages.travel.map.title": {
     "message": "旅行地图"
   },
@@ -679,14 +679,14 @@
   "pages.travel.map.legend.unvisited": {
     "message": "未到访"
   },
+  "blog.pages.authors.authorSelect": {
+    "message": "作者"
+  },
   "pages.travel.timeline.title": {
     "message": "旅行足迹"
   },
   "pages.travel.timeline.description": {
     "message": "纸上得来终觉浅，绝知此事要躬行"
-  },
-  "blog.pages.authors.authorSelect": {
-    "message": "作者"
   },
   "theme.ErrorPageContent.title": {
     "message": "页面已崩溃。",
@@ -760,9 +760,6 @@
     "message": "{nDocsTagged}「{tagName}」",
     "description": "The title of the page for a docs tag"
   },
-  "theme.docs.versionBadge.label": {
-    "message": "版本：{versionLabel}"
-  },
   "theme.docs.versions.unreleasedVersionLabel": {
     "message": "此为 {siteTitle} {versionLabel} 版尚未发行的文档。",
     "description": "The label used to tell the user that he's browsing an unreleased doc version"
@@ -778,6 +775,9 @@
   "theme.docs.versions.latestVersionLinkLabel": {
     "message": "最新版本",
     "description": "The label used for the latest version suggestion link label"
+  },
+  "theme.docs.versionBadge.label": {
+    "message": "版本：{versionLabel}"
   },
   "theme.common.editThisPage": {
     "message": "编辑此页",
@@ -855,13 +855,13 @@
     "message": "主导航",
     "description": "The ARIA label for the main navigation"
   },
-  "theme.NotFound.p2": {
-    "message": "请联系原始链接来源网站的所有者，并告知他们链接已损坏。",
-    "description": "The 2nd paragraph of the 404 page"
-  },
   "theme.navbar.mobileLanguageDropdown.label": {
     "message": "选择语言",
     "description": "The label for the mobile language switcher dropdown"
+  },
+  "theme.NotFound.p2": {
+    "message": "请联系原始链接来源网站的所有者，并告知他们链接已损坏。",
+    "description": "The 2nd paragraph of the 404 page"
   },
   "theme.TOCCollapsible.toggleButtonLabel": {
     "message": "本页总览",
@@ -891,13 +891,13 @@
     "message": "复制代码到剪贴板",
     "description": "The ARIA label for copy code blocks button"
   },
-  "theme.CodeBlock.wordWrapToggle": {
-    "message": "切换自动换行",
-    "description": "The title attribute for toggle word wrapping button of code block lines"
-  },
   "theme.docs.breadcrumbs.home": {
     "message": "主页面",
     "description": "The ARIA label for the home page in the breadcrumbs"
+  },
+  "theme.CodeBlock.wordWrapToggle": {
+    "message": "切换自动换行",
+    "description": "The title attribute for toggle word wrapping button of code block lines"
   },
   "theme.docs.sidebar.collapseButtonTitle": {
     "message": "收起侧边栏",
@@ -938,6 +938,41 @@
   "theme.docs.sidebar.expandButtonAriaLabel": {
     "message": "展开侧边栏",
     "description": "The ARIA label and title attribute for expand button of doc sidebar"
+  },
+  "theme.SearchBar.seeAll": {
+    "message": "查看全部 {count} 个结果"
+  },
+  "theme.SearchPage.documentsFound.plurals": {
+    "message": "找到 {count} 份文件",
+    "description": "Pluralized label for \"{count} documents found\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
+  },
+  "theme.SearchPage.existingResultsTitle": {
+    "message": "「{query}」的搜索结果",
+    "description": "The search page title for non-empty query"
+  },
+  "theme.SearchPage.emptyResultsTitle": {
+    "message": "在文档中搜索",
+    "description": "The search page title for empty query"
+  },
+  "theme.SearchPage.inputPlaceholder": {
+    "message": "在此输入搜索字词",
+    "description": "The placeholder for search page input"
+  },
+  "theme.SearchPage.inputLabel": {
+    "message": "搜索",
+    "description": "The ARIA label for search page input"
+  },
+  "theme.SearchPage.algoliaLabel": {
+    "message": "通过 Algolia 搜索",
+    "description": "The description label for Algolia mention"
+  },
+  "theme.SearchPage.noResultsText": {
+    "message": "未找到任何结果",
+    "description": "The paragraph for empty search result"
+  },
+  "theme.SearchPage.fetchingNewResults": {
+    "message": "正在获取新的搜索结果...",
+    "description": "The paragraph for fetching new search results"
   },
   "theme.SearchBar.label": {
     "message": "搜索",
@@ -1134,41 +1169,6 @@
   "theme.SearchModal.placeholder": {
     "message": "搜索文档",
     "description": "The placeholder of the input of the DocSearch pop-up modal"
-  },
-  "theme.SearchBar.seeAll": {
-    "message": "查看全部 {count} 个结果"
-  },
-  "theme.SearchPage.documentsFound.plurals": {
-    "message": "找到 {count} 份文件",
-    "description": "Pluralized label for \"{count} documents found\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
-  },
-  "theme.SearchPage.existingResultsTitle": {
-    "message": "「{query}」的搜索结果",
-    "description": "The search page title for non-empty query"
-  },
-  "theme.SearchPage.emptyResultsTitle": {
-    "message": "在文档中搜索",
-    "description": "The search page title for empty query"
-  },
-  "theme.SearchPage.inputPlaceholder": {
-    "message": "在此输入搜索字词",
-    "description": "The placeholder for search page input"
-  },
-  "theme.SearchPage.inputLabel": {
-    "message": "搜索",
-    "description": "The ARIA label for search page input"
-  },
-  "theme.SearchPage.algoliaLabel": {
-    "message": "通过 Algolia 搜索",
-    "description": "The description label for Algolia mention"
-  },
-  "theme.SearchPage.noResultsText": {
-    "message": "未找到任何结果",
-    "description": "The paragraph for empty search result"
-  },
-  "theme.SearchPage.fetchingNewResults": {
-    "message": "正在获取新的搜索结果...",
-    "description": "The paragraph for fetching new search results"
   },
   "theme.Playground.liveEditor": {
     "message": "实时编辑器",

@@ -7,49 +7,58 @@ import shared from '../styles.module.css';
 
 declare const require: any;
 
-// Each blog .mdx is registered as a lazy chunk via raw-loader. The chunk for a
-// given post is only downloaded when its "Copy Markdown" button is clicked, so
-// the initial bundle is unaffected and no extra static files are emitted.
+// Each blog/docs .mdx is registered as a lazy chunk via raw-loader. The chunk
+// for a given page is only downloaded when its "Copy Markdown" button is
+// clicked, so the initial bundle is unaffected and no extra static files are
+// emitted. The directory argument must be a static literal for webpack, hence
+// one context per content root.
 const blogMdxCtx = require.context(
   '!!raw-loader!@site/blog',
   true,
   /\.mdx?$/,
   'lazy'
 );
+const docsMdxCtx = require.context(
+  '!!raw-loader!@site/docs',
+  true,
+  /\.mdx?$/,
+  'lazy'
+);
 
-function sourceToCtxKey(source: string): string | null {
-  // metadata.source examples (English locale):
-  //   @site/blog/record/zk.mdx
-  //   @site/blog/welcome.mdx
-  // Strip the @site/blog/ prefix to match the require.context base.
-  const m = source.match(/^@site\/blog\/(.+\.mdx?)$/);
-  return m ? './' + m[1] : null;
+// metadata.source examples:
+//   @site/blog/record/zk.mdx   @site/blog/welcome.mdx
+//   @site/docs/project/index.mdx
+// Strip the @site/<root>/ prefix to match the require.context base.
+function resolveSource(source: string): { ctx: any; key: string } | null {
+  const m = source.match(/^@site\/(blog|docs)\/(.+\.mdx?)$/);
+  if (!m) return null;
+  return { ctx: m[1] === 'blog' ? blogMdxCtx : docsMdxCtx, key: './' + m[2] };
 }
 
 type State = 'idle' | 'copying' | 'copied' | 'error';
 
 const COPY_LABEL = translate({
-  id: 'blog.post.copyMarkdown',
+  id: 'components.article.copyMarkdown',
   message: 'Copy Markdown',
 });
 const COPIED_LABEL = translate({
-  id: 'blog.post.copyMarkdownCopied',
+  id: 'components.article.copyMarkdownCopied',
   message: 'Copied!',
 });
 const COPY_ERROR_LABEL = translate({
-  id: 'blog.post.copyMarkdownError',
+  id: 'components.article.copyMarkdownError',
   message: 'Copy failed',
 });
 
 export default function CopyMarkdownButton({ source }: { source: string }) {
   const [state, setState] = useState<State>('idle');
-  const key = sourceToCtxKey(source);
-  if (!key) return null;
+  const resolved = resolveSource(source);
+  if (!resolved) return null;
 
   async function onClick() {
     setState('copying');
     try {
-      const mod = (await blogMdxCtx(key!)) as { default: string };
+      const mod = (await resolved!.ctx(resolved!.key)) as { default: string };
       await navigator.clipboard.writeText(mod.default);
       setState('copied');
     } catch (e) {
@@ -81,9 +90,9 @@ export default function CopyMarkdownButton({ source }: { source: string }) {
       aria-label={label}
       title={label}
       className={clsx(
-        shared.articleFooterMetaItem,
-        shared.articleFooterMetaLink,
-        shared.articleFooterMetaIconBtn,
+        shared.metaItem,
+        shared.metaLink,
+        shared.iconBtn,
         styles.copyMarkdownButton
       )}
     >

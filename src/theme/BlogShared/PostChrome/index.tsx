@@ -1,15 +1,12 @@
 import clsx from 'clsx';
-import Link from '@docusaurus/Link';
-import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import { translate } from '@docusaurus/Translate';
-import { Icon } from '@iconify/react';
 
 import type { Props as BlogPostPageProps } from '@theme/BlogPostPage';
-import { formatLocalizedDate } from '@site/src/utils/format';
 import Paginator from '@site/src/components/laikit/Paginator';
-import { MetaBar, TagChipList } from '../BlogUI';
+import Actions from '@site/src/components/Article/Actions';
+import MetaFooter from '@site/src/components/Article/MetaFooter';
+import { MetaBar } from '../BlogUI';
 import { usePostMetaItems } from '../PostMeta';
-import CopyMarkdownButton from '../CopyMarkdownButton';
 import Author from '../PostAuthor';
 import styles from './styles.module.css';
 import shared from '../styles.module.css';
@@ -43,13 +40,6 @@ export function PostHeader({ metadata, frontMatter }: PostHeaderProps) {
   const isSoloOwner = allAuthors.length === 1 && allAuthors[0].key === 'lailai';
   const authors = isSoloOwner ? [] : allAuthors;
 
-  const hasSource = !!metadata.source;
-  const hasEdit = !!metadata.editUrl;
-  const editLabel = translate({
-    id: 'blog.post.editPage',
-    message: 'Edit this page',
-  });
-
   return (
     <header className={styles.articleHeader}>
       {lightImage && (
@@ -82,25 +72,7 @@ export function PostHeader({ metadata, frontMatter }: PostHeaderProps) {
 
       <div className={styles.articleHeaderInfoRow}>
         <MetaBar items={metaItems} />
-        {(hasSource || hasEdit) && (
-          <div className={styles.articleHeaderActions}>
-            {hasSource && <CopyMarkdownButton source={metadata.source!} />}
-            {hasEdit && (
-              <Link
-                href={metadata.editUrl!}
-                aria-label={editLabel}
-                title={editLabel}
-                className={clsx(
-                  shared.articleFooterMetaItem,
-                  shared.articleFooterMetaLink,
-                  shared.articleFooterMetaIconBtn
-                )}
-              >
-                <Icon icon="lucide:pencil" width={16} height={16} />
-              </Link>
-            )}
-          </div>
-        )}
+        <Actions source={metadata.source} editUrl={metadata.editUrl} />
       </div>
 
       <h1 className={styles.articleTitle}>{metadata.title}</h1>
@@ -123,48 +95,11 @@ interface PostFooterProps {
 }
 
 export function PostFooter({ metadata }: PostFooterProps) {
-  const {
-    i18n: { currentLocale },
-  } = useDocusaurusContext();
-
   const tagItems = (metadata.tags ?? [])
     .filter((t) => !!t.label && !!t.permalink)
     .map((t) => ({ to: t.permalink, label: t.label }));
-  const hasTags = tagItems.length > 0;
-  const hasUpdated = !!metadata.lastUpdatedAt;
-  if (!hasTags && !hasUpdated) return null;
 
-  return (
-    <footer className={styles.articleFooter}>
-      <div className={styles.articleFooterMeta}>
-        {hasTags && <TagChipList items={tagItems} />}
-        {hasUpdated && (
-          <span
-            className={clsx(
-              shared.articleFooterMetaItem,
-              styles.articleFooterMetaUpdated
-            )}
-          >
-            <Icon icon="lucide:history" width={14} height={14} />
-            <time dateTime={new Date(metadata.lastUpdatedAt!).toISOString()}>
-              {translate(
-                {
-                  id: 'blog.post.lastUpdated',
-                  message: 'Last updated on {date}',
-                },
-                {
-                  date: formatLocalizedDate(
-                    new Date(metadata.lastUpdatedAt!).toISOString(),
-                    currentLocale
-                  ),
-                }
-              )}
-            </time>
-          </span>
-        )}
-      </div>
-    </footer>
-  );
+  return <MetaFooter tags={tagItems} lastUpdatedAt={metadata.lastUpdatedAt} />;
 }
 
 // PostPaginator
