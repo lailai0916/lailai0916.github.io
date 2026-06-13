@@ -46,7 +46,10 @@ function staircase(): number[] {
 }
 
 function randomHeaps(): number[] {
-  return Array.from({ length: ROWS }, () => 1 + Math.floor(Math.random() * COLS));
+  return Array.from(
+    { length: ROWS },
+    () => 1 + Math.floor(Math.random() * COLS)
+  );
 }
 
 // Optimal play: drive the Nim-sum (XOR of heap sizes) to zero when possible.
@@ -229,7 +232,11 @@ export default function NimGame() {
       </Card>
 
       <div className={styles.controls}>
-        <Button variant="secondary" onClick={restart} aria-label={NEW_GAME_LABEL}>
+        <Button
+          variant="secondary"
+          onClick={restart}
+          aria-label={NEW_GAME_LABEL}
+        >
           {NEW_GAME_LABEL}
         </Button>
         <Button
