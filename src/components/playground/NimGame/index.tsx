@@ -5,7 +5,7 @@ import Button from '@site/src/components/laikit/Button';
 import Card from '@site/src/components/laikit/Card';
 import styles from './styles.module.css';
 
-const ROWS = 5;
+const ROWS = 6;
 const COLS = 8;
 const AI_DELAY_MS = 550;
 const COL_GAP_RATIO = 0.36;
@@ -28,9 +28,9 @@ const AI_WINS_LABEL = translate({
   id: 'components.playground.nim.aiWins',
   message: 'AI wins',
 });
-const NEW_GAME_LABEL = translate({
-  id: 'components.playground.nim.newGame',
-  message: 'New game',
+const RESET_LABEL = translate({
+  id: 'components.playground.nim.reset',
+  message: 'Reset',
 });
 const TIP_LABEL = translate({
   id: 'components.playground.nim.tip',
@@ -219,12 +219,15 @@ export default function NimGame() {
                     willRemove && styles.faded,
                     recommend && styles.recommend
                   )}
+                  style={{ fontSize: `${Math.round(cell * 0.46)}px` }}
                   disabled={turn !== 'you'}
                   onPointerEnter={() => setHover({ heap: hi, index: si })}
                   onPointerLeave={() => setHover(null)}
                   onClick={() => takeFrom(hi, si)}
                   aria-label={`row ${hi + 1}, take ${heaps[hi] - si}`}
-                />
+                >
+                  {si + 1}
+                </button>
               );
             })}
           </div>
@@ -235,9 +238,9 @@ export default function NimGame() {
         <Button
           variant="secondary"
           onClick={restart}
-          aria-label={NEW_GAME_LABEL}
+          aria-label={RESET_LABEL}
         >
-          {NEW_GAME_LABEL}
+          {RESET_LABEL}
         </Button>
         <Button
           variant="secondary"

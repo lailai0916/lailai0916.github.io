@@ -137,6 +137,18 @@
   "pages.changelog.empty": {
     "message": "暂无更新日志"
   },
+  "pages.friends.title": {
+    "message": "友链"
+  },
+  "pages.friends.description": {
+    "message": "真正的友谊是世上最稀有的东西"
+  },
+  "pages.friends.modification": {
+    "message": "我的<b>友链</b>"
+  },
+  "pages.friends.datacard.label": {
+    "message": "位朋友"
+  },
   "pages.insights.title": {
     "message": "实时洞察"
   },
@@ -190,63 +202,6 @@
   },
   "pages.insights.metricList.countries": {
     "message": "访客地区"
-  },
-  "pages.friends.title": {
-    "message": "友链"
-  },
-  "pages.friends.description": {
-    "message": "真正的友谊是世上最稀有的东西"
-  },
-  "pages.friends.modification": {
-    "message": "我的<b>友链</b>"
-  },
-  "pages.friends.datacard.label": {
-    "message": "位朋友"
-  },
-  "pages.resources.title": {
-    "message": "资源"
-  },
-  "pages.resources.description": {
-    "message": "精心筛选的优质工具与平台"
-  },
-  "pages.resources.modification": {
-    "message": "精选<b>资源</b>"
-  },
-  "pages.resources.search.clear": {
-    "message": "清空搜索"
-  },
-  "pages.resources.category.clear": {
-    "message": "清除分类"
-  },
-  "pages.resources.search.placeholder": {
-    "message": "搜索资源"
-  },
-  "pages.resources.category.count": {
-    "message": "{count} 项"
-  },
-  "pages.resources.datacard.categories": {
-    "message": "个分类"
-  },
-  "pages.resources.datacard.items": {
-    "message": "项资源"
-  },
-  "pages.resources.search.empty": {
-    "message": "找不到和“{query}”相符的资源。"
-  },
-  "pages.travel.title": {
-    "message": "旅行"
-  },
-  "pages.travel.description": {
-    "message": "每一次旅行都能带来新的视野和感悟"
-  },
-  "pages.travel.modification": {
-    "message": "旅行<b>记录</b>"
-  },
-  "pages.travel.datacard.countries": {
-    "message": "国家/地区"
-  },
-  "pages.travel.datacard.years": {
-    "message": "年历程"
   },
   "pages.settings.title": {
     "message": "设置"
@@ -341,6 +296,51 @@
   "pages.settings.datacard.label": {
     "message": "项设置"
   },
+  "pages.resources.title": {
+    "message": "资源"
+  },
+  "pages.resources.description": {
+    "message": "精心筛选的优质工具与平台"
+  },
+  "pages.resources.modification": {
+    "message": "精选<b>资源</b>"
+  },
+  "pages.resources.search.clear": {
+    "message": "清空搜索"
+  },
+  "pages.resources.category.clear": {
+    "message": "清除分类"
+  },
+  "pages.resources.search.placeholder": {
+    "message": "搜索资源"
+  },
+  "pages.resources.category.count": {
+    "message": "{count} 项"
+  },
+  "pages.resources.datacard.categories": {
+    "message": "个分类"
+  },
+  "pages.resources.datacard.items": {
+    "message": "项资源"
+  },
+  "pages.resources.search.empty": {
+    "message": "找不到和“{query}”相符的资源。"
+  },
+  "pages.travel.title": {
+    "message": "旅行"
+  },
+  "pages.travel.description": {
+    "message": "每一次旅行都能带来新的视野和感悟"
+  },
+  "pages.travel.modification": {
+    "message": "旅行<b>记录</b>"
+  },
+  "pages.travel.datacard.countries": {
+    "message": "国家/地区"
+  },
+  "pages.travel.datacard.years": {
+    "message": "年历程"
+  },
   "blog.pages.tags.tagSelect": {
     "message": "标签"
   },
@@ -413,8 +413,8 @@
   "components.playground.nim.aiWins": {
     "message": "AI 赢了"
   },
-  "components.playground.nim.newGame": {
-    "message": "新游戏"
+  "components.playground.nim.reset": {
+    "message": "重置"
   },
   "components.playground.nim.tip": {
     "message": "提示"
@@ -545,15 +545,6 @@
   "blog.archive.tab.authors": {
     "message": "按作者"
   },
-  "blog.post.copyMarkdown": {
-    "message": "复制 Markdown"
-  },
-  "blog.post.copyMarkdownCopied": {
-    "message": "已复制！"
-  },
-  "blog.post.copyMarkdownError": {
-    "message": "复制失败"
-  },
   "blog.sidebar.calendar.today": {
     "message": "本月"
   },
@@ -566,17 +557,14 @@
   "blog.sidebar.calendar.empty": {
     "message": "暂无文章"
   },
-  "blog.post.pinned": {
-    "message": "置顶"
+  "blog.post.copyMarkdown": {
+    "message": "复制 Markdown"
   },
-  "blog.postcard.wordCount": {
-    "message": "{word} 词数"
+  "blog.post.copyMarkdownCopied": {
+    "message": "已复制！"
   },
-  "blog.postcard.readingTime": {
-    "message": "{readingTime} 分钟"
-  },
-  "blog.postcard.viewCount": {
-    "message": "{viewCount} 浏览"
+  "blog.post.copyMarkdownError": {
+    "message": "复制失败"
   },
   "blog.post.editPage": {
     "message": "编辑此页面"
@@ -592,6 +580,18 @@
   },
   "blog.post.paginator.ariaLabel": {
     "message": "博客文章导航"
+  },
+  "blog.post.pinned": {
+    "message": "置顶"
+  },
+  "blog.postcard.wordCount": {
+    "message": "{word} 词数"
+  },
+  "blog.postcard.readingTime": {
+    "message": "{readingTime} 分钟"
+  },
+  "blog.postcard.viewCount": {
+    "message": "{viewCount} 浏览"
   },
   "blog.postcard.readMore": {
     "message": "阅读更多"
@@ -641,17 +641,6 @@
   "blog.sidebar.tags.title": {
     "message": "热门标签"
   },
-  "theme.NotFound.title": {
-    "message": "找不到页面",
-    "description": "The title of the 404 page"
-  },
-  "theme.NotFound.p1": {
-    "message": "我们找不到您要找的页面。",
-    "description": "The first paragraph of the 404 page"
-  },
-  "components.notFound.backToHome": {
-    "message": "返回首页"
-  },
   "components.cookieConsent.title": {
     "message": "Cookie 设置"
   },
@@ -667,11 +656,16 @@
   "components.cookieConsent.accept": {
     "message": "接受"
   },
-  "pages.travel.timeline.title": {
-    "message": "旅行足迹"
+  "theme.NotFound.title": {
+    "message": "找不到页面",
+    "description": "The title of the 404 page"
   },
-  "pages.travel.timeline.description": {
-    "message": "纸上得来终觉浅，绝知此事要躬行"
+  "theme.NotFound.p1": {
+    "message": "我们找不到您要找的页面。",
+    "description": "The first paragraph of the 404 page"
+  },
+  "components.notFound.backToHome": {
+    "message": "返回首页"
   },
   "pages.travel.map.title": {
     "message": "旅行地图"
@@ -684,6 +678,12 @@
   },
   "pages.travel.map.legend.unvisited": {
     "message": "未到访"
+  },
+  "pages.travel.timeline.title": {
+    "message": "旅行足迹"
+  },
+  "pages.travel.timeline.description": {
+    "message": "纸上得来终觉浅，绝知此事要躬行"
   },
   "blog.pages.authors.authorSelect": {
     "message": "作者"
@@ -807,6 +807,10 @@
     "message": "标签：",
     "description": "The label alongside a tag list"
   },
+  "theme.AnnouncementBar.closeButtonAriaLabel": {
+    "message": "关闭",
+    "description": "The ARIA label for close button of announcement bar"
+  },
   "theme.admonition.caution": {
     "message": "警告",
     "description": "The default label used for the Caution admonition (:::caution)"
@@ -831,10 +835,6 @@
     "message": "注意",
     "description": "The default label used for the Warning admonition (:::warning)"
   },
-  "theme.AnnouncementBar.closeButtonAriaLabel": {
-    "message": "关闭",
-    "description": "The ARIA label for close button of announcement bar"
-  },
   "theme.blog.sidebar.navAriaLabel": {
     "message": "最近文章导航",
     "description": "The ARIA label for recent posts in the blog sidebar"
@@ -855,13 +855,13 @@
     "message": "主导航",
     "description": "The ARIA label for the main navigation"
   },
-  "theme.navbar.mobileLanguageDropdown.label": {
-    "message": "选择语言",
-    "description": "The label for the mobile language switcher dropdown"
-  },
   "theme.NotFound.p2": {
     "message": "请联系原始链接来源网站的所有者，并告知他们链接已损坏。",
     "description": "The 2nd paragraph of the 404 page"
+  },
+  "theme.navbar.mobileLanguageDropdown.label": {
+    "message": "选择语言",
+    "description": "The label for the mobile language switcher dropdown"
   },
   "theme.TOCCollapsible.toggleButtonLabel": {
     "message": "本页总览",
@@ -938,41 +938,6 @@
   "theme.docs.sidebar.expandButtonAriaLabel": {
     "message": "展开侧边栏",
     "description": "The ARIA label and title attribute for expand button of doc sidebar"
-  },
-  "theme.SearchBar.seeAll": {
-    "message": "查看全部 {count} 个结果"
-  },
-  "theme.SearchPage.documentsFound.plurals": {
-    "message": "找到 {count} 份文件",
-    "description": "Pluralized label for \"{count} documents found\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
-  },
-  "theme.SearchPage.existingResultsTitle": {
-    "message": "「{query}」的搜索结果",
-    "description": "The search page title for non-empty query"
-  },
-  "theme.SearchPage.emptyResultsTitle": {
-    "message": "在文档中搜索",
-    "description": "The search page title for empty query"
-  },
-  "theme.SearchPage.inputPlaceholder": {
-    "message": "在此输入搜索字词",
-    "description": "The placeholder for search page input"
-  },
-  "theme.SearchPage.inputLabel": {
-    "message": "搜索",
-    "description": "The ARIA label for search page input"
-  },
-  "theme.SearchPage.algoliaLabel": {
-    "message": "通过 Algolia 搜索",
-    "description": "The description label for Algolia mention"
-  },
-  "theme.SearchPage.noResultsText": {
-    "message": "未找到任何结果",
-    "description": "The paragraph for empty search result"
-  },
-  "theme.SearchPage.fetchingNewResults": {
-    "message": "正在获取新的搜索结果...",
-    "description": "The paragraph for fetching new search results"
   },
   "theme.SearchBar.label": {
     "message": "搜索",
@@ -1169,6 +1134,41 @@
   "theme.SearchModal.placeholder": {
     "message": "搜索文档",
     "description": "The placeholder of the input of the DocSearch pop-up modal"
+  },
+  "theme.SearchBar.seeAll": {
+    "message": "查看全部 {count} 个结果"
+  },
+  "theme.SearchPage.documentsFound.plurals": {
+    "message": "找到 {count} 份文件",
+    "description": "Pluralized label for \"{count} documents found\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
+  },
+  "theme.SearchPage.existingResultsTitle": {
+    "message": "「{query}」的搜索结果",
+    "description": "The search page title for non-empty query"
+  },
+  "theme.SearchPage.emptyResultsTitle": {
+    "message": "在文档中搜索",
+    "description": "The search page title for empty query"
+  },
+  "theme.SearchPage.inputPlaceholder": {
+    "message": "在此输入搜索字词",
+    "description": "The placeholder for search page input"
+  },
+  "theme.SearchPage.inputLabel": {
+    "message": "搜索",
+    "description": "The ARIA label for search page input"
+  },
+  "theme.SearchPage.algoliaLabel": {
+    "message": "通过 Algolia 搜索",
+    "description": "The description label for Algolia mention"
+  },
+  "theme.SearchPage.noResultsText": {
+    "message": "未找到任何结果",
+    "description": "The paragraph for empty search result"
+  },
+  "theme.SearchPage.fetchingNewResults": {
+    "message": "正在获取新的搜索结果...",
+    "description": "The paragraph for fetching new search results"
   },
   "theme.Playground.liveEditor": {
     "message": "实时编辑器",

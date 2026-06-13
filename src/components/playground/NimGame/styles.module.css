@@ -55,10 +55,19 @@ html[data-theme='dark'] .container {
 }
 
 .token {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   border: none;
   padding: 0;
   border-radius: 30%;
   background: var(--ifm-color-primary);
+  color: #ffffff;
+  font-weight: 600;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: 'tnum';
+  user-select: none;
   cursor: pointer;
   transition:
     background 160ms ease,
@@ -75,7 +84,7 @@ html[data-theme='dark'] .container {
 }
 
 .faded {
-  opacity: 0.16;
+  opacity: 0.55;
 }
 
 .recommend {
