@@ -1,6 +1,6 @@
 import { translate } from '@docusaurus/Translate';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
-import { formatLocalizedDate } from '@site/src/utils/format';
+import { formatCompact, formatLocalizedDate } from '@site/src/utils/format';
 import { type MetaBarItem } from '../BlogUI';
 import { useAnalytics } from '@site/src/hooks/useAnalytics';
 
@@ -53,7 +53,7 @@ export function usePostMetaItems({
         icon: 'lucide:file-text',
         label: translate(
           { id: 'blog.postcard.wordCount', message: '{word} words' },
-          { word: Math.round(readingTime * 200) }
+          { word: formatCompact(Math.round(readingTime * 200), currentLocale) }
         ),
       },
       {

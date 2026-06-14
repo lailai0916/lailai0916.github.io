@@ -1,12 +1,13 @@
 export function formatCompact(
   n: number,
   locale: string = 'en',
-  precision: number = 2
+  significantDigits: number = 3
 ): string {
   if (!Number.isFinite(n)) return '–';
+  // Three significant figures across magnitudes: 123, 1.23K, 12.3K, 123K, 1.23M.
   return new Intl.NumberFormat(locale, {
     notation: 'compact',
-    maximumFractionDigits: precision,
+    maximumSignificantDigits: significantDigits,
   }).format(n);
 }
 
