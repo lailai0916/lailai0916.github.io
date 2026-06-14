@@ -8,13 +8,8 @@ import type { TOCItem } from '@docusaurus/mdx-loader';
 import { Icon } from '@iconify/react';
 
 import { translate } from '@docusaurus/Translate';
-import {
-  getAllBlogItems,
-  getAllPostMetadata,
-  loadOfficialTags,
-} from '@site/src/utils/blogData';
+import { loadOfficialTags } from '@site/src/utils/blogData';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
-import { formatCompact } from '@site/src/utils/format';
 import Card from '@site/src/components/laikit/Card';
 import TitleCard from '@site/src/components/laikit/TitleCard';
 import { TagChipList, type ChipItem } from '../BlogUI';
@@ -272,29 +267,7 @@ function TocCard({
   );
 }
 
-function StatsCard() {
-  const { i18n } = useDocusaurusContext();
-  const readingMinutes = Math.round(
-    getAllPostMetadata().reduce((sum, meta) => sum + (meta.readingTime ?? 0), 0)
-  );
-  const statsItems = [
-    {
-      label: translate({
-        id: 'blog.sidebar.stats.posts',
-        message: 'Posts',
-      }),
-      icon: 'lucide:newspaper',
-      value: getAllBlogItems().length,
-    },
-    {
-      label: translate({
-        id: 'blog.sidebar.stats.words',
-        message: 'Words',
-      }),
-      icon: 'lucide:file-text',
-      value: readingMinutes * 200,
-    },
-  ];
+function FeedCard() {
   const feeds = [
     {
       name: 'RSS',
@@ -327,24 +300,6 @@ function StatsCard() {
 
   return (
     <Card>
-      <div className={styles.statsGrid}>
-        {statsItems.map((item) => (
-          <div key={item.label} className={styles.statTile}>
-            <div className={styles.statHead}>
-              <Icon
-                icon={item.icon}
-                width="1em"
-                height="1em"
-                className={styles.statIcon}
-              />
-              <span className={styles.statLabel}>{item.label}</span>
-            </div>
-            <span className={styles.statValue}>
-              {formatCompact(item.value, i18n.currentLocale)}
-            </span>
-          </div>
-        ))}
-      </div>
       <div className={styles.feedGrid}>
         {feeds.map((feed) => (
           <Link
@@ -421,7 +376,7 @@ function ScaffoldWithProgress({ title, description, children, toc }: Props) {
           ) : (
             <>
               <CalendarCard />
-              <StatsCard />
+              <FeedCard />
               <TagsCard />
             </>
           )}

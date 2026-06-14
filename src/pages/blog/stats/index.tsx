@@ -3,7 +3,7 @@ import { translate } from '@docusaurus/Translate';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import BlogScaffold from '@site/src/theme/BlogShared/Scaffold';
 import { ArchiveTabsNav } from '@site/src/theme/BlogShared/ArchiveTabs';
-import Card from '@site/src/components/laikit/Card';
+import DataCard from '@site/src/components/laikit/DataCard';
 import {
   getAllBlogItems,
   getAllPostMetadata,
@@ -64,25 +64,30 @@ export default function BlogStats(): ReactNode {
   );
   const wordCount = readingMinutes * 200;
 
+  const compact = (v: number) => formatCompact(v, currentLocale);
   const kpis = [
     {
+      icon: 'lucide:newspaper',
       label: translate({ id: 'pages.stats.metric.posts', message: 'Posts' }),
-      value: formatCompact(postCount, currentLocale),
+      value: postCount,
     },
     {
+      icon: 'lucide:file-text',
       label: translate({ id: 'pages.stats.metric.words', message: 'Words' }),
-      value: formatCompact(wordCount, currentLocale),
+      value: wordCount,
     },
     {
+      icon: 'lucide:tags',
       label: translate({ id: 'pages.stats.metric.tags', message: 'Tags' }),
-      value: formatCompact(tagCount, currentLocale),
+      value: tagCount,
     },
     {
+      icon: 'lucide:sparkles',
       label: translate({
         id: 'pages.stats.metric.moments',
         message: 'Moments',
       }),
-      value: formatCompact(MOMENT_LIST.length, currentLocale),
+      value: MOMENT_LIST.length,
     },
   ];
 
@@ -91,14 +96,13 @@ export default function BlogStats(): ReactNode {
       <ArchiveTabsNav activeTab="stats" />
       <div className={styles.kpiGrid}>
         {kpis.map((k) => (
-          <Card
+          <DataCard
             key={k.label}
-            padding="1.25rem 1.25rem 1.1rem"
-            className={styles.kpiTile}
-          >
-            <span className={styles.kpiLabel}>{k.label}</span>
-            <span className={styles.kpiValue}>{k.value}</span>
-          </Card>
+            icon={k.icon}
+            value={k.value}
+            label={k.label}
+            format={compact}
+          />
         ))}
       </div>
       <MonthlyBars data={months} />

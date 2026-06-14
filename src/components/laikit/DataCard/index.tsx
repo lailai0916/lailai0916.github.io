@@ -6,6 +6,8 @@ interface DataCardProps {
   value: number;
   label: string;
   icon: string;
+  // Optional display formatter (e.g. compact "88.8K"); defaults to the raw value.
+  format?: (value: number) => string;
 }
 
 export default function DataCard(
@@ -26,7 +28,9 @@ export default function DataCard(
       <div className={styles.statCard}>
         <IconBlock icon={props.icon} variant="muted" />
         <div className={styles.statContent}>
-          <div className={styles.statNumber}>{props.value}</div>
+          <div className={styles.statNumber}>
+            {props.format ? props.format(props.value) : props.value}
+          </div>
           <div className={styles.statLabel}>{props.label}</div>
         </div>
       </div>

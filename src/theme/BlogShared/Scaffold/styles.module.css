@@ -235,66 +235,10 @@
   color: var(--ifm-color-primary);
 }
 
-.statsGrid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 0.5rem;
-}
-
-@media (max-width: 280px) {
-  .statsGrid {
-    grid-template-columns: 1fr;
-  }
-}
-
-.statTile {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  gap: 0.7rem;
-  padding: 0.75rem 0.85rem;
-  border-radius: 12px;
-  border: 1px solid var(--ifm-color-emphasis-200);
-}
-
-.statHead {
-  display: flex;
-  align-items: center;
-  gap: 0.4rem;
-}
-
-.statIcon {
-  font-size: 0.95rem;
-  color: var(--ifm-color-primary);
-  flex-shrink: 0;
-}
-
-.statLabel {
-  min-width: 0;
-  font-size: 0.78rem;
-  font-weight: 600;
-  letter-spacing: 0.04em;
-  font-variant-numeric: tabular-nums;
-  line-height: 1;
-  color: var(--ifm-color-emphasis-700);
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-.statValue {
-  font-weight: 700;
-  font-size: 1.1rem;
-  line-height: 1;
-  color: var(--ifm-color-emphasis-900);
-  font-variant-numeric: tabular-nums;
-}
-
 .feedGrid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 0.55rem;
-  margin-top: 0.55rem;
 }
 
 @media (max-width: 280px) {
