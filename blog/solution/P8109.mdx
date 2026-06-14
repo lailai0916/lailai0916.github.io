@@ -1,0 +1,47 @@
+---
+title: 题解：P8109 [Cnoi2021] 幻想乡程序设计大赛
+date: 2022-02-05T16:48:54+08:00
+authors: lailai
+tags: [oi, solution, luogu]
+---
+
+<Solution pid="P8109" lid="b96vked0" />
+
+{/* truncate */}
+
+## 题意简述
+
+$n$ 道题，第 $i$ 道有 $a_i$ 支队伍通过；$n$ 种颜色的气球，第 $i$ 种有 $b_i$ 个。把颜色与题目一一对应，一道题能派发的气球数为「通过队伍数与该色气球数的较小值」。求最多能派发多少气球。
+
+## 解题思路
+
+一道题配上某色气球，能派发 $\min(a,b)$ 个，于是问题就是把 $\{a\}$ 与 $\{b\}$ 一一配对，最大化 $\sum\min(a_i,b_i)$。
+
+把两个序列都从小到大排序后按位配对最优：AC 数第 $i$ 大的题对应气球数第 $i$ 大的颜色。若让大的 $a$ 去配小的 $b$，会被 $b$ 卡住、白白浪费多通过的队伍；顺次配对则每个 $\min$ 都尽量大。排序后累加 $\min(a_i,b_i)$ 即为答案。
+
+时间复杂度为 $O(n\log n)$。
+
+## 参考代码
+
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+
+const int N=100005;
+int a[N],b[N];
+int main()
+{
+	ios::sync_with_stdio(false);
+	cin.tie(nullptr);
+	int n;
+	cin>>n;
+	for(int i=1;i<=n;i++)cin>>a[i];
+	for(int i=1;i<=n;i++)cin>>b[i];
+	sort(a+1,a+n+1);
+	sort(b+1,b+n+1);
+	int ans=0;
+	for(int i=1;i<=n;i++)ans+=min(a[i],b[i]);
+	cout<<ans<<'\n';
+	return 0;
+}
+```

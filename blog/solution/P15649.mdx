@@ -1,0 +1,137 @@
+---
+title: 题解：P15649 [省选联考 2026] 找寻者 / recollector
+date: 2026-03-07T13:53:22+08:00
+authors: lailai
+tags: [oi, solution, luogu]
+---
+
+<Solution pid="P15649" lid="we1gn3av" />
+
+{/* truncate */}
+
+## 题意简述
+
+以结点 $1$ 为根。自底向上地为每个非叶结点 $u$ 选重儿子：在儿子们各自的重链长度 $l_1,\dots,l_k$ 确定后，$u$ 以正比于 $l_i$ 的概率选 $v_i$，于是 $u$ 的重链长度变为 $1+l_i$。求每个结点到根路径上轻边数量的期望之和，对 $998244353$ 取模。
+
+## 解题思路
+
+**拆贡献到边。** 结点 $x$ 到根的路径经过边 $(u,c)$（$c$ 为儿子）当且仅当 $x$ 在子树 $c$ 内，这样的 $x$ 有 $\operatorname{siz}(c)$ 个；而该边是轻边当且仅当 $u$ 没选 $c$。由期望的线性性，
+
+$$
+\text{答案}=\sum_{(u,c)}\operatorname{siz}(c)\bigl(1-P(u\text{ 选 }c)\bigr).
+$$
+
+**求选择概率。** 设 $u$ 的各儿子重链长度为随机变量 $L_1,\dots,L_k$（不同子树相互独立），$S=\sum L_j$，则 $P(u\text{ 选 }c)=\mathbb E\!\left[\dfrac{L_c}{S}\right]$。分母里的求和是难点，用积分恒等式 $\dfrac1S=\displaystyle\int_0^1 t^{S-1}\,\mathrm dt$ 把它拆开：记 $f_j(t)=\mathbb E[t^{L_j}]$ 为 $L_j$ 的概率生成函数，由独立性
+
+$$
+P(u\text{ 选 }c)=\int_0^1 f_c'(t)\prod_{j\ne c}f_j(t)\,\mathrm dt.
+$$
+
+**维护生成函数。** $L_u=1+L_{\text{选中}}$，故 $f_u(x)=x\,\mathbb E[x^{L_{\text{选中}}}]$。同样用上面的积分展开，记 $p_{c,\ell}=[t^\ell]f_c(t)$、$R_c(t)=\prod_{j\ne c}f_j(t)$，可得
+
+$$
+[x^{\ell+1}]f_u=\sum_{c}\ell\,p_{c,\ell}\int_0^1 t^{\ell-1}R_c(t)\,\mathrm dt,
+$$
+
+而 $P(u\text{ 选 }c)$ 恰是上式中第 $c$ 个儿子对所有 $\ell$ 的贡献之和。其中 $\int_0^1 t^m\,\mathrm dt=\frac1{m+1}$，在模意义下即 $m+1$ 的逆元。
+
+**实现。** 自底向上 DFS：叶子 $f_u(x)=x$；非叶结点先把所有儿子的 $f_j$ 乘成 $\prod f_j$，再对每个 $c$ 用多项式除法得到 $R_c=\prod f_j / f_c$，按上式累加出 $f_u$ 与各 $P(u\text{ 选 }c)$。每个结点的多项式次数等于子树高度，由树形背包的配对计数，总复杂度 $O(n^2)$。
+
+时间复杂度为 $O(n^2)$。
+
+## 参考代码
+
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+
+using ll=long long;
+const int N=5005;
+const int mod=998244353;
+int n;
+vector<int> e[N];
+int siz[N];
+ll inv[N];
+ll ans;
+ll qpow(ll a,ll b)
+{
+	ll r=1;
+	for(a%=mod;b;b>>=1,a=a*a%mod)if(b&1)r=r*a%mod;
+	return r;
+}
+vector<ll> dfs(int u,int fa)
+{
+	siz[u]=1;
+	vector<vector<ll>> fc;
+	vector<int> cv;
+	for(int v:e[u])
+	{
+		if(v==fa)continue;
+		fc.push_back(dfs(v,u));
+		cv.push_back(v);
+		siz[u]+=siz[v];
+	}
+	int k=fc.size();
+	if(!k)return {0,1};
+	vector<ll> p={1};
+	for(auto&f:fc)
+	{
+		vector<ll> g(p.size()+f.size()-1,0);
+		for(int i=0;i<(int)p.size();i++)
+			for(int j=0;j<(int)f.size();j++)
+				g[i+j]=(g[i+j]+p[i]*f[j])%mod;
+		p=move(g);
+	}
+	int D=p.size()-1,mxd=0;
+	for(auto&f:fc)mxd=max(mxd,(int)f.size()-1);
+	vector<ll> fu(mxd+2,0);
+	for(int c=0;c<k;c++)
+	{
+		auto&f=fc[c];
+		int dc=f.size()-1,dR=D-dc;
+		vector<ll> w(p),R(dR+1,0);
+		ll il=qpow(f[dc],mod-2);
+		for(int i=D;i>=dc;i--)
+		{
+			ll q=w[i]*il%mod;
+			R[i-dc]=q;
+			for(int j=0;j<=dc;j++)w[i-dc+j]=((w[i-dc+j]-q*f[j])%mod+mod)%mod;
+		}
+		ll pp=0;
+		for(int l=1;l<=dc;l++)
+		{
+			ll t=0;
+			for(int m=0;m<=dR;m++)t=(t+R[m]*inv[l+m])%mod;
+			t=t*l%mod*f[l]%mod;
+			fu[l+1]=(fu[l+1]+t)%mod;
+			pp=(pp+t)%mod;
+		}
+		ans=(ans+(ll)siz[cv[c]]*((1-pp+mod)%mod))%mod;
+	}
+	return fu;
+}
+int main()
+{
+	ios::sync_with_stdio(false);
+	cin.tie(nullptr);
+	for(int i=1;i<N;i++)inv[i]=qpow(i,mod-2);
+	int cas,t;
+	cin>>cas>>t;
+	while(t--)
+	{
+		cin>>n;
+		for(int i=1;i<=n;i++)e[i].clear();
+		for(int i=1;i<n;i++)
+		{
+			int u,v;
+			cin>>u>>v;
+			e[u].push_back(v);
+			e[v].push_back(u);
+		}
+		ans=0;
+		dfs(1,0);
+		cout<<ans<<'\n';
+	}
+	return 0;
+}
+```

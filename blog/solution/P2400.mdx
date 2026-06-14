@@ -1,0 +1,88 @@
+---
+title: 题解：P2400 秘密文件
+date: 2021-11-18T19:59:08+08:00
+authors: lailai
+tags: [oi, solution, luogu]
+---
+
+<Solution pid="P2400" lid="88obymle" />
+
+{/* truncate */}
+
+## 题意简述
+
+把字符串里连续重复 $k$ 次的子串 $t$ 写成 $k(t)$，可嵌套，求最短压缩；最短方案有多个时取字典序最大的。
+
+## 解题思路
+
+区间 DP。设 $f_{i,j}$ 为子串 $s_{i\dots j}$ 压缩后的最短长度。
+
+按区间长度从小到大递推，单字符长度为 $1$。每个区间有两种更新方式：
+
+1. 拼接：枚举断点 $k$，用 $f_{i,k}+f_{k+1,j}$ 更新；
+2. 折叠：若 $s_{i\dots j}$ 以 $p$ 为周期且 $p\mid(j-i+1)$，记重复 $c=\frac{j-i+1}{p}$ 次，可压成 $c(\cdots)$，长度为 $f_{i,i+p-1}$ 加 $2$（一对括号）再加 $c$ 的十进制位数。
+
+转移只比较整数长度，所以是 $O(n^3)$。若把压缩串直接存进 DP、逐次拼接比较，会多一个 $O(n)$ 退化成 $O(n^4)$。
+
+题目还要在最短方案中取字典序最大者，故另用 $ans_{i,j}$ 记录对应字符串：在所有达到 $f_{i,j}$ 的转移里，按「先短后字典序大」取最优来还原。
+
+周期判定即 $s_x=s_{x+p}$ 对区间内每个 $x$ 成立。
+
+时间复杂度为 $O(n^3)$。
+
+## 参考代码
+
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+
+const int N=105;
+int f[N][N];
+string s,ans[N][N];
+bool cmp(string a,string b)
+{
+	return a.size()!=b.size()?a.size()<b.size():a>b;
+}
+int dig(int x)
+{
+	int c=0;
+	for(;x;x/=10)c++;
+	return c;
+}
+bool period(int l,int r,int p)
+{
+	return s.substr(l,r-l+1-p)==s.substr(l+p,r-l+1-p);
+}
+int main()
+{
+	ios::sync_with_stdio(false);
+	cin.tie(nullptr);
+	cin>>s;
+	int n=s.size();
+	for(int len=1;len<=n;len++)
+	{
+		for(int l=0;l+len-1<n;l++)
+		{
+			int r=l+len-1;
+			f[l][r]=len;
+			for(int k=l;k<r;k++)f[l][r]=min(f[l][r],f[l][k]+f[k+1][r]);
+			for(int k=1;k<len;k++)if(len%k==0&&period(l,r,k))f[l][r]=min(f[l][r],dig(len/k)+2+f[l][l+k-1]);
+			if(f[l][r]==len)ans[l][r]=s.substr(l,len);
+			for(int k=l;k<r;k++)
+			{
+				if(f[l][k]+f[k+1][r]!=f[l][r])continue;
+				string t=ans[l][k]+ans[k+1][r];
+				if(ans[l][r].empty()||cmp(t,ans[l][r]))ans[l][r]=t;
+			}
+			for(int k=1;k<len;k++)
+			{
+				if(len%k||!period(l,r,k)||dig(len/k)+2+f[l][l+k-1]!=f[l][r])continue;
+				string t=to_string(len/k)+'('+ans[l][l+k-1]+')';
+				if(ans[l][r].empty()||cmp(t,ans[l][r]))ans[l][r]=t;
+			}
+		}
+	}
+	cout<<ans[0][n-1]<<'\n';
+	return 0;
+}
+```

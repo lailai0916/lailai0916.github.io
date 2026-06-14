@@ -1,0 +1,54 @@
+---
+title: 题解：P8942 Digital Fortress
+date: 2023-01-15T21:39:38+08:00
+authors: lailai
+tags: [oi, solution, luogu]
+---
+
+<Solution pid="P8942" lid="axo02l9k" />
+
+{/* truncate */}
+
+## 题意简述
+
+多组询问。每次给定 $n,m$，问是否存在长度为 $n$、元素都在 $[1,m]$ 的单调不减正整数序列，使其前缀异或和与后缀异或和都单调不减；存在则输出一组方案。
+
+## 解题思路
+
+构造 $a_i=2^{i-1}$，即 $1,2,4,8,\dots$。前缀异或和为 $1,3,7,15,\dots$（即 $2^i-1$）严格递增；由对称性，后缀异或和同样递增，恰好满足要求。
+
+要把 $a_n=2^{n-1}$ 放进 $[1,m]$，需 $2^{n-1}\le m$，即 $n-1\le\lfloor\log_2 m\rfloor$。
+
+反过来，前缀异或和递增要求每个 $a_i$ 都引入一个更高的最高位，故各元素的最高位两两不同且递增，最大元素至少为 $2^{n-1}$。因此 $2^{n-1}\le m$ 既必要又充分：满足时输出 $2^0,2^1,\dots,2^{n-1}$，否则输出 `No`。
+
+时间复杂度为 $O(t\log m)$。
+
+## 参考代码
+
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+
+using ll=long long;
+int main()
+{
+	ios::sync_with_stdio(false);
+	cin.tie(nullptr);
+	int t;
+	cin>>t;
+	while(t--)
+	{
+		int n;
+		ll m;
+		cin>>n>>m;
+		if(n<=63&&(1ll<<(n-1))<=m)
+		{
+			cout<<"Yes\n";
+			for(int i=0;i<n;i++)cout<<(1ll<<i)<<' ';
+			cout<<'\n';
+		}
+		else cout<<"No\n";
+	}
+	return 0;
+}
+```

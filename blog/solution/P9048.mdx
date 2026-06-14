@@ -1,0 +1,56 @@
+---
+title: 题解：P9048 [PA 2021] Zakłócenia
+date: 2023-02-12T13:55:47+08:00
+authors: lailai
+tags: [oi, solution, luogu]
+---
+
+<Solution pid="P9048" lid="8f520eco" />
+
+{/* truncate */}
+
+## 题意简述
+
+每个小写字母对应其 ASCII 的 $8$ 位二进制，其中 $1$ 的个数在 $3$ 到 $6$ 之间。长为 $n$ 的小写串映射成 $8n$ 位 01 串后被打乱，给出打乱结果，还原任意一个原串，无解输出 `NIE`。
+
+## 解题思路
+
+打乱不改变 $1$ 的总个数，所以只需让还原串里各字母「$1$ 的个数」之和等于给定串里 $1$ 的个数 $cnt$。
+
+每个字母贡献 $3$ 到 $6$ 个 $1$，分别可取 `a`（$3$）、`c`（$4$）、`g`（$5$）、`o`（$6$）。$n$ 个字母之和落在 $[3n,6n]$，故 $cnt<3n$ 或 $cnt>6n$ 时无解。
+
+否则先全填 `a`（和为 $3n$），还差 $cnt-3n$ 个 $1$ 要补；从左到右每个字母最多再加 $3$（即升到 `o`），贪心补完即可。
+
+时间复杂度为 $O(n)$。
+
+## 参考代码
+
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+	ios::sync_with_stdio(false);
+	cin.tie(nullptr);
+	int n;
+	string t;
+	cin>>n>>t;
+	int cnt=count(t.begin(),t.end(),'1');
+	if(cnt<3*n||cnt>6*n)
+	{
+		cout<<"NIE\n";
+		return 0;
+	}
+	cnt-=3*n;
+	string mp="acgo",s;
+	for(int i=0;i<n;i++)
+	{
+		int d=min(cnt,3);
+		cnt-=d;
+		s+=mp[d];
+	}
+	cout<<s<<'\n';
+	return 0;
+}
+```

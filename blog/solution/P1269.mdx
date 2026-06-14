@@ -1,0 +1,86 @@
+---
+title: 题解：P1269 信号放大器
+date: 2021-12-17T22:13:54+08:00
+authors: lailai
+tags: [oi, solution, luogu]
+---
+
+<Solution pid="P1269" lid="em94lz1r" />
+
+{/* truncate */}
+
+## 题意简述
+
+一棵以服务器（结点 $1$）为根的树，每条边有衰减量。信号从服务器以强度 $k$ 出发，过一条边强度减去其衰减量，强度降到 $0$ 及以下就无法再传。在某结点装放大器可把信号还原成 $k$。求让信号传遍全树所需的最少放大器数；无法做到则输出 `No solution.`。
+
+## 解题思路
+
+树形 DP。设 $f_u$ 为要让子树 $u$ 全部收到信号、信号到达 $u$ 处所需的最小强度，叶子 $f_u=1$（能被收到即可）。
+
+自底向上，对 $u$ 的每个儿子 $v$（边权 $w$）有两种选择：
+
+1. 不放大 $v$：$u$ 要把强度 $f_v$ 送到 $v$，自身强度需不小于 $f_v+w$，该儿子对 $f_u$ 的贡献即 $f_v+w$；
+2. 放大 $v$：当 $f_v+w>k$（$u$ 满强度 $k$ 也送不到 $v$）时只能在 $v$ 装放大器，$v$ 被还原成 $k$ 后自给自足，$u$ 只需把信号送达 $v$，贡献降为 $w+1$，放大器数加一。
+
+于是 $f_u=\max\bigl(1,\max_v(\text{各儿子贡献})\bigr)$，按需放大保证 $f_u\le k$。服务器自带强度 $k$，从它 DFS 一遍累计放大器数即为答案。
+
+只要有一条边的衰减量不小于 $k$，这条边永远跨不过去，直接输出 `No solution.`。
+
+时间复杂度为 $O(n)$。
+
+## 参考代码
+
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+
+const int N=20005;
+int n,k,ans;
+int f[N];
+bool vis[N];
+vector<pair<int,int>> e[N];
+void dfs(int u)
+{
+	vis[u]=1;
+	f[u]=1;
+	for(auto [v,w]:e[u])
+	{
+		if(vis[v])continue;
+		dfs(v);
+		if(f[v]+w>k)
+		{
+			ans++;
+			f[u]=max(f[u],w+1);
+		}
+		else f[u]=max(f[u],f[v]+w);
+	}
+}
+int main()
+{
+	ios::sync_with_stdio(false);
+	cin.tie(nullptr);
+	cin>>n;
+	int mx=0;
+	for(int i=1;i<=n;i++)
+	{
+		int t;
+		cin>>t;
+		while(t--)
+		{
+			int v,w;
+			cin>>v>>w;
+			e[i].push_back({v,w});
+			mx=max(mx,w);
+		}
+	}
+	cin>>k;
+	if(mx>=k)
+	{
+		cout<<"No solution.\n";
+		return 0;
+	}
+	dfs(1);
+	cout<<ans<<'\n';
+	return 0;
+}
+```

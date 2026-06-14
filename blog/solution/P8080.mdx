@@ -1,0 +1,65 @@
+---
+title: 题解：P8080 [COCI 2011/2012 #4] KINO
+date: 2022-01-28T18:51:49+08:00
+authors: lailai
+tags: [oi, solution, luogu]
+---
+
+<Solution pid="P8080" lid="g4q50k6o" />
+
+{/* truncate */}
+
+## 题意简述
+
+一排 $n$ 个座位，普通座位 $\texttt S$ 与成对出现的爱心座位 $\texttt L$。相邻座位之间、以及整排两端都有杯架，唯独同一对爱心座位之间没有。$n$ 人坐满，每人用左侧或右侧的一个杯架，每个杯架至多供一人使用，求最多多少人能用上杯架。
+
+## 解题思路
+
+把杯架位置记为间隙 $0\dots n$：间隙 $g$ 在座位 $g-1$ 与 $g$ 之间，$0$ 与 $n$ 即两端。除「同一对爱心座位之间」的间隙外，其余间隙都有杯架。爱心座位成对出现，从左往右两两配对，配对内部的那个间隙标记为无杯架。
+
+座位 $i$ 只能用左侧间隙 $i$ 或右侧间隙 $i+1$。从左往右贪心，优先用左侧杯架：左侧间隙只剩当前座位能用（左邻已处理完），用掉它再把右侧间隙留给右邻；左侧没有时才用右侧。每用一个杯架就占掉，统计用上的人数即为答案。
+
+时间复杂度为 $O(n)$。
+
+## 参考代码
+
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+
+const int N=55;
+bool cup[N];
+int main()
+{
+	ios::sync_with_stdio(false);
+	cin.tie(nullptr);
+	int n;
+	string s;
+	cin>>n>>s;
+	int ans=0;
+	for(int g=0;g<=n;g++)cup[g]=1;
+	for(int i=0;i+1<n;i++)
+	{
+		if(s[i]=='L'&&s[i+1]=='L')
+		{
+			cup[i+1]=0;
+			i++;
+		}
+	}
+	for(int i=0;i<n;i++)
+	{
+		if(cup[i])
+		{
+			cup[i]=0;
+			ans++;
+		}
+		else if(cup[i+1])
+		{
+			cup[i+1]=0;
+			ans++;
+		}
+	}
+	cout<<ans<<'\n';
+	return 0;
+}
+```

@@ -1,0 +1,39 @@
+---
+title: 题解：P8152 「PMOI-5」破译
+date: 2022-02-14T10:40:17+08:00
+authors: lailai
+tags: [oi, solution, luogu]
+---
+
+<Solution pid="P8152" lid="gdfx7jx6" />
+
+{/* truncate */}
+
+## 题意简述
+
+边长为 $1$ 的正方形做 $k$ 次分割，每次把当前右下角的那块分成 $n\times n$ 个小矩形。求最终矩形总数，对 $998244353$ 取模。
+
+## 解题思路
+
+每次分割把一块矩形换成 $n^2$ 块，净增 $n^2-1$ 块。$k$ 次分割各自独立，矩形总数即 $k(n^2-1)+1$，按式取模输出。注意 $n\le10^9$，$n^2$ 需用 $64$ 位整数。
+
+时间复杂度为 $O(1)$。
+
+## 参考代码
+
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+
+using ll=long long;
+const int mod=998244353;
+int main()
+{
+	ios::sync_with_stdio(false);
+	cin.tie(nullptr);
+	ll n,k;
+	cin>>n>>k;
+	cout<<((n*n-1)%mod*(k%mod)+1)%mod<<'\n';
+	return 0;
+}
+```

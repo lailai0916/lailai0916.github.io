@@ -1,0 +1,43 @@
+---
+title: 题解：P9022 [CCC 2021 J3] Secret Instructions
+date: 2023-02-04T20:47:53+08:00
+authors: lailai
+tags: [oi, solution, luogu]
+---
+
+<Solution pid="P9022" lid="y6z9odg5" />
+
+{/* truncate */}
+
+## 题意简述
+
+多组数据，每行 $5$ 个数字字符，读到 `99999` 结束。每行按前两位之和决定方向：和为奇数输出 `left`，为非零偶数输出 `right`，为零时沿用上一行的方向。随后输出一个空格与后三位数字。
+
+## 解题思路
+
+按字符串读入每行，避免前导零被吞掉。取前两个字符之和判方向：奇数置 `left`，非零偶数置 `right`，和为零时不改方向（保留上一行）。再输出方向、空格与后三位（题目保证后三位的首字符非 $0$，整段原样输出即可）。
+
+每行 $O(1)$，总复杂度线性。
+
+## 参考代码
+
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+	ios::sync_with_stdio(false);
+	cin.tie(nullptr);
+	string s;
+	bool r=0;
+	while(cin>>s&&s!="99999")
+	{
+		int sum=(s[0]-'0')+(s[1]-'0');
+		if(sum%2)r=0;
+		else if(sum)r=1;
+		cout<<(r?"right":"left")<<' '<<s.substr(2)<<'\n';
+	}
+	return 0;
+}
+```

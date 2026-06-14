@@ -1,0 +1,48 @@
+---
+title: 题解：P9748 [CSP-J 2023] 小苹果
+date: 2023-10-23T19:04:34+08:00
+authors: lailai
+tags: [oi, solution, luogu]
+---
+
+<Solution pid="P9748" lid="qlu5x136" />
+
+{/* truncate */}
+
+## 题意简述
+
+$n$ 个苹果排成一列。每天从左起第 $1$ 个开始、每隔 $2$ 个拿走 $1$ 个（即拿走第 $1,4,7,\dots$ 个），剩下的按原顺序重排。求拿完所有苹果的天数，以及编号 $n$（最右）的苹果在第几天被拿走。
+
+## 解题思路
+
+某天剩 $n$ 个苹果时，拿走的是位置 $1,4,7,\dots$，共 $\lceil n/3\rceil$ 个，剩 $\lfloor 2n/3\rfloor$ 个。每天约去掉三分之一，故 $O(\log n)$ 天就能拿完，直接模拟天数即可。
+
+最右的苹果始终在末位，那天它的位置就是当前剩余个数 $n$，因此它被拿走当且仅当 $n\equiv1\pmod 3$。模拟中第一次遇到 $n\bmod 3=1$ 的那天，就是它被拿走的日子。
+
+用 $\lceil n/3\rceil=\lfloor(n+2)/3\rfloor$ 避免浮点。
+
+时间复杂度为 $O(\log n)$。
+
+## 参考代码
+
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+	ios::sync_with_stdio(false);
+	cin.tie(nullptr);
+	int n;
+	cin>>n;
+	int day=0,ans=0;
+	while(n)
+	{
+		day++;
+		if(!ans&&n%3==1)ans=day;
+		n-=(n+2)/3;
+	}
+	cout<<day<<' '<<ans<<'\n';
+	return 0;
+}
+```

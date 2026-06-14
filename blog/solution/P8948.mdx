@@ -1,0 +1,63 @@
+---
+title: 题解：P8948 [YsOI2022] NOIp 和省选
+date: 2023-01-17T09:55:18+08:00
+authors: lailai
+tags: [oi, solution, luogu]
+---
+
+<Solution pid="P8948" lid="ycj9jigv" />
+
+{/* truncate */}
+
+## 题意简述
+
+两场考试满分 $400$、$600$。设两场最高分为 $A,B$，第 $i$ 人标准得分 $c_i=\operatorname{round}\bigl(1000(\tfrac{a_i}{A}+\tfrac{b_i}{B})\bigr)$。已知 $n$ 与所有 $c_i$（$c_1=2000$，其余在 $[10,1990]$），构造任意一组合法原始分 $a_i\in[0,400]$、$b_i\in[0,600]$。
+
+## 解题思路
+
+让满分选手直接拿满分 $a_1=400,b_1=600$，于是 $A=400,B=600$ 固定，标准得分
+
+$$
+c=\operatorname{round}\left(\frac{1000a}{400}+\frac{1000b}{600}\right)=\operatorname{round}\frac{15a+10b}{6}.
+$$
+
+枚举所有 $a\in[0,400]$、$b\in[0,600]$，对每个算出的 $c$ 记下一组 $(a,b)$，建一张 $c\to(a,b)$ 的表，询问时直接查表。
+
+舍入用整数完成：$\operatorname{round}\frac{s}{6}=\lfloor\frac{s+3}{6}\rfloor$（$s=15a+10b$）。为避开浮点歧义，当 $\frac s6$ 恰为 $x.5$（即 $s\equiv3\pmod 6$）时跳过不记，这样存下的方案小数部分远离 $0.5$，与判题机的舍入必然一致。可以验证 $[10,1990]$ 内每个 $c$ 都有这样的方案。
+
+时间复杂度为 $O(400\times600+n)$。
+
+## 参考代码
+
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+
+const int N=2005;
+int a[N],b[N];
+int main()
+{
+	ios::sync_with_stdio(false);
+	cin.tie(nullptr);
+	for(int i=0;i<=400;i++)
+	{
+		for(int j=0;j<=600;j++)
+		{
+			int s=15*i+10*j;
+			if(s%6==3)continue;
+			int c=(s+3)/6;
+			a[c]=i;
+			b[c]=j;
+		}
+	}
+	int n;
+	cin>>n;
+	while(n--)
+	{
+		int c;
+		cin>>c;
+		cout<<a[c]<<' '<<b[c]<<'\n';
+	}
+	return 0;
+}
+```

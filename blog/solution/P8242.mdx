@@ -1,0 +1,48 @@
+---
+title: 题解：P8242 [COCI 2013/2014 #3] OKVIR
+date: 2022-03-22T19:42:18+08:00
+authors: lailai
+tags: [oi, solution, luogu]
+---
+
+<Solution pid="P8242" lid="bbu85xnl" />
+
+{/* truncate */}
+
+## 题意简述
+
+给一个 $m\times n$ 的字母网格，四周加上宽度分别为 $u,l,r,d$ 的边框。边框是 `#`、`.` 交替的棋盘，整张图左上角为 `#`、相邻格不同；字母区保留原字母。输出最终 $(u+m+d)\times(l+n+r)$ 的图。
+
+## 解题思路
+
+直接按位置输出。整张图行列号从 $1$ 起，左上角 $(1,1)$ 为 `#`，棋盘满足 $i+j$ 为偶时填 `#`、为奇时填 `.`。字母区是行 $[u+1,u+m]$、列 $[l+1,l+n]$，落在其中就输出对应原字母 $a_{i-u,j-l}$，否则按 $i+j$ 的奇偶填 `#` 或 `.`。
+
+时间复杂度为 $O\bigl((u+m+d)(l+n+r)\bigr)$。
+
+## 参考代码
+
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+
+const int N=15;
+char a[N][N];
+int main()
+{
+	ios::sync_with_stdio(false);
+	cin.tie(nullptr);
+	int m,n,u,l,r,d;
+	cin>>m>>n>>u>>l>>r>>d;
+	for(int i=1;i<=m;i++)for(int j=1;j<=n;j++)cin>>a[i][j];
+	for(int i=1;i<=u+m+d;i++)
+	{
+		for(int j=1;j<=l+n+r;j++)
+		{
+			if(i>u&&i<=u+m&&j>l&&j<=l+n)cout<<a[i-u][j-l];
+			else cout<<((i+j)%2==0?'#':'.');
+		}
+		cout<<'\n';
+	}
+	return 0;
+}
+```

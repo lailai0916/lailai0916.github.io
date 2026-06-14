@@ -1,0 +1,54 @@
+---
+title: 题解：P8925 「GMOI R1-T2」Light
+date: 2023-01-01T18:51:05+08:00
+authors: lailai
+tags: [oi, solution, luogu]
+---
+
+<Solution pid="P8925" lid="a3xjhdcb" />
+
+{/* truncate */}
+
+## 题意简述
+
+原点处有一盏灯，左、右各有一面镜子，分别位于 $-L$、$R$。两镜对照产生无穷多个像。$T$ 次询问，每次求左侧或右侧第 $x$ 个像的坐标。
+
+## 解题思路
+
+$x$ 高达 $10^{10}$，必须直接算出第 $x$ 个像的位置，不能逐次反射。
+
+记左、右镜到原点的距离为 $L$、$R$。观察左侧前几个像到原点的距离：$2L,\ 2L+2R,\ 4L+2R,\ 4L+4R,\dots$，每往后一个像交替增加 $2R$、$2L$。于是左侧第 $x$ 个像到原点的距离为
+
+$$
+2\left\lceil\frac x2\right\rceil L+2\left\lfloor\frac x2\right\rfloor R,
+$$
+
+坐标取其相反数。右侧完全对称，把 $L$、$R$ 的系数互换即可。每次询问 $O(1)$ 作答，坐标可达 $10^{17}$ 量级，用 $64$ 位整数。
+
+时间复杂度为 $O(T)$。
+
+## 参考代码
+
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+
+using ll=long long;
+int main()
+{
+	ios::sync_with_stdio(false);
+	cin.tie(nullptr);
+	ll T,l,r;
+	cin>>T>>l>>r;
+	while(T--)
+	{
+		char f;
+		ll x;
+		cin>>f>>x;
+		ll a=(x+1)/2*2,b=x/2*2;
+		if(f=='L')cout<<-(a*l+b*r)<<'\n';
+		else cout<<b*l+a*r<<'\n';
+	}
+	return 0;
+}
+```

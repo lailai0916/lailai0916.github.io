@@ -1,0 +1,66 @@
+---
+title: 题解：P9752 [CSP-S 2023] 密码锁
+date: 2023-10-22T09:19:10+08:00
+authors: lailai
+tags: [oi, solution, luogu]
+---
+
+<Solution pid="P9752" lid="hbmsbo1u" />
+
+{/* truncate */}
+
+## 题意简述
+
+五位密码锁，每位是 $0\sim9$ 的循环。正确密码经过恰好一次转动（把某一位、或某相邻两位同时转动相同的非零幅度）得到一个状态。给定 $n$ 个这样的状态，问有多少种正确密码，能同时产生这全部 $n$ 个状态。
+
+## 解题思路
+
+转动是可逆的：若密码 $X$ 一次转动得到状态 $S$，那么 $X$ 也能由 $S$ 经一次转动得到。于是对每个状态 $S$，它对应的候选密码就是从 $S$ 出发所有一次转动的结果。
+
+一次转动共 $5\times9+4\times9=81$ 种（$5$ 位各转 $1\sim9$，$4$ 对相邻各转 $1\sim9$），并且对同一状态这 $81$ 个结果互不相同（改动的位集合或幅度不同）。
+
+用大小 $10^5$ 的桶：对每个状态把它的 $81$ 个候选密码各计一次数。某密码被计到 $n$ 次，就说明它对每个状态都成立，即一个合法的正确密码。统计桶中计数恰为 $n$ 的密码个数即可。
+
+时间复杂度为 $O(81n+10^5)$。
+
+## 参考代码
+
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+
+const int N=100000;
+int cnt[N];
+void add(int a,int b,int c,int d,int e)
+{
+	cnt[a%10*10000+b%10*1000+c%10*100+d%10*10+e%10]++;
+}
+int main()
+{
+	ios::sync_with_stdio(false);
+	cin.tie(nullptr);
+	int n;
+	cin>>n;
+	for(int t=0;t<n;t++)
+	{
+		int a,b,c,d,e;
+		cin>>a>>b>>c>>d>>e;
+		for(int k=1;k<=9;k++)
+		{
+			add(a+k,b,c,d,e);
+			add(a,b+k,c,d,e);
+			add(a,b,c+k,d,e);
+			add(a,b,c,d+k,e);
+			add(a,b,c,d,e+k);
+			add(a+k,b+k,c,d,e);
+			add(a,b+k,c+k,d,e);
+			add(a,b,c+k,d+k,e);
+			add(a,b,c,d+k,e+k);
+		}
+	}
+	int ans=0;
+	for(int i=0;i<N;i++)if(cnt[i]==n)ans++;
+	cout<<ans<<'\n';
+	return 0;
+}
+```
