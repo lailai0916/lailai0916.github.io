@@ -16,7 +16,7 @@ lailai's site is mostly in Simplified Chinese, with three content streams (`blog
 
 - **Blog post** fields, in order: `title`, `date`, `authors: lailai` (scalar, never an array), `tags` (always array, even single-tag). Optional: `image` / `image_dark` / `pinned` — used only on `welcome.mdx`. Never use `slug` — the filename is the slug.
 - **Doc page** carries only `title:`. No date, no authors, no tags.
-- Dates are `YYYY-MM-DDTHH:MM:SS+08:00` — seconds **and** an explicit Asia/Shanghai offset: `date: 2025-08-04T15:30:00+08:00`. The `+08:00` is mandatory: without it `new Date()` resolves against the build host's zone (CI runs UTC), so an offsetless timestamp renders 8h off — `src/utils/format.ts` already pins display to `timeZone: 'Asia/Shanghai'`, so the instant must be unambiguous at the source. Every blog post carries seconds. **Solution posts** (`blog/solution/*.mdx`) use the **exact** publish second of their Luogu column counterpart (the `aid` in `<Solution>`; Luogu records second precision) — keep the two in sync. All other posts use `:00` for the seconds. (`src/data/moments.tsx` follows the same `+08:00` form; `changelog.tsx`/`travel.tsx` stay coarse date/month labels.)
+- Dates are `YYYY-MM-DDTHH:MM:SS+08:00` — seconds **and** an explicit Asia/Shanghai offset: `date: 2025-08-04T15:30:00+08:00`. The `+08:00` is mandatory: without it `new Date()` resolves against the build host's zone (CI runs UTC), so an offsetless timestamp renders 8h off — `src/utils/format.ts` already pins display to `timeZone: 'Asia/Shanghai'`, so the instant must be unambiguous at the source. Every blog post carries seconds. **Solution posts** (`blog/solution/*.mdx`) use the **exact** publish second of their Luogu column counterpart (the `lid` in `<Solution>`; Luogu records second precision) — keep the two in sync. All other posts use `:00` for the seconds. (`src/data/moments.tsx` follows the same `+08:00` form; `changelog.tsx`/`travel.tsx` stay coarse date/month labels.)
 - Title pattern is `<category>：<name>` with a **full-width colon**. Category prefix vocabulary is fixed: `题解：` / `数学：` / `项目：` / `资源：` / `个人：` / `旅行：` / `记录：` / `杂谈：`. The prefix is the real taxonomy, not the folder — `blog/misc/` holds both `项目：` and `资源：` posts; `blog/record/` holds both `记录：` and `杂谈：`.
 - Quote the title in YAML only when it contains a `:` that would confuse the parser, e.g. `title: '旅行：National Geographic: 50 Places of a Lifetime'`.
 - Tags come from `blog/tags.yml` only. Solution posts always tag `[oi, solution, <oj>]` where `<oj>` ∈ `luogu` / `codeforces` / `atcoder` / `spoj` / `uva`. Math posts tag `[math]`. Records combine `[life, record, memory]` or `[school, record, memory]`. Don't invent tags.
@@ -24,7 +24,7 @@ lailai's site is mostly in Simplified Chinese, with three content streams (`blog
 ## Intro and truncate
 
 - Every blog post has **one** short lead paragraph (typically under 30 chars, one sentence), a blank line, then `{/* truncate */}`. The lead is what shows in listings. No greeting, no "本文将".
-- Solution posts replace the lead with the `<Solution pid="..." aid="..." />` widget, then `{/* truncate */}`. No prose before the widget.
+- Solution posts replace the lead with the `<Solution pid="..." lid="..." />` widget, then `{/* truncate */}`. No prose before the widget.
 
 ## Headings
 
@@ -70,7 +70,7 @@ General math rules → skill [`latex-math-style.md`](../skills/lailai-skill/refe
 
 ## MDX components
 
-- **`<Solution pid="..." aid="..." />`** — first non-frontmatter line of every `blog/solution/*.mdx`, before `{/* truncate */}`. Exactly two attrs.
+- **`<Solution pid="..." lid="..." />`** — first non-frontmatter line of every `blog/solution/*.mdx`, before `{/* truncate */}`. Exactly two attrs.
 - **`<Problem id="..." />`** — at the end of doc topic pages under `## 例题`.
 - **`<Quote author="..." source="...">`** — epigraph in personal/record posts. Body is one short line. Author/source must be specific and real, never generic.
 - **`<Desmos id="..." />`** — for any equation with a geometric companion.
@@ -108,7 +108,7 @@ General math rules → skill [`latex-math-style.md`](../skills/lailai-skill/refe
 Every `blog/solution/*.mdx` follows this exact order:
 
 1. Frontmatter: `title: 题解：<PID> <name>`, `tags: [oi, solution, <oj>]`.
-2. `<Solution pid="..." aid="..." />`
+2. `<Solution pid="..." lid="..." />`
 3. `{/* truncate */}`
 4. Optional `## 参考资料` (only when external refs matter).
 5. `## 题意简述` — one-paragraph Chinese paraphrase of the problem (may be omitted for trivial CF/AT problems).

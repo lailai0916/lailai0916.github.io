@@ -12,7 +12,7 @@ const SOLUTION = translate({
   message: 'Solution',
 });
 
-export default function Solution({ pid, aid }: { pid: string; aid: string }) {
+export default function Solution({ pid, lid }: { pid: string; lid: string }) {
   return (
     <div className={styles.solution}>
       <Link
@@ -25,7 +25,7 @@ export default function Solution({ pid, aid }: { pid: string; aid: string }) {
         </Badge>
       </Link>
       <Link
-        href={`https://www.luogu.com.cn/article/${aid}`}
+        href={`https://www.luogu.com.cn/article/${lid}`}
         className={styles.link}
         aria-label={SOLUTION}
       >
