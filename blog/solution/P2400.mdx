@@ -20,7 +20,7 @@ tags: [oi, solution, luogu]
 按区间长度从小到大递推，单字符长度为 $1$。每个区间有两种更新方式：
 
 1. 拼接：枚举断点 $k$，用 $f_{i,k}+f_{k+1,j}$ 更新；
-2. 折叠：若 $s_{i\dots j}$ 以 $p$ 为周期且 $p\mid(j-i+1)$，记重复 $c=\frac{j-i+1}{p}$ 次，可压成 $c(\cdots)$，长度为 $f_{i,i+p-1}$ 加 $2$（一对括号）再加 $c$ 的十进制位数。
+2. 折叠：若 $s_{i\dots j}$ 以 $p$ 为周期且 $p\mid(j-i+1)$，记重复 $c=\frac{j-i+1}{p}$ 次，可压成 $c(\dots)$，长度为 $f_{i,i+p-1}$ 加 $2$（一对括号）再加 $c$ 的十进制位数。
 
 转移只比较整数长度，所以是 $O(n^3)$。若把压缩串直接存进 DP、逐次拼接比较，会多一个 $O(n)$ 退化成 $O(n^4)$。
 
@@ -39,7 +39,7 @@ using namespace std;
 const int N=105;
 int f[N][N];
 string s,ans[N][N];
-bool cmp(string a,string b)
+bool cmp(const string &a,const string &b)
 {
 	return a.size()!=b.size()?a.size()<b.size():a>b;
 }

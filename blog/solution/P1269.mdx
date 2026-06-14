@@ -35,15 +35,15 @@ tags: [oi, solution, luogu]
 using namespace std;
 
 const int N=20005;
-int n,k,ans;
+int k,ans;
 int f[N];
 bool vis[N];
-vector<pair<int,int>> e[N];
+vector<pair<int,int>> G[N];
 void dfs(int u)
 {
 	vis[u]=1;
 	f[u]=1;
-	for(auto [v,w]:e[u])
+	for(auto [v,w]:G[u])
 	{
 		if(vis[v])continue;
 		dfs(v);
@@ -59,6 +59,7 @@ int main()
 {
 	ios::sync_with_stdio(false);
 	cin.tie(nullptr);
+	int n;
 	cin>>n;
 	int mx=0;
 	for(int i=1;i<=n;i++)
@@ -69,7 +70,7 @@ int main()
 		{
 			int v,w;
 			cin>>v>>w;
-			e[i].push_back({v,w});
+			G[i].push_back({v,w});
 			mx=max(mx,w);
 		}
 	}

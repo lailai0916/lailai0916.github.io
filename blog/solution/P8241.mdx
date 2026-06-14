@@ -18,7 +18,10 @@ tags: [oi, solution, luogu]
 只需计数，不必真的拼出字符串。设按 $i$ 次后有 $a_i$ 个 $\texttt A$、$b_i$ 个 $\texttt B$。$\texttt A\to\texttt B$ 产生 $1$ 个 $\texttt B$，$\texttt B\to\texttt{BA}$ 产生 $1$ 个 $\texttt A$ 与 $1$ 个 $\texttt B$，于是
 
 $$
-a_i=b_{i-1},\quad b_i=a_{i-1}+b_{i-1}.
+\begin{cases}
+a_i=b_{i-1}\\
+b_i=a_{i-1}+b_{i-1}
+\end{cases}
 $$
 
 从 $(a_0,b_0)=(1,0)$ 递推 $k$ 步即可，数列恰是斐波那契。

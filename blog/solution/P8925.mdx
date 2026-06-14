@@ -23,7 +23,9 @@ $$
 2\left\lceil\frac x2\right\rceil L+2\left\lfloor\frac x2\right\rfloor R,
 $$
 
-坐标取其相反数。右侧完全对称，把 $L$、$R$ 的系数互换即可。每次询问 $O(1)$ 作答，坐标可达 $10^{17}$ 量级，用 $64$ 位整数。
+坐标取其相反数。右侧完全对称，把 $L$、$R$ 的系数互换即可。
+
+整数实现中 $\left\lceil\frac x2\right\rceil$ 为 $(x+1)/2$，$\left\lfloor\frac x2\right\rfloor$ 为 $x/2$。每次询问 $O(1)$ 作答，坐标可达 $10^{17}$ 量级，用 $64$ 位整数。
 
 时间复杂度为 $O(T)$。
 
@@ -38,16 +40,16 @@ int main()
 {
 	ios::sync_with_stdio(false);
 	cin.tie(nullptr);
-	ll T,l,r;
-	cin>>T>>l>>r;
-	while(T--)
+	int t;
+	ll l,r;
+	cin>>t>>l>>r;
+	while(t--)
 	{
-		char f;
+		char c;
 		ll x;
-		cin>>f>>x;
-		ll a=(x+1)/2*2,b=x/2*2;
-		if(f=='L')cout<<-(a*l+b*r)<<'\n';
-		else cout<<b*l+a*r<<'\n';
+		cin>>c>>x;
+		ll a=(x+1)/2,b=x/2;
+		cout<<(c=='L'?-2*(a*l+b*r):2*(a*r+b*l))<<'\n';
 	}
 	return 0;
 }

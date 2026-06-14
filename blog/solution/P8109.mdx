@@ -17,9 +17,19 @@ $n$ 道题，第 $i$ 道有 $a_i$ 支队伍通过；$n$ 种颜色的气球，第
 
 一道题配上某色气球，能派发 $\min(a,b)$ 个，于是问题就是把 $\{a\}$ 与 $\{b\}$ 一一配对，最大化 $\sum\min(a_i,b_i)$。
 
-把两个序列都从小到大排序后按位配对最优：AC 数第 $i$ 大的题对应气球数第 $i$ 大的颜色。若让大的 $a$ 去配小的 $b$，会被 $b$ 卡住、白白浪费多通过的队伍；顺次配对则每个 $\min$ 都尽量大。排序后累加 $\min(a_i,b_i)$ 即为答案。
+题目保证 $\{a\}$ 与 $\{b\}$ 都已单调不降。此时按下标顺次配对即最优，不必再排序。
 
-时间复杂度为 $O(n\log n)$。
+用邻项交换证明。取任意 $x<y$，由单调性有 $a_x\le a_y$ 且 $b_x\le b_y$。比较交换 $b_x$、$b_y$ 前后的贡献：
+
+$$
+\min(a_x,b_x)+\min(a_y,b_y)\ge\min(a_x,b_y)+\min(a_y,b_x).
+$$
+
+令 $g(t)=\min(a_y,t)-\min(a_x,t)$。因为 $a_x\le a_y$，$g$ 关于 $t$ 单调不减，故 $g(b_x)\le g(b_y)$，移项即得上式。任何交换都不增大总和，所以原序就是最优配对。
+
+顺次累加 $\min(a_i,b_i)$ 即可。和最大为 $n\times 10^4=10^9$，用 $64$ 位整数累加。
+
+时间复杂度为 $O(n)$。
 
 ## 参考代码
 
@@ -27,8 +37,9 @@ $n$ 道题，第 $i$ 道有 $a_i$ 支队伍通过；$n$ 种颜色的气球，第
 #include <bits/stdc++.h>
 using namespace std;
 
+using ll=long long;
 const int N=100005;
-int a[N],b[N];
+int a[N];
 int main()
 {
 	ios::sync_with_stdio(false);
@@ -36,11 +47,13 @@ int main()
 	int n;
 	cin>>n;
 	for(int i=1;i<=n;i++)cin>>a[i];
-	for(int i=1;i<=n;i++)cin>>b[i];
-	sort(a+1,a+n+1);
-	sort(b+1,b+n+1);
-	int ans=0;
-	for(int i=1;i<=n;i++)ans+=min(a[i],b[i]);
+	ll ans=0;
+	for(int i=1;i<=n;i++)
+	{
+		int x;
+		cin>>x;
+		ans+=min(a[i],x);
+	}
 	cout<<ans<<'\n';
 	return 0;
 }
