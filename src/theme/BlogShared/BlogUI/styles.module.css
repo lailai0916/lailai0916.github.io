@@ -28,6 +28,16 @@
   font-weight: 600;
 }
 
+.eyebrowLink {
+  color: inherit;
+  text-decoration: none !important;
+  transition: color 160ms ease;
+}
+
+.eyebrowLink:hover {
+  color: var(--ifm-color-primary);
+}
+
 .tagChipLink {
   text-decoration: none !important;
   color: inherit;

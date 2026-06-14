@@ -46,6 +46,7 @@ function PostCard({ item }: PostCardProps) {
     date: metadata.date,
     readingTime: metadata.readingTime,
     pinned: (frontMatter as Record<string, unknown>).pinned === true,
+    lid: (frontMatter as Record<string, unknown>).lid as string | undefined,
   });
 
   return (

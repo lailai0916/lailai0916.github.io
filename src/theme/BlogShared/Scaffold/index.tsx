@@ -33,6 +33,7 @@ function useActiveBlogNav(): BlogNavKey {
   const archiveBase = useBaseUrl('/blog/archive');
   const tagsBase = useBaseUrl('/blog/tags');
   const authorsBase = useBaseUrl('/blog/authors');
+  const statsBase = useBaseUrl('/blog/stats');
 
   const startsWith = (base: string) =>
     pathname === base ||
@@ -43,7 +44,8 @@ function useActiveBlogNav(): BlogNavKey {
   if (
     startsWith(archiveBase) ||
     startsWith(tagsBase) ||
-    startsWith(authorsBase)
+    startsWith(authorsBase) ||
+    startsWith(statsBase)
   )
     return 'archive';
   return 'blog';

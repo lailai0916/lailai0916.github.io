@@ -3,9 +3,8 @@ title: 题解：P15649 [省选联考 2026] 找寻者 / recollector
 date: 2026-03-07T13:53:22+08:00
 authors: lailai
 tags: [oi, solution, luogu]
+lid: we1gn3av
 ---
-
-<Solution pid="P15649" lid="we1gn3av" />
 
 {/* truncate */}
 
@@ -15,27 +14,27 @@ tags: [oi, solution, luogu]
 
 ## 解题思路
 
-**拆贡献到边。** 结点 $x$ 到根的路径经过边 $(u,c)$（$c$ 为儿子）当且仅当 $x$ 在子树 $c$ 内，这样的 $x$ 有 $\operatorname{siz}(c)$ 个；而该边是轻边当且仅当 $u$ 没选 $c$。由期望的线性性，
+先把贡献拆到每条边上。结点 $x$ 到根的路径经过边 $(u,c)$（$c$ 为儿子）当且仅当 $x$ 在子树 $c$ 内，这样的 $x$ 有 $\operatorname{siz}(c)$ 个。该边是轻边当且仅当 $u$ 没选 $c$。记 $P(u\to c)$ 为 $u$ 选中儿子 $c$ 的概率，由期望的线性性，
 
 $$
-\text{答案}=\sum_{(u,c)}\operatorname{siz}(c)\bigl(1-P(u\text{ 选 }c)\bigr).
+\text{ans}=\sum_{(u,c)}\operatorname{siz}(c)\bigl(1-P(u\to c)\bigr).
 $$
 
-**求选择概率。** 设 $u$ 的各儿子重链长度为随机变量 $L_1,\dots,L_k$（不同子树相互独立），$S=\sum L_j$，则 $P(u\text{ 选 }c)=\mathbb E\left[\frac{L_c}{S}\right]$。分母里的求和是难点，用积分恒等式 $\frac1S=\int_0^1 t^{S-1}\mathrm dt$ 把它拆开：记 $f_j(t)=\mathbb E[t^{L_j}]$ 为 $L_j$ 的概率生成函数，由独立性
+接着求每条边的选择概率。设 $u$ 的各儿子重链长度为随机变量 $L_1,\dots,L_k$（不同子树相互独立），$S=\sum L_j$，则 $P(u\to c)=\mathbb E\left[\frac{L_c}{S}\right]$。分母里的求和是难点，用积分恒等式 $\frac1S=\int_0^1 t^{S-1}\mathrm dt$ 把它拆开：记 $f_j(t)=\mathbb E[t^{L_j}]$ 为 $L_j$ 的概率生成函数，由独立性
 
 $$
-P(u\text{ 选 }c)=\int_0^1 f_c'(t)\prod_{j\ne c}f_j(t)\mathrm dt.
+P(u\to c)=\int_0^1 f_c'(t)\prod_{j\ne c}f_j(t)\mathrm dt.
 $$
 
-**维护生成函数。** $L_u=1+L_{\text{选中}}$，故 $f_u(x)=x\mathbb E[x^{L_{\text{选中}}}]$。同样用上面的积分展开，记 $p_{c,\ell}=[t^\ell]f_c(t)$、$R_c(t)=\prod_{j\ne c}f_j(t)$，可得
+还需维护每个结点的生成函数。设选中儿子的重链长度为 $L^*$，则 $L_u=1+L^*$，故 $f_u(x)=x\mathbb E[x^{L^*}]$。同样用上面的积分展开，记 $p_{c,\ell}=[t^\ell]f_c(t)$、$R_c(t)=\prod_{j\ne c}f_j(t)$，可得
 
 $$
 [x^{\ell+1}]f_u=\sum_{c}\ell p_{c,\ell}\int_0^1 t^{\ell-1}R_c(t)\mathrm dt,
 $$
 
-而 $P(u\text{ 选 }c)$ 恰是上式中第 $c$ 个儿子对所有 $\ell$ 的贡献之和。其中 $\int_0^1 t^m\mathrm dt=\frac1{m+1}$，在模意义下即 $m+1$ 的逆元。
+而 $P(u\to c)$ 恰是上式中第 $c$ 个儿子对所有 $\ell$ 的贡献之和。其中 $\int_0^1 t^m\mathrm dt=\frac1{m+1}$，在模意义下即 $m+1$ 的逆元。
 
-**实现。** 自底向上 DFS：叶子 $f_u(x)=x$；非叶结点先把所有儿子的 $f_j$ 乘成 $\prod f_j$，再对每个 $c$ 用多项式除法得到 $R_c=\prod f_j / f_c$，按上式累加出 $f_u$ 与各 $P(u\text{ 选 }c)$。每个结点的多项式次数等于子树高度，由树形背包的配对计数，总复杂度 $O(n^2)$。
+实现上自底向上 DFS。叶子 $f_u(x)=x$；非叶结点先把所有儿子的 $f_j$ 乘成 $\prod f_j$，再对每个 $c$ 用多项式除法得到 $R_c=\prod f_j / f_c$，按上式累加出 $f_u$ 与各 $P(u\to c)$。每个结点的多项式次数等于子树高度，由树形背包的配对计数，总复杂度 $O(n^2)$。
 
 一个常数优化：纯链（含叶子）的 $f$ 是单项式 $x^L$，乘除都退化成移位。把这类儿子单独拎出来——它们对同一父结点贡献的那个积分值完全相同（链长在分子分母里恰好抵消），一次算出再乘以各自的 $L$ 即可，无需逐个做稠密多项式运算。这样星形、菊花、链等结构从 $O(n^2)$ 降到近 $O(n)$。
 

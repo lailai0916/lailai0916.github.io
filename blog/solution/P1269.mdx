@@ -3,9 +3,8 @@ title: 题解：P1269 信号放大器
 date: 2021-12-17T22:13:54+08:00
 authors: lailai
 tags: [oi, solution, luogu]
+lid: em94lz1r
 ---
-
-<Solution pid="P1269" lid="em94lz1r" />
 
 {/* truncate */}
 
@@ -22,7 +21,7 @@ tags: [oi, solution, luogu]
 1. 不放大 $v$：$u$ 要把强度 $f_v$ 送到 $v$，自身强度需不小于 $f_v+w$，该儿子对 $f_u$ 的贡献即 $f_v+w$；
 2. 放大 $v$：当 $f_v+w>k$（$u$ 满强度 $k$ 也送不到 $v$）时只能在 $v$ 装放大器，$v$ 被还原成 $k$ 后自给自足，$u$ 只需把信号送达 $v$，贡献降为 $w+1$，放大器数加一。
 
-于是 $f_u=\max\bigl(1,\max_v(\text{各儿子贡献})\bigr)$，按需放大保证 $f_u\le k$。服务器自带强度 $k$，从它 DFS 一遍累计放大器数即为答案。
+于是 $f_u$ 取 $1$ 与各儿子贡献的最大值，按需放大保证 $f_u\le k$。服务器自带强度 $k$，从它 DFS 一遍累计放大器数即为答案。
 
 只要有一条边的衰减量不小于 $k$，这条边永远跨不过去，直接输出 `No solution.`。
 

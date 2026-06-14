@@ -11,7 +11,7 @@ import BlogScaffold from '../Scaffold';
 import { BlogArchiveList } from '../ArchiveList';
 import styles from './styles.module.css';
 
-export type ArchiveTab = 'year' | 'tags' | 'authors';
+export type ArchiveTab = 'year' | 'tags' | 'authors' | 'stats';
 
 type PostLike = {
   metadata: {
@@ -60,6 +60,10 @@ const TAB_LABEL_AUTHORS = translate({
   id: 'blog.archive.tab.authors',
   message: 'By Author',
 });
+const TAB_LABEL_STATS = translate({
+  id: 'blog.archive.tab.stats',
+  message: 'Stats',
+});
 
 function getPostYear(post: PostLike): number {
   return Number(formatBeijingDate(post.metadata.date).slice(0, 4));
@@ -74,6 +78,7 @@ export function ArchiveTabsNav({ activeTab }: { activeTab: ArchiveTab }) {
   const yearHref = useBaseUrl('/blog/archive');
   const tagsHref = useBaseUrl('/blog/tags');
   const authorsHref = useBaseUrl('/blog/authors');
+  const statsHref = useBaseUrl('/blog/stats');
 
   return (
     <Segmented<ArchiveTab>
@@ -83,6 +88,7 @@ export function ArchiveTabsNav({ activeTab }: { activeTab: ArchiveTab }) {
         { value: 'year', label: TAB_LABEL_YEAR, href: yearHref },
         { value: 'tags', label: TAB_LABEL_TAGS, href: tagsHref },
         { value: 'authors', label: TAB_LABEL_AUTHORS, href: authorsHref },
+        { value: 'stats', label: TAB_LABEL_STATS, href: statsHref },
       ]}
     />
   );

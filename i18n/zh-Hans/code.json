@@ -128,12 +128,6 @@
   "components.problem.solution": {
     "message": "题解"
   },
-  "components.solution.problem": {
-    "message": "题目"
-  },
-  "components.solution.label": {
-    "message": "题解"
-  },
   "pages.changelog.empty": {
     "message": "暂无更新日志"
   },
@@ -1237,5 +1231,32 @@
   "theme.tags.tagsPageTitle": {
     "message": "标签",
     "description": "The title of the tag list page"
+  },
+  "pages.stats.title": {
+    "message": "统计"
+  },
+  "pages.stats.description": {
+    "message": "用数据看看我在这里写过些什么。"
+  },
+  "pages.stats.metric.posts": {
+    "message": "文章数量"
+  },
+  "pages.stats.chart.title": {
+    "message": "每月发文"
+  },
+  "blog.archive.tab.stats": {
+    "message": "统计"
+  },
+  "pages.stats.metric.words": {
+    "message": "总字数"
+  },
+  "pages.stats.metric.tags": {
+    "message": "标签总数"
+  },
+  "pages.stats.metric.moments": {
+    "message": "动态数量"
+  },
+  "blog.postcard.original": {
+    "message": "原文"
   }
 }

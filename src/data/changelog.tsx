@@ -8,6 +8,11 @@ interface ChangelogItem {
 
 export const CHANGELOG_LIST: ChangelogItem[] = [
   {
+    date: '2026-06-14',
+    type: 'removed',
+    content: '<code>&lt;Solution /&gt;</code> 题解标题组件',
+  },
+  {
     date: '2026-06-09',
     type: 'added',
     content: '<b>docusaurus-plugin-image-zoom</b> 图片缩放',

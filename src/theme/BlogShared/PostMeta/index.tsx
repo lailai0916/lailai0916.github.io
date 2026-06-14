@@ -10,12 +10,17 @@ const pinnedMetaLabel = translate({
   id: 'blog.post.pinned',
   message: 'Pinned',
 });
+const originalMetaLabel = translate({
+  id: 'blog.postcard.original',
+  message: 'Original',
+});
 
 interface PostMetaInput {
   permalink: string;
   date: string;
   readingTime?: number;
   pinned?: boolean;
+  lid?: string;
 }
 
 /**
@@ -28,6 +33,7 @@ export function usePostMetaItems({
   date,
   readingTime,
   pinned,
+  lid,
 }: PostMetaInput): MetaBarItem[] {
   const { analytics, status } = useAnalytics(permalink);
   const {
@@ -66,6 +72,15 @@ export function usePostMetaItems({
         { id: 'blog.postcard.viewCount', message: '{viewCount} views' },
         { viewCount: analytics.pageviews ?? '–' }
       ),
+    });
+  }
+  // Luogu link for solution posts: the original column article, from `lid`.
+  // Leads the meta bar (before the date) when present.
+  if (lid) {
+    items.unshift({
+      icon: 'simple-icons:luogu',
+      label: originalMetaLabel,
+      href: `https://www.luogu.com.cn/article/${lid}`,
     });
   }
   if (pinned === true) {

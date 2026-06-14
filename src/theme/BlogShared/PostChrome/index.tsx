@@ -31,6 +31,7 @@ export function PostHeader({ metadata, frontMatter }: PostHeaderProps) {
     date: metadata.date,
     readingTime: metadata.readingTime,
     pinned: frontMatter.pinned === true,
+    lid: frontMatter.lid as string | undefined,
   });
 
   // Hide the author block when this post is by the site owner alone.

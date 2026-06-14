@@ -9,30 +9,47 @@ export type MetaBarItem = {
   icon: string;
   label: ReactNode;
   dateTime?: string;
+  href?: string;
   pinned?: boolean;
 };
 
 export function MetaBar({ items }: { items: MetaBarItem[] }) {
   return (
     <div className={styles.postEyebrow}>
-      {items.map((item, i) => (
-        <Fragment key={item.icon}>
-          {i > 0 && <span className={styles.eyebrowDot} aria-hidden="true" />}
-          <span
-            className={clsx(
-              styles.eyebrowItem,
-              item.pinned && styles.eyebrowItemPinned
-            )}
-          >
+      {items.map((item, i) => {
+        const body = (
+          <>
             <Icon icon={item.icon} width={13} height={13} />
             {item.dateTime ? (
               <time dateTime={item.dateTime}>{item.label}</time>
             ) : (
               item.label
             )}
-          </span>
-        </Fragment>
-      ))}
+          </>
+        );
+        return (
+          <Fragment key={i}>
+            {i > 0 && <span className={styles.eyebrowDot} aria-hidden="true" />}
+            {item.href ? (
+              <Link
+                href={item.href}
+                className={clsx(styles.eyebrowItem, styles.eyebrowLink)}
+              >
+                {body}
+              </Link>
+            ) : (
+              <span
+                className={clsx(
+                  styles.eyebrowItem,
+                  item.pinned && styles.eyebrowItemPinned
+                )}
+              >
+                {body}
+              </span>
+            )}
+          </Fragment>
+        );
+      })}
     </div>
   );
 }

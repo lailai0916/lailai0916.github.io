@@ -1,0 +1,77 @@
+.card {
+  min-width: 0;
+}
+
+.plot {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  gap: 2px;
+  height: 260px;
+  border-bottom: 1px solid var(--ifm-color-emphasis-200);
+}
+
+@media (max-width: 768px) {
+  .plot {
+    height: 200px;
+  }
+}
+
+.gridLine {
+  position: absolute;
+  left: 0;
+  right: 0;
+  border-top: 1px dashed var(--ifm-color-emphasis-200);
+  font-size: 0.7rem;
+  color: var(--ifm-color-emphasis-500);
+}
+
+.gridLine span {
+  position: absolute;
+  top: -0.55rem;
+  left: 0;
+  padding-right: 0.4rem;
+  background: var(--ifm-card-background-color);
+  font-variant-numeric: tabular-nums;
+}
+
+.bar,
+.barActive {
+  position: relative;
+  z-index: 1;
+  flex: 1 1 0;
+  min-width: 0;
+  border-radius: 3px 3px 0 0;
+  background: var(--ifm-color-primary);
+  transition: background 160ms ease;
+}
+
+.barActive {
+  background: var(--ifm-color-primary-dark);
+}
+
+.crosshair {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  z-index: 1;
+  width: 0;
+  border-left: 1px dashed var(--ifm-color-emphasis-500);
+  opacity: 0.75;
+  transform: translateX(-50%);
+  pointer-events: none;
+}
+
+.axis {
+  position: relative;
+  height: 1.25rem;
+  margin-top: 0.4rem;
+}
+
+.axisLabel {
+  position: absolute;
+  transform: translateX(-50%);
+  font-size: 0.72rem;
+  color: var(--ifm-color-emphasis-500);
+  font-variant-numeric: tabular-nums;
+}

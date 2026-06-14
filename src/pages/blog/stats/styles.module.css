@@ -1,0 +1,36 @@
+.kpiGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+
+@media (max-width: 600px) {
+  .kpiGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.kpiTile {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.kpiLabel {
+  font-size: 0.85rem;
+  color: var(--ifm-color-emphasis-600);
+}
+
+.kpiValue {
+  font-size: 1.75rem;
+  font-weight: 650;
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+  color: var(--ifm-color-emphasis-900);
+  font-variant-numeric: tabular-nums;
+}
+
+.kpiSub {
+  font-size: 0.8rem;
+  color: var(--ifm-color-emphasis-500);
+}

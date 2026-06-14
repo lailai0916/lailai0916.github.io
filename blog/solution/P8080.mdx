@@ -3,9 +3,8 @@ title: 题解：P8080 [COCI 2011/2012 #4] KINO
 date: 2022-01-28T18:51:49+08:00
 authors: lailai
 tags: [oi, solution, luogu]
+lid: g4q50k6o
 ---
-
-<Solution pid="P8080" lid="g4q50k6o" />
 
 {/* truncate */}
 
@@ -17,7 +16,7 @@ tags: [oi, solution, luogu]
 
 数杯架总数。座位间的缝加上两端共 $n+1$ 处，每对爱心座位内部少一个杯架，记 $\texttt L$ 的个数为 $l$，则爱心对数为 $l/2$，杯架总数为 $n+1-l/2$。
 
-座位与相邻杯架排成一条链，从左到右每个座位优先取左侧的空杯架、否则取右侧，总能用满 $\min(\text{杯架数},n)$ 个。故答案为 $\min\left(n+1-\frac l2,n\right)$。
+座位与相邻杯架排成一条链，从左到右每个座位优先取左侧的空杯架、否则取右侧，总能用满杯架数与 $n$ 中的较小者。故答案为 $\min\left(n+1-\frac l2,n\right)$。
 
 时间复杂度为 $O(n)$。
 
