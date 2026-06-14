@@ -64,6 +64,14 @@
   margin-bottom: 0;
 }
 
+/* Placeholder matching one MetaBar row (0.825rem × 1.65 line-height) so the
+   weather bar reserves its space and doesn't shift in once fetched. */
+.weatherSkeleton {
+  width: 100%;
+  height: calc(0.825rem * 1.65);
+  border-radius: 6px;
+}
+
 /* Moment content body */
 
 .momentContent {

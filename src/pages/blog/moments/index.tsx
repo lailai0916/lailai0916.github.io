@@ -6,6 +6,7 @@ import { MetaBar, type MetaBarItem } from '@site/src/theme/BlogShared/BlogUI';
 import Card from '@site/src/components/laikit/Card';
 import IconBlock from '@site/src/components/laikit/IconBlock';
 import ShareCard from '@site/src/components/laikit/ShareCard';
+import Skeleton from '@site/src/components/laikit/Skeleton';
 import { MOMENT_LIST } from '@site/src/data/moments';
 import {
   formatLocalizedDate,
@@ -194,11 +195,13 @@ export default function Moments() {
             <span className={styles.countLabel}>{COUNT_LABEL}</span>
           </div>
         </div>
-        {weather && (
-          <div className={styles.headerWeather}>
+        <div className={styles.headerWeather}>
+          {weather ? (
             <MetaBar items={weatherItems} />
-          </div>
-        )}
+          ) : (
+            <Skeleton className={styles.weatherSkeleton} />
+          )}
+        </div>
       </Card>
 
       {visibleMoments.map((moment, i) => {
