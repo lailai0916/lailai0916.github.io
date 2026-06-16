@@ -11,17 +11,26 @@ import {
 } from '@site/src/utils/blogData';
 import { MOMENT_LIST } from '@site/src/data/moments';
 import { formatBeijingDate, formatCompact } from '@site/src/utils/format';
-import MonthlyBars, { type MonthBucket } from './_components/MonthlyBars';
+import BarChart, { type ChartDatum } from './_components/BarChart';
+import LineChart from './_components/LineChart';
 import styles from './styles.module.css';
 
-const TITLE = translate({ id: 'pages.stats.title', message: 'Stats' });
+const TITLE = translate({ id: 'pages.stats.title', message: 'Overview' });
 const DESCRIPTION = translate({
   id: 'pages.stats.description',
   message: 'A by-the-numbers look at what I have written here.',
 });
+const MONTHLY_TITLE = translate({
+  id: 'pages.stats.chart.monthly.title',
+  message: 'Posts per Month',
+});
+const CUMULATIVE_TITLE = translate({
+  id: 'pages.stats.chart.cumulative.title',
+  message: 'Cumulative Posts',
+});
 
-// Group posts into a continuous monthly timeline (gap months filled with 0).
-function buildMonths(): MonthBucket[] {
+// Continuous monthly timeline (gap months filled with 0); year ticks on January.
+function buildMonths(locale: string): ChartDatum[] {
   const map = new Map<string, number>();
   getAllBlogItems().forEach((it) => {
     const date = it.date ?? it.metadata?.date;
@@ -33,21 +42,38 @@ function buildMonths(): MonthBucket[] {
   const keys = [...map.keys()].sort();
   if (keys.length === 0) return [];
 
-  const months: MonthBucket[] = [];
+  const out: ChartDatum[] = [];
   const [startY, startM] = keys[0].split('-').map(Number);
   const [endY, endM] = keys[keys.length - 1].split('-').map(Number);
   let y = startY;
   let m = startM;
   while (y < endY || (y === endY && m <= endM)) {
     const key = `${y}-${String(m).padStart(2, '0')}`;
-    months.push({ key, year: y, month: m, total: map.get(key) ?? 0 });
+    out.push({
+      key,
+      value: map.get(key) ?? 0,
+      tooltipLabel: new Date(y, m - 1, 1).toLocaleDateString(locale, {
+        year: 'numeric',
+        month: 'long',
+      }),
+      axisLabel: m === 1 ? String(y) : undefined,
+    });
     m++;
     if (m > 12) {
       m = 1;
       y++;
     }
   }
-  return months;
+  return out;
+}
+
+// Running total over the same monthly timeline.
+function toCumulative(months: ChartDatum[]): ChartDatum[] {
+  let sum = 0;
+  return months.map((d) => {
+    sum += d.value;
+    return { ...d, value: sum };
+  });
 }
 
 export default function BlogStats(): ReactNode {
@@ -55,7 +81,8 @@ export default function BlogStats(): ReactNode {
   const { currentLocale, defaultLocale } = i18n;
   const localeKey = currentLocale === defaultLocale ? undefined : currentLocale;
 
-  const months = buildMonths();
+  const monthData = buildMonths(currentLocale);
+  const cumulativeData = toCumulative(monthData);
   const tagCount = loadOfficialTags(localeKey).length;
   const postCount = getAllBlogItems().length;
   // Reading time → word count, matching the blog sidebar's StatsCard (≈200 wpm).
@@ -105,7 +132,16 @@ export default function BlogStats(): ReactNode {
           />
         ))}
       </div>
-      <MonthlyBars data={months} />
+      <BarChart
+        title={MONTHLY_TITLE}
+        icon="lucide:bar-chart-3"
+        data={monthData}
+      />
+      <LineChart
+        title={CUMULATIVE_TITLE}
+        icon="lucide:trending-up"
+        data={cumulativeData}
+      />
     </BlogScaffold>
   );
 }

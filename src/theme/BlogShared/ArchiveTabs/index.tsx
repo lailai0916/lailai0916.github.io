@@ -62,7 +62,7 @@ const TAB_LABEL_AUTHORS = translate({
 });
 const TAB_LABEL_STATS = translate({
   id: 'blog.archive.tab.stats',
-  message: 'Stats',
+  message: 'Overview',
 });
 
 function getPostYear(post: PostLike): number {

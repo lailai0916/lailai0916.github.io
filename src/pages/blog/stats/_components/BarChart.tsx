@@ -4,28 +4,29 @@ import {
   type PointerEvent as ReactPointerEvent,
 } from 'react';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
-import { translate } from '@docusaurus/Translate';
 import TitleCard from '@site/src/components/laikit/TitleCard';
 import Tooltip from '@site/src/components/laikit/Tooltip';
 import { formatCompact } from '@site/src/utils/format';
-import styles from './MonthlyBars.module.css';
+import { computeScale } from './scale';
+import shared from './chart.module.css';
+import styles from './BarChart.module.css';
 
-export interface MonthBucket {
+export interface ChartDatum {
   key: string;
-  year: number;
-  month: number;
-  total: number;
+  value: number;
+  // Text shown in the hover tooltip (e.g. "May 2023", "21:00").
+  tooltipLabel: string;
+  // Optional X-axis tick; rendered only where present.
+  axisLabel?: string;
 }
 
-const CHART_TITLE = translate({
-  id: 'pages.stats.chart.title',
-  message: 'Posts per Month',
-});
+interface BarChartProps {
+  title: string;
+  icon: string;
+  data: ChartDatum[];
+}
 
-// Y-axis gridlines every 5 posts; round the ceiling up to the next multiple.
-const STEP = 5;
-
-export default function MonthlyBars({ data }: { data: MonthBucket[] }) {
+export default function BarChart({ title, icon, data }: BarChartProps) {
   const {
     i18n: { currentLocale: locale },
   } = useDocusaurusContext();
@@ -33,12 +34,8 @@ export default function MonthlyBars({ data }: { data: MonthBucket[] }) {
   const [hoverIdx, setHoverIdx] = useState<number | null>(null);
 
   const n = data.length;
-  const max = data.reduce((m, d) => Math.max(m, d.total), 0);
-  const yMax = Math.max(STEP, Math.ceil(max / STEP) * STEP);
-  const gridLines = Array.from(
-    { length: yMax / STEP },
-    (_, i) => (i + 1) * STEP
-  );
+  const max = data.reduce((m, d) => Math.max(m, d.value), 0);
+  const { yMax, gridLines } = computeScale(max);
 
   const onPointerMove = (e: ReactPointerEvent<HTMLDivElement>) => {
     if (!plotRef.current || n === 0) return;
@@ -57,23 +54,23 @@ export default function MonthlyBars({ data }: { data: MonthBucket[] }) {
   return (
     <TitleCard
       size="sm"
-      icon="lucide:bar-chart-3"
-      title={CHART_TITLE}
+      icon={icon}
+      title={title}
       padding="1.5rem 1.25rem 1.25rem"
-      className={styles.card}
+      className={shared.card}
     >
       <div
         ref={plotRef}
-        className={styles.plot}
+        className={shared.plot}
         onPointerMove={onPointerMove}
         onPointerLeave={onPointerLeave}
         role="img"
-        aria-label={CHART_TITLE}
+        aria-label={title}
       >
         {gridLines.map((v) => (
           <div
             key={v}
-            className={styles.gridLine}
+            className={shared.gridLine}
             style={{ bottom: `${(v / yMax) * 100}%` }}
           >
             <span>{v}</span>
@@ -84,39 +81,34 @@ export default function MonthlyBars({ data }: { data: MonthBucket[] }) {
             key={d.key}
             className={i === hoverIdx ? styles.barActive : styles.bar}
             style={{
-              height: d.total === 0 ? 0 : `${(d.total / yMax) * 100}%`,
+              height: d.value === 0 ? 0 : `${(d.value / yMax) * 100}%`,
             }}
           />
         ))}
         {active && (
           <>
             <div
-              className={styles.crosshair}
+              className={shared.crosshair}
               style={{ left: `${activeLeftPct}%` }}
             />
             <Tooltip leftPct={activeLeftPct}>
-              <Tooltip.Label>
-                {new Date(active.year, active.month - 1, 1).toLocaleDateString(
-                  locale,
-                  { year: 'numeric', month: 'long' }
-                )}
-              </Tooltip.Label>
+              <Tooltip.Label>{active.tooltipLabel}</Tooltip.Label>
               <Tooltip.Value>
-                {formatCompact(active.total, locale)}
+                {formatCompact(active.value, locale)}
               </Tooltip.Value>
             </Tooltip>
           </>
         )}
       </div>
-      <div className={styles.axis}>
+      <div className={shared.axis}>
         {data.map((d, i) =>
-          d.month === 1 || i === 0 ? (
+          d.axisLabel ? (
             <span
               key={d.key}
-              className={styles.axisLabel}
+              className={shared.axisLabel}
               style={{ left: `${((i + 0.5) / n) * 100}%` }}
             >
-              {d.year}
+              {d.axisLabel}
             </span>
           ) : null
         )}

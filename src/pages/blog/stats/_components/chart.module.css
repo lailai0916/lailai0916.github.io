@@ -1,3 +1,5 @@
+/* Shared chart chrome for BarChart + LineChart (marks live in each own module). */
+
 .card {
   min-width: 0;
 }
@@ -6,13 +8,14 @@
   position: relative;
   display: flex;
   align-items: flex-end;
-  gap: 2px;
+  gap: 3px;
   height: 260px;
   border-bottom: 1px solid var(--ifm-color-emphasis-200);
 }
 
 @media (max-width: 768px) {
   .plot {
+    gap: 1px;
     height: 200px;
   }
 }
@@ -33,21 +36,6 @@
   padding-right: 0.4rem;
   background: var(--ifm-card-background-color);
   font-variant-numeric: tabular-nums;
-}
-
-.bar,
-.barActive {
-  position: relative;
-  z-index: 1;
-  flex: 1 1 0;
-  min-width: 0;
-  border-radius: 3px 3px 0 0;
-  background: var(--ifm-color-primary);
-  transition: background 160ms ease;
-}
-
-.barActive {
-  background: var(--ifm-color-primary-dark);
 }
 
 .crosshair {

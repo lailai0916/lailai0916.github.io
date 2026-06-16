@@ -4,8 +4,16 @@
   gap: 1rem;
 }
 
-@media (max-width: 768px) {
+/* Each DataCard needs ~190px; below that 4-up overflows (the sidebar squeezes
+   the main column on desktop, then it stacks ≤996px). Step down 4 → 2 → 1. */
+@media (max-width: 1240px) {
   .kpiGrid {
     grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .kpiGrid {
+    grid-template-columns: 1fr;
   }
 }
