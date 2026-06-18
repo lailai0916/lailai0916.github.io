@@ -1252,5 +1252,11 @@
   },
   "pages.overview.chart.cumulative.title": {
     "message": "文章累计"
+  },
+  "pages.insights.unit.pageviews": {
+    "message": "{count} 次浏览"
+  },
+  "pages.overview.unit.posts": {
+    "message": "{count} 篇"
   }
 }

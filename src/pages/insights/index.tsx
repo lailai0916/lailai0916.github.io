@@ -1,6 +1,7 @@
 import { type ReactNode, useState } from 'react';
 import Layout from '@theme/Layout';
 import { translate } from '@docusaurus/Translate';
+import { usePluralForm } from '@docusaurus/theme-common';
 import * as countries from 'i18n-iso-countries';
 import countriesEn from 'i18n-iso-countries/langs/en.json';
 import countriesZh from 'i18n-iso-countries/langs/zh.json';
@@ -269,10 +270,22 @@ function PageviewsChart({ range }: { range: InsightsRange }) {
   const {
     i18n: { currentLocale },
   } = useDocusaurusContext();
+  const { selectMessage } = usePluralForm();
   const series = data?.pageviews ?? [];
   const loading = status === 'loading';
   const unit =
     range === 1 ? 'hour' : range === 7 ? '6h' : range === 30 ? 'day' : 'week';
+  const pageviewsLabel = (v: number) =>
+    selectMessage(
+      v,
+      translate(
+        {
+          id: 'pages.insights.unit.pageviews',
+          message: '{count} pageview|{count} pageviews',
+        },
+        { count: formatCompact(v, currentLocale) }
+      )
+    );
 
   return (
     <Chart
@@ -285,6 +298,7 @@ function PageviewsChart({ range }: { range: InsightsRange }) {
       data={toPageviewsData(series, unit, currentLocale)}
       loading={loading || series.length === 0}
       showGrid={false}
+      formatValue={pageviewsLabel}
       className={styles.chartCard}
     />
   );

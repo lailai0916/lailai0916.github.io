@@ -29,6 +29,8 @@ interface ChartProps {
   className?: string;
   // Y-axis gridlines + value labels; off for a minimal sparkline look.
   showGrid?: boolean;
+  // Formats the hover tooltip value (e.g. add a pluralized unit); defaults to compact.
+  formatValue?: (value: number) => string;
 }
 
 // SVG coordinate space for the line variant; preserveAspectRatio="none" stretches it.
@@ -63,6 +65,7 @@ export default function Chart({
   loading,
   className,
   showGrid = true,
+  formatValue,
 }: ChartProps) {
   const {
     i18n: { currentLocale: locale },
@@ -187,7 +190,9 @@ export default function Chart({
                 )}
                 <Tooltip leftPct={activeLeftPct}>
                   <Tooltip.Label>{active.tooltipLabel}</Tooltip.Label>
-                  <Tooltip.Value>{fmt(active.value)}</Tooltip.Value>
+                  <Tooltip.Value>
+                    {(formatValue ?? fmt)(active.value)}
+                  </Tooltip.Value>
                 </Tooltip>
               </>
             )}

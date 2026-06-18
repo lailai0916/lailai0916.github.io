@@ -1,5 +1,6 @@
 import { type ReactNode } from 'react';
 import { translate } from '@docusaurus/Translate';
+import { usePluralForm } from '@docusaurus/theme-common';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import BlogScaffold from '@site/src/theme/BlogShared/Scaffold';
 import { ArchiveTabsNav } from '@site/src/theme/BlogShared/ArchiveTabs';
@@ -91,6 +92,18 @@ export default function BlogStats(): ReactNode {
   const wordCount = readingMinutes * 200;
 
   const compact = (v: number) => formatCompact(v, currentLocale);
+  const { selectMessage } = usePluralForm();
+  const postsLabel = (v: number) =>
+    selectMessage(
+      v,
+      translate(
+        {
+          id: 'pages.overview.unit.posts',
+          message: '{count} post|{count} posts',
+        },
+        { count: formatCompact(v, currentLocale) }
+      )
+    );
   const kpis = [
     {
       icon: 'lucide:newspaper',
@@ -136,12 +149,14 @@ export default function BlogStats(): ReactNode {
         title={MONTHLY_TITLE}
         icon="lucide:bar-chart-3"
         data={monthData}
+        formatValue={postsLabel}
       />
       <Chart
         type="line"
         title={CUMULATIVE_TITLE}
         icon="lucide:trending-up"
         data={cumulativeData}
+        formatValue={postsLabel}
       />
     </BlogScaffold>
   );
