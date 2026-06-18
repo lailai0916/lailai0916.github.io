@@ -1233,16 +1233,16 @@
     "message": "用数据看看我在这里写过些什么。"
   },
   "pages.overview.metric.posts": {
-    "message": "文章数量"
+    "message": "文章"
   },
   "pages.overview.metric.words": {
-    "message": "总字数"
+    "message": "词数"
   },
   "pages.overview.metric.tags": {
-    "message": "标签总数"
+    "message": "标签"
   },
   "pages.overview.metric.moments": {
-    "message": "动态数量"
+    "message": "动态"
   },
   "blog.postcard.original": {
     "message": "原文"
@@ -1257,6 +1257,6 @@
     "message": "{count} 次浏览"
   },
   "pages.overview.unit.posts": {
-    "message": "{count} 篇"
+    "message": "{count} 篇文章"
   }
 }
