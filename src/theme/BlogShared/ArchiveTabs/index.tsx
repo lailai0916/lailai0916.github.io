@@ -11,7 +11,7 @@ import BlogScaffold from '../Scaffold';
 import { BlogArchiveList } from '../ArchiveList';
 import styles from './styles.module.css';
 
-export type ArchiveTab = 'year' | 'tags' | 'authors' | 'stats';
+export type ArchiveTab = 'overview' | 'year' | 'tags' | 'authors';
 
 type PostLike = {
   metadata: {
@@ -48,6 +48,10 @@ const AUTHORS_TITLE = translate({
   message: 'Authors',
 });
 
+const TAB_LABEL_OVERVIEW = translate({
+  id: 'blog.archive.tab.overview',
+  message: 'Overview',
+});
 const TAB_LABEL_YEAR = translate({
   id: 'blog.archive.tab.year',
   message: 'By Year',
@@ -60,10 +64,6 @@ const TAB_LABEL_AUTHORS = translate({
   id: 'blog.archive.tab.authors',
   message: 'By Author',
 });
-const TAB_LABEL_STATS = translate({
-  id: 'blog.archive.tab.stats',
-  message: 'Overview',
-});
 
 function getPostYear(post: PostLike): number {
   return Number(formatBeijingDate(post.metadata.date).slice(0, 4));
@@ -75,20 +75,20 @@ function getPostYear(post: PostLike): number {
  * state is driven by `activeTab` (derived from the current page's context).
  */
 export function ArchiveTabsNav({ activeTab }: { activeTab: ArchiveTab }) {
+  const overviewHref = useBaseUrl('/blog/overview');
   const yearHref = useBaseUrl('/blog/archive');
   const tagsHref = useBaseUrl('/blog/tags');
   const authorsHref = useBaseUrl('/blog/authors');
-  const statsHref = useBaseUrl('/blog/stats');
 
   return (
     <Segmented<ArchiveTab>
       value={activeTab}
       orientation="horizontal"
       items={[
+        { value: 'overview', label: TAB_LABEL_OVERVIEW, href: overviewHref },
         { value: 'year', label: TAB_LABEL_YEAR, href: yearHref },
         { value: 'tags', label: TAB_LABEL_TAGS, href: tagsHref },
         { value: 'authors', label: TAB_LABEL_AUTHORS, href: authorsHref },
-        { value: 'stats', label: TAB_LABEL_STATS, href: statsHref },
       ]}
     />
   );

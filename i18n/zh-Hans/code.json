@@ -545,6 +545,9 @@
   "blog.pages.authors.title": {
     "message": "作者"
   },
+  "blog.archive.tab.overview": {
+    "message": "概览"
+  },
   "blog.archive.tab.year": {
     "message": "按年份"
   },
@@ -1226,34 +1229,31 @@
     "message": "标签",
     "description": "The title of the tag list page"
   },
-  "pages.stats.title": {
+  "pages.overview.title": {
     "message": "概览"
   },
-  "pages.stats.description": {
+  "pages.overview.description": {
     "message": "用数据看看我在这里写过些什么。"
   },
-  "pages.stats.metric.posts": {
+  "pages.overview.metric.posts": {
     "message": "文章数量"
   },
-  "blog.archive.tab.stats": {
-    "message": "概览"
-  },
-  "pages.stats.metric.words": {
+  "pages.overview.metric.words": {
     "message": "总字数"
   },
-  "pages.stats.metric.tags": {
+  "pages.overview.metric.tags": {
     "message": "标签总数"
   },
-  "pages.stats.metric.moments": {
+  "pages.overview.metric.moments": {
     "message": "动态数量"
   },
   "blog.postcard.original": {
     "message": "原文"
   },
-  "pages.stats.chart.monthly.title": {
+  "pages.overview.chart.monthly.title": {
     "message": "每月发文"
   },
-  "pages.stats.chart.cumulative.title": {
+  "pages.overview.chart.cumulative.title": {
     "message": "文章累计"
   }
 }

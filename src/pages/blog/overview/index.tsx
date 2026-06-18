@@ -15,17 +15,17 @@ import BarChart, { type ChartDatum } from './_components/BarChart';
 import LineChart from './_components/LineChart';
 import styles from './styles.module.css';
 
-const TITLE = translate({ id: 'pages.stats.title', message: 'Overview' });
+const TITLE = translate({ id: 'pages.overview.title', message: 'Overview' });
 const DESCRIPTION = translate({
-  id: 'pages.stats.description',
+  id: 'pages.overview.description',
   message: 'A by-the-numbers look at what I have written here.',
 });
 const MONTHLY_TITLE = translate({
-  id: 'pages.stats.chart.monthly.title',
+  id: 'pages.overview.chart.monthly.title',
   message: 'Posts per Month',
 });
 const CUMULATIVE_TITLE = translate({
-  id: 'pages.stats.chart.cumulative.title',
+  id: 'pages.overview.chart.cumulative.title',
   message: 'Cumulative Posts',
 });
 
@@ -95,23 +95,23 @@ export default function BlogStats(): ReactNode {
   const kpis = [
     {
       icon: 'lucide:newspaper',
-      label: translate({ id: 'pages.stats.metric.posts', message: 'Posts' }),
+      label: translate({ id: 'pages.overview.metric.posts', message: 'Posts' }),
       value: postCount,
     },
     {
       icon: 'lucide:file-text',
-      label: translate({ id: 'pages.stats.metric.words', message: 'Words' }),
+      label: translate({ id: 'pages.overview.metric.words', message: 'Words' }),
       value: wordCount,
     },
     {
       icon: 'lucide:tags',
-      label: translate({ id: 'pages.stats.metric.tags', message: 'Tags' }),
+      label: translate({ id: 'pages.overview.metric.tags', message: 'Tags' }),
       value: tagCount,
     },
     {
       icon: 'lucide:sparkles',
       label: translate({
-        id: 'pages.stats.metric.moments',
+        id: 'pages.overview.metric.moments',
         message: 'Moments',
       }),
       value: MOMENT_LIST.length,
@@ -120,7 +120,7 @@ export default function BlogStats(): ReactNode {
 
   return (
     <BlogScaffold title={TITLE} description={DESCRIPTION}>
-      <ArchiveTabsNav activeTab="stats" />
+      <ArchiveTabsNav activeTab="overview" />
       <div className={styles.kpiGrid}>
         {kpis.map((k) => (
           <DataCard

@@ -28,7 +28,7 @@ function useActiveBlogNav(): BlogNavKey {
   const archiveBase = useBaseUrl('/blog/archive');
   const tagsBase = useBaseUrl('/blog/tags');
   const authorsBase = useBaseUrl('/blog/authors');
-  const statsBase = useBaseUrl('/blog/stats');
+  const overviewBase = useBaseUrl('/blog/overview');
 
   const startsWith = (base: string) =>
     pathname === base ||
@@ -40,7 +40,7 @@ function useActiveBlogNav(): BlogNavKey {
     startsWith(archiveBase) ||
     startsWith(tagsBase) ||
     startsWith(authorsBase) ||
-    startsWith(statsBase)
+    startsWith(overviewBase)
   )
     return 'archive';
   return 'blog';
@@ -62,7 +62,7 @@ function ProfileCard() {
   const aboutHref = useBaseUrl('/about');
   const blogHref = useBaseUrl('/blog');
   const momentsHref = useBaseUrl('/blog/moments');
-  const archiveHref = useBaseUrl('/blog/archive');
+  const archiveHref = useBaseUrl('/blog/overview');
   const active = useActiveBlogNav();
   const title = translate({
     id: PROFILE_TITLE_ID,
