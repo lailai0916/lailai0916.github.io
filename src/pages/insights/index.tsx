@@ -10,8 +10,8 @@ import {
   PageContent,
 } from '@site/src/components/laikit/Page';
 import Card from '@site/src/components/laikit/Card';
-import TitleCard from '@site/src/components/laikit/TitleCard';
 import Skeleton from '@site/src/components/laikit/Skeleton';
+import Chart from '@site/src/components/laikit/Chart';
 import Segmented, {
   type SegmentedItem,
 } from '@site/src/components/laikit/Segmented';
@@ -25,7 +25,7 @@ import { useUmamiMetric } from '@site/src/hooks/useUmamiMetric';
 import { useAnimatedNumber } from '@site/src/hooks/useAnimatedNumber';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import { formatCompact } from '@site/src/utils/format';
-import Sparkline from './_components/Sparkline';
+import { toPageviewsData } from './_components/seriesFormat';
 import MetricList from './_components/MetricList';
 import metricListStyles from './_components/MetricList.module.css';
 import UptimeSection from './_components/UptimeSection';
@@ -266,34 +266,27 @@ function RangeBar({
 
 function PageviewsChart({ range }: { range: InsightsRange }) {
   const { data, status } = useUmamiPageviewsSeries(range);
+  const {
+    i18n: { currentLocale },
+  } = useDocusaurusContext();
   const series = data?.pageviews ?? [];
   const loading = status === 'loading';
+  const unit =
+    range === 1 ? 'hour' : range === 7 ? '6h' : range === 30 ? 'day' : 'week';
 
   return (
-    <TitleCard
-      size="sm"
+    <Chart
+      type="line"
       icon="lucide:line-chart"
       title={translate({
         id: 'pages.insights.chart.title',
         message: 'Pageviews Over Time',
       })}
-      padding="1.5rem 1.25rem 1.25rem"
+      data={toPageviewsData(series, unit, currentLocale)}
+      loading={loading || series.length === 0}
+      showGrid={false}
       className={styles.chartCard}
-    >
-      <Sparkline
-        data={series}
-        loading={loading}
-        unit={
-          range === 1
-            ? 'hour'
-            : range === 7
-              ? '6h'
-              : range === 30
-                ? 'day'
-                : 'week'
-        }
-      />
-    </TitleCard>
+    />
   );
 }
 

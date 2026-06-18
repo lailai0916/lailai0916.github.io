@@ -11,8 +11,7 @@ import {
 } from '@site/src/utils/blogData';
 import { MOMENT_LIST } from '@site/src/data/moments';
 import { formatBeijingDate, formatCompact } from '@site/src/utils/format';
-import BarChart, { type ChartDatum } from './_components/BarChart';
-import LineChart from './_components/LineChart';
+import Chart, { type ChartDatum } from '@site/src/components/laikit/Chart';
 import styles from './styles.module.css';
 
 const TITLE = translate({ id: 'pages.overview.title', message: 'Overview' });
@@ -132,12 +131,14 @@ export default function BlogStats(): ReactNode {
           />
         ))}
       </div>
-      <BarChart
+      <Chart
+        type="bar"
         title={MONTHLY_TITLE}
         icon="lucide:bar-chart-3"
         data={monthData}
       />
-      <LineChart
+      <Chart
+        type="line"
         title={CUMULATIVE_TITLE}
         icon="lucide:trending-up"
         data={cumulativeData}

@@ -512,9 +512,6 @@
   "pages.insights.heartbeat.noData": {
     "message": "暂无数据"
   },
-  "pages.insights.sparkline.ariaLabel": {
-    "message": "浏览量随时间变化"
-  },
   "pages.insights.systemStatus.title": {
     "message": "运行时快照"
   },
