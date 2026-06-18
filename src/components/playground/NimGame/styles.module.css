@@ -71,14 +71,6 @@ html[data-theme='dark'] .container {
     transform 160ms ease;
 }
 
-.token:not(:disabled):active {
-  transform: scale(0.9);
-}
-
-.token:disabled {
-  cursor: default;
-}
-
 .faded {
   opacity: 0.55;
 }
