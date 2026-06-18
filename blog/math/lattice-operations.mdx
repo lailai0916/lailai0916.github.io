@@ -1,0 +1,234 @@
+---
+title: 数学：同构的运算
+date: 2026-06-01T09:33:00+08:00
+authors: lailai
+tags: [math]
+---
+
+有些运算看起来属于不同领域，实际上是在同一个结构中反复出现的两种方向。
+
+{/* truncate */}
+
+## 参考资料
+
+- [格论 - 维基百科](<https://zh.wikipedia.org/wiki/格_(数学)>)
+- [布尔代数 - 维基百科](https://zh.wikipedia.org/wiki/布尔代数)
+- [德摩根定律 - 维基百科](https://zh.wikipedia.org/wiki/德摩根定律)
+
+## 对应关系
+
+先把几组运算放在一起看：
+
+|  场景  |       向上合并        |        向下收缩        |
+| :----: | :-------------------: | :--------------------: |
+|  数值  |      $\max(a,b)$      |      $\min(a,b)$       |
+| 布尔值 | $a\operatorname{or}b$ | $a\operatorname{and}b$ |
+|  逻辑  |    析取 $P\lor Q$     |    合取 $P\land Q$     |
+|  集合  |    并集 $A\cup B$     |     交集 $A\cap B$     |
+
+这些运算不属于同一种对象，但它们的行为非常相似：
+
+- 左边都表示「至少取到一个」「放宽条件」「更大」；
+- 右边都表示「同时满足」「收紧条件」「更小」。
+
+更抽象地说，它们分别对应格论中的 **join** 和 **meet**：
+
+$$
+\vee:\text{join}
+$$
+
+$$
+\wedge:\text{meet}
+$$
+
+在不同语境下，符号会换名字，但结构并没有变。
+
+## 布尔值
+
+如果把布尔值看成有序集合：
+
+$$
+\operatorname{false}<\operatorname{true}
+$$
+
+或者记作：
+
+$$
+0<1
+$$
+
+那么可以直接得到：
+
+$$
+a\operatorname{or}b=\max(a,b)
+$$
+
+$$
+a\operatorname{and}b=\min(a,b)
+$$
+
+例如：
+
+$$
+0\operatorname{or}1=1=\max(0,1)
+$$
+
+$$
+0\operatorname{and}1=0=\min(0,1)
+$$
+
+因此，在二值逻辑中，$\operatorname{or}$ 和 $\operatorname{and}$ 本身就是 $\max$ 和 $\min$。
+
+## 集合
+
+集合之间也有天然的大小关系，即包含关系：
+
+$$
+A\subseteq B
+$$
+
+在这个顺序下，$A\cup B$ 是同时包含 $A$ 和 $B$ 的最小集合，也就是最小上界：
+
+$$
+\begin{aligned}
+A&\subseteq A\cup B \\
+B&\subseteq A\cup B
+\end{aligned}
+$$
+
+而 $A\cap B$ 是同时被 $A$ 和 $B$ 包含的最大集合，也就是最大下界：
+
+$$
+\begin{aligned}
+A\cap B&\subseteq A \\
+A\cap B&\subseteq B
+\end{aligned}
+$$
+
+所以：
+
+$$
+A\cup B=\sup(A,B)
+$$
+
+$$
+A\cap B=\inf(A,B)
+$$
+
+如果把集合看成某个全集 $U$ 上的特征函数：
+
+$$
+\chi_A(x)=
+\begin{cases}
+1 & x\in A \\
+0 & x\notin A
+\end{cases}
+$$
+
+那么并集和交集可以写成逐点的 $\max$ 和 $\min$：
+
+$$
+\chi_{A\cup B}(x)=\max(\chi_A(x),\chi_B(x))
+$$
+
+$$
+\chi_{A\cap B}(x)=\min(\chi_A(x),\chi_B(x))
+$$
+
+这说明集合运算和布尔运算只是同一件事的两种视角。
+
+## 命题
+
+一个命题可以看成「在哪些情况下为真」的集合。
+
+设 $\Omega$ 是所有可能情况的集合，命题 $P$ 的真值集合为：
+
+$$
+S_P=\set{\omega\in\Omega\mid P(\omega)\text{ 为真}}
+$$
+
+那么：
+
+$$
+S_{P\lor Q}=S_P\cup S_Q
+$$
+
+$$
+S_{P\land Q}=S_P\cap S_Q
+$$
+
+也就是说：
+
+- 析取 $P\lor Q$ 对应并集；
+- 合取 $P\land Q$ 对应交集。
+
+从真值表看，它们又对应布尔值上的 $\max$ 和 $\min$。
+
+## 对偶
+
+这些结构通常成对出现，并且存在对偶关系。
+
+如果把顺序反过来：
+
+$$
+\le\longleftrightarrow\ge
+$$
+
+那么最大会变成最小，上界会变成下界，join 会变成 meet：
+
+$$
+\max\longleftrightarrow\min
+$$
+
+$$
+\cup\longleftrightarrow\cap
+$$
+
+$$
+\lor\longleftrightarrow\land
+$$
+
+在集合和逻辑中，这种对偶最典型的表现就是德摩根律：
+
+$$
+\overline{A\cup B}=\overline{A}\cap\overline{B}
+$$
+
+$$
+\overline{A\cap B}=\overline{A}\cup\overline{B}
+$$
+
+对应到命题逻辑：
+
+$$
+\neg(P\lor Q)=\neg P\land\neg Q
+$$
+
+$$
+\neg(P\land Q)=\neg P\lor\neg Q
+$$
+
+取反会反转真假，因此也会交换「或」与「且」。
+
+## 总结
+
+这几组运算的核心关系可以概括为：
+
+$$
+\text{join}=\max=\operatorname{or}=\lor=\cup
+$$
+
+$$
+\text{meet}=\min=\operatorname{and}=\land=\cap
+$$
+
+当然，这里的等号不是说它们作用在完全相同的对象上，而是说它们在各自结构中扮演相同的角色。
+
+数值、布尔值、集合、命题之间可以互相翻译：
+
+- 布尔值是最简单的有序集合；
+- 集合可以看成布尔值函数；
+- 命题可以看成满足它的情况集合；
+- $\max/\min$ 是这一结构在有序集合中的基本形式。
+
+所以这些概念并不是孤立记忆的四组符号，而是同一个「有序结构」在不同数学对象上的投影。
