@@ -35,6 +35,10 @@ const STATIC_MOMENTS: MomentItem[] = [
     images: ['https://cloud.lailai.one/f/eOLuw/macos26-dock.png'],
   },
   {
+    date: '2026-06-02T12:00:00+08:00',
+    content: '宇宙中随机出现一部 iPhone 的概率极低——但已经发生了。',
+  },
+  {
     date: '2026-05-31T15:55:00+08:00',
     share: {
       url: 'https://www.bilibili.com/video/BV1mkVn63EYQ',
