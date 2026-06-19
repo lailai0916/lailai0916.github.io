@@ -310,7 +310,7 @@ const sidebars: SidebarsConfig = {
         type: 'generated-index',
         description: '本章记录我的语文笔记。',
       },
-      items: ['note/chinese/required-texts'],
+      items: ['note/chinese/required-texts', 'note/chinese/essay'],
     },
     {
       type: 'category',
