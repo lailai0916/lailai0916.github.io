@@ -468,7 +468,18 @@ const sidebars: SidebarsConfig = {
       },
       collapsed: false,
       items: [
-        'note/english/pronunciation',
+        {
+          type: 'category',
+          label: '英语语音',
+          link: {
+            type: 'generated-index',
+            description: '本章介绍英语语音相关知识，包括自然拼读和国际音标。',
+          },
+          items: [
+            'note/english/pronunciation/ipa',
+            'note/english/pronunciation/phonics',
+          ],
+        },
         {
           type: 'category',
           label: '英语词汇',
