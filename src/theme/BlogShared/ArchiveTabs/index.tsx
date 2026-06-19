@@ -37,7 +37,7 @@ const PAGE_TITLE = translate({
   id: 'blog.pages.archive.title',
   message: 'Archive',
 });
-const PAGE_DESCRIPTION = "Archive of lailai's blog";
+const PAGE_DESCRIPTION = "Archive of lailai's Blog";
 const YEAR_SELECT_TITLE = translate({
   id: 'blog.pages.archive.yearSelect',
   message: 'Years',
