@@ -18,16 +18,6 @@ export interface ShareCardProps {
 
 const SOURCE_RULES: Array<{ test: RegExp; label: string; icon: string }> = [
   {
-    test: /(?:^|\.)bilibili\.com$|^b23\.tv$/i,
-    label: 'bilibili',
-    icon: 'simple-icons:bilibili',
-  },
-  {
-    test: /(?:^|\.)zhihu\.com$|^zhuanlan\.zhihu\.com$/i,
-    label: '知乎',
-    icon: 'simple-icons:zhihu',
-  },
-  {
     test: /(?:^|\.)(?:x\.com|twitter\.com|t\.co)$/i,
     label: 'X',
     icon: 'simple-icons:x',
@@ -43,48 +33,36 @@ const SOURCE_RULES: Array<{ test: RegExp; label: string; icon: string }> = [
     icon: 'simple-icons:youtube',
   },
   {
-    test: /(?:^|\.)(?:weibo\.com|weibo\.cn)$/i,
-    label: '微博',
-    icon: 'simple-icons:sinaweibo',
-  },
-  {
-    test: /(?:^|\.)xiaohongshu\.com$|^xhslink\.com$/i,
-    label: '小红书',
-    icon: 'simple-icons:xiaohongshu',
-  },
-  { test: /(?:^|\.)juejin\.cn$/i, label: '掘金', icon: 'simple-icons:juejin' },
-  { test: /(?:^|\.)douyin\.com$/i, label: '抖音', icon: 'simple-icons:tiktok' },
-  {
     test: /(?:^|\.)(?:reddit\.com|redd\.it)$/i,
     label: 'Reddit',
     icon: 'simple-icons:reddit',
   },
+  { test: /(?:^|\.)apple\.com$/i, label: 'Apple', icon: 'simple-icons:apple' },
   {
-    test: /(?:^|\.)(?:medium\.com)$/i,
-    label: 'Medium',
-    icon: 'simple-icons:medium',
-  },
-  {
-    test: /(?:^|\.)(?:notion\.so|notion\.site)$/i,
-    label: 'Notion',
-    icon: 'simple-icons:notion',
+    test: /(?:^|\.)anthropic\.com$/i,
+    label: 'Anthropic',
+    icon: 'simple-icons:anthropic',
   },
   {
     test: /(?:^|\.)spotify\.com$/i,
     label: 'Spotify',
     icon: 'simple-icons:spotify',
   },
-  { test: /(?:^|\.)apple\.com$/i, label: 'Apple', icon: 'simple-icons:apple' },
+  {
+    test: /(?:^|\.)bilibili\.com$|^b23\.tv$/i,
+    label: 'bilibili',
+    icon: 'simple-icons:bilibili',
+  },
+  {
+    test: /(?:^|\.)zhihu\.com$|^zhuanlan\.zhihu\.com$/i,
+    label: '知乎',
+    icon: 'simple-icons:zhihu',
+  },
   { test: /(?:^|\.)luogu\.com\.cn$/i, label: '洛谷', icon: 'lucide:code' },
   {
     test: /(?:^|\.)codeforces\.com$/i,
     label: 'Codeforces',
     icon: 'simple-icons:codeforces',
-  },
-  {
-    test: /(?:^|\.)anthropic\.com$/i,
-    label: 'Anthropic',
-    icon: 'simple-icons:anthropic',
   },
 ];
 
