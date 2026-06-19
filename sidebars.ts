@@ -553,21 +553,21 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: 'category',
-      label: '历史',
-      link: {
-        type: 'doc',
-        id: 'note/history/index',
-      },
-      items: ['note/history/china', 'note/history/world'],
-    },
-    {
-      type: 'category',
       label: '生物',
       link: {
         type: 'doc',
         id: 'note/biology/index',
       },
       items: ['note/biology/molecule-cell', 'note/biology/heredity-evolution'],
+    },
+    {
+      type: 'category',
+      label: '历史',
+      link: {
+        type: 'doc',
+        id: 'note/history/index',
+      },
+      items: ['note/history/china', 'note/history/world'],
     },
     {
       type: 'category',
