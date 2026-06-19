@@ -663,7 +663,6 @@ const sidebars: SidebarsConfig = {
       items: [
         'project/guides/text',
         'project/guides/code',
-        'project/guides/project',
         'project/guides/design',
         'project/guides/markdown',
         'project/guides/latex',
