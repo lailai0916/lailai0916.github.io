@@ -41,7 +41,7 @@ lailai's site is mostly in Simplified Chinese, with three content streams (`blog
 - Em-dash for asides is `——` (double); single `—` with spaces is the bilingual list separator: `Athens, Greece — 希腊 雅典`.
 - Ellipsis is `……` (full-width six-dot), never `...`.
 - **Ranges have exactly two forms.** Inside genuine math, use `\sim` — variable/index bounds (`$1\sim n$`), distributions (`$X\sim N(\mu,\sigma^2)$`), or operands that need math notation (`$10^7\sim 10^{13}$`). Everywhere else (prose ranges — times, dates/years/eras, ages, measurements, counts) use a plain **en dash `–`**, unwrapped to plain text, **no surrounding spaces** (`1840–1842 年`, `09:00–11:00`, `5–10 km`, `13–19 岁`); add spaces only when an operand itself contains a space (`公元前 2070 年 – 公元前 1600 年`). Never use a tilde character (`～` / `〜` / `~`) for a range, and never `\sim` for a prose range. (A `～` denoting something else — e.g. the high-energy phosphate bond in `A—P～P～P` — is not a range and stays.)
-- **Numbers are plain text in prose; `$...$` is for genuine math only.** A quantity in a narrative sentence or table — year, date, time, score, count, price, duration, percentage, measurement, ordinal/label — is plain text (`616 分`, `2 月 26 日`, `95%`, `17 km`, `第 10 题`, `20 世纪`). Keep `$...$` only when the number is part of a formula, expression, relation, variable / subscript, or operand of a math operator (`$2^{10}=1024$`, `$3:1$`, `$\mu\pm 3\sigma$`, `$O(n\log n)$`, `$X\sim N(\mu,\sigma^2)$`). Identifiers (model / version numbers, `Day 1`) are plain text too.
+- **Numbers are plain text in prose; `$...$` is for genuine math only.** A quantity in a narrative sentence or table — year, date, time, score, count, price, duration, percentage, measurement, ordinal/label — is plain text (`616 分`, `2 月 26 日`, `95%`, `17 km`, `第 10 题`, `20 世纪`). Keep `$...$` only when the number is part of a formula, expression, relation, variable / subscript, or operand of a math operator (`$2^{10}=1024$`, `$3:1$`, `$\mu\pm 3\sigma$`, `$O(n\log n)$`, `$X\sim N(\mu,\sigma^2)$`). Identifiers (model / version numbers, `Day 1`) are plain text too. **Exception — `blog/solution/*.mdx` is out of scope for this rule.** Those posts mirror their Luogu column counterparts and follow the OI/Luogu convention of wrapping every numeric quantity in math (`$1$ 组`, `$5$ 个`, `$20$ 种`); that style is internally consistent and intentional — do not unwrap it. (Dates still stay plain text even there: `2025 年 3 月 29 日`, never `$2025$ 年`.)
 - `~~strikethrough~~` is reserved for **wry self-mocking parentheticals**, never for actual deletion: `~~细胞膜融合~~。`, `~~半小时过 T1，罚坐四小时。~~`. Use sparingly.
 - First-person `我` in personal/record/travel posts and casual asides; inclusive `我们` in math/algorithm exposition.
 - Emojis are rare. Allowed: flag emojis in travel post titles (🇭🇰 / 🇹🇭), decorative bullets in long doc landing pages (📦). Never in math or solution posts.
@@ -61,7 +61,7 @@ Acronym after a full-width comma inside the parentheses, not after a slash or da
 
 ## Math (KaTeX)
 
-General math rules → skill [`latex-math-style.md`](../skills/lailai-skill/references/latex-math-style.md) (`$...$` inline, `$$...$$` display on its own line, `\frac` not `\dfrac`, `\dots`, single-letter vars, big-O without constants, wrap every numeric quantity in math). **Site gotcha:** cross-out is `\cancel{}` (math-mode), **not** `\sout` (text-mode-only — trips KaTeX's `mathVsSout` strict warning). Other site macros in use: `\mathrm{d}x`, `\set{...}`, `\bmod`, `\displaystyle` for cell sizing.
+General math rules → skill [`latex-math-style.md`](../skills/lailai-skill/references/latex-math-style.md) (`$...$` inline, `$$...$$` display on its own line, `\frac` not `\dfrac`, `\dots`, single-letter vars, big-O without constants; numbers default to plain text and `$...$` is for genuine math only — see the prose-number rule above, and the `blog/solution/` exception). **Site gotcha:** cross-out is `\cancel{}` (math-mode), **not** `\sout` (text-mode-only — trips KaTeX's `mathVsSout` strict warning). Other site macros in use: `\mathrm{d}x`, `\set{...}`, `\bmod`, `\displaystyle` for cell sizing.
 
 ## Code blocks
 
@@ -103,6 +103,8 @@ General math rules → skill [`latex-math-style.md`](../skills/lailai-skill/refe
 - `## 参考资料` lists use the format `- [Title - Source](url)` with " - Source" suffix: `- [积分 - 维基百科](...)`, `- [最大公约数 - OI Wiki](...)`. Preferred sources: OI Wiki, Wikipedia (zh & en), OEIS.
 
 ## Solution-post template (mandatory shape)
+
+> **`blog/solution/*.mdx` mirror Luogu — never edit one without separate sign-off.** Every solution post has a synced counterpart published on the Luogu column (the `lid` frontmatter id). A change made here silently desyncs the two copies, so these files are **out of scope for any site-wide sweep, reformat, or convention pass** — when a task touches them, single them out and report them separately, and only edit after the maintainer explicitly approves that specific change. (This is also why the prose-number rule above exempts them.)
 
 Every `blog/solution/*.mdx` follows this exact order:
 
