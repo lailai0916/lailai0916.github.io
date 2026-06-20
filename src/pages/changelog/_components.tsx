@@ -11,6 +11,7 @@ const EMPTY_LABEL = translate({
 export function Changelog() {
   const { i18n } = useDocusaurusContext();
 
+  const isZh = i18n.currentLocale === 'zh-Hans';
   const monthFmt = useMemo(
     () => new Intl.DateTimeFormat(i18n.currentLocale, { month: 'long' }),
     [i18n.currentLocale]
@@ -52,9 +53,11 @@ export function Changelog() {
             return (
               <section key={`${year}-${month}`}>
                 <h3>
-                  {monthFmt.format(
-                    new Date(Number(year), Number(month) - 1, 1)
-                  )}
+                  {isZh
+                    ? `${Number(month)} 月`
+                    : monthFmt.format(
+                        new Date(Number(year), Number(month) - 1, 1)
+                      )}
                 </h3>
                 <ul>
                   {items.map((item, i) => {
