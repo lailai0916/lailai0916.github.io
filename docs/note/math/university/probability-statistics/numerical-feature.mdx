@@ -16,7 +16,7 @@ title: 数字特征
 - **方差**：分布的「离散程度」，数据散得有多开。
 - **协方差 / 相关系数**：两个变量的「联动程度」，一个变大时另一个倾向于怎么变。
 
-这些数字不需要知道完整分布也能比较、能运算，是连接概率论与 [数理统计](statistics.mdx) 的关键。
+这些数字不需要知道完整分布也能比较、能运算，是连接概率论与 [数理统计](/docs/note/math/university/probability-statistics/statistics) 的关键。
 
 ## 数学期望
 
@@ -28,7 +28,7 @@ title: 数字特征
 
 连续：$E(X)=\displaystyle\int_{-\infty}^{+\infty}xf(x)\,\mathrm{d}x$（要求积分 **绝对收敛**）。
 
-直觉上，把每个取值乘以它出现的「权重」（概率 / 密度）再累加，得到的就是大量重复试验后样本均值会稳定到的那个值——这正是 [大数定律](limit-theorem.mdx) 保证的。
+直觉上，把每个取值乘以它出现的「权重」（概率 / 密度）再累加，得到的就是大量重复试验后样本均值会稳定到的那个值——这正是 [大数定律](/docs/note/math/university/probability-statistics/limit-theorem) 保证的。
 
 :::tip
 
@@ -122,7 +122,7 @@ $$
 X^*=\frac{X-E(X)}{\sigma(X)}\ \Rightarrow\ E(X^*)=0,\ D(X^*)=1
 $$
 
-「减期望、除标准差」把任何随机变量都拉到「中心为 $0$、散度为 $1$」的标准刻度上，便于横向比较。这正是 [正态标准化](distribution.mdx) 背后的统一操作。
+「减期望、除标准差」把任何随机变量都拉到「中心为 $0$、散度为 $1$」的标准刻度上，便于横向比较。这正是 [正态标准化](/docs/note/math/university/probability-statistics/distribution) 背后的统一操作。
 
 ## 常见分布的期望与方差
 
@@ -264,7 +264,7 @@ $$
 - 三阶中心矩与 **偏度**（Skewness）相关，刻画分布的 **左右不对称**。
 - 四阶中心矩与 **峰度**（Kurtosis）相关，刻画 **尾部的厚薄**。
 
-矩是 [数理统计](statistics.mdx) 中 **矩估计法** 的理论出发点：用样本矩去估计总体矩。
+矩是 [数理统计](/docs/note/math/university/probability-statistics/statistics) 中 **矩估计法** 的理论出发点：用样本矩去估计总体矩。
 
 ## 协方差矩阵
 
@@ -284,7 +284,7 @@ $$
 E(Y)=E\big(E(Y\mid X)\big)=\sum_i E(Y\mid X=x_i)P(X=x_i)
 $$
 
-它是 [全概率公式](event.mdx) 在期望上的翻版：**先分情况算条件期望，再按各情况的概率加权平均**。处理「分阶段、分类别」的期望问题时极为顺手。
+它是 [全概率公式](/docs/note/math/university/probability-statistics/event) 在期望上的翻版：**先分情况算条件期望，再按各情况的概率加权平均**。处理「分阶段、分类别」的期望问题时极为顺手。
 
 例（按情况加权）：某商店每天来客数 $X$ 服从泊松分布、$E(X)=20$，每位顾客的消费额独立同分布、均值 $E(Y)=50$ 元。求当天总营业额 $S$ 的期望。固定来客数 $X=n$ 时 $E(S\mid X=n)=50n$，即 $E(S\mid X)=50X$，再对 $X$ 求期望：
 

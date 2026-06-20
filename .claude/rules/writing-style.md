@@ -98,7 +98,7 @@ General math rules → skill [`latex-math-style.md`](../skills/lailai-skill/refe
 
 ## Links and references
 
-- Internal cross-post links use **absolute site paths**: `[《2025 年浙江中考数学第 24 题解析》](/blog/math/zjzk-2025-math-q24)`. Relative `../` paths within the same content tree are acceptable.
+- **All internal links use absolute site paths** (`/docs/...`, `/blog/...`) — **no file extension, never relative**. e.g. `[《2025 年浙江中考数学第 24 题解析》](/blog/math/zjzk-2025-math-q24)`, `[ST 表](/docs/contest/ds/sparse-table)`. (Relative-vs-absolute and with-vs-without `.mdx` are functionally near-equivalent here — all are checked by `onBrokenLinks: 'throw'` — but absolute-without-extension is the single consistent form: greppable, source-move-proof, locale-safe, one rule for blog + docs.)
 - External links are always `[text](url)`. Bare URLs appear only inside code fences. No reference-style `[text][1]` links.
 - `## 参考资料` lists use the format `- [Title - Source](url)` with " - Source" suffix: `- [积分 - 维基百科](...)`, `- [最大公约数 - OI Wiki](...)`. Preferred sources: OI Wiki, Wikipedia (zh & en), OEIS.
 

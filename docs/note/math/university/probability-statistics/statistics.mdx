@@ -10,14 +10,14 @@ title: 数理统计
 
 ## 引入
 
-[概率论](event.mdx) 是「已知分布、推断样本」；**数理统计**（Mathematical Statistics）反过来，是「已知样本、推断分布」。现实里总体的真实分布往往未知，我们只握有有限的观测数据，要靠它们去猜测背后的规律。
+[概率论](/docs/note/math/university/probability-statistics/event) 是「已知分布、推断样本」；**数理统计**（Mathematical Statistics）反过来，是「已知样本、推断分布」。现实里总体的真实分布往往未知，我们只握有有限的观测数据，要靠它们去猜测背后的规律。
 
 两大基本任务：
 
 - **参数估计**（Parameter Estimation）：用样本估计未知参数（分布的形状已知、只缺几个参数）。
 - **假设检验**（Hypothesis Testing）：用样本判断关于总体的某个命题是否成立。
 
-把它们和概率论连起来的，是 [大数定律与中心极限定理](limit-theorem.mdx)——前者保证「样本均值会收敛于总体期望」，后者给出统计量的近似分布，估计与检验才有据可依。
+把它们和概率论连起来的，是 [大数定律与中心极限定理](/docs/note/math/university/probability-statistics/limit-theorem)——前者保证「样本均值会收敛于总体期望」，后者给出统计量的近似分布，估计与检验才有据可依。
 
 ## 基本概念
 
@@ -139,7 +139,7 @@ $$
 
 **矩估计法**（Method of Moments）的思想极朴素：**用样本矩去估计总体矩**。总体的各阶矩是 $\theta$ 的函数，令「总体矩 = 样本矩」列方程，解出 $\theta$ 即可。
 
-要估几个参数，就用到几阶矩。比如估正态的 $\mu,\sigma^2$：令一阶矩 $E(X)=\bar X$、二阶中心矩 $D(X)=B_2$，立刻得到 $\hat\mu=\bar X$、$\hat\sigma^2=B_2$。它的底气来自 [大数定律](limit-theorem.mdx)——样本矩依概率收敛于总体矩。
+要估几个参数，就用到几阶矩。比如估正态的 $\mu,\sigma^2$：令一阶矩 $E(X)=\bar X$、二阶中心矩 $D(X)=B_2$，立刻得到 $\hat\mu=\bar X$、$\hat\sigma^2=B_2$。它的底气来自 [大数定律](/docs/note/math/university/probability-statistics/limit-theorem)——样本矩依概率收敛于总体矩。
 
 例（单参数矩估计）：总体 $X\sim U(0,\theta)$，由样本 $X_1,\dots,X_n$ 估 $\theta$。一阶总体矩 $E(X)=\frac\theta2$，令它等于样本一阶矩 $\bar X$：
 
