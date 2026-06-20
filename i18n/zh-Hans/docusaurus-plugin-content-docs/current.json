@@ -271,10 +271,6 @@
     "message": "地理",
     "description": "The label for category '地理' in sidebar 'noteSidebar'"
   },
-  "sidebar.noteSidebar.category.其他": {
-    "message": "其他",
-    "description": "The label for category '其他' in sidebar 'noteSidebar'"
-  },
   "sidebar.projectSidebar.category.Personal": {
     "message": "Personal",
     "description": "The label for category 'Personal' in sidebar 'projectSidebar'"

@@ -589,16 +589,6 @@ const sidebars: SidebarsConfig = {
       },
       items: ['note/geography/physical', 'note/geography/human'],
     },
-    {
-      type: 'category',
-      label: '其他',
-      items: [
-        'note/other/devices',
-        'note/other/edc',
-        'note/other/software',
-        'note/other/bilibili',
-      ],
-    },
   ],
   projectSidebar: [
     'project/index',
