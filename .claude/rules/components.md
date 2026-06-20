@@ -67,7 +67,9 @@ Every stylesheet follows one structure. The overriding constraint is that reorga
 
 ## MDX author-facing widgets
 
-Components registered in `src/theme/MDXComponents.tsx` are globally available in every `.mdx` file with no import. Current set: `BrowserWindow` (+ `IframeWindow`, `ImageWindow`), `Notation`, `GitHub`, `Quote`, `Desmos`, `Problem`, plus the Docusaurus `Tabs` / `TabItem` / `DocCardList` (the latter swizzled to render laikit `LinkCard`s in a responsive grid — see Theme overrides). When you add a widget meant for authors, register it here; otherwise it must be imported explicitly in the MDX. Author-side usage conventions for these widgets live in `.claude/rules/writing-style.md`.
+Components registered in `src/theme/MDXComponents/index.tsx` are globally available in every `.mdx` file with no import. Current set: `BrowserWindow` (+ `IframeWindow`, `ImageWindow`), `Notation`, `GitHub`, `Quote`, `Desmos`, `Problem`, plus the Docusaurus `Tabs` / `TabItem` / `DocCardList` (the latter swizzled to render laikit `LinkCard`s in a responsive grid — see Theme overrides). When you add a widget meant for authors, register it here; otherwise it must be imported explicitly in the MDX. Author-side usage conventions for these widgets live in `.claude/rules/writing-style.md`.
+
+**Explicitly-imported page demos** (not registered): `src/components/Countdown` (a birthday countdown `Card`) and `src/components/playground/*` (`FourierTransform`, `GameOfLife`, `LorenzAttractor`, `NeuralNetwork`, `NimGame` — interactive `<canvas>`/React demos) are one-off widgets imported by `import` in the MDX that uses them — today the `docs/project/index.mdx` landing page (plus one playground demo in `docs/note/english/vocabulary/gaokao.mdx`). They are page showcases, not reusable primitives; keep new playground demos under `playground/` and import them where used rather than registering them globally.
 
 ## Theme overrides
 
