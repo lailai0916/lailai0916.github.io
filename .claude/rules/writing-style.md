@@ -37,6 +37,7 @@ lailai's site is mostly in Simplified Chinese, with three content streams (`blog
 
 - **Chinese punctuation is full-width** (`，。：；？！「」《》`) in CJK prose. Half-width only inside inline code, identifiers, English clauses, or math. Quotes use 「」 (corner brackets), not `""`. Book/article titles use 《》.
 - **Always put a space between Chinese and Latin/code/math runs**: `使用 React`, `时间复杂度为 $O(n\log n)$。` Never `使用React` or `数列$S_k$`.
+- **Number–unit spacing splits by unit class, not one rule.** A **physical measurement in running prose** takes a space: `15 km`, `1000 m`, `70 kg`, `5 cm` (this is the SI/standard form, and matches the geography notes). But **digital-storage and electronics-spec units follow industry convention and stay closed**: `256GB`, `1TB`, `36GB`, `140W`, `15W`, `46mm` (Apple-Watch case), `4K`. Currency symbols prefix and stay closed (`¥68`, `$20`); `%` and `°` stay closed (`95%`, `90°`). Identifiers/model numbers are closed too (`A15`, `S10`, `RTX 5090`). Rule of thumb: if it reads like a product spec/config string, close it up; if it's a quantity in a sentence, space it.
 - Sentence-final punctuation goes **outside** inline code/math: `共有 $n$ 种糖果，` not `共有 $n$ 种糖果。`.
 - Em-dash for asides is `——` (double); single `—` with spaces is the bilingual list separator: `Athens, Greece — 希腊 雅典`.
 - Ellipsis is `……` (full-width six-dot), never `...`.
