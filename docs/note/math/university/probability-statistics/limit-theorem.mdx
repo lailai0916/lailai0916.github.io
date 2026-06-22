@@ -22,7 +22,7 @@ title: 大数定律与中心极限定理
 **切比雪夫不等式**（Chebyshev's Inequality）：对任意 $\varepsilon>0$，
 
 $$
-P\big(|X-E(X)|\ge \varepsilon\big)\le\frac{D(X)}{\varepsilon^2}
+P\big(|X-E(X)|\ge\varepsilon\big)\le\frac{D(X)}{\varepsilon^2}
 $$
 
 它给出「$X$ 偏离期望超过 $\varepsilon$」这件事的概率上界。换个角度，取 $\varepsilon=k\sigma$ 就是「偏离超过 $k$ 个标准差的概率不超过 $\frac{1}{k^2}$」——比如偏离 $3$ 个标准差以上的概率至多 $\frac{1}{9}\approx 11\%$。
@@ -58,7 +58,7 @@ $$
 随机变量列 $X_n$ **依概率收敛**（Convergence in Probability）于 $X$，记为 $X_n\xrightarrow{P}X$，定义为：
 
 $$
-\forall \varepsilon>0,\quad \lim_{n\to\infty}P\big(|X_n-X|\ge\varepsilon\big)=0
+\forall\varepsilon>0,\quad\lim_{n\to\infty}P\big(|X_n-X|\ge\varepsilon\big)=0
 $$
 
 它的意思不是「$X_n$ 一定会等于 $X$」，而是「当 $n$ 很大时，$X_n$ 偏离 $X$ 超过任意小量 $\varepsilon$ 的 **概率** 趋于 $0$」——偏差仍可能发生，只是越来越罕见。大数定律本质上就是各种「样本均值依概率收敛于期望」的命题。

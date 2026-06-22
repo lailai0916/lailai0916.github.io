@@ -24,7 +24,7 @@ title: 矩阵
 ### 加法与数乘
 
 $$
-(A+B)_{ij}=a_{ij}+b_{ij},\qquad (kA)_{ij}=ka_{ij}
+(A+B)_{ij}=a_{ij}+b_{ij},\qquad(kA)_{ij}=ka_{ij}
 $$
 
 要求 $A,B$ **同型**（行列数都相同）。加法和数乘都是 **逐元素** 进行的，满足交换律、结合律、分配律，规则和普通数的加法、数乘一致。
@@ -43,8 +43,8 @@ $$
 
 $$
 \begin{aligned}
-c_{11}&=1\cdot5+2\cdot7=19, & c_{12}&=1\cdot6+2\cdot8=22,\\
-c_{21}&=3\cdot5+4\cdot7=43, & c_{22}&=3\cdot6+4\cdot8=50
+  c_{11} & =1\cdot5+2\cdot7=19, & c_{12} & =1\cdot6+2\cdot8=22, \\
+  c_{21} & =3\cdot5+4\cdot7=43, & c_{22} & =3\cdot6+4\cdot8=50
 \end{aligned}
 $$
 
@@ -87,7 +87,7 @@ $$
 转置就是沿主对角线「翻折」，把行变成列。常用性质：
 
 $$
-(A+B)^T=A^T+B^T,\qquad (kA)^T=kA^T,\qquad (A^T)^T=A
+(A+B)^T=A^T+B^T,\qquad(kA)^T=kA^T,\qquad(A^T)^T=A
 $$
 
 $$
@@ -155,7 +155,13 @@ $$
 伴随矩阵法适合 **二阶、三阶** 的手算，尤其二阶有口诀：
 
 $$
-\begin{pmatrix}a&b\\c&d\end{pmatrix}^{-1}=\frac{1}{ad-bc}\begin{pmatrix}d&-b\\-c&a\end{pmatrix}
+\begin{pmatrix}
+  a & b \\
+  c & d
+\end{pmatrix}^{-1}=\frac{1}{ad-bc}\begin{pmatrix}
+  d & -b \\
+  -c & a
+\end{pmatrix}
 $$
 
 「主对角线对调、副对角线变号，再除以行列式」。高阶时代数余子式太多，改用初等变换法。
@@ -172,16 +178,51 @@ $$
 
 $$
 \begin{aligned}
-A_{11}&=+\begin{vmatrix}2&1\\4&3\end{vmatrix}=2, & A_{12}&=-\begin{vmatrix}2&1\\3&3\end{vmatrix}=-3, & A_{13}&=+\begin{vmatrix}2&2\\3&4\end{vmatrix}=2,\\
-A_{21}&=-\begin{vmatrix}2&3\\4&3\end{vmatrix}=6, & A_{22}&=+\begin{vmatrix}1&3\\3&3\end{vmatrix}=-6, & A_{23}&=-\begin{vmatrix}1&2\\3&4\end{vmatrix}=2,\\
-A_{31}&=+\begin{vmatrix}2&3\\2&1\end{vmatrix}=-4, & A_{32}&=-\begin{vmatrix}1&3\\2&1\end{vmatrix}=5, & A_{33}&=+\begin{vmatrix}1&2\\2&2\end{vmatrix}=-2
+  A_{11} & =+\begin{vmatrix}
+    2 & 1 \\
+    4 & 3
+  \end{vmatrix}=2, & A_{12} & =-\begin{vmatrix}
+    2 & 1 \\
+    3 & 3
+  \end{vmatrix}=-3, & A_{13} & =+\begin{vmatrix}
+    2 & 2 \\
+    3 & 4
+  \end{vmatrix}=2, \\
+  A_{21} & =-\begin{vmatrix}
+    2 & 3 \\
+    4 & 3
+  \end{vmatrix}=6, & A_{22} & =+\begin{vmatrix}
+    1 & 3 \\
+    3 & 3
+  \end{vmatrix}=-6, & A_{23} & =-\begin{vmatrix}
+    1 & 2 \\
+    3 & 4
+  \end{vmatrix}=2, \\
+  A_{31} & =+\begin{vmatrix}
+    2 & 3 \\
+    2 & 1
+  \end{vmatrix}=-4, & A_{32} & =-\begin{vmatrix}
+    1 & 3 \\
+    2 & 1
+  \end{vmatrix}=5, & A_{33} & =+\begin{vmatrix}
+    1 & 2 \\
+    2 & 2
+  \end{vmatrix}=-2
 \end{aligned}
 $$
 
 伴随矩阵 $A^*$ 是代数余子式的 **转置**（第 $i$ 行第 $j$ 列放 $A_{ji}$）：
 
 $$
-A^*=\begin{pmatrix}A_{11}&A_{21}&A_{31}\\A_{12}&A_{22}&A_{32}\\A_{13}&A_{23}&A_{33}\end{pmatrix}=\begin{pmatrix}2&6&-4\\-3&-6&5\\2&2&-2\end{pmatrix}
+A^*=\begin{pmatrix}
+  A_{11} & A_{21} & A_{31} \\
+  A_{12} & A_{22} & A_{32} \\
+  A_{13} & A_{23} & A_{33}
+\end{pmatrix}=\begin{pmatrix}
+  2 & 6 & -4 \\
+  -3 & -6 & 5 \\
+  2 & 2 & -2
+\end{pmatrix}
 $$
 
 于是 $A^{-1}=\dfrac{1}{|A|}A^*=\dfrac12\begin{pmatrix}2&6&-4\\-3&-6&5\\2&2&-2\end{pmatrix}=\begin{pmatrix}1&3&-2\\-\frac32&-3&\frac52\\1&1&-1\end{pmatrix}$。可乘回 $AA^{-1}=E$ 验算。注意伴随矩阵的转置一步极易出错——代数余子式按 **行** 算出来，填进 $A^*$ 时要按 **列** 放。
@@ -199,25 +240,45 @@ $$
 例：用初等行变换求 $A=\begin{pmatrix}1&2&3\\2&5&3\\1&0&8\end{pmatrix}$ 的逆。写出 $(A\mid E)$，逐步把左半化成 $E$：
 
 $$
-\left(\begin{array}{ccc|ccc}1&2&3&1&0&0\\2&5&3&0&1&0\\1&0&8&0&0&1\end{array}\right)
+\left(\begin{array}{ccc|ccc}
+  1 & 2 & 3 & 1 & 0 & 0 \\
+  2 & 5 & 3 & 0 & 1 & 0 \\
+  1 & 0 & 8 & 0 & 0 & 1
+\end{array}\right)
 \xrightarrow{r_2-2r_1,\ r_3-r_1}
-\left(\begin{array}{ccc|ccc}1&2&3&1&0&0\\0&1&-3&-2&1&0\\0&-2&5&-1&0&1\end{array}\right)
+\left(\begin{array}{ccc|ccc}
+  1 & 2 & 3 & 1 & 0 & 0 \\
+  0 & 1 & -3 & -2 & 1 & 0 \\
+  0 & -2 & 5 & -1 & 0 & 1
+\end{array}\right)
 $$
 
 用第 $2$ 行消第 $1$、$3$ 行的第 $2$ 列（$r_1-2r_2$、$r_3+2r_2$）：
 
 $$
 \xrightarrow{r_1-2r_2,\ r_3+2r_2}
-\left(\begin{array}{ccc|ccc}1&0&9&5&-2&0\\0&1&-3&-2&1&0\\0&0&-1&-5&2&1\end{array}\right)
+\left(\begin{array}{ccc|ccc}
+  1 & 0 & 9 & 5 & -2 & 0 \\
+  0 & 1 & -3 & -2 & 1 & 0 \\
+  0 & 0 & -1 & -5 & 2 & 1
+\end{array}\right)
 $$
 
 把第 $3$ 行乘 $-1$ 使主元为 $1$，再消第 $1$、$2$ 行的第 $3$ 列（$r_1-9r_3$、$r_2+3r_3$）：
 
 $$
 \xrightarrow{-r_3}
-\left(\begin{array}{ccc|ccc}1&0&9&5&-2&0\\0&1&-3&-2&1&0\\0&0&1&5&-2&-1\end{array}\right)
+\left(\begin{array}{ccc|ccc}
+  1 & 0 & 9 & 5 & -2 & 0 \\
+  0 & 1 & -3 & -2 & 1 & 0 \\
+  0 & 0 & 1 & 5 & -2 & -1
+\end{array}\right)
 \xrightarrow{r_1-9r_3,\ r_2+3r_3}
-\left(\begin{array}{ccc|ccc}1&0&0&-40&16&9\\0&1&0&13&-5&-3\\0&0&1&5&-2&-1\end{array}\right)
+\left(\begin{array}{ccc|ccc}
+  1 & 0 & 0 & -40 & 16 & 9 \\
+  0 & 1 & 0 & 13 & -5 & -3 \\
+  0 & 0 & 1 & 5 & -2 & -1
+\end{array}\right)
 $$
 
 左半成了 $E$，右半即 $A^{-1}=\begin{pmatrix}-40&16&9\\13&-5&-3\\5&-2&-1\end{pmatrix}$。整个过程只用行变换，比算九个代数余子式利落得多。
@@ -225,11 +286,11 @@ $$
 ### 运算性质
 
 $$
-(A^{-1})^{-1}=A,\qquad (kA)^{-1}=\frac{1}{k}A^{-1}\,(k\ne 0)
+(A^{-1})^{-1}=A,\qquad(kA)^{-1}=\frac{1}{k}A^{-1}\,(k\ne 0)
 $$
 
 $$
-(AB)^{-1}=B^{-1}A^{-1},\qquad (A^T)^{-1}=(A^{-1})^T,\qquad |A^{-1}|=\frac{1}{|A|}
+(AB)^{-1}=B^{-1}A^{-1},\qquad(A^T)^{-1}=(A^{-1})^T,\qquad |A^{-1}|=\frac{1}{|A|}
 $$
 
 ### 解矩阵方程
@@ -239,7 +300,16 @@ $$
 例：解 $AX=B$，其中 $A=\begin{pmatrix}2&1\\1&1\end{pmatrix}$、$B=\begin{pmatrix}1&3\\2&5\end{pmatrix}$。$A$ 可逆，$|A|=1$，由二阶口诀 $A^{-1}=\begin{pmatrix}1&-1\\-1&2\end{pmatrix}$，于是
 
 $$
-X=A^{-1}B=\begin{pmatrix}1&-1\\-1&2\end{pmatrix}\begin{pmatrix}1&3\\2&5\end{pmatrix}=\begin{pmatrix}-1&-2\\3&7\end{pmatrix}
+X=A^{-1}B=\begin{pmatrix}
+  1 & -1 \\
+  -1 & 2
+\end{pmatrix}\begin{pmatrix}
+  1 & 3 \\
+  2 & 5
+\end{pmatrix}=\begin{pmatrix}
+  -1 & -2 \\
+  3 & 7
+\end{pmatrix}
 $$
 
 更省事的办法是把 $A^{-1}$ 和 $B$ 一并算掉：对 $(A\mid B)$ 做初等行变换，左半化成 $E$ 时右半就是 $X=A^{-1}B$，免去单独求逆。验算 $AX=\begin{pmatrix}2&1\\1&1\end{pmatrix}\begin{pmatrix}-1&-2\\3&7\end{pmatrix}=\begin{pmatrix}1&3\\2&5\end{pmatrix}=B$，正确。
@@ -264,13 +334,31 @@ $$
 例：取 $A=\begin{pmatrix}a&b\\c&d\end{pmatrix}$，用初等矩阵直观看「左乘动行、右乘动列」。把交换行的初等矩阵 $P=\begin{pmatrix}0&1\\1&0\end{pmatrix}$（由 $E$ 交换两行得到）左乘 $A$：
 
 $$
-PA=\begin{pmatrix}0&1\\1&0\end{pmatrix}\begin{pmatrix}a&b\\c&d\end{pmatrix}=\begin{pmatrix}c&d\\a&b\end{pmatrix}
+PA=\begin{pmatrix}
+  0 & 1 \\
+  1 & 0
+\end{pmatrix}\begin{pmatrix}
+  a & b \\
+  c & d
+\end{pmatrix}=\begin{pmatrix}
+  c & d \\
+  a & b
+\end{pmatrix}
 $$
 
 正是把 $A$ 的两 **行** 对调。同一个 $P$ 改成 **右乘**：
 
 $$
-AP=\begin{pmatrix}a&b\\c&d\end{pmatrix}\begin{pmatrix}0&1\\1&0\end{pmatrix}=\begin{pmatrix}b&a\\d&c\end{pmatrix}
+AP=\begin{pmatrix}
+  a & b \\
+  c & d
+\end{pmatrix}\begin{pmatrix}
+  0 & 1 \\
+  1 & 0
+\end{pmatrix}=\begin{pmatrix}
+  b & a \\
+  d & c
+\end{pmatrix}
 $$
 
 变成把两 **列** 对调。再看「第 $2$ 行加第 $1$ 行 $k$ 倍」的初等矩阵 $\begin{pmatrix}1&0\\k&1\end{pmatrix}$ 左乘 $A$ 得 $\begin{pmatrix}a&b\\c+ka&d+kb\end{pmatrix}$，恰好是行变换 $r_2+kr_1$。「行变换 $=$ 左乘、列变换 $=$ 右乘」这条规律就此一目了然。
@@ -287,7 +375,10 @@ $$
 对 $A$ 同时做行、列变换，总能化成左上角是单位块、其余为零的 **等价标准形**：
 
 $$
-A\to\begin{pmatrix}E_r&O\\O&O\end{pmatrix},\qquad r=r(A)
+A\to\begin{pmatrix}
+  E_r & O \\
+  O & O
+\end{pmatrix},\qquad r=r(A)
 $$
 
 这说明任意 $m\times n$ 矩阵在「行列变换等价」下完全由它的 **秩** $r$ 决定。
@@ -312,9 +403,17 @@ $$
 
 $$
 \xrightarrow{r_2-2r_1,\ r_3-r_1}
-\begin{pmatrix}1&2&3&4\\0&0&0&0\\0&1&2&3\end{pmatrix}
+\begin{pmatrix}
+  1 & 2 & 3 & 4 \\
+  0 & 0 & 0 & 0 \\
+  0 & 1 & 2 & 3
+\end{pmatrix}
 \xrightarrow{r_2\leftrightarrow r_3}
-\begin{pmatrix}1&2&3&4\\0&1&2&3\\0&0&0&0\end{pmatrix}
+\begin{pmatrix}
+  1 & 2 & 3 & 4 \\
+  0 & 1 & 2 & 3 \\
+  0 & 0 & 0 & 0
+\end{pmatrix}
 $$
 
 第 $2$ 行恰好是第 $1$ 行的两倍，消成了全零行；非零行有 $2$ 个，故 $r(A)=2$。它说明这三行里只有两行「真正独立」，第二行是多余的。
@@ -354,13 +453,23 @@ $$
 分块对角阵的逆，逐块求逆即可：
 
 $$
-\begin{pmatrix}A_1&O\\O&A_2\end{pmatrix}^{-1}=\begin{pmatrix}A_1^{-1}&O\\O&A_2^{-1}\end{pmatrix}
+\begin{pmatrix}
+  A_1 & O \\
+  O & A_2
+\end{pmatrix}^{-1}=\begin{pmatrix}
+  A_1^{-1} & O \\
+  O & A_2^{-1}
+\end{pmatrix}
 $$
 
 例：求 $M=\begin{pmatrix}2&0&0\\0&1&2\\0&3&4\end{pmatrix}$ 的逆。它是分块对角阵 $\begin{pmatrix}A_1&O\\O&A_2\end{pmatrix}$，其中 $A_1=(2)$、$A_2=\begin{pmatrix}1&2\\3&4\end{pmatrix}$。逐块求逆：$A_1^{-1}=(\frac12)$，$A_2^{-1}=\frac{1}{1\cdot4-2\cdot3}\begin{pmatrix}4&-2\\-3&1\end{pmatrix}=-\frac12\begin{pmatrix}4&-2\\-3&1\end{pmatrix}=\begin{pmatrix}-2&1\\\frac32&-\frac12\end{pmatrix}$，拼回去：
 
 $$
-M^{-1}=\begin{pmatrix}\frac12&0&0\\0&-2&1\\0&\frac32&-\frac12\end{pmatrix}
+M^{-1}=\begin{pmatrix}
+  \frac12 & 0 & 0 \\
+  0 & -2 & 1 \\
+  0 & \frac32 & -\frac12
+\end{pmatrix}
 $$
 
 大矩阵拆成小块各自处理，省去整体求逆。
@@ -368,13 +477,22 @@ $$
 分块三角阵的行列式，等于对角块行列式之积：
 
 $$
-\begin{vmatrix}A&O\\C&B\end{vmatrix}=\begin{vmatrix}A&C\\O&B\end{vmatrix}=|A|\cdot|B|
+\begin{vmatrix}
+  A & O \\
+  C & B
+\end{vmatrix}=\begin{vmatrix}
+  A & C \\
+  O & B
+\end{vmatrix}=|A|\cdot|B|
 $$
 
 副对角分块还会带定向因子：
 
 $$
-\begin{vmatrix}O&A\\B&O\end{vmatrix}=(-1)^{mn}|A|\cdot|B|
+\begin{vmatrix}
+  O & A \\
+  B & O
+\end{vmatrix}=(-1)^{mn}|A|\cdot|B|
 $$
 
 其中 $A$ 为 $m$ 阶、$B$ 为 $n$ 阶方阵。

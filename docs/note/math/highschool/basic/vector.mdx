@@ -83,15 +83,15 @@ $\vec a$ 的长度称为向量的模，即为这个向量的大小。
 
 $$
 \begin{cases}
-x'=x+y\cos\theta\\
-y'=y\sin\theta
+  x'=x+y\cos\theta \\
+  y'=y\sin\theta
 \end{cases}
 $$
 
 $$
 \begin{cases}
-x=x'-\frac{y'}{\tan\theta}\\
-y=\frac{y'}{\sin\theta}
+  x=x'-\frac{y'}{\tan\theta} \\
+  y=\frac{y'}{\sin\theta}
 \end{cases}
 $$
 
@@ -112,9 +112,9 @@ $$
 我们定义 $\lambda\bm a=\lambda(x,y)=(\lambda x,\lambda y)$。据此，我们可以得出以下向量数乘常用的结论：
 
 - $|\lambda\bm a|=|\lambda||\bm a|$；
-- 当 $\lambda >0$ 时，$\lambda\bm a$ 与 $\bm a$ 同向；
-- 当 $\lambda =0$ 时，$\lambda \bm a=\vec 0$；
-- 当 $\lambda<0$ 时，$\lambda \bm a$ 与 $\bm a$ 方向相反。
+- 当 $\lambda>0$ 时，$\lambda\bm a$ 与 $\bm a$ 同向；
+- 当 $\lambda=0$ 时，$\lambda\bm a=\vec 0$；
+- 当 $\lambda<0$ 时，$\lambda\bm a$ 与 $\bm a$ 方向相反。
 
 根据数乘的定义，可以得出向量的数乘满足交换律、结合律、分配律等，即，
 
@@ -238,10 +238,10 @@ _点积的概念对于任意维数的向量都适用_。
 已知两个向量 $\bm a,\bm b$，它们的夹角为 $\theta$，那么这两个向量的点积为：
 
 $$
-\bm a \cdot \bm b=|\bm a||\bm b|\cos \theta
+\bm a\cdot\bm b=|\bm a||\bm b|\cos\theta
 $$
 
-- 其中，我们称 $|\bm a|\cos \theta$ 为 $\bm a$ 在 $\bm b$ 方向上的投影。
+- 其中，我们称 $|\bm a|\cos\theta$ 为 $\bm a$ 在 $\bm b$ 方向上的投影。
 
 $$
 |\bm a|\cos\theta=\frac{\bm a\cdot\bm b}{|\bm b|}
@@ -255,7 +255,7 @@ $$
 
 - 其中，$\theta\in[0,\pi]$，但是直线的夹角 $\theta\in[0,\pi)$，因为相反向量是完全不同的。
 
-点积的几何意义即为：点积 $\bm a \cdot \bm b$ 等于 $\bm a$ 的模与 $\bm b$ 在 $\bm a$ 方向上的投影的乘积。
+点积的几何意义即为：点积 $\bm a\cdot\bm b$ 等于 $\bm a$ 的模与 $\bm b$ 在 $\bm a$ 方向上的投影的乘积。
 
 另外，我们定义向量点积数值上表示为（简记为先相乘再相加）：
 
@@ -327,9 +327,9 @@ $$
 
 $$
 \begin{aligned}
-|\bm a+\bm b|&=\lambda\\
-(\bm a+\bm b)\cdot(\bm a+\bm b)&=\lambda^2\\
-|\bm a|^2+2\bm a\cdot\bm b+|\bm b|^2&=\lambda^2
+  |\bm a+\bm b| & =\lambda \\
+  (\bm a+\bm b)\cdot(\bm a+\bm b) & =\lambda^2 \\
+  |\bm a|^2+2\bm a\cdot\bm b+|\bm b|^2 & =\lambda^2
 \end{aligned}
 $$
 
@@ -387,7 +387,7 @@ $$
 
 其中，第三条即，垂直向量的点积等于零。
 
-根据 $\cos 90^\circ=0$，$\bm a \perp \bm b \iff \bm a\cdot \bm b=0$。
+根据 $\cos 90^\circ=0$，$\bm a\perp\bm b\iff\bm a\cdot\bm b=0$。
 
 ### 柯西不等式
 
@@ -399,11 +399,11 @@ $$
 
 据此，可以判断两向量共线：
 
-两个非零向量 $\bm a$ 与 $\bm b$ 共线，等价于，有唯一实数 $\lambda$，使得 $\bm b=\lambda \bm a$。
+两个非零向量 $\bm a$ 与 $\bm b$ 共线，等价于，有唯一实数 $\lambda$，使得 $\bm b=\lambda\bm a$。
 
-由数乘的定义知，对于非零向量 $\bm a$，如果存在实数 $\lambda$，使得 $\bm b=\lambda \bm a$，那么 $\bm a \parallel \bm b$。
+由数乘的定义知，对于非零向量 $\bm a$，如果存在实数 $\lambda$，使得 $\bm b=\lambda\bm a$，那么 $\bm a\parallel\bm b$。
 
-数值上，有判别式 $\bm a = \lambda \bm b \iff |\bm a\cdot \bm b|=|\bm a||\bm b|$。
+数值上，有判别式 $\bm a=\lambda\bm b\iff |\bm a\cdot\bm b|=|\bm a||\bm b|$。
 
 ### 极化恒等式
 
@@ -475,8 +475,8 @@ $$
 
 $$
 \begin{cases}
-x+y\cos\theta=a_1\\
-y+x\cos\theta=a_2
+  x+y\cos\theta=a_1 \\
+  y+x\cos\theta=a_2
 \end{cases}
 $$
 
@@ -484,8 +484,8 @@ $$
 
 $$
 \left\{\begin{aligned}
-x={a_1-a_2\cos\theta\over\sin^2\theta}\\
-y={a_2-a_1\cos\theta\over\sin^2\theta}
+  x={a_1-a_2\cos\theta\over\sin^2\theta} \\
+  y={a_2-a_1\cos\theta\over\sin^2\theta}
 \end{aligned}\right.
 $$
 
@@ -505,8 +505,8 @@ $$
 
 $$
 \begin{aligned}
-\vec{AQ}&=\lambda\vec{AB}\\
-\vec{OQ}-\vec{OA}&=\lambda(\vec{OB}-\vec{OA})
+  \vec{AQ} & =\lambda\vec{AB} \\
+  \vec{OQ}-\vec{OA} & =\lambda(\vec{OB}-\vec{OA})
 \end{aligned}
 $$
 
@@ -542,9 +542,9 @@ $$
 
 $$
 \begin{aligned}
-|BC|^2&=(\vec b-\vec c)\cdot(\vec b-\vec c)\\
-&=|\vec b|^2-2\vec b\cdot\vec c+|\vec c|^2\\
-&=b^2+c^2-2bc\cos A
+  |BC|^2 & =(\vec b-\vec c)\cdot(\vec b-\vec c) \\
+  & =|\vec b|^2-2\vec b\cdot\vec c+|\vec c|^2 \\
+  & =b^2+c^2-2bc\cos A
 \end{aligned}
 $$
 

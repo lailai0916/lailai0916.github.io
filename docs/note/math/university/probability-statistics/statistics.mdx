@@ -110,7 +110,7 @@ $t$ 与正态对称，所以 $t_{1-\alpha}(n)=-t_\alpha(n)$，左尾可由右尾
 设 $X_1,\dots,X_n$ i.i.d. $\sim N(\mu,\sigma^2)$，则有以下核心结论：
 
 $$
-\bar X\sim N\!\left(\mu,\frac{\sigma^2}{n}\right),\quad \frac{(n-1)S^2}{\sigma^2}\sim\chi^2(n-1)
+\bar X\sim N\!\left(\mu,\frac{\sigma^2}{n}\right),\quad\frac{(n-1)S^2}{\sigma^2}\sim\chi^2(n-1)
 $$
 
 其中样本均值 $\bar X$ 与样本方差 $S^2$ **相互独立**（这是正态总体特有的优良性质）。把上面两式组合、消去未知的 $\sigma$，便得到方差未知时均值推断的「主力统计量」：
@@ -196,7 +196,7 @@ $$
 例（连续 MLE，指数分布）：样本 $X_1,\dots,X_n$ 来自 $E(\lambda)$，密度 $f(x;\lambda)=\lambda e^{-\lambda x}$，估 $\lambda$。似然与对数似然：
 
 $$
-L(\lambda)=\prod_{i=1}^n\lambda e^{-\lambda x_i}=\lambda^n e^{-\lambda\sum x_i},\qquad \ln L=n\ln\lambda-\lambda\sum_{i=1}^n x_i
+L(\lambda)=\prod_{i=1}^n\lambda e^{-\lambda x_i}=\lambda^n e^{-\lambda\sum x_i},\qquad\ln L=n\ln\lambda-\lambda\sum_{i=1}^n x_i
 $$
 
 求导令零：

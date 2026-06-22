@@ -40,7 +40,7 @@ $$
 每一条都是某个求导公式「反着读」的结果，对照 [导数与微分](/docs/note/math/university/advanced-math/derivative) 的导数表记忆。
 
 $$
-\int x^a\,\mathrm{d}x=\frac{x^{a+1}}{a+1}+C\,(a\ne -1),\quad
+\int x^a\,\mathrm{d}x=\frac{x^{a+1}}{a+1}+C\,(a\ne-1),\quad
 \int\frac{1}{x}\,\mathrm{d}x=\ln|x|+C
 $$
 
@@ -109,8 +109,8 @@ $$
 
 $$
 \begin{aligned}
-I&=\int\sin x\,\mathrm{d}(e^x)=e^x\sin x-\int e^x\cos x\,\mathrm{d}x\\
-&=e^x\sin x-\left(e^x\cos x+\int e^x\sin x\,\mathrm{d}x\right)=e^x(\sin x-\cos x)-I
+  I & =\int\sin x\,\mathrm{d}(e^x)=e^x\sin x-\int e^x\cos x\,\mathrm{d}x \\
+  & =e^x\sin x-\left(e^x\cos x+\int e^x\sin x\,\mathrm{d}x\right)=e^x(\sin x-\cos x)-I
 \end{aligned}
 $$
 
@@ -158,8 +158,8 @@ $$
 
 $$
 \begin{aligned}
-\int\sqrt{a^2-x^2}\,\mathrm{d}x&=\int a\cos t\cdot a\cos t\,\mathrm{d}t=a^2\int\cos^2 t\,\mathrm{d}t\\
-&=\frac{a^2}{2}\left(t+\frac{\sin 2t}{2}\right)+C=\frac{a^2}{2}\arcsin\frac xa+\frac{x\sqrt{a^2-x^2}}{2}+C
+  \int\sqrt{a^2-x^2}\,\mathrm{d}x & =\int a\cos t\cdot a\cos t\,\mathrm{d}t=a^2\int\cos^2 t\,\mathrm{d}t \\
+  & =\frac{a^2}{2}\left(t+\frac{\sin 2t}{2}\right)+C=\frac{a^2}{2}\arcsin\frac xa+\frac{x\sqrt{a^2-x^2}}{2}+C
 \end{aligned}
 $$
 
@@ -192,7 +192,7 @@ $$
 基本运算性质：
 
 $$
-\int_a^b f\,\mathrm{d}x=-\int_b^a f\,\mathrm{d}x,\quad \int_a^a f\,\mathrm{d}x=0
+\int_a^b f\,\mathrm{d}x=-\int_b^a f\,\mathrm{d}x,\quad\int_a^a f\,\mathrm{d}x=0
 $$
 
 $$
@@ -214,8 +214,8 @@ $$
 $$
 \int_{-a}^{a}f(x)\,\mathrm{d}x=
 \begin{cases}
-0, & f\text{ 为奇函数}\\
-2\displaystyle\int_0^a f(x)\,\mathrm{d}x, & f\text{ 为偶函数}
+  0, & f\text{ 为奇函数} \\
+  2\displaystyle\int_0^a f(x)\,\mathrm{d}x, & f\text{ 为偶函数}
 \end{cases}
 $$
 
@@ -250,7 +250,7 @@ $$
 ### 变上限积分
 
 $$
-\Phi(x)=\int_a^x f(t)\,\mathrm{d}t\Rightarrow \Phi'(x)=f(x)
+\Phi(x)=\int_a^x f(t)\,\mathrm{d}t\Rightarrow\Phi'(x)=f(x)
 $$
 
 把定积分的上限放开成变量 $x$，得到一个 **新函数** $\Phi(x)$：它表示「从 $a$ 累积到 $x$ 的面积」。这个函数求导回到 $f$ 本身——说明 **变上限积分天然就是一个原函数**，这也正是微积分基本定理「积分与求导互逆」的源头，更是连 $e^{-x^2}$ 这类「积不出来」的函数也能保证原函数 **存在** 的依据。
@@ -298,8 +298,8 @@ $$
 $$
 \int_0^{\pi/2}\sin^n x\,\mathrm{d}x=\int_0^{\pi/2}\cos^n x\,\mathrm{d}x=
 \begin{cases}
-\dfrac{(n-1)!!}{n!!}\cdot\dfrac\pi2, & n\text{ 为偶数}\\[6pt]
-\dfrac{(n-1)!!}{n!!}, & n\text{ 为奇数}
+  \dfrac{(n-1)!!}{n!!}\cdot\dfrac\pi2, & n\text{ 为偶数} \\[6pt]
+  \dfrac{(n-1)!!}{n!!}, & n\text{ 为奇数}
 \end{cases}
 $$
 
@@ -364,7 +364,7 @@ $$
 它是一个含参变量的反常积分，在 $s>0$ 时收敛。对 $\Gamma(s+1)=\int_0^\infty x^s e^{-x}\,\mathrm{d}x$ 分部积分可得 **递推关系**：
 
 $$
-\Gamma(s+1)=s\,\Gamma(s),\qquad \Gamma(n+1)=n!\ (n\in\mathbb{N})
+\Gamma(s+1)=s\,\Gamma(s),\qquad\Gamma(n+1)=n!\ (n\in\mathbb{N})
 $$
 
 所以 $\Gamma$ 正是阶乘的连续版本。一个常用的特殊值是 $\Gamma\!\left(\dfrac12\right)=\sqrt\pi$，它等价于著名的 **高斯积分**：令 $x=t^2$ 得

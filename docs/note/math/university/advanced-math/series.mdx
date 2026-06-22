@@ -29,7 +29,7 @@ title: 无穷级数
 ### 必要条件
 
 $$
-\sum u_n\text{ 收敛}\Rightarrow \lim_{n\to\infty}u_n=0
+\sum u_n\text{ 收敛}\Rightarrow\lim_{n\to\infty}u_n=0
 $$
 
 **逆不成立**——这是最关键的提醒。$\lim u_n=0$ 只是收敛的「入场券」，远不够保证收敛。反例是 **调和级数** $\sum\dfrac{1}{n}$：通项趋于零，级数却发散到无穷（部分和 $\sim\ln n$）。它说明：项再小，只要小得不够快，累加起来仍能膨胀到无穷。这条必要条件最常见的用法是 **逆否地判发散**：若 $\lim u_n\ne 0$，立刻断定发散。
@@ -338,9 +338,9 @@ $n$ 为偶时为 $0$、$n$ 为奇时为 $\dfrac{4}{n\pi}$，故 $1=\dfrac4\pi\su
 
 $$
 \begin{aligned}
-S&=x+2x^2+3x^3+\dots+Nx^N\\
-xS&=\phantom{x+}\ x^2+2x^3+\dots+(N-1)x^N+Nx^{N+1}\\
-S-xS&=x+x^2+\dots+x^N-Nx^{N+1}=\frac{x(1-x^N)}{1-x}-Nx^{N+1}
+  S & =x+2x^2+3x^3+\dots+Nx^N \\
+  xS & =\phantom{x+}\ x^2+2x^3+\dots+(N-1)x^N+Nx^{N+1} \\
+  S-xS & =x+x^2+\dots+x^N-Nx^{N+1}=\frac{x(1-x^N)}{1-x}-Nx^{N+1}
 \end{aligned}
 $$
 

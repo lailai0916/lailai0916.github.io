@@ -30,7 +30,10 @@ $$
 设 $(x_0,y_0)$ 是一个特解，$d=\gcd(a,b)$，则全部整数解为：
 
 $$
-\begin{cases}x=x_0+\dfrac{b}{d}\,t \\[4pt] y=y_0-\dfrac{a}{d}\,t\end{cases},\quad t\in\mathbb{Z}
+\begin{cases}
+  x=x_0+\dfrac{b}{d}\,t \\[4pt]
+  y=y_0-\dfrac{a}{d}\,t
+\end{cases},\quad t\in\mathbb{Z}
 $$
 
 为什么是这个形式？两个解相减得 $a(x-x_0)+b(y-y_0)=0$，即 $\frac ad(x-x_0)=-\frac bd(y-y_0)$。由于 $\frac ad,\frac bd$ 互素，必有 $\frac bd\mid(x-x_0)$，写成 $x-x_0=\frac bd t$ 便逼出上式。直觉上，所有解在数轴格点上 **等间距排成一列**，步长 $\bigl(\frac bd,-\frac ad\bigr)$ 是让方程不变的「最小整数平移」。

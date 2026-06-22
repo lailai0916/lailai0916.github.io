@@ -40,7 +40,12 @@ $$
 例（由分布列写分布函数）：$X$ 取值 $-1,1,2$，概率分别为 $0.3,0.5,0.2$。$F(x)$ 是逐段累加的阶梯：
 
 $$
-F(x)=\begin{cases}0,&x<-1\\ 0.3,&-1\le x<1\\ 0.8,&1\le x<2\\ 1,&x\ge 2\end{cases}
+F(x)=\begin{cases}
+  0, & x<-1 \\
+  0.3, & -1\le x<1 \\
+  0.8, & 1\le x<2 \\
+  1, & x\ge 2
+\end{cases}
 $$
 
 每个台阶的跳高正是该点概率：$x=1$ 处从 $0.3$ 跳到 $0.8$，跳高 $0.5=P(X=1)$。要算 $P(0<X\le 1)=F(1)-F(0)=0.8-0.3=0.5$，区间右端含「$\le$」时直接代差值即可。
@@ -50,7 +55,7 @@ $$
 取值 **可列**，由 **分布列**（Probability Mass Function，PMF）$p_i=P(X=x_i)$ 确定，满足：
 
 $$
-p_i\ge 0,\quad \sum_i p_i=1
+p_i\ge 0,\quad\sum_i p_i=1
 $$
 
 ### 常见离散分布
@@ -115,7 +120,7 @@ $$
 存在 **概率密度函数**（Probability Density Function，PDF）$f(x)\ge 0$，使分布函数可写成积分：
 
 $$
-F(x)=\int_{-\infty}^{x}f(t)\,\mathrm{d}t,\quad \int_{-\infty}^{+\infty}f(x)\,\mathrm{d}x=1
+F(x)=\int_{-\infty}^{x}f(t)\,\mathrm{d}t,\quad\int_{-\infty}^{+\infty}f(x)\,\mathrm{d}x=1
 $$
 
 密度 $f(x)$ **不是概率**，而是「概率的密集程度」——概率是密度曲线下的 **面积**。所以单点概率为 $0$：$P(X=a)=0$，区间概率才有意义：
@@ -286,7 +291,7 @@ $$
 固定一个变量的取值，看另一个的分布，就是 **条件分布**：
 
 $$
-f_{Y\mid X}(y\mid x)=\frac{f(x,y)}{f_X(x)}\quad (f_X(x)>0)
+f_{Y\mid X}(y\mid x)=\frac{f(x,y)}{f_X(x)}\quad(f_X(x)>0)
 $$
 
 这是 [条件概率](/docs/note/math/university/probability-statistics/event) 在密度层面的翻版：联合密度除以边缘密度。三者的关系凑成「联合 = 边缘 × 条件」：$f(x,y)=f_X(x)\,f_{Y\mid X}(y\mid x)$。

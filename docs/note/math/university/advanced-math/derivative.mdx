@@ -34,9 +34,9 @@ $$
 
 $$
 \begin{aligned}
-f'(x)&=\lim_{\Delta x\to 0}\frac{\sqrt{x+\Delta x}-\sqrt{x}}{\Delta x}
-=\lim_{\Delta x\to 0}\frac{(x+\Delta x)-x}{\Delta x\,(\sqrt{x+\Delta x}+\sqrt{x})}\\
-&=\lim_{\Delta x\to 0}\frac{1}{\sqrt{x+\Delta x}+\sqrt{x}}=\frac{1}{2\sqrt{x}}
+  f'(x) & =\lim_{\Delta x\to 0}\frac{\sqrt{x+\Delta x}-\sqrt{x}}{\Delta x}
+=\lim_{\Delta x\to 0}\frac{(x+\Delta x)-x}{\Delta x\,(\sqrt{x+\Delta x}+\sqrt{x})} \\
+  & =\lim_{\Delta x\to 0}\frac{1}{\sqrt{x+\Delta x}+\sqrt{x}}=\frac{1}{2\sqrt{x}}
 \end{aligned}
 $$
 
@@ -161,7 +161,7 @@ $$
 遇到 **幂指函数** $y=u(x)^{v(x)}$ 或 **多个因子连乘连除** 的式子，先取对数再求导往往省力：
 
 $$
-\ln y=\ln u(x)^{v(x)}=v(x)\ln u(x)\Rightarrow \frac{y'}{y}=v'\ln u+v\cdot\frac{u'}{u}
+\ln y=\ln u(x)^{v(x)}=v(x)\ln u(x)\Rightarrow\frac{y'}{y}=v'\ln u+v\cdot\frac{u'}{u}
 $$
 
 原理是对数把 **乘除变加减、幂变乘积**，求导难度骤降；最后别忘了把 $\dfrac{y'}{y}$ 乘回 $y$。幂指函数也可改写成 $y=e^{v\ln u}$ 后用链式法则，两种做法等价。
@@ -230,8 +230,8 @@ $$
 
 $$
 \begin{aligned}
-(x^2 e^x)^{(n)}&=\binom{n}{0}e^x\cdot x^2+\binom{n}{1}e^x\cdot 2x+\binom{n}{2}e^x\cdot 2\\
-&=e^x\bigl[x^2+2nx+n(n-1)\bigr]
+  (x^2 e^x)^{(n)} & =\binom{n}{0}e^x\cdot x^2+\binom{n}{1}e^x\cdot 2x+\binom{n}{2}e^x\cdot 2 \\
+  & =e^x\bigl[x^2+2nx+n(n-1)\bigr]
 \end{aligned}
 $$
 
@@ -256,7 +256,7 @@ $$
 在 $x_0=0$ 附近，常用近似（$|x|$ 很小）：
 
 $$
-(1+x)^a\approx 1+ax,\quad e^x\approx 1+x,\quad \ln(1+x)\approx x,\quad \sin x\approx x,\quad \tan x\approx x
+(1+x)^a\approx 1+ax,\quad e^x\approx 1+x,\quad\ln(1+x)\approx x,\quad\sin x\approx x,\quad\tan x\approx x
 $$
 
 这正是「用切线代替曲线」的实用版本：要估 $\sqrt{1.02}$，取 $f(x)=\sqrt{x}$、$x_0=1$，得 $\approx 1+\dfrac{1}{2}\cdot 0.02=1.01$。微分还用于 **误差估计**：自变量有微小测量误差 $\mathrm{d}x$ 时，因变量误差约为 $|f'(x)|\,|\mathrm{d}x|$。

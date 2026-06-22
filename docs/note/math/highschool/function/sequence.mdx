@@ -71,10 +71,10 @@ $$
 一般会将 $\{s_i\}_{i\in\mathbb N}$ 写为，
 
 $$
-\sum _{i=0}^na_i
+\sum_{i=0}^na_i
 $$
 
-甚至更直观的 $a_0+a_1+\dots +a_n$ 来凸显级数源于求和的直观概念。
+甚至更直观的 $a_0+a_1+\dots+a_n$ 来凸显级数源于求和的直观概念。
 
 对于从 $1$ 开始的数列，同理，一般直接使用求和符号简记为，
 
@@ -228,8 +228,8 @@ $$
 
 $$
 \begin{aligned}
-a_{n-1}+a_{n+1}&=a_n-d+a_n+d\\
-&=2a_n
+  a_{n-1}+a_{n+1} & =a_n-d+a_n+d \\
+  & =2a_n
 \end{aligned}
 $$
 
@@ -275,9 +275,9 @@ $$
 
 $$
 \begin{aligned}
-a_k=a_1+(k-1)d\\
-k-1={a_k-a_1\over d}\\
-k={a_k-a_1\over d}+1
+  a_k=a_1+(k-1)d \\
+  k-1={a_k-a_1\over d} \\
+  k={a_k-a_1\over d}+1
 \end{aligned}
 $$
 
@@ -285,8 +285,8 @@ $$
 
 $$
 \begin{aligned}
-a_k=a_0+kd\\
-k={a_k-a_0\over d}\\
+  a_k=a_0+kd \\
+  k={a_k-a_0\over d}
 \end{aligned}
 $$
 
@@ -294,8 +294,8 @@ $$
 
 $$
 \begin{aligned}
-a_n=f(n)\\
-n=g(a_n)
+  a_n=f(n) \\
+  n=g(a_n)
 \end{aligned}
 $$
 
@@ -319,9 +319,9 @@ $$
 
 $$
 \begin{aligned}
-S_n&=a_1+(a_1+d)+(a_1+2d)+\dots+[a_1+(n-1)d]\\
-&=na_1+d[1+2+3+\dots(n-1)]\\
-&=na_1+dT_{n-1}
+  S_n & =a_1+(a_1+d)+(a_1+2d)+\dots+[a_1+(n-1)d] \\
+  & =na_1+d[1+2+3+\dots(n-1)] \\
+  & =na_1+dT_{n-1}
 \end{aligned}
 $$
 
@@ -341,21 +341,21 @@ $$
 
 $$
 \begin{aligned}
-2T_n=n(n+1)\\
-T_n=n(n+1)/2
+  2T_n=n(n+1) \\
+  T_n=n(n+1)/2
 \end{aligned}
 $$
 
-另，一般题中出现 $x_1 + x_2 = k$（$k$ 为常数），且 $f(x_1) + f(x_2) = \ell$（$\ell$ 为常数）时，可以采用倒序相加的方法进行求和。
+另，一般题中出现 $x_1+x_2=k$（$k$ 为常数），且 $f(x_1)+f(x_2)=\ell$（$\ell$ 为常数）时，可以采用倒序相加的方法进行求和。
 
 于是，
 
 $$
 \begin{aligned}
-S_n&=na_1+dT_{n-1}\\
-&=na_1+{n(n-1)\over2}d\\
-&={n\over2}[2a_1+(n-1)d]\\
-&={n(a_1+a_n)\over2}
+  S_n & =na_1+dT_{n-1} \\
+  & =na_1+{n(n-1)\over2}d \\
+  & ={n\over2}[2a_1+(n-1)d] \\
+  & ={n(a_1+a_n)\over2}
 \end{aligned}
 $$
 
@@ -399,9 +399,9 @@ $$
 
 如果数列 $\{a_n\}$ 为等差数列，$\{a_n\}$ 的前 $n$ 项和 $S_n$ 有如下结论：
 
-- 若 $a_1 < 0, d > 0$，且此时 $n$ 满足 $\begin{cases} a_n \le 0 \\ a_{n+1} \ge 0 \end{cases}$，则 $S_n$ 有最小值；
+- 若 $a_1<0, d>0$，且此时 $n$ 满足 $\begin{cases} a_n\le 0 \\ a_{n+1}\ge 0\end{cases}$，则 $S_n$ 有最小值；
 
-- 若 $a_1 > 0, d < 0$，且此时 $n$ 满足 $\begin{cases} a_n \ge 0 \\ a_{n+1} \le 0 \end{cases}$，则 $S_n$ 有最大值。
+- 若 $a_1>0, d<0$，且此时 $n$ 满足 $\begin{cases} a_n\ge 0 \\ a_{n+1}\le 0\end{cases}$，则 $S_n$ 有最大值。
 
 ### 等差中项
 
@@ -489,11 +489,11 @@ $$
 
 $$
 \begin{aligned}
-a_n&=a_{n-1}+f(n)\\
-a_{n-1}&=a_{n-2}+f(n-1)\\
-&\dots\\
-a_3&=a_2+f(3)\\
-a_2&=a_1+f(2)
+  a_n & =a_{n-1}+f(n) \\
+  a_{n-1} & =a_{n-2}+f(n-1) \\
+  & \dots \\
+  a_3 & =a_2+f(3) \\
+  a_2 & =a_1+f(2)
 \end{aligned}
 $$
 
@@ -571,10 +571,10 @@ $$
 
 $$
 \begin{aligned}
-a_{n-1}\times a_{n+1}&=aq^{n-2}aq^{n}\\
-&=a^2q^{2n-2}\\
-&=(aq^{n-1})^2\\
-&=a_n^2
+  a_{n-1}\times a_{n+1} & =aq^{n-2}aq^{n} \\
+  & =a^2q^{2n-2} \\
+  & =(aq^{n-1})^2 \\
+  & =a_n^2
 \end{aligned}
 $$
 
@@ -620,8 +620,8 @@ $$
 
 $$
 \begin{aligned}
-S_n&=a_1+a_1q+a_1q^2+\dots+a_1q^{n-1}\\
-&=a_1(1+q+q^2+\dots+q^{n-1})
+  S_n & =a_1+a_1q+a_1q^2+\dots+a_1q^{n-1} \\
+  & =a_1(1+q+q^2+\dots+q^{n-1})
 \end{aligned}
 $$
 
@@ -635,8 +635,8 @@ $$
 
 $$
 \begin{aligned}
-qS_n-S_n=a_1q^n-a_1\\
-S_n=a_1\cdot{q^n-1\over q-1},\,(q\neq 1)
+  qS_n-S_n=a_1q^n-a_1 \\
+  S_n=a_1\cdot{q^n-1\over q-1},\,(q\neq 1)
 \end{aligned}
 $$
 
@@ -674,11 +674,11 @@ $$
 
 $$
 \begin{aligned}
-a_n&=a_{n-1}f(n)\\
-a_{n-1}&=a_{n-2}f(n-1)\\
-&\dots\\
-a_3&=a_2f(3)\\
-a_2&=a_1f(2)
+  a_n & =a_{n-1}f(n) \\
+  a_{n-1} & =a_{n-2}f(n-1) \\
+  & \dots \\
+  a_3 & =a_2f(3) \\
+  a_2 & =a_1f(2)
 \end{aligned}
 $$
 
@@ -732,8 +732,8 @@ $$
 
 $$
 \begin{aligned}
-+&:{1\over1},{1\over2},{1\over3},\dots,{1\over n-1},{1\over n}\\
--&:{1\over3},{1\over4},{1\over5},\dots,{1\over n+1},{1\over n+2}
+  + & :{1\over1},{1\over2},{1\over3},\dots,{1\over n-1},{1\over n} \\
+  - & :{1\over3},{1\over4},{1\over5},\dots,{1\over n+1},{1\over n+2}
 \end{aligned}
 $$
 
@@ -825,7 +825,8 @@ $$
 
 $$
 \begin{aligned}
-\sum_{k=1}^n \frac{1}{k(k+2)}&=\frac{1}{2}(1-\frac{1}{3}+\frac{1}{2}-\frac{1}{4}+\dots+\frac{1}{n}-\frac{1}{n+2})\\&=\frac{1}{2}(1+\frac{1}{2}-\frac{1}{n+1}-\frac{1}{n+2})
+  \sum_{k=1}^n\frac{1}{k(k+2)} & =\frac{1}{2}(1-\frac{1}{3}+\frac{1}{2}-\frac{1}{4}+\dots+\frac{1}{n}-\frac{1}{n+2}) \\
+  & =\frac{1}{2}(1+\frac{1}{2}-\frac{1}{n+1}-\frac{1}{n+2})
 \end{aligned}
 $$
 
@@ -848,7 +849,7 @@ $$
 $$
 
 $$
-\sum_{k=1}^n \frac{k^2+k-1}{(k+2)!}=\sum_{k=1}^n \left(\frac{k}{(k+1)!}-\frac{k+1}{(k+2)!}\right)=\frac{1}{2}-\frac{n+1}{(n+2)!}
+\sum_{k=1}^n\frac{k^2+k-1}{(k+2)!}=\sum_{k=1}^n\left(\frac{k}{(k+1)!}-\frac{k+1}{(k+2)!}\right)=\frac{1}{2}-\frac{n+1}{(n+2)!}
 $$
 
 $$
@@ -1083,31 +1084,31 @@ $$
 
 即，对于原数列，加上这个数，即可转化为普通的等比数列。
 
-- 数列 $\{a_n\}$ 的前 $n$ 项和为 $S_n$，若有如下项：$f(n)S_n$，$f(a_n)S_n$(即 $S_n$ 的系数跟 $n$ 有关)，则我们将递推式中的 $a_n$ 改写为 $S_n - S_{n-1}$。
+- 数列 $\{a_n\}$ 的前 $n$ 项和为 $S_n$，若有如下项：$f(n)S_n$，$f(a_n)S_n$(即 $S_n$ 的系数跟 $n$ 有关)，则我们将递推式中的 $a_n$ 改写为 $S_n-S_{n-1}$。
 
-- 若数列 $\{a_n\}$ 的递推式形如 $a_{n+1} = a_n + f(n)$，则可采用累加法求通项公式。
+- 若数列 $\{a_n\}$ 的递推式形如 $a_{n+1}=a_n+f(n)$，则可采用累加法求通项公式。
 
-- 若数列 $\{a_n\}$ 的递推式形如 $a_{n+1} = a_n \cdot f(n)$，则可采用累乘法求通项公式。
+- 若数列 $\{a_n\}$ 的递推式形如 $a_{n+1}=a_n\cdot f(n)$，则可采用累乘法求通项公式。
 
-- 形如 $a_{n+1} = pa_n + q(p \ne 1, q \ne 0)$ 的递推式，两边同时加上 $x$ 可构造成等比数列 $\{a_n + x\}(n \in \mathbb{N}^*)$，通过比较可求得 $x = \frac{q}{p-1}$。
+- 形如 $a_{n+1}=pa_n+q(p\ne 1, q\ne 0)$ 的递推式，两边同时加上 $x$ 可构造成等比数列 $\{a_n+x\}(n\in\mathbb{N}^*)$，通过比较可求得 $x=\frac{q}{p-1}$。
 
-- 形如 $a_{n+1} = pa_n + kn + q(p \ne 1, k \ne 0, n \in \mathbb{N}^*)$ 的递推式，在两边同时加上 $xn+y$ 构造等比数列 $\{a_n + xn + y\}(n \in \mathbb{N}^*)$，方法见例 2.9 解析。
+- 形如 $a_{n+1}=pa_n+kn+q(p\ne 1, k\ne 0, n\in\mathbb{N}^*)$ 的递推式，在两边同时加上 $xn+y$ 构造等比数列 $\{a_n+xn+y\}(n\in\mathbb{N}^*)$，方法见例 2.9 解析。
 
-- 对于 $a_{n+1} = p a_n^r (p > 0, p \ne 1, r \ne 1)$ 型，两边同时取以 $p$ 为底的对数，于是可得 $\log_p a_{n+1} = r\log_p a_n + 1$，构造等比数列 $\{\log_p a_n + x\}$，其中 $x = \frac{1}{r-1}$。
+- 对于 $a_{n+1}=p a_n^r (p>0, p\ne 1, r\ne 1)$ 型，两边同时取以 $p$ 为底的对数，于是可得 $\log_p a_{n+1}=r\log_p a_n+1$，构造等比数列 $\{\log_p a_n+x\}$，其中 $x=\frac{1}{r-1}$。
 
-对于形如 $a_{n+1} = pa_n + q^n(p \ne 0, 1 \text{ 且 } q \ne 0, 1)$ 的数列求通项公式，有以下两种方法：
+对于形如 $a_{n+1}=pa_n+q^n(p\ne 0, 1 \text{ 且 } q\ne 0, 1)$ 的数列求通项公式，有以下两种方法：
 
 - 两边同除以 $p^{n+1}$，再累加求通项；
 
-- 两边同加上 $xq^{n+1}$，再构造成等比数列 $\{a_n + xq^n\}$。
+- 两边同加上 $xq^{n+1}$，再构造成等比数列 $\{a_n+xq^n\}$。
 
 - 若 $p=q$，则只能采用（1），而用（2）无法求解。
 
-对于 $a_{n+1} = \frac{a a_n}{b a_n + c}$，$abc \ne 0$，取倒数得 $\frac{1}{a_{n+1}} = \frac{b a_n + c}{a a_n} = \frac{c}{a} \cdot \frac{1}{a_n} + \frac{b}{a}$。
+对于 $a_{n+1}=\frac{a a_n}{b a_n+c}$，$abc\ne 0$，取倒数得 $\frac{1}{a_{n+1}}=\frac{b a_n+c}{a a_n}=\frac{c}{a}\cdot\frac{1}{a_n}+\frac{b}{a}$。
 
-- 当 $a=c$ 时，$\frac{1}{a_{n+1}} = \frac{1}{a_n} + \frac{c}{a}$，则 $\{\frac{1}{a_n}\}$ 为等差数列；
+- 当 $a=c$ 时，$\frac{1}{a_{n+1}}=\frac{1}{a_n}+\frac{c}{a}$，则 $\{\frac{1}{a_n}\}$ 为等差数列；
 
-- 当 $a \ne c$ 时，$\frac{1}{a_{n+1}} = \frac{c}{a} \cdot \frac{1}{a_n} + \frac{b}{a}$，则 $\{\frac{1}{a_n} + x\}$ 为等比数列，$x = \frac{b}{c-a}$。
+- 当 $a\ne c$ 时，$\frac{1}{a_{n+1}}=\frac{c}{a}\cdot\frac{1}{a_n}+\frac{b}{a}$，则 $\{\frac{1}{a_n}+x\}$ 为等比数列，$x=\frac{b}{c-a}$。
 
 ### 变形累加
 
@@ -1115,12 +1116,12 @@ $$
 
 $$
 \begin{aligned}
-a_n=2a_{n-1}+1\\
-2a_{n-1}=4a_{n-2}+2\\
-4a_{n-2}=8a_{n-3}+4\\
-\dots\\
-2^{n-3}a_3=2^{n-2}a_2+2^{n-3}\\
-2^{n-2}a_2=2^{n-1}a_1+2^{n-2}
+  a_n=2a_{n-1}+1 \\
+  2a_{n-1}=4a_{n-2}+2 \\
+  4a_{n-2}=8a_{n-3}+4 \\
+  \dots \\
+  2^{n-3}a_3=2^{n-2}a_2+2^{n-3} \\
+  2^{n-2}a_2=2^{n-1}a_1+2^{n-2}
 \end{aligned}
 $$
 
@@ -1188,19 +1189,19 @@ $$
 
 判断和证明数列是等差、等比数列的常见方法有如下几种：
 
-- 定义法（用于证明）：对于 $n \ge 2$ 的任意正整数，验证 $a_n - a_{n-1}$ 或 $\frac{a_n}{a_{n-1}}$ 为同一常数。
+- 定义法（用于证明）：对于 $n\ge 2$ 的任意正整数，验证 $a_n-a_{n-1}$ 或 $\frac{a_n}{a_{n-1}}$ 为同一常数。
 
 - 通项公式法（用于判断）：
 
-  若 $a_n = a_1 + (n-1)d = a_k + (n-k)d$，则 $\{a_n\}$ 为等差数列；
+  若 $a_n=a_1+(n-1)d=a_k+(n-k)d$，则 $\{a_n\}$ 为等差数列；
 
-  若 $a_n = a_1q^{n-1} = a_kq^{n-k}$，则 $\{a_n\}$ 为等比数列。
+  若 $a_n=a_1q^{n-1}=a_kq^{n-k}$，则 $\{a_n\}$ 为等比数列。
 
 - 中项公式法（用于证明）：
 
-  若 $2a_n = a_{n-1} + a_{n+1}(n \ge 2, n \in \mathbb{N}^*)$，则 $\{a_n\}$ 为等差数列；
+  若 $2a_n=a_{n-1}+a_{n+1}(n\ge 2, n\in\mathbb{N}^*)$，则 $\{a_n\}$ 为等差数列；
 
-  若 $a_n^2 = a_{n-1}a_{n+1}(n \ge 2, n \in \mathbb{N}^*)$，则 $\{a_n\}$ 为等比数列。
+  若 $a_n^2=a_{n-1}a_{n+1}(n\ge 2, n\in\mathbb{N}^*)$，则 $\{a_n\}$ 为等比数列。
 
 ### 奇偶数列
 
@@ -1211,13 +1212,19 @@ $$
 - 对于首项小于 0 而公差大于 0 的等差数列 $\{a_n\}$ 加绝对值后得到的数列 $\{|a_n|\}$ 求和，设 $\{a_n\}$ 的前 $n$ 项和为 $S_n$，$\{|a_n|\}$ 的前 $n$ 项和为 $T_n$，数列 $\{a_n\}$ 的第 $k$ 项小于 0 而从第 $k+1$ 项开始大于或等于 0，于是有
 
 $$
-T_n = \begin{cases} -S_n & n \le k \\ S_n - 2S_k & n > k \end{cases}
+T_n=\begin{cases}
+  -S_n & n\le k \\
+  S_n-2S_k & n>k
+\end{cases}
 $$
 
 - 对于首项大于 0 而公差小于 0 的等差数列 $\{a_n\}$ 加绝对值后得到的数列 $\{|a_n|\}$ 求和，设 $\{a_n\}$ 的前 $n$ 项和为 $S_n$，$\{|a_n|\}$ 的前 $n$ 项和为 $T_n$，数列 $\{a_n\}$ 的第 $k$ 项大于 0 而从第 $k+1$ 项开始小于或等于 0，于是有
 
 $$
-T_n = \begin{cases} S_n & n \le k \\ 2S_k - S_n & n > k \end{cases}
+T_n=\begin{cases}
+  S_n & n\le k \\
+  2S_k-S_n & n>k
+\end{cases}
 $$
 
 ### 单调性
@@ -1232,11 +1239,11 @@ $$
 
 高中阶段一般认为单调即严格单调。
 
-- 对于迭代数列 $a_{n+1} = f(a_n)$，其中 $f'(x) > 0$。若 $a_1 < a_2$，则数列 $\{a_n\}$ 单调递增；若 $a_1 > a_2$，则数列 $\{a_n\}$ 单调递减；若 $a_1 = a_2$，则数列 $\{a_n\}$ 是常数列。
+- 对于迭代数列 $a_{n+1}=f(a_n)$，其中 $f'(x)>0$。若 $a_1<a_2$，则数列 $\{a_n\}$ 单调递增；若 $a_1>a_2$，则数列 $\{a_n\}$ 单调递减；若 $a_1=a_2$，则数列 $\{a_n\}$ 是常数列。
 
-- 对于迭代数列 $a_{n+1} = f(a_n)$，若 $f(x)$ 是二次函数，则数列单调递增的充分必要条件为 $a_1 < a_2 < a_3$，且对于任意 $n \ge 2, n \in \mathbb{N}^*$，在 $[a_2, a_n]$ 上，$f'(x) \ge 0$。
+- 对于迭代数列 $a_{n+1}=f(a_n)$，若 $f(x)$ 是二次函数，则数列单调递增的充分必要条件为 $a_1<a_2<a_3$，且对于任意 $n\ge 2, n\in\mathbb{N}^*$，在 $[a_2, a_n]$ 上，$f'(x)\ge 0$。
 
-- 迭代数列 $a_{n+1} = f(a_n)$，其中 $f'(x) < 0$，则 $\{a_{2n}\}$ 与 $\{a_{2n-1}\}$ 的单调性相反。
+- 迭代数列 $a_{n+1}=f(a_n)$，其中 $f'(x)<0$，则 $\{a_{2n}\}$ 与 $\{a_{2n-1}\}$ 的单调性相反。
 
 ## 换元初步
 
@@ -1245,19 +1252,19 @@ $$
 我们复习一下在换元里面常用的恒等变换，
 
 $$
-\cos2\theta=2\cos^2\theta-1
+\cos 2\theta=2\cos^2\theta-1
 $$
 
 $$
-\tan2\theta={2\tan\theta\over1-\tan^2\theta}
+\tan 2\theta={2\tan\theta\over1-\tan^2\theta}
 $$
 
 $$
-\sin3\theta=3\sin\theta-4\sin^3\theta
+\sin 3\theta=3\sin\theta-4\sin^3\theta
 $$
 
 $$
-\cos3\theta=4\cos^3\theta-3\cos\theta
+\cos 3\theta=4\cos^3\theta-3\cos\theta
 $$
 
 注意到，除了正切函数，其他的函数值域都是 $[-1,1]$（不指定定义域）。
@@ -1315,7 +1322,7 @@ $$
 $$
 
 $$
-\cos\theta_{n+1}=\cos2\theta_n
+\cos\theta_{n+1}=\cos 2\theta_n
 $$
 
 不妨令，
@@ -1341,7 +1348,7 @@ $$
 $$
 
 $$
-\theta=\arccos1/4
+\theta=\arccos 1/4
 $$
 
 即，
@@ -1508,9 +1515,9 @@ $$
 
 $$
 \begin{aligned}
-b_n&=-{n\over2^n}+{1\over2^{n-1}}+{1\over2^{n-2}}+\dots+{1\over2^1}+1\\
-&={1\over2^{n-1}}\left(1+2+\dots+2^{n-1}\right)-{n\over2^n}\\
-&={2^n-1\over2^{n-1}}-{n\over2^n}=2-{2+n\over2^n}
+  b_n & =-{n\over2^n}+{1\over2^{n-1}}+{1\over2^{n-2}}+\dots+{1\over2^1}+1 \\
+  & ={1\over2^{n-1}}\left(1+2+\dots+2^{n-1}\right)-{n\over2^n} \\
+  & ={2^n-1\over2^{n-1}}-{n\over2^n}=2-{2+n\over2^n}
 \end{aligned}
 $$
 
@@ -1577,8 +1584,8 @@ $$
 
 $$
 \begin{aligned}
-c_n&={2^2-1^2\over2^1}+{3^2-2^2\over2^2}+{4^2-3^2\over2^3}+\dots+{(n-1)^2-(n-2)^2\over2^{n-2}}+{n^2-(n-1)^2\over2^{n-1}}\\
-&={2\times2-1\over2^1}+{2\times3-1\over2^2}+{2\times4-1\over2^3}+\dots+{2(n-1)-1\over2^{n-2}}+{2n-1\over2^{n-1}}
+  c_n & ={2^2-1^2\over2^1}+{3^2-2^2\over2^2}+{4^2-3^2\over2^3}+\dots+{(n-1)^2-(n-2)^2\over2^{n-2}}+{n^2-(n-1)^2\over2^{n-1}} \\
+  & ={2\times2-1\over2^1}+{2\times3-1\over2^2}+{2\times4-1\over2^3}+\dots+{2(n-1)-1\over2^{n-2}}+{2n-1\over2^{n-1}}
 \end{aligned}
 $$
 
@@ -1598,11 +1605,11 @@ $$
 
 $$
 \begin{aligned}
-c_n&=3-{2n-1\over2^{n-1}}+{2\over2^1}+{2\over2^2}+\dots+{2\over2^{n-3}}+{2\over2^{n-2}}\\
-&=3-{2n-1\over2^{n-1}}+{1\over2^0}+{1\over2^1}+\dots+{1\over2^{n-4}}+{1\over2^{n-3}}\\
-&=3-{2n-1\over2^{n-1}}+{1\over2^{n-3}}(1+2+2^2+\dots+2^{n-3})\\
-&=3-{2n-1\over2^{n-1}}+{2^{n-2}-1\over2^{n-3}}\\
-&=5-{2n-1\over2^{n-1}}-{1\over2^{n-3}}
+  c_n & =3-{2n-1\over2^{n-1}}+{2\over2^1}+{2\over2^2}+\dots+{2\over2^{n-3}}+{2\over2^{n-2}} \\
+  & =3-{2n-1\over2^{n-1}}+{1\over2^0}+{1\over2^1}+\dots+{1\over2^{n-4}}+{1\over2^{n-3}} \\
+  & =3-{2n-1\over2^{n-1}}+{1\over2^{n-3}}(1+2+2^2+\dots+2^{n-3}) \\
+  & =3-{2n-1\over2^{n-1}}+{2^{n-2}-1\over2^{n-3}} \\
+  & =5-{2n-1\over2^{n-1}}-{1\over2^{n-3}}
 \end{aligned}
 $$
 

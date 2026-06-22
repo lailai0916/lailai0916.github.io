@@ -692,7 +692,7 @@ int main()
 - 公式独立成行时应使用行间公式。以下是一个行间公式的例子：
 
 ```latex
-$$a + b = c$$
+$$a+b=c$$
 ```
 
 $$a + b = c$$
@@ -706,7 +706,7 @@ $$a + b = c$$
   - 位运算应使用 $\operatorname{and}, \operatorname{or}, \operatorname{xor}$（`$\operatorname{and}, \operatorname{or}, \operatorname{xor}$`）。特别地，对于状态压缩 DP 等一类常用位运算实现集合运算的代码，建议在题解中用**集合语言**直接描述。以下是一个例子：
 
 ```latex
-$$dp_{S \cup \{u\}} \gets dp_{S}+w_u$$
+$$dp_{S\cup \{u\}}\gets dp_{S}+w_u$$
 ```
 
 $$dp_{S \cup \{u\}} \gets dp_{S}+w_u$$
@@ -727,19 +727,37 @@ $$dp_{S \cup \{u\}} \gets dp_{S}+w_u$$
 - 连等式应使用 `\aligned` 环境，分段函数应使用 `\cases` 环境，矩阵应使用 `\bmatrix` 环境。以下是一些例子：
 
 ```latex
-$$\begin{aligned} \sum _ {i = 1} ^ n \sum _ {j = 1} ^ n \gcd(i, j) &= \sum _ {i = 1} ^ n \sum _ {j = 1} ^ n \sum _ {d \mid \gcd(i, j)} \varphi(d) \\ &= \sum _ {d = 1} ^ n \varphi(d) \sum _ {i = 1} ^ n \sum _ {j = 1} ^ n [d \mid \gcd(i, j)] \\ &= \sum _ {d = 1} ^ n \varphi(d) \sum _ {i = 1} ^ n \sum _ {j = 1} ^ n [d \mid i][d \mid j] \\ &= \sum _ {d = 1} ^ n \varphi(d) \left\lfloor \frac{n}{d} \right\rfloor ^ 2 \end{aligned}$$
+$$\begin{aligned}
+  \sum_{i=1}^n\sum_{j=1}^n\gcd(i, j) & =\sum_{i=1}^n\sum_{j=1}^n\sum_{d\mid\gcd(i, j)}\varphi(d) \\
+  & =\sum_{d=1}^n\varphi(d)\sum_{i=1}^n\sum_{j=1}^n [d\mid\gcd(i, j)] \\
+  & =\sum_{d=1}^n\varphi(d)\sum_{i=1}^n\sum_{j=1}^n [d\mid i][d\mid j] \\
+  & =\sum_{d=1}^n\varphi(d)\left\lfloor\frac{n}{d}\right\rfloor^2
+\end{aligned}$$
 ```
 
 $$\begin{aligned} \sum _ {i = 1} ^ n \sum _ {j = 1} ^ n \gcd(i, j) &= \sum _ {i = 1} ^ n \sum _ {j = 1} ^ n \sum _ {d \mid \gcd(i, j)} \varphi(d) \\ &= \sum _ {d = 1} ^ n \varphi(d) \sum _ {i = 1} ^ n \sum _ {j = 1} ^ n [d \mid \gcd(i, j)] \\ &= \sum _ {d = 1} ^ n \varphi(d) \sum _ {i = 1} ^ n \sum _ {j = 1} ^ n [d \mid i][d \mid j] \\ &= \sum _ {d = 1} ^ n \varphi(d) \left\lfloor \frac{n}{d} \right\rfloor ^ 2 \end{aligned}$$
 
 ```latex
-$$\lvert 2x - 1 \rvert = \begin{cases} 2x - 1 & x > \frac{1}{2} \\ 0 & x = \frac{1}{2} \\ 1 - 2x & x < \frac{1}{2} \end{cases}$$
+$$\lvert 2x-1\rvert=\begin{cases}
+  2x-1 & x>\frac{1}{2} \\
+  0 & x=\frac{1}{2} \\
+  1-2x & x<\frac{1}{2}
+\end{cases}$$
 ```
 
 $$\lvert 2x - 1 \rvert = \begin{cases} 2x - 1 & x > \frac{1}{2} \\ 0 & x = \frac{1}{2} \\ 1 - 2x & x < \frac{1}{2} \end{cases}$$
 
 ```latex
-$$\begin{bmatrix} f_{i + 1} \\ f_i \end{bmatrix} = \begin{bmatrix} 1 & 1 \\ 1 & 0 \end{bmatrix} \times \begin{bmatrix} f_i \\ f_{i - 1} \end{bmatrix}$$
+$$\begin{bmatrix}
+  f_{i+1} \\
+  f_i
+\end{bmatrix}=\begin{bmatrix}
+  1 & 1 \\
+  1 & 0
+\end{bmatrix}\times \begin{bmatrix}
+  f_i \\
+  f_{i-1}
+\end{bmatrix}$$
 ```
 
 $$\begin{bmatrix} f_{i + 1} \\ f_i \end{bmatrix} = \begin{bmatrix} 1 & 1 \\ 1 & 0 \end{bmatrix} \times \begin{bmatrix} f_i \\ f_{i - 1} \end{bmatrix}$$

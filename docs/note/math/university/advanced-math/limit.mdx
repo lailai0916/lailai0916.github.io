@@ -90,8 +90,8 @@ $$
 
 $$
 \begin{aligned}
-\text{有界：}&\ \text{归纳证 }a_n<2.\ a_1<2;\ \text{若 }a_n<2\text{ 则 }a_{n+1}=\sqrt{2+a_n}<\sqrt{4}=2.\\
-\text{单调：}&\ a_{n+1}^2-a_n^2=2+a_n-a_n^2=-(a_n-2)(a_n+1)>0\ (\text{因 }0<a_n<2),\ \text{故递增。}
+  \text{有界：} & \ \text{归纳证 }a_n<2.\ a_1<2;\ \text{若 }a_n<2\text{ 则 }a_{n+1}=\sqrt{2+a_n}<\sqrt{4}=2. \\
+  \text{单调：} & \ a_{n+1}^2-a_n^2=2+a_n-a_n^2=-(a_n-2)(a_n+1)>0\ (\text{因 }0<a_n<2),\ \text{故递增。}
 \end{aligned}
 $$
 
@@ -132,7 +132,7 @@ $$
 ### 单侧极限
 
 $$
-\lim_{x\to x_0^-}f(x)=A^-,\quad \lim_{x\to x_0^+}f(x)=A^+
+\lim_{x\to x_0^-}f(x)=A^-,\quad\lim_{x\to x_0^+}f(x)=A^+
 $$
 
 极限存在的充要条件：**左右极限存在且相等**。
@@ -154,7 +154,7 @@ $$
 设 $\lim f(x)=A$、$\lim g(x)=B$（同一过程），则：
 
 $$
-\lim[f\pm g]=A\pm B,\quad \lim[f\cdot g]=A\cdot B,\quad \lim\frac{f}{g}=\frac{A}{B}\,(B\ne 0)
+\lim[f\pm g]=A\pm B,\quad\lim[f\cdot g]=A\cdot B,\quad\lim\frac{f}{g}=\frac{A}{B}\,(B\ne 0)
 $$
 
 由此可推出两条常用结论：常数可以提到极限号外 $\lim[cf]=c\lim f$；以及 $\lim[f]^n=A^n$。
@@ -192,11 +192,11 @@ $$
 ### 常用等价无穷小（$x\to 0$）
 
 $$
-\sin x\sim x,\quad \tan x\sim x,\quad \arcsin x\sim x,\quad \arctan x\sim x
+\sin x\sim x,\quad\tan x\sim x,\quad\arcsin x\sim x,\quad\arctan x\sim x
 $$
 
 $$
-1-\cos x\sim\frac{x^2}{2},\quad e^x-1\sim x,\quad a^x-1\sim x\ln a,\quad \ln(1+x)\sim x,\quad (1+x)^a-1\sim ax
+1-\cos x\sim\frac{x^2}{2},\quad e^x-1\sim x,\quad a^x-1\sim x\ln a,\quad\ln(1+x)\sim x,\quad(1+x)^a-1\sim ax
 $$
 
 这些等价式都是泰勒展开取首项的结果，可以从 $\sin x=x-\dfrac{x^3}{6}+\cdots$ 一眼看出。用等价无穷小替换，本质是 **在求极限时把复杂函数换成它最简单的同阶替身**。

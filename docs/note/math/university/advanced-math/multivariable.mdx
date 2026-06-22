@@ -70,7 +70,10 @@ $f_y=0$ 是因为 $\ln 1=0$，所以 $y$ 的微小变化几乎不影响结果。
 
 $$
 \text{偏导连续}\Rightarrow\text{可微}\Rightarrow
-\begin{cases}\text{连续}\\\text{偏导存在}\end{cases}
+\begin{cases}
+  \text{连续} \\
+  \text{偏导存在}
+\end{cases}
 $$
 
 反向都不成立。特别注意 **偏导存在不一定可微**——偏导只管住 $x$、$y$ 两个坐标方向，可微却要求切平面在 **所有方向** 都贴合曲面，是强得多的条件。
@@ -96,7 +99,7 @@ $$
 由 $F(x,y,z)=0$ 确定 $z=z(x,y)$：
 
 $$
-\frac{\partial z}{\partial x}=-\frac{F_x}{F_z},\quad \frac{\partial z}{\partial y}=-\frac{F_y}{F_z}
+\frac{\partial z}{\partial x}=-\frac{F_x}{F_z},\quad\frac{\partial z}{\partial y}=-\frac{F_y}{F_z}
 $$
 
 这些公式由「对 $F=0$ 两端求全微分、再解出待求偏导」得到，避免了显式解出 $y$ 或 $z$。前提是分母（如 $F_y$、$F_z$）不为零，这正是 **隐函数定理** 保证局部能解出函数的条件。
@@ -106,7 +109,7 @@ $$
 **方向导数**：函数沿单位向量 $\vec l=(\cos\alpha,\cos\beta)$ 的变化率。
 
 $$
-\frac{\partial f}{\partial \vec l}=f_x\cos\alpha+f_y\cos\beta=\nabla f\cdot\vec l
+\frac{\partial f}{\partial\vec l}=f_x\cos\alpha+f_y\cos\beta=\nabla f\cdot\vec l
 $$
 
 偏导只测坐标轴方向的陡度，方向导数测 **任意指定方向** 的陡度——把它写成梯度与方向向量的点积，是理解梯度的钥匙。
@@ -119,7 +122,7 @@ $$
 
 :::tip
 
-梯度指向函数 **上升最快** 的方向，其模 $|\nabla f|$ 是该方向的（最大）变化率。原因藏在点积里：$\dfrac{\partial f}{\partial \vec l}=\nabla f\cdot\vec l=|\nabla f|\cos\theta$，$\theta$ 是 $\vec l$ 与梯度的夹角。当 $\vec l$ 与梯度同向（$\theta=0$）时变化率最大、反向最小、垂直时为零。所以「站在山坡上、朝梯度方向迈步爬升最快」，而 **梯度处处垂直于等值线 / 等高面**。这是机器学习里梯度下降法的几何根基。
+梯度指向函数 **上升最快** 的方向，其模 $|\nabla f|$ 是该方向的（最大）变化率。原因藏在点积里：$\dfrac{\partial f}{\partial\vec l}=\nabla f\cdot\vec l=|\nabla f|\cos\theta$，$\theta$ 是 $\vec l$ 与梯度的夹角。当 $\vec l$ 与梯度同向（$\theta=0$）时变化率最大、反向最小、垂直时为零。所以「站在山坡上、朝梯度方向迈步爬升最快」，而 **梯度处处垂直于等值线 / 等高面**。这是机器学习里梯度下降法的几何根基。
 
 :::
 
@@ -170,9 +173,9 @@ $$
 
 $$
 \begin{aligned}
-L_x&=y+2\lambda x=0\\
-L_y&=x+2\lambda y=0\\
-L_\lambda&=x^2+y^2-1=0
+  L_x & =y+2\lambda x=0 \\
+  L_y & =x+2\lambda y=0 \\
+  L_\lambda & =x^2+y^2-1=0
 \end{aligned}
 $$
 

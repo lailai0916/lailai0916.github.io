@@ -51,21 +51,33 @@ $$
 例：求 $A=\begin{pmatrix}2&-1&0\\-1&2&-1\\0&-1&2\end{pmatrix}$ 的特征值与特征向量。先写特征多项式（按第一行展开）：
 
 $$
-|A-\lambda E|=\begin{vmatrix}2-\lambda&-1&0\\-1&2-\lambda&-1\\0&-1&2-\lambda\end{vmatrix}=(2-\lambda)\big[(2-\lambda)^2-1\big]-(-1)\big[-(2-\lambda)\big]
+|A-\lambda E|=\begin{vmatrix}
+  2-\lambda & -1 & 0 \\
+  -1 & 2-\lambda & -1 \\
+  0 & -1 & 2-\lambda
+\end{vmatrix}=(2-\lambda)\big[(2-\lambda)^2-1\big]-(-1)\big[-(2-\lambda)\big]
 $$
 
 整理得 $(2-\lambda)\big[(2-\lambda)^2-2\big]=0$。令 $\mu=2-\lambda$ 即 $\mu(\mu^2-2)=0$，故 $\mu=0,\pm\sqrt2$，对应
 
 $$
-\lambda_1=2,\quad \lambda_2=2-\sqrt2,\quad \lambda_3=2+\sqrt2
+\lambda_1=2,\quad\lambda_2=2-\sqrt2,\quad\lambda_3=2+\sqrt2
 $$
 
 三个互异。自检：之和 $\lambda_1+\lambda_2+\lambda_3=6=\operatorname{tr}(A)$，吻合。再逐个回代解 $(A-\lambda E)\vec x=\vec 0$。对 $\lambda_1=2$：
 
 $$
-A-2E=\begin{pmatrix}0&-1&0\\-1&0&-1\\0&-1&0\end{pmatrix}
+A-2E=\begin{pmatrix}
+  0 & -1 & 0 \\
+  -1 & 0 & -1 \\
+  0 & -1 & 0
+\end{pmatrix}
 \xrightarrow{\text{行变换}}
-\begin{pmatrix}1&0&1\\0&1&0\\0&0&0\end{pmatrix}
+\begin{pmatrix}
+  1 & 0 & 1 \\
+  0 & 1 & 0 \\
+  0 & 0 & 0
+\end{pmatrix}
 $$
 
 得 $x_2=0$、$x_1=-x_3$，取 $\vec\xi_1=(1,0,-1)^T$。对 $\lambda=2\mp\sqrt2$ 同理解出 $\vec\xi_{2,3}=(1,\pm\sqrt2,1)^T$（这里 $\lambda_2=2-\sqrt2$ 配 $(1,\sqrt2,1)^T$，$\lambda_3=2+\sqrt2$ 配 $(1,-\sqrt2,1)^T$）。每个特征向量乘任意非零数仍是特征向量。
@@ -73,7 +85,11 @@ $$
 例（含重根）：求 $B=\begin{pmatrix}2&0&0\\1&2&0\\0&0&3\end{pmatrix}$ 的特征值与特征向量。它是下三角，特征值就是对角元 $\lambda=2$（二重）、$\lambda=3$。对 $\lambda=2$：
 
 $$
-B-2E=\begin{pmatrix}0&0&0\\1&0&0\\0&0&1\end{pmatrix}
+B-2E=\begin{pmatrix}
+  0 & 0 & 0 \\
+  1 & 0 & 0 \\
+  0 & 0 & 1
+\end{pmatrix}
 $$
 
 秩为 $2$，解空间维数 $3-2=1$，只解出一个 $\vec\xi=(0,1,0)^T$。二重特征值却只有 $1$ 个线性无关特征向量——这正是后面「不可对角化」的信号。
@@ -83,7 +99,7 @@ $$
 设 $A$ 的 $n$ 个特征值为 $\lambda_1,\dots,\lambda_n$（计重数），则
 
 $$
-\sum_{i=1}^{n}\lambda_i=\operatorname{tr}(A)=\sum_{i=1}^{n}a_{ii},\qquad \prod_{i=1}^{n}\lambda_i=|A|
+\sum_{i=1}^{n}\lambda_i=\operatorname{tr}(A)=\sum_{i=1}^{n}a_{ii},\qquad\prod_{i=1}^{n}\lambda_i=|A|
 $$
 
 特征值之和等于 **迹**（对角线元素之和），之积等于 **行列式**。这两条来自特征多项式的韦达定理，是验算特征值时的快速自检 —— 算完一定要核对这两个等式。也立刻看出：$A$ 可逆 $\iff$ 所有特征值非零。
@@ -160,7 +176,11 @@ $$
 例（判定能否对角化）：$A=\begin{pmatrix}1&2&2\\2&1&2\\2&2&1\end{pmatrix}$ 能否对角化？特征多项式 $|A-\lambda E|=-(\lambda-5)(\lambda+1)^2$，特征值 $\lambda_1=5$（单根）、$\lambda_2=-1$（二重）。单根的几何重数必为 $1$，关键看二重根 $\lambda=-1$：
 
 $$
-A-(-1)E=A+E=\begin{pmatrix}2&2&2\\2&2&2\\2&2&2\end{pmatrix}
+A-(-1)E=A+E=\begin{pmatrix}
+  2 & 2 & 2 \\
+  2 & 2 & 2 \\
+  2 & 2 & 2
+\end{pmatrix}
 $$
 
 秩为 $1$，几何重数 $=3-r=3-1=2$，恰好等于代数重数 $2$。两个重数都对得上，故 $A$ **可对角化**。$\lambda=-1$ 的特征子空间取基础解系 $(-1,1,0)^T,(-1,0,1)^T$，配上 $\lambda=5$ 的 $(1,1,1)^T$，凑齐 $3$ 个线性无关特征向量。
@@ -192,14 +212,35 @@ $$
 例：求 $A=\begin{pmatrix}1&2\\1&0\end{pmatrix}$ 的 $n$ 次幂。特征方程 $\lambda^2-\lambda-2=0$，根 $\lambda_1=2,\lambda_2=-1$。对 $\lambda_1=2$：$(A-2E)\vec x=\vec 0$ 即 $\begin{pmatrix}-1&2\\1&-2\end{pmatrix}\vec x=\vec0$，得 $\vec\xi_1=(2,1)^T$；对 $\lambda_2=-1$：$\begin{pmatrix}2&2\\1&1\end{pmatrix}\vec x=\vec0$，得 $\vec\xi_2=(1,-1)^T$。令
 
 $$
-P=\begin{pmatrix}2&1\\1&-1\end{pmatrix},\quad P^{-1}=\frac{1}{-3}\begin{pmatrix}-1&-1\\-1&2\end{pmatrix}=\frac13\begin{pmatrix}1&1\\1&-2\end{pmatrix}
+P=\begin{pmatrix}
+  2 & 1 \\
+  1 & -1
+\end{pmatrix},\quad P^{-1}=\frac{1}{-3}\begin{pmatrix}
+  -1 & -1 \\
+  -1 & 2
+\end{pmatrix}=\frac13\begin{pmatrix}
+  1 & 1 \\
+  1 & -2
+\end{pmatrix}
 $$
 
 则 $A^n=P\begin{pmatrix}2^n&0\\0&(-1)^n\end{pmatrix}P^{-1}$。代入算：
 
 $$
-A^n=\frac13\begin{pmatrix}2&1\\1&-1\end{pmatrix}\begin{pmatrix}2^n&0\\0&(-1)^n\end{pmatrix}\begin{pmatrix}1&1\\1&-2\end{pmatrix}
-=\frac13\begin{pmatrix}2^{n+1}+(-1)^n&2^{n+1}-2(-1)^n\\2^n-(-1)^n&2^n+2(-1)^n\end{pmatrix}
+A^n=\frac13\begin{pmatrix}
+  2 & 1 \\
+  1 & -1
+\end{pmatrix}\begin{pmatrix}
+  2^n & 0 \\
+  0 & (-1)^n
+\end{pmatrix}\begin{pmatrix}
+  1 & 1 \\
+  1 & -2
+\end{pmatrix}
+=\frac13\begin{pmatrix}
+  2^{n+1}+(-1)^n & 2^{n+1}-2(-1)^n \\
+  2^n-(-1)^n & 2^n+2(-1)^n
+\end{pmatrix}
 $$
 
 验证 $n=1$：右边 $\frac13\begin{pmatrix}4-1&4+2\\2+1&2-2\end{pmatrix}=\frac13\begin{pmatrix}3&6\\3&0\end{pmatrix}=\begin{pmatrix}1&2\\1&0\end{pmatrix}=A$，无误。这样任意高次幂都能一步写出，省去逐次相乘。
@@ -287,7 +328,7 @@ $$
 例：把实对称矩阵 $A=\begin{pmatrix}1&2&2\\2&1&2\\2&2&1\end{pmatrix}$ 正交对角化。前面已求出特征值 $\lambda_1=5$、$\lambda_2=\lambda_3=-1$（二重），及特征向量
 
 $$
-\lambda_1=5:\ \vec\xi_1=(1,1,1)^T;\qquad \lambda=-1:\ \vec\xi_2=(-1,1,0)^T,\ \vec\xi_3=(-1,0,1)^T
+\lambda_1=5:\ \vec\xi_1=(1,1,1)^T;\qquad\lambda=-1:\ \vec\xi_2=(-1,1,0)^T,\ \vec\xi_3=(-1,0,1)^T
 $$
 
 $\vec\xi_1$ 与 $\vec\xi_2,\vec\xi_3$ 分属不同特征值，自动正交，无需处理。但 $\vec\xi_2,\vec\xi_3$ 同属 $\lambda=-1$，彼此 **不正交**（$(\vec\xi_2,\vec\xi_3)=1\ne0$），要对它们做施密特正交化。取 $\vec\eta_2=\vec\xi_2=(-1,1,0)^T$，
@@ -299,7 +340,15 @@ $$
 现在 $\vec\xi_1,\vec\eta_2,\vec\eta_3$ 两两正交。各自单位化（长度依次为 $\sqrt3,\sqrt2,\sqrt{3/2}$），按列拼成
 
 $$
-Q=\begin{pmatrix}\frac{1}{\sqrt3}&-\frac{1}{\sqrt2}&-\frac{1}{\sqrt6}\\[2pt]\frac{1}{\sqrt3}&\frac{1}{\sqrt2}&-\frac{1}{\sqrt6}\\[2pt]\frac{1}{\sqrt3}&0&\frac{2}{\sqrt6}\end{pmatrix},\qquad Q^TAQ=\begin{pmatrix}5&&\\&-1&\\&&-1\end{pmatrix}
+Q=\begin{pmatrix}
+  \frac{1}{\sqrt3} & -\frac{1}{\sqrt2} & -\frac{1}{\sqrt6} \\[2pt]
+  \frac{1}{\sqrt3} & \frac{1}{\sqrt2} & -\frac{1}{\sqrt6} \\[2pt]
+  \frac{1}{\sqrt3} & 0 & \frac{2}{\sqrt6}
+\end{pmatrix},\qquad Q^TAQ=\begin{pmatrix}
+  5 &  &  \\
+  & -1 &  \\
+  &  & -1
+\end{pmatrix}
 $$
 
 注意第三列：$\vec\eta_3=(-\frac12,-\frac12,1)^T$ 长度 $\sqrt{\frac14+\frac14+1}=\sqrt{3/2}$，单位化后乘 $\sqrt{2/3}$ 得 $(-\frac{1}{\sqrt6},-\frac{1}{\sqrt6},\frac{2}{\sqrt6})^T$。这套「不同特征值天然正交、同特征值内部施密特」的分工，是正交对角化省力的关键。

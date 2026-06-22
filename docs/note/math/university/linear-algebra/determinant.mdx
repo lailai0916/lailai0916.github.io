@@ -56,11 +56,18 @@ $$
 ### 二阶与三阶
 
 $$
-\begin{vmatrix}a&b\\c&d\end{vmatrix}=ad-bc
+\begin{vmatrix}
+  a & b \\
+  c & d
+\end{vmatrix}=ad-bc
 $$
 
 $$
-\begin{vmatrix}a_1&b_1&c_1\\a_2&b_2&c_2\\a_3&b_3&c_3\end{vmatrix}=a_1b_2c_3+a_2b_3c_1+a_3b_1c_2-a_3b_2c_1-a_2b_1c_3-a_1b_3c_2
+\begin{vmatrix}
+  a_1 & b_1 & c_1 \\
+  a_2 & b_2 & c_2 \\
+  a_3 & b_3 & c_3
+\end{vmatrix}=a_1b_2c_3+a_2b_3c_1+a_3b_1c_2-a_3b_2c_1-a_2b_1c_3-a_1b_3c_2
 $$
 
 记忆口诀：**对角线法则**（沙路法）—— 主对角线方向三项取正，副对角线方向三项取负。
@@ -131,7 +138,7 @@ $$
 由乘法性质 $\det(AB)=\det A\det B$ 还能推出：
 
 $$
-\det(A^{-1})=\frac{1}{\det A},\qquad \det(A^m)=(\det A)^m
+\det(A^{-1})=\frac{1}{\det A},\qquad\det(A^m)=(\det A)^m
 $$
 
 :::tip
@@ -162,13 +169,24 @@ $$
 例：算 $\begin{vmatrix}3&0&0&2\\1&2&0&5\\4&1&3&0\\2&0&0&1\end{vmatrix}$。第 $3$ 列只有一个非零元 $a_{33}=3$，按它展开最省事：
 
 $$
-|A|=a_{33}A_{33}=3\cdot(-1)^{3+3}\begin{vmatrix}3&0&2\\1&2&5\\2&0&1\end{vmatrix}
+|A|=a_{33}A_{33}=3\cdot(-1)^{3+3}\begin{vmatrix}
+  3 & 0 & 2 \\
+  1 & 2 & 5 \\
+  2 & 0 & 1
+\end{vmatrix}
 $$
 
 这个三阶行列式的第 $2$ 列又只有 $a_{22}=2$ 非零，再按第 $2$ 列展开：
 
 $$
-\begin{vmatrix}3&0&2\\1&2&5\\2&0&1\end{vmatrix}=2\cdot(-1)^{2+2}\begin{vmatrix}3&2\\2&1\end{vmatrix}=2(3-4)=-2
+\begin{vmatrix}
+  3 & 0 & 2 \\
+  1 & 2 & 5 \\
+  2 & 0 & 1
+\end{vmatrix}=2\cdot(-1)^{2+2}\begin{vmatrix}
+  3 & 2 \\
+  2 & 1
+\end{vmatrix}=2(3-4)=-2
 $$
 
 于是 $|A|=3\times(-2)=-6$。挑零多的行列展开，把一个四阶行列式两步压成了二阶。
@@ -178,7 +196,10 @@ $$
 如果用某一行的元素去乘 **另一行** 的代数余子式再求和，结果恒为 $0$：
 
 $$
-\sum_{j=1}^{n}a_{ij}A_{kj}=\begin{cases}|A|,&i=k\\0,&i\ne k\end{cases}
+\sum_{j=1}^{n}a_{ij}A_{kj}=\begin{cases}
+  |A|, & i=k \\
+  0, & i\ne k
+\end{cases}
 $$
 
 直观解释：$i\ne k$ 时，这个和相当于把矩阵的第 $k$ 行换成了第 $i$ 行（两行相同）的行列式，自然为 $0$。这条恒等式正是 **伴随矩阵** $AA^*=|A|E$ 的来源（详见 [矩阵](/docs/note/math/university/linear-algebra/matrix)）。
@@ -192,16 +213,28 @@ $$
 例：算 $\begin{vmatrix}2&1&-1\\1&3&2\\1&-1&3\end{vmatrix}$。先用第 $1$ 行把第 $2$、$3$ 行的首元消成 $0$（$r_2-\frac12 r_1$、$r_3-\frac12 r_1$，不变号）：
 
 $$
-\begin{vmatrix}2&1&-1\\1&3&2\\1&-1&3\end{vmatrix}
+\begin{vmatrix}
+  2 & 1 & -1 \\
+  1 & 3 & 2 \\
+  1 & -1 & 3
+\end{vmatrix}
 \xrightarrow{r_2-\frac12 r_1,\ r_3-\frac12 r_1}
-\begin{vmatrix}2&1&-1\\0&\frac52&\frac52\\0&-\frac32&\frac72\end{vmatrix}
+\begin{vmatrix}
+  2 & 1 & -1 \\
+  0 & \frac52 & \frac52 \\
+  0 & -\frac32 & \frac72
+\end{vmatrix}
 $$
 
 再用第 $2$ 行消第 $3$ 行（$r_3+\frac35 r_2$）：
 
 $$
 \xrightarrow{r_3+\frac35 r_2}
-\begin{vmatrix}2&1&-1\\0&\frac52&\frac52\\0&0&5\end{vmatrix}=2\cdot\frac52\cdot5=25
+\begin{vmatrix}
+  2 & 1 & -1 \\
+  0 & \frac52 & \frac52 \\
+  0 & 0 & 5
+\end{vmatrix}=2\cdot\frac52\cdot5=25
 $$
 
 对角线相乘即得 $25$。若嫌分数烦，也可先把首行首列凑出 $1$ 再消，思路一致。
@@ -209,7 +242,12 @@ $$
 ### 三角行列式
 
 $$
-\begin{vmatrix}a_{11}&*&\cdots&*\\&a_{22}&\cdots&*\\&&\ddots&\vdots\\0&&&a_{nn}\end{vmatrix}=a_{11}a_{22}\cdots a_{nn}
+\begin{vmatrix}
+  a_{11} & * & \cdots & * \\
+  & a_{22} & \cdots & * \\
+  &  & \ddots & \vdots \\
+  0 &  &  & a_{nn}
+\end{vmatrix}=a_{11}a_{22}\cdots a_{nn}
 $$
 
 上三角、下三角、对角行列式都等于 **对角线元素之积**。
@@ -221,14 +259,26 @@ $$
 例：算 $n$ 阶行列式 $D_n=\begin{vmatrix}a+1&1&\cdots&1\\1&a+1&\cdots&1\\\vdots&\vdots&\ddots&\vdots\\1&1&\cdots&a+1\end{vmatrix}$（对角为 $a+1$，其余全 $1$）。在左上角加一行一列：
 
 $$
-D_n=\begin{vmatrix}1&1&1&\cdots&1\\0&a+1&1&\cdots&1\\0&1&a+1&\cdots&1\\\vdots&\vdots&\vdots&\ddots&\vdots\\0&1&1&\cdots&a+1\end{vmatrix}
+D_n=\begin{vmatrix}
+  1 & 1 & 1 & \cdots & 1 \\
+  0 & a+1 & 1 & \cdots & 1 \\
+  0 & 1 & a+1 & \cdots & 1 \\
+  \vdots & \vdots & \vdots & \ddots & \vdots \\
+  0 & 1 & 1 & \cdots & a+1
+\end{vmatrix}
 $$
 
 首列除左上角全为 $0$，按首列展开值不变。现在每一行（除首行）减去首行，把 $a+1$ 变成 $a$、把那些 $1$ 变成 $0$：
 
 $$
 \xrightarrow{r_i-r_1\,(i\ge2)}
-\begin{vmatrix}1&1&1&\cdots&1\\-1&a&0&\cdots&0\\-1&0&a&\cdots&0\\\vdots&\vdots&\vdots&\ddots&\vdots\\-1&0&0&\cdots&a\end{vmatrix}
+\begin{vmatrix}
+  1 & 1 & 1 & \cdots & 1 \\
+  -1 & a & 0 & \cdots & 0 \\
+  -1 & 0 & a & \cdots & 0 \\
+  \vdots & \vdots & \vdots & \ddots & \vdots \\
+  -1 & 0 & 0 & \cdots & a
+\end{vmatrix}
 $$
 
 再把第 $2\sim(n+1)$ 列各乘 $\frac1a$ 加到第 $1$ 列（消去那些 $-1$），第 $1$ 列左上角变成 $1+\frac na$，其余化零，化成下三角：
@@ -242,7 +292,13 @@ $$
 ### 范德蒙德行列式
 
 $$
-V_n=\begin{vmatrix}1&1&\cdots&1\\x_1&x_2&\cdots&x_n\\x_1^2&x_2^2&\cdots&x_n^2\\\vdots&\vdots&&\vdots\\x_1^{n-1}&x_2^{n-1}&\cdots&x_n^{n-1}\end{vmatrix}=\prod_{1\le i<j\le n}(x_j-x_i)
+V_n=\begin{vmatrix}
+  1 & 1 & \cdots & 1 \\
+  x_1 & x_2 & \cdots & x_n \\
+  x_1^2 & x_2^2 & \cdots & x_n^2 \\
+  \vdots & \vdots &  & \vdots \\
+  x_1^{n-1} & x_2^{n-1} & \cdots & x_n^{n-1}
+\end{vmatrix}=\prod_{1\le i<j\le n}(x_j-x_i)
 $$
 
 只要 $x_1,x_2,\dots,x_n$ **两两不同**，范德蒙德行列式就非零。这一点在多项式插值、特征值理论里反复出现 —— 它保证了「过 $n$ 个不同横坐标的点恰有唯一的 $n-1$ 次插值多项式」。
@@ -263,14 +319,26 @@ $$
 
 $$
 \xrightarrow{c_1+c_2+c_3}
-\begin{vmatrix}5&1&1\\5&3&1\\5&1&3\end{vmatrix}
-=5\begin{vmatrix}1&1&1\\1&3&1\\1&1&3\end{vmatrix}
+\begin{vmatrix}
+  5 & 1 & 1 \\
+  5 & 3 & 1 \\
+  5 & 1 & 3
+\end{vmatrix}
+=5\begin{vmatrix}
+  1 & 1 & 1 \\
+  1 & 3 & 1 \\
+  1 & 1 & 3
+\end{vmatrix}
 $$
 
 再 $r_2-r_1$、$r_3-r_1$ 把第 $1$ 列下方消零，化成上三角：
 
 $$
-=5\begin{vmatrix}1&1&1\\0&2&0\\0&0&2\end{vmatrix}=5\cdot1\cdot2\cdot2=20
+=5\begin{vmatrix}
+  1 & 1 & 1 \\
+  0 & 2 & 0 \\
+  0 & 0 & 2
+\end{vmatrix}=5\cdot1\cdot2\cdot2=20
 $$
 
 ### 三对角与递推行列式
@@ -278,7 +346,13 @@ $$
 只有主对角线及其上下两条相邻对角线非零的行列式称 **三对角行列式**。它没有简单闭式，但按第一行（列）展开会落到 **递推关系** 上。设
 
 $$
-D_n=\begin{vmatrix}a&b&&&\\c&a&b&&\\&c&a&\ddots&\\&&\ddots&\ddots&b\\&&&c&a\end{vmatrix}
+D_n=\begin{vmatrix}
+  a & b &  &  &  \\
+  c & a & b &  &  \\
+  & c & a & \ddots &  \\
+  &  & \ddots & \ddots & b \\
+  &  &  & c & a
+\end{vmatrix}
 $$
 
 按第一行展开，第二项再按其第一列展开，得到递推式：
@@ -302,20 +376,36 @@ $$
 例：用克拉默法则解 $\begin{cases}x_1+x_2+x_3=6\\x_1-x_2+2x_3=5\\2x_1+x_2-x_3=1\end{cases}$。系数行列式
 
 $$
-|A|=\begin{vmatrix}1&1&1\\1&-1&2\\2&1&-1\end{vmatrix}=1(1-2)-1(-1-4)+1(1+2)=-1+5+3=7\ne0
+|A|=\begin{vmatrix}
+  1 & 1 & 1 \\
+  1 & -1 & 2 \\
+  2 & 1 & -1
+\end{vmatrix}=1(1-2)-1(-1-4)+1(1+2)=-1+5+3=7\ne0
 $$
 
 非零，故有唯一解。把第 $1$ 列换成常数列 $(6,5,1)^T$：
 
 $$
-|A_1|=\begin{vmatrix}6&1&1\\5&-1&2\\1&1&-1\end{vmatrix}=6(1-2)-1(-5-2)+1(5+1)=-6+7+6=7
+|A_1|=\begin{vmatrix}
+  6 & 1 & 1 \\
+  5 & -1 & 2 \\
+  1 & 1 & -1
+\end{vmatrix}=6(1-2)-1(-5-2)+1(5+1)=-6+7+6=7
 $$
 
 换第 $2$ 列、第 $3$ 列同理：
 
 $$
-|A_2|=\begin{vmatrix}1&6&1\\1&5&2\\2&1&-1\end{vmatrix}=14,\qquad
-|A_3|=\begin{vmatrix}1&1&6\\1&-1&5\\2&1&1\end{vmatrix}=21
+|A_2|=\begin{vmatrix}
+  1 & 6 & 1 \\
+  1 & 5 & 2 \\
+  2 & 1 & -1
+\end{vmatrix}=14,\qquad
+|A_3|=\begin{vmatrix}
+  1 & 1 & 6 \\
+  1 & -1 & 5 \\
+  2 & 1 & 1
+\end{vmatrix}=21
 $$
 
 于是 $x_1=\frac{|A_1|}{|A|}=1$、$x_2=\frac{14}{7}=2$、$x_3=\frac{21}{7}=3$。代回原方程：$1+2+3=6$、$1-2+6=5$、$2+2-3=1$，全部吻合。

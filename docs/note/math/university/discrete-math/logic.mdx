@@ -131,10 +131,9 @@ $$
 
 $$
 \begin{aligned}
-(p\lor q)\land(p\lor\neg q)
-&\Leftrightarrow p\lor(q\land\neg q) &&\text{分配律（提取 }p\text{）}\\
-&\Leftrightarrow p\lor 0 &&\text{矛盾律}\\
-&\Leftrightarrow p &&\text{同一律}
+  (p\lor q)\land(p\lor\neg q) & \Leftrightarrow p\lor(q\land\neg q) &  & \text{分配律（提取 }p\text{）} \\
+  & \Leftrightarrow p\lor 0 &  & \text{矛盾律} \\
+  & \Leftrightarrow p &  & \text{同一律}
 \end{aligned}
 $$
 
@@ -142,10 +141,9 @@ $$
 
 $$
 \begin{aligned}
-\neg(p\to q)
-&\Leftrightarrow\neg(\neg p\lor q) &&\text{蕴含等价}\\
-&\Leftrightarrow\neg\neg p\land\neg q &&\text{德摩根律}\\
-&\Leftrightarrow p\land\neg q &&\text{双重否定}
+  \neg(p\to q) & \Leftrightarrow\neg(\neg p\lor q) &  & \text{蕴含等价} \\
+  & \Leftrightarrow\neg\neg p\land\neg q &  & \text{德摩根律} \\
+  & \Leftrightarrow p\land\neg q &  & \text{双重否定}
 \end{aligned}
 $$
 
@@ -155,10 +153,9 @@ $$
 
 $$
 \begin{aligned}
-(p\to q)\land(p\to r)
-&\Leftrightarrow(\neg p\lor q)\land(\neg p\lor r) &&\text{蕴含等价}\\
-&\Leftrightarrow\neg p\lor(q\land r) &&\text{分配律}\\
-&\Leftrightarrow p\to(q\land r) &&\text{蕴含等价}
+  (p\to q)\land(p\to r) & \Leftrightarrow(\neg p\lor q)\land(\neg p\lor r) &  & \text{蕴含等价} \\
+  & \Leftrightarrow\neg p\lor(q\land r) &  & \text{分配律} \\
+  & \Leftrightarrow p\to(q\land r) &  & \text{蕴含等价}
 \end{aligned}
 $$
 
@@ -289,11 +286,11 @@ $$
 
 $$
 \begin{aligned}
-&(1)\ p &&\text{前提}\\
-&(2)\ p\to q &&\text{前提}\\
-&(3)\ q &&(1)(2)\ \text{假言推理}\\
-&(4)\ q\to r &&\text{前提}\\
-&(5)\ r &&(3)(4)\ \text{假言推理}
+  & (1)\ p &  & \text{前提} \\
+  & (2)\ p\to q &  & \text{前提} \\
+  & (3)\ q &  & (1)(2)\ \text{假言推理} \\
+  & (4)\ q\to r &  & \text{前提} \\
+  & (5)\ r &  & (3)(4)\ \text{假言推理}
 \end{aligned}
 $$
 
@@ -303,11 +300,11 @@ $$
 
 $$
 \begin{aligned}
-&(1)\ q &&\text{附加前提}\\
-&(2)\ p &&\text{前提}\\
-&(3)\ p\to(q\to r) &&\text{前提}\\
-&(4)\ q\to r &&(2)(3)\ \text{假言推理}\\
-&(5)\ r &&(1)(4)\ \text{假言推理}
+  & (1)\ q &  & \text{附加前提} \\
+  & (2)\ p &  & \text{前提} \\
+  & (3)\ p\to(q\to r) &  & \text{前提} \\
+  & (4)\ q\to r &  & (2)(3)\ \text{假言推理} \\
+  & (5)\ r &  & (1)(4)\ \text{假言推理}
 \end{aligned}
 $$
 
@@ -319,15 +316,15 @@ $$
 
 $$
 \begin{aligned}
-&(1)\ \neg r &&\text{否定结论}\\
-&(2)\ p\to r &&\text{前提}\\
-&(3)\ \neg p &&(1)(2)\ \text{拒取式}\\
-&(4)\ q\to r &&\text{前提}\\
-&(5)\ \neg q &&(1)(4)\ \text{拒取式}\\
-&(6)\ \neg p\land\neg q &&(3)(5)\ \text{合取}\\
-&(7)\ p\lor q &&\text{前提}\\
-&(8)\ \neg(p\lor q) &&(6)\ \text{德摩根律}\\
-&(9)\ (p\lor q)\land\neg(p\lor q) &&(7)(8)\ \text{矛盾}
+  & (1)\ \neg r &  & \text{否定结论} \\
+  & (2)\ p\to r &  & \text{前提} \\
+  & (3)\ \neg p &  & (1)(2)\ \text{拒取式} \\
+  & (4)\ q\to r &  & \text{前提} \\
+  & (5)\ \neg q &  & (1)(4)\ \text{拒取式} \\
+  & (6)\ \neg p\land\neg q &  & (3)(5)\ \text{合取} \\
+  & (7)\ p\lor q &  & \text{前提} \\
+  & (8)\ \neg(p\lor q) &  & (6)\ \text{德摩根律} \\
+  & (9)\ (p\lor q)\land\neg(p\lor q) &  & (7)(8)\ \text{矛盾}
 \end{aligned}
 $$
 
@@ -466,11 +463,10 @@ $$
 
 $$
 \begin{aligned}
-\forall x\,P(x)\to\exists x\,Q(x)
-&\Leftrightarrow\neg\forall x\,P(x)\lor\exists x\,Q(x) &&\text{蕴含等价}\\
-&\Leftrightarrow\exists x\,\neg P(x)\lor\exists x\,Q(x) &&\text{量词否定}\\
-&\Leftrightarrow\exists x\,\neg P(x)\lor\exists y\,Q(y) &&\text{换名}\\
-&\Leftrightarrow\exists x\,\exists y\,(\neg P(x)\lor Q(y)) &&\text{辖域扩张}
+  \forall x\,P(x)\to\exists x\,Q(x) & \Leftrightarrow\neg\forall x\,P(x)\lor\exists x\,Q(x) &  & \text{蕴含等价} \\
+  & \Leftrightarrow\exists x\,\neg P(x)\lor\exists x\,Q(x) &  & \text{量词否定} \\
+  & \Leftrightarrow\exists x\,\neg P(x)\lor\exists y\,Q(y) &  & \text{换名} \\
+  & \Leftrightarrow\exists x\,\exists y\,(\neg P(x)\lor Q(y)) &  & \text{辖域扩张}
 \end{aligned}
 $$
 

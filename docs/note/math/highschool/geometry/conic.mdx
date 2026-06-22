@@ -26,9 +26,9 @@ $$
 
 角度—类型—离心率的对照：
 
-- $\beta > \alpha$：椭圆，且 $e < 1$；$\beta = 90^\circ$ 时 $e=0$，为圆。
-- $\beta = \alpha$：抛物线，$e = 1$（此时平面与某条母线平行）。
-- $\beta < \alpha$：双曲线，$e > 1$（平面切到两片圆锥）。
+- $\beta>\alpha$：椭圆，且 $e<1$；$\beta=90^\circ$ 时 $e=0$，为圆。
+- $\beta=\alpha$：抛物线，$e=1$（此时平面与某条母线平行）。
+- $\beta<\alpha$：双曲线，$e>1$（平面切到两片圆锥）。
 
 更加具体的几何构造，由于代数手段可以简单地解决，请自行查阅丹德林球。
 
@@ -54,7 +54,7 @@ $$
 不难想到圆锥曲线的一般方程
 
 $$
-ax^2 + bxy + cy^2 + dx + ey + f = 0
+ax^2+bxy+cy^2+dx+ey+f=0
 $$
 
 这称为平面二次曲线，系数（$a,b,c,d,e,f$）齐次于比例，故参数空间是五维。
@@ -66,11 +66,11 @@ $$
 - 任意五点，若无四点共线 $\implies$ 唯一确定一条圆锥曲线。
 - 任意五点，若无三点共线 $\implies$ 唯一确定一条非退化的圆锥曲线。
 
-一旦通过五个点解出了方程 $Ax^2 + Bxy + Cy^2 + Dx + Ey + F = 0$ 的系数 $A, B, C$，我们就可以通过判别式 $\Delta = B^2 - 4AC$ 来判断其类型：
+一旦通过五个点解出了方程 $Ax^2+Bxy+Cy^2+Dx+Ey+F=0$ 的系数 $A, B, C$，我们就可以通过判别式 $\Delta=B^2-4AC$ 来判断其类型：
 
-- $\Delta < 0$: 椭圆（或圆）。
-- $\Delta = 0$: 抛物线。
-- $\Delta > 0$: 双曲线。
+- $\Delta<0$: 椭圆（或圆）。
+- $\Delta=0$: 抛物线。
+- $\Delta>0$: 双曲线。
 
 这五个点的位置关系直接决定了最终曲线的类型。例如，如果五个点构成一个凸五边形，那么它们确定的曲线必然是椭圆。如果一个点远离其他四个点，则很可能形成双曲线或抛物线。
 
@@ -89,8 +89,8 @@ $$
 
 $$
 \begin{cases}
-x&=a+r\cos\theta\\
-y&=b+r\sin\theta
+  x & =a+r\cos\theta \\
+  y & =b+r\sin\theta
 \end{cases}
 $$
 
@@ -100,8 +100,8 @@ $$
 
 $$
 \begin{cases}
-x&=a\cos\theta\\
-y&=b\sin\theta
+  x & =a\cos\theta \\
+  y & =b\sin\theta
 \end{cases}
 $$
 
@@ -111,8 +111,8 @@ $$
 
 $$
 \begin{cases}
-x&=\frac{a}{\cos\theta}\\
-y&=b\tan\theta
+  x & =\frac{a}{\cos\theta} \\
+  y & =b\tan\theta
 \end{cases}
 $$
 
@@ -277,10 +277,10 @@ $$
 PQ=\frac{2b^2}{a}
 $$
 
-上述结论可以作如下推广：过焦点 $F$ 作 $n$ 条夹角相等的射线交椭圆于 $P_1, P_2, \dots, P_n$，则
+上述结论可以作如下推广：过焦点 $F$ 作 $n$ 条夹角相等的射线交椭圆于 $P_1, P_2,\dots, P_n$，则
 
 $$
-\frac{1}{|FP_1|} + \frac{1}{|FP_2|} + \dots + \frac{1}{|FP_n|} = \frac{na}{b^2}
+\frac{1}{|FP_1|}+\frac{1}{|FP_2|}+\dots+\frac{1}{|FP_n|}=\frac{na}{b^2}
 $$
 
 椭圆的面积：$S=\pi ab$（$a,b$ 分别为长半轴、短半轴的长）。
@@ -405,8 +405,8 @@ $$
 
 $$
 \begin{cases}
-\cos x&=\cosh(ix)\\
-\sin x&=-i\sinh(ix)
+  \cos x & =\cosh(ix) \\
+  \sin x & =-i\sinh(ix)
 \end{cases}
 $$
 
@@ -417,7 +417,7 @@ $$
 $$
 
 $$
-\sinh(x\pm y)=\sinh x\cosh y\pm \cosh x\sinh y
+\sinh(x\pm y)=\sinh x\cosh y\pm\cosh x\sinh y
 $$
 
 $$
@@ -425,7 +425,7 @@ $$
 $$
 
 $$
-\tanh (x\pm y)=\frac{\tanh x\pm \tanh y}{1\pm \tanh x\tanh y}
+\tanh(x\pm y)=\frac{\tanh x\pm\tanh y}{1\pm\tanh x\tanh y}
 $$
 
 $$
@@ -570,9 +570,9 @@ $$
 
 ![](https://cloud.lailai.one/f/rzNcM/conic-image-20.png)
 
-因此 $\angle X'Y'F = \frac{1}{2}\angle X'PF = \angle XPF$。因为 $\ell$ 垂直于 $X'Y'$，因此 $PY$ 与 $\ell$ 的夹角等于 $Y'F$ 与 $X'Y'$ 的夹角，而 $Y'F$ 垂直于 $PY$。
+因此 $\angle X'Y'F=\frac{1}{2}\angle X'PF=\angle XPF$。因为 $\ell$ 垂直于 $X'Y'$，因此 $PY$ 与 $\ell$ 的夹角等于 $Y'F$ 与 $X'Y'$ 的夹角，而 $Y'F$ 垂直于 $PY$。
 
-由于 $l$ 平行于 $YY'$，$PY$ 与 $l$ 的夹角等于角 $PYY'$，根据光学性质，该角等于角 $FYP$。因此 $\angle FYP = \angle XPF$。类似地，$\angle FXP = \angle YPF$。因此 $\triangle XFP\backsim\triangle PFY$。
+由于 $l$ 平行于 $YY'$，$PY$ 与 $l$ 的夹角等于角 $PYY'$，根据光学性质，该角等于角 $FYP$。因此 $\angle FYP=\angle XPF$。类似地，$\angle FXP=\angle YPF$。因此 $\triangle XFP\backsim\triangle PFY$。
 
 6. 假设 $\triangle ABC$ 外切于一条抛物线，即直线 $AB$，$BC$，$CA$ 均与抛物线相切，那么 $\triangle ABC$ 的垂心始终过抛物线的准线。
 
@@ -676,13 +676,13 @@ $$
 
 我们将 $F_1,F_2$ 分别关于 $PX,PY$ 对称，得到 $F_1',F_2'$，根据初中几何容易知道，$\triangle PF_1'F_2\cong\triangle PF_1F_2'$，两顶角减去公共部分 $\angle F_1PF_2$，即可得到。
 
-根据已经证明的全等，因此 $\angle PF_1X = \angle PF_1'F_2 = \angle PF_1F_2' = \angle PF_1Y$，也就是说对于曲线外一点 $P$ 与焦点的连线一定平分两个切点与这个焦点所构成的角。
+根据已经证明的全等，因此 $\angle PF_1X=\angle PF_1'F_2=\angle PF_1F_2'=\angle PF_1Y$，也就是说对于曲线外一点 $P$ 与焦点的连线一定平分两个切点与这个焦点所构成的角。
 
 双曲线有着类似的性质，但是需要注意切点是否位于同一分支上。
 
 ![](https://cloud.lailai.one/f/EDxt8/conic-image-13.png)
 
-此时有 $\angle F_1PX = \pi - \angle F_2PY$。
+此时有 $\angle F_1PX=\pi-\angle F_2PY$。
 
 蒙日圆：若过椭圆外一点 $P$ 做椭圆的两条切线相互垂直，则 $P$ 的轨迹为一个圆，轨迹方程为
 
@@ -742,13 +742,22 @@ $$
 使用一增广矩阵与一增广向量，需要所有向量在其末端扩长 $1$ 且所有矩阵都于底部添加一排零，右边扩长一列转换向量，及右下角添加一个 $1$。
 
 $$
-\begin{bmatrix}{\vec {y}}\\1\end{bmatrix}=\left[{\begin{array}{ccc|c}\,&A&&{\vec {b}}\ \\0&\dots &0&1\end{array}}\right]{\begin{bmatrix}{\vec {x}}\\1\end{bmatrix}}
+\begin{bmatrix}{\vec {y}}
+   \\
+  1
+\end{bmatrix}=\left[{\begin{array}{ccc|c}
+  \, & A &  & {\vec{b}}\ \\
+  0 & \dots & 0 & 1
+\end{array}}\right]{\begin{bmatrix}{\vec {x}}
+   \\
+  1
+\end{bmatrix}}
 $$
 
 等价于
 
 $$
-\vec {y}=A{\vec {x}}+{\vec {b}}
+\vec{y}=A{\vec{x}}+{\vec{b}}
 $$
 
 对于一个椭圆
@@ -773,8 +782,8 @@ $$
 
 $$
 f:\begin{cases}
-x'&=mx\\
-y'&=ny
+  x' & =mx \\
+  y' & =ny
 \end{cases}
 $$
 
@@ -786,8 +795,8 @@ $$
 
 $$
 f:\begin{cases}
-x&=ax'\\
-y&=biy'
+  x & =ax' \\
+  y & =biy'
 \end{cases}
 $$
 
