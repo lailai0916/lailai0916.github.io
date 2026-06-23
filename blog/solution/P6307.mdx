@@ -40,12 +40,12 @@ $$
 
 $$
 \begin{aligned}
-  P_k &= \frac{\sum_{i=1}^{k}(i-1)a_{k-i+1}}{C_{a_k}^{3}} \\
-  &= \frac{\sum_{i=1}^{k}(i-1)(k-i+1)(k-i+2)\cdot \frac{1}{2}}{\frac{k(k+1)}{2}(\frac{k(k+1)}{2}-1)(\frac{k(k+1)}{2}-2)\cdot\frac{1}{6}} \\
-  &= \frac{24\sum_{i=1}^{k}(i-1)(k-i+1)(k-i+2)}{k(k+1)(k(k+1)-2)(k(k+1)-4)} \\
-  &= \frac{24(-k^3-3k^2-2k+\sum_{i=1}^{k}i^3-(2k+4)\sum_{i=1}^{k}i^2+(k^2+5k+5)\sum_{i=1}^{k}i}{k(k+1)(k^2+k-2)(k^2+k-4)} \\
-  &= \frac{2(k^4+2k^3-k^2-2k)}{(k^4+2k^3-k^2-2k)(k^2+k-4)} \\
-  &= \frac{2}{k^2+k-4}
+  P_k & =\frac{\sum_{i=1}^{k}(i-1)a_{k-i+1}}{C_{a_k}^{3}} \\
+  & =\frac{\sum_{i=1}^{k}(i-1)(k-i+1)(k-i+2)\cdot\frac{1}{2}}{\frac{k(k+1)}{2}(\frac{k(k+1)}{2}-1)(\frac{k(k+1)}{2}-2)\cdot\frac{1}{6}} \\
+  & =\frac{24\sum_{i=1}^{k}(i-1)(k-i+1)(k-i+2)}{k(k+1)(k(k+1)-2)(k(k+1)-4)} \\
+  & =\frac{24(-k^3-3k^2-2k+\sum_{i=1}^{k}i^3-(2k+4)\sum_{i=1}^{k}i^2+(k^2+5k+5)\sum_{i=1}^{k}i}{k(k+1)(k^2+k-2)(k^2+k-4)} \\
+  & =\frac{2(k^4+2k^3-k^2-2k)}{(k^4+2k^3-k^2-2k)(k^2+k-4)} \\
+  & =\frac{2}{k^2+k-4}
 \end{aligned}
 $$
 
@@ -59,17 +59,17 @@ $$
 
 $$
 \begin{aligned}
-  \sum_{k=m}^{\infty}P_k &= \sum_{k=m}^{\infty}\frac{2}{k^2+k-4} \\
-  &= \sum_{k=m}^{\infty}\frac{2}{(k-r_1)(k-r_2)} \\
-  &= \frac{2}{\sqrt{17}}\sum_{k=m}^{\infty}\left(\frac{1}{k-r_1}-\frac{1}{k-r_2}\right) \\
-  &= \frac{2}{\sqrt{17}}\lim_{n\to\infty}\left(\sum_{k=m}^{n}\frac{1}{k-r_1}-\sum_{k=m}^{n}\frac{1}{k-r_2}\right) \\
-  &= \frac{2}{\sqrt{17}}\lim_{n\to\infty}\left((\psi(n-r_1+1)-\psi(m-r_1))-(\psi(n-r_2+1)-\psi(m-r_2))\right) \\
-  &= \frac{2}{\sqrt{17}}\left(\psi(m-r_2)-\psi(m-r_1)+\lim_{n\to\infty}\left(\psi(n-r_1+1)-\psi(n-r_2+1)\right)\right) \\
-  &= \frac{2}{\sqrt{17}}\left(\psi(m-r_2)-\psi(m-r_1)+\lim_{n\to\infty}\left(\left(\psi(1)+\sum_{k=1}^{n-r_1}\frac{1}{k}\right)-\left(\psi(1)+\sum_{k=1}^{n-r_2}\frac{1}{k}\right)\right)\right) \\
-  &= \frac{2}{\sqrt{17}}\left(\psi(m-r_2)-\psi(m-r_1)+\lim_{n\to\infty}\sum_{k=n-r_2+1}^{n-r_1}\frac{1}{k}\right) \\
-  &= \frac{2}{\sqrt{17}}\left(\psi(m-r_2)-\psi(m-r_1)+0\right) \\
-  &= \frac{2}{\sqrt{17}}\left(\psi\left(m-\frac{-1-\sqrt{17}}{2}\right)-\psi\left(m-\frac{-1+\sqrt{17}}{2}\right)\right) \\
-  &= \frac{2}{\sqrt{17}}\left(\psi\left(m+\frac{1+\sqrt{17}}{2}\right)-\psi\left(m+\frac{1-\sqrt{17}}{2}\right)\right)
+  \sum_{k=m}^{\infty}P_k & =\sum_{k=m}^{\infty}\frac{2}{k^2+k-4} \\
+  & =\sum_{k=m}^{\infty}\frac{2}{(k-r_1)(k-r_2)} \\
+  & =\frac{2}{\sqrt{17}}\sum_{k=m}^{\infty}\left(\frac{1}{k-r_1}-\frac{1}{k-r_2}\right) \\
+  & =\frac{2}{\sqrt{17}}\lim_{n\to\infty}\left(\sum_{k=m}^{n}\frac{1}{k-r_1}-\sum_{k=m}^{n}\frac{1}{k-r_2}\right) \\
+  & =\frac{2}{\sqrt{17}}\lim_{n\to\infty}\left((\psi(n-r_1+1)-\psi(m-r_1))-(\psi(n-r_2+1)-\psi(m-r_2))\right) \\
+  & =\frac{2}{\sqrt{17}}\left(\psi(m-r_2)-\psi(m-r_1)+\lim_{n\to\infty}\left(\psi(n-r_1+1)-\psi(n-r_2+1)\right)\right) \\
+  & =\frac{2}{\sqrt{17}}\left(\psi(m-r_2)-\psi(m-r_1)+\lim_{n\to\infty}\left(\left(\psi(1)+\sum_{k=1}^{n-r_1}\frac{1}{k}\right)-\left(\psi(1)+\sum_{k=1}^{n-r_2}\frac{1}{k}\right)\right)\right) \\
+  & =\frac{2}{\sqrt{17}}\left(\psi(m-r_2)-\psi(m-r_1)+\lim_{n\to\infty}\sum_{k=n-r_2+1}^{n-r_1}\frac{1}{k}\right) \\
+  & =\frac{2}{\sqrt{17}}\left(\psi(m-r_2)-\psi(m-r_1)+0\right) \\
+  & =\frac{2}{\sqrt{17}}\left(\psi\left(m-\frac{-1-\sqrt{17}}{2}\right)-\psi\left(m-\frac{-1+\sqrt{17}}{2}\right)\right) \\
+  & =\frac{2}{\sqrt{17}}\left(\psi\left(m+\frac{1+\sqrt{17}}{2}\right)-\psi\left(m+\frac{1-\sqrt{17}}{2}\right)\right)
 \end{aligned}
 $$
 
@@ -91,7 +91,7 @@ $$
 \psi(x)=\ln(x)-\frac{1}{2x}-\sum_{k=1}^{\infty}\frac{B_{2k}}{2k\cdot x^{2k}}
 $$
 
-当 $x \gg 1$ 时，Digamma 函数可以用渐近展开式近似为：
+当 $x\gg 1$ 时，Digamma 函数可以用渐近展开式近似为：
 
 $$
 \psi(x)=\ln(x)-\frac{1}{2x}-\frac{1}{12x^2}+\frac{1}{120x^4}+o(x^{-4})

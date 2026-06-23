@@ -14,15 +14,15 @@ lid: arybtu0j
 
 $$
 \begin{aligned}
-  W &= \sum_{i=1}^n(w_i\times c_i) \\
-  &= \sum_{i=1}^n\left(\min\left(1,\frac{x_i}{k_i}\right)\times 100\times c_i\right) \\
-  &= 100\sum_{i=1}^n\left(\min(k_i,x_i )\times \frac{c_i}{k_i}\right)
+  W & =\sum_{i=1}^n(w_i\times c_i) \\
+  & =\sum_{i=1}^n\left(\min\left(1,\frac{x_i}{k_i}\right)\times 100\times c_i\right) \\
+  & =100\sum_{i=1}^n\left(\min(k_i,x_i )\times\frac{c_i}{k_i}\right)
 \end{aligned}
 $$
 
 可以发现，第 $i$ 门课程每学一天的收益是 $\frac{c_i}{k_i}$，且最多可学 $k_i$ 天。为了最大化总收益，应优先选择收益较高的课程。
 
-因此，可以按 $\frac{c_i}{k_i}$ 从大到小排序，然后贪心地选择每门课程最多学习 $x = \min(k_i, m)$ 天，并更新剩余天数 $m \gets m - x$。
+因此，可以按 $\frac{c_i}{k_i}$ 从大到小排序，然后贪心地选择每门课程最多学习 $x=\min(k_i, m)$ 天，并更新剩余天数 $m\gets m-x$。
 
 ## 参考代码
 

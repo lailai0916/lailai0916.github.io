@@ -36,12 +36,12 @@ $$
 
 $$
 \begin{aligned}
-  a_{i,j} &= \sum_{p=1,p\ne i}^n\frac{1}{n}\left(a_{i,j-1}+\frac{a_{p,j-1}}{n-1}\right) \\
-  &= \frac{n-1}{n}\cdot a_{i,j-1}+\frac{1}{n(n-1)}\sum_{p=1,p\ne i}^n a_{p,j-1} \\
-  &= \frac{n-1}{n}\cdot a_{i,j-1}+\frac{s-a_{i,j-1}}{n(n-1)} \\
-  &= \frac{n-1}{n}\cdot a_{i,j-1}+\frac{s}{n(n-1)}-\frac{1}{n(n-1)}\cdot a_{i,j-1} \\
-  &= \frac{(n-1)^2-1}{n(n-1)}\cdot a_{i,j-1}+\frac{s}{n(n-1)} \\
-  &= \frac{n-2}{n-1}\cdot a_{i,j-1}+\frac{s}{n(n-1)}
+  a_{i,j} & =\sum_{p=1,p\ne i}^n\frac{1}{n}\left(a_{i,j-1}+\frac{a_{p,j-1}}{n-1}\right) \\
+  & =\frac{n-1}{n}\cdot a_{i,j-1}+\frac{1}{n(n-1)}\sum_{p=1,p\ne i}^n a_{p,j-1} \\
+  & =\frac{n-1}{n}\cdot a_{i,j-1}+\frac{s-a_{i,j-1}}{n(n-1)} \\
+  & =\frac{n-1}{n}\cdot a_{i,j-1}+\frac{s}{n(n-1)}-\frac{1}{n(n-1)}\cdot a_{i,j-1} \\
+  & =\frac{(n-1)^2-1}{n(n-1)}\cdot a_{i,j-1}+\frac{s}{n(n-1)} \\
+  & =\frac{n-2}{n-1}\cdot a_{i,j-1}+\frac{s}{n(n-1)}
 \end{aligned}
 $$
 
@@ -55,8 +55,8 @@ $$
 
 $$
 \begin{aligned}
-  a_{i,k} &= x^ka_{i,0}+y\left(x^{k-1}+x^{k-2}+\dots+x+1\right) \\
-  &= x^k a_{i,0}+y\cdot\frac{x^k-1}{x-1}
+  a_{i,k} & =x^ka_{i,0}+y\left(x^{k-1}+x^{k-2}+\dots+x+1\right) \\
+  & =x^k a_{i,0}+y\cdot\frac{x^k-1}{x-1}
 \end{aligned}
 $$
 

@@ -121,23 +121,23 @@ $$
 每个 **二进制数** 可以视为一个 **集合**，二进制位为 $1$ 的位置表示对应元素属于该集合。
 
 $$
-(10010110)_2\iff \set{a_1,a_2,a_4,a_7}
+(10010110)_2\iff\set{a_1,a_2,a_4,a_7}
 $$
 
 两个数 **按位或** 对应集合的 **并集**，而 **按位与** 对应 **交集**。
 
 $$
-(0101)_2\operatorname{or}(1100)_2=(1101)_2\iff \set{a_0,a_2}\cup\set{a_2,a_3}=\set{a_0,a_2,a_3}
+(0101)_2\operatorname{or}(1100)_2=(1101)_2\iff\set{a_0,a_2}\cup\set{a_2,a_3}=\set{a_0,a_2,a_3}
 $$
 
 $$
-(0101)_2\operatorname{and}(1100)_2=(0100)_2\iff \set{a_0,a_2}\cap\set{a_2,a_3}=\set{a_2}
+(0101)_2\operatorname{and}(1100)_2=(0100)_2\iff\set{a_0,a_2}\cap\set{a_2,a_3}=\set{a_2}
 $$
 
 超集是补集的子集的补集，即超集和子集在补集意义上互为对偶。
 
 $$
-T\supseteq S\iff \overline{T}\subseteq \overline{S}
+T\supseteq S\iff\overline{T}\subseteq\overline{S}
 $$
 
 简单来说，就是将 $0/1$ 取反。因此子集和超集是 **对称** 的。
@@ -165,7 +165,7 @@ $$
 
 ### Zeta 变换
 
-考虑一个集合函数 $f:2^V\to \mathbb{Z}$，其中 $2^V$ 表示 $V$ 的幂集，即 $V$ 的所有子集构成的集合。
+考虑一个集合函数 $f:2^V\to\mathbb{Z}$，其中 $2^V$ 表示 $V$ 的幂集，即 $V$ 的所有子集构成的集合。
 
 定义 **子集和**（Sum Over Subsets）和 **超集和**（Sum Over Supersets）：
 
@@ -195,11 +195,11 @@ $$
 
 $$
 \begin{aligned}
-  \sum_{T\subseteq S}(-1)^{|S|-|T|}g_0(T) &= \sum_{T\subseteq S}(-1)^{|S|-|T|}\sum_{V\subseteq T}f_0(V) \\
-  &= \sum_{V\subseteq S}f_0(V)\sum_{V\subseteq T\subseteq S}(-1)^{|S|-|T|} \\
-  &= \sum_{V\subseteq S}f_0(V)\sum_{k=0}^{|S|-|V|}(-1)^k\binom{|S|-|V|}{k} \\
-  &= \sum_{V\subseteq S}f_0(V)[V=S] \\
-  &= f_0(S)
+  \sum_{T\subseteq S}(-1)^{|S|-|T|}g_0(T) & =\sum_{T\subseteq S}(-1)^{|S|-|T|}\sum_{V\subseteq T}f_0(V) \\
+  & =\sum_{V\subseteq S}f_0(V)\sum_{V\subseteq T\subseteq S}(-1)^{|S|-|T|} \\
+  & =\sum_{V\subseteq S}f_0(V)\sum_{k=0}^{|S|-|V|}(-1)^k\binom{|S|-|V|}{k} \\
+  & =\sum_{V\subseteq S}f_0(V)[V=S] \\
+  & =f_0(S)
 \end{aligned}
 $$
 
@@ -241,19 +241,19 @@ $$
 
 $$
 \begin{aligned}
-  \operatorname{FMT_{or}}[A]_k\cdot \operatorname{FMT_{or}}[B]_k &= \left(\sum_{i\subseteq k} A_i\right)\times \left(\sum_{j\subseteq k} B_j\right) \\
-  &= \sum_{i\subseteq k}\sum_{j\subseteq k}A_i\times B_j \\
-  &= \sum_{i\operatorname{or}j\subseteq k}A_i\times B_j \\
-  &= \operatorname{FMT_{or}}[C]_k
+  \operatorname{FMT_{or}}[A]_k\cdot \operatorname{FMT_{or}}[B]_k & =\left(\sum_{i\subseteq k} A_i\right)\times\left(\sum_{j\subseteq k} B_j\right) \\
+  & =\sum_{i\subseteq k}\sum_{j\subseteq k}A_i\times B_j \\
+  & =\sum_{i\operatorname{or}j\subseteq k}A_i\times B_j \\
+  & =\operatorname{FMT_{or}}[C]_k
 \end{aligned}
 $$
 
 $$
 \begin{aligned}
-  \operatorname{FMT_{and}}[A]_k\cdot \operatorname{FMT_{and}}[B]_k &= \left(\sum_{i\supseteq k} A_i\right)\times \left(\sum_{j\supseteq k} B_j\right) \\
-  &= \sum_{i\supseteq k}\sum_{j\supseteq k}A_i\times B_j \\
-  &= \sum_{i\operatorname{and}j\supseteq k}A_i\times B_j \\
-  &= \operatorname{FMT_{and}}[C]_k
+  \operatorname{FMT_{and}}[A]_k\cdot \operatorname{FMT_{and}}[B]_k & =\left(\sum_{i\supseteq k} A_i\right)\times\left(\sum_{j\supseteq k} B_j\right) \\
+  & =\sum_{i\supseteq k}\sum_{j\supseteq k}A_i\times B_j \\
+  & =\sum_{i\operatorname{and}j\supseteq k}A_i\times B_j \\
+  & =\operatorname{FMT_{and}}[C]_k
 \end{aligned}
 $$
 
@@ -400,7 +400,7 @@ $$
 根据 **容斥原理**，可得：
 
 $$
-S_{i_1,\dots,i_n}=\sum_{T\subseteq \set{1,2,\dots,n}}(-1)^{|T|}A_T
+S_{i_1,\dots,i_n}=\sum_{T\subseteq\set{1,2,\dots,n}}(-1)^{|T|}A_T
 $$
 
 但该方法的时间复杂度为 $O(2^np^n)$。
@@ -547,11 +547,11 @@ $$
 
 $$
 \begin{aligned}
-  \operatorname{FWT_{xor}}[A]_k\cdot \operatorname{FWT_{xor}}[B]_k &= \left(\sum_{i\circ k=0}A_i-\sum_{i\circ k=1}A_i\right)\times\left(\sum_{j\circ k=0}B_j-\sum_{j\circ k=1}B_j\right) \\
-  &= \left(\sum_{i\circ k=0}A_i\sum_{j\circ k=0}B_j+\sum_{i\circ k=1}A_i\sum_{j\circ k=1}B_j\right) \\
-  &- \left(\sum_{i\circ k=0}A_i\sum_{j\circ k=1}B_j+\sum_{i\circ k=1}A_i\sum_{j\circ k=0}B_j\right) \\
-  &= \sum_{(i\operatorname{xor}j)\circ k=0}A_iB_j-\sum_{(i\operatorname{xor}j)\circ k=1}A_iB_j \\
-  &= \operatorname{FWT_{xor}}[C]_k
+  \operatorname{FWT_{xor}}[A]_k\cdot \operatorname{FWT_{xor}}[B]_k & =\left(\sum_{i\circ k=0}A_i-\sum_{i\circ k=1}A_i\right)\times\left(\sum_{j\circ k=0}B_j-\sum_{j\circ k=1}B_j\right) \\
+  & =\left(\sum_{i\circ k=0}A_i\sum_{j\circ k=0}B_j+\sum_{i\circ k=1}A_i\sum_{j\circ k=1}B_j\right) \\
+  & -\left(\sum_{i\circ k=0}A_i\sum_{j\circ k=1}B_j+\sum_{i\circ k=1}A_i\sum_{j\circ k=0}B_j\right) \\
+  & =\sum_{(i\operatorname{xor}j)\circ k=0}A_iB_j-\sum_{(i\operatorname{xor}j)\circ k=1}A_iB_j \\
+  & =\operatorname{FWT_{xor}}[C]_k
 \end{aligned}
 $$
 

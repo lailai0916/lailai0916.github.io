@@ -32,7 +32,7 @@ lid: bdw9t86z
 
 当树高为 $h$ 米时，设所需天数为 $n$ 天。
 
-最后 $1$ 天爬 $a$ 米，还剩 $h-a$ 米；前面每天爬 $a-b$ 米，需要 $\left\lceil \frac{h-a}{a-b} \right\rceil$ 天。所以 $n=\left\lceil \frac{h-a}{a-b} \right\rceil+1$ 天。
+最后 $1$ 天爬 $a$ 米，还剩 $h-a$ 米；前面每天爬 $a-b$ 米，需要 $\left\lceil\frac{h-a}{a-b}\right\rceil$ 天。所以 $n=\left\lceil\frac{h-a}{a-b}\right\rceil+1$ 天。
 
 显然，当 $h=L$ 时，所需天数最少；当 $h=R$ 时，所需天数最多。如果两者相等，便可以得出精确的答案。
 
@@ -43,7 +43,7 @@ lid: bdw9t86z
 - 使用 `double` 类型，可能会导致精度丢失。建议根据公式手写取上整函数：
 
 $$
-\left\lceil\frac{a}{b} \right\rceil=\left\lfloor\frac{a+b-1}{b} \right\rfloor
+\left\lceil\frac{a}{b}\right\rceil=\left\lfloor\frac{a+b-1}{b}\right\rfloor
 $$
 
 ## 参考代码

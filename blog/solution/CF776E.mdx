@@ -14,10 +14,10 @@ lid: ksxovsfn
 
 $$
 \begin{aligned}
-f(n) &= \sum_{i=1}^{n-1}[\gcd(i,n-i)=1] \\
-  &= \sum_{i=1}^{n-1}[\gcd(i,n)=1] \\
-  &= \sum_{i=1}^{n}[\gcd(i,n)=1] \\
-  &= \varphi(n)
+  f(n) & =\sum_{i=1}^{n-1}[\gcd(i,n-i)=1] \\
+  & =\sum_{i=1}^{n-1}[\gcd(i,n)=1] \\
+  & =\sum_{i=1}^{n}[\gcd(i,n)=1] \\
+  & =\varphi(n)
 \end{aligned}
 $$
 
@@ -25,9 +25,9 @@ $$
 
 $$
 \begin{aligned}
-g(n) &= \sum_{d\mid n}\varphi(d) \\
-  &= \operatorname{id}(n) \\
-  &= n
+  g(n) & =\sum_{d\mid n}\varphi(d) \\
+  & =\operatorname{id}(n) \\
+  & =n
 \end{aligned}
 $$
 
@@ -57,7 +57,7 @@ $$
 | $F_7(n)$ | $\varphi(\varphi(\varphi(\varphi(n))))$ |   $4$    |
 | $F_8(n)$ | $\varphi(\varphi(\varphi(\varphi(n))))$ |   $4$    |
 
-不难发现，$F_k(n)$ 就是对 $n$ 嵌套 $\left\lfloor \frac{k+1}{2} \right\rfloor$ 次 $\varphi(n)$。
+不难发现，$F_k(n)$ 就是对 $n$ 嵌套 $\left\lfloor\frac{k+1}{2}\right\rfloor$ 次 $\varphi(n)$。
 
 经过若干次嵌套后会重复 $\varphi(1)=1$，所以当 $n$ 变为 $1$ 后可以跳过后面的嵌套，实际嵌套次数为 $O(\log n)$ 级别。
 
