@@ -30,22 +30,22 @@ title: 微分方程
 ### 可分离变量
 
 $$
-\frac{\mathrm{d}y}{\mathrm{d}x}=f(x)g(y)\Rightarrow\int\frac{\mathrm{d}y}{g(y)}=\int f(x)\,\mathrm{d}x+C
+\frac{\mathrm{d}y}{\mathrm{d}x}=f(x)g(y)\Rightarrow\int\frac{\mathrm{d}y}{g(y)}=\int f(x)\mathrm{d}x+C
 $$
 
 这是最理想的情形：把 $x$ 和 $y$ 各自「分家」到等号两边，然后两边分别积分。所有一阶方程的求解，本质上都是想方设法 **化归到可分离变量**。
 
-例：解 $\dfrac{\mathrm{d}y}{\mathrm{d}x}=2xy$。分离变量 $\dfrac{\mathrm{d}y}{y}=2x\,\mathrm{d}x$，两边积分得 $\ln|y|=x^2+C_1$，即
+例：解 $\dfrac{\mathrm{d}y}{\mathrm{d}x}=2xy$。分离变量 $\dfrac{\mathrm{d}y}{y}=2x\mathrm{d}x$，两边积分得 $\ln|y|=x^2+C_1$，即：
 
 $$
-y=Ce^{x^2}\quad(C=\pm e^{C_1}\in\mathbb{R})
+y=Ce^{x^2}(C=\pm e^{C_1}\in\mathbb{R})
 $$
 
 注意分离时除以了 $y$，$y\equiv 0$ 也是解，恰好被 $C=0$ 涵盖。**积分常数尽早合并、并回头检查被除掉的解是否被通解覆盖。**
 
 ### 齐次方程
 
-形如 $\dfrac{\mathrm{d}y}{\mathrm{d}x}=\varphi\!\left(\dfrac{y}{x}\right)$，右端只依赖比值 $\dfrac{y}{x}$。令 $u=\dfrac{y}{x}$（即 $y=ux$），则 $y'=u+x\dfrac{\mathrm{d}u}{\mathrm{d}x}$，代入后变量恰好可分离。换元的着眼点是「右端只认比例」，所以引进比例当新变量。
+形如 $\dfrac{\mathrm{d}y}{\mathrm{d}x}=\varphi\left(\dfrac{y}{x}\right)$，右端只依赖比值 $\dfrac{y}{x}$。令 $u=\dfrac{y}{x}$（即 $y=ux$），则 $y'=u+x\dfrac{\mathrm{d}u}{\mathrm{d}x}$，代入后变量恰好可分离。换元的着眼点是「右端只认比例」，所以引进比例当新变量。
 
 例：解 $\dfrac{\mathrm{d}y}{\mathrm{d}x}=\dfrac{y}{x}+\tan\dfrac{y}{x}$。令 $u=\dfrac yx$，$y'=u+xu'$，代入：
 
@@ -53,7 +53,7 @@ $$
 u+x\frac{\mathrm{d}u}{\mathrm{d}x}=u+\tan u\Rightarrow\frac{\mathrm{d}u}{\tan u}=\frac{\mathrm{d}x}{x}
 $$
 
-左边 $\int\cot u\,\mathrm{d}u=\ln|\sin u|$，积分得 $\ln|\sin u|=\ln|x|+C_1$，即 $\sin u=Cx$。回代 $u=\dfrac yx$ 得通解 $\sin\dfrac yx=Cx$。**齐次方程换元后那个 $u$ 总能消去、剩下可分离的 $u$ 与 $x$。**
+左边 $\int\cot u\mathrm{d}u=\ln|\sin u|$，积分得 $\ln|\sin u|=\ln|x|+C_1$，即 $\sin u=Cx$。回代 $u=\dfrac yx$ 得通解 $\sin\dfrac yx=Cx$。**齐次方程换元后那个 $u$ 总能消去、剩下可分离的 $u$ 与 $x$。**
 
 ### 一阶线性方程
 
@@ -66,12 +66,12 @@ $$
 **通解公式**：
 
 $$
-y=e^{-\int P\,\mathrm{d}x}\left(\int Q(x)\,e^{\int P\,\mathrm{d}x}\,\mathrm{d}x+C\right)
+y=e^{-\int P\mathrm{d}x}\left(\int Q(x)e^{\int P\mathrm{d}x}\mathrm{d}x+C\right)
 $$
 
-这个公式可由 **常数变易法**（Variation of Constants）推出：先解齐次方程得 $y=Ce^{-\int P\,\mathrm{d}x}$，再把常数 $C$ 「变」成待定函数 $C(x)$ 代回原方程，解出 $C(x)$。「变易常数」的思想——拿齐次解当骨架、让常数随 $x$ 浮动以吸收非齐次项——在后面高阶方程里还会重现。
+这个公式可由 **常数变易法**（Variation of Constants）推出：先解齐次方程得 $y=Ce^{-\int P\mathrm{d}x}$，再把常数 $C$ 「变」成待定函数 $C(x)$ 代回原方程，解出 $C(x)$。「变易常数」的思想——拿齐次解当骨架、让常数随 $x$ 浮动以吸收非齐次项——在后面高阶方程里还会重现。
 
-例：解 $\dfrac{\mathrm{d}y}{\mathrm{d}x}+\dfrac{1}{x}y=\dfrac{\sin x}{x}$（$x>0$）。这里 $P=\dfrac1x$、$Q=\dfrac{\sin x}{x}$。积分因子 $\mu=e^{\int\frac1x\,\mathrm{d}x}=x$，方程两边乘 $x$ 后左边凑成 $(xy)'$：
+例：解 $\dfrac{\mathrm{d}y}{\mathrm{d}x}+\dfrac{1}{x}y=\dfrac{\sin x}{x}$（$x>0$）。这里 $P=\dfrac1x$、$Q=\dfrac{\sin x}{x}$。积分因子 $\mu=e^{\int\frac1x\mathrm{d}x}=x$，方程两边乘 $x$ 后左边凑成 $(xy)'$：
 
 $$
 (xy)'=\sin x\Rightarrow xy=-\cos x+C\Rightarrow y=\frac{C-\cos x}{x}
@@ -81,29 +81,29 @@ $$
 
 :::tip
 
-记忆方式：「乘积求导」反推。把 $\mu(x)=e^{\int P\,\mathrm{d}x}$ 视为 **积分因子**，乘到方程两边后左侧恰是 $(y\cdot\mu)'$，于是方程变成 $(y\mu)'=Q\mu$，两边直接积分即可。积分因子的作用，就是把杂乱的左边「凑成一个导数」。
+记忆方式：「乘积求导」反推。把 $\mu(x)=e^{\int P\mathrm{d}x}$ 视为 **积分因子**，乘到方程两边后左侧恰是 $(y\cdot\mu)'$，于是方程变成 $(y\mu)'=Q\mu$，两边直接积分即可。积分因子的作用，就是把杂乱的左边「凑成一个导数」。
 
 :::
 
 ### 伯努利方程
 
 $$
-\frac{\mathrm{d}y}{\mathrm{d}x}+P(x)y=Q(x)y^n\,(n\ne 0,1)
+\frac{\mathrm{d}y}{\mathrm{d}x}+P(x)y=Q(x)y^n(n\ne 0,1)
 $$
 
 右端多了个 $y^n$，破坏了线性。令 $z=y^{1-n}$ 作换元，方程化为关于 $z$ 的一阶线性方程，再套上面的公式。这是「换元把非线性掰回线性」的典型。
 
-例：解 $\dfrac{\mathrm{d}y}{\mathrm{d}x}+y=y^2$（$n=2$）。令 $z=y^{1-2}=y^{-1}$，则 $z'=-y^{-2}y'$。原方程两边除以 $y^2$ 得 $y^{-2}y'+y^{-1}=1$，即
+例：解 $\dfrac{\mathrm{d}y}{\mathrm{d}x}+y=y^2$（$n=2$）。令 $z=y^{1-2}=y^{-1}$，则 $z'=-y^{-2}y'$。原方程两边除以 $y^2$ 得 $y^{-2}y'+y^{-1}=1$，即：
 
 $$
 -z'+z=1\Rightarrow z'-z=-1
 $$
 
-这是关于 $z$ 的一阶线性方程，积分因子 $e^{-x}$，解得 $z=1+Ce^{x}$，回代 $z=\dfrac1y$ 得通解 $y=\dfrac{1}{1+Ce^{x}}$。
+这是关于 $z$ 的一阶线性方程，积分因子 $e^{-x}$，解得 $z=1+Ce^x$，回代 $z=\dfrac1y$ 得通解 $y=\dfrac{1}{1+Ce^x}$。
 
 ### 全微分方程
 
-$M(x,y)\,\mathrm{d}x+N(x,y)\,\mathrm{d}y=0$，若满足 **恰当条件**
+$M(x,y)\mathrm{d}x+N(x,y)\mathrm{d}y=0$，若满足 **恰当条件**：
 
 $$
 \frac{\partial M}{\partial y}=\frac{\partial N}{\partial x}
@@ -111,10 +111,10 @@ $$
 
 则左端恰是某个二元函数 $u(x,y)$ 的全微分 $\mathrm{d}u$，原方程即 $\mathrm{d}u=0$，通解为 $u(x,y)=C$。直觉上，这说明该方程的积分曲线是某个「势函数」$u$ 的等高线。求 $u$ 的方法是把 $M$ 对 $x$ 积分、再用 $N$ 定出关于 $y$ 的待定部分。
 
-例：解 $(2xy+1)\,\mathrm{d}x+(x^2+4y)\,\mathrm{d}y=0$。验恰当：$\dfrac{\partial M}{\partial y}=2x=\dfrac{\partial N}{\partial x}$，成立。把 $M$ 对 $x$ 积分（$y$ 暂当常数）：
+例：解 $(2xy+1)\mathrm{d}x+(x^2+4y)\mathrm{d}y=0$。验恰当：$\dfrac{\partial M}{\partial y}=2x=\dfrac{\partial N}{\partial x}$，成立。把 $M$ 对 $x$ 积分（$y$ 暂当常数）：
 
 $$
-u=\int(2xy+1)\,\mathrm{d}x=x^2y+x+\phi(y)
+u=\int(2xy+1)\mathrm{d}x=x^2y+x+\phi(y)
 $$
 
 再用 $\dfrac{\partial u}{\partial y}=x^2+\phi'(y)=N=x^2+4y$ 定出 $\phi'(y)=4y$，即 $\phi(y)=2y^2$。故通解 $x^2y+x+2y^2=C$。
@@ -131,10 +131,10 @@ $$
 
 两种换元的区别在于「方程里没有谁」：不显含 $y$ 时把 $p=y'$ 当成 $x$ 的函数；不显含 $x$ 时改把 $p$ 当成 $y$ 的函数（用链式法则把 $y''$ 改写成 $p\dfrac{\mathrm{d}p}{\mathrm{d}y}$），从而消掉缺席的自变量。
 
-例（不显含 $y$）：解 $y''=y'+x$。令 $p=y'$，得一阶线性方程 $p'-p=x$。积分因子 $e^{-x}$，解得 $p=Ce^{x}-x-1$。再积分一次：
+例（不显含 $y$）：解 $y''=y'+x$。令 $p=y'$，得一阶线性方程 $p'-p=x$。积分因子 $e^{-x}$，解得 $p=Ce^x-x-1$。再积分一次：
 
 $$
-y=\int p\,\mathrm{d}x=C_1 e^{x}-\frac{x^2}{2}-x+C_2
+y=\int p\mathrm{d}x=C_1 e^x-\frac{x^2}{2}-x+C_2
 $$
 
 例（不显含 $x$）：解 $yy''=(y')^2$。令 $p=y'$、$y''=p\dfrac{\mathrm{d}p}{\mathrm{d}y}$，代入得 $yp\dfrac{\mathrm{d}p}{\mathrm{d}y}=p^2$。约去 $p$（$p\ne 0$）后分离变量 $\dfrac{\mathrm{d}p}{p}=\dfrac{\mathrm{d}y}{y}$，得 $p=C_1 y$，即 $y'=C_1 y$，再解得 $y=C_2 e^{C_1 x}$。
@@ -218,7 +218,7 @@ $k$ 是 $\lambda+\omega i$ 作为特征根的重数。
 |          右端 $f(x)$          | 特解 $y^*$ 的待定形式              |
 | :---------------------------: | :--------------------------------- |
 |      $P_m(x)$（多项式）       | $x^k Q_m(x)$                       |
-|      $a\,e^{\lambda x}$       | $x^k b\,e^{\lambda x}$             |
+|       $ae^{\lambda x}$        | $x^k be^{\lambda x}$               |
 | $a\cos\omega x+b\sin\omega x$ | $x^k(A\cos\omega x+B\sin\omega x)$ |
 
 :::tip
@@ -230,12 +230,12 @@ $k$ 是 $\lambda+\omega i$ 作为特征根的重数。
 例（不共振）：解 $y''-3y'+2y=2x$。齐次特征根 $r=1,2$，故齐次通解 $\bar y=C_1 e^x+C_2 e^{2x}$。右端是一次多项式、$\lambda=0$ 不是特征根（$k=0$），设 $y^*=ax+b$，则 $y^{*\prime}=a$、$y^{*\prime\prime}=0$，代入：
 
 $$
--3a+2(ax+b)=2x\Rightarrow 2a=2,\ -3a+2b=0\Rightarrow a=1,\ b=\frac32
+-3a+2(ax+b)=2x\Rightarrow 2a=2,-3a+2b=0\Rightarrow a=1,b=\frac32
 $$
 
 故 $y^*=x+\dfrac32$，通解 $y=C_1 e^x+C_2 e^{2x}+x+\dfrac32$。
 
-例（共振）：解 $y''-3y'+2y=e^{x}$。右端 $\lambda=1$ **恰是特征单根**，故 $k=1$，设 $y^*=ax e^{x}$。求导代入（利用 $r=1$ 使一阶项归并）解得 $a=-1$，故 $y^*=-x e^{x}$，通解 $y=C_1 e^x+C_2 e^{2x}-x e^x$。**漏掉那个 $x$ 会导致代入后恒等式两边对不上、解不出系数——这正是共振的信号。**
+例（共振）：解 $y''-3y'+2y=e^x$。右端 $\lambda=1$ **恰是特征单根**，故 $k=1$，设 $y^*=ax e^x$。求导代入（利用 $r=1$ 使一阶项归并）解得 $a=-1$，故 $y^*=-x e^x$，通解 $y=C_1 e^x+C_2 e^{2x}-x e^x$。**漏掉那个 $x$ 会导致代入后恒等式两边对不上、解不出系数——这正是共振的信号。**
 
 ## 欧拉方程
 
@@ -245,7 +245,7 @@ $$
 
 特点是 **每一项里导数的阶数与 $x$ 的幂次相等**。令 $x=e^t$（即 $t=\ln x$），可把它化为常系数线性 ODE，再用上面的方法求解。
 
-例：解 $x^2 y''-x y'+y=0$（$x>0$）。直接试解 $y=x^r$：$y'=rx^{r-1}$、$y''=r(r-1)x^{r-2}$，代入约去 $x^r$ 得 **特征方程**
+例：解 $x^2 y''-x y'+y=0$（$x>0$）。直接试解 $y=x^r$：$y'=rx^{r-1}$、$y''=r(r-1)x^{r-2}$，代入约去 $x^r$ 得 **特征方程**：
 
 $$
 r(r-1)-r+1=r^2-2r+1=(r-1)^2=0
@@ -262,7 +262,7 @@ $$
 
 例（放射性衰变 / 半衰期）：衰变率正比于现有量 $\dfrac{\mathrm{d}N}{\mathrm{d}t}=-\lambda N$，解 $N=N_0 e^{-\lambda t}$。半衰期 $T$ 满足 $\dfrac{N_0}{2}=N_0 e^{-\lambda T}$，取对数得 $T=\dfrac{\ln 2}{\lambda}$——半衰期只由衰变常数决定，与初始量无关。
 
-例（RC 电路充电）：电源 $E$ 经电阻 $R$ 给电容 $C$ 充电，由基尔霍夫电压定律 $RC\dfrac{\mathrm{d}u}{\mathrm{d}t}+u=E$（$u$ 为电容电压），初值 $u(0)=0$。这是一阶线性方程，齐次解 $\propto e^{-t/(RC)}$、特解 $u^*=E$，故
+例（RC 电路充电）：电源 $E$ 经电阻 $R$ 给电容 $C$ 充电，由基尔霍夫电压定律 $RC\dfrac{\mathrm{d}u}{\mathrm{d}t}+u=E$（$u$ 为电容电压），初值 $u(0)=0$。这是一阶线性方程，齐次解 $\propto e^{-t/(RC)}$、特解 $u^*=E$，故：
 
 $$
 u(t)=E\left(1-e^{-t/(RC)}\right)

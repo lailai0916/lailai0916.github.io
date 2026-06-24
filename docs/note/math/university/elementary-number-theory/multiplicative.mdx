@@ -36,7 +36,7 @@ $$
 把唯一分解代入定义，积性函数 $f$ 的值由它在 **各素数幂处的值** 完全决定：
 
 $$
-n=p_1^{a_1}\cdots p_k^{a_k}\Rightarrow f(n)=\prod_{i=1}^{k}f(p_i^{a_i})
+n=p_1^{a_1}\cdots p_k^{a_k}\Rightarrow f(n)=\prod_{i=1}^kf(p_i^{a_i})
 $$
 
 这就是上面说的「只需搞清 $p^k$」。对完全积性函数还更简单：$f(p^k)=f(p)^k$，连素数幂都不用单独算，知道 $f$ 在素数上的值就够了。
@@ -64,7 +64,7 @@ $$
 **欧拉函数** $\varphi(n)$ 数的是 $\set{1,\dots,n}$ 中与 $n$ 互素的个数。由唯一分解和积性可得：
 
 $$
-\varphi(n)=\prod_{i=1}^{k}\left(p_i^{a_i}-p_i^{a_i-1}\right)=n\prod_{p\mid n}\left(1-\frac{1}{p}\right)
+\varphi(n)=\prod_{i=1}^k\left(p_i^{a_i}-p_i^{a_i-1}\right)=n\prod_{p\mid n}\left(1-\frac{1}{p}\right)
 $$
 
 它满足 $\varphi(p)=p-1$、$\varphi(p^k)=p^k-p^{k-1}$，是积性但 **非** 完全积性（例如 $\varphi(4)=2\ne\varphi(2)^2=1$）。
@@ -82,11 +82,11 @@ $$
 设 $n=p_1^{a_1}\cdots p_k^{a_k}$。**因子个数** $d(n)$ 与 **因子和** $\sigma(n)$ 都能直接从分解读出：
 
 $$
-d(n)=\prod_{i=1}^{k}(a_i+1)
+d(n)=\prod_{i=1}^k(a_i+1)
 $$
 
 $$
-\sigma(n)=\prod_{i=1}^{k}\frac{p_i^{a_i+1}-1}{p_i-1}
+\sigma(n)=\prod_{i=1}^k\frac{p_i^{a_i+1}-1}{p_i-1}
 $$
 
 $d(n)$ 的来历：$n$ 的每个因子，在素数 $p_i$ 上的指数可以是 $0,1,\dots,a_i$ 共 $a_i+1$ 种选择，各素数独立，乘起来即得。$\sigma(n)$ 同理，把每个 $p_i$ 上的等比和 $1+p_i+\dots+p_i^{a_i}$ 乘起来。
@@ -94,7 +94,7 @@ $d(n)$ 的来历：$n$ 的每个因子，在素数 $p_i$ 上的指数可以是 $
 例：算 $n=72=2^3\cdot 3^2$ 的 $d$ 与 $\sigma$。
 
 $$
-d(72)=(3+1)(2+1)=12,\qquad\sigma(72)=(1+2+4+8)(1+3+9)=15\times 13=195
+d(72)=(3+1)(2+1)=12,\sigma(72)=(1+2+4+8)(1+3+9)=15\times 13=195
 $$
 
 可把 $72$ 的 $12$ 个因子全列出来核对：$1,2,3,4,6,8,9,12,18,24,36,72$，正好 $12$ 个，相加得 $195$。手工列因子时按「每个素数取一档指数」的笛卡儿积来枚举（$2$ 的指数 $\times$ $3$ 的指数），不易漏。
@@ -106,12 +106,12 @@ $$
 $$
 \mu(n)=\begin{cases}
   1, & n=1 \\
-  (-1)^k, & n=p_1p_2\cdots p_k\,(\text{素因子互不相同}) \\
+  (-1)^k, & n=p_1p_2\cdots p_k(\text{素因子互不相同}) \\
   0, & n\text{ 含平方因子}
 \end{cases}
 $$
 
-它把整数分三类：$1$、无平方因子数（按素因子个数定正负号）、有平方因子数（直接归零）。例如 $\mu(1)=1,\ \mu(2)=-1,\ \mu(4)=0,\ \mu(6)=1,\ \mu(30)=-1$。$\mu$ 是积性函数。
+它把整数分三类：$1$、无平方因子数（按素因子个数定正负号）、有平方因子数（直接归零）。例如 $\mu(1)=1,\mu(2)=-1,\mu(4)=0,\mu(6)=1,\mu(30)=-1$。$\mu$ 是积性函数。
 
 ### 核心恒等式
 
@@ -127,7 +127,7 @@ $$
 例：在 $n=30=2\cdot 3\cdot 5$ 上验证。$30$ 的因子按素因子个数分层：$1$（$0$ 个，$\mu=1$）；$2,3,5$（$1$ 个，$\mu=-1$）；$6,10,15$（$2$ 个，$\mu=1$）；$30$（$3$ 个，$\mu=-1$）：
 
 $$
-\sum_{d\mid 30}\mu(d)=\underbrace{1}_{1}-\underbrace{3}_{2,3,5}+\underbrace{3}_{6,10,15}-\underbrace{1}_{30}=0
+\sum_{d\mid 30}\mu(d)=\underbrace{1}_1-\underbrace{3}_{2,3,5}+\underbrace{3}_{6,10,15}-\underbrace{1}_{30}=0
 $$
 
 这串 $1-3+3-1$ 正是 $(1-1)^3$ 的二项展开——$k$ 个不同素因子时和为 $(1-1)^k=0$，所以 $n>1$ 时必为 $0$。
@@ -137,7 +137,7 @@ $$
 两个数论函数 $f,g$ 的 **狄利克雷卷积**（Dirichlet Convolution）定义为：
 
 $$
-(f*g)(n)=\sum_{d\mid n}f(d)\,g\!\left(\frac{n}{d}\right)
+(f*g)(n)=\sum_{d\mid n}f(d)g\left(\frac{n}{d}\right)
 $$
 
 即对 $n$ 的每一种「因子配对」$d\cdot\frac nd=n$ 求和。它把「数论函数」从一盘散沙变成一个 **有乘法的代数系统**：
@@ -165,15 +165,15 @@ $$
 $$
 
 $$
-\mathbf{1}*\operatorname{id}=\sigma\quad(\text{因子求和})
+\mathbf{1}*\operatorname{id}=\sigma(\text{因子求和})
 $$
 
 $$
-\mathbf{1}*\mathbf{1}=d\quad(\text{因子计数})
+\mathbf{1}*\mathbf{1}=d(\text{因子计数})
 $$
 
 $$
-\varphi*\mathbf{1}=\operatorname{id}\quad\Bigl(\text{即 }\sum_{d\mid n}\varphi(d)=n\Bigr)
+\varphi*\mathbf{1}=\operatorname{id}\Bigl(\text{即 }\sum_{d\mid n}\varphi(d)=n\Bigr)
 $$
 
 最后一条尤其漂亮，下面单独说。
@@ -186,7 +186,7 @@ $$
 
 直觉上，把 $\set{1,2,\dots,n}$ 每个数 $\frac kn$ 约分成最简分数，分母一定是 $n$ 的某个因子 $d$；分母恰为 $d$ 的最简分数有 $\varphi(d)$ 个。按分母分类求和，总数仍是 $n$，于是各 $\varphi(d)$ 加起来等于 $n$。
 
-例：在 $n=12$ 上验证。$12$ 的因子 $1,2,3,4,6,12$，对应
+例：在 $n=12$ 上验证。$12$ 的因子 $1,2,3,4,6,12$，对应：
 
 $$
 \sum_{d\mid 12}\varphi(d)=\varphi(1)+\varphi(2)+\varphi(3)+\varphi(4)+\varphi(6)+\varphi(12)=1+1+2+2+2+4=12
@@ -197,7 +197,7 @@ $$
 另一条常用的是因子和与莫比乌斯的互逆形式（莫比乌斯反演的特例）：
 
 $$
-\sum_{d\mid n}\mu(d)\,\sigma\!\left(\frac nd\right)=\operatorname{id}(n)=n
+\sum_{d\mid n}\mu(d)\sigma\left(\frac nd\right)=\operatorname{id}(n)=n
 $$
 
 ## 莫比乌斯反演
@@ -205,7 +205,7 @@ $$
 **莫比乌斯反演**（Möbius Inversion）：设 $F(n)=\sum_{d\mid n}f(d)$，则可以把 $f$ 反解出来：
 
 $$
-f(n)=\sum_{d\mid n}\mu(d)\,F\!\left(\frac{n}{d}\right)
+f(n)=\sum_{d\mid n}\mu(d)F\left(\frac{n}{d}\right)
 $$
 
 用卷积语言写极其干净：$F=f*\mathbf{1}\Rightarrow f=F*\mu$。证明只需在两边同卷 $\mu$，再用 $\mathbf{1}*\mu=\varepsilon$ 化简。
@@ -221,7 +221,7 @@ $$
 由 $\varphi*\mathbf{1}=\operatorname{id}$ 两边同卷 $\mu$，得 $\varphi=\operatorname{id}*\mu$，即：
 
 $$
-\varphi(n)=\sum_{d\mid n}\mu(d)\,\frac{n}{d}=n\sum_{d\mid n}\frac{\mu(d)}{d}
+\varphi(n)=\sum_{d\mid n}\mu(d)\frac{n}{d}=n\sum_{d\mid n}\frac{\mu(d)}{d}
 $$
 
 把右边对每个素因子展开（含平方因子的项被 $\mu$ 清零），正好得到 $n\prod_{p\mid n}\bigl(1-\frac1p\bigr)$，与前面的乘积公式吻合。这是「反演能重新推出已知结果」的典型例子。
@@ -234,7 +234,7 @@ $$
 
 （$\mu(1)=1,\mu(2)=\mu(3)=-1,\mu(6)=1$。）结果 $\varphi(12)=4$ 与直接公式一致，而 $d=4,12$ 那两项因 $\mu=0$ 自动消失。
 
-例（反解未知函数）：已知 $g(n)=\sum_{d\mid n}f(d)$，且测得 $g(1)=1,\ g(2)=3,\ g(3)=4,\ g(6)=12$，反求 $f(6)$。直接套 $f(n)=\sum_{d\mid n}\mu(d)\,g(n/d)$：
+例（反解未知函数）：已知 $g(n)=\sum_{d\mid n}f(d)$，且测得 $g(1)=1,g(2)=3,g(3)=4,g(6)=12$，反求 $f(6)$。直接套 $f(n)=\sum_{d\mid n}\mu(d)g(n/d)$：
 
 $$
 f(6)=\mu(1)g(6)+\mu(2)g(3)+\mu(3)g(2)+\mu(6)g(1)=12-4-3+1=6
@@ -269,10 +269,10 @@ $$
 
 因子和 $\sigma$ 引出一个古老话题。若一个正整数恰好等于它 **所有真因子之和**，即 $\sigma(n)=2n$，称为 **完全数**（Perfect Number）。最小的几个是 $6=1+2+3$、$28=1+2+4+7+14$。
 
-偶完全数有一条优美刻画（欧几里得—欧拉定理）：$n$ 是偶完全数当且仅当
+偶完全数有一条优美刻画（欧几里得—欧拉定理）：$n$ 是偶完全数当且仅当：
 
 $$
-n=2^{p-1}\bigl(2^p-1\bigr),\quad\text{其中 }2^p-1\text{ 是素数}
+n=2^{p-1}\bigl(2^p-1\bigr),\text{其中 }2^p-1\text{ 是素数}
 $$
 
 形如 $2^p-1$ 的素数称为 **梅森素数**（Mersenne Prime），$p$ 本身必为素数。于是「找偶完全数」与「找梅森素数」是同一个问题。梅森素数极其稀少，目前已知的只有几十个，最大素数纪录长期由它保持。至于 **是否存在奇完全数**，至今仍是未解之谜。

@@ -38,7 +38,7 @@ $$
 若 $\set{f_n}$ 仅在 $[0,m]$ 上非零、$\set{g_n}$ 仅在 $[0,n]$ 上非零，则结果仅在 $[0,m+n]$ 上非零：
 
 $$
-(f*g)_i=\sum_{k=0}^{i}f_k g_{i-k}
+(f*g)_i=\sum_{k=0}^if_k g_{i-k}
 $$
 
 ## 直观
@@ -63,13 +63,13 @@ $$
 把数列 $\set{f_n}$ 和 $\set{g_n}$ 视为多项式的系数：
 
 $$
-F(x)=\sum_{k=0}^{m}f_k x^k,\quad G(x)=\sum_{k=0}^{n}g_k x^k
+F(x)=\sum_{k=0}^mf_k x^k,G(x)=\sum_{k=0}^ng_k x^k
 $$
 
 它们的乘积 $H(x)=F(x)G(x)$ 是一个 $m+n$ 次多项式，$x^i$ 的系数为：
 
 $$
-h_i=\sum_{k=0}^{i}f_k g_{i-k}
+h_i=\sum_{k=0}^if_k g_{i-k}
 $$
 
 这正是 $\set{f_n}$ 与 $\set{g_n}$ 的离散卷积。
@@ -129,6 +129,6 @@ $$
 
 将「加法」换为其他运算、或将定义域换为其他结构，可以得到一系列推广：
 
-- [范德蒙德卷积](/docs/contest/math/combinatorics/vandermonde-convolution)：组合恒等式 $\displaystyle\sum_{k}\binom{m}{k}\binom{n}{r-k}=\binom{m+n}{r}$；
-- [狄利克雷卷积](/docs/note/math/university/elementary-number-theory/multiplicative)：数论中按因子求和的卷积 $\displaystyle(f*g)(n)=\sum_{d\mid n}f(d)g\!\left(\frac{n}{d}\right)$；
+- [范德蒙德卷积](/docs/contest/math/combinatorics/vandermonde-convolution)：组合恒等式 $\displaystyle\sum_k\binom{m}{k}\binom{n}{r-k}=\binom{m+n}{r}$；
+- [狄利克雷卷积](/docs/note/math/university/elementary-number-theory/multiplicative)：数论中按因子求和的卷积 $\displaystyle(f*g)(n)=\sum_{d\mid n}f(d)g\left(\frac{n}{d}\right)$；
 - **位运算卷积** 与 **子集卷积**：将下标的加法替换为 $\operatorname{or}$、$\operatorname{and}$、$\operatorname{xor}$ 等位运算，详见 [《题解：洛谷 P4717 【模板】快速莫比乌斯/沃尔什变换 (FMT/FWT)》](/blog/solution/P4717)。

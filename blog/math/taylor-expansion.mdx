@@ -45,7 +45,7 @@ tags: [math]
 假设要用多项式函数 $g(x)$ 近似指数函数 $f(x)=e^x$。设 $g(x)$ 为：
 
 $$
-g(x)=\sum_{n=0}^{\infty}a_nx^n=a_0+a_1x+a_2x^2+a_3x^3+a_4x^4+\dots
+g(x)=\sum_{n=0}^\infty a_nx^n=a_0+a_1x+a_2x^2+a_3x^3+a_4x^4+\dots
 $$
 
 我们的目标是确定每一项的系数 $a_n$，使得 $g(x)$ 与 $f(x)$ 完全一致。
@@ -145,13 +145,13 @@ $$
 $f(x)$ 和 $g(x)$ 的 $n$ 阶导数相同：
 
 $$
-f^{(n)}(x)=e^x=g^{(n)}(x)=n! a_{n}+x(\dots)
+f^{(n)}(x)=e^x=g^{(n)}(x)=n! a_n+x(\dots)
 $$
 
 代入 $x=0$ 得：
 
 $$
-f^{(n)}(0)=e^0=g^{(n)}(0)=n! a_{n}=1
+f^{(n)}(0)=e^0=g^{(n)}(0)=n! a_n=1
 $$
 
 因此：
@@ -165,19 +165,19 @@ $$
 将 $a_n$ 代入得：
 
 $$
-g(x)=\sum_{n=0}^{\infty}a_nx^n=\sum_{n=0}^{\infty}\frac{x^n}{n!}
+g(x)=\sum_{n=0}^\infty a_nx^n=\sum_{n=0}^\infty\frac{x^n}{n!}
 $$
 
 因此，$f(x)=e^x$ 的麦克劳林公式为：
 
 $$
-f(x)=e^x=g(x)=\sum_{n=0}^{\infty}\frac{x^n}{n!}=1+x+\frac{x^2}{2!}+\frac{x^3}{3!}+\frac{x^4}{4!}+\dots
+f(x)=e^x=g(x)=\sum_{n=0}^\infty\frac{x^n}{n!}=1+x+\frac{x^2}{2!}+\frac{x^3}{3!}+\frac{x^4}{4!}+\dots
 $$
 
 更一般的麦克劳林公式为：
 
 $$
-f(x)=\sum_{n=0}^{\infty}\frac{f^{(n)}(0)}{n!}x^n=f(0)+f'(0)x+\frac{f^{(2)}(0)}{2!}x^2+\frac{f^{(3)}(0)}{3!}x^3+\frac{f^{(4)}(0)}{4!}x^4+\dots
+f(x)=\sum_{n=0}^\infty\frac{f^{(n)}(0)}{n!}x^n=f(0)+f'(0)x+\frac{f^{(2)}(0)}{2!}x^2+\frac{f^{(3)}(0)}{3!}x^3+\frac{f^{(4)}(0)}{4!}x^4+\dots
 $$
 
 ## 例题
@@ -191,19 +191,19 @@ $$
 它的导数每四阶循环一次：
 
 $$
-(\sin x)'=\cos{x}\Rightarrow(\cos{x})'=-\sin x\Rightarrow(-\sin x)'=-\cos{x}\Rightarrow(-\cos{x})'=\sin x
+(\sin x)'=\cos x\Rightarrow(\cos x)'=-\sin x\Rightarrow(-\sin x)'=-\cos x\Rightarrow(-\cos x)'=\sin x
 $$
 
 代入麦克劳林公式：
 
 $$
-f(x)=\sum_{n=0}^{\infty}\frac{f^{(n)}(0)}{n!}x^n=x-\frac{x^3}{3!}+\frac{x^5}{5!}-\frac{x^7}{7!}+\frac{x^9}{9!}-\dots
+f(x)=\sum_{n=0}^\infty\frac{f^{(n)}(0)}{n!}x^n=x-\frac{x^3}{3!}+\frac{x^5}{5!}-\frac{x^7}{7!}+\frac{x^9}{9!}-\dots
 $$
 
 因此，$\sin x$ 的麦克劳林公式为：
 
 $$
-\sin x=\sum_{n=0}^{\infty}(-1)^n\frac{x^{2n+1}}{(2n+1)!}
+\sin x=\sum_{n=0}^\infty(-1)^n\frac{x^{2n+1}}{(2n+1)!}
 $$
 
 如希望展示误差项，也可写成：
@@ -223,13 +223,13 @@ $$
 ## 常用公式
 
 $$
-e^x=\sum_{n=0}^{\infty}\frac{x^n}{n!}
+e^x=\sum_{n=0}^\infty\frac{x^n}{n!}
 $$
 
 $$
-\sin x=\sum_{n=0}^{\infty}(-1)^{n}\frac{x^{2n+1}}{(2n+1)!}
+\sin x=\sum_{n=0}^\infty(-1)^n\frac{x^{2n+1}}{(2n+1)!}
 $$
 
 $$
-\cos{x}=\sum_{n=0}^{\infty}(-1)^{n}\frac{x^{2n}}{(2n)!}
+\cos x=\sum_{n=0}^\infty(-1)^n\frac{x^{2n}}{(2n)!}
 $$

@@ -22,7 +22,7 @@ $$
 
 ### 定义
 
-设 $A$ 为 $n$ 阶方阵。若存在数 $\lambda$ 和 **非零向量** $\vec\xi$ 使
+设 $A$ 为 $n$ 阶方阵。若存在数 $\lambda$ 和 **非零向量** $\vec\xi$ 使：
 
 $$
 A\vec\xi=\lambda\vec\xi
@@ -58,10 +58,10 @@ $$
 \end{vmatrix}=(2-\lambda)\big[(2-\lambda)^2-1\big]-(-1)\big[-(2-\lambda)\big]
 $$
 
-整理得 $(2-\lambda)\big[(2-\lambda)^2-2\big]=0$。令 $\mu=2-\lambda$ 即 $\mu(\mu^2-2)=0$，故 $\mu=0,\pm\sqrt2$，对应
+整理得 $(2-\lambda)\big[(2-\lambda)^2-2\big]=0$。令 $\mu=2-\lambda$ 即 $\mu(\mu^2-2)=0$，故 $\mu=0,\pm\sqrt2$，对应：
 
 $$
-\lambda_1=2,\quad\lambda_2=2-\sqrt2,\quad\lambda_3=2+\sqrt2
+\lambda_1=2,\lambda_2=2-\sqrt2,\lambda_3=2+\sqrt2
 $$
 
 三个互异。自检：之和 $\lambda_1+\lambda_2+\lambda_3=6=\operatorname{tr}(A)$，吻合。再逐个回代解 $(A-\lambda E)\vec x=\vec 0$。对 $\lambda_1=2$：
@@ -96,10 +96,10 @@ $$
 
 ### 特征值与迹、行列式
 
-设 $A$ 的 $n$ 个特征值为 $\lambda_1,\dots,\lambda_n$（计重数），则
+设 $A$ 的 $n$ 个特征值为 $\lambda_1,\dots,\lambda_n$（计重数），则：
 
 $$
-\sum_{i=1}^{n}\lambda_i=\operatorname{tr}(A)=\sum_{i=1}^{n}a_{ii},\qquad\prod_{i=1}^{n}\lambda_i=|A|
+\sum_{i=1}^n\lambda_i=\operatorname{tr}(A)=\sum_{i=1}^na_{ii},\prod_{i=1}^n\lambda_i=|A|
 $$
 
 特征值之和等于 **迹**（对角线元素之和），之积等于 **行列式**。这两条来自特征多项式的韦达定理，是验算特征值时的快速自检 —— 算完一定要核对这两个等式。也立刻看出：$A$ 可逆 $\iff$ 所有特征值非零。
@@ -130,7 +130,7 @@ $$
 
 ### 定义
 
-若存在 **可逆矩阵** $P$ 使
+若存在 **可逆矩阵** $P$ 使：
 
 $$
 P^{-1}AP=B
@@ -163,7 +163,7 @@ $$
 ### 充要条件
 
 $$
-A\ \text{可对角化}\iff A\ \text{有 }n\text{ 个线性无关的特征向量}
+A\text{可对角化}\iff A\text{有 }n\text{ 个线性无关的特征向量}
 $$
 
 等价表述：**每个特征值的几何重数都等于代数重数**（即 $k$ 重特征值恰好对应 $k$ 个线性无关特征向量）。两个充分条件值得记住：
@@ -191,7 +191,7 @@ $$
 
 1. 由 $|A-\lambda E|=0$ 求出全部特征值 $\lambda_1,\dots,\lambda_n$。
 2. 对每个 $\lambda_i$ 解 $(A-\lambda_i E)\vec x=\vec 0$ 求特征向量。
-3. 若凑齐 $n$ 个线性无关特征向量 $\vec\xi_1,\dots,\vec\xi_n$，令 $P=(\vec\xi_1,\dots,\vec\xi_n)$，则
+3. 若凑齐 $n$ 个线性无关特征向量 $\vec\xi_1,\dots,\vec\xi_n$，令 $P=(\vec\xi_1,\dots,\vec\xi_n)$，则：
 
 $$
 P^{-1}AP=\operatorname{diag}(\lambda_1,\dots,\lambda_n)
@@ -201,7 +201,7 @@ $$
 
 ### 应用：求矩阵的幂
 
-对角化最实用的去处是算高次幂。若 $A=P\Lambda P^{-1}$，则
+对角化最实用的去处是算高次幂。若 $A=P\Lambda P^{-1}$，则：
 
 $$
 A^k=P\Lambda^k P^{-1}=P\operatorname{diag}(\lambda_1^k,\dots,\lambda_n^k)P^{-1}
@@ -209,13 +209,13 @@ $$
 
 中间一堆 $P^{-1}P$ 抵消，只剩对角阵逐元素取 $k$ 次幂，瞬间把「矩阵连乘」化成了「数的乘方」。
 
-例：求 $A=\begin{pmatrix}1&2\\1&0\end{pmatrix}$ 的 $n$ 次幂。特征方程 $\lambda^2-\lambda-2=0$，根 $\lambda_1=2,\lambda_2=-1$。对 $\lambda_1=2$：$(A-2E)\vec x=\vec 0$ 即 $\begin{pmatrix}-1&2\\1&-2\end{pmatrix}\vec x=\vec0$，得 $\vec\xi_1=(2,1)^T$；对 $\lambda_2=-1$：$\begin{pmatrix}2&2\\1&1\end{pmatrix}\vec x=\vec0$，得 $\vec\xi_2=(1,-1)^T$。令
+例：求 $A=\begin{pmatrix}1&2\\1&0\end{pmatrix}$ 的 $n$ 次幂。特征方程 $\lambda^2-\lambda-2=0$，根 $\lambda_1=2,\lambda_2=-1$。对 $\lambda_1=2$：$(A-2E)\vec x=\vec 0$ 即 $\begin{pmatrix}-1&2\\1&-2\end{pmatrix}\vec x=\vec0$，得 $\vec\xi_1=(2,1)^T$；对 $\lambda_2=-1$：$\begin{pmatrix}2&2\\1&1\end{pmatrix}\vec x=\vec0$，得 $\vec\xi_2=(1,-1)^T$。令：
 
 $$
 P=\begin{pmatrix}
   2 & 1 \\
   1 & -1
-\end{pmatrix},\quad P^{-1}=\frac{1}{-3}\begin{pmatrix}
+\end{pmatrix},P^{-1}=\frac{1}{-3}\begin{pmatrix}
   -1 & -1 \\
   -1 & 2
 \end{pmatrix}=\frac13\begin{pmatrix}
@@ -252,10 +252,10 @@ $$
 $n$ 维实向量的 **内积**（Inner Product）：
 
 $$
-(\vec\alpha,\vec\beta)=\vec\alpha^T\vec\beta=\sum_{i=1}^{n}a_ib_i
+(\vec\alpha,\vec\beta)=\vec\alpha^T\vec\beta=\sum_{i=1}^na_ib_i
 $$
 
-由它定义 **长度**（范数）$\|\vec\alpha\|=\sqrt{(\vec\alpha,\vec\alpha)}$ 和夹角 $\cos\theta=\dfrac{(\vec\alpha,\vec\beta)}{\|\vec\alpha\|\,\|\vec\beta\|}$。内积把「长度」「角度」这些几何概念带进了高维空间。满足柯西-施瓦茨不等式 $|(\vec\alpha,\vec\beta)|\le\|\vec\alpha\|\,\|\vec\beta\|$。
+由它定义 **长度**（范数）$\|\vec\alpha\|=\sqrt{(\vec\alpha,\vec\alpha)}$ 和夹角 $\cos\theta=\dfrac{(\vec\alpha,\vec\beta)}{\|\vec\alpha\|\|\vec\beta\|}$。内积把「长度」「角度」这些几何概念带进了高维空间。满足柯西-施瓦茨不等式 $|(\vec\alpha,\vec\beta)|\le\|\vec\alpha\|\|\vec\beta\|$。
 
 ### 正交
 
@@ -295,10 +295,10 @@ $$
 
 ### 正交矩阵
 
-若方阵 $Q$ 满足
+若方阵 $Q$ 满足：
 
 $$
-Q^TQ=QQ^T=E\quad\text{即}\quad Q^{-1}=Q^T
+Q^TQ=QQ^T=E\text{即}Q^{-1}=Q^T
 $$
 
 则称 **正交矩阵**（Orthogonal Matrix）。它的列（行）向量构成标准正交组。正交矩阵代表 **保持长度和角度** 的变换（旋转或反射），不拉伸不扭曲，所以 $|Q|=\pm 1$，且 $\|Q\vec x\|=\|\vec x\|$。
@@ -311,7 +311,7 @@ $$
 - **不同特征值** 的特征向量自动 **互相正交**；
 - 即使有重特征值也 **必可对角化**，而且能用 **正交矩阵** 对角化。
 
-也就是说，存在正交矩阵 $Q$ 使
+也就是说，存在正交矩阵 $Q$ 使：
 
 $$
 Q^TAQ=Q^{-1}AQ=\Lambda=\operatorname{diag}(\lambda_1,\dots,\lambda_n)
@@ -325,29 +325,29 @@ $$
 2. 对每个 **重特征值**，把它的几个特征向量做 **施密特正交化**（不同特征值之间本就正交，无需处理）。
 3. 把所有特征向量 **单位化**，按列拼成正交矩阵 $Q$，则 $Q^TAQ=\Lambda$。
 
-例：把实对称矩阵 $A=\begin{pmatrix}1&2&2\\2&1&2\\2&2&1\end{pmatrix}$ 正交对角化。前面已求出特征值 $\lambda_1=5$、$\lambda_2=\lambda_3=-1$（二重），及特征向量
+例：把实对称矩阵 $A=\begin{pmatrix}1&2&2\\2&1&2\\2&2&1\end{pmatrix}$ 正交对角化。前面已求出特征值 $\lambda_1=5$、$\lambda_2=\lambda_3=-1$（二重），及特征向量：
 
 $$
-\lambda_1=5:\ \vec\xi_1=(1,1,1)^T;\qquad\lambda=-1:\ \vec\xi_2=(-1,1,0)^T,\ \vec\xi_3=(-1,0,1)^T
+\lambda_1=5:\vec\xi_1=(1,1,1)^T;\lambda=-1:\vec\xi_2=(-1,1,0)^T,\vec\xi_3=(-1,0,1)^T
 $$
 
-$\vec\xi_1$ 与 $\vec\xi_2,\vec\xi_3$ 分属不同特征值，自动正交，无需处理。但 $\vec\xi_2,\vec\xi_3$ 同属 $\lambda=-1$，彼此 **不正交**（$(\vec\xi_2,\vec\xi_3)=1\ne0$），要对它们做施密特正交化。取 $\vec\eta_2=\vec\xi_2=(-1,1,0)^T$，
+$\vec\xi_1$ 与 $\vec\xi_2,\vec\xi_3$ 分属不同特征值，自动正交，无需处理。但 $\vec\xi_2,\vec\xi_3$ 同属 $\lambda=-1$，彼此 **不正交**（$(\vec\xi_2,\vec\xi_3)=1\ne0$），要对它们做施密特正交化。取 $\vec\eta_2=\vec\xi_2=(-1,1,0)^T$：
 
 $$
 \vec\eta_3=\vec\xi_3-\frac{(\vec\xi_3,\vec\eta_2)}{(\vec\eta_2,\vec\eta_2)}\vec\eta_2=(-1,0,1)^T-\frac{1}{2}(-1,1,0)^T=\left(-\tfrac12,-\tfrac12,1\right)^T
 $$
 
-现在 $\vec\xi_1,\vec\eta_2,\vec\eta_3$ 两两正交。各自单位化（长度依次为 $\sqrt3,\sqrt2,\sqrt{3/2}$），按列拼成
+现在 $\vec\xi_1,\vec\eta_2,\vec\eta_3$ 两两正交。各自单位化（长度依次为 $\sqrt3,\sqrt2,\sqrt{3/2}$），按列拼成：
 
 $$
 Q=\begin{pmatrix}
   \frac{1}{\sqrt3} & -\frac{1}{\sqrt2} & -\frac{1}{\sqrt6} \\[2pt]
   \frac{1}{\sqrt3} & \frac{1}{\sqrt2} & -\frac{1}{\sqrt6} \\[2pt]
   \frac{1}{\sqrt3} & 0 & \frac{2}{\sqrt6}
-\end{pmatrix},\qquad Q^TAQ=\begin{pmatrix}
-  5 &  &  \\
-  & -1 &  \\
-  &  & -1
+\end{pmatrix},Q^TAQ=\begin{pmatrix}
+  5 & & \\
+  & -1 & \\
+  & & -1
 \end{pmatrix}
 $$
 

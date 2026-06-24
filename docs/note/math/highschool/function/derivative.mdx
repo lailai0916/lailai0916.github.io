@@ -270,17 +270,17 @@ f(x)=a^x(a>0)
 $$
 
 $$
-f'(x)=a^{x}\ln{a}
+f'(x)=a^x\ln a
 $$
 
-:::tip
+:::tip：
 
 $$
 f(x)=e^x
 $$
 
 $$
-f'(x)=e^x\ln{e}=e^x
+f'(x)=e^x\ln e=e^x
 $$
 
 :::
@@ -288,21 +288,21 @@ $$
 ### 对数函数
 
 $$
-f(x)=\log_a{x}(a>0,a\ne 1)
+f(x)=\log_a x(a>0,a\ne 1)
 $$
 
 $$
-f'(x)=\frac{1}{x\ln{a}}
+f'(x)=\frac{1}{x\ln a}
 $$
 
-:::tip
+:::tip：
 
 $$
-f(x)=\ln{x}
+f(x)=\ln x
 $$
 
 $$
-f'(x)=\frac{1}{x\ln{e}}=\frac{1}{x}
+f'(x)=\frac{1}{x\ln e}=\frac{1}{x}
 $$
 
 :::
@@ -310,29 +310,29 @@ $$
 ### 三角函数
 
 $$
-f(x)=\sin{x}
+f(x)=\sin x
 $$
 
 $$
-f'(x)=\cos{x}
+f'(x)=\cos x
 $$
 
 $$
-f(x)=\cos{x}
+f(x)=\cos x
 $$
 
 $$
-f'(x)=-\sin{x}
+f'(x)=-\sin x
 $$
 
 ### 公式总结
 
 - $C'=0$（$C$ 为常数）
 - $(x^a)'=ax^{a-1}$（$a\in\mathbb{R}, a\ne 0$）
-- $(a^x)'=a^{x}\ln{a}$（$a>0$）
-- $(\log_a{x})'=\frac{1}{x\ln{a}}$（$a>0,a\ne 1$）
-- $(\sin{x})'=\cos{x}$
-- $(\cos{x})'=-\sin{x}$
+- $(a^x)'=a^x\ln a$（$a>0$）
+- $(\log_a x)'=\frac{1}{x\ln a}$（$a>0,a\ne 1$）
+- $(\sin x)'=\cos x$
+- $(\cos x)'=-\sin x$
 
 ## 运算
 
@@ -348,7 +348,7 @@ $$
 [f(x)\cdot g(x)]'=f(x)'g(x)+f(x)g(x)'
 $$
 
-:::tip
+:::tip：
 
 $$
 [k\cdot f(x)]'=k'f(x)+kf'(x)=kf'(x)
@@ -362,7 +362,7 @@ $$
 [\frac{f(x)}{g(x)}]'=\frac{f(x)'g(x)-f(x)g(x)'}{[g(x)]^2}(g(x)\ne 0)
 $$
 
-:::tip
+:::tip：
 
 $$
 \left[\frac{1}{f(x)}\right]'=\frac{1'f(x)-f(x)'}{[f(x)]^2}=-\frac{f(x)'}{[f(x)]^2}(f(x)\ne 0)
@@ -384,8 +384,8 @@ $$
 
 设 $f(x)$ 在区间 $I$ 上可导：
 
-- 若 $\forall x\in I,\ f'(x)\geq 0$（且不恒为 $0$），则 $f(x)$ 在 $I$ 上 **单调递增**。
-- 若 $\forall x\in I,\ f'(x)\leq 0$（且不恒为 $0$），则 $f(x)$ 在 $I$ 上 **单调递减**。
+- 若 $\forall x\in I,f'(x)\geq 0$（且不恒为 $0$），则 $f(x)$ 在 $I$ 上 **单调递增**。
+- 若 $\forall x\in I,f'(x)\leq 0$（且不恒为 $0$），则 $f(x)$ 在 $I$ 上 **单调递减**。
 
 求 $f(x)$ 单调区间的标准步骤：
 
@@ -412,7 +412,7 @@ $f'(x)=3x^2-3=3(x-1)(x+1)$。
 
 ### 极值
 
-设 $x_0$ 是 $f(x)$ 定义域内一点，若存在 $x_0$ 的某邻域 $U$ 使得 $\forall x\in U,\ f(x)\leq f(x_0)$（或 $\geq f(x_0)$），则称 $f(x_0)$ 是 $f(x)$ 的一个 **极大值**（或 **极小值**），$x_0$ 称为 **极值点**。
+设 $x_0$ 是 $f(x)$ 定义域内一点，若存在 $x_0$ 的某邻域 $U$ 使得 $\forall x\in U,f(x)\leq f(x_0)$（或 $\geq f(x_0)$），则称 $f(x_0)$ 是 $f(x)$ 的一个 **极大值**（或 **极小值**），$x_0$ 称为 **极值点**。
 
 **极值点的必要条件**：若 $x_0$ 是可导函数 $f(x)$ 的极值点，则 $f'(x_0)=0$。
 
@@ -455,7 +455,7 @@ $f'(x_0)=0$ 是极值点的 **必要不充分** 条件。例如 $f(x)=x^3$ 在 $
 
 :::example
 
-证明 $\forall x>0,\ \ln x\leq x-1$。
+证明 $\forall x>0,\ln x\leq x-1$。
 
 构造 $h(x)=x-1-\ln x$，$x>0$。
 

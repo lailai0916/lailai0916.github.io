@@ -116,7 +116,7 @@ $$
 - 当 $\lambda=0$ 时，$\lambda\bm a=\vec 0$；
 - 当 $\lambda<0$ 时，$\lambda\bm a$ 与 $\bm a$ 方向相反。
 
-根据数乘的定义，可以得出向量的数乘满足交换律、结合律、分配律等，即，
+根据数乘的定义，可以得出向量的数乘满足交换律、结合律、分配律等，即：
 
 $$
 \lambda(\mu\bm a)=(\lambda\mu)\bm a
@@ -168,7 +168,7 @@ $$
 
 向量加法满足结合律和交换律，画图理解即可。
 
-向量加法可以导出三角形不等式，
+向量加法可以导出三角形不等式：
 
 $$
 ||\bm a|-|\bm b||\le|\bm a+\bm b|\le|\bm a|+|\bm b|
@@ -190,7 +190,7 @@ $$
 y-y_1=y_2-y
 $$
 
-最终解得，
+最终解得：
 
 $$
 C\left({x_1+x_2\over2},{y_1+y_2\over2}\right)
@@ -200,13 +200,13 @@ $$
 
 ### 线段长度
 
-设 $A(x_1,y_1)$、$B(x_2,y_2)$ 为一平面内两点，则，
+设 $A(x_1,y_1)$、$B(x_2,y_2)$ 为一平面内两点，则：
 
 $$
 |\overrightarrow{AB}|=\sqrt{\overrightarrow{AB}\cdot\overrightarrow{AB}}=\sqrt{(x_1-x_2)^2+(y_1-y_2)^2}
 $$
 
-则线段 $AB$，
+则线段 $AB$：
 
 $$
 |AB|=|\overrightarrow{AB}|=\sqrt{(x_1-x_2)^2+(y_1-y_2)^2}
@@ -287,7 +287,7 @@ $$
 (\bm a+\bm b)\cdot\bm c=\bm a\cdot\bm c+\bm b\cdot\bm c
 $$
 
-但是向量点乘不满足结合律，
+但是向量点乘不满足结合律：
 
 $$
 (\bm a\cdot\bm b)\cdot\bm c\neq\bm a\cdot(\bm b\cdot\bm c)
@@ -295,7 +295,7 @@ $$
 
 注意到向量运算具有大部分的数字运算的性质（除了除法），因此可以当做字母计算。
 
-可以得到，$\bm a\cdot\bm b=\bm a\cdot\bm c$ 的充要条件是 $\bm a\perp(\bm b-\bm c)$，
+可以得到，$\bm a\cdot\bm b=\bm a\cdot\bm c$ 的充要条件是 $\bm a\perp(\bm b-\bm c)$：
 
 $$
 \bm a\cdot\bm b=\bm a\cdot\bm c
@@ -305,13 +305,13 @@ $$
 \bm a\cdot(\bm b-\bm c)=\vec0
 $$
 
-即，
+即：
 
 $$
 \bm a\perp(\bm b-\bm c)
 $$
 
-不难发现，
+不难发现：
 
 $$
 |\bm a+\bm b|^2-|\bm a-\bm b|^2=4\bm a\cdot\bm b
@@ -323,7 +323,7 @@ $$
 
 即极化恒等式，我们可以不通过求夹角的方式得出两向量点积。
 
-同时，常用的，
+同时，常用的：
 
 $$
 \begin{aligned}
@@ -333,7 +333,7 @@ $$
 \end{aligned}
 $$
 
-即，
+即：
 
 $$
 |\bm a|^2+2\bm a\cdot\bm b+|\bm b|^2=|\bm a+\bm b|^2
@@ -343,7 +343,7 @@ $$
 \bm a\cdot\bm b={1\over2}\left(|\bm a+\bm b|^2-|\bm a|^2-|\bm b|^2\right)
 $$
 
-总结一下，上面两个式子，
+总结一下，上面两个式子：
 
 $$
 \bm a\cdot\bm b={1\over4}\left(|\bm a+\bm b|^2-|\bm a-\bm b|^2\right)
@@ -353,7 +353,7 @@ $$
 \bm a\cdot\bm b={1\over2}\left(|\bm a+\bm b|^2-|\bm a|^2-|\bm b|^2\right)
 $$
 
-再结合点乘的定义，
+再结合点乘的定义：
 
 $$
 \bm a\cdot\bm b=|\bm a|\cdot|\bm b|\cdot\cos\theta
@@ -365,22 +365,22 @@ $$
 
 就可以求出向量夹角。
 
-特殊地，
+特殊地：
 
 $$
-\theta=0\,(\cos\theta=1),\,\bm a\cdot\bm b=|\bm a|\cdot|\bm b|
-$$
-
-$$
-\theta=\pi\,(\cos\theta=-1),\,\bm a\cdot\bm b=-|\bm a|\cdot|\bm b|
+\theta=0(\cos\theta=1),\bm a\cdot\bm b=|\bm a|\cdot|\bm b|
 $$
 
 $$
-\theta=\pi/2\,(\cos\theta=0),\,\bm a\cdot\bm b=0
+\theta=\pi(\cos\theta=-1),\bm a\cdot\bm b=-|\bm a|\cdot|\bm b|
 $$
 
 $$
-\bm a\cdot\bm a=|\bm a|^2,\,|\bm a|=\sqrt{\bm a\cdot\bm a}
+\theta=\pi/2(\cos\theta=0),\bm a\cdot\bm b=0
+$$
+
+$$
+\bm a\cdot\bm a=|\bm a|^2,|\bm a|=\sqrt{\bm a\cdot\bm a}
 $$
 
 经典的套路是，见模长便平方。
@@ -431,7 +431,7 @@ $$
 
 存在性的证明：感性理解。
 
-唯一性的证明，反证：假设存在两组实数 $\langle x_1,y_1\rangle$、$\langle x_2,y_2\rangle$，
+唯一性的证明，反证：假设存在两组实数 $\langle x_1,y_1\rangle$、$\langle x_2,y_2\rangle$：
 
 $$
 \bm a=x_1\bm e_1+y_1\bm e_2=x_2\bm e_1+y_2\bm e_2
@@ -445,10 +445,10 @@ $$
 
 考虑构造性的证明，
 
-若，
+若：
 
 $$
-\bm a\cdot\bm e_1=a_1,\,\bm a\cdot\bm e_2=a_2
+\bm a\cdot\bm e_1=a_1,\bm a\cdot\bm e_2=a_2
 $$
 
 $$
@@ -457,7 +457,7 @@ $$
 
 设，$\bm a=x\bm e_1+y\bm e_2$，用 $a_1,a_2,\theta$ 表示 $\bm a$。
 
-考虑，
+考虑：
 
 $$
 \bm e_1\bm e_2=\cos\theta
@@ -471,7 +471,7 @@ $$
 \bm a\cdot\bm e_2=y+x\bm e_1\bm e_2=a_2
 $$
 
-列出方程组，
+列出方程组：
 
 $$
 \begin{cases}
@@ -480,7 +480,7 @@ $$
 \end{cases}
 $$
 
-解得，
+解得：
 
 $$
 \left\{\begin{aligned}
@@ -493,7 +493,7 @@ $$
 
 ### 共线向量基本定理
 
-对于线段 $AB$ 及一点 $Q$，若存在一点 $O$ 满足，
+对于线段 $AB$ 及一点 $Q$，若存在一点 $O$ 满足：
 
 $$
 \overrightarrow{OQ}=\lambda\overrightarrow{OA}+(1-\lambda)\overrightarrow{OB}
@@ -510,7 +510,7 @@ $$
 \end{aligned}
 $$
 
-类似地，若 $C$ 是线段 $AB$ 中点，则对于任意一点 $O$，有，
+类似地，若 $C$ 是线段 $AB$ 中点，则对于任意一点 $O$，有：
 
 $$
 \overrightarrow{OC}={1\over2}\overrightarrow{OA}+{1\over2}\overrightarrow{OB}
@@ -603,16 +603,16 @@ $$
 - **共线向量**：方向 **相同或相反** 的两个非零向量。
 - **共面向量**：可以平移到 **同一平面内** 的若干向量。
 
-**共线向量定理**：对空间任意两个向量 $\vec a,\vec b\ (\vec b\ne\vec 0)$，
+**共线向量定理**：对空间任意两个向量 $\vec a,\vec b(\vec b\ne\vec 0)$：
 
 $$
-\vec a\parallel\vec b\iff\exists\lambda\in\mathbb{R},\ \vec a=\lambda\vec b
+\vec a\parallel\vec b\iff\exists\lambda\in\mathbb{R},\vec a=\lambda\vec b
 $$
 
-**共面向量定理**：若 $\vec a,\vec b$ 不共线，则向量 $\vec p$ 与 $\vec a,\vec b$ 共面当且仅当
+**共面向量定理**：若 $\vec a,\vec b$ 不共线，则向量 $\vec p$ 与 $\vec a,\vec b$ 共面当且仅当：
 
 $$
-\exists x,y\in\mathbb{R},\ \vec p=x\vec a+y\vec b
+\exists x,y\in\mathbb{R},\vec p=x\vec a+y\vec b
 $$
 
 ### 空间向量基本定理
@@ -623,7 +623,7 @@ $$
 \vec p=x\vec a+y\vec b+z\vec c
 $$
 
-称 $\{\vec a,\vec b,\vec c\}$ 为空间的一组 **基底**，特别地，当三者 **两两垂直且为单位向量** 时，称为 **单位正交基底**，记作 $\{\vec i,\vec j,\vec k\}$。
+称 $\set{\vec a,\vec b,\vec c}$ 为空间的一组 **基底**，特别地，当三者 **两两垂直且为单位向量** 时，称为 **单位正交基底**，记作 $\set{\vec i,\vec j,\vec k}$。
 
 ### 空间直角坐标系
 
@@ -644,7 +644,7 @@ $$
 |    **模**    |                           $\lvert\vec a\rvert=\sqrt{x_1^2+y_1^2+z_1^2}$                           |
 | **夹角余弦** | $\cos\langle\vec a,\vec b\rangle=\dfrac{\vec a\cdot\vec b}{\lvert\vec a\rvert\lvert\vec b\rvert}$ |
 
-设 $\vec a,\vec b$ 都是非零向量，
+设 $\vec a,\vec b$ 都是非零向量：
 
 $$
 \vec a\parallel\vec b\iff\vec a=\lambda\vec b\iff\frac{x_1}{x_2}=\frac{y_1}{y_2}=\frac{z_1}{z_2}
@@ -724,13 +724,13 @@ $$
 d=\frac{\lvert\overrightarrow{AP}\cdot\vec n\rvert}{\lvert\vec n\rvert}
 $$
 
-**点到直线的距离**：设 $\vec u$ 为直线 $l$ 的方向向量，$A\in l$，
+**点到直线的距离**：设 $\vec u$ 为直线 $l$ 的方向向量，$A\in l$：
 
 $$
 d=\sqrt{\lvert\overrightarrow{AP}\rvert^2-\left(\frac{\overrightarrow{AP}\cdot\vec u}{\lvert\vec u\rvert}\right)^2}
 $$
 
-**两异面直线的距离**：设 $\vec u_1,\vec u_2$ 分别为两直线方向向量，$A,B$ 分别为两直线上任意点。取与 $\vec u_1,\vec u_2$ 均垂直的公垂向量 $\vec n$，
+**两异面直线的距离**：设 $\vec u_1,\vec u_2$ 分别为两直线方向向量，$A,B$ 分别为两直线上任意点。取与 $\vec u_1,\vec u_2$ 均垂直的公垂向量 $\vec n$：
 
 $$
 d=\frac{\lvert\overrightarrow{AB}\cdot\vec n\rvert}{\lvert\vec n\rvert}

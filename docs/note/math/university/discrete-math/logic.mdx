@@ -29,7 +29,7 @@ title: 数理逻辑
 
 ### 联结词
 
-联结词（Connective）是把命题粘起来的「运算符」，就像算术里的 $+\,-\,\times\,\div$。
+联结词（Connective）是把命题粘起来的「运算符」，就像算术里的 $+-\times\div$。
 
 |         符号         | 名称 | 读法             |
 | :------------------: | :--- | :--------------- |
@@ -70,7 +70,7 @@ title: 数理逻辑
 一个有意思的事实：所有联结词都能用 $\neg$ 和 $\land$（或 $\neg$ 和 $\lor$）表示出来，比如 $p\to q\Leftrightarrow\neg p\lor q$。更进一步，单独一个 **与非** $\uparrow$（NAND）或 **或非** $\downarrow$（NOR）就能表示一切——这就是为什么数字电路里用 NAND 门可以搭出任何逻辑电路。
 
 $$
-p\uparrow q\Leftrightarrow\neg(p\land q),\qquad p\downarrow q\Leftrightarrow\neg(p\lor q)
+p\uparrow q\Leftrightarrow\neg(p\land q),p\downarrow q\Leftrightarrow\neg(p\lor q)
 $$
 
 ## 命题公式
@@ -131,9 +131,9 @@ $$
 
 $$
 \begin{aligned}
-  (p\lor q)\land(p\lor\neg q) & \Leftrightarrow p\lor(q\land\neg q) &  & \text{分配律（提取 }p\text{）} \\
-  & \Leftrightarrow p\lor 0 &  & \text{矛盾律} \\
-  & \Leftrightarrow p &  & \text{同一律}
+  (p\lor q)\land(p\lor\neg q) & \Leftrightarrow p\lor(q\land\neg q) & & \text{分配律（提取 }p\text{）} \\
+  & \Leftrightarrow p\lor 0 & & \text{矛盾律} \\
+  & \Leftrightarrow p & & \text{同一律}
 \end{aligned}
 $$
 
@@ -141,9 +141,9 @@ $$
 
 $$
 \begin{aligned}
-  \neg(p\to q) & \Leftrightarrow\neg(\neg p\lor q) &  & \text{蕴含等价} \\
-  & \Leftrightarrow\neg\neg p\land\neg q &  & \text{德摩根律} \\
-  & \Leftrightarrow p\land\neg q &  & \text{双重否定}
+  \neg(p\to q) & \Leftrightarrow\neg(\neg p\lor q) & & \text{蕴含等价} \\
+  & \Leftrightarrow\neg\neg p\land\neg q & & \text{德摩根律} \\
+  & \Leftrightarrow p\land\neg q & & \text{双重否定}
 \end{aligned}
 $$
 
@@ -153,9 +153,9 @@ $$
 
 $$
 \begin{aligned}
-  (p\to q)\land(p\to r) & \Leftrightarrow(\neg p\lor q)\land(\neg p\lor r) &  & \text{蕴含等价} \\
-  & \Leftrightarrow\neg p\lor(q\land r) &  & \text{分配律} \\
-  & \Leftrightarrow p\to(q\land r) &  & \text{蕴含等价}
+  (p\to q)\land(p\to r) & \Leftrightarrow(\neg p\lor q)\land(\neg p\lor r) & & \text{蕴含等价} \\
+  & \Leftrightarrow\neg p\lor(q\land r) & & \text{分配律} \\
+  & \Leftrightarrow p\to(q\land r) & & \text{蕴含等价}
 \end{aligned}
 $$
 
@@ -204,10 +204,10 @@ $$
 
 例：三变元下 $m_5=m_{101}=p\land\neg q\land r$（它只在 $p=1,q=0,r=1$ 这行为真）；$M_5=M_{101}=\neg p\lor q\lor\neg r$（它只在 $p=1,q=0,r=1$ 这行为假）。同一编号的极小项与极大项互为否定：$\neg m_i\Leftrightarrow M_i$。
 
-由此有一条对偶关系：若真值表里真的行编号集合是 $S$，则
+由此有一条对偶关系：若真值表里真的行编号集合是 $S$，则：
 
 $$
-\text{主析取范式}=\bigvee_{i\in S}m_i,\qquad
+\text{主析取范式}=\bigvee_{i\in S}m_i,
 \text{主合取范式}=\bigwedge_{i\notin S}M_i
 $$
 
@@ -230,7 +230,7 @@ $$
 
 $$
 m_0\lor m_1\lor m_2\lor m_3\lor m_7
-=\neg p\land\neg q\land\neg r\ \lor\ \dots\ \lor\ p\land q\land r
+=\neg p\land\neg q\land\neg r\lor\dots\lor p\land q\land r
 $$
 
 主合取范式取另外三行的极大项（编号 $4=100$、$5=101$、$6=110$）：
@@ -286,11 +286,11 @@ $$
 
 $$
 \begin{aligned}
-  & (1)\ p &  & \text{前提} \\
-  & (2)\ p\to q &  & \text{前提} \\
-  & (3)\ q &  & (1)(2)\ \text{假言推理} \\
-  & (4)\ q\to r &  & \text{前提} \\
-  & (5)\ r &  & (3)(4)\ \text{假言推理}
+  & (1)p & & \text{前提} \\
+  & (2)p\to q & & \text{前提} \\
+  & (3)q & & (1)(2)\text{假言推理} \\
+  & (4)q\to r & & \text{前提} \\
+  & (5)r & & (3)(4)\text{假言推理}
 \end{aligned}
 $$
 
@@ -300,11 +300,11 @@ $$
 
 $$
 \begin{aligned}
-  & (1)\ q &  & \text{附加前提} \\
-  & (2)\ p &  & \text{前提} \\
-  & (3)\ p\to(q\to r) &  & \text{前提} \\
-  & (4)\ q\to r &  & (2)(3)\ \text{假言推理} \\
-  & (5)\ r &  & (1)(4)\ \text{假言推理}
+  & (1)q & & \text{附加前提} \\
+  & (2)p & & \text{前提} \\
+  & (3)p\to(q\to r) & & \text{前提} \\
+  & (4)q\to r & & (2)(3)\text{假言推理} \\
+  & (5)r & & (1)(4)\text{假言推理}
 \end{aligned}
 $$
 
@@ -316,15 +316,15 @@ $$
 
 $$
 \begin{aligned}
-  & (1)\ \neg r &  & \text{否定结论} \\
-  & (2)\ p\to r &  & \text{前提} \\
-  & (3)\ \neg p &  & (1)(2)\ \text{拒取式} \\
-  & (4)\ q\to r &  & \text{前提} \\
-  & (5)\ \neg q &  & (1)(4)\ \text{拒取式} \\
-  & (6)\ \neg p\land\neg q &  & (3)(5)\ \text{合取} \\
-  & (7)\ p\lor q &  & \text{前提} \\
-  & (8)\ \neg(p\lor q) &  & (6)\ \text{德摩根律} \\
-  & (9)\ (p\lor q)\land\neg(p\lor q) &  & (7)(8)\ \text{矛盾}
+  & (1)\neg r & & \text{否定结论} \\
+  & (2)p\to r & & \text{前提} \\
+  & (3)\neg p & & (1)(2)\text{拒取式} \\
+  & (4)q\to r & & \text{前提} \\
+  & (5)\neg q & & (1)(4)\text{拒取式} \\
+  & (6)\neg p\land\neg q & & (3)(5)\text{合取} \\
+  & (7)p\lor q & & \text{前提} \\
+  & (8)\neg(p\lor q) & & (6)\text{德摩根律} \\
+  & (9)(p\lor q)\land\neg(p\lor q) & & (7)(8)\text{矛盾}
 \end{aligned}
 $$
 
@@ -341,14 +341,14 @@ $$
 - **全称量词** $\forall x$：「对所有 $x$」，是一种「无限的合取」。
 - **存在量词** $\exists x$：「存在 $x$」，是一种「无限的析取」。
 
-于是开头那个推理可写成 $\forall x\,(P(x)\to D(x))$、$P(a)$，推出 $D(a)$。
+于是开头那个推理可写成 $\forall x(P(x)\to D(x))$、$P(a)$，推出 $D(a)$。
 
 :::tip
 
 量词与个体域 **紧密绑定**，翻译时容易出错：
 
-- 全称量词通常配 **蕴含**：「所有学生都努力」是 $\forall x\,(S(x)\to H(x))$，而不是 $\forall x\,(S(x)\land H(x))$（后者意思是「万物都既是学生又努力」）。
-- 存在量词通常配 **合取**：「有学生努力」是 $\exists x\,(S(x)\land H(x))$，而不是 $\exists x\,(S(x)\to H(x))$。
+- 全称量词通常配 **蕴含**：「所有学生都努力」是 $\forall x(S(x)\to H(x))$，而不是 $\forall x(S(x)\land H(x))$（后者意思是「万物都既是学生又努力」）。
+- 存在量词通常配 **合取**：「有学生努力」是 $\exists x(S(x)\land H(x))$，而不是 $\exists x(S(x)\to H(x))$。
 
 :::
 
@@ -356,27 +356,27 @@ $$
 
 设个体域为全体人，$S(x)$：「$x$ 是学生」，$P(x)$：「$x$ 用功」，$M(x,y)$：「$x$ 认识 $y$」。
 
-例：「所有学生都用功」译为 $\forall x\,(S(x)\to P(x))$。若误写成 $\forall x\,(S(x)\land P(x))$，意思变成「每个人既是学生又用功」——把非学生也卷进来了，错。
+例：「所有学生都用功」译为 $\forall x(S(x)\to P(x))$。若误写成 $\forall x(S(x)\land P(x))$，意思变成「每个人既是学生又用功」——把非学生也卷进来了，错。
 
-例：「有的学生用功」译为 $\exists x\,(S(x)\land P(x))$。若误写成 $\exists x\,(S(x)\to P(x))$，因为蕴含「前件假即真」，只要存在 **任何一个非学生**（让 $S(x)$ 假）整句就为真，跟「有学生用功」毫无关系，错得离谱。
+例：「有的学生用功」译为 $\exists x(S(x)\land P(x))$。若误写成 $\exists x(S(x)\to P(x))$，因为蕴含「前件假即真」，只要存在 **任何一个非学生**（让 $S(x)$ 假）整句就为真，跟「有学生用功」毫无关系，错得离谱。
 
-例：「没有学生不用功」。先直译为 $\neg\exists x\,(S(x)\land\neg P(x))$，再用量词否定律推进否定：
+例：「没有学生不用功」。先直译为 $\neg\exists x(S(x)\land\neg P(x))$，再用量词否定律推进否定：
 
 $$
-\neg\exists x\,(S(x)\land\neg P(x))
-\Leftrightarrow\forall x\,\neg(S(x)\land\neg P(x))
-\Leftrightarrow\forall x\,(S(x)\to P(x))
+\neg\exists x(S(x)\land\neg P(x))
+\Leftrightarrow\forall x\neg(S(x)\land\neg P(x))
+\Leftrightarrow\forall x(S(x)\to P(x))
 $$
 
 化回了「所有学生都用功」——两种说法等值，这也验证了翻译没错。
 
-例：「每个学生都认识某个用功的人」译为 $\forall x\,\bigl(S(x)\to\exists y\,(P(y)\land M(x,y))\bigr)$。注意 $\exists y$ 在 $\forall x$ 的辖域内，所以「某个用功的人」可以因学生而异——这正是 $\forall\exists$ 次序的含义。
+例：「每个学生都认识某个用功的人」译为 $\forall x\bigl(S(x)\to\exists y(P(y)\land M(x,y))\bigr)$。注意 $\exists y$ 在 $\forall x$ 的辖域内，所以「某个用功的人」可以因学生而异——这正是 $\forall\exists$ 次序的含义。
 
 ### 约束变元与自由变元
 
 落在某个量词辖域内、被该量词「管住」的变元称 **约束变元**（Bound Variable），其余称 **自由变元**（Free Variable）。含自由变元的公式真假未定，像命题里的 $x+1=3$；闭式（无自由变元）才有确定真假。
 
-**换名规则**：约束变元可以改名（$\forall x\,P(x)\Leftrightarrow\forall y\,P(y)$），但新名字不能与辖域内已有的其他变元冲突，否则会改变含义。这跟编程里函数局部变量改名同理——只要不撞名，叫什么都行。
+**换名规则**：约束变元可以改名（$\forall xP(x)\Leftrightarrow\forall yP(y)$），但新名字不能与辖域内已有的其他变元冲突，否则会改变含义。这跟编程里函数局部变量改名同理——只要不撞名，叫什么都行。
 
 ### 谓词的等值演算
 
@@ -385,8 +385,8 @@ $$
 **量词否定（量词的德摩根律）**：
 
 $$
-\neg\forall x\,P(x)\Leftrightarrow\exists x\,\neg P(x),\qquad
-\neg\exists x\,P(x)\Leftrightarrow\forall x\,\neg P(x)
+\neg\forall xP(x)\Leftrightarrow\exists x\neg P(x),
+\neg\exists xP(x)\Leftrightarrow\forall x\neg P(x)
 $$
 
 含义直白：「**不是所有都满足**」等于「**存在一个不满足**」；「**不存在满足的**」等于「**所有都不满足**」。否定一个量词，就是把它换成另一个量词、并把否定推进去。
@@ -394,18 +394,18 @@ $$
 **量词辖域收缩与扩张**（设 $Q$ 中不含 $x$，故 $x$ 在 $Q$ 中自由出现与否不影响）：
 
 $$
-\forall x\,(P(x)\land Q)\Leftrightarrow\forall x\,P(x)\land Q,\qquad
-\exists x\,(P(x)\lor Q)\Leftrightarrow\exists x\,P(x)\lor Q
+\forall x(P(x)\land Q)\Leftrightarrow\forall xP(x)\land Q,
+\exists x(P(x)\lor Q)\Leftrightarrow\exists xP(x)\lor Q
 $$
 
 **量词分配**：
 
 $$
-\forall x\,(P(x)\land Q(x))\Leftrightarrow\forall x\,P(x)\land\forall x\,Q(x)
+\forall x(P(x)\land Q(x))\Leftrightarrow\forall xP(x)\land\forall xQ(x)
 $$
 
 $$
-\exists x\,(P(x)\lor Q(x))\Leftrightarrow\exists x\,P(x)\lor\exists x\,Q(x)
+\exists x(P(x)\lor Q(x))\Leftrightarrow\exists xP(x)\lor\exists xQ(x)
 $$
 
 :::tip
@@ -413,7 +413,7 @@ $$
 分配只在「**$\forall$ 对 $\land$**」「**$\exists$ 对 $\lor$**」时是等值；交叉情形 **只能单向蕴含**，不能划等号。例如：
 
 $$
-\forall x\,P(x)\lor\forall x\,Q(x)\ \Rightarrow\ \forall x\,(P(x)\lor Q(x))
+\forall xP(x)\lor\forall xQ(x)\Rightarrow\forall x(P(x)\lor Q(x))
 $$
 
 反过来不成立——「每个数要么正要么负」是真的，但「所有数都正」和「所有数都负」都假。
@@ -425,29 +425,29 @@ $$
 同类量词可以交换次序，异类量词 **不能随便交换**：
 
 $$
-\forall x\,\forall y\,P(x,y)\Leftrightarrow\forall y\,\forall x\,P(x,y),\qquad
-\exists x\,\exists y\,P(x,y)\Leftrightarrow\exists y\,\exists x\,P(x,y)
+\forall x\forall yP(x,y)\Leftrightarrow\forall y\forall xP(x,y),
+\exists x\exists yP(x,y)\Leftrightarrow\exists y\exists xP(x,y)
 $$
 
 但 $\forall$ 与 $\exists$ 的次序事关重大：
 
 $$
-\exists y\,\forall x\,P(x,y)\ \Rightarrow\ \forall x\,\exists y\,P(x,y)
+\exists y\forall xP(x,y)\Rightarrow\forall x\exists yP(x,y)
 $$
 
 只能这样单向推，反向不成立。设 $P(x,y)$ 为「$y$ 是 $x$ 的母亲」：
 
-- $\forall x\,\exists y\,P(x,y)$：每个人都有母亲（母亲可以因人而异）——真。
-- $\exists y\,\forall x\,P(x,y)$：存在一个人是 **所有人** 共同的母亲——假。
+- $\forall x\exists yP(x,y)$：每个人都有母亲（母亲可以因人而异）——真。
+- $\exists y\forall xP(x,y)$：存在一个人是 **所有人** 共同的母亲——假。
 
-关键在于：后置量词依赖前置量词时，$\exists y$ 选的 $y$ 是否允许随 $x$ 变。**$\forall x\,\exists y$ 允许 $y$ 随 $x$ 变，$\exists y\,\forall x$ 要求一个 $y$ 通吃**——后者强得多。极限定义里 $\forall\varepsilon\,\exists N$ 的次序之所以不能调换，正是这个道理。
+关键在于：后置量词依赖前置量词时，$\exists y$ 选的 $y$ 是否允许随 $x$ 变。**$\forall x\exists y$ 允许 $y$ 随 $x$ 变，$\exists y\forall x$ 要求一个 $y$ 通吃**——后者强得多。极限定义里 $\forall\varepsilon\exists N$ 的次序之所以不能调换，正是这个道理。
 
 ### 前束范式
 
 把所有量词 **提到公式最前面**、辖域覆盖其后整个式子的形式，称 **前束范式**（Prenex Normal Form）：
 
 $$
-(Q_1 x_1)(Q_2 x_2)\cdots(Q_k x_k)\,M
+(Q_1 x_1)(Q_2 x_2)\cdots(Q_k x_k)M
 $$
 
 其中每个 $Q_i$ 是 $\forall$ 或 $\exists$，$M$ 是 **不含量词** 的公式（母式）。任何谓词公式都能化成前束范式，步骤：
@@ -459,15 +459,15 @@ $$
 
 前束范式把「量词结构」和「命题结构」彻底分开，是判定、模型论里进一步处理（如 Skolem 化）的标准起点。
 
-例：求 $\forall x\,P(x)\to\exists x\,Q(x)$ 的前束范式。两个量词都用了 $x$，直接提取会冲突，所以先换名再提取：
+例：求 $\forall xP(x)\to\exists xQ(x)$ 的前束范式。两个量词都用了 $x$，直接提取会冲突，所以先换名再提取：
 
 $$
 \begin{aligned}
-  \forall x\,P(x)\to\exists x\,Q(x) & \Leftrightarrow\neg\forall x\,P(x)\lor\exists x\,Q(x) &  & \text{蕴含等价} \\
-  & \Leftrightarrow\exists x\,\neg P(x)\lor\exists x\,Q(x) &  & \text{量词否定} \\
-  & \Leftrightarrow\exists x\,\neg P(x)\lor\exists y\,Q(y) &  & \text{换名} \\
-  & \Leftrightarrow\exists x\,\exists y\,(\neg P(x)\lor Q(y)) &  & \text{辖域扩张}
+  \forall xP(x)\to\exists xQ(x) & \Leftrightarrow\neg\forall xP(x)\lor\exists xQ(x) & & \text{蕴含等价} \\
+  & \Leftrightarrow\exists x\neg P(x)\lor\exists xQ(x) & & \text{量词否定} \\
+  & \Leftrightarrow\exists x\neg P(x)\lor\exists yQ(y) & & \text{换名} \\
+  & \Leftrightarrow\exists x\exists y(\neg P(x)\lor Q(y)) & & \text{辖域扩张}
 \end{aligned}
 $$
 
-母式 $\neg P(x)\lor Q(y)$ 已不含量词，前缀 $\exists x\,\exists y$ 即为所求。若中途不换名、把两个 $\exists x$ 直接合并，会错误地强迫「不用功」和「用功」指同一个 $x$，含义就变了——这是求前束范式最常见的错。
+母式 $\neg P(x)\lor Q(y)$ 已不含量词，前缀 $\exists x\exists y$ 即为所求。若中途不换名、把两个 $\exists x$ 直接合并，会错误地强迫「不用功」和「用功」指同一个 $x$，含义就变了——这是求前束范式最常见的错。

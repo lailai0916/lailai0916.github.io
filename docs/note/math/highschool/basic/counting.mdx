@@ -92,7 +92,7 @@ $$
 | $1!=1$ | $4!=24$  | $7!=5040$  | $10!=3628800$ |
 | $2!=2$ | $5!=120$ | $8!=40320$ |    $\dots$    |
 
-:::example
+:::example：
 
 $$
 5!=1\times 2\times 3\times 4\times 5=120
@@ -176,7 +176,7 @@ $$
 $$
 
 $$
-\sum_{i=0}^{n}\mathrm{C}_n^i=\mathrm{C}_n^0+\mathrm{C}_n^1+\mathrm{C}_n^2+\dots+\mathrm{C}_n^n=2^n
+\sum_{i=0}^n\mathrm{C}_n^i=\mathrm{C}_n^0+\mathrm{C}_n^1+\mathrm{C}_n^2+\dots+\mathrm{C}_n^n=2^n
 $$
 
 $$
@@ -202,7 +202,7 @@ $$
 得到新方程：
 
 $$
-(x_1'+a_1)+(x_2'+a_2)+\dots+(x_k'+a_k)=n\implies\sum_{i=1}^{k}x_i'=n-\sum a_i
+(x_1'+a_1)+(x_2'+a_2)+\dots+(x_k'+a_k)=n\implies\sum_{i=1}^kx_i'=n-\sum a_i
 $$
 
 答案为：
@@ -222,7 +222,7 @@ $$
 原理：
 
 $$
-\mathrm{C}_{n}^{n_1}\mathrm{C}_{n-n_1}^{n_2}\dots\mathrm{C}_{n_a}^{n_a}=\frac{n!}{n_1!\times n_2!\times\dots\times n_a!}=\frac{n!}{\prod_{i=1}^a(n_i!)}
+\mathrm{C}_n^{n_1}\mathrm{C}_{n-n_1}^{n_2}\dots\mathrm{C}_{n_a}^{n_a}=\frac{n!}{n_1!\times n_2!\times\dots\times n_a!}=\frac{n!}{\prod_{i=1}^a(n_i!)}
 $$
 
 :::example
@@ -275,7 +275,7 @@ $$
 由此，我们得到了著名的 **二项式定理**：
 
 $$
-(a+b)^n=\sum_{k=0}^{n}\mathrm{C}_n^ka^kb^{n-k}
+(a+b)^n=\sum_{k=0}^n\mathrm{C}_n^ka^kb^{n-k}
 $$
 
 其中各项的系数 $\mathrm{C}_n^k$ 叫做 **二项式系数**。

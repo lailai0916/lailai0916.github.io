@@ -24,7 +24,7 @@ title: 一元积分学
 若 $F'(x)=f(x)$，则 $F(x)$ 是 $f(x)$ 的一个 **原函数**（Antiderivative）。$f(x)$ 的全体原函数：
 
 $$
-\int f(x)\,\mathrm{d}x=F(x)+C
+\int f(x)\mathrm{d}x=F(x)+C
 $$
 
 为什么要加 $+C$？因为常数求导为零，给原函数加任意常数后导数不变，所以原函数 **成族出现、彼此相差一个常数**。几何上，这一族曲线是同一条曲线上下平移得到的，处处斜率相同。求不定积分就是求出这一整族函数。
@@ -40,48 +40,48 @@ $$
 每一条都是某个求导公式「反着读」的结果，对照 [导数与微分](/docs/note/math/university/advanced-math/derivative) 的导数表记忆。
 
 $$
-\int x^a\,\mathrm{d}x=\frac{x^{a+1}}{a+1}+C\,(a\ne-1),\quad
-\int\frac{1}{x}\,\mathrm{d}x=\ln|x|+C
+\int x^a\mathrm{d}x=\frac{x^{a+1}}{a+1}+C(a\ne-1),
+\int\frac{1}{x}\mathrm{d}x=\ln|x|+C
 $$
 
 $$
-\int e^x\,\mathrm{d}x=e^x+C,\quad
-\int a^x\,\mathrm{d}x=\frac{a^x}{\ln a}+C
+\int e^x\mathrm{d}x=e^x+C,
+\int a^x\mathrm{d}x=\frac{a^x}{\ln a}+C
 $$
 
 $$
-\int\sin x\,\mathrm{d}x=-\cos x+C,\quad
-\int\cos x\,\mathrm{d}x=\sin x+C
+\int\sin x\mathrm{d}x=-\cos x+C,
+\int\cos x\mathrm{d}x=\sin x+C
 $$
 
 $$
-\int\sec^2 x\,\mathrm{d}x=\tan x+C,\quad
-\int\csc^2 x\,\mathrm{d}x=-\cot x+C
+\int\sec^2 x\mathrm{d}x=\tan x+C,
+\int\csc^2 x\mathrm{d}x=-\cot x+C
 $$
 
 $$
-\int\frac{1}{1+x^2}\,\mathrm{d}x=\arctan x+C,\quad
-\int\frac{1}{\sqrt{1-x^2}}\,\mathrm{d}x=\arcsin x+C
+\int\frac{1}{1+x^2}\mathrm{d}x=\arctan x+C,
+\int\frac{1}{\sqrt{1-x^2}}\mathrm{d}x=\arcsin x+C
 $$
 
 $$
-\int\tan x\,\mathrm{d}x=-\ln|\cos x|+C,\quad
-\int\frac{1}{\sqrt{x^2\pm a^2}}\,\mathrm{d}x=\ln\left|x+\sqrt{x^2\pm a^2}\right|+C
+\int\tan x\mathrm{d}x=-\ln|\cos x|+C,
+\int\frac{1}{\sqrt{x^2\pm a^2}}\mathrm{d}x=\ln\left|x+\sqrt{x^2\pm a^2}\right|+C
 $$
 
 ### 三大积分法
 
-| 方法                     | 公式                                                                                   |
-| :----------------------- | :------------------------------------------------------------------------------------- |
-| **第一类换元（凑微分）** | $\int f(\varphi(x))\varphi'(x)\,\mathrm{d}x=\int f(u)\,\mathrm{d}u$                    |
-| **第二类换元**           | 令 $x=\varphi(t)$，$\int f(x)\,\mathrm{d}x=\int f(\varphi(t))\varphi'(t)\,\mathrm{d}t$ |
-| **分部积分**             | $\int u\,\mathrm{d}v=uv-\int v\,\mathrm{d}u$                                           |
+| 方法                     | 公式                                                                               |
+| :----------------------- | :--------------------------------------------------------------------------------- |
+| **第一类换元（凑微分）** | $\int f(\varphi(x))\varphi'(x)\mathrm{d}x=\int f(u)\mathrm{d}u$                    |
+| **第二类换元**           | 令 $x=\varphi(t)$，$\int f(x)\mathrm{d}x=\int f(\varphi(t))\varphi'(t)\mathrm{d}t$ |
+| **分部积分**             | $\int u\mathrm{d}v=uv-\int v\mathrm{d}u$                                           |
 
-**凑微分** 是链式法则的逆用，核心是 **看出某部分恰是另一部分的导数**，把它「收」进微分号里。比如 $\int 2x\,e^{x^2}\,\mathrm{d}x$ 中，$2x\,\mathrm{d}x=\mathrm{d}(x^2)$，于是积分变成 $\int e^{x^2}\,\mathrm{d}(x^2)=e^{x^2}+C$。常用凑法：$x\,\mathrm{d}x=\dfrac12\mathrm{d}(x^2)$、$\dfrac{1}{x}\mathrm{d}x=\mathrm{d}(\ln x)$、$\dfrac{1}{\sqrt x}\mathrm{d}x=2\,\mathrm{d}(\sqrt x)$、$\cos x\,\mathrm{d}x=\mathrm{d}(\sin x)$。
+**凑微分** 是链式法则的逆用，核心是 **看出某部分恰是另一部分的导数**，把它「收」进微分号里。比如 $\int 2xe^{x^2}\mathrm{d}x$ 中，$2x\mathrm{d}x=\mathrm{d}(x^2)$，于是积分变成 $\int e^{x^2}\mathrm{d}(x^2)=e^{x^2}+C$。常用凑法：$x\mathrm{d}x=\dfrac12\mathrm{d}(x^2)$、$\dfrac{1}{x}\mathrm{d}x=\mathrm{d}(\ln x)$、$\dfrac{1}{\sqrt x}\mathrm{d}x=2\mathrm{d}(\sqrt x)$、$\cos x\mathrm{d}x=\mathrm{d}(\sin x)$。
 
 例（凑对数）：$\int\dfrac{\mathrm{d}x}{x\ln x}$。$\dfrac{\mathrm{d}x}{x}=\mathrm{d}(\ln x)$，化为 $\int\dfrac{\mathrm{d}(\ln x)}{\ln x}=\ln|\ln x|+C$。
 
-例（凑三角）：$\int\tan x\,\mathrm{d}x=\int\dfrac{\sin x}{\cos x}\,\mathrm{d}x=-\int\dfrac{\mathrm{d}(\cos x)}{\cos x}=-\ln|\cos x|+C$。
+例（凑三角）：$\int\tan x\mathrm{d}x=\int\dfrac{\sin x}{\cos x}\mathrm{d}x=-\int\dfrac{\mathrm{d}(\cos x)}{\cos x}=-\ln|\cos x|+C$。
 
 例（凑成 $\arctan$）：$\int\dfrac{\mathrm{d}x}{x^2+2x+5}=\int\dfrac{\mathrm{d}(x+1)}{(x+1)^2+4}=\dfrac12\arctan\dfrac{x+1}{2}+C$。**先配方** 把分母凑成 $u^2+a^2$ 是这类题的通用前置步骤。
 
@@ -93,30 +93,30 @@ $$
 
 :::
 
-例（多项式乘指数）：$\int x e^x\,\mathrm{d}x$。按口诀取 $u=x$、$\mathrm{d}v=e^x\,\mathrm{d}x$：
+例（多项式乘指数）：$\int x e^x\mathrm{d}x$。按口诀取 $u=x$、$\mathrm{d}v=e^x\mathrm{d}x$：
 
 $$
-\int x e^x\,\mathrm{d}x=x e^x-\int e^x\,\mathrm{d}x=x e^x-e^x+C=(x-1)e^x+C
+\int x e^x\mathrm{d}x=x e^x-\int e^x\mathrm{d}x=x e^x-e^x+C=(x-1)e^x+C
 $$
 
-例（对数单独出现）：$\int\ln x\,\mathrm{d}x$。取 $u=\ln x$、$\mathrm{d}v=\mathrm{d}x$：
+例（对数单独出现）：$\int\ln x\mathrm{d}x$。取 $u=\ln x$、$\mathrm{d}v=\mathrm{d}x$：
 
 $$
-\int\ln x\,\mathrm{d}x=x\ln x-\int x\cdot\frac1x\,\mathrm{d}x=x\ln x-x+C
+\int\ln x\mathrm{d}x=x\ln x-\int x\cdot\frac1x\mathrm{d}x=x\ln x-x+C
 $$
 
-例（循环法）：$I=\int e^x\sin x\,\mathrm{d}x$。两次分部后原积分 **自己冒出来**，移项即解：
+例（循环法）：$I=\int e^x\sin x\mathrm{d}x$。两次分部后原积分 **自己冒出来**，移项即解：
 
 $$
 \begin{aligned}
-  I & =\int\sin x\,\mathrm{d}(e^x)=e^x\sin x-\int e^x\cos x\,\mathrm{d}x \\
-  & =e^x\sin x-\left(e^x\cos x+\int e^x\sin x\,\mathrm{d}x\right)=e^x(\sin x-\cos x)-I
+  I & =\int\sin x\mathrm{d}(e^x)=e^x\sin x-\int e^x\cos x\mathrm{d}x \\
+  & =e^x\sin x-\left(e^x\cos x+\int e^x\sin x\mathrm{d}x\right)=e^x(\sin x-\cos x)-I
 \end{aligned}
 $$
 
 故 $2I=e^x(\sin x-\cos x)$，$I=\dfrac{e^x(\sin x-\cos x)}{2}+C$。**两次分部要朝同一方向（都把 $e^x$ 凑进微分），否则会转回原样。**
 
-例（递推降幂）：$I_n=\int\sin^n x\,\mathrm{d}x$。拆 $\sin^n=\sin^{n-1}\sin$，对 $\sin x\,\mathrm{d}x=-\mathrm{d}(\cos x)$ 分部，得递推
+例（递推降幂）：$I_n=\int\sin^n x\mathrm{d}x$。拆 $\sin^n=\sin^{n-1}\sin$，对 $\sin x\mathrm{d}x=-\mathrm{d}(\cos x)$ 分部，得递推：
 
 $$
 I_n=-\frac{1}{n}\sin^{n-1}x\cos x+\frac{n-1}{n}I_{n-2}
@@ -132,33 +132,33 @@ $$
 
 #### 部分分式分解算例
 
-例：$\int\dfrac{\mathrm{d}x}{x^2-1}$。分母因式分解 $x^2-1=(x-1)(x+1)$，设
+例：$\int\dfrac{\mathrm{d}x}{x^2-1}$。分母因式分解 $x^2-1=(x-1)(x+1)$，设：
 
 $$
 \frac{1}{(x-1)(x+1)}=\frac{A}{x-1}+\frac{B}{x+1}
 $$
 
-两边乘 $(x-1)(x+1)$ 得 $1=A(x+1)+B(x-1)$。代 $x=1$ 得 $A=\dfrac12$，代 $x=-1$ 得 $B=-\dfrac12$（**「赋值法」**：代入让某因子为零的点，瞬间定出系数）。于是
+两边乘 $(x-1)(x+1)$ 得 $1=A(x+1)+B(x-1)$。代 $x=1$ 得 $A=\dfrac12$，代 $x=-1$ 得 $B=-\dfrac12$（**「赋值法」**：代入让某因子为零的点，瞬间定出系数）。于是：
 
 $$
 \int\frac{\mathrm{d}x}{x^2-1}=\frac12\int\frac{\mathrm{d}x}{x-1}-\frac12\int\frac{\mathrm{d}x}{x+1}=\frac12\ln\left|\frac{x-1}{x+1}\right|+C
 $$
 
-例（含不可约二次因子）：$\dfrac{x+1}{x(x^2+1)}=\dfrac{A}{x}+\dfrac{Bx+C}{x^2+1}$。通分对照得 $A=1,B=-1,C=1$，于是
+例（含不可约二次因子）：$\dfrac{x+1}{x(x^2+1)}=\dfrac{A}{x}+\dfrac{Bx+C}{x^2+1}$。通分对照得 $A=1,B=-1,C=1$，于是：
 
 $$
-\int\frac{x+1}{x(x^2+1)}\,\mathrm{d}x=\ln|x|-\frac12\ln(x^2+1)+\arctan x+C
+\int\frac{x+1}{x(x^2+1)}\mathrm{d}x=\ln|x|-\frac12\ln(x^2+1)+\arctan x+C
 $$
 
 不可约二次因子上方要配 **一次式** $Bx+C$，积出来是「$\ln$ + $\arctan$」的组合。
 
 #### 三角代换算例
 
-例：$\int\sqrt{a^2-x^2}\,\mathrm{d}x$（$a>0$）。令 $x=a\sin t$（$t\in[-\frac\pi2,\frac\pi2]$），则 $\sqrt{a^2-x^2}=a\cos t$、$\mathrm{d}x=a\cos t\,\mathrm{d}t$：
+例：$\int\sqrt{a^2-x^2}\mathrm{d}x$（$a>0$）。令 $x=a\sin t$（$t\in[-\frac\pi2,\frac\pi2]$），则 $\sqrt{a^2-x^2}=a\cos t$、$\mathrm{d}x=a\cos t\mathrm{d}t$：
 
 $$
 \begin{aligned}
-  \int\sqrt{a^2-x^2}\,\mathrm{d}x & =\int a\cos t\cdot a\cos t\,\mathrm{d}t=a^2\int\cos^2 t\,\mathrm{d}t \\
+  \int\sqrt{a^2-x^2}\mathrm{d}x & =\int a\cos t\cdot a\cos t\mathrm{d}t=a^2\int\cos^2 t\mathrm{d}t \\
   & =\frac{a^2}{2}\left(t+\frac{\sin 2t}{2}\right)+C=\frac{a^2}{2}\arcsin\frac xa+\frac{x\sqrt{a^2-x^2}}{2}+C
 \end{aligned}
 $$
@@ -167,10 +167,10 @@ $$
 
 #### 万能代换算例
 
-例：$\int\dfrac{\mathrm{d}x}{1+\sin x}$。令 $t=\tan\dfrac x2$，则 $\sin x=\dfrac{2t}{1+t^2}$、$\mathrm{d}x=\dfrac{2}{1+t^2}\,\mathrm{d}t$：
+例：$\int\dfrac{\mathrm{d}x}{1+\sin x}$。令 $t=\tan\dfrac x2$，则 $\sin x=\dfrac{2t}{1+t^2}$、$\mathrm{d}x=\dfrac{2}{1+t^2}\mathrm{d}t$：
 
 $$
-\int\frac{\mathrm{d}x}{1+\sin x}=\int\frac{\frac{2}{1+t^2}}{1+\frac{2t}{1+t^2}}\,\mathrm{d}t=\int\frac{2}{(1+t)^2}\,\mathrm{d}t=-\frac{2}{1+t}+C=-\frac{2}{1+\tan\frac x2}+C
+\int\frac{\mathrm{d}x}{1+\sin x}=\int\frac{\frac{2}{1+t^2}}{1+\frac{2t}{1+t^2}}\mathrm{d}t=\int\frac{2}{(1+t)^2}\mathrm{d}t=-\frac{2}{1+t}+C=-\frac{2}{1+\tan\frac x2}+C
 $$
 
 万能代换 **必能** 把三角有理式化成有理函数，但常使式子变复杂；若被积函数关于 $\sin x$ 或 $\cos x$ 有特殊奇偶性，优先用更省力的凑微分。
@@ -180,7 +180,7 @@ $$
 ### 定义
 
 $$
-\int_a^b f(x)\,\mathrm{d}x=\lim_{\lambda\to 0}\sum_{i=1}^{n}f(\xi_i)\Delta x_i
+\int_a^b f(x)\mathrm{d}x=\lim_{\lambda\to 0}\sum_{i=1}^nf(\xi_i)\Delta x_i
 $$
 
 其中 $\lambda=\max\Delta x_i$。
@@ -192,30 +192,30 @@ $$
 基本运算性质：
 
 $$
-\int_a^b f\,\mathrm{d}x=-\int_b^a f\,\mathrm{d}x,\quad\int_a^a f\,\mathrm{d}x=0
+\int_a^b f\mathrm{d}x=-\int_b^a f\mathrm{d}x,\int_a^a f\mathrm{d}x=0
 $$
 
 $$
-\int_a^b(\alpha f\pm\beta g)\,\mathrm{d}x=\alpha\int_a^b f\,\mathrm{d}x\pm\beta\int_a^b g\,\mathrm{d}x
+\int_a^b(\alpha f\pm\beta g)\mathrm{d}x=\alpha\int_a^b f\mathrm{d}x\pm\beta\int_a^b g\mathrm{d}x
 $$
 
 $$
-\int_a^b f\,\mathrm{d}x=\int_a^c f\,\mathrm{d}x+\int_c^b f\,\mathrm{d}x\quad\text{（区间可加性）}
+\int_a^b f\mathrm{d}x=\int_a^c f\mathrm{d}x+\int_c^b f\mathrm{d}x\text{（区间可加性）}
 $$
 
 **保号性与估值**：
 
-- 若在 $[a,b]$ 上 $f(x)\ge 0$，则 $\int_a^b f\,\mathrm{d}x\ge 0$；若 $f\le g$，则 $\int_a^b f\le\int_a^b g$。面积不会无中生有，被积函数大的积分也大。
-- **估值定理**：若 $m\le f(x)\le M$，则 $m(b-a)\le\int_a^b f\,\mathrm{d}x\le M(b-a)$。用最矮和最高的矩形把曲边面积夹住。
-- $\left|\int_a^b f\,\mathrm{d}x\right|\le\int_a^b|f|\,\mathrm{d}x$。
+- 若在 $[a,b]$ 上 $f(x)\ge 0$，则 $\int_a^b f\mathrm{d}x\ge 0$；若 $f\le g$，则 $\int_a^b f\le\int_a^b g$。面积不会无中生有，被积函数大的积分也大。
+- **估值定理**：若 $m\le f(x)\le M$，则 $m(b-a)\le\int_a^b f\mathrm{d}x\le M(b-a)$。用最矮和最高的矩形把曲边面积夹住。
+- $\left|\int_a^b f\mathrm{d}x\right|\le\int_a^b|f|\mathrm{d}x$。
 
 **对称区间的奇偶性**（积分区间关于原点对称）：
 
 $$
-\int_{-a}^{a}f(x)\,\mathrm{d}x=
+\int_{-a}^af(x)\mathrm{d}x=
 \begin{cases}
   0, & f\text{ 为奇函数} \\
-  2\displaystyle\int_0^a f(x)\,\mathrm{d}x, & f\text{ 为偶函数}
+  2\displaystyle\int_0^a f(x)\mathrm{d}x, & f\text{ 为偶函数}
 \end{cases}
 $$
 
@@ -224,7 +224,7 @@ $$
 **周期函数**：若 $f$ 以 $T$ 为周期，则任取一个完整周期积分都相等：
 
 $$
-\int_a^{a+T}f(x)\,\mathrm{d}x=\int_0^{T}f(x)\,\mathrm{d}x
+\int_a^{a+T}f(x)\mathrm{d}x=\int_0^Tf(x)\mathrm{d}x
 $$
 
 ### 积分中值定理
@@ -232,17 +232,17 @@ $$
 设 $f\in C[a,b]$，则 $\exists\xi\in[a,b]$ 使：
 
 $$
-\int_a^b f(x)\,\mathrm{d}x=f(\xi)(b-a)
+\int_a^b f(x)\mathrm{d}x=f(\xi)(b-a)
 $$
 
-几何意义：曲边梯形的面积，总能用 **一个等宽的矩形** 精确替换，矩形的高 $f(\xi)$ 就是 $f$ 在 $[a,b]$ 上的 **平均值** $\dfrac{1}{b-a}\int_a^b f\,\mathrm{d}x$。换言之，连续函数在区间上一定能取到自己的平均值——曲线高低起伏，中间必有一处恰好等于平均高度。
+几何意义：曲边梯形的面积，总能用 **一个等宽的矩形** 精确替换，矩形的高 $f(\xi)$ 就是 $f$ 在 $[a,b]$ 上的 **平均值** $\dfrac{1}{b-a}\int_a^b f\mathrm{d}x$。换言之，连续函数在区间上一定能取到自己的平均值——曲线高低起伏，中间必有一处恰好等于平均高度。
 
 ### 牛顿-莱布尼茨公式
 
 设 $F$ 是 $f$ 的原函数，$f\in C[a,b]$，则：
 
 $$
-\int_a^b f(x)\,\mathrm{d}x=F(b)-F(a)
+\int_a^b f(x)\mathrm{d}x=F(b)-F(a)
 $$
 
 这是 **微积分基本定理**，它把「求面积」（定积分）和「反求导」（原函数）这两件本不相干的事画上等号，从而把定积分计算从「算极限和」转化为「找原函数、算两端差」。整个微积分的威力，很大程度上就来自这道公式。
@@ -250,7 +250,7 @@ $$
 ### 变上限积分
 
 $$
-\Phi(x)=\int_a^x f(t)\,\mathrm{d}t\Rightarrow\Phi'(x)=f(x)
+\Phi(x)=\int_a^x f(t)\mathrm{d}t\Rightarrow\Phi'(x)=f(x)
 $$
 
 把定积分的上限放开成变量 $x$，得到一个 **新函数** $\Phi(x)$：它表示「从 $a$ 累积到 $x$ 的面积」。这个函数求导回到 $f$ 本身——说明 **变上限积分天然就是一个原函数**，这也正是微积分基本定理「积分与求导互逆」的源头，更是连 $e^{-x^2}$ 这类「积不出来」的函数也能保证原函数 **存在** 的依据。
@@ -258,13 +258,13 @@ $$
 复合形式（上下限都是函数时，链式法则配合）：
 
 $$
-\frac{\mathrm{d}}{\mathrm{d}x}\int_{\varphi(x)}^{\psi(x)}f(t)\,\mathrm{d}t=f(\psi(x))\psi'(x)-f(\varphi(x))\varphi'(x)
+\frac{\mathrm{d}}{\mathrm{d}x}\int_{\varphi(x)}^{\psi(x)}f(t)\mathrm{d}t=f(\psi(x))\psi'(x)-f(\varphi(x))\varphi'(x)
 $$
 
-例（变上限求导求极限）：$\lim\limits_{x\to 0}\dfrac{\int_0^x\sin t^2\,\mathrm{d}t}{x^3}$ 是 $\dfrac00$ 型，洛必达对分子用变上限求导公式：
+例（变上限求导求极限）：$\lim\limits_{x\to 0}\dfrac{\int_0^x\sin t^2\mathrm{d}t}{x^3}$ 是 $\dfrac00$ 型，洛必达对分子用变上限求导公式：
 
 $$
-\lim_{x\to 0}\frac{\int_0^x\sin t^2\,\mathrm{d}t}{x^3}\xlongequal{\frac00}\lim_{x\to 0}\frac{\sin x^2}{3x^2}\overset{\sin x^2\sim x^2}{=}\frac13
+\lim_{x\to 0}\frac{\int_0^x\sin t^2\mathrm{d}t}{x^3}\xlongequal{\frac00}\lim_{x\to 0}\frac{\sin x^2}{3x^2}\overset{\sin x^2\sim x^2}{=}\frac13
 $$
 
 ## 定积分计算技巧
@@ -275,28 +275,28 @@ $$
 
 被积区间关于原点对称 $[-a,a]$ 时，先看被积函数的奇偶（见前文性质）。
 
-例：$\displaystyle\int_{-1}^{1}\dfrac{x^2\sin x}{1+x^4}\,\mathrm{d}x$。被积函数是奇函数（分子 $x^2\sin x$ 奇、分母偶），故积分为 $0$，一步到位。
+例：$\displaystyle\int_{-1}^1\dfrac{x^2\sin x}{1+x^4}\mathrm{d}x$。被积函数是奇函数（分子 $x^2\sin x$ 奇、分母偶），故积分为 $0$，一步到位。
 
 ### 区间再现公式
 
 令 $x\to a+b-x$ 做换元，积分值不变，得 **区间再现**（又称 King 性质）：
 
 $$
-\int_a^b f(x)\,\mathrm{d}x=\int_a^b f(a+b-x)\,\mathrm{d}x
+\int_a^b f(x)\mathrm{d}x=\int_a^b f(a+b-x)\mathrm{d}x
 $$
 
 把原式与代换后的式子 **相加**，常能让难算的部分对消。
 
-例：$I=\displaystyle\int_0^{\pi/2}\dfrac{\sin x}{\sin x+\cos x}\,\mathrm{d}x$。令 $x\to\dfrac\pi2-x$，$\sin\leftrightarrow\cos$ 互换得 $I=\displaystyle\int_0^{\pi/2}\dfrac{\cos x}{\cos x+\sin x}\,\mathrm{d}x$。两式相加：
+例：$I=\displaystyle\int_0^{\pi/2}\dfrac{\sin x}{\sin x+\cos x}\mathrm{d}x$。令 $x\to\dfrac\pi2-x$，$\sin\leftrightarrow\cos$ 互换得 $I=\displaystyle\int_0^{\pi/2}\dfrac{\cos x}{\cos x+\sin x}\mathrm{d}x$。两式相加：
 
 $$
-2I=\int_0^{\pi/2}\frac{\sin x+\cos x}{\sin x+\cos x}\,\mathrm{d}x=\int_0^{\pi/2}1\,\mathrm{d}x=\frac\pi2\Rightarrow I=\frac\pi4
+2I=\int_0^{\pi/2}\frac{\sin x+\cos x}{\sin x+\cos x}\mathrm{d}x=\int_0^{\pi/2}1\mathrm{d}x=\frac\pi2\Rightarrow I=\frac\pi4
 $$
 
 ### 点火公式（Wallis 公式）
 
 $$
-\int_0^{\pi/2}\sin^n x\,\mathrm{d}x=\int_0^{\pi/2}\cos^n x\,\mathrm{d}x=
+\int_0^{\pi/2}\sin^n x\mathrm{d}x=\int_0^{\pi/2}\cos^n x\mathrm{d}x=
 \begin{cases}
   \dfrac{(n-1)!!}{n!!}\cdot\dfrac\pi2, & n\text{ 为偶数} \\[6pt]
   \dfrac{(n-1)!!}{n!!}, & n\text{ 为奇数}
@@ -305,9 +305,9 @@ $$
 
 口诀「**偶数加 $\frac\pi2$、奇数不加**」：$n$ 为偶才点上 $\dfrac\pi2$ 这把「火」。其中 $n!!$ 是双阶乘（隔一个相乘）。它由前面 $\sin^n$ 的递推公式代入上下限得到。
 
-例：$\displaystyle\int_0^{\pi/2}\sin^6 x\,\mathrm{d}x=\dfrac{5!!}{6!!}\cdot\dfrac\pi2=\dfrac{5\cdot3\cdot1}{6\cdot4\cdot2}\cdot\dfrac\pi2=\dfrac{15}{48}\cdot\dfrac\pi2=\dfrac{5\pi}{32}$。
+例：$\displaystyle\int_0^{\pi/2}\sin^6 x\mathrm{d}x=\dfrac{5!!}{6!!}\cdot\dfrac\pi2=\dfrac{5\cdot3\cdot1}{6\cdot4\cdot2}\cdot\dfrac\pi2=\dfrac{15}{48}\cdot\dfrac\pi2=\dfrac{5\pi}{32}$。
 
-例：$\displaystyle\int_0^{\pi/2}\cos^5 x\,\mathrm{d}x=\dfrac{4!!}{5!!}=\dfrac{4\cdot2}{5\cdot3\cdot1}=\dfrac{8}{15}$（奇数不加 $\frac\pi2$）。
+例：$\displaystyle\int_0^{\pi/2}\cos^5 x\mathrm{d}x=\dfrac{4!!}{5!!}=\dfrac{4\cdot2}{5\cdot3\cdot1}=\dfrac{8}{15}$（奇数不加 $\frac\pi2$）。
 
 ## 反常积分
 
@@ -316,7 +316,7 @@ $$
 ### 无穷区间
 
 $$
-\int_a^{+\infty}f(x)\,\mathrm{d}x=\lim_{b\to+\infty}\int_a^b f(x)\,\mathrm{d}x
+\int_a^{+\infty}f(x)\mathrm{d}x=\lim_{b\to+\infty}\int_a^b f(x)\mathrm{d}x
 $$
 
 ### 无界函数
@@ -324,14 +324,14 @@ $$
 若 $f$ 在 $x=c$ 处无界（瑕点）：
 
 $$
-\int_a^b f(x)\,\mathrm{d}x=\lim_{\varepsilon\to 0^+}\left(\int_a^{c-\varepsilon}+\int_{c+\varepsilon}^b\right)
+\int_a^b f(x)\mathrm{d}x=\lim_{\varepsilon\to 0^+}\left(\int_a^{c-\varepsilon}+\int_{c+\varepsilon}^b\right)
 $$
 
 ### 常用敛散性结论
 
 $$
-\int_1^{+\infty}\frac{1}{x^p}\,\mathrm{d}x\,:\, p>1\text{ 收敛};\quad
-\int_0^1\frac{1}{x^p}\,\mathrm{d}x\,:\, p<1\text{ 收敛}
+\int_1^{+\infty}\frac{1}{x^p}\mathrm{d}x:p>1\text{ 收敛};
+\int_0^1\frac{1}{x^p}\mathrm{d}x:p<1\text{ 收敛}
 $$
 
 :::tip
@@ -345,72 +345,72 @@ $$
 判断反常积分敛散，常用 **比较法**——和已知的 $\dfrac{1}{x^p}$ 比大小：
 
 - **比较判别法**：若 $0\le f(x)\le g(x)$，则 $\int g$ 收敛 $\Rightarrow\int f$ 收敛；$\int f$ 发散 $\Rightarrow\int g$ 发散。
-- **极限形式**：若 $\lim\dfrac{f(x)}{g(x)}=l\,(0<l<+\infty)$，则 $\int f$ 与 $\int g$ **同敛散**。
+- **极限形式**：若 $\lim\dfrac{f(x)}{g(x)}=l(0<l<+\infty)$，则 $\int f$ 与 $\int g$ **同敛散**。
 
 实用做法是把被积函数与 $\dfrac{1}{x^p}$ 比较：在 $+\infty$ 处看「分母最高阶」定 $p$，在瑕点处看「奇性强弱」定 $p$，再对照上面的临界值。
 
 例（无穷区间判敛）：$\displaystyle\int_1^{+\infty}\dfrac{\mathrm{d}x}{x^2+x}$。当 $x\to+\infty$ 时 $\dfrac{1}{x^2+x}\sim\dfrac{1}{x^2}$，取 $g=\dfrac{1}{x^2}$，极限 $\lim\limits_{x\to+\infty}\dfrac{1/(x^2+x)}{1/x^2}=1\in(0,\infty)$，与 $p=2>1$ 的 $p$ 积分同敛散，故 **收敛**。
 
-例（瑕积分判敛）：$\displaystyle\int_0^1\dfrac{\mathrm{d}x}{\sqrt{x}\,(1+x)}$，瑕点在 $x=0$。当 $x\to 0^+$ 时被积函数 $\sim\dfrac{1}{\sqrt x}=\dfrac{1}{x^{1/2}}$，对应 $p=\dfrac12<1$，故 **收敛**。判瑕积分只需看 **瑕点附近** 的奇性强弱。
+例（瑕积分判敛）：$\displaystyle\int_0^1\dfrac{\mathrm{d}x}{\sqrt{x}(1+x)}$，瑕点在 $x=0$。当 $x\to 0^+$ 时被积函数 $\sim\dfrac{1}{\sqrt x}=\dfrac{1}{x^{1/2}}$，对应 $p=\dfrac12<1$，故 **收敛**。判瑕积分只需看 **瑕点附近** 的奇性强弱。
 
 ### $\Gamma$ 函数
 
 阶乘向实数的推广是 **$\Gamma$ 函数**（Gamma Function）：
 
 $$
-\Gamma(s)=\int_0^{+\infty}x^{s-1}e^{-x}\,\mathrm{d}x\quad(s>0)
+\Gamma(s)=\int_0^{+\infty}x^{s-1}e^{-x}\mathrm{d}x(s>0)
 $$
 
-它是一个含参变量的反常积分，在 $s>0$ 时收敛。对 $\Gamma(s+1)=\int_0^\infty x^s e^{-x}\,\mathrm{d}x$ 分部积分可得 **递推关系**：
+它是一个含参变量的反常积分，在 $s>0$ 时收敛。对 $\Gamma(s+1)=\int_0^\infty x^s e^{-x}\mathrm{d}x$ 分部积分可得 **递推关系**：
 
 $$
-\Gamma(s+1)=s\,\Gamma(s),\qquad\Gamma(n+1)=n!\ (n\in\mathbb{N})
+\Gamma(s+1)=s\Gamma(s),\Gamma(n+1)=n!(n\in\mathbb{N})
 $$
 
-所以 $\Gamma$ 正是阶乘的连续版本。一个常用的特殊值是 $\Gamma\!\left(\dfrac12\right)=\sqrt\pi$，它等价于著名的 **高斯积分**：令 $x=t^2$ 得
+所以 $\Gamma$ 正是阶乘的连续版本。一个常用的特殊值是 $\Gamma\left(\dfrac12\right)=\sqrt\pi$，它等价于著名的 **高斯积分**：令 $x=t^2$ 得：
 
 $$
-\Gamma\!\left(\frac12\right)=\int_0^{+\infty}x^{-1/2}e^{-x}\,\mathrm{d}x=2\int_0^{+\infty}e^{-t^2}\,\mathrm{d}t=\sqrt\pi
+\Gamma\left(\frac12\right)=\int_0^{+\infty}x^{-1/2}e^{-x}\mathrm{d}x=2\int_0^{+\infty}e^{-t^2}\mathrm{d}t=\sqrt\pi
 $$
 
-即 $\displaystyle\int_{-\infty}^{+\infty}e^{-t^2}\,\mathrm{d}t=\sqrt\pi$——它在概率论的正态分布里反复登场。
+即 $\displaystyle\int_{-\infty}^{+\infty}e^{-t^2}\mathrm{d}t=\sqrt\pi$——它在概率论的正态分布里反复登场。
 
 ## 定积分的几何应用
 
 定积分应用的统一思路是 **微元法**：在区间上取一小段 $[x,x+\mathrm{d}x]$，写出该微元对应的量 $\mathrm{d}A$（面积 / 体积 / 弧长……），再积分累加。关键是把「微元」近似成最规则的形状。
 
-| 应用                        | 公式                                               |
-| :-------------------------- | :------------------------------------------------- |
-| **平面图形面积**            | $A=\int_a^b\lvert f(x)-g(x)\rvert\,\mathrm{d}x$    |
-| **旋转体体积（绕 $x$ 轴）** | $V=\pi\int_a^b f^2(x)\,\mathrm{d}x$                |
-| **旋转体体积（柱壳法）**    | $V=2\pi\int_a^b x f(x)\,\mathrm{d}x$               |
-| **曲线弧长**                | $L=\int_a^b\sqrt{1+f'^2(x)}\,\mathrm{d}x$          |
-| **旋转曲面面积**            | $S=2\pi\int_a^b f(x)\sqrt{1+f'^2(x)}\,\mathrm{d}x$ |
+| 应用                        | 公式                                             |
+| :-------------------------- | :----------------------------------------------- |
+| **平面图形面积**            | $A=\int_a^b\lvert f(x)-g(x)\rvert\mathrm{d}x$    |
+| **旋转体体积（绕 $x$ 轴）** | $V=\pi\int_a^b f^2(x)\mathrm{d}x$                |
+| **旋转体体积（柱壳法）**    | $V=2\pi\int_a^b x f(x)\mathrm{d}x$               |
+| **曲线弧长**                | $L=\int_a^b\sqrt{1+f'^2(x)}\mathrm{d}x$          |
+| **旋转曲面面积**            | $S=2\pi\int_a^b f(x)\sqrt{1+f'^2(x)}\mathrm{d}x$ |
 
-弧长公式来自勾股定理：一小段弧近似为斜边 $\sqrt{(\mathrm{d}x)^2+(\mathrm{d}y)^2}=\sqrt{1+f'^2}\,\mathrm{d}x$。绕 $x$ 轴旋转时，微元是半径 $f(x)$、厚 $\mathrm{d}x$ 的薄圆盘，体积 $\pi f^2\,\mathrm{d}x$。
+弧长公式来自勾股定理：一小段弧近似为斜边 $\sqrt{(\mathrm{d}x)^2+(\mathrm{d}y)^2}=\sqrt{1+f'^2}\mathrm{d}x$。绕 $x$ 轴旋转时，微元是半径 $f(x)$、厚 $\mathrm{d}x$ 的薄圆盘，体积 $\pi f^2\mathrm{d}x$。
 
-例（两曲线围成面积）：$y=x^2$ 与 $y=\sqrt{x}$ 在 $[0,1]$ 上围成的面积。$\sqrt x\ge x^2$，故
-
-$$
-A=\int_0^1(\sqrt x-x^2)\,\mathrm{d}x=\left[\frac23 x^{3/2}-\frac13 x^3\right]_0^1=\frac23-\frac13=\frac13
-$$
-
-例（旋转体体积）：$y=\sin x$（$0\le x\le\pi$）绕 $x$ 轴旋转。用点火公式算 $\int_0^\pi\sin^2 x\,\mathrm{d}x=\dfrac\pi2$：
+例（两曲线围成面积）：$y=x^2$ 与 $y=\sqrt{x}$ 在 $[0,1]$ 上围成的面积。$\sqrt x\ge x^2$，故：
 
 $$
-V=\pi\int_0^\pi\sin^2 x\,\mathrm{d}x=\pi\cdot\frac\pi2=\frac{\pi^2}{2}
+A=\int_0^1(\sqrt x-x^2)\mathrm{d}x=\left[\frac23 x^{3/2}-\frac13 x^3\right]_0^1=\frac23-\frac13=\frac13
+$$
+
+例（旋转体体积）：$y=\sin x$（$0\le x\le\pi$）绕 $x$ 轴旋转。用点火公式算 $\int_0^\pi\sin^2 x\mathrm{d}x=\dfrac\pi2$：
+
+$$
+V=\pi\int_0^\pi\sin^2 x\mathrm{d}x=\pi\cdot\frac\pi2=\frac{\pi^2}{2}
 $$
 
 ## 定积分的物理应用
 
 物理量同样用微元法：在每个小区间上把变化的量近似成常量，写出微元再积分。
 
-- **变力做功**：力随位置变化 $F(x)$，从 $a$ 到 $b$ 做的功为 $W=\int_a^b F(x)\,\mathrm{d}x$。弹簧、抽水、引力做功都是此型——把「力 × 距离」推广到「力随距离连续变化」。
-- **液体侧压力**：深度 $x$ 处压强 $p=\rho g x$，水平窄条受力 $\mathrm{d}P=\rho g x\cdot w(x)\,\mathrm{d}x$（$w(x)$ 为该深度处闸门宽度），总压力 $P=\int_a^b\rho g\,x\,w(x)\,\mathrm{d}x$。越深压强越大，故须逐层积分。
-- **质心**：密度为 $\rho(x)$ 的细杆，质心坐标
+- **变力做功**：力随位置变化 $F(x)$，从 $a$ 到 $b$ 做的功为 $W=\int_a^b F(x)\mathrm{d}x$。弹簧、抽水、引力做功都是此型——把「力 × 距离」推广到「力随距离连续变化」。
+- **液体侧压力**：深度 $x$ 处压强 $p=\rho g x$，水平窄条受力 $\mathrm{d}P=\rho g x\cdot w(x)\mathrm{d}x$（$w(x)$ 为该深度处闸门宽度），总压力 $P=\int_a^b\rho gxw(x)\mathrm{d}x$。越深压强越大，故须逐层积分。
+- **质心**：密度为 $\rho(x)$ 的细杆，质心坐标：
 
 $$
-\bar x=\frac{\int_a^b x\,\rho(x)\,\mathrm{d}x}{\int_a^b\rho(x)\,\mathrm{d}x}
+\bar x=\frac{\int_a^b x\rho(x)\mathrm{d}x}{\int_a^b\rho(x)\mathrm{d}x}
 $$
 
 分子是 **力矩**（位置对质量的加权），分母是总质量，相除即「平衡点」。均匀情形退化为几何中点。

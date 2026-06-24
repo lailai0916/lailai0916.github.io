@@ -45,7 +45,7 @@ $$
 例：$f=x^3 y^2+\sin(xy)$。对 $x$ 求偏导时把 $y$ 当常数：
 
 $$
-f_x=3x^2 y^2+y\cos(xy),\quad f_y=2x^3 y+x\cos(xy)
+f_x=3x^2 y^2+y\cos(xy),f_y=2x^3 y+x\cos(xy)
 $$
 
 混合偏导 $f_{xy}=\dfrac{\partial}{\partial y}(3x^2 y^2+y\cos xy)=6x^2 y+\cos xy-xy\sin xy$，可验证 $f_{yx}$ 给出同一结果。
@@ -53,15 +53,15 @@ $$
 ### 全微分
 
 $$
-\mathrm{d}z=\frac{\partial z}{\partial x}\,\mathrm{d}x+\frac{\partial z}{\partial y}\,\mathrm{d}y
+\mathrm{d}z=\frac{\partial z}{\partial x}\mathrm{d}x+\frac{\partial z}{\partial y}\mathrm{d}y
 $$
 
 全微分是用 **切平面** 代替曲面：函数的真实增量 $\Delta z$ 约等于沿 $x$、$y$ 两个方向的线性增量之和。它把一元的「切线近似」升级成「切平面近似」。
 
-例（全微分作近似）：估 $(1.02)^{3.01}$。取 $f(x,y)=x^y$、$(x_0,y_0)=(1,3)$。$f_x=yx^{y-1}$、$f_y=x^y\ln x$，在 $(1,3)$ 处 $f_x=3$、$f_y=0$、$f=1$。于是
+例（全微分作近似）：估 $(1.02)^{3.01}$。取 $f(x,y)=x^y$、$(x_0,y_0)=(1,3)$。$f_x=yx^{y-1}$、$f_y=x^y\ln x$，在 $(1,3)$ 处 $f_x=3$、$f_y=0$、$f=1$。于是：
 
 $$
-(1.02)^{3.01}\approx f+f_x\,\Delta x+f_y\,\Delta y=1+3\times 0.02+0\times 0.01=1.06
+(1.02)^{3.01}\approx f+f_x\Delta x+f_y\Delta y=1+3\times 0.02+0\times 0.01=1.06
 $$
 
 $f_y=0$ 是因为 $\ln 1=0$，所以 $y$ 的微小变化几乎不影响结果。
@@ -99,7 +99,7 @@ $$
 由 $F(x,y,z)=0$ 确定 $z=z(x,y)$：
 
 $$
-\frac{\partial z}{\partial x}=-\frac{F_x}{F_z},\quad\frac{\partial z}{\partial y}=-\frac{F_y}{F_z}
+\frac{\partial z}{\partial x}=-\frac{F_x}{F_z},\frac{\partial z}{\partial y}=-\frac{F_y}{F_z}
 $$
 
 这些公式由「对 $F=0$ 两端求全微分、再解出待求偏导」得到，避免了显式解出 $y$ 或 $z$。前提是分母（如 $F_y$、$F_z$）不为零，这正是 **隐函数定理** 保证局部能解出函数的条件。
@@ -126,7 +126,7 @@ $$
 
 :::
 
-例（方向导数与最大变化率）：$f=x^2+xy+y^2$ 在点 $(1,1)$ 处沿 $\vec a=(3,4)$ 的方向导数。先求梯度 $\nabla f=(2x+y,\ x+2y)$，在 $(1,1)$ 处为 $(3,3)$。$\vec a$ 的单位向量是 $\vec l=\left(\dfrac35,\dfrac45\right)$，故
+例（方向导数与最大变化率）：$f=x^2+xy+y^2$ 在点 $(1,1)$ 处沿 $\vec a=(3,4)$ 的方向导数。先求梯度 $\nabla f=(2x+y,x+2y)$，在 $(1,1)$ 处为 $(3,3)$。$\vec a$ 的单位向量是 $\vec l=\left(\dfrac35,\dfrac45\right)$，故：
 
 $$
 \frac{\partial f}{\partial\vec l}=\nabla f\cdot\vec l=3\cdot\frac35+3\cdot\frac45=\frac{21}{5}
@@ -169,7 +169,7 @@ $$
 
 :::
 
-例：求 $f=xy$ 在约束 $x^2+y^2=1$ 下的最值。构造 $L=xy+\lambda(x^2+y^2-1)$，令
+例：求 $f=xy$ 在约束 $x^2+y^2=1$ 下的最值。构造 $L=xy+\lambda(x^2+y^2-1)$，令：
 
 $$
 \begin{aligned}
@@ -186,28 +186,28 @@ $$
 ### 二重积分
 
 $$
-\iint_D f(x,y)\,\mathrm{d}\sigma
+\iint_D f(x,y)\mathrm{d}\sigma
 $$
 
 几何上是 **曲顶柱体的体积**：底是平面区域 $D$，顶是曲面 $z=f(x,y)$。计算思路是「切成片再累加」，化为 **二次积分**（先对一个变量积分、把结果再对另一个积分）。
 
-- **直角坐标**：$\mathrm{d}\sigma=\mathrm{d}x\,\mathrm{d}y$，按 $X$-型或 $Y$-型区域定内外层积分限。选哪种次序取决于 **哪种区域描述更简单**，必要时交换次序。
-- **极坐标**：$\mathrm{d}\sigma=r\,\mathrm{d}r\,\mathrm{d}\theta$。当区域是圆 / 扇形、被积函数含 $x^2+y^2$ 时首选。那个多出来的 $r$ 是 **面积元的拉伸因子**（极坐标下小块面积是 $r\,\mathrm{d}r\,\mathrm{d}\theta$，离原点越远扇环越宽）。
+- **直角坐标**：$\mathrm{d}\sigma=\mathrm{d}x\mathrm{d}y$，按 $X$-型或 $Y$-型区域定内外层积分限。选哪种次序取决于 **哪种区域描述更简单**，必要时交换次序。
+- **极坐标**：$\mathrm{d}\sigma=r\mathrm{d}r\mathrm{d}\theta$。当区域是圆 / 扇形、被积函数含 $x^2+y^2$ 时首选。那个多出来的 $r$ 是 **面积元的拉伸因子**（极坐标下小块面积是 $r\mathrm{d}r\mathrm{d}\theta$，离原点越远扇环越宽）。
 
 **对称性** 能大幅简化计算：若区域关于 $x$ 轴对称、被积函数关于 $y$ 为奇函数，则积分为 $0$；为偶函数则取一半区域积分再乘 $2$。
 
-例（直角坐标 + 换序）：$\displaystyle\int_0^1\!\!\int_x^1 e^{y^2}\,\mathrm{d}y\,\mathrm{d}x$。内层 $\int e^{y^2}\,\mathrm{d}y$ 积不出，必须 **交换次序**。原区域是 $0\le x\le y\le 1$ 的三角形，换成先对 $x$ 后对 $y$：
+例（直角坐标 + 换序）：$\displaystyle\int_0^1\int_x^1 e^{y^2}\mathrm{d}y\mathrm{d}x$。内层 $\int e^{y^2}\mathrm{d}y$ 积不出，必须 **交换次序**。原区域是 $0\le x\le y\le 1$ 的三角形，换成先对 $x$ 后对 $y$：
 
 $$
-\int_0^1\!\!\int_0^y e^{y^2}\,\mathrm{d}x\,\mathrm{d}y=\int_0^1 y\,e^{y^2}\,\mathrm{d}y=\frac12 e^{y^2}\Big|_0^1=\frac{e-1}{2}
+\int_0^1\int_0^y e^{y^2}\mathrm{d}x\mathrm{d}y=\int_0^1 ye^{y^2}\mathrm{d}y=\frac12 e^{y^2}\Big|_0^1=\frac{e-1}{2}
 $$
 
 换序后内层多出的因子 $y$ 恰好凑成 $\mathrm{d}(y^2)$，积分迎刃而解。**遇到内层积不出，优先想换序。**
 
-例（极坐标）：$\displaystyle\iint_D e^{-(x^2+y^2)}\,\mathrm{d}\sigma$，$D$ 是圆 $x^2+y^2\le R^2$。被积含 $x^2+y^2$、区域是圆，改极坐标 $x^2+y^2=r^2$、$\mathrm{d}\sigma=r\,\mathrm{d}r\,\mathrm{d}\theta$：
+例（极坐标）：$\displaystyle\iint_D e^{-(x^2+y^2)}\mathrm{d}\sigma$，$D$ 是圆 $x^2+y^2\le R^2$。被积含 $x^2+y^2$、区域是圆，改极坐标 $x^2+y^2=r^2$、$\mathrm{d}\sigma=r\mathrm{d}r\mathrm{d}\theta$：
 
 $$
-\int_0^{2\pi}\!\!\int_0^R e^{-r^2}r\,\mathrm{d}r\,\mathrm{d}\theta=2\pi\cdot\left[-\frac12 e^{-r^2}\right]_0^R=\pi\left(1-e^{-R^2}\right)
+\int_0^{2\pi}\int_0^R e^{-r^2}r\mathrm{d}r\mathrm{d}\theta=2\pi\cdot\left[-\frac12 e^{-r^2}\right]_0^R=\pi\left(1-e^{-R^2}\right)
 $$
 
 那个多出来的 $r$ 让 $e^{-r^2}r$ 可凑微分——这正是极坐标处理高斯型积分的妙处。
@@ -215,28 +215,28 @@ $$
 ### 三重积分
 
 $$
-\iiint_\Omega f(x,y,z)\,\mathrm{d}V
+\iiint_\Omega f(x,y,z)\mathrm{d}V
 $$
 
-| 坐标系   | 体积元                                                                               | 适用                            |
-| :------- | :----------------------------------------------------------------------------------- | :------------------------------ |
-| 直角坐标 | $\mathrm{d}V=\mathrm{d}x\,\mathrm{d}y\,\mathrm{d}z$                                  | 长方体类区域                    |
-| 柱坐标   | $\mathrm{d}V=r\,\mathrm{d}r\,\mathrm{d}\theta\,\mathrm{d}z$                          | 圆柱、旋转体（绕轴对称）        |
-| 球坐标   | $\mathrm{d}V=\rho^2\sin\varphi\,\mathrm{d}\rho\,\mathrm{d}\varphi\,\mathrm{d}\theta$ | 球、含 $x^2+y^2+z^2$ 的被积函数 |
+| 坐标系   | 体积元                                                                         | 适用                            |
+| :------- | :----------------------------------------------------------------------------- | :------------------------------ |
+| 直角坐标 | $\mathrm{d}V=\mathrm{d}x\mathrm{d}y\mathrm{d}z$                                | 长方体类区域                    |
+| 柱坐标   | $\mathrm{d}V=r\mathrm{d}r\mathrm{d}\theta\mathrm{d}z$                          | 圆柱、旋转体（绕轴对称）        |
+| 球坐标   | $\mathrm{d}V=\rho^2\sin\varphi\mathrm{d}\rho\mathrm{d}\varphi\mathrm{d}\theta$ | 球、含 $x^2+y^2+z^2$ 的被积函数 |
 
 柱坐标 = 极坐标加一根 $z$ 轴；球坐标用「到原点距离 $\rho$ + 两个角度」定位。体积元里的 $r$ 和 $\rho^2\sin\varphi$ 都是坐标变换的 **雅可比因子**，本质是「换坐标后小体积块被拉伸了多少」。
 
-例（柱坐标）：求 $\displaystyle\iiint_\Omega(x^2+y^2)\,\mathrm{d}V$，$\Omega$ 是 $x^2+y^2\le 1$、$0\le z\le 2$ 的圆柱。改柱坐标 $x^2+y^2=r^2$、$\mathrm{d}V=r\,\mathrm{d}r\,\mathrm{d}\theta\,\mathrm{d}z$：
+例（柱坐标）：求 $\displaystyle\iiint_\Omega(x^2+y^2)\mathrm{d}V$，$\Omega$ 是 $x^2+y^2\le 1$、$0\le z\le 2$ 的圆柱。改柱坐标 $x^2+y^2=r^2$、$\mathrm{d}V=r\mathrm{d}r\mathrm{d}\theta\mathrm{d}z$：
 
 $$
-\int_0^{2\pi}\!\!\int_0^1\!\!\int_0^2 r^2\cdot r\,\mathrm{d}z\,\mathrm{d}r\,\mathrm{d}\theta=2\pi\cdot 2\cdot\int_0^1 r^3\,\mathrm{d}r=4\pi\cdot\frac14=\pi
+\int_0^{2\pi}\int_0^1\int_0^2 r^2\cdot r\mathrm{d}z\mathrm{d}r\mathrm{d}\theta=2\pi\cdot 2\cdot\int_0^1 r^3\mathrm{d}r=4\pi\cdot\frac14=\pi
 $$
 
-例（球坐标）：求半径 $R$ 的球 $\Omega$ 内 $\displaystyle\iiint_\Omega\sqrt{x^2+y^2+z^2}\,\mathrm{d}V$。被积是 $\rho$、区域是球，用球坐标 $\mathrm{d}V=\rho^2\sin\varphi\,\mathrm{d}\rho\,\mathrm{d}\varphi\,\mathrm{d}\theta$：
+例（球坐标）：求半径 $R$ 的球 $\Omega$ 内 $\displaystyle\iiint_\Omega\sqrt{x^2+y^2+z^2}\mathrm{d}V$。被积是 $\rho$、区域是球，用球坐标 $\mathrm{d}V=\rho^2\sin\varphi\mathrm{d}\rho\mathrm{d}\varphi\mathrm{d}\theta$：
 
 $$
-\int_0^{2\pi}\!\!\int_0^{\pi}\!\!\int_0^{R}\rho\cdot\rho^2\sin\varphi\,\mathrm{d}\rho\,\mathrm{d}\varphi\,\mathrm{d}\theta
-=2\pi\cdot\Big[-\cos\varphi\Big]_0^{\pi}\cdot\frac{R^4}{4}=2\pi\cdot 2\cdot\frac{R^4}{4}=\pi R^4
+\int_0^{2\pi}\int_0^\pi\int_0^R\rho\cdot\rho^2\sin\varphi\mathrm{d}\rho\mathrm{d}\varphi\mathrm{d}\theta
+=2\pi\cdot\Big[-\cos\varphi\Big]_0^\pi\cdot\frac{R^4}{4}=2\pi\cdot 2\cdot\frac{R^4}{4}=\pi R^4
 $$
 
 三个变量的积分 **完全分离**、各自独立积出——这是球对称问题用球坐标的最大便利。
@@ -246,29 +246,29 @@ $$
 ### 第一类（对弧长）
 
 $$
-\int_L f(x,y)\,\mathrm{d}s=\int_\alpha^\beta f(\varphi(t),\psi(t))\sqrt{\varphi'^2+\psi'^2}\,\mathrm{d}t
+\int_L f(x,y)\mathrm{d}s=\int_\alpha^\beta f(\varphi(t),\psi(t))\sqrt{\varphi'^2+\psi'^2}\mathrm{d}t
 $$
 
 物理意义是 **变密度曲线的质量**：$f$ 是线密度，沿曲线累加。它 **与方向无关**（弧长 $\mathrm{d}s$ 永远为正）。
 
-例：算 $\displaystyle\int_L(x^2+y^2)\,\mathrm{d}s$，$L$ 是圆 $x=\cos t,y=\sin t$（$0\le t\le 2\pi$）。在 $L$ 上 $x^2+y^2=1$，弧长元 $\mathrm{d}s=\sqrt{(-\sin t)^2+(\cos t)^2}\,\mathrm{d}t=\mathrm{d}t$，故
+例：算 $\displaystyle\int_L(x^2+y^2)\mathrm{d}s$，$L$ 是圆 $x=\cos t,y=\sin t$（$0\le t\le 2\pi$）。在 $L$ 上 $x^2+y^2=1$，弧长元 $\mathrm{d}s=\sqrt{(-\sin t)^2+(\cos t)^2}\mathrm{d}t=\mathrm{d}t$，故：
 
 $$
-\int_L(x^2+y^2)\,\mathrm{d}s=\int_0^{2\pi}1\cdot 1\,\mathrm{d}t=2\pi
+\int_L(x^2+y^2)\mathrm{d}s=\int_0^{2\pi}1\cdot 1\mathrm{d}t=2\pi
 $$
 
 ### 第二类（对坐标）
 
 $$
-\int_L P\,\mathrm{d}x+Q\,\mathrm{d}y
+\int_L P\mathrm{d}x+Q\mathrm{d}y
 $$
 
 物理意义是 **变力沿曲线做的功**：$\vec F=(P,Q)$ 是力场，沿路径累加力在位移方向的分量。它 **与方向有关**，反向取负号——逆着走，做的功反号。
 
-例：算 $\displaystyle\int_L x\,\mathrm{d}y-y\,\mathrm{d}x$，$L$ 是从 $(1,0)$ 沿单位圆逆时针到 $(0,1)$。参数化 $x=\cos t,y=\sin t$，$t$ 从 $0$ 到 $\dfrac\pi2$，$\mathrm{d}x=-\sin t\,\mathrm{d}t$、$\mathrm{d}y=\cos t\,\mathrm{d}t$：
+例：算 $\displaystyle\int_L x\mathrm{d}y-y\mathrm{d}x$，$L$ 是从 $(1,0)$ 沿单位圆逆时针到 $(0,1)$。参数化 $x=\cos t,y=\sin t$，$t$ 从 $0$ 到 $\dfrac\pi2$，$\mathrm{d}x=-\sin t\mathrm{d}t$、$\mathrm{d}y=\cos t\mathrm{d}t$：
 
 $$
-\int_0^{\pi/2}\bigl[\cos t\cdot\cos t-\sin t\cdot(-\sin t)\bigr]\,\mathrm{d}t=\int_0^{\pi/2}1\,\mathrm{d}t=\frac\pi2
+\int_0^{\pi/2}\bigl[\cos t\cdot\cos t-\sin t\cdot(-\sin t)\bigr]\mathrm{d}t=\int_0^{\pi/2}1\mathrm{d}t=\frac\pi2
 $$
 
 **第二类曲线积分先参数化、把 $\mathrm{d}x,\mathrm{d}y$ 都换成 $\mathrm{d}t$**，化成一元定积分。
@@ -278,7 +278,7 @@ $$
 ### 第一类（对面积）
 
 $$
-\iint_\Sigma f(x,y,z)\,\mathrm{d}S
+\iint_\Sigma f(x,y,z)\mathrm{d}S
 $$
 
 是曲线积分对弧长的升维：**变密度曲面的质量**，与侧无关。
@@ -286,7 +286,7 @@ $$
 ### 第二类（对坐标）
 
 $$
-\iint_\Sigma P\,\mathrm{d}y\,\mathrm{d}z+Q\,\mathrm{d}z\,\mathrm{d}x+R\,\mathrm{d}x\,\mathrm{d}y
+\iint_\Sigma P\mathrm{d}y\mathrm{d}z+Q\mathrm{d}z\mathrm{d}x+R\mathrm{d}x\mathrm{d}y
 $$
 
 物理意义是 **流量 / 通量**：向量场 $\vec F=(P,Q,R)$ 穿过曲面 $\Sigma$ 的净流量。它 **与侧有关**，反侧取负——流入还是流出，符号相反。
@@ -298,25 +298,25 @@ $$
 ### 格林公式（平面）
 
 $$
-\oint_L P\,\mathrm{d}x+Q\,\mathrm{d}y=\iint_D\left(\frac{\partial Q}{\partial x}-\frac{\partial P}{\partial y}\right)\mathrm{d}\sigma
+\oint_L P\mathrm{d}x+Q\mathrm{d}y=\iint_D\left(\frac{\partial Q}{\partial x}-\frac{\partial P}{\partial y}\right)\mathrm{d}\sigma
 $$
 
 把平面闭曲线 $L$ 上的第二类曲线积分，换成它围住区域 $D$ 上的二重积分。右端的 $\dfrac{\partial Q}{\partial x}-\dfrac{\partial P}{\partial y}$ 是向量场的 **旋度**（平面版），度量场的「打旋」程度；左端是沿边界的 **环量**。
 
-例（格林公式算环量）：算 $\displaystyle\oint_L(x-y)\,\mathrm{d}x+x\,\mathrm{d}y$，$L$ 是单位圆逆时针。这里 $P=x-y$、$Q=x$，$\dfrac{\partial Q}{\partial x}-\dfrac{\partial P}{\partial y}=1-(-1)=2$，转成二重积分：
+例（格林公式算环量）：算 $\displaystyle\oint_L(x-y)\mathrm{d}x+x\mathrm{d}y$，$L$ 是单位圆逆时针。这里 $P=x-y$、$Q=x$，$\dfrac{\partial Q}{\partial x}-\dfrac{\partial P}{\partial y}=1-(-1)=2$，转成二重积分：
 
 $$
-\oint_L(x-y)\,\mathrm{d}x+x\,\mathrm{d}y=\iint_D 2\,\mathrm{d}\sigma=2\cdot(\text{圆面积})=2\pi
+\oint_L(x-y)\mathrm{d}x+x\mathrm{d}y=\iint_D 2\mathrm{d}\sigma=2\cdot(\text{圆面积})=2\pi
 $$
 
 直接参数化也能算，但格林公式把沿边界的积分一步换成区域上常数的积分，省事得多。
 
 :::tip
 
-格林公式还给出 **用曲线积分算面积** 的公式：取 $P=-\dfrac y2$、$Q=\dfrac x2$ 使 $\dfrac{\partial Q}{\partial x}-\dfrac{\partial P}{\partial y}=1$，则
+格林公式还给出 **用曲线积分算面积** 的公式：取 $P=-\dfrac y2$、$Q=\dfrac x2$ 使 $\dfrac{\partial Q}{\partial x}-\dfrac{\partial P}{\partial y}=1$，则：
 
 $$
-A=\frac12\oint_L x\,\mathrm{d}y-y\,\mathrm{d}x
+A=\frac12\oint_L x\mathrm{d}y-y\mathrm{d}x
 $$
 
 只用边界信息就能求出围住的面积，是行星扫面积、求多边形面积（鞋带公式）的连续版本。
@@ -326,7 +326,7 @@ $$
 ### 高斯公式（散度定理）
 
 $$
-\oiint_\Sigma P\,\mathrm{d}y\,\mathrm{d}z+Q\,\mathrm{d}z\,\mathrm{d}x+R\,\mathrm{d}x\,\mathrm{d}y=\iiint_\Omega\left(\frac{\partial P}{\partial x}+\frac{\partial Q}{\partial y}+\frac{\partial R}{\partial z}\right)\mathrm{d}V
+\oiint_\Sigma P\mathrm{d}y\mathrm{d}z+Q\mathrm{d}z\mathrm{d}x+R\mathrm{d}x\mathrm{d}y=\iiint_\Omega\left(\frac{\partial P}{\partial x}+\frac{\partial Q}{\partial y}+\frac{\partial R}{\partial z}\right)\mathrm{d}V
 $$
 
 把闭曲面 $\Sigma$ 上的 **通量**，换成它围住的立体 $\Omega$ 内部 **散度** 的体积分。散度 $\nabla\cdot\vec F$ 度量某点是「源」（向外冒）还是「汇」（向内吸）。直觉：穿过表面的净流量，等于内部所有源汇的总和——内部冒出来的，最终都得从表面流出去。
@@ -334,7 +334,7 @@ $$
 例（高斯公式算通量）：求 $\vec F=(x,y,z)$ 穿过半径 $R$ 球面 $\Sigma$（外侧）的通量。散度 $\nabla\cdot\vec F=1+1+1=3$，转成体积分：
 
 $$
-\oiint_\Sigma x\,\mathrm{d}y\,\mathrm{d}z+y\,\mathrm{d}z\,\mathrm{d}x+z\,\mathrm{d}x\,\mathrm{d}y=\iiint_\Omega 3\,\mathrm{d}V=3\cdot\frac43\pi R^3=4\pi R^3
+\oiint_\Sigma x\mathrm{d}y\mathrm{d}z+y\mathrm{d}z\mathrm{d}x+z\mathrm{d}x\mathrm{d}y=\iiint_\Omega 3\mathrm{d}V=3\cdot\frac43\pi R^3=4\pi R^3
 $$
 
 直接在球面上算曲面积分相当麻烦，高斯公式把它化成「常数 × 体积」。**遇到闭曲面通量、被积式散度简单时，首选高斯公式。**
@@ -342,24 +342,24 @@ $$
 ### 斯托克斯公式
 
 $$
-\oint_L P\,\mathrm{d}x+Q\,\mathrm{d}y+R\,\mathrm{d}z=\iint_\Sigma(\nabla\times\vec F)\cdot\mathrm{d}\vec S
+\oint_L P\mathrm{d}x+Q\mathrm{d}y+R\mathrm{d}z=\iint_\Sigma(\nabla\times\vec F)\cdot\mathrm{d}\vec S
 $$
 
 是格林公式的空间推广：空间闭曲线 $L$ 上的 **环量**，等于以 $L$ 为边界的曲面 $\Sigma$ 上 **旋度的通量**。旋度 $\nabla\times\vec F$ 是个向量，指向「旋转轴」方向、模为旋转强度。
 
-例（斯托克斯公式算环量）：$\vec F=(-y,x,z)$，$L$ 是平面 $z=0$ 上的单位圆（逆时针）。旋度
+例（斯托克斯公式算环量）：$\vec F=(-y,x,z)$，$L$ 是平面 $z=0$ 上的单位圆（逆时针）。旋度：
 
 $$
-\nabla\times\vec F=\left(\frac{\partial R}{\partial y}-\frac{\partial Q}{\partial z},\ \frac{\partial P}{\partial z}-\frac{\partial R}{\partial x},\ \frac{\partial Q}{\partial x}-\frac{\partial P}{\partial y}\right)=(0,0,2)
+\nabla\times\vec F=\left(\frac{\partial R}{\partial y}-\frac{\partial Q}{\partial z},\frac{\partial P}{\partial z}-\frac{\partial R}{\partial x},\frac{\partial Q}{\partial x}-\frac{\partial P}{\partial y}\right)=(0,0,2)
 $$
 
-取 $\Sigma$ 为 $L$ 围住的圆盘（法向量 $\vec n=(0,0,1)$），旋度通量 $=\displaystyle\iint_\Sigma 2\,\mathrm{d}S=2\pi$，即 $\displaystyle\oint_L\vec F\cdot\mathrm{d}\vec r=2\pi$。**先算旋度、选最简单的张曲面，再积旋度的通量。**
+取 $\Sigma$ 为 $L$ 围住的圆盘（法向量 $\vec n=(0,0,1)$），旋度通量 $=\displaystyle\iint_\Sigma 2\mathrm{d}S=2\pi$，即 $\displaystyle\oint_L\vec F\cdot\mathrm{d}\vec r=2\pi$。**先算旋度、选最简单的张曲面，再积旋度的通量。**
 
 :::tip
 
 把三大公式连同牛顿-莱布尼茨公式放在一起看，是同一个思想在不同维度的复奏：**边界上的积分 = 内部某种「导数」的积分。**
 
-- 一维：$\displaystyle\int_a^b F'(x)\,\mathrm{d}x=F(b)-F(a)$（区间内部 vs 两端点）。
+- 一维：$\displaystyle\int_a^b F'(x)\mathrm{d}x=F(b)-F(a)$（区间内部 vs 两端点）。
 - 格林 / 斯托克斯：曲线环量 vs 曲面旋度。
 - 高斯：曲面通量 vs 体积散度。
 

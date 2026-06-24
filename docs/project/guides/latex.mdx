@@ -24,7 +24,7 @@ $\LaTeX$ 是 Leslie Lamport 于 1984 年在 $\TeX$ 之上构建的宏包，将 $
 $\KaTeX$ 是 Khan Academy 于 2014 年发布的 JavaScript 数学公式渲染库，可在浏览器中快速渲染使用 $\LaTeX$ 风格语法编写的数学公式。相比功能更全面的 MathJax，$\KaTeX$ 以同步渲染和速度见长，但仅支持 $\LaTeX$ 数学语法的子集。
 
 $$
-\underline{\widehat{\dbinom{\odot_\vee\odot}{\raisebox{-8pt}{"}\ \wr\ \raisebox{-8pt}{"}}}}
+\underline{\widehat{\dbinom{\odot_\vee\odot}{\raisebox{-8pt}{"}\wr\raisebox{-8pt}{"}}}}
 $$
 
 推荐两个我常用的 $\LaTeX$ 排版工具网站：[Overleaf](https://www.overleaf.com) 和 [在线 LaTeX 公式编辑器](https://www.latexlive.com)。
@@ -113,13 +113,13 @@ $$
 ### 求和
 
 ```latex
-\sum_{i=1}^{n}a_i
+\sum_{i=1}^na_i
 ```
 
 <BrowserWindow>
 
 $$
-\sum_{i=1}^{n}a_i
+\sum_{i=1}^na_i
 $$
 
 </BrowserWindow>
@@ -127,13 +127,13 @@ $$
 ### 求积
 
 ```latex
-\prod_{i=1}^{n}a_i
+\prod_{i=1}^na_i
 ```
 
 <BrowserWindow>
 
 $$
-\prod_{i=1}^{n}a_i
+\prod_{i=1}^na_i
 $$
 
 </BrowserWindow>
@@ -141,13 +141,13 @@ $$
 ### 积分
 
 ```latex
-\int_{a}^{b}f(x)\mathrm{d}x
+\int_a^bf(x)\mathrm{d}x
 ```
 
 <BrowserWindow>
 
 $$
-\int_{a}^{b}f(x)\mathrm{d}x
+\int_a^bf(x)\mathrm{d}x
 $$
 
 </BrowserWindow>

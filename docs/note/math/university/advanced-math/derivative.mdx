@@ -35,7 +35,7 @@ $$
 $$
 \begin{aligned}
   f'(x) & =\lim_{\Delta x\to 0}\frac{\sqrt{x+\Delta x}-\sqrt{x}}{\Delta x}
-=\lim_{\Delta x\to 0}\frac{(x+\Delta x)-x}{\Delta x\,(\sqrt{x+\Delta x}+\sqrt{x})} \\
+=\lim_{\Delta x\to 0}\frac{(x+\Delta x)-x}{\Delta x(\sqrt{x+\Delta x}+\sqrt{x})} \\
   & =\lim_{\Delta x\to 0}\frac{1}{\sqrt{x+\Delta x}+\sqrt{x}}=\frac{1}{2\sqrt{x}}
 \end{aligned}
 $$
@@ -55,7 +55,7 @@ $$
 把定义里的极限换成单侧极限，得到 **左导数** $f'_-(x_0)$ 与 **右导数** $f'_+(x_0)$：
 
 $$
-f'_-(x_0)=\lim_{\Delta x\to 0^-}\frac{f(x_0+\Delta x)-f(x_0)}{\Delta x},\quad
+f'_-(x_0)=\lim_{\Delta x\to 0^-}\frac{f(x_0+\Delta x)-f(x_0)}{\Delta x},
 f'_+(x_0)=\lim_{\Delta x\to 0^+}\frac{f(x_0+\Delta x)-f(x_0)}{\Delta x}
 $$
 
@@ -107,10 +107,10 @@ $$
 y'=2\sin(3x+1)\cdot\cos(3x+1)\cdot 3=3\sin(6x+2)
 $$
 
-例（多层嵌套）：$y=e^{\sqrt{1+x^2}}$，
+例（多层嵌套）：$y=e^{\sqrt{1+x^2}}$：
 
 $$
-y'=e^{\sqrt{1+x^2}}\cdot\frac{1}{2\sqrt{1+x^2}}\cdot 2x=\frac{x\,e^{\sqrt{1+x^2}}}{\sqrt{1+x^2}}
+y'=e^{\sqrt{1+x^2}}\cdot\frac{1}{2\sqrt{1+x^2}}\cdot 2x=\frac{xe^{\sqrt{1+x^2}}}{\sqrt{1+x^2}}
 $$
 
 ### 反函数
@@ -121,7 +121,7 @@ $$
 
 几何上，反函数图像是原图像关于 $y=x$ 的镜像，切线斜率互为倒数。$\arcsin,\arctan$ 等的导数公式都由此推出。
 
-例（推 $\arcsin$ 的导数）：设 $y=\arcsin x$，即 $x=\sin y$（$y\in[-\frac\pi2,\frac\pi2]$）。则
+例（推 $\arcsin$ 的导数）：设 $y=\arcsin x$，即 $x=\sin y$（$y\in[-\frac\pi2,\frac\pi2]$）。则：
 
 $$
 (\arcsin x)'=\frac{1}{(\sin y)'}=\frac{1}{\cos y}=\frac{1}{\sqrt{1-\sin^2 y}}=\frac{1}{\sqrt{1-x^2}}
@@ -138,12 +138,12 @@ $$
 \frac{\mathrm{d}y}{\mathrm{d}x}=\frac{\psi'(t)}{\varphi'(t)}
 $$
 
-二阶导需再对 $t$ 求一次并除以 $\varphi'(t)$：$\dfrac{\mathrm{d}^2 y}{\mathrm{d}x^2}=\dfrac{1}{\varphi'(t)}\dfrac{\mathrm{d}}{\mathrm{d}t}\!\left(\dfrac{\psi'(t)}{\varphi'(t)}\right)$。
+二阶导需再对 $t$ 求一次并除以 $\varphi'(t)$：$\dfrac{\mathrm{d}^2 y}{\mathrm{d}x^2}=\dfrac{1}{\varphi'(t)}\dfrac{\mathrm{d}}{\mathrm{d}t}\left(\dfrac{\psi'(t)}{\varphi'(t)}\right)$。
 
 例（隐函数求导）：圆 $x^2+y^2=R^2$ 在点 $(x,y)$ 处的切线斜率。两端对 $x$ 求导，把 $y$ 看成 $x$ 的函数：
 
 $$
-2x+2y\,y'=0\Rightarrow y'=-\frac{x}{y}
+2x+2yy'=0\Rightarrow y'=-\frac{x}{y}
 $$
 
 含 $y$ 的项 $y^2$ 求导补乘 $y'$。这比先解出 $y=\pm\sqrt{R^2-x^2}$ 再求导干净得多。
@@ -202,26 +202,26 @@ $$
 
 ### 常见函数的 $n$ 阶导
 
-|     $f(x)$     |                         $f^{(n)}(x)$                          |
-| :------------: | :-----------------------------------------------------------: |
-|     $e^x$      |                             $e^x$                             |
-|     $a^x$      |                        $a^x(\ln a)^n$                         |
-|    $\sin x$    |            $\sin\!\left(x+\dfrac{n\pi}{2}\right)$             |
-|    $\cos x$    |            $\cos\!\left(x+\dfrac{n\pi}{2}\right)$             |
-|   $\ln(1+x)$   |              $\dfrac{(-1)^{n-1}(n-1)!}{(1+x)^n}$              |
-| $\dfrac{1}{x}$ |                 $\dfrac{(-1)^n\,n!}{x^{n+1}}$                 |
-|     $x^m$      | $m(m-1)\cdots(m-n+1)\,x^{m-n}$（$m$ 为正整数时 $n>m$ 为 $0$） |
+|     $f(x)$     |                        $f^{(n)}(x)$                         |
+| :------------: | :---------------------------------------------------------: |
+|     $e^x$      |                            $e^x$                            |
+|     $a^x$      |                       $a^x(\ln a)^n$                        |
+|    $\sin x$    |            $\sin\left(x+\dfrac{n\pi}{2}\right)$             |
+|    $\cos x$    |            $\cos\left(x+\dfrac{n\pi}{2}\right)$             |
+|   $\ln(1+x)$   |             $\dfrac{(-1)^{n-1}(n-1)!}{(1+x)^n}$             |
+| $\dfrac{1}{x}$ |                 $\dfrac{(-1)^nn!}{x^{n+1}}$                 |
+|     $x^m$      | $m(m-1)\cdots(m-n+1)x^{m-n}$（$m$ 为正整数时 $n>m$ 为 $0$） |
 
 :::tip
 
-正弦、余弦的 $n$ 阶导公式 $\sin^{(n)}x=\sin\!\left(x+\dfrac{n\pi}{2}\right)$ 抓住了一个规律：**每求一次导，相位前进 $\dfrac{\pi}{2}$。** 求导四次正好回到自身，呈 $\sin\to\cos\to-\sin\to-\cos$ 的周期循环。
+正弦、余弦的 $n$ 阶导公式 $\sin^{(n)}x=\sin\left(x+\dfrac{n\pi}{2}\right)$ 抓住了一个规律：**每求一次导，相位前进 $\dfrac{\pi}{2}$。** 求导四次正好回到自身，呈 $\sin\to\cos\to-\sin\to-\cos$ 的周期循环。
 
 :::
 
 **莱布尼茨公式**（乘积的高阶导）：
 
 $$
-(uv)^{(n)}=\sum_{k=0}^{n}\binom{n}{k}u^{(n-k)}v^{(k)}
+(uv)^{(n)}=\sum_{k=0}^n\binom{n}{k}u^{(n-k)}v^{(k)}
 $$
 
 形式与二项式定理 $(a+b)^n$ 完全平行，组合系数一一对应——把「乘方」换成「求导」即可。
@@ -240,7 +240,7 @@ $$
 ## 微分
 
 $$
-\mathrm{d}y=f'(x)\,\mathrm{d}x
+\mathrm{d}y=f'(x)\mathrm{d}x
 $$
 
 微分是因变量增量的 **线性主部**：$\Delta y=\mathrm{d}y+o(\Delta x)$。也就是说，当 $\Delta x$ 很小时，曲线的真实增量 $\Delta y$ 与切线给出的增量 $\mathrm{d}y$ 几乎相等，差距是更高阶的小量。
@@ -250,16 +250,16 @@ $$
 由 $\Delta y\approx\mathrm{d}y$ 得 **局部线性化** 公式：
 
 $$
-f(x_0+\Delta x)\approx f(x_0)+f'(x_0)\,\Delta x
+f(x_0+\Delta x)\approx f(x_0)+f'(x_0)\Delta x
 $$
 
 在 $x_0=0$ 附近，常用近似（$|x|$ 很小）：
 
 $$
-(1+x)^a\approx 1+ax,\quad e^x\approx 1+x,\quad\ln(1+x)\approx x,\quad\sin x\approx x,\quad\tan x\approx x
+(1+x)^a\approx 1+ax,e^x\approx 1+x,\ln(1+x)\approx x,\sin x\approx x,\tan x\approx x
 $$
 
-这正是「用切线代替曲线」的实用版本：要估 $\sqrt{1.02}$，取 $f(x)=\sqrt{x}$、$x_0=1$，得 $\approx 1+\dfrac{1}{2}\cdot 0.02=1.01$。微分还用于 **误差估计**：自变量有微小测量误差 $\mathrm{d}x$ 时，因变量误差约为 $|f'(x)|\,|\mathrm{d}x|$。
+这正是「用切线代替曲线」的实用版本：要估 $\sqrt{1.02}$，取 $f(x)=\sqrt{x}$、$x_0=1$，得 $\approx 1+\dfrac{1}{2}\cdot 0.02=1.01$。微分还用于 **误差估计**：自变量有微小测量误差 $\mathrm{d}x$ 时，因变量误差约为 $|f'(x)||\mathrm{d}x|$。
 
 ## 中值定理
 
@@ -283,7 +283,7 @@ $$
 
 例（构造辅助函数）：设 $f\in C[0,1]$，在 $(0,1)$ 可导，$f(1)=0$，证存在 $\xi\in(0,1)$ 使 $\xi f'(\xi)+f(\xi)=0$。注意到要证的式子是 $[xf(x)]'=xf'(x)+f(x)$ 在 $\xi$ 处为零。令 $F(x)=xf(x)$，则 $F(0)=0$、$F(1)=1\cdot f(1)=0$，$F$ 满足罗尔条件，故 $\exists\xi$ 使 $F'(\xi)=\xi f'(\xi)+f(\xi)=0$。**「凑导数」是关键：把待证式倒着看成某个 $F$ 的导数。**
 
-例（拉格朗日证不等式）：证当 $x>0$ 时 $\dfrac{x}{1+x}<\ln(1+x)<x$。对 $f(t)=\ln(1+t)$ 在 $[0,x]$ 用拉格朗日：存在 $\xi\in(0,x)$ 使
+例（拉格朗日证不等式）：证当 $x>0$ 时 $\dfrac{x}{1+x}<\ln(1+x)<x$。对 $f(t)=\ln(1+t)$ 在 $[0,x]$ 用拉格朗日：存在 $\xi\in(0,x)$ 使：
 
 $$
 \ln(1+x)-\ln 1=f'(\xi)(x-0)=\frac{x}{1+\xi}
@@ -320,7 +320,7 @@ $$
 ## 泰勒公式
 
 $$
-f(x)=\sum_{k=0}^{n}\frac{f^{(k)}(x_0)}{k!}(x-x_0)^k+R_n(x)
+f(x)=\sum_{k=0}^n\frac{f^{(k)}(x_0)}{k!}(x-x_0)^k+R_n(x)
 $$
 
 $x_0=0$ 时称为 **麦克劳林公式**（Maclaurin's Formula）。
@@ -332,15 +332,15 @@ $x_0=0$ 时称为 **麦克劳林公式**（Maclaurin's Formula）。
 ### 常用麦克劳林展开
 
 $$
-e^x=\sum_{n=0}^{\infty}\frac{x^n}{n!},\quad
-\sin x=\sum_{n=0}^{\infty}\frac{(-1)^n x^{2n+1}}{(2n+1)!},\quad
-\cos x=\sum_{n=0}^{\infty}\frac{(-1)^n x^{2n}}{(2n)!}
+e^x=\sum_{n=0}^\infty\frac{x^n}{n!},
+\sin x=\sum_{n=0}^\infty\frac{(-1)^n x^{2n+1}}{(2n+1)!},
+\cos x=\sum_{n=0}^\infty\frac{(-1)^n x^{2n}}{(2n)!}
 $$
 
 $$
-\ln(1+x)=\sum_{n=1}^{\infty}\frac{(-1)^{n-1}x^n}{n},\quad
-(1+x)^a=\sum_{n=0}^{\infty}\binom{a}{n}x^n,\quad
-\frac{1}{1-x}=\sum_{n=0}^{\infty}x^n
+\ln(1+x)=\sum_{n=1}^\infty\frac{(-1)^{n-1}x^n}{n},
+(1+x)^a=\sum_{n=0}^\infty\binom{a}{n}x^n,
+\frac{1}{1-x}=\sum_{n=0}^\infty x^n
 $$
 
 ### 用泰勒展开求极限
@@ -387,7 +387,7 @@ $$
 
 例（讨论根的个数）：方程 $x^3-3x+a=0$（$a$ 为参数）有几个实根？令 $f(x)=x^3-3x+a$，$f'(x)=3x^2-3=0$ 得驻点 $x=\pm 1$，极大值 $f(-1)=2+a$、极小值 $f(1)=a-2$。曲线呈「升—降—升」，与 $x$ 轴交点数由极值符号决定：极大 $>0$ 且极小 $<0$（即 $-2<a<2$）有 $3$ 根；$a=\pm 2$ 时某极值触轴，有 $2$ 根（含一个重根）；$|a|>2$ 时仅 $1$ 根。
 
-例（凹凸性证不等式）：证 $\dfrac{e^x+e^y}{2}\ge e^{(x+y)/2}$。因 $f(t)=e^t$ 满足 $f''(t)=e^t>0$ 处处凹（形如 $\smile$），由凹函数的 **琴生不等式** $\dfrac{f(x)+f(y)}{2}\ge f\!\left(\dfrac{x+y}{2}\right)$ 即得。凹凸性把一大类「均值不等式」一句话拿下。
+例（凹凸性证不等式）：证 $\dfrac{e^x+e^y}{2}\ge e^{(x+y)/2}$。因 $f(t)=e^t$ 满足 $f''(t)=e^t>0$ 处处凹（形如 $\smile$），由凹函数的 **琴生不等式** $\dfrac{f(x)+f(y)}{2}\ge f\left(\dfrac{x+y}{2}\right)$ 即得。凹凸性把一大类「均值不等式」一句话拿下。
 
 ### 曲率
 
@@ -401,10 +401,10 @@ $$
 
 几个量由方程联系在一起、都随时间 $t$ 变化时，对约束方程两端 **关于 $t$ 求导**，就把各自的变化率联系起来——已知其中一些，可解出另一个。
 
-例（梯子下滑）：长 $5\,\mathrm{m}$ 的梯子靠墙，底端以 $1\,\mathrm{m/s}$ 远离墙脚滑动。当底端离墙 $3\,\mathrm{m}$ 时，顶端下滑多快？设底端距墙 $x$、顶端高 $y$，约束 $x^2+y^2=25$。两端对 $t$ 求导：
+例（梯子下滑）：长 $5\mathrm{m}$ 的梯子靠墙，底端以 $1\mathrm{m/s}$ 远离墙脚滑动。当底端离墙 $3\mathrm{m}$ 时，顶端下滑多快？设底端距墙 $x$、顶端高 $y$，约束 $x^2+y^2=25$。两端对 $t$ 求导：
 
 $$
 2x\frac{\mathrm{d}x}{\mathrm{d}t}+2y\frac{\mathrm{d}y}{\mathrm{d}t}=0\Rightarrow\frac{\mathrm{d}y}{\mathrm{d}t}=-\frac{x}{y}\frac{\mathrm{d}x}{\mathrm{d}t}
 $$
 
-此刻 $x=3$，$y=\sqrt{25-9}=4$，$\dfrac{\mathrm{d}x}{\mathrm{d}t}=1$，代入得 $\dfrac{\mathrm{d}y}{\mathrm{d}t}=-\dfrac34\,\mathrm{m/s}$。负号表示 $y$ 在减小，即顶端以 $\dfrac34\,\mathrm{m/s}$ 下滑。**先列几何约束、再整体对 $t$ 求导、最后代入瞬时数值——切忌一开始就代数字。**
+此刻 $x=3$，$y=\sqrt{25-9}=4$，$\dfrac{\mathrm{d}x}{\mathrm{d}t}=1$，代入得 $\dfrac{\mathrm{d}y}{\mathrm{d}t}=-\dfrac34\mathrm{m/s}$。负号表示 $y$ 在减小，即顶端以 $\dfrac34\mathrm{m/s}$ 下滑。**先列几何约束、再整体对 $t$ 求导、最后代入瞬时数值——切忌一开始就代数字。**

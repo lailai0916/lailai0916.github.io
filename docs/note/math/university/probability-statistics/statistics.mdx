@@ -43,13 +43,13 @@ $$
 
 样本的 **函数** $T(X_1,\dots,X_n)$，且 **不含未知参数**（这样才能由数据直接算出）。常见统计量：
 
-| 名称                 | 定义                                             |
-| :------------------- | :----------------------------------------------- |
-| **样本均值**         | $\bar X=\dfrac{1}{n}\sum_{i=1}^{n}X_i$           |
-| **样本方差**         | $S^2=\dfrac{1}{n-1}\sum_{i=1}^{n}(X_i-\bar X)^2$ |
-| **样本标准差**       | $S=\sqrt{S^2}$                                   |
-| **$k$ 阶样本原点矩** | $A_k=\dfrac{1}{n}\sum_{i=1}^{n}X_i^k$            |
-| **$k$ 阶样本中心矩** | $B_k=\dfrac{1}{n}\sum_{i=1}^{n}(X_i-\bar X)^k$   |
+| 名称                 | 定义                                           |
+| :------------------- | :--------------------------------------------- |
+| **样本均值**         | $\bar X=\dfrac{1}{n}\sum_{i=1}^nX_i$           |
+| **样本方差**         | $S^2=\dfrac{1}{n-1}\sum_{i=1}^n(X_i-\bar X)^2$ |
+| **样本标准差**       | $S=\sqrt{S^2}$                                 |
+| **$k$ 阶样本原点矩** | $A_k=\dfrac{1}{n}\sum_{i=1}^nX_i^k$            |
+| **$k$ 阶样本中心矩** | $B_k=\dfrac{1}{n}\sum_{i=1}^n(X_i-\bar X)^k$   |
 
 :::tip
 
@@ -66,7 +66,7 @@ $$
 把若干个独立标准正态变量 **平方求和**，就得到 **卡方分布**（Chi-squared Distribution）：
 
 $$
-\chi^2=\sum_{i=1}^{n}X_i^2\sim\chi^2(n)
+\chi^2=\sum_{i=1}^nX_i^2\sim\chi^2(n)
 $$
 
 $n$ 为 **自由度**（Degrees of Freedom）。直觉上它度量「一组标准正态数据偏离原点的总平方」，因此恒为非负、右偏。其期望方差为 $E(\chi^2)=n$，$D(\chi^2)=2n$。它天然适合刻画「方差」类的量。
@@ -97,7 +97,7 @@ $$
 
 - **标准正态**：常用 $z_{0.05}=1.645$、$z_{0.025}=1.96$、$z_{0.01}=2.326$。双侧 $95\%$ 取 $z_{0.025}=1.96$ 是最该背下来的一个。
 - **$t$ 分布**：$t_\alpha(n)$ 随自由度变化，自由度越大越接近正态。如 $t_{0.025}(9)\approx 2.262$，比正态的 $1.96$ 大（尾厚）。
-- **$\chi^2$ 与 $F$**：不对称，两侧分位数要 **分别查**，不能用对称性。如 $\chi^2_{0.025}(9)\approx 19.02$、$\chi^2_{0.975}(9)\approx 2.700$。
+- **$\chi^2$ 与 $F$**：不对称，两侧分位数要 **分别查**，不能用对称性。如 $\chi_{0.025}^2(9)\approx 19.02$、$\chi_{0.975}^2(9)\approx 2.700$。
 
 :::tip
 
@@ -110,7 +110,7 @@ $t$ 与正态对称，所以 $t_{1-\alpha}(n)=-t_\alpha(n)$，左尾可由右尾
 设 $X_1,\dots,X_n$ i.i.d. $\sim N(\mu,\sigma^2)$，则有以下核心结论：
 
 $$
-\bar X\sim N\!\left(\mu,\frac{\sigma^2}{n}\right),\quad\frac{(n-1)S^2}{\sigma^2}\sim\chi^2(n-1)
+\bar X\sim N\left(\mu,\frac{\sigma^2}{n}\right),\frac{(n-1)S^2}{\sigma^2}\sim\chi^2(n-1)
 $$
 
 其中样本均值 $\bar X$ 与样本方差 $S^2$ **相互独立**（这是正态总体特有的优良性质）。把上面两式组合、消去未知的 $\sigma$，便得到方差未知时均值推断的「主力统计量」：
@@ -124,7 +124,7 @@ $$
 例（抽样分布定理的应用）：从 $N(\mu,\sigma^2)$ 中抽 $n=16$ 个样本，已知 $\sigma=2$，求 $P(|\bar X-\mu|<1)$。$\bar X\sim N(\mu,\frac{\sigma^2}{n})=N(\mu,\frac{4}{16})$，即标准差 $\frac{\sigma}{\sqrt n}=\frac{2}{4}=0.5$。标准化：
 
 $$
-P(|\bar X-\mu|<1)=P\!\left(\left|\frac{\bar X-\mu}{0.5}\right|<2\right)=2\Phi(2)-1\approx 0.9544
+P(|\bar X-\mu|<1)=P\left(\left|\frac{\bar X-\mu}{0.5}\right|<2\right)=2\Phi(2)-1\approx 0.9544
 $$
 
 样本均值的标准差是单次的 $\frac{1}{\sqrt n}$，$n$ 越大 $\bar X$ 越贴近 $\mu$——这正是后面区间估计「样本越多区间越窄」的来源。
@@ -144,10 +144,10 @@ $$
 例（单参数矩估计）：总体 $X\sim U(0,\theta)$，由样本 $X_1,\dots,X_n$ 估 $\theta$。一阶总体矩 $E(X)=\frac\theta2$，令它等于样本一阶矩 $\bar X$：
 
 $$
-\frac\theta2=\bar X\ \Rightarrow\ \hat\theta=2\bar X
+\frac\theta2=\bar X\Rightarrow\hat\theta=2\bar X
 $$
 
-例（两参数矩估计）：总体 $X$ 期望 $\mu$、方差 $\sigma^2$ 均未知。两个参数用前两阶矩：令 $E(X)=\bar X$ 得 $\hat\mu=\bar X$；令 $E(X^2)=A_2$（样本二阶原点矩），结合 $E(X^2)=\sigma^2+\mu^2$ 得
+例（两参数矩估计）：总体 $X$ 期望 $\mu$、方差 $\sigma^2$ 均未知。两个参数用前两阶矩：令 $E(X)=\bar X$ 得 $\hat\mu=\bar X$；令 $E(X^2)=A_2$（样本二阶原点矩），结合 $E(X^2)=\sigma^2+\mu^2$ 得：
 
 $$
 \hat\sigma^2=A_2-\bar X^2=\frac1n\sum_{i=1}^n X_i^2-\bar X^2=\frac1n\sum_{i=1}^n(X_i-\bar X)^2
@@ -162,7 +162,7 @@ $$
 把样本联合概率（密度）看成参数 $\theta$ 的函数，称为 **似然函数**：
 
 $$
-L(\theta)=\prod_{i=1}^{n}f(x_i;\theta)
+L(\theta)=\prod_{i=1}^nf(x_i;\theta)
 $$
 
 使 $L(\theta)$ 最大的 $\hat\theta$ 就是极大似然估计。实际操作中，因连乘求导麻烦，常取对数把乘积变成求和，再令导数为零：
@@ -179,7 +179,7 @@ $$
 
 :::
 
-例（离散 MLE，伯努利 / 二项）：$n$ 次独立伯努利试验，观测到 $k$ 次成功，估成功率 $p$。似然是
+例（离散 MLE，伯努利 / 二项）：$n$ 次独立伯努利试验，观测到 $k$ 次成功，估成功率 $p$。似然是：
 
 $$
 L(p)=p^k(1-p)^{n-k}
@@ -188,7 +188,7 @@ $$
 取对数 $\ln L=k\ln p+(n-k)\ln(1-p)$，对 $p$ 求导令零：
 
 $$
-\frac{\mathrm{d}\ln L}{\mathrm{d}p}=\frac kp-\frac{n-k}{1-p}=0\ \Rightarrow\ k(1-p)=(n-k)p\ \Rightarrow\ \hat p=\frac kn
+\frac{\mathrm{d}\ln L}{\mathrm{d}p}=\frac kp-\frac{n-k}{1-p}=0\Rightarrow k(1-p)=(n-k)p\Rightarrow\hat p=\frac kn
 $$
 
 成功率的极大似然估计就是「样本频率」$\frac kn$，与直觉完全吻合（抛 $10$ 次 $7$ 次正面，$\hat p=0.7$）。
@@ -196,18 +196,18 @@ $$
 例（连续 MLE，指数分布）：样本 $X_1,\dots,X_n$ 来自 $E(\lambda)$，密度 $f(x;\lambda)=\lambda e^{-\lambda x}$，估 $\lambda$。似然与对数似然：
 
 $$
-L(\lambda)=\prod_{i=1}^n\lambda e^{-\lambda x_i}=\lambda^n e^{-\lambda\sum x_i},\qquad\ln L=n\ln\lambda-\lambda\sum_{i=1}^n x_i
+L(\lambda)=\prod_{i=1}^n\lambda e^{-\lambda x_i}=\lambda^n e^{-\lambda\sum x_i},\ln L=n\ln\lambda-\lambda\sum_{i=1}^n x_i
 $$
 
 求导令零：
 
 $$
-\frac{\mathrm{d}\ln L}{\mathrm{d}\lambda}=\frac n\lambda-\sum_{i=1}^n x_i=0\ \Rightarrow\ \hat\lambda=\frac{n}{\sum x_i}=\frac1{\bar X}
+\frac{\mathrm{d}\ln L}{\mathrm{d}\lambda}=\frac n\lambda-\sum_{i=1}^n x_i=0\Rightarrow\hat\lambda=\frac{n}{\sum x_i}=\frac1{\bar X}
 $$
 
 由于指数分布均值是 $\frac1\lambda$，估计「$\hat\lambda=\frac1{\bar X}$」恰是「用样本均值估总体均值」的倒数，矩估计也给出同样结果。
 
-例（连续 MLE，正态）：样本来自 $N(\mu,\sigma^2)$，对数似然
+例（连续 MLE，正态）：样本来自 $N(\mu,\sigma^2)$，对数似然：
 
 $$
 \ln L=-\frac n2\ln(2\pi\sigma^2)-\frac{1}{2\sigma^2}\sum_{i=1}^n(x_i-\mu)^2
@@ -242,31 +242,31 @@ $1-\alpha$ 称为 **置信水平**（Confidence Level），常取 $0.95$ 或 $0.
 构造区间的套路是「找一个含 $\theta$、分布已知的 **枢轴量**，反解出 $\theta$ 的范围」。正态总体均值 $\mu$ 的置信区间（方差未知，用 $\frac{\bar X-\mu}{S/\sqrt n}\sim t(n-1)$）：
 
 $$
-\left[\bar X-\frac{S}{\sqrt n}t_{\alpha/2}(n-1),\ \bar X+\frac{S}{\sqrt n}t_{\alpha/2}(n-1)\right]
+\left[\bar X-\frac{S}{\sqrt n}t_{\alpha/2}(n-1),\bar X+\frac{S}{\sqrt n}t_{\alpha/2}(n-1)\right]
 $$
 
 方差已知时把 $S$、$t$ 分位数换成 $\sigma$、标准正态分位数 $z_{\alpha/2}$ 即可。
 
-例（方差已知，求 $\mu$ 的置信区间）：从 $N(\mu,\sigma^2)$ 抽 $n=16$，已知 $\sigma=2$，算得 $\bar X=10$，求 $\mu$ 的 $95\%$ 置信区间。枢轴量 $\frac{\bar X-\mu}{\sigma/\sqrt n}\sim N(0,1)$，$z_{0.025}=1.96$，半宽
+例（方差已知，求 $\mu$ 的置信区间）：从 $N(\mu,\sigma^2)$ 抽 $n=16$，已知 $\sigma=2$，算得 $\bar X=10$，求 $\mu$ 的 $95\%$ 置信区间。枢轴量 $\frac{\bar X-\mu}{\sigma/\sqrt n}\sim N(0,1)$，$z_{0.025}=1.96$，半宽：
 
 $$
 \frac{\sigma}{\sqrt n}z_{0.025}=\frac{2}{4}\times 1.96=0.98
 $$
 
-区间为 $[10-0.98,\ 10+0.98]=[9.02,\ 10.98]$。
+区间为 $[10-0.98,10+0.98]=[9.02,10.98]$。
 
-例（方差未知，求 $\mu$ 的置信区间）：抽 $n=9$，算得 $\bar X=20$、$S=3$，求 $\mu$ 的 $95\%$ 置信区间。方差未知改用 $t$，自由度 $n-1=8$，$t_{0.025}(8)\approx 2.306$，半宽
+例（方差未知，求 $\mu$ 的置信区间）：抽 $n=9$，算得 $\bar X=20$、$S=3$，求 $\mu$ 的 $95\%$ 置信区间。方差未知改用 $t$，自由度 $n-1=8$，$t_{0.025}(8)\approx 2.306$，半宽：
 
 $$
 \frac{S}{\sqrt n}t_{0.025}(8)=\frac{3}{3}\times 2.306=2.306
 $$
 
-区间为 $[20-2.306,\ 20+2.306]=[17.69,\ 22.31]$。同样置信水平下 $t$ 区间比正态略宽，这是「方差未知」付出的代价。
+区间为 $[20-2.306,20+2.306]=[17.69,22.31]$。同样置信水平下 $t$ 区间比正态略宽，这是「方差未知」付出的代价。
 
-例（求 $\sigma^2$ 的置信区间）：续上 $n=9$、$S^2=9$，求 $\sigma^2$ 的 $95\%$ 置信区间。枢轴量 $\frac{(n-1)S^2}{\sigma^2}\sim\chi^2(8)$，查 $\chi^2_{0.025}(8)\approx 17.53$、$\chi^2_{0.975}(8)\approx 2.180$。由 $\chi^2_{0.975}\le\frac{(n-1)S^2}{\sigma^2}\le\chi^2_{0.025}$ 反解 $\sigma^2$（注意大分位数对应区间下限）：
+例（求 $\sigma^2$ 的置信区间）：续上 $n=9$、$S^2=9$，求 $\sigma^2$ 的 $95\%$ 置信区间。枢轴量 $\frac{(n-1)S^2}{\sigma^2}\sim\chi^2(8)$，查 $\chi_{0.025}^2(8)\approx 17.53$、$\chi_{0.975}^2(8)\approx 2.180$。由 $\chi_{0.975}^2\le\frac{(n-1)S^2}{\sigma^2}\le\chi_{0.025}^2$ 反解 $\sigma^2$（注意大分位数对应区间下限）：
 
 $$
-\left[\frac{(n-1)S^2}{\chi^2_{0.025}(8)},\ \frac{(n-1)S^2}{\chi^2_{0.975}(8)}\right]=\left[\frac{72}{17.53},\ \frac{72}{2.180}\right]\approx[4.11,\ 33.0]
+\left[\frac{(n-1)S^2}{\chi_{0.025}^2(8)},\frac{(n-1)S^2}{\chi_{0.975}^2(8)}\right]=\left[\frac{72}{17.53},\frac{72}{2.180}\right]\approx[4.11,33.0]
 $$
 
 $\chi^2$ 不对称，所以方差的置信区间也不对称，且两个分位数必须分别查。
@@ -341,7 +341,7 @@ $$
 
 1. **假设**：$H_0:\sigma^2=0.04$，$H_1:\sigma^2>0.04$。
 2. **统计量**：$\chi^2=\dfrac{(n-1)S^2}{\sigma_0^2}=\dfrac{9\times 0.08}{0.04}=18$，服从 $\chi^2(9)$。
-3. **拒绝域**：右单侧，$\chi^2>\chi^2_{0.05}(9)\approx 16.92$。
+3. **拒绝域**：右单侧，$\chi^2>\chi_{0.05}^2(9)\approx 16.92$。
 4. **结论**：$18>16.92$，**拒绝 $H_0$**，方差显著偏大，工艺需检修。
 
 整套流程都是同一个模板——**写假设、构造在 $H_0$ 下分布已知的统计量、由 $\alpha$ 划定拒绝域、代入数据看是否落入**。换检验只是换统计量和分布，骨架不变。

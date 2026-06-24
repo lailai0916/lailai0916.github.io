@@ -45,7 +45,7 @@ title: 随机事件与概率
 事件运算满足与集合相同的 **交换律、结合律、分配律**，以及 **德摩根律**：
 
 $$
-\overline{A\cup B}=\bar A\cap\bar B,\quad\overline{A\cap B}=\bar A\cup\bar B
+\overline{A\cup B}=\bar A\cap\bar B,\overline{A\cap B}=\bar A\cup\bar B
 $$
 
 例：把「$A,B,C$ 中恰好发生一个」翻译成事件运算。「恰好 $A$ 发生」是 $A\bar B\bar C$，三种情形互斥，相加得 $A\bar B\bar C\cup\bar A B\bar C\cup\bar A\bar B C$。再看「至多发生一个」，就是「恰好零个」加「恰好一个」，即 $\bar A\bar B\bar C\cup A\bar B\bar C\cup\bar A B\bar C\cup\bar A\bar B C$。把自然语言里的「恰好 / 至少 / 至多」逐字拆成 $\bar{\phantom A}$ 与 $\cup$ 的组合，是后面计数的前提。
@@ -64,14 +64,14 @@ $$
 
 1. **非负性**：$P(A)\ge 0$。
 2. **规范性**：$P(\Omega)=1$。
-3. **可列可加性**：$A_1,A_2,\dots$ 两两互斥时，$P\!\left(\bigcup A_i\right)=\sum P(A_i)$。
+3. **可列可加性**：$A_1,A_2,\dots$ 两两互斥时，$P\left(\bigcup A_i\right)=\sum P(A_i)$。
 
 这三条看似简单，却是整个概率论的地基：所有后续公式都从它们推出。柯尔莫哥洛夫（Kolmogorov）的贡献，是把「概率」从含糊的直觉变成了一个严格的 **测度**。
 
 ### 基本性质
 
 $$
-P(\varnothing)=0,\quad P(\bar A)=1-P(A)
+P(\varnothing)=0,P(\bar A)=1-P(A)
 $$
 
 $$
@@ -79,7 +79,7 @@ P(A\cup B)=P(A)+P(B)-P(AB)
 $$
 
 $$
-A\subseteq B\Rightarrow P(A)\le P(B),\quad P(B\setminus A)=P(B)-P(AB)
+A\subseteq B\Rightarrow P(A)\le P(B),P(B\setminus A)=P(B)-P(AB)
 $$
 
 例：已知 $P(A)=0.6$、$P(B)=0.7$、$P(AB)=0.5$，求 $P(\bar A\bar B)$ 与 $P(A\bar B)$。先算 $P(A\cup B)=0.6+0.7-0.5=0.8$，由德摩根律 $P(\bar A\bar B)=P(\overline{A\cup B})=1-0.8=0.2$；再由差事件 $P(A\bar B)=P(A)-P(AB)=0.6-0.5=0.1$。这两步「先并后补、先交后差」是处理两事件概率的标准拆法。
@@ -95,7 +95,7 @@ $$
 加法公式推广到 $n$ 个事件，就是 **容斥原理**（Inclusion-Exclusion Principle）：
 
 $$
-P\!\left(\bigcup_{i=1}^{n}A_i\right)=\sum_i P(A_i)-\sum_{i<j}P(A_iA_j)+\sum_{i<j<k}P(A_iA_jA_k)-\cdots+(-1)^{n-1}P(A_1\cdots A_n)
+P\left(\bigcup_{i=1}^nA_i\right)=\sum_i P(A_i)-\sum_{i<j}P(A_iA_j)+\sum_{i<j<k}P(A_iA_jA_k)-\cdots+(-1)^{n-1}P(A_1\cdots A_n)
 $$
 
 直觉是「加多了再减、减多了再加」：先把每个事件的概率都加上，重叠部分被算了两次，于是减去两两交；但这样三重交又被多减了，再加回来……如此交替修正到底。
@@ -103,10 +103,10 @@ $$
 例（配对问题，又称装错信封）：$n$ 封信随机塞进 $n$ 个写好地址的信封，求「没有一封塞对」的概率。设 $A_i$ 为「第 $i$ 封塞对」，则「至少一封塞对」是 $\bigcup A_i$。每个 $P(A_i)=\frac{(n-1)!}{n!}=\frac1n$，两两交 $P(A_iA_j)=\frac{(n-2)!}{n!}$，共 $\binom n2$ 项，依此类推第 $k$ 重交共 $\binom nk$ 项、每项 $\frac{(n-k)!}{n!}$，乘起来恰为 $\frac{1}{k!}$。代入容斥：
 
 $$
-P\!\left(\bigcup A_i\right)=\sum_{k=1}^{n}(-1)^{k-1}\frac{1}{k!}=1-\frac{1}{2!}+\frac{1}{3!}-\cdots
+P\left(\bigcup A_i\right)=\sum_{k=1}^n(-1)^{k-1}\frac{1}{k!}=1-\frac{1}{2!}+\frac{1}{3!}-\cdots
 $$
 
-于是「全错」的概率 $P(\bar A_1\cdots\bar A_n)=\sum_{k=0}^{n}\frac{(-1)^k}{k!}\to e^{-1}\approx 0.368$。无论信有多少封，全部塞错的概率都稳定在 $\frac1e$ 附近，这是个出人意料的常数。
+于是「全错」的概率 $P(\bar A_1\cdots\bar A_n)=\sum_{k=0}^n\frac{(-1)^k}{k!}\to e^{-1}\approx 0.368$。无论信有多少封，全部塞错的概率都稳定在 $\frac1e$ 附近，这是个出人意料的常数。
 
 ## 古典概型
 
@@ -125,7 +125,7 @@ $$
 
 放回时同色概率更大，因为可以「同一个球取两次」。注意分子分母必须统一口径：不放回都用组合，放回都用有序对。
 
-例（分组问题）：把 $52$ 张牌平分给 $4$ 人，每人 $13$ 张，求「每人恰好一张 A」的概率。分母是把 $52$ 张分成有序四堆的方法数 $\dfrac{52!}{(13!)^4}$。分子：$4$ 张 A 各去一人有 $4!$ 种分法，其余 $48$ 张牌每人补 $12$ 张为 $\dfrac{48!}{(12!)^4}$ 种，相乘。化简得
+例（分组问题）：把 $52$ 张牌平分给 $4$ 人，每人 $13$ 张，求「每人恰好一张 A」的概率。分母是把 $52$ 张分成有序四堆的方法数 $\dfrac{52!}{(13!)^4}$。分子：$4$ 张 A 各去一人有 $4!$ 种分法，其余 $48$ 张牌每人补 $12$ 张为 $\dfrac{48!}{(12!)^4}$ 种，相乘。化简得：
 
 $$
 P=\frac{4!\cdot\dfrac{48!}{(12!)^4}}{\dfrac{52!}{(13!)^4}}=\frac{4!\cdot 13^4}{52\cdot 51\cdot 50\cdot 49}\approx 0.105
@@ -157,7 +157,7 @@ $$
 P=\frac{60^2-2\cdot\frac12\cdot 40^2}{60^2}=\frac{3600-1600}{3600}=\frac{5}{9}
 $$
 
-例（蒲丰投针）：平面上画间距为 $d$ 的平行线，把长 $l\le d$ 的针随机抛下，求它与某条线相交的概率。设针中点到最近线的距离 $x\in[0,\frac d2]$、针与线的夹角 $\theta\in[0,\pi]$ 都均匀。相交条件是 $x\le\frac l2\sin\theta$，在 $x$-$\theta$ 矩形 $[0,\frac d2]\times[0,\pi]$ 中，事件区域的面积是 $\int_0^\pi\frac l2\sin\theta\,\mathrm{d}\theta=l$，矩形面积 $\frac{\pi d}{2}$，于是
+例（蒲丰投针）：平面上画间距为 $d$ 的平行线，把长 $l\le d$ 的针随机抛下，求它与某条线相交的概率。设针中点到最近线的距离 $x\in[0,\frac d2]$、针与线的夹角 $\theta\in[0,\pi]$ 都均匀。相交条件是 $x\le\frac l2\sin\theta$，在 $x$-$\theta$ 矩形 $[0,\frac d2]\times[0,\pi]$ 中，事件区域的面积是 $\int_0^\pi\frac l2\sin\theta\mathrm{d}\theta=l$，矩形面积 $\frac{\pi d}{2}$，于是：
 
 $$
 P=\frac{l}{\frac{\pi d}{2}}=\frac{2l}{\pi d}
@@ -202,7 +202,7 @@ $$
 设 $B_1,\dots,B_n$ 为 $\Omega$ 的一个 **划分**（两两互斥，并为 $\Omega$）：
 
 $$
-P(A)=\sum_{i=1}^{n}P(B_i)P(A\mid B_i)
+P(A)=\sum_{i=1}^nP(B_i)P(A\mid B_i)
 $$
 
 :::tip
@@ -224,7 +224,7 @@ $$
 ### 贝叶斯公式
 
 $$
-P(B_k\mid A)=\frac{P(B_k)P(A\mid B_k)}{\sum_{i=1}^{n}P(B_i)P(A\mid B_i)}
+P(B_k\mid A)=\frac{P(B_k)P(A\mid B_k)}{\sum_{i=1}^nP(B_i)P(A\mid B_i)}
 $$
 
 :::tip

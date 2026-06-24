@@ -26,14 +26,14 @@ $n$ 维 **列向量** $\vec\alpha=(a_1,a_2,\dots,a_n)^T$，可以看成 $\mathbb
 ### 线性运算
 
 $$
-\vec\alpha+\vec\beta,\qquad k\vec\alpha
+\vec\alpha+\vec\beta,k\vec\alpha
 $$
 
 加法是「箭头首尾相接」（平行四边形法则），数乘是「沿原方向伸缩」。这两种运算满足结合律、交换律、分配律。
 
 ### 线性组合与线性表示
 
-若存在数 $k_1,\dots,k_s$ 使
+若存在数 $k_1,\dots,k_s$ 使：
 
 $$
 \vec\beta=k_1\vec\alpha_1+k_2\vec\alpha_2+\dots+k_s\vec\alpha_s
@@ -47,7 +47,7 @@ $$
 
 ### 定义
 
-向量组 $\vec\alpha_1,\dots,\vec\alpha_s$ 称为 **线性相关**（Linearly Dependent），若存在 **不全为零** 的数 $k_1,\dots,k_s$ 使
+向量组 $\vec\alpha_1,\dots,\vec\alpha_s$ 称为 **线性相关**（Linearly Dependent），若存在 **不全为零** 的数 $k_1,\dots,k_s$ 使：
 
 $$
 k_1\vec\alpha_1+k_2\vec\alpha_2+\dots+k_s\vec\alpha_s=\vec 0
@@ -71,7 +71,7 @@ $$
 下面几句说的是同一件事：
 
 $$
-\vec\alpha_1,\dots,\vec\alpha_s\ \text{线性相关}\iff\text{至少一个向量能由其余线性表示}\iff r(\vec\alpha_1,\dots,\vec\alpha_s)<s
+\vec\alpha_1,\dots,\vec\alpha_s\text{线性相关}\iff\text{至少一个向量能由其余线性表示}\iff r(\vec\alpha_1,\dots,\vec\alpha_s)<s
 $$
 
 反过来，线性无关 $\iff$ 矩阵 $(\vec\alpha_1,\dots,\vec\alpha_s)$ 的秩 $=s$ $\iff$ 齐次方程组 $(\vec\alpha_1,\dots,\vec\alpha_s)\vec x=\vec 0$ 只有零解。
@@ -113,7 +113,7 @@ $$
   2 & 4 & 1 & 3 \\
   1 & 2 & 3 & 4
 \end{pmatrix}
-\xrightarrow{r_2-2r_1,\ r_3-r_1}
+\xrightarrow{r_2-2r_1,r_3-r_1}
 \begin{pmatrix}
   1 & 2 & 1 & 2 \\
   0 & 0 & -1 & -1 \\
@@ -141,7 +141,7 @@ $$
 A\vec x=\vec b
 $$
 
-$A$ 为 $m\times n$ **系数矩阵**，$\vec b$ 为 $m$ 维常数列。把 $\vec b$ 拼到 $A$ 右边得到 **增广矩阵** $\bar A=(A\,|\,\vec b)$。$\vec b=\vec 0$ 时称 **齐次**，否则称 **非齐次**。
+$A$ 为 $m\times n$ **系数矩阵**，$\vec b$ 为 $m$ 维常数列。把 $\vec b$ 拼到 $A$ 右边得到 **增广矩阵** $\bar A=(A|\vec b)$。$\vec b=\vec 0$ 时称 **齐次**，否则称 **非齐次**。
 
 ### 高斯消元法
 
@@ -173,7 +173,7 @@ $$
   2 & 3 & 1 & 11 \\
   1 & -1 & 2 & 5
 \end{array}\right)
-\xrightarrow{r_2-2r_1,\ r_3-r_1}
+\xrightarrow{r_2-2r_1,r_3-r_1}
 \left(\begin{array}{ccc|c}
   1 & 1 & 1 & 6 \\
   0 & 1 & -1 & -1 \\
@@ -203,14 +203,14 @@ $$
   1 & 1 & 1 & 2 \\
   0 & -1 & -3 & -3
 \end{array}\right)
-\xrightarrow{-r_2,\ r_1-r_2}
+\xrightarrow{-r_2,r_1-r_2}
 \left(\begin{array}{ccc|c}
   1 & 0 & -2 & -1 \\
   0 & 1 & 3 & 3
 \end{array}\right)
 $$
 
-$r(A)=r(\bar A)=2<n=3$，有 $n-r=1$ 个自由变量。取 $x_3=t$ 为自由变量，主变量 $x_1=-1+2t$、$x_2=3-3t$，通解
+$r(A)=r(\bar A)=2<n=3$，有 $n-r=1$ 个自由变量。取 $x_3=t$ 为自由变量，主变量 $x_1=-1+2t$、$x_2=3-3t$，通解：
 
 $$
 \vec x=\begin{pmatrix}
@@ -221,7 +221,7 @@ $$
   2 \\
   -3 \\
   1
-\end{pmatrix},\quad t\in\mathbb R
+\end{pmatrix},t\in\mathbb R
 $$
 
 前一项是特解，后一项是对应齐次方程的解，正合「特解 $+$ 齐次通解」的结构。
@@ -233,7 +233,7 @@ $$
 设 $r(A)=r<n$，则解集是一个 $n-r$ 维的子空间。能找到 $n-r$ 个 **线性无关** 的解 $\vec\xi_1,\dots,\vec\xi_{n-r}$，它们构成 **基础解系**（Fundamental System of Solutions），通解是它们的任意线性组合：
 
 $$
-\vec x=c_1\vec\xi_1+c_2\vec\xi_2+\dots+c_{n-r}\vec\xi_{n-r},\qquad c_i\in\mathbb R\ \text{任意}
+\vec x=c_1\vec\xi_1+c_2\vec\xi_2+\dots+c_{n-r}\vec\xi_{n-r},c_i\in\mathbb R\text{任意}
 $$
 
 基础解系就是解空间的一组 **基**，$n-r$ 就是它的维数。
@@ -250,7 +250,7 @@ $$
   1 & 1 & -1 & 1 \\
   0 & -1 & 3 & -3
 \end{pmatrix}
-\xrightarrow{-r_2,\ r_1-r_2}
+\xrightarrow{-r_2,r_1-r_2}
 \begin{pmatrix}
   1 & 0 & 2 & -2 \\
   0 & 1 & -3 & 3
@@ -265,7 +265,7 @@ $$
   3 \\
   1 \\
   0
-\end{pmatrix},\qquad
+\end{pmatrix},
 \vec\xi_2=\begin{pmatrix}
   2 \\
   -3 \\
@@ -330,7 +330,7 @@ $$
 \begin{cases}
   x_1+x_2=3 \\
   x_1-x_2=1
-\end{cases}\Rightarrow x_1=2,\ x_2=1
+\end{cases}\Rightarrow x_1=2,x_2=1
 $$
 
 故 $\vec\gamma$ 在基 $\set{\vec\beta_1,\vec\beta_2}$ 下的坐标是 $(2,1)^T$，即 $\vec\gamma=2\vec\beta_1+\vec\beta_2$。
