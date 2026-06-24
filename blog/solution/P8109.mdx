@@ -21,7 +21,7 @@ $n$ 道题，第 $i$ 道有 $a_i$ 支队伍通过；$n$ 种颜色的气球，第
 用邻项交换证明。取任意 $x<y$，由单调性有 $a_x\le a_y$ 且 $b_x\le b_y$。比较交换 $b_x$、$b_y$ 前后的贡献：
 
 $$
-\min(a_x,b_x)+\min(a_y,b_y)\ge\min(a_x,b_y)+\min(a_y,b_x).
+\min(a_x,b_x)+\min(a_y,b_y)\ge\min(a_x,b_y)+\min(a_y,b_x)
 $$
 
 令 $g(t)=\min(a_y,t)-\min(a_x,t)$。因为 $a_x\le a_y$，$g$ 关于 $t$ 单调不减，故 $g(b_x)\le g(b_y)$，移项即得上式。任何交换都不增大总和，所以原序就是最优配对。

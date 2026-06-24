@@ -53,82 +53,208 @@ type WeatherCurrent = {
   wind_speed_10m: number;
 };
 
-const WEATHER_LABELS = {
-  clear: translate({ id: 'pages.moments.weather.clear', message: 'Clear' }),
-  mainlyClear: translate({
-    id: 'pages.moments.weather.mainlyClear',
-    message: 'Mainly clear',
-  }),
-  partlyCloudy: translate({
-    id: 'pages.moments.weather.partlyCloudy',
-    message: 'Partly cloudy',
-  }),
-  overcast: translate({
-    id: 'pages.moments.weather.overcast',
-    message: 'Overcast',
-  }),
-  fog: translate({ id: 'pages.moments.weather.fog', message: 'Fog' }),
-  depositingRimeFog: translate({
-    id: 'pages.moments.weather.depositingRimeFog',
-    message: 'Depositing rime fog',
-  }),
-  drizzle: translate({
-    id: 'pages.moments.weather.drizzle',
-    message: 'Drizzle',
-  }),
-  lightRain: translate({
-    id: 'pages.moments.weather.lightRain',
-    message: 'Light rain',
-  }),
-  moderateRain: translate({
-    id: 'pages.moments.weather.moderateRain',
-    message: 'Moderate rain',
-  }),
-  heavyRain: translate({
-    id: 'pages.moments.weather.heavyRain',
-    message: 'Heavy rain',
-  }),
-  lightSnow: translate({
-    id: 'pages.moments.weather.lightSnow',
-    message: 'Light snow',
-  }),
-  moderateSnow: translate({
-    id: 'pages.moments.weather.moderateSnow',
-    message: 'Moderate snow',
-  }),
-  heavySnow: translate({
-    id: 'pages.moments.weather.heavySnow',
-    message: 'Heavy snow',
-  }),
-  rainShowers: translate({
-    id: 'pages.moments.weather.rainShowers',
-    message: 'Rain showers',
-  }),
-  thunderstorm: translate({
-    id: 'pages.moments.weather.thunderstorm',
-    message: 'Thunderstorm',
-  }),
+// WMO weather interpretation codes (WW). Labels are Open-Meteo's official
+// descriptions, expanded to one entry per code. https://open-meteo.com/en/docs
+const WMO: Record<number, { text: string; icon: string }> = {
+  0: {
+    text: translate({
+      id: 'pages.moments.weather.clearSky',
+      message: 'Clear sky',
+    }),
+    icon: 'lucide:sun',
+  },
+  1: {
+    text: translate({
+      id: 'pages.moments.weather.mainlyClear',
+      message: 'Mainly clear',
+    }),
+    icon: 'lucide:cloud-sun',
+  },
+  2: {
+    text: translate({
+      id: 'pages.moments.weather.partlyCloudy',
+      message: 'Partly cloudy',
+    }),
+    icon: 'lucide:cloud',
+  },
+  3: {
+    text: translate({
+      id: 'pages.moments.weather.overcast',
+      message: 'Overcast',
+    }),
+    icon: 'lucide:cloudy',
+  },
+  45: {
+    text: translate({ id: 'pages.moments.weather.fog', message: 'Fog' }),
+    icon: 'lucide:cloud-fog',
+  },
+  48: {
+    text: translate({
+      id: 'pages.moments.weather.depositingRimeFog',
+      message: 'Depositing rime fog',
+    }),
+    icon: 'lucide:cloud-fog',
+  },
+  51: {
+    text: translate({
+      id: 'pages.moments.weather.lightDrizzle',
+      message: 'Light drizzle',
+    }),
+    icon: 'lucide:cloud-drizzle',
+  },
+  53: {
+    text: translate({
+      id: 'pages.moments.weather.moderateDrizzle',
+      message: 'Moderate drizzle',
+    }),
+    icon: 'lucide:cloud-drizzle',
+  },
+  55: {
+    text: translate({
+      id: 'pages.moments.weather.denseDrizzle',
+      message: 'Dense drizzle',
+    }),
+    icon: 'lucide:cloud-drizzle',
+  },
+  56: {
+    text: translate({
+      id: 'pages.moments.weather.lightFreezingDrizzle',
+      message: 'Light freezing drizzle',
+    }),
+    icon: 'lucide:cloud-drizzle',
+  },
+  57: {
+    text: translate({
+      id: 'pages.moments.weather.denseFreezingDrizzle',
+      message: 'Dense freezing drizzle',
+    }),
+    icon: 'lucide:cloud-drizzle',
+  },
+  61: {
+    text: translate({
+      id: 'pages.moments.weather.slightRain',
+      message: 'Slight rain',
+    }),
+    icon: 'lucide:cloud-rain',
+  },
+  63: {
+    text: translate({
+      id: 'pages.moments.weather.moderateRain',
+      message: 'Moderate rain',
+    }),
+    icon: 'lucide:cloud-rain',
+  },
+  65: {
+    text: translate({
+      id: 'pages.moments.weather.heavyRain',
+      message: 'Heavy rain',
+    }),
+    icon: 'lucide:cloud-rain-wind',
+  },
+  66: {
+    text: translate({
+      id: 'pages.moments.weather.lightFreezingRain',
+      message: 'Light freezing rain',
+    }),
+    icon: 'lucide:cloud-rain',
+  },
+  67: {
+    text: translate({
+      id: 'pages.moments.weather.heavyFreezingRain',
+      message: 'Heavy freezing rain',
+    }),
+    icon: 'lucide:cloud-rain-wind',
+  },
+  71: {
+    text: translate({
+      id: 'pages.moments.weather.slightSnowFall',
+      message: 'Slight snow fall',
+    }),
+    icon: 'lucide:cloud-snow',
+  },
+  73: {
+    text: translate({
+      id: 'pages.moments.weather.moderateSnowFall',
+      message: 'Moderate snow fall',
+    }),
+    icon: 'lucide:cloud-snow',
+  },
+  75: {
+    text: translate({
+      id: 'pages.moments.weather.heavySnowFall',
+      message: 'Heavy snow fall',
+    }),
+    icon: 'lucide:cloud-snow',
+  },
+  77: {
+    text: translate({
+      id: 'pages.moments.weather.snowGrains',
+      message: 'Snow grains',
+    }),
+    icon: 'lucide:cloud-snow',
+  },
+  80: {
+    text: translate({
+      id: 'pages.moments.weather.slightRainShowers',
+      message: 'Slight rain showers',
+    }),
+    icon: 'lucide:cloud-rain',
+  },
+  81: {
+    text: translate({
+      id: 'pages.moments.weather.moderateRainShowers',
+      message: 'Moderate rain showers',
+    }),
+    icon: 'lucide:cloud-rain',
+  },
+  82: {
+    text: translate({
+      id: 'pages.moments.weather.violentRainShowers',
+      message: 'Violent rain showers',
+    }),
+    icon: 'lucide:cloud-rain-wind',
+  },
+  85: {
+    text: translate({
+      id: 'pages.moments.weather.slightSnowShowers',
+      message: 'Slight snow showers',
+    }),
+    icon: 'lucide:cloud-snow',
+  },
+  86: {
+    text: translate({
+      id: 'pages.moments.weather.heavySnowShowers',
+      message: 'Heavy snow showers',
+    }),
+    icon: 'lucide:cloud-snow',
+  },
+  95: {
+    text: translate({
+      id: 'pages.moments.weather.thunderstorm',
+      message: 'Thunderstorm',
+    }),
+    icon: 'lucide:cloud-lightning',
+  },
+  96: {
+    text: translate({
+      id: 'pages.moments.weather.thunderstormSlightHail',
+      message: 'Thunderstorm with slight hail',
+    }),
+    icon: 'lucide:cloud-lightning',
+  },
+  99: {
+    text: translate({
+      id: 'pages.moments.weather.thunderstormHeavyHail',
+      message: 'Thunderstorm with heavy hail',
+    }),
+    icon: 'lucide:cloud-lightning',
+  },
 };
 
-const WMO: Record<number, { text: string; icon: string }> = {
-  0: { text: WEATHER_LABELS.clear, icon: 'lucide:sun' },
-  1: { text: WEATHER_LABELS.mainlyClear, icon: 'lucide:cloud-sun' },
-  2: { text: WEATHER_LABELS.partlyCloudy, icon: 'lucide:cloud' },
-  3: { text: WEATHER_LABELS.overcast, icon: 'lucide:cloudy' },
-  45: { text: WEATHER_LABELS.fog, icon: 'lucide:cloud-fog' },
-  48: { text: WEATHER_LABELS.depositingRimeFog, icon: 'lucide:cloud-fog' },
-  51: { text: WEATHER_LABELS.drizzle, icon: 'lucide:cloud-drizzle' },
-  53: { text: WEATHER_LABELS.drizzle, icon: 'lucide:cloud-drizzle' },
-  55: { text: WEATHER_LABELS.drizzle, icon: 'lucide:cloud-drizzle' },
-  61: { text: WEATHER_LABELS.lightRain, icon: 'lucide:cloud-rain' },
-  63: { text: WEATHER_LABELS.moderateRain, icon: 'lucide:cloud-rain' },
-  65: { text: WEATHER_LABELS.heavyRain, icon: 'lucide:cloud-rain-wind' },
-  71: { text: WEATHER_LABELS.lightSnow, icon: 'lucide:cloud-snow' },
-  73: { text: WEATHER_LABELS.moderateSnow, icon: 'lucide:cloud-snow' },
-  75: { text: WEATHER_LABELS.heavySnow, icon: 'lucide:cloud-snow' },
-  80: { text: WEATHER_LABELS.rainShowers, icon: 'lucide:cloud-rain' },
-  95: { text: WEATHER_LABELS.thunderstorm, icon: 'lucide:cloud-lightning' },
-};
+const WEATHER_UNKNOWN = translate({
+  id: 'pages.moments.weather.unknown',
+  message: 'Unknown',
+});
 
 function useHangzhouWeather(): WeatherCurrent | null {
   const [w, setW] = useState<WeatherCurrent | null>(null);
@@ -158,7 +284,7 @@ export default function Moments() {
   const hasMore = visibleCount < totalCount;
   const weatherInfo = weather
     ? (WMO[weather.weather_code] ?? {
-        text: `code ${weather.weather_code}`,
+        text: WEATHER_UNKNOWN,
         icon: 'lucide:cloud',
       })
     : null;
