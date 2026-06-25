@@ -70,7 +70,7 @@ export const RESOURCE_LIST: ResourceCategoryItem[] = [
   },
   {
     title: 'AI 平台与生态',
-    icon: 'lucide:microscope',
+    icon: 'lucide:brain-circuit',
     resources: [
       {
         title: 'Hugging Face',
@@ -563,7 +563,7 @@ export const RESOURCE_LIST: ResourceCategoryItem[] = [
   },
   {
     title: '测试与基准',
-    icon: 'lucide:bar-chart-2',
+    icon: 'lucide:gauge',
     resources: [
       {
         title: 'Speedtest',
@@ -650,7 +650,7 @@ export const RESOURCE_LIST: ResourceCategoryItem[] = [
   },
   {
     title: '网页游戏',
-    icon: 'lucide:gamepad',
+    icon: 'lucide:gamepad-2',
     resources: [
       {
         title: 'CrazyGames',
@@ -756,7 +756,7 @@ export const RESOURCE_LIST: ResourceCategoryItem[] = [
   },
   {
     title: '实用工具',
-    icon: 'lucide:bolt',
+    icon: 'lucide:wrench',
     resources: [
       {
         title: '维基百科',

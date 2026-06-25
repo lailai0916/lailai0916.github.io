@@ -368,7 +368,7 @@ function ExperimentalFeatures() {
         id: 'pages.settings.item.experimental.option.classicDesign',
         message: 'Classic Design',
       }),
-      icon: 'lucide:palette',
+      icon: 'lucide:paintbrush',
     },
     {
       key: 'debugMode' as const,

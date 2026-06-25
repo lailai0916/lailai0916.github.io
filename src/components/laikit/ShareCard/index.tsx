@@ -58,7 +58,11 @@ const SOURCE_RULES: Array<{ test: RegExp; label: string; icon: string }> = [
     label: '知乎',
     icon: 'simple-icons:zhihu',
   },
-  { test: /(?:^|\.)luogu\.com\.cn$/i, label: '洛谷', icon: 'lucide:code' },
+  {
+    test: /(?:^|\.)luogu\.com\.cn$/i,
+    label: '洛谷',
+    icon: 'simple-icons:luogu',
+  },
   {
     test: /(?:^|\.)codeforces\.com$/i,
     label: 'Codeforces',
