@@ -138,7 +138,7 @@ export default function Home(): ReactNode {
         id: 'pages.home.tag.mbti',
         message: 'INTJ',
       }),
-      icon: 'lucide:fingerprint',
+      icon: 'lucide:cpu',
     },
   ];
   const identities = [

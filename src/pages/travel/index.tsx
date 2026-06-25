@@ -58,7 +58,7 @@ export default function Travel(): ReactNode {
                 id: 'pages.travel.datacard.years',
                 message: 'Years',
               }),
-              icon: 'lucide:route',
+              icon: 'lucide:calendar-days',
             },
           ]}
         />
