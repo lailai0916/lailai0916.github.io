@@ -7,7 +7,7 @@ paths:
 
 每篇 `blog/solution/<PID>.mdx` 在**洛谷专栏有一份对外拷贝**（frontmatter 的 `lid` 指向它）。网站 mdx 是**唯一权威源**；改了正文，洛谷那份就过期了，需要同步。
 
-同步能力在 lailai.skill：脚本 `.claude/skills/lailai-skill/tools/luogu-publish/`，详见 [`references/luogu-publish.md`](../skills/lailai-skill/references/luogu-publish.md)。`<TOOL>` 指 `.claude/skills/lailai-skill/tools/luogu-publish/publish.py`。
+同步能力在 lailai.skill：脚本 `.claude/skills/lailai-skill/tools/luogu/`，详见 [`references/luogu-publish.md`](../skills/lailai-skill/references/luogu-publish.md)。`<TOOL>` 指 `.claude/skills/lailai-skill/tools/luogu/publish.py`。
 
 ## 改完题解就主动同步（不必等 lailai 提醒）
 
