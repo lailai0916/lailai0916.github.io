@@ -28,6 +28,9 @@
   min-width: 0;
   text-decoration: none !important;
   color: var(--ifm-font-color-base);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .recentLink:hover {

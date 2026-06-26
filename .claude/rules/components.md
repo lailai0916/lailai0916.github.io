@@ -60,6 +60,17 @@ Every stylesheet follows one structure. The overriding constraint is that reorga
 - **Cascade-safety check before any reorder.** Two rules of equal specificity setting the same property on an element that can carry both must keep their original relative order: base before modifier (`.dot` before `.dotUp`, `.item`/`.tab` before `.itemActive`/`.tabActive`, `.collapse` before `.collapseOpen`, `.pageNav` before `.pageNavDisabled`), and a shared declaration before a single override (GitHub's shared icon-font rule before `.githubLogo`'s own `font-size`). If JSX order would flip such a pair, keep the cascade order instead.
 - **Clean up redundancy.** Delete dead/unused stylesheets (e.g. an orphaned swizzle CSS not imported anywhere) and merge duplicate selectors within a file. Confirm "unused" by grepping for the class across `.tsx`/`.mdx` and for the module import — CSS Modules are dead only if nothing imports them.
 
+## Text overflow
+
+Display text uses **two strategies, chosen by surface — not one blanket rule**:
+
+- **Compact constrained surfaces → single-line ellipsis.** Variable text in a tight row/cell/card (titles, names, URLs, metric values) truncates with the trio `white-space: nowrap; overflow: hidden; text-overflow: ellipsis;` on a `min-width: 0` flex/grid child. This is the majority: `LinkCard` title/desc, `Paginator` title, `Calendar`/`ArchiveList` post links, `MetricList`, `SysStatusCard`, `UptimeSection`, `ShareCard` source/desc, `CodeBlock` filename, `about` community spec, the home info-row value. (`ShareCard` title is the one deliberate 2-line `-webkit-line-clamp` — a card title earns a second line.)
+- **Flowing body content → natural wrap.** Prose and primary content wraps; never truncate it: `Markdown` title text, `moments` body, `about` device spec, `GitHub` description, `Problem` title, the blog main-list `postTitle` (`text-wrap: balance`).
+- **Wrap mechanism is `overflow-wrap: break-word`** for ordinary prose. Reserve `overflow-wrap: anywhere` for no-space identifier strings that must break mid-token (`GitHub` `.user` / `.repo`).
+- `white-space: nowrap` **without** the ellipsis trio is non-truncating chrome only — buttons, badges, chart axis/tick labels, traffic-light dots. It is not a content-overflow strategy.
+
+When adding a surface that shows variable text, pick the bucket by context and reuse the exact idiom above — don't invent a third behaviour, and don't leave variable content with no overflow handling at all.
+
 ## Hover motion
 
 - **No whole-card hover lift.** Never add hover-triggered `translateY` / `translateX` to a whole card or any large container block. The "card floats up on hover" effect is an AI-tell the maintainer dislikes.

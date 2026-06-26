@@ -156,7 +156,7 @@
   font-weight: 300;
   line-height: 1.5rem;
   color: var(--ifm-font-color-base);
-  overflow-wrap: anywhere;
+  overflow-wrap: break-word;
 }
 
 @container (max-width: 360px) {
