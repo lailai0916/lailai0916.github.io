@@ -64,7 +64,7 @@
   font-size: 0.75rem;
   line-height: 1.45;
   color: var(--ifm-color-emphasis-700);
-  word-break: break-word;
+  overflow-wrap: break-word;
   max-width: 60%;
 }
 

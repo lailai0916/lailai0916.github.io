@@ -78,7 +78,7 @@
   font-size: 0.95rem;
   line-height: 1.7;
   color: var(--ifm-font-color-base);
-  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 .momentContent p {
