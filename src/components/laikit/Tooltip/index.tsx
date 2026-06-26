@@ -14,28 +14,20 @@ function Tooltip({
   ...rest
 }: TooltipProps) {
   const ref = useRef<HTMLDivElement>(null);
-  // The card is centred on leftPct, so near the edges half of it would spill
-  // off-screen — with no clipping ancestor that widens the whole page on small
-  // screens. Clamp the centre to the viewport (not the possibly-narrow plot):
-  // the card may overflow the plot, it just must stay on screen. leftPx is in
-  // the positioned ancestor's space, so convert the viewport bounds into it.
+  // Centred on leftPct, the card would spill off-screen near the edges and —
+  // with no clipping ancestor — widen the page on small screens. Clamp its
+  // centre to the viewport (it may overflow the narrow plot, just not the screen).
   const [leftPx, setLeftPx] = useState<number | null>(null);
 
   useLayoutEffect(() => {
     const el = ref.current;
     const parent = el?.offsetParent as HTMLElement | null;
-    if (leftPct == null || !el || !parent) {
-      setLeftPx(null);
-      return;
-    }
-    const gutter = 8;
-    const parentLeft = parent.getBoundingClientRect().left;
-    const vw = document.documentElement.clientWidth;
-    const half = el.offsetWidth / 2;
-    const want = (leftPct / 100) * parent.clientWidth;
-    const lo = gutter - parentLeft + half;
-    const hi = vw - gutter - parentLeft - half;
-    setLeftPx(lo > hi ? vw / 2 - parentLeft : Math.min(Math.max(want, lo), hi));
+    if (leftPct == null || !el || !parent) return setLeftPx(null);
+    const { left } = parent.getBoundingClientRect();
+    const edge = el.offsetWidth / 2 + 8; // min gap from centre to screen edge
+    const want = left + (leftPct / 100) * parent.clientWidth;
+    const max = document.documentElement.clientWidth - edge;
+    setLeftPx(Math.min(Math.max(want, edge), max) - left);
   });
 
   const finalStyle =
