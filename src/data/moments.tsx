@@ -14,7 +14,7 @@ interface MomentItem {
 const STATIC_MOMENTS: MomentItem[] = [
   {
     date: '2026-06-26T18:04:00+08:00',
-    content: '「现在是负摩尔定律时代，每过18个月，价格翻倍，性能和容量减半。」',
+    content: '「现在是负摩尔定律时代，每过 18 个月，价格翻倍，性能和容量减半。」',
   },
   {
     date: '2026-06-13T16:55:00+08:00',
