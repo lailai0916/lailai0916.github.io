@@ -37,7 +37,7 @@ $$
 两式相加得：
 
 $$
-t_1+t_2=2x\Rightarrow x=\frac{t_1+t_2}{2}
+t_1+t_2=2x\implies x=\frac{t_1+t_2}{2}
 $$
 
 不难发现，飞行时间 $x$ 为去程时间 $t_1$ 与回程时间 $t_2$ 的平均值。
@@ -83,13 +83,13 @@ $$
 因为 $3600h$ 是 $3600$ 的倍数，而 $0\le s<60$，所以：
 
 $$
-m\le\frac{t\bmod 3600}{60}<m+1\Rightarrow m=\left\lfloor\frac{t\bmod 3600}{60}\right\rfloor
+m\le\frac{t\bmod 3600}{60}<m+1\implies m=\left\lfloor\frac{t\bmod 3600}{60}\right\rfloor
 $$
 
-因为 $0\le s,m<60\Rightarrow  0\le60m+s<3600$，所以：
+因为 $0\le s,m<60\implies  0\le60m+s<3600$，所以：
 
 $$
-h\le\frac{t}{3600}<h+1\Rightarrow h=\left\lfloor\frac{t}{3600}\right\rfloor
+h\le\frac{t}{3600}<h+1\implies h=\left\lfloor\frac{t}{3600}\right\rfloor
 $$
 
 使用 `printf` 格式化输出时间：
