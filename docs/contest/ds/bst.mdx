@@ -12,6 +12,8 @@ title: 二叉搜索树 & 平衡树
 
 ## `__gnu_pbds::tree`
 
+`__gnu_pbds::tree` 是基于红黑树的有序集合，配合 `tree_order_statistics_node_update` 可 $O(\log n)$ 查询元素排名与第 $k$ 小，省去手写平衡树。
+
 ```cpp
 #include <bits/extc++.h>
 using namespace __gnu_pbds;

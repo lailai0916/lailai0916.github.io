@@ -10,7 +10,7 @@ title: 最短路
 
 ## 算法对比
 
-$n$ 代表图的点数，$m$ 代表图的边数。
+**最短路**（Shortest Path）问题求图中两点间边权和最小的路径，分单源（一点到其余各点）与全源（所有点对之间）两类。下表对比常用算法，其中 $n$ 代表图的点数，$m$ 代表图的边数。
 
 |     算法名称      |  时间复杂度   | 最短路类型 | 负权图 |
 | :---------------: | :-----------: | :--------: | :----: |
@@ -20,6 +20,8 @@ $n$ 代表图的点数，$m$ 代表图的边数。
 |   Johnson 算法    | $O(nm\log m)$ | 全源最短路 |   能   |
 
 ## Floyd 算法
+
+Floyd 基于动态规划求全源最短路。外层枚举中转点 $k$，用 $a_{i,k}+a_{k,j}$ 松弛 $a_{i,j}$；枚举完所有 $k$ 后 $a_{i,j}$ 即为最短路。$k$ 必须放在最外层循环。它能处理负权边（无负环），实现简单，时间复杂度为 $O(n^3)$。
 
 ```cpp
 int a[N][N];
@@ -40,7 +42,9 @@ void floyd(int n)
 
 ## Bellman–Ford 算法
 
-SPFA（Shortest Path Faster Algorithm）是 Bellman–Ford 算法的一种实现。
+Bellman–Ford 通过反复松弛所有边求单源最短路。最短路至多含 $n-1$ 条边，故 $n-1$ 轮松弛后收敛，时间复杂度为 $O(nm)$。它能处理负权边；若第 $n$ 轮仍可松弛，则图中存在负环。
+
+SPFA（Shortest Path Faster Algorithm）是其队列优化：仅把被更新的点入队参与下一轮松弛，随机图上更快，但最坏仍为 $O(nm)$，易被特殊数据卡。下面的实现用 $\mathrm{cnt}_v$ 记录最短路边数，达到 $n$ 即判定负环。
 
 ```cpp
 vector<pair<int,int>> G[N];
@@ -72,6 +76,8 @@ bool spfa(int s,int n)
 
 ## Dijkstra 算法
 
+Dijkstra 求非负权图的单源最短路，基于贪心：每次取出当前距离最小且未确定的点，用它松弛邻居，已确定的点距离不再更改。用优先队列维护候选点，时间复杂度为 $O(m\log m)$。它不能处理负权边。下面用大根堆存 $-\mathrm{dis}$ 来模拟小根堆。
+
 ```cpp
 vector<pair<int,int>> G[N];
 int dis[N];
@@ -100,6 +106,8 @@ void dijkstra(int s)
 ```
 
 ## Johnson 算法
+
+Johnson 求含负权边（无负环）图的全源最短路。先建虚拟源点 $0$ 向每个点连零权边，用 SPFA 求出势能 $h_u$；再将每条边 $(u,v)$ 重赋权为 $w+h_u-h_v$，新权非负且不改变最短路结构。然后以每个点为源跑 Dijkstra，最后把距离还原为 $\mathrm{dis}_{i,j}+h_j-h_i$。若虚拟源点的 SPFA 发现负环则无解。时间复杂度为 $O(nm\log m)$。
 
 ```cpp
 #include <bits/stdc++.h>
@@ -191,6 +199,8 @@ int main()
 
 ## 传递闭包
 
+传递闭包判断每对点之间是否可达。沿用 Floyd 框架，把松弛换成按位或与按位与：若 $i$ 经 $k$ 可达 $j$，则 $i$ 可达 $j$（对应代码 `a[i][j]|=a[i][k]&a[k][j]`）。时间复杂度为 $O(n^3)$，可用 `bitset` 优化到 $O(n^3/w)$。
+
 ```cpp
 #include <bits/stdc++.h>
 using namespace std;
@@ -233,6 +243,8 @@ int main()
 ```
 
 ## 差分约束
+
+差分约束系统由若干形如 $x_u-x_v\le w$ 的不等式组成，求一组可行解。把每个约束 $x_u-x_v\le w$ 建成一条 $v\to u$ 权为 $w$ 的边，则从虚拟源点 $0$ 向所有点连零权边后跑 SPFA，得到的 $\mathrm{dis}_i$ 就是一组可行解 $x_i$。若存在负环则无解。
 
 ```cpp
 #include <bits/stdc++.h>

@@ -12,11 +12,15 @@ title: 堆
 
 ## `std::priority_queue`
 
+STL 的 `std::priority_queue` 默认是大根堆，传入 `greater` 比较器即为小根堆，是最常用的堆实现。
+
 ```cpp
 std::priority_queue<pair<int,int>> q;
 ```
 
 ## `__gnu_pbds::priority_queue`
+
+`__gnu_pbds::priority_queue` 额外支持 $O(\log n)$ 的堆合并与 $O(1)$ 均摊的 `modify`、`erase`，可直接替代手写可并堆。
 
 ```cpp
 #include <bits/extc++.h>
