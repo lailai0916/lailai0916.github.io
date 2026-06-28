@@ -1,12 +1,13 @@
 ---
-title: 普通生成函数
+title: 生成函数
 ---
 
 ## 参考资料
 
 - [普通生成函数 - OI Wiki](https://oi-wiki.org/math/poly/ogf/)
+- [指数生成函数 - OI Wiki](https://oi-wiki.org/math/poly/egf/)
 
-## 简介
+## 普通生成函数
 
 序列 $a$ 的普通生成函数（Ordinary Generating Function，OGF）定义为形式幂级数：
 
@@ -16,7 +17,7 @@ $$
 
 换句话说，如果序列 $a$ 有通项公式，那么它的普通生成函数的系数就是通项公式。
 
-## 基本运算
+### 基本运算
 
 考虑两个序列 $a,b$ 的普通生成函数，分别为 $F(x),G(x)$。那么有：
 
@@ -33,3 +34,11 @@ F(x)G(x)=\sum_n x^n\sum_{i=0}^na_ib_{n-i}
 $$
 
 因此 $F(x)G(x)$ 是序列 $\langle\sum_{i=0}^n a_ib_{n-i}\rangle$ 的普通生成函数。
+
+## 指数生成函数
+
+**指数生成函数**（EGF）把数列 $\set{a_n}$ 对应到 $\sum_{n\ge 0} a_n\frac{x^n}{n!}$，适合「有标号」组合对象的计数。两个 EGF 相乘对应有标号对象的合并并自带组合系数；配合多项式 $\exp$，可由「连通对象」的 EGF 推出「任意对象」的 EGF。
+
+## 例题
+
+<Problem id="P4841" />

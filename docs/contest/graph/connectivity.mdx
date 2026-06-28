@@ -7,6 +7,7 @@ title: 连通性
 - [强连通分量 - OI Wiki](https://oi-wiki.org/graph/scc/)
 - [双连通分量 - OI Wiki](https://oi-wiki.org/graph/bcc/)
 - [割点和桥 - OI Wiki](https://oi-wiki.org/graph/cut/)
+- [圆方树 - OI Wiki](https://oi-wiki.org/graph/block-forest/)
 - [2-SAT - OI Wiki](https://oi-wiki.org/graph/2-sat/)
 
 ## 强连通分量（SCC）
@@ -256,6 +257,10 @@ int main()
 }
 ```
 
+## 圆方树
+
+**圆方树** 把无向图的点双连通分量结构转化为一棵树：原图的点为「圆点」，每个点双新建一个「方点」连向其中所有圆点。原图上与两点间路径相关的问题，在圆方树上变成树上路径问题，常用于处理仙人掌（每条边至多在一个环上的图）。
+
 ## 2-SAT
 
 SAT 即布尔可满足性（Satisfiability）问题。$k$-SAT 在 $k>2$ 时是 NP 完全的，OI 中只研究 $k=2$ 的 **2-SAT**：给定 $n$ 个布尔变量与若干形如「$x_i=a$ 或 $x_j=b$」的约束，求一组可行赋值。
@@ -334,3 +339,5 @@ int main()
 <Problem id="P3388" />
 
 <Problem id="P4782" />
+
+<Problem id="P5236" />

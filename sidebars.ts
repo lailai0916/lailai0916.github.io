@@ -171,8 +171,7 @@ const sidebars: SidebarsConfig = {
             'contest/math/poly/ntt',
             'contest/math/poly/fwt',
             'contest/math/poly/elementary-func',
-            'contest/math/poly/ogf',
-            'contest/math/poly/egf',
+            'contest/math/poly/generating-function',
           ],
         },
         {
@@ -277,7 +276,6 @@ const sidebars: SidebarsConfig = {
         'contest/graph/shortest-path',
         'contest/graph/spanning-tree',
         'contest/graph/connectivity',
-        'contest/graph/block-forest',
         'contest/graph/rings-count',
         'contest/graph/min-cycle',
         'contest/graph/euler',

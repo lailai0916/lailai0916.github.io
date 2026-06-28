@@ -5,35 +5,9 @@ title: 二分图
 ## 参考资料
 
 - [二分图 - OI Wiki](https://oi-wiki.org/graph/bi-graph/)
-- [二分图最大匹配 - OI Wiki](https://oi-wiki.org/graph/graph-matching/bigraph-match/)
 
 ## 简介
 
-**二分图**（Bipartite Graph）的顶点可分成两个集合，使每条边的两端分属不同集合，等价于图中不存在奇环，用黑白染色法可 $O(n+m)$ 判定。**二分图最大匹配** 求最多的边数，使任意两条边不共用顶点。
+**二分图**（Bipartite Graph）的顶点可分成两个集合，使每条边的两端分属不同集合，等价于图中不存在奇环，用黑白染色法可 $O(n+m)$ 判定。
 
-## 匈牙利算法
-
-匈牙利算法依次为左部每个点寻找匹配。从一个点出发找 **增广路**——交替经过非匹配边与匹配边、两端均为非匹配点的路径，翻转其上的匹配状态即可让匹配数加一。`match(u)` 递归地为 $u$ 腾出一个可用的右部点。时间复杂度为 $O(nm)$。
-
-```cpp
-bool match(int u)
-{
-	for(auto v:G[u])
-	{
-		if(vis[v])continue;
-		vis[v]=1;
-		if(!a[v]||match(a[v]))
-		{
-			a[v]=u;
-			return 1;
-		}
-	}
-	return 0;
-}
-```
-
-## 例题
-
-<Problem id="P3386" />
-
-<Problem id="P10937" />
+二分图的最大匹配、最大权匹配等见 [图匹配](/docs/contest/graph/graph-matching/graph-match)。

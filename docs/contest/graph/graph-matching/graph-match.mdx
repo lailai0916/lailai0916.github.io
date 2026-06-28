@@ -5,8 +5,30 @@ title: 图匹配
 ## 参考资料
 
 - [图匹配 - OI Wiki](https://oi-wiki.org/graph/graph-matching/graph-match/)
+- [二分图最大匹配 - OI Wiki](https://oi-wiki.org/graph/graph-matching/bigraph-match/)
 - [二分图最大权匹配 - OI Wiki](https://oi-wiki.org/graph/graph-matching/bigraph-weight-match/)
 - [一般图最大匹配 - OI Wiki](https://oi-wiki.org/graph/graph-matching/general-match/)
+
+## 二分图最大匹配
+
+匈牙利算法依次为左部每个点寻找匹配。从一个点出发找 **增广路**——交替经过非匹配边与匹配边、两端均为非匹配点的路径，翻转其上的匹配状态即可让匹配数加一。`match(u)` 递归地为 $u$ 腾出一个可用的右部点。时间复杂度为 $O(nm)$。
+
+```cpp
+bool match(int u)
+{
+	for(auto v:G[u])
+	{
+		if(vis[v])continue;
+		vis[v]=1;
+		if(!a[v]||match(a[v]))
+		{
+			a[v]=u;
+			return 1;
+		}
+	}
+	return 0;
+}
+```
 
 ## 二分图最大权匹配
 
@@ -19,6 +41,10 @@ title: 图匹配
 一般图（不一定是二分图）的最大匹配用 **带花树**（Blossom）算法求解。它在 BFS 寻找增广路时，一旦遇到奇环（花）就把整朵花缩成一个点继续搜索，从而绕开奇环对增广的阻碍。复杂度 $O(n^3)$。
 
 ## 例题
+
+<Problem id="P3386" />
+
+<Problem id="P10937" />
 
 <Problem id="P6577" />
 
