@@ -66,7 +66,7 @@ $$
 比如 $2\times 3\equiv 2\times 0\pmod 6$，但 $3\not\equiv 0\pmod 6$。正确的约去法则是：
 
 $$
-ac\equiv bc\pmod m\Rightarrow a\equiv b\pmod{\tfrac{m}{\gcd(c,m)}}
+ac\equiv bc\pmod m\implies a\equiv b\pmod{\tfrac{m}{\gcd(c,m)}}
 $$
 
 特别地，当 $\gcd(c,m)=1$ 时，模数不变，可以放心约去。这正是「互素」条件反复出现的原因。
@@ -107,7 +107,7 @@ $$
 
 - $\varphi(p)=p-1$（$p$ 为素数，除 $p$ 自己外全都互素）。
 - $\varphi(p^k)=p^k-p^{k-1}$。
-- **积性**：$\gcd(a,b)=1\Rightarrow\varphi(ab)=\varphi(a)\varphi(b)$。
+- **积性**：$\gcd(a,b)=1\implies\varphi(ab)=\varphi(a)\varphi(b)$。
 
 更多性质详见 [积性函数](/docs/note/math/university/elementary-number-theory/multiplicative)。
 

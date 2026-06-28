@@ -250,7 +250,7 @@ $$
 ### 变上限积分
 
 $$
-\Phi(x)=\int_a^x f(t)\mathrm{d}t\Rightarrow\Phi'(x)=f(x)
+\Phi(x)=\int_a^x f(t)\mathrm{d}t\implies\Phi'(x)=f(x)
 $$
 
 把定积分的上限放开成变量 $x$，得到一个 **新函数** $\Phi(x)$：它表示「从 $a$ 累积到 $x$ 的面积」。这个函数求导回到 $f$ 本身——说明 **变上限积分天然就是一个原函数**，这也正是微积分基本定理「积分与求导互逆」的源头，更是连 $e^{-x^2}$ 这类「积不出来」的函数也能保证原函数 **存在** 的依据。
@@ -290,7 +290,7 @@ $$
 例：$I=\displaystyle\int_0^{\pi/2}\dfrac{\sin x}{\sin x+\cos x}\mathrm{d}x$。令 $x\to\dfrac\pi2-x$，$\sin\leftrightarrow\cos$ 互换得 $I=\displaystyle\int_0^{\pi/2}\dfrac{\cos x}{\cos x+\sin x}\mathrm{d}x$。两式相加：
 
 $$
-2I=\int_0^{\pi/2}\frac{\sin x+\cos x}{\sin x+\cos x}\mathrm{d}x=\int_0^{\pi/2}1\mathrm{d}x=\frac\pi2\Rightarrow I=\frac\pi4
+2I=\int_0^{\pi/2}\frac{\sin x+\cos x}{\sin x+\cos x}\mathrm{d}x=\int_0^{\pi/2}1\mathrm{d}x=\frac\pi2\implies I=\frac\pi4
 $$
 
 ### 点火公式（Wallis 公式）
@@ -344,7 +344,7 @@ $$
 
 判断反常积分敛散，常用 **比较法**——和已知的 $\dfrac{1}{x^p}$ 比大小：
 
-- **比较判别法**：若 $0\le f(x)\le g(x)$，则 $\int g$ 收敛 $\Rightarrow\int f$ 收敛；$\int f$ 发散 $\Rightarrow\int g$ 发散。
+- **比较判别法**：若 $0\le f(x)\le g(x)$，则 $\int g$ 收敛 $\implies\int f$ 收敛；$\int f$ 发散 $\implies\int g$ 发散。
 - **极限形式**：若 $\lim\dfrac{f(x)}{g(x)}=l(0<l<+\infty)$，则 $\int f$ 与 $\int g$ **同敛散**。
 
 实用做法是把被积函数与 $\dfrac{1}{x^p}$ 比较：在 $+\infty$ 处看「分母最高阶」定 $p$，在瑕点处看「奇性强弱」定 $p$，再对照上面的临界值。

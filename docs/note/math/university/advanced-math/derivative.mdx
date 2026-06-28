@@ -63,7 +63,7 @@ $f$ 在 $x_0$ **可导** $\iff$ 左右导数都存在且相等。这是判断分
 
 ### 可导与连续
 
-**可导 $\Rightarrow$ 连续**，反之不成立。
+**可导 $\implies$ 连续**，反之不成立。
 
 道理是：若 $f$ 在 $x_0$ 有切线，图像在该点附近必然「接得上」，不能有跳断。但反过来，连续只保证「不断」，不保证「光滑」。典型反例 $y=|x|$ 在 $x=0$ 处连续，可左导数 $-1$、右导数 $+1$ 不相等，图像在原点形成一个 **尖角**，没有唯一切线，故不可导。更极端的还有处处连续却处处不可导的函数。一句话：**可导比连续严格**，它额外要求「光滑、无折角、无竖直切线」。
 
@@ -143,7 +143,7 @@ $$
 例（隐函数求导）：圆 $x^2+y^2=R^2$ 在点 $(x,y)$ 处的切线斜率。两端对 $x$ 求导，把 $y$ 看成 $x$ 的函数：
 
 $$
-2x+2yy'=0\Rightarrow y'=-\frac{x}{y}
+2x+2yy'=0\implies y'=-\frac{x}{y}
 $$
 
 含 $y$ 的项 $y^2$ 求导补乘 $y'$。这比先解出 $y=\pm\sqrt{R^2-x^2}$ 再求导干净得多。
@@ -161,7 +161,7 @@ $$
 遇到 **幂指函数** $y=u(x)^{v(x)}$ 或 **多个因子连乘连除** 的式子，先取对数再求导往往省力：
 
 $$
-\ln y=\ln u(x)^{v(x)}=v(x)\ln u(x)\Rightarrow\frac{y'}{y}=v'\ln u+v\cdot\frac{u'}{u}
+\ln y=\ln u(x)^{v(x)}=v(x)\ln u(x)\implies\frac{y'}{y}=v'\ln u+v\cdot\frac{u'}{u}
 $$
 
 原理是对数把 **乘除变加减、幂变乘积**，求导难度骤降；最后别忘了把 $\dfrac{y'}{y}$ 乘回 $y$。幂指函数也可改写成 $y=e^{v\ln u}$ 后用链式法则，两种做法等价。
@@ -169,7 +169,7 @@ $$
 例（幂指函数）：$y=x^x$（$x>0$）。取对数 $\ln y=x\ln x$，两端求导：
 
 $$
-\frac{y'}{y}=\ln x+x\cdot\frac1x=\ln x+1\Rightarrow y'=x^x(\ln x+1)
+\frac{y'}{y}=\ln x+x\cdot\frac1x=\ln x+1\implies y'=x^x(\ln x+1)
 $$
 
 例（多因子连乘连除）：$y=\dfrac{(x+1)^2\sqrt{x-1}}{(x+2)^3}$。取对数化乘除为加减：
@@ -356,14 +356,14 @@ $$
 例：$\lim\limits_{x\to 0}\dfrac{\sin x-x\cos x}{x^3}$。$\sin x=x-\dfrac{x^3}{6}+o(x^3)$、$x\cos x=x\left(1-\dfrac{x^2}{2}+o(x^2)\right)=x-\dfrac{x^3}{2}+o(x^3)$，相减：
 
 $$
-\sin x-x\cos x=\left(-\frac16+\frac12\right)x^3+o(x^3)=\frac{x^3}{3}+o(x^3)\Rightarrow\text{极限}=\frac13
+\sin x-x\cos x=\left(-\frac16+\frac12\right)x^3+o(x^3)=\frac{x^3}{3}+o(x^3)\implies\text{极限}=\frac13
 $$
 
 ## 应用
 
 ### 单调性与极值
 
-- **单调性**：$f'(x)>0\Rightarrow$ 单调递增；$f'(x)<0\Rightarrow$ 单调递减。斜率的正负直接决定曲线的升降。
+- **单调性**：$f'(x)>0\implies$ 单调递增；$f'(x)<0\implies$ 单调递减。斜率的正负直接决定曲线的升降。
 - **极值**：必要条件 $f'(x_0)=0$（**驻点**，或导数不存在的点）。判别有两法：**一阶导变号法**（$f'$ 由正变负是极大，由负变正是极小），或 **二阶导法**（$f''(x_0)>0$ 为极小、$<0$ 为极大、$=0$ 失效）。
 - **最值**：闭区间上的最值在 **驻点、不可导点、端点** 三类候选里比大小取得。
 
@@ -404,7 +404,7 @@ $$
 例（梯子下滑）：长 $5\mathrm{m}$ 的梯子靠墙，底端以 $1\mathrm{m/s}$ 远离墙脚滑动。当底端离墙 $3\mathrm{m}$ 时，顶端下滑多快？设底端距墙 $x$、顶端高 $y$，约束 $x^2+y^2=25$。两端对 $t$ 求导：
 
 $$
-2x\frac{\mathrm{d}x}{\mathrm{d}t}+2y\frac{\mathrm{d}y}{\mathrm{d}t}=0\Rightarrow\frac{\mathrm{d}y}{\mathrm{d}t}=-\frac{x}{y}\frac{\mathrm{d}x}{\mathrm{d}t}
+2x\frac{\mathrm{d}x}{\mathrm{d}t}+2y\frac{\mathrm{d}y}{\mathrm{d}t}=0\implies\frac{\mathrm{d}y}{\mathrm{d}t}=-\frac{x}{y}\frac{\mathrm{d}x}{\mathrm{d}t}
 $$
 
 此刻 $x=3$，$y=\sqrt{25-9}=4$，$\dfrac{\mathrm{d}x}{\mathrm{d}t}=1$，代入得 $\dfrac{\mathrm{d}y}{\mathrm{d}t}=-\dfrac34\mathrm{m/s}$。负号表示 $y$ 在减小，即顶端以 $\dfrac34\mathrm{m/s}$ 下滑。**先列几何约束、再整体对 $t$ 求导、最后代入瞬时数值——切忌一开始就代数字。**

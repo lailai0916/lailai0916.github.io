@@ -30,7 +30,7 @@ title: 微分方程
 ### 可分离变量
 
 $$
-\frac{\mathrm{d}y}{\mathrm{d}x}=f(x)g(y)\Rightarrow\int\frac{\mathrm{d}y}{g(y)}=\int f(x)\mathrm{d}x+C
+\frac{\mathrm{d}y}{\mathrm{d}x}=f(x)g(y)\implies\int\frac{\mathrm{d}y}{g(y)}=\int f(x)\mathrm{d}x+C
 $$
 
 这是最理想的情形：把 $x$ 和 $y$ 各自「分家」到等号两边，然后两边分别积分。所有一阶方程的求解，本质上都是想方设法 **化归到可分离变量**。
@@ -50,7 +50,7 @@ $$
 例：解 $\dfrac{\mathrm{d}y}{\mathrm{d}x}=\dfrac{y}{x}+\tan\dfrac{y}{x}$。令 $u=\dfrac yx$，$y'=u+xu'$，代入：
 
 $$
-u+x\frac{\mathrm{d}u}{\mathrm{d}x}=u+\tan u\Rightarrow\frac{\mathrm{d}u}{\tan u}=\frac{\mathrm{d}x}{x}
+u+x\frac{\mathrm{d}u}{\mathrm{d}x}=u+\tan u\implies\frac{\mathrm{d}u}{\tan u}=\frac{\mathrm{d}x}{x}
 $$
 
 左边 $\int\cot u\mathrm{d}u=\ln|\sin u|$，积分得 $\ln|\sin u|=\ln|x|+C_1$，即 $\sin u=Cx$。回代 $u=\dfrac yx$ 得通解 $\sin\dfrac yx=Cx$。**齐次方程换元后那个 $u$ 总能消去、剩下可分离的 $u$ 与 $x$。**
@@ -74,7 +74,7 @@ $$
 例：解 $\dfrac{\mathrm{d}y}{\mathrm{d}x}+\dfrac{1}{x}y=\dfrac{\sin x}{x}$（$x>0$）。这里 $P=\dfrac1x$、$Q=\dfrac{\sin x}{x}$。积分因子 $\mu=e^{\int\frac1x\mathrm{d}x}=x$，方程两边乘 $x$ 后左边凑成 $(xy)'$：
 
 $$
-(xy)'=\sin x\Rightarrow xy=-\cos x+C\Rightarrow y=\frac{C-\cos x}{x}
+(xy)'=\sin x\implies xy=-\cos x+C\implies y=\frac{C-\cos x}{x}
 $$
 
 **用积分因子时，乘 $\mu$ 后立刻把左边认成 $(\mu y)'$**，比硬套通解公式更快、更不易错。
@@ -96,7 +96,7 @@ $$
 例：解 $\dfrac{\mathrm{d}y}{\mathrm{d}x}+y=y^2$（$n=2$）。令 $z=y^{1-2}=y^{-1}$，则 $z'=-y^{-2}y'$。原方程两边除以 $y^2$ 得 $y^{-2}y'+y^{-1}=1$，即：
 
 $$
--z'+z=1\Rightarrow z'-z=-1
+-z'+z=1\implies z'-z=-1
 $$
 
 这是关于 $z$ 的一阶线性方程，积分因子 $e^{-x}$，解得 $z=1+Ce^x$，回代 $z=\dfrac1y$ 得通解 $y=\dfrac{1}{1+Ce^x}$。
@@ -230,7 +230,7 @@ $k$ 是 $\lambda+\omega i$ 作为特征根的重数。
 例（不共振）：解 $y''-3y'+2y=2x$。齐次特征根 $r=1,2$，故齐次通解 $\bar y=C_1 e^x+C_2 e^{2x}$。右端是一次多项式、$\lambda=0$ 不是特征根（$k=0$），设 $y^*=ax+b$，则 $y^{*\prime}=a$、$y^{*\prime\prime}=0$，代入：
 
 $$
--3a+2(ax+b)=2x\Rightarrow 2a=2,-3a+2b=0\Rightarrow a=1,b=\frac32
+-3a+2(ax+b)=2x\implies 2a=2,-3a+2b=0\implies a=1,b=\frac32
 $$
 
 故 $y^*=x+\dfrac32$，通解 $y=C_1 e^x+C_2 e^{2x}+x+\dfrac32$。

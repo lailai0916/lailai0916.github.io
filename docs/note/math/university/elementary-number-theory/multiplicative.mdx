@@ -26,7 +26,7 @@ title: 积性函数
 数论函数 $f$（且 $f$ 不恒为 $0$）称为 **积性函数**，若对所有互素的 $a,b$ 都有：
 
 $$
-\gcd(a,b)=1\Rightarrow f(ab)=f(a)f(b)
+\gcd(a,b)=1\implies f(ab)=f(a)f(b)
 $$
 
 若把条件放宽到对 **所有** $a,b$（不要求互素）都成立，则称 **完全积性函数**（Completely Multiplicative）。任何积性函数都满足 $f(1)=1$（取 $a=b=1$ 即得）。
@@ -36,7 +36,7 @@ $$
 把唯一分解代入定义，积性函数 $f$ 的值由它在 **各素数幂处的值** 完全决定：
 
 $$
-n=p_1^{a_1}\cdots p_k^{a_k}\Rightarrow f(n)=\prod_{i=1}^kf(p_i^{a_i})
+n=p_1^{a_1}\cdots p_k^{a_k}\implies f(n)=\prod_{i=1}^kf(p_i^{a_i})
 $$
 
 这就是上面说的「只需搞清 $p^k$」。对完全积性函数还更简单：$f(p^k)=f(p)^k$，连素数幂都不用单独算，知道 $f$ 在素数上的值就够了。
@@ -208,7 +208,7 @@ $$
 f(n)=\sum_{d\mid n}\mu(d)F\left(\frac{n}{d}\right)
 $$
 
-用卷积语言写极其干净：$F=f*\mathbf{1}\Rightarrow f=F*\mu$。证明只需在两边同卷 $\mu$，再用 $\mathbf{1}*\mu=\varepsilon$ 化简。
+用卷积语言写极其干净：$F=f*\mathbf{1}\implies f=F*\mu$。证明只需在两边同卷 $\mu$，再用 $\mathbf{1}*\mu=\varepsilon$ 化简。
 
 :::tip
 

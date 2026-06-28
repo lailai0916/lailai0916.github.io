@@ -144,7 +144,7 @@ $$
 例（单参数矩估计）：总体 $X\sim U(0,\theta)$，由样本 $X_1,\dots,X_n$ 估 $\theta$。一阶总体矩 $E(X)=\frac\theta2$，令它等于样本一阶矩 $\bar X$：
 
 $$
-\frac\theta2=\bar X\Rightarrow\hat\theta=2\bar X
+\frac\theta2=\bar X\implies\hat\theta=2\bar X
 $$
 
 例（两参数矩估计）：总体 $X$ 期望 $\mu$、方差 $\sigma^2$ 均未知。两个参数用前两阶矩：令 $E(X)=\bar X$ 得 $\hat\mu=\bar X$；令 $E(X^2)=A_2$（样本二阶原点矩），结合 $E(X^2)=\sigma^2+\mu^2$ 得：
@@ -188,7 +188,7 @@ $$
 取对数 $\ln L=k\ln p+(n-k)\ln(1-p)$，对 $p$ 求导令零：
 
 $$
-\frac{\mathrm{d}\ln L}{\mathrm{d}p}=\frac kp-\frac{n-k}{1-p}=0\Rightarrow k(1-p)=(n-k)p\Rightarrow\hat p=\frac kn
+\frac{\mathrm{d}\ln L}{\mathrm{d}p}=\frac kp-\frac{n-k}{1-p}=0\implies k(1-p)=(n-k)p\implies\hat p=\frac kn
 $$
 
 成功率的极大似然估计就是「样本频率」$\frac kn$，与直觉完全吻合（抛 $10$ 次 $7$ 次正面，$\hat p=0.7$）。
@@ -202,7 +202,7 @@ $$
 求导令零：
 
 $$
-\frac{\mathrm{d}\ln L}{\mathrm{d}\lambda}=\frac n\lambda-\sum_{i=1}^n x_i=0\Rightarrow\hat\lambda=\frac{n}{\sum x_i}=\frac1{\bar X}
+\frac{\mathrm{d}\ln L}{\mathrm{d}\lambda}=\frac n\lambda-\sum_{i=1}^n x_i=0\implies\hat\lambda=\frac{n}{\sum x_i}=\frac1{\bar X}
 $$
 
 由于指数分布均值是 $\frac1\lambda$，估计「$\hat\lambda=\frac1{\bar X}$」恰是「用样本均值估总体均值」的倒数，矩估计也给出同样结果。

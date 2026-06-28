@@ -57,7 +57,7 @@ title: 逻辑
 这样命题就变成了「若 $p$，则 $q$」 的形式，而 $p$ 可以推出 $q$，就说 $p$ **蕴含** $q$，记为：
 
 $$
-p\Rightarrow q
+p\implies q
 $$
 
 但反过来说「若 **你完成高中学业**，则 **你被 XX 大学录取**」，这个命题不成立，$q$ 不能推出 $p$，记为：
@@ -71,19 +71,19 @@ $$
 如果「若 $p$，则 $q$」及其 **逆命题**「若 $q$，则 $p$」都为真，即：
 
 $$
-p\Rightarrow q\text{且}q\Rightarrow p
+p\implies q\text{且}q\implies p
 $$
 
 则两个命题 **等价**，记为：
 
 $$
-p\Leftrightarrow q
+p\iff q
 $$
 
 这两句话本身也可以用等价表示：
 
 $$
-(p\Rightarrow q\text{且}q\Rightarrow p)\Leftrightarrow(p\Leftrightarrow q)
+(p\implies q\text{且}q\implies p)\iff(p\iff q)
 $$
 
 #### 否定
@@ -116,11 +116,11 @@ $$
 
 对于两个命题 $p$ 和 $q$：
 
-- 如果「若 $p$，则 $q$」成立，则 $p$ 可以推出 $q$，记为 $p\Rightarrow q$。
+- 如果「若 $p$，则 $q$」成立，则 $p$ 可以推出 $q$，记为 $p\implies q$。
 - 如果「若 $p$，则 $q$」不成立，则 $p$ 不能推出 $q$，记为 $p\nRightarrow q$。
-- 如果 $p\Rightarrow q,q\Rightarrow p$（$p\Leftrightarrow q$），则称 $p$ 是 $q$ 的 **充分必要条件**。
-- 如果 $p\Rightarrow q,q\nRightarrow p$，则称 $p$ 是 $q$ 的 **充分不必要条件**。
-- 如果 $p\nRightarrow q,q\Rightarrow p$，则称 $p$ 是 $q$ 的 **必要不充分条件**。
+- 如果 $p\implies q,q\implies p$（$p\iff q$），则称 $p$ 是 $q$ 的 **充分必要条件**。
+- 如果 $p\implies q,q\nRightarrow p$，则称 $p$ 是 $q$ 的 **充分不必要条件**。
+- 如果 $p\nRightarrow q,q\implies p$，则称 $p$ 是 $q$ 的 **必要不充分条件**。
 - 如果 $p\nRightarrow q,q\nRightarrow p$，则称 $p$ 是 $q$ 的 **既不充分也不必要条件**。
 
 ## 全称量词与存在量词
@@ -184,7 +184,7 @@ $$
 它的否定为：
 
 $$
-\lnot(\forall x\in M,p(x))\Leftrightarrow\exists x\in M,\lnot p(x)
+\lnot(\forall x\in M,p(x))\iff\exists x\in M,\lnot p(x)
 $$
 
 **全称量词命题** 的否定是 **存在量词命题**。
@@ -200,7 +200,7 @@ $$
 它的否定是「并非所有实数 $x$ 的 $0$ 次幂都等于 $1$」，换句话说就是「存在实数 $x$ 的 $0$ 次幂不等于 $1$」：
 
 $$
-\lnot(\forall x\in\mathbb{R},x^0=1)\Leftrightarrow\exists x\in\mathbb{R},x^0\ne 1
+\lnot(\forall x\in\mathbb{R},x^0=1)\iff\exists x\in\mathbb{R},x^0\ne 1
 $$
 
 :::
@@ -216,7 +216,7 @@ $$
 它的否定为：
 
 $$
-\lnot(\exists x\in M,p(x))\Leftrightarrow\forall x\in M,\lnot p(x)
+\lnot(\exists x\in M,p(x))\iff\forall x\in M,\lnot p(x)
 $$
 
 **存在量词命题** 的否定是 **全称量词命题**。
@@ -232,7 +232,7 @@ $$
 它的否定是「不存在整数 $x$ 的平方等于 $9$」，换句话说就是「所有整数 $x$ 的平方都不等于 $9$」：
 
 $$
-\lnot(\exists x\in\mathbb{Z},x^2=9)\Leftrightarrow\forall x\in\mathbb{Z},x^2\ne 9
+\lnot(\exists x\in\mathbb{Z},x^2=9)\iff\forall x\in\mathbb{Z},x^2\ne 9
 $$
 
 :::

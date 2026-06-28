@@ -67,10 +67,10 @@ title: 数理逻辑
 
 ### 联结词的完备性
 
-一个有意思的事实：所有联结词都能用 $\neg$ 和 $\land$（或 $\neg$ 和 $\lor$）表示出来，比如 $p\to q\Leftrightarrow\neg p\lor q$。更进一步，单独一个 **与非** $\uparrow$（NAND）或 **或非** $\downarrow$（NOR）就能表示一切——这就是为什么数字电路里用 NAND 门可以搭出任何逻辑电路。
+一个有意思的事实：所有联结词都能用 $\neg$ 和 $\land$（或 $\neg$ 和 $\lor$）表示出来，比如 $p\to q\iff\neg p\lor q$。更进一步，单独一个 **与非** $\uparrow$（NAND）或 **或非** $\downarrow$（NOR）就能表示一切——这就是为什么数字电路里用 NAND 门可以搭出任何逻辑电路。
 
 $$
-p\uparrow q\Leftrightarrow\neg(p\land q),p\downarrow q\Leftrightarrow\neg(p\lor q)
+p\uparrow q\iff\neg(p\land q),p\downarrow q\iff\neg(p\lor q)
 $$
 
 ## 命题公式
@@ -92,34 +92,34 @@ $$
 |  1  |  0  |    0     |         0         |    1     |
 |  1  |  1  |    1     |         1         |    1     |
 
-最后一列恒为 $1$，故它是 **重言式**——这正是逆否等价 $p\to q\Leftrightarrow\neg q\to\neg p$ 的另一种说法。
+最后一列恒为 $1$，故它是 **重言式**——这正是逆否等价 $p\to q\iff\neg q\to\neg p$ 的另一种说法。
 
 例：用真值表判断 $p\to(q\to r)$ 与 $(p\land q)\to r$ 是否等值。两式各有 $2^3=8$ 行，只需比较输出列。对照后会发现两列逐行相同（如 $p=q=1,r=0$ 时，左边 $1\to(1\to0)=1\to0=0$，右边 $(1\land1)\to0=1\to0=0$；其余各行同理），故二者 **等值**。这条规律叫 **输出律**（exportation），编程里「嵌套 `if` 等价于条件用 `&&` 连起来」就是它。
 
 ### 重要等值式
 
-若 $A\leftrightarrow B$ 是重言式，称 $A,B$ **等值**，记 $A\Leftrightarrow B$。等值式是公式化简的「运算法则」，相当于代数里的恒等式。
+若 $A\leftrightarrow B$ 是重言式，称 $A,B$ **等值**，记 $A\iff B$。等值式是公式化简的「运算法则」，相当于代数里的恒等式。
 
 |              |                                                                      |
 | :----------- | :------------------------------------------------------------------- |
-| **双重否定** | $\neg\neg p\Leftrightarrow p$                                        |
-| **幂等律**   | $p\land p\Leftrightarrow p$，$p\lor p\Leftrightarrow p$              |
-| **交换律**   | $p\land q\Leftrightarrow q\land p$，$p\lor q\Leftrightarrow q\lor p$ |
-| **结合律**   | $(p\land q)\land r\Leftrightarrow p\land(q\land r)$                  |
-| **分配律**   | $p\land(q\lor r)\Leftrightarrow(p\land q)\lor(p\land r)$             |
-| **德摩根律** | $\neg(p\land q)\Leftrightarrow\neg p\lor\neg q$                      |
-| **吸收律**   | $p\lor(p\land q)\Leftrightarrow p$                                   |
-| **零一律**   | $p\lor 1\Leftrightarrow 1$，$p\land 0\Leftrightarrow 0$              |
-| **同一律**   | $p\lor 0\Leftrightarrow p$，$p\land 1\Leftrightarrow p$              |
-| **排中律**   | $p\lor\neg p\Leftrightarrow 1$                                       |
-| **矛盾律**   | $p\land\neg p\Leftrightarrow 0$                                      |
-| **蕴含等价** | $p\to q\Leftrightarrow\neg p\lor q$                                  |
-| **逆否等价** | $p\to q\Leftrightarrow\neg q\to\neg p$                               |
-| **等价展开** | $p\leftrightarrow q\Leftrightarrow(p\to q)\land(q\to p)$             |
+| **双重否定** | $\neg\neg p\iff p$                                        |
+| **幂等律**   | $p\land p\iff p$，$p\lor p\iff p$              |
+| **交换律**   | $p\land q\iff q\land p$，$p\lor q\iff q\lor p$ |
+| **结合律**   | $(p\land q)\land r\iff p\land(q\land r)$                  |
+| **分配律**   | $p\land(q\lor r)\iff(p\land q)\lor(p\land r)$             |
+| **德摩根律** | $\neg(p\land q)\iff\neg p\lor\neg q$                      |
+| **吸收律**   | $p\lor(p\land q)\iff p$                                   |
+| **零一律**   | $p\lor 1\iff 1$，$p\land 0\iff 0$              |
+| **同一律**   | $p\lor 0\iff p$，$p\land 1\iff p$              |
+| **排中律**   | $p\lor\neg p\iff 1$                                       |
+| **矛盾律**   | $p\land\neg p\iff 0$                                      |
+| **蕴含等价** | $p\to q\iff\neg p\lor q$                                  |
+| **逆否等价** | $p\to q\iff\neg q\to\neg p$                               |
+| **等价展开** | $p\leftrightarrow q\iff(p\to q)\land(q\to p)$             |
 
 :::tip
 
-**蕴含等价** $p\to q\Leftrightarrow\neg p\lor q$ 是化简里最常用的一步：它把不好处理的 $\to$ 消成 $\neg$ 和 $\lor$，剩下的就能套德摩根律和分配律了。
+**蕴含等价** $p\to q\iff\neg p\lor q$ 是化简里最常用的一步：它把不好处理的 $\to$ 消成 $\neg$ 和 $\lor$，剩下的就能套德摩根律和分配律了。
 
 :::
 
@@ -131,31 +131,31 @@ $$
 
 $$
 \begin{aligned}
-  (p\lor q)\land(p\lor\neg q) & \Leftrightarrow p\lor(q\land\neg q) & & \text{分配律（提取 }p\text{）} \\
-  & \Leftrightarrow p\lor 0 & & \text{矛盾律} \\
-  & \Leftrightarrow p & & \text{同一律}
+  (p\lor q)\land(p\lor\neg q) & \iff p\lor(q\land\neg q) & & \text{分配律（提取 }p\text{）} \\
+  & \iff p\lor 0 & & \text{矛盾律} \\
+  & \iff p & & \text{同一律}
 \end{aligned}
 $$
 
-例：证明 $\neg(p\to q)\Leftrightarrow p\land\neg q$，这是「否定一个蕴含」的标准结果。
+例：证明 $\neg(p\to q)\iff p\land\neg q$，这是「否定一个蕴含」的标准结果。
 
 $$
 \begin{aligned}
-  \neg(p\to q) & \Leftrightarrow\neg(\neg p\lor q) & & \text{蕴含等价} \\
-  & \Leftrightarrow\neg\neg p\land\neg q & & \text{德摩根律} \\
-  & \Leftrightarrow p\land\neg q & & \text{双重否定}
+  \neg(p\to q) & \iff\neg(\neg p\lor q) & & \text{蕴含等价} \\
+  & \iff\neg\neg p\land\neg q & & \text{德摩根律} \\
+  & \iff p\land\neg q & & \text{双重否定}
 \end{aligned}
 $$
 
 直觉上「并非『若 $p$ 则 $q$』」就是「$p$ 成立却 $q$ 不成立」——承诺被违背的唯一情形。
 
-例：证明 $(p\to q)\land(p\to r)\Leftrightarrow p\to(q\land r)$。
+例：证明 $(p\to q)\land(p\to r)\iff p\to(q\land r)$。
 
 $$
 \begin{aligned}
-  (p\to q)\land(p\to r) & \Leftrightarrow(\neg p\lor q)\land(\neg p\lor r) & & \text{蕴含等价} \\
-  & \Leftrightarrow\neg p\lor(q\land r) & & \text{分配律} \\
-  & \Leftrightarrow p\to(q\land r) & & \text{蕴含等价}
+  (p\to q)\land(p\to r) & \iff(\neg p\lor q)\land(\neg p\lor r) & & \text{蕴含等价} \\
+  & \iff\neg p\lor(q\land r) & & \text{分配律} \\
+  & \iff p\to(q\land r) & & \text{蕴含等价}
 \end{aligned}
 $$
 
@@ -202,7 +202,7 @@ $$
 
 约定一个变元顺序（如 $p,q,r$），把每个极小项里的变元 **正则号为 $1$、否定号为 $0$**，读成二进制就是它的编号 $m_i$。极大项相反：变元正则号为 $0$、否定号为 $1$。
 
-例：三变元下 $m_5=m_{101}=p\land\neg q\land r$（它只在 $p=1,q=0,r=1$ 这行为真）；$M_5=M_{101}=\neg p\lor q\lor\neg r$（它只在 $p=1,q=0,r=1$ 这行为假）。同一编号的极小项与极大项互为否定：$\neg m_i\Leftrightarrow M_i$。
+例：三变元下 $m_5=m_{101}=p\land\neg q\land r$（它只在 $p=1,q=0,r=1$ 这行为真）；$M_5=M_{101}=\neg p\lor q\lor\neg r$（它只在 $p=1,q=0,r=1$ 这行为假）。同一编号的极小项与极大项互为否定：$\neg m_i\iff M_i$。
 
 由此有一条对偶关系：若真值表里真的行编号集合是 $S$，则：
 
@@ -249,7 +249,7 @@ $$
 从一组 **前提** $A_1,\dots,A_n$ 推出 **结论** $B$，记为：
 
 $$
-A_1\land A_2\land\dots\land A_n\Rightarrow B
+A_1\land A_2\land\dots\land A_n\implies B
 $$
 
 推理 **有效**（Valid）当且仅当 $(A_1\land\dots\land A_n)\to B$ 是 **重言式**——也就是说，只要前提全真，结论就不可能假。注意「有效」只管形式对不对，前提本身是真是假它不负责。
@@ -258,13 +258,13 @@ $$
 
 | 名称       | 规则                                                     |
 | :--------- | :------------------------------------------------------- |
-| 假言推理   | $(p\to q)\land p\Rightarrow q$                           |
-| 拒取式     | $(p\to q)\land\neg q\Rightarrow\neg p$                   |
-| 析取三段论 | $(p\lor q)\land\neg p\Rightarrow q$                      |
-| 假言三段论 | $(p\to q)\land(q\to r)\Rightarrow p\to r$                |
-| 化简律     | $p\land q\Rightarrow p$                                  |
-| 附加律     | $p\Rightarrow p\lor q$                                   |
-| 构造性二难 | $(p\to q)\land(r\to s)\land(p\lor r)\Rightarrow q\lor s$ |
+| 假言推理   | $(p\to q)\land p\implies q$                           |
+| 拒取式     | $(p\to q)\land\neg q\implies\neg p$                   |
+| 析取三段论 | $(p\lor q)\land\neg p\implies q$                      |
+| 假言三段论 | $(p\to q)\land(q\to r)\implies p\to r$                |
+| 化简律     | $p\land q\implies p$                                  |
+| 附加律     | $p\implies p\lor q$                                   |
+| 构造性二难 | $(p\to q)\land(r\to s)\land(p\lor r)\implies q\lor s$ |
 
 ### 证明方法
 
@@ -364,8 +364,8 @@ $$
 
 $$
 \neg\exists x(S(x)\land\neg P(x))
-\Leftrightarrow\forall x\neg(S(x)\land\neg P(x))
-\Leftrightarrow\forall x(S(x)\to P(x))
+\iff\forall x\neg(S(x)\land\neg P(x))
+\iff\forall x(S(x)\to P(x))
 $$
 
 化回了「所有学生都用功」——两种说法等值，这也验证了翻译没错。
@@ -376,7 +376,7 @@ $$
 
 落在某个量词辖域内、被该量词「管住」的变元称 **约束变元**（Bound Variable），其余称 **自由变元**（Free Variable）。含自由变元的公式真假未定，像命题里的 $x+1=3$；闭式（无自由变元）才有确定真假。
 
-**换名规则**：约束变元可以改名（$\forall xP(x)\Leftrightarrow\forall yP(y)$），但新名字不能与辖域内已有的其他变元冲突，否则会改变含义。这跟编程里函数局部变量改名同理——只要不撞名，叫什么都行。
+**换名规则**：约束变元可以改名（$\forall xP(x)\iff\forall yP(y)$），但新名字不能与辖域内已有的其他变元冲突，否则会改变含义。这跟编程里函数局部变量改名同理——只要不撞名，叫什么都行。
 
 ### 谓词的等值演算
 
@@ -385,8 +385,8 @@ $$
 **量词否定（量词的德摩根律）**：
 
 $$
-\neg\forall xP(x)\Leftrightarrow\exists x\neg P(x),
-\neg\exists xP(x)\Leftrightarrow\forall x\neg P(x)
+\neg\forall xP(x)\iff\exists x\neg P(x),
+\neg\exists xP(x)\iff\forall x\neg P(x)
 $$
 
 含义直白：「**不是所有都满足**」等于「**存在一个不满足**」；「**不存在满足的**」等于「**所有都不满足**」。否定一个量词，就是把它换成另一个量词、并把否定推进去。
@@ -394,18 +394,18 @@ $$
 **量词辖域收缩与扩张**（设 $Q$ 中不含 $x$，故 $x$ 在 $Q$ 中自由出现与否不影响）：
 
 $$
-\forall x(P(x)\land Q)\Leftrightarrow\forall xP(x)\land Q,
-\exists x(P(x)\lor Q)\Leftrightarrow\exists xP(x)\lor Q
+\forall x(P(x)\land Q)\iff\forall xP(x)\land Q,
+\exists x(P(x)\lor Q)\iff\exists xP(x)\lor Q
 $$
 
 **量词分配**：
 
 $$
-\forall x(P(x)\land Q(x))\Leftrightarrow\forall xP(x)\land\forall xQ(x)
+\forall x(P(x)\land Q(x))\iff\forall xP(x)\land\forall xQ(x)
 $$
 
 $$
-\exists x(P(x)\lor Q(x))\Leftrightarrow\exists xP(x)\lor\exists xQ(x)
+\exists x(P(x)\lor Q(x))\iff\exists xP(x)\lor\exists xQ(x)
 $$
 
 :::tip
@@ -413,7 +413,7 @@ $$
 分配只在「**$\forall$ 对 $\land$**」「**$\exists$ 对 $\lor$**」时是等值；交叉情形 **只能单向蕴含**，不能划等号。例如：
 
 $$
-\forall xP(x)\lor\forall xQ(x)\Rightarrow\forall x(P(x)\lor Q(x))
+\forall xP(x)\lor\forall xQ(x)\implies\forall x(P(x)\lor Q(x))
 $$
 
 反过来不成立——「每个数要么正要么负」是真的，但「所有数都正」和「所有数都负」都假。
@@ -425,14 +425,14 @@ $$
 同类量词可以交换次序，异类量词 **不能随便交换**：
 
 $$
-\forall x\forall yP(x,y)\Leftrightarrow\forall y\forall xP(x,y),
-\exists x\exists yP(x,y)\Leftrightarrow\exists y\exists xP(x,y)
+\forall x\forall yP(x,y)\iff\forall y\forall xP(x,y),
+\exists x\exists yP(x,y)\iff\exists y\exists xP(x,y)
 $$
 
 但 $\forall$ 与 $\exists$ 的次序事关重大：
 
 $$
-\exists y\forall xP(x,y)\Rightarrow\forall x\exists yP(x,y)
+\exists y\forall xP(x,y)\implies\forall x\exists yP(x,y)
 $$
 
 只能这样单向推，反向不成立。设 $P(x,y)$ 为「$y$ 是 $x$ 的母亲」：
@@ -463,10 +463,10 @@ $$
 
 $$
 \begin{aligned}
-  \forall xP(x)\to\exists xQ(x) & \Leftrightarrow\neg\forall xP(x)\lor\exists xQ(x) & & \text{蕴含等价} \\
-  & \Leftrightarrow\exists x\neg P(x)\lor\exists xQ(x) & & \text{量词否定} \\
-  & \Leftrightarrow\exists x\neg P(x)\lor\exists yQ(y) & & \text{换名} \\
-  & \Leftrightarrow\exists x\exists y(\neg P(x)\lor Q(y)) & & \text{辖域扩张}
+  \forall xP(x)\to\exists xQ(x) & \iff\neg\forall xP(x)\lor\exists xQ(x) & & \text{蕴含等价} \\
+  & \iff\exists x\neg P(x)\lor\exists xQ(x) & & \text{量词否定} \\
+  & \iff\exists x\neg P(x)\lor\exists yQ(y) & & \text{换名} \\
+  & \iff\exists x\exists y(\neg P(x)\lor Q(y)) & & \text{辖域扩张}
 \end{aligned}
 $$
 
