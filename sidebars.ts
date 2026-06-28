@@ -276,7 +276,6 @@ const sidebars: SidebarsConfig = {
         'contest/graph/topo',
         'contest/graph/shortest-path',
         'contest/graph/spanning-tree',
-        'contest/graph/dmst',
         'contest/graph/connectivity',
         'contest/graph/block-forest',
         'contest/graph/rings-count',
