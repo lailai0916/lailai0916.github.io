@@ -1,6 +1,5 @@
 #include <bits/stdc++.h>
 using namespace std;
-
 #define ls (u<<1)
 #define rs (u<<1|1)
 #define mid (l+r>>1)
@@ -8,9 +7,7 @@ using namespace std;
 const int N=200005;
 const int inf=2147483647;
 int n,m,a[N];
-
 int tot,ch[N*20][2],rnd[N*20],siz[N*20],key[N*20];
-
 int newnode(int v)
 {
 	int u=++tot;
@@ -20,12 +17,10 @@ int newnode(int v)
 	key[u]=v;
 	return u;
 }
-
 void up(int u)
 {
 	siz[u]=siz[ch[u][0]]+siz[ch[u][1]]+1;
 }
-
 void rotate(int &u,int t)
 {
 	int p=ch[u][t];
@@ -35,7 +30,6 @@ void rotate(int &u,int t)
 	up(p);
 	u=p;
 }
-
 void insert(int &u,int v)
 {
 	if(!u)
@@ -48,7 +42,6 @@ void insert(int &u,int v)
 	insert(ch[u][t],v);
 	if(rnd[ch[u][t]]<rnd[u])rotate(u,t);
 }
-
 void erase(int &u,int v)
 {
 	if(!u)return;
@@ -70,7 +63,6 @@ void erase(int &u,int v)
 		erase(ch[u][v<key[u]?0:1],v);
 	}
 }
-
 int less_cnt(int u,int v)
 {
 	int res=0;
@@ -85,7 +77,6 @@ int less_cnt(int u,int v)
 	}
 	return res;
 }
-
 int pre(int u,int v)
 {
 	int res=-inf;
@@ -100,7 +91,6 @@ int pre(int u,int v)
 	}
 	return res;
 }
-
 int suc(int u,int v)
 {
 	int res=inf;
@@ -115,9 +105,7 @@ int suc(int u,int v)
 	}
 	return res;
 }
-
 int rt[N<<2];
-
 void build(int u,int l,int r)
 {
 	for(int i=l;i<=r;i++)insert(rt[u],a[i]);
@@ -125,7 +113,6 @@ void build(int u,int l,int r)
 	build(ls,l,mid);
 	build(rs,mid+1,r);
 }
-
 void modify(int u,int l,int r,int pos,int x,int v)
 {
 	erase(rt[u],x);
@@ -134,7 +121,6 @@ void modify(int u,int l,int r,int pos,int x,int v)
 	if(pos<=mid)modify(ls,l,mid,pos,x,v);
 	else modify(rs,mid+1,r,pos,x,v);
 }
-
 int ql,qr;
 int ask_less(int u,int l,int r,int v)
 {
@@ -144,7 +130,6 @@ int ask_less(int u,int l,int r,int v)
 	if(qr>mid)res+=ask_less(rs,mid+1,r,v);
 	return res;
 }
-
 int ask_pre(int u,int l,int r,int v)
 {
 	if(ql<=l&&r<=qr)return pre(rt[u],v);
@@ -153,7 +138,6 @@ int ask_pre(int u,int l,int r,int v)
 	if(qr>mid)res=max(res,ask_pre(rs,mid+1,r,v));
 	return res;
 }
-
 int ask_suc(int u,int l,int r,int v)
 {
 	if(ql<=l&&r<=qr)return suc(rt[u],v);
@@ -162,7 +146,6 @@ int ask_suc(int u,int l,int r,int v)
 	if(qr>mid)res=min(res,ask_suc(rs,mid+1,r,v));
 	return res;
 }
-
 int kth(int v)
 {
 	int lo=0,hi=1e8,res=0;
@@ -178,7 +161,6 @@ int kth(int v)
 	}
 	return res;
 }
-
 int main()
 {
 	ios::sync_with_stdio(false);

@@ -5,7 +5,6 @@ const int N=200005;
 const double al=0.75;
 int n,rt,tot;
 int ls[N],rs[N],d[N][2],L[N][2],R[N][2],sz[N],sum[N],val[N];
-
 int newnode(int x,int y,int v)
 {
 	int u=++tot;
@@ -15,7 +14,6 @@ int newnode(int x,int y,int v)
 	val[u]=v;
 	return u;
 }
-
 void up(int u)
 {
 	sz[u]=sz[ls[u]]+sz[rs[u]]+1;
@@ -35,7 +33,6 @@ void up(int u)
 		}
 	}
 }
-
 int g[N],gc;
 void flatten(int u)
 {
@@ -44,7 +41,6 @@ void flatten(int u)
 	g[++gc]=u;
 	flatten(rs[u]);
 }
-
 int build(int l,int r,int k)
 {
 	if(l>r)return 0;
@@ -56,14 +52,12 @@ int build(int l,int r,int k)
 	up(u);
 	return u;
 }
-
 int rebuild(int u)
 {
 	gc=0;
 	flatten(u);
 	return build(1,gc,0);
 }
-
 void insert(int &u,int x,int y,int v,int k)
 {
 	if(!u)
@@ -83,7 +77,6 @@ void insert(int &u,int x,int y,int v,int k)
 	up(u);
 	if(max(sz[ls[u]],sz[rs[u]])>sz[u]*al)u=rebuild(u);
 }
-
 int qx1,qy1,qx2,qy2;
 int query(int u)
 {
@@ -94,7 +87,6 @@ int query(int u)
 	res+=query(ls[u])+query(rs[u]);
 	return res;
 }
-
 int main()
 {
 	ios::sync_with_stdio(false);

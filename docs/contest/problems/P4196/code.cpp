@@ -3,7 +3,6 @@ using namespace std;
 
 const double eps=1e-8;
 const int N=505;
-
 struct Point
 {
 	double x,y;
@@ -12,7 +11,6 @@ struct Point
 	Point operator-(const Point&p)const{return Point(x-p.x,y-p.y);}
 	Point operator*(double t)const{return Point(x*t,y*t);}
 };
-
 struct Line
 {
 	Point p,v;
@@ -20,32 +18,26 @@ struct Line
 	Line(){}
 	Line(Point p,Point v):p(p),v(v){ang=atan2(v.y,v.x);}
 };
-
 double cross(const Point&a,const Point&b)
 {
 	return a.x*b.y-a.y*b.x;
 }
-
 bool cmp(const Line&a,const Line&b)
 {
 	if(fabs(a.ang-b.ang)>eps)return a.ang<b.ang;
 	return cross(a.v,b.p-a.p)<0;
 }
-
 Point inter(const Line&a,const Line&b)
 {
 	double t=cross(b.v,a.p-b.p)/cross(a.v,b.v);
 	return a.p+a.v*t;
 }
-
 bool onright(const Line&a,const Point&p)
 {
 	return cross(a.v,p-a.p)<-eps;
 }
-
 Line ls[N];
 int q[N];
-
 int main()
 {
 	int n;

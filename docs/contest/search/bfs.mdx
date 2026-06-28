@@ -1,5 +1,5 @@
 ---
-title: 广度优先搜索（BFS）
+title: 广度优先搜索
 ---
 
 ## 参考资料
@@ -26,9 +26,8 @@ const int N=105;
 int n,m;
 char g[N][N];
 int dis[N][N];
-int dx[]={0,0,1,-1};
-int dy[]={1,-1,0,0};
-
+const int dx[4]={0,0,1,-1};
+const int dy[4]={1,-1,0,0};
 int main()
 {
 	ios::sync_with_stdio(false);

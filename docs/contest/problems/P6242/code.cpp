@@ -1,6 +1,5 @@
 #include <bits/stdc++.h>
 using namespace std;
-
 #define ls (u<<1)
 #define rs (u<<1|1)
 #define mid (l+r>>1)
@@ -12,7 +11,6 @@ int a[N];
 ll sum[N];
 int mx[N],mx2[N],cmx[N],hmx[N];
 int ad[N],ad2[N],adh[N],adh2[N];
-
 void up(int u)
 {
 	sum[u]=sum[ls]+sum[rs];
@@ -36,7 +34,6 @@ void up(int u)
 		mx2[u]=max(mx[ls],mx2[rs]);
 	}
 }
-
 void add(int u,int len,int va,int vah,int va2,int vah2)
 {
 	sum[u]+=(ll)va*cmx[u]+(ll)va2*(len-cmx[u]);
@@ -48,7 +45,6 @@ void add(int u,int len,int va,int vah,int va2,int vah2)
 	ad2[u]+=va2;
 	if(mx2[u]!=-inf)mx2[u]+=va2;
 }
-
 void down(int u,int l,int r)
 {
 	int t=max(mx[ls],mx[rs]);
@@ -58,7 +54,6 @@ void down(int u,int l,int r)
 	else add(rs,r-mid,ad2[u],adh2[u],ad2[u],adh2[u]);
 	ad[u]=ad2[u]=adh[u]=adh2[u]=0;
 }
-
 void build(int u,int l,int r)
 {
 	adh[u]=adh2[u]=-inf;
@@ -73,7 +68,6 @@ void build(int u,int l,int r)
 	build(rs,mid+1,r);
 	up(u);
 }
-
 void update_add(int u,int l,int r,int ql,int qr,int k)
 {
 	if(ql<=l&&r<=qr)
@@ -86,7 +80,6 @@ void update_add(int u,int l,int r,int ql,int qr,int k)
 	if(qr>mid)update_add(rs,mid+1,r,ql,qr,k);
 	up(u);
 }
-
 void update_min(int u,int l,int r,int ql,int qr,int v)
 {
 	if(v>=mx[u])return;
@@ -100,7 +93,6 @@ void update_min(int u,int l,int r,int ql,int qr,int v)
 	if(qr>mid)update_min(rs,mid+1,r,ql,qr,v);
 	up(u);
 }
-
 ll query_sum(int u,int l,int r,int ql,int qr)
 {
 	if(ql<=l&&r<=qr)return sum[u];
@@ -110,7 +102,6 @@ ll query_sum(int u,int l,int r,int ql,int qr)
 	if(qr>mid)res+=query_sum(rs,mid+1,r,ql,qr);
 	return res;
 }
-
 int query_max(int u,int l,int r,int ql,int qr)
 {
 	if(ql<=l&&r<=qr)return mx[u];
@@ -120,7 +111,6 @@ int query_max(int u,int l,int r,int ql,int qr)
 	if(qr>mid)res=max(res,query_max(rs,mid+1,r,ql,qr));
 	return res;
 }
-
 int query_hmax(int u,int l,int r,int ql,int qr)
 {
 	if(ql<=l&&r<=qr)return hmx[u];
@@ -130,7 +120,6 @@ int query_hmax(int u,int l,int r,int ql,int qr)
 	if(qr>mid)res=max(res,query_hmax(rs,mid+1,r,ql,qr));
 	return res;
 }
-
 int main()
 {
 	ios::sync_with_stdio(false);

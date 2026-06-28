@@ -4,13 +4,11 @@ using namespace std;
 const int inf=0x3f3f3f3f;
 const int N=3005,M=305;
 int a[N],s[N],f[M][N];
-
 int w(int i,int j)
 {
 	int mid=i+j>>1;
 	return s[j]-s[mid]-(j-mid)*a[mid]+(mid-i)*a[mid]-(s[mid-1]-s[i-1]);
 }
-
 void solve(int p,int l,int r,int pl,int pr)
 {
 	if(l>r)return;
@@ -29,7 +27,6 @@ void solve(int p,int l,int r,int pl,int pr)
 	solve(p,l,mid-1,pl,pos);
 	solve(p,mid+1,r,pos,pr);
 }
-
 int main()
 {
 	ios::sync_with_stdio(false);

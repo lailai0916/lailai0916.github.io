@@ -24,7 +24,6 @@ const int N=100005;
 vector<int> G[N];
 int siz[N],mx[N];
 int n,ans;
-
 void dfs(int u,int fa)
 {
 	siz[u]=1;mx[u]=0;
@@ -38,7 +37,6 @@ void dfs(int u,int fa)
 	mx[u]=max(mx[u],n-siz[u]);
 	if(mx[u]<=n/2)ans=u;
 }
-
 int main()
 {
 	ios::sync_with_stdio(false);

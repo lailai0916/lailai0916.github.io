@@ -33,7 +33,6 @@ const int N=105;
 int t,n,w[N],v[N];
 int sv[N];
 int ans;
-
 void dfs(int i,int cur_w,int cur_v)
 {
 	if(i>n)
@@ -44,7 +43,6 @@ void dfs(int i,int cur_w,int cur_v)
 	if(cur_w+w[i]<=t)dfs(i+1,cur_w+w[i],cur_v+v[i]);
 	if(cur_v+sv[i+1]>ans)dfs(i+1,cur_w,cur_v);
 }
-
 int main()
 {
 	ios::sync_with_stdio(false);

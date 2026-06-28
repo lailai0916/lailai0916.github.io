@@ -3,7 +3,6 @@ using namespace std;
 
 const int N=5000005;
 char s[N];
-
 int main()
 {
 	int n=0;

@@ -4,14 +4,11 @@ using namespace std;
 const int N=50005,M=100005;
 int fa[N];
 int find(int u){return u==fa[u]?u:fa[u]=find(fa[u]);}
-
 struct Edge
 {
 	int u,v,w,c;
 }e[M],g[M];
-
 int n,m,k;
-
 int check(int x,int &sum)
 {
 	for(int i=1;i<=m;i++)
@@ -36,7 +33,6 @@ int check(int x,int &sum)
 	}
 	return cnt;
 }
-
 int main()
 {
 	ios::sync_with_stdio(false);

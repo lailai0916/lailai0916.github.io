@@ -31,7 +31,6 @@ const int N=100005;
 vector<int> G[N];
 int deg[N],in[N],out[N];
 vector<int> path;
-
 void dfs(int u)
 {
 	while(deg[u]<(int)G[u].size())
@@ -41,7 +40,6 @@ void dfs(int u)
 	}
 	path.push_back(u);
 }
-
 int main()
 {
 	ios::sync_with_stdio(false);

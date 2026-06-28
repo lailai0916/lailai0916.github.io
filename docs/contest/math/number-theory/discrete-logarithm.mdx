@@ -1,14 +1,14 @@
 ---
-title: BSGS
+title: 离散对数
 ---
 
 ## 参考资料
 
-- [BSGS - OI Wiki](https://oi-wiki.org/math/number-theory/discrete-logarithm/)
+- [离散对数 - OI Wiki](https://oi-wiki.org/math/number-theory/discrete-logarithm/)
 
 ## 简介
 
-**BSGS**（Baby-Step Giant-Step，大步小步）在 $\gcd(a,p)=1$ 时求解 $a^x\equiv b\pmod p$ 的最小非负整数 $x$。
+求 $a^x\equiv b\pmod p$ 的最小非负整数 $x$ 称为 **离散对数** 问题。当 $\gcd(a,p)=1$ 时，用 **BSGS**（Baby-Step Giant-Step，大步小步）求解。
 
 设 $m=\lceil\sqrt p\rceil$，令 $x=im-j$（$0\le i,j<m$），则方程化为 $a^{im}\equiv b\cdot a^{j}\pmod p$。先枚举 $j$ 把 $b\cdot a^j$ 存入哈希表（小步），再枚举 $i$ 计算 $a^{im}$ 查表（大步），时间复杂度 $O(\sqrt p)$。当 $\gcd(a,p)\ne 1$ 时用扩展 BSGS。
 

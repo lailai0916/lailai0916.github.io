@@ -7,7 +7,6 @@ const int SZ=300005,P=299987;
 int n,m,ex,ey;
 char g[M][M];
 int b[M+1],bb[M+1];
-
 ll encode()
 {
 	ll s=0;
@@ -21,7 +20,6 @@ ll encode()
 	}
 	return s;
 }
-
 void decode(ll s)
 {
 	for(int i=0;i<=m;i++)
@@ -30,7 +28,6 @@ void decode(ll s)
 		s>>=off;
 	}
 }
-
 struct Hash
 {
 	int head[P],nxt[SZ],sz;
@@ -59,7 +56,6 @@ struct Hash
 	}
 	void roll(){for(int i=0;i<sz;i++)st[i]<<=off;}
 }h[2];
-
 int cur;
 void push(int j,int dn,int rt,ll d)
 {
@@ -67,7 +63,6 @@ void push(int j,int dn,int rt,ll d)
 	b[j+1]=rt;
 	h[cur^1].push(encode(),d);
 }
-
 int main()
 {
 	ios::sync_with_stdio(false);

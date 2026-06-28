@@ -1,14 +1,14 @@
 ---
-title: Link-Cut Tree
+title: Link Cut Tree
 ---
 
 ## 参考资料
 
-- [Link-Cut Tree - OI Wiki](https://oi-wiki.org/ds/lct/)
+- [Link Cut Tree - OI Wiki](https://oi-wiki.org/ds/lct/)
 
 ## 简介
 
-**Link-Cut Tree**（LCT）用一组 Splay 维护一片森林的 **实链剖分**，支持在线的连边、断边、换根，以及链上的修改与查询。
+**Link Cut Tree**（LCT）用一组 Splay 维护一片森林的 **实链剖分**，支持在线的连边、断边、换根，以及链上的修改与查询。
 
 核心操作 `access(u)` 把 $u$ 到所在树根的路径变成一条实链（对应一棵 Splay）；在此之上实现 `makeroot`、`link`、`cut`、`split` 等。所有操作的均摊复杂度为 $O(\log n)$。它是树链剖分的动态版本，适合处理树形态会改变的问题。
 

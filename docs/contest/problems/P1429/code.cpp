@@ -6,23 +6,19 @@ struct point
 {
 	double x,y;
 }p[N],t[N];
-
 bool cmpx(const point &a,const point &b)
 {
 	return a.x<b.x;
 }
-
 bool cmpy(const point &a,const point &b)
 {
 	return a.y<b.y;
 }
-
 double dist(const point &a,const point &b)
 {
 	double dx=a.x-b.x,dy=a.y-b.y;
 	return sqrt(dx*dx+dy*dy);
 }
-
 double solve(int l,int r)
 {
 	if(l==r)return 1e18;
@@ -38,7 +34,6 @@ double solve(int l,int r)
 			d=min(d,dist(t[i],t[j]));
 	return d;
 }
-
 int main()
 {
 	ios::sync_with_stdio(false);

@@ -5,17 +5,14 @@ typedef long long ll;
 const int N=50005;
 ll g[N],f[N];
 int q[N];
-
 ll Y(int i)
 {
 	return f[i]+g[i]*g[i];
 }
-
 ll X(int i)
 {
 	return g[i];
 }
-
 int main()
 {
 	ios::sync_with_stdio(false);

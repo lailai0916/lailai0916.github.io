@@ -22,7 +22,6 @@ using namespace std;
 
 using ll=long long;
 const int N=200005;
-
 ll ys[N];
 int m;
 struct Node
@@ -30,7 +29,6 @@ struct Node
 	int cnt;
 	ll len;
 }tr[N<<2];
-
 void push_up(int u,int l,int r)
 {
 	if(tr[u].cnt)tr[u].len=ys[r+1]-ys[l];
@@ -45,14 +43,12 @@ void update(int u,int l,int r,int x,int y,int v)
 	if(y>mid)update(u<<1|1,mid+1,r,x,y,v);
 	push_up(u,l,r);
 }
-
 struct Line
 {
 	ll x,y1,y2;
 	int flag;
 	bool operator<(const Line &o)const{return x<o.x;}
 }lines[N];
-
 int main()
 {
 	ios::sync_with_stdio(false);

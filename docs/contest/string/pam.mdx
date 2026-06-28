@@ -1,14 +1,14 @@
 ---
-title: 回文自动机（PAM）
+title: 回文树
 ---
 
 ## 参考资料
 
-- [回文自动机（PAM） - OI Wiki](https://oi-wiki.org/string/pam/)
+- [回文树 - OI Wiki](https://oi-wiki.org/string/pam/)
 
 ## 简介
 
-**回文自动机**（Palindromic Automaton，PAM；又称回文树）的每个节点恰好对应原串的一个本质不同的回文子串，$\operatorname{fail}$ 指针指向该回文串的最长回文真后缀。它有偶根、奇根两个初始节点。
+**回文树**（回文自动机，Palindromic Automaton，PAM）的每个节点恰好对应原串的一个本质不同的回文子串，$\operatorname{fail}$ 指针指向该回文串的最长回文真后缀。它有偶根、奇根两个初始节点。
 
 逐字符在线构建，总状态数为本质不同回文子串个数（不超过 $n$），构建复杂度 $O(n)$。它能统计本质不同回文串个数、每个回文串的出现次数等。
 

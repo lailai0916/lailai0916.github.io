@@ -3,7 +3,6 @@ using namespace std;
 
 const int N=1005;
 int h[N],l[N],r[N],stk[N];
-
 int main()
 {
 	ios::sync_with_stdio(false);

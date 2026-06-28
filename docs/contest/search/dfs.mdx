@@ -1,5 +1,5 @@
 ---
-title: 深度优先搜索（DFS）
+title: 深度优先搜索
 ---
 
 ## 参考资料
@@ -21,14 +21,13 @@ title: 深度优先搜索（DFS）
 using namespace std;
 
 const int N=10;
-int n,arr[N];
+int n,a[N];
 bool vis[N];
-
 void dfs(int dep)
 {
 	if(dep>n)
 	{
-		for(int i=1;i<=n;i++)cout<<arr[i]<<' ';
+		for(int i=1;i<=n;i++)cout<<a[i]<<' ';
 		cout<<'\n';
 		return;
 	}
@@ -36,12 +35,11 @@ void dfs(int dep)
 	{
 		if(vis[i])continue;
 		vis[i]=1;
-		arr[dep]=i;
+		a[dep]=i;
 		dfs(dep+1);
 		vis[i]=0;
 	}
 }
-
 int main()
 {
 	ios::sync_with_stdio(false);

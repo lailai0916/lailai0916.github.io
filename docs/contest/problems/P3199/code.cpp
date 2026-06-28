@@ -10,7 +10,6 @@ double dis[N];
 int cnt[N];
 bool vis[N];
 int n,m;
-
 void add(int u,int v,double c)
 {
 	to[++tot]=v;
@@ -18,7 +17,6 @@ void add(int u,int v,double c)
 	nxt[tot]=head[u];
 	head[u]=tot;
 }
-
 bool dfs(int u,double mid)
 {
 	vis[u]=1;
@@ -38,7 +36,6 @@ bool dfs(int u,double mid)
 	vis[u]=0;
 	return 0;
 }
-
 bool check(double mid)
 {
 	for(int i=1;i<=n;i++)
@@ -50,7 +47,6 @@ bool check(double mid)
 		if(dfs(i,mid))return 1;
 	return 0;
 }
-
 int main()
 {
 	ios::sync_with_stdio(false);

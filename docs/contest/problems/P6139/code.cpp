@@ -4,7 +4,6 @@ using namespace std;
 using ll=long long;
 const int N=2000005;
 int ch[N][26],link_[N],len[N],tot=1;
-
 int insert(int last,int c)
 {
 	if(ch[last][c])
@@ -53,7 +52,6 @@ int insert(int last,int c)
 	}
 	return cur;
 }
-
 int main()
 {
 	ios::sync_with_stdio(false);

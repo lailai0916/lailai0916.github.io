@@ -47,7 +47,6 @@ vector<int> G[N];
 int fa[N][LOG],dep[N];
 int d[N];
 int n,m;
-
 void dfs(int u,int f,int depth)
 {
 	fa[u][0]=f;
@@ -59,7 +58,6 @@ void dfs(int u,int f,int depth)
 		dfs(v,u,depth+1);
 	}
 }
-
 int lca(int u,int v)
 {
 	if(dep[u]<dep[v])swap(u,v);
@@ -75,7 +73,6 @@ int lca(int u,int v)
 	}
 	return fa[u][0];
 }
-
 void calc(int u,int f)
 {
 	for(auto v:G[u])
@@ -85,7 +82,6 @@ void calc(int u,int f)
 		d[u]+=d[v];
 	}
 }
-
 int main()
 {
 	ios::sync_with_stdio(false);

@@ -5,12 +5,10 @@ const int N=1005;
 vector<int> G[N];
 int n,m,match[N],pre[N],fa[N],typ[N],vis[N],tic;
 queue<int> q;
-
 int find(int x)
 {
 	return fa[x]==x?x:fa[x]=find(fa[x]);
 }
-
 int lca(int u,int v)
 {
 	tic++;
@@ -24,7 +22,6 @@ int lca(int u,int v)
 	}
 	return u;
 }
-
 void blossom(int u,int v,int p)
 {
 	while(find(u)!=p)
@@ -41,7 +38,6 @@ void blossom(int u,int v,int p)
 		u=pre[v];
 	}
 }
-
 bool augment(int s)
 {
 	for(int i=1;i<=n;i++)
@@ -86,7 +82,6 @@ bool augment(int s)
 	}
 	return 0;
 }
-
 int main()
 {
 	ios::sync_with_stdio(false);

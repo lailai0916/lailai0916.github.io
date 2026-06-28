@@ -6,7 +6,6 @@ double x[N],y[N],w[N];
 int n;
 double ansx,ansy,ansv;
 mt19937 rng(20040525);
-
 double calc(double px,double py)
 {
 	double sum=0;
@@ -23,12 +22,10 @@ double calc(double px,double py)
 	}
 	return sum;
 }
-
 double frand()
 {
 	return (double)rng()/rng.max()*2-1;
 }
-
 void anneal()
 {
 	double px=ansx,py=ansy;
@@ -46,7 +43,6 @@ void anneal()
 		t*=0.99;
 	}
 }
-
 int main()
 {
 	cin>>n;

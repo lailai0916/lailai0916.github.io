@@ -21,7 +21,6 @@ using namespace std;
 const int N=100005;
 vector<int> G[N];
 int ind[N];
-
 bool topo(int n,vector<int> &ord)
 {
 	queue<int> q;
@@ -38,7 +37,6 @@ bool topo(int n,vector<int> &ord)
 	}
 	return (int)ord.size()==n;
 }
-
 int main()
 {
 	ios::sync_with_stdio(false);
