@@ -1,7 +1,7 @@
 .heroTile {
   display: flex;
   flex-direction: column;
-  gap: 0.4rem;
+  gap: 0.55rem;
 }
 
 @media (max-width: 480px) {
@@ -16,43 +16,79 @@
   }
 }
 
+.heroHead {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  min-width: 0;
+}
+
+.heroIcon {
+  flex-shrink: 0;
+  font-size: 1.05rem;
+  color: var(--ifm-color-primary);
+}
+
 .heroLabel {
-  font-size: 0.78rem;
+  font-size: 0.8rem;
   font-weight: 500;
-  color: var(--ifm-color-emphasis-600);
+  color: var(--ifm-color-emphasis-700);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .heroValue {
-  font-size: clamp(1.35rem, 1.2vw + 0.6rem, 1.85rem);
+  font-size: clamp(1.55rem, 1.3vw + 0.7rem, 1.95rem);
   font-weight: 700;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.03em;
   line-height: 1.05;
   color: var(--ifm-font-color-base);
   font-variant-numeric: tabular-nums;
   white-space: nowrap;
 }
 
-.heroDeltaUp,
-.heroDeltaDown,
-.heroDeltaFlat {
-  font-size: 0.85rem;
-  font-weight: 600;
-  font-variant-numeric: tabular-nums;
+/* Trend pill — the one accent. Base reserves height (transparent while loading);
+   the up/down/flat modifiers add the tinted wash. */
+.heroDelta {
+  align-self: flex-start;
   display: inline-flex;
   align-items: center;
-  gap: 0.2rem;
+  gap: 0.1rem;
+  padding: 0.16rem 0.5rem 0.16rem 0.4rem;
+  border-radius: 999px;
+  font-size: 0.74rem;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  line-height: 1.35;
+}
+
+.heroDeltaIcon {
+  font-size: 0.9rem;
 }
 
 .heroDeltaUp {
   color: var(--lk-color-up);
+  background: color-mix(in srgb, var(--lk-color-up) 12%, transparent);
+}
+
+html[data-theme='dark'] .heroDeltaUp {
+  background: color-mix(in srgb, var(--lk-color-up) 20%, transparent);
 }
 
 .heroDeltaDown {
   color: var(--lk-color-down);
+  background: color-mix(in srgb, var(--lk-color-down) 12%, transparent);
+}
+
+html[data-theme='dark'] .heroDeltaDown {
+  background: color-mix(in srgb, var(--lk-color-down) 20%, transparent);
 }
 
 .heroDeltaFlat {
+  padding-left: 0.5rem;
   color: var(--ifm-color-emphasis-500);
+  background: var(--ifm-color-emphasis-100);
 }
 
 .heroGrid {

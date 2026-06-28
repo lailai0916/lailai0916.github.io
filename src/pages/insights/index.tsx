@@ -1,4 +1,6 @@
 import { type ReactNode, useState } from 'react';
+import clsx from 'clsx';
+import { Icon } from '@iconify/react';
 import Layout from '@theme/Layout';
 import { translate } from '@docusaurus/Translate';
 import { usePluralForm } from '@docusaurus/theme-common';
@@ -11,7 +13,6 @@ import {
   PageContent,
 } from '@site/src/components/laikit/Page';
 import Card from '@site/src/components/laikit/Card';
-import IconBlock from '@site/src/components/laikit/IconBlock';
 import Skeleton from '@site/src/components/laikit/Skeleton';
 import Chart from '@site/src/components/laikit/Chart';
 import Segmented, {
@@ -125,10 +126,10 @@ function HeroMetric({
     sign === 'flat' ? null : spec.invertDelta ? sign === 'down' : sign === 'up';
 
   return (
-    <Card padding="1.5rem 1.5rem 1.25rem" className={styles.heroTile}>
-      <div className={styles.heroTop}>
+    <Card padding="1.5rem 1.5rem 1.3rem" className={styles.heroTile}>
+      <div className={styles.heroHead}>
+        <Icon icon={spec.icon} className={styles.heroIcon} aria-hidden="true" />
         <span className={styles.heroLabel}>{spec.label}</span>
-        <IconBlock icon={spec.icon} variant="muted" size={32} />
       </div>
       {loading ? (
         <Skeleton className={styles.heroValue} radius="8px">
@@ -138,13 +139,29 @@ function HeroMetric({
         <span className={styles.heroValue}>{spec.format(animated)}</span>
       )}
       {loading ? (
-        <span className={styles.heroDeltaFlat}>&nbsp;</span>
+        <span className={styles.heroDelta} aria-hidden="true">
+          &nbsp;
+        </span>
       ) : delta != null && sign !== 'flat' ? (
-        <span className={positive ? styles.heroDeltaUp : styles.heroDeltaDown}>
-          {sign === 'up' ? '↑' : '↓'} {Math.abs(delta * 100).toFixed(1)}%
+        <span
+          className={clsx(
+            styles.heroDelta,
+            positive ? styles.heroDeltaUp : styles.heroDeltaDown
+          )}
+        >
+          <Icon
+            icon={
+              sign === 'up'
+                ? 'lucide:arrow-up-right'
+                : 'lucide:arrow-down-right'
+            }
+            className={styles.heroDeltaIcon}
+            aria-hidden="true"
+          />
+          {Math.abs(delta * 100).toFixed(1)}%
         </span>
       ) : (
-        <span className={styles.heroDeltaFlat}>—</span>
+        <span className={clsx(styles.heroDelta, styles.heroDeltaFlat)}>—</span>
       )}
     </Card>
   );
@@ -156,7 +173,10 @@ function HeroGrid({ range }: { range: InsightsRange }) {
   const loading = status === 'loading';
   const errored = status === 'error';
 
-  const compact = (n: number) => formatCompact(n, i18n.currentLocale);
+  // Round before formatting so a count-up frame never shows more decimals than
+  // its final value (e.g. an integer total of 23 must not flash "11.5").
+  const compact = (n: number) =>
+    formatCompact(Math.round(n), i18n.currentLocale);
 
   const specs: MetricSpec[] = [
     {
@@ -165,6 +185,7 @@ function HeroGrid({ range }: { range: InsightsRange }) {
         id: 'pages.insights.metric.visitors',
         message: 'Visitors',
       }),
+      icon: 'lucide:users',
       format: compact,
     },
     {
@@ -173,6 +194,7 @@ function HeroGrid({ range }: { range: InsightsRange }) {
         id: 'pages.insights.metric.visits',
         message: 'Visits',
       }),
+      icon: 'lucide:log-in',
       format: compact,
     },
     {
@@ -181,6 +203,7 @@ function HeroGrid({ range }: { range: InsightsRange }) {
         id: 'pages.insights.metric.pageviews',
         message: 'Pageviews',
       }),
+      icon: 'lucide:eye',
       format: compact,
     },
     {
@@ -189,6 +212,7 @@ function HeroGrid({ range }: { range: InsightsRange }) {
         id: 'pages.insights.metric.bounceRate',
         message: 'Bounce Rate',
       }),
+      icon: 'lucide:undo-2',
       format: formatPercent,
       invertDelta: true,
     },
@@ -198,6 +222,7 @@ function HeroGrid({ range }: { range: InsightsRange }) {
         id: 'pages.insights.metric.avgVisit',
         message: 'Avg. Visit',
       }),
+      icon: 'lucide:timer',
       format: formatDuration,
     },
   ];
