@@ -27,11 +27,8 @@ double solve(int l,int r)
 	double d=min(solve(l,mid),solve(mid+1,r));
 	inplace_merge(p+l,p+mid+1,p+r+1,cmpy);
 	int cnt=0;
-	for(int i=l;i<=r;i++)
-		if(fabs(p[i].x-midx)<d)t[++cnt]=p[i];
-	for(int i=1;i<=cnt;i++)
-		for(int j=i+1;j<=cnt&&t[j].y-t[i].y<d;j++)
-			d=min(d,dist(t[i],t[j]));
+	for(int i=l;i<=r;i++)if(fabs(p[i].x-midx)<d)t[++cnt]=p[i];
+	for(int i=1;i<=cnt;i++)for(int j=i+1;j<=cnt&&t[j].y-t[i].y<d;j++)d=min(d,dist(t[i],t[j]));
 	return d;
 }
 int main()

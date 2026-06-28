@@ -184,7 +184,7 @@ int main()
 		if(op==1)cout<<ask_less(1,1,n,k)+1<<'\n';
 		else if(op==2)cout<<kth(k)<<'\n';
 		else if(op==4)cout<<ask_pre(1,1,n,k)<<'\n';
-		else cout<<ask_suc(1,1,n,k)<<'\n';
+		else if(op==5)cout<<ask_suc(1,1,n,k)<<'\n';
 	}
 	return 0;
 }

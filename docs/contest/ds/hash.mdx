@@ -31,8 +31,7 @@ void add(int k,int v)
 }
 int get(int k)
 {
-	for(int i=head[h(k)];i;i=nxt[i])
-		if(key[i]==k)return val[i];
+	for(int i=head[h(k)];i;i=nxt[i])if(key[i]==k)return val[i];
 	return -1;
 }
 int main()
@@ -46,7 +45,7 @@ int main()
 		int op,k,v;
 		cin>>op;
 		if(op==1){cin>>k>>v;add(k,v);}
-		else{cin>>k;cout<<get(k)<<'\n';}
+		else if(op==2){cin>>k;cout<<get(k)<<'\n';}
 	}
 	return 0;
 }

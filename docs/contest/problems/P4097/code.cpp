@@ -77,7 +77,7 @@ int main()
 			last=query(1,1,N,x);
 			cout<<last<<'\n';
 		}
-		else
+		else if(op==1)
 		{
 			int x0,y0,x1,y1;
 			cin>>x0>>y0>>x1>>y1;

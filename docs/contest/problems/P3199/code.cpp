@@ -43,8 +43,7 @@ bool check(double mid)
 		dis[i]=0;
 		vis[i]=0;
 	}
-	for(int i=1;i<=n;i++)
-		if(dfs(i,mid))return 1;
+	for(int i=1;i<=n;i++)if(dfs(i,mid))return 1;
 	return 0;
 }
 int main()

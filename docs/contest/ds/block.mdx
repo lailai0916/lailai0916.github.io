@@ -69,10 +69,11 @@ int main()
 	}
 	while(m--)
 	{
-		int op,l,r;ll v;
+		int op,l,r;
+		ll v;
 		cin>>op>>l>>r;
 		if(op==1){cin>>v;add(l,r,v);}
-		else cout<<query(l,r)<<'\n';
+		else if(op==2)cout<<query(l,r)<<'\n';
 	}
 	return 0;
 }

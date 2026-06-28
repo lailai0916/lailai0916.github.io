@@ -104,7 +104,7 @@ int main()
 			v^=last;
 			insert(rt,x,y,v,0);
 		}
-		else
+		else if(op==2)
 		{
 			cin>>qx1>>qy1>>qx2>>qy2;
 			qx1^=last;

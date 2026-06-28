@@ -146,7 +146,7 @@ int main()
 		}
 		else if(op==3)cout<<query_sum(1,1,n,l,r)<<'\n';
 		else if(op==4)cout<<query_max(1,1,n,l,r)<<'\n';
-		else cout<<query_hmax(1,1,n,l,r)<<'\n';
+		else if(op==5)cout<<query_hmax(1,1,n,l,r)<<'\n';
 	}
 	return 0;
 }

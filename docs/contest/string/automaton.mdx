@@ -36,8 +36,7 @@ void insert(string s)
 void build()
 {
 	queue<int> q;
-	for(int i=0;i<26;i++)
-		if(son[0][i])q.push(son[0][i]);
+	for(int i=0;i<26;i++)if(son[0][i])q.push(son[0][i]);
 	while(!q.empty())
 	{
 		int u=q.front();

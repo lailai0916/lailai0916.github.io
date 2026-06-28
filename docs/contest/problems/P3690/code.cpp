@@ -108,7 +108,7 @@ int main()
 		}
 		else if(op==1)link(x,y);
 		else if(op==2)cut(x,y);
-		else
+		else if(op==3)
 		{
 			splay(x);
 			val[x]=y;

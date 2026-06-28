@@ -20,14 +20,6 @@ $$
 
 就是以 $k$ 为最大编号节点的环的长度（$g$ 为原始邻接矩阵）。枚举并取最小值即得最小环。时间复杂度 $O(n^3)$。
 
-## Dijkstra 算法
-
-依次枚举每条边 $(u,v,w)$，临时删去该边后从 $u$ 跑一次 Dijkstra，得到不经过该边的 $u\to v$ 最短路 $d$，则过该边的最小环长度为 $d+w$。时间复杂度 $O(m(n+m)\log n)$，适合稀疏图。
-
-## 实现
-
-以下为 Floyd 求无向图最小环。
-
 ```cpp
 #include <bits/stdc++.h>
 using namespace std;
@@ -46,16 +38,14 @@ ll min_cycle()
 		{
 			for(int j=1;j<i;j++)
 			{
-				if(g[i][k]<inf&&g[k][j]<inf&&dis[i][j]<inf)
-					ans=min(ans,g[i][k]+g[k][j]+dis[i][j]);
+				if(g[i][k]<inf&&g[k][j]<inf&&dis[i][j]<inf)ans=min(ans,g[i][k]+g[k][j]+dis[i][j]);
 			}
 		}
 		for(int i=1;i<=n;i++)
 		{
 			for(int j=1;j<=n;j++)
 			{
-				if(dis[i][k]<inf&&dis[k][j]<inf)
-					dis[i][j]=min(dis[i][j],dis[i][k]+dis[k][j]);
+				if(dis[i][k]<inf&&dis[k][j]<inf)dis[i][j]=min(dis[i][j],dis[i][k]+dis[k][j]);
 			}
 		}
 	}
@@ -76,17 +66,22 @@ int main()
 	}
 	while(m--)
 	{
-		int u,v;ll w;
+		int u,v;
+		ll w;
 		cin>>u>>v>>w;
 		g[u][v]=g[v][u]=min(g[u][v],w);
 		dis[u][v]=dis[v][u]=min(dis[u][v],w);
 	}
 	ll ans=min_cycle();
-	if(ans==inf)cout<<"No solution.\n";
+	if(ans==inf)cout<<"No solution."<<'\n';
 	else cout<<ans<<'\n';
 	return 0;
 }
 ```
+
+## Dijkstra 算法
+
+依次枚举每条边 $(u,v,w)$，临时删去该边后从 $u$ 跑一次 Dijkstra，得到不经过该边的 $u\to v$ 最短路 $d$，则过该边的最小环长度为 $d+w$。时间复杂度 $O(m(n+m)\log n)$，适合稀疏图。
 
 ## 例题
 

@@ -315,11 +315,11 @@ int main()
 	{
 		if(sccno[i]==sccno[i+n])
 		{
-			cout<<"IMPOSSIBLE\n";
+			cout<<"IMPOSSIBLE"<<'\n';
 			return 0;
 		}
 	}
-	cout<<"POSSIBLE\n";
+	cout<<"POSSIBLE"<<'\n';
 	for(int i=1;i<=n;i++)cout<<(sccno[i]<sccno[i+n])<<' ';
 	cout<<'\n';
 	return 0;
