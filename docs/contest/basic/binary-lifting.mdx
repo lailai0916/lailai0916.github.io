@@ -6,6 +6,18 @@ title: 倍增
 
 - [倍增 - OI Wiki](https://oi-wiki.org/basic/binary-lifting/)
 
+## 简介
+
+**倍增**（Binary Lifting）的核心思想是：预处理以 $2$ 的整次幂为步长的状态，然后将任意目标分解为若干 $2$ 的幂次之和，逐段合并得到答案。这利用了「任意非负整数均可用二进制表示」这一性质。
+
+预处理阶段，设 $f(i,x)$ 表示从状态 $x$ 走 $2^i$ 步后的结果，则递推关系为：
+
+$$
+f(i,x)=f(i-1,f(i-1,x))
+$$
+
+预处理复杂度为 $O(n\log n)$，每次查询 $O(\log n)$。
+
 ## 应用
 
 详见 [ST 表](/docs/contest/ds/sparse-table)。

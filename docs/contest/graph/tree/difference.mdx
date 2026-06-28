@@ -6,6 +6,116 @@ title: 树上差分
 
 - [树上差分 - 前缀和 & 差分 - OI Wiki](https://oi-wiki.org/basic/prefix-sum/#树上差分)
 
+## 简介
+
+**树上差分**是差分思想在树结构上的推广，用于高效实现「路径区间加」操作。设差分数组为 $D$，对路径 $x\to y$（设 $l=\operatorname{lca}(x,y)$，$f=\operatorname{fa}(l)$）加 $v$：
+
+**点差分**（将值加到路径上所有节点）：
+
+$$
+\begin{aligned}
+D_x & =D_x+v, \\
+D_y & =D_y+v, \\
+D_l & =D_l-v, \\
+D_f & =D_f-v.
+\end{aligned}
+$$
+
+**边差分**（将值加到路径上所有边，用子节点代表其与父节点之间的边）：
+
+$$
+\begin{aligned}
+D_x & =D_x+v, \\
+D_y & =D_y+v, \\
+D_l & =D_l-2v.
+\end{aligned}
+$$
+
+完成所有修改后，做一次 DFS 求子树和，即可得到每个节点/边的累加值。总时间复杂度 $O((n+m)\log n)$（含倍增 LCA）。
+
+## 实现
+
+以下实现点差分，求所有路径经过次数的最大值（P3128 类型）。
+
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+
+const int N=50005;
+const int LOG=17;
+vector<int> G[N];
+int fa[N][LOG],dep[N];
+int d[N];
+int n,m;
+
+void dfs(int u,int f,int depth)
+{
+	fa[u][0]=f;
+	dep[u]=depth;
+	for(int i=1;i<LOG;i++)fa[u][i]=fa[fa[u][i-1]][i-1];
+	for(auto v:G[u])
+	{
+		if(v==f)continue;
+		dfs(v,u,depth+1);
+	}
+}
+
+int lca(int u,int v)
+{
+	if(dep[u]<dep[v])swap(u,v);
+	int diff=dep[u]-dep[v];
+	for(int i=0;i<LOG;i++)if((diff>>i)&1)u=fa[u][i];
+	if(u==v)return u;
+	for(int i=LOG-1;i>=0;i--)
+	{
+		if(fa[u][i]!=fa[v][i])
+		{
+			u=fa[u][i];v=fa[v][i];
+		}
+	}
+	return fa[u][0];
+}
+
+void calc(int u,int f)
+{
+	for(auto v:G[u])
+	{
+		if(v==f)continue;
+		calc(v,u);
+		d[u]+=d[v];
+	}
+}
+
+int main()
+{
+	ios::sync_with_stdio(false);
+	cin.tie(nullptr);
+	cin>>n>>m;
+	for(int i=1;i<n;i++)
+	{
+		int u,v;
+		cin>>u>>v;
+		G[u].push_back(v);
+		G[v].push_back(u);
+	}
+	dfs(1,0,0);
+	while(m--)
+	{
+		int s,t;
+		cin>>s>>t;
+		int l=lca(s,t);
+		d[s]++;d[t]++;
+		d[l]--;
+		if(fa[l][0])d[fa[l][0]]--;
+	}
+	calc(1,0);
+	int ans=0;
+	for(int i=1;i<=n;i++)ans=max(ans,d[i]);
+	cout<<ans<<'\n';
+	return 0;
+}
+```
+
 ## 例题
 
 <Problem id="P3128" />

@@ -7,7 +7,13 @@ title: 凸包
 - [凸包 - OI Wiki](https://oi-wiki.org/geometry/convex-hull/)
 - [凸包 - 维基百科](https://zh.wikipedia.org/wiki/凸包)
 
+## 简介
+
+**凸包**（Convex Hull）是包含平面点集所有点的最小凸多边形。常用 Andrew 与 Graham 两种算法，均为 $O(n\log n)$。
+
 ## Andrew 算法
+
+Andrew 算法先把点按坐标排序，再用单调栈分别求下凸壳与上凸壳：加入新点时，若它与栈顶两点构成非左转（叉积不为正）就弹栈。瓶颈在排序，时间复杂度为 $O(n\log n)$。
 
 ```cpp
 #include <bits/stdc++.h>
@@ -60,6 +66,8 @@ int main()
 ```
 
 ## Graham 扫描法
+
+Graham 扫描法取最低（同高取最左）的点为基准，把其余点按相对它的极角排序，再用栈依次扫描：遇到右转就弹栈。时间复杂度为 $O(n\log n)$。
 
 ```cpp
 #include <bits/stdc++.h>

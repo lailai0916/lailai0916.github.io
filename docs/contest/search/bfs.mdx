@@ -6,6 +6,62 @@ title: 广度优先搜索（BFS）
 
 - [BFS（搜索） - OI Wiki](https://oi-wiki.org/search/bfs/)
 
+## 简介
+
+**广度优先搜索**（Breadth-First Search，BFS）从起点出发，按层扩展：先访问所有距离为 $1$ 的节点，再访问距离为 $2$ 的节点，依此类推。每次首次到达终点时，经过的步数即为最短路径长度。
+
+算法用队列维护待处理节点。每次从队头取出节点，枚举其所有邻居，将尚未访问的邻居标记并入队。由于按层扩展，BFS 保证以最少步数找到目标。时间复杂度为 $O(V+E)$，其中 $V$ 为节点数，$E$ 为边数。
+
+BFS 擅于求「最短步数」类问题，但相较 DFS，需要额外的队列空间存储当前层及下一层的全部节点。
+
+## 实现
+
+以二维网格迷宫为例：从 $(1,1)$ 出发，每步可向上下左右移动，`.` 可通行，`#` 为障碍，求到达 $(n,m)$ 的最少步数。
+
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+
+const int N=105;
+int n,m;
+char g[N][N];
+int dis[N][N];
+int dx[]={0,0,1,-1};
+int dy[]={1,-1,0,0};
+
+int main()
+{
+	ios::sync_with_stdio(false);
+	cin.tie(nullptr);
+	cin>>n>>m;
+	for(int i=1;i<=n;i++)
+	{
+		string s;
+		cin>>s;
+		for(int j=1;j<=m;j++)g[i][j]=s[j-1];
+	}
+	memset(dis,-1,sizeof dis);
+	queue<pair<int,int>> q;
+	dis[1][1]=0;
+	q.push({1,1});
+	while(!q.empty())
+	{
+		auto [x,y]=q.front();q.pop();
+		for(int i=0;i<4;i++)
+		{
+			int nx=x+dx[i],ny=y+dy[i];
+			if(nx<1||nx>n||ny<1||ny>m)continue;
+			if(g[nx][ny]=='#')continue;
+			if(dis[nx][ny]!=-1)continue;
+			dis[nx][ny]=dis[x][y]+1;
+			q.push({nx,ny});
+		}
+	}
+	cout<<dis[n][m]<<'\n';
+	return 0;
+}
+```
+
 ## 例题
 
 <Problem id="P1141" />

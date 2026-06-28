@@ -6,6 +6,128 @@ title: Dancing Links
 
 - [Dancing Links - OI Wiki](https://oi-wiki.org/search/dlx/)
 
+## 简介
+
+**精确覆盖问题**（Exact Cover Problem）：给定集合 $X$ 和若干子集 $S_1,S_2,\dots,S_n$，选出若干不相交的子集，使其并集恰好等于 $X$。
+
+等价的矩阵形式：给定一个 01 矩阵，选出若干行，使每列恰好有一个 $1$。
+
+**X 算法**（Algorithm X）由 Donald E. Knuth 提出，用回溯法求解精确覆盖问题：每次选一列，枚举该列中所有含 $1$ 的行是否被选入，删去相关行列后递归处理子矩阵。**Dancing Links**（双向十字链表）是 X 算法的高效实现：链表中每个节点记录上下左右四个指针，删除和恢复操作均为 $O(1)$，整体由此得名 **DLX**（Dancing Links X 算法）。
+
+DLX 的实际时间复杂度与矩阵中 $1$ 的个数相关，理论上为指数级，但实践中表现良好。难点主要在于将问题建模为精确覆盖的矩阵形式。
+
+## 实现
+
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+
+const int MS=100005;
+int n,m,ans;
+int stk[MS];
+int L[MS],R[MS],U[MS],D[MS];
+int col[MS],row[MS],siz[MS],fst[MS];
+int idx;
+
+void build(int r,int c)
+{
+	n=r;m=c;
+	for(int i=0;i<=c;i++)
+	{
+		L[i]=i-1;R[i]=i+1;
+		U[i]=D[i]=i;
+	}
+	L[0]=c;R[c]=0;idx=c;
+	memset(fst,0,sizeof fst);
+	memset(siz,0,sizeof siz);
+}
+
+void ins(int r,int c)
+{
+	col[++idx]=c;row[idx]=r;++siz[c];
+	U[idx]=c;D[idx]=D[c];U[D[c]]=idx;D[c]=idx;
+	if(!fst[r])
+	{
+		fst[r]=L[idx]=R[idx]=idx;
+	}
+	else
+	{
+		L[idx]=fst[r];R[idx]=R[fst[r]];
+		L[R[fst[r]]]=idx;R[fst[r]]=idx;
+	}
+}
+
+void remove(int c)
+{
+	L[R[c]]=L[c];R[L[c]]=R[c];
+	for(int i=D[c];i!=c;i=D[i])
+	{
+		for(int j=R[i];j!=i;j=R[j])
+		{
+			U[D[j]]=U[j];D[U[j]]=D[j];--siz[col[j]];
+		}
+	}
+}
+
+void recover(int c)
+{
+	for(int i=U[c];i!=c;i=U[i])
+	{
+		for(int j=L[i];j!=i;j=L[j])
+		{
+			U[D[j]]=D[U[j]]=j;++siz[col[j]];
+		}
+	}
+	L[R[c]]=R[L[c]]=c;
+}
+
+bool dance(int dep)
+{
+	if(!R[0])
+	{
+		ans=dep;
+		return 1;
+	}
+	int c=R[0];
+	for(int i=R[0];i!=0;i=R[i])if(siz[i]<siz[c])c=i;
+	remove(c);
+	for(int i=D[c];i!=c;i=D[i])
+	{
+		stk[dep]=row[i];
+		for(int j=R[i];j!=i;j=R[j])remove(col[j]);
+		if(dance(dep+1))return 1;
+		for(int j=L[i];j!=i;j=L[j])recover(col[j]);
+	}
+	recover(c);
+	return 0;
+}
+
+int main()
+{
+	ios::sync_with_stdio(false);
+	cin.tie(nullptr);
+	cin>>n>>m;
+	build(n,m);
+	for(int i=1;i<=n;i++)
+	{
+		for(int j=1;j<=m;j++)
+		{
+			int x;
+			cin>>x;
+			if(x)ins(i,j);
+		}
+	}
+	dance(1);
+	if(ans)
+	{
+		for(int i=1;i<ans;i++)cout<<stk[i]<<' ';
+		cout<<'\n';
+	}
+	else cout<<"No Solution!\n";
+	return 0;
+}
+```
+
 ## 例题
 
 <Problem id="P1784" />

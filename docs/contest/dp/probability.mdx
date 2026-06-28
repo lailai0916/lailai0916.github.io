@@ -6,6 +6,50 @@ title: 概率 DP
 
 - [概率 DP - OI Wiki](https://oi-wiki.org/dp/probability/)
 
+## 简介
+
+**概率 DP** 将概率或期望值作为 DP 状态，通过全概率公式或期望的线性性建立转移方程。求概率通常正向递推（从初始状态推向目标），求期望通常逆向递推（从目标状态推向初始）。若方程存在后效性（状态依赖自身），需联立方程组或高斯消元求解。
+
+以「收集全部 $n$ 种漏洞分类和 $s$ 个子系统漏洞的期望天数」为例：设 $f_{i,j}$ 为已发现 $i$ 种分类和 $j$ 个子系统时距离完成的期望天数，$f_{n,s}=0$。每天随机发现一个漏洞，四种情况按概率加权转移：
+
+$$
+f_{i,j}=\frac{p_2\cdot f_{i,j+1}+p_3\cdot f_{i+1,j}+p_4\cdot f_{i+1,j+1}+1}{1-p_1}
+$$
+
+其中 $p_1=\frac{i}{n}\cdot\frac{j}{s}$（重复），$p_2=\frac{i}{n}\cdot\left(1-\frac{j}{s}\right)$，$p_3=\left(1-\frac{i}{n}\right)\cdot\frac{j}{s}$，$p_4=\left(1-\frac{i}{n}\right)\cdot\left(1-\frac{j}{s}\right)$。从 $(n,s)$ 逆推至 $(0,0)$，答案为 $f_{0,0}$，时间复杂度 $O(ns)$。
+
+## 实现
+
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+
+const int N=1005;
+double f[N][N];
+int main()
+{
+	ios::sync_with_stdio(false);
+	cin.tie(nullptr);
+	int n,s;
+	cin>>n>>s;
+	f[n][s]=0;
+	for(int i=n;i>=0;i--)
+	{
+		for(int j=s;j>=0;j--)
+		{
+			if(i==n&&j==s)continue;
+			double p1=(double)i/n*(double)j/s;
+			double p2=(double)i/n*(1.0-1.0*j/s);
+			double p3=(1.0-1.0*i/n)*(double)j/s;
+			double p4=(1.0-1.0*i/n)*(1.0-1.0*j/s);
+			f[i][j]=(p2*f[i][j+1]+p3*f[i+1][j]+p4*f[i+1][j+1]+1)/(1-p1);
+		}
+	}
+	cout<<fixed<<setprecision(4)<<f[0][0]<<'\n';
+	return 0;
+}
+```
+
 ## 例题
 
 <Problem id="P2719" />

@@ -6,6 +6,56 @@ title: 数位 DP
 
 - [数位 DP - OI Wiki](https://oi-wiki.org/dp/number/)
 
+## 简介
+
+**数位 DP**（Digit DP）用于统计区间 $[l,r]$ 内满足某种数位约束的整数个数。将问题转化为 $f(r)-f(l-1)$，其中 $f(x)$ 为 $[0,x]$ 内满足条件的数的个数。
+
+从高位到低位逐位填数，用布尔参数 $\mathrm{lim}$ 表示当前位是否受上界约束、$\mathrm{lead}$ 表示是否仍处于前导零状态，其余状态用来记录影响后续决策的信息（如上一位数字、数位和模余数等）。当 $\mathrm{lim}=0$ 且 $\mathrm{lead}=0$ 时状态可复用，使用记忆化搜索缓存结果，时间复杂度为 $O(\log x\cdot\text{状态数})$。
+
+以「不含数字 4 且不含连续子串 62」为例：状态为当前位 $\mathrm{pos}$、上一位是否为 6（$\mathrm{pre6}$），转移时跳过不合法数字并更新状态。
+
+## 实现
+
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+
+using ll=long long;
+int a[15],tot;
+ll f[15][2];
+ll dfs(int pos,int pre6,bool lim,bool lead)
+{
+	if(pos==0)return 1;
+	if(!lim&&!lead&&f[pos][pre6]!=-1)return f[pos][pre6];
+	int up=lim?a[pos]:9;
+	ll res=0;
+	for(int d=0;d<=up;d++)
+	{
+		if(d==4)continue;
+		if(pre6&&d==2)continue;
+		res+=dfs(pos-1,d==6,lim&&d==up,lead&&d==0);
+	}
+	if(!lim&&!lead)f[pos][pre6]=res;
+	return res;
+}
+ll solve(ll x)
+{
+	tot=0;
+	while(x){a[++tot]=x%10;x/=10;}
+	memset(f,-1,sizeof f);
+	return dfs(tot,0,1,1)-1;
+}
+int main()
+{
+	ios::sync_with_stdio(false);
+	cin.tie(nullptr);
+	ll l,r;
+	cin>>l>>r;
+	cout<<solve(r)-solve(l-1)<<'\n';
+	return 0;
+}
+```
+
 ## 例题
 
 <Problem id="P2602" />

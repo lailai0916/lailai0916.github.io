@@ -5,6 +5,112 @@ title: 线性规划
 ## 参考资料
 
 - [线性规划基础 - OI Wiki](https://oi-wiki.org/math/linear-programming/)
+- [单纯形法 - OI Wiki](https://oi-wiki.org/math/simplex/)
+
+## 简介
+
+**线性规划**（Linear Programming，LP）研究线性约束下线性目标函数的最值。一般形式为：在 $x\ge 0$ 与若干线性不等式约束下，最大化目标 $c^Tx$。
+
+每个不等式约束对应一个半空间，可行域是它们的交，即一个凸多面体。最优解若存在，必可在多面体的某个顶点处取得。**单纯形法**（Simplex Method）正是沿多面体的边在顶点间移动，每步使目标值不减，直至无法改进。
+
+算法维护一组基变量与单纯形表。本文求解形式：
+
+$$
+\max\set{c^Tx:Ax\le b,~x\ge 0}
+$$
+
+实现分两阶段。第一阶段处理 $b$ 中的负分量，找到一个初始可行基；若无可行基则问题 **不可行**（Infeasible）。第二阶段每次选目标系数为正的入基变量 $e$，按最小比值选出基变量 $l$ 并转轴；若某入基变量无比值限制则问题 **无界**（Unbounded）；若无正系数则当前为最优。
+
+采用 Bland 规则（按变量编号选取）避免退化时循环。最坏复杂度为指数级，但随机数据下表现优秀。
+
+## 实现
+
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+
+const double eps=1e-9;
+const int N=205;
+int n,m;
+double a[N][N],b[N],c[N],v;
+int idx[N],idy[N];
+void pivot(int l,int e)
+{
+	swap(idy[l],idx[e]);
+	double t=a[l][e];
+	a[l][e]=1;
+	for(int j=0;j<=n;j++)a[l][j]/=t;
+	b[l]/=t;
+	for(int i=0;i<=m;i++)
+	{
+		if(i==l||fabs(a[i][e])<eps)continue;
+		t=a[i][e];
+		a[i][e]=0;
+		for(int j=0;j<=n;j++)a[i][j]-=t*a[l][j];
+		b[i]-=t*b[l];
+	}
+	v+=c[e]*b[l];
+	t=c[e];
+	c[e]=0;
+	for(int j=0;j<=n;j++)c[j]-=t*a[l][j];
+}
+int solve()
+{
+	for(int i=1;i<=n;i++)idx[i]=i;
+	for(int i=1;i<=m;i++)idy[i]=n+i;
+	while(1)
+	{
+		int l=0;
+		for(int i=1;i<=m;i++)if(b[i]<-eps&&(!l||idy[i]<idy[l]))l=i;
+		if(!l)break;
+		int e=0;
+		for(int j=1;j<=n;j++)if(a[l][j]<-eps&&(!e||idx[j]<idx[e]))e=j;
+		if(!e)return -1;
+		pivot(l,e);
+	}
+	while(1)
+	{
+		int e=0;
+		for(int j=1;j<=n;j++)if(c[j]>eps&&(!e||idx[j]<idx[e]))e=j;
+		if(!e)break;
+		double mn=1e18;
+		int l=0;
+		for(int i=1;i<=m;i++)
+		{
+			if(a[i][e]<eps)continue;
+			double r=b[i]/a[i][e];
+			if(r<mn-eps||(r<mn+eps&&(!l||idy[i]<idy[l]))){mn=r;l=i;}
+		}
+		if(!l)return 1;
+		pivot(l,e);
+	}
+	return 0;
+}
+int main()
+{
+	ios::sync_with_stdio(false);
+	cin.tie(nullptr);
+	cin>>n>>m;
+	for(int i=1;i<=n;i++)cin>>c[i];
+	for(int i=1;i<=m;i++)
+	{
+		for(int j=1;j<=n;j++)cin>>a[i][j];
+		cin>>b[i];
+	}
+	int t=solve();
+	if(t==-1)cout<<"Infeasible\n";
+	else if(t==1)cout<<"Unbounded\n";
+	else
+	{
+		cout<<fixed<<setprecision(10)<<v<<'\n';
+		double x[N]={0};
+		for(int i=1;i<=m;i++)if(idy[i]<=n)x[idy[i]]=b[i];
+		for(int i=1;i<=n;i++)cout<<x[i]<<' ';
+		cout<<'\n';
+	}
+	return 0;
+}
+```
 
 ## 例题
 

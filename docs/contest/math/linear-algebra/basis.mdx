@@ -6,6 +6,53 @@ title: 线性基
 
 - [线性基 - OI Wiki](https://oi-wiki.org/math/linear-algebra/basis/)
 
+## 简介
+
+**线性基**（Linear Basis）是线性空间的一组极大线性无关组。OI 中最常用的是 **异或线性基**，即布尔域线性空间 $\mathbf Z_2^n$ 下的线性基。
+
+给定一组数，其异或线性基 $\set{a_i}$ 满足：原集合任意子集的异或和都能由线性基的子集异或得到，且线性基本身无异或和为 $0$ 的非空子集。基的大小即原向量组的秩。
+
+构造采用贪心法。将每个数从高位到低位扫描，遇到第 $i$ 位为 $1$ 时：若 $a_i$ 为空则将该数存入 $a_i$；否则异或 $a_i$ 消去该位，继续向低位扫描。最终被消成 $0$ 的数线性相关，可被已有基表出。
+
+求子集异或最大值时，从高位到低位扫描线性基，若异或上 $a_i$ 能让答案变大就异或。因为高位的 $1$ 一旦确定就不会被低位改变，贪心即最优。设值域位数为 $w$、数的个数为 $m$，时间复杂度为 $O(wm)$。
+
+## 实现
+
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+
+using ll=long long;
+const int M=55;
+ll a[M];
+void insert(ll x)
+{
+	for(int i=M-1;i>=0;i--)
+	{
+		if(!(x>>i&1))continue;
+		if(!a[i]){a[i]=x;return;}
+		x^=a[i];
+	}
+}
+int main()
+{
+	ios::sync_with_stdio(false);
+	cin.tie(nullptr);
+	int n;
+	cin>>n;
+	for(int i=1;i<=n;i++)
+	{
+		ll x;
+		cin>>x;
+		insert(x);
+	}
+	ll ans=0;
+	for(int i=M-1;i>=0;i--)ans=max(ans,ans^a[i]);
+	cout<<ans<<'\n';
+	return 0;
+}
+```
+
 ## 例题
 
 <Problem id="P3812" />

@@ -6,6 +6,50 @@ title: Z 函数（扩展 KMP）
 
 - [Z 函数（扩展 KMP） - OI Wiki](https://oi-wiki.org/string/z-func/)
 
+## 简介
+
+对于长度为 $n$ 的字符串 $s$，定义 **Z 函数**（Z-function）$z_i$ 为 $s$ 与 $s[i\dots n-1]$ 的最长公共前缀（LCP）的长度，特别地 $z_0=0$。国内通常称计算该数组的算法为**扩展 KMP**（exKMP）。
+
+维护当前右端点最靠右的匹配段 $[l,r]$，则 $s[l\dots r]$ 是 $s$ 的前缀。计算 $z_i$ 时：若 $i\le r$，则 $z_i\ge\min(z_{i-l},r-i+1)$；否则从头暴力扩展。每次扩展都使 $r$ 至少右移 1，总时间复杂度为 $O(n)$。
+
+## 实现
+
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+
+const int N=500005;
+int z[N];
+void z_func(string s)
+{
+	int n=s.size();
+	z[0]=0;
+	for(int i=1,l=0,r=0;i<n;i++)
+	{
+		z[i]=i<=r?min(z[i-l],r-i+1):0;
+		while(i+z[i]<n&&s[z[i]]==s[i+z[i]])z[i]++;
+		if(i+z[i]-1>r)l=i,r=i+z[i]-1;
+	}
+}
+int main()
+{
+	ios::sync_with_stdio(false);
+	cin.tie(nullptr);
+	string s;
+	cin>>s;
+	z_func(s);
+	int n=s.size();
+	for(int i=0;i<n;i++)cout<<z[i]<<" \n"[i==n-1];
+	return 0;
+}
+```
+
+## 应用
+
+**模式匹配**：求模式串 $p$ 在文本 $t$ 中的所有出现位置。取分隔符 `#`（不在两串中），对 $p+\#+t$ 求 Z 函数，凡 $z_i=|p|$ 的位置都对应 $t$ 中的一次匹配。
+
+**最小循环节**：枚举 $i$，若 $i+z_i=n$，则 $s$ 的前 $i$ 个字符构成一个周期；最小的这样的 $i$ 即最小循环节长度。若还满足 $n\bmod i=0$，则 $s$ 由该循环节整数次重复而成。
+
 ## 例题
 
 <Problem id="P5410" />

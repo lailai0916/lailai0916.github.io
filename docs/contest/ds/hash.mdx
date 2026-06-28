@@ -6,6 +6,52 @@ title: 哈希表
 
 - [哈希表 - OI Wiki](https://oi-wiki.org/ds/hash/)
 
+## 简介
+
+**哈希表**（Hash Table）通过哈希函数将键值映射到固定范围的索引，从而以 $O(1)$ 期望时间完成插入和查询。哈希函数 $f(k)=k\bmod M$ 将整数键映射到 $[0,M)$，$M$ 取较大的质数可减少冲突。
+
+当不同键映射到同一位置时发生**哈希冲突**（Hash Collision）。OI 中常用**拉链法**：每个槽位挂一条链表，冲突元素追加到链表末尾，查询时扫描该槽位的链表。若哈希表大小为 $M$、存入 $N$ 个元素，则每次查询期望比较 $O(N/M)$ 次。
+
+## 实现
+
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+
+const int M=1000003;
+const int N=1000005;
+int head[M],nxt[N],key[N],val[N],cnt;
+int h(int k){return(k%M+M)%M;}
+void add(int k,int v)
+{
+	key[++cnt]=k;
+	val[cnt]=v;
+	nxt[cnt]=head[h(k)];
+	head[h(k)]=cnt;
+}
+int get(int k)
+{
+	for(int i=head[h(k)];i;i=nxt[i])
+		if(key[i]==k)return val[i];
+	return -1;
+}
+int main()
+{
+	ios::sync_with_stdio(false);
+	cin.tie(nullptr);
+	int q;
+	cin>>q;
+	while(q--)
+	{
+		int op,k,v;
+		cin>>op;
+		if(op==1){cin>>k>>v;add(k,v);}
+		else{cin>>k;cout<<get(k)<<'\n';}
+	}
+	return 0;
+}
+```
+
 ## 例题
 
 <Problem id="P11615" />

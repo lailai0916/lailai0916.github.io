@@ -6,6 +6,77 @@ title: 莫队算法
 
 - [莫队算法简介 - OI Wiki](https://oi-wiki.org/misc/mo-algo-intro/)
 
+## 简介
+
+**莫队算法**（Mo's Algorithm）由莫涛提出，用于离线处理序列区间询问。适用条件：已知 $[l,r]$ 的答案，能在 $O(1)$ 时间扩展到 $[l\pm1,r]$ 或 $[l,r\pm1]$。
+
+将所有询问按块排序：以 $l$ 所在块编号为第一关键字，$r$ 为第二关键字，同块内按 $r$ 升序排列（奇数块升序、偶数块降序可进一步优化常数）。排序后用双指针逐步从上一个询问的区间转移到当前询问的区间。
+
+取块长 $S=\lceil\sqrt{n}\rceil$ 时，$r$ 指针在每一块内总移动量为 $O(n)$，共 $O(\sqrt{n})$ 块，$r$ 总移动 $O(n\sqrt{n})$；$l$ 指针在同一块内每次移动至多 $O(\sqrt{n})$，共 $m$ 次询问，$l$ 总移动 $O(m\sqrt{n})$。当 $m\sim n$ 时，整体时间复杂度为 $O(n\sqrt{n})$。
+
+## 实现
+
+以「区间颜色数」为例：维护当前区间 $[l,r]$ 内每种颜色的计数 $\mathit{cnt}$，以及不同颜色数 $\mathit{ans}$；加入 / 删除一个元素时 $O(1)$ 更新。
+
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+
+const int N=50005;
+int a[N],cnt[N],ans[N];
+int bl[N];
+struct Query
+{
+	int l,r,id;
+	bool operator<(const Query &o) const
+	{
+		if(bl[l]!=bl[o.l])return bl[l]<bl[o.l];
+		return bl[l]&1?r<o.r:r>o.r;
+	}
+}q[N];
+int cur=0;
+void add(int x)
+{
+	if(cnt[a[x]]==0)cur++;
+	cnt[a[x]]++;
+}
+void del(int x)
+{
+	cnt[a[x]]--;
+	if(cnt[a[x]]==0)cur--;
+}
+int main()
+{
+	ios::sync_with_stdio(false);
+	cin.tie(nullptr);
+	int n,m;
+	cin>>n>>m;
+	int sz=max(1,(int)sqrt(n));
+	for(int i=1;i<=n;i++)
+	{
+		cin>>a[i];
+		bl[i]=(i-1)/sz+1;
+	}
+	for(int i=0;i<m;i++)
+	{
+		cin>>q[i].l>>q[i].r;
+		q[i].id=i;
+	}
+	sort(q,q+m);
+	int l=1,r=0;
+	for(int i=0;i<m;i++)
+	{
+		while(r<q[i].r)add(++r);
+		while(l>q[i].l)add(--l);
+		while(r>q[i].r)del(r--);
+		while(l<q[i].l)del(l++);
+		ans[q[i].id]=cur;
+	}
+	for(int i=0;i<m;i++)cout<<ans[i]<<'\n';
+	return 0;
+}
+```
+
 ## 例题
 
 <Problem id="P2709" />

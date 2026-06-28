@@ -6,6 +6,64 @@ title: 拓扑排序
 
 - [拓扑排序 - OI Wiki](https://oi-wiki.org/graph/topo/)
 
+## 简介
+
+**拓扑排序**（Topological Sorting）将**有向无环图**（Directed Acyclic Graph，DAG）的所有顶点排成一个线性序列，使得对图中每条有向边 $(u,v)$，$u$ 都在 $v$ 之前出现。若图中有环，则不存在拓扑序列。
+
+Kahn 算法基于 BFS：维护所有入度为 $0$ 的节点集合，每次取出一个节点加入序列，并将其出边删除（令相邻节点入度减一），若减后入度为 $0$ 则入队。算法结束时，若序列长度等于节点数，则图无环；否则图有环。时间复杂度为 $O(n+m)$。
+
+## 实现
+
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+
+const int N=100005;
+vector<int> G[N];
+int ind[N];
+
+bool topo(int n,vector<int> &ord)
+{
+	queue<int> q;
+	for(int i=1;i<=n;i++)if(!ind[i])q.push(i);
+	while(!q.empty())
+	{
+		int u=q.front();
+		q.pop();
+		ord.push_back(u);
+		for(auto v:G[u])
+		{
+			if(--ind[v]==0)q.push(v);
+		}
+	}
+	return (int)ord.size()==n;
+}
+
+int main()
+{
+	ios::sync_with_stdio(false);
+	cin.tie(nullptr);
+	int n,m;
+	cin>>n>>m;
+	while(m--)
+	{
+		int u,v;
+		cin>>u>>v;
+		G[u].push_back(v);
+		ind[v]++;
+	}
+	vector<int> ord;
+	if(!topo(n,ord))
+	{
+		cout<<-1<<'\n';
+		return 0;
+	}
+	for(auto x:ord)cout<<x<<' ';
+	cout<<'\n';
+	return 0;
+}
+```
+
 ## 例题
 
 <Problem id="B3644" />

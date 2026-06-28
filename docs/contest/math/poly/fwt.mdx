@@ -7,9 +7,15 @@ title: 快速沃尔什变换（FWT）
 - [快速沃尔什变换 - OI Wiki](https://oi-wiki.org/math/poly/fwt/)
 - [沃尔什转换 - 维基百科](https://zh.wikipedia.org/wiki/沃爾什轉換)
 
+## 简介
+
+**快速沃尔什变换**（Fast Walsh–Hadamard Transform，FWT）在 $O(n\log n)$ 内计算两个序列的**位运算卷积** $c_k=\sum_{i\operatorname{op}j=k}a_ib_j$，其中 $\operatorname{op}$ 为按位或、与或异或。与 FFT 类似，它把序列正变换到「点值」、逐位相乘、再逆变换还原；或、与、异或三种运算对应不同的变换，但都能用分治在 $O(n\log n)$ 内完成。
+
 ## 实现
 
 ### 分治递归
+
+按最高位把序列分成两半递归，再按变换规则合并。
 
 <Tabs>
 <TabItem value="按位或（or）">
@@ -87,6 +93,8 @@ void fwt_xnor(ll *a,int n,int type)
 </Tabs>
 
 ### 倍增迭代
+
+自底向上按位合并，避免递归、常数更小，是常用写法。
 
 <Tabs>
 <TabItem value="按位或（or）">
@@ -174,6 +182,8 @@ void fwt_xnor(ll *a,int n,int type)
 </Tabs>
 
 ### 高维前缀和
+
+或、与卷积本质是子集和与超集和，可直接用高维前缀和（SOS DP）按位逐维累加实现。
 
 <Tabs>
 <TabItem value="按位或（or）">

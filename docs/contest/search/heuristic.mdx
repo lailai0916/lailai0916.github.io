@@ -5,6 +5,59 @@ title: 启发式搜索
 ## 参考资料
 
 - [启发式搜索 - OI Wiki](https://oi-wiki.org/search/heuristic/)
+- [A\* search algorithm - Wikipedia](https://en.wikipedia.org/wiki/A*_search_algorithm)
+
+## 简介
+
+**启发式搜索**（Heuristic Search）在普通搜索的基础上引入**估价函数**（heuristic function），对每个分支的潜在价值做出估计，从而优先扩展更有希望的分支、剪去无效分支。
+
+**A\* 算法**是启发式搜索的经典代表，用于在带权有向图上求最短路。设 $g(x)$ 为起点 $s$ 到节点 $x$ 的已知最短距离，$h(x)$ 为 $x$ 到终点 $t$ 的距离估计，则综合评估值为：
+
+$$
+f(x)=g(x)+h(x)
+$$
+
+每次从优先队列中取出 $f$ 最小的节点扩展。若估价函数满足**可采纳性**（admissible）：$h(x)\le h^*(x)$（即不高估实际距离），则 A\* 一定能找到最优解。当 $h\equiv 0$ 时退化为 Dijkstra；当边权为 $1$ 且 $h\equiv 0$ 时退化为 BFS。
+
+在 DFS 中，启发式剪枝同样广泛使用：可行性剪枝在当前状态已不合法时立即返回；最优性剪枝在「当前已得价值 + 剩余上界 ≤ 已知最优」时放弃该分支。以 0/1 背包的 DFS 求解为例，后缀价值之和可作为剩余上界。
+
+## 实现
+
+以 0/1 背包问题的启发式 DFS 为例：共 $n$ 种物品，背包容量为 $t$，每件物品重量 $w_i$、价值 $v_i$，求最大价值。用后缀价值和 $sv_i=\sum_{j=i}^n v_j$ 作为不取当前物品时的上界估计进行剪枝。
+
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+
+const int N=105;
+int t,n,w[N],v[N];
+int sv[N];
+int ans;
+
+void dfs(int i,int cur_w,int cur_v)
+{
+	if(i>n)
+	{
+		ans=max(ans,cur_v);
+		return;
+	}
+	if(cur_w+w[i]<=t)dfs(i+1,cur_w+w[i],cur_v+v[i]);
+	if(cur_v+sv[i+1]>ans)dfs(i+1,cur_w,cur_v);
+}
+
+int main()
+{
+	ios::sync_with_stdio(false);
+	cin.tie(nullptr);
+	cin>>t>>n;
+	for(int i=1;i<=n;i++)cin>>w[i]>>v[i];
+	sv[n+1]=0;
+	for(int i=n;i>=1;i--)sv[i]=sv[i+1]+v[i];
+	dfs(1,0,0);
+	cout<<ans<<'\n';
+	return 0;
+}
+```
 
 ## 例题
 

@@ -8,11 +8,13 @@ title: 快速傅里叶变换（FFT）
 
 ## 思想
 
-首先进行正变换，然后逐位相乘，最后通过逆变换得到答案。
+**快速傅里叶变换**（Fast Fourier Transform，FFT）在 $O(n\log n)$ 内计算两个多项式的乘积。它把多项式在 $n$ 个单位根 $\omega_n=e^{2\pi i/n}$ 处求值（DFT），逐点相乘后再插值还原（IDFT）；利用单位根的折半性质分治，把朴素 $O(n^2)$ 的 DFT 降到 $O(n\log n)$。求多项式乘法时，对两个多项式做正变换、逐位相乘、再做逆变换即得结果。
 
 ## 实现
 
 ### 分治递归
+
+按下标奇偶把多项式拆成两半递归，直接对应 DFT 的分治定义。
 
 ```cpp
 void fft(Comp *f,int n,int type)
@@ -40,6 +42,8 @@ void fft(Comp *f,int n,int type)
 ```
 
 ### 倍增迭代
+
+先按二进制位逆序置换，再自底向上合并，避免递归、常数更小，是常用写法。
 
 ```cpp
 void fft(Comp *f,int n,int type)

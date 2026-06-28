@@ -8,6 +8,8 @@ title: 分解质因数
 
 ## 朴素算法
 
+枚举 $2$ 到 $\sqrt n$ 的整数，逐个把因子从 $n$ 中除尽，剩余大于 $1$ 的部分是最后一个质因子。时间复杂度为 $O(\sqrt n)$。
+
 ```cpp
 void factorize(ll n)
 {
@@ -25,6 +27,8 @@ void factorize(ll n)
 ```
 
 ## Pollard Rho 算法
+
+**Pollard Rho** 用于快速分解大整数。它构造伪随机序列 $x_{i+1}=x_i^2+c\bmod n$，由生日悖论，期望 $O(n^{1/4})$ 步内能找到两个对 $n$ 的某质因子同余的数，二者之差与 $n$ 的 $\gcd$ 即为一个非平凡因子。配合 Miller–Rabin 判素后递归分解。下面的实现用倍增与批量求积（每 $127$ 步取一次 $\gcd$）优化常数。
 
 ```cpp
 #include <bits/stdc++.h>

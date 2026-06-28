@@ -11,7 +11,11 @@ title: 连通性
 
 ## 强连通分量（SCC）
 
+**强连通分量**（Strongly Connected Component，SCC）是有向图的极大子图，其中任意两点互相可达。把每个 SCC 缩成一点后，原图变为有向无环图（DAG）。
+
 ### Tarjan 算法
+
+Tarjan 用一次 DFS 求出所有 SCC。$\mathrm{dfn}_u$ 为 $u$ 的 DFS 序，$\mathrm{low}_u$ 为 $u$ 经搜索树边及至多一条返祖边能到达的最小 $\mathrm{dfn}$。DFS 时把点压栈，当 $\mathrm{low}_u=\mathrm{dfn}_u$ 时，栈中 $u$ 及其上方的点构成一个 SCC。时间复杂度为 $O(n+m)$。
 
 ```cpp
 vector<int> G[N];
@@ -50,7 +54,11 @@ void tarjan(int u)
 
 ## 双连通分量（BCC）
 
+无向图的**双连通分量**分两种：**边双连通分量**（删去任意一条边后仍连通）与**点双连通分量**（删去任意一个点后仍连通）。两者都借助 Tarjan 的 $\mathrm{dfn}/\mathrm{low}$ 求出。
+
 ### 边双连通分量
+
+边双内任意两点间存在两条无公共边的路径。求法：Tarjan 时不沿来时的边返回（用边编号 $k$ 区分重边），$\mathrm{low}_u=\mathrm{dfn}_u$ 时弹栈得到一个边双。满足 $\mathrm{low}_v>\mathrm{dfn}_u$ 的边 $(u,v)$ 即为桥。
 
 ```cpp
 #include <bits/stdc++.h>
@@ -124,6 +132,8 @@ int main()
 
 ### 点双连通分量
 
+点双内任意两点间存在两条除端点外无公共点的路径。求法：DFS 中当子节点 $v$ 满足 $\mathrm{low}_v\ge\mathrm{dfn}_u$ 时，把栈中直到 $v$ 的点连同 $u$ 一起取出，构成一个点双；孤立点单独算一个点双。
+
 ```cpp
 #include <bits/stdc++.h>
 using namespace std;
@@ -194,11 +204,122 @@ int main()
 }
 ```
 
+## 割点和桥
+
+**割点**（cut vertex）是删去后使连通分量增多的点，**桥**（bridge）是删去后使连通分量增多的边。用 Tarjan 求割点：非根节点 $u$ 若存在子节点 $v$ 满足 $\mathrm{low}_v\ge\mathrm{dfn}_u$，则 $u$ 为割点；根节点当且仅当它在搜索树中有至少两棵子树时为割点。
+
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+
+const int N=100005;
+vector<int> G[N];
+int dfn[N],low[N],cnt=0;
+bool cut[N];
+void tarjan(int u,int rt)
+{
+	dfn[u]=low[u]=++cnt;
+	int son=0;
+	for(auto v:G[u])
+	{
+		if(!dfn[v])
+		{
+			tarjan(v,rt);
+			low[u]=min(low[u],low[v]);
+			if(low[v]>=dfn[u]&&u!=rt)cut[u]=1;
+			if(u==rt)son++;
+		}
+		else low[u]=min(low[u],dfn[v]);
+	}
+	if(u==rt&&son>=2)cut[u]=1;
+}
+int main()
+{
+	ios::sync_with_stdio(false);
+	cin.tie(nullptr);
+	int n,m;
+	cin>>n>>m;
+	while(m--)
+	{
+		int u,v;
+		cin>>u>>v;
+		G[u].push_back(v);
+		G[v].push_back(u);
+	}
+	for(int i=1;i<=n;i++)if(!dfn[i])tarjan(i,i);
+	vector<int> res;
+	for(int i=1;i<=n;i++)if(cut[i])res.push_back(i);
+	cout<<res.size()<<'\n';
+	for(auto x:res)cout<<x<<' ';
+	cout<<'\n';
+	return 0;
+}
+```
+
 ## 2-SAT
 
-SAT 是可满足性（Satisfiability）问题的简称。一般形式为 k - 可满足性问题，简称 k-SAT。而当 $k>2$ 时该问题为 NP 完全的。所以我们只研究 $k=2$ 的情况。
+SAT 即布尔可满足性（Satisfiability）问题。$k$-SAT 在 $k>2$ 时是 NP 完全的，OI 中只研究 $k=2$ 的 **2-SAT**：给定 $n$ 个布尔变量与若干形如「$x_i=a$ 或 $x_j=b$」的约束，求一组可行赋值。
 
-2-SAT，简单地说就是给出 $n$ 个布尔方程，每个方程和两个变量相关，如 $a\vee b$，表示变量 $a, b$ 至少满足一个。然后判断是否存在可行方案，显然可能有多种选择方案，一般题中只需要求出一种即可。另外，$\neg a$ 表示 $a$ 取反。
+把每个变量拆成「真」「假」两个节点。约束「$x_i=a$ 或 $x_j=b$」等价于两条蕴含边：若 $x_i\ne a$ 则必有 $x_j=b$，若 $x_j\ne b$ 则必有 $x_i=a$。对蕴含图跑 Tarjan 求 SCC：若某变量的真、假节点落在同一 SCC 则无解；否则每个变量取 SCC 编号较小（拓扑序较后）的节点对应的值，即为一组可行解。
+
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+
+const int N=2000005;
+vector<int> G[N];
+int dfn[N],low[N],sccno[N],cnt=0,scc_cnt=0;
+stack<int> s;
+bool ins[N];
+void tarjan(int u)
+{
+	dfn[u]=low[u]=++cnt;
+	s.push(u);ins[u]=1;
+	for(auto v:G[u])
+	{
+		if(!dfn[v]){tarjan(v);low[u]=min(low[u],low[v]);}
+		else if(ins[v])low[u]=min(low[u],dfn[v]);
+	}
+	if(low[u]==dfn[u])
+	{
+		scc_cnt++;
+		while(1)
+		{
+			int x=s.top();s.pop();ins[x]=0;
+			sccno[x]=scc_cnt;
+			if(x==u)break;
+		}
+	}
+}
+int n,m;
+int f(int i,int v){return v?i:i+n;}
+int main()
+{
+	ios::sync_with_stdio(false);
+	cin.tie(nullptr);
+	cin>>n>>m;
+	while(m--)
+	{
+		int a,va,b,vb;
+		cin>>a>>va>>b>>vb;
+		G[f(a,1-va)].push_back(f(b,vb));
+		G[f(b,1-vb)].push_back(f(a,va));
+	}
+	for(int i=1;i<=2*n;i++)if(!dfn[i])tarjan(i);
+	for(int i=1;i<=n;i++)
+	{
+		if(sccno[i]==sccno[i+n])
+		{
+			cout<<"IMPOSSIBLE\n";
+			return 0;
+		}
+	}
+	cout<<"POSSIBLE\n";
+	for(int i=1;i<=n;i++)cout<<(sccno[i]<sccno[i+n])<<' ';
+	cout<<'\n';
+	return 0;
+}
+```
 
 ## 例题
 

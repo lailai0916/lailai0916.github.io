@@ -8,11 +8,17 @@ title: 欧拉函数
 
 ## 定义
 
-欧拉函数（Euler's totient function），即 $\varphi(n)$，表示的是小于等于 $n$ 和 $n$ 互质的数的个数。
+欧拉函数（Euler's totient function）$\varphi(n)$ 表示不超过 $n$ 且与 $n$ 互质的正整数个数。$\varphi(1)=1$；$n$ 为质数时 $\varphi(n)=n-1$。
 
-例如 $\varphi(1)=1$；当 $n$ 是质数的时候，显然有 $\varphi(n)=n-1$。
+它是积性函数。设 $n$ 的质因数分解为 $n=\prod p_i^{k_i}$，则
+
+$$
+\varphi(n)=n\prod_{p\mid n}\left(1-\frac1p\right)
+$$
 
 ## 实现
+
+按上式枚举 $n$ 的质因子并累乘，时间复杂度为 $O(\sqrt n)$。
 
 ```cpp
 ll phi(ll n)

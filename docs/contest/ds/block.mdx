@@ -6,6 +6,77 @@ title: 分块
 
 - [分块思想 - OI Wiki](https://oi-wiki.org/ds/decompose/)
 
+## 简介
+
+**分块**（Square Root Decomposition）将长度为 $n$ 的序列按块长 $s$ 划分为约 $n/s$ 块，对每块预处理聚合信息，用时间换空间在暴力与完整块之间取得折中。对区间操作：两端的不完整块暴力处理（$O(s)$），中间的完整块整体维护（$O(n/s)$），单次操作复杂度 $O(s+n/s)$。由均值不等式，取 $s=\sqrt{n}$ 时最优，复杂度为 $O(\sqrt{n})$。
+
+分块的优点是实现灵活、通用性强，能维护线段树难以维护的信息；缺点是常数大，渐近复杂度弱于线段树的 $O(\log n)$。
+
+以区间加、区间求和为例：每块额外维护一个懒标记 $\mathrm{tag}_b$ 表示整块的加法偏移，完整块操作时仅更新标记而不逐元素修改。查询时将散元素的实际值加上所在块的标记，完整块则用预存的块和加上标记乘以块长。
+
+## 实现
+
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+
+using ll=long long;
+const int N=100005;
+ll a[N],sum[N],tag[N];
+int belong[N];
+int n,m,s;
+void add(int l,int r,ll v)
+{
+	int bl=belong[l],br=belong[r];
+	if(bl==br)
+	{
+		for(int i=l;i<=r;i++)a[i]+=v,sum[bl]+=v;
+		return;
+	}
+	for(int i=l;i<=bl*s;i++)a[i]+=v,sum[bl]+=v;
+	for(int i=(br-1)*s+1;i<=r;i++)a[i]+=v,sum[br]+=v;
+	for(int i=bl+1;i<br;i++)tag[i]+=v;
+}
+ll query(int l,int r)
+{
+	int bl=belong[l],br=belong[r];
+	ll res=0;
+	if(bl==br)
+	{
+		for(int i=l;i<=r;i++)res+=a[i];
+		res+=(ll)(r-l+1)*tag[bl];
+		return res;
+	}
+	for(int i=l;i<=bl*s;i++)res+=a[i];
+	res+=(ll)(bl*s-l+1)*tag[bl];
+	for(int i=(br-1)*s+1;i<=r;i++)res+=a[i];
+	res+=(ll)(r-(br-1)*s)*tag[br];
+	for(int i=bl+1;i<br;i++)res+=sum[i]+tag[i]*s;
+	return res;
+}
+int main()
+{
+	ios::sync_with_stdio(false);
+	cin.tie(nullptr);
+	cin>>n>>m;
+	s=max(1,(int)sqrt(n));
+	for(int i=1;i<=n;i++)
+	{
+		cin>>a[i];
+		belong[i]=(i-1)/s+1;
+		sum[belong[i]]+=a[i];
+	}
+	while(m--)
+	{
+		int op,l,r;ll v;
+		cin>>op>>l>>r;
+		if(op==1){cin>>v;add(l,r,v);}
+		else cout<<query(l,r)<<'\n';
+	}
+	return 0;
+}
+```
+
 ## 例题
 
 <Problem id="P3372" />

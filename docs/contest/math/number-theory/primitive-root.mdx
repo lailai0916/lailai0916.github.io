@@ -5,6 +5,120 @@ title: 原根
 ## 参考资料
 
 - [原根 - OI Wiki](https://oi-wiki.org/math/number-theory/primitive-root/)
+- [Primitive root modulo n - Wikipedia](https://en.wikipedia.org/wiki/Primitive_root_modulo_n)
+
+## 简介
+
+对于 $a\perp m$，满足 $a^n\equiv 1\pmod m$ 的最小正整数 $n$ 称为 $a$ 模 $m$ 的 **阶**（Order），记作 $\delta_m(a)$。若 $\delta_m(g)=\varphi(m)$，则称 $g$ 为模 $m$ 的 **原根**（Primitive Root）。
+
+原根存在当且仅当 $m=1,2,4,p^e,2p^e$，其中 $p$ 是奇素数。原根存在时共有 $\varphi(\varphi(m))$ 个。
+
+**原根判定定理**：对 $m\ge 3$ 且 $g\perp m$，$g$ 是原根当且仅当对 $\varphi(m)$ 的每个素因子 $p$ 都有：
+
+$$
+g^{\varphi(m)/p}\not\equiv 1\pmod m
+$$
+
+求最小原根从小到大枚举并判定即可。最小原根的规模为 $O(m^{0.25})$，故枚举可接受。求出一个原根 $g$ 后，全体原根为 $\set{g^k:k\perp\varphi(m),1\le k\le\varphi(m)}$。
+
+预处理欧拉函数与原根存在性，分解 $\varphi(m)$ 的素因子后逐个判定。单次求原根的时间复杂度为 $O(m^{0.25}\log^2 m)$。
+
+## 实现
+
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+
+using ll=long long;
+const int N=1000005;
+int pri[N],phi[N];
+bool vis[N],hr[N];
+ll Pow(ll x,ll y,ll mod)
+{
+	x%=mod;
+	ll res=1;
+	while(y)
+	{
+		if(y&1)res=res*x%mod;
+		x=x*x%mod;
+		y>>=1;
+	}
+	return res;
+}
+void sieve()
+{
+	phi[1]=1;
+	int cnt=0;
+	for(int i=2;i<N;i++)
+	{
+		if(!vis[i])
+		{
+			pri[++cnt]=i;
+			phi[i]=i-1;
+		}
+		for(int j=1;j<=cnt&&i*pri[j]<N;j++)
+		{
+			vis[i*pri[j]]=1;
+			if(i%pri[j]==0)
+			{
+				phi[i*pri[j]]=phi[i]*pri[j];
+				break;
+			}
+			phi[i*pri[j]]=phi[i]*phi[pri[j]];
+		}
+	}
+	hr[1]=hr[2]=hr[4]=1;
+	for(int i=2;i<=cnt;i++)
+	{
+		for(ll j=pri[i];j<N;j*=pri[i])hr[j]=1;
+		for(ll j=2*pri[i];j<N;j*=pri[i])hr[j]=1;
+	}
+}
+int main()
+{
+	ios::sync_with_stdio(false);
+	cin.tie(nullptr);
+	sieve();
+	int T;
+	cin>>T;
+	while(T--)
+	{
+		int n,d;
+		cin>>n>>d;
+		if(!hr[n]){cout<<0<<'\n'<<'\n';continue;}
+		int m=phi[n];
+		vector<int> fac;
+		int t=m;
+		for(int i=2;(ll)i*i<=t;i++)
+		{
+			if(t%i)continue;
+			fac.push_back(i);
+			while(t%i==0)t/=i;
+		}
+		if(t>1)fac.push_back(t);
+		int g=0;
+		for(int i=1;i<n;i++)
+		{
+			if(gcd(i,n)!=1)continue;
+			bool ok=1;
+			for(int p:fac)if(Pow(i,m/p,n)==1){ok=0;break;}
+			if(ok){g=i;break;}
+		}
+		vector<int> res;
+		ll cur=1;
+		for(int i=1;i<=m;i++)
+		{
+			cur=cur*g%n;
+			if(gcd(i,m)==1)res.push_back(cur);
+		}
+		sort(res.begin(),res.end());
+		cout<<res.size()<<'\n';
+		for(int i=d-1;i<(int)res.size();i+=d)cout<<res[i]<<' ';
+		cout<<'\n';
+	}
+	return 0;
+}
+```
 
 ## 例题
 

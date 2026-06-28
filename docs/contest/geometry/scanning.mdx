@@ -6,6 +6,85 @@ title: 扫描线
 
 - [扫描线 - OI Wiki](https://oi-wiki.org/geometry/scanning/)
 
+## 简介
+
+**扫描线**（Scanning Line）是一种将二维问题降为一维动态问题的思想：用一条假想的线沿某一轴方向扫描，每到达一个关键位置（矩形边、点等）就更新数据结构，从而统计面积、周长或点数等信息。
+
+以矩形面积并为例：将每个矩形拆成两条竖直事件线（下边 $+1$、上边 $-1$），按 $x$ 坐标排序。扫描线每推进一步，在 $y$ 轴方向查询「被覆盖次数 $>0$ 的总长度」，乘以横向步长即为贡献。
+
+$y$ 轴区间用特殊线段树维护，每个节点存两个值：$\mathit{cnt}$（该区间被完整覆盖的次数，类似不下放的懒标记）和 $\mathit{len}$（当前有效覆盖长度）。区间更新时直接修改 $\mathit{cnt}$，上推时若 $\mathit{cnt}>0$ 则 $\mathit{len}$ 取区间全长，否则由子节点合并。$y$ 坐标需要离散化。时间复杂度 $O(n\log n)$。
+
+## 实现
+
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+
+using ll=long long;
+const int N=200005;
+
+ll ys[N];
+int m;
+struct Node
+{
+	int cnt;
+	ll len;
+}tr[N<<2];
+
+void push_up(int u,int l,int r)
+{
+	if(tr[u].cnt)tr[u].len=ys[r+1]-ys[l];
+	else if(l==r)tr[u].len=0;
+	else tr[u].len=tr[u<<1].len+tr[u<<1|1].len;
+}
+void update(int u,int l,int r,int x,int y,int v)
+{
+	if(x<=l&&r<=y){tr[u].cnt+=v;push_up(u,l,r);return;}
+	int mid=l+r>>1;
+	if(x<=mid)update(u<<1,l,mid,x,y,v);
+	if(y>mid)update(u<<1|1,mid+1,r,x,y,v);
+	push_up(u,l,r);
+}
+
+struct Line
+{
+	ll x,y1,y2;
+	int flag;
+	bool operator<(const Line &o)const{return x<o.x;}
+}lines[N];
+
+int main()
+{
+	ios::sync_with_stdio(false);
+	cin.tie(nullptr);
+	int n;
+	cin>>n;
+	int tot=0,cm=0;
+	for(int i=0;i<n;i++)
+	{
+		ll x1,y1,x2,y2;
+		cin>>x1>>y1>>x2>>y2;
+		lines[tot++]={x1,y1,y2,1};
+		lines[tot++]={x2,y1,y2,-1};
+		ys[cm++]=y1;
+		ys[cm++]=y2;
+	}
+	sort(ys,ys+cm);
+	m=unique(ys,ys+cm)-ys;
+	sort(lines,lines+tot);
+	ll ans=0;
+	for(int i=0;i<tot-1;i++)
+	{
+		int l=lower_bound(ys,ys+m,lines[i].y1)-ys;
+		int r=lower_bound(ys,ys+m,lines[i].y2)-ys-1;
+		if(l<=r)update(1,0,m-2,l,r,lines[i].flag);
+		ans+=tr[1].len*(lines[i+1].x-lines[i].x);
+	}
+	cout<<ans<<'\n';
+	return 0;
+}
+```
+
 ## 例题
 
 <Problem id="P5490" />

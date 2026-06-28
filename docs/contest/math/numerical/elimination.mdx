@@ -137,6 +137,8 @@ int gauss(int n)
 
 ## 行列式求值
 
+用消元把矩阵化为上三角，行列式即为对角线元素之积；每次交换两行需对结果取反。在模意义下用辗转相减代替除法可避免求逆。时间复杂度为 $O(n^3)$。
+
 ```cpp
 #include <bits/stdc++.h>
 using namespace std;

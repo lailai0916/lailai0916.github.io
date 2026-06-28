@@ -6,6 +6,10 @@ title: 数论分块
 
 - [数论分块 - OI Wiki](https://oi-wiki.org/math/number-theory/sqrt-decomposition/)
 
+## 简介
+
+**数论分块**用于快速计算形如 $\sum_{i=1}^n f(i)\lfloor n/i\rfloor$ 的和式。$\lfloor n/i\rfloor$ 随 $i$ 增大只取 $O(\sqrt n)$ 种不同值，且取同一值的 $i$ 构成一段连续区间 $[l,r]$，其右端点为 $r=\lfloor n/\lfloor n/l\rfloor\rfloor$。对每段批量累加即可在 $O(\sqrt n)$ 内完成。
+
 ## 实现
 
 ```cpp

@@ -5,6 +5,44 @@ title: 主元素问题
 ## 参考资料
 
 - [主元素问题 - OI Wiki](https://oi-wiki.org/misc/main-element/)
+- [多数投票算法 - 维基百科](https://zh.wikipedia.org/wiki/多数投票算法)
+
+## 简介
+
+**主元素问题**（Majority Element Problem）要求在长度为 $n$ 的序列中，找出出现次数严格超过 $\lfloor n/2\rfloor$ 的元素。
+
+离线情形下，排序后第 $\lfloor n/2\rfloor+1$ 个元素一定是主元素，利用 `nth_element` 可在 $O(n)$ 时间内求得，无需额外空间。
+
+**摩尔投票算法**（Boyer–Moore Majority Vote Algorithm）是一种在线算法，核心思想：不断消去一对「候选元素」与「非候选元素」，最终剩余的候选即为主元素。维护当前候选 $\mathit{val}$ 与计数 $\mathit{cnt}$，初始 $\mathit{cnt}=0$；对每个新元素，若 $\mathit{cnt}=0$ 则更新候选，若等于候选则 $\mathit{cnt}+1$，否则 $\mathit{cnt}-1$。全部扫描后 $\mathit{val}$ 即为答案。时间复杂度 $O(n)$，空间复杂度 $O(1)$。
+
+注意：若序列不保证存在主元素，需再扫描一遍验证 $\mathit{val}$ 的出现次数是否超过 $\lfloor n/2\rfloor$。
+
+## 实现
+
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+
+const int N=100005;
+int a[N];
+int main()
+{
+	ios::sync_with_stdio(false);
+	cin.tie(nullptr);
+	int n;
+	cin>>n;
+	for(int i=1;i<=n;i++)cin>>a[i];
+	int val=0,cnt=0;
+	for(int i=1;i<=n;i++)
+	{
+		if(cnt==0)val=a[i];
+		if(a[i]==val)cnt++;
+		else cnt--;
+	}
+	cout<<val<<'\n';
+	return 0;
+}
+```
 
 ## 例题
 

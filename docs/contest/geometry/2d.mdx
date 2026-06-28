@@ -6,6 +6,61 @@ title: 二维计算几何基础
 
 - [二维计算几何基础 - OI Wiki](https://oi-wiki.org/geometry/2d/)
 
+## 简介
+
+二维计算几何以平面直角坐标系为基础，核心工具是**向量**（Vector）：用点的差 $\overrightarrow{AB}=B-A$ 表示方向与长度，再通过点积和叉积导出几乎所有几何关系。
+
+**点积**（Dot Product）$\mathbf{A}\cdot\mathbf{B}=A_xB_x+A_yB_y=|\mathbf{A}||\mathbf{B}|\cos\theta$，用于判断夹角、投影、垂直（点积为 0）。
+
+**叉积**（Cross Product）$\mathbf{A}\times\mathbf{B}=A_xB_y-A_yB_x=|\mathbf{A}||\mathbf{B}|\sin\theta$，其绝对值为以 $\mathbf{A}$、$\mathbf{B}$ 为邻边的平行四边形面积，符号表示旋转方向（正值逆时针，负值顺时针）。
+
+由于浮点数比较需要容差 $\varepsilon$，用函数 `sgn` 统一处理正负零三态。
+
+## 实现
+
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+
+const double pi=acos(-1);
+const double eps=1e-10;
+int sgn(double x){return (x>eps)-(x<-eps);}
+struct Point
+{
+	double x,y;
+	Point(){}
+	Point(double _x,double _y):x(_x),y(_y){}
+	Point operator+(Point B){return Point(x+B.x,y+B.y);}
+	Point operator-(Point B){return Point(x-B.x,y-B.y);}
+	Point operator*(double k){return Point(x*k,y*k);}
+	Point operator/(double k){return Point(x/k,y/k);}
+	bool operator==(Point B){return sgn(x-B.x)==0&&sgn(y-B.y)==0;}
+};
+double Dis(Point A,Point B){return sqrt((A.x-B.x)*(A.x-B.x)+(A.y-B.y)*(A.y-B.y));}
+double Dis2(Point A,Point B){return (A.x-B.x)*(A.x-B.x)+(A.y-B.y)*(A.y-B.y);}
+typedef Point Vector;
+double Dot(Vector A,Vector B){return A.x*B.x+A.y*B.y;}
+double Cross(Vector A,Vector B){return A.x*B.y-A.y*B.x;}
+double Len(Vector A){return sqrt(Dot(A,A));}
+double Len2(Vector A){return Dot(A,A);}
+int main()
+{
+	ios::sync_with_stdio(false);
+	cin.tie(nullptr);
+
+	return 0;
+}
+```
+
+## 基本操作
+
+常用操作均由上述基础推出：
+
+- **判断点在直线哪侧**：设直线过点 $P$，方向向量 $\mathbf{v}$，待判点 $Q$，则 $\mathbf{v}\times\overrightarrow{PQ}$ 的符号即为所在侧（正值在左，负值在右，零值在线上）。
+- **线段相交**：先做快速排斥实验（检查包围盒是否重叠），再做跨立实验（两端点叉积异号）。
+- **多边形面积**：逆时针标记顶点 $p_1,\dots,p_n$，选辅助点 $O$，面积为 $\frac{1}{2}\left|\sum_{i=1}^n\overrightarrow{Op_i}\times\overrightarrow{Op_{(i\bmod n)+1}}\right|$。
+- **两直线交点**：利用叉积构造正弦定理，计算参数 $T=\frac{|\mathbf{u}\times\mathbf{b}|}{|\mathbf{a}\times\mathbf{b}|}$，交点为 $B+T\cdot\mathbf{a}$。
+
 ## 例题
 
 <Problem id="P1183" />

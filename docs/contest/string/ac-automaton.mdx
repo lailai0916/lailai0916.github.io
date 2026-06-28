@@ -6,6 +6,89 @@ title: AC 自动机
 
 - [AC 自动机 - OI Wiki](https://oi-wiki.org/string/ac-automaton/)
 
+## 简介
+
+**AC 自动机**（Aho–Corasick Automaton）以 Trie 为骨架，结合 KMP 的失配指针思想，用于多模式串匹配。
+
+建立过程分两步：将所有模式串插入 Trie；再用 BFS 对每个结点构造 fail 指针，使其指向该结点对应字符串的最长后缀状态。构建完成后同时将 Trie 改造为字典图——若字符 $c$ 的子结点不存在，则令其指向 fail 结点的 $c$ 子结点，保证每次转移 $O(1)$。查询时在字典图上逐字符转移，沿 fail 链累加匹配计数。设模式串总长为 $\sum|s_i|$，文本串长为 $|S|$，字符集大小为 $|\Sigma|$，构建复杂度为 $O(\sum|s_i|\cdot|\Sigma|)$，查询复杂度为 $O(|S|\cdot|\Sigma|)$（连字典图后）。
+
+## 实现
+
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+
+const int N=1000005;
+int son[N][26],fail[N],cnt[N];
+int tot=0;
+void insert(string s)
+{
+	int u=0;
+	for(auto c:s)
+	{
+		int x=c-'a';
+		if(!son[u][x])son[u][x]=++tot;
+		u=son[u][x];
+	}
+	cnt[u]++;
+}
+void build()
+{
+	queue<int> q;
+	for(int i=0;i<26;i++)
+		if(son[0][i])q.push(son[0][i]);
+	while(!q.empty())
+	{
+		int u=q.front();
+		q.pop();
+		for(int i=0;i<26;i++)
+		{
+			if(son[u][i])
+			{
+				fail[son[u][i]]=son[fail[u]][i];
+				q.push(son[u][i]);
+			}
+			else
+			{
+				son[u][i]=son[fail[u]][i];
+			}
+		}
+	}
+}
+int query(string s)
+{
+	int u=0,res=0;
+	for(auto c:s)
+	{
+		u=son[u][c-'a'];
+		for(int j=u;j&&cnt[j]!=-1;j=fail[j])
+		{
+			res+=cnt[j];
+			cnt[j]=-1;
+		}
+	}
+	return res;
+}
+int main()
+{
+	ios::sync_with_stdio(false);
+	cin.tie(nullptr);
+	int n;
+	cin>>n;
+	for(int i=0;i<n;i++)
+	{
+		string s;
+		cin>>s;
+		insert(s);
+	}
+	build();
+	string t;
+	cin>>t;
+	cout<<query(t)<<'\n';
+	return 0;
+}
+```
+
 ## 例题
 
 <Problem id="P3808" />

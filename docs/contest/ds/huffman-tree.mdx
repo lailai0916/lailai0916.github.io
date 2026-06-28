@@ -6,6 +6,50 @@ title: 霍夫曼树
 
 - [霍夫曼树 - OI Wiki](https://oi-wiki.org/ds/huffman-tree/)
 
+## 简介
+
+**霍夫曼树**（Huffman Tree）是带权路径长度（Weighted Path Length，WPL）最小的二叉树，其中 WPL 定义为所有叶结点的权值乘以其到根路径长度之积的总和：
+
+$$
+\mathrm{WPL}=\sum_{i=1}^n w_i l_i
+$$
+
+霍夫曼算法的核心思想：每次从集合中选出权值最小的两棵树合并为新树，新树根权值为两子树权值之和，再放回集合，重复 $n-1$ 次直至只剩一棵树。权值越小的叶结点离根越远，权值越大的离根越近，从而使 WPL 最小。
+
+构建过程可用小根堆实现，时间复杂度为 $O(n\log n)$。WPL 等于每次合并时两棵树权值之和的累计总和。
+
+## 实现
+
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+	ios::sync_with_stdio(false);
+	cin.tie(nullptr);
+	int n;
+	cin>>n;
+	priority_queue<long long,vector<long long>,greater<long long>> pq;
+	for(int i=0;i<n;i++)
+	{
+		long long x;
+		cin>>x;
+		pq.push(x);
+	}
+	long long ans=0;
+	while(pq.size()>1)
+	{
+		long long x=pq.top();pq.pop();
+		long long y=pq.top();pq.pop();
+		ans+=x+y;
+		pq.push(x+y);
+	}
+	cout<<ans<<'\n';
+	return 0;
+}
+```
+
 ## 例题
 
 <Problem id="B2168" />

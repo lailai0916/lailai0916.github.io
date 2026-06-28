@@ -6,6 +6,60 @@ title: 区间 DP
 
 - [区间 DP - OI Wiki](https://oi-wiki.org/dp/interval/)
 
+## 简介
+
+**区间 DP**（Interval DP）是线性 DP 的扩展，以区间长度为阶段，在小区间最优解的基础上合并出大区间的最优解。
+
+设 $f(i,j)$ 表示合并区间 $[i,j]$ 的最优值，枚举断点 $k$ 转移：
+
+$$
+f(i,j)=\min_{i\le k<j}\set{f(i,k)+f(k+1,j)+w(i,j)}
+$$
+
+其中 $w(i,j)$ 为合并两段的代价。
+
+以石子合并为例：$n$ 堆石子排成一列，每次合并相邻两堆，得分为两堆之和，求最小总得分。此时 $w(i,j)=\sum_{t=i}^j a_t$，用前缀和 $O(1)$ 求出。按区间长度从小到大转移，时间复杂度为 $O(n^3)$。
+
+若石子排成环，把序列复制一倍接在末尾，再对所有长度为 $n$ 的区间取最优即可。
+
+## 实现
+
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+
+const int inf=0x3f3f3f3f;
+const int N=305;
+int a[N],s[N],f[N][N];
+int main()
+{
+	ios::sync_with_stdio(false);
+	cin.tie(nullptr);
+	int n;
+	cin>>n;
+	for(int i=1;i<=n;i++)
+	{
+		cin>>a[i];
+		s[i]=s[i-1]+a[i];
+	}
+	memset(f,0x3f,sizeof f);
+	for(int i=1;i<=n;i++)f[i][i]=0;
+	for(int len=1;len<n;len++)
+	{
+		for(int i=1;i+len<=n;i++)
+		{
+			int j=i+len;
+			for(int k=i;k<j;k++)
+			{
+				f[i][j]=min(f[i][j],f[i][k]+f[k+1][j]+s[j]-s[i-1]);
+			}
+		}
+	}
+	cout<<f[1][n]<<'\n';
+	return 0;
+}
+```
+
 ## 例题
 
 <Problem id="P1880" />

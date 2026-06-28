@@ -6,6 +6,51 @@ title: 最小表示法
 
 - [最小表示法 - OI Wiki](https://oi-wiki.org/string/minimal-string/)
 
+## 简介
+
+**最小表示法**（Minimum String Rotation）用于求字符串 $s$ 所有循环同构中字典序最小的那个的起始位置。
+
+维护两个指针 $i,j$（初始为 $0,1$）和公共前缀长度 $k$：每次比较 $s[(i+k)\bmod n]$ 与 $s[(j+k)\bmod n]$，相同则 $k$ 加一；若 $s[(i+k)\bmod n]>s[(j+k)\bmod n]$，则以 $i$ 为起点的后续 $k+1$ 个位置均非最优，直接跳过令 $i\gets i+k+1$，同理对称处理 $j$。时间复杂度为 $O(n)$。
+
+## 实现
+
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+
+int minimal(string s)
+{
+	int n=s.size();
+	int i=0,j=1,k=0;
+	while(k<n&&i<n&&j<n)
+	{
+		if(s[(i+k)%n]==s[(j+k)%n])
+		{
+			k++;
+		}
+		else
+		{
+			s[(i+k)%n]>s[(j+k)%n]?i=i+k+1:j=j+k+1;
+			if(i==j)i++;
+			k=0;
+		}
+	}
+	return min(i,j);
+}
+int main()
+{
+	ios::sync_with_stdio(false);
+	cin.tie(nullptr);
+	string s;
+	cin>>s;
+	int p=minimal(s);
+	int n=s.size();
+	for(int i=0;i<n;i++)cout<<s[(p+i)%n];
+	cout<<'\n';
+	return 0;
+}
+```
+
 ## 例题
 
 <Problem id="P13270" />

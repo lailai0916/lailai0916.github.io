@@ -6,6 +6,39 @@ title: 单调队列
 
 - [单调队列 - OI Wiki](https://oi-wiki.org/ds/monotonous-queue/)
 
+## 简介
+
+**单调队列**（Monotonic Queue）是一种队列内元素保持单调递增或单调递减的数据结构，支持从队头删除过期元素、从队尾弹出不满足单调性的元素，每个元素恰好入队出队各一次，总时间复杂度 $O(n)$。
+
+最典型的应用是求滑动窗口最值：给定长度为 $n$ 的序列和窗口大小 $k$，求每个长度为 $k$ 的子区间的最小值（或最大值）。维护一个单调递增的队列，队头始终是当前窗口的最小值；新元素入队前从队尾弹出所有不小于它的元素以保持单调性；若队头下标超出窗口范围则从队头弹出。
+
+## 实现
+
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+
+const int N=1000005;
+int a[N],q[N];
+int main()
+{
+	ios::sync_with_stdio(false);
+	cin.tie(nullptr);
+	int n,k;
+	cin>>n>>k;
+	for(int i=1;i<=n;i++)cin>>a[i];
+	int hd=1,tl=0;
+	for(int i=1;i<=n;i++)
+	{
+		while(hd<=tl&&a[q[tl]]>=a[i])tl--;
+		q[++tl]=i;
+		while(q[hd]<i-k+1)hd++;
+		if(i>=k)cout<<a[q[hd]]<<" \n"[i==n];
+	}
+	return 0;
+}
+```
+
 ## 例题
 
 <Problem id="P1886" />

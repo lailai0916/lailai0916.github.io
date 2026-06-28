@@ -2,11 +2,41 @@
 title: 单调栈
 ---
 
-将一个元素插入单调栈，弹出一些元素，使插入后整个栈仍满足单调性。
-
 ## 参考资料
 
 - [单调栈 - OI Wiki](https://oi-wiki.org/ds/monotonous-stack/)
+
+## 简介
+
+**单调栈**（Monotonic Stack）是一种栈内元素保持单调递增或单调递减的数据结构。将新元素入栈时，从栈顶依次弹出所有破坏单调性的元素，再将新元素压入。每个元素恰好入栈出栈各一次，时间复杂度 $O(n)$。
+
+单调栈最经典的应用是求「下一个更大元素」（Next Greater Element）：对于序列中每个元素 $a_i$，找到其右侧第一个比它大的元素的下标。维护单调递减栈，当新元素 $a_i$ 大于栈顶时，栈顶元素的「下一个更大元素」即为 $i$，将其弹出并记录答案，直至栈为空或栈顶不小于 $a_i$。
+
+## 实现
+
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+
+const int N=3000005;
+int a[N],ans[N],stk[N];
+int main()
+{
+	ios::sync_with_stdio(false);
+	cin.tie(nullptr);
+	int n;
+	cin>>n;
+	for(int i=1;i<=n;i++)cin>>a[i];
+	int top=0;
+	for(int i=1;i<=n;i++)
+	{
+		while(top&&a[stk[top]]<a[i])ans[stk[top--]]=i;
+		stk[++top]=i;
+	}
+	for(int i=1;i<=n;i++)cout<<ans[i]<<" \n"[i==n];
+	return 0;
+}
+```
 
 ## 例题
 

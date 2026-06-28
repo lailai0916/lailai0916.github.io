@@ -135,8 +135,8 @@ $$
 $$
 T(n)=
 \begin{cases}
-  \Theta(n^{\log_b a}) & f(n)=O(n^{\log_b (a)-\epsilon}),\epsilon>0 \\
-  \Theta(f(n)) & f(n)=\Omega(n^{\log_b (a)+\epsilon}),\epsilon>0 \\
+  \Theta(n^{\log_b a}) & f(n)=O(n^{\log_b a-\epsilon}),\epsilon>0 \\
+  \Theta(f(n)) & f(n)=\Omega(n^{\log_b a+\epsilon}),\epsilon>0 \\
   \Theta(n^{\log_b a}\log^{k+1} n) & f(n)=\Theta(n^{\log_b a}\log^k n),k\ge 0
 \end{cases}
 $$

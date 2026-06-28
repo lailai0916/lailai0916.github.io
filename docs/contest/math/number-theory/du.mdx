@@ -2,15 +2,117 @@
 title: 杜教筛
 ---
 
-：
+## 参考资料
+
+- [杜教筛 - OI Wiki](https://oi-wiki.org/math/number-theory/du/)
+
+## 简介
+
+**杜教筛**用于在低于线性的时间内求数论函数前缀和 $S(n)=\sum_{i=1}^nf(i)$。
+
+构造一个数论函数 $g$，考虑 $f$ 与 $g$ 的狄利克雷卷积的前缀和：
+
+$$
+\sum_{i=1}^n(f*g)(i)=\sum_{i=1}^ng(i)S\left(\left\lfloor\frac{n}{i}\right\rfloor\right)
+$$
+
+把 $i=1$ 的项单独提出，得递推式：
+
+$$
+g(1)S(n)=\sum_{i=1}^n(f*g)(i)-\sum_{i=2}^ng(i)S\left(\left\lfloor\frac{n}{i}\right\rfloor\right)
+$$
+
+只要 $g$ 与 $f*g$ 的前缀和都能快速求出，右侧第二项用数论分块递归求解即可。线性筛预处理前 $O(n^{2/3})$ 项，配合记忆化，时间复杂度为 $O(n^{2/3})$。
+
+求 $\sum\mu(i)$ 时取 $g=1$，则 $f*g=\varepsilon$，前缀和为 $1$。求 $\sum\varphi(i)$ 时同样取 $g=1$，则 $\varphi*1=\operatorname{id}$，前缀和为 $\frac{1}{2}n(n+1)$。例如：
 
 $$
 \sum_{i=1}^{11548585}\varphi(i)=40539567414958
 $$
 
-## 参考资料
+## 实现
 
-- [杜教筛 - OI Wiki](https://oi-wiki.org/math/number-theory/du/)
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+
+using ll=long long;
+const int N=2000005;
+int pri[N],mu[N],phi[N];
+ll smu[N],sphi[N];
+bool vis[N];
+unordered_map<ll,ll> wmu,wphi;
+void sieve()
+{
+	mu[1]=phi[1]=1;
+	int cnt=0;
+	for(int i=2;i<N;i++)
+	{
+		if(!vis[i])
+		{
+			pri[++cnt]=i;
+			mu[i]=-1;
+			phi[i]=i-1;
+		}
+		for(int j=1;j<=cnt&&i*pri[j]<N;j++)
+		{
+			vis[i*pri[j]]=1;
+			if(i%pri[j]==0)
+			{
+				mu[i*pri[j]]=0;
+				phi[i*pri[j]]=phi[i]*pri[j];
+				break;
+			}
+			mu[i*pri[j]]=-mu[i];
+			phi[i*pri[j]]=phi[i]*phi[pri[j]];
+		}
+	}
+	for(int i=1;i<N;i++)
+	{
+		smu[i]=smu[i-1]+mu[i];
+		sphi[i]=sphi[i-1]+phi[i];
+	}
+}
+ll Smu(ll n)
+{
+	if(n<N)return smu[n];
+	if(wmu.count(n))return wmu[n];
+	ll res=1;
+	for(ll l=2,r;l<=n;l=r+1)
+	{
+		r=n/(n/l);
+		res-=(r-l+1)*Smu(n/l);
+	}
+	return wmu[n]=res;
+}
+ll Sphi(ll n)
+{
+	if(n<N)return sphi[n];
+	if(wphi.count(n))return wphi[n];
+	ll res=n*(n+1)/2;
+	for(ll l=2,r;l<=n;l=r+1)
+	{
+		r=n/(n/l);
+		res-=(r-l+1)*Sphi(n/l);
+	}
+	return wphi[n]=res;
+}
+int main()
+{
+	ios::sync_with_stdio(false);
+	cin.tie(nullptr);
+	sieve();
+	int T;
+	cin>>T;
+	while(T--)
+	{
+		ll n;
+		cin>>n;
+		cout<<Sphi(n)<<' '<<Smu(n)<<'\n';
+	}
+	return 0;
+}
+```
 
 ## 例题
 

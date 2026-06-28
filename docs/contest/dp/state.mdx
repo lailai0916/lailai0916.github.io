@@ -6,6 +6,71 @@ title: 状压 DP
 
 - [状压 DP - OI Wiki](https://oi-wiki.org/dp/state/)
 
+## 简介
+
+**状压 DP**（Bitmask DP）将集合或多维布尔状态压缩成一个整数编码进 DP 状态，从而将指数级的状态空间用位运算高效处理。适用于元素个数 $n\le 20$ 左右的场景，状态空间为 $O(2^n)$，转移通过枚举子集、按位与或判断完成。
+
+以「$N\times N$ 棋盘放 $K$ 个互不攻击的国王」为例：每行状态用长度为 $N$ 的二进制数表示，相邻两行状态 $s,t$ 合法须满足：行内无相邻国王（$s\&(s\gg 1)=0$），两行不重叠（$s\&t=0$），斜向不攻击（$s\&(t\gg 1)=0$ 且 $t\&(s\gg 1)=0$）。设 $f_{i,s,l}$ 为前 $i$ 行、第 $i$ 行状态为 $s$、共放 $l$ 个国王的方案数，转移：
+
+$$
+f_{i,s,l}=\sum_{t\text{ 合法}}f_{i-1,t,l-\mathrm{popcount}(s)}
+$$
+
+时间复杂度 $O(n\cdot 4^n\cdot k)$，实际远小于此。
+
+## 实现
+
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+
+using ll=long long;
+const int N=10;
+const int S=1<<9;
+ll f[N][S][N*N+1];
+int cnt[S],ok[S];
+int main()
+{
+	ios::sync_with_stdio(false);
+	cin.tie(nullptr);
+	int n,k;
+	cin>>n>>k;
+	int lim=1<<n;
+	for(int s=0;s<lim;s++)
+	{
+		cnt[s]=__builtin_popcount(s);
+		ok[s]=!(s&(s>>1));
+	}
+	for(int s=0;s<lim;s++)
+	{
+		if(!ok[s])continue;
+		f[1][s][cnt[s]]=1;
+	}
+	for(int i=2;i<=n;i++)
+	{
+		for(int s=0;s<lim;s++)
+		{
+			if(!ok[s])continue;
+			for(int t=0;t<lim;t++)
+			{
+				if(!ok[t])continue;
+				if(s&t)continue;
+				if(s&(t>>1))continue;
+				if(t&(s>>1))continue;
+				for(int j=cnt[s];j<=k;j++)
+				{
+					f[i][s][j]+=f[i-1][t][j-cnt[s]];
+				}
+			}
+		}
+	}
+	ll ans=0;
+	for(int s=0;s<lim;s++)ans+=f[n][s][k];
+	cout<<ans<<'\n';
+	return 0;
+}
+```
+
 ## 例题
 
 <Problem id="P1896" />

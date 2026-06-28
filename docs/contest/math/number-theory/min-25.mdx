@@ -6,6 +6,127 @@ title: Min_25 筛
 
 - [Min_25 筛 - OI Wiki](https://oi-wiki.org/math/number-theory/min-25/)
 
+## 简介
+
+**Min_25 筛**（Extended Eratosthenes Sieve）用于求一类积性函数的前缀和 $\sum_{i=1}^nf(i)$，要求 $f(p)$ 在素数处是低次多项式、$f(p^c)$ 可快速求值。时间复杂度为 $O\left(\frac{n^{3/4}}{\log n}\right)$。
+
+记 $F_k(n)=\sum_{i=2}^n[p_k\le\operatorname{lpf}(i)]f(i)$，则答案为 $F_1(n)+1$。算法分两步。
+
+**第一步**求素数处的贡献 $F_{\mathrm{prime}}(n)=\sum_{2\le p\le n}f(p)$。将 $f(p)$ 按多项式拆成若干 $g(p)=p^s$，对每一项以埃氏筛思想递推：
+
+$$
+G_k(n)=G_{k-1}(n)-[p_k^2\le n]g(p_k)\left(G_{k-1}(n/p_k)-G_{k-1}(p_{k-1})\right)
+$$
+
+边界 $G_0(n)=\sum_{i=2}^ng(i)$。只有 $\lfloor n/i\rfloor$ 这 $O(\sqrt n)$ 处的点值有用。
+
+**第二步**按最小质因子递推合数贡献：
+
+$$
+F_k(n)=F_{\mathrm{prime}}(n)-F_{\mathrm{prime}}(p_{k-1})+\sum_{\substack{p_i^2\le n}}\sum_{p_i^{c+1}\le n}\left(f(p_i^c)F_{i+1}(n/p_i^c)+f(p_i^{c+1})\right)
+$$
+
+下面以 $f(p^c)=p^c(p^c-1)$（即 $f(p)=p^2-p$）为例，需要 $G$ 维护一次与二次幂和两项。
+
+## 实现
+
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+
+using ll=long long;
+const int mod=1000000007;
+const int N=200005;
+ll Pow(ll x,ll y)
+{
+	x%=mod;
+	ll res=1;
+	while(y)
+	{
+		if(y&1)res=res*x%mod;
+		x=x*x%mod;
+		y>>=1;
+	}
+	return res;
+}
+ll n,inv2,inv6;
+int sq;
+int pri[N],spri1[N],spri2[N],cnt;
+bool vis[N];
+ll w[N];
+int g1[N],g2[N],tot;
+int idl[N],idr[N];
+void sieve(int k)
+{
+	for(int i=2;i<=k;i++)
+	{
+		if(!vis[i])
+		{
+			pri[++cnt]=i;
+			spri1[cnt]=(spri1[cnt-1]+i)%mod;
+			spri2[cnt]=(spri2[cnt-1]+(ll)i*i)%mod;
+		}
+		for(int j=1;j<=cnt&&i*pri[j]<=k;j++)
+		{
+			vis[i*pri[j]]=1;
+			if(i%pri[j]==0)break;
+		}
+	}
+}
+ll s1(ll x){x%=mod;return x*(x+1)%mod*inv2%mod;}
+ll s2(ll x){x%=mod;return x*(x+1)%mod*(2*x+1)%mod*inv6%mod;}
+int id(ll x){return x<=sq?idl[x]:idr[n/x];}
+ll F(int k,ll x)
+{
+	if(x<=1||pri[k]>x)return 0;
+	int i=id(x);
+	ll res=((ll)g2[i]-g1[i]-(spri2[k-1]-spri1[k-1])%mod+2*mod)%mod;
+	for(int j=k;j<=cnt&&(ll)pri[j]*pri[j]<=x;j++)
+	{
+		ll pw=pri[j];
+		for(int e=1;pw*pri[j]<=x;e++,pw*=pri[j])
+		{
+			ll fp=pw%mod*((pw-1)%mod)%mod;
+			ll fp2=pw*pri[j]%mod*((pw*pri[j]-1)%mod)%mod;
+			res=(res+fp*F(j+1,x/pw)+fp2)%mod;
+		}
+	}
+	return res%mod;
+}
+int main()
+{
+	ios::sync_with_stdio(false);
+	cin.tie(nullptr);
+	cin>>n;
+	inv2=Pow(2,mod-2);
+	inv6=Pow(6,mod-2);
+	sq=sqrt((double)n);
+	while((ll)(sq+1)*(sq+1)<=n)sq++;
+	sieve(sq);
+	for(ll l=1,r;l<=n;l=r+1)
+	{
+		r=n/(n/l);
+		ll v=n/l;
+		w[++tot]=v;
+		g1[tot]=(s1(v)-1+mod)%mod;
+		g2[tot]=(s2(v)-1+mod)%mod;
+		if(v<=sq)idl[v]=tot;
+		else idr[n/v]=tot;
+	}
+	for(int j=1;j<=cnt;j++)
+	{
+		for(int i=1;i<=tot&&(ll)pri[j]*pri[j]<=w[i];i++)
+		{
+			int k=id(w[i]/pri[j]);
+			g1[i]=(g1[i]-(ll)pri[j]*(g1[k]-spri1[j-1]+mod)%mod+mod)%mod;
+			g2[i]=(g2[i]-(ll)pri[j]*pri[j]%mod*(g2[k]-spri2[j-1]+mod)%mod+mod)%mod;
+		}
+	}
+	cout<<(F(1,n)+1)%mod<<'\n';
+	return 0;
+}
+```
+
 ## 例题
 
 <Problem id="P5325" />

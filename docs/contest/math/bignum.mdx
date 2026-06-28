@@ -6,6 +6,98 @@ title: 高精度
 
 - [高精度计算 - OI Wiki](https://oi-wiki.org/math/bignum/)
 
+## 简介
+
+**高精度计算**（Arbitrary-Precision Arithmetic）用整型数组模拟大整数运算，突破语言内建整型的上限。
+
+存储约定：将数字**反转**存入数组，下标 $0$ 对应个位，下标 $i$ 对应 $10^i$ 位。这样加减乘均从低位向高位处理，与竖式运算一致；数字长度变化时，高位对齐也不受影响。
+
+四则运算复杂度：加减法 $O(n)$，高精乘高精 $O(n^2)$（可用 FFT/NTT 优化至 $O(n\log n)$），高精乘单精 $O(n)$。
+
+## 实现
+
+### 高精度加法
+
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+
+const int N=505;
+int a[N],b[N],c[N];
+void rd(int x[])
+{
+	char s[N];
+	scanf("%s",s);
+	int len=strlen(s);
+	for(int i=0;i<len;i++)x[len-1-i]=s[i]-'0';
+}
+void pt(int x[])
+{
+	int i;
+	for(i=N-1;i>=1;i--)if(x[i])break;
+	for(;i>=0;i--)putchar(x[i]+'0');
+	putchar('\n');
+}
+void add(int a[],int b[],int c[])
+{
+	for(int i=0;i<N-1;i++)
+	{
+		c[i]+=a[i]+b[i];
+		if(c[i]>=10){c[i+1]++;c[i]-=10;}
+	}
+}
+int main()
+{
+	rd(a);rd(b);
+	add(a,b,c);
+	pt(c);
+	return 0;
+}
+```
+
+### 高精度乘法
+
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+
+const int N=505;
+int a[N],b[N],c[N*2];
+void rd(int x[],int &len)
+{
+	char s[N];
+	scanf("%s",s);
+	len=strlen(s);
+	for(int i=0;i<len;i++)x[len-1-i]=s[i]-'0';
+}
+void pt(int x[],int len)
+{
+	for(int i=len-1;i>=0;i--)putchar(x[i]+'0');
+	putchar('\n');
+}
+void mul(int a[],int b[],int c[],int la,int lb)
+{
+	for(int i=0;i<la;i++)
+	{
+		for(int j=0;j<lb;j++)c[i+j]+=a[i]*b[j];
+	}
+	for(int i=0;i<la+lb-1;i++)
+	{
+		if(c[i]>=10){c[i+1]+=c[i]/10;c[i]%=10;}
+	}
+}
+int main()
+{
+	int la,lb;
+	rd(a,la);rd(b,lb);
+	mul(a,b,c,la,lb);
+	int len=la+lb;
+	while(len>1&&!c[len-1])len--;
+	pt(c,len);
+	return 0;
+}
+```
+
 ## 例题
 
 <Problem id="P1601" />

@@ -5,6 +5,89 @@ title: Pólya 计数
 ## 参考资料
 
 - [Pólya 计数 - OI Wiki](https://oi-wiki.org/math/combinatorics/polya/)
+- [Pólya enumeration theorem - Wikipedia](https://en.wikipedia.org/wiki/P%C3%B3lya_enumeration_theorem)
+
+## 简介
+
+**Pólya 计数定理**（Pólya Enumeration Theorem）用于求解涉及对称性的「本质不同」计数，是 **Burnside 引理**（Burnside's Lemma）在染色问题上的应用。
+
+设群 $G$ 作用在集合 $X$ 上，本质相同即同一轨道。Burnside 引理给出轨道数：
+
+$$
+|X/G|=\frac{1}{|G|}\sum_{g\in G}|X^g|
+$$
+
+其中 $X^g=\set{x\in X:gx=x}$ 是 $g$ 的不动点集合。
+
+对染色问题，用 $m$ 种颜色染 $X$ 中各点。若置换 $g$ 的轮换分解含 $c(g)$ 个轮换，则同一轮换内必须同色，故 $|X^g|=m^{c(g)}$。代入得 Pólya 计数定理：
+
+$$
+|C^X/G|=\frac{1}{|G|}\sum_{g\in G}m^{c(g)}
+$$
+
+以 $n$ 个珠子的项链为例，仅计旋转时空间对称群是循环群 $C_n$。旋转 $k$ 次的置换有 $\gcd(k,n)$ 个轮换，按因子合并同类项，得本质不同的 $n$ 色染色方案数：
+
+$$
+\frac{1}{n}\sum_{d\mid n}\varphi(d)n^{n/d}
+$$
+
+枚举 $n$ 的因子，单点欧拉函数用 $O(\sqrt n)$ 求出，快速幂计算 $n^{n/d}$，再乘 $n$ 的逆元。时间复杂度为 $O(\sqrt n\log n)$。
+
+## 实现
+
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+
+using ll=long long;
+const int mod=1000000007;
+ll Pow(ll x,ll y)
+{
+	x%=mod;
+	ll res=1;
+	while(y)
+	{
+		if(y&1)res=res*x%mod;
+		x=x*x%mod;
+		y>>=1;
+	}
+	return res;
+}
+int phi(int n)
+{
+	int res=n;
+	for(int i=2;i*i<=n;i++)
+	{
+		if(n%i)continue;
+		res=res/i*(i-1);
+		while(n%i==0)n/=i;
+	}
+	if(n>1)res=res/n*(n-1);
+	return res;
+}
+int main()
+{
+	ios::sync_with_stdio(false);
+	cin.tie(nullptr);
+	int T;
+	cin>>T;
+	while(T--)
+	{
+		int n;
+		cin>>n;
+		ll ans=0;
+		for(int i=1;i*i<=n;i++)
+		{
+			if(n%i)continue;
+			ans=(ans+(ll)phi(i)*Pow(n,n/i))%mod;
+			if(i!=n/i)ans=(ans+(ll)phi(n/i)*Pow(n,i))%mod;
+		}
+		ans=ans*Pow(n,mod-2)%mod;
+		cout<<ans<<'\n';
+	}
+	return 0;
+}
+```
 
 ## 例题
 

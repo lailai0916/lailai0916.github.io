@@ -6,9 +6,56 @@ title: 树的重心
 
 - [树的重心 - OI Wiki](https://oi-wiki.org/graph/tree-centroid/)
 
-## 思想
+## 简介
 
-换根 DP：在 DFS 中计算每个子树的大小，记录「向下」的子树的最大大小，利用总点数 - 当前子树（这里的子树指有根树的子树）的大小得到「向上」的子树的大小，然后就可以依据定义找到重心了。
+**树的重心**（centroid）是这样的节点 $v$：删去 $v$ 后，所得各连通分量的大小均不超过原树节点数的一半。重心最多有两个，且若有两个则必定相邻。
+
+求重心用 DFS：以任意节点为根计算各子树大小 $siz_u$，每个节点 $u$ 的「重量」$mx_u=\max(siz_{child},n-siz_u)$ 即删去 $u$ 后最大连通分量的大小。$mx_u\le\lfloor n/2\rfloor$ 的节点即为重心。时间复杂度 $O(n)$。
+
+重心的关键性质：以重心为根，任意真子树大小均不超过 $n/2$。这使得树的重心分解（点分治）成为可能。
+
+## 实现
+
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+
+const int N=100005;
+vector<int> G[N];
+int siz[N],mx[N];
+int n,ans;
+
+void dfs(int u,int fa)
+{
+	siz[u]=1;mx[u]=0;
+	for(auto v:G[u])
+	{
+		if(v==fa)continue;
+		dfs(v,u);
+		siz[u]+=siz[v];
+		mx[u]=max(mx[u],siz[v]);
+	}
+	mx[u]=max(mx[u],n-siz[u]);
+	if(mx[u]<=n/2)ans=u;
+}
+
+int main()
+{
+	ios::sync_with_stdio(false);
+	cin.tie(nullptr);
+	cin>>n;
+	for(int i=1;i<n;i++)
+	{
+		int u,v;
+		cin>>u>>v;
+		G[u].push_back(v);
+		G[v].push_back(u);
+	}
+	dfs(1,0);
+	cout<<ans<<'\n';
+	return 0;
+}
+```
 
 ## 例题
 

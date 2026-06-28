@@ -6,6 +6,58 @@ title: 环计数
 
 - [环计数问题 - OI Wiki](https://oi-wiki.org/graph/rings-count/)
 
-## 洛谷 P1989 【模板】无向图三元环计数
+## 简介
+
+**三元环计数**（Triangle Counting）要求统计无向简单图中所有满足三点两两相邻的无序三元组 $(u,v,w)$ 的数量。
+
+算法基于边定向：将每条无向边 $(u,v)$ 定向为从度数较小的端点指向度数较大的端点（度数相同则从编号较小指向较大）。定向后图为 DAG。枚举每个节点 $u$，标记 $u$ 指向的所有节点，再枚举 $u$ 的出边邻居 $v$ 的出边邻居 $w$，若 $w$ 被标记则 $(u,v,w)$ 构成三元环。时间复杂度 $O(m\sqrt{m})$。
+
+## 实现
+
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+
+const int N=100005;
+int n,m;
+int deg[N];
+bool vis[N];
+vector<int> G[N];
+
+int main()
+{
+	ios::sync_with_stdio(false);
+	cin.tie(nullptr);
+	cin>>n>>m;
+	vector<pair<int,int>> edges(m);
+	for(auto &[u,v]:edges)
+	{
+		cin>>u>>v;
+		deg[u]++;deg[v]++;
+	}
+	for(auto [u,v]:edges)
+	{
+		if(deg[u]<deg[v]||(deg[u]==deg[v]&&u<v))G[u].push_back(v);
+		else G[v].push_back(u);
+	}
+	int ans=0;
+	for(int u=1;u<=n;u++)
+	{
+		for(auto v:G[u])vis[v]=1;
+		for(auto v:G[u])
+		{
+			for(auto w:G[v])
+			{
+				if(vis[w])ans++;
+			}
+		}
+		for(auto v:G[u])vis[v]=0;
+	}
+	cout<<ans<<'\n';
+	return 0;
+}
+```
+
+## 例题
 
 <Problem id="P1989" />

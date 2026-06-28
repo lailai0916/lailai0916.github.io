@@ -9,6 +9,8 @@ title: 快速幂
 
 ## 快速幂
 
+**快速幂**（Binary Exponentiation）把指数 $y$ 按二进制拆分，每一步将底数平方，遇到为 $1$ 的二进制位就把当前底数乘入答案，从而在 $O(\log y)$ 内求出 $x^y\bmod p$。
+
 ```cpp
 ll Pow(ll x,ll y)
 {

@@ -12,7 +12,7 @@ title: 素数
 
 ### 试除法
 
-时间复杂度为 $O(\sqrt{n})$。
+枚举 $2$ 到 $\sqrt n$ 的整数试除，存在因子则为合数。时间复杂度为 $O(\sqrt{n})$。
 
 ```cpp
 bool prime(int n)
@@ -28,7 +28,7 @@ bool prime(int n)
 
 ### Fermat 素性测试
 
-时间复杂度为 $O(k\log n)$。
+基于费马小定理：若 $n$ 为素数，则对任意 $a$ 有 $a^{n-1}\equiv 1\pmod n$。随机取 $k$ 个底数检验，全部通过则大概率为素数；但卡迈克尔数会被误判。时间复杂度为 $O(k\log n)$。
 
 ```cpp
 ll Pow(ll x,ll y,ll mod)
@@ -56,7 +56,7 @@ bool prime(int n,int k)
 
 ### Miller–Rabin 素性测试
 
-时间复杂度为 $O(k\log^3 n)$。
+在费马测试上增加二次探测：把 $n-1=u\cdot 2^t$，检验 $a^u$ 反复平方的过程中是否出现非平凡的 $1$ 的平方根，可滤掉卡迈克尔数，误判概率极低。时间复杂度为 $O(k\log^3 n)$。
 
 ```cpp
 ll Pow(ll x,ll y,ll mod)

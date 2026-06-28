@@ -6,6 +6,50 @@ title: 矩阵
 
 - [矩阵 - OI Wiki](https://oi-wiki.org/math/linear-algebra/matrix/)
 
+## 简介
+
+**矩阵**（Matrix）是按行列排布的数表。矩阵乘法 $C=AB$ 定义为 $C_{i,j}=\sum_k A_{i,k}B_{k,j}$，仅当 $A$ 的列数等于 $B$ 的行数时有定义，满足结合律但一般不满足交换律。**矩阵快速幂**把线性递推写成 $f_n=Mf_{n-1}$，用快速幂在 $O(n^3\log k)$ 内求出 $M^k$，常用于加速斐波那契数列等线性递推。
+
+## 实现
+
+```cpp
+struct Mat
+{
+	int n;
+	ll a[N][N];
+	Mat(){memset(a,0,sizeof a);n=0;}
+	Mat operator*(const Mat &rhs) const
+	{
+		Mat res;
+		res.n=n;
+		for(int i=0;i<n;i++)
+		{
+			for(int j=0;j<n;j++)
+			{
+				for(int k=0;k<n;k++)
+				{
+					res.a[i][j]=(res.a[i][j]+a[i][k]*rhs.a[k][j])%mod;
+				}
+			}
+		}
+		return res;
+	}
+	Mat operator^(ll rhs) const
+	{
+		Mat res,tmp=*this;
+		res.n=n;
+		for(int i=0;i<n;i++)res.a[i][i]=1;
+		while(rhs)
+		{
+			if(rhs&1)res=res*tmp;
+			tmp=tmp*tmp;
+			rhs>>=1;
+		}
+		return res;
+	}
+};
+```
+
 ## 例题
 
 <Problem id="P3390" />

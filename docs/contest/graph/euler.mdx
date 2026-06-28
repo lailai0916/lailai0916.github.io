@@ -6,6 +6,85 @@ title: 欧拉图
 
 - [欧拉图 - OI Wiki](https://oi-wiki.org/graph/euler/)
 
+## 简介
+
+**欧拉路径**（Eulerian path）是经过图中每条边恰好一次的路径；起止点相同的欧拉路径称为**欧拉回路**（Eulerian circuit）。存在欧拉回路的图称为**欧拉图**（Eulerian graph）；仅存在欧拉路径而无欧拉回路的图称为**半欧拉图**。
+
+判断条件（无向图）：
+
+- 欧拉回路：图连通，且所有顶点度数均为偶数。
+- 欧拉路径：图连通，且恰好有两个奇度顶点（路径的两端点）。
+
+有向图类似，将「度数为偶数」改为「入度等于出度」，「恰好两个奇度顶点」改为「恰有一个顶点出度比入度大 1（路径起点）和一个顶点入度比出度大 1（路径终点）」。
+
+Hierholzer 算法用于构造欧拉路径/欧拉回路：从合法起点出发，用 DFS 沿未使用的边深入，回溯时将顶点加入结果。每条边仅访问一次，时间复杂度为 $O(m)$。
+
+## 实现
+
+以下为有向图欧拉路径，求字典序最小方案。先把每个点的出边排序，`deg[u]` 作当前弧指针只增不减，避免重复扫描已用边；回溯时把顶点压入 `path`，最后反转即得路径。起点取出度比入度大 $1$ 的顶点，欧拉回路时取编号最小的有出边顶点。时间复杂度为 $O(m\log m)$。
+
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+
+const int N=100005;
+vector<int> G[N];
+int deg[N],in[N],out[N];
+vector<int> path;
+
+void dfs(int u)
+{
+	while(deg[u]<(int)G[u].size())
+	{
+		int v=G[u][deg[u]++];
+		dfs(v);
+	}
+	path.push_back(u);
+}
+
+int main()
+{
+	ios::sync_with_stdio(false);
+	cin.tie(nullptr);
+	int n,m;
+	cin>>n>>m;
+	for(int i=0;i<m;i++)
+	{
+		int u,v;
+		cin>>u>>v;
+		G[u].push_back(v);
+		out[u]++;
+		in[v]++;
+	}
+	for(int i=1;i<=n;i++)sort(G[i].begin(),G[i].end());
+	int st=-1,s=0,t=0;
+	bool ok=1;
+	for(int i=1;i<=n;i++)
+	{
+		if(out[i]-in[i]==1){s++;st=i;}
+		else if(in[i]-out[i]==1)t++;
+		else if(in[i]!=out[i])ok=0;
+	}
+	if(!((s==0&&t==0)||(s==1&&t==1)))ok=0;
+	if(st==-1)for(int i=1;i<=n;i++)if(out[i]){st=i;break;}
+	if(!ok)
+	{
+		cout<<"No\n";
+		return 0;
+	}
+	dfs(st);
+	if((int)path.size()!=m+1)
+	{
+		cout<<"No\n";
+		return 0;
+	}
+	reverse(path.begin(),path.end());
+	for(auto x:path)cout<<x<<' ';
+	cout<<'\n';
+	return 0;
+}
+```
+
 ## 例题
 
 <Problem id="P7771" />

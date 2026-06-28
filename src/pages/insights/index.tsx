@@ -11,6 +11,7 @@ import {
   PageContent,
 } from '@site/src/components/laikit/Page';
 import Card from '@site/src/components/laikit/Card';
+import IconBlock from '@site/src/components/laikit/IconBlock';
 import Skeleton from '@site/src/components/laikit/Skeleton';
 import Chart from '@site/src/components/laikit/Chart';
 import Segmented, {
@@ -79,6 +80,7 @@ function deltaPercent(curr: number, prev: number): number | null {
 interface MetricSpec {
   key: keyof UmamiStats | 'bounceRate' | 'avgVisit';
   label: string;
+  icon: string;
   format: (n: number) => string;
   invertDelta?: boolean;
 }
@@ -124,7 +126,10 @@ function HeroMetric({
 
   return (
     <Card padding="1.5rem 1.5rem 1.25rem" className={styles.heroTile}>
-      <span className={styles.heroLabel}>{spec.label}</span>
+      <div className={styles.heroTop}>
+        <span className={styles.heroLabel}>{spec.label}</span>
+        <IconBlock icon={spec.icon} variant="muted" size={32} />
+      </div>
       {loading ? (
         <Skeleton className={styles.heroValue} radius="8px">
           {'     '}

@@ -8,6 +8,78 @@ title: Stern–Brocot 树
 - [福特圆与怪异的分数加法（上） - bilibili](https://www.bilibili.com/video/BV16U4y1Y7aF)
 - [福特圆与怪异的分数加法（下） - bilibili](https://www.bilibili.com/video/BV1ha41137oW)
 
+## 简介
+
+**Stern–Brocot 树**是一棵包含所有正最简有理分数的二叉搜索树。初始序列为 $\frac{0}{1},\frac{1}{0}$，每次在相邻两分数 $\frac{a}{b}$ 与 $\frac{c}{d}$ 之间插入它们的 **中位分数**（Mediant）$\frac{a+c}{b+d}$，把新分数连成树即可。
+
+它具有三条基本性质：每层分数单调递增；相邻分数满足 $bc-ad=1$，故都是最简分数；任何正最简分数都恰好出现一次。
+
+向左、右子节点移动分别对应区间端点更新，到达某分数的 $L/R$ 路径就是它在 **Stern–Brocot 数系**中的表示，可用于在树上二分逼近实数。
+
+## 建树
+
+对前 $n$ 层做中序遍历，按区间端点递归即可，输出恰为单调递增的分数序列。时间复杂度为 $O(2^n)$。
+
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+
+int n;
+void build(int a,int b,int c,int d,int dep)
+{
+	if(dep>n)return;
+	int x=a+c,y=b+d;
+	build(a,b,x,y,dep+1);
+	cout<<x<<'/'<<y<<' ';
+	build(x,y,c,d,dep+1);
+}
+int main()
+{
+	ios::sync_with_stdio(false);
+	cin.tie(nullptr);
+	cin>>n;
+	build(0,1,1,0,1);
+	cout<<'\n';
+	return 0;
+}
+```
+
+## 查找分数
+
+朴素查找按大小关系逐步走 $L/R$，复杂度为 $O(p+q)$。把连续同向移动合并，可降到 $O(\log\min(p,q))$。
+
+关键在于：分数 $\frac{p}{q}$ 末尾补一的连分数表示 $[t_0,t_1,\dots,t_n,1]$，其各项依次编码了路径上向右、向左的连续移动次数（下标从 $0$ 起偶数项向右、奇数项向左）。连分数表示由辗转相除求得，最后一组移动次数减一即得路径。
+
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+
+string find(int x,int y)
+{
+	string res;
+	bool r=1;
+	while(y)
+	{
+		int t=x/y;
+		x%=y;
+		swap(x,y);
+		res+=string(t,r?'R':'L');
+		r^=1;
+	}
+	res.pop_back();
+	return res;
+}
+int main()
+{
+	ios::sync_with_stdio(false);
+	cin.tie(nullptr);
+	int x,y;
+	cin>>x>>y;
+	cout<<find(x,y)<<'\n';
+	return 0;
+}
+```
+
 ## 例题
 
 <Problem id="P1298" />
