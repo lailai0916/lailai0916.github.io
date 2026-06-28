@@ -33,7 +33,7 @@ int main()
 		while(top&&a[stk[top]]<a[i])ans[stk[top--]]=i;
 		stk[++top]=i;
 	}
-	for(int i=1;i<=n;i++)cout<<ans[i]<<" \n"[i==n];
+	for(int i=1;i<=n;i++)cout<<ans[i]<<' ';
 	return 0;
 }
 ```

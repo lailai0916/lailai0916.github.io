@@ -1,0 +1,17 @@
+---
+title: 二次剩余
+---
+
+## 参考资料
+
+- [二次剩余 - OI Wiki](https://oi-wiki.org/math/number-theory/quad-residue/)
+
+## 简介
+
+若存在 $x$ 使 $x^2\equiv n\pmod p$，则称 $n$ 是模 $p$ 的**二次剩余**。由**欧拉判别法**，对奇质数 $p$，$n$ 是二次剩余当且仅当 $n^{(p-1)/2}\equiv 1\pmod p$。
+
+**Cipolla 算法**用于求出一个解：先随机找 $a$ 使 $a^2-n$ 是非二次剩余，在扩域 $\mathbb F_p(\sqrt{a^2-n})$ 中计算 $(a+\sqrt{a^2-n})^{(p+1)/2}$ 即为一个解，时间复杂度 $O(\log p)$。
+
+## 例题
+
+<Problem id="P5491" />

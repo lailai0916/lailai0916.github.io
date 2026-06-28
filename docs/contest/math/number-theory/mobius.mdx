@@ -1,0 +1,17 @@
+---
+title: 莫比乌斯反演
+---
+
+## 参考资料
+
+- [莫比乌斯反演 - OI Wiki](https://oi-wiki.org/math/number-theory/mobius/)
+
+## 简介
+
+**莫比乌斯函数** $\mu(n)$ 是一个积性函数：$\mu(1)=1$；$n$ 含平方因子时 $\mu(n)=0$；否则 $\mu(n)=(-1)^k$，$k$ 为 $n$ 的不同质因子个数。它满足 $\sum_{d\mid n}\mu(d)=[n=1]$。
+
+**莫比乌斯反演**：若 $f(n)=\sum_{d\mid n}g(d)$，则 $g(n)=\sum_{d\mid n}\mu\left(\frac nd\right)f(d)$。它常用来把 $\gcd$ 形式的和式拆开，配合数论分块在 $O(\sqrt n)$ 内求解。
+
+## 例题
+
+<Problem id="P3455" />

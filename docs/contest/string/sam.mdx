@@ -1,0 +1,17 @@
+---
+title: 后缀自动机（SAM）
+---
+
+## 参考资料
+
+- [后缀自动机（SAM） - OI Wiki](https://oi-wiki.org/string/sam/)
+
+## 简介
+
+**后缀自动机**（Suffix Automaton，SAM）是能接受一个字符串所有后缀的最小确定有限自动机。它的每个状态对应一组 $\operatorname{endpos}$（结束位置集合）相同的子串，状态数与转移数都是 $O(n)$，可在线 $O(n)$ 构建。
+
+借助 $\operatorname{parent}$ 树（按 $\operatorname{endpos}$ 的包含关系）与各状态的 $\operatorname{len}$，SAM 能高效解决本质不同子串计数、子串出现次数、两串最长公共子串等问题。
+
+## 例题
+
+<Problem id="P3804" />

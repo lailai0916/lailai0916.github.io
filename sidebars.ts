@@ -99,6 +99,7 @@ const sidebars: SidebarsConfig = {
         'contest/dp/state',
         'contest/dp/number',
         'contest/dp/probability',
+        'contest/dp/opt/slope',
       ],
     },
     {
@@ -116,6 +117,9 @@ const sidebars: SidebarsConfig = {
         'contest/string/ac-automaton',
         'contest/string/manacher',
         'contest/string/minimal-string',
+        'contest/string/sa',
+        'contest/string/sam',
+        'contest/string/pam',
       ],
     },
     {
@@ -149,6 +153,9 @@ const sidebars: SidebarsConfig = {
             'contest/math/number-theory/du',
             'contest/math/number-theory/min-25',
             'contest/math/number-theory/stern-brocot',
+            'contest/math/number-theory/mobius',
+            'contest/math/number-theory/discrete-logarithm',
+            'contest/math/number-theory/quad-residue',
           ],
         },
         {
@@ -178,6 +185,8 @@ const sidebars: SidebarsConfig = {
             'contest/math/combinatorics/inclusion-exclusion-principle',
             'contest/math/combinatorics/vandermonde-convolution',
             'contest/math/combinatorics/polya',
+            'contest/math/combinatorics/catalan',
+            'contest/math/combinatorics/stirling',
           ],
         },
         {
@@ -230,6 +239,10 @@ const sidebars: SidebarsConfig = {
         'contest/ds/bst',
         'contest/ds/persistent',
         'contest/ds/huffman-tree',
+        'contest/ds/treap',
+        'contest/ds/lct',
+        'contest/ds/seg-merge-split',
+        'contest/ds/li-chao-tree',
       ],
     },
     {
@@ -254,6 +267,8 @@ const sidebars: SidebarsConfig = {
             'contest/graph/tree/difference',
             'contest/graph/tree/hld',
             'contest/graph/tree/virtual-tree',
+            'contest/graph/tree/divide',
+            'contest/graph/dsu-on-tree',
           ],
         },
         'contest/graph/topo',
@@ -264,7 +279,9 @@ const sidebars: SidebarsConfig = {
         'contest/graph/min-cycle',
         'contest/graph/euler',
         'contest/graph/bi-graph',
+        'contest/graph/graph-matching/bigraph-weight-match',
         'contest/graph/flow',
+        'contest/graph/flow/min-cost',
       ],
     },
     {
@@ -281,6 +298,7 @@ const sidebars: SidebarsConfig = {
         'contest/geometry/convex-hull',
         'contest/geometry/scanning',
         'contest/geometry/rotating-calipers',
+        'contest/geometry/half-plane',
       ],
     },
     {
@@ -293,11 +311,13 @@ const sidebars: SidebarsConfig = {
       items: [
         'contest/misc/two-pointer',
         'contest/misc/cdq-divide',
+        'contest/misc/parallel-binsearch',
         'contest/misc/mo-algo',
         'contest/misc/expression',
         'contest/misc/main-element',
         'contest/misc/kahan-summation',
         'contest/misc/odt',
+        'contest/misc/simulated-annealing',
       ],
     },
   ],

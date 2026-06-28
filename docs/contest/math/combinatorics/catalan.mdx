@@ -1,0 +1,23 @@
+---
+title: 卡特兰数
+---
+
+## 参考资料
+
+- [卡特兰数 - OI Wiki](https://oi-wiki.org/math/combinatorics/catalan/)
+
+## 简介
+
+**卡特兰数** $C_n$ 计数一大类结构：合法括号序列、出栈序列、不越过对角线的格路、$n$ 个节点的二叉树形态、凸多边形三角剖分等。
+
+通项与递推：
+
+$$
+C_n=\frac{1}{n+1}\binom{2n}{n}=\binom{2n}{n}-\binom{2n}{n-1},\quad C_{n+1}=\sum_{i=0}^{n}C_iC_{n-i}
+$$
+
+前几项为 $1,1,2,5,14,42,132,\dots$。
+
+## 例题
+
+<Problem id="P1044" />

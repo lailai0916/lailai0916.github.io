@@ -1,0 +1,21 @@
+---
+title: 斯特林数
+---
+
+## 参考资料
+
+- [斯特林数 - OI Wiki](https://oi-wiki.org/math/combinatorics/stirling/)
+
+## 简介
+
+**第二类斯特林数** $\begin{Bmatrix}n\\m\end{Bmatrix}$ 表示把 $n$ 个不同元素划分成 $m$ 个非空、无序集合的方案数，递推为
+
+$$
+\begin{Bmatrix}n\\m\end{Bmatrix}=\begin{Bmatrix}n-1\\m-1\end{Bmatrix}+m\begin{Bmatrix}n-1\\m\end{Bmatrix}
+$$
+
+**第一类斯特林数** $\begin{bmatrix}n\\m\end{bmatrix}$ 表示把 $n$ 个元素排成 $m$ 个非空圆排列的方案数。两者在普通幂与下降幂之间相互转换，是组合计数的基础工具。
+
+## 例题
+
+<Problem id="P5395" />

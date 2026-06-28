@@ -33,7 +33,7 @@ int main()
 		while(hd<=tl&&a[q[tl]]>=a[i])tl--;
 		q[++tl]=i;
 		while(q[hd]<i-k+1)hd++;
-		if(i>=k)cout<<a[q[hd]]<<" \n"[i==n];
+		if(i>=k)cout<<a[q[hd]]<<' ';
 	}
 	return 0;
 }
