@@ -126,7 +126,7 @@ function HeroMetric({
     sign === 'flat' ? null : spec.invertDelta ? sign === 'down' : sign === 'up';
 
   return (
-    <Card padding="1.5rem 1.5rem 1.3rem" className={styles.heroTile}>
+    <Card padding="1.4rem 1.4rem 1.25rem" className={styles.heroTile}>
       <div className={styles.heroHead}>
         <Icon icon={spec.icon} className={styles.heroIcon} aria-hidden="true" />
         <span className={styles.heroLabel}>{spec.label}</span>
