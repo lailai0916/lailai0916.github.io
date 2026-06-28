@@ -77,7 +77,7 @@ int dinic(int s,int t)
 int main()
 {
 	int n,m,S,T,SS;
-	bool first=true;
+	bool first=1;
 	while(cin>>n>>m)
 	{
 		S=n+m+1;
@@ -119,7 +119,7 @@ int main()
 		}
 		int f=dinic(SS,TT);
 		if(!first)cout<<'\n';
-		first=false;
+		first=0;
 		if(f<need)
 		{
 			cout<<-1<<'\n';

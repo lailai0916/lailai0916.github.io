@@ -43,7 +43,7 @@ int query(int u,int k)
 	return rnk[dfn[u]-k];
 }
 uint s;
-inline uint get(uint x)
+uint get(uint x)
 {
 	x^=x<<13;
 	x^=x>>17;

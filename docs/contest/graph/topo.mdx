@@ -35,7 +35,7 @@ bool topo(int n,vector<int> &ord)
 			if(--ind[v]==0)q.push(v);
 		}
 	}
-	return (int)ord.size()==n;
+	return ord.size()==n;
 }
 int main()
 {

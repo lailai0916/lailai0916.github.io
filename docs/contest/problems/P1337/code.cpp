@@ -59,6 +59,6 @@ int main()
 	ansv=1e18;
 	calc(ansx,ansy);
 	for(int i=0;i<50;i++)anneal();
-	printf("%.3f %.3f\n",ansx,ansy);
+	cout<<fixed<<setprecision(3)<<ansx<<' '<<ansy<<'\n';
 	return 0;
 }

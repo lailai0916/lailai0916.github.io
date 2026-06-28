@@ -33,7 +33,7 @@ void ntt(int *f,int n,int type)
 	for(int i=0;i<n;i++)if(i<r[i])swap(f[i],f[r[i]]);
 	for(int k=1;k<n;k<<=1)
 	{
-		int step=qpow(type==1?G:Gi,(mod-1)/(k<<1));
+		int step=Pow(type==1?G:Gi,(mod-1)/(k<<1));
 		for(int i=0;i<n;i+=k<<1)
 		{
 			int cur=1;
