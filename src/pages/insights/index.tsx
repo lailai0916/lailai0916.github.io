@@ -139,9 +139,12 @@ function HeroMetric({
         <span className={styles.heroValue}>{spec.format(animated)}</span>
       )}
       {loading ? (
-        <span className={styles.heroDelta} aria-hidden="true">
-          &nbsp;
-        </span>
+        <Skeleton
+          className={styles.heroDeltaSkeleton}
+          width="3rem"
+          height="1.3rem"
+          radius="999px"
+        />
       ) : delta != null && sign !== 'flat' ? (
         <span
           className={clsx(

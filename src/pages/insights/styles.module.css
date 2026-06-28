@@ -70,6 +70,11 @@
   font-size: 0.85rem;
 }
 
+.heroDeltaSkeleton {
+  align-self: flex-start;
+  margin-top: 0.65rem;
+}
+
 .heroDeltaUp {
   color: var(--lk-color-up);
   background: color-mix(in srgb, var(--lk-color-up) 12%, transparent);
