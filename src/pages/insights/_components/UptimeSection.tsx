@@ -50,7 +50,7 @@ function MonitorRow({
             : styles.dotEmpty;
 
   return (
-    <Card padding="1.1rem 1.25rem" className={styles.row}>
+    <Card className={styles.row}>
       <div className={styles.rowHead}>
         <span className={clsx(styles.dot, statusCls)} aria-hidden="true" />
         <div className={styles.nameWrap}>
