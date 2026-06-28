@@ -12,7 +12,7 @@ title: Min_25 筛
 
 记 $F_k(n)=\sum_{i=2}^n[p_k\le\operatorname{lpf}(i)]f(i)$，则答案为 $F_1(n)+1$。算法分两步。
 
-**第一步**求素数处的贡献 $F_{\mathrm{prime}}(n)=\sum_{2\le p\le n}f(p)$。将 $f(p)$ 按多项式拆成若干 $g(p)=p^s$，对每一项以埃氏筛思想递推：
+**第一步** 求素数处的贡献 $F_{\mathrm{prime}}(n)=\sum_{2\le p\le n}f(p)$。将 $f(p)$ 按多项式拆成若干 $g(p)=p^s$，对每一项以埃氏筛思想递推：
 
 $$
 G_k(n)=G_{k-1}(n)-[p_k^2\le n]g(p_k)\left(G_{k-1}(n/p_k)-G_{k-1}(p_{k-1})\right)
@@ -20,7 +20,7 @@ $$
 
 边界 $G_0(n)=\sum_{i=2}^ng(i)$。只有 $\lfloor n/i\rfloor$ 这 $O(\sqrt n)$ 处的点值有用。
 
-**第二步**按最小质因子递推合数贡献：
+**第二步** 按最小质因子递推合数贡献：
 
 $$
 F_k(n)=F_{\mathrm{prime}}(n)-F_{\mathrm{prime}}(p_{k-1})+\sum_{\substack{p_i^2\le n}}\sum_{p_i^{c+1}\le n}\left(f(p_i^c)F_{i+1}(n/p_i^c)+f(p_i^{c+1})\right)

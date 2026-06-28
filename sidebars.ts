@@ -100,6 +100,9 @@ const sidebars: SidebarsConfig = {
         'contest/dp/number',
         'contest/dp/probability',
         'contest/dp/opt/slope',
+        'contest/dp/opt/quadrangle',
+        'contest/dp/opt/wqs-binary-search',
+        'contest/dp/plug',
       ],
     },
     {
@@ -120,6 +123,8 @@ const sidebars: SidebarsConfig = {
         'contest/string/sa',
         'contest/string/sam',
         'contest/string/pam',
+        'contest/string/general-sam',
+        'contest/string/lyndon',
       ],
     },
     {
@@ -156,6 +161,7 @@ const sidebars: SidebarsConfig = {
             'contest/math/number-theory/mobius',
             'contest/math/number-theory/discrete-logarithm',
             'contest/math/number-theory/quad-residue',
+            'contest/math/number-theory/euclidean',
           ],
         },
         {
@@ -170,6 +176,8 @@ const sidebars: SidebarsConfig = {
             'contest/math/poly/ntt',
             'contest/math/poly/fwt',
             'contest/math/poly/ogf',
+            'contest/math/poly/elementary-func',
+            'contest/math/poly/egf',
           ],
         },
         {
@@ -243,6 +251,9 @@ const sidebars: SidebarsConfig = {
         'contest/ds/lct',
         'contest/ds/seg-merge-split',
         'contest/ds/li-chao-tree',
+        'contest/ds/seg-in-seg',
+        'contest/ds/kdt',
+        'contest/ds/seg-beats',
       ],
     },
     {
@@ -282,6 +293,12 @@ const sidebars: SidebarsConfig = {
         'contest/graph/graph-matching/bigraph-weight-match',
         'contest/graph/flow',
         'contest/graph/flow/min-cost',
+        'contest/graph/flow/bound',
+        'contest/graph/matrix-tree',
+        'contest/graph/block-forest',
+        'contest/graph/prufer',
+        'contest/graph/dmst',
+        'contest/graph/graph-matching/general-match',
       ],
     },
     {
@@ -299,6 +316,7 @@ const sidebars: SidebarsConfig = {
         'contest/geometry/scanning',
         'contest/geometry/rotating-calipers',
         'contest/geometry/half-plane',
+        'contest/geometry/nearest-points',
       ],
     },
     {
@@ -318,6 +336,8 @@ const sidebars: SidebarsConfig = {
         'contest/misc/kahan-summation',
         'contest/misc/odt',
         'contest/misc/simulated-annealing',
+        'contest/misc/frac-programming',
+        'contest/misc/hoverline',
       ],
     },
   ],

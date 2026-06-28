@@ -9,7 +9,7 @@ title: 快速沃尔什变换（FWT）
 
 ## 简介
 
-**快速沃尔什变换**（Fast Walsh–Hadamard Transform，FWT）在 $O(n\log n)$ 内计算两个序列的**位运算卷积** $c_k=\sum_{i\operatorname{op}j=k}a_ib_j$，其中 $\operatorname{op}$ 为按位或、与或异或。与 FFT 类似，它把序列正变换到「点值」、逐位相乘、再逆变换还原；或、与、异或三种运算对应不同的变换，但都能用分治在 $O(n\log n)$ 内完成。
+**快速沃尔什变换**（Fast Walsh–Hadamard Transform，FWT）在 $O(n\log n)$ 内计算两个序列的 **位运算卷积** $c_k=\sum_{i\operatorname{op}j=k}a_ib_j$，其中 $\operatorname{op}$ 为按位或、与或异或。与 FFT 类似，它把序列正变换到「点值」、逐位相乘、再逆变换还原；或、与、异或三种运算对应不同的变换，但都能用分治在 $O(n\log n)$ 内完成。
 
 ## 实现
 

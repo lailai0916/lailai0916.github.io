@@ -1,0 +1,15 @@
+---
+title: 多项式初等函数
+---
+
+## 参考资料
+
+- [多项式初等函数 - OI Wiki](https://oi-wiki.org/math/poly/elementary-func/)
+
+## 简介
+
+在模 $x^n$ 意义下，可对多项式做求逆、开方、求对数、求指数等运算，它们是多项式进阶的基础。以 **多项式求逆** 为例：用倍增，从满足 $A B_0\equiv 1\pmod{x^{n/2}}$ 的 $B_0$ 推出模 $x^n$ 的逆 $B\equiv B_0(2-AB_0)\pmod{x^n}$，配合 NTT 总复杂度 $O(n\log n)$。$\ln$、$\exp$ 则借助求导、积分与牛顿迭代实现。
+
+## 例题
+
+<Problem id="P4238" />

@@ -1,0 +1,15 @@
+---
+title: 四边形不等式
+---
+
+## 参考资料
+
+- [四边形不等式 - OI Wiki](https://oi-wiki.org/dp/opt/quadrangle/)
+
+## 简介
+
+若代价函数 $w$ 满足 **四边形不等式**：对 $a\le b\le c\le d$ 有 $w(a,c)+w(b,d)\le w(a,d)+w(b,c)$，则相应 DP 的最优决策点具有单调性。利用决策单调性，可把区间 DP 由 $O(n^3)$ 优化到 $O(n^2)$，把一类一维 DP 优化到 $O(n\log n)$。
+
+## 例题
+
+<Problem id="P4767" />

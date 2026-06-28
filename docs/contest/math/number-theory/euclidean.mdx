@@ -1,0 +1,15 @@
+---
+title: 类欧几里得算法
+---
+
+## 参考资料
+
+- [类欧几里得算法 - OI Wiki](https://oi-wiki.org/math/number-theory/euclidean/)
+
+## 简介
+
+**类欧几里得算法** 在 $O(\log n)$ 内求形如 $\sum_{i=0}^{n}\lfloor\frac{ai+b}{c}\rfloor$ 的和式，以及它与 $i$、$i^2$ 乘积的推广。它仿照辗转相除：当 $a\ge c$ 或 $b\ge c$ 时先把整数部分提出，否则交换求和顺序，把问题递归地规约到参数更小的同型子问题。
+
+## 例题
+
+<Problem id="P5170" />
