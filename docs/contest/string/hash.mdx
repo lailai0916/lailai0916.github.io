@@ -6,6 +6,10 @@ title: 字符串哈希
 
 - [字符串哈希 - OI Wiki](https://oi-wiki.org/string/hash/)
 
+## 简介
+
+**字符串哈希**（String Hashing）把字符串映射成一个整数，使字符串比较降到 $O(1)$。常用多项式哈希：把串看作 $\mathrm{base}$ 进制数，$\operatorname{hash}(s)=\sum_i s_i\cdot\mathrm{base}^{|s|-1-i}\bmod p$。配合前缀哈希可 $O(1)$ 取出任意子串的哈希值。取大质数模数与较大底数可降低冲突概率。
+
 ## 实现
 
 ```cpp

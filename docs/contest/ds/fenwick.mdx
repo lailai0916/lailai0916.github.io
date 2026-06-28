@@ -6,6 +6,10 @@ title: 树状数组
 
 - [树状数组 - OI Wiki](https://oi-wiki.org/ds/fenwick/)
 
+## 简介
+
+**树状数组**（Binary Indexed Tree，BIT），又称 Fenwick 树，用 $O(\log n)$ 维护前缀信息并支持单点修改。借助 `lowbit(x)=x&-x`，节点 $c_x$ 维护区间 $(x-\operatorname{lowbit}(x),x]$ 的聚合值。修改时沿 $x\to x+\operatorname{lowbit}(x)$ 上跳，查询前缀时沿 $x\to x-\operatorname{lowbit}(x)$ 下跳，单次操作 $O(\log n)$。它实现简洁、常数小，适合维护前缀和、区间和等可差分的信息。
+
 ## 实现
 
 ```cpp

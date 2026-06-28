@@ -6,6 +6,10 @@ title: 二叉搜索树 & 平衡树
 
 - [二叉搜索树 & 平衡树 - OI Wiki](https://oi-wiki.org/ds/bst/)
 
+## 简介
+
+**二叉搜索树**（Binary Search Tree，BST）满足左子树所有值小于根、右子树所有值大于根，中序遍历即为有序序列，支持 $O(h)$ 的插入、删除、查询，其中 $h$ 为树高。但在有序数据下树高可能退化为 $O(n)$。**平衡树**通过旋转等操作维持 $h=O(\log n)$，常用于维护有序集合并支持排名、前驱后继等操作。
+
 ## `__gnu_pbds::tree`
 
 ```cpp
@@ -15,6 +19,8 @@ tree<pair<int,int>,null_type,less<pair<int,int>>,rb_tree_tag,tree_order_statisti
 ```
 
 ## 笛卡尔树
+
+**笛卡尔树**（Cartesian Tree）的节点同时满足两个性质：下标构成 BST（中序遍历即原下标序），权值构成堆。用单调栈维护右链即可 $O(n)$ 建树。
 
 ```cpp
 int top=0;

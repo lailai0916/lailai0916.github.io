@@ -6,6 +6,10 @@ title: Manacher
 
 - [Manacher - OI Wiki](https://oi-wiki.org/string/manacher/)
 
+## 简介
+
+**Manacher 算法**在 $O(n)$ 内求出字符串每个位置的最长回文半径，从而得到最长回文子串。它在每两个字符间插入分隔符，把奇、偶回文统一成奇回文；再维护当前右端最靠右的回文区间 $[l,r]$，用对称位置已算出的半径复用信息，避免重复扩展。
+
 ## 实现
 
 ```cpp
