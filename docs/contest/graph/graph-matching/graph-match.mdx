@@ -1,17 +1,25 @@
 ---
-title: 二分图最大权匹配
+title: 图匹配
 ---
 
 ## 参考资料
 
+- [图匹配 - OI Wiki](https://oi-wiki.org/graph/graph-matching/graph-match/)
 - [二分图最大权匹配 - OI Wiki](https://oi-wiki.org/graph/graph-matching/bigraph-weight-match/)
+- [一般图最大匹配 - OI Wiki](https://oi-wiki.org/graph/graph-matching/general-match/)
 
-## 简介
+## 二分图最大权匹配
 
 **二分图最大权匹配** 用 **KM 算法** 求解。它给左右部每个点各一个 **顶标** $l_x,l_y$，只在满足 $l_x(u)+l_y(v)=w(u,v)$ 的 **相等子图** 上寻找完美匹配。
 
 当相等子图上找不到增广路时，按当前交错树调整顶标，使更多边进入相等子图，直到匹配完美。朴素实现 $O(n^4)$，用 slack 数组优化后为 $O(n^3)$。
 
+## 一般图最大匹配
+
+一般图（不一定是二分图）的最大匹配用 **带花树**（Blossom）算法求解。它在 BFS 寻找增广路时，一旦遇到奇环（花）就把整朵花缩成一个点继续搜索，从而绕开奇环对增广的阻碍。复杂度 $O(n^3)$。
+
 ## 例题
 
 <Problem id="P6577" />
+
+<Problem id="P6113" />
