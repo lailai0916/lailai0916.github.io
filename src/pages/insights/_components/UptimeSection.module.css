@@ -81,6 +81,12 @@ html[data-theme='dark'] .dotDown {
   font-variant-numeric: tabular-nums;
 }
 
+@media (max-width: 480px) {
+  .uptime {
+    flex-basis: 100%;
+  }
+}
+
 .uptimeValue {
   font-weight: 700;
   font-size: 1rem;
