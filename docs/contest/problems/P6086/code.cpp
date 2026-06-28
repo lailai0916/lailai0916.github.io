@@ -4,7 +4,7 @@ using namespace std;
 using ll=long long;
 const int N=5000005;
 int f[N],p[N],d[N];
-int n,m;
+int n;
 void tree_to_prufer()
 {
 	for(int i=1;i<n;i++)d[f[i]]++;
@@ -38,6 +38,7 @@ int main()
 {
 	ios::sync_with_stdio(false);
 	cin.tie(nullptr);
+	int m;
 	cin>>n>>m;
 	ll ans=0;
 	if(m==1)

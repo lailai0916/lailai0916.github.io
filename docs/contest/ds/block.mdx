@@ -24,7 +24,7 @@ using ll=long long;
 const int N=100005;
 ll a[N],sum[N],tag[N];
 int belong[N];
-int n,m,s;
+int s;
 void add(int l,int r,ll v)
 {
 	int bl=belong[l],br=belong[r];
@@ -58,6 +58,7 @@ int main()
 {
 	ios::sync_with_stdio(false);
 	cin.tie(nullptr);
+	int n,m;
 	cin>>n>>m;
 	s=max(1,(int)sqrt(n));
 	for(int i=1;i<=n;i++)

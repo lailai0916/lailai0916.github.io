@@ -46,7 +46,6 @@ const int LOG=17;
 vector<int> G[N];
 int fa[N][LOG],dep[N];
 int d[N];
-int n,m;
 void dfs(int u,int f,int depth)
 {
 	fa[u][0]=f;
@@ -86,6 +85,7 @@ int main()
 {
 	ios::sync_with_stdio(false);
 	cin.tie(nullptr);
+	int n,m;
 	cin>>n>>m;
 	for(int i=1;i<n;i++)
 	{

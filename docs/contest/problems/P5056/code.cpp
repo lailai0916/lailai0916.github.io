@@ -4,7 +4,7 @@ using namespace std;
 using ll=long long;
 const int M=13,off=3,mask=(1<<off)-1;
 const int SZ=300005,P=299987;
-int n,m,ex,ey;
+int m;
 char g[M][M];
 int b[M+1],bb[M+1];
 ll encode()
@@ -67,6 +67,7 @@ int main()
 {
 	ios::sync_with_stdio(false);
 	cin.tie(nullptr);
+	int n,ex,ey;
 	cin>>n>>m;
 	for(int i=0;i<n;i++)
 	{

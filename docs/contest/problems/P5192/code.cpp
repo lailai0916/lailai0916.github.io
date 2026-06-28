@@ -6,7 +6,7 @@ const int N=1405;
 const int M=700005;
 int head[N],to[M],nxt[M],cap[M],ecnt;
 int cur[N],lev[N],ex[N];
-int n,m,S,T,SS,TT;
+int TT;
 void init(int tot)
 {
 	for(int i=0;i<=tot;i++)head[i]=-1;
@@ -76,6 +76,7 @@ int dinic(int s,int t)
 }
 int main()
 {
+	int n,m,S,T,SS;
 	bool first=true;
 	while(cin>>n>>m)
 	{

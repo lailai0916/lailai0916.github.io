@@ -19,7 +19,6 @@ title: 环计数
 using namespace std;
 
 const int N=100005;
-int n,m;
 int deg[N];
 bool vis[N];
 vector<int> G[N];
@@ -27,6 +26,7 @@ int main()
 {
 	ios::sync_with_stdio(false);
 	cin.tie(nullptr);
+	int n,m;
 	cin>>n>>m;
 	vector<pair<int,int>> edges(m);
 	for(auto &[u,v]:edges)

@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-double a,b,c,d,l,r;
+double a,b,c,d;
 double f1(double x)
 {
 	return c/a*x+(a*d-b*c)/(a*a)*log(fabs(a*x+b));
@@ -14,6 +14,7 @@ int main()
 {
 	ios::sync_with_stdio(false);
 	cin.tie(nullptr);
+	double l,r;
 	cin>>a>>b>>c>>d>>l>>r;
 	cout<<fixed<<setprecision(6)<<(a!=0?f1(r)-f1(l):f2(r)-f2(l))<<'\n';
 	return 0;

@@ -7,7 +7,7 @@ int head[N],to[M<<1],nxt[M<<1],ew[M<<1],ecnt=1;
 int hh[N],tt[N<<1],nn[N<<1],ww[N<<1],cc;
 int dfn[N],low[N],dep[N],fa[N][17],fw[N];
 int s[N],clen[N],dist[N];
-int n,m,q,tot,idx;
+int tot,idx;
 void add(int u,int v,int w)
 {
 	to[++ecnt]=v;
@@ -77,6 +77,7 @@ int main()
 {
 	ios::sync_with_stdio(false);
 	cin.tie(nullptr);
+	int n,m,q;
 	cin>>n>>m>>q;
 	tot=n;
 	for(int i=1;i<=m;i++)

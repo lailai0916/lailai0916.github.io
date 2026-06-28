@@ -4,7 +4,7 @@ using namespace std;
 using ll=long long;
 const ll inf=1e18;
 const int N=505;
-int n,m;
+int n;
 ll w[N][N],lx[N],ly[N],slack[N];
 int matchy[N],pre[N];
 bool visy[N];
@@ -59,6 +59,7 @@ int main()
 {
 	ios::sync_with_stdio(false);
 	cin.tie(nullptr);
+	int m;
 	cin>>n>>m;
 	for(int i=1;i<=n;i++)
 	{

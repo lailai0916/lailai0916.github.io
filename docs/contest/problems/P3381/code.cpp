@@ -7,7 +7,7 @@ const int inf=0x3f3f3f3f;
 int head[N],to[M<<1],nxt[M<<1],cap[M<<1],cost[M<<1],tot=1;
 int dis[N],pre[N],fl[N];
 bool vis[N];
-int n,m,s,t;
+int s,t;
 void add(int u,int v,int w,int c)
 {
 	to[++tot]=v;cap[tot]=w;cost[tot]=c;nxt[tot]=head[u];head[u]=tot;
@@ -48,6 +48,7 @@ int main()
 {
 	ios::sync_with_stdio(false);
 	cin.tie(nullptr);
+	int n,m;
 	cin>>n>>m>>s>>t;
 	for(int i=1;i<=m;i++)
 	{

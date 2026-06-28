@@ -3,7 +3,7 @@ using namespace std;
 
 using ll=long long;
 const int N=300005;
-int n,m,k;
+int m;
 ll p[N];
 int ql[N],qr[N],qa[N];
 vector<int> own[N];
@@ -70,6 +70,7 @@ int main()
 {
 	ios::sync_with_stdio(false);
 	cin.tie(nullptr);
+	int n,k;
 	cin>>n>>m;
 	for(int i=1;i<=m;i++)
 	{

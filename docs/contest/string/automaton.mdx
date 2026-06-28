@@ -1,18 +1,19 @@
 ---
-title: AC 自动机
+title: 自动机
 ---
 
 ## 参考资料
 
 - [AC 自动机 - OI Wiki](https://oi-wiki.org/string/ac-automaton/)
+- [后缀数组简介 - OI Wiki](https://oi-wiki.org/string/sa/)
+- [后缀自动机 (SAM) - OI Wiki](https://oi-wiki.org/string/sam/)
+- [广义后缀自动机 - OI Wiki](https://oi-wiki.org/string/general-sam/)
 
-## 简介
+## AC 自动机
 
 **AC 自动机**（Aho–Corasick Automaton）以 Trie 为骨架，结合 KMP 的失配指针思想，用于多模式串匹配。
 
 建立过程分两步：将所有模式串插入 Trie；再用 BFS 对每个结点构造 fail 指针，使其指向该结点对应字符串的最长后缀状态。构建完成后同时将 Trie 改造为字典图——若字符 $c$ 的子结点不存在，则令其指向 fail 结点的 $c$ 子结点，保证每次转移 $O(1)$。查询时在字典图上逐字符转移，沿 fail 链累加匹配计数。设模式串总长为 $\sum|s_i|$，文本串长为 $|S|$，字符集大小为 $|\Sigma|$，构建复杂度为 $O(\sum|s_i|\cdot|\Sigma|)$，查询复杂度为 $O(|S|\cdot|\Sigma|)$（连字典图后）。
-
-## 实现
 
 ```cpp
 #include <bits/stdc++.h>
@@ -89,6 +90,22 @@ int main()
 }
 ```
 
+## 后缀数组简介
+
+**后缀数组**（Suffix Array，SA）把字符串的所有后缀按字典序排序，$sa_i$ 为排名第 $i$ 的后缀起点，$rk$ 为其逆。常用倍增法 $O(n\log n)$ 构建，也有 SA-IS 等 $O(n)$ 做法。
+
+配合 **height 数组**（排名相邻两后缀的最长公共前缀），后缀数组能解决本质不同子串数、可重叠/不可重叠最长重复子串等一类子串问题。
+
+## 后缀自动机
+
+**后缀自动机**（Suffix Automaton，SAM）是能接受一个字符串所有后缀的最小确定有限自动机。它的每个状态对应一组 $\operatorname{endpos}$（结束位置集合）相同的子串，状态数与转移数都是 $O(n)$，可在线 $O(n)$ 构建。
+
+借助 $\operatorname{parent}$ 树（按 $\operatorname{endpos}$ 的包含关系）与各状态的 $\operatorname{len}$，SAM 能高效解决本质不同子串计数、子串出现次数、两串最长公共子串等问题。
+
+## 广义后缀自动机
+
+**广义后缀自动机** 是后缀自动机在多个字符串上的推广，能接受一组字符串的所有后缀。把所有串建成一棵 Trie 后在其上构建，或逐串插入时在已有转移处特判，即得一个大小为 $O(\sum|s|)$ 的自动机，可统计多串的本质不同子串等。
+
 ## 例题
 
 <Problem id="P3808" />
@@ -96,3 +113,9 @@ int main()
 <Problem id="P3796" />
 
 <Problem id="P5357" />
+
+<Problem id="P3809" />
+
+<Problem id="P3804" />
+
+<Problem id="P6139" />

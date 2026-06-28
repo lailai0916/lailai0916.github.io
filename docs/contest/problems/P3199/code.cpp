@@ -9,7 +9,7 @@ double w[M];
 double dis[N];
 int cnt[N];
 bool vis[N];
-int n,m;
+int n;
 void add(int u,int v,double c)
 {
 	to[++tot]=v;
@@ -51,6 +51,7 @@ int main()
 {
 	ios::sync_with_stdio(false);
 	cin.tie(nullptr);
+	int m;
 	cin>>n>>m;
 	for(int i=1;i<=m;i++)
 	{
