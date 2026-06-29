@@ -1,0 +1,78 @@
+---
+title: 题解：P3846 【模板】BSGS / [TJOI2007] 可爱的质数
+date: 2026-06-29T23:20:26+08:00
+authors: lailai
+tags: [oi, solution, luogu]
+lid: er78zpp2
+---
+
+{/* truncate */}
+
+## 参考资料
+
+- [离散对数 - OI Wiki](https://oi-wiki.org/math/number-theory/discrete-logarithm/)
+
+## 题意简述
+
+给定质数 $p$ 与整数 $b,n$，求最小的非负整数 $l$，使 $b^l\equiv n\pmod p$，无解则报告。
+
+## 解题思路
+
+设 $m=\lceil\sqrt p\rceil$。$p$ 为质数，$b\not\equiv 0$ 时 $\gcd(b,p)=1$，可用 **BSGS**（Baby-Step Giant-Step，大步小步）。
+
+把 $l$ 写作 $l=im-j$（$0\le j<m$），代入 $b^l\equiv n$ 得：
+
+$$
+b^{im}\equiv n\cdot b^{j}\pmod p
+$$
+
+两侧分别枚举：
+
+1. 小步：枚举 $j$ 从 $0$ 到 $m-1$，将 $n\cdot b^{j}$ 连同 $j$ 存入哈希表；
+2. 大步：枚举 $i$ 从 $1$ 到 $m$，算出 $b^{im}$ 查表，命中即得 $l=im-j$。
+
+若有解，最小解必小于 $p\le m^2$，故枚举范围足以覆盖。$i$ 自小到大、哈希表对相同键保留较大的 $j$，首个命中即最小的 $l$。$l=0$（即 $n\equiv 1$）单独特判。
+
+时间复杂度为 $O(\sqrt p)$。
+
+## 参考代码
+
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+
+using ll=long long;
+ll bsgs(ll b,ll n,ll p)
+{
+	b%=p;
+	n%=p;
+	if(n==1||p==1)return 0;
+	ll m=ceil(sqrt((double)p)),cur=n;
+	unordered_map<ll,ll> mp;
+	for(ll j=0;j<m;j++)
+	{
+		mp[cur]=j;
+		cur=cur*b%p;
+	}
+	ll t=1;
+	for(ll i=0;i<m;i++)t=t*b%p;
+	cur=1;
+	for(ll i=1;i<=m;i++)
+	{
+		cur=cur*t%p;
+		if(mp.count(cur))return i*m-mp[cur];
+	}
+	return -1;
+}
+int main()
+{
+	ios::sync_with_stdio(false);
+	cin.tie(nullptr);
+	ll p,b,n;
+	cin>>p>>b>>n;
+	ll res=bsgs(b,n,p);
+	if(res==-1)cout<<"no solution"<<'\n';
+	else cout<<res<<'\n';
+	return 0;
+}
+```
