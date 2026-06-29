@@ -44,23 +44,21 @@ using namespace std;
 using ll=long long;
 ll bsgs(ll b,ll n,ll p)
 {
-	b%=p;
-	n%=p;
-	if(n==1||p==1)return 0;
-	ll m=ceil(sqrt((double)p)),cur=n;
+	if(n==1)return 0;
 	unordered_map<ll,ll> mp;
+	ll m=sqrt(p),k=n;
 	for(ll j=0;j<m;j++)
 	{
-		mp[cur]=j;
-		cur=cur*b%p;
+		mp[k]=j;
+		k=k*b%p;
 	}
 	ll t=1;
 	for(ll i=0;i<m;i++)t=t*b%p;
-	cur=1;
+	k=1;
 	for(ll i=1;i<=m;i++)
 	{
-		cur=cur*t%p;
-		if(mp.count(cur))return i*m-mp[cur];
+		k=k*t%p;
+		if(mp.count(k))return i*m-mp[k];
 	}
 	return -1;
 }
