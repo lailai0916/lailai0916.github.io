@@ -121,7 +121,7 @@ export default function BlogStats(): ReactNode {
       value: tagCount,
     },
     {
-      icon: 'lucide:image',
+      icon: 'lucide:aperture',
       label: translate({
         id: 'pages.overview.metric.moments',
         message: 'Moments',

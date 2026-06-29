@@ -311,7 +311,7 @@ export default function Moments() {
     <BlogScaffold title={TITLE} description={DESCRIPTION}>
       <Card>
         <div className={styles.headerCard}>
-          <IconBlock icon="lucide:sparkles" variant="accent" size={48} />
+          <IconBlock icon="lucide:aperture" variant="accent" size={48} />
           <div className={styles.headerInfo}>
             <h1 className={styles.title}>{TITLE}</h1>
             <p className={styles.description}>{DESCRIPTION}</p>
