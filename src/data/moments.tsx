@@ -13,6 +13,16 @@ interface MomentItem {
 
 const STATIC_MOMENTS: MomentItem[] = [
   {
+    date: '2026-06-30T18:55:00+08:00',
+    share: {
+      url: 'https://www.reddit.com/r/ClaudeAI/comments/1ujila1/comment/ouo17nd/',
+      title:
+        'Anthropic embedded spyware in Claude Code — and attempted to hide it from you',
+      description: 'Comment',
+    },
+    images: ['https://cloud.lailai.one/f/MEQfy/claude_suspended.png'],
+  },
+  {
     date: '2026-06-26T18:04:00+08:00',
     content:
       '「现在是负摩尔定律时代，每过 18 个月，价格翻倍，性能和容量减半。」',
