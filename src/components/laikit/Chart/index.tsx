@@ -27,8 +27,6 @@ interface ChartProps {
   data: ChartDatum[];
   loading?: boolean;
   className?: string;
-  // Y-axis gridlines + value labels; off for a minimal sparkline look.
-  showGrid?: boolean;
   // Formats the hover tooltip value (e.g. add a pluralized unit); defaults to compact.
   formatValue?: (value: number) => string;
 }
@@ -64,7 +62,6 @@ export default function Chart({
   data,
   loading,
   className,
-  showGrid = true,
   formatValue,
 }: ChartProps) {
   const {
@@ -139,16 +136,15 @@ export default function Chart({
           <Skeleton width="100%" height="100%" radius={12} />
         ) : (
           <>
-            {showGrid &&
-              gridLines.map((v) => (
-                <div
-                  key={v}
-                  className={styles.gridLine}
-                  style={{ bottom: `${(v / yMax) * 100}%` }}
-                >
-                  <span>{fmt(v)}</span>
-                </div>
-              ))}
+            {gridLines.map((v) => (
+              <div
+                key={v}
+                className={styles.gridLine}
+                style={{ bottom: `${(v / yMax) * 100}%` }}
+              >
+                <span>{fmt(v)}</span>
+              </div>
+            ))}
             {type === 'bar' ? (
               data.map((d, i) => (
                 <div

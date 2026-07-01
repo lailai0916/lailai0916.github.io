@@ -330,7 +330,6 @@ function PageviewsChart({ range }: { range: InsightsRange }) {
       })}
       data={toPageviewsData(series, unit, currentLocale)}
       loading={loading || series.length === 0}
-      showGrid={false}
       formatValue={pageviewsLabel}
       className={styles.chartCard}
     />
