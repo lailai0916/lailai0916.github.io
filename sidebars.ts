@@ -589,6 +589,15 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: 'category',
+      label: '化学',
+      link: {
+        type: 'doc',
+        id: 'note/chemistry/index',
+      },
+      items: [],
+    },
+    {
+      type: 'category',
       label: '生物',
       link: {
         type: 'doc',
