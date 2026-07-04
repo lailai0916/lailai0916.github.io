@@ -30,6 +30,8 @@ export default function Slider({
   className,
   'aria-label': ariaLabel,
 }: SliderProps) {
+  const ratio = max === min ? 0 : (value - min) / (max - min);
+
   const handleCommit = (e: SyntheticEvent<HTMLInputElement>) => {
     if (!onCommit) return;
     onCommit(parseFloat((e.target as HTMLInputElement).value));
@@ -37,18 +39,26 @@ export default function Slider({
 
   return (
     <div className={clsx(styles.slider, className)}>
-      <input
-        type="range"
-        min={min}
-        max={max}
-        step={step}
-        value={value}
-        aria-label={ariaLabel}
-        onChange={(e) => onChange(parseFloat(e.target.value))}
-        onPointerUp={handleCommit}
-        onKeyUp={handleCommit}
-        className={styles.input}
-      />
+      <div
+        className={styles.control}
+        style={{ '--slider-ratio': ratio } as CSSProperties}
+      >
+        <div className={styles.track} aria-hidden="true">
+          <span className={styles.trackFill} />
+        </div>
+        <input
+          type="range"
+          min={min}
+          max={max}
+          step={step}
+          value={value}
+          aria-label={ariaLabel}
+          onChange={(e) => onChange(parseFloat(e.target.value))}
+          onPointerUp={handleCommit}
+          onKeyUp={handleCommit}
+          className={styles.input}
+        />
+      </div>
       {ticks && ticks.length > 0 && (
         <div className={styles.ticks}>
           {ticks.map((tick) => {
