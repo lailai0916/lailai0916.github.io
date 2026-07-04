@@ -39,19 +39,26 @@ export default function Slider({
 
   return (
     <div className={clsx(styles.slider, className)}>
-      <input
-        type="range"
-        min={min}
-        max={max}
-        step={step}
-        value={value}
-        aria-label={ariaLabel}
-        onChange={(e) => onChange(parseFloat(e.target.value))}
-        onPointerUp={handleCommit}
-        onKeyUp={handleCommit}
-        className={styles.input}
+      <div
+        className={styles.control}
         style={{ '--slider-progress': `${progress}%` } as CSSProperties}
-      />
+      >
+        <div className={styles.track} aria-hidden="true">
+          <span className={styles.trackFill} />
+        </div>
+        <input
+          type="range"
+          min={min}
+          max={max}
+          step={step}
+          value={value}
+          aria-label={ariaLabel}
+          onChange={(e) => onChange(parseFloat(e.target.value))}
+          onPointerUp={handleCommit}
+          onKeyUp={handleCommit}
+          className={styles.input}
+        />
+      </div>
       {ticks && ticks.length > 0 && (
         <div className={styles.ticks}>
           {ticks.map((tick) => {

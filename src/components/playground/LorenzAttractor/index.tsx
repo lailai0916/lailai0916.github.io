@@ -158,7 +158,6 @@ function ParamSlider({
         step={step}
         onChange={onChange}
         aria-label={label}
-        className={styles.sliderControl}
       />
     </div>
   );

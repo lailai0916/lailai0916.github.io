@@ -28,11 +28,6 @@
   color: var(--ifm-color-emphasis-600);
 }
 
-.sliderControl {
-  --slider-track-height: 4px;
-  --slider-thumb-size: 14px;
-}
-
 .container {
   width: 100%;
   max-width: 500px;
