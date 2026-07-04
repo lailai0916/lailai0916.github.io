@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import { translate } from '@docusaurus/Translate';
+import { usePluralForm } from '@docusaurus/theme-common';
 import BlogScaffold from '@site/src/theme/BlogShared/Scaffold';
 import { MetaBar, type MetaBarItem } from '@site/src/theme/BlogShared/BlogUI';
 import Card from '@site/src/components/laikit/Card';
@@ -26,7 +27,7 @@ const DESCRIPTION = translate({
 });
 const COUNT_LABEL = translate({
   id: 'pages.moments.countLabel',
-  message: 'moments',
+  message: 'moment|moments',
 });
 const HANGZHOU_LABEL = translate({
   id: 'pages.moments.location.hangzhou',
@@ -277,6 +278,7 @@ export default function Moments() {
   const {
     i18n: { currentLocale },
   } = useDocusaurusContext();
+  const { selectMessage } = usePluralForm();
   const weather = useHangzhouWeather();
   const [visibleCount, setVisibleCount] = useState(PAGE_SIZE);
   const totalCount = MOMENT_LIST.length;
@@ -318,7 +320,9 @@ export default function Moments() {
           </div>
           <div className={styles.count}>
             <span className={styles.countNumber}>{MOMENT_LIST.length}</span>
-            <span className={styles.countLabel}>{COUNT_LABEL}</span>
+            <span className={styles.countLabel}>
+              {selectMessage(MOMENT_LIST.length, COUNT_LABEL)}
+            </span>
           </div>
         </div>
         <div className={styles.headerWeather}>

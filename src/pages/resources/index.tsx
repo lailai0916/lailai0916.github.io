@@ -269,7 +269,7 @@ export default function Resources(): ReactNode {
               value: RESOURCE_LIST.length,
               label: translate({
                 id: 'pages.resources.datacard.categories',
-                message: 'Categories',
+                message: 'Category|Categories',
               }),
               icon: 'lucide:folder',
             },
@@ -277,7 +277,7 @@ export default function Resources(): ReactNode {
               value: RESOURCE_LIST.flatMap((cat) => cat.resources).length,
               label: translate({
                 id: 'pages.resources.datacard.items',
-                message: 'Resources',
+                message: 'Resource|Resources',
               }),
               icon: 'lucide:database',
             },

@@ -531,7 +531,7 @@ export default function Settings(): ReactNode {
           value={6}
           label={translate({
             id: 'pages.settings.datacard.label',
-            message: 'Settings',
+            message: 'Setting|Settings',
           })}
           icon="lucide:settings"
         />

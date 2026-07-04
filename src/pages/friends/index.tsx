@@ -33,7 +33,7 @@ export default function Friends(): ReactNode {
           value={FRIEND_LIST.length}
           label={translate({
             id: 'pages.friends.datacard.label',
-            message: 'Friends',
+            message: 'Friend|Friends',
           })}
           icon="lucide:users"
         />

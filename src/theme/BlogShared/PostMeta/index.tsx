@@ -1,5 +1,6 @@
 import { translate } from '@docusaurus/Translate';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
+import { usePluralForm } from '@docusaurus/theme-common';
 import { formatCompact, formatLocalizedDate } from '@site/src/utils/format';
 import { type MetaBarItem } from '../BlogUI';
 import { useAnalytics } from '@site/src/hooks/useAnalytics';
@@ -39,6 +40,7 @@ export function usePostMetaItems({
   const {
     i18n: { currentLocale },
   } = useDocusaurusContext();
+  const { selectMessage } = usePluralForm();
 
   const items: MetaBarItem[] = [
     {
@@ -48,29 +50,38 @@ export function usePostMetaItems({
     },
   ];
   if (readingTime) {
+    const wordCount = Math.round(readingTime * 200);
+    const readingMinutes = Math.max(1, Math.round(readingTime));
     items.push(
       {
         icon: 'lucide:file-text',
-        label: translate(
-          { id: 'blog.postcard.wordCount', message: '{word} words' },
-          { word: formatCompact(Math.round(readingTime * 200), currentLocale) }
+        label: selectMessage(
+          wordCount,
+          translate(
+            { id: 'blog.postcard.wordCount', message: '{word} word|{word} words' },
+            { word: formatCompact(wordCount, currentLocale) }
+          )
         ),
       },
       {
         icon: 'lucide:timer',
         label: translate(
           { id: 'blog.postcard.readingTime', message: '{readingTime} min' },
-          { readingTime: Math.max(1, Math.round(readingTime)) }
+          { readingTime: readingMinutes }
         ),
       }
     );
   }
   if (status === 'success') {
+    const pageviews = analytics.pageviews ?? 0;
     items.push({
       icon: 'lucide:eye',
-      label: translate(
-        { id: 'blog.postcard.viewCount', message: '{viewCount} views' },
-        { viewCount: analytics.pageviews ?? '–' }
+      label: selectMessage(
+        pageviews,
+        translate(
+          { id: 'blog.postcard.viewCount', message: '{viewCount} view|{viewCount} views' },
+          { viewCount: analytics.pageviews ?? '–' }
+        )
       ),
     });
   }

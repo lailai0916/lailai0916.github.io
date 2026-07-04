@@ -107,24 +107,30 @@ export default function BlogStats(): ReactNode {
   const kpis = [
     {
       icon: 'lucide:newspaper',
-      label: translate({ id: 'pages.overview.metric.posts', message: 'Posts' }),
+      label: translate({
+        id: 'pages.overview.metric.posts',
+        message: 'Post|Posts',
+      }),
       value: postCount,
     },
     {
       icon: 'lucide:file-text',
-      label: translate({ id: 'pages.overview.metric.words', message: 'Words' }),
+      label: translate({
+        id: 'pages.overview.metric.words',
+        message: 'Word|Words',
+      }),
       value: wordCount,
     },
     {
       icon: 'lucide:tags',
-      label: translate({ id: 'pages.overview.metric.tags', message: 'Tags' }),
+      label: translate({ id: 'pages.overview.metric.tags', message: 'Tag|Tags' }),
       value: tagCount,
     },
     {
       icon: 'lucide:aperture',
       label: translate({
         id: 'pages.overview.metric.moments',
-        message: 'Moments',
+        message: 'Moment|Moments',
       }),
       value: MOMENT_LIST.length,
     },
