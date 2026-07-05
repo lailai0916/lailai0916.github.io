@@ -2,13 +2,14 @@
   --slider-thumb-size: 24px;
   --slider-thumb-height: 16px;
   --slider-track-height: 6px;
+  --slider-head-gap: 0.55rem;
   --slider-thumb-bg: #fff;
   --slider-thumb-shadow:
     0 1px 2px rgba(0, 0, 0, 0.16),
     0 0 0 1px color-mix(in srgb, var(--ifm-color-emphasis-400) 35%, transparent);
   display: flex;
   flex-direction: column;
-  gap: 0.55rem;
+  gap: var(--slider-head-gap);
   width: 100%;
 }
 
@@ -23,6 +24,10 @@
 
 .head_math {
   font-size: 0.85rem;
+}
+
+.slider:has(.head_math) {
+  --slider-head-gap: 0;
 }
 
 .label {
