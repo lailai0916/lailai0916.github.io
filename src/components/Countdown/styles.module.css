@@ -17,7 +17,7 @@
 .caption {
   margin: 0;
   text-align: center;
-  font-size: clamp(0.9rem, 3cqi, 1.05rem);
+  font-size: clamp(1.05rem, 3.4cqi, 1.25rem);
   line-height: 1.5;
   font-weight: 500;
   color: var(--ifm-color-emphasis-700);
