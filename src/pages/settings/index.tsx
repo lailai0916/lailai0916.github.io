@@ -307,60 +307,44 @@ function Typography() {
       bodyAlign="bottom"
     >
       <div className={styles.sliderGroup}>
-        <div className={styles.sliderContainer}>
-          <div className={styles.sliderHead}>
-            <span className={styles.sliderLabel}>
-              {translate({
-                id: 'pages.settings.item.font.size.label',
-                message: 'Font Size',
-              })}
-            </span>
-            <span className={styles.sliderValue}>
-              {translate(
-                {
-                  id: 'pages.settings.item.font.size.value',
-                  message: '{size}px',
-                },
-                { size: fontSize }
-              )}
-            </span>
-          </div>
-          <Slider
-            value={fontSize}
-            min={sizeMin}
-            max={sizeMax}
-            step={1}
-            onChange={setFontSize}
-            onCommit={commitSize}
-          />
-        </div>
-        <div className={styles.sliderContainer}>
-          <div className={styles.sliderHead}>
-            <span className={styles.sliderLabel}>
-              {translate({
-                id: 'pages.settings.item.font.lineHeight.label',
-                message: 'Line Height',
-              })}
-            </span>
-            <span className={styles.sliderValue}>
-              {translate(
-                {
-                  id: 'pages.settings.item.font.lineHeight.value',
-                  message: '{value}',
-                },
-                { value: lineHeight.toFixed(2) }
-              )}
-            </span>
-          </div>
-          <Slider
-            value={lineHeight}
-            min={lineHeightMin}
-            max={lineHeightMax}
-            step={0.05}
-            onChange={(v) => setLineHeight(Math.round(v * 20) / 20)}
-            onCommit={commitLineHeight}
-          />
-        </div>
+        <Slider
+          label={translate({
+            id: 'pages.settings.item.font.size.label',
+            message: 'Font Size',
+          })}
+          valueLabel={translate(
+            {
+              id: 'pages.settings.item.font.size.value',
+              message: '{size}px',
+            },
+            { size: fontSize }
+          )}
+          value={fontSize}
+          min={sizeMin}
+          max={sizeMax}
+          step={1}
+          onChange={setFontSize}
+          onCommit={commitSize}
+        />
+        <Slider
+          label={translate({
+            id: 'pages.settings.item.font.lineHeight.label',
+            message: 'Line Height',
+          })}
+          valueLabel={translate(
+            {
+              id: 'pages.settings.item.font.lineHeight.value',
+              message: '{value}',
+            },
+            { value: lineHeight.toFixed(2) }
+          )}
+          value={lineHeight}
+          min={lineHeightMin}
+          max={lineHeightMax}
+          step={0.05}
+          onChange={(v) => setLineHeight(Math.round(v * 20) / 20)}
+          onCommit={commitLineHeight}
+        />
       </div>
     </TitleCard>
   );

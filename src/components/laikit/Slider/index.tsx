@@ -1,8 +1,11 @@
-import { type CSSProperties, type SyntheticEvent } from 'react';
+import { type CSSProperties, type ReactNode, type SyntheticEvent } from 'react';
 import clsx from 'clsx';
 import styles from './styles.module.css';
 
 interface SliderProps {
+  label?: ReactNode;
+  valueLabel?: ReactNode;
+  labelVariant?: 'default' | 'math';
   value: number;
   min: number;
   max: number;
@@ -14,6 +17,9 @@ interface SliderProps {
 }
 
 export default function Slider({
+  label,
+  valueLabel,
+  labelVariant = 'default',
   value,
   min,
   max,
@@ -24,6 +30,8 @@ export default function Slider({
   'aria-label': ariaLabel,
 }: SliderProps) {
   const ratio = max === min ? 0 : (value - min) / (max - min);
+  const resolvedAriaLabel =
+    ariaLabel ?? (typeof label === 'string' ? label : undefined);
 
   const handleCommit = (e: SyntheticEvent<HTMLInputElement>) => {
     if (!onCommit) return;
@@ -32,6 +40,26 @@ export default function Slider({
 
   return (
     <div className={clsx(styles.slider, className)}>
+      {(label || valueLabel) && (
+        <div
+          className={clsx(
+            styles.head,
+            labelVariant === 'math' && styles.head_math
+          )}
+        >
+          {label && (
+            <span
+              className={clsx(
+                styles.label,
+                labelVariant === 'math' && styles.label_math
+              )}
+            >
+              {label}
+            </span>
+          )}
+          {valueLabel && <span className={styles.value}>{valueLabel}</span>}
+        </div>
+      )}
       <div
         className={styles.control}
         style={{ '--slider-ratio': ratio } as CSSProperties}
@@ -45,7 +73,7 @@ export default function Slider({
           max={max}
           step={step}
           value={value}
-          aria-label={ariaLabel}
+          aria-label={resolvedAriaLabel}
           onChange={(e) => onChange(parseFloat(e.target.value))}
           onPointerUp={handleCommit}
           onKeyUp={handleCommit}

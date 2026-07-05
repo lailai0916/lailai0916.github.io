@@ -8,8 +8,38 @@
     0 0 0 1px color-mix(in srgb, var(--ifm-color-emphasis-400) 35%, transparent);
   display: flex;
   flex-direction: column;
-  gap: 0.35rem;
+  gap: 0.55rem;
   width: 100%;
+}
+
+.head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  color: var(--ifm-color-emphasis-700);
+  font-size: 0.9rem;
+}
+
+.head_math {
+  font-size: 0.85rem;
+}
+
+.label {
+  color: var(--ifm-font-color-base);
+  font-weight: 600;
+}
+
+.label_math {
+  font-family: 'KaTeX_Math', 'Cambria Math', 'Times New Roman', serif;
+  font-size: 1rem;
+  font-style: italic;
+}
+
+.value {
+  color: var(--ifm-color-emphasis-600);
+  font-feature-settings: 'tnum';
+  font-variant-numeric: tabular-nums;
 }
 
 .control {

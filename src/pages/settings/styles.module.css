@@ -108,32 +108,6 @@
   gap: 1.15rem;
 }
 
-.sliderContainer {
-  display: flex;
-  flex-direction: column;
-  gap: 0.65rem;
-}
-
-.sliderHead {
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  gap: 1rem;
-  font-size: 0.9rem;
-  color: var(--ifm-color-emphasis-700);
-}
-
-.sliderLabel {
-  color: var(--ifm-font-color-base);
-  font-weight: 600;
-}
-
-.sliderValue {
-  color: var(--ifm-color-emphasis-600);
-  font-variant-numeric: tabular-nums;
-  font-feature-settings: 'tnum';
-}
-
 /* Experimental toggles */
 
 .toggleList {

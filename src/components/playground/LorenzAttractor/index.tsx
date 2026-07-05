@@ -146,20 +146,17 @@ function ParamSlider({
   onChange,
 }: SliderProps) {
   return (
-    <div className={styles.slider}>
-      <div className={styles.sliderHead}>
-        <span className={styles.sliderLabel}>{label}</span>
-        <span className={styles.sliderValue}>{value.toFixed(precision)}</span>
-      </div>
-      <Slider
-        value={value}
-        min={min}
-        max={max}
-        step={step}
-        onChange={onChange}
-        aria-label={label}
-      />
-    </div>
+    <Slider
+      label={label}
+      valueLabel={value.toFixed(precision)}
+      labelVariant="math"
+      value={value}
+      min={min}
+      max={max}
+      step={step}
+      onChange={onChange}
+      aria-label={label}
+    />
   );
 }
 
