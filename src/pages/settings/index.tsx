@@ -308,15 +308,23 @@ function Typography() {
     >
       <div className={styles.sliderGroup}>
         <div className={styles.sliderContainer}>
-          <span className={styles.sliderLabel}>
-            {translate(
-              {
-                id: 'pages.settings.item.font.size.current',
-                message: 'Font Size: {size}px',
-              },
-              { size: fontSize }
-            )}
-          </span>
+          <div className={styles.sliderHead}>
+            <span className={styles.sliderLabel}>
+              {translate({
+                id: 'pages.settings.item.font.size.label',
+                message: 'Font Size',
+              })}
+            </span>
+            <span className={styles.sliderValue}>
+              {translate(
+                {
+                  id: 'pages.settings.item.font.size.value',
+                  message: '{size}px',
+                },
+                { size: fontSize }
+              )}
+            </span>
+          </div>
           <Slider
             value={fontSize}
             min={sizeMin}
@@ -324,23 +332,26 @@ function Typography() {
             step={1}
             onChange={setFontSize}
             onCommit={commitSize}
-            ticks={[
-              { value: 12, label: '12px' },
-              { value: 16, label: '16px' },
-              { value: 20, label: '20px' },
-            ]}
           />
         </div>
         <div className={styles.sliderContainer}>
-          <span className={styles.sliderLabel}>
-            {translate(
-              {
-                id: 'pages.settings.item.font.lineHeight.current',
-                message: 'Line Height: {value}',
-              },
-              { value: lineHeight.toFixed(2) }
-            )}
-          </span>
+          <div className={styles.sliderHead}>
+            <span className={styles.sliderLabel}>
+              {translate({
+                id: 'pages.settings.item.font.lineHeight.label',
+                message: 'Line Height',
+              })}
+            </span>
+            <span className={styles.sliderValue}>
+              {translate(
+                {
+                  id: 'pages.settings.item.font.lineHeight.value',
+                  message: '{value}',
+                },
+                { value: lineHeight.toFixed(2) }
+              )}
+            </span>
+          </div>
           <Slider
             value={lineHeight}
             min={lineHeightMin}
@@ -348,11 +359,6 @@ function Typography() {
             step={0.05}
             onChange={(v) => setLineHeight(Math.round(v * 20) / 20)}
             onCommit={commitLineHeight}
-            ticks={[
-              { value: 1.3, label: '1.30' },
-              { value: 1.65, label: '1.65' },
-              { value: 2.0, label: '2.00' },
-            ]}
           />
         </div>
       </div>

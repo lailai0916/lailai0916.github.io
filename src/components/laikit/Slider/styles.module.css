@@ -119,23 +119,3 @@
 .input::-moz-focus-outer {
   border: 0;
 }
-
-.ticks {
-  position: relative;
-  height: 0.78rem;
-  font-size: 0.78rem;
-  line-height: 1;
-  color: var(--ifm-color-emphasis-600);
-  font-weight: 500;
-  font-feature-settings: 'tnum';
-}
-
-.tick {
-  position: absolute;
-  transform: translateX(-50%);
-  white-space: nowrap;
-  left: calc(
-    var(--slider-thumb-size) / 2 + var(--slider-tick-ratio) *
-      (100% - var(--slider-thumb-size))
-  );
-}

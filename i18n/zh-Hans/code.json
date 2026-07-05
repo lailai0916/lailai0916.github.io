@@ -302,11 +302,17 @@
   "pages.settings.item.font.description": {
     "message": "调整文字大小与行间距"
   },
-  "pages.settings.item.font.size.current": {
-    "message": "字体大小：{size}px"
+  "pages.settings.item.font.size.label": {
+    "message": "字体大小"
   },
-  "pages.settings.item.font.lineHeight.current": {
-    "message": "行间距：{value}"
+  "pages.settings.item.font.size.value": {
+    "message": "{size}px"
+  },
+  "pages.settings.item.font.lineHeight.label": {
+    "message": "行间距"
+  },
+  "pages.settings.item.font.lineHeight.value": {
+    "message": "{value}"
   },
   "pages.settings.item.experimental.option.classicDesign": {
     "message": "经典设计"

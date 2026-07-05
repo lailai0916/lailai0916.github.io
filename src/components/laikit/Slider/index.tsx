@@ -1,18 +1,12 @@
-import { type CSSProperties, type ReactNode, type SyntheticEvent } from 'react';
+import { type CSSProperties, type SyntheticEvent } from 'react';
 import clsx from 'clsx';
 import styles from './styles.module.css';
-
-interface SliderTick {
-  value: number;
-  label: ReactNode;
-}
 
 interface SliderProps {
   value: number;
   min: number;
   max: number;
   step?: number;
-  ticks?: SliderTick[];
   onChange: (value: number) => void;
   onCommit?: (value: number) => void;
   className?: string;
@@ -24,7 +18,6 @@ export default function Slider({
   min,
   max,
   step = 1,
-  ticks,
   onChange,
   onCommit,
   className,
@@ -59,26 +52,6 @@ export default function Slider({
           className={styles.input}
         />
       </div>
-      {ticks && ticks.length > 0 && (
-        <div className={styles.ticks}>
-          {ticks.map((tick) => {
-            const ratio = (tick.value - min) / (max - min);
-            return (
-              <span
-                key={tick.value}
-                className={styles.tick}
-                style={
-                  {
-                    '--slider-tick-ratio': ratio,
-                  } as CSSProperties
-                }
-              >
-                {tick.label}
-              </span>
-            );
-          })}
-        </div>
-      )}
     </div>
   );
 }
