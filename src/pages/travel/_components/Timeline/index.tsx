@@ -48,7 +48,9 @@ export default function TravelTimeline() {
   };
 
   const groups = useMemo<YearGroup[]>(() => {
-    const sorted = [...TRAVEL_LIST].sort((a, b) => b.date.localeCompare(a.date));
+    const sorted = [...TRAVEL_LIST].sort((a, b) =>
+      b.date.localeCompare(a.date)
+    );
     const map = new Map<string, TravelItem[]>();
     for (const item of sorted) {
       const year = item.date.slice(0, 4);

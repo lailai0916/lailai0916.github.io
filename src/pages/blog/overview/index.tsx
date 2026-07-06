@@ -123,7 +123,10 @@ export default function BlogStats(): ReactNode {
     },
     {
       icon: 'lucide:tags',
-      label: translate({ id: 'pages.overview.metric.tags', message: 'Tag|Tags' }),
+      label: translate({
+        id: 'pages.overview.metric.tags',
+        message: 'Tag|Tags',
+      }),
       value: tagCount,
     },
     {

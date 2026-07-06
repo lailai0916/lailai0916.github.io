@@ -58,7 +58,10 @@ export function usePostMetaItems({
         label: selectMessage(
           wordCount,
           translate(
-            { id: 'blog.postcard.wordCount', message: '{word} word|{word} words' },
+            {
+              id: 'blog.postcard.wordCount',
+              message: '{word} word|{word} words',
+            },
             { word: formatCompact(wordCount, currentLocale) }
           )
         ),
@@ -79,7 +82,10 @@ export function usePostMetaItems({
       label: selectMessage(
         pageviews,
         translate(
-          { id: 'blog.postcard.viewCount', message: '{viewCount} view|{viewCount} views' },
+          {
+            id: 'blog.postcard.viewCount',
+            message: '{viewCount} view|{viewCount} views',
+          },
           { viewCount: analytics.pageviews ?? '–' }
         )
       ),

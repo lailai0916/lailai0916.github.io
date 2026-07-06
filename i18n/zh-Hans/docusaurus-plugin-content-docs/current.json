@@ -318,5 +318,21 @@
   "sidebar.projectSidebar.category.指南.link.generated-index.description": {
     "message": "本章收录各种实用的文档指南。",
     "description": "The generated-index page description for category '指南' in sidebar 'projectSidebar'"
+  },
+  "sidebar.noteSidebar.category.物理": {
+    "message": "物理",
+    "description": "The label for category '物理' in sidebar 'noteSidebar'"
+  },
+  "sidebar.noteSidebar.category.化学": {
+    "message": "化学",
+    "description": "The label for category '化学' in sidebar 'noteSidebar'"
+  },
+  "sidebar.noteSidebar.category.政治": {
+    "message": "政治",
+    "description": "The label for category '政治' in sidebar 'noteSidebar'"
+  },
+  "sidebar.noteSidebar.category.技术": {
+    "message": "技术",
+    "description": "The label for category '技术' in sidebar 'noteSidebar'"
   }
 }

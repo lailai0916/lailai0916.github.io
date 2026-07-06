@@ -4,7 +4,8 @@
   --slider-track-height: 6px;
   --slider-head-gap: 0.55rem;
   --slider-thumb-bg: #fff;
-  --slider-thumb-shadow: var(--lk-shadow-raised),
+  --slider-thumb-shadow:
+    var(--lk-shadow-raised),
     0 0 0 1px color-mix(in srgb, var(--ifm-color-emphasis-400) 35%, transparent);
   display: flex;
   flex-direction: column;
