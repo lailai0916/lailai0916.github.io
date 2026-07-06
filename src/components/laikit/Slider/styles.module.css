@@ -124,7 +124,7 @@
 }
 
 .input::-webkit-slider-thumb:active {
-  transform: scale(0.96);
+  transform: scale(1.1);
 }
 
 .input::-moz-range-track {
@@ -143,6 +143,11 @@
   box-shadow: var(--slider-thumb-shadow);
   box-sizing: border-box;
   cursor: pointer;
+  transition: transform 160ms ease;
+}
+
+.input::-moz-range-thumb:active {
+  transform: scale(1.1);
 }
 
 .input::-moz-range-progress {
