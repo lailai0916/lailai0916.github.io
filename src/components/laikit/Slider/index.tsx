@@ -44,14 +44,14 @@ export default function Slider({
         <div
           className={clsx(
             styles.head,
-            labelVariant === 'math' && styles.head_math
+            labelVariant === 'math' && styles.headMath
           )}
         >
           {label && (
             <span
               className={clsx(
                 styles.label,
-                labelVariant === 'math' && styles.label_math
+                labelVariant === 'math' && styles.labelMath
               )}
             >
               {label}

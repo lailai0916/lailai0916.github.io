@@ -37,7 +37,31 @@ $$
 
 ## 指数生成函数
 
-**指数生成函数**（EGF）把数列 $\set{a_n}$ 对应到 $\sum_{n\ge 0} a_n\frac{x^n}{n!}$，适合「有标号」组合对象的计数。两个 EGF 相乘对应有标号对象的合并并自带组合系数；配合多项式 $\exp$，可由「连通对象」的 EGF 推出「任意对象」的 EGF。
+序列 $a$ 的指数生成函数（Exponential Generating Function，EGF）定义为形式幂级数：
+
+$$
+\hat F(x)=\sum_n a_n\frac{x^n}{n!}
+$$
+
+相比普通生成函数多了 $n!$ 的分母，因此指数生成函数适合刻画「有标号」组合对象的计数。
+
+### 基本运算
+
+考虑两个序列 $a,b$ 的指数生成函数，分别为 $\hat F(x),\hat G(x)$。那么有：
+
+$$
+\hat F(x)\pm \hat G(x)=\sum_n (a_n\pm b_n)\frac{x^n}{n!}
+$$
+
+因此 $\hat F(x)\pm \hat G(x)$ 是序列 $\langle a_n\pm b_n\rangle$ 的指数生成函数。
+
+考虑乘法运算：
+
+$$
+\hat F(x)\hat G(x)=\sum_n \frac{x^n}{n!}\sum_{i=0}^n\binom{n}{i}a_ib_{n-i}
+$$
+
+因此 $\hat F(x)\hat G(x)$ 是序列 $\left\langle\sum_{i=0}^n\binom{n}{i}a_ib_{n-i}\right\rangle$ 的指数生成函数。乘法中出现的二项式系数 $\binom{n}{i}$ 恰对应有标号对象合并时的标号分配方案数。
 
 ## 例题
 

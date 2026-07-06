@@ -311,9 +311,6 @@
   "pages.settings.item.font.lineHeight.label": {
     "message": "行间距"
   },
-  "pages.settings.item.font.lineHeight.value": {
-    "message": "{value}"
-  },
   "pages.settings.item.experimental.option.classicDesign": {
     "message": "经典设计"
   },

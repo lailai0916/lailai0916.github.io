@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-typedef long long ll;
+using ll=long long;
 const int N=50005;
 ll g[N],f[N];
 int q[N];

@@ -101,6 +101,5 @@ int main()
 	}
 	cout<<ans<<'\n';
 	for(int i=1;i<=n;i++)cout<<match[i]<<' ';
-	cout<<'\n';
 	return 0;
 }

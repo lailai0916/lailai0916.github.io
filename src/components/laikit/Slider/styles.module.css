@@ -4,8 +4,7 @@
   --slider-track-height: 6px;
   --slider-head-gap: 0.55rem;
   --slider-thumb-bg: #fff;
-  --slider-thumb-shadow:
-    0 1px 2px rgba(0, 0, 0, 0.16),
+  --slider-thumb-shadow: var(--lk-shadow-raised),
     0 0 0 1px color-mix(in srgb, var(--ifm-color-emphasis-400) 35%, transparent);
   display: flex;
   flex-direction: column;
@@ -22,11 +21,11 @@
   font-size: 0.9rem;
 }
 
-.head_math {
+.headMath {
   font-size: 0.85rem;
 }
 
-.slider:has(.head_math) {
+.slider:has(.headMath) {
   --slider-head-gap: 0;
 }
 
@@ -35,7 +34,7 @@
   font-weight: 600;
 }
 
-.label_math {
+.labelMath {
   font-family: 'KaTeX_Math', 'Cambria Math', 'Times New Roman', serif;
   font-size: 1rem;
   font-style: italic;
@@ -120,6 +119,7 @@
   -webkit-appearance: none;
   appearance: none;
   cursor: pointer;
+  transition: transform 160ms ease;
 }
 
 .input::-webkit-slider-thumb:active {

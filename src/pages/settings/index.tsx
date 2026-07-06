@@ -331,13 +331,7 @@ function Typography() {
             id: 'pages.settings.item.font.lineHeight.label',
             message: 'Line Height',
           })}
-          valueLabel={translate(
-            {
-              id: 'pages.settings.item.font.lineHeight.value',
-              message: '{value}',
-            },
-            { value: lineHeight.toFixed(2) }
-          )}
+          valueLabel={lineHeight.toFixed(2)}
           value={lineHeight}
           min={lineHeightMin}
           max={lineHeightMax}
