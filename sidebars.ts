@@ -594,7 +594,13 @@ const sidebars: SidebarsConfig = {
         type: 'doc',
         id: 'note/chemistry/index',
       },
-      items: [],
+      items: [
+        'note/chemistry/required-1',
+        'note/chemistry/required-2',
+        'note/chemistry/reaction-principle',
+        'note/chemistry/structure-property',
+        'note/chemistry/organic',
+      ],
     },
     {
       type: 'category',
