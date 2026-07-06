@@ -745,6 +745,9 @@
   "pages.travel.quote.author": {
     "message": "陆游"
   },
+  "pages.travel.quote.source": {
+    "message": "《冬夜读书示子聿》"
+  },
   "blog.pages.authors.authorSelect": {
     "message": "作者"
   },

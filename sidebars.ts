@@ -341,61 +341,50 @@ const sidebars: SidebarsConfig = {
       type: 'category',
       label: '数学',
       link: {
-        type: 'generated-index',
-        description: '本章记录我的数学笔记。',
+        type: 'doc',
+        id: 'note/math/index',
       },
-      collapsed: false,
       items: [
         {
           type: 'category',
-          label: '高中数学',
-          link: {
-            type: 'doc',
-            id: 'note/math/highschool/index',
-          },
+          label: '基础与杂项',
           items: [
-            {
-              type: 'category',
-              label: '基础与杂项',
-              items: [
-                'note/math/highschool/basic/transition',
-                'note/math/highschool/basic/set',
-                'note/math/highschool/basic/logic',
-                'note/math/highschool/basic/inequality',
-                'note/math/highschool/basic/vector',
-                'note/math/highschool/basic/complex',
-                'note/math/highschool/basic/counting',
-              ],
-            },
-            {
-              type: 'category',
-              label: '代数与函数',
-              items: [
-                'note/math/highschool/function/func',
-                'note/math/highschool/function/trigonometric',
-                'note/math/highschool/function/sequence',
-                'note/math/highschool/function/derivative',
-              ],
-            },
-            {
-              type: 'category',
-              label: '几何与解析',
-              items: [
-                'note/math/highschool/geometry/triangle',
-                'note/math/highschool/geometry/solid',
-                'note/math/highschool/geometry/line-and-circle',
-                'note/math/highschool/geometry/conic',
-              ],
-            },
-            {
-              type: 'category',
-              label: '统计与概率',
-              items: [
-                'note/math/highschool/probability/statistics',
-                'note/math/highschool/probability/probability',
-                'note/math/highschool/probability/distribution',
-              ],
-            },
+            'note/math/basic/transition',
+            'note/math/basic/set',
+            'note/math/basic/logic',
+            'note/math/basic/inequality',
+            'note/math/basic/vector',
+            'note/math/basic/complex',
+            'note/math/basic/counting',
+          ],
+        },
+        {
+          type: 'category',
+          label: '代数与函数',
+          items: [
+            'note/math/function/func',
+            'note/math/function/trigonometric',
+            'note/math/function/sequence',
+            'note/math/function/derivative',
+          ],
+        },
+        {
+          type: 'category',
+          label: '几何与解析',
+          items: [
+            'note/math/geometry/triangle',
+            'note/math/geometry/solid',
+            'note/math/geometry/line-and-circle',
+            'note/math/geometry/conic',
+          ],
+        },
+        {
+          type: 'category',
+          label: '统计与概率',
+          items: [
+            'note/math/probability/statistics',
+            'note/math/probability/probability',
+            'note/math/probability/distribution',
           ],
         },
         {
@@ -491,7 +480,6 @@ const sidebars: SidebarsConfig = {
         type: 'generated-index',
         description: '本章记录我的英语笔记。',
       },
-      collapsed: false,
       items: [
         {
           type: 'category',

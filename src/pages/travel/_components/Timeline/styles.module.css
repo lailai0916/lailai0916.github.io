@@ -1,21 +1,22 @@
-/* Single-rail vertical timeline. The continuous line is one pseudo-element on
-   the container; year/entry nodes sit on it at a fixed rail offset. Each row's
-   padding-left indents its card but keeps the row box flush with the container
-   left edge, so a node at `left: var(--rail-x)` lands on the rail regardless of
-   content height — no JS measurement, fully responsive. */
+/* Center-spine alternating timeline. A single center rail carries year pills
+   and per-entry nodes; cards alternate left/right of it (running index parity).
+   The rail/dot horizontal anchors are the only side-specific bits, so the whole
+   thing collapses to a left rail on narrow screens where two columns won't fit.
+   No JS measurement — pure CSS, fully responsive. */
 .timeline {
-  --rail-x: 8px;
-  --gutter: 3rem;
+  --dot: 13px;
+  --gap: 2.25rem;
+  --indent: 2.25rem;
   position: relative;
   width: 100%;
-  max-width: 42rem;
+  max-width: 800px;
   margin: 0 auto;
 }
 
 .timeline::before {
   content: '';
   position: absolute;
-  left: var(--rail-x);
+  left: 50%;
   top: 0.75rem;
   bottom: 0.75rem;
   width: 2px;
@@ -25,47 +26,42 @@
 }
 
 @media (max-width: 768px) {
-  .timeline {
-    --gutter: 2.25rem;
+  .timeline::before {
+    left: 8px;
   }
 }
 
 .group + .group {
-  margin-top: 2.5rem;
+  margin-top: 2rem;
 }
 
 .year {
   position: relative;
   display: flex;
-  align-items: center;
-  min-height: 2rem;
-  margin-bottom: 1.25rem;
-  padding-left: var(--gutter);
+  justify-content: center;
+  margin-bottom: 1.5rem;
 }
 
-.year::before {
-  content: '';
-  position: absolute;
-  left: var(--rail-x);
-  top: 50%;
-  width: 15px;
-  height: 15px;
-  transform: translate(-50%, -50%);
-  border-radius: 50%;
-  background: var(--ifm-color-primary);
-  border: 3px solid var(--ifm-background-color);
+@media (max-width: 768px) {
+  .year {
+    justify-content: flex-start;
+  }
 }
 
 .yearLabel {
-  font-size: 1.15rem;
+  position: relative;
+  padding: 0.3rem 0.9rem;
+  border-radius: 999px;
+  background: var(--ifm-color-primary);
+  color: #fff;
+  font-size: 0.9rem;
   font-weight: 700;
-  line-height: 1.2;
-  letter-spacing: -0.01em;
+  letter-spacing: 0.01em;
   font-variant-numeric: tabular-nums;
-  color: var(--ifm-font-color-base);
 }
 
 .entries {
+  position: relative;
   margin: 0;
   padding: 0;
   list-style: none;
@@ -73,32 +69,86 @@
 
 .entry {
   position: relative;
-  padding-left: var(--gutter);
+  width: 50%;
+  box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+  .entry {
+    width: 100%;
+  }
 }
 
 .entry:not(:last-child) {
-  padding-bottom: 1rem;
+  margin-bottom: 1.5rem;
 }
 
 .entry::before {
   content: '';
   position: absolute;
-  left: var(--rail-x);
   top: 1.75rem;
-  width: 11px;
-  height: 11px;
-  transform: translate(-50%, -50%);
+  width: var(--dot);
+  height: var(--dot);
   border-radius: 50%;
   background: var(--ifm-card-background-color);
   border: 2px solid var(--ifm-color-emphasis-300);
   transition: border-color 160ms ease;
+  z-index: 1;
 }
 
 .entry:has(.cardLink:hover)::before {
   border-color: var(--ifm-color-primary);
 }
 
+.entryLeft {
+  padding-right: var(--gap);
+}
+
+@media (max-width: 768px) {
+  .entryLeft {
+    padding-right: 0;
+    padding-left: var(--indent);
+  }
+}
+
+.entryLeft::before {
+  right: 0;
+  transform: translate(50%, -50%);
+}
+
+@media (max-width: 768px) {
+  .entryLeft::before {
+    right: auto;
+    left: 8px;
+    transform: translate(-50%, -50%);
+  }
+}
+
+.entryRight {
+  margin-left: 50%;
+  padding-left: var(--gap);
+}
+
+@media (max-width: 768px) {
+  .entryRight {
+    margin-left: 0;
+    padding-left: var(--indent);
+  }
+}
+
+.entryRight::before {
+  left: 0;
+  transform: translate(-50%, -50%);
+}
+
+@media (max-width: 768px) {
+  .entryRight::before {
+    left: 8px;
+  }
+}
+
 .card {
+  position: relative;
   width: 100%;
 }
 
@@ -109,34 +159,31 @@
 
 .cardLink:hover .entryArrow,
 .cardLink:focus-visible .entryArrow {
-  color: var(--ifm-color-primary);
-  transform: translate(2px, -2px);
+  opacity: 1;
+  transform: translate(0, 0);
 }
 
-.entryHead {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
-  margin-bottom: 0.4rem;
+.entryArrow {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 1rem;
+  color: var(--ifm-color-emphasis-400);
+  opacity: 0;
+  transform: translate(-4px, 4px);
+  transition:
+    opacity 160ms ease,
+    transform 160ms ease;
 }
 
 .entryMonth {
+  display: block;
+  margin-bottom: 0.4rem;
   font-size: 0.8rem;
   font-weight: 600;
   letter-spacing: 0.02em;
   font-variant-numeric: tabular-nums;
   color: var(--ifm-color-emphasis-600);
-}
-
-.entryArrow {
-  flex-shrink: 0;
-  width: 1rem;
-  height: 1rem;
-  color: var(--ifm-color-emphasis-500);
-  transition:
-    color 160ms ease,
-    transform 160ms ease;
 }
 
 .entryTitle {

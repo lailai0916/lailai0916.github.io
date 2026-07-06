@@ -36,6 +36,10 @@ const QUOTE_AUTHOR = translate({
   id: 'pages.travel.quote.author',
   message: 'Lu You',
 });
+const QUOTE_SOURCE = translate({
+  id: 'pages.travel.quote.source',
+  message: 'Reading on a Winter Night, to Show My Son Ziyu',
+});
 
 export default function Travel(): ReactNode {
   const { siteConfig } = useDocusaurusContext();
@@ -78,7 +82,9 @@ export default function Travel(): ReactNode {
         <TravelMap />
         <TravelTimeline />
         <SectionContainer>
-          <Quote author={QUOTE_AUTHOR}>{QUOTE_TEXT}</Quote>
+          <Quote author={QUOTE_AUTHOR} source={QUOTE_SOURCE}>
+            {QUOTE_TEXT}
+          </Quote>
         </SectionContainer>
       </PageContent>
     </Layout>

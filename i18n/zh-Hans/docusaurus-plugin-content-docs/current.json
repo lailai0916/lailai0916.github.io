@@ -159,14 +159,6 @@
     "message": "数学",
     "description": "The label for category '数学' in sidebar 'noteSidebar'"
   },
-  "sidebar.noteSidebar.category.数学.link.generated-index.description": {
-    "message": "本章记录我的数学笔记。",
-    "description": "The generated-index page description for category '数学' in sidebar 'noteSidebar'"
-  },
-  "sidebar.noteSidebar.category.高中数学": {
-    "message": "高中数学",
-    "description": "The label for category '高中数学' in sidebar 'noteSidebar'"
-  },
   "sidebar.noteSidebar.category.基础与杂项": {
     "message": "基础与杂项",
     "description": "The label for category '基础与杂项' in sidebar 'noteSidebar'"
