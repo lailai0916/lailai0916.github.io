@@ -26,7 +26,6 @@ import {
 
 countries.registerLocale(countriesEn);
 countries.registerLocale(countriesZh);
-import SectionContainer from '@site/src/components/laikit/Section';
 import styles from './styles.module.css';
 import type { GlobeMethods, GlobeProps } from 'react-globe.gl';
 
@@ -216,13 +215,11 @@ function TravelGlobeClient({ Globe }: { Globe: GlobeComponent }) {
 
 export default function TravelMap() {
   return (
-    <SectionContainer>
-      <BrowserOnly>
-        {() => {
-          const Globe = require('react-globe.gl').default as GlobeComponent;
-          return <TravelGlobeClient Globe={Globe} />;
-        }}
-      </BrowserOnly>
-    </SectionContainer>
+    <BrowserOnly>
+      {() => {
+        const Globe = require('react-globe.gl').default as GlobeComponent;
+        return <TravelGlobeClient Globe={Globe} />;
+      }}
+    </BrowserOnly>
   );
 }

@@ -8,7 +8,6 @@ import {
 } from '@site/src/components/laikit/Page';
 import DataCard from '@site/src/components/laikit/DataCard';
 import Quote from '@site/src/components/laikit/Quote';
-import SectionContainer from '@site/src/components/laikit/Section';
 import TravelTimeline from '@site/src/pages/travel/_components/Timeline';
 import TravelMap from '@site/src/pages/travel/_components/Map';
 import { translate } from '@docusaurus/Translate';
@@ -81,11 +80,9 @@ export default function Travel(): ReactNode {
       <PageContent>
         <TravelMap />
         <TravelTimeline />
-        <SectionContainer>
-          <Quote author={QUOTE_AUTHOR} source={QUOTE_SOURCE}>
-            {QUOTE_TEXT}
-          </Quote>
-        </SectionContainer>
+        <Quote author={QUOTE_AUTHOR} source={QUOTE_SOURCE}>
+          {QUOTE_TEXT}
+        </Quote>
       </PageContent>
     </Layout>
   );

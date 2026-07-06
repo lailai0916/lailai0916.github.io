@@ -14,7 +14,7 @@ The site has an in-house design system, `laikit` (`src/components/laikit/`). New
 
 Each primitive is a folder with `index.tsx` + `styles.module.css`. Import via the `@site` alias, e.g. `import Button from '@site/src/components/laikit/Button'`.
 
-- **Layout / surfaces:** `Card`, `TitleCard`, `LinkCard`, `DataCard`, `ShareCard`, `Page`, `Section`.
+- **Layout / surfaces:** `Card`, `TitleCard`, `LinkCard`, `DataCard`, `ShareCard`, `Page`.
 - **Data viz:** `Chart` — the one shared time-series chart (`type: 'bar' | 'line'`, rounded gridlines via an internal nice-step scale, hover crosshair + laikit `Tooltip`, optional `loading` skeleton). Purely presentational: callers pass `ChartDatum[]` (`{ key, value, tooltipLabel, axisLabel? }`) with strings already formatted, so no date/locale logic lives inside. Used by `blog/overview` (monthly bar + cumulative line) and `insights` (Pageviews line; `insights/_components/seriesFormat.ts` maps the Umami series → `ChartDatum[]`).
 - **Controls:** `Button`, `Segmented`, `Slider`, `Switch`.
 - **Atoms / display:** `Badge`, `IconBlock`, `IconText`, `Tooltip`, `Skeleton`, `TrafficLights`, `Markdown`, `Quote`, `GitHub`.
