@@ -63,7 +63,7 @@ function iso3FromText(text: string): string[] {
 }
 
 export function getTravelCountryCodes(items: readonly TravelItem[]): string[] {
-  return items.flatMap((item) => iso3FromText(item.cardTitle));
+  return items.flatMap((item) => iso3FromText(item.title));
 }
 
 export function buildTravelPolygons(

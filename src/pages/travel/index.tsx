@@ -7,6 +7,8 @@ import {
   PageContent,
 } from '@site/src/components/laikit/Page';
 import DataCard from '@site/src/components/laikit/DataCard';
+import Quote from '@site/src/components/laikit/Quote';
+import SectionContainer from '@site/src/components/laikit/Section';
 import TravelTimeline from '@site/src/pages/travel/_components/Timeline';
 import TravelMap from '@site/src/pages/travel/_components/Map';
 import { translate } from '@docusaurus/Translate';
@@ -25,10 +27,19 @@ const MODIFICATION = translate({
   id: 'pages.travel.modification',
   message: '<b>Travel</b> Record',
 });
+const QUOTE_TEXT = translate({
+  id: 'pages.travel.quote.content',
+  message:
+    'From what is gained on paper, understanding always feels shallow; to truly know it, you must experience it yourself.',
+});
+const QUOTE_AUTHOR = translate({
+  id: 'pages.travel.quote.author',
+  message: 'Lu You',
+});
 
 export default function Travel(): ReactNode {
   const { siteConfig } = useDocusaurusContext();
-  const startYear = parseInt(TRAVEL_LIST[0].title.substring(0, 4));
+  const startYear = parseInt(TRAVEL_LIST[0].date.substring(0, 4));
   const countryCount = new Set(getTravelCountryCodes(TRAVEL_LIST)).size;
   // Seed from build time so SSR and hydration agree; correct to the real
   // current year after mount (matters only across a year boundary).
@@ -66,6 +77,9 @@ export default function Travel(): ReactNode {
       <PageContent>
         <TravelMap />
         <TravelTimeline />
+        <SectionContainer>
+          <Quote author={QUOTE_AUTHOR}>{QUOTE_TEXT}</Quote>
+        </SectionContainer>
       </PageContent>
     </Layout>
   );

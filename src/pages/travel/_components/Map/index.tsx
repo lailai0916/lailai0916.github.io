@@ -42,14 +42,6 @@ const { MeshBasicMaterial } = require('three') as {
   MeshBasicMaterial: MeshBasicMaterialCtor;
 };
 
-const TITLE = translate({
-  id: 'pages.travel.map.title',
-  message: 'Travel Map',
-});
-const DESCRIPTION = translate({
-  id: 'pages.travel.map.description',
-  message: 'Interactive map showing countries I have visited around the world',
-});
 const VISITED_LABEL = translate({
   id: 'pages.travel.map.legend.visited',
   message: 'Visited',
@@ -225,10 +217,6 @@ function TravelGlobeClient({ Globe }: { Globe: GlobeComponent }) {
 export default function TravelMap() {
   return (
     <SectionContainer>
-      <div className={styles.header}>
-        <h2 className={styles.title}>{TITLE}</h2>
-        <p className={styles.description}>{DESCRIPTION}</p>
-      </div>
       <BrowserOnly>
         {() => {
           const Globe = require('react-globe.gl').default as GlobeComponent;

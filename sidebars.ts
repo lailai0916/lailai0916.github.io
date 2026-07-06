@@ -589,6 +589,22 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: 'category',
+      label: '物理',
+      link: {
+        type: 'doc',
+        id: 'note/physics/index',
+      },
+      items: [
+        'note/physics/required-1',
+        'note/physics/required-2',
+        'note/physics/required-3',
+        'note/physics/elective-1',
+        'note/physics/elective-2',
+        'note/physics/elective-3',
+      ],
+    },
+    {
+      type: 'category',
       label: '化学',
       link: {
         type: 'doc',
@@ -609,7 +625,30 @@ const sidebars: SidebarsConfig = {
         type: 'doc',
         id: 'note/biology/index',
       },
-      items: ['note/biology/molecule-cell', 'note/biology/heredity-evolution'],
+      items: [
+        'note/biology/molecule-cell',
+        'note/biology/heredity-evolution',
+        'note/biology/homeostasis',
+        'note/biology/ecology',
+        'note/biology/biotechnology',
+      ],
+    },
+    {
+      type: 'category',
+      label: '政治',
+      link: {
+        type: 'doc',
+        id: 'note/politics/index',
+      },
+      items: [
+        'note/politics/socialism',
+        'note/politics/economy',
+        'note/politics/politics-law',
+        'note/politics/philosophy-culture',
+        'note/politics/international-politics',
+        'note/politics/law-life',
+        'note/politics/logic-thinking',
+      ],
     },
     {
       type: 'category',
@@ -618,7 +657,13 @@ const sidebars: SidebarsConfig = {
         type: 'doc',
         id: 'note/history/index',
       },
-      items: ['note/history/china', 'note/history/world'],
+      items: [
+        'note/history/china',
+        'note/history/world',
+        'note/history/state-governance',
+        'note/history/economy-society',
+        'note/history/cultural-exchange',
+      ],
     },
     {
       type: 'category',
@@ -627,7 +672,28 @@ const sidebars: SidebarsConfig = {
         type: 'doc',
         id: 'note/geography/index',
       },
-      items: ['note/geography/physical', 'note/geography/human'],
+      items: [
+        'note/geography/physical',
+        'note/geography/human',
+        'note/geography/natural-foundation',
+        'note/geography/regional-development',
+        'note/geography/resource-security',
+      ],
+    },
+    {
+      type: 'category',
+      label: '技术',
+      link: {
+        type: 'doc',
+        id: 'note/technology/index',
+      },
+      items: [
+        'note/technology/data-computation',
+        'note/technology/information-system',
+        'note/technology/data-structure',
+        'note/technology/technology-design-1',
+        'note/technology/technology-design-2',
+      ],
     },
   ],
   projectSidebar: [

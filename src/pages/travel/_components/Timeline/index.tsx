@@ -1,144 +1,98 @@
 import { useMemo } from 'react';
+import { Icon } from '@iconify/react';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
-import { Chrono } from 'react-chrono';
-import BrowserOnly from '@docusaurus/BrowserOnly';
 import Card from '@site/src/components/laikit/Card';
-import { translate } from '@docusaurus/Translate';
-import { TRAVEL_LIST, type TravelItem } from '@site/src/data/travel';
 import SectionContainer from '@site/src/components/laikit/Section';
+import { TRAVEL_LIST, type TravelItem } from '@site/src/data/travel';
 import styles from './styles.module.css';
 
-const TIMELINE_CONFIG = {
-  cardWidth: 360,
-  cardHeight: 120,
-  contentDetailsHeight: 120,
-  lineWidth: 3,
-  timelinePointDimension: 18,
-  // react-chrono v2 uses verticalBreakPoint for VERTICAL_ALTERNATING auto-switch
-  verticalBreakPoint: 768,
+interface YearGroup {
+  year: string;
+  items: TravelItem[];
+}
 
-  hideControls: true,
-  useReadMore: false,
-  enableBreakPoint: true,
-  borderLessCards: true,
-} as const;
-
-const TIMELINE_THEME = {
-  primary: 'var(--ifm-color-primary)',
-  secondary: 'var(--ifm-color-primary-light)',
-  cardBgColor: 'var(--ifm-card-background-color)',
-  cardTitleColor: 'var(--ifm-color-emphasis-800)',
-  cardDetailsColor: 'var(--ifm-color-emphasis-700)',
-  titleColor: 'var(--ifm-color-emphasis-700)',
-  titleColorActive: 'var(--ifm-color-primary)',
-  iconBackgroundColor: 'var(--ifm-color-primary)',
-} as const;
-
-const CLASS_NAMES = {
-  card: 'travel-timeline-card',
-  cardText: 'travel-timeline-card-text',
-  title: 'travel-timeline-title',
-} as const;
-
-type TimelineCardItem = TravelItem & {
-  timelineTitle: string;
-};
-
-const formatTravelDate = (dateStr: string, locale: string): string => {
-  const [year, month] = dateStr.split('-');
-
-  // Year/month are taken literally from the string; the Date only drives the
-  // localized month name, so no timezone conversion is involved (cf. changelog).
-  return new Intl.DateTimeFormat(locale, {
-    year: 'numeric',
-    month: 'long',
-  }).format(new Date(Number(year), Number(month) - 1, 1));
-};
-
-const TITLE = translate({
-  id: 'pages.travel.timeline.title',
-  message: 'Travel Timeline',
-});
-const DESCRIPTION = translate({
-  id: 'pages.travel.timeline.description',
-  message:
-    'From what is gained on paper, understanding always feels shallow; to truly know it, you must experience it yourself.',
-});
-
-function TimelineCard({ item }: { item: TimelineCardItem }) {
-  const content = (
-    <div className={styles.timelineCardContent}>
-      <h3 className={styles.timelineCardHeading}>{item.cardTitle}</h3>
-      <p className={styles.timelineCardDescription}>{item.cardDetailedText}</p>
-    </div>
-  );
-
-  if (item.url) {
-    return (
-      <Card
-        to={item.url}
-        className={styles.timelineCardSurface}
-        wrapperClassName={styles.timelineCardLink}
-        padding="1.5rem"
-      >
-        {content}
-      </Card>
-    );
-  }
-
+function EntryBody({ item, month }: { item: TravelItem; month: string }) {
   return (
-    <Card className={styles.timelineCardSurface} padding="1.5rem">
-      {content}
-    </Card>
+    <>
+      <div className={styles.entryHead}>
+        <span className={styles.entryMonth}>{month}</span>
+        {item.href && (
+          <Icon
+            icon="lucide:arrow-up-right"
+            className={styles.entryArrow}
+            aria-hidden
+          />
+        )}
+      </div>
+      <h3 className={styles.entryTitle}>{item.title}</h3>
+      <p className={styles.entryCities}>{item.description}</p>
+    </>
   );
 }
 
 export default function TravelTimeline() {
   const { i18n } = useDocusaurusContext();
-  const items = useMemo<TimelineCardItem[]>(
-    () =>
-      [...TRAVEL_LIST].reverse().map((item) => ({
-        ...item,
-        timelineTitle: formatTravelDate(item.title, i18n.currentLocale),
-      })),
+  const isZh = i18n.currentLocale === 'zh-Hans';
+  const monthFmt = useMemo(
+    () => new Intl.DateTimeFormat(i18n.currentLocale, { month: 'long' }),
     [i18n.currentLocale]
   );
 
-  const chronoItems = useMemo(
-    () =>
-      items.map((item) => ({
-        title: item.timelineTitle,
-        url: item.url,
-      })),
-    [items]
-  );
+  // Month name only — the year is the group header. Year/month are read
+  // literally from the 'YYYY-MM' string, so no timezone conversion applies.
+  const monthLabel = (date: string): string => {
+    const [year, month] = date.split('-');
+    return isZh
+      ? `${Number(month)} 月`
+      : monthFmt.format(new Date(Number(year), Number(month) - 1, 1));
+  };
+
+  const groups = useMemo<YearGroup[]>(() => {
+    const sorted = [...TRAVEL_LIST].sort((a, b) => b.date.localeCompare(a.date));
+    const map = new Map<string, TravelItem[]>();
+    for (const item of sorted) {
+      const year = item.date.slice(0, 4);
+      const bucket = map.get(year);
+      if (bucket) bucket.push(item);
+      else map.set(year, [item]);
+    }
+    return [...map.entries()].map(([year, items]) => ({ year, items }));
+  }, []);
 
   return (
     <SectionContainer>
-      <div className={styles.header}>
-        <h2 className={styles.title}>{TITLE}</h2>
-        <p className={styles.description}>{DESCRIPTION}</p>
+      <div className={styles.timeline}>
+        {groups.map(({ year, items }) => (
+          <section className={styles.group} key={year}>
+            <div className={styles.year}>
+              <span className={styles.yearLabel}>{year}</span>
+            </div>
+            <ol className={styles.entries}>
+              {items.map((item, index) => {
+                const month = monthLabel(item.date);
+                return (
+                  <li className={styles.entry} key={`${item.date}-${index}`}>
+                    {item.href ? (
+                      <Card
+                        to={item.href}
+                        padding="1.25rem 1.5rem"
+                        className={styles.card}
+                        wrapperClassName={styles.cardLink}
+                      >
+                        <EntryBody item={item} month={month} />
+                      </Card>
+                    ) : (
+                      <Card padding="1.25rem 1.5rem" className={styles.card}>
+                        <EntryBody item={item} month={month} />
+                      </Card>
+                    )}
+                  </li>
+                );
+              })}
+            </ol>
+          </section>
+        ))}
       </div>
-      <BrowserOnly>
-        {() => (
-          <div className={styles.wrapper}>
-            <Chrono
-              items={chronoItems}
-              mode="VERTICAL_ALTERNATING"
-              theme={TIMELINE_THEME}
-              classNames={CLASS_NAMES}
-              {...TIMELINE_CONFIG}
-            >
-              {items.map((item, index) => (
-                <TimelineCard
-                  key={`${item.title}-${item.cardTitle}-${index}`}
-                  item={item}
-                />
-              ))}
-            </Chrono>
-          </div>
-        )}
-      </BrowserOnly>
     </SectionContainer>
   );
 }

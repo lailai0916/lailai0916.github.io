@@ -1,192 +1,164 @@
-.header {
+/* Single-rail vertical timeline. The continuous line is one pseudo-element on
+   the container; year/entry nodes sit on it at a fixed rail offset. Each row's
+   padding-left indents its card but keeps the row box flush with the container
+   left edge, so a node at `left: var(--rail-x)` lands on the rail regardless of
+   content height — no JS measurement, fully responsive. */
+.timeline {
+  --rail-x: 8px;
+  --gutter: 3rem;
+  position: relative;
   width: 100%;
-  max-width: 48rem;
-  margin: 0 auto clamp(2rem, 5vw, 3rem);
-  text-align: center;
+  max-width: 42rem;
+  margin: 0 auto;
 }
 
-.title {
-  margin: 0 0 0.75rem;
-  font-size: clamp(1.75rem, 3vw, 2.5rem);
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: var(--rail-x);
+  top: 0.75rem;
+  bottom: 0.75rem;
+  width: 2px;
+  transform: translateX(-1px);
+  border-radius: 1px;
+  background: var(--ifm-color-emphasis-200);
+}
+
+@media (max-width: 768px) {
+  .timeline {
+    --gutter: 2.25rem;
+  }
+}
+
+.group + .group {
+  margin-top: 2.5rem;
+}
+
+.year {
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-height: 2rem;
+  margin-bottom: 1.25rem;
+  padding-left: var(--gutter);
+}
+
+.year::before {
+  content: '';
+  position: absolute;
+  left: var(--rail-x);
+  top: 50%;
+  width: 15px;
+  height: 15px;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background: var(--ifm-color-primary);
+  border: 3px solid var(--ifm-background-color);
+}
+
+.yearLabel {
+  font-size: 1.15rem;
   font-weight: 700;
   line-height: 1.2;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.01em;
+  font-variant-numeric: tabular-nums;
   color: var(--ifm-font-color-base);
 }
 
-.description {
+.entries {
   margin: 0;
-  font-size: clamp(1rem, 1.5vw, 1.15rem);
-  line-height: 1.6;
-  color: var(--ifm-color-emphasis-700);
+  padding: 0;
+  list-style: none;
 }
 
-.timelineCardContent {
+.entry {
+  position: relative;
+  padding-left: var(--gutter);
+}
+
+.entry:not(:last-child) {
+  padding-bottom: 1rem;
+}
+
+.entry::before {
+  content: '';
+  position: absolute;
+  left: var(--rail-x);
+  top: 1.75rem;
+  width: 11px;
+  height: 11px;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background: var(--ifm-card-background-color);
+  border: 2px solid var(--ifm-color-emphasis-300);
+  transition: border-color 160ms ease;
+}
+
+.entry:has(.cardLink:hover)::before {
+  border-color: var(--ifm-color-primary);
+}
+
+.card {
+  width: 100%;
+}
+
+.cardLink {
+  display: block;
+  width: 100%;
+}
+
+.cardLink:hover .entryArrow,
+.cardLink:focus-visible .entryArrow {
+  color: var(--ifm-color-primary);
+  transform: translate(2px, -2px);
+}
+
+.entryHead {
   display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 0.4rem;
 }
 
-.timelineCardHeading {
-  margin: 0;
-  color: var(--ifm-color-emphasis-800);
-  font-size: 1.25rem;
+.entryMonth {
+  font-size: 0.8rem;
   font-weight: 600;
-  line-height: 1.375;
-}
-
-:global(html[data-theme='dark']) .timelineCardHeading {
-  color: var(--ifm-color-emphasis-900);
-}
-
-@media (max-width: 768px) {
-  .timelineCardHeading {
-    font-size: 1.1rem !important;
-  }
-}
-
-.timelineCardDescription {
-  margin: 0;
+  letter-spacing: 0.02em;
+  font-variant-numeric: tabular-nums;
   color: var(--ifm-color-emphasis-600);
-  font-size: 1rem;
-  line-height: 1.5;
 }
 
-:global(html[data-theme='dark']) .timelineCardDescription {
-  color: var(--ifm-color-emphasis-700);
+.entryArrow {
+  flex-shrink: 0;
+  width: 1rem;
+  height: 1rem;
+  color: var(--ifm-color-emphasis-500);
+  transition:
+    color 160ms ease,
+    transform 160ms ease;
 }
 
-@media (max-width: 768px) {
-  .timelineCardDescription {
-    font-size: 0.9rem !important;
-  }
-}
-
-.timelineCardSurface {
-  width: 100%;
-}
-
-.timelineCardLink {
-  width: 100%;
-}
-
-.wrapper {
-  --tt-motion-duration: 0.3s;
-  --tt-motion-ease: cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  width: 100%;
-}
-
-.wrapper :global(.react-chrono-tree) {
-  font-family: var(--ifm-font-family-base) !important;
-  background: transparent !important;
-  padding: 2rem 1rem !important;
-  max-width: 100% !important;
+.entryTitle {
+  margin: 0 0 0.3rem;
+  font-size: 1.05rem;
+  font-weight: 600;
+  line-height: 1.45;
+  letter-spacing: -0.01em;
+  color: var(--ifm-color-emphasis-900);
+  overflow-wrap: break-word;
 }
 
 @media (max-width: 768px) {
-  .wrapper :global(.react-chrono-tree) {
-    padding: 1rem 0.5rem !important;
+  .entryTitle {
+    font-size: 1rem;
   }
 }
 
-.wrapper :global(.travel-timeline-card) {
-  border-radius: 0 !important;
-  box-shadow: none !important;
-  border: 0 !important;
-  background: transparent !important;
-  padding: 0 !important;
-  position: relative !important;
-}
-
-@media (max-width: 768px) {
-  .wrapper :global(.travel-timeline-card) {
-    margin: 0.5rem 0 !important;
-  }
-}
-
-.wrapper :global(.travel-timeline-card-text) {
-  width: 100% !important;
-  margin: 0 !important;
-  padding: 0 !important;
-  align-items: stretch !important;
-  overflow: visible !important;
-  max-height: none !important;
-}
-
-.wrapper :global(.travel-timeline-title) {
-  background: var(--ifm-color-primary) !important;
-  color: white !important;
-  font-weight: 500 !important;
-  font-size: 0.9rem !important;
-  padding: 0.4rem 0.8rem !important;
-  border-radius: 999px !important;
-  text-transform: none !important;
-  letter-spacing: normal !important;
-  box-shadow: none !important;
-  display: inline-block !important;
-  line-height: 1.2 !important;
-}
-
-@media (max-width: 768px) {
-  .wrapper :global(.travel-timeline-title) {
-    font-size: 0.8rem !important;
-    padding: 0.3rem 0.6rem !important;
-  }
-}
-
-.wrapper :global(.react-chrono-tree-branch) {
-  border-color: var(--ifm-color-emphasis-300) !important;
-  border-width: 2px !important;
-}
-
-:global(html[data-theme='dark']) .wrapper :global(.react-chrono-tree-branch) {
-  border-color: var(--ifm-color-emphasis-400) !important;
-}
-
-.wrapper :global(.timeline-vertical-circle) {
-  background: var(--ifm-color-primary) !important;
-  border: 2px solid var(--ifm-background-color) !important;
-  box-shadow: none !important;
-  border-radius: 50% !important;
-  position: relative !important;
-  margin: auto !important;
-}
-
-@media (max-width: 768px) {
-  .wrapper :global(.timeline-vertical-circle) {
-    border-width: 1px !important;
-  }
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(8px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.wrapper :global(.react-chrono-tree),
-.wrapper :global(.travel-timeline-card),
-.wrapper :global(.react-chrono-tree-branch),
-.wrapper :global(.timeline-vertical-circle),
-.wrapper :global(.travel-timeline-title) {
-  animation: fadeIn var(--tt-motion-duration) ease-out;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .wrapper :global(.react-chrono-tree),
-  .wrapper :global(.travel-timeline-card),
-  .wrapper :global(.react-chrono-tree-branch),
-  .wrapper :global(.timeline-vertical-circle),
-  .wrapper :global(.travel-timeline-title) {
-    animation: none;
-  }
-
-  .wrapper :global(.travel-timeline-card) {
-    transition: none;
-  }
+.entryCities {
+  margin: 0;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: var(--ifm-color-emphasis-600);
+  overflow-wrap: break-word;
 }
