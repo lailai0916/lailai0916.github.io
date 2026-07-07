@@ -110,7 +110,7 @@ export default function Home(): ReactNode {
         id: 'pages.home.tag.china',
         message: 'China',
       }),
-      icon: 'lucide:map-pin',
+      icon: 'lucide:flag',
     },
     {
       label: translate({
