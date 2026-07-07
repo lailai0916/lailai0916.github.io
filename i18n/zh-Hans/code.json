@@ -725,6 +725,9 @@
   "blog.sidebar.toc.title": {
     "message": "目录"
   },
+  "blog.sidebar.tags.title": {
+    "message": "热门标签"
+  },
   "blog.sidebar.feed.rss": {
     "message": "RSS 订阅"
   },
@@ -733,9 +736,6 @@
   },
   "blog.sidebar.feed.json": {
     "message": "JSON 订阅"
-  },
-  "blog.sidebar.tags.title": {
-    "message": "热门标签"
   },
   "theme.NotFound.title": {
     "message": "找不到页面",

@@ -267,6 +267,39 @@ function TocCard({
   );
 }
 
+function TagsCard() {
+  const { i18n } = useDocusaurusContext();
+  const { currentLocale, defaultLocale } = i18n;
+  const localeKey = currentLocale === defaultLocale ? undefined : currentLocale;
+  const tags = useMemo(
+    () =>
+      [...loadOfficialTags(localeKey)]
+        .sort((a, b) => b.count - a.count)
+        .slice(0, 8)
+        .map(
+          (tag): PopularTagItem => ({
+            to: tag.permalink,
+            label: tag.label,
+            count: tag.count,
+          })
+        ),
+    [localeKey]
+  );
+
+  return (
+    <TitleCard
+      size="plain"
+      padding="1rem"
+      title={translate({
+        id: 'blog.sidebar.tags.title',
+        message: 'Popular Tags',
+      })}
+    >
+      <TagChipList items={tags} />
+    </TitleCard>
+  );
+}
+
 function FeedCard() {
   const feeds = [
     {
@@ -322,39 +355,6 @@ function FeedCard() {
   );
 }
 
-function TagsCard() {
-  const { i18n } = useDocusaurusContext();
-  const { currentLocale, defaultLocale } = i18n;
-  const localeKey = currentLocale === defaultLocale ? undefined : currentLocale;
-  const tags = useMemo(
-    () =>
-      [...loadOfficialTags(localeKey)]
-        .sort((a, b) => b.count - a.count)
-        .slice(0, 8)
-        .map(
-          (tag): PopularTagItem => ({
-            to: tag.permalink,
-            label: tag.label,
-            count: tag.count,
-          })
-        ),
-    [localeKey]
-  );
-
-  return (
-    <TitleCard
-      size="plain"
-      padding="1rem"
-      title={translate({
-        id: 'blog.sidebar.tags.title',
-        message: 'Popular Tags',
-      })}
-    >
-      <TagChipList items={tags} />
-    </TitleCard>
-  );
-}
-
 type Props = {
   title?: string;
   description?: string;
@@ -376,8 +376,8 @@ function ScaffoldWithProgress({ title, description, children, toc }: Props) {
           ) : (
             <>
               <CalendarCard />
-              <FeedCard />
               <TagsCard />
+              <FeedCard />
             </>
           )}
         </aside>
