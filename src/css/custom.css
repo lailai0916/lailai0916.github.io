@@ -113,6 +113,12 @@ code {
   tab-size: 4;
 }
 
+/* Brand the text-selection highlight — a soft primary tint that stays legible
+   in both themes and never overrides the text color. */
+::selection {
+  background: color-mix(in srgb, var(--ifm-color-primary) 22%, transparent);
+}
+
 html,
 .main-wrapper,
 article,

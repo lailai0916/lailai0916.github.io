@@ -137,6 +137,13 @@ export default function CopyMarkdownButton({ source }: { source: string }) {
       )}
     >
       <Icon icon={icon} width={16} height={16} />
+      <span className={styles.status} role="status" aria-live="polite">
+        {state === 'copied'
+          ? COPIED_LABEL
+          : state === 'error'
+            ? COPY_ERROR_LABEL
+            : ''}
+      </span>
     </button>
   );
 }

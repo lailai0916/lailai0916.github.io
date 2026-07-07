@@ -164,6 +164,7 @@
   padding: 0;
   height: calc(2 * 1.8rem);
   overflow-y: auto;
+  overscroll-behavior: contain;
   scrollbar-width: thin;
 
   display: flex;
