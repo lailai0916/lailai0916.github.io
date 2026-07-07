@@ -82,7 +82,7 @@ These are project rules, not general advice — follow them:
 - **Verify before committing.** Run `npm run check` and ensure it exits cleanly. For UI changes, also confirm in the `npm start` dev server.
 - **Small changes go straight to `main`.** Do not create a feature branch or open a PR for minor edits (copy tweaks, single-component refactors, style fixes, etc.) — commit directly on `main`. Reserve branches and PRs for substantial multi-file work the maintainer explicitly asks to be reviewed.
 
-Prettier config: `printWidth: 80`, `singleQuote: true`, `trailingComma: 'es5'`. TypeScript is `strict`.
+Prettier config: `printWidth: 100`, `singleQuote: true`, `trailingComma: 'es5'`. TypeScript is `strict`. `.prettierignore` keeps Prettier out of the lailai.skill submodule (its own repo) and `static/json/` (generated data blobs).
 
 ## Keep `.claude/` current
 
