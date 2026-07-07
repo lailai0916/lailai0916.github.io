@@ -45,9 +45,7 @@ export default function CookieConsent() {
         aria-labelledby="cookie-consent-title"
       >
         <h2 id="cookie-consent-title" className={styles.title}>
-          <Translate id="components.cookieConsent.title">
-            Cookie Settings
-          </Translate>
+          <Translate id="components.cookieConsent.title">Cookie Settings</Translate>
         </h2>
         <p className={styles.description}>
           <Translate
@@ -55,9 +53,7 @@ export default function CookieConsent() {
             values={{
               privacyPolicy: (
                 <Link to="/privacy" className={styles.link}>
-                  <Translate id="components.cookieConsent.privacyPolicy">
-                    Privacy Policy
-                  </Translate>
+                  <Translate id="components.cookieConsent.privacyPolicy">Privacy Policy</Translate>
                 </Link>
               ),
             }}
@@ -68,20 +64,10 @@ export default function CookieConsent() {
           </Translate>
         </p>
         <div className={styles.actions}>
-          <Button
-            variant="secondary"
-            rounded
-            fullWidth
-            onClick={() => handleChoice('rejected')}
-          >
+          <Button variant="secondary" rounded fullWidth onClick={() => handleChoice('rejected')}>
             <Translate id="components.cookieConsent.reject">Reject</Translate>
           </Button>
-          <Button
-            variant="primary"
-            rounded
-            fullWidth
-            onClick={() => handleChoice('accepted')}
-          >
+          <Button variant="primary" rounded fullWidth onClick={() => handleChoice('accepted')}>
             <Translate id="components.cookieConsent.accept">Accept</Translate>
           </Button>
         </div>

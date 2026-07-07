@@ -6,11 +6,7 @@ interface SwitchProps {
   'aria-label'?: string;
 }
 
-export default function Switch({
-  checked,
-  onChange,
-  'aria-label': ariaLabel,
-}: SwitchProps) {
+export default function Switch({ checked, onChange, 'aria-label': ariaLabel }: SwitchProps) {
   return (
     <label className={styles.switch}>
       <input

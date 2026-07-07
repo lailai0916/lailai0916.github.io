@@ -62,10 +62,7 @@ function stripGitHubEmojiShortcodes(text?: string | null) {
   return text.replace(/:[a-zA-Z0-9_]+:/g, '').trim();
 }
 
-async function defaultFetcher(
-  repo: string,
-  signal: AbortSignal
-): Promise<GitHubRepoData> {
+async function defaultFetcher(repo: string, signal: AbortSignal): Promise<GitHubRepoData> {
   const res = await fetch(`https://api.github.com/repos/${repo}`, {
     signal,
     referrerPolicy: 'no-referrer',
@@ -75,14 +72,7 @@ async function defaultFetcher(
 }
 
 export default function GitHub(props: GitHubProps) {
-  const {
-    repo,
-    className,
-    style,
-    target = '_blank',
-    showLanguage = true,
-    fetcher,
-  } = props;
+  const { repo, className, style, target = '_blank', showLanguage = true, fetcher } = props;
 
   const [data, setData] = useState<GitHubRepoData | null>(null);
   const [error, setError] = useState<string | null>(null);
@@ -114,8 +104,7 @@ export default function GitHub(props: GitHubProps) {
   }, [owner, repoName, fetcher]);
 
   const href = `https://github.com/${owner}/${repoName}`;
-  const description =
-    stripGitHubEmojiShortcodes(data?.description) || 'Description not set';
+  const description = stripGitHubEmojiShortcodes(data?.description) || 'Description not set';
   const stars = formatCompact(data?.stargazers_count ?? 0);
   const forks = formatCompact(data?.forks ?? 0);
   const licenseId = data?.license?.spdx_id;
@@ -130,12 +119,7 @@ export default function GitHub(props: GitHubProps) {
       rel={target === '_blank' ? 'noopener noreferrer' : undefined}
       style={style}
       wrapperClassName={styles.wrapper}
-      className={clsx(
-        styles.card,
-        loading && styles.loading,
-        error && styles.error,
-        className
-      )}
+      className={clsx(styles.card, loading && styles.loading, error && styles.error, className)}
       aria-label={`Open ${owner}/${repoName} on GitHub`}
     >
       <div className={styles.titleBar}>
@@ -143,9 +127,7 @@ export default function GitHub(props: GitHubProps) {
           <div className={styles.owner}>
             <div
               className={styles.avatar}
-              style={
-                avatarUrl ? { backgroundImage: `url(${avatarUrl})` } : undefined
-              }
+              style={avatarUrl ? { backgroundImage: `url(${avatarUrl})` } : undefined}
               aria-hidden="true"
             />
             <div className={styles.user}>{owner}</div>

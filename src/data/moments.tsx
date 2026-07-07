@@ -16,23 +16,20 @@ const STATIC_MOMENTS: MomentItem[] = [
     date: '2026-06-30T18:55:00+08:00',
     share: {
       url: 'https://www.reddit.com/r/ClaudeAI/comments/1ujila1/comment/ouo17nd/',
-      title:
-        'Anthropic embedded spyware in Claude Code — and attempted to hide it from you',
+      title: 'Anthropic embedded spyware in Claude Code — and attempted to hide it from you',
       description: 'Comment',
     },
     images: ['https://cloud.lailai.one/f/MEQfy/claude_suspended.png'],
   },
   {
     date: '2026-06-26T18:04:00+08:00',
-    content:
-      '「现在是负摩尔定律时代，每过 18 个月，价格翻倍，性能和容量减半。」',
+    content: '「现在是负摩尔定律时代，每过 18 个月，价格翻倍，性能和容量减半。」',
   },
   {
     date: '2026-06-13T16:55:00+08:00',
     share: {
       url: 'https://www.anthropic.com/news/fable-mythos-access',
-      title:
-        'Statement on the US government directive to suspend access to Fable 5 and Mythos 5',
+      title: 'Statement on the US government directive to suspend access to Fable 5 and Mythos 5',
       description: 'Announcements',
     },
   },
@@ -149,7 +146,6 @@ function getBlogMoments(): MomentItem[] {
     .filter((x): x is MomentItem => x !== null);
 }
 
-export const MOMENT_LIST: MomentItem[] = [
-  ...STATIC_MOMENTS,
-  ...getBlogMoments(),
-].sort((a, b) => (a.date < b.date ? 1 : -1));
+export const MOMENT_LIST: MomentItem[] = [...STATIC_MOMENTS, ...getBlogMoments()].sort((a, b) =>
+  a.date < b.date ? 1 : -1
+);

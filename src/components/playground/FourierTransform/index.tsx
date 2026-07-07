@@ -1,9 +1,4 @@
-import {
-  useRef,
-  useEffect,
-  useState,
-  type PointerEvent as ReactPointerEvent,
-} from 'react';
+import { useRef, useEffect, useState, type PointerEvent as ReactPointerEvent } from 'react';
 import { useColorMode } from '@docusaurus/theme-common';
 import { translate } from '@docusaurus/Translate';
 import Button from '@site/src/components/laikit/Button';
@@ -117,8 +112,7 @@ export default function FourierTransform({ bare = false }: { bare?: boolean }) {
   // Theme colors live in a ref so theme changes don't restart the animation effect.
   const themeRef = useRef({
     primary: '',
-    colors:
-      THEME_COLORS.light as (typeof THEME_COLORS)[keyof typeof THEME_COLORS],
+    colors: THEME_COLORS.light as (typeof THEME_COLORS)[keyof typeof THEME_COLORS],
   });
 
   const initDefault = () => {
@@ -134,12 +128,7 @@ export default function FourierTransform({ bare = false }: { bare?: boolean }) {
         x: 16 * Math.sin(t) ** 3 * scale,
         // Negate y so the heart points up on screen (canvas y is inverted).
         y:
-          -(
-            13 * Math.cos(t) -
-            5 * Math.cos(2 * t) -
-            2 * Math.cos(3 * t) -
-            Math.cos(4 * t)
-          ) * scale,
+          -(13 * Math.cos(t) - 5 * Math.cos(2 * t) - 2 * Math.cos(3 * t) - Math.cos(4 * t)) * scale,
       });
     }
     stateRef.current.baseDrawing = centerPoints(pts);
@@ -305,10 +294,7 @@ export default function FourierTransform({ bare = false }: { bare?: boolean }) {
 
       if (state.currentState === STATE.DRAWING) {
         drawPath(state.drawing, 0.8);
-      } else if (
-        state.currentState === STATE.PLAYING &&
-        state.fourierX.length > 0
-      ) {
+      } else if (state.currentState === STATE.PLAYING && state.fourierX.length > 0) {
         if (state.drawing.length > 1) {
           ctx.strokeStyle = primary;
           ctx.globalAlpha = 0.2;
@@ -389,9 +375,7 @@ export default function FourierTransform({ bare = false }: { bare?: boolean }) {
     // event itself when no extra samples are available.
     const native = e.nativeEvent;
     const coalesced =
-      typeof native.getCoalescedEvents === 'function'
-        ? native.getCoalescedEvents()
-        : [];
+      typeof native.getCoalescedEvents === 'function' ? native.getCoalescedEvents() : [];
     const samples: { clientX: number; clientY: number }[] =
       coalesced.length > 0 ? coalesced : [native];
 
@@ -399,10 +383,7 @@ export default function FourierTransform({ bare = false }: { bare?: boolean }) {
       const point = getCanvasCoords(sample.clientX, sample.clientY);
       if (!point) continue;
       const lastPoint = state.drawing[state.drawing.length - 1];
-      if (
-        !lastPoint ||
-        Math.hypot(point.x - lastPoint.x, point.y - lastPoint.y) >= 1
-      ) {
+      if (!lastPoint || Math.hypot(point.x - lastPoint.x, point.y - lastPoint.y) >= 1) {
         state.drawing.push(point);
       }
     }
@@ -434,18 +415,10 @@ export default function FourierTransform({ bare = false }: { bare?: boolean }) {
         />
       </Surface>
       <div className={styles.controls}>
-        <Button
-          variant="secondary"
-          onClick={initDefault}
-          aria-label={RESET_LABEL}
-        >
+        <Button variant="secondary" onClick={initDefault} aria-label={RESET_LABEL}>
           {RESET_LABEL}
         </Button>
-        <Button
-          variant="secondary"
-          onClick={handleClear}
-          aria-label={CLEAR_LABEL}
-        >
+        <Button variant="secondary" onClick={handleClear} aria-label={CLEAR_LABEL}>
           {CLEAR_LABEL}
         </Button>
       </div>

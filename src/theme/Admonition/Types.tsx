@@ -5,9 +5,7 @@ const AdmonitionTypeInfo = DefaultAdmonitionTypes.info;
 
 const admonitionTypes = {
   ...DefaultAdmonitionTypes,
-  example: (props: AdmonitionTypeInfoProps) => (
-    <AdmonitionTypeInfo title="Example" {...props} />
-  ),
+  example: (props: AdmonitionTypeInfoProps) => <AdmonitionTypeInfo title="Example" {...props} />,
 };
 
 export default admonitionTypes;

@@ -51,9 +51,7 @@ function writeSessionCache(data: ShareSession): void {
 }
 
 async function fetchShareSession(): Promise<ShareSession> {
-  const res = await fetch(
-    `${UMAMI_BASE}/api/share/${encodeURIComponent(UMAMI_SHARE_SLUG)}`
-  );
+  const res = await fetch(`${UMAMI_BASE}/api/share/${encodeURIComponent(UMAMI_SHARE_SLUG)}`);
   if (!res.ok) {
     throw new Error(`Umami share session request failed: ${res.status}`);
   }

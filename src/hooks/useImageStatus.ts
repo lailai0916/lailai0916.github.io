@@ -14,9 +14,7 @@ export type ImageStatus = 'loading' | 'loaded' | 'error';
  */
 export function useImageStatus(image?: string) {
   const imgRef = useRef<HTMLImageElement>(null);
-  const [status, setStatus] = useState<ImageStatus>(
-    image ? 'loading' : 'error'
-  );
+  const [status, setStatus] = useState<ImageStatus>(image ? 'loading' : 'error');
 
   useEffect(() => {
     if (!image) {

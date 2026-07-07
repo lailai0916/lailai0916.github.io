@@ -71,8 +71,7 @@
 .trackFill {
   display: block;
   width: calc(
-    var(--slider-thumb-size) / 2 + var(--slider-ratio) *
-      (100% - var(--slider-thumb-size))
+    var(--slider-thumb-size) / 2 + var(--slider-ratio) * (100% - var(--slider-thumb-size))
   );
   height: 100%;
   border-radius: inherit;
@@ -111,9 +110,7 @@
 .input::-webkit-slider-thumb {
   width: var(--slider-thumb-size);
   height: var(--slider-thumb-height);
-  margin-top: calc(
-    (var(--slider-track-height) - var(--slider-thumb-height)) / 2
-  );
+  margin-top: calc((var(--slider-track-height) - var(--slider-thumb-height)) / 2);
   border: 0;
   border-radius: 999px;
   background: var(--slider-thumb-bg);

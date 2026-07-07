@@ -1,8 +1,5 @@
 import type { ReactNode } from 'react';
-import {
-  useDocById,
-  findFirstSidebarItemLink,
-} from '@docusaurus/plugin-content-docs/client';
+import { useDocById, findFirstSidebarItemLink } from '@docusaurus/plugin-content-docs/client';
 import { useDocCardDescriptionCategoryItemsPlural } from '@docusaurus/theme-common/internal';
 import isInternalUrl from '@docusaurus/isInternalUrl';
 import type { Props } from '@theme/DocCard';
@@ -34,9 +31,7 @@ function CardCategory({ item }: { item: CategoryItem }): ReactNode {
 
 function CardLink({ item }: { item: LinkItem }): ReactNode {
   const doc = useDocById(item.docId ?? undefined);
-  const icon = isInternalUrl(item.href)
-    ? 'lucide:file-text'
-    : 'lucide:external-link';
+  const icon = isInternalUrl(item.href) ? 'lucide:file-text' : 'lucide:external-link';
   return (
     <LinkCard
       href={item.href}

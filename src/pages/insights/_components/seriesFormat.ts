@@ -28,23 +28,14 @@ function formatYMD(d: Date, locale: string): string {
   });
 }
 
-function formatTick(
-  iso: string,
-  unit: SeriesUnit,
-  spanDays: number,
-  locale: string
-): string {
+function formatTick(iso: string, unit: SeriesUnit, spanDays: number, locale: string): string {
   const d = parseDate(iso);
   if (Number.isNaN(d.getTime())) return iso;
   if (unit === 'hour' && spanDays <= 1.5) return formatHM(d, locale);
   return formatMD(d, locale);
 }
 
-function formatTooltipDate(
-  iso: string,
-  unit: SeriesUnit,
-  locale: string
-): string {
+function formatTooltipDate(iso: string, unit: SeriesUnit, locale: string): string {
   const d = parseDate(iso);
   if (Number.isNaN(d.getTime())) return iso;
   if (unit === 'hour') {
@@ -82,22 +73,16 @@ export function toPageviewsData(
 ): ChartDatum[] {
   const lastIndex = series.length - 1;
   const tickIdxs =
-    series.length <= 3
-      ? series.map((_, i) => i)
-      : [0, Math.floor(lastIndex / 2), lastIndex];
+    series.length <= 3 ? series.map((_, i) => i) : [0, Math.floor(lastIndex / 2), lastIndex];
   const spanDays =
     series.length > 1
-      ? (parseDate(series[lastIndex].x).getTime() -
-          parseDate(series[0].x).getTime()) /
-        86400000
+      ? (parseDate(series[lastIndex].x).getTime() - parseDate(series[0].x).getTime()) / 86400000
       : 0;
 
   return series.map((p, i) => ({
     key: p.x,
     value: p.y,
     tooltipLabel: formatTooltipDate(p.x, unit, locale),
-    axisLabel: tickIdxs.includes(i)
-      ? formatTick(p.x, unit, spanDays, locale)
-      : undefined,
+    axisLabel: tickIdxs.includes(i) ? formatTick(p.x, unit, spanDays, locale) : undefined,
   }));
 }

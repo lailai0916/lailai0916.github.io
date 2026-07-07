@@ -22,8 +22,7 @@ interface PostHeaderProps {
 
 export function PostHeader({ metadata, frontMatter }: PostHeaderProps) {
   const lightImage = frontMatter.image as string | undefined;
-  const darkImage =
-    (frontMatter.image_dark as string | undefined) ?? lightImage;
+  const darkImage = (frontMatter.image_dark as string | undefined) ?? lightImage;
   const themed = !!darkImage && darkImage !== lightImage;
 
   const metaItems = usePostMetaItems({
@@ -61,12 +60,7 @@ export function PostHeader({ metadata, frontMatter }: PostHeaderProps) {
               />
             </>
           ) : (
-            <img
-              src={lightImage}
-              alt=""
-              className={styles.articleCover}
-              loading="eager"
-            />
+            <img src={lightImage} alt="" className={styles.articleCover} loading="eager" />
           )}
         </div>
       )}

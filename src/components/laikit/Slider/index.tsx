@@ -30,8 +30,7 @@ export default function Slider({
   'aria-label': ariaLabel,
 }: SliderProps) {
   const ratio = max === min ? 0 : (value - min) / (max - min);
-  const resolvedAriaLabel =
-    ariaLabel ?? (typeof label === 'string' ? label : undefined);
+  const resolvedAriaLabel = ariaLabel ?? (typeof label === 'string' ? label : undefined);
 
   const handleCommit = (e: SyntheticEvent<HTMLInputElement>) => {
     if (!onCommit) return;
@@ -41,29 +40,16 @@ export default function Slider({
   return (
     <div className={clsx(styles.slider, className)}>
       {(label || valueLabel) && (
-        <div
-          className={clsx(
-            styles.head,
-            labelVariant === 'math' && styles.headMath
-          )}
-        >
+        <div className={clsx(styles.head, labelVariant === 'math' && styles.headMath)}>
           {label && (
-            <span
-              className={clsx(
-                styles.label,
-                labelVariant === 'math' && styles.labelMath
-              )}
-            >
+            <span className={clsx(styles.label, labelVariant === 'math' && styles.labelMath)}>
               {label}
             </span>
           )}
           {valueLabel && <span className={styles.value}>{valueLabel}</span>}
         </div>
       )}
-      <div
-        className={styles.control}
-        style={{ '--slider-ratio': ratio } as CSSProperties}
-      >
+      <div className={styles.control} style={{ '--slider-ratio': ratio } as CSSProperties}>
         <div className={styles.track} aria-hidden="true">
           <span className={styles.trackFill} />
         </div>

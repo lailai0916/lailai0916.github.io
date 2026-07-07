@@ -1,11 +1,7 @@
 import { useEffect, useState, type ReactNode } from 'react';
 import Layout from '@theme/Layout';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
-import {
-  PageTitle,
-  PageHeader,
-  PageContent,
-} from '@site/src/components/laikit/Page';
+import { PageTitle, PageHeader, PageContent } from '@site/src/components/laikit/Page';
 import DataCard from '@site/src/components/laikit/DataCard';
 import Quote from '@site/src/components/laikit/Quote';
 import TravelTimeline from '@site/src/pages/travel/_components/Timeline';

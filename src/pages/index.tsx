@@ -206,16 +206,9 @@ export default function Home(): ReactNode {
         <div className={styles.bento}>
           <Link to="/about" className={styles.cardMainLink}>
             <Card className={styles.cardMain} padding="1.75rem">
-              <Icon
-                icon="lucide:arrow-up-right"
-                className={styles.cardMainArrow}
-              />
+              <Icon icon="lucide:arrow-up-right" className={styles.cardMainArrow} />
               <div className={styles.cardMainInner}>
-                <img
-                  src={useBaseUrl('/img/logo.svg')}
-                  alt="lailai"
-                  className={styles.avatar}
-                />
+                <img src={useBaseUrl('/img/logo.svg')} alt="lailai" className={styles.avatar} />
                 <div className={styles.intro}>
                   <h1 className={styles.name}>lailai</h1>
                   <p className={styles.role}>
@@ -243,10 +236,7 @@ export default function Home(): ReactNode {
             >
               <Icon icon={item.icon} className={styles.cardNavIcon} />
               <span className={styles.cardNavTitle}>{item.title}</span>
-              <Icon
-                icon="lucide:arrow-up-right"
-                className={styles.cardNavArrow}
-              />
+              <Icon icon="lucide:arrow-up-right" className={styles.cardNavArrow} />
             </Card>
           ))}
           <Card className={styles.cardInfo} padding="1.25rem">

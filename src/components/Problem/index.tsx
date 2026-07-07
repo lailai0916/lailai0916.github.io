@@ -98,11 +98,7 @@ function ProblemPanel({ tabs }: { tabs: Tab[] }) {
             }
             onClick={() => setActive((cur) => (cur === null ? 0 : null))}
           >
-            <svg
-              className={styles.chevron}
-              viewBox="0 0 20 20"
-              aria-hidden="true"
-            >
+            <svg className={styles.chevron} viewBox="0 0 20 20" aria-hidden="true">
               <path
                 d="M5 8l5 5 5-5"
                 fill="none"
@@ -139,9 +135,7 @@ function ProblemPanel({ tabs }: { tabs: Tab[] }) {
 export default function Problem({ id }: { id: string }) {
   let mdxModule: ProblemMdxModule;
   try {
-    mdxModule = require(
-      `@site/docs/contest/problems/${id}/index.mdx`
-    ) as ProblemMdxModule;
+    mdxModule = require(`@site/docs/contest/problems/${id}/index.mdx`) as ProblemMdxModule;
   } catch {
     return (
       <Admonition type="warning">

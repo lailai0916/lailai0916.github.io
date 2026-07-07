@@ -46,10 +46,7 @@ function staircase(): number[] {
 }
 
 function randomHeaps(): number[] {
-  return Array.from(
-    { length: ROWS },
-    () => 1 + Math.floor(Math.random() * COLS)
-  );
+  return Array.from({ length: ROWS }, () => 1 + Math.floor(Math.random() * COLS));
 }
 
 // Optimal play: drive the Nim-sum (XOR of heap sizes) to zero when possible.
@@ -83,9 +80,7 @@ export default function NimGame({ bare = false }: { bare?: boolean }) {
   const [heaps, setHeaps] = useState<number[]>(staircase);
   const [turn, setTurn] = useState<Turn>('you');
   const [winner, setWinner] = useState<Turn | null>(null);
-  const [hover, setHover] = useState<{ heap: number; index: number } | null>(
-    null
-  );
+  const [hover, setHover] = useState<{ heap: number; index: number } | null>(null);
   const [showTip, setShowTip] = useState(false);
 
   const boardRef = useRef<HTMLDivElement>(null);
@@ -179,12 +174,7 @@ export default function NimGame({ bare = false }: { bare?: boolean }) {
   return (
     <div className={styles.container}>
       <Surface bare={bare} className={styles.cardSurface}>
-        <div
-          className={clsx(
-            styles.status,
-            turn === 'over' && winner === 'you' && styles.win
-          )}
-        >
+        <div className={clsx(styles.status, turn === 'over' && winner === 'you' && styles.win)}>
           {status}
         </div>
         <div ref={boardRef} className={styles.board}>
@@ -204,10 +194,7 @@ export default function NimGame({ bare = false }: { bare?: boolean }) {
               // cell, so the surviving stones never shift position.
               if (si >= heaps[hi]) return <span key={idx} aria-hidden="true" />;
               const willRemove =
-                turn === 'you' &&
-                hover != null &&
-                hover.heap === hi &&
-                si >= hover.index;
+                turn === 'you' && hover != null && hover.heap === hi && si >= hover.index;
               const recommend = advice != null && advice.has(`${hi}-${si}`);
               return (
                 <button

@@ -8,11 +8,7 @@ import DocCard from '@theme/DocCard';
 import type { Props } from '@theme/DocCardList';
 import styles from './styles.module.css';
 
-function CurrentSidebarSiblings({
-  className,
-}: {
-  className?: string;
-}): ReactNode {
+function CurrentSidebarSiblings({ className }: { className?: string }): ReactNode {
   const items = useCurrentSidebarSiblings();
   return <DocCardList items={items} className={className} />;
 }

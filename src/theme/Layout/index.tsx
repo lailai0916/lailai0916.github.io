@@ -1,11 +1,7 @@
 import { type ReactNode } from 'react';
 import clsx from 'clsx';
 import ErrorBoundary from '@docusaurus/ErrorBoundary';
-import {
-  PageMetadata,
-  SkipToContentFallbackId,
-  ThemeClassNames,
-} from '@docusaurus/theme-common';
+import { PageMetadata, SkipToContentFallbackId, ThemeClassNames } from '@docusaurus/theme-common';
 import SkipToContent from '@theme/SkipToContent';
 import AnnouncementBar from '@theme/AnnouncementBar';
 import Navbar from '@theme/Navbar';
@@ -30,11 +26,7 @@ export default function Layout(props: Props): ReactNode {
 
   return (
     <div
-      className={clsx(
-        styles.layout,
-        debugMode && styles.debugMode,
-        grayMode && styles.grayMode
-      )}
+      className={clsx(styles.layout, debugMode && styles.debugMode, grayMode && styles.grayMode)}
     >
       <LayoutProvider>
         <PageMetadata title={title} description={description} />
@@ -54,9 +46,7 @@ export default function Layout(props: Props): ReactNode {
             wrapperClassName
           )}
         >
-          <ErrorBoundary
-            fallback={(params) => <ErrorPageContent {...params} />}
-          >
+          <ErrorBoundary fallback={(params) => <ErrorPageContent {...params} />}>
             {children}
           </ErrorBoundary>
         </div>

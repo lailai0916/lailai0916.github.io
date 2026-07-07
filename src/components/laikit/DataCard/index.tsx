@@ -11,9 +11,7 @@ interface DataCardProps {
   format?: (value: number) => string;
 }
 
-export default function DataCard(
-  props: DataCardProps | { items: DataCardProps[] }
-) {
+export default function DataCard(props: DataCardProps | { items: DataCardProps[] }) {
   const { selectMessage } = usePluralForm();
 
   if ('items' in props) {

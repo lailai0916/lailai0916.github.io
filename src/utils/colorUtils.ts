@@ -109,8 +109,7 @@ export function updateDOMColors(
   // The rule that looks the most like definition for custom theme colors
   const ruleToDelete = rules.findIndex(
     (rule) =>
-      rule.selectorText ===
-        (isDarkTheme ? '[data-theme="dark"]' : '[data-theme="light"]') &&
+      rule.selectorText === (isDarkTheme ? '[data-theme="dark"]' : '[data-theme="light"]') &&
       Array.from(rule.style).includes('--ifm-color-primary') &&
       rule.style.length < 15
   );
@@ -122,17 +121,13 @@ export function updateDOMColors(
 
   // Only emit a background override when it actually differs from the theme default.
   const backgroundRule =
-    background !== defaultBackground
-      ? `\n  --ifm-background-color: ${background};`
-      : '';
+    background !== defaultBackground ? `\n  --ifm-background-color: ${background};` : '';
 
   // Keep --ifm-color-primary-rgb in sync so rgba() consumers follow the theme color.
   const rgb = Color(baseColor).rgb().array();
   const rgbRule = `\n  --ifm-color-primary-rgb: ${Math.round(rgb[0]!)}, ${Math.round(rgb[1]!)}, ${Math.round(rgb[2]!)};`;
 
-  const overrideStyle = `${
-    isDarkTheme ? '[data-theme="dark"]' : '[data-theme="light"]'
-  } {
+  const overrideStyle = `${isDarkTheme ? '[data-theme="dark"]' : '[data-theme="light"]'} {
   ${getAdjustedColors(shades, baseColor)
     .map((value) => `  ${value.variableName}: ${value.hex};`)
     .join('\n')}${rgbRule}${backgroundRule}

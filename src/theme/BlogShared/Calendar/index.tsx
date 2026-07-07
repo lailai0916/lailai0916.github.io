@@ -100,9 +100,7 @@ export default function CalendarCard() {
   const weekdayLabels = useMemo(() => {
     const fmt = new Intl.DateTimeFormat(locale, { weekday: 'narrow' });
     // 2024-01-07 is a Sunday — use it as anchor for Sunday-first ordering.
-    return Array.from({ length: 7 }, (_, i) =>
-      fmt.format(new Date(2024, 0, 7 + i))
-    );
+    return Array.from({ length: 7 }, (_, i) => fmt.format(new Date(2024, 0, 7 + i)));
   }, [locale]);
 
   const cells = useMemo<Cell[]>(() => {
@@ -265,9 +263,7 @@ export default function CalendarCard() {
             <li key={post.permalink} className={styles.calendarPostItem}>
               <Link to={post.permalink} className={styles.calendarPostLink}>
                 <span className={styles.calendarPostTitle}>{post.title}</span>
-                <span className={styles.calendarPostDate}>
-                  {formatDayLabel(post.dateKey)}
-                </span>
+                <span className={styles.calendarPostDate}>{formatDayLabel(post.dateKey)}</span>
               </Link>
             </li>
           ))}

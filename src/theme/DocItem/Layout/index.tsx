@@ -46,11 +46,7 @@ export default function DocItemLayout({ children }: Props): ReactNode {
               <DocBreadcrumbs />
               <Actions
                 source={metadata.source}
-                editUrl={
-                  typeof metadata.editUrl === 'string'
-                    ? metadata.editUrl
-                    : undefined
-                }
+                editUrl={typeof metadata.editUrl === 'string' ? metadata.editUrl : undefined}
               />
             </div>
             <DocVersionBadge />

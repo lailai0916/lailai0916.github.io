@@ -1,0 +1,5 @@
+# Submodule — its own repo, formatted on its own terms
+.claude/skills/lailai-skill
+
+# Generated data blobs — reflowing them is pure noise
+static/json

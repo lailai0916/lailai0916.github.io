@@ -56,10 +56,7 @@ export function Skills() {
         [168, 3],
         [112, 2],
       ];
-      setPerline(
-        breakpoints.find(([minWidth]) => window.innerWidth >= minWidth)?.[1] ||
-          1
-      );
+      setPerline(breakpoints.find(([minWidth]) => window.innerWidth >= minWidth)?.[1] || 1);
     };
     handleResize();
     window.addEventListener('resize', handleResize);
@@ -89,10 +86,7 @@ function DeviceImage({ src, alt }: { src: string; alt: string }) {
     if (!img) return;
     const setAr = () => {
       if (img.naturalWidth) {
-        img.style.setProperty(
-          '--ar',
-          String(img.naturalWidth / img.naturalHeight)
-        );
+        img.style.setProperty('--ar', String(img.naturalWidth / img.naturalHeight));
       }
     };
     if (img.complete) {
@@ -103,15 +97,7 @@ function DeviceImage({ src, alt }: { src: string; alt: string }) {
     return () => img.removeEventListener('load', setAr);
   }, []);
 
-  return (
-    <img
-      ref={ref}
-      src={src}
-      alt={alt}
-      className={styles.deviceImage}
-      loading="lazy"
-    />
-  );
+  return <img ref={ref} src={src} alt={alt} className={styles.deviceImage} loading="lazy" />;
 }
 
 export function Devices() {

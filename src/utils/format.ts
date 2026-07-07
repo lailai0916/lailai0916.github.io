@@ -19,8 +19,7 @@ export function formatBytes(bytes: number): string {
     n /= 1024;
     unit = 'MB';
   }
-  const formatted =
-    n >= 100 ? Math.round(n).toString() : n.toFixed(n >= 10 ? 1 : 2);
+  const formatted = n >= 100 ? Math.round(n).toString() : n.toFixed(n >= 10 ? 1 : 2);
   return `${formatted} ${unit}`;
 }
 
@@ -35,10 +34,7 @@ export function formatBeijingDate(
   });
 }
 
-export function formatLocalizedDate(
-  date: Date | string | number,
-  locale: string
-): string {
+export function formatLocalizedDate(date: Date | string | number, locale: string): string {
   return new Date(date).toLocaleDateString(locale, {
     timeZone: 'Asia/Shanghai',
     year: 'numeric',
@@ -47,10 +43,7 @@ export function formatLocalizedDate(
   });
 }
 
-export function formatLocalizedTime(
-  date: Date | string | number,
-  locale: string
-): string {
+export function formatLocalizedTime(date: Date | string | number, locale: string): string {
   return new Date(date).toLocaleTimeString(locale, {
     timeZone: 'Asia/Shanghai',
     hour: '2-digit',

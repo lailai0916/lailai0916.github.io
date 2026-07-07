@@ -81,13 +81,7 @@ function inferSource(url: string): ShareSource {
   }
 }
 
-export default function ShareCard({
-  url,
-  title,
-  description,
-  image,
-  source,
-}: ShareCardProps) {
+export default function ShareCard({ url, title, description, image, source }: ShareCardProps) {
   const { imgRef, status, onLoad, onError } = useImageStatus(image);
   const resolvedSource = source ?? inferSource(url);
   const showImage = !!image && status !== 'error';

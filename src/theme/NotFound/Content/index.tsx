@@ -25,18 +25,12 @@ export default function NotFoundContent({ className }: Props) {
           404
         </div>
         <Heading as="h1" className={styles.title}>
-          <Translate
-            id="theme.NotFound.title"
-            description="The title of the 404 page"
-          >
+          <Translate id="theme.NotFound.title" description="The title of the 404 page">
             Page Not Found
           </Translate>
         </Heading>
         <p className={styles.description}>
-          <Translate
-            id="theme.NotFound.p1"
-            description="The first paragraph of the 404 page"
-          >
+          <Translate id="theme.NotFound.p1" description="The first paragraph of the 404 page">
             We could not find what you were looking for.
           </Translate>
         </p>

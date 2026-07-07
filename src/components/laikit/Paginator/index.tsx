@@ -16,20 +16,10 @@ type Props = {
   className?: string;
 };
 
-function PaginatorCard({
-  item,
-  direction,
-}: {
-  item: PaginatorItem;
-  direction: 'left' | 'right';
-}) {
+function PaginatorCard({ item, direction }: { item: PaginatorItem; direction: 'left' | 'right' }) {
   const isRight = direction === 'right';
   const arrow = (
-    <Icon
-      icon={isRight ? 'lucide:arrow-right' : 'lucide:arrow-left'}
-      width={15}
-      height={15}
-    />
+    <Icon icon={isRight ? 'lucide:arrow-right' : 'lucide:arrow-left'} width={15} height={15} />
   );
   return (
     <Card
@@ -43,19 +33,12 @@ function PaginatorCard({
         <span>{item.label}</span>
         {isRight && arrow}
       </span>
-      <span className={clsx(styles.title, isRight && styles.titleRight)}>
-        {item.title}
-      </span>
+      <span className={clsx(styles.title, isRight && styles.titleRight)}>{item.title}</span>
     </Card>
   );
 }
 
-export default function Paginator({
-  prevItem,
-  nextItem,
-  ariaLabel,
-  className,
-}: Props) {
+export default function Paginator({ prevItem, nextItem, ariaLabel, className }: Props) {
   if (!prevItem && !nextItem) return null;
 
   return (

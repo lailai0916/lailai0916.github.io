@@ -23,8 +23,7 @@ export function useUmamiStats(range: InsightsRange) {
 
   useEffect(() => {
     const controller = new AbortController();
-    const endAt =
-      range === 1 ? Math.ceil(Date.now() / 3600_000) * 3600_000 : Date.now();
+    const endAt = range === 1 ? Math.ceil(Date.now() / 3600_000) * 3600_000 : Date.now();
     const startAt = endAt - range * 24 * 60 * 60 * 1000;
 
     (async () => {

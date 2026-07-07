@@ -6,10 +6,7 @@ import ArchiveTabs, {
   type ArchiveTagItem,
   type ArchiveAuthorItem,
 } from '../BlogShared/ArchiveTabs';
-import {
-  loadOfficialTags,
-  loadOfficialAuthors,
-} from '@site/src/utils/blogData';
+import { loadOfficialTags, loadOfficialAuthors } from '@site/src/utils/blogData';
 
 export default function BlogArchivePage(props: Props): ReactElement {
   const isClassicDesign = useExperimentalFlag('classicDesign');
@@ -29,7 +26,5 @@ export default function BlogArchivePage(props: Props): ReactElement {
       count: a.count,
     }));
 
-  return (
-    <ArchiveTabs activeTab="year" posts={posts} tags={tags} authors={authors} />
-  );
+  return <ArchiveTabs activeTab="year" posts={posts} tags={tags} authors={authors} />;
 }

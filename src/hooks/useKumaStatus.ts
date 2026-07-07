@@ -22,10 +22,7 @@ export function useKumaStatus() {
     (async () => {
       setStatus('loading');
       try {
-        const [page, heartbeats] = await Promise.all([
-          getStatusPage(),
-          getHeartbeats(),
-        ]);
+        const [page, heartbeats] = await Promise.all([getStatusPage(), getHeartbeats()]);
         if (cancelled) return;
         setData({ page, heartbeats });
         setStatus('success');

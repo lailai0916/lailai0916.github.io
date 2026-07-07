@@ -3,9 +3,7 @@ import IconBlock from '@site/src/components/laikit/IconBlock';
 import { useImageStatus } from '@site/src/hooks/useImageStatus';
 import styles from './styles.module.css';
 
-type LinkCardLinkProps =
-  | { to: string; href?: never }
-  | { href: string; to?: never };
+type LinkCardLinkProps = { to: string; href?: never } | { href: string; to?: never };
 
 type LinkCardProps = LinkCardLinkProps & {
   title: string;
@@ -43,9 +41,7 @@ export default function LinkCard({
             ref={imgRef}
             src={image}
             alt={title}
-            className={
-              imageVariant === 'avatar' ? styles.imageAvatar : styles.image
-            }
+            className={imageVariant === 'avatar' ? styles.imageAvatar : styles.image}
             onLoad={onLoad}
             onError={onError}
           />

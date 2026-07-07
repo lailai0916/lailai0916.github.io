@@ -45,11 +45,7 @@
   max-width: 440px;
   padding: 1.5rem;
   border-radius: 22px;
-  background: color-mix(
-    in srgb,
-    var(--ifm-card-background-color) 92%,
-    transparent
-  );
+  background: color-mix(in srgb, var(--ifm-card-background-color) 92%, transparent);
   backdrop-filter: saturate(180%) blur(24px);
   -webkit-backdrop-filter: saturate(180%) blur(24px);
   border: 1px solid var(--ifm-color-emphasis-200);
@@ -58,11 +54,7 @@
 }
 
 [data-theme='dark'] .sheet {
-  background: color-mix(
-    in srgb,
-    var(--ifm-card-background-color) 86%,
-    transparent
-  );
+  background: color-mix(in srgb, var(--ifm-card-background-color) 86%, transparent);
 }
 
 @media (max-width: 480px) {

@@ -33,8 +33,7 @@ export default function MetricList({
   href,
 }: MetricListProps) {
   const { i18n } = useDocusaurusContext();
-  const format =
-    formatValue ?? ((n: number) => formatCompact(n, i18n.currentLocale));
+  const format = formatValue ?? ((n: number) => formatCompact(n, i18n.currentLocale));
   const max = items.length > 0 ? Math.max(...items.map((i) => i.y), 1) : 1;
 
   return (
@@ -60,13 +59,8 @@ export default function MetricList({
             const url = href?.(item.x);
             const inner = (
               <>
-                <div
-                  className={styles.bar}
-                  style={{ width: `${ratio * 100}%` }}
-                />
-                <span className={styles.label}>
-                  {renderLabel ? renderLabel(item.x) : item.x}
-                </span>
+                <div className={styles.bar} style={{ width: `${ratio * 100}%` }} />
+                <span className={styles.label}>{renderLabel ? renderLabel(item.x) : item.x}</span>
                 <span className={styles.value}>{format(item.y)}</span>
               </>
             );

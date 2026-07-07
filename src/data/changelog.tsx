@@ -50,8 +50,7 @@ export const CHANGELOG_LIST: ChangelogItem[] = [
   {
     date: '2026-05-01',
     type: 'changed',
-    content:
-      '网站更新至 <a href="https://docusaurus.io/changelog/3.10.1">Docusaurus v3.10.1</a>',
+    content: '网站更新至 <a href="https://docusaurus.io/changelog/3.10.1">Docusaurus v3.10.1</a>',
   },
   {
     date: '2026-04-28',
@@ -111,8 +110,7 @@ export const CHANGELOG_LIST: ChangelogItem[] = [
   {
     date: '2026-04-10',
     type: 'changed',
-    content:
-      '网站更新至 <a href="https://docusaurus.io/changelog/3.10.0">Docusaurus v3.10.0</a>',
+    content: '网站更新至 <a href="https://docusaurus.io/changelog/3.10.0">Docusaurus v3.10.0</a>',
   },
   {
     date: '2026-04-02',
@@ -162,8 +160,7 @@ export const CHANGELOG_LIST: ChangelogItem[] = [
   {
     date: '2025-12-02',
     type: 'changed',
-    content:
-      '资源迁移至 <a href="https://cloud.lailai.one">lailai\'s Cloud</a>',
+    content: '资源迁移至 <a href="https://cloud.lailai.one">lailai\'s Cloud</a>',
   },
   {
     date: '2025-10-23',
@@ -173,8 +170,7 @@ export const CHANGELOG_LIST: ChangelogItem[] = [
   {
     date: '2025-10-19',
     type: 'changed',
-    content:
-      '网站更新至 <a href="https://docusaurus.io/changelog/3.9.2">Docusaurus v3.9.2</a>',
+    content: '网站更新至 <a href="https://docusaurus.io/changelog/3.9.2">Docusaurus v3.9.2</a>',
   },
   {
     date: '2025-10-15',
@@ -189,8 +185,7 @@ export const CHANGELOG_LIST: ChangelogItem[] = [
   {
     date: '2025-09-30',
     type: 'changed',
-    content:
-      '网站更新至 <a href="https://docusaurus.io/changelog/3.9.1">Docusaurus v3.9.1</a>',
+    content: '网站更新至 <a href="https://docusaurus.io/changelog/3.9.1">Docusaurus v3.9.1</a>',
   },
   {
     date: '2025-09-26',
@@ -201,8 +196,7 @@ export const CHANGELOG_LIST: ChangelogItem[] = [
   {
     date: '2025-09-26',
     type: 'changed',
-    content:
-      '网站更新至 <a href="https://docusaurus.io/changelog/3.9.0">Docusaurus v3.9.0</a>',
+    content: '网站更新至 <a href="https://docusaurus.io/changelog/3.9.0">Docusaurus v3.9.0</a>',
   },
   {
     date: '2025-09-05',
@@ -254,14 +248,12 @@ export const CHANGELOG_LIST: ChangelogItem[] = [
   {
     date: '2025-06-07',
     type: 'changed',
-    content:
-      '网站更新至 <a href="https://docusaurus.io/changelog/3.8.1">Docusaurus v3.8.1</a>',
+    content: '网站更新至 <a href="https://docusaurus.io/changelog/3.8.1">Docusaurus v3.8.1</a>',
   },
   {
     date: '2025-05-31',
     type: 'changed',
-    content:
-      '网站更新至 <a href="https://docusaurus.io/changelog/3.8.0">Docusaurus v3.8.0</a>',
+    content: '网站更新至 <a href="https://docusaurus.io/changelog/3.8.0">Docusaurus v3.8.0</a>',
   },
   {
     date: '2025-01-08',
@@ -276,32 +268,27 @@ export const CHANGELOG_LIST: ChangelogItem[] = [
   {
     date: '2025-01-03',
     type: 'changed',
-    content:
-      '网站更新至 <a href="https://docusaurus.io/changelog/3.7.0">Docusaurus v3.7.0</a>',
+    content: '网站更新至 <a href="https://docusaurus.io/changelog/3.7.0">Docusaurus v3.7.0</a>',
   },
   {
     date: '2024-11-22',
     type: 'changed',
-    content:
-      '网站更新至 <a href="https://docusaurus.io/changelog/3.6.3">Docusaurus v3.6.3</a>',
+    content: '网站更新至 <a href="https://docusaurus.io/changelog/3.6.3">Docusaurus v3.6.3</a>',
   },
   {
     date: '2024-11-19',
     type: 'changed',
-    content:
-      '网站更新至 <a href="https://docusaurus.io/changelog/3.6.2">Docusaurus v3.6.2</a>',
+    content: '网站更新至 <a href="https://docusaurus.io/changelog/3.6.2">Docusaurus v3.6.2</a>',
   },
   {
     date: '2024-11-08',
     type: 'changed',
-    content:
-      '网站更新至 <a href="https://docusaurus.io/changelog/3.6.1">Docusaurus v3.6.1</a>',
+    content: '网站更新至 <a href="https://docusaurus.io/changelog/3.6.1">Docusaurus v3.6.1</a>',
   },
   {
     date: '2024-11-04',
     type: 'changed',
-    content:
-      '网站更新至 <a href="https://docusaurus.io/changelog/3.6.0">Docusaurus v3.6.0</a>',
+    content: '网站更新至 <a href="https://docusaurus.io/changelog/3.6.0">Docusaurus v3.6.0</a>',
   },
   {
     date: '2024-10-29',

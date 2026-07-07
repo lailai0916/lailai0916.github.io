@@ -55,17 +55,12 @@ export default function BlogAuthorsPostsPage(props: Props): ReactNode {
 
 function CustomBlogAuthorsPostsPage(props: Props): ReactNode {
   const { author, items } = props;
-  const posts = useMemo(
-    () => (items as any[]).map((it) => it.content),
-    [items]
-  );
+  const posts = useMemo(() => (items as any[]).map((it) => it.content), [items]);
 
   return (
     <BlogScaffold title={author.name ?? author.key} description={author.title}>
       <ArchiveTabsNav activeTab="authors" />
-      {author.page?.permalink && (
-        <AuthorSelector activePermalink={author.page.permalink} />
-      )}
+      {author.page?.permalink && <AuthorSelector activePermalink={author.page.permalink} />}
       <BlogArchiveList posts={posts} />
     </BlogScaffold>
   );

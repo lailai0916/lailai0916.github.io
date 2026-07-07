@@ -21,15 +21,9 @@ export default function BrowserWindow({
   bodyStyle,
 }: Props) {
   return (
-    <Card
-      padding={0}
-      className={styles.browserWindow}
-      style={{ ...style, minHeight }}
-    >
+    <Card padding={0} className={styles.browserWindow} style={{ ...style, minHeight }}>
       <WindowBar className={styles.browserWindowHeader}>
-        <div className={clsx(styles.browserWindowAddressBar, 'text--truncate')}>
-          {url}
-        </div>
+        <div className={clsx(styles.browserWindowAddressBar, 'text--truncate')}>{url}</div>
       </WindowBar>
 
       <div className={styles.browserWindowBody} style={bodyStyle}>
@@ -51,11 +45,7 @@ export function IframeWindow({ url }: { url: string }) {
         }}
         bodyStyle={{ padding: 0 }}
       >
-        <iframe
-          src={url}
-          title={url}
-          style={{ display: 'block', width: '100%', height: 600 }}
-        />
+        <iframe src={url} title={url} style={{ display: 'block', width: '100%', height: 600 }} />
       </BrowserWindow>
     </div>
   );
@@ -66,10 +56,7 @@ interface ImageWindowProps {
   url: string;
 }
 
-export function ImageWindow({
-  children,
-  url = 'http://localhost:3000',
-}: ImageWindowProps) {
+export function ImageWindow({ children, url = 'http://localhost:3000' }: ImageWindowProps) {
   return (
     <div className={styles.imageWindow}>
       <BrowserWindow url={url} bodyStyle={{ padding: 0 }}>

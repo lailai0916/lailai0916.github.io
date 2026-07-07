@@ -62,8 +62,7 @@ const config: Config = {
 
           // showLastUpdateAuthor: true,
           showLastUpdateTime: true,
-          editUrl:
-            'https://github.com/lailai0916/lailai0916.github.io/tree/main/',
+          editUrl: 'https://github.com/lailai0916/lailai0916.github.io/tree/main/',
 
           remarkPlugins: [
             remarkMath,
@@ -82,12 +81,8 @@ const config: Config = {
           // Logical pinning: frontmatter `pinned: true` floats the post to the
           // top of the listing while preserving its real publish date.
           processBlogPosts: async ({ blogPosts }) => {
-            const pinned = blogPosts.filter(
-              (p) => p.metadata.frontMatter.pinned === true
-            );
-            const rest = blogPosts.filter(
-              (p) => p.metadata.frontMatter.pinned !== true
-            );
+            const pinned = blogPosts.filter((p) => p.metadata.frontMatter.pinned === true);
+            const rest = blogPosts.filter((p) => p.metadata.frontMatter.pinned !== true);
             return [...pinned, ...rest];
           },
           feedOptions: {
@@ -97,8 +92,7 @@ const config: Config = {
 
           // showLastUpdateAuthor: true,
           showLastUpdateTime: true,
-          editUrl:
-            'https://github.com/lailai0916/lailai0916.github.io/tree/main/',
+          editUrl: 'https://github.com/lailai0916/lailai0916.github.io/tree/main/',
 
           onInlineTags: 'warn',
           onInlineAuthors: 'warn',
@@ -269,9 +263,7 @@ const config: Config = {
       minHeadingLevel: 2,
       maxHeadingLevel: 4,
     },
-    metadata: [
-      { name: 'baidu-site-verification', content: 'codeva-eeKBeIm6xX' },
-    ],
+    metadata: [{ name: 'baidu-site-verification', content: 'codeva-eeKBeIm6xX' }],
   } satisfies Preset.ThemeConfig,
 
   markdown: {

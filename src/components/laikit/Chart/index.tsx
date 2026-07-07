@@ -1,8 +1,4 @@
-import {
-  useRef,
-  useState,
-  type PointerEvent as ReactPointerEvent,
-} from 'react';
+import { useRef, useState, type PointerEvent as ReactPointerEvent } from 'react';
 import clsx from 'clsx';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import TitleCard from '@site/src/components/laikit/TitleCard';
@@ -48,10 +44,7 @@ function niceStep(max: number): number {
 function computeScale(max: number): { yMax: number; gridLines: number[] } {
   const step = niceStep(max);
   const yMax = Math.max(step, Math.ceil(max / step) * step);
-  const gridLines = Array.from(
-    { length: Math.round(yMax / step) },
-    (_, i) => (i + 1) * step
-  );
+  const gridLines = Array.from({ length: Math.round(yMax / step) }, (_, i) => (i + 1) * step);
   return { yMax, gridLines };
 }
 
@@ -82,14 +75,9 @@ export default function Chart({
   const onPointerMove = (e: ReactPointerEvent<HTMLDivElement>) => {
     if (!plotRef.current || n === 0 || loading) return;
     const rect = plotRef.current.getBoundingClientRect();
-    const ratio = Math.max(
-      0,
-      Math.min(1, (e.clientX - rect.left) / rect.width)
-    );
+    const ratio = Math.max(0, Math.min(1, (e.clientX - rect.left) / rect.width));
     setHoverIdx(
-      type === 'bar'
-        ? Math.min(n - 1, Math.floor(ratio * n))
-        : Math.round(ratio * (n - 1))
+      type === 'bar' ? Math.min(n - 1, Math.floor(ratio * n)) : Math.round(ratio * (n - 1))
     );
   };
   const onPointerLeave = () => setHoverIdx(null);
@@ -137,11 +125,7 @@ export default function Chart({
         ) : (
           <>
             {gridLines.map((v) => (
-              <div
-                key={v}
-                className={styles.gridLine}
-                style={{ bottom: `${(v / yMax) * 100}%` }}
-              >
+              <div key={v} className={styles.gridLine} style={{ bottom: `${(v / yMax) * 100}%` }}>
                 <span>{fmt(v)}</span>
               </div>
             ))}
@@ -156,25 +140,14 @@ export default function Chart({
                 />
               ))
             ) : (
-              <svg
-                className={styles.svg}
-                viewBox={`0 0 ${VW} ${VH}`}
-                preserveAspectRatio="none"
-              >
+              <svg className={styles.svg} viewBox={`0 0 ${VW} ${VH}`} preserveAspectRatio="none">
                 {areaPath && <path className={styles.area} d={areaPath} />}
-                <path
-                  className={styles.line}
-                  d={linePath}
-                  vectorEffect="non-scaling-stroke"
-                />
+                <path className={styles.line} d={linePath} vectorEffect="non-scaling-stroke" />
               </svg>
             )}
             {active && (
               <>
-                <div
-                  className={styles.crosshair}
-                  style={{ left: `${activeLeftPct}%` }}
-                />
+                <div className={styles.crosshair} style={{ left: `${activeLeftPct}%` }} />
                 {type === 'line' && (
                   <div
                     className={styles.dot}
@@ -186,9 +159,7 @@ export default function Chart({
                 )}
                 <Tooltip leftPct={activeLeftPct}>
                   <Tooltip.Label>{active.tooltipLabel}</Tooltip.Label>
-                  <Tooltip.Value>
-                    {(formatValue ?? fmt)(active.value)}
-                  </Tooltip.Value>
+                  <Tooltip.Value>{(formatValue ?? fmt)(active.value)}</Tooltip.Value>
                 </Tooltip>
               </>
             )}

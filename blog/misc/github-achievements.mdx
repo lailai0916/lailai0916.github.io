@@ -94,20 +94,13 @@ async function autoCreatePullRequest(page, k) {
   const branchName = `patch-${String(k).padStart(3, '0')}`;
 
   console.log('输入分支名');
-  await page.waitForSelector(
-    'input[placeholder="Find or create a branch..."]',
-    { timeout: 5000 }
-  );
-  await page.fill(
-    'input[placeholder="Find or create a branch..."]',
-    branchName
-  );
+  await page.waitForSelector('input[placeholder="Find or create a branch..."]', { timeout: 5000 });
+  await page.fill('input[placeholder="Find or create a branch..."]', branchName);
   await page.waitForTimeout(1000);
   console.log('点击创建分支按钮');
-  await page.waitForSelector(
-    `button:has-text("Create branch ${branchName} from main")`,
-    { timeout: 5000 }
-  );
+  await page.waitForSelector(`button:has-text("Create branch ${branchName} from main")`, {
+    timeout: 5000,
+  });
   await page.click(`button:has-text("Create branch ${branchName} from main")`);
   await page.waitForTimeout(3000);
 
@@ -132,14 +125,11 @@ async function autoCreatePullRequest(page, k) {
   await page.waitForTimeout(3000);
 
   console.log('点击 Commit changes');
-  await page.waitForSelector(
-    'div[role="dialog"] >> button:has-text("Commit changes")',
-    { timeout: 5000 }
-  );
+  await page.waitForSelector('div[role="dialog"] >> button:has-text("Commit changes")', {
+    timeout: 5000,
+  });
   await page.waitForTimeout(3000);
-  const confirmButton = page.locator(
-    'div[role="dialog"] >> button:has-text("Commit changes")'
-  );
+  const confirmButton = page.locator('div[role="dialog"] >> button:has-text("Commit changes")');
   await confirmButton.click();
 
   await page.waitForTimeout(3000);

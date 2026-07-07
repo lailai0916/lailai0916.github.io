@@ -20,9 +20,7 @@ export function useThemeColors(isDarkTheme: boolean) {
         shades: COLOR_SHADES,
       };
     }
-    const storedValues = JSON.parse(
-      storage.get() ?? '{}'
-    ) as Partial<ColorState>;
+    const storedValues = JSON.parse(storage.get() ?? '{}') as Partial<ColorState>;
     return {
       baseColor: storedValues.baseColor ?? defaults.primary,
       // Background is theme-specific (white in light, dark in dark) and not
@@ -38,9 +36,7 @@ export function useThemeColors(isDarkTheme: boolean) {
   useEffect(() => {
     const newStorage = getThemeStorage();
     const newDefaults = getThemeDefaults(isDarkTheme);
-    const storedValues = JSON.parse(
-      newStorage.get() ?? '{}'
-    ) as Partial<ColorState>;
+    const storedValues = JSON.parse(newStorage.get() ?? '{}') as Partial<ColorState>;
     const newState = {
       baseColor: storedValues.baseColor ?? newDefaults.primary,
       background: newDefaults.background,

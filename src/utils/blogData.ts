@@ -94,8 +94,7 @@ type TagAggregate = {
 
 const cachedOfficialTags = new Map<string, TagAggregate[]>();
 
-const getLocaleCacheKey = (locale?: string) =>
-  locale?.toLowerCase() ?? 'default';
+const getLocaleCacheKey = (locale?: string) => locale?.toLowerCase() ?? 'default';
 
 const getLocaleFilePrefix = (locale?: string) =>
   locale ? `${locale.toLowerCase().replace(/_/g, '-')}-` : '';
@@ -106,10 +105,7 @@ export function loadOfficialTags(locale?: string): TagAggregate[] {
   if (cached) return cached;
 
   const filePrefix = getLocaleFilePrefix(locale);
-  const basePattern = new RegExp(
-    `^\\.\/${filePrefix}blog-tags-[a-z0-9]+\\.json$`,
-    'i'
-  );
+  const basePattern = new RegExp(`^\\.\/${filePrefix}blog-tags-[a-z0-9]+\\.json$`, 'i');
 
   const ctx = (require as any).context(
     '@generated/docusaurus-plugin-content-blog/default/p',
@@ -119,9 +115,7 @@ export function loadOfficialTags(locale?: string): TagAggregate[] {
   for (const key of ctx.keys()) {
     if (!basePattern.test(key)) continue;
     const mod = ctx(key);
-    const data = (mod && (mod.tags ?? mod.default?.tags)) as
-      | TagAggregate[]
-      | undefined;
+    const data = (mod && (mod.tags ?? mod.default?.tags)) as TagAggregate[] | undefined;
     if (Array.isArray(data)) {
       cachedOfficialTags.set(cacheKey, data);
       return data;
@@ -153,10 +147,7 @@ export function loadOfficialAuthors(locale?: string): AuthorAggregate[] {
   if (cached) return cached;
 
   const filePrefix = getLocaleFilePrefix(locale);
-  const basePattern = new RegExp(
-    `^\\.\/${filePrefix}blog-authors-[a-z0-9]+\\.json$`,
-    'i'
-  );
+  const basePattern = new RegExp(`^\\.\/${filePrefix}blog-authors-[a-z0-9]+\\.json$`, 'i');
 
   const ctx = (require as any).context(
     '@generated/docusaurus-plugin-content-blog/default/p',
@@ -166,9 +157,7 @@ export function loadOfficialAuthors(locale?: string): AuthorAggregate[] {
   for (const key of ctx.keys()) {
     if (!basePattern.test(key)) continue;
     const mod = ctx(key);
-    const data = (mod && (mod.authors ?? mod.default?.authors)) as
-      | AuthorAggregate[]
-      | undefined;
+    const data = (mod && (mod.authors ?? mod.default?.authors)) as AuthorAggregate[] | undefined;
     if (Array.isArray(data)) {
       cachedOfficialAuthors.set(cacheKey, data);
       return data;

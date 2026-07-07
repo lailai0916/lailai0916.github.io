@@ -2,11 +2,7 @@ import { type ReactNode, useEffect, useMemo, useRef, useState } from 'react';
 import { Icon } from '@iconify/react';
 import Layout from '@theme/Layout';
 
-import {
-  PageTitle,
-  PageHeader,
-  PageContent,
-} from '@site/src/components/laikit/Page';
+import { PageTitle, PageHeader, PageContent } from '@site/src/components/laikit/Page';
 import DataCard from '@site/src/components/laikit/DataCard';
 import LinkCard from '@site/src/components/laikit/LinkCard';
 import clsx from 'clsx';
@@ -17,10 +13,7 @@ import Card from '@site/src/components/laikit/Card';
 import Badge from '@site/src/components/laikit/Badge';
 
 import { usePluralForm } from '@docusaurus/theme-common';
-import {
-  RESOURCE_LIST,
-  type ResourceCategoryItem,
-} from '@site/src/data/resources';
+import { RESOURCE_LIST, type ResourceCategoryItem } from '@site/src/data/resources';
 import { translate } from '@docusaurus/Translate';
 import styles from './styles.module.css';
 
@@ -93,10 +86,7 @@ function FilterBar({
   useEffect(() => {
     if (!open) return;
     const handleClick = (e: MouseEvent) => {
-      if (
-        wrapperRef.current &&
-        !wrapperRef.current.contains(e.target as Node)
-      ) {
+      if (wrapperRef.current && !wrapperRef.current.contains(e.target as Node)) {
         setOpen(false);
       }
     };
@@ -176,23 +166,14 @@ function FilterBar({
                 <button
                   key={category.title}
                   type="button"
-                  onClick={() =>
-                    onCategoryChange(isActive ? 'all' : category.title)
-                  }
+                  onClick={() => onCategoryChange(isActive ? 'all' : category.title)}
                   className={clsx(styles.filterRailItem, {
                     [styles.filterRailItemActive]: isActive,
                   })}
                 >
-                  <Icon
-                    icon={category.icon}
-                    className={styles.filterRailItemIcon}
-                  />
-                  <span className={styles.filterRailItemLabel}>
-                    {category.title}
-                  </span>
-                  <span className={styles.filterRailItemCount}>
-                    {category.resources.length}
-                  </span>
+                  <Icon icon={category.icon} className={styles.filterRailItemIcon} />
+                  <span className={styles.filterRailItemLabel}>{category.title}</span>
+                  <span className={styles.filterRailItemCount}>{category.resources.length}</span>
                 </button>
               );
             })}
@@ -308,11 +289,7 @@ export default function Resources(): ReactNode {
                 { query: searchQuery }
               )}
             </p>
-            <Button
-              variant="primary"
-              rounded
-              onClick={() => setSearchQuery('')}
-            >
+            <Button variant="primary" rounded onClick={() => setSearchQuery('')}>
               {CLEAR_SEARCH}
             </Button>
           </div>

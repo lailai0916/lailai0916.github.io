@@ -26,11 +26,7 @@ export default function IconBlock({
       className={clsx(styles.iconBlock, styles[variant], className)}
       style={{ '--icon-block-size': `${size}px` } as CSSProperties}
     >
-      {icon ? (
-        <Icon icon={icon} width={resolvedIconSize} height={resolvedIconSize} />
-      ) : (
-        children
-      )}
+      {icon ? <Icon icon={icon} width={resolvedIconSize} height={resolvedIconSize} /> : children}
     </div>
   );
 }

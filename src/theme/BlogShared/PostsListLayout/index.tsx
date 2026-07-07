@@ -32,9 +32,7 @@ function PostCard({ item }: PostCardProps) {
   const { metadata, frontMatter } = MDXPageContent;
   const lightImage = frontMatter.image as string | undefined;
   const darkImage =
-    ((frontMatter as Record<string, unknown>).image_dark as
-      | string
-      | undefined) ?? lightImage;
+    ((frontMatter as Record<string, unknown>).image_dark as string | undefined) ?? lightImage;
   const themed = !!darkImage && darkImage !== lightImage;
 
   const tagItems = (metadata.tags ?? [])
@@ -75,12 +73,7 @@ function PostCard({ item }: PostCardProps) {
                 />
               </>
             ) : (
-              <img
-                src={lightImage}
-                alt=""
-                className={styles.postCover}
-                loading="lazy"
-              />
+              <img src={lightImage} alt="" className={styles.postCover} loading="lazy" />
             )}
           </Link>
         )}
@@ -127,9 +120,9 @@ export function Paginator({
   if (totalPages <= 1) return null;
 
   const mid = Math.min(Math.max(page, 2), totalPages - 1);
-  const pages = Array.from(
-    new Set([1, mid - 1, mid, mid + 1, totalPages])
-  ).filter((p) => p >= 1 && p <= totalPages);
+  const pages = Array.from(new Set([1, mid - 1, mid, mid + 1, totalPages])).filter(
+    (p) => p >= 1 && p <= totalPages
+  );
 
   const PrevLabel = translate({
     id: 'blog.pagination.prev',
@@ -159,10 +152,7 @@ export function Paginator({
           {'←'}
         </button>
       ) : (
-        <span
-          className={clsx(styles.pageNav, styles.pageNavDisabled)}
-          aria-label={PrevLabel}
-        >
+        <span className={clsx(styles.pageNav, styles.pageNavDisabled)} aria-label={PrevLabel}>
           {'←'}
         </span>
       )}
@@ -210,10 +200,7 @@ export function Paginator({
           {'→'}
         </button>
       ) : (
-        <span
-          className={clsx(styles.pageNav, styles.pageNavDisabled)}
-          aria-label={NextLabel}
-        >
+        <span className={clsx(styles.pageNav, styles.pageNavDisabled)} aria-label={NextLabel}>
           {'→'}
         </span>
       )}
@@ -244,10 +231,7 @@ export default function PostsListLayout({
   }, [items]);
 
   const safePage = Math.min(page, totalPages);
-  const visibleItems = items.slice(
-    (safePage - 1) * PAGE_SIZE,
-    safePage * PAGE_SIZE
-  );
+  const visibleItems = items.slice((safePage - 1) * PAGE_SIZE, safePage * PAGE_SIZE);
 
   return (
     <BlogScaffold title={title} description={description}>
@@ -255,11 +239,7 @@ export default function PostsListLayout({
       {visibleItems.map((item) => (
         <PostCard key={item.content.metadata.permalink} item={item} />
       ))}
-      <Paginator
-        page={safePage}
-        totalPages={totalPages}
-        onPageChange={setPage}
-      />
+      <Paginator page={safePage} totalPages={totalPages} onPageChange={setPage} />
     </BlogScaffold>
   );
 }

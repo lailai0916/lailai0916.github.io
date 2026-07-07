@@ -46,10 +46,7 @@ export default function MetaFooter({ tags, lastUpdatedAt }: MetaFooterProps) {
                   message: 'Last updated on {date}',
                 },
                 {
-                  date: formatLocalizedDate(
-                    new Date(lastUpdatedAt!).toISOString(),
-                    currentLocale
-                  ),
+                  date: formatLocalizedDate(new Date(lastUpdatedAt!).toISOString(), currentLocale),
                 }
               )}
             </time>

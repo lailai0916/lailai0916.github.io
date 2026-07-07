@@ -5,11 +5,7 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import BlogScaffold from '@site/src/theme/BlogShared/Scaffold';
 import { ArchiveTabsNav } from '@site/src/theme/BlogShared/ArchiveTabs';
 import DataCard from '@site/src/components/laikit/DataCard';
-import {
-  getAllBlogItems,
-  getAllPostMetadata,
-  loadOfficialTags,
-} from '@site/src/utils/blogData';
+import { getAllBlogItems, getAllPostMetadata, loadOfficialTags } from '@site/src/utils/blogData';
 import { MOMENT_LIST } from '@site/src/data/moments';
 import { formatBeijingDate, formatCompact } from '@site/src/utils/format';
 import Chart, { type ChartDatum } from '@site/src/components/laikit/Chart';
@@ -144,13 +140,7 @@ export default function BlogStats(): ReactNode {
       <ArchiveTabsNav activeTab="overview" />
       <div className={styles.kpiGrid}>
         {kpis.map((k) => (
-          <DataCard
-            key={k.label}
-            icon={k.icon}
-            value={k.value}
-            label={k.label}
-            format={compact}
-          />
+          <DataCard key={k.label} icon={k.icon} value={k.value} label={k.label} format={compact} />
         ))}
       </div>
       <Chart

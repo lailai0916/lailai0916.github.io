@@ -19,13 +19,7 @@ interface YearGroup {
 function EntryBody({ item, month }: { item: TravelItem; month: string }) {
   return (
     <>
-      {item.href && (
-        <Icon
-          icon="lucide:arrow-up-right"
-          className={styles.entryArrow}
-          aria-hidden
-        />
-      )}
+      {item.href && <Icon icon="lucide:arrow-up-right" className={styles.entryArrow} aria-hidden />}
       <span className={styles.entryMonth}>{month}</span>
       <h3 className={styles.entryTitle}>{item.title}</h3>
       <p className={styles.entryCities}>{item.description}</p>
@@ -53,9 +47,7 @@ export default function TravelTimeline() {
   // A continuous running index drives the left/right alternation across the
   // whole timeline, so the zigzag stays balanced regardless of year sizes.
   const groups = useMemo<YearGroup[]>(() => {
-    const sorted = [...TRAVEL_LIST].sort((a, b) =>
-      b.date.localeCompare(a.date)
-    );
+    const sorted = [...TRAVEL_LIST].sort((a, b) => b.date.localeCompare(a.date));
     const map = new Map<string, TimelineEntry[]>();
     sorted.forEach((item, index) => {
       const year = item.date.slice(0, 4);

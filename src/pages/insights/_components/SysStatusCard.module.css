@@ -28,8 +28,7 @@
 
 .card {
   font-family:
-    ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono',
-    monospace;
+    ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace;
   font-variant-numeric: tabular-nums;
   position: relative;
   overflow: hidden;

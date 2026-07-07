@@ -68,12 +68,7 @@ interface Particle {
   trail: Vec3[];
 }
 
-function lorenzDerivative(
-  s: Vec3,
-  sigma: number,
-  rho: number,
-  beta: number
-): Vec3 {
+function lorenzDerivative(s: Vec3, sigma: number, rho: number, beta: number): Vec3 {
   return {
     x: sigma * (s.y - s.x),
     y: s.x * (rho - s.z) - s.y,
@@ -81,13 +76,7 @@ function lorenzDerivative(
   };
 }
 
-function rk4Step(
-  p: Vec3,
-  sigma: number,
-  rho: number,
-  beta: number,
-  dt: number
-): Vec3 {
+function rk4Step(p: Vec3, sigma: number, rho: number, beta: number, dt: number): Vec3 {
   const k1 = lorenzDerivative(p, sigma, rho, beta);
   const k2 = lorenzDerivative(
     {
@@ -136,15 +125,7 @@ interface SliderProps {
   onChange: (value: number) => void;
 }
 
-function ParamSlider({
-  label,
-  value,
-  min,
-  max,
-  step,
-  precision,
-  onChange,
-}: SliderProps) {
+function ParamSlider({ label, value, min, max, step, precision, onChange }: SliderProps) {
   return (
     <Slider
       label={label}
@@ -187,9 +168,7 @@ export default function LorenzAttractor({ bare = false }: { bare?: boolean }) {
     autoRotate: true,
   });
 
-  const themeRef = useRef(
-    THEME_COLORS.light as (typeof THEME_COLORS)[keyof typeof THEME_COLORS]
-  );
+  const themeRef = useRef(THEME_COLORS.light as (typeof THEME_COLORS)[keyof typeof THEME_COLORS]);
   useEffect(() => {
     themeRef.current = isDark ? THEME_COLORS.dark : THEME_COLORS.light;
   }, [isDark]);
@@ -370,10 +349,8 @@ export default function LorenzAttractor({ bare = false }: { bare?: boolean }) {
     if (Math.abs(dx) + Math.abs(dy) > 1) inter.moved = true;
     stateRef.current.yaw += dx * 0.008;
     stateRef.current.pitch -= dy * 0.008;
-    if (stateRef.current.pitch > PITCH_LIMIT)
-      stateRef.current.pitch = PITCH_LIMIT;
-    if (stateRef.current.pitch < -PITCH_LIMIT)
-      stateRef.current.pitch = -PITCH_LIMIT;
+    if (stateRef.current.pitch > PITCH_LIMIT) stateRef.current.pitch = PITCH_LIMIT;
+    if (stateRef.current.pitch < -PITCH_LIMIT) stateRef.current.pitch = -PITCH_LIMIT;
     inter.x = e.clientX;
     inter.y = e.clientY;
   };

@@ -35,8 +35,7 @@ function MonitorRow({
 }) {
   const last = lastStatus(beats);
   const ping = avgPing(beats);
-  const upPct =
-    typeof uptime24 === 'number' ? (uptime24 * 100).toFixed(2) : '–';
+  const upPct = typeof uptime24 === 'number' ? (uptime24 * 100).toFixed(2) : '–';
 
   const statusCls =
     last === 1
@@ -108,9 +107,7 @@ export default function UptimeSection() {
       ) : (
         <div className={styles.list}>
           {loading ? (
-            Array.from({ length: 6 }).map((_, i) => (
-              <Skeleton key={i} height={96} radius={16} />
-            ))
+            Array.from({ length: 6 }).map((_, i) => <Skeleton key={i} height={96} radius={16} />)
           ) : monitors.length === 0 ? (
             <p className={styles.empty}>
               {translate({

@@ -9,10 +9,7 @@ import IconBlock from '@site/src/components/laikit/IconBlock';
 import ShareCard from '@site/src/components/laikit/ShareCard';
 import Skeleton from '@site/src/components/laikit/Skeleton';
 import { MOMENT_LIST } from '@site/src/data/moments';
-import {
-  formatLocalizedDate,
-  formatLocalizedTime,
-} from '@site/src/utils/format';
+import { formatLocalizedDate, formatLocalizedTime } from '@site/src/utils/format';
 import styles from './styles.module.css';
 
 const PAGE_SIZE = 10;
@@ -369,10 +366,7 @@ export default function Moments() {
             )}
             {moment.share && <ShareCard {...moment.share} />}
             {moment.images && moment.images.length > 0 && (
-              <div
-                className={styles.momentImages}
-                data-count={moment.images.length}
-              >
+              <div className={styles.momentImages} data-count={moment.images.length}>
                 {moment.images.map((image) => (
                   <img
                     key={image}
@@ -394,16 +388,12 @@ export default function Moments() {
           <button
             type="button"
             className={styles.loadMoreLink}
-            onClick={() =>
-              setVisibleCount((c) => Math.min(c + PAGE_SIZE, totalCount))
-            }
+            onClick={() => setVisibleCount((c) => Math.min(c + PAGE_SIZE, totalCount))}
           >
             {LOAD_MORE_LABEL}
           </button>
         ) : (
-          totalCount > PAGE_SIZE && (
-            <span className={styles.loadMoreDone}>{NO_MORE_LABEL}</span>
-          )
+          totalCount > PAGE_SIZE && <span className={styles.loadMoreDone}>{NO_MORE_LABEL}</span>
         )}
       </div>
     </BlogScaffold>

@@ -6,9 +6,7 @@ import { useEffect } from 'react';
 // flips, so it follows the manual light/dark toggle, not just the OS preference.
 export default function ThemeColor(): null {
   useEffect(() => {
-    let meta = document.querySelector<HTMLMetaElement>(
-      'meta[name="theme-color"]'
-    );
+    let meta = document.querySelector<HTMLMetaElement>('meta[name="theme-color"]');
     if (!meta) {
       meta = document.createElement('meta');
       meta.name = 'theme-color';

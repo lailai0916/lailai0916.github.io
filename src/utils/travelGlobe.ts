@@ -40,10 +40,7 @@ function flagEmojiToISO2(flag: string): string | null {
   const b = chars[1].codePointAt(0)!;
   if (a < 0x1f1e6 || a > 0x1f1ff || b < 0x1f1e6 || b > 0x1f1ff) return null;
 
-  return (
-    String.fromCharCode(65 + (a - 0x1f1e6)) +
-    String.fromCharCode(65 + (b - 0x1f1e6))
-  );
+  return String.fromCharCode(65 + (a - 0x1f1e6)) + String.fromCharCode(65 + (b - 0x1f1e6));
 }
 
 function iso2ToISO3(code: string): string | null {

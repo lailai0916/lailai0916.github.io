@@ -12,14 +12,7 @@ interface BadgeProps {
   children?: ReactNode;
 }
 
-export default function Badge({
-  icon,
-  count,
-  active,
-  hoverable,
-  className,
-  children,
-}: BadgeProps) {
+export default function Badge({ icon, count, active, hoverable, className, children }: BadgeProps) {
   return (
     <span
       className={clsx(
@@ -32,12 +25,8 @@ export default function Badge({
       )}
     >
       {icon && <Icon icon={icon} className={styles.badgeIcon} />}
-      {children !== undefined && (
-        <span className={styles.badgeLabel}>{children}</span>
-      )}
-      {count !== undefined && (
-        <span className={styles.badgeCount}>{count}</span>
-      )}
+      {children !== undefined && <span className={styles.badgeLabel}>{children}</span>}
+      {count !== undefined && <span className={styles.badgeCount}>{count}</span>}
     </span>
   );
 }

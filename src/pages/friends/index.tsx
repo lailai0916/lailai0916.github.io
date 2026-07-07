@@ -1,10 +1,6 @@
 import { type ReactNode } from 'react';
 import Layout from '@theme/Layout';
-import {
-  PageTitle,
-  PageHeader,
-  PageContent,
-} from '@site/src/components/laikit/Page';
+import { PageTitle, PageHeader, PageContent } from '@site/src/components/laikit/Page';
 import DataCard from '@site/src/components/laikit/DataCard';
 import LinkCard from '@site/src/components/laikit/LinkCard';
 import { FRIEND_LIST } from '@site/src/data/friends';

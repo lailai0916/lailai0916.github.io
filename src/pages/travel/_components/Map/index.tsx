@@ -33,9 +33,7 @@ type GlobeComponent = ComponentType<
   GlobeProps & { ref?: MutableRefObject<GlobeMethods | undefined> }
 >;
 type GlobeMaterial = NonNullable<GlobeProps['globeMaterial']>;
-type MeshBasicMaterialCtor = new (parameters: {
-  color: string;
-}) => GlobeMaterial;
+type MeshBasicMaterialCtor = new (parameters: { color: string }) => GlobeMaterial;
 
 const { MeshBasicMaterial } = require('three') as {
   MeshBasicMaterial: MeshBasicMaterialCtor;
@@ -52,10 +50,7 @@ const NOT_VISITED_LABEL = translate({
 
 function readCssVar(name: string, fallback: string) {
   if (typeof window === 'undefined') return fallback;
-  return (
-    getComputedStyle(document.documentElement).getPropertyValue(name).trim() ||
-    fallback
-  );
+  return getComputedStyle(document.documentElement).getPropertyValue(name).trim() || fallback;
 }
 
 function TravelGlobeClient({ Globe }: { Globe: GlobeComponent }) {
@@ -80,10 +75,7 @@ function TravelGlobeClient({ Globe }: { Globe: GlobeComponent }) {
     };
   }, [worldUrl]);
 
-  const visitedCountries = useMemo(
-    () => new Set(getTravelCountryCodes(TRAVEL_LIST)),
-    []
-  );
+  const visitedCountries = useMemo(() => new Set(getTravelCountryCodes(TRAVEL_LIST)), []);
   const polygons = useMemo(
     () => buildTravelPolygons(features, visitedCountries),
     [features, visitedCountries]
@@ -94,8 +86,7 @@ function TravelGlobeClient({ Globe }: { Globe: GlobeComponent }) {
       ocean: colorMode === 'dark' ? '#2d3440' : '#dfe4ea',
       visited: readCssVar('--ifm-color-primary', '#1d9bf0'),
       unvisited: colorMode === 'dark' ? '#66707d' : '#b8c0cb',
-      stroke:
-        colorMode === 'dark' ? 'rgba(255,255,255,0.6)' : 'rgba(0,0,0,0.2)',
+      stroke: colorMode === 'dark' ? 'rgba(255,255,255,0.6)' : 'rgba(0,0,0,0.2)',
     }),
     [colorMode]
   );
@@ -116,9 +107,7 @@ function TravelGlobeClient({ Globe }: { Globe: GlobeComponent }) {
       const width = Math.max(Math.round(element.clientWidth), 320);
       const height = Math.min(Math.max(Math.round(width * 0.7), 360), 560);
       setSize((prev) =>
-        prev.width === width && prev.height === height
-          ? prev
-          : { width, height }
+        prev.width === width && prev.height === height ? prev : { width, height }
       );
     };
 
@@ -163,9 +152,7 @@ function TravelGlobeClient({ Globe }: { Globe: GlobeComponent }) {
     if (!globe) return;
 
     const controls = globe.controls();
-    controls.autoRotate = !window.matchMedia(
-      '(prefers-reduced-motion: reduce)'
-    ).matches;
+    controls.autoRotate = !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     controls.autoRotateSpeed = 0.5;
     controls.enablePan = false;
     controls.enableZoom = false;
@@ -188,14 +175,10 @@ function TravelGlobeClient({ Globe }: { Globe: GlobeComponent }) {
           globeMaterial={globeMaterial}
           polygonsData={polygons}
           polygonCapColor={(polygon) =>
-            (polygon as TravelPolygon).visited
-              ? colors.visited
-              : colors.unvisited
+            (polygon as TravelPolygon).visited ? colors.visited : colors.unvisited
           }
           polygonSideColor={(polygon) =>
-            (polygon as TravelPolygon).visited
-              ? colors.visited
-              : colors.unvisited
+            (polygon as TravelPolygon).visited ? colors.visited : colors.unvisited
           }
           polygonStrokeColor={() => colors.stroke}
           polygonAltitude={0.01}
@@ -204,8 +187,7 @@ function TravelGlobeClient({ Globe }: { Globe: GlobeComponent }) {
             const item = polygon as TravelPolygon;
             const lang = i18n.currentLocale === 'zh-Hans' ? 'zh' : 'en';
             const code = getFeatureIso3(item);
-            const localizedName =
-              countries.getName(code, lang) ?? item.properties.NAME ?? '';
+            const localizedName = countries.getName(code, lang) ?? item.properties.NAME ?? '';
             return `${localizedName}<br />${item.visited ? VISITED_LABEL : NOT_VISITED_LABEL}`;
           }}
           onGlobeReady={handleReady}

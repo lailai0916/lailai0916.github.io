@@ -14,18 +14,8 @@ declare const require: any;
 // let the first click's network fetch outlast its user activation, so the first
 // copy always failed. The directory argument must be a static literal for
 // webpack, hence one context per content root.
-const blogMdxCtx = require.context(
-  '!!raw-loader!@site/blog',
-  true,
-  /\.mdx?$/,
-  'lazy'
-);
-const docsMdxCtx = require.context(
-  '!!raw-loader!@site/docs',
-  true,
-  /\.mdx?$/,
-  'lazy'
-);
+const blogMdxCtx = require.context('!!raw-loader!@site/blog', true, /\.mdx?$/, 'lazy');
+const docsMdxCtx = require.context('!!raw-loader!@site/docs', true, /\.mdx?$/, 'lazy');
 
 // metadata.source examples:
 //   @site/blog/record/zk.mdx   @site/blog/welcome.mdx
@@ -72,12 +62,10 @@ export default function CopyMarkdownButton({ source }: { source: string }) {
       loadRef.current = null;
       return;
     }
-    const promise = resolved
-      .ctx(resolved.key)
-      .then((mod: { default: string }) => {
-        textRef.current = mod.default;
-        return mod.default;
-      });
+    const promise = resolved.ctx(resolved.key).then((mod: { default: string }) => {
+      textRef.current = mod.default;
+      return mod.default;
+    });
     promise.catch(() => {});
     loadRef.current = promise;
   }, [source]);
@@ -111,17 +99,9 @@ export default function CopyMarkdownButton({ source }: { source: string }) {
   }
 
   const icon =
-    state === 'copied'
-      ? 'lucide:check'
-      : state === 'error'
-        ? 'lucide:x'
-        : 'lucide:clipboard';
+    state === 'copied' ? 'lucide:check' : state === 'error' ? 'lucide:x' : 'lucide:clipboard';
   const label =
-    state === 'copied'
-      ? COPIED_LABEL
-      : state === 'error'
-        ? COPY_ERROR_LABEL
-        : COPY_LABEL;
+    state === 'copied' ? COPIED_LABEL : state === 'error' ? COPY_ERROR_LABEL : COPY_LABEL;
 
   return (
     <button
@@ -129,20 +109,11 @@ export default function CopyMarkdownButton({ source }: { source: string }) {
       onClick={onClick}
       aria-label={label}
       title={label}
-      className={clsx(
-        shared.metaItem,
-        shared.metaLink,
-        shared.iconBtn,
-        styles.copyMarkdownButton
-      )}
+      className={clsx(shared.metaItem, shared.metaLink, shared.iconBtn, styles.copyMarkdownButton)}
     >
       <Icon icon={icon} width={16} height={16} />
       <span className={styles.status} role="status" aria-live="polite">
-        {state === 'copied'
-          ? COPIED_LABEL
-          : state === 'error'
-            ? COPY_ERROR_LABEL
-            : ''}
+        {state === 'copied' ? COPIED_LABEL : state === 'error' ? COPY_ERROR_LABEL : ''}
       </span>
     </button>
   );

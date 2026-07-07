@@ -14,9 +14,7 @@ export default function BlogAuthorsListPage(props: Props): ReactNode {
   if (isClassicDesign) return <BlogAuthorsListPageClassic {...props} />;
 
   const posts = getAllBlogItems()
-    .filter(
-      (it) => it.metadata?.date && it.metadata?.permalink && it.metadata?.title
-    )
+    .filter((it) => it.metadata?.date && it.metadata?.permalink && it.metadata?.title)
     .map((it) => ({
       metadata: {
         date: it.metadata!.date as string,
@@ -42,12 +40,5 @@ export default function BlogAuthorsListPage(props: Props): ReactNode {
     ];
   });
 
-  return (
-    <ArchiveTabs
-      activeTab="authors"
-      posts={posts}
-      tags={tags}
-      authors={authors}
-    />
-  );
+  return <ArchiveTabs activeTab="authors" posts={posts} tags={tags} authors={authors} />;
 }

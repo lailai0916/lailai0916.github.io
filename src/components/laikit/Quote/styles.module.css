@@ -16,8 +16,7 @@
 .variantBlock {
   text-align: left;
   padding: 0.5rem 0 0.5rem 1.5rem;
-  border-left: 3px solid
-    color-mix(in srgb, var(--ifm-color-primary) 60%, transparent);
+  border-left: 3px solid color-mix(in srgb, var(--ifm-color-primary) 60%, transparent);
 }
 
 .variantBlock .attribution {

@@ -38,14 +38,9 @@ const sidebars: SidebarsConfig = {
       label: '语言基础',
       link: {
         type: 'generated-index',
-        description:
-          '本章介绍编程相关的知识，包括 C++ 从入门到进阶教程和一些其他语言的简介。',
+        description: '本章介绍编程相关的知识，包括 C++ 从入门到进阶教程和一些其他语言的简介。',
       },
-      items: [
-        'contest/lang/helloworld',
-        'contest/lang/var-op',
-        'contest/lang/csl',
-      ],
+      items: ['contest/lang/helloworld', 'contest/lang/var-op', 'contest/lang/csl'],
     },
     {
       type: 'category',
@@ -88,8 +83,7 @@ const sidebars: SidebarsConfig = {
       label: '动态规划',
       link: {
         type: 'generated-index',
-        description:
-          '动态规划是一种通过把原问题分解为相对简单的子问题的方式求解复杂问题的方法。',
+        description: '动态规划是一种通过把原问题分解为相对简单的子问题的方式求解复杂问题的方法。',
       },
       items: [
         'contest/dp/basic',
@@ -198,10 +192,7 @@ const sidebars: SidebarsConfig = {
             type: 'generated-index',
             description: '本章介绍线性代数。',
           },
-          items: [
-            'contest/math/linear-algebra/matrix',
-            'contest/math/linear-algebra/basis',
-          ],
+          items: ['contest/math/linear-algebra/matrix', 'contest/math/linear-algebra/basis'],
         },
         'contest/math/linear-programming',
         {
@@ -209,8 +200,7 @@ const sidebars: SidebarsConfig = {
           label: '数值分析',
           link: {
             type: 'generated-index',
-            description:
-              '数值分析是指用计算机对数学问题进行近似数值计算的方法。',
+            description: '数值分析是指用计算机对数学问题进行近似数值计算的方法。',
           },
           items: [
             'contest/math/numerical/interp',
@@ -488,10 +478,7 @@ const sidebars: SidebarsConfig = {
             type: 'generated-index',
             description: '本章介绍英语语音相关知识，包括自然拼读和国际音标。',
           },
-          items: [
-            'note/english/pronunciation/ipa',
-            'note/english/pronunciation/phonics',
-          ],
+          items: ['note/english/pronunciation/ipa', 'note/english/pronunciation/phonics'],
         },
         {
           type: 'category',
@@ -500,10 +487,7 @@ const sidebars: SidebarsConfig = {
             type: 'generated-index',
             description: '本章介绍英语词汇相关知识，包括构词法和高考词汇表。',
           },
-          items: [
-            'note/english/vocabulary/word-formation',
-            'note/english/vocabulary/gaokao',
-          ],
+          items: ['note/english/vocabulary/word-formation', 'note/english/vocabulary/gaokao'],
         },
         {
           type: 'category',
@@ -518,8 +502,7 @@ const sidebars: SidebarsConfig = {
               label: '动词',
               link: {
                 type: 'generated-index',
-                description:
-                  '本章介绍英语动词的相关知识，包括动词分类、时态、语气等。',
+                description: '本章介绍英语动词的相关知识，包括动词分类、时态、语气等。',
               },
               items: [
                 'note/english/grammar/verbs/verb-classification',
@@ -556,8 +539,7 @@ const sidebars: SidebarsConfig = {
               label: '句子',
               link: {
                 type: 'generated-index',
-                description:
-                  '本章介绍英语句子结构，包括句子分类、从句、语态等。',
+                description: '本章介绍英语句子结构，包括句子分类、从句、语态等。',
               },
               items: [
                 'note/english/grammar/sentences/sentence-types',
@@ -716,10 +698,7 @@ const sidebars: SidebarsConfig = {
         type: 'generated-index',
         description: '本章展示数据可视化与数据相关项目。',
       },
-      items: [
-        'project/data/hangzhou-highschool-map',
-        'project/data/oi-chart-race',
-      ],
+      items: ['project/data/hangzhou-highschool-map', 'project/data/oi-chart-race'],
     },
     {
       type: 'category',
@@ -742,11 +721,7 @@ const sidebars: SidebarsConfig = {
         type: 'generated-index',
         description: '本章展示使用 Desmos 图形计算器创作的各种项目。',
       },
-      items: [
-        'project/desmos/iclock',
-        'project/desmos/calculator',
-        'project/desmos/geometry',
-      ],
+      items: ['project/desmos/iclock', 'project/desmos/calculator', 'project/desmos/geometry'],
     },
     {
       type: 'category',

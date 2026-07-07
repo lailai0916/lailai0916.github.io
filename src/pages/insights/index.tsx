@@ -7,22 +7,12 @@ import { usePluralForm } from '@docusaurus/theme-common';
 import * as countries from 'i18n-iso-countries';
 import countriesEn from 'i18n-iso-countries/langs/en.json';
 import countriesZh from 'i18n-iso-countries/langs/zh.json';
-import {
-  PageTitle,
-  PageHeader,
-  PageContent,
-} from '@site/src/components/laikit/Page';
+import { PageTitle, PageHeader, PageContent } from '@site/src/components/laikit/Page';
 import Card from '@site/src/components/laikit/Card';
 import Skeleton from '@site/src/components/laikit/Skeleton';
 import Chart from '@site/src/components/laikit/Chart';
-import Segmented, {
-  type SegmentedItem,
-} from '@site/src/components/laikit/Segmented';
-import {
-  useUmamiStats,
-  type InsightsRange,
-  type UmamiStats,
-} from '@site/src/hooks/useUmamiStats';
+import Segmented, { type SegmentedItem } from '@site/src/components/laikit/Segmented';
+import { useUmamiStats, type InsightsRange, type UmamiStats } from '@site/src/hooks/useUmamiStats';
 import { useUmamiPageviewsSeries } from '@site/src/hooks/useUmamiPageviewsSeries';
 import { useUmamiMetric } from '@site/src/hooks/useUmamiMetric';
 import { useAnimatedNumber } from '@site/src/hooks/useAnimatedNumber';
@@ -73,8 +63,7 @@ function formatPercent(n: number): string {
 }
 
 function deltaPercent(curr: number, prev: number): number | null {
-  if (!Number.isFinite(curr) || !Number.isFinite(prev) || prev === 0)
-    return null;
+  if (!Number.isFinite(curr) || !Number.isFinite(prev) || prev === 0) return null;
   return (curr - prev) / prev;
 }
 
@@ -86,10 +75,7 @@ interface MetricSpec {
   invertDelta?: boolean;
 }
 
-function deriveMetric(
-  spec: MetricSpec,
-  data: UmamiStats | null | undefined
-): number {
+function deriveMetric(spec: MetricSpec, data: UmamiStats | null | undefined): number {
   if (!data) return 0;
   switch (spec.key) {
     case 'bounceRate':
@@ -114,16 +100,8 @@ function HeroMetric({
 }) {
   const animated = useAnimatedNumber(loading ? null : current);
   const delta = deltaPercent(current, previous);
-  const sign =
-    delta == null
-      ? null
-      : Math.abs(delta) < 0.001
-        ? 'flat'
-        : delta > 0
-          ? 'up'
-          : 'down';
-  const positive =
-    sign === 'flat' ? null : spec.invertDelta ? sign === 'down' : sign === 'up';
+  const sign = delta == null ? null : Math.abs(delta) < 0.001 ? 'flat' : delta > 0 ? 'up' : 'down';
+  const positive = sign === 'flat' ? null : spec.invertDelta ? sign === 'down' : sign === 'up';
 
   return (
     <Card padding="1.4rem 1.4rem 1.25rem" className={styles.heroTile}>
@@ -147,17 +125,10 @@ function HeroMetric({
         />
       ) : delta != null && sign !== 'flat' ? (
         <span
-          className={clsx(
-            styles.heroDelta,
-            positive ? styles.heroDeltaUp : styles.heroDeltaDown
-          )}
+          className={clsx(styles.heroDelta, positive ? styles.heroDeltaUp : styles.heroDeltaDown)}
         >
           <Icon
-            icon={
-              sign === 'up'
-                ? 'lucide:arrow-up-right'
-                : 'lucide:arrow-down-right'
-            }
+            icon={sign === 'up' ? 'lucide:arrow-up-right' : 'lucide:arrow-down-right'}
             className={styles.heroDeltaIcon}
             aria-hidden="true"
           />
@@ -178,8 +149,7 @@ function HeroGrid({ range }: { range: InsightsRange }) {
 
   // Round before formatting so a count-up frame never shows more decimals than
   // its final value (e.g. an integer total of 23 must not flash "11.5").
-  const compact = (n: number) =>
-    formatCompact(Math.round(n), i18n.currentLocale);
+  const compact = (n: number) => formatCompact(Math.round(n), i18n.currentLocale);
 
   const specs: MetricSpec[] = [
     {
@@ -306,8 +276,7 @@ function PageviewsChart({ range }: { range: InsightsRange }) {
   const { selectMessage } = usePluralForm();
   const series = data?.pageviews ?? [];
   const loading = status === 'loading';
-  const unit =
-    range === 1 ? 'hour' : range === 7 ? '6h' : range === 30 ? 'day' : 'week';
+  const unit = range === 1 ? 'hour' : range === 7 ? '6h' : range === 30 ? 'day' : 'week';
   const pageviewsLabel = (v: number) =>
     selectMessage(
       v,

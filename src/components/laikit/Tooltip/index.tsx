@@ -6,13 +6,7 @@ interface TooltipProps extends HTMLAttributes<HTMLDivElement> {
   leftPct?: number;
 }
 
-function Tooltip({
-  leftPct,
-  className,
-  style,
-  children,
-  ...rest
-}: TooltipProps) {
+function Tooltip({ leftPct, className, style, children, ...rest }: TooltipProps) {
   const ref = useRef<HTMLDivElement>(null);
   // Centred on leftPct, the card would spill off-screen near the edges and —
   // with no clipping ancestor — widen the page on small screens. Clamp its
@@ -31,16 +25,9 @@ function Tooltip({
   });
 
   const finalStyle =
-    leftPct != null
-      ? { ...style, left: leftPx != null ? `${leftPx}px` : `${leftPct}%` }
-      : style;
+    leftPct != null ? { ...style, left: leftPx != null ? `${leftPx}px` : `${leftPct}%` } : style;
   return (
-    <div
-      ref={ref}
-      {...rest}
-      className={clsx(styles.tooltip, className)}
-      style={finalStyle}
-    >
+    <div ref={ref} {...rest} className={clsx(styles.tooltip, className)} style={finalStyle}>
       {children}
     </div>
   );

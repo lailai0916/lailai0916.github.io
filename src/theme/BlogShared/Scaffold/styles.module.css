@@ -79,8 +79,7 @@
   justify-content: space-around;
   margin-top: 0.5rem;
   padding-top: 0.9rem;
-  border-top: 1px solid
-    color-mix(in srgb, var(--ifm-color-emphasis-300) 65%, transparent);
+  border-top: 1px solid color-mix(in srgb, var(--ifm-color-emphasis-300) 65%, transparent);
 }
 
 .profileNavItem {

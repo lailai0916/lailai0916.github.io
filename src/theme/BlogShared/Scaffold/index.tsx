@@ -31,9 +31,7 @@ function useActiveBlogNav(): BlogNavKey {
   const overviewBase = useBaseUrl('/blog/overview');
 
   const startsWith = (base: string) =>
-    pathname === base ||
-    pathname === `${base}/` ||
-    pathname.startsWith(`${base}/`);
+    pathname === base || pathname === `${base}/` || pathname.startsWith(`${base}/`);
 
   if (startsWith(momentsBase)) return 'moments';
   if (
@@ -116,10 +114,7 @@ function ProfileCard() {
               <Link
                 key={item.value}
                 to={item.href}
-                className={clsx(
-                  styles.profileNavItem,
-                  isActive && styles.profileNavItemActive
-                )}
+                className={clsx(styles.profileNavItem, isActive && styles.profileNavItemActive)}
                 aria-current={isActive ? 'page' : undefined}
               >
                 {item.label}
@@ -139,8 +134,7 @@ function useScrollProgress() {
     const handleScroll = () => {
       const scrollTop = window.scrollY;
       const scrollHeight =
-        document.documentElement.scrollHeight -
-        document.documentElement.clientHeight;
+        document.documentElement.scrollHeight - document.documentElement.clientHeight;
       setProgress(scrollHeight > 0 ? scrollTop / scrollHeight : 0);
     };
 
@@ -205,21 +199,12 @@ function TocProgress({ progress }: { progress: number }) {
         { percent: String(pct) }
       )}
     >
-      <div
-        className={styles.tocProgressFill}
-        style={{ transform: `scaleX(${progress})` }}
-      />
+      <div className={styles.tocProgressFill} style={{ transform: `scaleX(${progress})` }} />
     </div>
   );
 }
 
-function TocCard({
-  toc,
-  progress,
-}: {
-  toc: readonly TOCItem[];
-  progress: number;
-}) {
+function TocCard({ toc, progress }: { toc: readonly TOCItem[]; progress: number }) {
   const activeId = useActiveHeading(toc);
 
   return (
@@ -232,9 +217,7 @@ function TocCard({
               message: 'Contents',
             })}
           </span>
-          <span className={styles.tocHeaderPercent}>
-            {Math.round(progress * 100)}%
-          </span>
+          <span className={styles.tocHeaderPercent}>{Math.round(progress * 100)}%</span>
         </div>
         <TocProgress progress={progress} />
         {toc.length > 0 && (
@@ -341,12 +324,7 @@ function FeedCard() {
             aria-label={feed.ariaLabel}
             className={styles.feedTile}
           >
-            <Icon
-              icon={feed.icon}
-              width="1.2em"
-              height="1.2em"
-              className={styles.feedTileIcon}
-            />
+            <Icon icon={feed.icon} width="1.2em" height="1.2em" className={styles.feedTileIcon} />
             <span className={styles.feedTileLabel}>{feed.name}</span>
           </Link>
         ))}

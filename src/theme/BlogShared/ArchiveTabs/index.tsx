@@ -109,21 +109,14 @@ function YearView({ posts }: { posts: readonly PostLike[] }) {
   const [activeYear, setActiveYear] = useState<number | null>(null);
 
   const filteredPosts = useMemo(
-    () =>
-      activeYear === null
-        ? posts
-        : posts.filter((p) => getPostYear(p) === activeYear),
+    () => (activeYear === null ? posts : posts.filter((p) => getPostYear(p) === activeYear)),
     [posts, activeYear]
   );
 
   return (
     <>
       {years.length > 0 && (
-        <TitleCard
-          size="plain"
-          padding="1rem"
-          title={`${YEAR_SELECT_TITLE} (${years.length})`}
-        >
+        <TitleCard size="plain" padding="1rem" title={`${YEAR_SELECT_TITLE} (${years.length})`}>
           <div className={styles.yearList}>
             {years.map(({ year, count }) => {
               const isActive = year === activeYear;
@@ -149,16 +142,9 @@ function YearView({ posts }: { posts: readonly PostLike[] }) {
 }
 
 function TagsView({ tags }: { tags: readonly ArchiveTagItem[] }) {
-  const sorted = useMemo(
-    () => [...tags].sort((a, b) => b.count - a.count),
-    [tags]
-  );
+  const sorted = useMemo(() => [...tags].sort((a, b) => b.count - a.count), [tags]);
   return (
-    <TitleCard
-      size="plain"
-      padding="1rem"
-      title={`${TAGS_TITLE} (${sorted.length})`}
-    >
+    <TitleCard size="plain" padding="1rem" title={`${TAGS_TITLE} (${sorted.length})`}>
       <TagChipList
         items={sorted.map((t) => ({
           to: t.permalink,
@@ -172,11 +158,7 @@ function TagsView({ tags }: { tags: readonly ArchiveTagItem[] }) {
 
 function AuthorsView({ authors }: { authors: readonly ArchiveAuthorItem[] }) {
   return (
-    <TitleCard
-      size="plain"
-      padding="1rem"
-      title={`${AUTHORS_TITLE} (${authors.length})`}
-    >
+    <TitleCard size="plain" padding="1rem" title={`${AUTHORS_TITLE} (${authors.length})`}>
       <TagChipList
         items={authors.map((a) => ({
           to: a.permalink,
@@ -195,12 +177,7 @@ interface ArchiveTabsProps {
   authors: readonly ArchiveAuthorItem[];
 }
 
-export default function ArchiveTabs({
-  activeTab,
-  posts,
-  tags,
-  authors,
-}: ArchiveTabsProps) {
+export default function ArchiveTabs({ activeTab, posts, tags, authors }: ArchiveTabsProps) {
   const canonical = useBaseUrl('/blog/archive');
 
   return (

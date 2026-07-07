@@ -99,9 +99,7 @@ export default function Showcase() {
                   message: 'Expand',
                 })
           }
-          onClick={() =>
-            setActive((cur) => (cur === null ? lastIdx.current : null))
-          }
+          onClick={() => setActive((cur) => (cur === null ? lastIdx.current : null))}
         >
           <svg className={styles.chevron} viewBox="0 0 20 20" aria-hidden="true">
             <path

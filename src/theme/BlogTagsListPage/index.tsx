@@ -13,9 +13,7 @@ export default function BlogTagsListPage(props: Props): ReactElement {
   if (isClassicDesign) return <BlogTagsListPageClassic {...props} />;
 
   const posts = getAllBlogItems()
-    .filter(
-      (it) => it.metadata?.date && it.metadata?.permalink && it.metadata?.title
-    )
+    .filter((it) => it.metadata?.date && it.metadata?.permalink && it.metadata?.title)
     .map((it) => ({
       metadata: {
         date: it.metadata!.date as string,
@@ -36,7 +34,5 @@ export default function BlogTagsListPage(props: Props): ReactElement {
       count: a.count,
     }));
 
-  return (
-    <ArchiveTabs activeTab="tags" posts={posts} tags={tags} authors={authors} />
-  );
+  return <ArchiveTabs activeTab="tags" posts={posts} tags={tags} authors={authors} />;
 }

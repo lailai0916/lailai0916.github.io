@@ -5,9 +5,7 @@ import { translate } from '@docusaurus/Translate';
 import Layout from '@theme/Layout';
 
 import TitleCard from '@site/src/components/laikit/TitleCard';
-import Segmented, {
-  type SegmentedItem,
-} from '@site/src/components/laikit/Segmented';
+import Segmented, { type SegmentedItem } from '@site/src/components/laikit/Segmented';
 import Switch from '@site/src/components/laikit/Switch';
 import Slider from '@site/src/components/laikit/Slider';
 import DataCard from '@site/src/components/laikit/DataCard';
@@ -23,11 +21,7 @@ import {
 import { useThemeColors } from '@site/src/hooks/useThemeColors';
 import { getThemeStorage } from '@site/src/utils/colorUtils';
 import { Icon } from '@iconify/react';
-import {
-  PageTitle,
-  PageHeader,
-  PageContent,
-} from '@site/src/components/laikit/Page';
+import { PageTitle, PageHeader, PageContent } from '@site/src/components/laikit/Page';
 import styles from './styles.module.css';
 
 const TITLE = translate({
@@ -113,9 +107,7 @@ const SETTINGS_PRESET_COLOR_LIST = [
 
 function AccentColor() {
   const { colorMode } = useColorMode();
-  const { colorState, inputColor, updateColor, resetColors } = useThemeColors(
-    colorMode === 'dark'
-  );
+  const { colorState, inputColor, updateColor, resetColors } = useThemeColors(colorMode === 'dark');
 
   return (
     <TitleCard
@@ -198,16 +190,10 @@ const FONT_STACKS: Record<FontFamilyChoice, string> = {
 };
 
 function FontFamily() {
-  const [choice, setChoice] = usePersistentState<FontFamilyChoice>(
-    'font-family',
-    'system'
-  );
+  const [choice, setChoice] = usePersistentState<FontFamilyChoice>('font-family', 'system');
 
   useEffect(() => {
-    document.documentElement.style.setProperty(
-      '--ifm-font-family-base',
-      FONT_STACKS[choice]
-    );
+    document.documentElement.style.setProperty('--ifm-font-family-base', FONT_STACKS[choice]);
   }, [choice]);
 
   const items: SegmentedItem<FontFamilyChoice>[] = [
@@ -250,11 +236,7 @@ function FontFamily() {
       icon="lucide:case-sensitive"
       bodyAlign="bottom"
     >
-      <Segmented<FontFamilyChoice>
-        value={choice}
-        items={items}
-        onChange={setChoice}
-      />
+      <Segmented<FontFamilyChoice> value={choice} items={items} onChange={setChoice} />
     </TitleCard>
   );
 }
@@ -271,27 +253,19 @@ function Typography() {
     root.style.setProperty('--global-font-size', `${initialSize}px`);
 
     const savedLineHeight = localStorage.getItem('global-line-height');
-    const initialLineHeight = savedLineHeight
-      ? parseFloat(savedLineHeight)
-      : 1.65;
+    const initialLineHeight = savedLineHeight ? parseFloat(savedLineHeight) : 1.65;
     setLineHeight(initialLineHeight);
     root.style.setProperty('--global-line-height', `${initialLineHeight}`);
   }, []);
 
   const commitSize = (size: number) => {
-    document.documentElement.style.setProperty(
-      '--global-font-size',
-      `${size}px`
-    );
+    document.documentElement.style.setProperty('--global-font-size', `${size}px`);
     localStorage.setItem('global-font-size', size.toString());
   };
 
   const commitLineHeight = (value: number) => {
     const rounded = Math.round(value * 20) / 20;
-    document.documentElement.style.setProperty(
-      '--global-line-height',
-      `${rounded}`
-    );
+    document.documentElement.style.setProperty('--global-line-height', `${rounded}`);
     localStorage.setItem('global-line-height', rounded.toString());
   };
 
@@ -500,9 +474,7 @@ function QuickActions() {
               variant="secondary"
               fullWidth
               className={styles.actionItem}
-              leftIcon={
-                <Icon icon={option.icon} className={styles.actionItemIcon} />
-              }
+              leftIcon={<Icon icon={option.icon} className={styles.actionItemIcon} />}
               onClick={option.onClick}
             >
               {option.label}

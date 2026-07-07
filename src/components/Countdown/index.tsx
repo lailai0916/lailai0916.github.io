@@ -142,12 +142,7 @@ export default function Countdown() {
   return (
     <Card className={styles.panel} padding="0">
       <div className={styles.body}>
-        <p
-          className={clsx(
-            styles.caption,
-            state.isTimeUp && styles.captionFinal
-          )}
-        >
+        <p className={clsx(styles.caption, state.isTimeUp && styles.captionFinal)}>
           {state.isTimeUp ? (
             FINAL
           ) : (
@@ -164,9 +159,7 @@ export default function Countdown() {
         <div className={styles.clock}>
           {TIME_UNITS.map(({ key, pad, label }) => (
             <div className={styles.unit} key={key}>
-              <span className={styles.value}>
-                {String(state[key]).padStart(pad, '0')}
-              </span>
+              <span className={styles.value}>{String(state[key]).padStart(pad, '0')}</span>
               <span className={styles.label}>{label}</span>
             </div>
           ))}
@@ -179,10 +172,7 @@ export default function Countdown() {
         aria-valuemax={100}
         aria-valuenow={Math.round(state.progress * 100)}
       >
-        <span
-          className={styles.bar}
-          style={{ transform: `scaleX(${state.progress})` }}
-        />
+        <span className={styles.bar} style={{ transform: `scaleX(${state.progress})` }} />
       </div>
     </Card>
   );

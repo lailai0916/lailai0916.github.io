@@ -99,9 +99,7 @@ export default function GameOfLife({ bare = false }: { bare?: boolean }) {
   const gridRef = useRef<Grid>(randomGrid());
   const liveColorRef = useRef<string>('#1d9bf0');
 
-  const themeRef = useRef(
-    THEME_COLORS.light as (typeof THEME_COLORS)[keyof typeof THEME_COLORS]
-  );
+  const themeRef = useRef(THEME_COLORS.light as (typeof THEME_COLORS)[keyof typeof THEME_COLORS]);
   useEffect(() => {
     themeRef.current = isDark ? THEME_COLORS.dark : THEME_COLORS.light;
     if (containerRef.current) {
@@ -263,26 +261,13 @@ export default function GameOfLife({ bare = false }: { bare?: boolean }) {
         >
           {playPauseLabel}
         </Button>
-        <Button
-          variant="secondary"
-          onClick={handleStep}
-          disabled={running}
-          aria-label={STEP_LABEL}
-        >
+        <Button variant="secondary" onClick={handleStep} disabled={running} aria-label={STEP_LABEL}>
           {STEP_LABEL}
         </Button>
-        <Button
-          variant="secondary"
-          onClick={handleRandom}
-          aria-label={RANDOM_LABEL}
-        >
+        <Button variant="secondary" onClick={handleRandom} aria-label={RANDOM_LABEL}>
           {RANDOM_LABEL}
         </Button>
-        <Button
-          variant="secondary"
-          onClick={handleClear}
-          aria-label={CLEAR_LABEL}
-        >
+        <Button variant="secondary" onClick={handleClear} aria-label={CLEAR_LABEL}>
           {CLEAR_LABEL}
         </Button>
       </div>

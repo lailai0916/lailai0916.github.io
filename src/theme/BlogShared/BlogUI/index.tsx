@@ -20,30 +20,18 @@ export function MetaBar({ items }: { items: MetaBarItem[] }) {
         const body = (
           <>
             <Icon icon={item.icon} width={13} height={13} />
-            {item.dateTime ? (
-              <time dateTime={item.dateTime}>{item.label}</time>
-            ) : (
-              item.label
-            )}
+            {item.dateTime ? <time dateTime={item.dateTime}>{item.label}</time> : item.label}
           </>
         );
         return (
           <Fragment key={i}>
             {i > 0 && <span className={styles.eyebrowDot} aria-hidden="true" />}
             {item.href ? (
-              <Link
-                href={item.href}
-                className={clsx(styles.eyebrowItem, styles.eyebrowLink)}
-              >
+              <Link href={item.href} className={clsx(styles.eyebrowItem, styles.eyebrowLink)}>
                 {body}
               </Link>
             ) : (
-              <span
-                className={clsx(
-                  styles.eyebrowItem,
-                  item.pinned && styles.eyebrowItemPinned
-                )}
-              >
+              <span className={clsx(styles.eyebrowItem, item.pinned && styles.eyebrowItemPinned)}>
                 {body}
               </span>
             )}

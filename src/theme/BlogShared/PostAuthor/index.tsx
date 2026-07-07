@@ -12,9 +12,7 @@ export default function Author({ author }: { author: PostAuthor }) {
   // Match Docusaurus's official link-resolution priority chain:
   // page (auto-generated author archive) → url → mailto:email → no link.
   const link =
-    author.page?.permalink ||
-    author.url ||
-    (author.email ? `mailto:${author.email}` : undefined);
+    author.page?.permalink || author.url || (author.email ? `mailto:${author.email}` : undefined);
 
   const inner = (
     <>
@@ -30,18 +28,13 @@ export default function Author({ author }: { author: PostAuthor }) {
       )}
       <span className={styles.articleAuthorMeta}>
         <span className={styles.articleAuthorName}>{author.name}</span>
-        {author.title && (
-          <span className={styles.articleAuthorTitle}>{author.title}</span>
-        )}
+        {author.title && <span className={styles.articleAuthorTitle}>{author.title}</span>}
       </span>
     </>
   );
 
   return link ? (
-    <Link
-      href={link}
-      className={clsx(styles.articleAuthor, styles.articleAuthorLink)}
-    >
+    <Link href={link} className={clsx(styles.articleAuthor, styles.articleAuthorLink)}>
       {inner}
     </Link>
   ) : (

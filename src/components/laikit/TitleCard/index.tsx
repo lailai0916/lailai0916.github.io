@@ -53,17 +53,10 @@ export default function TitleCard({
           ))}
         <div className={styles.titleGroup}>
           <h3 className={styles.title}>{title}</h3>
-          {description && (
-            <span className={styles.description}>{description}</span>
-          )}
+          {description && <span className={styles.description}>{description}</span>}
         </div>
       </div>
-      <div
-        className={clsx(
-          styles.body,
-          bodyAlign === 'bottom' && styles.bodyBottom
-        )}
-      >
+      <div className={clsx(styles.body, bodyAlign === 'bottom' && styles.bodyBottom)}>
         {children}
       </div>
     </Card>

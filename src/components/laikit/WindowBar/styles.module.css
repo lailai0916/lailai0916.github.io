@@ -3,19 +3,13 @@
   align-items: center;
   height: 42px;
   background-color: var(--ifm-card-background-color);
-  background-image: linear-gradient(
-    rgba(246, 246, 247, 0.85),
-    rgba(246, 246, 247, 0.85)
-  );
+  background-image: linear-gradient(rgba(246, 246, 247, 0.85), rgba(246, 246, 247, 0.85));
   backdrop-filter: saturate(180%) blur(20px);
   -webkit-backdrop-filter: saturate(180%) blur(20px);
 }
 
 [data-theme='dark'] .bar {
-  background-image: linear-gradient(
-    rgba(40, 40, 42, 0.85),
-    rgba(40, 40, 42, 0.85)
-  );
+  background-image: linear-gradient(rgba(40, 40, 42, 0.85), rgba(40, 40, 42, 0.85));
 }
 
 .dots {

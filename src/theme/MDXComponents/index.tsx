@@ -3,10 +3,7 @@ import DocCardList from '@theme/DocCardList';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-import BrowserWindow, {
-  IframeWindow,
-  ImageWindow,
-} from '@site/src/components/BrowserWindow';
+import BrowserWindow, { IframeWindow, ImageWindow } from '@site/src/components/BrowserWindow';
 
 import Notation from '@site/src/components/Notation';
 import GitHub from '@site/src/components/laikit/GitHub';

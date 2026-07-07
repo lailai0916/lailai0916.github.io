@@ -107,18 +107,13 @@ export default function NeuralNetwork({
       setNormalizing(true);
       const normData = collectNormalizationData(points);
       const startTime = Date.now();
-      const ease = (t: number) =>
-        t < 0.5 ? 4 * t ** 3 : 1 - (-2 * t + 2) ** 3 / 2;
+      const ease = (t: number) => (t < 0.5 ? 4 * t ** 3 : 1 - (-2 * t + 2) ** 3 / 2);
 
       return new Promise((resolve) => {
         const frame = () => {
           const t = (Date.now() - startTime) / 1000;
           setPoints(
-            applyNormalizationTransformation(
-              points,
-              normData,
-              ease(Math.min(1, t / duration))
-            )
+            applyNormalizationTransformation(points, normData, ease(Math.min(1, t / duration)))
           );
           setIsNormalized(true);
           if (t < duration) {
@@ -139,9 +134,7 @@ export default function NeuralNetwork({
     if (isNormalized) {
       setTimeout(() => setAnimating(true), 1);
     } else {
-      normalizePointsAnimated().then(() =>
-        setTimeout(() => setAnimating(true), 200)
-      );
+      normalizePointsAnimated().then(() => setTimeout(() => setAnimating(true), 200));
     }
   }, [isNormalized, normalizePointsAnimated]);
 
@@ -149,9 +142,7 @@ export default function NeuralNetwork({
   const isEmpty = !inputValues.some((v) => v > 0.1);
 
   if (!dataLoaded) {
-    return (
-      <div className={styles.container} style={{ minHeight: CANVAS_SIZE }} />
-    );
+    return <div className={styles.container} style={{ minHeight: CANVAS_SIZE }} />;
   }
 
   const compact = animating || instant;
@@ -182,18 +173,11 @@ export default function NeuralNetwork({
               instant={instant}
             />
             <OutputDigitLabels />
-            <WinningOutputNeuronBox
-              neurons={neurons}
-              animating={animating}
-              instant={instant}
-            />
+            <WinningOutputNeuronBox neurons={neurons} animating={animating} instant={instant} />
 
             {selectedNeuron?.layerIndex === 1 &&
               (() => {
-                const pos = getNeuronPosition(
-                  selectedNeuron.layerIndex,
-                  selectedNeuron.neuronId
-                );
+                const pos = getNeuronPosition(selectedNeuron.layerIndex, selectedNeuron.neuronId);
                 return (
                   <WeightGrid
                     x={pos.x + 14}
@@ -240,11 +224,7 @@ export default function NeuralNetwork({
                 setIsNormalized(false);
               }}
               normalizing={normalizing}
-              highlightedTile={
-                selectedNeuron?.layerIndex === 0
-                  ? selectedNeuron.neuronId
-                  : null
-              }
+              highlightedTile={selectedNeuron?.layerIndex === 0 ? selectedNeuron.neuronId : null}
             />
           </svg>
         </div>
@@ -273,12 +253,7 @@ export default function NeuralNetwork({
             {PREPROCESS_LABEL}
           </Button>
         ) : (
-          <Button
-            variant="secondary"
-            fullWidth
-            disabled={isEmpty}
-            onClick={animate}
-          >
+          <Button variant="secondary" fullWidth disabled={isEmpty} onClick={animate}>
             {CHECK_LABEL}
           </Button>
         )}
@@ -311,14 +286,9 @@ function NeuronConnections({
 
         const weight = weights![prevLayerIndex][neuronId][prevNeuronId];
         const layerIsHighlighted = selectedNeuron?.layerIndex === layerIndex;
-        const neuronIsHighlighted =
-          layerIsHighlighted && selectedNeuron?.neuronId === neuronId;
+        const neuronIsHighlighted = layerIsHighlighted && selectedNeuron?.neuronId === neuronId;
 
-        const maxAlpha = neuronIsHighlighted
-          ? 1.0
-          : layerIsHighlighted
-            ? 0.1
-            : 0.3;
+        const maxAlpha = neuronIsHighlighted ? 1.0 : layerIsHighlighted ? 0.1 : 0.3;
         const alpha = maxAlpha * Math.abs(weight * 0.6);
         const color =
           weight < 0
@@ -328,10 +298,7 @@ function NeuronConnections({
 
         const prevPos = getNeuronPosition(prevLayerIndex, prevNeuronIndex);
         const nextPos = getNeuronPosition(layerIndex, neuronIndex);
-        const lineLength = Math.hypot(
-          prevPos.x - nextPos.x,
-          prevPos.y - nextPos.y
-        );
+        const lineLength = Math.hypot(prevPos.x - nextPos.x, prevPos.y - nextPos.y);
         const canAnimate = (prevNeuronId * layer.length + neuronId) % 7 === 2;
 
         const lineProps = {
@@ -398,8 +365,7 @@ function Neurons({
           const fill = `rgb(${grayCalc}, ${grayCalc}, ${grayCalc})`;
           const pos = getNeuronPosition(layerIndex, neuronIndex);
           const isSelected =
-            selectedNeuron?.layerIndex === layerIndex &&
-            selectedNeuron?.neuronId === neuronId;
+            selectedNeuron?.layerIndex === layerIndex && selectedNeuron?.neuronId === neuronId;
 
           return (
             <circle
@@ -407,24 +373,17 @@ function Neurons({
               cx={pos.x}
               cy={pos.y}
               r={8}
-              stroke={
-                isSelected
-                  ? 'var(--ifm-color-primary)'
-                  : 'var(--nn-neuron-border-default)'
-              }
+              stroke={isSelected ? 'var(--ifm-color-primary)' : 'var(--nn-neuron-border-default)'}
               strokeWidth={isSelected ? 2 : 1}
               style={{
-                fill:
-                  animating || instant ? fill : 'var(--nn-neuron-fill-default)',
+                fill: animating || instant ? fill : 'var(--nn-neuron-fill-default)',
                 transition:
                   animating && !instant
                     ? `fill 600ms ease-in-out ${1200 * layerIndex + 100}ms`
                     : 'none',
                 cursor: 'pointer',
               }}
-              onClick={() =>
-                setSelectedNeuron(isSelected ? null : { layerIndex, neuronId })
-              }
+              onClick={() => setSelectedNeuron(isSelected ? null : { layerIndex, neuronId })}
             />
           );
         })
@@ -634,13 +593,7 @@ function ImageGrid({
           transition: 'opacity 200ms ease-in-out',
         }}
       >
-        <rect
-          x={50}
-          y={0}
-          width={300}
-          height={80}
-          fill="var(--nn-bg-overlay)"
-        />
+        <rect x={50} y={0} width={300} height={80} fill="var(--nn-bg-overlay)" />
         <text
           x={200}
           y={50}
@@ -726,18 +679,10 @@ function WeightGrid({
         const wy = Math.floor(n / 28);
         const alpha = (Math.abs(weight) / maxWeight) ** 0.3;
         const colorVar =
-          weight < 0
-            ? 'var(--nn-connection-negative-rgb)'
-            : 'var(--nn-connection-positive-rgb)';
+          weight < 0 ? 'var(--nn-connection-negative-rgb)' : 'var(--nn-connection-positive-rgb)';
         return (
           <Fragment key={n}>
-            <rect
-              x={wx}
-              y={wy}
-              width="1"
-              height="1"
-              fill={`rgba(${colorVar}, ${alpha})`}
-            />
+            <rect x={wx} y={wy} width="1" height="1" fill={`rgba(${colorVar}, ${alpha})`} />
             <rect
               x={32 + wx}
               y={wy}
@@ -779,10 +724,7 @@ function getAllNeuronValues(firstLayer: number[]): number[][] {
   while (layers.length <= weights.length) {
     const prev = layers[layers.length - 1];
     layers.push(
-      vecAdd(
-        matMulVec(weights[layers.length - 1], prev),
-        biases[layers.length - 1]
-      ).map(sigmoid)
+      vecAdd(matMulVec(weights[layers.length - 1], prev), biases[layers.length - 1]).map(sigmoid)
     );
   }
   return layers;
@@ -793,10 +735,7 @@ function getInputNeuronValues(points: Point[]): number[] {
   for (const { x, y } of points) {
     values = values.map((v, n) => {
       const penValue = Math.min(
-        Math.max(
-          0,
-          0.8 - (Math.hypot((n % 28) - x, Math.floor(n / 28) - y) / 2) ** 2
-        ),
+        Math.max(0, 0.8 - (Math.hypot((n % 28) - x, Math.floor(n / 28) - y) / 2) ** 2),
         1
       );
       return v + (1 - v) * penValue;
@@ -840,11 +779,7 @@ function collectNormalizationData(points: Point[]): NormData {
   };
 }
 
-function applyNormalizationTransformation(
-  points: Point[],
-  data: NormData,
-  time = 1
-): Point[] {
+function applyNormalizationTransformation(points: Point[], data: NormData, time = 1): Point[] {
   const { scale, centerX, centerY } = data;
   return points.map((p) => {
     const tx = (p.x - centerX) * scale + 14;

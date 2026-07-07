@@ -28,10 +28,7 @@ function useResponsiveSlots(maxSlots: number) {
     if (!el) return;
     const ro = new ResizeObserver((entries) => {
       const w = entries[0].contentRect.width;
-      const fit = Math.max(
-        1,
-        Math.min(maxSlots, Math.floor((w + GAP) / (CELL_MIN + GAP)))
-      );
+      const fit = Math.max(1, Math.min(maxSlots, Math.floor((w + GAP) / (CELL_MIN + GAP))));
       setSlots(fit);
     });
     ro.observe(el);
@@ -103,10 +100,7 @@ function formatTooltipDate(iso: string, locale: string): string {
   });
 }
 
-export default function HeartbeatBar({
-  beats,
-  slots = 100,
-}: HeartbeatBarProps) {
+export default function HeartbeatBar({ beats, slots = 100 }: HeartbeatBarProps) {
   const [hoverIdx, setHoverIdx] = useState<number | null>(null);
   const [wrapRef, fitSlots] = useResponsiveSlots(slots);
   const {
@@ -123,8 +117,7 @@ export default function HeartbeatBar({
   for (const b of recent) padded.push(b);
 
   const active = hoverIdx != null ? padded[hoverIdx] : null;
-  const tooltipLeftPct =
-    hoverIdx != null ? ((hoverIdx + 0.5) / effectiveSlots) * 100 : 0;
+  const tooltipLeftPct = hoverIdx != null ? ((hoverIdx + 0.5) / effectiveSlots) * 100 : 0;
 
   return (
     <div className={styles.wrap} ref={wrapRef}>
@@ -137,10 +130,7 @@ export default function HeartbeatBar({
         {padded.map((beat, i) => (
           <span
             key={i}
-            className={clsx(
-              styles.cell,
-              beat ? statusClass(beat.status) : styles.empty
-            )}
+            className={clsx(styles.cell, beat ? statusClass(beat.status) : styles.empty)}
             onPointerEnter={() => setHoverIdx(i)}
           />
         ))}
@@ -158,10 +148,7 @@ export default function HeartbeatBar({
           </Tooltip.Label>
           <Tooltip.Value>
             <span
-              className={clsx(
-                styles.dot,
-                active ? statusClass(active.status) : styles.empty
-              )}
+              className={clsx(styles.dot, active ? statusClass(active.status) : styles.empty)}
               aria-hidden="true"
             />
             {statusLabel(active?.status)}
@@ -169,9 +156,7 @@ export default function HeartbeatBar({
               <span className={styles.tooltipPing}>· {active.ping}ms</span>
             )}
           </Tooltip.Value>
-          {active?.msg && (
-            <span className={styles.tooltipMsg}>{active.msg}</span>
-          )}
+          {active?.msg && <span className={styles.tooltipMsg}>{active.msg}</span>}
         </Tooltip>
       )}
     </div>

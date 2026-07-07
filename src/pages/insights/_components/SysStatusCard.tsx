@@ -154,8 +154,7 @@ function SysStatusCardInner() {
   const loadStr = load1 == null ? '—' : load1.toFixed(2);
   const diskStr = disk == null ? '—' : `${disk.toFixed(1)}%`;
   const swapStr = swap == null ? '—' : `${swap.toFixed(1)}%`;
-  const lastDeployStr =
-    lastDeploy == null ? '—' : formatRelative(lastDeploy, now.getTime());
+  const lastDeployStr = lastDeploy == null ? '—' : formatRelative(lastDeploy, now.getTime());
   const tlsStr = tlsExpires == null ? '—' : `${tlsExpires}d`;
   const ipNode = ip == null ? '—' : <span title={ip}>{formatIp(ip)}</span>;
   const mutedIfNull = (v: unknown) => (v == null ? styles.muted : undefined);
@@ -173,31 +172,15 @@ function SysStatusCardInner() {
     >
       <div className={styles.body}>
         <Cell label="cpu" value={cpuStr} valueClassName={mutedIfNull(cpu)} />
-        <Cell
-          label="load"
-          value={loadStr}
-          valueClassName={mutedIfNull(load1)}
-        />
+        <Cell label="load" value={loadStr} valueClassName={mutedIfNull(load1)} />
         <Cell label="mem" value={memStr} valueClassName={mutedIfNull(mem)} />
         <Cell label="swap" value={swapStr} valueClassName={mutedIfNull(swap)} />
         <Cell label="disk" value={diskStr} valueClassName={mutedIfNull(disk)} />
         <Cell label="ip" value={ipNode} valueClassName={mutedIfNull(ip)} />
         <Cell label="ping" value={pingStr} valueClassName={mutedIfNull(ping)} />
-        <Cell
-          label="uptime"
-          value={uptimeStr}
-          valueClassName={mutedIfNull(serverUptime)}
-        />
-        <Cell
-          label="last_deploy"
-          value={lastDeployStr}
-          valueClassName={mutedIfNull(lastDeploy)}
-        />
-        <Cell
-          label="tls_expires"
-          value={tlsStr}
-          valueClassName={mutedIfNull(tlsExpires)}
-        />
+        <Cell label="uptime" value={uptimeStr} valueClassName={mutedIfNull(serverUptime)} />
+        <Cell label="last_deploy" value={lastDeployStr} valueClassName={mutedIfNull(lastDeploy)} />
+        <Cell label="tls_expires" value={tlsStr} valueClassName={mutedIfNull(tlsExpires)} />
         <Cell label="build_time" value={formatBuildTime(buildTime)} />
         <Cell label="debug_id" value={debugId} />
         <Cell label="host" value={host} />
