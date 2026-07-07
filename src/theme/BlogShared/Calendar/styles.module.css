@@ -134,8 +134,14 @@
   margin: 0.6rem 0;
 }
 
+/* Both the list and the empty state occupy the same fixed height so the card
+   stays stable as you page between months (post counts vary); sections below
+   it in the sidebar no longer shift. */
 .calendarEmpty {
-  padding: 0.2rem 0.25rem;
+  height: calc(3 * 1.8rem);
+  display: flex;
+  align-items: center;
+  justify-content: center;
   text-align: center;
   color: var(--ifm-color-emphasis-600);
   font-size: 0.92rem;
@@ -145,7 +151,7 @@
   list-style: none;
   margin: 0;
   padding: 0;
-  max-height: calc(3 * 1.8rem);
+  height: calc(3 * 1.8rem);
   overflow-y: auto;
   scrollbar-width: thin;
 
