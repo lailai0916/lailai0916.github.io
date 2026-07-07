@@ -163,7 +163,9 @@ function TravelGlobeClient({ Globe }: { Globe: GlobeComponent }) {
     if (!globe) return;
 
     const controls = globe.controls();
-    controls.autoRotate = true;
+    controls.autoRotate = !window.matchMedia(
+      '(prefers-reduced-motion: reduce)'
+    ).matches;
     controls.autoRotateSpeed = 0.5;
     controls.enablePan = false;
     controls.enableZoom = false;

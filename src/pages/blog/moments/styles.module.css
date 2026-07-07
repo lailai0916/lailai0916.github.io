@@ -148,10 +148,15 @@
   transition: color 160ms ease;
 }
 
-.loadMoreLink:hover,
+.loadMoreLink:hover {
+  color: var(--ifm-color-primary);
+}
+
 .loadMoreLink:focus-visible {
   color: var(--ifm-color-primary);
   outline: none;
+  border-radius: 6px;
+  box-shadow: var(--lk-focus-ring);
 }
 
 .loadMoreDone {

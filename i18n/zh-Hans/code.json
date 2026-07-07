@@ -281,6 +281,9 @@
   "pages.settings.item.color.reset": {
     "message": "重置"
   },
+  "pages.settings.item.color.ariaLabel": {
+    "message": "使用颜色 {color}"
+  },
   "pages.settings.item.fontFamily.option.system": {
     "message": "系统"
   },

@@ -32,3 +32,8 @@
   color: var(--ifm-color-primary);
   background: var(--ifm-hover-overlay);
 }
+
+.iconBtn:focus-visible {
+  outline: none;
+  box-shadow: var(--lk-focus-ring);
+}

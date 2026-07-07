@@ -19,6 +19,13 @@ function useTypewriter(words: string[]) {
 
   useEffect(() => {
     const current = words[index % words.length];
+
+    // Reduced-motion users get the role fully typed, no cycling animation.
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      if (text !== current) setText(current);
+      return;
+    }
+
     let timer: ReturnType<typeof setTimeout>;
 
     if (!deleting && text.length < current.length) {

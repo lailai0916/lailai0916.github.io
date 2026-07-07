@@ -82,6 +82,11 @@
   background-color: rgba(255, 255, 255, 0.06);
 }
 
+.tab:focus-visible {
+  outline: none;
+  box-shadow: var(--lk-focus-ring);
+}
+
 .tabActive,
 .tabActive:hover {
   background-color: var(--ifm-card-background-color);
@@ -156,6 +161,11 @@
 
 [data-theme='dark'] .toggle:hover {
   background-color: rgba(255, 255, 255, 0.06);
+}
+
+.toggle:focus-visible {
+  outline: none;
+  box-shadow: var(--lk-focus-ring);
 }
 
 .chevron {

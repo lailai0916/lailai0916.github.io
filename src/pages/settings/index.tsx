@@ -172,6 +172,13 @@ function AccentColor() {
                 background: `linear-gradient(to right, ${color} 0 50%, ${Color(color).mix(Color('#fff'), 0.3).hex()} 50% 100%)`,
               }}
               onClick={() => updateColor(color)}
+              aria-label={translate(
+                {
+                  id: 'pages.settings.item.color.ariaLabel',
+                  message: 'Use color {color}',
+                },
+                { color }
+              )}
             />
           ))}
         </div>
@@ -413,6 +420,7 @@ function ExperimentalFeatures() {
             <Switch
               checked={toggles[option.key]}
               onChange={(checked) => handleToggle(option.key, checked)}
+              aria-label={option.label}
             />
           </li>
         ))}
@@ -424,7 +432,7 @@ function ExperimentalFeatures() {
 function QuickActions() {
   function Confetti() {
     const count = 200;
-    const defaults = { origin: { y: 0.7 } };
+    const defaults = { origin: { y: 0.7 }, disableForReducedMotion: true };
 
     function fire(particleRatio: number, opts: confetti.Options) {
       confetti({

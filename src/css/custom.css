@@ -125,3 +125,17 @@ article,
   overflow: auto hidden;
   scrollbar-width: thin;
 }
+
+/* Honor the OS "reduce motion" preference site-wide. Entrance keyframes jump
+   to their final (visible) frame; loops run once; transitions snap. One guard
+   covers every surface — Skeleton shimmer, loaders, page reveals, the globe. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  ::before,
+  ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

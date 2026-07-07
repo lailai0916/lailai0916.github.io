@@ -153,6 +153,14 @@
   animation: blink 1.2s steps(1, end) infinite;
 }
 
+/* Blink ends on opacity:0; without this the global reduced-motion guard would
+   freeze the cursor on that frame and hide it. Drop the animation, keep it solid. */
+@media (prefers-reduced-motion: reduce) {
+  .roleCursor {
+    animation: none;
+  }
+}
+
 @keyframes blink {
   0%,
   49% {

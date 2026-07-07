@@ -47,6 +47,11 @@
   background: transparent;
 }
 
+.calendarNavBtn:focus-visible {
+  outline: none;
+  box-shadow: var(--lk-focus-ring);
+}
+
 .calendarWeekdays,
 .calendarGrid {
   display: grid;
@@ -83,6 +88,12 @@
   color: var(--ifm-font-color-base);
   cursor: default;
   font-variant-numeric: tabular-nums;
+}
+
+.calendarCell:focus-visible {
+  outline: none;
+  border-radius: 6px;
+  box-shadow: var(--lk-focus-ring);
 }
 
 .calendarCellMuted {
@@ -138,7 +149,7 @@
    stays stable as you page between months (post counts vary); sections below
    it in the sidebar no longer shift. */
 .calendarEmpty {
-  height: calc(3 * 1.8rem);
+  height: calc(2 * 1.8rem);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -151,7 +162,7 @@
   list-style: none;
   margin: 0;
   padding: 0;
-  height: calc(3 * 1.8rem);
+  height: calc(2 * 1.8rem);
   overflow-y: auto;
   scrollbar-width: thin;
 
