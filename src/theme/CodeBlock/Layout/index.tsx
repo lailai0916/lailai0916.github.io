@@ -5,7 +5,7 @@ import Container from '@theme/CodeBlock/Container';
 import Title from '@theme/CodeBlock/Title';
 import Content from '@theme/CodeBlock/Content';
 import Buttons from '@theme/CodeBlock/Buttons';
-import TrafficLights from '@site/src/components/laikit/TrafficLights';
+import WindowBar from '@site/src/components/laikit/WindowBar';
 import { formatBytes } from '@site/src/utils/format';
 import styles from './styles.module.css';
 
@@ -23,8 +23,7 @@ export default function CodeBlockLayout({
       className={clsx(className, metadata.className, styles.codeBlock)}
     >
       {!bare && (
-        <div className={styles.header}>
-          <TrafficLights className={styles.dots} />
+        <WindowBar className={styles.header}>
           <div className={styles.title}>
             {metadata.title && <Title>{metadata.title}</Title>}
           </div>
@@ -34,7 +33,7 @@ export default function CodeBlockLayout({
               {metadata.language?.toLowerCase() ?? ''}
             </span>
           </span>
-        </div>
+        </WindowBar>
       )}
       <div className={styles.body}>
         <Content />

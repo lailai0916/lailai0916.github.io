@@ -9,7 +9,7 @@ import { useColorMode } from '@docusaurus/theme-common';
 import { translate } from '@docusaurus/Translate';
 import Slider from '@site/src/components/laikit/Slider';
 import Button from '@site/src/components/laikit/Button';
-import Card from '@site/src/components/laikit/Card';
+import Surface from '@site/src/components/playground/Surface';
 import styles from './styles.module.css';
 
 const TWO_PI = 2 * Math.PI;
@@ -160,7 +160,7 @@ function ParamSlider({
   );
 }
 
-export default function LorenzAttractor() {
+export default function LorenzAttractor({ bare = false }: { bare?: boolean }) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const [canvasSize, setCanvasSize] = useState(BASE_SIZE);
@@ -384,7 +384,7 @@ export default function LorenzAttractor() {
 
   return (
     <div ref={containerRef} className={styles.container}>
-      <Card padding="0" className={styles.cardSurface}>
+      <Surface bare={bare} className={styles.cardSurface}>
         <canvas
           ref={canvasRef}
           width={canvasSize * dpr}
@@ -396,7 +396,7 @@ export default function LorenzAttractor() {
           onPointerUp={handlePointerUp}
           onPointerCancel={handlePointerUp}
         />
-      </Card>
+      </Surface>
       <div className={styles.controls}>
         <ParamSlider
           label="σ"

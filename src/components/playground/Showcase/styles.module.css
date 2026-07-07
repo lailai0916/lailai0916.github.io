@@ -81,40 +81,6 @@
   border-color: rgba(255, 255, 255, 0.14);
 }
 
-.right {
-  align-items: center;
-  display: inline-flex;
-  flex-shrink: 0;
-  gap: 10px;
-}
-
-.meta {
-  align-items: baseline;
-  color: rgba(60, 60, 67, 0.55);
-  display: inline-flex;
-  font:
-    500 12px -apple-system,
-    BlinkMacSystemFont,
-    'SF Pro Text',
-    'Segoe UI',
-    sans-serif;
-  font-variant-numeric: tabular-nums;
-  letter-spacing: 0.01em;
-}
-
-[data-theme='dark'] .meta {
-  color: rgba(235, 235, 245, 0.45);
-}
-
-.size::after {
-  content: '·';
-  margin: 0 6px;
-}
-
-.language {
-  text-transform: lowercase;
-}
-
 .toggle {
   align-items: center;
   appearance: none;
@@ -154,8 +120,9 @@
   width: 16px;
 }
 
-/* Height is driven from the measured content (see index.tsx), so collapse/
-   expand and tab switches animate to the real height. */
+/* The window height is driven from the measured demo height (see index.tsx), so
+   collapse/expand and demo switches animate to the real content height — no
+   snapping, no reserved dead space. */
 .viewport {
   overflow: hidden;
   transition: height 240ms ease;
@@ -172,24 +139,4 @@
 
 .bodyInner > :last-child {
   margin-bottom: 0;
-}
-
-.title {
-  font-size: 1.0625rem;
-  font-weight: 600;
-  letter-spacing: -0.005em;
-  line-height: 1.45;
-  margin-bottom: 0.75rem;
-}
-
-.titleLink {
-  color: var(--ifm-color-content);
-  text-decoration: none;
-  word-break: break-word;
-}
-
-.titleLink:hover {
-  color: var(--ifm-color-primary);
-  text-decoration: underline;
-  text-underline-offset: 0.2em;
 }

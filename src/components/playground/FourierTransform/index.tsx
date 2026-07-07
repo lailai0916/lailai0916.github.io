@@ -5,8 +5,19 @@ import {
   type PointerEvent as ReactPointerEvent,
 } from 'react';
 import { useColorMode } from '@docusaurus/theme-common';
-import Card from '@site/src/components/laikit/Card';
+import { translate } from '@docusaurus/Translate';
+import Button from '@site/src/components/laikit/Button';
+import Surface from '@site/src/components/playground/Surface';
 import styles from './styles.module.css';
+
+const RESET_LABEL = translate({
+  id: 'components.playground.fourierTransform.reset',
+  message: 'Reset',
+});
+const CLEAR_LABEL = translate({
+  id: 'components.playground.fourierTransform.clear',
+  message: 'Clear',
+});
 
 const TWO_PI = 2 * Math.PI;
 const STATE = { DRAWING: 1, PLAYING: 2 } as const;
@@ -83,7 +94,7 @@ function centerPoints(points: Point[]): Point[] {
   return points.map((p) => ({ x: p.x - cx, y: p.y - cy }));
 }
 
-export default function FourierTransform() {
+export default function FourierTransform({ bare = false }: { bare?: boolean }) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const [canvasSize, setCanvasSize] = useState(BASE_SIZE);
@@ -159,6 +170,18 @@ export default function FourierTransform() {
       y: p.y * ratio,
     }));
     rebuildFromBase();
+  };
+
+  // Clear to an empty canvas in drawing mode, ready for the user to sketch a
+  // new shape (a short stroke falls back to the default in handleEnd).
+  const handleClear = () => {
+    const state = stateRef.current;
+    state.currentState = STATE.DRAWING;
+    state.drawing = [];
+    state.path = [];
+    state.time = 0;
+    state.phase = 'draw';
+    state.eraseIndex = 0;
   };
 
   // Resolve devicePixelRatio after mount to avoid SSR hydration mismatch.
@@ -397,7 +420,7 @@ export default function FourierTransform() {
 
   return (
     <div ref={containerRef} className={styles.container}>
-      <Card padding="0" className={styles.cardSurface}>
+      <Surface bare={bare} className={styles.cardSurface}>
         <canvas
           ref={canvasRef}
           width={canvasSize * dpr}
@@ -409,7 +432,23 @@ export default function FourierTransform() {
           onPointerUp={handleEnd}
           onPointerCancel={handleEnd}
         />
-      </Card>
+      </Surface>
+      <div className={styles.controls}>
+        <Button
+          variant="secondary"
+          onClick={initDefault}
+          aria-label={RESET_LABEL}
+        >
+          {RESET_LABEL}
+        </Button>
+        <Button
+          variant="secondary"
+          onClick={handleClear}
+          aria-label={CLEAR_LABEL}
+        >
+          {CLEAR_LABEL}
+        </Button>
+      </div>
     </div>
   );
 }

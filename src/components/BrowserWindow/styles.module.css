@@ -4,24 +4,9 @@
 }
 
 .browserWindowHeader {
-  align-items: center;
-  background-color: rgba(246, 246, 247, 0.85);
-  backdrop-filter: saturate(180%) blur(20px);
-  -webkit-backdrop-filter: saturate(180%) blur(20px);
-  display: grid;
   gap: 16px;
   grid-template-columns: 1fr auto 1fr;
-  height: 42px;
   padding: 0 16px;
-}
-
-[data-theme='dark'] .browserWindowHeader {
-  background-color: rgba(40, 40, 42, 0.85);
-}
-
-.buttons {
-  justify-self: start;
-  white-space: nowrap;
 }
 
 .browserWindowAddressBar {

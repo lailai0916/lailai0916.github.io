@@ -5,7 +5,8 @@ import CodeBlock from '@theme/CodeBlock';
 import Admonition from '@theme/Admonition';
 import { translate } from '@docusaurus/Translate';
 import Card from '@site/src/components/laikit/Card';
-import TrafficLights from '@site/src/components/laikit/TrafficLights';
+import WindowBar from '@site/src/components/laikit/WindowBar';
+import { useMeasuredHeight } from '@site/src/hooks/useMeasuredHeight';
 import { formatBytes } from '@site/src/utils/format';
 
 import styles from './styles.module.css';
@@ -50,11 +51,13 @@ function ProblemPanel({ tabs }: { tabs: Tab[] }) {
   const open = active !== null;
   const displayed = tabs[active ?? lastIdx.current];
   const showMeta = open && displayed.kind === 'code';
+  // Animate the panel height to the real content on collapse/expand and tab
+  // switches, shared with the playground Showcase.
+  const [contentRef, contentHeight] = useMeasuredHeight<HTMLDivElement>(active);
 
   return (
     <Card padding={0} className={clsx(styles.panel, open && styles.panelOpen)}>
-      <div className={styles.header}>
-        <TrafficLights className={styles.dots} />
+      <WindowBar className={styles.header}>
         <div className={styles.tabs} role="tablist">
           {tabs.map((t, i) => (
             <button
@@ -111,12 +114,13 @@ function ProblemPanel({ tabs }: { tabs: Tab[] }) {
             </svg>
           </button>
         </div>
-      </div>
+      </WindowBar>
       <div
-        className={clsx(styles.collapse, open && styles.collapseOpen)}
+        className={styles.viewport}
+        style={{ height: open ? contentHeight : 0 }}
         aria-hidden={!open}
       >
-        <div className={styles.body} role="tabpanel">
+        <div className={styles.body} ref={contentRef} role="tabpanel">
           {displayed.kind === 'code' ? (
             <CodeBlock language="cpp" className="codeBlockBare">
               {displayed.code}

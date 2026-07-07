@@ -2,7 +2,7 @@ import { useState, useEffect, useRef, useCallback } from 'react';
 import { translate } from '@docusaurus/Translate';
 import clsx from 'clsx';
 import Button from '@site/src/components/laikit/Button';
-import Card from '@site/src/components/laikit/Card';
+import Surface from '@site/src/components/playground/Surface';
 import styles from './styles.module.css';
 
 const ROWS = 6;
@@ -79,7 +79,7 @@ function aiMove(heaps: number[]): number[] {
   return next;
 }
 
-export default function NimGame() {
+export default function NimGame({ bare = false }: { bare?: boolean }) {
   const [heaps, setHeaps] = useState<number[]>(staircase);
   const [turn, setTurn] = useState<Turn>('you');
   const [winner, setWinner] = useState<Turn | null>(null);
@@ -178,7 +178,7 @@ export default function NimGame() {
 
   return (
     <div className={styles.container}>
-      <Card padding="0" className={styles.cardSurface}>
+      <Surface bare={bare} className={styles.cardSurface}>
         <div
           className={clsx(
             styles.status,
@@ -231,7 +231,7 @@ export default function NimGame() {
             })}
           </div>
         </div>
-      </Card>
+      </Surface>
 
       <div className={styles.controls}>
         <Button variant="secondary" onClick={restart} aria-label={RANDOM_LABEL}>

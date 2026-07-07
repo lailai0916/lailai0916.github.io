@@ -1,7 +1,7 @@
 import { type CSSProperties, type ReactNode } from 'react';
 import clsx from 'clsx';
 import Card from '@site/src/components/laikit/Card';
-import TrafficLights from '@site/src/components/laikit/TrafficLights';
+import WindowBar from '@site/src/components/laikit/WindowBar';
 
 import styles from './styles.module.css';
 
@@ -26,12 +26,11 @@ export default function BrowserWindow({
       className={styles.browserWindow}
       style={{ ...style, minHeight }}
     >
-      <div className={styles.browserWindowHeader}>
-        <TrafficLights className={styles.buttons} />
+      <WindowBar className={styles.browserWindowHeader}>
         <div className={clsx(styles.browserWindowAddressBar, 'text--truncate')}>
           {url}
         </div>
-      </div>
+      </WindowBar>
 
       <div className={styles.browserWindowBody} style={bodyStyle}>
         {children}

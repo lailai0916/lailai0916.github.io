@@ -113,6 +113,27 @@
   "components.countdown.description": {
     "message": "距离 {event} 还有"
   },
+  "components.playground.tab.neuralNetwork": {
+    "message": "神经网络"
+  },
+  "components.playground.tab.fourierTransform": {
+    "message": "傅里叶变换"
+  },
+  "components.playground.tab.lorenzAttractor": {
+    "message": "洛伦兹吸引子"
+  },
+  "components.playground.tab.gameOfLife": {
+    "message": "生命游戏"
+  },
+  "components.playground.tab.nimGame": {
+    "message": "尼姆游戏"
+  },
+  "components.playground.collapse": {
+    "message": "收起"
+  },
+  "components.playground.expand": {
+    "message": "展开"
+  },
   "components.problem.collapse": {
     "message": "收起"
   },
@@ -391,6 +412,12 @@
   },
   "components.markdown.aboutGreeting": {
     "message": "Hello, I'm lailai"
+  },
+  "components.playground.fourierTransform.reset": {
+    "message": "重置"
+  },
+  "components.playground.fourierTransform.clear": {
+    "message": "清空"
   },
   "components.playground.gameOfLife.play": {
     "message": "播放"
