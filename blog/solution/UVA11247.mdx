@@ -1,5 +1,6 @@
 ---
 title: 题解：UVA11247 Income Tax
+summary: 给定最低应税收入 m 与税率 x%，工资超过 m 的部分按 x% 收税；求最大的税前收入 v，使其税后收入仍小于收入略低于它者的税前收入。低于 m 不收税，答案上界为 m-1；对 v 不小于 m 的情形，由税后 (1-x%)v 小于 m-1 解得 v 小于 (m-1)/(1-x%)，向下取整并减去微小量避免边界误差，若结果小于 m 则无解，输出 Not found。
 date: 2024-11-13T00:12:19+08:00
 authors: lailai
 tags: [oi, solution, uva]

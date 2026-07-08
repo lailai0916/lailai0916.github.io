@@ -1,5 +1,6 @@
 ---
 title: 题解：P3016 [USACO11FEB] The Triangle S
+summary: 在三角形数字阵中枚举所有正立与倒立的等边三角形，边长在 K 到 2K 之间时求内部数字的平均值并维护最大值。每行用前缀和求区间和，边长为 k 的三角形总和由边长 k-1 的总和加上新的一行得到，数字个数为 k(k+1)/2。时间复杂度为 O(n^2 k)。
 date: 2024-11-15T18:16:39+08:00
 authors: lailai
 tags: [oi, solution, luogu]

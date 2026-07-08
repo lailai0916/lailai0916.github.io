@@ -1,5 +1,6 @@
 ---
 title: 题解：P3618 误会
+summary: 每组给字符串 s 和 t，可将 s 中任意与 t 相同的子串替换成星号，求不同的替换方案数。设 f[i] 为 s 前 i 个字符范围内的方案数：长度不足时为 1；若末尾 m 个字符等于 t，则可替换或不替换，f[i] 等于 f[i-1] 加 f[i-m]；否则只能不替换，f[i] 等于 f[i-1]。用 KMP 或 Rabin-Karp 哈希单次 O(1) 判断子串匹配，文中给出两种实现。
 date: 2024-11-18T20:16:41+08:00
 authors: lailai
 tags: [oi, solution, luogu]

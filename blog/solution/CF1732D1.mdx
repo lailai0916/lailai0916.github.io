@@ -1,5 +1,6 @@
 ---
 title: 题解：CF1732D1 Balance (Easy version)
+summary: 维护一个整数集合，支持插入操作，以及查询：给定 x，求最小的、x 的倍数且不在集合内的数。直接每次从 x 起枚举倍数最坏为 O(q^2)。注意集合只增不减，同一个 x 的答案单调不减，用 map 缓存每个 x 上次查询的结果，再次查询时从上次答案继续枚举。均摊分析得总复杂度 O(q log q)。
 date: 2024-12-21T03:16:04+08:00
 authors: lailai
 tags: [oi, solution, codeforces]

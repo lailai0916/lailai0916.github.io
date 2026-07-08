@@ -1,5 +1,6 @@
 ---
 title: 题解：CF2048B Kevin and Permutation
+summary: 构造长度为 n 的排列，最小化所有长度为 k 的连续子区间最小值之和。把最小的数 1 放在位置 k，使前 k 个窗口的最小值都取到 1；把 2 放在位置 2k，覆盖接下来的窗口；依此类推将 x 放在位置 xk，让每个较小的数尽量只影响 k 个窗口，其余数任意填充即可。
 date: 2024-12-21T14:30:36+08:00
 authors: lailai
 tags: [oi, solution, codeforces]

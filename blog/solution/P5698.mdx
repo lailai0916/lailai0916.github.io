@@ -1,5 +1,6 @@
 ---
 title: 题解：P5698 [CTSC1998] 算法复杂度
+summary: 给一段带 loop、op、break、continue 的伪代码，求其时间复杂度，结果是次数不超过 20 的关于 n 的多项式。用函数 f(k) 递归模拟执行 k 次的循环，k 为 0 表示执行 n 次：遇 loop 递归求内层复杂度并累加，遇 op 累加常数或 n，遇 break 令前面语句只执行一次、continue 则跳过后续本层语句。最后倒序遍历多项式各次项，按系数与幂次的格式输出。
 date: 2024-01-06T16:22:54+08:00
 authors: lailai
 tags: [oi, solution, luogu]

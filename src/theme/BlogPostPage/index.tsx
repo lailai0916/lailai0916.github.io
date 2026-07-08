@@ -4,6 +4,7 @@ import { useExperimentalFlag } from '@site/src/hooks/useExperimentalFlag';
 import BlogPostPageClassic from '@theme-original/BlogPostPage';
 import BlogScaffold from '../BlogShared/Scaffold';
 import Card from '@site/src/components/laikit/Card';
+import Summary from '@site/src/components/Article/Summary';
 import { PostHeader, PostFooter, PostPaginator } from '../BlogShared/PostChrome';
 import { HtmlClassNameProvider, ThemeClassNames } from '@docusaurus/theme-common';
 import { BlogPostProvider } from '@docusaurus/plugin-content-blog/client';
@@ -19,6 +20,7 @@ export default function BlogPostPage(props: Props): ReactElement {
 
   const BlogPostContent = props.content;
   const { metadata, frontMatter } = props.content;
+  const summary = (frontMatter as { summary?: string }).summary;
 
   return (
     <BlogPostProvider content={props.content} isBlogPostPage>
@@ -34,6 +36,7 @@ export default function BlogPostPage(props: Props): ReactElement {
         >
           <Card>
             <PostHeader metadata={metadata} frontMatter={frontMatter as Record<string, unknown>} />
+            {summary && <Summary content={summary} />}
             <article className="markdown">
               <MDXContent>
                 <BlogPostContent />

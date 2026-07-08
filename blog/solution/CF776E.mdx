@@ -1,5 +1,6 @@
 ---
 title: 题解：CF776E The Holmes Children
+summary: 先证明题中的 f(n) 等于欧拉函数，其约数和恰为 n，于是题目定义的迭代函数化简为对 n 反复套用欧拉函数。打表可知实际嵌套次数约为 k 的一半，而每次求欧拉函数至少让数值折半、很快降到 1，故有效嵌套只有 O(log n) 次。对每次欧拉函数用试除法分解质因数计算，最后对给定模数取余输出。
 date: 2024-04-16T22:24:40+08:00
 authors: lailai
 tags: [oi, solution, codeforces]

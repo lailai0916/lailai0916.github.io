@@ -1,5 +1,6 @@
 ---
 title: 题解：P3846 【模板】BSGS / [TJOI2007] 可爱的质数
+summary: 给质数 p 与整数 b、n，求最小非负整数 l 使 b 的 l 次方模 p 等于 n，无解则报告。gcd(b,p) 为 1 时用大步小步算法：设 m 为 sqrt p 上取整，把 l 写成 im 减 j，小步枚举 j 将 n 乘 b 的 j 次方连同 j 存入哈希表，大步枚举 i 算 b 的 im 次方查表命中即得 l。i 从小到大且哈希表对相同键保留较大的 j，首个命中即最小解，l 等于 0 单独特判。时间复杂度为 O(sqrt p)。
 date: 2026-06-29T23:20:26+08:00
 authors: lailai
 tags: [oi, solution, luogu]

@@ -1,5 +1,6 @@
 ---
 title: 题解：CF1968B Prefiquence
+summary: 求字符串 a 的最长前缀，使其为字符串 b 的子序列。贪心地用双指针扫描 b，维护 a 的待匹配位置，当前字符与 a 的待匹配字符相同时该位置右移、前缀长度加一，遍历结束时匹配到的长度即为答案，整体为线性复杂度。
 date: 2024-05-04T15:23:15+08:00
 authors: lailai
 tags: [oi, solution, codeforces]
