@@ -69,19 +69,3 @@ html[data-theme='dark'] .header:hover {
   font-size: 0.85rem;
   line-height: 1.7;
 }
-
-.cursor {
-  display: inline-block;
-  width: 2px;
-  height: 1em;
-  margin-left: 2px;
-  vertical-align: -0.12em;
-  background: var(--ifm-color-primary);
-  animation: blink 1s steps(1) infinite;
-}
-
-@keyframes blink {
-  50% {
-    opacity: 0;
-  }
-}
