@@ -57,6 +57,11 @@ html[data-theme='dark'] .header:hover {
   transform: rotate(180deg);
 }
 
+.viewport {
+  overflow: hidden;
+  transition: height 240ms ease;
+}
+
 .body {
   padding: 0.55rem 0.8rem 0.65rem;
   border-top: 1px solid var(--ifm-color-emphasis-200);

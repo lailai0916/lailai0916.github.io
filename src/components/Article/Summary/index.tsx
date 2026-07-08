@@ -3,6 +3,7 @@ import clsx from 'clsx';
 import { translate } from '@docusaurus/Translate';
 import { Icon } from '@iconify/react';
 import Card from '@site/src/components/laikit/Card';
+import { useMeasuredHeight } from '@site/src/hooks/useMeasuredHeight';
 import styles from './styles.module.css';
 
 const LABEL = translate({
@@ -36,6 +37,7 @@ export default function Summary({ content }: { content: string }) {
   const [open, setOpen] = useState(false);
   const [count, setCount] = useState(0);
   const reduced = usePrefersReducedMotion();
+  const [contentRef, contentHeight] = useMeasuredHeight<HTMLDivElement>(content);
 
   useEffect(() => {
     if (phase !== 'typing') return undefined;
@@ -73,10 +75,16 @@ export default function Summary({ content }: { content: string }) {
           aria-hidden="true"
         />
       </button>
-      {open && phase !== 'idle' && (
-        <div className={styles.body}>
-          {content.slice(0, count)}
-          {phase === 'typing' && <span className={styles.cursor} aria-hidden="true" />}
+      {phase !== 'idle' && (
+        <div
+          className={styles.viewport}
+          style={{ height: open ? contentHeight : 0 }}
+          aria-hidden={!open}
+        >
+          <div className={styles.body} ref={contentRef}>
+            {content.slice(0, count)}
+            {phase === 'typing' && <span className={styles.cursor} aria-hidden="true" />}
+          </div>
         </div>
       )}
     </Card>
