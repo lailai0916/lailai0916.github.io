@@ -75,18 +75,15 @@ export default function Summary({ content }: { content: string }) {
           aria-hidden="true"
         />
       </button>
-      {phase !== 'idle' && (
-        <div
-          className={styles.viewport}
-          style={{ height: open ? contentHeight : 0 }}
-          aria-hidden={!open}
-        >
-          <div className={styles.body} ref={contentRef}>
-            {content.slice(0, count)}
-            {phase === 'typing' && <span className={styles.cursor} aria-hidden="true" />}
-          </div>
+      <div
+        className={styles.viewport}
+        style={{ height: open ? contentHeight : 0 }}
+        aria-hidden={!open}
+      >
+        <div className={styles.body} ref={contentRef}>
+          {content.slice(0, count)}
         </div>
-      )}
+      </div>
     </Card>
   );
 }
