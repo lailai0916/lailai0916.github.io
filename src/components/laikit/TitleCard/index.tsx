@@ -9,6 +9,8 @@ interface TitleCardProps {
   title: string;
   icon?: string;
   description?: string;
+  // Muted secondary count shown right after the title (e.g. item totals on blog panels).
+  count?: number;
   children: ReactNode;
   padding?: CSSProperties['padding'];
   bodyAlign?: 'top' | 'bottom';
@@ -28,6 +30,7 @@ export default function TitleCard({
   title,
   icon,
   description,
+  count,
   children,
   padding = '1.5rem',
   bodyAlign = 'top',
@@ -52,7 +55,10 @@ export default function TitleCard({
             <IconBlock icon={icon} variant="accent" />
           ))}
         <div className={styles.titleGroup}>
-          <h3 className={styles.title}>{title}</h3>
+          <div className={styles.titleRow}>
+            <h3 className={styles.title}>{title}</h3>
+            {count !== undefined && <span className={styles.count}>{count}</span>}
+          </div>
           {description && <span className={styles.description}>{description}</span>}
         </div>
       </div>

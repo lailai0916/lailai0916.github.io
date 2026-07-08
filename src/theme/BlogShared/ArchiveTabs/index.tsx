@@ -116,7 +116,7 @@ function YearView({ posts }: { posts: readonly PostLike[] }) {
   return (
     <>
       {years.length > 0 && (
-        <TitleCard size="plain" padding="1rem" title={`${YEAR_SELECT_TITLE} (${years.length})`}>
+        <TitleCard size="plain" padding="1rem" title={YEAR_SELECT_TITLE} count={years.length}>
           <div className={styles.yearList}>
             {years.map(({ year, count }) => {
               const isActive = year === activeYear;
@@ -144,7 +144,7 @@ function YearView({ posts }: { posts: readonly PostLike[] }) {
 function TagsView({ tags }: { tags: readonly ArchiveTagItem[] }) {
   const sorted = useMemo(() => [...tags].sort((a, b) => b.count - a.count), [tags]);
   return (
-    <TitleCard size="plain" padding="1rem" title={`${TAGS_TITLE} (${sorted.length})`}>
+    <TitleCard size="plain" padding="1rem" title={TAGS_TITLE} count={sorted.length}>
       <TagChipList
         items={sorted.map((t) => ({
           to: t.permalink,
@@ -158,7 +158,7 @@ function TagsView({ tags }: { tags: readonly ArchiveTagItem[] }) {
 
 function AuthorsView({ authors }: { authors: readonly ArchiveAuthorItem[] }) {
   return (
-    <TitleCard size="plain" padding="1rem" title={`${AUTHORS_TITLE} (${authors.length})`}>
+    <TitleCard size="plain" padding="1rem" title={AUTHORS_TITLE} count={authors.length}>
       <TagChipList
         items={authors.map((a) => ({
           to: a.permalink,
