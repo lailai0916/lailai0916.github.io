@@ -11,36 +11,43 @@ import { DEVICE_LIST } from '@site/src/data/devices';
 import { COMMUNITY_LIST } from '@site/src/data/community';
 import styles from './styles.module.css';
 
-interface SkillItem {
-  title: string;
-  icon: string;
-}
-
-const SKILL_LIST: SkillItem[] = [
-  { title: 'C', icon: 'c' },
-  { title: 'C++', icon: 'cpp' },
-  { title: 'Python', icon: 'py' },
-  { title: 'Java', icon: 'java' },
-  { title: 'Markdown', icon: 'md' },
-  { title: 'LaTeX', icon: 'latex' },
-  { title: 'HTML', icon: 'html' },
-  { title: 'CSS', icon: 'css' },
-  { title: 'JavaScript', icon: 'js' },
-  { title: 'TypeScript', icon: 'ts' },
-  { title: 'React', icon: 'react' },
-  { title: 'Tailwind CSS', icon: 'tailwind' },
-  { title: 'Qt', icon: 'qt' },
-  { title: 'CMake', icon: 'cmake' },
-  { title: 'npm', icon: 'npm' },
-  { title: 'Git', icon: 'git' },
-  { title: 'GitHub', icon: 'github' },
-  { title: 'Visual Studio Code', icon: 'vscode' },
-  { title: 'Visual Studio', icon: 'visualstudio' },
-  { title: 'Linux', icon: 'linux' },
-  { title: 'Windows', icon: 'windows' },
-  { title: 'Docker', icon: 'docker' },
-  { title: 'Cloudflare', icon: 'cloudflare' },
-  { title: 'WordPress', icon: 'wordpress' },
+const SKILL_LIST = [
+  'cpp',
+  'c',
+  'python',
+  'java',
+  'javascript',
+  'typescript',
+  'html',
+  'css',
+  'react',
+  'nextjs',
+  'nodejs',
+  'tailwindcss',
+  'vite',
+  'eslint',
+  'mysql',
+  'latex',
+  'markdown',
+  'mermaid',
+  'git',
+  'github',
+  'vercel',
+  'cloudflare',
+  'docker',
+  'nginx',
+  'linux',
+  'macos',
+  'bash',
+  'apple',
+  'chatgpt',
+  'claude',
+  'cursor',
+  'photoshop',
+  'figma',
+  'blender',
+  'mcp',
+  'playwright',
 ];
 
 export function Skills() {
@@ -63,8 +70,8 @@ export function Skills() {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
-  const skills = SKILL_LIST.map((skill) => skill.icon).join(',');
-  const url = `https://skillicons.dev/icons?i=${skills}&perline=${perline}`;
+  const skills = SKILL_LIST.join(',');
+  const url = `https://go-skill-icons.vercel.app/api/icons?i=${skills}&perline=${perline}`;
 
   return (
     <BrowserOnly>
