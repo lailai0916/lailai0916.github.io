@@ -363,12 +363,10 @@ function MetricsGrid({ range }: { range: InsightsRange }) {
         emptyText={METRIC_LIST_EMPTY}
         renderLabel={(code) => (
           <>
-            <img
+            <Icon
               className={metricListStyles.flag}
-              src={`https://analytics.lailai.one/images/country/${code.toLowerCase()}.png`}
-              alt=""
+              icon={`flag:${code.toLowerCase()}-4x3`}
               aria-hidden="true"
-              loading="lazy"
             />
             <span>{countries.getName(code, lang) ?? code}</span>
           </>

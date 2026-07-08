@@ -112,11 +112,12 @@ a.row:focus-visible {
   background: var(--ifm-color-emphasis-100);
 }
 
+/* flag (lipis) 4:3 rectangular SVG glyphs (Iconify) — a subtle rounded corner
+   and hairline ring lift them off the row background. */
 .flag {
   width: 20px;
   height: 15px;
-  object-fit: cover;
-  border-radius: 2px;
   flex-shrink: 0;
+  border-radius: 2px;
   box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.06);
 }
