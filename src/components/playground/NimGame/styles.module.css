@@ -18,6 +18,16 @@
   overflow: hidden;
 }
 
+/* A DOM board, not a canvas, so the surface fill is set explicitly to match
+   the other demos' #fff / #000 background instead of showing the card color. */
+[data-theme='light'] .cardSurface {
+  background: #ffffff;
+}
+
+[data-theme='dark'] .cardSurface {
+  background: #000000;
+}
+
 .status {
   flex-shrink: 0;
   text-align: center;
