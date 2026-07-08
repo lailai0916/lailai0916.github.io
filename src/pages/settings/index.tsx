@@ -150,8 +150,8 @@ function AccentColor() {
             onClick={resetColors}
           >
             {translate({
-              id: 'pages.settings.item.color.reset',
-              message: 'Reset',
+              id: 'pages.settings.item.color.default',
+              message: 'Default',
             })}
           </Button>
         </div>

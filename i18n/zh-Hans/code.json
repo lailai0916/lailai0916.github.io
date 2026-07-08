@@ -299,8 +299,8 @@
   "pages.settings.item.color.picker": {
     "message": "选择颜色"
   },
-  "pages.settings.item.color.reset": {
-    "message": "重置"
+  "pages.settings.item.color.default": {
+    "message": "默认"
   },
   "pages.settings.item.color.ariaLabel": {
     "message": "使用颜色 {color}"
