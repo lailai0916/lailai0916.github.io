@@ -1,5 +1,6 @@
 ---
 title: 前缀和 & 差分
+summary: 前缀和（Prefix Sum）预处理数列前若干项之和，把区间求和的查询降到常数时间：记前 k 项之和为 Sk，则从 a 到 b 的区间和等于 Sb 减去 S(a-1)。差分（Difference）是与前缀和互逆的策略，可看作求和的逆运算，由相邻两项之差 Ak=Sk-S(k-1) 还原出原数列，常用于对某段区间整体加减的批量修改。文末给出 std 的 partial_sum 与 adjacent_difference 两个对应的 STL 函数。
 ---
 
 ## 参考资料
