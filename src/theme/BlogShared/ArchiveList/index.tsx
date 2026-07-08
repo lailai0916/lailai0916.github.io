@@ -45,7 +45,13 @@ export function BlogArchiveList({ posts }: { posts: readonly PostLike[] }) {
   return (
     <>
       {groups.map(([year, yearPosts]) => (
-        <TitleCard key={year} size="plain" padding="1rem" title={String(year)} count={yearPosts.length}>
+        <TitleCard
+          key={year}
+          size="plain"
+          padding="1rem"
+          title={String(year)}
+          count={yearPosts.length}
+        >
           <ul className={styles.recentList}>
             {yearPosts.map((post) => (
               <li key={post.metadata.permalink} className={styles.recentItem}>
