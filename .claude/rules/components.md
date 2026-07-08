@@ -32,7 +32,8 @@ Before adding a component, check whether an existing primitive (optionally with 
 
 - **`Actions`** (`{ source?, editUrl? }`) — the small top-right icon row: `CopyMarkdownButton` + an "Edit this page" `Link`. Blog `PostChrome`'s `PostHeader` renders it next to the meta bar; the swizzled `DocItem/Layout` renders it next to the breadcrumbs.
 - **`CopyMarkdownButton`** (`{ source }`) — copies a page's raw `.mdx`. It holds **two** `require.context` roots (`!!raw-loader!@site/blog` and `@site/docs`) and routes by the `@site/<root>/` prefix in `metadata.source`; each page's source is a lazy chunk fetched only on click. Adding a third content root means adding a third static context here.
-- **`MetaFooter`** (`{ tags, lastUpdatedAt }`) — the bottom-of-article row: tag chips (laikit `Badge`) on the left, "last updated on …" on the right. Returns `null` when both are empty. Blog `PostFooter` and the swizzled `DocItem/Footer` both delegate to it.
+- **`MetaFooter`** (`{ tags, lastUpdatedAt, views? }`) — the bottom-of-article row: tag chips (laikit `Badge`) on the left, an optional `views` node + "last updated on …" clustered on the right (`.metaEnd`). Returns `null` when all are empty. Blog `PostFooter` and the swizzled `DocItem/Footer` both delegate to it; only `DocItem/Footer` passes `views` (blog posts show the count in their top meta bar instead).
+- **`ViewCount`** (`{ path }`) — Umami pageview count for one article path (`useAnalytics` + pluralized `components.article.viewCount`, `lucide:eye`, `.metaItem` styling). Renders `null` until the fetch succeeds. Fed to `MetaFooter`'s `views` slot by `DocItem/Footer` so docs get the same view count the blog meta bar shows.
 
 ## Code & style conventions
 
@@ -49,7 +50,7 @@ Before adding a component, check whether an existing primitive (optionally with 
 - One component per folder: `ComponentName/index.tsx` + `ComponentName/styles.module.css`. The folder/`index.tsx` resolution means `@site/.../ComponentName` imports resolve automatically.
 - CSS lives in CSS Modules next to the component. Global tokens and overrides live in `src/css/custom.css`.
 - Prefer modern CSS — `grid`, `clamp()`, `color-mix()`, container queries — over JS layout.
-- **Shared-module pattern:** when a few classes are genuinely shared across sibling components, keep a small root `styles.module.css` and import it as `shared` alongside the component's own `styles`. The real case today is `src/components/Article/styles.module.css` (the `.metaItem` / `.metaLink` / `.iconBtn` action-icon buttons shared by `Article/Actions`, `Article/CopyMarkdownButton`, `Article/MetaFooter`). Component-exclusive classes stay in the component's own module. Do not let a shared module accrete single-owner classes.
+- **Shared-module pattern:** when a few classes are genuinely shared across sibling components, keep a small root `styles.module.css` and import it as `shared` alongside the component's own `styles`. The real case today is `src/components/Article/styles.module.css` (the `.metaItem` / `.metaLink` / `.iconBtn` action-icon buttons shared by `Article/Actions`, `Article/CopyMarkdownButton`, `Article/MetaFooter`, `Article/ViewCount`). Component-exclusive classes stay in the component's own module. Do not let a shared module accrete single-owner classes.
 - **CSS-Module typos fail silently.** `tsc` does not type-check `styles.module.css` class names — a misspelled `styles.foo` is `undefined` at runtime, not a compile error. After renaming or splitting CSS, audit class existence by hand and verify the rendered surface in the dev server; don't trust a green `npm run check` alone.
 
 ## CSS rule organization

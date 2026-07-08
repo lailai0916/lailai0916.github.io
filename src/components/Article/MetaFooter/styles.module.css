@@ -28,8 +28,12 @@
   color: inherit;
 }
 
-/* Push the "last updated" meta to the right of the row.
+/* Push the view count + "last updated" cluster to the right of the row.
    Works whether or not tags are present on the left. */
-.updated {
+.metaEnd {
   margin-left: auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem 1.25rem;
 }

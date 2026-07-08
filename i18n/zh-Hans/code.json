@@ -395,6 +395,9 @@
   "components.article.lastUpdated": {
     "message": "最后更新于 {date}"
   },
+  "components.article.viewCount": {
+    "message": "{viewCount} 浏览"
+  },
   "components.github.stars": {
     "message": "Star 数"
   },
