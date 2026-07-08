@@ -64,12 +64,7 @@ export default function Summary({ content }: { content: string }) {
 
   return (
     <Card padding="0" className={styles.summary}>
-      <button
-        type="button"
-        className={styles.header}
-        onClick={toggle}
-        aria-expanded={open}
-      >
+      <button type="button" className={styles.header} onClick={toggle} aria-expanded={open}>
         <Icon icon="lucide:sparkles" className={styles.icon} aria-hidden="true" />
         <span className={styles.label}>{LABEL}</span>
         <Icon
@@ -81,9 +76,7 @@ export default function Summary({ content }: { content: string }) {
       {open && phase !== 'idle' && (
         <div className={styles.body}>
           {content.slice(0, count)}
-          {phase === 'typing' && (
-            <span className={styles.cursor} aria-hidden="true" />
-          )}
+          {phase === 'typing' && <span className={styles.cursor} aria-hidden="true" />}
         </div>
       )}
     </Card>

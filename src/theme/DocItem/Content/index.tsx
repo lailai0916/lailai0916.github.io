@@ -13,9 +13,7 @@ import Summary from '@site/src/components/Article/Summary';
 export default function DocItemContent({ children }: Props): ReactNode {
   const { metadata, frontMatter, contentTitle } = useDoc();
   const syntheticTitle =
-    !frontMatter.hide_title && typeof contentTitle === 'undefined'
-      ? metadata.title
-      : null;
+    !frontMatter.hide_title && typeof contentTitle === 'undefined' ? metadata.title : null;
   const summary = (frontMatter as { summary?: string }).summary;
 
   return (
