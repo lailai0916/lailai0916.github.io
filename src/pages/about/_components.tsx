@@ -11,45 +11,6 @@ import { DEVICE_LIST } from '@site/src/data/devices';
 import { COMMUNITY_LIST } from '@site/src/data/community';
 import styles from './styles.module.css';
 
-const SKILL_LIST = [
-  'cpp',
-  'c',
-  'python',
-  'java',
-  'javascript',
-  'typescript',
-  'html',
-  'css',
-  'react',
-  'nextjs',
-  'nodejs',
-  'tailwindcss',
-  'vite',
-  'eslint',
-  'mysql',
-  'latex',
-  'markdown',
-  'mermaid',
-  'git',
-  'github',
-  'vercel',
-  'cloudflare',
-  'docker',
-  'nginx',
-  'linux',
-  'macos',
-  'bash',
-  'apple',
-  'chatgpt',
-  'claude',
-  'cursor',
-  'photoshop',
-  'figma',
-  'blender',
-  'mcp',
-  'playwright',
-];
-
 export function Skills() {
   const [perline, setPerline] = useState(12);
 
@@ -70,16 +31,13 @@ export function Skills() {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
-  const skills = SKILL_LIST.join(',');
-  const url = `https://go-skill-icons.vercel.app/api/icons?i=${skills}&perline=${perline}`;
+  const skills =
+    'cpp,c,python,java,javascript,typescript,html,css,react,nextjs,nodejs,tailwindcss,vite,eslint,mysql,latex,markdown,mermaid,git,github,vercel,cloudflare,docker,nginx,linux,macos,bash,apple,chatgpt,claude,cursor,photoshop,figma,blender,mcp,playwright';
 
   return (
     <BrowserOnly>
       {() => (
-        <>
-          <img src={`${url}&theme=light#gh-light-mode-only`} />
-          <img src={`${url}&theme=dark#gh-dark-mode-only`} />
-        </>
+        <img src={`https://go-skill-icons.vercel.app/api/icons?i=${skills}&perline=${perline}`} />
       )}
     </BrowserOnly>
   );
