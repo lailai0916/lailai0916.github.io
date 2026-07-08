@@ -8,6 +8,11 @@ interface ChangelogItem {
 
 export const CHANGELOG_LIST: ChangelogItem[] = [
   {
+    date: '2026-07-08',
+    type: 'added',
+    content: '文档 AI 概述',
+  },
+  {
     date: '2026-06-18',
     type: 'added',
     content: '博客 <b>Overview</b> 统计页面',
