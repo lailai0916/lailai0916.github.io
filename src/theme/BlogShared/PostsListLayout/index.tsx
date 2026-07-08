@@ -12,7 +12,6 @@ import { translate } from '@docusaurus/Translate';
 import { Icon } from '@iconify/react';
 import MDXContent from '@theme/MDXContent';
 import styles from './styles.module.css';
-import shared from '../styles.module.css';
 
 const READ_MORE_LABEL = translate({
   id: 'blog.postcard.readMore',
@@ -30,10 +29,7 @@ interface PostCardProps {
 function PostCard({ item }: PostCardProps) {
   const { content: MDXPageContent } = item;
   const { metadata, frontMatter } = MDXPageContent;
-  const lightImage = frontMatter.image as string | undefined;
-  const darkImage =
-    ((frontMatter as Record<string, unknown>).image_dark as string | undefined) ?? lightImage;
-  const themed = !!darkImage && darkImage !== lightImage;
+  const image = frontMatter.image as string | undefined;
 
   const tagItems = (metadata.tags ?? [])
     .filter((t) => !!t.label && !!t.permalink)
@@ -50,31 +46,14 @@ function PostCard({ item }: PostCardProps) {
   return (
     <article className={styles.postCard}>
       <Card>
-        {lightImage && (
+        {image && (
           <Link
             to={metadata.permalink}
             className={styles.postCoverWrap}
             tabIndex={-1}
             aria-hidden="true"
           >
-            {themed ? (
-              <>
-                <img
-                  src={lightImage}
-                  alt=""
-                  className={clsx(styles.postCover, shared.postCoverLight)}
-                  loading="lazy"
-                />
-                <img
-                  src={darkImage}
-                  alt=""
-                  className={clsx(styles.postCover, shared.postCoverDark)}
-                  loading="lazy"
-                />
-              </>
-            ) : (
-              <img src={lightImage} alt="" className={styles.postCover} loading="lazy" />
-            )}
+            <img src={image} alt="" className={styles.postCover} loading="lazy" />
           </Link>
         )}
 

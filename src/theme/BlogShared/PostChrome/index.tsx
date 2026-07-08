@@ -1,4 +1,3 @@
-import clsx from 'clsx';
 import { translate } from '@docusaurus/Translate';
 
 import type { Props as BlogPostPageProps } from '@theme/BlogPostPage';
@@ -9,7 +8,6 @@ import { MetaBar } from '../BlogUI';
 import { usePostMetaItems } from '../PostMeta';
 import Author from '../PostAuthor';
 import styles from './styles.module.css';
-import shared from '../styles.module.css';
 
 type PostMetadata = BlogPostPageProps['content']['metadata'];
 
@@ -21,9 +19,7 @@ interface PostHeaderProps {
 }
 
 export function PostHeader({ metadata, frontMatter }: PostHeaderProps) {
-  const lightImage = frontMatter.image as string | undefined;
-  const darkImage = (frontMatter.image_dark as string | undefined) ?? lightImage;
-  const themed = !!darkImage && darkImage !== lightImage;
+  const image = frontMatter.image as string | undefined;
 
   const metaItems = usePostMetaItems({
     permalink: metadata.permalink,
@@ -42,26 +38,9 @@ export function PostHeader({ metadata, frontMatter }: PostHeaderProps) {
 
   return (
     <header className={styles.articleHeader}>
-      {lightImage && (
+      {image && (
         <div className={styles.articleCoverWrap} aria-hidden="true">
-          {themed ? (
-            <>
-              <img
-                src={lightImage}
-                alt=""
-                className={clsx(styles.articleCover, shared.postCoverLight)}
-                loading="eager"
-              />
-              <img
-                src={darkImage}
-                alt=""
-                className={clsx(styles.articleCover, shared.postCoverDark)}
-                loading="eager"
-              />
-            </>
-          ) : (
-            <img src={lightImage} alt="" className={styles.articleCover} loading="eager" />
-          )}
+          <img src={image} alt="" className={styles.articleCover} loading="eager" />
         </div>
       )}
 
