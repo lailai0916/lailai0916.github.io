@@ -1,0 +1,82 @@
+.summary {
+  margin: 1.25rem 0;
+  /* Card has a 16px radius but no clip; without this the header's square
+     hover fill spills past the rounded corners. */
+  overflow: hidden;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  width: 100%;
+  padding: 0.5rem 0.8rem;
+  border: 0;
+  background: none;
+  color: var(--ifm-color-emphasis-800);
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+  transition: background-color 160ms ease;
+}
+
+.header:hover {
+  background-color: rgba(0, 0, 0, 0.04);
+}
+
+html[data-theme='dark'] .header:hover {
+  background-color: rgba(255, 255, 255, 0.06);
+}
+
+.header:focus-visible {
+  outline: none;
+  box-shadow: var(--lk-focus-ring);
+}
+
+.icon {
+  flex-shrink: 0;
+  font-size: 1rem;
+  color: var(--ifm-color-primary);
+}
+
+.label {
+  flex: 1;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.chevron {
+  flex-shrink: 0;
+  font-size: 1.05rem;
+  color: var(--ifm-color-emphasis-500);
+  transition: transform 160ms ease;
+}
+
+.chevronOpen {
+  transform: rotate(180deg);
+}
+
+.body {
+  padding: 0.55rem 0.8rem 0.65rem;
+  border-top: 1px solid var(--ifm-color-emphasis-200);
+  color: var(--ifm-color-emphasis-700);
+  font-size: 0.85rem;
+  line-height: 1.7;
+}
+
+.cursor {
+  display: inline-block;
+  width: 2px;
+  height: 1em;
+  margin-left: 2px;
+  vertical-align: -0.12em;
+  background: var(--ifm-color-primary);
+  animation: blink 1s steps(1) infinite;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}

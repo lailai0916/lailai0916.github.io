@@ -398,6 +398,9 @@
   "components.article.viewCount": {
     "message": "{viewCount} 浏览"
   },
+  "components.article.summaryLabel": {
+    "message": "概述"
+  },
   "components.github.stars": {
     "message": "Star 数"
   },
