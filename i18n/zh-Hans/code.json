@@ -408,7 +408,7 @@
     "message": "Hello, I'm lailai"
   },
   "components.quote.attributionDash": {
-    "message": "——"
+    "message": "—— "
   },
   "components.playground.fourierTransform.reset": {
     "message": "重置"
