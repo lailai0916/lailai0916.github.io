@@ -89,9 +89,6 @@
   "pages.home.connect": {
     "message": "联系"
   },
-  "components.desmos.frameTitle": {
-    "message": "Desmos 图形计算器"
-  },
   "components.countdown.event": {
     "message": "我的生日"
   },
@@ -113,26 +110,8 @@
   "components.countdown.description": {
     "message": "距离 {event} 还有"
   },
-  "components.playground.tab.neuralNetwork": {
-    "message": "神经网络"
-  },
-  "components.playground.tab.fourierTransform": {
-    "message": "傅里叶变换"
-  },
-  "components.playground.tab.lorenzAttractor": {
-    "message": "洛伦兹吸引子"
-  },
-  "components.playground.tab.gameOfLife": {
-    "message": "生命游戏"
-  },
-  "components.playground.tab.nimGame": {
-    "message": "尼姆游戏"
-  },
-  "components.playground.collapse": {
-    "message": "收起"
-  },
-  "components.playground.expand": {
-    "message": "展开"
+  "components.desmos.frameTitle": {
+    "message": "Desmos 图形计算器"
   },
   "components.problem.collapse": {
     "message": "收起"
@@ -149,6 +128,9 @@
   "components.problem.solution": {
     "message": "题解"
   },
+  "pages.changelog.empty": {
+    "message": "暂无更新日志"
+  },
   "pages.friends.title": {
     "message": "友链"
   },
@@ -160,9 +142,6 @@
   },
   "pages.friends.datacard.label": {
     "message": "位朋友"
-  },
-  "pages.changelog.empty": {
-    "message": "暂无更新日志"
   },
   "pages.insights.title": {
     "message": "实时洞察"
@@ -250,21 +229,6 @@
   },
   "pages.resources.search.empty": {
     "message": "找不到和“{query}”相符的资源。"
-  },
-  "pages.travel.title": {
-    "message": "旅行"
-  },
-  "pages.travel.description": {
-    "message": "每一次旅行都能带来新的视野和感悟"
-  },
-  "pages.travel.modification": {
-    "message": "旅行<b>记录</b>"
-  },
-  "pages.travel.datacard.countries": {
-    "message": "国家/地区"
-  },
-  "pages.travel.datacard.years": {
-    "message": "年历程"
   },
   "pages.settings.title": {
     "message": "设置"
@@ -365,6 +329,30 @@
   "pages.settings.datacard.label": {
     "message": "项设置"
   },
+  "pages.travel.title": {
+    "message": "旅行"
+  },
+  "pages.travel.description": {
+    "message": "每一次旅行都能带来新的视野和感悟"
+  },
+  "pages.travel.modification": {
+    "message": "旅行<b>记录</b>"
+  },
+  "pages.travel.quote.content": {
+    "message": "纸上得来终觉浅，绝知此事要躬行。"
+  },
+  "pages.travel.quote.author": {
+    "message": "陆游"
+  },
+  "pages.travel.quote.source": {
+    "message": "《冬夜读书示子聿》"
+  },
+  "pages.travel.datacard.countries": {
+    "message": "国家/地区"
+  },
+  "pages.travel.datacard.years": {
+    "message": "年历程"
+  },
   "blog.pages.tags.tagSelect": {
     "message": "标签"
   },
@@ -395,11 +383,11 @@
   "components.article.lastUpdated": {
     "message": "最后更新于 {date}"
   },
-  "components.article.viewCount": {
-    "message": "{viewCount} 浏览"
-  },
   "components.article.summaryLabel": {
     "message": "概述"
+  },
+  "components.article.viewCount": {
+    "message": "{viewCount} 浏览"
   },
   "components.github.stars": {
     "message": "Star 数"
@@ -418,6 +406,9 @@
   },
   "components.markdown.aboutGreeting": {
     "message": "Hello, I'm lailai"
+  },
+  "components.quote.attributionDash": {
+    "message": "——"
   },
   "components.playground.fourierTransform.reset": {
     "message": "重置"
@@ -469,6 +460,27 @@
   },
   "components.playground.nim.tip": {
     "message": "提示"
+  },
+  "components.playground.tab.neuralNetwork": {
+    "message": "神经网络"
+  },
+  "components.playground.tab.fourierTransform": {
+    "message": "傅里叶变换"
+  },
+  "components.playground.tab.lorenzAttractor": {
+    "message": "洛伦兹吸引子"
+  },
+  "components.playground.tab.gameOfLife": {
+    "message": "生命游戏"
+  },
+  "components.playground.tab.nimGame": {
+    "message": "尼姆游戏"
+  },
+  "components.playground.collapse": {
+    "message": "收起"
+  },
+  "components.playground.expand": {
+    "message": "展开"
   },
   "pages.moments.title": {
     "message": "动态"
@@ -775,15 +787,6 @@
   "pages.travel.map.legend.unvisited": {
     "message": "未到访"
   },
-  "pages.travel.quote.content": {
-    "message": "纸上得来终觉浅，绝知此事要躬行。"
-  },
-  "pages.travel.quote.author": {
-    "message": "陆游"
-  },
-  "pages.travel.quote.source": {
-    "message": "《冬夜读书示子聿》"
-  },
   "blog.pages.authors.authorSelect": {
     "message": "作者"
   },
@@ -794,14 +797,6 @@
   "theme.BackToTopButton.buttonAriaLabel": {
     "message": "回到顶部",
     "description": "The ARIA label for the back to top button"
-  },
-  "theme.blog.archive.title": {
-    "message": "历史文章",
-    "description": "The page & hero title of the blog archive page"
-  },
-  "theme.blog.archive.description": {
-    "message": "历史文章",
-    "description": "The page & hero description of the blog archive page"
   },
   "theme.blog.paginator.navAriaLabel": {
     "message": "文章列表分页导航",
@@ -814,6 +809,14 @@
   "theme.blog.paginator.olderEntries": {
     "message": "较旧的文章",
     "description": "The label used to navigate to the older blog posts page (next page)"
+  },
+  "theme.blog.archive.title": {
+    "message": "历史文章",
+    "description": "The page & hero title of the blog archive page"
+  },
+  "theme.blog.archive.description": {
+    "message": "历史文章",
+    "description": "The page & hero description of the blog archive page"
   },
   "theme.blog.post.paginator.navAriaLabel": {
     "message": "文章分页导航",
@@ -878,13 +881,13 @@
     "message": "最新版本",
     "description": "The label used for the latest version suggestion link label"
   },
-  "theme.common.editThisPage": {
-    "message": "编辑此页",
-    "description": "The link label to edit the current page"
-  },
   "theme.common.headingLinkTitle": {
     "message": "{heading}的直接链接",
     "description": "Title for link to heading"
+  },
+  "theme.common.editThisPage": {
+    "message": "编辑此页",
+    "description": "The link label to edit the current page"
   },
   "theme.lastUpdated.atDate": {
     "message": "于 {date} ",
@@ -954,17 +957,21 @@
     "message": "主导航",
     "description": "The ARIA label for the main navigation"
   },
-  "theme.navbar.mobileLanguageDropdown.label": {
-    "message": "选择语言",
-    "description": "The label for the mobile language switcher dropdown"
-  },
   "theme.NotFound.p2": {
     "message": "请联系原始链接来源网站的所有者，并告知他们链接已损坏。",
     "description": "The 2nd paragraph of the 404 page"
   },
+  "theme.navbar.mobileLanguageDropdown.label": {
+    "message": "选择语言",
+    "description": "The label for the mobile language switcher dropdown"
+  },
   "theme.TOCCollapsible.toggleButtonLabel": {
     "message": "本页总览",
     "description": "The label used by the button on the collapsible TOC component"
+  },
+  "theme.blog.post.readingTime.plurals": {
+    "message": "阅读需 {readingTime} 分钟",
+    "description": "Pluralized label for \"{readingTime} min read\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
   },
   "theme.blog.post.readMore": {
     "message": "阅读更多",
@@ -973,10 +980,6 @@
   "theme.blog.post.readMoreLabel": {
     "message": "阅读 {title} 的全文",
     "description": "The ARIA label for the link to full blog posts from excerpts"
-  },
-  "theme.blog.post.readingTime.plurals": {
-    "message": "阅读需 {readingTime} 分钟",
-    "description": "Pluralized label for \"{readingTime} min read\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
   },
   "theme.CodeBlock.copy": {
     "message": "复制",
@@ -1336,8 +1339,5 @@
   "theme.tags.tagsPageTitle": {
     "message": "标签",
     "description": "The title of the tag list page"
-  },
-  "components.quote.attributionDash": {
-    "message": "——"
   }
 }
