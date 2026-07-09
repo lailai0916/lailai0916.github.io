@@ -72,10 +72,6 @@
   color: var(--ifm-color-emphasis-600);
 }
 
-.attribution::before {
-  content: '— ';
-}
-
 .author {
   font-weight: 500;
   color: var(--ifm-color-emphasis-700);

@@ -1,7 +1,13 @@
 import type { ReactNode } from 'react';
 import clsx from 'clsx';
+import { translate } from '@docusaurus/Translate';
 import { Icon } from '@iconify/react';
 import styles from './styles.module.css';
+
+const ATTRIBUTION_DASH = translate({
+  id: 'components.quote.attributionDash',
+  message: '— ',
+});
 
 interface QuoteProps {
   /** Quoted body text or rich nodes. */
@@ -49,6 +55,7 @@ export default function Quote({
       <blockquote className={styles.body}>{children}</blockquote>
       {hasAttribution && (
         <figcaption className={styles.attribution}>
+          <span aria-hidden="true">{ATTRIBUTION_DASH}</span>
           {author && <span className={styles.author}>{author}</span>}
           {author && source && (
             <span className={styles.separator} aria-hidden="true">

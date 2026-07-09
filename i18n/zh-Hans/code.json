@@ -1336,5 +1336,8 @@
   "theme.tags.tagsPageTitle": {
     "message": "标签",
     "description": "The title of the tag list page"
+  },
+  "components.quote.attributionDash": {
+    "message": "——"
   }
 }
