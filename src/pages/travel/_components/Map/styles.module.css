@@ -18,3 +18,26 @@
     border-radius: 20px;
   }
 }
+
+/* Zero-size anchor at the cursor; the laikit Tooltip floats above it. */
+.tooltipAnchor {
+  position: absolute;
+  width: 0;
+  height: 0;
+  z-index: 3;
+  pointer-events: none;
+}
+
+.tooltipLabelRow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.tooltipFlag {
+  width: 16px;
+  height: 12px;
+  flex-shrink: 0;
+  border-radius: 2px;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.06);
+}

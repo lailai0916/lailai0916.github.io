@@ -4,6 +4,7 @@ import {
   useRef,
   useState,
   type ComponentType,
+  type MouseEvent as ReactMouseEvent,
   type MutableRefObject,
 } from 'react';
 import BrowserOnly from '@docusaurus/BrowserOnly';
@@ -11,6 +12,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import { translate } from '@docusaurus/Translate';
 import { useColorMode } from '@docusaurus/theme-common';
+import { Icon } from '@iconify/react';
 import * as countries from 'i18n-iso-countries';
 import countriesEn from 'i18n-iso-countries/langs/en.json';
 import countriesZh from 'i18n-iso-countries/langs/zh.json';
@@ -26,6 +28,7 @@ import {
 
 countries.registerLocale(countriesEn);
 countries.registerLocale(countriesZh);
+import Tooltip from '@site/src/components/laikit/Tooltip';
 import styles from './styles.module.css';
 import type { GlobeMethods, GlobeProps } from 'react-globe.gl';
 
@@ -57,10 +60,33 @@ function TravelGlobeClient({ Globe }: { Globe: GlobeComponent }) {
   const { i18n } = useDocusaurusContext();
   const { colorMode } = useColorMode();
   const containerRef = useRef<HTMLDivElement | null>(null);
+  const frameRef = useRef<HTMLDivElement | null>(null);
   const globeRef = useRef<GlobeMethods | undefined>(undefined);
   const [size, setSize] = useState({ width: 720, height: 500 });
   const [isGlobeReady, setIsGlobeReady] = useState(false);
   const [features, setFeatures] = useState<readonly GlobeCountryFeature[]>([]);
+
+  const lang = i18n.currentLocale === 'zh-Hans' ? 'zh' : 'en';
+
+  // Country hover card: a laikit Tooltip that follows the cursor, replacing
+  // react-globe.gl's plain built-in label. `cursorRef` tracks the pointer even
+  // when nothing is hovered, so the tooltip has a position the moment a country
+  // is entered; state only updates while a country is actually under the cursor.
+  const cursorRef = useRef({ x: 0, y: 0 });
+  const hoveredRef = useRef(false);
+  const [hovered, setHovered] = useState<{
+    name: string;
+    visited: boolean;
+    flag: string | null;
+  } | null>(null);
+  const [cursor, setCursor] = useState({ x: 0, y: 0 });
+
+  const onFrameMouseMove = (event: ReactMouseEvent<HTMLDivElement>) => {
+    const rect = frameRef.current?.getBoundingClientRect();
+    if (!rect) return;
+    cursorRef.current = { x: event.clientX - rect.left, y: event.clientY - rect.top };
+    if (hoveredRef.current) setCursor(cursorRef.current);
+  };
 
   const worldUrl = useBaseUrl('/json/datamaps.world.json');
   useEffect(() => {
@@ -165,7 +191,7 @@ function TravelGlobeClient({ Globe }: { Globe: GlobeComponent }) {
 
   return (
     <div className={styles.globeShell} ref={containerRef}>
-      <div className={styles.globeFrame}>
+      <div className={styles.globeFrame} ref={frameRef} onMouseMove={onFrameMouseMove}>
         <Globe
           ref={globeRef}
           width={size.width}
@@ -183,15 +209,35 @@ function TravelGlobeClient({ Globe }: { Globe: GlobeComponent }) {
           polygonStrokeColor={() => colors.stroke}
           polygonAltitude={0.01}
           polygonsTransitionDuration={0}
-          polygonLabel={(polygon) => {
+          polygonLabel={() => ''}
+          onPolygonHover={(polygon) => {
+            if (!polygon) {
+              hoveredRef.current = false;
+              setHovered(null);
+              return;
+            }
             const item = polygon as TravelPolygon;
-            const lang = i18n.currentLocale === 'zh-Hans' ? 'zh' : 'en';
             const code = getFeatureIso3(item);
-            const localizedName = countries.getName(code, lang) ?? item.properties.NAME ?? '';
-            return `${localizedName}<br />${item.visited ? VISITED_LABEL : NOT_VISITED_LABEL}`;
+            const name = countries.getName(code, lang) ?? item.properties.NAME ?? '';
+            const alpha2 = countries.alpha3ToAlpha2(code);
+            const flag = alpha2 ? `flag:${alpha2.toLowerCase()}-4x3` : null;
+            hoveredRef.current = true;
+            setCursor(cursorRef.current);
+            setHovered({ name, visited: item.visited, flag });
           }}
           onGlobeReady={handleReady}
         />
+        {hovered && (
+          <div className={styles.tooltipAnchor} style={{ left: cursor.x, top: cursor.y }}>
+            <Tooltip>
+              <Tooltip.Label className={styles.tooltipLabelRow}>
+                {hovered.flag && <Icon icon={hovered.flag} className={styles.tooltipFlag} />}
+                {hovered.name}
+              </Tooltip.Label>
+              <Tooltip.Value>{hovered.visited ? VISITED_LABEL : NOT_VISITED_LABEL}</Tooltip.Value>
+            </Tooltip>
+          </div>
+        )}
       </div>
     </div>
   );
