@@ -2,12 +2,12 @@
   display: inline-flex;
   align-items: baseline;
   gap: 0.35rem;
-  padding: 0.25rem 0.55rem;
+  padding: var(--badge-padding, 0.25rem 0.55rem);
   border-radius: 6px;
   border: 1px solid var(--ifm-color-emphasis-200);
   background: var(--ifm-color-emphasis-100);
   color: var(--ifm-color-emphasis-800);
-  font-size: 0.85rem;
+  font-size: var(--badge-font-size, 0.85rem);
   line-height: 1.15;
   text-decoration: none !important;
   transition:
