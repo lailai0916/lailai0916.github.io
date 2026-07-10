@@ -265,6 +265,7 @@ function TravelGlobeClient({ Globe }: { Globe: GlobeComponent }) {
             height={size.height}
             backgroundColor="rgba(0,0,0,0)"
             rendererConfig={{ antialias: true }}
+            animateIn={false}
             showGlobe
             globeMaterial={globeMaterial}
             onGlobeReady={handleReady}
