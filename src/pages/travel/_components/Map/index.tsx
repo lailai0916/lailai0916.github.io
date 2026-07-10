@@ -265,6 +265,7 @@ function TravelGlobeClient({ Globe }: { Globe: GlobeComponent }) {
             rendererConfig={{ antialias: true }}
             animateIn={false}
             showGlobe
+            showAtmosphere={false}
             globeMaterial={globeMaterial}
             onGlobeReady={handleReady}
           />
