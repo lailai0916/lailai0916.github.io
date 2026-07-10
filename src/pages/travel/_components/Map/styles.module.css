@@ -4,9 +4,16 @@
   margin: 0 auto;
 }
 
+/* Height comes from CSS (not the canvas) so the box is correct on the first
+   paint — no layout shift when the measured size resolves. Mirrors the JS
+   clamp: width * 0.7, bounded to 360–560px. */
 .globeFrame {
   position: relative;
   overflow: hidden;
+  width: 100%;
+  aspect-ratio: 10 / 7;
+  min-height: 360px;
+  max-height: 560px;
   border-radius: 24px;
   background: transparent;
   border: none;
@@ -20,6 +27,8 @@
 }
 
 .globeLayer {
+  position: absolute;
+  inset: 0;
   opacity: 0;
   transition: opacity 0.6s ease;
 }

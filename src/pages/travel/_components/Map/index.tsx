@@ -96,7 +96,6 @@ function bakeGlobeTexture(
 function TravelGlobeClient({ Globe }: { Globe: GlobeComponent }) {
   const { i18n } = useDocusaurusContext();
   const { colorMode } = useColorMode();
-  const containerRef = useRef<HTMLDivElement | null>(null);
   const frameRef = useRef<HTMLDivElement | null>(null);
   const globeRef = useRef<GlobeMethods | undefined>(undefined);
   const [size, setSize] = useState({ width: 720, height: 500 });
@@ -158,12 +157,12 @@ function TravelGlobeClient({ Globe }: { Globe: GlobeComponent }) {
   }, [features, visitedCountries, colors]);
 
   useEffect(() => {
-    const element = containerRef.current;
+    const element = frameRef.current;
     if (!element) return;
 
     const updateSize = () => {
-      const width = Math.max(Math.round(element.clientWidth), 320);
-      const height = Math.min(Math.max(Math.round(width * 0.7), 360), 560);
+      const width = Math.round(element.clientWidth);
+      const height = Math.round(element.clientHeight);
       setSize((prev) =>
         prev.width === width && prev.height === height ? prev : { width, height }
       );
@@ -257,7 +256,7 @@ function TravelGlobeClient({ Globe }: { Globe: GlobeComponent }) {
   const isReady = isGlobeReady && features.length > 0;
 
   return (
-    <div className={styles.globeShell} ref={containerRef}>
+    <div className={styles.globeShell}>
       <div className={styles.globeFrame} ref={frameRef} onMouseMove={onFrameMouseMove}>
         <div className={clsx(styles.globeLayer, isReady && styles.globeVisible)}>
           <Globe
@@ -290,9 +289,24 @@ function TravelGlobeClient({ Globe }: { Globe: GlobeComponent }) {
   );
 }
 
+// Reserves the frame (CSS-sized, so identical to the mounted client) with the
+// skeleton, so the globe area holds its space from the server render through
+// hydration — no content below shifting when the client component mounts.
+function GlobePlaceholder() {
+  return (
+    <div className={styles.globeShell}>
+      <div className={styles.globeFrame}>
+        <div className={styles.loading} aria-hidden="true">
+          <Skeleton className={styles.loadingDisc} />
+        </div>
+      </div>
+    </div>
+  );
+}
+
 export default function TravelMap() {
   return (
-    <BrowserOnly>
+    <BrowserOnly fallback={<GlobePlaceholder />}>
       {() => {
         const Globe = require('react-globe.gl').default as GlobeComponent;
         return <TravelGlobeClient Globe={Globe} />;
