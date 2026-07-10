@@ -7,6 +7,7 @@ import {
   type MouseEvent as ReactMouseEvent,
   type MutableRefObject,
 } from 'react';
+import clsx from 'clsx';
 import BrowserOnly from '@docusaurus/BrowserOnly';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
@@ -28,6 +29,7 @@ import {
 countries.registerLocale(countriesEn);
 countries.registerLocale(countriesZh);
 import Tooltip from '@site/src/components/laikit/Tooltip';
+import Skeleton from '@site/src/components/laikit/Skeleton';
 import styles from './styles.module.css';
 import type { GlobeMethods, GlobeProps } from 'react-globe.gl';
 
@@ -149,7 +151,10 @@ function TravelGlobeClient({ Globe }: { Globe: GlobeComponent }) {
 
   const globeMaterial = useMemo<GlobeMaterial>(() => {
     if (features.length === 0) return new three.MeshBasicMaterial({ color: colors.ocean });
-    const texture = new three.CanvasTexture(bakeGlobeTexture(features, visitedCountries, colors));
+    const t0 = performance.now();
+    const baked = bakeGlobeTexture(features, visitedCountries, colors);
+    console.log(`[globe] bake: ${(performance.now() - t0).toFixed(1)}ms`);
+    const texture = new three.CanvasTexture(baked);
     texture.colorSpace = three.SRGBColorSpace;
     texture.anisotropy = 8;
     return new three.MeshBasicMaterial({ map: texture });
@@ -251,19 +256,27 @@ function TravelGlobeClient({ Globe }: { Globe: GlobeComponent }) {
     setIsGlobeReady(true);
   };
 
+  // Ready = globe mounted, borders fetched, and the texture baked from them.
+  const isReady = isGlobeReady && features.length > 0;
+
   return (
     <div className={styles.globeShell} ref={containerRef}>
       <div className={styles.globeFrame} ref={frameRef} onMouseMove={onFrameMouseMove}>
-        <Globe
-          ref={globeRef}
-          width={size.width}
-          height={size.height}
-          backgroundColor="rgba(0,0,0,0)"
-          rendererConfig={{ antialias: true }}
-          showGlobe
-          globeMaterial={globeMaterial}
-          onGlobeReady={handleReady}
-        />
+        <div className={clsx(styles.globeLayer, isReady && styles.globeVisible)}>
+          <Globe
+            ref={globeRef}
+            width={size.width}
+            height={size.height}
+            backgroundColor="rgba(0,0,0,0)"
+            rendererConfig={{ antialias: true }}
+            showGlobe
+            globeMaterial={globeMaterial}
+            onGlobeReady={handleReady}
+          />
+        </div>
+        <div className={clsx(styles.loading, isReady && styles.loadingHidden)} aria-hidden="true">
+          <Skeleton className={styles.loadingDisc} />
+        </div>
         {hovered && (
           <div className={styles.tooltipAnchor} style={{ left: cursor.x, top: cursor.y }}>
             <Tooltip>

@@ -19,6 +19,39 @@
   }
 }
 
+.globeLayer {
+  opacity: 0;
+  transition: opacity 0.6s ease;
+}
+
+.globeVisible {
+  opacity: 1;
+}
+
+/* Skeleton disc placeholder while the texture bakes; its diameter tracks the
+   sphere's on-screen size at altitude 2 (~0.76 × the frame height). It
+   cross-fades out as the globe fades in. */
+.loading {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  z-index: 2;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
+}
+
+.loadingHidden {
+  opacity: 0;
+}
+
+.loadingDisc {
+  height: 76%;
+  aspect-ratio: 1;
+  max-width: 92%;
+  border-radius: 50%;
+}
+
 /* Zero-size anchor at the cursor; the laikit Tooltip floats above it. */
 .tooltipAnchor {
   position: absolute;
