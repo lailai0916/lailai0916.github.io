@@ -151,10 +151,7 @@ function TravelGlobeClient({ Globe }: { Globe: GlobeComponent }) {
 
   const globeMaterial = useMemo<GlobeMaterial>(() => {
     if (features.length === 0) return new three.MeshBasicMaterial({ color: colors.ocean });
-    const t0 = performance.now();
-    const baked = bakeGlobeTexture(features, visitedCountries, colors);
-    console.log(`[globe] bake: ${(performance.now() - t0).toFixed(1)}ms`);
-    const texture = new three.CanvasTexture(baked);
+    const texture = new three.CanvasTexture(bakeGlobeTexture(features, visitedCountries, colors));
     texture.colorSpace = three.SRGBColorSpace;
     texture.anisotropy = 8;
     return new three.MeshBasicMaterial({ map: texture });
