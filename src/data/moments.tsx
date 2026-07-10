@@ -13,6 +13,10 @@ interface MomentItem {
 
 const STATIC_MOMENTS: MomentItem[] = [
   {
+    date: '2026-07-10T23:00:00+08:00',
+    content: '「一个到中午还没有用尽他的 Codex 限额的人，浪费了他的上午。」——苏格拉底',
+  },
+  {
     date: '2026-06-30T18:55:00+08:00',
     share: {
       url: 'https://www.reddit.com/r/ClaudeAI/comments/1ujila1/comment/ouo17nd/',
