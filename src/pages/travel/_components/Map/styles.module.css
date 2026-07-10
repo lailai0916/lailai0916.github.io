@@ -1,7 +1,19 @@
 .globeShell {
   width: 100%;
   max-width: 920px;
-  margin: 0 auto;
+  /* Cancel PageContent's top padding so the globe tucks up under the header
+     instead of floating below a gap. */
+  margin: calc(clamp(2rem, 4vw, 3rem) * -1) auto 0;
+}
+
+/* On small screens let the globe bleed to the page edges — negate exactly
+   PageContent's horizontal padding (no 100vw, so no scrollbar overflow). */
+@media (max-width: 768px) {
+  .globeShell {
+    width: auto;
+    max-width: none;
+    margin-inline: calc(clamp(1rem, 3vw, 2rem) * -1);
+  }
 }
 
 /* Height comes from CSS (not the canvas) so the box is correct on the first
