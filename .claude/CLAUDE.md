@@ -35,28 +35,28 @@ There is no test runner. `npm run check` is the gate.
 
 Path-scoped detail — each file auto-loads when you edit a matching path. Don't restate their content here; extend the file itself.
 
-| Rule | Scope | Covers |
-| --- | --- | --- |
-| [`rules/components.md`](rules/components.md) | `src/**` ts·tsx·css | `laikit` inventory, CSS-Module layout & rule ordering, hover-motion limits, text-overflow, MDX widgets |
-| [`rules/i18n.md`](rules/i18n.md) | `src/**`, `i18n/**` | `translate()` workflow, five-prefix taxonomy, key shapes, orphan cleanup |
-| [`rules/comments.md`](rules/comments.md) | `src/**`, `*.ts` | code-comment style (site-specific slice) |
-| [`rules/writing-style.md`](rules/writing-style.md) | `blog/**`, `docs/**`, translated MDX | frontmatter, headings, tone, MDX widgets, math, images, links, solution template |
-| [`rules/solution-sync.md`](rules/solution-sync.md) | `blog/solution/**` | 题解 → 洛谷 sync flow and red lines |
+| Rule                                               | Scope                                | Covers                                                                                                 |
+| -------------------------------------------------- | ------------------------------------ | ------------------------------------------------------------------------------------------------------ |
+| [`rules/components.md`](rules/components.md)       | `src/**` ts·tsx·css                  | `laikit` inventory, CSS-Module layout & rule ordering, hover-motion limits, text-overflow, MDX widgets |
+| [`rules/i18n.md`](rules/i18n.md)                   | `src/**`, `i18n/**`                  | `translate()` workflow, five-prefix taxonomy, key shapes, orphan cleanup                               |
+| [`rules/comments.md`](rules/comments.md)           | `src/**`, `*.ts`                     | code-comment style (site-specific slice)                                                               |
+| [`rules/writing-style.md`](rules/writing-style.md) | `blog/**`, `docs/**`, translated MDX | frontmatter, headings, tone, MDX widgets, math, images, links, solution template                       |
+| [`rules/solution-sync.md`](rules/solution-sync.md) | `blog/solution/**`                   | 题解 → 洛谷 sync flow and red lines                                                                    |
 
 ## Architecture
 
 ### Directory map
 
-| Path | Purpose |
-| --- | --- |
-| `docs/` | Three doc sets — `contest/`, `note/`, `project/`; sidebars hand-curated in `sidebars.ts`, not auto-generated |
-| `blog/` | MDX posts by topic folder; `authors.yml` + `tags.yml` are controlled vocabularies (unlisted values warn at build) |
-| `src/pages/` | Custom React pages (`about`, `travel`, `friends`, `resources`, `settings`, `insights`, `changelog`, `privacy`, and the bespoke `index`). Page-local React sits in a `_components/` subfolder (leading `_` stops Docusaurus routing it) |
-| `src/theme/` | Swizzled Docusaurus overrides (Layout, Blog\*, Root, `DocItem/*`, `BlogShared/*`, …) — use `npm run swizzle`, don't hand-copy |
-| `src/components/laikit/` | In-house design system → [`rules/components.md`](rules/components.md) |
-| `src/components/` (non-laikit) | Author-facing MDX widgets, shared `Article/` chrome, one-off `playground/` demos → [`rules/components.md`](rules/components.md) |
-| `src/hooks/`, `src/utils/`, `src/data/` | Shared hooks, helpers, and static data (`resources`, `changelog`, `travel`, `moments`) |
-| `static/` | Copied verbatim to site root — `CNAME`, `.nojekyll`, verification files, image/JSON assets |
+| Path                                    | Purpose                                                                                                                                                                                                                                |
+| --------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `docs/`                                 | Three doc sets — `contest/`, `note/`, `project/`; sidebars hand-curated in `sidebars.ts`, not auto-generated                                                                                                                           |
+| `blog/`                                 | MDX posts by topic folder; `authors.yml` + `tags.yml` are controlled vocabularies (unlisted values warn at build)                                                                                                                      |
+| `src/pages/`                            | Custom React pages (`about`, `travel`, `friends`, `resources`, `settings`, `insights`, `changelog`, `privacy`, and the bespoke `index`). Page-local React sits in a `_components/` subfolder (leading `_` stops Docusaurus routing it) |
+| `src/theme/`                            | Swizzled Docusaurus overrides (Layout, Blog\*, Root, `DocItem/*`, `BlogShared/*`, …) — use `npm run swizzle`, don't hand-copy                                                                                                          |
+| `src/components/laikit/`                | In-house design system → [`rules/components.md`](rules/components.md)                                                                                                                                                                  |
+| `src/components/` (non-laikit)          | Author-facing MDX widgets, shared `Article/` chrome, one-off `playground/` demos → [`rules/components.md`](rules/components.md)                                                                                                        |
+| `src/hooks/`, `src/utils/`, `src/data/` | Shared hooks, helpers, and static data (`resources`, `changelog`, `travel`, `moments`)                                                                                                                                                 |
+| `static/`                               | Copied verbatim to site root — `CNAME`, `.nojekyll`, verification files, image/JSON assets                                                                                                                                             |
 
 Custom-page notes: `insights` is live Umami traffic. `blog/overview` and `blog/moments` live under the blog area and reuse `BlogShared/Scaffold` (blog chrome + sidebar); `blog/overview` is the first tab of `ArchiveTabs` (Overview / By Year / By Tag / By Author) — add new archive tabs there.
 

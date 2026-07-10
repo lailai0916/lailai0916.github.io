@@ -32,9 +32,7 @@ import Tooltip from '@site/src/components/laikit/Tooltip';
 import styles from './styles.module.css';
 import type { GlobeMethods, GlobeProps } from 'react-globe.gl';
 
-type GlobeComponent = ComponentType<
-  GlobeProps & { ref?: RefObject<GlobeMethods | undefined> }
->;
+type GlobeComponent = ComponentType<GlobeProps & { ref?: RefObject<GlobeMethods | undefined> }>;
 type GlobeMaterial = NonNullable<GlobeProps['globeMaterial']>;
 
 const three = require('three') as {
