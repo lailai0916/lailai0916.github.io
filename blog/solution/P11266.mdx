@@ -1,5 +1,6 @@
 ---
 title: 题解：P11266 【模板】可并堆 2
+description: 本文为洛谷 P11266 的题解，用 GNU PBDS 优先队列实现可并堆，凭迭代器支持合并删改查。
 summary: 可并堆模板题，需支持删除指定位置元素、查询最小值、合并两个堆、修改指定位置键值四种操作。用 GNU PBDS 的 priority_queue 可以简洁实现：push 返回迭代器以定位每个元素，erase、top、join、modify 分别对应删除、查询、合并与修改。代码极短，代价是常数偏大。
 date: 2024-11-15T19:31:20+08:00
 authors: lailai

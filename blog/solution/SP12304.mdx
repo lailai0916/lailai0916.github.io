@@ -1,5 +1,6 @@
 ---
 title: 题解：SP12304 INVDIV - Smallest Inverse Sum of Divisors
+description: 本文为洛谷 SP12304 的题解，预处理因子和并记录每个值对应的最小 i 后查表。
 summary: T 次询问，每次给正整数 n，求最小的正整数 i 使其所有正因子之和 sigma(i) 等于 n。因 sigma(i) 不小于 i，只需预处理 1 到 10 的 8 次方内每个数的因子和，并为每个因子和记录对应的最小 i，查询直接查表。sigma 是恒等函数的和函数，可用狄利克雷前缀和在 O(n loglog n) 预处理，或用线性筛结合最小质因子幂次和的辅助函数在 O(n) 内求出。
 date: 2024-11-16T01:07:26+08:00
 authors: lailai

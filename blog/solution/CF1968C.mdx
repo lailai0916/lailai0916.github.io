@@ -1,5 +1,6 @@
 ---
 title: 题解：CF1968C Assembly via Remainders
+description: 本文为洛谷 CF1968C 的题解，令每项为前一项加对应余数，取足够大的首项逐项累加即满足取模。
 summary: 给定长度为 n 减 1 的数列 x，构造长度为 n 的数列 a，满足 x_i 等于 a_i 对 a_{i-1} 取模。令 a_i 等于 a_{i-1} 加 x_i，则 a_i 对 a_{i-1} 取模化为 x_i 对 a_{i-1} 取模；只要首项足够大（大于所有 x_i），取模结果就等于 x_i 本身。由于 x_i 不超过 500 且 a_i 不超过 10 的 9 次方，取一个较大的首项逐项累加即可。
 date: 2024-05-04T16:04:46+08:00
 authors: lailai

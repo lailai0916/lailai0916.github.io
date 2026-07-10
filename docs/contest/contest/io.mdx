@@ -1,5 +1,6 @@
 ---
 title: 读写优化
+description: 本文将介绍竞赛读写加速手段，含关闭流同步、解除 cin 与 cout 关联及手写快读快写。
 summary: 读写优化用于加速竞赛程序的数据读写。基础手段是关闭 C++ 流与 C 标准 IO 的同步，并解除 cin 与 cout 的关联，代价是关闭后 cin 与 cout 不能再和 scanf、printf 混用，否则可能触发未定义行为。更进一步是手写快读快写，直接按字符读入整数、按位输出，绕开流的额外开销，这里给出基于 getchar、getchar_unlocked 以及带缓冲区的 namespace IO 三种实现。
 ---
 
