@@ -5,15 +5,15 @@
 }
 
 /* Height comes from CSS (not the canvas) so the box is correct on the first
-   paint — no layout shift when the measured size resolves. Mirrors the JS
-   clamp: width * 0.7, bounded to 360–560px. */
+   paint — no layout shift once the measured size resolves. Near-square and
+   generous so the close-up globe (altitude 1) fills it edge to edge. */
 .globeFrame {
   position: relative;
   overflow: hidden;
   width: 100%;
-  aspect-ratio: 10 / 7;
-  min-height: 360px;
-  max-height: 560px;
+  aspect-ratio: 1 / 1;
+  min-height: 400px;
+  max-height: 640px;
   border-radius: 24px;
   background: transparent;
   border: none;
@@ -35,30 +35,6 @@
 
 .globeVisible {
   opacity: 1;
-}
-
-/* Skeleton disc placeholder while the texture bakes; its diameter tracks the
-   sphere's on-screen size at altitude 2 (~0.76 × the frame height). It
-   cross-fades out as the globe fades in. */
-.loading {
-  position: absolute;
-  inset: 0;
-  display: grid;
-  place-items: center;
-  z-index: 2;
-  pointer-events: none;
-  transition: opacity 0.4s ease;
-}
-
-.loadingHidden {
-  opacity: 0;
-}
-
-.loadingDisc {
-  height: 76%;
-  aspect-ratio: 1;
-  max-width: 92%;
-  border-radius: 50%;
 }
 
 /* Zero-size anchor at the cursor; the laikit Tooltip floats above it. */

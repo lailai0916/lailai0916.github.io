@@ -29,7 +29,6 @@ import {
 countries.registerLocale(countriesEn);
 countries.registerLocale(countriesZh);
 import Tooltip from '@site/src/components/laikit/Tooltip';
-import Skeleton from '@site/src/components/laikit/Skeleton';
 import styles from './styles.module.css';
 import type { GlobeMethods, GlobeProps } from 'react-globe.gl';
 
@@ -248,7 +247,7 @@ function TravelGlobeClient({ Globe }: { Globe: GlobeComponent }) {
     controls.enableZoom = false;
     controls.enableDamping = true;
     controls.dampingFactor = 0.1;
-    globe.pointOfView({ lat: 30, lng: 120, altitude: 2 }, 0);
+    globe.pointOfView({ lat: 30, lng: 120, altitude: 1.8 }, 0);
     setIsGlobeReady(true);
   };
 
@@ -271,9 +270,6 @@ function TravelGlobeClient({ Globe }: { Globe: GlobeComponent }) {
             onGlobeReady={handleReady}
           />
         </div>
-        <div className={clsx(styles.loading, isReady && styles.loadingHidden)} aria-hidden="true">
-          <Skeleton className={styles.loadingDisc} />
-        </div>
         {hovered && (
           <div className={styles.tooltipAnchor} style={{ left: cursor.x, top: cursor.y }}>
             <Tooltip>
@@ -290,17 +286,13 @@ function TravelGlobeClient({ Globe }: { Globe: GlobeComponent }) {
   );
 }
 
-// Reserves the frame (CSS-sized, so identical to the mounted client) with the
-// skeleton, so the globe area holds its space from the server render through
-// hydration — no content below shifting when the client component mounts.
+// Reserves the frame (CSS-sized, so identical to the mounted client) so the
+// globe area holds its space from the server render through hydration — no
+// content below shifting when the client component mounts.
 function GlobePlaceholder() {
   return (
     <div className={styles.globeShell}>
-      <div className={styles.globeFrame}>
-        <div className={styles.loading} aria-hidden="true">
-          <Skeleton className={styles.loadingDisc} />
-        </div>
-      </div>
+      <div className={styles.globeFrame} />
     </div>
   );
 }
