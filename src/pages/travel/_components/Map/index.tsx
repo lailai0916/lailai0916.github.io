@@ -52,9 +52,8 @@ const NOT_VISITED_LABEL = translate({
   message: 'Not Visited',
 });
 
-function readCssVar(name: string, fallback: string) {
-  if (typeof window === 'undefined') return fallback;
-  return getComputedStyle(document.documentElement).getPropertyValue(name).trim() || fallback;
+function readCssVar(name: string) {
+  return getComputedStyle(document.documentElement).getPropertyValue(name).trim();
 }
 
 // Paint the whole world onto one equirectangular canvas — ocean, every country
@@ -140,7 +139,7 @@ function TravelGlobeClient({ Globe }: { Globe: GlobeComponent }) {
   const colors = useMemo(
     () => ({
       ocean: colorMode === 'dark' ? '#222831' : '#eef1f5',
-      visited: readCssVar('--ifm-color-primary', '#1d9bf0'),
+      visited: readCssVar('--ifm-color-primary'),
       unvisited: colorMode === 'dark' ? '#3a4453' : '#cdd5df',
       stroke: colorMode === 'dark' ? 'rgba(255,255,255,0.14)' : 'rgba(0,0,0,0.12)',
     }),
