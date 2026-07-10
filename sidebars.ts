@@ -671,7 +671,7 @@ const sidebars: SidebarsConfig = {
     'project/personal/lailai0916.github.io',
     {
       type: 'category',
-      label: 'Personal',
+      label: '个人',
       link: {
         type: 'generated-index',
         description: '本章展示与我个人相关的项目。',
@@ -680,7 +680,7 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: 'category',
-      label: 'Tools',
+      label: '工具',
       link: {
         type: 'generated-index',
         description: '本章展示各类实用工具项目。',
@@ -694,7 +694,7 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: 'category',
-      label: 'Data',
+      label: '数据',
       link: {
         type: 'generated-index',
         description: '本章展示数据可视化与数据相关项目。',
@@ -703,7 +703,7 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: 'category',
-      label: 'Terminal',
+      label: '终端',
       link: {
         type: 'generated-index',
         description: '本章展示基于终端的项目和教程。',

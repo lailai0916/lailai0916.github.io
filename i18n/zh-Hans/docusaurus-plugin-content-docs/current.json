@@ -263,37 +263,37 @@
     "message": "地理",
     "description": "The label for category '地理' in sidebar 'noteSidebar'"
   },
-  "sidebar.projectSidebar.category.Personal": {
-    "message": "Personal",
-    "description": "The label for category 'Personal' in sidebar 'projectSidebar'"
+  "sidebar.projectSidebar.category.个人": {
+    "message": "个人",
+    "description": "The label for category '个人' in sidebar 'projectSidebar'"
   },
-  "sidebar.projectSidebar.category.Personal.link.generated-index.description": {
+  "sidebar.projectSidebar.category.个人.link.generated-index.description": {
     "message": "本章展示与我个人相关的项目。",
-    "description": "The generated-index page description for category 'Personal' in sidebar 'projectSidebar'"
+    "description": "The generated-index page description for category '个人' in sidebar 'projectSidebar'"
   },
-  "sidebar.projectSidebar.category.Tools": {
-    "message": "Tools",
-    "description": "The label for category 'Tools' in sidebar 'projectSidebar'"
+  "sidebar.projectSidebar.category.工具": {
+    "message": "工具",
+    "description": "The label for category '工具' in sidebar 'projectSidebar'"
   },
-  "sidebar.projectSidebar.category.Tools.link.generated-index.description": {
+  "sidebar.projectSidebar.category.工具.link.generated-index.description": {
     "message": "本章展示各类实用工具项目。",
-    "description": "The generated-index page description for category 'Tools' in sidebar 'projectSidebar'"
+    "description": "The generated-index page description for category '工具' in sidebar 'projectSidebar'"
   },
-  "sidebar.projectSidebar.category.Data": {
-    "message": "Data",
-    "description": "The label for category 'Data' in sidebar 'projectSidebar'"
+  "sidebar.projectSidebar.category.数据": {
+    "message": "数据",
+    "description": "The label for category '数据' in sidebar 'projectSidebar'"
   },
-  "sidebar.projectSidebar.category.Data.link.generated-index.description": {
+  "sidebar.projectSidebar.category.数据.link.generated-index.description": {
     "message": "本章展示数据可视化与数据相关项目。",
-    "description": "The generated-index page description for category 'Data' in sidebar 'projectSidebar'"
+    "description": "The generated-index page description for category '数据' in sidebar 'projectSidebar'"
   },
-  "sidebar.projectSidebar.category.Terminal": {
-    "message": "Terminal",
-    "description": "The label for category 'Terminal' in sidebar 'projectSidebar'"
+  "sidebar.projectSidebar.category.终端": {
+    "message": "终端",
+    "description": "The label for category '终端' in sidebar 'projectSidebar'"
   },
-  "sidebar.projectSidebar.category.Terminal.link.generated-index.description": {
+  "sidebar.projectSidebar.category.终端.link.generated-index.description": {
     "message": "本章展示基于终端的项目和教程。",
-    "description": "The generated-index page description for category 'Terminal' in sidebar 'projectSidebar'"
+    "description": "The generated-index page description for category '终端' in sidebar 'projectSidebar'"
   },
   "sidebar.projectSidebar.category.Desmos": {
     "message": "Desmos",
