@@ -5,7 +5,7 @@ import {
   useState,
   type ComponentType,
   type MouseEvent as ReactMouseEvent,
-  type MutableRefObject,
+  type RefObject,
 } from 'react';
 import clsx from 'clsx';
 import BrowserOnly from '@docusaurus/BrowserOnly';
@@ -33,7 +33,7 @@ import styles from './styles.module.css';
 import type { GlobeMethods, GlobeProps } from 'react-globe.gl';
 
 type GlobeComponent = ComponentType<
-  GlobeProps & { ref?: MutableRefObject<GlobeMethods | undefined> }
+  GlobeProps & { ref?: RefObject<GlobeMethods | undefined> }
 >;
 type GlobeMaterial = NonNullable<GlobeProps['globeMaterial']>;
 
