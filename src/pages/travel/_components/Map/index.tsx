@@ -138,10 +138,10 @@ function TravelGlobeClient({ Globe }: { Globe: GlobeComponent }) {
 
   const colors = useMemo(
     () => ({
-      ocean: colorMode === 'dark' ? '#222831' : '#eef1f5',
+      ocean: readCssVar('--ifm-color-emphasis-200'),
       visited: readCssVar('--ifm-color-primary'),
-      unvisited: colorMode === 'dark' ? '#3a4453' : '#cdd5df',
-      stroke: colorMode === 'dark' ? 'rgba(255,255,255,0.14)' : 'rgba(0,0,0,0.12)',
+      unvisited: readCssVar('--ifm-color-emphasis-400'),
+      stroke: readCssVar('--ifm-color-emphasis-500'),
     }),
     [colorMode]
   );
