@@ -243,12 +243,12 @@ function TravelGlobeClient({ Globe }: { Globe: GlobeComponent }) {
     if (!globe) return;
     const controls = globe.controls();
     controls.autoRotate = !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    controls.autoRotateSpeed = 0.5;
+    controls.autoRotateSpeed = 1.0;
     controls.enablePan = false;
     controls.enableZoom = false;
     controls.enableDamping = true;
-    controls.dampingFactor = 0.08;
-    globe.pointOfView({ lat: 20, lng: 110, altitude: 2 }, 0);
+    controls.dampingFactor = 0.1;
+    globe.pointOfView({ lat: 30, lng: 120, altitude: 2 }, 0);
     setIsGlobeReady(true);
   };
 
