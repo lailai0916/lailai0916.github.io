@@ -1,22 +1,18 @@
 # CLAUDE.md
 
-This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+Guidance for Claude Code (claude.ai/code) in this repo. This file is the always-loaded **map**; deep per-area detail lives in the path-scoped `rules/*.md`, which load only when you touch a matching file.
 
 ## Personal style — defer to lailai.skill
 
-lailai's **general, cross-project personal style** lives in the **lailai.skill** submodule at [`.claude/skills/lailai-skill/`](skills/lailai-skill/SKILL.md). Read its `SKILL.md`, then the relevant `references/` for any task touching personal voice, writing, code, or design:
+lailai's **general, cross-project** style — Chinese voice and wording, Markdown, LaTeX math, OI C++, design principles (统一·简约·现代), who he is and how he decides — lives in the **lailai.skill** submodule at [`.claude/skills/lailai-skill/`](skills/lailai-skill/SKILL.md). Read its `SKILL.md`, then the relevant `references/` / `profile/`, for any task touching voice, writing, code, or design.
 
-- Chinese writing voice, wording (你/仅/若, no 显然/易得), Markdown, LaTeX math (`$...$`), AI-tone blacklist → `references/{writing-style,wording,markdown-style,latex-math-style,ai-tone-blacklist}.md`
-- OI C++ style, engineering-code comments, design principles (统一·简约·现代), project/README/commit conventions → `references/{cpp-oi-style,engineering-code-style,design-style,project-docs-style}.md`
-- Who lailai is, how he thinks/decides → `profile/`
+**This repo's `.claude/` holds only project-specific config.** It does not duplicate the general rules; where a `rules/*.md` covers only the site-specific slice, it points to the skill for the rest.
 
-**This repo's `.claude/` holds only project-specific config** — site architecture, commands, deploy, and the path-scoped `rules/` for _this_ Docusaurus site (i18n, laikit components, site-authoring conventions). It does **not** duplicate the general rules; those live in the skill. When a `rules/*.md` covers only the site-specific slice, it points to the skill for the general part.
-
-After cloning, init the submodule: `git submodule update --init`. Update it later with `git submodule update --remote .claude/skills/lailai-skill`.
+Init the submodule after cloning: `git submodule update --init`. Update it later with `git submodule update --remote .claude/skills/lailai-skill`.
 
 ## Project
 
-Source for [lailai's personal website](https://lailai.one), built with Docusaurus 3 (TypeScript). Deployed via GitHub Actions to GitHub Pages and rsynced to a custom server (see `.github/workflows/deploy.yml`). Requires Node `>=20` (CI uses Node 24).
+Source for [lailai's personal website](https://lailai.one) — Docusaurus 3 (TypeScript), Node `>=20` (CI uses Node 24). Deployed via GitHub Actions to GitHub Pages and rsynced to a custom server (`.github/workflows/deploy.yml`).
 
 ## Commands
 
@@ -29,72 +25,68 @@ npm run clear             # Clear Docusaurus cache (.docusaurus)
 
 npm run i18n              # Regenerate translation JSON for zh-Hans
 npm run format            # Prettier write across the repo
-npm run typecheck         # tsc, no emit (uses tsconfig.json)
+npm run typecheck         # tsc, no emit
 npm run check             # i18n + format + typecheck — run before every commit
 ```
 
 There is no test runner. `npm run check` is the gate.
 
+## Rules index
+
+Path-scoped detail — each file auto-loads when you edit a matching path. Don't restate their content here; extend the file itself.
+
+| Rule | Scope | Covers |
+| --- | --- | --- |
+| [`rules/components.md`](rules/components.md) | `src/**` ts·tsx·css | `laikit` inventory, CSS-Module layout & rule ordering, hover-motion limits, text-overflow, MDX widgets |
+| [`rules/i18n.md`](rules/i18n.md) | `src/**`, `i18n/**` | `translate()` workflow, five-prefix taxonomy, key shapes, orphan cleanup |
+| [`rules/comments.md`](rules/comments.md) | `src/**`, `*.ts` | code-comment style (site-specific slice) |
+| [`rules/writing-style.md`](rules/writing-style.md) | `blog/**`, `docs/**`, translated MDX | frontmatter, headings, tone, MDX widgets, math, images, links, solution template |
+| [`rules/solution-sync.md`](rules/solution-sync.md) | `blog/solution/**` | 题解 → 洛谷 sync flow and red lines |
+
 ## Architecture
 
-### Content vs. code
+### Directory map
 
-- `docs/` — three doc sets (`contest/`, `note/`, `project/`) wired up in `sidebars.ts` as `contestSidebar` / `noteSidebar` / `projectSidebar`. Sidebars are hand-curated, not auto-generated.
-- `blog/` — MDX posts grouped by topic folders; `authors.yml` and `tags.yml` define the controlled vocabularies (`onInlineTags`/`onInlineAuthors` warn if a post uses an unlisted value).
-- `src/pages/` — custom React pages (`about`, `travel`, `friends`, `resources`, `settings`, `insights`, `changelog`, `privacy`, plus the bespoke `index.tsx` cover/home). `insights` is live Umami traffic data. Two custom pages live under the blog area and reuse `BlogShared/Scaffold` (blog chrome + sidebar): `src/pages/blog/moments` and `src/pages/blog/overview`. `blog/overview` is build-time blog-content stats (reads `src/utils/blogData`; KPI `DataCard`s + two laikit `Chart`s — a bar and a line) and renders as the **first** tab of `BlogShared/ArchiveTabs` (`ArchiveTabsNav` — Overview / By Year / By Tag / By Author); the sidebar "Archive" link lands on it (`/blog/overview`). Add new archive tabs there. Page-local React lives in a `_components/` subfolder beside the page (e.g. `insights/_components`, `travel/_components`, `blog/overview/_components`) — the leading `_` stops Docusaurus from routing it. The `travel` globe (`travel/_components/Map`) is a react-globe.gl sphere wrapped in **one baked equirectangular `CanvasTexture`** (painted with d3-geo from `static/json/world.geo.json` — Natural Earth 50m admin-0), not extruded polygons: this is what killed the old z-fighting/flicker. Two non-obvious rules for it — (1) **any GeoJSON added here must follow RFC 7946 / right-hand-rule winding**, or d3-geo `geoPath` fills each polygon's _complement_ (the whole sphere minus the shape); rewind foreign sources (e.g. DataV) to match Natural Earth. (2) **Colours are never hardcoded** — visited countries use `--ifm-color-primary-lightest` (softened), unvisited land / ocean / borders read the `--ifm-color-emphasis-*` scale (theme-aware in both modes); the transparent `backgroundColor` must stay `rgba(0,0,0,0)` (react-globe.gl's parser rejects the `transparent` keyword).
-- `src/theme/` — swizzled Docusaurus theme overrides (Layout, Blog\*, MDXComponents, Admonition, Root). Use `npm run swizzle` rather than copying files by hand.
-- `src/components/laikit/` — the in-house design system (`Card`, `TitleCard`, `LinkCard`, `DataCard`, `Chart`, `Badge`, `Button`, `Segmented`, `Slider`, `Switch`, `Tooltip`, `Skeleton`, `IconBlock`, `Page`, etc.). `Chart` is the one shared time-series chart (bar/line, rounded gridlines + hover crosshair/Tooltip + optional `loading` skeleton); both `blog/overview` and `insights` (Pageviews) render it — callers pass `ChartDatum[]` with pre-formatted `tooltipLabel`/`axisLabel`, so the component stays free of any date/locale logic. Reuse these primitives before creating new components. The full design-system ruleset — primitive inventory, per-component-folder layout, hover-motion limits, the CSS-Module silent-failure caveat — lives in `.claude/rules/components.md`, auto-loaded whenever files under `src/**` are touched.
-- `src/components/` (non-laikit) — globally-registered MDX widgets exposed to authors with no import (`BrowserWindow`, `Desmos`, `Notation`, `Problem`; the full registration list is `src/theme/MDXComponents`); `Countdown` plus the `playground/` interactive canvas demos (`FourierTransform`, `GameOfLife`, `LorenzAttractor`, `NeuralNetwork`, `NimGame`), which are **not** registered and are imported explicitly (today only into `docs/project/index.mdx`, with one playground demo in `docs/note/english/vocabulary/gaokao.mdx`); plus `Article/` — the article-page chrome (`Actions`, `CopyMarkdownButton`, `MetaFooter`, `ViewCount`, `Summary`) shared by blog posts and the swizzled docs `DocItem/*`.
-- `src/hooks/`, `src/utils/`, `src/data/` — shared hooks, helpers, and static data (e.g. `data/resources.tsx`, `data/changelog.tsx`) consumed by the custom pages.
-- `static/` — copied verbatim to site root. Contains `CNAME`, `.nojekyll`, verification files, and image/JSON assets.
+| Path | Purpose |
+| --- | --- |
+| `docs/` | Three doc sets — `contest/`, `note/`, `project/`; sidebars hand-curated in `sidebars.ts`, not auto-generated |
+| `blog/` | MDX posts by topic folder; `authors.yml` + `tags.yml` are controlled vocabularies (unlisted values warn at build) |
+| `src/pages/` | Custom React pages (`about`, `travel`, `friends`, `resources`, `settings`, `insights`, `changelog`, `privacy`, and the bespoke `index`). Page-local React sits in a `_components/` subfolder (leading `_` stops Docusaurus routing it) |
+| `src/theme/` | Swizzled Docusaurus overrides (Layout, Blog\*, Root, `DocItem/*`, `BlogShared/*`, …) — use `npm run swizzle`, don't hand-copy |
+| `src/components/laikit/` | In-house design system → [`rules/components.md`](rules/components.md) |
+| `src/components/` (non-laikit) | Author-facing MDX widgets, shared `Article/` chrome, one-off `playground/` demos → [`rules/components.md`](rules/components.md) |
+| `src/hooks/`, `src/utils/`, `src/data/` | Shared hooks, helpers, and static data (`resources`, `changelog`, `travel`, `moments`) |
+| `static/` | Copied verbatim to site root — `CNAME`, `.nojekyll`, verification files, image/JSON assets |
 
-### Build-time metadata
+Custom-page notes: `insights` is live Umami traffic. `blog/overview` and `blog/moments` live under the blog area and reuse `BlogShared/Scaffold` (blog chrome + sidebar); `blog/overview` is the first tab of `ArchiveTabs` (Overview / By Year / By Tag / By Author) — add new archive tabs there.
 
-`docusaurus.config.ts` shells out to `git` (wrapped in `safeGit`) to compute `BUILD_TIME`, `GIT_SHA`, `GIT_COUNT`, and a `DEBUG_ID` exposed via `customFields`. Don't break that fallback path — code must still build outside a git checkout.
+### Non-obvious gotchas
 
-### Markdown pipeline
-
-Docs, blog, and pages all share the same plugin set: `remark-math` + `rehype-katex` for LaTeX, `@docusaurus/remark-plugin-npm2yarn` (sync) for install snippets, Mermaid via `@docusaurus/theme-mermaid`, and live React via `@docusaurus/theme-live-codeblock`. Admonitions are extended with a custom `example` keyword.
-
-Content images are click-to-zoom (lightbox) via `docusaurus-plugin-image-zoom` (medium-zoom) — configured in `docusaurus.config.ts` under `themeConfig.zoom`. The `selector` is `.markdown img, img[data-zoomable]`: docs/blog body images zoom automatically (they live under `.markdown`), and custom React pages opt in per-image with a `data-zoomable` attribute (CSS-Module classnames are hashed and unusable in a global selector, so the attribute is the stable hook). Today `moments` images (`src/pages/blog/moments`) carry `data-zoomable`; to add zoom to another custom page, tag its images the same way — no config change needed. Backdrop colors track the site theme (light `#fff`, dark `#1b1b1d`). It is single-image zoom, not a swipe gallery.
-
-### i18n (critical)
-
-The site ships in `en` (default) and `zh-Hans`. Every user-facing string must go through `translate({ id, message })` from `@docusaurus/Translate`, and `i18n/zh-Hans/code.json` must carry the Chinese counterpart. The full ruleset — prefix taxonomy, key-shape conventions, orphan-cleanup workflow, translated-content layout — lives in `.claude/rules/i18n.md`, auto-loaded by Claude Code whenever files under `src/**` or `i18n/**` are touched.
-
-### Styling
-
-Components use CSS Modules (`styles.module.css` next to `index.tsx`). Global tokens and overrides live in `src/css/custom.css`. Per the contributing guide, prefer modern CSS (`grid`, `clamp()`, `color-mix()`, container queries) over JS layout. The stylesheet-organization ruleset — rule order by JSX call order, responsive co-location with one selector per `@media`, equivalent-shorthand merges, and the cascade-safety constraint — lives in `.claude/rules/components.md` (auto-loaded whenever files under `src/**` are touched).
+- **Build-time metadata:** `docusaurus.config.ts` shells to `git` (via `safeGit`) for `BUILD_TIME` / `GIT_SHA` / `GIT_COUNT` / `DEBUG_ID`, exposed as `customFields`. Keep the fallback intact — the site must still build outside a git checkout.
+- **Markdown pipeline:** docs, blog, and pages share one plugin set — `remark-math` + `rehype-katex`, `remark-plugin-npm2yarn`, Mermaid, live-codeblock; admonitions add a custom `example` keyword.
+- **Image zoom:** `docusaurus-plugin-image-zoom`, selector `.markdown img, img[data-zoomable]`. Docs/blog body images zoom automatically; custom pages opt in per-image with `data-zoomable` (hashed CSS-Module classnames can't sit in a global selector).
+- **Travel globe** (`src/pages/travel/_components/Map`): one baked equirectangular `CanvasTexture` painted with d3-geo, not extruded polygons (this killed the old z-fighting). GeoJSON added here must follow RFC 7946 right-hand winding, or `geoPath` fills each polygon's complement; the transparent `backgroundColor` must stay `rgba(0,0,0,0)` (react-globe.gl rejects the `transparent` keyword).
 
 ### Path alias
 
-`@site` resolves to the project root (Docusaurus default), e.g. `import Button from '@site/src/components/laikit/Button'`.
+`@site` resolves to the project root, e.g. `import Button from '@site/src/components/laikit/Button'`.
 
-## Conventions (from `.github/CONTRIBUTING.md`)
+## Conventions
 
-These are project rules, not general advice — follow them:
+Site-specific rules (general taste — 精益求精, edit-don't-rewrite, comment the _why_, no AI-tells — lives in the skill's `profile/` and `references/`):
 
-- **General taste & working principles → lailai.skill.** 精益求精 (sweat the details, keep polishing), edit-don't-rewrite (minimal targeted edits, one coherent change per commit), comment the _why_ not the _what_, no AI-tells — these cross-project rules live in the skill (`profile/`, `references/engineering-code-style.md`, `references/design-style.md`), not duplicated here. The bullets below are **site-specific**:
-- **Reuse `laikit` primitives** before adding new components. New UI should be visually and behaviourally indistinguishable from existing parts.
-- **No whole-card hover lift.** Never add hover-triggered `translateY`/`translateX` to whole cards (or other large container blocks) — that "card floats up on hover" effect is an AI-tell and the maintainer hates it. Smaller hover motion on internal elements (e.g. an arrow nudging, a small `scale()` on an icon or active control) is fine when it serves a clear interaction cue. (Also in the skill's `design-style.md`.)
-- **i18n is mandatory.** Any new user-facing string requires both a `translate()` call and a Chinese entry in `i18n/zh-Hans/code.json`.
-- **Code comments** follow the skill's `engineering-code-style.md`; the site-specific slice (the one allowed config-toggle exception) is in `.claude/rules/comments.md` (auto-loaded under `src/**`).
-- **Verify before committing.** Run `npm run check` and ensure it exits cleanly. For UI changes, also confirm in the `npm start` dev server.
-- **Small changes go straight to `main`.** Do not create a feature branch or open a PR for minor edits (copy tweaks, single-component refactors, style fixes, etc.) — commit directly on `main`. Reserve branches and PRs for substantial multi-file work the maintainer explicitly asks to be reviewed.
+- **Reuse `laikit` primitives** before adding a component; new UI should be visually and behaviourally indistinguishable from existing parts.
+- **No whole-card hover lift.** Never add hover `translateY` / `translateX` to a whole card or other large container — that "float up on hover" effect is an AI-tell the maintainer dislikes. Small motion on internal elements (arrow nudge, a modest icon `scale()`) is fine when it signals an interaction.
+- **i18n is mandatory** — a new user-facing string needs both a `translate()` call and a `zh-Hans` entry in `i18n/zh-Hans/code.json`.
+- **Verify before committing** — `npm run check` must exit clean; for UI changes, also confirm in the `npm start` dev server.
+- **Small changes go straight to `main`.** Reserve branches and PRs for substantial multi-file work the maintainer explicitly asks to have reviewed.
 
-Prettier config: `printWidth: 100`, `singleQuote: true`, `trailingComma: 'es5'`. TypeScript is `strict`. `.prettierignore` keeps Prettier out of the lailai.skill submodule (its own repo) and `static/json/` (generated data blobs).
+Prettier: `printWidth: 100`, `singleQuote: true`, `trailingComma: 'es5'`. TypeScript is `strict`.
 
 ## Keep `.claude/` current
 
-`.claude/CLAUDE.md` and `.claude/rules/*.md` are living documentation — they only help if they stay true. Maintaining them is part of every change, not an afterthought. Do it proactively, without being asked:
+These files are living documentation — update them in the same change that invalidates them, before declaring the task done:
 
-- **Update the doc in the same change that invalidates it.** When you alter something these files describe, fix the description before declaring the task done. Common triggers:
-  - Rename / move / delete a component → `rules/components.md` (and any inventory list in this file).
-  - Change the blog title-prefix or tag taxonomy, or an authoring convention → `rules/writing-style.md`.
-  - Add / remove an i18n prefix, key-shape rule, or workflow → `rules/i18n.md`.
-  - Register a new MDX author-facing widget → `rules/components.md`.
-  - Change a code-comment convention (forms, section labels, what to keep) → `rules/comments.md`.
-  - Change commands, build/deploy, architecture, or directory layout → this file.
-- **Record durable conventions, not transient state.** A rule that will still be true next month belongs here; a one-off task note does not. These docs hold the same `精益求精` and "edit, don't rewrite" bar as the code — keep entries accurate and tight, prune what goes stale, and never bloat them with redundant prose.
-- **Verify before writing.** Confirm a convention against the actual codebase (grep, read the files) rather than recording it from memory — stale or wrong guidance is worse than none.
-- **When unsure whether something is worth recording, surface it to the maintainer** instead of silently adding or omitting it.
+- Rename / move / delete a component, or change a widget / taxonomy / authoring convention → the matching `rules/*.md` (and any inventory in this file).
+- Change commands, build / deploy, architecture, or directory layout → this file.
+- Record **durable** conventions, not transient task state. Verify against the actual code (grep, read) before writing — stale guidance is worse than none. When unsure whether something belongs, surface it to the maintainer rather than silently adding or omitting it.
