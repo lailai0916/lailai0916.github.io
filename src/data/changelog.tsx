@@ -8,6 +8,11 @@ interface ChangelogItem {
 
 export const CHANGELOG_LIST: ChangelogItem[] = [
   {
+    date: '2026-07-11',
+    type: 'changed',
+    content: '网站更新至 <a href="https://docusaurus.io/changelog/3.10.2">Docusaurus v3.10.2</a>',
+  },
+  {
     date: '2026-07-08',
     type: 'added',
     content: '文档 AI 概述',
