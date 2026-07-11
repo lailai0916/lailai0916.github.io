@@ -98,7 +98,7 @@ export default function ShareCard({ url, title, description, image, source }: Sh
           <img
             ref={imgRef}
             src={image}
-            alt=""
+            alt={title}
             className={styles.thumbImage}
             loading="lazy"
             onLoad={onLoad}
