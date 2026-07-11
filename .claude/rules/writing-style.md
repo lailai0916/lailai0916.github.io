@@ -103,6 +103,7 @@ General math rules → skill [`latex-math-style.md`](../skills/lailai-skill/refe
 ## Links and references
 
 - **All internal links use absolute site paths** (`/docs/...`, `/blog/...`) — **no file extension, never relative**. e.g. `[《2025 年浙江中考数学第 24 题解析》](/blog/math/zjzk-2025-math-q24)`, `[ST 表](/docs/contest/ds/sparse-table)`. (Relative-vs-absolute and with-vs-without `.mdx` are functionally near-equivalent here — all are checked by `onBrokenLinks: 'throw'` — but absolute-without-extension is the single consistent form: greppable, source-move-proof, locale-safe, one rule for blog + docs.)
+- **Inside raw JSX/HTML, markdown link syntax isn't parsed** — `[text](/docs/...)` in a `<div>`/`<td>` renders as literal text. Link with `<Link to="/docs/...">text</Link>` (`import Link from '@docusaurus/Link';` after the frontmatter), same absolute-no-extension form, so it stays SPA-routed and `onBrokenLinks`-checked. Live case: the 课程结构 `<table>` in `docs/note/index.mdx` links each textbook that has a note page; an annotation like a trailing ` ※` stays outside the link.
 - External links are always `[text](url)`. Bare URLs appear only inside code fences. No reference-style `[text][1]` links.
 - `## 参考资料` lists use the format `- [Title - Source](url)` with " - Source" suffix: `- [积分 - 维基百科](...)`, `- [最大公约数 - OI Wiki](...)`. Preferred sources: OI Wiki, Wikipedia (zh & en), OEIS.
 
