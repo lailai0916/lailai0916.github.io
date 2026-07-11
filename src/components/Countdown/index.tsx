@@ -1,19 +1,15 @@
-import { useEffect, useState, useRef } from 'react';
+import { useEffect, useState } from 'react';
 import clsx from 'clsx';
-import Card from '@site/src/components/laikit/Card';
 import Translate, { translate } from '@docusaurus/Translate';
-import useIsBrowser from '@docusaurus/useIsBrowser';
+import Card from '@site/src/components/laikit/Card';
 import styles from './styles.module.css';
 
-const TARGET = '2026-09-16T00:00:00';
-
-const TARGET_MS = new Date(TARGET).getTime();
-// Progress starts on the same day one year before the target (year − 1,
-// regardless of leap/common-year length).
-const ORIGIN_DATE = new Date(TARGET);
-ORIGIN_DATE.setFullYear(ORIGIN_DATE.getFullYear() - 1);
-const ORIGIN_MS = ORIGIN_DATE.getTime();
-const SPAN_MS = TARGET_MS - ORIGIN_MS;
+// The birthday recurs yearly: the countdown always targets the next occurrence
+// (pinned to Beijing time like every date on the site), celebrates on the day
+// itself, and rolls over at the following midnight — no yearly manual edit.
+const BIRTHDAY_MONTH = 9;
+const BIRTHDAY_DAY = 16;
+const BEIJING_OFFSET_MS = 8 * 60 * 60 * 1000;
 
 const EVENT = translate({
   id: 'components.countdown.event',
@@ -26,39 +22,22 @@ const FINAL = translate({
 
 type CountdownUnitKey = 'days' | 'hours' | 'minutes' | 'seconds';
 
-const TIME_UNITS: Array<{
-  key: CountdownUnitKey;
-  pad: number;
-  label: string;
-}> = [
+const TIME_UNITS: Array<{ key: CountdownUnitKey; label: string }> = [
   {
     key: 'days',
-    pad: 2,
     label: translate({ id: 'components.countdown.unit.days', message: 'Days' }),
   },
   {
     key: 'hours',
-    pad: 2,
-    label: translate({
-      id: 'components.countdown.unit.hours',
-      message: 'Hours',
-    }),
+    label: translate({ id: 'components.countdown.unit.hours', message: 'Hours' }),
   },
   {
     key: 'minutes',
-    pad: 2,
-    label: translate({
-      id: 'components.countdown.unit.minutes',
-      message: 'Minutes',
-    }),
+    label: translate({ id: 'components.countdown.unit.minutes', message: 'Minutes' }),
   },
   {
     key: 'seconds',
-    pad: 2,
-    label: translate({
-      id: 'components.countdown.unit.seconds',
-      message: 'Seconds',
-    }),
+    label: translate({ id: 'components.countdown.unit.seconds', message: 'Seconds' }),
   },
 ];
 
@@ -68,7 +47,7 @@ interface CountdownState {
   minutes: number;
   seconds: number;
   progress: number;
-  isTimeUp: boolean;
+  isBirthday: boolean;
 }
 
 const INITIAL_STATE: CountdownState = {
@@ -77,89 +56,71 @@ const INITIAL_STATE: CountdownState = {
   minutes: 0,
   seconds: 0,
   progress: 0,
-  isTimeUp: false,
+  isBirthday: false,
 };
 
-function calculateTimeLeft(): CountdownState {
-  const now = Date.now();
-  const distance = TARGET_MS - now;
-  const elapsed = now - ORIGIN_MS;
-  const isTimeUp = distance <= 0;
+function birthdayMs(year: number): number {
+  const month = String(BIRTHDAY_MONTH).padStart(2, '0');
+  const day = String(BIRTHDAY_DAY).padStart(2, '0');
+  return Date.parse(`${year}-${month}-${day}T00:00:00+08:00`);
+}
 
+function calculateState(now: number): CountdownState {
+  // Shifting by the offset lets the UTC getters read Beijing wall-clock parts.
+  const beijing = new Date(now + BEIJING_OFFSET_MS);
+  const year = beijing.getUTCFullYear();
+  if (beijing.getUTCMonth() + 1 === BIRTHDAY_MONTH && beijing.getUTCDate() === BIRTHDAY_DAY) {
+    return { ...INITIAL_STATE, progress: 1, isBirthday: true };
+  }
+  const targetYear = now < birthdayMs(year) ? year : year + 1;
+  const target = birthdayMs(targetYear);
+  const origin = birthdayMs(targetYear - 1);
+  const distance = target - now;
   return {
-    days: isTimeUp ? 0 : Math.floor(distance / (24 * 60 * 60 * 1000)),
-    hours: isTimeUp ? 0 : Math.floor((distance / (60 * 60 * 1000)) % 24),
-    minutes: isTimeUp ? 0 : Math.floor((distance / (60 * 1000)) % 60),
-    seconds: isTimeUp ? 0 : Math.floor((distance / 1000) % 60),
-    progress: isTimeUp ? 1 : Math.min(Math.max(elapsed / SPAN_MS, 0), 1),
-    isTimeUp,
+    days: Math.floor(distance / 86_400_000),
+    hours: Math.floor(distance / 3_600_000) % 24,
+    minutes: Math.floor(distance / 60_000) % 60,
+    seconds: Math.floor(distance / 1000) % 60,
+    progress: (now - origin) / (target - origin),
+    isBirthday: false,
   };
 }
 
 export default function Countdown() {
-  const isBrowser = useIsBrowser();
   const [state, setState] = useState<CountdownState>(INITIAL_STATE);
-  const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   useEffect(() => {
-    if (!isBrowser) {
-      return undefined;
-    }
-
-    let cancelled = false;
-
+    let timer: number;
     const tick = () => {
-      if (cancelled) {
-        return;
-      }
-
-      const result = calculateTimeLeft();
-      setState(result);
-
-      if (result.isTimeUp) {
-        timerRef.current = null;
-        return;
-      }
-
       const now = Date.now();
-      const nextSecond = Math.ceil(now / 1000) * 1000;
-      const delay = nextSecond - now;
-
-      timerRef.current = setTimeout(tick, delay);
+      setState(calculateState(now));
+      timer = window.setTimeout(tick, 1000 - (now % 1000));
     };
-
     tick();
-
-    return () => {
-      cancelled = true;
-      if (timerRef.current) {
-        clearTimeout(timerRef.current);
-        timerRef.current = null;
-      }
-    };
-  }, [isBrowser]);
+    return () => window.clearTimeout(timer);
+  }, []);
 
   return (
     <Card className={styles.panel} padding="0">
       <div className={styles.body}>
-        <p className={clsx(styles.caption, state.isTimeUp && styles.captionFinal)}>
-          {state.isTimeUp ? (
+        <p className={clsx(styles.caption, state.isBirthday && styles.captionFinal)}>
+          {state.isBirthday ? (
             FINAL
           ) : (
             <Translate
               id="components.countdown.description"
               values={{
-                event: <span className={styles.year}>{EVENT}</span>,
+                event: <span className={styles.event}>{EVENT}</span>,
               }}
             >
               {'Time left until {event}'}
             </Translate>
           )}
         </p>
-        <div className={styles.clock}>
-          {TIME_UNITS.map(({ key, pad, label }) => (
+        <div className={styles.clock} role="timer">
+          {TIME_UNITS.map(({ key, label }) => (
             <div className={styles.unit} key={key}>
-              <span className={styles.value}>{String(state[key]).padStart(pad, '0')}</span>
+              <span className={styles.value}>{String(state[key]).padStart(2, '0')}</span>
               <span className={styles.label}>{label}</span>
             </div>
           ))}
@@ -168,6 +129,7 @@ export default function Countdown() {
       <div
         className={styles.progress}
         role="progressbar"
+        aria-label={translate({ id: 'components.countdown.progress', message: 'Year progress' })}
         aria-valuemin={0}
         aria-valuemax={100}
         aria-valuenow={Math.round(state.progress * 100)}

@@ -110,6 +110,9 @@
   "components.countdown.description": {
     "message": "距离 {event} 还有"
   },
+  "components.countdown.progress": {
+    "message": "年度进度"
+  },
   "components.desmos.frameTitle": {
     "message": "Desmos 图形计算器"
   },
