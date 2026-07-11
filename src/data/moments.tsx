@@ -79,6 +79,10 @@ const STATIC_MOMENTS: MomentItem[] = [
     location: '杭州师范大学（仓前校区）',
   },
   {
+    date: '2026-03-06T09:33:00+08:00',
+    content: '「这个时代不用闲鱼买东西，你几乎一定在溢价。」——孙宇晨',
+  },
+  {
     date: '2026-02-21T19:49:00+08:00',
     event: 'LGS Paintboard 2026',
     share: {
