@@ -65,6 +65,7 @@ Acronym after a full-width comma inside the parentheses, not after a slash or da
 ## Math (KaTeX)
 
 General math rules → skill [`latex-math-style.md`](../skills/lailai-skill/references/latex-math-style.md) (`$...$` inline, `$$...$$` display on its own line, `\frac` not `\dfrac`, `\dots`, single-letter vars, big-O without constants; numbers default to plain text and `$...$` is for genuine math only — see the prose-number rule above, and the `blog/solution/` exception). **Site gotcha:** cross-out is `\cancel{}` (math-mode), **not** `\sout` (text-mode-only — trips KaTeX's `mathVsSout` strict warning). Other site macros in use: `\mathrm{d}x`, `\set{...}`, `\bmod`, `\displaystyle` for cell sizing. **Math bodies are ASCII + LaTeX commands only** (skill rule 31): CJK goes through `\text{}` — subscripts included (`v_{\text{正}}`, never `v_{正}`); ranges are `\sim`, never a `–` inside `$...$`; `\times`/`-`/`^\circ`, never the `×`/`−`/`°` characters. Bare CJK and `–` in math surface as KaTeX strict warnings (`unicodeTextInMathMode` / `unknownSymbol`) in a **cold** `npm run build` — a cached build silently skips them.
+- **Never write prose announcing that formulas use KaTeX** (`公式用 KaTeX 排版，如…`, `化学式与方程式用 KaTeX 排版…`). The whole site renders math with KaTeX — such a sentence states the obvious and reads as an AI-tell; just use `$…$` and move on. (Genuinely informative meta-notes stay — e.g. `代码用 Python` in the 信息技术 notes, which is specific, not a site-wide given.)
 
 ## Code blocks
 
