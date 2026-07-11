@@ -107,7 +107,9 @@ const SETTINGS_PRESET_COLOR_LIST = [
 
 function AccentColor() {
   const { colorMode } = useColorMode();
-  const { colorState, inputColor, updateColor, resetColors } = useThemeColors(colorMode === 'dark');
+  const { colorState, inputColor, updateColor, commitColor, resetColors } = useThemeColors(
+    colorMode === 'dark'
+  );
 
   return (
     <TitleCard
@@ -139,8 +141,14 @@ function AccentColor() {
               type="text"
               value={inputColor}
               onChange={(e) => updateColor(e.target.value)}
+              onBlur={commitColor}
+              onKeyDown={(e) => e.key === 'Enter' && e.currentTarget.blur()}
               className={styles.textColorInput}
               size={8}
+              aria-label={translate({
+                id: 'pages.settings.item.color.hex',
+                message: 'Hex color value',
+              })}
             />
           </label>
           <Button

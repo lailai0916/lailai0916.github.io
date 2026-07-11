@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 
 import BrowserOnly from '@docusaurus/BrowserOnly';
+import { translate } from '@docusaurus/Translate';
 import Giscus from '@giscus/react';
 import { Icon } from '@iconify/react';
 import Card from '@site/src/components/laikit/Card';
@@ -37,7 +38,13 @@ export function Skills() {
   return (
     <BrowserOnly>
       {() => (
-        <img src={`https://go-skill-icons.vercel.app/api/icons?i=${skills}&perline=${perline}`} />
+        <img
+          src={`https://go-skill-icons.vercel.app/api/icons?i=${skills}&perline=${perline}`}
+          alt={translate({
+            id: 'pages.about.skills.ariaLabel',
+            message: 'Tech stack icons',
+          })}
+        />
       )}
     </BrowserOnly>
   );

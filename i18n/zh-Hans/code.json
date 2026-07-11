@@ -128,6 +128,9 @@
   "components.problem.solution": {
     "message": "题解"
   },
+  "pages.about.skills.ariaLabel": {
+    "message": "技术栈图标"
+  },
   "pages.changelog.empty": {
     "message": "暂无更新日志"
   },
@@ -212,11 +215,11 @@
   "pages.resources.search.clear": {
     "message": "清空搜索"
   },
-  "pages.resources.category.clear": {
-    "message": "清除分类"
-  },
   "pages.resources.search.placeholder": {
     "message": "搜索资源"
+  },
+  "pages.resources.category.clear": {
+    "message": "清除分类"
   },
   "pages.resources.category.count": {
     "message": "{count} 项"
@@ -262,6 +265,9 @@
   },
   "pages.settings.item.color.picker": {
     "message": "选择颜色"
+  },
+  "pages.settings.item.color.hex": {
+    "message": "十六进制颜色值"
   },
   "pages.settings.item.color.default": {
     "message": "默认"
@@ -798,6 +804,14 @@
     "message": "回到顶部",
     "description": "The ARIA label for the back to top button"
   },
+  "theme.blog.archive.title": {
+    "message": "历史文章",
+    "description": "The page & hero title of the blog archive page"
+  },
+  "theme.blog.archive.description": {
+    "message": "历史文章",
+    "description": "The page & hero description of the blog archive page"
+  },
   "theme.blog.paginator.navAriaLabel": {
     "message": "文章列表分页导航",
     "description": "The ARIA label for the blog pagination"
@@ -809,14 +823,6 @@
   "theme.blog.paginator.olderEntries": {
     "message": "较旧的文章",
     "description": "The label used to navigate to the older blog posts page (next page)"
-  },
-  "theme.blog.archive.title": {
-    "message": "历史文章",
-    "description": "The page & hero title of the blog archive page"
-  },
-  "theme.blog.archive.description": {
-    "message": "历史文章",
-    "description": "The page & hero description of the blog archive page"
   },
   "theme.blog.post.paginator.navAriaLabel": {
     "message": "文章分页导航",
@@ -881,13 +887,13 @@
     "message": "最新版本",
     "description": "The label used for the latest version suggestion link label"
   },
-  "theme.common.headingLinkTitle": {
-    "message": "{heading}的直接链接",
-    "description": "Title for link to heading"
-  },
   "theme.common.editThisPage": {
     "message": "编辑此页",
     "description": "The link label to edit the current page"
+  },
+  "theme.common.headingLinkTitle": {
+    "message": "{heading}的直接链接",
+    "description": "Title for link to heading"
   },
   "theme.lastUpdated.atDate": {
     "message": "于 {date} ",
@@ -957,21 +963,17 @@
     "message": "主导航",
     "description": "The ARIA label for the main navigation"
   },
-  "theme.NotFound.p2": {
-    "message": "请联系原始链接来源网站的所有者，并告知他们链接已损坏。",
-    "description": "The 2nd paragraph of the 404 page"
-  },
   "theme.navbar.mobileLanguageDropdown.label": {
     "message": "选择语言",
     "description": "The label for the mobile language switcher dropdown"
   },
+  "theme.NotFound.p2": {
+    "message": "请联系原始链接来源网站的所有者，并告知他们链接已损坏。",
+    "description": "The 2nd paragraph of the 404 page"
+  },
   "theme.TOCCollapsible.toggleButtonLabel": {
     "message": "本页总览",
     "description": "The label used by the button on the collapsible TOC component"
-  },
-  "theme.blog.post.readingTime.plurals": {
-    "message": "阅读需 {readingTime} 分钟",
-    "description": "Pluralized label for \"{readingTime} min read\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
   },
   "theme.blog.post.readMore": {
     "message": "阅读更多",
@@ -980,6 +982,10 @@
   "theme.blog.post.readMoreLabel": {
     "message": "阅读 {title} 的全文",
     "description": "The ARIA label for the link to full blog posts from excerpts"
+  },
+  "theme.blog.post.readingTime.plurals": {
+    "message": "阅读需 {readingTime} 分钟",
+    "description": "Pluralized label for \"{readingTime} min read\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
   },
   "theme.CodeBlock.copy": {
     "message": "复制",

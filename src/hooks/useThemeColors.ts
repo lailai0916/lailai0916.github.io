@@ -59,11 +59,18 @@ export function useThemeColors(isDarkTheme: boolean) {
     try {
       hex = Color(newColor).hex().toLowerCase();
     } catch {
-      // User is still typing an incomplete or invalid color string
+      // An incomplete/invalid value mid-typing is left un-applied and silent;
+      // commitColor reconciles it on blur.
       return;
     }
     setColorState((prev) => ({ ...prev, baseColor: hex }));
   }, []);
+
+  // On blur, reconcile the field to the applied color: reverts a still-invalid
+  // entry and canonicalizes valid shorthand (e.g. #FFF → #ffffff).
+  const commitColor = useCallback(() => {
+    setInputColor(colorState.baseColor);
+  }, [colorState.baseColor]);
 
   const resetColors = useCallback(() => {
     const defaults = getThemeDefaults(isDarkTheme);
@@ -81,6 +88,7 @@ export function useThemeColors(isDarkTheme: boolean) {
     colorState,
     inputColor,
     updateColor,
+    commitColor,
     resetColors,
   };
 }

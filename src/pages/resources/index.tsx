@@ -33,6 +33,10 @@ const CLEAR_SEARCH = translate({
   id: 'pages.resources.search.clear',
   message: 'Clear search',
 });
+const SEARCH_PLACEHOLDER = translate({
+  id: 'pages.resources.search.placeholder',
+  message: 'Search Resources',
+});
 
 function filterResourceCategories(
   categories: readonly ResourceCategoryItem[],
@@ -139,10 +143,8 @@ function FilterBar({
             value={searchValue}
             onChange={(e) => onSearchChange(e.target.value)}
             onFocus={() => setOpen(true)}
-            placeholder={translate({
-              id: 'pages.resources.search.placeholder',
-              message: 'Search Resources',
-            })}
+            placeholder={SEARCH_PLACEHOLDER}
+            aria-label={SEARCH_PLACEHOLDER}
             className={styles.filterSearchInput}
           />
           {searchValue && (
