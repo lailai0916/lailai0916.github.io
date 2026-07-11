@@ -1,23 +1,56 @@
+.digit {
+  position: relative;
+  width: 1ch;
+  height: 1.08em;
+  overflow: hidden;
+}
+
+.digitOut {
+  position: absolute;
+  inset: 0;
+  text-align: center;
+  animation: digit-out 350ms cubic-bezier(0.2, 0, 0.2, 1) forwards;
+}
+
+@keyframes digit-out {
+  to {
+    transform: translateY(100%);
+    opacity: 0.25;
+  }
+}
+
+.digitIn {
+  position: absolute;
+  inset: 0;
+  text-align: center;
+  animation: digit-in 350ms cubic-bezier(0.2, 0, 0.2, 1);
+}
+
+@keyframes digit-in {
+  from {
+    transform: translateY(-100%);
+    opacity: 0.25;
+  }
+}
+
 .panel {
   container-type: inline-size;
   width: 100%;
   max-width: 34rem;
   margin: 0 auto;
-  /* Clip the full-bleed progress bar to the Card's rounded corners. */
-  overflow: hidden;
 }
 
 .body {
   display: flex;
   flex-direction: column;
-  gap: clamp(1rem, 4cqi, 1.4rem);
-  padding: clamp(1.5rem, 6cqi, 2.35rem) clamp(1.5rem, 7cqi, 2.75rem) clamp(1.5rem, 6cqi, 2.25rem);
+  gap: clamp(1.1rem, 4.5cqi, 1.6rem);
+  padding: clamp(1.5rem, 6cqi, 2.25rem) clamp(1.25rem, 7cqi, 2.5rem);
 }
 
 .caption {
   margin: 0;
   text-align: center;
-  font-size: clamp(1.05rem, 3.4cqi, 1.25rem);
+  font-size: clamp(0.95rem, 3cqi, 1.1rem);
   line-height: 1.5;
   font-weight: 500;
   color: var(--ifm-color-emphasis-700);
@@ -34,44 +67,87 @@
 }
 
 .clock {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  align-items: start;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: clamp(0.25rem, 1.6cqi, 0.65rem);
+}
+
+.colon {
+  /* Colon ink hugs the baseline while digits fill the cap height; lift it to
+     the digits' optical center (measured ~0.1em via canvas TextMetrics). */
+  position: relative;
+  top: -0.1em;
+  font-size: clamp(1.6rem, 11cqi, 3.5rem);
+  font-weight: 300;
+  line-height: 1.08;
+  color: var(--ifm-color-emphasis-300);
 }
 
 .unit {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 0.85rem;
+  gap: clamp(0.45rem, 2cqi, 0.7rem);
   min-width: 0;
 }
 
 .value {
-  font-size: clamp(2rem, 10cqi, 3.5rem);
+  display: flex;
+  justify-content: center;
+  font-size: clamp(1.6rem, 11cqi, 3.5rem);
   font-weight: 600;
   line-height: 1.08;
   font-variant-numeric: tabular-nums;
-  letter-spacing: -0.03em;
   color: var(--ifm-font-color-base);
 }
 
+.srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
 .label {
-  font-size: clamp(0.7rem, 2.4cqi, 0.8rem);
-  font-weight: 500;
-  letter-spacing: 0.01em;
+  font-size: clamp(0.65rem, 2.2cqi, 0.75rem);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
   color: var(--ifm-font-color-secondary);
 }
 
-.progress {
-  position: relative;
-  height: 3px;
-  background: var(--ifm-color-emphasis-200);
+@container (max-width: 340px) {
+  .label {
+    font-size: 0.6rem;
+    letter-spacing: 0.05em;
+  }
 }
 
-.bar {
+.track {
+  display: flex;
+  gap: clamp(3px, 0.8cqi, 4px);
+  margin-top: clamp(0.2rem, 1.2cqi, 0.5rem);
+}
+
+.segment {
+  position: relative;
+  flex: 1;
+  height: 4px;
+  border-radius: 2px;
+  background: var(--ifm-color-emphasis-200);
+  overflow: hidden;
+}
+
+.segmentFill {
   position: absolute;
   inset: 0;
   transform-origin: left center;
   background: var(--ifm-color-primary);
+  transition: transform 600ms cubic-bezier(0.2, 0, 0.2, 1);
 }

@@ -1,7 +1,8 @@
-import { useEffect, useState } from 'react';
+import { Fragment, useEffect, useRef, useState } from 'react';
 import clsx from 'clsx';
 import Translate, { translate } from '@docusaurus/Translate';
 import Card from '@site/src/components/laikit/Card';
+import { fireConfetti } from '@site/src/utils/confetti';
 import styles from './styles.module.css';
 
 // The birthday recurs yearly: the countdown always targets the next occurrence
@@ -10,6 +11,9 @@ import styles from './styles.module.css';
 const BIRTHDAY_MONTH = 9;
 const BIRTHDAY_DAY = 16;
 const BEIJING_OFFSET_MS = 8 * 60 * 60 * 1000;
+
+// One track segment ≈ one twelfth of the birthday-to-birthday year.
+const TRACK_SEGMENTS = 12;
 
 const EVENT = translate({
   id: 'components.countdown.event',
@@ -86,8 +90,43 @@ function calculateState(now: number): CountdownState {
   };
 }
 
+// One digit slot: on change the old numeral rolls out below while the new one
+// drops in from above, so only the slots that actually change ever move.
+function RollingDigit({ digit }: { digit: string }) {
+  const prevRef = useRef(digit);
+  const prev = prevRef.current;
+  useEffect(() => {
+    prevRef.current = digit;
+  });
+  return (
+    <span className={styles.digit} aria-hidden="true">
+      {prev !== digit && (
+        <span key={`out-${prev}`} className={styles.digitOut}>
+          {prev}
+        </span>
+      )}
+      <span key={`in-${digit}`} className={styles.digitIn}>
+        {digit}
+      </span>
+    </span>
+  );
+}
+
+// Keyed from the right so the ones/tens slots stay put when the day count
+// gains or loses a digit.
+function RollingNumber({ value }: { value: string }) {
+  return (
+    <>
+      {[...value].map((digit, i) => (
+        <RollingDigit key={value.length - i} digit={digit} />
+      ))}
+    </>
+  );
+}
+
 export default function Countdown() {
   const [state, setState] = useState<CountdownState>(INITIAL_STATE);
+  const celebrated = useRef(false);
 
   useEffect(() => {
     let timer: number;
@@ -99,6 +138,14 @@ export default function Countdown() {
     tick();
     return () => window.clearTimeout(timer);
   }, []);
+
+  useEffect(() => {
+    if (!state.isBirthday || celebrated.current) return;
+    celebrated.current = true;
+    fireConfetti();
+  }, [state.isBirthday]);
+
+  const percent = Math.round(state.progress * 100);
 
   return (
     <Card className={styles.panel} padding="0">
@@ -118,23 +165,48 @@ export default function Countdown() {
           )}
         </p>
         <div className={styles.clock} role="timer">
-          {TIME_UNITS.map(({ key, label }) => (
-            <div className={styles.unit} key={key}>
-              <span className={styles.value}>{String(state[key]).padStart(2, '0')}</span>
-              <span className={styles.label}>{label}</span>
-            </div>
+          {TIME_UNITS.map(({ key, label }, i) => {
+            // Days get a fixed three-digit register (they are three digits for
+            // most of the year); the cyclic units keep the clock-style two.
+            const display = String(state[key]).padStart(key === 'days' ? 3 : 2, '0');
+            return (
+              <Fragment key={key}>
+                {i > 0 && (
+                  <span className={styles.colon} aria-hidden="true">
+                    :
+                  </span>
+                )}
+                <div className={styles.unit}>
+                  <span className={styles.value}>
+                    <RollingNumber value={display} />
+                    <span className={styles.srOnly}>{String(state[key])}</span>
+                  </span>
+                  <span className={styles.label}>{label}</span>
+                </div>
+              </Fragment>
+            );
+          })}
+        </div>
+        <div
+          className={styles.track}
+          role="progressbar"
+          aria-label={translate({ id: 'components.countdown.progress', message: 'Year progress' })}
+          aria-valuemin={0}
+          aria-valuemax={100}
+          aria-valuenow={percent}
+          title={`${percent}%`}
+        >
+          {Array.from({ length: TRACK_SEGMENTS }, (_, i) => (
+            <span key={i} className={styles.segment}>
+              <span
+                className={styles.segmentFill}
+                style={{
+                  transform: `scaleX(${Math.min(Math.max(state.progress * TRACK_SEGMENTS - i, 0), 1)})`,
+                }}
+              />
+            </span>
           ))}
         </div>
-      </div>
-      <div
-        className={styles.progress}
-        role="progressbar"
-        aria-label={translate({ id: 'components.countdown.progress', message: 'Year progress' })}
-        aria-valuemin={0}
-        aria-valuemax={100}
-        aria-valuenow={Math.round(state.progress * 100)}
-      >
-        <span className={styles.bar} style={{ transform: `scaleX(${state.progress})` }} />
       </div>
     </Card>
   );
