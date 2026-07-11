@@ -400,7 +400,7 @@
 
 .socialLinks {
   display: grid;
-  grid-template-columns: repeat(4, 40px);
+  grid-template-columns: repeat(5, 40px);
   grid-template-rows: repeat(2, 40px);
   gap: 0.5rem;
   justify-content: end;
@@ -414,6 +414,7 @@
   height: 40px;
   border-radius: 12px;
   color: var(--ifm-color-emphasis-600);
+  opacity: 0.8;
   background: var(--ifm-color-emphasis-100);
   transition: color 160ms ease;
 }
