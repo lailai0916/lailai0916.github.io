@@ -395,6 +395,12 @@
   "components.article.viewCount": {
     "message": "{viewCount} 浏览"
   },
+  "components.github.error": {
+    "message": "加载 GitHub 数据失败"
+  },
+  "components.github.noDescription": {
+    "message": "暂无描述"
+  },
   "components.github.stars": {
     "message": "Star 数"
   },
@@ -406,9 +412,6 @@
   },
   "components.github.language": {
     "message": "主要语言"
-  },
-  "components.github.error": {
-    "message": "加载 GitHub 数据失败"
   },
   "components.markdown.aboutGreeting": {
     "message": "Hello, I'm lailai"
