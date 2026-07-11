@@ -663,6 +663,7 @@ const sidebars: SidebarsConfig = {
         'note/technology/data-structure',
         'note/technology/technology-design-1',
         'note/technology/technology-design-2',
+        'note/technology/electronic-control',
       ],
     },
   ],
