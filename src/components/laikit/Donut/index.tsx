@@ -221,7 +221,7 @@ export default function Donut({
               >
                 <span className={styles.swatch} style={{ background: seg.color }} />
                 <span className={styles.legendLabel}>{seg.label}</span>
-                <span className={styles.legendPct}>{Math.round(seg.frac * 100)}%</span>
+                <span className={styles.legendPct}>{(seg.frac * 100).toFixed(1)}%</span>
               </li>
             ))}
           </ul>
