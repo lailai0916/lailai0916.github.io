@@ -31,9 +31,10 @@ lailai's site is mostly in Simplified Chinese, with three content streams (`blog
 ## Headings
 
 - No H1 in body — frontmatter `title` is the only H1. Body always opens with `##`.
-- Section headings are short Chinese noun phrases. Recurring vocabulary (reuse before coining): `## 参考资料`, `## 题意简述`, `## 解题思路`, `## 参考代码`, `## 思想`, `## 化简`, `## 求解`, `## 例题`, `## 代码`, `## 效果展示`.
+- Section headings are short Chinese noun phrases. Recurring vocabulary (reuse before coining): `## 参考资料`, `## 简介`, `## 说明`, `## 题意简述`, `## 解题思路`, `## 参考代码`, `## 思想`, `## 化简`, `## 求解`, `## 例题`, `## 代码`, `## 效果展示`.
 - No trailing `。` `？` `！` on headings. Inline `<code>` / KaTeX inside headings is fine: `## INT_MAX`, `## 牛顿–莱布尼茨公式`.
 - `## 参考资料` is conventionally the **first** `##` of any math/misc post that cites sources — it goes before the body, not after.
+- **Docs carry no pre-heading lead line.** The single-sentence description that used to sit between frontmatter and the first `##` is gone site-wide — a doc body opens directly at `##` (a lead paragraph is blog-only, see *Intro and truncate*). A kept subject intro / definition goes in a `## 简介` section (`统计学是…`, `Kahan 求和算法，又名…`); an editorial note about the doc itself — how it's organised, what it covers — goes in `## 说明` (`这份笔记对照人教版教材，按专题归类…`). Both sit **after** `## 参考资料`, never as a bare paragraph before the first heading.
 
 ## Language, tone, punctuation
 
