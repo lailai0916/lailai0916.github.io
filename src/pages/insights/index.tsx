@@ -11,6 +11,7 @@ import { PageTitle, PageHeader, PageContent } from '@site/src/components/laikit/
 import Card from '@site/src/components/laikit/Card';
 import Skeleton from '@site/src/components/laikit/Skeleton';
 import Chart from '@site/src/components/laikit/Chart';
+import Donut from '@site/src/components/laikit/Donut';
 import Segmented, { type SegmentedItem } from '@site/src/components/laikit/Segmented';
 import { useUmamiStats, type InsightsRange, type UmamiStats } from '@site/src/hooks/useUmamiStats';
 import { useUmamiPageviewsSeries } from '@site/src/hooks/useUmamiPageviewsSeries';
@@ -44,6 +45,41 @@ const METRIC_LIST_EMPTY = translate({
   id: 'pages.insights.metricList.empty',
   message: 'No Data Yet',
 });
+const ENV_OTHER = translate({
+  id: 'pages.insights.env.other',
+  message: 'Other',
+});
+
+// Umami reports raw browser/device codes; map the common ones to display names
+// and title-case the rest. OS values arrive already readable ("Windows 10").
+const BROWSER_LABELS: Record<string, string> = {
+  chrome: 'Chrome',
+  'edge-chromium': 'Edge',
+  edge: 'Edge',
+  firefox: 'Firefox',
+  safari: 'Safari',
+  ios: 'Safari (iOS)',
+  'ios-webview': 'iOS WebView',
+  crios: 'Chrome (iOS)',
+  fxios: 'Firefox (iOS)',
+  chromium: 'Chromium',
+  'chromium-webview': 'Android WebView',
+  'android-webview': 'Android WebView',
+  samsung: 'Samsung Internet',
+  opera: 'Opera',
+  'opera-mini': 'Opera Mini',
+  yandexbrowser: 'Yandex',
+};
+const DEVICE_LABELS: Record<string, string> = {
+  desktop: translate({ id: 'pages.insights.env.device.desktop', message: 'Desktop' }),
+  laptop: translate({ id: 'pages.insights.env.device.laptop', message: 'Laptop' }),
+  mobile: translate({ id: 'pages.insights.env.device.mobile', message: 'Mobile' }),
+  tablet: translate({ id: 'pages.insights.env.device.tablet', message: 'Tablet' }),
+};
+
+function titleCaseKey(s: string): string {
+  return s.replace(/[-_]/g, ' ').replace(/\b\w/g, (c) => c.toUpperCase());
+}
 
 function formatDuration(seconds: number): string {
   if (!Number.isFinite(seconds) || seconds <= 0) return '0s';
@@ -376,6 +412,56 @@ function MetricsGrid({ range }: { range: InsightsRange }) {
   );
 }
 
+function EnvironmentGrid({ range }: { range: InsightsRange }) {
+  const browsers = useUmamiMetric('browser', range);
+  const os = useUmamiMetric('os', range);
+  const devices = useUmamiMetric('device', range);
+
+  return (
+    <section className={styles.metricsGrid}>
+      <Donut
+        title={translate({
+          id: 'pages.insights.env.browsers',
+          message: 'Browsers',
+        })}
+        icon="lucide:app-window"
+        items={browsers.items}
+        loading={browsers.status === 'loading'}
+        emptyText={METRIC_LIST_EMPTY}
+        maxSlices={4}
+        otherLabel={ENV_OTHER}
+        renderLabel={(x) => BROWSER_LABELS[x.toLowerCase()] ?? titleCaseKey(x)}
+      />
+      <Donut
+        title={translate({
+          id: 'pages.insights.env.os',
+          message: 'OS',
+        })}
+        icon="lucide:cpu"
+        items={os.items}
+        loading={os.status === 'loading'}
+        emptyText={METRIC_LIST_EMPTY}
+        maxSlices={4}
+        otherLabel={ENV_OTHER}
+        renderLabel={(x) => x || titleCaseKey(x)}
+      />
+      <Donut
+        title={translate({
+          id: 'pages.insights.env.devices',
+          message: 'Devices',
+        })}
+        icon="lucide:monitor-smartphone"
+        items={devices.items}
+        loading={devices.status === 'loading'}
+        emptyText={METRIC_LIST_EMPTY}
+        maxSlices={4}
+        otherLabel={ENV_OTHER}
+        renderLabel={(x) => DEVICE_LABELS[x.toLowerCase()] ?? titleCaseKey(x)}
+      />
+    </section>
+  );
+}
+
 export default function Insights(): ReactNode {
   const [range, setRange] = useState<InsightsRange>(1);
   return (
@@ -388,6 +474,7 @@ export default function Insights(): ReactNode {
         <HeroGrid range={range} />
         <PageviewsChart range={range} />
         <MetricsGrid range={range} />
+        <EnvironmentGrid range={range} />
         <UptimeSection />
         <SysStatusCard />
       </PageContent>

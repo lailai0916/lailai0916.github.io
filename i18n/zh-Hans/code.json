@@ -1351,5 +1351,29 @@
   "theme.tags.tagsPageTitle": {
     "message": "标签",
     "description": "The title of the tag list page"
+  },
+  "pages.insights.env.device.desktop": {
+    "message": "桌面端"
+  },
+  "pages.insights.env.device.laptop": {
+    "message": "笔记本"
+  },
+  "pages.insights.env.device.mobile": {
+    "message": "移动端"
+  },
+  "pages.insights.env.device.tablet": {
+    "message": "平板"
+  },
+  "pages.insights.env.browsers": {
+    "message": "浏览器"
+  },
+  "pages.insights.env.os": {
+    "message": "操作系统"
+  },
+  "pages.insights.env.devices": {
+    "message": "设备"
+  },
+  "pages.insights.env.other": {
+    "message": "其他"
   }
 }

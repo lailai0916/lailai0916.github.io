@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { umamiFetchJson } from '@site/src/utils/umami';
 import { rangeWindow, type InsightsRange, type FetchStatus } from './useUmamiStats';
 
-type MetricType = 'path' | 'referrer' | 'country' | 'device' | 'browser';
+type MetricType = 'path' | 'referrer' | 'country' | 'device' | 'browser' | 'os';
 
 interface MetricItem {
   x: string;
