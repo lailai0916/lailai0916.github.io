@@ -114,6 +114,13 @@ html[data-theme='dark'] .dotDown {
   color: var(--ifm-color-emphasis-600);
 }
 
+/* Loading bars reserve a full text line (via &nbsp;) for exact row height, then
+   scale down visually so they read as text, not solid blocks. Transform is
+   post-layout, so it never changes the reserved height. */
+.ghost {
+  transform: scale(1, 0.62);
+}
+
 .section {
   display: flex;
   flex-direction: column;

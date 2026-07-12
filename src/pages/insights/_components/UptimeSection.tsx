@@ -28,11 +28,42 @@ function MonitorRow({
   monitor,
   beats,
   uptime24,
+  loading,
 }: {
-  monitor: KumaMonitor;
-  beats: KumaHeartbeat[] | undefined;
-  uptime24: number | undefined;
+  monitor?: KumaMonitor;
+  beats?: KumaHeartbeat[];
+  uptime24?: number;
+  loading?: boolean;
 }) {
+  // Placeholder rows render the exact same Card / head / HeartbeatBar shell, so a
+  // loading row is the same height as a loaded one by construction — no magic
+  // number. Heights are held by &nbsp; in the real head classes; scaling the
+  // bars is post-layout, so it changes their look but not the reserved height.
+  if (loading || !monitor) {
+    return (
+      <Card className={styles.row}>
+        <div className={styles.rowHead}>
+          <Skeleton className={styles.dot} />
+          <div className={styles.nameWrap}>
+            <Skeleton className={clsx(styles.name, styles.ghost)} radius={6} style={{ width: '45%' }}>
+              &nbsp;
+            </Skeleton>
+          </div>
+          <span className={styles.uptime}>
+            <Skeleton
+              className={clsx(styles.uptimeValue, styles.ghost)}
+              radius={6}
+              style={{ width: '2.75rem' }}
+            >
+              &nbsp;
+            </Skeleton>
+          </span>
+        </div>
+        <HeartbeatBar beats={[]} slots={100} />
+      </Card>
+    );
+  }
+
   const last = lastStatus(beats);
   const ping = avgPing(beats);
   const upPct = typeof uptime24 === 'number' ? (uptime24 * 100).toFixed(2) : '–';
@@ -107,7 +138,7 @@ export default function UptimeSection() {
       ) : (
         <div className={styles.list}>
           {loading ? (
-            Array.from({ length: 6 }).map((_, i) => <Skeleton key={i} height={96} radius={16} />)
+            Array.from({ length: 6 }).map((_, i) => <MonitorRow key={i} loading />)
           ) : monitors.length === 0 ? (
             <p className={styles.empty}>
               {translate({
