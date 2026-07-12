@@ -1,4 +1,10 @@
-import { useState, type CSSProperties, type ReactNode } from 'react';
+import {
+  useRef,
+  useState,
+  type CSSProperties,
+  type PointerEvent as ReactPointerEvent,
+  type ReactNode,
+} from 'react';
 import clsx from 'clsx';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import TitleCard from '@site/src/components/laikit/TitleCard';
@@ -30,7 +36,7 @@ interface DonutProps {
 // 100 so a slice's arc length equals its percentage.
 const R = 42;
 const SW = 10;
-const SW_ACTIVE = 13;
+const SW_ACTIVE = 12;
 // Blank between slices, in pathLength units — one gap per boundary. The whole
 // gap budget is removed from the circumference up front (see `available`), so no
 // single arc is shortened out of proportion; the gap just reveals the card
@@ -67,6 +73,7 @@ export default function Donut({
     i18n: { currentLocale: locale },
   } = useDocusaurusContext();
   const [active, setActive] = useState<number | null>(null);
+  const plotRef = useRef<HTMLDivElement>(null);
 
   const format = formatValue ?? ((n: number) => formatCompact(n, locale));
   const label = (x: string) => (renderLabel ? renderLabel(x) : x);
@@ -112,6 +119,28 @@ export default function Donut({
   // it by fraction keeps every arc exactly proportional (D3 padAngle style).
   const available = 100 - segments.length * gap;
   const activeSeg = active != null ? segments[active] : null;
+
+  // Hover is hit-tested by angle over the ring band: each slice owns its arc plus
+  // half the gap on both sides, so circling the ring never drops into a dead gap;
+  // the hole and anything outside the band clear the selection.
+  const onPlotMove = (e: ReactPointerEvent<HTMLDivElement>) => {
+    const el = plotRef.current;
+    if (!el) return;
+    const rect = el.getBoundingClientRect();
+    const px = ((e.clientX - rect.left) / rect.width) * 100 - 50;
+    const py = ((e.clientY - rect.top) / rect.height) * 100 - 50;
+    if (Math.hypot(px, py) < R - SW || Math.hypot(px, py) > R + SW) {
+      setActive(null);
+      return;
+    }
+    // Position 0–100 clockwise from 12 o'clock, matching the arc layout.
+    const pos = ((((Math.atan2(px, -py) / (2 * Math.PI)) % 1) + 1) % 1) * 100;
+    const i = segments.findIndex((seg, idx) => {
+      const lo = seg.start * available + idx * gap;
+      return pos >= lo && pos < lo + seg.frac * available + gap;
+    });
+    setActive(i >= 0 ? i : null);
+  };
   // Reserve legend height for the full slice count so short cards (e.g. Devices)
   // stay the same height as the others and nothing shifts on data load.
   const rows = maxSlices ?? segments.length;
@@ -140,12 +169,13 @@ export default function Donut({
       ) : total === 0 ? (
         <p className={styles.empty}>{emptyText}</p>
       ) : (
-        <div
-          className={styles.body}
-          style={{ '--donut-rows': rows } as CSSProperties}
-          onPointerLeave={() => setActive(null)}
-        >
-          <div className={styles.chartWrap}>
+        <div className={styles.body} style={{ '--donut-rows': rows } as CSSProperties}>
+          <div
+            className={styles.chartWrap}
+            ref={plotRef}
+            onPointerMove={onPlotMove}
+            onPointerLeave={() => setActive(null)}
+          >
             <svg className={styles.svg} viewBox="0 0 100 100" role="img" aria-label={title}>
               <g transform="rotate(-90 50 50)">
                 {segments.map((seg, i) => {
@@ -167,7 +197,6 @@ export default function Donut({
                         stroke: seg.color,
                         opacity: active == null || i === active ? 1 : 0.32,
                       }}
-                      onPointerEnter={() => setActive(i)}
                     />
                   );
                 })}
@@ -188,6 +217,7 @@ export default function Donut({
                   active != null && i !== active && styles.legendRowDim
                 )}
                 onPointerEnter={() => setActive(i)}
+                onPointerLeave={() => setActive(null)}
               >
                 <span className={styles.swatch} style={{ background: seg.color }} />
                 <span className={styles.legendLabel}>{seg.label}</span>
