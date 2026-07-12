@@ -35,7 +35,7 @@ const SW_ACTIVE = 13;
 // gap budget is removed from the circumference up front (see `available`), so no
 // single arc is shortened out of proportion; the gap just reveals the card
 // background as a hairline separator.
-const GAP = 1.2;
+const GAP = 1;
 
 // Single-hue ramp for the real slices: the largest is the vivid brand primary,
 // the rest tint toward the card surface. One hue keeps it unified with the site;
