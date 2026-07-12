@@ -34,7 +34,7 @@ export default function MetricList({
 }: MetricListProps) {
   const { i18n } = useDocusaurusContext();
   const format = formatValue ?? ((n: number) => formatCompact(n, i18n.currentLocale));
-  const max = items.length > 0 ? Math.max(...items.map((i) => i.y), 1) : 1;
+  const max = Math.max(...items.map((i) => i.y), 1);
 
   return (
     <TitleCard

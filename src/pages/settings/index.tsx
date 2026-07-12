@@ -18,7 +18,7 @@ import {
   type ExperimentalSettings,
 } from '@site/src/hooks/useExperimentalFlag';
 import { useThemeColors } from '@site/src/hooks/useThemeColors';
-import { getThemeStorage } from '@site/src/utils/colorUtils';
+import { themeStorage } from '@site/src/utils/colorUtils';
 import { fireConfetti } from '@site/src/utils/confetti';
 import { Icon } from '@iconify/react';
 import { PageTitle, PageHeader, PageContent } from '@site/src/components/laikit/Page';
@@ -414,7 +414,7 @@ function ExperimentalFeatures() {
 function QuickActions() {
   function handleReset() {
     localStorage.removeItem('theme');
-    getThemeStorage().del();
+    themeStorage.del();
     localStorage.removeItem('font-family');
     localStorage.removeItem('global-font-size');
     localStorage.removeItem('global-line-height');

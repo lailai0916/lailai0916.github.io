@@ -18,27 +18,25 @@ function useTypewriter(words: string[]) {
   const currentWord = words[index % words.length];
 
   useEffect(() => {
-    const current = words[index % words.length];
-
     // Reduced-motion users get the role fully typed, no cycling animation.
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-      if (text !== current) setText(current);
+      if (text !== currentWord) setText(currentWord);
       return;
     }
 
     let timer: ReturnType<typeof setTimeout>;
 
-    if (!deleting && text.length < current.length) {
+    if (!deleting && text.length < currentWord.length) {
       timer = setTimeout(() => {
-        setText(current.slice(0, text.length + 1));
+        setText(currentWord.slice(0, text.length + 1));
       }, 140);
-    } else if (!deleting && text.length === current.length) {
+    } else if (!deleting && text.length === currentWord.length) {
       timer = setTimeout(() => {
         setDeleting(true);
       }, 1200);
     } else if (deleting && text.length > 0) {
       timer = setTimeout(() => {
-        setText(current.slice(0, text.length - 1));
+        setText(currentWord.slice(0, text.length - 1));
       }, 80);
     } else {
       timer = setTimeout(() => {
@@ -48,7 +46,7 @@ function useTypewriter(words: string[]) {
     }
 
     return () => clearTimeout(timer);
-  }, [deleting, index, text, words]);
+  }, [deleting, text, words, currentWord]);
 
   return { text, currentWord };
 }

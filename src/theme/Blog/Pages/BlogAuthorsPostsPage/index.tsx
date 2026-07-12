@@ -55,7 +55,7 @@ export default function BlogAuthorsPostsPage(props: Props): ReactNode {
 
 function CustomBlogAuthorsPostsPage(props: Props): ReactNode {
   const { author, items } = props;
-  const posts = useMemo(() => (items as any[]).map((it) => it.content), [items]);
+  const posts = useMemo(() => items.map((it) => it.content), [items]);
 
   return (
     <BlogScaffold title={author.name ?? author.key} description={author.title}>

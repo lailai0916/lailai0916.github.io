@@ -31,9 +31,7 @@ function PostCard({ item }: PostCardProps) {
   const { metadata, frontMatter } = MDXPageContent;
   const image = frontMatter.image as string | undefined;
 
-  const tagItems = (metadata.tags ?? [])
-    .filter((t) => !!t.label && !!t.permalink)
-    .map((t) => ({ to: t.permalink, label: t.label }));
+  const tagItems = metadata.tags.map((t) => ({ to: t.permalink, label: t.label }));
 
   const metaItems = usePostMetaItems({
     permalink: metadata.permalink,

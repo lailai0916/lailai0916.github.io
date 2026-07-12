@@ -170,7 +170,7 @@ export default function GitHub({ repo, className }: GitHubProps) {
   const [data, setData] = useState<GitHubRepoData | null>(null);
   const [failed, setFailed] = useState(false);
 
-  const [owner = '', repoName = ''] = useMemo(() => repo.split('/'), [repo]);
+  const [owner, repoName = ''] = useMemo(() => repo.split('/'), [repo]);
 
   useEffect(() => {
     if (!owner || !repoName) {

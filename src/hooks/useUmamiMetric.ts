@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { umamiFetchJson } from '@site/src/utils/umami';
-import type { InsightsRange, FetchStatus } from './useUmamiStats';
+import { rangeWindow, type InsightsRange, type FetchStatus } from './useUmamiStats';
 
 type MetricType = 'path' | 'referrer' | 'country' | 'device' | 'browser';
 
@@ -15,8 +15,7 @@ export function useUmamiMetric(type: MetricType, range: InsightsRange, limit: nu
 
   useEffect(() => {
     const controller = new AbortController();
-    const endAt = range === 1 ? Math.ceil(Date.now() / 3600_000) * 3600_000 : Date.now();
-    const startAt = endAt - range * 24 * 60 * 60 * 1000;
+    const { startAt, endAt } = rangeWindow(range);
 
     (async () => {
       setStatus('loading');

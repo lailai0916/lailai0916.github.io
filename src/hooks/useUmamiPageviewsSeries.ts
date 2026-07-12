@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { umamiFetchJson } from '@site/src/utils/umami';
-import type { InsightsRange, FetchStatus } from './useUmamiStats';
+import { rangeWindow, type InsightsRange, type FetchStatus } from './useUmamiStats';
 
 type SeriesUnit = 'day' | 'hour' | 'month';
 
@@ -117,8 +117,7 @@ export function useUmamiPageviewsSeries(range: InsightsRange) {
 
   useEffect(() => {
     const controller = new AbortController();
-    const endAt = range === 1 ? Math.ceil(Date.now() / 3600_000) * 3600_000 : Date.now();
-    const startAt = endAt - range * 24 * 60 * 60 * 1000;
+    const { startAt, endAt } = rangeWindow(range);
     const unit = rangeUnit(range);
     const timezone =
       typeof Intl !== 'undefined'

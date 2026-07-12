@@ -36,7 +36,7 @@ export default function CookieConsent() {
   }
 
   return (
-    <div className={styles.root} aria-hidden={false}>
+    <div className={styles.root}>
       <div className={styles.backdrop} aria-hidden="true" />
       <div
         className={styles.sheet}

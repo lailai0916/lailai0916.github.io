@@ -28,12 +28,9 @@ interface BlogPostMetadataSummary {
   readingTime?: number;
 }
 
-type JsonModule<T> = { default?: T } | T | undefined;
+type JsonModule<T> = { default?: T } | T;
 
-function resolveJsonModule<T>(mod: JsonModule<T>): T | null {
-  if (!mod) {
-    return null;
-  }
+function resolveJsonModule<T extends object>(mod: JsonModule<T>): T {
   if (typeof mod === 'object' && 'default' in mod && mod.default) {
     return mod.default as T;
   }
@@ -54,12 +51,12 @@ export function getAllBlogItems(): BlogListItem[] {
   ctx.keys().forEach((key: string) => {
     const mod = ctx(key);
     const resolved = resolveJsonModule<{ items?: BlogListItem[] }>(mod);
-    collected.push(...(resolved?.items ?? []));
+    collected.push(...(resolved.items ?? []));
   });
   // Pages overlap, so dedupe by permalink.
   const seen = new Set<string>();
   return collected.filter((it) => {
-    const link = it?.permalink ?? it?.metadata?.permalink ?? '';
+    const link = it.permalink ?? it.metadata?.permalink ?? '';
     if (!link || seen.has(link)) return false;
     seen.add(link);
     return true;

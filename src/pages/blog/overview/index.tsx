@@ -26,9 +26,9 @@ const CUMULATIVE_TITLE = translate({
 });
 
 // Continuous monthly timeline (gap months filled with 0); year ticks on January.
-function buildMonths(locale: string): ChartDatum[] {
+function buildMonths(items: ReturnType<typeof getAllBlogItems>, locale: string): ChartDatum[] {
   const map = new Map<string, number>();
-  getAllBlogItems().forEach((it) => {
+  items.forEach((it) => {
     const date = it.date ?? it.metadata?.date;
     if (!date) return;
     const month = formatBeijingDate(date).slice(0, 7); // YYYY-MM
@@ -77,10 +77,11 @@ export default function BlogStats(): ReactNode {
   const { currentLocale, defaultLocale } = i18n;
   const localeKey = currentLocale === defaultLocale ? undefined : currentLocale;
 
-  const monthData = buildMonths(currentLocale);
+  const items = getAllBlogItems();
+  const monthData = buildMonths(items, currentLocale);
   const cumulativeData = toCumulative(monthData);
   const tagCount = loadOfficialTags(localeKey).length;
-  const postCount = getAllBlogItems().length;
+  const postCount = items.length;
   // Reading time → word count, matching the blog sidebar's StatsCard (≈200 wpm).
   const readingMinutes = Math.round(
     getAllPostMetadata().reduce((sum, meta) => sum + (meta.readingTime ?? 0), 0)

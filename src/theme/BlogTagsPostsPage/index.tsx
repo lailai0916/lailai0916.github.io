@@ -48,7 +48,7 @@ export default function BlogTagsPostsPage(props: Props): ReactElement {
 
 function CustomBlogTagsPostsPage(props: Props): ReactElement {
   const { items, tag } = props;
-  const posts = useMemo(() => (items as any[]).map((it) => it.content), [items]);
+  const posts = useMemo(() => items.map((it) => it.content), [items]);
 
   return (
     <BlogScaffold title={tag.label} description={tag.description}>

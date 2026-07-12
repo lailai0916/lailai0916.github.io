@@ -32,13 +32,10 @@ export function getFeatureIso3(feature: GlobeCountryFeature): string {
 
 const FLAG_REGEX = /[\u{1F1E6}-\u{1F1FF}]{2}/gu;
 
-function flagEmojiToISO2(flag: string): string | null {
+function flagEmojiToISO2(flag: string): string {
   const chars = Array.from(flag);
-  if (chars.length < 2) return null;
-
   const a = chars[0].codePointAt(0)!;
   const b = chars[1].codePointAt(0)!;
-  if (a < 0x1f1e6 || a > 0x1f1ff || b < 0x1f1e6 || b > 0x1f1ff) return null;
 
   return String.fromCharCode(65 + (a - 0x1f1e6)) + String.fromCharCode(65 + (b - 0x1f1e6));
 }

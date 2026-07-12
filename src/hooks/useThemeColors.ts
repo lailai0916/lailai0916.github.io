@@ -4,52 +4,46 @@ import type { ColorState } from '@site/src/utils/colorUtils';
 import {
   COLOR_SHADES,
   getThemeDefaults,
-  getThemeStorage,
+  themeStorage,
   updateDOMColors,
 } from '@site/src/utils/colorUtils';
 
-export function useThemeColors(isDarkTheme: boolean) {
-  const storage = getThemeStorage();
+// Build color state from the shared storage slot, falling back to theme
+// defaults. Background is theme-specific (white in light, dark in dark) and
+// not user-configurable, so it's always derived from the active theme.
+function readStoredColorState(isDarkTheme: boolean): ColorState {
   const defaults = getThemeDefaults(isDarkTheme);
-
-  const [colorState, setColorState] = useState<ColorState>(() => {
-    if (typeof window === 'undefined') {
-      return {
-        baseColor: defaults.primary,
-        background: defaults.background,
-        shades: COLOR_SHADES,
-      };
-    }
-    const storedValues = JSON.parse(storage.get() ?? '{}') as Partial<ColorState>;
+  if (typeof window === 'undefined') {
     return {
-      baseColor: storedValues.baseColor ?? defaults.primary,
-      // Background is theme-specific (white in light, dark in dark) and not
-      // user-configurable, so always derive it from the active theme rather
-      // than the shared storage slot.
+      baseColor: defaults.primary,
       background: defaults.background,
-      shades: storedValues.shades ?? COLOR_SHADES,
+      shades: COLOR_SHADES,
     };
-  });
+  }
+  const stored = JSON.parse(themeStorage.get() ?? '{}') as Partial<ColorState>;
+  return {
+    baseColor: stored.baseColor ?? defaults.primary,
+    background: defaults.background,
+    shades: stored.shades ?? COLOR_SHADES,
+  };
+}
+
+export function useThemeColors(isDarkTheme: boolean) {
+  const [colorState, setColorState] = useState<ColorState>(() =>
+    readStoredColorState(isDarkTheme)
+  );
 
   const [inputColor, setInputColor] = useState(colorState.baseColor);
 
   useEffect(() => {
-    const newStorage = getThemeStorage();
-    const newDefaults = getThemeDefaults(isDarkTheme);
-    const storedValues = JSON.parse(newStorage.get() ?? '{}') as Partial<ColorState>;
-    const newState = {
-      baseColor: storedValues.baseColor ?? newDefaults.primary,
-      background: newDefaults.background,
-      shades: storedValues.shades ?? COLOR_SHADES,
-    };
+    const newState = readStoredColorState(isDarkTheme);
     setColorState(newState);
     setInputColor(newState.baseColor);
   }, [isDarkTheme]);
 
   useEffect(() => {
     updateDOMColors(colorState, isDarkTheme);
-    const storage = getThemeStorage();
-    storage.set(JSON.stringify(colorState));
+    themeStorage.set(JSON.stringify(colorState));
   }, [colorState, isDarkTheme]);
 
   const updateColor = useCallback((colorValue: string) => {

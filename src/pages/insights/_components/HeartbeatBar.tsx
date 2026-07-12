@@ -107,7 +107,7 @@ export default function HeartbeatBar({ beats, slots = 100 }: HeartbeatBarProps) 
     i18n: { currentLocale: locale },
   } = useDocusaurusContext();
 
-  const effectiveSlots = Math.min(slots, fitSlots);
+  const effectiveSlots = fitSlots;
 
   const padded: (KumaHeartbeat | null)[] = [];
   const start = Math.max(0, beats.length - effectiveSlots);

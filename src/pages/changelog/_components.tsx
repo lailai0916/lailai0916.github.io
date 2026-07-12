@@ -33,7 +33,7 @@ export function Changelog() {
           .sort((a, b) => b.localeCompare(a))
           .map((m) => ({
             month: m,
-            items: [...map[year][m]].sort((a, b) => b.date.localeCompare(a.date)),
+            items: map[year][m],
           })),
       }));
   }, []);

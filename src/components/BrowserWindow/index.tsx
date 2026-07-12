@@ -56,7 +56,7 @@ interface ImageWindowProps {
   url: string;
 }
 
-export function ImageWindow({ children, url = 'http://localhost:3000' }: ImageWindowProps) {
+export function ImageWindow({ children, url }: ImageWindowProps) {
   return (
     <div className={styles.imageWindow}>
       <BrowserWindow url={url} bodyStyle={{ padding: 0 }}>

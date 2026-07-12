@@ -340,7 +340,7 @@ type Props = {
   toc?: readonly TOCItem[];
 };
 
-function ScaffoldWithProgress({ title, description, children, toc }: Props) {
+export default function BlogScaffold({ title, description, children, toc }: Props) {
   const isPostPage = toc !== undefined;
   const progress = useScrollProgress();
   return (
@@ -362,8 +362,4 @@ function ScaffoldWithProgress({ title, description, children, toc }: Props) {
       </div>
     </Layout>
   );
-}
-
-export default function BlogScaffold(props: Props) {
-  return <ScaffoldWithProgress {...props} />;
 }

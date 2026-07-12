@@ -10,9 +10,7 @@ import ViewCount from '@site/src/components/Article/ViewCount';
 export default function DocItemFooter(): ReactNode {
   const { metadata } = useDoc();
   const { lastUpdatedAt, tags, permalink } = metadata;
-  const tagItems = tags
-    .filter((t) => !!t.label && !!t.permalink)
-    .map((t) => ({ to: t.permalink, label: t.label }));
+  const tagItems = tags.map((t) => ({ to: t.permalink, label: t.label }));
 
   return (
     <MetaFooter

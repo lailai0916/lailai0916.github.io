@@ -32,7 +32,7 @@ export function PostHeader({ metadata, frontMatter }: PostHeaderProps) {
   // Hide the author block when this post is by the site owner alone.
   // Frontmatter `authors:` is still preserved (for RSS / JSON-LD / future
   // guest posts). Multi-author or non-`lailai` posts will surface naturally.
-  const allAuthors = (metadata.authors ?? []).filter((a) => !!a.name);
+  const allAuthors = metadata.authors.filter((a) => !!a.name);
   const isSoloOwner = allAuthors.length === 1 && allAuthors[0].key === 'lailai';
   const authors = isSoloOwner ? [] : allAuthors;
 
@@ -69,9 +69,7 @@ interface PostFooterProps {
 }
 
 export function PostFooter({ metadata }: PostFooterProps) {
-  const tagItems = (metadata.tags ?? [])
-    .filter((t) => !!t.label && !!t.permalink)
-    .map((t) => ({ to: t.permalink, label: t.label }));
+  const tagItems = metadata.tags.map((t) => ({ to: t.permalink, label: t.label }));
 
   return <MetaFooter tags={tagItems} lastUpdatedAt={metadata.lastUpdatedAt} />;
 }

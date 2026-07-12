@@ -3,6 +3,14 @@ import { umamiFetchJson } from '@site/src/utils/umami';
 
 export type InsightsRange = 1 | 7 | 30 | 365;
 
+// The [startAt, endAt] query window for a range. The 1-day view aligns the end
+// to the current hour so the live hourly bucket doesn't jitter every render.
+export function rangeWindow(range: InsightsRange): { startAt: number; endAt: number } {
+  const endAt = range === 1 ? Math.ceil(Date.now() / 3600_000) * 3600_000 : Date.now();
+  const startAt = endAt - range * 24 * 60 * 60 * 1000;
+  return { startAt, endAt };
+}
+
 export interface UmamiStats {
   pageviews: number;
   visitors: number;
@@ -23,8 +31,7 @@ export function useUmamiStats(range: InsightsRange) {
 
   useEffect(() => {
     const controller = new AbortController();
-    const endAt = range === 1 ? Math.ceil(Date.now() / 3600_000) * 3600_000 : Date.now();
-    const startAt = endAt - range * 24 * 60 * 60 * 1000;
+    const { startAt, endAt } = rangeWindow(range);
 
     (async () => {
       setStatus('loading');
