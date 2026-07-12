@@ -9,10 +9,11 @@
   }
 }
 
-.skeletonList {
-  display: flex;
-  flex-direction: column;
-  gap: 0.15rem;
+/* Placeholder rows reuse the real .list / .rowItem / .row structure, so the
+   skeleton is exactly the same height as a loaded row at every font-size,
+   line-height, and breakpoint. This bar just fills the row width. */
+.skeletonBar {
+  flex: 1;
 }
 
 .empty {
@@ -78,7 +79,7 @@
   display: flex;
   align-items: center;
   flex: 1;
-  padding: 0.55rem 0.75rem;
+  padding: 0.42rem 0.75rem;
   font-size: 0.92rem;
   min-width: 0;
   color: inherit;

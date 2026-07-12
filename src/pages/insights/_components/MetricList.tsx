@@ -45,11 +45,17 @@ export default function MetricList({
       className={styles.card}
     >
       {loading ? (
-        <div className={styles.skeletonList}>
+        <ol className={styles.list}>
           {Array.from({ length: 8 }).map((_, i) => (
-            <Skeleton key={i} height={42} radius={8} />
+            <li key={i} className={styles.rowItem}>
+              <div className={styles.row}>
+                <Skeleton className={styles.skeletonBar} radius={8}>
+                  {' '}
+                </Skeleton>
+              </div>
+            </li>
           ))}
-        </div>
+        </ol>
       ) : items.length === 0 ? (
         <p className={styles.empty}>{emptyText}</p>
       ) : (
