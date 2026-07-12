@@ -31,8 +31,10 @@ interface DonutProps {
 const R = 42;
 const SW = 10;
 const SW_ACTIVE = 13;
-// Arc trimmed from each slice; the gap reveals the card background behind the
-// ring as a crisp hairline separator (not a grey groove).
+// Blank between slices, in pathLength units — one gap per boundary. The whole
+// gap budget is removed from the circumference up front (see `available`), so no
+// single arc is shortened out of proportion; the gap just reveals the card
+// background as a hairline separator.
 const GAP = 1.2;
 
 // Single-hue ramp for the real slices: the largest is the vivid brand primary,
@@ -106,6 +108,9 @@ export default function Donut({
   });
 
   const gap = segments.length > 1 ? GAP : 0;
+  // Circumference left for the arcs after reserving one gap per boundary; sharing
+  // it by fraction keeps every arc exactly proportional (D3 padAngle style).
+  const available = 100 - segments.length * gap;
   const activeSeg = active != null ? segments[active] : null;
   // Reserve legend height for the full slice count so short cards (e.g. Devices)
   // stay the same height as the others and nothing shifts on data load.
@@ -144,9 +149,8 @@ export default function Donut({
             <svg className={styles.svg} viewBox="0 0 100 100" role="img" aria-label={title}>
               <g transform="rotate(-90 50 50)">
                 {segments.map((seg, i) => {
-                  const raw = seg.frac * 100;
-                  const drawLen = Math.max(raw - gap, 0.5);
-                  const startOff = seg.start * 100 + gap / 2;
+                  const drawLen = seg.frac * available;
+                  const startOff = gap / 2 + seg.start * available + i * gap;
                   return (
                     <circle
                       key={seg.key}
