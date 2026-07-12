@@ -12,7 +12,7 @@ import { MDTitle } from '@site/src/components/laikit/Markdown';
   description="lailai's Home 收集哪些信息、如何使用与共享，以及您可行使的选择。"
 />
 
-最后更新：2026 年 7 月 9 日
+最后更新：2026 年 7 月 11 日
 
 ## 1. 适用范围
 
@@ -74,12 +74,16 @@ import { MDTitle } from '@site/src/components/laikit/Markdown';
 
 本站会使用浏览器存储来记住您的偏好设置，并支持部分界面功能。目前包括但不限于以下内容：
 
-| 存储项                                             | 用途                               | 保留方式       |
-| -------------------------------------------------- | ---------------------------------- | -------------- |
-| `theme`                                            | 记住浅色、深色或跟随系统的主题偏好 | 直到您手动清除 |
-| `global-font-size`                                 | 记住设置页面中的字体大小偏好       | 直到您手动清除 |
-| `settings-experimental`                            | 记住可选实验性功能的开关状态       | 直到您手动清除 |
-| `ifm-theme-colors-light` / `ifm-theme-colors-dark` | 保存当前会话中的临时配色设置       | 仅当前会话     |
+| 存储项                                             | 用途                                                 | 保留方式       |
+| -------------------------------------------------- | ---------------------------------------------------- | -------------- |
+| `theme`                                            | 记住浅色、深色或跟随系统的主题偏好                   | 直到您手动清除 |
+| `font-family`                                      | 记住设置页面中的界面字体偏好                         | 直到您手动清除 |
+| `global-font-size`                                 | 记住设置页面中的字体大小偏好                         | 直到您手动清除 |
+| `global-line-height`                               | 记住设置页面中的行高偏好                             | 直到您手动清除 |
+| `settings-experimental`                            | 记住可选实验性功能的开关状态                         | 直到您手动清除 |
+| `cookie-consent`                                   | 记住您对 Cookie 提示的回应，以便不再重复显示         | 直到您手动清除 |
+| `ifm-theme-colors-light` / `ifm-theme-colors-dark` | 保存当前会话中的临时配色设置                         | 仅当前会话     |
+| `umami_share_session_v1`                           | 临时保存用于在 Insights 页展示公开访问统计的只读令牌 | 仅当前会话     |
 
 此外，本站嵌入或加载的第三方服务还可能依据其自身政策使用 Cookies、本地存储或类似技术。
 
@@ -124,7 +128,6 @@ import { MDTitle } from '@site/src/components/laikit/Markdown';
 | `analytics.lailai.one`（基于 Umami 的自托管统计）   | 偏重隐私友好的网站统计和页面数据展示 | 页面 URL、引荐来源、浏览器 / 设备 / 语言 / 屏幕信息、技术请求数据 |
 | Algolia DocSearch                                   | 站内搜索                             | 搜索词、搜索交互以及技术元数据                                    |
 | GitHub Discussions / Giscus                         | 公开评论与互动                       | GitHub 账户信息、公开评论内容、时间戳及相关元数据                 |
-| jsDelivr                                            | 分发本站使用的 KaTeX 静态资源        | IP 地址、用户代理和资源请求                                       |
 | Google 网站图标服务（`www.google.com/s2/favicons`） | 在资源页中拉取外部网站图标           | 当资源页加载时触发的 IP 地址、用户代理和请求信息                  |
 
 关于关键第三方服务的补充说明：
@@ -139,7 +142,6 @@ import { MDTitle } from '@site/src/components/laikit/Markdown';
 - [Google Privacy Policy](https://policies.google.com/privacy)
 - [Algolia Privacy Policy](https://www.algolia.com/policies/privacy/)
 - [Umami documentation](https://umami.is/docs)
-- [jsDelivr Privacy Policy](https://www.jsdelivr.com/terms/privacy-policy)
 
 在以下情况下，我们也可能披露信息：
 
@@ -241,5 +243,9 @@ import { MDTitle } from '@site/src/components/laikit/Markdown';
 本站包含指向第三方网站、社交平台、代码仓库、工具和其他服务的链接。当您离开本站，或与第三方内容发生交互时，这些第三方可能会依据其自身条款和隐私政策收集并处理信息。
 
 这包括但不限于 GitHub、Google、Algolia、各类社交平台，以及本站内容或资源目录中列出的任何外部网站；也可能包括页脚或其他位置链接的独立服务，例如状态页、云盘、统计页或 AI 工具等，它们并不当然属于本隐私政策所覆盖的本站体验。
+
+## 14. 本政策的变更
+
+我们可能会不时更新本隐私政策，以反映本站、其所依赖的服务或适用法律的变化。当我们作出更改时，会更新本页顶部的「最后更新」日期；重大变更也可能会在本站的更新日志中说明。在更新生效后继续使用本站，即表示您接受修订后的政策。
 
 </div>

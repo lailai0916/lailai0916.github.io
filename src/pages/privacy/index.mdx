@@ -12,7 +12,7 @@ import { MDTitle } from '@site/src/components/laikit/Markdown';
   description="What lailai's Home collects, how it's used and shared, and the choices you have."
 />
 
-Last updated: July 9, 2026
+Last updated: July 11, 2026
 
 ## 1. Scope
 
@@ -74,12 +74,16 @@ We generally use this information in aggregate or service-operations form and do
 
 The Site uses browser storage to remember preferences and support certain interface features. Examples currently include:
 
-| Storage item                                       | Purpose                                                        | Duration           |
-| -------------------------------------------------- | -------------------------------------------------------------- | ------------------ |
-| `theme`                                            | Remembers light, dark, or system theme preference              | Until you clear it |
-| `global-font-size`                                 | Remembers font size preference on the settings page            | Until you clear it |
-| `settings-experimental`                            | Remembers optional experimental feature switches               | Until you clear it |
-| `ifm-theme-colors-light` / `ifm-theme-colors-dark` | Stores temporary custom color settings for the current session | Session only       |
+| Storage item                                       | Purpose                                                                              | Duration           |
+| -------------------------------------------------- | ------------------------------------------------------------------------------------ | ------------------ |
+| `theme`                                            | Remembers light, dark, or system theme preference                                    | Until you clear it |
+| `font-family`                                      | Remembers the interface font preference on the settings page                         | Until you clear it |
+| `global-font-size`                                 | Remembers font size preference on the settings page                                  | Until you clear it |
+| `global-line-height`                               | Remembers line height preference on the settings page                                | Until you clear it |
+| `settings-experimental`                            | Remembers optional experimental feature switches                                     | Until you clear it |
+| `cookie-consent`                                   | Remembers your response to the cookie notice so it is not shown again                | Until you clear it |
+| `ifm-theme-colors-light` / `ifm-theme-colors-dark` | Stores temporary custom color settings for the current session                       | Session only       |
+| `umami_share_session_v1`                           | Temporarily holds a read-only token used to show public traffic on the Insights page | Session only       |
 
 In addition, third-party services embedded in or loaded by the Site may use cookies, local storage, or similar technologies under their own policies.
 
@@ -124,7 +128,6 @@ Depending on the service and context, those providers may act as processors, ser
 | `analytics.lailai.one` (Umami-based self-hosted analytics) | Privacy-focused website analytics and page statistics | Page URL, referrer, browser/device/language/screen data, technical request data      |
 | Algolia DocSearch                                          | Site search                                           | Search queries, search interactions, technical metadata                              |
 | GitHub Discussions / Giscus                                | Public comments and reactions                         | GitHub account information, public comment content, timestamps, and related metadata |
-| jsDelivr                                                   | Delivery of KaTeX assets used by the Site             | IP address, user agent, and asset requests                                           |
 | Google favicon service (`www.google.com/s2/favicons`)      | Fetching website icons shown on the Resources page    | IP address, user agent, and requests triggered when the Resources page loads         |
 
 Additional detail about key third-party services:
@@ -139,7 +142,6 @@ Provider notices and official information:
 - [Google Privacy Policy](https://policies.google.com/privacy)
 - [Algolia Privacy Policy](https://www.algolia.com/policies/privacy/)
 - [Umami documentation](https://umami.is/docs)
-- [jsDelivr Privacy Policy](https://www.jsdelivr.com/terms/privacy-policy)
 
 We may also disclose information:
 
@@ -241,5 +243,9 @@ If you believe a child has provided personal data to us through the Site, contac
 The Site contains links to third-party websites, social platforms, repositories, tools, and other services. When you leave the Site or interact with third-party content, those third parties may collect and process information under their own terms and privacy policies.
 
 That includes, for example, GitHub, Google, Algolia, social platforms, and any external website listed in the Site's content or resource directories. It may also include separate services linked from the footer or elsewhere, such as status, cloud, analytics, or AI tools operated outside this specific Site experience.
+
+## 14. Changes to This Policy
+
+We may update this Privacy Policy from time to time to reflect changes in the Site, the services it relies on, or applicable law. When we make changes, we will update the "Last updated" date at the top of this page, and significant changes may also be noted in the Site's changelog. Your continued use of the Site after an update takes effect means you accept the revised policy.
 
 </div>

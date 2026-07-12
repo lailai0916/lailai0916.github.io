@@ -29,9 +29,7 @@ function readStoredColorState(isDarkTheme: boolean): ColorState {
 }
 
 export function useThemeColors(isDarkTheme: boolean) {
-  const [colorState, setColorState] = useState<ColorState>(() =>
-    readStoredColorState(isDarkTheme)
-  );
+  const [colorState, setColorState] = useState<ColorState>(() => readStoredColorState(isDarkTheme));
 
   const [inputColor, setInputColor] = useState(colorState.baseColor);
 
