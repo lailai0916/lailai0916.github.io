@@ -55,12 +55,12 @@ export const DEVICE_LIST: DeviceItem[] = [
     }),
     image: 'https://cloud.lailai.one/f/w0phg/devices-airpods-max.png',
   },
-  {
-    title: 'Powerbeats Pro 2',
-    spec: translate({
-      id: 'data.devices.powerbeatsPro',
-      message: 'Jet Black / H2',
-    }),
-    image: 'https://cloud.lailai.one/f/rXNHM/devices-powerbeats-pro.png',
-  },
+  //   {
+  //     title: 'Powerbeats Pro 2',
+  //     spec: translate({
+  //       id: 'data.devices.powerbeatsPro',
+  //       message: 'Jet Black / H2',
+  //     }),
+  //     image: 'https://cloud.lailai.one/f/rXNHM/devices-powerbeats-pro.png',
+  //   },
 ];
