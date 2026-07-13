@@ -7,6 +7,7 @@
     <img src="https://img.shields.io/github/languages/top/lailai0916/lailai0916.github.io?style=flat-square" />
     <img src="https://img.shields.io/github/repo-size/lailai0916/lailai0916.github.io?style=flat-square" />
     <img src="https://img.shields.io/badge/code_style-prettier-ff69b4?style=flat-square" />
+    <img src="https://img.shields.io/badge/linter-ESLint-4B32C3?style=flat-square" />
     <img src="https://img.shields.io/github/license/lailai0916/lailai0916.github.io?style=flat-square" />
   </p>
   <a href="https://lailai.one">
@@ -89,6 +90,7 @@ lailai0916.github.io/
 │   ├── json/                       # JSON files
 │   └── CNAME                       # Domain config
 ├── docusaurus.config.ts            # Docusaurus config
+├── eslint.config.mjs               # ESLint config
 ├── LICENSE                         # Code license
 ├── LICENSE-docs                    # Documentation license
 ├── package-lock.json               # Dependency lock file

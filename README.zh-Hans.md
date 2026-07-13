@@ -7,6 +7,7 @@
     <img src="https://img.shields.io/github/languages/top/lailai0916/lailai0916.github.io?style=flat-square" />
     <img src="https://img.shields.io/github/repo-size/lailai0916/lailai0916.github.io?style=flat-square" />
     <img src="https://img.shields.io/badge/code_style-prettier-ff69b4?style=flat-square" />
+    <img src="https://img.shields.io/badge/linter-ESLint-4B32C3?style=flat-square" />
     <img src="https://img.shields.io/github/license/lailai0916/lailai0916.github.io?style=flat-square" />
   </p>
   <a href="https://lailai.one/zh-Hans/">
@@ -89,6 +90,7 @@ lailai0916.github.io/
 │   ├── json/                       # JSON 文件
 │   └── CNAME                       # 域名配置
 ├── docusaurus.config.ts            # Docusaurus 配置
+├── eslint.config.mjs               # ESLint 配置
 ├── LICENSE                         # 代码许可协议
 ├── LICENSE-docs                    # 文档许可协议
 ├── package-lock.json               # 依赖锁定文件
