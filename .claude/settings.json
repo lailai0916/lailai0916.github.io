@@ -1,0 +1,15 @@
+{
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Edit|Write|MultiEdit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "CK=\"$CLAUDE_PROJECT_DIR/.claude/skills/lailai-skill/tools/checker/check.py\"; if [ -f \"$CK\" ]; then python3 \"$CK\" --hook; fi"
+          }
+        ]
+      }
+    ]
+  }
+}

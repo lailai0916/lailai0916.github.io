@@ -82,6 +82,7 @@ Site-specific rules (general taste — 精益求精, edit-don't-rewrite, comment
 - **No whole-card hover lift.** Never add hover `translateY` / `translateX` to a whole card or other large container — that "float up on hover" effect is an AI-tell the maintainer dislikes. Small motion on internal elements (arrow nudge, a modest icon `scale()`) is fine when it signals an interaction.
 - **i18n is mandatory** — a new user-facing string needs both a `translate()` call and a `zh-Hans` entry in `i18n/zh-Hans/code.json`.
 - **Verify before committing** — `npm run check` must exit clean; for UI changes, also confirm in the `npm start` dev server.
+- **Style checker hook** — `.claude/settings.json` wires a `PostToolUse` hook that runs the skill's mechanical checker (`.claude/skills/lailai-skill/tools/checker/check.py --hook`) on every edited `.md`/`.mdx`/`.cpp`/`.ts`/… file. It is **diff-aware** (only lines changed since `HEAD` are checked, so legacy `\dfrac`/「显然」in old notes don't block unrelated edits) and blocks (exit 2) on ERROR-tier violations — wrong math delimiters, AI-tone blacklist, OI-C++ tells, etc. WARN-tier is advisory. Rules ↔ checker co-evolve; edit the checker in the same change that changes a machine-checkable rule. Full audit: `python3 .claude/skills/lailai-skill/tools/checker/check.py <files>`.
 - **Small changes go straight to `main`.** Reserve branches and PRs for substantial multi-file work the maintainer explicitly asks to have reviewed.
 
 Prettier: `printWidth: 100`, `singleQuote: true`, `trailingComma: 'es5'`. TypeScript is `strict`.
