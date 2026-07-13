@@ -285,7 +285,11 @@ const config: Config = {
       : []),
   ],
 
-  clientModules: [require.resolve('./src/clientModules/katexCopyTex.ts')],
+  clientModules: [
+    require.resolve('./src/clientModules/katexCopyTex.ts'),
+    require.resolve('./src/clientModules/consoleSignature.ts'),
+    require.resolve('./src/clientModules/konami.ts'),
+  ],
 
   themes: ['@docusaurus/theme-mermaid', '@docusaurus/theme-live-codeblock'],
 

@@ -51,25 +51,36 @@ function useTypewriter(words: string[]) {
   return { text, currentWord };
 }
 
+// Pick a sun/moon glyph for Hangzhou's current hour, so the clock row quietly
+// tells you whether it's day or night where lailai is.
+function timeOfDayIcon(hour: number): string {
+  if (hour >= 5 && hour < 8) return 'lucide:sunrise';
+  if (hour >= 8 && hour < 18) return 'lucide:sun';
+  if (hour >= 18 && hour < 20) return 'lucide:sunset';
+  return 'lucide:moon';
+}
+
 // Resolve the clock on the client only; rendering `new Date()` during SSR
 // produces a build-time string that never matches the visitor's local time.
 function useLocalTime() {
-  const [time, setTime] = useState('--:--');
+  const [state, setState] = useState({ time: '--:--', icon: 'lucide:clock' });
   useEffect(() => {
-    const update = () =>
-      setTime(
-        new Intl.DateTimeFormat('en-GB', {
-          timeZone: 'Asia/Shanghai',
-          hour: '2-digit',
-          minute: '2-digit',
-          hour12: false,
-        }).format(new Date())
-      );
+    const update = () => {
+      const parts = new Intl.DateTimeFormat('en-GB', {
+        timeZone: 'Asia/Shanghai',
+        hour: '2-digit',
+        minute: '2-digit',
+        hour12: false,
+      }).formatToParts(new Date());
+      const hour = parts.find((p) => p.type === 'hour')?.value ?? '00';
+      const minute = parts.find((p) => p.type === 'minute')?.value ?? '00';
+      setState({ time: `${hour}:${minute}`, icon: timeOfDayIcon(Number(hour)) });
+    };
     update();
     const timer = setInterval(update, 60000);
     return () => clearInterval(timer);
   }, []);
-  return time;
+  return state;
 }
 
 export default function Home(): ReactNode {
@@ -173,7 +184,7 @@ export default function Home(): ReactNode {
     },
     { article: roleArticle }
   );
-  const localTime = useLocalTime();
+  const { time: localTime, icon: timeIcon } = useLocalTime();
   const infoItems = [
     {
       key: 'location',
@@ -187,7 +198,7 @@ export default function Home(): ReactNode {
     {
       key: 'time',
       value: `${localTime} (UTC+08:00)`,
-      icon: 'lucide:clock',
+      icon: timeIcon,
       href: 'https://time.is/UTC+8',
     },
     {
