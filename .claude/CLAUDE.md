@@ -41,7 +41,7 @@ Path-scoped detail — each file auto-loads when you edit a matching path. Don't
 | [`rules/i18n.md`](rules/i18n.md)                   | `src/**`, `i18n/**`                  | `translate()` workflow, five-prefix taxonomy, key shapes, orphan cleanup                               |
 | [`rules/comments.md`](rules/comments.md)           | `src/**`, `*.ts`                     | code-comment style (site-specific slice)                                                               |
 | [`rules/writing-style.md`](rules/writing-style.md) | `blog/**`, `docs/**`, translated MDX | frontmatter, headings, tone, MDX widgets, math, images, links, solution template                       |
-| [`rules/solution-sync.md`](rules/solution-sync.md) | `blog/solution/**`                   | 题解 → 洛谷 sync flow and red lines                                                                    |
+| [`rules/solution-sync.md`](rules/solution-sync.md) | `blog/solution/**`                   | 题解 → 洛谷: thin pointer to skill's `luogu-solution.md` (full flow + red lines) + project mirror/summary rules |
 
 ## Architecture
 

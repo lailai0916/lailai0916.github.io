@@ -1,0 +1,166 @@
+---
+title: 题解：AT_arc222_f [ARC222F] Triple Transformation
+description: 本文为洛谷 AT_arc222_f 的题解，把操作在模 S 下化为乘 ±2，用 BSGS 求最小操作次数。
+summary: 和 S 保持不变，一次操作等价于把三元组模 S 乘 2 或乘 -2，结果再由和为 S 唯一确定，于是映射是确定的，从 A 出发只有一条轨迹，答案就是首次得到 B 的操作次数。S 为偶时一步后三坐标全偶，可整组折半把 S 化为奇数；S 为奇时 2 可逆，第三个同余由和自动成立，只需对两个坐标求最小 K 使 2 的 K 次方乘 A 同余 ±B，用大步小步算法完成，两坐标打包成单键。顶点态是不动点，单独处理。时间复杂度为 O(T 根号 S)。
+date: 2026-07-12T23:51:10+08:00
+authors: lailai
+tags: [oi, solution, atcoder]
+lid: 7gjvywjz
+---
+
+{/* truncate */}
+
+## 参考资料
+
+- [离散对数 - OI Wiki](https://oi-wiki.org/math/number-theory/discrete-logarithm/)
+
+## 题意简述
+
+对非负整数三元组 $(x,y,z)$ 定义一次操作：
+
+$$
+(x,y,z)\to\begin{cases}(x-y-z,2y,2z)&y+z<x\\(2x,y-x-z,2z)&x+z<y\\(2x,2y,z-x-y)&x+y<z\\(y+z-x,x+z-y,x+y-z)&\text{其余}\end{cases}
+$$
+
+给定 $A=(A_1,A_2,A_3)$ 与 $B=(B_1,B_2,B_3)$，求把 $A$ 变成 $B$ 的最少操作次数，无法做到输出 $-1$。共 $T$ 组，$1\le T\le 300$，$0\le A_i,B_i\le 10^8$。
+
+## 解题思路
+
+记 $s=x+y+z$。注意 $y+z<x\iff 2x>s$，上式可改写为：
+
+$$
+(x,y,z)\to\begin{cases}(2x-s,2y,2z)&2x>s\\(2x,2y-s,2z)&2y>s\\(2x,2y,2z-s)&2z>s\\(s-2x,s-2y,s-2z)&\text{其余}\end{cases}
+$$
+
+四种情形结果之和都是 $s$，故 $s$ 是不变量；$A,B$ 之和不等即输出 $-1$。$s=0$ 时只有 $(0,0,0)$，答案为 $0$。
+
+在模 $s$ 下观察：前三种情形恰是逐坐标乘 $2$。以 $2x>s$ 为例，$2x-s\equiv 2x$，且此时 $y,z<\frac s2$，$2y,2z$ 已落在 $[0,s)$ 内；故 $(x,y,z)\to(2x,2y,2z)\pmod s$。第四种情形是逐坐标乘 $-2$：$s-2x\equiv -2x$。合起来，**一次操作把三元组模 $s$ 乘以 $2$ 或 $-2$**。
+
+反过来，结果由「和恰为 $s$」唯一确定。设三坐标模 $s$ 的余数为 $r_1,r_2,r_3$，其和 $\equiv 0\pmod s$，即属于 $\set{0,s,2s}$：和为 $s$ 时取 $(r_1,r_2,r_3)$（对应乘 $+2$），和为 $2s$ 时取 $(s-r_1,s-r_2,s-r_3)$（对应乘 $-2$），和为 $0$ 时是某个顶点。于是施加 $K$ 次操作的结果 $F^K(A)$，就是与 $2^KA$ 或 $-2^KA$ 同余、且和为 $s$ 的唯一非负三元组——操作是确定的，从 $A$ 出发只有一条轨迹。答案即最小的 $K$ 使 $F^K(A)=B$，否则 $-1$。
+
+据此：
+
+$$
+F^K(A)=B\iff 2^KA_i\equiv B_i\ (\forall i)\quad\text{或}\quad 2^KA_i\equiv -B_i\ (\forall i)\pmod s
+$$
+
+两组同余式内三坐标取同一符号。
+
+## 预处理
+
+若 $s$ 为偶：任意一次操作后三坐标全偶（$2x-s$ 与 $s-2x$ 都是偶数）。又当三坐标全偶时「整组折半」与操作可交换，$F(x,y,z)=2\,F(\frac x2,\frac y2,\frac z2)$，于是 $F^K(A)=2\,F^{K-1}(\frac12F(A))$（在模 $\frac s2$ 意义下）。所以走 $K\ge 1$ 步要求 $B$ 全偶，且问题降为把 $\frac12F(A)$ 变到 $\frac12B$。反复折半直到 $s$ 为奇，并累加偏移量。若某步 $s$ 仍偶而 $B$ 不全偶，则无法再前进，就此停止。
+
+## 求解
+
+$s$ 为奇时 $2$ 模 $s$ 可逆。三条同余式中，第三条由前两条与「和 $\equiv 0$」自动成立（$2^K(A_1+A_2+A_3)\equiv 0$），只需：
+
+$$
+2^KA_1\equiv C_1,\quad 2^KA_2\equiv C_2\pmod s
+$$
+
+用 **大步小步算法**（Baby-Step Giant-Step，BSGS）求最小 $K$。设 $m=\lceil\sqrt s\rceil$，把 $K$ 写作 $K=im-j$（$0\le j<m$）：小步枚举 $j$，把 $(C_1\cdot 2^j,\ C_2\cdot 2^j)$ 连同 $j$ 存入哈希表；大步枚举 $i$，查 $(2^{im}A_1,\ 2^{im}A_2)$。两坐标各在 $[0,s)$ 内，打包成单个键 $r_1 s+r_2$ 即可（不超过 $s^2\le 9\times 10^{16}$，`long long` 可容）。$i$ 自小到大、相同键保留较大的 $j$，首个命中即最小 $K$。
+
+取 $C=B$ 总是有效；取 $C=-B$ 仅当 $B$ 三坐标全正——否则该符号对应的态和为 $s$ 而非 $2s$，并不等于 $B$（含 $0$ 坐标的 $B$ 只能由乘 $+2$ 到达）。两者取较小。
+
+顶点（两坐标为 $0$、第三坐标为 $s$）是不动点：非顶点到不了顶点，顶点也只停在自身，单独判掉。
+
+每组数据折半 $O(\log s)$、BSGS $O(\sqrt s)$。时间复杂度为 $O(T\sqrt s)$。
+
+## 参考代码
+
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+
+using ll=long long;
+using tri=array<ll,3>;
+const ll inf=1e18;
+tri F(tri a)
+{
+	ll s=a[0]+a[1]+a[2];
+	if(2*a[0]>s)return {2*a[0]-s,2*a[1],2*a[2]};
+	if(2*a[1]>s)return {2*a[0],2*a[1]-s,2*a[2]};
+	if(2*a[2]>s)return {2*a[0],2*a[1],2*a[2]-s};
+	return {s-2*a[0],s-2*a[1],s-2*a[2]};
+}
+ll Pow(ll x,ll y,ll mod)
+{
+	ll res=1;
+	x%=mod;
+	while(y)
+	{
+		if(y&1)res=(__int128)res*x%mod;
+		x=(__int128)x*x%mod;
+		y>>=1;
+	}
+	return res;
+}
+ll bsgs(ll a,ll b,ll c,ll d,ll s)
+{
+	a%=s;b%=s;c%=s;d%=s;
+	if(a==c&&b==d)return 0;
+	ll m=sqrt(s)+1;
+	unordered_map<ll,ll> mp;
+	for(ll j=0;j<m;j++)
+	{
+		mp[c*s+d]=j;
+		c=c*2%s;d=d*2%s;
+	}
+	ll t=Pow(2,m,s);
+	for(ll i=1;i<=m;i++)
+	{
+		a=(__int128)a*t%s;b=(__int128)b*t%s;
+		if(mp.count(a*s+b))return i*m-mp[a*s+b];
+	}
+	return inf;
+}
+bool vtx(tri a)
+{
+	return (a[0]==0)+(a[1]==0)+(a[2]==0)>=2;
+}
+ll core(tri a,tri b,ll s)
+{
+	if(a==b)return 0;
+	if(vtx(a)||vtx(b))return inf;
+	ll res=bsgs(a[0],a[1],b[0],b[1],s);
+	if(b[0]&&b[1]&&b[2])res=min(res,bsgs(a[0],a[1],(s-b[0])%s,(s-b[1])%s,s));
+	return res;
+}
+ll solve(tri a,tri b)
+{
+	if(a[0]+a[1]+a[2]!=b[0]+b[1]+b[2])return -1;
+	ll s=a[0]+a[1]+a[2];
+	if(!s)return 0;
+	ll ans=inf,cnt=0;
+	while(1)
+	{
+		if(a==b)ans=min(ans,cnt);
+		if(s&1)
+		{
+			ll c=core(a,b,s);
+			if(c<inf)ans=min(ans,cnt+c);
+			break;
+		}
+		if((b[0]|b[1]|b[2])&1)break;
+		a=F(a);
+		a={a[0]/2,a[1]/2,a[2]/2};
+		b={b[0]/2,b[1]/2,b[2]/2};
+		s/=2;cnt++;
+	}
+	return ans<inf?ans:-1;
+}
+int main()
+{
+	ios::sync_with_stdio(false);
+	cin.tie(nullptr);
+	int T;
+	cin>>T;
+	while(T--)
+	{
+		tri a,b;
+		cin>>a[0]>>a[1]>>a[2]>>b[0]>>b[1]>>b[2];
+		cout<<solve(a,b)<<'\n';
+	}
+	return 0;
+}
+```
