@@ -133,26 +133,19 @@ function ProblemPanel({ tabs }: { tabs: Tab[] }) {
 }
 
 export default function Problem({ id }: { id: string }) {
-  let mdxModule: ProblemMdxModule;
-  try {
-    mdxModule = require(`@site/docs/contest/problems/${id}/index.mdx`) as ProblemMdxModule;
-  } catch {
-    return (
-      <Admonition type="warning">
-        {translate(
-          {
-            id: 'components.problem.error',
-            message: 'Unable to load problem "{id}".',
-          },
-          { id }
-        )}
-      </Admonition>
-    );
-  }
-  const { default: MDX, frontMatter } = mdxModule;
-  const { title = id, link } = frontMatter ?? {};
+  // Resolve the MDX and build the tab list inside the memo so the hook stays
+  // unconditional — the require can throw, and an early return before a hook
+  // would break the rules of hooks.
+  const tabs = useMemo<Tab[] | null>(() => {
+    let mdxModule: ProblemMdxModule;
+    try {
+      mdxModule = require(`@site/docs/contest/problems/${id}/index.mdx`) as ProblemMdxModule;
+    } catch {
+      return null;
+    }
+    const { default: MDX, frontMatter } = mdxModule;
+    const { title = id, link } = frontMatter ?? {};
 
-  const tabs = useMemo<Tab[]>(() => {
     const list: Tab[] = [
       {
         kind: 'statement',
@@ -203,7 +196,21 @@ export default function Problem({ id }: { id: string }) {
     }
 
     return list;
-  }, [id, link, title, MDX]);
+  }, [id]);
+
+  if (tabs === null) {
+    return (
+      <Admonition type="warning">
+        {translate(
+          {
+            id: 'components.problem.error',
+            message: 'Unable to load problem "{id}".',
+          },
+          { id }
+        )}
+      </Admonition>
+    );
+  }
 
   return <ProblemPanel tabs={tabs} />;
 }

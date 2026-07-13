@@ -40,7 +40,7 @@ export function useSysStatus() {
         if (!aliveRef.current) return;
         setData(json);
         setStatus('success');
-      } catch (err) {
+      } catch {
         if (controller.signal.aborted) return;
         if (!aliveRef.current) return;
         setStatus('error');

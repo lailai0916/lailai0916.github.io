@@ -13,6 +13,9 @@ function Tooltip({ leftPct, className, style, children, ...rest }: TooltipProps)
   // centre to the viewport (it may overflow the narrow plot, just not the screen).
   const [leftPx, setLeftPx] = useState<number | null>(null);
 
+  // Re-clamp on every render: position depends on live layout (parent box, viewport
+  // width) that isn't expressible as a dependency list.
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   useLayoutEffect(() => {
     const el = ref.current;
     const parent = el?.offsetParent as HTMLElement | null;

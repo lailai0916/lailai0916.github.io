@@ -25,22 +25,25 @@ npm run clear             # Clear Docusaurus cache (.docusaurus)
 
 npm run i18n              # Regenerate translation JSON for zh-Hans
 npm run format            # Prettier write across the repo
+npm run lint              # ESLint over src/ (flat config, eslint.config.mjs)
 npm run typecheck         # tsc, no emit
-npm run check             # i18n + format + typecheck — run before every commit
+npm run check             # i18n + format + lint + typecheck — run before every commit
 ```
 
 There is no test runner. `npm run check` is the gate.
+
+**Lint layer is deliberately lean** (`eslint.config.mjs`, flat config, `src/` only): Prettier owns formatting and tsc owns types, so ESLint carries no stylistic rules — just what the other two can't see. That's `typescript-eslint` recommended (minus `no-explicit-any` and `no-require-imports`, both of which fight legitimate Docusaurus/webpack patterns here) plus the two **classic** React Hooks rules (`rules-of-hooks` error, `exhaustive-deps` warn). Do **not** switch react-hooks to its v7 `recommended-latest` — the React-Compiler rules it adds (`set-state-in-effect`, `refs`, `immutability`) flag valid patterns and drown the signal. Unused-var escape hatch: `_`-prefix.
 
 ## Rules index
 
 Path-scoped detail — each file auto-loads when you edit a matching path. Don't restate their content here; extend the file itself.
 
-| Rule                                               | Scope                                | Covers                                                                                                 |
-| -------------------------------------------------- | ------------------------------------ | ------------------------------------------------------------------------------------------------------ |
-| [`rules/components.md`](rules/components.md)       | `src/**` ts·tsx·css                  | `laikit` inventory, CSS-Module layout & rule ordering, hover-motion limits, text-overflow, MDX widgets |
-| [`rules/i18n.md`](rules/i18n.md)                   | `src/**`, `i18n/**`                  | `translate()` workflow, five-prefix taxonomy, key shapes, orphan cleanup                               |
-| [`rules/comments.md`](rules/comments.md)           | `src/**`, `*.ts`                     | code-comment style (site-specific slice)                                                               |
-| [`rules/writing-style.md`](rules/writing-style.md) | `blog/**`, `docs/**`, translated MDX | frontmatter, headings, tone, MDX widgets, math, images, links, solution template                       |
+| Rule                                               | Scope                                | Covers                                                                                                          |
+| -------------------------------------------------- | ------------------------------------ | --------------------------------------------------------------------------------------------------------------- |
+| [`rules/components.md`](rules/components.md)       | `src/**` ts·tsx·css                  | `laikit` inventory, CSS-Module layout & rule ordering, hover-motion limits, text-overflow, MDX widgets          |
+| [`rules/i18n.md`](rules/i18n.md)                   | `src/**`, `i18n/**`                  | `translate()` workflow, five-prefix taxonomy, key shapes, orphan cleanup                                        |
+| [`rules/comments.md`](rules/comments.md)           | `src/**`, `*.ts`                     | code-comment style (site-specific slice)                                                                        |
+| [`rules/writing-style.md`](rules/writing-style.md) | `blog/**`, `docs/**`, translated MDX | frontmatter, headings, tone, MDX widgets, math, images, links, solution template                                |
 | [`rules/solution-sync.md`](rules/solution-sync.md) | `blog/solution/**`                   | 题解 → 洛谷: thin pointer to skill's `luogu-solution.md` (full flow + red lines) + project mirror/summary rules |
 
 ## Architecture

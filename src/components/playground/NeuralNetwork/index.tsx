@@ -94,6 +94,8 @@ export default function NeuralNetwork({
     if (dataLoaded && threeImage && points.length === 0) {
       setPoints(threeImage);
     }
+    // Seed once when data lands; the points.length guard makes re-runs a no-op.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [dataLoaded]);
 
   useEffect(() => {

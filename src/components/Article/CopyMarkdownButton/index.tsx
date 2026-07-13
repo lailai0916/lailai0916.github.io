@@ -79,7 +79,6 @@ export default function CopyMarkdownButton({ source }: { source: string }) {
         setTimeout(() => setState('idle'), 2000);
       },
       (e: unknown) => {
-        // eslint-disable-next-line no-console
         console.error('Copy markdown failed:', e);
         setState('error');
         setTimeout(() => setState('idle'), 2000);

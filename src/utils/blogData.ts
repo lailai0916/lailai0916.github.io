@@ -102,7 +102,7 @@ export function loadOfficialTags(locale?: string): TagAggregate[] {
   if (cached) return cached;
 
   const filePrefix = getLocaleFilePrefix(locale);
-  const basePattern = new RegExp(`^\\.\/${filePrefix}blog-tags-[a-z0-9]+\\.json$`, 'i');
+  const basePattern = new RegExp(`^\\./${filePrefix}blog-tags-[a-z0-9]+\\.json$`, 'i');
 
   const ctx = (require as any).context(
     '@generated/docusaurus-plugin-content-blog/default/p',
@@ -144,7 +144,7 @@ export function loadOfficialAuthors(locale?: string): AuthorAggregate[] {
   if (cached) return cached;
 
   const filePrefix = getLocaleFilePrefix(locale);
-  const basePattern = new RegExp(`^\\.\/${filePrefix}blog-authors-[a-z0-9]+\\.json$`, 'i');
+  const basePattern = new RegExp(`^\\./${filePrefix}blog-authors-[a-z0-9]+\\.json$`, 'i');
 
   const ctx = (require as any).context(
     '@generated/docusaurus-plugin-content-blog/default/p',

@@ -19,7 +19,13 @@ lid: 7gjvywjz
 对非负整数三元组 $(x,y,z)$ 定义一次操作：
 
 $$
-(x,y,z)\to\begin{cases}(x-y-z,2y,2z)&y+z<x\\(2x,y-x-z,2z)&x+z<y\\(2x,2y,z-x-y)&x+y<z\\(y+z-x,x+z-y,x+y-z)&\text{其余}\end{cases}
+(x,y,z)\to
+\begin{cases}
+  (x-y-z,2y,2z) & y+z<x \\
+  (2x,y-x-z,2z) & x+z<y \\
+  (2x,2y,z-x-y) & x+y<z \\
+  (y+z-x,x+z-y,x+y-z) & \text{其余}
+\end{cases}
 $$
 
 给定 $A=(A_1,A_2,A_3)$ 与 $B=(B_1,B_2,B_3)$，求把 $A$ 变成 $B$ 的最少操作次数，无法做到输出 $-1$。共 $T$ 组，$1\le T\le 300$，$0\le A_i,B_i\le 10^8$。
@@ -29,7 +35,13 @@ $$
 记 $s=x+y+z$。注意 $y+z<x\iff 2x>s$，上式可改写为：
 
 $$
-(x,y,z)\to\begin{cases}(2x-s,2y,2z)&2x>s\\(2x,2y-s,2z)&2y>s\\(2x,2y,2z-s)&2z>s\\(s-2x,s-2y,s-2z)&\text{其余}\end{cases}
+(x,y,z)\to
+\begin{cases}
+  (2x-s,2y,2z) & 2x>s \\
+  (2x,2y-s,2z) & 2y>s \\
+  (2x,2y,2z-s) & 2z>s \\
+  (s-2x,s-2y,s-2z) & \text{其余}
+\end{cases}
 $$
 
 四种情形结果之和都是 $s$，故 $s$ 是不变量；$A,B$ 之和不等即输出 $-1$。$s=0$ 时只有 $(0,0,0)$，答案为 $0$。
@@ -41,24 +53,24 @@ $$
 据此：
 
 $$
-F^K(A)=B\iff 2^KA_i\equiv B_i\ (\forall i)\quad\text{或}\quad 2^KA_i\equiv -B_i\ (\forall i)\pmod s
+F^K(A)=B\iff 2^KA_i\equiv B_i\text{ 或 }2^KA_i\equiv -B_i\pmod s
 $$
 
-两组同余式内三坐标取同一符号。
+两式都对所有 $i$ 成立，且组内三坐标取同一符号。
 
 ## 预处理
 
-若 $s$ 为偶：任意一次操作后三坐标全偶（$2x-s$ 与 $s-2x$ 都是偶数）。又当三坐标全偶时「整组折半」与操作可交换，$F(x,y,z)=2\,F(\frac x2,\frac y2,\frac z2)$，于是 $F^K(A)=2\,F^{K-1}(\frac12F(A))$（在模 $\frac s2$ 意义下）。所以走 $K\ge 1$ 步要求 $B$ 全偶，且问题降为把 $\frac12F(A)$ 变到 $\frac12B$。反复折半直到 $s$ 为奇，并累加偏移量。若某步 $s$ 仍偶而 $B$ 不全偶，则无法再前进，就此停止。
+若 $s$ 为偶：任意一次操作后三坐标全偶（$2x-s$ 与 $s-2x$ 都是偶数）。又当三坐标全偶时「整组折半」与操作可交换，$F(x,y,z)=2F(\frac x2,\frac y2,\frac z2)$，于是 $F^K(A)=2F^{K-1}(\frac12F(A))$（在模 $\frac s2$ 意义下）。所以走 $K\ge 1$ 步要求 $B$ 全偶，且问题降为把 $\frac12F(A)$ 变到 $\frac12B$。反复折半直到 $s$ 为奇，并累加偏移量。若某步 $s$ 仍偶而 $B$ 不全偶，则无法再前进，就此停止。
 
 ## 求解
 
 $s$ 为奇时 $2$ 模 $s$ 可逆。三条同余式中，第三条由前两条与「和 $\equiv 0$」自动成立（$2^K(A_1+A_2+A_3)\equiv 0$），只需：
 
 $$
-2^KA_1\equiv C_1,\quad 2^KA_2\equiv C_2\pmod s
+2^KA_1\equiv C_1,2^KA_2\equiv C_2\pmod s
 $$
 
-用 **大步小步算法**（Baby-Step Giant-Step，BSGS）求最小 $K$。设 $m=\lceil\sqrt s\rceil$，把 $K$ 写作 $K=im-j$（$0\le j<m$）：小步枚举 $j$，把 $(C_1\cdot 2^j,\ C_2\cdot 2^j)$ 连同 $j$ 存入哈希表；大步枚举 $i$，查 $(2^{im}A_1,\ 2^{im}A_2)$。两坐标各在 $[0,s)$ 内，打包成单个键 $r_1 s+r_2$ 即可（不超过 $s^2\le 9\times 10^{16}$，`long long` 可容）。$i$ 自小到大、相同键保留较大的 $j$，首个命中即最小 $K$。
+用 **大步小步算法**（Baby-Step Giant-Step，BSGS）求最小 $K$。设 $m=\lceil\sqrt s\rceil$，把 $K$ 写作 $K=im-j$（$0\le j<m$）：小步枚举 $j$，把 $(C_1\cdot2^j,C_2\cdot2^j)$ 连同 $j$ 存入哈希表；大步枚举 $i$，查 $(2^{im}A_1,2^{im}A_2)$。两坐标各在 $[0,s)$ 内，打包成单个键 $r_1s+r_2$ 即可（不超过 $s^2\le 9\times10^{16}$，`long long` 可容）。$i$ 自小到大、相同键保留较大的 $j$，首个命中即最小 $K$。
 
 取 $C=B$ 总是有效；取 $C=-B$ 仅当 $B$ 三坐标全正——否则该符号对应的态和为 $s$ 而非 $2s$，并不等于 $B$（含 $0$ 坐标的 $B$ 只能由乘 $+2$ 到达）。两者取较小。
 
@@ -74,7 +86,7 @@ using namespace std;
 
 using ll=long long;
 using tri=array<ll,3>;
-const ll inf=1e18;
+const ll inf=0x3f3f3f3f3f3f3f3f;
 tri F(tri a)
 {
 	ll s=a[0]+a[1]+a[2];

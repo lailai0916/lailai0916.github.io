@@ -141,6 +141,8 @@ function TravelGlobeClient({ Globe }: { Globe: GlobeComponent }) {
       unvisited: readCssVar('--ifm-color-emphasis-300'),
       stroke: readCssVar('--ifm-color-emphasis-400'),
     }),
+    // colorMode isn't read directly, but it's what makes the CSS vars re-read on theme flip.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     [colorMode]
   );
 

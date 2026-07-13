@@ -122,14 +122,14 @@
   "components.problem.expand": {
     "message": "展开"
   },
-  "components.problem.error": {
-    "message": "无法加载题目「{id}」。"
-  },
   "components.problem.statement": {
     "message": "题面"
   },
   "components.problem.solution": {
     "message": "题解"
+  },
+  "components.problem.error": {
+    "message": "无法加载题目「{id}」。"
   },
   "pages.about.skills.ariaLabel": {
     "message": "技术栈图标"
