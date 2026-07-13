@@ -131,7 +131,7 @@ $$
 例（方向导数与最大变化率）：$f=x^2+xy+y^2$ 在点 $(1,1)$ 处沿 $\vec a=(3,4)$ 的方向导数。先求梯度 $\nabla f=(2x+y,x+2y)$，在 $(1,1)$ 处为 $(3,3)$。$\vec a$ 的单位向量是 $\vec l=\left(\dfrac35,\dfrac45\right)$，故：
 
 $$
-\frac{\partial f}{\partial\vec l}=\nabla f\cdot\vec l=3\cdot\frac35+3\cdot\frac45=\frac{21}{5}
+\frac{\partial f}{\partial\vec l}=\nabla f\cdot\vec l=3\cdot\frac{3}{5}+3\cdot\frac{4}{5}=\frac{21}{5}
 $$
 
 而该点变化率的最大值就是 $|\nabla f|=\sqrt{3^2+3^2}=3\sqrt2$，在沿梯度方向 $(1,1)$ 时取得。
@@ -201,7 +201,7 @@ $$
 例（直角坐标 + 换序）：$\displaystyle\int_0^1\int_x^1 e^{y^2}\mathrm{d}y\mathrm{d}x$。内层 $\int e^{y^2}\mathrm{d}y$ 积不出，必须 **交换次序**。原区域是 $0\le x\le y\le 1$ 的三角形，换成先对 $x$ 后对 $y$：
 
 $$
-\int_0^1\int_0^y e^{y^2}\mathrm{d}x\mathrm{d}y=\int_0^1 ye^{y^2}\mathrm{d}y=\frac12 e^{y^2}\Big|_0^1=\frac{e-1}{2}
+\int_0^1\int_0^y e^{y^2}\mathrm{d}x\mathrm{d}y=\int_0^1 ye^{y^2}\mathrm{d}y=\frac{1}{2} e^{y^2}\Big|_0^1=\frac{e-1}{2}
 $$
 
 换序后内层多出的因子 $y$ 恰好凑成 $\mathrm{d}(y^2)$，积分迎刃而解。**遇到内层积不出，优先想换序。**
@@ -209,7 +209,7 @@ $$
 例（极坐标）：$\displaystyle\iint_D e^{-(x^2+y^2)}\mathrm{d}\sigma$，$D$ 是圆 $x^2+y^2\le R^2$。被积含 $x^2+y^2$、区域是圆，改极坐标 $x^2+y^2=r^2$、$\mathrm{d}\sigma=r\mathrm{d}r\mathrm{d}\theta$：
 
 $$
-\int_0^{2\pi}\int_0^R e^{-r^2}r\mathrm{d}r\mathrm{d}\theta=2\pi\cdot\left[-\frac12 e^{-r^2}\right]_0^R=\pi\left(1-e^{-R^2}\right)
+\int_0^{2\pi}\int_0^R e^{-r^2}r\mathrm{d}r\mathrm{d}\theta=2\pi\cdot\left[-\frac{1}{2} e^{-r^2}\right]_0^R=\pi\left(1-e^{-R^2}\right)
 $$
 
 那个多出来的 $r$ 让 $e^{-r^2}r$ 可凑微分——这正是极坐标处理高斯型积分的妙处。
@@ -231,7 +231,7 @@ $$
 例（柱坐标）：求 $\displaystyle\iiint_\Omega(x^2+y^2)\mathrm{d}V$，$\Omega$ 是 $x^2+y^2\le 1$、$0\le z\le 2$ 的圆柱。改柱坐标 $x^2+y^2=r^2$、$\mathrm{d}V=r\mathrm{d}r\mathrm{d}\theta\mathrm{d}z$：
 
 $$
-\int_0^{2\pi}\int_0^1\int_0^2 r^2\cdot r\mathrm{d}z\mathrm{d}r\mathrm{d}\theta=2\pi\cdot 2\cdot\int_0^1 r^3\mathrm{d}r=4\pi\cdot\frac14=\pi
+\int_0^{2\pi}\int_0^1\int_0^2 r^2\cdot r\mathrm{d}z\mathrm{d}r\mathrm{d}\theta=2\pi\cdot 2\cdot\int_0^1 r^3\mathrm{d}r=4\pi\cdot\frac{1}{4}=\pi
 $$
 
 例（球坐标）：求半径 $R$ 的球 $\Omega$ 内 $\displaystyle\iiint_\Omega\sqrt{x^2+y^2+z^2}\mathrm{d}V$。被积是 $\rho$、区域是球，用球坐标 $\mathrm{d}V=\rho^2\sin\varphi\mathrm{d}\rho\mathrm{d}\varphi\mathrm{d}\theta$：
@@ -270,7 +270,7 @@ $$
 例：算 $\displaystyle\int_L x\mathrm{d}y-y\mathrm{d}x$，$L$ 是从 $(1,0)$ 沿单位圆逆时针到 $(0,1)$。参数化 $x=\cos t,y=\sin t$，$t$ 从 $0$ 到 $\dfrac\pi2$，$\mathrm{d}x=-\sin t\mathrm{d}t$、$\mathrm{d}y=\cos t\mathrm{d}t$：
 
 $$
-\int_0^{\pi/2}\bigl[\cos t\cdot\cos t-\sin t\cdot(-\sin t)\bigr]\mathrm{d}t=\int_0^{\pi/2}1\mathrm{d}t=\frac\pi2
+\int_0^{\pi/2}\bigl[\cos t\cdot\cos t-\sin t\cdot(-\sin t)\bigr]\mathrm{d}t=\int_0^{\pi/2}1\mathrm{d}t=\frac{\pi}{2}
 $$
 
 **第二类曲线积分先参数化、把 $\mathrm{d}x,\mathrm{d}y$ 都换成 $\mathrm{d}t$**，化成一元定积分。
@@ -318,7 +318,7 @@ $$
 格林公式还给出 **用曲线积分算面积** 的公式：取 $P=-\dfrac y2$、$Q=\dfrac x2$ 使 $\dfrac{\partial Q}{\partial x}-\dfrac{\partial P}{\partial y}=1$，则：
 
 $$
-A=\frac12\oint_L x\mathrm{d}y-y\mathrm{d}x
+A=\frac{1}{2}\oint_L x\mathrm{d}y-y\mathrm{d}x
 $$
 
 只用边界信息就能求出围住的面积，是行星扫面积、求多边形面积（鞋带公式）的连续版本。
@@ -336,7 +336,7 @@ $$
 例（高斯公式算通量）：求 $\vec F=(x,y,z)$ 穿过半径 $R$ 球面 $\Sigma$（外侧）的通量。散度 $\nabla\cdot\vec F=1+1+1=3$，转成体积分：
 
 $$
-\oiint_\Sigma x\mathrm{d}y\mathrm{d}z+y\mathrm{d}z\mathrm{d}x+z\mathrm{d}x\mathrm{d}y=\iiint_\Omega 3\mathrm{d}V=3\cdot\frac43\pi R^3=4\pi R^3
+\oiint_\Sigma x\mathrm{d}y\mathrm{d}z+y\mathrm{d}z\mathrm{d}x+z\mathrm{d}x\mathrm{d}y=\iiint_\Omega 3\mathrm{d}V=3\cdot\frac{4}{3}\pi R^3=4\pi R^3
 $$
 
 直接在球面上算曲面积分相当麻烦，高斯公式把它化成「常数 × 体积」。**遇到闭曲面通量、被积式散度简单时，首选高斯公式。**

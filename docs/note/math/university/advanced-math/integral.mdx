@@ -104,7 +104,7 @@ $$
 例（对数单独出现）：$\int\ln x\mathrm{d}x$。取 $u=\ln x$、$\mathrm{d}v=\mathrm{d}x$：
 
 $$
-\int\ln x\mathrm{d}x=x\ln x-\int x\cdot\frac1x\mathrm{d}x=x\ln x-x+C
+\int\ln x\mathrm{d}x=x\ln x-\int x\cdot\frac{1}{x}\mathrm{d}x=x\ln x-x+C
 $$
 
 例（循环法）：$I=\int e^x\sin x\mathrm{d}x$。两次分部后原积分 **自己冒出来**，移项即解：
@@ -143,25 +143,25 @@ $$
 两边乘 $(x-1)(x+1)$ 得 $1=A(x+1)+B(x-1)$。代 $x=1$ 得 $A=\dfrac12$，代 $x=-1$ 得 $B=-\dfrac12$（**「赋值法」**：代入让某因子为零的点，瞬间定出系数）。于是：
 
 $$
-\int\frac{\mathrm{d}x}{x^2-1}=\frac12\int\frac{\mathrm{d}x}{x-1}-\frac12\int\frac{\mathrm{d}x}{x+1}=\frac12\ln\left|\frac{x-1}{x+1}\right|+C
+\int\frac{\mathrm{d}x}{x^2-1}=\frac{1}{2}\int\frac{\mathrm{d}x}{x-1}-\frac{1}{2}\int\frac{\mathrm{d}x}{x+1}=\frac{1}{2}\ln\left|\frac{x-1}{x+1}\right|+C
 $$
 
 例（含不可约二次因子）：$\dfrac{x+1}{x(x^2+1)}=\dfrac{A}{x}+\dfrac{Bx+C}{x^2+1}$。通分对照得 $A=1,B=-1,C=1$，于是：
 
 $$
-\int\frac{x+1}{x(x^2+1)}\mathrm{d}x=\ln|x|-\frac12\ln(x^2+1)+\arctan x+C
+\int\frac{x+1}{x(x^2+1)}\mathrm{d}x=\ln|x|-\frac{1}{2}\ln(x^2+1)+\arctan x+C
 $$
 
 不可约二次因子上方要配 **一次式** $Bx+C$，积出来是「$\ln$ + $\arctan$」的组合。
 
 #### 三角代换算例
 
-例：$\int\sqrt{a^2-x^2}\mathrm{d}x$（$a>0$）。令 $x=a\sin t$（$t\in[-\frac\pi2,\frac\pi2]$），则 $\sqrt{a^2-x^2}=a\cos t$、$\mathrm{d}x=a\cos t\mathrm{d}t$：
+例：$\int\sqrt{a^2-x^2}\mathrm{d}x$（$a>0$）。令 $x=a\sin t$（$t\in[-\frac{\pi}{2},\frac{\pi}{2}]$），则 $\sqrt{a^2-x^2}=a\cos t$、$\mathrm{d}x=a\cos t\mathrm{d}t$：
 
 $$
 \begin{aligned}
   \int\sqrt{a^2-x^2}\mathrm{d}x & =\int a\cos t\cdot a\cos t\mathrm{d}t=a^2\int\cos^2 t\mathrm{d}t \\
-  & =\frac{a^2}{2}\left(t+\frac{\sin 2t}{2}\right)+C=\frac{a^2}{2}\arcsin\frac xa+\frac{x\sqrt{a^2-x^2}}{2}+C
+  & =\frac{a^2}{2}\left(t+\frac{\sin 2t}{2}\right)+C=\frac{a^2}{2}\arcsin\frac{x}{a}+\frac{x\sqrt{a^2-x^2}}{2}+C
 \end{aligned}
 $$
 
@@ -172,7 +172,7 @@ $$
 例：$\int\dfrac{\mathrm{d}x}{1+\sin x}$。令 $t=\tan\dfrac x2$，则 $\sin x=\dfrac{2t}{1+t^2}$、$\mathrm{d}x=\dfrac{2}{1+t^2}\mathrm{d}t$：
 
 $$
-\int\frac{\mathrm{d}x}{1+\sin x}=\int\frac{\frac{2}{1+t^2}}{1+\frac{2t}{1+t^2}}\mathrm{d}t=\int\frac{2}{(1+t)^2}\mathrm{d}t=-\frac{2}{1+t}+C=-\frac{2}{1+\tan\frac x2}+C
+\int\frac{\mathrm{d}x}{1+\sin x}=\int\frac{\frac{2}{1+t^2}}{1+\frac{2t}{1+t^2}}\mathrm{d}t=\int\frac{2}{(1+t)^2}\mathrm{d}t=-\frac{2}{1+t}+C=-\frac{2}{1+\tan\frac{x}{2}}+C
 $$
 
 万能代换 **必能** 把三角有理式化成有理函数，但常使式子变复杂；若被积函数关于 $\sin x$ 或 $\cos x$ 有特殊奇偶性，优先用更省力的凑微分。
@@ -266,7 +266,7 @@ $$
 例（变上限求导求极限）：$\lim\limits_{x\to 0}\dfrac{\int_0^x\sin t^2\mathrm{d}t}{x^3}$ 是 $\dfrac00$ 型，洛必达对分子用变上限求导公式：
 
 $$
-\lim_{x\to 0}\frac{\int_0^x\sin t^2\mathrm{d}t}{x^3}\xlongequal{\frac00}\lim_{x\to 0}\frac{\sin x^2}{3x^2}\overset{\sin x^2\sim x^2}{=}\frac13
+\lim_{x\to 0}\frac{\int_0^x\sin t^2\mathrm{d}t}{x^3}\xlongequal{\frac{0}{0}}\lim_{x\to 0}\frac{\sin x^2}{3x^2}\overset{\sin x^2\sim x^2}{=}\frac{1}{3}
 $$
 
 ## 定积分计算技巧
@@ -292,7 +292,7 @@ $$
 例：$I=\displaystyle\int_0^{\pi/2}\dfrac{\sin x}{\sin x+\cos x}\mathrm{d}x$。令 $x\to\dfrac\pi2-x$，$\sin\leftrightarrow\cos$ 互换得 $I=\displaystyle\int_0^{\pi/2}\dfrac{\cos x}{\cos x+\sin x}\mathrm{d}x$。两式相加：
 
 $$
-2I=\int_0^{\pi/2}\frac{\sin x+\cos x}{\sin x+\cos x}\mathrm{d}x=\int_0^{\pi/2}1\mathrm{d}x=\frac\pi2\implies I=\frac\pi4
+2I=\int_0^{\pi/2}\frac{\sin x+\cos x}{\sin x+\cos x}\mathrm{d}x=\int_0^{\pi/2}1\mathrm{d}x=\frac{\pi}{2}\implies I=\frac{\pi}{4}
 $$
 
 ### 点火公式（Wallis 公式）
@@ -305,11 +305,11 @@ $$
 \end{cases}
 $$
 
-口诀「**偶数加 $\frac\pi2$、奇数不加**」：$n$ 为偶才点上 $\dfrac\pi2$ 这把「火」。其中 $n!!$ 是双阶乘（隔一个相乘）。它由前面 $\sin^n$ 的递推公式代入上下限得到。
+口诀「**偶数加 $\frac{\pi}{2}$、奇数不加**」：$n$ 为偶才点上 $\dfrac\pi2$ 这把「火」。其中 $n!!$ 是双阶乘（隔一个相乘）。它由前面 $\sin^n$ 的递推公式代入上下限得到。
 
 例：$\displaystyle\int_0^{\pi/2}\sin^6 x\mathrm{d}x=\dfrac{5!!}{6!!}\cdot\dfrac\pi2=\dfrac{5\cdot3\cdot1}{6\cdot4\cdot2}\cdot\dfrac\pi2=\dfrac{15}{48}\cdot\dfrac\pi2=\dfrac{5\pi}{32}$。
 
-例：$\displaystyle\int_0^{\pi/2}\cos^5 x\mathrm{d}x=\dfrac{4!!}{5!!}=\dfrac{4\cdot2}{5\cdot3\cdot1}=\dfrac{8}{15}$（奇数不加 $\frac\pi2$）。
+例：$\displaystyle\int_0^{\pi/2}\cos^5 x\mathrm{d}x=\dfrac{4!!}{5!!}=\dfrac{4\cdot2}{5\cdot3\cdot1}=\dfrac{8}{15}$（奇数不加 $\frac{\pi}{2}$）。
 
 ## 反常积分
 
@@ -372,7 +372,7 @@ $$
 所以 $\Gamma$ 正是阶乘的连续版本。一个常用的特殊值是 $\Gamma\left(\dfrac12\right)=\sqrt\pi$，它等价于著名的 **高斯积分**：令 $x=t^2$ 得：
 
 $$
-\Gamma\left(\frac12\right)=\int_0^{+\infty}x^{-1/2}e^{-x}\mathrm{d}x=2\int_0^{+\infty}e^{-t^2}\mathrm{d}t=\sqrt\pi
+\Gamma\left(\frac{1}{2}\right)=\int_0^{+\infty}x^{-1/2}e^{-x}\mathrm{d}x=2\int_0^{+\infty}e^{-t^2}\mathrm{d}t=\sqrt\pi
 $$
 
 即 $\displaystyle\int_{-\infty}^{+\infty}e^{-t^2}\mathrm{d}t=\sqrt\pi$——它在概率论的正态分布里反复登场。
@@ -394,13 +394,13 @@ $$
 例（两曲线围成面积）：$y=x^2$ 与 $y=\sqrt{x}$ 在 $[0,1]$ 上围成的面积。$\sqrt x\ge x^2$，故：
 
 $$
-A=\int_0^1(\sqrt x-x^2)\mathrm{d}x=\left[\frac23 x^{3/2}-\frac13 x^3\right]_0^1=\frac23-\frac13=\frac13
+A=\int_0^1(\sqrt x-x^2)\mathrm{d}x=\left[\frac{2}{3} x^{3/2}-\frac{1}{3} x^3\right]_0^1=\frac{2}{3}-\frac{1}{3}=\frac{1}{3}
 $$
 
 例（旋转体体积）：$y=\sin x$（$0\le x\le\pi$）绕 $x$ 轴旋转。用点火公式算 $\int_0^\pi\sin^2 x\mathrm{d}x=\dfrac\pi2$：
 
 $$
-V=\pi\int_0^\pi\sin^2 x\mathrm{d}x=\pi\cdot\frac\pi2=\frac{\pi^2}{2}
+V=\pi\int_0^\pi\sin^2 x\mathrm{d}x=\pi\cdot\frac{\pi}{2}=\frac{\pi^2}{2}
 $$
 
 ## 定积分的物理应用

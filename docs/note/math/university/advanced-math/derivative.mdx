@@ -123,7 +123,7 @@ $$
 
 几何上，反函数图像是原图像关于 $y=x$ 的镜像，切线斜率互为倒数。$\arcsin,\arctan$ 等的导数公式都由此推出。
 
-例（推 $\arcsin$ 的导数）：设 $y=\arcsin x$，即 $x=\sin y$（$y\in[-\frac\pi2,\frac\pi2]$）。则：
+例（推 $\arcsin$ 的导数）：设 $y=\arcsin x$，即 $x=\sin y$（$y\in[-\frac{\pi}{2},\frac{\pi}{2}]$）。则：
 
 $$
 (\arcsin x)'=\frac{1}{(\sin y)'}=\frac{1}{\cos y}=\frac{1}{\sqrt{1-\sin^2 y}}=\frac{1}{\sqrt{1-x^2}}
@@ -153,7 +153,7 @@ $$
 例（参数方程求导）：摆线 $\begin{cases}x=t-\sin t\\ y=1-\cos t\end{cases}$。
 
 $$
-\frac{\mathrm{d}y}{\mathrm{d}x}=\frac{\psi'(t)}{\varphi'(t)}=\frac{\sin t}{1-\cos t}=\frac{2\sin\frac t2\cos\frac t2}{2\sin^2\frac t2}=\cot\frac{t}{2}
+\frac{\mathrm{d}y}{\mathrm{d}x}=\frac{\psi'(t)}{\varphi'(t)}=\frac{\sin t}{1-\cos t}=\frac{2\sin\frac{t}{2}\cos\frac{t}{2}}{2\sin^2\frac{t}{2}}=\cot\frac{t}{2}
 $$
 
 末尾用了半角公式把结果化简。
@@ -171,13 +171,13 @@ $$
 例（幂指函数）：$y=x^x$（$x>0$）。取对数 $\ln y=x\ln x$，两端求导：
 
 $$
-\frac{y'}{y}=\ln x+x\cdot\frac1x=\ln x+1\implies y'=x^x(\ln x+1)
+\frac{y'}{y}=\ln x+x\cdot\frac{1}{x}=\ln x+1\implies y'=x^x(\ln x+1)
 $$
 
 例（多因子连乘连除）：$y=\dfrac{(x+1)^2\sqrt{x-1}}{(x+2)^3}$。取对数化乘除为加减：
 
 $$
-\ln y=2\ln(x+1)+\frac12\ln(x-1)-3\ln(x+2)
+\ln y=2\ln(x+1)+\frac{1}{2}\ln(x-1)-3\ln(x+2)
 $$
 
 求导得 $\dfrac{y'}{y}=\dfrac{2}{x+1}+\dfrac{1}{2(x-1)}-\dfrac{3}{x+2}$，再乘回 $y$ 即得。若硬用商法则与乘积法则，会冗长易错得多。
@@ -358,7 +358,7 @@ $$
 例：$\lim\limits_{x\to 0}\dfrac{\sin x-x\cos x}{x^3}$。$\sin x=x-\dfrac{x^3}{6}+o(x^3)$、$x\cos x=x\left(1-\dfrac{x^2}{2}+o(x^2)\right)=x-\dfrac{x^3}{2}+o(x^3)$，相减：
 
 $$
-\sin x-x\cos x=\left(-\frac16+\frac12\right)x^3+o(x^3)=\frac{x^3}{3}+o(x^3)\implies\text{极限}=\frac13
+\sin x-x\cos x=\left(-\frac{1}{6}+\frac{1}{2}\right)x^3+o(x^3)=\frac{x^3}{3}+o(x^3)\implies\text{极限}=\frac{1}{3}
 $$
 
 ## 应用

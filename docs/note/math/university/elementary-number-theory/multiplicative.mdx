@@ -74,7 +74,7 @@ $$
 例：算 $\varphi(360)$。分解 $360=2^3\cdot 3^2\cdot 5$，用乘积公式：
 
 $$
-\varphi(360)=360\left(1-\frac12\right)\left(1-\frac13\right)\left(1-\frac15\right)=360\cdot\frac12\cdot\frac23\cdot\frac45=96
+\varphi(360)=360\left(1-\frac{1}{2}\right)\left(1-\frac{1}{3}\right)\left(1-\frac{1}{5}\right)=360\cdot\frac{1}{2}\cdot\frac{2}{3}\cdot\frac{4}{5}=96
 $$
 
 也可逐素数幂相乘：$\varphi(2^3)\varphi(3^2)\varphi(5)=(8-4)(9-3)(5-1)=4\times 6\times 4=96$，两法一致。所以 $1\sim 360$ 中与 $360$ 互素的数有 $96$ 个。
@@ -142,7 +142,7 @@ $$
 (f*g)(n)=\sum_{d\mid n}f(d)g\left(\frac{n}{d}\right)
 $$
 
-即对 $n$ 的每一种「因子配对」$d\cdot\frac nd=n$ 求和。它把「数论函数」从一盘散沙变成一个 **有乘法的代数系统**：
+即对 $n$ 的每一种「因子配对」$d\cdot\frac{n}{d}=n$ 求和。它把「数论函数」从一盘散沙变成一个 **有乘法的代数系统**：
 
 例：直接按定义算 $(\mathbf{1}*\operatorname{id})(12)$，体会卷积是「遍历因子配对求和」。$12$ 的因子为 $1,2,3,4,6,12$，每项取 $\mathbf{1}(d)\cdot\operatorname{id}(12/d)=1\cdot\frac{12}{d}$：
 
@@ -175,7 +175,7 @@ $$
 $$
 
 $$
-\varphi*\mathbf{1}=\operatorname{id}\Bigl(\text{即 }\sum_{d\mid n}\varphi(d)=n\Bigr)
+\varphi*\mathbf{1}=\operatorname{id}\Bigl(\text{i.e. }\sum_{d\mid n}\varphi(d)=n\Bigr)
 $$
 
 最后一条尤其漂亮，下面单独说。
@@ -186,7 +186,7 @@ $$
 \sum_{d\mid n}\varphi(d)=n
 $$
 
-直觉上，把 $\set{1,2,\dots,n}$ 每个数 $\frac kn$ 约分成最简分数，分母一定是 $n$ 的某个因子 $d$；分母恰为 $d$ 的最简分数有 $\varphi(d)$ 个。按分母分类求和，总数仍是 $n$，于是各 $\varphi(d)$ 加起来等于 $n$。
+直觉上，把 $\set{1,2,\dots,n}$ 每个数 $\frac{k}{n}$ 约分成最简分数，分母一定是 $n$ 的某个因子 $d$；分母恰为 $d$ 的最简分数有 $\varphi(d)$ 个。按分母分类求和，总数仍是 $n$，于是各 $\varphi(d)$ 加起来等于 $n$。
 
 例：在 $n=12$ 上验证。$12$ 的因子 $1,2,3,4,6,12$，对应：
 
@@ -199,7 +199,7 @@ $$
 另一条常用的是因子和与莫比乌斯的互逆形式（莫比乌斯反演的特例）：
 
 $$
-\sum_{d\mid n}\mu(d)\sigma\left(\frac nd\right)=\operatorname{id}(n)=n
+\sum_{d\mid n}\mu(d)\sigma\left(\frac{n}{d}\right)=\operatorname{id}(n)=n
 $$
 
 ## 莫比乌斯反演
@@ -226,7 +226,7 @@ $$
 \varphi(n)=\sum_{d\mid n}\mu(d)\frac{n}{d}=n\sum_{d\mid n}\frac{\mu(d)}{d}
 $$
 
-把右边对每个素因子展开（含平方因子的项被 $\mu$ 清零），正好得到 $n\prod_{p\mid n}\bigl(1-\frac1p\bigr)$，与前面的乘积公式吻合。这是「反演能重新推出已知结果」的典型例子。
+把右边对每个素因子展开（含平方因子的项被 $\mu$ 清零），正好得到 $n\prod_{p\mid n}\bigl(1-\frac{1}{p}\bigr)$，与前面的乘积公式吻合。这是「反演能重新推出已知结果」的典型例子。
 
 例：在 $n=12$ 上把 $\varphi=\operatorname{id}*\mu$ 算一遍，看含平方因子项如何被清零。$12$ 的因子里 $\mu$ 非零的只有无平方因子的 $1,2,3,6$（$4,12$ 含 $2^2$，$\mu=0$）：
 

@@ -212,7 +212,7 @@ $$
 
 最通用的方法：用 $r_i+kr_j$ 把行列式化成上（下）三角形，再取对角线元素之积。整个过程行列式值不变（只用了「加倍数」变换），若中途交换了行别忘了变号。
 
-例：算 $\begin{vmatrix}2&1&-1\\1&3&2\\1&-1&3\end{vmatrix}$。先用第 $1$ 行把第 $2$、$3$ 行的首元消成 $0$（$r_2-\frac12 r_1$、$r_3-\frac12 r_1$，不变号）：
+例：算 $\begin{vmatrix}2&1&-1\\1&3&2\\1&-1&3\end{vmatrix}$。先用第 $1$ 行把第 $2$、$3$ 行的首元消成 $0$（$r_2-\frac{1}{2} r_1$、$r_3-\frac{1}{2} r_1$，不变号）：
 
 $$
 \begin{vmatrix}
@@ -220,23 +220,23 @@ $$
   1 & 3 & 2 \\
   1 & -1 & 3
 \end{vmatrix}
-\xrightarrow{r_2-\frac12 r_1,r_3-\frac12 r_1}
+\xrightarrow{r_2-\frac{1}{2} r_1,r_3-\frac{1}{2} r_1}
 \begin{vmatrix}
   2 & 1 & -1 \\
-  0 & \frac52 & \frac52 \\
-  0 & -\frac32 & \frac72
+  0 & \frac{5}{2} & \frac{5}{2} \\
+  0 & -\frac{3}{2} & \frac{7}{2}
 \end{vmatrix}
 $$
 
-再用第 $2$ 行消第 $3$ 行（$r_3+\frac35 r_2$）：
+再用第 $2$ 行消第 $3$ 行（$r_3+\frac{3}{5} r_2$）：
 
 $$
-\xrightarrow{r_3+\frac35 r_2}
+\xrightarrow{r_3+\frac{3}{5} r_2}
 \begin{vmatrix}
   2 & 1 & -1 \\
-  0 & \frac52 & \frac52 \\
+  0 & \frac{5}{2} & \frac{5}{2} \\
   0 & 0 & 5
-\end{vmatrix}=2\cdot\frac52\cdot5=25
+\end{vmatrix}=2\cdot\frac{5}{2}\cdot5=25
 $$
 
 对角线相乘即得 $25$。若嫌分数烦，也可先把首行首列凑出 $1$ 再消，思路一致。
@@ -283,10 +283,10 @@ $$
 \end{vmatrix}
 $$
 
-再把第 $2\sim(n+1)$ 列各乘 $\frac1a$ 加到第 $1$ 列（消去那些 $-1$），第 $1$ 列左上角变成 $1+\frac na$，其余化零，化成下三角：
+再把第 $2\sim(n+1)$ 列各乘 $\frac{1}{a}$ 加到第 $1$ 列（消去那些 $-1$），第 $1$ 列左上角变成 $1+\frac{n}{a}$，其余化零，化成下三角：
 
 $$
-D_n=\left(1+\frac na\right)a^n=a^{n-1}(a+n)
+D_n=\left(1+\frac{n}{a}\right)a^n=a^{n-1}(a+n)
 $$
 
 验证 $n=1$：原式应为 $a+1$，公式给 $a^0(a+1)=a+1$，吻合。

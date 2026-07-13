@@ -73,7 +73,7 @@ $$
 
 这个公式可由 **常数变易法**（Variation of Constants）推出：先解齐次方程得 $y=Ce^{-\int P\mathrm{d}x}$，再把常数 $C$ 「变」成待定函数 $C(x)$ 代回原方程，解出 $C(x)$。「变易常数」的思想——拿齐次解当骨架、让常数随 $x$ 浮动以吸收非齐次项——在后面高阶方程里还会重现。
 
-例：解 $\dfrac{\mathrm{d}y}{\mathrm{d}x}+\dfrac{1}{x}y=\dfrac{\sin x}{x}$（$x>0$）。这里 $P=\dfrac1x$、$Q=\dfrac{\sin x}{x}$。积分因子 $\mu=e^{\int\frac1x\mathrm{d}x}=x$，方程两边乘 $x$ 后左边凑成 $(xy)'$：
+例：解 $\dfrac{\mathrm{d}y}{\mathrm{d}x}+\dfrac{1}{x}y=\dfrac{\sin x}{x}$（$x>0$）。这里 $P=\dfrac1x$、$Q=\dfrac{\sin x}{x}$。积分因子 $\mu=e^{\int\frac{1}{x}\mathrm{d}x}=x$，方程两边乘 $x$ 后左边凑成 $(xy)'$：
 
 $$
 (xy)'=\sin x\implies xy=-\cos x+C\implies y=\frac{C-\cos x}{x}
@@ -232,7 +232,7 @@ $k$ 是 $\lambda+\omega i$ 作为特征根的重数。
 例（不共振）：解 $y''-3y'+2y=2x$。齐次特征根 $r=1,2$，故齐次通解 $\bar y=C_1 e^x+C_2 e^{2x}$。右端是一次多项式、$\lambda=0$ 不是特征根（$k=0$），设 $y^*=ax+b$，则 $y^{*\prime}=a$、$y^{*\prime\prime}=0$，代入：
 
 $$
--3a+2(ax+b)=2x\implies 2a=2,-3a+2b=0\implies a=1,b=\frac32
+-3a+2(ax+b)=2x\implies 2a=2,-3a+2b=0\implies a=1,b=\frac{3}{2}
 $$
 
 故 $y^*=x+\dfrac32$，通解 $y=C_1 e^x+C_2 e^{2x}+x+\dfrac32$。

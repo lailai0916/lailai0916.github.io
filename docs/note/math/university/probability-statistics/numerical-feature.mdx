@@ -55,10 +55,10 @@ $$
 例（LOTUS）：$X\sim U(0,1)$，求 $E(X^2)$ 与 $E(e^X)$。不必先求 $X^2$、$e^X$ 的分布，直接加权积分：
 
 $$
-E(X^2)=\int_0^1 x^2\mathrm{d}x=\frac13,E(e^X)=\int_0^1 e^x\mathrm{d}x=e-1
+E(X^2)=\int_0^1 x^2\mathrm{d}x=\frac{1}{3},E(e^X)=\int_0^1 e^x\mathrm{d}x=e-1
 $$
 
-顺带可得 $D(X)=E(X^2)-[E(X)]^2=\frac13-\frac14=\frac{1}{12}$，与表中 $U(0,1)$ 的方差 $\frac{(1-0)^2}{12}$ 吻合。
+顺带可得 $D(X)=E(X^2)-[E(X)]^2=\frac{1}{3}-\frac{1}{4}=\frac{1}{12}$，与表中 $U(0,1)$ 的方差 $\frac{(1-0)^2}{12}$ 吻合。
 
 ### 性质
 
@@ -166,7 +166,7 @@ $$
 
 再算 $E(X^2)$，技巧是用 $E\big(X(X-1)\big)=\sum k(k-1)\dfrac{\lambda^k}{k!}e^{-\lambda}=\lambda^2$，于是 $E(X^2)=\lambda^2+\lambda$，故 $D(X)=\lambda^2+\lambda-\lambda^2=\lambda$。期望方差同为 $\lambda$ 由此而来。
 
-**指数分布**（分部积分）：$E(X)=\int_0^\infty x\lambda e^{-\lambda x}\mathrm{d}x$，分部积分得 $\frac1\lambda$。同法 $E(X^2)=\int_0^\infty x^2\lambda e^{-\lambda x}\mathrm{d}x=\frac{2}{\lambda^2}$，于是：
+**指数分布**（分部积分）：$E(X)=\int_0^\infty x\lambda e^{-\lambda x}\mathrm{d}x$，分部积分得 $\frac{1}{\lambda}$。同法 $E(X^2)=\int_0^\infty x^2\lambda e^{-\lambda x}\mathrm{d}x=\frac{2}{\lambda^2}$，于是：
 
 $$
 D(X)=\frac{2}{\lambda^2}-\frac{1}{\lambda^2}=\frac{1}{\lambda^2}

@@ -143,16 +143,16 @@ $$
 
 要估几个参数，就用到几阶矩。比如估正态的 $\mu,\sigma^2$：令一阶矩 $E(X)=\bar X$、二阶中心矩 $D(X)=B_2$，立刻得到 $\hat\mu=\bar X$、$\hat\sigma^2=B_2$。它的底气来自 [大数定律](/docs/note/math/university/probability-statistics/limit-theorem)——样本矩依概率收敛于总体矩。
 
-例（单参数矩估计）：总体 $X\sim U(0,\theta)$，由样本 $X_1,\dots,X_n$ 估 $\theta$。一阶总体矩 $E(X)=\frac\theta2$，令它等于样本一阶矩 $\bar X$：
+例（单参数矩估计）：总体 $X\sim U(0,\theta)$，由样本 $X_1,\dots,X_n$ 估 $\theta$。一阶总体矩 $E(X)=\frac{\theta}{2}$，令它等于样本一阶矩 $\bar X$：
 
 $$
-\frac\theta2=\bar X\implies\hat\theta=2\bar X
+\frac{\theta}{2}=\bar X\implies\hat\theta=2\bar X
 $$
 
 例（两参数矩估计）：总体 $X$ 期望 $\mu$、方差 $\sigma^2$ 均未知。两个参数用前两阶矩：令 $E(X)=\bar X$ 得 $\hat\mu=\bar X$；令 $E(X^2)=A_2$（样本二阶原点矩），结合 $E(X^2)=\sigma^2+\mu^2$ 得：
 
 $$
-\hat\sigma^2=A_2-\bar X^2=\frac1n\sum_{i=1}^n X_i^2-\bar X^2=\frac1n\sum_{i=1}^n(X_i-\bar X)^2
+\hat\sigma^2=A_2-\bar X^2=\frac{1}{n}\sum_{i=1}^n X_i^2-\bar X^2=\frac{1}{n}\sum_{i=1}^n(X_i-\bar X)^2
 $$
 
 注意矩估计的方差分母是 $n$（即 $B_2$），与无偏的样本方差 $S^2$（分母 $n-1$）略有差别——矩估计不保证无偏。
@@ -190,10 +190,10 @@ $$
 取对数 $\ln L=k\ln p+(n-k)\ln(1-p)$，对 $p$ 求导令零：
 
 $$
-\frac{\mathrm{d}\ln L}{\mathrm{d}p}=\frac kp-\frac{n-k}{1-p}=0\implies k(1-p)=(n-k)p\implies\hat p=\frac kn
+\frac{\mathrm{d}\ln L}{\mathrm{d}p}=\frac{k}{p}-\frac{n-k}{1-p}=0\implies k(1-p)=(n-k)p\implies\hat p=\frac{k}{n}
 $$
 
-成功率的极大似然估计就是「样本频率」$\frac kn$，与直觉完全吻合（抛 $10$ 次 $7$ 次正面，$\hat p=0.7$）。
+成功率的极大似然估计就是「样本频率」$\frac{k}{n}$，与直觉完全吻合（抛 $10$ 次 $7$ 次正面，$\hat p=0.7$）。
 
 例（连续 MLE，指数分布）：样本 $X_1,\dots,X_n$ 来自 $E(\lambda)$，密度 $f(x;\lambda)=\lambda e^{-\lambda x}$，估 $\lambda$。似然与对数似然：
 
@@ -204,18 +204,18 @@ $$
 求导令零：
 
 $$
-\frac{\mathrm{d}\ln L}{\mathrm{d}\lambda}=\frac n\lambda-\sum_{i=1}^n x_i=0\implies\hat\lambda=\frac{n}{\sum x_i}=\frac1{\bar X}
+\frac{\mathrm{d}\ln L}{\mathrm{d}\lambda}=\frac{n}{\lambda}-\sum_{i=1}^n x_i=0\implies\hat\lambda=\frac{n}{\sum x_i}=\frac{1}{\bar X}
 $$
 
-由于指数分布均值是 $\frac1\lambda$，估计「$\hat\lambda=\frac1{\bar X}$」恰是「用样本均值估总体均值」的倒数，矩估计也给出同样结果。
+由于指数分布均值是 $\frac{1}{\lambda}$，估计「$\hat\lambda=\frac{1}{\bar X}$」恰是「用样本均值估总体均值」的倒数，矩估计也给出同样结果。
 
 例（连续 MLE，正态）：样本来自 $N(\mu,\sigma^2)$，对数似然：
 
 $$
-\ln L=-\frac n2\ln(2\pi\sigma^2)-\frac{1}{2\sigma^2}\sum_{i=1}^n(x_i-\mu)^2
+\ln L=-\frac{n}{2}\ln(2\pi\sigma^2)-\frac{1}{2\sigma^2}\sum_{i=1}^n(x_i-\mu)^2
 $$
 
-分别对 $\mu$、$\sigma^2$ 求偏导令零，得 $\hat\mu=\bar X$、$\hat\sigma^2=\frac1n\sum(x_i-\bar X)^2$。这里 $\hat\sigma^2$ 的分母仍是 $n$，所以 MLE 的方差估计 **有偏**（同矩估计），要无偏需手动改用 $n-1$。
+分别对 $\mu$、$\sigma^2$ 求偏导令零，得 $\hat\mu=\bar X$、$\hat\sigma^2=\frac{1}{n}\sum(x_i-\bar X)^2$。这里 $\hat\sigma^2$ 的分母仍是 $n$，所以 MLE 的方差估计 **有偏**（同矩估计），要无偏需手动改用 $n-1$。
 
 ### 估计量的评价
 

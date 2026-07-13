@@ -227,7 +227,7 @@ A^*=\begin{pmatrix}
 \end{pmatrix}
 $$
 
-于是 $A^{-1}=\dfrac{1}{|A|}A^*=\dfrac12\begin{pmatrix}2&6&-4\\-3&-6&5\\2&2&-2\end{pmatrix}=\begin{pmatrix}1&3&-2\\-\frac32&-3&\frac52\\1&1&-1\end{pmatrix}$。可乘回 $AA^{-1}=E$ 验算。注意伴随矩阵的转置一步极易出错——代数余子式按 **行** 算出来，填进 $A^*$ 时要按 **列** 放。
+于是 $A^{-1}=\dfrac{1}{|A|}A^*=\dfrac12\begin{pmatrix}2&6&-4\\-3&-6&5\\2&2&-2\end{pmatrix}=\begin{pmatrix}1&3&-2\\-\frac{3}{2}&-3&\frac{5}{2}\\1&1&-1\end{pmatrix}$。可乘回 $AA^{-1}=E$ 验算。注意伴随矩阵的转置一步极易出错——代数余子式按 **行** 算出来，填进 $A^*$ 时要按 **列** 放。
 
 ### 初等变换法
 
@@ -464,13 +464,13 @@ $$
 \end{pmatrix}
 $$
 
-例：求 $M=\begin{pmatrix}2&0&0\\0&1&2\\0&3&4\end{pmatrix}$ 的逆。它是分块对角阵 $\begin{pmatrix}A_1&O\\O&A_2\end{pmatrix}$，其中 $A_1=(2)$、$A_2=\begin{pmatrix}1&2\\3&4\end{pmatrix}$。逐块求逆：$A_1^{-1}=(\frac12)$，$A_2^{-1}=\frac{1}{1\cdot4-2\cdot3}\begin{pmatrix}4&-2\\-3&1\end{pmatrix}=-\frac12\begin{pmatrix}4&-2\\-3&1\end{pmatrix}=\begin{pmatrix}-2&1\\\frac32&-\frac12\end{pmatrix}$，拼回去：
+例：求 $M=\begin{pmatrix}2&0&0\\0&1&2\\0&3&4\end{pmatrix}$ 的逆。它是分块对角阵 $\begin{pmatrix}A_1&O\\O&A_2\end{pmatrix}$，其中 $A_1=(2)$、$A_2=\begin{pmatrix}1&2\\3&4\end{pmatrix}$。逐块求逆：$A_1^{-1}=(\frac{1}{2})$，$A_2^{-1}=\frac{1}{1\cdot4-2\cdot3}\begin{pmatrix}4&-2\\-3&1\end{pmatrix}=-\frac{1}{2}\begin{pmatrix}4&-2\\-3&1\end{pmatrix}=\begin{pmatrix}-2&1\\\frac{3}{2}&-\frac{1}{2}\end{pmatrix}$，拼回去：
 
 $$
 M^{-1}=\begin{pmatrix}
-  \frac12 & 0 & 0 \\
+  \frac{1}{2} & 0 & 0 \\
   0 & -2 & 1 \\
-  0 & \frac32 & -\frac12
+  0 & \frac{3}{2} & -\frac{1}{2}
 \end{pmatrix}
 $$
 

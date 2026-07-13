@@ -45,7 +45,11 @@ function MonitorRow({
         <div className={styles.rowHead}>
           <Skeleton className={styles.dot} />
           <div className={styles.nameWrap}>
-            <Skeleton className={clsx(styles.name, styles.ghost)} radius={6} style={{ width: '45%' }}>
+            <Skeleton
+              className={clsx(styles.name, styles.ghost)}
+              radius={6}
+              style={{ width: '45%' }}
+            >
               &nbsp;
             </Skeleton>
           </div>
