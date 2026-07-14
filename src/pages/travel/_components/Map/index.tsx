@@ -1,4 +1,5 @@
 import {
+  useCallback,
   useEffect,
   useMemo,
   useRef,
@@ -89,6 +90,18 @@ function bakeGlobeTexture(
   return canvas;
 }
 
+type HoveredCountry = {
+  name: string;
+  visited: boolean;
+  flag: string | null;
+};
+
+function sameHover(a: HoveredCountry | null, b: HoveredCountry | null) {
+  if (a === b) return true;
+  if (!a || !b) return false;
+  return a.name === b.name && a.visited === b.visited && a.flag === b.flag;
+}
+
 function TravelGlobeClient({ Globe }: { Globe: GlobeComponent }) {
   const { i18n } = useDocusaurusContext();
   const { colorMode } = useColorMode();
@@ -100,12 +113,9 @@ function TravelGlobeClient({ Globe }: { Globe: GlobeComponent }) {
 
   const lang = i18n.currentLocale === 'zh-Hans' ? 'zh' : 'en';
 
-  const [hovered, setHovered] = useState<{
-    name: string;
-    visited: boolean;
-    flag: string | null;
-  } | null>(null);
+  const [hovered, setHovered] = useState<HoveredCountry | null>(null);
   const [cursor, setCursor] = useState({ x: 0, y: 0 });
+  const pointerRef = useRef<{ x: number; y: number } | null>(null);
 
   const worldUrl = useBaseUrl('/json/world.geo.json');
   useEffect(() => {
@@ -197,43 +207,68 @@ function TravelGlobeClient({ Globe }: { Globe: GlobeComponent }) {
 
   // Hover is resolved geometrically: screen point → lat/lng on the sphere →
   // which country contains it. No polygon meshes needed.
+  const resolveHovered = useCallback(
+    (px: number, py: number): HoveredCountry | null => {
+      const globe = globeRef.current;
+      const canvas = globe?.renderer()?.domElement;
+      const rect = canvas?.getBoundingClientRect();
+      if (!globe || !canvas || !rect) return null;
+      const coords = globe.toGlobeCoords(
+        (px / rect.width) * size.width,
+        (py / rect.height) * size.height
+      );
+      if (!coords) return null;
+      const { lng, lat } = coords;
+      const point: [number, number] = [lng, lat];
+      const hit = bounded.find(
+        (b) =>
+          lat >= b.south &&
+          lat <= b.north &&
+          (b.wraps ? lng >= b.west || lng <= b.east : lng >= b.west && lng <= b.east) &&
+          geoContains(b.feature as GeoJSON.Feature, point)
+      );
+      const f = hit?.feature;
+      if (!f) return null;
+      const code = getFeatureIso3(f);
+      const alpha2 = countries.alpha3ToAlpha2(code);
+      return {
+        name: countries.getName(code, lang) ?? f.properties.NAME ?? code,
+        visited: visitedCountries.has(code),
+        flag: alpha2 ? `flag:${alpha2.toLowerCase()}-4x3` : null,
+      };
+    },
+    [bounded, size.width, size.height, visitedCountries, lang]
+  );
+
+  // The globe auto-rotates, so a stationary cursor covers a different country
+  // every frame — re-resolve from the last cursor position each frame, not just
+  // on mousemove, or the tooltip goes stale until the pointer moves.
+  useEffect(() => {
+    if (!isGlobeReady) return;
+    let raf = 0;
+    const tick = () => {
+      const p = pointerRef.current;
+      const next = p ? resolveHovered(p.x, p.y) : null;
+      setHovered((prev) => (sameHover(prev, next) ? prev : next));
+      raf = requestAnimationFrame(tick);
+    };
+    raf = requestAnimationFrame(tick);
+    return () => cancelAnimationFrame(raf);
+  }, [isGlobeReady, resolveHovered]);
+
   const onFrameMouseMove = (event: ReactMouseEvent<HTMLDivElement>) => {
-    const globe = globeRef.current;
-    const canvas = globe?.renderer()?.domElement;
+    const canvas = globeRef.current?.renderer()?.domElement;
     const rect = canvas?.getBoundingClientRect();
-    if (!globe || !canvas || !rect) return;
+    if (!rect) return;
     const px = event.clientX - rect.left;
     const py = event.clientY - rect.top;
     setCursor({ x: px, y: py });
-    const coords = globe.toGlobeCoords(
-      (px / rect.width) * size.width,
-      (py / rect.height) * size.height
-    );
-    if (!coords) {
-      setHovered(null);
-      return;
-    }
-    const { lng, lat } = coords;
-    const point: [number, number] = [lng, lat];
-    const hit = bounded.find(
-      (b) =>
-        lat >= b.south &&
-        lat <= b.north &&
-        (b.wraps ? lng >= b.west || lng <= b.east : lng >= b.west && lng <= b.east) &&
-        geoContains(b.feature as GeoJSON.Feature, point)
-    );
-    const f = hit?.feature;
-    if (!f) {
-      setHovered(null);
-      return;
-    }
-    const code = getFeatureIso3(f);
-    const alpha2 = countries.alpha3ToAlpha2(code);
-    setHovered({
-      name: countries.getName(code, lang) ?? f.properties.NAME ?? code,
-      visited: visitedCountries.has(code),
-      flag: alpha2 ? `flag:${alpha2.toLowerCase()}-4x3` : null,
-    });
+    pointerRef.current = { x: px, y: py };
+  };
+
+  const onFrameMouseLeave = () => {
+    pointerRef.current = null;
+    setHovered(null);
   };
 
   const handleReady = () => {
@@ -255,7 +290,12 @@ function TravelGlobeClient({ Globe }: { Globe: GlobeComponent }) {
 
   return (
     <div className={styles.globeShell}>
-      <div className={styles.globeFrame} ref={frameRef} onMouseMove={onFrameMouseMove}>
+      <div
+        className={styles.globeFrame}
+        ref={frameRef}
+        onMouseMove={onFrameMouseMove}
+        onMouseLeave={onFrameMouseLeave}
+      >
         <div className={clsx(styles.globeLayer, isReady && styles.globeVisible)}>
           <Globe
             ref={globeRef}
