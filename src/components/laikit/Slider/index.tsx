@@ -11,6 +11,8 @@ interface SliderProps {
   max: number;
   step?: number;
   onChange: (value: number) => void;
+  // Fires on release, not on every drag frame — for effects too expensive to run
+  // per step (a global reflow, a storage write).
   onCommit?: (value: number) => void;
   className?: string;
   'aria-label'?: string;

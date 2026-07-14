@@ -17,6 +17,9 @@ interface MetricListProps {
   items: MetricRow[];
   loading?: boolean;
   emptyText: string;
+  // Set when the source fetch failed, so an unreachable endpoint reads as an
+  // error rather than as a legitimately empty dataset.
+  error?: string;
   renderLabel?: (x: string) => ReactNode;
   formatValue?: (y: number) => string;
   href?: (x: string) => string | null | undefined;
@@ -45,6 +48,7 @@ export default function MetricList({
   items,
   loading,
   emptyText,
+  error,
   renderLabel,
   formatValue,
   href,
@@ -71,6 +75,8 @@ export default function MetricList({
             </Row>
           ))}
         </ol>
+      ) : error ? (
+        <p className={styles.empty}>{error}</p>
       ) : items.length === 0 ? (
         <p className={styles.empty}>{emptyText}</p>
       ) : (

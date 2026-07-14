@@ -2,6 +2,14 @@
   min-width: 0;
 }
 
+.empty {
+  margin: 0;
+  padding: 1.5rem 0.75rem;
+  color: var(--ifm-color-emphasis-500);
+  font-size: 0.9rem;
+  text-align: center;
+}
+
 .plot {
   position: relative;
   display: flex;

@@ -286,6 +286,9 @@ const config: Config = {
   ],
 
   clientModules: [
+    // First: consoleSignature reads the live --ifm-color-primary, so the stored
+    // accent color has to be on :root before it runs.
+    require.resolve('./src/clientModules/applyPreferences.ts'),
     require.resolve('./src/clientModules/katexCopyTex.ts'),
     require.resolve('./src/clientModules/consoleSignature.ts'),
     require.resolve('./src/clientModules/konami.ts'),

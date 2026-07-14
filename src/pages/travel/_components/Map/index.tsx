@@ -36,9 +36,17 @@ import type { GlobeMethods, GlobeProps } from 'react-globe.gl';
 type GlobeComponent = ComponentType<GlobeProps & { ref?: RefObject<GlobeMethods | undefined> }>;
 type GlobeMaterial = NonNullable<GlobeProps['globeMaterial']>;
 
+// three.js GPU resources are not garbage-collected — they have to be disposed by
+// hand, so the shims carry `dispose` and the material carries its `map`.
+type GlobeTexture = { colorSpace: string; anisotropy: number; dispose: () => void };
+type DisposableMaterial = GlobeMaterial & {
+  map?: GlobeTexture | null;
+  dispose: () => void;
+};
+
 const three = require('three') as {
-  MeshBasicMaterial: new (parameters?: object) => GlobeMaterial;
-  CanvasTexture: new (canvas: HTMLCanvasElement) => { colorSpace: string; anisotropy: number };
+  MeshBasicMaterial: new (parameters?: object) => DisposableMaterial;
+  CanvasTexture: new (canvas: HTMLCanvasElement) => GlobeTexture;
   SRGBColorSpace: string;
 };
 
@@ -110,6 +118,7 @@ function TravelGlobeClient({ Globe }: { Globe: GlobeComponent }) {
   const [size, setSize] = useState({ width: 720, height: 500 });
   const [isGlobeReady, setIsGlobeReady] = useState(false);
   const [features, setFeatures] = useState<readonly GlobeCountryFeature[]>([]);
+  const [geoFailed, setGeoFailed] = useState(false);
 
   const lang = i18n.currentLocale === 'zh-Hans' ? 'zh' : 'en';
 
@@ -121,9 +130,19 @@ function TravelGlobeClient({ Globe }: { Globe: GlobeComponent }) {
   useEffect(() => {
     let cancelled = false;
     fetch(worldUrl)
-      .then((r) => r.json() as Promise<WorldGeoJson>)
+      .then((r) => {
+        if (!r.ok) throw new Error(`Failed to load ${worldUrl}: ${r.status}`);
+        return r.json() as Promise<WorldGeoJson>;
+      })
       .then((data) => {
         if (!cancelled) setFeatures(data.features);
+      })
+      .catch((error) => {
+        // Without the borders the globe can't be painted, but it can still show:
+        // fall through to the plain ocean sphere rather than an empty frame.
+        if (cancelled) return;
+        console.error(error);
+        setGeoFailed(true);
       });
     return () => {
       cancelled = true;
@@ -156,13 +175,27 @@ function TravelGlobeClient({ Globe }: { Globe: GlobeComponent }) {
     [colorMode]
   );
 
-  const globeMaterial = useMemo<GlobeMaterial>(() => {
+  const globeMaterial = useMemo<DisposableMaterial>(() => {
     if (features.length === 0) return new three.MeshBasicMaterial({ color: colors.ocean });
     const texture = new three.CanvasTexture(bakeGlobeTexture(features, visitedCountries, colors));
     texture.colorSpace = three.SRGBColorSpace;
     texture.anisotropy = 8;
     return new three.MeshBasicMaterial({ map: texture });
   }, [features, visitedCountries, colors]);
+
+  // Every rebake (borders landing, theme flip) mints a fresh 4096×2048 texture,
+  // and three.js GPU resources are never garbage-collected — a few theme toggles
+  // would strand hundreds of megabytes. Releasing the superseded material from a
+  // cleanup is safe here because react-kapsule pushes changed props to the globe
+  // *during render*, not from an effect, so it is already holding the new
+  // material by the time this runs.
+  useEffect(
+    () => () => {
+      globeMaterial.map?.dispose();
+      globeMaterial.dispose();
+    },
+    [globeMaterial]
+  );
 
   useEffect(() => {
     const element = frameRef.current;
@@ -285,8 +318,9 @@ function TravelGlobeClient({ Globe }: { Globe: GlobeComponent }) {
     setIsGlobeReady(true);
   };
 
-  // Ready = globe mounted, borders fetched, and the texture baked from them.
-  const isReady = isGlobeReady && features.length > 0;
+  // Ready = globe mounted, borders fetched, and the texture baked from them —
+  // or the borders failed, in which case the bare sphere is what we have.
+  const isReady = isGlobeReady && (features.length > 0 || geoFailed);
 
   return (
     <div className={styles.globeShell}>

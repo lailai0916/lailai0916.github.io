@@ -94,39 +94,65 @@ function getAdjustedColors(
   }));
 }
 
+// Written as inline custom properties on :root rather than as an injected
+// stylesheet rule: the rule-injection variant had to locate the hashed
+// stylesheet in document.styleSheets, which is only reliable once the sheet has
+// loaded — so it could not run from a client module before first paint.
 export function updateDOMColors(
   { shades, baseColor, background }: ColorState,
   isDarkTheme: boolean
 ): void {
-  const styleSheet = Array.from(document.styleSheets).find((item) =>
-    item.href?.match(/styles(?:\.[\da-f]+)?\.css/)
-  )!;
-  const rules = Array.from(styleSheet.cssRules) as CSSStyleRule[];
-  // The rule that looks the most like definition for custom theme colors
-  const ruleToDelete = rules.findIndex(
-    (rule) =>
-      rule.selectorText === (isDarkTheme ? '[data-theme="dark"]' : '[data-theme="light"]') &&
-      Array.from(rule.style).includes('--ifm-color-primary') &&
-      rule.style.length < 15
-  );
-  if (ruleToDelete >= 0) {
-    styleSheet.deleteRule(ruleToDelete);
+  const root = document.documentElement;
+
+  for (const { variableName, hex } of getAdjustedColors(shades, baseColor)) {
+    root.style.setProperty(variableName, hex);
   }
-
-  const defaultBackground = getThemeDefaults(isDarkTheme).background;
-
-  // Only emit a background override when it actually differs from the theme default.
-  const backgroundRule =
-    background !== defaultBackground ? `\n  --ifm-background-color: ${background};` : '';
 
   // Keep --ifm-color-primary-rgb in sync so rgba() consumers follow the theme color.
   const rgb = Color(baseColor).rgb().array();
-  const rgbRule = `\n  --ifm-color-primary-rgb: ${Math.round(rgb[0]!)}, ${Math.round(rgb[1]!)}, ${Math.round(rgb[2]!)};`;
+  root.style.setProperty(
+    '--ifm-color-primary-rgb',
+    `${Math.round(rgb[0]!)}, ${Math.round(rgb[1]!)}, ${Math.round(rgb[2]!)}`
+  );
 
-  const overrideStyle = `${isDarkTheme ? '[data-theme="dark"]' : '[data-theme="light"]'} {
-  ${getAdjustedColors(shades, baseColor)
-    .map((value) => `  ${value.variableName}: ${value.hex};`)
-    .join('\n')}${rgbRule}${backgroundRule}
-}`;
-  styleSheet.insertRule(overrideStyle, styleSheet.cssRules.length - 1);
+  // Only override the background when it actually differs from the theme default.
+  if (background !== getThemeDefaults(isDarkTheme).background) {
+    root.style.setProperty('--ifm-background-color', background);
+  } else {
+    root.style.removeProperty('--ifm-background-color');
+  }
+}
+
+// Build color state from the shared storage slot, falling back to theme
+// defaults. Background is theme-specific (white in light, dark in dark) and
+// not user-configurable, so it's always derived from the active theme.
+export function readStoredColorState(isDarkTheme: boolean): ColorState {
+  const defaults = getThemeDefaults(isDarkTheme);
+  if (typeof window === 'undefined') {
+    return {
+      baseColor: defaults.primary,
+      background: defaults.background,
+      shades: COLOR_SHADES,
+    };
+  }
+  let stored: Partial<ColorState> = {};
+  try {
+    stored = JSON.parse(themeStorage.get() ?? '{}') as Partial<ColorState>;
+  } catch {
+    // A corrupted slot falls back to the defaults rather than breaking the page.
+  }
+  return {
+    baseColor: stored.baseColor ?? defaults.primary,
+    background: defaults.background,
+    shades: stored.shades ?? COLOR_SHADES,
+  };
+}
+
+// Replays a stored accent color onto :root. Without this the color would only
+// apply while the settings page — the sole caller of useThemeColors — is mounted.
+// A visitor who never picked one keeps the stylesheet defaults untouched.
+export function applyStoredColors(): void {
+  if (themeStorage.get() === null) return;
+  const isDarkTheme = document.documentElement.dataset.theme === 'dark';
+  updateDOMColors(readStoredColorState(isDarkTheme), isDarkTheme);
 }

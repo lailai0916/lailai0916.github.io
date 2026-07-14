@@ -5,6 +5,7 @@ import {
   useEffect,
   useCallback,
   useMemo,
+  useRef,
   memo,
   Fragment,
   type ReactNode,
@@ -75,19 +76,35 @@ export default function NeuralNetwork({
   const [selectedNeuron, setSelectedNeuron] = useState<SelectedNeuron>(null);
   const [neurons, setNeurons] = useState<number[][]>([[], [], [], []]);
 
+  // The normalize animation re-schedules itself and the reveals are staged on
+  // timers; both outlive the component unless they're torn down here.
+  const rafRef = useRef(0);
+  const timeoutRef = useRef(0);
+  useEffect(
+    () => () => {
+      cancelAnimationFrame(rafRef.current);
+      clearTimeout(timeoutRef.current);
+    },
+    []
+  );
+
   useEffect(() => {
     if (weights !== null) {
       setDataLoaded(true);
       return;
     }
     fetch(dataUrl)
-      .then((r) => r.json())
+      .then((r) => {
+        if (!r.ok) throw new Error(`Failed to load ${dataUrl}: ${r.status}`);
+        return r.json();
+      })
       .then((data) => {
         weights = data.weights;
         biases = data.biases;
         threeImage = data.threeImage;
         setDataLoaded(true);
-      });
+      })
+      .catch(console.error);
   }, [dataUrl]);
 
   useEffect(() => {
@@ -119,7 +136,7 @@ export default function NeuralNetwork({
           );
           setIsNormalized(true);
           if (t < duration) {
-            requestAnimationFrame(frame);
+            rafRef.current = requestAnimationFrame(frame);
           } else {
             setNormalizing(false);
             resolve();
@@ -134,9 +151,11 @@ export default function NeuralNetwork({
   const animate = useCallback(() => {
     setAnimating(false);
     if (isNormalized) {
-      setTimeout(() => setAnimating(true), 1);
+      timeoutRef.current = window.setTimeout(() => setAnimating(true), 1);
     } else {
-      normalizePointsAnimated().then(() => setTimeout(() => setAnimating(true), 200));
+      normalizePointsAnimated().then(() => {
+        timeoutRef.current = window.setTimeout(() => setAnimating(true), 200);
+      });
     }
   }, [isNormalized, normalizePointsAnimated]);
 

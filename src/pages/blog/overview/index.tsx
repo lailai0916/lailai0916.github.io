@@ -24,6 +24,10 @@ const CUMULATIVE_TITLE = translate({
   id: 'pages.overview.chart.cumulative.title',
   message: 'Cumulative Posts',
 });
+const CHART_EMPTY = translate({
+  id: 'pages.overview.chart.empty',
+  message: 'No posts yet',
+});
 
 // Continuous monthly timeline (gap months filled with 0); year ticks on January.
 function buildMonths(items: ReturnType<typeof getAllBlogItems>, locale: string): ChartDatum[] {
@@ -149,6 +153,7 @@ export default function BlogStats(): ReactNode {
         title={MONTHLY_TITLE}
         icon="lucide:bar-chart-3"
         data={monthData}
+        emptyText={CHART_EMPTY}
         formatValue={postsLabel}
       />
       <Chart
@@ -156,6 +161,7 @@ export default function BlogStats(): ReactNode {
         title={CUMULATIVE_TITLE}
         icon="lucide:trending-up"
         data={cumulativeData}
+        emptyText={CHART_EMPTY}
         formatValue={postsLabel}
       />
     </BlogScaffold>

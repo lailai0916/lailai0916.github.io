@@ -24,6 +24,7 @@ import MetricList from './_components/MetricList';
 import metricListStyles from './_components/MetricList.module.css';
 import UptimeSection from './_components/UptimeSection';
 import SysStatusCard from './_components/SysStatusCard';
+import StatePanel from './_components/StatePanel';
 import styles from './styles.module.css';
 
 countries.registerLocale(countriesEn);
@@ -44,6 +45,10 @@ const MODIFICATION = translate({
 const METRIC_LIST_EMPTY = translate({
   id: 'pages.insights.metricList.empty',
   message: 'No Data Yet',
+});
+const ANALYTICS_ERROR = translate({
+  id: 'pages.insights.analytics.error',
+  message: 'Unable to load analytics data',
 });
 const ENV_OTHER = translate({
   id: 'pages.insights.env.other',
@@ -236,6 +241,8 @@ function HeroGrid({ range }: { range: InsightsRange }) {
     },
   ];
 
+  if (errored) return <StatePanel text={ANALYTICS_ERROR} />;
+
   return (
     <div className={styles.heroGrid}>
       {specs.map((spec) => {
@@ -247,7 +254,7 @@ function HeroGrid({ range }: { range: InsightsRange }) {
             spec={spec}
             current={current}
             previous={previous}
-            loading={loading || errored}
+            loading={loading}
           />
         );
       })}
@@ -334,7 +341,9 @@ function PageviewsChart({ range }: { range: InsightsRange }) {
         message: 'Pageviews Over Time',
       })}
       data={toPageviewsData(series, unit, currentLocale)}
-      loading={loading || series.length === 0}
+      loading={loading}
+      emptyText={METRIC_LIST_EMPTY}
+      error={status === 'error' ? ANALYTICS_ERROR : undefined}
       formatValue={pageviewsLabel}
       className={styles.chartCard}
     />
@@ -362,6 +371,7 @@ function MetricsGrid({ range }: { range: InsightsRange }) {
         items={pages.items}
         loading={pages.status === 'loading'}
         emptyText={METRIC_LIST_EMPTY}
+        error={pages.status === 'error' ? ANALYTICS_ERROR : undefined}
         renderLabel={(p) => <span title={p}>{p === '/' ? '/' : p}</span>}
         href={(p) => p}
       />
@@ -374,6 +384,7 @@ function MetricsGrid({ range }: { range: InsightsRange }) {
         items={referrers.items}
         loading={referrers.status === 'loading'}
         emptyText={METRIC_LIST_EMPTY}
+        error={referrers.status === 'error' ? ANALYTICS_ERROR : undefined}
         renderLabel={(r) =>
           r ? (
             <span title={r}>{r}</span>
@@ -397,6 +408,7 @@ function MetricsGrid({ range }: { range: InsightsRange }) {
         items={countriesMetric.items}
         loading={countriesMetric.status === 'loading'}
         emptyText={METRIC_LIST_EMPTY}
+        error={countriesMetric.status === 'error' ? ANALYTICS_ERROR : undefined}
         renderLabel={(code) => (
           <>
             <Icon
@@ -428,6 +440,7 @@ function EnvironmentGrid({ range }: { range: InsightsRange }) {
         items={browsers.items}
         loading={browsers.status === 'loading'}
         emptyText={METRIC_LIST_EMPTY}
+        error={browsers.status === 'error' ? ANALYTICS_ERROR : undefined}
         maxSlices={4}
         otherLabel={ENV_OTHER}
         renderLabel={(x) => BROWSER_LABELS[x.toLowerCase()] ?? titleCaseKey(x)}
@@ -441,6 +454,7 @@ function EnvironmentGrid({ range }: { range: InsightsRange }) {
         items={os.items}
         loading={os.status === 'loading'}
         emptyText={METRIC_LIST_EMPTY}
+        error={os.status === 'error' ? ANALYTICS_ERROR : undefined}
         maxSlices={4}
         otherLabel={ENV_OTHER}
         renderLabel={(x) => x || titleCaseKey(x)}
@@ -454,6 +468,7 @@ function EnvironmentGrid({ range }: { range: InsightsRange }) {
         items={devices.items}
         loading={devices.status === 'loading'}
         emptyText={METRIC_LIST_EMPTY}
+        error={devices.status === 'error' ? ANALYTICS_ERROR : undefined}
         maxSlices={4}
         otherLabel={ENV_OTHER}
         renderLabel={(x) => DEVICE_LABELS[x.toLowerCase()] ?? titleCaseKey(x)}

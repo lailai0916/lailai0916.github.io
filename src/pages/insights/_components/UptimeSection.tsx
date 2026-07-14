@@ -1,5 +1,4 @@
 import clsx from 'clsx';
-import { Icon } from '@iconify/react';
 import Link from '@docusaurus/Link';
 import { translate } from '@docusaurus/Translate';
 import Card from '@site/src/components/laikit/Card';
@@ -7,6 +6,7 @@ import Skeleton from '@site/src/components/laikit/Skeleton';
 import { useKumaStatus } from '@site/src/hooks/useKumaStatus';
 import type { KumaHeartbeat, KumaMonitor } from '@site/src/utils/kuma';
 import HeartbeatBar from './HeartbeatBar';
+import StatePanel from './StatePanel';
 import styles from './UptimeSection.module.css';
 
 function lastStatus(beats: KumaHeartbeat[] | undefined): number | undefined {
@@ -130,15 +130,12 @@ export default function UptimeSection() {
   return (
     <section className={styles.section}>
       {errored ? (
-        <Card padding="2rem 1.25rem" className={styles.statePanel}>
-          <Icon icon="lucide:cloud-off" className={styles.stateIcon} />
-          <p className={styles.stateText}>
-            {translate({
-              id: 'pages.insights.status.error',
-              message: 'Unable to reach status server',
-            })}
-          </p>
-        </Card>
+        <StatePanel
+          text={translate({
+            id: 'pages.insights.status.error',
+            message: 'Unable to reach status server',
+          })}
+        />
       ) : (
         <div className={styles.list}>
           {loading ? (

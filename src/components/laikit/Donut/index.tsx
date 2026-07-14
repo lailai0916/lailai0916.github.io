@@ -23,6 +23,9 @@ interface DonutProps {
   items: DonutRow[];
   loading?: boolean;
   emptyText: string;
+  // Set when the source fetch failed, so an unreachable endpoint reads as an
+  // error rather than as a legitimately empty dataset.
+  error?: string;
   // Collapse everything past the top (maxSlices - 1) into a neutral "Other"
   // slice, so a dominant category never shreds the ring into slivers. Also fixes
   // the row count so the legend area — and the skeleton — reserve equal height.
@@ -64,6 +67,7 @@ export default function Donut({
   items,
   loading,
   emptyText,
+  error,
   maxSlices,
   otherLabel,
   renderLabel,
@@ -166,6 +170,8 @@ export default function Donut({
             ))}
           </ul>
         </div>
+      ) : error ? (
+        <p className={styles.empty}>{error}</p>
       ) : total === 0 ? (
         <p className={styles.empty}>{emptyText}</p>
       ) : (

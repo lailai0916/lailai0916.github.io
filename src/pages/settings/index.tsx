@@ -19,6 +19,27 @@ import {
 } from '@site/src/hooks/useExperimentalFlag';
 import { useThemeColors } from '@site/src/hooks/useThemeColors';
 import { themeStorage } from '@site/src/utils/colorUtils';
+import {
+  FONT_FAMILY_KEY,
+  FONT_FAMILY_DEFAULT,
+  FONT_SIZE_KEY,
+  FONT_SIZE_DEFAULT,
+  FONT_SIZE_MIN,
+  FONT_SIZE_MAX,
+  FONT_STACKS,
+  LINE_HEIGHT_KEY,
+  LINE_HEIGHT_DEFAULT,
+  LINE_HEIGHT_MIN,
+  LINE_HEIGHT_MAX,
+  applyFontFamily,
+  applyFontSize,
+  applyLineHeight,
+  readFontSize,
+  readLineHeight,
+  writeFontSize,
+  writeLineHeight,
+  type FontFamilyChoice,
+} from '@site/src/utils/preferences';
 import { fireConfetti } from '@site/src/utils/confetti';
 import { Icon } from '@iconify/react';
 import { PageTitle, PageHeader, PageContent } from '@site/src/components/laikit/Page';
@@ -187,21 +208,14 @@ function AccentColor() {
   );
 }
 
-type FontFamilyChoice = 'system' | 'sans' | 'serif';
-
-const FONT_STACKS: Record<FontFamilyChoice, string> = {
-  system:
-    "-apple-system, BlinkMacSystemFont, 'PingFang SC', 'Microsoft YaHei', system-ui, 'Segoe UI', Roboto, sans-serif",
-  sans: "'Inter', -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Microsoft YaHei', 'Source Han Sans SC', 'Noto Sans CJK SC', system-ui, 'Segoe UI', Roboto, sans-serif",
-  serif:
-    "Georgia, 'Times New Roman', 'Songti SC', 'Source Han Serif SC', 'Noto Serif CJK SC', SimSun, serif",
-};
-
 function FontFamily() {
-  const [choice, setChoice] = usePersistentState<FontFamilyChoice>('font-family', 'system');
+  const [choice, setChoice] = usePersistentState<FontFamilyChoice>(
+    FONT_FAMILY_KEY,
+    FONT_FAMILY_DEFAULT
+  );
 
   useEffect(() => {
-    document.documentElement.style.setProperty('--ifm-font-family-base', FONT_STACKS[choice]);
+    applyFontFamily(choice);
   }, [choice]);
 
   const items: SegmentedItem<FontFamilyChoice>[] = [
@@ -250,37 +264,24 @@ function FontFamily() {
 }
 
 function Typography() {
-  const [fontSize, setFontSize] = useState<number>(16);
-  const [lineHeight, setLineHeight] = useState<number>(1.65);
+  // Seeded straight from storage: the previous shape read it in an effect, so a
+  // saved size rendered as the default for a frame before snapping. Nothing is
+  // applied on mount — `applyPreferences` already put it on :root at boot.
+  const [fontSize, setFontSize] = useState(() => readFontSize() ?? FONT_SIZE_DEFAULT);
+  const [lineHeight, setLineHeight] = useState(() => readLineHeight() ?? LINE_HEIGHT_DEFAULT);
 
-  useEffect(() => {
-    const root = document.documentElement;
-    const savedSize = localStorage.getItem('global-font-size');
-    const initialSize = savedSize ? parseInt(savedSize, 10) : 16;
-    setFontSize(initialSize);
-    root.style.setProperty('--global-font-size', `${initialSize}px`);
-
-    const savedLineHeight = localStorage.getItem('global-line-height');
-    const initialLineHeight = savedLineHeight ? parseFloat(savedLineHeight) : 1.65;
-    setLineHeight(initialLineHeight);
-    root.style.setProperty('--global-line-height', `${initialLineHeight}`);
-  }, []);
-
+  // Applied on release rather than per drag frame: --global-font-size reflows the
+  // whole document, so following the thumb would stutter under the cursor.
   const commitSize = (size: number) => {
-    document.documentElement.style.setProperty('--global-font-size', `${size}px`);
-    localStorage.setItem('global-font-size', size.toString());
+    applyFontSize(size);
+    writeFontSize(size);
   };
 
   const commitLineHeight = (value: number) => {
     const rounded = Math.round(value * 20) / 20;
-    document.documentElement.style.setProperty('--global-line-height', `${rounded}`);
-    localStorage.setItem('global-line-height', rounded.toString());
+    applyLineHeight(rounded);
+    writeLineHeight(rounded);
   };
-
-  const sizeMin = 12;
-  const sizeMax = 20;
-  const lineHeightMin = 1.3;
-  const lineHeightMax = 2.0;
 
   return (
     <TitleCard
@@ -309,8 +310,8 @@ function Typography() {
             { size: fontSize }
           )}
           value={fontSize}
-          min={sizeMin}
-          max={sizeMax}
+          min={FONT_SIZE_MIN}
+          max={FONT_SIZE_MAX}
           step={1}
           onChange={setFontSize}
           onCommit={commitSize}
@@ -322,8 +323,8 @@ function Typography() {
           })}
           valueLabel={lineHeight.toFixed(2)}
           value={lineHeight}
-          min={lineHeightMin}
-          max={lineHeightMax}
+          min={LINE_HEIGHT_MIN}
+          max={LINE_HEIGHT_MAX}
           step={0.05}
           onChange={(v) => setLineHeight(Math.round(v * 20) / 20)}
           onCommit={commitLineHeight}
@@ -415,9 +416,9 @@ function QuickActions() {
   function handleReset() {
     localStorage.removeItem('theme');
     themeStorage.del();
-    localStorage.removeItem('font-family');
-    localStorage.removeItem('global-font-size');
-    localStorage.removeItem('global-line-height');
+    localStorage.removeItem(FONT_FAMILY_KEY);
+    localStorage.removeItem(FONT_SIZE_KEY);
+    localStorage.removeItem(LINE_HEIGHT_KEY);
     localStorage.removeItem(EXPERIMENTAL_STORAGE_KEY);
     window.location.reload();
   }

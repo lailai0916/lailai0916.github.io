@@ -4,29 +4,10 @@ import type { ColorState } from '@site/src/utils/colorUtils';
 import {
   COLOR_SHADES,
   getThemeDefaults,
+  readStoredColorState,
   themeStorage,
   updateDOMColors,
 } from '@site/src/utils/colorUtils';
-
-// Build color state from the shared storage slot, falling back to theme
-// defaults. Background is theme-specific (white in light, dark in dark) and
-// not user-configurable, so it's always derived from the active theme.
-function readStoredColorState(isDarkTheme: boolean): ColorState {
-  const defaults = getThemeDefaults(isDarkTheme);
-  if (typeof window === 'undefined') {
-    return {
-      baseColor: defaults.primary,
-      background: defaults.background,
-      shades: COLOR_SHADES,
-    };
-  }
-  const stored = JSON.parse(themeStorage.get() ?? '{}') as Partial<ColorState>;
-  return {
-    baseColor: stored.baseColor ?? defaults.primary,
-    background: defaults.background,
-    shades: stored.shades ?? COLOR_SHADES,
-  };
-}
 
 export function useThemeColors(isDarkTheme: boolean) {
   const [colorState, setColorState] = useState<ColorState>(() => readStoredColorState(isDarkTheme));

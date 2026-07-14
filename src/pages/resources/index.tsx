@@ -186,18 +186,27 @@ function FilterBar({
   );
 }
 
+// A malformed href would otherwise throw out of render and blank the whole page;
+// LinkCard falls back to its icon when there is no image.
+function faviconUrl(href: string): string | undefined {
+  try {
+    return `https://www.google.com/s2/favicons?sz=64&domain=${new URL(href).hostname}`;
+  } catch {
+    return undefined;
+  }
+}
+
 function ResourceCard({
   resource,
 }: {
   resource: { title: string; description: string; href: string };
 }) {
-  const iconUrl = `https://www.google.com/s2/favicons?sz=64&domain=${new URL(resource.href).hostname}`;
   return (
     <LinkCard
       to={resource.href}
       title={resource.title}
       description={resource.description}
-      image={iconUrl}
+      image={faviconUrl(resource.href)}
       fallbackIcon="lucide:globe"
     />
   );

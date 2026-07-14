@@ -22,6 +22,10 @@ interface ChartProps {
   type: 'bar' | 'line';
   data: ChartDatum[];
   loading?: boolean;
+  emptyText: string;
+  // Set when the source fetch failed. Kept separate from `loading` so a dead
+  // endpoint can't render as an endless skeleton.
+  error?: string;
   className?: string;
   // Formats the hover tooltip value (e.g. add a pluralized unit); defaults to compact.
   formatValue?: (value: number) => string;
@@ -54,6 +58,8 @@ export default function Chart({
   type,
   data,
   loading,
+  emptyText,
+  error,
   className,
   formatValue,
 }: ChartProps) {
@@ -104,6 +110,10 @@ export default function Chart({
       ? `${linePath} L ${lineXAt(n - 1).toFixed(2)} ${VH} L ${lineXAt(0).toFixed(2)} ${VH} Z`
       : '';
 
+  // An errored fetch and a genuinely empty series both land here; neither is a
+  // loading state, so both get a message rather than a skeleton.
+  const message = error ?? (n === 0 ? emptyText : null);
+
   return (
     <TitleCard
       size="sm"
@@ -112,78 +122,92 @@ export default function Chart({
       padding="1.5rem 1.25rem 1.25rem"
       className={clsx(styles.card, className)}
     >
-      <div
-        ref={plotRef}
-        className={styles.plot}
-        onPointerMove={onPointerMove}
-        onPointerLeave={onPointerLeave}
-        role="img"
-        aria-label={title}
-      >
-        {loading ? (
-          <Skeleton width="100%" height="100%" radius={12} />
-        ) : (
-          <>
-            {gridLines.map((v) => (
-              <div key={v} className={styles.gridLine} style={{ bottom: `${(v / yMax) * 100}%` }}>
-                <span>{fmt(v)}</span>
-              </div>
-            ))}
-            {type === 'bar' ? (
-              data.map((d, i) => (
-                <div
-                  key={d.key}
-                  className={i === hoverIdx ? styles.barActive : styles.bar}
-                  style={{
-                    height: d.value === 0 ? 0 : `${(d.value / yMax) * 100}%`,
-                  }}
-                />
-              ))
+      {!loading && message ? (
+        <p className={styles.empty}>{message}</p>
+      ) : (
+        <>
+          <div
+            ref={plotRef}
+            className={styles.plot}
+            onPointerMove={onPointerMove}
+            onPointerLeave={onPointerLeave}
+            role="img"
+            aria-label={title}
+          >
+            {loading ? (
+              <Skeleton width="100%" height="100%" radius={12} />
             ) : (
-              <svg className={styles.svg} viewBox={`0 0 ${VW} ${VH}`} preserveAspectRatio="none">
-                {areaPath && <path className={styles.area} d={areaPath} />}
-                <path className={styles.line} d={linePath} vectorEffect="non-scaling-stroke" />
-              </svg>
-            )}
-            {active && (
               <>
-                <div className={styles.crosshair} style={{ left: `${activeLeftPct}%` }} />
-                {type === 'line' && (
+                {gridLines.map((v) => (
                   <div
-                    className={styles.dot}
-                    style={{
-                      left: `${activeLeftPct}%`,
-                      bottom: `${(active.value / yMax) * 100}%`,
-                    }}
-                  />
+                    key={v}
+                    className={styles.gridLine}
+                    style={{ bottom: `${(v / yMax) * 100}%` }}
+                  >
+                    <span>{fmt(v)}</span>
+                  </div>
+                ))}
+                {type === 'bar' ? (
+                  data.map((d, i) => (
+                    <div
+                      key={d.key}
+                      className={i === hoverIdx ? styles.barActive : styles.bar}
+                      style={{
+                        height: d.value === 0 ? 0 : `${(d.value / yMax) * 100}%`,
+                      }}
+                    />
+                  ))
+                ) : (
+                  <svg
+                    className={styles.svg}
+                    viewBox={`0 0 ${VW} ${VH}`}
+                    preserveAspectRatio="none"
+                  >
+                    {areaPath && <path className={styles.area} d={areaPath} />}
+                    <path className={styles.line} d={linePath} vectorEffect="non-scaling-stroke" />
+                  </svg>
                 )}
-                <Tooltip leftPct={activeLeftPct}>
-                  <Tooltip.Label>{active.tooltipLabel}</Tooltip.Label>
-                  <Tooltip.Value>{(formatValue ?? fmt)(active.value)}</Tooltip.Value>
-                </Tooltip>
+                {active && (
+                  <>
+                    <div className={styles.crosshair} style={{ left: `${activeLeftPct}%` }} />
+                    {type === 'line' && (
+                      <div
+                        className={styles.dot}
+                        style={{
+                          left: `${activeLeftPct}%`,
+                          bottom: `${(active.value / yMax) * 100}%`,
+                        }}
+                      />
+                    )}
+                    <Tooltip leftPct={activeLeftPct}>
+                      <Tooltip.Label>{active.tooltipLabel}</Tooltip.Label>
+                      <Tooltip.Value>{(formatValue ?? fmt)(active.value)}</Tooltip.Value>
+                    </Tooltip>
+                  </>
+                )}
               </>
             )}
-          </>
-        )}
-      </div>
-      <div className={styles.axis}>
-        {!loading &&
-          data.map((d, i) => {
-            if (!d.axisLabel) return null;
-            const lp = xPct(i);
-            // Nudge the edge ticks inward so they don't overflow the plot.
-            const tx = lp <= 0 ? '0' : lp >= 100 ? '-100%' : '-50%';
-            return (
-              <span
-                key={d.key}
-                className={styles.axisLabel}
-                style={{ left: `${lp}%`, transform: `translateX(${tx})` }}
-              >
-                {d.axisLabel}
-              </span>
-            );
-          })}
-      </div>
+          </div>
+          <div className={styles.axis}>
+            {!loading &&
+              data.map((d, i) => {
+                if (!d.axisLabel) return null;
+                const lp = xPct(i);
+                // Nudge the edge ticks inward so they don't overflow the plot.
+                const tx = lp <= 0 ? '0' : lp >= 100 ? '-100%' : '-50%';
+                return (
+                  <span
+                    key={d.key}
+                    className={styles.axisLabel}
+                    style={{ left: `${lp}%`, transform: `translateX(${tx})` }}
+                  >
+                    {d.axisLabel}
+                  </span>
+                );
+              })}
+          </div>
+        </>
+      )}
     </TitleCard>
   );
 }
