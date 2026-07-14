@@ -1,4 +1,4 @@
-import { Fragment, useEffect, useRef, useState } from 'react';
+import { Fragment, useEffect, useRef, useState, type CSSProperties } from 'react';
 import clsx from 'clsx';
 import Translate, { translate } from '@docusaurus/Translate';
 import Card from '@site/src/components/laikit/Card';
@@ -124,6 +124,28 @@ function RollingNumber({ value }: { value: string }) {
   );
 }
 
+// The birthday greeting: FINAL rendered one candy glyph at a time — fill and tilt cycle
+// every six via :nth-child, letters stagger in on --i, and the whole word is announced
+// once through the wrapper's aria-label. Candy-lettering look inspired by
+// https://x.com/Pusheen/status/1821577239168692577
+function Greeting() {
+  return (
+    <div className={styles.card} role="img" aria-label={FINAL}>
+      <p className={styles.wordmark} aria-hidden="true">
+        {[...FINAL].map((char, i) =>
+          char === ' ' ? (
+            ' '
+          ) : (
+            <span key={i} className={styles.letter} style={{ '--i': i } as CSSProperties}>
+              {char}
+            </span>
+          )
+        )}
+      </p>
+    </div>
+  );
+}
+
 export default function Countdown() {
   const [state, setState] = useState<CountdownState>(INITIAL_STATE);
   const celebrated = useRef(false);
@@ -150,10 +172,11 @@ export default function Countdown() {
   return (
     <Card className={styles.panel} padding="0">
       <div className={styles.body}>
-        <p className={clsx(styles.caption, state.isBirthday && styles.captionFinal)}>
-          {state.isBirthday ? (
-            FINAL
-          ) : (
+        <div
+          className={clsx(styles.countdown, state.isBirthday && styles.countdownHidden)}
+          aria-hidden={state.isBirthday || undefined}
+        >
+          <p className={styles.caption}>
             <Translate
               id="components.countdown.description"
               values={{
@@ -162,51 +185,55 @@ export default function Countdown() {
             >
               {'Time left until {event}'}
             </Translate>
-          )}
-        </p>
-        <div className={styles.clock} role="timer">
-          {TIME_UNITS.map(({ key, label }, i) => {
-            // Days get a fixed three-digit register (they are three digits for
-            // most of the year); the cyclic units keep the clock-style two.
-            const display = String(state[key]).padStart(key === 'days' ? 3 : 2, '0');
-            return (
-              <Fragment key={key}>
-                {i > 0 && (
-                  <span className={styles.colon} aria-hidden="true">
-                    :
-                  </span>
-                )}
-                <div className={styles.unit}>
-                  <span className={styles.value}>
-                    <RollingNumber value={display} />
-                    <span className={styles.srOnly}>{String(state[key])}</span>
-                  </span>
-                  <span className={styles.label}>{label}</span>
-                </div>
-              </Fragment>
-            );
-          })}
+          </p>
+          <div className={styles.clock} role="timer">
+            {TIME_UNITS.map(({ key, label }, i) => {
+              // Days get a fixed three-digit register (they are three digits for
+              // most of the year); the cyclic units keep the clock-style two.
+              const display = String(state[key]).padStart(key === 'days' ? 3 : 2, '0');
+              return (
+                <Fragment key={key}>
+                  {i > 0 && (
+                    <span className={styles.colon} aria-hidden="true">
+                      :
+                    </span>
+                  )}
+                  <div className={styles.unit}>
+                    <span className={styles.value}>
+                      <RollingNumber value={display} />
+                      <span className={styles.srOnly}>{String(state[key])}</span>
+                    </span>
+                    <span className={styles.label}>{label}</span>
+                  </div>
+                </Fragment>
+              );
+            })}
+          </div>
+          <div
+            className={styles.track}
+            role="progressbar"
+            aria-label={translate({
+              id: 'components.countdown.progress',
+              message: 'Year progress',
+            })}
+            aria-valuemin={0}
+            aria-valuemax={100}
+            aria-valuenow={percent}
+            title={`${percent}%`}
+          >
+            {Array.from({ length: TRACK_SEGMENTS }, (_, i) => (
+              <span key={i} className={styles.segment}>
+                <span
+                  className={styles.segmentFill}
+                  style={{
+                    transform: `scaleX(${Math.min(Math.max(state.progress * TRACK_SEGMENTS - i, 0), 1)})`,
+                  }}
+                />
+              </span>
+            ))}
+          </div>
         </div>
-        <div
-          className={styles.track}
-          role="progressbar"
-          aria-label={translate({ id: 'components.countdown.progress', message: 'Year progress' })}
-          aria-valuemin={0}
-          aria-valuemax={100}
-          aria-valuenow={percent}
-          title={`${percent}%`}
-        >
-          {Array.from({ length: TRACK_SEGMENTS }, (_, i) => (
-            <span key={i} className={styles.segment}>
-              <span
-                className={styles.segmentFill}
-                style={{
-                  transform: `scaleX(${Math.min(Math.max(state.progress * TRACK_SEGMENTS - i, 0), 1)})`,
-                }}
-              />
-            </span>
-          ))}
-        </div>
+        {state.isBirthday && <Greeting />}
       </div>
     </Card>
   );
