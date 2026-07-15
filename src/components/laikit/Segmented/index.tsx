@@ -1,4 +1,4 @@
-import type { CSSProperties } from 'react';
+import { useRef, type CSSProperties, type KeyboardEvent } from 'react';
 import clsx from 'clsx';
 import Link from '@docusaurus/Link';
 import { Icon } from '@iconify/react';
@@ -24,6 +24,11 @@ interface SegmentedProps<T> {
   onChange?: (value: T) => void;
   orientation?: 'vertical' | 'horizontal';
   className?: string;
+  /**
+   * Accessible name for the group. Applied to the radiogroup in button mode;
+   * href (navigation) mode ignores it since each link names itself.
+   */
+  ariaLabel?: string;
 }
 
 export default function Segmented<T>({
@@ -32,7 +37,26 @@ export default function Segmented<T>({
   onChange,
   orientation = 'vertical',
   className,
+  ariaLabel,
 }: SegmentedProps<T>) {
+  // href items are navigation (aria-current); button items are a single-select
+  // radiogroup (aria-checked + roving tabindex + arrow-key movement).
+  const isNav = items.some((item) => item.href != null);
+  const buttonRefs = useRef<(HTMLButtonElement | null)[]>([]);
+  const activeExists = items.some((item) => item.value === value);
+
+  const moveFocus = (event: KeyboardEvent<HTMLButtonElement>, index: number) => {
+    const [next, prev] =
+      orientation === 'horizontal' ? ['ArrowRight', 'ArrowLeft'] : ['ArrowDown', 'ArrowUp'];
+    const dir = event.key === next ? 1 : event.key === prev ? -1 : 0;
+    if (dir === 0) return;
+    event.preventDefault();
+    const n = items.length;
+    const target = (index + dir + n) % n;
+    onChange?.(items[target].value);
+    buttonRefs.current[target]?.focus();
+  };
+
   return (
     <div
       className={clsx(
@@ -40,8 +64,11 @@ export default function Segmented<T>({
         orientation === 'horizontal' && styles.horizontal,
         className
       )}
+      role={isNav ? undefined : 'radiogroup'}
+      aria-label={isNav ? undefined : ariaLabel}
+      aria-orientation={isNav ? undefined : orientation}
     >
-      {items.map((item) => {
+      {items.map((item, index) => {
         const isActive = value === item.value;
         const itemClass = clsx(styles.item, isActive && styles.itemActive);
         const inner = (
@@ -69,11 +96,19 @@ export default function Segmented<T>({
         return (
           <button
             key={key}
+            ref={(el) => {
+              buttonRefs.current[index] = el;
+            }}
             type="button"
             className={itemClass}
             style={item.style}
             onClick={() => onChange?.(item.value)}
-            aria-pressed={isActive}
+            onKeyDown={(e) => moveFocus(e, index)}
+            role="radio"
+            aria-checked={isActive}
+            // Roving tabindex: only the checked radio is in the tab order (fall
+            // back to the first when the current value matches no item).
+            tabIndex={isActive || (!activeExists && index === 0) ? 0 : -1}
           >
             {inner}
           </button>

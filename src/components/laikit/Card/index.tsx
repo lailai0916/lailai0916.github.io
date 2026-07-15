@@ -45,7 +45,9 @@ function CardSurface({
           ? style
           : ({
               ...style,
-              '--card-padding': padding,
+              // A bare number would land as an invalid `--card-padding: 16`
+              // (custom properties skip React's px coercion), voiding the rule.
+              '--card-padding': typeof padding === 'number' ? `${padding}px` : padding,
             } as CSSProperties)
       }
     >

@@ -44,6 +44,13 @@
 
   /* Focus ring — one definition shared by every interactive surface. */
   --lk-focus-ring: 0 0 0 3px color-mix(in srgb, var(--ifm-color-primary) 22%, transparent);
+
+  /* Corner radius scale. lg is the laikit card standard; Infima's own card var
+     is pinned to it so framework-derived surfaces round the same as laikit. */
+  --lk-radius-sm: 6px;
+  --lk-radius-md: 8px;
+  --lk-radius-lg: 16px;
+  --ifm-card-border-radius: var(--lk-radius-lg);
 }
 
 [data-theme='dark'] {

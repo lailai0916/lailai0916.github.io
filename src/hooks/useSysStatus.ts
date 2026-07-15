@@ -47,12 +47,23 @@ export function useSysStatus() {
       }
     };
 
-    fetchOnce();
-    const id = window.setInterval(fetchOnce, POLL_MS);
+    // Poll only while the tab is visible — a backgrounded Insights page was
+    // hitting the endpoint every 2s indefinitely for numbers no one could see.
+    let id = 0;
+    const start = () => {
+      fetchOnce();
+      id = window.setInterval(fetchOnce, POLL_MS);
+    };
+    const stop = () => window.clearInterval(id);
+    const onVisibility = () => (document.hidden ? stop() : start());
+
+    if (!document.hidden) start();
+    document.addEventListener('visibilitychange', onVisibility);
     return () => {
       aliveRef.current = false;
       controller.abort();
-      window.clearInterval(id);
+      stop();
+      document.removeEventListener('visibilitychange', onVisibility);
     };
   }, []);
 

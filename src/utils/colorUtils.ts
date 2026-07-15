@@ -72,10 +72,10 @@ const THEME_CONFIG = {
   },
 } as const;
 
-// sessionStorage so customizations reset the next time users visit the site.
-// Light and dark mode share a single accent color, so they share storage too.
+// localStorage so a chosen accent survives a reload — the whole point of the
+// settings tile. Light and dark mode share one accent, so they share storage too.
 export const themeStorage = createStorageSlot('ifm-theme-colors', {
-  persistence: 'sessionStorage',
+  persistence: 'localStorage',
 });
 
 export function getThemeDefaults(isDarkTheme: boolean) {

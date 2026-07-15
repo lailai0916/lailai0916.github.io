@@ -88,14 +88,15 @@ function ThemeSettings() {
     },
   ];
   const { colorModeChoice, setColorMode } = useColorMode();
+  const title = translate({
+    id: 'pages.settings.item.theme.title',
+    message: 'Theme',
+  });
 
   return (
     <TitleCard
       icon="lucide:monitor"
-      title={translate({
-        id: 'pages.settings.item.theme.title',
-        message: 'Theme',
-      })}
+      title={title}
       description={translate({
         id: 'pages.settings.item.theme.description',
         message: 'Switch between light, dark, or system',
@@ -106,6 +107,7 @@ function ThemeSettings() {
         value={colorModeChoice as ThemeChoice}
         items={themeOptions}
         onChange={(v) => setColorMode(v)}
+        ariaLabel={title}
       />
     </TitleCard>
   );
@@ -245,12 +247,14 @@ function FontFamily() {
     },
   ];
 
+  const title = translate({
+    id: 'pages.settings.item.fontFamily.title',
+    message: 'Font Family',
+  });
+
   return (
     <TitleCard
-      title={translate({
-        id: 'pages.settings.item.fontFamily.title',
-        message: 'Font Family',
-      })}
+      title={title}
       description={translate({
         id: 'pages.settings.item.fontFamily.description',
         message: 'Choose between system, sans, or serif',
@@ -258,7 +262,12 @@ function FontFamily() {
       icon="lucide:case-sensitive"
       bodyAlign="bottom"
     >
-      <Segmented<FontFamilyChoice> value={choice} items={items} onChange={setChoice} />
+      <Segmented<FontFamilyChoice>
+        value={choice}
+        items={items}
+        onChange={setChoice}
+        ariaLabel={title}
+      />
     </TitleCard>
   );
 }
@@ -477,12 +486,23 @@ function QuickActions() {
 }
 
 export default function Settings(): ReactNode {
+  // Order is the a1..a6 grid-area sequence in styles.module.css; the DataCard
+  // count derives from it so the two can never drift.
+  const tiles = [
+    <ThemeSettings key="theme" />,
+    <AccentColor key="color" />,
+    <FontFamily key="fontFamily" />,
+    <Typography key="typography" />,
+    <ExperimentalFeatures key="experimental" />,
+    <QuickActions key="quickActions" />,
+  ];
+
   return (
     <Layout title={TITLE} description={DESCRIPTION}>
       <PageHeader>
         <PageTitle title={MODIFICATION} description={DESCRIPTION} />
         <DataCard
-          value={6}
+          value={tiles.length}
           label={translate({
             id: 'pages.settings.datacard.label',
             message: 'Setting|Settings',
@@ -490,14 +510,7 @@ export default function Settings(): ReactNode {
           icon="lucide:settings"
         />
       </PageHeader>
-      <PageContent className={styles.layout}>
-        <ThemeSettings />
-        <AccentColor />
-        <FontFamily />
-        <Typography />
-        <ExperimentalFeatures />
-        <QuickActions />
-      </PageContent>
+      <PageContent className={styles.layout}>{tiles}</PageContent>
     </Layout>
   );
 }

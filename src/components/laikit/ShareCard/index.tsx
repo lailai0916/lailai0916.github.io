@@ -13,7 +13,6 @@ export interface ShareCardProps {
   title: string;
   description?: string;
   image?: string;
-  source?: ShareSource;
 }
 
 const SOURCE_RULES: Array<{ test: RegExp; label: string; icon: string }> = [
@@ -81,9 +80,9 @@ function inferSource(url: string): ShareSource {
   }
 }
 
-export default function ShareCard({ url, title, description, image, source }: ShareCardProps) {
+export default function ShareCard({ url, title, description, image }: ShareCardProps) {
   const { imgRef, status, onLoad, onError } = useImageStatus(image);
-  const resolvedSource = source ?? inferSource(url);
+  const resolvedSource = inferSource(url);
   const showImage = !!image && status !== 'error';
 
   return (

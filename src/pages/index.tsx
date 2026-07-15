@@ -213,29 +213,27 @@ export default function Home(): ReactNode {
     <Layout title={siteConfig.title} description={siteConfig.tagline} noFooter>
       <section className={styles.hero}>
         <div className={styles.bento}>
-          <Link to="/about" className={styles.cardMainLink}>
-            <Card className={styles.cardMain}>
-              <Icon icon="lucide:arrow-up-right" className={styles.cardMainArrow} />
-              <div className={styles.cardMainInner}>
-                <img src={useBaseUrl('/img/logo.svg')} alt="lailai" className={styles.avatar} />
-                <div className={styles.intro}>
-                  <h1 className={styles.name}>lailai</h1>
-                  <p className={styles.role}>
-                    {rolePrefix}
-                    <span className={styles.roleTyping}>{identity}</span>
-                    <span className={styles.roleCursor} aria-hidden="true" />
-                  </p>
-                </div>
+          <Card to="/about" wrapperClassName={styles.cardMainLink} className={styles.cardMain}>
+            <Icon icon="lucide:arrow-up-right" className={styles.cardMainArrow} />
+            <div className={styles.cardMainInner}>
+              <img src={useBaseUrl('/img/logo.svg')} alt="lailai" className={styles.avatar} />
+              <div className={styles.intro}>
+                <h1 className={styles.name}>lailai</h1>
+                <p className={styles.role}>
+                  {rolePrefix}
+                  <span className={styles.roleTyping}>{identity}</span>
+                  <span className={styles.roleCursor} aria-hidden="true" />
+                </p>
               </div>
-              <div className={styles.profileTags}>
-                {profileTags.map((tag) => (
-                  <Badge key={tag.label} icon={tag.icon}>
-                    {tag.label}
-                  </Badge>
-                ))}
-              </div>
-            </Card>
-          </Link>
+            </div>
+            <div className={styles.profileTags}>
+              {profileTags.map((tag) => (
+                <Badge key={tag.label} icon={tag.icon}>
+                  {tag.label}
+                </Badge>
+              ))}
+            </div>
+          </Card>
           {navItems.map((item, index) => (
             <Card
               key={item.href}

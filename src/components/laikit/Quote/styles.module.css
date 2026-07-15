@@ -4,6 +4,7 @@
   margin: 2.5rem auto;
   padding: 0.5rem 1rem;
   max-width: 60ch;
+  text-align: center;
 }
 
 @media (max-width: 600px) {
@@ -11,26 +12,6 @@
     margin: 1.75rem auto;
     padding: 0.25rem 0.5rem;
   }
-}
-
-.variantBlock {
-  text-align: left;
-  padding: 0.5rem 0 0.5rem 1.5rem;
-  border-left: 3px solid color-mix(in srgb, var(--ifm-color-primary) 60%, transparent);
-}
-
-.variantBlock .attribution {
-  text-align: right;
-}
-
-@media (max-width: 600px) {
-  .variantBlock {
-    padding-left: 1rem;
-  }
-}
-
-.variantCentered {
-  text-align: center;
 }
 
 .icon {

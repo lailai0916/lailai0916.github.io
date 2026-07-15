@@ -87,11 +87,22 @@ function usePing(): number | null {
         if (!stopped) setVal(null);
       }
     };
-    measure();
-    const id = window.setInterval(measure, PING_INTERVAL);
+    // Ping only while the tab is visible; a hidden Insights page shouldn't keep
+    // pinging every 2s.
+    let id = 0;
+    const start = () => {
+      measure();
+      id = window.setInterval(measure, PING_INTERVAL);
+    };
+    const stop = () => window.clearInterval(id);
+    const onVisibility = () => (document.hidden ? stop() : start());
+
+    if (!document.hidden) start();
+    document.addEventListener('visibilitychange', onVisibility);
     return () => {
       stopped = true;
-      window.clearInterval(id);
+      stop();
+      document.removeEventListener('visibilitychange', onVisibility);
     };
   }, []);
   return val;
@@ -104,6 +115,24 @@ function useNow(): Date {
     return () => window.clearInterval(id);
   }, []);
   return now;
+}
+
+// The two time-derived cells own their own clock so the once-a-second tick
+// re-renders just them, not the whole 15-cell grid + card around them.
+function ClockCell() {
+  const now = useNow();
+  return <Cell label="datetime" value={formatDateTime(now)} />;
+}
+
+function DeployCell({ value }: { value: number | null }) {
+  const now = useNow();
+  return (
+    <Cell
+      label="last_deploy"
+      value={value == null ? '—' : formatRelative(value, now.getTime())}
+      valueClassName={value == null ? styles.muted : undefined}
+    />
+  );
 }
 
 function Cell({
@@ -139,7 +168,6 @@ function SysStatusCardInner() {
   const tlsExpires = sys?.tls_expires_in ?? null;
   const ip = sys?.ip ?? null;
   const ping = usePing();
-  const now = useNow();
 
   const [browser, setBrowser] = useState('—');
   const [host, setHost] = useState('—');
@@ -154,7 +182,6 @@ function SysStatusCardInner() {
   const loadStr = load1 == null ? '—' : load1.toFixed(2);
   const diskStr = disk == null ? '—' : `${disk.toFixed(1)}%`;
   const swapStr = swap == null ? '—' : `${swap.toFixed(1)}%`;
-  const lastDeployStr = lastDeploy == null ? '—' : formatRelative(lastDeploy, now.getTime());
   const tlsStr = tlsExpires == null ? '—' : `${tlsExpires}d`;
   const ipNode = ip == null ? '—' : <span title={ip}>{formatIp(ip)}</span>;
   const mutedIfNull = (v: unknown) => (v == null ? styles.muted : undefined);
@@ -179,13 +206,13 @@ function SysStatusCardInner() {
         <Cell label="ip" value={ipNode} valueClassName={mutedIfNull(ip)} />
         <Cell label="ping" value={pingStr} valueClassName={mutedIfNull(ping)} />
         <Cell label="uptime" value={uptimeStr} valueClassName={mutedIfNull(serverUptime)} />
-        <Cell label="last_deploy" value={lastDeployStr} valueClassName={mutedIfNull(lastDeploy)} />
+        <DeployCell value={lastDeploy} />
         <Cell label="tls_expires" value={tlsStr} valueClassName={mutedIfNull(tlsExpires)} />
         <Cell label="build_time" value={formatBuildTime(buildTime)} />
         <Cell label="debug_id" value={debugId} />
         <Cell label="host" value={host} />
         <Cell label="browser" value={browser} />
-        <Cell label="datetime" value={formatDateTime(now)} />
+        <ClockCell />
       </div>
 
       <span className={styles.srOnly}>

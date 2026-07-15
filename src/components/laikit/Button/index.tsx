@@ -3,7 +3,7 @@ import clsx from 'clsx';
 import styles from './styles.module.css';
 
 type ButtonVariant = 'primary' | 'secondary' | 'ghost';
-type ButtonSize = 'sm' | 'md' | 'lg';
+type ButtonSize = 'sm' | 'md';
 
 type ButtonProps = Omit<ButtonHTMLAttributes<HTMLButtonElement>, 'type'> & {
   variant?: ButtonVariant;
@@ -12,7 +12,6 @@ type ButtonProps = Omit<ButtonHTMLAttributes<HTMLButtonElement>, 'type'> & {
   active?: boolean;
   fullWidth?: boolean;
   leftIcon?: ReactNode;
-  rightIcon?: ReactNode;
   type?: 'button' | 'submit' | 'reset';
 };
 
@@ -25,7 +24,6 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(function Button(
     active = false,
     fullWidth = false,
     leftIcon,
-    rightIcon,
     type = 'button',
     className,
     ...rest
@@ -49,7 +47,6 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(function Button(
     >
       {leftIcon != null && <span className={styles.icon}>{leftIcon}</span>}
       {children != null && <span className={styles.label}>{children}</span>}
-      {rightIcon != null && <span className={styles.icon}>{rightIcon}</span>}
     </button>
   );
 });

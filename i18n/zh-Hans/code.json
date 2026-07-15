@@ -188,6 +188,9 @@
   "pages.insights.range.1y": {
     "message": "近 1 年"
   },
+  "pages.insights.range.ariaLabel": {
+    "message": "时间范围"
+  },
   "pages.insights.unit.pageviews": {
     "message": "{count} 次浏览"
   },
@@ -651,7 +654,7 @@
     "message": "运行时快照"
   },
   "pages.insights.systemStatus.srLabel": {
-    "message": "System status overview"
+    "message": "系统状态概览"
   },
   "pages.insights.uptime.avgPing": {
     "message": "平均 {ping}ms"

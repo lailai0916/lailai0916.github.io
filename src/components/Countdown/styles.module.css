@@ -64,8 +64,8 @@
   margin: 0;
   text-align: center;
   white-space: nowrap;
-  font-family: ui-rounded, 'SF Pro Rounded', 'Hiragino Maru Gothic ProN', 'Segoe UI', system-ui,
-    sans-serif;
+  font-family:
+    ui-rounded, 'SF Pro Rounded', 'Hiragino Maru Gothic ProN', 'Segoe UI', system-ui, sans-serif;
   font-size: clamp(1.9rem, 10cqi, 3.15rem);
   font-weight: 800;
   letter-spacing: 0.02em;
