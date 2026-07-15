@@ -52,7 +52,7 @@ const STATIC_MOMENTS: MomentItem[] = [
   },
   {
     date: '2026-06-02T12:00:00+08:00',
-    content: '「宇宙中随机出现一部 iPhone 的概率极低——但却已经发生了。」',
+    content: '「宇宙中随机出现一部 iPhone 的概率极低，但已经发生过了。」',
   },
   {
     date: '2026-05-31T15:55:00+08:00',
