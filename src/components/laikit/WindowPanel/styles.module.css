@@ -81,6 +81,13 @@
   border-color: rgba(255, 255, 255, 0.14);
 }
 
+.right {
+  align-items: center;
+  display: inline-flex;
+  flex-shrink: 0;
+  gap: 10px;
+}
+
 .toggle {
   align-items: center;
   appearance: none;
@@ -120,9 +127,8 @@
   width: 16px;
 }
 
-/* The window height is driven from the measured demo height (see index.tsx), so
-   collapse/expand and demo switches animate to the real content height — no
-   snapping, no reserved dead space. */
+/* Height is driven from the measured content (see index.tsx), so collapse/
+   expand and tab switches animate to the real height. */
 .viewport {
   overflow: hidden;
   transition: height 240ms ease;

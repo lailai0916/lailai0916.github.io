@@ -42,22 +42,24 @@ export interface KumaHeartbeatData {
   uptimeList: Record<string, number>;
 }
 
-async function kumaFetchJson<T>(path: string): Promise<T> {
-  const res = await fetch(`${KUMA_BASE}${path}`);
+async function kumaFetchJson<T>(path: string, signal?: AbortSignal): Promise<T> {
+  const res = await fetch(`${KUMA_BASE}${path}`, { signal });
   if (!res.ok) {
     throw new Error(`Kuma request failed: ${res.status}`);
   }
   return (await res.json()) as T;
 }
 
-export function getStatusPage(): Promise<KumaStatusPageData> {
+export function getStatusPage(signal?: AbortSignal): Promise<KumaStatusPageData> {
   return kumaFetchJson<KumaStatusPageData>(
-    `/api/status-page/${encodeURIComponent(KUMA_STATUS_SLUG)}`
+    `/api/status-page/${encodeURIComponent(KUMA_STATUS_SLUG)}`,
+    signal
   );
 }
 
-export function getHeartbeats(): Promise<KumaHeartbeatData> {
+export function getHeartbeats(signal?: AbortSignal): Promise<KumaHeartbeatData> {
   return kumaFetchJson<KumaHeartbeatData>(
-    `/api/status-page/heartbeat/${encodeURIComponent(KUMA_STATUS_SLUG)}`
+    `/api/status-page/heartbeat/${encodeURIComponent(KUMA_STATUS_SLUG)}`,
+    signal
   );
 }

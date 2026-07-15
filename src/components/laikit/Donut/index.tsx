@@ -182,7 +182,7 @@ export default function Donut({
             onPointerMove={onPlotMove}
             onPointerLeave={() => setActive(null)}
           >
-            <svg className={styles.svg} viewBox="0 0 100 100" role="img" aria-label={title}>
+            <svg className={styles.svg} viewBox="0 0 100 100" aria-hidden="true">
               <g transform="rotate(-90 50 50)">
                 {segments.map((seg, i) => {
                   const drawLen = seg.frac * available;

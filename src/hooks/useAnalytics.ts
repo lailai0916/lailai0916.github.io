@@ -1,14 +1,12 @@
-import { useEffect, useState } from 'react';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import { applyTrailingSlash } from '@docusaurus/utils-common';
 import { umamiFetchJson } from '@site/src/utils/umami';
+import { useFetch } from './useFetch';
 
 export interface AnalyticsData {
   visitors?: number;
   pageviews?: number;
 }
-
-export type AnalyticsStatus = 'loading' | 'success' | 'error';
 
 interface UmamiStatsResponse {
   pageviews?: number;
@@ -20,8 +18,6 @@ interface UmamiStatsResponse {
 
 export function useAnalytics(rawPath: string = '') {
   const { siteConfig } = useDocusaurusContext();
-  const [analytics, setAnalytics] = useState<AnalyticsData>({});
-  const [status, setStatus] = useState<AnalyticsStatus>('loading');
 
   // Umami records the canonical URL Docusaurus serves (per `trailingSlash`), but
   // an index.mdx doc's `permalink` keeps a trailing slash (`/docs/note/`) that
@@ -34,38 +30,18 @@ export function useAnalytics(rawPath: string = '') {
       })
     : '';
 
-  useEffect(() => {
-    const controller = new AbortController();
-
-    (async () => {
-      setStatus('loading');
-      try {
-        const data = await umamiFetchJson<UmamiStatsResponse>(
-          '/api/websites/{id}/stats',
-          {
-            startAt: 0,
-            endAt: Date.now(),
-            ...(path ? { path } : {}),
-          },
-          { signal: controller.signal }
-        );
-
-        if (controller.signal.aborted) return;
-
-        setAnalytics({
-          visitors: data.visitors,
-          pageviews: data.pageviews,
-        });
-        setStatus('success');
-      } catch (error) {
-        if (controller.signal.aborted) return;
-        console.error(error);
-        setStatus('error');
-      }
-    })();
-
-    return () => controller.abort();
-  }, [path]);
+  const { data: analytics, status } = useFetch<AnalyticsData>(
+    async (signal) => {
+      const data = await umamiFetchJson<UmamiStatsResponse>(
+        '/api/websites/{id}/stats',
+        { startAt: 0, endAt: Date.now(), ...(path ? { path } : {}) },
+        { signal }
+      );
+      return { visitors: data.visitors, pageviews: data.pageviews };
+    },
+    [path],
+    {}
+  );
 
   return { analytics, status };
 }

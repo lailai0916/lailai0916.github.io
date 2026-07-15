@@ -94,7 +94,7 @@
   z-index: 50;
   background: var(--ifm-card-background-color);
   border: 1px solid var(--ifm-color-emphasis-200);
-  border-radius: var(--ifm-card-border-radius);
+  border-radius: var(--lk-radius-lg);
   box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
   overflow: hidden;
 }
@@ -232,7 +232,7 @@
   text-align: center;
   padding: 4rem 1rem;
   border: 1px dashed var(--ifm-color-emphasis-300);
-  border-radius: var(--ifm-card-border-radius);
+  border-radius: var(--lk-radius-lg);
   background-color: var(--ifm-color-emphasis-100);
 }
 

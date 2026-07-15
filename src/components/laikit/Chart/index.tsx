@@ -131,8 +131,7 @@ export default function Chart({
             className={styles.plot}
             onPointerMove={onPointerMove}
             onPointerLeave={onPointerLeave}
-            role="img"
-            aria-label={title}
+            aria-hidden="true"
           >
             {loading ? (
               <Skeleton width="100%" height="100%" radius={12} />
@@ -206,6 +205,19 @@ export default function Chart({
                 );
               })}
           </div>
+          {!loading && (
+            <table className="sr-only">
+              <caption>{title}</caption>
+              <tbody>
+                {data.map((d) => (
+                  <tr key={d.key}>
+                    <th scope="row">{d.tooltipLabel}</th>
+                    <td>{(formatValue ?? fmt)(d.value)}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          )}
         </>
       )}
     </TitleCard>

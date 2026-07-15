@@ -1,12 +1,9 @@
-import { useMemo, useRef, useState, type ComponentType } from 'react';
-import clsx from 'clsx';
+import { useMemo, type ComponentType } from 'react';
 import Link from '@docusaurus/Link';
 import CodeBlock from '@theme/CodeBlock';
 import Admonition from '@theme/Admonition';
 import { translate } from '@docusaurus/Translate';
-import Card from '@site/src/components/laikit/Card';
-import WindowBar from '@site/src/components/laikit/WindowBar';
-import { useMeasuredHeight } from '@site/src/hooks/useMeasuredHeight';
+import WindowPanel, { type WindowPanelTab } from '@site/src/components/laikit/WindowPanel';
 import { formatBytes } from '@site/src/utils/format';
 
 import styles from './styles.module.css';
@@ -45,90 +42,45 @@ function formatCodeTitle(p: string): string {
 }
 
 function ProblemPanel({ tabs }: { tabs: Tab[] }) {
-  const [active, setActive] = useState<number | null>(0);
-  const lastIdx = useRef(0);
-  if (active !== null) lastIdx.current = active;
-  const open = active !== null;
-  const displayed = tabs[active ?? lastIdx.current];
-  const showMeta = open && displayed.kind === 'code';
-  // Animate the panel height to the real content on collapse/expand and tab
-  // switches, shared with the playground Showcase.
-  const [contentRef, contentHeight] = useMeasuredHeight<HTMLDivElement>(active);
+  const panelTabs: WindowPanelTab[] = tabs.map((t) =>
+    t.kind === 'code'
+      ? {
+          label: t.label,
+          // Full-bleed bare CodeBlock, so skip WindowPanel's padded body wrapper.
+          bare: true,
+          content: (
+            <CodeBlock language="cpp" className="codeBlockBare">
+              {t.code}
+            </CodeBlock>
+          ),
+        }
+      : { label: t.label, content: <t.Render /> }
+  );
 
   return (
-    <Card padding={0} className={clsx(styles.panel, open && styles.panelOpen)}>
-      <WindowBar className={styles.header}>
-        <div className={styles.tabs} role="tablist">
-          {tabs.map((t, i) => (
-            <button
-              key={i}
-              type="button"
-              role="tab"
-              aria-selected={i === active}
-              className={clsx(styles.tab, i === active && styles.tabActive)}
-              onClick={() => setActive((cur) => (cur === i ? null : i))}
-            >
-              {t.label}
-            </button>
-          ))}
-        </div>
-        <div className={styles.right}>
-          {showMeta && displayed.kind === 'code' && (
-            <span className={styles.meta} aria-hidden="true">
-              <span className={styles.size}>
-                {formatBytes(new TextEncoder().encode(displayed.code).length)}
-              </span>
-              <span className={styles.language}>cpp</span>
+    <WindowPanel
+      tabs={panelTabs}
+      collapseLabel={translate({
+        id: 'components.problem.collapse',
+        message: 'Collapse',
+      })}
+      expandLabel={translate({
+        id: 'components.problem.expand',
+        message: 'Expand',
+      })}
+      toolbar={(idx, open) => {
+        const t = tabs[idx];
+        if (!open || t.kind !== 'code') return null;
+        return (
+          <span className={styles.meta} aria-hidden="true">
+            <span className={styles.size}>
+              {formatBytes(new TextEncoder().encode(t.code).length)}
             </span>
-          )}
-          <button
-            type="button"
-            className={styles.toggle}
-            aria-expanded={open}
-            aria-label={
-              open
-                ? translate({
-                    id: 'components.problem.collapse',
-                    message: 'Collapse',
-                  })
-                : translate({
-                    id: 'components.problem.expand',
-                    message: 'Expand',
-                  })
-            }
-            onClick={() => setActive((cur) => (cur === null ? 0 : null))}
-          >
-            <svg className={styles.chevron} viewBox="0 0 20 20" aria-hidden="true">
-              <path
-                d="M5 8l5 5 5-5"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="1.6"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </svg>
-          </button>
-        </div>
-      </WindowBar>
-      <div
-        className={styles.viewport}
-        style={{ height: open ? contentHeight : 0 }}
-        aria-hidden={!open}
-      >
-        <div className={styles.body} ref={contentRef} role="tabpanel">
-          {displayed.kind === 'code' ? (
-            <CodeBlock language="cpp" className="codeBlockBare">
-              {displayed.code}
-            </CodeBlock>
-          ) : (
-            <div className={styles.bodyInner}>
-              <displayed.Render />
-            </div>
-          )}
-        </div>
-      </div>
-    </Card>
+            <span className={styles.language}>cpp</span>
+          </span>
+        );
+      }}
+    />
   );
 }
 

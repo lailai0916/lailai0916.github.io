@@ -1,6 +1,6 @@
-import { useEffect, useState } from 'react';
 import { umamiFetchJson } from '@site/src/utils/umami';
-import { rangeWindow, type InsightsRange, type FetchStatus } from './useUmamiStats';
+import { useFetch } from './useFetch';
+import { rangeWindow, type InsightsRange } from './useUmamiStats';
 
 type SeriesUnit = 'day' | 'hour' | 'month';
 
@@ -112,57 +112,42 @@ function fillSeries(
 }
 
 export function useUmamiPageviewsSeries(range: InsightsRange) {
-  const [data, setData] = useState<PageviewsResponse | null>(null);
-  const [status, setStatus] = useState<FetchStatus>('loading');
+  return useFetch<PageviewsResponse | null>(
+    async (signal) => {
+      const { startAt, endAt } = rangeWindow(range);
+      const unit = rangeUnit(range);
+      const timezone =
+        typeof Intl !== 'undefined'
+          ? Intl.DateTimeFormat().resolvedOptions().timeZone || 'UTC'
+          : 'UTC';
 
-  useEffect(() => {
-    const controller = new AbortController();
-    const { startAt, endAt } = rangeWindow(range);
-    const unit = rangeUnit(range);
-    const timezone =
-      typeof Intl !== 'undefined'
-        ? Intl.DateTimeFormat().resolvedOptions().timeZone || 'UTC'
-        : 'UTC';
+      const fetchSeg = (segStart: number, segEnd: number) =>
+        umamiFetchJson<PageviewsResponse>(
+          '/api/websites/{id}/pageviews',
+          { startAt: segStart, endAt: segEnd, unit, timezone },
+          { signal }
+        );
 
-    const fetchSeg = (segStart: number, segEnd: number) =>
-      umamiFetchJson<PageviewsResponse>(
-        '/api/websites/{id}/pageviews',
-        { startAt: segStart, endAt: segEnd, unit, timezone },
-        { signal: controller.signal }
-      );
-
-    (async () => {
-      setStatus('loading');
-      try {
-        // Umami caps day-resolution at ~200 days; chunk longer ranges in two.
-        const needsChunk = range > 200 && unit === 'day';
-        const parts: PageviewsResponse[] = needsChunk
-          ? await Promise.all([
-              fetchSeg(startAt, startAt + (endAt - startAt) / 2),
-              fetchSeg(startAt + (endAt - startAt) / 2 + 1, endAt),
-            ])
-          : [await fetchSeg(startAt, endAt)];
-        if (controller.signal.aborted) return;
-        const reduce = (merged: SeriesPoint[]) => {
-          const filled = fillSeries(merged, unit, startAt, endAt);
-          if (range === 7) return downsample(filled, 6);
-          if (range === 365) return aggregateByWeek(filled);
-          return filled;
-        };
-        setData({
-          pageviews: reduce(mergeSeries(parts.map((p) => p.pageviews))),
-          sessions: reduce(mergeSeries(parts.map((p) => p.sessions))),
-        });
-        setStatus('success');
-      } catch (error) {
-        if (controller.signal.aborted) return;
-        console.error(error);
-        setStatus('error');
-      }
-    })();
-
-    return () => controller.abort();
-  }, [range]);
-
-  return { data, status };
+      // Umami caps day-resolution at ~200 days; chunk longer ranges in two.
+      const needsChunk = range > 200 && unit === 'day';
+      const parts: PageviewsResponse[] = needsChunk
+        ? await Promise.all([
+            fetchSeg(startAt, startAt + (endAt - startAt) / 2),
+            fetchSeg(startAt + (endAt - startAt) / 2 + 1, endAt),
+          ])
+        : [await fetchSeg(startAt, endAt)];
+      const reduce = (merged: SeriesPoint[]) => {
+        const filled = fillSeries(merged, unit, startAt, endAt);
+        if (range === 7) return downsample(filled, 6);
+        if (range === 365) return aggregateByWeek(filled);
+        return filled;
+      };
+      return {
+        pageviews: reduce(mergeSeries(parts.map((p) => p.pageviews))),
+        sessions: reduce(mergeSeries(parts.map((p) => p.sessions))),
+      };
+    },
+    [range],
+    null
+  );
 }
