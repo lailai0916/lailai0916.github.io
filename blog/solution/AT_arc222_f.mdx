@@ -58,11 +58,7 @@ $$
 
 两式都对所有 $i$ 成立，且组内三坐标取同一符号。
 
-## 预处理
-
 若 $s$ 为偶：任意一次操作后三坐标全偶（$2x-s$ 与 $s-2x$ 都是偶数）。又当三坐标全偶时「整组折半」与操作可交换，$F(x,y,z)=2F(\frac{x}{2},\frac{y}{2},\frac{z}{2})$，于是 $F^K(A)=2F^{K-1}(\frac{1}{2}F(A))$（在模 $\frac{s}{2}$ 意义下）。所以走 $K\ge 1$ 步要求 $B$ 全偶，且问题降为把 $\frac{1}{2}F(A)$ 变到 $\frac{1}{2}B$。反复折半直到 $s$ 为奇，并累加偏移量。若某步 $s$ 仍偶而 $B$ 不全偶，则无法再前进，就此停止。
-
-## 求解
 
 $s$ 为奇时 $2$ 模 $s$ 可逆。三条同余式中，第三条由前两条与「和 $\equiv 0$」自动成立（$2^K(A_1+A_2+A_3)\equiv 0$），只需：
 
@@ -85,15 +81,15 @@ $$
 using namespace std;
 
 using ll=long long;
-using tri=array<ll,3>;
 const ll inf=0x3f3f3f3f3f3f3f3f;
-tri F(tri a)
+tuple<ll,ll,ll> F(tuple<ll,ll,ll> a)
 {
-	ll s=a[0]+a[1]+a[2];
-	if(2*a[0]>s)return {2*a[0]-s,2*a[1],2*a[2]};
-	if(2*a[1]>s)return {2*a[0],2*a[1]-s,2*a[2]};
-	if(2*a[2]>s)return {2*a[0],2*a[1],2*a[2]-s};
-	return {s-2*a[0],s-2*a[1],s-2*a[2]};
+	auto [x,y,z]=a;
+	ll s=x+y+z;
+	if(2*x>s)return {2*x-s,2*y,2*z};
+	if(2*y>s)return {2*x,2*y-s,2*z};
+	if(2*z>s)return {2*x,2*y,2*z-s};
+	return {s-2*x,s-2*y,s-2*z};
 }
 ll Pow(ll x,ll y,ll mod)
 {
@@ -126,22 +122,27 @@ ll bsgs(ll a,ll b,ll c,ll d,ll s)
 	}
 	return inf;
 }
-bool vtx(tri a)
+bool vtx(tuple<ll,ll,ll> a)
 {
-	return (a[0]==0)+(a[1]==0)+(a[2]==0)>=2;
+	auto [x,y,z]=a;
+	return (x==0)+(y==0)+(z==0)>=2;
 }
-ll core(tri a,tri b,ll s)
+ll core(tuple<ll,ll,ll> a,tuple<ll,ll,ll> b,ll s)
 {
 	if(a==b)return 0;
 	if(vtx(a)||vtx(b))return inf;
-	ll res=bsgs(a[0],a[1],b[0],b[1],s);
-	if(b[0]&&b[1]&&b[2])res=min(res,bsgs(a[0],a[1],(s-b[0])%s,(s-b[1])%s,s));
+	auto [x,y,z]=a;
+	auto [u,v,w]=b;
+	ll res=bsgs(x,y,u,v,s);
+	if(u&&v&&w)res=min(res,bsgs(x,y,(s-u)%s,(s-v)%s,s));
 	return res;
 }
-ll solve(tri a,tri b)
+ll solve(tuple<ll,ll,ll> a,tuple<ll,ll,ll> b)
 {
-	if(a[0]+a[1]+a[2]!=b[0]+b[1]+b[2])return -1;
-	ll s=a[0]+a[1]+a[2];
+	auto &[x,y,z]=a;
+	auto &[u,v,w]=b;
+	if(x+y+z!=u+v+w)return -1;
+	ll s=x+y+z;
 	if(!s)return 0;
 	ll ans=inf,cnt=0;
 	while(1)
@@ -153,10 +154,10 @@ ll solve(tri a,tri b)
 			if(c<inf)ans=min(ans,cnt+c);
 			break;
 		}
-		if((b[0]|b[1]|b[2])&1)break;
+		if((u|v|w)&1)break;
 		a=F(a);
-		a={a[0]/2,a[1]/2,a[2]/2};
-		b={b[0]/2,b[1]/2,b[2]/2};
+		x/=2;y/=2;z/=2;
+		u/=2;v/=2;w/=2;
 		s/=2;cnt++;
 	}
 	return ans<inf?ans:-1;
@@ -169,9 +170,9 @@ int main()
 	cin>>T;
 	while(T--)
 	{
-		tri a,b;
-		cin>>a[0]>>a[1]>>a[2]>>b[0]>>b[1]>>b[2];
-		cout<<solve(a,b)<<'\n';
+		ll x,y,z,u,v,w;
+		cin>>x>>y>>z>>u>>v>>w;
+		cout<<solve({x,y,z},{u,v,w})<<'\n';
 	}
 	return 0;
 }
