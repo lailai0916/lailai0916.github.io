@@ -1,7 +1,7 @@
 ---
 title: 题解：P1205 [USACO1.2] 方块转换 Transformations
 description: 本文为洛谷 P1205 的题解，实现旋转与镜像操作，按七种变换情况依次匹配并输出对应编号。
-summary: 给定两个由字符组成的方阵，判断把第一个经过何种变换能得到第二个：旋转 90、180、270 度，水平镜像，镜像后再旋转，保持不变，以及都不满足，共七类。做法是实现旋转和镜像两个基本操作，按七种情况依次匹配并输出对应编号。文中另附一份压行到 352 字节的 golf 版代码。
+summary: 给定两个由字符组成的方阵，判断把第一个经过何种变换能得到第二个：旋转 90、180、270 度，水平镜像，镜像后再旋转，保持不变，以及都不满足，共七类。做法是实现旋转和镜像两个基本操作，按七种情况依次匹配并输出对应编号。文中另附一份压行到 207 字节的 golf 版代码。
 date: 2025-10-06T19:29:16+08:00
 authors: lailai
 tags: [oi, solution, luogu]
@@ -12,9 +12,9 @@ lid: cvuwocu5
 
 ## 解题思路
 
-根据题意模拟即可，具体过程我就不写了。
+根据题意模拟即可。所有变换都是旋转与镜像的复合。实现这两个基本操作，按编号从小到大依次匹配，第一个成功的即为答案。
 
-其他几篇题解写得很详细，但代码都不够优雅。
+具体过程我就不写了，其他几篇题解写得很详细，但代码都不够优雅。
 
 ## 参考代码
 
@@ -56,9 +56,9 @@ int main()
 }
 ```
 
-### Golf 版（352B）
+### Golf 版（207B）
 
 ```cpp
-#import<bits/stdc++.h>
-using namespace std;using G=vector<string>;int main(){int n,i,j;cin>>n;G A(n),B(n),C;for(G*x:{&A,&B})for(auto&s:*x)cin>>s;auto f=[](G&C){for(auto&s:C)reverse(begin(s),end(s));};auto r=[&](G&C){for(i=n;j=--i;)while(j--)swap(C[i][j],C[j][i]);f(C);return B==C;};f(C=A);cout<<(r(A)?1:r(A)?2:r(A)?3:C==B?4:r(C)|r(C)|r(C)?5:r(A)?6:7);}
+#import<iostream>
+using namespace std;string A,B,D;int n,i,k;int main(){for(cin>>n;cin>>D;)(i++<n?A:B)+=D;for(D=A;k++<8&&({for(i=n*n;i--;)D[i%n*n+(k%4?n-1-i/n:i/n)]=A[i];(A=D)!=B;}););cout<<"0123455567"[k];}
 ```
