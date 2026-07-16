@@ -120,7 +120,7 @@ Every `blog/solution/*.mdx` follows this exact order:
 2. `{/* truncate */}` (no lead paragraph; the Luogu 原文 link renders in the meta bar from `lid`).
 3. Optional `## 参考资料` (only when external refs matter).
 4. `## 题意简述` — one-paragraph Chinese paraphrase of the problem (may be omitted for trivial CF/AT problems).
-5. `## 解题思路` — terse math-heavy reasoning. **Always ends with a complexity line**: `时间复杂度为 $O(n\log n)$。`.
+5. `## 解题思路` — terse math-heavy reasoning. **Ends with a complexity line** (`时间复杂度为 $O(n\log n)$。`) **when the complexity is worth stating**: data-structure and constant-squeezing (卡常) problems should have one; skip it when it adds nothing — 水题, complexity obvious at a glance, or complexity beside the point (e.g. an $O(1)$ math problem).
 6. Optional intermediate derivation sections (`## 基础知识`, `## 化简`, named lemmas).
 7. `## 参考代码` — single `cpp` block matching the template. No fence title, no comments.
 
