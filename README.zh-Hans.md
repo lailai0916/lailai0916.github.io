@@ -23,7 +23,7 @@
 
 我的个人网站，分享技术笔记、项目经验与学习心得。
 
-使用 [Docusaurus](https://docusaurus.io) 构建，源代码托管于 [GitHub](https://github.com/lailai0916/lailai0916.github.io)，并部署在 [GitHub Pages](https://pages.github.com)。
+使用 [Docusaurus](https://docusaurus.io) 构建，源代码托管于 [GitHub](https://github.com/lailai0916/lailai0916.github.io)。主站 [lailai.one](https://lailai.one) 部署在云服务器上，镜像站 [lailai0916.com](https://lailai0916.com) 部署在 [GitHub Pages](https://pages.github.com)。另有一个 [Tor onion 站点](http://lailaislisqahvs2hhcibshrsnt4hfuoxcsmgasclnh73zy3efy4syqd.onion)，运行在同一台服务器上。
 
 ## 网站特性
 
@@ -57,7 +57,7 @@
 
 🔧 **现代技术栈**：基于严格 TypeScript 与现代 CSS 构建。
 
-🚀 **稳健部署**：GitHub Actions 每次提交都同步发布到 [GitHub Pages](https://pages.github.com) 与自建服务器，并配有备用域名。
+🚀 **稳健部署**：GitHub Actions 每次提交都同步发布到源站服务器与 [GitHub Pages](https://pages.github.com) 镜像，另有 Tor onion 站点。
 
 ## 快速开始
 

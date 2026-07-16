@@ -23,7 +23,7 @@
 
 My personal website for sharing technical notes, project experience, and learning insights.
 
-Built with [Docusaurus](https://docusaurus.io), source code hosted on [GitHub](https://github.com/lailai0916/lailai0916.github.io), and deployed on [GitHub Pages](https://pages.github.com).
+Built with [Docusaurus](https://docusaurus.io), with source code hosted on [GitHub](https://github.com/lailai0916/lailai0916.github.io). The main site [lailai.one](https://lailai.one) runs on a cloud server, while the mirror [lailai0916.com](https://lailai0916.com) is deployed on [GitHub Pages](https://pages.github.com). A [Tor onion site](http://lailaislisqahvs2hhcibshrsnt4hfuoxcsmgasclnh73zy3efy4syqd.onion) runs on the same server.
 
 ## Website Features
 
@@ -57,7 +57,7 @@ Built with [Docusaurus](https://docusaurus.io), source code hosted on [GitHub](h
 
 🔧 **Type-Safe & Modern Stack** — Built with strict TypeScript and modern CSS.
 
-🚀 **Robust Deployment** — GitHub Actions ships every commit to [GitHub Pages](https://pages.github.com) and a custom server, with a backup domain.
+🚀 **Robust Deployment** — GitHub Actions ships every commit to the origin server and a [GitHub Pages](https://pages.github.com) mirror, with a Tor onion site alongside.
 
 ## Getting Started
 

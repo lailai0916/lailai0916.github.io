@@ -123,7 +123,8 @@ Depending on the service and context, those providers may act as processors, ser
 
 | Provider / service                                         | Why it is used                                        | Examples of information involved                                                     |
 | ---------------------------------------------------------- | ----------------------------------------------------- | ------------------------------------------------------------------------------------ |
-| GitHub Pages and related delivery infrastructure           | Hosting, caching, and content delivery for the Site   | IP address, request URL, headers, timestamps, user agent                             |
+| Self-managed cloud server                                  | Hosting and delivery for the main site `lailai.one` and the Tor onion site | IP address, request URL, headers, timestamps, user agent                             |
+| GitHub Pages and related delivery infrastructure           | Hosting, caching, and content delivery for the mirror site `lailai0916.com` | IP address, request URL, headers, timestamps, user agent                             |
 | Google Analytics                                           | Website traffic measurement and usage analytics       | Online identifiers, IP address, browser/device data, page views, interactions        |
 | `analytics.lailai.one` (Umami-based self-hosted analytics) | Privacy-focused website analytics and page statistics | Page URL, referrer, browser/device/language/screen data, technical request data      |
 | Algolia DocSearch                                          | Site search                                           | Search queries, search interactions, technical metadata                              |
@@ -161,7 +162,7 @@ Please think carefully before posting information in a public discussion.
 
 ## 8. International Data Transfers
 
-The Site is available globally, and some of the providers used to operate it process data in multiple countries, including the United States and other jurisdictions that may not have the same data protection laws as your place of residence.
+The Site is available globally. The main site and the Tor onion site are served from a self-managed cloud server, and some of the providers used to operate the Site process data in multiple countries, including the United States and other jurisdictions that may not have the same data protection laws as your place of residence.
 
 Where applicable, cross-border processing may rely on safeguards made available by the relevant provider, such as standard contractual clauses or comparable lawful transfer mechanisms.
 

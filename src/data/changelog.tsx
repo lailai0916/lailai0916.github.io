@@ -8,6 +8,16 @@ interface ChangelogItem {
 
 export const CHANGELOG_LIST: ChangelogItem[] = [
   {
+    date: '2026-07-16',
+    type: 'added',
+    content: '<b>Tor</b> onion 镜像站',
+  },
+  {
+    date: '2026-07-16',
+    type: 'removed',
+    content: '公网 IP 端口直连访问',
+  },
+  {
     date: '2026-07-13',
     type: 'added',
     content: '<b>ESLint</b> 代码检查',
@@ -51,6 +61,11 @@ export const CHANGELOG_LIST: ChangelogItem[] = [
     date: '2026-05-23',
     type: 'added',
     content: '博客文章置顶机制',
+  },
+  {
+    date: '2026-05-10',
+    type: 'added',
+    content: '公网 IP 端口直连访问',
   },
   {
     date: '2026-05-01',
