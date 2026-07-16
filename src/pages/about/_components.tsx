@@ -33,7 +33,7 @@ export function Skills() {
   }, []);
 
   const skills =
-    'cpp,c,python,java,javascript,typescript,html,css,react,nextjs,nodejs,tailwindcss,vite,eslint,mysql,latex,markdown,mermaid,git,github,vercel,cloudflare,docker,nginx,linux,macos,bash,apple,chatgpt,claude,cursor,photoshop,figma,blender,mcp,playwright';
+    'cpp,c,python,java,javascript,typescript,html,css,nodejs,react,nextjs,tailwindcss,vite,mysql,markdown,latex,mermaid,git,github,playwright,linux,bash,docker,nginx,cloudflare,vercel,tor,macos,apple,cursor,chatgpt,claude,mcp,figma,photoshop,blender';
 
   return (
     <BrowserOnly>
