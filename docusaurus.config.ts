@@ -236,7 +236,7 @@ const config: Config = {
               label: "lailai's Cloud",
               href: 'https://cloud.lailai.one',
             },
-            { label: "lailai's AI", href: 'https://ai.lailai.one' },
+            { label: "lailai's Tools", href: 'https://tools.lailai.one' },
           ],
         },
       ],
