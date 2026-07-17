@@ -52,7 +52,7 @@ jobs:
           SERVER_HOST: ${{ secrets.SERVER_HOST }}
           SERVER_USER: ${{ secrets.SERVER_USER }}
         run: |
-          rsync -az --delete \
+          rsync -rlptz --delete --no-o --no-g \
             -e "ssh -i ~/.ssh/deploy_key" \
             build/ "${SERVER_USER}@${SERVER_HOST}:/var/www/lailai.one/"
 
