@@ -46,11 +46,17 @@
   vertical-align: middle;
   color: inherit;
   opacity: 0.75;
-  transition: opacity 160ms ease;
+  transition:
+    opacity 160ms ease,
+    transform 160ms ease;
 }
 
 .filterActiveCatClear:hover {
   opacity: 1;
+}
+
+.filterActiveCatClear:active {
+  transform: scale(0.92);
 }
 
 .filterSearchInput {
@@ -79,11 +85,17 @@
   display: inline-flex;
   color: var(--ifm-color-emphasis-500);
   border-radius: 4px;
-  transition: color 160ms ease;
+  transition:
+    color 160ms ease,
+    transform 160ms ease;
 }
 
 .filterSearchClear:hover {
   color: var(--ifm-color-emphasis-800);
+}
+
+.filterSearchClear:active {
+  transform: scale(0.92);
 }
 
 .filterPanel {
@@ -121,12 +133,17 @@
   cursor: pointer;
   transition:
     color 160ms ease,
-    border-color 160ms ease;
+    border-color 160ms ease,
+    transform 160ms ease;
   flex-shrink: 0;
 }
 
 .filterRailItem:hover {
   color: var(--ifm-color-emphasis-900);
+}
+
+.filterRailItem:active {
+  transform: scale(0.97);
 }
 
 .filterRailItem:hover .filterRailItemIcon {

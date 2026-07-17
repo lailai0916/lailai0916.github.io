@@ -25,12 +25,17 @@
   color: var(--ifm-color-emphasis-600);
   transition:
     color 160ms ease,
-    background-color 160ms ease;
+    background-color 160ms ease,
+    transform 160ms ease;
 }
 
 .iconBtn:hover {
   color: var(--ifm-color-primary);
   background: var(--ifm-hover-overlay);
+}
+
+.iconBtn:active {
+  transform: scale(0.92);
 }
 
 .iconBtn:focus-visible {

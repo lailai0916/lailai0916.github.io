@@ -17,6 +17,14 @@ export function useAnimatedNumber(
   useEffect(() => {
     if (target == null || !Number.isFinite(target)) return;
 
+    // The CSS global guard can't reach a rAF loop that writes React state, so
+    // gate the count-up here: land on the final value instantly.
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      fromRef.current = target;
+      setValue(target);
+      return;
+    }
+
     const from = fromRef.current;
     const delta = target - from;
     if (delta === 0) {

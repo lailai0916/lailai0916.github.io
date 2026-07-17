@@ -99,6 +99,18 @@ html.debug-mode span {
   border: 0;
 }
 
+/* Translucent floating chrome — the navbar reads as frosted glass with content
+   blurring underneath (Apple's signature material layer), replacing Infima's
+   opaque bar + hard drop shadow. Same frosted material as the WindowBar; the
+   blur, not a shadow, separates it from the content scrolling under. */
+.navbar {
+  background-color: color-mix(in srgb, var(--ifm-navbar-background-color) 72%, transparent);
+  backdrop-filter: saturate(180%) blur(20px);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  box-shadow: none;
+  border-bottom: 1px solid color-mix(in srgb, var(--ifm-color-emphasis-200) 55%, transparent);
+}
+
 .header-github-link::before {
   content: '';
   width: 24px;

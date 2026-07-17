@@ -43,3 +43,13 @@ input:checked + .slider {
 input:checked + .slider:before {
   transform: translateX(20px);
 }
+
+/* Press feedback — the knob swells toward the finger on pointer-down (like the
+   Slider thumb), composing with either toggle position. */
+.switch:active .slider:before {
+  transform: scale(1.1);
+}
+
+.switch:active input:checked + .slider:before {
+  transform: translateX(20px) scale(1.1);
+}

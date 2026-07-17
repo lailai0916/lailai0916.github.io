@@ -145,11 +145,17 @@
   letter-spacing: 0.005em;
   color: var(--ifm-color-emphasis-700);
   cursor: pointer;
-  transition: color 160ms ease;
+  transition:
+    color 160ms ease,
+    transform 160ms ease;
 }
 
 .loadMoreLink:hover {
   color: var(--ifm-color-primary);
+}
+
+.loadMoreLink:active {
+  transform: scale(0.97);
 }
 
 .loadMoreLink:focus-visible {

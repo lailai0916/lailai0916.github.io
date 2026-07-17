@@ -28,6 +28,15 @@ html[data-theme='dark'] .header:hover {
   background-color: rgba(255, 255, 255, 0.06);
 }
 
+/* Full-width bar: press reads as a background deepen, not a scale. */
+.header:active {
+  background-color: rgba(0, 0, 0, 0.07);
+}
+
+html[data-theme='dark'] .header:active {
+  background-color: rgba(255, 255, 255, 0.09);
+}
+
 .header:focus-visible {
   outline: none;
   box-shadow: var(--lk-focus-ring);

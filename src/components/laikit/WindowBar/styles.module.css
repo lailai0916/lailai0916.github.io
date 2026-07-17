@@ -2,14 +2,15 @@
   display: grid;
   align-items: center;
   height: 42px;
-  background-color: var(--ifm-card-background-color);
-  background-image: linear-gradient(rgba(246, 246, 247, 0.85), rgba(246, 246, 247, 0.85));
+  /* A translucent tint over the blur is the material — no opaque base, or the
+     backdrop-filter has nothing to show through and the glass reads as flat. */
+  background-color: color-mix(in srgb, rgb(246, 246, 247) 72%, transparent);
   backdrop-filter: saturate(180%) blur(20px);
   -webkit-backdrop-filter: saturate(180%) blur(20px);
 }
 
 [data-theme='dark'] .bar {
-  background-image: linear-gradient(rgba(40, 40, 42, 0.85), rgba(40, 40, 42, 0.85));
+  background-color: color-mix(in srgb, rgb(40, 40, 42) 72%, transparent);
 }
 
 .dots {

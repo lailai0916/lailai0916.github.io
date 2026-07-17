@@ -75,6 +75,10 @@
     transform 160ms ease;
 }
 
+.token:not(:disabled):active {
+  transform: scale(0.9);
+}
+
 .faded {
   opacity: 0.55;
 }

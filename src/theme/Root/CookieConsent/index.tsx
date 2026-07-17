@@ -10,6 +10,7 @@ type ConsentValue = 'accepted' | 'rejected';
 
 export default function CookieConsent() {
   const [visible, setVisible] = useState(false);
+  const [exiting, setExiting] = useState(false);
 
   useEffect(() => {
     try {
@@ -28,7 +29,8 @@ export default function CookieConsent() {
     } catch {
       // Ignore storage errors (private mode, etc.)
     }
-    setVisible(false);
+    // Play the exit along the same path it entered, then unmount on animationend.
+    setExiting(true);
   };
 
   if (!visible) {
@@ -37,12 +39,18 @@ export default function CookieConsent() {
 
   return (
     <div className={styles.root}>
-      <div className={styles.backdrop} aria-hidden="true" />
       <div
-        className={styles.sheet}
+        className={exiting ? `${styles.backdrop} ${styles.backdropExiting}` : styles.backdrop}
+        aria-hidden="true"
+      />
+      <div
+        className={exiting ? `${styles.sheet} ${styles.sheetExiting}` : styles.sheet}
         role="dialog"
         aria-modal="false"
         aria-labelledby="cookie-consent-title"
+        onAnimationEnd={() => {
+          if (exiting) setVisible(false);
+        }}
       >
         <h2 id="cookie-consent-title" className={styles.title}>
           <Translate id="components.cookieConsent.title">Cookie Settings</Translate>

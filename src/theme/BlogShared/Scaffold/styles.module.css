@@ -106,6 +106,10 @@
   color: var(--ifm-color-primary);
 }
 
+.profileNavItem:active {
+  color: var(--ifm-color-primary);
+}
+
 .profileNavItemActive,
 .profileNavItemActive:hover {
   color: var(--ifm-color-primary);
@@ -234,6 +238,10 @@
   color: var(--ifm-color-primary);
 }
 
+.tocLink:active {
+  color: var(--ifm-color-primary-dark);
+}
+
 .feedGrid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -261,13 +269,18 @@
   transition:
     color 160ms ease,
     border-color 160ms ease,
-    background-color 160ms ease;
+    background-color 160ms ease,
+    transform 160ms ease;
 }
 
 .feedTile:hover {
   color: var(--ifm-color-primary);
   border-color: var(--ifm-color-primary);
   background: color-mix(in srgb, var(--ifm-color-primary) 6%, transparent);
+}
+
+.feedTile:active {
+  transform: scale(0.98);
 }
 
 .feedTileIcon {

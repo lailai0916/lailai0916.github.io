@@ -72,12 +72,17 @@ html[data-theme='dark'] .segmented {
   transition:
     color 160ms ease,
     background-color 160ms ease,
-    box-shadow 160ms ease;
+    box-shadow 160ms ease,
+    transform 160ms ease;
 }
 
 .item:hover {
   color: var(--ifm-color-emphasis-900);
   background: rgba(0, 0, 0, 0.03);
+}
+
+.item:active {
+  transform: scale(0.97);
 }
 
 html[data-theme='dark'] .item:hover {

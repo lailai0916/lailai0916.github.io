@@ -404,9 +404,15 @@
   color: var(--ifm-color-emphasis-600);
   opacity: 0.8;
   background: var(--ifm-color-emphasis-100);
-  transition: color 160ms ease;
+  transition:
+    color 160ms ease,
+    transform 160ms ease;
 }
 
 .socialLink:hover {
   color: var(--ifm-color-primary);
+}
+
+.socialLink:active {
+  transform: scale(0.92);
 }

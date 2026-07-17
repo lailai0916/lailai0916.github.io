@@ -15,12 +15,20 @@
     border-color 160ms ease,
     color 160ms ease,
     box-shadow 160ms ease,
-    opacity 160ms ease;
+    opacity 160ms ease,
+    transform 160ms ease;
 }
 
 .button:focus-visible {
   outline: none;
   box-shadow: var(--lk-focus-ring);
+}
+
+/* Press feedback — a modest scale-down the instant the button is pressed,
+   so the tap registers before release (the missing counterpart to the
+   suppressed native tap highlight). */
+.button:not(:disabled):not([aria-disabled='true']):active {
+  transform: scale(0.97);
 }
 
 .button:disabled,

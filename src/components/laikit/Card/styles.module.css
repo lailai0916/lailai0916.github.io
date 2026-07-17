@@ -21,12 +21,19 @@
 .linkCard .card {
   transition:
     border-color 160ms ease,
-    box-shadow 160ms ease;
+    box-shadow 160ms ease,
+    transform 160ms ease;
 }
 
 .linkCard:hover .card,
 .linkCard:focus-visible .card {
   border-color: var(--link-card-accent);
+}
+
+/* Press feedback — a restrained scale-down on tap. This is a momentary
+   press response, not the hover lift the design rules forbid. */
+.linkCard:active .card {
+  transform: scale(0.985);
 }
 
 .linkCard:focus-visible {
