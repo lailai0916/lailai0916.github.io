@@ -1,6 +1,7 @@
-import { Fragment, useEffect, useState, type ReactNode } from 'react';
+import { Fragment, type ReactNode } from 'react';
 import clsx from 'clsx';
 import Link from '@docusaurus/Link';
+import { useLocation } from '@docusaurus/router';
 import type { BlogPaginatedMetadata } from '@docusaurus/plugin-content-blog';
 import type { Props as BlogListPageProps } from '@theme/BlogListPage';
 import BlogScaffold from '../Scaffold';
@@ -19,6 +20,7 @@ const READ_MORE_LABEL = translate({
 });
 
 const PAGE_SIZE = 10;
+const PAGE_PARAM = 'page';
 
 type PostListItem = BlogListPageProps['items'][number];
 
@@ -88,11 +90,11 @@ function PostCard({ item }: PostCardProps) {
 export function Paginator({
   page,
   totalPages,
-  onPageChange,
+  pageUrl,
 }: {
   page: number;
   totalPages: number;
-  onPageChange: (page: number) => void;
+  pageUrl: (page: number) => string;
 }) {
   if (totalPages <= 1) return null;
 
@@ -120,14 +122,9 @@ export function Paginator({
   return (
     <nav className={styles.paginator} aria-label={PaginationLabel}>
       {hasPrev ? (
-        <button
-          type="button"
-          className={styles.pageNav}
-          onClick={() => onPageChange(page - 1)}
-          aria-label={PrevLabel}
-        >
+        <Link to={pageUrl(page - 1)} className={styles.pageNav} aria-label={PrevLabel}>
           {'←'}
-        </button>
+        </Link>
       ) : (
         <span className={clsx(styles.pageNav, styles.pageNavDisabled)} aria-label={PrevLabel}>
           {'←'}
@@ -153,13 +150,9 @@ export function Paginator({
                     {p}
                   </span>
                 ) : (
-                  <button
-                    type="button"
-                    className={styles.pageNumber}
-                    onClick={() => onPageChange(p)}
-                  >
+                  <Link to={pageUrl(p)} className={styles.pageNumber}>
                     {p}
-                  </button>
+                  </Link>
                 )}
               </li>
             </Fragment>
@@ -168,14 +161,9 @@ export function Paginator({
       </ol>
 
       {hasNext ? (
-        <button
-          type="button"
-          className={styles.pageNav}
-          onClick={() => onPageChange(page + 1)}
-          aria-label={NextLabel}
-        >
+        <Link to={pageUrl(page + 1)} className={styles.pageNav} aria-label={NextLabel}>
           {'→'}
-        </button>
+        </Link>
       ) : (
         <span className={clsx(styles.pageNav, styles.pageNavDisabled)} aria-label={NextLabel}>
           {'→'}
@@ -198,17 +186,19 @@ export default function PostsListLayout({
   meta: BlogPaginatedMetadata;
   topSlot?: ReactNode;
 }) {
+  const { pathname, search } = useLocation();
   const totalPages = Math.max(1, Math.ceil(items.length / PAGE_SIZE));
-  const [page, setPage] = useState(1);
 
-  // Reset to page 1 whenever the underlying item list changes
-  // (e.g. switching tags / authors via the in-card chip selectors).
-  useEffect(() => {
-    setPage(1);
-  }, [items]);
+  // The current page lives in the URL rather than in component state, so back /
+  // forward, reload, and a copied link all land on the page the reader was on.
+  const requested = Number(new URLSearchParams(search).get(PAGE_PARAM));
+  const page = Number.isInteger(requested) ? Math.min(Math.max(requested, 1), totalPages) : 1;
 
-  const safePage = Math.min(page, totalPages);
-  const visibleItems = items.slice((safePage - 1) * PAGE_SIZE, safePage * PAGE_SIZE);
+  // Page 1 stays at the bare permalink — no `?page=1` noise, and no second URL
+  // serving the same content.
+  const pageUrl = (p: number) => (p === 1 ? pathname : `${pathname}?${PAGE_PARAM}=${p}`);
+
+  const visibleItems = items.slice((page - 1) * PAGE_SIZE, page * PAGE_SIZE);
 
   return (
     <BlogScaffold title={title} description={description}>
@@ -216,7 +206,7 @@ export default function PostsListLayout({
       {visibleItems.map((item) => (
         <PostCard key={item.content.metadata.permalink} item={item} />
       ))}
-      <Paginator page={safePage} totalPages={totalPages} onPageChange={setPage} />
+      <Paginator page={page} totalPages={totalPages} pageUrl={pageUrl} />
     </BlogScaffold>
   );
 }
