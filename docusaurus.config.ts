@@ -227,16 +227,16 @@ const config: Config = {
         {
           title: 'More',
           items: [
-            { label: "lailai's Status", href: 'https://status.lailai.one' },
-            {
-              label: "lailai's Analytics",
-              href: 'https://analytics.lailai.one/share/DDd09iBEYOQw2k9L',
-            },
+            { label: "lailai's Tools", href: 'https://tools.lailai.one' },
             {
               label: "lailai's Cloud",
               href: 'https://cloud.lailai.one',
             },
-            { label: "lailai's Tools", href: 'https://tools.lailai.one' },
+            {
+              label: "lailai's Analytics",
+              href: 'https://analytics.lailai.one/share/DDd09iBEYOQw2k9L',
+            },
+            { label: "lailai's Status", href: 'https://status.lailai.one' },
           ],
         },
       ],
