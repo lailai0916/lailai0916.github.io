@@ -3,11 +3,7 @@ using namespace std;
 
 const int N=10005;
 const int K=10000005;
-struct edge
-{
-	int v,w;
-};
-vector<edge> G[N];
+vector<pair<int,int>> G[N];
 int n,m;
 int qry[105];
 bool ans[105];
@@ -19,38 +15,34 @@ void get_root(int u,int fa)
 {
 	siz[u]=1;
 	mx[u]=0;
-	for(auto e:G[u])
+	for(auto [v,w]:G[u])
 	{
-		if(e.v==fa||vis[e.v])continue;
-		get_root(e.v,u);
-		siz[u]+=siz[e.v];
-		mx[u]=max(mx[u],siz[e.v]);
+		if(v==fa||vis[v])continue;
+		get_root(v,u);
+		siz[u]+=siz[v];
+		mx[u]=max(mx[u],siz[v]);
 	}
 	mx[u]=max(mx[u],sum-siz[u]);
 	if(mx[u]<mx[rt])rt=u;
 }
 void get_dis(int u,int fa,int d)
 {
-	if(d<K)
+	if(d<K)dis[++cnt]=st[++top]=d;
+	for(auto [v,w]:G[u])
 	{
-		dis[++cnt]=d;
-		st[++top]=d;
-	}
-	for(auto e:G[u])
-	{
-		if(e.v==fa||vis[e.v])continue;
-		get_dis(e.v,u,d+e.w);
+		if(v==fa||vis[v])continue;
+		get_dis(v,u,d+w);
 	}
 }
 void calc(int u)
 {
 	ok[0]=1;
 	top=0;
-	for(auto e:G[u])
+	for(auto [v,w]:G[u])
 	{
-		if(vis[e.v])continue;
+		if(vis[v])continue;
 		cnt=0;
-		get_dis(e.v,u,e.w);
+		get_dis(v,u,w);
 		for(int i=1;i<=cnt;i++)
 		{
 			for(int j=1;j<=m;j++)
@@ -70,12 +62,12 @@ void solve(int u)
 {
 	vis[u]=1;
 	calc(u);
-	for(auto e:G[u])
+	for(auto [v,w]:G[u])
 	{
-		if(vis[e.v])continue;
-		sum=siz[e.v];
+		if(vis[v])continue;
+		sum=siz[v];
 		rt=0;
-		get_root(e.v,u);
+		get_root(v,u);
 		solve(rt);
 	}
 }
