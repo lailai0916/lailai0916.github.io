@@ -1,7 +1,9 @@
 {
   "name": "lailai",
   "version": "0.0.0",
+  "description": "lailai's personal website for technical notes, projects, and learning",
   "private": true,
+  "license": "MIT",
   "scripts": {
     "docusaurus": "docusaurus",
     "start": "docusaurus start",
