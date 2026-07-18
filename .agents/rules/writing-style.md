@@ -10,7 +10,7 @@ paths:
 
 lailai's site is mostly in Simplified Chinese, with three content streams (`blog/`, `docs/`, translated MDX under `i18n/zh-Hans/`). Voice is **understated, dry, occasionally wry** — short declarative sentences, no exclamation, no "本文将……" preambles. Match these conventions when authoring or editing.
 
-> **General writing rules live in lailai.skill.** The cross-project voice, punctuation/spacing, wording (你/仅/若, no 显然/易得/不难发现), bilingual term format, LaTeX math (`$...$`, `\frac` not `\dfrac`), and the C++ code template are in [`.claude/skills/lailai-skill/references/`](../skills/lailai-skill/references/) (`writing-style`, `wording`, `markdown-style`, `latex-math-style`, `cpp-oi-style`). **This file holds only the site-specific authoring layer** below — frontmatter taxonomy, MDX widgets, admonitions, image hosting, internal links, and the solution-post template.
+> **General writing rules live in lailai.skill.** The cross-project voice, punctuation/spacing, wording (你/仅/若, no 显然/易得/不难发现), bilingual term format, LaTeX math (`$...$`, `\frac` not `\dfrac`), and the C++ code template are in [`.agents/skills/lailai-skill/references/`](../skills/lailai-skill/references/) (`writing-style`, `wording`, `markdown-style`, `latex-math-style`, `cpp-oi-style`). **This file holds only the site-specific authoring layer** below — frontmatter taxonomy, MDX widgets, admonitions, image hosting, internal links, and the solution-post template.
 
 ## Frontmatter
 
