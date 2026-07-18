@@ -1,0 +1,197 @@
+---
+title: 数学：不等式挑战（二）
+description: 本文将介绍一道六因子不等式，用换元、拉格朗日乘数与判别式证明。
+summary: 在非负变量的线性约束下，证明六个一次因式的乘积不超过 27。关键换元把六个因式改写为四个有序点的全部两两距离，原式随即成为范德蒙德乘积。再对其对数使用拉格朗日乘数法，并借助根多项式压缩驻点方程，最终由三次多项式的判别式算出最大值与等号条件。
+date: 2026-07-18T19:26:00+08:00
+authors: lailai
+tags: [math]
+---
+
+一道有趣的不等式题。
+
+{/* truncate */}
+
+## 题目
+
+已知 $x,y,z\ge 0$，且 $x+2y+3z\le 6$，证明：
+
+$$
+xyz(x+y)(y+z)(x+y+z)\le 27
+$$
+
+## 换元
+
+令：
+
+$$
+a=z,b=y+z,c=x+y+z
+$$
+
+则 $0\le a\le b\le c$，且：
+
+$$
+a+b+c=x+2y+3z\le 6
+$$
+
+反解可得：
+
+$$
+x=c-b,y=b-a,z=a
+$$
+
+因此原式化为：
+
+$$
+V=abc(b-a)(c-a)(c-b)
+$$
+
+这正是 $0,a,b,c$ 之间全部六个两两距离的乘积。
+
+若其中两个数相等，则 $V=0$，结论成立。以下仅考虑 $0<a<b<c$。
+
+$V$ 是六次齐次式。若 $a+b+c<6$，将三者同比放大到和为 $6$，$V$ 会增大。因此最大值必在 $a+b+c=6$ 时取得。
+
+## 驻点
+
+取对数：
+
+$$
+F=\ln a+\ln b+\ln c+\ln(b-a)+\ln(c-a)+\ln(c-b)
+$$
+
+各项都是正线性函数的对数，因此都是凹函数。其中 $\ln a+\ln b+\ln c$ 的 Hessian 负定，所以 $F$ 严格凹。闭可行域上的 $V$ 在边界为 $0$，在内部为正。因此最大值必在唯一的内点取得，这个内点就是 $F$ 的驻点。
+
+对约束 $a+b+c=6$ 使用拉格朗日乘数法：
+
+$$
+\frac{\partial F}{\partial a}=\frac{\partial F}{\partial b}=\frac{\partial F}{\partial c}=\lambda
+$$
+
+由于 $V$ 为六次齐次式：
+
+$$
+a\frac{\partial F}{\partial a}+b\frac{\partial F}{\partial b}+c\frac{\partial F}{\partial c}=6
+$$
+
+又有 $a+b+c=6$，所以 $\lambda=1$。驻点方程为：
+
+$$
+\begin{aligned}
+  \frac{1}{a}-\frac{1}{b-a}-\frac{1}{c-a} & =1 \\
+  \frac{1}{b}+\frac{1}{b-a}-\frac{1}{c-b} & =1 \\
+  \frac{1}{c}+\frac{1}{c-a}+\frac{1}{c-b} & =1
+\end{aligned}
+$$
+
+直接联立这三个分式方程并不方便。下面用一个多项式同时处理它们。
+
+## 根多项式
+
+设：
+
+$$
+g(t)=t(t-a)(t-b)(t-c)=t^4-6t^3+pt^2-qt
+$$
+
+其中：
+
+$$
+p=ab+ac+bc,q=abc
+$$
+
+对任意 $r\in\set{a,b,c}$，驻点方程都可以写成：
+
+$$
+\sum_{s\in\set{0,a,b,c}\setminus\set{r}}\frac{1}{r-s}=1
+$$
+
+将 $g(t)$ 写成 $(t-r)h(t)$，在 $t=r$ 处有：
+
+$$
+\frac{g''(r)}{2g'(r)}=\frac{h'(r)}{h(r)}=\sum_{s\ne r}\frac{1}{r-s}=1
+$$
+
+所以 $a,b,c$ 都是三次多项式 $g''(t)-2g'(t)$ 的根。比较首项系数：
+
+$$
+g''(t)-2g'(t)=-8(t^3-6t^2+pt-q)
+$$
+
+展开左边：
+
+$$
+g''(t)-2g'(t)=-8t^3+48t^2-(4p+36)t+2p+2q
+$$
+
+比较一次项和常数项：
+
+$$
+4p+36=8p,2p+2q=8q
+$$
+
+解得：
+
+$$
+p=9,q=3
+$$
+
+因此 $a,b,c$ 是三次方程：
+
+$$
+t^3-6t^2+9t-3=0
+$$
+
+的三个根。
+
+## 最大值
+
+三次多项式 $t^3-6t^2+9t-3$ 的判别式为：
+
+$$
+\begin{aligned}
+  \Delta & =18\cdot 6\cdot 9\cdot 3-4\cdot 6^3\cdot 3+6^2\cdot 9^2-4\cdot 9^3-27\cdot 3^2 \\
+  & =81
+\end{aligned}
+$$
+
+另一方面，判别式正是三个根的两两之差的平方之积：
+
+$$
+\Delta=(b-a)^2(c-a)^2(c-b)^2
+$$
+
+结合 $abc=q=3$：
+
+$$
+V^2=(abc)^2\Delta=3^2\cdot 81=729
+$$
+
+因为 $V>0$，所以该驻点处：
+
+$$
+V=27
+$$
+
+该驻点是全局最大值点。因此对任意满足条件的 $a,b,c$，均有 $V\le 27$。
+
+## 等号
+
+令 $t=u+2$，三次方程化为 $u^3-3u-1=0$。再令 $u=2\cos\theta$，利用 $u^3-3u=2\cos 3\theta$，可得三个根。它们按从小到大排列为：
+
+$$
+\begin{aligned}
+  a & =2-2\cos\frac{2\pi}{9} \\
+  b & =2-2\cos\frac{4\pi}{9} \\
+  c & =2+2\cos\frac{\pi}{9}
+\end{aligned}
+$$
+
+由 $(x,y,z)=(c-b,b-a,a)$，等号在下列取值处成立：
+
+$$
+\begin{aligned}
+  x & =2\cos\frac{\pi}{9}+2\cos\frac{4\pi}{9}\approx 2.22668160 \\
+  y & =2\cos\frac{2\pi}{9}-2\cos\frac{4\pi}{9}\approx 1.18479253 \\
+  z & =2-2\cos\frac{2\pi}{9}\approx 0.46791111
+\end{aligned}
+$$
