@@ -6,7 +6,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "CK=\"$CLAUDE_PROJECT_DIR/.claude/skills/lailai-skill/tools/checker/check.py\"; if [ -f \"$CK\" ]; then python3 \"$CK\" --hook; fi"
+            "command": "CK=\"$CLAUDE_PROJECT_DIR/.agents/skills/lailai-skill/tools/checker/check.py\"; if [ -f \"$CK\" ]; then python3 \"$CK\" --hook; fi"
           }
         ]
       }
