@@ -46,8 +46,7 @@ int insert(int last,int c)
 				ch[p][c]=nq;
 				p=link_[p];
 			}
-			link_[q]=nq;
-			link_[cur]=nq;
+			link_[q]=link_[cur]=nq;
 		}
 	}
 	return cur;

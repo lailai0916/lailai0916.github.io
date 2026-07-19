@@ -127,17 +127,14 @@ int main()
 		}
 		for(int i=head[SS];~i;i=nxt[i])
 		{
-			cap[i]=0;
-			cap[i^1]=0;
+			cap[i]=cap[i^1]=0;
 		}
 		for(int i=head[TT];~i;i=nxt[i])
 		{
-			cap[i]=0;
-			cap[i^1]=0;
+			cap[i]=cap[i^1]=0;
 		}
 		int ans=cap[back^1];
-		cap[back]=0;
-		cap[back^1]=0;
+		cap[back]=cap[back^1]=0;
 		ans+=dinic(S,T);
 		cout<<ans<<'\n';
 	}
