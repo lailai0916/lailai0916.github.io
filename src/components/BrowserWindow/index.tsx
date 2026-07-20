@@ -1,4 +1,6 @@
 import { type CSSProperties, type ReactNode } from 'react';
+import { translate } from '@docusaurus/Translate';
+import { Icon } from '@iconify/react';
 import clsx from 'clsx';
 import Card from '@site/src/components/laikit/Card';
 import WindowBar from '@site/src/components/laikit/WindowBar';
@@ -11,6 +13,7 @@ interface Props {
   url?: string;
   style?: CSSProperties;
   bodyStyle?: CSSProperties;
+  toolbar?: ReactNode;
 }
 
 export default function BrowserWindow({
@@ -19,11 +22,13 @@ export default function BrowserWindow({
   url = 'http://localhost:3000',
   style,
   bodyStyle,
+  toolbar,
 }: Props) {
   return (
     <Card padding={0} className={styles.browserWindow} style={{ ...style, minHeight }}>
       <WindowBar className={styles.browserWindowHeader}>
         <div className={clsx(styles.browserWindowAddressBar, 'text--truncate')}>{url}</div>
+        {toolbar}
       </WindowBar>
 
       <div className={styles.browserWindowBody} style={bodyStyle}>
@@ -33,11 +38,28 @@ export default function BrowserWindow({
   );
 }
 
+const openLinkLabel = translate({
+  id: 'components.browserWindow.openLink',
+  message: 'Open link in new tab',
+});
+
 export function IframeWindow({ url }: { url: string }) {
   return (
     <div>
       <BrowserWindow
         url={url}
+        toolbar={
+          <a
+            href={url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={styles.browserWindowAction}
+            aria-label={openLinkLabel}
+            title={openLinkLabel}
+          >
+            <Icon icon="lucide:external-link" width={16} height={16} />
+          </a>
+        }
         style={{
           minWidth: 'min(100%,45vw)',
           maxWidth: '100%',

@@ -1384,5 +1384,8 @@
   },
   "pages.overview.chart.empty": {
     "message": "暂无文章"
+  },
+  "components.browserWindow.openLink": {
+    "message": "在新标签页打开链接"
   }
 }

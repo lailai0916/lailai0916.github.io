@@ -28,6 +28,36 @@
   color: rgba(235, 235, 245, 0.6);
 }
 
+.browserWindowAction {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  justify-self: end;
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  color: var(--ifm-color-emphasis-600);
+  transition:
+    color 160ms ease,
+    background-color 160ms ease,
+    transform 160ms ease;
+}
+
+.browserWindowAction:hover {
+  color: var(--ifm-color-primary);
+  background: var(--ifm-hover-overlay);
+  text-decoration: none;
+}
+
+.browserWindowAction:active {
+  transform: scale(0.92);
+}
+
+.browserWindowAction:focus-visible {
+  outline: none;
+  box-shadow: var(--lk-focus-ring);
+}
+
 .browserWindowBody {
   background-color: var(--ifm-background-color);
   padding: 1rem;
