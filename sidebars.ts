@@ -694,6 +694,7 @@ const sidebars: SidebarsConfig = {
         description: '本章展示各类实用工具项目。',
       },
       items: [
+        'project/tools/tools',
         'project/tools/code-comparator',
         'project/tools/sun-path-atlas',
         'project/tools/hydrocarbon-namer',
