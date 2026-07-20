@@ -76,23 +76,23 @@
 }
 
 .heroDeltaUp {
-  color: var(--ifm-color-success-darkest);
-  background: color-mix(in srgb, var(--ifm-color-success) 12%, transparent);
+  color: var(--ifm-color-success-darker);
+  background: color-mix(in srgb, var(--ifm-color-success-darker) 12%, transparent);
 }
 
 html[data-theme='dark'] .heroDeltaUp {
   color: var(--ifm-color-success-lighter);
-  background: color-mix(in srgb, var(--ifm-color-success) 20%, transparent);
+  background: color-mix(in srgb, var(--ifm-color-success-lighter) 20%, transparent);
 }
 
 .heroDeltaDown {
-  color: var(--ifm-color-danger-darkest);
-  background: color-mix(in srgb, var(--ifm-color-danger) 12%, transparent);
+  color: var(--ifm-color-danger-darker);
+  background: color-mix(in srgb, var(--ifm-color-danger-darker) 12%, transparent);
 }
 
 html[data-theme='dark'] .heroDeltaDown {
   color: var(--ifm-color-danger-lighter);
-  background: color-mix(in srgb, var(--ifm-color-danger) 20%, transparent);
+  background: color-mix(in srgb, var(--ifm-color-danger-lighter) 20%, transparent);
 }
 
 .heroDeltaFlat {

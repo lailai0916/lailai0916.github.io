@@ -8,7 +8,11 @@
 
 .icon {
   font-size: 1.6rem;
-  color: var(--ifm-color-danger);
+  color: var(--ifm-color-danger-darker);
+}
+
+html[data-theme='dark'] .icon {
+  color: var(--ifm-color-danger-lighter);
 }
 
 .text {

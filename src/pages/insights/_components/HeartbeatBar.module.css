@@ -1,13 +1,21 @@
 .up {
-  background: var(--ifm-color-success);
+  background: var(--ifm-color-success-darker);
+}
+
+html[data-theme='dark'] .up {
+  background: var(--ifm-color-success-lighter);
 }
 
 .down {
-  background: var(--ifm-color-danger);
+  background: var(--ifm-color-danger-darker);
+}
+
+html[data-theme='dark'] .down {
+  background: var(--ifm-color-danger-lighter);
 }
 
 .pending {
-  background: var(--ifm-color-warning-darkest);
+  background: var(--ifm-color-warning-dark);
 }
 
 html[data-theme='dark'] .pending {
@@ -15,11 +23,11 @@ html[data-theme='dark'] .pending {
 }
 
 .maintenance {
-  background: var(--ifm-color-info-darkest);
+  background: var(--ifm-color-info-darker);
 }
 
 html[data-theme='dark'] .maintenance {
-  background: var(--ifm-color-info);
+  background: var(--ifm-color-info-dark);
 }
 
 .empty {

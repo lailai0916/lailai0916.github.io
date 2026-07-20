@@ -38,26 +38,28 @@
 }
 
 .dotUp {
-  background: var(--ifm-color-success);
-  box-shadow: 0 0 0 4px color-mix(in srgb, var(--ifm-color-success) 18%, transparent);
+  background: var(--ifm-color-success-darker);
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--ifm-color-success-darker) 18%, transparent);
 }
 
 html[data-theme='dark'] .dotUp {
-  box-shadow: 0 0 0 4px color-mix(in srgb, var(--ifm-color-success) 22%, transparent);
+  background: var(--ifm-color-success-lighter);
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--ifm-color-success-lighter) 22%, transparent);
 }
 
 .dotDown {
-  background: var(--ifm-color-danger);
-  box-shadow: 0 0 0 4px color-mix(in srgb, var(--ifm-color-danger) 20%, transparent);
+  background: var(--ifm-color-danger-darker);
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--ifm-color-danger-darker) 20%, transparent);
 }
 
 html[data-theme='dark'] .dotDown {
-  box-shadow: 0 0 0 4px color-mix(in srgb, var(--ifm-color-danger) 22%, transparent);
+  background: var(--ifm-color-danger-lighter);
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--ifm-color-danger-lighter) 22%, transparent);
 }
 
 .dotPending {
-  background: var(--ifm-color-warning-darkest);
-  box-shadow: 0 0 0 4px color-mix(in srgb, var(--ifm-color-warning-darkest) 20%, transparent);
+  background: var(--ifm-color-warning-dark);
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--ifm-color-warning-dark) 20%, transparent);
 }
 
 html[data-theme='dark'] .dotPending {
@@ -66,13 +68,13 @@ html[data-theme='dark'] .dotPending {
 }
 
 .dotMaintenance {
-  background: var(--ifm-color-info-darkest);
-  box-shadow: 0 0 0 4px color-mix(in srgb, var(--ifm-color-info-darkest) 20%, transparent);
+  background: var(--ifm-color-info-darker);
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--ifm-color-info-darker) 20%, transparent);
 }
 
 html[data-theme='dark'] .dotMaintenance {
-  background: var(--ifm-color-info);
-  box-shadow: 0 0 0 4px color-mix(in srgb, var(--ifm-color-info) 20%, transparent);
+  background: var(--ifm-color-info-dark);
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--ifm-color-info-dark) 20%, transparent);
 }
 
 .dotEmpty {

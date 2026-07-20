@@ -87,6 +87,10 @@
   background: var(--ifm-color-success-darker);
 }
 
+html[data-theme='dark'] .recommend {
+  background: var(--ifm-color-success-lighter);
+}
+
 .controls {
   width: 100%;
   display: grid;
