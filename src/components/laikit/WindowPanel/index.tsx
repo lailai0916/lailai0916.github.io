@@ -24,8 +24,8 @@ interface WindowPanelProps {
   expandTo?: 'first' | 'last';
 }
 
-// The mac-style tabbed window panel shared by Problem and the playground
-// Showcase: a WindowBar tab strip over a collapsible viewport whose height
+// The mac-style tabbed window panel shared by Problem and Playground: a
+// WindowBar tab strip over a collapsible viewport whose height
 // animates to the measured content. Clicking the active tab collapses it.
 export default function WindowPanel({
   tabs,

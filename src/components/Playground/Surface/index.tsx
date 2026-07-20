@@ -5,7 +5,7 @@ import styles from './styles.module.css';
 
 // Playground demos frame themselves in a laikit Card by default. When embedded
 // in a container that already supplies the window chrome (the project page's
-// Showcase panel), pass `bare` to swap the Card for a light hairline frame, so
+// Playground panel), pass `bare` to swap the Card for a light hairline frame, so
 // the demo keeps a visible boundary without sitting in a card inside a window.
 export default function Surface({
   bare = false,

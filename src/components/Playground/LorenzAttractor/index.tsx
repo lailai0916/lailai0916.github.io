@@ -9,7 +9,7 @@ import { useColorMode } from '@docusaurus/theme-common';
 import { translate } from '@docusaurus/Translate';
 import Slider from '@site/src/components/laikit/Slider';
 import Button from '@site/src/components/laikit/Button';
-import Surface from '@site/src/components/playground/Surface';
+import Surface from '@site/src/components/Playground/Surface';
 import styles from './styles.module.css';
 
 const TWO_PI = 2 * Math.PI;

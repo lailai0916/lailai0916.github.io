@@ -1,11 +1,11 @@
 import { type ComponentType } from 'react';
 import { translate } from '@docusaurus/Translate';
 import WindowPanel, { type WindowPanelTab } from '@site/src/components/laikit/WindowPanel';
-import NeuralNetwork from '../NeuralNetwork';
-import FourierTransform from '../FourierTransform';
-import LorenzAttractor from '../LorenzAttractor';
-import GameOfLife from '../GameOfLife';
-import NimGame from '../NimGame';
+import NeuralNetwork from './NeuralNetwork';
+import FourierTransform from './FourierTransform';
+import LorenzAttractor from './LorenzAttractor';
+import GameOfLife from './GameOfLife';
+import NimGame from './NimGame';
 
 type Demo = { label: string; Render: ComponentType<{ bare?: boolean }> };
 
@@ -47,11 +47,11 @@ const DEMOS: Demo[] = [
   },
 ];
 
-// The playground mirrors the Problem panel's browser-window chrome (shared via
+// The Playground mirrors the Problem panel's browser-window chrome (shared via
 // laikit/WindowPanel): the tab strip lives in the title bar next to the traffic
 // lights, so the demos read as windows you switch between in one browser rather
 // than a stacked list. Collapsing re-opens the last-viewed demo (expandTo="last").
-export default function Showcase() {
+export default function Playground() {
   const tabs: WindowPanelTab[] = DEMOS.map(({ label, Render }) => ({
     label,
     content: <Render bare />,

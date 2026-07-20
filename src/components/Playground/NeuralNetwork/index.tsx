@@ -15,7 +15,7 @@ import {
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import { translate } from '@docusaurus/Translate';
 import Button from '@site/src/components/laikit/Button';
-import Surface from '@site/src/components/playground/Surface';
+import Surface from '@site/src/components/Playground/Surface';
 import styles from './styles.module.css';
 
 const CLEAR_LABEL = translate({

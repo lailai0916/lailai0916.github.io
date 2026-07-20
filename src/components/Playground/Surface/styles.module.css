@@ -1,5 +1,5 @@
 /* Bare mode keeps a light hairline frame (no Card shadow) so the demo surface
-   still has a visible boundary when embedded in the Showcase window body. The
+   still has a visible boundary when embedded in the Playground window body. The
    hairline is an overlay (::after), not a real border: a border would shrink
    width:100% content by 2px under border-box while leaving explicit-sized
    canvases at their full width, so the demos would differ by 2px. The overlay

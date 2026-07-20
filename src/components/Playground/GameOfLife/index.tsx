@@ -8,7 +8,7 @@ import {
 import { useColorMode } from '@docusaurus/theme-common';
 import { translate } from '@docusaurus/Translate';
 import Button from '@site/src/components/laikit/Button';
-import Surface from '@site/src/components/playground/Surface';
+import Surface from '@site/src/components/Playground/Surface';
 import styles from './styles.module.css';
 
 const BASE_SIZE = 500;

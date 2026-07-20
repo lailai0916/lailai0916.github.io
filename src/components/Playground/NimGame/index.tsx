@@ -2,7 +2,7 @@ import { useState, useEffect, useRef, useCallback } from 'react';
 import { translate } from '@docusaurus/Translate';
 import clsx from 'clsx';
 import Button from '@site/src/components/laikit/Button';
-import Surface from '@site/src/components/playground/Surface';
+import Surface from '@site/src/components/Playground/Surface';
 import styles from './styles.module.css';
 
 const ROWS = 6;
