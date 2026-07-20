@@ -27,11 +27,11 @@
 
   /* Elevation — layered ambient + key shadows for Apple-style depth.
      One scale, theme-aware, so every surface shares the same light logic. */
-  --lk-shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.04);
-  --lk-shadow-raised: 0 1px 2px rgba(0, 0, 0, 0.04), 0 4px 12px rgba(0, 0, 0, 0.06);
-  --lk-shadow-md: 0 1px 2px rgba(0, 0, 0, 0.04), 0 6px 16px rgba(0, 0, 0, 0.06);
-  --lk-shadow-lg: 0 1px 2px rgba(0, 0, 0, 0.06), 0 8px 24px rgba(0, 0, 0, 0.08);
-  --lk-shadow-overlay: 0 20px 50px -16px rgba(0, 0, 0, 0.22), 0 6px 16px rgba(0, 0, 0, 0.06);
+  --lk-shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.03);
+  --lk-shadow-raised: 0 1px 2px rgba(0, 0, 0, 0.03), 0 4px 12px rgba(0, 0, 0, 0.05);
+  --lk-shadow-md: 0 1px 2px rgba(0, 0, 0, 0.03), 0 6px 16px rgba(0, 0, 0, 0.05);
+  --lk-shadow-lg: 0 1px 2px rgba(0, 0, 0, 0.05), 0 8px 24px rgba(0, 0, 0, 0.06);
+  --lk-shadow-overlay: 0 20px 50px -16px rgba(0, 0, 0, 0.16), 0 6px 16px rgba(0, 0, 0, 0.05);
 
   /* Focus ring — one definition shared by every interactive surface. */
   --lk-focus-ring: 0 0 0 3px color-mix(in srgb, var(--ifm-color-primary) 22%, transparent);
@@ -46,11 +46,11 @@
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 
   /* Dark surfaces sit on near-black; shadows go deeper to read as depth. */
-  --lk-shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
-  --lk-shadow-raised: 0 1px 2px rgba(0, 0, 0, 0.3), 0 4px 12px rgba(0, 0, 0, 0.25);
-  --lk-shadow-md: 0 1px 2px rgba(0, 0, 0, 0.3), 0 6px 16px rgba(0, 0, 0, 0.22);
-  --lk-shadow-lg: 0 1px 2px rgba(0, 0, 0, 0.4), 0 8px 24px rgba(0, 0, 0, 0.35);
-  --lk-shadow-overlay: 0 20px 50px -16px rgba(0, 0, 0, 0.6), 0 6px 16px rgba(0, 0, 0, 0.25);
+  --lk-shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.22);
+  --lk-shadow-raised: 0 1px 2px rgba(0, 0, 0, 0.22), 0 4px 12px rgba(0, 0, 0, 0.18);
+  --lk-shadow-md: 0 1px 2px rgba(0, 0, 0, 0.22), 0 6px 16px rgba(0, 0, 0, 0.16);
+  --lk-shadow-lg: 0 1px 2px rgba(0, 0, 0, 0.3), 0 8px 24px rgba(0, 0, 0, 0.26);
+  --lk-shadow-overlay: 0 20px 50px -16px rgba(0, 0, 0, 0.45), 0 6px 16px rgba(0, 0, 0, 0.18);
 
   --lk-focus-ring: 0 0 0 3px color-mix(in srgb, var(--ifm-color-primary) 30%, transparent);
 }
