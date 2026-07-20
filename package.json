@@ -17,7 +17,7 @@
     "write-translations:zh-Hans": "docusaurus write-translations --locale zh-Hans",
     "write-heading-ids": "docusaurus write-heading-ids",
     "i18n": "docusaurus write-translations --locale zh-Hans",
-    "format": "npx prettier --write .",
+    "format": "npx prettier --write . '!**/.agents/skills/lailai-skill/**'",
     "lint": "eslint src",
     "typecheck": "tsc",
     "check": "npm run i18n && npm run format && npm run lint && npm run typecheck"
