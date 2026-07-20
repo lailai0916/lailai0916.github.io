@@ -7,10 +7,18 @@
 }
 
 .pending {
+  background: var(--ifm-color-warning-darkest);
+}
+
+html[data-theme='dark'] .pending {
   background: var(--ifm-color-warning);
 }
 
 .maintenance {
+  background: var(--ifm-color-info-darkest);
+}
+
+html[data-theme='dark'] .maintenance {
   background: var(--ifm-color-info);
 }
 

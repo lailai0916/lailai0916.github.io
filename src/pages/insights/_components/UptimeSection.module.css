@@ -56,11 +56,21 @@ html[data-theme='dark'] .dotDown {
 }
 
 .dotPending {
+  background: var(--ifm-color-warning-darkest);
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--ifm-color-warning-darkest) 20%, transparent);
+}
+
+html[data-theme='dark'] .dotPending {
   background: var(--ifm-color-warning);
   box-shadow: 0 0 0 4px color-mix(in srgb, var(--ifm-color-warning) 20%, transparent);
 }
 
 .dotMaintenance {
+  background: var(--ifm-color-info-darkest);
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--ifm-color-info-darkest) 20%, transparent);
+}
+
+html[data-theme='dark'] .dotMaintenance {
   background: var(--ifm-color-info);
   box-shadow: 0 0 0 4px color-mix(in srgb, var(--ifm-color-info) 20%, transparent);
 }

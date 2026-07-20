@@ -84,7 +84,7 @@
 }
 
 .recommend {
-  background: var(--ifm-color-success);
+  background: var(--ifm-color-success-darker);
 }
 
 .controls {
