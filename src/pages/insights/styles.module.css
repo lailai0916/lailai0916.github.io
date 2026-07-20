@@ -76,21 +76,21 @@
 }
 
 .heroDeltaUp {
-  color: var(--lk-color-up);
-  background: color-mix(in srgb, var(--lk-color-up) 12%, transparent);
+  color: var(--ifm-color-success);
+  background: color-mix(in srgb, var(--ifm-color-success) 12%, transparent);
 }
 
 html[data-theme='dark'] .heroDeltaUp {
-  background: color-mix(in srgb, var(--lk-color-up) 20%, transparent);
+  background: color-mix(in srgb, var(--ifm-color-success) 20%, transparent);
 }
 
 .heroDeltaDown {
-  color: var(--lk-color-down);
-  background: color-mix(in srgb, var(--lk-color-down) 12%, transparent);
+  color: var(--ifm-color-danger);
+  background: color-mix(in srgb, var(--ifm-color-danger) 12%, transparent);
 }
 
 html[data-theme='dark'] .heroDeltaDown {
-  background: color-mix(in srgb, var(--lk-color-down) 20%, transparent);
+  background: color-mix(in srgb, var(--ifm-color-danger) 20%, transparent);
 }
 
 .heroDeltaFlat {

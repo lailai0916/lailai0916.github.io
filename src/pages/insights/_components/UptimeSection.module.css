@@ -38,31 +38,31 @@
 }
 
 .dotUp {
-  background: var(--lk-color-up);
-  box-shadow: 0 0 0 4px color-mix(in srgb, var(--lk-color-up) 18%, transparent);
+  background: var(--ifm-color-success);
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--ifm-color-success) 18%, transparent);
 }
 
 html[data-theme='dark'] .dotUp {
-  box-shadow: 0 0 0 4px color-mix(in srgb, var(--lk-color-up) 22%, transparent);
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--ifm-color-success) 22%, transparent);
 }
 
 .dotDown {
-  background: var(--lk-color-down);
-  box-shadow: 0 0 0 4px color-mix(in srgb, var(--lk-color-down) 20%, transparent);
+  background: var(--ifm-color-danger);
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--ifm-color-danger) 20%, transparent);
 }
 
 html[data-theme='dark'] .dotDown {
-  box-shadow: 0 0 0 4px color-mix(in srgb, var(--lk-color-down) 22%, transparent);
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--ifm-color-danger) 22%, transparent);
 }
 
 .dotPending {
-  background: var(--lk-color-pending);
-  box-shadow: 0 0 0 4px color-mix(in srgb, var(--lk-color-pending) 20%, transparent);
+  background: var(--ifm-color-warning);
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--ifm-color-warning) 20%, transparent);
 }
 
 .dotMaintenance {
-  background: var(--lk-color-maintenance);
-  box-shadow: 0 0 0 4px color-mix(in srgb, var(--lk-color-maintenance) 20%, transparent);
+  background: var(--ifm-color-info);
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--ifm-color-info) 20%, transparent);
 }
 
 .dotEmpty {

@@ -1,17 +1,17 @@
 .up {
-  background: var(--lk-color-up);
+  background: var(--ifm-color-success);
 }
 
 .down {
-  background: var(--lk-color-down);
+  background: var(--ifm-color-danger);
 }
 
 .pending {
-  background: var(--lk-color-pending);
+  background: var(--ifm-color-warning);
 }
 
 .maintenance {
-  background: var(--lk-color-maintenance);
+  background: var(--ifm-color-info);
 }
 
 .empty {
