@@ -30,10 +30,6 @@
   --lk-color-pending: #f0a52a;
   --lk-color-maintenance: #5a8dee;
 
-  /* Restrained low-saturation amber, paired with the blue primary as the
-     Playground's single second series (two trajectories, start/end, etc.). */
-  --lk-color-accent: #c08a3a;
-
   /* Elevation — layered ambient + key shadows for Apple-style depth.
      One scale, theme-aware, so every surface shares the same light logic. */
   --lk-shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.04);
@@ -58,8 +54,6 @@
   --lk-color-down: #ff6b6b;
   --lk-color-pending: #ffb84a;
   --lk-color-maintenance: #7aa6ff;
-
-  --lk-color-accent: #d4a55e;
 
   /* Dark surfaces sit on near-black; shadows go deeper to read as depth. */
   --lk-shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
