@@ -658,6 +658,11 @@ export const RESOURCE_LIST: ResourceCategoryItem[] = [
         description: '免下载浏览器小游戏平台',
       },
       {
+        title: 'FreeFocusGames',
+        href: 'https://www.freefocusgames.com',
+        description: '专注力与记忆训练游戏',
+      },
+      {
         title: '.io Games',
         href: 'https://iogames.space',
         description: 'io 多人网页游戏聚合站',
