@@ -13,6 +13,10 @@ interface MomentItem {
 
 const STATIC_MOMENTS: MomentItem[] = [
   {
+    date: '2026-07-23T15:41:00+08:00',
+    content: '「Code is cheap. Show me the talk.」 — Linus Torvalds',
+  },
+  {
     date: '2026-07-10T23:00:00+08:00',
     content: '「一个到中午还没有用尽他的 Codex 限额的人，浪费了他的上午。」——苏格拉底',
   },
