@@ -251,9 +251,21 @@
     "message": "本章介绍英语句子结构，包括句子分类、从句、语态等。",
     "description": "The generated-index page description for category '句子' in sidebar 'noteSidebar'"
   },
+  "sidebar.noteSidebar.category.物理": {
+    "message": "物理",
+    "description": "The label for category '物理' in sidebar 'noteSidebar'"
+  },
+  "sidebar.noteSidebar.category.化学": {
+    "message": "化学",
+    "description": "The label for category '化学' in sidebar 'noteSidebar'"
+  },
   "sidebar.noteSidebar.category.生物": {
     "message": "生物",
     "description": "The label for category '生物' in sidebar 'noteSidebar'"
+  },
+  "sidebar.noteSidebar.category.政治": {
+    "message": "政治",
+    "description": "The label for category '政治' in sidebar 'noteSidebar'"
   },
   "sidebar.noteSidebar.category.历史": {
     "message": "历史",
@@ -262,6 +274,10 @@
   "sidebar.noteSidebar.category.地理": {
     "message": "地理",
     "description": "The label for category '地理' in sidebar 'noteSidebar'"
+  },
+  "sidebar.noteSidebar.category.技术": {
+    "message": "技术",
+    "description": "The label for category '技术' in sidebar 'noteSidebar'"
   },
   "sidebar.projectSidebar.category.个人": {
     "message": "个人",
@@ -310,21 +326,5 @@
   "sidebar.projectSidebar.category.指南.link.generated-index.description": {
     "message": "本章收录各种实用的文档指南。",
     "description": "The generated-index page description for category '指南' in sidebar 'projectSidebar'"
-  },
-  "sidebar.noteSidebar.category.物理": {
-    "message": "物理",
-    "description": "The label for category '物理' in sidebar 'noteSidebar'"
-  },
-  "sidebar.noteSidebar.category.化学": {
-    "message": "化学",
-    "description": "The label for category '化学' in sidebar 'noteSidebar'"
-  },
-  "sidebar.noteSidebar.category.政治": {
-    "message": "政治",
-    "description": "The label for category '政治' in sidebar 'noteSidebar'"
-  },
-  "sidebar.noteSidebar.category.技术": {
-    "message": "技术",
-    "description": "The label for category '技术' in sidebar 'noteSidebar'"
   }
 }

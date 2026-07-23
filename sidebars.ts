@@ -672,7 +672,6 @@ const sidebars: SidebarsConfig = {
   ],
   projectSidebar: [
     'project/index',
-    'project/personal/lailai0916.github.io',
     {
       type: 'category',
       label: '个人',
@@ -681,6 +680,7 @@ const sidebars: SidebarsConfig = {
         description: '本章展示与我个人相关的项目。',
       },
       items: [
+        'project/personal/lailai0916.github.io',
         'project/personal/lailai0916',
         'project/personal/lailai-skill',
         'project/personal/lailai-template',
