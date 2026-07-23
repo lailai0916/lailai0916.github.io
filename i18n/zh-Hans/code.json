@@ -74,6 +74,9 @@
   "pages.home.identity.developer": {
     "message": "开发者"
   },
+  "pages.home.identity.researcher": {
+    "message": "研究者"
+  },
   "pages.home.identity.designer": {
     "message": "设计师"
   },

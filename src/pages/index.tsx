@@ -167,6 +167,10 @@ export default function Home(): ReactNode {
       message: 'Developer',
     }),
     translate({
+      id: 'pages.home.identity.researcher',
+      message: 'Researcher',
+    }),
+    translate({
       id: 'pages.home.identity.designer',
       message: 'Designer',
     }),
