@@ -236,19 +236,19 @@
 }
 
 .cardNav1 {
-  --link-card-accent: #f59e0b;
+  --link-card-accent: #ffc107;
 }
 
 .cardNav2 {
-  --link-card-accent: #10b981;
+  --link-card-accent: #2196f3;
 }
 
 .cardNav3 {
-  --link-card-accent: #8b5cf6;
+  --link-card-accent: #37a93c;
 }
 
 .cardNav4 {
-  --link-card-accent: #f43f5e;
+  --link-card-accent: #f44336;
 }
 
 .cardNavIcon {
