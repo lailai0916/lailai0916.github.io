@@ -1,0 +1,68 @@
+---
+title: 题解：P17140 [NOI 2026] 线段
+description: 本文为洛谷 P17140 的题解，用跳过禁选前缀的动态规划统计相交图为树的线段集。
+summary: 按左端点排序后，每条新选区间必须恰与一条旧区间相交。选择新区间后，左端点不超过两条活跃区间较小右端点的后续区间会同时与二者相交，可以整段跳过；状态只需保留较大的右端点。由此建立后缀动态规划，每个状态仅有跳过与选择两条转移，时间复杂度为 O(nmk)，空间复杂度为 O(nm)。
+date: 2026-07-25T13:57:44+08:00
+authors: lailai
+tags: [oi, solution, luogu]
+lid: ifngc5p3
+---
+
+{/* truncate */}
+
+## 题意简述
+
+给定 $n$ 条闭区间。对于每个 $1\le s\le k$，求大小为 $s$、交图为树的区间集合数量。
+
+## 解题思路
+
+将区间按 $(l_i,r_i)$ 升序排序。此前与 $[l_i,r_i]$ 相交的区间都覆盖 $l_i$。故交图为树等价于每条区间除第一条外恰与一条旧区间相交。设此前最大的两个右端点为 $R_1,R_2$。不足两条时令 $R_2=0$。合法条件即 $R_2<l_i\le R_1$。
+
+选择 $[l_i,r_i]$ 后，直接跳到 $p_x=\min\{j\mid l_j>x\}$，其中 $x=\min(R_1,r_i)$，并保留 $\max(R_1,r_i)$。设 $f_{q,i,R}$ 表示从后缀 $[i,n)$ 中再选 $q$ 条区间，保留右端点为 $R$ 的方案数，则
+
+$$
+f_{q,i,R}=f_{q,i+1,R}+[l_i\le R]f_{q-1,p_{\min(R,r_i)},\max(R,r_i)}.
+$$
+
+边界为 $f_{0,i,R}=1$，枚举第一条区间即可统计答案。按 $q$ 滚动数组，时间复杂度为 $O(nmk)$，空间复杂度为 $O(nm)$。
+
+## 参考代码
+
+```cpp
+#include "segment.h"
+#include <bits/stdc++.h>
+using namespace std;
+
+const int N=3005;
+const int M=1005;
+const int mod=998244353;
+pair<int,int> a[N];
+int f[2][N][M],nxt[M],ans[N];
+void init(int c,int t){}
+vector<int> segment(int n,int m,int k,vector<int> l,vector<int> r)
+{
+	for(int i=0;i<n;i++)a[i]={l[i],r[i]};
+	sort(a,a+n);
+	for(int x=0;x<=m;x++)nxt[x]=upper_bound(a,a+n,make_pair(x,m))-a;
+	for(int i=0;i<=n;i++)for(int x=1;x<=m;x++)f[0][i][x]=1;
+	ans[1]=n;
+	int t=1;
+	for(int s=2;s<=k;s++)
+	{
+		ans[s]=0;
+		memset(f[t][n],0,sizeof f[t][n]);
+		for(int i=n-1;i>=0;i--)
+		{
+			for(int x=1;x<=m;x++)
+			{
+				f[t][i][x]=f[t][i+1][x];
+				if(a[i].first<=x)f[t][i][x]+=f[t^1][nxt[min(x,a[i].second)]][max(x,a[i].second)];
+				f[t][i][x]%=mod;
+			}
+		}
+		for(int i=0;i<n;i++)ans[s]=(ans[s]+f[t][i+1][a[i].second])%mod;
+		t^=1;
+	}
+	return vector<int>(ans,ans+k+1);
+}
+```
