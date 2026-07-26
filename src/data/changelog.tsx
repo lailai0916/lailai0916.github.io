@@ -115,7 +115,7 @@ export const CHANGELOG_LIST: ChangelogItem[] = [
   {
     date: '2026-04-25',
     type: 'added',
-    content: '建立镜像站 <code>lailai0916.com</code>',
+    content: '镜像站 <code>lailai0916.com</code>',
   },
   {
     date: '2026-04-19',
