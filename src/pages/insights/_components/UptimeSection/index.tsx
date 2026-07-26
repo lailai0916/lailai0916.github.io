@@ -5,9 +5,9 @@ import Card from '@site/src/components/laikit/Card';
 import Skeleton from '@site/src/components/laikit/Skeleton';
 import { useKumaStatus } from '@site/src/hooks/useKumaStatus';
 import type { KumaHeartbeat, KumaMonitor } from '@site/src/utils/kuma';
-import HeartbeatBar from './HeartbeatBar';
-import StatePanel from './StatePanel';
-import styles from './UptimeSection.module.css';
+import HeartbeatBar from '../HeartbeatBar';
+import StatePanel from '../StatePanel';
+import styles from './styles.module.css';
 
 function lastStatus(beats: KumaHeartbeat[] | undefined): number | undefined {
   if (!beats || beats.length === 0) return undefined;

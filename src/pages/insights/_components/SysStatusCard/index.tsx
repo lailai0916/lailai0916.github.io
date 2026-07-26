@@ -6,7 +6,7 @@ import { translate } from '@docusaurus/Translate';
 import TitleCard from '@site/src/components/laikit/TitleCard';
 import Skeleton from '@site/src/components/laikit/Skeleton';
 import { useSysStatus } from '@site/src/hooks/useSysStatus';
-import styles from './SysStatusCard.module.css';
+import styles from './styles.module.css';
 
 const PING_TARGET = 'https://analytics.lailai.one/script.js';
 const PING_INTERVAL = 2000;

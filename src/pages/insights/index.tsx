@@ -21,7 +21,7 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import { formatCompact } from '@site/src/utils/format';
 import { toPageviewsData } from './_components/seriesFormat';
 import MetricList from './_components/MetricList';
-import metricListStyles from './_components/MetricList.module.css';
+import metricListStyles from './_components/MetricList/styles.module.css';
 import UptimeSection from './_components/UptimeSection';
 import SysStatusCard from './_components/SysStatusCard';
 import StatePanel from './_components/StatePanel';

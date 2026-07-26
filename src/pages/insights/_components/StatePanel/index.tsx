@@ -1,6 +1,6 @@
 import { Icon } from '@iconify/react';
 import Card from '@site/src/components/laikit/Card';
-import styles from './StatePanel.module.css';
+import styles from './styles.module.css';
 
 // The page's one error surface: a section whose fetch failed renders this in
 // place of its content, so a dead endpoint never reads as an endless skeleton.

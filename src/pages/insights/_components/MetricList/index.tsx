@@ -4,7 +4,7 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import TitleCard from '@site/src/components/laikit/TitleCard';
 import Skeleton from '@site/src/components/laikit/Skeleton';
 import { formatCompact } from '@site/src/utils/format';
-import styles from './MetricList.module.css';
+import styles from './styles.module.css';
 
 interface MetricRow {
   x: string;
