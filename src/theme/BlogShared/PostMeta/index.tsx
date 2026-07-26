@@ -1,7 +1,9 @@
 import { translate } from '@docusaurus/Translate';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import { usePluralForm } from '@docusaurus/theme-common';
-import { formatCompact, formatLocalizedDate } from '@site/src/utils/format';
+import { useVisitorTimeZone } from '@site/src/hooks/useVisitorTimeZone';
+import { formatLocalDate } from '@site/src/utils/dateTime';
+import { formatCompact } from '@site/src/utils/format';
 import { type MetaBarItem } from '../BlogUI';
 import { useAnalytics } from '@site/src/hooks/useAnalytics';
 
@@ -41,12 +43,13 @@ export function usePostMetaItems({
     i18n: { currentLocale },
   } = useDocusaurusContext();
   const { selectMessage } = usePluralForm();
+  const timeZone = useVisitorTimeZone();
 
   const items: MetaBarItem[] = [
     {
       icon: 'lucide:calendar',
       dateTime: date,
-      label: formatLocalizedDate(date, currentLocale),
+      label: formatLocalDate(date, currentLocale, timeZone),
     },
   ];
   if (readingTime) {

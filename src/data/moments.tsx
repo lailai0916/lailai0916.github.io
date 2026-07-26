@@ -1,5 +1,6 @@
 import { translate } from '@docusaurus/Translate';
 import { getAllBlogItems } from '@site/src/utils/blogData';
+import { compareInstantsDescending } from '@site/src/utils/dateTime';
 import type { ShareCardProps } from '@site/src/components/laikit/ShareCard';
 
 interface MomentItem {
@@ -159,5 +160,5 @@ function getBlogMoments(): MomentItem[] {
 }
 
 export const MOMENT_LIST: MomentItem[] = [...STATIC_MOMENTS, ...getBlogMoments()].sort((a, b) =>
-  a.date < b.date ? 1 : -1
+  compareInstantsDescending(a.date, b.date)
 );

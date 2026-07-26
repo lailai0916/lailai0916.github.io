@@ -2,6 +2,7 @@ import { useMemo } from 'react';
 import { translate } from '@docusaurus/Translate';
 import { CHANGELOG_LIST, TYPE_LABEL } from '@site/src/data/changelog';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
+import { formatCalendarMonthName } from '@site/src/utils/dateTime';
 
 const EMPTY_LABEL = translate({
   id: 'pages.changelog.empty',
@@ -12,10 +13,6 @@ export function Changelog() {
   const { i18n } = useDocusaurusContext();
 
   const isZh = i18n.currentLocale === 'zh-Hans';
-  const monthFmt = useMemo(
-    () => new Intl.DateTimeFormat(i18n.currentLocale, { month: 'long' }),
-    [i18n.currentLocale]
-  );
 
   const grouped = useMemo(() => {
     const sorted = [...CHANGELOG_LIST].sort((a, b) => b.date.localeCompare(a.date));
@@ -51,7 +48,7 @@ export function Changelog() {
                 <h3>
                   {isZh
                     ? `${Number(month)} 月`
-                    : monthFmt.format(new Date(Number(year), Number(month) - 1, 1))}
+                    : formatCalendarMonthName(`${year}-${month}`, i18n.currentLocale)}
                 </h3>
                 <ul>
                   {items.map((item, i) => {

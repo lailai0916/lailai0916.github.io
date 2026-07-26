@@ -7,7 +7,9 @@ import { ArchiveTabsNav } from '@site/src/theme/BlogShared/ArchiveTabs';
 import DataCard from '@site/src/components/laikit/DataCard';
 import { getAllBlogItems, getAllPostMetadata, loadOfficialTags } from '@site/src/utils/blogData';
 import { MOMENT_LIST } from '@site/src/data/moments';
-import { formatBeijingDate, formatCompact } from '@site/src/utils/format';
+import { useVisitorTimeZone } from '@site/src/hooks/useVisitorTimeZone';
+import { formatCalendarMonth, getMonthKey } from '@site/src/utils/dateTime';
+import { formatCompact } from '@site/src/utils/format';
 import Chart, { type ChartDatum } from '@site/src/components/laikit/Chart';
 import styles from './styles.module.css';
 
@@ -30,12 +32,16 @@ const CHART_EMPTY = translate({
 });
 
 // Continuous monthly timeline (gap months filled with 0); year ticks on January.
-function buildMonths(items: ReturnType<typeof getAllBlogItems>, locale: string): ChartDatum[] {
+function buildMonths(
+  items: ReturnType<typeof getAllBlogItems>,
+  locale: string,
+  timeZone: string
+): ChartDatum[] {
   const map = new Map<string, number>();
   items.forEach((it) => {
     const date = it.date ?? it.metadata?.date;
     if (!date) return;
-    const month = formatBeijingDate(date).slice(0, 7); // YYYY-MM
+    const month = getMonthKey(date, timeZone);
     map.set(month, (map.get(month) ?? 0) + 1);
   });
 
@@ -52,10 +58,7 @@ function buildMonths(items: ReturnType<typeof getAllBlogItems>, locale: string):
     out.push({
       key,
       value: map.get(key) ?? 0,
-      tooltipLabel: new Date(y, m - 1, 1).toLocaleDateString(locale, {
-        year: 'numeric',
-        month: 'long',
-      }),
+      tooltipLabel: formatCalendarMonth(key, locale),
       axisLabel: m === 1 ? String(y) : undefined,
     });
     m++;
@@ -80,9 +83,10 @@ export default function BlogStats(): ReactNode {
   const { i18n } = useDocusaurusContext();
   const { currentLocale, defaultLocale } = i18n;
   const localeKey = currentLocale === defaultLocale ? undefined : currentLocale;
+  const timeZone = useVisitorTimeZone();
 
   const items = getAllBlogItems();
-  const monthData = buildMonths(items, currentLocale);
+  const monthData = buildMonths(items, currentLocale, timeZone);
   const cumulativeData = toCumulative(monthData);
   const tagCount = loadOfficialTags(localeKey).length;
   const postCount = items.length;

@@ -6,6 +6,13 @@ import { translate } from '@docusaurus/Translate';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Card from '@site/src/components/laikit/Card';
 import { getAllBlogItems } from '@site/src/utils/blogData';
+import { useVisitorTimeZone } from '@site/src/hooks/useVisitorTimeZone';
+import {
+  compareInstantsDescending,
+  formatCalendarMonth,
+  getDateKey,
+  getMonthKey,
+} from '@site/src/utils/dateTime';
 import styles from './styles.module.css';
 
 // A month grid is always 6 rows × 7 days, so the cell count is fixed — this
@@ -36,17 +43,18 @@ function toDateKey(y: number, m: number, d: number) {
 }
 
 function daysInMonth(y: number, m: number) {
-  return new Date(y, m + 1, 0).getDate();
+  return new Date(Date.UTC(y, m + 1, 0)).getUTCDate();
 }
 
 function shiftMonth(y: number, m: number, delta: number) {
-  const date = new Date(y, m + delta, 1);
-  return { y: date.getFullYear(), m: date.getMonth() };
+  const date = new Date(Date.UTC(y, m + delta, 1));
+  return { y: date.getUTCFullYear(), m: date.getUTCMonth() };
 }
 
 export default function CalendarCard() {
   const { i18n, siteConfig } = useDocusaurusContext();
   const locale = i18n.currentLocale;
+  const timeZone = useVisitorTimeZone();
 
   const posts = useMemo<CalPost[]>(() => {
     return getAllBlogItems()
@@ -55,11 +63,11 @@ export default function CalendarCard() {
         const date = it.date ?? it.metadata?.date;
         const permalink = it.permalink ?? it.metadata?.permalink;
         if (!title || !date || !permalink) return null;
-        return { title, date, permalink, dateKey: date.slice(0, 10) };
+        return { title, date, permalink, dateKey: getDateKey(date, timeZone) };
       })
       .filter((x): x is CalPost => x !== null)
-      .sort((a, b) => (a.date < b.date ? 1 : -1));
-  }, []);
+      .sort((a, b) => compareInstantsDescending(a.date, b.date));
+  }, [timeZone]);
 
   const postsByDate = useMemo(() => {
     const map = new Map<string, CalPost[]>();
@@ -74,9 +82,11 @@ export default function CalendarCard() {
   // Seed from build time so SSR and hydration agree; correct to the real
   // current month after mount (they differ only across a month boundary).
   const buildMonth = useMemo(() => {
-    const d = new Date(String(siteConfig.customFields?.buildTime ?? ''));
-    return { y: d.getFullYear(), m: d.getMonth() };
-  }, [siteConfig]);
+    const [year, month] = getMonthKey(String(siteConfig.customFields?.buildTime ?? ''), timeZone)
+      .split('-')
+      .map(Number);
+    return { y: year, m: month - 1 };
+  }, [siteConfig, timeZone]);
   const [today, setToday] = useState(buildMonth);
   const [view, setView] = useState(buildMonth);
   const [selected, setSelected] = useState<string | null>(null);
@@ -89,22 +99,18 @@ export default function CalendarCard() {
   }, []);
 
   const monthLabel = useMemo(
-    () =>
-      new Intl.DateTimeFormat(locale, {
-        year: 'numeric',
-        month: 'long',
-      }).format(new Date(view.y, view.m, 1)),
+    () => formatCalendarMonth(`${view.y}-${pad(view.m + 1)}`, locale),
     [locale, view]
   );
 
   const weekdayLabels = useMemo(() => {
-    const fmt = new Intl.DateTimeFormat(locale, { weekday: 'narrow' });
+    const fmt = new Intl.DateTimeFormat(locale, { weekday: 'narrow', timeZone: 'UTC' });
     // 2024-01-07 is a Sunday — use it as anchor for Sunday-first ordering.
-    return Array.from({ length: 7 }, (_, i) => fmt.format(new Date(2024, 0, 7 + i)));
+    return Array.from({ length: 7 }, (_, i) => fmt.format(new Date(Date.UTC(2024, 0, 7 + i))));
   }, [locale]);
 
   const cells = useMemo<Cell[]>(() => {
-    const firstDow = new Date(view.y, view.m, 1).getDay();
+    const firstDow = new Date(Date.UTC(view.y, view.m, 1)).getUTCDay();
     const dim = daysInMonth(view.y, view.m);
     const prev = shiftMonth(view.y, view.m, -1);
     const next = shiftMonth(view.y, view.m, 1);

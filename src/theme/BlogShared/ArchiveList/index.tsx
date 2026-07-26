@@ -3,7 +3,8 @@ import Link from '@docusaurus/Link';
 import Translate from '@docusaurus/Translate';
 import Card from '@site/src/components/laikit/Card';
 import TitleCard from '@site/src/components/laikit/TitleCard';
-import { formatBeijingDate } from '@site/src/utils/format';
+import { useVisitorTimeZone } from '@site/src/hooks/useVisitorTimeZone';
+import { getDateKey } from '@site/src/utils/dateTime';
 import styles from './styles.module.css';
 
 type PostLike = {
@@ -19,18 +20,19 @@ type PostLike = {
 };
 
 export function BlogArchiveList({ posts }: { posts: readonly PostLike[] }) {
+  const timeZone = useVisitorTimeZone();
   const groups = useMemo(() => {
     const map = new Map<number, PostLike[]>();
 
     posts.forEach((p) => {
-      const year = Number(formatBeijingDate(p.metadata.date).slice(0, 4));
+      const year = Number(getDateKey(p.metadata.date, timeZone).slice(0, 4));
       const arr = map.get(year);
       if (arr) arr.push(p);
       else map.set(year, [p]);
     });
 
     return Array.from(map.entries()).sort((a, b) => b[0] - a[0]);
-  }, [posts]);
+  }, [posts, timeZone]);
 
   if (!groups.length) {
     return (
@@ -56,7 +58,7 @@ export function BlogArchiveList({ posts }: { posts: readonly PostLike[] }) {
             {yearPosts.map((post) => (
               <li key={post.metadata.permalink} className={styles.recentItem}>
                 <div className={styles.recentDate}>
-                  {formatBeijingDate(post.metadata.date).slice(5, 10)}
+                  {getDateKey(post.metadata.date, timeZone).slice(5, 10)}
                 </div>
                 <Link to={post.metadata.permalink} className={styles.recentLink}>
                   {post.metadata.title}

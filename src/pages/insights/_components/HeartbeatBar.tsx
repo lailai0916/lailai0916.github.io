@@ -3,6 +3,8 @@ import clsx from 'clsx';
 import { translate } from '@docusaurus/Translate';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import type { KumaHeartbeat } from '@site/src/utils/kuma';
+import { useVisitorTimeZone } from '@site/src/hooks/useVisitorTimeZone';
+import { formatInTimeZone, parseUtcDateTime } from '@site/src/utils/dateTime';
 import Tooltip from '@site/src/components/laikit/Tooltip';
 import styles from './HeartbeatBar.module.css';
 
@@ -83,20 +85,16 @@ function statusLabel(status: number | undefined): string {
   }
 }
 
-function parseDate(iso: string): Date {
-  return new Date(iso.replace(' ', 'T'));
-}
-
-function formatTooltipDate(iso: string, locale: string): string {
-  const d = parseDate(iso);
+function formatTooltipDate(iso: string, locale: string, timeZone: string): string {
+  const d = parseUtcDateTime(iso);
   if (Number.isNaN(d.getTime())) return iso;
-  return d.toLocaleString(locale, {
+  return formatInTimeZone(d, locale, timeZone, {
     month: 'short',
     day: 'numeric',
     hour: '2-digit',
     minute: '2-digit',
     second: '2-digit',
-    hour12: false,
+    hourCycle: 'h23',
   });
 }
 
@@ -106,6 +104,7 @@ export default function HeartbeatBar({ beats, slots = 100 }: HeartbeatBarProps) 
   const {
     i18n: { currentLocale: locale },
   } = useDocusaurusContext();
+  const timeZone = useVisitorTimeZone();
 
   const effectiveSlots = fitSlots;
 
@@ -140,7 +139,7 @@ export default function HeartbeatBar({ beats, slots = 100 }: HeartbeatBarProps) 
         <Tooltip leftPct={tooltipLeftPct}>
           <Tooltip.Label>
             {active
-              ? formatTooltipDate(active.time, locale)
+              ? formatTooltipDate(active.time, locale, timeZone)
               : translate({
                   id: 'pages.insights.heartbeat.noData',
                   message: 'No Data',

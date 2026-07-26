@@ -4,7 +4,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import { translate } from '@docusaurus/Translate';
 import Segmented from '@site/src/components/laikit/Segmented';
 import Badge from '@site/src/components/laikit/Badge';
-import { formatBeijingDate } from '@site/src/utils/format';
+import { useVisitorTimeZone } from '@site/src/hooks/useVisitorTimeZone';
+import { getDateKey } from '@site/src/utils/dateTime';
 import TitleCard from '@site/src/components/laikit/TitleCard';
 import { TagChipList } from '../BlogUI';
 import BlogScaffold from '../Scaffold';
@@ -65,8 +66,8 @@ const TAB_LABEL_AUTHORS = translate({
   message: 'By Author',
 });
 
-function getPostYear(post: PostLike): number {
-  return Number(formatBeijingDate(post.metadata.date).slice(0, 4));
+function getPostYear(post: PostLike, timeZone: string): number {
+  return Number(getDateKey(post.metadata.date, timeZone).slice(0, 4));
 }
 
 /**
@@ -95,22 +96,24 @@ export function ArchiveTabsNav({ activeTab }: { activeTab: ArchiveTab }) {
 }
 
 function YearView({ posts }: { posts: readonly PostLike[] }) {
+  const timeZone = useVisitorTimeZone();
   const years = useMemo(() => {
     const map = new Map<number, number>();
     posts.forEach((p) => {
-      const y = getPostYear(p);
+      const y = getPostYear(p, timeZone);
       map.set(y, (map.get(y) ?? 0) + 1);
     });
     return Array.from(map.entries())
       .sort((a, b) => b[0] - a[0])
       .map(([year, count]) => ({ year, count }));
-  }, [posts]);
+  }, [posts, timeZone]);
 
   const [activeYear, setActiveYear] = useState<number | null>(null);
 
   const filteredPosts = useMemo(
-    () => (activeYear === null ? posts : posts.filter((p) => getPostYear(p) === activeYear)),
-    [posts, activeYear]
+    () =>
+      activeYear === null ? posts : posts.filter((p) => getPostYear(p, timeZone) === activeYear),
+    [posts, activeYear, timeZone]
   );
 
   return (

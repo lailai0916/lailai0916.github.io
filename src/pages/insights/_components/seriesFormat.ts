@@ -12,7 +12,7 @@ function formatHM(d: Date, locale: string): string {
   return d.toLocaleTimeString(locale, {
     hour: '2-digit',
     minute: '2-digit',
-    hour12: false,
+    hourCycle: 'h23',
   });
 }
 

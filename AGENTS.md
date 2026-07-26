@@ -52,6 +52,7 @@ Don't restate their content here; extend the file itself.
 | [`.agents/rules/components.md`](.agents/rules/components.md)       | `src/**` ts·tsx·css                  | `laikit` inventory, CSS-Module layout & rule ordering, hover-motion limits, text-overflow, MDX widgets          |
 | [`.agents/rules/i18n.md`](.agents/rules/i18n.md)                   | `src/**`, `i18n/**`                  | `translate()` workflow, five-prefix taxonomy, key shapes, orphan cleanup                                        |
 | [`.agents/rules/comments.md`](.agents/rules/comments.md)           | `src/**`, `*.ts`                     | code-comment style (site-specific slice)                                                                        |
+| [`.agents/rules/datetime.md`](.agents/rules/datetime.md)           | `src/**`, `docusaurus.config.ts`     | instant/calendar/duration semantics, storage offsets, visitor display zones, API boundaries                     |
 | [`.agents/rules/writing-style.md`](.agents/rules/writing-style.md) | `blog/**`, `docs/**`, translated MDX | frontmatter, headings, tone, MDX widgets, math, images, links, solution template                                |
 | [`.agents/rules/solution-sync.md`](.agents/rules/solution-sync.md) | `blog/solution/**`                   | 题解 → 洛谷: thin pointer to skill's `luogu-solution.md` (full flow + red lines) + project mirror/summary rules |
 

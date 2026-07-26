@@ -70,7 +70,7 @@ function useLocalTime() {
         timeZone: 'Asia/Shanghai',
         hour: '2-digit',
         minute: '2-digit',
-        hour12: false,
+        hourCycle: 'h23',
       }).formatToParts(new Date());
       const hour = parts.find((p) => p.type === 'hour')?.value ?? '00';
       const minute = parts.find((p) => p.type === 'minute')?.value ?? '00';

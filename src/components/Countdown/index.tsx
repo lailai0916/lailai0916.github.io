@@ -5,9 +5,8 @@ import Card from '@site/src/components/laikit/Card';
 import { fireConfetti } from '@site/src/utils/confetti';
 import styles from './styles.module.css';
 
-// The birthday recurs yearly: the countdown always targets the next occurrence
-// (pinned to Beijing time like every date on the site), celebrates on the day
-// itself, and rolls over at the following midnight — no yearly manual edit.
+// The birthday follows the owner's Asia/Shanghai calendar, so every visitor
+// enters and leaves the celebration at the same instant.
 const BIRTHDAY_MONTH = 9;
 const BIRTHDAY_DAY = 16;
 const BEIJING_OFFSET_MS = 8 * 60 * 60 * 1000;

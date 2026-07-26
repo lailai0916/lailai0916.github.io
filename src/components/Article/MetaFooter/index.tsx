@@ -4,7 +4,8 @@ import { translate } from '@docusaurus/Translate';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import { Icon } from '@iconify/react';
 import Badge from '@site/src/components/laikit/Badge';
-import { formatLocalizedDate } from '@site/src/utils/format';
+import { useVisitorTimeZone } from '@site/src/hooks/useVisitorTimeZone';
+import { formatLocalDate } from '@site/src/utils/dateTime';
 import styles from './styles.module.css';
 import shared from '../styles.module.css';
 
@@ -21,6 +22,7 @@ export default function MetaFooter({ tags, lastUpdatedAt, views }: MetaFooterPro
   const {
     i18n: { currentLocale },
   } = useDocusaurusContext();
+  const timeZone = useVisitorTimeZone();
 
   const hasTags = tags.length > 0;
   const hasUpdated = lastUpdatedAt != null;
@@ -51,10 +53,7 @@ export default function MetaFooter({ tags, lastUpdatedAt, views }: MetaFooterPro
                       message: 'Last updated on {date}',
                     },
                     {
-                      date: formatLocalizedDate(
-                        new Date(lastUpdatedAt!).toISOString(),
-                        currentLocale
-                      ),
+                      date: formatLocalDate(lastUpdatedAt!, currentLocale, timeZone),
                     }
                   )}
                 </time>

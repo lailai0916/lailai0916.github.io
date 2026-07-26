@@ -4,6 +4,7 @@ import { Icon } from '@iconify/react';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Card from '@site/src/components/laikit/Card';
 import { TRAVEL_LIST, type TravelItem } from '@site/src/data/travel';
+import { formatCalendarMonthName } from '@site/src/utils/dateTime';
 import styles from './styles.module.css';
 
 interface TimelineEntry {
@@ -30,18 +31,12 @@ function EntryBody({ item, month }: { item: TravelItem; month: string }) {
 export default function TravelTimeline() {
   const { i18n } = useDocusaurusContext();
   const isZh = i18n.currentLocale === 'zh-Hans';
-  const monthFmt = useMemo(
-    () => new Intl.DateTimeFormat(i18n.currentLocale, { month: 'long' }),
-    [i18n.currentLocale]
-  );
 
   // Month name only — the year is the group header. Year/month are read
   // literally from the 'YYYY-MM' string, so no timezone conversion applies.
   const monthLabel = (date: string): string => {
-    const [year, month] = date.split('-');
-    return isZh
-      ? `${Number(month)} 月`
-      : monthFmt.format(new Date(Number(year), Number(month) - 1, 1));
+    const month = date.slice(5, 7);
+    return isZh ? `${Number(month)} 月` : formatCalendarMonthName(date, i18n.currentLocale);
   };
 
   // A continuous running index drives the left/right alternation across the

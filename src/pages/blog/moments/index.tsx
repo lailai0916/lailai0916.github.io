@@ -9,7 +9,8 @@ import IconBlock from '@site/src/components/laikit/IconBlock';
 import ShareCard from '@site/src/components/laikit/ShareCard';
 import Skeleton from '@site/src/components/laikit/Skeleton';
 import { MOMENT_LIST } from '@site/src/data/moments';
-import { formatLocalizedDate, formatLocalizedTime } from '@site/src/utils/format';
+import { useVisitorTimeZone } from '@site/src/hooks/useVisitorTimeZone';
+import { formatLocalDate, formatLocalTime } from '@site/src/utils/dateTime';
 import styles from './styles.module.css';
 
 const PAGE_SIZE = 10;
@@ -276,6 +277,7 @@ export default function Moments() {
     i18n: { currentLocale },
   } = useDocusaurusContext();
   const { selectMessage } = usePluralForm();
+  const timeZone = useVisitorTimeZone();
   const weather = useHangzhouWeather();
   const [visibleCount, setVisibleCount] = useState(PAGE_SIZE);
   const totalCount = MOMENT_LIST.length;
@@ -336,11 +338,11 @@ export default function Moments() {
           {
             icon: 'lucide:calendar',
             dateTime: moment.date,
-            label: formatLocalizedDate(moment.date, currentLocale),
+            label: formatLocalDate(moment.date, currentLocale, timeZone),
           },
           {
             icon: 'lucide:clock',
-            label: formatLocalizedTime(moment.date, currentLocale),
+            label: formatLocalTime(moment.date, currentLocale, timeZone),
           },
         ];
         if (moment.event) {
