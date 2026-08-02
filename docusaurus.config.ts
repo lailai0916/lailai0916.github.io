@@ -199,7 +199,7 @@ const config: Config = {
     footer: {
       links: [
         {
-          title: 'Docs',
+          title: 'Content',
           items: [
             { label: 'Contest', to: '/docs/contest' },
             { label: 'Note', to: '/docs/note' },

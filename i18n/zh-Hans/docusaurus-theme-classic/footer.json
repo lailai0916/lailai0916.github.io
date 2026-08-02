@@ -1,7 +1,7 @@
 {
-  "link.title.Docs": {
-    "message": "文档",
-    "description": "The title of the footer links column with title=Docs in the footer"
+  "link.title.Content": {
+    "message": "内容",
+    "description": "The title of the footer links column with title=Content in the footer"
   },
   "link.title.Pages": {
     "message": "页面",
