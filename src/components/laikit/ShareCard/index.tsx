@@ -48,18 +48,23 @@ const SOURCE_RULES: Array<{ test: RegExp; label: string; icon: string }> = [
     icon: 'simple-icons:spotify',
   },
   {
+    test: /(?:^|\.)weixin\.qq\.com$/i,
+    label: 'WeChat',
+    icon: 'simple-icons:wechat',
+  },
+  {
     test: /(?:^|\.)bilibili\.com$|^b23\.tv$/i,
     label: 'bilibili',
     icon: 'simple-icons:bilibili',
   },
   {
     test: /(?:^|\.)zhihu\.com$|^zhuanlan\.zhihu\.com$/i,
-    label: '知乎',
+    label: 'Zhihu',
     icon: 'simple-icons:zhihu',
   },
   {
     test: /(?:^|\.)luogu\.com\.cn$/i,
-    label: '洛谷',
+    label: 'Luogu',
     icon: 'simple-icons:luogu',
   },
   {
