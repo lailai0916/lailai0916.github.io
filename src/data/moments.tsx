@@ -84,6 +84,11 @@ const STATIC_MOMENTS: MomentItem[] = [
     location: '杭州师范大学（仓前校区）',
   },
   {
+    date: '2026-03-08T15:33:00+08:00',
+    event: '联合省选 2026',
+    images: ['https://cloud.lailai.one/f/rjAcM/67f706e91a0d0a8dba.jpg'],
+  },
+  {
     date: '2026-03-06T09:33:00+08:00',
     content: '「这个时代不用闲鱼买东西，你几乎一定在溢价。」——孙宇晨',
   },
@@ -101,13 +106,32 @@ const STATIC_MOMENTS: MomentItem[] = [
     content: 'Hello, World!',
   },
   {
+    date: '2026-01-11T05:01:00+08:00',
+    content: 'USACO Platinum',
+    images: ['https://cloud.lailai.one/f/wyAUg/usaco-platinum.png'],
+  },
+  {
     date: '2025-12-26T23:23:00+08:00',
     content: 'ChatGPT 2025',
     event: 'Your Year with ChatGPT',
     images: ['https://cloud.lailai.one/f/PVyuy/chatgpt-2025.png'],
   },
   {
-    date: '2025-10-17T00:00:00+08:00',
+    date: '2025-12-26T23:23:00+08:00',
+    content: 'AFO | 2020.12-2025.12',
+    share: {
+      url: 'https://mp.weixin.qq.com/s/zuJJ0-D-Ekc-FRWFzp10Jg',
+      title: '杭州二中学子勇夺NOIP满分，2人成功晋级国家队预备队',
+      description: '浙江省杭州第二中学',
+    },
+  },
+  {
+    date: '2025-10-17T21:03:00+08:00',
+    content: '杭州高中分布地图',
+    images: ['https://cloud.lailai.one/f/nMdSq/hangzhou-highschool-map.png'],
+  },
+  {
+    date: '2025-10-17T20:30:00+08:00',
     content: "Website's 1st Anniversary! 🎉",
   },
   {
