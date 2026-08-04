@@ -287,6 +287,14 @@
     "message": "本章展示与我个人相关的项目。",
     "description": "The generated-index page description for category '个人' in sidebar 'projectSidebar'"
   },
+  "sidebar.projectSidebar.category.研究": {
+    "message": "研究",
+    "description": "The label for category '研究' in sidebar 'projectSidebar'"
+  },
+  "sidebar.projectSidebar.category.研究.link.generated-index.description": {
+    "message": "本章记录数学研究、论文与形式化验证。",
+    "description": "The generated-index page description for category '研究' in sidebar 'projectSidebar'"
+  },
   "sidebar.projectSidebar.category.工具": {
     "message": "工具",
     "description": "The label for category '工具' in sidebar 'projectSidebar'"

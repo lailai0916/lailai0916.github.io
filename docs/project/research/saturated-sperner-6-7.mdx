@@ -1,0 +1,44 @@
+---
+title: 饱和 6-Sperner 与 7-Sperner 数
+description: 本文记录饱和 6-Sperner 数与 7-Sperner 数的精确值、Lean 4 形式化证明与公开工件。
+summary: 该研究确定饱和 6-Sperner 数和 7-Sperner 数的稳定值分别为 30 与 55，完整证明已用 Lean 4 形式化。页面概述问题定义、数学证明结构与形式化验证范围，列出论文、源代码、SAT 证书、重放脚本及 Zenodo 归档，便于核对结果和复现计算。
+---
+
+## 结果
+
+不含长度为 $k+1$ 的严格包含链的集合族称为 $k$-Sperner 系统。若加入任意外部集合都会产生这样的链，则称该系统饱和。底集充分大时，最小规模会稳定；记其稳定值为 $\operatorname{sat}(k)$。
+
+我证明了以下两个精确值：
+
+$$
+\begin{aligned}
+  \operatorname{sat}(6) & =30 \\
+  \operatorname{sat}(7) & =55
+\end{aligned}
+$$
+
+## 证明
+
+下界从有限规范层归约开始。相邻层在任意有限底集上产生互为 blocker 的超图对。记 $m(r,s)$ 为这类超图对的最小总规模。两侧成员大小分别至少为 $r$ 和 $s$。六层情形归结为 $m(2,3)=9$。七层情形还需要 $m(2,4)=12$ 与 $m(3,3)=14$；后者的等号情形由 Fano 平面给出。对相邻层和剩余有限轮廓的分类排除了小于 $55$ 的情形。
+
+上界分别由一个 $30$ 元构造和一个 $55$ 元构造达到。后者使用八点核心与一个不交齐次块，可扩展到所有充分大的底集。
+
+## 形式化验证
+
+完整证明已在 Lean 4 中形式化。最终定理表达为：
+
+```lean
+IsStableSaturationNumber 6 30
+IsStableSaturationNumber 7 55
+```
+
+形式化内容包含任意有限底集上的 blocker 归约和上界构造。它也验证有限分类的可靠性与实现性，并推出最终稳定值定理。有限计算与 SAT 证书仅承担相应分类分支的验证，不代替全局下界。
+
+## 公开材料
+
+论文题目为 _The exact saturated 6- and 7-Sperner numbers_。源代码、Lean 形式化、SAT 证书与重放脚本均已公开。
+
+<GitHub repo="lailai0916/saturated-sperner-6-7" />
+
+- [版本 v1.1.2 - GitHub Releases](https://github.com/lailai0916/saturated-sperner-6-7/releases/tag/v1.1.2)
+- [公开工件与 DOI - Zenodo](https://doi.org/10.5281/zenodo.21770438)

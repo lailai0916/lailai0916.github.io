@@ -688,6 +688,15 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: 'category',
+      label: '研究',
+      link: {
+        type: 'generated-index',
+        description: '本章记录数学研究、论文与形式化验证。',
+      },
+      items: ['project/research/saturated-sperner-6-7'],
+    },
+    {
+      type: 'category',
       label: '工具',
       link: {
         type: 'generated-index',
