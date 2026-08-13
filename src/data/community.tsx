@@ -46,7 +46,7 @@ export const COMMUNITY_LIST: CommunityItem[] = [
     title: 'QQ',
     text: '11548585',
     icon: 'simple-icons:qq',
-    href: 'https://cloud.lailai.one/f/Qk8tX/community-qq.jpg',
+    href: 'https://qm.qq.com/q/aREQfS97PO',
   },
   {
     title: 'WeChat',

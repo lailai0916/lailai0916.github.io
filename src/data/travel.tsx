@@ -216,4 +216,9 @@ export const TRAVEL_LIST: TravelItem[] = [
     description: '清迈、清莱、金三角',
     href: '/blog/travel/th-la',
   },
+  {
+    date: '2026-08',
+    title: '🇨🇳 北京',
+    description: '北京',
+  },
 ];
