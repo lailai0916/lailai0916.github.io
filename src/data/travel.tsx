@@ -220,5 +220,6 @@ export const TRAVEL_LIST: TravelItem[] = [
     date: '2026-08',
     title: '🇨🇳 北京',
     description: '北京',
+    href: '/blog/record/gfssm-2026-final',
   },
 ];
