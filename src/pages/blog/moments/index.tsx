@@ -13,7 +13,7 @@ import { useVisitorTimeZone } from '@site/src/hooks/useVisitorTimeZone';
 import { formatLocalDate, formatLocalTime } from '@site/src/utils/dateTime';
 import styles from './styles.module.css';
 
-const PAGE_SIZE = 10;
+const PAGE_SIZE = 20;
 
 const TITLE = translate({
   id: 'pages.moments.title',

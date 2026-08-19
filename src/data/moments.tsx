@@ -14,6 +14,31 @@ interface MomentItem {
 
 const STATIC_MOMENTS: MomentItem[] = [
   {
+    date: '2026-08-17T14:01:00+08:00',
+    content: '征集眼前一亮的 idea',
+    images: ['https://cloud.lailai.one/f/NRotg/IMG_5577.PNG'],
+  },
+  {
+    date: '2026-08-12T23:58:00+08:00',
+    content: '「Attention is All You Need」 3.0',
+    share: {
+      url: 'https://www.zhihu.com/question/2060410811798102294/answer/2071019787996619857',
+      title: '如何证明e^x>19/48+41x/37+43x^2/40，x>0? - 知乎',
+      description: 'Answer',
+    },
+    images: [
+      'https://cloud.lailai.one/f/Prnuy/attention1.png',
+      'https://cloud.lailai.one/f/Y8RsA/attention2.png',
+    ],
+  },
+  {
+    date: '2026-08-04T20:00:00+08:00',
+    content: '使用 GPT-5.6 Sol (xhigh) 证明了饱和 Sperner 系统的稳定值 sat(6)=30 和 sat(7)=55',
+    images: [
+      'https://cloud.lailai.one/f/e3Ehw/P0054-sat6-sat7-manuscript-v1.1.2-page-1-600dpi.png',
+    ],
+  },
+  {
     date: '2026-07-23T15:41:00+08:00',
     content: '「Code is cheap. Show me the talk.」 — Linus Torvalds',
   },
