@@ -82,4 +82,10 @@ export const FRIEND_LIST: FriendItem[] = [
     href: 'https://www.cnblogs.com/decimal10',
     avatar: 'https://cdn.luogu.com.cn/upload/usericon/809729.png',
   },
+  {
+    title: '吕舒君的博客',
+    description: '分享计算机学习过程中的相关知识、干活，不定期更新，欢迎常来看看哦！',
+    href: 'https://cszj.wang',
+    avatar: 'https://cszj.wang/api/f/X3fbn/mmexport1762511348709.png',
+  },
 ];
