@@ -88,4 +88,10 @@ export const FRIEND_LIST: FriendItem[] = [
     href: 'https://cszj.wang',
     avatar: 'https://cszj.wang/api/f/X3fbn/mmexport1762511348709.png',
   },
+  {
+    title: '愧怍',
+    description: '道阻且长，行则将至',
+    href: 'https://kuizuo.me',
+    avatar: 'https://kuizuo.me/img/logo.png',
+  },
 ];
