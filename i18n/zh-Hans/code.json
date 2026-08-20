@@ -338,9 +338,6 @@
   "pages.settings.item.quickActions.description": {
     "message": "一键执行常用操作"
   },
-  "pages.settings.datacard.label": {
-    "message": "项设置"
-  },
   "pages.travel.title": {
     "message": "旅行"
   },

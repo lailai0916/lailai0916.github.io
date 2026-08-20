@@ -7,7 +7,6 @@ import TitleCard from '@site/src/components/laikit/TitleCard';
 import Segmented, { type SegmentedItem } from '@site/src/components/laikit/Segmented';
 import Switch from '@site/src/components/laikit/Switch';
 import Slider from '@site/src/components/laikit/Slider';
-import DataCard from '@site/src/components/laikit/DataCard';
 import Button from '@site/src/components/laikit/Button';
 import { useColorMode } from '@docusaurus/theme-common';
 import { usePersistentState } from '@site/src/hooks/usePersistentState';
@@ -486,8 +485,6 @@ function QuickActions() {
 }
 
 export default function Settings(): ReactNode {
-  // Order is the a1..a6 grid-area sequence in styles.module.css; the DataCard
-  // count derives from it so the two can never drift.
   const tiles = [
     <ThemeSettings key="theme" />,
     <AccentColor key="color" />,
@@ -501,14 +498,6 @@ export default function Settings(): ReactNode {
     <Layout title={TITLE} description={DESCRIPTION}>
       <PageHeader>
         <PageTitle title={MODIFICATION} description={DESCRIPTION} />
-        <DataCard
-          value={tiles.length}
-          label={translate({
-            id: 'pages.settings.datacard.label',
-            message: 'Setting|Settings',
-          })}
-          icon="lucide:settings"
-        />
       </PageHeader>
       <PageContent className={styles.layout}>{tiles}</PageContent>
     </Layout>
