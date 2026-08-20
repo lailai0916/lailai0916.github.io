@@ -86,9 +86,6 @@
   "pages.home.rolePrefix": {
     "message": "我是一名 "
   },
-  "pages.home.location": {
-    "message": "中国杭州"
-  },
   "pages.home.connect": {
     "message": "联系"
   },

@@ -191,19 +191,16 @@ export default function Home(): ReactNode {
   const { time: localTime, icon: timeIcon } = useLocalTime();
   const infoItems = [
     {
-      key: 'location',
-      value: translate({
-        id: 'pages.home.location',
-        message: 'Hangzhou, China',
-      }),
-      icon: 'lucide:map-pin',
-      href: 'https://maps.app.goo.gl/pjqPSMzrVqRcEM6J8',
-    },
-    {
       key: 'time',
       value: `${localTime} (UTC+08:00)`,
       icon: timeIcon,
       href: 'https://time.is/UTC+8',
+    },
+    {
+      key: 'orcid',
+      value: '0009-0008-9790-9881',
+      icon: 'simple-icons:orcid',
+      href: 'https://orcid.org/0009-0008-9790-9881',
     },
     {
       key: 'fingerprint',
