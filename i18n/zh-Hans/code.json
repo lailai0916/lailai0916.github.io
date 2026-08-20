@@ -146,8 +146,11 @@
   "pages.friends.modification": {
     "message": "我的<b>友链</b>"
   },
-  "pages.friends.datacard.label": {
-    "message": "位朋友"
+  "pages.friends.requestLink": {
+    "message": "申请友链"
+  },
+  "pages.friends.requestSubject": {
+    "message": "友链申请"
   },
   "pages.insights.title": {
     "message": "实时洞察"
