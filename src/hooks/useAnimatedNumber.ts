@@ -11,7 +11,7 @@ export function useAnimatedNumber(
   durationMs: number = DEFAULT_DURATION_MS
 ): number {
   const [value, setValue] = useState<number>(target ?? 0);
-  const fromRef = useRef<number>(target ?? 0);
+  const valueRef = useRef<number>(target ?? 0);
   const rafRef = useRef<number | null>(null);
 
   useEffect(() => {
@@ -20,14 +20,15 @@ export function useAnimatedNumber(
     // The CSS global guard can't reach a rAF loop that writes React state, so
     // gate the count-up here: land on the final value instantly.
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-      fromRef.current = target;
+      valueRef.current = target;
       setValue(target);
       return;
     }
 
-    const from = fromRef.current;
+    const from = valueRef.current;
     const delta = target - from;
     if (delta === 0) {
+      valueRef.current = target;
       setValue(target);
       return;
     }
@@ -37,11 +38,12 @@ export function useAnimatedNumber(
       const t = Math.min(1, (now - start) / durationMs);
       const eased = easeOutCubic(t);
       const next = from + delta * eased;
+      valueRef.current = next;
       setValue(next);
       if (t < 1) {
         rafRef.current = requestAnimationFrame(tick);
       } else {
-        fromRef.current = target;
+        valueRef.current = target;
         rafRef.current = null;
       }
     };
@@ -52,9 +54,7 @@ export function useAnimatedNumber(
         cancelAnimationFrame(rafRef.current);
         rafRef.current = null;
       }
-      fromRef.current = value;
     };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [target, durationMs]);
 
   return value;
