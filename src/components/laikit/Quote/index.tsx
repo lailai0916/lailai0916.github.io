@@ -34,7 +34,7 @@ export default function Quote({ children, author, source, className }: QuoteProp
               ·
             </span>
           )}
-          {source && <span className={styles.source}>{source}</span>}
+          {source && <span>{source}</span>}
         </figcaption>
       )}
     </figure>
