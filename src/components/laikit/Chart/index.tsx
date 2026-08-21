@@ -1,4 +1,5 @@
 import {
+  useEffect,
   useRef,
   useState,
   type KeyboardEvent as ReactKeyboardEvent,
@@ -87,6 +88,18 @@ export default function Chart({
   const selectedIndex = selectedKey == null ? -1 : data.findIndex((d) => d.key === selectedKey);
   const selectedIdx = selectedIndex >= 0 ? selectedIndex : null;
 
+  useEffect(() => {
+    if (selectedKey == null) return;
+    const onPointerDown = (event: PointerEvent) => {
+      if (!plotRef.current?.contains(event.target as Node)) {
+        setHoverIdx(null);
+        setSelectedKey(null);
+      }
+    };
+    document.addEventListener('pointerdown', onPointerDown);
+    return () => document.removeEventListener('pointerdown', onPointerDown);
+  }, [selectedKey]);
+
   const fmt = (v: number) => formatCompact(v, locale);
   // Bars sit at slot centres; line points span edge-to-edge.
   const xPct = (i: number) =>
@@ -109,7 +122,10 @@ export default function Chart({
   };
   const onClick = (e: ReactMouseEvent<HTMLDivElement>) => {
     const idx = indexAt(e.clientX);
-    if (idx != null) select(idx);
+    if (idx != null) {
+      plotRef.current?.focus();
+      select(idx);
+    }
   };
   const onFocus = () => {
     if (interactive && selectedIdx == null) select(n - 1);
@@ -202,6 +218,10 @@ export default function Chart({
             }
             onClick={onClick}
             onFocus={onFocus}
+            onBlur={() => {
+              setHoverIdx(null);
+              setSelectedKey(null);
+            }}
             onKeyDown={onKeyDown}
             onPointerMove={onPointerMove}
             onPointerLeave={onPointerLeave}
