@@ -4,8 +4,8 @@ import { translate } from '@docusaurus/Translate';
 import Card from '@site/src/components/laikit/Card';
 import Skeleton from '@site/src/components/laikit/Skeleton';
 import { useKumaStatus } from '@site/src/hooks/useKumaStatus';
-import type { KumaHeartbeat, KumaMonitor } from '@site/src/utils/kuma';
-import HeartbeatBar from '../HeartbeatBar';
+import { type KumaHeartbeat, type KumaMonitor } from '@site/src/utils/kuma';
+import HeartbeatBar, { heartbeatStatusLabel } from '../HeartbeatBar';
 import StatePanel from '../StatePanel';
 import styles from './styles.module.css';
 
@@ -22,6 +22,21 @@ function avgPing(beats: KumaHeartbeat[] | undefined): number | null {
   );
   if (valid.length === 0) return null;
   return Math.round(valid.reduce((s, b) => s + b.ping, 0) / valid.length);
+}
+
+function statusClasses(status: number | undefined): [string, string] {
+  switch (status) {
+    case 1:
+      return [styles.dotUp, styles.statusUp];
+    case 0:
+      return [styles.dotDown, styles.statusDown];
+    case 2:
+      return [styles.dotPending, styles.statusPending];
+    case 3:
+      return [styles.dotMaintenance, styles.statusMaintenance];
+    default:
+      return [styles.dotEmpty, styles.statusEmpty];
+  }
 }
 
 function MonitorRow({
@@ -43,7 +58,16 @@ function MonitorRow({
     return (
       <Card className={styles.row}>
         <div className={styles.rowHead}>
-          <Skeleton className={styles.dot} />
+          <div className={styles.state}>
+            <Skeleton className={styles.dot} />
+            <Skeleton
+              className={clsx(styles.status, styles.ghost)}
+              radius={6}
+              style={{ width: '2.5rem' }}
+            >
+              &nbsp;
+            </Skeleton>
+          </div>
           <div className={styles.nameWrap}>
             <Skeleton
               className={clsx(styles.name, styles.ghost)}
@@ -71,22 +95,15 @@ function MonitorRow({
   const last = lastStatus(beats);
   const ping = avgPing(beats);
   const upPct = typeof uptime24 === 'number' ? (uptime24 * 100).toFixed(2) : '–';
-
-  const statusCls =
-    last === 1
-      ? styles.dotUp
-      : last === 0
-        ? styles.dotDown
-        : last === 2
-          ? styles.dotPending
-          : last === 3
-            ? styles.dotMaintenance
-            : styles.dotEmpty;
+  const [dotClass, statusClass] = statusClasses(last);
 
   return (
     <Card className={styles.row}>
       <div className={styles.rowHead}>
-        <span className={clsx(styles.dot, statusCls)} aria-hidden="true" />
+        <div className={styles.state}>
+          <span className={clsx(styles.dot, dotClass)} aria-hidden="true" />
+          <span className={clsx(styles.status, statusClass)}>{heartbeatStatusLabel(last)}</span>
+        </div>
         <div className={styles.nameWrap}>
           {monitor.url ? (
             <Link className={styles.name} href={monitor.url}>
@@ -117,7 +134,7 @@ function MonitorRow({
 }
 
 export default function UptimeSection() {
-  const { data, status } = useKumaStatus();
+  const { data, status, retry } = useKumaStatus();
   const loading = status === 'loading';
   const errored = status === 'error';
 
@@ -135,6 +152,7 @@ export default function UptimeSection() {
             id: 'pages.insights.status.error',
             message: 'Unable to reach status server',
           })}
+          onRetry={retry}
         />
       ) : (
         <div className={styles.list}>

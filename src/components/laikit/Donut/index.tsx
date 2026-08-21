@@ -9,6 +9,7 @@ import clsx from 'clsx';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import TitleCard from '@site/src/components/laikit/TitleCard';
 import Skeleton from '@site/src/components/laikit/Skeleton';
+import DataState from '@site/src/components/laikit/DataState';
 import { formatCompact } from '@site/src/utils/format';
 import styles from './styles.module.css';
 
@@ -26,6 +27,7 @@ interface DonutProps {
   // Set when the source fetch failed, so an unreachable endpoint reads as an
   // error rather than as a legitimately empty dataset.
   error?: string;
+  errorAction?: ReactNode;
   // Collapse everything past the top (maxSlices - 1) into a neutral "Other"
   // slice, so a dominant category never shreds the ring into slivers. Also fixes
   // the row count so the legend area — and the skeleton — reserve equal height.
@@ -68,6 +70,7 @@ export default function Donut({
   loading,
   emptyText,
   error,
+  errorAction,
   maxSlices,
   otherLabel,
   renderLabel,
@@ -171,9 +174,9 @@ export default function Donut({
           </ul>
         </div>
       ) : error ? (
-        <p className={styles.empty}>{error}</p>
+        <DataState message={error} action={errorAction} />
       ) : total === 0 ? (
-        <p className={styles.empty}>{emptyText}</p>
+        <DataState message={emptyText} />
       ) : (
         <div className={styles.body} style={{ '--donut-rows': rows } as CSSProperties}>
           <div

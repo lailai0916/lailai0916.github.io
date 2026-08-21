@@ -10,7 +10,12 @@ interface MetricItem {
 }
 
 export function useUmamiMetric(type: MetricType, range: InsightsRange, limit: number = 8) {
-  const { data: items, status } = useFetch<MetricItem[]>(
+  const {
+    data: items,
+    status,
+    isInitialLoading,
+    retry,
+  } = useFetch<MetricItem[]>(
     async (signal) => {
       const { startAt, endAt } = rangeWindow(range);
       const result = await umamiFetchJson<MetricItem[]>(
@@ -24,5 +29,5 @@ export function useUmamiMetric(type: MetricType, range: InsightsRange, limit: nu
     []
   );
 
-  return { items, status };
+  return { items, status, isInitialLoading, retry };
 }

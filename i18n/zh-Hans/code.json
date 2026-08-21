@@ -35,9 +35,6 @@
   "data.devices.airpodsMax": {
     "message": "USB-C / 午夜色 / H1"
   },
-  "data.devices.powerbeatsPro": {
-    "message": "极速黑 / H2"
-  },
   "data.moments.blogPublished": {
     "message": "发布了新文章 <a href=\"{permalink}\">{title}</a>"
   },
@@ -89,6 +86,9 @@
   "pages.home.connect": {
     "message": "联系"
   },
+  "components.browserWindow.openLink": {
+    "message": "在新标签页打开链接"
+  },
   "components.countdown.event": {
     "message": "我的生日"
   },
@@ -116,6 +116,33 @@
   "components.desmos.frameTitle": {
     "message": "Desmos 图形计算器"
   },
+  "components.playground.tab.neuralNetwork": {
+    "message": "神经网络"
+  },
+  "components.playground.tab.fourierTransform": {
+    "message": "傅里叶变换"
+  },
+  "components.playground.tab.lorenzAttractor": {
+    "message": "洛伦兹吸引子"
+  },
+  "components.playground.tab.gameOfLife": {
+    "message": "生命游戏"
+  },
+  "components.playground.tab.nimGame": {
+    "message": "尼姆游戏"
+  },
+  "components.playground.collapse": {
+    "message": "收起"
+  },
+  "components.playground.expand": {
+    "message": "展开"
+  },
+  "pages.about.skills.ariaLabel": {
+    "message": "技术栈图标"
+  },
+  "pages.changelog.empty": {
+    "message": "暂无更新日志"
+  },
   "components.problem.collapse": {
     "message": "收起"
   },
@@ -130,12 +157,6 @@
   },
   "components.problem.error": {
     "message": "无法加载题目「{id}」。"
-  },
-  "pages.about.skills.ariaLabel": {
-    "message": "技术栈图标"
-  },
-  "pages.changelog.empty": {
-    "message": "暂无更新日志"
   },
   "pages.friends.title": {
     "message": "友链"
@@ -161,14 +182,44 @@
   "pages.insights.modification": {
     "message": "实时<b>洞察</b>"
   },
+  "pages.insights.traffic.title": {
+    "message": "流量"
+  },
+  "pages.insights.link.analytics": {
+    "message": "查看统计面板"
+  },
+  "pages.insights.serviceHealth.title": {
+    "message": "服务状态"
+  },
+  "pages.insights.link.status": {
+    "message": "查看状态页"
+  },
   "pages.insights.metricList.empty": {
     "message": "暂无数据"
   },
+  "pages.insights.analytics.error": {
+    "message": "无法加载统计数据"
+  },
+  "pages.insights.env.other": {
+    "message": "其他"
+  },
+  "pages.insights.env.device.desktop": {
+    "message": "桌面端"
+  },
+  "pages.insights.env.device.laptop": {
+    "message": "笔记本"
+  },
+  "pages.insights.env.device.mobile": {
+    "message": "移动端"
+  },
+  "pages.insights.env.device.tablet": {
+    "message": "平板"
+  },
   "pages.insights.metric.visitors": {
-    "message": "访客数"
+    "message": "访客量"
   },
   "pages.insights.metric.visits": {
-    "message": "访问数"
+    "message": "访问次数"
   },
   "pages.insights.metric.pageviews": {
     "message": "浏览量"
@@ -177,7 +228,7 @@
     "message": "跳出率"
   },
   "pages.insights.metric.avgVisit": {
-    "message": "平均时长"
+    "message": "访问时长"
   },
   "pages.insights.range.24h": {
     "message": "近 24 小时"
@@ -211,6 +262,18 @@
   },
   "pages.insights.metricList.countries": {
     "message": "访客地区"
+  },
+  "pages.insights.env.browsers": {
+    "message": "浏览器"
+  },
+  "pages.insights.env.os": {
+    "message": "操作系统"
+  },
+  "pages.insights.env.devices": {
+    "message": "设备"
+  },
+  "pages.insights.link.ariaLabel": {
+    "message": "{label}（在新标签页打开）"
   },
   "pages.resources.title": {
     "message": "资源"
@@ -401,30 +464,6 @@
   "components.article.viewCount": {
     "message": "{viewCount} 浏览"
   },
-  "components.github.error": {
-    "message": "加载 GitHub 数据失败"
-  },
-  "components.github.noDescription": {
-    "message": "暂无描述"
-  },
-  "components.github.stars": {
-    "message": "Star 数"
-  },
-  "components.github.forks": {
-    "message": "Fork 数"
-  },
-  "components.github.license": {
-    "message": "许可证"
-  },
-  "components.github.language": {
-    "message": "主要语言"
-  },
-  "components.markdown.aboutGreeting": {
-    "message": "Hello, I'm lailai"
-  },
-  "components.quote.attributionDash": {
-    "message": "—— "
-  },
   "components.playground.fourierTransform.reset": {
     "message": "重置"
   },
@@ -457,45 +496,6 @@
   },
   "components.playground.neuralNetwork.preprocess": {
     "message": "预处理"
-  },
-  "components.playground.nim.yourTurn": {
-    "message": "你的回合"
-  },
-  "components.playground.nim.aiThinking": {
-    "message": "AI 思考中……"
-  },
-  "components.playground.nim.youWin": {
-    "message": "你赢了！"
-  },
-  "components.playground.nim.aiWins": {
-    "message": "AI 赢了"
-  },
-  "components.playground.nim.random": {
-    "message": "随机"
-  },
-  "components.playground.nim.tip": {
-    "message": "提示"
-  },
-  "components.playground.tab.neuralNetwork": {
-    "message": "神经网络"
-  },
-  "components.playground.tab.fourierTransform": {
-    "message": "傅里叶变换"
-  },
-  "components.playground.tab.lorenzAttractor": {
-    "message": "洛伦兹吸引子"
-  },
-  "components.playground.tab.gameOfLife": {
-    "message": "生命游戏"
-  },
-  "components.playground.tab.nimGame": {
-    "message": "尼姆游戏"
-  },
-  "components.playground.collapse": {
-    "message": "收起"
-  },
-  "components.playground.expand": {
-    "message": "展开"
   },
   "pages.moments.title": {
     "message": "动态"
@@ -614,6 +614,9 @@
   "pages.overview.chart.cumulative.title": {
     "message": "文章累计"
   },
+  "pages.overview.chart.empty": {
+    "message": "暂无文章"
+  },
   "pages.overview.unit.posts": {
     "message": "{count} 篇文章"
   },
@@ -629,41 +632,47 @@
   "pages.overview.metric.moments": {
     "message": "动态"
   },
-  "pages.insights.heartbeat.ariaLabel": {
-    "message": "近期监测状态"
+  "components.playground.nim.yourTurn": {
+    "message": "你的回合"
   },
-  "pages.insights.heartbeat.up": {
-    "message": "正常"
+  "components.playground.nim.aiThinking": {
+    "message": "AI 思考中……"
   },
-  "pages.insights.heartbeat.down": {
-    "message": "故障"
+  "components.playground.nim.youWin": {
+    "message": "你赢了！"
   },
-  "pages.insights.heartbeat.pending": {
-    "message": "待定"
+  "components.playground.nim.aiWins": {
+    "message": "AI 赢了"
   },
-  "pages.insights.heartbeat.maintenance": {
-    "message": "维护中"
+  "components.playground.nim.random": {
+    "message": "随机"
   },
-  "pages.insights.heartbeat.unknown": {
-    "message": "暂无数据"
+  "components.playground.nim.tip": {
+    "message": "提示"
   },
-  "pages.insights.heartbeat.noData": {
-    "message": "暂无数据"
+  "components.github.error": {
+    "message": "加载 GitHub 数据失败"
   },
-  "pages.insights.systemStatus.title": {
-    "message": "运行时快照"
+  "components.github.noDescription": {
+    "message": "暂无描述"
   },
-  "pages.insights.systemStatus.srLabel": {
-    "message": "系统状态概览"
+  "components.github.stars": {
+    "message": "Star 数"
   },
-  "pages.insights.uptime.avgPing": {
-    "message": "平均 {ping}ms"
+  "components.github.forks": {
+    "message": "Fork 数"
   },
-  "pages.insights.status.error": {
-    "message": "无法连接监控服务"
+  "components.github.license": {
+    "message": "许可证"
   },
-  "pages.insights.uptime.empty": {
-    "message": "暂无监控项"
+  "components.github.language": {
+    "message": "主要语言"
+  },
+  "components.markdown.aboutGreeting": {
+    "message": "Hello, I'm lailai"
+  },
+  "components.quote.attributionDash": {
+    "message": "—— "
   },
   "blog.post.empty": {
     "message": "暂无文章"
@@ -795,6 +804,45 @@
   },
   "components.cookieConsent.accept": {
     "message": "接受"
+  },
+  "pages.insights.heartbeat.ariaLabel": {
+    "message": "近期监测状态"
+  },
+  "pages.insights.heartbeat.up": {
+    "message": "正常"
+  },
+  "pages.insights.heartbeat.down": {
+    "message": "故障"
+  },
+  "pages.insights.heartbeat.pending": {
+    "message": "待定"
+  },
+  "pages.insights.heartbeat.maintenance": {
+    "message": "维护中"
+  },
+  "pages.insights.heartbeat.unknown": {
+    "message": "暂无数据"
+  },
+  "pages.insights.heartbeat.noData": {
+    "message": "暂无数据"
+  },
+  "pages.insights.retry": {
+    "message": "重试"
+  },
+  "pages.insights.systemStatus.title": {
+    "message": "运行时快照"
+  },
+  "pages.insights.systemStatus.srLabel": {
+    "message": "系统状态概览"
+  },
+  "pages.insights.uptime.avgPing": {
+    "message": "平均 {ping}ms"
+  },
+  "pages.insights.status.error": {
+    "message": "无法连接监控服务"
+  },
+  "pages.insights.uptime.empty": {
+    "message": "暂无监控项"
   },
   "pages.travel.map.legend.visited": {
     "message": "已到访"
@@ -972,13 +1020,13 @@
     "message": "主导航",
     "description": "The ARIA label for the main navigation"
   },
-  "theme.navbar.mobileLanguageDropdown.label": {
-    "message": "选择语言",
-    "description": "The label for the mobile language switcher dropdown"
-  },
   "theme.NotFound.p2": {
     "message": "请联系原始链接来源网站的所有者，并告知他们链接已损坏。",
     "description": "The 2nd paragraph of the 404 page"
+  },
+  "theme.navbar.mobileLanguageDropdown.label": {
+    "message": "选择语言",
+    "description": "The label for the mobile language switcher dropdown"
   },
   "theme.TOCCollapsible.toggleButtonLabel": {
     "message": "本页总览",
@@ -1299,6 +1347,18 @@
     "message": "重置",
     "description": "The reset button label for live code blocks"
   },
+  "theme.ErrorPageContent.tryAgain": {
+    "message": "重试",
+    "description": "The label of the button to try again rendering when the React error boundary captures an error"
+  },
+  "theme.common.skipToMainContent": {
+    "message": "跳到主要内容",
+    "description": "The skip to content label used for accessibility, allowing to rapidly navigate to main content with keyboard tab/enter navigation"
+  },
+  "theme.tags.tagsPageTitle": {
+    "message": "标签",
+    "description": "The title of the tag list page"
+  },
   "theme.blog.post.plurals": {
     "message": "{count} 篇文章",
     "description": "Pluralized label for \"{count} posts\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
@@ -1342,50 +1402,5 @@
   "theme.docs.DocCard.categoryDescription.plurals": {
     "message": "{count} 个项目",
     "description": "The default description for a category card in the generated index about how many items this category includes"
-  },
-  "theme.ErrorPageContent.tryAgain": {
-    "message": "重试",
-    "description": "The label of the button to try again rendering when the React error boundary captures an error"
-  },
-  "theme.common.skipToMainContent": {
-    "message": "跳到主要内容",
-    "description": "The skip to content label used for accessibility, allowing to rapidly navigate to main content with keyboard tab/enter navigation"
-  },
-  "theme.tags.tagsPageTitle": {
-    "message": "标签",
-    "description": "The title of the tag list page"
-  },
-  "pages.insights.env.device.desktop": {
-    "message": "桌面端"
-  },
-  "pages.insights.env.device.laptop": {
-    "message": "笔记本"
-  },
-  "pages.insights.env.device.mobile": {
-    "message": "移动端"
-  },
-  "pages.insights.env.device.tablet": {
-    "message": "平板"
-  },
-  "pages.insights.env.browsers": {
-    "message": "浏览器"
-  },
-  "pages.insights.env.os": {
-    "message": "操作系统"
-  },
-  "pages.insights.env.devices": {
-    "message": "设备"
-  },
-  "pages.insights.env.other": {
-    "message": "其他"
-  },
-  "pages.insights.analytics.error": {
-    "message": "无法加载统计数据"
-  },
-  "pages.overview.chart.empty": {
-    "message": "暂无文章"
-  },
-  "components.browserWindow.openLink": {
-    "message": "在新标签页打开链接"
   }
 }

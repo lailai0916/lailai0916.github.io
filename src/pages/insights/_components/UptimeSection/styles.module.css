@@ -29,6 +29,13 @@
   }
 }
 
+.state {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-shrink: 0;
+}
+
 .dot {
   width: var(--dot-size);
   height: var(--dot-size);
@@ -79,6 +86,50 @@ html[data-theme='dark'] .dotMaintenance {
 
 .dotEmpty {
   background: var(--ifm-color-emphasis-300);
+}
+
+.status {
+  display: inline-block;
+  font-size: 0.8rem;
+  font-weight: 600;
+  line-height: 1.5;
+  white-space: nowrap;
+}
+
+.statusUp {
+  color: var(--ifm-color-success-darker);
+}
+
+html[data-theme='dark'] .statusUp {
+  color: var(--ifm-color-success-lighter);
+}
+
+.statusDown {
+  color: var(--ifm-color-danger-darker);
+}
+
+html[data-theme='dark'] .statusDown {
+  color: var(--ifm-color-danger-lighter);
+}
+
+.statusPending {
+  color: var(--ifm-color-warning-dark);
+}
+
+html[data-theme='dark'] .statusPending {
+  color: var(--ifm-color-warning);
+}
+
+.statusMaintenance {
+  color: var(--ifm-color-info-darker);
+}
+
+html[data-theme='dark'] .statusMaintenance {
+  color: var(--ifm-color-info-dark);
+}
+
+.statusEmpty {
+  color: var(--ifm-color-emphasis-600);
 }
 
 .nameWrap {

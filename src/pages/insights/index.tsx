@@ -1,6 +1,7 @@
 import { type ReactNode, useState } from 'react';
 import clsx from 'clsx';
 import { Icon } from '@iconify/react';
+import Link from '@docusaurus/Link';
 import Layout from '@theme/Layout';
 import { translate } from '@docusaurus/Translate';
 import { usePluralForm } from '@docusaurus/theme-common';
@@ -19,12 +20,15 @@ import { useUmamiMetric } from '@site/src/hooks/useUmamiMetric';
 import { useAnimatedNumber } from '@site/src/hooks/useAnimatedNumber';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import { formatCompact } from '@site/src/utils/format';
+import { KUMA_STATUS_URL } from '@site/src/utils/kuma';
+import { UMAMI_DASHBOARD_URL } from '@site/src/utils/umami';
 import { toPageviewsData } from './_components/seriesFormat';
 import MetricList from './_components/MetricList';
 import metricListStyles from './_components/MetricList/styles.module.css';
 import UptimeSection from './_components/UptimeSection';
 import SysStatusCard from './_components/SysStatusCard';
 import StatePanel from './_components/StatePanel';
+import RetryButton from './_components/RetryButton';
 import styles from './styles.module.css';
 
 countries.registerLocale(countriesEn);
@@ -41,6 +45,22 @@ const DESCRIPTION = translate({
 const MODIFICATION = translate({
   id: 'pages.insights.modification',
   message: 'Live <b>Insights</b>',
+});
+const TRAFFIC_TITLE = translate({
+  id: 'pages.insights.traffic.title',
+  message: 'Traffic',
+});
+const TRAFFIC_ANALYTICS_LINK = translate({
+  id: 'pages.insights.link.analytics',
+  message: 'View analytics dashboard',
+});
+const SERVICE_HEALTH_TITLE = translate({
+  id: 'pages.insights.serviceHealth.title',
+  message: 'Service Health',
+});
+const SERVICE_HEALTH_STATUS_LINK = translate({
+  id: 'pages.insights.link.status',
+  message: 'View status page',
 });
 const METRIC_LIST_EMPTY = translate({
   id: 'pages.insights.metricList.empty',
@@ -183,9 +203,8 @@ function HeroMetric({
 }
 
 function HeroGrid({ range }: { range: InsightsRange }) {
-  const { data, status } = useUmamiStats(range);
+  const { data, status, isInitialLoading, retry } = useUmamiStats(range);
   const { i18n } = useDocusaurusContext();
-  const loading = status === 'loading';
   const errored = status === 'error';
 
   // Round before formatting so a count-up frame never shows more decimals than
@@ -215,7 +234,7 @@ function HeroGrid({ range }: { range: InsightsRange }) {
       key: 'pageviews',
       label: translate({
         id: 'pages.insights.metric.pageviews',
-        message: 'Pageviews',
+        message: 'Views',
       }),
       icon: 'lucide:eye',
       format: compact,
@@ -234,14 +253,14 @@ function HeroGrid({ range }: { range: InsightsRange }) {
       key: 'avgVisit',
       label: translate({
         id: 'pages.insights.metric.avgVisit',
-        message: 'Avg. Visit',
+        message: 'Visit Duration',
       }),
       icon: 'lucide:timer',
       format: formatDuration,
     },
   ];
 
-  if (errored) return <StatePanel text={ANALYTICS_ERROR} />;
+  if (errored) return <StatePanel text={ANALYTICS_ERROR} onRetry={retry} />;
 
   return (
     <div className={styles.heroGrid}>
@@ -254,7 +273,7 @@ function HeroGrid({ range }: { range: InsightsRange }) {
             spec={spec}
             current={current}
             previous={previous}
-            loading={loading}
+            loading={isInitialLoading}
           />
         );
       })}
@@ -316,14 +335,13 @@ function RangeBar({
 }
 
 function PageviewsChart({ range }: { range: InsightsRange }) {
-  const { data, status } = useUmamiPageviewsSeries(range);
+  const { data, status, isInitialLoading, retry } = useUmamiPageviewsSeries(range);
   const {
     i18n: { currentLocale },
   } = useDocusaurusContext();
   const { selectMessage } = usePluralForm();
   const series = data?.pageviews ?? [];
-  const loading = status === 'loading';
-  const unit = range === 1 ? 'hour' : range === 7 ? '6h' : range === 30 ? 'day' : 'week';
+  const unit = data?.unit ?? 'hour';
   const pageviewsLabel = (v: number) =>
     selectMessage(
       v,
@@ -345,9 +363,10 @@ function PageviewsChart({ range }: { range: InsightsRange }) {
         message: 'Pageviews Over Time',
       })}
       data={toPageviewsData(series, unit, currentLocale)}
-      loading={loading}
+      loading={isInitialLoading}
       emptyText={METRIC_LIST_EMPTY}
       error={status === 'error' ? ANALYTICS_ERROR : undefined}
+      errorAction={<RetryButton onClick={retry} />}
       formatValue={pageviewsLabel}
       className={styles.chartCard}
     />
@@ -373,9 +392,10 @@ function MetricsGrid({ range }: { range: InsightsRange }) {
         })}
         icon="lucide:file-text"
         items={pages.items}
-        loading={pages.status === 'loading'}
+        loading={pages.isInitialLoading}
         emptyText={METRIC_LIST_EMPTY}
         error={pages.status === 'error' ? ANALYTICS_ERROR : undefined}
+        errorAction={<RetryButton onClick={pages.retry} />}
         renderLabel={(p) => <span title={p}>{p === '/' ? '/' : p}</span>}
         href={(p) => p}
       />
@@ -386,9 +406,10 @@ function MetricsGrid({ range }: { range: InsightsRange }) {
         })}
         icon="lucide:link"
         items={referrers.items}
-        loading={referrers.status === 'loading'}
+        loading={referrers.isInitialLoading}
         emptyText={METRIC_LIST_EMPTY}
         error={referrers.status === 'error' ? ANALYTICS_ERROR : undefined}
+        errorAction={<RetryButton onClick={referrers.retry} />}
         renderLabel={(r) =>
           r ? (
             <span title={r}>{r}</span>
@@ -410,9 +431,10 @@ function MetricsGrid({ range }: { range: InsightsRange }) {
         })}
         icon="lucide:globe"
         items={countriesMetric.items}
-        loading={countriesMetric.status === 'loading'}
+        loading={countriesMetric.isInitialLoading}
         emptyText={METRIC_LIST_EMPTY}
         error={countriesMetric.status === 'error' ? ANALYTICS_ERROR : undefined}
+        errorAction={<RetryButton onClick={countriesMetric.retry} />}
         renderLabel={(code) => (
           <>
             <Icon
@@ -442,9 +464,10 @@ function EnvironmentGrid({ range }: { range: InsightsRange }) {
         })}
         icon="lucide:app-window"
         items={browsers.items}
-        loading={browsers.status === 'loading'}
+        loading={browsers.isInitialLoading}
         emptyText={METRIC_LIST_EMPTY}
         error={browsers.status === 'error' ? ANALYTICS_ERROR : undefined}
+        errorAction={<RetryButton onClick={browsers.retry} />}
         maxSlices={4}
         otherLabel={ENV_OTHER}
         renderLabel={(x) => BROWSER_LABELS[x.toLowerCase()] ?? titleCaseKey(x)}
@@ -456,9 +479,10 @@ function EnvironmentGrid({ range }: { range: InsightsRange }) {
         })}
         icon="lucide:cpu"
         items={os.items}
-        loading={os.status === 'loading'}
+        loading={os.isInitialLoading}
         emptyText={METRIC_LIST_EMPTY}
         error={os.status === 'error' ? ANALYTICS_ERROR : undefined}
+        errorAction={<RetryButton onClick={os.retry} />}
         maxSlices={4}
         otherLabel={ENV_OTHER}
         renderLabel={(x) => x || titleCaseKey(x)}
@@ -470,14 +494,34 @@ function EnvironmentGrid({ range }: { range: InsightsRange }) {
         })}
         icon="lucide:monitor-smartphone"
         items={devices.items}
-        loading={devices.status === 'loading'}
+        loading={devices.isInitialLoading}
         emptyText={METRIC_LIST_EMPTY}
         error={devices.status === 'error' ? ANALYTICS_ERROR : undefined}
+        errorAction={<RetryButton onClick={devices.retry} />}
         maxSlices={4}
         otherLabel={ENV_OTHER}
         renderLabel={(x) => DEVICE_LABELS[x.toLowerCase()] ?? titleCaseKey(x)}
       />
     </section>
+  );
+}
+
+function SectionLink({ href, label }: { href: string; label: string }) {
+  return (
+    <Link
+      className={styles.sectionLink}
+      href={href}
+      aria-label={translate(
+        {
+          id: 'pages.insights.link.ariaLabel',
+          message: '{label} (opens in new tab)',
+        },
+        { label }
+      )}
+    >
+      {label}
+      <Icon icon="lucide:arrow-up-right" className={styles.sectionLinkIcon} aria-hidden="true" />
+    </Link>
   );
 }
 
@@ -490,12 +534,33 @@ export default function Insights(): ReactNode {
         <RangeBar range={range} onChange={setRange} />
       </PageHeader>
       <PageContent className={styles.layout}>
-        <HeroGrid range={range} />
-        <PageviewsChart range={range} />
-        <MetricsGrid range={range} />
-        <EnvironmentGrid range={range} />
-        <UptimeSection />
-        <SysStatusCard />
+        <section className={styles.dataSection} aria-labelledby="traffic-title">
+          <header className={styles.sectionHeader}>
+            <h2 id="traffic-title" className={styles.sectionTitle}>
+              {TRAFFIC_TITLE}
+            </h2>
+            <SectionLink href={UMAMI_DASHBOARD_URL} label={TRAFFIC_ANALYTICS_LINK} />
+          </header>
+          <div className={styles.sectionBody}>
+            <HeroGrid range={range} />
+            <PageviewsChart range={range} />
+            <MetricsGrid range={range} />
+            <EnvironmentGrid range={range} />
+          </div>
+        </section>
+
+        <section className={styles.dataSection} aria-labelledby="service-health-title">
+          <header className={styles.sectionHeader}>
+            <h2 id="service-health-title" className={styles.sectionTitle}>
+              {SERVICE_HEALTH_TITLE}
+            </h2>
+            <SectionLink href={KUMA_STATUS_URL} label={SERVICE_HEALTH_STATUS_LINK} />
+          </header>
+          <div className={styles.sectionBody}>
+            <UptimeSection />
+            <SysStatusCard />
+          </div>
+        </section>
       </PageContent>
     </Layout>
   );

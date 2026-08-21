@@ -1,9 +1,10 @@
-import { useRef, useState, type PointerEvent as ReactPointerEvent } from 'react';
+import { useRef, useState, type PointerEvent as ReactPointerEvent, type ReactNode } from 'react';
 import clsx from 'clsx';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import TitleCard from '@site/src/components/laikit/TitleCard';
 import Tooltip from '@site/src/components/laikit/Tooltip';
 import Skeleton from '@site/src/components/laikit/Skeleton';
+import DataState from '@site/src/components/laikit/DataState';
 import { formatCompact } from '@site/src/utils/format';
 import styles from './styles.module.css';
 
@@ -26,6 +27,7 @@ interface ChartProps {
   // Set when the source fetch failed. Kept separate from `loading` so a dead
   // endpoint can't render as an endless skeleton.
   error?: string;
+  errorAction?: ReactNode;
   className?: string;
   // Formats the hover tooltip value (e.g. add a pluralized unit); defaults to compact.
   formatValue?: (value: number) => string;
@@ -60,6 +62,7 @@ export default function Chart({
   loading,
   emptyText,
   error,
+  errorAction,
   className,
   formatValue,
 }: ChartProps) {
@@ -110,10 +113,6 @@ export default function Chart({
       ? `${linePath} L ${lineXAt(n - 1).toFixed(2)} ${VH} L ${lineXAt(0).toFixed(2)} ${VH} Z`
       : '';
 
-  // An errored fetch and a genuinely empty series both land here; neither is a
-  // loading state, so both get a message rather than a skeleton.
-  const message = error ?? (n === 0 ? emptyText : null);
-
   return (
     <TitleCard
       size="sm"
@@ -122,8 +121,10 @@ export default function Chart({
       padding="1.5rem 1.25rem 1.25rem"
       className={clsx(styles.card, className)}
     >
-      {!loading && message ? (
-        <p className={styles.empty}>{message}</p>
+      {!loading && error ? (
+        <DataState message={error} action={errorAction} />
+      ) : !loading && n === 0 ? (
+        <DataState message={emptyText} />
       ) : (
         <>
           <div

@@ -3,6 +3,7 @@ import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import TitleCard from '@site/src/components/laikit/TitleCard';
 import Skeleton from '@site/src/components/laikit/Skeleton';
+import DataState from '@site/src/components/laikit/DataState';
 import { formatCompact } from '@site/src/utils/format';
 import styles from './styles.module.css';
 
@@ -20,6 +21,7 @@ interface MetricListProps {
   // Set when the source fetch failed, so an unreachable endpoint reads as an
   // error rather than as a legitimately empty dataset.
   error?: string;
+  errorAction?: ReactNode;
   renderLabel?: (x: string) => ReactNode;
   formatValue?: (y: number) => string;
   href?: (x: string) => string | null | undefined;
@@ -49,6 +51,7 @@ export default function MetricList({
   loading,
   emptyText,
   error,
+  errorAction,
   renderLabel,
   formatValue,
   href,
@@ -76,9 +79,9 @@ export default function MetricList({
           ))}
         </ol>
       ) : error ? (
-        <p className={styles.empty}>{error}</p>
+        <DataState message={error} action={errorAction} />
       ) : items.length === 0 ? (
-        <p className={styles.empty}>{emptyText}</p>
+        <DataState message={emptyText} />
       ) : (
         <ol className={styles.list}>
           {items.map((item, i) => (

@@ -16,14 +16,6 @@
   flex: 1;
 }
 
-.empty {
-  margin: 0;
-  padding: 1.5rem 0.75rem;
-  color: var(--ifm-color-emphasis-500);
-  font-size: 0.9rem;
-  text-align: center;
-}
-
 .list {
   list-style: none;
   margin: 0;

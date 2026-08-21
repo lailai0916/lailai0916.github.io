@@ -1,22 +1,30 @@
-import { useEffect, useState, type DependencyList } from 'react';
+import { useCallback, useEffect, useState, type DependencyList } from 'react';
 
 export type FetchStatus = 'loading' | 'success' | 'error';
 
 /**
- * One-shot data fetch shared by the analytics/status hooks. Runs `fetcher` when
+ * Abortable data fetch shared by the analytics/status hooks. Runs `fetcher` when
  * `deps` change, tracking loading / success / error, and aborts the in-flight
  * request on the next change or on unmount (so a late response can't set state
  * after the component is gone). `data` is seeded by `initial` and kept across
- * reloads — a refetch shows the previous value under the `loading` flag rather
- * than flashing empty, matching what the callers relied on before.
+ * reloads. `isInitialLoading` distinguishes the first request from a refetch so
+ * callers can keep successful data visible while its replacement is loading;
+ * `retry` repeats a failed request without remounting the caller.
  */
 export function useFetch<T>(
   fetcher: (signal: AbortSignal) => Promise<T>,
   deps: DependencyList,
   initial: T
-): { data: T; status: FetchStatus } {
+): { data: T; status: FetchStatus; isInitialLoading: boolean; retry: () => void } {
   const [data, setData] = useState<T>(initial);
   const [status, setStatus] = useState<FetchStatus>('loading');
+  const [hasSucceeded, setHasSucceeded] = useState(false);
+  const [attempt, setAttempt] = useState(0);
+
+  const retry = useCallback(() => {
+    setStatus('loading');
+    setAttempt((value) => value + 1);
+  }, []);
 
   useEffect(() => {
     const controller = new AbortController();
@@ -27,6 +35,7 @@ export function useFetch<T>(
         const result = await fetcher(controller.signal);
         if (controller.signal.aborted) return;
         setData(result);
+        setHasSucceeded(true);
         setStatus('success');
       } catch (error) {
         if (controller.signal.aborted) return;
@@ -36,10 +45,10 @@ export function useFetch<T>(
     })();
 
     return () => controller.abort();
-    // `fetcher` is intentionally recreated each render; the caller's `deps` are
-    // the real trigger, mirroring the hand-written effects this replaced.
+    // `fetcher` is intentionally recreated each render; the caller's `deps` and
+    // explicit retry attempts are the real triggers.
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, deps);
+  }, [...deps, attempt]);
 
-  return { data, status };
+  return { data, status, isInitialLoading: status === 'loading' && !hasSucceeded, retry };
 }

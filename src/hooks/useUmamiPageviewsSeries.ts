@@ -3,20 +3,32 @@ import { useFetch } from './useFetch';
 import { rangeWindow, type InsightsRange } from './useUmamiStats';
 
 type SeriesUnit = 'day' | 'hour' | 'month';
+type ChartUnit = 'hour' | '6h' | 'day' | 'week';
 
 export interface SeriesPoint {
   x: string;
   y: number;
 }
 
-interface PageviewsResponse {
+interface UmamiPageviewsResponse {
   pageviews: SeriesPoint[];
   sessions: SeriesPoint[];
+}
+
+interface PageviewsResponse extends UmamiPageviewsResponse {
+  unit: ChartUnit;
 }
 
 function rangeUnit(range: InsightsRange): SeriesUnit {
   if (range === 1 || range === 7) return 'hour';
   return 'day';
+}
+
+function chartUnit(range: InsightsRange): ChartUnit {
+  if (range === 1) return 'hour';
+  if (range === 7) return '6h';
+  if (range === 30) return 'day';
+  return 'week';
 }
 
 function mergeSeries(parts: SeriesPoint[][]): SeriesPoint[] {
@@ -122,7 +134,7 @@ export function useUmamiPageviewsSeries(range: InsightsRange) {
           : 'UTC';
 
       const fetchSeg = (segStart: number, segEnd: number) =>
-        umamiFetchJson<PageviewsResponse>(
+        umamiFetchJson<UmamiPageviewsResponse>(
           '/api/websites/{id}/pageviews',
           { startAt: segStart, endAt: segEnd, unit, timezone },
           { signal }
@@ -130,7 +142,7 @@ export function useUmamiPageviewsSeries(range: InsightsRange) {
 
       // Umami caps day-resolution at ~200 days; chunk longer ranges in two.
       const needsChunk = range > 200 && unit === 'day';
-      const parts: PageviewsResponse[] = needsChunk
+      const parts: UmamiPageviewsResponse[] = needsChunk
         ? await Promise.all([
             fetchSeg(startAt, startAt + (endAt - startAt) / 2),
             fetchSeg(startAt + (endAt - startAt) / 2 + 1, endAt),
@@ -145,6 +157,7 @@ export function useUmamiPageviewsSeries(range: InsightsRange) {
       return {
         pageviews: reduce(mergeSeries(parts.map((p) => p.pageviews))),
         sessions: reduce(mergeSeries(parts.map((p) => p.sessions))),
+        unit: chartUnit(range),
       };
     },
     [range],

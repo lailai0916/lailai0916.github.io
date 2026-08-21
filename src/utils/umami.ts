@@ -1,6 +1,8 @@
 const UMAMI_BASE = 'https://analytics.lailai.one';
 const UMAMI_SHARE_SLUG = 'DDd09iBEYOQw2k9L';
 
+export const UMAMI_DASHBOARD_URL = `${UMAMI_BASE}/share/${UMAMI_SHARE_SLUG}`;
+
 const SESSION_STORAGE_KEY = 'umami_share_session_v1';
 const SESSION_TTL_MS = 60 * 60 * 1000;
 

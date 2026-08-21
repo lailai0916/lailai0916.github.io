@@ -1,6 +1,8 @@
 const KUMA_BASE = 'https://status.lailai.one';
 const KUMA_STATUS_SLUG = 'monitor';
 
+export const KUMA_STATUS_URL = `${KUMA_BASE}/status/${KUMA_STATUS_SLUG}`;
+
 export interface KumaMonitor {
   id: number;
   name: string;

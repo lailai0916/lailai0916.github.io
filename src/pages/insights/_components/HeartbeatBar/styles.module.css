@@ -40,22 +40,42 @@ html[data-theme='dark'] .maintenance {
 }
 
 .bar {
+  position: relative;
   display: flex;
   gap: 2px;
   height: 16px;
   width: 100%;
+  border-radius: 3px;
+  outline: none;
+}
+
+.barInteractive::before {
+  content: '';
+  position: absolute;
+  inset: -4px 0;
+}
+
+@media (max-width: 768px) {
+  .barInteractive::before {
+    inset: -14px 0;
+  }
+}
+
+.barInteractive:focus-visible {
+  box-shadow: var(--lk-focus-ring);
 }
 
 .cell {
   flex: 1;
   min-width: 2px;
   border-radius: 2px;
+  pointer-events: none;
   transition:
     transform 160ms ease,
     opacity 160ms ease;
 }
 
-.cell:hover {
+.cellActive {
   transform: scaleY(1.1);
 }
 
