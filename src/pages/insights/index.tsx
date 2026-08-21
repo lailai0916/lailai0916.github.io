@@ -161,7 +161,8 @@ function HeroMetric({
 }) {
   const animated = useAnimatedNumber(loading ? null : current);
   const delta = deltaPercent(current, previous);
-  const sign = delta == null ? null : Math.abs(delta) < 0.001 ? 'flat' : delta > 0 ? 'up' : 'down';
+  const displayedDelta = delta == null ? null : Math.abs(delta * 100).toFixed(1);
+  const sign = delta == null ? null : displayedDelta === '0.0' ? 'flat' : delta > 0 ? 'up' : 'down';
   const positive = sign === 'flat' ? null : spec.invertDelta ? sign === 'down' : sign === 'up';
 
   return (
@@ -184,7 +185,7 @@ function HeroMetric({
           height="1.3rem"
           radius="999px"
         />
-      ) : delta != null && sign !== 'flat' ? (
+      ) : displayedDelta != null && sign !== 'flat' ? (
         <span
           className={clsx(styles.heroDelta, positive ? styles.heroDeltaUp : styles.heroDeltaDown)}
         >
@@ -193,10 +194,12 @@ function HeroMetric({
             className={styles.heroDeltaIcon}
             aria-hidden="true"
           />
-          {Math.abs(delta * 100).toFixed(1)}%
+          {displayedDelta}%
         </span>
       ) : (
-        <span className={clsx(styles.heroDelta, styles.heroDeltaFlat)}>—</span>
+        <span className={clsx(styles.heroDelta, styles.heroDeltaFlat)}>
+          {displayedDelta == null ? '—' : `${displayedDelta}%`}
+        </span>
       )}
     </Card>
   );
