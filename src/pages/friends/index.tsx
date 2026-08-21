@@ -29,12 +29,10 @@ const REQUEST_SUBJECT = translate({
   message: 'Friend Link Request',
 });
 
-const REQUEST_TEMPLATE = `{
-  title: "lailai's Home",
-  description: 'Student & Developer',
-  href: 'https://lailai.one',
-  avatar: 'https://lailai.one/img/logo.png',
-}`;
+const REQUEST_TEMPLATE = `title: "lailai's Home",
+description: 'Student & Developer',
+href: 'https://lailai.one',
+avatar: 'https://lailai.one/img/logo.png',`;
 const REQUEST_LINK_EMAIL = `mailto:lailai0x394@gmail.com?subject=${encodeURIComponent(
   REQUEST_SUBJECT
 )}&body=${encodeURIComponent(REQUEST_TEMPLATE)}`;
