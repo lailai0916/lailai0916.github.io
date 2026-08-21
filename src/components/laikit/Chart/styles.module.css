@@ -18,16 +18,6 @@
   }
 }
 
-.plotInteractive {
-  cursor: crosshair;
-}
-
-.plotInteractive:focus-visible {
-  outline: none;
-  border-radius: 8px;
-  box-shadow: var(--lk-focus-ring);
-}
-
 .gridLine {
   position: absolute;
   left: 0;

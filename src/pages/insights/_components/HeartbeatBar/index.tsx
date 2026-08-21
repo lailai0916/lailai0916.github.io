@@ -1,11 +1,4 @@
-import {
-  useEffect,
-  useRef,
-  useState,
-  type KeyboardEvent as ReactKeyboardEvent,
-  type MouseEvent as ReactMouseEvent,
-  type PointerEvent as ReactPointerEvent,
-} from 'react';
+import { useEffect, useRef, useState } from 'react';
 import clsx from 'clsx';
 import { translate } from '@docusaurus/Translate';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
@@ -107,9 +100,7 @@ function formatTooltipDate(iso: string, locale: string, timeZone: string): strin
 
 export default function HeartbeatBar({ beats, slots = 100 }: HeartbeatBarProps) {
   const [hoverIdx, setHoverIdx] = useState<number | null>(null);
-  const [selectedOffset, setSelectedOffset] = useState<number | null>(null);
   const [wrapRef, fitSlots] = useResponsiveSlots(slots);
-  const barRef = useRef<HTMLDivElement>(null);
   const {
     i18n: { currentLocale: locale },
   } = useDocusaurusContext();
@@ -124,96 +115,27 @@ export default function HeartbeatBar({ beats, slots = 100 }: HeartbeatBarProps) 
   for (let i = 0; i < empty; i++) padded.push(null);
   for (const b of recent) padded.push(b);
 
-  const maxOffset = Math.max(0, recent.length - 1);
-  const selectedIdx =
-    selectedOffset != null && recent.length > 0
-      ? padded.length - 1 - Math.min(selectedOffset, maxOffset)
-      : null;
-  const activeIdx = hoverIdx ?? selectedIdx;
-  const active = activeIdx != null ? padded[activeIdx] : null;
-  const tooltipLeftPct = activeIdx != null ? ((activeIdx + 0.5) / effectiveSlots) * 100 : 0;
-
-  const indexAt = (clientX: number) => {
-    const el = barRef.current;
-    if (!el) return null;
-    const rect = el.getBoundingClientRect();
-    const ratio = Math.max(0, Math.min(1, (clientX - rect.left) / rect.width));
-    return Math.min(padded.length - 1, Math.floor(ratio * padded.length));
-  };
-
-  const onPointerMove = (event: ReactPointerEvent<HTMLDivElement>) => {
-    const index = indexAt(event.clientX);
-    if (index != null) setHoverIdx(index);
-  };
-
-  const onClick = (event: ReactMouseEvent<HTMLDivElement>) => {
-    const index = indexAt(event.clientX);
-    if (index == null) return;
-    const beat = padded[index];
-    setSelectedOffset(beat ? padded.length - 1 - index : null);
-    barRef.current?.focus();
-  };
-
-  const onKeyDown = (event: ReactKeyboardEvent<HTMLDivElement>) => {
-    if (recent.length === 0) return;
-    const current = selectedOffset ?? 0;
-    let next: number;
-    if (event.key === 'ArrowLeft' || event.key === 'ArrowDown')
-      next = Math.min(maxOffset, current + 1);
-    else if (event.key === 'ArrowRight' || event.key === 'ArrowUp') next = Math.max(0, current - 1);
-    else if (event.key === 'Home') next = maxOffset;
-    else if (event.key === 'End') next = 0;
-    else return;
-    event.preventDefault();
-    setHoverIdx(null);
-    setSelectedOffset(next);
-  };
-
-  const announcedOffset = Math.min(selectedOffset ?? 0, maxOffset);
-  const announced = recent[recent.length - 1 - announcedOffset];
-  const announcedText = announced
-    ? `${formatTooltipDate(announced.time, locale, timeZone)}, ${heartbeatStatusLabel(announced.status)}${
-        typeof announced.ping === 'number' ? `, ${announced.ping}ms` : ''
-      }`
-    : heartbeatStatusLabel(undefined);
+  const active = hoverIdx != null ? padded[hoverIdx] : null;
+  const tooltipLeftPct = hoverIdx != null ? ((hoverIdx + 0.5) / effectiveSlots) * 100 : 0;
 
   return (
     <div className={styles.wrap} ref={wrapRef}>
       <div
-        ref={barRef}
-        className={clsx(styles.bar, recent.length > 0 && styles.barInteractive)}
-        role={recent.length > 0 ? 'slider' : 'img'}
+        className={styles.bar}
+        role="img"
         aria-label={HEARTBEAT_ARIA_LABEL}
-        aria-orientation={recent.length > 0 ? 'horizontal' : undefined}
-        aria-valuemin={recent.length > 0 ? 1 : undefined}
-        aria-valuemax={recent.length > 0 ? recent.length : undefined}
-        aria-valuenow={recent.length > 0 ? recent.length - announcedOffset : undefined}
-        aria-valuetext={recent.length > 0 ? announcedText : undefined}
-        tabIndex={recent.length > 0 ? 0 : undefined}
-        onFocus={() => setSelectedOffset((value) => value ?? 0)}
-        onBlur={() => {
-          setHoverIdx(null);
-          setSelectedOffset(null);
-        }}
-        onClick={onClick}
-        onKeyDown={onKeyDown}
-        onPointerMove={onPointerMove}
         onPointerLeave={() => setHoverIdx(null)}
       >
         {padded.map((beat, i) => (
           <span
             key={i}
-            className={clsx(
-              styles.cell,
-              beat ? statusClass(beat.status) : styles.empty,
-              i === activeIdx && styles.cellActive
-            )}
-            aria-hidden="true"
+            className={clsx(styles.cell, beat ? statusClass(beat.status) : styles.empty)}
+            onPointerEnter={() => setHoverIdx(i)}
           />
         ))}
       </div>
 
-      {activeIdx != null && (
+      {hoverIdx != null && (
         <Tooltip leftPct={tooltipLeftPct}>
           <Tooltip.Label>
             {active
