@@ -351,7 +351,7 @@ function PageviewsChart({ range }: { range: InsightsRange }) {
       translate(
         {
           id: 'pages.insights.unit.pageviews',
-          message: '{count} pageview|{count} pageviews',
+          message: '{count} view|{count} views',
         },
         { count: formatCompact(v, currentLocale) }
       )
@@ -363,7 +363,7 @@ function PageviewsChart({ range }: { range: InsightsRange }) {
       icon="lucide:line-chart"
       title={translate({
         id: 'pages.insights.chart.title',
-        message: 'Pageviews Over Time',
+        message: 'Views Over Time',
       })}
       data={toPageviewsData(series, unit, currentLocale)}
       loading={isInitialLoading}
