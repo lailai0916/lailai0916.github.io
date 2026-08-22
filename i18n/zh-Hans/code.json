@@ -368,6 +368,9 @@
   "components.desmos.frameTitle": {
     "message": "Desmos 图形计算器"
   },
+  "pages.about.skills.ariaLabel": {
+    "message": "技术栈图标"
+  },
   "components.playground.tab.neuralNetwork": {
     "message": "神经网络"
   },
@@ -388,9 +391,6 @@
   },
   "components.playground.expand": {
     "message": "展开"
-  },
-  "pages.about.skills.ariaLabel": {
-    "message": "技术栈图标"
   },
   "components.problem.collapse": {
     "message": "收起"
@@ -716,57 +716,6 @@
   "components.article.viewCount": {
     "message": "{viewCount} 浏览"
   },
-  "components.playground.gameOfLife.play": {
-    "message": "播放"
-  },
-  "components.playground.gameOfLife.pause": {
-    "message": "暂停"
-  },
-  "components.playground.gameOfLife.step": {
-    "message": "单步"
-  },
-  "components.playground.gameOfLife.random": {
-    "message": "随机"
-  },
-  "components.playground.gameOfLife.clear": {
-    "message": "清空"
-  },
-  "components.playground.fourierTransform.reset": {
-    "message": "重置"
-  },
-  "components.playground.fourierTransform.clear": {
-    "message": "清空"
-  },
-  "components.playground.lorenz.reset": {
-    "message": "重置"
-  },
-  "components.playground.neuralNetwork.clear": {
-    "message": "清除"
-  },
-  "components.playground.neuralNetwork.check": {
-    "message": "识别"
-  },
-  "components.playground.neuralNetwork.preprocess": {
-    "message": "预处理"
-  },
-  "components.playground.nim.yourTurn": {
-    "message": "你的回合"
-  },
-  "components.playground.nim.aiThinking": {
-    "message": "AI 思考中……"
-  },
-  "components.playground.nim.youWin": {
-    "message": "你赢了！"
-  },
-  "components.playground.nim.aiWins": {
-    "message": "AI 赢了"
-  },
-  "components.playground.nim.random": {
-    "message": "随机"
-  },
-  "components.playground.nim.tip": {
-    "message": "提示"
-  },
   "pages.moments.title": {
     "message": "动态"
   },
@@ -902,6 +851,57 @@
   "pages.overview.metric.moments": {
     "message": "动态"
   },
+  "components.playground.fourierTransform.reset": {
+    "message": "重置"
+  },
+  "components.playground.fourierTransform.clear": {
+    "message": "清空"
+  },
+  "components.playground.gameOfLife.play": {
+    "message": "播放"
+  },
+  "components.playground.gameOfLife.pause": {
+    "message": "暂停"
+  },
+  "components.playground.gameOfLife.step": {
+    "message": "单步"
+  },
+  "components.playground.gameOfLife.random": {
+    "message": "随机"
+  },
+  "components.playground.gameOfLife.clear": {
+    "message": "清空"
+  },
+  "components.playground.lorenz.reset": {
+    "message": "重置"
+  },
+  "components.playground.neuralNetwork.clear": {
+    "message": "清除"
+  },
+  "components.playground.neuralNetwork.check": {
+    "message": "识别"
+  },
+  "components.playground.neuralNetwork.preprocess": {
+    "message": "预处理"
+  },
+  "components.playground.nim.yourTurn": {
+    "message": "你的回合"
+  },
+  "components.playground.nim.aiThinking": {
+    "message": "AI 思考中……"
+  },
+  "components.playground.nim.youWin": {
+    "message": "你赢了！"
+  },
+  "components.playground.nim.aiWins": {
+    "message": "AI 赢了"
+  },
+  "components.playground.nim.random": {
+    "message": "随机"
+  },
+  "components.playground.nim.tip": {
+    "message": "提示"
+  },
   "components.github.error": {
     "message": "加载 GitHub 数据失败"
   },
@@ -974,18 +974,6 @@
   "blog.post.paginator.ariaLabel": {
     "message": "博客文章导航"
   },
-  "blog.postcard.readMore": {
-    "message": "阅读更多"
-  },
-  "blog.pagination.prev": {
-    "message": "上一页"
-  },
-  "blog.pagination.next": {
-    "message": "下一页"
-  },
-  "blog.pagination.ariaLabel": {
-    "message": "分页"
-  },
   "blog.post.pinned": {
     "message": "置顶"
   },
@@ -1000,6 +988,18 @@
   },
   "blog.postcard.viewCount": {
     "message": "{viewCount} 浏览"
+  },
+  "blog.postcard.readMore": {
+    "message": "阅读更多"
+  },
+  "blog.pagination.prev": {
+    "message": "上一页"
+  },
+  "blog.pagination.next": {
+    "message": "下一页"
+  },
+  "blog.pagination.ariaLabel": {
+    "message": "分页"
   },
   "blog.sidebar.profileCard.title": {
     "message": "学生 & 开发者"
@@ -1063,21 +1063,6 @@
   "pages.insights.heartbeat.noData": {
     "message": "暂无数据"
   },
-  "components.cookieConsent.title": {
-    "message": "Cookie 设置"
-  },
-  "components.cookieConsent.description": {
-    "message": "本站使用 Cookie 记录您的偏好，以改善浏览体验。查看 {privacyPolicy} 了解更多信息。"
-  },
-  "components.cookieConsent.privacyPolicy": {
-    "message": "隐私政策"
-  },
-  "components.cookieConsent.reject": {
-    "message": "拒绝"
-  },
-  "components.cookieConsent.accept": {
-    "message": "接受"
-  },
   "pages.insights.retry": {
     "message": "重试"
   },
@@ -1109,10 +1094,6 @@
     "message": "页面已崩溃。",
     "description": "The title of the fallback page when the page crashed"
   },
-  "theme.BackToTopButton.buttonAriaLabel": {
-    "message": "回到顶部",
-    "description": "The ARIA label for the back to top button"
-  },
   "theme.blog.archive.title": {
     "message": "历史文章",
     "description": "The page & hero title of the blog archive page"
@@ -1120,6 +1101,10 @@
   "theme.blog.archive.description": {
     "message": "历史文章",
     "description": "The page & hero description of the blog archive page"
+  },
+  "theme.BackToTopButton.buttonAriaLabel": {
+    "message": "回到顶部",
+    "description": "The ARIA label for the back to top button"
   },
   "theme.blog.paginator.navAriaLabel": {
     "message": "文章列表分页导航",
@@ -1224,6 +1209,10 @@
     "message": "标签：",
     "description": "The label alongside a tag list"
   },
+  "theme.AnnouncementBar.closeButtonAriaLabel": {
+    "message": "关闭",
+    "description": "The ARIA label for close button of announcement bar"
+  },
   "theme.admonition.caution": {
     "message": "警告",
     "description": "The default label used for the Caution admonition (:::caution)"
@@ -1248,10 +1237,6 @@
     "message": "注意",
     "description": "The default label used for the Warning admonition (:::warning)"
   },
-  "theme.AnnouncementBar.closeButtonAriaLabel": {
-    "message": "关闭",
-    "description": "The ARIA label for close button of announcement bar"
-  },
   "theme.blog.sidebar.navAriaLabel": {
     "message": "最近文章导航",
     "description": "The ARIA label for recent posts in the blog sidebar"
@@ -1272,13 +1257,13 @@
     "message": "主导航",
     "description": "The ARIA label for the main navigation"
   },
-  "theme.navbar.mobileLanguageDropdown.label": {
-    "message": "选择语言",
-    "description": "The label for the mobile language switcher dropdown"
-  },
   "theme.NotFound.p2": {
     "message": "请联系原始链接来源网站的所有者，并告知他们链接已损坏。",
     "description": "The 2nd paragraph of the 404 page"
+  },
+  "theme.navbar.mobileLanguageDropdown.label": {
+    "message": "选择语言",
+    "description": "The label for the mobile language switcher dropdown"
   },
   "theme.TOCCollapsible.toggleButtonLabel": {
     "message": "本页总览",
@@ -1328,6 +1313,14 @@
     "message": "文档侧边栏",
     "description": "The ARIA label for the sidebar navigation"
   },
+  "theme.navbar.mobileDropdown.collapseButton.expandAriaLabel": {
+    "message": "展开下拉菜单",
+    "description": "The ARIA label of the button to expand the mobile dropdown navbar item"
+  },
+  "theme.navbar.mobileDropdown.collapseButton.collapseAriaLabel": {
+    "message": "折叠下拉菜单",
+    "description": "The ARIA label of the button to collapse the mobile dropdown navbar item"
+  },
   "theme.docs.sidebar.closeSidebarButtonAriaLabel": {
     "message": "关闭导航栏",
     "description": "The ARIA label for close button of mobile sidebar"
@@ -1339,14 +1332,6 @@
   "theme.docs.sidebar.toggleSidebarButtonAriaLabel": {
     "message": "切换导航栏",
     "description": "The ARIA label for hamburger menu button of mobile navigation"
-  },
-  "theme.navbar.mobileDropdown.collapseButton.expandAriaLabel": {
-    "message": "展开下拉菜单",
-    "description": "The ARIA label of the button to expand the mobile dropdown navbar item"
-  },
-  "theme.navbar.mobileDropdown.collapseButton.collapseAriaLabel": {
-    "message": "折叠下拉菜单",
-    "description": "The ARIA label of the button to collapse the mobile dropdown navbar item"
   },
   "theme.docs.sidebar.expandButtonTitle": {
     "message": "展开侧边栏",

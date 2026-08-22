@@ -8,6 +8,11 @@ interface ChangelogItem {
 
 export const CHANGELOG_LIST: ChangelogItem[] = [
   {
+    date: '2026-08-22',
+    type: 'removed',
+    content: 'Cookie 授权弹窗',
+  },
+  {
     date: '2026-07-16',
     type: 'added',
     content: 'Tor onion 镜像站',
