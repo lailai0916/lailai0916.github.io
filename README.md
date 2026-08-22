@@ -43,9 +43,9 @@ Built with [Docusaurus](https://docusaurus.io), with source code hosted on [GitH
 
 ⚙️ **User Settings** — Runtime controls for theme, accent color, font, and more.
 
-🌐 **Fully Bilingual** — English and Simplified Chinese, with even blog posts fully translated.
+🌐 **Bilingual Interface** — The site interface is available in English and Simplified Chinese.
 
-🛡️ **Privacy & Comments** — Cookie consent banner and [Giscus](https://giscus.app) comments built in.
+🛡️ **Privacy & Comments** — A detailed privacy policy and comments powered by [Giscus](https://giscus.app).
 
 📡 **Subscribable Feeds** — Follow new posts via RSS, Atom, or JSON feeds.
 
@@ -53,7 +53,7 @@ Built with [Docusaurus](https://docusaurus.io), with source code hosted on [GitH
 
 📊 **Analytics & SEO** — Dual analytics ([Google Analytics](https://analytics.google.com) + a public [Umami](https://umami.is) dashboard) and verification on major search engines.
 
-📦 **Self-Hosted Assets** — Media and fonts served without third-party CDNs at runtime.
+📦 **Local Font Hosting** — Core fonts are bundled with the site and served locally.
 
 🔧 **Type-Safe & Modern Stack** — Built with strict TypeScript and modern CSS.
 
