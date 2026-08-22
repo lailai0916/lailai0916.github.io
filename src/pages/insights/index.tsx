@@ -40,7 +40,7 @@ const TITLE = translate({
 });
 const DESCRIPTION = translate({
   id: 'pages.insights.description',
-  message: 'Live numbers from this site, refreshed each visit.',
+  message: 'Live numbers from this site, refreshed each visit',
 });
 const MODIFICATION = translate({
   id: 'pages.insights.modification',

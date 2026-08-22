@@ -16,7 +16,7 @@ import styles from './styles.module.css';
 const TITLE = translate({ id: 'pages.overview.title', message: 'Overview' });
 const DESCRIPTION = translate({
   id: 'pages.overview.description',
-  message: 'A by-the-numbers look at what I have written here.',
+  message: 'A by-the-numbers look at what I have written here',
 });
 const MONTHLY_TITLE = translate({
   id: 'pages.overview.chart.monthly.title',
