@@ -1,43 +1,4 @@
 {
-  "data.changelog.added": {
-    "message": "【新增】"
-  },
-  "data.changelog.changed": {
-    "message": "【变更】"
-  },
-  "data.changelog.deprecated": {
-    "message": "【弃用】"
-  },
-  "data.changelog.removed": {
-    "message": "【移除】"
-  },
-  "data.changelog.fixed": {
-    "message": "【修复】"
-  },
-  "data.changelog.security": {
-    "message": "【安全】"
-  },
-  "data.devices.macbookPro": {
-    "message": "16 英寸 / 银色 / 14 CPU / 30 GPU / 36GB / 1TB"
-  },
-  "data.devices.ipadPro": {
-    "message": "11 英寸 / 深空灰色 / 256GB"
-  },
-  "data.devices.iphone": {
-    "message": "星光色 / A15 / 256GB"
-  },
-  "data.devices.appleWatch": {
-    "message": "钛金属 / 石板色 / 46mm / S10"
-  },
-  "data.devices.airpodsPro": {
-    "message": "USB-C / H2 / U1"
-  },
-  "data.devices.airpodsMax": {
-    "message": "USB-C / 午夜色 / H1"
-  },
-  "data.moments.blogPublished": {
-    "message": "发布了新文章 <a href=\"{permalink}\">{title}</a>"
-  },
   "pages.home.nav.contest": {
     "message": "竞赛"
   },
@@ -85,6 +46,297 @@
   },
   "pages.home.connect": {
     "message": "联系"
+  },
+  "data.changelog.added": {
+    "message": "【新增】"
+  },
+  "data.changelog.changed": {
+    "message": "【变更】"
+  },
+  "data.changelog.deprecated": {
+    "message": "【弃用】"
+  },
+  "data.changelog.removed": {
+    "message": "【移除】"
+  },
+  "data.changelog.fixed": {
+    "message": "【修复】"
+  },
+  "data.changelog.security": {
+    "message": "【安全】"
+  },
+  "data.devices.macbookPro": {
+    "message": "16 英寸 / 银色 / 14 CPU / 30 GPU / 36GB / 1TB"
+  },
+  "data.devices.ipadPro": {
+    "message": "11 英寸 / 深空灰色 / 256GB"
+  },
+  "data.devices.iphone": {
+    "message": "星光色 / A15 / 256GB"
+  },
+  "data.devices.appleWatch": {
+    "message": "钛金属 / 石板色 / 46mm / S10"
+  },
+  "data.devices.airpodsPro": {
+    "message": "USB-C / H2 / U1"
+  },
+  "data.devices.airpodsMax": {
+    "message": "USB-C / 午夜色 / H1"
+  },
+  "data.moments.blogPublished": {
+    "message": "发布了新文章 <a href=\"{permalink}\">{title}</a>"
+  },
+  "data.travel.trip201109.title": {
+    "message": "🇨🇳 海南"
+  },
+  "data.travel.trip201109.description": {
+    "message": "三亚"
+  },
+  "data.travel.trip201111.title": {
+    "message": "🇨🇳 安徽"
+  },
+  "data.travel.trip201111.description": {
+    "message": "黄山（宏村、西递）"
+  },
+  "data.travel.trip201204.title": {
+    "message": "🇨🇳 江苏"
+  },
+  "data.travel.trip201204.description": {
+    "message": "泰州、扬州"
+  },
+  "data.travel.trip201206.title": {
+    "message": "🇨🇳 上海"
+  },
+  "data.travel.trip201206.description": {
+    "message": "上海"
+  },
+  "data.travel.trip201302.title": {
+    "message": "🇨🇳 广东"
+  },
+  "data.travel.trip201302.description": {
+    "message": "广州、中山"
+  },
+  "data.travel.trip201305.title": {
+    "message": "🇨🇳 广东 & 🇭🇰 香港"
+  },
+  "data.travel.trip201305.description": {
+    "message": "深圳、香港"
+  },
+  "data.travel.trip201309.title": {
+    "message": "🇨🇳 吉林、辽宁"
+  },
+  "data.travel.trip201309.description": {
+    "message": "白山（长白山）、通化、沈阳"
+  },
+  "data.travel.trip201402Jiangsu.title": {
+    "message": "🇨🇳 江苏"
+  },
+  "data.travel.trip201402Jiangsu.description": {
+    "message": "南京"
+  },
+  "data.travel.trip201402Tianjin.title": {
+    "message": "🇨🇳 天津"
+  },
+  "data.travel.trip201402Tianjin.description": {
+    "message": "天津"
+  },
+  "data.travel.trip201501.title": {
+    "message": "🇻🇳 越南"
+  },
+  "data.travel.trip201501.description": {
+    "message": "岘港"
+  },
+  "data.travel.trip201502.title": {
+    "message": "🇨🇳 江苏、上海"
+  },
+  "data.travel.trip201502.description": {
+    "message": "南通、上海（崇明岛）"
+  },
+  "data.travel.trip201505.title": {
+    "message": "🇯🇵 日本"
+  },
+  "data.travel.trip201505.description": {
+    "message": "大阪、京都、名古屋、箱根、东京、成田"
+  },
+  "data.travel.trip201510.title": {
+    "message": "🇨🇳 福建"
+  },
+  "data.travel.trip201510.description": {
+    "message": "厦门、漳州（土楼）"
+  },
+  "data.travel.trip201601.title": {
+    "message": "🇨🇳 福建"
+  },
+  "data.travel.trip201601.description": {
+    "message": "福州"
+  },
+  "data.travel.trip201602.title": {
+    "message": "🇨🇳 山东、北京"
+  },
+  "data.travel.trip201602.description": {
+    "message": "济宁（曲阜）、泰安（泰山）、北京"
+  },
+  "data.travel.trip201607.title": {
+    "message": "🇦🇹 奥地利 & 🇸🇰 斯洛伐克 & 🇭🇺 匈牙利 & 🇸🇮 斯洛文尼亚 & 🇨🇿 捷克 & 🇩🇪 德国"
+  },
+  "data.travel.trip201607.description": {
+    "message": "维也纳、布拉迪斯拉发、布达佩斯、马里博尔、哈尔施塔特、萨尔茨堡、林茨、克鲁姆洛夫、布拉格、卡罗维瓦里、魏玛、德累斯顿、波茨坦、柏林"
+  },
+  "data.travel.trip201609.title": {
+    "message": "🇨🇳 贵州"
+  },
+  "data.travel.trip201609.description": {
+    "message": "贵阳、安顺（黄果树瀑布）、黔东南（西江千户苗寨）、黔南（荔波）"
+  },
+  "data.travel.trip201610.title": {
+    "message": "🇨🇳 江苏"
+  },
+  "data.travel.trip201610.description": {
+    "message": "泰州、镇江"
+  },
+  "data.travel.trip201701.title": {
+    "message": "🇯🇵 日本"
+  },
+  "data.travel.trip201701.description": {
+    "message": "上海 ⇌ 熊本（海洋量子号）"
+  },
+  "data.travel.trip201702.title": {
+    "message": "🇹🇷 土耳其"
+  },
+  "data.travel.trip201702.description": {
+    "message": "伊斯坦布尔、伊兹密尔（以弗所）、代尼兹利（棉花堡）、卡帕多奇亚"
+  },
+  "data.travel.trip201705.title": {
+    "message": "🇸🇬 新加坡"
+  },
+  "data.travel.trip201705.description": {
+    "message": "新加坡"
+  },
+  "data.travel.trip201707.title": {
+    "message": "🇨🇳 安徽"
+  },
+  "data.travel.trip201707.description": {
+    "message": "合肥"
+  },
+  "data.travel.trip201708.title": {
+    "message": "🇦🇺 澳大利亚"
+  },
+  "data.travel.trip201708.description": {
+    "message": "布里斯班、黄金海岸、凯恩斯（绿岛大堡礁、红树林）、悉尼（蓝山国家公园）、墨尔本（大洋路）"
+  },
+  "data.travel.trip201710.title": {
+    "message": "🇨🇳 黑龙江、吉林"
+  },
+  "data.travel.trip201710.description": {
+    "message": "哈尔滨、长春"
+  },
+  "data.travel.trip201802.title": {
+    "message": "🇨🇳 云南"
+  },
+  "data.travel.trip201802.description": {
+    "message": "西双版纳"
+  },
+  "data.travel.trip201806.title": {
+    "message": "🇨🇳 内蒙古"
+  },
+  "data.travel.trip201806.description": {
+    "message": "呼和浩特、鄂尔多斯"
+  },
+  "data.travel.trip201808.title": {
+    "message": "🇯🇵 日本"
+  },
+  "data.travel.trip201808.description": {
+    "message": "函馆、登别、洞爷湖、富良野（富田农场）、小樽、札幌"
+  },
+  "data.travel.trip201810.title": {
+    "message": "🇨🇳 湖南"
+  },
+  "data.travel.trip201810.description": {
+    "message": "湘潭、长沙"
+  },
+  "data.travel.trip201901.title": {
+    "message": "🇨🇳 广西"
+  },
+  "data.travel.trip201901.description": {
+    "message": "南宁、崇左（德天瀑布）、北海"
+  },
+  "data.travel.trip201902.title": {
+    "message": "🇨🇳 北京"
+  },
+  "data.travel.trip201902.description": {
+    "message": "北京"
+  },
+  "data.travel.trip201907.title": {
+    "message": "🇮🇹 意大利 & 🇻🇦 梵蒂冈 & 🇨🇭 瑞士 & 🇫🇷 法国"
+  },
+  "data.travel.trip201907.description": {
+    "message": "罗马、梵蒂冈、白露里治奥、托斯卡纳、佛罗伦萨、威尼斯、维罗纳、圣莫里茨、达沃斯、卢塞恩、因特拉肯、蒙特勒、安纳西、巴黎"
+  },
+  "data.travel.trip202007.title": {
+    "message": "🇨🇳 海南"
+  },
+  "data.travel.trip202007.description": {
+    "message": "三亚、文昌、海口"
+  },
+  "data.travel.trip202105.title": {
+    "message": "🇨🇳 江西、湖北"
+  },
+  "data.travel.trip202105.description": {
+    "message": "九江（庐山）、武汉"
+  },
+  "data.travel.trip202107.title": {
+    "message": "🇨🇳 山东"
+  },
+  "data.travel.trip202107.description": {
+    "message": "烟台"
+  },
+  "data.travel.trip202301.title": {
+    "message": "🇨🇳 福建"
+  },
+  "data.travel.trip202301.description": {
+    "message": "泉州、莆田（湄洲岛）"
+  },
+  "data.travel.trip202307.title": {
+    "message": "🇲🇻 马尔代夫"
+  },
+  "data.travel.trip202307.description": {
+    "message": "马累、伊露岛（诺鲁环礁）"
+  },
+  "data.travel.trip202402.title": {
+    "message": "🇨🇳 福建、广东"
+  },
+  "data.travel.trip202402.description": {
+    "message": "南平（武夷山）、汕头（南澳岛）、潮州、揭阳"
+  },
+  "data.travel.trip202408.title": {
+    "message": "🇰🇷 韩国"
+  },
+  "data.travel.trip202408.description": {
+    "message": "仁川、首尔、釜山"
+  },
+  "data.travel.trip202501.title": {
+    "message": "🇲🇾 马来西亚"
+  },
+  "data.travel.trip202501.description": {
+    "message": "吉隆坡、怡保（霹雳州）、乔治市（槟城州）"
+  },
+  "data.travel.trip202507.title": {
+    "message": "🇭🇰 香港 & 🇨🇳 广东"
+  },
+  "data.travel.trip202507.description": {
+    "message": "香港、深圳、广州"
+  },
+  "data.travel.trip202602.title": {
+    "message": "🇹🇭 泰国 & 🇱🇦 老挝"
+  },
+  "data.travel.trip202602.description": {
+    "message": "清迈、清莱、金三角"
+  },
+  "data.travel.trip202608.title": {
+    "message": "🇨🇳 北京"
+  },
+  "data.travel.trip202608.description": {
+    "message": "北京"
   },
   "components.browserWindow.openLink": {
     "message": "在新标签页打开链接"
@@ -140,9 +392,6 @@
   "pages.about.skills.ariaLabel": {
     "message": "技术栈图标"
   },
-  "pages.changelog.empty": {
-    "message": "暂无更新日志"
-  },
   "components.problem.collapse": {
     "message": "收起"
   },
@@ -157,6 +406,9 @@
   },
   "components.problem.error": {
     "message": "无法加载题目「{id}」。"
+  },
+  "pages.changelog.empty": {
+    "message": "暂无更新日志"
   },
   "pages.friends.title": {
     "message": "友链"
@@ -464,12 +716,6 @@
   "components.article.viewCount": {
     "message": "{viewCount} 浏览"
   },
-  "components.playground.fourierTransform.reset": {
-    "message": "重置"
-  },
-  "components.playground.fourierTransform.clear": {
-    "message": "清空"
-  },
   "components.playground.gameOfLife.play": {
     "message": "播放"
   },
@@ -485,6 +731,12 @@
   "components.playground.gameOfLife.clear": {
     "message": "清空"
   },
+  "components.playground.fourierTransform.reset": {
+    "message": "重置"
+  },
+  "components.playground.fourierTransform.clear": {
+    "message": "清空"
+  },
   "components.playground.lorenz.reset": {
     "message": "重置"
   },
@@ -496,6 +748,24 @@
   },
   "components.playground.neuralNetwork.preprocess": {
     "message": "预处理"
+  },
+  "components.playground.nim.yourTurn": {
+    "message": "你的回合"
+  },
+  "components.playground.nim.aiThinking": {
+    "message": "AI 思考中……"
+  },
+  "components.playground.nim.youWin": {
+    "message": "你赢了！"
+  },
+  "components.playground.nim.aiWins": {
+    "message": "AI 赢了"
+  },
+  "components.playground.nim.random": {
+    "message": "随机"
+  },
+  "components.playground.nim.tip": {
+    "message": "提示"
   },
   "pages.moments.title": {
     "message": "动态"
@@ -632,24 +902,6 @@
   "pages.overview.metric.moments": {
     "message": "动态"
   },
-  "components.playground.nim.yourTurn": {
-    "message": "你的回合"
-  },
-  "components.playground.nim.aiThinking": {
-    "message": "AI 思考中……"
-  },
-  "components.playground.nim.youWin": {
-    "message": "你赢了！"
-  },
-  "components.playground.nim.aiWins": {
-    "message": "AI 赢了"
-  },
-  "components.playground.nim.random": {
-    "message": "随机"
-  },
-  "components.playground.nim.tip": {
-    "message": "提示"
-  },
   "components.github.error": {
     "message": "加载 GitHub 数据失败"
   },
@@ -722,6 +974,18 @@
   "blog.post.paginator.ariaLabel": {
     "message": "博客文章导航"
   },
+  "blog.postcard.readMore": {
+    "message": "阅读更多"
+  },
+  "blog.pagination.prev": {
+    "message": "上一页"
+  },
+  "blog.pagination.next": {
+    "message": "下一页"
+  },
+  "blog.pagination.ariaLabel": {
+    "message": "分页"
+  },
   "blog.post.pinned": {
     "message": "置顶"
   },
@@ -736,18 +1000,6 @@
   },
   "blog.postcard.viewCount": {
     "message": "{viewCount} 浏览"
-  },
-  "blog.postcard.readMore": {
-    "message": "阅读更多"
-  },
-  "blog.pagination.prev": {
-    "message": "上一页"
-  },
-  "blog.pagination.next": {
-    "message": "下一页"
-  },
-  "blog.pagination.ariaLabel": {
-    "message": "分页"
   },
   "blog.sidebar.profileCard.title": {
     "message": "学生 & 开发者"
@@ -790,21 +1042,6 @@
   "components.notFound.backToHome": {
     "message": "返回首页"
   },
-  "components.cookieConsent.title": {
-    "message": "Cookie 设置"
-  },
-  "components.cookieConsent.description": {
-    "message": "本站使用 Cookie 记录您的偏好，以改善浏览体验。查看 {privacyPolicy} 了解更多信息。"
-  },
-  "components.cookieConsent.privacyPolicy": {
-    "message": "隐私政策"
-  },
-  "components.cookieConsent.reject": {
-    "message": "拒绝"
-  },
-  "components.cookieConsent.accept": {
-    "message": "接受"
-  },
   "pages.insights.heartbeat.ariaLabel": {
     "message": "近期监测状态"
   },
@@ -825,6 +1062,21 @@
   },
   "pages.insights.heartbeat.noData": {
     "message": "暂无数据"
+  },
+  "components.cookieConsent.title": {
+    "message": "Cookie 设置"
+  },
+  "components.cookieConsent.description": {
+    "message": "本站使用 Cookie 记录您的偏好，以改善浏览体验。查看 {privacyPolicy} 了解更多信息。"
+  },
+  "components.cookieConsent.privacyPolicy": {
+    "message": "隐私政策"
+  },
+  "components.cookieConsent.reject": {
+    "message": "拒绝"
+  },
+  "components.cookieConsent.accept": {
+    "message": "接受"
   },
   "pages.insights.retry": {
     "message": "重试"
@@ -1020,13 +1272,13 @@
     "message": "主导航",
     "description": "The ARIA label for the main navigation"
   },
-  "theme.NotFound.p2": {
-    "message": "请联系原始链接来源网站的所有者，并告知他们链接已损坏。",
-    "description": "The 2nd paragraph of the 404 page"
-  },
   "theme.navbar.mobileLanguageDropdown.label": {
     "message": "选择语言",
     "description": "The label for the mobile language switcher dropdown"
+  },
+  "theme.NotFound.p2": {
+    "message": "请联系原始链接来源网站的所有者，并告知他们链接已损坏。",
+    "description": "The 2nd paragraph of the 404 page"
   },
   "theme.TOCCollapsible.toggleButtonLabel": {
     "message": "本页总览",
@@ -1347,18 +1599,6 @@
     "message": "重置",
     "description": "The reset button label for live code blocks"
   },
-  "theme.ErrorPageContent.tryAgain": {
-    "message": "重试",
-    "description": "The label of the button to try again rendering when the React error boundary captures an error"
-  },
-  "theme.common.skipToMainContent": {
-    "message": "跳到主要内容",
-    "description": "The skip to content label used for accessibility, allowing to rapidly navigate to main content with keyboard tab/enter navigation"
-  },
-  "theme.tags.tagsPageTitle": {
-    "message": "标签",
-    "description": "The title of the tag list page"
-  },
   "theme.blog.post.plurals": {
     "message": "{count} 篇文章",
     "description": "Pluralized label for \"{count} posts\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
@@ -1402,5 +1642,17 @@
   "theme.docs.DocCard.categoryDescription.plurals": {
     "message": "{count} 个项目",
     "description": "The default description for a category card in the generated index about how many items this category includes"
+  },
+  "theme.ErrorPageContent.tryAgain": {
+    "message": "重试",
+    "description": "The label of the button to try again rendering when the React error boundary captures an error"
+  },
+  "theme.common.skipToMainContent": {
+    "message": "跳到主要内容",
+    "description": "The skip to content label used for accessibility, allowing to rapidly navigate to main content with keyboard tab/enter navigation"
+  },
+  "theme.tags.tagsPageTitle": {
+    "message": "标签",
+    "description": "The title of the tag list page"
   }
 }

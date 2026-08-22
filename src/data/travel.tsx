@@ -1,3 +1,5 @@
+import { translate } from '@docusaurus/Translate';
+
 export interface TravelItem {
   date: string;
   title: string;
@@ -8,218 +10,471 @@ export interface TravelItem {
 export const TRAVEL_LIST: TravelItem[] = [
   {
     date: '2011-09',
-    title: '🇨🇳 海南',
-    description: '三亚',
+    title: translate({
+      id: 'data.travel.trip201109.title',
+      message: '🇨🇳 Hainan',
+    }),
+    description: translate({
+      id: 'data.travel.trip201109.description',
+      message: 'Sanya',
+    }),
   },
   {
     date: '2011-11',
-    title: '🇨🇳 安徽',
-    description: '黄山（宏村、西递）',
+    title: translate({
+      id: 'data.travel.trip201111.title',
+      message: '🇨🇳 Anhui',
+    }),
+    description: translate({
+      id: 'data.travel.trip201111.description',
+      message: 'Huangshan (Hongcun, Xidi)',
+    }),
   },
   {
     date: '2012-04',
-    title: '🇨🇳 江苏',
-    description: '泰州、扬州',
+    title: translate({
+      id: 'data.travel.trip201204.title',
+      message: '🇨🇳 Jiangsu',
+    }),
+    description: translate({
+      id: 'data.travel.trip201204.description',
+      message: 'Taizhou, Yangzhou',
+    }),
   },
   {
     date: '2012-06',
-    title: '🇨🇳 上海',
-    description: '上海',
+    title: translate({
+      id: 'data.travel.trip201206.title',
+      message: '🇨🇳 Shanghai',
+    }),
+    description: translate({
+      id: 'data.travel.trip201206.description',
+      message: 'Shanghai',
+    }),
   },
   {
     date: '2013-02',
-    title: '🇨🇳 广东',
-    description: '广州、中山',
+    title: translate({
+      id: 'data.travel.trip201302.title',
+      message: '🇨🇳 Guangdong',
+    }),
+    description: translate({
+      id: 'data.travel.trip201302.description',
+      message: 'Guangzhou, Zhongshan',
+    }),
   },
   {
     date: '2013-05',
-    title: '🇨🇳 广东 & 🇭🇰 香港',
-    description: '深圳、香港',
+    title: translate({
+      id: 'data.travel.trip201305.title',
+      message: '🇨🇳 Guangdong & 🇭🇰 Hong Kong',
+    }),
+    description: translate({
+      id: 'data.travel.trip201305.description',
+      message: 'Shenzhen, Hong Kong',
+    }),
   },
   {
     date: '2013-09',
-    title: '🇨🇳 吉林、辽宁',
-    description: '白山（长白山）、通化、沈阳',
+    title: translate({
+      id: 'data.travel.trip201309.title',
+      message: '🇨🇳 Jilin & Liaoning',
+    }),
+    description: translate({
+      id: 'data.travel.trip201309.description',
+      message: 'Baishan (Changbai Mountain), Tonghua, Shenyang',
+    }),
   },
   {
     date: '2014-02',
-    title: '🇨🇳 江苏',
-    description: '南京',
+    title: translate({
+      id: 'data.travel.trip201402Jiangsu.title',
+      message: '🇨🇳 Jiangsu',
+    }),
+    description: translate({
+      id: 'data.travel.trip201402Jiangsu.description',
+      message: 'Nanjing',
+    }),
   },
   {
     date: '2014-02',
-    title: '🇨🇳 天津',
-    description: '天津',
+    title: translate({
+      id: 'data.travel.trip201402Tianjin.title',
+      message: '🇨🇳 Tianjin',
+    }),
+    description: translate({
+      id: 'data.travel.trip201402Tianjin.description',
+      message: 'Tianjin',
+    }),
   },
   {
     date: '2015-01',
-    title: '🇻🇳 越南',
-    description: '岘港',
+    title: translate({
+      id: 'data.travel.trip201501.title',
+      message: '🇻🇳 Vietnam',
+    }),
+    description: translate({
+      id: 'data.travel.trip201501.description',
+      message: 'Da Nang',
+    }),
   },
   {
     date: '2015-02',
-    title: '🇨🇳 江苏、上海',
-    description: '南通、上海（崇明岛）',
+    title: translate({
+      id: 'data.travel.trip201502.title',
+      message: '🇨🇳 Jiangsu & Shanghai',
+    }),
+    description: translate({
+      id: 'data.travel.trip201502.description',
+      message: 'Nantong, Shanghai (Chongming Island)',
+    }),
   },
   {
     date: '2015-05',
-    title: '🇯🇵 日本',
-    description: '大阪、京都、名古屋、箱根、东京、成田',
+    title: translate({
+      id: 'data.travel.trip201505.title',
+      message: '🇯🇵 Japan',
+    }),
+    description: translate({
+      id: 'data.travel.trip201505.description',
+      message: 'Osaka, Kyoto, Nagoya, Hakone, Tokyo, Narita',
+    }),
   },
   {
     date: '2015-10',
-    title: '🇨🇳 福建',
-    description: '厦门、漳州（土楼）',
+    title: translate({
+      id: 'data.travel.trip201510.title',
+      message: '🇨🇳 Fujian',
+    }),
+    description: translate({
+      id: 'data.travel.trip201510.description',
+      message: 'Xiamen, Zhangzhou (Tulou)',
+    }),
   },
   {
     date: '2016-01',
-    title: '🇨🇳 福建',
-    description: '福州',
+    title: translate({
+      id: 'data.travel.trip201601.title',
+      message: '🇨🇳 Fujian',
+    }),
+    description: translate({
+      id: 'data.travel.trip201601.description',
+      message: 'Fuzhou',
+    }),
   },
   {
     date: '2016-02',
-    title: '🇨🇳 山东、北京',
-    description: '济宁（曲阜）、泰安（泰山）、北京',
+    title: translate({
+      id: 'data.travel.trip201602.title',
+      message: '🇨🇳 Shandong & Beijing',
+    }),
+    description: translate({
+      id: 'data.travel.trip201602.description',
+      message: "Jining (Qufu), Tai'an (Mount Tai), Beijing",
+    }),
   },
   {
     date: '2016-07',
-    title: '🇦🇹 奥地利 & 🇸🇰 斯洛伐克 & 🇭🇺 匈牙利 & 🇸🇮 斯洛文尼亚 & 🇨🇿 捷克 & 🇩🇪 德国',
-    description:
-      '维也纳、布拉迪斯拉发、布达佩斯、马里博尔、哈尔施塔特、萨尔茨堡、林茨、克鲁姆洛夫、布拉格、卡罗维瓦里、魏玛、德累斯顿、波茨坦、柏林',
+    title: translate({
+      id: 'data.travel.trip201607.title',
+      message: '🇦🇹 Austria & 🇸🇰 Slovakia & 🇭🇺 Hungary & 🇸🇮 Slovenia & 🇨🇿 Czechia & 🇩🇪 Germany',
+    }),
+    description: translate({
+      id: 'data.travel.trip201607.description',
+      message:
+        'Vienna, Bratislava, Budapest, Maribor, Hallstatt, Salzburg, Linz, Český Krumlov, Prague, Karlovy Vary, Weimar, Dresden, Potsdam, Berlin',
+    }),
   },
   {
     date: '2016-09',
-    title: '🇨🇳 贵州',
-    description: '贵阳、安顺（黄果树）、黔东南（西江）、黔南（荔波）',
+    title: translate({
+      id: 'data.travel.trip201609.title',
+      message: '🇨🇳 Guizhou',
+    }),
+    description: translate({
+      id: 'data.travel.trip201609.description',
+      message:
+        'Guiyang, Anshun (Huangguoshu Waterfall), Qiandongnan (Xijiang Qianhu Miao Village), Qiannan (Libo)',
+    }),
   },
   {
     date: '2016-10',
-    title: '🇨🇳 江苏',
-    description: '泰州、镇江',
+    title: translate({
+      id: 'data.travel.trip201610.title',
+      message: '🇨🇳 Jiangsu',
+    }),
+    description: translate({
+      id: 'data.travel.trip201610.description',
+      message: 'Taizhou, Zhenjiang',
+    }),
   },
   {
     date: '2017-01',
-    title: '🇯🇵 日本',
-    description: '上海 ⇌ 熊本（量子号游轮）',
+    title: translate({
+      id: 'data.travel.trip201701.title',
+      message: '🇯🇵 Japan',
+    }),
+    description: translate({
+      id: 'data.travel.trip201701.description',
+      message: 'Shanghai ⇌ Kumamoto (Quantum of the Seas)',
+    }),
   },
   {
     date: '2017-02',
-    title: '🇹🇷 土耳其',
-    description: '伊斯坦布尔、伊兹密尔（以弗所）、代尼兹利（棉花堡）、卡帕多奇亚',
+    title: translate({
+      id: 'data.travel.trip201702.title',
+      message: '🇹🇷 Turkey',
+    }),
+    description: translate({
+      id: 'data.travel.trip201702.description',
+      message: 'Istanbul, Izmir (Ephesus), Denizli (Pamukkale), Cappadocia',
+    }),
   },
   {
     date: '2017-05',
-    title: '🇸🇬 新加坡',
-    description: '新加坡',
+    title: translate({
+      id: 'data.travel.trip201705.title',
+      message: '🇸🇬 Singapore',
+    }),
+    description: translate({
+      id: 'data.travel.trip201705.description',
+      message: 'Singapore',
+    }),
   },
   {
     date: '2017-07',
-    title: '🇨🇳 安徽',
-    description: '合肥',
+    title: translate({
+      id: 'data.travel.trip201707.title',
+      message: '🇨🇳 Anhui',
+    }),
+    description: translate({
+      id: 'data.travel.trip201707.description',
+      message: 'Hefei',
+    }),
   },
   {
     date: '2017-08',
-    title: '🇦🇺 澳大利亚',
-    description:
-      '布里斯班、黄金海岸、凯恩斯（绿岛大堡礁、红树林）、悉尼（蓝山公园）、墨尔本（大洋路）',
+    title: translate({
+      id: 'data.travel.trip201708.title',
+      message: '🇦🇺 Australia',
+    }),
+    description: translate({
+      id: 'data.travel.trip201708.description',
+      message:
+        'Brisbane, Gold Coast, Cairns (Green Island Great Barrier Reef, mangroves), Sydney (Blue Mountains National Park), Melbourne (Great Ocean Road)',
+    }),
   },
   {
     date: '2017-10',
-    title: '🇨🇳 黑龙江、吉林',
-    description: '哈尔滨、长春',
+    title: translate({
+      id: 'data.travel.trip201710.title',
+      message: '🇨🇳 Heilongjiang & Jilin',
+    }),
+    description: translate({
+      id: 'data.travel.trip201710.description',
+      message: 'Harbin, Changchun',
+    }),
   },
   {
     date: '2018-02',
-    title: '🇨🇳 云南',
-    description: '西双版纳',
+    title: translate({
+      id: 'data.travel.trip201802.title',
+      message: '🇨🇳 Yunnan',
+    }),
+    description: translate({
+      id: 'data.travel.trip201802.description',
+      message: 'Xishuangbanna',
+    }),
   },
   {
     date: '2018-06',
-    title: '🇨🇳 内蒙古',
-    description: '呼和浩特、鄂尔多斯',
+    title: translate({
+      id: 'data.travel.trip201806.title',
+      message: '🇨🇳 Inner Mongolia',
+    }),
+    description: translate({
+      id: 'data.travel.trip201806.description',
+      message: 'Hohhot, Ordos',
+    }),
   },
   {
     date: '2018-08',
-    title: '🇯🇵 日本',
-    description: '函馆、登别、洞爷湖、富良野（富田农场）、小樽、札幌',
+    title: translate({
+      id: 'data.travel.trip201808.title',
+      message: '🇯🇵 Japan',
+    }),
+    description: translate({
+      id: 'data.travel.trip201808.description',
+      message: 'Hakodate, Noboribetsu, Lake Toya, Furano (Farm Tomita), Otaru, Sapporo',
+    }),
   },
   {
     date: '2018-10',
-    title: '🇨🇳 湖南',
-    description: '湘潭、长沙',
+    title: translate({
+      id: 'data.travel.trip201810.title',
+      message: '🇨🇳 Hunan',
+    }),
+    description: translate({
+      id: 'data.travel.trip201810.description',
+      message: 'Xiangtan, Changsha',
+    }),
   },
   {
     date: '2019-01',
-    title: '🇨🇳 广西',
-    description: '南宁、崇左（德天）、北海',
+    title: translate({
+      id: 'data.travel.trip201901.title',
+      message: '🇨🇳 Guangxi',
+    }),
+    description: translate({
+      id: 'data.travel.trip201901.description',
+      message: 'Nanning, Chongzuo (Detian Waterfall), Beihai',
+    }),
   },
   {
     date: '2019-02',
-    title: '🇨🇳 北京',
-    description: '北京',
+    title: translate({
+      id: 'data.travel.trip201902.title',
+      message: '🇨🇳 Beijing',
+    }),
+    description: translate({
+      id: 'data.travel.trip201902.description',
+      message: 'Beijing',
+    }),
   },
   {
     date: '2019-07',
-    title: '🇮🇹 意大利 & 🇻🇦 梵蒂冈 & 🇨🇭 瑞士 & 🇫🇷 法国',
-    description:
-      '罗马、梵蒂冈、白露里治奥、托斯卡纳、佛罗伦萨、威尼斯、维罗纳、圣莫里茨、达沃斯、卢塞恩、因特拉肯、蒙特勒、安纳西、巴黎',
+    title: translate({
+      id: 'data.travel.trip201907.title',
+      message: '🇮🇹 Italy & 🇻🇦 Vatican City & 🇨🇭 Switzerland & 🇫🇷 France',
+    }),
+    description: translate({
+      id: 'data.travel.trip201907.description',
+      message:
+        'Rome, Vatican City, Civita di Bagnoregio, Tuscany, Florence, Venice, Verona, St. Moritz, Davos, Lucerne, Interlaken, Montreux, Annecy, Paris',
+    }),
   },
   {
     date: '2020-07',
-    title: '🇨🇳 海南',
-    description: '三亚、文昌、海口',
+    title: translate({
+      id: 'data.travel.trip202007.title',
+      message: '🇨🇳 Hainan',
+    }),
+    description: translate({
+      id: 'data.travel.trip202007.description',
+      message: 'Sanya, Wenchang, Haikou',
+    }),
   },
   {
     date: '2021-05',
-    title: '🇨🇳 江西、湖北',
-    description: '九江（庐山）、武汉',
+    title: translate({
+      id: 'data.travel.trip202105.title',
+      message: '🇨🇳 Jiangxi & Hubei',
+    }),
+    description: translate({
+      id: 'data.travel.trip202105.description',
+      message: 'Jiujiang (Mount Lu), Wuhan',
+    }),
   },
   {
     date: '2021-07',
-    title: '🇨🇳 山东',
-    description: '烟台',
+    title: translate({
+      id: 'data.travel.trip202107.title',
+      message: '🇨🇳 Shandong',
+    }),
+    description: translate({
+      id: 'data.travel.trip202107.description',
+      message: 'Yantai',
+    }),
   },
   {
     date: '2023-01',
-    title: '🇨🇳 福建',
-    description: '泉州、莆田（湄洲岛）',
+    title: translate({
+      id: 'data.travel.trip202301.title',
+      message: '🇨🇳 Fujian',
+    }),
+    description: translate({
+      id: 'data.travel.trip202301.description',
+      message: 'Quanzhou, Putian (Meizhou Island)',
+    }),
   },
   {
     date: '2023-07',
-    title: '🇲🇻 马尔代夫',
-    description: '马累、诺鲁环礁（伊露岛）',
+    title: translate({
+      id: 'data.travel.trip202307.title',
+      message: '🇲🇻 Maldives',
+    }),
+    description: translate({
+      id: 'data.travel.trip202307.description',
+      message: 'Malé, Iru Fushi (Noonu Atoll)',
+    }),
   },
   {
     date: '2024-02',
-    title: '🇨🇳 福建、广东',
-    description: '南平（武夷山）、汕头（南澳岛）、潮州、揭阳',
+    title: translate({
+      id: 'data.travel.trip202402.title',
+      message: '🇨🇳 Fujian & Guangdong',
+    }),
+    description: translate({
+      id: 'data.travel.trip202402.description',
+      message: "Nanping (Mount Wuyi), Shantou (Nan'ao Island), Chaozhou, Jieyang",
+    }),
   },
   {
     date: '2024-08',
-    title: '🇰🇷 韩国',
-    description: '仁川、首尔、釜山',
+    title: translate({
+      id: 'data.travel.trip202408.title',
+      message: '🇰🇷 South Korea',
+    }),
+    description: translate({
+      id: 'data.travel.trip202408.description',
+      message: 'Incheon, Seoul, Busan',
+    }),
   },
   {
     date: '2025-01',
-    title: '🇲🇾 马来西亚',
-    description: '吉隆坡、霹雳州（怡保）、槟城州（乔治）',
+    title: translate({
+      id: 'data.travel.trip202501.title',
+      message: '🇲🇾 Malaysia',
+    }),
+    description: translate({
+      id: 'data.travel.trip202501.description',
+      message: 'Kuala Lumpur, Ipoh (Perak), George Town (Penang)',
+    }),
   },
   {
     date: '2025-07',
-    title: '🇭🇰 香港 & 🇨🇳 广东',
-    description: '香港、深圳、广州',
+    title: translate({
+      id: 'data.travel.trip202507.title',
+      message: '🇭🇰 Hong Kong & 🇨🇳 Guangdong',
+    }),
+    description: translate({
+      id: 'data.travel.trip202507.description',
+      message: 'Hong Kong, Shenzhen, Guangzhou',
+    }),
     href: '/blog/travel/hk-gd',
   },
   {
     date: '2026-02',
-    title: '🇹🇭 泰国 & 🇱🇦 老挝',
-    description: '清迈、清莱、金三角',
+    title: translate({
+      id: 'data.travel.trip202602.title',
+      message: '🇹🇭 Thailand & 🇱🇦 Laos',
+    }),
+    description: translate({
+      id: 'data.travel.trip202602.description',
+      message: 'Chiang Mai, Chiang Rai, Golden Triangle',
+    }),
     href: '/blog/travel/th-la',
   },
   {
     date: '2026-08',
-    title: '🇨🇳 北京',
-    description: '北京',
+    title: translate({
+      id: 'data.travel.trip202608.title',
+      message: '🇨🇳 Beijing',
+    }),
+    description: translate({
+      id: 'data.travel.trip202608.description',
+      message: 'Beijing',
+    }),
     href: '/blog/record/gfssm-2026-final',
   },
 ];
