@@ -225,23 +225,8 @@ const config: Config = {
             { label: 'Privacy Policy', to: '/privacy' },
           ],
         },
-        {
-          title: 'More',
-          items: [
-            { label: "lailai's Tools", href: 'https://tools.lailai.one' },
-            {
-              label: "lailai's Cloud",
-              href: 'https://cloud.lailai.one',
-            },
-            {
-              label: "lailai's Analytics",
-              href: 'https://analytics.lailai.one/share/DDd09iBEYOQw2k9L',
-            },
-            { label: "lailai's Status", href: 'https://status.lailai.one' },
-          ],
-        },
       ],
-      copyright: `Copyright © 2021–${new Date().getFullYear()} lailai. Built with <a href="https://docusaurus.io" target="_blank">Docusaurus</a>.<br />This website's content is licensed under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a><img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg" alt="Creative Commons" style="max-width: 1em;max-height:1em;margin-left: .2em;"><img src="https://mirrors.creativecommons.org/presskit/icons/by.svg" alt="Attribution" style="max-width: 1em;max-height:1em;margin-left: .2em;">`,
+      copyright: `© 2021–${new Date().getFullYear()} lailai.<br />Built with&nbsp;<a href="https://docusaurus.io/" target="_blank">Docusaurus</a>.`,
     },
     prism: {
       theme: prismThemes.vsLight,

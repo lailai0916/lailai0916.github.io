@@ -1639,5 +1639,32 @@
   "theme.tags.tagsPageTitle": {
     "message": "标签",
     "description": "The title of the tag list page"
+  },
+  "components.footer.description": {
+    "message": "分享技术笔记、项目经验与学习思考的个人网站。"
+  },
+  "components.footer.siteInformation": {
+    "message": "站点信息"
+  },
+  "components.footer.navigation": {
+    "message": "页脚导航"
+  },
+  "components.footer.feeds.ariaLabel": {
+    "message": "订阅源"
+  },
+  "components.footer.feeds.rss": {
+    "message": "RSS 订阅"
+  },
+  "components.footer.feeds.atom": {
+    "message": "Atom 订阅"
+  },
+  "components.footer.feeds.json": {
+    "message": "JSON 订阅"
+  },
+  "components.footer.licenseNotice": {
+    "message": "本网站内容采用"
+  },
+  "components.footer.licenseLabel": {
+    "message": "知识共享 署名 4.0 国际许可协议"
   }
 }

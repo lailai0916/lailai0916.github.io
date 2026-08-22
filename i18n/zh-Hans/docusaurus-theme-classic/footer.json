@@ -11,10 +11,6 @@
     "message": "网站",
     "description": "The title of the footer links column with title=Site in the footer"
   },
-  "link.title.More": {
-    "message": "更多",
-    "description": "The title of the footer links column with title=More in the footer"
-  },
   "link.item.label.Contest": {
     "message": "竞赛",
     "description": "The label of footer link with label=Contest linking to /docs/contest"
@@ -63,24 +59,8 @@
     "message": "隐私政策",
     "description": "The label of footer link with label=Privacy Policy linking to /privacy"
   },
-  "link.item.label.lailai's Tools": {
-    "message": "lailai's Tools",
-    "description": "The label of footer link with label=lailai's Tools linking to https://tools.lailai.one"
-  },
-  "link.item.label.lailai's Cloud": {
-    "message": "lailai's Cloud",
-    "description": "The label of footer link with label=lailai's Cloud linking to https://cloud.lailai.one"
-  },
-  "link.item.label.lailai's Analytics": {
-    "message": "lailai's Analytics",
-    "description": "The label of footer link with label=lailai's Analytics linking to https://analytics.lailai.one/share/DDd09iBEYOQw2k9L"
-  },
-  "link.item.label.lailai's Status": {
-    "message": "lailai's Status",
-    "description": "The label of footer link with label=lailai's Status linking to https://status.lailai.one"
-  },
   "copyright": {
-    "message": "版权所有 © 2021–2026 lailai，使用 <a href=\"https://docusaurus.io\" target=\"_blank\">Docusaurus</a> 构建。<br />本网站内容采用 <a href=\"https://creativecommons.org/licenses/by/4.0/\">知识共享 署名 4.0 国际许可协议</a><img src=\"https://mirrors.creativecommons.org/presskit/icons/cc.svg\" alt=\"知识共享\" style=\"max-width: 1em;max-height:1em;margin-left: .2em;\"><img src=\"https://mirrors.creativecommons.org/presskit/icons/by.svg\" alt=\"署名\" style=\"max-width: 1em;max-height:1em;margin-left: .2em;\">",
+    "message": "© 2021–2026 lailai。<br />使用&nbsp;<a href=\"https://docusaurus.io/\" target=\"_blank\">Docusaurus</a> 构建。",
     "description": "The footer copyright"
   }
 }
