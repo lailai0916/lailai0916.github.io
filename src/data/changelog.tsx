@@ -10,7 +10,7 @@ export const CHANGELOG_LIST: ChangelogItem[] = [
   {
     date: '2026-08-22',
     type: 'removed',
-    content: 'Cookie 授权弹窗',
+    content: 'Cookie 提示弹窗',
   },
   {
     date: '2026-07-16',
@@ -105,7 +105,7 @@ export const CHANGELOG_LIST: ChangelogItem[] = [
   {
     date: '2026-04-26',
     type: 'added',
-    content: 'Cookie 授权弹窗',
+    content: 'Cookie 提示弹窗',
   },
   {
     date: '2026-04-25',
