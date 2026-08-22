@@ -9,6 +9,11 @@ interface ChangelogItem {
 export const CHANGELOG_LIST: ChangelogItem[] = [
   {
     date: '2026-08-22',
+    type: 'changed',
+    content: '网站 Footer 布局',
+  },
+  {
+    date: '2026-08-22',
     type: 'removed',
     content: 'Cookie 提示弹窗',
   },
