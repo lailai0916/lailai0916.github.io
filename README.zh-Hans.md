@@ -51,7 +51,7 @@
 
 🛠️ **自建设计系统**：手工打造的组件库（`laikit`），统一全站 UI 风格。
 
-📊 **分析与 SEO**：双重统计（[Google Analytics](https://analytics.google.com) + 公开的 [Umami](https://umami.is) 看板），并已在主流搜索引擎验证。
+📊 **分析与 SEO**：通过公开的 [Umami 看板](https://analytics.lailai.one/share/DDd09iBEYOQw2k9L) 提供隐私友好的网站统计，并已在主流搜索引擎验证。
 
 📦 **字体自托管**：核心字体随网站打包并由本站提供。
 

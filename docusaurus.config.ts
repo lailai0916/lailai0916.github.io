@@ -282,16 +282,7 @@ const config: Config = {
 
   themes: ['@docusaurus/theme-mermaid', '@docusaurus/theme-live-codeblock'],
 
-  plugins: [
-    [
-      '@docusaurus/plugin-google-gtag',
-      {
-        trackingID: 'G-HGRTVZK8MR',
-        anonymizeIP: true,
-      },
-    ],
-    require.resolve('docusaurus-plugin-image-zoom'),
-  ],
+  plugins: [require.resolve('docusaurus-plugin-image-zoom')],
 };
 
 export default config;

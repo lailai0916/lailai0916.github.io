@@ -51,7 +51,7 @@ Built with [Docusaurus](https://docusaurus.io), with source code hosted on [GitH
 
 🛠️ **In-House Design System** — A handcrafted component library (`laikit`) for a consistent UI.
 
-📊 **Analytics & SEO** — Dual analytics ([Google Analytics](https://analytics.google.com) + a public [Umami](https://umami.is) dashboard) and verification on major search engines.
+📊 **Analytics & SEO** — Privacy-focused analytics through a public [Umami dashboard](https://analytics.lailai.one/share/DDd09iBEYOQw2k9L) and verification on major search engines.
 
 📦 **Local Font Hosting** — Core fonts are bundled with the site and served locally.
 

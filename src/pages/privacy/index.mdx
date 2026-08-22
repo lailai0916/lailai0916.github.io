@@ -124,7 +124,6 @@ Depending on the service and context, those providers may act as processors, ser
 | ---------------------------------------------------------- | --------------------------------------------------------------------------- | ------------------------------------------------------------------------------------ |
 | Self-managed cloud server                                  | Hosting and delivery for the main site `lailai.one` and the Tor onion site  | IP address, request URL, headers, timestamps, user agent                             |
 | GitHub Pages and related delivery infrastructure           | Hosting, caching, and content delivery for the mirror site `lailai0916.com` | IP address, request URL, headers, timestamps, user agent                             |
-| Google Analytics                                           | Website traffic measurement and usage analytics                             | Online identifiers, IP address, browser/device data, page views, interactions        |
 | `analytics.lailai.one` (Umami-based self-hosted analytics) | Privacy-focused website analytics and page statistics                       | Page URL, referrer, browser/device/language/screen data, technical request data      |
 | Algolia DocSearch                                          | Site search                                                                 | Search queries, search interactions, technical metadata                              |
 | GitHub Discussions / Giscus                                | Public comments and reactions                                               | GitHub account information, public comment content, timestamps, and related metadata |
@@ -132,7 +131,6 @@ Depending on the service and context, those providers may act as processors, ser
 
 Additional detail about key third-party services:
 
-- We currently enable Google Analytics through Docusaurus and configure `anonymizeIP: true` in the Site configuration.
 - The self-hosted analytics script loaded from `analytics.lailai.one` is Umami-based. According to Umami's official documentation, Umami is designed to operate without cookies by default.
 - If you choose to post a comment, your comment and associated GitHub profile information may be processed and displayed publicly through GitHub Discussions / Giscus.
 

@@ -124,7 +124,6 @@ import { MDTitle } from '@site/src/components/laikit/Markdown';
 | --------------------------------------------------- | ----------------------------------------------- | ----------------------------------------------------------------- |
 | 自管理云服务器                                      | 主站 `lailai.one` 与 Tor onion 站点的托管与分发 | IP 地址、请求 URL、请求头、时间戳、用户代理                       |
 | GitHub Pages 及相关内容分发基础设施                 | 镜像站 `lailai0916.com` 的托管、缓存与内容分发  | IP 地址、请求 URL、请求头、时间戳、用户代理                       |
-| Google Analytics                                    | 网站流量统计与使用分析                          | 在线标识符、IP 地址、浏览器 / 设备信息、页面浏览和交互数据        |
 | `analytics.lailai.one`（基于 Umami 的自托管统计）   | 偏重隐私友好的网站统计和页面数据展示            | 页面 URL、引荐来源、浏览器 / 设备 / 语言 / 屏幕信息、技术请求数据 |
 | Algolia DocSearch                                   | 站内搜索                                        | 搜索词、搜索交互以及技术元数据                                    |
 | GitHub Discussions / Giscus                         | 公开评论与互动                                  | GitHub 账户信息、公开评论内容、时间戳及相关元数据                 |
@@ -132,7 +131,6 @@ import { MDTitle } from '@site/src/components/laikit/Markdown';
 
 关于关键第三方服务的补充说明：
 
-- 我们当前通过 Docusaurus 启用了 Google Analytics，并在站点配置中设置了 `anonymizeIP: true`。
 - 从 `analytics.lailai.one` 加载的自托管统计脚本基于 Umami。根据 Umami 官方文档，Umami 默认设计为无 Cookie 运行。
 - 如果您选择发表评论，您的评论内容及相关 GitHub 资料信息可能会通过 GitHub Discussions / Giscus 被处理并公开展示。
 
