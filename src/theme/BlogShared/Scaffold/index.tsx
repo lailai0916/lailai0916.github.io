@@ -5,7 +5,6 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import { useLocation } from '@docusaurus/router';
 import Layout from '@theme/Layout';
 import type { TOCItem } from '@docusaurus/mdx-loader';
-import { Icon } from '@iconify/react';
 
 import { translate } from '@docusaurus/Translate';
 import { loadOfficialTags } from '@site/src/utils/blogData';
@@ -283,56 +282,6 @@ function TagsCard() {
   );
 }
 
-function FeedCard() {
-  const feeds = [
-    {
-      name: 'RSS',
-      icon: 'lucide:rss',
-      ariaLabel: translate({
-        id: 'blog.sidebar.feed.rss',
-        message: 'RSS Feed',
-      }),
-      href: useBaseUrl('/blog/rss.xml', { absolute: true }),
-    },
-    {
-      name: 'Atom',
-      icon: 'lucide:atom',
-      ariaLabel: translate({
-        id: 'blog.sidebar.feed.atom',
-        message: 'Atom Feed',
-      }),
-      href: useBaseUrl('/blog/atom.xml', { absolute: true }),
-    },
-    {
-      name: 'JSON',
-      icon: 'lucide:braces',
-      ariaLabel: translate({
-        id: 'blog.sidebar.feed.json',
-        message: 'JSON Feed',
-      }),
-      href: useBaseUrl('/blog/feed.json', { absolute: true }),
-    },
-  ];
-
-  return (
-    <Card>
-      <div className={styles.feedGrid}>
-        {feeds.map((feed) => (
-          <Link
-            key={feed.href}
-            href={feed.href}
-            aria-label={feed.ariaLabel}
-            className={styles.feedTile}
-          >
-            <Icon icon={feed.icon} width="1.2em" height="1.2em" className={styles.feedTileIcon} />
-            <span className={styles.feedTileLabel}>{feed.name}</span>
-          </Link>
-        ))}
-      </div>
-    </Card>
-  );
-}
-
 type Props = {
   title?: string;
   description?: string;
@@ -355,7 +304,6 @@ export default function BlogScaffold({ title, description, children, toc }: Prop
             <>
               <CalendarCard />
               <TagsCard />
-              <FeedCard />
             </>
           )}
         </aside>

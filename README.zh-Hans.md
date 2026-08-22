@@ -99,14 +99,6 @@ lailai0916.github.io/
 └── tsconfig.json                   # TypeScript 配置
 ```
 
-## 博客订阅
-
-获取最新博客文章更新：
-
-- [RSS 订阅](https://lailai.one/zh-Hans/blog/rss.xml)
-- [Atom 订阅](https://lailai.one/zh-Hans/blog/atom.xml)
-- [JSON 订阅](https://lailai.one/zh-Hans/blog/feed.json)
-
 ## 赞助支持
 
 你可以请我喝杯咖啡，我会做得更好。谢谢！

@@ -173,7 +173,7 @@
   gap: 1rem;
   align-items: center;
   justify-content: flex-end;
-  margin-top: clamp(1.5rem, 4vw, 2rem);
+  margin-top: 1rem;
   padding-top: 0.75rem;
   border-top: 1px solid var(--ifm-color-emphasis-200);
 }
@@ -183,7 +183,6 @@
     align-items: flex-start;
     flex-direction: column;
     gap: 0.25rem;
-    margin-top: 1.5rem;
   }
 }
 

@@ -242,59 +242,6 @@
   color: var(--ifm-color-primary-dark);
 }
 
-.feedGrid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 0.55rem;
-}
-
-@media (max-width: 280px) {
-  .feedGrid {
-    grid-template-columns: 1fr;
-  }
-}
-
-.feedTile {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 0.4rem;
-  padding: 0.7rem 0.4rem;
-  border-radius: 12px;
-  border: 1px solid var(--ifm-color-emphasis-200);
-  color: var(--ifm-color-emphasis-700);
-  background: var(--ifm-card-background-color);
-  text-decoration: none !important;
-  transition:
-    color 160ms ease,
-    border-color 160ms ease,
-    background-color 160ms ease,
-    transform 160ms ease;
-}
-
-.feedTile:hover {
-  color: var(--ifm-color-primary);
-  border-color: var(--ifm-color-primary);
-  background: color-mix(in srgb, var(--ifm-color-primary) 6%, transparent);
-}
-
-.feedTile:active {
-  transform: scale(0.98);
-}
-
-.feedTileIcon {
-  flex-shrink: 0;
-}
-
-.feedTileLabel {
-  font-size: 0.78rem;
-  font-weight: 600;
-  letter-spacing: 0.04em;
-  font-variant-numeric: tabular-nums;
-  line-height: 1;
-}
-
 .container {
   width: 100%;
   max-width: 1200px;
