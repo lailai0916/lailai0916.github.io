@@ -10,7 +10,7 @@ export const CHANGELOG_LIST: ChangelogItem[] = [
   {
     date: '2026-07-16',
     type: 'added',
-    content: '<b>Tor</b> onion 镜像站',
+    content: 'Tor onion 镜像站',
   },
   {
     date: '2026-07-16',
@@ -20,7 +20,7 @@ export const CHANGELOG_LIST: ChangelogItem[] = [
   {
     date: '2026-07-13',
     type: 'added',
-    content: '<b>ESLint</b> 代码检查',
+    content: 'ESLint 代码检查',
   },
   {
     date: '2026-07-11',
@@ -35,7 +35,7 @@ export const CHANGELOG_LIST: ChangelogItem[] = [
   {
     date: '2026-06-18',
     type: 'added',
-    content: '博客 <b>Overview</b> 统计页面',
+    content: '博客 Overview 统计页面',
   },
   {
     date: '2026-06-14',
@@ -45,7 +45,7 @@ export const CHANGELOG_LIST: ChangelogItem[] = [
   {
     date: '2026-06-09',
     type: 'added',
-    content: '<b>docusaurus-plugin-image-zoom</b> 图片缩放',
+    content: 'docusaurus-plugin-image-zoom 图片缩放',
   },
   {
     date: '2026-05-24',
@@ -55,7 +55,7 @@ export const CHANGELOG_LIST: ChangelogItem[] = [
   {
     date: '2026-05-24',
     type: 'changed',
-    content: '<b>KaTeX</b> 从 CDN 迁移到 npm，升级至 <code>0.16.47</code>',
+    content: 'KaTeX 从 CDN 迁移到 npm，升级至 <code>0.16.47</code>',
   },
   {
     date: '2026-05-23',
@@ -70,12 +70,12 @@ export const CHANGELOG_LIST: ChangelogItem[] = [
   {
     date: '2026-05-01',
     type: 'removed',
-    content: '<b>Sitemap</b> 页面',
+    content: 'Sitemap 页面',
   },
   {
     date: '2026-05-01',
     type: 'added',
-    content: '<b>Insights</b> 页面',
+    content: 'Insights 页面',
   },
   {
     date: '2026-05-01',
@@ -85,17 +85,17 @@ export const CHANGELOG_LIST: ChangelogItem[] = [
   {
     date: '2026-04-28',
     type: 'added',
-    content: '主页 <b>Lorenz Attractor</b> 组件',
+    content: '主页 Lorenz Attractor 组件',
   },
   {
     date: '2026-04-26',
     type: 'changed',
-    content: 'About 页面 <b>Community</b> 组件',
+    content: 'About 页面 Community 组件',
   },
   {
     date: '2026-04-26',
     type: 'changed',
-    content: 'About 页面 <b>Devices</b> 组件',
+    content: 'About 页面 Devices 组件',
   },
   {
     date: '2026-04-26',
@@ -120,7 +120,7 @@ export const CHANGELOG_LIST: ChangelogItem[] = [
   {
     date: '2026-04-19',
     type: 'removed',
-    content: '<b>Tailwind CSS</b> 依赖',
+    content: 'Tailwind CSS 依赖',
   },
   {
     date: '2026-04-19',
@@ -135,12 +135,12 @@ export const CHANGELOG_LIST: ChangelogItem[] = [
   {
     date: '2026-04-12',
     type: 'changed',
-    content: 'Travel 页面 <b>Travel Map</b> 组件',
+    content: 'Travel 页面 Travel Map 组件',
   },
   {
     date: '2026-04-11',
     type: 'changed',
-    content: '非 Apple 设备的默认字体更改为 <b>Inter</b>',
+    content: '非 Apple 设备的默认字体更改为 Inter',
   },
   {
     date: '2026-04-10',
@@ -165,17 +165,17 @@ export const CHANGELOG_LIST: ChangelogItem[] = [
   {
     date: '2026-01-25',
     type: 'removed',
-    content: '主页 <b>Inspiring Thoughts</b> 组件',
+    content: '主页 Inspiring Thoughts 组件',
   },
   {
     date: '2026-01-25',
     type: 'added',
-    content: '主页 <b>Fourier Transform</b> 组件',
+    content: '主页 Fourier Transform 组件',
   },
   {
     date: '2026-01-21',
     type: 'added',
-    content: '<b>Moments</b> 页面',
+    content: 'Moments 页面',
   },
   {
     date: '2026-01-18',
@@ -253,7 +253,7 @@ export const CHANGELOG_LIST: ChangelogItem[] = [
     date: '2025-08-25',
     type: 'added',
     content:
-      '<b>Umami</b> 分析 <a href="https://analytics.lailai.one/share/DDd09iBEYOQw2k9L">lailai\'s Analytics</a>',
+      'Umami 分析 <a href="https://analytics.lailai.one/share/DDd09iBEYOQw2k9L">lailai\'s Analytics</a>',
   },
   {
     date: '2025-08-14',
@@ -263,7 +263,7 @@ export const CHANGELOG_LIST: ChangelogItem[] = [
   {
     date: '2025-08-13',
     type: 'added',
-    content: '<b>copy-tex</b> 公式复制优化',
+    content: 'copy-tex 公式复制优化',
   },
   {
     date: '2025-07-22',
@@ -273,12 +273,12 @@ export const CHANGELOG_LIST: ChangelogItem[] = [
   {
     date: '2025-06-23',
     type: 'changed',
-    content: '默认语言更改为 <b>English</b>',
+    content: '默认语言更改为 English',
   },
   {
     date: '2025-06-23',
     type: 'added',
-    content: '国际化支持 <b>English</b>',
+    content: '国际化支持 English',
   },
   {
     date: '2025-06-07',
@@ -293,12 +293,12 @@ export const CHANGELOG_LIST: ChangelogItem[] = [
   {
     date: '2025-01-08',
     type: 'added',
-    content: '<b>Mermaid</b> 图表',
+    content: 'Mermaid 图表',
   },
   {
     date: '2025-01-08',
     type: 'added',
-    content: '<b>Google Analytics</b> 分析',
+    content: 'Google Analytics 分析',
   },
   {
     date: '2025-01-03',
@@ -328,27 +328,27 @@ export const CHANGELOG_LIST: ChangelogItem[] = [
   {
     date: '2024-10-29',
     type: 'added',
-    content: '<b>Giscus</b> 评论',
+    content: 'Giscus 评论',
   },
   {
     date: '2024-10-29',
     type: 'added',
-    content: '<b>Iconify</b> 图标',
+    content: 'Iconify 图标',
   },
   {
     date: '2024-10-29',
     type: 'added',
-    content: '<b>Tailwind CSS</b> 依赖',
+    content: 'Tailwind CSS 依赖',
   },
   {
     date: '2024-10-19',
     type: 'added',
-    content: '<b>docusaurus-search-local</b> 本地搜索',
+    content: 'docusaurus-search-local 本地搜索',
   },
   {
     date: '2024-10-18',
     type: 'added',
-    content: '<b>KaTeX</b> 数学公式',
+    content: 'KaTeX 数学公式',
   },
   {
     date: '2024-10-17',
