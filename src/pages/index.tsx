@@ -65,20 +65,26 @@ function timeOfDayIcon(hour: number): string {
 function useLocalTime() {
   const [state, setState] = useState({ time: '--:--', icon: 'lucide:clock' });
   useEffect(() => {
+    let timer: ReturnType<typeof setTimeout>;
+
     const update = () => {
+      const now = new Date();
       const parts = new Intl.DateTimeFormat('en-GB', {
         timeZone: 'Asia/Shanghai',
         hour: '2-digit',
         minute: '2-digit',
         hourCycle: 'h23',
-      }).formatToParts(new Date());
+      }).formatToParts(now);
       const hour = parts.find((p) => p.type === 'hour')?.value ?? '00';
       const minute = parts.find((p) => p.type === 'minute')?.value ?? '00';
       setState({ time: `${hour}:${minute}`, icon: timeOfDayIcon(Number(hour)) });
+
+      const millisecondsUntilNextMinute = 60000 - (now.getTime() % 60000);
+      timer = setTimeout(update, millisecondsUntilNextMinute);
     };
+
     update();
-    const timer = setInterval(update, 60000);
-    return () => clearInterval(timer);
+    return () => clearTimeout(timer);
   }, []);
   return state;
 }
