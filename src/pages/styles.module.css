@@ -35,6 +35,10 @@
   }
 }
 
+.bento > * {
+  min-width: 0;
+}
+
 .cardMainLink {
   grid-column: span 2;
   grid-row: span 2;
@@ -97,6 +101,13 @@
 @media (max-width: 768px) {
   .cardMainInner {
     gap: 1rem;
+  }
+}
+
+@media (max-width: 240px) {
+  .cardMainInner {
+    flex-direction: column;
+    align-items: flex-start;
   }
 }
 
@@ -392,6 +403,15 @@
   grid-auto-rows: 40px;
   gap: 0.5rem;
   justify-content: end;
+}
+
+@media (max-width: 375px) {
+  .socialLinks {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: center;
+  }
 }
 
 .socialLink {
