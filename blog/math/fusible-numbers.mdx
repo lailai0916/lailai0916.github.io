@@ -1,0 +1,150 @@
+---
+title: 数学：燃烧数
+description: 本文将介绍燃烧数及其递归函数，并求出钓鱼题中的 f(3)。
+summary: 燃烧数由燃烧速度不均匀的引线计时问题定义。两个相差小于 1 的燃烧数 a、b 可以生成 (a+b+1)/2，由此得到一个序型为 ε0 的良序集。题目中的递归函数表示相邻温和燃烧数之间的间距，其中 f(0)、f(1)、f(2) 依次为二的负一次、负三次和负十次方，而 f(3) 已经等于二的负 1541023937 次方。该函数对所有实数输入都会终止，但皮亚诺算术无法证明它对所有自然数输入都会终止。
+date: 2026-08-26T21:31:00+08:00
+authors: lailai
+tags: [math]
+---
+
+一道只求 $f(3)$ 的递归钓鱼题。
+
+{/* truncate */}
+
+## 参考资料
+
+- [Fusible numbers and Peano Arithmetic - arXiv](https://arxiv.org/abs/2003.14342)
+- [Survey on fusible numbers - arXiv](https://arxiv.org/abs/1202.5614)
+
+## 题目
+
+考虑如下递归算法：
+
+$$
+f(x)=
+\begin{cases}
+  -x & x<0 \\
+  \frac{1}{2}f\bigl(x-f(x-1)\bigr) & x\geq 0
+\end{cases}
+$$
+
+求 $f(3)$。
+
+## 计算
+
+$$
+f(0)=\frac{1}{2}f\bigl(-f(-1)\bigr)
+=\frac{1}{2}f(-1)
+=\frac{1}{2}
+$$
+
+$$
+f\left(\frac{1}{2}\right)
+=\frac{1}{2}f\left(\frac{1}{2}-f\left(-\frac{1}{2}\right)\right)
+=\frac{1}{2}f(0)
+=\frac{1}{4}
+$$
+
+$$
+f(1)=\frac{1}{2}f\bigl(1-f(0)\bigr)
+=\frac{1}{2}f\left(\frac{1}{2}\right)
+=\frac{1}{8}
+$$
+
+$$
+f(2)=\frac{1}{2}f\left(2-f(1)\right)
+=\frac{1}{2}f\left(\frac{15}{8}\right)
+$$
+
+自变量是实数，不能仅在整数上递推。继续展开还会产生更多二进有理数。
+
+## 引线计时
+
+**燃烧数**（Fusible Number）来自引线计时问题。
+
+一根引线从一端点燃后，恰好一小时烧完，但各处燃烧速度并不均匀。若两端分别在时刻 $a$ 与 $b$ 点燃，烧完的时刻为：
+
+$$
+a\mathbin{\sim}b=\frac{a+b+1}{2}
+$$
+
+运算要求 $|a-b|<1$。
+
+规定 $0$ 是燃烧数。若 $a,b$ 是燃烧数且 $|a-b|<1$，则 $a\mathbin{\sim}b$ 也是燃烧数。
+
+例如：
+
+$$
+0\mathbin{\sim}0=\frac{1}{2}
+$$
+
+$$
+0\mathbin{\sim}\frac{1}{2}=\frac{3}{4}
+$$
+
+$$
+\frac{1}{2}\mathbin{\sim}\frac{1}{2}=1
+$$
+
+所有燃烧数都是非负二进有理数，反之不成立。
+
+## 递归式
+
+2022 年的论文构造了燃烧数的子集 $\mathcal{F}_0$，称为 **温和燃烧数**（Tame Fusible Number）。
+
+设 $T(x)$ 表示大于 $x$ 的最小温和燃烧数，则：
+
+$$
+f(x)=T(x)-x
+$$
+
+因此，$f(x)$ 是 $x$ 到下一个温和燃烧数的间距。
+
+早期资料曾把同一个递归式用于完整燃烧数集合。2012 年的综述给出了反例。
+
+这个递归式仅对应 $\mathcal{F}_0$，不是燃烧数的定义。
+
+## 序数
+
+燃烧数按通常大小构成良序集，序型为 $\varepsilon_0$。温和燃烧数的序型同样是 $\varepsilon_0$。
+
+在 $\mathcal{F}_0$ 中，整数 $1,2,3$ 的位置依次为：
+
+$$
+\begin{aligned}
+  1 & \longleftrightarrow\omega, \\
+  2 & \longleftrightarrow\omega^\omega, \\
+  3 & \longleftrightarrow\omega^{\omega^\omega}
+\end{aligned}
+$$
+
+不断迭代 $\alpha\mapsto\omega^\alpha$，上确界就是 $\varepsilon_0$。
+
+## 终止
+
+递归调用的参数都小于原参数，但这不能证明算法终止。实数存在有下界的无限严格递减数列。
+
+论文利用温和燃烧数的良序性，证明了算法对所有实数输入都会终止。不过，皮亚诺算术（Peano Arithmetic，PA）无法证明：
+
+> 对每个自然数 $n$，计算 $f(n)$ 的递归算法都会终止。
+
+这个结论针对所有自然数输入，不影响单独计算某个固定的 $f(n)$。
+
+## 求解
+
+令 $d(n)=-\log_2 f(n)$。论文给出的递推关系可以算出：
+
+$$
+\begin{aligned}
+  d(0) & =1, \\
+  d(1) & =3, \\
+  d(2) & =10, \\
+  d(3) & =1541023937
+\end{aligned}
+$$
+
+所以：
+
+$$
+f(3)=2^{-1541023937}
+$$
