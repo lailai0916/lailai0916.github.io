@@ -56,7 +56,82 @@ f(2)=\frac{1}{2}f\left(2-f(1)\right)
 =\frac{1}{2}f\left(\frac{15}{8}\right)
 $$
 
-自变量是实数，不能仅在整数上递推。继续展开还会产生更多二进有理数。
+自变量是实数，不能仅在整数上递推。下列负数项直接由 $f(x)=-x$ 得到。
+
+先补出 $f\left(\frac{7}{8}\right)$：
+
+$$
+\begin{aligned}
+  f\left(\frac{3}{4}\right)
+  & =\frac{1}{2}f\left(\frac{3}{4}-f\left(-\frac{1}{4}\right)\right) \\
+  & =\frac{1}{2}f\left(\frac{1}{2}\right) \\
+  & =\frac{1}{8} \\
+  f\left(\frac{7}{8}\right)
+  & =\frac{1}{2}f\left(\frac{7}{8}-f\left(-\frac{1}{8}\right)\right) \\
+  & =\frac{1}{2}f\left(\frac{3}{4}\right) \\
+  & =\frac{1}{16}
+\end{aligned}
+$$
+
+再补出 $f\left(\frac{13}{16}\right)$：
+
+$$
+\begin{aligned}
+  f\left(\frac{1}{4}\right)
+  & =\frac{1}{2}f\left(\frac{1}{4}-f\left(-\frac{3}{4}\right)\right) \\
+  & =\frac{1}{2}f\left(-\frac{1}{2}\right) \\
+  & =\frac{1}{4} \\
+  f\left(\frac{5}{8}\right)
+  & =\frac{1}{2}f\left(\frac{5}{8}-f\left(-\frac{3}{8}\right)\right) \\
+  & =\frac{1}{2}f\left(\frac{1}{4}\right) \\
+  & =\frac{1}{8} \\
+  f\left(\frac{13}{16}\right)
+  & =\frac{1}{2}f\left(\frac{13}{16}-f\left(-\frac{3}{16}\right)\right) \\
+  & =\frac{1}{2}f\left(\frac{5}{8}\right) \\
+  & =\frac{1}{16}
+\end{aligned}
+$$
+
+另一支从已有结果继续递推：
+
+$$
+\begin{aligned}
+  f\left(\frac{5}{4}\right)
+  & =\frac{1}{2}f\left(\frac{5}{4}-f\left(\frac{1}{4}\right)\right) \\
+  & =\frac{1}{2}f(1) \\
+  & =\frac{1}{16} \\
+  f\left(\frac{3}{2}\right)
+  & =\frac{1}{2}f\left(\frac{3}{2}-f\left(\frac{1}{2}\right)\right) \\
+  & =\frac{1}{2}f\left(\frac{5}{4}\right) \\
+  & =\frac{1}{32} \\
+  f\left(\frac{13}{8}\right)
+  & =\frac{1}{2}f\left(\frac{13}{8}-f\left(\frac{5}{8}\right)\right) \\
+  & =\frac{1}{2}f\left(\frac{3}{2}\right) \\
+  & =\frac{1}{64} \\
+  f\left(\frac{7}{4}\right)
+  & =\frac{1}{2}f\left(\frac{7}{4}-f\left(\frac{3}{4}\right)\right) \\
+  & =\frac{1}{2}f\left(\frac{13}{8}\right) \\
+  & =\frac{1}{128}
+\end{aligned}
+$$
+
+最后逐层代回：
+
+$$
+\begin{aligned}
+  f\left(\frac{29}{16}\right)
+  & =\frac{1}{2}f\left(\frac{29}{16}-f\left(\frac{13}{16}\right)\right) \\
+  & =\frac{1}{2}f\left(\frac{7}{4}\right) \\
+  & =\frac{1}{256} \\
+  f\left(\frac{15}{8}\right)
+  & =\frac{1}{2}f\left(\frac{15}{8}-f\left(\frac{7}{8}\right)\right) \\
+  & =\frac{1}{2}f\left(\frac{29}{16}\right) \\
+  & =\frac{1}{512} \\
+  f(2)
+  & =\frac{1}{2}f\left(\frac{15}{8}\right) \\
+  & =\frac{1}{1024}=2^{-10}
+\end{aligned}
+$$
 
 ## 引线计时
 
@@ -132,18 +207,23 @@ $$
 
 ## 求解
 
-令 $d(n)=-\log_2 f(n)$。论文给出的递推关系可以算出：
+令 $d(n)=-\log_2 f(n)$。根据前面的计算：
 
 $$
 \begin{aligned}
   d(0) & =1, \\
   d(1) & =3, \\
-  d(2) & =10, \\
-  d(3) & =1541023937
+  d(2) & =-\log_2 2^{-10}=10
 \end{aligned}
 $$
 
-所以：
+论文给出的递推关系可继续算出：
+
+$$
+d(3)=1541023937
+$$
+
+因此：
 
 $$
 f(3)=2^{-1541023937}
