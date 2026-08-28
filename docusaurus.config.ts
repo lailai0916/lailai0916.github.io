@@ -22,7 +22,7 @@ function safeGit(cmd: string, fallback = ''): string {
 const BUILD_TIME = toShanghaiDateTimeString(new Date());
 const GIT_SHA = safeGit('git rev-parse --short=8 HEAD', 'dev');
 const GIT_COUNT = safeGit('git rev-list --count HEAD', '0');
-const DEBUG_ID = `LAI#${GIT_SHA.toUpperCase()}.${GIT_COUNT}`;
+const DEBUG_ID = `${GIT_SHA}-${GIT_COUNT}`;
 
 const config: Config = {
   title: "lailai's Home",

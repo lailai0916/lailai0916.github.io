@@ -47,8 +47,7 @@ function formatBuildTime(iso: string): string {
   if (!iso) return '—';
   const d = new Date(iso);
   if (Number.isNaN(d.getTime())) return iso;
-  const p = (n: number) => n.toString().padStart(2, '0');
-  return `${d.getFullYear()}-${p(d.getMonth() + 1)}-${p(d.getDate())}`;
+  return formatDateTime(d);
 }
 
 function formatIp(ip: string | null | undefined): string {
@@ -159,31 +158,31 @@ function SysStatusCardInner() {
 
   const { data: sys } = useSysStatus();
   const cpu = sys?.cpu ?? null;
-  const mem = sys?.mem ?? null;
-  const serverUptime = sys?.uptime ?? null;
   const load1 = sys?.load?.[0] ?? null;
-  const disk = sys?.disk ?? null;
+  const mem = sys?.mem ?? null;
   const swap = sys?.swap ?? null;
-  const lastDeploy = sys?.last_deploy ?? null;
-  const tlsExpires = sys?.tls_expires_in ?? null;
+  const disk = sys?.disk ?? null;
+  const serverUptime = sys?.uptime ?? null;
   const ip = sys?.ip ?? null;
+  const tlsExpires = sys?.tls_expires_in ?? null;
+  const lastDeploy = sys?.last_deploy ?? null;
   const ping = usePing();
 
-  const [browser, setBrowser] = useState('—');
   const [host, setHost] = useState('—');
+  const [browser, setBrowser] = useState('—');
   useEffect(() => {
-    setBrowser(detectBrowser(navigator.userAgent));
     setHost(window.location.hostname);
+    setBrowser(detectBrowser(navigator.userAgent));
   }, []);
   const cpuStr = cpu == null ? '—' : `${cpu.toFixed(1)}%`;
-  const memStr = mem == null ? '—' : `${mem.toFixed(1)}%`;
-  const pingStr = ping == null ? '—' : `${ping}ms`;
-  const uptimeStr = serverUptime == null ? '—' : formatUptimeSec(serverUptime);
   const loadStr = load1 == null ? '—' : load1.toFixed(2);
-  const diskStr = disk == null ? '—' : `${disk.toFixed(1)}%`;
+  const memStr = mem == null ? '—' : `${mem.toFixed(1)}%`;
   const swapStr = swap == null ? '—' : `${swap.toFixed(1)}%`;
-  const tlsStr = tlsExpires == null ? '—' : `${tlsExpires}d`;
+  const diskStr = disk == null ? '—' : `${disk.toFixed(1)}%`;
+  const uptimeStr = serverUptime == null ? '—' : formatUptimeSec(serverUptime);
   const ipNode = ip == null ? '—' : <span title={ip}>{formatIp(ip)}</span>;
+  const pingStr = ping == null ? '—' : `${ping}ms`;
+  const tlsStr = tlsExpires == null ? '—' : `${tlsExpires}d`;
   const mutedIfNull = (v: unknown) => (v == null ? styles.muted : undefined);
 
   return (
@@ -203,14 +202,14 @@ function SysStatusCardInner() {
         <Cell label="mem" value={memStr} valueClassName={mutedIfNull(mem)} />
         <Cell label="swap" value={swapStr} valueClassName={mutedIfNull(swap)} />
         <Cell label="disk" value={diskStr} valueClassName={mutedIfNull(disk)} />
+        <Cell label="uptime" value={uptimeStr} valueClassName={mutedIfNull(serverUptime)} />
+        <Cell label="host" value={host} />
         <Cell label="ip" value={ipNode} valueClassName={mutedIfNull(ip)} />
         <Cell label="ping" value={pingStr} valueClassName={mutedIfNull(ping)} />
-        <Cell label="uptime" value={uptimeStr} valueClassName={mutedIfNull(serverUptime)} />
-        <DeployCell value={lastDeploy} />
         <Cell label="tls_expires" value={tlsStr} valueClassName={mutedIfNull(tlsExpires)} />
+        <DeployCell value={lastDeploy} />
         <Cell label="build_time" value={formatBuildTime(buildTime)} />
         <Cell label="debug_id" value={debugId} />
-        <Cell label="host" value={host} />
         <Cell label="browser" value={browser} />
         <ClockCell />
       </div>
