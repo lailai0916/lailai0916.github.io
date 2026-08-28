@@ -1,0 +1,624 @@
+---
+title: 题解：P9141 [THUPC 2023 初赛] 乱西星上的空战
+description: 本文为洛谷 P9141 的题解，枚举合法整点位移，并按事件顺序模拟空战。
+summary: 每次位移的终点都是整点，速度不超过 20，因此可以预处理每架无人机和导弹可能采用的位移向量。对无人机，把目标方向在当前飞行方向的垂直平面内分解，用点积算出滚转角与俯仰角；对导弹直接计算偏航角。枚举合法终点并按题面的多级优先级选出下一状态，再依次结算导弹位移、无人机位移、碰撞、脱锁、消失与激活。时间复杂度为 O(T(n^2+C))，其中 C 是所有飞行器速度立方之和。
+date: 2026-08-28T16:40:32+08:00
+authors: lailai
+tags: [oi, solution, luogu]
+lid: 975qbq7a
+---
+
+{/* truncate */}
+
+## 题意简述
+
+模拟两国无人机持续 $T$ 个时刻的空战。无人机依次选择目标、发射导弹并飞行。导弹按锁定状态追踪目标。输出每个时刻被导弹摧毁的无人机与碰撞事件。
+
+## 合法位移
+
+枚举非零整向量 $\vec s$ 作为位移。设 $r=||\vec s||$，移动后的方向为：
+
+$$
+\vec e=\frac{\vec s}{r}
+$$
+
+仅需枚举 $r\le v_m$ 的 $\vec s$。这样的向量共有 $O(v_m^3)$ 个。
+
+### 无人机
+
+设当前飞行方向为 $\vec d$，升力线方向为 $\vec u$。需要俯仰的角度为：
+
+$$
+\varphi=\arccos(\vec d\cdot\vec e)
+$$
+
+若 $\varphi=0$，无人机无需滚转和俯仰。否则，令：
+
+$$
+\vec w=\frac{\vec e-\cos\varphi\vec d}{\sin\varphi}
+$$
+
+$\vec w$ 是目标方向在 $\vec d$ 的垂直平面内的单位分量。正杆前的升力线必须转到 $\vec w$。负杆前则必须转到 $-\vec w$。
+
+两种俯仰方向对应的滚转角之和为 $\pi$。较大者不小于 $\frac{\pi}{2}$。又有 $\gamma<\frac{\pi}{2}$，故其滚转耗时已经超过 $1$。因此，仅有滚转角较小的一种俯仰方向可能合法。令 $\sigma$ 为 $\vec u\cdot\vec w$ 的符号，则滚转角为：
+
+$$
+\rho=\arccos(|\vec u\cdot\vec w|)
+$$
+
+$\sigma=1$ 时使用正杆率，$\sigma=-1$ 时使用负杆率。总用时为：
+
+$$
+t=\frac{r}{v_m}+\frac{\varphi}{\theta_\sigma}+\frac{\rho}{\gamma}
+$$
+
+当 $t\le1$ 时位移合法。位移后的升力线方向为：
+
+$$
+\vec u'=\sigma(-\sin\varphi\vec d+\cos\varphi\vec w)
+$$
+
+这样就能由 $\vec s$ 唯一还原位移后的完整飞行状态。
+
+### 导弹
+
+导弹仅需先偏航，再直线飞行。位移合法当且仅当：
+
+$$
+\frac{r}{v_m}+\frac{\arccos(\vec d\cdot\vec e)}{\theta_r}\le1
+$$
+
+对每架飞行器预处理全部候选位移及长度。枚举时先用余弦比较排除不合法方向，避免重复计算固定角度。
+
+## 模拟
+
+得到所有合法下一状态后，按题面给出的关键字逐级比较。距离相同时，再判断雷达范围、投影长度、锁定角和坐标字典序。所有距离比较均使用平方值。
+
+每个时刻按以下顺序处理：
+
+1. 所有无人机选择目标并确定下一状态，再发射导弹；
+2. 所有导弹确定下一状态并位移，汇总每架无人机对应的全部导弹后统一删除；
+3. 剩余无人机位移，再次汇总导弹命中，最后处理同点碰撞；
+4. 更新导弹的脱锁与超时状态，然后激活满足条件的导弹。
+
+分阶段汇总命中来源，才能保留「同一架无人机同时被多枚导弹摧毁」的信息。
+
+点到线段的距离用于判断空爆。设线段端点为 $\vec a,\vec b$，无人机位置为 $\vec q$，则：
+
+$$
+\begin{aligned}
+  \lambda & =\operatorname{clamp}\left(\frac{(\vec q-\vec a)\cdot(\vec b-\vec a)}{||\vec b-\vec a||^2},0,1\right) \\
+  d & =||\vec q-\vec a-\lambda(\vec b-\vec a)||
+\end{aligned}
+$$
+
+设 $C=\sum_{i=1}^{2n}(v_i^3+w_i^3)$，其中 $v_i,w_i$ 分别是第 $i$ 架无人机及其导弹的速度。预处理时间与空间复杂度均为 $O(C)$。每架无人机至多有一枚未消失的导弹，故模拟的时间复杂度为 $O(T(n^2+C))$。
+
+## 参考代码
+
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+
+using ld=long double;
+const int N=205;
+const ld eps=1e-12;
+struct P
+{
+	int x,y,z;
+};
+struct V
+{
+	ld x,y,z;
+};
+struct PO
+{
+	P p;
+	V e;
+	ld f,cu,cd;
+};
+struct MO
+{
+	P p;
+	V e;
+	ld f,c;
+};
+struct Move
+{
+	P p;
+	V d,u;
+};
+struct Plane
+{
+	bool alive=1;
+	P p,np;
+	V d,u,nd,nu;
+	ld tu,td,g,v,lx,hy;
+	ld rt,rv,ds,dp,bs,cb;
+	int tz,tar=-1;
+	vector<PO> po;
+	vector<MO> mo;
+}a[N];
+struct Missile
+{
+	bool active=0,lost=0,was_active=0,rem=0;
+	int own,tar,born;
+	P p,np;
+	V d,nd;
+};
+int n,T;
+vector<Missile> ms;
+bool operator==(P a,P b)
+{
+	return a.x==b.x&&a.y==b.y&&a.z==b.z;
+}
+bool operator<(P a,P b)
+{
+	if(a.x!=b.x)return a.x<b.x;
+	if(a.y!=b.y)return a.y<b.y;
+	return a.z<b.z;
+}
+P operator+(P a,P b)
+{
+	return {a.x+b.x,a.y+b.y,a.z+b.z};
+}
+V operator+(V a,V b)
+{
+	return {a.x+b.x,a.y+b.y,a.z+b.z};
+}
+V operator-(V a,V b)
+{
+	return {a.x-b.x,a.y-b.y,a.z-b.z};
+}
+V operator*(V a,ld k)
+{
+	return {a.x*k,a.y*k,a.z*k};
+}
+V operator-(P a,P b)
+{
+	return {(ld)a.x-b.x,(ld)a.y-b.y,(ld)a.z-b.z};
+}
+ld dot(V a,V b)
+{
+	return a.x*b.x+a.y*b.y+a.z*b.z;
+}
+V cross(V a,V b)
+{
+	return {a.y*b.z-a.z*b.y,a.z*b.x-a.x*b.z,a.x*b.y-a.y*b.x};
+}
+ld norm2(V a)
+{
+	return dot(a,a);
+}
+V unit(V a)
+{
+	return a*(1/sqrtl(norm2(a)));
+}
+ld clamp(ld x)
+{
+	return max(-1.0L,min(1.0L,x));
+}
+bool less_ld(ld x,ld y)
+{
+	return x<y-eps*max({1.0L,fabsl(x),fabsl(y)});
+}
+long long dis2(P a,P b)
+{
+	long long x=a.x-b.x,y=a.y-b.y,z=a.z-b.z;
+	return x*x+y*y+z*z;
+}
+P delta(P a,P b)
+{
+	return {a.x-b.x,a.y-b.y,a.z-b.z};
+}
+ld seg_dis2(P a,P b,P q)
+{
+	V v=b-a,w=q-a;
+	ld l=norm2(v),t=dot(v,w);
+	if(t<=0)return norm2(w);
+	if(t>=l)return norm2(q-b);
+	return norm2(w)-t*t/l;
+}
+bool enemy(int x,int y)
+{
+	return (x<n)!=(y<n);
+}
+bool in_view(P p,V d,P q)
+{
+	return dot(d,q-p)>eps;
+}
+void projection(P p,V d,V u,P q,ld &x,ld &y)
+{
+	V l=cross(u,d),v=q-p;
+	x=dot(v,l);
+	y=dot(v,u);
+}
+bool in_radar(P p,V d,V u,ld lx,ld hy,P q)
+{
+	if(!in_view(p,d,q))return 0;
+	ld x,y;
+	projection(p,d,u,q,x,y);
+	return fabsl(x)<=lx+eps&&fabsl(y)<=hy+eps;
+}
+ld border(P p,V d,V u,ld lx,ld hy,P q)
+{
+	ld x,y;
+	projection(p,d,u,q,x,y);
+	return min(fabsl(x-lx),fabsl(x+lx))+min(fabsl(y-hy),fabsl(y+hy));
+}
+void make_offsets(Plane &x)
+{
+	int b=floorl(x.v+eps);
+	for(int i=-b;i<=b;i++)
+	{
+		for(int j=-b;j<=b;j++)
+		{
+			for(int k=-b;k<=b;k++)
+			{
+				if(i==0&&j==0&&k==0)continue;
+				ld l=sqrtl((ld)i*i+(ld)j*j+(ld)k*k);
+				if(l>x.v+eps)continue;
+				ld f=l/x.v,r=max(0.0L,1-f);
+				x.po.push_back({{i,j,k},{i/l,j/l,k/l},f,cosl(x.tu*r),cosl(x.td*r)});
+			}
+		}
+	}
+	b=floorl(x.rv+eps);
+	for(int i=-b;i<=b;i++)
+	{
+		for(int j=-b;j<=b;j++)
+		{
+			for(int k=-b;k<=b;k++)
+			{
+				if(i==0&&j==0&&k==0)continue;
+				ld l=sqrtl((ld)i*i+(ld)j*j+(ld)k*k);
+				if(l>x.rv+eps)continue;
+				ld f=l/x.rv,r=max(0.0L,1-f);
+				x.mo.push_back({{i,j,k},{i/l,j/l,k/l},f,cosl(x.rt*r)});
+			}
+		}
+	}
+}
+bool plane_move(const Plane &x,const PO &o,Move &m)
+{
+	ld c=clamp(dot(x.d,o.e));
+	if(c<=eps)return 0;
+	m.p=x.p+o.p;
+	m.d=o.e;
+	if(1-c<1e-18)
+	{
+		m.u=x.u;
+		return o.f<=1+eps;
+	}
+	ld s0=sqrtl(max(0.0L,1-c*c));
+	V w=(o.e-x.d*c)*(1/s0);
+	ld z=dot(x.u,w);
+	int s=z>=0?1:-1;
+	ld th=s==1?x.tu:x.td;
+	if(c+eps<(s==1?o.cu:o.cd))return 0;
+	ld r=1-o.f-acosl(c)/th;
+	if(r<-eps||acosl(clamp(fabsl(z)))>x.g*max(0.0L,r)+eps)return 0;
+	m.u=unit((x.d*(-s0)+w*c)*s);
+	return 1;
+}
+int select_target(int x)
+{
+	bool has=0;
+	for(int i=0;i<2*n;i++)
+	{
+		if(a[i].alive&&enemy(x,i)&&in_view(a[x].p,a[x].d,a[i].p))has=1;
+	}
+	if(!has)return -1;
+	int y=a[x].tar;
+	if(y!=-1&&a[y].alive&&enemy(x,y)&&in_view(a[x].p,a[x].d,a[y].p))return y;
+	y=-1;
+	long long bd=0;
+	for(int i=0;i<2*n;i++)
+	{
+		if(!a[i].alive||!enemy(x,i)||!in_radar(a[x].p,a[x].d,a[x].u,a[x].lx,a[x].hy,a[i].p))continue;
+		long long d=dis2(a[x].p,a[i].p);
+		if(y==-1||d<bd)
+		{
+			y=i;
+			bd=d;
+		}
+	}
+	if(y!=-1)return y;
+	ld bs=0;
+	for(int i=0;i<2*n;i++)
+	{
+		if(!a[i].alive||!enemy(x,i)||!in_view(a[x].p,a[x].d,a[i].p))continue;
+		ld s=border(a[x].p,a[x].d,a[x].u,a[x].lx,a[x].hy,a[i].p);
+		if(y==-1||less_ld(s,bs))
+		{
+			y=i;
+			bs=s;
+		}
+	}
+	return y;
+}
+void plan_plane(int x)
+{
+	Plane &p=a[x];
+	P q=a[p.tar].p;
+	bool hv=0,hr=0,hf=0;
+	long long bd=0;
+	ld br=0,bb=0,bf=0;
+	Move bv,bv2;
+	for(auto &o:p.po)
+	{
+		Move m;
+		if(!plane_move(p,o,m))continue;
+		ld f=norm2((m.p-p.p)-p.d*p.v);
+		if(!hf||less_ld(f,bf)||(!less_ld(bf,f)&&m.p<bv2.p))
+		{
+			hf=1;
+			bf=f;
+			bv2=m;
+		}
+		if(!in_view(m.p,m.d,q))continue;
+		long long d=dis2(m.p,q);
+		if(hv&&d>bd)continue;
+		ld rx,ry;
+		projection(m.p,m.d,m.u,q,rx,ry);
+		bool r=fabsl(rx)<=p.lx+eps&&fabsl(ry)<=p.hy+eps;
+		ld rn=rx*rx+ry*ry;
+		ld bs=min(fabsl(rx-p.lx),fabsl(rx+p.lx))+min(fabsl(ry-p.hy),fabsl(ry+p.hy));
+		bool take=!hv||d<bd;
+		if(hv&&d==bd)
+		{
+			if(r!=hr)take=r;
+			else if(r)
+			{
+				if(less_ld(rn,br))take=1;
+				else if(!less_ld(br,rn)&&m.p<bv.p)take=1;
+			}
+			else
+			{
+				if(less_ld(bs,bb))take=1;
+				else if(!less_ld(bb,bs)&&m.p<bv.p)take=1;
+			}
+		}
+		if(take)
+		{
+			hv=1;
+			hr=r;
+			bd=d;
+			br=rn;
+			bb=bs;
+			bv=m;
+		}
+	}
+	Move m=hv?bv:bv2;
+	p.np=m.p;
+	p.nd=m.d;
+	p.nu=m.u;
+}
+bool missile_direct(const Missile &m,P q,Move &r)
+{
+	Plane &p=a[m.own];
+	P w=delta(q,m.p);
+	ld l=sqrtl((ld)w.x*w.x+(ld)w.y*w.y+(ld)w.z*w.z);
+	if(l<=eps||l>p.rv+eps)return 0;
+	V e={(ld)w.x/l,(ld)w.y/l,(ld)w.z/l};
+	ld f=l/p.rv,c=dot(m.d,e);
+	if(c<=eps||c+eps<cosl(p.rt*max(0.0L,1-f)))return 0;
+	r={q,e,{}};
+	return 1;
+}
+void plan_missile(Missile &m)
+{
+	Plane &p=a[m.own];
+	bool track=!m.lost&&a[m.tar].alive;
+	Move r;
+	if(track&&missile_direct(m,a[m.tar].np,r))
+	{
+		m.np=r.p;
+		m.nd=r.d;
+		return;
+	}
+	bool hl=0,hf=0;
+	long long bd=0;
+	ld ba=0,bf=0;
+	Move bl,bv;
+	P t;
+	if(track)t=a[m.tar].np;
+	for(auto &o:p.mo)
+	{
+		if(dot(m.d,o.e)+eps<o.c)continue;
+		Move z={m.p+o.p,o.e,{}};
+		ld f=norm2((z.p-m.p)-m.d*p.rv);
+		if(!hf||less_ld(f,bf)||(!less_ld(bf,f)&&z.p<bv.p))
+		{
+			hf=1;
+			bf=f;
+			bv=z;
+		}
+		if(!track)continue;
+		V w=t-z.p;
+		ld l=norm2(w),d=dot(o.e,w);
+		if(d<=eps||d/sqrtl(l)+eps<p.cb)continue;
+		long long ds=dis2(z.p,t);
+		ld c=d/sqrtl(l);
+		if(!hl||ds<bd||(ds==bd&&(less_ld(ba,c)||(!less_ld(c,ba)&&z.p<bl.p))))
+		{
+			hl=1;
+			bd=ds;
+			ba=c;
+			bl=z;
+		}
+	}
+	r=hl?bl:bv;
+	m.np=r.p;
+	m.nd=r.d;
+}
+bool locked(const Missile &m)
+{
+	if(!a[m.tar].alive)return 0;
+	V w=a[m.tar].p-m.p;
+	ld d=dot(m.d,w);
+	return d>eps&&d/sqrtl(norm2(w))+eps>=a[m.own].cb;
+}
+void clean(vector<int> &v)
+{
+	sort(v.begin(),v.end());
+	v.erase(unique(v.begin(),v.end()),v.end());
+}
+int main()
+{
+	ios::sync_with_stdio(false);
+	cin.tie(nullptr);
+	cin>>n>>T;
+	for(int i=0;i<2*n;i++)
+	{
+		int dx,dy,dz,ux,uy,uz;
+		cin>>a[i].p.x>>a[i].p.y>>a[i].p.z;
+		cin>>dx>>dy>>dz>>ux>>uy>>uz;
+		a[i].d={(ld)dx,(ld)dy,(ld)dz};
+		a[i].u={(ld)ux,(ld)uy,(ld)uz};
+		cin>>a[i].tu>>a[i].td>>a[i].g>>a[i].v>>a[i].lx>>a[i].hy;
+		cin>>a[i].rt>>a[i].rv>>a[i].ds>>a[i].dp>>a[i].bs>>a[i].tz;
+		a[i].cb=cosl(a[i].bs);
+		make_offsets(a[i]);
+	}
+	for(int t=1;t<=T;t++)
+	{
+		for(auto &m:ms)m.was_active=m.active;
+		for(int i=0;i<2*n;i++)
+		{
+			if(a[i].alive)a[i].tar=select_target(i);
+		}
+		for(int i=0;i<2*n;i++)
+		{
+			if(!a[i].alive)continue;
+			if(a[i].tar==-1)
+			{
+				a[i].np=a[i].p;
+				a[i].nd=a[i].u;
+				a[i].nu=a[i].d*(-1);
+			}
+			else plan_plane(i);
+		}
+		for(int i=0;i<2*n;i++)
+		{
+			if(!a[i].alive||a[i].tar==-1||!in_radar(a[i].p,a[i].d,a[i].u,a[i].lx,a[i].hy,a[a[i].tar].p))continue;
+			bool has=0;
+			for(auto &m:ms)if(m.own==i)has=1;
+			if(has)continue;
+			Missile m;
+			m.own=i;
+			m.tar=a[i].tar;
+			m.born=t;
+			m.p=a[i].p;
+			m.d=unit(a[m.tar].p-m.p);
+			ms.push_back(m);
+		}
+		for(auto &m:ms)plan_missile(m);
+		vector<vector<int>> h1(2*n),h2(2*n);
+		for(auto &m:ms)
+		{
+			P p=m.p;
+			m.p=m.np;
+			m.d=m.nd;
+			bool hit=0;
+			for(int i=0;i<2*n;i++)
+			{
+				if(!a[i].alive)continue;
+				bool ok=m.active?seg_dis2(p,m.p,a[i].p)<=a[m.own].dp*a[m.own].dp+eps:m.p==a[i].p;
+				if(ok)
+				{
+					hit=1;
+					h1[i].push_back(m.own+1);
+				}
+			}
+			if(hit)m.rem=1;
+		}
+		for(int i=0;i<2*n;i++)
+		{
+			clean(h1[i]);
+			if(!h1[i].empty())a[i].alive=0;
+		}
+		for(auto &m:ms)
+		{
+			if(m.rem)continue;
+			bool hit=0;
+			for(int i=0;i<2*n;i++)
+			{
+				if(!a[i].alive)continue;
+				bool ok=m.active?seg_dis2(a[i].p,a[i].np,m.p)<=a[m.own].dp*a[m.own].dp+eps:m.p==a[i].np;
+				if(ok)
+				{
+					hit=1;
+					h2[i].push_back(m.own+1);
+				}
+			}
+			if(hit)m.rem=1;
+		}
+		for(int i=0;i<2*n;i++)
+		{
+			clean(h2[i]);
+			if(!h2[i].empty())a[i].alive=0;
+		}
+		for(int i=0;i<2*n;i++)
+		{
+			if(!a[i].alive)continue;
+			a[i].p=a[i].np;
+			a[i].d=a[i].nd;
+			a[i].u=a[i].nu;
+		}
+		map<tuple<int,int,int>,vector<int>> mp;
+		for(int i=0;i<2*n;i++)
+		{
+			if(a[i].alive)mp[{a[i].p.x,a[i].p.y,a[i].p.z}].push_back(i);
+		}
+		vector<vector<int>> col;
+		for(auto &[p,v]:mp)
+		{
+			if(v.size()<2)continue;
+			col.push_back(v);
+			for(auto x:v)a[x].alive=0;
+		}
+		sort(col.begin(),col.end(),[](auto &x,auto &y){return x[0]<y[0];});
+		for(auto &m:ms)
+		{
+			if(m.rem)continue;
+			if(!m.lost&&!locked(m))m.lost=1;
+			if(t>=m.born+a[m.own].tz||(m.lost&&m.was_active))m.rem=1;
+		}
+		for(auto &m:ms)
+		{
+			if(m.rem||m.active)continue;
+			if(!a[m.own].alive||dis2(m.p,a[m.own].p)>a[m.own].ds*a[m.own].ds+eps)m.active=1;
+		}
+		int c1=0,c2=0;
+		for(int i=0;i<2*n;i++)
+		{
+			c1+=!h1[i].empty();
+			c2+=!h2[i].empty();
+		}
+		cout<<c1<<' '<<c2<<' '<<col.size()<<'\n';
+		for(int i=0;i<2*n;i++)
+		{
+			if(h1[i].empty())continue;
+			cout<<i+1<<' '<<h1[i].size();
+			for(auto x:h1[i])cout<<' '<<x;
+			cout<<'\n';
+		}
+		for(int i=0;i<2*n;i++)
+		{
+			if(h2[i].empty())continue;
+			cout<<i+1<<' '<<h2[i].size();
+			for(auto x:h2[i])cout<<' '<<x;
+			cout<<'\n';
+		}
+		for(auto &v:col)
+		{
+			cout<<v.size();
+			for(auto x:v)cout<<' '<<x+1;
+			cout<<'\n';
+		}
+		ms.erase(remove_if(ms.begin(),ms.end(),[](auto &m){return m.rem;}),ms.end());
+	}
+	return 0;
+}
+```
