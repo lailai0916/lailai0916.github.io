@@ -158,31 +158,31 @@ function SysStatusCardInner() {
 
   const { data: sys } = useSysStatus();
   const cpu = sys?.cpu ?? null;
-  const load1 = sys?.load?.[0] ?? null;
   const mem = sys?.mem ?? null;
-  const swap = sys?.swap ?? null;
-  const disk = sys?.disk ?? null;
   const serverUptime = sys?.uptime ?? null;
-  const ip = sys?.ip ?? null;
-  const tlsExpires = sys?.tls_expires_in ?? null;
+  const load1 = sys?.load?.[0] ?? null;
+  const disk = sys?.disk ?? null;
+  const swap = sys?.swap ?? null;
   const lastDeploy = sys?.last_deploy ?? null;
+  const tlsExpires = sys?.tls_expires_in ?? null;
+  const ip = sys?.ip ?? null;
   const ping = usePing();
 
-  const [host, setHost] = useState('—');
   const [browser, setBrowser] = useState('—');
+  const [host, setHost] = useState('—');
   useEffect(() => {
-    setHost(window.location.hostname);
     setBrowser(detectBrowser(navigator.userAgent));
+    setHost(window.location.hostname);
   }, []);
   const cpuStr = cpu == null ? '—' : `${cpu.toFixed(1)}%`;
-  const loadStr = load1 == null ? '—' : load1.toFixed(2);
   const memStr = mem == null ? '—' : `${mem.toFixed(1)}%`;
-  const swapStr = swap == null ? '—' : `${swap.toFixed(1)}%`;
-  const diskStr = disk == null ? '—' : `${disk.toFixed(1)}%`;
-  const uptimeStr = serverUptime == null ? '—' : formatUptimeSec(serverUptime);
-  const ipNode = ip == null ? '—' : <span title={ip}>{formatIp(ip)}</span>;
   const pingStr = ping == null ? '—' : `${ping}ms`;
+  const uptimeStr = serverUptime == null ? '—' : formatUptimeSec(serverUptime);
+  const loadStr = load1 == null ? '—' : load1.toFixed(2);
+  const diskStr = disk == null ? '—' : `${disk.toFixed(1)}%`;
+  const swapStr = swap == null ? '—' : `${swap.toFixed(1)}%`;
   const tlsStr = tlsExpires == null ? '—' : `${tlsExpires}d`;
+  const ipNode = ip == null ? '—' : <span title={ip}>{formatIp(ip)}</span>;
   const mutedIfNull = (v: unknown) => (v == null ? styles.muted : undefined);
 
   return (
@@ -202,14 +202,14 @@ function SysStatusCardInner() {
         <Cell label="mem" value={memStr} valueClassName={mutedIfNull(mem)} />
         <Cell label="swap" value={swapStr} valueClassName={mutedIfNull(swap)} />
         <Cell label="disk" value={diskStr} valueClassName={mutedIfNull(disk)} />
-        <Cell label="uptime" value={uptimeStr} valueClassName={mutedIfNull(serverUptime)} />
-        <Cell label="host" value={host} />
         <Cell label="ip" value={ipNode} valueClassName={mutedIfNull(ip)} />
         <Cell label="ping" value={pingStr} valueClassName={mutedIfNull(ping)} />
-        <Cell label="tls_expires" value={tlsStr} valueClassName={mutedIfNull(tlsExpires)} />
+        <Cell label="uptime" value={uptimeStr} valueClassName={mutedIfNull(serverUptime)} />
         <DeployCell value={lastDeploy} />
+        <Cell label="tls_expires" value={tlsStr} valueClassName={mutedIfNull(tlsExpires)} />
         <Cell label="build_time" value={formatBuildTime(buildTime)} />
         <Cell label="debug_id" value={debugId} />
+        <Cell label="host" value={host} />
         <Cell label="browser" value={browser} />
         <ClockCell />
       </div>
