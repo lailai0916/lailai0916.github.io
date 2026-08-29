@@ -20,9 +20,10 @@ import * as countries from 'i18n-iso-countries';
 import countriesEn from 'i18n-iso-countries/langs/en.json';
 import countriesZh from 'i18n-iso-countries/langs/zh.json';
 import { TRAVEL_LIST } from '@site/src/data/travel';
+import { formatCalendarMonth } from '@site/src/utils/dateTime';
 import {
   getFeatureIso3,
-  getTravelCountryCodes,
+  getLatestTravelDateByCountry,
   type GlobeCountryFeature,
   type WorldGeoJson,
 } from '@site/src/utils/travelGlobe';
@@ -50,9 +51,9 @@ const three = require('three') as {
   SRGBColorSpace: string;
 };
 
-const VISITED_LABEL = translate({
-  id: 'pages.travel.map.legend.visited',
-  message: 'Visited',
+const MOTHERLAND_LABEL = translate({
+  id: 'pages.travel.map.motherland',
+  message: 'Motherland',
 });
 const NOT_VISITED_LABEL = translate({
   id: 'pages.travel.map.legend.unvisited',
@@ -100,14 +101,14 @@ function bakeGlobeTexture(
 
 type HoveredCountry = {
   name: string;
-  visited: boolean;
+  detail: string;
   flag: string | null;
 };
 
 function sameHover(a: HoveredCountry | null, b: HoveredCountry | null) {
   if (a === b) return true;
   if (!a || !b) return false;
-  return a.name === b.name && a.visited === b.visited && a.flag === b.flag;
+  return a.name === b.name && a.detail === b.detail && a.flag === b.flag;
 }
 
 function TravelGlobeClient({ Globe }: { Globe: GlobeComponent }) {
@@ -120,7 +121,8 @@ function TravelGlobeClient({ Globe }: { Globe: GlobeComponent }) {
   const [features, setFeatures] = useState<readonly GlobeCountryFeature[]>([]);
   const [geoFailed, setGeoFailed] = useState(false);
 
-  const lang = i18n.currentLocale === 'zh-Hans' ? 'zh' : 'en';
+  const locale = i18n.currentLocale;
+  const lang = locale === 'zh-Hans' ? 'zh' : 'en';
 
   const [hovered, setHovered] = useState<HoveredCountry | null>(null);
   const [cursor, setCursor] = useState({ x: 0, y: 0 });
@@ -149,7 +151,8 @@ function TravelGlobeClient({ Globe }: { Globe: GlobeComponent }) {
     };
   }, [worldUrl]);
 
-  const visitedCountries = useMemo(() => new Set(getTravelCountryCodes(TRAVEL_LIST)), []);
+  const latestTravelDates = useMemo(() => getLatestTravelDateByCountry(TRAVEL_LIST), []);
+  const visitedCountries = useMemo(() => new Set(latestTravelDates.keys()), [latestTravelDates]);
 
   // Precomputed bounding boxes so hover skips the costly geoContains for every
   // country whose box can't hold the cursor. geoBounds can wrap the antimeridian
@@ -264,13 +267,19 @@ function TravelGlobeClient({ Globe }: { Globe: GlobeComponent }) {
       if (!f) return null;
       const code = getFeatureIso3(f);
       const alpha2 = countries.alpha3ToAlpha2(code);
+      const latestTravelDate = latestTravelDates.get(code);
       return {
         name: countries.getName(code, lang) ?? f.properties.NAME ?? code,
-        visited: visitedCountries.has(code),
+        detail:
+          code === 'CHN'
+            ? MOTHERLAND_LABEL
+            : latestTravelDate
+              ? formatCalendarMonth(latestTravelDate, locale)
+              : NOT_VISITED_LABEL,
         flag: alpha2 ? `flag:${alpha2.toLowerCase()}-4x3` : null,
       };
     },
-    [bounded, size.width, size.height, visitedCountries, lang]
+    [bounded, size.width, size.height, latestTravelDates, locale, lang]
   );
 
   // The globe auto-rotates, so a stationary cursor covers a different country
@@ -351,7 +360,7 @@ function TravelGlobeClient({ Globe }: { Globe: GlobeComponent }) {
                 {hovered.flag && <Icon icon={hovered.flag} className={styles.tooltipFlag} />}
                 {hovered.name}
               </Tooltip.Label>
-              <Tooltip.Value>{hovered.visited ? VISITED_LABEL : NOT_VISITED_LABEL}</Tooltip.Value>
+              <Tooltip.Value>{hovered.detail}</Tooltip.Value>
             </Tooltip>
           </div>
         )}

@@ -60,6 +60,21 @@ export function getTravelCountryCodes(items: readonly TravelItem[]): string[] {
   return items.flatMap((item) => iso3FromText(item.title));
 }
 
+export function getLatestTravelDateByCountry(
+  items: readonly TravelItem[]
+): ReadonlyMap<string, string> {
+  const latestDates = new Map<string, string>();
+
+  for (const item of items) {
+    for (const code of iso3FromText(item.title)) {
+      const latestDate = latestDates.get(code);
+      if (!latestDate || item.date > latestDate) latestDates.set(code, item.date);
+    }
+  }
+
+  return latestDates;
+}
+
 export function buildTravelPolygons(
   features: readonly GlobeCountryFeature[],
   visitedCountries: ReadonlySet<string>

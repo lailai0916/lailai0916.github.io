@@ -1309,8 +1309,8 @@
   "pages.insights.systemStatus.srLabel": {
     "message": "系统状态概览"
   },
-  "pages.travel.map.legend.visited": {
-    "message": "已到访"
+  "pages.travel.map.motherland": {
+    "message": "祖国"
   },
   "pages.travel.map.legend.unvisited": {
     "message": "未到访"
