@@ -23,7 +23,7 @@ import { TRAVEL_LIST } from '@site/src/data/travel';
 import { formatCalendarMonth } from '@site/src/utils/dateTime';
 import {
   getFeatureIso3,
-  getLatestTravelDateByCountry,
+  getTravelDatesByCountry,
   type GlobeCountryFeature,
   type WorldGeoJson,
 } from '@site/src/utils/travelGlobe';
@@ -151,8 +151,11 @@ function TravelGlobeClient({ Globe }: { Globe: GlobeComponent }) {
     };
   }, [worldUrl]);
 
-  const latestTravelDates = useMemo(() => getLatestTravelDateByCountry(TRAVEL_LIST), []);
-  const visitedCountries = useMemo(() => new Set(latestTravelDates.keys()), [latestTravelDates]);
+  const travelDatesByCountry = useMemo(() => getTravelDatesByCountry(TRAVEL_LIST), []);
+  const visitedCountries = useMemo(
+    () => new Set(travelDatesByCountry.keys()),
+    [travelDatesByCountry]
+  );
 
   // Precomputed bounding boxes so hover skips the costly geoContains for every
   // country whose box can't hold the cursor. geoBounds can wrap the antimeridian
@@ -267,19 +270,19 @@ function TravelGlobeClient({ Globe }: { Globe: GlobeComponent }) {
       if (!f) return null;
       const code = getFeatureIso3(f);
       const alpha2 = countries.alpha3ToAlpha2(code);
-      const latestTravelDate = latestTravelDates.get(code);
+      const travelDates = travelDatesByCountry.get(code);
       return {
         name: countries.getName(code, lang) ?? f.properties.NAME ?? code,
         detail:
           code === 'CHN'
             ? MOTHERLAND_LABEL
-            : latestTravelDate
-              ? formatCalendarMonth(latestTravelDate, locale)
+            : travelDates
+              ? travelDates.map((date) => formatCalendarMonth(date, locale)).join('\n')
               : NOT_VISITED_LABEL,
         flag: alpha2 ? `flag:${alpha2.toLowerCase()}-4x3` : null,
       };
     },
-    [bounded, size.width, size.height, latestTravelDates, locale, lang]
+    [bounded, size.width, size.height, travelDatesByCountry, locale, lang]
   );
 
   // The globe auto-rotates, so a stationary cursor covers a different country
@@ -360,7 +363,7 @@ function TravelGlobeClient({ Globe }: { Globe: GlobeComponent }) {
                 {hovered.flag && <Icon icon={hovered.flag} className={styles.tooltipFlag} />}
                 {hovered.name}
               </Tooltip.Label>
-              <Tooltip.Value>{hovered.detail}</Tooltip.Value>
+              <Tooltip.Value className={styles.tooltipValue}>{hovered.detail}</Tooltip.Value>
             </Tooltip>
           </div>
         )}

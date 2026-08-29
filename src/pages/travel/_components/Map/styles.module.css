@@ -64,6 +64,11 @@
   gap: 0.35rem;
 }
 
+.tooltipAnchor .tooltipValue {
+  display: block;
+  white-space: pre;
+}
+
 .tooltipFlag {
   width: 16px;
   height: 12px;
