@@ -19,6 +19,8 @@ import { geoEquirectangular, geoPath, geoContains, geoBounds } from 'd3-geo';
 import * as countries from 'i18n-iso-countries';
 import countriesEn from 'i18n-iso-countries/langs/en.json';
 import countriesZh from 'i18n-iso-countries/langs/zh.json';
+import Button from '@site/src/components/laikit/Button';
+import Tooltip from '@site/src/components/laikit/Tooltip';
 import { TRAVEL_LIST } from '@site/src/data/travel';
 import { formatCalendarMonth } from '@site/src/utils/dateTime';
 import {
@@ -30,7 +32,6 @@ import {
 
 countries.registerLocale(countriesEn);
 countries.registerLocale(countriesZh);
-import Tooltip from '@site/src/components/laikit/Tooltip';
 import styles from './styles.module.css';
 import type { GlobeMethods, GlobeProps } from 'react-globe.gl';
 
@@ -58,6 +59,14 @@ const MOTHERLAND_LABEL = translate({
 const NOT_VISITED_LABEL = translate({
   id: 'pages.travel.map.legend.unvisited',
   message: 'Not Visited',
+});
+const PLAY_ROTATION_LABEL = translate({
+  id: 'pages.travel.map.play',
+  message: 'Resume rotation',
+});
+const PAUSE_ROTATION_LABEL = translate({
+  id: 'pages.travel.map.pause',
+  message: 'Pause rotation',
 });
 
 function readCssVar(name: string) {
@@ -118,6 +127,7 @@ function TravelGlobeClient({ Globe }: { Globe: GlobeComponent }) {
   const globeRef = useRef<GlobeMethods | undefined>(undefined);
   const [size, setSize] = useState({ width: 720, height: 500 });
   const [isGlobeReady, setIsGlobeReady] = useState(false);
+  const [isRotating, setIsRotating] = useState(false);
   const [features, setFeatures] = useState<readonly GlobeCountryFeature[]>([]);
   const [geoFailed, setGeoFailed] = useState(false);
 
@@ -316,23 +326,34 @@ function TravelGlobeClient({ Globe }: { Globe: GlobeComponent }) {
     setHovered(null);
   };
 
+  const toggleRotation = () => {
+    const controls = globeRef.current?.controls();
+    if (!controls) return;
+    const next = !isRotating;
+    controls.autoRotate = next;
+    setIsRotating(next);
+  };
+
   const handleReady = () => {
     const globe = globeRef.current;
     if (!globe) return;
     const controls = globe.controls();
-    controls.autoRotate = !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const shouldRotate = !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    controls.autoRotate = shouldRotate;
     controls.autoRotateSpeed = 1.0;
     controls.enablePan = false;
     controls.enableZoom = false;
     controls.enableDamping = true;
     controls.dampingFactor = 0.1;
     globe.pointOfView({ lat: 30, lng: 120, altitude: 1.8 }, 0);
+    setIsRotating(shouldRotate);
     setIsGlobeReady(true);
   };
 
   // Ready = globe mounted, borders fetched, and the texture baked from them —
   // or the borders failed, in which case the bare sphere is what we have.
   const isReady = isGlobeReady && (features.length > 0 || geoFailed);
+  const rotationLabel = isRotating ? PAUSE_ROTATION_LABEL : PLAY_ROTATION_LABEL;
 
   return (
     <div className={styles.globeShell}>
@@ -356,6 +377,23 @@ function TravelGlobeClient({ Globe }: { Globe: GlobeComponent }) {
             onGlobeReady={handleReady}
           />
         </div>
+        {isReady && (
+          <Button
+            variant="secondary"
+            size="sm"
+            className={styles.rotationButton}
+            leftIcon={
+              <Icon
+                icon={isRotating ? 'lucide:pause' : 'lucide:play'}
+                className={styles.rotationIcon}
+                aria-hidden="true"
+              />
+            }
+            onClick={toggleRotation}
+            aria-label={rotationLabel}
+            title={rotationLabel}
+          />
+        )}
         {hovered && (
           <div className={styles.tooltipAnchor} style={{ left: cursor.x, top: cursor.y }}>
             <Tooltip>

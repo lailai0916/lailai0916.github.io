@@ -1315,6 +1315,12 @@
   "pages.travel.map.legend.unvisited": {
     "message": "未到访"
   },
+  "pages.travel.map.play": {
+    "message": "继续旋转"
+  },
+  "pages.travel.map.pause": {
+    "message": "暂停旋转"
+  },
   "pages.insights.uptime.avgPing": {
     "message": "平均 {ping}ms"
   },

@@ -49,6 +49,24 @@
   opacity: 1;
 }
 
+.rotationButton {
+  position: absolute;
+  top: clamp(0.75rem, 2vw, 1rem);
+  right: calc((100% - min(100%, 640px)) / 2 + clamp(0.75rem, 2vw, 1rem));
+  z-index: 2;
+  width: 32px;
+  padding: 0;
+}
+
+.rotationButton:not(:disabled):not([aria-disabled='true']):active {
+  transform: scale(0.92);
+}
+
+.rotationIcon {
+  width: 16px;
+  height: 16px;
+}
+
 /* Zero-size anchor at the cursor; the laikit Tooltip floats above it. */
 .tooltipAnchor {
   position: absolute;
