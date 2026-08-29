@@ -1,3 +1,0 @@
-[submodule ".agents/skills/lailai-skill"]
-	path = .agents/skills/lailai-skill
-	url = https://github.com/lailai0916/lailai-skill.git

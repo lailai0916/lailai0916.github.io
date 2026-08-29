@@ -1,7 +1,7 @@
 ---
 title: "lailai's Template"
-description: 本文介绍 lailai's Template 项目，一个开箱自带跨 Agent 通用配置与 lailai-skill 子模块的 GitHub 起步模板。
-summary: lailai 的通用 GitHub 起步模板。点 Use this template 即可新建仓库，开箱带上以 AGENTS.md 为真源的跨 Agent 配置、以子模块引入的 lailai-skill 分身、issue 与 PR 模板，以及 editorconfig、gitattributes、gitignore 等编辑器与 git 卫生文件。设计上不复制任何风格规则，而是把 lailai-skill 作为单一来源接入 .agents/skills，由 CLAUDE.md 仅作兼容导入，各仓库只维护自己的项目专属规则层。页面附上 GitHub 仓库卡片，可从这里进入查看目录结构与使用方式。
+description: 本文介绍 lailai's Template 项目，一个开箱即用、要求完整初始化的 GitHub 仓库模板。
+summary: lailai 的通用 GitHub 仓库模板。通过 Use this template 新建仓库后，需要完整替换双语 README、徽章、仓库路径与项目说明，补全 AGENTS.md，清理无用占位内容，并设置 GitHub About 的 description、homepage 和 topics。模板负责提供可直接使用的目录、文档与协作示例，不承载个人风格规范。
 ---
 
 ## 项目仓库
@@ -10,8 +10,12 @@ summary: lailai 的通用 GitHub 起步模板。点 Use this template 即可新�
 
 ## 使用
 
-点仓库页的 **Use this template** 新建仓库，克隆后初始化分身，再改写 README：
+点击仓库页的 **Use this template** 新建仓库，然后完成占位内容检查：
 
 ```bash
-git submodule update --init
+rg -n 'TODO|<owner>|<repo>|One paragraph|Replace with' .
+rg -n 'lailai-template|lailai0916/lailai-template' . --glob '!README*'
 ```
+
+随后将中英文 README 重写为严格镜像，替换徽章路径，补完 `AGENTS.md`，删除无用模板，
+并设置 GitHub About 的 description、homepage 与准确 topics。这些步骤均为初始化完成条件。

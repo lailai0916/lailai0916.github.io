@@ -11,7 +11,7 @@ description: >-
 
 ## 分工（不与机械 checker 重叠）
 
-- **机械项交给 checker**：数学分隔符 / `\dfrac` / 手动间距 / Unicode、AI 腔黑名单命中、标题空行、OI 代码 tell、日期格式、Conventional Commits——**跑 `python3 .agents/skills/lailai-skill/tools/checker/check.py <文件>`**，别用人眼重复核。把结果摘进报告即可。
+- **机械项交给 checker**：数学分隔符 / `\dfrac` / 手动间距 / Unicode、AI 腔黑名单命中、标题空行、OI 代码 tell、日期格式、Conventional Commits——定位已安装 `lailai-skill`，运行其 `tools/checker/check.py <文件>`，别用人眼重复核。把结果摘进报告即可；Skill 不可用时明确标注，禁止复制一份到本仓库。
 - **你专攻机器判不了的语义**：
   - 语气与 **register 贴不贴场景**（默认克制 / 审稿锋利 / 抒情记叙 / 格言点睛），单篇内有没有漂移。
   - **信息密度**够不够、有没有注水、大段抒情、把结论藏在铺垫后。
@@ -24,7 +24,7 @@ description: >-
 ## 流程
 
 1. **定类型**：判断属聊天 / 写作 / Docusaurus / OI C++ / 设计 / README / 决策 / 邮件中的哪些（可多选）。
-2. **读规则**：读 `.agents/skills/lailai-skill/SKILL.md` 的两张索引，再读命中的 `references/*` 的 Self-review Checklist 与相关 `profile/*`；评分锚点用 `evolution/evaluation-rubric.md`。
+2. **读规则**：读外部 `lailai-skill/SKILL.md` 的索引，再读命中的 `references/*` 的 Self-review Checklist 与相关 `profile/*`；评分锚点用 `evolution/evaluation-rubric.md`。本仓库 `.agents/rules/*` 对站点局部行为优先。
 3. **跑 checker**：对涉及的文件跑 check.py，摘录 ERROR/WARN。
 4. **审语义**：逐条核上面的语义维度，落到具体句 / 词 / 行。
 5. **打分**：用 rubric 给相关维度 0～5 分，标扣分点；维度 10（安全边界）、11（信息准确）任一 ≤ 2 → 整体判不通过，优先警示。

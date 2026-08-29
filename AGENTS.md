@@ -4,19 +4,20 @@ Runtime-neutral guidance for AI coding agents in this repo. This file is the alw
 **map**; deep per-area detail lives in `.agents/rules/*.md`. Before editing a path, read the
 rules whose `paths` glob matches it.
 
-## Personal style — defer to lailai.skill
+## Personal style — use lailai-skill
 
 lailai's **general, cross-project** style — Chinese voice and wording, Markdown, LaTeX math,
 OI C++, design principles (统一·简约·现代), who he is and how he decides — lives in the
-**lailai.skill** submodule at [`.agents/skills/lailai-skill/`](.agents/skills/lailai-skill/SKILL.md).
-Read its `SKILL.md`, then the relevant `references/` / `profile/`, for any task touching voice,
-writing, code, or design.
+external **`lailai-skill`** Agent Skill. Before any task touching voice, writing, code, design,
+or judgment, load its `SKILL.md`, then the relevant `references/` / `profile/`. Its canonical
+source is `https://github.com/lailai0916/lailai-skill`; the documented user installation is
+`~/.agents/skills/lailai-skill/`.
 
-**This repo's `.agents/` holds portable project config.** It does not duplicate the general
-rules; where `.agents/rules/*.md` covers only the site-specific slice, it points to the skill
-for the rest. Runtime-specific directories are compatibility adapters only.
-
-Init the submodule after cloning: `git submodule update --init`. Update it later with `git submodule update --remote .agents/skills/lailai-skill`.
+**This repo's internal Agent guidance has priority for site-specific behavior.** `.agents/`
+owns frontmatter, Docusaurus/MDX components, content taxonomy, i18n, design-system, and solution
+mirror rules. `lailai-skill` supplies cross-project personal style and routes specialized work.
+Do not vendor, submodule, or copy it here. If it is unavailable, stop before style-sensitive
+work and ask the user to install or expose the canonical Skill.
 
 ## Project
 
@@ -47,14 +48,14 @@ There is no test runner. `npm run check` is the gate.
 Path-scoped detail — before editing, read each file whose scope matches the target paths.
 Don't restate their content here; extend the file itself.
 
-| Rule                                                               | Scope                                | Covers                                                                                                          |
-| ------------------------------------------------------------------ | ------------------------------------ | --------------------------------------------------------------------------------------------------------------- |
-| [`.agents/rules/components.md`](.agents/rules/components.md)       | `src/**` ts·tsx·css                  | `laikit` inventory, CSS-Module layout & rule ordering, hover-motion limits, text-overflow, MDX widgets          |
-| [`.agents/rules/i18n.md`](.agents/rules/i18n.md)                   | `src/**`, `i18n/**`                  | `translate()` workflow, five-prefix taxonomy, key shapes, orphan cleanup                                        |
-| [`.agents/rules/comments.md`](.agents/rules/comments.md)           | `src/**`, `*.ts`                     | code-comment style (site-specific slice)                                                                        |
-| [`.agents/rules/datetime.md`](.agents/rules/datetime.md)           | `src/**`, `docusaurus.config.ts`     | instant/calendar/duration semantics, storage offsets, visitor display zones, API boundaries                     |
-| [`.agents/rules/writing-style.md`](.agents/rules/writing-style.md) | `blog/**`, `docs/**`, translated MDX | frontmatter, headings, tone, MDX widgets, math, images, links, solution template                                |
-| [`.agents/rules/solution-sync.md`](.agents/rules/solution-sync.md) | `blog/solution/**`                   | 题解 → 洛谷: thin pointer to skill's `luogu-solution.md` (full flow + red lines) + project mirror/summary rules |
+| Rule                                                               | Scope                                | Covers                                                                                                 |
+| ------------------------------------------------------------------ | ------------------------------------ | ------------------------------------------------------------------------------------------------------ |
+| [`.agents/rules/components.md`](.agents/rules/components.md)       | `src/**` ts·tsx·css                  | `laikit` inventory, CSS-Module layout & rule ordering, hover-motion limits, text-overflow, MDX widgets |
+| [`.agents/rules/i18n.md`](.agents/rules/i18n.md)                   | `src/**`, `i18n/**`                  | `translate()` workflow, five-prefix taxonomy, key shapes, orphan cleanup                               |
+| [`.agents/rules/comments.md`](.agents/rules/comments.md)           | `src/**`, `*.ts`                     | code-comment style (site-specific slice)                                                               |
+| [`.agents/rules/datetime.md`](.agents/rules/datetime.md)           | `src/**`, `docusaurus.config.ts`     | instant/calendar/duration semantics, storage offsets, visitor display zones, API boundaries            |
+| [`.agents/rules/writing-style.md`](.agents/rules/writing-style.md) | `blog/**`, `docs/**`, translated MDX | frontmatter, content envelope, site exceptions, MDX widgets, images, and links                         |
+| [`.agents/rules/solution-sync.md`](.agents/rules/solution-sync.md) | `blog/solution/**`                   | Site mirror/frontmatter layer; full Luogu workflow is routed by `lailai-skill`                         |
 
 ## Architecture
 
@@ -86,14 +87,14 @@ Custom-page notes: `insights` is live Umami traffic. `blog/overview` and `blog/m
 
 ## Conventions
 
-Site-specific rules (general taste — 精益求精, edit-don't-rewrite, comment the _why_, no AI-tells — lives in the skill's `profile/` and `references/`):
+Site-specific rules (general taste — 精益求精, edit-don't-rewrite, comment the _why_, no AI-tells — lives in the external Skill's `profile/` and `references/`):
 
 - **Reuse `laikit` primitives** before adding a component; new UI should be visually and behaviourally indistinguishable from existing parts.
 - **No whole-card hover lift.** Never add hover `translateY` / `translateX` to a whole card or other large container — that "float up on hover" effect is an AI-tell the maintainer dislikes. Small motion on internal elements (arrow nudge, a modest icon `scale()`) is fine when it signals an interaction.
 - **i18n is mandatory** — a new user-facing string needs both a `translate()` call and a `zh-Hans` entry in `i18n/zh-Hans/code.json`.
 - **Own domains: destination → link, identifier → `` `code` ``, never bare.** Full rule + rationale in [`.agents/rules/writing-style.md`](.agents/rules/writing-style.md) (_Links and references_) — repeated here because it binds **outside** that file's blog/docs path scope: `src/pages/{about,privacy}`, `src/data/changelog.tsx`, and both READMEs.
 - **Verify before committing** — `npm run check` must exit clean; for UI changes, also confirm in the `npm start` dev server.
-- **Style checker hook** — `.claude/settings.json` wires a `PostToolUse` hook that runs the skill's mechanical checker (`.agents/skills/lailai-skill/tools/checker/check.py --hook`) on every edited `.md`/`.mdx`/`.cpp`/`.ts`/… file. It is **diff-aware** (only lines changed since `HEAD` are checked, so legacy `\dfrac`/「显然」in old notes don't block unrelated edits) and blocks (exit 2) on ERROR-tier violations — wrong math delimiters, AI-tone blacklist, OI-C++ tells, etc. WARN-tier is advisory. Rules ↔ checker co-evolve; edit the checker in the same change that changes a machine-checkable rule. Full audit: `python3 .agents/skills/lailai-skill/tools/checker/check.py <files>`.
+- **Style checker hook** — `.claude/settings.json` wires a `PostToolUse` hook to the user-level `lailai-skill` mechanical checker on every edited `.md`/`.mdx`/`.cpp`/`.ts`/… file. It is **diff-aware** (only lines changed since `HEAD` are checked, so legacy `\dfrac`/「显然」in old notes don't block unrelated edits) and blocks (exit 2) on ERROR-tier violations. WARN-tier is advisory. If the checker is unavailable, the hook exits without inventing a project-local copy.
 - **Semantic reviewer skill** — `.agents/skills/lailai-reviewer/SKILL.md` is the portable,
   read-only review workflow for judgment-class rules the mechanical checker can't cover
   (tone/register fit, information density, structure, semantic AI-tone, OI-C++ aesthetics,
