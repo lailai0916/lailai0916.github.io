@@ -68,13 +68,22 @@
 .yearLabel {
   position: relative;
   padding: 0.3rem 0.9rem;
+  border: 1px solid var(--ifm-color-primary);
   border-radius: 999px;
-  background: var(--ifm-color-primary);
-  color: #fff;
+  background-color: var(--ifm-card-background-color);
+  color: var(--ifm-color-primary);
   font-size: 0.9rem;
   font-weight: 700;
   letter-spacing: 0.01em;
   font-variant-numeric: tabular-nums;
+  transition:
+    background-color 160ms ease,
+    color 160ms ease;
+}
+
+.yearLabelLit {
+  background-color: var(--ifm-color-primary);
+  color: #fff;
 }
 
 .entries {

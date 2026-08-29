@@ -46,6 +46,22 @@ export default function TravelTimeline() {
     let currentProgress = 0;
     let targetProgress = 0;
     let frame = 0;
+    let yearMarkers: { element: HTMLElement; progress: number; lit: boolean }[] = [];
+
+    const measureYearMarkers = () => {
+      const railRect = rail.getBoundingClientRect();
+      yearMarkers = [...timeline.querySelectorAll<HTMLElement>(`.${styles.yearLabel}`)].map(
+        (element) => {
+          const rect = element.getBoundingClientRect();
+          const progress = (rect.top + rect.height / 2 - railRect.top) / railRect.height;
+          return {
+            element,
+            progress: Math.min(1, Math.max(0, progress)),
+            lit: element.classList.contains(styles.yearLabelLit),
+          };
+        }
+      );
+    };
 
     const getProgress = () => {
       const rect = rail.getBoundingClientRect();
@@ -55,6 +71,12 @@ export default function TravelTimeline() {
 
     const renderProgress = () => {
       timeline.style.setProperty('--timeline-progress', String(currentProgress));
+      for (const marker of yearMarkers) {
+        const lit = marker.progress <= currentProgress;
+        if (lit === marker.lit) continue;
+        marker.lit = lit;
+        marker.element.classList.toggle(styles.yearLabelLit, lit);
+      }
     };
 
     const animateProgress = () => {
@@ -85,18 +107,24 @@ export default function TravelTimeline() {
       if (!frame) frame = window.requestAnimationFrame(animateProgress);
     };
 
+    const handleResize = () => {
+      measureYearMarkers();
+      updateTarget();
+    };
+
+    measureYearMarkers();
     currentProgress = getProgress();
     targetProgress = currentProgress;
     renderProgress();
 
     window.addEventListener('scroll', updateTarget, { passive: true });
-    window.addEventListener('resize', updateTarget);
+    window.addEventListener('resize', handleResize);
     reducedMotion.addEventListener('change', updateTarget);
 
     return () => {
       if (frame) window.cancelAnimationFrame(frame);
       window.removeEventListener('scroll', updateTarget);
-      window.removeEventListener('resize', updateTarget);
+      window.removeEventListener('resize', handleResize);
       reducedMotion.removeEventListener('change', updateTarget);
     };
   }, []);
