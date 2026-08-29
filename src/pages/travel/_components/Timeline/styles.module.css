@@ -3,7 +3,7 @@
    The rail/dot horizontal anchors are the only side-specific bits, so the whole
    thing collapses to a left rail on narrow screens where two columns won't fit. */
 .timeline {
-  --dot: 13px;
+  --dot: 22px;
   --gap: 2.25rem;
   --indent: 2.25rem;
   --timeline-progress: 0;
@@ -110,14 +110,21 @@
 }
 
 .entry::before {
-  content: '';
+  content: attr(data-number);
   position: absolute;
   top: 1.75rem;
+  display: grid;
+  place-items: center;
   width: var(--dot);
   height: var(--dot);
   border-radius: 50%;
   background: var(--ifm-card-background-color);
   border: 2px solid var(--ifm-color-emphasis-300);
+  color: var(--ifm-color-emphasis-700);
+  font-size: 0.625rem;
+  font-weight: 700;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
   transition: border-color 160ms ease;
   z-index: 1;
 }

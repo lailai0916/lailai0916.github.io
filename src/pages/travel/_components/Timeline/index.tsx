@@ -166,6 +166,7 @@ export default function TravelTimeline() {
               return (
                 <li
                   key={`${item.date}-${index}`}
+                  data-number={TRAVEL_LIST.length - index}
                   className={clsx(
                     styles.entry,
                     index % 2 === 0 ? styles.entryLeft : styles.entryRight
