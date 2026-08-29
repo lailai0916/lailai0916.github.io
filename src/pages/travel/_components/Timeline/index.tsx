@@ -17,6 +17,9 @@ interface YearGroup {
   entries: TimelineEntry[];
 }
 
+const PROGRESS_FOLLOW_RATE = 0.12;
+const PROGRESS_SETTLE_THRESHOLD = 0.0002;
+
 function EntryBody({ item, month }: { item: TravelItem; month: string }) {
   return (
     <>
@@ -40,36 +43,61 @@ export default function TravelTimeline() {
     if (!timeline || !rail) return;
 
     const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+    let currentProgress = 0;
+    let targetProgress = 0;
     let frame = 0;
 
-    const updateProgress = () => {
+    const getProgress = () => {
+      const rect = rail.getBoundingClientRect();
+      const playhead = window.innerHeight * 0.58;
+      return Math.min(1, Math.max(0, (playhead - rect.top) / rect.height));
+    };
+
+    const renderProgress = () => {
+      timeline.style.setProperty('--timeline-progress', String(currentProgress));
+    };
+
+    const animateProgress = () => {
       frame = 0;
+      const distance = targetProgress - currentProgress;
+      currentProgress =
+        Math.abs(distance) < PROGRESS_SETTLE_THRESHOLD
+          ? targetProgress
+          : currentProgress + distance * PROGRESS_FOLLOW_RATE;
+      renderProgress();
+
+      if (currentProgress !== targetProgress) {
+        frame = window.requestAnimationFrame(animateProgress);
+      }
+    };
+
+    const updateTarget = () => {
+      targetProgress = getProgress();
 
       if (reducedMotion.matches) {
-        timeline.style.setProperty('--timeline-progress', '0');
+        if (frame) window.cancelAnimationFrame(frame);
+        frame = 0;
+        currentProgress = targetProgress;
+        renderProgress();
         return;
       }
 
-      const rect = rail.getBoundingClientRect();
-      const playhead = window.innerHeight * 0.58;
-      const progress = Math.min(1, Math.max(0, (playhead - rect.top) / rect.height));
-      timeline.style.setProperty('--timeline-progress', String(progress));
+      if (!frame) frame = window.requestAnimationFrame(animateProgress);
     };
 
-    const scheduleUpdate = () => {
-      if (!frame) frame = window.requestAnimationFrame(updateProgress);
-    };
+    currentProgress = getProgress();
+    targetProgress = currentProgress;
+    renderProgress();
 
-    updateProgress();
-    window.addEventListener('scroll', scheduleUpdate, { passive: true });
-    window.addEventListener('resize', scheduleUpdate);
-    reducedMotion.addEventListener('change', scheduleUpdate);
+    window.addEventListener('scroll', updateTarget, { passive: true });
+    window.addEventListener('resize', updateTarget);
+    reducedMotion.addEventListener('change', updateTarget);
 
     return () => {
       if (frame) window.cancelAnimationFrame(frame);
-      window.removeEventListener('scroll', scheduleUpdate);
-      window.removeEventListener('resize', scheduleUpdate);
-      reducedMotion.removeEventListener('change', scheduleUpdate);
+      window.removeEventListener('scroll', updateTarget);
+      window.removeEventListener('resize', updateTarget);
+      reducedMotion.removeEventListener('change', updateTarget);
     };
   }, []);
 
