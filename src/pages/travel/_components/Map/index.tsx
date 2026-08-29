@@ -60,6 +60,10 @@ const NOT_VISITED_LABEL = translate({
   id: 'pages.travel.map.legend.unvisited',
   message: 'Not Visited',
 });
+const RESET_VIEW_LABEL = translate({
+  id: 'pages.travel.map.reset',
+  message: 'Reset view',
+});
 const PLAY_ROTATION_LABEL = translate({
   id: 'pages.travel.map.play',
   message: 'Resume rotation',
@@ -68,6 +72,8 @@ const PAUSE_ROTATION_LABEL = translate({
   id: 'pages.travel.map.pause',
   message: 'Pause rotation',
 });
+const DEFAULT_POINT_OF_VIEW = { lat: 30, lng: 120, altitude: 1.8 };
+const RESET_DURATION_MS = 600;
 
 function readCssVar(name: string) {
   return getComputedStyle(document.documentElement).getPropertyValue(name).trim();
@@ -125,6 +131,8 @@ function TravelGlobeClient({ Globe }: { Globe: GlobeComponent }) {
   const { colorMode } = useColorMode();
   const frameRef = useRef<HTMLDivElement | null>(null);
   const globeRef = useRef<GlobeMethods | undefined>(undefined);
+  const resetTimerRef = useRef<number | null>(null);
+  const rotationEnabledRef = useRef(false);
   const [size, setSize] = useState({ width: 720, height: 500 });
   const [isGlobeReady, setIsGlobeReady] = useState(false);
   const [isRotating, setIsRotating] = useState(false);
@@ -231,6 +239,13 @@ function TravelGlobeClient({ Globe }: { Globe: GlobeComponent }) {
     return () => observer.disconnect();
   }, []);
 
+  useEffect(
+    () => () => {
+      if (resetTimerRef.current !== null) window.clearTimeout(resetTimerRef.current);
+    },
+    []
+  );
+
   useEffect(() => {
     if (!isGlobeReady) return;
     const globe = globeRef.current;
@@ -326,11 +341,36 @@ function TravelGlobeClient({ Globe }: { Globe: GlobeComponent }) {
     setHovered(null);
   };
 
+  const resetView = () => {
+    const globe = globeRef.current;
+    const controls = globe?.controls();
+    if (!globe || !controls) return;
+
+    if (resetTimerRef.current !== null) window.clearTimeout(resetTimerRef.current);
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const duration = reducedMotion ? 0 : RESET_DURATION_MS;
+
+    controls.autoRotate = false;
+    globe.pointOfView(DEFAULT_POINT_OF_VIEW, duration);
+
+    if (duration === 0) {
+      controls.autoRotate = rotationEnabledRef.current;
+      return;
+    }
+
+    resetTimerRef.current = window.setTimeout(() => {
+      const currentControls = globeRef.current?.controls();
+      if (currentControls) currentControls.autoRotate = rotationEnabledRef.current;
+      resetTimerRef.current = null;
+    }, duration);
+  };
+
   const toggleRotation = () => {
     const controls = globeRef.current?.controls();
     if (!controls) return;
     const next = !isRotating;
     controls.autoRotate = next;
+    rotationEnabledRef.current = next;
     setIsRotating(next);
   };
 
@@ -345,7 +385,8 @@ function TravelGlobeClient({ Globe }: { Globe: GlobeComponent }) {
     controls.enableZoom = false;
     controls.enableDamping = true;
     controls.dampingFactor = 0.1;
-    globe.pointOfView({ lat: 30, lng: 120, altitude: 1.8 }, 0);
+    globe.pointOfView(DEFAULT_POINT_OF_VIEW, 0);
+    rotationEnabledRef.current = shouldRotate;
     setIsRotating(shouldRotate);
     setIsGlobeReady(true);
   };
@@ -378,21 +419,38 @@ function TravelGlobeClient({ Globe }: { Globe: GlobeComponent }) {
           />
         </div>
         {isReady && (
-          <Button
-            variant="secondary"
-            size="sm"
-            className={styles.rotationButton}
-            leftIcon={
-              <Icon
-                icon={isRotating ? 'lucide:pause' : 'lucide:play'}
-                className={styles.rotationIcon}
-                aria-hidden="true"
-              />
-            }
-            onClick={toggleRotation}
-            aria-label={rotationLabel}
-            title={rotationLabel}
-          />
+          <div className={styles.globeControls}>
+            <Button
+              variant="secondary"
+              size="sm"
+              className={styles.globeControlButton}
+              leftIcon={
+                <Icon
+                  icon="lucide:rotate-ccw"
+                  className={styles.globeControlIcon}
+                  aria-hidden="true"
+                />
+              }
+              onClick={resetView}
+              aria-label={RESET_VIEW_LABEL}
+              title={RESET_VIEW_LABEL}
+            />
+            <Button
+              variant="secondary"
+              size="sm"
+              className={styles.globeControlButton}
+              leftIcon={
+                <Icon
+                  icon={isRotating ? 'lucide:pause' : 'lucide:play'}
+                  className={styles.globeControlIcon}
+                  aria-hidden="true"
+                />
+              }
+              onClick={toggleRotation}
+              aria-label={rotationLabel}
+              title={rotationLabel}
+            />
+          </div>
         )}
         {hovered && (
           <div className={styles.tooltipAnchor} style={{ left: cursor.x, top: cursor.y }}>

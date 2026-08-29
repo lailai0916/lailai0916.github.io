@@ -49,20 +49,25 @@
   opacity: 1;
 }
 
-.rotationButton {
+.globeControls {
   position: absolute;
   top: clamp(0.75rem, 2vw, 1rem);
   right: calc((100% - min(100%, 640px)) / 2 + clamp(0.75rem, 2vw, 1rem));
+  display: flex;
+  gap: 0.5rem;
   z-index: 2;
+}
+
+.globeControlButton {
   width: 32px;
   padding: 0;
 }
 
-.rotationButton:not(:disabled):not([aria-disabled='true']):active {
+.globeControlButton:not(:disabled):not([aria-disabled='true']):active {
   transform: scale(0.92);
 }
 
-.rotationIcon {
+.globeControlIcon {
   width: 16px;
   height: 16px;
 }
