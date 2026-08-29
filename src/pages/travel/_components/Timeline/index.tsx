@@ -1,4 +1,4 @@
-import { useMemo } from 'react';
+import { useEffect, useMemo, useRef } from 'react';
 import clsx from 'clsx';
 import { Icon } from '@iconify/react';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
@@ -31,6 +31,47 @@ function EntryBody({ item, month }: { item: TravelItem; month: string }) {
 export default function TravelTimeline() {
   const { i18n } = useDocusaurusContext();
   const isZh = i18n.currentLocale === 'zh-Hans';
+  const timelineRef = useRef<HTMLDivElement>(null);
+  const railRef = useRef<HTMLSpanElement>(null);
+
+  useEffect(() => {
+    const timeline = timelineRef.current;
+    const rail = railRef.current;
+    if (!timeline || !rail) return;
+
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+    let frame = 0;
+
+    const updateProgress = () => {
+      frame = 0;
+
+      if (reducedMotion.matches) {
+        timeline.style.setProperty('--timeline-progress', '0');
+        return;
+      }
+
+      const rect = rail.getBoundingClientRect();
+      const playhead = window.innerHeight * 0.58;
+      const progress = Math.min(1, Math.max(0, (playhead - rect.top) / rect.height));
+      timeline.style.setProperty('--timeline-progress', String(progress));
+    };
+
+    const scheduleUpdate = () => {
+      if (!frame) frame = window.requestAnimationFrame(updateProgress);
+    };
+
+    updateProgress();
+    window.addEventListener('scroll', scheduleUpdate, { passive: true });
+    window.addEventListener('resize', scheduleUpdate);
+    reducedMotion.addEventListener('change', scheduleUpdate);
+
+    return () => {
+      if (frame) window.cancelAnimationFrame(frame);
+      window.removeEventListener('scroll', scheduleUpdate);
+      window.removeEventListener('resize', scheduleUpdate);
+      reducedMotion.removeEventListener('change', scheduleUpdate);
+    };
+  }, []);
 
   // Month name only — the year is the group header. Year/month are read
   // literally from the 'YYYY-MM' string, so no timezone conversion applies.
@@ -54,7 +95,10 @@ export default function TravelTimeline() {
   }, []);
 
   return (
-    <div className={styles.timeline}>
+    <div className={styles.timeline} ref={timelineRef}>
+      <span className={styles.rail} ref={railRef} aria-hidden>
+        <span className={styles.progressLine} />
+      </span>
       {groups.map(({ year, entries }) => (
         <section className={styles.group} key={year}>
           <div className={styles.year}>
