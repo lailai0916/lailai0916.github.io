@@ -62,9 +62,9 @@ export const RESOURCE_LIST: ResourceCategoryItem[] = [
         description: '深度求索开源大模型',
       },
       {
-        title: 'Sora',
-        href: 'https://sora.com',
-        description: 'OpenAI 文本生成视频工具',
+        title: 'Kimi',
+        href: 'https://www.kimi.com',
+        description: '月之暗面智能对话助手',
       },
     ],
   },
@@ -126,11 +126,6 @@ export const RESOURCE_LIST: ResourceCategoryItem[] = [
         title: 'Keras',
         href: 'https://keras.io',
         description: '高层神经网络 API',
-      },
-      {
-        title: 'TensorFlow',
-        href: 'https://www.tensorflow.org',
-        description: '谷歌机器学习框架',
       },
     ],
   },
@@ -220,16 +215,6 @@ export const RESOURCE_LIST: ResourceCategoryItem[] = [
         description: 'GitHub 贡献者活跃度排行',
       },
       {
-        title: 'GitHub Metrics',
-        href: 'https://github.com/lowlighter/metrics',
-        description: 'GitHub 个人数据可视化生成器',
-      },
-      {
-        title: 'GitHub Stats',
-        href: 'https://github.com/jstrieb/github-stats',
-        description: 'GitHub 账号统计图表生成',
-      },
-      {
         title: 'Shields.io',
         href: 'https://shields.io',
         description: '项目徽章生成服务',
@@ -238,21 +223,6 @@ export const RESOURCE_LIST: ResourceCategoryItem[] = [
         title: 'GitHub Codespaces',
         href: 'https://github.com/codespaces',
         description: 'GitHub 官方云端开发环境',
-      },
-      {
-        title: 'Gitpod',
-        href: 'https://www.gitpod.io',
-        description: '云端按需开发工作区',
-      },
-      {
-        title: 'CodeSandbox',
-        href: 'https://codesandbox.io',
-        description: '在线前端项目沙盒',
-      },
-      {
-        title: 'CodePen',
-        href: 'https://codepen.io',
-        description: '前端代码片段分享社区',
       },
       {
         title: 'StackBlitz',
@@ -337,6 +307,11 @@ export const RESOURCE_LIST: ResourceCategoryItem[] = [
     icon: 'lucide:graduation-cap',
     resources: [
       {
+        title: 'arXiv',
+        href: 'https://arxiv.org',
+        description: '学术论文预印本仓库',
+      },
+      {
         title: 'Google Scholar',
         href: 'https://scholar.google.com',
         description: '学术文献搜索引擎',
@@ -350,11 +325,6 @@ export const RESOURCE_LIST: ResourceCategoryItem[] = [
         title: 'Nature',
         href: 'https://www.nature.com',
         description: '《自然》期刊官网',
-      },
-      {
-        title: 'arXiv',
-        href: 'https://arxiv.org',
-        description: '学术论文预印本仓库',
       },
       {
         title: 'Overleaf',
