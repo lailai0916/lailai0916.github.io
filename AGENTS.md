@@ -37,6 +37,7 @@ npm run format            # Prettier write across the repo
 npm run lint              # ESLint over src/ (flat config, eslint.config.mjs)
 npm run typecheck         # tsc, no emit
 npm run check             # i18n + format + lint + typecheck — run before every commit
+npm run check:ci          # check + fail if generation or formatting changed the worktree
 ```
 
 There is no test runner. `npm run check` is the gate.
@@ -90,16 +91,13 @@ Custom-page notes: `insights` is live Umami traffic. `blog/overview` and `blog/m
 Site-specific rules (general taste — 精益求精, edit-don't-rewrite, comment the _why_, no AI-tells — lives in the external Skill's `profile/` and `references/`):
 
 - **Reuse `laikit` primitives** before adding a component; new UI should be visually and behaviourally indistinguishable from existing parts.
-- **No whole-card hover lift.** Never add hover `translateY` / `translateX` to a whole card or other large container — that "float up on hover" effect is an AI-tell the maintainer dislikes. Small motion on internal elements (arrow nudge, a modest icon `scale()`) is fine when it signals an interaction.
 - **i18n is mandatory** — a new user-facing string needs both a `translate()` call and a `zh-Hans` entry in `i18n/zh-Hans/code.json`.
 - **Own domains: destination → link, identifier → `` `code` ``, never bare.** Full rule + rationale in [`.agents/rules/writing-style.md`](.agents/rules/writing-style.md) (_Links and references_) — repeated here because it binds **outside** that file's blog/docs path scope: `src/pages/{about,privacy}`, `src/data/changelog.tsx`, and both READMEs.
 - **Verify before committing** — `npm run check` must exit clean; for UI changes, also confirm in the `npm start` dev server.
 - **Style checker hook** — `.claude/settings.json` wires a `PostToolUse` hook to the user-level `lailai-skill` mechanical checker on every edited `.md`/`.mdx`/`.cpp`/`.ts`/… file. It is **diff-aware** (only lines changed since `HEAD` are checked, so legacy `\dfrac`/「显然」in old notes don't block unrelated edits) and blocks (exit 2) on ERROR-tier violations. WARN-tier is advisory. If the checker is unavailable, the hook exits without inventing a project-local copy.
-- **Semantic reviewer skill** — `.agents/skills/lailai-reviewer/SKILL.md` is the portable,
-  read-only review workflow for judgment-class rules the mechanical checker can't cover
-  (tone/register fit, information density, structure, semantic AI-tone, OI-C++ aesthetics,
-  design AI-tells, zh/en parity). Invoke it before delivering lailai-style prose, solutions,
-  or docs. It returns findings only and does not edit.
+- **Semantic review route** — for judgment-class rules the mechanical checker cannot cover,
+  load the external `lailai-skill` and its `prompts/review-style.md` directly. This repository
+  contributes only matching site-local rules; do not keep a local reviewer wrapper or copy.
 - **Small changes go straight to `main`.** Reserve branches and PRs for substantial multi-file work the maintainer explicitly asks to have reviewed.
 
 Prettier: `printWidth: 100`, `singleQuote: true`, `trailingComma: 'es5'`. TypeScript is `strict`.
@@ -112,6 +110,6 @@ before declaring the task done:
 - Rename / move / delete a component, or change a widget / taxonomy / authoring convention → the matching `.agents/rules/*.md` (and any inventory in this file).
 - Change commands, build / deploy, architecture, or directory layout → this file.
 - Record **durable** conventions, not transient task state. Verify against the actual code (grep, read) before writing — stale guidance is worse than none. When unsure whether something belongs, surface it to the maintainer rather than silently adding or omitting it.
-- `CLAUDE.md`, `.claude/rules`, and `.claude/skills` are compatibility pointers; do not
+- `CLAUDE.md` and `.claude/rules` are compatibility pointers; do not
   maintain duplicate instructions there. Claude-only hooks and launch settings may remain under
   `.claude/`.

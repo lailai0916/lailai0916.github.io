@@ -20,7 +20,8 @@
     "format": "npx prettier --write .",
     "lint": "eslint src",
     "typecheck": "tsc",
-    "check": "npm run i18n && npm run format && npm run lint && npm run typecheck"
+    "check": "npm run i18n && npm run format && npm run lint && npm run typecheck",
+    "check:ci": "npm run check && git diff --exit-code && test -z \"$(git status --porcelain --untracked-files=all)\""
   },
   "dependencies": {
     "@docusaurus/core": "^3.10.2",
