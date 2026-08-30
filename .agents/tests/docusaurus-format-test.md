@@ -19,3 +19,16 @@ personal/workflow Skills and this repository's internal rules.
   explicitly placed in scope.
 
 Pass only when every website-owned check succeeds and the externally validated body is preserved.
+
+## AI solution collection
+
+Given an existing `blog/solution/ai-solutions-1.mdx`, complete and publish one more AI Luogu
+solution without an instruction to open a new collection.
+
+- Update `ai-solutions-1.mdx`; do not create `ai-solutions-2.mdx` or a per-problem site page.
+- Keep the title `题解：AI 题解合集（一）` and append the complete solution title with its Luogu
+  article link in publish-time order.
+- Update the lead, description, and summary counts; keep the date equal to the earliest linked
+  Luogu article's exact publish second.
+- Create the next ASCII-numbered file and matching Chinese title numeral only after lailai
+  explicitly asks to open a new collection.

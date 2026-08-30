@@ -5,7 +5,7 @@ paths:
 
 # 题解 → 洛谷同步
 
-除 `writing-style.md` 定义的 `ai-solutions-<number>.mdx` 汇总索引外，每篇 `blog/solution/<PID>.mdx` 在**洛谷专栏有一份对外拷贝**（frontmatter 的 `lid` 指向它）。站内 mdx 是**唯一权威源**：改了正文，洛谷那份就过期，需同步——**实质改动就主动发起**（不必等 lailai 提醒）。
+除 `writing-style.md` 定义的 `ai-solutions-<number>.mdx` 合集索引外，每篇 `blog/solution/<PID>.mdx` 在**洛谷专栏有一份对外拷贝**（frontmatter 的 `lid` 指向它）。站内 mdx 是**唯一权威源**：改了正文，洛谷那份就过期，需同步——**实质改动就主动发起**（不必等 lailai 提醒）。
 
 **完整抓题、参考、求解、验证、对拍、成稿与合规发布流程由外部 `lailai-skill` 路由**。本仓库不复制专用 Skill，也不硬编码其工具路径。执行题解任务时先加载 `lailai-skill`，再按其跨仓库路由读取完整工作流；目标仓库内部规则仍负责本文件规定的站点层。
 

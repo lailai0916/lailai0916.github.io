@@ -855,4 +855,25 @@ export const RESOURCE_LIST: ResourceCategoryItem[] = [
       },
     ],
   },
+  {
+    title: '个人项目',
+    icon: 'lucide:blocks',
+    resources: [
+      {
+        title: "lailai's Tools",
+        href: 'https://tools.lailai.one',
+        description: '浏览器本地运行的开发者工具集',
+      },
+      {
+        title: "lailai's Academy",
+        href: 'https://academy.lailai.one',
+        description: '面向高中生的个性化自学平台',
+      },
+      {
+        title: "lailai's Cloud",
+        href: 'https://cloud.lailai.one',
+        description: '个人文件存储与资源托管服务',
+      },
+    ],
+  },
 ];
