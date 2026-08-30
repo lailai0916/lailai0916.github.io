@@ -20,6 +20,7 @@ links, and the local envelope around externally produced solution bodies.
 - **`description`** is the Docusaurus-standard SEO field (feeds `<meta name="description">` / `og:description`; not rendered on-page). **Every doc page and every blog post carries one, with a single exclusion: `docs/contest/problems/**`example-problem (题解) pages.** So unlike`summary`, the three section roots (`docs/{contest,note,project}/index.mdx`), `welcome.mdx`, and all `blog/solution/\*.mdx`**do** get a`description`. **Description spec:** one or two short Chinese sentences, **20–50 汉字**. Deliberately framed with a 「本文…」opener — `本文将介绍…`/`本文为…`(题解:`本文为洛谷 P<id> 的题解，…`). This is an intentional exception to the summary's no-本文 rule: `description`is the terse SEO / social one-liner while`summary`is the fuller on-page TL;DR, so the two open differently on purpose. Accurate, professional, no filler. Stored as a **plain single-line, unquoted** value immediately under`title:`(above`summary:`when present) — so avoid a half-width`:`/`#`/`[` / `]`/`{`/`}`; for 题解 name the problem as `洛谷 P<id>`, never the bracketed `[contest] name`form. Distilled from the doc's`summary` where one exists, else written from the body.
 - Dates are `YYYY-MM-DDTHH:MM:SS+08:00` — seconds **and** an explicit Asia/Shanghai offset: `date: 2025-08-04T15:30:00+08:00`. The `+08:00` is mandatory: without it `new Date()` resolves against the build host's zone (CI runs UTC), so the instant becomes ambiguous. Display and grouping follow [the date-time rules](datetime.md). Every blog post carries seconds. **Solution posts** (`blog/solution/*.mdx`) use the **exact** publish second of their Luogu column counterpart (the `lid` frontmatter field; Luogu records second precision) — keep the two in sync. All other posts use `:00` for the seconds. (`src/data/moments.tsx` follows the same `+08:00` form; `changelog.tsx`/`travel.tsx` stay coarse date/month labels.)
 - Title pattern is `<category>：<name>` with a **full-width colon**. Category prefix vocabulary is fixed: `题解：` / `数学：` / `项目：` / `资源：` / `个人：` / `旅行：` / `记录：` / `杂谈：`. The prefix is the real taxonomy, not the folder — `blog/misc/` holds both `项目：` and `资源：` posts; `blog/record/` holds both `记录：` and `杂谈：`.
+- AI solution roundups use `题解：AI 题解汇总（<中文数字>）`; the sequence in the visible title is always a Chinese numeral, while the filename keeps its stable ASCII number.
 - Quote the title in YAML only when it contains a `:` that would confuse the parser, e.g. `title: '旅行：National Geographic: 50 Places of a Lifetime'`.
 - Tags come from `blog/tags.yml` only. Solution posts always tag `[oi, solution, <oj>]` where `<oj>` ∈ `luogu` / `codeforces` / `atcoder` / `spoj` / `uva`. Math posts tag `[math]`. Records combine `[life, record, memory]` or `[school, record, memory]`. Don't invent tags.
 
@@ -93,10 +94,15 @@ KaTeX strict warnings only in a cold build, so do not treat a cached build as su
 
 ## Solution-post envelope
 
-`blog/solution/*.mdx` mirrors a Luogu column article identified by `lid`. Exclude these files from
+`blog/solution/*.mdx` normally mirrors a Luogu column article identified by `lid`. Exclude these files from
 site-wide sweeps unless the task explicitly places a solution in scope. The external workflow
 selected through `solution-sync.md` owns the body structure, proof, complexity treatment, and code.
 Do not repeat those rules here.
+
+`blog/solution/ai-solutions-<number>.mdx` is the narrow exception. It is a local link roundup,
+not a mirrored Luogu article: it has no `lid`, uses `[oi, solution, luogu, ai]`, follows the normal
+blog lead-and-truncate envelope, and never enters Luogu body synchronization. Its date is the exact
+publish second of the earliest linked Luogu article, and the links stay in ascending publish order.
 
 This repository owns only the wrapper:
 
