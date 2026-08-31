@@ -2486,12 +2486,6 @@
   "data.resources.site.webglAquarium.description": {
     "message": "使用动态水族箱测试 WebGL 渲染性能的基准"
   },
-  "data.resources.site.clickSpeedTest.title": {
-    "message": "Click Speed Test"
-  },
-  "data.resources.site.clickSpeedTest.description": {
-    "message": "按限定时间测量每秒点击次数的工具"
-  },
   "data.resources.site.aRealMe.title": {
     "message": "A Real Me"
   },
@@ -2786,8 +2780,8 @@
   "data.resources.category.aiAssistants.title": {
     "message": "AI 助手"
   },
-  "data.resources.category.aiResearch.title": {
-    "message": "AI 研究与平台"
+  "data.resources.category.aiEcosystem.title": {
+    "message": "AI 平台与生态"
   },
   "data.resources.category.cloudNetwork.title": {
     "message": "云与网络"
@@ -2825,8 +2819,8 @@
   "data.resources.category.softwareDevices.title": {
     "message": "软件与设备"
   },
-  "data.resources.category.onlineUtilities.title": {
-    "message": "在线工具"
+  "data.resources.category.onlineServices.title": {
+    "message": "在线服务与工具"
   },
   "data.resources.category.personalProjects.title": {
     "message": "个人项目"

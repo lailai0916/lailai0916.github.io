@@ -329,7 +329,7 @@ const RESOURCE_CATALOG = {
   rainyun: {
     title: translate({
       id: 'data.resources.site.rainyun.title',
-      message: 'Rainyun',
+      message: 'RainYun',
     }),
     href: 'https://www.rainyun.com',
     description: translate({
@@ -1107,17 +1107,6 @@ const RESOURCE_CATALOG = {
       message: 'WebGL rendering benchmark with an animated aquarium',
     }),
   },
-  clickSpeedTest: {
-    title: translate({
-      id: 'data.resources.site.clickSpeedTest.title',
-      message: 'Click Speed Test',
-    }),
-    href: 'https://clickspeedtest.com',
-    description: translate({
-      id: 'data.resources.site.clickSpeedTest.description',
-      message: 'Timed clicks-per-second measurement tool',
-    }),
-  },
   aRealMe: {
     title: translate({
       id: 'data.resources.site.aRealMe.title',
@@ -1685,10 +1674,10 @@ export const RESOURCE_LIST: ResourceCategoryItem[] = [
     resources: resources('chatgpt', 'gemini', 'claude', 'grok', 'deepseek', 'kimi'),
   },
   {
-    id: 'aiResearch',
+    id: 'aiEcosystem',
     title: translate({
-      id: 'data.resources.category.aiResearch.title',
-      message: 'AI Research & Platforms',
+      id: 'data.resources.category.aiEcosystem.title',
+      message: 'AI Platforms & Ecosystem',
     }),
     icon: 'lucide:brain-circuit',
     resources: resources(
@@ -1853,7 +1842,6 @@ export const RESOURCE_LIST: ResourceCategoryItem[] = [
       'volumeshader',
       'fishBowl',
       'webglAquarium',
-      'clickSpeedTest',
       'aRealMe',
       'politicalOrientation'
     ),
@@ -1865,7 +1853,7 @@ export const RESOURCE_LIST: ResourceCategoryItem[] = [
       message: 'Media & Communities',
     }),
     icon: 'lucide:users',
-    resources: resources('youtube', 'x', 'facebook', 'telegramWeb', 'polymarket', 'bilibili'),
+    resources: resources('youtube', 'x', 'facebook', 'telegramWeb', 'bilibili'),
   },
   {
     id: 'browserGames',
@@ -1915,18 +1903,19 @@ export const RESOURCE_LIST: ResourceCategoryItem[] = [
     ),
   },
   {
-    id: 'onlineUtilities',
+    id: 'onlineServices',
     title: translate({
-      id: 'data.resources.category.onlineUtilities.title',
-      message: 'Online Utilities',
+      id: 'data.resources.category.onlineServices.title',
+      message: 'Online Services & Utilities',
     }),
     icon: 'lucide:wrench',
     resources: resources(
       'googleTranslate',
+      'polymarket',
+      'passportIndex',
       'ilovepdf',
       'qrCodeGenerator',
       'forensically',
-      'passportIndex',
       'noteMs',
       'normalSpeech',
       'dazidazi',
