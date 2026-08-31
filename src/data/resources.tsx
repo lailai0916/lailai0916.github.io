@@ -1,849 +1,1946 @@
-interface ResourceItem {
+import { translate } from '@docusaurus/Translate';
+
+interface ResourceDefinition {
   title: string;
   href: string;
   description: string;
 }
 
+const RESOURCE_CATALOG = {
+  google: {
+    title: translate({
+      id: 'data.resources.site.google.title',
+      message: 'Google',
+    }),
+    href: 'https://www.google.com',
+    description: translate({
+      id: 'data.resources.site.google.description',
+      message: 'General-purpose web search engine',
+    }),
+  },
+  bing: {
+    title: translate({
+      id: 'data.resources.site.bing.title',
+      message: 'Microsoft Bing',
+    }),
+    href: 'https://www.bing.com',
+    description: translate({
+      id: 'data.resources.site.bing.description',
+      message: "Microsoft's web search and discovery engine",
+    }),
+  },
+  baidu: {
+    title: translate({
+      id: 'data.resources.site.baidu.title',
+      message: 'Baidu',
+    }),
+    href: 'https://www.baidu.com',
+    description: translate({
+      id: 'data.resources.site.baidu.description',
+      message: 'Chinese-language search and internet services platform',
+    }),
+  },
+  wikipedia: {
+    title: translate({
+      id: 'data.resources.site.wikipedia.title',
+      message: 'Wikipedia',
+    }),
+    href: 'https://zh.wikipedia.org',
+    description: translate({
+      id: 'data.resources.site.wikipedia.description',
+      message: 'Collaborative, multilingual online encyclopedia',
+    }),
+  },
+  chatgpt: {
+    title: translate({
+      id: 'data.resources.site.chatgpt.title',
+      message: 'ChatGPT',
+    }),
+    href: 'https://chatgpt.com',
+    description: translate({
+      id: 'data.resources.site.chatgpt.description',
+      message: 'OpenAI assistant for conversation, research, and creation',
+    }),
+  },
+  gemini: {
+    title: translate({
+      id: 'data.resources.site.gemini.title',
+      message: 'Gemini',
+    }),
+    href: 'https://gemini.google.com',
+    description: translate({
+      id: 'data.resources.site.gemini.description',
+      message: "Google's multimodal AI assistant",
+    }),
+  },
+  claude: {
+    title: translate({
+      id: 'data.resources.site.claude.title',
+      message: 'Claude',
+    }),
+    href: 'https://claude.ai',
+    description: translate({
+      id: 'data.resources.site.claude.description',
+      message: "Anthropic's AI assistant for analysis and creation",
+    }),
+  },
+  grok: {
+    title: translate({
+      id: 'data.resources.site.grok.title',
+      message: 'Grok',
+    }),
+    href: 'https://grok.com',
+    description: translate({
+      id: 'data.resources.site.grok.description',
+      message: 'AI assistant with real-time web and X access',
+    }),
+  },
+  deepseek: {
+    title: translate({
+      id: 'data.resources.site.deepseek.title',
+      message: 'DeepSeek',
+    }),
+    href: 'https://www.deepseek.com',
+    description: translate({
+      id: 'data.resources.site.deepseek.description',
+      message: 'AI assistant and model platform by DeepSeek',
+    }),
+  },
+  kimi: {
+    title: translate({
+      id: 'data.resources.site.kimi.title',
+      message: 'Kimi',
+    }),
+    href: 'https://www.kimi.com',
+    description: translate({
+      id: 'data.resources.site.kimi.description',
+      message: 'Moonshot AI assistant for coding and knowledge work',
+    }),
+  },
+  googleDeepmind: {
+    title: translate({
+      id: 'data.resources.site.googleDeepmind.title',
+      message: 'Google DeepMind',
+    }),
+    href: 'https://deepmind.google',
+    description: translate({
+      id: 'data.resources.site.googleDeepmind.description',
+      message: "Google's AI research laboratory and model portfolio",
+    }),
+  },
+  metaAi: {
+    title: translate({
+      id: 'data.resources.site.metaAi.title',
+      message: 'Meta AI',
+    }),
+    href: 'https://ai.meta.com',
+    description: translate({
+      id: 'data.resources.site.metaAi.description',
+      message: "Meta's AI products, models, and research",
+    }),
+  },
+  microsoftAi: {
+    title: translate({
+      id: 'data.resources.site.microsoftAi.title',
+      message: 'Microsoft AI',
+    }),
+    href: 'https://www.microsoft.com/ai',
+    description: translate({
+      id: 'data.resources.site.microsoftAi.description',
+      message: "Microsoft's AI products, research, and business solutions",
+    }),
+  },
+  huggingFace: {
+    title: translate({
+      id: 'data.resources.site.huggingFace.title',
+      message: 'Hugging Face',
+    }),
+    href: 'https://huggingface.co',
+    description: translate({
+      id: 'data.resources.site.huggingFace.description',
+      message: 'Open-source hub for models, datasets, and AI applications',
+    }),
+  },
+  arena: {
+    title: translate({
+      id: 'data.resources.site.arena.title',
+      message: 'Arena',
+    }),
+    href: 'https://arena.ai',
+    description: translate({
+      id: 'data.resources.site.arena.description',
+      message: 'Community evaluation and leaderboards for AI models',
+    }),
+  },
+  googleAiStudio: {
+    title: translate({
+      id: 'data.resources.site.googleAiStudio.title',
+      message: 'Google AI Studio',
+    }),
+    href: 'https://aistudio.google.com',
+    description: translate({
+      id: 'data.resources.site.googleAiStudio.description',
+      message: 'Browser workspace for building with Gemini models',
+    }),
+  },
+  pytorch: {
+    title: translate({
+      id: 'data.resources.site.pytorch.title',
+      message: 'PyTorch',
+    }),
+    href: 'https://pytorch.org',
+    description: translate({
+      id: 'data.resources.site.pytorch.description',
+      message: 'Open-source framework for machine learning and deep learning',
+    }),
+  },
+  keras: {
+    title: translate({
+      id: 'data.resources.site.keras.title',
+      message: 'Keras',
+    }),
+    href: 'https://keras.io',
+    description: translate({
+      id: 'data.resources.site.keras.description',
+      message: 'High-level deep learning API for multiple backends',
+    }),
+  },
+  gptzero: {
+    title: translate({
+      id: 'data.resources.site.gptzero.title',
+      message: 'GPTZero',
+    }),
+    href: 'https://gptzero.me',
+    description: translate({
+      id: 'data.resources.site.gptzero.description',
+      message: 'AI-generated text detection and authorship analysis',
+    }),
+  },
+  notByAi: {
+    title: translate({
+      id: 'data.resources.site.notByAi.title',
+      message: 'Not By AI',
+    }),
+    href: 'https://notbyai.fyi',
+    description: translate({
+      id: 'data.resources.site.notByAi.description',
+      message: 'Badges for identifying human-created content',
+    }),
+  },
+  cloudflare: {
+    title: translate({
+      id: 'data.resources.site.cloudflare.title',
+      message: 'Cloudflare',
+    }),
+    href: 'https://www.cloudflare.com',
+    description: translate({
+      id: 'data.resources.site.cloudflare.description',
+      message: 'Connectivity, security, and edge application platform',
+    }),
+  },
+  aws: {
+    title: translate({
+      id: 'data.resources.site.aws.title',
+      message: 'Amazon Web Services',
+    }),
+    href: 'https://aws.amazon.com',
+    description: translate({
+      id: 'data.resources.site.aws.description',
+      message: 'Cloud computing platform by Amazon',
+    }),
+  },
+  azure: {
+    title: translate({
+      id: 'data.resources.site.azure.title',
+      message: 'Microsoft Azure',
+    }),
+    href: 'https://azure.microsoft.com',
+    description: translate({
+      id: 'data.resources.site.azure.description',
+      message: 'Cloud computing platform by Microsoft',
+    }),
+  },
+  godaddy: {
+    title: translate({
+      id: 'data.resources.site.godaddy.title',
+      message: 'GoDaddy',
+    }),
+    href: 'https://www.godaddy.com',
+    description: translate({
+      id: 'data.resources.site.godaddy.description',
+      message: 'Domain registration, hosting, and website services',
+    }),
+  },
+  namecheap: {
+    title: translate({
+      id: 'data.resources.site.namecheap.title',
+      message: 'Namecheap',
+    }),
+    href: 'https://www.namecheap.com',
+    description: translate({
+      id: 'data.resources.site.namecheap.description',
+      message: 'Domain registration, hosting, and web security services',
+    }),
+  },
+  namesilo: {
+    title: translate({
+      id: 'data.resources.site.namesilo.title',
+      message: 'NameSilo',
+    }),
+    href: 'https://www.namesilo.com',
+    description: translate({
+      id: 'data.resources.site.namesilo.description',
+      message: 'Domain registration and portfolio management service',
+    }),
+  },
+  expressvpn: {
+    title: translate({
+      id: 'data.resources.site.expressvpn.title',
+      message: 'ExpressVPN',
+    }),
+    href: 'https://www.expressvpn.com',
+    description: translate({
+      id: 'data.resources.site.expressvpn.description',
+      message: 'Commercial VPN service for encrypted network access',
+    }),
+  },
+  nordvpn: {
+    title: translate({
+      id: 'data.resources.site.nordvpn.title',
+      message: 'NordVPN',
+    }),
+    href: 'https://nordvpn.com',
+    description: translate({
+      id: 'data.resources.site.nordvpn.description',
+      message: 'Commercial VPN service for privacy and secure access',
+    }),
+  },
+  astrill: {
+    title: translate({
+      id: 'data.resources.site.astrill.title',
+      message: 'Astrill VPN',
+    }),
+    href: 'https://www.astrill.com',
+    description: translate({
+      id: 'data.resources.site.astrill.description',
+      message: 'Commercial VPN service with multi-protocol clients',
+    }),
+  },
+  rainyun: {
+    title: translate({
+      id: 'data.resources.site.rainyun.title',
+      message: 'Rainyun',
+    }),
+    href: 'https://www.rainyun.com',
+    description: translate({
+      id: 'data.resources.site.rainyun.description',
+      message: 'Chinese cloud hosting and infrastructure provider',
+    }),
+  },
+  nexitally: {
+    title: translate({
+      id: 'data.resources.site.nexitally.title',
+      message: 'Nexitally',
+    }),
+    href: 'https://nxonearth.com',
+    description: translate({
+      id: 'data.resources.site.nexitally.description',
+      message: 'Subscription service for multi-region network proxy access',
+    }),
+  },
+  taishanNet: {
+    title: translate({
+      id: 'data.resources.site.taishanNet.title',
+      message: 'TaiShan Net',
+    }),
+    href: 'https://taishan.pro',
+    description: translate({
+      id: 'data.resources.site.taishanNet.description',
+      message: 'Network proxy service focused on cross-region connectivity',
+    }),
+  },
+  github: {
+    title: translate({
+      id: 'data.resources.site.github.title',
+      message: 'GitHub',
+    }),
+    href: 'https://github.com',
+    description: translate({
+      id: 'data.resources.site.github.description',
+      message: 'Platform for Git repositories and collaborative development',
+    }),
+  },
+  githubCodespaces: {
+    title: translate({
+      id: 'data.resources.site.githubCodespaces.title',
+      message: 'GitHub Codespaces',
+    }),
+    href: 'https://github.com/codespaces',
+    description: translate({
+      id: 'data.resources.site.githubCodespaces.description',
+      message: 'Cloud development environments integrated with GitHub',
+    }),
+  },
+  stackblitz: {
+    title: translate({
+      id: 'data.resources.site.stackblitz.title',
+      message: 'StackBlitz',
+    }),
+    href: 'https://stackblitz.com',
+    description: translate({
+      id: 'data.resources.site.stackblitz.description',
+      message: 'Browser-based IDE and instant web development environments',
+    }),
+  },
+  vscodeWeb: {
+    title: translate({
+      id: 'data.resources.site.vscodeWeb.title',
+      message: 'Visual Studio Code for the Web',
+    }),
+    href: 'https://vscode.dev',
+    description: translate({
+      id: 'data.resources.site.vscodeWeb.description',
+      message: 'Browser edition of Visual Studio Code',
+    }),
+  },
+  sandpack: {
+    title: translate({
+      id: 'data.resources.site.sandpack.title',
+      message: 'Sandpack',
+    }),
+    href: 'https://sandpack.codesandbox.io',
+    description: translate({
+      id: 'data.resources.site.sandpack.description',
+      message: 'React toolkit for embeddable live code editors',
+    }),
+  },
+  compilerExplorer: {
+    title: translate({
+      id: 'data.resources.site.compilerExplorer.title',
+      message: 'Compiler Explorer',
+    }),
+    href: 'https://godbolt.org',
+    description: translate({
+      id: 'data.resources.site.compilerExplorer.description',
+      message: 'Interactive compiler explorer with assembly output',
+    }),
+  },
+  onlinegdb: {
+    title: translate({
+      id: 'data.resources.site.onlinegdb.title',
+      message: 'OnlineGDB',
+    }),
+    href: 'https://www.onlinegdb.com/online_python_compiler',
+    description: translate({
+      id: 'data.resources.site.onlinegdb.description',
+      message: 'Browser-based Python editor and compiler',
+    }),
+  },
+  pycharm: {
+    title: translate({
+      id: 'data.resources.site.pycharm.title',
+      message: 'PyCharm',
+    }),
+    href: 'https://www.jetbrains.com/pycharm',
+    description: translate({
+      id: 'data.resources.site.pycharm.description',
+      message: 'JetBrains IDE for Python development',
+    }),
+  },
+  jupyter: {
+    title: translate({
+      id: 'data.resources.site.jupyter.title',
+      message: 'Project Jupyter',
+    }),
+    href: 'https://jupyter.org',
+    description: translate({
+      id: 'data.resources.site.jupyter.description',
+      message: 'Interactive notebooks and computing environment',
+    }),
+  },
+  cppreference: {
+    title: translate({
+      id: 'data.resources.site.cppreference.title',
+      message: 'cppreference',
+    }),
+    href: 'https://cppreference.com',
+    description: translate({
+      id: 'data.resources.site.cppreference.description',
+      message: 'Reference for C, C++, and their standard libraries',
+    }),
+  },
+  shields: {
+    title: translate({
+      id: 'data.resources.site.shields.title',
+      message: 'Shields.io',
+    }),
+    href: 'https://shields.io',
+    description: translate({
+      id: 'data.resources.site.shields.description',
+      message: 'Service for concise and consistent project badges',
+    }),
+  },
+  tsinghuaMirror: {
+    title: translate({
+      id: 'data.resources.site.tsinghuaMirror.title',
+      message: 'Tsinghua Open Source Mirror',
+    }),
+    href: 'https://mirrors.tuna.tsinghua.edu.cn',
+    description: translate({
+      id: 'data.resources.site.tsinghuaMirror.description',
+      message: 'Open-source software and Linux distribution mirror',
+    }),
+  },
+  gitstarRanking: {
+    title: translate({
+      id: 'data.resources.site.gitstarRanking.title',
+      message: 'Gitstar Ranking',
+    }),
+    href: 'https://gitstar-ranking.com',
+    description: translate({
+      id: 'data.resources.site.gitstarRanking.description',
+      message: 'Rankings of GitHub users, organizations, and repositories',
+    }),
+  },
+  committersTop: {
+    title: translate({
+      id: 'data.resources.site.committersTop.title',
+      message: 'committers.top',
+    }),
+    href: 'https://committers.top',
+    description: translate({
+      id: 'data.resources.site.committersTop.description',
+      message: 'Rankings of active GitHub contributors by location',
+    }),
+  },
+  react: {
+    title: translate({
+      id: 'data.resources.site.react.title',
+      message: 'React',
+    }),
+    href: 'https://react.dev',
+    description: translate({
+      id: 'data.resources.site.react.description',
+      message: 'Library for web and native user interfaces',
+    }),
+  },
+  wordpress: {
+    title: translate({
+      id: 'data.resources.site.wordpress.title',
+      message: 'WordPress',
+    }),
+    href: 'https://wordpress.org',
+    description: translate({
+      id: 'data.resources.site.wordpress.description',
+      message: 'Open-source publishing platform and content management system',
+    }),
+  },
+  docusaurus: {
+    title: translate({
+      id: 'data.resources.site.docusaurus.title',
+      message: 'Docusaurus',
+    }),
+    href: 'https://docusaurus.io',
+    description: translate({
+      id: 'data.resources.site.docusaurus.description',
+      message: 'React-based static site generator for documentation',
+    }),
+  },
+  vitepress: {
+    title: translate({
+      id: 'data.resources.site.vitepress.title',
+      message: 'VitePress',
+    }),
+    href: 'https://vitepress.dev',
+    description: translate({
+      id: 'data.resources.site.vitepress.description',
+      message: 'Vite and Vue powered static site generator',
+    }),
+  },
+  vuepress: {
+    title: translate({
+      id: 'data.resources.site.vuepress.title',
+      message: 'VuePress',
+    }),
+    href: 'https://vuepress.vuejs.org',
+    description: translate({
+      id: 'data.resources.site.vuepress.description',
+      message: 'Vue-powered static site generator',
+    }),
+  },
+  materialMkdocs: {
+    title: translate({
+      id: 'data.resources.site.materialMkdocs.title',
+      message: 'Material for MkDocs',
+    }),
+    href: 'https://squidfunk.github.io/mkdocs-material',
+    description: translate({
+      id: 'data.resources.site.materialMkdocs.description',
+      message: 'Material Design documentation theme for MkDocs',
+    }),
+  },
+  hexo: {
+    title: translate({
+      id: 'data.resources.site.hexo.title',
+      message: 'Hexo',
+    }),
+    href: 'https://hexo.io',
+    description: translate({
+      id: 'data.resources.site.hexo.description',
+      message: 'Node.js framework for fast static blogs',
+    }),
+  },
+  arxiv: {
+    title: translate({
+      id: 'data.resources.site.arxiv.title',
+      message: 'arXiv',
+    }),
+    href: 'https://arxiv.org',
+    description: translate({
+      id: 'data.resources.site.arxiv.description',
+      message: 'Open-access repository for scholarly preprints',
+    }),
+  },
+  googleScholar: {
+    title: translate({
+      id: 'data.resources.site.googleScholar.title',
+      message: 'Google Scholar',
+    }),
+    href: 'https://scholar.google.com',
+    description: translate({
+      id: 'data.resources.site.googleScholar.description',
+      message: 'Search engine for scholarly literature',
+    }),
+  },
+  nature: {
+    title: translate({
+      id: 'data.resources.site.nature.title',
+      message: 'Nature',
+    }),
+    href: 'https://www.nature.com',
+    description: translate({
+      id: 'data.resources.site.nature.description',
+      message: 'Multidisciplinary peer-reviewed science journal',
+    }),
+  },
+  science: {
+    title: translate({
+      id: 'data.resources.site.science.title',
+      message: 'Science',
+    }),
+    href: 'https://www.science.org/journal/science',
+    description: translate({
+      id: 'data.resources.site.science.description',
+      message: 'Multidisciplinary peer-reviewed journal from AAAS',
+    }),
+  },
+  overleaf: {
+    title: translate({
+      id: 'data.resources.site.overleaf.title',
+      message: 'Overleaf',
+    }),
+    href: 'https://www.overleaf.com',
+    description: translate({
+      id: 'data.resources.site.overleaf.description',
+      message: 'Collaborative online LaTeX writing environment',
+    }),
+  },
+  mitOcw: {
+    title: translate({
+      id: 'data.resources.site.mitOcw.title',
+      message: 'MIT OpenCourseWare',
+    }),
+    href: 'https://ocw.mit.edu',
+    description: translate({
+      id: 'data.resources.site.mitOcw.description',
+      message: 'Free course materials published by MIT',
+    }),
+  },
+  coursera: {
+    title: translate({
+      id: 'data.resources.site.coursera.title',
+      message: 'Coursera',
+    }),
+    href: 'https://www.coursera.org',
+    description: translate({
+      id: 'data.resources.site.coursera.description',
+      message: 'Online courses, certificates, and degrees from institutions',
+    }),
+  },
+  edx: {
+    title: translate({
+      id: 'data.resources.site.edx.title',
+      message: 'edX',
+    }),
+    href: 'https://www.edx.org',
+    description: translate({
+      id: 'data.resources.site.edx.description',
+      message: 'Online courses and credentials from universities and organizations',
+    }),
+  },
+  deeplearningAi: {
+    title: translate({
+      id: 'data.resources.site.deeplearningAi.title',
+      message: 'DeepLearning.AI',
+    }),
+    href: 'https://www.deeplearning.ai',
+    description: translate({
+      id: 'data.resources.site.deeplearningAi.description',
+      message: 'Courses and educational programs for artificial intelligence',
+    }),
+  },
+  classCentral: {
+    title: translate({
+      id: 'data.resources.site.classCentral.title',
+      message: 'Class Central',
+    }),
+    href: 'https://www.classcentral.com',
+    description: translate({
+      id: 'data.resources.site.classCentral.description',
+      message: 'Search and review platform for online courses',
+    }),
+  },
+  codeforces: {
+    title: translate({
+      id: 'data.resources.site.codeforces.title',
+      message: 'Codeforces',
+    }),
+    href: 'https://codeforces.com',
+    description: translate({
+      id: 'data.resources.site.codeforces.description',
+      message: 'Competitive programming contests, problems, and ratings',
+    }),
+  },
+  atcoder: {
+    title: translate({
+      id: 'data.resources.site.atcoder.title',
+      message: 'AtCoder',
+    }),
+    href: 'https://atcoder.jp',
+    description: translate({
+      id: 'data.resources.site.atcoder.description',
+      message: 'Online programming contests for all skill levels',
+    }),
+  },
+  virtualJudge: {
+    title: translate({
+      id: 'data.resources.site.virtualJudge.title',
+      message: 'Virtual Judge',
+    }),
+    href: 'https://vjudge.net',
+    description: translate({
+      id: 'data.resources.site.virtualJudge.description',
+      message: 'Virtual judge aggregating problems from multiple platforms',
+    }),
+  },
+  codeGolf: {
+    title: translate({
+      id: 'data.resources.site.codeGolf.title',
+      message: 'Code Golf',
+    }),
+    href: 'https://code.golf',
+    description: translate({
+      id: 'data.resources.site.codeGolf.description',
+      message: 'Programming challenges focused on the shortest solutions',
+    }),
+  },
+  bigOCheatSheet: {
+    title: translate({
+      id: 'data.resources.site.bigOCheatSheet.title',
+      message: 'Big-O Algorithm Complexity Cheat Sheet',
+    }),
+    href: 'https://www.bigocheatsheet.com',
+    description: translate({
+      id: 'data.resources.site.bigOCheatSheet.description',
+      message: 'Reference for common data-structure and algorithm complexities',
+    }),
+  },
+  luogu: {
+    title: translate({
+      id: 'data.resources.site.luogu.title',
+      message: 'Luogu',
+    }),
+    href: 'https://www.luogu.com.cn',
+    description: translate({
+      id: 'data.resources.site.luogu.description',
+      message: 'Chinese competitive programming platform and problem archive',
+    }),
+  },
+  oiWiki: {
+    title: translate({
+      id: 'data.resources.site.oiWiki.title',
+      message: 'OI Wiki',
+    }),
+    href: 'https://oi-wiki.org',
+    description: translate({
+      id: 'data.resources.site.oiWiki.description',
+      message: 'Open knowledge base for competitive programming',
+    }),
+  },
+  oierdb: {
+    title: translate({
+      id: 'data.resources.site.oierdb.title',
+      message: 'OIerDb NG',
+    }),
+    href: 'https://oier.baoshuo.dev',
+    description: translate({
+      id: 'data.resources.site.oierdb.description',
+      message: 'Database of Chinese informatics competition participants',
+    }),
+  },
+  originalProblemChecker: {
+    title: translate({
+      id: 'data.resources.site.originalProblemChecker.title',
+      message: 'Original Problem Checker',
+    }),
+    href: 'https://yuantiji.ac/?lang=zh',
+    description: translate({
+      id: 'data.resources.site.originalProblemChecker.description',
+      message: 'Tool for checking whether a contest problem is original',
+    }),
+  },
+  luoguSaver: {
+    title: translate({
+      id: 'data.resources.site.luoguSaver.title',
+      message: 'Luogu Saver',
+    }),
+    href: 'https://www.luogu.me',
+    description: translate({
+      id: 'data.resources.site.luoguSaver.description',
+      message: 'Archive for preserved Luogu problems and solutions',
+    }),
+  },
+  algorithmDuels: {
+    title: translate({
+      id: 'data.resources.site.algorithmDuels.title',
+      message: 'Algorithm Duels Online',
+    }),
+    href: 'https://algorithm-duels.online',
+    description: translate({
+      id: 'data.resources.site.algorithmDuels.description',
+      message: 'Team-based head-to-head contests using Codeforces problems',
+    }),
+  },
+  solutionFormatter: {
+    title: translate({
+      id: 'data.resources.site.solutionFormatter.title',
+      message: 'Solution Formatter',
+    }),
+    href: 'https://tj.imken.dev',
+    description: translate({
+      id: 'data.resources.site.solutionFormatter.description',
+      message: 'Formatter for Luogu solution articles and source code',
+    }),
+  },
+  csacademyDiff: {
+    title: translate({
+      id: 'data.resources.site.csacademyDiff.title',
+      message: 'CS Academy Diff Tool',
+    }),
+    href: 'https://csacademy.com/app/diffing_tool/',
+    description: translate({
+      id: 'data.resources.site.csacademyDiff.description',
+      message: 'Browser tool for comparing text outputs',
+    }),
+  },
+  csacademyGraph: {
+    title: translate({
+      id: 'data.resources.site.csacademyGraph.title',
+      message: 'CS Academy Graph Editor',
+    }),
+    href: 'https://csacademy.com/app/graph_editor/',
+    description: translate({
+      id: 'data.resources.site.csacademyGraph.description',
+      message: 'Interactive editor for creating and exporting graphs',
+    }),
+  },
+  wolframAlpha: {
+    title: translate({
+      id: 'data.resources.site.wolframAlpha.title',
+      message: 'Wolfram|Alpha',
+    }),
+    href: 'https://www.wolframalpha.com',
+    description: translate({
+      id: 'data.resources.site.wolframAlpha.description',
+      message: 'Computational knowledge engine for mathematics and science',
+    }),
+  },
+  desmos: {
+    title: translate({
+      id: 'data.resources.site.desmos.title',
+      message: 'Desmos',
+    }),
+    href: 'https://www.desmos.com',
+    description: translate({
+      id: 'data.resources.site.desmos.description',
+      message: 'Interactive graphing, geometry, and scientific calculators',
+    }),
+  },
+  geogebra: {
+    title: translate({
+      id: 'data.resources.site.geogebra.title',
+      message: 'GeoGebra',
+    }),
+    href: 'https://www.geogebra.org',
+    description: translate({
+      id: 'data.resources.site.geogebra.description',
+      message: 'Interactive tools for geometry, algebra, and calculus',
+    }),
+  },
+  numpy: {
+    title: translate({
+      id: 'data.resources.site.numpy.title',
+      message: 'NumPy',
+    }),
+    href: 'https://numpy.org',
+    description: translate({
+      id: 'data.resources.site.numpy.description',
+      message: 'Core Python library for numerical array computing',
+    }),
+  },
+  oeis: {
+    title: translate({
+      id: 'data.resources.site.oeis.title',
+      message: 'OEIS',
+    }),
+    href: 'https://oeis.org',
+    description: translate({
+      id: 'data.resources.site.oeis.description',
+      message: 'Searchable encyclopedia of integer sequences',
+    }),
+  },
+  latexLive: {
+    title: translate({
+      id: 'data.resources.site.latexLive.title',
+      message: 'LaTeXLive',
+    }),
+    href: 'https://www.latexlive.com',
+    description: translate({
+      id: 'data.resources.site.latexLive.description',
+      message: 'Online LaTeX formula editor with recognition and export',
+    }),
+  },
+  recraft: {
+    title: translate({
+      id: 'data.resources.site.recraft.title',
+      message: 'Recraft',
+    }),
+    href: 'https://www.recraft.ai',
+    description: translate({
+      id: 'data.resources.site.recraft.description',
+      message: 'AI design platform for raster and vector image generation',
+    }),
+  },
+  quiverAi: {
+    title: translate({
+      id: 'data.resources.site.quiverAi.title',
+      message: 'QuiverAI',
+    }),
+    href: 'https://quiver.ai',
+    description: translate({
+      id: 'data.resources.site.quiverAi.description',
+      message: 'AI workspace for editable SVG creation and animation',
+    }),
+  },
+  openCut: {
+    title: translate({
+      id: 'data.resources.site.openCut.title',
+      message: 'OpenCut',
+    }),
+    href: 'https://opencut.app',
+    description: translate({
+      id: 'data.resources.site.openCut.description',
+      message: 'Open-source browser-based video editor',
+    }),
+  },
+  multDev: {
+    title: translate({
+      id: 'data.resources.site.multDev.title',
+      message: 'Mult.dev',
+    }),
+    href: 'https://mult.dev',
+    description: translate({
+      id: 'data.resources.site.multDev.description',
+      message: 'Tool for animated travel maps and route videos',
+    }),
+  },
+  codeSnap: {
+    title: translate({
+      id: 'data.resources.site.codeSnap.title',
+      message: 'CodeSnap',
+    }),
+    href: 'https://codesnap.dev',
+    description: translate({
+      id: 'data.resources.site.codeSnap.description',
+      message: 'Editor for creating shareable code images',
+    }),
+  },
+  colorable: {
+    title: translate({
+      id: 'data.resources.site.colorable.title',
+      message: 'Colorable',
+    }),
+    href: 'https://colorable.jxnblk.com',
+    description: translate({
+      id: 'data.resources.site.colorable.description',
+      message: 'Tool for checking and tuning color contrast',
+    }),
+  },
+  skillIcons: {
+    title: translate({
+      id: 'data.resources.site.skillIcons.title',
+      message: 'Skill Icons',
+    }),
+    href: 'https://skillicons.dev',
+    description: translate({
+      id: 'data.resources.site.skillIcons.description',
+      message: 'Embeddable icons for programming languages and tools',
+    }),
+  },
+  brandColors: {
+    title: translate({
+      id: 'data.resources.site.brandColors.title',
+      message: 'BrandColors',
+    }),
+    href: 'https://brandcolors.net',
+    description: translate({
+      id: 'data.resources.site.brandColors.description',
+      message: 'Reference library of official brand color codes',
+    }),
+  },
+  pixelMap: {
+    title: translate({
+      id: 'data.resources.site.pixelMap.title',
+      message: 'Pixel Map Generator',
+    }),
+    href: 'https://pixelmap.amcharts.com',
+    description: translate({
+      id: 'data.resources.site.pixelMap.description',
+      message: 'Generator for pixel-style maps and multiple export formats',
+    }),
+  },
+  bentoGrids: {
+    title: translate({
+      id: 'data.resources.site.bentoGrids.title',
+      message: 'BentoGrids',
+    }),
+    href: 'https://bentogrids.com',
+    description: translate({
+      id: 'data.resources.site.bentoGrids.description',
+      message: 'Curated gallery of bento-style interface designs',
+    }),
+  },
+  makerworld: {
+    title: translate({
+      id: 'data.resources.site.makerworld.title',
+      message: 'MakerWorld',
+    }),
+    href: 'https://makerworld.com.cn',
+    description: translate({
+      id: 'data.resources.site.makerworld.description',
+      message: 'Community platform for 3D printing models',
+    }),
+  },
+  speedtest: {
+    title: translate({
+      id: 'data.resources.site.speedtest.title',
+      message: 'Speedtest by Ookla',
+    }),
+    href: 'https://www.speedtest.net',
+    description: translate({
+      id: 'data.resources.site.speedtest.description',
+      message: 'Internet connection speed measurement by Ookla',
+    }),
+  },
+  netCoffee: {
+    title: translate({
+      id: 'data.resources.site.netCoffee.title',
+      message: 'Net.Coffee',
+    }),
+    href: 'https://ip.net.coffee',
+    description: translate({
+      id: 'data.resources.site.netCoffee.description',
+      message: 'IP address, routing, and connectivity diagnostics',
+    }),
+  },
+  passwordMonster: {
+    title: translate({
+      id: 'data.resources.site.passwordMonster.title',
+      message: 'Password Monster',
+    }),
+    href: 'https://passwordmonster.com',
+    description: translate({
+      id: 'data.resources.site.passwordMonster.description',
+      message: 'Browser tool for estimating password strength',
+    }),
+  },
+  volumeshader: {
+    title: translate({
+      id: 'data.resources.site.volumeshader.title',
+      message: 'volumeshader_bm',
+    }),
+    href: 'https://cznull.github.io/vsbm',
+    description: translate({
+      id: 'data.resources.site.volumeshader.description',
+      message: 'WebGL volumetric shader performance benchmark',
+    }),
+  },
+  fishBowl: {
+    title: translate({
+      id: 'data.resources.site.fishBowl.title',
+      message: 'HTML5 Fish Bowl',
+    }),
+    href: 'https://eucscore.com/demos/HTML5-Fishbowl/index.html',
+    description: translate({
+      id: 'data.resources.site.fishBowl.description',
+      message: 'HTML5 graphics benchmark with animated fish',
+    }),
+  },
+  webglAquarium: {
+    title: translate({
+      id: 'data.resources.site.webglAquarium.title',
+      message: 'WebGL Aquarium',
+    }),
+    href: 'https://webglsamples.org/aquarium/aquarium.html',
+    description: translate({
+      id: 'data.resources.site.webglAquarium.description',
+      message: 'WebGL rendering benchmark with an animated aquarium',
+    }),
+  },
+  clickSpeedTest: {
+    title: translate({
+      id: 'data.resources.site.clickSpeedTest.title',
+      message: 'Click Speed Test',
+    }),
+    href: 'https://clickspeedtest.com',
+    description: translate({
+      id: 'data.resources.site.clickSpeedTest.description',
+      message: 'Timed clicks-per-second measurement tool',
+    }),
+  },
+  aRealMe: {
+    title: translate({
+      id: 'data.resources.site.aRealMe.title',
+      message: 'A Real Me',
+    }),
+    href: 'https://www.arealme.com',
+    description: translate({
+      id: 'data.resources.site.aRealMe.description',
+      message: 'Collection of personality, ability, and knowledge tests',
+    }),
+  },
+  politicalOrientation: {
+    title: translate({
+      id: 'data.resources.site.politicalOrientation.title',
+      message: 'Political Orientation Test',
+    }),
+    href: 'https://luckyfuy.top/compass/',
+    description: translate({
+      id: 'data.resources.site.politicalOrientation.description',
+      message: 'Questionnaire for exploring political orientation',
+    }),
+  },
+  youtube: {
+    title: translate({
+      id: 'data.resources.site.youtube.title',
+      message: 'YouTube',
+    }),
+    href: 'https://www.youtube.com',
+    description: translate({
+      id: 'data.resources.site.youtube.description',
+      message: 'Video hosting, streaming, and creator platform',
+    }),
+  },
+  x: {
+    title: translate({
+      id: 'data.resources.site.x.title',
+      message: 'X',
+    }),
+    href: 'https://x.com',
+    description: translate({
+      id: 'data.resources.site.x.description',
+      message: 'Real-time social network for public conversations',
+    }),
+  },
+  facebook: {
+    title: translate({
+      id: 'data.resources.site.facebook.title',
+      message: 'Facebook',
+    }),
+    href: 'https://www.facebook.com',
+    description: translate({
+      id: 'data.resources.site.facebook.description',
+      message: 'Social network for people, groups, and organizations',
+    }),
+  },
+  telegramWeb: {
+    title: translate({
+      id: 'data.resources.site.telegramWeb.title',
+      message: 'Telegram Web',
+    }),
+    href: 'https://web.telegram.org',
+    description: translate({
+      id: 'data.resources.site.telegramWeb.description',
+      message: 'Browser client for Telegram messaging',
+    }),
+  },
+  polymarket: {
+    title: translate({
+      id: 'data.resources.site.polymarket.title',
+      message: 'Polymarket',
+    }),
+    href: 'https://polymarket.com',
+    description: translate({
+      id: 'data.resources.site.polymarket.description',
+      message: 'Prediction market based on tradable event contracts',
+    }),
+  },
+  bilibili: {
+    title: translate({
+      id: 'data.resources.site.bilibili.title',
+      message: 'bilibili',
+    }),
+    href: 'https://www.bilibili.com',
+    description: translate({
+      id: 'data.resources.site.bilibili.description',
+      message: 'Chinese video platform and interest-based community',
+    }),
+  },
+  crazygames: {
+    title: translate({
+      id: 'data.resources.site.crazygames.title',
+      message: 'CrazyGames',
+    }),
+    href: 'https://www.crazygames.com',
+    description: translate({
+      id: 'data.resources.site.crazygames.description',
+      message: 'Catalog of free browser games',
+    }),
+  },
+  freeFocusGames: {
+    title: translate({
+      id: 'data.resources.site.freeFocusGames.title',
+      message: 'FreeFocusGames',
+    }),
+    href: 'https://www.freefocusgames.com',
+    description: translate({
+      id: 'data.resources.site.freeFocusGames.description',
+      message: 'Browser games for attention and memory practice',
+    }),
+  },
+  ioGames: {
+    title: translate({
+      id: 'data.resources.site.ioGames.title',
+      message: '.io Games',
+    }),
+    href: 'https://iogames.space',
+    description: translate({
+      id: 'data.resources.site.ioGames.description',
+      message: 'Directory of multiplayer .io browser games',
+    }),
+  },
+  nealFun: {
+    title: translate({
+      id: 'data.resources.site.nealFun.title',
+      message: 'Neal.fun',
+    }),
+    href: 'https://neal.fun',
+    description: translate({
+      id: 'data.resources.site.nealFun.description',
+      message: 'Collection of interactive web games and visual experiments',
+    }),
+  },
+  lichess: {
+    title: translate({
+      id: 'data.resources.site.lichess.title',
+      message: 'Lichess',
+    }),
+    href: 'https://lichess.org',
+    description: translate({
+      id: 'data.resources.site.lichess.description',
+      message: 'Free and open-source online chess platform',
+    }),
+  },
+  generalsIo: {
+    title: translate({
+      id: 'data.resources.site.generalsIo.title',
+      message: 'generals.io',
+    }),
+    href: 'https://generals.io',
+    description: translate({
+      id: 'data.resources.site.generalsIo.description',
+      message: 'Multiplayer territory-control strategy game',
+    }),
+  },
+  florrIo: {
+    title: translate({
+      id: 'data.resources.site.florrIo.title',
+      message: 'florr.io',
+    }),
+    href: 'https://florr.io',
+    description: translate({
+      id: 'data.resources.site.florrIo.description',
+      message: 'Multiplayer survival game built around flowers and petals',
+    }),
+  },
+  tilemanIo: {
+    title: translate({
+      id: 'data.resources.site.tilemanIo.title',
+      message: 'TileMan.io',
+    }),
+    href: 'https://tileman.io',
+    description: translate({
+      id: 'data.resources.site.tilemanIo.description',
+      message: 'Multiplayer territory-capture game',
+    }),
+  },
+  yorgIo: {
+    title: translate({
+      id: 'data.resources.site.yorgIo.title',
+      message: 'YORG.io',
+    }),
+    href: 'https://yorg.io',
+    description: translate({
+      id: 'data.resources.site.yorgIo.description',
+      message: 'Supply-chain tower defense game against zombies',
+    }),
+  },
+  bloxdIo: {
+    title: translate({
+      id: 'data.resources.site.bloxdIo.title',
+      message: 'Bloxd.io',
+    }),
+    href: 'https://bloxd.io',
+    description: translate({
+      id: 'data.resources.site.bloxdIo.description',
+      message: 'Multiplayer block-building and minigame platform',
+    }),
+  },
+  wplace: {
+    title: translate({
+      id: 'data.resources.site.wplace.title',
+      message: 'Wplace',
+    }),
+    href: 'https://wplace.live',
+    description: translate({
+      id: 'data.resources.site.wplace.description',
+      message: 'Collaborative pixel canvas on a world map',
+    }),
+  },
+  sandspiel: {
+    title: translate({
+      id: 'data.resources.site.sandspiel.title',
+      message: 'sandspiel',
+    }),
+    href: 'https://sandspiel.club',
+    description: translate({
+      id: 'data.resources.site.sandspiel.description',
+      message: 'Falling-sand simulation and creative sandbox',
+    }),
+  },
+  kiomet: {
+    title: translate({
+      id: 'data.resources.site.kiomet.title',
+      message: 'Kiomet',
+    }),
+    href: 'https://kiomet.com',
+    description: translate({
+      id: 'data.resources.site.kiomet.description',
+      message: 'Multiplayer real-time territory strategy game',
+    }),
+  },
+  linkr: {
+    title: translate({
+      id: 'data.resources.site.linkr.title',
+      message: 'LINKR',
+    }),
+    href: 'https://www.playlinkr.net',
+    description: translate({
+      id: 'data.resources.site.linkr.description',
+      message: 'Daily puzzle for connecting all points',
+    }),
+  },
+  diepIo: {
+    title: translate({
+      id: 'data.resources.site.diepIo.title',
+      message: 'diep.io',
+    }),
+    href: 'https://diep.io',
+    description: translate({
+      id: 'data.resources.site.diepIo.description',
+      message: 'Multiplayer tank arena game',
+    }),
+  },
+  gridspech: {
+    title: translate({
+      id: 'data.resources.site.gridspech.title',
+      message: 'Gridspech',
+    }),
+    href: 'https://gridspech.baublejar.com',
+    description: translate({
+      id: 'data.resources.site.gridspech.description',
+      message: 'Rule-discovery puzzle with grids and symbols',
+    }),
+  },
+  evolutionOfTrust: {
+    title: translate({
+      id: 'data.resources.site.evolutionOfTrust.title',
+      message: 'The Evolution of Trust',
+    }),
+    href: 'https://dccxi.com/trust/',
+    description: translate({
+      id: 'data.resources.site.evolutionOfTrust.description',
+      message: 'Interactive game-theory explainer about trust',
+    }),
+  },
+  tuxun: {
+    title: translate({
+      id: 'data.resources.site.tuxun.title',
+      message: 'Tuxun',
+    }),
+    href: 'https://tuxun.fun',
+    description: translate({
+      id: 'data.resources.site.tuxun.description',
+      message: 'Photo-based geography guessing game',
+    }),
+  },
+  guessSalt: {
+    title: translate({
+      id: 'data.resources.site.guessSalt.title',
+      message: 'Guess Salt',
+    }),
+    href: 'https://xiaoce.fun',
+    description: translate({
+      id: 'data.resources.site.guessSalt.description',
+      message: 'Collection of daily, quiz, and multiplayer guessing games',
+    }),
+  },
+  nameArena: {
+    title: translate({
+      id: 'data.resources.site.nameArena.title',
+      message: 'Name Arena',
+    }),
+    href: 'https://namerena.github.io',
+    description: translate({
+      id: 'data.resources.site.nameArena.description',
+      message: 'Deterministic text battles generated from names',
+    }),
+  },
+  boardGameCollection: {
+    title: translate({
+      id: 'data.resources.site.boardGameCollection.title',
+      message: 'Board Game Collection',
+    }),
+    href: 'https://game.hullqin.cn',
+    description: translate({
+      id: 'data.resources.site.boardGameCollection.description',
+      message: 'Collection of multiplayer digital board games',
+    }),
+  },
+  apple: {
+    title: translate({
+      id: 'data.resources.site.apple.title',
+      message: 'Apple',
+    }),
+    href: 'https://www.apple.com',
+    description: translate({
+      id: 'data.resources.site.apple.description',
+      message: 'Consumer technology products, services, and support',
+    }),
+  },
+  appleSpecs: {
+    title: translate({
+      id: 'data.resources.site.appleSpecs.title',
+      message: 'Apple Product Specs Hub',
+    }),
+    href: 'https://hubweb.cn',
+    description: translate({
+      id: 'data.resources.site.appleSpecs.description',
+      message: 'Reference for Apple device and chip specifications',
+    }),
+  },
+  socpk: {
+    title: translate({
+      id: 'data.resources.site.socpk.title',
+      message: 'SOCPK',
+    }),
+    href: 'https://socpk.com',
+    description: translate({
+      id: 'data.resources.site.socpk.description',
+      message: 'Rankings and comparisons for mobile system-on-chip performance',
+    }),
+  },
+  digitalLychee: {
+    title: translate({
+      id: 'data.resources.site.digitalLychee.title',
+      message: 'Digital Lychee',
+    }),
+    href: 'https://lizhi.shop',
+    description: translate({
+      id: 'data.resources.site.digitalLychee.description',
+      message: 'Chinese storefront for licensed desktop and mobile software',
+    }),
+  },
+  classWidgets: {
+    title: translate({
+      id: 'data.resources.site.classWidgets.title',
+      message: 'Class Widgets 2',
+    }),
+    href: 'https://github.com/RinLit-233-shiroko/Class-Widgets-2',
+    description: translate({
+      id: 'data.resources.site.classWidgets.description',
+      message: 'Next-generation open-source desktop timetable application',
+    }),
+  },
+  eClassroomTerminator: {
+    title: translate({
+      id: 'data.resources.site.eClassroomTerminator.title',
+      message: 'E-Classroom Terminator',
+    }),
+    href: 'https://dzjszjz.nkxingxh.top',
+    description: translate({
+      id: 'data.resources.site.eClassroomTerminator.description',
+      message: 'Windows utility for inspecting and lifting classroom-computer restrictions',
+    }),
+  },
+  googleTranslate: {
+    title: translate({
+      id: 'data.resources.site.googleTranslate.title',
+      message: 'Google Translate',
+    }),
+    href: 'https://translate.google.com',
+    description: translate({
+      id: 'data.resources.site.googleTranslate.description',
+      message: 'Translation service for text, documents, images, and websites',
+    }),
+  },
+  ilovepdf: {
+    title: translate({
+      id: 'data.resources.site.ilovepdf.title',
+      message: 'iLovePDF',
+    }),
+    href: 'https://www.ilovepdf.com',
+    description: translate({
+      id: 'data.resources.site.ilovepdf.description',
+      message: 'Online toolkit for editing and converting PDF files',
+    }),
+  },
+  qrCodeGenerator: {
+    title: translate({
+      id: 'data.resources.site.qrCodeGenerator.title',
+      message: 'QR Code Generator',
+    }),
+    href: 'https://www.qr-code-generator.com',
+    description: translate({
+      id: 'data.resources.site.qrCodeGenerator.description',
+      message: 'Customizable QR code creation and export tool',
+    }),
+  },
+  forensically: {
+    title: translate({
+      id: 'data.resources.site.forensically.title',
+      message: 'Forensically',
+    }),
+    href: 'https://29a.ch/photo-forensics',
+    description: translate({
+      id: 'data.resources.site.forensically.description',
+      message: 'Browser suite for digital image forensics',
+    }),
+  },
+  passportIndex: {
+    title: translate({
+      id: 'data.resources.site.passportIndex.title',
+      message: 'Passport Index',
+    }),
+    href: 'https://www.passportindex.org',
+    description: translate({
+      id: 'data.resources.site.passportIndex.description',
+      message: 'Interactive passport rankings and visa-access reference',
+    }),
+  },
+  noteMs: {
+    title: translate({
+      id: 'data.resources.site.noteMs.title',
+      message: 'Note.ms',
+    }),
+    href: 'https://note.ms',
+    description: translate({
+      id: 'data.resources.site.noteMs.description',
+      message: 'URL-addressed browser notes for quick sharing',
+    }),
+  },
+  normalSpeech: {
+    title: translate({
+      id: 'data.resources.site.normalSpeech.title',
+      message: 'Can You Speak Normally?',
+    }),
+    href: 'https://lab.magiconch.com/nbnhhsh/',
+    description: translate({
+      id: 'data.resources.site.normalSpeech.description',
+      message: 'Decoder for Chinese initial-letter abbreviations',
+    }),
+  },
+  dazidazi: {
+    title: translate({
+      id: 'data.resources.site.dazidazi.title',
+      message: 'dazidazi',
+    }),
+    href: 'https://dazidazi.com',
+    description: translate({
+      id: 'data.resources.site.dazidazi.description',
+      message: 'Online typing practice for Chinese, English, and code',
+    }),
+  },
+  wildAi: {
+    title: translate({
+      id: 'data.resources.site.wildAi.title',
+      message: 'WildAI',
+    }),
+    href: 'https://bewild.ai',
+    description: translate({
+      id: 'data.resources.site.wildAi.description',
+      message: 'Third-party subscription service for international AI accounts',
+    }),
+  },
+  lubanSms: {
+    title: translate({
+      id: 'data.resources.site.lubanSms.title',
+      message: 'Luban SMS',
+    }),
+    href: 'https://lubansms.com',
+    description: translate({
+      id: 'data.resources.site.lubanSms.description',
+      message: 'Virtual number and SMS messaging service',
+    }),
+  },
+  lailaiTools: {
+    title: translate({
+      id: 'data.resources.site.lailaiTools.title',
+      message: "lailai's Tools",
+    }),
+    href: 'https://tools.lailai.one',
+    description: translate({
+      id: 'data.resources.site.lailaiTools.description',
+      message: 'Privacy-friendly developer tools that run locally in the browser',
+    }),
+  },
+  lailaiAcademy: {
+    title: translate({
+      id: 'data.resources.site.lailaiAcademy.title',
+      message: "lailai's Academy",
+    }),
+    href: 'https://academy.lailai.one',
+    description: translate({
+      id: 'data.resources.site.lailaiAcademy.description',
+      message: 'Personalized self-study platform for high school students',
+    }),
+  },
+  lailaiCloud: {
+    title: translate({
+      id: 'data.resources.site.lailaiCloud.title',
+      message: "lailai's Cloud",
+    }),
+    href: 'https://cloud.lailai.one',
+    description: translate({
+      id: 'data.resources.site.lailaiCloud.description',
+      message: 'Personal file storage and resource hosting service',
+    }),
+  },
+} satisfies Record<string, ResourceDefinition>;
+
+export type ResourceId = keyof typeof RESOURCE_CATALOG;
+
+export interface ResourceItem extends ResourceDefinition {
+  id: ResourceId;
+}
+
 export interface ResourceCategoryItem {
+  id: string;
   title: string;
   icon: string;
   resources: ResourceItem[];
 }
 
+function resources(...ids: ResourceId[]): ResourceItem[] {
+  return ids.map((id) => ({ id, ...RESOURCE_CATALOG[id] }));
+}
+
 export const RESOURCE_LIST: ResourceCategoryItem[] = [
   {
-    title: '搜索与百科',
+    id: 'searchKnowledge',
+    title: translate({
+      id: 'data.resources.category.searchKnowledge.title',
+      message: 'Search & Knowledge',
+    }),
     icon: 'lucide:search',
-    resources: [
-      {
-        title: 'Google',
-        href: 'https://www.google.com',
-        description: '通用网页搜索引擎',
-      },
-      {
-        title: 'Microsoft Bing',
-        href: 'https://www.bing.com',
-        description: '微软网页搜索引擎',
-      },
-      {
-        title: '百度',
-        href: 'https://www.baidu.com',
-        description: '中文网页搜索引擎',
-      },
-    ],
+    resources: resources('google', 'bing', 'baidu', 'wikipedia'),
   },
   {
-    title: 'AI 助手与生成',
+    id: 'aiAssistants',
+    title: translate({
+      id: 'data.resources.category.aiAssistants.title',
+      message: 'AI Assistants',
+    }),
     icon: 'lucide:bot',
-    resources: [
-      {
-        title: 'ChatGPT',
-        href: 'https://chatgpt.com',
-        description: 'OpenAI 通用对话助手',
-      },
-      {
-        title: 'Gemini',
-        href: 'https://gemini.google.com',
-        description: '谷歌多模态对话助手',
-      },
-      {
-        title: 'Claude',
-        href: 'https://claude.ai',
-        description: 'Anthropic 对话助手',
-      },
-      {
-        title: 'Grok',
-        href: 'https://grok.com',
-        description: 'xAI 对话助手',
-      },
-      {
-        title: 'DeepSeek',
-        href: 'https://deepseek.com',
-        description: '深度求索开源大模型',
-      },
-      {
-        title: 'Kimi',
-        href: 'https://www.kimi.com',
-        description: '月之暗面智能对话助手',
-      },
-    ],
+    resources: resources('chatgpt', 'gemini', 'claude', 'grok', 'deepseek', 'kimi'),
   },
   {
-    title: 'AI 平台与生态',
+    id: 'aiResearch',
+    title: translate({
+      id: 'data.resources.category.aiResearch.title',
+      message: 'AI Research & Platforms',
+    }),
     icon: 'lucide:brain-circuit',
-    resources: [
-      {
-        title: 'Hugging Face',
-        href: 'https://huggingface.co',
-        description: '开源模型与数据集社区',
-      },
-      {
-        title: 'Arena',
-        href: 'https://arena.ai',
-        description: '大模型对战排行榜',
-      },
-      {
-        title: 'GPTZero',
-        href: 'https://gptzero.me',
-        description: 'AI 生成文本检测工具',
-      },
-      {
-        title: 'Not By AI',
-        href: 'https://notbyai.fyi',
-        description: '人类原创内容标识徽章',
-      },
-      {
-        title: 'Google DeepMind',
-        href: 'https://deepmind.com',
-        description: '谷歌人工智能研究机构',
-      },
-      {
-        title: 'Google AI Studio',
-        href: 'https://aistudio.google.com',
-        description: 'Gemini 模型开发平台',
-      },
-      {
-        title: 'Meta AI',
-        href: 'https://ai.facebook.com',
-        description: 'Meta 人工智能研究门户',
-      },
-      {
-        title: 'Microsoft AI',
-        href: 'https://www.microsoft.com/ai',
-        description: '微软人工智能产品门户',
-      },
-      {
-        title: 'DeepLearning.AI',
-        href: 'https://deeplearning.ai',
-        description: '吴恩达深度学习课程',
-      },
-      {
-        title: 'PyTorch',
-        href: 'https://pytorch.org',
-        description: '深度学习框架',
-      },
-      {
-        title: 'Keras',
-        href: 'https://keras.io',
-        description: '高层神经网络 API',
-      },
-    ],
+    resources: resources(
+      'googleDeepmind',
+      'metaAi',
+      'microsoftAi',
+      'huggingFace',
+      'arena',
+      'googleAiStudio',
+      'pytorch',
+      'keras',
+      'gptzero',
+      'notByAi'
+    ),
   },
   {
-    title: '云、网络与代理',
+    id: 'cloudNetwork',
+    title: translate({
+      id: 'data.resources.category.cloudNetwork.title',
+      message: 'Cloud & Network',
+    }),
     icon: 'lucide:cloud',
-    resources: [
-      {
-        title: 'Cloudflare',
-        href: 'https://www.cloudflare.com',
-        description: 'CDN 与网络安全服务',
-      },
-      {
-        title: 'Amazon Web Services',
-        href: 'https://aws.amazon.com',
-        description: '亚马逊云计算平台',
-      },
-      {
-        title: 'Microsoft Azure',
-        href: 'https://azure.microsoft.com',
-        description: '微软云计算平台',
-      },
-      {
-        title: '雨云',
-        href: 'https://www.rainyun.com',
-        description: '国内云服务器与游戏托管',
-      },
-      {
-        title: 'GoDaddy',
-        href: 'https://www.godaddy.com',
-        description: '老牌域名注册与建站商',
-      },
-      {
-        title: 'Namecheap',
-        href: 'https://www.namecheap.com',
-        description: '低价域名与隐私保护',
-      },
-      {
-        title: 'NameSilo',
-        href: 'https://www.namesilo.com',
-        description: '免费隐私保护域名注册',
-      },
-      {
-        title: 'Nexitally',
-        href: 'https://nxonearth.com',
-        description: '优质全球网络加速服务',
-      },
-      {
-        title: 'ExpressVPN',
-        href: 'https://www.expressvpn.com',
-        description: '英属维京群岛高速 VPN',
-      },
-      {
-        title: 'NordVPN',
-        href: 'https://nordvpn.com',
-        description: '巴拿马多协议 VPN',
-      },
-      {
-        title: 'AstrillVPN',
-        href: 'https://www.astrill.com',
-        description: '塞舌尔抗封锁 VPN',
-      },
-      {
-        title: 'Taishan Net',
-        href: 'https://taishan.pro',
-        description: '多协议网络代理服务',
-      },
-    ],
+    resources: resources(
+      'cloudflare',
+      'aws',
+      'azure',
+      'godaddy',
+      'namecheap',
+      'namesilo',
+      'expressvpn',
+      'nordvpn',
+      'astrill',
+      'rainyun',
+      'nexitally',
+      'taishanNet'
+    ),
   },
   {
-    title: '开发工具与平台',
+    id: 'developerTools',
+    title: translate({
+      id: 'data.resources.category.developerTools.title',
+      message: 'Developer Tools',
+    }),
     icon: 'lucide:terminal',
-    resources: [
-      {
-        title: 'GitHub',
-        href: 'https://github.com',
-        description: '代码托管与协作平台',
-      },
-      {
-        title: 'GitStar 排行榜',
-        href: 'https://gitstar-ranking.com',
-        description: 'GitHub 用户与仓库星标榜',
-      },
-      {
-        title: 'Committers Top',
-        href: 'https://committers.top',
-        description: 'GitHub 贡献者活跃度排行',
-      },
-      {
-        title: 'Shields.io',
-        href: 'https://shields.io',
-        description: '项目徽章生成服务',
-      },
-      {
-        title: 'GitHub Codespaces',
-        href: 'https://github.com/codespaces',
-        description: 'GitHub 官方云端开发环境',
-      },
-      {
-        title: 'StackBlitz',
-        href: 'https://stackblitz.com',
-        description: '浏览器内运行的全栈 IDE',
-      },
-      {
-        title: 'vscode.dev',
-        href: 'https://vscode.dev',
-        description: 'VS Code 网页版编辑器',
-      },
-      {
-        title: 'Sandpack',
-        href: 'https://sandpack.codesandbox.io',
-        description: '可嵌入的代码沙盒组件库',
-      },
-      {
-        title: 'OnlineGDB',
-        href: 'https://www.onlinegdb.com/online_python_compiler',
-        description: '在线编译器与调试器',
-      },
-      {
-        title: 'Compiler Explorer',
-        href: 'https://godbolt.org',
-        description: '在线汇编输出查看工具',
-      },
-      {
-        title: 'PyCharm',
-        href: 'https://www.jetbrains.com/pycharm',
-        description: 'JetBrains Python 集成开发环境',
-      },
-      {
-        title: 'Jupyter',
-        href: 'https://jupyter.org',
-        description: '交互式笔记本计算环境',
-      },
-    ],
+    resources: resources(
+      'github',
+      'githubCodespaces',
+      'stackblitz',
+      'vscodeWeb',
+      'sandpack',
+      'compilerExplorer',
+      'onlinegdb',
+      'pycharm',
+      'jupyter',
+      'cppreference',
+      'shields',
+      'tsinghuaMirror',
+      'gitstarRanking',
+      'committersTop'
+    ),
   },
   {
-    title: '前端与文档站',
+    id: 'webPublishing',
+    title: translate({
+      id: 'data.resources.category.webPublishing.title',
+      message: 'Web Development & Publishing',
+    }),
     icon: 'lucide:layout-template',
-    resources: [
-      {
-        title: 'React',
-        href: 'https://react.dev',
-        description: '前端用户界面构建库',
-      },
-      {
-        title: 'Docusaurus',
-        href: 'https://docusaurus.io',
-        description: 'React 文档站点生成器',
-      },
-      {
-        title: 'VitePress',
-        href: 'https://vitepress.vuejs.org',
-        description: '基于 Vite 的 Vue 文档框架',
-      },
-      {
-        title: 'VuePress',
-        href: 'https://vuepress.vuejs.org',
-        description: 'Vue 官方文档站点框架',
-      },
-      {
-        title: 'Material for MkDocs',
-        href: 'https://squidfunk.github.io/mkdocs-material',
-        description: 'MkDocs 的 Material 设计主题',
-      },
-      {
-        title: 'Hexo',
-        href: 'https://hexo.io',
-        description: 'Node.js 静态博客生成器',
-      },
-      {
-        title: 'WordPress',
-        href: 'https://wordpress.org',
-        description: '开源博客与内容管理系统',
-      },
-    ],
+    resources: resources(
+      'react',
+      'wordpress',
+      'docusaurus',
+      'vitepress',
+      'vuepress',
+      'materialMkdocs',
+      'hexo'
+    ),
   },
   {
-    title: '学术与学习',
+    id: 'researchPublishing',
+    title: translate({
+      id: 'data.resources.category.researchPublishing.title',
+      message: 'Research & Publishing',
+    }),
+    icon: 'lucide:microscope',
+    resources: resources('arxiv', 'googleScholar', 'nature', 'science', 'overleaf'),
+  },
+  {
+    id: 'learningCourses',
+    title: translate({
+      id: 'data.resources.category.learningCourses.title',
+      message: 'Learning & Courses',
+    }),
     icon: 'lucide:graduation-cap',
-    resources: [
-      {
-        title: 'arXiv',
-        href: 'https://arxiv.org',
-        description: '学术论文预印本仓库',
-      },
-      {
-        title: 'Google Scholar',
-        href: 'https://scholar.google.com',
-        description: '学术文献搜索引擎',
-      },
-      {
-        title: 'Science',
-        href: 'https://www.science.org/journal/science',
-        description: '《科学》期刊官网',
-      },
-      {
-        title: 'Nature',
-        href: 'https://www.nature.com',
-        description: '《自然》期刊官网',
-      },
-      {
-        title: 'Overleaf',
-        href: 'https://www.overleaf.com',
-        description: '在线 LaTeX 协作编辑器',
-      },
-      {
-        title: 'Coursera',
-        href: 'https://www.coursera.org',
-        description: '高校在线课程平台',
-      },
-      {
-        title: 'edX',
-        href: 'https://www.edx.org',
-        description: '高校公开课学习平台',
-      },
-      {
-        title: 'MIT OpenCourseWare',
-        href: 'https://ocw.mit.edu',
-        description: '麻省理工开放课程',
-      },
-      {
-        title: 'Class Central',
-        href: 'https://www.classcentral.com',
-        description: '在线课程聚合检索',
-      },
-    ],
+    resources: resources('mitOcw', 'coursera', 'edx', 'deeplearningAi', 'classCentral'),
   },
   {
-    title: '算法与竞赛',
+    id: 'competitiveProgramming',
+    title: translate({
+      id: 'data.resources.category.competitiveProgramming.title',
+      message: 'Competitive Programming',
+    }),
     icon: 'lucide:trophy',
-    resources: [
-      {
-        title: '洛谷',
-        href: 'https://www.luogu.com.cn',
-        description: '中文信息学竞赛 OJ',
-      },
-      {
-        title: 'Codeforces',
-        href: 'https://codeforces.com',
-        description: '俄罗斯算法竞赛平台',
-      },
-      {
-        title: 'AtCoder',
-        href: 'https://atcoder.jp',
-        description: '日本算法竞赛平台',
-      },
-      {
-        title: 'Virtual Judge',
-        href: 'https://vjudge.net',
-        description: '跨 OJ 题目聚合提交',
-      },
-      {
-        title: '洛谷保存站',
-        href: 'https://www.luogu.me',
-        description: '洛谷题目社区镜像',
-      },
-      {
-        title: 'Algorithm Duels Online',
-        href: 'https://algorithm-duels.online',
-        description: '算法题在线对战',
-      },
-      {
-        title: 'Solution Formatter',
-        href: 'https://tj.imken.dev',
-        description: '洛谷题解格式化工具',
-      },
-      {
-        title: 'Code Golf',
-        href: 'https://code.golf',
-        description: '最短代码挑战游戏',
-      },
-      {
-        title: 'OI Wiki',
-        href: 'https://oi-wiki.org',
-        description: '信息学竞赛知识库',
-      },
-      {
-        title: 'OIerDb',
-        href: 'https://oier.baoshuo.dev',
-        description: 'OI 选手获奖数据库',
-      },
-      {
-        title: '原题机',
-        href: 'https://yuantiji.ac/zh/',
-        description: '竞赛原题相似度检索',
-      },
-      {
-        title: 'Big-O Algorithm Complexity Cheat Sheet',
-        href: 'https://www.bigocheatsheet.com',
-        description: '算法复杂度速查表',
-      },
-      {
-        title: 'Diff Tool',
-        href: 'https://csacademy.com/app/diffing_tool/',
-        description: '在线文本差异比对',
-      },
-      {
-        title: 'Graph Editor',
-        href: 'https://csacademy.com/app/graph_editor/',
-        description: '在线图论可视化编辑',
-      },
-    ],
+    resources: resources(
+      'codeforces',
+      'atcoder',
+      'virtualJudge',
+      'codeGolf',
+      'bigOCheatSheet',
+      'luogu',
+      'oiWiki',
+      'oierdb',
+      'originalProblemChecker',
+      'luoguSaver',
+      'algorithmDuels',
+      'solutionFormatter',
+      'csacademyDiff',
+      'csacademyGraph'
+    ),
   },
   {
-    title: '数学与计算',
+    id: 'mathComputing',
+    title: translate({
+      id: 'data.resources.category.mathComputing.title',
+      message: 'Mathematics & Computing',
+    }),
     icon: 'lucide:calculator',
-    resources: [
-      {
-        title: 'Desmos',
-        href: 'https://www.desmos.com',
-        description: '在线函数图像计算器',
-      },
-      {
-        title: 'Wolfram Alpha',
-        href: 'https://www.wolframalpha.com',
-        description: '计算知识引擎',
-      },
-      {
-        title: 'GeoGebra',
-        href: 'https://www.geogebra.org',
-        description: '动态数学几何软件',
-      },
-      {
-        title: 'NumPy',
-        href: 'https://numpy.org',
-        description: 'Python 科学计算库',
-      },
-      {
-        title: 'LaTeX 公式编辑器',
-        href: 'https://www.latexlive.com',
-        description: '在线 LaTeX 公式编辑',
-      },
-      {
-        title: 'OEIS',
-        href: 'https://oeis.org',
-        description: '整数数列在线百科',
-      },
-      {
-        title: 'cppreference',
-        href: 'https://cppreference.com',
-        description: 'C++ 标准库参考文档',
-      },
-    ],
+    resources: resources('wolframAlpha', 'desmos', 'geogebra', 'numpy', 'oeis', 'latexLive'),
   },
   {
-    title: '设计与创意',
+    id: 'designCreation',
+    title: translate({
+      id: 'data.resources.category.designCreation.title',
+      message: 'Design & Creation',
+    }),
     icon: 'lucide:palette',
-    resources: [
-      {
-        title: 'Colorable',
-        href: 'https://colorable.jxnblk.com',
-        description: '配色对比度可访问性检测工具',
-      },
-      {
-        title: 'Skill Icons',
-        href: 'https://skillicons.dev',
-        description: '开发技能图标生成服务',
-      },
-      {
-        title: 'BrandColors',
-        href: 'https://brandcolors.net',
-        description: '知名品牌官方配色查询库',
-      },
-      {
-        title: 'Maker World',
-        href: 'https://makerworld.com.cn',
-        description: '拓竹 3D 打印模型分享社区',
-      },
-      {
-        title: 'amCharts Pixel Map',
-        href: 'https://pixelmap.amcharts.com',
-        description: '像素风世界地图在线编辑器',
-      },
-      {
-        title: 'Recraft',
-        href: 'https://www.recraft.ai',
-        description: 'AI 矢量图与插画生成',
-      },
-      {
-        title: 'Quiver AI',
-        href: 'https://quiver.ai',
-        description: 'AI 矢量图生成与动效平台',
-      },
-      {
-        title: 'Mult',
-        href: 'https://mult.dev',
-        description: '旅行路线动画地图制作',
-      },
-      {
-        title: 'OpenCut',
-        href: 'https://opencut.app',
-        description: '开源在线视频剪辑工具',
-      },
-      {
-        title: 'CodeSnap',
-        href: 'https://codesnap.dev',
-        description: '代码截图美化生成工具',
-      },
-      {
-        title: 'Bento Grids',
-        href: 'https://bentogrids.com',
-        description: '便当网格布局设计灵感集',
-      },
-    ],
+    resources: resources(
+      'recraft',
+      'quiverAi',
+      'openCut',
+      'multDev',
+      'codeSnap',
+      'colorable',
+      'skillIcons',
+      'brandColors',
+      'pixelMap',
+      'bentoGrids',
+      'makerworld'
+    ),
   },
   {
-    title: '测试与基准',
+    id: 'testingBenchmarks',
+    title: translate({
+      id: 'data.resources.category.testingBenchmarks.title',
+      message: 'Tests & Benchmarks',
+    }),
     icon: 'lucide:gauge',
-    resources: [
-      {
-        title: 'Speedtest',
-        href: 'https://www.speedtest.net',
-        description: '网络带宽速度测试',
-      },
-      {
-        title: 'Net.Coffee',
-        href: 'https://ip.net.coffee',
-        description: 'IP 归属与网络分流检测',
-      },
-      {
-        title: 'Password Monster',
-        href: 'https://passwordmonster.com',
-        description: '密码强度评估工具',
-      },
-      {
-        title: 'A Real Me',
-        href: 'https://www.arealme.com',
-        description: '综合趣味在线测试合集',
-      },
-      {
-        title: 'CPS 测试',
-        href: 'https://clickspeedtest.com',
-        description: '鼠标点击速度测试',
-      },
-      {
-        title: '政治倾向测试',
-        href: 'https://luckyfuy.top/compass/',
-        description: '基于 8Values 的政治倾向测验',
-      },
-      {
-        title: 'volumeshader_bm',
-        href: 'https://cznull.github.io/vsbm',
-        description: 'WebGL 体积着色器性能基准',
-      },
-      {
-        title: 'HTML5 Fish Bowl',
-        href: 'https://eucscore.com/demos/HTML5-Fishbowl/index.html',
-        description: 'HTML5 鱼缸渲染性能演示',
-      },
-      {
-        title: 'WebGL Aquarium',
-        href: 'https://webglsamples.org/aquarium/aquarium.html',
-        description: 'WebGL 水族馆图形性能演示',
-      },
-    ],
+    resources: resources(
+      'speedtest',
+      'netCoffee',
+      'passwordMonster',
+      'volumeshader',
+      'fishBowl',
+      'webglAquarium',
+      'clickSpeedTest',
+      'aRealMe',
+      'politicalOrientation'
+    ),
   },
   {
-    title: '媒体与社区',
+    id: 'mediaCommunities',
+    title: translate({
+      id: 'data.resources.category.mediaCommunities.title',
+      message: 'Media & Communities',
+    }),
     icon: 'lucide:users',
-    resources: [
-      {
-        title: 'X (Twitter)',
-        href: 'https://x.com',
-        description: 'X 社交媒体平台',
-      },
-      {
-        title: 'Facebook',
-        href: 'https://www.facebook.com',
-        description: 'Facebook 社交网络',
-      },
-      {
-        title: 'Telegram Web',
-        href: 'https://web.telegram.org',
-        description: 'Telegram 即时通讯网页版',
-      },
-      {
-        title: 'YouTube',
-        href: 'https://www.youtube.com',
-        description: '全球视频分享平台',
-      },
-      {
-        title: 'bilibili',
-        href: 'https://www.bilibili.com',
-        description: '国内弹幕视频社区',
-      },
-      {
-        title: 'Polymarket',
-        href: 'https://polymarket.com',
-        description: '链上事件预测交易市场',
-      },
-    ],
+    resources: resources('youtube', 'x', 'facebook', 'telegramWeb', 'polymarket', 'bilibili'),
   },
   {
-    title: '网页游戏',
+    id: 'browserGames',
+    title: translate({
+      id: 'data.resources.category.browserGames.title',
+      message: 'Browser Games',
+    }),
     icon: 'lucide:gamepad-2',
-    resources: [
-      {
-        title: 'CrazyGames',
-        href: 'https://www.crazygames.com',
-        description: '免下载浏览器小游戏平台',
-      },
-      {
-        title: 'FreeFocusGames',
-        href: 'https://www.freefocusgames.com',
-        description: '专注力与记忆训练游戏',
-      },
-      {
-        title: '.io Games',
-        href: 'https://iogames.space',
-        description: 'io 多人网页游戏聚合站',
-      },
-      {
-        title: 'generals.io',
-        href: 'https://generals.io',
-        description: '回合制占领将军格战棋',
-      },
-      {
-        title: 'florr.io',
-        href: 'https://florr.io',
-        description: '花朵养成多人对战',
-      },
-      {
-        title: 'TileMan.io',
-        href: 'https://tileman.io',
-        description: '方格占地盘多人对战',
-      },
-      {
-        title: 'YORG.io',
-        href: 'https://yorg.io',
-        description: '僵尸塔防与资源管理',
-      },
-      {
-        title: 'Bloxd.io',
-        href: 'https://bloxd.io',
-        description: '类 Minecraft 多人沙盒',
-      },
-      {
-        title: '名字竞技场',
-        href: 'https://namerena.github.io',
-        description: '给名字加后缀的文本对战',
-      },
-      {
-        title: '图寻',
-        href: 'https://tuxun.fun',
-        description: '中文街景猜位置游戏',
-      },
-      {
-        title: '猜盐',
-        href: 'https://xiaoce.fun',
-        description: '互动答题小测平台',
-      },
-      {
-        title: 'WPlace',
-        href: 'https://wplace.live',
-        description: '多人协作像素绘制画布',
-      },
-      {
-        title: 'sandspiel',
-        href: 'https://sandspiel.club',
-        description: '元素粒子物理沙盒',
-      },
-      {
-        title: 'HullQin Game',
-        href: 'https://game.hullqin.cn',
-        description: '五子棋四国军棋桌游合集',
-      },
-      {
-        title: 'Lichess',
-        href: 'https://lichess.org',
-        description: '免费开源国际象棋平台',
-      },
-      {
-        title: 'Neal.fun',
-        href: 'https://neal.fun',
-        description: 'Neal Agarwal 互动实验合集',
-      },
-      {
-        title: 'Kiomet',
-        href: 'https://kiomet.com',
-        description: '实时多人策略对战',
-      },
-      {
-        title: 'LINKR',
-        href: 'https://www.playlinkr.net',
-        description: '每日字词连线解谜',
-      },
-      {
-        title: 'diep.io',
-        href: 'https://diep.io',
-        description: '多人坦克升级射击',
-      },
-      {
-        title: '信任的进化',
-        href: 'https://dccxi.com/trust/',
-        description: '博弈论交互叙事',
-      },
-      {
-        title: 'Gridspech',
-        href: 'https://gridspech.baublejar.com',
-        description: '格子染色益智解谜',
-      },
-    ],
+    resources: resources(
+      'crazygames',
+      'freeFocusGames',
+      'ioGames',
+      'nealFun',
+      'lichess',
+      'generalsIo',
+      'florrIo',
+      'tilemanIo',
+      'yorgIo',
+      'bloxdIo',
+      'wplace',
+      'sandspiel',
+      'kiomet',
+      'linkr',
+      'diepIo',
+      'gridspech',
+      'evolutionOfTrust',
+      'tuxun',
+      'guessSalt',
+      'nameArena',
+      'boardGameCollection'
+    ),
   },
   {
-    title: '实用工具',
+    id: 'softwareDevices',
+    title: translate({
+      id: 'data.resources.category.softwareDevices.title',
+      message: 'Software & Devices',
+    }),
+    icon: 'lucide:monitor-smartphone',
+    resources: resources(
+      'apple',
+      'appleSpecs',
+      'socpk',
+      'digitalLychee',
+      'classWidgets',
+      'eClassroomTerminator'
+    ),
+  },
+  {
+    id: 'onlineUtilities',
+    title: translate({
+      id: 'data.resources.category.onlineUtilities.title',
+      message: 'Online Utilities',
+    }),
     icon: 'lucide:wrench',
-    resources: [
-      {
-        title: '维基百科',
-        href: 'https://zh.wikipedia.org',
-        description: '自由协作的多语言在线百科',
-      },
-      {
-        title: 'Apple',
-        href: 'https://www.apple.com',
-        description: '苹果公司官方网站',
-      },
-      {
-        title: 'Apple 产品参数中心',
-        href: 'https://hubweb.cn',
-        description: '苹果产品规格查询与对比',
-      },
-      {
-        title: 'SOCPK',
-        href: 'https://socpk.com',
-        description: '手机芯片性能跑分对比',
-      },
-      {
-        title: '数码荔枝',
-        href: 'https://lizhi.shop',
-        description: '国内正版软件零售平台',
-      },
-      {
-        title: 'Passport Index',
-        href: 'https://www.passportindex.org',
-        description: '全球护照免签排名与比较',
-      },
-      {
-        title: 'Google 翻译',
-        href: 'https://translate.google.com',
-        description: '谷歌多语言在线翻译',
-      },
-      {
-        title: '清华大学开源软件镜像站',
-        href: 'https://mirrors.tuna.tsinghua.edu.cn',
-        description: '开源软件与系统镜像源',
-      },
-      {
-        title: '能不能好好说话？',
-        href: 'https://lab.magiconch.com/nbnhhsh/',
-        description: '中文网络拼音缩写还原',
-      },
-      {
-        title: 'dazidazi',
-        href: 'https://dazidazi.com',
-        description: '在线打字练习平台',
-      },
-      {
-        title: 'WildAI',
-        href: 'https://bewild.ai',
-        description: '海外订阅虚拟信用卡服务',
-      },
-      {
-        title: 'Luban SMS',
-        href: 'https://lubansms.com',
-        description: '短信接码与验证平台',
-      },
-      {
-        title: 'Class Widgets',
-        href: 'https://classwidgets.rinlit.cn',
-        description: 'Windows 桌面课程表小组件',
-      },
-      {
-        title: '电子教室终结者',
-        href: 'https://dzjszjz.nkxingxh.top',
-        description: '反极域电子教室控制工具',
-      },
-      {
-        title: 'Note.ms',
-        href: 'https://note.ms',
-        description: '公共剪贴板与临时笔记',
-      },
-      {
-        title: 'QR Code Generator',
-        href: 'https://www.qr-code-generator.com',
-        description: '在线二维码生成工具',
-      },
-      {
-        title: 'iLovePDF',
-        href: 'https://www.ilovepdf.com',
-        description: '在线 PDF 转换与编辑工具',
-      },
-      {
-        title: 'Forensically',
-        href: 'https://29a.ch/photo-forensics',
-        description: '在线图片篡改取证分析工具',
-      },
-    ],
+    resources: resources(
+      'googleTranslate',
+      'ilovepdf',
+      'qrCodeGenerator',
+      'forensically',
+      'passportIndex',
+      'noteMs',
+      'normalSpeech',
+      'dazidazi',
+      'wildAi',
+      'lubanSms'
+    ),
   },
   {
-    title: '个人项目',
+    id: 'personalProjects',
+    title: translate({
+      id: 'data.resources.category.personalProjects.title',
+      message: 'Personal Projects',
+    }),
     icon: 'lucide:blocks',
-    resources: [
-      {
-        title: "lailai's Tools",
-        href: 'https://tools.lailai.one',
-        description: '浏览器本地运行的开发者工具集',
-      },
-      {
-        title: "lailai's Academy",
-        href: 'https://academy.lailai.one',
-        description: '面向高中生的个性化自学平台',
-      },
-      {
-        title: "lailai's Cloud",
-        href: 'https://cloud.lailai.one',
-        description: '个人文件存储与资源托管服务',
-      },
-    ],
+    resources: resources('lailaiTools', 'lailaiAcademy', 'lailaiCloud'),
   },
 ];

@@ -13,7 +13,11 @@ import Card from '@site/src/components/laikit/Card';
 import Badge from '@site/src/components/laikit/Badge';
 
 import { usePluralForm } from '@docusaurus/theme-common';
-import { RESOURCE_LIST, type ResourceCategoryItem } from '@site/src/data/resources';
+import {
+  RESOURCE_LIST,
+  type ResourceCategoryItem,
+  type ResourceItem,
+} from '@site/src/data/resources';
 import { translate } from '@docusaurus/Translate';
 import styles from './styles.module.css';
 
@@ -48,7 +52,7 @@ function filterResourceCategories(
   const filteredByCategory =
     activeCategory === 'all'
       ? [...categories]
-      : categories.filter((cat) => cat.title === activeCategory);
+      : categories.filter((category) => category.id === activeCategory);
 
   if (!query) return filteredByCategory;
 
@@ -83,7 +87,7 @@ function FilterBar({
   const inputRef = useRef<HTMLInputElement>(null);
 
   const activeCat = useMemo(
-    () => categories.find((c) => c.title === activeCategory) ?? null,
+    () => categories.find((category) => category.id === activeCategory) ?? null,
     [categories, activeCategory]
   );
 
@@ -163,12 +167,12 @@ function FilterBar({
         <div className={styles.filterPanel}>
           <div className={styles.filterRail}>
             {categories.map((category) => {
-              const isActive = activeCategory === category.title;
+              const isActive = activeCategory === category.id;
               return (
                 <button
-                  key={category.title}
+                  key={category.id}
                   type="button"
-                  onClick={() => onCategoryChange(isActive ? 'all' : category.title)}
+                  onClick={() => onCategoryChange(isActive ? 'all' : category.id)}
                   className={clsx(styles.filterRailItem, {
                     [styles.filterRailItemActive]: isActive,
                   })}
@@ -196,11 +200,7 @@ function faviconUrl(href: string): string | undefined {
   }
 }
 
-function ResourceCard({
-  resource,
-}: {
-  resource: { title: string; description: string; href: string };
-}) {
+function ResourceCard({ resource }: { resource: ResourceItem }) {
   return (
     <LinkCard
       to={resource.href}
@@ -236,7 +236,7 @@ function CategorySection({ category }: { category: ResourceCategoryItem }) {
 
       <div className={styles.resourceGrid}>
         {category.resources.map((resource) => (
-          <ResourceCard key={resource.title} resource={resource} />
+          <ResourceCard key={resource.id} resource={resource} />
         ))}
       </div>
     </section>
@@ -287,7 +287,7 @@ export default function Resources(): ReactNode {
 
         {filteredCategories.length > 0 ? (
           filteredCategories.map((category) => (
-            <CategorySection key={category.title} category={category} />
+            <CategorySection key={category.id} category={category} />
           ))
         ) : (
           <div className={styles.noResults}>

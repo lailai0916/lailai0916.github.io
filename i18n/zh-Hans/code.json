@@ -1885,5 +1885,950 @@
   "theme.tags.tagsPageTitle": {
     "message": "标签",
     "description": "The title of the tag list page"
+  },
+  "data.resources.site.google.title": {
+    "message": "谷歌"
+  },
+  "data.resources.site.google.description": {
+    "message": "通用网页搜索引擎"
+  },
+  "data.resources.site.bing.title": {
+    "message": "微软必应"
+  },
+  "data.resources.site.bing.description": {
+    "message": "微软的网页搜索与内容发现引擎"
+  },
+  "data.resources.site.baidu.title": {
+    "message": "百度"
+  },
+  "data.resources.site.baidu.description": {
+    "message": "中文搜索与互联网服务平台"
+  },
+  "data.resources.site.wikipedia.title": {
+    "message": "维基百科"
+  },
+  "data.resources.site.wikipedia.description": {
+    "message": "协作式多语言在线百科全书"
+  },
+  "data.resources.site.chatgpt.title": {
+    "message": "ChatGPT"
+  },
+  "data.resources.site.chatgpt.description": {
+    "message": "OpenAI 推出的对话、研究与创作助手"
+  },
+  "data.resources.site.gemini.title": {
+    "message": "Gemini"
+  },
+  "data.resources.site.gemini.description": {
+    "message": "Google 推出的多模态 AI 助手"
+  },
+  "data.resources.site.claude.title": {
+    "message": "Claude"
+  },
+  "data.resources.site.claude.description": {
+    "message": "Anthropic 推出的分析与创作 AI 助手"
+  },
+  "data.resources.site.grok.title": {
+    "message": "Grok"
+  },
+  "data.resources.site.grok.description": {
+    "message": "支持实时网页与 X 信息访问的 AI 助手"
+  },
+  "data.resources.site.deepseek.title": {
+    "message": "深度求索"
+  },
+  "data.resources.site.deepseek.description": {
+    "message": "深度求索推出的 AI 助手与模型平台"
+  },
+  "data.resources.site.kimi.title": {
+    "message": "Kimi"
+  },
+  "data.resources.site.kimi.description": {
+    "message": "月之暗面推出的编程与知识工作 AI 助手"
+  },
+  "data.resources.site.googleDeepmind.title": {
+    "message": "Google DeepMind"
+  },
+  "data.resources.site.googleDeepmind.description": {
+    "message": "Google 的 AI 研究机构与模型平台"
+  },
+  "data.resources.site.metaAi.title": {
+    "message": "Meta AI"
+  },
+  "data.resources.site.metaAi.description": {
+    "message": "Meta 的 AI 产品、模型与研究平台"
+  },
+  "data.resources.site.microsoftAi.title": {
+    "message": "微软 AI"
+  },
+  "data.resources.site.microsoftAi.description": {
+    "message": "微软的 AI 产品、研究与企业解决方案"
+  },
+  "data.resources.site.huggingFace.title": {
+    "message": "Hugging Face"
+  },
+  "data.resources.site.huggingFace.description": {
+    "message": "汇集模型、数据集与 AI 应用的开源社区"
+  },
+  "data.resources.site.arena.title": {
+    "message": "Arena"
+  },
+  "data.resources.site.arena.description": {
+    "message": "基于社区评测的 AI 模型对比与排行榜"
+  },
+  "data.resources.site.googleAiStudio.title": {
+    "message": "Google AI Studio"
+  },
+  "data.resources.site.googleAiStudio.description": {
+    "message": "用于构建 Gemini 应用的浏览器工作区"
+  },
+  "data.resources.site.pytorch.title": {
+    "message": "PyTorch"
+  },
+  "data.resources.site.pytorch.description": {
+    "message": "面向机器学习与深度学习的开源框架"
+  },
+  "data.resources.site.keras.title": {
+    "message": "Keras"
+  },
+  "data.resources.site.keras.description": {
+    "message": "支持多种后端的高级深度学习 API"
+  },
+  "data.resources.site.gptzero.title": {
+    "message": "GPTZero"
+  },
+  "data.resources.site.gptzero.description": {
+    "message": "AI 生成文本检测与作者分析工具"
+  },
+  "data.resources.site.notByAi.title": {
+    "message": "Not By AI"
+  },
+  "data.resources.site.notByAi.description": {
+    "message": "用于标识人工创作内容的徽章项目"
+  },
+  "data.resources.site.cloudflare.title": {
+    "message": "Cloudflare"
+  },
+  "data.resources.site.cloudflare.description": {
+    "message": "网络连接、安全与边缘应用平台"
+  },
+  "data.resources.site.aws.title": {
+    "message": "亚马逊云科技"
+  },
+  "data.resources.site.aws.description": {
+    "message": "亚马逊提供的云计算平台"
+  },
+  "data.resources.site.azure.title": {
+    "message": "Microsoft Azure"
+  },
+  "data.resources.site.azure.description": {
+    "message": "微软提供的云计算平台"
+  },
+  "data.resources.site.godaddy.title": {
+    "message": "GoDaddy"
+  },
+  "data.resources.site.godaddy.description": {
+    "message": "域名注册、主机托管与网站服务平台"
+  },
+  "data.resources.site.namecheap.title": {
+    "message": "Namecheap"
+  },
+  "data.resources.site.namecheap.description": {
+    "message": "域名注册、主机托管与网站安全服务"
+  },
+  "data.resources.site.namesilo.title": {
+    "message": "NameSilo"
+  },
+  "data.resources.site.namesilo.description": {
+    "message": "域名注册与域名组合管理服务"
+  },
+  "data.resources.site.expressvpn.title": {
+    "message": "ExpressVPN"
+  },
+  "data.resources.site.expressvpn.description": {
+    "message": "提供加密网络访问的商业 VPN 服务"
+  },
+  "data.resources.site.nordvpn.title": {
+    "message": "NordVPN"
+  },
+  "data.resources.site.nordvpn.description": {
+    "message": "面向隐私与安全访问的商业 VPN 服务"
+  },
+  "data.resources.site.astrill.title": {
+    "message": "Astrill VPN"
+  },
+  "data.resources.site.astrill.description": {
+    "message": "提供多协议客户端的商业 VPN 服务"
+  },
+  "data.resources.site.rainyun.title": {
+    "message": "雨云"
+  },
+  "data.resources.site.rainyun.description": {
+    "message": "提供云主机与基础设施服务的国内云平台"
+  },
+  "data.resources.site.nexitally.title": {
+    "message": "Nexitally"
+  },
+  "data.resources.site.nexitally.description": {
+    "message": "提供多地区网络代理线路的订阅服务"
+  },
+  "data.resources.site.taishanNet.title": {
+    "message": "TaiShan Net"
+  },
+  "data.resources.site.taishanNet.description": {
+    "message": "面向跨区域连接的网络代理服务"
+  },
+  "data.resources.site.github.title": {
+    "message": "GitHub"
+  },
+  "data.resources.site.github.description": {
+    "message": "Git 仓库托管与协作开发平台"
+  },
+  "data.resources.site.githubCodespaces.title": {
+    "message": "GitHub Codespaces"
+  },
+  "data.resources.site.githubCodespaces.description": {
+    "message": "与 GitHub 集成的云端开发环境"
+  },
+  "data.resources.site.stackblitz.title": {
+    "message": "StackBlitz"
+  },
+  "data.resources.site.stackblitz.description": {
+    "message": "浏览器 IDE 与即时 Web 开发环境"
+  },
+  "data.resources.site.vscodeWeb.title": {
+    "message": "Visual Studio Code for the Web"
+  },
+  "data.resources.site.vscodeWeb.description": {
+    "message": "Visual Studio Code 的浏览器版本"
+  },
+  "data.resources.site.sandpack.title": {
+    "message": "Sandpack"
+  },
+  "data.resources.site.sandpack.description": {
+    "message": "用于嵌入实时代码编辑器的 React 工具包"
+  },
+  "data.resources.site.compilerExplorer.title": {
+    "message": "Compiler Explorer"
+  },
+  "data.resources.site.compilerExplorer.description": {
+    "message": "可查看汇编输出的交互式编译器探索工具"
+  },
+  "data.resources.site.onlinegdb.title": {
+    "message": "OnlineGDB"
+  },
+  "data.resources.site.onlinegdb.description": {
+    "message": "浏览器内运行的 Python 编辑器与编译器"
+  },
+  "data.resources.site.pycharm.title": {
+    "message": "PyCharm"
+  },
+  "data.resources.site.pycharm.description": {
+    "message": "JetBrains 推出的 Python 集成开发环境"
+  },
+  "data.resources.site.jupyter.title": {
+    "message": "Project Jupyter"
+  },
+  "data.resources.site.jupyter.description": {
+    "message": "交互式笔记本与计算环境"
+  },
+  "data.resources.site.cppreference.title": {
+    "message": "cppreference"
+  },
+  "data.resources.site.cppreference.description": {
+    "message": "C、C++ 及其标准库参考资料"
+  },
+  "data.resources.site.shields.title": {
+    "message": "Shields.io"
+  },
+  "data.resources.site.shields.description": {
+    "message": "生成简洁统一项目徽章的服务"
+  },
+  "data.resources.site.tsinghuaMirror.title": {
+    "message": "清华大学开源软件镜像站"
+  },
+  "data.resources.site.tsinghuaMirror.description": {
+    "message": "开源软件与 Linux 发行版镜像服务"
+  },
+  "data.resources.site.gitstarRanking.title": {
+    "message": "Gitstar Ranking"
+  },
+  "data.resources.site.gitstarRanking.description": {
+    "message": "GitHub 用户、组织与仓库星标排行榜"
+  },
+  "data.resources.site.committersTop.title": {
+    "message": "committers.top"
+  },
+  "data.resources.site.committersTop.description": {
+    "message": "按地区统计的活跃 GitHub 贡献者排行榜"
+  },
+  "data.resources.site.react.title": {
+    "message": "React"
+  },
+  "data.resources.site.react.description": {
+    "message": "用于 Web 与原生用户界面的开发库"
+  },
+  "data.resources.site.wordpress.title": {
+    "message": "WordPress"
+  },
+  "data.resources.site.wordpress.description": {
+    "message": "开源内容发布平台与内容管理系统"
+  },
+  "data.resources.site.docusaurus.title": {
+    "message": "Docusaurus"
+  },
+  "data.resources.site.docusaurus.description": {
+    "message": "面向文档网站的 React 静态站点生成器"
+  },
+  "data.resources.site.vitepress.title": {
+    "message": "VitePress"
+  },
+  "data.resources.site.vitepress.description": {
+    "message": "由 Vite 与 Vue 驱动的静态站点生成器"
+  },
+  "data.resources.site.vuepress.title": {
+    "message": "VuePress"
+  },
+  "data.resources.site.vuepress.description": {
+    "message": "由 Vue 驱动的静态站点生成器"
+  },
+  "data.resources.site.materialMkdocs.title": {
+    "message": "Material for MkDocs"
+  },
+  "data.resources.site.materialMkdocs.description": {
+    "message": "采用 Material Design 的 MkDocs 文档主题"
+  },
+  "data.resources.site.hexo.title": {
+    "message": "Hexo"
+  },
+  "data.resources.site.hexo.description": {
+    "message": "用于快速生成静态博客的 Node.js 框架"
+  },
+  "data.resources.site.arxiv.title": {
+    "message": "arXiv"
+  },
+  "data.resources.site.arxiv.description": {
+    "message": "开放获取的学术预印本存储库"
+  },
+  "data.resources.site.googleScholar.title": {
+    "message": "Google 学术搜索"
+  },
+  "data.resources.site.googleScholar.description": {
+    "message": "学术文献搜索引擎"
+  },
+  "data.resources.site.nature.title": {
+    "message": "Nature"
+  },
+  "data.resources.site.nature.description": {
+    "message": "多学科同行评审科学期刊"
+  },
+  "data.resources.site.science.title": {
+    "message": "Science"
+  },
+  "data.resources.site.science.description": {
+    "message": "美国科学促进会出版的多学科同行评审期刊"
+  },
+  "data.resources.site.overleaf.title": {
+    "message": "Overleaf"
+  },
+  "data.resources.site.overleaf.description": {
+    "message": "支持实时协作的在线 LaTeX 写作环境"
+  },
+  "data.resources.site.mitOcw.title": {
+    "message": "MIT OpenCourseWare"
+  },
+  "data.resources.site.mitOcw.description": {
+    "message": "麻省理工学院公开发布的免费课程资料"
+  },
+  "data.resources.site.coursera.title": {
+    "message": "Coursera"
+  },
+  "data.resources.site.coursera.description": {
+    "message": "由高校与企业提供在线课程、证书及学位的平台"
+  },
+  "data.resources.site.edx.title": {
+    "message": "edX"
+  },
+  "data.resources.site.edx.description": {
+    "message": "由高校与机构提供在线课程及认证的平台"
+  },
+  "data.resources.site.deeplearningAi.title": {
+    "message": "DeepLearning.AI"
+  },
+  "data.resources.site.deeplearningAi.description": {
+    "message": "面向人工智能的课程与教育项目平台"
+  },
+  "data.resources.site.classCentral.title": {
+    "message": "Class Central"
+  },
+  "data.resources.site.classCentral.description": {
+    "message": "在线课程搜索、聚合与评价平台"
+  },
+  "data.resources.site.codeforces.title": {
+    "message": "Codeforces"
+  },
+  "data.resources.site.codeforces.description": {
+    "message": "提供编程竞赛、题库与评级的在线平台"
+  },
+  "data.resources.site.atcoder.title": {
+    "message": "AtCoder"
+  },
+  "data.resources.site.atcoder.description": {
+    "message": "面向不同水平选手的在线编程竞赛平台"
+  },
+  "data.resources.site.virtualJudge.title": {
+    "message": "Virtual Judge"
+  },
+  "data.resources.site.virtualJudge.description": {
+    "message": "聚合多个平台题目的虚拟评测系统"
+  },
+  "data.resources.site.codeGolf.title": {
+    "message": "Code Golf"
+  },
+  "data.resources.site.codeGolf.description": {
+    "message": "以最短代码为目标的编程挑战平台"
+  },
+  "data.resources.site.bigOCheatSheet.title": {
+    "message": "Big-O Algorithm Complexity Cheat Sheet"
+  },
+  "data.resources.site.bigOCheatSheet.description": {
+    "message": "常见数据结构与算法复杂度参考表"
+  },
+  "data.resources.site.luogu.title": {
+    "message": "洛谷"
+  },
+  "data.resources.site.luogu.description": {
+    "message": "国内算法竞赛平台与在线题库"
+  },
+  "data.resources.site.oiWiki.title": {
+    "message": "OI Wiki"
+  },
+  "data.resources.site.oiWiki.description": {
+    "message": "面向算法竞赛的开放知识库"
+  },
+  "data.resources.site.oierdb.title": {
+    "message": "OIerDb NG"
+  },
+  "data.resources.site.oierdb.description": {
+    "message": "中国信息学竞赛选手与获奖记录数据库"
+  },
+  "data.resources.site.originalProblemChecker.title": {
+    "message": "原题机"
+  },
+  "data.resources.site.originalProblemChecker.description": {
+    "message": "用于检索竞赛题目是否为原创的工具"
+  },
+  "data.resources.site.luoguSaver.title": {
+    "message": "洛谷保存站"
+  },
+  "data.resources.site.luoguSaver.description": {
+    "message": "用于保存洛谷题目与题解的归档站点"
+  },
+  "data.resources.site.algorithmDuels.title": {
+    "message": "Algorithm Duels Online"
+  },
+  "data.resources.site.algorithmDuels.description": {
+    "message": "使用 Codeforces 题目的组队对战竞赛平台"
+  },
+  "data.resources.site.solutionFormatter.title": {
+    "message": "Solution Formatter"
+  },
+  "data.resources.site.solutionFormatter.description": {
+    "message": "用于规范洛谷题解文章与源代码的格式化工具"
+  },
+  "data.resources.site.csacademyDiff.title": {
+    "message": "CS Academy Diff Tool"
+  },
+  "data.resources.site.csacademyDiff.description": {
+    "message": "用于比较文本输出差异的浏览器工具"
+  },
+  "data.resources.site.csacademyGraph.title": {
+    "message": "CS Academy Graph Editor"
+  },
+  "data.resources.site.csacademyGraph.description": {
+    "message": "用于创建与导出图结构的交互式编辑器"
+  },
+  "data.resources.site.wolframAlpha.title": {
+    "message": "Wolfram|Alpha"
+  },
+  "data.resources.site.wolframAlpha.description": {
+    "message": "面向数学与科学的计算知识引擎"
+  },
+  "data.resources.site.desmos.title": {
+    "message": "Desmos"
+  },
+  "data.resources.site.desmos.description": {
+    "message": "交互式绘图、几何与科学计算工具"
+  },
+  "data.resources.site.geogebra.title": {
+    "message": "GeoGebra"
+  },
+  "data.resources.site.geogebra.description": {
+    "message": "面向几何、代数与微积分的交互式工具"
+  },
+  "data.resources.site.numpy.title": {
+    "message": "NumPy"
+  },
+  "data.resources.site.numpy.description": {
+    "message": "Python 数值数组计算的基础库"
+  },
+  "data.resources.site.oeis.title": {
+    "message": "OEIS"
+  },
+  "data.resources.site.oeis.description": {
+    "message": "可检索的整数数列百科全书"
+  },
+  "data.resources.site.latexLive.title": {
+    "message": "LaTeXLive"
+  },
+  "data.resources.site.latexLive.description": {
+    "message": "支持识别与多格式导出的在线 LaTeX 公式编辑器"
+  },
+  "data.resources.site.recraft.title": {
+    "message": "Recraft"
+  },
+  "data.resources.site.recraft.description": {
+    "message": "面向位图与矢量图生成的 AI 设计平台"
+  },
+  "data.resources.site.quiverAi.title": {
+    "message": "QuiverAI"
+  },
+  "data.resources.site.quiverAi.description": {
+    "message": "用于创建与动画化可编辑 SVG 的 AI 工作区"
+  },
+  "data.resources.site.openCut.title": {
+    "message": "OpenCut"
+  },
+  "data.resources.site.openCut.description": {
+    "message": "开源的浏览器视频编辑器"
+  },
+  "data.resources.site.multDev.title": {
+    "message": "Mult.dev"
+  },
+  "data.resources.site.multDev.description": {
+    "message": "用于制作旅行地图与路线动画视频的工具"
+  },
+  "data.resources.site.codeSnap.title": {
+    "message": "CodeSnap"
+  },
+  "data.resources.site.codeSnap.description": {
+    "message": "用于制作可分享代码图片的编辑器"
+  },
+  "data.resources.site.colorable.title": {
+    "message": "Colorable"
+  },
+  "data.resources.site.colorable.description": {
+    "message": "用于检查与调整颜色对比度的工具"
+  },
+  "data.resources.site.skillIcons.title": {
+    "message": "Skill Icons"
+  },
+  "data.resources.site.skillIcons.description": {
+    "message": "可嵌入的编程语言与开发工具图标集"
+  },
+  "data.resources.site.brandColors.title": {
+    "message": "BrandColors"
+  },
+  "data.resources.site.brandColors.description": {
+    "message": "收录官方品牌色值的参考资料库"
+  },
+  "data.resources.site.pixelMap.title": {
+    "message": "Pixel Map Generator"
+  },
+  "data.resources.site.pixelMap.description": {
+    "message": "支持多种格式导出的像素风格地图生成器"
+  },
+  "data.resources.site.bentoGrids.title": {
+    "message": "BentoGrids"
+  },
+  "data.resources.site.bentoGrids.description": {
+    "message": "便当盒式界面设计的精选灵感图库"
+  },
+  "data.resources.site.makerworld.title": {
+    "message": "MakerWorld"
+  },
+  "data.resources.site.makerworld.description": {
+    "message": "面向 3D 打印模型的社区平台"
+  },
+  "data.resources.site.speedtest.title": {
+    "message": "Speedtest by Ookla"
+  },
+  "data.resources.site.speedtest.description": {
+    "message": "Ookla 提供的互联网连接速度测试"
+  },
+  "data.resources.site.netCoffee.title": {
+    "message": "Net.Coffee"
+  },
+  "data.resources.site.netCoffee.description": {
+    "message": "IP 地址、分流规则与网络连通性诊断工具"
+  },
+  "data.resources.site.passwordMonster.title": {
+    "message": "Password Monster"
+  },
+  "data.resources.site.passwordMonster.description": {
+    "message": "在浏览器中估算密码强度的工具"
+  },
+  "data.resources.site.volumeshader.title": {
+    "message": "volumeshader_bm"
+  },
+  "data.resources.site.volumeshader.description": {
+    "message": "WebGL 体积着色器性能基准测试"
+  },
+  "data.resources.site.fishBowl.title": {
+    "message": "HTML5 Fish Bowl"
+  },
+  "data.resources.site.fishBowl.description": {
+    "message": "使用动态鱼群测试 HTML5 图形性能的基准"
+  },
+  "data.resources.site.webglAquarium.title": {
+    "message": "WebGL Aquarium"
+  },
+  "data.resources.site.webglAquarium.description": {
+    "message": "使用动态水族箱测试 WebGL 渲染性能的基准"
+  },
+  "data.resources.site.clickSpeedTest.title": {
+    "message": "Click Speed Test"
+  },
+  "data.resources.site.clickSpeedTest.description": {
+    "message": "按限定时间测量每秒点击次数的工具"
+  },
+  "data.resources.site.aRealMe.title": {
+    "message": "A Real Me"
+  },
+  "data.resources.site.aRealMe.description": {
+    "message": "汇集性格、能力与知识测验的平台"
+  },
+  "data.resources.site.politicalOrientation.title": {
+    "message": "政治倾向测试"
+  },
+  "data.resources.site.politicalOrientation.description": {
+    "message": "用于了解个人政治倾向的问卷测试"
+  },
+  "data.resources.site.youtube.title": {
+    "message": "YouTube"
+  },
+  "data.resources.site.youtube.description": {
+    "message": "视频托管、播放与创作平台"
+  },
+  "data.resources.site.x.title": {
+    "message": "X"
+  },
+  "data.resources.site.x.description": {
+    "message": "面向公开讨论的实时社交网络"
+  },
+  "data.resources.site.facebook.title": {
+    "message": "Facebook"
+  },
+  "data.resources.site.facebook.description": {
+    "message": "连接个人、群组与组织的社交网络"
+  },
+  "data.resources.site.telegramWeb.title": {
+    "message": "Telegram Web"
+  },
+  "data.resources.site.telegramWeb.description": {
+    "message": "Telegram 即时通信服务的浏览器客户端"
+  },
+  "data.resources.site.polymarket.title": {
+    "message": "Polymarket"
+  },
+  "data.resources.site.polymarket.description": {
+    "message": "基于可交易事件合约的预测市场"
+  },
+  "data.resources.site.bilibili.title": {
+    "message": "哔哩哔哩"
+  },
+  "data.resources.site.bilibili.description": {
+    "message": "国内视频平台与兴趣社区"
+  },
+  "data.resources.site.crazygames.title": {
+    "message": "CrazyGames"
+  },
+  "data.resources.site.crazygames.description": {
+    "message": "免费网页游戏聚合平台"
+  },
+  "data.resources.site.freeFocusGames.title": {
+    "message": "FreeFocusGames"
+  },
+  "data.resources.site.freeFocusGames.description": {
+    "message": "用于注意力与记忆力练习的网页游戏"
+  },
+  "data.resources.site.ioGames.title": {
+    "message": ".io Games"
+  },
+  "data.resources.site.ioGames.description": {
+    "message": "多人 .io 网页游戏聚合平台"
+  },
+  "data.resources.site.nealFun.title": {
+    "message": "Neal.fun"
+  },
+  "data.resources.site.nealFun.description": {
+    "message": "互动网页游戏与可视化实验合集"
+  },
+  "data.resources.site.lichess.title": {
+    "message": "Lichess"
+  },
+  "data.resources.site.lichess.description": {
+    "message": "免费开源的在线国际象棋平台"
+  },
+  "data.resources.site.generalsIo.title": {
+    "message": "generals.io"
+  },
+  "data.resources.site.generalsIo.description": {
+    "message": "多人领土争夺策略游戏"
+  },
+  "data.resources.site.florrIo.title": {
+    "message": "florr.io"
+  },
+  "data.resources.site.florrIo.description": {
+    "message": "围绕花朵与花瓣展开的多人生存游戏"
+  },
+  "data.resources.site.tilemanIo.title": {
+    "message": "TileMan.io"
+  },
+  "data.resources.site.tilemanIo.description": {
+    "message": "多人领地占领游戏"
+  },
+  "data.resources.site.yorgIo.title": {
+    "message": "YORG.io"
+  },
+  "data.resources.site.yorgIo.description": {
+    "message": "结合供应链建设与僵尸防御的塔防游戏"
+  },
+  "data.resources.site.bloxdIo.title": {
+    "message": "Bloxd.io"
+  },
+  "data.resources.site.bloxdIo.description": {
+    "message": "多人方块建造与小游戏平台"
+  },
+  "data.resources.site.wplace.title": {
+    "message": "Wplace"
+  },
+  "data.resources.site.wplace.description": {
+    "message": "基于世界地图的实时协作像素画布"
+  },
+  "data.resources.site.sandspiel.title": {
+    "message": "sandspiel"
+  },
+  "data.resources.site.sandspiel.description": {
+    "message": "落沙模拟与元素创作沙盒"
+  },
+  "data.resources.site.kiomet.title": {
+    "message": "Kiomet"
+  },
+  "data.resources.site.kiomet.description": {
+    "message": "多人实时领土策略游戏"
+  },
+  "data.resources.site.linkr.title": {
+    "message": "LINKR"
+  },
+  "data.resources.site.linkr.description": {
+    "message": "连接所有点位的每日益智游戏"
+  },
+  "data.resources.site.diepIo.title": {
+    "message": "diep.io"
+  },
+  "data.resources.site.diepIo.description": {
+    "message": "多人坦克竞技游戏"
+  },
+  "data.resources.site.gridspech.title": {
+    "message": "Gridspech"
+  },
+  "data.resources.site.gridspech.description": {
+    "message": "通过网格与符号发现规则的益智游戏"
+  },
+  "data.resources.site.evolutionOfTrust.title": {
+    "message": "信任的进化"
+  },
+  "data.resources.site.evolutionOfTrust.description": {
+    "message": "以互动方式讲解信任博弈的科普游戏"
+  },
+  "data.resources.site.tuxun.title": {
+    "message": "图寻"
+  },
+  "data.resources.site.tuxun.description": {
+    "message": "根据街景与图片推测地点的地理游戏"
+  },
+  "data.resources.site.guessSalt.title": {
+    "message": "猜盐"
+  },
+  "data.resources.site.guessSalt.description": {
+    "message": "包含每日挑战、测验与多人模式的竞猜游戏合集"
+  },
+  "data.resources.site.nameArena.title": {
+    "message": "名字竞技场"
+  },
+  "data.resources.site.nameArena.description": {
+    "message": "根据名字生成确定性结果的文字对战游戏"
+  },
+  "data.resources.site.boardGameCollection.title": {
+    "message": "桌游合集"
+  },
+  "data.resources.site.boardGameCollection.description": {
+    "message": "支持多人联机的数字桌游合集"
+  },
+  "data.resources.site.apple.title": {
+    "message": "Apple"
+  },
+  "data.resources.site.apple.description": {
+    "message": "消费电子产品、数字服务与技术支持"
+  },
+  "data.resources.site.appleSpecs.title": {
+    "message": "Apple 苹果产品参数中心"
+  },
+  "data.resources.site.appleSpecs.description": {
+    "message": "Apple 设备与芯片规格查询平台"
+  },
+  "data.resources.site.socpk.title": {
+    "message": "SOCPK"
+  },
+  "data.resources.site.socpk.description": {
+    "message": "移动端系统级芯片性能排行与对比平台"
+  },
+  "data.resources.site.digitalLychee.title": {
+    "message": "数码荔枝"
+  },
+  "data.resources.site.digitalLychee.description": {
+    "message": "面向桌面端与移动端的正版软件商店"
+  },
+  "data.resources.site.classWidgets.title": {
+    "message": "Class Widgets 2"
+  },
+  "data.resources.site.classWidgets.description": {
+    "message": "新一代开源桌面电子课表应用"
+  },
+  "data.resources.site.eClassroomTerminator.title": {
+    "message": "电子教室终结者"
+  },
+  "data.resources.site.eClassroomTerminator.description": {
+    "message": "用于检测并解除机房电脑常见限制的 Windows 工具"
+  },
+  "data.resources.site.googleTranslate.title": {
+    "message": "Google 翻译"
+  },
+  "data.resources.site.googleTranslate.description": {
+    "message": "支持文本、文档、图片与网页的翻译服务"
+  },
+  "data.resources.site.ilovepdf.title": {
+    "message": "iLovePDF"
+  },
+  "data.resources.site.ilovepdf.description": {
+    "message": "用于编辑与转换 PDF 文件的在线工具集"
+  },
+  "data.resources.site.qrCodeGenerator.title": {
+    "message": "QR Code Generator"
+  },
+  "data.resources.site.qrCodeGenerator.description": {
+    "message": "支持自定义样式与导出的二维码生成工具"
+  },
+  "data.resources.site.forensically.title": {
+    "message": "Forensically"
+  },
+  "data.resources.site.forensically.description": {
+    "message": "用于数字图像取证的浏览器工具集"
+  },
+  "data.resources.site.passportIndex.title": {
+    "message": "Passport Index"
+  },
+  "data.resources.site.passportIndex.description": {
+    "message": "交互式护照排名与签证通行信息平台"
+  },
+  "data.resources.site.noteMs.title": {
+    "message": "Note.ms"
+  },
+  "data.resources.site.noteMs.description": {
+    "message": "通过自定义网址快速共享的浏览器记事本"
+  },
+  "data.resources.site.normalSpeech.title": {
+    "message": "能不能好好说话？"
+  },
+  "data.resources.site.normalSpeech.description": {
+    "message": "中文拼音首字母缩写释义工具"
+  },
+  "data.resources.site.dazidazi.title": {
+    "message": "dazidazi"
+  },
+  "data.resources.site.dazidazi.description": {
+    "message": "支持中文、英文与代码内容的在线打字练习"
+  },
+  "data.resources.site.wildAi.title": {
+    "message": "WildAI"
+  },
+  "data.resources.site.wildAi.description": {
+    "message": "面向海外 AI 账号的第三方订阅服务"
+  },
+  "data.resources.site.lubanSms.title": {
+    "message": "Luban SMS"
+  },
+  "data.resources.site.lubanSms.description": {
+    "message": "提供虚拟号码与短信收发的服务平台"
+  },
+  "data.resources.site.lailaiTools.title": {
+    "message": "lailai's Tools"
+  },
+  "data.resources.site.lailaiTools.description": {
+    "message": "在浏览器本地运行的隐私友好型开发者工具集"
+  },
+  "data.resources.site.lailaiAcademy.title": {
+    "message": "lailai's Academy"
+  },
+  "data.resources.site.lailaiAcademy.description": {
+    "message": "面向高中生的个性化自学平台"
+  },
+  "data.resources.site.lailaiCloud.title": {
+    "message": "lailai's Cloud"
+  },
+  "data.resources.site.lailaiCloud.description": {
+    "message": "个人文件存储与资源托管服务"
+  },
+  "data.resources.category.searchKnowledge.title": {
+    "message": "搜索与知识"
+  },
+  "data.resources.category.aiAssistants.title": {
+    "message": "AI 助手"
+  },
+  "data.resources.category.aiResearch.title": {
+    "message": "AI 研究与平台"
+  },
+  "data.resources.category.cloudNetwork.title": {
+    "message": "云与网络"
+  },
+  "data.resources.category.developerTools.title": {
+    "message": "开发工具"
+  },
+  "data.resources.category.webPublishing.title": {
+    "message": "Web 开发与发布"
+  },
+  "data.resources.category.researchPublishing.title": {
+    "message": "学术研究与出版"
+  },
+  "data.resources.category.learningCourses.title": {
+    "message": "学习与课程"
+  },
+  "data.resources.category.competitiveProgramming.title": {
+    "message": "算法竞赛"
+  },
+  "data.resources.category.mathComputing.title": {
+    "message": "数学与计算"
+  },
+  "data.resources.category.designCreation.title": {
+    "message": "设计与创作"
+  },
+  "data.resources.category.testingBenchmarks.title": {
+    "message": "测试与基准"
+  },
+  "data.resources.category.mediaCommunities.title": {
+    "message": "媒体与社区"
+  },
+  "data.resources.category.browserGames.title": {
+    "message": "网页游戏"
+  },
+  "data.resources.category.softwareDevices.title": {
+    "message": "软件与设备"
+  },
+  "data.resources.category.onlineUtilities.title": {
+    "message": "在线工具"
+  },
+  "data.resources.category.personalProjects.title": {
+    "message": "个人项目"
   }
 }
