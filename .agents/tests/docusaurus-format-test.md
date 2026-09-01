@@ -20,15 +20,13 @@ personal/workflow Skills and this repository's internal rules.
 
 Pass only when every website-owned check succeeds and the externally validated body is preserved.
 
-## AI solution collection
+## AI solution index
 
-Given an existing `blog/solution/ai-solutions-1.mdx`, complete and publish one more AI Luogu
-solution without an instruction to open a new collection.
+Given one AI Luogu solution selected by the external `lailai-skill`, update the website index.
 
-- Update `ai-solutions-1.mdx`; do not create `ai-solutions-2.mdx` or a per-problem site page.
-- Keep the title `题解：AI 题解合集（一）` and append the complete solution title with its Luogu
-  article link in publish-time order.
-- Update the lead, description, and summary counts; keep the date equal to the earliest linked
-  Luogu article's exact publish second.
-- Create the next ASCII-numbered file and matching Chinese title numeral only after lailai
-  explicitly asks to open a new collection.
+- Add the complete solution title and Luogu article link to the single list under `### AI 题解` in
+  `docs/contest/personal/luogu.mdx`, immediately after the solution example.
+- Do not create a blog collection, pagination, a batch file, or a per-problem site page.
+- Do not add a dedicated checker script or package-manager command for this index.
+- Keep every existing entry in the same list regardless of its length, and reject duplicate PIDs
+  or article IDs.
