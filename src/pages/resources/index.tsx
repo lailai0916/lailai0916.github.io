@@ -1,4 +1,4 @@
-import { type ReactNode, useEffect, useMemo, useRef, useState } from 'react';
+import { type ReactNode, useEffect, useId, useMemo, useRef, useState } from 'react';
 import { Icon } from '@iconify/react';
 import Layout from '@theme/Layout';
 
@@ -40,6 +40,10 @@ const CLEAR_SEARCH = translate({
 const SEARCH_PLACEHOLDER = translate({
   id: 'pages.resources.search.placeholder',
   message: 'Search Resources',
+});
+const CATEGORY_MENU_LABEL = translate({
+  id: 'pages.resources.category.ariaLabel',
+  message: 'Resource categories',
 });
 
 function filterResourceCategories(
@@ -83,8 +87,9 @@ function FilterBar({
   onSearchChange: (value: string) => void;
 }) {
   const [open, setOpen] = useState(false);
+  const panelId = useId();
   const wrapperRef = useRef<HTMLDivElement>(null);
-  const inputRef = useRef<HTMLInputElement>(null);
+  const toggleRef = useRef<HTMLButtonElement>(null);
 
   const activeCat = useMemo(
     () => categories.find((category) => category.id === activeCategory) ?? null,
@@ -101,7 +106,7 @@ function FilterBar({
     const handleKey = (e: KeyboardEvent) => {
       if (e.key === 'Escape') {
         setOpen(false);
-        inputRef.current?.blur();
+        toggleRef.current?.focus();
       }
     };
     document.addEventListener('mousedown', handleClick);
@@ -142,11 +147,9 @@ function FilterBar({
             </Badge>
           )}
           <input
-            ref={inputRef}
             type="text"
             value={searchValue}
             onChange={(e) => onSearchChange(e.target.value)}
-            onFocus={() => setOpen(true)}
             placeholder={SEARCH_PLACEHOLDER}
             aria-label={SEARCH_PLACEHOLDER}
             className={styles.filterSearchInput}
@@ -155,24 +158,54 @@ function FilterBar({
             <button
               type="button"
               onClick={() => onSearchChange('')}
-              className={styles.filterSearchClear}
+              className={styles.filterControl}
               aria-label={CLEAR_SEARCH}
             >
-              <Icon icon="lucide:x" />
+              <Icon icon="lucide:x" aria-hidden />
             </button>
           )}
+          <button
+            ref={toggleRef}
+            type="button"
+            className={styles.filterControl}
+            onClick={() => setOpen((current) => !current)}
+            aria-label={CATEGORY_MENU_LABEL}
+            aria-expanded={open}
+            aria-controls={panelId}
+          >
+            <svg
+              viewBox="0 0 20 20"
+              className={clsx(styles.filterCategoryToggleIcon, {
+                [styles.filterCategoryToggleIconOpen]: open,
+              })}
+              aria-hidden="true"
+            >
+              <path
+                d="M5 8l5 5 5-5"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.6"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
+          </button>
         </div>
       </Card>
       {open && (
-        <div className={styles.filterPanel}>
-          <div className={styles.filterRail}>
+        <div id={panelId} className={styles.filterPanel}>
+          <div className={styles.filterRail} role="group" aria-label={CATEGORY_MENU_LABEL}>
             {categories.map((category) => {
               const isActive = activeCategory === category.id;
               return (
                 <button
                   key={category.id}
                   type="button"
-                  onClick={() => onCategoryChange(isActive ? 'all' : category.id)}
+                  onClick={() => {
+                    onCategoryChange(isActive ? 'all' : category.id);
+                    setOpen(false);
+                    toggleRef.current?.focus();
+                  }}
                   className={clsx(styles.filterRailItem, {
                     [styles.filterRailItemActive]: isActive,
                   })}

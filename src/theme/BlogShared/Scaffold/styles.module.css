@@ -210,22 +210,6 @@
   padding-left: 3.875rem;
 }
 
-.tocItemActive::before {
-  content: '';
-  position: absolute;
-  left: -1px;
-  top: 0.4rem;
-  bottom: 0.4rem;
-  width: 2px;
-  background: var(--ifm-color-primary);
-  border-radius: 1px;
-}
-
-.tocItemActive .tocLink {
-  color: var(--ifm-color-primary);
-  font-weight: 600;
-}
-
 .tocLink {
   display: block;
   padding: 0.3rem 0;
@@ -240,6 +224,22 @@
 
 .tocLink:active {
   color: var(--ifm-color-primary-dark);
+}
+
+.tocLinkActive {
+  color: var(--ifm-color-primary);
+  font-weight: 600;
+}
+
+.tocLinkActive::before {
+  content: '';
+  position: absolute;
+  left: -1px;
+  top: 0.4rem;
+  bottom: 0.4rem;
+  width: 2px;
+  background: var(--ifm-color-primary);
+  border-radius: 1px;
 }
 
 .container {

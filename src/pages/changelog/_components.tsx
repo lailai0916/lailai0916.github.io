@@ -3,6 +3,7 @@ import { translate } from '@docusaurus/Translate';
 import { CHANGELOG_LIST, TYPE_LABEL } from '@site/src/data/changelog';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import { formatCalendarMonthName } from '@site/src/utils/dateTime';
+import styles from './styles.module.css';
 
 const EMPTY_LABEL = translate({
   id: 'pages.changelog.empty',
@@ -50,15 +51,20 @@ export function Changelog() {
                     ? `${Number(month)} 月`
                     : formatCalendarMonthName(`${year}-${month}`, i18n.currentLocale)}
                 </h3>
-                <ul>
-                  {items.map((item, i) => {
-                    return (
-                      <li key={`${item.date}-${item.type}-${i}`}>
-                        <strong>{TYPE_LABEL[item.type]}</strong>{' '}
-                        <span dangerouslySetInnerHTML={{ __html: item.content }} />
-                      </li>
-                    );
-                  })}
+                <ul className={styles.entries}>
+                  {items.map((item, i) => (
+                    <li
+                      className={styles.entry}
+                      data-type={item.type}
+                      key={`${item.date}-${item.type}-${i}`}
+                    >
+                      <strong className={styles.type}>{TYPE_LABEL[item.type]}</strong>
+                      <span
+                        className={styles.content}
+                        dangerouslySetInnerHTML={{ __html: item.content }}
+                      />
+                    </li>
+                  ))}
                 </ul>
               </section>
             );

@@ -12,6 +12,14 @@ import { DEVICE_LIST } from '@site/src/data/devices';
 import { COMMUNITY_LIST } from '@site/src/data/community';
 import styles from './styles.module.css';
 
+export function WordCloud() {
+  return (
+    <div className={styles.wordCloud}>
+      <img src="https://cloud.lailai.one/f/AdNtA/wordcloud.svg" alt="" />
+    </div>
+  );
+}
+
 export function Skills() {
   const [perline, setPerline] = useState(12);
 

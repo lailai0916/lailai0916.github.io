@@ -1,0 +1,161 @@
+:global(.privacy-page main.container.container--fluid) {
+  margin-block: 0 !important;
+  padding: 0;
+}
+
+:global(.privacy-page main.container.container--fluid > .row) {
+  margin: 0;
+}
+
+:global(.privacy-page main.container.container--fluid > .row > .col) {
+  padding: 0;
+}
+
+.lastUpdated {
+  flex-shrink: 0;
+  text-align: right;
+}
+
+.lastUpdated span,
+.lastUpdated time {
+  display: block;
+}
+
+.lastUpdated span {
+  margin-bottom: 0.35rem;
+  color: var(--ifm-color-emphasis-500);
+  font-size: 0.72rem;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: 0.08em;
+}
+
+.lastUpdated time {
+  color: var(--ifm-color-emphasis-800);
+  font-size: 0.95rem;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+@media (max-width: 768px) {
+  .lastUpdated {
+    text-align: left;
+  }
+}
+
+.policyLayout {
+  display: grid;
+  grid-template-columns: minmax(15rem, 18rem) minmax(0, 1fr);
+  gap: clamp(2.5rem, 7vw, 6rem);
+  align-items: start;
+}
+
+.policyLayout > :global(.markdown) {
+  min-width: 0;
+}
+
+.summary {
+  position: sticky;
+  top: calc(var(--ifm-navbar-height) + 1.5rem);
+}
+
+.summaryEyebrow {
+  display: block;
+  margin-bottom: 1.25rem;
+  color: var(--ifm-color-emphasis-600);
+  font-size: 0.7rem;
+  font-weight: 750;
+  line-height: 1;
+  letter-spacing: 0.1em;
+}
+
+.summaryList {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.summaryItem {
+  display: grid;
+  grid-template-columns: 1.25rem minmax(0, 1fr);
+  gap: 0.75rem;
+}
+
+.summaryIcon {
+  width: 1.1rem;
+  height: 1.1rem;
+  margin-top: 0.08rem;
+  color: var(--ifm-color-primary);
+}
+
+.summaryItem strong,
+.summaryItem span {
+  display: block;
+}
+
+.summaryItem strong {
+  margin-bottom: 0.25rem;
+  color: var(--ifm-heading-color);
+  font-size: 0.82rem;
+  line-height: 1.35;
+}
+
+.summaryItem span {
+  color: var(--ifm-color-emphasis-600);
+  font-size: 0.75rem;
+  line-height: 1.5;
+}
+
+.contactLink {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  min-height: 44px;
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--ifm-color-emphasis-200);
+  color: var(--ifm-color-emphasis-700);
+  font-size: 0.78rem;
+  font-weight: 650;
+  text-decoration: none;
+}
+
+.contactLink:hover {
+  color: var(--ifm-color-primary);
+  text-decoration: none;
+}
+
+.contactLink svg {
+  flex-shrink: 0;
+  transition: transform 160ms ease;
+}
+
+.contactLink:hover svg {
+  transform: translate(1px, -1px);
+}
+
+@media (max-width: 820px) {
+  .policyLayout {
+    grid-template-columns: 1fr;
+  }
+
+  .summary {
+    position: static;
+  }
+
+  .summaryList {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 620px) {
+  .summaryList {
+    grid-template-columns: 1fr;
+  }
+}

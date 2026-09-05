@@ -1,18 +1,26 @@
 ---
 title: Privacy Policy
+description: How lailai's Home handles your information
 hide_table_of_contents: true
+wrapperClassName: privacy-page
 ---
 
-import { MDTitle } from '@site/src/components/laikit/Markdown';
+import { PageTitle, PageHeader, PageContent } from '@site/src/components/laikit/Page';
+import { PrivacyLastUpdated, PrivacySummary } from '@site/src/pages/privacy/\_components';
+import styles from '@site/src/pages/privacy/styles.module.css';
 
-<div style={{ maxWidth: '664px', margin: 'auto' }}>
+<PageHeader>
+  <PageTitle
+    title="Privacy <b>Policy</b>"
+    description="How lailai's Home handles your information"
+  />
+  <PrivacyLastUpdated />
+</PageHeader>
 
-<MDTitle
-  title="Privacy Policy"
-  description="What lailai's Home collects, how it's used and shared, and the choices you have."
-/>
+<PageContent as="div" className={styles.policyLayout}>
+  <PrivacySummary />
 
-Last updated: August 22, 2026
+<div className="markdown">
 
 ## 1. Scope
 
@@ -247,3 +255,5 @@ That includes, for example, GitHub, Google, Algolia, social platforms, and any e
 We may update this Privacy Policy from time to time to reflect changes in the Site, the services it relies on, or applicable law. When we make changes, we will update the "Last updated" date at the top of this page, and significant changes may also be noted in the Site's changelog. Your continued use of the Site after an update takes effect means you accept the revised policy.
 
 </div>
+
+</PageContent>

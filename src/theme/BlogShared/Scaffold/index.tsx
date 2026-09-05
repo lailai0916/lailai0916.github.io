@@ -3,6 +3,7 @@ import clsx from 'clsx';
 import Link from '@docusaurus/Link';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import { useLocation } from '@docusaurus/router';
+import { useTOCHighlight, type TOCHighlightConfig } from '@docusaurus/theme-common/internal';
 import Layout from '@theme/Layout';
 import type { TOCItem } from '@docusaurus/mdx-loader';
 
@@ -147,40 +148,6 @@ function useScrollProgress() {
   return Math.min(1, Math.max(0, progress));
 }
 
-function useActiveHeading(toc: readonly TOCItem[]): string | null {
-  const [activeId, setActiveId] = useState<string | null>(null);
-
-  useEffect(() => {
-    if (!toc.length) return;
-    const ids = toc.map((item) => item.id);
-
-    const updateActive = () => {
-      const offset = window.innerHeight * 0.25;
-      let current: string | null = null;
-      for (const id of ids) {
-        const el = document.getElementById(id);
-        if (!el) continue;
-        if (el.getBoundingClientRect().top - offset <= 0) {
-          current = id;
-        } else {
-          break;
-        }
-      }
-      setActiveId(current ?? ids[0] ?? null);
-    };
-
-    updateActive();
-    window.addEventListener('scroll', updateActive, { passive: true });
-    window.addEventListener('resize', updateActive);
-    return () => {
-      window.removeEventListener('scroll', updateActive);
-      window.removeEventListener('resize', updateActive);
-    };
-  }, [toc]);
-
-  return activeId;
-}
-
 function TocProgress({ progress }: { progress: number }) {
   const pct = Math.round(progress * 100);
   return (
@@ -204,7 +171,17 @@ function TocProgress({ progress }: { progress: number }) {
 }
 
 function TocCard({ toc, progress }: { toc: readonly TOCItem[]; progress: number }) {
-  const activeId = useActiveHeading(toc);
+  const highlightConfig = useMemo<TOCHighlightConfig | undefined>(() => {
+    if (!toc.length) return undefined;
+    const levels = toc.map((item) => item.level);
+    return {
+      linkClassName: styles.tocLink,
+      linkActiveClassName: styles.tocLinkActive,
+      minHeadingLevel: Math.min(...levels),
+      maxHeadingLevel: Math.max(...levels),
+    };
+  }, [toc]);
+  useTOCHighlight(highlightConfig);
 
   return (
     <div className={styles.tocContainer}>
@@ -222,21 +199,12 @@ function TocCard({ toc, progress }: { toc: readonly TOCItem[]; progress: number 
         {toc.length > 0 && (
           <ul className={styles.tocList}>
             {toc.map((item) => {
-              const isActive = item.id === activeId;
               const level = Math.min(Math.max(item.level, 2), 6);
               return (
-                <li
-                  key={item.id}
-                  className={clsx(
-                    styles.tocItem,
-                    styles[`tocItemL${level}`],
-                    isActive && styles.tocItemActive
-                  )}
-                >
+                <li key={item.id} className={clsx(styles.tocItem, styles[`tocItemL${level}`])}>
                   <Link
                     to={`#${item.id}`}
                     className={styles.tocLink}
-                    aria-current={isActive ? 'true' : undefined}
                     dangerouslySetInnerHTML={{ __html: item.value }}
                   />
                 </li>

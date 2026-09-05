@@ -1,18 +1,23 @@
 ---
 title: 隐私政策
+description: lailai's Home 如何处理您的信息
 hide_table_of_contents: true
+wrapperClassName: privacy-page
 ---
 
-import { MDTitle } from '@site/src/components/laikit/Markdown';
+import { PageTitle, PageHeader, PageContent } from '@site/src/components/laikit/Page';
+import { PrivacyLastUpdated, PrivacySummary } from '@site/src/pages/privacy/\_components';
+import styles from '@site/src/pages/privacy/styles.module.css';
 
-<div style={{ maxWidth: '664px', margin: 'auto' }}>
+<PageHeader>
+  <PageTitle title="隐私<b>政策</b>" description="lailai's Home 如何处理您的信息" />
+  <PrivacyLastUpdated />
+</PageHeader>
 
-<MDTitle
-  title="隐私政策"
-  description="lailai's Home 收集哪些信息、如何使用与共享，以及您可行使的选择。"
-/>
+<PageContent as="div" className={styles.policyLayout}>
+  <PrivacySummary />
 
-最后更新：2026 年 8 月 22 日
+<div className="markdown">
 
 ## 1. 适用范围
 
@@ -247,3 +252,5 @@ import { MDTitle } from '@site/src/components/laikit/Markdown';
 我们可能会不时更新本隐私政策，以反映本站、其所依赖的服务或适用法律的变化。当我们作出更改时，会更新本页顶部的「最后更新」日期；重大变更也可能会在本站的更新日志中说明。在更新生效后继续使用本站，即表示您接受修订后的政策。
 
 </div>
+
+</PageContent>

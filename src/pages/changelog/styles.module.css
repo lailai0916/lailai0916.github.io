@@ -1,0 +1,59 @@
+.entries {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  min-width: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.entry {
+  display: grid;
+  grid-template-columns: 5.75rem minmax(0, 1fr);
+  align-items: baseline;
+  gap: 0.75rem;
+  min-width: 0;
+}
+
+.type {
+  color: var(--ifm-color-emphasis-700);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.045em;
+}
+
+.entry[data-type='added'] .type,
+.entry[data-type='security'] .type {
+  color: var(--ifm-color-success-darker);
+}
+
+.entry[data-type='fixed'] .type,
+.entry[data-type='changed'] .type {
+  color: var(--ifm-color-primary-dark);
+}
+
+.entry[data-type='deprecated'] .type,
+.entry[data-type='removed'] .type {
+  color: var(--ifm-color-danger-dark);
+}
+
+html[data-theme='dark'] .entry[data-type='added'] .type,
+html[data-theme='dark'] .entry[data-type='security'] .type {
+  color: var(--ifm-color-success-light);
+}
+
+html[data-theme='dark'] .entry[data-type='fixed'] .type,
+html[data-theme='dark'] .entry[data-type='changed'] .type {
+  color: var(--ifm-color-primary-light);
+}
+
+html[data-theme='dark'] .entry[data-type='deprecated'] .type,
+html[data-theme='dark'] .entry[data-type='removed'] .type {
+  color: var(--ifm-color-danger-light);
+}
+
+.content {
+  min-width: 0;
+  line-height: 1.55;
+  overflow-wrap: break-word;
+}

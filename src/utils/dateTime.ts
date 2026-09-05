@@ -96,6 +96,17 @@ export function compareInstantsDescending(a: DateTimeInput, b: DateTimeInput): n
   return requireInstant(b).getTime() - requireInstant(a).getTime();
 }
 
+export function formatCalendarDate(value: string, locale: string): string {
+  const match = /^(\d{4})-(0[1-9]|1[0-2])-(0[1-9]|[12]\d|3[01])$/.exec(value);
+  if (!match) return value;
+  const [, year, month, day] = match;
+  return getFormatter(locale, 'UTC', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+  }).format(new Date(Date.UTC(Number(year), Number(month) - 1, Number(day))));
+}
+
 export function formatCalendarMonth(value: string, locale: string): string {
   const match = /^(\d{4})-(0[1-9]|1[0-2])$/.exec(value);
   if (!match) return value;

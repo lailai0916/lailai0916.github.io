@@ -76,26 +76,59 @@
   color: var(--ifm-color-emphasis-500);
 }
 
-.filterSearchClear {
+.filterControl {
+  align-items: center;
   appearance: none;
-  border: none;
   background: transparent;
-  padding: 0.2rem;
+  border: none;
+  border-radius: 6px;
+  color: rgba(60, 60, 67, 0.55);
   cursor: pointer;
   display: inline-flex;
-  color: var(--ifm-color-emphasis-500);
-  border-radius: 4px;
+  flex-shrink: 0;
+  height: 28px;
+  justify-content: center;
+  padding: 0;
+  width: 28px;
   transition:
+    background-color 160ms ease,
     color 160ms ease,
     transform 160ms ease;
 }
 
-.filterSearchClear:hover {
-  color: var(--ifm-color-emphasis-800);
+[data-theme='dark'] .filterControl {
+  color: rgba(235, 235, 245, 0.45);
 }
 
-.filterSearchClear:active {
+.filterControl:hover {
+  background-color: rgba(0, 0, 0, 0.04);
+  color: var(--ifm-color-content);
+}
+
+[data-theme='dark'] .filterControl:hover {
+  background-color: rgba(255, 255, 255, 0.06);
+}
+
+.filterControl:active {
   transform: scale(0.92);
+}
+
+.filterControl:focus-visible {
+  outline: none;
+  box-shadow: var(--lk-focus-ring);
+}
+
+.filterControl svg {
+  width: 1rem;
+  height: 1rem;
+}
+
+.filterCategoryToggleIcon {
+  transition: transform 160ms ease;
+}
+
+.filterCategoryToggleIconOpen {
+  transform: rotate(180deg);
 }
 
 .filterPanel {

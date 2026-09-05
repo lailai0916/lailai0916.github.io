@@ -1,52 +1,4 @@
 {
-  "pages.home.nav.contest": {
-    "message": "竞赛"
-  },
-  "pages.home.nav.note": {
-    "message": "笔记"
-  },
-  "pages.home.nav.project": {
-    "message": "项目"
-  },
-  "pages.home.nav.blog": {
-    "message": "博客"
-  },
-  "pages.home.tag.china": {
-    "message": "中国"
-  },
-  "pages.home.tag.school": {
-    "message": "杭州第二中学"
-  },
-  "pages.home.tag.languages": {
-    "message": "中文 & 英文"
-  },
-  "pages.home.tag.pronouns": {
-    "message": "他"
-  },
-  "pages.home.tag.mbti": {
-    "message": "INTJ"
-  },
-  "pages.home.identity.student": {
-    "message": "学生"
-  },
-  "pages.home.identity.developer": {
-    "message": "开发者"
-  },
-  "pages.home.identity.researcher": {
-    "message": "研究者"
-  },
-  "pages.home.identity.designer": {
-    "message": "设计师"
-  },
-  "pages.home.identity.oier": {
-    "message": "OIer"
-  },
-  "pages.home.rolePrefix": {
-    "message": "我是一名 "
-  },
-  "pages.home.connect": {
-    "message": "联系"
-  },
   "data.changelog.entry20260822GoogleAnalytics": {
     "message": "Google Analytics 分析"
   },
@@ -304,1587 +256,6 @@
   },
   "data.moments.blogPublished": {
     "message": "发布了新文章 <a href=\"{permalink}\">{title}</a>"
-  },
-  "data.travel.trip201109.title": {
-    "message": "🇨🇳 海南"
-  },
-  "data.travel.trip201109.description": {
-    "message": "三亚"
-  },
-  "data.travel.trip201111.title": {
-    "message": "🇨🇳 安徽"
-  },
-  "data.travel.trip201111.description": {
-    "message": "黄山（宏村、西递）"
-  },
-  "data.travel.trip201204.title": {
-    "message": "🇨🇳 江苏"
-  },
-  "data.travel.trip201204.description": {
-    "message": "泰州、扬州"
-  },
-  "data.travel.trip201206.title": {
-    "message": "🇨🇳 上海"
-  },
-  "data.travel.trip201206.description": {
-    "message": "上海"
-  },
-  "data.travel.trip201302.title": {
-    "message": "🇨🇳 广东"
-  },
-  "data.travel.trip201302.description": {
-    "message": "广州、中山"
-  },
-  "data.travel.trip201305.title": {
-    "message": "🇨🇳 广东 & 🇭🇰 香港"
-  },
-  "data.travel.trip201305.description": {
-    "message": "深圳、香港"
-  },
-  "data.travel.trip201309.title": {
-    "message": "🇨🇳 吉林、辽宁"
-  },
-  "data.travel.trip201309.description": {
-    "message": "白山（长白山）、通化、沈阳"
-  },
-  "data.travel.trip201402Jiangsu.title": {
-    "message": "🇨🇳 江苏"
-  },
-  "data.travel.trip201402Jiangsu.description": {
-    "message": "南京"
-  },
-  "data.travel.trip201402Tianjin.title": {
-    "message": "🇨🇳 天津"
-  },
-  "data.travel.trip201402Tianjin.description": {
-    "message": "天津"
-  },
-  "data.travel.trip201501.title": {
-    "message": "🇻🇳 越南"
-  },
-  "data.travel.trip201501.description": {
-    "message": "岘港"
-  },
-  "data.travel.trip201502.title": {
-    "message": "🇨🇳 江苏、上海"
-  },
-  "data.travel.trip201502.description": {
-    "message": "南通、上海（崇明岛）"
-  },
-  "data.travel.trip201505.title": {
-    "message": "🇯🇵 日本"
-  },
-  "data.travel.trip201505.description": {
-    "message": "大阪、京都、名古屋、箱根、东京、成田"
-  },
-  "data.travel.trip201510.title": {
-    "message": "🇨🇳 福建"
-  },
-  "data.travel.trip201510.description": {
-    "message": "厦门、漳州（土楼）"
-  },
-  "data.travel.trip201601.title": {
-    "message": "🇨🇳 福建"
-  },
-  "data.travel.trip201601.description": {
-    "message": "福州"
-  },
-  "data.travel.trip201602.title": {
-    "message": "🇨🇳 山东、北京"
-  },
-  "data.travel.trip201602.description": {
-    "message": "济宁（曲阜）、泰安（泰山）、北京"
-  },
-  "data.travel.trip201607.title": {
-    "message": "🇦🇹 奥地利 & 🇸🇰 斯洛伐克 & 🇭🇺 匈牙利 & 🇸🇮 斯洛文尼亚 & 🇨🇿 捷克 & 🇩🇪 德国"
-  },
-  "data.travel.trip201607.description": {
-    "message": "维也纳、布拉迪斯拉发、布达佩斯、马里博尔、哈尔施塔特、萨尔茨堡、林茨、克鲁姆洛夫、布拉格、卡罗维瓦里、魏玛、德累斯顿、波茨坦、柏林"
-  },
-  "data.travel.trip201609.title": {
-    "message": "🇨🇳 贵州"
-  },
-  "data.travel.trip201609.description": {
-    "message": "贵阳、安顺（黄果树瀑布）、黔东南（西江千户苗寨）、黔南（荔波）"
-  },
-  "data.travel.trip201610.title": {
-    "message": "🇨🇳 江苏"
-  },
-  "data.travel.trip201610.description": {
-    "message": "泰州、镇江"
-  },
-  "data.travel.trip201701.title": {
-    "message": "🇯🇵 日本"
-  },
-  "data.travel.trip201701.description": {
-    "message": "上海 ⇌ 熊本（海洋量子号）"
-  },
-  "data.travel.trip201702.title": {
-    "message": "🇹🇷 土耳其"
-  },
-  "data.travel.trip201702.description": {
-    "message": "伊斯坦布尔、伊兹密尔（以弗所）、代尼兹利（棉花堡）、卡帕多奇亚"
-  },
-  "data.travel.trip201705.title": {
-    "message": "🇸🇬 新加坡"
-  },
-  "data.travel.trip201705.description": {
-    "message": "新加坡"
-  },
-  "data.travel.trip201707.title": {
-    "message": "🇨🇳 安徽"
-  },
-  "data.travel.trip201707.description": {
-    "message": "合肥"
-  },
-  "data.travel.trip201708.title": {
-    "message": "🇦🇺 澳大利亚"
-  },
-  "data.travel.trip201708.description": {
-    "message": "布里斯班、黄金海岸、凯恩斯（绿岛大堡礁、红树林）、悉尼（蓝山国家公园）、墨尔本（大洋路）"
-  },
-  "data.travel.trip201710.title": {
-    "message": "🇨🇳 黑龙江、吉林"
-  },
-  "data.travel.trip201710.description": {
-    "message": "哈尔滨、长春"
-  },
-  "data.travel.trip201802.title": {
-    "message": "🇨🇳 云南"
-  },
-  "data.travel.trip201802.description": {
-    "message": "西双版纳"
-  },
-  "data.travel.trip201806.title": {
-    "message": "🇨🇳 内蒙古"
-  },
-  "data.travel.trip201806.description": {
-    "message": "呼和浩特、鄂尔多斯"
-  },
-  "data.travel.trip201808.title": {
-    "message": "🇯🇵 日本"
-  },
-  "data.travel.trip201808.description": {
-    "message": "函馆、登别、洞爷湖、富良野（富田农场）、小樽、札幌"
-  },
-  "data.travel.trip201810.title": {
-    "message": "🇨🇳 湖南"
-  },
-  "data.travel.trip201810.description": {
-    "message": "湘潭、长沙"
-  },
-  "data.travel.trip201901.title": {
-    "message": "🇨🇳 广西"
-  },
-  "data.travel.trip201901.description": {
-    "message": "南宁、崇左（德天瀑布）、北海"
-  },
-  "data.travel.trip201902.title": {
-    "message": "🇨🇳 北京"
-  },
-  "data.travel.trip201902.description": {
-    "message": "北京"
-  },
-  "data.travel.trip201907.title": {
-    "message": "🇮🇹 意大利 & 🇻🇦 梵蒂冈 & 🇨🇭 瑞士 & 🇫🇷 法国"
-  },
-  "data.travel.trip201907.description": {
-    "message": "罗马、梵蒂冈、白露里治奥、托斯卡纳、佛罗伦萨、威尼斯、维罗纳、圣莫里茨、达沃斯、卢塞恩、因特拉肯、蒙特勒、安纳西、巴黎"
-  },
-  "data.travel.trip202007.title": {
-    "message": "🇨🇳 海南"
-  },
-  "data.travel.trip202007.description": {
-    "message": "三亚、文昌、海口"
-  },
-  "data.travel.trip202105.title": {
-    "message": "🇨🇳 江西、湖北"
-  },
-  "data.travel.trip202105.description": {
-    "message": "九江（庐山）、武汉"
-  },
-  "data.travel.trip202107.title": {
-    "message": "🇨🇳 山东"
-  },
-  "data.travel.trip202107.description": {
-    "message": "烟台"
-  },
-  "data.travel.trip202301.title": {
-    "message": "🇨🇳 福建"
-  },
-  "data.travel.trip202301.description": {
-    "message": "泉州、莆田（湄洲岛）"
-  },
-  "data.travel.trip202307.title": {
-    "message": "🇲🇻 马尔代夫"
-  },
-  "data.travel.trip202307.description": {
-    "message": "马累、伊露岛（诺鲁环礁）"
-  },
-  "data.travel.trip202402.title": {
-    "message": "🇨🇳 福建、广东"
-  },
-  "data.travel.trip202402.description": {
-    "message": "南平（武夷山）、汕头（南澳岛）、潮州、揭阳"
-  },
-  "data.travel.trip202408.title": {
-    "message": "🇰🇷 韩国"
-  },
-  "data.travel.trip202408.description": {
-    "message": "仁川、首尔、釜山"
-  },
-  "data.travel.trip202501.title": {
-    "message": "🇲🇾 马来西亚"
-  },
-  "data.travel.trip202501.description": {
-    "message": "吉隆坡、怡保（霹雳州）、乔治市（槟城州）"
-  },
-  "data.travel.trip202507.title": {
-    "message": "🇭🇰 香港 & 🇨🇳 广东"
-  },
-  "data.travel.trip202507.description": {
-    "message": "香港、深圳、广州"
-  },
-  "data.travel.trip202602.title": {
-    "message": "🇹🇭 泰国 & 🇱🇦 老挝"
-  },
-  "data.travel.trip202602.description": {
-    "message": "清迈、清莱、金三角"
-  },
-  "data.travel.trip202608.title": {
-    "message": "🇨🇳 北京"
-  },
-  "data.travel.trip202608.description": {
-    "message": "北京"
-  },
-  "components.browserWindow.openLink": {
-    "message": "在新标签页打开链接"
-  },
-  "components.countdown.event": {
-    "message": "我的生日"
-  },
-  "components.countdown.final": {
-    "message": "生日快乐！"
-  },
-  "components.countdown.unit.days": {
-    "message": "天"
-  },
-  "components.countdown.unit.hours": {
-    "message": "时"
-  },
-  "components.countdown.unit.minutes": {
-    "message": "分"
-  },
-  "components.countdown.unit.seconds": {
-    "message": "秒"
-  },
-  "components.countdown.description": {
-    "message": "距离 {event} 还有"
-  },
-  "components.countdown.progress": {
-    "message": "年度进度"
-  },
-  "components.desmos.frameTitle": {
-    "message": "Desmos 图形计算器"
-  },
-  "components.playground.tab.neuralNetwork": {
-    "message": "神经网络"
-  },
-  "components.playground.tab.fourierTransform": {
-    "message": "傅里叶变换"
-  },
-  "components.playground.tab.lorenzAttractor": {
-    "message": "洛伦兹吸引子"
-  },
-  "components.playground.tab.gameOfLife": {
-    "message": "生命游戏"
-  },
-  "components.playground.tab.nimGame": {
-    "message": "尼姆游戏"
-  },
-  "components.playground.collapse": {
-    "message": "收起"
-  },
-  "components.playground.expand": {
-    "message": "展开"
-  },
-  "pages.about.skills.ariaLabel": {
-    "message": "技术栈图标"
-  },
-  "components.problem.collapse": {
-    "message": "收起"
-  },
-  "components.problem.expand": {
-    "message": "展开"
-  },
-  "components.problem.statement": {
-    "message": "题面"
-  },
-  "components.problem.solution": {
-    "message": "题解"
-  },
-  "components.problem.error": {
-    "message": "无法加载题目「{id}」。"
-  },
-  "pages.changelog.empty": {
-    "message": "暂无更新日志"
-  },
-  "pages.friends.title": {
-    "message": "友链"
-  },
-  "pages.friends.description": {
-    "message": "真正的友谊是世上最稀有的东西"
-  },
-  "pages.friends.modification": {
-    "message": "我的<b>友链</b>"
-  },
-  "pages.friends.requestLink": {
-    "message": "申请友链"
-  },
-  "pages.friends.requestSubject": {
-    "message": "友链申请"
-  },
-  "pages.insights.title": {
-    "message": "洞察"
-  },
-  "pages.insights.description": {
-    "message": "网站的实时数据，每次访问自动刷新"
-  },
-  "pages.insights.modification": {
-    "message": "实时<b>洞察</b>"
-  },
-  "pages.insights.traffic.title": {
-    "message": "流量"
-  },
-  "pages.insights.link.analytics": {
-    "message": "查看统计面板"
-  },
-  "pages.insights.serviceHealth.title": {
-    "message": "服务状态"
-  },
-  "pages.insights.link.status": {
-    "message": "查看状态页"
-  },
-  "pages.insights.metricList.empty": {
-    "message": "暂无数据"
-  },
-  "pages.insights.analytics.error": {
-    "message": "无法加载统计数据"
-  },
-  "pages.insights.env.other": {
-    "message": "其他"
-  },
-  "pages.insights.env.device.desktop": {
-    "message": "桌面端"
-  },
-  "pages.insights.env.device.laptop": {
-    "message": "笔记本"
-  },
-  "pages.insights.env.device.mobile": {
-    "message": "移动端"
-  },
-  "pages.insights.env.device.tablet": {
-    "message": "平板"
-  },
-  "pages.insights.metric.visitors": {
-    "message": "访客量"
-  },
-  "pages.insights.metric.visits": {
-    "message": "访问次数"
-  },
-  "pages.insights.metric.pageviews": {
-    "message": "浏览量"
-  },
-  "pages.insights.metric.bounceRate": {
-    "message": "跳出率"
-  },
-  "pages.insights.metric.avgVisit": {
-    "message": "访问时长"
-  },
-  "pages.insights.range.24h": {
-    "message": "近 24 小时"
-  },
-  "pages.insights.range.7d": {
-    "message": "近 7 天"
-  },
-  "pages.insights.range.30d": {
-    "message": "近 30 天"
-  },
-  "pages.insights.range.1y": {
-    "message": "近 1 年"
-  },
-  "pages.insights.range.ariaLabel": {
-    "message": "时间范围"
-  },
-  "pages.insights.unit.pageviews": {
-    "message": "{count} 次浏览"
-  },
-  "pages.insights.chart.title": {
-    "message": "浏览量趋势"
-  },
-  "pages.insights.metricList.pages": {
-    "message": "热门页面"
-  },
-  "pages.insights.metricList.referrers.title": {
-    "message": "来源站点"
-  },
-  "pages.insights.metricList.referrers.direct": {
-    "message": "直接访问"
-  },
-  "pages.insights.metricList.countries": {
-    "message": "访客地区"
-  },
-  "pages.insights.env.browsers": {
-    "message": "浏览器"
-  },
-  "pages.insights.env.os": {
-    "message": "操作系统"
-  },
-  "pages.insights.env.devices": {
-    "message": "设备"
-  },
-  "pages.insights.link.ariaLabel": {
-    "message": "{label}（在新标签页打开）"
-  },
-  "pages.resources.title": {
-    "message": "资源"
-  },
-  "pages.resources.description": {
-    "message": "精心筛选的优质工具与平台"
-  },
-  "pages.resources.modification": {
-    "message": "精选<b>资源</b>"
-  },
-  "pages.resources.search.clear": {
-    "message": "清空搜索"
-  },
-  "pages.resources.search.placeholder": {
-    "message": "搜索资源"
-  },
-  "pages.resources.category.clear": {
-    "message": "清除分类"
-  },
-  "pages.resources.category.count": {
-    "message": "{count} 项"
-  },
-  "pages.resources.datacard.categories": {
-    "message": "个分类"
-  },
-  "pages.resources.datacard.items": {
-    "message": "项资源"
-  },
-  "pages.resources.search.empty": {
-    "message": "找不到和“{query}”相符的资源。"
-  },
-  "pages.settings.title": {
-    "message": "设置"
-  },
-  "pages.settings.description": {
-    "message": "自定义网站功能和偏好设置"
-  },
-  "pages.settings.modification": {
-    "message": "个性化<b>设置</b>"
-  },
-  "pages.settings.item.theme.option.system": {
-    "message": "系统模式"
-  },
-  "pages.settings.item.theme.option.light": {
-    "message": "浅色模式"
-  },
-  "pages.settings.item.theme.option.dark": {
-    "message": "深色模式"
-  },
-  "pages.settings.item.theme.title": {
-    "message": "主题"
-  },
-  "pages.settings.item.theme.description": {
-    "message": "切换浅色、深色或跟随系统"
-  },
-  "pages.settings.item.color.title": {
-    "message": "主题色"
-  },
-  "pages.settings.item.color.description": {
-    "message": "自定义网站主色调"
-  },
-  "pages.settings.item.color.picker": {
-    "message": "选择颜色"
-  },
-  "pages.settings.item.color.hex": {
-    "message": "十六进制颜色值"
-  },
-  "pages.settings.item.color.default": {
-    "message": "默认"
-  },
-  "pages.settings.item.color.ariaLabel": {
-    "message": "使用颜色 {color}"
-  },
-  "pages.settings.item.fontFamily.option.system": {
-    "message": "系统"
-  },
-  "pages.settings.item.fontFamily.option.sans": {
-    "message": "无衬线"
-  },
-  "pages.settings.item.fontFamily.option.serif": {
-    "message": "衬线"
-  },
-  "pages.settings.item.fontFamily.title": {
-    "message": "字体"
-  },
-  "pages.settings.item.fontFamily.description": {
-    "message": "选择系统、无衬线或衬线字体"
-  },
-  "pages.settings.item.font.title": {
-    "message": "排版"
-  },
-  "pages.settings.item.font.description": {
-    "message": "调整文字大小与行间距"
-  },
-  "pages.settings.item.font.size.label": {
-    "message": "字体大小"
-  },
-  "pages.settings.item.font.size.value": {
-    "message": "{size}px"
-  },
-  "pages.settings.item.font.lineHeight.label": {
-    "message": "行间距"
-  },
-  "pages.settings.item.experimental.option.classicDesign": {
-    "message": "经典设计"
-  },
-  "pages.settings.item.experimental.option.debugMode": {
-    "message": "调试模式"
-  },
-  "pages.settings.item.experimental.option.grayMode": {
-    "message": "灰色模式"
-  },
-  "pages.settings.item.experimental.title": {
-    "message": "实验性功能"
-  },
-  "pages.settings.item.experimental.description": {
-    "message": "试用开发中的新功能"
-  },
-  "pages.settings.item.quickActions.option.confetti": {
-    "message": "给我惊喜"
-  },
-  "pages.settings.item.quickActions.option.reset": {
-    "message": "重置设置"
-  },
-  "pages.settings.item.quickActions.title": {
-    "message": "快捷操作"
-  },
-  "pages.settings.item.quickActions.description": {
-    "message": "一键执行常用操作"
-  },
-  "pages.travel.title": {
-    "message": "旅行"
-  },
-  "pages.travel.description": {
-    "message": "每一次旅行都能带来新的视野和感悟"
-  },
-  "pages.travel.modification": {
-    "message": "旅行<b>记录</b>"
-  },
-  "pages.travel.quote.content": {
-    "message": "纸上得来终觉浅，绝知此事要躬行。"
-  },
-  "pages.travel.quote.author": {
-    "message": "陆游"
-  },
-  "pages.travel.quote.source": {
-    "message": "《冬夜读书示子聿》"
-  },
-  "pages.travel.datacard.countries": {
-    "message": "国家"
-  },
-  "pages.travel.datacard.years": {
-    "message": "年历程"
-  },
-  "blog.pages.tags.tagSelect": {
-    "message": "标签"
-  },
-  "theme.docs.paginator.previous": {
-    "message": "上一页",
-    "description": "The label used to navigate to the previous doc"
-  },
-  "theme.docs.paginator.next": {
-    "message": "下一页",
-    "description": "The label used to navigate to the next doc"
-  },
-  "theme.docs.paginator.navAriaLabel": {
-    "message": "文件选项卡",
-    "description": "The ARIA label for the docs pagination"
-  },
-  "components.footer.description": {
-    "message": "分享技术笔记、项目经验与学习思考的个人网站。"
-  },
-  "components.footer.siteInformation": {
-    "message": "站点信息"
-  },
-  "components.footer.navigation": {
-    "message": "页脚导航"
-  },
-  "components.footer.feeds.ariaLabel": {
-    "message": "订阅源"
-  },
-  "components.footer.feeds.rss": {
-    "message": "RSS 订阅"
-  },
-  "components.footer.feeds.atom": {
-    "message": "Atom 订阅"
-  },
-  "components.footer.feeds.json": {
-    "message": "JSON 订阅"
-  },
-  "components.footer.licenseNotice": {
-    "message": "本网站内容采用"
-  },
-  "components.footer.licenseLabel": {
-    "message": "知识共享 署名 4.0 国际许可协议"
-  },
-  "components.article.editPage": {
-    "message": "编辑此页面"
-  },
-  "components.article.copyMarkdown": {
-    "message": "复制 Markdown"
-  },
-  "components.article.copyMarkdownCopied": {
-    "message": "已复制！"
-  },
-  "components.article.copyMarkdownError": {
-    "message": "复制失败"
-  },
-  "components.article.lastUpdated": {
-    "message": "最后更新于 {date}"
-  },
-  "components.article.summaryLabel": {
-    "message": "概述"
-  },
-  "components.article.viewCount": {
-    "message": "{viewCount} 浏览"
-  },
-  "components.playground.fourierTransform.reset": {
-    "message": "重置"
-  },
-  "components.playground.fourierTransform.clear": {
-    "message": "清空"
-  },
-  "components.playground.gameOfLife.play": {
-    "message": "播放"
-  },
-  "components.playground.gameOfLife.pause": {
-    "message": "暂停"
-  },
-  "components.playground.gameOfLife.step": {
-    "message": "单步"
-  },
-  "components.playground.gameOfLife.random": {
-    "message": "随机"
-  },
-  "components.playground.gameOfLife.clear": {
-    "message": "清空"
-  },
-  "components.playground.lorenz.reset": {
-    "message": "重置"
-  },
-  "components.playground.neuralNetwork.clear": {
-    "message": "清除"
-  },
-  "components.playground.neuralNetwork.check": {
-    "message": "识别"
-  },
-  "components.playground.neuralNetwork.preprocess": {
-    "message": "预处理"
-  },
-  "components.playground.nim.yourTurn": {
-    "message": "你的回合"
-  },
-  "components.playground.nim.aiThinking": {
-    "message": "AI 思考中……"
-  },
-  "components.playground.nim.youWin": {
-    "message": "你赢了！"
-  },
-  "components.playground.nim.aiWins": {
-    "message": "AI 赢了"
-  },
-  "components.playground.nim.random": {
-    "message": "随机"
-  },
-  "components.playground.nim.tip": {
-    "message": "提示"
-  },
-  "pages.moments.title": {
-    "message": "动态"
-  },
-  "pages.moments.description": {
-    "message": "随时随地，分享生活"
-  },
-  "pages.moments.countLabel": {
-    "message": "条动态"
-  },
-  "pages.moments.location.hangzhou": {
-    "message": "杭州"
-  },
-  "pages.moments.loadMore": {
-    "message": "加载更多"
-  },
-  "pages.moments.noMore": {
-    "message": "没有更多动态了"
-  },
-  "pages.moments.weather.clearSky": {
-    "message": "晴"
-  },
-  "pages.moments.weather.mainlyClear": {
-    "message": "少云"
-  },
-  "pages.moments.weather.partlyCloudy": {
-    "message": "多云"
-  },
-  "pages.moments.weather.overcast": {
-    "message": "阴"
-  },
-  "pages.moments.weather.fog": {
-    "message": "雾"
-  },
-  "pages.moments.weather.depositingRimeFog": {
-    "message": "雾凇"
-  },
-  "pages.moments.weather.lightDrizzle": {
-    "message": "轻度毛毛雨"
-  },
-  "pages.moments.weather.moderateDrizzle": {
-    "message": "中度毛毛雨"
-  },
-  "pages.moments.weather.denseDrizzle": {
-    "message": "浓毛毛雨"
-  },
-  "pages.moments.weather.lightFreezingDrizzle": {
-    "message": "轻度冻毛毛雨"
-  },
-  "pages.moments.weather.denseFreezingDrizzle": {
-    "message": "浓冻毛毛雨"
-  },
-  "pages.moments.weather.slightRain": {
-    "message": "小雨"
-  },
-  "pages.moments.weather.moderateRain": {
-    "message": "中雨"
-  },
-  "pages.moments.weather.heavyRain": {
-    "message": "大雨"
-  },
-  "pages.moments.weather.lightFreezingRain": {
-    "message": "轻度冻雨"
-  },
-  "pages.moments.weather.heavyFreezingRain": {
-    "message": "强冻雨"
-  },
-  "pages.moments.weather.slightSnowFall": {
-    "message": "小雪"
-  },
-  "pages.moments.weather.moderateSnowFall": {
-    "message": "中雪"
-  },
-  "pages.moments.weather.heavySnowFall": {
-    "message": "大雪"
-  },
-  "pages.moments.weather.snowGrains": {
-    "message": "米雪"
-  },
-  "pages.moments.weather.slightRainShowers": {
-    "message": "弱阵雨"
-  },
-  "pages.moments.weather.moderateRainShowers": {
-    "message": "中阵雨"
-  },
-  "pages.moments.weather.violentRainShowers": {
-    "message": "强阵雨"
-  },
-  "pages.moments.weather.slightSnowShowers": {
-    "message": "弱阵雪"
-  },
-  "pages.moments.weather.heavySnowShowers": {
-    "message": "强阵雪"
-  },
-  "pages.moments.weather.thunderstorm": {
-    "message": "雷暴"
-  },
-  "pages.moments.weather.thunderstormSlightHail": {
-    "message": "雷暴伴轻度冰雹"
-  },
-  "pages.moments.weather.thunderstormHeavyHail": {
-    "message": "雷暴伴强冰雹"
-  },
-  "pages.moments.weather.unknown": {
-    "message": "未知"
-  },
-  "pages.overview.title": {
-    "message": "概览"
-  },
-  "pages.overview.description": {
-    "message": "用数据看看我在这里写过些什么"
-  },
-  "pages.overview.chart.monthly.title": {
-    "message": "每月发文"
-  },
-  "pages.overview.chart.cumulative.title": {
-    "message": "文章累计"
-  },
-  "pages.overview.chart.empty": {
-    "message": "暂无文章"
-  },
-  "pages.overview.unit.posts": {
-    "message": "{count} 篇文章"
-  },
-  "pages.overview.metric.posts": {
-    "message": "文章"
-  },
-  "pages.overview.metric.words": {
-    "message": "词数"
-  },
-  "pages.overview.metric.tags": {
-    "message": "标签"
-  },
-  "pages.overview.metric.moments": {
-    "message": "动态"
-  },
-  "components.github.error": {
-    "message": "加载 GitHub 数据失败"
-  },
-  "components.github.noDescription": {
-    "message": "暂无描述"
-  },
-  "components.github.stars": {
-    "message": "Star 数"
-  },
-  "components.github.forks": {
-    "message": "Fork 数"
-  },
-  "components.github.license": {
-    "message": "许可证"
-  },
-  "components.github.language": {
-    "message": "主要语言"
-  },
-  "components.markdown.aboutGreeting": {
-    "message": "Hello, I'm lailai"
-  },
-  "components.quote.attributionDash": {
-    "message": "—— "
-  },
-  "blog.post.empty": {
-    "message": "暂无文章"
-  },
-  "blog.pages.archive.title": {
-    "message": "历史文章"
-  },
-  "blog.pages.archive.yearSelect": {
-    "message": "年份"
-  },
-  "blog.pages.tags.title": {
-    "message": "标签"
-  },
-  "blog.pages.authors.title": {
-    "message": "作者"
-  },
-  "blog.archive.tab.overview": {
-    "message": "概览"
-  },
-  "blog.archive.tab.year": {
-    "message": "按年份"
-  },
-  "blog.archive.tab.tags": {
-    "message": "按标签"
-  },
-  "blog.archive.tab.authors": {
-    "message": "按作者"
-  },
-  "blog.sidebar.calendar.today": {
-    "message": "本月"
-  },
-  "blog.sidebar.calendar.prev": {
-    "message": "上个月"
-  },
-  "blog.sidebar.calendar.next": {
-    "message": "下个月"
-  },
-  "blog.sidebar.calendar.empty": {
-    "message": "暂无文章"
-  },
-  "blog.post.paginator.newer": {
-    "message": "上一篇"
-  },
-  "blog.post.paginator.older": {
-    "message": "下一篇"
-  },
-  "blog.post.paginator.ariaLabel": {
-    "message": "博客文章导航"
-  },
-  "blog.post.pinned": {
-    "message": "置顶"
-  },
-  "blog.postcard.original": {
-    "message": "原文"
-  },
-  "blog.postcard.wordCount": {
-    "message": "{word} 词数"
-  },
-  "blog.postcard.readingTime": {
-    "message": "{readingTime} 分钟"
-  },
-  "blog.postcard.viewCount": {
-    "message": "{viewCount} 浏览"
-  },
-  "blog.postcard.readMore": {
-    "message": "阅读更多"
-  },
-  "blog.pagination.prev": {
-    "message": "上一页"
-  },
-  "blog.pagination.next": {
-    "message": "下一页"
-  },
-  "blog.pagination.ariaLabel": {
-    "message": "分页"
-  },
-  "blog.sidebar.profileCard.title": {
-    "message": "学生 & 开发者"
-  },
-  "blog.menu.blog": {
-    "message": "博客"
-  },
-  "blog.menu.moments": {
-    "message": "动态"
-  },
-  "blog.menu.archive": {
-    "message": "归档"
-  },
-  "blog.sidebar.toc.progress": {
-    "message": "阅读进度：{percent}%"
-  },
-  "blog.sidebar.toc.title": {
-    "message": "目录"
-  },
-  "blog.sidebar.tags.title": {
-    "message": "热门标签"
-  },
-  "theme.NotFound.title": {
-    "message": "找不到页面",
-    "description": "The title of the 404 page"
-  },
-  "theme.NotFound.p1": {
-    "message": "我们找不到您要找的页面。",
-    "description": "The first paragraph of the 404 page"
-  },
-  "components.notFound.backToHome": {
-    "message": "返回首页"
-  },
-  "pages.insights.heartbeat.ariaLabel": {
-    "message": "近期监测状态"
-  },
-  "pages.insights.heartbeat.up": {
-    "message": "正常"
-  },
-  "pages.insights.heartbeat.down": {
-    "message": "故障"
-  },
-  "pages.insights.heartbeat.pending": {
-    "message": "待定"
-  },
-  "pages.insights.heartbeat.maintenance": {
-    "message": "维护中"
-  },
-  "pages.insights.heartbeat.unknown": {
-    "message": "暂无数据"
-  },
-  "pages.insights.heartbeat.noData": {
-    "message": "暂无数据"
-  },
-  "pages.insights.retry": {
-    "message": "重试"
-  },
-  "pages.insights.systemStatus.title": {
-    "message": "运行时快照"
-  },
-  "pages.insights.systemStatus.srLabel": {
-    "message": "系统状态概览"
-  },
-  "pages.travel.map.motherland": {
-    "message": "祖国"
-  },
-  "pages.travel.map.legend.unvisited": {
-    "message": "未到访"
-  },
-  "pages.travel.map.reset": {
-    "message": "重置视角"
-  },
-  "pages.travel.map.play": {
-    "message": "继续旋转"
-  },
-  "pages.travel.map.pause": {
-    "message": "暂停旋转"
-  },
-  "pages.insights.uptime.avgPing": {
-    "message": "平均 {ping}ms"
-  },
-  "pages.insights.status.error": {
-    "message": "无法连接监控服务"
-  },
-  "pages.insights.uptime.empty": {
-    "message": "暂无监控项"
-  },
-  "blog.pages.authors.authorSelect": {
-    "message": "作者"
-  },
-  "theme.ErrorPageContent.title": {
-    "message": "页面已崩溃。",
-    "description": "The title of the fallback page when the page crashed"
-  },
-  "theme.BackToTopButton.buttonAriaLabel": {
-    "message": "回到顶部",
-    "description": "The ARIA label for the back to top button"
-  },
-  "theme.blog.archive.title": {
-    "message": "历史文章",
-    "description": "The page & hero title of the blog archive page"
-  },
-  "theme.blog.archive.description": {
-    "message": "历史文章",
-    "description": "The page & hero description of the blog archive page"
-  },
-  "theme.blog.paginator.navAriaLabel": {
-    "message": "文章列表分页导航",
-    "description": "The ARIA label for the blog pagination"
-  },
-  "theme.blog.paginator.newerEntries": {
-    "message": "较新的文章",
-    "description": "The label used to navigate to the newer blog posts page (previous page)"
-  },
-  "theme.blog.paginator.olderEntries": {
-    "message": "较旧的文章",
-    "description": "The label used to navigate to the older blog posts page (next page)"
-  },
-  "theme.blog.post.paginator.navAriaLabel": {
-    "message": "文章分页导航",
-    "description": "The ARIA label for the blog posts pagination"
-  },
-  "theme.blog.post.paginator.newerPost": {
-    "message": "较新一篇",
-    "description": "The blog post button label to navigate to the newer/previous post"
-  },
-  "theme.blog.post.paginator.olderPost": {
-    "message": "较旧一篇",
-    "description": "The blog post button label to navigate to the older/next post"
-  },
-  "theme.tags.tagsPageLink": {
-    "message": "查看所有标签",
-    "description": "The label of the link targeting the tag list page"
-  },
-  "theme.colorToggle.ariaLabel.mode.system": {
-    "message": "跟随系统",
-    "description": "The name for the system color mode"
-  },
-  "theme.colorToggle.ariaLabel.mode.light": {
-    "message": "浅色模式",
-    "description": "The name for the light color mode"
-  },
-  "theme.colorToggle.ariaLabel.mode.dark": {
-    "message": "暗黑模式",
-    "description": "The name for the dark color mode"
-  },
-  "theme.colorToggle.ariaLabel": {
-    "message": "切换浅色/暗黑模式（当前为{mode}）",
-    "description": "The ARIA label for the color mode toggle"
-  },
-  "theme.docs.breadcrumbs.navAriaLabel": {
-    "message": "页面路径",
-    "description": "The ARIA label for the breadcrumbs"
-  },
-  "theme.docs.tagDocListPageTitle.nDocsTagged": {
-    "message": "{count} 篇文档带有标签",
-    "description": "Pluralized label for \"{count} docs tagged\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
-  },
-  "theme.docs.tagDocListPageTitle": {
-    "message": "{nDocsTagged}「{tagName}」",
-    "description": "The title of the page for a docs tag"
-  },
-  "theme.docs.versionBadge.label": {
-    "message": "版本：{versionLabel}"
-  },
-  "theme.docs.versions.unreleasedVersionLabel": {
-    "message": "此为 {siteTitle} {versionLabel} 版尚未发行的文档。",
-    "description": "The label used to tell the user that he's browsing an unreleased doc version"
-  },
-  "theme.docs.versions.unmaintainedVersionLabel": {
-    "message": "此为 {siteTitle} {versionLabel} 版的文档，现已不再积极维护。",
-    "description": "The label used to tell the user that he's browsing an unmaintained doc version"
-  },
-  "theme.docs.versions.latestVersionSuggestionLabel": {
-    "message": "最新的文档请参阅 {latestVersionLink} ({versionLabel})。",
-    "description": "The label used to tell the user to check the latest version"
-  },
-  "theme.docs.versions.latestVersionLinkLabel": {
-    "message": "最新版本",
-    "description": "The label used for the latest version suggestion link label"
-  },
-  "theme.common.editThisPage": {
-    "message": "编辑此页",
-    "description": "The link label to edit the current page"
-  },
-  "theme.common.headingLinkTitle": {
-    "message": "{heading}的直接链接",
-    "description": "Title for link to heading"
-  },
-  "theme.lastUpdated.atDate": {
-    "message": "于 {date} ",
-    "description": "The words used to describe on which date a page has been last updated"
-  },
-  "theme.lastUpdated.byUser": {
-    "message": "由 {user} ",
-    "description": "The words used to describe by who the page has been last updated"
-  },
-  "theme.lastUpdated.lastUpdatedAtBy": {
-    "message": "最后{byUser}{atDate}更新",
-    "description": "The sentence used to display when a page has been last updated, and by who"
-  },
-  "theme.navbar.mobileVersionsDropdown.label": {
-    "message": "选择版本",
-    "description": "The label for the navbar versions dropdown on mobile view"
-  },
-  "theme.tags.tagsListLabel": {
-    "message": "标签：",
-    "description": "The label alongside a tag list"
-  },
-  "theme.admonition.caution": {
-    "message": "警告",
-    "description": "The default label used for the Caution admonition (:::caution)"
-  },
-  "theme.admonition.danger": {
-    "message": "危险",
-    "description": "The default label used for the Danger admonition (:::danger)"
-  },
-  "theme.admonition.info": {
-    "message": "信息",
-    "description": "The default label used for the Info admonition (:::info)"
-  },
-  "theme.admonition.note": {
-    "message": "备注",
-    "description": "The default label used for the Note admonition (:::note)"
-  },
-  "theme.admonition.tip": {
-    "message": "提示",
-    "description": "The default label used for the Tip admonition (:::tip)"
-  },
-  "theme.admonition.warning": {
-    "message": "注意",
-    "description": "The default label used for the Warning admonition (:::warning)"
-  },
-  "theme.AnnouncementBar.closeButtonAriaLabel": {
-    "message": "关闭",
-    "description": "The ARIA label for close button of announcement bar"
-  },
-  "theme.blog.sidebar.navAriaLabel": {
-    "message": "最近文章导航",
-    "description": "The ARIA label for recent posts in the blog sidebar"
-  },
-  "theme.DocSidebarItem.expandCategoryAriaLabel": {
-    "message": "展开侧边栏分类 '{label}'",
-    "description": "The ARIA label to expand the sidebar category"
-  },
-  "theme.DocSidebarItem.collapseCategoryAriaLabel": {
-    "message": "折叠侧边栏分类 '{label}'",
-    "description": "The ARIA label to collapse the sidebar category"
-  },
-  "theme.IconExternalLink.ariaLabel": {
-    "message": "(在新标签页中打开)",
-    "description": "The ARIA label for the external link icon"
-  },
-  "theme.NavBar.navAriaLabel": {
-    "message": "主导航",
-    "description": "The ARIA label for the main navigation"
-  },
-  "theme.navbar.mobileLanguageDropdown.label": {
-    "message": "选择语言",
-    "description": "The label for the mobile language switcher dropdown"
-  },
-  "theme.NotFound.p2": {
-    "message": "请联系原始链接来源网站的所有者，并告知他们链接已损坏。",
-    "description": "The 2nd paragraph of the 404 page"
-  },
-  "theme.TOCCollapsible.toggleButtonLabel": {
-    "message": "本页总览",
-    "description": "The label used by the button on the collapsible TOC component"
-  },
-  "theme.blog.post.readMore": {
-    "message": "阅读更多",
-    "description": "The label used in blog post item excerpts to link to full blog posts"
-  },
-  "theme.blog.post.readMoreLabel": {
-    "message": "阅读 {title} 的全文",
-    "description": "The ARIA label for the link to full blog posts from excerpts"
-  },
-  "theme.blog.post.readingTime.plurals": {
-    "message": "阅读需 {readingTime} 分钟",
-    "description": "Pluralized label for \"{readingTime} min read\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
-  },
-  "theme.CodeBlock.copy": {
-    "message": "复制",
-    "description": "The copy button label on code blocks"
-  },
-  "theme.CodeBlock.copied": {
-    "message": "复制成功",
-    "description": "The copied button label on code blocks"
-  },
-  "theme.CodeBlock.copyButtonAriaLabel": {
-    "message": "复制代码到剪贴板",
-    "description": "The ARIA label for copy code blocks button"
-  },
-  "theme.CodeBlock.wordWrapToggle": {
-    "message": "切换自动换行",
-    "description": "The title attribute for toggle word wrapping button of code block lines"
-  },
-  "theme.docs.breadcrumbs.home": {
-    "message": "主页面",
-    "description": "The ARIA label for the home page in the breadcrumbs"
-  },
-  "theme.docs.sidebar.collapseButtonTitle": {
-    "message": "收起侧边栏",
-    "description": "The title attribute for collapse button of doc sidebar"
-  },
-  "theme.docs.sidebar.collapseButtonAriaLabel": {
-    "message": "收起侧边栏",
-    "description": "The title attribute for collapse button of doc sidebar"
-  },
-  "theme.docs.sidebar.navAriaLabel": {
-    "message": "文档侧边栏",
-    "description": "The ARIA label for the sidebar navigation"
-  },
-  "theme.docs.sidebar.closeSidebarButtonAriaLabel": {
-    "message": "关闭导航栏",
-    "description": "The ARIA label for close button of mobile sidebar"
-  },
-  "theme.navbar.mobileSidebarSecondaryMenu.backButtonLabel": {
-    "message": "← 回到主菜单",
-    "description": "The label of the back button to return to main menu, inside the mobile navbar sidebar secondary menu (notably used to display the docs sidebar)"
-  },
-  "theme.docs.sidebar.toggleSidebarButtonAriaLabel": {
-    "message": "切换导航栏",
-    "description": "The ARIA label for hamburger menu button of mobile navigation"
-  },
-  "theme.navbar.mobileDropdown.collapseButton.expandAriaLabel": {
-    "message": "展开下拉菜单",
-    "description": "The ARIA label of the button to expand the mobile dropdown navbar item"
-  },
-  "theme.navbar.mobileDropdown.collapseButton.collapseAriaLabel": {
-    "message": "折叠下拉菜单",
-    "description": "The ARIA label of the button to collapse the mobile dropdown navbar item"
-  },
-  "theme.docs.sidebar.expandButtonTitle": {
-    "message": "展开侧边栏",
-    "description": "The ARIA label and title attribute for expand button of doc sidebar"
-  },
-  "theme.docs.sidebar.expandButtonAriaLabel": {
-    "message": "展开侧边栏",
-    "description": "The ARIA label and title attribute for expand button of doc sidebar"
-  },
-  "theme.SearchBar.seeAll": {
-    "message": "查看全部 {count} 个结果"
-  },
-  "theme.SearchPage.documentsFound.plurals": {
-    "message": "找到 {count} 份文件",
-    "description": "Pluralized label for \"{count} documents found\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
-  },
-  "theme.SearchPage.existingResultsTitle": {
-    "message": "「{query}」的搜索结果",
-    "description": "The search page title for non-empty query"
-  },
-  "theme.SearchPage.emptyResultsTitle": {
-    "message": "在文档中搜索",
-    "description": "The search page title for empty query"
-  },
-  "theme.SearchPage.inputPlaceholder": {
-    "message": "在此输入搜索字词",
-    "description": "The placeholder for search page input"
-  },
-  "theme.SearchPage.inputLabel": {
-    "message": "搜索",
-    "description": "The ARIA label for search page input"
-  },
-  "theme.SearchPage.algoliaLabel": {
-    "message": "通过 Algolia 搜索",
-    "description": "The description label for Algolia mention"
-  },
-  "theme.SearchPage.noResultsText": {
-    "message": "未找到任何结果",
-    "description": "The paragraph for empty search result"
-  },
-  "theme.SearchPage.fetchingNewResults": {
-    "message": "正在获取新的搜索结果...",
-    "description": "The paragraph for fetching new search results"
-  },
-  "theme.SearchBar.label": {
-    "message": "搜索",
-    "description": "The ARIA label and placeholder for search button"
-  },
-  "theme.SearchModal.searchBox.resetButtonTitle": {
-    "message": "清除查询",
-    "description": "The label and ARIA label for search box reset button"
-  },
-  "theme.SearchModal.searchBox.cancelButtonText": {
-    "message": "取消",
-    "description": "The label and ARIA label for search box cancel button"
-  },
-  "theme.SearchModal.searchBox.placeholderText": {
-    "message": "搜索文档",
-    "description": "The placeholder text for the main search input field"
-  },
-  "theme.SearchModal.searchBox.placeholderTextAskAi": {
-    "message": "再问一个问题...",
-    "description": "The placeholder text when in AI question mode"
-  },
-  "theme.SearchModal.searchBox.placeholderTextAskAiStreaming": {
-    "message": "回答中...",
-    "description": "The placeholder text for search box when AI is streaming an answer"
-  },
-  "theme.SearchModal.searchBox.enterKeyHint": {
-    "message": "搜索",
-    "description": "The hint for the search box enter key text"
-  },
-  "theme.SearchModal.searchBox.enterKeyHintAskAi": {
-    "message": "输入",
-    "description": "The hint for the Ask AI search box enter key text"
-  },
-  "theme.SearchModal.searchBox.searchInputLabel": {
-    "message": "搜索",
-    "description": "The ARIA label for search input"
-  },
-  "theme.SearchModal.searchBox.backToKeywordSearchButtonText": {
-    "message": "返回关键词搜索",
-    "description": "The text for back to keyword search button"
-  },
-  "theme.SearchModal.searchBox.backToKeywordSearchButtonAriaLabel": {
-    "message": "返回关键词搜索",
-    "description": "The ARIA label for back to keyword search button"
-  },
-  "theme.SearchModal.startScreen.recentSearchesTitle": {
-    "message": "最近搜索",
-    "description": "The title for recent searches"
-  },
-  "theme.SearchModal.startScreen.noRecentSearchesText": {
-    "message": "没有最近搜索",
-    "description": "The text when there are no recent searches"
-  },
-  "theme.SearchModal.startScreen.saveRecentSearchButtonTitle": {
-    "message": "保存这个搜索",
-    "description": "The title for save recent search button"
-  },
-  "theme.SearchModal.startScreen.removeRecentSearchButtonTitle": {
-    "message": "从历史记录中删除这个搜索",
-    "description": "The title for remove recent search button"
-  },
-  "theme.SearchModal.startScreen.favoriteSearchesTitle": {
-    "message": "收藏",
-    "description": "The title for favorite searches"
-  },
-  "theme.SearchModal.startScreen.removeFavoriteSearchButtonTitle": {
-    "message": "从收藏列表中删除这个搜索",
-    "description": "The title for remove favorite search button"
-  },
-  "theme.SearchModal.startScreen.recentConversationsTitle": {
-    "message": "最近的对话",
-    "description": "The title for recent conversations"
-  },
-  "theme.SearchModal.startScreen.removeRecentConversationButtonTitle": {
-    "message": "从历史记录中删除此对话",
-    "description": "The title for remove recent conversation button"
-  },
-  "theme.SearchModal.errorScreen.titleText": {
-    "message": "无法获取结果",
-    "description": "The title for error screen"
-  },
-  "theme.SearchModal.errorScreen.helpText": {
-    "message": "您可能需要检查网络连接。",
-    "description": "The help text for error screen"
-  },
-  "theme.SearchModal.resultsScreen.askAiPlaceholder": {
-    "message": "问 AI: ",
-    "description": "The placeholder text for Ask AI input"
-  },
-  "theme.SearchModal.askAiScreen.disclaimerText": {
-    "message": "答案是由 AI 生成的，可能会出错。请验证回复。",
-    "description": "The disclaimer text for AI answers"
-  },
-  "theme.SearchModal.askAiScreen.relatedSourcesText": {
-    "message": "相关来源",
-    "description": "The text for related sources"
-  },
-  "theme.SearchModal.askAiScreen.thinkingText": {
-    "message": "思考中...",
-    "description": "The text when AI is thinking"
-  },
-  "theme.SearchModal.askAiScreen.copyButtonText": {
-    "message": "复制",
-    "description": "The text for copy button"
-  },
-  "theme.SearchModal.askAiScreen.copyButtonCopiedText": {
-    "message": "已复制！",
-    "description": "The text for copy button when copied"
-  },
-  "theme.SearchModal.askAiScreen.copyButtonTitle": {
-    "message": "复制",
-    "description": "The title for copy button"
-  },
-  "theme.SearchModal.askAiScreen.likeButtonTitle": {
-    "message": "喜欢",
-    "description": "The title for like button"
-  },
-  "theme.SearchModal.askAiScreen.dislikeButtonTitle": {
-    "message": "不喜欢",
-    "description": "The title for dislike button"
-  },
-  "theme.SearchModal.askAiScreen.thanksForFeedbackText": {
-    "message": "感谢您的反馈！",
-    "description": "The text for thanks for feedback"
-  },
-  "theme.SearchModal.askAiScreen.preToolCallText": {
-    "message": "搜索中...",
-    "description": "The text before tool call"
-  },
-  "theme.SearchModal.askAiScreen.duringToolCallText": {
-    "message": "搜索中...",
-    "description": "The text during tool call"
-  },
-  "theme.SearchModal.askAiScreen.afterToolCallText": {
-    "message": "搜索结果",
-    "description": "The text after tool call"
-  },
-  "theme.SearchModal.footer.selectText": {
-    "message": "选中",
-    "description": "The select text for footer"
-  },
-  "theme.SearchModal.footer.submitQuestionText": {
-    "message": "提交问题",
-    "description": "The submit question text for footer"
-  },
-  "theme.SearchModal.footer.selectKeyAriaLabel": {
-    "message": "Enter 键",
-    "description": "The ARIA label for select key in footer"
-  },
-  "theme.SearchModal.footer.navigateText": {
-    "message": "导航",
-    "description": "The navigate text for footer"
-  },
-  "theme.SearchModal.footer.navigateUpKeyAriaLabel": {
-    "message": "向上键",
-    "description": "The ARIA label for navigate up key in footer"
-  },
-  "theme.SearchModal.footer.navigateDownKeyAriaLabel": {
-    "message": "向下键",
-    "description": "The ARIA label for navigate down key in footer"
-  },
-  "theme.SearchModal.footer.closeText": {
-    "message": "关闭",
-    "description": "The close text for footer"
-  },
-  "theme.SearchModal.footer.closeKeyAriaLabel": {
-    "message": "Esc 键",
-    "description": "The ARIA label for close key in footer"
-  },
-  "theme.SearchModal.footer.searchByText": {
-    "message": "搜索提供",
-    "description": "The 'Powered by' text for footer"
-  },
-  "theme.SearchModal.footer.backToSearchText": {
-    "message": "返回搜索",
-    "description": "The back to search text for footer"
-  },
-  "theme.SearchModal.noResultsScreen.noResultsText": {
-    "message": "没有结果：",
-    "description": "The text when there are no results"
-  },
-  "theme.SearchModal.noResultsScreen.suggestedQueryText": {
-    "message": "试试搜索",
-    "description": "The text for suggested query"
-  },
-  "theme.SearchModal.noResultsScreen.reportMissingResultsText": {
-    "message": "认为这个查询应该有结果？",
-    "description": "The text for reporting missing results"
-  },
-  "theme.SearchModal.noResultsScreen.reportMissingResultsLinkText": {
-    "message": "请告知我们。",
-    "description": "The link text for reporting missing results"
-  },
-  "theme.SearchModal.placeholder": {
-    "message": "搜索文档",
-    "description": "The placeholder of the input of the DocSearch pop-up modal"
-  },
-  "theme.Playground.liveEditor": {
-    "message": "实时编辑器",
-    "description": "The live editor label of the live codeblocks"
-  },
-  "theme.Playground.result": {
-    "message": "结果",
-    "description": "The result label of the live codeblocks"
-  },
-  "theme.Playground.buttons.reset": {
-    "message": "重置",
-    "description": "The reset button label for live code blocks"
-  },
-  "theme.blog.post.plurals": {
-    "message": "{count} 篇文章",
-    "description": "Pluralized label for \"{count} posts\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
-  },
-  "theme.blog.tagTitle": {
-    "message": "{nPosts} 含有标签「{tagName}」",
-    "description": "The title of the page for a blog tag"
-  },
-  "theme.blog.author.pageTitle": {
-    "message": "{authorName} - {nPosts}",
-    "description": "The title of the page for a blog author"
-  },
-  "theme.blog.authorsList.pageTitle": {
-    "message": "作者",
-    "description": "The title of the authors page"
-  },
-  "theme.blog.authorsList.viewAll": {
-    "message": "查看所有作者",
-    "description": "The label of the link targeting the blog authors page"
-  },
-  "theme.blog.author.noPosts": {
-    "message": "该作者尚未撰写任何文章。",
-    "description": "The text for authors with 0 blog post"
-  },
-  "theme.contentVisibility.unlistedBanner.title": {
-    "message": "未列出页",
-    "description": "The unlisted content banner title"
-  },
-  "theme.contentVisibility.unlistedBanner.message": {
-    "message": "此页面未列出。搜索引擎不会对其索引，只有拥有直接链接的用户才能访问。",
-    "description": "The unlisted content banner message"
-  },
-  "theme.contentVisibility.draftBanner.title": {
-    "message": "草稿页",
-    "description": "The draft content banner title"
-  },
-  "theme.contentVisibility.draftBanner.message": {
-    "message": "此页面是草稿，仅在开发环境中可见，不会包含在正式版本中。",
-    "description": "The draft content banner message"
-  },
-  "theme.docs.DocCard.categoryDescription.plurals": {
-    "message": "{count} 个项目",
-    "description": "The default description for a category card in the generated index about how many items this category includes"
-  },
-  "theme.ErrorPageContent.tryAgain": {
-    "message": "重试",
-    "description": "The label of the button to try again rendering when the React error boundary captures an error"
-  },
-  "theme.common.skipToMainContent": {
-    "message": "跳到主要内容",
-    "description": "The skip to content label used for accessibility, allowing to rapidly navigate to main content with keyboard tab/enter navigation"
-  },
-  "theme.tags.tagsPageTitle": {
-    "message": "标签",
-    "description": "The title of the tag list page"
   },
   "data.resources.site.google.title": {
     "message": "谷歌"
@@ -2824,5 +1195,1664 @@
   },
   "data.resources.category.personalProjects.title": {
     "message": "个人项目"
+  },
+  "data.travel.trip201109.title": {
+    "message": "🇨🇳 海南"
+  },
+  "data.travel.trip201109.description": {
+    "message": "三亚"
+  },
+  "data.travel.trip201111.title": {
+    "message": "🇨🇳 安徽"
+  },
+  "data.travel.trip201111.description": {
+    "message": "黄山（宏村、西递）"
+  },
+  "data.travel.trip201204.title": {
+    "message": "🇨🇳 江苏"
+  },
+  "data.travel.trip201204.description": {
+    "message": "泰州、扬州"
+  },
+  "data.travel.trip201206.title": {
+    "message": "🇨🇳 上海"
+  },
+  "data.travel.trip201206.description": {
+    "message": "上海"
+  },
+  "data.travel.trip201302.title": {
+    "message": "🇨🇳 广东"
+  },
+  "data.travel.trip201302.description": {
+    "message": "广州、中山"
+  },
+  "data.travel.trip201305.title": {
+    "message": "🇨🇳 广东 & 🇭🇰 香港"
+  },
+  "data.travel.trip201305.description": {
+    "message": "深圳、香港"
+  },
+  "data.travel.trip201309.title": {
+    "message": "🇨🇳 吉林、辽宁"
+  },
+  "data.travel.trip201309.description": {
+    "message": "白山（长白山）、通化、沈阳"
+  },
+  "data.travel.trip201402Jiangsu.title": {
+    "message": "🇨🇳 江苏"
+  },
+  "data.travel.trip201402Jiangsu.description": {
+    "message": "南京"
+  },
+  "data.travel.trip201402Tianjin.title": {
+    "message": "🇨🇳 天津"
+  },
+  "data.travel.trip201402Tianjin.description": {
+    "message": "天津"
+  },
+  "data.travel.trip201501.title": {
+    "message": "🇻🇳 越南"
+  },
+  "data.travel.trip201501.description": {
+    "message": "岘港"
+  },
+  "data.travel.trip201502.title": {
+    "message": "🇨🇳 江苏、上海"
+  },
+  "data.travel.trip201502.description": {
+    "message": "南通、上海（崇明岛）"
+  },
+  "data.travel.trip201505.title": {
+    "message": "🇯🇵 日本"
+  },
+  "data.travel.trip201505.description": {
+    "message": "大阪、京都、名古屋、箱根、东京、成田"
+  },
+  "data.travel.trip201510.title": {
+    "message": "🇨🇳 福建"
+  },
+  "data.travel.trip201510.description": {
+    "message": "厦门、漳州（土楼）"
+  },
+  "data.travel.trip201601.title": {
+    "message": "🇨🇳 福建"
+  },
+  "data.travel.trip201601.description": {
+    "message": "福州"
+  },
+  "data.travel.trip201602.title": {
+    "message": "🇨🇳 山东、北京"
+  },
+  "data.travel.trip201602.description": {
+    "message": "济宁（曲阜）、泰安（泰山）、北京"
+  },
+  "data.travel.trip201607.title": {
+    "message": "🇦🇹 奥地利 & 🇸🇰 斯洛伐克 & 🇭🇺 匈牙利 & 🇸🇮 斯洛文尼亚 & 🇨🇿 捷克 & 🇩🇪 德国"
+  },
+  "data.travel.trip201607.description": {
+    "message": "维也纳、布拉迪斯拉发、布达佩斯、马里博尔、哈尔施塔特、萨尔茨堡、林茨、克鲁姆洛夫、布拉格、卡罗维瓦里、魏玛、德累斯顿、波茨坦、柏林"
+  },
+  "data.travel.trip201609.title": {
+    "message": "🇨🇳 贵州"
+  },
+  "data.travel.trip201609.description": {
+    "message": "贵阳、安顺（黄果树瀑布）、黔东南（西江千户苗寨）、黔南（荔波）"
+  },
+  "data.travel.trip201610.title": {
+    "message": "🇨🇳 江苏"
+  },
+  "data.travel.trip201610.description": {
+    "message": "泰州、镇江"
+  },
+  "data.travel.trip201701.title": {
+    "message": "🇯🇵 日本"
+  },
+  "data.travel.trip201701.description": {
+    "message": "上海 ⇌ 熊本（海洋量子号）"
+  },
+  "data.travel.trip201702.title": {
+    "message": "🇹🇷 土耳其"
+  },
+  "data.travel.trip201702.description": {
+    "message": "伊斯坦布尔、伊兹密尔（以弗所）、代尼兹利（棉花堡）、卡帕多奇亚"
+  },
+  "data.travel.trip201705.title": {
+    "message": "🇸🇬 新加坡"
+  },
+  "data.travel.trip201705.description": {
+    "message": "新加坡"
+  },
+  "data.travel.trip201707.title": {
+    "message": "🇨🇳 安徽"
+  },
+  "data.travel.trip201707.description": {
+    "message": "合肥"
+  },
+  "data.travel.trip201708.title": {
+    "message": "🇦🇺 澳大利亚"
+  },
+  "data.travel.trip201708.description": {
+    "message": "布里斯班、黄金海岸、凯恩斯（绿岛大堡礁、红树林）、悉尼（蓝山国家公园）、墨尔本（大洋路）"
+  },
+  "data.travel.trip201710.title": {
+    "message": "🇨🇳 黑龙江、吉林"
+  },
+  "data.travel.trip201710.description": {
+    "message": "哈尔滨、长春"
+  },
+  "data.travel.trip201802.title": {
+    "message": "🇨🇳 云南"
+  },
+  "data.travel.trip201802.description": {
+    "message": "西双版纳"
+  },
+  "data.travel.trip201806.title": {
+    "message": "🇨🇳 内蒙古"
+  },
+  "data.travel.trip201806.description": {
+    "message": "呼和浩特、鄂尔多斯"
+  },
+  "data.travel.trip201808.title": {
+    "message": "🇯🇵 日本"
+  },
+  "data.travel.trip201808.description": {
+    "message": "函馆、登别、洞爷湖、富良野（富田农场）、小樽、札幌"
+  },
+  "data.travel.trip201810.title": {
+    "message": "🇨🇳 湖南"
+  },
+  "data.travel.trip201810.description": {
+    "message": "湘潭、长沙"
+  },
+  "data.travel.trip201901.title": {
+    "message": "🇨🇳 广西"
+  },
+  "data.travel.trip201901.description": {
+    "message": "南宁、崇左（德天瀑布）、北海"
+  },
+  "data.travel.trip201902.title": {
+    "message": "🇨🇳 北京"
+  },
+  "data.travel.trip201902.description": {
+    "message": "北京"
+  },
+  "data.travel.trip201907.title": {
+    "message": "🇮🇹 意大利 & 🇻🇦 梵蒂冈 & 🇨🇭 瑞士 & 🇫🇷 法国"
+  },
+  "data.travel.trip201907.description": {
+    "message": "罗马、梵蒂冈、白露里治奥、托斯卡纳、佛罗伦萨、威尼斯、维罗纳、圣莫里茨、达沃斯、卢塞恩、因特拉肯、蒙特勒、安纳西、巴黎"
+  },
+  "data.travel.trip202007.title": {
+    "message": "🇨🇳 海南"
+  },
+  "data.travel.trip202007.description": {
+    "message": "三亚、文昌、海口"
+  },
+  "data.travel.trip202105.title": {
+    "message": "🇨🇳 江西、湖北"
+  },
+  "data.travel.trip202105.description": {
+    "message": "九江（庐山）、武汉"
+  },
+  "data.travel.trip202107.title": {
+    "message": "🇨🇳 山东"
+  },
+  "data.travel.trip202107.description": {
+    "message": "烟台"
+  },
+  "data.travel.trip202301.title": {
+    "message": "🇨🇳 福建"
+  },
+  "data.travel.trip202301.description": {
+    "message": "泉州、莆田（湄洲岛）"
+  },
+  "data.travel.trip202307.title": {
+    "message": "🇲🇻 马尔代夫"
+  },
+  "data.travel.trip202307.description": {
+    "message": "马累、伊露岛（诺鲁环礁）"
+  },
+  "data.travel.trip202402.title": {
+    "message": "🇨🇳 福建、广东"
+  },
+  "data.travel.trip202402.description": {
+    "message": "南平（武夷山）、汕头（南澳岛）、潮州、揭阳"
+  },
+  "data.travel.trip202408.title": {
+    "message": "🇰🇷 韩国"
+  },
+  "data.travel.trip202408.description": {
+    "message": "仁川、首尔、釜山"
+  },
+  "data.travel.trip202501.title": {
+    "message": "🇲🇾 马来西亚"
+  },
+  "data.travel.trip202501.description": {
+    "message": "吉隆坡、怡保（霹雳州）、乔治市（槟城州）"
+  },
+  "data.travel.trip202507.title": {
+    "message": "🇭🇰 香港 & 🇨🇳 广东"
+  },
+  "data.travel.trip202507.description": {
+    "message": "香港、深圳、广州"
+  },
+  "data.travel.trip202602.title": {
+    "message": "🇹🇭 泰国 & 🇱🇦 老挝"
+  },
+  "data.travel.trip202602.description": {
+    "message": "清迈、清莱、金三角"
+  },
+  "data.travel.trip202608.title": {
+    "message": "🇨🇳 北京"
+  },
+  "data.travel.trip202608.description": {
+    "message": "北京"
+  },
+  "pages.home.nav.contest": {
+    "message": "竞赛"
+  },
+  "pages.home.nav.note": {
+    "message": "笔记"
+  },
+  "pages.home.nav.project": {
+    "message": "项目"
+  },
+  "pages.home.nav.blog": {
+    "message": "博客"
+  },
+  "pages.home.tag.china": {
+    "message": "中国"
+  },
+  "pages.home.tag.school": {
+    "message": "杭州第二中学"
+  },
+  "pages.home.tag.languages": {
+    "message": "中文 & 英文"
+  },
+  "pages.home.tag.pronouns": {
+    "message": "他"
+  },
+  "pages.home.tag.mbti": {
+    "message": "INTJ"
+  },
+  "pages.home.identity.student": {
+    "message": "学生"
+  },
+  "pages.home.identity.developer": {
+    "message": "开发者"
+  },
+  "pages.home.identity.researcher": {
+    "message": "研究者"
+  },
+  "pages.home.identity.designer": {
+    "message": "设计师"
+  },
+  "pages.home.identity.oier": {
+    "message": "OIer"
+  },
+  "pages.home.rolePrefix": {
+    "message": "我是一名 "
+  },
+  "pages.home.connect": {
+    "message": "联系"
+  },
+  "components.browserWindow.openLink": {
+    "message": "在新标签页打开链接"
+  },
+  "components.desmos.frameTitle": {
+    "message": "Desmos 图形计算器"
+  },
+  "components.countdown.event": {
+    "message": "我的生日"
+  },
+  "components.countdown.final": {
+    "message": "生日快乐！"
+  },
+  "components.countdown.unit.days": {
+    "message": "天"
+  },
+  "components.countdown.unit.hours": {
+    "message": "时"
+  },
+  "components.countdown.unit.minutes": {
+    "message": "分"
+  },
+  "components.countdown.unit.seconds": {
+    "message": "秒"
+  },
+  "components.countdown.description": {
+    "message": "距离 {event} 还有"
+  },
+  "components.countdown.progress": {
+    "message": "年度进度"
+  },
+  "components.playground.tab.neuralNetwork": {
+    "message": "神经网络"
+  },
+  "components.playground.tab.fourierTransform": {
+    "message": "傅里叶变换"
+  },
+  "components.playground.tab.lorenzAttractor": {
+    "message": "洛伦兹吸引子"
+  },
+  "components.playground.tab.gameOfLife": {
+    "message": "生命游戏"
+  },
+  "components.playground.tab.nimGame": {
+    "message": "尼姆游戏"
+  },
+  "components.playground.collapse": {
+    "message": "收起"
+  },
+  "components.playground.expand": {
+    "message": "展开"
+  },
+  "components.problem.collapse": {
+    "message": "收起"
+  },
+  "components.problem.expand": {
+    "message": "展开"
+  },
+  "components.problem.statement": {
+    "message": "题面"
+  },
+  "components.problem.solution": {
+    "message": "题解"
+  },
+  "components.problem.error": {
+    "message": "无法加载题目「{id}」。"
+  },
+  "pages.about.skills.ariaLabel": {
+    "message": "技术栈图标"
+  },
+  "pages.changelog.empty": {
+    "message": "暂无更新日志"
+  },
+  "pages.friends.title": {
+    "message": "友链"
+  },
+  "pages.friends.description": {
+    "message": "真正的友谊是世上最稀有的东西"
+  },
+  "pages.friends.modification": {
+    "message": "我的<b>友链</b>"
+  },
+  "pages.friends.requestLink": {
+    "message": "申请友链"
+  },
+  "pages.friends.requestSubject": {
+    "message": "友链申请"
+  },
+  "pages.insights.title": {
+    "message": "洞察"
+  },
+  "pages.insights.description": {
+    "message": "网站的实时数据，每次访问自动刷新"
+  },
+  "pages.insights.modification": {
+    "message": "实时<b>洞察</b>"
+  },
+  "pages.insights.traffic.title": {
+    "message": "流量"
+  },
+  "pages.insights.link.analytics": {
+    "message": "查看统计面板"
+  },
+  "pages.insights.serviceHealth.title": {
+    "message": "服务状态"
+  },
+  "pages.insights.link.status": {
+    "message": "查看状态页"
+  },
+  "pages.insights.metricList.empty": {
+    "message": "暂无数据"
+  },
+  "pages.insights.analytics.error": {
+    "message": "无法加载统计数据"
+  },
+  "pages.insights.env.other": {
+    "message": "其他"
+  },
+  "pages.insights.env.device.desktop": {
+    "message": "桌面端"
+  },
+  "pages.insights.env.device.laptop": {
+    "message": "笔记本"
+  },
+  "pages.insights.env.device.mobile": {
+    "message": "移动端"
+  },
+  "pages.insights.env.device.tablet": {
+    "message": "平板"
+  },
+  "pages.insights.metric.visitors": {
+    "message": "访客量"
+  },
+  "pages.insights.metric.visits": {
+    "message": "访问次数"
+  },
+  "pages.insights.metric.pageviews": {
+    "message": "浏览量"
+  },
+  "pages.insights.metric.bounceRate": {
+    "message": "跳出率"
+  },
+  "pages.insights.metric.avgVisit": {
+    "message": "访问时长"
+  },
+  "pages.insights.range.24h": {
+    "message": "近 24 小时"
+  },
+  "pages.insights.range.7d": {
+    "message": "近 7 天"
+  },
+  "pages.insights.range.30d": {
+    "message": "近 30 天"
+  },
+  "pages.insights.range.1y": {
+    "message": "近 1 年"
+  },
+  "pages.insights.range.ariaLabel": {
+    "message": "时间范围"
+  },
+  "pages.insights.unit.pageviews": {
+    "message": "{count} 次浏览"
+  },
+  "pages.insights.chart.title": {
+    "message": "浏览量趋势"
+  },
+  "pages.insights.metricList.pages": {
+    "message": "热门页面"
+  },
+  "pages.insights.metricList.referrers.title": {
+    "message": "来源站点"
+  },
+  "pages.insights.metricList.referrers.direct": {
+    "message": "直接访问"
+  },
+  "pages.insights.metricList.countries": {
+    "message": "访客地区"
+  },
+  "pages.insights.env.browsers": {
+    "message": "浏览器"
+  },
+  "pages.insights.env.os": {
+    "message": "操作系统"
+  },
+  "pages.insights.env.devices": {
+    "message": "设备"
+  },
+  "pages.insights.link.ariaLabel": {
+    "message": "{label}（在新标签页打开）"
+  },
+  "pages.privacy.lastUpdated": {
+    "message": "最后更新"
+  },
+  "pages.privacy.summary.account.title": {
+    "message": "无需账户"
+  },
+  "pages.privacy.summary.account.description": {
+    "message": "无需注册或登录即可浏览本站。"
+  },
+  "pages.privacy.summary.advertising.title": {
+    "message": "不做定向广告"
+  },
+  "pages.privacy.summary.advertising.description": {
+    "message": "本站不会出售数据，也不会用它建立广告画像。"
+  },
+  "pages.privacy.summary.control.title": {
+    "message": "浏览器控制"
+  },
+  "pages.privacy.summary.control.description": {
+    "message": "你可以随时清除偏好设置或屏蔽可选请求。"
+  },
+  "pages.privacy.summary.title": {
+    "message": "隐私概览"
+  },
+  "pages.privacy.summary.contact": {
+    "message": "隐私相关联系"
+  },
+  "pages.resources.title": {
+    "message": "资源"
+  },
+  "pages.resources.description": {
+    "message": "精心筛选的优质工具与平台"
+  },
+  "pages.resources.modification": {
+    "message": "精选<b>资源</b>"
+  },
+  "pages.resources.search.clear": {
+    "message": "清空搜索"
+  },
+  "pages.resources.search.placeholder": {
+    "message": "搜索资源"
+  },
+  "pages.resources.category.ariaLabel": {
+    "message": "资源分类"
+  },
+  "pages.resources.category.clear": {
+    "message": "清除分类"
+  },
+  "pages.resources.category.count": {
+    "message": "{count} 项"
+  },
+  "pages.resources.datacard.categories": {
+    "message": "个分类"
+  },
+  "pages.resources.datacard.items": {
+    "message": "项资源"
+  },
+  "pages.resources.search.empty": {
+    "message": "找不到和“{query}”相符的资源。"
+  },
+  "pages.settings.title": {
+    "message": "设置"
+  },
+  "pages.settings.description": {
+    "message": "自定义网站功能和偏好设置"
+  },
+  "pages.settings.modification": {
+    "message": "个性化<b>设置</b>"
+  },
+  "pages.settings.item.theme.option.system": {
+    "message": "系统模式"
+  },
+  "pages.settings.item.theme.option.light": {
+    "message": "浅色模式"
+  },
+  "pages.settings.item.theme.option.dark": {
+    "message": "深色模式"
+  },
+  "pages.settings.item.theme.title": {
+    "message": "主题"
+  },
+  "pages.settings.item.theme.description": {
+    "message": "切换浅色、深色或跟随系统"
+  },
+  "pages.settings.item.color.title": {
+    "message": "主题色"
+  },
+  "pages.settings.item.color.description": {
+    "message": "自定义网站主色调"
+  },
+  "pages.settings.item.color.picker": {
+    "message": "选择颜色"
+  },
+  "pages.settings.item.color.hex": {
+    "message": "十六进制颜色值"
+  },
+  "pages.settings.item.color.default": {
+    "message": "默认"
+  },
+  "pages.settings.item.color.ariaLabel": {
+    "message": "使用颜色 {color}"
+  },
+  "pages.settings.item.fontFamily.option.system": {
+    "message": "系统"
+  },
+  "pages.settings.item.fontFamily.option.sans": {
+    "message": "无衬线"
+  },
+  "pages.settings.item.fontFamily.option.serif": {
+    "message": "衬线"
+  },
+  "pages.settings.item.fontFamily.title": {
+    "message": "字体"
+  },
+  "pages.settings.item.fontFamily.description": {
+    "message": "选择系统、无衬线或衬线字体"
+  },
+  "pages.settings.item.font.title": {
+    "message": "排版"
+  },
+  "pages.settings.item.font.description": {
+    "message": "调整文字大小与行间距"
+  },
+  "pages.settings.item.font.size.label": {
+    "message": "字体大小"
+  },
+  "pages.settings.item.font.size.value": {
+    "message": "{size}px"
+  },
+  "pages.settings.item.font.lineHeight.label": {
+    "message": "行间距"
+  },
+  "pages.settings.item.experimental.option.classicDesign": {
+    "message": "经典设计"
+  },
+  "pages.settings.item.experimental.option.debugMode": {
+    "message": "调试模式"
+  },
+  "pages.settings.item.experimental.option.grayMode": {
+    "message": "灰色模式"
+  },
+  "pages.settings.item.experimental.title": {
+    "message": "实验性功能"
+  },
+  "pages.settings.item.experimental.description": {
+    "message": "试用开发中的新功能"
+  },
+  "pages.settings.item.quickActions.option.confetti": {
+    "message": "给我惊喜"
+  },
+  "pages.settings.item.quickActions.option.reset": {
+    "message": "重置设置"
+  },
+  "pages.settings.item.quickActions.title": {
+    "message": "快捷操作"
+  },
+  "pages.settings.item.quickActions.description": {
+    "message": "一键执行常用操作"
+  },
+  "pages.travel.title": {
+    "message": "旅行"
+  },
+  "pages.travel.description": {
+    "message": "每一次旅行都能带来新的视野和感悟"
+  },
+  "pages.travel.modification": {
+    "message": "旅行<b>记录</b>"
+  },
+  "pages.travel.quote.content": {
+    "message": "纸上得来终觉浅，绝知此事要躬行。"
+  },
+  "pages.travel.quote.author": {
+    "message": "陆游"
+  },
+  "pages.travel.quote.source": {
+    "message": "《冬夜读书示子聿》"
+  },
+  "pages.travel.datacard.countries": {
+    "message": "国家"
+  },
+  "pages.travel.datacard.years": {
+    "message": "年历程"
+  },
+  "blog.pages.tags.tagSelect": {
+    "message": "标签"
+  },
+  "theme.docs.paginator.previous": {
+    "message": "上一页",
+    "description": "The label used to navigate to the previous doc"
+  },
+  "theme.docs.paginator.next": {
+    "message": "下一页",
+    "description": "The label used to navigate to the next doc"
+  },
+  "theme.docs.paginator.navAriaLabel": {
+    "message": "文件选项卡",
+    "description": "The ARIA label for the docs pagination"
+  },
+  "components.footer.description": {
+    "message": "分享技术笔记、项目经验与学习思考的个人网站。"
+  },
+  "components.footer.siteInformation": {
+    "message": "站点信息"
+  },
+  "components.footer.navigation": {
+    "message": "页脚导航"
+  },
+  "components.footer.feeds.ariaLabel": {
+    "message": "订阅源"
+  },
+  "components.footer.feeds.rss": {
+    "message": "RSS 订阅"
+  },
+  "components.footer.feeds.atom": {
+    "message": "Atom 订阅"
+  },
+  "components.footer.feeds.json": {
+    "message": "JSON 订阅"
+  },
+  "components.footer.licenseNotice": {
+    "message": "本网站内容采用"
+  },
+  "components.footer.licenseLabel": {
+    "message": "知识共享 署名 4.0 国际许可协议"
+  },
+  "components.article.editPage": {
+    "message": "编辑此页面"
+  },
+  "components.article.copyMarkdown": {
+    "message": "复制 Markdown"
+  },
+  "components.article.copyMarkdownCopied": {
+    "message": "已复制！"
+  },
+  "components.article.copyMarkdownError": {
+    "message": "复制失败"
+  },
+  "components.article.lastUpdated": {
+    "message": "最后更新于 {date}"
+  },
+  "components.article.summaryLabel": {
+    "message": "概述"
+  },
+  "components.article.viewCount": {
+    "message": "{viewCount} 浏览"
+  },
+  "components.playground.fourierTransform.reset": {
+    "message": "重置"
+  },
+  "components.playground.fourierTransform.clear": {
+    "message": "清空"
+  },
+  "components.playground.gameOfLife.play": {
+    "message": "播放"
+  },
+  "components.playground.gameOfLife.pause": {
+    "message": "暂停"
+  },
+  "components.playground.gameOfLife.step": {
+    "message": "单步"
+  },
+  "components.playground.gameOfLife.random": {
+    "message": "随机"
+  },
+  "components.playground.gameOfLife.clear": {
+    "message": "清空"
+  },
+  "components.playground.lorenz.reset": {
+    "message": "重置"
+  },
+  "components.playground.neuralNetwork.clear": {
+    "message": "清除"
+  },
+  "components.playground.neuralNetwork.check": {
+    "message": "识别"
+  },
+  "components.playground.neuralNetwork.preprocess": {
+    "message": "预处理"
+  },
+  "components.playground.nim.yourTurn": {
+    "message": "你的回合"
+  },
+  "components.playground.nim.aiThinking": {
+    "message": "AI 思考中……"
+  },
+  "components.playground.nim.youWin": {
+    "message": "你赢了！"
+  },
+  "components.playground.nim.aiWins": {
+    "message": "AI 赢了"
+  },
+  "components.playground.nim.random": {
+    "message": "随机"
+  },
+  "components.playground.nim.tip": {
+    "message": "提示"
+  },
+  "components.github.error": {
+    "message": "加载 GitHub 数据失败"
+  },
+  "components.github.noDescription": {
+    "message": "暂无描述"
+  },
+  "components.github.stars": {
+    "message": "Star 数"
+  },
+  "components.github.forks": {
+    "message": "Fork 数"
+  },
+  "components.github.license": {
+    "message": "许可证"
+  },
+  "components.github.language": {
+    "message": "主要语言"
+  },
+  "components.markdown.aboutGreeting": {
+    "message": "Hello, I'm lailai"
+  },
+  "components.quote.attributionDash": {
+    "message": "—— "
+  },
+  "pages.moments.title": {
+    "message": "动态"
+  },
+  "pages.moments.description": {
+    "message": "随时随地，分享生活"
+  },
+  "pages.moments.countLabel": {
+    "message": "条动态"
+  },
+  "pages.moments.location.hangzhou": {
+    "message": "杭州"
+  },
+  "pages.moments.loadMore": {
+    "message": "加载更多"
+  },
+  "pages.moments.noMore": {
+    "message": "没有更多动态了"
+  },
+  "pages.moments.weather.clearSky": {
+    "message": "晴"
+  },
+  "pages.moments.weather.mainlyClear": {
+    "message": "少云"
+  },
+  "pages.moments.weather.partlyCloudy": {
+    "message": "多云"
+  },
+  "pages.moments.weather.overcast": {
+    "message": "阴"
+  },
+  "pages.moments.weather.fog": {
+    "message": "雾"
+  },
+  "pages.moments.weather.depositingRimeFog": {
+    "message": "雾凇"
+  },
+  "pages.moments.weather.lightDrizzle": {
+    "message": "轻度毛毛雨"
+  },
+  "pages.moments.weather.moderateDrizzle": {
+    "message": "中度毛毛雨"
+  },
+  "pages.moments.weather.denseDrizzle": {
+    "message": "浓毛毛雨"
+  },
+  "pages.moments.weather.lightFreezingDrizzle": {
+    "message": "轻度冻毛毛雨"
+  },
+  "pages.moments.weather.denseFreezingDrizzle": {
+    "message": "浓冻毛毛雨"
+  },
+  "pages.moments.weather.slightRain": {
+    "message": "小雨"
+  },
+  "pages.moments.weather.moderateRain": {
+    "message": "中雨"
+  },
+  "pages.moments.weather.heavyRain": {
+    "message": "大雨"
+  },
+  "pages.moments.weather.lightFreezingRain": {
+    "message": "轻度冻雨"
+  },
+  "pages.moments.weather.heavyFreezingRain": {
+    "message": "强冻雨"
+  },
+  "pages.moments.weather.slightSnowFall": {
+    "message": "小雪"
+  },
+  "pages.moments.weather.moderateSnowFall": {
+    "message": "中雪"
+  },
+  "pages.moments.weather.heavySnowFall": {
+    "message": "大雪"
+  },
+  "pages.moments.weather.snowGrains": {
+    "message": "米雪"
+  },
+  "pages.moments.weather.slightRainShowers": {
+    "message": "弱阵雨"
+  },
+  "pages.moments.weather.moderateRainShowers": {
+    "message": "中阵雨"
+  },
+  "pages.moments.weather.violentRainShowers": {
+    "message": "强阵雨"
+  },
+  "pages.moments.weather.slightSnowShowers": {
+    "message": "弱阵雪"
+  },
+  "pages.moments.weather.heavySnowShowers": {
+    "message": "强阵雪"
+  },
+  "pages.moments.weather.thunderstorm": {
+    "message": "雷暴"
+  },
+  "pages.moments.weather.thunderstormSlightHail": {
+    "message": "雷暴伴轻度冰雹"
+  },
+  "pages.moments.weather.thunderstormHeavyHail": {
+    "message": "雷暴伴强冰雹"
+  },
+  "pages.moments.weather.unknown": {
+    "message": "未知"
+  },
+  "pages.overview.title": {
+    "message": "概览"
+  },
+  "pages.overview.description": {
+    "message": "用数据看看我在这里写过些什么"
+  },
+  "pages.overview.chart.monthly.title": {
+    "message": "每月发文"
+  },
+  "pages.overview.chart.cumulative.title": {
+    "message": "文章累计"
+  },
+  "pages.overview.chart.empty": {
+    "message": "暂无文章"
+  },
+  "pages.overview.unit.posts": {
+    "message": "{count} 篇文章"
+  },
+  "pages.overview.metric.posts": {
+    "message": "文章"
+  },
+  "pages.overview.metric.words": {
+    "message": "词数"
+  },
+  "pages.overview.metric.tags": {
+    "message": "标签"
+  },
+  "pages.overview.metric.moments": {
+    "message": "动态"
+  },
+  "blog.post.empty": {
+    "message": "暂无文章"
+  },
+  "blog.pages.archive.title": {
+    "message": "历史文章"
+  },
+  "blog.pages.archive.yearSelect": {
+    "message": "年份"
+  },
+  "blog.pages.tags.title": {
+    "message": "标签"
+  },
+  "blog.pages.authors.title": {
+    "message": "作者"
+  },
+  "blog.archive.tab.overview": {
+    "message": "概览"
+  },
+  "blog.archive.tab.year": {
+    "message": "按年份"
+  },
+  "blog.archive.tab.tags": {
+    "message": "按标签"
+  },
+  "blog.archive.tab.authors": {
+    "message": "按作者"
+  },
+  "blog.sidebar.calendar.today": {
+    "message": "本月"
+  },
+  "blog.sidebar.calendar.prev": {
+    "message": "上个月"
+  },
+  "blog.sidebar.calendar.next": {
+    "message": "下个月"
+  },
+  "blog.sidebar.calendar.empty": {
+    "message": "暂无文章"
+  },
+  "blog.post.paginator.newer": {
+    "message": "上一篇"
+  },
+  "blog.post.paginator.older": {
+    "message": "下一篇"
+  },
+  "blog.post.paginator.ariaLabel": {
+    "message": "博客文章导航"
+  },
+  "blog.post.pinned": {
+    "message": "置顶"
+  },
+  "blog.postcard.original": {
+    "message": "原文"
+  },
+  "blog.postcard.wordCount": {
+    "message": "{word} 词数"
+  },
+  "blog.postcard.readingTime": {
+    "message": "{readingTime} 分钟"
+  },
+  "blog.postcard.viewCount": {
+    "message": "{viewCount} 浏览"
+  },
+  "blog.postcard.readMore": {
+    "message": "阅读更多"
+  },
+  "blog.pagination.prev": {
+    "message": "上一页"
+  },
+  "blog.pagination.next": {
+    "message": "下一页"
+  },
+  "blog.pagination.ariaLabel": {
+    "message": "分页"
+  },
+  "blog.sidebar.profileCard.title": {
+    "message": "学生 & 开发者"
+  },
+  "blog.menu.blog": {
+    "message": "博客"
+  },
+  "blog.menu.moments": {
+    "message": "动态"
+  },
+  "blog.menu.archive": {
+    "message": "归档"
+  },
+  "blog.sidebar.toc.progress": {
+    "message": "阅读进度：{percent}%"
+  },
+  "blog.sidebar.toc.title": {
+    "message": "目录"
+  },
+  "blog.sidebar.tags.title": {
+    "message": "热门标签"
+  },
+  "theme.NotFound.title": {
+    "message": "找不到页面",
+    "description": "The title of the 404 page"
+  },
+  "theme.NotFound.p1": {
+    "message": "我们找不到您要找的页面。",
+    "description": "The first paragraph of the 404 page"
+  },
+  "components.notFound.backToHome": {
+    "message": "返回首页"
+  },
+  "pages.insights.heartbeat.ariaLabel": {
+    "message": "近期监测状态"
+  },
+  "pages.insights.heartbeat.up": {
+    "message": "正常"
+  },
+  "pages.insights.heartbeat.down": {
+    "message": "故障"
+  },
+  "pages.insights.heartbeat.pending": {
+    "message": "待定"
+  },
+  "pages.insights.heartbeat.maintenance": {
+    "message": "维护中"
+  },
+  "pages.insights.heartbeat.unknown": {
+    "message": "暂无数据"
+  },
+  "pages.insights.heartbeat.noData": {
+    "message": "暂无数据"
+  },
+  "pages.insights.retry": {
+    "message": "重试"
+  },
+  "pages.insights.systemStatus.title": {
+    "message": "运行时快照"
+  },
+  "pages.insights.systemStatus.srLabel": {
+    "message": "系统状态概览"
+  },
+  "pages.insights.uptime.avgPing": {
+    "message": "平均 {ping}ms"
+  },
+  "pages.insights.status.error": {
+    "message": "无法连接监控服务"
+  },
+  "pages.insights.uptime.empty": {
+    "message": "暂无监控项"
+  },
+  "blog.pages.authors.authorSelect": {
+    "message": "作者"
+  },
+  "pages.travel.map.motherland": {
+    "message": "祖国"
+  },
+  "pages.travel.map.legend.unvisited": {
+    "message": "未到访"
+  },
+  "pages.travel.map.reset": {
+    "message": "重置视角"
+  },
+  "pages.travel.map.play": {
+    "message": "继续旋转"
+  },
+  "pages.travel.map.pause": {
+    "message": "暂停旋转"
+  },
+  "theme.ErrorPageContent.title": {
+    "message": "页面已崩溃。",
+    "description": "The title of the fallback page when the page crashed"
+  },
+  "theme.BackToTopButton.buttonAriaLabel": {
+    "message": "回到顶部",
+    "description": "The ARIA label for the back to top button"
+  },
+  "theme.blog.archive.title": {
+    "message": "历史文章",
+    "description": "The page & hero title of the blog archive page"
+  },
+  "theme.blog.archive.description": {
+    "message": "历史文章",
+    "description": "The page & hero description of the blog archive page"
+  },
+  "theme.blog.paginator.navAriaLabel": {
+    "message": "文章列表分页导航",
+    "description": "The ARIA label for the blog pagination"
+  },
+  "theme.blog.paginator.newerEntries": {
+    "message": "较新的文章",
+    "description": "The label used to navigate to the newer blog posts page (previous page)"
+  },
+  "theme.blog.paginator.olderEntries": {
+    "message": "较旧的文章",
+    "description": "The label used to navigate to the older blog posts page (next page)"
+  },
+  "theme.blog.post.paginator.navAriaLabel": {
+    "message": "文章分页导航",
+    "description": "The ARIA label for the blog posts pagination"
+  },
+  "theme.blog.post.paginator.newerPost": {
+    "message": "较新一篇",
+    "description": "The blog post button label to navigate to the newer/previous post"
+  },
+  "theme.blog.post.paginator.olderPost": {
+    "message": "较旧一篇",
+    "description": "The blog post button label to navigate to the older/next post"
+  },
+  "theme.tags.tagsPageLink": {
+    "message": "查看所有标签",
+    "description": "The label of the link targeting the tag list page"
+  },
+  "theme.colorToggle.ariaLabel.mode.system": {
+    "message": "跟随系统",
+    "description": "The name for the system color mode"
+  },
+  "theme.colorToggle.ariaLabel.mode.light": {
+    "message": "浅色模式",
+    "description": "The name for the light color mode"
+  },
+  "theme.colorToggle.ariaLabel.mode.dark": {
+    "message": "暗黑模式",
+    "description": "The name for the dark color mode"
+  },
+  "theme.colorToggle.ariaLabel": {
+    "message": "切换浅色/暗黑模式（当前为{mode}）",
+    "description": "The ARIA label for the color mode toggle"
+  },
+  "theme.docs.breadcrumbs.navAriaLabel": {
+    "message": "页面路径",
+    "description": "The ARIA label for the breadcrumbs"
+  },
+  "theme.docs.tagDocListPageTitle.nDocsTagged": {
+    "message": "{count} 篇文档带有标签",
+    "description": "Pluralized label for \"{count} docs tagged\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
+  },
+  "theme.docs.tagDocListPageTitle": {
+    "message": "{nDocsTagged}「{tagName}」",
+    "description": "The title of the page for a docs tag"
+  },
+  "theme.docs.versionBadge.label": {
+    "message": "版本：{versionLabel}"
+  },
+  "theme.docs.versions.unreleasedVersionLabel": {
+    "message": "此为 {siteTitle} {versionLabel} 版尚未发行的文档。",
+    "description": "The label used to tell the user that he's browsing an unreleased doc version"
+  },
+  "theme.docs.versions.unmaintainedVersionLabel": {
+    "message": "此为 {siteTitle} {versionLabel} 版的文档，现已不再积极维护。",
+    "description": "The label used to tell the user that he's browsing an unmaintained doc version"
+  },
+  "theme.docs.versions.latestVersionSuggestionLabel": {
+    "message": "最新的文档请参阅 {latestVersionLink} ({versionLabel})。",
+    "description": "The label used to tell the user to check the latest version"
+  },
+  "theme.docs.versions.latestVersionLinkLabel": {
+    "message": "最新版本",
+    "description": "The label used for the latest version suggestion link label"
+  },
+  "theme.common.editThisPage": {
+    "message": "编辑此页",
+    "description": "The link label to edit the current page"
+  },
+  "theme.common.headingLinkTitle": {
+    "message": "{heading}的直接链接",
+    "description": "Title for link to heading"
+  },
+  "theme.lastUpdated.atDate": {
+    "message": "于 {date} ",
+    "description": "The words used to describe on which date a page has been last updated"
+  },
+  "theme.lastUpdated.byUser": {
+    "message": "由 {user} ",
+    "description": "The words used to describe by who the page has been last updated"
+  },
+  "theme.lastUpdated.lastUpdatedAtBy": {
+    "message": "最后{byUser}{atDate}更新",
+    "description": "The sentence used to display when a page has been last updated, and by who"
+  },
+  "theme.navbar.mobileVersionsDropdown.label": {
+    "message": "选择版本",
+    "description": "The label for the navbar versions dropdown on mobile view"
+  },
+  "theme.tags.tagsListLabel": {
+    "message": "标签：",
+    "description": "The label alongside a tag list"
+  },
+  "theme.admonition.caution": {
+    "message": "警告",
+    "description": "The default label used for the Caution admonition (:::caution)"
+  },
+  "theme.admonition.danger": {
+    "message": "危险",
+    "description": "The default label used for the Danger admonition (:::danger)"
+  },
+  "theme.admonition.info": {
+    "message": "信息",
+    "description": "The default label used for the Info admonition (:::info)"
+  },
+  "theme.admonition.note": {
+    "message": "备注",
+    "description": "The default label used for the Note admonition (:::note)"
+  },
+  "theme.admonition.tip": {
+    "message": "提示",
+    "description": "The default label used for the Tip admonition (:::tip)"
+  },
+  "theme.admonition.warning": {
+    "message": "注意",
+    "description": "The default label used for the Warning admonition (:::warning)"
+  },
+  "theme.AnnouncementBar.closeButtonAriaLabel": {
+    "message": "关闭",
+    "description": "The ARIA label for close button of announcement bar"
+  },
+  "theme.blog.sidebar.navAriaLabel": {
+    "message": "最近文章导航",
+    "description": "The ARIA label for recent posts in the blog sidebar"
+  },
+  "theme.DocSidebarItem.expandCategoryAriaLabel": {
+    "message": "展开侧边栏分类 '{label}'",
+    "description": "The ARIA label to expand the sidebar category"
+  },
+  "theme.DocSidebarItem.collapseCategoryAriaLabel": {
+    "message": "折叠侧边栏分类 '{label}'",
+    "description": "The ARIA label to collapse the sidebar category"
+  },
+  "theme.IconExternalLink.ariaLabel": {
+    "message": "(在新标签页中打开)",
+    "description": "The ARIA label for the external link icon"
+  },
+  "theme.NavBar.navAriaLabel": {
+    "message": "主导航",
+    "description": "The ARIA label for the main navigation"
+  },
+  "theme.NotFound.p2": {
+    "message": "请联系原始链接来源网站的所有者，并告知他们链接已损坏。",
+    "description": "The 2nd paragraph of the 404 page"
+  },
+  "theme.navbar.mobileLanguageDropdown.label": {
+    "message": "选择语言",
+    "description": "The label for the mobile language switcher dropdown"
+  },
+  "theme.TOCCollapsible.toggleButtonLabel": {
+    "message": "本页总览",
+    "description": "The label used by the button on the collapsible TOC component"
+  },
+  "theme.blog.post.readMore": {
+    "message": "阅读更多",
+    "description": "The label used in blog post item excerpts to link to full blog posts"
+  },
+  "theme.blog.post.readMoreLabel": {
+    "message": "阅读 {title} 的全文",
+    "description": "The ARIA label for the link to full blog posts from excerpts"
+  },
+  "theme.blog.post.readingTime.plurals": {
+    "message": "阅读需 {readingTime} 分钟",
+    "description": "Pluralized label for \"{readingTime} min read\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
+  },
+  "theme.CodeBlock.copy": {
+    "message": "复制",
+    "description": "The copy button label on code blocks"
+  },
+  "theme.CodeBlock.copied": {
+    "message": "复制成功",
+    "description": "The copied button label on code blocks"
+  },
+  "theme.CodeBlock.copyButtonAriaLabel": {
+    "message": "复制代码到剪贴板",
+    "description": "The ARIA label for copy code blocks button"
+  },
+  "theme.CodeBlock.wordWrapToggle": {
+    "message": "切换自动换行",
+    "description": "The title attribute for toggle word wrapping button of code block lines"
+  },
+  "theme.docs.breadcrumbs.home": {
+    "message": "主页面",
+    "description": "The ARIA label for the home page in the breadcrumbs"
+  },
+  "theme.docs.sidebar.collapseButtonTitle": {
+    "message": "收起侧边栏",
+    "description": "The title attribute for collapse button of doc sidebar"
+  },
+  "theme.docs.sidebar.collapseButtonAriaLabel": {
+    "message": "收起侧边栏",
+    "description": "The title attribute for collapse button of doc sidebar"
+  },
+  "theme.docs.sidebar.navAriaLabel": {
+    "message": "文档侧边栏",
+    "description": "The ARIA label for the sidebar navigation"
+  },
+  "theme.docs.sidebar.closeSidebarButtonAriaLabel": {
+    "message": "关闭导航栏",
+    "description": "The ARIA label for close button of mobile sidebar"
+  },
+  "theme.navbar.mobileSidebarSecondaryMenu.backButtonLabel": {
+    "message": "← 回到主菜单",
+    "description": "The label of the back button to return to main menu, inside the mobile navbar sidebar secondary menu (notably used to display the docs sidebar)"
+  },
+  "theme.docs.sidebar.toggleSidebarButtonAriaLabel": {
+    "message": "切换导航栏",
+    "description": "The ARIA label for hamburger menu button of mobile navigation"
+  },
+  "theme.navbar.mobileDropdown.collapseButton.expandAriaLabel": {
+    "message": "展开下拉菜单",
+    "description": "The ARIA label of the button to expand the mobile dropdown navbar item"
+  },
+  "theme.navbar.mobileDropdown.collapseButton.collapseAriaLabel": {
+    "message": "折叠下拉菜单",
+    "description": "The ARIA label of the button to collapse the mobile dropdown navbar item"
+  },
+  "theme.docs.sidebar.expandButtonTitle": {
+    "message": "展开侧边栏",
+    "description": "The ARIA label and title attribute for expand button of doc sidebar"
+  },
+  "theme.docs.sidebar.expandButtonAriaLabel": {
+    "message": "展开侧边栏",
+    "description": "The ARIA label and title attribute for expand button of doc sidebar"
+  },
+  "theme.SearchBar.seeAll": {
+    "message": "查看全部 {count} 个结果"
+  },
+  "theme.SearchPage.documentsFound.plurals": {
+    "message": "找到 {count} 份文件",
+    "description": "Pluralized label for \"{count} documents found\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
+  },
+  "theme.SearchPage.existingResultsTitle": {
+    "message": "「{query}」的搜索结果",
+    "description": "The search page title for non-empty query"
+  },
+  "theme.SearchPage.emptyResultsTitle": {
+    "message": "在文档中搜索",
+    "description": "The search page title for empty query"
+  },
+  "theme.SearchPage.inputPlaceholder": {
+    "message": "在此输入搜索字词",
+    "description": "The placeholder for search page input"
+  },
+  "theme.SearchPage.inputLabel": {
+    "message": "搜索",
+    "description": "The ARIA label for search page input"
+  },
+  "theme.SearchPage.algoliaLabel": {
+    "message": "通过 Algolia 搜索",
+    "description": "The description label for Algolia mention"
+  },
+  "theme.SearchPage.noResultsText": {
+    "message": "未找到任何结果",
+    "description": "The paragraph for empty search result"
+  },
+  "theme.SearchPage.fetchingNewResults": {
+    "message": "正在获取新的搜索结果...",
+    "description": "The paragraph for fetching new search results"
+  },
+  "theme.SearchBar.label": {
+    "message": "搜索",
+    "description": "The ARIA label and placeholder for search button"
+  },
+  "theme.SearchModal.searchBox.resetButtonTitle": {
+    "message": "清除查询",
+    "description": "The label and ARIA label for search box reset button"
+  },
+  "theme.SearchModal.searchBox.cancelButtonText": {
+    "message": "取消",
+    "description": "The label and ARIA label for search box cancel button"
+  },
+  "theme.SearchModal.searchBox.placeholderText": {
+    "message": "搜索文档",
+    "description": "The placeholder text for the main search input field"
+  },
+  "theme.SearchModal.searchBox.placeholderTextAskAi": {
+    "message": "再问一个问题...",
+    "description": "The placeholder text when in AI question mode"
+  },
+  "theme.SearchModal.searchBox.placeholderTextAskAiStreaming": {
+    "message": "回答中...",
+    "description": "The placeholder text for search box when AI is streaming an answer"
+  },
+  "theme.SearchModal.searchBox.enterKeyHint": {
+    "message": "搜索",
+    "description": "The hint for the search box enter key text"
+  },
+  "theme.SearchModal.searchBox.enterKeyHintAskAi": {
+    "message": "输入",
+    "description": "The hint for the Ask AI search box enter key text"
+  },
+  "theme.SearchModal.searchBox.searchInputLabel": {
+    "message": "搜索",
+    "description": "The ARIA label for search input"
+  },
+  "theme.SearchModal.searchBox.backToKeywordSearchButtonText": {
+    "message": "返回关键词搜索",
+    "description": "The text for back to keyword search button"
+  },
+  "theme.SearchModal.searchBox.backToKeywordSearchButtonAriaLabel": {
+    "message": "返回关键词搜索",
+    "description": "The ARIA label for back to keyword search button"
+  },
+  "theme.SearchModal.startScreen.recentSearchesTitle": {
+    "message": "最近搜索",
+    "description": "The title for recent searches"
+  },
+  "theme.SearchModal.startScreen.noRecentSearchesText": {
+    "message": "没有最近搜索",
+    "description": "The text when there are no recent searches"
+  },
+  "theme.SearchModal.startScreen.saveRecentSearchButtonTitle": {
+    "message": "保存这个搜索",
+    "description": "The title for save recent search button"
+  },
+  "theme.SearchModal.startScreen.removeRecentSearchButtonTitle": {
+    "message": "从历史记录中删除这个搜索",
+    "description": "The title for remove recent search button"
+  },
+  "theme.SearchModal.startScreen.favoriteSearchesTitle": {
+    "message": "收藏",
+    "description": "The title for favorite searches"
+  },
+  "theme.SearchModal.startScreen.removeFavoriteSearchButtonTitle": {
+    "message": "从收藏列表中删除这个搜索",
+    "description": "The title for remove favorite search button"
+  },
+  "theme.SearchModal.startScreen.recentConversationsTitle": {
+    "message": "最近的对话",
+    "description": "The title for recent conversations"
+  },
+  "theme.SearchModal.startScreen.removeRecentConversationButtonTitle": {
+    "message": "从历史记录中删除此对话",
+    "description": "The title for remove recent conversation button"
+  },
+  "theme.SearchModal.errorScreen.titleText": {
+    "message": "无法获取结果",
+    "description": "The title for error screen"
+  },
+  "theme.SearchModal.errorScreen.helpText": {
+    "message": "您可能需要检查网络连接。",
+    "description": "The help text for error screen"
+  },
+  "theme.SearchModal.resultsScreen.askAiPlaceholder": {
+    "message": "问 AI: ",
+    "description": "The placeholder text for Ask AI input"
+  },
+  "theme.SearchModal.askAiScreen.disclaimerText": {
+    "message": "答案是由 AI 生成的，可能会出错。请验证回复。",
+    "description": "The disclaimer text for AI answers"
+  },
+  "theme.SearchModal.askAiScreen.relatedSourcesText": {
+    "message": "相关来源",
+    "description": "The text for related sources"
+  },
+  "theme.SearchModal.askAiScreen.thinkingText": {
+    "message": "思考中...",
+    "description": "The text when AI is thinking"
+  },
+  "theme.SearchModal.askAiScreen.copyButtonText": {
+    "message": "复制",
+    "description": "The text for copy button"
+  },
+  "theme.SearchModal.askAiScreen.copyButtonCopiedText": {
+    "message": "已复制！",
+    "description": "The text for copy button when copied"
+  },
+  "theme.SearchModal.askAiScreen.copyButtonTitle": {
+    "message": "复制",
+    "description": "The title for copy button"
+  },
+  "theme.SearchModal.askAiScreen.likeButtonTitle": {
+    "message": "喜欢",
+    "description": "The title for like button"
+  },
+  "theme.SearchModal.askAiScreen.dislikeButtonTitle": {
+    "message": "不喜欢",
+    "description": "The title for dislike button"
+  },
+  "theme.SearchModal.askAiScreen.thanksForFeedbackText": {
+    "message": "感谢您的反馈！",
+    "description": "The text for thanks for feedback"
+  },
+  "theme.SearchModal.askAiScreen.preToolCallText": {
+    "message": "搜索中...",
+    "description": "The text before tool call"
+  },
+  "theme.SearchModal.askAiScreen.duringToolCallText": {
+    "message": "搜索中...",
+    "description": "The text during tool call"
+  },
+  "theme.SearchModal.askAiScreen.afterToolCallText": {
+    "message": "搜索结果",
+    "description": "The text after tool call"
+  },
+  "theme.SearchModal.footer.selectText": {
+    "message": "选中",
+    "description": "The select text for footer"
+  },
+  "theme.SearchModal.footer.submitQuestionText": {
+    "message": "提交问题",
+    "description": "The submit question text for footer"
+  },
+  "theme.SearchModal.footer.selectKeyAriaLabel": {
+    "message": "Enter 键",
+    "description": "The ARIA label for select key in footer"
+  },
+  "theme.SearchModal.footer.navigateText": {
+    "message": "导航",
+    "description": "The navigate text for footer"
+  },
+  "theme.SearchModal.footer.navigateUpKeyAriaLabel": {
+    "message": "向上键",
+    "description": "The ARIA label for navigate up key in footer"
+  },
+  "theme.SearchModal.footer.navigateDownKeyAriaLabel": {
+    "message": "向下键",
+    "description": "The ARIA label for navigate down key in footer"
+  },
+  "theme.SearchModal.footer.closeText": {
+    "message": "关闭",
+    "description": "The close text for footer"
+  },
+  "theme.SearchModal.footer.closeKeyAriaLabel": {
+    "message": "Esc 键",
+    "description": "The ARIA label for close key in footer"
+  },
+  "theme.SearchModal.footer.searchByText": {
+    "message": "搜索提供",
+    "description": "The 'Powered by' text for footer"
+  },
+  "theme.SearchModal.footer.backToSearchText": {
+    "message": "返回搜索",
+    "description": "The back to search text for footer"
+  },
+  "theme.SearchModal.noResultsScreen.noResultsText": {
+    "message": "没有结果：",
+    "description": "The text when there are no results"
+  },
+  "theme.SearchModal.noResultsScreen.suggestedQueryText": {
+    "message": "试试搜索",
+    "description": "The text for suggested query"
+  },
+  "theme.SearchModal.noResultsScreen.reportMissingResultsText": {
+    "message": "认为这个查询应该有结果？",
+    "description": "The text for reporting missing results"
+  },
+  "theme.SearchModal.noResultsScreen.reportMissingResultsLinkText": {
+    "message": "请告知我们。",
+    "description": "The link text for reporting missing results"
+  },
+  "theme.SearchModal.placeholder": {
+    "message": "搜索文档",
+    "description": "The placeholder of the input of the DocSearch pop-up modal"
+  },
+  "theme.Playground.liveEditor": {
+    "message": "实时编辑器",
+    "description": "The live editor label of the live codeblocks"
+  },
+  "theme.Playground.result": {
+    "message": "结果",
+    "description": "The result label of the live codeblocks"
+  },
+  "theme.Playground.buttons.reset": {
+    "message": "重置",
+    "description": "The reset button label for live code blocks"
+  },
+  "theme.blog.post.plurals": {
+    "message": "{count} 篇文章",
+    "description": "Pluralized label for \"{count} posts\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
+  },
+  "theme.blog.tagTitle": {
+    "message": "{nPosts} 含有标签「{tagName}」",
+    "description": "The title of the page for a blog tag"
+  },
+  "theme.blog.author.pageTitle": {
+    "message": "{authorName} - {nPosts}",
+    "description": "The title of the page for a blog author"
+  },
+  "theme.blog.authorsList.pageTitle": {
+    "message": "作者",
+    "description": "The title of the authors page"
+  },
+  "theme.blog.authorsList.viewAll": {
+    "message": "查看所有作者",
+    "description": "The label of the link targeting the blog authors page"
+  },
+  "theme.blog.author.noPosts": {
+    "message": "该作者尚未撰写任何文章。",
+    "description": "The text for authors with 0 blog post"
+  },
+  "theme.contentVisibility.unlistedBanner.title": {
+    "message": "未列出页",
+    "description": "The unlisted content banner title"
+  },
+  "theme.contentVisibility.unlistedBanner.message": {
+    "message": "此页面未列出。搜索引擎不会对其索引，只有拥有直接链接的用户才能访问。",
+    "description": "The unlisted content banner message"
+  },
+  "theme.contentVisibility.draftBanner.title": {
+    "message": "草稿页",
+    "description": "The draft content banner title"
+  },
+  "theme.contentVisibility.draftBanner.message": {
+    "message": "此页面是草稿，仅在开发环境中可见，不会包含在正式版本中。",
+    "description": "The draft content banner message"
+  },
+  "theme.docs.DocCard.categoryDescription.plurals": {
+    "message": "{count} 个项目",
+    "description": "The default description for a category card in the generated index about how many items this category includes"
+  },
+  "theme.ErrorPageContent.tryAgain": {
+    "message": "重试",
+    "description": "The label of the button to try again rendering when the React error boundary captures an error"
+  },
+  "theme.common.skipToMainContent": {
+    "message": "跳到主要内容",
+    "description": "The skip to content label used for accessibility, allowing to rapidly navigate to main content with keyboard tab/enter navigation"
+  },
+  "theme.tags.tagsPageTitle": {
+    "message": "标签",
+    "description": "The title of the tag list page"
   }
 }
