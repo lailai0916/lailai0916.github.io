@@ -1,3 +1,8 @@
+.layout {
+  max-width: 664px;
+  margin: 0 auto;
+}
+
 .entries {
   display: flex;
   flex-direction: column;

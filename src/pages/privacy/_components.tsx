@@ -1,11 +1,28 @@
+import { type ReactNode } from 'react';
 import { Icon } from '@iconify/react';
 import { translate } from '@docusaurus/Translate';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
+import Layout from '@theme/Layout';
+import MDXContent from '@theme/MDXContent';
+import Button from '@site/src/components/laikit/Button';
 import Card from '@site/src/components/laikit/Card';
+import { PageContent, PageHeader, PageTitle } from '@site/src/components/laikit/Page';
 import { formatCalendarDate } from '@site/src/utils/dateTime';
 import styles from './styles.module.css';
 
 const LAST_UPDATED_DATE = '2026-08-22';
+const TITLE = translate({
+  id: 'pages.privacy.title',
+  message: 'Privacy Policy',
+});
+const DESCRIPTION = translate({
+  id: 'pages.privacy.description',
+  message: "How lailai's Home handles your information",
+});
+const MODIFICATION = translate({
+  id: 'pages.privacy.modification',
+  message: 'Privacy <b>Policy</b>',
+});
 const LAST_UPDATED_LABEL = translate({
   id: 'pages.privacy.lastUpdated',
   message: 'Last updated',
@@ -46,30 +63,46 @@ const HIGHLIGHTS = [
     }),
   },
 ];
+const SUMMARY_LABEL = translate({
+  id: 'pages.privacy.summary.title',
+  message: 'Privacy at a glance',
+});
+const CONTACT_LABEL = translate({
+  id: 'pages.privacy.contact.label',
+  message: 'Contact about privacy',
+});
+const CONTACT_SUBJECT = translate({
+  id: 'pages.privacy.contact.subject',
+  message: "Privacy Request — lailai's Home",
+});
+const CONTACT_TEMPLATE = translate({
+  id: 'pages.privacy.contact.template',
+  message: 'Request type:\nRelated page or service:\nDetails:',
+});
+const CONTACT_EMAIL = `mailto:lailai0x394@gmail.com?subject=${encodeURIComponent(
+  CONTACT_SUBJECT
+)}&body=${encodeURIComponent(CONTACT_TEMPLATE)}`;
 
-export function PrivacyLastUpdated() {
+function PrivacyLastUpdated() {
   const { i18n } = useDocusaurusContext();
 
   return (
     <div className={styles.lastUpdated}>
-      <span>{LAST_UPDATED_LABEL}</span>
-      <time dateTime={LAST_UPDATED_DATE}>
-        {formatCalendarDate(LAST_UPDATED_DATE, i18n.currentLocale)}
-      </time>
+      <Icon icon="lucide:calendar-clock" className={styles.lastUpdatedIcon} aria-hidden />
+      <div className={styles.lastUpdatedText}>
+        <span>{LAST_UPDATED_LABEL}</span>
+        <time dateTime={LAST_UPDATED_DATE}>
+          {formatCalendarDate(LAST_UPDATED_DATE, i18n.currentLocale)}
+        </time>
+      </div>
     </div>
   );
 }
 
-export function PrivacySummary() {
+function PrivacySummary() {
   return (
-    <aside className={styles.summary}>
+    <aside className={styles.summary} aria-label={SUMMARY_LABEL}>
       <Card padding="1.25rem">
-        <span className={styles.summaryEyebrow}>
-          {translate({
-            id: 'pages.privacy.summary.title',
-            message: 'Privacy at a glance',
-          })}
-        </span>
         <ul className={styles.summaryList}>
           {HIGHLIGHTS.map((item) => (
             <li className={styles.summaryItem} key={item.title}>
@@ -81,14 +114,39 @@ export function PrivacySummary() {
             </li>
           ))}
         </ul>
-        <a className={styles.contactLink} href="mailto:lailai0x394@gmail.com">
-          {translate({
-            id: 'pages.privacy.summary.contact',
-            message: 'Contact about privacy',
-          })}
-          <Icon icon="lucide:arrow-up-right" aria-hidden />
-        </a>
+        <PrivacyLastUpdated />
       </Card>
     </aside>
+  );
+}
+
+function PrivacyContact() {
+  return (
+    <Button
+      variant="secondary"
+      leftIcon={<Icon icon="lucide:mail" width={16} height={16} />}
+      onClick={() => {
+        window.location.href = CONTACT_EMAIL;
+      }}
+    >
+      {CONTACT_LABEL}
+    </Button>
+  );
+}
+
+export function PrivacyPage({ children }: { children: ReactNode }): ReactNode {
+  return (
+    <Layout title={TITLE} description={DESCRIPTION}>
+      <PageHeader>
+        <PageTitle title={MODIFICATION} description={DESCRIPTION} />
+        <PrivacyContact />
+      </PageHeader>
+      <PageContent className={styles.policyLayout}>
+        <PrivacySummary />
+        <div className="markdown">
+          <MDXContent>{children}</MDXContent>
+        </div>
+      </PageContent>
+    </Layout>
   );
 }

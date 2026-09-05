@@ -333,7 +333,11 @@ export default function Resources(): ReactNode {
                 { query: searchQuery }
               )}
             </p>
-            <Button variant="primary" rounded onClick={() => setSearchQuery('')}>
+            <Button
+              variant="primary"
+              leftIcon={<Icon icon="lucide:x" width={16} height={16} aria-hidden />}
+              onClick={() => setSearchQuery('')}
+            >
               {CLEAR_SEARCH}
             </Button>
           </div>

@@ -228,7 +228,6 @@
   font-size: clamp(0.65rem, 2.2cqi, 0.75rem);
   font-weight: 600;
   letter-spacing: 0.08em;
-  text-transform: uppercase;
   color: var(--ifm-font-color-secondary);
 }
 

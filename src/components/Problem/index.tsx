@@ -14,17 +14,17 @@ type RawCodeContext = {
   keys: () => string[];
   (key: string): RawCodeModule;
 };
-type ProblemFrontMatter = {
+type ProblemMetadata = {
   title?: string;
   link?: string;
 };
 type ProblemMdxModule = {
   default: ComponentType;
-  frontMatter?: ProblemFrontMatter;
+  problem?: ProblemMetadata;
 };
 
 const ctx = require.context(
-  '!!raw-loader!@site/docs/contest/problems',
+  '!!raw-loader!@site/docs/contest/_problems',
   true,
   /\.cpp$/
 ) as RawCodeContext;
@@ -91,12 +91,12 @@ export default function Problem({ id }: { id: string }) {
   const tabs = useMemo<Tab[] | null>(() => {
     let mdxModule: ProblemMdxModule;
     try {
-      mdxModule = require(`@site/docs/contest/problems/${id}/index.mdx`) as ProblemMdxModule;
+      mdxModule = require(`@site/docs/contest/_problems/${id}/index.mdx`) as ProblemMdxModule;
     } catch {
       return null;
     }
-    const { default: MDX, frontMatter } = mdxModule;
-    const { title = id, link } = frontMatter ?? {};
+    const { default: MDX, problem } = mdxModule;
+    const { title = id, link } = problem ?? {};
 
     const list: Tab[] = [
       {

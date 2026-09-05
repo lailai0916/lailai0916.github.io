@@ -1499,9 +1499,6 @@
   "components.browserWindow.openLink": {
     "message": "在新标签页打开链接"
   },
-  "components.desmos.frameTitle": {
-    "message": "Desmos 图形计算器"
-  },
   "components.countdown.event": {
     "message": "我的生日"
   },
@@ -1525,6 +1522,9 @@
   },
   "components.countdown.progress": {
     "message": "年度进度"
+  },
+  "components.desmos.frameTitle": {
+    "message": "Desmos 图形计算器"
   },
   "components.playground.tab.neuralNetwork": {
     "message": "神经网络"
@@ -1564,6 +1564,18 @@
   },
   "pages.about.skills.ariaLabel": {
     "message": "技术栈图标"
+  },
+  "pages.changelog.title": {
+    "message": "更新日志"
+  },
+  "pages.changelog.description": {
+    "message": "lailai's Home 的更新日志"
+  },
+  "pages.changelog.modification": {
+    "message": "网站<b>更新日志</b>"
+  },
+  "pages.changelog.datacard.entries": {
+    "message": "条日志"
   },
   "pages.changelog.empty": {
     "message": "暂无更新日志"
@@ -1685,6 +1697,15 @@
   "pages.insights.link.ariaLabel": {
     "message": "{label}（在新标签页打开）"
   },
+  "pages.privacy.title": {
+    "message": "隐私政策"
+  },
+  "pages.privacy.description": {
+    "message": "lailai's Home 如何处理您的信息"
+  },
+  "pages.privacy.modification": {
+    "message": "隐私<b>政策</b>"
+  },
   "pages.privacy.lastUpdated": {
     "message": "最后更新"
   },
@@ -1709,8 +1730,14 @@
   "pages.privacy.summary.title": {
     "message": "隐私概览"
   },
-  "pages.privacy.summary.contact": {
+  "pages.privacy.contact.label": {
     "message": "隐私相关联系"
+  },
+  "pages.privacy.contact.subject": {
+    "message": "隐私请求 — lailai's Home"
+  },
+  "pages.privacy.contact.template": {
+    "message": "请求类型：\n相关页面或服务：\n具体说明："
   },
   "pages.resources.title": {
     "message": "资源"
@@ -2204,18 +2231,6 @@
   "blog.postcard.viewCount": {
     "message": "{viewCount} 浏览"
   },
-  "blog.postcard.readMore": {
-    "message": "阅读更多"
-  },
-  "blog.pagination.prev": {
-    "message": "上一页"
-  },
-  "blog.pagination.next": {
-    "message": "下一页"
-  },
-  "blog.pagination.ariaLabel": {
-    "message": "分页"
-  },
   "blog.sidebar.profileCard.title": {
     "message": "学生 & 开发者"
   },
@@ -2236,6 +2251,18 @@
   },
   "blog.sidebar.tags.title": {
     "message": "热门标签"
+  },
+  "blog.postcard.readMore": {
+    "message": "阅读更多"
+  },
+  "blog.pagination.prev": {
+    "message": "上一页"
+  },
+  "blog.pagination.next": {
+    "message": "下一页"
+  },
+  "blog.pagination.ariaLabel": {
+    "message": "分页"
   },
   "theme.NotFound.title": {
     "message": "找不到页面",
@@ -2287,9 +2314,6 @@
   "pages.insights.uptime.empty": {
     "message": "暂无监控项"
   },
-  "blog.pages.authors.authorSelect": {
-    "message": "作者"
-  },
   "pages.travel.map.motherland": {
     "message": "祖国"
   },
@@ -2304,6 +2328,9 @@
   },
   "pages.travel.map.pause": {
     "message": "暂停旋转"
+  },
+  "blog.pages.authors.authorSelect": {
+    "message": "作者"
   },
   "theme.ErrorPageContent.title": {
     "message": "页面已崩溃。",

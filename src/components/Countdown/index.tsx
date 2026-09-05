@@ -28,19 +28,19 @@ type CountdownUnitKey = 'days' | 'hours' | 'minutes' | 'seconds';
 const TIME_UNITS: Array<{ key: CountdownUnitKey; label: string }> = [
   {
     key: 'days',
-    label: translate({ id: 'components.countdown.unit.days', message: 'Days' }),
+    label: translate({ id: 'components.countdown.unit.days', message: 'days' }),
   },
   {
     key: 'hours',
-    label: translate({ id: 'components.countdown.unit.hours', message: 'Hours' }),
+    label: translate({ id: 'components.countdown.unit.hours', message: 'hours' }),
   },
   {
     key: 'minutes',
-    label: translate({ id: 'components.countdown.unit.minutes', message: 'Minutes' }),
+    label: translate({ id: 'components.countdown.unit.minutes', message: 'minutes' }),
   },
   {
     key: 'seconds',
-    label: translate({ id: 'components.countdown.unit.seconds', message: 'Seconds' }),
+    label: translate({ id: 'components.countdown.unit.seconds', message: 'seconds' }),
   },
 ];
 
