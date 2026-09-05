@@ -48,6 +48,10 @@
   min-width: 0;
 }
 
+.policyLayout > :global(.markdown) > :first-child {
+  margin-top: 0;
+}
+
 .summary {
   grid-area: summary;
   position: sticky;
