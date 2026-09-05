@@ -13,6 +13,10 @@ html[data-theme='dark'] .segmented {
   border-color: var(--ifm-color-emphasis-200);
 }
 
+.segmented:not(.horizontal) .item {
+  min-height: 2.35rem;
+}
+
 .horizontal {
   display: inline-flex;
   flex-direction: row;
