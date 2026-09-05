@@ -418,8 +418,10 @@ function ExperimentalFeatures() {
 }
 
 function QuickActions() {
+  const { setColorMode } = useColorMode();
+
   function handleReset() {
-    localStorage.removeItem('theme');
+    setColorMode(null);
     themeStorage.del();
     localStorage.removeItem(FONT_FAMILY_KEY);
     localStorage.removeItem(FONT_SIZE_KEY);
@@ -435,6 +437,10 @@ function QuickActions() {
         id: 'pages.settings.item.quickActions.option.confetti',
         message: 'Surprise Me',
       }),
+      description: translate({
+        id: 'pages.settings.item.quickActions.option.confettiDescription',
+        message: 'Celebrate with a burst of confetti',
+      }),
       icon: 'lucide:sparkles',
       onClick: fireConfetti,
     },
@@ -443,6 +449,10 @@ function QuickActions() {
       label: translate({
         id: 'pages.settings.item.quickActions.option.reset',
         message: 'Reset Settings',
+      }),
+      description: translate({
+        id: 'pages.settings.item.quickActions.option.resetDescription',
+        message: 'Restore all preferences to their defaults',
       }),
       icon: 'lucide:rotate-ccw',
       onClick: handleReset,
@@ -472,7 +482,10 @@ function QuickActions() {
               leftIcon={<Icon icon={option.icon} className={styles.actionItemIcon} />}
               onClick={option.onClick}
             >
-              {option.label}
+              <span className={styles.actionItemText}>
+                <span className={styles.actionItemTitle}>{option.label}</span>
+                <span className={styles.actionItemDescription}>{option.description}</span>
+              </span>
             </Button>
           </li>
         ))}

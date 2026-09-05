@@ -58,15 +58,15 @@ We generally use this information in aggregate or service-operations form and do
 
 The Site uses browser storage to remember preferences and support certain interface features. Examples currently include:
 
-| Storage item                                       | Purpose                                                                              | Duration           |
-| -------------------------------------------------- | ------------------------------------------------------------------------------------ | ------------------ |
-| `theme`                                            | Remembers light, dark, or system theme preference                                    | Until you clear it |
-| `font-family`                                      | Remembers the interface font preference on the settings page                         | Until you clear it |
-| `global-font-size`                                 | Remembers font size preference on the settings page                                  | Until you clear it |
-| `global-line-height`                               | Remembers line height preference on the settings page                                | Until you clear it |
-| `settings-experimental`                            | Remembers optional experimental feature switches                                     | Until you clear it |
-| `ifm-theme-colors-light` / `ifm-theme-colors-dark` | Stores temporary custom color settings for the current session                       | Session only       |
-| `umami_share_session_v1`                           | Temporarily holds a read-only token used to show public traffic on the Insights page | Session only       |
+| Storage item                                        | Purpose                                                                              | Duration           |
+| --------------------------------------------------- | ------------------------------------------------------------------------------------ | ------------------ |
+| `theme` (with Docusaurus site namespace)            | Remembers light, dark, or system theme preference                                    | Until you clear it |
+| `font-family`                                       | Remembers the interface font preference on the settings page                         | Until you clear it |
+| `global-font-size`                                  | Remembers font size preference on the settings page                                  | Until you clear it |
+| `global-line-height`                                | Remembers line height preference on the settings page                                | Until you clear it |
+| `settings-experimental`                             | Remembers optional experimental feature switches                                     | Until you clear it |
+| `ifm-theme-colors` (with Docusaurus site namespace) | Remembers the custom accent color selected on the settings page                      | Until you clear it |
+| `umami_share_session_v1`                            | Temporarily holds a read-only token used to show public traffic on the Insights page | Session only       |
 
 In addition, third-party services embedded in or loaded by the Site may use cookies, local storage, or similar technologies under their own policies.
 
