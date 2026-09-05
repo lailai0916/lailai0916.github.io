@@ -53,8 +53,8 @@
   --lk-focus-ring: 0 0 0 3px color-mix(in srgb, var(--ifm-color-primary) 30%, transparent);
 }
 
-/* Experimental appearance toggles (settings page), applied to <html> by
-   Root/ExperimentalMode so no layout wrapper is needed. */
+/* Experimental appearance toggles, merged into <html> through Docusaurus's
+   HtmlClassNameProvider so they survive client-side navigation. */
 html.gray-mode {
   filter: grayscale(100%);
 }

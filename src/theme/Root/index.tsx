@@ -9,16 +9,9 @@ interface RootProps {
 
 export default function Root({ children }: RootProps) {
   return (
-    <>
+    <ExperimentalMode>
       {children}
-      <BrowserOnly>
-        {() => (
-          <>
-            <ThemeColor />
-            <ExperimentalMode />
-          </>
-        )}
-      </BrowserOnly>
-    </>
+      <BrowserOnly>{() => <ThemeColor />}</BrowserOnly>
+    </ExperimentalMode>
   );
 }

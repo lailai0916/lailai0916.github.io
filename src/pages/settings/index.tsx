@@ -375,17 +375,14 @@ function ExperimentalFeatures() {
   );
 
   const handleToggle = (key: keyof ExperimentalSettings, checked: boolean) => {
-    setToggles((prev) => {
-      const newState = { ...prev, [key]: checked };
+    setToggles((prev) => ({ ...prev, [key]: checked }));
 
-      // Notify same-tab listeners; cross-tab updates flow through the `storage` event.
-      const event = new CustomEvent(EXPERIMENTAL_EVENT, {
+    // Notify same-tab listeners; cross-tab updates flow through the `storage` event.
+    window.dispatchEvent(
+      new CustomEvent(EXPERIMENTAL_EVENT, {
         detail: { key, checked },
-      });
-      window.dispatchEvent(event);
-
-      return newState;
-    });
+      })
+    );
   };
 
   return (
