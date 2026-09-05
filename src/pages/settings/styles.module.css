@@ -201,39 +201,17 @@
 .layout {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  grid-template-areas: 'a1 a2 a3' 'a4 a5 a6';
   gap: 1.5rem;
 }
 
 @media (max-width: 1199px) {
   .layout {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    grid-template-areas: 'a1 a4' 'a2 a3' 'a5 a6';
   }
 }
 
 @media (max-width: 768px) {
   .layout {
     grid-template-columns: 1fr;
-    grid-template-areas: 'a1' 'a2' 'a3' 'a4' 'a5' 'a6';
   }
-}
-
-.layout > :nth-child(1) {
-  grid-area: a1;
-}
-.layout > :nth-child(2) {
-  grid-area: a2;
-}
-.layout > :nth-child(3) {
-  grid-area: a3;
-}
-.layout > :nth-child(4) {
-  grid-area: a4;
-}
-.layout > :nth-child(5) {
-  grid-area: a5;
-}
-.layout > :nth-child(6) {
-  grid-area: a6;
 }
