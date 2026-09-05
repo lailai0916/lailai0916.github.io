@@ -1847,11 +1847,11 @@
   "pages.settings.item.experimental.option.classicDesign": {
     "message": "经典设计"
   },
-  "pages.settings.item.experimental.option.debugMode": {
-    "message": "调试模式"
-  },
   "pages.settings.item.experimental.option.grayMode": {
     "message": "灰色模式"
+  },
+  "pages.settings.item.experimental.option.debugMode": {
+    "message": "调试模式"
   },
   "pages.settings.item.experimental.title": {
     "message": "实验性功能"

@@ -1,10 +1,7 @@
 .wordCloud {
-  margin: 2rem 0;
-  padding: clamp(1.25rem, 4vw, 2.25rem);
-  overflow: hidden;
-  border: 1px solid var(--ifm-color-emphasis-200);
-  border-radius: var(--lk-radius-lg);
   background: var(--ifm-color-emphasis-100);
+  margin: 2rem 0;
+  overflow: hidden;
 }
 
 .wordCloud img {

@@ -282,7 +282,10 @@ const config: Config = {
 
   themes: ['@docusaurus/theme-mermaid', '@docusaurus/theme-live-codeblock'],
 
-  plugins: [require.resolve('docusaurus-plugin-image-zoom')],
+  plugins: [
+    require.resolve('./src/plugins/privacyLastUpdate/index.ts'),
+    require.resolve('docusaurus-plugin-image-zoom'),
+  ],
 };
 
 export default config;

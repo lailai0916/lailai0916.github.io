@@ -1,7 +1,12 @@
 .frame {
-  display: block;
+  overflow: hidden;
   width: min(100%, 500px);
   aspect-ratio: 1 / 1;
-  border: 1px solid var(--ifm-color-emphasis-300);
-  border-radius: 12px;
+}
+
+.embed {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
 }

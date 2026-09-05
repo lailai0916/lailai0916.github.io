@@ -14,9 +14,9 @@ import styles from './styles.module.css';
 
 export function WordCloud() {
   return (
-    <div className={styles.wordCloud}>
+    <Card className={styles.wordCloud} padding="clamp(1.25rem, 4vw, 2.25rem)">
       <img src="https://cloud.lailai.one/f/AdNtA/wordcloud.svg" alt="" />
-    </div>
+    </Card>
   );
 }
 

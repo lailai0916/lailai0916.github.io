@@ -137,11 +137,11 @@
   left: 0;
   right: 0;
   z-index: 50;
-  background: var(--ifm-card-background-color);
-  border: 1px solid var(--ifm-color-emphasis-200);
-  border-radius: var(--lk-radius-lg);
-  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
+}
+
+.filterPanelSurface {
   overflow: hidden;
+  box-shadow: var(--lk-shadow-lg);
 }
 
 .filterRail {
@@ -276,17 +276,13 @@
   gap: 2rem;
 }
 
-/* Empty / fallback state */
-
-.noResults {
-  text-align: center;
-  padding: 4rem 1rem;
-  border: 1px dashed var(--ifm-color-emphasis-300);
-  border-radius: var(--lk-radius-lg);
-  background-color: var(--ifm-color-emphasis-100);
+.noResults p {
+  max-width: 28rem;
+  color: var(--ifm-color-emphasis-700);
+  font-size: inherit;
+  line-height: 1.6;
 }
 
-.noResults p {
-  margin-bottom: 1.5rem;
-  font-size: 1.1rem;
+.noResults button {
+  margin-top: 1rem;
 }

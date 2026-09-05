@@ -353,20 +353,20 @@ function ExperimentalFeatures() {
       icon: 'lucide:paintbrush',
     },
     {
-      key: 'debugMode' as const,
-      label: translate({
-        id: 'pages.settings.item.experimental.option.debugMode',
-        message: 'Debug Mode',
-      }),
-      icon: 'lucide:terminal',
-    },
-    {
       key: 'grayMode' as const,
       label: translate({
         id: 'pages.settings.item.experimental.option.grayMode',
         message: 'Gray Mode',
       }),
       icon: 'lucide:contrast',
+    },
+    {
+      key: 'debugMode' as const,
+      label: translate({
+        id: 'pages.settings.item.experimental.option.debugMode',
+        message: 'Debug Mode',
+      }),
+      icon: 'lucide:terminal',
     },
   ];
   const [toggles, setToggles] = usePersistentState<ExperimentalSettings>(

@@ -11,6 +11,7 @@ import IconBlock from '@site/src/components/laikit/IconBlock';
 import Button from '@site/src/components/laikit/Button';
 import Card from '@site/src/components/laikit/Card';
 import Badge from '@site/src/components/laikit/Badge';
+import DataState from '@site/src/components/laikit/DataState';
 
 import { usePluralForm } from '@docusaurus/theme-common';
 import {
@@ -194,29 +195,31 @@ function FilterBar({
       </Card>
       {open && (
         <div id={panelId} className={styles.filterPanel}>
-          <div className={styles.filterRail} role="group" aria-label={CATEGORY_MENU_LABEL}>
-            {categories.map((category) => {
-              const isActive = activeCategory === category.id;
-              return (
-                <button
-                  key={category.id}
-                  type="button"
-                  onClick={() => {
-                    onCategoryChange(isActive ? 'all' : category.id);
-                    setOpen(false);
-                    toggleRef.current?.focus();
-                  }}
-                  className={clsx(styles.filterRailItem, {
-                    [styles.filterRailItemActive]: isActive,
-                  })}
-                >
-                  <Icon icon={category.icon} className={styles.filterRailItemIcon} />
-                  <span className={styles.filterRailItemLabel}>{category.title}</span>
-                  <span className={styles.filterRailItemCount}>{category.resources.length}</span>
-                </button>
-              );
-            })}
-          </div>
+          <Card padding={0} className={styles.filterPanelSurface}>
+            <div className={styles.filterRail} role="group" aria-label={CATEGORY_MENU_LABEL}>
+              {categories.map((category) => {
+                const isActive = activeCategory === category.id;
+                return (
+                  <button
+                    key={category.id}
+                    type="button"
+                    onClick={() => {
+                      onCategoryChange(isActive ? 'all' : category.id);
+                      setOpen(false);
+                      toggleRef.current?.focus();
+                    }}
+                    className={clsx(styles.filterRailItem, {
+                      [styles.filterRailItemActive]: isActive,
+                    })}
+                  >
+                    <Icon icon={category.icon} className={styles.filterRailItemIcon} />
+                    <span className={styles.filterRailItemLabel}>{category.title}</span>
+                    <span className={styles.filterRailItemCount}>{category.resources.length}</span>
+                  </button>
+                );
+              })}
+            </div>
+          </Card>
         </div>
       )}
     </div>
@@ -324,22 +327,24 @@ export default function Resources(): ReactNode {
           ))
         ) : (
           <div className={styles.noResults}>
-            <p>
-              {translate(
+            <DataState
+              message={translate(
                 {
                   id: 'pages.resources.search.empty',
                   message: 'No resources found matching "{query}".',
                 },
                 { query: searchQuery }
               )}
-            </p>
-            <Button
-              variant="primary"
-              leftIcon={<Icon icon="lucide:x" width={16} height={16} aria-hidden />}
-              onClick={() => setSearchQuery('')}
-            >
-              {CLEAR_SEARCH}
-            </Button>
+              action={
+                <Button
+                  variant="primary"
+                  leftIcon={<Icon icon="lucide:x" width={16} height={16} aria-hidden />}
+                  onClick={() => setSearchQuery('')}
+                >
+                  {CLEAR_SEARCH}
+                </Button>
+              }
+            />
           </div>
         )}
       </PageContent>

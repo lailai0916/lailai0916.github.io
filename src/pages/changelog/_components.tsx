@@ -1,5 +1,6 @@
 import { useMemo } from 'react';
 import { translate } from '@docusaurus/Translate';
+import Heading from '@theme/Heading';
 import { CHANGELOG_LIST, TYPE_LABEL } from '@site/src/data/changelog';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import { formatCalendarMonthName } from '@site/src/utils/dateTime';
@@ -42,15 +43,17 @@ export function Changelog() {
     <div>
       {grouped.map(({ year, months }) => (
         <section key={year}>
-          <h2>{year}</h2>
+          <Heading as="h2" id={year}>
+            {year}
+          </Heading>
           {months.map(({ month, items }) => {
             return (
               <section key={`${year}-${month}`}>
-                <h3>
+                <Heading as="h3" id={`${year}-${month}`}>
                   {isZh
                     ? `${Number(month)} 月`
                     : formatCalendarMonthName(`${year}-${month}`, i18n.currentLocale)}
-                </h3>
+                </Heading>
                 <ul className={styles.entries}>
                   {items.map((item, i) => (
                     <li

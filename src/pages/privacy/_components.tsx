@@ -2,15 +2,18 @@ import { type ReactNode } from 'react';
 import { Icon } from '@iconify/react';
 import { translate } from '@docusaurus/Translate';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
+import { usePluginData } from '@docusaurus/useGlobalData';
 import Layout from '@theme/Layout';
 import MDXContent from '@theme/MDXContent';
 import Button from '@site/src/components/laikit/Button';
 import Card from '@site/src/components/laikit/Card';
 import { PageContent, PageHeader, PageTitle } from '@site/src/components/laikit/Page';
-import { formatCalendarDate } from '@site/src/utils/dateTime';
+import { formatCalendarDate, getDateKey, SHANGHAI_TIME_ZONE } from '@site/src/utils/dateTime';
 import styles from './styles.module.css';
 
-const LAST_UPDATED_DATE = '2026-08-22';
+type PrivacyLastUpdateData = Record<string, number | null>;
+
+const LAST_UPDATED_FALLBACK_DATE = '2026-08-22';
 const TITLE = translate({
   id: 'pages.privacy.title',
   message: 'Privacy Policy',
@@ -85,14 +88,20 @@ const CONTACT_EMAIL = `mailto:lailai0x394@gmail.com?subject=${encodeURIComponent
 
 function PrivacyLastUpdated() {
   const { i18n } = useDocusaurusContext();
+  const lastUpdateData = usePluginData('privacy-last-update') as PrivacyLastUpdateData | undefined;
+  const lastUpdatedAt = lastUpdateData?.[i18n.currentLocale];
+  const lastUpdatedDate =
+    typeof lastUpdatedAt === 'number'
+      ? getDateKey(lastUpdatedAt, SHANGHAI_TIME_ZONE)
+      : LAST_UPDATED_FALLBACK_DATE;
 
   return (
     <div className={styles.lastUpdated}>
       <Icon icon="lucide:calendar-clock" className={styles.lastUpdatedIcon} aria-hidden />
       <div className={styles.lastUpdatedText}>
         <span>{LAST_UPDATED_LABEL}</span>
-        <time dateTime={LAST_UPDATED_DATE}>
-          {formatCalendarDate(LAST_UPDATED_DATE, i18n.currentLocale)}
+        <time dateTime={lastUpdatedDate}>
+          {formatCalendarDate(lastUpdatedDate, i18n.currentLocale)}
         </time>
       </div>
     </div>
