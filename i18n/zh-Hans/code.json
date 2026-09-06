@@ -1862,14 +1862,8 @@
   "pages.settings.item.quickActions.option.confetti": {
     "message": "给我惊喜"
   },
-  "pages.settings.item.quickActions.option.confettiDescription": {
-    "message": "用彩纸动画庆祝一下"
-  },
   "pages.settings.item.quickActions.option.reset": {
     "message": "重置设置"
-  },
-  "pages.settings.item.quickActions.option.resetDescription": {
-    "message": "将所有偏好恢复为默认设置"
   },
   "pages.settings.item.quickActions.title": {
     "message": "快捷操作"
