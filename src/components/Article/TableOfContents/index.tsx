@@ -49,10 +49,7 @@ function ReadingProgress({ progress }: { progress: number }) {
         { percent: String(percent) }
       )}
     >
-      <div
-        className={styles.tocProgressFill}
-        style={{ transform: `scaleX(${progress})` }}
-      />
+      <div className={styles.tocProgressFill} style={{ transform: `scaleX(${progress})` }} />
     </div>
   );
 }
