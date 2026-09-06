@@ -2881,5 +2881,20 @@
   },
   "components.tableOfContents.progress": {
     "message": "阅读进度：{percent}%"
+  },
+  "pages.travel.map.loading": {
+    "message": "正在加载地图…"
+  },
+  "pages.travel.map.error": {
+    "message": "地图暂时无法加载。"
+  },
+  "pages.travel.map.retry": {
+    "message": "重试"
+  },
+  "pages.travel.map.ariaLabel": {
+    "message": "旅行地图"
+  },
+  "pages.travel.map.ariaDescription": {
+    "message": "显示已到访国家的交互式地球。下方的旅行时间轴提供相同信息的文本版本。"
   }
 }

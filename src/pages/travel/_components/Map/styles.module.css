@@ -49,6 +49,43 @@
   opacity: 1;
 }
 
+.mapStatus {
+  position: absolute;
+  inset: 0;
+  z-index: 4;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 1rem;
+  pointer-events: none;
+  text-align: center;
+}
+
+.mapStatusError {
+  background: color-mix(in srgb, var(--ifm-background-color) 78%, transparent);
+  pointer-events: auto;
+}
+
+.mapStatusMessage {
+  margin: 0;
+  color: var(--ifm-color-emphasis-700);
+  font-size: 0.9rem;
+}
+
+.srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
 .globeControls {
   position: absolute;
   top: clamp(0.75rem, 2vw, 1rem);
