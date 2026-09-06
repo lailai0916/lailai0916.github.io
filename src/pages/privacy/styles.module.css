@@ -38,7 +38,7 @@
 .policyLayout {
   display: grid;
   grid-template-areas: 'content summary';
-  grid-template-columns: minmax(0, 1fr) minmax(15rem, 18rem);
+  grid-template-columns: minmax(0, 1fr) 300px;
   gap: clamp(2.5rem, 7vw, 6rem);
   align-items: start;
 }
@@ -52,10 +52,17 @@
   margin-top: 0;
 }
 
-.summary {
+.policySidebar {
   grid-area: summary;
-  position: sticky;
-  top: calc(var(--ifm-navbar-height) + 1.5rem);
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  min-width: 0;
+}
+
+.summary {
+  min-width: 0;
 }
 
 .summaryList {
@@ -98,16 +105,12 @@
   line-height: 1.5;
 }
 
-@media (max-width: 820px) {
+@media (max-width: 996px) {
   .policyLayout {
     grid-template-areas:
       'summary'
       'content';
     grid-template-columns: 1fr;
-  }
-
-  .summary {
-    position: static;
   }
 
   .summaryList {

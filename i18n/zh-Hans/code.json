@@ -2243,12 +2243,6 @@
   "blog.menu.archive": {
     "message": "归档"
   },
-  "blog.sidebar.toc.progress": {
-    "message": "阅读进度：{percent}%"
-  },
-  "blog.sidebar.toc.title": {
-    "message": "目录"
-  },
   "blog.sidebar.tags.title": {
     "message": "热门标签"
   },
@@ -2881,5 +2875,11 @@
   "theme.tags.tagsPageTitle": {
     "message": "标签",
     "description": "The title of the tag list page"
+  },
+  "components.tableOfContents.title": {
+    "message": "目录"
+  },
+  "components.tableOfContents.progress": {
+    "message": "阅读进度：{percent}%"
   }
 }

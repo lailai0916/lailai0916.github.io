@@ -1,12 +1,14 @@
-import { type ReactNode } from 'react';
+import { useEffect, useState, type ReactNode } from 'react';
 import { Icon } from '@iconify/react';
 import { translate } from '@docusaurus/Translate';
+import type { TOCItem } from '@docusaurus/mdx-loader';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import { usePluginData } from '@docusaurus/useGlobalData';
 import Layout from '@theme/Layout';
 import MDXContent from '@theme/MDXContent';
 import Button from '@site/src/components/laikit/Button';
 import Card from '@site/src/components/laikit/Card';
+import TableOfContents from '@site/src/components/Article/TableOfContents';
 import { PageContent, PageHeader, PageTitle } from '@site/src/components/laikit/Page';
 import { formatCalendarDate, getDateKey, SHANGHAI_TIME_ZONE } from '@site/src/utils/dateTime';
 import styles from './styles.module.css';
@@ -110,7 +112,7 @@ function PrivacyLastUpdated() {
 
 function PrivacySummary() {
   return (
-    <aside className={styles.summary} aria-label={SUMMARY_LABEL}>
+    <section className={styles.summary} aria-label={SUMMARY_LABEL}>
       <Card padding="1.25rem">
         <ul className={styles.summaryList}>
           {HIGHLIGHTS.map((item) => (
@@ -125,8 +127,30 @@ function PrivacySummary() {
         </ul>
         <PrivacyLastUpdated />
       </Card>
-    </aside>
+    </section>
   );
+}
+
+function usePrivacyTableOfContents(): readonly TOCItem[] {
+  const [toc, setToc] = useState<TOCItem[]>([]);
+
+  useEffect(() => {
+    const headings = Array.from(
+      document.querySelectorAll<HTMLHeadingElement>(
+        '[data-privacy-content] h2[id], [data-privacy-content] h3[id]'
+      )
+    );
+
+    setToc(
+      headings.map((heading) => ({
+        id: heading.id,
+        value: heading.textContent ?? '',
+        level: Number(heading.tagName.slice(1)),
+      }))
+    );
+  }, []);
+
+  return toc;
 }
 
 function PrivacyContact() {
@@ -144,6 +168,8 @@ function PrivacyContact() {
 }
 
 export function PrivacyPage({ children }: { children: ReactNode }): ReactNode {
+  const toc = usePrivacyTableOfContents();
+
   return (
     <Layout title={TITLE} description={DESCRIPTION}>
       <PageHeader>
@@ -151,8 +177,11 @@ export function PrivacyPage({ children }: { children: ReactNode }): ReactNode {
         <PrivacyContact />
       </PageHeader>
       <PageContent className={styles.policyLayout}>
-        <PrivacySummary />
-        <div className="markdown">
+        <aside className={styles.policySidebar}>
+          <PrivacySummary />
+          <TableOfContents toc={toc} />
+        </aside>
+        <div className="markdown" data-privacy-content>
           <MDXContent>{children}</MDXContent>
         </div>
       </PageContent>
