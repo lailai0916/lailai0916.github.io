@@ -20,13 +20,12 @@
 .tocContainer {
   position: sticky;
   top: calc(var(--ifm-navbar-height) + 32px);
-  height: calc(100vh - var(--ifm-navbar-height) - 64px);
 }
 
 .tocCard {
   display: flex;
   flex-direction: column;
-  height: 100%;
+  max-height: calc(100vh - var(--ifm-navbar-height) - 64px);
   min-height: 0;
 }
 
@@ -107,7 +106,6 @@
 
 .tocLinkActive {
   color: var(--ifm-color-primary);
-  font-weight: 600;
 }
 
 .tocLinkActive::before {
@@ -124,6 +122,9 @@
 @media (max-width: 996px) {
   .tocContainer {
     top: calc(var(--ifm-navbar-height) + 16px);
-    height: calc(100vh - var(--ifm-navbar-height) - 32px);
+  }
+
+  .tocCard {
+    max-height: calc(100vh - var(--ifm-navbar-height) - 32px);
   }
 }

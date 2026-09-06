@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import clsx from 'clsx';
 import Link from '@docusaurus/Link';
 import { useTOCHighlight, type TOCHighlightConfig } from '@docusaurus/theme-common/internal';
@@ -11,9 +11,6 @@ const CONTENTS_LABEL = translate({
   id: 'components.tableOfContents.title',
   message: 'Contents',
 });
-const PROGRESS_FOLLOW_RATE = 0.12;
-const PROGRESS_SETTLE_THRESHOLD = 0.0002;
-
 function useScrollProgress() {
   const [progress, setProgress] = useState(0);
 
@@ -35,72 +32,8 @@ function useScrollProgress() {
   return Math.min(1, Math.max(0, progress));
 }
 
-function useInertialProgress(targetProgress: number) {
-  const [displayProgress, setDisplayProgress] = useState(targetProgress);
-  const currentProgressRef = useRef(targetProgress);
-  const targetProgressRef = useRef(targetProgress);
-  const frameRef = useRef<number | null>(null);
-  const reducedMotionRef = useRef(false);
-
-  const animateProgress = useCallback(() => {
-    const distance = targetProgressRef.current - currentProgressRef.current;
-    currentProgressRef.current =
-      Math.abs(distance) < PROGRESS_SETTLE_THRESHOLD
-        ? targetProgressRef.current
-        : currentProgressRef.current + distance * PROGRESS_FOLLOW_RATE;
-    setDisplayProgress(currentProgressRef.current);
-    frameRef.current = null;
-
-    if (currentProgressRef.current !== targetProgressRef.current) {
-      frameRef.current = window.requestAnimationFrame(animateProgress);
-    }
-  }, []);
-
-  useEffect(() => {
-    targetProgressRef.current = targetProgress;
-
-    if (reducedMotionRef.current) {
-      currentProgressRef.current = targetProgress;
-      setDisplayProgress(targetProgress);
-      return;
-    }
-
-    if (frameRef.current === null) {
-      frameRef.current = window.requestAnimationFrame(animateProgress);
-    }
-  }, [animateProgress, targetProgress]);
-
-  useEffect(() => {
-    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
-    reducedMotionRef.current = reducedMotion.matches;
-
-    const handleMotionChange = () => {
-      reducedMotionRef.current = reducedMotion.matches;
-      if (reducedMotion.matches) {
-        if (frameRef.current !== null) window.cancelAnimationFrame(frameRef.current);
-        frameRef.current = null;
-        currentProgressRef.current = targetProgressRef.current;
-        setDisplayProgress(targetProgressRef.current);
-      } else if (frameRef.current === null) {
-        frameRef.current = window.requestAnimationFrame(animateProgress);
-      }
-    };
-
-    reducedMotion.addEventListener('change', handleMotionChange);
-    if (reducedMotion.matches) handleMotionChange();
-
-    return () => {
-      if (frameRef.current !== null) window.cancelAnimationFrame(frameRef.current);
-      reducedMotion.removeEventListener('change', handleMotionChange);
-    };
-  }, [animateProgress]);
-
-  return displayProgress;
-}
-
 function ReadingProgress({ progress }: { progress: number }) {
   const percent = Math.round(progress * 100);
-  const displayProgress = useInertialProgress(progress);
   return (
     <div
       className={styles.tocProgress}
@@ -118,7 +51,7 @@ function ReadingProgress({ progress }: { progress: number }) {
     >
       <div
         className={styles.tocProgressFill}
-        style={{ transform: `scaleX(${displayProgress})` }}
+        style={{ transform: `scaleX(${progress})` }}
       />
     </div>
   );

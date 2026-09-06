@@ -11,7 +11,7 @@
 .lastUpdatedIcon {
   width: 1.1rem;
   height: 1.1rem;
-  color: var(--ifm-color-emphasis-500);
+  color: var(--ifm-color-emphasis-600);
 }
 
 .lastUpdatedText span,
@@ -20,7 +20,7 @@
 }
 
 .lastUpdatedText span {
-  color: var(--ifm-color-emphasis-500);
+  color: var(--ifm-color-emphasis-600);
   font-size: 0.7rem;
   font-weight: 600;
   line-height: 1.2;
