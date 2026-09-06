@@ -72,6 +72,15 @@
   border-radius: 6px;
 }
 
+.weatherError {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  min-height: calc(0.825rem * 1.65);
+  color: var(--ifm-color-emphasis-600);
+  font-size: 0.875rem;
+}
+
 /* Moment content body */
 
 .momentContent {
@@ -125,6 +134,15 @@
   width: 100%;
   border-radius: 10px;
   background: var(--ifm-color-emphasis-100);
+}
+
+.momentImageFallback {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 8rem;
+  color: var(--ifm-color-emphasis-500);
+  font-size: 1.5rem;
 }
 
 /* Load-more footer */

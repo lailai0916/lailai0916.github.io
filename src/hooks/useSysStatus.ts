@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import type { FetchStatus } from './useUmamiStats';
+import { withTimeout } from '@site/src/utils/withTimeout';
 
 interface SysStatus {
   cpu: number | null;
@@ -19,24 +20,34 @@ interface SysStatus {
 
 const ENDPOINT = 'https://lailai.one/api/sys';
 const POLL_MS = 2000;
+const REQUEST_TIMEOUT_MS = 10000;
 
 export function useSysStatus() {
   const [data, setData] = useState<SysStatus | null>(null);
   const [status, setStatus] = useState<FetchStatus>('loading');
   const aliveRef = useRef(true);
+  const inFlightRef = useRef(false);
 
   useEffect(() => {
     aliveRef.current = true;
     const controller = new AbortController();
 
     const fetchOnce = async () => {
+      if (inFlightRef.current || controller.signal.aborted) return;
+      inFlightRef.current = true;
       try {
-        const res = await fetch(ENDPOINT, {
-          cache: 'no-store',
-          signal: controller.signal,
-        });
-        if (!res.ok) throw new Error(String(res.status));
-        const json = (await res.json()) as SysStatus;
+        const json = await withTimeout(
+          async (signal) => {
+            const res = await fetch(ENDPOINT, {
+              cache: 'no-store',
+              signal,
+            });
+            if (!res.ok) throw new Error(String(res.status));
+            return (await res.json()) as SysStatus;
+          },
+          controller.signal,
+          REQUEST_TIMEOUT_MS
+        );
         if (!aliveRef.current) return;
         setData(json);
         setStatus('success');
@@ -44,17 +55,21 @@ export function useSysStatus() {
         if (controller.signal.aborted) return;
         if (!aliveRef.current) return;
         setStatus('error');
+      } finally {
+        inFlightRef.current = false;
       }
     };
 
-    // Poll only while the tab is visible — a backgrounded Insights page was
-    // hitting the endpoint every 2s indefinitely for numbers no one could see.
     let id = 0;
-    const start = () => {
-      fetchOnce();
-      id = window.setInterval(fetchOnce, POLL_MS);
+    const stop = () => {
+      window.clearInterval(id);
+      id = 0;
     };
-    const stop = () => window.clearInterval(id);
+    const start = () => {
+      stop();
+      void fetchOnce();
+      id = window.setInterval(() => void fetchOnce(), POLL_MS);
+    };
     const onVisibility = () => (document.hidden ? stop() : start());
 
     if (!document.hidden) start();

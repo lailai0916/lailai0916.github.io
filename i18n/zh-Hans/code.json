@@ -2896,5 +2896,11 @@
   },
   "pages.travel.map.ariaDescription": {
     "message": "显示已到访国家的交互式地球。下方的旅行时间轴提供相同信息的文本版本。"
+  },
+  "pages.moments.weather.error": {
+    "message": "天气数据暂时不可用。"
+  },
+  "pages.moments.weather.retry": {
+    "message": "重试"
   }
 }

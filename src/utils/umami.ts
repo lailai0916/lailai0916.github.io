@@ -1,3 +1,5 @@
+import { withTimeout } from './withTimeout';
+
 const UMAMI_BASE = 'https://analytics.lailai.one';
 const UMAMI_SHARE_SLUG = 'DDd09iBEYOQw2k9L';
 
@@ -5,6 +7,7 @@ export const UMAMI_DASHBOARD_URL = `${UMAMI_BASE}/share/${UMAMI_SHARE_SLUG}`;
 
 const SESSION_STORAGE_KEY = 'umami_share_session_v1';
 const SESSION_TTL_MS = 60 * 60 * 1000;
+const SESSION_REQUEST_TIMEOUT_MS = 15000;
 
 interface ShareSession {
   token: string;
@@ -53,7 +56,13 @@ function writeSessionCache(data: ShareSession): void {
 }
 
 async function fetchShareSession(): Promise<ShareSession> {
-  const res = await fetch(`${UMAMI_BASE}/api/share/${encodeURIComponent(UMAMI_SHARE_SLUG)}`);
+  const requestController = new AbortController();
+  const res = await withTimeout(
+    (signal) =>
+      fetch(`${UMAMI_BASE}/api/share/${encodeURIComponent(UMAMI_SHARE_SLUG)}`, { signal }),
+    requestController.signal,
+    SESSION_REQUEST_TIMEOUT_MS
+  );
   if (!res.ok) {
     throw new Error(`Umami share session request failed: ${res.status}`);
   }
@@ -69,15 +78,44 @@ async function fetchShareSession(): Promise<ShareSession> {
   return session;
 }
 
-async function getShareSession(): Promise<ShareSession> {
+function waitForSignal<T>(promise: Promise<T>, signal?: AbortSignal): Promise<T> {
+  if (!signal) return promise;
+  if (signal.aborted) {
+    const error = new Error('The operation was aborted');
+    error.name = 'AbortError';
+    return Promise.reject(error);
+  }
+
+  return new Promise<T>((resolve, reject) => {
+    const abort = () => {
+      signal.removeEventListener('abort', abort);
+      const error = new Error('The operation was aborted');
+      error.name = 'AbortError';
+      reject(error);
+    };
+    signal.addEventListener('abort', abort, { once: true });
+    promise.then(
+      (value) => {
+        signal.removeEventListener('abort', abort);
+        resolve(value);
+      },
+      (error: unknown) => {
+        signal.removeEventListener('abort', abort);
+        reject(error);
+      }
+    );
+  });
+}
+
+async function getShareSession(signal?: AbortSignal): Promise<ShareSession> {
   const cached = readSessionCache();
   if (cached) return cached;
-  if (pendingSession) return pendingSession;
+  if (pendingSession) return waitForSignal(pendingSession, signal);
 
   pendingSession = fetchShareSession().finally(() => {
     pendingSession = null;
   });
-  return pendingSession;
+  return waitForSignal(pendingSession, signal);
 }
 
 type SearchParamValue = string | number | boolean | undefined | null;
@@ -100,7 +138,7 @@ async function umamiFetch(
   params?: Record<string, SearchParamValue>,
   init?: Omit<RequestInit, 'headers'>
 ): Promise<Response> {
-  const session = await getShareSession();
+  const session = await getShareSession(init?.signal ?? undefined);
   const path = pathTemplate.replace('{id}', session.websiteId);
   const url = `${UMAMI_BASE}${path}${buildSearch(params)}`;
 

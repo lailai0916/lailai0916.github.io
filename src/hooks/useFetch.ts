@@ -1,6 +1,9 @@
 import { useCallback, useEffect, useState, type DependencyList } from 'react';
+import { withTimeout } from '@site/src/utils/withTimeout';
 
 export type FetchStatus = 'loading' | 'success' | 'error';
+
+const FETCH_TIMEOUT_MS = 15000;
 
 /**
  * Abortable data fetch shared by the analytics/status hooks. Runs `fetcher` when
@@ -32,7 +35,7 @@ export function useFetch<T>(
 
     (async () => {
       try {
-        const result = await fetcher(controller.signal);
+        const result = await withTimeout(fetcher, controller.signal, FETCH_TIMEOUT_MS);
         if (controller.signal.aborted) return;
         setData(result);
         setHasSucceeded(true);

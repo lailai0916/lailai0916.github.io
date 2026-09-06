@@ -2,15 +2,19 @@ import { useEffect, useState } from 'react';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import { translate } from '@docusaurus/Translate';
 import { usePluralForm } from '@docusaurus/theme-common';
+import { Icon } from '@iconify/react';
 import BlogScaffold from '@site/src/theme/BlogShared/Scaffold';
 import { MetaBar, type MetaBarItem } from '@site/src/theme/BlogShared/BlogUI';
+import Button from '@site/src/components/laikit/Button';
 import Card from '@site/src/components/laikit/Card';
 import IconBlock from '@site/src/components/laikit/IconBlock';
 import ShareCard from '@site/src/components/laikit/ShareCard';
 import Skeleton from '@site/src/components/laikit/Skeleton';
 import { MOMENT_LIST } from '@site/src/data/moments';
+import { useImageStatus } from '@site/src/hooks/useImageStatus';
 import { useVisitorTimeZone } from '@site/src/hooks/useVisitorTimeZone';
 import { formatLocalDate, formatLocalTime } from '@site/src/utils/dateTime';
+import { withTimeout } from '@site/src/utils/withTimeout';
 import styles from './styles.module.css';
 
 const PAGE_SIZE = 20;
@@ -39,11 +43,20 @@ const NO_MORE_LABEL = translate({
   id: 'pages.moments.noMore',
   message: 'No more moments',
 });
+const WEATHER_ERROR_LABEL = translate({
+  id: 'pages.moments.weather.error',
+  message: 'Weather data is temporarily unavailable.',
+});
+const WEATHER_RETRY_LABEL = translate({
+  id: 'pages.moments.weather.retry',
+  message: 'Retry',
+});
 
 // Hangzhou
 const WEATHER_LAT = 30.27;
 const WEATHER_LNG = 120.16;
 const WEATHER_URL = `https://api.open-meteo.com/v1/forecast?latitude=${WEATHER_LAT}&longitude=${WEATHER_LNG}&current=temperature_2m,relative_humidity_2m,weather_code,wind_speed_10m&timezone=Asia%2FShanghai`;
+const WEATHER_TIMEOUT_MS = 10000;
 
 type WeatherCurrent = {
   temperature_2m: number;
@@ -255,21 +268,71 @@ const WEATHER_UNKNOWN = translate({
   message: 'Unknown',
 });
 
-function useHangzhouWeather(): WeatherCurrent | null {
+type WeatherStatus = 'loading' | 'success' | 'error';
+
+function useHangzhouWeather(): {
+  weather: WeatherCurrent | null;
+  status: WeatherStatus;
+  retry: () => void;
+} {
   const [w, setW] = useState<WeatherCurrent | null>(null);
+  const [status, setStatus] = useState<WeatherStatus>('loading');
+  const [attempt, setAttempt] = useState(0);
+
   useEffect(() => {
-    let cancelled = false;
-    fetch(WEATHER_URL)
-      .then((r) => (r.ok ? r.json() : Promise.reject()))
-      .then((j) => {
-        if (!cancelled) setW(j.current);
+    const controller = new AbortController();
+    setStatus('loading');
+
+    void withTimeout(
+      async (signal) => {
+        const response = await fetch(WEATHER_URL, { signal });
+        if (!response.ok) throw new Error(`Weather request failed: ${response.status}`);
+        const data = (await response.json()) as { current?: WeatherCurrent };
+        if (!data.current) throw new Error('Weather response is missing current data');
+        return data.current;
+      },
+      controller.signal,
+      WEATHER_TIMEOUT_MS
+    )
+      .then((current) => {
+        if (controller.signal.aborted) return;
+        setW(current);
+        setStatus('success');
       })
-      .catch(() => {});
-    return () => {
-      cancelled = true;
-    };
-  }, []);
-  return w;
+      .catch(() => {
+        if (!controller.signal.aborted) setStatus('error');
+      });
+
+    return () => controller.abort();
+  }, [attempt]);
+
+  return { weather: w, status, retry: () => setAttempt((value) => value + 1) };
+}
+
+function MomentImage({ src }: { src: string }) {
+  const { imgRef, status, onLoad, onError } = useImageStatus(src);
+
+  if (status === 'error') {
+    return (
+      <span className={`${styles.momentImage} ${styles.momentImageFallback}`} aria-hidden="true">
+        <Icon icon="lucide:image-off" />
+      </span>
+    );
+  }
+
+  return (
+    <img
+      ref={imgRef}
+      src={src}
+      alt=""
+      className={styles.momentImage}
+      loading="lazy"
+      decoding="async"
+      data-zoomable
+      onLoad={onLoad}
+      onError={onError}
+    />
+  );
 }
 
 export default function Moments() {
@@ -278,7 +341,7 @@ export default function Moments() {
   } = useDocusaurusContext();
   const { selectMessage } = usePluralForm();
   const timeZone = useVisitorTimeZone();
-  const weather = useHangzhouWeather();
+  const { weather, status: weatherStatus, retry: retryWeather } = useHangzhouWeather();
   const [visibleCount, setVisibleCount] = useState(PAGE_SIZE);
   const totalCount = MOMENT_LIST.length;
   const visibleMoments = MOMENT_LIST.slice(0, visibleCount);
@@ -325,8 +388,15 @@ export default function Moments() {
           </div>
         </div>
         <div className={styles.headerWeather}>
-          {weather ? (
+          {weatherStatus === 'success' && weather ? (
             <MetaBar items={weatherItems} />
+          ) : weatherStatus === 'error' ? (
+            <div className={styles.weatherError} role="alert">
+              <span>{WEATHER_ERROR_LABEL}</span>
+              <Button variant="ghost" size="sm" onClick={retryWeather}>
+                {WEATHER_RETRY_LABEL}
+              </Button>
+            </div>
           ) : (
             <Skeleton className={styles.weatherSkeleton} />
           )}
@@ -370,14 +440,7 @@ export default function Moments() {
             {moment.images && moment.images.length > 0 && (
               <div className={styles.momentImages} data-count={moment.images.length}>
                 {moment.images.map((image) => (
-                  <img
-                    key={image}
-                    src={image}
-                    alt=""
-                    className={styles.momentImage}
-                    loading="lazy"
-                    data-zoomable
-                  />
+                  <MomentImage key={image} src={image} />
                 ))}
               </div>
             )}

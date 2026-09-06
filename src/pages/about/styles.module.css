@@ -12,6 +12,16 @@
   margin: 0;
 }
 
+.imageFallback {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  color: var(--ifm-color-emphasis-500);
+  font-size: 1.5rem;
+}
+
 .wordCloudFrame {
   width: 100%;
   aspect-ratio: 2819 / 924;
@@ -74,6 +84,19 @@
   user-select: none;
   opacity: 0.55;
   transition: opacity 160ms ease;
+  z-index: 0;
+}
+
+.deviceImageFallback {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: var(--card-height);
+  height: calc(var(--card-height) - 2rem);
+  color: var(--ifm-color-emphasis-500);
+  font-size: 1.5rem;
+  opacity: 0.55;
+  pointer-events: none;
   z-index: 0;
 }
 

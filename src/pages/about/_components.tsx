@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect } from 'react';
 
 import BrowserOnly from '@docusaurus/BrowserOnly';
 import { translate } from '@docusaurus/Translate';
@@ -10,19 +10,37 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 
 import { DEVICE_LIST } from '@site/src/data/devices';
 import { COMMUNITY_LIST } from '@site/src/data/community';
+import { useImageStatus } from '@site/src/hooks/useImageStatus';
 import styles from './styles.module.css';
 
+const WORD_CLOUD_URL = 'https://cloud.lailai.one/f/AdNtA/wordcloud.svg';
+const SKILLS_ARIA_LABEL = translate({
+  id: 'pages.about.skills.ariaLabel',
+  message: 'Tech stack icons',
+});
+
 export function WordCloud() {
+  const { imgRef, status, onLoad, onError } = useImageStatus(WORD_CLOUD_URL);
+
   return (
     <Card className={styles.wordCloud} padding="clamp(1.25rem, 4vw, 2.25rem)">
       <div className={styles.wordCloudFrame}>
-        <img
-          src="https://cloud.lailai.one/f/AdNtA/wordcloud.svg"
-          alt=""
-          width={2819}
-          height={924}
-          decoding="async"
-        />
+        {status === 'error' ? (
+          <div className={styles.imageFallback} aria-hidden="true">
+            <Icon icon="lucide:image-off" />
+          </div>
+        ) : (
+          <img
+            ref={imgRef}
+            src={WORD_CLOUD_URL}
+            alt=""
+            width={2819}
+            height={924}
+            decoding="async"
+            onLoad={onLoad}
+            onError={onError}
+          />
+        )}
       </div>
     </Card>
   );
@@ -50,30 +68,42 @@ export function Skills() {
 
   const skills =
     'cpp,c,python,java,javascript,typescript,html,css,nodejs,react,nextjs,tailwindcss,vite,mysql,markdown,latex,mermaid,git,github,playwright,linux,bash,docker,nginx,cloudflare,vercel,tor,macos,apple,cursor,chatgpt,claude,mcp,figma,photoshop,blender';
+  const skillsUrl = `https://go-skill-icons.vercel.app/api/icons?i=${skills}&perline=${perline}`;
+  const { imgRef, status, onLoad, onError } = useImageStatus(skillsUrl);
 
   return (
     <div className={styles.skillsFrame}>
-      <img
-        src={`https://go-skill-icons.vercel.app/api/icons?i=${skills}&perline=${perline}`}
-        alt={translate({
-          id: 'pages.about.skills.ariaLabel',
-          message: 'Tech stack icons',
-        })}
-        width={666}
-        height={160}
-        loading="lazy"
-        decoding="async"
-        className={styles.skillsImage}
-      />
+      {status === 'error' ? (
+        <div
+          className={`${styles.skillsImage} ${styles.imageFallback}`}
+          role="img"
+          aria-label={SKILLS_ARIA_LABEL}
+        >
+          <Icon icon="lucide:blocks" aria-hidden="true" />
+        </div>
+      ) : (
+        <img
+          ref={imgRef}
+          src={skillsUrl}
+          alt={SKILLS_ARIA_LABEL}
+          width={666}
+          height={160}
+          loading="lazy"
+          decoding="async"
+          className={styles.skillsImage}
+          onLoad={onLoad}
+          onError={onError}
+        />
+      )}
     </div>
   );
 }
 
 function DeviceImage({ src, alt }: { src: string; alt: string }) {
-  const ref = useRef<HTMLImageElement>(null);
+  const { imgRef, status, onLoad, onError } = useImageStatus(src);
 
   useEffect(() => {
-    const img = ref.current;
+    const img = imgRef.current;
     if (!img) return;
     const setAr = () => {
       if (img.naturalWidth) {
@@ -86,9 +116,26 @@ function DeviceImage({ src, alt }: { src: string; alt: string }) {
     }
     img.addEventListener('load', setAr);
     return () => img.removeEventListener('load', setAr);
-  }, []);
+  }, [imgRef]);
 
-  return <img ref={ref} src={src} alt={alt} className={styles.deviceImage} loading="lazy" />;
+  if (status === 'error') {
+    return (
+      <Icon icon="lucide:image-off" className={styles.deviceImageFallback} aria-hidden="true" />
+    );
+  }
+
+  return (
+    <img
+      ref={imgRef}
+      src={src}
+      alt={alt}
+      className={styles.deviceImage}
+      loading="lazy"
+      decoding="async"
+      onLoad={onLoad}
+      onError={onError}
+    />
+  );
 }
 
 export function Devices() {

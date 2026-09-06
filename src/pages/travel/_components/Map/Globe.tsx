@@ -29,6 +29,7 @@ import {
   type GlobeCountryFeature,
   type WorldGeoJson,
 } from '@site/src/utils/travelGlobe';
+import { withTimeout } from '@site/src/utils/withTimeout';
 
 countries.registerLocale(countriesEn);
 countries.registerLocale(countriesZh);
@@ -74,6 +75,7 @@ const PAUSE_ROTATION_LABEL = translate({
 });
 const DEFAULT_POINT_OF_VIEW = { lat: 30, lng: 120, altitude: 1.8 };
 const RESET_DURATION_MS = 600;
+const GEOJSON_TIMEOUT_MS = 15000;
 
 function readCssVar(name: string) {
   return getComputedStyle(document.documentElement).getPropertyValue(name).trim();
@@ -147,6 +149,7 @@ function TravelGlobeClient({
   const [isGlobeReady, setIsGlobeReady] = useState(false);
   const [isRotating, setIsRotating] = useState(false);
   const [features, setFeatures] = useState<readonly GlobeCountryFeature[]>([]);
+  const [textureCanvas, setTextureCanvas] = useState<HTMLCanvasElement | null>(null);
   const [geoFailed, setGeoFailed] = useState(false);
   const [geoRequest, setGeoRequest] = useState(0);
   const [isFrameVisible, setIsFrameVisible] = useState(true);
@@ -161,29 +164,29 @@ function TravelGlobeClient({
 
   const worldUrl = useBaseUrl('/json/world.geo.json');
   useEffect(() => {
-    let cancelled = false;
     const controller = new AbortController();
     setFeatures([]);
     setGeoFailed(false);
-    fetch(worldUrl, { signal: controller.signal })
-      .then((r) => {
-        if (!r.ok) throw new Error(`Failed to load ${worldUrl}: ${r.status}`);
-        return r.json() as Promise<WorldGeoJson>;
-      })
+    void withTimeout(
+      async (signal) => {
+        const response = await fetch(worldUrl, { cache: 'force-cache', signal });
+        if (!response.ok) throw new Error(`Failed to load ${worldUrl}: ${response.status}`);
+        return (await response.json()) as WorldGeoJson;
+      },
+      controller.signal,
+      GEOJSON_TIMEOUT_MS
+    )
       .then((data) => {
-        if (!cancelled) setFeatures(data.features);
+        if (!controller.signal.aborted) setFeatures(data.features);
       })
       .catch((error) => {
         // Without the borders the globe can't be painted, but it can still show:
         // fall through to the plain ocean sphere rather than an empty frame.
-        if (cancelled || controller.signal.aborted) return;
+        if (controller.signal.aborted) return;
         console.error(error);
         setGeoFailed(true);
       });
-    return () => {
-      cancelled = true;
-      controller.abort();
-    };
+    return () => controller.abort();
   }, [worldUrl, geoRequest]);
 
   const travelDatesByCountry = useMemo(() => getTravelDatesByCountry(TRAVEL_LIST), []);
@@ -216,20 +219,49 @@ function TravelGlobeClient({
     [colorMode]
   );
 
+  useEffect(() => {
+    let cancelled = false;
+    setTextureCanvas(null);
+    if (features.length === 0) return () => undefined;
+
+    const bake = () => {
+      if (cancelled) return;
+      try {
+        setTextureCanvas(bakeGlobeTexture(features, visitedCountries, colors));
+      } catch (error) {
+        console.error(error);
+        setGeoFailed(true);
+      }
+    };
+    const idleWindow = window as Window & {
+      requestIdleCallback?: (callback: () => void, options?: { timeout: number }) => number;
+      cancelIdleCallback?: (handle: number) => void;
+    };
+    let idleId: number | null = null;
+    let timeoutId: number | null = null;
+    if (idleWindow.requestIdleCallback) {
+      idleId = idleWindow.requestIdleCallback(bake, { timeout: 1000 });
+    } else {
+      timeoutId = window.setTimeout(bake, 0);
+    }
+
+    return () => {
+      cancelled = true;
+      if (idleId !== null) idleWindow.cancelIdleCallback?.(idleId);
+      if (timeoutId !== null) window.clearTimeout(timeoutId);
+    };
+  }, [colors, features, visitedCountries]);
+
   const globeMaterial = useMemo<DisposableMaterial>(() => {
-    if (features.length === 0) return new three.MeshBasicMaterial({ color: colors.ocean });
-    const texture = new three.CanvasTexture(bakeGlobeTexture(features, visitedCountries, colors));
+    if (!textureCanvas) return new three.MeshBasicMaterial({ color: colors.ocean });
+    const texture = new three.CanvasTexture(textureCanvas);
     texture.colorSpace = three.SRGBColorSpace;
     texture.anisotropy = 8;
     return new three.MeshBasicMaterial({ map: texture });
-  }, [features, visitedCountries, colors]);
+  }, [colors.ocean, textureCanvas]);
 
-  // Every rebake (borders landing, theme flip) mints a fresh 4096×2048 texture,
-  // and three.js GPU resources are never garbage-collected — a few theme toggles
-  // would strand hundreds of megabytes. Releasing the superseded material from a
-  // cleanup is safe here because react-kapsule pushes changed props to the globe
-  // *during render*, not from an effect, so it is already holding the new
-  // material by the time this runs.
+  // Three.js GPU resources are not garbage-collected — release each material
+  // after react-kapsule has received its replacement.
   useEffect(
     () => () => {
       globeMaterial.map?.dispose();
@@ -446,7 +478,7 @@ function TravelGlobeClient({
 
   // Ready = globe mounted, borders fetched, and the texture baked from them —
   // or the borders failed, in which case the bare sphere is what we have.
-  const isReady = isGlobeReady && (features.length > 0 || geoFailed);
+  const isReady = isGlobeReady && ((features.length > 0 && textureCanvas !== null) || geoFailed);
   const rotationLabel = isRotating ? PAUSE_ROTATION_LABEL : PLAY_ROTATION_LABEL;
 
   return (
