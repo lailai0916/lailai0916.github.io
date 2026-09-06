@@ -189,18 +189,18 @@
   flex-shrink: 0;
   width: 2rem;
   height: 2rem;
-  border: 1px solid color-mix(in srgb, var(--ifm-color-primary) 18%, transparent);
+  border: 1px solid var(--ifm-color-emphasis-200);
   border-radius: 10px;
-  background: color-mix(in srgb, var(--ifm-color-primary) 12%, transparent);
-  color: var(--ifm-color-primary);
+  background: var(--ifm-color-emphasis-100);
+  color: var(--ifm-color-emphasis-600);
   font-size: 1rem;
   line-height: 1;
 }
 
 html[data-theme='dark'] .actionItemIcon {
-  border-color: color-mix(in srgb, var(--ifm-color-primary) 28%, transparent);
-  background: color-mix(in srgb, var(--ifm-color-primary) 16%, transparent);
-  color: var(--ifm-color-primary-light);
+  border-color: var(--ifm-color-emphasis-300);
+  background: var(--ifm-color-emphasis-200);
+  color: var(--ifm-color-emphasis-600);
 }
 
 /* Layout */
