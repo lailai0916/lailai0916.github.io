@@ -42,6 +42,8 @@ export default function LinkCard({
             src={image}
             alt={title}
             className={imageVariant === 'avatar' ? styles.imageAvatar : styles.image}
+            loading="lazy"
+            decoding="async"
             onLoad={onLoad}
             onError={onError}
           />
