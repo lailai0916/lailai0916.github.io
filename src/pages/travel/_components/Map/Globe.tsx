@@ -72,14 +72,6 @@ const PAUSE_ROTATION_LABEL = translate({
   id: 'pages.travel.map.pause',
   message: 'Pause rotation',
 });
-const MAP_ERROR_LABEL = translate({
-  id: 'pages.travel.map.error',
-  message: 'The map could not be loaded.',
-});
-const MAP_RETRY_LABEL = translate({
-  id: 'pages.travel.map.retry',
-  message: 'Retry',
-});
 const DEFAULT_POINT_OF_VIEW = { lat: 30, lng: 120, altitude: 1.8 };
 const RESET_DURATION_MS = 600;
 
@@ -137,9 +129,13 @@ function sameHover(a: HoveredCountry | null, b: HoveredCountry | null) {
 function TravelGlobeClient({
   Globe,
   loadingLabel,
+  errorLabel,
+  retryLabel,
 }: {
   Globe: GlobeComponent;
   loadingLabel: string;
+  errorLabel: string;
+  retryLabel: string;
 }) {
   const { i18n } = useDocusaurusContext();
   const { colorMode } = useColorMode();
@@ -482,9 +478,9 @@ function TravelGlobeClient({
       )}
       {geoFailed && (
         <div className={clsx(styles.mapStatus, styles.mapStatusError)} role="alert">
-          <p className={styles.mapStatusMessage}>{MAP_ERROR_LABEL}</p>
+          <p className={styles.mapStatusMessage}>{errorLabel}</p>
           <Button variant="secondary" size="sm" onClick={retryGeoJson}>
-            {MAP_RETRY_LABEL}
+            {retryLabel}
           </Button>
         </div>
       )}
@@ -537,7 +533,22 @@ function TravelGlobeClient({
   );
 }
 
-export default function TravelGlobe({ loadingLabel }: { loadingLabel: string }) {
+export default function TravelGlobe({
+  loadingLabel,
+  errorLabel,
+  retryLabel,
+}: {
+  loadingLabel: string;
+  errorLabel: string;
+  retryLabel: string;
+}) {
   const Globe = require('react-globe.gl').default as GlobeComponent;
-  return <TravelGlobeClient Globe={Globe} loadingLabel={loadingLabel} />;
+  return (
+    <TravelGlobeClient
+      Globe={Globe}
+      loadingLabel={loadingLabel}
+      errorLabel={errorLabel}
+      retryLabel={retryLabel}
+    />
+  );
 }
