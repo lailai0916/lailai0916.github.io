@@ -19,6 +19,39 @@
   height: 100%;
 }
 
+.imageBlock {
+  position: relative;
+}
+
+.imageBlock > svg,
+.imageBlock > img {
+  position: absolute;
+  inset: 0;
+  margin: auto;
+}
+
+.fallbackIcon,
+.fallbackIconHidden {
+  transition: opacity 160ms ease;
+}
+
+.fallbackIconHidden {
+  opacity: 0;
+}
+
+.imageLoading,
+.imageLoaded {
+  transition: opacity 160ms ease;
+}
+
+.imageLoading {
+  opacity: 0;
+}
+
+.imageLoaded {
+  opacity: 1;
+}
+
 .imageAvatar {
   width: 100%;
   height: 100%;

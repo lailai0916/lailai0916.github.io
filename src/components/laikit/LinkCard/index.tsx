@@ -1,5 +1,7 @@
+import clsx from 'clsx';
 import Card from '@site/src/components/laikit/Card';
 import IconBlock from '@site/src/components/laikit/IconBlock';
+import { Icon } from '@iconify/react';
 import { useImageStatus } from '@site/src/hooks/useImageStatus';
 import styles from './styles.module.css';
 
@@ -26,7 +28,8 @@ export default function LinkCard({
   ...linkProps
 }: LinkCardProps) {
   const { imgRef, status, onLoad, onError } = useImageStatus(image);
-  const showImage = !!image && status !== 'error';
+  const shouldLoadImage = !!image && status !== 'error';
+  const imageLoaded = status === 'loaded';
 
   return (
     <Card
@@ -35,27 +38,32 @@ export default function LinkCard({
       wrapperClassName={styles.linkCardWrap}
       title={title}
     >
-      {showImage ? (
-        <IconBlock variant="muted" size={ICON_BOX_SIZE}>
+      <IconBlock variant="muted" size={ICON_BOX_SIZE} className={styles.imageBlock}>
+        {fallbackIcon && (
+          <Icon
+            icon={fallbackIcon}
+            width={FALLBACK_ICON_SIZE}
+            height={FALLBACK_ICON_SIZE}
+            className={imageLoaded ? styles.fallbackIconHidden : styles.fallbackIcon}
+            aria-hidden="true"
+          />
+        )}
+        {shouldLoadImage && (
           <img
             ref={imgRef}
             src={image}
             alt={title}
-            className={imageVariant === 'avatar' ? styles.imageAvatar : styles.image}
+            className={clsx(
+              imageVariant === 'avatar' ? styles.imageAvatar : styles.image,
+              imageLoaded ? styles.imageLoaded : styles.imageLoading
+            )}
             loading="lazy"
             decoding="async"
             onLoad={onLoad}
             onError={onError}
           />
-        </IconBlock>
-      ) : (
-        <IconBlock
-          icon={fallbackIcon}
-          variant="muted"
-          size={ICON_BOX_SIZE}
-          iconSize={FALLBACK_ICON_SIZE}
-        />
-      )}
+        )}
+      </IconBlock>
       <div className={styles.body}>
         <h3 className={styles.title}>{title}</h3>
         {description && <p className={styles.description}>{description}</p>}

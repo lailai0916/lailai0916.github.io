@@ -15,7 +15,15 @@ import styles from './styles.module.css';
 export function WordCloud() {
   return (
     <Card className={styles.wordCloud} padding="clamp(1.25rem, 4vw, 2.25rem)">
-      <img src="https://cloud.lailai.one/f/AdNtA/wordcloud.svg" alt="" />
+      <div className={styles.wordCloudFrame}>
+        <img
+          src="https://cloud.lailai.one/f/AdNtA/wordcloud.svg"
+          alt=""
+          width={2819}
+          height={924}
+          decoding="async"
+        />
+      </div>
     </Card>
   );
 }
@@ -44,17 +52,20 @@ export function Skills() {
     'cpp,c,python,java,javascript,typescript,html,css,nodejs,react,nextjs,tailwindcss,vite,mysql,markdown,latex,mermaid,git,github,playwright,linux,bash,docker,nginx,cloudflare,vercel,tor,macos,apple,cursor,chatgpt,claude,mcp,figma,photoshop,blender';
 
   return (
-    <BrowserOnly>
-      {() => (
-        <img
-          src={`https://go-skill-icons.vercel.app/api/icons?i=${skills}&perline=${perline}`}
-          alt={translate({
-            id: 'pages.about.skills.ariaLabel',
-            message: 'Tech stack icons',
-          })}
-        />
-      )}
-    </BrowserOnly>
+    <div className={styles.skillsFrame}>
+      <img
+        src={`https://go-skill-icons.vercel.app/api/icons?i=${skills}&perline=${perline}`}
+        alt={translate({
+          id: 'pages.about.skills.ariaLabel',
+          message: 'Tech stack icons',
+        })}
+        width={666}
+        height={160}
+        loading="lazy"
+        decoding="async"
+        className={styles.skillsImage}
+      />
+    </div>
   );
 }
 

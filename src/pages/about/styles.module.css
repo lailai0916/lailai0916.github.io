@@ -7,7 +7,56 @@
 .wordCloud img {
   display: block;
   width: 100%;
+  height: 100%;
+  object-fit: contain;
   margin: 0;
+}
+
+.wordCloudFrame {
+  width: 100%;
+  aspect-ratio: 2819 / 924;
+}
+
+.skillsFrame {
+  width: 100%;
+  aspect-ratio: 666 / 160;
+}
+
+.skillsImage {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+@media (max-width: 667px) {
+  .skillsFrame {
+    aspect-ratio: 441 / 273;
+  }
+}
+
+@media (max-width: 447px) {
+  .skillsFrame {
+    aspect-ratio: 329 / 329;
+  }
+}
+
+@media (max-width: 335px) {
+  .skillsFrame {
+    aspect-ratio: 216 / 498;
+  }
+}
+
+@media (max-width: 223px) {
+  .skillsFrame {
+    aspect-ratio: 160 / 666;
+  }
+}
+
+@media (max-width: 167px) {
+  .skillsFrame {
+    aspect-ratio: 104 / 1004;
+  }
 }
 
 .deviceImage {
