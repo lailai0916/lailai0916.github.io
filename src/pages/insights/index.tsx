@@ -295,29 +295,29 @@ function RangeBar({
     {
       value: 1,
       label: translate({
-        id: 'pages.insights.range.24h',
-        message: '24 hours',
+        id: 'pages.insights.range.day',
+        message: 'Day',
       }),
     },
     {
       value: 7,
       label: translate({
-        id: 'pages.insights.range.7d',
-        message: '7 days',
+        id: 'pages.insights.range.week',
+        message: 'Week',
       }),
     },
     {
       value: 30,
       label: translate({
-        id: 'pages.insights.range.30d',
-        message: '30 days',
+        id: 'pages.insights.range.month',
+        message: 'Month',
       }),
     },
     {
       value: 365,
       label: translate({
-        id: 'pages.insights.range.1y',
-        message: '1 year',
+        id: 'pages.insights.range.year',
+        message: 'Year',
       }),
     },
   ];
