@@ -85,6 +85,12 @@
     transform 160ms ease;
 }
 
+.arrow svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
 .domain {
   grid-column: 1 / -1;
   min-width: 0;

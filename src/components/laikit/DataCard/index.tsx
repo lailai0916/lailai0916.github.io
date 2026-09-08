@@ -11,30 +11,17 @@ interface DataCardProps {
   format?: (value: number) => string;
 }
 
-export default function DataCard(props: DataCardProps | { items: DataCardProps[] }) {
+export default function DataCard({ value, label, icon, format }: DataCardProps) {
   const { selectMessage } = usePluralForm();
-
-  if ('items' in props) {
-    return (
-      <div className={styles.statsGrid}>
-        {props.items.map((item, index) => (
-          <DataCard key={index} {...item} />
-        ))}
-      </div>
-    );
-  }
-
-  const label = selectMessage(props.value, props.label);
+  const displayLabel = selectMessage(value, label);
 
   return (
     <Card padding="1.5rem">
       <div className={styles.statCard}>
-        <IconBlock icon={props.icon} variant="muted" />
+        <IconBlock icon={icon} variant="muted" />
         <div className={styles.statContent}>
-          <div className={styles.statNumber}>
-            {props.format ? props.format(props.value) : props.value}
-          </div>
-          <div className={styles.statLabel}>{label}</div>
+          <div className={styles.statNumber}>{format ? format(value) : value}</div>
+          <div className={styles.statLabel}>{displayLabel}</div>
         </div>
       </div>
     </Card>

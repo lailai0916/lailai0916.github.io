@@ -1,5 +1,6 @@
 import { useState, useEffect, type ReactNode } from 'react';
-import Color from 'color';
+import BrowserOnly from '@docusaurus/BrowserOnly';
+import Skeleton from '@site/src/components/laikit/Skeleton';
 import { translate } from '@docusaurus/Translate';
 import Layout from '@theme/Layout';
 
@@ -191,8 +192,9 @@ function AccentColor() {
               key={color}
               className={styles.presetColorButton}
               style={{
-                background: `linear-gradient(to right, ${color} 0 50%, ${Color(color).mix(Color('#fff'), 0.3).hex()} 50% 100%)`,
+                background: color,
               }}
+              aria-pressed={colorState.baseColor.toLowerCase() === color.toLowerCase()}
               onClick={() => updateColor(color)}
               aria-label={translate(
                 {
@@ -502,7 +504,23 @@ export default function Settings(): ReactNode {
       <PageHeader>
         <PageTitle title={MODIFICATION} description={DESCRIPTION} />
       </PageHeader>
-      <PageContent className={styles.layout}>{tiles}</PageContent>
+      <PageContent>
+        <BrowserOnly
+          fallback={
+            <div
+              className={styles.layout}
+              role="status"
+              aria-label={translate({ id: 'pages.settings.loading', message: 'Loading settings…' })}
+            >
+              {tiles.map((tile) => (
+                <Skeleton key={tile.key} height={250} radius={16} />
+              ))}
+            </div>
+          }
+        >
+          {() => <div className={styles.layout}>{tiles}</div>}
+        </BrowserOnly>
+      </PageContent>
     </Layout>
   );
 }

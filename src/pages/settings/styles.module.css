@@ -104,6 +104,15 @@
   transform: scale(0.95);
 }
 
+.presetColorButton:focus-visible {
+  outline: none;
+  box-shadow: var(--lk-focus-ring);
+}
+.presetColorButton[aria-pressed='true'] {
+  outline: 1px solid color-mix(in srgb, var(--ifm-color-primary) 45%, var(--ifm-color-emphasis-300));
+  outline-offset: 2px;
+}
+
 /* Typography sliders */
 
 .sliderGroup {

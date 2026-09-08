@@ -1,16 +1,16 @@
-import { type ReactNode, useEffect, useId, useMemo, useRef, useState } from 'react';
+import { type ReactNode, useMemo, useState } from 'react';
 import { Icon } from '@iconify/react';
 import Layout from '@theme/Layout';
 
 import { PageTitle, PageHeader, PageContent } from '@site/src/components/laikit/Page';
 import DataCard from '@site/src/components/laikit/DataCard';
+import Badge from '@site/src/components/laikit/Badge';
+import Card from '@site/src/components/laikit/Card';
 import LinkCard from '@site/src/components/laikit/LinkCard';
 import clsx from 'clsx';
 
 import IconBlock from '@site/src/components/laikit/IconBlock';
 import Button from '@site/src/components/laikit/Button';
-import Card from '@site/src/components/laikit/Card';
-import Badge from '@site/src/components/laikit/Badge';
 import DataState from '@site/src/components/laikit/DataState';
 
 import { usePluralForm } from '@docusaurus/theme-common';
@@ -74,83 +74,43 @@ function filterResourceCategories(
     .filter((category) => category.resources.length > 0);
 }
 
-function FilterBar({
-  categories,
+function SearchBar({
   activeCategory,
-  onCategoryChange,
   searchValue,
   onSearchChange,
+  onCategoryClear,
 }: {
-  categories: ResourceCategoryItem[];
   activeCategory: string;
-  onCategoryChange: (category: string) => void;
   searchValue: string;
   onSearchChange: (value: string) => void;
+  onCategoryClear: () => void;
 }) {
-  const [open, setOpen] = useState(false);
-  const panelId = useId();
-  const wrapperRef = useRef<HTMLDivElement>(null);
-  const toggleRef = useRef<HTMLButtonElement>(null);
-
-  const activeCat = useMemo(
-    () => categories.find((category) => category.id === activeCategory) ?? null,
-    [categories, activeCategory]
-  );
-
-  useEffect(() => {
-    if (!open) return;
-    const handleClick = (e: MouseEvent) => {
-      if (wrapperRef.current && !wrapperRef.current.contains(e.target as Node)) {
-        setOpen(false);
-      }
-    };
-    const handleKey = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') {
-        setOpen(false);
-        toggleRef.current?.focus();
-      }
-    };
-    document.addEventListener('mousedown', handleClick);
-    document.addEventListener('keydown', handleKey);
-    return () => {
-      document.removeEventListener('mousedown', handleClick);
-      document.removeEventListener('keydown', handleKey);
-    };
-  }, [open]);
-
+  const activeCat = RESOURCE_LIST.find((category) => category.id === activeCategory);
   return (
-    <div className={styles.filterBar} ref={wrapperRef}>
-      <Card
-        padding={0}
-        className={clsx(styles.filterSurface, {
-          [styles.filterSurfaceOpen]: open,
-        })}
-      >
+    <div className={styles.filterBar}>
+      <Card padding={0} className={styles.filterSurface}>
         <div className={styles.filterSearch}>
-          <Icon icon="lucide:search" className={styles.filterSearchIcon} />
+          <Icon icon="lucide:search" className={styles.filterSearchIcon} aria-hidden />
           {activeCat && (
             <Badge icon={activeCat.icon} className={styles.filterActiveCat}>
               {activeCat.title}
               <button
                 type="button"
                 className={styles.filterActiveCatClear}
-                onClick={(e) => {
-                  e.stopPropagation();
-                  onCategoryChange('all');
-                }}
+                onClick={onCategoryClear}
                 aria-label={translate({
                   id: 'pages.resources.category.clear',
                   message: 'Clear category',
                 })}
               >
-                <Icon icon="lucide:x" />
+                <Icon icon="lucide:x" aria-hidden />
               </button>
             </Badge>
           )}
           <input
             type="text"
             value={searchValue}
-            onChange={(e) => onSearchChange(e.target.value)}
+            onChange={(event) => onSearchChange(event.target.value)}
             placeholder={SEARCH_PLACEHOLDER}
             aria-label={SEARCH_PLACEHOLDER}
             className={styles.filterSearchInput}
@@ -165,63 +125,8 @@ function FilterBar({
               <Icon icon="lucide:x" aria-hidden />
             </button>
           )}
-          <button
-            ref={toggleRef}
-            type="button"
-            className={styles.filterControl}
-            onClick={() => setOpen((current) => !current)}
-            aria-label={CATEGORY_MENU_LABEL}
-            aria-expanded={open}
-            aria-controls={panelId}
-          >
-            <svg
-              viewBox="0 0 20 20"
-              className={clsx(styles.filterCategoryToggleIcon, {
-                [styles.filterCategoryToggleIconOpen]: open,
-              })}
-              aria-hidden="true"
-            >
-              <path
-                d="M5 8l5 5 5-5"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="1.6"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </svg>
-          </button>
         </div>
       </Card>
-      {open && (
-        <div id={panelId} className={styles.filterPanel}>
-          <Card padding={0} className={styles.filterPanelSurface}>
-            <div className={styles.filterRail} role="group" aria-label={CATEGORY_MENU_LABEL}>
-              {categories.map((category) => {
-                const isActive = activeCategory === category.id;
-                return (
-                  <button
-                    key={category.id}
-                    type="button"
-                    onClick={() => {
-                      onCategoryChange(isActive ? 'all' : category.id);
-                      setOpen(false);
-                      toggleRef.current?.focus();
-                    }}
-                    className={clsx(styles.filterRailItem, {
-                      [styles.filterRailItemActive]: isActive,
-                    })}
-                  >
-                    <Icon icon={category.icon} className={styles.filterRailItemIcon} />
-                    <span className={styles.filterRailItemLabel}>{category.title}</span>
-                    <span className={styles.filterRailItemCount}>{category.resources.length}</span>
-                  </button>
-                );
-              })}
-            </div>
-          </Card>
-        </div>
-      )}
     </div>
   );
 }
@@ -281,72 +186,145 @@ function CategorySection({ category }: { category: ResourceCategoryItem }) {
 
 export default function Resources(): ReactNode {
   const [activeCategory, setActiveCategory] = useState('all');
+  const [categoriesOpen, setCategoriesOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
-
-  const filteredCategories = useMemo(() => {
-    return filterResourceCategories(RESOURCE_LIST, activeCategory, searchQuery);
-  }, [activeCategory, searchQuery]);
+  const total = RESOURCE_LIST.reduce((sum, category) => sum + category.resources.length, 0);
+  const filteredCategories = useMemo(
+    () => filterResourceCategories(RESOURCE_LIST, activeCategory, searchQuery),
+    [activeCategory, searchQuery]
+  );
+  const allLabel = translate({ id: 'pages.resources.category.all', message: 'All resources' });
 
   return (
     <Layout title={TITLE} description={DESCRIPTION}>
-      <PageHeader>
+      <PageHeader
+        aside={
+          <DataCard
+            value={total}
+            label={translate({
+              id: 'pages.resources.datacard.items',
+              message: 'Resource|Resources',
+            })}
+            icon="lucide:database"
+          />
+        }
+      >
         <PageTitle title={MODIFICATION} description={DESCRIPTION} />
-        <DataCard
-          items={[
-            {
-              value: RESOURCE_LIST.length,
-              label: translate({
-                id: 'pages.resources.datacard.categories',
-                message: 'Category|Categories',
-              }),
-              icon: 'lucide:folder',
-            },
-            {
-              value: RESOURCE_LIST.flatMap((cat) => cat.resources).length,
-              label: translate({
-                id: 'pages.resources.datacard.items',
-                message: 'Resource|Resources',
-              }),
-              icon: 'lucide:database',
-            },
-          ]}
-        />
       </PageHeader>
-      <PageContent className={styles.layout}>
-        <FilterBar
-          categories={RESOURCE_LIST}
-          activeCategory={activeCategory}
-          onCategoryChange={setActiveCategory}
-          searchValue={searchQuery}
-          onSearchChange={setSearchQuery}
-        />
-
-        {filteredCategories.length > 0 ? (
-          filteredCategories.map((category) => (
-            <CategorySection key={category.id} category={category} />
-          ))
-        ) : (
-          <div className={styles.noResults}>
-            <DataState
-              message={translate(
-                {
-                  id: 'pages.resources.search.empty',
-                  message: 'No resources found matching "{query}".',
-                },
-                { query: searchQuery }
-              )}
-              action={
-                <Button
-                  variant="primary"
-                  leftIcon={<Icon icon="lucide:x" width={16} height={16} aria-hidden />}
-                  onClick={() => setSearchQuery('')}
+      <PageContent>
+        <div className={styles.layout}>
+          <aside className={styles.sidebar}>
+            <Card className={styles.categoryCard}>
+              <h2 className={styles.sidebarTitle}>
+                <span>{CATEGORY_MENU_LABEL}</span>
+                <span className={styles.categoryTotal}>{RESOURCE_LIST.length}</span>
+              </h2>
+              <Button
+                variant="ghost"
+                fullWidth
+                className={styles.categoryDisclosure}
+                aria-expanded={categoriesOpen}
+                aria-controls="resource-categories"
+                onClick={() => setCategoriesOpen((open) => !open)}
+                leftIcon={<Icon icon="lucide:sliders-horizontal" aria-hidden />}
+              >
+                <span className={styles.categoryDisclosureLabel}>
+                  {RESOURCE_LIST.find((category) => category.id === activeCategory)?.title ??
+                    CATEGORY_MENU_LABEL}
+                </span>
+                {activeCategory === 'all' && (
+                  <span className={styles.categoryTotal}>{RESOURCE_LIST.length}</span>
+                )}
+                <Icon
+                  icon={categoriesOpen ? 'lucide:chevron-up' : 'lucide:chevron-down'}
+                  aria-hidden
+                />
+              </Button>
+              <nav
+                id="resource-categories"
+                className={clsx(styles.categories, categoriesOpen && styles.categoriesOpen)}
+                aria-label={CATEGORY_MENU_LABEL}
+              >
+                <button
+                  type="button"
+                  className={clsx(
+                    styles.categoryButton,
+                    activeCategory === 'all' && styles.categoryActive
+                  )}
+                  title={allLabel}
+                  aria-pressed={activeCategory === 'all'}
+                  onClick={() => {
+                    setActiveCategory('all');
+                    setCategoriesOpen(false);
+                  }}
                 >
-                  {CLEAR_SEARCH}
-                </Button>
-              }
+                  <span className={styles.categoryIcon} aria-hidden>
+                    <Icon icon="lucide:layout-grid" />
+                  </span>
+                  <span className={styles.categoryLabel}>{allLabel}</span>
+                  <small>{total}</small>
+                </button>
+                {RESOURCE_LIST.map((category) => (
+                  <button
+                    key={category.id}
+                    type="button"
+                    className={clsx(
+                      styles.categoryButton,
+                      activeCategory === category.id && styles.categoryActive
+                    )}
+                    title={category.title}
+                    aria-pressed={activeCategory === category.id}
+                    onClick={() => {
+                      setActiveCategory(category.id);
+                      setCategoriesOpen(false);
+                    }}
+                  >
+                    <span className={styles.categoryIcon} aria-hidden>
+                      <Icon icon={category.icon} />
+                    </span>
+                    <span className={styles.categoryLabel}>{category.title}</span>
+                    <small>{category.resources.length}</small>
+                  </button>
+                ))}
+              </nav>
+            </Card>
+          </aside>
+          <div className={styles.collection}>
+            <SearchBar
+              activeCategory={activeCategory}
+              searchValue={searchQuery}
+              onSearchChange={setSearchQuery}
+              onCategoryClear={() => setActiveCategory('all')}
             />
+            <div className={styles.results}>
+              {filteredCategories.map((category) => (
+                <CategorySection key={category.id} category={category} />
+              ))}
+              {filteredCategories.length === 0 && (
+                <DataState
+                  message={translate(
+                    {
+                      id: 'pages.resources.search.empty',
+                      message: 'No resources found matching "{query}".',
+                    },
+                    { query: searchQuery }
+                  )}
+                  action={
+                    <Button
+                      variant="secondary"
+                      onClick={() => {
+                        setSearchQuery('');
+                        setActiveCategory('all');
+                      }}
+                    >
+                      {CLEAR_SEARCH}
+                    </Button>
+                  }
+                />
+              )}
+            </div>
           </div>
-        )}
+        </div>
       </PageContent>
     </Layout>
   );

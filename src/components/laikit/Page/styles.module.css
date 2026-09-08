@@ -57,6 +57,16 @@
   }
 }
 
+.headerAside {
+  flex-shrink: 0;
+}
+
+@media (max-width: 768px) {
+  .headerAside {
+    width: 100%;
+  }
+}
+
 .pageContent {
   width: 100%;
   max-width: 1200px;

@@ -8,7 +8,7 @@ import { usePluralForm } from '@docusaurus/theme-common';
 import * as countries from 'i18n-iso-countries';
 import countriesEn from 'i18n-iso-countries/langs/en.json';
 import countriesZh from 'i18n-iso-countries/langs/zh.json';
-import { PageTitle, PageHeader, PageContent } from '@site/src/components/laikit/Page';
+import { PageHeader, PageTitle, PageContent } from '@site/src/components/laikit/Page';
 import Card from '@site/src/components/laikit/Card';
 import Skeleton from '@site/src/components/laikit/Skeleton';
 import Chart from '@site/src/components/laikit/Chart';
@@ -530,6 +530,10 @@ function SectionLink({ href, label }: { href: string; label: string }) {
 
 export default function Insights(): ReactNode {
   const [range, setRange] = useState<InsightsRange>(1);
+  const audienceTitle = translate({
+    id: 'pages.insights.audience.title',
+    message: 'Audience',
+  });
   return (
     <Layout title={TITLE} description={DESCRIPTION}>
       <PageHeader>
@@ -547,11 +551,19 @@ export default function Insights(): ReactNode {
           <div className={styles.sectionBody}>
             <HeroGrid range={range} />
             <PageviewsChart range={range} />
+          </div>
+        </section>
+        <section className={styles.dataSection} aria-labelledby="audience-title">
+          <header className={styles.sectionHeader}>
+            <h2 id="audience-title" className={styles.sectionTitle}>
+              {audienceTitle}
+            </h2>
+          </header>
+          <div className={styles.sectionBody}>
             <MetricsGrid range={range} />
             <EnvironmentGrid range={range} />
           </div>
         </section>
-
         <section className={styles.dataSection} aria-labelledby="service-health-title">
           <header className={styles.sectionHeader}>
             <h2 id="service-health-title" className={styles.sectionTitle}>

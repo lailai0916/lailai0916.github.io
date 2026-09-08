@@ -91,7 +91,7 @@ Custom-page notes: `insights` is live Umami traffic. `blog/overview` and `blog/m
 
 Site-specific rules (general taste — 精益求精, edit-don't-rewrite, comment the _why_, no AI-tells — lives in the external Skill's `profile/` and `references/`):
 
-- **Reuse `laikit` primitives** before adding a component; new UI should be visually and behaviourally indistinguishable from existing parts.
+- **Reuse `laikit` primitives** before adding a component; preserve the site's existing typography, colors, surfaces, and control behavior; page layouts may differ without introducing a new visual style.
 - **i18n is mandatory** — a new user-facing string needs both a `translate()` call and a `zh-Hans` entry in `i18n/zh-Hans/code.json`.
 - **Own domains: destination → link, identifier → `` `code` ``, never bare.** Full rule + rationale in [`.agents/rules/writing-style.md`](.agents/rules/writing-style.md) (_Links and references_) — repeated here because it binds **outside** that file's blog/docs path scope: `src/pages/{about,privacy}`, `src/data/changelog.tsx`, and both READMEs.
 - **Verify before committing** — `npm run check` must exit clean; for UI changes, also confirm in the `npm start` dev server.

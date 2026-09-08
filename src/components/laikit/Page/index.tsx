@@ -12,10 +12,13 @@ export function PageTitle({ title, description }: { title: string; description: 
   );
 }
 
-export function PageHeader({ children }: { children: ReactNode }) {
+export function PageHeader({ children, aside }: { children: ReactNode; aside?: ReactNode }) {
   return (
     <div className={styles.headerSection}>
-      <div className={styles.headerInner}>{children}</div>
+      <div className={styles.headerInner}>
+        {children}
+        {aside != null && <div className={styles.headerAside}>{aside}</div>}
+      </div>
     </div>
   );
 }

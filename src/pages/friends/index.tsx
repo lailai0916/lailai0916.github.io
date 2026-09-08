@@ -107,7 +107,9 @@ export default function Friends(): ReactNode {
               <h2 className={styles.friendName}>{friend.title}</h2>
               <p className={styles.friendDescription}>{friend.description ?? friend.href}</p>
             </div>
-            <Icon icon="lucide:arrow-up-right" className={styles.arrow} aria-hidden />
+            <span className={styles.arrow} aria-hidden>
+              <Icon icon="lucide:arrow-up-right" />
+            </span>
             <span className={styles.domain}>{getDomain(friend.href)}</span>
           </Card>
         ))}
