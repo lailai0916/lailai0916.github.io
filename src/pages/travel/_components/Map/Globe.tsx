@@ -233,22 +233,12 @@ function TravelGlobeClient({
         setGeoFailed(true);
       }
     };
-    const idleWindow = window as Window & {
-      requestIdleCallback?: (callback: () => void, options?: { timeout: number }) => number;
-      cancelIdleCallback?: (handle: number) => void;
-    };
-    let idleId: number | null = null;
-    let timeoutId: number | null = null;
-    if (idleWindow.requestIdleCallback) {
-      idleId = idleWindow.requestIdleCallback(bake, { timeout: 1000 });
-    } else {
-      timeoutId = window.setTimeout(bake, 0);
-    }
+    // The texture is required to show the map; don't wait for an idle callback.
+    const timeoutId = window.setTimeout(bake, 0);
 
     return () => {
       cancelled = true;
-      if (idleId !== null) idleWindow.cancelIdleCallback?.(idleId);
-      if (timeoutId !== null) window.clearTimeout(timeoutId);
+      window.clearTimeout(timeoutId);
     };
   }, [colors, features, visitedCountries]);
 
@@ -459,7 +449,12 @@ function TravelGlobeClient({
 
   const retryGeoJson = () => setGeoRequest((request) => request + 1);
 
-  const handleReady = () => {
+  const handleReady = useCallback(() => setIsGlobeReady(true), []);
+
+  // onGlobeReady can fire before react-kapsule attaches the ref in Safari.
+  // Configure the instance after React commits instead of dropping that signal.
+  useEffect(() => {
+    if (!isGlobeReady) return;
     const globe = globeRef.current;
     if (!globe) return;
     const controls = globe.controls();
@@ -473,8 +468,7 @@ function TravelGlobeClient({
     globe.pointOfView(DEFAULT_POINT_OF_VIEW, 0);
     rotationEnabledRef.current = shouldRotate;
     setIsRotating(shouldRotate);
-    setIsGlobeReady(true);
-  };
+  }, [isGlobeReady]);
 
   // Ready = globe mounted, borders fetched, and the texture baked from them —
   // or the borders failed, in which case the bare sphere is what we have.
