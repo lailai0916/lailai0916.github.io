@@ -1,4 +1,4 @@
-import { type ReactNode, useMemo, useState } from 'react';
+import { type CSSProperties, type ReactNode, useMemo, useRef, useState } from 'react';
 import { Icon } from '@iconify/react';
 import Layout from '@theme/Layout';
 
@@ -12,6 +12,7 @@ import clsx from 'clsx';
 import IconBlock from '@site/src/components/laikit/IconBlock';
 import Button from '@site/src/components/laikit/Button';
 import DataState from '@site/src/components/laikit/DataState';
+import { useMeasuredHeight } from '@site/src/hooks/useMeasuredHeight';
 
 import { usePluralForm } from '@docusaurus/theme-common';
 import {
@@ -187,6 +188,8 @@ function CategorySection({ category }: { category: ResourceCategoryItem }) {
 export default function Resources(): ReactNode {
   const [activeCategory, setActiveCategory] = useState('all');
   const [categoriesOpen, setCategoriesOpen] = useState(false);
+  const categoryDisclosureRef = useRef<HTMLButtonElement>(null);
+  const [categoriesRef, categoriesHeight] = useMeasuredHeight<HTMLDivElement>(RESOURCE_LIST);
   const [searchQuery, setSearchQuery] = useState('');
   const total = RESOURCE_LIST.reduce((sum, category) => sum + category.resources.length, 0);
   const filteredCategories = useMemo(
@@ -194,6 +197,13 @@ export default function Resources(): ReactNode {
     [activeCategory, searchQuery]
   );
   const allLabel = translate({ id: 'pages.resources.category.all', message: 'All resources' });
+  const selectCategory = (category: string) => {
+    setActiveCategory(category);
+    setCategoriesOpen(false);
+    if (categoryDisclosureRef.current?.getClientRects().length) {
+      categoryDisclosureRef.current.focus();
+    }
+  };
 
   return (
     <Layout title={TITLE} description={DESCRIPTION}>
@@ -219,14 +229,13 @@ export default function Resources(): ReactNode {
                 <span>{CATEGORY_MENU_LABEL}</span>
                 <span className={styles.categoryTotal}>{RESOURCE_LIST.length}</span>
               </h2>
-              <Button
-                variant="ghost"
-                fullWidth
+              <button
+                ref={categoryDisclosureRef}
+                type="button"
                 className={styles.categoryDisclosure}
                 aria-expanded={categoriesOpen}
                 aria-controls="resource-categories"
                 onClick={() => setCategoriesOpen((open) => !open)}
-                leftIcon={<Icon icon="lucide:sliders-horizontal" aria-hidden />}
               >
                 <span className={styles.categoryDisclosureLabel}>
                   {RESOURCE_LIST.find((category) => category.id === activeCategory)?.title ??
@@ -235,58 +244,67 @@ export default function Resources(): ReactNode {
                 {activeCategory === 'all' && (
                   <span className={styles.categoryTotal}>{RESOURCE_LIST.length}</span>
                 )}
-                <Icon
-                  icon={categoriesOpen ? 'lucide:chevron-up' : 'lucide:chevron-down'}
-                  aria-hidden
-                />
-              </Button>
-              <nav
-                id="resource-categories"
-                className={clsx(styles.categories, categoriesOpen && styles.categoriesOpen)}
-                aria-label={CATEGORY_MENU_LABEL}
-              >
-                <button
-                  type="button"
+                <span
                   className={clsx(
-                    styles.categoryButton,
-                    activeCategory === 'all' && styles.categoryActive
+                    styles.categoryChevron,
+                    categoriesOpen && styles.categoryChevronOpen
                   )}
-                  title={allLabel}
-                  aria-pressed={activeCategory === 'all'}
-                  onClick={() => {
-                    setActiveCategory('all');
-                    setCategoriesOpen(false);
-                  }}
+                  aria-hidden
                 >
-                  <span className={styles.categoryIcon} aria-hidden>
-                    <Icon icon="lucide:layout-grid" />
-                  </span>
-                  <span className={styles.categoryLabel}>{allLabel}</span>
-                  <small>{total}</small>
-                </button>
-                {RESOURCE_LIST.map((category) => (
-                  <button
-                    key={category.id}
-                    type="button"
-                    className={clsx(
-                      styles.categoryButton,
-                      activeCategory === category.id && styles.categoryActive
-                    )}
-                    title={category.title}
-                    aria-pressed={activeCategory === category.id}
-                    onClick={() => {
-                      setActiveCategory(category.id);
-                      setCategoriesOpen(false);
-                    }}
+                  <Icon icon="lucide:chevron-down" />
+                </span>
+              </button>
+              <div
+                className={clsx(
+                  styles.categoriesViewport,
+                  categoriesOpen && styles.categoriesViewportOpen
+                )}
+                style={{ '--categories-height': `${categoriesHeight ?? 0}px` } as CSSProperties}
+              >
+                <div ref={categoriesRef}>
+                  <nav
+                    id="resource-categories"
+                    className={styles.categories}
+                    aria-label={CATEGORY_MENU_LABEL}
                   >
-                    <span className={styles.categoryIcon} aria-hidden>
-                      <Icon icon={category.icon} />
-                    </span>
-                    <span className={styles.categoryLabel}>{category.title}</span>
-                    <small>{category.resources.length}</small>
-                  </button>
-                ))}
-              </nav>
+                    <button
+                      type="button"
+                      className={clsx(
+                        styles.categoryButton,
+                        activeCategory === 'all' && styles.categoryActive
+                      )}
+                      title={allLabel}
+                      aria-pressed={activeCategory === 'all'}
+                      onClick={() => selectCategory('all')}
+                    >
+                      <span className={styles.categoryIcon} aria-hidden>
+                        <Icon icon="lucide:layout-grid" />
+                      </span>
+                      <span className={styles.categoryLabel}>{allLabel}</span>
+                      <small>{total}</small>
+                    </button>
+                    {RESOURCE_LIST.map((category) => (
+                      <button
+                        key={category.id}
+                        type="button"
+                        className={clsx(
+                          styles.categoryButton,
+                          activeCategory === category.id && styles.categoryActive
+                        )}
+                        title={category.title}
+                        aria-pressed={activeCategory === category.id}
+                        onClick={() => selectCategory(category.id)}
+                      >
+                        <span className={styles.categoryIcon} aria-hidden>
+                          <Icon icon={category.icon} />
+                        </span>
+                        <span className={styles.categoryLabel}>{category.title}</span>
+                        <small>{category.resources.length}</small>
+                      </button>
+                    ))}
+                  </nav>
+                </div>
+              </div>
             </Card>
           </aside>
           <div className={styles.collection}>
