@@ -61,6 +61,10 @@ const NOT_VISITED_LABEL = translate({
   id: 'pages.travel.map.legend.unvisited',
   message: 'Not Visited',
 });
+const HOME_LOCATION_LABEL = translate({
+  id: 'pages.travel.map.location',
+  message: 'lailai · Hangzhou, China',
+});
 const RESET_VIEW_LABEL = translate({
   id: 'pages.travel.map.reset',
   message: 'Reset view',
@@ -157,6 +161,30 @@ function TravelGlobeClient({
 
   const locale = i18n.currentLocale;
   const lang = locale === 'zh-Hans' ? 'zh' : 'en';
+
+  const avatarUrl = useBaseUrl('/img/logo.png');
+  const homeLocationData = useMemo(() => [{ lat: 30.27, lng: 120.16 }], []);
+  const createLocationMarker = useCallback(() => {
+    const marker = document.createElement('div');
+    marker.className = styles.locationMarker;
+    marker.setAttribute('role', 'img');
+    marker.setAttribute('aria-label', HOME_LOCATION_LABEL);
+
+    const pin = document.createElement('span');
+    pin.className = styles.locationPin;
+    const avatar = document.createElement('img');
+    avatar.src = avatarUrl;
+    avatar.alt = '';
+    avatar.width = 32;
+    avatar.height = 32;
+    avatar.draggable = false;
+    pin.append(avatar);
+    marker.append(pin);
+    return marker;
+  }, [avatarUrl]);
+  const updateLocationMarkerVisibility = useCallback((marker: HTMLElement, isVisible: boolean) => {
+    marker.classList.toggle(styles.locationMarkerBehind, !isVisible);
+  }, []);
 
   const [hovered, setHovered] = useState<HoveredCountry | null>(null);
   const [cursor, setCursor] = useState({ x: 0, y: 0 });
@@ -494,6 +522,11 @@ function TravelGlobeClient({
           showGlobe
           showAtmosphere={false}
           globeMaterial={globeMaterial}
+          htmlElementsData={homeLocationData}
+          htmlElement={createLocationMarker}
+          htmlElementVisibilityModifier={updateLocationMarkerVisibility}
+          htmlAltitude={0}
+          htmlTransitionDuration={0}
           onGlobeReady={handleReady}
         />
       </div>

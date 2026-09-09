@@ -43,13 +43,13 @@ function FriendAvatar({
   className,
   loading,
 }: {
-  src: string;
+  src?: string;
   className: string;
   loading?: 'lazy';
 }): ReactNode {
   const { imgRef, status, onLoad, onError } = useImageStatus(src);
 
-  if (status === 'error') {
+  if (!src || status === 'error') {
     return (
       <span className={`${className} ${styles.avatarFallback}`} aria-hidden>
         <Icon icon="lucide:user-round" />

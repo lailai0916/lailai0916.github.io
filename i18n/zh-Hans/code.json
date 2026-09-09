@@ -2329,6 +2329,9 @@
   "pages.travel.map.legend.unvisited": {
     "message": "未到访"
   },
+  "pages.travel.map.location": {
+    "message": "lailai · 中国杭州"
+  },
   "pages.travel.map.reset": {
     "message": "重置视角"
   },

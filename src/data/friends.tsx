@@ -2,7 +2,7 @@ interface FriendItem {
   title: string;
   description?: string;
   href: string;
-  avatar: string;
+  avatar?: string;
 }
 
 export const FRIEND_LIST: FriendItem[] = [
@@ -61,11 +61,6 @@ export const FRIEND_LIST: FriendItem[] = [
     avatar: 'https://cdn.luogu.com.cn/upload/image_hosting/jf27saph.png',
   },
   {
-    title: '0513DTY',
-    href: 'https://www.luogu.com.cn/user/1031108',
-    avatar: 'https://cdn.luogu.com.cn/upload/usericon/1031108.png',
-  },
-  {
     title: 'Castamere',
     description: '代码美学',
     href: 'https://www.castamerego.com',
@@ -93,5 +88,9 @@ export const FRIEND_LIST: FriendItem[] = [
     description: '道阻且长，行则将至',
     href: 'https://kuizuo.me',
     avatar: 'https://kuizuo.me/img/logo.png',
+  },
+  {
+    title: 'SkyWT',
+    href: 'https://skywt.net',
   },
 ];

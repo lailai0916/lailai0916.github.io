@@ -49,6 +49,66 @@
   opacity: 1;
 }
 
+.locationMarker {
+  width: 0;
+  height: 0;
+  opacity: 1;
+  transition: opacity 200ms ease;
+  pointer-events: none;
+  user-select: none;
+}
+
+.locationMarker::after {
+  position: absolute;
+  box-sizing: border-box;
+  top: -5px;
+  left: -5px;
+  width: 10px;
+  height: 10px;
+  background: var(--ifm-color-white);
+  border: 1px solid var(--ifm-color-gray-300);
+  border-radius: 50%;
+  box-shadow: var(--lk-shadow-pin);
+  content: '';
+}
+
+.locationMarkerBehind {
+  opacity: 0.2;
+}
+
+.locationPin {
+  position: absolute;
+  bottom: 9px;
+  left: 0;
+  display: block;
+  width: 32px;
+  height: 32px;
+  /* Shadow the complete silhouette so the tip joins the floating avatar. */
+  filter: drop-shadow(var(--lk-shadow-pin));
+  transform: translateX(-50%);
+}
+
+.locationPin::before {
+  position: absolute;
+  top: calc(100% - 2px);
+  left: 50%;
+  border-top: 7px solid var(--ifm-color-white);
+  border-inline: 5px solid transparent;
+  content: '';
+  transform: translateX(-50%);
+}
+
+.locationPin img {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: var(--ifm-color-white);
+  border: 2px solid var(--ifm-color-white);
+  border-radius: 50%;
+  object-fit: cover;
+}
+
 .mapStatus {
   position: absolute;
   inset: 0;
