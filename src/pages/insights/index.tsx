@@ -328,7 +328,7 @@ function RangeBar({
         items={items}
         onChange={onChange}
         orientation="horizontal"
-        stackOnMobile={false}
+        stackAt={360}
         ariaLabel={translate({
           id: 'pages.insights.range.ariaLabel',
           message: 'Time range',

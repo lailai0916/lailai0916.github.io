@@ -30,8 +30,15 @@ html[data-theme='dark'] .segmented {
   }
 }
 
+@media (max-width: 360px) {
+  .horizontal {
+    flex-direction: column;
+    gap: 0.35rem;
+  }
+}
+
 @media (max-width: 480px) {
-  .horizontal.stackOnMobile {
+  .horizontal:not(.stackNarrow) {
     flex-direction: column;
     gap: 0.35rem;
   }
@@ -43,14 +50,21 @@ html[data-theme='dark'] .segmented {
 }
 
 @media (max-width: 480px) {
-  .horizontal.stackOnMobile .item {
+  .horizontal:not(.stackNarrow) .item {
     text-align: left;
     padding: 0.6rem 0.85rem;
   }
 }
 
-@media (max-width: 480px) {
-  .horizontal:not(.stackOnMobile) .item {
+@media (max-width: 360px) {
+  .horizontal .item {
+    text-align: left;
+    padding: 0.6rem 0.85rem;
+  }
+}
+
+@media (min-width: 361px) and (max-width: 480px) {
+  .horizontal.stackNarrow .item {
     flex: 1;
     min-width: 0;
     justify-content: center;
@@ -63,7 +77,13 @@ html[data-theme='dark'] .segmented {
 }
 
 @media (max-width: 480px) {
-  .horizontal.stackOnMobile .label {
+  .horizontal:not(.stackNarrow) .label {
+    flex: 1;
+  }
+}
+
+@media (max-width: 360px) {
+  .horizontal .label {
     flex: 1;
   }
 }
