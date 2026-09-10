@@ -356,7 +356,6 @@
 .categoryActive:hover {
   background: var(--ifm-color-emphasis-100);
   color: var(--ifm-color-primary);
-  font-weight: 600;
 }
 .categoryIcon {
   display: inline-flex;
