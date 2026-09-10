@@ -26,8 +26,13 @@ html[data-theme='dark'] .segmented {
 @media (max-width: 480px) {
   .horizontal {
     display: flex;
-    flex-direction: column;
     width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .horizontal.stackOnMobile {
+    flex-direction: column;
     gap: 0.35rem;
   }
 }
@@ -38,9 +43,18 @@ html[data-theme='dark'] .segmented {
 }
 
 @media (max-width: 480px) {
-  .horizontal .item {
+  .horizontal.stackOnMobile .item {
     text-align: left;
     padding: 0.6rem 0.85rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .horizontal:not(.stackOnMobile) .item {
+    flex: 1;
+    min-width: 0;
+    justify-content: center;
+    padding-inline: 0.5rem;
   }
 }
 
@@ -49,7 +63,7 @@ html[data-theme='dark'] .segmented {
 }
 
 @media (max-width: 480px) {
-  .horizontal .label {
+  .horizontal.stackOnMobile .label {
     flex: 1;
   }
 }

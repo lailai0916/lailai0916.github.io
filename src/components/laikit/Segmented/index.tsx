@@ -23,6 +23,8 @@ interface SegmentedProps<T> {
   /** Required only when at least one item is button-style (no href). */
   onChange?: (value: T) => void;
   orientation?: 'vertical' | 'horizontal';
+  /** Stack horizontal items vertically on narrow screens. */
+  stackOnMobile?: boolean;
   className?: string;
   /**
    * Accessible name for the group. Applied to the radiogroup in button mode;
@@ -36,6 +38,7 @@ export default function Segmented<T>({
   items,
   onChange,
   orientation = 'vertical',
+  stackOnMobile = true,
   className,
   ariaLabel,
 }: SegmentedProps<T>) {
@@ -62,6 +65,7 @@ export default function Segmented<T>({
       className={clsx(
         styles.segmented,
         orientation === 'horizontal' && styles.horizontal,
+        orientation === 'horizontal' && stackOnMobile && styles.stackOnMobile,
         className
       )}
       role={isNav ? undefined : 'radiogroup'}
