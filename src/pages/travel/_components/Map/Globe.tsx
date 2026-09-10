@@ -30,6 +30,8 @@ import {
   type WorldGeoJson,
 } from '@site/src/utils/travelGlobe';
 import { withTimeout } from '@site/src/utils/withTimeout';
+import LocationMarker from './LocationMarker';
+import { HOME_LOCATION } from './LocationMarker/renderMarker';
 
 countries.registerLocale(countriesEn);
 countries.registerLocale(countriesZh);
@@ -77,7 +79,7 @@ const PAUSE_ROTATION_LABEL = translate({
   id: 'pages.travel.map.pause',
   message: 'Pause rotation',
 });
-const DEFAULT_POINT_OF_VIEW = { lat: 30, lng: 120, altitude: 1.8 };
+const DEFAULT_POINT_OF_VIEW = { ...HOME_LOCATION, altitude: 1.8 };
 const RESET_DURATION_MS = 600;
 const GEOJSON_TIMEOUT_MS = 15000;
 
@@ -161,30 +163,6 @@ function TravelGlobeClient({
 
   const locale = i18n.currentLocale;
   const lang = locale === 'zh-Hans' ? 'zh' : 'en';
-
-  const avatarUrl = useBaseUrl('/img/logo.png');
-  const homeLocationData = useMemo(() => [{ lat: 30.27, lng: 120.16 }], []);
-  const createLocationMarker = useCallback(() => {
-    const marker = document.createElement('div');
-    marker.className = styles.locationMarker;
-    marker.setAttribute('role', 'img');
-    marker.setAttribute('aria-label', HOME_LOCATION_LABEL);
-
-    const pin = document.createElement('span');
-    pin.className = styles.locationPin;
-    const avatar = document.createElement('img');
-    avatar.src = avatarUrl;
-    avatar.alt = '';
-    avatar.width = 32;
-    avatar.height = 32;
-    avatar.draggable = false;
-    pin.append(avatar);
-    marker.append(pin);
-    return marker;
-  }, [avatarUrl]);
-  const updateLocationMarkerVisibility = useCallback((marker: HTMLElement, isVisible: boolean) => {
-    marker.classList.toggle(styles.locationMarkerBehind, !isVisible);
-  }, []);
 
   const [hovered, setHovered] = useState<HoveredCountry | null>(null);
   const [cursor, setCursor] = useState({ x: 0, y: 0 });
@@ -522,12 +500,14 @@ function TravelGlobeClient({
           showGlobe
           showAtmosphere={false}
           globeMaterial={globeMaterial}
-          htmlElementsData={homeLocationData}
-          htmlElement={createLocationMarker}
-          htmlElementVisibilityModifier={updateLocationMarkerVisibility}
-          htmlAltitude={0}
-          htmlTransitionDuration={0}
           onGlobeReady={handleReady}
+        />
+        <LocationMarker
+          globeRef={globeRef}
+          ready={isGlobeReady}
+          width={size.width}
+          height={size.height}
+          label={HOME_LOCATION_LABEL}
         />
       </div>
       {!isReady && !geoFailed && (

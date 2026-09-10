@@ -91,6 +91,8 @@ export const FRIEND_LIST: FriendItem[] = [
   },
   {
     title: 'SkyWT',
+    description: 'Passionate software designer & engineer.',
     href: 'https://skywt.net',
+    avatar: 'https://img.skywt.net/avatar.jpg',
   },
 ];
