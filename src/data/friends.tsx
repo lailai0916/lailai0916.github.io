@@ -90,7 +90,7 @@ export const FRIEND_LIST: FriendItem[] = [
     avatar: 'https://cdn.jsdelivr.net/npm/bsi/avatar/512x512.png',
   },
   {
-    title: "CyanHaze's homepage",
+    title: "CyanHaze's Homepage",
     description: 'Undergraduate @ ZJU',
     href: 'https://cyanhaze.github.io',
     avatar: 'https://cyanhaze.github.io/images/avatar.png',
