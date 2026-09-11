@@ -11,7 +11,11 @@ interface SysStatus {
   load?: number[];
   cores?: number;
   disk?: number | null;
+  disk_used_mb?: number | null;
+  disk_total_mb?: number | null;
   swap?: number | null;
+  swap_used_mb?: number | null;
+  swap_total_mb?: number | null;
   last_deploy?: number | null;
   tls_expires_in?: number | null;
   ip?: string | null;

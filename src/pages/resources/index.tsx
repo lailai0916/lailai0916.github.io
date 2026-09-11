@@ -45,7 +45,7 @@ const SEARCH_PLACEHOLDER = translate({
 });
 const CATEGORY_MENU_LABEL = translate({
   id: 'pages.resources.category.ariaLabel',
-  message: 'Resource categories',
+  message: 'Resource Categories',
 });
 
 function filterResourceCategories(

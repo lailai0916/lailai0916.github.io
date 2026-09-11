@@ -22,6 +22,8 @@ Date-time behavior follows the value's meaning, not one blanket timezone convers
 - Framework-generated values and external API payloads retain their contract format. Normalize them only at their input boundary.
 - Use `src/utils/dateTime.ts` for parsing, formatting, date keys, month keys, and chronological comparison. Do not add direct instant parsing or `toLocale*` formatting in consumers.
 - Human-visible clock times use `hourCycle: 'h23'` and therefore range from `00:00` through `23:59`. Do not use `hour12`.
+- Runtime Snapshot uses `YYYY-MM-DD HH:mm:ss` for build time, local time, and the deployment timestamp tooltip in both locales; these still use the visitor's timezone.
+- Runtime Snapshot durations use narrow localized units (`70d`, `9m ago` in English); relative times retain numeric offsets (`1d ago`).
 
 ## Display zones
 

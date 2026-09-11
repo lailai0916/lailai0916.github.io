@@ -2308,11 +2308,74 @@
   "pages.insights.retry": {
     "message": "重试"
   },
+  "pages.insights.systemStatus.cores": {
+    "message": "核心"
+  },
+  "pages.insights.systemStatus.localTime": {
+    "message": "本地时间"
+  },
+  "pages.insights.systemStatus.lastDeploy": {
+    "message": "最近部署"
+  },
+  "pages.insights.systemStatus.stale": {
+    "message": "更新暂不可用 · 当前显示上次服务器快照"
+  },
+  "pages.insights.systemStatus.error": {
+    "message": "服务器数据暂不可用 · 正在自动重试"
+  },
+  "pages.insights.systemStatus.resources": {
+    "message": "服务器资源"
+  },
+  "pages.insights.systemStatus.cpu": {
+    "message": "CPU"
+  },
+  "pages.insights.systemStatus.memory": {
+    "message": "内存"
+  },
+  "pages.insights.systemStatus.disk": {
+    "message": "磁盘"
+  },
+  "pages.insights.systemStatus.swap": {
+    "message": "交换空间"
+  },
   "pages.insights.systemStatus.title": {
     "message": "运行时快照"
   },
-  "pages.insights.systemStatus.srLabel": {
-    "message": "系统状态概览"
+  "pages.insights.systemStatus.server": {
+    "message": "服务器状态"
+  },
+  "pages.insights.systemStatus.uptime": {
+    "message": "持续运行"
+  },
+  "pages.insights.systemStatus.load": {
+    "message": "负载"
+  },
+  "pages.insights.systemStatus.tls": {
+    "message": "证书有效期"
+  },
+  "pages.insights.systemStatus.debugId": {
+    "message": "构建标识"
+  },
+  "pages.insights.systemStatus.buildTime": {
+    "message": "构建时间"
+  },
+  "pages.insights.systemStatus.client": {
+    "message": "访问环境"
+  },
+  "pages.insights.systemStatus.ip": {
+    "message": "你的 IP"
+  },
+  "pages.insights.systemStatus.latency": {
+    "message": "请求延迟"
+  },
+  "pages.insights.systemStatus.host": {
+    "message": "当前域名"
+  },
+  "pages.insights.systemStatus.browser": {
+    "message": "浏览器"
+  },
+  "pages.insights.systemStatus.protocol": {
+    "message": "连接类型"
   },
   "pages.insights.uptime.avgPing": {
     "message": "平均 {ping}ms"
