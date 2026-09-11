@@ -1526,27 +1526,6 @@
   "components.desmos.frameTitle": {
     "message": "Desmos 图形计算器"
   },
-  "components.playground.tab.neuralNetwork": {
-    "message": "神经网络"
-  },
-  "components.playground.tab.fourierTransform": {
-    "message": "傅里叶变换"
-  },
-  "components.playground.tab.lorenzAttractor": {
-    "message": "洛伦兹吸引子"
-  },
-  "components.playground.tab.gameOfLife": {
-    "message": "生命游戏"
-  },
-  "components.playground.tab.nimGame": {
-    "message": "尼姆游戏"
-  },
-  "components.playground.collapse": {
-    "message": "收起"
-  },
-  "components.playground.expand": {
-    "message": "展开"
-  },
   "components.problem.collapse": {
     "message": "收起"
   },
@@ -1579,21 +1558,6 @@
   },
   "pages.changelog.datacard.entries": {
     "message": "条日志"
-  },
-  "pages.friends.title": {
-    "message": "友链"
-  },
-  "pages.friends.description": {
-    "message": "真正的友谊是世上最稀有的东西"
-  },
-  "pages.friends.modification": {
-    "message": "我的<b>友链</b>"
-  },
-  "pages.friends.requestLink": {
-    "message": "申请友链"
-  },
-  "pages.friends.requestSubject": {
-    "message": "友链申请"
   },
   "pages.insights.title": {
     "message": "洞察"
@@ -1699,6 +1663,21 @@
   },
   "pages.insights.audience.title": {
     "message": "访客分析"
+  },
+  "pages.friends.title": {
+    "message": "友链"
+  },
+  "pages.friends.description": {
+    "message": "真正的友谊是世上最稀有的东西"
+  },
+  "pages.friends.modification": {
+    "message": "我的<b>友链</b>"
+  },
+  "pages.friends.requestLink": {
+    "message": "申请友链"
+  },
+  "pages.friends.requestSubject": {
+    "message": "友链申请"
   },
   "pages.privacy.title": {
     "message": "隐私政策"
@@ -2018,30 +1997,6 @@
   "components.playground.nim.tip": {
     "message": "提示"
   },
-  "components.github.error": {
-    "message": "加载 GitHub 数据失败"
-  },
-  "components.github.noDescription": {
-    "message": "暂无描述"
-  },
-  "components.github.stars": {
-    "message": "Star 数"
-  },
-  "components.github.forks": {
-    "message": "Fork 数"
-  },
-  "components.github.license": {
-    "message": "许可证"
-  },
-  "components.github.language": {
-    "message": "主要语言"
-  },
-  "components.markdown.aboutGreeting": {
-    "message": "Hello, I'm lailai"
-  },
-  "components.quote.attributionDash": {
-    "message": "—— "
-  },
   "pages.moments.title": {
     "message": "动态"
   },
@@ -2182,6 +2137,30 @@
   },
   "pages.overview.metric.moments": {
     "message": "动态"
+  },
+  "components.github.error": {
+    "message": "加载 GitHub 数据失败"
+  },
+  "components.github.noDescription": {
+    "message": "暂无描述"
+  },
+  "components.github.stars": {
+    "message": "Star 数"
+  },
+  "components.github.forks": {
+    "message": "Fork 数"
+  },
+  "components.github.license": {
+    "message": "许可证"
+  },
+  "components.github.language": {
+    "message": "主要语言"
+  },
+  "components.markdown.aboutGreeting": {
+    "message": "Hello, I'm lailai"
+  },
+  "components.quote.attributionDash": {
+    "message": "—— "
   },
   "blog.post.empty": {
     "message": "暂无文章"
@@ -2486,9 +2465,6 @@
     "message": "页面路径",
     "description": "The ARIA label for the breadcrumbs"
   },
-  "theme.docs.versionBadge.label": {
-    "message": "版本：{versionLabel}"
-  },
   "theme.docs.tagDocListPageTitle.nDocsTagged": {
     "message": "{count} 篇文档带有标签",
     "description": "Pluralized label for \"{count} docs tagged\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
@@ -2497,9 +2473,8 @@
     "message": "{nDocsTagged}「{tagName}」",
     "description": "The title of the page for a docs tag"
   },
-  "theme.common.editThisPage": {
-    "message": "编辑此页",
-    "description": "The link label to edit the current page"
+  "theme.docs.versionBadge.label": {
+    "message": "版本：{versionLabel}"
   },
   "theme.docs.versions.unreleasedVersionLabel": {
     "message": "此为 {siteTitle} {versionLabel} 版尚未发行的文档。",
@@ -2516,6 +2491,10 @@
   "theme.docs.versions.latestVersionLinkLabel": {
     "message": "最新版本",
     "description": "The label used for the latest version suggestion link label"
+  },
+  "theme.common.editThisPage": {
+    "message": "编辑此页",
+    "description": "The link label to edit the current page"
   },
   "theme.common.headingLinkTitle": {
     "message": "{heading}的直接链接",
@@ -2589,13 +2568,13 @@
     "message": "主导航",
     "description": "The ARIA label for the main navigation"
   },
-  "theme.NotFound.p2": {
-    "message": "请联系原始链接来源网站的所有者，并告知他们链接已损坏。",
-    "description": "The 2nd paragraph of the 404 page"
-  },
   "theme.navbar.mobileLanguageDropdown.label": {
     "message": "选择语言",
     "description": "The label for the mobile language switcher dropdown"
+  },
+  "theme.NotFound.p2": {
+    "message": "请联系原始链接来源网站的所有者，并告知他们链接已损坏。",
+    "description": "The 2nd paragraph of the 404 page"
   },
   "theme.TOCCollapsible.toggleButtonLabel": {
     "message": "本页总览",

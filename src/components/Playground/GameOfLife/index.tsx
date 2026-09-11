@@ -8,7 +8,7 @@ import {
 import { useColorMode } from '@docusaurus/theme-common';
 import { translate } from '@docusaurus/Translate';
 import Button from '@site/src/components/laikit/Button';
-import Surface from '@site/src/components/Playground/Surface';
+import Card from '@site/src/components/laikit/Card';
 import styles from './styles.module.css';
 
 const BASE_SIZE = 500;
@@ -86,7 +86,7 @@ function step(src: Grid): Grid {
   return dst;
 }
 
-export default function GameOfLife({ bare = false }: { bare?: boolean }) {
+export default function GameOfLife() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const [canvasSize, setCanvasSize] = useState(BASE_SIZE);
@@ -115,8 +115,9 @@ export default function GameOfLife({ bare = false }: { bare?: boolean }) {
 
   useEffect(() => {
     const updateSize = () => {
-      if (!containerRef.current) return;
-      const w = containerRef.current.clientWidth;
+      const surface = canvasRef.current?.parentElement;
+      if (!surface) return;
+      const w = surface.clientWidth;
       const newSize = Math.min(w, BASE_SIZE);
       setCanvasSize((prev) => (Math.abs(newSize - prev) > 1 ? newSize : prev));
     };
@@ -240,7 +241,7 @@ export default function GameOfLife({ bare = false }: { bare?: boolean }) {
 
   return (
     <div ref={containerRef} className={styles.container}>
-      <Surface bare={bare} className={styles.cardSurface}>
+      <Card padding="0" className={styles.cardSurface}>
         <canvas
           ref={canvasRef}
           width={canvasSize * dpr}
@@ -252,7 +253,7 @@ export default function GameOfLife({ bare = false }: { bare?: boolean }) {
           onPointerUp={handlePointerUp}
           onPointerCancel={handlePointerUp}
         />
-      </Surface>
+      </Card>
       <div className={styles.controls}>
         <Button
           variant={running ? 'secondary' : 'primary'}

@@ -9,7 +9,7 @@ import { useColorMode } from '@docusaurus/theme-common';
 import { translate } from '@docusaurus/Translate';
 import Slider from '@site/src/components/laikit/Slider';
 import Button from '@site/src/components/laikit/Button';
-import Surface from '@site/src/components/Playground/Surface';
+import Card from '@site/src/components/laikit/Card';
 import styles from './styles.module.css';
 
 const TWO_PI = 2 * Math.PI;
@@ -141,7 +141,7 @@ function ParamSlider({ label, value, min, max, step, precision, onChange }: Slid
   );
 }
 
-export default function LorenzAttractor({ bare = false }: { bare?: boolean }) {
+export default function LorenzAttractor() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const [canvasSize, setCanvasSize] = useState(BASE_SIZE);
@@ -196,8 +196,9 @@ export default function LorenzAttractor({ bare = false }: { bare?: boolean }) {
 
   useEffect(() => {
     const updateSize = () => {
-      if (!containerRef.current) return;
-      const containerWidth = containerRef.current.clientWidth;
+      const surface = canvasRef.current?.parentElement;
+      if (!surface) return;
+      const containerWidth = surface.clientWidth;
       const newSize = Math.min(containerWidth, BASE_SIZE);
       setCanvasSize((prev) => (Math.abs(newSize - prev) > 1 ? newSize : prev));
     };
@@ -361,7 +362,7 @@ export default function LorenzAttractor({ bare = false }: { bare?: boolean }) {
 
   return (
     <div ref={containerRef} className={styles.container}>
-      <Surface bare={bare} className={styles.cardSurface}>
+      <Card padding="0" className={styles.cardSurface}>
         <canvas
           ref={canvasRef}
           width={canvasSize * dpr}
@@ -373,7 +374,7 @@ export default function LorenzAttractor({ bare = false }: { bare?: boolean }) {
           onPointerUp={handlePointerUp}
           onPointerCancel={handlePointerUp}
         />
-      </Surface>
+      </Card>
       <div className={styles.controls}>
         <ParamSlider
           label="σ"

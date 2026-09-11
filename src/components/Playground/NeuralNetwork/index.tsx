@@ -15,7 +15,7 @@ import {
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import { translate } from '@docusaurus/Translate';
 import Button from '@site/src/components/laikit/Button';
-import Surface from '@site/src/components/Playground/Surface';
+import Card from '@site/src/components/laikit/Card';
 import styles from './styles.module.css';
 
 const CLEAR_LABEL = translate({
@@ -60,13 +60,7 @@ function getNeuronPosition(layerIndex: number, visibleNeuronIndex: number) {
   };
 }
 
-export default function NeuralNetwork({
-  instant = false,
-  bare = false,
-}: {
-  instant?: boolean;
-  bare?: boolean;
-}) {
+export default function NeuralNetwork({ instant = false }: { instant?: boolean }) {
   const dataUrl = useBaseUrl('/json/neural-network-data.json');
   const [dataLoaded, setDataLoaded] = useState(false);
   const [points, setPoints] = useState<Point[]>([]);
@@ -171,7 +165,7 @@ export default function NeuralNetwork({
 
   return (
     <div className={styles.container}>
-      <Surface bare={bare} className={styles.cardSurface}>
+      <Card padding="0" className={styles.cardSurface}>
         <div className={styles.frame}>
           <svg
             className={styles.svg}
@@ -249,7 +243,7 @@ export default function NeuralNetwork({
             />
           </svg>
         </div>
-      </Surface>
+      </Card>
 
       <div className={styles.controls}>
         <Button
