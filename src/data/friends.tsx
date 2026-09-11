@@ -49,12 +49,6 @@ export const FRIEND_LIST: FriendItem[] = [
     avatar: 'https://cdn.luogu.com.cn/upload/usericon/718017.png',
   },
   {
-    title: 'tiko_tao',
-    description: 'Ciallo～(∠・ω< )⌒★',
-    href: 'https://www.luogu.com.cn/user/372404',
-    avatar: 'https://cdn.luogu.com.cn/upload/usericon/372404.png',
-  },
-  {
     title: 'Castamere',
     description: '代码美学',
     href: 'https://www.castamerego.com',
@@ -94,5 +88,11 @@ export const FRIEND_LIST: FriendItem[] = [
     description: '即使是沉重的过去，也要接受它再继续向前迈进。',
     href: 'https://baoshuo.ren',
     avatar: 'https://cdn.jsdelivr.net/npm/bsi/avatar/512x512.png',
+  },
+  {
+    title: "CyanHaze's homepage",
+    description: 'Undergraduate @ ZJU',
+    href: 'https://cyanhaze.github.io',
+    avatar: 'https://cyanhaze.github.io/images/avatar.png',
   },
 ];
