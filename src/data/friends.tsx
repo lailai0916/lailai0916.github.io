@@ -86,7 +86,7 @@ export const FRIEND_LIST: FriendItem[] = [
   {
     title: '宝硕',
     description: '即使是沉重的过去，也要接受它再继续向前迈进。',
-    href: 'https://baoshuo.ren',
+    href: 'https://oi.baoshuo.ren',
     avatar: 'https://cdn.jsdelivr.net/npm/bsi/avatar/512x512.png',
   },
   {
