@@ -1,0 +1,10 @@
+{
+  "theme.SearchPage.existingResultsTitle": {
+    "message": "Search Results for \"{query}\"",
+    "description": "The search page title for non-empty query"
+  },
+  "theme.SearchPage.emptyResultsTitle": {
+    "message": "Search the Documentation",
+    "description": "The search page title for empty query"
+  }
+}

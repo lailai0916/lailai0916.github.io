@@ -49,14 +49,14 @@ There is no test runner. `npm run check` is the gate.
 Path-scoped detail — before editing, read each file whose scope matches the target paths.
 Don't restate their content here; extend the file itself.
 
-| Rule                                                               | Scope                                     | Covers                                                                                                 |
-| ------------------------------------------------------------------ | ----------------------------------------- | ------------------------------------------------------------------------------------------------------ |
-| [`.agents/rules/components.md`](.agents/rules/components.md)       | `src/**` ts·tsx·css                       | `laikit` inventory, CSS-Module layout & rule ordering, hover-motion limits, text-overflow, MDX widgets |
-| [`.agents/rules/i18n.md`](.agents/rules/i18n.md)                   | `src/**`, `i18n/**`                       | `translate()` workflow, five-prefix taxonomy, key shapes, orphan cleanup                               |
-| [`.agents/rules/comments.md`](.agents/rules/comments.md)           | `src/**`, `*.ts`                          | code-comment style (site-specific slice)                                                               |
-| [`.agents/rules/datetime.md`](.agents/rules/datetime.md)           | `src/**`, `docusaurus.config.ts`          | instant/calendar/duration semantics, storage offsets, visitor display zones, API boundaries            |
-| [`.agents/rules/writing-style.md`](.agents/rules/writing-style.md) | `blog/**`, `docs/**`, translated MDX      | frontmatter, content envelope, site exceptions, MDX widgets, images, and links                         |
-| [`.agents/rules/solution-sync.md`](.agents/rules/solution-sync.md) | solution posts and Luogu contribution doc | Site mirror/frontmatter and AI-index layer; full Luogu workflow is routed by `lailai-skill`            |
+| Rule                                                               | Scope                                     | Covers                                                                                                       |
+| ------------------------------------------------------------------ | ----------------------------------------- | ------------------------------------------------------------------------------------------------------------ |
+| [`.agents/rules/components.md`](.agents/rules/components.md)       | `src/**` ts·tsx·css                       | `laikit` inventory, CSS-Module layout & rule ordering, hover-motion limits, text-overflow, MDX widgets       |
+| [`.agents/rules/i18n.md`](.agents/rules/i18n.md)                   | `src/**`, `i18n/**`                       | `translate()` workflow, five-prefix taxonomy, key shapes, orphan cleanup                                     |
+| [`.agents/rules/comments.md`](.agents/rules/comments.md)           | `src/**`, `*.ts`                          | code-comment style (site-specific slice)                                                                     |
+| [`.agents/rules/datetime.md`](.agents/rules/datetime.md)           | `src/**`, `docusaurus.config.ts`          | instant/calendar/duration semantics, storage offsets, visitor display zones, API boundaries                  |
+| [`.agents/rules/writing-style.md`](.agents/rules/writing-style.md) | `blog/**`, `docs/**`, translated MDX      | frontmatter, English title capitalization, content envelope, site exceptions, MDX widgets, images, and links |
+| [`.agents/rules/solution-sync.md`](.agents/rules/solution-sync.md) | solution posts and Luogu contribution doc | Site mirror/frontmatter and AI-index layer; full Luogu workflow is routed by `lailai-skill`                  |
 
 ## Architecture
 
@@ -94,6 +94,7 @@ Site-specific rules (general taste — 精益求精, edit-don't-rewrite, comment
 
 - **Reuse `laikit` primitives** before adding a component; preserve the site's existing typography, colors, surfaces, and control behavior; page layouts may differ without introducing a new visual style.
 - **i18n is mandatory** — a new user-facing string needs both a `translate()` call and a `zh-Hans` entry in `i18n/zh-Hans/code.json`.
+- **English titles and headings** across UI and content follow the shared [capitalization rules](.agents/rules/writing-style.md#english-capitalization).
 - **Own domains: destination → link, identifier → `` `code` ``, never bare.** Full rule + rationale in [`.agents/rules/writing-style.md`](.agents/rules/writing-style.md) (_Links and references_) — repeated here because it binds **outside** that file's blog/docs path scope: `src/pages/{about,privacy}`, `src/data/changelog.tsx`, and both READMEs.
 - **Verify before committing** — `npm run check` must exit clean; for UI changes, also confirm in the `npm start` dev server.
 - **Style checker hook** — `.claude/settings.json` wires a `PostToolUse` hook to the user-level `lailai-skill` mechanical checker on every edited `.md`/`.mdx`/`.cpp`/`.ts`/… file. It is **diff-aware** (only lines changed since `HEAD` are checked, so legacy `\dfrac`/「显然」in old notes don't block unrelated edits) and blocks (exit 2) on ERROR-tier violations. WARN-tier is advisory. If the checker is unavailable, the hook exits without inventing a project-local copy.

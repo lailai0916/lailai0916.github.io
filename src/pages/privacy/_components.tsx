@@ -38,7 +38,7 @@ const HIGHLIGHTS = [
     icon: 'lucide:user-round-x',
     title: translate({
       id: 'pages.privacy.summary.account.title',
-      message: 'No account required',
+      message: 'No Account Required',
     }),
     description: translate({
       id: 'pages.privacy.summary.account.description',
@@ -49,7 +49,7 @@ const HIGHLIGHTS = [
     icon: 'lucide:badge-dollar-sign',
     title: translate({
       id: 'pages.privacy.summary.advertising.title',
-      message: 'No targeted advertising',
+      message: 'No Targeted Advertising',
     }),
     description: translate({
       id: 'pages.privacy.summary.advertising.description',
@@ -60,7 +60,7 @@ const HIGHLIGHTS = [
     icon: 'lucide:sliders-horizontal',
     title: translate({
       id: 'pages.privacy.summary.control.title',
-      message: 'Browser-level control',
+      message: 'Browser-Level Control',
     }),
     description: translate({
       id: 'pages.privacy.summary.control.description',

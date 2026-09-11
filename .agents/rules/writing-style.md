@@ -36,6 +36,15 @@ links, and the local envelope around externally produced solution bodies.
 - `## 参考资料` is conventionally the **first** `##` of any math/misc post that cites sources — it goes before the body, not after.
 - **Docs carry no pre-heading lead line.** The single-sentence description that used to sit between frontmatter and the first `##` is gone site-wide — a doc body opens directly at `##` (a lead paragraph is blog-only, see _Intro and truncate_). A kept subject intro / definition goes in a `## 简介` section (`统计学是…`, `Kahan 求和算法，又名…`); an editorial note about the doc itself — how it's organised, what it covers — goes in `## 说明` (`这份笔记对照人教版教材，按专题归类…`). Both sit **after** `## 参考资料`, never as a bare paragraph before the first heading.
 
+### English capitalization
+
+- **Site-owned English titles and headings use Title Case.** This applies across UI page titles, card titles, section headings, tab titles, and English headings in docs, blog posts, and custom-page MDX.
+- Capitalize the first and last word, nouns, pronouns, verbs, adjectives, adverbs, and prepositions of five or more letters. Keep interior articles (`a`, `an`, `the`), coordinating conjunctions (`and`, `or`, `but`, `nor`, `for`, `so`, `yet`), short prepositions of four or fewer letters (`of`, `in`, `on`, `to`, `for`, `per`, `with`), and infinitive `to` lowercase. Capitalize particles in phrasal verbs and content words on both sides of a hyphen, as in `Browser-Level Control` and `Automated Decision-Making`.
+- Examples: `Server Resources`, `Posts per Month`, `Game of Life`, `Search Results for "…"`, `Information Stored in Your Browser`, and `Meet in the Middle`.
+- **Descriptions, explanatory text, status messages, and data field labels use sentence case**, such as `Request latency` and `Last deploy`. Apply capitalization by the text's role; bold text or a translation key containing `title` alone does not make it a heading.
+- **Preserve exact names and literal content:** `lailai`, `macOS`, `iPhone`, code identifiers, mathematical notation, user-entered search queries, and quoted work/problem titles keep their original spelling and capitalization.
+- Write the intended capitalization in source or locale messages; do not apply CSS `text-transform` or a blanket runtime capitalizer. The convention follows [Apple's title-style capitalization guidance](https://developer.apple.com/library/archive/documentation/FinalCutProX/Conceptual/FxPlugHIG/TextStyleGuidelines/TextStyleGuidelines.html).
+
 ## Site voice exceptions
 
 - `~~strikethrough~~` is reserved for **wry self-mocking parentheticals**, never for actual deletion: `~~细胞膜融合~~。`, `~~半小时过 T1，罚坐四小时。~~`. Use sparingly.
