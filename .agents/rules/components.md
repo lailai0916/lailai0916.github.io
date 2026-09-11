@@ -36,6 +36,8 @@ Before adding a component, check whether an existing primitive (optionally with 
 
 ## Shared article chrome (blog + docs)
 
+- **Blog list previews** (`BlogShared/PostsListLayout`) keep the existing vertical layout for pinned posts and posts without a frontmatter cover image. Non-pinned posts with a cover put text on the left and the image on the right, without the redundant Read more link; the title and cover still link to the article. When the cover is taller, the text column stretches to its height: metadata, title, and excerpt stay at the top, while the divider and tags stay at the bottom. These cards stack at a card width of `560px` or less, using a container query so the blog sidebar cannot squeeze the text column. Keep cover dimensions reserved before images load.
+
 `src/components/Article/` holds the article-page chrome shared by blog posts and docs — a grouped folder (its own `styles.module.css` shared module + one subfolder per component), so its strings live under the `components.article.*` i18n prefix.
 
 - **`Actions`** (`{ source?, editUrl? }`) — the small top-right icon row: `CopyMarkdownButton` + an "Edit this page" `Link`. Blog `PostChrome`'s `PostHeader` renders it next to the meta bar; the swizzled `DocItem/Layout` renders it next to the breadcrumbs.

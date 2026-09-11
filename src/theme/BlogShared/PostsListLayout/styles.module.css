@@ -10,6 +10,23 @@
   border-color: var(--ifm-color-primary);
 }
 
+.postCardWithCover {
+  container: blog-post / inline-size;
+}
+
+.postLayout {
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+  align-items: center;
+  gap: 1.25rem;
+}
+
+@container blog-post (max-width: 560px) {
+  .postLayout {
+    display: block;
+  }
+}
+
 .postCoverWrap {
   display: block;
   margin: 0 0 1.25rem;
@@ -30,6 +47,33 @@
   display: block;
   aspect-ratio: 16 / 9;
   object-fit: cover;
+}
+
+.postSideCover {
+  grid-area: 1 / 2;
+  margin: 0;
+  aspect-ratio: 4 / 3;
+}
+
+.postSideCover .postCover {
+  height: 100%;
+  aspect-ratio: auto;
+}
+
+@container blog-post (max-width: 560px) {
+  .postSideCover {
+    margin-bottom: 1rem;
+    aspect-ratio: 16 / 9;
+  }
+}
+
+.postContent {
+  display: flex;
+  flex-direction: column;
+  grid-area: 1 / 1;
+  align-self: stretch;
+  min-width: 0;
+  overflow-wrap: break-word;
 }
 
 .postTitle {
@@ -74,6 +118,10 @@
   border-top: 1px solid var(--ifm-color-emphasis-200);
   font-size: 0.85rem;
   color: var(--ifm-color-emphasis-600);
+}
+
+.postContent .postFooter {
+  margin-top: auto;
 }
 
 /* Right-aligned "Read more" link, mirroring detail footer's lastUpdated. */

@@ -32,6 +32,8 @@ function PostCard({ item }: PostCardProps) {
   const { content: MDXPageContent } = item;
   const { metadata, frontMatter } = MDXPageContent;
   const image = frontMatter.image as string | undefined;
+  const pinned = (frontMatter as Record<string, unknown>).pinned === true;
+  const hasSideCover = Boolean(image) && !pinned;
 
   const tagItems = metadata.tags.map((t) => ({ to: t.permalink, label: t.label }));
 
@@ -39,17 +41,51 @@ function PostCard({ item }: PostCardProps) {
     permalink: metadata.permalink,
     date: metadata.date,
     readingTime: metadata.readingTime,
-    pinned: (frontMatter as Record<string, unknown>).pinned === true,
+    pinned,
     lid: (frontMatter as Record<string, unknown>).lid as string | undefined,
   });
 
+  const content = (
+    <>
+      <MetaBar items={metaItems} />
+
+      <h2 className={styles.postTitle}>
+        <Link to={metadata.permalink} className={styles.postTitleLink}>
+          {metadata.title}
+        </Link>
+      </h2>
+
+      <div className={styles.postExcerpt}>
+        <MDXContent>
+          <MDXPageContent />
+        </MDXContent>
+      </div>
+
+      {(tagItems.length > 0 || !hasSideCover) && (
+        <div className={styles.postFooter}>
+          {tagItems.length > 0 && <TagChipList items={tagItems} />}
+          {!hasSideCover && (
+            <Link
+              to={metadata.permalink}
+              className={styles.postFooterReadMore}
+              aria-label={READ_MORE_LABEL}
+            >
+              <span>{READ_MORE_LABEL}</span>
+              <Icon icon="lucide:arrow-right" width={14} height={14} />
+            </Link>
+          )}
+        </div>
+      )}
+    </>
+  );
+
   return (
-    <article className={styles.postCard}>
-      <Card>
+    <article className={clsx(styles.postCard, hasSideCover && styles.postCardWithCover)}>
+      <Card className={hasSideCover ? styles.postLayout : undefined}>
         {image && (
           <Link
             to={metadata.permalink}
-            className={styles.postCoverWrap}
+            className={clsx(styles.postCoverWrap, hasSideCover && styles.postSideCover)}
             tabIndex={-1}
             aria-hidden="true"
           >
@@ -57,31 +93,7 @@ function PostCard({ item }: PostCardProps) {
           </Link>
         )}
 
-        <MetaBar items={metaItems} />
-
-        <h2 className={styles.postTitle}>
-          <Link to={metadata.permalink} className={styles.postTitleLink}>
-            {metadata.title}
-          </Link>
-        </h2>
-
-        <div className={styles.postExcerpt}>
-          <MDXContent>
-            <MDXPageContent />
-          </MDXContent>
-        </div>
-
-        <div className={styles.postFooter}>
-          {tagItems.length > 0 && <TagChipList items={tagItems} />}
-          <Link
-            to={metadata.permalink}
-            className={styles.postFooterReadMore}
-            aria-label={READ_MORE_LABEL}
-          >
-            <span>{READ_MORE_LABEL}</span>
-            <Icon icon="lucide:arrow-right" width={14} height={14} />
-          </Link>
-        </div>
+        {hasSideCover ? <div className={styles.postContent}>{content}</div> : content}
       </Card>
     </article>
   );
