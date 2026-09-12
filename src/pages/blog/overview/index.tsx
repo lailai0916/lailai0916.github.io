@@ -2,6 +2,7 @@ import { type ReactNode } from 'react';
 import { translate } from '@docusaurus/Translate';
 import { usePluralForm } from '@docusaurus/theme-common';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
+import useIsBrowser from '@docusaurus/useIsBrowser';
 import BlogScaffold from '@site/src/theme/BlogShared/Scaffold';
 import { ArchiveTabsNav } from '@site/src/theme/BlogShared/ArchiveTabs';
 import DataCard from '@site/src/components/laikit/DataCard';
@@ -31,11 +32,12 @@ const CHART_EMPTY = translate({
   message: 'No posts yet',
 });
 
-// Continuous monthly timeline (gap months filled with 0); year ticks on January.
+// Extend through the current month, including months with no posts.
 function buildMonths(
   items: ReturnType<typeof getAllBlogItems>,
   locale: string,
-  timeZone: string
+  timeZone: string,
+  currentMonth: string
 ): ChartDatum[] {
   const map = new Map<string, number>();
   items.forEach((it) => {
@@ -50,7 +52,9 @@ function buildMonths(
 
   const out: ChartDatum[] = [];
   const [startY, startM] = keys[0].split('-').map(Number);
-  const [endY, endM] = keys[keys.length - 1].split('-').map(Number);
+  const lastMonth = keys[keys.length - 1];
+  const endMonth = lastMonth > currentMonth ? lastMonth : currentMonth;
+  const [endY, endM] = endMonth.split('-').map(Number);
   let y = startY;
   let m = startM;
   while (y < endY || (y === endY && m <= endM)) {
@@ -80,13 +84,19 @@ function toCumulative(months: ChartDatum[]): ChartDatum[] {
 }
 
 export default function BlogStats(): ReactNode {
-  const { i18n } = useDocusaurusContext();
+  const { i18n, siteConfig } = useDocusaurusContext();
   const { currentLocale, defaultLocale } = i18n;
   const localeKey = currentLocale === defaultLocale ? undefined : currentLocale;
   const timeZone = useVisitorTimeZone();
+  const isBrowser = useIsBrowser();
+  // Match the built HTML during hydration, then use the visitor's current month.
+  const currentMonth = getMonthKey(
+    isBrowser ? Date.now() : String(siteConfig.customFields?.buildTime ?? ''),
+    timeZone
+  );
 
   const items = getAllBlogItems();
-  const monthData = buildMonths(items, currentLocale, timeZone);
+  const monthData = buildMonths(items, currentLocale, timeZone, currentMonth);
   const cumulativeData = toCumulative(monthData);
   const tagCount = loadOfficialTags(localeKey).length;
   const postCount = items.length;

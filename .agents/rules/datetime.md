@@ -30,6 +30,7 @@ Date-time behavior follows the value's meaning, not one blanket timezone convers
 - Ordinary instants use `useVisitorTimeZone()` and display in the visitor's IANA timezone.
 - SSR uses `Asia/Shanghai` as the stable canonical fallback; Docusaurus switches to the visitor timezone after hydration.
 - Blog cards, archives, Calendar, Overview, and Moments derive their grouping keys from the same visitor timezone.
+- Overview's monthly and cumulative charts extend through the visitor's current month even when there are no posts in it. Fill missing months with zero posts and carry the cumulative total forward. Seed the current month from build time for SSR and initial hydration, then use the visitor's current date after hydration.
 - The homepage clock is the site owner's current local time and remains fixed to `Asia/Shanghai`.
 - The birthday countdown is a global event anchored to `09-16T00:00:00+08:00`; every visitor enters the celebration at the same instant.
 
