@@ -156,6 +156,8 @@ export default function Chart({
                       key={d.key}
                       className={i === hoverIdx ? styles.barActive : styles.bar}
                       style={{
+                        left: `${xPct(i)}%`,
+                        width: `calc(${100 / n}% - var(--chart-bar-gap))`,
                         height: d.value === 0 ? 0 : `${(d.value / yMax) * 100}%`,
                       }}
                     />

@@ -3,17 +3,19 @@
 }
 
 .plot {
+  --chart-bar-gap: 3px;
+
   position: relative;
   display: flex;
   align-items: flex-end;
-  gap: 3px;
   height: 260px;
   border-bottom: 1px solid var(--ifm-color-emphasis-200);
 }
 
 @media (max-width: 768px) {
   .plot {
-    gap: 1px;
+    --chart-bar-gap: 1px;
+
     height: 200px;
   }
 }
@@ -39,12 +41,13 @@
 
 .bar,
 .barActive {
-  position: relative;
+  position: absolute;
+  bottom: 0;
   z-index: 1;
-  flex: 1 1 0;
   min-width: 0;
   border-radius: 3px 3px 0 0;
   background: var(--ifm-color-primary);
+  transform: translateX(-50%);
   transition: background 160ms ease;
 }
 
