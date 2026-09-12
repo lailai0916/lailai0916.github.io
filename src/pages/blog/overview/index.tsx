@@ -12,6 +12,7 @@ import { useVisitorTimeZone } from '@site/src/hooks/useVisitorTimeZone';
 import { formatCalendarMonth, getMonthKey } from '@site/src/utils/dateTime';
 import { formatCompact } from '@site/src/utils/format';
 import Chart, { type ChartDatum } from '@site/src/components/laikit/Chart';
+import PopularPosts from './_components/PopularPosts';
 import styles from './styles.module.css';
 
 const TITLE = translate({ id: 'pages.overview.title', message: 'Overview' });
@@ -19,13 +20,9 @@ const DESCRIPTION = translate({
   id: 'pages.overview.description',
   message: 'A by-the-numbers look at what I have written here',
 });
-const MONTHLY_TITLE = translate({
-  id: 'pages.overview.chart.monthly.title',
+const CHART_TITLE = translate({
+  id: 'pages.overview.chart.title',
   message: 'Posts per Month',
-});
-const CUMULATIVE_TITLE = translate({
-  id: 'pages.overview.chart.cumulative.title',
-  message: 'Cumulative Posts',
 });
 const CHART_EMPTY = translate({
   id: 'pages.overview.chart.empty',
@@ -74,15 +71,6 @@ function buildMonths(
   return out;
 }
 
-// Running total over the same monthly timeline.
-function toCumulative(months: ChartDatum[]): ChartDatum[] {
-  let sum = 0;
-  return months.map((d) => {
-    sum += d.value;
-    return { ...d, value: sum };
-  });
-}
-
 export default function BlogStats(): ReactNode {
   const { i18n, siteConfig } = useDocusaurusContext();
   const { currentLocale, defaultLocale } = i18n;
@@ -97,7 +85,6 @@ export default function BlogStats(): ReactNode {
 
   const items = getAllBlogItems();
   const monthData = buildMonths(items, currentLocale, timeZone, currentMonth);
-  const cumulativeData = toCumulative(monthData);
   const tagCount = loadOfficialTags(localeKey).length;
   const postCount = items.length;
   // Reading time → word count, matching the blog sidebar's StatsCard (≈200 wpm).
@@ -164,20 +151,13 @@ export default function BlogStats(): ReactNode {
       </div>
       <Chart
         type="bar"
-        title={MONTHLY_TITLE}
-        icon="lucide:bar-chart-3"
+        size="plain"
+        title={CHART_TITLE}
         data={monthData}
         emptyText={CHART_EMPTY}
         formatValue={postsLabel}
       />
-      <Chart
-        type="line"
-        title={CUMULATIVE_TITLE}
-        icon="lucide:trending-up"
-        data={cumulativeData}
-        emptyText={CHART_EMPTY}
-        formatValue={postsLabel}
-      />
+      <PopularPosts items={items} />
     </BlogScaffold>
   );
 }

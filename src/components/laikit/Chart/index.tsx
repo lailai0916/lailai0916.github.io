@@ -19,7 +19,8 @@ export interface ChartDatum {
 
 interface ChartProps {
   title: string;
-  icon: string;
+  icon?: string;
+  size?: 'sm' | 'plain';
   type: 'bar' | 'line';
   data: ChartDatum[];
   loading?: boolean;
@@ -57,6 +58,7 @@ function computeScale(max: number): { yMax: number; gridLines: number[] } {
 export default function Chart({
   title,
   icon,
+  size = 'sm',
   type,
   data,
   loading,
@@ -116,10 +118,10 @@ export default function Chart({
 
   return (
     <TitleCard
-      size="sm"
+      size={size}
       icon={icon}
       title={title}
-      padding="1.5rem 1.25rem 1.25rem"
+      padding={size === 'plain' ? '1.25rem' : '1.5rem 1.25rem 1.25rem'}
       className={clsx(styles.card, className)}
     >
       {!loading && error ? (

@@ -23,6 +23,7 @@ interface BlogTagSummary {
 
 interface BlogPostMetadataSummary {
   permalink: string;
+  frontMatter?: { pinned?: boolean };
   tags: BlogTagSummary[];
   authors?: BlogAuthorSummary[];
   readingTime?: number;

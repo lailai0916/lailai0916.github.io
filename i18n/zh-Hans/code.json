@@ -1559,6 +1559,21 @@
   "pages.changelog.datacard.entries": {
     "message": "条日志"
   },
+  "pages.friends.title": {
+    "message": "友链"
+  },
+  "pages.friends.description": {
+    "message": "真正的友谊是世上最稀有的东西"
+  },
+  "pages.friends.modification": {
+    "message": "我的<b>友链</b>"
+  },
+  "pages.friends.requestLink": {
+    "message": "申请友链"
+  },
+  "pages.friends.requestSubject": {
+    "message": "友链申请"
+  },
   "pages.insights.title": {
     "message": "洞察"
   },
@@ -1663,21 +1678,6 @@
   },
   "pages.insights.audience.title": {
     "message": "访客分析"
-  },
-  "pages.friends.title": {
-    "message": "友链"
-  },
-  "pages.friends.description": {
-    "message": "真正的友谊是世上最稀有的东西"
-  },
-  "pages.friends.modification": {
-    "message": "我的<b>友链</b>"
-  },
-  "pages.friends.requestLink": {
-    "message": "申请友链"
-  },
-  "pages.friends.requestSubject": {
-    "message": "友链申请"
   },
   "pages.privacy.title": {
     "message": "隐私政策"
@@ -1997,6 +1997,30 @@
   "components.playground.nim.tip": {
     "message": "提示"
   },
+  "components.github.error": {
+    "message": "加载 GitHub 数据失败"
+  },
+  "components.github.noDescription": {
+    "message": "暂无描述"
+  },
+  "components.github.stars": {
+    "message": "Star 数"
+  },
+  "components.github.forks": {
+    "message": "Fork 数"
+  },
+  "components.github.license": {
+    "message": "许可证"
+  },
+  "components.github.language": {
+    "message": "主要语言"
+  },
+  "components.markdown.aboutGreeting": {
+    "message": "Hello, I'm lailai"
+  },
+  "components.quote.attributionDash": {
+    "message": "—— "
+  },
   "pages.moments.title": {
     "message": "动态"
   },
@@ -2114,11 +2138,8 @@
   "pages.overview.description": {
     "message": "用数据看看我在这里写过些什么"
   },
-  "pages.overview.chart.monthly.title": {
+  "pages.overview.chart.title": {
     "message": "每月发文"
-  },
-  "pages.overview.chart.cumulative.title": {
-    "message": "文章累计"
   },
   "pages.overview.chart.empty": {
     "message": "暂无文章"
@@ -2137,30 +2158,6 @@
   },
   "pages.overview.metric.moments": {
     "message": "动态"
-  },
-  "components.github.error": {
-    "message": "加载 GitHub 数据失败"
-  },
-  "components.github.noDescription": {
-    "message": "暂无描述"
-  },
-  "components.github.stars": {
-    "message": "Star 数"
-  },
-  "components.github.forks": {
-    "message": "Fork 数"
-  },
-  "components.github.license": {
-    "message": "许可证"
-  },
-  "components.github.language": {
-    "message": "主要语言"
-  },
-  "components.markdown.aboutGreeting": {
-    "message": "Hello, I'm lailai"
-  },
-  "components.quote.attributionDash": {
-    "message": "—— "
   },
   "blog.post.empty": {
     "message": "暂无文章"
@@ -2401,9 +2398,28 @@
   "blog.pages.authors.authorSelect": {
     "message": "作者"
   },
+  "pages.overview.popular.title": {
+    "message": "热门文章"
+  },
+  "pages.overview.popular.error": {
+    "message": "热门文章加载失败。"
+  },
+  "pages.overview.popular.retry": {
+    "message": "重试"
+  },
+  "pages.overview.popular.empty": {
+    "message": "暂无阅读数据。"
+  },
+  "pages.overview.popular.views": {
+    "message": "{count} 次阅读"
+  },
   "theme.ErrorPageContent.title": {
     "message": "页面已崩溃。",
     "description": "The title of the fallback page when the page crashed"
+  },
+  "theme.BackToTopButton.buttonAriaLabel": {
+    "message": "回到顶部",
+    "description": "The ARIA label for the back to top button"
   },
   "theme.blog.archive.title": {
     "message": "历史文章",
@@ -2412,10 +2428,6 @@
   "theme.blog.archive.description": {
     "message": "历史文章",
     "description": "The page & hero description of the blog archive page"
-  },
-  "theme.BackToTopButton.buttonAriaLabel": {
-    "message": "回到顶部",
-    "description": "The ARIA label for the back to top button"
   },
   "theme.blog.paginator.navAriaLabel": {
     "message": "文章列表分页导航",
