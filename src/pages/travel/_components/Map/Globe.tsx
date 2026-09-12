@@ -9,6 +9,7 @@ import {
   type RefObject,
 } from 'react';
 import clsx from 'clsx';
+import Color from 'color';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import { translate } from '@docusaurus/Translate';
@@ -213,17 +214,26 @@ function TravelGlobeClient({
     [features]
   );
 
-  const colors = useMemo(
-    () => ({
-      ocean: readCssVar('--ifm-color-emphasis-100'),
-      visited: readCssVar('--ifm-color-primary-lighter'),
-      unvisited: readCssVar('--ifm-color-emphasis-300'),
-      stroke: readCssVar('--ifm-color-emphasis-400'),
-    }),
-    // colorMode isn't read directly, but it's what makes the CSS vars re-read on theme flip.
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    [colorMode]
-  );
+  const colors = useMemo(() => {
+    const isDark = colorMode === 'dark';
+    const accent = Color(readCssVar('--ifm-color-primary'));
+    const land = Color(
+      readCssVar(isDark ? '--ifm-color-emphasis-200' : '--ifm-card-background-color')
+    ).mix(accent, isDark ? 0.04 : 0);
+    const ocean = Color(
+      readCssVar(isDark ? '--ifm-card-background-color' : '--ifm-color-emphasis-200')
+    ).mix(accent, isDark ? 0.06 : 0.025);
+
+    return {
+      ocean: ocean.hex(),
+      visited: accent
+        .desaturate(0.3)
+        .mix(land, isDark ? 0.3 : 0.38)
+        .hex(),
+      unvisited: land.hex(),
+      stroke: ocean.mix(land, isDark ? 0.15 : 0.35).hex(),
+    };
+  }, [colorMode]);
 
   useEffect(() => {
     let cancelled = false;
