@@ -72,11 +72,34 @@ const THEME_CONFIG = {
   },
 } as const;
 
-// localStorage so a chosen accent survives a reload — the whole point of the
-// settings tile. Light and dark mode share one accent, so they share storage too.
-export const themeStorage = createStorageSlot('ifm-theme-colors', {
+const COLOR_STORAGE_KEY = 'ifm-theme-colors';
+const legacyThemeStorage = createStorageSlot(COLOR_STORAGE_KEY, {
   persistence: 'localStorage',
 });
+
+// Docusaurus's automatic namespace includes the locale base URL. Use one fixed
+// key for the accent, migrating the current locale's old choice on first read.
+export const themeStorage = {
+  get(): string | null {
+    if (typeof window === 'undefined') return null;
+    try {
+      const stored = window.localStorage.getItem(COLOR_STORAGE_KEY);
+      if (stored !== null) return stored;
+      const legacy = legacyThemeStorage.get();
+      if (legacy !== null) window.localStorage.setItem(COLOR_STORAGE_KEY, legacy);
+      return legacy;
+    } catch {
+      return null;
+    }
+  },
+  set(value: string): void {
+    try {
+      window.localStorage.setItem(COLOR_STORAGE_KEY, value);
+    } catch {
+      // The color still applies for this visit when browser storage is blocked.
+    }
+  },
+};
 
 export function getThemeDefaults(isDarkTheme: boolean) {
   const theme = isDarkTheme ? 'dark' : 'light';

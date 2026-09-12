@@ -424,7 +424,8 @@ function QuickActions() {
 
   function handleReset() {
     setColorMode(null);
-    themeStorage.del();
+    // Keep an explicit default so another locale's legacy color cannot return.
+    themeStorage.set('{}');
     localStorage.removeItem(FONT_FAMILY_KEY);
     localStorage.removeItem(FONT_SIZE_KEY);
     localStorage.removeItem(LINE_HEIGHT_KEY);
