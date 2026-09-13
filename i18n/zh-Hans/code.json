@@ -2962,5 +2962,8 @@
   "theme.tags.tagsPageTitle": {
     "message": "标签",
     "description": "The title of the tag list page"
+  },
+  "pages.home.avatar.ariaLabel": {
+    "message": "拖动 lailai 的头像，松手回弹；或按回车键弹跳"
   }
 }

@@ -1,4 +1,5 @@
 .hero {
+  overflow: clip;
   padding: 3rem 1.5rem 4rem;
   min-height: calc(100vh - var(--ifm-navbar-height));
   display: flex;
@@ -9,7 +10,7 @@
 @media (max-width: 768px) {
   .hero {
     padding: 1rem;
-    min-height: auto;
+    align-items: flex-start;
   }
 }
 
@@ -81,20 +82,6 @@
   .cardMainInner {
     flex-direction: column;
     align-items: flex-start;
-  }
-}
-
-.avatar {
-  width: 72px;
-  height: 72px;
-  border-radius: 50%;
-  object-fit: cover;
-}
-
-@media (max-width: 768px) {
-  .avatar {
-    width: 56px;
-    height: 56px;
   }
 }
 

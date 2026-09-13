@@ -4,11 +4,11 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Link from '@docusaurus/Link';
 import { translate } from '@docusaurus/Translate';
 import clsx from 'clsx';
-import useBaseUrl from '@docusaurus/useBaseUrl';
 import { Icon } from '@iconify/react';
 import { COMMUNITY_LIST } from '@site/src/data/community';
 import Badge from '@site/src/components/laikit/Badge';
 import Card from '@site/src/components/laikit/Card';
+import SpringAvatar from './_components/SpringAvatar';
 import styles from './styles.module.css';
 
 function useTypewriter(words: string[]) {
@@ -222,7 +222,7 @@ export default function Home(): ReactNode {
         <div className={styles.bento}>
           <Card className={styles.cardMain}>
             <div className={styles.cardMainInner}>
-              <img src={useBaseUrl('/img/logo.svg')} alt="lailai" className={styles.avatar} />
+              <SpringAvatar />
               <div className={styles.intro}>
                 <h1 className={styles.name}>lailai</h1>
                 <p className={styles.role}>
