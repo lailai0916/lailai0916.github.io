@@ -111,8 +111,7 @@ function YearView({ posts }: { posts: readonly PostLike[] }) {
   const [activeYear, setActiveYear] = useState<number | null>(null);
 
   const filteredPosts = useMemo(
-    () =>
-      activeYear === null ? posts : posts.filter((p) => getPostYear(p, timeZone) === activeYear),
+    () => posts.filter((p) => getPostYear(p, timeZone) === activeYear),
     [posts, activeYear, timeZone]
   );
 
@@ -127,6 +126,7 @@ function YearView({ posts }: { posts: readonly PostLike[] }) {
                 <button
                   key={year}
                   type="button"
+                  aria-pressed={isActive}
                   onClick={() => setActiveYear(isActive ? null : year)}
                   className={styles.yearChipButton}
                 >
@@ -139,7 +139,7 @@ function YearView({ posts }: { posts: readonly PostLike[] }) {
           </div>
         </TitleCard>
       )}
-      <BlogArchiveList posts={filteredPosts} />
+      {activeYear !== null && <BlogArchiveList posts={filteredPosts} />}
     </>
   );
 }

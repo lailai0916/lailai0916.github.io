@@ -4,7 +4,7 @@ import Translate from '@docusaurus/Translate';
 import Card from '@site/src/components/laikit/Card';
 import TitleCard from '@site/src/components/laikit/TitleCard';
 import { useVisitorTimeZone } from '@site/src/hooks/useVisitorTimeZone';
-import { getDateKey } from '@site/src/utils/dateTime';
+import { compareInstantsDescending, getDateKey } from '@site/src/utils/dateTime';
 import styles from './styles.module.css';
 
 type PostLike = {
@@ -24,7 +24,12 @@ export function BlogArchiveList({ posts }: { posts: readonly PostLike[] }) {
   const groups = useMemo(() => {
     const map = new Map<number, PostLike[]>();
 
-    posts.forEach((p) => {
+    // The shared blog data puts pinned posts first; archives follow publication dates.
+    const chronologicalPosts = [...posts].sort((a, b) =>
+      compareInstantsDescending(a.metadata.date, b.metadata.date)
+    );
+
+    chronologicalPosts.forEach((p) => {
       const year = Number(getDateKey(p.metadata.date, timeZone).slice(0, 4));
       const arr = map.get(year);
       if (arr) arr.push(p);
