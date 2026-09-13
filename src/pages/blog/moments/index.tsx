@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import clsx from 'clsx';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import { translate } from '@docusaurus/Translate';
 import { usePluralForm } from '@docusaurus/theme-common';
@@ -314,7 +315,7 @@ function MomentImage({ src }: { src: string }) {
 
   if (status === 'error') {
     return (
-      <span className={`${styles.momentImage} ${styles.momentImageFallback}`} aria-hidden="true">
+      <span className={clsx(styles.momentImage, styles.momentImageFallback)} aria-hidden="true">
         <Icon icon="lucide:image-off" />
       </span>
     );

@@ -1,4 +1,5 @@
 import { type ReactNode } from 'react';
+import clsx from 'clsx';
 import Layout from '@theme/Layout';
 import { Icon } from '@iconify/react';
 import { PageTitle, PageHeader, PageContent } from '@site/src/components/laikit/Page';
@@ -51,7 +52,7 @@ function FriendAvatar({
 
   if (!src || status === 'error') {
     return (
-      <span className={`${className} ${styles.avatarFallback}`} aria-hidden>
+      <span className={clsx(className, styles.avatarFallback)} aria-hidden>
         <Icon icon="lucide:user-round" />
       </span>
     );

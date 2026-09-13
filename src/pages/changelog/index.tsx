@@ -1,4 +1,5 @@
 import { type ReactNode } from 'react';
+import clsx from 'clsx';
 import { translate } from '@docusaurus/Translate';
 import Layout from '@theme/Layout';
 import DataCard from '@site/src/components/laikit/DataCard';
@@ -32,7 +33,7 @@ export default function Changelog(): ReactNode {
         <DataCard value={CHANGELOG_LIST.length} label={ENTRY_LABEL} icon="lucide:history" />
       </PageHeader>
       <PageContent>
-        <div className={`markdown ${styles.layout}`}>
+        <div className={clsx('markdown', styles.layout)}>
           <ChangelogList />
         </div>
       </PageContent>

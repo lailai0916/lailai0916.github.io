@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import clsx from 'clsx';
 
 import BrowserOnly from '@docusaurus/BrowserOnly';
 import { translate } from '@docusaurus/Translate';
@@ -75,7 +76,7 @@ export function Skills() {
     <div className={styles.skillsFrame}>
       {status === 'error' ? (
         <div
-          className={`${styles.skillsImage} ${styles.imageFallback}`}
+          className={clsx(styles.skillsImage, styles.imageFallback)}
           role="img"
           aria-label={SKILLS_ARIA_LABEL}
         >
