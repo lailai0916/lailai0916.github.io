@@ -35,8 +35,8 @@ export function WordCloud() {
             ref={imgRef}
             src={WORD_CLOUD_URL}
             alt=""
-            width={2819}
-            height={924}
+            width={2618}
+            height={952}
             decoding="async"
             onLoad={onLoad}
             onError={onError}
