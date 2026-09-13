@@ -49,12 +49,6 @@ export const FRIEND_LIST: FriendItem[] = [
     avatar: 'https://cdn.luogu.com.cn/upload/usericon/718017.png',
   },
   {
-    title: 'Castamere',
-    description: '代码美学',
-    href: 'https://www.castamerego.com',
-    avatar: 'https://github.com/Casta-mere.png',
-  },
-  {
     title: 'Jasonshan10',
     href: 'https://www.cnblogs.com/Jasonshan10',
     avatar: 'https://q1.qlogo.cn/g?b=qq&nk=342200890&s=640',
@@ -64,6 +58,12 @@ export const FRIEND_LIST: FriendItem[] = [
     description: '初心不改，求索依然。',
     href: 'https://www.cnblogs.com/decimal10',
     avatar: 'https://cdn.luogu.com.cn/upload/usericon/809729.png',
+  },
+  {
+    title: 'Castamere',
+    description: '代码美学',
+    href: 'https://www.castamerego.com',
+    avatar: 'https://github.com/Casta-mere.png',
   },
   {
     title: '吕舒君的博客',
