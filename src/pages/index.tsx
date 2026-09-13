@@ -220,8 +220,7 @@ export default function Home(): ReactNode {
     <Layout title={siteConfig.title} description={siteConfig.tagline} noFooter>
       <section className={styles.hero}>
         <div className={styles.bento}>
-          <Card to="/about" wrapperClassName={styles.cardMainLink} className={styles.cardMain}>
-            <Icon icon="lucide:arrow-up-right" className={styles.cardMainArrow} />
+          <Card className={styles.cardMain}>
             <div className={styles.cardMainInner}>
               <img src={useBaseUrl('/img/logo.svg')} alt="lailai" className={styles.avatar} />
               <div className={styles.intro}>
