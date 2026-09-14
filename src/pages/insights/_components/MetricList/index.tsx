@@ -22,6 +22,7 @@ interface MetricListProps {
   // error rather than as a legitimately empty dataset.
   error?: string;
   errorAction?: ReactNode;
+  notice?: ReactNode;
   renderLabel?: (x: string) => ReactNode;
   formatValue?: (y: number) => string;
   href?: (x: string) => string | null | undefined;
@@ -52,6 +53,7 @@ export default function MetricList({
   emptyText,
   error,
   errorAction,
+  notice,
   renderLabel,
   formatValue,
   href,
@@ -68,6 +70,7 @@ export default function MetricList({
       padding="1.5rem 1.25rem 1.25rem"
       className={styles.card}
     >
+      {notice}
       {loading ? (
         <ol className={styles.list}>
           {Array.from({ length: 8 }).map((_, i) => (

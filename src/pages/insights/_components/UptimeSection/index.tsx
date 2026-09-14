@@ -7,6 +7,7 @@ import { useKumaStatus } from '@site/src/hooks/useKumaStatus';
 import { type KumaHeartbeat, type KumaMonitor } from '@site/src/utils/kuma';
 import HeartbeatBar, { heartbeatStatusLabel } from '../HeartbeatBar';
 import StatePanel from '../StatePanel';
+import RefreshNotice from '../RefreshNotice';
 import styles from './styles.module.css';
 
 function lastStatus(beats: KumaHeartbeat[] | undefined): number | undefined {
@@ -134,9 +135,9 @@ function MonitorRow({
 }
 
 export default function UptimeSection() {
-  const { data, status, retry } = useKumaStatus();
-  const loading = status === 'loading';
-  const errored = status === 'error';
+  const { data, status, isInitialLoading, isRefreshError, retry } = useKumaStatus();
+  const loading = isInitialLoading;
+  const errored = status === 'error' && !isRefreshError;
 
   const monitors: KumaMonitor[] = data
     ? data.page.publicGroupList.flatMap((g) => g.monitorList)
@@ -146,6 +147,7 @@ export default function UptimeSection() {
 
   return (
     <section className={styles.section}>
+      {isRefreshError && <RefreshNotice onRetry={retry} />}
       {errored ? (
         <StatePanel
           text={translate({

@@ -18,6 +18,7 @@ export function useKumaStatus() {
       return { page, heartbeats };
     },
     [],
-    null
+    null,
+    60_000
   );
 }

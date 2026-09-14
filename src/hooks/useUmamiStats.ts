@@ -36,6 +36,7 @@ export function useUmamiStats(range: InsightsRange) {
       );
     },
     [range],
-    null
+    null,
+    60_000
   );
 }

@@ -29,6 +29,7 @@ interface ChartProps {
   // endpoint can't render as an endless skeleton.
   error?: string;
   errorAction?: ReactNode;
+  notice?: ReactNode;
   className?: string;
   // Formats the hover tooltip value (e.g. add a pluralized unit); defaults to compact.
   formatValue?: (value: number) => string;
@@ -65,6 +66,7 @@ export default function Chart({
   emptyText,
   error,
   errorAction,
+  notice,
   className,
   formatValue,
 }: ChartProps) {
@@ -124,6 +126,7 @@ export default function Chart({
       padding={size === 'plain' ? '1.25rem' : '1.5rem 1.25rem 1.25rem'}
       className={clsx(styles.card, className)}
     >
+      {notice}
       {!loading && error ? (
         <DataState message={error} action={errorAction} />
       ) : !loading && n === 0 ? (

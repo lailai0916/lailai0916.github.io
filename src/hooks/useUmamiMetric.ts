@@ -14,6 +14,7 @@ export function useUmamiMetric(type: MetricType, range: InsightsRange, limit: nu
     data: items,
     status,
     isInitialLoading,
+    isRefreshError,
     retry,
   } = useFetch<MetricItem[]>(
     async (signal) => {
@@ -26,8 +27,9 @@ export function useUmamiMetric(type: MetricType, range: InsightsRange, limit: nu
       return Array.isArray(result) ? result : [];
     },
     [type, range, limit],
-    []
+    [],
+    60_000
   );
 
-  return { items, status, isInitialLoading, retry };
+  return { items, status, isInitialLoading, isRefreshError, retry };
 }

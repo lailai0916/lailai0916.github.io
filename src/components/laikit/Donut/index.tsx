@@ -28,6 +28,7 @@ interface DonutProps {
   // error rather than as a legitimately empty dataset.
   error?: string;
   errorAction?: ReactNode;
+  notice?: ReactNode;
   // Collapse everything past the top (maxSlices - 1) into a neutral "Other"
   // slice, so a dominant category never shreds the ring into slivers. Also fixes
   // the row count so the legend area — and the skeleton — reserve equal height.
@@ -71,6 +72,7 @@ export default function Donut({
   emptyText,
   error,
   errorAction,
+  notice,
   maxSlices,
   otherLabel,
   renderLabel,
@@ -160,6 +162,7 @@ export default function Donut({
       padding="1.5rem 1.25rem 1.25rem"
       className={styles.card}
     >
+      {notice}
       {loading ? (
         <div className={styles.body} style={{ '--donut-rows': rows } as CSSProperties}>
           <div className={styles.chartWrap}>

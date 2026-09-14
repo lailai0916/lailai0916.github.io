@@ -29,6 +29,7 @@ import UptimeSection from './_components/UptimeSection';
 import SysStatusCard from './_components/SysStatusCard';
 import StatePanel from './_components/StatePanel';
 import RetryButton from './_components/RetryButton';
+import RefreshNotice from './_components/RefreshNotice';
 import styles from './styles.module.css';
 
 countries.registerLocale(countriesEn);
@@ -40,7 +41,7 @@ const TITLE = translate({
 });
 const DESCRIPTION = translate({
   id: 'pages.insights.description',
-  message: 'Live numbers from this site, refreshed each visit',
+  message: 'Live numbers from this site, refreshed automatically',
 });
 const MODIFICATION = translate({
   id: 'pages.insights.modification',
@@ -206,9 +207,9 @@ function HeroMetric({
 }
 
 function HeroGrid({ range }: { range: InsightsRange }) {
-  const { data, status, isInitialLoading, retry } = useUmamiStats(range);
+  const { data, status, isInitialLoading, isRefreshError, retry } = useUmamiStats(range);
   const { i18n } = useDocusaurusContext();
-  const errored = status === 'error';
+  const errored = status === 'error' && !isRefreshError;
 
   // Round before formatting so a count-up frame never shows more decimals than
   // its final value (e.g. an integer total of 23 must not flash "11.5").
@@ -266,20 +267,23 @@ function HeroGrid({ range }: { range: InsightsRange }) {
   if (errored) return <StatePanel text={ANALYTICS_ERROR} onRetry={retry} />;
 
   return (
-    <div className={styles.heroGrid}>
-      {specs.map((spec) => {
-        const current = deriveMetric(spec, data);
-        const previous = deriveMetric(spec, data?.comparison ?? null);
-        return (
-          <HeroMetric
-            key={spec.key}
-            spec={spec}
-            current={current}
-            previous={previous}
-            loading={isInitialLoading}
-          />
-        );
-      })}
+    <div>
+      {isRefreshError && <RefreshNotice onRetry={retry} />}
+      <div className={styles.heroGrid}>
+        {specs.map((spec) => {
+          const current = deriveMetric(spec, data);
+          const previous = deriveMetric(spec, data?.comparison ?? null);
+          return (
+            <HeroMetric
+              key={spec.key}
+              spec={spec}
+              current={current}
+              previous={previous}
+              loading={isInitialLoading}
+            />
+          );
+        })}
+      </div>
     </div>
   );
 }
@@ -339,7 +343,7 @@ function RangeBar({
 }
 
 function PageviewsChart({ range }: { range: InsightsRange }) {
-  const { data, status, isInitialLoading, retry } = useUmamiPageviewsSeries(range);
+  const { data, status, isInitialLoading, isRefreshError, retry } = useUmamiPageviewsSeries(range);
   const {
     i18n: { currentLocale },
   } = useDocusaurusContext();
@@ -369,8 +373,9 @@ function PageviewsChart({ range }: { range: InsightsRange }) {
       data={toPageviewsData(series, unit, currentLocale)}
       loading={isInitialLoading}
       emptyText={METRIC_LIST_EMPTY}
-      error={status === 'error' ? ANALYTICS_ERROR : undefined}
+      error={status === 'error' && !isRefreshError ? ANALYTICS_ERROR : undefined}
       errorAction={<RetryButton onClick={retry} />}
+      notice={isRefreshError && <RefreshNotice onRetry={retry} />}
       formatValue={pageviewsLabel}
       className={styles.chartCard}
     />
@@ -398,8 +403,9 @@ function MetricsGrid({ range }: { range: InsightsRange }) {
         items={pages.items}
         loading={pages.isInitialLoading}
         emptyText={METRIC_LIST_EMPTY}
-        error={pages.status === 'error' ? ANALYTICS_ERROR : undefined}
+        error={pages.status === 'error' && !pages.isRefreshError ? ANALYTICS_ERROR : undefined}
         errorAction={<RetryButton onClick={pages.retry} />}
+        notice={pages.isRefreshError && <RefreshNotice onRetry={pages.retry} />}
         renderLabel={(p) => <span title={p}>{p === '/' ? '/' : p}</span>}
         href={(p) => p}
       />
@@ -412,8 +418,11 @@ function MetricsGrid({ range }: { range: InsightsRange }) {
         items={referrers.items}
         loading={referrers.isInitialLoading}
         emptyText={METRIC_LIST_EMPTY}
-        error={referrers.status === 'error' ? ANALYTICS_ERROR : undefined}
+        error={
+          referrers.status === 'error' && !referrers.isRefreshError ? ANALYTICS_ERROR : undefined
+        }
         errorAction={<RetryButton onClick={referrers.retry} />}
+        notice={referrers.isRefreshError && <RefreshNotice onRetry={referrers.retry} />}
         renderLabel={(r) =>
           r ? (
             <span title={r}>{r}</span>
@@ -437,8 +446,13 @@ function MetricsGrid({ range }: { range: InsightsRange }) {
         items={countriesMetric.items}
         loading={countriesMetric.isInitialLoading}
         emptyText={METRIC_LIST_EMPTY}
-        error={countriesMetric.status === 'error' ? ANALYTICS_ERROR : undefined}
+        error={
+          countriesMetric.status === 'error' && !countriesMetric.isRefreshError
+            ? ANALYTICS_ERROR
+            : undefined
+        }
         errorAction={<RetryButton onClick={countriesMetric.retry} />}
+        notice={countriesMetric.isRefreshError && <RefreshNotice onRetry={countriesMetric.retry} />}
         renderLabel={(code) => (
           <>
             <Icon
@@ -470,8 +484,11 @@ function EnvironmentGrid({ range }: { range: InsightsRange }) {
         items={browsers.items}
         loading={browsers.isInitialLoading}
         emptyText={METRIC_LIST_EMPTY}
-        error={browsers.status === 'error' ? ANALYTICS_ERROR : undefined}
+        error={
+          browsers.status === 'error' && !browsers.isRefreshError ? ANALYTICS_ERROR : undefined
+        }
         errorAction={<RetryButton onClick={browsers.retry} />}
+        notice={browsers.isRefreshError && <RefreshNotice onRetry={browsers.retry} />}
         maxSlices={4}
         otherLabel={ENV_OTHER}
         renderLabel={(x) => BROWSER_LABELS[x.toLowerCase()] ?? titleCaseKey(x)}
@@ -485,8 +502,9 @@ function EnvironmentGrid({ range }: { range: InsightsRange }) {
         items={os.items}
         loading={os.isInitialLoading}
         emptyText={METRIC_LIST_EMPTY}
-        error={os.status === 'error' ? ANALYTICS_ERROR : undefined}
+        error={os.status === 'error' && !os.isRefreshError ? ANALYTICS_ERROR : undefined}
         errorAction={<RetryButton onClick={os.retry} />}
+        notice={os.isRefreshError && <RefreshNotice onRetry={os.retry} />}
         maxSlices={4}
         otherLabel={ENV_OTHER}
         renderLabel={(x) => x || titleCaseKey(x)}
@@ -500,8 +518,9 @@ function EnvironmentGrid({ range }: { range: InsightsRange }) {
         items={devices.items}
         loading={devices.isInitialLoading}
         emptyText={METRIC_LIST_EMPTY}
-        error={devices.status === 'error' ? ANALYTICS_ERROR : undefined}
+        error={devices.status === 'error' && !devices.isRefreshError ? ANALYTICS_ERROR : undefined}
         errorAction={<RetryButton onClick={devices.retry} />}
+        notice={devices.isRefreshError && <RefreshNotice onRetry={devices.retry} />}
         maxSlices={4}
         otherLabel={ENV_OTHER}
         renderLabel={(x) => DEVICE_LABELS[x.toLowerCase()] ?? titleCaseKey(x)}

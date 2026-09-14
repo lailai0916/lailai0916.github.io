@@ -1578,7 +1578,7 @@
     "message": "洞察"
   },
   "pages.insights.description": {
-    "message": "网站的实时数据，每次访问自动刷新"
+    "message": "本站实时数据，自动刷新"
   },
   "pages.insights.modification": {
     "message": "实时<b>洞察</b>"
@@ -2280,6 +2280,9 @@
   },
   "pages.insights.heartbeat.noData": {
     "message": "暂无数据"
+  },
+  "pages.insights.refreshError": {
+    "message": "更新失败，正在显示上次的数据。"
   },
   "pages.insights.retry": {
     "message": "重试"
