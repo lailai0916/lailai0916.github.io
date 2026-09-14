@@ -102,11 +102,18 @@ function usePing(): number | null {
     };
     // A hidden Insights page should not keep measuring request latency.
     let id = 0;
-    const start = () => {
-      measure();
-      id = window.setInterval(measure, PING_INTERVAL);
+    const stop = () => {
+      window.clearTimeout(id);
+      id = 0;
     };
-    const stop = () => window.clearInterval(id);
+    const poll = () => {
+      void measure();
+      id = window.setTimeout(poll, PING_INTERVAL - (Date.now() % PING_INTERVAL));
+    };
+    const start = () => {
+      stop();
+      poll();
+    };
     const onVisibility = () => (document.hidden ? stop() : start());
     if (!document.hidden) start();
     document.addEventListener('visibilitychange', onVisibility);
@@ -122,8 +129,14 @@ function usePing(): number | null {
 function useNow(): Date {
   const [now, setNow] = useState(() => new Date());
   useEffect(() => {
-    const id = window.setInterval(() => setNow(new Date()), TICK_INTERVAL);
-    return () => window.clearInterval(id);
+    let id = 0;
+    const tick = () => {
+      const now = Date.now();
+      setNow(new Date(now));
+      id = window.setTimeout(tick, TICK_INTERVAL - (now % TICK_INTERVAL));
+    };
+    tick();
+    return () => window.clearTimeout(id);
   }, []);
   return now;
 }

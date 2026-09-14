@@ -66,13 +66,16 @@ export function useSysStatus() {
 
     let id = 0;
     const stop = () => {
-      window.clearInterval(id);
+      window.clearTimeout(id);
       id = 0;
+    };
+    const poll = () => {
+      void fetchOnce();
+      id = window.setTimeout(poll, POLL_MS - (Date.now() % POLL_MS));
     };
     const start = () => {
       stop();
-      void fetchOnce();
-      id = window.setInterval(() => void fetchOnce(), POLL_MS);
+      poll();
     };
     const onVisibility = () => (document.hidden ? stop() : start());
 
