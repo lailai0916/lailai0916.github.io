@@ -2965,5 +2965,11 @@
   },
   "pages.home.avatar.ariaLabel": {
     "message": "拖动 lailai 的头像，松手回弹；或按回车键弹跳"
+  },
+  "pages.travel.map.showOriginal": {
+    "message": "切换为原版地图"
+  },
+  "pages.travel.map.showDots": {
+    "message": "切换为点阵地图"
   }
 }

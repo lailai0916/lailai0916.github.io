@@ -15,11 +15,11 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import { translate } from '@docusaurus/Translate';
 import { useColorMode } from '@docusaurus/theme-common';
 import { Icon } from '@iconify/react';
-import { geoEquirectangular, geoPath, geoContains, geoBounds } from 'd3-geo';
+import { geoContains, geoBounds } from 'd3-geo';
 import * as countries from 'i18n-iso-countries';
 import countriesEn from 'i18n-iso-countries/langs/en.json';
 import countriesZh from 'i18n-iso-countries/langs/zh.json';
-import * as threeModule from 'three';
+import { MeshBasicMaterial, type CanvasTexture } from 'three';
 import Button from '@site/src/components/laikit/Button';
 import Tooltip from '@site/src/components/laikit/Tooltip';
 import { TRAVEL_LIST } from '@site/src/data/travel';
@@ -31,6 +31,8 @@ import {
   type WorldGeoJson,
 } from '@site/src/utils/travelGlobe';
 import { withTimeout } from '@site/src/utils/withTimeout';
+import { createDotGlobe } from './createDotGlobe';
+import { createGlobeTexture } from './createGlobeTexture';
 import LocationMarker from './LocationMarker';
 import { HOME_LOCATION } from './LocationMarker/renderMarker';
 
@@ -40,22 +42,6 @@ import styles from './styles.module.css';
 import type { GlobeMethods, GlobeProps } from 'react-globe.gl';
 
 type GlobeComponent = ComponentType<GlobeProps & { ref?: RefObject<GlobeMethods | undefined> }>;
-type GlobeMaterial = NonNullable<GlobeProps['globeMaterial']>;
-
-// three.js GPU resources are not garbage-collected — they have to be disposed by
-// hand, so the shims carry `dispose` and the material carries its `map`.
-type GlobeTexture = { colorSpace: string; anisotropy: number; dispose: () => void };
-type DisposableMaterial = GlobeMaterial & {
-  map?: GlobeTexture | null;
-  dispose: () => void;
-};
-
-const three = threeModule as unknown as {
-  MeshBasicMaterial: new (parameters?: object) => DisposableMaterial;
-  CanvasTexture: new (canvas: HTMLCanvasElement) => GlobeTexture;
-  SRGBColorSpace: string;
-};
-
 const MOTHERLAND_LABEL = translate({
   id: 'pages.travel.map.motherland',
   message: 'Motherland',
@@ -67,6 +53,14 @@ const NOT_VISITED_LABEL = translate({
 const HOME_LOCATION_LABEL = translate({
   id: 'pages.travel.map.location',
   message: 'lailai · Hangzhou, China',
+});
+const ORIGINAL_MAP_LABEL = translate({
+  id: 'pages.travel.map.showOriginal',
+  message: 'Switch to original map',
+});
+const DOT_MAP_LABEL = translate({
+  id: 'pages.travel.map.showDots',
+  message: 'Switch to dot map',
 });
 const RESET_VIEW_LABEL = translate({
   id: 'pages.travel.map.reset',
@@ -86,41 +80,6 @@ const GEOJSON_TIMEOUT_MS = 15000;
 
 function readCssVar(name: string) {
   return getComputedStyle(document.documentElement).getPropertyValue(name).trim();
-}
-
-// Paint the whole world onto one equirectangular canvas — ocean, every country
-// filled (visited in the theme colour), soft borders — to wrap the globe as a
-// texture. No extruded polygons means no z-fighting, no clipping, no raised
-// layer to hack.
-function bakeGlobeTexture(
-  features: readonly GlobeCountryFeature[],
-  visited: ReadonlySet<string>,
-  colors: { ocean: string; visited: string; unvisited: string; stroke: string }
-): HTMLCanvasElement {
-  const W = 4096;
-  const H = 2048;
-  const canvas = document.createElement('canvas');
-  canvas.width = W;
-  canvas.height = H;
-  const ctx = canvas.getContext('2d');
-  if (!ctx) return canvas;
-
-  const projection = geoEquirectangular().fitSize([W, H], { type: 'Sphere' });
-  const path = geoPath(projection, ctx);
-
-  ctx.fillStyle = colors.ocean;
-  ctx.fillRect(0, 0, W, H);
-  ctx.lineJoin = 'round';
-  ctx.lineWidth = 0.8;
-  ctx.strokeStyle = colors.stroke;
-  for (const f of features) {
-    ctx.beginPath();
-    path(f as GeoJSON.Feature);
-    ctx.fillStyle = visited.has(getFeatureIso3(f)) ? colors.visited : colors.unvisited;
-    ctx.fill();
-    ctx.stroke();
-  }
-  return canvas;
 }
 
 type HoveredCountry = {
@@ -156,7 +115,10 @@ function TravelGlobeClient({
   const [isGlobeReady, setIsGlobeReady] = useState(false);
   const [isRotating, setIsRotating] = useState(false);
   const [features, setFeatures] = useState<readonly GlobeCountryFeature[]>([]);
-  const [textureCanvas, setTextureCanvas] = useState<HTMLCanvasElement | null>(null);
+  const [dotGlobe, setDotGlobe] = useState<ReturnType<typeof createDotGlobe> | null>(null);
+  const [mapStyle, setMapStyle] = useState<'dots' | 'original'>('dots');
+  const [originalRequested, setOriginalRequested] = useState(false);
+  const [originalTexture, setOriginalTexture] = useState<CanvasTexture | null>(null);
   const [geoFailed, setGeoFailed] = useState(false);
   const [geoRequest, setGeoRequest] = useState(0);
   const [isFrameVisible, setIsFrameVisible] = useState(true);
@@ -187,8 +149,6 @@ function TravelGlobeClient({
         if (!controller.signal.aborted) setFeatures(data.features);
       })
       .catch((error) => {
-        // Without the borders the globe can't be painted, but it can still show:
-        // fall through to the plain ocean sphere rather than an empty frame.
         if (controller.signal.aborted) return;
         console.error(error);
         setGeoFailed(true);
@@ -217,64 +177,83 @@ function TravelGlobeClient({
   const colors = useMemo(() => {
     const isDark = colorMode === 'dark';
     const accent = Color(readCssVar('--ifm-color-primary'));
-    const land = Color(
-      readCssVar(isDark ? '--ifm-color-emphasis-200' : '--ifm-card-background-color')
-    ).mix(accent, isDark ? 0.04 : 0);
-    const ocean = Color(
-      readCssVar(isDark ? '--ifm-card-background-color' : '--ifm-color-emphasis-200')
-    ).mix(accent, isDark ? 0.06 : 0.025);
-
+    const pageBackground = Color(readCssVar('--ifm-background-color'));
+    const background = pageBackground.alpha()
+      ? pageBackground
+      : Color(readCssVar('--ifm-background-surface-color'));
+    const neutral = Color(readCssVar('--ifm-color-emphasis-600'));
+    const ocean = readCssVar('--ifm-color-emphasis-100');
     return {
-      ocean: ocean.hex(),
-      visited: accent
-        .desaturate(0.3)
-        .mix(land, isDark ? 0.3 : 0.38)
-        .hex(),
-      unvisited: land.hex(),
-      stroke: ocean.mix(land, isDark ? 0.15 : 0.35).hex(),
+      dots: {
+        ocean: background.hex(),
+        visited: accent.mix(background, isDark ? 0.08 : 0.12).hex(),
+        unvisited: neutral.mix(background, isDark ? 0.22 : 0.18).hex(),
+        grid: neutral.mix(background, isDark ? 0.85 : 0.87).hex(),
+      },
+      original: {
+        ocean,
+        grid: neutral.mix(Color(ocean), isDark ? 0.92 : 0.9).hex(),
+        visited: readCssVar('--ifm-color-primary-lighter'),
+        unvisited: readCssVar('--ifm-color-emphasis-300'),
+        stroke: readCssVar('--ifm-color-emphasis-400'),
+      },
     };
   }, [colorMode]);
 
   useEffect(() => {
-    let cancelled = false;
-    setTextureCanvas(null);
-    if (features.length === 0) return () => undefined;
-
-    const bake = () => {
-      if (cancelled) return;
+    setDotGlobe(null);
+    const globe = globeRef.current;
+    if (!isGlobeReady || !globe || features.length === 0) return;
+    let dots: ReturnType<typeof createDotGlobe> | null = null;
+    // Required map work must run promptly, even when the browser never becomes idle.
+    const timeoutId = window.setTimeout(() => {
       try {
-        setTextureCanvas(bakeGlobeTexture(features, visitedCountries, colors));
+        dots = createDotGlobe(globe, features, visitedCountries);
+        globe.scene().add(dots.group);
+        setDotGlobe(dots);
       } catch (error) {
         console.error(error);
         setGeoFailed(true);
       }
-    };
-    // The texture is required to show the map; don't wait for an idle callback.
-    const timeoutId = window.setTimeout(bake, 0);
-
+    }, 0);
     return () => {
-      cancelled = true;
       window.clearTimeout(timeoutId);
+      dots?.dispose();
     };
-  }, [colors, features, visitedCountries]);
+  }, [features, isGlobeReady, visitedCountries]);
 
-  const globeMaterial = useMemo<DisposableMaterial>(() => {
-    if (!textureCanvas) return new three.MeshBasicMaterial({ color: colors.ocean });
-    const texture = new three.CanvasTexture(textureCanvas);
-    texture.colorSpace = three.SRGBColorSpace;
-    texture.anisotropy = 8;
-    return new three.MeshBasicMaterial({ map: texture });
-  }, [colors.ocean, textureCanvas]);
+  useEffect(() => {
+    if (!originalRequested || features.length === 0) {
+      setOriginalTexture(null);
+      return;
+    }
+    const timeoutId = window.setTimeout(() => {
+      try {
+        setOriginalTexture(createGlobeTexture(features, visitedCountries, colors.original));
+      } catch (error) {
+        console.error(error);
+        setGeoFailed(true);
+      }
+    }, 0);
+    return () => window.clearTimeout(timeoutId);
+  }, [colors.original, features, originalRequested, visitedCountries]);
+  useEffect(() => () => originalTexture?.dispose(), [originalTexture]);
 
-  // Three.js GPU resources are not garbage-collected — release each material
-  // after react-kapsule has received its replacement.
-  useEffect(
-    () => () => {
-      globeMaterial.map?.dispose();
-      globeMaterial.dispose();
-    },
-    [globeMaterial]
-  );
+  const globeMaterial = useMemo(() => new MeshBasicMaterial(), []);
+  useEffect(() => () => globeMaterial.dispose(), [globeMaterial]);
+  const showOriginal = mapStyle === 'original' && originalTexture !== null;
+  useEffect(() => {
+    const texture = showOriginal ? originalTexture : null;
+    if (globeMaterial.map !== texture) {
+      globeMaterial.map = texture;
+      globeMaterial.needsUpdate = true;
+    }
+    globeMaterial.color.set(showOriginal ? '#ffffff' : colors.dots.ocean);
+    if (dotGlobe) {
+      dotGlobe.setColors(colors.dots);
+      dotGlobe.group.visible = !showOriginal;
+    }
+  }, [colors.dots, dotGlobe, globeMaterial, originalTexture, showOriginal]);
 
   useEffect(() => {
     const element = frameRef.current;
@@ -465,6 +444,11 @@ function TravelGlobeClient({
 
   const retryGeoJson = () => setGeoRequest((request) => request + 1);
 
+  const toggleMapStyle = () => {
+    setOriginalRequested(true);
+    setMapStyle((style) => (style === 'dots' ? 'original' : 'dots'));
+  };
+
   const handleReady = useCallback(() => setIsGlobeReady(true), []);
 
   // onGlobeReady can fire before react-kapsule attaches the ref in Safari.
@@ -486,10 +470,9 @@ function TravelGlobeClient({
     setIsRotating(shouldRotate);
   }, [isGlobeReady]);
 
-  // Ready = globe mounted, borders fetched, and the texture baked from them —
-  // or the borders failed, in which case the bare sphere is what we have.
-  const isReady = isGlobeReady && ((features.length > 0 && textureCanvas !== null) || geoFailed);
+  const isReady = isGlobeReady && (dotGlobe !== null || geoFailed);
   const rotationLabel = isRotating ? PAUSE_ROTATION_LABEL : PLAY_ROTATION_LABEL;
+  const mapStyleLabel = mapStyle === 'dots' ? ORIGINAL_MAP_LABEL : DOT_MAP_LABEL;
 
   return (
     <div
@@ -535,6 +518,21 @@ function TravelGlobeClient({
       )}
       {isReady && (
         <div className={styles.globeControls}>
+          <Button
+            variant="secondary"
+            size="sm"
+            className={clsx(styles.globeControlButton, styles.mapStyleButton)}
+            leftIcon={
+              <Icon
+                icon={mapStyle === 'dots' ? 'lucide:earth' : 'lucide:grip'}
+                className={styles.globeControlIcon}
+                aria-hidden="true"
+              />
+            }
+            onClick={toggleMapStyle}
+            aria-label={mapStyleLabel}
+            title={mapStyleLabel}
+          />
           <Button
             variant="secondary"
             size="sm"

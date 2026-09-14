@@ -88,20 +88,26 @@
 
 .globeControls {
   position: absolute;
-  top: clamp(0.75rem, 2vw, 1rem);
-  right: calc((100% - min(100%, 640px)) / 2 + clamp(0.75rem, 2vw, 1rem));
+  inset: clamp(0.75rem, 2vw, 1rem) calc((100% - min(100%, 640px)) / 2 + clamp(0.75rem, 2vw, 1rem))
+    auto;
   display: flex;
   gap: 0.5rem;
   z-index: 2;
+  pointer-events: none;
 }
 
 .globeControlButton {
   width: 32px;
   padding: 0;
+  pointer-events: auto;
 }
 
 .globeControlButton:not(:disabled):not([aria-disabled='true']):active {
   transform: scale(0.92);
+}
+
+.mapStyleButton {
+  margin-right: auto;
 }
 
 .globeControlIcon {
