@@ -1,7 +1,7 @@
 ---
 title: "lailai's Template"
-description: 本文介绍 lailai's Template 项目，一个开箱即用、要求完整初始化的 GitHub 仓库模板。
-summary: lailai 的通用 GitHub 仓库模板。通过 Use this template 新建仓库后，需要完整替换双语 README、徽章、仓库路径与项目说明，补全 AGENTS.md，清理无用占位内容，并设置 GitHub About 的 description、homepage 和 topics。模板负责提供可直接使用的目录、文档与协作示例，不承载个人风格规范。
+description: 本文介绍 lailai's Template 项目，统一维护仓库标准、初始化指南与校验工具。
+summary: lailai 的通用 GitHub 仓库模板，集中维护仓库标准、双语 README 示例、初始化指南与通用校验工具。新项目通过 Use this template 创建，按 SETUP.md 完成实际配置与逐项验收后，清理继承的初始化文档，保留上游规范入口。模板源仓库永久保留指南，已有项目维护 README 与仓库元数据时也查阅同一来源，避免重复维护规则。
 ---
 
 ## 项目仓库
@@ -10,12 +10,8 @@ summary: lailai 的通用 GitHub 仓库模板。通过 Use this template 新建�
 
 ## 使用
 
-点击仓库页的 **Use this template** 新建仓库，然后完成占位内容检查：
+点击仓库页的 **Use this template** 新建仓库，完整读取
+[初始化指南](https://github.com/lailai0916/lailai-template/blob/main/SETUP.md)，按其中的标准完成配置与验收。
 
-```bash
-rg -n 'TODO|<owner>|<repo>|One paragraph|Replace with' .
-rg -n 'lailai-template|lailai0916/lailai-template' . --glob '!README*'
-```
-
-随后将中英文 README 重写为严格镜像，替换徽章路径，补完 `AGENTS.md`，删除无用模板，
-并设置 GitHub About 的 description、homepage 与准确 topics。这些步骤均为初始化完成条件。
+验收后清理新项目继承的初始化文档，并保留上游规范入口；模板源仓库永久保留指南。
+已有项目维护 README 或仓库元数据时，也查阅同一来源。本站项目页仅说明用途与入口。
