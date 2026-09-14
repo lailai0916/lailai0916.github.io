@@ -23,7 +23,7 @@ interface SysStatus {
 }
 
 const ENDPOINT = 'https://lailai.one/api/sys';
-const POLL_MS = 2000;
+const POLL_MS = 1000;
 const REQUEST_TIMEOUT_MS = 10000;
 
 export function useSysStatus() {

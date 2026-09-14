@@ -12,7 +12,7 @@ import { formatInTimeZone, getDateKey, parseInstant } from '@site/src/utils/date
 import styles from './styles.module.css';
 
 const PING_TARGET = 'https://analytics.lailai.one/script.js';
-const PING_INTERVAL = 2000;
+const PING_INTERVAL = 1000;
 const TICK_INTERVAL = 1000;
 const CORE_LABEL = translate({ id: 'pages.insights.systemStatus.cores', message: 'core|cores' });
 
