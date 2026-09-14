@@ -33,6 +33,7 @@ import {
 import { withTimeout } from '@site/src/utils/withTimeout';
 import { createDotGlobe } from './createDotGlobe';
 import { createGlobeTexture } from './createGlobeTexture';
+import { createGlobePicker } from './pickGlobe';
 import LocationMarker from './LocationMarker';
 import { HOME_LOCATION } from './LocationMarker/renderMarker';
 
@@ -130,6 +131,8 @@ function TravelGlobeClient({
   const [hovered, setHovered] = useState<HoveredCountry | null>(null);
   const [cursor, setCursor] = useState({ x: 0, y: 0 });
   const pointerRef = useRef<{ x: number; y: number } | null>(null);
+  const requestHoverRef = useRef<(() => void) | null>(null);
+  const pickGlobe = useMemo(createGlobePicker, []);
 
   const worldUrl = useBaseUrl('/json/world.geo.json');
   useEffect(() => {
@@ -319,9 +322,9 @@ function TravelGlobeClient({
     const handlePointerDownCapture = (event: PointerEvent) => {
       const rect = canvas.getBoundingClientRect();
       if (!rect.width || !rect.height) return;
-      const x = ((event.clientX - rect.left) / rect.width) * size.width;
-      const y = ((event.clientY - rect.top) / rect.height) * size.height;
-      if (globe.toGlobeCoords(x, y)) return;
+      const x = (event.clientX - rect.left) / rect.width;
+      const y = (event.clientY - rect.top) / rect.height;
+      if (pickGlobe(globe, x, y)) return;
       event.preventDefault();
       event.stopPropagation();
       event.stopImmediatePropagation();
@@ -331,7 +334,7 @@ function TravelGlobeClient({
     return () => {
       canvas.removeEventListener('pointerdown', handlePointerDownCapture, true);
     };
-  }, [isGlobeReady, size.height, size.width]);
+  }, [isGlobeReady, pickGlobe]);
 
   // Hover is resolved geometrically: screen point → lat/lng on the sphere →
   // which country contains it. No polygon meshes needed.
@@ -340,11 +343,8 @@ function TravelGlobeClient({
       const globe = globeRef.current;
       const canvas = globe?.renderer()?.domElement;
       const rect = canvas?.getBoundingClientRect();
-      if (!globe || !canvas || !rect) return null;
-      const coords = globe.toGlobeCoords(
-        (px / rect.width) * size.width,
-        (py / rect.height) * size.height
-      );
+      if (!globe || !rect?.width || !rect.height) return null;
+      const coords = pickGlobe(globe, px / rect.width, py / rect.height);
       if (!coords) return null;
       const { lng, lat } = coords;
       const point: [number, number] = [lng, lat];
@@ -371,28 +371,36 @@ function TravelGlobeClient({
         flag: alpha2 ? `flag:${alpha2.toLowerCase()}-4x3` : null,
       };
     },
-    [bounded, size.width, size.height, travelDatesByCountry, locale, lang]
+    [bounded, pickGlobe, travelDatesByCountry, locale, lang]
   );
 
-  // The globe auto-rotates, so a stationary cursor covers a different country
-  // every frame — re-resolve from the last cursor position each frame, not just
-  // on mousemove, or the tooltip goes stale until the pointer moves.
+  // Camera changes include auto-rotation, drag inertia and reset animations.
+  // Coalesce them with pointer movement, without polling a stationary globe.
   useEffect(() => {
     if (!isGlobeReady || !isFrameVisible || !isDocumentVisible) return;
+    const controls = globeRef.current?.controls();
+    if (!controls) return;
     let raf = 0;
-    let lastResolve = 0;
-    const tick = (timestamp: number) => {
+    const updateHover = () => {
+      raf = 0;
       const p = pointerRef.current;
-      if (p && timestamp - lastResolve >= 50) {
+      if (p) {
         const next = resolveHovered(p.x, p.y);
         setHovered((prev) => (sameHover(prev, next) ? prev : next));
-        lastResolve = timestamp;
       }
-      raf = requestAnimationFrame(tick);
     };
-    raf = requestAnimationFrame(tick);
-    return () => cancelAnimationFrame(raf);
-  }, [isDocumentVisible, isFrameVisible, isGlobeReady, resolveHovered]);
+    const requestHover = () => {
+      if (!raf && pointerRef.current) raf = requestAnimationFrame(updateHover);
+    };
+    requestHoverRef.current = requestHover;
+    controls.addEventListener('change', requestHover);
+    requestHover();
+    return () => {
+      cancelAnimationFrame(raf);
+      controls.removeEventListener('change', requestHover);
+      requestHoverRef.current = null;
+    };
+  }, [isDocumentVisible, isFrameVisible, isGlobeReady, resolveHovered, size]);
 
   const onFrameMouseMove = (event: ReactMouseEvent<HTMLDivElement>) => {
     const canvas = globeRef.current?.renderer()?.domElement;
@@ -402,6 +410,7 @@ function TravelGlobeClient({
     const py = event.clientY - rect.top;
     setCursor({ x: px, y: py });
     pointerRef.current = { x: px, y: py };
+    requestHoverRef.current?.();
   };
 
   const onFrameMouseLeave = () => {
@@ -492,6 +501,7 @@ function TravelGlobeClient({
           animateIn={false}
           showGlobe
           showAtmosphere={false}
+          enablePointerInteraction={false}
           globeMaterial={globeMaterial}
           onGlobeReady={handleReady}
         />
