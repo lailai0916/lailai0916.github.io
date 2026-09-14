@@ -1,9 +1,37 @@
 ---
-title: 'lailai.skill'
-description: 本文介绍 lailai.skill 项目，用于维护个人表达、思维与代码风格，并路由专用任务。
-summary: lailai 的个人 Skill，维护身份、人格、思维习惯、语言、代码与设计风格。本站通过 Agent 文本入口引用它，不使用子模块或复制规则。仓库标准与初始化流程由 lailai-template 维护，洛谷题解工作流归 luogu-solution，思想材料归 laiism-skill；个人 Skill 保留对应路由。本站继续维护自身的 frontmatter、组件与内容规则。
+title: lailai.skill
+description: 本文介绍 lailai 的个人技能项目，说明个人模型、风格规范、持续维护与专用任务的分工。
+summary: lailai.skill 维护 lailai 的个人信息、人格、思维习惯、表达、代码与设计风格，用于聊天、写作、编程和辅助判断。个人模型由画像、风格规范、观察、示例与测试共同维护，不以一次反馈直接改写长期规则。洛谷题解、仓库标准与思想材料分别交给独立项目处理。使用时先读取目标项目的内部规则，再由个人 Skill 补充风格并选择专用流程；各项目引用同一来源，不复制规则正文。
 ---
 
 ## 项目仓库
 
 <GitHub repo="lailai0916/lailai-skill" />
+
+## 简介
+
+lailai.skill 是持续维护的个人模型，让 AI Agent 尽可能按照 lailai 的方式交流、思考和产出。它面向日常聊天、中文写作、算法竞赛代码、设计审查和辅助判断，不代表本人作出承诺或授权。
+
+- `profile/` 保存个人信息、性格、思维习惯、偏好与边界。
+- `references/` 保存写作、Markdown、LaTeX、代码与设计风格。
+- `observations.md` 记录尚未沉淀为规则的观察。
+- `examples/`、`tests/` 与 `tools/` 提供示例、行为测试和机械检查。
+- `evolution/` 记录评估标准与长期维护过程。
+
+新观察不直接等于长期规则。经验证的习惯才会进入个人模型，并同步调整示例与测试。
+
+## 使用
+
+按仓库的 [安装说明](https://github.com/lailai0916/lailai-skill/blob/main/README.zh-Hans.md#快速开始) 配置共享 Skill 入口，再向 Agent 描述任务，例如「按 lailai 的风格润色这段文字」。
+
+Agent 从 [SKILL.md](https://github.com/lailai0916/lailai-skill/blob/main/SKILL.md) 开始，按任务读取所需内容。维护已有项目时，项目内部规则在其范围内优先，个人 Skill 补充跨项目风格。
+
+## 项目分工
+
+|               任务               |                            专用项目                            |
+| :------------------------------: | :------------------------------------------------------------: |
+|  洛谷选题、求解、验证与专栏维护  | [Luogu Solution](https://github.com/lailai0916/luogu-solution) |
+| 新建仓库、维护 README 与仓库标准 |   [lailai-template](/docs/project/personal/lailai-template)    |
+|     整理思想材料、立场与论证     |         [laiism](/docs/project/personal/laiism-skill)          |
+
+个人 Skill 保留这些项目的使用入口，不复制它们的流程与正文。网站的 frontmatter、组件和内容位置继续由网站内部规则维护。

@@ -683,6 +683,7 @@ const sidebars: SidebarsConfig = {
         'project/personal/lailai0916.github.io',
         'project/personal/lailai0916',
         'project/personal/lailai-skill',
+        'project/personal/laiism-skill',
         'project/personal/lailai-template',
       ],
     },
