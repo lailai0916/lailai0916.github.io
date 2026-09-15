@@ -34,7 +34,7 @@
     "@fontsource/inter": "^5.2.8",
     "@giscus/react": "^3.0.0",
     "@iconify/react": "^6.0.0",
-    "@lailai0916/ui": "0.1.0",
+    "@lailai0916/ui": "0.1.1",
     "@mdx-js/react": "^3.0.0",
     "canvas-confetti": "^1.9.3",
     "clsx": "^2.0.0",
