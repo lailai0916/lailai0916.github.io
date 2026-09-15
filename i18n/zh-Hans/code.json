@@ -1997,29 +1997,8 @@
   "components.playground.nim.tip": {
     "message": "提示"
   },
-  "components.github.error": {
-    "message": "加载 GitHub 数据失败"
-  },
-  "components.github.noDescription": {
-    "message": "暂无描述"
-  },
-  "components.github.stars": {
-    "message": "Star 数"
-  },
-  "components.github.forks": {
-    "message": "Fork 数"
-  },
-  "components.github.license": {
-    "message": "许可证"
-  },
-  "components.github.language": {
-    "message": "主要语言"
-  },
   "components.markdown.aboutGreeting": {
     "message": "Hello, I'm lailai"
-  },
-  "components.quote.attributionDash": {
-    "message": "—— "
   },
   "pages.moments.title": {
     "message": "动态"
@@ -2974,5 +2953,29 @@
   },
   "pages.travel.map.showDots": {
     "message": "切换为点阵地图"
+  },
+  "components.laikitProvider.quoteAttributionDash": {
+    "message": "—— "
+  },
+  "components.laikitProvider.githubError": {
+    "message": "加载 GitHub 数据失败"
+  },
+  "components.laikitProvider.githubNoDescription": {
+    "message": "暂无描述"
+  },
+  "components.laikitProvider.githubStars": {
+    "message": "Star 数"
+  },
+  "components.laikitProvider.githubForks": {
+    "message": "Fork 数"
+  },
+  "components.laikitProvider.githubLicense": {
+    "message": "许可证"
+  },
+  "components.laikitProvider.githubLanguage": {
+    "message": "主要语言"
+  },
+  "components.laikitProvider.other": {
+    "message": "其他"
   }
 }

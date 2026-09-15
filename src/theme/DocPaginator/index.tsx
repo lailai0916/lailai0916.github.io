@@ -1,5 +1,5 @@
 import { translate } from '@docusaurus/Translate';
-import Paginator from '@site/src/components/laikit/Paginator';
+import Paginator from '@lailai0916/ui/Paginator';
 
 interface NavLink {
   permalink: string;

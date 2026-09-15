@@ -2,8 +2,8 @@ import { useEffect, useState } from 'react';
 import clsx from 'clsx';
 import { translate } from '@docusaurus/Translate';
 import { Icon } from '@iconify/react';
-import Card from '@site/src/components/laikit/Card';
-import { useMeasuredHeight } from '@site/src/hooks/useMeasuredHeight';
+import Card from '@lailai0916/ui/Card';
+import { useMeasuredHeight } from '@lailai0916/ui';
 import styles from './styles.module.css';
 
 const LABEL = translate({

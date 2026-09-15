@@ -1,4 +1,4 @@
-import { type ChartDatum } from '@site/src/components/laikit/Chart';
+import { type ChartDatum } from '@lailai0916/ui/Chart';
 import type { SeriesPoint } from '@site/src/hooks/useUmamiPageviewsSeries';
 
 // Bucket width of each Umami series point, used to format ticks/tooltips.

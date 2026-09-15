@@ -4,7 +4,7 @@ import Link from '@docusaurus/Link';
 import { useTOCHighlight, type TOCHighlightConfig } from '@docusaurus/theme-common/internal';
 import type { TOCItem } from '@docusaurus/mdx-loader';
 import { translate } from '@docusaurus/Translate';
-import Card from '@site/src/components/laikit/Card';
+import Card from '@lailai0916/ui/Card';
 import styles from './styles.module.css';
 
 const CONTENTS_LABEL = translate({

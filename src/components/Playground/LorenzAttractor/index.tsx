@@ -7,9 +7,9 @@ import {
 } from 'react';
 import { useColorMode } from '@docusaurus/theme-common';
 import { translate } from '@docusaurus/Translate';
-import Slider from '@site/src/components/laikit/Slider';
-import Button from '@site/src/components/laikit/Button';
-import Card from '@site/src/components/laikit/Card';
+import Slider from '@lailai0916/ui/Slider';
+import Button from '@lailai0916/ui/Button';
+import Card from '@lailai0916/ui/Card';
 import styles from './styles.module.css';
 
 const TWO_PI = 2 * Math.PI;

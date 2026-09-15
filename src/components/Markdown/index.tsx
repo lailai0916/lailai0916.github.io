@@ -1,17 +1,12 @@
-import Heading from '@theme/Heading';
 import Translate from '@docusaurus/Translate';
+import { MDTitle as Title } from '@lailai0916/ui/Markdown';
 import styles from './styles.module.css';
 
-interface MDTitleProps {
-  title: string;
-  description?: string;
-}
-
-export function MDTitle({ title, description }: MDTitleProps) {
+export function MDTitle({ title, description }: { title: string; description?: string }) {
   return (
-    <section className="margin-top--lg margin-bottom--lg text--center">
-      <Heading as="h1">
-        {title === 'About' ? (
+    <Title
+      title={
+        title === 'About' ? (
           <>
             {'🎉\xa0'}
             <span className={styles.titleText}>
@@ -23,9 +18,9 @@ export function MDTitle({ title, description }: MDTitleProps) {
           </>
         ) : (
           title
-        )}
-      </Heading>
-      {description && <p>{description}</p>}
-    </section>
+        )
+      }
+      description={description}
+    />
   );
 }

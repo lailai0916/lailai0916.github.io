@@ -4,7 +4,7 @@ import { useDocCardDescriptionCategoryItemsPlural } from '@docusaurus/theme-comm
 import isInternalUrl from '@docusaurus/isInternalUrl';
 import type { Props } from '@theme/DocCard';
 import type { PropSidebarItem } from '@docusaurus/plugin-content-docs';
-import LinkCard from '@site/src/components/laikit/LinkCard';
+import LinkCard from '@lailai0916/ui/LinkCard';
 
 // Swizzled over the framework's emoji-and-Infima-card DocCard so the category
 // index pages use the laikit LinkCard instead. Type-based lucide icons keep the

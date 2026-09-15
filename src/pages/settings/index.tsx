@@ -1,14 +1,14 @@
 import { useState, useEffect, type ReactNode } from 'react';
 import BrowserOnly from '@docusaurus/BrowserOnly';
-import Skeleton from '@site/src/components/laikit/Skeleton';
+import Skeleton from '@lailai0916/ui/Skeleton';
 import { translate } from '@docusaurus/Translate';
 import Layout from '@theme/Layout';
 
-import TitleCard from '@site/src/components/laikit/TitleCard';
-import Segmented, { type SegmentedItem } from '@site/src/components/laikit/Segmented';
-import Switch from '@site/src/components/laikit/Switch';
-import Slider from '@site/src/components/laikit/Slider';
-import Button from '@site/src/components/laikit/Button';
+import TitleCard from '@lailai0916/ui/TitleCard';
+import Segmented, { type SegmentedItem } from '@lailai0916/ui/Segmented';
+import Switch from '@lailai0916/ui/Switch';
+import Slider from '@lailai0916/ui/Slider';
+import Button from '@lailai0916/ui/Button';
 import { useColorMode } from '@docusaurus/theme-common';
 import { usePersistentState } from '@site/src/hooks/usePersistentState';
 import {
@@ -42,7 +42,7 @@ import {
 } from '@site/src/utils/preferences';
 import { fireConfetti } from '@site/src/utils/confetti';
 import { Icon } from '@iconify/react';
-import { PageTitle, PageHeader, PageContent } from '@site/src/components/laikit/Page';
+import { PageTitle, PageHeader, PageContent } from '@lailai0916/ui/Page';
 import styles from './styles.module.css';
 
 const TITLE = translate({

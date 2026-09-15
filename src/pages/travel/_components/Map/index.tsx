@@ -10,7 +10,7 @@ import {
 import BrowserOnly from '@docusaurus/BrowserOnly';
 import { translate } from '@docusaurus/Translate';
 import clsx from 'clsx';
-import Button from '@site/src/components/laikit/Button';
+import Button from '@lailai0916/ui/Button';
 import styles from './styles.module.css';
 
 const MAP_DESCRIPTION_ID = 'travel-map-description';

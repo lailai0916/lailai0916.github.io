@@ -3,7 +3,7 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import { usePluralForm } from '@docusaurus/theme-common';
 import { useVisitorTimeZone } from '@site/src/hooks/useVisitorTimeZone';
 import { formatLocalDate } from '@site/src/utils/dateTime';
-import { formatCompact } from '@site/src/utils/format';
+import { formatCompact } from '@lailai0916/ui';
 import { type MetaBarItem } from '../BlogUI';
 import { useAnalytics } from '@site/src/hooks/useAnalytics';
 

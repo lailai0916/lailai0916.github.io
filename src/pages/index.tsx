@@ -6,8 +6,8 @@ import { translate } from '@docusaurus/Translate';
 import clsx from 'clsx';
 import { Icon } from '@iconify/react';
 import { COMMUNITY_LIST } from '@site/src/data/community';
-import Badge from '@site/src/components/laikit/Badge';
-import Card from '@site/src/components/laikit/Card';
+import Badge from '@lailai0916/ui/Badge';
+import Card from '@lailai0916/ui/Card';
 import SpringAvatar from './_components/SpringAvatar';
 import styles from './styles.module.css';
 

@@ -5,7 +5,7 @@ import { useLocation } from '@docusaurus/router';
 import type { BlogPaginatedMetadata } from '@docusaurus/plugin-content-blog';
 import type { Props as BlogListPageProps } from '@theme/BlogListPage';
 import BlogScaffold from '../Scaffold';
-import Card from '@site/src/components/laikit/Card';
+import Card from '@lailai0916/ui/Card';
 import { MetaBar, TagChipList } from '../BlogUI';
 import { usePostMetaItems } from '../PostMeta';
 

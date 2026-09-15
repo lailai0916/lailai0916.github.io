@@ -3,8 +3,8 @@ import Link from '@docusaurus/Link';
 import CodeBlock from '@theme/CodeBlock';
 import Admonition from '@theme/Admonition';
 import { translate } from '@docusaurus/Translate';
-import WindowPanel, { type WindowPanelTab } from '@site/src/components/laikit/WindowPanel';
-import { formatBytes } from '@site/src/utils/format';
+import WindowPanel, { type WindowPanelTab } from '@lailai0916/ui/WindowPanel';
+import { formatBytes } from '@lailai0916/ui';
 
 import styles from './styles.module.css';
 

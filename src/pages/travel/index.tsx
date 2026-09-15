@@ -1,8 +1,8 @@
 import { type ReactNode } from 'react';
 import Layout from '@theme/Layout';
-import { PageTitle, PageHeader, PageContent } from '@site/src/components/laikit/Page';
-import DataCard from '@site/src/components/laikit/DataCard';
-import Quote from '@site/src/components/laikit/Quote';
+import { PageTitle, PageHeader, PageContent } from '@lailai0916/ui/Page';
+import DataCard from '@lailai0916/ui/DataCard';
+import Quote from '@lailai0916/ui/Quote';
 import TravelTimeline from '@site/src/pages/travel/_components/Timeline';
 import TravelMap from '@site/src/pages/travel/_components/Map';
 import { translate } from '@docusaurus/Translate';

@@ -1,6 +1,6 @@
 import BrowserOnly from '@docusaurus/BrowserOnly';
 import { GitHubCalendar as GitHubActivityCalendar } from 'react-github-calendar';
-import Skeleton from '@site/src/components/laikit/Skeleton';
+import Skeleton from '@lailai0916/ui/Skeleton';
 import styles from './styles.module.css';
 
 export default function GitHubCalendar() {

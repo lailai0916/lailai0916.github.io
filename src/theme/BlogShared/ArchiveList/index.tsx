@@ -1,8 +1,8 @@
 import { useMemo } from 'react';
 import Link from '@docusaurus/Link';
 import Translate from '@docusaurus/Translate';
-import Card from '@site/src/components/laikit/Card';
-import TitleCard from '@site/src/components/laikit/TitleCard';
+import Card from '@lailai0916/ui/Card';
+import TitleCard from '@lailai0916/ui/TitleCard';
 import { useVisitorTimeZone } from '@site/src/hooks/useVisitorTimeZone';
 import { compareInstantsDescending, getDateKey } from '@site/src/utils/dateTime';
 import styles from './styles.module.css';

@@ -6,8 +6,8 @@ import TabItem from '@theme/TabItem';
 import BrowserWindow, { IframeWindow, ImageWindow } from '@site/src/components/BrowserWindow';
 
 import Notation from '@site/src/components/Notation';
-import GitHub from '@site/src/components/laikit/GitHub';
-import Quote from '@site/src/components/laikit/Quote';
+import GitHub from '@lailai0916/ui/GitHub';
+import Quote from '@lailai0916/ui/Quote';
 import Desmos from '@site/src/components/Desmos';
 import Problem from '@site/src/components/Problem';
 

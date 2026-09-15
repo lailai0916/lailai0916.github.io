@@ -1,0 +1,25 @@
+/* Keep package colors synchronized with the site's live accent and theme. */
+:root,
+:root[data-theme] {
+  --lk-background-color: var(--ifm-background-color);
+  --lk-card-background-color: var(--ifm-card-background-color);
+  --lk-color-content: var(--ifm-color-content);
+  --lk-color-emphasis-100: var(--ifm-color-emphasis-100);
+  --lk-color-emphasis-200: var(--ifm-color-emphasis-200);
+  --lk-color-emphasis-300: var(--ifm-color-emphasis-300);
+  --lk-color-emphasis-400: var(--ifm-color-emphasis-400);
+  --lk-color-emphasis-500: var(--ifm-color-emphasis-500);
+  --lk-color-emphasis-600: var(--ifm-color-emphasis-600);
+  --lk-color-emphasis-700: var(--ifm-color-emphasis-700);
+  --lk-color-emphasis-800: var(--ifm-color-emphasis-800);
+  --lk-color-emphasis-900: var(--ifm-color-emphasis-900);
+  --lk-color-primary: var(--ifm-color-primary);
+  --lk-color-primary-dark: var(--ifm-color-primary-dark);
+  --lk-color-primary-light: var(--ifm-color-primary-light);
+  --lk-font-color-base: var(--ifm-font-color-base);
+  --lk-font-color-secondary: var(--ifm-font-color-secondary);
+  --lk-heading-color: var(--ifm-heading-color);
+  --lk-font-family: var(--ifm-font-family-base);
+  --lk-font-size: var(--global-font-size);
+  --lk-line-height: var(--global-line-height);
+}

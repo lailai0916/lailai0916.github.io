@@ -2,7 +2,7 @@ import { useEffect, useMemo, useRef } from 'react';
 import clsx from 'clsx';
 import { Icon } from '@iconify/react';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
-import Card from '@site/src/components/laikit/Card';
+import Card from '@lailai0916/ui/Card';
 import { TRAVEL_LIST, type TravelItem } from '@site/src/data/travel';
 import { formatCalendarMonthName } from '@site/src/utils/dateTime';
 import styles from './styles.module.css';

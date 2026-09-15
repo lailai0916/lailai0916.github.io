@@ -5,7 +5,7 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import type { KumaHeartbeat } from '@site/src/utils/kuma';
 import { useVisitorTimeZone } from '@site/src/hooks/useVisitorTimeZone';
 import { formatInTimeZone, parseUtcDateTime } from '@site/src/utils/dateTime';
-import Tooltip from '@site/src/components/laikit/Tooltip';
+import Tooltip from '@lailai0916/ui/Tooltip';
 import styles from './styles.module.css';
 
 interface HeartbeatBarProps {

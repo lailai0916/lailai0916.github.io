@@ -1,7 +1,7 @@
 import { translate } from '@docusaurus/Translate';
 import { getAllBlogItems } from '@site/src/utils/blogData';
 import { compareInstantsDescending } from '@site/src/utils/dateTime';
-import type { ShareCardProps } from '@site/src/components/laikit/ShareCard';
+import type { ShareCardProps } from '@lailai0916/ui/ShareCard';
 
 interface MomentItem {
   date: string;
@@ -157,7 +157,7 @@ const STATIC_MOMENTS: MomentItem[] = [
   },
   {
     date: '2025-10-17T20:30:00+08:00',
-    content: "Website's 1st Anniversary! 🎉",
+    content: '1st Anniversary!',
   },
   {
     date: '2025-10-16T19:50:00+08:00',
@@ -171,7 +171,7 @@ const STATIC_MOMENTS: MomentItem[] = [
   },
   {
     date: '2025-09-16T00:00:00+08:00',
-    content: '16th Birthday! 🎉',
+    content: '16th Birthday!',
     images: ['https://cloud.lailai.one/f/r4HM/birthday-16.png'],
   },
   {

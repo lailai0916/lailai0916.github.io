@@ -1,6 +1,6 @@
 import { Icon } from '@iconify/react';
 import { translate } from '@docusaurus/Translate';
-import Button from '@site/src/components/laikit/Button';
+import Button from '@lailai0916/ui/Button';
 
 const RETRY_LABEL = translate({
   id: 'pages.insights.retry',

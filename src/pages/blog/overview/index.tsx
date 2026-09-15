@@ -5,13 +5,13 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import useIsBrowser from '@docusaurus/useIsBrowser';
 import BlogScaffold from '@site/src/theme/BlogShared/Scaffold';
 import { ArchiveTabsNav } from '@site/src/theme/BlogShared/ArchiveTabs';
-import DataCard from '@site/src/components/laikit/DataCard';
+import DataCard from '@lailai0916/ui/DataCard';
 import { getAllBlogItems, getAllPostMetadata, loadOfficialTags } from '@site/src/utils/blogData';
 import { MOMENT_LIST } from '@site/src/data/moments';
 import { useVisitorTimeZone } from '@site/src/hooks/useVisitorTimeZone';
 import { formatCalendarMonth, getMonthKey } from '@site/src/utils/dateTime';
-import { formatCompact } from '@site/src/utils/format';
-import Chart, { type ChartDatum } from '@site/src/components/laikit/Chart';
+import { formatCompact } from '@lailai0916/ui';
+import Chart, { type ChartDatum } from '@lailai0916/ui/Chart';
 import PopularPosts from './_components/PopularPosts';
 import styles from './styles.module.css';
 

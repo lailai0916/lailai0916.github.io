@@ -1,8 +1,8 @@
 import clsx from 'clsx';
 import Link from '@docusaurus/Link';
 import { translate } from '@docusaurus/Translate';
-import Card from '@site/src/components/laikit/Card';
-import Skeleton from '@site/src/components/laikit/Skeleton';
+import Card from '@lailai0916/ui/Card';
+import Skeleton from '@lailai0916/ui/Skeleton';
 import { useKumaStatus } from '@site/src/hooks/useKumaStatus';
 import { type KumaHeartbeat, type KumaMonitor } from '@site/src/utils/kuma';
 import HeartbeatBar, { heartbeatStatusLabel } from '../HeartbeatBar';

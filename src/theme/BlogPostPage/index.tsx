@@ -3,7 +3,7 @@ import clsx from 'clsx';
 import { useExperimentalFlag } from '@site/src/hooks/useExperimentalFlag';
 import BlogPostPageClassic from '@theme-original/BlogPostPage';
 import BlogScaffold from '../BlogShared/Scaffold';
-import Card from '@site/src/components/laikit/Card';
+import Card from '@lailai0916/ui/Card';
 import Summary from '@site/src/components/Article/Summary';
 import { PostHeader, PostFooter, PostPaginator } from '../BlogShared/PostChrome';
 import { HtmlClassNameProvider, ThemeClassNames } from '@docusaurus/theme-common';

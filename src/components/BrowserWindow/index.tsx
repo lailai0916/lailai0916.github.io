@@ -2,8 +2,8 @@ import { type CSSProperties, type ReactNode } from 'react';
 import { translate } from '@docusaurus/Translate';
 import { Icon } from '@iconify/react';
 import clsx from 'clsx';
-import Card from '@site/src/components/laikit/Card';
-import WindowBar from '@site/src/components/laikit/WindowBar';
+import Card from '@lailai0916/ui/Card';
+import WindowBar from '@lailai0916/ui/WindowBar';
 
 import styles from './styles.module.css';
 

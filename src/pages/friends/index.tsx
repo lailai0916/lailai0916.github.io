@@ -2,11 +2,11 @@ import { type ReactNode } from 'react';
 import clsx from 'clsx';
 import Layout from '@theme/Layout';
 import { Icon } from '@iconify/react';
-import { PageTitle, PageHeader, PageContent } from '@site/src/components/laikit/Page';
-import Button from '@site/src/components/laikit/Button';
-import Card from '@site/src/components/laikit/Card';
+import { PageTitle, PageHeader, PageContent } from '@lailai0916/ui/Page';
+import Button from '@lailai0916/ui/Button';
+import Card from '@lailai0916/ui/Card';
 import { FRIEND_LIST } from '@site/src/data/friends';
-import { useImageStatus } from '@site/src/hooks/useImageStatus';
+import { useImageStatus } from '@lailai0916/ui';
 import { translate } from '@docusaurus/Translate';
 import styles from './styles.module.css';
 

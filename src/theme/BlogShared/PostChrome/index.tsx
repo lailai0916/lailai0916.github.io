@@ -1,7 +1,7 @@
 import { translate } from '@docusaurus/Translate';
 
 import type { Props as BlogPostPageProps } from '@theme/BlogPostPage';
-import Paginator from '@site/src/components/laikit/Paginator';
+import Paginator from '@lailai0916/ui/Paginator';
 import Actions from '@site/src/components/Article/Actions';
 import MetaFooter from '@site/src/components/Article/MetaFooter';
 import { MetaBar } from '../BlogUI';

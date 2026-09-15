@@ -1,5 +1,5 @@
 import { translate } from '@docusaurus/Translate';
-import Card from '@site/src/components/laikit/Card';
+import Card from '@lailai0916/ui/Card';
 import styles from './styles.module.css';
 
 export default function Desmos({ id }: { id: string }) {

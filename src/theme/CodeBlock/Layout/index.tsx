@@ -5,8 +5,8 @@ import Container from '@theme/CodeBlock/Container';
 import Title from '@theme/CodeBlock/Title';
 import Content from '@theme/CodeBlock/Content';
 import Buttons from '@theme/CodeBlock/Buttons';
-import WindowBar from '@site/src/components/laikit/WindowBar';
-import { formatBytes } from '@site/src/utils/format';
+import WindowBar from '@lailai0916/ui/WindowBar';
+import { formatBytes } from '@lailai0916/ui';
 import styles from './styles.module.css';
 
 export default function CodeBlockLayout({ className }: { className?: string }): ReactElement {

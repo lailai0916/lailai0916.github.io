@@ -1,10 +1,10 @@
 import { type ReactNode } from 'react';
 import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
-import TitleCard from '@site/src/components/laikit/TitleCard';
-import Skeleton from '@site/src/components/laikit/Skeleton';
-import DataState from '@site/src/components/laikit/DataState';
-import { formatCompact } from '@site/src/utils/format';
+import TitleCard from '@lailai0916/ui/TitleCard';
+import Skeleton from '@lailai0916/ui/Skeleton';
+import DataState from '@lailai0916/ui/DataState';
+import { formatCompact } from '@lailai0916/ui';
 import styles from './styles.module.css';
 
 interface MetricRow {

@@ -8,7 +8,7 @@ import BlogAuthorsPostsPageClassic from '@theme-original/Blog/Pages/BlogAuthorsP
 import type { Props } from '@theme/Blog/Pages/BlogAuthorsPostsPage';
 import BlogScaffold from '../../../BlogShared/Scaffold';
 import { BlogArchiveList } from '../../../BlogShared/ArchiveList';
-import TitleCard from '@site/src/components/laikit/TitleCard';
+import TitleCard from '@lailai0916/ui/TitleCard';
 import { TagChipList } from '../../../BlogShared/BlogUI';
 import { ArchiveTabsNav } from '../../../BlogShared/ArchiveTabs';
 

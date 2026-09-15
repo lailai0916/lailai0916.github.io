@@ -1,7 +1,7 @@
 import { Fragment, useEffect, useRef, useState, type CSSProperties } from 'react';
 import clsx from 'clsx';
 import Translate, { translate } from '@docusaurus/Translate';
-import Card from '@site/src/components/laikit/Card';
+import Card from '@lailai0916/ui/Card';
 import { fireConfetti } from '@site/src/utils/confetti';
 import styles from './styles.module.css';
 

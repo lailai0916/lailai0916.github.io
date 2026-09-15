@@ -6,10 +6,10 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import { usePluginData } from '@docusaurus/useGlobalData';
 import Layout from '@theme/Layout';
 import MDXContent from '@theme/MDXContent';
-import Button from '@site/src/components/laikit/Button';
-import Card from '@site/src/components/laikit/Card';
+import Button from '@lailai0916/ui/Button';
+import Card from '@lailai0916/ui/Card';
 import TableOfContents from '@site/src/components/Article/TableOfContents';
-import { PageContent, PageHeader, PageTitle } from '@site/src/components/laikit/Page';
+import { PageContent, PageHeader, PageTitle } from '@lailai0916/ui/Page';
 import { formatCalendarDate, getDateKey, SHANGHAI_TIME_ZONE } from '@site/src/utils/dateTime';
 import styles from './styles.module.css';
 

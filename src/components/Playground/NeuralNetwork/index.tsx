@@ -14,8 +14,8 @@ import {
 } from 'react';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import { translate } from '@docusaurus/Translate';
-import Button from '@site/src/components/laikit/Button';
-import Card from '@site/src/components/laikit/Card';
+import Button from '@lailai0916/ui/Button';
+import Card from '@lailai0916/ui/Card';
 import styles from './styles.module.css';
 
 const CLEAR_LABEL = translate({

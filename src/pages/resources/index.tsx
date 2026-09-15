@@ -2,17 +2,17 @@ import { type CSSProperties, type ReactNode, useMemo, useRef, useState } from 'r
 import { Icon } from '@iconify/react';
 import Layout from '@theme/Layout';
 
-import { PageTitle, PageHeader, PageContent } from '@site/src/components/laikit/Page';
-import DataCard from '@site/src/components/laikit/DataCard';
-import Badge from '@site/src/components/laikit/Badge';
-import Card from '@site/src/components/laikit/Card';
-import LinkCard from '@site/src/components/laikit/LinkCard';
+import { PageTitle, PageHeader, PageContent } from '@lailai0916/ui/Page';
+import DataCard from '@lailai0916/ui/DataCard';
+import Badge from '@lailai0916/ui/Badge';
+import Card from '@lailai0916/ui/Card';
+import LinkCard from '@lailai0916/ui/LinkCard';
 import clsx from 'clsx';
 
-import IconBlock from '@site/src/components/laikit/IconBlock';
-import Button from '@site/src/components/laikit/Button';
-import DataState from '@site/src/components/laikit/DataState';
-import { useMeasuredHeight } from '@site/src/hooks/useMeasuredHeight';
+import IconBlock from '@lailai0916/ui/IconBlock';
+import Button from '@lailai0916/ui/Button';
+import DataState from '@lailai0916/ui/DataState';
+import { useMeasuredHeight } from '@lailai0916/ui';
 
 import { usePluralForm } from '@docusaurus/theme-common';
 import {

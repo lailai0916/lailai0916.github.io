@@ -4,7 +4,7 @@ import Link from '@docusaurus/Link';
 import { Icon } from '@iconify/react';
 import { translate } from '@docusaurus/Translate';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
-import Card from '@site/src/components/laikit/Card';
+import Card from '@lailai0916/ui/Card';
 import { getAllBlogItems } from '@site/src/utils/blogData';
 import { useVisitorTimeZone } from '@site/src/hooks/useVisitorTimeZone';
 import {

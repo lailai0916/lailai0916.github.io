@@ -1,8 +1,8 @@
 import { useState, useEffect, useRef, useCallback } from 'react';
 import { translate } from '@docusaurus/Translate';
 import clsx from 'clsx';
-import Button from '@site/src/components/laikit/Button';
-import Card from '@site/src/components/laikit/Card';
+import Button from '@lailai0916/ui/Button';
+import Card from '@lailai0916/ui/Card';
 import styles from './styles.module.css';
 
 const ROWS = 6;

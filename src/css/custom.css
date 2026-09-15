@@ -1,3 +1,6 @@
+@import '@lailai0916/ui/theme.css';
+@import '@lailai0916/ui/styles.css';
+@import './laikit.css';
 @import '@fontsource/inter/400.css';
 @import '@fontsource/inter/500.css';
 @import '@fontsource/inter/600.css';
@@ -24,35 +27,10 @@
 
   --global-font-size: 16px;
   --global-line-height: 1.65;
-
-  /* Elevation — layered ambient + key shadows for Apple-style depth.
-     One scale, theme-aware, so every surface shares the same light logic. */
-  --lk-shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.03);
-  --lk-shadow-raised: 0 1px 2px rgba(0, 0, 0, 0.03), 0 4px 12px rgba(0, 0, 0, 0.05);
-  --lk-shadow-md: 0 1px 2px rgba(0, 0, 0, 0.03), 0 6px 16px rgba(0, 0, 0, 0.05);
-  --lk-shadow-lg: 0 1px 2px rgba(0, 0, 0, 0.05), 0 8px 24px rgba(0, 0, 0, 0.06);
-  --lk-shadow-pin: 0 2px 3px rgba(0, 0, 0, 0.2);
-
-  /* Focus ring — one definition shared by every interactive surface. */
-  --lk-focus-ring: 0 0 0 3px color-mix(in srgb, var(--ifm-color-primary) 22%, transparent);
-
-  /* The laikit card corner radius — shared by Card and the other card-like
-     surfaces (resources' filter panel / empty state) so they round identically,
-     without repinning Infima's framework-wide card variable. */
-  --lk-radius-lg: 16px;
 }
 
 [data-theme='dark'] {
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
-
-  /* Dark surfaces sit on near-black; shadows go deeper to read as depth. */
-  --lk-shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.22);
-  --lk-shadow-raised: 0 1px 2px rgba(0, 0, 0, 0.22), 0 4px 12px rgba(0, 0, 0, 0.18);
-  --lk-shadow-md: 0 1px 2px rgba(0, 0, 0, 0.22), 0 6px 16px rgba(0, 0, 0, 0.16);
-  --lk-shadow-lg: 0 1px 2px rgba(0, 0, 0, 0.3), 0 8px 24px rgba(0, 0, 0, 0.26);
-  --lk-shadow-pin: 0 2px 3px rgba(0, 0, 0, 0.3);
-
-  --lk-focus-ring: 0 0 0 3px color-mix(in srgb, var(--ifm-color-primary) 30%, transparent);
 }
 
 /* Experimental appearance toggles, merged into <html> through Docusaurus's

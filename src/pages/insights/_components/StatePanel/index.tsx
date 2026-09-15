@@ -1,5 +1,5 @@
 import { Icon } from '@iconify/react';
-import Card from '@site/src/components/laikit/Card';
+import Card from '@lailai0916/ui/Card';
 import RetryButton from '../RetryButton';
 import styles from './styles.module.css';
 

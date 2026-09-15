@@ -2,7 +2,7 @@ import { Fragment, type ReactNode } from 'react';
 import clsx from 'clsx';
 import Link from '@docusaurus/Link';
 import { Icon } from '@iconify/react';
-import Badge from '@site/src/components/laikit/Badge';
+import Badge from '@lailai0916/ui/Badge';
 import styles from './styles.module.css';
 
 export type MetaBarItem = {

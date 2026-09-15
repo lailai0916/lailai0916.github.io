@@ -5,13 +5,13 @@ import BrowserOnly from '@docusaurus/BrowserOnly';
 import { translate } from '@docusaurus/Translate';
 import Giscus from '@giscus/react';
 import { Icon } from '@iconify/react';
-import Card from '@site/src/components/laikit/Card';
+import Card from '@lailai0916/ui/Card';
 import { useColorMode } from '@docusaurus/theme-common';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 
 import { DEVICE_LIST } from '@site/src/data/devices';
 import { COMMUNITY_LIST } from '@site/src/data/community';
-import { useImageStatus } from '@site/src/hooks/useImageStatus';
+import { useImageStatus } from '@lailai0916/ui';
 import styles from './styles.module.css';
 
 const WORD_CLOUD_URL = 'https://cloud.lailai.one/f/AdNtA/wordcloud.svg';

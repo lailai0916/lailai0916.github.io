@@ -20,8 +20,8 @@ import * as countries from 'i18n-iso-countries';
 import countriesEn from 'i18n-iso-countries/langs/en.json';
 import countriesZh from 'i18n-iso-countries/langs/zh.json';
 import { MeshBasicMaterial, type CanvasTexture } from 'three';
-import Button from '@site/src/components/laikit/Button';
-import Tooltip from '@site/src/components/laikit/Tooltip';
+import Button from '@lailai0916/ui/Button';
+import Tooltip from '@lailai0916/ui/Tooltip';
 import { TRAVEL_LIST } from '@site/src/data/travel';
 import { formatCalendarMonth } from '@site/src/utils/dateTime';
 import {

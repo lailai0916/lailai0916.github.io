@@ -9,7 +9,7 @@ import { ArchiveTabsNav } from '../BlogShared/ArchiveTabs';
 import { translate } from '@docusaurus/Translate';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import { loadOfficialTags } from '@site/src/utils/blogData';
-import TitleCard from '@site/src/components/laikit/TitleCard';
+import TitleCard from '@lailai0916/ui/TitleCard';
 import { TagChipList } from '../BlogShared/BlogUI';
 
 const TITLE = translate({ id: 'blog.pages.tags.tagSelect', message: 'Tags' });

@@ -2,7 +2,7 @@ import { useEffect, useRef, type RefObject } from 'react';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import { useColorMode } from '@docusaurus/theme-common';
 import type { GlobeMethods } from 'react-globe.gl';
-import { useImageStatus } from '@site/src/hooks/useImageStatus';
+import { useImageStatus } from '@lailai0916/ui';
 import { attachLocationMarker } from './renderMarker';
 import styles from './styles.module.css';
 

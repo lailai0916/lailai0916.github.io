@@ -49,14 +49,14 @@ There is no test runner. `npm run check` is the gate.
 Path-scoped detail — before editing, read each file whose scope matches the target paths.
 Don't restate their content here; extend the file itself.
 
-| Rule                                                               | Scope                                     | Covers                                                                                                       |
-| ------------------------------------------------------------------ | ----------------------------------------- | ------------------------------------------------------------------------------------------------------------ |
-| [`.agents/rules/components.md`](.agents/rules/components.md)       | `src/**` ts·tsx·css                       | `laikit` inventory, CSS-Module layout & rule ordering, hover-motion limits, text-overflow, MDX widgets       |
-| [`.agents/rules/i18n.md`](.agents/rules/i18n.md)                   | `src/**`, `i18n/**`                       | `translate()` workflow, five-prefix taxonomy, key shapes, orphan cleanup                                     |
-| [`.agents/rules/comments.md`](.agents/rules/comments.md)           | `src/**`, `*.ts`                          | code-comment style (site-specific slice)                                                                     |
-| [`.agents/rules/datetime.md`](.agents/rules/datetime.md)           | `src/**`, `docusaurus.config.ts`          | instant/calendar/duration semantics, storage offsets, visitor display zones, API boundaries                  |
-| [`.agents/rules/writing-style.md`](.agents/rules/writing-style.md) | `blog/**`, `docs/**`, translated MDX      | frontmatter, English title capitalization, content envelope, site exceptions, MDX widgets, images, and links |
-| [`.agents/rules/solution-sync.md`](.agents/rules/solution-sync.md) | solution posts and Luogu contribution doc | Site mirror/frontmatter and AI-index layer; full Luogu workflow is routed by `lailai-skill`                  |
+| Rule                                                               | Scope                                     | Covers                                                                                                           |
+| ------------------------------------------------------------------ | ----------------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
+| [`.agents/rules/components.md`](.agents/rules/components.md)       | `src/**` ts·tsx·css                       | `@lailai0916/ui` integration, CSS-Module layout & rule ordering, hover-motion limits, text-overflow, MDX widgets |
+| [`.agents/rules/i18n.md`](.agents/rules/i18n.md)                   | `src/**`, `i18n/**`                       | `translate()` workflow, five-prefix taxonomy, key shapes, orphan cleanup                                         |
+| [`.agents/rules/comments.md`](.agents/rules/comments.md)           | `src/**`, `*.ts`                          | code-comment style (site-specific slice)                                                                         |
+| [`.agents/rules/datetime.md`](.agents/rules/datetime.md)           | `src/**`, `docusaurus.config.ts`          | instant/calendar/duration semantics, storage offsets, visitor display zones, API boundaries                      |
+| [`.agents/rules/writing-style.md`](.agents/rules/writing-style.md) | `blog/**`, `docs/**`, translated MDX      | frontmatter, English title capitalization, content envelope, site exceptions, MDX widgets, images, and links     |
+| [`.agents/rules/solution-sync.md`](.agents/rules/solution-sync.md) | solution posts and Luogu contribution doc | Site mirror/frontmatter and AI-index layer; full Luogu workflow is routed by `lailai-skill`                      |
 
 ## Architecture
 
@@ -68,8 +68,8 @@ Don't restate their content here; extend the file itself.
 | `blog/`                                 | MDX posts by topic folder; `authors.yml` + `tags.yml` are controlled vocabularies (unlisted values warn at build)                                                                                                                      |
 | `src/pages/`                            | Custom React pages (`about`, `travel`, `friends`, `resources`, `settings`, `insights`, `changelog`, `privacy`, and the bespoke `index`). Page-local React sits in a `_components/` subfolder (leading `_` stops Docusaurus routing it) |
 | `src/theme/`                            | Swizzled Docusaurus overrides (Blog\*, Root, `DocItem/*`, `BlogShared/*`, …) — use `npm run swizzle`, don't hand-copy (`@theme/Layout` is intentionally un-swizzled)                                                                   |
-| `src/components/laikit/`                | In-house design system → [`.agents/rules/components.md`](.agents/rules/components.md)                                                                                                                                                  |
-| `src/components/` (non-laikit)          | Author-facing MDX widgets, shared `Article/` chrome, one-off `Playground/` demos → [`.agents/rules/components.md`](.agents/rules/components.md)                                                                                        |
+| `src/components/LaikitProvider/`        | Adapter for the external `@lailai0916/ui` design system → [`.agents/rules/components.md`](.agents/rules/components.md)                                                                                                                 |
+| `src/components/` (site widgets)        | Author-facing MDX widgets, shared `Article/` chrome, one-off `Playground/` demos → [`.agents/rules/components.md`](.agents/rules/components.md)                                                                                        |
 | `src/hooks/`, `src/utils/`, `src/data/` | Shared hooks, helpers, and static data (`resources`, `changelog`, `travel`, `moments`)                                                                                                                                                 |
 | `src/plugins/`                          | Local Docusaurus build plugins; `privacyLastUpdate` publishes each Privacy body file's latest Git commit time                                                                                                                          |
 | `static/`                               | Copied verbatim to site root — `CNAME`, `.nojekyll`, verification files, image/JSON assets                                                                                                                                             |
@@ -87,7 +87,7 @@ Custom-page notes: `insights` is live Umami traffic. `blog/overview` and `blog/m
 
 ### Path alias
 
-`@site` resolves to the project root, e.g. `import Button from '@site/src/components/laikit/Button'`.
+`@site` resolves to the project root, e.g. `import Summary from '@site/src/components/Article/Summary'`; shared UI imports use `@lailai0916/ui`.
 
 ## Conventions
 
