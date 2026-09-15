@@ -2,7 +2,7 @@
   <h1>lailai's Home</h1>
   <p><a href="README.md">English</a> · <strong>简体中文</strong></p>
   <p>
-    <img src="https://img.shields.io/github/actions/workflow/status/lailai0916/lailai0916.github.io/deploy.yml?style=flat-square" />
+    <img src="https://img.shields.io/github/actions/workflow/status/lailai0916/lailai0916.github.io/deploy.yml?branch=main&style=flat-square" />
     <img src="https://img.shields.io/github/last-commit/lailai0916/lailai0916.github.io?style=flat-square" />
     <img src="https://img.shields.io/github/languages/top/lailai0916/lailai0916.github.io?style=flat-square" />
     <img src="https://img.shields.io/github/repo-size/lailai0916/lailai0916.github.io?style=flat-square" />
@@ -27,37 +27,37 @@
 
 ## 网站特性
 
-🎨 **定制首页**：基于便当格布局的自定义首页，配有动态 Lorenz Attractor 与打字机式的身份介绍。
+🎨 **定制首页** — 基于便当格布局的自定义首页，配有动态 Lorenz Attractor 与打字机式的身份介绍。
 
-📰 **重塑博客**：全面重新设计的博客，配有丰富的侧边栏与增强的文章页。
+📰 **重塑博客** — 全面重新设计的博客，配有丰富的侧边栏与增强的文章页。
 
-📄 **自定义页面**：博客与文档之外的精心定制页面，如 About、Travel、Resources 等。
+📄 **自定义页面** — 博客与文档之外的精心定制页面，如 About、Travel、Resources 等。
 
-🧩 **自定义组件**：面向题目、题解、嵌入等场景的领域 MDX 组件。
+🧩 **自定义组件** — 面向题目、题解、嵌入等场景的领域 MDX 组件。
 
-📐 **数学、图表与实时代码**：自托管 [KaTeX](https://katex.org) 并支持公式复制，集成 [Mermaid](https://mermaid.js.org) 图表与可实时运行的 [React](https://react.dev) 代码块。
+📐 **数学、图表与实时代码** — 自托管 [KaTeX](https://katex.org) 并支持公式复制，集成 [Mermaid](https://mermaid.js.org) 图表与可实时运行的 [React](https://react.dev) 代码块。
 
-🔍 **全文搜索**：由 [Algolia DocSearch](https://docsearch.algolia.com) 提供的全站快速检索。
+🔍 **全文搜索** — 由 [Algolia DocSearch](https://docsearch.algolia.com) 提供的全站快速检索。
 
-📱 **响应式设计**：从手机到桌面的各类屏幕均经过适配。
+📱 **响应式设计** — 从手机到桌面的各类屏幕均经过适配。
 
-⚙️ **用户设置**：运行时切换主题、强调色、字体等。
+⚙️ **用户设置** — 运行时切换主题、强调色、字体等。
 
-🌐 **双语界面**：网站界面支持英文与简体中文。
+🌐 **双语界面** — 网站界面支持英文与简体中文。
 
-🛡️ **隐私与评论**：提供详细的隐私政策，并集成 [Giscus](https://giscus.app) 评论系统。
+🛡️ **隐私与评论** — 提供详细的隐私政策，并集成 [Giscus](https://giscus.app) 评论系统。
 
-📡 **订阅源**：通过 RSS、Atom 或 JSON 订阅最新文章。
+📡 **订阅源** — 通过 RSS、Atom 或 JSON 订阅最新文章。
 
-🛠️ **自建设计系统**：手工打造的组件库（`laikit`），统一全站 UI 风格。
+🛠️ **自建设计系统** — 手工打造的组件库（`laikit`），统一全站 UI 风格。
 
-📊 **分析与 SEO**：通过公开的 [Umami 看板](https://analytics.lailai.one/share/DDd09iBEYOQw2k9L) 提供隐私友好的网站统计，并已在主流搜索引擎验证。
+📊 **分析与 SEO** — 通过公开的 [Umami 看板](https://analytics.lailai.one/share/DDd09iBEYOQw2k9L) 提供隐私友好的网站统计，并已在主流搜索引擎验证。
 
-📦 **字体自托管**：核心字体随网站打包并由本站提供。
+📦 **字体自托管** — 核心字体随网站打包并由本站提供。
 
-🔧 **现代技术栈**：基于严格 TypeScript 与现代 CSS 构建。
+🔧 **现代技术栈** — 基于严格 TypeScript 与现代 CSS 构建。
 
-🚀 **稳健部署**：GitHub Actions 每次提交都同步发布到源站服务器与 [GitHub Pages](https://pages.github.com) 镜像，另有 Tor onion 站点。
+🚀 **稳健部署** — GitHub Actions 每次提交都同步发布到源站服务器与 [GitHub Pages](https://pages.github.com) 镜像，另有 Tor onion 站点。
 
 ## 快速开始
 
@@ -91,8 +91,6 @@ lailai0916.github.io/
 │   └── CNAME                       # 域名配置
 ├── docusaurus.config.ts            # Docusaurus 配置
 ├── eslint.config.mjs               # ESLint 配置
-├── LICENSE                         # 代码许可协议
-├── LICENSE-docs                    # 文档许可协议
 ├── package-lock.json               # 依赖锁定文件
 ├── package.json                    # 依赖配置
 ├── sidebars.ts                     # 文档侧边栏配置

@@ -2,7 +2,7 @@
   <h1>lailai's Home</h1>
   <p><strong>English</strong> · <a href="README.zh-Hans.md">简体中文</a></p>
   <p>
-    <img src="https://img.shields.io/github/actions/workflow/status/lailai0916/lailai0916.github.io/deploy.yml?style=flat-square" />
+    <img src="https://img.shields.io/github/actions/workflow/status/lailai0916/lailai0916.github.io/deploy.yml?branch=main&style=flat-square" />
     <img src="https://img.shields.io/github/last-commit/lailai0916/lailai0916.github.io?style=flat-square" />
     <img src="https://img.shields.io/github/languages/top/lailai0916/lailai0916.github.io?style=flat-square" />
     <img src="https://img.shields.io/github/repo-size/lailai0916/lailai0916.github.io?style=flat-square" />
@@ -91,8 +91,6 @@ lailai0916.github.io/
 │   └── CNAME                       # Domain config
 ├── docusaurus.config.ts            # Docusaurus config
 ├── eslint.config.mjs               # ESLint config
-├── LICENSE                         # Code license
-├── LICENSE-docs                    # Documentation license
 ├── package-lock.json               # Dependency lock file
 ├── package.json                    # Dependency config
 ├── sidebars.ts                     # Documentation sidebar config
