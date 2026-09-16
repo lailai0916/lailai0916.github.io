@@ -747,8 +747,6 @@ const sidebars: SidebarsConfig = {
         'project/ui/content',
         'project/ui/theming',
         'project/ui/integration',
-        'project/ui/maintenance',
-        'project/ui/migration',
       ],
     },
     {
