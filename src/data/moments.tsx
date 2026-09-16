@@ -14,6 +14,11 @@ interface MomentItem {
 
 const STATIC_MOMENTS: MomentItem[] = [
   {
+    date: '2026-09-16T00:00:00+08:00',
+    content: '17th Birthday!',
+    images: ['https://cloud.lailai.one/f/AdNtA/wordcloud.svg'],
+  },
+  {
     date: '2026-08-17T14:01:00+08:00',
     content: '征集眼前一亮的 idea',
     images: ['https://cloud.lailai.one/f/NRotg/IMG_5577.PNG'],
