@@ -1,7 +1,7 @@
 ---
 title: laiism.skill
-description: 本文介绍 laiism.skill 思想技能项目，说明思想材料、来源、确认状态与讨论方式。
-summary: laiism.skill 用于整理、讨论与发展 laiism 的思想体系，将思想材料与完整人格模拟、日常写作和代码规范分开维护。观点正文集中存于 positions.json，每项材料保留来源，并分别记录个人立场是否确认、正式主张是否确立。历史摘要、待确认观察与建议草案不会自动成为教义。项目支持解释、批评、条件性应用和拟稿，可独立使用；网站项目页提供定位与入口，不另存一套思想正文。
+description: 本文介绍 laiism.skill 的思想材料、观点分析功能与安装使用方法。
+summary: laiism.skill 用于整理、讨论与发展 laiism 的思想体系，支持解释观点、分析论证、检验反例与起草新主张。思想材料记录正文、来源和确认状态，可按条目查阅。将仓库安装为 Agent Skill 后，可以围绕某项立场的前提、推理和适用范围展开讨论，也可以结合现有材料形成新的讨论草稿。
 ---
 
 ## 项目仓库
@@ -10,23 +10,16 @@ summary: laiism.skill 用于整理、讨论与发展 laiism 的思想体系，�
 
 ## 简介
 
-laiism.skill 是用于整理、讨论与发展 laiism 思想体系的 Agent Skill。它关注世界观、价值立场、论证与实践，不模拟完整人格，也不接管日常写作、代码或仓库规范。项目名 `laiism.skill` 与思想体系名 `laiism` 均保持小写，仓库标识为 `laiism-skill`。
+laiism.skill 是用于整理、讨论与发展 laiism 思想体系的 Agent Skill，关注世界观、价值立场、论证与实践。
 
-它支持解释已有材料、检验前提与反例、讨论适用范围，以及起草供审阅的新建议。讨论思想不等于接受思想，草案也不代表已经确立的主张。
+它支持解释已有观点、分析推理过程、检验反例、讨论适用范围，以及结合现有材料起草新主张。
 
 ## 思想材料
 
-[positions.json](https://github.com/lailai0916/laiism-skill/blob/main/positions.json) 是思想正文与依据的统一来源。每项材料有稳定的标识、正文、来源和两类确认状态：
-
-- **个人立场**：是否已有本人确认记录。
-- **正式主张**：是否已由本人明确确立为 laiism 教义。
-
-确认个人立场不等于确立教义。历史模型摘要不视为本人逐字原话，待确认观察也不当作已知信仰。材料整理、修改与确认方法见 [维护说明](https://github.com/lailai0916/laiism-skill/blob/main/references/method.md)。
+[思想材料](https://github.com/lailai0916/laiism-skill/blob/main/positions.json) 按条目记录观点正文、来源和确认状态，可区分已确认的个人立场与正式主张。
 
 ## 使用
 
-按仓库的 [安装说明](https://github.com/lailai0916/laiism-skill/blob/main/README.zh-Hans.md#快速开始) 配置共享 Skill 入口，Agent 先读 [SKILL.md](https://github.com/lailai0916/laiism-skill/blob/main/SKILL.md)，再读取相关思想条目。
+按仓库的 [安装说明](https://github.com/lailai0916/laiism-skill/blob/main/README.zh-Hans.md#快速开始) 完成安装后，让 Agent 使用 `laiism-skill`。
 
-例如，可以要求「解释这条已记录立场的前提，并提出一个反例」，或「根据现有材料起草一份建议，区分已有主张与新增内容」。
-
-该 Skill 可独立使用，不依赖个人网站或其他个人 Skill。网站不复制思想正文，具体条目的内容、来源与状态以仓库为准。
+例如，可以要求「解释这条立场的前提，并提出一个反例」，或「根据现有材料起草一份新的讨论草稿」。
