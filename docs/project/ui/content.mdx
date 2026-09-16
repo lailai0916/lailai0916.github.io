@@ -1,0 +1,123 @@
+---
+title: 内容展示
+description: 本文介绍头像、品牌、徽标、窗口、引用和分页等组件，以及内容来源与交互的使用边界。
+summary: 内容组件提供头像、品牌、徽标、图标、窗口、文章标题、引用、仓库卡片与分页结构。WindowPanel 管理标签切换和折叠，宿主提供内容与操作名称；GitHub 卡片在浏览器请求公开仓库信息。Tooltip 是由调用方定位和显示的数据提示层，TrafficLights 是装饰元素。图片、跳转地址、分页数据和文案由应用提供，不依赖特定网站的数据结构。
+---
+
+import { Avatar, Badge, Cluster, EmptyState, WindowPanel } from '@lailai0916/ui';
+
+## 参考资料
+
+- [组件源码 - GitHub](https://github.com/lailai0916/ui/tree/main/src/components)
+- [WindowPanel 组件 - GitHub](https://github.com/lailai0916/ui/tree/main/src/components/WindowPanel)
+
+## 效果展示
+
+<WindowPanel
+  collapseLabel="收起示例"
+  expandLabel="展开示例"
+  tabs={[
+    {
+      label: '身份',
+      content: (
+        <Cluster>
+          <Avatar name="lailai" alt="lailai 的头像" />
+          <span>lailai</span>
+          <Badge>维护者</Badge>
+        </Cluster>
+      ),
+    },
+    {
+      label: '空状态',
+      content: <EmptyState title="暂无收藏" description="收藏的项目会显示在这里。" />,
+    },
+  ]}
+/>
+
+## 身份与标记
+
+| 组件        | 必要属性          | 可选属性                                                        |
+| ----------- | ----------------- | --------------------------------------------------------------- |
+| `Avatar`    | `name`、`alt`     | `src`、`size`，默认尺寸 36 px                                   |
+| `Brand`     | `logoSrc`、`name` | `logoAlt`，默认空字符串                                         |
+| `Badge`     | 无                | `children`、`icon`、`count`、`active`、`hoverable`、`className` |
+| `IconBlock` | 无                | `icon`、`variant`、`size`、`iconSize`、`className`、`children`  |
+
+`Avatar` 在没有图片时显示姓名首字母；`alt` 应描述头像用途。`Brand` 由应用提供标志地址与名称。`IconBlock.variant` 为 `accent` 或 `muted`。
+
+`Badge.hoverable` 只提供悬停外观，不会把徽标变成按钮；需要点击操作时使用按钮或链接。图标名使用 Iconify 标识，例如 `lucide:book-open`，图标数据可能通过网络加载。
+
+## 窗口
+
+`TrafficLights` 显示装饰性的窗口圆点；`WindowBar` 提供标题栏，可传 `children`、`className`。需要标签切换与折叠时使用 `WindowPanel`：
+
+```tsx
+import { WindowPanel } from '@lailai0916/ui';
+
+export function ResultWindow() {
+  return (
+    <WindowPanel
+      collapseLabel="收起结果"
+      expandLabel="展开结果"
+      expandTo="last"
+      tabs={[
+        { label: '结果', content: <p>转换成功。</p> },
+        { label: '原始数据', content: <pre>{'{"ok":true}'}</pre> },
+      ]}
+    />
+  );
+}
+```
+
+每个标签含 `label`、`content`；`bare` 可移除默认正文内边距。`toolbar(activeIndex, open)` 可以提供附加工具。`expandTo` 为 `first` 或 `last`，决定重新展开时选中哪一页。
+
+## 文章与仓库
+
+| 组件         | 主要属性                                              | 用途                        |
+| ------------ | ----------------------------------------------------- | --------------------------- |
+| `MDTitle`    | `title`、`description`、`className`                   | 接受 React 内容的文章标题区 |
+| `Quote`      | `children`、`author`、`source`、`className`           | 引用正文及明确的署名来源    |
+| `GitHub`     | `repo`、`className`                                   | 公开 GitHub 仓库卡片        |
+| `EmptyState` | `title`、`description`；可选 `icon`、`action`         | 有说明与后续操作的空状态    |
+| `Paginator`  | `ariaLabel`；可选 `prevItem`、`nextItem`、`className` | 前后项导航                  |
+
+`MDTitle` 不包含个人问候逻辑。`Quote` 的作者与来源应真实；`GitHub.repo` 使用 `owner/repo` 格式，例如 `lailai0916/ui`。GitHub API 失败或限流时，卡片显示本地化错误，不应传入访问令牌。
+
+`Paginator` 每个导航项包含 `title`、`permalink`、`label`。组件只渲染给定链接，排序、页数和当前页由应用决定。
+
+```tsx
+import { Paginator } from '@lailai0916/ui';
+
+export function GuideNavigation() {
+  return (
+    <Paginator
+      ariaLabel="文档导航"
+      prevItem={{ title: '数据展示', permalink: '/docs/project/ui/data-display', label: '上一篇' }}
+      nextItem={{ title: '主题定制', permalink: '/docs/project/ui/theming', label: '下一篇' }}
+    />
+  );
+}
+```
+
+## 数据提示
+
+`Tooltip` 是图表使用的提示内容层，接受 `leftPct`、原生 `div` 属性和 `children`，可组合 `Tooltip.Label` 与 `Tooltip.Value`。它不包含悬停触发器、门户或自动避让；显示时机、定位容器和交互均由调用方控制。
+
+```tsx
+import { Tooltip } from '@lailai0916/ui';
+
+export function ChartHint({ visible }: { visible: boolean }) {
+  return (
+    <div style={{ position: 'relative' }}>
+      {visible && (
+        <Tooltip leftPct={50}>
+          <Tooltip.Label>星期一</Tooltip.Label>
+          <Tooltip.Value>12 次访问</Tooltip.Value>
+        </Tooltip>
+      )}
+    </div>
+  );
+}
+```
+
+完整图表优先使用 `Chart` 或 `Donut`，它们已组织图形与提示层。

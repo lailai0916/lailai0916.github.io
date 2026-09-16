@@ -1,0 +1,125 @@
+---
+title: 数据展示
+description: 本文介绍图表、环形图、进度条与数据状态组件的输入格式，以及加载、空值和错误处理。
+summary: Chart 使用带有键、数值和标签的数据绘制柱状图或折线图，Donut 使用分类与数值绘制环形图。两者区分加载、空数据、错误和保留旧数据时的提示，日期与数字格式由宿主决定。Progress 展示有限范围内的进度，DataState 与 Skeleton 分别承载状态说明和加载占位。数据请求、重试与缓存由应用负责，示例使用固定数据。
+---
+
+import { Chart, Progress, Stack } from '@lailai0916/ui';
+
+## 参考资料
+
+- [Chart 组件 - GitHub](https://github.com/lailai0916/ui/tree/main/src/components/Chart)
+- [Donut 组件 - GitHub](https://github.com/lailai0916/ui/tree/main/src/components/Donut)
+
+## 效果展示
+
+<Stack gap={24}>
+  <Chart
+    title="示例访问量"
+    type="bar"
+    emptyText="暂无数据"
+    data={[
+      { key: 'mon', value: 12, tooltipLabel: '星期一', axisLabel: '一' },
+      { key: 'tue', value: 24, tooltipLabel: '星期二', axisLabel: '二' },
+      { key: 'wed', value: 18, tooltipLabel: '星期三', axisLabel: '三' },
+      { key: 'thu', value: 36, tooltipLabel: '星期四', axisLabel: '四' },
+    ]}
+  />
+  <Progress label="示例进度" value={64} />
+</Stack>
+
+图表使用固定的演示数据，可将鼠标移到图形上查看数值。
+
+## 柱状图与折线图
+
+```tsx
+import { Chart, type ChartDatum } from '@lailai0916/ui';
+
+const data: ChartDatum[] = [
+  { key: 'mon', value: 12, tooltipLabel: '星期一', axisLabel: '一' },
+  { key: 'tue', value: 24, tooltipLabel: '星期二', axisLabel: '二' },
+  { key: 'wed', value: 18, tooltipLabel: '星期三', axisLabel: '三' },
+];
+
+export function VisitsChart() {
+  return <Chart title="访问量" type="line" data={data} emptyText="暂无访问记录" />;
+}
+```
+
+| 属性                                 | 说明                                          |
+| ------------------------------------ | --------------------------------------------- |
+| `title`、`type`、`data`、`emptyText` | 必填；`type` 为 `bar` 或 `line`               |
+| `icon`、`size`                       | 标题图标与标题样式；`size` 为 `sm` 或 `plain` |
+| `formatValue`                        | 把数值转换成显示字符串                        |
+| `loading`                            | 显示加载状态                                  |
+| `error`、`errorAction`               | 错误文案与可选操作                            |
+| `notice`                             | 保留已有图表时显示补充提示                    |
+| `className`                          | 宿主局部布局                                  |
+
+数据项 `key` 应稳定且唯一，`tooltipLabel` 是完整提示，`axisLabel` 是可选的短轴标签。组件不判断日期时区；应用先完成排序、聚合和访客时区格式化，再传入标签。
+
+## 环形图
+
+```tsx
+import { Donut } from '@lailai0916/ui';
+
+export function DeviceChart() {
+  return (
+    <Donut
+      title="设备分布"
+      icon="lucide:monitor"
+      items={[
+        { x: '桌面端', y: 64 },
+        { x: '移动端', y: 36 },
+      ]}
+      emptyText="暂无设备数据"
+      otherLabel="其他"
+      maxSlices={5}
+    />
+  );
+}
+```
+
+`Donut` 要求 `title`、`icon`、`items`、`emptyText`。每项的 `x` 是分类名称，`y` 是数值；`maxSlices` 将长尾分类归入 `otherLabel`。`renderLabel` 可自定义分类呈现，`formatValue` 控制数字格式；加载、错误与提示属性同 `Chart`。
+
+## 状态处理
+
+| 情况                   | 传入方式                         |
+| ---------------------- | -------------------------------- |
+| 首次请求尚未完成       | `loading={true}`                 |
+| 请求成功且没有记录     | 空数组与准确的 `emptyText`       |
+| 请求失败且无法展示数据 | `error`，按需提供 `errorAction`  |
+| 刷新失败但仍有历史数据 | 保留数据，通过 `notice` 告知情况 |
+
+不要把请求失败转换成空数组后显示“暂无数据”。组件不会请求业务接口，重试按钮的处理函数仍由应用提供。
+
+独立状态可以使用 `DataState`；占位内容可以使用 `Skeleton`：
+
+```tsx
+import { DataState, Skeleton, Stack } from '@lailai0916/ui';
+
+export function DataPlaceholders() {
+  return (
+    <Stack>
+      <DataState message="选择日期后查看数据" />
+      <Skeleton width="100%" height={120} radius={12} />
+    </Stack>
+  );
+}
+```
+
+`DataState.action` 接受操作节点。`Skeleton` 支持 `width`、`height`、`radius`、`className`、`style` 与 `children`，应用应另外说明正在加载的内容。
+
+## 进度
+
+`Progress` 要求 `label` 与 `value`，`max` 默认为 100，`showValue` 默认为 `true`。有效数值会限制在 0 至 `max`；非有限数值或无效范围显示为零进度。
+
+```tsx
+import { Progress } from '@lailai0916/ui';
+
+export function ReadingProgress() {
+  return <Progress label="阅读进度" value={3} max={8} />;
+}
+```
+
+这里的进度范围为已读 3 篇、共 8 篇。上传速度、剩余时间与完成文案由应用自行计算。

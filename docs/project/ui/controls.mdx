@@ -1,0 +1,179 @@
+---
+title: 按钮与表单
+description: 本文介绍按钮、分段选择、滑块、开关和表单字段的属性、受控状态与无障碍用法。
+summary: 按钮与表单组件统一操作反馈、输入外观和焦点样式。Button 提供四种外观与三种尺寸，IconButton 必须提供可访问名称；Segmented、Slider 和 Switch 由应用保存状态。文本框、多行文本框与选择框沿用原生事件，并把标签、说明和错误关联到对应字段。按钮选择与路由导航采用不同模式，表单校验与提交仍由应用负责。
+---
+
+import { useState } from 'react';
+import {
+  Button,
+  Cluster,
+  Panel,
+  PanelBody,
+  Segmented,
+  Slider,
+  Stack,
+  Switch,
+  TextField,
+} from '@lailai0916/ui';
+
+export function ControlsPreview() {
+  const [name, setName] = useState('lailai');
+  const [mode, setMode] = useState('compact');
+  const [value, setValue] = useState(40);
+  const [checked, setChecked] = useState(false);
+  return (
+    <Panel>
+      <PanelBody>
+        <Stack gap={16}>
+          <TextField
+            label="名称"
+            value={name}
+            onChange={(event) => setName(event.currentTarget.value)}
+          />
+          <Segmented
+            ariaLabel="显示密度"
+            orientation="horizontal"
+            value={mode}
+            onChange={setMode}
+            items={[
+              { value: 'compact', label: '紧凑' },
+              { value: 'comfortable', label: '宽松' },
+            ]}
+          />
+          <Slider
+            label="进度"
+            aria-label="进度"
+            value={value}
+            min={0}
+            max={100}
+            onChange={setValue}
+          />
+          <Cluster>
+            <Switch aria-label="开启提醒" checked={checked} onChange={setChecked} />
+            <span>{checked ? '提醒已开启' : '提醒已关闭'}</span>
+          </Cluster>
+          <Cluster>
+            <Button variant="primary" onClick={() => setName('lailai')}>
+              恢复名称
+            </Button>
+            <Button onClick={() => setName('')} disabled={!name}>
+              清空名称
+            </Button>
+          </Cluster>
+        </Stack>
+      </PanelBody>
+    </Panel>
+  );
+}
+
+## 参考资料
+
+- [组件源码 - GitHub](https://github.com/lailai0916/ui/tree/main/src/components)
+- [完整交互示例 - GitHub](https://github.com/lailai0916/ui/blob/main/demo/main.tsx)
+
+## 效果展示
+
+<ControlsPreview />
+
+示例状态保存在当前组件中，刷新页面后恢复初始值。
+
+## 按钮
+
+| 属性        | 类型与默认值                                                | 用途                                |
+| ----------- | ----------------------------------------------------------- | ----------------------------------- |
+| `variant`   | `primary`、`secondary`、`ghost`、`danger`；默认 `secondary` | 操作层级                            |
+| `size`      | `sm`、`md`、`lg`；默认 `md`                                 | 控件尺寸                            |
+| `leftIcon`  | `ReactNode`                                                 | 文字前的图标                        |
+| `fullWidth` | `boolean`                                                   | 填满可用宽度                        |
+| `rounded`   | `boolean`                                                   | 胶囊形圆角                          |
+| `active`    | `boolean`                                                   | 按钮选中态，同时设置 `aria-pressed` |
+
+`Button` 支持原生按钮属性和 `ref`，默认 `type="button"`。表单提交应显式设置 `type="submit"`。
+
+```tsx
+import { Button, IconButton } from '@lailai0916/ui';
+
+export function Actions() {
+  return (
+    <>
+      <Button variant="primary" type="submit">
+        保存
+      </Button>
+      <IconButton label="关闭" size="sm">
+        ×
+      </IconButton>
+    </>
+  );
+}
+```
+
+`IconButton` 的 `label` 必填，尺寸为 `sm` 或 `md`。示例只展示控件结构，应用需要提供实际操作的 `onClick`。
+
+## 选择与调整
+
+| 组件        | 必要属性                                  | 可选属性与行为                                                    |
+| ----------- | ----------------------------------------- | ----------------------------------------------------------------- |
+| `Segmented` | `value`、`items`；按钮模式提供 `onChange` | 默认纵向；`orientation="horizontal"` 横向；`ariaLabel` 命名选择组 |
+| `Slider`    | `value`、`min`、`max`、`onChange`         | `step`、`label`、`valueLabel`、`onCommit`、`aria-label`           |
+| `Switch`    | `checked`、`onChange`                     | 用 `aria-label` 提供开关用途                                      |
+
+`Segmented.items` 中每项包含 `value` 和 `label`，可附 `icon`。按钮模式采用单选组语义，通过方向键移动和选择。横向排列在 480 px 以下堆叠，也可指定 `stackAt={360}`。
+
+导航模式给每一项设置 `href`，选中值由当前路由决定，此时不会调用 `onChange`。同一组不要混用按钮与链接。
+
+```tsx
+import { useState } from 'react';
+import { Segmented } from '@lailai0916/ui';
+
+export function DensityControl() {
+  const [density, setDensity] = useState('compact');
+  return (
+    <Segmented
+      ariaLabel="显示密度"
+      orientation="horizontal"
+      value={density}
+      onChange={setDensity}
+      items={[
+        { value: 'compact', label: '紧凑' },
+        { value: 'comfortable', label: '宽松' },
+      ]}
+    />
+  );
+}
+```
+
+`Slider.onChange` 接收数值，`Switch.onChange` 接收布尔值；它们与原生输入框的事件参数不同。
+
+## 表单字段
+
+`TextField`、`TextAreaField` 和 `SelectField` 分别接受原生 `input`、`textarea`、`select` 属性。三者均要求 `label`，支持 `description`、`error`，并自动生成字段 ID、连接说明与错误消息。
+
+```tsx
+import { useState } from 'react';
+import { SelectField, Stack, TextAreaField, TextField } from '@lailai0916/ui';
+
+export function ProfileFields() {
+  const [email, setEmail] = useState('');
+  return (
+    <Stack>
+      <TextField
+        label="电子邮箱"
+        type="email"
+        autoComplete="email"
+        required
+        value={email}
+        onChange={(event) => setEmail(event.currentTarget.value)}
+        description="用于接收通知。"
+      />
+      <TextAreaField label="备注" rows={3} defaultValue="" />
+      <SelectField label="语言" defaultValue="zh-Hans">
+        <option value="zh-Hans">简体中文</option>
+        <option value="en">English</option>
+      </SelectField>
+    </Stack>
+  );
+}
+```
+
+校验失败时传入具体的 `error` 文案，组件会设置 `aria-invalid` 并关联错误消息。业务校验、请求状态与提交处理由宿主负责；不要把占位文字作为唯一标签。

@@ -1,0 +1,105 @@
+---
+title: 主题定制
+description: 本文介绍主题变量、浅深色切换、主题控件和局部样式覆盖，以及与宿主主题的分工。
+summary: 主题由文档根元素的 data-theme 和共享 CSS 变量决定，颜色、字体、圆角、间距与阴影均可按需覆盖。独立应用使用 ThemeProvider 管理系统、浅色和深色偏好，ThemeControl 提供分段或紧凑菜单；已有主题管理器的站点继续由宿主控制。样式覆盖放在组件库之后，优先采用公开变量和属性，生成的 CSS Module 类名不作为稳定接口。
+---
+
+## 参考资料
+
+- [主题变量 - GitHub](https://github.com/lailai0916/ui/blob/main/src/theme.css)
+- [ThemeProvider 组件 - GitHub](https://github.com/lailai0916/ui/tree/main/src/components/ThemeProvider)
+
+## 主题变量
+
+先导入 `theme.css` 和 `styles.css`，再加载应用覆盖样式。常用变量如下，完整清单以源码为准。
+
+| 用途       | 变量                                                                                               |
+| ---------- | -------------------------------------------------------------------------------------------------- |
+| 强调色     | `--lk-color-primary`、`--lk-color-primary-dark`、`--lk-color-primary-light`                        |
+| 背景       | `--lk-background-color`、`--lk-card-background-color`                                              |
+| 文字       | `--lk-font-color-base`、`--lk-font-color-secondary`、`--lk-heading-color`                          |
+| 中性色     | `--lk-color-emphasis-100` 至 `--lk-color-emphasis-900`                                             |
+| 状态色     | `--lk-color-success`、`--lk-color-warning`、`--lk-color-danger`                                    |
+| 字体       | `--lk-font-family`、`--lk-font-mono`、`--lk-font-size`、`--lk-line-height`                         |
+| 圆角       | `--lk-radius-control`、`--lk-radius-overlay`、`--lk-radius-sm`、`--lk-radius-md`、`--lk-radius-lg` |
+| 间距       | `--lk-space-1`、`--lk-space-2`、`--lk-space-3`、`--lk-space-4`、`--lk-space-6`、`--lk-space-8` 等  |
+| 阴影与焦点 | `--lk-shadow-sm`、`--lk-shadow-md`、`--lk-shadow-lg`、`--lk-focus-ring`                            |
+
+```css
+:root,
+:root[data-theme] {
+  --lk-color-primary: #1d9bf0;
+  --lk-color-primary-dark: #0f8ee3;
+  --lk-color-primary-light: #36a6f2;
+  --lk-radius-control: 10px;
+}
+
+:root[data-theme='dark'] {
+  --lk-background-color: #111214;
+  --lk-card-background-color: #1c1e21;
+}
+```
+
+显式指定根元素 `data-theme="light"` 或 `data-theme="dark"`；没有指定时，默认变量跟随系统偏好。主题按整份文档管理，不把嵌套的深浅色容器当作隔离边界。
+
+## 独立应用
+
+```tsx
+import { ThemeControl, ThemeProvider } from '@lailai0916/ui';
+
+export function ThemeSettings() {
+  return (
+    <ThemeProvider storageKey="my-app.theme">
+      <ThemeControl
+        variant="compact"
+        labels={{ system: '跟随系统', light: '浅色', dark: '深色' }}
+      />
+    </ThemeProvider>
+  );
+}
+```
+
+在真实应用中，将 `ThemeProvider` 放在应用根部。这里只展示代码，避免文档内再次挂载主题管理器后改变整个网站。
+
+| 接口                       | 行为                                                       |
+| -------------------------- | ---------------------------------------------------------- |
+| `storageKey`               | 默认 `lailai.theme`；需要独立偏好时使用其他键              |
+| `themeColors`              | 可选 `{ light, dark }`，更新已有的 `theme-color` meta 标签 |
+| `useTheme().preference`    | `system`、`light` 或 `dark`                                |
+| `useTheme().resolvedTheme` | 当前实际使用的 `light` 或 `dark`                           |
+| `useTheme().setPreference` | 更新偏好，并在可用时保存到本地存储                         |
+
+Provider 挂载后读取保存值，监听系统偏好和其他标签页的存储变化。本地存储被禁用时，当前页仍可切换。`themeColors` 不会创建 meta 标签，应用需要自行提供该标签。
+
+`ThemeControl.labels` 必须包含三种模式的文案。`variant` 默认为 `segmented`，也可使用 `compact`。紧凑菜单支持方向键、Home、End、Escape，选择后返回触发按钮；Tab 正常离开菜单。
+
+## 宿主主题
+
+Docusaurus 等已有主题管理器的项目只保留一个主题控制来源。Home 用自己的颜色模式与设置页面管理主题，通过 CSS 变量连接组件库：
+
+```css
+:root,
+:root[data-theme] {
+  --lk-color-primary: var(--ifm-color-primary);
+  --lk-color-primary-dark: var(--ifm-color-primary-dark);
+  --lk-color-primary-light: var(--ifm-color-primary-light);
+  --lk-background-color: var(--ifm-background-color);
+  --lk-card-background-color: var(--ifm-card-background-color);
+  --lk-font-color-base: var(--ifm-font-color-base);
+  --lk-font-family: var(--ifm-font-family-base);
+}
+```
+
+这是一组最小映射，完整宿主适配还应覆盖需要跟随设置变化的文字、中性色和字号。页面首次绘制前的偏好恢复由宿主自己的初始化脚本处理；服务端与客户端初始 React 内容保持一致。
+
+## 局部样式
+
+按顺序考虑组件属性、`className`、主题变量，再使用公开的 `data-lk` 标记。支持的标记为 `button`、`avatar`、`brand`、`brand-logo`、`field-control`、`panel`、`theme-menu`。
+
+```css
+.settings [data-lk='field-control'] {
+  max-width: 28rem;
+}
+```
+
+不要选择构建生成的哈希类名。组件库包含减少动态效果的系统偏好适配；应用额外添加的动画也应遵守同一偏好。

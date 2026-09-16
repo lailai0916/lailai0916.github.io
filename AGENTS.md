@@ -78,6 +78,8 @@ Custom-page notes: `insights` is live Umami traffic. `blog/overview` and `blog/m
 
 ### Non-obvious gotchas
 
+- **UI library documentation:** `docs/project/ui/` is the public usage guide for `@lailai0916/ui`, with a hand-curated category in `projectSidebar`. Keep examples and component inventories aligned with the installed package. MDX previews import the package directly and inherit the site's provider; never mount another `ThemeProvider` inside a documentation preview. Shared component implementation remains in `lailai0916/ui`.
+
 - **Build-time metadata:** `docusaurus.config.ts` shells to `git` (via `safeGit`) for `BUILD_TIME` / `GIT_SHA` / `GIT_COUNT` / `DEBUG_ID`, exposed as `customFields`. Keep the fallback intact — the site must still build outside a git checkout.
 - **Markdown pipeline:** docs, blog, and pages share one plugin set — `remark-math` + `rehype-katex`, `remark-plugin-npm2yarn`, Mermaid, live-codeblock; admonitions add a custom `example` keyword.
 - **Image zoom:** `docusaurus-plugin-image-zoom`, selector `.markdown img, img[data-zoomable]`. Docs/blog body images zoom automatically; custom pages opt in per-image with `data-zoomable` (hashed CSS-Module classnames can't sit in a global selector).

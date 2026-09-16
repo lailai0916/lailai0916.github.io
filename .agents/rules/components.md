@@ -6,7 +6,7 @@ paths:
 
 # Component & design-system rules
 
-The site consumes the shared design system as `@lailai0916/ui`, maintained in [laikit-ui](https://github.com/lailai0916/laikit-ui). Preserve the site's existing typography, colors, surfaces, and control behavior. Page layouts may differ; that does not call for replacing the visual style. Reuse before you build.
+The site consumes the shared design system as `@lailai0916/ui`, maintained in [ui](https://github.com/lailai0916/ui). Preserve the site's existing typography, colors, surfaces, and control behavior. Page layouts may differ; that does not call for replacing the visual style. Reuse before you build.
 
 > General **design principles** (统一·简约·现代, no whole-card hover lift, modern CSS, color/spacing tokens, contrast) live in the external `lailai-skill` at `references/design-style.md`. This file is the **site-specific** `laikit` inventory, CSS-Module layout, and MDX-widget rules.
 
@@ -15,7 +15,7 @@ The site consumes the shared design system as `@lailai0916/ui`, maintained in [l
 Import published components from `@lailai0916/ui` or a component subpath, for example
 `import Button from '@lailai0916/ui/Button'`. There is no local component-library copy.
 Shared hooks (`useImageStatus`, `useMeasuredHeight`) and formatters (`formatCompact`, `formatBytes`)
-come from the package root. Change component implementation and shared tokens in `laikit-ui`, publish
+come from the package root. Change component implementation and shared tokens in `lailai0916/ui`, publish
 a version, then update the dependency and lockfile here.
 
 `src/components/LaikitProvider` supplies Docusaurus links, headings, locale, plural selection, and
@@ -24,6 +24,10 @@ translated library labels. `src/theme/Root` mounts it without adding a DOM wrapp
 `src/css/custom.css` loads package theme and styles before `src/css/laikit.css`, which maps package
 colors onto the site's live Infima variables. Shared shadows and radius tokens belong to the package.
 The usage inventory below records site contracts; implementation details are maintained upstream.
+
+Public usage documentation and MDX previews live in `docs/project/ui/`. Update relevant pages when
+upgrading a public API. Previews inherit this site's provider and theme; do not mount a library
+`ThemeProvider` inside an article or copy component implementations into the documentation.
 
 - **Layout / surfaces:** `Card`, `TitleCard`, `LinkCard`, `DataCard`, `ShareCard`, `Page`.
   - **`DataCard` renders one metric** from `value`, `label`, `icon`, and optional `format`. Callers own multi-card loops and layout (as in the blog overview). `PageHeader` accepts an optional `aside` slot for content aligned beside the title on desktop and spanning the available width on mobile; resource and travel header metrics use this slot.

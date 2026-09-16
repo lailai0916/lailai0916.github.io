@@ -1,0 +1,92 @@
+---
+title: 迁移指南
+description: 本文介绍旧共享组件库到统一 npm 包的迁移步骤，包括导入、按钮属性、主题变量和样式接口。
+summary: 统一后的组件库使用 GitHub 仓库 lailai0916/ui 与 npm 包 @lailai0916/ui，原 GitHub 依赖 @lailai/ui 需要替换。迁移时同时更新依赖清单、锁文件、样式导入、按钮变体和尺寸，旧主题变量映射到统一的 lk 前缀。全局组件类名改为 CSS Modules，宿主通过公开属性、变量与 data-lk 标记定制。已有 Home 组件接口保持兼容，主题管理仍由原宿主负责。
+---
+
+## 参考资料
+
+- [旧 UI 迁移说明 - GitHub](https://github.com/lailai0916/ui/blob/main/docs/migrating-from-ui.md)
+- [统一主题变量 - GitHub](https://github.com/lailai0916/ui/blob/main/src/theme.css)
+
+## 仓库与依赖
+
+统一后的维护仓库是 `lailai0916/ui`，由原 `laikit-ui` 仓库重命名而来。应用通过 npm 安装 `@lailai0916/ui`，不再从旧仓库直接安装 `@lailai/ui`。
+
+```bash
+npm uninstall @lailai/ui
+npm install --save-exact @lailai0916/ui@0.2.0
+```
+
+工作区项目需在对应工作区执行依赖变更。将导入和样式改为：
+
+```tsx
+import { Button, TextField } from '@lailai0916/ui';
+import '@lailai0916/ui/theme.css';
+import '@lailai0916/ui/styles.css';
+```
+
+删除旧包导入，宿主样式放在组件库 CSS 之后。保留自己的基础排版和 `box-sizing`，因为包不提供全局重置。
+
+## 按钮属性
+
+| 旧接口               | 新接口                       |
+| -------------------- | ---------------------------- |
+| `variant="quiet"`    | `variant="ghost"`            |
+| `size="small"`       | `size="sm"`                  |
+| `size="medium"`      | `size="md"`                  |
+| `size="large"`       | `size="lg"`                  |
+| 依赖旧包默认主要按钮 | 显式设置 `variant="primary"` |
+
+统一后的 `Button` 默认是 `secondary`、`md`；`IconButton` 只提供 `sm`、`md`。图标、整行宽度与选中态分别使用 `leftIcon`、`fullWidth`、`active`，避免在应用中保留第二套按钮实现。
+
+## 主题变量
+
+常用映射如下；其他变量应对照完整主题清单，不要只做前缀替换后假定它存在。
+
+| 旧变量                                                          | 新变量                                       |
+| --------------------------------------------------------------- | -------------------------------------------- |
+| `--lui-color-canvas`                                            | `--lk-background-color`                      |
+| `--lui-color-surface`                                           | `--lk-card-background-color`                 |
+| `--lui-color-surface-muted`                                     | `--lk-color-emphasis-100`                    |
+| `--lui-color-surface-raised`                                    | `--lk-background-raised`                     |
+| `--lui-color-label`                                             | `--lk-font-color-base`                       |
+| `--lui-color-label-secondary`                                   | `--lk-font-color-secondary`                  |
+| `--lui-color-label-tertiary`                                    | `--lk-font-color-tertiary`                   |
+| `--lui-color-separator`                                         | `--lk-color-emphasis-300`                    |
+| `--lui-color-separator-strong`                                  | `--lk-color-emphasis-400`                    |
+| `--lui-color-accent`、`--lui-color-accent-fill`                 | `--lk-color-primary`                         |
+| `--lui-color-accent-hover`、`--lui-color-accent-fill-hover`     | `--lk-color-primary-dark`                    |
+| `--lui-color-accent-pressed`、`--lui-color-accent-fill-pressed` | `--lk-color-primary-darker`                  |
+| `--lui-color-accent-soft`                                       | `--lk-color-primary-soft`                    |
+| `--lui-color-accent-label`                                      | `--lk-color-primary-label`                   |
+| `--lui-color-focus`                                             | `--lk-color-primary`                         |
+| `--lui-font-sans`                                               | `--lk-font-family`                           |
+| `--lui-radius-panel`、`--lui-radius-feature`                    | `--lk-radius-md`、`--lk-radius-lg`           |
+| `--lui-motion-control`、`--lui-motion-surface`                  | `--lk-transition`、`--lk-transition-surface` |
+
+产品专有变量仍由应用维护，共用配色与控件样式集中在组件库。`ThemeProvider` 默认存储键保持 `lailai.theme`；已有框架主题管理的项目继续沿用宿主机制。
+
+## 样式接口
+
+旧的全局 `.lui-*` 类替换为 CSS Modules。必须从宿主调整内部元素时，使用公开标记：
+
+| 旧选择器                  | 新选择器                    |
+| ------------------------- | --------------------------- |
+| `.lui-button`             | `[data-lk='button']`        |
+| `.lui-avatar`             | `[data-lk='avatar']`        |
+| `.lui-brand`              | `[data-lk='brand']`         |
+| `.lui-brand__logo`        | `[data-lk='brand-logo']`    |
+| `.lui-field__control`     | `[data-lk='field-control']` |
+| `.lui-panel`              | `[data-lk='panel']`         |
+| `.lui-theme-picker__menu` | `[data-lk='theme-menu']`    |
+
+## 验证
+
+1. 搜索旧包名、旧变量与旧选择器，确认源代码和锁文件均已替换。
+2. 运行项目检查与生产构建，确认不存在类型错误或缺失导出。
+3. 检查按钮默认层级、表单焦点、禁用态、窄屏布局和键盘导航。
+4. 检查主题切换、刷新恢复和各项目原有的强调色设置。
+5. 使用已发布的 npm 版本生成最终锁文件，部署后再次验证主要页面。
+
+Home 原有的 26 个 UI 组件 API 与 0.2 系列保持兼容。新版本增加应用原语后，Home、Tools 与 Academy 可以共用同一依赖，而不需要复制组件源码。

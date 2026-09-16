@@ -1,0 +1,107 @@
+---
+title: 布局与卡片
+description: 本文介绍页面容器、排列、面板和卡片组件的组合方式，以及路由链接和标题的使用边界。
+summary: 布局组件负责宽度、排列与间距，卡片和面板负责内容表面及分区。PageContainer 限制页面宽度，Stack 纵向排列，Cluster 横向排列并换行；Panel 可组合标题、正文与页脚。卡片家族提供标题、链接、统计和分享等结构，页面业务与响应式网格仍由宿主组织。间距与容器宽度使用像素数值，链接接入宿主路由，标题层级需要与页面结构保持一致。
+---
+
+import { Badge, Cluster, Panel, PanelBody, PanelFooter, PanelHeader, Stack } from '@lailai0916/ui';
+
+## 参考资料
+
+- [Layout 组件 - GitHub](https://github.com/lailai0916/ui/tree/main/src/components/Layout)
+- [Panel 组件 - GitHub](https://github.com/lailai0916/ui/tree/main/src/components/Panel)
+
+## 效果展示
+
+<Panel>
+  <PanelHeader>
+    <strong>项目概览</strong>
+  </PanelHeader>
+  <PanelBody>
+    <Stack gap={12}>
+      <span>标题、正文与页脚共享同一个面板。</span>
+      <Cluster gap={8}>
+        <Badge>React</Badge>
+        <Badge>TypeScript</Badge>
+        <Badge>CSS Modules</Badge>
+      </Cluster>
+    </Stack>
+  </PanelBody>
+  <PanelFooter>布局与业务内容可以分别维护。</PanelFooter>
+</Panel>
+
+## 页面布局
+
+| 组件            | 主要属性                      | 行为                               |
+| --------------- | ----------------------------- | ---------------------------------- |
+| `PageContainer` | `children`、`width`           | 居中限制内容宽度，默认最大 1120 px |
+| `Stack`         | `children`、`gap`             | 纵向排列，默认间距 16 px           |
+| `Cluster`       | `children`、`gap`             | 横向排列并换行，默认间距 12 px     |
+| `PageHeader`    | `children`、`aside`           | 标题区域与附加内容                 |
+| `PageTitle`     | `title`、`description`        | 页面标题与说明                     |
+| `PageContent`   | `children`、`as`、`className` | 页面正文容器，可选择元素类型       |
+
+`PageContainer`、`Stack` 和 `Cluster` 支持原生 `div` 属性。`width`、`gap` 是像素数值，例如 `width={960}`、`gap={16}`。
+
+```tsx
+import { PageContainer, Panel, PanelBody, PanelFooter, PanelHeader, Stack } from '@lailai0916/ui';
+
+export function ProjectPanel() {
+  return (
+    <PageContainer width={960}>
+      <Stack gap={24}>
+        <Panel>
+          <PanelHeader>
+            <h2>项目概览</h2>
+          </PanelHeader>
+          <PanelBody>应用自己的内容。</PanelBody>
+          <PanelFooter>最近更新于 2026 年 9 月。</PanelFooter>
+        </Panel>
+      </Stack>
+    </PageContainer>
+  );
+}
+```
+
+`PageTitle.title` 保留 HTML 字符串接口，只能使用应用自己编写的可信内容。来自用户或远程数据的标题应使用普通 React 文本元素；文章标题可以选择接受 `ReactNode` 的 `MDTitle`。
+
+## 面板
+
+`Panel` 使用 `tone="default"` 或 `tone="muted"` 控制表面，`feature` 可强调面板。`PanelHeader`、`PanelBody`、`PanelFooter` 按需组合，均支持原生 `div` 属性。
+
+面板不会代替语义标题，应在 `PanelHeader` 中使用符合页面层级的 `h2`、`h3` 等元素。只需一层内容表面时，也可以使用 `Card`。
+
+## 卡片
+
+| 组件        | 必要属性                     | 可选属性                                                            |
+| ----------- | ---------------------------- | ------------------------------------------------------------------- |
+| `Card`      | `children`                   | `padding`、`className`、`wrapperClassName`、`style`；`to` 或 `href` |
+| `TitleCard` | `title`、`children`          | `icon`、`description`、`count`、`padding`、`bodyAlign`、`size`      |
+| `LinkCard`  | `title`，以及 `to` 或 `href` | `description`、`image`、`fallbackIcon`、`imageVariant`              |
+| `DataCard`  | `value`、`label`、`icon`     | `format`                                                            |
+| `ShareCard` | `url`、`title`               | `description`、`image`                                              |
+
+`Card`、`LinkCard` 的 `to` 与 `href` 二选一；站内导航使用 `to`，并通过 `LaikitProvider` 接入路由。链接卡片内不要再放按钮或其他链接，以免嵌套交互元素。
+
+`TitleCard.size` 为 `md`、`sm` 或 `plain`，`bodyAlign` 为 `top` 或 `bottom`。卡片保留外部焦点环，铺满卡片的图片如需裁剪，应由自己的图片容器设置溢出裁剪。
+
+```tsx
+import { DataCard, LaikitProvider, LinkCard, Stack } from '@lailai0916/ui';
+
+export function ProjectCards() {
+  return (
+    <LaikitProvider locale="zh-Hans">
+      <Stack>
+        <DataCard value={42} label="组件" icon="lucide:boxes" />
+        <LinkCard
+          title="快速开始"
+          description="安装组件库并接入应用。"
+          to="/docs/project/ui/getting-started"
+        />
+      </Stack>
+    </LaikitProvider>
+  );
+}
+```
+
+`DataCard.label` 支持按语言选择单复数。英文使用 `'Component|Components'`，中文使用单一形式 `'组件'`，详见[框架接入](/docs/project/ui/integration)。

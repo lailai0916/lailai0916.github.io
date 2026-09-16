@@ -1,0 +1,132 @@
+---
+title: 快速开始
+description: 本文介绍共享组件库的安装方式、样式导入顺序，以及可直接使用的 React 应用示例。
+summary: 安装 @lailai0916/ui 后，在应用入口依次导入主题变量与组件样式，再用命名导出引用组件。独立应用可以组合 LaikitProvider 与 ThemeProvider，分别管理语言和主题；已有主题管理器的框架沿用原有机制。组件库不附带全局重置样式，页面字体、背景与盒模型由宿主设置，依赖版本和锁文件随应用一同提交。
+---
+
+import { Button, Card, Cluster, Stack } from '@lailai0916/ui';
+
+## 参考资料
+
+- [安装与接入 - GitHub](https://github.com/lailai0916/ui/blob/main/docs/integration.md)
+- [@lailai0916/ui - npm](https://www.npmjs.com/package/@lailai0916/ui)
+
+## 安装
+
+已有 React 项目运行：
+
+```bash
+npm install --save-exact @lailai0916/ui@0.2.0
+```
+
+支持 React 和 React DOM `^18.3.1 || ^19.0.0`，Node.js 至少为 20.19；开发与 CI 使用 Node.js 24。提交 `package.json` 和锁文件，使本地与部署环境使用相同版本。
+
+## 样式
+
+在应用入口导入一次，宿主覆盖样式放在最后：
+
+```tsx title="main.tsx"
+import '@lailai0916/ui/theme.css';
+import '@lailai0916/ui/styles.css';
+import './app.css';
+```
+
+组件库不包含全局 CSS reset。独立应用可以使用以下基础样式；已有站点应保留自己的基础样式，只补充所需变量映射。
+
+```css title="app.css"
+html {
+  font-family: var(--lk-font-family);
+  font-size: var(--lk-font-size);
+  line-height: var(--lk-line-height);
+}
+
+body {
+  margin: 0;
+  color: var(--lk-font-color-base);
+  background: var(--lk-background-color);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+```
+
+## 最小应用
+
+```tsx title="App.tsx"
+import { useState } from 'react';
+import {
+  Button,
+  LaikitProvider,
+  PageContainer,
+  Stack,
+  TextField,
+  ThemeControl,
+  ThemeProvider,
+} from '@lailai0916/ui';
+
+export default function App() {
+  const [name, setName] = useState('');
+  return (
+    <LaikitProvider locale="zh-Hans">
+      <ThemeProvider>
+        <PageContainer width={720}>
+          <Stack gap={16}>
+            <h1>我的应用</h1>
+            <ThemeControl labels={{ system: '跟随系统', light: '浅色', dark: '深色' }} />
+            <TextField
+              label="名称"
+              value={name}
+              onChange={(event) => setName(event.currentTarget.value)}
+            />
+            <Button onClick={() => setName('')} disabled={!name}>
+              清空
+            </Button>
+          </Stack>
+        </PageContainer>
+      </ThemeProvider>
+    </LaikitProvider>
+  );
+}
+```
+
+`LaikitProvider` 负责路由、标题与内置文案；`ThemeProvider` 负责整份文档的主题。Docusaurus 已有主题管理器，接入时只使用前者，详见[框架接入](/docs/project/ui/integration)。
+
+## 效果展示
+
+<Card>
+  <Stack gap={12}>
+    <span>同一套组件随网站的主题与强调色变化。</span>
+    <Cluster>
+      <Button variant="primary" disabled>
+        主要按钮
+      </Button>
+      <Button disabled>次要按钮</Button>
+      <Button variant="ghost" disabled>
+        轻量按钮
+      </Button>
+    </Cluster>
+  </Stack>
+</Card>
+
+上方仅展示禁用态。可操作示例见[按钮与表单](/docs/project/ui/controls)。
+
+## 导入方式
+
+优先从包入口使用命名导出：
+
+```tsx
+import { Button, Panel, PanelBody, TextField } from '@lailai0916/ui';
+```
+
+也可以使用组件子路径。多数单组件入口为默认导出，组合入口保留命名导出：
+
+```tsx
+import Button from '@lailai0916/ui/Button';
+import { TextField } from '@lailai0916/ui/Field';
+import { Panel, PanelBody } from '@lailai0916/ui/Panel';
+```
+
+组合入口包括 `Field`、`Layout`、`Panel`、`Page` 和 `Markdown`。不要直接引用 `dist/` 内部文件或组件的 CSS Module。

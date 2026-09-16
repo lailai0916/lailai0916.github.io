@@ -1,0 +1,112 @@
+---
+title: 框架接入
+description: 本文介绍组件库与宿主路由、语言和服务端渲染的连接方式，以及公开辅助函数的使用。
+summary: LaikitProvider 将组件库连接到宿主的链接、标题、语言与复数规则，缺省时使用原生元素和英文文案。Docusaurus 接入自己的路由与标题组件，独立 React 应用可直接使用默认行为。服务端渲染与首次客户端渲染保持相同语言和初始值，浏览器相关状态在挂载后更新。公开 Hooks 处理图片状态和元素高度，格式化函数处理紧凑数字与字节大小。
+---
+
+## 参考资料
+
+- [Provider 实现 - GitHub](https://github.com/lailai0916/ui/blob/main/src/provider.tsx)
+- [Home 接入实现 - GitHub](https://github.com/lailai0916/lailai0916.github.io/tree/main/src/components/LaikitProvider)
+
+## 默认行为
+
+不挂载 `LaikitProvider` 也可以使用组件：链接使用原生 `a`，标题使用原生标题元素，内置文案为英文。需要单页路由、锚点标题或其他语言时再传入宿主适配。
+
+| 属性               | 用途                           |
+| ------------------ | ------------------------------ |
+| `locale`           | 当前语言，如 `en`、`zh-Hans`   |
+| `messages`         | 覆盖部分内置文案               |
+| `linkComponent`    | 接收 `LinkProps` 的链接组件    |
+| `headingComponent` | 接收 `HeadingProps` 的标题组件 |
+| `selectMessage`    | 根据数量选择文案的函数         |
+
+Provider 不增加 DOM 包装。嵌套 Provider 继承未指定配置；显式修改 `locale` 时，内置文案会切换到对应语言的默认值。
+
+## Docusaurus
+
+```tsx
+import type { ReactNode } from 'react';
+import DocusaurusLink from '@docusaurus/Link';
+import DocusaurusHeading from '@theme/Heading';
+import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
+import { usePluralForm } from '@docusaurus/theme-common';
+import { LaikitProvider, type HeadingProps, type LinkProps } from '@lailai0916/ui';
+
+function SiteLink({ to, href, ...props }: LinkProps) {
+  return <DocusaurusLink {...props} to={to ?? href} />;
+}
+
+function SiteHeading(props: HeadingProps) {
+  return <DocusaurusHeading {...props} />;
+}
+
+export function Providers({ children }: { children: ReactNode }) {
+  const { i18n } = useDocusaurusContext();
+  const { selectMessage } = usePluralForm();
+  return (
+    <LaikitProvider
+      locale={i18n.currentLocale}
+      linkComponent={SiteLink}
+      headingComponent={SiteHeading}
+      selectMessage={selectMessage}
+    >
+      {children}
+    </LaikitProvider>
+  );
+}
+```
+
+在主题根节点包裹页面。Home 已有 `src/components/LaikitProvider`，页面直接使用组件即可。该适配还通过 Docusaurus 的翻译函数提供库内文案，保留站点既有的翻译管理方式。
+
+其他路由框架同样实现 `LinkProps` 适配：站内路径交给路由组件，外部地址保留正常链接行为。不要把框架依赖加入共享组件库。
+
+## 语言与文案
+
+`locale="zh-Hans"` 使用中文内置文案。可以通过 `messages` 覆盖 GitHub 错误、仓库字段、引用署名分隔符与“其他”分类等文字：
+
+```tsx
+import type { ReactNode } from 'react';
+import { LaikitProvider } from '@lailai0916/ui';
+
+export function ChineseUI({ children }: { children: ReactNode }) {
+  return (
+    <LaikitProvider locale="zh-Hans" messages={{ githubError: '仓库信息暂时不可用' }}>
+      {children}
+    </LaikitProvider>
+  );
+}
+```
+
+按钮、表单标签、图表空状态等应用传入的文案仍需由应用翻译。`ThemeControl` 的三种模式标签也由调用方提供。
+
+`DataCard.label` 使用当前 `selectMessage` 选择单复数。英文可写 `'Project|Projects'`，中文写 `'项目'`。默认选择器按语言实际使用的复数类别匹配竖线分隔的文案；使用框架自己的选择器时遵循框架规则。
+
+## 服务端渲染
+
+包的 JavaScript 模块保留 `use client` 指令。使用 React Server Components 的框架应将交互组件和 Provider 放在客户端边界内；适配函数也在该客户端模块中定义，服务端只传递可序列化数据。
+
+全局 CSS 从框架允许的入口加载。服务端与首次客户端渲染采用相同语言、选项和输入值；图片加载、元素测量、GitHub 数据及已保存主题在挂载后更新。首次绘制前的主题恢复使用宿主自己的机制，详见[主题定制](/docs/project/ui/theming)。
+
+## 辅助接口
+
+| 导出                | 参数或返回值                                               | 用途                                         |
+| ------------------- | ---------------------------------------------------------- | -------------------------------------------- |
+| `useImageStatus`    | 可选图片地址；返回 `imgRef`、`status`、`onLoad`、`onError` | 跟踪 `loading`、`loaded`、`error`            |
+| `useMeasuredHeight` | 变化键；返回只读的 `[ref, height]`                         | 测量挂载后的高度，初始高度可能为 `undefined` |
+| `formatCompact`     | 数值、可选语言、可选有效位数                               | 使用紧凑记数法，默认英文与 3 位有效数字      |
+| `formatBytes`       | 字节数                                                     | 按 1024 换算，以 B、KB、MB 显示              |
+
+```tsx
+import { formatBytes, formatCompact } from '@lailai0916/ui';
+
+export function FileStats() {
+  return (
+    <p>
+      {formatCompact(1234, 'en')} 次下载 · {formatBytes(2048)}
+    </p>
+  );
+}
+```
+
+格式化函数只负责显示；计量单位、舍入要求和输入有效性由应用决定。公开声明随 npm 包提供，可在编辑器中查看属性类型。
