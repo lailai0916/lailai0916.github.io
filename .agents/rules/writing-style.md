@@ -45,6 +45,12 @@ links, and the local envelope around externally produced solution bodies.
 - **Preserve exact names and literal content:** `lailai`, `macOS`, `iPhone`, code identifiers, mathematical notation, user-entered search queries, and quoted work/problem titles keep their original spelling and capitalization.
 - Write the intended capitalization in source or locale messages; do not apply CSS `text-transform` or a blanket runtime capitalizer. The convention follows [Apple's title-style capitalization guidance](https://developer.apple.com/library/archive/documentation/FinalCutProX/Conceptual/FxPlugHIG/TextStyleGuidelines/TextStyleGuidelines.html).
 
+## UI library documentation
+
+`docs/project/ui/` documents **laikit UI as a public, general-purpose React component library developed by lailai**, for any developer to use. Introductions lead with capabilities, design principles, installation, and customization. Do not define its purpose around the author's own websites, list those sites as the core audience, or frame the library as an internal component extraction. Write integration, upgrades, and contribution guidance so a reader outside those projects can follow it. Keep framework-specific examples where they teach an actual integration, but omit personal repository arrangements and migration history irrelevant to users. State verified APIs, compatibility, and limitations; do not imply adoption, maturity, or capabilities that have not been established.
+
+This positioning guides the writing; it is not copy to paste into the product introduction. Do not turn the maintainer's blunt instructions into declarations such as “面向所有开发者”, “供所有人使用”, or “不只是自用”. Explain what the library provides and how to use it. Let the documentation's substance establish its scope.
+
 ## Site voice exceptions
 
 - `~~strikethrough~~` is reserved for **wry self-mocking parentheticals**, never for actual deletion: `~~细胞膜融合~~。`, `~~半小时过 T1，罚坐四小时。~~`. Use sparingly.

@@ -1,7 +1,7 @@
 ---
 title: 迁移指南
-description: 本文介绍旧共享组件库到统一 npm 包的迁移步骤，包括导入、按钮属性、主题变量和样式接口。
-summary: 统一后的组件库使用 GitHub 仓库 lailai0916/ui 与 npm 包 @lailai0916/ui，原 GitHub 依赖 @lailai/ui 需要替换。迁移时同时更新依赖清单、锁文件、样式导入、按钮变体和尺寸，旧主题变量映射到统一的 lk 前缀。全局组件类名改为 CSS Modules，宿主通过公开属性、变量与 data-lk 标记定制。已有 Home 组件接口保持兼容，主题管理仍由原宿主负责。
+description: 本文介绍从旧包 @lailai/ui 迁移到 @lailai0916/ui 的步骤，包括导入、按钮属性、主题变量和样式接口。
+summary: 从 @lailai/ui 迁移到 @lailai0916/ui 0.2 系列，需要更新依赖清单、锁文件和样式导入，并调整按钮变体、尺寸与默认值。旧主题变量需映射到 lk 前缀，全局组件类名改为 CSS Modules，应用通过公开属性、变量与 data-lk 标记定制样式。完成替换后验证类型、构建、主题切换和交互，确保应用在新版本下正常运行。
 ---
 
 ## 参考资料
@@ -9,9 +9,11 @@ summary: 统一后的组件库使用 GitHub 仓库 lailai0916/ui 与 npm 包 @la
 - [旧 UI 迁移说明 - GitHub](https://github.com/lailai0916/ui/blob/main/docs/migrating-from-ui.md)
 - [统一主题变量 - GitHub](https://github.com/lailai0916/ui/blob/main/src/theme.css)
 
-## 仓库与依赖
+## 替换依赖
 
-统一后的维护仓库是 `lailai0916/ui`，由原 `laikit-ui` 仓库重命名而来。应用通过 npm 安装 `@lailai0916/ui`，不再从旧仓库直接安装 `@lailai/ui`。
+本页适用于仍使用旧包 `@lailai/ui` 的应用。新项目直接按照 [快速开始](/docs/project/ui/getting-started) 安装 `@lailai0916/ui`，无需执行迁移。
+
+移除旧依赖后，安装 npm 发布版本：
 
 ```bash
 npm uninstall @lailai/ui
@@ -38,7 +40,7 @@ import '@lailai0916/ui/styles.css';
 | `size="large"`       | `size="lg"`                  |
 | 依赖旧包默认主要按钮 | 显式设置 `variant="primary"` |
 
-统一后的 `Button` 默认是 `secondary`、`md`；`IconButton` 只提供 `sm`、`md`。图标、整行宽度与选中态分别使用 `leftIcon`、`fullWidth`、`active`，避免在应用中保留第二套按钮实现。
+0.2 系列的 `Button` 默认是 `secondary`、`md`；`IconButton` 仅提供 `sm`、`md`。图标、整行宽度与选中态分别使用 `leftIcon`、`fullWidth`、`active`。
 
 ## 主题变量
 
@@ -86,7 +88,5 @@ import '@lailai0916/ui/styles.css';
 1. 搜索旧包名、旧变量与旧选择器，确认源代码和锁文件均已替换。
 2. 运行项目检查与生产构建，确认不存在类型错误或缺失导出。
 3. 检查按钮默认层级、表单焦点、禁用态、窄屏布局和键盘导航。
-4. 检查主题切换、刷新恢复和各项目原有的强调色设置。
+4. 检查主题切换、刷新恢复和应用原有的强调色设置。
 5. 使用已发布的 npm 版本生成最终锁文件，部署后再次验证主要页面。
-
-Home 原有的 26 个 UI 组件 API 与 0.2 系列保持兼容。新版本增加应用原语后，Home、Tools 与 Academy 可以共用同一依赖，而不需要复制组件源码。

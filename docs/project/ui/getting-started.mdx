@@ -1,6 +1,6 @@
 ---
 title: 快速开始
-description: 本文介绍共享组件库的安装方式、样式导入顺序，以及可直接使用的 React 应用示例。
+description: 本文介绍 laikit UI 的安装方式、样式导入顺序，以及可直接使用的 React 应用示例。
 summary: 安装 @lailai0916/ui 后，在应用入口依次导入主题变量与组件样式，再用命名导出引用组件。独立应用可以组合 LaikitProvider 与 ThemeProvider，分别管理语言和主题；已有主题管理器的框架沿用原有机制。组件库不附带全局重置样式，页面字体、背景与盒模型由宿主设置，依赖版本和锁文件随应用一同提交。
 ---
 
@@ -92,13 +92,13 @@ export default function App() {
 }
 ```
 
-`LaikitProvider` 负责路由、标题与内置文案；`ThemeProvider` 负责整份文档的主题。Docusaurus 已有主题管理器，接入时只使用前者，详见[框架接入](/docs/project/ui/integration)。
+`LaikitProvider` 负责路由、标题与内置文案；`ThemeProvider` 负责整份文档的主题。已有主题管理器的应用沿用原有机制，无需额外挂载 `ThemeProvider`，详见 [框架接入](/docs/project/ui/integration)。
 
 ## 效果展示
 
 <Card>
   <Stack gap={12}>
-    <span>同一套组件随网站的主题与强调色变化。</span>
+    <span>组件随应用的主题与强调色变化。</span>
     <Cluster>
       <Button variant="primary" disabled>
         主要按钮

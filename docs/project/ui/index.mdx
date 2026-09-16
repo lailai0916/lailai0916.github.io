@@ -1,19 +1,21 @@
 ---
 title: laikit UI
-description: 本文介绍共享组件库的设计范围、组件分类，以及安装、主题、接入和发布文档的阅读顺序。
-summary: laikit UI 是 lailai 各网站共用的 React 组件库，通过 npm 包 @lailai0916/ui 提供组件与主题变量。0.2 系列包含 42 个 UI 组件，覆盖表单、布局、数据展示和内容展示，另有路由与语言适配、主题管理和辅助函数。组件源码集中维护，网站保留自己的业务、页面布局与数据，并通过升级依赖采用新版本。
+description: 本文介绍 laikit UI 的设计理念、组件分类、环境要求，以及安装、主题定制和框架接入文档。
+summary: laikit UI 是一套 React 组件库，以统一、简约、现代为设计原则。0.2 系列提供 42 个 UI 组件，覆盖表单、布局、数据展示和内容展示。组件提供 TypeScript 类型声明，支持浅色与深色主题、多语言文案和 CSS 变量定制，通过 LaikitProvider 接入应用的路由与标题组件。npm 包名为 @lailai0916/ui，采用 MIT 许可证。
 ---
 
 ## 参考资料
 
-- [ui 源码 - GitHub](https://github.com/lailai0916/ui)
+- [laikit UI 源代码 - GitHub](https://github.com/lailai0916/ui)
 - [@lailai0916/ui - npm](https://www.npmjs.com/package/@lailai0916/ui)
 
 ## 简介
 
-**laikit UI** 是 lailai 的共享 React 组件库，npm 包名为 `@lailai0916/ui`，源码仓库为 `lailai0916/ui`。设计遵循统一、简约、现代，供 [lailai's Home](https://lailai.one)、[lailai's Tools](https://tools.lailai.one) 和 [lailai's Academy](https://academy.lailai.one) 等项目复用。
+**laikit UI** 是一套 React 组件库，设计遵循统一、简约、现代，提供表单、布局、数据展示和内容展示组件。
 
-这组文档对应 **0.2 系列** API。组件库提供可复用的界面与交互，网站负责路由、业务数据、页面组织和用户文案。Docusaurus 的文章组件、Tools 的具体工具、Academy 的学习业务仍由各自项目维护。
+组件提供 TypeScript 类型声明，通过 CSS 变量定制颜色、字体与间距，支持浅色、深色主题和多语言文案。路由与标题组件可通过 `LaikitProvider` 接入应用所用的框架。
+
+组件库采用 [MIT 许可证](https://github.com/lailai0916/ui/blob/main/LICENSE)，npm 包名为 `@lailai0916/ui`。这组文档对应 **0.2 系列** API。
 
 ## 文档导航
 
@@ -26,7 +28,7 @@ summary: laikit UI 是 lailai 各网站共用的 React 组件库，通过 npm �
 | [内容展示](/docs/project/ui/content)         | 头像、徽标、窗口、引用与分页     |
 | [主题定制](/docs/project/ui/theming)         | 主题变量、浅色与深色、主题控件   |
 | [框架接入](/docs/project/ui/integration)     | 路由、语言、服务端渲染、Hooks    |
-| [维护发布](/docs/project/ui/maintenance)     | 修改源码、自动发布与网站升级     |
+| [维护发布](/docs/project/ui/maintenance)     | 贡献代码、版本发布与依赖升级     |
 | [迁移指南](/docs/project/ui/migration)       | 旧包、旧属性和旧样式的替换       |
 
 ## 组件清单
@@ -41,10 +43,9 @@ summary: laikit UI 是 lailai 各网站共用的 React 组件库，通过 npm �
 | 内容展示   | 13   | Avatar、Brand、Badge、IconBlock、Tooltip、TrafficLights、WindowBar、WindowPanel、MDTitle、Quote、GitHub、EmptyState、Paginator                                |
 | 主题控件   | 1    | ThemeControl                                                                                                                                                  |
 
-## 使用边界
+## 环境与接入
 
 - 应用需要 React 与 React DOM，支持 React 18.3.1 或 19；包提供 ESM 与 TypeScript 声明。
 - JavaScript 可由打包器移除未使用模块；共享样式文件包含整套组件样式。
-- 抽取组件库减少的是重复维护的源码，不能直接等同于浏览器下载体积的减少。
 - 图表接收应用传入的数据；`GitHub` 卡片会请求公开仓库信息，Iconify 图标可能发起网络请求。
 - 组件样式使用 CSS Modules，主题通过 `--lk-*` 变量定制。优先使用公开属性与变量，避免依赖生成的类名。

@@ -7,7 +7,7 @@ summary: LaikitProvider 将组件库连接到宿主的链接、标题、语言�
 ## 参考资料
 
 - [Provider 实现 - GitHub](https://github.com/lailai0916/ui/blob/main/src/provider.tsx)
-- [Home 接入实现 - GitHub](https://github.com/lailai0916/lailai0916.github.io/tree/main/src/components/LaikitProvider)
+- [框架接入指南 - GitHub](https://github.com/lailai0916/ui/blob/main/docs/integration.md)
 
 ## 默认行为
 
@@ -57,13 +57,13 @@ export function Providers({ children }: { children: ReactNode }) {
 }
 ```
 
-在主题根节点包裹页面。Home 已有 `src/components/LaikitProvider`，页面直接使用组件即可。该适配还通过 Docusaurus 的翻译函数提供库内文案，保留站点既有的翻译管理方式。
+在 Docusaurus 的主题根节点使用 `Providers` 包裹页面，组件即可使用框架的路由、标题和语言设置。若应用通过 Docusaurus 管理翻译，也可以将翻译结果传入 `messages`，统一维护内置文案。
 
-其他路由框架同样实现 `LinkProps` 适配：站内路径交给路由组件，外部地址保留正常链接行为。不要把框架依赖加入共享组件库。
+其他路由框架同样通过 `LinkProps` 接入：站内路径交给路由组件，外部地址保留正常链接行为。适配组件在应用中实现。
 
 ## 语言与文案
 
-`locale="zh-Hans"` 使用中文内置文案。可以通过 `messages` 覆盖 GitHub 错误、仓库字段、引用署名分隔符与“其他”分类等文字：
+`locale="zh-Hans"` 使用中文内置文案。可以通过 `messages` 覆盖 GitHub 错误、仓库字段、引用署名分隔符与「其他」分类等文字：
 
 ```tsx
 import type { ReactNode } from 'react';

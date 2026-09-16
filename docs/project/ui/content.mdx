@@ -81,7 +81,7 @@ export function ResultWindow() {
 | `EmptyState` | `title`、`description`；可选 `icon`、`action`         | 有说明与后续操作的空状态    |
 | `Paginator`  | `ariaLabel`；可选 `prevItem`、`nextItem`、`className` | 前后项导航                  |
 
-`MDTitle` 不包含个人问候逻辑。`Quote` 的作者与来源应真实；`GitHub.repo` 使用 `owner/repo` 格式，例如 `lailai0916/ui`。GitHub API 失败或限流时，卡片显示本地化错误，不应传入访问令牌。
+`Quote` 的作者与来源应真实；`GitHub.repo` 使用 `owner/repo` 格式，例如 `lailai0916/ui`。GitHub API 失败或限流时，卡片显示本地化错误，不应传入访问令牌。
 
 `Paginator` 每个导航项包含 `title`、`permalink`、`label`。组件只渲染给定链接，排序、页数和当前页由应用决定。
 

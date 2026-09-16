@@ -674,22 +674,6 @@ const sidebars: SidebarsConfig = {
     'project/index',
     {
       type: 'category',
-      label: 'laikit UI',
-      link: { type: 'doc', id: 'project/ui/index' },
-      items: [
-        'project/ui/getting-started',
-        'project/ui/controls',
-        'project/ui/layout',
-        'project/ui/data-display',
-        'project/ui/content',
-        'project/ui/theming',
-        'project/ui/integration',
-        'project/ui/maintenance',
-        'project/ui/migration',
-      ],
-    },
-    {
-      type: 'category',
       label: '个人',
       link: {
         type: 'generated-index',
@@ -749,6 +733,22 @@ const sidebars: SidebarsConfig = {
         'project/terminal/map-generator',
         'project/terminal/image-processor',
         'project/terminal/tutorial',
+      ],
+    },
+    {
+      type: 'category',
+      label: 'laikit UI',
+      link: { type: 'doc', id: 'project/ui/index' },
+      items: [
+        'project/ui/getting-started',
+        'project/ui/controls',
+        'project/ui/layout',
+        'project/ui/data-display',
+        'project/ui/content',
+        'project/ui/theming',
+        'project/ui/integration',
+        'project/ui/maintenance',
+        'project/ui/migration',
       ],
     },
     {
