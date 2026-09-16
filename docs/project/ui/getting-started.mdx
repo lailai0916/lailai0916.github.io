@@ -6,6 +6,25 @@ summary: 安装 @lailai0916/ui 后，在应用入口依次导入主题变量与�
 
 import { Button, Card, Cluster, Stack } from '@lailai0916/ui';
 
+export function QuickStartPreview() {
+  return (
+    <Card>
+      <Stack gap={12}>
+        <span>组件随应用的主题与强调色变化。</span>
+        <Cluster>
+          <Button variant="primary" disabled>
+            主要按钮
+          </Button>
+          <Button disabled>次要按钮</Button>
+          <Button variant="ghost" disabled>
+            轻量按钮
+          </Button>
+        </Cluster>
+      </Stack>
+    </Card>
+  );
+}
+
 ## 参考资料
 
 - [安装与接入 - GitHub](https://github.com/lailai0916/ui/blob/main/docs/integration.md)
@@ -96,20 +115,7 @@ export default function App() {
 
 ## 效果展示
 
-<Card>
-  <Stack gap={12}>
-    <span>组件随应用的主题与强调色变化。</span>
-    <Cluster>
-      <Button variant="primary" disabled>
-        主要按钮
-      </Button>
-      <Button disabled>次要按钮</Button>
-      <Button variant="ghost" disabled>
-        轻量按钮
-      </Button>
-    </Cluster>
-  </Stack>
-</Card>
+<QuickStartPreview />
 
 上方仅展示禁用态。可操作示例见[按钮与表单](/docs/project/ui/controls)。
 

@@ -51,6 +51,8 @@ links, and the local envelope around externally produced solution bodies.
 
 This positioning guides the writing; it is not copy to paste into the product introduction. Do not turn the maintainer's blunt instructions into declarations such as “面向所有开发者”, “供所有人使用”, or “不只是自用”. Explain what the library provides and how to use it. Let the documentation's substance establish its scope.
 
+Author UI previews as exported React components and render them in the MDX body. Multiline bare text inside a component tag in the MDX body becomes a Markdown paragraph, whose margins can displace button labels. Ordinary JSX inside an exported function avoids this behavior and stays safe when Prettier wraps the tags.
+
 ## Site voice exceptions
 
 - `~~strikethrough~~` is reserved for **wry self-mocking parentheticals**, never for actual deletion: `~~细胞膜融合~~。`, `~~半小时过 T1，罚坐四小时。~~`. Use sparingly.
