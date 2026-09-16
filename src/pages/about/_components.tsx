@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import clsx from 'clsx';
 
 import BrowserOnly from '@docusaurus/BrowserOnly';
+import Link from '@docusaurus/Link';
 import { translate } from '@docusaurus/Translate';
 import Giscus from '@giscus/react';
 import { Icon } from '@iconify/react';
@@ -155,25 +156,36 @@ export function Devices() {
   );
 }
 
+function CommunityDetails({ item }: { item: (typeof COMMUNITY_LIST)[number] }) {
+  return (
+    <>
+      <span className={styles.communityIcon} aria-hidden="true">
+        <Icon icon={item.icon} />
+      </span>
+      <span className={styles.communityCardBody}>
+        <span className={styles.communityName}>{item.title}</span>
+        <span className={styles.communitySpec}>{item.text}</span>
+      </span>
+      <span className={styles.communityArrow} aria-hidden="true">
+        <Icon icon="lucide:arrow-up-right" />
+      </span>
+    </>
+  );
+}
+
 export function Community() {
   return (
-    <div className={styles.communityGrid}>
-      {COMMUNITY_LIST.map((item) => (
-        <Card
-          key={item.title}
-          href={item.href}
-          padding="0.75rem"
-          className={styles.communityCard}
-          wrapperClassName={styles.communityCardWrapper}
-        >
-          <div className={styles.communityCardBody}>
-            <div className={styles.communityName}>{item.title}</div>
-            <div className={styles.communitySpec}>{item.text}</div>
-          </div>
-          <Icon icon={item.icon} className={styles.communityIcon} />
-        </Card>
-      ))}
-    </div>
+    <Card padding="0" className={styles.community}>
+      <ul className={styles.communityGrid} role="list">
+        {COMMUNITY_LIST.map((item) => (
+          <li key={item.title} className={styles.communityItem}>
+            <Link href={item.href} className={styles.communityLink}>
+              <CommunityDetails item={item} />
+            </Link>
+          </li>
+        ))}
+      </ul>
+    </Card>
   );
 }
 
