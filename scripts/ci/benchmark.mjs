@@ -1,4 +1,4 @@
-import { spawn } from 'node:child_process';
+import { execFileSync, spawn } from 'node:child_process';
 import { createHash } from 'node:crypto';
 import { existsSync, mkdirSync, readFileSync, readdirSync, statSync, writeFileSync } from 'node:fs';
 import path from 'node:path';
@@ -55,6 +55,9 @@ function files(dir) {
 }
 const result = { variant, attempt: process.env.GITHUB_RUN_ATTEMPT, exitCode, wallMs, markers };
 if (exitCode === 0) {
+  const revision = execFileSync('git', ['rev-parse', '--short=8', 'HEAD'], {
+    encoding: 'utf8',
+  }).trim();
   const locales = process.env.BENCH_LOCALE ? [process.env.BENCH_LOCALE] : ['en', 'zh-Hans'];
   result.locales = locales.map((locale) => {
     const root = process.env.BENCH_LOCALE || locale === 'en' ? 'build' : 'build/zh-Hans';
@@ -83,7 +86,17 @@ if (exitCode === 0) {
         throw new Error(`Incorrect URL in ${file}`);
       if (!html.includes('apple-touch-icon')) throw new Error(`Missing icon in ${file}`);
     }
-    return { locale, sitemapUrls: urls.length, routesChecked: routes.length };
+    if (!readFileSync(`${root}/insights.html`, 'utf8').includes(`${revision}-`)) {
+      throw new Error(`Stale build ID in ${locale}`);
+    }
+    if (
+      locale === 'en' &&
+      process.env.BENCH_SOURCE_PROBE &&
+      !readFileSync(`${root}/privacy.html`, 'utf8').includes(process.env.BENCH_SOURCE_PROBE)
+    ) {
+      throw new Error('Source change was not rebuilt');
+    }
+    return { locale, sitemapUrls: urls.length, routesChecked: routes.length, revision };
   });
   const builtFiles = files('build');
   const scripts = builtFiles.filter((file) => file.endsWith('.js'));

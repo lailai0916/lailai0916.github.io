@@ -18,11 +18,11 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        variant: [baseline, cached, no-cache, no-concat]
+        variant: [baseline, cached, no-cache, combined, combined-repeat]
     env:
       BENCH_VARIANT: ${{ matrix.variant }}
-      BENCH_NO_CONCAT: ${{ matrix.variant == 'no-concat' && '1' || '' }}
-      DOCUSAURUS_NO_PERSISTENT_CACHE: ${{ matrix.variant == 'no-cache' && '1' || '' }}
+      BENCH_NO_CONCAT: ${{ startsWith(matrix.variant, 'combined') && '1' || '' }}
+      DOCUSAURUS_NO_PERSISTENT_CACHE: ${{ (matrix.variant == 'no-cache' || startsWith(matrix.variant, 'combined') || matrix.variant == 'en' || matrix.variant == 'zh-Hans') && '1' || '' }}
       BENCH_LOCALE: ${{ (matrix.variant == 'en' || matrix.variant == 'zh-Hans') && matrix.variant || '' }}
     steps:
       - uses: actions/checkout@v7
@@ -45,6 +45,10 @@ jobs:
           key: ${{ runner.os }}-docusaurus-benchmark-v1-${{ hashFiles('package-lock.json') }}-${{ github.sha }}
           restore-keys: |
             ${{ runner.os }}-docusaurus-benchmark-v1-${{ hashFiles('package-lock.json') }}-
+      - name: Apply source probe
+        run: |
+          printf '\n<span data-ci-benchmark="source-probe-20260918" />\n' >> src/pages/privacy/_content.mdx
+          echo 'BENCH_SOURCE_PROBE=source-probe-20260918' >> "$GITHUB_ENV"
       - name: Measure build
         run: node scripts/ci/benchmark.mjs
       - name: Measure cache size
@@ -80,8 +84,8 @@ jobs:
         variant: [en, zh-Hans]
     env:
       BENCH_VARIANT: ${{ matrix.variant }}
-      BENCH_NO_CONCAT: ${{ matrix.variant == 'no-concat' && '1' || '' }}
-      DOCUSAURUS_NO_PERSISTENT_CACHE: ${{ matrix.variant == 'no-cache' && '1' || '' }}
+      BENCH_NO_CONCAT: ${{ startsWith(matrix.variant, 'combined') && '1' || '' }}
+      DOCUSAURUS_NO_PERSISTENT_CACHE: ${{ (matrix.variant == 'no-cache' || startsWith(matrix.variant, 'combined') || matrix.variant == 'en' || matrix.variant == 'zh-Hans') && '1' || '' }}
       BENCH_LOCALE: ${{ (matrix.variant == 'en' || matrix.variant == 'zh-Hans') && matrix.variant || '' }}
     steps:
       - uses: actions/checkout@v7
@@ -104,6 +108,10 @@ jobs:
           key: ${{ runner.os }}-docusaurus-benchmark-v1-${{ hashFiles('package-lock.json') }}-${{ github.sha }}
           restore-keys: |
             ${{ runner.os }}-docusaurus-benchmark-v1-${{ hashFiles('package-lock.json') }}-
+      - name: Apply source probe
+        run: |
+          printf '\n<span data-ci-benchmark="source-probe-20260918" />\n' >> src/pages/privacy/_content.mdx
+          echo 'BENCH_SOURCE_PROBE=source-probe-20260918' >> "$GITHUB_ENV"
       - name: Measure build
         run: node scripts/ci/benchmark.mjs
       - name: Measure cache size
