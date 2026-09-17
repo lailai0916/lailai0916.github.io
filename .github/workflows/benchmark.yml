@@ -11,19 +11,18 @@ env:
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
 jobs:
-  benchmark:
+  localized:
     name: Benchmark ${{ matrix.variant }}
     runs-on: ubuntu-latest
     timeout-minutes: 20
     strategy:
       fail-fast: false
       matrix:
-        variant: [split, split-repeat, split-no-cache, split-cached, split-cached-repeat]
+        variant: [en, zh-Hans]
     env:
       BENCH_VARIANT: ${{ matrix.variant }}
-      BENCH_SPLIT: '1'
-      BENCH_NO_CONCAT: ${{ startsWith(matrix.variant, 'combined') && '1' || '' }}
-      DOCUSAURUS_NO_PERSISTENT_CACHE: ${{ matrix.variant == 'split-no-cache' && '1' || '' }}
+      BENCH_NO_CONCAT: ''
+      DOCUSAURUS_NO_PERSISTENT_CACHE: ''
       BENCH_LOCALE: ${{ (matrix.variant == 'en' || matrix.variant == 'zh-Hans') && matrix.variant || '' }}
     steps:
       - uses: actions/checkout@v7
@@ -38,24 +37,24 @@ jobs:
       - name: Check repository
         run: npm run check:ci
       - name: Restore build cache
-        if: contains(matrix.variant, 'cached')
         id: cache
         uses: actions/cache/restore@v5
         with:
           path: node_modules/.cache/rspack
-          key: ${{ runner.os }}-docusaurus-benchmark-v1-${{ hashFiles('package-lock.json') }}-${{ github.sha }}-${{ matrix.variant }}
+          key: ${{ runner.os }}-docusaurus-benchmark-parallel-v1-${{ hashFiles('package-lock.json') }}-${{ matrix.variant }}-${{ github.sha }}
           restore-keys: |
+            ${{ runner.os }}-docusaurus-benchmark-parallel-v1-${{ hashFiles('package-lock.json') }}-${{ matrix.variant }}-
             ${{ runner.os }}-docusaurus-benchmark-v1-${{ hashFiles('package-lock.json') }}-
       - name: Apply source probe
         run: |
-          printf '\n<span data-ci-benchmark="source-probe-20260918" />\n' >> src/pages/privacy/_content.mdx
-          echo 'BENCH_SOURCE_PROBE=source-probe-20260918' >> "$GITHUB_ENV"
+          printf '\n<span data-ci-benchmark="source-probe-final-20260918" />\n' >> src/pages/privacy/_content.mdx
+          echo 'BENCH_SOURCE_PROBE=source-probe-final-20260918' >> "$GITHUB_ENV"
       - name: Measure build
         run: node scripts/ci/benchmark.mjs
       - name: Measure cache size
         run: du -sh node_modules/.cache/rspack || true
       - name: Save build cache
-        if: contains(matrix.variant, 'cached') && steps.cache.outputs.cache-hit != 'true'
+        if: steps.cache.outputs.cache-hit != 'true'
         uses: actions/cache/save@v5
         with:
           path: node_modules/.cache/rspack
@@ -67,8 +66,54 @@ jobs:
           name: benchmark-${{ matrix.variant }}-${{ github.run_attempt }}
           path: ${{ runner.temp }}/benchmark-${{ matrix.variant }}
           retention-days: 7
-      - name: Package site
+      - name: Upload localized build
+        if: matrix.variant == 'en' || matrix.variant == 'zh-Hans'
+        uses: actions/upload-artifact@v7
+        with:
+          name: site-${{ matrix.variant }}-${{ github.run_attempt }}
+          path: build
+          retention-days: 1
+
+  assemble:
+    name: Assemble localized builds
+    needs: localized
+    if: always() && !cancelled()
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/download-artifact@v5
+        with:
+          name: site-en-${{ github.run_attempt }}
+          path: build
+      - uses: actions/download-artifact@v5
+        with:
+          name: site-zh-Hans-${{ github.run_attempt }}
+          path: build/zh-Hans
+      - name: Validate merged site
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          from html.parser import HTMLParser
+          import xml.etree.ElementTree as ET
+          class Links(HTMLParser):
+              def __init__(self):
+                  super().__init__()
+                  self.tags = []
+              def handle_starttag(self, tag, attrs):
+                  self.tags.append((tag, dict(attrs)))
+          for locale, prefix in [('en', ''), ('zh-Hans', '/zh-Hans')]:
+              root = Path('build' + prefix)
+              assert len(ET.parse(root / 'sitemap.xml').getroot()) == 546
+              parser = Links()
+              parser.feed((root / 'index.html').read_text())
+              for tag, attrs in parser.tags:
+                  if tag == 'link' and attrs.get('rel') == 'canonical':
+                      assert attrs['href'] == 'https://lailai.one' + prefix + '/'
+                  asset = attrs.get('src') if tag == 'script' else attrs.get('href') if tag == 'link' and attrs.get('rel') == 'stylesheet' else None
+                  if asset and asset.startswith('/'):
+                      assert Path('build' + asset).exists(), asset
+              print(locale, '546 sitemap URLs, homepage canonical and assets validated')
+          PY
+      - name: Package merged site
         uses: actions/upload-pages-artifact@v5
         with:
-          name: pages-${{ matrix.variant }}
           path: build
