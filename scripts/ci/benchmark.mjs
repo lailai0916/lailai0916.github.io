@@ -14,14 +14,6 @@ const startedAt = Date.now();
 const markers = [];
 let output = '';
 let pending = '';
-const child = spawn('/usr/bin/time', ['-v', 'npm', ...args], {
-  env: {
-    ...process.env,
-    DOCUSAURUS_PERF_LOGGER: 'true',
-    NODE_OPTIONS: `${process.env.NODE_OPTIONS || ''} --require=${path.resolve('scripts/ci/trace-exit.cjs')}`,
-  },
-  stdio: ['ignore', 'pipe', 'pipe'],
-});
 function receive(data) {
   const text = data.toString();
   output += text;
@@ -42,9 +34,32 @@ function receive(data) {
     }
   }
 }
-child.stdout.on('data', receive);
-child.stderr.on('data', receive);
-const exitCode = await new Promise((resolve) => child.on('close', resolve));
+const commands =
+  process.env.BENCH_SPLIT === '1'
+    ? [
+        { locale: 'en', args: ['run', 'build', '--', '--locale', 'en'] },
+        {
+          locale: 'zh-Hans',
+          args: ['run', 'build', '--', '--locale', 'zh-Hans', '--out-dir', 'build/zh-Hans'],
+        },
+      ]
+    : [{ locale: process.env.BENCH_LOCALE, args }];
+let exitCode = 0;
+for (const command of commands) {
+  const child = spawn('/usr/bin/time', ['-v', 'npm', ...command.args], {
+    env: {
+      ...process.env,
+      BENCH_LOCALE: command.locale || '',
+      DOCUSAURUS_PERF_LOGGER: 'true',
+      NODE_OPTIONS: `${process.env.NODE_OPTIONS || ''} --require=${path.resolve('scripts/ci/trace-exit.cjs')}`,
+    },
+    stdio: ['ignore', 'pipe', 'pipe'],
+  });
+  child.stdout.on('data', receive);
+  child.stderr.on('data', receive);
+  exitCode = await new Promise((resolve) => child.on('close', resolve));
+  if (exitCode !== 0) break;
+}
 const wallMs = Date.now() - startedAt;
 writeFileSync(path.join(outputDir, 'build.log'), output);
 function files(dir) {
