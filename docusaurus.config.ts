@@ -297,4 +297,19 @@ const config: Config = {
   ],
 };
 
+if (process.env.BENCH_NO_CONCAT === '1') {
+  config.plugins!.push(() => ({
+    name: 'benchmark-no-concat',
+    configureWebpack: () => ({ optimization: { concatenateModules: false } }),
+  }));
+}
+
+if (process.env.BENCH_LOCALE) {
+  config.baseUrl = process.env.BENCH_LOCALE === 'zh-Hans' ? '/zh-Hans/' : '/';
+  config.i18n!.localeConfigs = {
+    en: { baseUrl: '/' },
+    'zh-Hans': { baseUrl: '/zh-Hans/' },
+  };
+}
+
 export default config;
