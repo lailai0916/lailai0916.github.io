@@ -18,7 +18,66 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        variant: [baseline, cached, no-cache, no-concat, en, zh-Hans]
+        variant: [baseline, cached, no-cache, no-concat]
+    env:
+      BENCH_VARIANT: ${{ matrix.variant }}
+      BENCH_NO_CONCAT: ${{ matrix.variant == 'no-concat' && '1' || '' }}
+      DOCUSAURUS_NO_PERSISTENT_CACHE: ${{ matrix.variant == 'no-cache' && '1' || '' }}
+      BENCH_LOCALE: ${{ (matrix.variant == 'en' || matrix.variant == 'zh-Hans') && matrix.variant || '' }}
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 24
+          cache: npm
+      - name: Install dependencies
+        run: npm ci
+      - name: Check repository
+        run: npm run check:ci
+      - name: Restore build cache
+        if: matrix.variant == 'cached'
+        id: cache
+        uses: actions/cache/restore@v5
+        with:
+          path: node_modules/.cache/rspack
+          key: ${{ runner.os }}-docusaurus-benchmark-v1-${{ hashFiles('package-lock.json') }}-${{ github.sha }}
+          restore-keys: |
+            ${{ runner.os }}-docusaurus-benchmark-v1-${{ hashFiles('package-lock.json') }}-
+      - name: Measure build
+        run: node scripts/ci/benchmark.mjs
+      - name: Measure cache size
+        run: du -sh node_modules/.cache/rspack || true
+      - name: Save build cache
+        if: matrix.variant == 'cached' && steps.cache.outputs.cache-hit != 'true'
+        uses: actions/cache/save@v5
+        with:
+          path: node_modules/.cache/rspack
+          key: ${{ steps.cache.outputs.cache-primary-key }}
+      - name: Upload measurements
+        if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          name: benchmark-${{ matrix.variant }}-${{ github.run_attempt }}
+          path: ${{ runner.temp }}/benchmark-${{ matrix.variant }}
+          retention-days: 7
+      - name: Upload localized build
+        if: matrix.variant == 'en' || matrix.variant == 'zh-Hans'
+        uses: actions/upload-artifact@v7
+        with:
+          name: site-${{ matrix.variant }}-${{ github.run_attempt }}
+          path: build
+          retention-days: 1
+
+  localized:
+    name: Benchmark ${{ matrix.variant }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    strategy:
+      fail-fast: false
+      matrix:
+        variant: [en, zh-Hans]
     env:
       BENCH_VARIANT: ${{ matrix.variant }}
       BENCH_NO_CONCAT: ${{ matrix.variant == 'no-concat' && '1' || '' }}
@@ -72,7 +131,7 @@ jobs:
 
   assemble:
     name: Assemble localized builds
-    needs: benchmark
+    needs: localized
     if: always() && !cancelled()
     runs-on: ubuntu-latest
     steps:

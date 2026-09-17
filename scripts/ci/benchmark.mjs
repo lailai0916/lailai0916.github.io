@@ -1,4 +1,5 @@
 import { spawn } from 'node:child_process';
+import { createHash } from 'node:crypto';
 import { existsSync, mkdirSync, readFileSync, readdirSync, statSync, writeFileSync } from 'node:fs';
 import path from 'node:path';
 import { gzipSync } from 'node:zlib';
@@ -86,6 +87,23 @@ if (exitCode === 0) {
   });
   const builtFiles = files('build');
   const scripts = builtFiles.filter((file) => file.endsWith('.js'));
+  const htmlManifest = builtFiles
+    .filter((file) => file.endsWith('.html'))
+    .map((file) => {
+      const html = readFileSync(file, 'utf8');
+      return {
+        file: file.slice(6),
+        title: html.match(/<title[^>]*>([\s\S]*?)<\/title>/)?.[1],
+        canonical: html.match(/<link[^>]*rel=["']canonical["'][^>]*>/)?.[0],
+        headings: [...html.matchAll(/<h[1-6]\b[^>]*>([\s\S]*?)<\/h[1-6]>/g)].map((match) =>
+          match[1].replace(/<[^>]*>/g, '')
+        ),
+      };
+    })
+    .sort((a, b) => a.file.localeCompare(b.file));
+  const manifest = JSON.stringify(htmlManifest);
+  writeFileSync(path.join(outputDir, 'html-manifest.json'), `${manifest}\n`);
+  result.htmlManifestSha256 = createHash('sha256').update(manifest).digest('hex');
   result.output = {
     files: builtFiles.length,
     bytes: builtFiles.reduce((sum, file) => sum + statSync(file).size, 0),
