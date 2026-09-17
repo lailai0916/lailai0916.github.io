@@ -122,7 +122,7 @@ const config: Config = {
   ],
 
   themeConfig: {
-    image: 'img/logo.svg',
+    image: 'img/social-card.png',
     zoom: {
       selector: '.markdown img, img[data-zoomable]',
       background: {
