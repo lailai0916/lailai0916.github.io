@@ -2977,5 +2977,35 @@
   },
   "components.laikitProvider.other": {
     "message": "其他"
+  },
+  "data.community.phone": {
+    "message": "电话"
+  },
+  "data.community.email": {
+    "message": "邮箱"
+  },
+  "data.community.x": {
+    "message": "X (Twitter)"
+  },
+  "data.community.telegram": {
+    "message": "Telegram"
+  },
+  "data.community.linkedin": {
+    "message": "领英"
+  },
+  "data.community.github": {
+    "message": "GitHub"
+  },
+  "data.community.qq": {
+    "message": "QQ"
+  },
+  "data.community.wechat": {
+    "message": "微信"
+  },
+  "data.community.bilibili": {
+    "message": "哔哩哔哩"
+  },
+  "data.community.luogu": {
+    "message": "洛谷"
   }
 }
