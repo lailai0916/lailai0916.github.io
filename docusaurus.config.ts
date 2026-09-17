@@ -29,6 +29,15 @@ const config: Config = {
   tagline:
     "lailai's personal website for sharing technical notes, project experience, and learning insights.",
   favicon: 'img/favicon.ico',
+  headTags: [
+    {
+      tagName: 'link',
+      attributes: {
+        rel: 'apple-touch-icon',
+        href: '/img/logo.png',
+      },
+    },
+  ],
 
   future: {
     v4: true,
