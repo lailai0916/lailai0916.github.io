@@ -15,38 +15,10 @@ import { COMMUNITY_LIST } from '@site/src/data/community';
 import { useImageStatus } from '@lailai0916/ui';
 import styles from './styles.module.css';
 
-const WORD_CLOUD_URL = 'https://cloud.lailai.one/f/AdNtA/wordcloud.svg';
 const SKILLS_ARIA_LABEL = translate({
   id: 'pages.about.skills.ariaLabel',
   message: 'Tech stack icons',
 });
-
-export function WordCloud() {
-  const { imgRef, status, onLoad, onError } = useImageStatus(WORD_CLOUD_URL);
-
-  return (
-    <Card className={styles.wordCloud} padding="clamp(1.25rem, 4vw, 2.25rem)">
-      <div className={styles.wordCloudFrame}>
-        {status === 'error' ? (
-          <div className={styles.imageFallback} aria-hidden="true">
-            <Icon icon="lucide:image-off" />
-          </div>
-        ) : (
-          <img
-            ref={imgRef}
-            src={WORD_CLOUD_URL}
-            alt=""
-            width={2618}
-            height={952}
-            decoding="async"
-            onLoad={onLoad}
-            onError={onError}
-          />
-        )}
-      </div>
-    </Card>
-  );
-}
 
 export function Skills() {
   const [perline, setPerline] = useState(12);

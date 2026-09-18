@@ -1,17 +1,3 @@
-.wordCloud {
-  background: var(--ifm-color-emphasis-100);
-  margin-bottom: 1rem;
-  overflow: hidden;
-}
-
-.wordCloud img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  margin: 0;
-}
-
 .imageFallback {
   display: flex;
   align-items: center;
@@ -20,11 +6,6 @@
   height: 100%;
   color: var(--ifm-color-emphasis-500);
   font-size: 1.5rem;
-}
-
-.wordCloudFrame {
-  width: 100%;
-  aspect-ratio: 2618 / 952;
 }
 
 .skillsFrame {
