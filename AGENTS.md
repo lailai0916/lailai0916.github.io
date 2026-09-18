@@ -23,6 +23,14 @@ work and ask the user to install or expose the canonical Skill.
 
 Source for [lailai's personal website](https://lailai.one) — Docusaurus 3 (TypeScript), Node `>=20` (CI uses Node 24). Deployed via GitHub Actions to GitHub Pages and rsynced to a custom server (`.github/workflows/deploy.yml`).
 
+CI builds `en` and `zh-Hans` in parallel on separate runners. Each build sets `BUILD_LOCALE`
+and passes `--locale`; explicit locale base URLs keep Chinese routes under `/zh-Hans/`.
+Rspack caches are restored after `npm ci` and keyed by locale, Node version, lockfile,
+configuration, and commit, with reuse across commits. Only successful builds are cached.
+The publish job combines both artifacts, preserving hidden static files, then runs
+`.github/scripts/validate-build.py` before syncing the server and deploying GitHub Pages.
+Keep `npm run check:ci` in the build jobs; normal local `npm run build` still builds both locales.
+
 ## Commands
 
 ```bash

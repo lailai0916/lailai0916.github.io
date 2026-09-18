@@ -45,7 +45,7 @@ const config: Config = {
   },
 
   url: 'https://lailai.one',
-  baseUrl: '/',
+  baseUrl: process.env.BUILD_LOCALE === 'zh-Hans' ? '/zh-Hans/' : '/',
 
   organizationName: 'lailai0916',
   projectName: 'lailai0916.github.io',
@@ -61,6 +61,11 @@ const config: Config = {
   i18n: {
     defaultLocale,
     locales: [defaultLocale, 'zh-Hans'],
+    // Single-locale CI builds must preserve both languages' deployment paths.
+    localeConfigs: {
+      en: { baseUrl: '/' },
+      'zh-Hans': { baseUrl: '/zh-Hans/' },
+    },
   },
 
   presets: [

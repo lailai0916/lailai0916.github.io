@@ -4,16 +4,18 @@ on:
   push:
     branches:
       - main
-    # Review gh actions docs if you want to further define triggers, paths, etc
-    # https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#on
 
 env:
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
 jobs:
   build:
-    name: Build Docusaurus
+    name: Build Docusaurus (${{ matrix.locale }})
     runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        locale: [en, zh-Hans]
     steps:
       - uses: actions/checkout@v7
         with:
@@ -27,8 +29,43 @@ jobs:
         run: npm ci
       - name: Check repository
         run: npm run check:ci
+      - name: Cache Docusaurus build
+        uses: actions/cache@v5
+        with:
+          path: node_modules/.cache/rspack
+          key: ${{ runner.os }}-docusaurus-v1-node24-${{ matrix.locale }}-${{ hashFiles('package-lock.json', 'docusaurus.config.ts') }}-${{ github.sha }}
+          restore-keys: |
+            ${{ runner.os }}-docusaurus-v1-node24-${{ matrix.locale }}-${{ hashFiles('package-lock.json', 'docusaurus.config.ts') }}-
       - name: Build website
-        run: npm run build
+        env:
+          BUILD_LOCALE: ${{ matrix.locale }}
+        run: npm run build -- --locale "$BUILD_LOCALE"
+      - name: Upload localized build
+        uses: actions/upload-artifact@v7
+        with:
+          name: site-${{ matrix.locale }}
+          path: build
+          include-hidden-files: true
+          retention-days: 1
+
+  publish:
+    name: Assemble and publish website
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          sparse-checkout: .github/scripts
+      - uses: actions/download-artifact@v5
+        with:
+          name: site-en
+          path: build
+      - uses: actions/download-artifact@v5
+        with:
+          name: site-zh-Hans
+          path: build/zh-Hans
+      - name: Validate merged site
+        run: python3 .github/scripts/validate-build.py
 
       - name: Upload Build Artifact
         uses: actions/upload-pages-artifact@v5
@@ -60,7 +97,7 @@ jobs:
 
   deploy:
     name: Deploy to GitHub Pages
-    needs: build
+    needs: publish
 
     # Grant GITHUB_TOKEN the permissions required to make a Pages deployment
     permissions:
