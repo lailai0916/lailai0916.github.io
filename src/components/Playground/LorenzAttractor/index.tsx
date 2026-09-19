@@ -43,13 +43,11 @@ const THEME_COLORS = {
     background: '#000000',
     grid: 'rgba(255, 255, 255, 0.08)',
     axis: 'rgba(255, 255, 255, 0.22)',
-    trail: '#1d9bf0',
   },
   light: {
     background: '#ffffff',
     grid: 'rgba(0, 0, 0, 0.06)',
     axis: 'rgba(0, 0, 0, 0.18)',
-    trail: '#1d9bf0',
   },
 } as const;
 
@@ -164,9 +162,23 @@ export default function LorenzAttractor() {
     autoRotate: true,
   });
 
-  const themeRef = useRef(THEME_COLORS.light as (typeof THEME_COLORS)[keyof typeof THEME_COLORS]);
+  const themeRef = useRef({
+    primary: '',
+    colors: THEME_COLORS.light as (typeof THEME_COLORS)[keyof typeof THEME_COLORS],
+  });
   useEffect(() => {
-    themeRef.current = isDark ? THEME_COLORS.dark : THEME_COLORS.light;
+    const root = document.documentElement;
+    const updateTheme = () => {
+      themeRef.current = {
+        primary: getComputedStyle(root).getPropertyValue('--ifm-color-primary').trim(),
+        colors: isDark ? THEME_COLORS.dark : THEME_COLORS.light,
+      };
+    };
+    updateTheme();
+
+    const observer = new MutationObserver(updateTheme);
+    observer.observe(root, { attributes: true, attributeFilter: ['style'] });
+    return () => observer.disconnect();
   }, [isDark]);
 
   const resetSimulation = useCallback(() => {
@@ -237,7 +249,7 @@ export default function LorenzAttractor() {
     };
 
     const drawAxes = () => {
-      const colors = themeRef.current;
+      const { colors } = themeRef.current;
       const len = 18;
       const axes: Array<{ from: Vec3; to: Vec3 }> = [
         { from: { x: -len, y: 0, z: 25 }, to: { x: len, y: 0, z: 25 } },
@@ -293,7 +305,7 @@ export default function LorenzAttractor() {
     };
 
     const render = () => {
-      const colors = themeRef.current;
+      const { primary, colors } = themeRef.current;
       const state = stateRef.current;
       const { particle } = state;
       const { sigma: σ, rho: ρ, beta: β } = paramsRef.current;
@@ -313,14 +325,14 @@ export default function LorenzAttractor() {
 
       drawAxes();
 
-      drawTrail(particle, colors.trail);
+      drawTrail(particle, primary);
 
       animId = requestAnimationFrame(render);
     };
 
     render();
     return () => cancelAnimationFrame(animId);
-  }, [canvasSize, dpr, isDark]);
+  }, [canvasSize, dpr]);
 
   const interactionRef = useRef({ x: 0, y: 0, active: false, moved: false });
 
