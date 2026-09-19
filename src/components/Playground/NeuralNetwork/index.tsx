@@ -211,7 +211,7 @@ export default function NeuralNetwork({ instant = false }: { instant?: boolean }
                 y="0"
                 width={CANVAS_SIZE}
                 height={CANVAS_SIZE}
-                fill="var(--nn-cover)"
+                fill="var(--nn-bg-primary)"
                 style={{
                   opacity: animating ? 0 : 1,
                   pointerEvents: animating ? 'none' : undefined,
