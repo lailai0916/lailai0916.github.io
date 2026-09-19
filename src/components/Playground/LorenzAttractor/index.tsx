@@ -31,11 +31,7 @@ const INITIAL_PITCH = -0.35;
 const AUTO_ROTATE_RATE = 0.0018;
 const PITCH_LIMIT = Math.PI / 2 - 0.1;
 
-// Two trajectories starting 1e-3 apart — the canonical butterfly-effect demo.
-const INITIAL_CONDITIONS: Vec3[] = [
-  { x: 1, y: 1, z: 1 },
-  { x: 1.001, y: 1, z: 1 },
-];
+const INITIAL_POSITION: Vec3 = { x: 1, y: 1, z: 1 };
 
 const RESET_LABEL = translate({
   id: 'components.playground.lorenz.reset',
@@ -47,13 +43,13 @@ const THEME_COLORS = {
     background: '#000000',
     grid: 'rgba(255, 255, 255, 0.08)',
     axis: 'rgba(255, 255, 255, 0.22)',
-    trails: ['#1d9bf0', '#f97316'],
+    trail: '#1d9bf0',
   },
   light: {
     background: '#ffffff',
     grid: 'rgba(0, 0, 0, 0.06)',
     axis: 'rgba(0, 0, 0, 0.18)',
-    trails: ['#1d9bf0', '#f97316'],
+    trail: '#1d9bf0',
   },
 } as const;
 
@@ -159,10 +155,10 @@ export default function LorenzAttractor() {
   }, [sigma, rho, beta]);
 
   const stateRef = useRef({
-    particles: INITIAL_CONDITIONS.map((ic) => ({
-      pos: { ...ic },
+    particle: {
+      pos: { ...INITIAL_POSITION },
       trail: [] as Vec3[],
-    })) as Particle[],
+    },
     yaw: INITIAL_YAW,
     pitch: INITIAL_PITCH,
     autoRotate: true,
@@ -174,10 +170,10 @@ export default function LorenzAttractor() {
   }, [isDark]);
 
   const resetSimulation = useCallback(() => {
-    stateRef.current.particles = INITIAL_CONDITIONS.map((ic) => ({
-      pos: { ...ic },
+    stateRef.current.particle = {
+      pos: { ...INITIAL_POSITION },
       trail: [],
-    }));
+    };
   }, []);
 
   const handleReset = useCallback(() => {
@@ -299,14 +295,13 @@ export default function LorenzAttractor() {
     const render = () => {
       const colors = themeRef.current;
       const state = stateRef.current;
+      const { particle } = state;
       const { sigma: σ, rho: ρ, beta: β } = paramsRef.current;
 
       for (let s = 0; s < STEPS_PER_FRAME; s++) {
-        for (const particle of state.particles) {
-          particle.pos = rk4Step(particle.pos, σ, ρ, β, DT);
-          particle.trail.push({ ...particle.pos });
-          if (particle.trail.length > MAX_TRAIL) particle.trail.shift();
-        }
+        particle.pos = rk4Step(particle.pos, σ, ρ, β, DT);
+        particle.trail.push({ ...particle.pos });
+        if (particle.trail.length > MAX_TRAIL) particle.trail.shift();
       }
 
       if (state.autoRotate) {
@@ -318,9 +313,7 @@ export default function LorenzAttractor() {
 
       drawAxes();
 
-      for (let i = 0; i < state.particles.length; i++) {
-        drawTrail(state.particles[i], colors.trails[i % colors.trails.length]);
-      }
+      drawTrail(particle, colors.trail);
 
       animId = requestAnimationFrame(render);
     };

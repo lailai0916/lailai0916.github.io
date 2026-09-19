@@ -14,7 +14,6 @@
   --nn-neuron-gray-base: 0;
   --nn-neuron-gray-multiplier: 255;
 
-  /* Aligned with Lorenz Attractor's blue/orange trail palette. */
   --nn-connection-negative-rgb: 249, 115, 22;
   --nn-connection-positive-rgb: 29, 155, 240;
   --nn-connection-animation: color-mix(in srgb, var(--ifm-color-primary) 55%, transparent);
