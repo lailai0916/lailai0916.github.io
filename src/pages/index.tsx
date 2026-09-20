@@ -5,7 +5,14 @@ import Link from '@docusaurus/Link';
 import { translate } from '@docusaurus/Translate';
 import clsx from 'clsx';
 import { Icon } from '@iconify/react';
+import { getTimes } from 'suncalc';
 import { COMMUNITY_LIST } from '@site/src/data/community';
+import {
+  formatLocalTime,
+  getDateKey,
+  parseInstant,
+  SHANGHAI_TIME_ZONE,
+} from '@site/src/utils/dateTime';
 import Badge from '@lailai0916/ui/Badge';
 import Card from '@lailai0916/ui/Card';
 import SpringAvatar from './_components/SpringAvatar';
@@ -51,40 +58,66 @@ function useTypewriter(words: string[]) {
   return { text, currentWord };
 }
 
-// Pick a sun/moon glyph for Hangzhou's current hour, so the clock row quietly
-// tells you whether it's day or night where lailai is.
-function timeOfDayIcon(hour: number): string {
-  if (hour >= 5 && hour < 8) return 'lucide:sunrise';
-  if (hour >= 8 && hour < 18) return 'lucide:sun';
-  if (hour >= 18 && hour < 20) return 'lucide:sunset';
-  return 'lucide:moon';
-}
-
-// Resolve the clock on the client only; rendering `new Date()` during SSR
-// produces a build-time string that never matches the visitor's local time.
+// Resolve on the client so build-time clock values cannot cause a hydration mismatch.
 function useLocalTime() {
   const [state, setState] = useState({ time: '--:--', icon: 'lucide:clock' });
   useEffect(() => {
     let timer: ReturnType<typeof setTimeout>;
+    let solarDay: {
+      dateKey: string;
+      transitions: { time: number; icon: string }[];
+    };
 
     const update = () => {
-      const now = new Date();
-      const parts = new Intl.DateTimeFormat('en-GB', {
-        timeZone: 'Asia/Shanghai',
-        hour: '2-digit',
-        minute: '2-digit',
-        hourCycle: 'h23',
-      }).formatToParts(now);
-      const hour = parts.find((p) => p.type === 'hour')?.value ?? '00';
-      const minute = parts.find((p) => p.type === 'minute')?.value ?? '00';
-      setState({ time: `${hour}:${minute}`, icon: timeOfDayIcon(Number(hour)) });
+      clearTimeout(timer);
+      if (document.hidden) return;
 
-      const millisecondsUntilNextMinute = 60000 - (now.getTime() % 60000);
-      timer = setTimeout(update, millisecondsUntilNextMinute);
+      const now = new Date();
+      const timestamp = now.getTime();
+      const dateKey = getDateKey(now, SHANGHAI_TIME_ZONE);
+      if (solarDay?.dateKey !== dateKey) {
+        // Hangzhou noon anchors the calculation to the correct day, including before sunrise.
+        const { dawn, sunrise, sunset, dusk } = getTimes(
+          parseInstant(`${dateKey}T12:00:00+08:00`),
+          30.2741,
+          120.1551
+        );
+        solarDay = {
+          dateKey,
+          transitions: [
+            { time: dawn, icon: 'lucide:sunrise' },
+            { time: sunrise, icon: 'lucide:sun' },
+            { time: sunset, icon: 'lucide:sunset' },
+            { time: dusk, icon: 'lucide:moon' },
+          ].flatMap(({ time, icon }) => (time ? [{ time: time.getTime(), icon }] : [])),
+        };
+      }
+
+      let icon = 'lucide:moon';
+      let nextUpdate = timestamp + (60000 - (timestamp % 60000));
+      for (const transition of solarDay.transitions) {
+        if (transition.time > timestamp) {
+          nextUpdate = Math.min(nextUpdate, transition.time);
+          break;
+        }
+        icon = transition.icon;
+      }
+
+      const time = formatLocalTime(now, 'en-GB', SHANGHAI_TIME_ZONE);
+      setState((previous) =>
+        previous.time === time && previous.icon === icon ? previous : { time, icon }
+      );
+      timer = setTimeout(update, Math.max(1, nextUpdate - Date.now()));
     };
 
     update();
-    return () => clearTimeout(timer);
+    document.addEventListener('visibilitychange', update);
+    window.addEventListener('pageshow', update);
+    return () => {
+      clearTimeout(timer);
+      document.removeEventListener('visibilitychange', update);
+      window.removeEventListener('pageshow', update);
+    };
   }, []);
   return state;
 }

@@ -52,6 +52,7 @@
     "rehype-katex": "^7.0.1",
     "remark-math": "^6.0.0",
     "rough-notation": "^0.5.1",
+    "suncalc": "^2.0.2",
     "three": "^0.183.2"
   },
   "devDependencies": {
