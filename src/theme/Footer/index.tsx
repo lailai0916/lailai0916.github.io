@@ -61,6 +61,9 @@ const LICENSE_LABEL = translate({
 export default function Footer(): ReactNode {
   const { siteConfig } = useDocusaurusContext();
   const { footer } = useThemeConfig();
+  const titleAccentStart = siteConfig.title.lastIndexOf(' ') + 1;
+  const titleBase = siteConfig.title.slice(0, titleAccentStart);
+  const titleAccent = siteConfig.title.slice(titleAccentStart);
   const feeds = [
     {
       label: RSS_FEED_LABEL,
@@ -87,7 +90,10 @@ export default function Footer(): ReactNode {
       <div className={styles.inner}>
         <div className={styles.top}>
           <section className={styles.brand} aria-label={SITE_INFORMATION_LABEL}>
-            <h2 className={styles.title}>{siteConfig.title}</h2>
+            <h2 className={styles.title}>
+              {titleBase}
+              <span className={styles.titleAccent}>{titleAccent}</span>
+            </h2>
             <p className={styles.description}>{FOOTER_DESCRIPTION}</p>
             {footer.copyright && (
               <div className={styles.copyright}>

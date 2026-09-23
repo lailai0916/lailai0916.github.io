@@ -52,6 +52,10 @@
   line-height: 1.15;
 }
 
+.titleAccent {
+  color: var(--ifm-color-primary);
+}
+
 .description {
   max-width: 31rem;
   margin: 0;
