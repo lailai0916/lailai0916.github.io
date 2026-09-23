@@ -59,13 +59,30 @@
   margin: 1rem 0 0;
   padding: 0 0 0 1px;
   list-style: none;
-  background: linear-gradient(to right, var(--ifm-color-emphasis-200) 1px, transparent 1px);
 }
 
 .tocItem {
   position: relative;
   font-size: 0.875rem;
   line-height: 1.45;
+}
+
+.tocItem::before {
+  content: '';
+  position: absolute;
+  left: -1px;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: var(--ifm-color-emphasis-200);
+}
+
+.tocItem:first-child::before {
+  top: 0.4rem;
+}
+
+.tocItem:last-child::before {
+  bottom: 0.4rem;
 }
 
 .tocItemL2 {
