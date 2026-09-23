@@ -57,9 +57,9 @@
   overflow-y: auto;
   scrollbar-width: thin;
   margin: 1rem 0 0;
-  padding: 0;
+  padding: 0 0 0 1px;
   list-style: none;
-  border-left: 1px solid var(--ifm-color-emphasis-200);
+  background: linear-gradient(to right, var(--ifm-color-emphasis-200) 1px, transparent 1px);
 }
 
 .tocItem {
