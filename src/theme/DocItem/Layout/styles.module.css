@@ -29,3 +29,9 @@
 .docTopRow > :last-child {
   margin-left: auto;
 }
+
+@media (max-width: 996px) {
+  .docTocDesktop {
+    display: none;
+  }
+}

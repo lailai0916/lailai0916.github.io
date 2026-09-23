@@ -22,7 +22,7 @@
   top: calc(var(--ifm-navbar-height) + 32px);
 }
 
-.tocCard {
+.tocContent {
   display: flex;
   flex-direction: column;
   max-height: calc(100vh - var(--ifm-navbar-height) - 64px);
@@ -141,7 +141,7 @@
     top: calc(var(--ifm-navbar-height) + 16px);
   }
 
-  .tocCard {
+  .tocContent {
     max-height: calc(100vh - var(--ifm-navbar-height) - 32px);
   }
 }

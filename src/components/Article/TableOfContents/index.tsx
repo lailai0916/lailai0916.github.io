@@ -54,7 +54,13 @@ function ReadingProgress({ progress }: { progress: number }) {
   );
 }
 
-export default function TableOfContents({ toc }: { toc: readonly TOCItem[] }) {
+export default function TableOfContents({
+  toc,
+  withCard = true,
+}: {
+  toc: readonly TOCItem[];
+  withCard?: boolean;
+}) {
   const progress = useScrollProgress();
   const highlightConfig = useMemo<TOCHighlightConfig | undefined>(() => {
     if (!toc.length) return undefined;
@@ -69,31 +75,39 @@ export default function TableOfContents({ toc }: { toc: readonly TOCItem[] }) {
 
   useTOCHighlight(highlightConfig);
 
+  const content = (
+    <>
+      <div className={styles.tocHeader}>
+        <span className={styles.tocHeaderTitle}>{CONTENTS_LABEL}</span>
+        <span className={styles.tocHeaderPercent}>{Math.round(progress * 100)}%</span>
+      </div>
+      <ReadingProgress progress={progress} />
+      {toc.length > 0 && (
+        <ul className={styles.tocList}>
+          {toc.map((item) => {
+            const level = Math.min(Math.max(item.level, 2), 6);
+            return (
+              <li key={item.id} className={clsx(styles.tocItem, styles[`tocItemL${level}`])}>
+                <Link
+                  to={`#${encodeURIComponent(item.id)}`}
+                  className={styles.tocLink}
+                  dangerouslySetInnerHTML={{ __html: item.value }}
+                />
+              </li>
+            );
+          })}
+        </ul>
+      )}
+    </>
+  );
+
   return (
     <nav className={styles.tocContainer} aria-label={CONTENTS_LABEL}>
-      <Card className={styles.tocCard}>
-        <div className={styles.tocHeader}>
-          <span className={styles.tocHeaderTitle}>{CONTENTS_LABEL}</span>
-          <span className={styles.tocHeaderPercent}>{Math.round(progress * 100)}%</span>
-        </div>
-        <ReadingProgress progress={progress} />
-        {toc.length > 0 && (
-          <ul className={styles.tocList}>
-            {toc.map((item) => {
-              const level = Math.min(Math.max(item.level, 2), 6);
-              return (
-                <li key={item.id} className={clsx(styles.tocItem, styles[`tocItemL${level}`])}>
-                  <Link
-                    to={`#${item.id}`}
-                    className={styles.tocLink}
-                    dangerouslySetInnerHTML={{ __html: item.value }}
-                  />
-                </li>
-              );
-            })}
-          </ul>
-        )}
-      </Card>
+      {withCard ? (
+        <Card className={styles.tocContent}>{content}</Card>
+      ) : (
+        <div className={styles.tocContent}>{content}</div>
+      )}
     </nav>
   );
 }

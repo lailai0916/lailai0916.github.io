@@ -1,18 +1,18 @@
 import { type ReactNode } from 'react';
 import clsx from 'clsx';
-import { useWindowSize } from '@docusaurus/theme-common';
+import { useThemeConfig, useWindowSize } from '@docusaurus/theme-common';
 import { useDoc } from '@docusaurus/plugin-content-docs/client';
 import DocItemPaginator from '@theme/DocItem/Paginator';
 import DocVersionBanner from '@theme/DocVersionBanner';
 import DocVersionBadge from '@theme/DocVersionBadge';
 import DocItemFooter from '@theme/DocItem/Footer';
 import DocItemTOCMobile from '@theme/DocItem/TOC/Mobile';
-import DocItemTOCDesktop from '@theme/DocItem/TOC/Desktop';
 import DocItemContent from '@theme/DocItem/Content';
 import DocBreadcrumbs from '@theme/DocBreadcrumbs';
 import ContentVisibility from '@theme/ContentVisibility';
 import type { Props } from '@theme/DocItem/Layout';
 import Actions from '@site/src/components/Article/Actions';
+import TableOfContents from '@site/src/components/Article/TableOfContents';
 import styles from './styles.module.css';
 
 // Swizzled over the stock layout to share the blog's article chrome: the
@@ -21,13 +21,19 @@ import styles from './styles.module.css';
 // blog-style tags + "last updated" footer at the bottom.
 function useDocTOC() {
   const { frontMatter, toc } = useDoc();
+  const { tableOfContents } = useThemeConfig();
   const windowSize = useWindowSize();
   const hidden = frontMatter.hide_table_of_contents;
   const canRender = !hidden && toc.length > 0;
   const mobile = canRender ? <DocItemTOCMobile /> : undefined;
+  const minHeadingLevel = frontMatter.toc_min_heading_level ?? tableOfContents.minHeadingLevel;
+  const maxHeadingLevel = frontMatter.toc_max_heading_level ?? tableOfContents.maxHeadingLevel;
+  const desktopToc = toc.filter(
+    (item) => item.level >= minHeadingLevel && item.level <= maxHeadingLevel
+  );
   const desktop =
-    canRender && (windowSize === 'desktop' || windowSize === 'ssr') ? (
-      <DocItemTOCDesktop />
+    canRender && desktopToc.length > 0 && (windowSize === 'desktop' || windowSize === 'ssr') ? (
+      <TableOfContents toc={desktopToc} withCard={false} />
     ) : undefined;
   return { hidden, mobile, desktop };
 }
@@ -57,7 +63,9 @@ export default function DocItemLayout({ children }: Props): ReactNode {
           <DocItemPaginator />
         </div>
       </div>
-      {docTOC.desktop && <div className="col col--3">{docTOC.desktop}</div>}
+      {docTOC.desktop && (
+        <div className={clsx('col col--3', styles.docTocDesktop)}>{docTOC.desktop}</div>
+      )}
     </div>
   );
 }
