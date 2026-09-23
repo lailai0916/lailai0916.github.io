@@ -21,6 +21,7 @@ import {
   type ResourceItem,
 } from '@site/src/data/resources';
 import { translate } from '@docusaurus/Translate';
+import { getFaviconUrl } from '@site/src/utils/favicon';
 import styles from './styles.module.css';
 
 const TITLE = translate({
@@ -132,23 +133,13 @@ function SearchBar({
   );
 }
 
-// A malformed href would otherwise throw out of render and blank the whole page;
-// LinkCard falls back to its icon when there is no image.
-function faviconUrl(href: string): string | undefined {
-  try {
-    return `https://www.google.com/s2/favicons?sz=64&domain=${new URL(href).hostname}`;
-  } catch {
-    return undefined;
-  }
-}
-
 function ResourceCard({ resource }: { resource: ResourceItem }) {
   return (
     <LinkCard
       to={resource.href}
       title={resource.title}
       description={resource.description}
-      image={faviconUrl(resource.href)}
+      image={getFaviconUrl(resource.href)}
       fallbackIcon="lucide:globe"
     />
   );

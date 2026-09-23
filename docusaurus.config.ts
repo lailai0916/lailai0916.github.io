@@ -138,7 +138,7 @@ const config: Config = {
   themeConfig: {
     image: 'img/social-card.png',
     zoom: {
-      selector: '.markdown img, img[data-zoomable]',
+      selector: '.markdown img:not([data-link-icon]), img[data-zoomable]',
       background: {
         light: 'rgb(255, 255, 255)',
         dark: 'rgb(27, 27, 29)',
