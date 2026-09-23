@@ -236,6 +236,36 @@
   "data.changelog.security": {
     "message": "【安全】"
   },
+  "data.community.phone": {
+    "message": "电话"
+  },
+  "data.community.email": {
+    "message": "邮箱"
+  },
+  "data.community.x": {
+    "message": "X (Twitter)"
+  },
+  "data.community.telegram": {
+    "message": "Telegram"
+  },
+  "data.community.linkedin": {
+    "message": "领英"
+  },
+  "data.community.github": {
+    "message": "GitHub"
+  },
+  "data.community.qq": {
+    "message": "QQ"
+  },
+  "data.community.wechat": {
+    "message": "微信"
+  },
+  "data.community.bilibili": {
+    "message": "哔哩哔哩"
+  },
+  "data.community.luogu": {
+    "message": "洛谷"
+  },
   "data.devices.macbookPro": {
     "message": "16 英寸 / 银色 / 14 CPU / 30 GPU / 36GB / 1TB"
   },
@@ -1532,6 +1562,33 @@
   "components.desmos.frameTitle": {
     "message": "Desmos 图形计算器"
   },
+  "components.laikitProvider.quoteAttributionDash": {
+    "message": "—— "
+  },
+  "components.laikitProvider.githubError": {
+    "message": "加载 GitHub 数据失败"
+  },
+  "components.laikitProvider.githubNoDescription": {
+    "message": "暂无描述"
+  },
+  "components.laikitProvider.githubStars": {
+    "message": "Star 数"
+  },
+  "components.laikitProvider.githubForks": {
+    "message": "Fork 数"
+  },
+  "components.laikitProvider.githubLicense": {
+    "message": "许可证"
+  },
+  "components.laikitProvider.githubLanguage": {
+    "message": "主要语言"
+  },
+  "components.laikitProvider.other": {
+    "message": "其他"
+  },
+  "components.markdown.aboutGreeting": {
+    "message": "Hello, I'm lailai"
+  },
   "components.problem.collapse": {
     "message": "收起"
   },
@@ -1685,48 +1742,6 @@
   "pages.insights.audience.title": {
     "message": "访客分析"
   },
-  "pages.privacy.title": {
-    "message": "隐私政策"
-  },
-  "pages.privacy.description": {
-    "message": "lailai's Home 如何处理您的信息"
-  },
-  "pages.privacy.modification": {
-    "message": "隐私<b>政策</b>"
-  },
-  "pages.privacy.lastUpdated": {
-    "message": "最后更新"
-  },
-  "pages.privacy.summary.account.title": {
-    "message": "无需账户"
-  },
-  "pages.privacy.summary.account.description": {
-    "message": "无需注册或登录即可浏览本站。"
-  },
-  "pages.privacy.summary.advertising.title": {
-    "message": "不做定向广告"
-  },
-  "pages.privacy.summary.advertising.description": {
-    "message": "本站不会出售数据，也不会用它建立广告画像。"
-  },
-  "pages.privacy.summary.control.title": {
-    "message": "浏览器控制"
-  },
-  "pages.privacy.summary.control.description": {
-    "message": "您可以随时清除偏好设置或屏蔽可选请求。"
-  },
-  "pages.privacy.summary.title": {
-    "message": "隐私概览"
-  },
-  "pages.privacy.contact.label": {
-    "message": "隐私相关联系"
-  },
-  "pages.privacy.contact.subject": {
-    "message": "隐私请求 — lailai's Home"
-  },
-  "pages.privacy.contact.template": {
-    "message": "请求类型：\n相关页面或服务：\n具体说明："
-  },
   "pages.resources.title": {
     "message": "资源"
   },
@@ -1862,6 +1877,48 @@
   "pages.settings.loading": {
     "message": "正在加载设置…"
   },
+  "pages.privacy.title": {
+    "message": "隐私政策"
+  },
+  "pages.privacy.description": {
+    "message": "lailai's Home 如何处理您的信息"
+  },
+  "pages.privacy.modification": {
+    "message": "隐私<b>政策</b>"
+  },
+  "pages.privacy.lastUpdated": {
+    "message": "最后更新"
+  },
+  "pages.privacy.summary.account.title": {
+    "message": "无需账户"
+  },
+  "pages.privacy.summary.account.description": {
+    "message": "无需注册或登录即可浏览本站。"
+  },
+  "pages.privacy.summary.advertising.title": {
+    "message": "不做定向广告"
+  },
+  "pages.privacy.summary.advertising.description": {
+    "message": "本站不会出售数据，也不会用它建立广告画像。"
+  },
+  "pages.privacy.summary.control.title": {
+    "message": "浏览器控制"
+  },
+  "pages.privacy.summary.control.description": {
+    "message": "您可以随时清除偏好设置或屏蔽可选请求。"
+  },
+  "pages.privacy.summary.title": {
+    "message": "隐私概览"
+  },
+  "pages.privacy.contact.label": {
+    "message": "隐私相关联系"
+  },
+  "pages.privacy.contact.subject": {
+    "message": "隐私请求 — lailai's Home"
+  },
+  "pages.privacy.contact.template": {
+    "message": "请求类型：\n相关页面或服务：\n具体说明："
+  },
   "pages.travel.title": {
     "message": "旅行"
   },
@@ -1949,32 +2006,14 @@
   "components.tableOfContents.progress": {
     "message": "阅读进度：{percent}%"
   },
-  "components.article.viewCount": {
-    "message": "{viewCount} 浏览"
-  },
   "components.playground.fourierTransform.reset": {
     "message": "重置"
   },
   "components.playground.fourierTransform.clear": {
     "message": "清空"
   },
-  "components.playground.gameOfLife.play": {
-    "message": "播放"
-  },
-  "components.playground.gameOfLife.pause": {
-    "message": "暂停"
-  },
-  "components.playground.gameOfLife.step": {
-    "message": "单步"
-  },
-  "components.playground.gameOfLife.random": {
-    "message": "随机"
-  },
-  "components.playground.gameOfLife.clear": {
-    "message": "清空"
-  },
-  "components.playground.lorenz.reset": {
-    "message": "重置"
+  "components.article.viewCount": {
+    "message": "{viewCount} 浏览"
   },
   "components.playground.neuralNetwork.clear": {
     "message": "清除"
@@ -1985,26 +2024,8 @@
   "components.playground.neuralNetwork.preprocess": {
     "message": "预处理"
   },
-  "components.playground.nim.yourTurn": {
-    "message": "你的回合"
-  },
-  "components.playground.nim.aiThinking": {
-    "message": "AI 思考中……"
-  },
-  "components.playground.nim.youWin": {
-    "message": "你赢了！"
-  },
-  "components.playground.nim.aiWins": {
-    "message": "AI 赢了"
-  },
-  "components.playground.nim.random": {
-    "message": "随机"
-  },
-  "components.playground.nim.tip": {
-    "message": "提示"
-  },
-  "components.markdown.aboutGreeting": {
-    "message": "Hello, I'm lailai"
+  "components.playground.lorenz.reset": {
+    "message": "重置"
   },
   "pages.moments.title": {
     "message": "动态"
@@ -2143,6 +2164,9 @@
   },
   "pages.overview.metric.moments": {
     "message": "动态"
+  },
+  "pages.home.avatar.ariaLabel": {
+    "message": "拖动 lailai 的头像，松手回弹；或按回车键弹跳"
   },
   "blog.post.empty": {
     "message": "暂无文章"
@@ -2359,6 +2383,12 @@
   "pages.travel.map.location": {
     "message": "lailai · 中国杭州"
   },
+  "pages.travel.map.showOriginal": {
+    "message": "切换为原版地图"
+  },
+  "pages.travel.map.showDots": {
+    "message": "切换为点阵地图"
+  },
   "pages.travel.map.reset": {
     "message": "重置视角"
   },
@@ -2564,13 +2594,13 @@
     "message": "(在新标签页中打开)",
     "description": "The ARIA label for the external link icon"
   },
-  "theme.NavBar.navAriaLabel": {
-    "message": "主导航",
-    "description": "The ARIA label for the main navigation"
-  },
   "theme.navbar.mobileLanguageDropdown.label": {
     "message": "选择语言",
     "description": "The label for the mobile language switcher dropdown"
+  },
+  "theme.NavBar.navAriaLabel": {
+    "message": "主导航",
+    "description": "The ARIA label for the main navigation"
   },
   "theme.NotFound.p2": {
     "message": "请联系原始链接来源网站的所有者，并告知他们链接已损坏。",
@@ -2624,6 +2654,14 @@
     "message": "文档侧边栏",
     "description": "The ARIA label for the sidebar navigation"
   },
+  "theme.navbar.mobileDropdown.collapseButton.expandAriaLabel": {
+    "message": "展开下拉菜单",
+    "description": "The ARIA label of the button to expand the mobile dropdown navbar item"
+  },
+  "theme.navbar.mobileDropdown.collapseButton.collapseAriaLabel": {
+    "message": "折叠下拉菜单",
+    "description": "The ARIA label of the button to collapse the mobile dropdown navbar item"
+  },
   "theme.docs.sidebar.closeSidebarButtonAriaLabel": {
     "message": "关闭导航栏",
     "description": "The ARIA label for close button of mobile sidebar"
@@ -2635,14 +2673,6 @@
   "theme.docs.sidebar.toggleSidebarButtonAriaLabel": {
     "message": "切换导航栏",
     "description": "The ARIA label for hamburger menu button of mobile navigation"
-  },
-  "theme.navbar.mobileDropdown.collapseButton.expandAriaLabel": {
-    "message": "展开下拉菜单",
-    "description": "The ARIA label of the button to expand the mobile dropdown navbar item"
-  },
-  "theme.navbar.mobileDropdown.collapseButton.collapseAriaLabel": {
-    "message": "折叠下拉菜单",
-    "description": "The ARIA label of the button to collapse the mobile dropdown navbar item"
   },
   "theme.docs.sidebar.expandButtonTitle": {
     "message": "展开侧边栏",
@@ -2950,68 +2980,5 @@
   "theme.tags.tagsPageTitle": {
     "message": "标签",
     "description": "The title of the tag list page"
-  },
-  "pages.home.avatar.ariaLabel": {
-    "message": "拖动 lailai 的头像，松手回弹；或按回车键弹跳"
-  },
-  "pages.travel.map.showOriginal": {
-    "message": "切换为原版地图"
-  },
-  "pages.travel.map.showDots": {
-    "message": "切换为点阵地图"
-  },
-  "components.laikitProvider.quoteAttributionDash": {
-    "message": "—— "
-  },
-  "components.laikitProvider.githubError": {
-    "message": "加载 GitHub 数据失败"
-  },
-  "components.laikitProvider.githubNoDescription": {
-    "message": "暂无描述"
-  },
-  "components.laikitProvider.githubStars": {
-    "message": "Star 数"
-  },
-  "components.laikitProvider.githubForks": {
-    "message": "Fork 数"
-  },
-  "components.laikitProvider.githubLicense": {
-    "message": "许可证"
-  },
-  "components.laikitProvider.githubLanguage": {
-    "message": "主要语言"
-  },
-  "components.laikitProvider.other": {
-    "message": "其他"
-  },
-  "data.community.phone": {
-    "message": "电话"
-  },
-  "data.community.email": {
-    "message": "邮箱"
-  },
-  "data.community.x": {
-    "message": "X (Twitter)"
-  },
-  "data.community.telegram": {
-    "message": "Telegram"
-  },
-  "data.community.linkedin": {
-    "message": "领英"
-  },
-  "data.community.github": {
-    "message": "GitHub"
-  },
-  "data.community.qq": {
-    "message": "QQ"
-  },
-  "data.community.wechat": {
-    "message": "微信"
-  },
-  "data.community.bilibili": {
-    "message": "哔哩哔哩"
-  },
-  "data.community.luogu": {
-    "message": "洛谷"
   }
 }
