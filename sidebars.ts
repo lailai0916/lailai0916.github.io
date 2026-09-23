@@ -767,8 +767,8 @@ const sidebars: SidebarsConfig = {
       },
       items: [
         'project/guides/text',
-        'project/guides/code',
         'project/guides/design',
+        'project/guides/code',
         'project/guides/markdown',
         'project/guides/latex',
         'project/guides/mermaid',
