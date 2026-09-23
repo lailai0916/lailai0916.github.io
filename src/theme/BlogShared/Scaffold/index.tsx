@@ -171,19 +171,18 @@ export default function BlogScaffold({ title, description, children, toc }: Prop
   const isPostPage = toc !== undefined;
   return (
     <Layout title={title} description={description}>
-      <div className={styles.container}>
-        <main className={styles.main}>{children}</main>
+      <div className={clsx(styles.container, !isPostPage && styles.withExtras)}>
         <aside className={styles.sidebar}>
           <ProfileCard />
-          {isPostPage ? (
-            <TableOfContents toc={toc} />
-          ) : (
-            <>
-              <CalendarCard />
-              <TagsCard />
-            </>
-          )}
+          {toc && toc.length > 0 && <TableOfContents toc={toc} />}
         </aside>
+        <main className={styles.main}>{children}</main>
+        {!isPostPage && (
+          <aside className={styles.extras}>
+            <CalendarCard />
+            <TagsCard />
+          </aside>
+        )}
       </div>
     </Layout>
   );
