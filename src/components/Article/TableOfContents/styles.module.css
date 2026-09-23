@@ -108,7 +108,7 @@
 .tocLink {
   display: block;
   padding: 0.3rem 0;
-  color: var(--ifm-color-emphasis-700);
+  color: var(--ifm-toc-link-color);
   text-decoration: none !important;
   transition: color 160ms ease;
 }
