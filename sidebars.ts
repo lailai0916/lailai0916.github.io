@@ -737,6 +737,15 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: 'category',
+      label: 'Desmos',
+      link: {
+        type: 'generated-index',
+        description: '本章展示使用 Desmos 图形计算器创作的各种项目。',
+      },
+      items: ['project/desmos/iclock', 'project/desmos/calculator', 'project/desmos/geometry'],
+    },
+    {
+      type: 'category',
       label: 'laikit UI',
       link: { type: 'doc', id: 'project/ui/index' },
       items: [
@@ -748,15 +757,6 @@ const sidebars: SidebarsConfig = {
         'project/ui/theming',
         'project/ui/integration',
       ],
-    },
-    {
-      type: 'category',
-      label: 'Desmos',
-      link: {
-        type: 'generated-index',
-        description: '本章展示使用 Desmos 图形计算器创作的各种项目。',
-      },
-      items: ['project/desmos/iclock', 'project/desmos/calculator', 'project/desmos/geometry'],
     },
     {
       type: 'category',
