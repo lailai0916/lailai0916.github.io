@@ -1206,6 +1206,17 @@ const RESOURCE_CATALOG = {
       message: 'Catalog of free browser games',
     }),
   },
+  poki: {
+    title: translate({
+      id: 'data.resources.site.poki.title',
+      message: 'Poki',
+    }),
+    href: 'https://poki.com',
+    description: translate({
+      id: 'data.resources.site.poki.description',
+      message: 'Free online games playable instantly in your browser',
+    }),
+  },
   freeFocusGames: {
     title: translate({
       id: 'data.resources.site.freeFocusGames.title',
@@ -1864,6 +1875,7 @@ export const RESOURCE_LIST: ResourceCategoryItem[] = [
     icon: 'lucide:gamepad-2',
     resources: resources(
       'crazygames',
+      'poki',
       'freeFocusGames',
       'ioGames',
       'nealFun',

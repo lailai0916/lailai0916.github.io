@@ -911,6 +911,12 @@
   "data.resources.site.crazygames.description": {
     "message": "免费网页游戏聚合平台"
   },
+  "data.resources.site.poki.title": {
+    "message": "Poki"
+  },
+  "data.resources.site.poki.description": {
+    "message": "无需下载即可游玩的免费网页游戏"
+  },
   "data.resources.site.freeFocusGames.title": {
     "message": "FreeFocusGames"
   },
