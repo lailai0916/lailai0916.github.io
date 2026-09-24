@@ -284,6 +284,105 @@
   "data.devices.airpodsMax": {
     "message": "USB-C / 午夜色 / H1"
   },
+  "data.friends.sintle.title": {
+    "message": "Sintle"
+  },
+  "data.friends.sintle.description": {
+    "message": "Code, Learn, Share"
+  },
+  "data.friends.yunLuo.title": {
+    "message": "YunLuo"
+  },
+  "data.friends.yunLuo.description": {
+    "message": "这是个人"
+  },
+  "data.friends.mirekintoc.title": {
+    "message": "Mirekintoc"
+  },
+  "data.friends.mirekintoc.description": {
+    "message": "Zate feíam sucur ilém"
+  },
+  "data.friends.akorz.title": {
+    "message": "AKorz"
+  },
+  "data.friends.akorz.description": {
+    "message": "直面原罪，救赎自我"
+  },
+  "data.friends.cefqwq.title": {
+    "message": "CEFqwq"
+  },
+  "data.friends.cefqwq.description": {
+    "message": "代词使用她"
+  },
+  "data.friends.ladex.title": {
+    "message": "LaDeX"
+  },
+  "data.friends.ladex.description": {
+    "message": "Ciallo～(∠・ω< )⌒★"
+  },
+  "data.friends.dreamMaker.title": {
+    "message": "Dream__maker"
+  },
+  "data.friends.dreamMaker.description": {
+    "message": "一息尚存，方能涅槃而生"
+  },
+  "data.friends.jasonshan10.title": {
+    "message": "Jasonshan10"
+  },
+  "data.friends.sjz2010.title": {
+    "message": "SJZ2010"
+  },
+  "data.friends.sjz2010.description": {
+    "message": "初心不改，求索依然。"
+  },
+  "data.friends.castamere.title": {
+    "message": "Castamere"
+  },
+  "data.friends.castamere.description": {
+    "message": "代码美学"
+  },
+  "data.friends.cszj.title": {
+    "message": "吕舒君的博客"
+  },
+  "data.friends.cszj.description": {
+    "message": "分享计算机学习过程中的相关知识、干活，不定期更新，欢迎常来看看哦！"
+  },
+  "data.friends.kuizuo.title": {
+    "message": "愧怍"
+  },
+  "data.friends.kuizuo.description": {
+    "message": "道阻且长，行则将至"
+  },
+  "data.friends.skywt.title": {
+    "message": "SkyWT"
+  },
+  "data.friends.skywt.description": {
+    "message": "Passionate software designer & engineer."
+  },
+  "data.friends.baoshuo.title": {
+    "message": "宝硕"
+  },
+  "data.friends.baoshuo.description": {
+    "message": "即使是沉重的过去，也要接受它再继续向前迈进。"
+  },
+  "data.friends.cyanHaze.title": {
+    "message": "CyanHaze's Homepage"
+  },
+  "data.friends.cyanHaze.description": {
+    "message": "Undergraduate @ ZJU"
+  },
+  "data.friends.studyingFather.title": {
+    "message": "Studying Father's blog"
+  },
+  "data.friends.studyingFather.description": {
+    "message": "Focus on interest!"
+  },
+  "data.friends.federico2903.title": {
+    "message": "Federico2903"
+  },
+  "data.friends.federico2903.description": {
+    "message": "Pisa tino, magi gali humo lonrodop."
+  },
   "data.moments.blogPublished": {
     "message": "发布了新文章 <a href=\"{permalink}\">{title}</a>"
   },
@@ -1748,6 +1847,48 @@
   "pages.insights.audience.title": {
     "message": "访客分析"
   },
+  "pages.privacy.title": {
+    "message": "隐私政策"
+  },
+  "pages.privacy.description": {
+    "message": "lailai's Home 如何处理您的信息"
+  },
+  "pages.privacy.modification": {
+    "message": "隐私<b>政策</b>"
+  },
+  "pages.privacy.lastUpdated": {
+    "message": "最后更新"
+  },
+  "pages.privacy.summary.account.title": {
+    "message": "无需账户"
+  },
+  "pages.privacy.summary.account.description": {
+    "message": "无需注册或登录即可浏览本站。"
+  },
+  "pages.privacy.summary.advertising.title": {
+    "message": "不做定向广告"
+  },
+  "pages.privacy.summary.advertising.description": {
+    "message": "本站不会出售数据，也不会用它建立广告画像。"
+  },
+  "pages.privacy.summary.control.title": {
+    "message": "浏览器控制"
+  },
+  "pages.privacy.summary.control.description": {
+    "message": "您可以随时清除偏好设置或屏蔽可选请求。"
+  },
+  "pages.privacy.summary.title": {
+    "message": "隐私概览"
+  },
+  "pages.privacy.contact.label": {
+    "message": "隐私相关联系"
+  },
+  "pages.privacy.contact.subject": {
+    "message": "隐私请求 — lailai's Home"
+  },
+  "pages.privacy.contact.template": {
+    "message": "请求类型：\n相关页面或服务：\n具体说明："
+  },
   "pages.resources.title": {
     "message": "资源"
   },
@@ -1883,48 +2024,6 @@
   "pages.settings.loading": {
     "message": "正在加载设置…"
   },
-  "pages.privacy.title": {
-    "message": "隐私政策"
-  },
-  "pages.privacy.description": {
-    "message": "lailai's Home 如何处理您的信息"
-  },
-  "pages.privacy.modification": {
-    "message": "隐私<b>政策</b>"
-  },
-  "pages.privacy.lastUpdated": {
-    "message": "最后更新"
-  },
-  "pages.privacy.summary.account.title": {
-    "message": "无需账户"
-  },
-  "pages.privacy.summary.account.description": {
-    "message": "无需注册或登录即可浏览本站。"
-  },
-  "pages.privacy.summary.advertising.title": {
-    "message": "不做定向广告"
-  },
-  "pages.privacy.summary.advertising.description": {
-    "message": "本站不会出售数据，也不会用它建立广告画像。"
-  },
-  "pages.privacy.summary.control.title": {
-    "message": "浏览器控制"
-  },
-  "pages.privacy.summary.control.description": {
-    "message": "您可以随时清除偏好设置或屏蔽可选请求。"
-  },
-  "pages.privacy.summary.title": {
-    "message": "隐私概览"
-  },
-  "pages.privacy.contact.label": {
-    "message": "隐私相关联系"
-  },
-  "pages.privacy.contact.subject": {
-    "message": "隐私请求 — lailai's Home"
-  },
-  "pages.privacy.contact.template": {
-    "message": "请求类型：\n相关页面或服务：\n具体说明："
-  },
   "pages.travel.title": {
     "message": "旅行"
   },
@@ -1948,6 +2047,14 @@
   },
   "blog.pages.tags.tagSelect": {
     "message": "标签"
+  },
+  "theme.docs.breadcrumbs.navAriaLabel": {
+    "message": "页面路径",
+    "description": "The ARIA label for the breadcrumbs"
+  },
+  "theme.docs.breadcrumbs.home": {
+    "message": "主页面",
+    "description": "The ARIA label for the home page in the breadcrumbs"
   },
   "theme.docs.paginator.previous": {
     "message": "上一页",
@@ -2012,14 +2119,17 @@
   "components.tableOfContents.progress": {
     "message": "阅读进度：{percent}%"
   },
+  "components.article.viewCount": {
+    "message": "{viewCount} 浏览"
+  },
   "components.playground.fourierTransform.reset": {
     "message": "重置"
   },
   "components.playground.fourierTransform.clear": {
     "message": "清空"
   },
-  "components.article.viewCount": {
-    "message": "{viewCount} 浏览"
+  "components.playground.lorenz.reset": {
+    "message": "重置"
   },
   "components.playground.neuralNetwork.clear": {
     "message": "清除"
@@ -2030,8 +2140,8 @@
   "components.playground.neuralNetwork.preprocess": {
     "message": "预处理"
   },
-  "components.playground.lorenz.reset": {
-    "message": "重置"
+  "pages.home.avatar.ariaLabel": {
+    "message": "拖动 lailai 的头像，松手回弹；或按回车键弹跳"
   },
   "pages.moments.title": {
     "message": "动态"
@@ -2170,9 +2280,6 @@
   },
   "pages.overview.metric.moments": {
     "message": "动态"
-  },
-  "pages.home.avatar.ariaLabel": {
-    "message": "拖动 lailai 的头像，松手回弹；或按回车键弹跳"
   },
   "blog.post.empty": {
     "message": "暂无文章"
@@ -2497,10 +2604,6 @@
     "message": "切换浅色/暗黑模式（当前为{mode}）",
     "description": "The ARIA label for the color mode toggle"
   },
-  "theme.docs.breadcrumbs.navAriaLabel": {
-    "message": "页面路径",
-    "description": "The ARIA label for the breadcrumbs"
-  },
   "theme.docs.tagDocListPageTitle.nDocsTagged": {
     "message": "{count} 篇文档带有标签",
     "description": "Pluralized label for \"{count} docs tagged\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
@@ -2556,10 +2659,6 @@
     "message": "标签：",
     "description": "The label alongside a tag list"
   },
-  "theme.AnnouncementBar.closeButtonAriaLabel": {
-    "message": "关闭",
-    "description": "The ARIA label for close button of announcement bar"
-  },
   "theme.admonition.caution": {
     "message": "警告",
     "description": "The default label used for the Caution admonition (:::caution)"
@@ -2584,6 +2683,10 @@
     "message": "注意",
     "description": "The default label used for the Warning admonition (:::warning)"
   },
+  "theme.AnnouncementBar.closeButtonAriaLabel": {
+    "message": "关闭",
+    "description": "The ARIA label for close button of announcement bar"
+  },
   "theme.blog.sidebar.navAriaLabel": {
     "message": "最近文章导航",
     "description": "The ARIA label for recent posts in the blog sidebar"
@@ -2600,13 +2703,13 @@
     "message": "(在新标签页中打开)",
     "description": "The ARIA label for the external link icon"
   },
-  "theme.navbar.mobileLanguageDropdown.label": {
-    "message": "选择语言",
-    "description": "The label for the mobile language switcher dropdown"
-  },
   "theme.NavBar.navAriaLabel": {
     "message": "主导航",
     "description": "The ARIA label for the main navigation"
+  },
+  "theme.navbar.mobileLanguageDropdown.label": {
+    "message": "选择语言",
+    "description": "The label for the mobile language switcher dropdown"
   },
   "theme.NotFound.p2": {
     "message": "请联系原始链接来源网站的所有者，并告知他们链接已损坏。",
@@ -2644,10 +2747,6 @@
     "message": "切换自动换行",
     "description": "The title attribute for toggle word wrapping button of code block lines"
   },
-  "theme.docs.breadcrumbs.home": {
-    "message": "主页面",
-    "description": "The ARIA label for the home page in the breadcrumbs"
-  },
   "theme.docs.sidebar.collapseButtonTitle": {
     "message": "收起侧边栏",
     "description": "The title attribute for collapse button of doc sidebar"
@@ -2660,6 +2759,18 @@
     "message": "文档侧边栏",
     "description": "The ARIA label for the sidebar navigation"
   },
+  "theme.docs.sidebar.closeSidebarButtonAriaLabel": {
+    "message": "关闭导航栏",
+    "description": "The ARIA label for close button of mobile sidebar"
+  },
+  "theme.docs.sidebar.toggleSidebarButtonAriaLabel": {
+    "message": "切换导航栏",
+    "description": "The ARIA label for hamburger menu button of mobile navigation"
+  },
+  "theme.navbar.mobileSidebarSecondaryMenu.backButtonLabel": {
+    "message": "← 回到主菜单",
+    "description": "The label of the back button to return to main menu, inside the mobile navbar sidebar secondary menu (notably used to display the docs sidebar)"
+  },
   "theme.navbar.mobileDropdown.collapseButton.expandAriaLabel": {
     "message": "展开下拉菜单",
     "description": "The ARIA label of the button to expand the mobile dropdown navbar item"
@@ -2667,18 +2778,6 @@
   "theme.navbar.mobileDropdown.collapseButton.collapseAriaLabel": {
     "message": "折叠下拉菜单",
     "description": "The ARIA label of the button to collapse the mobile dropdown navbar item"
-  },
-  "theme.docs.sidebar.closeSidebarButtonAriaLabel": {
-    "message": "关闭导航栏",
-    "description": "The ARIA label for close button of mobile sidebar"
-  },
-  "theme.navbar.mobileSidebarSecondaryMenu.backButtonLabel": {
-    "message": "← 回到主菜单",
-    "description": "The label of the back button to return to main menu, inside the mobile navbar sidebar secondary menu (notably used to display the docs sidebar)"
-  },
-  "theme.docs.sidebar.toggleSidebarButtonAriaLabel": {
-    "message": "切换导航栏",
-    "description": "The ARIA label for hamburger menu button of mobile navigation"
   },
   "theme.docs.sidebar.expandButtonTitle": {
     "message": "展开侧边栏",
