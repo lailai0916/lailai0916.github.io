@@ -26,7 +26,7 @@
 
 .top {
   display: grid;
-  grid-template-columns: minmax(16rem, 0.9fr) minmax(32rem, 1.6fr);
+  grid-template-columns: minmax(16rem, 1fr) minmax(32rem, 2fr);
   gap: clamp(2rem, 5vw, 3rem);
   align-items: stretch;
 }
