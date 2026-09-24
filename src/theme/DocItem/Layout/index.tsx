@@ -6,13 +6,13 @@ import DocItemPaginator from '@theme/DocItem/Paginator';
 import DocVersionBanner from '@theme/DocVersionBanner';
 import DocVersionBadge from '@theme/DocVersionBadge';
 import DocItemFooter from '@theme/DocItem/Footer';
-import DocItemTOCMobile from '@theme/DocItem/TOC/Mobile';
 import DocItemContent from '@theme/DocItem/Content';
-import DocBreadcrumbs from '@theme/DocBreadcrumbs';
 import ContentVisibility from '@theme/ContentVisibility';
 import type { Props } from '@theme/DocItem/Layout';
 import Actions from '@site/src/components/Article/Actions';
 import TableOfContents from '@site/src/components/Article/TableOfContents';
+import DocTopRow from '@site/src/theme/DocShared';
+import sharedStyles from '@site/src/theme/DocShared/styles.module.css';
 import styles from './styles.module.css';
 
 // Swizzled over the stock layout to share the blog's article chrome: the
@@ -24,16 +24,21 @@ function useDocTOC() {
   const { tableOfContents } = useThemeConfig();
   const windowSize = useWindowSize();
   const hidden = frontMatter.hide_table_of_contents;
-  const canRender = !hidden && toc.length > 0;
-  const mobile = canRender ? <DocItemTOCMobile /> : undefined;
   const minHeadingLevel = frontMatter.toc_min_heading_level ?? tableOfContents.minHeadingLevel;
   const maxHeadingLevel = frontMatter.toc_max_heading_level ?? tableOfContents.maxHeadingLevel;
-  const desktopToc = toc.filter(
+  const filteredToc = toc.filter(
     (item) => item.level >= minHeadingLevel && item.level <= maxHeadingLevel
   );
+  const canRender = !hidden && filteredToc.length > 0;
+  const mobile =
+    canRender && (windowSize === 'mobile' || windowSize === 'ssr') ? (
+      <div className={styles.docTocMobile}>
+        <TableOfContents toc={filteredToc} withCard={false} collapsible />
+      </div>
+    ) : undefined;
   const desktop =
-    canRender && desktopToc.length > 0 && (windowSize === 'desktop' || windowSize === 'ssr') ? (
-      <TableOfContents toc={desktopToc} withCard={false} />
+    canRender && (windowSize === 'desktop' || windowSize === 'ssr') ? (
+      <TableOfContents toc={filteredToc} withCard={false} />
     ) : undefined;
   return { hidden, mobile, desktop };
 }
@@ -43,18 +48,17 @@ export default function DocItemLayout({ children }: Props): ReactNode {
   const { metadata } = useDoc();
   return (
     <div className="row">
-      <div className={clsx('col', !docTOC.hidden && styles.docItemCol)}>
+      <div className={clsx('col', !docTOC.hidden && sharedStyles.docColumn)}>
         <ContentVisibility metadata={metadata} />
         <DocVersionBanner />
         <div className={styles.docItemContainer}>
           <article>
-            <div className={styles.docTopRow}>
-              <DocBreadcrumbs />
+            <DocTopRow>
               <Actions
                 source={metadata.source}
                 editUrl={typeof metadata.editUrl === 'string' ? metadata.editUrl : undefined}
               />
-            </div>
+            </DocTopRow>
             <DocVersionBadge />
             {docTOC.mobile}
             <DocItemContent>{children}</DocItemContent>

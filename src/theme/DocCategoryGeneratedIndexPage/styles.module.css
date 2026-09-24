@@ -1,0 +1,5 @@
+/* Duplicated from .markdown h1 */
+.title {
+  --ifm-h1-font-size: 3rem;
+  margin-bottom: calc(1.25 * var(--ifm-leading));
+}

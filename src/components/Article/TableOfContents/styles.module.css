@@ -22,6 +22,61 @@
   top: calc(var(--ifm-navbar-height) + 32px);
 }
 
+.tocContainerCollapsible {
+  position: static;
+  margin: 1rem 0;
+}
+
+.tocDisclosure {
+  border-block: 1px solid var(--ifm-color-emphasis-200);
+}
+
+.tocDisclosureSummary {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 0;
+  cursor: pointer;
+  list-style: none;
+}
+
+.tocDisclosureSummary::-webkit-details-marker {
+  display: none;
+}
+
+.tocDisclosureSummary:focus-visible {
+  outline: 2px solid var(--ifm-color-primary);
+  outline-offset: 2px;
+}
+
+.tocDisclosureSummary .tocHeaderPercent {
+  margin-left: auto;
+}
+
+.tocDisclosureChevron {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+  width: 1rem;
+  height: 1rem;
+  color: var(--ifm-color-emphasis-700);
+  transition: transform 160ms ease;
+}
+
+.tocDisclosure[open] .tocDisclosureChevron {
+  transform: rotate(180deg);
+}
+
+.tocContent.tocDisclosureContent {
+  max-height: min(50vh, 28rem);
+  padding-bottom: 0.75rem;
+}
+
+.tocDisclosureContent .tocList {
+  margin-top: 0.75rem;
+}
+
 .tocContent {
   display: flex;
   flex-direction: column;
@@ -143,5 +198,11 @@
 
   .tocContent {
     max-height: calc(100vh - var(--ifm-navbar-height) - 32px);
+  }
+}
+
+@media print {
+  .tocContainerCollapsible {
+    display: none;
   }
 }

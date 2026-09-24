@@ -240,7 +240,7 @@ const config: Config = {
           ],
         },
       ],
-      copyright: `© 2021–${new Date().getFullYear()} lailai.<br />Built with&nbsp;<a href="https://docusaurus.io/" target="_blank">Docusaurus</a>.`,
+      copyright: `Copyright © 2021 – ${new Date().getFullYear()} lailai. Built with&nbsp;<a href="https://docusaurus.io/" target="_blank">Docusaurus</a>.`,
     },
     prism: {
       theme: prismThemes.vsLight,

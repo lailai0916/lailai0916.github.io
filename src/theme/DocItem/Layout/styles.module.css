@@ -6,32 +6,19 @@
 }
 
 @media (min-width: 997px) {
-  .docItemCol {
-    max-width: 75% !important;
+  .docTocMobile {
+    display: none;
   }
-}
-
-/* Breadcrumbs on the left, the article actions pinned to the right. The
-   breadcrumb's own bottom margin is moved onto the row so both sides stay
-   vertically centered (and the spacing survives when breadcrumbs are absent). */
-.docTopRow {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 0.5rem 1rem;
-  margin-bottom: 0.8rem;
-}
-
-.docTopRow :global(.theme-doc-breadcrumbs) {
-  margin-bottom: 0;
-}
-
-.docTopRow > :last-child {
-  margin-left: auto;
 }
 
 @media (max-width: 996px) {
   .docTocDesktop {
+    display: none;
+  }
+}
+
+@media print {
+  .docTocMobile {
     display: none;
   }
 }

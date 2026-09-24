@@ -28,7 +28,7 @@
   display: grid;
   grid-template-columns: minmax(16rem, 0.9fr) minmax(32rem, 1.6fr);
   gap: clamp(2rem, 5vw, 3rem);
-  align-items: start;
+  align-items: stretch;
 }
 
 @media (max-width: 996px) {
@@ -40,6 +40,7 @@
 
 .brand {
   display: grid;
+  grid-template-rows: auto auto 1fr;
   gap: 0.625rem;
   min-width: 0;
 }
@@ -66,7 +67,7 @@
 }
 
 .copyright {
-  margin-top: 0;
+  margin-right: auto;
   color: var(--footer-text-muted);
   font-size: 0.875rem;
   line-height: 1.6;
@@ -198,7 +199,7 @@
 }
 
 .feeds {
-  margin-right: auto;
+  align-self: end;
   color: var(--footer-text-muted);
   font-size: 0.875rem;
   line-height: 1.6;

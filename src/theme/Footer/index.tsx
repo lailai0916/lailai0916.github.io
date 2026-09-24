@@ -95,11 +95,22 @@ export default function Footer(): ReactNode {
               <span className={styles.titleAccent}>{titleAccent}</span>
             </h2>
             <p className={styles.description}>{FOOTER_DESCRIPTION}</p>
-            {footer.copyright && (
-              <div className={styles.copyright}>
-                <FooterCopyright copyright={footer.copyright} />
-              </div>
-            )}
+            <nav className={styles.feeds} aria-label={FEED_NAVIGATION_LABEL}>
+              <ul className={styles.feedList}>
+                {feeds.map((feed, feedIndex) => (
+                  <li key={feed.href} className={styles.feedItem}>
+                    {feedIndex > 0 && (
+                      <span className={styles.feedDivider} aria-hidden="true">
+                        ·
+                      </span>
+                    )}
+                    <a className={styles.metaLink} href={feed.href}>
+                      {feed.label}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </nav>
           </section>
 
           {columns.length > 0 && (
@@ -124,22 +135,11 @@ export default function Footer(): ReactNode {
         </div>
 
         <div className={styles.bottom}>
-          <nav className={styles.feeds} aria-label={FEED_NAVIGATION_LABEL}>
-            <ul className={styles.feedList}>
-              {feeds.map((feed, feedIndex) => (
-                <li key={feed.href} className={styles.feedItem}>
-                  {feedIndex > 0 && (
-                    <span className={styles.feedDivider} aria-hidden="true">
-                      ·
-                    </span>
-                  )}
-                  <a className={styles.metaLink} href={feed.href}>
-                    {feed.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </nav>
+          {footer.copyright && (
+            <div className={styles.copyright}>
+              <FooterCopyright copyright={footer.copyright} />
+            </div>
+          )}
 
           <p className={styles.license}>
             {LICENSE_NOTICE}{' '}

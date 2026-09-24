@@ -28,7 +28,9 @@
 }
 
 .postCoverWrap {
+  position: relative;
   display: block;
+  aspect-ratio: 16 / 9;
   margin: 0 0 1.25rem;
   border-radius: 12px;
   overflow: hidden;
@@ -42,10 +44,11 @@
 }
 
 .postCover {
+  position: absolute;
+  inset: 0;
   width: 100%;
-  height: auto;
+  height: 100%;
   display: block;
-  aspect-ratio: 16 / 9;
   object-fit: cover;
 }
 
@@ -53,11 +56,6 @@
   grid-area: 1 / 2;
   margin: 0;
   aspect-ratio: 4 / 3;
-}
-
-.postSideCover .postCover {
-  height: 100%;
-  aspect-ratio: auto;
 }
 
 @container blog-post (max-width: 560px) {

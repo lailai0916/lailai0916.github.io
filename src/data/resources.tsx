@@ -1052,6 +1052,17 @@ const RESOURCE_CATALOG = {
       message: 'Internet connection speed measurement by Ookla',
     }),
   },
+  ustcSpeedTest: {
+    title: translate({
+      id: 'data.resources.site.ustcSpeedTest.title',
+      message: 'USTC Speed Test',
+    }),
+    href: 'https://test.ustc.edu.cn',
+    description: translate({
+      id: 'data.resources.site.ustcSpeedTest.description',
+      message: 'IPv4/IPv6 internet speed test hosted by USTC',
+    }),
+  },
   netCoffee: {
     title: translate({
       id: 'data.resources.site.netCoffee.title',
@@ -1848,6 +1859,7 @@ export const RESOURCE_LIST: ResourceCategoryItem[] = [
     icon: 'lucide:gauge',
     resources: resources(
       'speedtest',
+      'ustcSpeedTest',
       'netCoffee',
       'passwordMonster',
       'volumeshader',

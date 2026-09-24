@@ -857,6 +857,12 @@
   "data.resources.site.speedtest.description": {
     "message": "Ookla 提供的互联网连接速度测试"
   },
+  "data.resources.site.ustcSpeedTest.title": {
+    "message": "中国科学技术大学测速网站"
+  },
+  "data.resources.site.ustcSpeedTest.description": {
+    "message": "中国科学技术大学提供的 IPv4/IPv6 网络测速服务"
+  },
   "data.resources.site.netCoffee.title": {
     "message": "Net.Coffee"
   },

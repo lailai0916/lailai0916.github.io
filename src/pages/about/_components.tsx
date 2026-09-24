@@ -27,7 +27,7 @@ export function Skills() {
     const handleResize = () => {
       const breakpoints = [
         [668, 12],
-        [448, 8],
+        [448, 9],
         [336, 6],
         [224, 4],
         [168, 3],
