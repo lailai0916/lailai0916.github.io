@@ -1,4 +1,5 @@
 .frame {
+  margin-inline: auto;
   overflow: hidden;
   width: min(100%, 500px);
   aspect-ratio: 1 / 1;
