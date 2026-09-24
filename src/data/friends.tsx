@@ -95,4 +95,10 @@ export const FRIEND_LIST: FriendItem[] = [
     href: 'https://cyanhaze.github.io',
     avatar: 'https://cyanhaze.github.io/images/avatar.png',
   },
+  {
+    title: "Studying Father's blog",
+    description: 'Focus on interest!',
+    href: 'https://studyingfather.com',
+    avatar: 'https://studyingfather.cdn.zsq001.cn/wp-content/uploads/2024/04/400x400.png',
+  },
 ];
