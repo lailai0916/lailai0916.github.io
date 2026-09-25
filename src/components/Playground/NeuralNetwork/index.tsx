@@ -18,6 +18,10 @@ import Button from '@lailai0916/ui/Button';
 import Card from '@lailai0916/ui/Card';
 import styles from './styles.module.css';
 
+const RESET_LABEL = translate({
+  id: 'components.playground.neuralNetwork.reset',
+  message: 'Reset',
+});
 const CLEAR_LABEL = translate({
   id: 'components.playground.neuralNetwork.clear',
   message: 'Clear',
@@ -67,6 +71,7 @@ export default function NeuralNetwork({ instant = false }: { instant?: boolean }
   const [isNormalized, setIsNormalized] = useState(true);
   const [normalizing, setNormalizing] = useState(false);
   const [animating, setAnimating] = useState(false);
+  const [checkLocked, setCheckLocked] = useState(false);
   const [selectedNeuron, setSelectedNeuron] = useState<SelectedNeuron>(null);
   const [neurons, setNeurons] = useState<number[][]>([[], [], [], []]);
 
@@ -143,6 +148,7 @@ export default function NeuralNetwork({ instant = false }: { instant?: boolean }
   );
 
   const animate = useCallback(() => {
+    setCheckLocked(true);
     setAnimating(false);
     if (isNormalized) {
       timeoutRef.current = window.setTimeout(() => setAnimating(true), 1);
@@ -152,6 +158,17 @@ export default function NeuralNetwork({ instant = false }: { instant?: boolean }
       });
     }
   }, [isNormalized, normalizePointsAnimated]);
+
+  const resetToDefault = () => {
+    cancelAnimationFrame(rafRef.current);
+    clearTimeout(timeoutRef.current);
+    setPoints(threeImage ?? []);
+    setIsNormalized(true);
+    setNormalizing(false);
+    setAnimating(false);
+    setCheckLocked(false);
+    setSelectedNeuron(null);
+  };
 
   const inputValues = useMemo(() => getInputNeuronValues(points), [points]);
   const isEmpty = !inputValues.some((v) => v > 0.1);
@@ -224,6 +241,7 @@ export default function NeuralNetwork({ instant = false }: { instant?: boolean }
               editing={editing}
               startEditing={() => {
                 setAnimating(false);
+                setCheckLocked(false);
                 setPoints([]);
                 setIsNormalized(false);
               }}
@@ -246,12 +264,16 @@ export default function NeuralNetwork({ instant = false }: { instant?: boolean }
       </Card>
 
       <div className={styles.controls}>
+        <Button variant="secondary" fullWidth onClick={resetToDefault}>
+          {RESET_LABEL}
+        </Button>
         <Button
           variant="secondary"
           fullWidth
           disabled={isEmpty}
           onClick={() => {
             setAnimating(false);
+            setCheckLocked(false);
             setPoints([]);
             setIsNormalized(false);
           }}
@@ -268,7 +290,7 @@ export default function NeuralNetwork({ instant = false }: { instant?: boolean }
             {PREPROCESS_LABEL}
           </Button>
         ) : (
-          <Button variant="secondary" fullWidth disabled={isEmpty} onClick={animate}>
+          <Button variant="secondary" fullWidth disabled={isEmpty || checkLocked} onClick={animate}>
             {CHECK_LABEL}
           </Button>
         )}

@@ -22,13 +22,15 @@ const DEFAULT_BETA = 8 / 3;
 
 // Integration / trail.
 const DT = 0.005;
-const STEPS_PER_FRAME = 5;
+const STEPS_PER_SECOND = 300;
+const MAX_FRAME_DELTA_SECONDS = 0.05;
 const MAX_TRAIL = 3000;
+const FADE_BANDS = 64;
 
 // Camera.
 const INITIAL_YAW = 0.6;
 const INITIAL_PITCH = -0.35;
-const AUTO_ROTATE_RATE = 0.0018;
+const AUTO_ROTATE_RADIANS_PER_SECOND = 0.108;
 const PITCH_LIMIT = Math.PI / 2 - 0.1;
 
 const INITIAL_POSITION: Vec3 = { x: 1, y: 1, z: 1 };
@@ -224,6 +226,8 @@ export default function LorenzAttractor() {
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
 
     let animId = 0;
+    let lastFrameTime: number | null = null;
+    let stepRemainder = 0;
 
     const project = (p: Vec3): { sx: number; sy: number; depth: number } => {
       const { yaw, pitch } = stateRef.current;
@@ -272,24 +276,22 @@ export default function LorenzAttractor() {
       const trail = particle.trail;
       if (trail.length < 2) return;
 
-      // Render in 4 chunks with increasing alpha so the head looks fresh
-      // and the tail dims gracefully — cheap "fading trail" without per-segment cost.
-      const bands = 4;
+      // Alpha bands smooth the fade without a stroke for every sample.
+      const segmentCount = trail.length - 1;
+      const bands = Math.min(FADE_BANDS, segmentCount);
       const baseAlpha = 0.18;
-      const segLen = Math.ceil(trail.length / bands);
       ctx.strokeStyle = color;
       ctx.lineWidth = 1.6;
       ctx.lineCap = 'round';
       ctx.lineJoin = 'round';
       for (let b = 0; b < bands; b++) {
-        const start = b * segLen;
-        const end = Math.min(trail.length, (b + 1) * segLen + 1);
-        if (end - start < 2) continue;
+        const start = Math.floor((b * segmentCount) / bands);
+        const end = Math.floor(((b + 1) * segmentCount) / bands);
         ctx.globalAlpha = baseAlpha + ((1 - baseAlpha) * (b + 1)) / bands;
         ctx.beginPath();
         const p0 = project(trail[start]);
         ctx.moveTo(p0.sx, p0.sy);
-        for (let i = start + 1; i < end; i++) {
+        for (let i = start + 1; i <= end; i++) {
           const p = project(trail[i]);
           ctx.lineTo(p.sx, p.sy);
         }
@@ -304,20 +306,30 @@ export default function LorenzAttractor() {
       ctx.fill();
     };
 
-    const render = () => {
+    const render = (timestamp: number) => {
+      // Limit catch-up work after returning from a background tab.
+      const elapsed =
+        lastFrameTime === null
+          ? 0
+          : Math.min(Math.max((timestamp - lastFrameTime) / 1000, 0), MAX_FRAME_DELTA_SECONDS);
+      lastFrameTime = timestamp;
+      stepRemainder += elapsed * STEPS_PER_SECOND;
+      const steps = Math.floor(stepRemainder);
+      stepRemainder -= steps;
+
       const { primary, colors } = themeRef.current;
       const state = stateRef.current;
       const { particle } = state;
       const { sigma: σ, rho: ρ, beta: β } = paramsRef.current;
 
-      for (let s = 0; s < STEPS_PER_FRAME; s++) {
+      for (let s = 0; s < steps; s++) {
         particle.pos = rk4Step(particle.pos, σ, ρ, β, DT);
         particle.trail.push({ ...particle.pos });
         if (particle.trail.length > MAX_TRAIL) particle.trail.shift();
       }
 
       if (state.autoRotate) {
-        state.yaw += AUTO_ROTATE_RATE;
+        state.yaw += AUTO_ROTATE_RADIANS_PER_SECOND * elapsed;
       }
 
       ctx.fillStyle = colors.background;
@@ -330,7 +342,7 @@ export default function LorenzAttractor() {
       animId = requestAnimationFrame(render);
     };
 
-    render();
+    render(performance.now());
     return () => cancelAnimationFrame(animId);
   }, [canvasSize, dpr]);
 

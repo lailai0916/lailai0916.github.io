@@ -2126,9 +2126,18 @@
     "message": "重置"
   },
   "components.playground.fourierTransform.clear": {
-    "message": "清空"
+    "message": "清除"
+  },
+  "components.playground.fourierTransform.pause": {
+    "message": "暂停"
+  },
+  "components.playground.fourierTransform.play": {
+    "message": "继续"
   },
   "components.playground.lorenz.reset": {
+    "message": "重置"
+  },
+  "components.playground.neuralNetwork.reset": {
     "message": "重置"
   },
   "components.playground.neuralNetwork.clear": {
