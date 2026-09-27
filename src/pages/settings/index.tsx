@@ -211,10 +211,15 @@ function AccentColor() {
   );
 }
 
+function isFontFamilyChoice(value: unknown): value is FontFamilyChoice {
+  return value === 'system' || value === 'sans' || value === 'serif';
+}
+
 function FontFamily() {
   const [choice, setChoice] = usePersistentState<FontFamilyChoice>(
     FONT_FAMILY_KEY,
-    FONT_FAMILY_DEFAULT
+    FONT_FAMILY_DEFAULT,
+    isFontFamilyChoice
   );
 
   useEffect(() => {
@@ -344,6 +349,16 @@ function Typography() {
   );
 }
 
+function isExperimentalSettings(value: unknown): value is ExperimentalSettings {
+  if (value === null || typeof value !== 'object') return false;
+  const settings = value as Partial<ExperimentalSettings>;
+  return (
+    typeof settings.classicDesign === 'boolean' &&
+    typeof settings.debugMode === 'boolean' &&
+    typeof settings.grayMode === 'boolean'
+  );
+}
+
 function ExperimentalFeatures() {
   const buttonOptions = [
     {
@@ -373,7 +388,8 @@ function ExperimentalFeatures() {
   ];
   const [toggles, setToggles] = usePersistentState<ExperimentalSettings>(
     EXPERIMENTAL_STORAGE_KEY,
-    SETTINGS_EXPERIMENTAL_DEFAULT
+    SETTINGS_EXPERIMENTAL_DEFAULT,
+    isExperimentalSettings
   );
 
   const handleToggle = (key: keyof ExperimentalSettings, checked: boolean) => {

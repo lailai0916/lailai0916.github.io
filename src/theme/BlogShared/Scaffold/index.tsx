@@ -83,7 +83,13 @@ function ProfileCard() {
             <div className={styles.profileTitle}>{title}</div>
           </div>
         </Link>
-        <nav className={styles.profileNav} aria-label="Blog sections">
+        <nav
+          className={styles.profileNav}
+          aria-label={translate({
+            id: 'blog.sidebar.sectionsAriaLabel',
+            message: 'Blog sections',
+          })}
+        >
           {(
             [
               {

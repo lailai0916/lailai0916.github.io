@@ -79,12 +79,17 @@ jobs:
         env:
           SERVER_HOST: ${{ secrets.SERVER_HOST }}
           SERVER_SSH_KEY: ${{ secrets.SERVER_SSH_KEY }}
+          SERVER_HOST_FINGERPRINT: SHA256:C8bXBHN5aelwlir94xaNcOhGnCGstFCKqyumQhdxWek
         run: |
           mkdir -p ~/.ssh
           chmod 700 ~/.ssh
           printf '%s\n' "$SERVER_SSH_KEY" > ~/.ssh/deploy_key
           chmod 600 ~/.ssh/deploy_key
-          ssh-keyscan "$SERVER_HOST" >> ~/.ssh/known_hosts
+          host_key="$(ssh-keyscan -T 10 -t ed25519 "$SERVER_HOST" 2>/dev/null)"
+          test -n "$host_key"
+          fingerprint="$(printf '%s\n' "$host_key" | ssh-keygen -lf - -E sha256 | awk '{print $2}')"
+          test "$fingerprint" = "$SERVER_HOST_FINGERPRINT"
+          printf '%s\n' "$host_key" > ~/.ssh/known_hosts
 
       - name: Sync build to server
         env:
@@ -92,7 +97,7 @@ jobs:
           SERVER_USER: ${{ secrets.SERVER_USER }}
         run: |
           rsync -rlptz --delete --no-o --no-g \
-            -e "ssh -i ~/.ssh/deploy_key" \
+            -e "ssh -i ~/.ssh/deploy_key -o StrictHostKeyChecking=yes" \
             build/ "${SERVER_USER}@${SERVER_HOST}:/var/www/lailai.one/"
 
   deploy:

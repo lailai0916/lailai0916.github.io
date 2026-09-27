@@ -2045,6 +2045,9 @@
   "pages.travel.datacard.countries": {
     "message": "个国家"
   },
+  "components.admonition.example.title": {
+    "message": "示例"
+  },
   "blog.pages.tags.tagSelect": {
     "message": "标签"
   },
@@ -2367,6 +2370,9 @@
   },
   "blog.sidebar.profileCard.title": {
     "message": "学生 & 开发者"
+  },
+  "blog.sidebar.sectionsAriaLabel": {
+    "message": "博客分区"
   },
   "blog.menu.blog": {
     "message": "博客"
@@ -2772,13 +2778,13 @@
     "message": "关闭导航栏",
     "description": "The ARIA label for close button of mobile sidebar"
   },
-  "theme.docs.sidebar.toggleSidebarButtonAriaLabel": {
-    "message": "切换导航栏",
-    "description": "The ARIA label for hamburger menu button of mobile navigation"
-  },
   "theme.navbar.mobileSidebarSecondaryMenu.backButtonLabel": {
     "message": "← 回到主菜单",
     "description": "The label of the back button to return to main menu, inside the mobile navbar sidebar secondary menu (notably used to display the docs sidebar)"
+  },
+  "theme.docs.sidebar.toggleSidebarButtonAriaLabel": {
+    "message": "切换导航栏",
+    "description": "The ARIA label for hamburger menu button of mobile navigation"
   },
   "theme.navbar.mobileDropdown.collapseButton.expandAriaLabel": {
     "message": "展开下拉菜单",
