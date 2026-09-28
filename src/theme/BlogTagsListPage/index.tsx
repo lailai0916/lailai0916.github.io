@@ -1,38 +1,15 @@
 import { type ReactElement } from 'react';
+import { translate } from '@docusaurus/Translate';
 import { useExperimentalFlag } from '@site/src/hooks/useExperimentalFlag';
 import BlogTagsListPageClassic from '@theme-original/BlogTagsListPage';
 import type { Props } from '@theme/BlogTagsListPage';
-import ArchiveTabs, {
-  type ArchiveTagItem,
-  type ArchiveAuthorItem,
-} from '../BlogShared/ArchiveTabs';
-import { getAllBlogItems, loadOfficialAuthors } from '@site/src/utils/blogData';
+import ArchiveRedirect from '../BlogShared/ArchiveRedirect';
+
+const TITLE = translate({ id: 'blog.pages.tags.title', message: 'Tags' });
 
 export default function BlogTagsListPage(props: Props): ReactElement {
   const isClassicDesign = useExperimentalFlag('classicDesign');
   if (isClassicDesign) return <BlogTagsListPageClassic {...props} />;
 
-  const posts = getAllBlogItems()
-    .filter((it) => it.metadata?.date && it.metadata?.permalink && it.metadata?.title)
-    .map((it) => ({
-      metadata: {
-        date: it.metadata!.date as string,
-        permalink: it.metadata!.permalink as string,
-        title: it.metadata!.title as string,
-      },
-    }));
-  const tags: ArchiveTagItem[] = props.tags.map((t) => ({
-    label: t.label,
-    permalink: t.permalink,
-    count: t.count,
-  }));
-  const authors: ArchiveAuthorItem[] = loadOfficialAuthors()
-    .filter((a) => !!a.page?.permalink)
-    .map((a) => ({
-      label: a.name ?? a.key,
-      permalink: a.page!.permalink,
-      count: a.count,
-    }));
-
-  return <ArchiveTabs activeTab="tags" posts={posts} tags={tags} authors={authors} />;
+  return <ArchiveRedirect title={TITLE} />;
 }

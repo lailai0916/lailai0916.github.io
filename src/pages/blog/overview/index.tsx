@@ -4,7 +4,6 @@ import { usePluralForm } from '@docusaurus/theme-common';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import useIsBrowser from '@docusaurus/useIsBrowser';
 import BlogScaffold from '@site/src/theme/BlogShared/Scaffold';
-import { ArchiveTabsNav } from '@site/src/theme/BlogShared/ArchiveTabs';
 import DataCard from '@lailai0916/ui/DataCard';
 import { getAllBlogItems, getAllPostMetadata, loadOfficialTags } from '@site/src/utils/blogData';
 import { MOMENT_LIST } from '@site/src/data/moments';
@@ -143,7 +142,6 @@ export default function BlogStats(): ReactNode {
 
   return (
     <BlogScaffold title={TITLE} description={DESCRIPTION}>
-      <ArchiveTabsNav activeTab="overview" />
       <div className={styles.kpiGrid}>
         {kpis.map((k) => (
           <DataCard key={k.label} icon={k.icon} value={k.value} label={k.label} format={compact} />

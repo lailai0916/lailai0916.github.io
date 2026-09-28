@@ -11,12 +11,13 @@ import { loadOfficialTags } from '@site/src/utils/blogData';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Card from '@lailai0916/ui/Card';
 import TitleCard from '@lailai0916/ui/TitleCard';
+import Segmented from '@lailai0916/ui/Segmented';
 import TableOfContents from '@site/src/components/Article/TableOfContents';
 import { TagChipList, type ChipItem } from '../BlogUI';
 import CalendarCard from '../Calendar';
 import styles from './styles.module.css';
 
-type BlogNavKey = 'blog' | 'moments' | 'archive';
+type BlogNavKey = 'blog' | 'moments' | 'archive' | 'overview';
 
 type PopularTagItem = ChipItem & {
   count: number;
@@ -34,14 +35,55 @@ function useActiveBlogNav(): BlogNavKey {
     pathname === base || pathname === `${base}/` || pathname.startsWith(`${base}/`);
 
   if (startsWith(momentsBase)) return 'moments';
-  if (
-    startsWith(archiveBase) ||
-    startsWith(tagsBase) ||
-    startsWith(authorsBase) ||
-    startsWith(overviewBase)
-  )
-    return 'archive';
+  if (startsWith(overviewBase)) return 'overview';
+  if (startsWith(archiveBase) || startsWith(tagsBase) || startsWith(authorsBase)) return 'archive';
   return 'blog';
+}
+
+function BlogSectionNav() {
+  const active = useActiveBlogNav();
+  const blogHref = useBaseUrl('/blog');
+  const momentsHref = useBaseUrl('/blog/moments');
+  const archiveHref = useBaseUrl('/blog/archive');
+  const overviewHref = useBaseUrl('/blog/overview');
+
+  return (
+    <nav
+      aria-label={translate({
+        id: 'blog.menu.sectionsAriaLabel',
+        message: 'Blog sections',
+      })}
+    >
+      <Segmented<BlogNavKey>
+        className={styles.sectionNav}
+        value={active}
+        orientation="horizontal"
+        stackAt={360}
+        items={[
+          {
+            value: 'blog',
+            label: translate({ id: 'blog.menu.blog', message: 'Blog' }),
+            href: blogHref,
+          },
+          {
+            value: 'moments',
+            label: translate({ id: 'blog.menu.moments', message: 'Moments' }),
+            href: momentsHref,
+          },
+          {
+            value: 'archive',
+            label: translate({ id: 'blog.menu.archive', message: 'Archive' }),
+            href: archiveHref,
+          },
+          {
+            value: 'overview',
+            label: translate({ id: 'blog.menu.overview', message: 'Overview' }),
+            href: overviewHref,
+          },
+        ]}
+      />
+    </nav>
+  );
 }
 
 // Hardcoded site-owner profile, matching the homepage hero card. Keeping this
@@ -58,10 +100,6 @@ const PROFILE_TITLE_DEFAULT = 'Student & Developer';
 function ProfileCard() {
   const avatarUrl = useBaseUrl(PROFILE_AVATAR);
   const aboutHref = useBaseUrl('/about');
-  const blogHref = useBaseUrl('/blog');
-  const momentsHref = useBaseUrl('/blog/moments');
-  const archiveHref = useBaseUrl('/blog/overview');
-  const active = useActiveBlogNav();
   const title = translate({
     id: PROFILE_TITLE_ID,
     message: PROFILE_TITLE_DEFAULT,
@@ -83,51 +121,6 @@ function ProfileCard() {
             <div className={styles.profileTitle}>{title}</div>
           </div>
         </Link>
-        <nav
-          className={styles.profileNav}
-          aria-label={translate({
-            id: 'blog.sidebar.sectionsAriaLabel',
-            message: 'Blog sections',
-          })}
-        >
-          {(
-            [
-              {
-                value: 'blog' as BlogNavKey,
-                label: translate({ id: 'blog.menu.blog', message: 'Blog' }),
-                href: blogHref,
-              },
-              {
-                value: 'moments' as BlogNavKey,
-                label: translate({
-                  id: 'blog.menu.moments',
-                  message: 'Moments',
-                }),
-                href: momentsHref,
-              },
-              {
-                value: 'archive' as BlogNavKey,
-                label: translate({
-                  id: 'blog.menu.archive',
-                  message: 'Archive',
-                }),
-                href: archiveHref,
-              },
-            ] as const
-          ).map((item) => {
-            const isActive = item.value === active;
-            return (
-              <Link
-                key={item.value}
-                to={item.href}
-                className={clsx(styles.profileNavItem, isActive && styles.profileNavItemActive)}
-                aria-current={isActive ? 'page' : undefined}
-              >
-                {item.label}
-              </Link>
-            );
-          })}
-        </nav>
       </div>
     </Card>
   );
@@ -182,7 +175,10 @@ export default function BlogScaffold({ title, description, children, toc }: Prop
           <ProfileCard />
           {toc && toc.length > 0 && <TableOfContents toc={toc} />}
         </aside>
-        <main className={styles.main}>{children}</main>
+        <main className={styles.main}>
+          <BlogSectionNav />
+          {children}
+        </main>
         {!isPostPage && (
           <aside className={styles.extras}>
             <CalendarCard />

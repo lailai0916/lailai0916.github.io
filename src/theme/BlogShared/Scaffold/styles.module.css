@@ -3,6 +3,10 @@
   flex-direction: column;
 }
 
+.sectionNav {
+  width: 100%;
+}
+
 .profileHeader {
   display: flex;
   flex-direction: column;
@@ -71,61 +75,6 @@
   .profileTitle {
     margin: 0.3rem 0 0;
   }
-}
-
-.profileNav {
-  position: relative;
-  display: flex;
-  justify-content: space-around;
-  margin-top: 0.5rem;
-  padding-top: 0.9rem;
-  border-top: 1px solid color-mix(in srgb, var(--ifm-color-emphasis-300) 65%, transparent);
-}
-
-.profileNavItem {
-  position: relative;
-  flex: 1;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0.4rem 0.5rem 0.65rem;
-  font-size: 0.875rem;
-  font-weight: 500;
-  letter-spacing: 0.02em;
-  color: var(--ifm-color-emphasis-700);
-  text-decoration: none !important;
-  outline: none;
-  transition: color 160ms ease;
-}
-
-.profileNavItem:hover {
-  color: var(--ifm-color-emphasis-900);
-}
-
-.profileNavItem:focus-visible {
-  color: var(--ifm-color-primary);
-}
-
-.profileNavItem:active {
-  color: var(--ifm-color-primary);
-}
-
-.profileNavItemActive,
-.profileNavItemActive:hover {
-  color: var(--ifm-color-primary);
-  font-weight: 600;
-}
-
-.profileNavItemActive::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 20px;
-  height: 2px;
-  border-radius: 999px;
-  background: var(--ifm-color-primary);
 }
 
 .container {

@@ -2048,7 +2048,7 @@
   "components.admonition.example.title": {
     "message": "示例"
   },
-  "blog.pages.tags.tagSelect": {
+  "blog.pages.tags.title": {
     "message": "标签"
   },
   "theme.docs.breadcrumbs.navAriaLabel": {
@@ -2293,32 +2293,26 @@
   "pages.overview.metric.moments": {
     "message": "动态"
   },
+  "blog.pages.archive.title": {
+    "message": "归档"
+  },
+  "blog.pages.archive.description": {
+    "message": "按年份、标签或作者浏览文章"
+  },
+  "blog.archive.section.year": {
+    "message": "按年份"
+  },
+  "blog.archive.section.tags": {
+    "message": "按标签"
+  },
+  "blog.archive.section.authors": {
+    "message": "按作者"
+  },
   "blog.post.empty": {
     "message": "暂无文章"
   },
-  "blog.pages.archive.title": {
-    "message": "历史文章"
-  },
-  "blog.pages.archive.yearSelect": {
-    "message": "年份"
-  },
-  "blog.pages.tags.title": {
-    "message": "标签"
-  },
-  "blog.pages.authors.title": {
-    "message": "作者"
-  },
-  "blog.archive.tab.overview": {
-    "message": "概览"
-  },
-  "blog.archive.tab.year": {
-    "message": "按年份"
-  },
-  "blog.archive.tab.tags": {
-    "message": "按标签"
-  },
-  "blog.archive.tab.authors": {
-    "message": "按作者"
+  "blog.archive.redirect.link": {
+    "message": "浏览归档"
   },
   "blog.sidebar.calendar.today": {
     "message": "本月"
@@ -2368,10 +2362,7 @@
   "blog.pagination.ariaLabel": {
     "message": "分页"
   },
-  "blog.sidebar.profileCard.title": {
-    "message": "学生 & 开发者"
-  },
-  "blog.sidebar.sectionsAriaLabel": {
+  "blog.menu.sectionsAriaLabel": {
     "message": "博客分区"
   },
   "blog.menu.blog": {
@@ -2382,6 +2373,12 @@
   },
   "blog.menu.archive": {
     "message": "归档"
+  },
+  "blog.menu.overview": {
+    "message": "概览"
+  },
+  "blog.sidebar.profileCard.title": {
+    "message": "学生 & 开发者"
   },
   "blog.sidebar.tags.title": {
     "message": "热门标签"
@@ -2541,7 +2538,7 @@
   "pages.travel.map.ariaDescription": {
     "message": "显示已到访国家的交互式地球。下方的旅行时间轴提供相同信息的文本版本。"
   },
-  "blog.pages.authors.authorSelect": {
+  "blog.pages.authors.title": {
     "message": "作者"
   },
   "pages.overview.popular.title": {
@@ -2722,13 +2719,13 @@
     "message": "主导航",
     "description": "The ARIA label for the main navigation"
   },
-  "theme.navbar.mobileLanguageDropdown.label": {
-    "message": "选择语言",
-    "description": "The label for the mobile language switcher dropdown"
-  },
   "theme.NotFound.p2": {
     "message": "请联系原始链接来源网站的所有者，并告知他们链接已损坏。",
     "description": "The 2nd paragraph of the 404 page"
+  },
+  "theme.navbar.mobileLanguageDropdown.label": {
+    "message": "选择语言",
+    "description": "The label for the mobile language switcher dropdown"
   },
   "theme.TOCCollapsible.toggleButtonLabel": {
     "message": "本页总览",
