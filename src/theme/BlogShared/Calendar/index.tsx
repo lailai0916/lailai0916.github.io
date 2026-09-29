@@ -54,20 +54,17 @@ function shiftMonth(y: number, m: number, delta: number) {
 export default function CalendarCard() {
   const { i18n, siteConfig } = useDocusaurusContext();
   const locale = i18n.currentLocale;
+  const localeKey = locale === i18n.defaultLocale ? undefined : locale;
   const timeZone = useVisitorTimeZone();
 
   const posts = useMemo<CalPost[]>(() => {
-    return getAllBlogItems()
-      .map((it): CalPost | null => {
-        const title = it.title ?? it.metadata?.title;
-        const date = it.date ?? it.metadata?.date;
-        const permalink = it.permalink ?? it.metadata?.permalink;
-        if (!title || !date || !permalink) return null;
+    return getAllBlogItems(localeKey)
+      .map((it): CalPost => {
+        const { title, date, permalink } = it;
         return { title, date, permalink, dateKey: getDateKey(date, timeZone) };
       })
-      .filter((x): x is CalPost => x !== null)
       .sort((a, b) => compareInstantsDescending(a.date, b.date));
-  }, [timeZone]);
+  }, [localeKey, timeZone]);
 
   const postsByDate = useMemo(() => {
     const map = new Map<string, CalPost[]>();

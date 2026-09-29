@@ -182,11 +182,10 @@ export default function BlogArchive({
   const allPosts = useMemo<readonly PostLike[]>(
     () =>
       posts ??
-      getAllBlogItems().flatMap((item) => {
-        const { date, permalink, title } = item.metadata ?? item;
-        return date && permalink && title ? [{ metadata: { date, permalink, title } }] : [];
-      }),
-    [posts]
+      getAllBlogItems(localeKey).map(({ date, permalink, title }) => ({
+        metadata: { date, permalink, title },
+      })),
+    [posts, localeKey]
   );
   const years = useMemo(() => {
     const map = new Map<number, number>();

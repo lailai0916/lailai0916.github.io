@@ -1,4 +1,4 @@
-import { getAllPostMetadata, type getAllBlogItems } from '@site/src/utils/blogData';
+import { type getAllBlogItems } from '@site/src/utils/blogData';
 import { compareInstantsDescending } from '@site/src/utils/dateTime';
 import { umamiFetchJson } from '@site/src/utils/umami';
 
@@ -20,16 +20,12 @@ export async function loadPopularPosts(
   signal: AbortSignal
 ): Promise<PopularPost[]> {
   const pinnedPaths = new Set(
-    getAllPostMetadata()
-      .filter((post) => post.frontMatter?.pinned === true)
-      .map((post) => post.permalink)
+    items.filter((post) => post.frontMatter?.pinned === true).map((post) => post.permalink)
   );
   const posts = new Map<string, Omit<PopularPost, 'views'>>();
   for (const item of items) {
-    const title = item.title ?? item.metadata?.title;
-    const date = item.date ?? item.metadata?.date;
-    const permalink = item.permalink ?? item.metadata?.permalink;
-    if (title && date && permalink && !pinnedPaths.has(permalink)) {
+    const { title, date, permalink } = item;
+    if (!pinnedPaths.has(permalink)) {
       posts.set(permalink, { title, date, permalink });
     }
   }

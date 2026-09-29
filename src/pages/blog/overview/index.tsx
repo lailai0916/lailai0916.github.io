@@ -5,8 +5,8 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import useIsBrowser from '@docusaurus/useIsBrowser';
 import BlogScaffold from '@site/src/theme/BlogShared/Scaffold';
 import DataCard from '@lailai0916/ui/DataCard';
-import { getAllBlogItems, getAllPostMetadata, loadOfficialTags } from '@site/src/utils/blogData';
-import { MOMENT_LIST } from '@site/src/data/moments';
+import { getAllBlogItems, loadOfficialTags } from '@site/src/utils/blogData';
+import { getMomentList } from '@site/src/data/moments';
 import { useVisitorTimeZone } from '@site/src/hooks/useVisitorTimeZone';
 import { formatCalendarMonth, getMonthKey } from '@site/src/utils/dateTime';
 import { formatCompact } from '@lailai0916/ui';
@@ -37,9 +37,7 @@ function buildMonths(
 ): ChartDatum[] {
   const map = new Map<string, number>();
   items.forEach((it) => {
-    const date = it.date ?? it.metadata?.date;
-    if (!date) return;
-    const month = getMonthKey(date, timeZone);
+    const month = getMonthKey(it.date, timeZone);
     map.set(month, (map.get(month) ?? 0) + 1);
   });
 
@@ -82,14 +80,12 @@ export default function BlogStats(): ReactNode {
     timeZone
   );
 
-  const items = getAllBlogItems();
+  const items = getAllBlogItems(localeKey);
   const monthData = buildMonths(items, currentLocale, timeZone, currentMonth);
   const tagCount = loadOfficialTags(localeKey).length;
   const postCount = items.length;
   // Reading time → word count (≈200 wpm).
-  const readingMinutes = Math.round(
-    getAllPostMetadata().reduce((sum, meta) => sum + (meta.readingTime ?? 0), 0)
-  );
+  const readingMinutes = Math.round(items.reduce((sum, meta) => sum + (meta.readingTime ?? 0), 0));
   const wordCount = readingMinutes * 200;
 
   const compact = (v: number) => formatCompact(v, currentLocale);
@@ -136,7 +132,7 @@ export default function BlogStats(): ReactNode {
         id: 'pages.overview.metric.moments',
         message: 'Moment|Moments',
       }),
-      value: MOMENT_LIST.length,
+      value: getMomentList(localeKey).length,
     },
   ];
 

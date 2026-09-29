@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import clsx from 'clsx';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import { translate } from '@docusaurus/Translate';
@@ -11,7 +11,7 @@ import Card from '@lailai0916/ui/Card';
 import IconBlock from '@lailai0916/ui/IconBlock';
 import ShareCard from '@lailai0916/ui/ShareCard';
 import Skeleton from '@lailai0916/ui/Skeleton';
-import { MOMENT_LIST } from '@site/src/data/moments';
+import { getMomentList } from '@site/src/data/moments';
 import { useImageStatus } from '@lailai0916/ui';
 import { useVisitorTimeZone } from '@site/src/hooks/useVisitorTimeZone';
 import { formatLocalDate, formatLocalTime } from '@site/src/utils/dateTime';
@@ -338,14 +338,16 @@ function MomentImage({ src }: { src: string }) {
 
 export default function Moments() {
   const {
-    i18n: { currentLocale },
+    i18n: { currentLocale, defaultLocale },
   } = useDocusaurusContext();
   const { selectMessage } = usePluralForm();
   const timeZone = useVisitorTimeZone();
   const { weather, status: weatherStatus, retry: retryWeather } = useHangzhouWeather();
   const [visibleCount, setVisibleCount] = useState(PAGE_SIZE);
-  const totalCount = MOMENT_LIST.length;
-  const visibleMoments = MOMENT_LIST.slice(0, visibleCount);
+  const localeKey = currentLocale === defaultLocale ? undefined : currentLocale;
+  const moments = useMemo(() => getMomentList(localeKey), [localeKey]);
+  const totalCount = moments.length;
+  const visibleMoments = moments.slice(0, visibleCount);
   const hasMore = visibleCount < totalCount;
   const weatherInfo = weather
     ? (WMO[weather.weather_code] ?? {
@@ -382,10 +384,8 @@ export default function Moments() {
             <p className={styles.description}>{DESCRIPTION}</p>
           </div>
           <div className={styles.count}>
-            <span className={styles.countNumber}>{MOMENT_LIST.length}</span>
-            <span className={styles.countLabel}>
-              {selectMessage(MOMENT_LIST.length, COUNT_LABEL)}
-            </span>
+            <span className={styles.countNumber}>{moments.length}</span>
+            <span className={styles.countLabel}>{selectMessage(moments.length, COUNT_LABEL)}</span>
           </div>
         </div>
         <div className={styles.headerWeather}>

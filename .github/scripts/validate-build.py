@@ -1,6 +1,6 @@
 from html.parser import HTMLParser
 from pathlib import Path
-from urllib.parse import unquote, urlsplit
+from urllib.parse import parse_qs, unquote, urlsplit
 import xml.etree.ElementTree as ET
 
 
@@ -9,6 +9,9 @@ class PageLinks(HTMLParser):
         super().__init__()
         self.canonicals = []
         self.assets = []
+        self.links = []
+        self.stat_numbers = []
+        self._stat_number = None
 
     def handle_starttag(self, tag, attrs):
         attrs = dict(attrs)
@@ -18,6 +21,30 @@ class PageLinks(HTMLParser):
             self.assets.append(attrs["src"])
         if tag == "link" and attrs.get("rel") == "stylesheet":
             self.assets.append(attrs["href"])
+        if tag == "a" and attrs.get("href"):
+            self.links.append(attrs["href"])
+        if tag == "div" and "statNumber__" in attrs.get("class", ""):
+            self._stat_number = []
+
+    def handle_data(self, data):
+        if self._stat_number is not None:
+            self._stat_number.append(data)
+
+    def handle_endtag(self, tag):
+        if tag == "div" and self._stat_number is not None:
+            self.stat_numbers.append("".join(self._stat_number).strip())
+            self._stat_number = None
+
+
+def archive_years(file, prefix):
+    page = PageLinks()
+    page.feed(file.read_text())
+    return {
+        parse_qs(urlsplit(href).query)["year"][0]
+        for href in page.links
+        if urlsplit(href).path == f"{prefix}/blog/archive"
+        and "year" in parse_qs(urlsplit(href).query)
+    }
 
 
 build = Path("build")
@@ -52,4 +79,14 @@ for locale, prefix in [("en", ""), ("zh-Hans", "/zh-Hans")]:
                 continue
             path = build / unquote(url.path).lstrip("/")
             assert path.is_file(), f"Missing asset: {path}"
+
+    years = archive_years(root / "blog/archive.html", prefix)
+    assert years, f"Empty {locale} blog archive years"
+    for route in ["blog/tags/solution", "blog/authors/lailai"]:
+        file = root / f"{route}.html"
+        assert archive_years(file, prefix) == years, f"Incorrect archive years in {file}"
+
+    overview = PageLinks()
+    overview.feed((root / "blog/overview.html").read_text())
+    assert overview.stat_numbers and overview.stat_numbers[0] != "0", f"Empty {locale} blog overview"
     print(f"{locale}: {len(locations)} sitemap pages and key page assets verified")

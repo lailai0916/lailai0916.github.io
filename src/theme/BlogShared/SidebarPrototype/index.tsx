@@ -86,12 +86,9 @@ export default function SidebarPrototype() {
 
   const posts = useMemo(() => {
     const metadata = new Map(getAllPostMetadata().map((post) => [post.permalink, post]));
-    return getAllBlogItems()
-      .map((item): PrototypePost | undefined => {
-        const permalink = item.permalink ?? item.metadata?.permalink;
-        const date = item.date ?? item.metadata?.date;
-        const title = item.title ?? item.metadata?.title;
-        if (!permalink || !date || !title) return undefined;
+    return getAllBlogItems(localeKey)
+      .map((item): PrototypePost => {
+        const { permalink, date, title } = item;
         const detail = metadata.get(permalink);
         return {
           permalink,
@@ -103,9 +100,8 @@ export default function SidebarPrototype() {
           ),
         };
       })
-      .filter((post): post is PrototypePost => Boolean(post))
       .sort((a, b) => compareInstantsDescending(a.date, b.date));
-  }, []);
+  }, [localeKey]);
 
   const tags = useMemo(
     () => [...loadOfficialTags(localeKey)].sort((a, b) => b.count - a.count),

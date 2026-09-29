@@ -24,7 +24,7 @@ export function BlogArchiveList({ posts }: { posts: readonly PostLike[] }) {
   const groups = useMemo(() => {
     const map = new Map<number, PostLike[]>();
 
-    // The shared blog data puts pinned posts first; archives follow publication dates.
+    // Archive chronology must not depend on generated metadata order.
     const chronologicalPosts = [...posts].sort((a, b) =>
       compareInstantsDescending(a.metadata.date, b.metadata.date)
     );

@@ -198,25 +198,22 @@ function escapeHtml(s: string): string {
     .replace(/'/g, '&#39;');
 }
 
-function getBlogMoments(): MomentItem[] {
-  return getAllBlogItems()
-    .map((it): MomentItem | null => {
-      const title = it.title ?? it.metadata?.title;
-      const date = it.date ?? it.metadata?.date;
-      const permalink = it.permalink ?? it.metadata?.permalink;
-      if (!title || !date || !permalink) return null;
-      const content = translate(
-        {
-          id: 'data.moments.blogPublished',
-          message: 'Published a new post <a href="{permalink}">{title}</a>',
-        },
-        { permalink: escapeHtml(permalink), title: escapeHtml(title) }
-      );
-      return { date, content };
-    })
-    .filter((x): x is MomentItem => x !== null);
+function getBlogMoments(locale?: string): MomentItem[] {
+  return getAllBlogItems(locale).map((it): MomentItem => {
+    const { title, date, permalink } = it;
+    const content = translate(
+      {
+        id: 'data.moments.blogPublished',
+        message: 'Published a new post <a href="{permalink}">{title}</a>',
+      },
+      { permalink: escapeHtml(permalink), title: escapeHtml(title) }
+    );
+    return { date, content };
+  });
 }
 
-export const MOMENT_LIST: MomentItem[] = [...STATIC_MOMENTS, ...getBlogMoments()].sort((a, b) =>
-  compareInstantsDescending(a.date, b.date)
-);
+export function getMomentList(locale?: string): MomentItem[] {
+  return [...STATIC_MOMENTS, ...getBlogMoments(locale)].sort((a, b) =>
+    compareInstantsDescending(a.date, b.date)
+  );
+}
