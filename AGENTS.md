@@ -84,7 +84,7 @@ Don't restate their content here; extend the file itself.
 | `src/plugins/`                          | Local Docusaurus build plugins; `privacyLastUpdate` publishes each Privacy body file's latest Git commit time                                                                                                                          |
 | `static/`                               | Copied verbatim to site root — `CNAME`, `.nojekyll`, verification files, image/JSON assets                                                                                                                                             |
 
-Custom-page notes: `insights` is live Umami traffic. `blog/overview` and `blog/moments` live under the blog area and reuse `BlogShared/Scaffold` (single-column blog chrome). The scaffold places Blog / Moments / Archive / Overview navigation above every blog page. `/blog/archive` is the single landing page for year, tag, and author browsing; generated `/blog/tags` and `/blog/authors` list routes redirect there, while their detail routes remain available.
+Custom-page notes: `insights` is live Umami traffic. `blog/overview` and `blog/moments` live under the blog area and reuse `BlogShared/Scaffold` (single-column blog chrome). The scaffold places Blog / Moments / Archive / Overview navigation above every blog page. `/blog/archive` offers year and tag browsing plus search; generated `/blog/tags` and `/blog/authors` list routes redirect there, while their detail routes remain available.
 
 ### Non-obvious gotchas
 

@@ -10,12 +10,7 @@ import { Icon } from '@iconify/react';
 import Card from '@lailai0916/ui/Card';
 import { useVisitorTimeZone } from '@site/src/hooks/useVisitorTimeZone';
 import { getDateKey } from '@site/src/utils/dateTime';
-import {
-  getAllBlogItems,
-  getAllPostMetadata,
-  loadOfficialAuthors,
-  loadOfficialTags,
-} from '@site/src/utils/blogData';
+import { getAllBlogItems, getAllPostMetadata, loadOfficialTags } from '@site/src/utils/blogData';
 import { TagChipList } from '../BlogUI';
 import BlogScaffold from '../Scaffold';
 import { BlogArchiveList } from '../ArchiveList';
@@ -41,11 +36,10 @@ export type ArchiveSelection = {
 const PAGE_TITLE = translate({ id: 'blog.pages.archive.title', message: 'Archive' });
 const PAGE_DESCRIPTION = translate({
   id: 'blog.pages.archive.description',
-  message: 'Browse posts by year, tag, or author',
+  message: 'Browse posts by year or tag',
 });
 const YEAR_TITLE = translate({ id: 'blog.archive.section.year', message: 'By Year' });
 const TAGS_TITLE = translate({ id: 'blog.archive.section.tags', message: 'By Tag' });
-const AUTHORS_TITLE = translate({ id: 'blog.archive.section.authors', message: 'By Author' });
 const SEARCH_PLACEHOLDER = translate({
   id: 'blog.archive.search.placeholder',
   message: 'Search Posts',
@@ -133,33 +127,6 @@ function TagsSection({
   );
 }
 
-function AuthorsSection({
-  activePermalink,
-  archiveUrl,
-  localeKey,
-}: {
-  activePermalink?: string;
-  archiveUrl: string;
-  localeKey?: string;
-}) {
-  const authors = useMemo(
-    () => loadOfficialAuthors(localeKey).filter((author) => !!author.page?.permalink),
-    [localeKey]
-  );
-  return (
-    <ArchiveSection id="authors" title={AUTHORS_TITLE} count={authors.length}>
-      <TagChipList
-        items={authors.map((author) => ({
-          to: author.page!.permalink === activePermalink ? archiveUrl : author.page!.permalink,
-          label: author.name ?? author.key,
-          count: author.count,
-          active: author.page!.permalink === activePermalink,
-        }))}
-      />
-    </ArchiveSection>
-  );
-}
-
 export default function BlogArchive({
   posts,
   selected,
@@ -237,7 +204,7 @@ export default function BlogArchive({
     searchResults ??
     selected?.posts ??
     (activeYear === null
-      ? null
+      ? allPosts
       : allPosts.filter(
           (post) => Number(getDateKey(post.metadata.date, timeZone).slice(0, 4)) === activeYear
         ));
@@ -282,11 +249,6 @@ export default function BlogArchive({
         archiveUrl={archiveUrl}
         localeKey={localeKey}
       />
-      <AuthorsSection
-        activePermalink={selected?.kind === 'author' ? selected.permalink : undefined}
-        archiveUrl={archiveUrl}
-        localeKey={localeKey}
-      />
       {searchResults && (
         <div className={styles.searchStatus} role="status">
           {searchResults.length
@@ -294,9 +256,7 @@ export default function BlogArchive({
             : SEARCH_EMPTY}
         </div>
       )}
-      {resultPosts !== null && (!searchResults || resultPosts.length > 0) && (
-        <BlogArchiveList posts={resultPosts} />
-      )}
+      {(!searchResults || resultPosts.length > 0) && <BlogArchiveList posts={resultPosts} />}
     </BlogScaffold>
   );
 }
