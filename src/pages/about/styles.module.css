@@ -1,3 +1,16 @@
+.title {
+  margin: 2rem 0;
+  text-align: center;
+}
+
+.titleText {
+  background: linear-gradient(to right, #0090f7, #ba62fc, #f2416b);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+
 .imageFallback {
   display: flex;
   align-items: center;

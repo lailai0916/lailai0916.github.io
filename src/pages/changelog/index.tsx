@@ -2,9 +2,7 @@ import { type ReactNode } from 'react';
 import clsx from 'clsx';
 import { translate } from '@docusaurus/Translate';
 import Layout from '@theme/Layout';
-import DataCard from '@lailai0916/ui/DataCard';
-import { PageContent, PageHeader, PageTitle } from '@lailai0916/ui/Page';
-import { CHANGELOG_LIST } from '@site/src/data/changelog';
+import { PageContent } from '@lailai0916/ui/Page';
 import { Changelog as ChangelogList } from './_components';
 import styles from './styles.module.css';
 
@@ -16,24 +14,13 @@ const DESCRIPTION = translate({
   id: 'pages.changelog.description',
   message: "Changelog of lailai's Home",
 });
-const MODIFICATION = translate({
-  id: 'pages.changelog.modification',
-  message: 'Site <b>Changelog</b>',
-});
-const ENTRY_LABEL = translate({
-  id: 'pages.changelog.datacard.entries',
-  message: 'Entry|Entries',
-});
 
 export default function Changelog(): ReactNode {
   return (
     <Layout title={TITLE} description={DESCRIPTION}>
-      <PageHeader>
-        <PageTitle title={MODIFICATION} description={DESCRIPTION} />
-        <DataCard value={CHANGELOG_LIST.length} label={ENTRY_LABEL} icon="lucide:history" />
-      </PageHeader>
-      <PageContent>
+      <PageContent className={styles.pageContent}>
         <div className={clsx('markdown', styles.layout)}>
+          <h1 className={styles.title}>{TITLE}</h1>
           <ChangelogList />
         </div>
       </PageContent>

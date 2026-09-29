@@ -3,12 +3,13 @@ import clsx from 'clsx';
 
 import BrowserOnly from '@docusaurus/BrowserOnly';
 import Link from '@docusaurus/Link';
-import { translate } from '@docusaurus/Translate';
+import Translate, { translate } from '@docusaurus/Translate';
 import Giscus from '@giscus/react';
 import { Icon } from '@iconify/react';
 import Card from '@lailai0916/ui/Card';
 import { useColorMode } from '@docusaurus/theme-common';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
+import Heading from '@theme/Heading';
 
 import { DEVICE_LIST } from '@site/src/data/devices';
 import { COMMUNITY_LIST } from '@site/src/data/community';
@@ -19,6 +20,20 @@ const SKILLS_ARIA_LABEL = translate({
   id: 'pages.about.skills.ariaLabel',
   message: 'Tech stack icons',
 });
+
+export function AboutTitle() {
+  return (
+    <section className={styles.title}>
+      <Heading as="h1">
+        {'🎉\xa0'}
+        <span className={styles.titleText}>
+          <Translate id="pages.about.greeting">{"Hello,\xa0I'm\xa0lailai"}</Translate>
+        </span>
+        {'\xa0🥳'}
+      </Heading>
+    </section>
+  );
+}
 
 export function Skills() {
   const [perline, setPerline] = useState(12);

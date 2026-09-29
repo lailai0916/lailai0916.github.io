@@ -1,6 +1,16 @@
+.pageContent {
+  padding-top: 2rem;
+}
+
 .layout {
   max-width: 664px;
   margin: 0 auto;
+}
+
+.layout .title {
+  font-size: 2rem;
+  margin: 2rem 0;
+  text-align: center;
 }
 
 .entries {
