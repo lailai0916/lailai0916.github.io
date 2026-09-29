@@ -1640,9 +1640,6 @@
   "components.browserWindow.openLink": {
     "message": "在新标签页打开链接"
   },
-  "components.desmos.frameTitle": {
-    "message": "Desmos 图形计算器"
-  },
   "components.countdown.event": {
     "message": "我的生日"
   },
@@ -1666,6 +1663,9 @@
   },
   "components.countdown.progress": {
     "message": "年度进度"
+  },
+  "components.desmos.frameTitle": {
+    "message": "Desmos 图形计算器"
   },
   "components.laikitProvider.quoteAttributionDash": {
     "message": "—— "
@@ -1735,6 +1735,39 @@
   },
   "pages.friends.requestSubject": {
     "message": "友链申请"
+  },
+  "pages.resources.title": {
+    "message": "资源"
+  },
+  "pages.resources.description": {
+    "message": "精心筛选的优质工具与平台"
+  },
+  "pages.resources.modification": {
+    "message": "精选<b>资源</b>"
+  },
+  "pages.resources.search.clear": {
+    "message": "清空搜索"
+  },
+  "pages.resources.search.placeholder": {
+    "message": "搜索资源"
+  },
+  "pages.resources.category.ariaLabel": {
+    "message": "资源分类"
+  },
+  "pages.resources.category.clear": {
+    "message": "清除分类"
+  },
+  "pages.resources.category.count": {
+    "message": "{count} 项"
+  },
+  "pages.resources.category.all": {
+    "message": "全部资源"
+  },
+  "pages.resources.datacard.items": {
+    "message": "项资源"
+  },
+  "pages.resources.search.empty": {
+    "message": "没有找到与“{query}”匹配的资源"
   },
   "pages.privacy.title": {
     "message": "隐私政策"
@@ -1985,39 +2018,6 @@
   "pages.settings.loading": {
     "message": "正在加载设置…"
   },
-  "pages.resources.title": {
-    "message": "资源"
-  },
-  "pages.resources.description": {
-    "message": "精心筛选的优质工具与平台"
-  },
-  "pages.resources.modification": {
-    "message": "精选<b>资源</b>"
-  },
-  "pages.resources.search.clear": {
-    "message": "清空搜索"
-  },
-  "pages.resources.search.placeholder": {
-    "message": "搜索资源"
-  },
-  "pages.resources.category.ariaLabel": {
-    "message": "资源分类"
-  },
-  "pages.resources.category.clear": {
-    "message": "清除分类"
-  },
-  "pages.resources.category.count": {
-    "message": "{count} 项"
-  },
-  "pages.resources.category.all": {
-    "message": "全部资源"
-  },
-  "pages.resources.datacard.items": {
-    "message": "项资源"
-  },
-  "pages.resources.search.empty": {
-    "message": "没有找到与“{query}”匹配的资源"
-  },
   "pages.travel.title": {
     "message": "旅行"
   },
@@ -2158,107 +2158,11 @@
   "pages.moments.countLabel": {
     "message": "条动态"
   },
-  "pages.moments.location.hangzhou": {
-    "message": "杭州"
-  },
   "pages.moments.loadMore": {
     "message": "加载更多"
   },
   "pages.moments.noMore": {
     "message": "没有更多动态了"
-  },
-  "pages.moments.weather.error": {
-    "message": "天气数据暂时不可用。"
-  },
-  "pages.moments.weather.retry": {
-    "message": "重试"
-  },
-  "pages.moments.weather.clearSky": {
-    "message": "晴"
-  },
-  "pages.moments.weather.mainlyClear": {
-    "message": "少云"
-  },
-  "pages.moments.weather.partlyCloudy": {
-    "message": "多云"
-  },
-  "pages.moments.weather.overcast": {
-    "message": "阴"
-  },
-  "pages.moments.weather.fog": {
-    "message": "雾"
-  },
-  "pages.moments.weather.depositingRimeFog": {
-    "message": "雾凇"
-  },
-  "pages.moments.weather.lightDrizzle": {
-    "message": "轻度毛毛雨"
-  },
-  "pages.moments.weather.moderateDrizzle": {
-    "message": "中度毛毛雨"
-  },
-  "pages.moments.weather.denseDrizzle": {
-    "message": "浓毛毛雨"
-  },
-  "pages.moments.weather.lightFreezingDrizzle": {
-    "message": "轻度冻毛毛雨"
-  },
-  "pages.moments.weather.denseFreezingDrizzle": {
-    "message": "浓冻毛毛雨"
-  },
-  "pages.moments.weather.slightRain": {
-    "message": "小雨"
-  },
-  "pages.moments.weather.moderateRain": {
-    "message": "中雨"
-  },
-  "pages.moments.weather.heavyRain": {
-    "message": "大雨"
-  },
-  "pages.moments.weather.lightFreezingRain": {
-    "message": "轻度冻雨"
-  },
-  "pages.moments.weather.heavyFreezingRain": {
-    "message": "强冻雨"
-  },
-  "pages.moments.weather.slightSnowFall": {
-    "message": "小雪"
-  },
-  "pages.moments.weather.moderateSnowFall": {
-    "message": "中雪"
-  },
-  "pages.moments.weather.heavySnowFall": {
-    "message": "大雪"
-  },
-  "pages.moments.weather.snowGrains": {
-    "message": "米雪"
-  },
-  "pages.moments.weather.slightRainShowers": {
-    "message": "弱阵雨"
-  },
-  "pages.moments.weather.moderateRainShowers": {
-    "message": "中阵雨"
-  },
-  "pages.moments.weather.violentRainShowers": {
-    "message": "强阵雨"
-  },
-  "pages.moments.weather.slightSnowShowers": {
-    "message": "弱阵雪"
-  },
-  "pages.moments.weather.heavySnowShowers": {
-    "message": "强阵雪"
-  },
-  "pages.moments.weather.thunderstorm": {
-    "message": "雷暴"
-  },
-  "pages.moments.weather.thunderstormSlightHail": {
-    "message": "雷暴伴轻度冰雹"
-  },
-  "pages.moments.weather.thunderstormHeavyHail": {
-    "message": "雷暴伴强冰雹"
-  },
-  "pages.moments.weather.unknown": {
-    "message": "未知"
   },
   "pages.overview.title": {
     "message": "概览"
@@ -2421,11 +2325,11 @@
   "pages.insights.heartbeat.noData": {
     "message": "暂无数据"
   },
-  "pages.insights.refreshError": {
-    "message": "更新失败，正在显示上次的数据。"
-  },
   "pages.insights.retry": {
     "message": "重试"
+  },
+  "pages.insights.refreshError": {
+    "message": "更新失败，正在显示上次的数据。"
   },
   "pages.insights.systemStatus.cores": {
     "message": "核心"
@@ -2859,9 +2763,6 @@
     "message": "切换浅色/暗黑模式（当前为{mode}）",
     "description": "The ARIA label for the color mode toggle"
   },
-  "theme.docs.versionBadge.label": {
-    "message": "版本：{versionLabel}"
-  },
   "theme.docs.tagDocListPageTitle.nDocsTagged": {
     "message": "{count} 篇文档带有标签",
     "description": "Pluralized label for \"{count} docs tagged\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
@@ -2870,9 +2771,8 @@
     "message": "{nDocsTagged}「{tagName}」",
     "description": "The title of the page for a docs tag"
   },
-  "theme.common.editThisPage": {
-    "message": "编辑此页",
-    "description": "The link label to edit the current page"
+  "theme.docs.versionBadge.label": {
+    "message": "版本：{versionLabel}"
   },
   "theme.docs.versions.unreleasedVersionLabel": {
     "message": "此为 {siteTitle} {versionLabel} 版尚未发行的文档。",
@@ -2889,6 +2789,10 @@
   "theme.docs.versions.latestVersionLinkLabel": {
     "message": "最新版本",
     "description": "The label used for the latest version suggestion link label"
+  },
+  "theme.common.editThisPage": {
+    "message": "编辑此页",
+    "description": "The link label to edit the current page"
   },
   "theme.common.headingLinkTitle": {
     "message": "{heading}的直接链接",
@@ -2962,13 +2866,13 @@
     "message": "主导航",
     "description": "The ARIA label for the main navigation"
   },
-  "theme.navbar.mobileLanguageDropdown.label": {
-    "message": "选择语言",
-    "description": "The label for the mobile language switcher dropdown"
-  },
   "theme.NotFound.p2": {
     "message": "请联系原始链接来源网站的所有者，并告知他们链接已损坏。",
     "description": "The 2nd paragraph of the 404 page"
+  },
+  "theme.navbar.mobileLanguageDropdown.label": {
+    "message": "选择语言",
+    "description": "The label for the mobile language switcher dropdown"
   },
   "theme.TOCCollapsible.toggleButtonLabel": {
     "message": "本页总览",
@@ -3002,10 +2906,6 @@
     "message": "切换自动换行",
     "description": "The title attribute for toggle word wrapping button of code block lines"
   },
-  "theme.docs.sidebar.navAriaLabel": {
-    "message": "文档侧边栏",
-    "description": "The ARIA label for the sidebar navigation"
-  },
   "theme.docs.sidebar.collapseButtonTitle": {
     "message": "收起侧边栏",
     "description": "The title attribute for collapse button of doc sidebar"
@@ -3013,6 +2913,18 @@
   "theme.docs.sidebar.collapseButtonAriaLabel": {
     "message": "收起侧边栏",
     "description": "The title attribute for collapse button of doc sidebar"
+  },
+  "theme.docs.sidebar.navAriaLabel": {
+    "message": "文档侧边栏",
+    "description": "The ARIA label for the sidebar navigation"
+  },
+  "theme.navbar.mobileDropdown.collapseButton.expandAriaLabel": {
+    "message": "展开下拉菜单",
+    "description": "The ARIA label of the button to expand the mobile dropdown navbar item"
+  },
+  "theme.navbar.mobileDropdown.collapseButton.collapseAriaLabel": {
+    "message": "折叠下拉菜单",
+    "description": "The ARIA label of the button to collapse the mobile dropdown navbar item"
   },
   "theme.docs.sidebar.closeSidebarButtonAriaLabel": {
     "message": "关闭导航栏",
@@ -3025,14 +2937,6 @@
   "theme.docs.sidebar.toggleSidebarButtonAriaLabel": {
     "message": "切换导航栏",
     "description": "The ARIA label for hamburger menu button of mobile navigation"
-  },
-  "theme.navbar.mobileDropdown.collapseButton.expandAriaLabel": {
-    "message": "展开下拉菜单",
-    "description": "The ARIA label of the button to expand the mobile dropdown navbar item"
-  },
-  "theme.navbar.mobileDropdown.collapseButton.collapseAriaLabel": {
-    "message": "折叠下拉菜单",
-    "description": "The ARIA label of the button to collapse the mobile dropdown navbar item"
   },
   "theme.docs.sidebar.expandButtonTitle": {
     "message": "展开侧边栏",

@@ -54,33 +54,6 @@
   color: var(--ifm-color-emphasis-600);
 }
 
-.headerWeather {
-  margin-top: 0.9rem;
-  padding-top: 0.85rem;
-  border-top: 1px solid var(--ifm-color-emphasis-200);
-}
-
-.headerWeather > div {
-  margin-bottom: 0;
-}
-
-/* Placeholder matching one MetaBar row (0.825rem × 1.65 line-height) so the
-   weather bar reserves its space and doesn't shift in once fetched. */
-.weatherSkeleton {
-  width: 100%;
-  height: calc(0.825rem * 1.65);
-  border-radius: 6px;
-}
-
-.weatherError {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  min-height: calc(0.825rem * 1.65);
-  color: var(--ifm-color-emphasis-600);
-  font-size: 0.875rem;
-}
-
 /* Moment content body */
 
 .momentContent {
