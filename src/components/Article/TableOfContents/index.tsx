@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import clsx from 'clsx';
 import { Icon } from '@iconify/react';
 import Link from '@docusaurus/Link';
@@ -65,6 +65,7 @@ export default function TableOfContents({
   collapsible?: boolean;
 }) {
   const progress = useScrollProgress();
+  const disclosureRef = useRef<HTMLDetailsElement>(null);
   const linkClassName = collapsible ? 'article-toc-link-collapsible' : 'article-toc-link-full';
   const highlightConfig = useMemo<TOCHighlightConfig | undefined>(() => {
     if (!toc.length) return undefined;
@@ -97,6 +98,9 @@ export default function TableOfContents({
                 <Link
                   to={`#${encodeURIComponent(item.id)}`}
                   className={clsx(styles.tocLink, linkClassName)}
+                  onClick={() => {
+                    if (disclosureRef.current) disclosureRef.current.open = false;
+                  }}
                   dangerouslySetInnerHTML={{ __html: item.value }}
                 />
               </li>
@@ -119,7 +123,7 @@ export default function TableOfContents({
       aria-label={CONTENTS_LABEL}
     >
       {collapsible ? (
-        <details className={styles.tocDisclosure}>
+        <details ref={disclosureRef} className={styles.tocDisclosure}>
           <summary className={styles.tocDisclosureSummary}>
             {header}
             <span className={styles.tocDisclosureChevron} aria-hidden="true">

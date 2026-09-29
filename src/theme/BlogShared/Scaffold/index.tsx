@@ -82,18 +82,25 @@ type Props = {
 };
 
 export default function BlogScaffold({ title, description, children, toc }: Props) {
+  const hasToc = toc && toc.length > 0;
+
   return (
     <Layout title={title} description={description}>
       <div className={styles.container}>
         <main className={styles.main}>
           <BlogSectionNav />
-          {toc && toc.length > 0 && (
-            <div className={styles.postToc}>
+          {hasToc && (
+            <div className={styles.postTocInline}>
               <TableOfContents toc={toc} withCard={false} collapsible />
             </div>
           )}
           {children}
         </main>
+        {hasToc && (
+          <aside className={styles.postTocDesktop}>
+            <TableOfContents toc={toc} withCard={false} />
+          </aside>
+        )}
       </div>
     </Layout>
   );

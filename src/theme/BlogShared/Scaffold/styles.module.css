@@ -3,6 +3,7 @@
 }
 
 .container {
+  position: relative;
   width: 100%;
   max-width: 960px;
   margin-inline: auto;
@@ -16,12 +17,59 @@
   gap: 1rem;
 }
 
-.postToc > nav {
+.main :global(.markdown) :is(h2, h3, h4, h5, h6)[id] {
+  scroll-margin-top: calc(var(--ifm-navbar-height) + 1rem);
+}
+
+@media (min-width: 997px) and (max-width: 1399px) {
+  .main :global(.markdown) :is(h2, h3, h4, h5, h6)[id] {
+    scroll-margin-top: calc(var(--ifm-navbar-height) + 3.5rem);
+  }
+}
+
+.postTocInline > nav {
   margin: 0;
+}
+
+@media (min-width: 997px) and (max-width: 1399px) {
+  .postTocInline {
+    position: sticky;
+    top: var(--ifm-navbar-height);
+    z-index: 1;
+    background: var(--ifm-card-background-color);
+  }
+}
+
+@media (min-width: 1400px) {
+  .postTocInline {
+    display: none;
+  }
+}
+
+.postTocDesktop {
+  display: none;
+}
+
+@media (min-width: 1400px) {
+  .postTocDesktop {
+    display: block;
+    position: absolute;
+    top: 2rem;
+    bottom: 0;
+    left: calc(100% + 1rem);
+    width: min(240px, calc((100vw - 960px) / 2 - 2rem));
+  }
 }
 
 @media (max-width: 996px) {
   .container {
     padding: 1rem;
+  }
+}
+
+@media print {
+  .postTocInline,
+  .postTocDesktop {
+    display: none;
   }
 }
