@@ -314,18 +314,12 @@ export default function Resources(): ReactNode {
                   message={translate(
                     {
                       id: 'pages.resources.search.empty',
-                      message: 'No resources found matching "{query}".',
+                      message: 'No resources match "{query}"',
                     },
-                    { query: searchQuery }
+                    { query: searchQuery.trim() }
                   )}
                   action={
-                    <Button
-                      variant="secondary"
-                      onClick={() => {
-                        setSearchQuery('');
-                        setActiveCategory('all');
-                      }}
-                    >
+                    <Button variant="secondary" onClick={() => setSearchQuery('')}>
                       {CLEAR_SEARCH}
                     </Button>
                   }

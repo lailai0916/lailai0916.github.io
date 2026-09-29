@@ -5,9 +5,10 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import useIsBrowser from '@docusaurus/useIsBrowser';
 import { useLocation } from '@docusaurus/router';
 import { translate } from '@docusaurus/Translate';
-import { usePluralForm } from '@docusaurus/theme-common';
 import { Icon } from '@iconify/react';
+import Button from '@lailai0916/ui/Button';
 import Card from '@lailai0916/ui/Card';
+import DataState from '@lailai0916/ui/DataState';
 import { useVisitorTimeZone } from '@site/src/hooks/useVisitorTimeZone';
 import { getDateKey } from '@site/src/utils/dateTime';
 import { getAllBlogItems, getAllPostMetadata, loadOfficialTags } from '@site/src/utils/blogData';
@@ -45,11 +46,6 @@ const SEARCH_PLACEHOLDER = translate({
   message: 'Search Posts',
 });
 const CLEAR_SEARCH = translate({ id: 'blog.archive.search.clear', message: 'Clear search' });
-const SEARCH_RESULTS = translate({ id: 'blog.archive.search.results', message: 'result|results' });
-const SEARCH_EMPTY = translate({
-  id: 'blog.archive.search.empty',
-  message: 'No matching posts',
-});
 
 function ArchiveSection({
   id,
@@ -136,7 +132,6 @@ export default function BlogArchive({
 }) {
   const archiveUrl = useBaseUrl('/blog/archive');
   const { i18n, siteConfig } = useDocusaurusContext();
-  const { selectMessage } = usePluralForm();
   const { search } = useLocation();
   const isBrowser = useIsBrowser();
   const timeZone = useVisitorTimeZone();
@@ -249,11 +244,22 @@ export default function BlogArchive({
         archiveUrl={archiveUrl}
         localeKey={localeKey}
       />
-      {searchResults && (
-        <div className={styles.searchStatus} role="status">
-          {searchResults.length
-            ? `${searchResults.length} ${selectMessage(searchResults.length, SEARCH_RESULTS)}`
-            : SEARCH_EMPTY}
+      {searchResults && searchResults.length === 0 && (
+        <div role="status">
+          <DataState
+            message={translate(
+              {
+                id: 'blog.archive.search.empty',
+                message: 'No posts match "{query}"',
+              },
+              { query: query.trim() }
+            )}
+            action={
+              <Button variant="secondary" onClick={() => setQuery('')}>
+                {CLEAR_SEARCH}
+              </Button>
+            }
+          />
         </div>
       )}
       {(!searchResults || resultPosts.length > 0) && <BlogArchiveList posts={resultPosts} />}

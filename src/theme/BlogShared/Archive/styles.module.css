@@ -84,11 +84,6 @@
   height: 1rem;
 }
 
-.searchStatus {
-  color: var(--ifm-color-emphasis-700);
-  font-size: 0.9rem;
-}
-
 .sectionHeader {
   display: flex;
   align-items: baseline;

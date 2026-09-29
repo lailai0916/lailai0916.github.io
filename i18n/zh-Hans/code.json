@@ -1640,6 +1640,9 @@
   "components.browserWindow.openLink": {
     "message": "在新标签页打开链接"
   },
+  "components.desmos.frameTitle": {
+    "message": "Desmos 图形计算器"
+  },
   "components.countdown.event": {
     "message": "我的生日"
   },
@@ -1663,9 +1666,6 @@
   },
   "components.countdown.progress": {
     "message": "年度进度"
-  },
-  "components.desmos.frameTitle": {
-    "message": "Desmos 图形计算器"
   },
   "components.laikitProvider.quoteAttributionDash": {
     "message": "—— "
@@ -1735,6 +1735,48 @@
   },
   "pages.friends.requestSubject": {
     "message": "友链申请"
+  },
+  "pages.privacy.title": {
+    "message": "隐私政策"
+  },
+  "pages.privacy.description": {
+    "message": "lailai's Home 如何处理您的信息"
+  },
+  "pages.privacy.modification": {
+    "message": "隐私<b>政策</b>"
+  },
+  "pages.privacy.lastUpdated": {
+    "message": "最后更新"
+  },
+  "pages.privacy.summary.account.title": {
+    "message": "无需账户"
+  },
+  "pages.privacy.summary.account.description": {
+    "message": "无需注册或登录即可浏览本站。"
+  },
+  "pages.privacy.summary.advertising.title": {
+    "message": "不做定向广告"
+  },
+  "pages.privacy.summary.advertising.description": {
+    "message": "本站不会出售数据，也不会用它建立广告画像。"
+  },
+  "pages.privacy.summary.control.title": {
+    "message": "浏览器控制"
+  },
+  "pages.privacy.summary.control.description": {
+    "message": "您可以随时清除偏好设置或屏蔽可选请求。"
+  },
+  "pages.privacy.summary.title": {
+    "message": "隐私概览"
+  },
+  "pages.privacy.contact.label": {
+    "message": "隐私相关联系"
+  },
+  "pages.privacy.contact.subject": {
+    "message": "隐私请求 — lailai's Home"
+  },
+  "pages.privacy.contact.template": {
+    "message": "请求类型：\n相关页面或服务：\n具体说明："
   },
   "pages.insights.title": {
     "message": "洞察"
@@ -1841,81 +1883,6 @@
   "pages.insights.audience.title": {
     "message": "访客分析"
   },
-  "pages.privacy.title": {
-    "message": "隐私政策"
-  },
-  "pages.privacy.description": {
-    "message": "lailai's Home 如何处理您的信息"
-  },
-  "pages.privacy.modification": {
-    "message": "隐私<b>政策</b>"
-  },
-  "pages.privacy.lastUpdated": {
-    "message": "最后更新"
-  },
-  "pages.privacy.summary.account.title": {
-    "message": "无需账户"
-  },
-  "pages.privacy.summary.account.description": {
-    "message": "无需注册或登录即可浏览本站。"
-  },
-  "pages.privacy.summary.advertising.title": {
-    "message": "不做定向广告"
-  },
-  "pages.privacy.summary.advertising.description": {
-    "message": "本站不会出售数据，也不会用它建立广告画像。"
-  },
-  "pages.privacy.summary.control.title": {
-    "message": "浏览器控制"
-  },
-  "pages.privacy.summary.control.description": {
-    "message": "您可以随时清除偏好设置或屏蔽可选请求。"
-  },
-  "pages.privacy.summary.title": {
-    "message": "隐私概览"
-  },
-  "pages.privacy.contact.label": {
-    "message": "隐私相关联系"
-  },
-  "pages.privacy.contact.subject": {
-    "message": "隐私请求 — lailai's Home"
-  },
-  "pages.privacy.contact.template": {
-    "message": "请求类型：\n相关页面或服务：\n具体说明："
-  },
-  "pages.resources.title": {
-    "message": "资源"
-  },
-  "pages.resources.description": {
-    "message": "精心筛选的优质工具与平台"
-  },
-  "pages.resources.modification": {
-    "message": "精选<b>资源</b>"
-  },
-  "pages.resources.search.clear": {
-    "message": "清空搜索"
-  },
-  "pages.resources.search.placeholder": {
-    "message": "搜索资源"
-  },
-  "pages.resources.category.ariaLabel": {
-    "message": "资源分类"
-  },
-  "pages.resources.category.clear": {
-    "message": "清除分类"
-  },
-  "pages.resources.category.count": {
-    "message": "{count} 项"
-  },
-  "pages.resources.category.all": {
-    "message": "全部资源"
-  },
-  "pages.resources.datacard.items": {
-    "message": "项资源"
-  },
-  "pages.resources.search.empty": {
-    "message": "找不到和“{query}”相符的资源。"
-  },
   "pages.settings.title": {
     "message": "设置"
   },
@@ -2017,6 +1984,39 @@
   },
   "pages.settings.loading": {
     "message": "正在加载设置…"
+  },
+  "pages.resources.title": {
+    "message": "资源"
+  },
+  "pages.resources.description": {
+    "message": "精心筛选的优质工具与平台"
+  },
+  "pages.resources.modification": {
+    "message": "精选<b>资源</b>"
+  },
+  "pages.resources.search.clear": {
+    "message": "清空搜索"
+  },
+  "pages.resources.search.placeholder": {
+    "message": "搜索资源"
+  },
+  "pages.resources.category.ariaLabel": {
+    "message": "资源分类"
+  },
+  "pages.resources.category.clear": {
+    "message": "清除分类"
+  },
+  "pages.resources.category.count": {
+    "message": "{count} 项"
+  },
+  "pages.resources.category.all": {
+    "message": "全部资源"
+  },
+  "pages.resources.datacard.items": {
+    "message": "项资源"
+  },
+  "pages.resources.search.empty": {
+    "message": "没有找到与“{query}”匹配的资源"
   },
   "pages.travel.title": {
     "message": "旅行"
@@ -2303,13 +2303,10 @@
     "message": "搜索文章"
   },
   "blog.archive.search.clear": {
-    "message": "清除搜索"
-  },
-  "blog.archive.search.results": {
-    "message": "条结果"
+    "message": "清空搜索"
   },
   "blog.archive.search.empty": {
-    "message": "没有找到匹配的文章"
+    "message": "没有找到与“{query}”匹配的文章"
   },
   "blog.post.empty": {
     "message": "暂无文章"
@@ -2862,6 +2859,9 @@
     "message": "切换浅色/暗黑模式（当前为{mode}）",
     "description": "The ARIA label for the color mode toggle"
   },
+  "theme.docs.versionBadge.label": {
+    "message": "版本：{versionLabel}"
+  },
   "theme.docs.tagDocListPageTitle.nDocsTagged": {
     "message": "{count} 篇文档带有标签",
     "description": "Pluralized label for \"{count} docs tagged\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
@@ -2869,9 +2869,6 @@
   "theme.docs.tagDocListPageTitle": {
     "message": "{nDocsTagged}「{tagName}」",
     "description": "The title of the page for a docs tag"
-  },
-  "theme.docs.versionBadge.label": {
-    "message": "版本：{versionLabel}"
   },
   "theme.common.editThisPage": {
     "message": "编辑此页",
@@ -2965,13 +2962,13 @@
     "message": "主导航",
     "description": "The ARIA label for the main navigation"
   },
-  "theme.NotFound.p2": {
-    "message": "请联系原始链接来源网站的所有者，并告知他们链接已损坏。",
-    "description": "The 2nd paragraph of the 404 page"
-  },
   "theme.navbar.mobileLanguageDropdown.label": {
     "message": "选择语言",
     "description": "The label for the mobile language switcher dropdown"
+  },
+  "theme.NotFound.p2": {
+    "message": "请联系原始链接来源网站的所有者，并告知他们链接已损坏。",
+    "description": "The 2nd paragraph of the 404 page"
   },
   "theme.TOCCollapsible.toggleButtonLabel": {
     "message": "本页总览",
@@ -3005,6 +3002,10 @@
     "message": "切换自动换行",
     "description": "The title attribute for toggle word wrapping button of code block lines"
   },
+  "theme.docs.sidebar.navAriaLabel": {
+    "message": "文档侧边栏",
+    "description": "The ARIA label for the sidebar navigation"
+  },
   "theme.docs.sidebar.collapseButtonTitle": {
     "message": "收起侧边栏",
     "description": "The title attribute for collapse button of doc sidebar"
@@ -3012,10 +3013,6 @@
   "theme.docs.sidebar.collapseButtonAriaLabel": {
     "message": "收起侧边栏",
     "description": "The title attribute for collapse button of doc sidebar"
-  },
-  "theme.docs.sidebar.navAriaLabel": {
-    "message": "文档侧边栏",
-    "description": "The ARIA label for the sidebar navigation"
   },
   "theme.docs.sidebar.closeSidebarButtonAriaLabel": {
     "message": "关闭导航栏",
