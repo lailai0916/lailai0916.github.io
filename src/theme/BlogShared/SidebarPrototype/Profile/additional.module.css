@@ -1,0 +1,250 @@
+.card {
+  width: 100%;
+}
+
+.identity {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  min-width: 0;
+}
+
+.identityText {
+  min-width: 0;
+}
+
+.name {
+  color: var(--ifm-font-color-base);
+  font-size: 1.05rem;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.muted {
+  color: var(--ifm-color-emphasis-700);
+  font-size: 0.79rem;
+  line-height: 1.45;
+}
+
+.eyebrow {
+  color: var(--ifm-color-emphasis-700);
+  font-size: 0.72rem;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.inlineLink,
+.actionLink,
+.numberedLink,
+.featuredPost {
+  color: var(--ifm-font-color-base);
+  text-decoration: none;
+}
+
+.inlineLink {
+  font-size: 0.82rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.actionLink {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.5rem;
+  min-width: 0;
+  padding-top: 0.7rem;
+  border-top: 1px solid var(--ifm-color-emphasis-300);
+  font-size: 0.84rem;
+  font-weight: 600;
+}
+
+.actionLink span:first-child {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.actionLink span:last-child {
+  flex-shrink: 0;
+}
+
+.inlineLink:hover,
+.actionLink:hover,
+.numberedLink:hover,
+.featuredPost:hover {
+  color: var(--ifm-color-primary);
+  text-decoration: none;
+}
+
+.inlineLink:focus-visible,
+.actionLink:focus-visible,
+.numberedLink:focus-visible,
+.featuredPost:focus-visible {
+  border-radius: var(--ifm-global-radius);
+  outline: none;
+  box-shadow: var(--lk-focus-ring);
+}
+
+.columnFooter {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin-top: 0.9rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--ifm-color-emphasis-300);
+}
+
+.timelineHeader,
+.timelineFooter,
+.introHeader,
+.coverHeader,
+.coverFooter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.years {
+  margin: 0.65rem 0;
+  color: var(--ifm-font-color-base);
+  font-size: 1.6rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.04em;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
+.years span {
+  color: var(--ifm-color-emphasis-500);
+  font-weight: 400;
+}
+
+.timelineFooter {
+  padding-top: 0.7rem;
+  border-top: 1px solid var(--ifm-color-emphasis-300);
+}
+
+.metrics {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.75rem;
+  margin: 0.9rem 0;
+}
+
+.metrics div {
+  display: flex;
+  flex-direction: column-reverse;
+  padding: 0.65rem 0.75rem;
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-radius: var(--ifm-global-radius);
+}
+
+.metrics dt {
+  color: var(--ifm-color-emphasis-700);
+  font-size: 0.72rem;
+}
+
+.metrics dd {
+  margin: 0;
+  color: var(--ifm-font-color-base);
+  font-size: 1.25rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  line-height: 1.25;
+}
+
+.compactIdentity {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.82rem;
+  font-weight: 600;
+}
+
+.featuredPost {
+  display: -webkit-box;
+  overflow: hidden;
+  margin-top: 0.75rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  line-height: 1.45;
+  overflow-wrap: break-word;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.tags {
+  margin-top: 0.85rem;
+}
+
+.projectFocus {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  margin: 0.95rem 0 0.75rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--ifm-color-emphasis-300);
+}
+
+.projectFocus .actionLink {
+  padding-top: 0;
+  border-top: 0;
+  font-size: 0.95rem;
+}
+
+.directory {
+  margin-top: 0.85rem;
+}
+
+.numberedLink {
+  display: flex;
+  align-items: baseline;
+  gap: 0.6rem;
+  padding: 0.55rem 0;
+  border-top: 1px solid var(--ifm-color-emphasis-300);
+  font-size: 0.84rem;
+}
+
+.numberedLink span:nth-child(2) {
+  flex: 1;
+  min-width: 0;
+}
+
+.number {
+  color: var(--ifm-color-emphasis-500);
+  font-family: var(--ifm-font-family-monospace);
+  font-size: 0.73rem;
+}
+
+.introText {
+  margin: 0.8rem 0 0.9rem;
+  color: var(--ifm-font-color-base);
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.contactLinks {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  margin-top: 0.95rem;
+}
+
+.coverName {
+  margin: 0.65rem 0 0.1rem;
+  color: var(--ifm-font-color-base);
+  font-size: 1.75rem;
+  font-weight: 700;
+  letter-spacing: -0.035em;
+  line-height: 1.15;
+}
+
+.coverFooter {
+  margin-top: 1rem;
+  padding-top: 0.7rem;
+  border-top: 1px solid var(--ifm-color-emphasis-300);
+}

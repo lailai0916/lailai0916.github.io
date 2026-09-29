@@ -1,0 +1,57 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 0.55rem;
+}
+
+.picker {
+  display: flex;
+  align-items: end;
+  gap: 0.35rem;
+  width: 100%;
+  margin-bottom: 0.45rem;
+}
+
+.pickerLabel {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 0.3rem;
+  min-width: 0;
+  margin: 0;
+}
+
+.pickerLabel span {
+  color: var(--ifm-color-emphasis-700);
+  font-size: 0.7rem;
+  font-weight: 650;
+}
+
+.pickerLabel select {
+  width: 100%;
+  height: 36px;
+  padding: 0.25rem 0.45rem;
+  border: 1px solid var(--ifm-color-emphasis-400);
+  border-radius: var(--ifm-global-radius);
+  background: var(--ifm-background-surface-color, var(--ifm-background-color));
+  color: var(--ifm-font-color-base);
+  font: inherit;
+  font-size: 0.77rem;
+}
+
+.pickerArrows {
+  display: flex;
+  gap: 0.25rem;
+}
+
+.pickerArrows button {
+  width: 36px;
+  height: 36px;
+  padding: 0;
+}
+.pickerLabel select:focus-visible,
+.pickerArrows button:focus-visible {
+  outline: none;
+  box-shadow: var(--lk-focus-ring);
+}

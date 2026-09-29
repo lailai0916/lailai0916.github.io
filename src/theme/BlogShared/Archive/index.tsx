@@ -1,14 +1,21 @@
-import { useMemo, type ReactNode } from 'react';
+import { useMemo, useState, type ReactNode } from 'react';
 import Head from '@docusaurus/Head';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import useIsBrowser from '@docusaurus/useIsBrowser';
 import { useLocation } from '@docusaurus/router';
 import { translate } from '@docusaurus/Translate';
+import { usePluralForm } from '@docusaurus/theme-common';
+import { Icon } from '@iconify/react';
 import Card from '@lailai0916/ui/Card';
 import { useVisitorTimeZone } from '@site/src/hooks/useVisitorTimeZone';
 import { getDateKey } from '@site/src/utils/dateTime';
-import { getAllBlogItems, loadOfficialAuthors, loadOfficialTags } from '@site/src/utils/blogData';
+import {
+  getAllBlogItems,
+  getAllPostMetadata,
+  loadOfficialAuthors,
+  loadOfficialTags,
+} from '@site/src/utils/blogData';
 import { TagChipList } from '../BlogUI';
 import BlogScaffold from '../Scaffold';
 import { BlogArchiveList } from '../ArchiveList';
@@ -39,6 +46,16 @@ const PAGE_DESCRIPTION = translate({
 const YEAR_TITLE = translate({ id: 'blog.archive.section.year', message: 'By Year' });
 const TAGS_TITLE = translate({ id: 'blog.archive.section.tags', message: 'By Tag' });
 const AUTHORS_TITLE = translate({ id: 'blog.archive.section.authors', message: 'By Author' });
+const SEARCH_PLACEHOLDER = translate({
+  id: 'blog.archive.search.placeholder',
+  message: 'Search Posts',
+});
+const CLEAR_SEARCH = translate({ id: 'blog.archive.search.clear', message: 'Clear search' });
+const SEARCH_RESULTS = translate({ id: 'blog.archive.search.results', message: 'result|results' });
+const SEARCH_EMPTY = translate({
+  id: 'blog.archive.search.empty',
+  message: 'No matching posts',
+});
 
 function ArchiveSection({
   id,
@@ -152,10 +169,16 @@ export default function BlogArchive({
 }) {
   const archiveUrl = useBaseUrl('/blog/archive');
   const { i18n, siteConfig } = useDocusaurusContext();
+  const { selectMessage } = usePluralForm();
   const { search } = useLocation();
   const isBrowser = useIsBrowser();
   const timeZone = useVisitorTimeZone();
+  const [query, setQuery] = useState('');
   const localeKey = i18n.currentLocale === i18n.defaultLocale ? undefined : i18n.currentLocale;
+  const postMetadata = useMemo(
+    () => new Map(getAllPostMetadata().map((item) => [item.permalink, item])),
+    []
+  );
   const allPosts = useMemo<readonly PostLike[]>(
     () =>
       posts ??
@@ -181,7 +204,38 @@ export default function BlogArchive({
     !selected && isBrowser && years.some(({ year }) => year === requestedYear)
       ? requestedYear
       : null;
+  const normalizedQuery = query.trim().toLocaleLowerCase(i18n.currentLocale);
+  const searchResults = useMemo(
+    () =>
+      normalizedQuery
+        ? allPosts
+            .filter((post) => {
+              const detail = postMetadata.get(post.metadata.permalink);
+              return [
+                post.metadata.title,
+                ...(detail?.tags.map((tag) => tag.label ?? '') ?? []),
+                ...(detail?.authors?.map((author) => author.name ?? author.key) ?? []),
+              ].some((value) =>
+                value.toLocaleLowerCase(i18n.currentLocale).includes(normalizedQuery)
+              );
+            })
+            .map((post) => ({
+              metadata: {
+                ...post.metadata,
+                tags:
+                  post.metadata.tags ??
+                  postMetadata
+                    .get(post.metadata.permalink)
+                    ?.tags.filter((tag): tag is { label: string; permalink: string } =>
+                      Boolean(tag.label && tag.permalink)
+                    ),
+              },
+            }))
+        : null,
+    [allPosts, i18n.currentLocale, normalizedQuery, postMetadata]
+  );
   const resultPosts =
+    searchResults ??
     selected?.posts ??
     (activeYear === null
       ? null
@@ -198,6 +252,31 @@ export default function BlogArchive({
       <Head>
         <link rel="canonical" href={new URL(canonical, siteConfig.url).href} />
       </Head>
+      <Card padding={0} className={styles.searchCard}>
+        <div className={styles.searchField}>
+          <span className={styles.searchIcon} aria-hidden="true">
+            <Icon icon="lucide:search" />
+          </span>
+          <input
+            type="search"
+            className={styles.searchInput}
+            value={query}
+            onChange={(event) => setQuery(event.target.value)}
+            placeholder={SEARCH_PLACEHOLDER}
+            aria-label={SEARCH_PLACEHOLDER}
+          />
+          {query && (
+            <button
+              type="button"
+              className={styles.searchClear}
+              onClick={() => setQuery('')}
+              aria-label={CLEAR_SEARCH}
+            >
+              <Icon icon="lucide:x" aria-hidden />
+            </button>
+          )}
+        </div>
+      </Card>
       <YearSection years={years} activeYear={activeYear} archiveUrl={archiveUrl} />
       <TagsSection
         activePermalink={selected?.kind === 'tag' ? selected.permalink : undefined}
@@ -209,7 +288,16 @@ export default function BlogArchive({
         archiveUrl={archiveUrl}
         localeKey={localeKey}
       />
-      {resultPosts !== null && <BlogArchiveList posts={resultPosts} />}
+      {searchResults && (
+        <div className={styles.searchStatus} role="status">
+          {searchResults.length
+            ? `${searchResults.length} ${selectMessage(searchResults.length, SEARCH_RESULTS)}`
+            : SEARCH_EMPTY}
+        </div>
+      )}
+      {resultPosts !== null && (!searchResults || resultPosts.length > 0) && (
+        <BlogArchiveList posts={resultPosts} />
+      )}
     </BlogScaffold>
   );
 }

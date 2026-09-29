@@ -1,0 +1,146 @@
+.card {
+  width: 100%;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.postLink,
+.footerLink {
+  color: var(--ifm-font-color-base);
+  font-size: 0.84rem;
+  line-height: 1.4;
+  text-decoration: none;
+  overflow-wrap: anywhere;
+}
+
+.postLink:hover,
+.footerLink:hover {
+  color: var(--ifm-color-primary);
+  text-decoration: none;
+}
+
+.postLink:focus-visible,
+.footerLink:focus-visible {
+  border-radius: var(--ifm-global-radius);
+  outline: none;
+  box-shadow: var(--lk-focus-ring);
+}
+
+.postLink {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.supporting,
+.empty {
+  color: var(--ifm-color-emphasis-700);
+  font-size: 0.77rem;
+}
+
+.footerLink {
+  width: 100%;
+  padding-top: 0.7rem;
+  border-top: 1px solid var(--ifm-color-emphasis-300);
+  color: var(--ifm-color-primary);
+  font-size: 0.78rem;
+  font-weight: 600;
+}
+
+.action {
+  align-self: flex-start;
+}
+
+.input {
+  width: 100%;
+  min-height: 38px;
+  padding: 0.45rem 0.65rem;
+  border: 1px solid var(--ifm-color-emphasis-400);
+  border-radius: var(--ifm-global-radius);
+  background: var(--ifm-background-color);
+  color: var(--ifm-font-color-base);
+  font: inherit;
+  font-size: 0.82rem;
+}
+
+.input:focus-visible,
+.badgeButton:focus-visible,
+.monthList button:focus-visible {
+  outline: none;
+  box-shadow: var(--lk-focus-ring);
+}
+
+.badgeChoices {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.badgeButton {
+  padding: 0;
+  border: 0;
+  border-radius: var(--ifm-global-radius);
+  background: transparent;
+  cursor: pointer;
+  font: inherit;
+}
+
+.monthList,
+.postList {
+  display: flex;
+  flex-direction: column;
+}
+
+.monthList button {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.5rem;
+  padding: 0.38rem 0;
+  border: 0;
+  border-top: 1px solid var(--ifm-color-emphasis-300);
+  background: transparent;
+  color: var(--ifm-font-color-base);
+  cursor: pointer;
+  font: inherit;
+  font-size: 0.8rem;
+  text-align: left;
+}
+
+.monthList button span:last-child {
+  color: var(--ifm-color-emphasis-700);
+  font-size: 0.75rem;
+}
+
+.monthList .selectedRow,
+.monthList .selectedRow span:last-child {
+  color: var(--ifm-color-primary);
+  font-weight: 600;
+}
+
+.result {
+  padding-top: 0.7rem;
+  border-top: 1px solid var(--ifm-color-emphasis-300);
+}
+
+.postList {
+  gap: 0.65rem;
+}
+
+.topicPost {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.4rem;
+  padding-top: 0.65rem;
+  border-top: 1px solid var(--ifm-color-emphasis-300);
+}
+
+.topicPost:first-child {
+  padding-top: 0;
+  border-top: 0;
+}

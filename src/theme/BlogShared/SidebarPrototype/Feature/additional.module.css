@@ -1,0 +1,240 @@
+.bookends {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.bookend + .bookend {
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--ifm-color-emphasis-300);
+}
+
+.rowHeading,
+.budgetSummary {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.5rem;
+  color: var(--ifm-color-emphasis-700);
+  font-size: 0.78rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.rowHeading {
+  margin-bottom: 0.35rem;
+}
+
+.timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.timelineRow {
+  display: grid;
+  grid-template-columns: 2.7rem minmax(0, 1fr) 2ch;
+  align-items: center;
+  gap: 0.55rem;
+  width: 100%;
+  padding: 0.3rem 0.2rem;
+  border: 0;
+  border-radius: var(--ifm-global-radius);
+  background: transparent;
+  color: var(--ifm-font-color-base);
+  cursor: pointer;
+  font: inherit;
+  font-size: 0.78rem;
+  font-variant-numeric: tabular-nums;
+  text-align: left;
+  transition: background-color 160ms ease;
+}
+
+.timelineRow[aria-pressed='true'] {
+  color: var(--ifm-color-primary);
+  font-weight: 700;
+}
+
+.timelineRow:hover,
+.timelineRow:active {
+  background: var(--ifm-color-emphasis-200);
+}
+
+.timelineRow:focus-visible {
+  outline: none;
+  box-shadow: var(--lk-focus-ring);
+}
+
+.timelineTrack,
+.budgetTrack,
+.atlasTrack {
+  display: block;
+  overflow: hidden;
+  height: 0.35rem;
+  border-radius: 999px;
+  background: var(--ifm-color-emphasis-200);
+}
+
+.timelineTrack span,
+.budgetTrack span,
+.atlasTrack span {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: var(--ifm-color-primary);
+}
+
+.budgetTrack {
+  height: 0.3rem;
+}
+
+.timeMachineYear {
+  color: var(--ifm-font-color-base);
+  font-size: 1.5rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  line-height: 1.15;
+}
+
+.monthGrid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.4rem;
+}
+
+.monthButton {
+  min-height: 36px;
+  padding: 0.25rem;
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-radius: var(--ifm-global-radius);
+  background: transparent;
+  color: var(--ifm-font-color-base);
+  cursor: pointer;
+  font: inherit;
+  font-size: 0.8rem;
+  font-variant-numeric: tabular-nums;
+  transition:
+    background-color 160ms ease,
+    transform 160ms ease;
+}
+
+.monthButton[aria-pressed='true'] {
+  border-color: var(--ifm-color-primary);
+  background: color-mix(in srgb, var(--ifm-color-primary) 10%, var(--ifm-card-background-color));
+  color: var(--ifm-color-primary);
+  font-weight: 700;
+}
+
+.monthButton:hover {
+  border-color: var(--ifm-color-primary);
+}
+
+.monthButton:active {
+  transform: scale(0.97);
+}
+
+.monthButton:focus-visible {
+  outline: none;
+  box-shadow: var(--lk-focus-ring);
+}
+
+.atlas {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.atlasRow {
+  display: flex;
+  flex-direction: column;
+  gap: 0.32rem;
+}
+
+.atlasTrack {
+  height: 0.25rem;
+}
+
+.feedDescription {
+  margin: 0;
+  color: var(--ifm-color-emphasis-700);
+  font-size: 0.82rem;
+  line-height: 1.5;
+}
+
+.feeds {
+  display: flex;
+  flex-direction: column;
+}
+
+.feedLink {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  padding: 0.5rem 0;
+  border-top: 1px solid var(--ifm-color-emphasis-300);
+  color: var(--ifm-font-color-base);
+  font-size: 0.82rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.feedLink:hover {
+  color: var(--ifm-color-primary);
+  text-decoration: none;
+}
+
+.feedLink:focus-visible {
+  border-radius: var(--ifm-global-radius);
+  outline: none;
+  box-shadow: var(--lk-focus-ring);
+}
+
+.candidate {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.readingActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.savedHeader {
+  padding-top: 0.7rem;
+  border-top: 1px solid var(--ifm-color-emphasis-300);
+  color: var(--ifm-color-emphasis-700);
+  font-size: 0.78rem;
+}
+
+.savedList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  max-height: 12rem;
+  overflow-y: auto;
+}
+
+.savedRow {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  min-width: 0;
+}
+
+.savedRow a {
+  flex: 1;
+  min-width: 0;
+}
+
+.savedRow button {
+  flex-shrink: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .timelineRow,
+  .monthButton {
+    transition: none;
+  }
+}

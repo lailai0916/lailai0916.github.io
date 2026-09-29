@@ -91,8 +91,7 @@ const config: Config = {
           blogTitle: 'Blog',
           blogDescription: "lailai's Blog",
           postsPerPage: 'ALL',
-          blogSidebarTitle: 'Post List',
-          blogSidebarCount: 'ALL',
+          blogSidebarCount: 0,
           // Logical pinning: frontmatter `pinned: true` floats the post to the
           // top of the listing while preserving its real publish date.
           processBlogPosts: async ({ blogPosts }) => {

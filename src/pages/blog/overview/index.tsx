@@ -86,7 +86,7 @@ export default function BlogStats(): ReactNode {
   const monthData = buildMonths(items, currentLocale, timeZone, currentMonth);
   const tagCount = loadOfficialTags(localeKey).length;
   const postCount = items.length;
-  // Reading time → word count, matching the blog sidebar's StatsCard (≈200 wpm).
+  // Reading time → word count (≈200 wpm).
   const readingMinutes = Math.round(
     getAllPostMetadata().reduce((sum, meta) => sum + (meta.readingTime ?? 0), 0)
   );
