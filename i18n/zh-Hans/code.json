@@ -1,9 +1,21 @@
 {
+  "data.changelog.entry20261001Print": {
+    "message": "优化打印版式"
+  },
+  "data.changelog.entry20260929BlogLayout": {
+    "message": "博客侧边栏"
+  },
+  "data.changelog.entry20260915SharedUi": {
+    "message": "网站组件迁移至 <code>@lailai0916/ui</code>"
+  },
+  "data.changelog.entry20260908ResourcesRedesign": {
+    "message": "调整资源页面分类导航与搜索布局"
+  },
   "data.changelog.entry20260822GoogleAnalytics": {
     "message": "Google Analytics 分析"
   },
   "data.changelog.entry20260822Footer": {
-    "message": "网站 Footer 布局"
+    "message": "调整网站页脚布局"
   },
   "data.changelog.entry20260822CookieBanner": {
     "message": "Cookie 提示弹窗"
@@ -24,19 +36,19 @@
     "message": "文档 AI 概述"
   },
   "data.changelog.entry20260618BlogOverview": {
-    "message": "博客 Overview 统计页面"
+    "message": "博客概览页面"
   },
   "data.changelog.entry20260614Solution": {
     "message": "<code>&lt;Solution /&gt;</code> 题解标题组件"
   },
   "data.changelog.entry20260609ImageZoom": {
-    "message": "docusaurus-plugin-image-zoom 图片缩放"
+    "message": "<code>docusaurus-plugin-image-zoom</code> 图片缩放"
   },
   "data.changelog.entry20260524CodeBlockTheme": {
     "message": "代码块主题更改为 <code>vsLight</code> 和 <code>vsDark</code>"
   },
   "data.changelog.entry20260524Katex": {
-    "message": "KaTeX 从 CDN 迁移到 npm，升级至 <code>0.16.47</code>"
+    "message": "KaTeX 从 CDN 迁移至 npm，升级至 <code>0.16.47</code>"
   },
   "data.changelog.entry20260523PinnedPosts": {
     "message": "博客文章置顶机制"
@@ -45,22 +57,22 @@
     "message": "公网 IP 端口直连访问"
   },
   "data.changelog.entry20260501Sitemap": {
-    "message": "Sitemap 页面"
+    "message": "网站地图页面"
   },
   "data.changelog.entry20260501Insights": {
-    "message": "Insights 页面"
+    "message": "洞察页面"
   },
   "data.changelog.entry20260501Docusaurus": {
     "message": "网站更新至 <a href=\"https://docusaurus.io/changelog/3.10.1\">Docusaurus v3.10.1</a>"
   },
   "data.changelog.entry20260428LorenzAttractor": {
-    "message": "主页 Lorenz Attractor 组件"
+    "message": "主页 <code>&lt;LorenzAttractor /&gt;</code> 组件"
   },
   "data.changelog.entry20260426Community": {
-    "message": "About 页面 Community 组件"
+    "message": "关于页面 <code>&lt;Community /&gt;</code> 组件"
   },
   "data.changelog.entry20260426Devices": {
-    "message": "About 页面 Devices 组件"
+    "message": "关于页面 <code>&lt;Devices /&gt;</code> 组件"
   },
   "data.changelog.entry20260426CookieBanner": {
     "message": "Cookie 提示弹窗"
@@ -69,7 +81,7 @@
     "message": "网站灰色模式"
   },
   "data.changelog.entry20260425CloudDeployment": {
-    "message": "主站部署到云服务器"
+    "message": "主站部署至云服务器"
   },
   "data.changelog.entry20260425Mirror": {
     "message": "镜像站 <code>lailai0916.com</code>"
@@ -84,7 +96,7 @@
     "message": "文档扩展名更改为 <code>.mdx</code>"
   },
   "data.changelog.entry20260412TravelMap": {
-    "message": "Travel 页面 Travel Map 组件"
+    "message": "旅行页面 <code>&lt;TravelMap /&gt;</code> 组件"
   },
   "data.changelog.entry20260411Inter": {
     "message": "非 Apple 设备的默认字体更改为 Inter"
@@ -93,7 +105,7 @@
     "message": "网站更新至 <a href=\"https://docusaurus.io/changelog/3.10.0\">Docusaurus v3.10.0</a>"
   },
   "data.changelog.entry20260402HomeLayout": {
-    "message": "主页新版布局"
+    "message": "更新主页布局"
   },
   "data.changelog.entry20260129HomeLayout": {
     "message": "主页新版布局（实验性）"
@@ -102,13 +114,13 @@
     "message": "博客文章阅读进度显示"
   },
   "data.changelog.entry20260125InspiringThoughts": {
-    "message": "主页 Inspiring Thoughts 组件"
+    "message": "主页 <code>&lt;Quotes /&gt;</code> 组件"
   },
   "data.changelog.entry20260125FourierTransform": {
-    "message": "主页 Fourier Transform 组件"
+    "message": "主页 <code>&lt;FourierTransform /&gt;</code> 组件"
   },
   "data.changelog.entry20260121Moments": {
-    "message": "Moments 页面"
+    "message": "博客动态页面"
   },
   "data.changelog.entry20260118Problem": {
     "message": "优化 <code>&lt;Problem /&gt;</code> 组件标题信息"
@@ -120,7 +132,7 @@
     "message": "<code>&lt;Assets /&gt;</code> 资源管理组件"
   },
   "data.changelog.entry20251202Cloud": {
-    "message": "资源迁移至 <a href=\"https://cloud.lailai.one\">lailai's Cloud</a>"
+    "message": "网站资源迁移至 <a href=\"https://cloud.lailai.one\">lailai's Cloud</a>"
   },
   "data.changelog.entry20251023Assets": {
     "message": "<code>&lt;Assets /&gt;</code> 资源管理组件"
@@ -129,7 +141,7 @@
     "message": "网站更新至 <a href=\"https://docusaurus.io/changelog/3.9.2\">Docusaurus v3.9.2</a>"
   },
   "data.changelog.entry20251015BlogLayout": {
-    "message": "博客新版布局"
+    "message": "更新博客布局"
   },
   "data.changelog.entry20251001Solution": {
     "message": "<code>&lt;Solution /&gt;</code> 题解标题组件"
@@ -144,7 +156,7 @@
     "message": "网站更新至 <a href=\"https://docusaurus.io/changelog/3.9.0\">Docusaurus v3.9.0</a>"
   },
   "data.changelog.entry20250905SearchPlatforms": {
-    "message": "网站接入至 <a href=\"https://search.google.com/search-console/welcome\">Google Search Console</a>、<a href=\"https://www.bing.com/webmasters\">Bing Webmaster Tools</a>、<a href=\"https://ziyuan.baidu.com/linksubmit/url\">百度搜索资源平台</a>"
+    "message": "网站接入 <a href=\"https://search.google.com/search-console/welcome\">Google Search Console</a>、<a href=\"https://www.bing.com/webmasters\">Bing Webmaster Tools</a>、<a href=\"https://ziyuan.baidu.com/linksubmit/url\">百度搜索资源平台</a>"
   },
   "data.changelog.entry20250901BlogLayout": {
     "message": "博客新版布局（实验性）"
@@ -159,7 +171,7 @@
     "message": "网站调试模式"
   },
   "data.changelog.entry20250813CopyTex": {
-    "message": "copy-tex 公式复制优化"
+    "message": "<code>copy-tex</code> 公式复制优化"
   },
   "data.changelog.entry20250722GitHub": {
     "message": "<code>&lt;GitHub /&gt;</code> 项目展示组件"
@@ -207,7 +219,7 @@
     "message": "Tailwind CSS 依赖"
   },
   "data.changelog.entry20241019LocalSearch": {
-    "message": "docusaurus-search-local 本地搜索"
+    "message": "<code>docusaurus-search-local</code> 本地搜索"
   },
   "data.changelog.entry20241018Katex": {
     "message": "KaTeX 数学公式"

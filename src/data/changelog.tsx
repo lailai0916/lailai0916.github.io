@@ -8,6 +8,38 @@ interface ChangelogItem {
 
 export const CHANGELOG_LIST: ChangelogItem[] = [
   {
+    date: '2026-10-01',
+    type: 'changed',
+    content: translate({
+      id: 'data.changelog.entry20261001Print',
+      message: 'Improved print layouts',
+    }),
+  },
+  {
+    date: '2026-09-29',
+    type: 'removed',
+    content: translate({
+      id: 'data.changelog.entry20260929BlogLayout',
+      message: 'Blog sidebar',
+    }),
+  },
+  {
+    date: '2026-09-15',
+    type: 'changed',
+    content: translate({
+      id: 'data.changelog.entry20260915SharedUi',
+      message: 'Site components migrated to <code>@lailai0916/ui</code>',
+    }),
+  },
+  {
+    date: '2026-09-08',
+    type: 'changed',
+    content: translate({
+      id: 'data.changelog.entry20260908ResourcesRedesign',
+      message: 'Adjusted Resources page category navigation and search layout',
+    }),
+  },
+  {
     date: '2026-08-22',
     type: 'removed',
     content: translate({
@@ -20,7 +52,7 @@ export const CHANGELOG_LIST: ChangelogItem[] = [
     type: 'changed',
     content: translate({
       id: 'data.changelog.entry20260822Footer',
-      message: 'Site footer layout',
+      message: 'Adjusted site footer layout',
     }),
   },
   {
@@ -77,7 +109,7 @@ export const CHANGELOG_LIST: ChangelogItem[] = [
     type: 'added',
     content: translate({
       id: 'data.changelog.entry20260618BlogOverview',
-      message: 'Blog Overview statistics page',
+      message: 'Blog Overview page',
     }),
   },
   {
@@ -93,7 +125,7 @@ export const CHANGELOG_LIST: ChangelogItem[] = [
     type: 'added',
     content: translate({
       id: 'data.changelog.entry20260609ImageZoom',
-      message: 'Image zoom with docusaurus-plugin-image-zoom',
+      message: 'Image zoom with <code>docusaurus-plugin-image-zoom</code>',
     }),
   },
   {
@@ -158,7 +190,7 @@ export const CHANGELOG_LIST: ChangelogItem[] = [
     type: 'added',
     content: translate({
       id: 'data.changelog.entry20260428LorenzAttractor',
-      message: 'Lorenz Attractor component on the homepage',
+      message: '<code>&lt;LorenzAttractor /&gt;</code> component on the homepage',
     }),
   },
   {
@@ -166,7 +198,7 @@ export const CHANGELOG_LIST: ChangelogItem[] = [
     type: 'changed',
     content: translate({
       id: 'data.changelog.entry20260426Community',
-      message: 'Community component on the About page',
+      message: '<code>&lt;Community /&gt;</code> component on the About page',
     }),
   },
   {
@@ -174,7 +206,7 @@ export const CHANGELOG_LIST: ChangelogItem[] = [
     type: 'changed',
     content: translate({
       id: 'data.changelog.entry20260426Devices',
-      message: 'Devices component on the About page',
+      message: '<code>&lt;Devices /&gt;</code> component on the About page',
     }),
   },
   {
@@ -238,7 +270,7 @@ export const CHANGELOG_LIST: ChangelogItem[] = [
     type: 'changed',
     content: translate({
       id: 'data.changelog.entry20260412TravelMap',
-      message: 'Travel Map component on the Travel page',
+      message: '<code>&lt;TravelMap /&gt;</code> component on the Travel page',
     }),
   },
   {
@@ -263,7 +295,7 @@ export const CHANGELOG_LIST: ChangelogItem[] = [
     type: 'changed',
     content: translate({
       id: 'data.changelog.entry20260402HomeLayout',
-      message: 'New homepage layout',
+      message: 'Updated homepage layout',
     }),
   },
   {
@@ -287,7 +319,7 @@ export const CHANGELOG_LIST: ChangelogItem[] = [
     type: 'removed',
     content: translate({
       id: 'data.changelog.entry20260125InspiringThoughts',
-      message: 'Inspiring Thoughts component on the homepage',
+      message: '<code>&lt;Quotes /&gt;</code> component on the homepage',
     }),
   },
   {
@@ -295,7 +327,7 @@ export const CHANGELOG_LIST: ChangelogItem[] = [
     type: 'added',
     content: translate({
       id: 'data.changelog.entry20260125FourierTransform',
-      message: 'Fourier Transform component on the homepage',
+      message: '<code>&lt;FourierTransform /&gt;</code> component on the homepage',
     }),
   },
   {
@@ -303,7 +335,7 @@ export const CHANGELOG_LIST: ChangelogItem[] = [
     type: 'added',
     content: translate({
       id: 'data.changelog.entry20260121Moments',
-      message: 'Moments page',
+      message: 'Blog Moments page',
     }),
   },
   {
@@ -335,7 +367,7 @@ export const CHANGELOG_LIST: ChangelogItem[] = [
     type: 'changed',
     content: translate({
       id: 'data.changelog.entry20251202Cloud',
-      message: 'Resource migration to <a href="https://cloud.lailai.one">lailai\'s Cloud</a>',
+      message: 'Site resources migrated to <a href="https://cloud.lailai.one">lailai\'s Cloud</a>',
     }),
   },
   {
@@ -360,7 +392,7 @@ export const CHANGELOG_LIST: ChangelogItem[] = [
     type: 'changed',
     content: translate({
       id: 'data.changelog.entry20251015BlogLayout',
-      message: 'New blog layout',
+      message: 'Updated blog layout',
     }),
   },
   {
@@ -445,7 +477,7 @@ export const CHANGELOG_LIST: ChangelogItem[] = [
     type: 'added',
     content: translate({
       id: 'data.changelog.entry20250813CopyTex',
-      message: 'Formula copying improvements with copy-tex',
+      message: 'Formula copying improvements with <code>copy-tex</code>',
     }),
   },
   {
@@ -580,7 +612,7 @@ export const CHANGELOG_LIST: ChangelogItem[] = [
     type: 'added',
     content: translate({
       id: 'data.changelog.entry20241019LocalSearch',
-      message: 'Local search with docusaurus-search-local',
+      message: 'Local search with <code>docusaurus-search-local</code>',
     }),
   },
   {
