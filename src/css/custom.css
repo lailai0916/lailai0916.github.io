@@ -140,6 +140,156 @@ article,
   scrollbar-width: thin;
 }
 
+@page {
+  margin: 16mm 15mm 18mm;
+}
+
+@media print {
+  /* Paper must stay readable when the visitor uses the dark theme. */
+  html[data-theme] {
+    color-scheme: light;
+    --ifm-background-color: #fff;
+    --ifm-background-surface-color: #fff;
+    --ifm-card-background-color: #fff;
+    --ifm-font-color-base: #202124;
+    --ifm-heading-color: #202124;
+    --ifm-link-color: #175b91;
+    --ifm-color-emphasis-100: #f5f5f5;
+    --ifm-color-emphasis-200: #e1e1e1;
+    --ifm-color-emphasis-300: #ccc;
+    --ifm-color-emphasis-400: #999;
+    --ifm-color-emphasis-500: #777;
+    --ifm-color-emphasis-600: #666;
+    --ifm-color-emphasis-700: #454545;
+    --ifm-color-emphasis-800: #333;
+    --ifm-color-emphasis-900: #222;
+    --ifm-pre-background: #f6f6f6;
+    --prism-background-color: #f6f6f6;
+    --prism-color: #202124;
+    --global-font-size: 10.5pt;
+    --global-line-height: 1.5;
+  }
+
+  html,
+  body,
+  .main-wrapper,
+  main {
+    background: #fff !important;
+  }
+
+  body {
+    color: #202124;
+  }
+
+  .theme-announcement-bar,
+  .theme-doc-sidebar-container,
+  .theme-doc-version-banner,
+  .pagination-nav {
+    display: none !important;
+  }
+
+  .theme-doc-sidebar-container + main {
+    width: 100%;
+    max-width: none !important;
+  }
+
+  .theme-doc-sidebar-container + main > .container {
+    width: 100%;
+    max-width: none !important;
+    padding: 0 !important;
+  }
+
+  .theme-doc-sidebar-container + main .row {
+    margin: 0;
+  }
+
+  .markdown {
+    color: #202124;
+    overflow-wrap: break-word;
+  }
+
+  .markdown :is(h1, h2, h3, h4, h5, h6) {
+    color: #202124;
+    break-after: avoid-page;
+  }
+
+  .markdown :is(p, li, blockquote) {
+    orphans: 3;
+    widows: 3;
+  }
+
+  .markdown a {
+    color: #175b91;
+    text-decoration: underline;
+  }
+
+  .markdown .alert {
+    --ifm-alert-background-color: #f7f7f7;
+    --ifm-alert-background-color-highlight: #ececec;
+    --ifm-alert-border-color: #aaa;
+    --ifm-alert-foreground-color: #202124;
+    --ifm-link-color: #175b91;
+    box-shadow: none;
+  }
+
+  .markdown :is(img, figure, tr, blockquote, .alert, .tabs-container) {
+    break-inside: avoid-page;
+  }
+
+  .markdown img {
+    max-width: 100%;
+    max-height: 240mm;
+    object-fit: contain;
+  }
+
+  .markdown .table-responsive {
+    overflow: visible;
+  }
+
+  .markdown table {
+    display: table;
+    width: 100%;
+    overflow: visible;
+  }
+
+  .markdown thead {
+    display: table-header-group;
+  }
+
+  .markdown pre,
+  .markdown pre code {
+    color: #202124 !important;
+    white-space: pre-wrap !important;
+    overflow-wrap: anywhere;
+  }
+
+  .markdown pre * {
+    color: inherit !important;
+    text-shadow: none !important;
+  }
+
+  .markdown .theme-code-block button {
+    display: none !important;
+  }
+
+  .markdown pre {
+    overflow: visible;
+    background: #f6f6f6 !important;
+    border: 1px solid #ddd;
+    box-shadow: none;
+    break-inside: auto;
+  }
+
+  .markdown code:not(pre code) {
+    color: #202124;
+    background: #f2f2f2;
+  }
+
+  .katex-display {
+    overflow: visible;
+  }
+}
+
 /* Honor the OS "reduce motion" preference site-wide. Entrance keyframes jump
    to their final (visible) frame; loops run once; transitions snap. One guard
    covers every surface — Skeleton shimmer, loaders, page reveals, the globe. */

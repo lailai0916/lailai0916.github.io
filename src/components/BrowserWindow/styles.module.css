@@ -71,3 +71,39 @@
   display: block;
   max-width: 100%;
 }
+
+.iframe {
+  display: block;
+  width: 100%;
+  height: 600px;
+}
+
+.printLink {
+  display: none;
+}
+
+@media print {
+  .browserWindow {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 0 1rem;
+    border: 0;
+    border-radius: 0;
+    overflow: visible !important;
+    box-shadow: none;
+  }
+
+  .browserWindowHeader,
+  .iframe {
+    display: none;
+  }
+
+  .browserWindowBody {
+    padding: 0 !important;
+  }
+
+  .printLink {
+    display: block;
+    overflow-wrap: anywhere;
+  }
+}

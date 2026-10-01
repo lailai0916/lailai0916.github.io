@@ -16,7 +16,7 @@ import sharedStyles from '@site/src/theme/DocShared/styles.module.css';
 import styles from './styles.module.css';
 
 // Swizzled over the stock layout to share the blog's article chrome: the
-// "Copy Markdown" + "Edit this page" actions move to a small top-right row
+// Article actions move to a small top-right row
 // (paired with the breadcrumbs), and the swizzled DocItemFooter renders the
 // blog-style tags + "last updated" footer at the bottom.
 function useDocTOC() {

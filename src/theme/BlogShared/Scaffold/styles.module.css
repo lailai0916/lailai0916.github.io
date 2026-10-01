@@ -68,8 +68,18 @@
 }
 
 @media print {
+  .sectionNav,
   .postTocInline,
   .postTocDesktop {
     display: none;
+  }
+
+  .container {
+    max-width: none;
+    padding: 0;
+  }
+
+  .main {
+    display: block;
   }
 }

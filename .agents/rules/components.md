@@ -70,7 +70,7 @@ Before adding a component, check whether an existing primitive (optionally with 
 
 `src/components/Article/` holds the article-page chrome shared by blog posts and docs — a grouped folder (its own `styles.module.css` shared module + one subfolder per component), so its strings live under the `components.article.*` i18n prefix.
 
-- **`Actions`** (`{ source?, editUrl? }`) — the small top-right icon row: `CopyMarkdownButton` + an "Edit this page" `Link`. Blog `PostChrome`'s `PostHeader` renders it next to the meta bar; the swizzled `DocItem/Layout` renders it next to the breadcrumbs.
+- **`Actions`** (`{ source?, editUrl? }`) — the small top-right icon row: `CopyMarkdownButton`, a print button, and an "Edit this page" `Link`. Blog `PostChrome`'s `PostHeader` renders it next to the meta bar; the swizzled `DocItem/Layout` renders it next to the breadcrumbs. The row is hidden on paper.
 - **`CopyMarkdownButton`** (`{ source }`) — copies a page's raw `.mdx`. It holds **two** `require.context` roots (`!!raw-loader!@site/blog` and `@site/docs`) and routes by the `@site/<root>/` prefix in `metadata.source`; each page's source is a lazy chunk fetched only on click. Adding a third content root means adding a third static context here.
 - **`MetaFooter`** (`{ tags, lastUpdatedAt, views? }`) — the bottom-of-article row: tag chips (laikit `Badge`) on the left, an optional `views` node + "last updated on …" clustered on the right (`.metaEnd`). Returns `null` when all are empty. Blog `PostFooter` and the swizzled `DocItem/Footer` both delegate to it; only `DocItem/Footer` passes `views` (blog posts show the count in their top meta bar instead).
 - **`ViewCount`** (`{ path }`) — Umami pageview count for one article path (`useAnalytics` + pluralized `components.article.viewCount`, `lucide:eye`, `.metaItem` styling). Renders `null` until the fetch succeeds. Fed to `MetaFooter`'s `views` slot by `DocItem/Footer` so docs get the same view count the blog meta bar shows.
@@ -127,6 +127,9 @@ When adding a surface that shows variable text, pick the bucket by context and r
 ## MDX author-facing widgets
 
 Components registered in `src/theme/MDXComponents/index.tsx` are globally available in every `.mdx` file with no import. Current set: `BrowserWindow` (+ `IframeWindow`, `ImageWindow`), `Notation`, `GitHub`, `Quote`, `Desmos`, `Problem`, plus the Docusaurus `Tabs` / `TabItem` / `DocCardList` (the latter swizzled to render laikit `LinkCard`s in a responsive grid — see Theme overrides). When you add a widget meant for authors, register it here; otherwise it must be imported explicitly in the MDX. Author-side usage conventions for these widgets live in [`writing-style.md`](writing-style.md).
+
+`Desmos` and `IframeWindow` replace interactive iframes with direct URLs in print, so a paper copy retains the reference without an empty embed.
+`Problem` prints its active tab even when the on-screen panel is collapsed; the window controls are omitted on paper.
 
 The `a` mapping renders Markdown text links through `MarkdownLink`, which preserves Docusaurus's original MDX anchor behavior. External HTTP links show the destination favicon, internal routes show the site logo, and fragment, footnote, and image-only links have no added icon. Favicon URLs share `src/utils/favicon.ts` with the Resources page; `data-link-icon` keeps these decorative images out of image zoom.
 

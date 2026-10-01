@@ -6,8 +6,6 @@ import CopyMarkdownButton from '../CopyMarkdownButton';
 import styles from './styles.module.css';
 import shared from '../styles.module.css';
 
-// Top-right article actions shared by blog posts and docs: a "Copy Markdown"
-// button and an "Edit this page" link, both rendered as small icon buttons.
 interface ActionsProps {
   source?: string;
   editUrl?: string;
@@ -17,12 +15,24 @@ const editLabel = translate({
   id: 'components.article.editPage',
   message: 'Edit this page',
 });
+const printLabel = translate({
+  id: 'components.article.print',
+  message: 'Print this page',
+});
 
 export default function Actions({ source, editUrl }: ActionsProps) {
-  if (!source && !editUrl) return null;
   return (
     <div className={styles.actions}>
       {source && <CopyMarkdownButton source={source} />}
+      <button
+        type="button"
+        onClick={() => window.print()}
+        aria-label={printLabel}
+        title={printLabel}
+        className={clsx(shared.metaItem, shared.metaLink, shared.iconBtn, styles.printButton)}
+      >
+        <Icon icon="lucide:printer" width={16} height={16} />
+      </button>
       {editUrl && (
         <Link
           href={editUrl}

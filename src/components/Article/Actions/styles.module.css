@@ -3,3 +3,18 @@
   align-items: center;
   gap: 0.5rem;
 }
+
+.printButton {
+  appearance: none;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  font: inherit;
+  cursor: pointer;
+}
+
+@media print {
+  .actions {
+    display: none;
+  }
+}

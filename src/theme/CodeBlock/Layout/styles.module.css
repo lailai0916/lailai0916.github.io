@@ -73,3 +73,20 @@
   position: relative;
   direction: ltr;
 }
+
+@media print {
+  .codeBlock {
+    overflow: visible;
+    border-color: #ccc;
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  .header {
+    display: none;
+  }
+
+  .body {
+    overflow: visible;
+  }
+}

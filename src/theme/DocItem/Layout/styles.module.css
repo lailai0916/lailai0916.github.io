@@ -18,7 +18,8 @@
 }
 
 @media print {
-  .docTocMobile {
+  .docTocMobile,
+  .docTocDesktop {
     display: none;
   }
 }

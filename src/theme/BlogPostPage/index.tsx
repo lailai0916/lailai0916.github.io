@@ -11,6 +11,7 @@ import { BlogPostProvider } from '@docusaurus/plugin-content-blog/client';
 import BlogPostPageMetadata from '@theme/BlogPostPage/Metadata';
 import BlogPostPageStructuredData from '@theme/BlogPostPage/StructuredData';
 import MDXContent from '@theme/MDXContent';
+import styles from './styles.module.css';
 
 import type { Props } from '@theme/BlogPostPage';
 
@@ -34,7 +35,7 @@ export default function BlogPostPage(props: Props): ReactElement {
           title={metadata.title}
           description={metadata.description}
         >
-          <Card>
+          <Card className={styles.postCard}>
             <PostHeader metadata={metadata} frontMatter={frontMatter as Record<string, unknown>} />
             {summary && <Summary content={summary} />}
             <article className="markdown">

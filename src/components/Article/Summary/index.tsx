@@ -84,6 +84,10 @@ export default function Summary({ content }: { content: string }) {
           {content.slice(0, count)}
         </div>
       </div>
+      <div className={styles.printSummary}>
+        <strong>{LABEL}</strong>
+        <p>{content}</p>
+      </div>
     </Card>
   );
 }

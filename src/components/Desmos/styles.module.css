@@ -11,3 +11,27 @@
   height: 100%;
   border: 0;
 }
+
+.printLink {
+  display: none;
+}
+
+@media print {
+  .frame {
+    width: 100%;
+    aspect-ratio: auto;
+    margin: 0 0 1rem;
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  .embed {
+    display: none;
+  }
+
+  .printLink {
+    display: block;
+    overflow-wrap: anywhere;
+  }
+}

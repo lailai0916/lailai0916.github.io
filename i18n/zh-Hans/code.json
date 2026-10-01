@@ -2095,6 +2095,9 @@
   "components.article.editPage": {
     "message": "编辑此页面"
   },
+  "components.article.print": {
+    "message": "打印此页面"
+  },
   "components.article.copyMarkdown": {
     "message": "复制 Markdown"
   },

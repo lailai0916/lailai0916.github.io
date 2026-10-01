@@ -48,3 +48,27 @@
   text-decoration: underline;
   text-underline-offset: 0.2em;
 }
+
+@media print {
+  .problemPanel > :global(div) {
+    overflow: visible;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+  }
+
+  .problemPanel :global(div:has(> [role='tablist'])) {
+    display: none;
+  }
+
+  .problemPanel :global(div:has(> [role='tabpanel'])) {
+    height: auto !important;
+    overflow: visible;
+  }
+
+  .problemPanel :global([role='tabpanel']) {
+    border: 0;
+    background: transparent;
+  }
+}

@@ -58,29 +58,31 @@ function ProblemPanel({ tabs }: { tabs: Tab[] }) {
   );
 
   return (
-    <WindowPanel
-      tabs={panelTabs}
-      collapseLabel={translate({
-        id: 'components.problem.collapse',
-        message: 'Collapse',
-      })}
-      expandLabel={translate({
-        id: 'components.problem.expand',
-        message: 'Expand',
-      })}
-      toolbar={(idx, open) => {
-        const t = tabs[idx];
-        if (!open || t.kind !== 'code') return null;
-        return (
-          <span className={styles.meta} aria-hidden="true">
-            <span className={styles.size}>
-              {formatBytes(new TextEncoder().encode(t.code).length)}
+    <div className={styles.problemPanel}>
+      <WindowPanel
+        tabs={panelTabs}
+        collapseLabel={translate({
+          id: 'components.problem.collapse',
+          message: 'Collapse',
+        })}
+        expandLabel={translate({
+          id: 'components.problem.expand',
+          message: 'Expand',
+        })}
+        toolbar={(idx, open) => {
+          const t = tabs[idx];
+          if (!open || t.kind !== 'code') return null;
+          return (
+            <span className={styles.meta} aria-hidden="true">
+              <span className={styles.size}>
+                {formatBytes(new TextEncoder().encode(t.code).length)}
+              </span>
+              <span className={styles.language}>cpp</span>
             </span>
-            <span className={styles.language}>cpp</span>
-          </span>
-        );
-      }}
-    />
+          );
+        }}
+      />
+    </div>
   );
 }
 

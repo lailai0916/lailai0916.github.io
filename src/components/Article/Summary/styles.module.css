@@ -78,3 +78,34 @@ html[data-theme='dark'] .header:active {
   font-size: 0.85rem;
   line-height: 1.7;
 }
+
+.printSummary {
+  display: none;
+}
+
+@media print {
+  .summary {
+    margin: 0 0 1rem;
+    border: 0;
+    border-left: 2px solid #999;
+    border-radius: 0;
+    box-shadow: none;
+    break-inside: avoid-page;
+  }
+
+  .header,
+  .viewport {
+    display: none;
+  }
+
+  .printSummary {
+    display: block;
+    padding: 0.2rem 0 0.2rem 0.8rem;
+    color: #333;
+    font-size: 0.9rem;
+  }
+
+  .printSummary p {
+    margin: 0.2rem 0 0;
+  }
+}

@@ -67,7 +67,10 @@ export function IframeWindow({ url }: { url: string }) {
         }}
         bodyStyle={{ padding: 0 }}
       >
-        <iframe src={url} title={url} style={{ display: 'block', width: '100%', height: 600 }} />
+        <iframe src={url} title={url} className={styles.iframe} />
+        <a href={url} className={styles.printLink}>
+          {url}
+        </a>
       </BrowserWindow>
     </div>
   );
