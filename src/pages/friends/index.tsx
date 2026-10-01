@@ -1,7 +1,7 @@
 import { type ReactNode } from 'react';
 import clsx from 'clsx';
 import Layout from '@theme/Layout';
-import { Icon } from '@iconify/react';
+import Icon from '@lailai0916/ui/Icon';
 import { PageTitle, PageHeader, PageContent } from '@lailai0916/ui/Page';
 import Button from '@lailai0916/ui/Button';
 import Card from '@lailai0916/ui/Card';

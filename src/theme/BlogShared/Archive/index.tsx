@@ -5,7 +5,7 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import useIsBrowser from '@docusaurus/useIsBrowser';
 import { useLocation } from '@docusaurus/router';
 import { translate } from '@docusaurus/Translate';
-import { Icon } from '@iconify/react';
+import Icon from '@lailai0916/ui/Icon';
 import Button from '@lailai0916/ui/Button';
 import Card from '@lailai0916/ui/Card';
 import DataState from '@lailai0916/ui/DataState';

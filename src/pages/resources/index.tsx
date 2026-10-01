@@ -1,5 +1,5 @@
 import { type CSSProperties, type ReactNode, useMemo, useRef, useState } from 'react';
-import { Icon } from '@iconify/react';
+import Icon from '@lailai0916/ui/Icon';
 import Layout from '@theme/Layout';
 
 import { PageTitle, PageHeader, PageContent } from '@lailai0916/ui/Page';

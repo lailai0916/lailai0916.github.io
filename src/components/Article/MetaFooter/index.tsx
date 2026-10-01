@@ -2,7 +2,7 @@ import { type ReactNode } from 'react';
 import Link from '@docusaurus/Link';
 import { translate } from '@docusaurus/Translate';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
-import { Icon } from '@iconify/react';
+import Icon from '@lailai0916/ui/Icon';
 import Badge from '@lailai0916/ui/Badge';
 import { useVisitorTimeZone } from '@site/src/hooks/useVisitorTimeZone';
 import { formatLocalDate } from '@site/src/utils/dateTime';

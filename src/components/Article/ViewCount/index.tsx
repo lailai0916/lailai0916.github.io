@@ -1,6 +1,6 @@
 import { translate } from '@docusaurus/Translate';
 import { usePluralForm } from '@docusaurus/theme-common';
-import { Icon } from '@iconify/react';
+import Icon from '@lailai0916/ui/Icon';
 import { useAnalytics } from '@site/src/hooks/useAnalytics';
 import shared from '../styles.module.css';
 

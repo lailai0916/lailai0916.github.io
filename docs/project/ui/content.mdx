@@ -4,7 +4,7 @@ description: 本文介绍头像、品牌、徽标、窗口、引用和分页等�
 summary: 内容组件提供头像、品牌、徽标、图标、窗口、文章标题、引用、仓库卡片与分页结构。WindowPanel 管理标签切换和折叠，宿主提供内容与操作名称；GitHub 卡片在浏览器请求公开仓库信息。Tooltip 是由调用方定位和显示的数据提示层，TrafficLights 是装饰元素。图片、跳转地址、分页数据和文案由应用提供，不依赖特定网站的数据结构。
 ---
 
-import { Avatar, Badge, Cluster, EmptyState, WindowPanel } from '@lailai0916/ui';
+import { Avatar, Badge, Cluster, EmptyState, Icon, WindowPanel } from '@lailai0916/ui';
 
 ## 参考资料
 
@@ -23,7 +23,7 @@ import { Avatar, Badge, Cluster, EmptyState, WindowPanel } from '@lailai0916/ui'
         <Cluster>
           <Avatar name="lailai" alt="lailai 的头像" />
           <span>lailai</span>
-          <Badge>维护者</Badge>
+          <Badge icon="lucide:user-round">维护者</Badge>
         </Cluster>
       ),
     },
@@ -41,11 +41,26 @@ import { Avatar, Badge, Cluster, EmptyState, WindowPanel } from '@lailai0916/ui'
 | `Avatar`    | `name`、`alt`     | `src`、`size`，默认尺寸 36 px                                   |
 | `Brand`     | `logoSrc`、`name` | `logoAlt`，默认空字符串                                         |
 | `Badge`     | 无                | `children`、`icon`、`count`、`active`、`hoverable`、`className` |
+| `Icon`      | `icon`            | `width`、`height`、`className`、`style`、`onLoad`、SVG 属性     |
 | `IconBlock` | 无                | `icon`、`variant`、`size`、`iconSize`、`className`、`children`  |
 
 `Avatar` 在没有图片时显示姓名首字母；`alt` 应描述头像用途。`Brand` 由应用提供标志地址与名称。`IconBlock.variant` 为 `accent` 或 `muted`。
 
 `Badge.hoverable` 只提供悬停外观，不会把徽标变成按钮；需要点击操作时使用按钮或链接。图标名使用 Iconify 标识，例如 `lucide:book-open`，图标数据可能通过网络加载。
+
+`Icon` 在服务端渲染、加载中或加载失败时保留同尺寸的空 SVG，文字与控件不会因图标出现而改变位置。默认尺寸为 `1em × 1em`；仅设置 `width` 或 `height` 时，另一边使用相同尺寸。非正方形图标应显式设置两边尺寸，或通过 CSS 固定宽高，不使用 `auto`。
+
+<Cluster>
+  <Icon icon="lucide:book-open" width={20} />
+  <Icon icon="flag:cn-4x3" width={20} height={15} />
+</Cluster>
+
+```tsx
+import Icon from '@lailai0916/ui/Icon';
+
+<Icon icon="lucide:book-open" width={20} />;
+<Icon icon="flag:cn-4x3" width={20} height={15} />;
+```
 
 ## 窗口
 

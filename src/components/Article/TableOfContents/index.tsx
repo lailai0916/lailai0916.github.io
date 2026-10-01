@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import clsx from 'clsx';
-import { Icon } from '@iconify/react';
+import Icon from '@lailai0916/ui/Icon';
 import Link from '@docusaurus/Link';
 import { useTOCHighlight, type TOCHighlightConfig } from '@docusaurus/theme-common/internal';
 import type { TOCItem } from '@docusaurus/mdx-loader';

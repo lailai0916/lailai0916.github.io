@@ -1,7 +1,7 @@
 import { Fragment, type ReactNode } from 'react';
 import clsx from 'clsx';
 import Link from '@docusaurus/Link';
-import { Icon } from '@iconify/react';
+import Icon from '@lailai0916/ui/Icon';
 import Badge from '@lailai0916/ui/Badge';
 import styles from './styles.module.css';
 

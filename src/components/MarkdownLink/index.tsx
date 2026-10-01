@@ -1,5 +1,5 @@
 import { Children, isValidElement, useEffect, useRef, useState, type ReactNode } from 'react';
-import { Icon } from '@iconify/react';
+import Icon from '@lailai0916/ui/Icon';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import MDXA from '@theme/MDXComponents/A';
 import MDXImg from '@theme/MDXComponents/Img';

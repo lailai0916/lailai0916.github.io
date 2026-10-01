@@ -1,5 +1,5 @@
 import { useEffect, useState, type ReactNode } from 'react';
-import { Icon } from '@iconify/react';
+import Icon from '@lailai0916/ui/Icon';
 import { translate } from '@docusaurus/Translate';
 import type { TOCItem } from '@docusaurus/mdx-loader';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';

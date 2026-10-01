@@ -1,6 +1,6 @@
 import { type ReactNode, useState } from 'react';
 import clsx from 'clsx';
-import { Icon } from '@iconify/react';
+import Icon from '@lailai0916/ui/Icon';
 import Link from '@docusaurus/Link';
 import Layout from '@theme/Layout';
 import { translate } from '@docusaurus/Translate';

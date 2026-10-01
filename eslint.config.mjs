@@ -34,6 +34,18 @@ export default tseslint.config(
       // require() / require.context are deliberate webpack features here (dynamic-path
       // MDX, lazy client-only globe libs) that ESM imports can't express.
       '@typescript-eslint/no-require-imports': 'off',
+      'no-restricted-imports': [
+        'error',
+        {
+          paths: [
+            {
+              name: '@iconify/react',
+              importNames: ['Icon', 'InlineIcon'],
+              message: 'Use @lailai0916/ui/Icon to reserve layout during loading.',
+            },
+          ],
+        },
+      ],
     },
   }
 );

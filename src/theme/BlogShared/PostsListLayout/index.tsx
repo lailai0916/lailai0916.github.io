@@ -10,7 +10,7 @@ import { MetaBar, TagChipList } from '../BlogUI';
 import { usePostMetaItems } from '../PostMeta';
 
 import { translate } from '@docusaurus/Translate';
-import { Icon } from '@iconify/react';
+import Icon from '@lailai0916/ui/Icon';
 import MDXContent from '@theme/MDXContent';
 import styles from './styles.module.css';
 

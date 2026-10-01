@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState } from 'react';
 import clsx from 'clsx';
 import Link from '@docusaurus/Link';
-import { Icon } from '@iconify/react';
+import Icon from '@lailai0916/ui/Icon';
 import { translate } from '@docusaurus/Translate';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Card from '@lailai0916/ui/Card';

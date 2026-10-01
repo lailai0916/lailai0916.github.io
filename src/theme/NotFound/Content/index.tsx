@@ -3,7 +3,7 @@ import Link from '@docusaurus/Link';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import Translate, { translate } from '@docusaurus/Translate';
 import Heading from '@theme/Heading';
-import { Icon } from '@iconify/react';
+import Icon from '@lailai0916/ui/Icon';
 import styles from './styles.module.css';
 
 type Props = {

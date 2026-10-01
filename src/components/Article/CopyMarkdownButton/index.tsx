@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import clsx from 'clsx';
-import { Icon, loadIcons } from '@iconify/react';
+import { loadIcons } from '@iconify/react';
+import Icon from '@lailai0916/ui/Icon';
 import { translate } from '@docusaurus/Translate';
 import styles from './styles.module.css';
 import shared from '../styles.module.css';

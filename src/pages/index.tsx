@@ -4,7 +4,7 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Link from '@docusaurus/Link';
 import { translate } from '@docusaurus/Translate';
 import clsx from 'clsx';
-import { Icon } from '@iconify/react';
+import Icon from '@lailai0916/ui/Icon';
 import { getTimes } from 'suncalc';
 import { COMMUNITY_LIST } from '@site/src/data/community';
 import {

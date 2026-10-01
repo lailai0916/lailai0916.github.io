@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useRef } from 'react';
 import clsx from 'clsx';
-import { Icon } from '@iconify/react';
+import Icon from '@lailai0916/ui/Icon';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Card from '@lailai0916/ui/Card';
 import { TRAVEL_LIST, type TravelItem } from '@site/src/data/travel';

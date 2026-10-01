@@ -41,7 +41,7 @@ import {
   type FontFamilyChoice,
 } from '@site/src/utils/preferences';
 import { fireConfetti } from '@site/src/utils/confetti';
-import { Icon } from '@iconify/react';
+import Icon from '@lailai0916/ui/Icon';
 import { PageTitle, PageHeader, PageContent } from '@lailai0916/ui/Page';
 import styles from './styles.module.css';
 

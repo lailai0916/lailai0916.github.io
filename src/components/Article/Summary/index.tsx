@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import clsx from 'clsx';
 import { translate } from '@docusaurus/Translate';
-import { Icon } from '@iconify/react';
+import Icon from '@lailai0916/ui/Icon';
 import Card from '@lailai0916/ui/Card';
 import { useMeasuredHeight } from '@lailai0916/ui';
 import styles from './styles.module.css';

@@ -5,7 +5,7 @@ import BrowserOnly from '@docusaurus/BrowserOnly';
 import Link from '@docusaurus/Link';
 import Translate, { translate } from '@docusaurus/Translate';
 import Giscus from '@giscus/react';
-import { Icon } from '@iconify/react';
+import Icon from '@lailai0916/ui/Icon';
 import Card from '@lailai0916/ui/Card';
 import { useColorMode } from '@docusaurus/theme-common';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';

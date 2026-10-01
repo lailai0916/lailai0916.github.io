@@ -1,6 +1,6 @@
 import type { ReactNode } from 'react';
 import clsx from 'clsx';
-import { Icon } from '@iconify/react';
+import Icon from '@lailai0916/ui/Icon';
 import Link from '@docusaurus/Link';
 import { translate } from '@docusaurus/Translate';
 import { ThemeClassNames } from '@docusaurus/theme-common';

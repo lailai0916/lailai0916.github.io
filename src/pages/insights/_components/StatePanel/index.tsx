@@ -1,4 +1,4 @@
-import { Icon } from '@iconify/react';
+import Icon from '@lailai0916/ui/Icon';
 import Card from '@lailai0916/ui/Card';
 import RetryButton from '../RetryButton';
 import styles from './styles.module.css';

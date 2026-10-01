@@ -3,7 +3,7 @@ import clsx from 'clsx';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import { translate } from '@docusaurus/Translate';
 import { usePluralForm } from '@docusaurus/theme-common';
-import { Icon } from '@iconify/react';
+import Icon from '@lailai0916/ui/Icon';
 import BlogScaffold from '@site/src/theme/BlogShared/Scaffold';
 import { MetaBar, type MetaBarItem } from '@site/src/theme/BlogShared/BlogUI';
 import Card from '@lailai0916/ui/Card';

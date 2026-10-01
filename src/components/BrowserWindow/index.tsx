@@ -1,6 +1,6 @@
 import { type CSSProperties, type ReactNode } from 'react';
 import { translate } from '@docusaurus/Translate';
-import { Icon } from '@iconify/react';
+import Icon from '@lailai0916/ui/Icon';
 import clsx from 'clsx';
 import Card from '@lailai0916/ui/Card';
 import WindowBar from '@lailai0916/ui/WindowBar';
