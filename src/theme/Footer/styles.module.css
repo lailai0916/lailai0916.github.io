@@ -163,12 +163,6 @@
   transition: color 160ms ease;
 }
 
-@media (pointer: coarse) {
-  .item :global(.footer__link-item) {
-    min-height: 2.75rem;
-  }
-}
-
 .item :global(.footer__link-item):hover {
   color: var(--ifm-color-primary);
   text-decoration: none;
@@ -203,14 +197,6 @@
   color: var(--footer-text-muted);
   font-size: 0.875rem;
   line-height: 1.6;
-}
-
-@media (pointer: coarse) {
-  .feeds .metaLink {
-    display: inline-flex;
-    align-items: center;
-    min-height: 2.75rem;
-  }
 }
 
 .feedList {
