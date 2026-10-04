@@ -1,0 +1,114 @@
+---
+title: 应用交互
+description: 本文介绍标签切换、提示、模态对话框和表格，以及应用负责的数据与状态。
+summary: 应用交互组件沿用 lailai's Home 的表面、颜色与控件样式。Tabs 提供键盘导航与面板关联，Alert 展示语义提示，Dialog 使用原生模态机制管理焦点与滚动，Table 保留原生表格结构并容纳横向溢出。组件负责通用外观与交互，内容、数据请求、提交和业务状态由应用提供。
+---
+
+import { useState } from 'react';
+import {
+  Alert,
+  Badge,
+  Button,
+  Dialog,
+  IconButton,
+  Stack,
+  Table,
+  Tabs,
+  TextField,
+} from '@lailai0916/ui';
+
+export function ApplicationPreview() {
+  const [tab, setTab] = useState('overview');
+  const [open, setOpen] = useState(false);
+  return (
+    <Stack gap={16}>
+      <Tabs
+        size="sm"
+        ariaLabel="项目内容"
+        value={tab}
+        onChange={setTab}
+        items={[
+          {
+            value: 'overview',
+            label: '概览',
+            id: 'example-tab-overview',
+            panelId: 'example-panel-overview',
+          },
+          {
+            value: 'activity',
+            label: '动态',
+            id: 'example-tab-activity',
+            panelId: 'example-panel-activity',
+          },
+        ]}
+      />
+      <div role="tabpanel" id={`example-panel-${tab}`} aria-labelledby={`example-tab-${tab}`}>
+        {tab === 'overview' ? (
+          <Alert variant="info" title="共享外观">
+            应用保留自己的数据与状态。
+          </Alert>
+        ) : (
+          <Alert variant="success">当前示例已载入。</Alert>
+        )}
+      </div>
+      <Table>
+        <caption>示例项目状态</caption>
+        <thead>
+          <tr>
+            <th scope="col">项目</th>
+            <th scope="col">状态</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">laikit UI</th>
+            <td>
+              <Badge variant="success">已接入</Badge>
+            </td>
+          </tr>
+        </tbody>
+      </Table>
+      <Button onClick={() => setOpen(true)}>打开对话框</Button>
+      <Dialog open={open} onClose={() => setOpen(false)} label="示例对话框">
+        <Stack gap={16}>
+          <h2>示例对话框</h2>
+          <TextField autoFocus label="项目名称" defaultValue="lailai" />
+          <IconButton label="关闭对话框" onClick={() => setOpen(false)}>
+            ×
+          </IconButton>
+        </Stack>
+      </Dialog>
+    </Stack>
+  );
+}
+
+## 参考资料
+
+- [组件源码 - GitHub](https://github.com/lailai0916/ui/tree/main/src/components)
+- [接入说明 - GitHub](https://github.com/lailai0916/ui/blob/main/docs/integration.md)
+
+## 效果展示
+
+<ApplicationPreview />
+
+## 标签切换
+
+`Tabs` 必须传入 `ariaLabel`、`items`、`value` 和 `onChange`。每项包含 `value`、`label`，可提供 `icon`、`id`、`panelId`、`disabled`。`size` 为 `md` 或 `sm`，`orientation` 为 `horizontal` 或 `vertical`。
+
+应用渲染对应的 `role="tabpanel"` 内容，把 `id` 与 `aria-labelledby` 对应到标签项。组件通过方向键、Home 和 End 切换并移动焦点，跳过禁用项。只筛选同一份内容时使用 [Segmented](/docs/project/ui/controls)，不声明标签面板。
+
+## 提示
+
+`Alert.variant` 为 `info`、`success`、`warning` 或 `danger`，可提供 `title`、`icon`、`action`。警告和错误默认使用 `role="alert"`，其他提示使用 `role="status"`；必要时由宿主传入合适的 `role`。
+
+表单字段的错误优先交给字段自身的 `error` 属性。跨字段或请求失败的提示可以使用 `Alert`。
+
+## 对话框
+
+`Dialog` 必须提供 `open`、`onClose`、`label` 和内容。应用保存打开状态，并在 `onClose` 中关闭。原生 `dialog` 管理模态焦点，组件处理 Escape、点击遮罩、滚动锁定与关闭后的焦点恢复。
+
+内容应包含可见标题与关闭操作，首个合适的输入可使用 `autoFocus`。提交、验证和保存由应用处理。
+
+## 表格
+
+`Table` 接收原生 `table` 属性与 `caption`、`thead`、`tbody` 等子元素。行列数据、排序、分页由应用提供；列标题使用 `scope="col"`，行标题使用 `scope="row"`。窄屏内容在组件内部横向滚动，`wrapperClassName` 用于外层布局。

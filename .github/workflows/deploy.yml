@@ -100,6 +100,27 @@ jobs:
             -e "ssh -i ~/.ssh/deploy_key -o StrictHostKeyChecking=yes" \
             build/ "${SERVER_USER}@${SERVER_HOST}:/var/www/lailai.one/"
 
+      - name: Verify deployed website and UI documentation
+        run: |
+          for page in index.html docs/project/ui/application.html zh-Hans/docs/project/ui/application.html; do
+            url="${page%.html}"
+            if test "$page" = index.html; then url=''; fi
+            curl --fail --silent --show-error --retry 5 --retry-all-errors --retry-delay 3 --max-time 30 \
+              "https://lailai.one/$url?deployment=$GITHUB_SHA" -o "$RUNNER_TEMP/deployed-page.html"
+            cmp "build/$page" "$RUNNER_TEMP/deployed-page.html"
+          done
+          python3 - <<'PY' > "$RUNNER_TEMP/deployed-assets.txt"
+          import pathlib, re
+          html = pathlib.Path('build/index.html').read_text()
+          for asset in sorted(set(re.findall(r'(?:src|href)=[\"\'](/assets/[^\"\']+)', html))):
+              print(asset)
+          PY
+          while IFS= read -r asset; do
+            curl --fail --silent --show-error --retry 5 --retry-all-errors --retry-delay 3 --max-time 30 \
+              "https://lailai.one$asset?deployment=$GITHUB_SHA" -o "$RUNNER_TEMP/deployed-asset"
+            cmp "build$asset" "$RUNNER_TEMP/deployed-asset"
+          done < "$RUNNER_TEMP/deployed-assets.txt"
+
   deploy:
     name: Deploy to GitHub Pages
     needs: publish

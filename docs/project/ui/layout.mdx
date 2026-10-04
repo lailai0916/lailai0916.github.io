@@ -73,13 +73,13 @@ export function ProjectPanel() {
 
 ## 卡片
 
-| 组件        | 必要属性                     | 可选属性                                                            |
-| ----------- | ---------------------------- | ------------------------------------------------------------------- |
-| `Card`      | `children`                   | `padding`、`className`、`wrapperClassName`、`style`；`to` 或 `href` |
-| `TitleCard` | `title`、`children`          | `icon`、`description`、`count`、`padding`、`bodyAlign`、`size`      |
-| `LinkCard`  | `title`，以及 `to` 或 `href` | `description`、`image`、`fallbackIcon`、`imageVariant`              |
-| `DataCard`  | `value`、`label`、`icon`     | `format`                                                            |
-| `ShareCard` | `url`、`title`               | `description`、`image`                                              |
+| 组件        | 必要属性                     | 可选属性                                                                  |
+| ----------- | ---------------------------- | ------------------------------------------------------------------------- |
+| `Card`      | `children`                   | `as`、`padding`、`className`、`wrapperClassName`、`style`；`to` 或 `href` |
+| `TitleCard` | `title`、`children`          | `icon`、`description`、`count`、`padding`、`bodyAlign`、`size`            |
+| `LinkCard`  | `title`，以及 `to` 或 `href` | `description`、`image`、`fallbackIcon`、`imageVariant`                    |
+| `DataCard`  | `value`、`label`、`icon`     | `format`、`description`                                                   |
+| `ShareCard` | `url`、`title`               | `description`、`image`                                                    |
 
 `Card`、`LinkCard` 的 `to` 与 `href` 二选一；站内导航使用 `to`，并通过 `LaikitProvider` 接入路由。链接卡片内不要再放按钮或其他链接，以免嵌套交互元素。
 
@@ -105,3 +105,5 @@ export function ProjectCards() {
 ```
 
 `DataCard.label` 支持按语言选择单复数。英文使用 `'Component|Components'`，中文使用单一形式 `'组件'`，详见 [框架接入](/docs/project/ui/integration)。
+
+`Card.as` 默认为 `div`，也可选择 `article` 或 `section`，用于保持应用的内容语义。`DataCard.value` 接受数字或已格式化的字符串，例如 `"82%"`；数字继续使用原有格式化方式，`description` 可提供补充说明。

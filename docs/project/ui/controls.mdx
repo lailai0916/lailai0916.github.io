@@ -7,6 +7,11 @@ summary: 按钮与表单组件统一操作反馈、输入外观和焦点样式�
 import { useState } from 'react';
 import {
   Button,
+  ButtonLink,
+  Checkbox,
+  CopyButton,
+  PasswordField,
+  Radio,
   Cluster,
   Panel,
   PanelBody,
@@ -67,6 +72,62 @@ export function ControlsPreview() {
   );
 }
 
+export function CompactSegmentedPreview() {
+  const [view, setView] = useState('all');
+  return (
+    <Segmented
+      size="sm"
+      orientation="horizontal"
+      stackAt={0}
+      ariaLabel="工具视图"
+      value={view}
+      onChange={setView}
+      items={[
+        { value: 'all', label: '全部', icon: 'lucide:grid-2x2' },
+        { value: 'favorites', label: '收藏', icon: 'lucide:star' },
+        { value: 'recent', label: '最近', icon: 'lucide:history' },
+      ]}
+    />
+  );
+}
+
+export function ApplicationFieldsPreview() {
+  const [accepted, setAccepted] = useState(true);
+  const [kind, setKind] = useState('word');
+  return (
+    <Stack gap={16}>
+      <PasswordField label="密码" defaultValue="example-password" autoComplete="new-password" />
+      <Checkbox
+        label="接收学习提醒"
+        checked={accepted}
+        onChange={(event) => setAccepted(event.target.checked)}
+      />
+      <Cluster>
+        <Radio
+          name="example-kind"
+          label="词汇"
+          value="word"
+          checked={kind === 'word'}
+          onChange={() => setKind('word')}
+        />
+        <Radio
+          name="example-kind"
+          label="古诗词"
+          value="poem"
+          checked={kind === 'poem'}
+          onChange={() => setKind('poem')}
+        />
+      </Cluster>
+      <Cluster>
+        <CopyButton value="laikit UI" />
+        <ButtonLink to="/docs/project/ui" size="sm">
+          查看组件文档
+        </ButtonLink>
+      </Cluster>
+    </Stack>
+  );
+}
+
 ## 参考资料
 
 - [组件源码 - GitHub](https://github.com/lailai0916/ui/tree/main/src/components)
@@ -112,13 +173,17 @@ export function Actions() {
 
 ## 选择与调整
 
-| 组件        | 必要属性                                  | 可选属性与行为                                                    |
-| ----------- | ----------------------------------------- | ----------------------------------------------------------------- |
-| `Segmented` | `value`、`items`；按钮模式提供 `onChange` | 默认纵向；`orientation="horizontal"` 横向；`ariaLabel` 命名选择组 |
-| `Slider`    | `value`、`min`、`max`、`onChange`         | `step`、`label`、`valueLabel`、`onCommit`、`aria-label`           |
-| `Switch`    | `checked`、`onChange`                     | 用 `aria-label` 提供开关用途                                      |
+| 组件        | 必要属性                                  | 可选属性与行为                                                                      |
+| ----------- | ----------------------------------------- | ----------------------------------------------------------------------------------- |
+| `Segmented` | `value`、`items`；按钮模式提供 `onChange` | 默认纵向；`orientation="horizontal"` 横向；`size="sm"` 紧凑；`ariaLabel` 命名选择组 |
+| `Slider`    | `value`、`min`、`max`、`onChange`         | `step`、`label`、`valueLabel`、`onCommit`、`aria-label`                             |
+| `Switch`    | `checked`、`onChange`                     | 用 `aria-label` 提供开关用途                                                        |
 
-`Segmented.items` 中每项包含 `value` 和 `label`，可附 `icon`。按钮模式采用单选组语义，通过方向键移动和选择。横向排列在 480 px 以下堆叠，也可指定 `stackAt={360}`。
+`Segmented.items` 中每项包含 `value` 和 `label`，可附 `icon`。按钮模式采用单选组语义，通过方向键移动和选择。横向排列在 480 px 以下堆叠，也可指定 `stackAt={360}`，或用 `stackAt={0}` 始终保持横向。
+
+`size` 默认为 `md`。`size="sm"` 使用紧凑文字和 32 px 高的选项，在小屏或触摸设备上增至 44 px；选中块、圆角和焦点样式与默认尺寸一致。
+
+<CompactSegmentedPreview />
 
 导航模式给每一项设置 `href`，选中值由当前路由决定，此时不会调用 `onChange`。同一组不要混用按钮与链接。
 
@@ -177,3 +242,15 @@ export function ProfileFields() {
 ```
 
 校验失败时传入具体的 `error` 文案，组件会设置 `aria-invalid` 并关联错误消息。业务校验、请求状态与提交处理由宿主负责；不要把占位文字作为唯一标签。
+
+## 原生控件与应用操作
+
+<ApplicationFieldsPreview />
+
+`Input`、`TextArea` 和 `Select` 提供不带标签框架的基础控件，保留原生属性、事件与 ref。应用提供关联标签；通常优先使用 `TextField`、`TextAreaField`、`SelectField`。字段的 `wrapperClassName` 只安排外层布局，代码内容可使用 `monospace`。
+
+`PasswordInput` 与 `PasswordField` 提供密码显隐，默认操作名称跟随 Provider 语言，也可设置 `showLabel`、`hideLabel`。显隐按钮不会提交表单，`autoComplete` 由应用选择。
+
+`Checkbox`、`Radio` 必须提供可见 `label`，可附加 `description`；受控选中状态、`name`、`value`、`disabled` 与事件采用原生输入接口。
+
+`ButtonLink` 接受 `to` 或 `href`，使用 Button 同款 `variant`、`size`、`rounded`、`fullWidth` 与 `leftIcon`，通过 Provider 接入路由。`CopyButton` 接受待复制的 `value`，默认反馈跟随语言，复制失败时明确提示；`onCopied` 与 `onError` 可接入应用处理。

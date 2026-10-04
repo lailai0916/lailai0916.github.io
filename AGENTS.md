@@ -29,6 +29,8 @@ Rspack caches are restored after `npm ci` and keyed by locale, Node version, loc
 configuration, and commit, with reuse across commits. Only successful builds are cached.
 The publish job combines both artifacts, preserving hidden static files, then runs
 `.github/scripts/validate-build.py` before syncing the server and deploying GitHub Pages.
+After syncing, it compares the public homepage, bilingual application-component documentation, and
+entry assets with the exact build before deploying GitHub Pages.
 The validator also checks that archive year filters match on tag/author detail routes and that
 Overview has a nonzero post count in both locales.
 Keep `npm run check:ci` in the build jobs; normal local `npm run build` still builds both locales.

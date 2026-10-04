@@ -1,7 +1,7 @@
 ---
 title: laikit UI
 description: 本文介绍 laikit UI 的设计理念、组件分类、环境要求，以及安装、主题定制和框架接入文档。
-summary: laikit UI 是一套 React 组件库，以统一、简约、现代为设计原则。0.2 系列提供 43 个 UI 组件，覆盖表单、布局、数据展示和内容展示。组件提供 TypeScript 类型声明，支持浅色与深色主题、多语言文案和 CSS 变量定制，通过 LaikitProvider 接入应用的路由与标题组件。npm 包名为 @lailai0916/ui，采用 MIT 许可证。
+summary: laikit UI 是一套 React 组件库，以统一、简约、现代为设计原则。0.3 系列提供 56 个 UI 组件，覆盖表单、布局、数据展示和内容展示。组件提供 TypeScript 类型声明，支持浅色与深色主题、多语言文案和 CSS 变量定制，通过 LaikitProvider 接入应用的路由与标题组件。npm 包名为 @lailai0916/ui，采用 MIT 许可证。
 ---
 
 ## 参考资料
@@ -11,11 +11,13 @@ summary: laikit UI 是一套 React 组件库，以统一、简约、现代为设
 
 ## 简介
 
+组件库提取自 lailai's Home，供 Tools、Academy 等项目复用同款控件与布局。已有组件以共享默认样式为准，宿主通过公开属性组织内容与布局。
+
 **laikit UI** 是一套 React 组件库，设计遵循统一、简约、现代，提供表单、布局、数据展示和内容展示组件。
 
 组件提供 TypeScript 类型声明，通过 CSS 变量定制颜色、字体与间距，支持浅色、深色主题和多语言文案。路由与标题组件可通过 `LaikitProvider` 接入应用所用的框架。
 
-组件库采用 [MIT 许可证](https://github.com/lailai0916/ui/blob/main/LICENSE)，npm 包名为 `@lailai0916/ui`。这组文档对应 **0.2 系列** API。
+组件库采用 [MIT 许可证](https://github.com/lailai0916/ui/blob/main/LICENSE)，npm 包名为 `@lailai0916/ui`。这组文档对应 **0.3 系列** API。
 
 ## 文档导航
 
@@ -23,6 +25,7 @@ summary: laikit UI 是一套 React 组件库，以统一、简约、现代为设
 | -------------------------------------------- | -------------------------------- |
 | [快速开始](/docs/project/ui/getting-started) | 安装、样式导入、最小应用         |
 | [按钮与表单](/docs/project/ui/controls)      | 按钮、选择、滑块、开关与输入字段 |
+| [应用交互](/docs/project/ui/application)     | 标签切换、提示、对话框与表格     |
 | [布局与卡片](/docs/project/ui/layout)        | 页面容器、排列、面板与卡片       |
 | [数据展示](/docs/project/ui/data-display)    | 图表、进度、加载与异常状态       |
 | [内容展示](/docs/project/ui/content)         | 头像、徽标、窗口、引用与分页     |
@@ -31,15 +34,15 @@ summary: laikit UI 是一套 React 组件库，以统一、简约、现代为设
 
 ## 组件清单
 
-0.2 系列共有 **43 个 UI 组件**。以下按独立导出计数，`Tooltip.Label`、`Tooltip.Value` 等子部件不重复计数；Provider、Hooks、路由适配和工具函数不计入。
+0.3 系列共有 **56 个 UI 组件**。以下按独立导出计数，`Tooltip.Label`、`Tooltip.Value` 等子部件不重复计数；Provider、Hooks、路由适配和工具函数不计入。
 
-| 分类       | 数量 | 组件                                                                                                                                                          |
-| ---------- | ---- | ------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 按钮与表单 | 8    | Button、IconButton、Segmented、Slider、Switch、TextField、TextAreaField、SelectField                                                                          |
-| 布局与卡片 | 15   | Card、TitleCard、LinkCard、DataCard、ShareCard、PageHeader、PageTitle、PageContent、PageContainer、Stack、Cluster、Panel、PanelHeader、PanelBody、PanelFooter |
-| 数据展示   | 5    | Chart、Donut、Progress、DataState、Skeleton                                                                                                                   |
-| 内容展示   | 14   | Avatar、Brand、Badge、Icon、IconBlock、Tooltip、TrafficLights、WindowBar、WindowPanel、MDTitle、Quote、GitHub、EmptyState、Paginator                          |
-| 主题控件   | 1    | ThemeControl                                                                                                                                                  |
+| 分类       | 数量 | 组件                                                                                                                                                                                       |
+| ---------- | ---- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| 按钮与表单 | 18   | Button、ButtonLink、CopyButton、IconButton、Segmented、Tabs、Slider、Switch、Input、TextArea、Select、TextField、TextAreaField、SelectField、PasswordInput、PasswordField、Checkbox、Radio |
+| 布局与卡片 | 15   | Card、TitleCard、LinkCard、DataCard、ShareCard、PageHeader、PageTitle、PageContent、PageContainer、Stack、Cluster、Panel、PanelHeader、PanelBody、PanelFooter                              |
+| 数据展示   | 6    | Chart、Donut、Progress、DataState、Skeleton、Table                                                                                                                                         |
+| 内容展示   | 16   | Alert、Dialog、Avatar、Brand、Badge、Icon、IconBlock、Tooltip、TrafficLights、WindowBar、WindowPanel、MDTitle、Quote、GitHub、EmptyState、Paginator                                        |
+| 主题控件   | 1    | ThemeControl                                                                                                                                                                               |
 
 ## 环境与接入
 
