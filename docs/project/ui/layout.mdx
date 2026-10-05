@@ -4,12 +4,24 @@ description: 本文介绍页面容器、排列、面板和卡片组件的组合�
 summary: 布局组件负责宽度、排列与间距，卡片和面板负责内容表面及分区。PageContainer 限制页面宽度，Stack 纵向排列，Cluster 横向排列并换行；Panel 可组合标题、正文与页脚。卡片家族提供标题、链接、统计和分享等结构，页面业务与响应式网格仍由宿主组织。间距与容器宽度使用像素数值，链接接入宿主路由，标题层级需要与页面结构保持一致。
 ---
 
-import { Badge, Cluster, Panel, PanelBody, PanelFooter, PanelHeader, Stack } from '@lailai0916/ui';
+import {
+  Badge,
+  Brand,
+  ButtonLink,
+  Cluster,
+  Panel,
+  PanelBody,
+  PanelFooter,
+  PanelHeader,
+  SiteHeader,
+  Stack,
+} from '@lailai0916/ui';
 
 ## 参考资料
 
 - [Layout 组件 - GitHub](https://github.com/lailai0916/ui/tree/main/src/components/Layout)
 - [Panel 组件 - GitHub](https://github.com/lailai0916/ui/tree/main/src/components/Panel)
+- [SiteHeader 组件 - GitHub](https://github.com/lailai0916/ui/tree/main/src/components/SiteHeader)
 
 ## 效果展示
 
@@ -32,14 +44,15 @@ import { Badge, Cluster, Panel, PanelBody, PanelFooter, PanelHeader, Stack } fro
 
 ## 页面布局
 
-| 组件            | 主要属性                      | 行为                               |
-| --------------- | ----------------------------- | ---------------------------------- |
-| `PageContainer` | `children`、`width`           | 居中限制内容宽度，默认最大 1120 px |
-| `Stack`         | `children`、`gap`             | 纵向排列，默认间距 16 px           |
-| `Cluster`       | `children`、`gap`             | 横向排列并换行，默认间距 12 px     |
-| `PageHeader`    | `children`、`aside`           | 标题区域与附加内容                 |
-| `PageTitle`     | `title`、`description`        | 页面标题与说明                     |
-| `PageContent`   | `children`、`as`、`className` | 页面正文容器，可选择元素类型       |
+| 组件            | 主要属性                         | 行为                               |
+| --------------- | -------------------------------- | ---------------------------------- |
+| `PageContainer` | `children`、`width`              | 居中限制内容宽度，默认最大 1120 px |
+| `SiteHeader`    | `brand`、`navigation`、`actions` | 网站顶部栏与响应式排列             |
+| `Stack`         | `children`、`gap`                | 纵向排列，默认间距 16 px           |
+| `Cluster`       | `children`、`gap`                | 横向排列并换行，默认间距 12 px     |
+| `PageHeader`    | `children`、`aside`              | 标题区域与附加内容                 |
+| `PageTitle`     | `title`、`description`           | 页面标题与说明                     |
+| `PageContent`   | `children`、`as`、`className`    | 页面正文容器，可选择元素类型       |
 
 `PageContainer`、`Stack` 和 `Cluster` 支持原生 `div` 属性。`width`、`gap` 是像素数值，例如 `width={960}`、`gap={16}`。
 
@@ -64,6 +77,63 @@ export function ProjectPanel() {
 ```
 
 `PageTitle.title` 保留 HTML 字符串接口，只能使用应用自己编写的可信内容。来自用户或远程数据的标题应使用普通 React 文本元素；文章标题可以选择接受 `ReactNode` 的 `MDTitle`。
+
+## 网站顶部栏
+
+`SiteHeader` 统一顶部栏的高度、颜色、间距、页面容器和触摸区域。品牌、导航和操作由应用传入，搜索、通知、登录状态与路由仍由应用管理。
+
+<SiteHeader
+  position="static"
+  brand={
+    <a href="/docs/project/ui" aria-label="laikit UI 文档">
+      <Brand logoSrc="/img/logo.svg" name="laikit UI" />
+    </a>
+  }
+  actions={
+    <ButtonLink href="https://github.com/lailai0916/ui" size="sm">
+      GitHub
+    </ButtonLink>
+  }
+/>
+
+| 属性           | 行为                                                 |
+| -------------- | ---------------------------------------------------- |
+| `brand`        | 品牌区域，通常传入路由链接和 `Brand`                 |
+| `navigation`   | 桌面导航或当前位置，在宽度不超过 900 px 时隐藏       |
+| `mobileAction` | 宽度不超过 900 px 时显示，通常传入打开应用菜单的按钮 |
+| `actions`      | 语言、主题、搜索、通知和账号等操作                   |
+| `position`     | 默认 `sticky`，也可选择 `fixed` 或 `static`          |
+| `width`        | 内部容器的最大宽度，单位为像素，默认 1120 px         |
+| `fullWidth`    | 忽略 `width`，覆盖可用宽度并保留共享页面留白         |
+
+不超过 520 px 时，顶部栏中的 `Brand` 隐藏名称，品牌链接应提供 `aria-label`。触摸设备或不超过 600 px 时，操作按钮至少保留 44 px 点击区域。导航包含必要入口时，应用应通过 `mobileAction` 提供菜单，并处理展开状态、关闭、焦点返回和页面切换。
+
+```tsx
+import { Brand, ButtonLink, SiteHeader, SkipLink } from '@lailai0916/ui';
+
+export function ProjectLayout() {
+  return (
+    <>
+      <SkipLink>跳到主要内容</SkipLink>
+      <SiteHeader
+        brand={
+          <a href="/" aria-label="项目首页">
+            <Brand logoSrc="/logo.svg" name="项目名称" />
+          </a>
+        }
+        actions={<ButtonLink to="/settings">设置</ButtonLink>}
+      />
+      <main id="main-content" tabIndex={-1}>
+        应用内容
+      </main>
+    </>
+  );
+}
+```
+
+`SkipLink` 默认指向 `#main-content`，获得焦点时显示，文案由应用本地化。主区域应使用对应的 `id` 和 `tabIndex={-1}`。`position="fixed"` 时，应用需要为主区域预留 `--lk-header-height` 的空间。
+
+应用侧栏可通过 `--lk-header-brand-width` 对齐桌面品牌列，窄屏时会自动恢复紧凑排列。支持的钩子包括 `site-header`、`header-inner`、`header-start`、`header-brand`、`header-navigation`、`header-mobile-action`、`header-actions` 和 `skip-link`。
 
 ## 面板
 
