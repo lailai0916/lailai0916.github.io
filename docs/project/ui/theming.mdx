@@ -1,8 +1,16 @@
 ---
 title: 主题定制
 description: 本文介绍主题变量、浅深色切换、主题控件和局部样式覆盖，以及与宿主主题的分工。
-summary: 主题由文档根元素的 data-theme 和共享 CSS 变量决定，颜色、字体、圆角、间距与阴影均可按需覆盖。独立应用使用 ThemeProvider 管理系统、浅色和深色偏好，ThemeControl 提供分段或紧凑菜单；已有主题管理器的站点继续由宿主控制。样式覆盖放在组件库之后，优先采用公开变量和属性，生成的 CSS Module 类名不作为稳定接口。
+summary: 主题由文档根元素的 data-theme 和共享 CSS 变量决定，颜色、字体、圆角、间距与阴影均可按需覆盖。独立应用使用 ThemeProvider 管理主题，ThemeControl 提供三种偏好选择，ThemeButton 提供受控的一键深浅切换。已有主题管理器的站点继续由宿主控制。样式覆盖放在组件库之后，优先采用公开变量和属性，生成的 CSS Module 类名不作为稳定接口。
 ---
+
+import { useState } from 'react';
+import { ThemeButton } from '@lailai0916/ui';
+
+export function ThemeButtonPreview() {
+  const [theme, setTheme] = useState('light');
+  return <ThemeButton theme={theme} onThemeChange={setTheme} />;
+}
 
 ## 参考资料
 
@@ -61,17 +69,39 @@ export function ThemeSettings() {
 
 `ThemeProvider` 作用于整份文档，在应用根部挂载一次即可。
 
-| 接口                       | 行为                                                       |
-| -------------------------- | ---------------------------------------------------------- |
-| `storageKey`               | 默认 `lailai.theme`；需要独立偏好时使用其他键              |
-| `themeColors`              | 可选 `{ light, dark }`，更新已有的 `theme-color` meta 标签 |
-| `useTheme().preference`    | `system`、`light` 或 `dark`                                |
-| `useTheme().resolvedTheme` | 当前实际使用的 `light` 或 `dark`                           |
-| `useTheme().setPreference` | 更新偏好，并在可用时保存到本地存储                         |
+| 接口                       | 行为                                                              |
+| -------------------------- | ----------------------------------------------------------------- |
+| `storageKey`               | 默认 `lailai.theme`；需要独立偏好时使用其他键                     |
+| `mode`                     | 默认 `preference` 保存偏好；`system` 跟随系统并允许当前页临时切换 |
+| `themeColors`              | 可选 `{ light, dark }`，更新已有的 `theme-color` meta 标签        |
+| `useTheme().preference`    | `system`、`light` 或 `dark`                                       |
+| `useTheme().resolvedTheme` | 当前实际使用的 `light` 或 `dark`                                  |
+| `useTheme().setPreference` | 更新偏好；仅 `preference` 模式在可用时保存到本地存储              |
 
 Provider 挂载后读取保存值，监听系统偏好和其他标签页的存储变化。本地存储被禁用时，当前页仍可切换。`themeColors` 不会创建 meta 标签，应用需要自行提供该标签。
 
 `ThemeControl.labels` 必须包含三种模式的文案。`variant` 默认为 `segmented`，也可使用 `compact`。紧凑菜单支持方向键、Home、End、Escape，选择后返回触发按钮；Tab 正常离开菜单。
+
+## 一键深浅切换
+
+`ThemeButton` 是受控按钮，传入 `theme="light" | "dark"` 与 `onThemeChange`。太阳或月亮显示当前主题，点击请求另一种主题；默认提示文案跟随 `LaikitProvider` 的语言，可用 `label` 覆盖。按钮支持原生属性和 ref，桌面为 32 px，小于等于 980 px 或触摸设备增至 44 px，尊重减少动态效果设置。
+
+<ThemeButtonPreview />
+
+示例只展示按钮状态，不改变本文的主题。独立应用可在已有的根部 Provider 内连接真实主题：
+
+```tsx
+import { ThemeButton, useTheme } from '@lailai0916/ui';
+
+export function AppearanceAction() {
+  const { resolvedTheme, setPreference } = useTheme();
+  return <ThemeButton theme={resolvedTheme} onThemeChange={setPreference} />;
+}
+```
+
+若希望像 Prispect 一样加载时跟随系统，并允许临时切换，在根部使用 `ThemeProvider mode="system"`。该模式忽略保存的主题偏好，不写入存储；系统主题变化或重开页面后重新跟随系统。首次绘制脚本也应直接读取系统主题。默认 `preference` 模式继续保存三种偏好。
+
+已有 Docusaurus 等主题管理器时，直接将其状态与切换回调传给 `ThemeButton`，不用添加第二个 Provider。
 
 ## 宿主主题
 

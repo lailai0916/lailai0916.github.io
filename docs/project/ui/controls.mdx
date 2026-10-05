@@ -10,6 +10,7 @@ import {
   ButtonLink,
   Checkbox,
   CopyButton,
+  LanguageButton,
   PasswordField,
   Radio,
   Cluster,
@@ -128,6 +129,11 @@ export function ApplicationFieldsPreview() {
   );
 }
 
+export function LanguageButtonPreview() {
+  const [locale, setLocale] = useState('zh-Hans');
+  return <LanguageButton locale={locale} onLocaleChange={setLocale} />;
+}
+
 ## 参考资料
 
 - [组件源码 - GitHub](https://github.com/lailai0916/ui/tree/main/src/components)
@@ -170,6 +176,16 @@ export function Actions() {
 ```
 
 `IconButton` 的 `label` 必填，尺寸为 `sm` 或 `md`。示例只展示控件结构，应用需要提供实际操作的 `onClick`。
+
+## 语言按钮
+
+`LanguageButton` 接受 `locale="en" | "zh-Hans"` 和 `onLocaleChange`。按钮显示当前的“EN”或“中”，点击请求切换到另一种语言；翻译、保存偏好和路由由宿主管理。
+
+默认提示与可访问名称说明当前语言及切换目标，也可通过 `label` 覆盖。悬停或键盘聚焦显示提示，Escape 关闭；桌面为 32 px，小于等于 980 px 或触摸设备增至 44 px。支持原生按钮属性与 ref，默认 `type="button"`。
+
+<LanguageButtonPreview />
+
+示例只切换按钮状态。实际应用应把回调连接到自己的语言管理器。
 
 ## 选择与调整
 
