@@ -175,7 +175,17 @@ export function Actions() {
 }
 ```
 
-`IconButton` 的 `label` 必填，尺寸为 `sm` 或 `md`。示例只展示控件结构，应用需要提供实际操作的 `onClick`。
+`IconButton` 的 `label` 必填。默认 `variant="ghost"`，尺寸为 `sm` 或 `md`；顶部栏的搜索、导航等图标操作使用 `variant="header"`，与语言和主题按钮共享圆角、悬停边框、按压、焦点与图标描边。顶部样式在桌面为 32 像素，在宽度不超过 980 像素或粗指针设备上为 44 像素，尺寸由该样式统一管理；图标推荐使用 17 像素。
+
+```tsx
+import { Icon, IconButton } from '@lailai0916/ui';
+
+<IconButton variant="header" label="搜索" title="搜索（⌘K / Ctrl+K）" onClick={openSearch}>
+  <Icon icon="lucide:search" width={17} />
+</IconButton>;
+```
+
+两种外观均保留原生按钮属性、`ref` 与操作提示。示例中的搜索状态和 `openSearch` 由应用提供。
 
 ## 语言按钮
 
