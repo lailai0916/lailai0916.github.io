@@ -1,3 +1,4 @@
+import Hint from '@lailai0916/ui/Hint';
 import { type CSSProperties, type ReactNode, useMemo, useRef, useState } from 'react';
 import Icon from '@lailai0916/ui/Icon';
 import Layout from '@theme/Layout';
@@ -258,40 +259,42 @@ export default function Resources(): ReactNode {
                     className={styles.categories}
                     aria-label={CATEGORY_MENU_LABEL}
                   >
-                    <button
-                      type="button"
-                      className={clsx(
-                        styles.categoryButton,
-                        activeCategory === 'all' && styles.categoryActive
-                      )}
-                      title={allLabel}
-                      aria-pressed={activeCategory === 'all'}
-                      onClick={() => selectCategory('all')}
-                    >
-                      <span className={styles.categoryIcon} aria-hidden>
-                        <Icon icon="lucide:layout-grid" />
-                      </span>
-                      <span className={styles.categoryLabel}>{allLabel}</span>
-                      <small>{total}</small>
-                    </button>
-                    {RESOURCE_LIST.map((category) => (
+                    <Hint label={allLabel}>
                       <button
-                        key={category.id}
                         type="button"
                         className={clsx(
                           styles.categoryButton,
-                          activeCategory === category.id && styles.categoryActive
+                          activeCategory === 'all' && styles.categoryActive
                         )}
-                        title={category.title}
-                        aria-pressed={activeCategory === category.id}
-                        onClick={() => selectCategory(category.id)}
+                        aria-pressed={activeCategory === 'all'}
+                        onClick={() => selectCategory('all')}
                       >
                         <span className={styles.categoryIcon} aria-hidden>
-                          <Icon icon={category.icon} />
+                          <Icon icon="lucide:layout-grid" />
                         </span>
-                        <span className={styles.categoryLabel}>{category.title}</span>
-                        <small>{category.resources.length}</small>
+                        <span className={styles.categoryLabel}>{allLabel}</span>
+                        <small>{total}</small>
                       </button>
+                    </Hint>
+                    {RESOURCE_LIST.map((category) => (
+                      <Hint label={category.title}>
+                        <button
+                          key={category.id}
+                          type="button"
+                          className={clsx(
+                            styles.categoryButton,
+                            activeCategory === category.id && styles.categoryActive
+                          )}
+                          aria-pressed={activeCategory === category.id}
+                          onClick={() => selectCategory(category.id)}
+                        >
+                          <span className={styles.categoryIcon} aria-hidden>
+                            <Icon icon={category.icon} />
+                          </span>
+                          <span className={styles.categoryLabel}>{category.title}</span>
+                          <small>{category.resources.length}</small>
+                        </button>
+                      </Hint>
                     ))}
                   </nav>
                 </div>

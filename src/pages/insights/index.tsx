@@ -1,3 +1,4 @@
+import Hint from '@lailai0916/ui/Hint';
 import { type ReactNode, useState } from 'react';
 import clsx from 'clsx';
 import Icon from '@lailai0916/ui/Icon';
@@ -406,7 +407,11 @@ function MetricsGrid({ range }: { range: InsightsRange }) {
         error={pages.status === 'error' && !pages.isRefreshError ? ANALYTICS_ERROR : undefined}
         errorAction={<RetryButton onClick={pages.retry} />}
         notice={pages.isRefreshError && <RefreshNotice onRetry={pages.retry} />}
-        renderLabel={(p) => <span title={p}>{p === '/' ? '/' : p}</span>}
+        renderLabel={(p) => (
+          <Hint label={p}>
+            <span>{p === '/' ? '/' : p}</span>
+          </Hint>
+        )}
         href={(p) => p}
       />
       <MetricList
@@ -425,7 +430,9 @@ function MetricsGrid({ range }: { range: InsightsRange }) {
         notice={referrers.isRefreshError && <RefreshNotice onRetry={referrers.retry} />}
         renderLabel={(r) =>
           r ? (
-            <span title={r}>{r}</span>
+            <Hint label={r}>
+              <span>{r}</span>
+            </Hint>
           ) : (
             <span className={styles.muted}>
               {translate({

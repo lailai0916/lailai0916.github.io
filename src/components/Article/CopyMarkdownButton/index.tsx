@@ -1,3 +1,4 @@
+import Hint from '@lailai0916/ui/Hint';
 import { useEffect, useRef, useState } from 'react';
 import clsx from 'clsx';
 import { loadIcons } from '@iconify/react';
@@ -104,17 +105,23 @@ export default function CopyMarkdownButton({ source }: { source: string }) {
     state === 'copied' ? COPIED_LABEL : state === 'error' ? COPY_ERROR_LABEL : COPY_LABEL;
 
   return (
-    <button
-      type="button"
-      onClick={onClick}
-      aria-label={label}
-      title={label}
-      className={clsx(shared.metaItem, shared.metaLink, shared.iconBtn, styles.copyMarkdownButton)}
-    >
-      <Icon icon={icon} width={16} height={16} />
-      <span className={styles.status} role="status" aria-live="polite">
-        {state === 'copied' ? COPIED_LABEL : state === 'error' ? COPY_ERROR_LABEL : ''}
-      </span>
-    </button>
+    <Hint label={label}>
+      <button
+        type="button"
+        onClick={onClick}
+        aria-label={label}
+        className={clsx(
+          shared.metaItem,
+          shared.metaLink,
+          shared.iconBtn,
+          styles.copyMarkdownButton
+        )}
+      >
+        <Icon icon={icon} width={16} height={16} />
+        <span className={styles.status} role="status" aria-live="polite">
+          {state === 'copied' ? COPIED_LABEL : state === 'error' ? COPY_ERROR_LABEL : ''}
+        </span>
+      </button>
+    </Hint>
   );
 }

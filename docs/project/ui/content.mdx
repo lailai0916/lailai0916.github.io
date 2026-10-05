@@ -1,10 +1,21 @@
 ---
 title: 内容展示
 description: 本文介绍头像、品牌、徽标、窗口、引用和分页等组件，以及内容来源与交互的使用边界。
-summary: 内容组件提供头像、品牌、徽标、图标、窗口、文章标题、引用、仓库卡片与分页结构。WindowPanel 管理标签切换和折叠，宿主提供内容与操作名称；GitHub 卡片在浏览器请求公开仓库信息。Tooltip 是由调用方定位和显示的数据提示层，TrafficLights 是装饰元素。图片、跳转地址、分页数据和文案由应用提供，不依赖特定网站的数据结构。
+summary: 内容组件提供头像、品牌、徽标、图标、窗口、文章标题、引用、仓库卡片与分页结构。WindowPanel 管理标签切换和折叠，宿主提供内容与操作名称；GitHub 卡片在浏览器请求公开仓库信息。Hint 为控件提供悬停与键盘聚焦时的操作说明，Tooltip 是由调用方定位和显示的数据提示层，TrafficLights 是装饰元素。图片、跳转地址、分页数据和文案由应用提供，不依赖特定网站的数据结构。
 ---
 
-import { Avatar, Badge, Cluster, EmptyState, Icon, WindowPanel } from '@lailai0916/ui';
+import {
+  Avatar,
+  Badge,
+  Cluster,
+  EmptyState,
+  Hint,
+  Icon,
+  Input,
+  Button,
+  Stack,
+  WindowPanel,
+} from '@lailai0916/ui';
 
 ## 参考资料
 
@@ -114,6 +125,39 @@ export function GuideNavigation() {
 }
 ```
 
+## 操作提示
+
+`Hint` 用短文本解释按钮、链接或输入框的用途。默认悬停 500 毫秒后出现，键盘聚焦时立即出现；可将鼠标移到提示上阅读，按 Esc 关闭。提示自动避让视口边缘，并支持深浅色和减少动态效果。
+
+export function ActionHintPreview() {
+  return (
+    <Stack>
+      <Hint label="复制当前结果到剪贴板">
+        <Button>悬停或用 Tab 聚焦</Button>
+      </Hint>
+      <Hint label="按标题或关键词查找内容">
+        <Input aria-label="搜索示例" placeholder="输入关键词" />
+      </Hint>
+    </Stack>
+  );
+}
+
+<ActionHintPreview />
+
+```tsx
+import { Hint, Input } from '@lailai0916/ui';
+
+<Hint label="按标题或关键词查找内容" side="bottom" delay={500}>
+  <Input aria-label="搜索" aria-describedby="search-description" />
+</Hint>;
+```
+
+`label` 是提示文字；`children` 必须是一个元素。自定义触发组件需把 ref、事件和无障碍属性传给同一个 DOM 元素。`Hint` 不增加触发器外层容器，保留原有外观、点击行为与 `aria-describedby`，并移除原生 `title`，避免同时出现两个提示框。
+
+`side` 支持 `top`、`bottom`、`left`、`right`，默认 `bottom`；`delay` 是悬停等待的毫秒数；`disabled` 仅关闭提示，不禁用控件。`className` 与原生 `div` 属性作用于提示内容，稳定样式入口是 `[data-lk="hint"]`。原生对话框内的提示保留在对话框的顶层中。
+
+`IconButton` 自动显示操作提示，内容默认取 `title ?? label`，可用 `hint={false}` 或 `title=""` 关闭。`Button`、`ButtonLink` 在传入非空 `title` 时使用 `Hint`；语言和主题按钮也复用它。字段的标签、错误和必读说明继续通过 `label`、`description`、`error` 常驻展示。
+
 ## 数据提示
 
 `Tooltip` 是图表使用的提示内容层，接受 `leftPct`、原生 `div` 属性和 `children`，可组合 `Tooltip.Label` 与 `Tooltip.Value`。它不包含悬停触发器、门户或自动避让；显示时机、定位容器和交互均由调用方控制。
@@ -134,6 +178,8 @@ export function ChartHint({ visible }: { visible: boolean }) {
   );
 }
 ```
+
+`Hint` 用于操作说明，`Tooltip` 用于日期、数值、状态等数据展示。需要包含可点击链接或按钮的卡片应采用单独的弹层或对话框交互。
 
 完整图表优先使用 `Chart` 或 `Donut`，它们已组织图形与提示层。
 

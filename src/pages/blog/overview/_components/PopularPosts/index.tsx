@@ -1,3 +1,4 @@
+import Hint from '@lailai0916/ui/Hint';
 import Link from '@docusaurus/Link';
 import { translate } from '@docusaurus/Translate';
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -82,9 +83,9 @@ export default function PopularPosts({ items }: { items: BlogItems }) {
                   </span>
                   <div className={styles.content}>
                     <div className={styles.heading}>
-                      <span className={styles.title} title={post.title}>
-                        {post.title}
-                      </span>
+                      <Hint label={post.title}>
+                        <span className={styles.title}>{post.title}</span>
+                      </Hint>
                       <span className={styles.views}>
                         {selectMessage(
                           post.views,

@@ -1,3 +1,4 @@
+import Hint from '@lailai0916/ui/Hint';
 import { type CSSProperties, type ReactNode } from 'react';
 import { translate } from '@docusaurus/Translate';
 import Icon from '@lailai0916/ui/Icon';
@@ -49,16 +50,17 @@ export function IframeWindow({ url }: { url: string }) {
       <BrowserWindow
         url={url}
         toolbar={
-          <a
-            href={url}
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.browserWindowAction}
-            aria-label={openLinkLabel}
-            title={openLinkLabel}
-          >
-            <Icon icon="lucide:external-link" width={16} height={16} />
-          </a>
+          <Hint label={openLinkLabel}>
+            <a
+              href={url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.browserWindowAction}
+              aria-label={openLinkLabel}
+            >
+              <Icon icon="lucide:external-link" width={16} height={16} />
+            </a>
+          </Hint>
         }
         style={{
           minWidth: 'min(100%,45vw)',

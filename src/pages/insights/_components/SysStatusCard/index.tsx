@@ -1,3 +1,4 @@
+import Hint from '@lailai0916/ui/Hint';
 import { useEffect, useState } from 'react';
 import clsx from 'clsx';
 import useIsBrowser from '@docusaurus/useIsBrowser';
@@ -156,18 +157,20 @@ function Cell({
 }) {
   return (
     <div className={styles.cell}>
-      <dt className={styles.key} title={label}>
-        {label}
-      </dt>
-      <dd className={clsx(styles.val, value === '—' && styles.muted)} title={title ?? value}>
-        {loading ? (
-          <Skeleton className={styles.valueSkeleton} width="5rem" height="1em" radius={4} />
-        ) : identifier ? (
-          <code className={styles.identifier}>{value}</code>
-        ) : (
-          value
-        )}
-      </dd>
+      <Hint label={label}>
+        <dt className={styles.key}>{label}</dt>
+      </Hint>
+      <Hint label={title ?? value}>
+        <dd className={clsx(styles.val, value === '—' && styles.muted)}>
+          {loading ? (
+            <Skeleton className={styles.valueSkeleton} width="5rem" height="1em" radius={4} />
+          ) : identifier ? (
+            <code className={styles.identifier}>{value}</code>
+          ) : (
+            value
+          )}
+        </dd>
+      </Hint>
     </div>
   );
 }
@@ -218,9 +221,11 @@ function ResourceMeter({
       <div className={styles.resourceHeader}>
         <span className={styles.resourceLabel}>{label}</span>
         {detail !== undefined && (
-          <span className={styles.resourceDetail} title={detail}>
-            {loading ? <Skeleton width="7rem" height="1em" radius={4} /> : detail}
-          </span>
+          <Hint label={detail}>
+            <span className={styles.resourceDetail}>
+              {loading ? <Skeleton width="7rem" height="1em" radius={4} /> : detail}
+            </span>
+          </Hint>
         )}
         <div className={clsx(styles.resourceValue, percent == null && styles.muted)}>
           {loading ? (

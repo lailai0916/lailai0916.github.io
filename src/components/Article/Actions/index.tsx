@@ -1,3 +1,4 @@
+import Hint from '@lailai0916/ui/Hint';
 import clsx from 'clsx';
 import Link from '@docusaurus/Link';
 import { translate } from '@docusaurus/Translate';
@@ -24,24 +25,26 @@ export default function Actions({ source, editUrl }: ActionsProps) {
   return (
     <div className={styles.actions}>
       {source && <CopyMarkdownButton source={source} />}
-      <button
-        type="button"
-        onClick={() => window.print()}
-        aria-label={printLabel}
-        title={printLabel}
-        className={clsx(shared.metaItem, shared.metaLink, shared.iconBtn, styles.printButton)}
-      >
-        <Icon icon="lucide:printer" width={16} height={16} />
-      </button>
-      {editUrl && (
-        <Link
-          href={editUrl}
-          aria-label={editLabel}
-          title={editLabel}
-          className={clsx(shared.metaItem, shared.metaLink, shared.iconBtn)}
+      <Hint label={printLabel}>
+        <button
+          type="button"
+          onClick={() => window.print()}
+          aria-label={printLabel}
+          className={clsx(shared.metaItem, shared.metaLink, shared.iconBtn, styles.printButton)}
         >
-          <Icon icon="lucide:pencil" width={16} height={16} />
-        </Link>
+          <Icon icon="lucide:printer" width={16} height={16} />
+        </button>
+      </Hint>
+      {editUrl && (
+        <Hint label={editLabel}>
+          <Link
+            href={editUrl}
+            aria-label={editLabel}
+            className={clsx(shared.metaItem, shared.metaLink, shared.iconBtn)}
+          >
+            <Icon icon="lucide:pencil" width={16} height={16} />
+          </Link>
+        </Hint>
       )}
     </div>
   );
