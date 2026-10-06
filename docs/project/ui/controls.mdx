@@ -1,7 +1,7 @@
 ---
 title: 按钮与表单
-description: 本文介绍按钮、分段选择、滑块、开关和表单字段的属性、受控状态与无障碍用法。
-summary: 按钮与表单组件统一操作反馈、输入外观和焦点样式。Button 提供四种外观与三种尺寸，IconButton 必须提供可访问名称；Segmented、Slider 和 Switch 由应用保存状态。文本框、多行文本框与选择框沿用原生事件，并把标签、说明和错误关联到对应字段。按钮选择与路由导航采用不同模式，表单校验与提交仍由应用负责。
+description: 本文介绍按钮、分段选择、下拉菜单和表单字段的属性、受控状态与无障碍用法。
+summary: 按钮与表单组件统一操作反馈、输入外观和焦点样式。Button 提供四种外观与三种尺寸，IconButton 必须提供可访问名称；Segmented、Slider 和 Switch 由应用保存状态。DropdownSelect 提供统一主题的下拉菜单，以字符串回调更新选择；原生 Select 保留浏览器事件接口。字段组件把标签、说明和错误关联到控件，表单校验与提交由应用负责。
 ---
 
 import { useState } from 'react';
@@ -10,6 +10,7 @@ import {
   ButtonLink,
   Checkbox,
   CopyButton,
+  DropdownSelectField,
   LanguageButton,
   PasswordField,
   Radio,
@@ -134,6 +135,23 @@ export function LanguageButtonPreview() {
   return <LanguageButton locale={locale} onLocaleChange={setLocale} />;
 }
 
+export function DropdownSelectPreview() {
+  const [format, setFormat] = useState('json');
+  return (
+    <DropdownSelectField
+      label="导出格式"
+      description="选择导出文件的格式。"
+      value={format}
+      onValueChange={setFormat}
+      options={[
+        { value: 'json', label: 'JSON' },
+        { value: 'csv', label: 'CSV' },
+        { value: 'xlsx', label: 'Excel', disabled: true },
+      ]}
+    />
+  );
+}
+
 ## 参考资料
 
 - [组件源码 - GitHub](https://github.com/lailai0916/ui/tree/main/src/components)
@@ -235,6 +253,68 @@ export function DensityControl() {
 ```
 
 `Slider.onChange` 接收数值，`Switch.onChange` 接收布尔值；它们与原生输入框的事件参数不同。
+
+## 下拉选择
+
+`DropdownSelect` 和 `DropdownSelectField` 从 0.3.5 起提供统一外观的单选菜单。触发按钮和展开列表均使用组件库样式，随宿主的浅色与深色主题切换。
+
+<DropdownSelectPreview />
+
+| 属性                              | 类型与行为                                                                    |
+| --------------------------------- | ----------------------------------------------------------------------------- |
+| `options`                         | 必填；每项包含字符串 `value`、字符串 `label`，可设 `disabled`；`value` 应唯一 |
+| `value`、`onValueChange`          | 受控值与更新回调；回调接收新的字符串值                                        |
+| `defaultValue`                    | 非受控模式的初始值，与 `value` 二选一                                         |
+| `placeholder`                     | 尚未选择时显示的文字，不能代替标签                                            |
+| `id`、`name`                      | 控件 ID 与表单字段名；提供 `name` 后选中值可由 `FormData` 读取                |
+| `disabled`、`required`、`invalid` | 整个控件禁用、必填语义与错误状态                                              |
+| `ref`                             | 指向触发按钮，类型为 `HTMLButtonElement`                                      |
+
+```tsx
+import { useState } from 'react';
+import { DropdownSelectField } from '@lailai0916/ui';
+
+export function ExportFormatField() {
+  const [format, setFormat] = useState('json');
+  return (
+    <DropdownSelectField
+      label="导出格式"
+      name="format"
+      required
+      value={format}
+      onValueChange={setFormat}
+      description="选择导出文件的格式。"
+      options={[
+        { value: 'json', label: 'JSON' },
+        { value: 'csv', label: 'CSV' },
+        { value: 'xlsx', label: 'Excel', disabled: true },
+      ]}
+    />
+  );
+}
+```
+
+非受控模式使用 `defaultValue`；无初始选择时可设置 `placeholder`。基础组件应通过关联标签、`aria-label` 或 `aria-labelledby` 提供可访问名称。
+
+```tsx
+import { DropdownSelect } from '@lailai0916/ui';
+
+<DropdownSelect
+  aria-label="排列顺序"
+  name="sort"
+  defaultValue="updated"
+  options={[
+    { value: 'updated', label: '最近更新' },
+    { value: 'name', label: '名称' },
+  ]}
+/>;
+```
+
+`DropdownSelectField` 要求可见 `label`，支持 `description`、`error` 和 `wrapperClassName`。它自动生成 ID、关联说明和错误；传入 `error` 同时设置 `aria-invalid`。`wrapperClassName` 用于外层布局，`className` 用于触发按钮。颜色、圆角和阴影通过公开的 `--lk-*` 主题变量定制。
+
+方向键移动选项，Enter 或空格确认，Home 和 End 跳至首尾，输入文字可定位选项，Escape 关闭菜单。禁用项不可选；长列表可滚动，弹层会根据可用空间调整位置。在 `Dialog` 内使用时，菜单保持在对话框内交互，不需要额外挂载主题 Provider。
+
+`Select` 和 `SelectField` 仍使用原生 `<select>`，保留浏览器与系统的展开菜单。它们接受 `<option>` 子元素、原生 `onChange` 事件和 `HTMLSelectElement` ref；新下拉组件接受 `options` 数组、`onValueChange(string)` 和按钮 ref，不支持原生 `multiple`、`size` 或 `<optgroup>` 接口。替换时应同步调整属性与事件处理。
 
 ## 表单字段
 
