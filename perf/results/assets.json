@@ -1,0 +1,118 @@
+{
+  "locales": {
+    "en": {
+      "a": [
+        {
+          "kind": "css",
+          "url": "/assets/css/styles.ecf8502c.css",
+          "raw": 838145,
+          "gzip": 432316
+        },
+        {
+          "kind": "js",
+          "url": "/assets/js/runtime~main.9c61c8f1.js",
+          "raw": 55462,
+          "gzip": 27785
+        },
+        {
+          "kind": "js",
+          "url": "/assets/js/main.3e95d5d5.js",
+          "raw": 837766,
+          "gzip": 231647
+        }
+      ],
+      "b": [
+        {
+          "kind": "css",
+          "url": "/assets/css/styles.077ce73f.css",
+          "raw": 336250,
+          "gzip": 62945
+        },
+        {
+          "kind": "js",
+          "url": "/assets/js/runtime~main.39eb9b4f.js",
+          "raw": 49548,
+          "gzip": 24806
+        },
+        {
+          "kind": "js",
+          "url": "/assets/js/main.b9ab6163.js",
+          "raw": 851896,
+          "gzip": 232484
+        }
+      ]
+    },
+    "zh-Hans": {
+      "a": [
+        {
+          "kind": "css",
+          "url": "/zh-Hans/assets/css/styles.acf339ae.css",
+          "raw": 838761,
+          "gzip": 432355
+        },
+        {
+          "kind": "js",
+          "url": "/zh-Hans/assets/js/runtime~main.b6c415a0.js",
+          "raw": 55485,
+          "gzip": 27785
+        },
+        {
+          "kind": "js",
+          "url": "/zh-Hans/assets/js/main.fe0a5e44.js",
+          "raw": 939426,
+          "gzip": 252689
+        }
+      ],
+      "b": [
+        {
+          "kind": "css",
+          "url": "/zh-Hans/assets/css/styles.99111583.css",
+          "raw": 337290,
+          "gzip": 62973
+        },
+        {
+          "kind": "js",
+          "url": "/zh-Hans/assets/js/runtime~main.1203b573.js",
+          "raw": 49571,
+          "gzip": 24814
+        },
+        {
+          "kind": "js",
+          "url": "/zh-Hans/assets/js/main.ed744a48.js",
+          "raw": 953556,
+          "gzip": 253494
+        }
+      ]
+    }
+  },
+  "fontData": {
+    "en": {
+      "faces": 55,
+      "embedded": 53,
+      "external": 77,
+      "decodedBytes": 378508,
+      "uniqueCandidateFontHashes": 130
+    },
+    "zh-Hans": {
+      "faces": 55,
+      "embedded": 53,
+      "external": 77,
+      "decodedBytes": 378508,
+      "uniqueCandidateFontHashes": 130
+    }
+  },
+  "logo": {
+    "a": {
+      "raw": 71362,
+      "gzip": 39428,
+      "png": 49830
+    },
+    "b": {
+      "raw": 33259,
+      "gzip": 22395,
+      "png": 24534
+    },
+    "scanlines": 4195328,
+    "sha256": "94bb6f454c0cd332d6a16fbdbb68c92d1785e0ae37a5932dd06af4d9de95f1ff"
+  }
+}

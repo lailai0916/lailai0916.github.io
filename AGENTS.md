@@ -29,11 +29,16 @@ Rspack caches are restored after `npm ci` and keyed by locale, Node version, loc
 configuration, and commit, with reuse across commits. Only successful builds are cached.
 The publish job combines both artifacts, preserving hidden static files, then runs
 `.github/scripts/validate-build.py` before syncing the server and deploying GitHub Pages.
-After syncing, it compares the public homepage, bilingual application-component documentation, and
-entry assets with the exact build before deploying GitHub Pages.
+After syncing, it compares the bilingual public homepages, application-component and contest
+documentation, and entry assets with the exact build before deploying GitHub Pages.
 The validator also checks that archive year filters match on tag/author detail routes and that
 Overview has a nonzero post count in both locales.
 Keep `npm run check:ci` in the build jobs; normal local `npm run build` still builds both locales.
+After each locale build, `.github/scripts/check-performance.py` checks `perf/budgets.json`
+against the HTML entry assets and Docusaurus's generated client/route manifests. Fonts stay
+external so CSS does not carry unused subsets. The `problemChunks` plugin shares the contest
+catalog; `src/remark/remarkProblem.ts` imports it only in MDX that uses `Problem`, preserving
+route preloading and complete SSR. Reproduction scripts and measurement evidence live in `perf/`.
 
 ## Commands
 

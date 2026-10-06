@@ -9,7 +9,6 @@ import Notation from '@site/src/components/Notation';
 import GitHub from '@lailai0916/ui/GitHub';
 import Quote from '@lailai0916/ui/Quote';
 import Desmos from '@site/src/components/Desmos';
-import Problem from '@site/src/components/Problem';
 import MarkdownLink from '@site/src/components/MarkdownLink';
 
 export default {
@@ -25,5 +24,4 @@ export default {
   GitHub,
   Quote,
   Desmos,
-  Problem,
 };

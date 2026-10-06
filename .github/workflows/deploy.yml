@@ -29,6 +29,8 @@ jobs:
         run: npm ci
       - name: Check repository
         run: npm run check:ci
+      - name: Verify automatic Problem imports
+        run: node perf/bench/remark.mjs
       - name: Cache Docusaurus build
         uses: actions/cache@v5
         with:
@@ -40,6 +42,8 @@ jobs:
         env:
           BUILD_LOCALE: ${{ matrix.locale }}
         run: npm run build -- --locale "$BUILD_LOCALE"
+      - name: Check performance budgets
+        run: python3 .github/scripts/check-performance.py --locale "${{ matrix.locale }}"
       - name: Upload localized build
         uses: actions/upload-artifact@v7
         with:
@@ -102,17 +106,30 @@ jobs:
 
       - name: Verify deployed website and UI documentation
         run: |
-          for page in index.html docs/project/ui/application.html zh-Hans/docs/project/ui/application.html; do
+          for page in index.html zh-Hans/index.html docs/project/ui/application.html zh-Hans/docs/project/ui/application.html docs/contest/string/trie.html zh-Hans/docs/contest/string/trie.html; do
             url="${page%.html}"
-            if test "$page" = index.html; then url=''; fi
+            case "$page" in *index.html) url="${page%index.html}" ;; esac
             curl --fail --silent --show-error --retry 5 --retry-all-errors --retry-delay 3 --max-time 30 \
               "https://lailai.one/$url?deployment=$GITHUB_SHA" -o "$RUNNER_TEMP/deployed-page.html"
             cmp "build/$page" "$RUNNER_TEMP/deployed-page.html"
           done
           python3 - <<'PY' > "$RUNNER_TEMP/deployed-assets.txt"
-          import pathlib, re
-          html = pathlib.Path('build/index.html').read_text()
-          for asset in sorted(set(re.findall(r'(?:src|href)=[\"\'](/assets/[^\"\']+)', html))):
+          import pathlib
+          from html.parser import HTMLParser
+          class EntryAssets(HTMLParser):
+              assets = set()
+              def handle_starttag(self, tag, attrs):
+                  attrs = dict(attrs)
+                  asset = attrs.get('src') if tag == 'script' else attrs.get('href') if tag == 'link' and attrs.get('rel') == 'stylesheet' else None
+                  if asset and asset.startswith(('/assets/', '/zh-Hans/assets/')):
+                      self.assets.add(asset)
+          parser = EntryAssets()
+          for locale in ('', 'zh-Hans/'):
+              parser.feed(pathlib.Path(f'build/{locale}index.html').read_text())
+              prefix = f'/{locale}assets/'
+              assert any(asset.startswith(prefix) and asset.endswith('.css') for asset in parser.assets), f'No entry CSS found: {locale}'
+              assert any(asset.startswith(prefix) and asset.endswith('.js') for asset in parser.assets), f'No entry JavaScript found: {locale}'
+          for asset in sorted(parser.assets):
               print(asset)
           PY
           while IFS= read -r asset; do

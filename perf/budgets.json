@@ -1,0 +1,18 @@
+{
+  "en": {
+    "entryCssGzip": 65536,
+    "entryMainGzip": 239616,
+    "entryRuntimeGzip": 26624,
+    "/:initialJsGzip": 280576,
+    "/docs/note/math/basic/logic:initialJsGzip": 409600,
+    "/docs/project/ui/application:initialJsGzip": 410624
+  },
+  "zh-Hans": {
+    "entryCssGzip": 65536,
+    "entryMainGzip": 262144,
+    "entryRuntimeGzip": 26624,
+    "/:initialJsGzip": 302080,
+    "/docs/note/math/basic/logic:initialJsGzip": 432128,
+    "/docs/project/ui/application:initialJsGzip": 432128
+  }
+}

@@ -1,0 +1,125 @@
+{
+  "description": "Identical frozen baseline served at both A/B URLs; native PNG decode via sharp0.35.4 independent of guard comparator.",
+  "results": [
+    {
+      "key": "desktop-en-light-home-search.png",
+      "changedPixels": 0,
+      "maxChannelDelta": 0,
+      "changedFraction": 0
+    },
+    {
+      "key": "desktop-en-light-home.png",
+      "changedPixels": 0,
+      "maxChannelDelta": 0,
+      "changedFraction": 0
+    },
+    {
+      "key": "desktop-en-light-logic.png",
+      "changedPixels": 0,
+      "maxChannelDelta": 0,
+      "changedFraction": 0
+    },
+    {
+      "key": "desktop-en-light-trie.png",
+      "changedPixels": 0,
+      "maxChannelDelta": 0,
+      "changedFraction": 0
+    },
+    {
+      "key": "desktop-en-light-ui.png",
+      "changedPixels": 0,
+      "maxChannelDelta": 0,
+      "changedFraction": 0
+    },
+    {
+      "key": "desktop-zh-dark-home-search.png",
+      "changedPixels": 31,
+      "maxChannelDelta": 2,
+      "changedFraction": 2.1527777777777776e-5
+    },
+    {
+      "key": "desktop-zh-dark-home.png",
+      "changedPixels": 3,
+      "maxChannelDelta": 1,
+      "changedFraction": 2.0833333333333334e-6
+    },
+    {
+      "key": "desktop-zh-dark-logic.png",
+      "changedPixels": 0,
+      "maxChannelDelta": 0,
+      "changedFraction": 0
+    },
+    {
+      "key": "desktop-zh-dark-trie.png",
+      "changedPixels": 0,
+      "maxChannelDelta": 0,
+      "changedFraction": 0
+    },
+    {
+      "key": "desktop-zh-dark-ui.png",
+      "changedPixels": 0,
+      "maxChannelDelta": 0,
+      "changedFraction": 0
+    },
+    {
+      "key": "mobile-en-dark-home-search.png",
+      "changedPixels": 0,
+      "maxChannelDelta": 0,
+      "changedFraction": 0
+    },
+    {
+      "key": "mobile-en-dark-home.png",
+      "changedPixels": 108,
+      "maxChannelDelta": 1,
+      "changedFraction": 0.0003281079110462997
+    },
+    {
+      "key": "mobile-en-dark-logic.png",
+      "changedPixels": 0,
+      "maxChannelDelta": 0,
+      "changedFraction": 0
+    },
+    {
+      "key": "mobile-en-dark-trie.png",
+      "changedPixels": 0,
+      "maxChannelDelta": 0,
+      "changedFraction": 0
+    },
+    {
+      "key": "mobile-en-dark-ui.png",
+      "changedPixels": 0,
+      "maxChannelDelta": 0,
+      "changedFraction": 0
+    },
+    {
+      "key": "mobile-zh-light-home-search.png",
+      "changedPixels": 0,
+      "maxChannelDelta": 0,
+      "changedFraction": 0
+    },
+    {
+      "key": "mobile-zh-light-home.png",
+      "changedPixels": 0,
+      "maxChannelDelta": 0,
+      "changedFraction": 0
+    },
+    {
+      "key": "mobile-zh-light-logic.png",
+      "changedPixels": 15,
+      "maxChannelDelta": 2,
+      "changedFraction": 4.557054320087496e-5
+    },
+    {
+      "key": "mobile-zh-light-trie.png",
+      "changedPixels": 0,
+      "maxChannelDelta": 0,
+      "changedFraction": 0
+    },
+    {
+      "key": "mobile-zh-light-ui.png",
+      "changedPixels": 0,
+      "maxChannelDelta": 0,
+      "changedFraction": 0
+    }
+  ]
+}

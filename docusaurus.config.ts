@@ -5,6 +5,7 @@ import type * as Preset from '@docusaurus/preset-classic';
 import { execSync } from 'child_process';
 import remarkMath from 'remark-math';
 import rehypeKatex from 'rehype-katex';
+import remarkProblem from './src/remark/remarkProblem';
 import { toShanghaiDateTimeString } from './src/utils/dateTime';
 
 const defaultLocale = 'en';
@@ -81,6 +82,7 @@ const config: Config = {
 
           remarkPlugins: [
             remarkMath,
+            remarkProblem,
             [require('@docusaurus/remark-plugin-npm2yarn'), { sync: true }],
           ],
           rehypePlugins: [rehypeKatex],
@@ -114,6 +116,7 @@ const config: Config = {
 
           remarkPlugins: [
             remarkMath,
+            remarkProblem,
             [require('@docusaurus/remark-plugin-npm2yarn'), { sync: true }],
           ],
           rehypePlugins: [rehypeKatex],
@@ -122,6 +125,7 @@ const config: Config = {
         pages: {
           remarkPlugins: [
             remarkMath,
+            remarkProblem,
             [require('@docusaurus/remark-plugin-npm2yarn'), { sync: true }],
           ],
           rehypePlugins: [rehypeKatex],
@@ -297,6 +301,8 @@ const config: Config = {
 
   plugins: [
     require.resolve('./src/plugins/privacyLastUpdate/index.ts'),
+    require.resolve('./src/plugins/externalFonts/index.ts'),
+    require.resolve('./src/plugins/problemChunks/index.ts'),
     require.resolve('docusaurus-plugin-image-zoom'),
   ],
 };
