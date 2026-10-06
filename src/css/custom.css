@@ -1,6 +1,7 @@
 @import '@lailai0916/ui/theme.css';
 @import '@lailai0916/ui/styles.css';
 @import './laikit.css';
+@import './search-icons.css';
 @import '@fontsource/inter/400.css';
 @import '@fontsource/inter/500.css';
 @import '@fontsource/inter/600.css';
@@ -117,9 +118,13 @@ html.debug-mode span {
 }
 
 .navbar .DocSearch-Button {
-  height: var(--lk-control-height-compact);
-  padding: 0 var(--lk-space-2);
-  border-radius: var(--lk-radius-control);
+  height: 38px;
+  padding: 0 0.75rem;
+  border-radius: var(--lk-radius-lg);
+  background: var(--ifm-card-background-color);
+  border-color: var(--ifm-color-emphasis-200);
+  box-shadow: var(--lk-shadow-md);
+  color: var(--ifm-color-emphasis-500);
   font-family: var(--ifm-font-family-base);
   transition:
     background-color 160ms ease,
@@ -145,13 +150,13 @@ html.debug-mode span {
 
 .navbar .DocSearch-Button-Placeholder {
   padding-inline: var(--lk-space-2) var(--lk-space-3);
-  font-size: 0.875rem;
-  font-weight: 500;
+  font-size: 0.95rem;
+  font-weight: 400;
 }
 
 .navbar .DocSearch-Search-Icon {
-  width: var(--lk-icon-size-medium);
-  height: var(--lk-icon-size-medium);
+  width: 1.05rem;
+  height: 1.05rem;
 }
 
 .navbar .DocSearch-Button-Key {
@@ -187,8 +192,16 @@ html.debug-mode span {
 }
 
 .DocSearch-Container .DocSearch-Form {
+  height: auto;
+  min-height: 54px;
+  margin-right: 36px;
+  width: calc(100% - 36px);
+  gap: 0.6rem;
+  padding: 0.75rem 1rem;
+  background: var(--ifm-card-background-color);
   border: 1px solid var(--ifm-color-emphasis-200);
-  border-radius: var(--lk-radius-control);
+  border-radius: var(--lk-radius-lg);
+  box-shadow: var(--lk-shadow-md);
   transition:
     border-color 160ms ease,
     box-shadow 160ms ease;
@@ -199,9 +212,94 @@ html.debug-mode span {
   box-shadow: var(--lk-focus-ring);
 }
 
-.DocSearch-Container .DocSearch-Input,
+.DocSearch-Container .DocSearch-MagnifierLabel,
+.DocSearch-Container .DocSearch-LoadingIndicator {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  width: 1.05rem;
+  height: 1.05rem;
+  padding: 0;
+  color: var(--ifm-color-emphasis-500);
+}
+
+.DocSearch-Container .DocSearch-Search-Icon,
+.DocSearch-Container .DocSearch-Form:focus-within .DocSearch-MagnifierLabel svg {
+  width: 1.05rem;
+  height: 1.05rem;
+  color: var(--ifm-color-emphasis-500);
+}
+
+.DocSearch-Container .DocSearch-Input {
+  min-width: 0;
+  min-height: 1.75rem;
+  height: 1.75rem;
+  padding: 0;
+  font: inherit;
+  font-size: 0.95rem;
+  line-height: 1.75rem;
+}
+
+.DocSearch-Container .DocSearch-Input::placeholder {
+  color: var(--ifm-color-emphasis-500);
+}
+
+.DocSearch-Container .DocSearch-Actions {
+  height: 28px;
+  gap: 0.25rem;
+  padding: 0;
+}
+
+.DocSearch-Container .DocSearch-Clear {
+  margin: 0;
+}
+
+.DocSearch-Container .DocSearch-Clear + .DocSearch-Divider {
+  display: none;
+}
+
+.DocSearch-Container .DocSearch-Close {
+  position: absolute;
+  top: calc(50% - 14px);
+  right: -36px;
+}
+
+.DocSearch-Container .DocSearch-Close > svg {
+  width: 1rem;
+  height: 1rem;
+}
+
+.DocSearch-Container :is(.DocSearch-Clear, .DocSearch-Close) {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  padding: 0;
+  border: none;
+  border-radius: 6px;
+  color: var(--ifm-color-emphasis-600);
+  transition:
+    background-color 160ms ease,
+    color 160ms ease,
+    transform 160ms ease;
+}
+
+.DocSearch-Container .DocSearch-Clear[hidden] {
+  display: none;
+}
+
+.DocSearch-Container :is(.DocSearch-Clear, .DocSearch-Close):hover {
+  background: var(--ifm-color-emphasis-100);
+  color: var(--ifm-color-content);
+}
+
+.DocSearch-Container :is(.DocSearch-Clear, .DocSearch-Close):active {
+  transform: scale(0.92);
+}
+
 .DocSearch-Container .DocSearch-Modal-heading {
-  font-size: 1rem;
+  font-size: 0.95rem;
   font-weight: 400;
 }
 
@@ -283,7 +381,6 @@ html.debug-mode span {
   padding: 0;
 }
 
-.search-page-wrapper .container input[type='search'],
 .search-page-wrapper .container select {
   min-height: var(--docsearch-searchbox-height, 56px);
   padding: var(--lk-space-3) var(--lk-space-4);
@@ -299,15 +396,10 @@ html.debug-mode span {
     box-shadow 160ms ease;
 }
 
-.search-page-wrapper .container input[type='search']:focus,
 .search-page-wrapper .container select:focus {
   border-color: var(--ifm-color-primary);
   outline: none;
   box-shadow: var(--lk-focus-ring);
-}
-
-.search-page-wrapper .container input[type='search']::placeholder {
-  color: var(--ifm-color-emphasis-700);
 }
 
 .search-page-wrapper .container > div.row {
@@ -404,14 +496,6 @@ html.debug-mode span {
   box-shadow: var(--lk-shadow-md);
   color: var(--ifm-color-emphasis-700);
   text-align: center;
-}
-
-.search-page-wrapper .container > div:empty:not(.row) {
-  width: var(--lk-space-8);
-  height: var(--lk-space-8);
-  border-width: var(--lk-space-1);
-  border-color: var(--ifm-color-emphasis-200);
-  border-top-color: var(--ifm-color-primary);
 }
 
 .header-github-link::before {

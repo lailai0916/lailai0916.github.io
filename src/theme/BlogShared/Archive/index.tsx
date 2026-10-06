@@ -5,9 +5,9 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import useIsBrowser from '@docusaurus/useIsBrowser';
 import { useLocation } from '@docusaurus/router';
 import { translate } from '@docusaurus/Translate';
-import Icon from '@lailai0916/ui/Icon';
 import Button from '@lailai0916/ui/Button';
 import Card from '@lailai0916/ui/Card';
+import SearchField from '@site/src/components/SearchField';
 import DataState from '@lailai0916/ui/DataState';
 import { useVisitorTimeZone } from '@site/src/hooks/useVisitorTimeZone';
 import { getDateKey } from '@site/src/utils/dateTime';
@@ -45,6 +45,7 @@ const SEARCH_PLACEHOLDER = translate({
   id: 'blog.archive.search.placeholder',
   message: 'Search Posts',
 });
+
 const CLEAR_SEARCH = translate({ id: 'blog.archive.search.clear', message: 'Clear search' });
 
 function ArchiveSection({
@@ -213,31 +214,12 @@ export default function BlogArchive({
       <Head>
         <link rel="canonical" href={new URL(canonical, siteConfig.url).href} />
       </Head>
-      <Card padding={0} className={styles.searchCard}>
-        <div className={styles.searchField}>
-          <span className={styles.searchIcon} aria-hidden="true">
-            <Icon icon="lucide:search" />
-          </span>
-          <input
-            type="search"
-            className={styles.searchInput}
-            value={query}
-            onChange={(event) => setQuery(event.target.value)}
-            placeholder={SEARCH_PLACEHOLDER}
-            aria-label={SEARCH_PLACEHOLDER}
-          />
-          {query && (
-            <button
-              type="button"
-              className={styles.searchClear}
-              onClick={() => setQuery('')}
-              aria-label={CLEAR_SEARCH}
-            >
-              <Icon icon="lucide:x" aria-hidden />
-            </button>
-          )}
-        </div>
-      </Card>
+      <SearchField
+        value={query}
+        onValueChange={setQuery}
+        placeholder={SEARCH_PLACEHOLDER}
+        aria-label={SEARCH_PLACEHOLDER}
+      />
       <YearSection years={years} activeYear={activeYear} archiveUrl={archiveUrl} />
       <TagsSection
         activePermalink={selected?.kind === 'tag' ? selected.permalink : undefined}

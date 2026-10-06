@@ -1,0 +1,169 @@
+/* DocSearch has no icon slots. Skin its existing SVG boxes with bundled Lucide
+   assets so its accessible labels and event handlers stay intact. */
+.navbar .DocSearch-Search-Icon,
+.DocSearch-Container
+  :is(
+    .DocSearch-Search-Icon,
+    .DocSearch-Back-Icon,
+    .DocSearch-Hit-icon > svg,
+    .DocSearch-Hit-Select-Icon,
+    .DocSearch-Hit-action-button > svg,
+    .DocSearch-Action > svg,
+    .DocSearch-Commands-Key > svg,
+    .DocSearch-Screen-Icon > svg,
+    .DocSearch-LoadingIndicator > svg,
+    .DocSearch-AskAiScreen-SmallerLoadingIcon,
+    .DocSearch-AskAiScreen-ActionButton > svg,
+    .DocSearch-Menu-item > svg
+  ) {
+  background-color: currentColor;
+  mask: var(--search-icon) center / contain no-repeat;
+}
+
+.navbar .DocSearch-Search-Icon > *,
+.DocSearch-Container
+  :is(
+    .DocSearch-Search-Icon,
+    .DocSearch-Back-Icon,
+    .DocSearch-Hit-icon > svg,
+    .DocSearch-Hit-Select-Icon,
+    .DocSearch-Hit-action-button > svg,
+    .DocSearch-Action > svg,
+    .DocSearch-Commands-Key > svg,
+    .DocSearch-Screen-Icon > svg,
+    .DocSearch-LoadingIndicator > svg,
+    .DocSearch-AskAiScreen-SmallerLoadingIcon,
+    .DocSearch-AskAiScreen-ActionButton > svg,
+    .DocSearch-Menu-item > svg
+  )
+  > * {
+  visibility: hidden;
+}
+
+.navbar .DocSearch-Search-Icon,
+.DocSearch-Container .DocSearch-Search-Icon {
+  --search-icon: url('lucide-static/icons/search.svg');
+}
+
+.DocSearch-Container .DocSearch-Clear {
+  font-size: 0;
+}
+
+.DocSearch-Container .DocSearch-Clear::after {
+  content: '';
+  width: 1rem;
+  height: 1rem;
+  background: currentColor;
+  mask: url('lucide-static/icons/x.svg') center / contain no-repeat;
+}
+
+.DocSearch-Container :is(.DocSearch-Close, .DocSearch-Hit-action-button) > svg {
+  --search-icon: url('lucide-static/icons/x.svg');
+}
+
+.DocSearch-Container .DocSearch-Hit-icon > svg {
+  --search-icon: url('lucide-static/icons/file-text.svg');
+}
+
+.DocSearch-Container .DocSearch-Hit-icon > svg:has(line) {
+  --search-icon: url('lucide-static/icons/hash.svg');
+}
+
+.DocSearch-Container .DocSearch-Hit-icon > svg[viewBox='0 0 20 20'] {
+  --search-icon: url('lucide-static/icons/text-align-start.svg');
+}
+
+.DocSearch-Container [id*='recentSearches'] .DocSearch-Hit-icon > svg {
+  --search-icon: url('lucide-static/icons/history.svg');
+}
+
+.DocSearch-Container [id*='favoriteSearches'] .DocSearch-Hit-icon > svg,
+.DocSearch-Container
+  [id*='recentSearches']
+  .DocSearch-Hit-action:has(+ .DocSearch-Hit-action)
+  > button
+  > svg {
+  --search-icon: url('lucide-static/icons/star.svg');
+}
+
+.DocSearch-Container :is(.DocSearch-Hit-Select-Icon, .DocSearch-Commands li:nth-child(2) svg) {
+  --search-icon: url('lucide-static/icons/corner-down-left.svg');
+}
+
+.DocSearch-Container .DocSearch-Commands li:first-child kbd:first-child svg {
+  --search-icon: url('lucide-static/icons/arrow-down.svg');
+}
+
+.DocSearch-Container .DocSearch-Commands li:first-child kbd:nth-child(2) svg {
+  --search-icon: url('lucide-static/icons/arrow-up.svg');
+}
+
+.DocSearch-Container :is(.DocSearch-Back-Icon, .DocSearch-AskAi-Return > svg) {
+  --search-icon: url('lucide-static/icons/arrow-left.svg');
+}
+
+.DocSearch-Container .DocSearch-Screen-Icon > svg {
+  --search-icon: url('lucide-static/icons/search-x.svg');
+}
+
+.DocSearch-Container .DocSearch-Screen-Icon > svg[viewBox='0 0 20 20'] {
+  --search-icon: url('lucide-static/icons/wifi-off.svg');
+}
+
+.DocSearch-Container
+  :is(.DocSearch-LoadingIndicator > svg, .DocSearch-AskAiScreen-SmallerLoadingIcon) {
+  --search-icon: url('lucide-static/icons/loader-circle.svg');
+  animation: search-loading 1s linear infinite;
+}
+
+.DocSearch-Container .DocSearch-Hit-icon > .DocSearch-Hit-icon-sparkles {
+  --search-icon: url('lucide-static/icons/sparkles.svg');
+}
+
+.DocSearch-Container .DocSearch-AskAiScreen-CopyButton > svg {
+  --search-icon: url('lucide-static/icons/copy.svg');
+}
+
+.DocSearch-Container .DocSearch-AskAiScreen-CopyButton--copied > svg {
+  --search-icon: url('lucide-static/icons/check.svg');
+}
+
+.DocSearch-Container .DocSearch-AskAiScreen-LikeButton > svg {
+  --search-icon: url('lucide-static/icons/thumbs-up.svg');
+}
+
+.DocSearch-Container .DocSearch-AskAiScreen-DislikeButton > svg {
+  --search-icon: url('lucide-static/icons/thumbs-down.svg');
+}
+
+.DocSearch-Container .DocSearch-StopStreaming > svg {
+  --search-icon: url('lucide-static/icons/square.svg');
+}
+
+.DocSearch-Container .DocSearch-Menu-trigger > svg {
+  --search-icon: url('lucide-static/icons/ellipsis-vertical.svg');
+  width: 1rem;
+  height: 1rem;
+}
+
+.DocSearch-Container .DocSearch-Menu-item:first-child > svg {
+  --search-icon: url('lucide-static/icons/message-circle-plus.svg');
+}
+
+.DocSearch-Container .DocSearch-Menu-item:nth-child(2) > svg,
+.DocSearch-Container [id*='recentConversations'] .DocSearch-Hit-icon > svg {
+  --search-icon: url('lucide-static/icons/messages-square.svg');
+}
+
+@keyframes search-loading {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .DocSearch-Container
+    :is(.DocSearch-LoadingIndicator > svg, .DocSearch-AskAiScreen-SmallerLoadingIcon) {
+    animation: none;
+  }
+}

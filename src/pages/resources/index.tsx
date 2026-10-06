@@ -7,6 +7,7 @@ import { PageTitle, PageHeader, PageContent } from '@lailai0916/ui/Page';
 import DataCard from '@lailai0916/ui/DataCard';
 import Badge from '@lailai0916/ui/Badge';
 import Card from '@lailai0916/ui/Card';
+import SearchField from '@site/src/components/SearchField';
 import LinkCard from '@lailai0916/ui/LinkCard';
 import clsx from 'clsx';
 
@@ -91,10 +92,13 @@ function SearchBar({
   const activeCat = RESOURCE_LIST.find((category) => category.id === activeCategory);
   return (
     <div className={styles.filterBar}>
-      <Card padding={0} className={styles.filterSurface}>
-        <div className={styles.filterSearch}>
-          <Icon icon="lucide:search" className={styles.filterSearchIcon} aria-hidden />
-          {activeCat && (
+      <SearchField
+        value={searchValue}
+        onValueChange={onSearchChange}
+        placeholder={SEARCH_PLACEHOLDER}
+        aria-label={SEARCH_PLACEHOLDER}
+        prefix={
+          activeCat && (
             <Badge icon={activeCat.icon} className={styles.filterActiveCat}>
               {activeCat.title}
               <button
@@ -109,27 +113,9 @@ function SearchBar({
                 <Icon icon="lucide:x" aria-hidden />
               </button>
             </Badge>
-          )}
-          <input
-            type="text"
-            value={searchValue}
-            onChange={(event) => onSearchChange(event.target.value)}
-            placeholder={SEARCH_PLACEHOLDER}
-            aria-label={SEARCH_PLACEHOLDER}
-            className={styles.filterSearchInput}
-          />
-          {searchValue && (
-            <button
-              type="button"
-              onClick={() => onSearchChange('')}
-              className={styles.filterControl}
-              aria-label={CLEAR_SEARCH}
-            >
-              <Icon icon="lucide:x" aria-hidden />
-            </button>
-          )}
-        </div>
-      </Card>
+          )
+        }
+      />
     </div>
   );
 }
