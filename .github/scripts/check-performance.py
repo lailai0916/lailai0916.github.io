@@ -136,7 +136,7 @@ def main():
     parser.add_argument("--locale", choices=["en", "zh-Hans"], required=True)
     parser.add_argument("--build-dir", default="build")
     parser.add_argument("--generated-dir", default=".docusaurus")
-    parser.add_argument("--budgets", default="perf/budgets.json")
+    parser.add_argument("--budgets", default=".github/performance-budgets.json")
     parser.add_argument("--report-only", action="store_true")
     args = parser.parse_args()
     report = measure(args)

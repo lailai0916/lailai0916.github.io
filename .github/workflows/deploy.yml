@@ -30,7 +30,7 @@ jobs:
       - name: Check repository
         run: npm run check:ci
       - name: Verify automatic Problem imports
-        run: node perf/bench/remark.mjs
+        run: node .github/scripts/check-problem-imports.mjs
       - name: Cache Docusaurus build
         uses: actions/cache@v5
         with:

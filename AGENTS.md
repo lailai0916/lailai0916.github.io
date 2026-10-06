@@ -34,11 +34,12 @@ documentation, and entry assets with the exact build before deploying GitHub Pag
 The validator also checks that archive year filters match on tag/author detail routes and that
 Overview has a nonzero post count in both locales.
 Keep `npm run check:ci` in the build jobs; normal local `npm run build` still builds both locales.
-After each locale build, `.github/scripts/check-performance.py` checks `perf/budgets.json`
+After each locale build, `.github/scripts/check-performance.py` checks `.github/performance-budgets.json`
 against the HTML entry assets and Docusaurus's generated client/route manifests. Fonts stay
 external so CSS does not carry unused subsets. The `problemChunks` plugin shares the contest
 catalog; `src/remark/remarkProblem.ts` imports it only in MDX that uses `Problem`, preserving
-route preloading and complete SSR. Reproduction scripts and measurement evidence live in `perf/`.
+route preloading and complete SSR. CI verifies automatic imports with
+`.github/scripts/check-problem-imports.mjs`; `perf/REPORT.md` summarizes the measured gains.
 
 ## Commands
 
