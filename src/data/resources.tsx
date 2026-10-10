@@ -172,6 +172,17 @@ const RESOURCE_CATALOG = {
       message: 'Community evaluation and leaderboards for AI models',
     }),
   },
+  realApiPricing: {
+    title: translate({
+      id: 'data.resources.site.realApiPricing.title',
+      message: 'Real API Pricing',
+    }),
+    href: 'https://realapipricing.com',
+    description: translate({
+      id: 'data.resources.site.realApiPricing.description',
+      message: 'Compare AI subscription and API costs, token allowances, and model performance',
+    }),
+  },
   googleAiStudio: {
     title: translate({
       id: 'data.resources.site.googleAiStudio.title',
@@ -1030,6 +1041,17 @@ const RESOURCE_CATALOG = {
       message: 'Curated gallery of bento-style interface designs',
     }),
   },
+  detailDesign: {
+    title: translate({
+      id: 'data.resources.site.detailDesign.title',
+      message: 'Detail',
+    }),
+    href: 'https://detail.design',
+    description: translate({
+      id: 'data.resources.site.detailDesign.description',
+      message: 'Curated examples of interface design, interaction, motion, and accessibility',
+    }),
+  },
   makerworld: {
     title: translate({
       id: 'data.resources.site.makerworld.title',
@@ -1708,6 +1730,7 @@ export const RESOURCE_LIST: ResourceCategoryItem[] = [
       'microsoftAi',
       'huggingFace',
       'arena',
+      'realApiPricing',
       'googleAiStudio',
       'pytorch',
       'keras',
@@ -1847,6 +1870,7 @@ export const RESOURCE_LIST: ResourceCategoryItem[] = [
       'brandColors',
       'pixelMap',
       'bentoGrids',
+      'detailDesign',
       'makerworld'
     ),
   },

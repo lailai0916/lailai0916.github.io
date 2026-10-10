@@ -488,6 +488,12 @@
   "data.resources.site.arena.description": {
     "message": "基于社区评测的 AI 模型对比与排行榜"
   },
+  "data.resources.site.realApiPricing.title": {
+    "message": "真实 API 定价"
+  },
+  "data.resources.site.realApiPricing.description": {
+    "message": "对比 AI 订阅与 API 的实际成本、Token 额度和模型表现"
+  },
   "data.resources.site.googleAiStudio.title": {
     "message": "Google AI Studio"
   },
@@ -955,6 +961,12 @@
   },
   "data.resources.site.bentoGrids.description": {
     "message": "便当盒式界面设计的精选灵感图库"
+  },
+  "data.resources.site.detailDesign.title": {
+    "message": "Detail"
+  },
+  "data.resources.site.detailDesign.description": {
+    "message": "精选界面设计、交互、动效与无障碍细节案例"
   },
   "data.resources.site.makerworld.title": {
     "message": "MakerWorld"
