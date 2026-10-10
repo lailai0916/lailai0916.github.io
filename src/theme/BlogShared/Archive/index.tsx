@@ -196,7 +196,6 @@ export default function BlogArchive({
       />
       <Card padding="1rem">
         <YearSection years={years} activeYear={activeYear} archiveUrl={archiveUrl} />
-        <hr className={styles.divider} />
         <TagsSection
           activePermalink={selected?.kind === 'tag' ? selected.permalink : undefined}
           archiveUrl={archiveUrl}

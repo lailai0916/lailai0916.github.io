@@ -2,9 +2,6 @@
   scroll-margin-top: calc(var(--ifm-navbar-height) + 1rem);
 }
 
-.divider {
-  height: 1px;
-  margin: 1rem 0;
-  border: 0;
-  background: var(--ifm-color-emphasis-200);
+.filterGroup + .filterGroup {
+  margin-top: 1rem;
 }
