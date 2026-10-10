@@ -475,6 +475,5 @@ export const TRAVEL_LIST: TravelItem[] = [
       id: 'data.travel.trip202608.description',
       message: 'Beijing',
     }),
-    href: '/blog/record/gfssm-2026-final',
   },
 ];
