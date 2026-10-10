@@ -1,4 +1,4 @@
-import { useMemo, useState, type ReactNode } from 'react';
+import { useMemo, useState } from 'react';
 import Head from '@docusaurus/Head';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
@@ -48,32 +48,6 @@ const SEARCH_PLACEHOLDER = translate({
 
 const CLEAR_SEARCH = translate({ id: 'blog.archive.search.clear', message: 'Clear search' });
 
-function ArchiveSection({
-  id,
-  title,
-  count,
-  children,
-}: {
-  id: string;
-  title: string;
-  count: number;
-  children: ReactNode;
-}) {
-  return (
-    <section className={styles.section} aria-labelledby={id}>
-      <Card padding="1rem">
-        <div className={styles.sectionHeader}>
-          <h2 id={id} className={styles.sectionTitle}>
-            {title}
-          </h2>
-          <span className={styles.sectionCount}>{count}</span>
-        </div>
-        {children}
-      </Card>
-    </section>
-  );
-}
-
 function YearSection({
   years,
   activeYear,
@@ -84,7 +58,7 @@ function YearSection({
   archiveUrl: string;
 }) {
   return (
-    <ArchiveSection id="years" title={YEAR_TITLE} count={years.length}>
+    <div id="years" className={styles.filterGroup} role="group" aria-label={YEAR_TITLE}>
       <TagChipList
         items={years.map(({ year, count }) => ({
           to: year === activeYear ? archiveUrl : `${archiveUrl}?year=${year}`,
@@ -93,7 +67,7 @@ function YearSection({
           active: year === activeYear,
         }))}
       />
-    </ArchiveSection>
+    </div>
   );
 }
 
@@ -111,7 +85,7 @@ function TagsSection({
     [localeKey]
   );
   return (
-    <ArchiveSection id="tags" title={TAGS_TITLE} count={sorted.length}>
+    <div id="tags" className={styles.filterGroup} role="group" aria-label={TAGS_TITLE}>
       <TagChipList
         items={sorted.map((tag) => ({
           to: tag.permalink === activePermalink ? archiveUrl : tag.permalink,
@@ -120,7 +94,7 @@ function TagsSection({
           active: tag.permalink === activePermalink,
         }))}
       />
-    </ArchiveSection>
+    </div>
   );
 }
 
@@ -220,12 +194,15 @@ export default function BlogArchive({
         placeholder={SEARCH_PLACEHOLDER}
         aria-label={SEARCH_PLACEHOLDER}
       />
-      <YearSection years={years} activeYear={activeYear} archiveUrl={archiveUrl} />
-      <TagsSection
-        activePermalink={selected?.kind === 'tag' ? selected.permalink : undefined}
-        archiveUrl={archiveUrl}
-        localeKey={localeKey}
-      />
+      <Card padding="1rem">
+        <YearSection years={years} activeYear={activeYear} archiveUrl={archiveUrl} />
+        <hr className={styles.divider} />
+        <TagsSection
+          activePermalink={selected?.kind === 'tag' ? selected.permalink : undefined}
+          archiveUrl={archiveUrl}
+          localeKey={localeKey}
+        />
+      </Card>
       {searchResults && searchResults.length === 0 && (
         <div role="status">
           <DataState
