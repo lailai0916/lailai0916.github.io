@@ -14,6 +14,10 @@ interface MomentItem {
 
 const STATIC_MOMENTS: MomentItem[] = [
   {
+    date: '2025-10-18T00:00:00+08:00',
+    content: '2nd Anniversary!',
+  },
+  {
     date: '2026-09-19T12:35:00+08:00',
     images: ['https://cloud.lailai.one/f/LqntV/2501.png'],
   },
