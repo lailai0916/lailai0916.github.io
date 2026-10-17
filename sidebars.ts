@@ -520,11 +520,12 @@ const sidebars: SidebarsConfig = {
               link: {
                 type: 'generated-index',
                 description:
-                  '本章介绍英语各种词性的用法，包括名词、冠词、代词、数词、形容词、副词、介词、连词和叹词。',
+                  '本章介绍英语词类及限定词系统，包括名词、冠词、限定词、代词、数词、形容词、副词、介词、连词和叹词。',
               },
               items: [
                 'note/english/grammar/parts-of-speech/nouns',
                 'note/english/grammar/parts-of-speech/articles',
+                'note/english/grammar/parts-of-speech/determiners',
                 'note/english/grammar/parts-of-speech/pronouns',
                 'note/english/grammar/parts-of-speech/numerals',
                 'note/english/grammar/parts-of-speech/adjectives',
