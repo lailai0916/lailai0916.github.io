@@ -26,13 +26,17 @@ Source for [lailai's personal website](https://lailai.one) — Docusaurus 3 (Typ
 CI builds `en` and `zh-Hans` in parallel on separate runners. Each build sets `BUILD_LOCALE`
 and passes `--locale`; explicit locale base URLs keep Chinese routes under `/zh-Hans/`.
 Rspack caches are restored after `npm ci` and keyed by locale, Node version, lockfile,
-configuration, and commit, with reuse across commits. Only successful builds are cached.
+configuration, React DOM install patch, and commit, with reuse across commits. Only successful builds are cached.
 The publish job combines both artifacts, preserving hidden static files, then runs
 `.github/scripts/validate-build.py` before syncing the server and deploying GitHub Pages.
 After syncing, it compares the bilingual public homepages, application-component and contest
 documentation, and entry assets with the exact build before deploying GitHub Pages.
 The validator also checks that archive year filters match on tag/author detail routes and that
 Overview has a nonzero post count in both locales.
+It validates heading text, attributes, self-links, and table-of-contents targets on every sitemap page.
+The root `postinstall` script backports React 18.3.1's upstream UTF-8 streaming flush fix
+(`react/react#26228`); keep its version and context guards when updating React so server-rendered
+Chinese text and heading anchors cannot acquire stray NUL bytes.
 Keep `npm run check:ci` in the build jobs; normal local `npm run build` still builds both locales.
 After each locale build, `.github/scripts/check-performance.py` checks `.github/performance-budgets.json`
 against the HTML entry assets and Docusaurus's generated client/route manifests. Fonts stay

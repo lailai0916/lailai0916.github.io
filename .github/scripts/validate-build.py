@@ -11,10 +11,22 @@ class PageLinks(HTMLParser):
         self.assets = []
         self.links = []
         self.stat_numbers = []
+        self.ids = set()
+        self.heading_links = []
+        self.heading_errors = []
+        self._in_heading = False
         self._stat_number = None
 
     def handle_starttag(self, tag, attrs):
         attrs = dict(attrs)
+        if attrs.get("id"):
+            self.ids.add(attrs["id"])
+        if tag in {"h1", "h2", "h3", "h4", "h5", "h6"}:
+            self._in_heading = True
+        if self._in_heading:
+            for name, value in attrs.items():
+                if value and any(char in value for char in ("\x00", "\ufffd")):
+                    self.heading_errors.append(f"Invalid character in {tag}[{name}]")
         if tag == "link" and attrs.get("rel") == "canonical":
             self.canonicals.append(attrs["href"])
         if tag == "script" and attrs.get("src"):
@@ -23,14 +35,21 @@ class PageLinks(HTMLParser):
             self.assets.append(attrs["href"])
         if tag == "a" and attrs.get("href"):
             self.links.append(attrs["href"])
+            classes = attrs.get("class", "").split()
+            if "hash-link" in classes or "table-of-contents__link" in classes:
+                self.heading_links.append(attrs["href"])
         if tag == "div" and "statNumber__" in attrs.get("class", ""):
             self._stat_number = []
 
     def handle_data(self, data):
+        if self._in_heading and any(char in data for char in ("\x00", "\ufffd")):
+            self.heading_errors.append("Invalid character in heading text")
         if self._stat_number is not None:
             self._stat_number.append(data)
 
     def handle_endtag(self, tag):
+        if tag in {"h1", "h2", "h3", "h4", "h5", "h6"}:
+            self._in_heading = False
         if tag == "div" and self._stat_number is not None:
             self.stat_numbers.append("".join(self._stat_number).strip())
             self._stat_number = None
@@ -65,6 +84,12 @@ for locale, prefix in [("en", ""), ("zh-Hans", "/zh-Hans")]:
         if url.path == prefix + "/":
             file = root / "index.html"
         assert file.is_file(), f"Missing page: {file}"
+        page = PageLinks()
+        page.feed(file.read_text())
+        assert not page.heading_errors, f"Corrupted heading in {file}: {page.heading_errors}"
+        for href in page.heading_links:
+            fragment = unquote(urlsplit(href).fragment)
+            assert fragment and fragment in page.ids, f"Missing heading target in {file}: {href}"
 
     for route in ["", "about", "travel", "resources", "insights", "blog", "blog/overview"]:
         file = root / (f"{route}.html" if route else "index.html")
@@ -89,4 +114,4 @@ for locale, prefix in [("en", ""), ("zh-Hans", "/zh-Hans")]:
     overview = PageLinks()
     overview.feed((root / "blog/overview.html").read_text())
     assert overview.stat_numbers and overview.stat_numbers[0] != "0", f"Empty {locale} blog overview"
-    print(f"{locale}: {len(locations)} sitemap pages and key page assets verified")
+    print(f"{locale}: {len(locations)} sitemap pages, heading links and key page assets verified")

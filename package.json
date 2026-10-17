@@ -5,6 +5,7 @@
   "private": true,
   "license": "MIT",
   "scripts": {
+    "postinstall": "node .github/scripts/patch-react-dom.mjs",
     "docusaurus": "docusaurus",
     "start": "docusaurus start",
     "start:zh-Hans": "docusaurus start --locale zh-Hans",
