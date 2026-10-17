@@ -4,6 +4,14 @@ from urllib.parse import parse_qs, unquote, urlsplit
 import xml.etree.ElementTree as ET
 
 
+HEADING_LINK_CLASSES = {
+    "hash-link",
+    "table-of-contents__link",
+    "article-toc-link-full",
+    "article-toc-link-collapsible",
+}
+
+
 class PageLinks(HTMLParser):
     def __init__(self):
         super().__init__()
@@ -36,7 +44,7 @@ class PageLinks(HTMLParser):
         if tag == "a" and attrs.get("href"):
             self.links.append(attrs["href"])
             classes = attrs.get("class", "").split()
-            if "hash-link" in classes or "table-of-contents__link" in classes:
+            if HEADING_LINK_CLASSES.intersection(classes):
                 self.heading_links.append(attrs["href"])
         if tag == "div" and "statNumber__" in attrs.get("class", ""):
             self._stat_number = []

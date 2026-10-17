@@ -33,7 +33,8 @@ After syncing, it compares the bilingual public homepages, application-component
 documentation, and entry assets with the exact build before deploying GitHub Pages.
 The validator also checks that archive year filters match on tag/author detail routes and that
 Overview has a nonzero post count in both locales.
-It validates heading text, attributes, self-links, and table-of-contents targets on every sitemap page.
+It validates heading text, attributes, self-links, and both full and collapsible table-of-contents
+targets on every sitemap page.
 The root `postinstall` script backports React 18.3.1's upstream UTF-8 streaming flush fix
 (`react/react#26228`); keep its version and context guards when updating React so server-rendered
 Chinese text and heading anchors cannot acquire stray NUL bytes.
