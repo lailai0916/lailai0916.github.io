@@ -467,8 +467,8 @@ const sidebars: SidebarsConfig = {
       type: 'category',
       label: '英语',
       link: {
-        type: 'generated-index',
-        description: '本章记录我的英语笔记。',
+        type: 'doc',
+        id: 'note/english/index',
       },
       items: [
         {

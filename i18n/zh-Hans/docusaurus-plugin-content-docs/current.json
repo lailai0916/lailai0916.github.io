@@ -203,10 +203,6 @@
     "message": "英语",
     "description": "The label for category '英语' in sidebar 'noteSidebar'"
   },
-  "sidebar.noteSidebar.category.英语.link.generated-index.description": {
-    "message": "本章记录我的英语笔记。",
-    "description": "The generated-index page description for category '英语' in sidebar 'noteSidebar'"
-  },
   "sidebar.noteSidebar.category.英语语音": {
     "message": "英语语音",
     "description": "The label for category '英语语音' in sidebar 'noteSidebar'"
