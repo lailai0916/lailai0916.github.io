@@ -1,4 +1,17 @@
+.home {
+  container: home / inline-size;
+}
+
 .hero {
+  --home-avatar-size: 72px;
+  --home-contact-size: 40px;
+  --home-contact-gap: 0.5rem;
+  --home-contact-width: calc(5 * var(--home-contact-size) + 4 * var(--home-contact-gap));
+  --home-detail-padding: 1.25rem;
+  --home-card-border: 1px;
+  --home-detail-min-width: calc(
+    var(--home-contact-width) + 2 * var(--home-detail-padding) + 2 * var(--home-card-border)
+  );
   overflow: clip;
   padding: 3rem 1.5rem 4rem;
   min-height: calc(100vh - var(--ifm-navbar-height));
@@ -7,26 +20,38 @@
   justify-content: center;
 }
 
-@media (max-width: 768px) {
+/* Keep four columns at the full 800px grid width plus both 1.5rem gutters. */
+@container home (width < calc(800px + 3rem)) {
   .hero {
+    --home-avatar-size: 56px;
     padding: 1rem;
+  }
+}
+
+/* Match two minimum detail cards, their gap, and both compact hero gutters. */
+@container home (
+  width < calc(2 * (5 * 40px + 4 * 0.5rem + 2 * 1.25rem + 2px) + 0.75rem + 2rem)
+) {
+  .hero {
     align-items: flex-start;
   }
 }
 
 .bento {
+  --home-grid-gap: 1rem;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: auto auto auto;
-  gap: 1rem;
+  gap: var(--home-grid-gap);
   max-width: 800px;
   width: 100%;
 }
 
-@media (max-width: 768px) {
+@container home (width < calc(800px + 3rem)) {
   .bento {
+    --home-grid-gap: 0.75rem;
     grid-template-columns: repeat(2, 1fr);
-    gap: 0.75rem;
+    max-width: calc(2 * var(--home-detail-min-width) + var(--home-grid-gap));
   }
 }
 
@@ -50,11 +75,22 @@
   justify-content: space-between;
 }
 
-@media (max-width: 768px) {
+@container home (width < calc(800px + 3rem)) {
   .cardMain {
     --card-padding: 1.25rem;
     grid-column: span 2;
     grid-row: span 1;
+  }
+}
+
+@container home
+  (width < calc(800px + 3rem)) and
+  (width >= calc(2 * (5 * 40px + 4 * 0.5rem + 2 * 1.25rem + 2px) + 0.75rem + 2rem)) {
+  .cardMain {
+    display: grid;
+    grid-template-columns: minmax(max-content, 2fr) minmax(0, 3fr);
+    align-items: center;
+    gap: var(--home-grid-gap);
   }
 }
 
@@ -72,9 +108,17 @@
   margin-bottom: 1.5rem;
 }
 
-@media (max-width: 768px) {
+@container home (width < calc(800px + 3rem)) {
   .cardMainInner {
     gap: 1rem;
+  }
+}
+
+@container home
+  (width < calc(800px + 3rem)) and
+  (width >= calc(2 * (5 * 40px + 4 * 0.5rem + 2 * 1.25rem + 2px) + 0.75rem + 2rem)) {
+  .cardMainInner {
+    margin-bottom: 0;
   }
 }
 
@@ -95,7 +139,7 @@
   margin: 0;
 }
 
-@media (max-width: 768px) {
+@container home (width < calc(800px + 3rem)) {
   .name {
     font-size: 1.5rem;
   }
@@ -104,6 +148,14 @@
 .role {
   color: var(--ifm-color-emphasis-600);
   margin: 0.25rem 0 0;
+}
+
+@container home
+  (width < calc(800px + 3rem)) and
+  (width >= calc(2 * (5 * 40px + 4 * 0.5rem + 2 * 1.25rem + 2px) + 0.75rem + 2rem)) {
+  .role {
+    white-space: nowrap;
+  }
 }
 
 .roleTyping {
@@ -148,7 +200,7 @@
   gap: 0.55rem;
 }
 
-@media (max-width: 768px) {
+@container home (width < calc(800px + 3rem)) {
   .profileTags {
     gap: 0.4rem;
     --badge-font-size: 0.8rem;
@@ -167,19 +219,12 @@
   height: 100%;
 }
 
-@media (max-width: 768px) {
+@container home (width < calc(800px + 3rem)) {
   .cardNav {
     flex-direction: row;
     align-items: center;
     min-height: auto;
     gap: 1rem;
-  }
-}
-
-@media (max-width: 375px) {
-  .cardNav {
-    grid-column: span 1;
-    grid-row: span 1;
   }
 }
 
@@ -249,7 +294,7 @@
     transform 160ms ease;
 }
 
-@media (max-width: 768px) {
+@container home (width < calc(800px + 3rem)) {
   .cardNavArrow {
     position: static;
     transform: none;
@@ -263,23 +308,17 @@
   }
 }
 
-.cardInfo {
-  grid-column: 1 / span 2;
-  grid-row: 3;
+.details {
+  --card-padding: var(--home-detail-padding);
+  display: grid;
+  grid-column: 1 / -1;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, var(--home-detail-min-width)), 1fr));
+  gap: inherit;
 }
 
-@media (max-width: 768px) {
-  .cardInfo {
-    grid-column: span 2;
-    grid-row: auto;
-  }
-}
-
-@media (max-width: 375px) {
-  .cardInfo {
-    grid-column: span 1;
-    grid-row: span 1;
-  }
+.details > * {
+  min-width: 0;
+  border-width: var(--home-card-border);
 }
 
 .infoList {
@@ -324,25 +363,9 @@
 }
 
 .cardSocial {
-  grid-column: 3 / span 2;
-  grid-row: 3;
   display: flex;
   align-items: center;
   justify-content: space-between;
-}
-
-@media (max-width: 768px) {
-  .cardSocial {
-    grid-column: span 2;
-    grid-row: auto;
-  }
-}
-
-@media (max-width: 375px) {
-  .cardSocial {
-    grid-column: span 1;
-    grid-row: span 1;
-  }
 }
 
 .cardSocialLabel {
@@ -351,35 +374,35 @@
   color: var(--ifm-color-emphasis-600);
 }
 
-@media (max-width: 375px) {
+@container home (width < calc(800px + 3rem)) {
   .cardSocialLabel {
     display: none;
   }
 }
 
 .socialLinks {
-  display: grid;
-  grid-template-columns: repeat(5, 40px);
-  grid-auto-rows: 40px;
-  gap: 0.5rem;
-  justify-content: end;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--home-contact-gap);
+  min-width: 0;
+  max-width: 100%;
+  width: var(--home-contact-width);
+  justify-content: center;
 }
 
 @media (max-width: 375px) {
   .socialLinks {
-    display: flex;
-    flex-wrap: wrap;
-    width: 100%;
-    justify-content: center;
+    margin-inline: auto;
   }
 }
 
 .socialLink {
   display: flex;
+  flex: none;
   align-items: center;
   justify-content: center;
-  width: 40px;
-  height: 40px;
+  width: var(--home-contact-size);
+  height: var(--home-contact-size);
   border-radius: 12px;
   color: var(--ifm-color-emphasis-600);
   opacity: 0.8;

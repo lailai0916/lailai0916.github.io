@@ -250,7 +250,12 @@ export default function Home(): ReactNode {
   ];
 
   return (
-    <Layout title={siteConfig.title} description={siteConfig.tagline} noFooter>
+    <Layout
+      title={siteConfig.title}
+      description={siteConfig.tagline}
+      wrapperClassName={styles.home}
+      noFooter
+    >
       <section className={styles.hero}>
         <div className={styles.bento}>
           <Card className={styles.cardMain}>
@@ -285,38 +290,40 @@ export default function Home(): ReactNode {
               <Icon icon="lucide:arrow-up-right" className={styles.cardNavArrow} />
             </Card>
           ))}
-          <Card className={styles.cardInfo} padding="1.25rem">
-            <ul className={styles.infoList}>
-              {infoItems.map((item) => (
-                <li key={item.key} className={styles.infoRow}>
-                  <Icon icon={item.icon} className={styles.infoRowIcon} />
-                  <Link href={item.href} className={styles.infoRowValue}>
-                    {item.value}
+          <div className={styles.details}>
+            <Card>
+              <ul className={styles.infoList}>
+                {infoItems.map((item) => (
+                  <li key={item.key} className={styles.infoRow}>
+                    <Icon icon={item.icon} className={styles.infoRowIcon} />
+                    <Link href={item.href} className={styles.infoRowValue}>
+                      {item.value}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </Card>
+            <Card className={styles.cardSocial}>
+              <span className={styles.cardSocialLabel}>
+                {translate({
+                  id: 'pages.home.connect',
+                  message: 'Connect',
+                })}
+              </span>
+              <div className={styles.socialLinks}>
+                {COMMUNITY_LIST.map((social) => (
+                  <Link
+                    key={social.title}
+                    href={social.href}
+                    className={styles.socialLink}
+                    aria-label={social.title}
+                  >
+                    <Icon icon={social.icon} width={20} height={20} />
                   </Link>
-                </li>
-              ))}
-            </ul>
-          </Card>
-          <Card className={styles.cardSocial} padding="1.25rem">
-            <span className={styles.cardSocialLabel}>
-              {translate({
-                id: 'pages.home.connect',
-                message: 'Connect',
-              })}
-            </span>
-            <div className={styles.socialLinks}>
-              {COMMUNITY_LIST.map((social) => (
-                <Link
-                  key={social.title}
-                  href={social.href}
-                  className={styles.socialLink}
-                  aria-label={social.title}
-                >
-                  <Icon icon={social.icon} width={20} height={20} />
-                </Link>
-              ))}
-            </div>
-          </Card>
+                ))}
+              </div>
+            </Card>
+          </div>
         </div>
       </section>
     </Layout>

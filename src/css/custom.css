@@ -82,9 +82,9 @@ html.debug-mode span {
   transition: none;
 }
 
-/* Both search surfaces follow the live site preferences, including in dark mode. */
-:root,
-:root[data-theme] {
+/* Keep site preferences scoped to the navbar trigger and full search page. */
+.navbar,
+.search-page-wrapper .main-wrapper {
   --docsearch-primary-color: var(--ifm-color-primary);
   --docsearch-soft-primary-color: var(--lk-color-primary-soft);
   --docsearch-highlight-color: color-mix(
@@ -126,21 +126,46 @@ html.debug-mode span {
   box-shadow: var(--lk-shadow-md);
   color: var(--ifm-color-emphasis-500);
   font-family: var(--ifm-font-family-base);
-  transition:
-    background-color 160ms ease,
-    border-color 160ms ease,
-    color 160ms ease,
-    transform 160ms ease;
+  transition: border-color 160ms ease, transform 160ms ease;
+}
+@media (max-width: 768px) {
+  .navbar .DocSearch-Button {
+    -webkit-tap-highlight-color: transparent;
+    flex-shrink: 0;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    padding: 0;
+    border: none;
+    border-radius: var(--lk-radius-sm);
+    background: transparent;
+    box-shadow: none;
+    color: var(--ifm-color-emphasis-700);
+    line-height: 1;
+    transition:
+      background-color 140ms ease,
+      color 140ms ease,
+      transform 140ms ease;
+  }
 }
 
 .navbar .DocSearch-Button:hover {
-  background-color: var(--lk-color-primary-soft);
   border-color: var(--ifm-color-primary);
-  color: var(--docsearch-highlight-color);
+}
+@media (max-width: 768px) {
+  .navbar .DocSearch-Button:hover {
+    background: var(--ifm-color-emphasis-200);
+    color: var(--ifm-font-color-base);
+  }
 }
 
 .navbar .DocSearch-Button:active {
   transform: scale(0.97);
+}
+@media (max-width: 768px) {
+  .navbar .DocSearch-Button:active {
+    transform: scale(0.94);
+  }
 }
 
 .navbar .DocSearch-Button:focus-visible {
@@ -158,6 +183,12 @@ html.debug-mode span {
   width: 1.05rem;
   height: 1.05rem;
 }
+@media (max-width: 768px) {
+  .navbar .DocSearch-Search-Icon {
+    width: 17px;
+    height: 17px;
+  }
+}
 
 .navbar .DocSearch-Button-Key {
   height: 20px;
@@ -165,192 +196,6 @@ html.debug-mode span {
   border-color: var(--ifm-color-emphasis-200);
   font-family: var(--lk-font-mono);
   font-size: 0.75rem;
-}
-
-.DocSearch-Container {
-  font-family: var(--ifm-font-family-base);
-  font-size: var(--global-font-size);
-  line-height: var(--global-line-height);
-}
-
-.DocSearch-Container .DocSearch-Modal {
-  width: calc(100% - var(--lk-space-8));
-  overflow: hidden;
-  border: 1px solid var(--ifm-color-emphasis-200);
-  border-radius: var(--lk-radius-overlay);
-}
-@media (max-width: 768px) {
-  .DocSearch-Container .DocSearch-Modal {
-    width: 100%;
-    border: none;
-    border-radius: 0;
-  }
-}
-
-.DocSearch-SearchBar {
-  padding: var(--lk-space-4);
-}
-
-.DocSearch-Container .DocSearch-Form {
-  height: auto;
-  min-height: 54px;
-  margin-right: 36px;
-  width: calc(100% - 36px);
-  gap: 0.6rem;
-  padding: 0.75rem 1rem;
-  background: var(--ifm-card-background-color);
-  border: 1px solid var(--ifm-color-emphasis-200);
-  border-radius: var(--lk-radius-lg);
-  box-shadow: var(--lk-shadow-md);
-  transition:
-    border-color 160ms ease,
-    box-shadow 160ms ease;
-}
-
-.DocSearch-Container .DocSearch-Form:focus-within {
-  border-color: var(--ifm-color-primary);
-  box-shadow: var(--lk-focus-ring);
-}
-
-.DocSearch-Container .DocSearch-MagnifierLabel,
-.DocSearch-Container .DocSearch-LoadingIndicator {
-  display: flex;
-  flex-shrink: 0;
-  align-items: center;
-  width: 1.05rem;
-  height: 1.05rem;
-  padding: 0;
-  color: var(--ifm-color-emphasis-500);
-}
-
-.DocSearch-Container .DocSearch-Search-Icon,
-.DocSearch-Container .DocSearch-Form:focus-within .DocSearch-MagnifierLabel svg {
-  width: 1.05rem;
-  height: 1.05rem;
-  color: var(--ifm-color-emphasis-500);
-}
-
-.DocSearch-Container .DocSearch-Input {
-  min-width: 0;
-  min-height: 1.75rem;
-  height: 1.75rem;
-  padding: 0;
-  font: inherit;
-  font-size: 0.95rem;
-  line-height: 1.75rem;
-}
-
-.DocSearch-Container .DocSearch-Input::placeholder {
-  color: var(--ifm-color-emphasis-500);
-}
-
-.DocSearch-Container .DocSearch-Actions {
-  height: 28px;
-  gap: 0.25rem;
-  padding: 0;
-}
-
-.DocSearch-Container .DocSearch-Clear {
-  margin: 0;
-}
-
-.DocSearch-Container .DocSearch-Clear + .DocSearch-Divider {
-  display: none;
-}
-
-.DocSearch-Container .DocSearch-Close {
-  position: absolute;
-  top: calc(50% - 14px);
-  right: -36px;
-}
-
-.DocSearch-Container .DocSearch-Close > svg {
-  width: 1rem;
-  height: 1rem;
-}
-
-.DocSearch-Container :is(.DocSearch-Clear, .DocSearch-Close) {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 28px;
-  height: 28px;
-  padding: 0;
-  border: none;
-  border-radius: 6px;
-  color: var(--ifm-color-emphasis-600);
-  transition:
-    background-color 160ms ease,
-    color 160ms ease,
-    transform 160ms ease;
-}
-
-.DocSearch-Container .DocSearch-Clear[hidden] {
-  display: none;
-}
-
-.DocSearch-Container :is(.DocSearch-Clear, .DocSearch-Close):hover {
-  background: var(--ifm-color-emphasis-100);
-  color: var(--ifm-color-content);
-}
-
-.DocSearch-Container :is(.DocSearch-Clear, .DocSearch-Close):active {
-  transform: scale(0.92);
-}
-
-.DocSearch-Container .DocSearch-Modal-heading {
-  font-size: 0.95rem;
-  font-weight: 400;
-}
-
-.DocSearch-Container .DocSearch-Dropdown {
-  padding-inline: var(--lk-space-4);
-}
-
-.DocSearch-Container .DocSearch-Hit a,
-.DocSearch-Container .DocSearch-Hit--AskAI {
-  border: 1px solid var(--ifm-color-emphasis-200);
-  border-radius: var(--lk-radius-control);
-  transition:
-    background-color 160ms ease,
-    border-color 160ms ease;
-}
-
-.DocSearch-Container .DocSearch-Hit[aria-selected='true'] a,
-.DocSearch-Container .DocSearch-Hit[aria-selected='true'] .DocSearch-Hit--AskAI {
-  border-color: var(--ifm-color-primary);
-}
-
-.DocSearch-Container .DocSearch-Hit-title {
-  font-weight: 600;
-}
-
-.DocSearch-Container .DocSearch-Footer {
-  padding-inline: var(--lk-space-4);
-  border-radius: 0;
-}
-
-.DocSearch-Container :is(button, a):focus-visible {
-  outline: none;
-  box-shadow: var(--lk-focus-ring);
-}
-
-.DocSearch-Container :is(.DocSearch-Action, .DocSearch-AskAiScreen-ActionButton) {
-  border-radius: var(--lk-radius-sm);
-  transition:
-    background-color 160ms ease,
-    color 160ms ease,
-    transform 160ms ease;
-}
-
-.DocSearch-Container :is(.DocSearch-Action, .DocSearch-AskAiScreen-ActionButton):active {
-  transform: scale(0.92);
-}
-
-.DocSearch-Container .DocSearch-AskAiScreen-Response,
-.DocSearch-Container .DocSearch-AskAiScreen-RelatedSources-Item-Link {
-  border: 1px solid var(--ifm-color-emphasis-200);
-  border-radius: var(--lk-radius-control);
 }
 
 /* Use the framework's page marker and semantic elements rather than hashed module names. */

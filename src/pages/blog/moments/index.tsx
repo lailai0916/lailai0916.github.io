@@ -15,7 +15,7 @@ import { useVisitorTimeZone } from '@site/src/hooks/useVisitorTimeZone';
 import { formatLocalDate, formatLocalTime } from '@site/src/utils/dateTime';
 import styles from './styles.module.css';
 
-const PAGE_SIZE = 20;
+const PAGE_SIZE = 15;
 
 const TITLE = translate({
   id: 'pages.moments.title',
@@ -44,10 +44,6 @@ const NEXT_IMAGE_LABEL = translate({
 const LOAD_MORE_LABEL = translate({
   id: 'pages.moments.loadMore',
   message: 'Load more',
-});
-const NO_MORE_LABEL = translate({
-  id: 'pages.moments.noMore',
-  message: 'No more moments',
 });
 
 function MomentImage({ src }: { src: string }) {
@@ -180,11 +176,30 @@ export default function Moments() {
   const { selectMessage } = usePluralForm();
   const timeZone = useVisitorTimeZone();
   const [visibleCount, setVisibleCount] = useState(PAGE_SIZE);
+  const loadMoreRef = useRef<HTMLDivElement>(null);
   const localeKey = currentLocale === defaultLocale ? undefined : currentLocale;
   const moments = useMemo(() => getMomentList(localeKey), [localeKey]);
   const totalCount = moments.length;
   const visibleMoments = moments.slice(0, visibleCount);
   const hasMore = visibleCount < totalCount;
+
+  useEffect(() => {
+    const footer = loadMoreRef.current;
+    if (!footer || !hasMore || typeof IntersectionObserver === 'undefined') return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (!entry?.isIntersecting) return;
+
+        observer.disconnect();
+        setVisibleCount((count) => Math.min(count + PAGE_SIZE, totalCount));
+      },
+      { rootMargin: '200px 0px' }
+    );
+    observer.observe(footer);
+
+    return () => observer.disconnect();
+  }, [hasMore, totalCount, visibleCount]);
 
   return (
     <BlogScaffold title={TITLE} description={DESCRIPTION}>
@@ -241,8 +256,8 @@ export default function Moments() {
         );
       })}
 
-      <div className={styles.loadMore}>
-        {hasMore ? (
+      {hasMore && (
+        <div ref={loadMoreRef} className={styles.loadMore}>
           <button
             type="button"
             className={styles.loadMoreLink}
@@ -250,10 +265,8 @@ export default function Moments() {
           >
             {LOAD_MORE_LABEL}
           </button>
-        ) : (
-          totalCount > PAGE_SIZE && <span className={styles.loadMoreDone}>{NO_MORE_LABEL}</span>
-        )}
-      </div>
+        </div>
+      )}
     </BlogScaffold>
   );
 }

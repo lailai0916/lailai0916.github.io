@@ -1,16 +1,9 @@
 .slot {
   position: relative;
-  width: 72px;
-  height: 72px;
+  width: var(--home-avatar-size, 72px);
+  height: var(--home-avatar-size, 72px);
   flex-shrink: 0;
   border-radius: var(--lk-radius-md);
-}
-
-@media (max-width: 768px) {
-  .slot {
-    width: 56px;
-    height: 56px;
-  }
 }
 
 .placeholder {
