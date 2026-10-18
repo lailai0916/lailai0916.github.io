@@ -99,6 +99,14 @@ KaTeX strict warnings only in a cold build, so do not treat a cached build as su
 
 ## Lists, tables, blockquotes
 
+- **English grammar and word-formation notes prefer lists, then tables, then prose.** Use ordered
+  lists for decisions and transformations, and nested lists for categories and examples. Keep
+  tables for comparisons that benefit from two independent axes, such as the 16-form tense matrix.
+- **Separate rule selection from spelling.** State the input, scope, branch order, and resulting
+  form. Put lexically specified forms and language-variety choices in explicit branches; do not
+  replace missing conditions with vague qualifiers or invent universal spelling rules.
+- **Do not add self-tests or answer sections to these notes.** Integrate useful examples and
+  explanations into the relevant topic instead.
 - For rowspan / colspan, drop from Markdown to raw `<table style={{ textAlign: 'center' }}>`.
 - Blockquote `>` has two roles: (1) embedding a problem statement, source text, or citation that should be set off; (2) the pithy aphorism line that closes a section (`> 有时一种莫名的信心反而是重要且珍贵的。`).
 
