@@ -2,9 +2,9 @@ import type { ReactNode } from 'react';
 import clsx from 'clsx';
 import { useNavbarMobileSidebar } from '@docusaurus/theme-common/internal';
 import { translate } from '@docusaurus/Translate';
+import Icon from '@lailai0916/ui/Icon';
 import NavbarLanguageToggle from '@site/src/components/Navbar/LanguageToggle';
 import NavbarColorModeToggle from '@theme/Navbar/ColorModeToggle';
-import IconClose from '@theme/Icon/Close';
 import NavbarLogo from '@theme/Navbar/Logo';
 import { useMobileNavbarItems } from '../items';
 import styles from './styles.module.css';
@@ -22,7 +22,7 @@ function CloseButton() {
       className={clsx('clean-btn navbar-sidebar__close navbar-control', styles.closeButton)}
       onClick={() => mobileSidebar.toggle()}
     >
-      <IconClose color="var(--ifm-color-emphasis-600)" />
+      <Icon icon="lucide:x" width={20} height={20} aria-hidden="true" />
     </button>
   );
 }

@@ -1,0 +1,9 @@
+.toggle:global(.navbar__toggle) {
+  display: none;
+  margin-inline-end: var(--lk-space-2);
+}
+@media (max-width: 996px) {
+  .toggle:global(.navbar__toggle) {
+    display: inline-flex;
+  }
+}
