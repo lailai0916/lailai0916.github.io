@@ -103,8 +103,7 @@ function ColorModeToggle({
       <Hint label={getColorModeAriaLabel(value)}>
         <button
           className={clsx(
-            'clean-btn',
-            styles.toggleButton,
+            'clean-btn navbar-control',
             !isBrowser && styles.toggleButtonDisabled,
             buttonClassName
           )}

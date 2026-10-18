@@ -1691,6 +1691,9 @@
   "components.desmos.frameTitle": {
     "message": "Desmos 图形计算器"
   },
+  "components.englishExamples.title": {
+    "message": "示例"
+  },
   "components.laikitProvider.quoteAttributionDash": {
     "message": "—— "
   },
@@ -2012,6 +2015,27 @@
   "pages.settings.loading": {
     "message": "正在加载设置…"
   },
+  "pages.travel.title": {
+    "message": "旅行"
+  },
+  "pages.travel.description": {
+    "message": "每一次旅行都能带来新的视野和感悟"
+  },
+  "pages.travel.modification": {
+    "message": "旅行<b>记录</b>"
+  },
+  "pages.travel.quote.content": {
+    "message": "纸上得来终觉浅，绝知此事要躬行。"
+  },
+  "pages.travel.quote.author": {
+    "message": "陆游"
+  },
+  "pages.travel.quote.source": {
+    "message": "《冬夜读书示子聿》"
+  },
+  "pages.travel.datacard.countries": {
+    "message": "个国家"
+  },
   "pages.resources.title": {
     "message": "资源"
   },
@@ -2020,6 +2044,9 @@
   },
   "pages.resources.modification": {
     "message": "精选<b>资源</b>"
+  },
+  "pages.resources.search.clear": {
+    "message": "清空搜索"
   },
   "pages.resources.search.placeholder": {
     "message": "搜索资源"
@@ -2041,27 +2068,6 @@
   },
   "pages.resources.search.empty": {
     "message": "没有找到与“{query}”匹配的资源"
-  },
-  "pages.travel.title": {
-    "message": "旅行"
-  },
-  "pages.travel.description": {
-    "message": "每一次旅行都能带来新的视野和感悟"
-  },
-  "pages.travel.modification": {
-    "message": "旅行<b>记录</b>"
-  },
-  "pages.travel.quote.content": {
-    "message": "纸上得来终觉浅，绝知此事要躬行。"
-  },
-  "pages.travel.quote.author": {
-    "message": "陆游"
-  },
-  "pages.travel.quote.source": {
-    "message": "《冬夜读书示子聿》"
-  },
-  "pages.travel.datacard.countries": {
-    "message": "个国家"
   },
   "components.admonition.example.title": {
     "message": "示例"
@@ -2156,6 +2162,9 @@
     "message": "通过 Algolia 搜索",
     "description": "The description label for Algolia mention"
   },
+  "components.searchPage.breadcrumbs.ariaLabel": {
+    "message": "导航路径"
+  },
   "theme.SearchPage.noResultsText": {
     "message": "未找到任何结果",
     "description": "The paragraph for empty search result"
@@ -2193,6 +2202,9 @@
   },
   "components.article.viewCount": {
     "message": "{viewCount} 浏览"
+  },
+  "components.navbar.language.ariaLabel": {
+    "message": "当前语言：{currentLanguage}，切换至 {nextLanguage}"
   },
   "components.playground.fourierTransform.reset": {
     "message": "重置"
@@ -2286,6 +2298,9 @@
   },
   "blog.archive.search.placeholder": {
     "message": "搜索文章"
+  },
+  "blog.archive.search.clear": {
+    "message": "清空搜索"
   },
   "blog.archive.search.empty": {
     "message": "没有找到与“{query}”匹配的文章"
@@ -2766,6 +2781,10 @@
   "blog.sidebarPrototype.profile.latestLabel": {
     "message": "最新文章"
   },
+  "theme.docs.sidebar.closeSidebarButtonAriaLabel": {
+    "message": "关闭导航栏",
+    "description": "The ARIA label for close button of mobile sidebar"
+  },
   "pages.overview.popular.title": {
     "message": "热门文章"
   },
@@ -2979,10 +2998,6 @@
   "theme.docs.sidebar.navAriaLabel": {
     "message": "文档侧边栏",
     "description": "The ARIA label for the sidebar navigation"
-  },
-  "theme.docs.sidebar.closeSidebarButtonAriaLabel": {
-    "message": "关闭导航栏",
-    "description": "The ARIA label for close button of mobile sidebar"
   },
   "theme.navbar.mobileSidebarSecondaryMenu.backButtonLabel": {
     "message": "← 回到主菜单",
@@ -3274,23 +3289,5 @@
   "theme.tags.tagsPageTitle": {
     "message": "标签",
     "description": "The title of the tag list page"
-  },
-  "components.searchPage.breadcrumbs.ariaLabel": {
-    "message": "导航路径"
-  },
-  "pages.resources.search.clear": {
-    "message": "清空搜索"
-  },
-  "blog.archive.search.clear": {
-    "message": "清空搜索"
-  },
-  "components.englishExamples.title": {
-    "message": "示例"
-  },
-  "components.navbar.language.ariaLabel": {
-    "message": "当前语言：{currentLanguage}，切换至 {nextLanguage}"
-  },
-  "components.navbar.github.ariaLabel": {
-    "message": "GitHub 仓库"
   }
 }

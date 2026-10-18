@@ -3,21 +3,6 @@
   height: 2rem;
 }
 
-.toggleButton {
-  -webkit-tap-highlight-color: transparent;
-  align-items: center;
-  display: flex;
-  justify-content: center;
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-  transition: background var(--ifm-transition-fast);
-}
-
-.toggleButton:hover {
-  background: var(--ifm-color-emphasis-200);
-}
-
 .toggleIcon {
   display: none;
 }

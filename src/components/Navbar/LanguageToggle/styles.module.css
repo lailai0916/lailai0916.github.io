@@ -1,0 +1,10 @@
+.language {
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.language[data-locale='en'] {
+  font-size: 0.8125rem;
+}

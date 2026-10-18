@@ -1,61 +1,24 @@
-.control {
-  display: inline-flex;
-  flex: none;
-  align-items: center;
-  justify-content: center;
-  width: 2rem;
-  height: 2rem;
-  padding: 0;
-  border: 0;
-  border-radius: 50%;
-  background: transparent;
-  color: var(--ifm-navbar-link-color);
-  text-decoration: none;
-  -webkit-tap-highlight-color: transparent;
-  transition:
-    background-color 160ms ease,
-    color 160ms ease,
-    transform 160ms ease;
-}
-
-.control:hover {
-  background-color: var(--ifm-color-emphasis-200);
-  color: var(--ifm-navbar-link-hover-color);
-  text-decoration: none;
-}
-
-.control:active {
-  transform: scale(0.92);
-}
-
-.control:focus-visible {
-  outline: none;
-  box-shadow: var(--lk-focus-ring);
-}
-
-.language {
-  font-size: 1rem;
-  font-weight: 600;
-  line-height: 1;
-  white-space: nowrap;
-}
-
-.language[data-locale='en'] {
-  font-size: 0.8125rem;
-}
-
 .closeButton {
-  margin-left: 0.25rem;
+  margin-left: 0;
+}
+
+.brand {
+  gap: var(--lk-space-2);
 }
 
 .brand :global(.navbar__brand) {
   flex: 1;
-  margin-right: 0.5rem;
+  margin-right: 0;
 }
 
 .actions {
-  display: flex;
+  display: none;
   flex: none;
   align-items: center;
-  gap: 0.25rem;
+  gap: var(--lk-space-2);
+}
+@media (max-width: 375px) {
+  .actions {
+    display: flex;
+  }
 }

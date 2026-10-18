@@ -205,12 +205,6 @@ const config: Config = {
           ],
         },
         { type: 'localeDropdown', position: 'right' },
-        {
-          href: 'https://github.com/lailai0916/lailai0916.github.io',
-          position: 'right',
-          className: 'header-github-link',
-          'aria-label': 'GitHub repository',
-        },
       ],
     },
     footer: {
