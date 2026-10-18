@@ -2,8 +2,7 @@ import type { ReactNode } from 'react';
 import clsx from 'clsx';
 import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
-import { useLocation } from '@docusaurus/router';
-import { mergeSearchStrings } from '@docusaurus/theme-common';
+import { mergeSearchStrings, useHistorySelector } from '@docusaurus/theme-common';
 import { useAlternatePageUtils } from '@docusaurus/theme-common/internal';
 import { translate } from '@docusaurus/Translate';
 import Hint from '@lailai0916/ui/Hint';
@@ -20,7 +19,8 @@ export default function NavbarLanguageToggle({ queryString, onClick }: Props): R
     i18n: { currentLocale, locales, localeConfigs },
   } = useDocusaurusContext();
   const { createUrl } = useAlternatePageUtils();
-  const { search, hash } = useLocation();
+  const search = useHistorySelector((history) => history.location.search);
+  const hash = useHistorySelector((history) => history.location.hash);
 
   if (locales.length < 2) return null;
 

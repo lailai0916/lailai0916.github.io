@@ -125,8 +125,7 @@ html.debug-mode span {
     transform 160ms ease;
 }
 
-.navbar-control:hover,
-.navbar .DocSearch-Button:hover {
+.navbar-control:hover {
   background-color: var(--ifm-color-emphasis-200);
   color: var(--ifm-font-color-base);
   text-decoration: none;
@@ -187,6 +186,7 @@ html.debug-mode span {
   font-family: var(--ifm-font-family-base);
   transition:
     background-color 160ms ease,
+    border-color 160ms ease,
     color 160ms ease,
     transform 160ms ease;
 }
@@ -204,6 +204,20 @@ html.debug-mode span {
     box-shadow: none;
     color: var(--ifm-color-emphasis-700);
     line-height: 1;
+  }
+}
+
+.navbar .DocSearch-Button:hover {
+  background: var(--ifm-card-background-color);
+  border-color: var(--ifm-color-primary);
+  box-shadow: var(--lk-shadow-md);
+  color: var(--ifm-color-emphasis-500);
+}
+@media (max-width: 768px) {
+  .navbar .DocSearch-Button:hover {
+    background: var(--ifm-color-emphasis-200);
+    box-shadow: none;
+    color: var(--ifm-font-color-base);
   }
 }
 
