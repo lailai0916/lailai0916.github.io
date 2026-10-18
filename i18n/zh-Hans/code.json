@@ -3286,5 +3286,11 @@
   },
   "components.englishExamples.title": {
     "message": "示例"
+  },
+  "components.navbar.language.ariaLabel": {
+    "message": "当前语言：{currentLanguage}，切换至 {nextLanguage}"
+  },
+  "components.navbar.github.ariaLabel": {
+    "message": "GitHub 仓库"
   }
 }

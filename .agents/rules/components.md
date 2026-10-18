@@ -42,6 +42,8 @@ upgrading a public API. Previews inherit this site's provider and theme; do not 
 
 `Hint` is the shared short action description for controls and supplemental text. It preserves trigger geometry and native props; `IconButton` and titled `Button` / `ButtonLink` use it automatically. Data-point tooltips stay on `Tooltip`, including heartbeats and the travel globe. The swizzled `ColorModeToggle` replaces only its native title popup with `Hint`; its framework CSS, icons, theme cycle, and accessible name remain unchanged.
 
+The swizzled `Navbar/MobileSidebar/Header` places a compact language cycle, the theme toggle, and the GitHub link in the brand row. The language control shows `EN` / `中` and switches directly to the next configured locale, preserving the page path, query, and fragment through Docusaurus's alternate-page URL helper. `Navbar/MobileSidebar/PrimaryMenu` omits those relocated navbar items. Both overrides share item selection from the navbar configuration; desktop navigation keeps its framework behavior.
+
 Before adding a component, check whether an existing primitive (optionally with an extra optional prop) covers the case.
 
 - **Insights refresh state:** the Umami and Kuma hooks opt into minute polling through `useFetch`; other consumers remain fetch-on-demand. Keep successful content mounted during refreshes, including empty results. On refresh failure, show the page-local `RefreshNotice` with retry while retaining that content; reserve full error surfaces for a dataset that has never loaded. A range/dependency change starts a new dataset and must not label the previous range's data as current.
