@@ -59,37 +59,11 @@ summary: 冠词的选择先检查固定搭配和已有的限定词，再结合�
       label: '裸复数宾语',
       sentence: 'I bought books.',
       translation: '我买了书。',
-      segments: [
-        {
-          text: 'I bought ',
-        },
-        {
-          text: 'books',
-          role: '宾语',
-          note: '复数名词，不加 some 也成立。',
-        },
-        {
-          text: '.',
-        },
-      ],
     },
     {
       label: '裸不可数宾语',
       sentence: 'We need water.',
       translation: '我们需要水。',
-      segments: [
-        {
-          text: 'We need ',
-        },
-        {
-          text: 'water',
-          role: '宾语',
-          note: '不可数名词，不加 some 也成立。',
-        },
-        {
-          text: '.',
-        },
-      ],
     },
   ]}
 />
@@ -125,69 +99,21 @@ a/an 直接限定 **单数可数义项**，常用于以下结构：
       sentence: 'I saw a dog yesterday.',
       label: '引入对象',
       analysis: ['听者不必已知道是哪条狗。'],
-      segments: [
-        {
-          text: 'I saw ',
-        },
-        {
-          text: 'a dog',
-          role: '宾语',
-          note: '作为某类中的一个引入。',
-        },
-        {
-          text: ' yesterday.',
-        },
-      ],
     },
     {
       sentence: 'She is an engineer.',
       label: '职业或类别',
       analysis: ['说明她属于工程师这一类。'],
-      segments: [
-        {
-          text: 'She is ',
-        },
-        {
-          text: 'an engineer',
-          role: '表语',
-          note: '用单数可数名词说明职业。',
-        },
-        {
-          text: '.',
-        },
-      ],
     },
     {
       sentence: 'Take a seat.',
       label: '任意一个',
       analysis: ['不指定某一个座位。'],
-      segments: [
-        {
-          text: 'Take ',
-        },
-        {
-          text: 'a seat',
-          role: '宾语',
-        },
-        {
-          text: '.',
-        },
-      ],
     },
     {
       sentence: 'A tiger is a large cat.',
       label: '典型成员',
       analysis: ['用一个典型成员说明类别特征。'],
-      segments: [
-        {
-          text: 'A tiger',
-          role: '主语',
-          note: '用一个典型成员代表类别。',
-        },
-        {
-          text: ' is a large cat.',
-        },
-      ],
     },
   ]}
 />
@@ -219,113 +145,26 @@ the 可用于单数、复数和不可数名词。识别依据包括：
       sentence: 'I bought a book. The book is new.',
       label: '前文建立',
       analysis: ['The book 指刚提过的那本书。'],
-      segments: [
-        {
-          text: 'I bought ',
-        },
-        {
-          text: 'a book',
-          role: '宾语',
-          note: '先引入对象。',
-        },
-        {
-          text: '. ',
-        },
-        {
-          text: 'The book',
-          role: '主语',
-          note: '回指刚引入的对象。',
-        },
-        {
-          text: ' is new.',
-        },
-      ],
     },
     {
       sentence: 'Please close the door.',
       label: '现场环境',
       analysis: ['现场有双方能确定的门。'],
-      segments: [
-        {
-          text: 'Please close ',
-        },
-        {
-          text: 'the door',
-          role: '宾语',
-          note: '现场语境足以确定。',
-        },
-        {
-          text: '.',
-        },
-      ],
     },
     {
       sentence: 'The sun is shining.',
       label: '共同知识',
       analysis: ['日常语境中双方能识别太阳。'],
-      segments: [
-        {
-          text: 'The sun',
-          role: '主语',
-          note: '由共同知识识别。',
-        },
-        {
-          text: ' is shining.',
-        },
-      ],
     },
     {
       sentence: 'We entered a house. The kitchen was small.',
       label: '关联推断',
       analysis: ['从房屋推断有关的厨房。'],
-      segments: [
-        {
-          text: 'We entered ',
-        },
-        {
-          text: 'a house',
-          role: '宾语',
-        },
-        {
-          text: '. ',
-        },
-        {
-          text: 'The kitchen',
-          role: '主语',
-          note: '由房屋推断相关对象。',
-        },
-        {
-          text: ' was small.',
-        },
-      ],
     },
     {
       sentence: 'The book you lent me is useful.',
       label: '修饰语与语境',
       analysis: ['语境与修饰语共同确定所指。'],
-      segments: [
-        {
-          text: 'The book you lent me',
-          role: '主语',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'is',
-          role: '谓语动词',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'useful',
-          role: '表语',
-        },
-        {
-          text: '.',
-        },
-      ],
     },
   ]}
 />
@@ -360,38 +199,12 @@ the 可用于单数、复数和不可数名词。识别依据包括：
       sentence: 'She runs fastest.',
       translation: '她跑得最快。',
       analysis: ['fastest 是副词。'],
-      segments: [
-        {
-          text: 'She runs ',
-        },
-        {
-          text: 'fastest',
-          role: '副词',
-          note: '修饰 runs，不在名词短语中限定名词。',
-        },
-        {
-          text: '.',
-        },
-      ],
     },
     {
       label: '名次',
       sentence: 'She came first.',
       translation: '她得了第一名。',
       analysis: ['first 表名次。'],
-      segments: [
-        {
-          text: 'She came ',
-        },
-        {
-          text: 'first',
-          role: '名次表达',
-          note: '不自动添加 the。',
-        },
-        {
-          text: '.',
-        },
-      ],
     },
   ]}
 />
@@ -421,76 +234,26 @@ the 可用于单数、复数和不可数名词。识别依据包括：
       label: '裸复数类指',
       sentence: 'Books are useful.',
       translation: '书是有用的。',
-      segments: [
-        {
-          text: 'Books',
-          role: '主语',
-          note: '泛指书这一类别。',
-        },
-        {
-          text: ' are useful.',
-        },
-      ],
     },
     {
       label: '已确定的一组书',
       sentence: 'The books on this shelf are useful.',
       translation: '这个架子上的书是有用的。',
-      segments: [
-        {
-          text: 'The books on this shelf',
-          role: '主语',
-          note: '限定为语境中已确定的书。',
-        },
-        {
-          text: ' are useful.',
-        },
-      ],
     },
     {
       label: '抽象概念类指',
       sentence: 'Honesty matters.',
       translation: '诚实很重要。',
-      segments: [
-        {
-          text: 'Honesty',
-          role: '主语',
-          note: '一般概念，不加冠词。',
-        },
-        {
-          text: ' matters.',
-        },
-      ],
     },
     {
       label: '物质类指',
       sentence: 'Water is essential.',
       translation: '水是必不可少的。',
-      segments: [
-        {
-          text: 'Water',
-          role: '主语',
-          note: '泛指水。',
-        },
-        {
-          text: ' is essential.',
-        },
-      ],
     },
     {
       label: '已确定的一杯水',
       sentence: 'The water in this glass is cold.',
       translation: '这杯水是凉的。',
-      segments: [
-        {
-          text: 'The water in this glass',
-          role: '主语',
-          note: '语境中可识别的这杯水。',
-        },
-        {
-          text: ' is cold.',
-        },
-      ],
     },
   ]}
 />
@@ -510,62 +273,16 @@ the 可用于单数、复数和不可数名词。识别依据包括：
       sentence: 'She is captain of the team.',
       label: '任职说明',
       translation: '她是队长。',
-      segments: [
-        {
-          text: 'She is ',
-        },
-        {
-          text: 'captain of the team',
-          role: '表语',
-          note: '职位构式中可用零冠词。',
-        },
-        {
-          text: '.',
-        },
-      ],
     },
     {
       sentence: 'They elected her captain.',
       label: '选举结果',
       translation: '他们选她当队长。',
-      segments: [
-        {
-          text: 'They elected ',
-        },
-        {
-          text: 'her',
-          role: '宾语',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'captain',
-          role: '宾语补足语',
-          note: '说明当选后的职位。',
-        },
-        {
-          text: '.',
-        },
-      ],
     },
     {
       sentence: 'She is an engineer.',
       label: '普通职业分类',
       analysis: ['不能只因名词表示职业就省去 a/an。'],
-      segments: [
-        {
-          text: 'She is ',
-        },
-        {
-          text: 'an engineer',
-          role: '表语',
-          note: '普通职业分类仍用不定冠词。',
-        },
-        {
-          text: '.',
-        },
-      ],
     },
   ]}
 />
@@ -598,48 +315,18 @@ the school 仍可指学生正在就读的那所学校，加入 the 不会使上�
       sentence: 'Tigers are large cats.',
       translation: '老虎是大型猫科动物。',
       analysis: ['一般类别概括。'],
-      segments: [
-        {
-          text: 'Tigers',
-          role: '主语',
-          note: '裸复数类指。',
-        },
-        {
-          text: ' are large cats.',
-        },
-      ],
     },
     {
       label: 'a/an + 单数',
       sentence: 'A tiger is a large cat.',
       translation: '老虎是大型猫科动物。',
       analysis: ['用典型成员说明共同特征。'],
-      segments: [
-        {
-          text: 'A tiger',
-          role: '主语',
-          note: '典型成员。',
-        },
-        {
-          text: ' is a large cat.',
-        },
-      ],
     },
     {
       label: 'the + 单数',
       sentence: 'The tiger is an endangered species.',
       translation: '老虎是濒危物种。',
       analysis: ['把物种作为整体。'],
-      segments: [
-        {
-          text: 'The tiger',
-          role: '主语',
-          note: '谈论整个物种。',
-        },
-        {
-          text: ' is an endangered species.',
-        },
-      ],
     },
   ]}
 />

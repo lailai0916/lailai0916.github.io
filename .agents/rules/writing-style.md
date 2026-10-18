@@ -110,14 +110,14 @@ KaTeX strict warnings only in a cold build, so do not treat a cached build as su
 - **Keep rule lists and example groups structurally separate.** A blank line between two
   same-kind Markdown lists does not create a new group. Use an introductory paragraph, a
   meaningful subheading, or `EnglishExamples` for the examples; preserve nested rule branches.
-- **Use `EnglishExamples` for grouped language examples and worked analyses.** Supply a short
-  `title` and `items` containing plain-text `sentence`, optional `label`, `translation`,
-  `analysis` steps, and `segments` (`text`, optional `role` and `note`). Segment text, including
-  spaces and punctuation, must concatenate to the exact sentence. Keep short word-form
+- **Use `EnglishExamples` only for concrete language examples and worked analyses.** Supply a short
+  `title` and `items` containing plain-text `sentence`, optional `label`, `translation` and
+  `analysis` explanations. Every example is shown directly in a restrained static container;
+  keep rules, definitions and general teaching procedures in the surrounding Markdown. Keep short word-form
   specimens and single minimal illustrations with their rule, genuine comparison matrices as
   tables, and mathematical notation in Markdown rather than unrendered LaTeX inside component
   strings. Do not turn a vocabulary
-  lookup list into thousands of interactive panels or add quizzes.
+  lookup list into thousands of example blocks or add quizzes.
 - For rowspan / colspan, drop from Markdown to raw `<table style={{ textAlign: 'center' }}>`.
 - Blockquote `>` has two roles: (1) embedding a problem statement, source text, or citation that should be set off; (2) the pithy aphorism line that closes a section (`> 有时一种莫名的信心反而是重要且珍贵的。`).
 

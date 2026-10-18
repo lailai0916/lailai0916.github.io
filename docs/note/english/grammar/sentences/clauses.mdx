@@ -88,130 +88,24 @@ summary: 从句先按内部形式区分陈述内容、嵌入疑问与关系结�
       sentence: 'That he lied surprised us.',
       translation: '他撒谎这件事让我们惊讶。',
       analysis: ['整个 that 结构作 surprised 的主语。'],
-      segments: [
-        {
-          text: 'That he lied',
-          role: '主语',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'surprised',
-          role: '谓语动词',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'us',
-          role: '宾语',
-        },
-        {
-          text: '.',
-        },
-      ],
     },
     {
       label: '宾语从句',
       sentence: 'I know that he lied.',
       translation: '我知道他撒了谎。',
       analysis: ['that he lied 作 know 的宾语。'],
-      segments: [
-        {
-          text: 'I',
-          role: '主语',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'know',
-          role: '谓语动词',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'that he lied',
-          role: '宾语',
-        },
-        {
-          text: '.',
-        },
-      ],
     },
     {
       label: '表语从句',
       sentence: 'The truth is that he lied.',
       translation: '事实是他撒了谎。',
       analysis: ['that he lied 作系动词后的表语。'],
-      segments: [
-        {
-          text: 'The truth',
-          role: '主语',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'is',
-          role: '系动词',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'that he lied',
-          role: '表语',
-        },
-        {
-          text: '.',
-        },
-      ],
     },
     {
       label: '名词内容补语',
       sentence: 'The fact that he lied surprised us.',
       translation: '他撒谎这一事实让我们惊讶。',
       analysis: ['that he lied 补充 fact 的内容。'],
-      segments: [
-        {
-          text: 'The',
-          role: '限定词',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'fact',
-          role: '名词中心词',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'that he lied',
-          role: '内容补语',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'surprised',
-          role: '谓语动词',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'us',
-          role: '宾语',
-        },
-        {
-          text: '.',
-        },
-      ],
     },
   ]}
 />
@@ -326,56 +220,16 @@ whether 的分布比表示「是否」的 if 更广。先看从句所处位置�
       label: '句首主语',
       sentence: 'Whether he will come is unclear.',
       analysis: ['句首主语位置用 whether。'],
-      segments: [
-        {
-          text: 'Whether he will come',
-          role: '主语',
-        },
-        {
-          text: ' is unclear.',
-        },
-      ],
     },
     {
       label: '介词后',
       sentence: 'It depends on whether he agrees.',
       analysis: ['介词后用 whether。'],
-      segments: [
-        {
-          text: 'It depends ',
-        },
-        {
-          text: 'on',
-          role: '介词',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'whether he agrees',
-          role: '介词补语',
-        },
-        {
-          text: '.',
-        },
-      ],
     },
     {
       label: '表语',
       sentence: 'The question is whether we should go.',
       analysis: ['正式基础表达在表语位置优先用 whether。'],
-      segments: [
-        {
-          text: 'The question is ',
-        },
-        {
-          text: 'whether we should go',
-          role: '表语',
-        },
-        {
-          text: '.',
-        },
-      ],
     },
     {
       label: '不定式前',
@@ -457,151 +311,27 @@ think、believe、expect 等动词后，第一人称意见表达常用主句否�
       label: '形式主语',
       sentence: 'It is clear that he is right.',
       analysis: ['it 是形式主语，that 从句是后置内容。'],
-      segments: [
-        {
-          text: 'It',
-          role: '形式主语',
-        },
-        {
-          text: ' is ',
-        },
-        {
-          text: 'clear',
-          role: '表语',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'that he is right',
-          role: '后置内容',
-        },
-        {
-          text: '.',
-        },
-      ],
     },
     {
       label: '名词短语作表语',
       sentence: 'It is a pity that you cannot come.',
       analysis: ['a pity 是表语。'],
-      segments: [
-        {
-          text: 'It',
-          role: '形式主语',
-        },
-        {
-          text: ' is ',
-        },
-        {
-          text: 'a pity',
-          role: '表语',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'that you cannot come',
-          role: '后置内容',
-        },
-        {
-          text: '.',
-        },
-      ],
     },
     {
       label: '形式宾语',
       sentence: 'We consider it strange that he did not come.',
       analysis: ['strange 是宾语补足语，that 从句对应形式宾语 it 的内容。'],
-      segments: [
-        {
-          text: 'We consider ',
-        },
-        {
-          text: 'it',
-          role: '形式宾语',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'strange',
-          role: '宾语补足语',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'that he did not come',
-          role: '后置内容',
-        },
-        {
-          text: '.',
-        },
-      ],
     },
     {
       label: '宾补不是 that 从句',
       sentence: 'We found it surprising that he agreed.',
       analysis: ['宾补是 surprising，不是后置的 that 内容从句。'],
-      segments: [
-        {
-          text: 'We found ',
-        },
-        {
-          text: 'it',
-          role: '形式宾语',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'surprising',
-          role: '宾语补足语',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'that he agreed',
-          role: '后置内容',
-        },
-        {
-          text: '.',
-        },
-      ],
     },
     {
       label: '后置非限定内容',
       sentence: 'I find it difficult to understand him.',
       analysis: [
         'difficult 是宾补，to understand him 是后置非限定内容，不能称为限定的宾语补语从句。',
-      ],
-      segments: [
-        {
-          text: 'I find ',
-        },
-        {
-          text: 'it',
-          role: '形式宾语',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'difficult',
-          role: '宾语补足语',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'to understand him',
-          role: '后置内容',
-        },
-        {
-          text: '.',
-        },
       ],
     },
   ]}
@@ -639,50 +369,12 @@ think、believe、expect 等动词后，第一人称意见表达常用主句否�
       sentence: 'You can call me what you like.',
       translation: '你可以随意称呼我。',
       analysis: ['what you like 对应给 me 的称呼。'],
-      segments: [
-        {
-          text: 'You can call ',
-        },
-        {
-          text: 'me',
-          role: '宾语',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'what you like',
-          role: '宾语补足语',
-        },
-        {
-          text: '.',
-        },
-      ],
     },
     {
       label: '身份',
       sentence: 'My education made me who I am today.',
       translation: '我的教育成就了今天的我。',
       analysis: ['who I am today 说明 me 所成为的人。'],
-      segments: [
-        {
-          text: 'My education made ',
-        },
-        {
-          text: 'me',
-          role: '宾语',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'who I am today',
-          role: '宾语补足语',
-        },
-        {
-          text: '.',
-        },
-      ],
     },
   ]}
 />
@@ -836,71 +528,21 @@ fact、news、idea、belief、hope、suggestion、doubt、opinion 等名词后�
       label: '房子作宾语',
       sentence: 'This is the house which I bought.',
       analysis: ['对应 I bought the house，关系词选 which/that。'],
-      segments: [
-        {
-          text: 'This is the house ',
-        },
-        {
-          text: 'which I bought',
-          role: '关系从句',
-          note: 'which 对应 bought 的宾语',
-        },
-        {
-          text: '.',
-        },
-      ],
     },
     {
       label: '房子表示地点',
       sentence: 'This is the house where I live.',
       analysis: ['对应 I live in the house，关系词选 where/in which。'],
-      segments: [
-        {
-          text: 'This is the house ',
-        },
-        {
-          text: 'where I live',
-          role: '关系从句',
-          note: 'where 表地点',
-        },
-        {
-          text: '.',
-        },
-      ],
     },
     {
       label: '日期作宾语',
       sentence: 'I remember the day which we spent together.',
       analysis: ['spent 缺宾语，关系词选 which/that。'],
-      segments: [
-        {
-          text: 'I remember the day ',
-        },
-        {
-          text: 'which we spent together',
-          role: '关系从句',
-        },
-        {
-          text: '.',
-        },
-      ],
     },
     {
       label: '日期表示时间',
       sentence: 'I remember the day when we met.',
       analysis: ['met 不缺宾语，关系词选 when/on which。'],
-      segments: [
-        {
-          text: 'I remember the day ',
-        },
-        {
-          text: 'when we met',
-          role: '关系从句',
-        },
-        {
-          text: '.',
-        },
-      ],
     },
   ]}
 />
@@ -1013,151 +655,46 @@ fact、news、idea、belief、hope、suggestion、doubt、opinion 等名词后�
       label: '时间',
       sentence: 'I will call you when I arrive.',
       translation: '我到达时会给你打电话。',
-      segments: [
-        {
-          text: 'I will call you ',
-        },
-        {
-          text: 'when I arrive',
-          role: '状语从句',
-        },
-        {
-          text: '.',
-        },
-      ],
     },
     {
       label: '地点',
       sentence: 'Sit wherever you like.',
       translation: '你想坐哪里就坐哪里。',
-      segments: [
-        {
-          text: 'Sit ',
-        },
-        {
-          text: 'wherever you like',
-          role: '状语从句',
-        },
-        {
-          text: '.',
-        },
-      ],
     },
     {
       label: '原因',
       sentence: 'I stayed home because I was ill.',
       translation: '我因生病待在家里。',
-      segments: [
-        {
-          text: 'I stayed home ',
-        },
-        {
-          text: 'because I was ill',
-          role: '状语从句',
-        },
-        {
-          text: '.',
-        },
-      ],
     },
     {
       label: '目的',
       sentence: 'Speak clearly so that everyone can hear.',
       translation: '说清楚，好让大家听见。',
-      segments: [
-        {
-          text: 'Speak clearly ',
-        },
-        {
-          text: 'so that everyone can hear',
-          role: '状语从句',
-        },
-        {
-          text: '.',
-        },
-      ],
     },
     {
       label: '结果',
       sentence: 'He was so tired that he fell asleep.',
       translation: '他累得睡着了。',
-      segments: [
-        {
-          text: 'He was so tired ',
-        },
-        {
-          text: 'that he fell asleep',
-          role: '结果从句',
-        },
-        {
-          text: '.',
-        },
-      ],
     },
     {
       label: '条件',
       sentence: 'We will go if it does not rain.',
       translation: '若不下雨，我们就去。',
-      segments: [
-        {
-          text: 'We will go ',
-        },
-        {
-          text: 'if it does not rain',
-          role: '状语从句',
-        },
-        {
-          text: '.',
-        },
-      ],
     },
     {
       label: '让步',
       sentence: 'Although it was raining, we went out.',
       translation: '尽管下雨，我们还是出门了。',
-      segments: [
-        {
-          text: 'Although it was raining',
-          role: '状语从句',
-        },
-        {
-          text: ', we went out.',
-        },
-      ],
     },
     {
       label: '方式',
       sentence: 'Do as I say.',
       translation: '照我说的做。',
-      segments: [
-        {
-          text: 'Do ',
-        },
-        {
-          text: 'as I say',
-          role: '状语从句',
-        },
-        {
-          text: '.',
-        },
-      ],
     },
     {
       label: '比较',
       sentence: 'He is taller than I am.',
       translation: '他比我高。',
-      segments: [
-        {
-          text: 'He is taller ',
-        },
-        {
-          text: 'than I am',
-          role: '比较从句',
-        },
-        {
-          text: '.',
-        },
-      ],
     },
   ]}
 />
@@ -1285,69 +822,21 @@ the next time、every time、the first time 等时间短语后也可接分句，
       label: 'when 表时间',
       sentence: 'I will call you when she arrives.',
       analysis: ['表示她到达时；时间状语从句在例句中用现在形式。'],
-      segments: [
-        {
-          text: 'I will call you ',
-        },
-        {
-          text: 'when she arrives',
-          role: '时间状语从句',
-        },
-        {
-          text: '.',
-        },
-      ],
     },
     {
       label: 'if 表条件',
       sentence: 'We will go if she comes.',
       analysis: ['表示若她来；条件状语从句在例句中用现在形式。'],
-      segments: [
-        {
-          text: 'We will go ',
-        },
-        {
-          text: 'if she comes',
-          role: '条件状语从句',
-        },
-        {
-          text: '.',
-        },
-      ],
     },
     {
       label: 'when 询问时间',
       sentence: 'I do not know when she will arrive.',
       analysis: ['表示不知道她何时到达；嵌入疑问内容谈将来时可用 will。'],
-      segments: [
-        {
-          text: 'I do not know ',
-        },
-        {
-          text: 'when she will arrive',
-          role: '嵌入疑问',
-        },
-        {
-          text: '.',
-        },
-      ],
     },
     {
       label: 'if 询问是否',
       sentence: 'I wonder if she will come.',
       analysis: ['表示想知道她是否会来；嵌入疑问不套用上述状语规则。'],
-      segments: [
-        {
-          text: 'I wonder ',
-        },
-        {
-          text: 'if she will come',
-          role: '嵌入疑问',
-        },
-        {
-          text: '.',
-        },
-      ],
     },
   ]}
 />

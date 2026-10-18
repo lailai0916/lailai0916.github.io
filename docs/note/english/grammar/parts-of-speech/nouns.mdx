@@ -24,44 +24,7 @@ summary: 名词的意义分类与可数性分属 2 个维度，可数性取决�
     {
       sentence: 'The two young students are reading.',
       label: '名词与名词短语',
-      analysis: ['students 是名词，the two young students 整体作主语。'],
-      segments: [
-        {
-          text: 'The',
-          role: '限定词',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'two',
-          role: '数量限定成分',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'young',
-          role: '修饰语',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'students',
-          role: '中心词',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'are reading',
-          role: '谓语',
-        },
-        {
-          text: '.',
-        },
-      ],
+      analysis: ['students 是名词，the two young students 整体作主语。', 'students 是中心名词。'],
     },
   ]}
 />
@@ -129,63 +92,11 @@ summary: 名词的意义分类与可数性分属 2 个维度，可数性取决�
       sentence: 'A glass of water is on the table.',
       label: '单数计量名词',
       analysis: ['A glass of water 作主语，谓语与中心词 glass 一致。'],
-      segments: [
-        {
-          text: 'A ',
-        },
-        {
-          text: 'glass',
-          role: '主语中心',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'of water',
-          role: '补足成分',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'is',
-          role: '谓语动词',
-        },
-        {
-          text: ' on the table.',
-        },
-      ],
     },
     {
       sentence: 'Two glasses of water are on the table.',
       label: '复数计量名词',
       analysis: ['Two glasses of water 作主语，谓语与中心词 glasses 一致。'],
-      segments: [
-        {
-          text: 'Two ',
-        },
-        {
-          text: 'glasses',
-          role: '主语中心',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'of water',
-          role: '补足成分',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'are',
-          role: '谓语动词',
-        },
-        {
-          text: ' on the table.',
-        },
-      ],
     },
   ]}
 />
@@ -274,83 +185,16 @@ family、team、audience 可按整体或成员组织一致关系。
       sentence: 'The team is strong.',
       label: '整体视角',
       analysis: ['把队伍作为一个单位。'],
-      segments: [
-        {
-          text: 'The team',
-          role: '主语',
-          note: '将队伍作为整体。',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'is',
-          role: '谓语动词',
-          note: '采用单数。',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'strong',
-          role: '表语',
-        },
-        {
-          text: '.',
-        },
-      ],
     },
     {
       sentence: 'The team are arguing about their roles.',
       label: '成员视角',
       analysis: ['把队员作为多个成员；这一用法在英式英语中更常见。'],
-      segments: [
-        {
-          text: 'The team',
-          role: '主语',
-          note: '按多个成员理解。',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'are arguing',
-          role: '谓语',
-          note: '采用复数。',
-        },
-        {
-          text: ' about ',
-        },
-        {
-          text: 'their',
-          role: '物主限定词',
-          note: '与成员视角一致。',
-        },
-        {
-          text: ' roles.',
-        },
-      ],
     },
     {
       sentence: 'The team members are arguing.',
       label: '明确列出成员',
       analysis: ['英美英语中均清楚。'],
-      segments: [
-        {
-          text: 'The team members',
-          role: '主语',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'are arguing',
-          role: '谓语',
-        },
-        {
-          text: '.',
-        },
-      ],
     },
   ]}
 />
@@ -372,135 +216,27 @@ family、team、audience 可按整体或成员组织一致关系。
       sentence: 'The police are investigating.',
       label: '复数集合',
       analysis: ['一名警察用 a police officer，不用 one police。'],
-      segments: [
-        {
-          text: 'The police',
-          role: '主语',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'are investigating',
-          role: '谓语',
-          note: '采用复数。',
-        },
-        {
-          text: '.',
-        },
-      ],
     },
     {
       sentence: 'The furniture is expensive.',
       label: '不可数总量',
       analysis: ['不可数并不等于只能理解为一个物理整体。'],
-      segments: [
-        {
-          text: 'The furniture',
-          role: '主语',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'is',
-          role: '谓语动词',
-          note: '采用单数。',
-        },
-        {
-          text: ' expensive.',
-        },
-      ],
     },
     {
       sentence: 'The news is surprising.',
       label: '外形带 -s 的单数',
-      segments: [
-        {
-          text: 'The news',
-          role: '主语',
-          note: '当前义项按单数。',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'is',
-          role: '谓语动词',
-        },
-        {
-          text: ' surprising.',
-        },
-      ],
     },
     {
       sentence: 'These scissors are sharp.',
       label: '成对物品',
-      segments: [
-        {
-          text: 'These scissors',
-          role: '主语',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'are',
-          role: '谓语动词',
-          note: '采用复数。',
-        },
-        {
-          text: ' sharp.',
-        },
-      ],
     },
     {
       sentence: 'This pair of scissors is sharp.',
       label: '单数 pair',
-      segments: [
-        {
-          text: 'This ',
-        },
-        {
-          text: 'pair',
-          role: '主语中心',
-        },
-        {
-          text: ' of scissors ',
-        },
-        {
-          text: 'is',
-          role: '谓语动词',
-          note: '与 pair 一致。',
-        },
-        {
-          text: ' sharp.',
-        },
-      ],
     },
     {
       sentence: 'Two pairs of scissors are on the table.',
       label: '复数 pairs',
-      segments: [
-        {
-          text: 'Two ',
-        },
-        {
-          text: 'pairs',
-          role: '主语中心',
-        },
-        {
-          text: ' of scissors ',
-        },
-        {
-          text: 'are',
-          role: '谓语动词',
-          note: '与 pairs 一致。',
-        },
-        {
-          text: ' on the table.',
-        },
-      ],
     },
   ]}
 />
@@ -518,37 +254,11 @@ family、team、audience 可按整体或成员组织一致关系。
       label: '单个同名者',
       sentence: 'There is a Michael downstairs.',
       analysis: ['指一位叫 Michael 的人。'],
-      segments: [
-        {
-          text: 'There is ',
-        },
-        {
-          text: 'a Michael',
-          role: '名词短语',
-          note: '将名字作为一个可计数的实例。',
-        },
-        {
-          text: ' downstairs.',
-        },
-      ],
     },
     {
       label: '多个同名者',
       sentence: 'There are three Michaels in my class.',
       analysis: ['指 3 位同名的人。'],
-      segments: [
-        {
-          text: 'There are ',
-        },
-        {
-          text: 'three Michaels',
-          role: '名词短语',
-          note: '名字按人数用复数。',
-        },
-        {
-          text: ' in my class.',
-        },
-      ],
     },
   ]}
 />
@@ -583,37 +293,11 @@ family、team、audience 可按整体或成员组织一致关系。
       sentence: "This book is Michael's.",
       label: '独立所有格',
       analysis: ['所有格也可独立使用。'],
-      segments: [
-        {
-          text: 'This book is ',
-        },
-        {
-          text: "Michael's",
-          role: '表语',
-          note: '独立使用的所有格。',
-        },
-        {
-          text: '.',
-        },
-      ],
     },
     {
       sentence: "We met at the barber's.",
       label: '省去地点名词',
       analysis: ["barber's 指 barber's shop，即理发店。"],
-      segments: [
-        {
-          text: 'We met ',
-        },
-        {
-          text: "at the barber's",
-          role: '地点成分',
-          note: "这里的 barber's 指 barber's shop。",
-        },
-        {
-          text: '.',
-        },
-      ],
     },
   ]}
 />

@@ -115,32 +115,11 @@ summary: 英语标点先按句法关系判断，再选择符号与书写体例�
       label: '并列关系',
       sentence: 'I was tired, but I kept working.',
       analysis: ['加并列连词 but，构成并列句。'],
-      segments: [
-        {
-          text: 'I was tired, ',
-        },
-        {
-          text: 'but',
-          role: '并列连词',
-        },
-        {
-          text: ' I kept working.',
-        },
-      ],
     },
     {
       label: '主从关系',
       sentence: 'Although I was tired, I kept working.',
       analysis: ['选择表达逻辑关系的从属连接词，把一部分改为从句，再按从句位置使用逗号。'],
-      segments: [
-        {
-          text: 'Although I was tired',
-          role: '让步状语从句',
-        },
-        {
-          text: ', I kept working.',
-        },
-      ],
     },
   ]}
 />
@@ -239,52 +218,16 @@ working. 来修复逗号拼接。
       label: '筛选对象',
       sentence: 'The students who revised passed.',
       analysis: ['谈论复习过的那部分学生，不直接断言其他学生的结果。'],
-      segments: [
-        {
-          text: 'The students ',
-        },
-        {
-          text: 'who revised',
-          role: '限制性关系从句',
-        },
-        {
-          text: ' passed.',
-        },
-      ],
     },
     {
       label: '补充信息',
       sentence: 'The students, who revised, passed.',
       analysis: ['谈论已确定的全体学生，并补充他们复习过。'],
-      segments: [
-        {
-          text: 'The students, ',
-        },
-        {
-          text: 'who revised',
-          role: '非限制性关系从句',
-        },
-        {
-          text: ', passed.',
-        },
-      ],
     },
     {
       label: '句中补充需两侧边界',
       sentence: 'My brother, who lives in London, works as a doctor.',
       analysis: ['从句补充说明已确定的人物，不能仅保留 who 前的逗号。'],
-      segments: [
-        {
-          text: 'My brother, ',
-        },
-        {
-          text: 'who lives in London',
-          role: '非限制性关系从句',
-        },
-        {
-          text: ', works as a doctor.',
-        },
-      ],
     },
   ]}
 />
@@ -300,35 +243,11 @@ working. 来修复逗号拼接。
       label: '确定对象',
       sentence: 'My friend Lily lives in London.',
       analysis: ['Lily 用于说明是哪位朋友。'],
-      segments: [
-        {
-          text: 'My friend ',
-        },
-        {
-          text: 'Lily',
-          role: '确定对象的同位语',
-        },
-        {
-          text: ' lives in London.',
-        },
-      ],
     },
     {
       label: '补充说明',
       sentence: 'Lily, my oldest friend, lives in London.',
       analysis: ['my oldest friend 是补充说明。'],
-      segments: [
-        {
-          text: 'Lily, ',
-        },
-        {
-          text: 'my oldest friend',
-          role: '补充同位语',
-        },
-        {
-          text: ', lives in London.',
-        },
-      ],
     },
   ]}
 />
@@ -486,64 +405,16 @@ working. 来修复逗号拼接。
       label: '引出列表',
       sentence: 'She needed three things: a pen, some paper, and a ruler.',
       translation: '她需要 3 样东西：一支笔、一些纸和一把尺子。',
-      segments: [
-        {
-          text: 'She needed three things',
-          role: '完整引出语',
-        },
-        {
-          text: ': ',
-        },
-        {
-          text: 'a pen, some paper, and a ruler',
-          role: '列表',
-        },
-        {
-          text: '.',
-        },
-      ],
     },
     {
       label: '引出解释',
       sentence: 'He had only one goal: to win.',
       translation: '他仅有一个目标：获胜。',
-      segments: [
-        {
-          text: 'He had only one goal',
-          role: '完整引出语',
-        },
-        {
-          text: ': ',
-        },
-        {
-          text: 'to win',
-          role: '解释',
-        },
-        {
-          text: '.',
-        },
-      ],
     },
     {
       label: '引出具体内容',
       sentence: 'There was one problem: nobody had a key.',
       translation: '有一个问题：没有人有钥匙。',
-      segments: [
-        {
-          text: 'There was one problem',
-          role: '完整引出语',
-        },
-        {
-          text: ': ',
-        },
-        {
-          text: 'nobody had a key',
-          role: '具体内容',
-        },
-        {
-          text: '.',
-        },
-      ],
     },
   ]}
 />

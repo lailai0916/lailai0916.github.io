@@ -246,57 +246,6 @@ summary: 语气是有关分句形式的语法范畴，情态涉及可能、必�
       label: 'should 与祈使结果',
       translation: '万一需要帮助，给我打电话。',
       analysis: ['结果是行动指示。'],
-      segments: [
-        {
-          text: 'If',
-          role: '条件标记',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'you',
-          role: '从句主语',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'should',
-          role: '情态助动词',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'need',
-          role: '从句主要动词',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'help',
-          role: '从句宾语',
-        },
-        {
-          text: ', ',
-        },
-        {
-          text: 'call',
-          role: '祈使谓语动词',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'me',
-          role: '宾语',
-        },
-        {
-          text: '.',
-        },
-      ],
     },
     {
       sentence: 'If it should rain, we will cancel the trip.',
@@ -324,62 +273,12 @@ summary: 语气是有关分句形式的语法范畴，情态涉及可能、必�
       sentence: "If you had taken my advice, you wouldn't be in trouble now.",
       translation: '若你当初听了建议，现在就不会有麻烦。',
       analysis: ['过去条件，当前结果。'],
-      segments: [
-        {
-          text: 'If you ',
-        },
-        {
-          text: 'had taken',
-          role: '重点结构',
-          note: '本组重点比较的形式或结构。',
-        },
-        {
-          text: ' my advice, you ',
-        },
-        {
-          text: "wouldn't be",
-          role: '重点结构',
-          note: '本组重点比较的形式或结构。',
-        },
-        {
-          text: ' in trouble ',
-        },
-        {
-          text: 'now',
-          role: '重点结构',
-          note: '本组重点比较的形式或结构。',
-        },
-        {
-          text: '.',
-        },
-      ],
       label: '过去条件与当前结果',
     },
     {
       sentence: "If I were more organized, I wouldn't have missed yesterday's deadline.",
       translation: '若我平时更有条理，就不会错过昨天的截止日期。',
       analysis: ['持续的性格条件，过去结果。'],
-      segments: [
-        {
-          text: 'If I ',
-        },
-        {
-          text: 'were',
-          role: '重点结构',
-          note: '本组重点比较的形式或结构。',
-        },
-        {
-          text: ' more organized, I ',
-        },
-        {
-          text: "wouldn't have missed",
-          role: '重点结构',
-          note: '本组重点比较的形式或结构。',
-        },
-        {
-          text: " yesterday's deadline.",
-        },
-      ],
       label: '持续条件与过去结果',
     },
   ]}
@@ -433,71 +332,17 @@ summary: 语气是有关分句形式的语法范畴，情态涉及可能、必�
     {
       sentence: 'They demanded that he leave immediately.',
       translation: '他们要求他立即离开。',
-      segments: [
-        {
-          text: 'They',
-          role: '主语',
-          note: '主句主语。',
-        },
-        {
-          text: ' demanded that he ',
-        },
-        {
-          text: 'leave',
-          role: '重点结构',
-          note: '本组重点比较的形式或结构。',
-        },
-        {
-          text: ' immediately.',
-        },
-      ],
       label: '第三人称仍用原形',
     },
     {
       sentence: 'It is essential that she be present.',
       translation: '她到场很有必要。',
-      segments: [
-        {
-          text: 'It',
-          role: '主语',
-          note: '主句主语。',
-        },
-        {
-          text: ' is essential that she ',
-        },
-        {
-          text: 'be',
-          role: '重点结构',
-          note: '本组重点比较的形式或结构。',
-        },
-        {
-          text: ' present.',
-        },
-      ],
       label: 'be 保持原形',
     },
     {
       sentence: 'We recommend that he not drive.',
       translation: '我们建议他不要开车。',
       analysis: ["否定放在原形前，不加 doesn't。"],
-      segments: [
-        {
-          text: 'We',
-          role: '主语',
-          note: '主句主语。',
-        },
-        {
-          text: ' recommend that he ',
-        },
-        {
-          text: 'not drive',
-          role: '重点结构',
-          note: '本组重点比较的形式或结构。',
-        },
-        {
-          text: '.',
-        },
-      ],
       label: 'not 加原形',
     },
   ]}
@@ -749,72 +594,18 @@ as if/as though 后可以用常规形式，也可用表达距离现实较远的�
       sentence: 'It looks as if it is going to rain.',
       translation: '看起来快下雨了。',
       analysis: ['说话人认为有现实依据。'],
-      segments: [
-        {
-          text: 'It',
-          role: '主语',
-          note: '主句主语。',
-        },
-        {
-          text: ' looks as if it ',
-        },
-        {
-          text: 'is going to rain',
-          role: '重点结构',
-          note: '本组重点比较的形式或结构。',
-        },
-        {
-          text: '.',
-        },
-      ],
       label: '有现实依据',
     },
     {
       sentence: 'He talks as if he knew everything.',
       translation: '他说话好像无所不知。',
       analysis: ['在讽刺或批评语境中，knew 可以表达说话人不认同他全知的立场。'],
-      segments: [
-        {
-          text: 'He',
-          role: '主语',
-          note: '主句主语。',
-        },
-        {
-          text: ' talks as if he ',
-        },
-        {
-          text: 'knew',
-          role: '重点结构',
-          note: '本组重点比较的形式或结构。',
-        },
-        {
-          text: ' everything.',
-        },
-      ],
       label: '表达遥远假设',
     },
     {
       sentence: 'She looked as if she had seen a ghost.',
       translation: '她看上去仿佛见了鬼。',
       analysis: ['有关事件早于 looked 的过去参照时间。'],
-      segments: [
-        {
-          text: 'She',
-          role: '主语',
-          note: '主句主语。',
-        },
-        {
-          text: ' looked as if she ',
-        },
-        {
-          text: 'had seen',
-          role: '重点结构',
-          note: '本组重点比较的形式或结构。',
-        },
-        {
-          text: ' a ghost.',
-        },
-      ],
       label: '先于过去参照点',
     },
   ]}
@@ -862,131 +653,36 @@ so that、in order that 等目的从句和让步从句可以包含情态动词�
       sentence: 'He spoke slowly so that we could understand.',
       translation: '他说得慢，好让我们听懂。',
       analysis: ['could 表目的中的能力或可能。'],
-      segments: [
-        {
-          text: 'He',
-          role: '主语',
-          note: '主句主语。',
-        },
-        {
-          text: ' spoke slowly ',
-        },
-        {
-          text: 'so that we could understand',
-          role: '重点结构',
-          note: '本组重点比较的形式或结构。',
-        },
-        {
-          text: '.',
-        },
-      ],
       label: '目的中的 could',
     },
     {
       sentence: 'He spoke slowly in order that everyone might understand.',
       translation: '他说得慢，好让大家听懂。',
       analysis: ['might 可出现在过去的目的语境中，不断言大家实际没有听懂。'],
-      segments: [
-        {
-          text: 'He',
-          role: '主语',
-          note: '主句主语。',
-        },
-        {
-          text: ' spoke slowly ',
-        },
-        {
-          text: 'in order that everyone might understand',
-          role: '重点结构',
-          note: '本组重点比较的形式或结构。',
-        },
-        {
-          text: '.',
-        },
-      ],
       label: '目的中的 might',
     },
     {
       sentence: "I'll write it down so that I don't forget.",
       translation: '我把它写下，以免忘记。',
       analysis: ['目的从句也可以没有 may/might/should。'],
-      segments: [
-        {
-          text: 'I',
-          role: '主语',
-          note: '主句主语。',
-        },
-        {
-          text: "'ll write it down ",
-        },
-        {
-          text: "so that I don't forget",
-          role: '重点结构',
-          note: '本组重点比较的形式或结构。',
-        },
-        {
-          text: '.',
-        },
-      ],
       label: '不含情态动词的目的',
     },
     {
       sentence: 'Take an umbrella lest it rain / should rain.',
       translation: '带把伞，以防下雨。',
       analysis: ['lest 属于较正式表达；例中的预防性从句可以采用原形或 should + 原形。'],
-      segments: [
-        {
-          text: 'Take an umbrella ',
-        },
-        {
-          text: 'lest it rain / should rain',
-          role: '重点结构',
-          note: '本组重点比较的形式或结构。',
-        },
-        {
-          text: '.',
-        },
-      ],
       label: 'lest 预防',
     },
     {
       sentence: "Whatever he says / may say, don't believe him.",
       translation: '无论他说什么，都别信。',
       analysis: ['may 增加让步表达，不是必需成分。'],
-      segments: [
-        {
-          text: 'Whatever he says / may say',
-          role: '重点结构',
-          note: '本组重点比较的形式或结构。',
-        },
-        {
-          text: ", don't believe him.",
-        },
-      ],
       label: 'whatever 让步',
     },
     {
       sentence: 'She left early for fear that she might miss the train.',
       translation: '她早早离开，生怕误车。',
       analysis: ['might miss 描述所担忧的可能事件。'],
-      segments: [
-        {
-          text: 'She',
-          role: '主语',
-          note: '主句主语。',
-        },
-        {
-          text: ' left early ',
-        },
-        {
-          text: 'for fear that she might miss',
-          role: '重点结构',
-          note: '本组重点比较的形式或结构。',
-        },
-        {
-          text: ' the train.',
-        },
-      ],
       label: 'for fear that',
     },
   ]}

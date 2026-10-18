@@ -25,88 +25,28 @@ summary: 基数词表示数量，序数词表示顺序；整数每 3 位分节�
     {
       label: '独立表达数量',
       sentence: 'I bought three.',
-      segments: [
-        {
-          text: 'I bought ',
-        },
-        {
-          text: 'three',
-          role: '宾语',
-          note: '独立表示数量，所指由语境恢复。',
-        },
-        {
-          text: '.',
-        },
-      ],
+      analysis: ['three 在句中作宾语。'],
     },
     {
       label: '独立序数表达',
       sentence: 'I chose the third.',
-      segments: [
-        {
-          text: 'I chose ',
-        },
-        {
-          text: 'the third',
-          role: '宾语',
-          note: '独立指代第三个。',
-        },
-        {
-          text: '.',
-        },
-      ],
+      analysis: ['the third 在句中作宾语。'],
     },
     {
       label: '补充说明代词',
       sentence: 'You two can come with me.',
       translation: '你们两个可以跟我来。',
       analysis: ['two 补充说明 you。'],
-      segments: [
-        {
-          text: 'You ',
-        },
-        {
-          text: 'two',
-          role: '补充成分',
-          note: '传统分析可称同位语。',
-        },
-        {
-          text: ' can come with me.',
-        },
-      ],
     },
     {
       label: '数字作主语',
       sentence: 'Three is a prime number.',
       translation: '3 是质数。',
-      segments: [
-        {
-          text: 'Three',
-          role: '主语',
-          note: '将数字本身作为一个值。',
-        },
-        {
-          text: ' is a prime number.',
-        },
-      ],
     },
     {
       label: '数字作表语',
       sentence: 'The answer is three.',
       translation: '答案是 3。',
-      segments: [
-        {
-          text: 'The answer is ',
-        },
-        {
-          text: 'three',
-          role: '表语',
-          note: '说明答案的数值。',
-        },
-        {
-          text: '.',
-        },
-      ],
     },
   ]}
 />
@@ -242,129 +182,26 @@ summary: 基数词表示数量，序数词表示顺序；整数每 3 位分节�
       sentence: 'Two thirds is greater than one half.',
       label: '数值本身',
       analysis: ['把数作为一个值。'],
-      segments: [
-        {
-          text: 'Two thirds',
-          role: '主语',
-          note: '指一个数值。',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'is',
-          role: '谓语动词',
-          note: '采用单数。',
-        },
-        {
-          text: ' greater than one half.',
-        },
-      ],
     },
     {
       sentence: 'Half of the book is missing.',
       label: '单数可数整体',
-      segments: [
-        {
-          text: 'Half of the book',
-          role: '主语',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'is',
-          role: '谓语动词',
-          note: '按单数整体处理。',
-        },
-        {
-          text: ' missing.',
-        },
-      ],
     },
     {
       sentence: 'Two thirds of the water is gone.',
       label: '不可数总量',
-      segments: [
-        {
-          text: 'Two thirds of the water',
-          role: '主语',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'is',
-          role: '谓语动词',
-          note: '按 water 的不可数义处理。',
-        },
-        {
-          text: ' gone.',
-        },
-      ],
     },
     {
       sentence: 'Sixty percent of the work has been finished.',
       label: '不可数总量',
-      segments: [
-        {
-          text: 'Sixty percent of the work',
-          role: '主语',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'has been finished',
-          role: '谓语',
-          note: '按 work 的不可数义处理。',
-        },
-        {
-          text: '.',
-        },
-      ],
     },
     {
       sentence: 'Two thirds of the students are here.',
       label: '多个可数个体',
-      segments: [
-        {
-          text: 'Two thirds of the students',
-          role: '主语',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'are',
-          role: '谓语动词',
-          note: '按复数成员处理。',
-        },
-        {
-          text: ' here.',
-        },
-      ],
     },
     {
       sentence: 'Sixty percent of the students have finished.',
       label: '多个可数个体',
-      segments: [
-        {
-          text: 'Sixty percent of the students',
-          role: '主语',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'have finished',
-          role: '谓语',
-          note: '按复数成员处理。',
-        },
-        {
-          text: '.',
-        },
-      ],
     },
   ]}
 />
@@ -393,126 +230,26 @@ summary: 基数词表示数量，序数词表示顺序；整数每 3 位分节�
     {
       sentence: 'A is three times as long as B.',
       label: '长度：形容词结构',
-      segments: [
-        {
-          text: 'A is ',
-        },
-        {
-          text: 'three times',
-          role: '倍数',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'as long as B',
-          role: '比较结构',
-        },
-        {
-          text: '.',
-        },
-      ],
     },
     {
       sentence: 'A is three times the length of B.',
       label: '长度：名词结构',
-      segments: [
-        {
-          text: 'A is ',
-        },
-        {
-          text: 'three times',
-          role: '倍数',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'the length of B',
-          role: '度量名词短语',
-        },
-        {
-          text: '.',
-        },
-      ],
     },
     {
       sentence: 'A is twice as long as B.',
       label: '2 倍',
-      segments: [
-        {
-          text: 'A is ',
-        },
-        {
-          text: 'twice',
-          role: '倍数',
-        },
-        {
-          text: ' as long as B.',
-        },
-      ],
     },
     {
       sentence: 'A is half as long as B.',
       label: '一半',
-      segments: [
-        {
-          text: 'A is ',
-        },
-        {
-          text: 'half',
-          role: '比例',
-        },
-        {
-          text: ' as long as B.',
-        },
-      ],
     },
     {
       sentence: 'I have twice as many books as she does.',
       label: '可数数量',
-      segments: [
-        {
-          text: 'I have ',
-        },
-        {
-          text: 'twice',
-          role: '倍数',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'as many books as she does',
-          role: '数量比较',
-        },
-        {
-          text: '.',
-        },
-      ],
     },
     {
       sentence: 'This task takes twice as much time as that one.',
       label: '不可数数量',
-      segments: [
-        {
-          text: 'This task takes ',
-        },
-        {
-          text: 'twice',
-          role: '倍数',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'as much time as that one',
-          role: '数量比较',
-        },
-        {
-          text: '.',
-        },
-      ],
     },
   ]}
 />
@@ -545,127 +282,26 @@ three times **longer than**、four times **higher than** 既可能按总量倍�
     {
       sentence: 'Ten dollars is enough.',
       label: '整体金额',
-      segments: [
-        {
-          text: 'Ten dollars',
-          role: '主语',
-          note: '把金额看作整体。',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'is',
-          role: '谓语动词',
-        },
-        {
-          text: ' enough.',
-        },
-      ],
     },
     {
       sentence: 'Two hours is a long time.',
       label: '整体时长',
-      segments: [
-        {
-          text: 'Two hours',
-          role: '主语',
-          note: '把时长看作整体。',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'is',
-          role: '谓语动词',
-        },
-        {
-          text: ' a long time.',
-        },
-      ],
     },
     {
       sentence: 'Ten books are on the desk.',
       label: '多个个体',
-      segments: [
-        {
-          text: 'Ten books',
-          role: '主语',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'are',
-          role: '谓语动词',
-        },
-        {
-          text: ' on the desk.',
-        },
-      ],
     },
     {
       sentence: 'Ten one-dollar coins were on the desk.',
       label: '多个个体',
-      segments: [
-        {
-          text: 'Ten one-dollar coins',
-          role: '主语',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'were',
-          role: '谓语动词',
-        },
-        {
-          text: ' on the desk.',
-        },
-      ],
     },
     {
       sentence: 'A number of students are absent.',
       label: '若干成员',
-      segments: [
-        {
-          text: 'A number of students',
-          role: '主语',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'are',
-          role: '谓语动词',
-          note: '按复数成员处理。',
-        },
-        {
-          text: ' absent.',
-        },
-      ],
     },
     {
       sentence: 'The number of students is increasing.',
       label: '数量这个值',
-      segments: [
-        {
-          text: 'The number of students',
-          role: '主语',
-          note: '中心是数量这个值。',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'is increasing',
-          role: '谓语',
-          note: '采用单数。',
-        },
-        {
-          text: '.',
-        },
-      ],
     },
   ]}
 />
@@ -733,95 +369,24 @@ three times **longer than**、four times **higher than** 既可能按总量倍�
     {
       sentence: 'He is six feet tall.',
       label: '实际数量',
-      segments: [
-        {
-          text: 'He is ',
-        },
-        {
-          text: 'six feet',
-          role: '度量短语',
-          note: '单位按实际数量用复数。',
-        },
-        {
-          text: ' tall.',
-        },
-      ],
     },
     {
       sentence: 'We walked two miles.',
       label: '实际数量',
-      segments: [
-        {
-          text: 'We walked ',
-        },
-        {
-          text: 'two miles',
-          role: '度量短语',
-          note: '单位按实际数量用复数。',
-        },
-        {
-          text: '.',
-        },
-      ],
     },
     {
       sentence: 'It is a two-mile walk.',
       label: '前置复合修饰语',
       analysis: ['单位 mile 用单数。'],
-      segments: [
-        {
-          text: 'It is a ',
-        },
-        {
-          text: 'two-mile',
-          role: '修饰语',
-          note: '位于名词前，单位用单数。',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'walk',
-          role: '中心词',
-        },
-        {
-          text: '.',
-        },
-      ],
     },
     {
       sentence: 'The room has an area of 20 square metres.',
       label: '面积',
-      segments: [
-        {
-          text: 'The room has an area of ',
-        },
-        {
-          text: '20 square metres',
-          role: '度量短语',
-        },
-        {
-          text: '.',
-        },
-      ],
     },
     {
       sentence: 'The tank holds five cubic metres of water.',
       label: '容积',
-      analysis: ['水箱能装 5 立方米的水。'],
-      segments: [
-        {
-          text: 'The tank holds ',
-        },
-        {
-          text: 'five cubic metres of water',
-          role: '宾语',
-          note: '度量结构中心为 metres。',
-        },
-        {
-          text: '.',
-        },
-      ],
+      analysis: ['水箱能装 5 立方米的水。', '度量结构的中心词是 metres。'],
     },
   ]}
 />
@@ -840,75 +405,24 @@ three times **longer than**、four times **higher than** 既可能按总量倍�
       sentence: 'The river is 1000 metres long.',
       translation: '这条河长 1000 米。',
       analysis: ['表示河长 1000 米。'],
-      segments: [
-        {
-          text: 'The river is ',
-        },
-        {
-          text: '1000 metres long',
-          role: '表语',
-          note: '数量加长度形容词。',
-        },
-        {
-          text: '.',
-        },
-      ],
     },
     {
       label: '数量 + in length',
       sentence: 'The river is 1000 metres in length.',
       translation: '这条河长 1000 米。',
       analysis: ['表示河长 1000 米。'],
-      segments: [
-        {
-          text: 'The river is ',
-        },
-        {
-          text: '1000 metres in length',
-          role: '长度表达',
-        },
-        {
-          text: '.',
-        },
-      ],
     },
     {
       label: '2 个维度',
       sentence: 'The room is 20 by 35 metres.',
       translation: '这个房间的尺寸是 20 米乘 35 米。',
       analysis: ['边长分别为 20 米和 35 米，面积为 700 平方米。'],
-      segments: [
-        {
-          text: 'The room is ',
-        },
-        {
-          text: '20 by 35 metres',
-          role: '尺寸表达',
-          note: 'by 连接 2 个维度。',
-        },
-        {
-          text: '.',
-        },
-      ],
     },
     {
       label: '3 个维度',
       sentence: 'The box is 8 by 5 by 6 centimetres.',
       translation: '这个箱子的尺寸是 8 厘米乘 5 厘米乘 6 厘米。',
       analysis: ['3 个尺寸分别为 8 厘米、5 厘米、6 厘米。'],
-      segments: [
-        {
-          text: 'The box is ',
-        },
-        {
-          text: '8 by 5 by 6 centimetres',
-          role: '尺寸表达',
-          note: 'by 依次连接 3 个维度。',
-        },
-        {
-          text: '.',
-        },
-      ],
     },
   ]}
 />

@@ -37,120 +37,21 @@ summary: 倒装按构式判断，先区分疑问、否定前置、only 状语、
       label: '已有 has',
       sentence: 'Never has she seen it.',
       analysis: ['原句：She has never seen it. 仅提前第一个助动词 has。'],
-      segments: [
-        {
-          text: 'Never',
-          role: '前置否定状语',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'has',
-          role: '前置助动词',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'she',
-          role: '主语',
-        },
-        {
-          text: ' seen it.',
-        },
-      ],
     },
     {
       label: '已有 have been',
       sentence: 'Never have I been so tired.',
       analysis: ['原句：I have never been so tired. 仅提前 have，been 保持原位。'],
-      segments: [
-        {
-          text: 'Never',
-          role: '前置否定状语',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'have',
-          role: '前置助动词',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'I',
-          role: '主语',
-        },
-        {
-          text: ' been so tired.',
-        },
-      ],
     },
     {
       label: '谓语是 be',
       sentence: 'Rarely is he late.',
       analysis: ['原句：He is rarely late. 提前限定 be。'],
-      segments: [
-        {
-          text: 'Rarely',
-          role: '前置近否定状语',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'is',
-          role: '前置限定动词',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'he',
-          role: '主语',
-        },
-        {
-          text: ' late.',
-        },
-      ],
     },
     {
       label: '补 does',
       sentence: 'Seldom does she complain.',
       analysis: ['原句：She seldom complains. 补 does 后，complains 恢复为原形 complain。'],
-      segments: [
-        {
-          text: 'Seldom',
-          role: '前置近否定状语',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'does',
-          role: '前置助动词',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'she',
-          role: '主语',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'complain',
-          role: '动词原形',
-        },
-        {
-          text: '.',
-        },
-      ],
     },
   ]}
 />
@@ -176,125 +77,28 @@ summary: 倒装按构式判断，先区分疑问、否定前置、only 状语、
       sentence: 'I wonder where she lives.',
       translation: '我想知道她住在哪里。',
       analysis: ['嵌入部分用陈述语序。'],
-      segments: [
-        {
-          text: 'I wonder where ',
-        },
-        {
-          text: 'she',
-          role: '嵌入分句主语',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'lives',
-          role: '嵌入分句谓语动词',
-        },
-        {
-          text: '.',
-        },
-      ],
     },
     {
       label: '独立一般疑问',
       sentence: 'Have you finished the work?',
       translation: '你完成工作了吗？',
-      segments: [
-        {
-          text: 'Have',
-          role: '前置助动词',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'you',
-          role: '主语',
-        },
-        {
-          text: ' finished the work?',
-        },
-      ],
     },
     {
       label: '非主语特殊疑问',
       sentence: 'Where does she live?',
       translation: '她住在哪里？',
-      segments: [
-        {
-          text: 'Where',
-          role: '疑问状语',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'does',
-          role: '前置助动词',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'she',
-          role: '主语',
-        },
-        {
-          text: ' live?',
-        },
-      ],
     },
     {
       label: '宾语特殊疑问',
       sentence: 'Who did you meet?',
       translation: '你遇见了谁？',
       analysis: ['who 是宾语。'],
-      segments: [
-        {
-          text: 'Who',
-          role: '疑问宾语',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'did',
-          role: '前置助动词',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'you',
-          role: '主语',
-        },
-        {
-          text: ' meet?',
-        },
-      ],
     },
     {
       label: '主语特殊疑问',
       sentence: 'Who called you?',
       translation: '谁给你打了电话？',
       analysis: ['who 本身是主语，不作主语与助动词倒装。'],
-      segments: [
-        {
-          text: 'Who',
-          role: '主语',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'called',
-          role: '谓语动词',
-        },
-        {
-          text: ' you?',
-        },
-      ],
     },
   ]}
 />
@@ -358,64 +162,16 @@ summary: 倒装按构式判断，先区分疑问、否定前置、only 状语、
       label: '否定状语未前置',
       sentence: 'I have never seen it.',
       analysis: ['never 不在句首，不触发这种倒装。'],
-      segments: [
-        {
-          text: 'I',
-          role: '主语',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'have never seen',
-          role: '谓语',
-        },
-        {
-          text: ' it.',
-        },
-      ],
     },
     {
       label: '否定主语',
       sentence: 'Nobody knows the answer.',
       analysis: ['nobody 是主语，不另加 does。'],
-      segments: [
-        {
-          text: 'Nobody',
-          role: '主语',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'knows',
-          role: '谓语动词',
-        },
-        {
-          text: ' the answer.',
-        },
-      ],
     },
     {
       label: '并列主语',
       sentence: 'Not only Tom but also Lily came.',
       analysis: ['not only...but also... 连接主语，不倒装。'],
-      segments: [
-        {
-          text: 'Not only Tom but also Lily',
-          role: '主语',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'came',
-          role: '谓语动词',
-        },
-        {
-          text: '.',
-        },
-      ],
     },
   ]}
 />
@@ -498,78 +254,16 @@ only when 后的从句仍用 he arrived，倒装的是主句 did the meeting beg
       label: '状语前置',
       sentence: 'Only then did Tom understand.',
       analysis: ['only 修饰句首状语，前置该状语后，主句部分倒装。'],
-      segments: [
-        {
-          text: 'Only then',
-          role: '前置状语',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'did',
-          role: '前置助动词',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'Tom',
-          role: '主语',
-        },
-        {
-          text: ' understand.',
-        },
-      ],
     },
     {
       label: '限定主语',
       sentence: 'Only Tom understood.',
       analysis: ['only 修饰主语，主语仍在谓语前，不因此倒装。'],
-      segments: [
-        {
-          text: 'Only Tom',
-          role: '主语',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'understood',
-          role: '谓语动词',
-        },
-        {
-          text: '.',
-        },
-      ],
     },
     {
       label: '状语未前置',
       sentence: 'Tom understood only then.',
       analysis: ['only 状语留在句中或句末，不触发句首状语倒装。'],
-      segments: [
-        {
-          text: 'Tom',
-          role: '主语',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'understood',
-          role: '谓语动词',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'only then',
-          role: '状语',
-        },
-        {
-          text: '.',
-        },
-      ],
     },
   ]}
 />
@@ -653,22 +347,6 @@ only when 后的从句仍用 he arrived，倒装的是主句 did the meeting beg
         '对应原句：If I were you, I would wait.',
         '删除 if，把 were 放到主语前，其余内容保持顺序。',
       ],
-      segments: [
-        {
-          text: 'Were',
-          role: '前置限定动词',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'I',
-          role: '条件分句主语',
-        },
-        {
-          text: ' you, I would wait.',
-        },
-      ],
     },
     {
       label: 'were to 条件',
@@ -677,64 +355,16 @@ only when 后的从句仍用 he arrived，倒装的是主句 did the meeting beg
         '对应原句：If she were to return, we would welcome her.',
         '只提前 were，to return 保持原位。',
       ],
-      segments: [
-        {
-          text: 'Were',
-          role: '前置限定动词',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'she',
-          role: '条件分句主语',
-        },
-        {
-          text: ' to return, we would welcome her.',
-        },
-      ],
     },
     {
       label: 'had 条件',
       sentence: 'Had I known, I would have helped.',
       analysis: ['对应原句：If I had known, I would have helped.', '提前完成助动词 had。'],
-      segments: [
-        {
-          text: 'Had',
-          role: '前置助动词',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'I',
-          role: '条件分句主语',
-        },
-        {
-          text: ' known, I would have helped.',
-        },
-      ],
     },
     {
       label: 'should 条件',
       sentence: 'Should you need help, please call me.',
       analysis: ['对应原句：If you should need help, please call me.', '提前 should。'],
-      segments: [
-        {
-          text: 'Should',
-          role: '前置情态动词',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'you',
-          role: '条件分句主语',
-        },
-        {
-          text: ' need help, please call me.',
-        },
-      ],
     },
   ]}
 />
@@ -818,97 +448,21 @@ now、then 等时间副词在引出新阶段或新事件时，也可出现类似
       label: '名词主语',
       sentence: 'Here comes Tom.',
       analysis: ['名词短语主语在场景引入结构中可后置。'],
-      segments: [
-        {
-          text: 'Here ',
-        },
-        {
-          text: 'comes',
-          role: '谓语动词',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'Tom',
-          role: '后置主语',
-        },
-        {
-          text: '.',
-        },
-      ],
     },
     {
       label: '名词主语',
       sentence: 'Away went the children.',
       analysis: ['名词短语主语在场景引入结构中可后置。'],
-      segments: [
-        {
-          text: 'Away ',
-        },
-        {
-          text: 'went',
-          role: '谓语动词',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'the children',
-          role: '后置主语',
-        },
-        {
-          text: '.',
-        },
-      ],
     },
     {
       label: '人称代词主语',
       sentence: 'Here he comes.',
       analysis: ['普通人称代词在这类 here 结构中保持在动词前。'],
-      segments: [
-        {
-          text: 'Here ',
-        },
-        {
-          text: 'he',
-          role: '主语',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'comes',
-          role: '谓语动词',
-        },
-        {
-          text: '.',
-        },
-      ],
     },
     {
       label: '人称代词主语',
       sentence: 'Away they went.',
       analysis: ['普通人称代词在这类 away 结构中保持在动词前。'],
-      segments: [
-        {
-          text: 'Away ',
-        },
-        {
-          text: 'they',
-          role: '主语',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'went',
-          role: '谓语动词',
-        },
-        {
-          text: '.',
-        },
-      ],
     },
   ]}
 />
@@ -1009,113 +563,24 @@ There is a book on the desk. 表示「桌上有一本书」，不等于 The book
       label: '形容词前置',
       sentence: 'Tired as he was, he kept working.',
       translation: '尽管很累，他仍在工作。',
-      segments: [
-        {
-          text: 'Tired',
-          role: '前置表语',
-        },
-        {
-          text: ' as ',
-        },
-        {
-          text: 'he',
-          role: '从句主语',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'was',
-          role: '从句谓语动词',
-        },
-        {
-          text: ', he kept working.',
-        },
-      ],
+      analysis: ['Tired 作表语前置。'],
     },
     {
       label: '名词前置',
       sentence: 'Child as he is, he understands the problem.',
       translation: '尽管还是个孩子，他理解这个问题。',
-      segments: [
-        {
-          text: 'Child',
-          role: '前置表语',
-        },
-        {
-          text: ' as ',
-        },
-        {
-          text: 'he',
-          role: '从句主语',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'is',
-          role: '从句谓语动词',
-        },
-        {
-          text: ', he understands the problem.',
-        },
-      ],
+      analysis: ['Child 作表语前置。'],
     },
     {
       label: '副词前置',
       sentence: 'Hard as she tried, she could not open the door.',
       translation: '尽管她努力尝试，还是打不开门。',
-      segments: [
-        {
-          text: 'Hard',
-          role: '前置状语',
-        },
-        {
-          text: ' as ',
-        },
-        {
-          text: 'she',
-          role: '从句主语',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'tried',
-          role: '从句谓语动词',
-        },
-        {
-          text: ', she could not open the door.',
-        },
-      ],
+      analysis: ['Hard 作状语前置。'],
     },
     {
       label: '动词前置',
       sentence: 'Try as he might, he could not open the door.',
       translation: '尽管他尽力尝试，还是打不开门。',
-      segments: [
-        {
-          text: 'Try',
-          role: '前置动词',
-        },
-        {
-          text: ' as ',
-        },
-        {
-          text: 'he',
-          role: '从句主语',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'might',
-          role: '从句情态动词',
-        },
-        {
-          text: ', he could not open the door.',
-        },
-      ],
     },
   ]}
 />

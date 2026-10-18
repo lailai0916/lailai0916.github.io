@@ -190,47 +190,12 @@ summary: 省略先检查构式许可，再检查上下文能否恢复所需关�
       sentence: 'He came in and sat down.',
       translation: '他走进来坐下。',
       analysis: ['2 个谓语共享主语 he。'],
-      segments: [
-        {
-          text: 'He',
-          role: '共享主语',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'came in and sat down',
-          role: '并列谓语',
-        },
-        {
-          text: '.',
-        },
-      ],
     },
     {
       label: '共享宾语',
       sentence: 'She bought and read the book.',
       translation: '她买了这本书并读完了。',
       analysis: ['2 个动词共享宾语 the book。'],
-      segments: [
-        {
-          text: 'She ',
-        },
-        {
-          text: 'bought and read',
-          role: '并列动词',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'the book',
-          role: '共享宾语',
-        },
-        {
-          text: '.',
-        },
-      ],
     },
     {
       label: '后半共享主语',
@@ -243,50 +208,6 @@ summary: 省略先检查构式许可，再检查上下文能否恢复所需关�
       sentence: 'The news made Tom happy but Lily sad.',
       translation: '这消息让 Tom 高兴，却让 Lily 难过。',
       analysis: ['并列部分分别保留宾语与宾语补语，共享主语和 made。'],
-      segments: [
-        {
-          text: 'The news',
-          role: '共享主语',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'made',
-          role: '共享动词',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'Tom',
-          role: '宾语',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'happy',
-          role: '宾语补足语',
-        },
-        {
-          text: ' but ',
-        },
-        {
-          text: 'Lily',
-          role: '宾语',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'sad',
-          role: '宾语补足语',
-        },
-        {
-          text: '.',
-        },
-      ],
     },
   ]}
 />
@@ -371,67 +292,17 @@ summary: 省略先检查构式许可，再检查上下文能否恢复所需关�
       label: '肯定承接',
       sentence: 'I like coffee, and Lily does too.',
       translation: '我喜欢咖啡，Lily 也喜欢。',
-      segments: [
-        {
-          text: 'I like coffee, and Lily ',
-        },
-        {
-          text: 'does',
-          role: '保留助动词',
-        },
-        {
-          text: ' too.',
-        },
-      ],
     },
     {
       label: 'neither 否定承接',
       sentence: 'I cannot swim, and neither can she.',
       translation: '我不会游泳，她也不会。',
-      segments: [
-        {
-          text: 'I cannot swim, and ',
-        },
-        {
-          text: 'neither',
-          role: '否定承接',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'can',
-          role: '保留情态动词',
-        },
-        {
-          text: ' she.',
-        },
-      ],
     },
     {
       label: 'either 否定承接',
       sentence: 'I do not like coffee, and she does not either.',
       translation: '我不喜欢咖啡，她也不喜欢。',
       analysis: ['否定和助动词保留，either 放在句末。'],
-      segments: [
-        {
-          text: 'I do not like coffee, and she ',
-        },
-        {
-          text: 'does not',
-          role: '保留助动词与否定',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'either',
-          role: '句末承接词',
-        },
-        {
-          text: '.',
-        },
-      ],
     },
   ]}
 />
@@ -586,68 +457,17 @@ Once completed 的主句主语 the form 与原从句主语同指；主语照应�
       label: '不当：悬垂修饰',
       sentence: 'While crossing the road, a car nearly hit me.',
       analysis: ['字面上使 a car 成为 crossing the road 的默认主语，偏离原意。'],
-      segments: [
-        {
-          text: 'While crossing the road',
-          role: '缩约状语从句',
-        },
-        {
-          text: ', ',
-        },
-        {
-          text: 'a car',
-          role: '主句主语',
-        },
-        {
-          text: ' nearly hit me.',
-        },
-      ],
     },
     {
       label: '清楚：保留从句主语',
       sentence: 'While I was crossing the road, a car nearly hit me.',
       translation: '我过马路时，一辆车差点撞到我。',
-      segments: [
-        {
-          text: 'While ',
-        },
-        {
-          text: 'I',
-          role: '从句主语',
-        },
-        {
-          text: ' was crossing the road, ',
-        },
-        {
-          text: 'a car',
-          role: '主句主语',
-        },
-        {
-          text: ' nearly hit me.',
-        },
-      ],
     },
     {
       label: '清楚：调整主句主语',
       sentence: 'While crossing the road, I was nearly hit by a car.',
       translation: '过马路时，我差点被车撞到。',
       analysis: ['缩约部分的隐含主语与主句主语 I 同指。'],
-      segments: [
-        {
-          text: 'While crossing the road',
-          role: '缩约状语从句',
-        },
-        {
-          text: ', ',
-        },
-        {
-          text: 'I',
-          role: '主句主语',
-        },
-        {
-          text: ' was nearly hit by a car.',
-        },
-      ],
     },
   ]}
 />
@@ -795,86 +615,26 @@ that 是否保留还受位置和句式影响。主语从句位于句首时通常
       label: '省略已知动作',
       sentence: 'She can come, but I cannot.',
       analysis: ['后一个 can 后没有说出已知的 come，可还原为「I cannot come.」。'],
-      segments: [
-        {
-          text: 'She can come, but I ',
-        },
-        {
-          text: 'cannot',
-          role: '保留情态动词与否定',
-        },
-        {
-          text: '.',
-        },
-      ],
     },
     {
       label: 'do so 替代动作',
       sentence: 'She promised to check it and did so.',
       analysis: ['did so 承接 check it。'],
-      segments: [
-        {
-          text: 'She promised to check it and ',
-        },
-        {
-          text: 'did so',
-          role: '动作替代',
-        },
-        {
-          text: '.',
-        },
-      ],
     },
     {
       label: 'so 替代命题',
       sentence: '"Will he come?" "I think so."',
       analysis: ['so 承接 he will come。'],
-      segments: [
-        {
-          text: '"Will he come?" "I think ',
-        },
-        {
-          text: 'so',
-          role: '命题替代',
-        },
-        {
-          text: '."',
-        },
-      ],
     },
     {
       label: 'not 替代否定命题',
       sentence: '"Will it rain?" "I hope not."',
       analysis: ['not 承接 it will not rain。'],
-      segments: [
-        {
-          text: '"Will it rain?" "I hope ',
-        },
-        {
-          text: 'not',
-          role: '否定命题替代',
-        },
-        {
-          text: '."',
-        },
-      ],
     },
     {
       label: 'one 替代名词',
       sentence: 'I need a pen. Do you have one?',
       analysis: ['one 表示同类对象，不必是前面提到的同一支笔；复数可用 ones。'],
-      segments: [
-        {
-          text: 'I need a pen. Do you have ',
-        },
-        {
-          text: 'one',
-          role: '名词替代',
-        },
-        {
-          text: '?',
-        },
-      ],
     },
   ]}
 />
@@ -957,43 +717,12 @@ He is taller than **I (am)**.（他比我高。）可保留主格 I 并理解省
       label: '比较她喜欢的对象',
       sentence: 'She likes me more than she likes Tom.',
       analysis: ['写明她喜欢我胜过喜欢 Tom。'],
-      segments: [
-        {
-          text: 'She likes me more than ',
-        },
-        {
-          text: 'she likes Tom',
-          role: '完整比较分句',
-        },
-        {
-          text: '.',
-        },
-      ],
     },
     {
       label: '比较喜欢我的人',
       sentence: 'She likes me more than Tom does.',
       analysis: [
         '也可写全为「She likes me more than Tom likes me.」，比较她与 Tom 对我的喜欢程度。',
-      ],
-      segments: [
-        {
-          text: 'She likes me more than ',
-        },
-        {
-          text: 'Tom',
-          role: '比较分句主语',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'does',
-          role: '承接动词',
-        },
-        {
-          text: '.',
-        },
       ],
     },
   ]}

@@ -126,77 +126,18 @@ and、but、or 可在句首，包括正式写作；与前文的关系仍须清�
       sentence: 'It rained, but we went out.',
       translation: '下雨了，但我们还是出门了。',
       analysis: ['but 是并列连词，连接 2 个独立分句。'],
-      segments: [
-        {
-          text: 'It rained',
-          role: '独立分句',
-        },
-        {
-          text: ', ',
-        },
-        {
-          text: 'but',
-          role: '并列连词',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'we went out',
-          role: '独立分句',
-        },
-        {
-          text: '.',
-        },
-      ],
     },
     {
       label: '连接副词承接 2 句',
       sentence: 'It rained. However, we went out.',
       translation: '下雨了。不过，我们还是出门了。',
       analysis: ['句号分开 2 个独立句，however 表示它们的语义联系。'],
-      segments: [
-        {
-          text: 'It rained. ',
-        },
-        {
-          text: 'However',
-          role: '连接副词',
-          note: 'however 表语义转折，前一个句号已经分开 2 句。',
-        },
-        {
-          text: ', we went out.',
-        },
-      ],
     },
     {
       label: '连接副词与分号配合',
       sentence: 'It rained; however, we went out.',
       translation: '下雨了；不过，我们还是出门了。',
       analysis: ['分号连接 2 个独立分句，however 本身不承担并列连词的句法作用。'],
-      segments: [
-        {
-          text: 'It rained',
-          role: '独立分句',
-        },
-        {
-          text: '; ',
-        },
-        {
-          text: 'however',
-          role: '连接副词',
-        },
-        {
-          text: ', ',
-        },
-        {
-          text: 'we went out',
-          role: '独立分句',
-        },
-        {
-          text: '.',
-        },
-      ],
     },
     {
       label: '连接副词位于句中',
@@ -205,18 +146,6 @@ and、but、or 可在句首，包括正式写作；与前文的关系仍须清�
       analysis: [
         'therefore 位于本分句中间，此处不用逗号隔开。',
         '不应给所有连接副词一律加两侧逗号。',
-      ],
-      segments: [
-        {
-          text: 'We ',
-        },
-        {
-          text: 'therefore',
-          role: '连接副词',
-        },
-        {
-          text: ' stayed inside.',
-        },
       ],
     },
   ]}
@@ -235,35 +164,11 @@ and、but、or 可在句首，包括正式写作；与前文的关系仍须清�
       label: '并列连词 or else',
       sentence: "Hurry up, or else you'll be late.",
       analysis: ['or else 按并列连接处理。'],
-      segments: [
-        {
-          text: 'Hurry up, ',
-        },
-        {
-          text: 'or else',
-          role: '并列连接',
-        },
-        {
-          text: " you'll be late.",
-        },
-      ],
     },
     {
       label: '连接副词 otherwise',
       sentence: "Hurry up; otherwise, you'll be late.",
       analysis: ['意义近似，但用分号连接独立分句。'],
-      segments: [
-        {
-          text: 'Hurry up; ',
-        },
-        {
-          text: 'otherwise',
-          role: '连接副词',
-        },
-        {
-          text: ", you'll be late.",
-        },
-      ],
     },
   ]}
 />
@@ -286,60 +191,18 @@ and、but、or 可在句首，包括正式写作；与前文的关系仍须清�
     {
       label: '从属让步',
       sentence: 'Although he is rich, he is unhappy.',
-      segments: [
-        {
-          text: 'Although he is rich',
-          role: '让步从句',
-        },
-        {
-          text: ', he is unhappy.',
-        },
-      ],
     },
     {
       label: '并列转折',
       sentence: 'He is rich, but he is unhappy.',
-      segments: [
-        {
-          text: 'He is rich, ',
-        },
-        {
-          text: 'but',
-          role: '并列连词',
-        },
-        {
-          text: ' he is unhappy.',
-        },
-      ],
     },
     {
       label: '从属原因',
       sentence: 'Because it was raining, we stayed home.',
-      segments: [
-        {
-          text: 'Because it was raining',
-          role: '原因从句',
-        },
-        {
-          text: ', we stayed home.',
-        },
-      ],
     },
     {
       label: '并列结果',
       sentence: 'It was raining, so we stayed home.',
-      segments: [
-        {
-          text: 'It was raining, ',
-        },
-        {
-          text: 'so',
-          role: '并列连词',
-        },
-        {
-          text: ' we stayed home.',
-        },
-      ],
     },
   ]}
 />
@@ -370,35 +233,11 @@ either...or 和 neither...nor 也可扩展到多项：
       label: '多项选择',
       sentence: 'You can choose either tea or coffee or juice.',
       analysis: ['either...or 可以扩展到多项。'],
-      segments: [
-        {
-          text: 'You can choose ',
-        },
-        {
-          text: 'either tea or coffee or juice',
-          role: '关联并列成分',
-        },
-        {
-          text: '.',
-        },
-      ],
     },
     {
       label: '多项否定',
       sentence: 'She speaks neither English nor French nor German.',
       analysis: ['neither...nor 可以扩展到多项。'],
-      segments: [
-        {
-          text: 'She speaks ',
-        },
-        {
-          text: 'neither English nor French nor German',
-          role: '关联并列成分',
-        },
-        {
-          text: '.',
-        },
-      ],
     },
   ]}
 />
@@ -419,84 +258,24 @@ either...or 和 neither...nor 也可扩展到多项：
     {
       label: '形容词对应',
       sentence: 'She is not only intelligent but also diligent.',
-      segments: [
-        {
-          text: 'She is ',
-        },
-        {
-          text: 'not only intelligent but also diligent',
-          role: '平行形容词',
-        },
-        {
-          text: '.',
-        },
-      ],
     },
     {
       label: '动词短语对应',
       sentence: 'She either sings or dances.',
-      segments: [
-        {
-          text: 'She ',
-        },
-        {
-          text: 'either sings or dances',
-          role: '平行动词短语',
-        },
-        {
-          text: '.',
-        },
-      ],
     },
     {
       label: '不定式对应',
       sentence: 'The course teaches us not only to read but also to write.',
-      segments: [
-        {
-          text: 'The course teaches us ',
-        },
-        {
-          text: 'not only to read but also to write',
-          role: '平行不定式',
-        },
-        {
-          text: '.',
-        },
-      ],
     },
     {
       label: '追加另一种活动',
       sentence: 'She not only teaches English but also writes books.',
       analysis: ['追加另一种活动。'],
-      segments: [
-        {
-          text: 'She ',
-        },
-        {
-          text: 'not only teaches English but also writes books',
-          role: '关联范围',
-        },
-        {
-          text: '.',
-        },
-      ],
     },
     {
       label: '追加另一种语言',
       sentence: 'She teaches not only English but also French.',
       analysis: ['追加另一种语言。'],
-      segments: [
-        {
-          text: 'She teaches ',
-        },
-        {
-          text: 'not only English but also French',
-          role: '关联范围',
-        },
-        {
-          text: '.',
-        },
-      ],
     },
   ]}
 />
@@ -518,42 +297,10 @@ either...or 和 neither...nor 也可扩展到多项：
     {
       label: '靠近单数项',
       sentence: 'Either the students or the teacher is responsible.',
-      segments: [
-        {
-          text: 'Either the students or the teacher',
-          role: '主语',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'is',
-          role: '单数谓语动词',
-        },
-        {
-          text: ' responsible.',
-        },
-      ],
     },
     {
       label: '靠近复数项',
       sentence: 'Neither the teacher nor the students are here.',
-      segments: [
-        {
-          text: 'Neither the teacher nor the students',
-          role: '主语',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'are',
-          role: '复数谓语动词',
-        },
-        {
-          text: ' here.',
-        },
-      ],
     },
   ]}
 />
@@ -565,99 +312,21 @@ either...or 和 neither...nor 也可扩展到多项：
       label: 'not only 作用于谓语',
       sentence: 'Not only did she read the book, but she also took notes.',
       analysis: ['did 承担过去时，read 用原形；后半句不因此倒装。'],
-      segments: [
-        {
-          text: 'Not only',
-          role: '前置否定成分',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'did',
-          role: '助动词',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'she',
-          role: '主语',
-        },
-        {
-          text: ' read the book, but she also took notes.',
-        },
-      ],
     },
     {
       label: 'not only 仅连接主语',
       sentence: 'Not only Lily but also Tom read the book.',
       analysis: ['不倒装。'],
-      segments: [
-        {
-          text: 'Not only Lily but also Tom',
-          role: '主语',
-        },
-        {
-          text: ' read the book.',
-        },
-      ],
     },
     {
       label: 'no sooner...than',
       sentence: 'No sooner had he arrived than it began to rain.',
       analysis: ['否定意义部分前置通常触发倒装。'],
-      segments: [
-        {
-          text: 'No sooner',
-          role: '前置否定成分',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'had',
-          role: '助动词',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'he',
-          role: '主语',
-        },
-        {
-          text: ' arrived than it began to rain.',
-        },
-      ],
     },
     {
       label: 'hardly...when',
       sentence: 'Hardly had I sat down when the phone rang.',
       analysis: ['否定意义部分前置通常触发倒装。'],
-      segments: [
-        {
-          text: 'Hardly',
-          role: '前置否定成分',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'had',
-          role: '助动词',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'I',
-          role: '主语',
-        },
-        {
-          text: ' sat down when the phone rang.',
-        },
-      ],
     },
   ]}
 />

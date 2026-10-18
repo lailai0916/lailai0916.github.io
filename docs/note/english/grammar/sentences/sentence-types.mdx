@@ -36,58 +36,12 @@ summary: 句法分析先区分词、短语、分句和句子，再区分结构�
       sentence: 'The answer surprised me.',
       translation: '这个答案使我惊讶。',
       analysis: ['名词短语 The answer 作主语。'],
-      segments: [
-        {
-          text: 'The answer',
-          role: '主语',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'surprised',
-          role: '谓语动词',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'me',
-          role: '宾语',
-        },
-        {
-          text: '.',
-        },
-      ],
     },
     {
       label: '从句',
       sentence: 'What she said surprised me.',
       translation: '她说的话使我惊讶。',
       analysis: ['从句 What she said 整体作主语。'],
-      segments: [
-        {
-          text: 'What she said',
-          role: '主语',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'surprised',
-          role: '谓语动词',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'me',
-          role: '宾语',
-        },
-        {
-          text: '.',
-        },
-      ],
     },
   ]}
 />
@@ -153,154 +107,28 @@ summary: 句法分析先区分词、短语、分句和句子，再区分结构�
       label: 'S + V',
       sentence: 'Birds fly.',
       translation: '鸟会飞。',
-      segments: [
-        {
-          text: 'Birds',
-          role: '主语',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'fly',
-          role: '谓语动词',
-        },
-        {
-          text: '.',
-        },
-      ],
     },
     {
       label: 'S + V + C',
       sentence: 'She is a teacher.',
       translation: '她是一名教师。',
-      segments: [
-        {
-          text: 'She',
-          role: '主语',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'is',
-          role: '谓语动词',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'a teacher',
-          role: '补足语',
-          note: '表语 C',
-        },
-        {
-          text: '.',
-        },
-      ],
     },
     {
       label: 'S + V + O',
       sentence: 'I like music.',
       translation: '我喜欢音乐。',
-      segments: [
-        {
-          text: 'I',
-          role: '主语',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'like',
-          role: '谓语动词',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'music',
-          role: '宾语',
-        },
-        {
-          text: '.',
-        },
-      ],
     },
     {
       label: 'S + V + IO + DO',
       sentence: 'He gave me a book.',
       translation: '他给了我一本书。',
       analysis: ['me 是接收者，a book 是给予的事物。'],
-      segments: [
-        {
-          text: 'He',
-          role: '主语',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'gave',
-          role: '谓语动词',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'me',
-          role: '宾语',
-          note: '间接宾语 IO',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'a book',
-          role: '宾语',
-          note: '直接宾语 DO',
-        },
-        {
-          text: '.',
-        },
-      ],
     },
     {
       label: 'S + V + O + C',
       sentence: 'We elected her captain.',
       translation: '我们选她当队长。',
       analysis: ['her 与 captain 指向同一人。'],
-      segments: [
-        {
-          text: 'We',
-          role: '主语',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'elected',
-          role: '谓语动词',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'her',
-          role: '宾语',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'captain',
-          role: '补足语',
-          note: '宾语补足语 C',
-        },
-        {
-          text: '.',
-        },
-      ],
     },
   ]}
 />
@@ -316,35 +144,11 @@ summary: 句法分析先区分词、短语、分句和句子，再区分结构�
       label: '可选修饰语',
       sentence: 'I read a book yesterday.',
       analysis: ['yesterday 可省。'],
-      segments: [
-        {
-          text: 'I read a book ',
-        },
-        {
-          text: 'yesterday',
-          role: '可选修饰语',
-        },
-        {
-          text: '.',
-        },
-      ],
     },
     {
       label: '必需地点成分',
       sentence: 'She put the book on the desk.',
       analysis: ['put 在此通常需要地点成分，不能直接删去 on the desk。'],
-      segments: [
-        {
-          text: 'She put the book ',
-        },
-        {
-          text: 'on the desk',
-          role: '必需地点成分',
-        },
-        {
-          text: '.',
-        },
-      ],
     },
   ]}
 />
@@ -376,131 +180,18 @@ summary: 句法分析先区分词、短语、分句和句子，再区分结构�
     {
       label: '简单句',
       sentence: 'I called him.',
-      segments: [
-        {
-          text: 'I',
-          role: '主语',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'called',
-          role: '谓语动词',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'him',
-          role: '宾语',
-        },
-        {
-          text: '.',
-        },
-      ],
     },
     {
       label: '并列句',
       sentence: 'I called him, but he did not answer.',
-      segments: [
-        {
-          text: 'I called him',
-          role: '独立分句',
-        },
-        {
-          text: ', ',
-        },
-        {
-          text: 'but',
-          role: '并列连词',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'he did not answer',
-          role: '独立分句',
-        },
-        {
-          text: '.',
-        },
-      ],
     },
     {
       label: '主从复合句',
       sentence: 'I called him because I needed help.',
-      segments: [
-        {
-          text: 'I',
-          role: '主语',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'called',
-          role: '谓语动词',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'him',
-          role: '宾语',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'because I needed help',
-          role: '状语从句',
-        },
-        {
-          text: '.',
-        },
-      ],
     },
     {
       label: '并列复合句',
       sentence: 'I called him, but he did not answer because he was asleep.',
-      segments: [
-        {
-          text: 'I called him',
-          role: '独立分句',
-        },
-        {
-          text: ', ',
-        },
-        {
-          text: 'but',
-          role: '并列连词',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'he',
-          role: '主语',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'did not answer',
-          role: '谓语动词',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'because he was asleep',
-          role: '状语从句',
-        },
-        {
-          text: '.',
-        },
-      ],
     },
   ]}
 />

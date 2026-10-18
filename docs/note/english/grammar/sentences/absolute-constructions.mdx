@@ -65,108 +65,28 @@ summary: 独立主格自带逻辑主语，以分词或无动词结构说明该�
       label: '普通主动',
       sentence: 'The children playing outside, we could work quietly.',
       translation: '孩子们在外面玩，我们得以安静工作。',
-      segments: [
-        {
-          text: 'The children',
-          role: '逻辑主语',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'playing outside',
-          role: '分词结构',
-        },
-        {
-          text: ', we could work quietly.',
-        },
-      ],
     },
     {
       label: '普通被动',
       sentence: 'The work finished, they went home.',
       translation: '工作完成后，他们回家了。',
       analysis: ['过去分词也常描述结果状态。'],
-      segments: [
-        {
-          text: 'The work',
-          role: '逻辑主语',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'finished',
-          role: '分词结构',
-        },
-        {
-          text: ', they went home.',
-        },
-      ],
     },
     {
       label: '被动过程',
       sentence: 'The bridge being repaired, traffic was diverted.',
       translation: '桥梁正在维修，车辆改道通行。',
       analysis: ['being repaired 交代正在维修的过程，不能任意删去 being 而保持原意。'],
-      segments: [
-        {
-          text: 'The bridge',
-          role: '逻辑主语',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'being repaired',
-          role: '分词结构',
-        },
-        {
-          text: ', traffic was diverted.',
-        },
-      ],
     },
     {
       label: '主动完成',
       sentence: 'The guests having left, we began to clean up.',
       translation: '客人离开后，我们开始打扫。',
-      segments: [
-        {
-          text: 'The guests',
-          role: '逻辑主语',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'having left',
-          role: '分词结构',
-        },
-        {
-          text: ', we began to clean up.',
-        },
-      ],
     },
     {
       label: '被动完成',
       sentence: 'All the tickets having been sold, we could not get in.',
       translation: '票已售罄，我们无法入场。',
-      segments: [
-        {
-          text: 'All the tickets',
-          role: '逻辑主语',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'having been sold',
-          role: '分词结构',
-        },
-        {
-          text: ', we could not get in.',
-        },
-      ],
     },
   ]}
 />
@@ -207,97 +127,24 @@ summary: 独立主格自带逻辑主语，以分词或无动词结构说明该�
       sentence: 'Many visitors came, some of them students.',
       translation: '来了许多访客，其中一些是学生。',
       analysis: ['students 说明 some of them 的身份。'],
-      segments: [
-        {
-          text: 'Many visitors came, ',
-        },
-        {
-          text: 'some of them',
-          role: '逻辑主语',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'students',
-          role: '身份说明',
-        },
-        {
-          text: '.',
-        },
-      ],
     },
     {
       label: '形容词短语',
       sentence: 'She stood still, her face pale.',
       translation: '她站着不动，脸色苍白。',
       analysis: ['pale 说明 her face 的状态。'],
-      segments: [
-        {
-          text: 'She stood still, ',
-        },
-        {
-          text: 'her face',
-          role: '逻辑主语',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'pale',
-          role: '状态说明',
-        },
-        {
-          text: '.',
-        },
-      ],
     },
     {
       label: '副词／状态词',
       sentence: 'The meeting over, everyone left.',
       translation: '会议结束后，大家离开了。',
       analysis: ['over 说明阶段状态。'],
-      segments: [
-        {
-          text: 'The meeting',
-          role: '逻辑主语',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'over',
-          role: '状态说明',
-        },
-        {
-          text: ', everyone left.',
-        },
-      ],
     },
     {
       label: '介词短语',
       sentence: 'She walked in, a book under her arm.',
       translation: '她走进来，腋下夹着一本书。',
       analysis: ['under her arm 说明书的位置。'],
-      segments: [
-        {
-          text: 'She walked in, ',
-        },
-        {
-          text: 'a book',
-          role: '逻辑主语',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'under her arm',
-          role: '位置说明',
-        },
-        {
-          text: '.',
-        },
-      ],
     },
   ]}
 />
@@ -402,18 +249,6 @@ being 与限定词的省略均有搭配限制：
       sentence: 'With so many problems to solve, I felt stressed.',
       translation: '有这么多问题要解决，我感到压力很大。',
       analysis: ['problems 是 solve 的逻辑宾语，执行者由语境确定。'],
-      segments: [
-        {
-          text: 'With so many ',
-        },
-        {
-          text: 'problems',
-          role: '逻辑宾语',
-        },
-        {
-          text: ' to solve, I felt stressed.',
-        },
-      ],
     },
     {
       label: '待完成的工作',
@@ -426,25 +261,6 @@ being 与限定词的省略均有搭配限制：
       sentence: 'He sat there with his eyes closed.',
       translation: '他闭着眼睛坐在那里。',
       analysis: ['closed 描述 eyes 的状态。'],
-      segments: [
-        {
-          text: 'He sat there with ',
-        },
-        {
-          text: 'his eyes',
-          role: '逻辑主语',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'closed',
-          role: '状态说明',
-        },
-        {
-          text: '.',
-        },
-      ],
     },
   ]}
 />
@@ -464,35 +280,11 @@ without 表示缺少或没有某种情况，所接结构需分别分析。
       label: '无显式主语的 -ing 结构',
       sentence: 'He left without saying goodbye.',
       analysis: ['saying 的逻辑主语是 he。'],
-      segments: [
-        {
-          text: 'He left ',
-        },
-        {
-          text: 'without saying goodbye',
-          role: '无显式主语的 -ing 结构',
-        },
-        {
-          text: '.',
-        },
-      ],
     },
     {
       label: '带主语的 -ing 结构',
       sentence: 'He slipped out without anyone noticing.',
       analysis: ['noticing 的逻辑主语是 anyone。'],
-      segments: [
-        {
-          text: 'He slipped out without ',
-        },
-        {
-          text: 'anyone',
-          role: 'noticing 的逻辑主语',
-        },
-        {
-          text: ' noticing.',
-        },
-      ],
     },
     {
       label: '名词性成分加不定式修饰语',
@@ -523,71 +315,16 @@ with 与 without 的搭配并不完全对称，不能逐词互换，也不能把
       label: '完整状语从句',
       sentence: 'When the rain stopped, we left.',
       analysis: ['When the rain stopped 有自己的主语及限定谓语，when 明确时间关系。'],
-      segments: [
-        {
-          text: 'When the rain stopped',
-          role: '状语从句',
-        },
-        {
-          text: ', ',
-        },
-        {
-          text: 'we',
-          role: '主语',
-        },
-        {
-          text: ' left.',
-        },
-      ],
     },
     {
       label: '分词状语',
       sentence: 'Walking home, I met a friend.',
       analysis: ['通常由主句主语 I 提供隐含主语。'],
-      segments: [
-        {
-          text: 'Walking home',
-          role: '分词状语',
-        },
-        {
-          text: ', ',
-        },
-        {
-          text: 'I',
-          role: '主语',
-        },
-        {
-          text: ' met a friend.',
-        },
-      ],
     },
     {
       label: '独立主格',
       sentence: 'The rain having stopped, we left.',
       analysis: ['显式带有自己的逻辑主语 the rain，把雨已停作为背景。'],
-      segments: [
-        {
-          text: 'The rain',
-          role: '逻辑主语',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'having stopped',
-          role: '分词结构',
-        },
-        {
-          text: ', ',
-        },
-        {
-          text: 'we',
-          role: '主语',
-        },
-        {
-          text: ' left.',
-        },
-      ],
     },
   ]}
 />

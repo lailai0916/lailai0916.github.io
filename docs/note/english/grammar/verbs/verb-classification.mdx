@@ -44,72 +44,18 @@ summary: 分析动词需要依次确定分句与谓语边界、动词链中各�
       sentence: 'The cat eats a fish.',
       translation: '猫吃一条鱼。',
       analysis: ['谓语是 eats a fish，主要动词是 eats。'],
-      segments: [
-        {
-          text: 'The cat',
-          role: '主语',
-          note: '主句主语。',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'eats a fish',
-          role: '重点结构',
-          note: '本组重点比较的形式或结构。',
-        },
-        {
-          text: '.',
-        },
-      ],
       label: '单个动词的谓语',
     },
     {
       sentence: 'The cat may have eaten a fish.',
       translation: '猫可能吃过一条鱼。',
       analysis: ['同一谓语包含 may、have、eaten 3 个动词形式。'],
-      segments: [
-        {
-          text: 'The cat',
-          role: '主语',
-          note: '主句主语。',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'may have eaten a fish',
-          role: '重点结构',
-          note: '本组重点比较的形式或结构。',
-        },
-        {
-          text: '.',
-        },
-      ],
       label: '动词链',
     },
     {
       sentence: 'She opened the book and began to read.',
       translation: '她打开书，开始阅读。',
       analysis: ['1 个主语可以对应并列谓语。'],
-      segments: [
-        {
-          text: 'She',
-          role: '主语',
-          note: '主句主语。',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'opened the book and began to read',
-          role: '重点结构',
-          note: '本组重点比较的形式或结构。',
-        },
-        {
-          text: '.',
-        },
-      ],
       label: '并列谓语',
     },
   ]}
@@ -127,117 +73,27 @@ summary: 分析动词需要依次确定分句与谓语边界、动词链中各�
     {
       sentence: 'She reads every day.',
       analysis: ['reads 是限定形式。'],
-      segments: [
-        {
-          text: 'She',
-          role: '主语',
-          note: '主句主语。',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'reads',
-          role: '重点结构',
-          note: '本组重点比较的形式或结构。',
-        },
-        {
-          text: ' every day.',
-        },
-      ],
       label: '单独限定形式',
     },
     {
       sentence: 'She is reading now.',
       analysis: ['is 是限定形式，reading 是非限定形式。'],
-      segments: [
-        {
-          text: 'She',
-          role: '主语',
-          note: '主句主语。',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'is reading',
-          role: '重点结构',
-          note: '本组重点比较的形式或结构。',
-        },
-        {
-          text: ' now.',
-        },
-      ],
       label: '进行体',
     },
     {
       sentence: 'She may have left.',
       analysis: ['may 是限定形式，have 和 left 是非限定形式。'],
-      segments: [
-        {
-          text: 'She',
-          role: '主语',
-          note: '主句主语。',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'may have left',
-          role: '重点结构',
-          note: '本组重点比较的形式或结构。',
-        },
-        {
-          text: '.',
-        },
-      ],
       label: '情态动词链',
     },
     {
       sentence: 'I want to leave.',
       analysis: ['want 是限定形式，to leave 是非限定形式。'],
-      segments: [
-        {
-          text: 'I',
-          role: '主语',
-          note: '主句主语。',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'want to leave',
-          role: '重点结构',
-          note: '本组重点比较的形式或结构。',
-        },
-        {
-          text: '.',
-        },
-      ],
       label: '不定式补语',
     },
     {
       sentence: 'She has been reading.',
       analysis: [
         'has 承担时态与一致关系；been 和 reading 共同构造完成进行体，不能把 3 个词形当作 3 个分句。',
-      ],
-      segments: [
-        {
-          text: 'She',
-          role: '主语',
-          note: '主句主语。',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'has been reading',
-          role: '重点结构',
-          note: '本组重点比较的形式或结构。',
-        },
-        {
-          text: '.',
-        },
       ],
       label: '完成进行体',
     },
@@ -278,72 +134,12 @@ summary: 分析动词需要依次确定分句与谓语边界、动词链中各�
       label: '双及物',
       translation: '她给我一本书。',
       analysis: ['me 接收 a book，2 个名词短语不是同一对象。'],
-      segments: [
-        {
-          text: 'She',
-          role: '主语',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'gave',
-          role: '谓语动词',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'me',
-          role: '间接宾语',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'a book',
-          role: '直接宾语',
-        },
-        {
-          text: '.',
-        },
-      ],
     },
     {
       sentence: 'They made him captain.',
       label: '复杂及物',
       translation: '他们选他当队长。',
       analysis: ['captain 说明 him 的身份。'],
-      segments: [
-        {
-          text: 'They',
-          role: '主语',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'made',
-          role: '谓语动词',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'him',
-          role: '宾语',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'captain',
-          role: '宾语补足语',
-        },
-        {
-          text: '.',
-        },
-      ],
     },
     {
       sentence: 'They called him a genius.',
@@ -433,96 +229,24 @@ look 的介词结构和连系用法另按补足关系区分：
       sentence: 'She has a bike.',
       translation: '她有一辆自行车。',
       analysis: ['has 是主要动词。'],
-      segments: [
-        {
-          text: 'She',
-          role: '主语',
-          note: '主句主语。',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'has a bike',
-          role: '重点结构',
-          note: '本组重点比较的形式或结构。',
-        },
-        {
-          text: '.',
-        },
-      ],
       label: 'have：主要动词',
     },
     {
       sentence: 'She has bought a bike.',
       translation: '她买了一辆自行车。',
       analysis: ['has 是完成助动词。'],
-      segments: [
-        {
-          text: 'She',
-          role: '主语',
-          note: '主句主语。',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'has bought a bike',
-          role: '重点结构',
-          note: '本组重点比较的形式或结构。',
-        },
-        {
-          text: '.',
-        },
-      ],
       label: 'have：完成助动词',
     },
     {
       sentence: 'She is happy.',
       translation: '她很开心。',
       analysis: ['is 是系动词。'],
-      segments: [
-        {
-          text: 'She',
-          role: '主语',
-          note: '主句主语。',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'is happy',
-          role: '重点结构',
-          note: '本组重点比较的形式或结构。',
-        },
-        {
-          text: '.',
-        },
-      ],
       label: 'be：系动词',
     },
     {
       sentence: 'She is working.',
       translation: '她正在工作。',
       analysis: ['is 是进行助动词。'],
-      segments: [
-        {
-          text: 'She',
-          role: '主语',
-          note: '主句主语。',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'is working',
-          role: '重点结构',
-          note: '本组重点比较的形式或结构。',
-        },
-        {
-          text: '.',
-        },
-      ],
       label: 'be：进行助动词',
     },
   ]}
@@ -541,96 +265,24 @@ look 的介词结构和连系用法另按补足关系区分：
       sentence: 'I think you are right.',
       translation: '我认为你是对的。',
       analysis: ['think 表示稳定看法；中性的标准书面表达采用非进行形式。'],
-      segments: [
-        {
-          text: 'I',
-          role: '主语',
-          note: '主句主语。',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'think',
-          role: '重点结构',
-          note: '本组重点比较的形式或结构。',
-        },
-        {
-          text: ' you are right.',
-        },
-      ],
       label: 'think：状态',
     },
     {
       sentence: 'I am thinking about the problem.',
       translation: '我正在思考这个问题。',
       analysis: ['think about 表示思考活动，可以用进行体。'],
-      segments: [
-        {
-          text: 'I',
-          role: '主语',
-          note: '主句主语。',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'am thinking about',
-          role: '重点结构',
-          note: '本组重点比较的形式或结构。',
-        },
-        {
-          text: ' the problem.',
-        },
-      ],
       label: 'think about：活动',
     },
     {
       sentence: 'She has a car.',
       translation: '她有一辆车。',
       analysis: ['have 表示拥有。'],
-      segments: [
-        {
-          text: 'She',
-          role: '主语',
-          note: '主句主语。',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'has a car',
-          role: '重点结构',
-          note: '本组重点比较的形式或结构。',
-        },
-        {
-          text: '.',
-        },
-      ],
       label: 'have：拥有',
     },
     {
       sentence: 'She is having lunch.',
       translation: '她正在吃午饭。',
       analysis: ['have lunch 表示活动。'],
-      segments: [
-        {
-          text: 'She',
-          role: '主语',
-          note: '主句主语。',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'is having lunch',
-          role: '重点结构',
-          note: '本组重点比较的形式或结构。',
-        },
-        {
-          text: '.',
-        },
-      ],
       label: 'have lunch：活动',
     },
   ]}

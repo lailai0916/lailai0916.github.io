@@ -26,111 +26,24 @@ summary: 形容词的词类、句法功能、词义与构成分别分析：可�
       sentence: 'a clever student',
       translation: '一个聪明的学生',
       analysis: ['clever 是形容词，作定语，修饰名词 student。'],
-      segments: [
-        {
-          text: 'a ',
-        },
-        {
-          text: 'clever',
-          role: '定语',
-          note: 'clever 属于形容词，描述学生的性质。',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'student',
-          role: '中心名词',
-        },
-      ],
     },
     {
       label: '形容词作表语',
       sentence: 'The student is clever.',
       translation: '这个学生很聪明。',
       analysis: ['clever 作表语，说明主语 The student。'],
-      segments: [
-        {
-          text: 'The student',
-          role: '主语',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'is',
-          role: '系动词',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'clever',
-          role: '表语',
-        },
-        {
-          text: '.',
-        },
-      ],
     },
     {
       label: '形容词作宾语补足语',
       sentence: 'We found the student clever.',
       translation: '我们觉得这个学生很聪明。',
       analysis: ['clever 作宾语补足语，说明宾语 the student。'],
-      segments: [
-        {
-          text: 'We',
-          role: '主语',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'found',
-          role: '谓语动词',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'the student',
-          role: '宾语',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'clever',
-          role: '宾语补足语',
-        },
-        {
-          text: '.',
-        },
-      ],
     },
     {
       label: '名词作修饰语',
       sentence: 'a school bus',
       translation: '一辆校车',
       analysis: ['school 是名词，作名词前的修饰语。', '作定语不等于属于形容词。'],
-      segments: [
-        {
-          text: 'a ',
-        },
-        {
-          text: 'school',
-          role: '名词修饰语',
-          note: 'school 表示用途或所属类别，词类仍是名词。',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'bus',
-          role: '中心名词',
-        },
-      ],
     },
   ]}
 />
@@ -169,36 +82,12 @@ summary: 形容词的词类、句法功能、词义与构成分别分析：可�
       sentence: 'The lesson is interesting.',
       translation: '这节课很有趣。',
       analysis: ['说明引起兴趣的事物。'],
-      segments: [
-        {
-          text: 'The lesson is ',
-        },
-        {
-          text: 'interesting',
-          role: '形容词',
-        },
-        {
-          text: '.',
-        },
-      ],
     },
     {
       label: '产生兴趣',
       sentence: 'I am interested in grammar.',
       translation: '我对语法感兴趣。',
       analysis: ['说明产生兴趣的人。'],
-      segments: [
-        {
-          text: 'I am ',
-        },
-        {
-          text: 'interested in grammar',
-          role: '表语',
-        },
-        {
-          text: '.',
-        },
-      ],
     },
   ]}
 />
@@ -258,90 +147,21 @@ summary: 形容词的词类、句法功能、词义与构成分别分析：可�
       label: 'be 后的表语',
       sentence: 'She is happy.',
       translation: '她很开心。',
-      segments: [
-        {
-          text: 'She is ',
-        },
-        {
-          text: 'happy',
-          role: '表语',
-        },
-        {
-          text: '.',
-        },
-      ],
     },
     {
       label: '感官系动词后的表语',
       sentence: 'The soup tastes delicious.',
       translation: '这汤尝起来很美味。',
-      segments: [
-        {
-          text: 'The soup ',
-        },
-        {
-          text: 'tastes',
-          role: '系动词',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'delicious',
-          role: '表语',
-        },
-        {
-          text: '.',
-        },
-      ],
     },
     {
       label: '外观或状态',
       sentence: 'He looks tired.',
       translation: '他看起来很累。',
-      segments: [
-        {
-          text: 'He ',
-        },
-        {
-          text: 'looks',
-          role: '系动词',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'tired',
-          role: '表语',
-        },
-        {
-          text: '.',
-        },
-      ],
     },
     {
       label: '动作方式对照',
       sentence: 'He looked carefully at the picture.',
       analysis: ['carefully 是副词，说明他怎样看画。'],
-      segments: [
-        {
-          text: 'He ',
-        },
-        {
-          text: 'looked',
-          role: '实义动词',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'carefully',
-          role: '方式状语',
-        },
-        {
-          text: ' at the picture.',
-        },
-      ],
     },
   ]}
 />
@@ -353,107 +173,29 @@ summary: 形容词的词类、句法功能、词义与构成分别分析：可�
       label: '颜色结果',
       sentence: 'We painted the wall white.',
       translation: '我们把墙刷成白色。',
-      segments: [
-        {
-          text: 'We painted ',
-        },
-        {
-          text: 'the wall',
-          role: '宾语',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'white',
-          role: '宾语补足语',
-        },
-        {
-          text: '.',
-        },
-      ],
+      analysis: ['white 作宾语补足语，说明 the wall 的结果状态。'],
     },
     {
       label: '情感结果',
       sentence: 'The news made me sad.',
       translation: '这个消息使我难过。',
-      segments: [
-        {
-          text: 'The news made ',
-        },
-        {
-          text: 'me',
-          role: '宾语',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'sad',
-          role: '宾语补足语',
-        },
-        {
-          text: '.',
-        },
-      ],
+      analysis: ['sad 作宾语补足语，说明 me 的情感状态。'],
     },
     {
       label: '保持状态',
       sentence: 'Keep the door open.',
       translation: '让门开着。',
-      segments: [
-        {
-          text: 'Keep ',
-        },
-        {
-          text: 'the door',
-          role: '宾语',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'open',
-          role: '宾语补足语',
-        },
-        {
-          text: '.',
-        },
-      ],
+      analysis: ['open 作宾语补足语，说明 the door 要保持的状态。'],
     },
     {
       label: '被动句中的结果状态',
       sentence: 'The wall was painted white.',
       analysis: ['white 仍说明墙的结果状态，传统语法常称主语补足语。'],
-      segments: [
-        {
-          text: 'The wall was painted ',
-        },
-        {
-          text: 'white',
-          role: '结果状态补足语',
-        },
-        {
-          text: '.',
-        },
-      ],
     },
     {
       label: '名词补足语对照',
       sentence: 'He was elected chairman.',
       analysis: ['chairman 是名词，不能用作形容词例子。'],
-      segments: [
-        {
-          text: 'He was elected ',
-        },
-        {
-          text: 'chairman',
-          role: '名词补足语',
-        },
-        {
-          text: '.',
-        },
-      ],
     },
   ]}
 />
@@ -502,42 +244,11 @@ summary: 形容词的词类、句法功能、词义与构成分别分析：可�
       label: '并列修饰',
       sentence: 'a kind, patient teacher',
       analysis: ['可改为 kind and patient。'],
-      segments: [
-        {
-          text: 'a ',
-        },
-        {
-          text: 'kind, patient',
-          role: '并列修饰语',
-        },
-        {
-          text: ' teacher',
-        },
-      ],
     },
     {
       label: '累积修饰',
       sentence: 'a small wooden box',
       analysis: ['wooden box 先组成一层，small 再修饰它。', '通常不写 small, wooden box。'],
-      segments: [
-        {
-          text: 'a ',
-        },
-        {
-          text: 'small',
-          role: '外层修饰语',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'wooden',
-          role: '内层修饰语',
-        },
-        {
-          text: ' box',
-        },
-      ],
     },
   ]}
 />
@@ -558,82 +269,18 @@ summary: 形容词的词类、句法功能、词义与构成分别分析：可�
     {
       label: '一类人',
       sentence: 'The rich are not always happy.',
-      segments: [
-        {
-          text: 'The rich',
-          role: '主语',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'are',
-          role: '复数谓语动词',
-        },
-        {
-          text: ' not always happy.',
-        },
-      ],
     },
     {
       label: '一类人',
       sentence: 'The wounded were taken to hospital.',
-      segments: [
-        {
-          text: 'The wounded',
-          role: '主语',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'were',
-          role: '复数助动词',
-        },
-        {
-          text: ' taken to hospital.',
-        },
-      ],
     },
     {
       label: '抽象概念',
       sentence: 'The unknown is frightening.',
-      segments: [
-        {
-          text: 'The unknown',
-          role: '主语',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'is',
-          role: '单数谓语动词',
-        },
-        {
-          text: ' frightening.',
-        },
-      ],
     },
     {
       label: '国籍群体',
       sentence: 'The French are proud of their cuisine.',
-      segments: [
-        {
-          text: 'The French',
-          role: '主语',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'are',
-          role: '复数谓语动词',
-        },
-        {
-          text: ' proud of their cuisine.',
-        },
-      ],
     },
   ]}
 />
@@ -701,116 +348,34 @@ more taller、more interestinger 都是不当的重复标记；用 taller 或 mo
     {
       label: '同级',
       sentence: 'She is as tall as her brother.',
-      segments: [
-        {
-          text: 'She is ',
-        },
-        {
-          text: 'as tall as her brother',
-          role: '同级比较',
-        },
-        {
-          text: '.',
-        },
-      ],
     },
     {
       label: '否定同级',
       sentence: 'I am not as tall as you.',
       analysis: ['否定可用 not as/so + 原级 + as。'],
-      segments: [
-        {
-          text: 'I am ',
-        },
-        {
-          text: 'not as tall as you',
-          role: '否定同级比较',
-        },
-        {
-          text: '.',
-        },
-      ],
     },
     {
       label: '差级',
       sentence: 'This book is more useful than that one.',
-      segments: [
-        {
-          text: 'This book is ',
-        },
-        {
-          text: 'more useful than that one',
-          role: '差级比较',
-        },
-        {
-          text: '.',
-        },
-      ],
     },
     {
       label: '程度较低',
       sentence: 'This route is less dangerous than that one.',
-      segments: [
-        {
-          text: 'This route is ',
-        },
-        {
-          text: 'less dangerous than that one',
-          role: '差级比较',
-        },
-        {
-          text: '.',
-        },
-      ],
     },
     {
       label: 'than 后接代词',
       sentence: 'He is taller than me.',
       analysis: ['普通用法。'],
-      segments: [
-        {
-          text: 'He is taller ',
-        },
-        {
-          text: 'than me.',
-          role: '比较项',
-        },
-      ],
     },
     {
       label: 'than 后接分句',
       sentence: 'He is taller than I am.',
       analysis: ['写出完整分句。'],
-      segments: [
-        {
-          text: 'He is taller ',
-        },
-        {
-          text: 'than I am.',
-          role: '比较分句',
-        },
-      ],
     },
     {
       label: '对应的比较对象',
       sentence: 'The population of City A is larger than that of City B.',
       analysis: ['比较 2 个城市的人口，不是人口和城市。'],
-      segments: [
-        {
-          text: 'The population of City A',
-          role: '主语',
-        },
-        {
-          text: ' is larger than ',
-        },
-        {
-          text: 'that of City B',
-          role: '比较对象',
-        },
-        {
-          text: '.',
-        },
-      ],
     },
   ]}
 />
@@ -836,52 +401,16 @@ more taller、more interestinger 都是不当的重复标记；用 taller 或 mo
       label: '同一人的不同情境',
       sentence: 'She is happiest at home.',
       analysis: ['比较同一人在不同情境下的状态时可不用 the。'],
-      segments: [
-        {
-          text: 'She is ',
-        },
-        {
-          text: 'happiest',
-          role: '最高级',
-        },
-        {
-          text: ' at home.',
-        },
-      ],
     },
     {
       label: '群体中的 1 项',
       sentence: 'She is one of the best players on the team.',
       analysis: ['最高程度可由多人并列达到，不要求仅有 1 名最佳者。'],
-      segments: [
-        {
-          text: 'She is ',
-        },
-        {
-          text: 'one of the best players',
-          role: '表语',
-        },
-        {
-          text: ' on the team.',
-        },
-      ],
     },
     {
       label: '比较时排除自身',
       sentence: 'She is taller than any other student in her class.',
       analysis: ['不能把自己计入比较对象。'],
-      segments: [
-        {
-          text: 'She is taller than ',
-        },
-        {
-          text: 'any other student in her class',
-          role: '比较对象',
-        },
-        {
-          text: '.',
-        },
-      ],
     },
   ]}
 />
@@ -900,54 +429,14 @@ more taller、more interestinger 都是不当的重复标记；用 taller 或 mo
     {
       label: '后缀比较级递进',
       sentence: 'It is getting hotter and hotter.',
-      segments: [
-        {
-          text: 'It is getting ',
-        },
-        {
-          text: 'hotter and hotter',
-          role: '程度递进',
-        },
-        {
-          text: '.',
-        },
-      ],
     },
     {
       label: 'more 比较级递进',
       sentence: 'It is becoming more and more difficult.',
-      segments: [
-        {
-          text: 'It is becoming ',
-        },
-        {
-          text: 'more and more difficult',
-          role: '程度递进',
-        },
-        {
-          text: '.',
-        },
-      ],
     },
     {
       label: '2 种变化对应',
       sentence: 'The harder you practise, the better you become.',
-      segments: [
-        {
-          text: 'The harder',
-          role: '关联比较',
-        },
-        {
-          text: ' you practise, ',
-        },
-        {
-          text: 'the better',
-          role: '关联比较',
-        },
-        {
-          text: ' you become.',
-        },
-      ],
     },
   ]}
 />
@@ -959,49 +448,11 @@ more taller、more interestinger 都是不当的重复标记；用 taller 或 mo
       label: '倍数 + as...as',
       sentence: 'A is three times as long as B.',
       analysis: ['若 A 长 12 m、B 长 4 m，表示 A 的长度是 B 的 3 倍。'],
-      segments: [
-        {
-          text: 'A is ',
-        },
-        {
-          text: 'three times',
-          role: '倍数',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'as long as B',
-          role: '比较结构',
-        },
-        {
-          text: '.',
-        },
-      ],
     },
     {
       label: '倍数 + 度量名词',
       sentence: 'A is three times the length of B.',
       analysis: ['若 A 长 12 m、B 长 4 m，表示 A 的长度是 B 的 3 倍。'],
-      segments: [
-        {
-          text: 'A is ',
-        },
-        {
-          text: 'three times',
-          role: '倍数',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'the length of B',
-          role: '度量名词短语',
-        },
-        {
-          text: '.',
-        },
-      ],
     },
   ]}
 />

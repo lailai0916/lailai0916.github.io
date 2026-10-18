@@ -64,36 +64,6 @@ do 表示动词原形，done 表示过去分词。先确定支配动词及其义
       label: 'make + 原形',
       translation: '笑话把我们逗笑了。',
       analysis: ['make 不必表示强迫。'],
-      segments: [
-        {
-          text: 'The joke',
-          role: '主语',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'made',
-          role: '谓语动词',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'us',
-          role: '宾语',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'laugh',
-          role: '宾语补足语',
-        },
-        {
-          text: '.',
-        },
-      ],
     },
     {
       sentence: 'She shouted to make herself heard.',
@@ -165,36 +135,6 @@ make him **do** 中的 do 是裸不定式，can **do** 也选择原形不定式�
       sentence: 'They made him captain.',
       label: '名词',
       translation: '他们选他当队长。',
-      segments: [
-        {
-          text: 'They',
-          role: '主语',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'made',
-          role: '谓语动词',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'him',
-          role: '宾语',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'captain',
-          role: '宾语补足语',
-        },
-        {
-          text: '.',
-        },
-      ],
     },
     {
       sentence: 'Let me out!',
@@ -217,88 +157,12 @@ have/get 的主动动作补语与过去分词补语须区分：
       sentence: 'I had the mechanic repair the car.',
       translation: '我让修理工修车。',
       analysis: ['mechanic 执行 repair。'],
-      segments: [
-        {
-          text: 'I',
-          role: '主语',
-          note: '安排事件的人。',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'had',
-          role: '使役动词',
-          note: '主句采用主动形式。',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'the mechanic',
-          role: '宾语',
-          note: 'repair 的逻辑主语。',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'repair',
-          role: '补语动词',
-          note: '裸不定式；修理工执行修理。',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'the car',
-          role: '宾语',
-          note: 'repair 的宾语。',
-        },
-        {
-          text: '.',
-        },
-      ],
       label: '宾语执行动作',
     },
     {
       sentence: 'I had the car repaired.',
       translation: '我请人修了车。',
       analysis: ['car 承受 repair，主句的 had 仍是主动形式。'],
-      segments: [
-        {
-          text: 'I',
-          role: '主语',
-          note: '安排事件的人。',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'had',
-          role: '使役动词',
-          note: '主句仍为主动形式。',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'the car',
-          role: '宾语',
-          note: 'repaired 描述的对象。',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'repaired',
-          role: '补足语',
-          note: '过去分词，car 承受修理。',
-        },
-        {
-          text: '.',
-        },
-      ],
       label: '宾语承受动作',
     },
   ]}
@@ -357,72 +221,18 @@ have/get 的主动动作补语与过去分词补语须区分：
       label: '主动安排别人处理',
       translation: '我请人剪了头发。',
       analysis: ['主语安排别人执行 cut。'],
-      segments: [
-        {
-          text: 'I',
-          role: '主语',
-          note: '主句主语。',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'had my hair cut',
-          role: '重点结构',
-          note: '本组重点比较的形式或结构。',
-        },
-        {
-          text: '.',
-        },
-      ],
     },
     {
       sentence: 'We got the work done.',
       label: '促成任务完成',
       translation: '我们把工作完成了。',
       analysis: ['重点是完成结果，执行者由语境判断。'],
-      segments: [
-        {
-          text: 'We',
-          role: '主语',
-          note: '主句主语。',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'got the work done',
-          role: '重点结构',
-          note: '本组重点比较的形式或结构。',
-        },
-        {
-          text: '.',
-        },
-      ],
     },
     {
       sentence: 'He had his wallet stolen.',
       label: '遭遇事件',
       translation: '他的钱包被偷了。',
       analysis: ['不表示主语安排了偷窃。'],
-      segments: [
-        {
-          text: 'He',
-          role: '主语',
-          note: '主句主语。',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'had his wallet stolen',
-          role: '重点结构',
-          note: '本组重点比较的形式或结构。',
-        },
-        {
-          text: '.',
-        },
-      ],
     },
   ]}
 />
@@ -561,119 +371,17 @@ see、hear、watch、notice、feel 等感知动词也可接宾语和非限定补
       label: '整体事件',
       sentence: 'I saw him cross the road.',
       translation: '我看见他过了马路。',
-      segments: [
-        {
-          text: 'I',
-          role: '主语',
-          note: '感知者。',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'saw',
-          role: '谓语动词',
-          note: '感知动词的过去式。',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'him',
-          role: '宾语',
-          note: 'cross 的逻辑主语。',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'cross the road',
-          role: '补足语',
-          note: '裸不定式，把事件作为整体呈现。',
-        },
-        {
-          text: '.',
-        },
-      ],
       analysis: ['整体视角不要求肉眼观察到每一个瞬间，也可呈现重复的完整事件。'],
     },
     {
       label: '进行片段',
       sentence: 'I saw him crossing the road.',
       translation: '我看见他正在过马路。',
-      segments: [
-        {
-          text: 'I',
-          role: '主语',
-          note: '感知者。',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'saw',
-          role: '谓语动词',
-          note: '感知动词的过去式。',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'him',
-          role: '宾语',
-          note: 'crossing 的逻辑主语。',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'crossing the road',
-          role: '补足语',
-          note: '-ing 结构，呈现进行片段。',
-        },
-        {
-          text: '.',
-        },
-      ],
     },
     {
       label: '被动关系',
       sentence: 'I saw him arrested.',
       translation: '我看见他被捕。',
-      segments: [
-        {
-          text: 'I',
-          role: '主语',
-          note: '感知者。',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'saw',
-          role: '谓语动词',
-          note: '感知动词的过去式。',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'him',
-          role: '宾语',
-          note: 'arrested 的逻辑主语。',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'arrested',
-          role: '补足语',
-          note: '过去分词，him 承受逮捕。',
-        },
-        {
-          text: '.',
-        },
-      ],
     },
   ]}
 />

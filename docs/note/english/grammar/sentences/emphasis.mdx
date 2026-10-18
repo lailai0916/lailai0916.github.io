@@ -23,49 +23,16 @@ summary: 强调按焦点选择形式：突出句子成分可用 it 分裂句，�
       label: '重读主语',
       sentence: 'TOM borrowed my bike.',
       translation: '借我自行车的是 Tom。',
-      segments: [
-        {
-          text: 'TOM',
-          role: '焦点',
-        },
-        {
-          text: ' borrowed my bike.',
-        },
-      ],
     },
     {
       label: '重读限定词',
       sentence: 'Tom borrowed MY bike.',
       translation: 'Tom 借的是我的自行车。',
-      segments: [
-        {
-          text: 'Tom borrowed ',
-        },
-        {
-          text: 'MY',
-          role: '焦点',
-        },
-        {
-          text: ' bike.',
-        },
-      ],
     },
     {
       label: '重读助动词',
       sentence: 'Tom DID borrow my bike.',
       translation: 'Tom 确实借了我的自行车。',
-      segments: [
-        {
-          text: 'Tom ',
-        },
-        {
-          text: 'DID',
-          role: '重读助动词',
-        },
-        {
-          text: ' borrow my bike.',
-        },
-      ],
     },
   ]}
 />
@@ -104,66 +71,18 @@ summary: 强调按焦点选择形式：突出句子成分可用 it 分裂句，�
     {
       label: '焦点是主语',
       sentence: 'It was Tom who met Lily in the park yesterday.',
-      segments: [
-        {
-          text: 'It was ',
-        },
-        {
-          text: 'Tom',
-          role: '焦点',
-        },
-        {
-          text: ' who met Lily in the park yesterday.',
-        },
-      ],
     },
     {
       label: '焦点是宾语',
       sentence: 'It was Lily that Tom met in the park yesterday.',
-      segments: [
-        {
-          text: 'It was ',
-        },
-        {
-          text: 'Lily',
-          role: '焦点',
-        },
-        {
-          text: ' that Tom met in the park yesterday.',
-        },
-      ],
     },
     {
       label: '焦点是地点',
       sentence: 'It was in the park that Tom met Lily yesterday.',
-      segments: [
-        {
-          text: 'It was ',
-        },
-        {
-          text: 'in the park',
-          role: '焦点',
-        },
-        {
-          text: ' that Tom met Lily yesterday.',
-        },
-      ],
     },
     {
       label: '焦点是时间',
       sentence: 'It was yesterday that Tom met Lily in the park.',
-      segments: [
-        {
-          text: 'It was ',
-        },
-        {
-          text: 'yesterday',
-          role: '焦点',
-        },
-        {
-          text: ' that Tom met Lily in the park.',
-        },
-      ],
     },
   ]}
 />
@@ -242,61 +161,18 @@ is 与 was 常随现在或过去语境选择，但 **不必机械复制从句时
       sentence: 'It was Tom who called yesterday.',
       translation: '昨天打电话的是 Tom。',
       analysis: ['以过去事件为叙述视角。'],
-      segments: [
-        {
-          text: 'It ',
-        },
-        {
-          text: 'was',
-          role: '外层限定动词',
-        },
-        {
-          text: ' Tom who called yesterday.',
-        },
-      ],
     },
     {
       label: '现在辨认',
       sentence: 'It is Tom that you saw yesterday.',
       translation: '你昨天看见的就是 Tom。',
       analysis: ['现在辨认昨天所见的人。'],
-      segments: [
-        {
-          text: 'It ',
-        },
-        {
-          text: 'is',
-          role: '外层限定动词',
-        },
-        {
-          text: ' Tom that you saw yesterday.',
-        },
-      ],
     },
     {
       label: '将来表达',
       sentence: 'It will be Lily who leads the team next year.',
       translation: '明年带队的将是 Lily。',
       analysis: ['be 也可以采用将来表达。'],
-      segments: [
-        {
-          text: 'It ',
-        },
-        {
-          text: 'will',
-          role: '外层助动词',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'be',
-          role: '动词原形',
-        },
-        {
-          text: ' Lily who leads the team next year.',
-        },
-      ],
     },
   ]}
 />
@@ -344,231 +220,41 @@ is 与 was 常随现在或过去语境选择，但 **不必机械复制从句时
       label: '一般疑问：限定 be',
       sentence: 'Was it Tom that called?',
       translation: '打电话的是 Tom 吗？',
-      segments: [
-        {
-          text: 'Was',
-          role: '外层限定动词',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'it',
-          role: '外层主语',
-        },
-        {
-          text: ' Tom that called?',
-        },
-      ],
     },
     {
       label: '一般疑问：will be',
       sentence: 'Will it be Lily who leads the team next year?',
       translation: '明年带队的将是 Lily 吗？',
-      segments: [
-        {
-          text: 'Will',
-          role: '外层助动词',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'it',
-          role: '外层主语',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'be',
-          role: '动词原形',
-        },
-        {
-          text: ' Lily who leads the team next year?',
-        },
-      ],
     },
     {
       label: '询问人物：限定 be',
       sentence: 'Who was it that called?',
       translation: '打电话的究竟是谁？',
-      segments: [
-        {
-          text: 'Who',
-          role: '询问焦点',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'was',
-          role: '外层限定动词',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'it',
-          role: '外层主语',
-        },
-        {
-          text: ' that called?',
-        },
-      ],
     },
     {
       label: '询问时间：限定 be',
       sentence: 'When was it that you met him?',
       translation: '你究竟何时遇见他的？',
-      segments: [
-        {
-          text: 'When',
-          role: '询问焦点',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'was',
-          role: '外层限定动词',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'it',
-          role: '外层主语',
-        },
-        {
-          text: ' that you met him?',
-        },
-      ],
     },
     {
       label: '询问地点：限定 be',
       sentence: 'Where is it that you live?',
       translation: '你究竟住在哪里？',
-      segments: [
-        {
-          text: 'Where',
-          role: '询问焦点',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'is',
-          role: '外层限定动词',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'it',
-          role: '外层主语',
-        },
-        {
-          text: ' that you live?',
-        },
-      ],
     },
     {
       label: '询问人物：will be',
       sentence: 'Who will it be that leads the team next year?',
       translation: '明年带队的究竟会是谁？',
-      segments: [
-        {
-          text: 'Who',
-          role: '询问焦点',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'will',
-          role: '外层助动词',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'it',
-          role: '外层主语',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'be',
-          role: '动词原形',
-        },
-        {
-          text: ' that leads the team next year?',
-        },
-      ],
     },
     {
       label: '嵌入疑问：限定 be',
       sentence: 'I wonder when it was that you met him.',
       translation: '我想知道你究竟何时遇见他的。',
-      segments: [
-        {
-          text: 'I wonder ',
-        },
-        {
-          text: 'when',
-          role: '询问焦点',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'it',
-          role: '嵌入结构主语',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'was',
-          role: '嵌入结构限定动词',
-        },
-        {
-          text: ' that you met him.',
-        },
-      ],
     },
     {
       label: '嵌入疑问：will be',
       sentence: 'I wonder who it will be that leads the team next year.',
       translation: '我想知道明年带队的究竟会是谁。',
-      segments: [
-        {
-          text: 'I wonder ',
-        },
-        {
-          text: 'who',
-          role: '询问焦点',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'it',
-          role: '嵌入结构主语',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'will be',
-          role: '嵌入结构谓语',
-        },
-        {
-          text: ' that leads the team next year.',
-        },
-      ],
     },
   ]}
 />
@@ -622,74 +308,22 @@ is 与 was 常随现在或过去语境选择，但 **不必机械复制从句时
       label: 'it 分裂句',
       sentence: 'It was at midnight that he returned.',
       analysis: ['焦点可放回其余部分，恢复为「He returned at midnight.」。这是分裂句。'],
-      segments: [
-        {
-          text: 'It was ',
-        },
-        {
-          text: 'at midnight',
-          role: '焦点',
-        },
-        {
-          text: ' that he returned.',
-        },
-      ],
     },
     {
       label: 'when 时间从句',
       sentence: 'It was midnight when he returned.',
       translation: '他回来时是午夜。',
       analysis: ['when 从句交代时间。'],
-      segments: [
-        {
-          text: 'It was midnight ',
-        },
-        {
-          text: 'when he returned',
-          role: '时间状语从句',
-        },
-        {
-          text: '.',
-        },
-      ],
     },
     {
       label: '形式主语 it',
       sentence: 'It is true that he returned.',
       analysis: ['it 代替内容从句作形式主语；被判断为真的内容是 that 从句。'],
-      segments: [
-        {
-          text: 'It',
-          role: '形式主语',
-        },
-        {
-          text: ' is true ',
-        },
-        {
-          text: 'that he returned',
-          role: '后置内容从句',
-        },
-        {
-          text: '.',
-        },
-      ],
     },
     {
       label: 'since 标记起点',
       sentence: 'It has been three years since he returned.',
       translation: '距他回来已经过去 3 年。',
-      segments: [
-        {
-          text: 'It has been three years ',
-        },
-        {
-          text: 'since he returned',
-          role: '起点',
-        },
-        {
-          text: '.',
-        },
-      ],
     },
   ]}
 />
@@ -707,64 +341,16 @@ is 与 was 常随现在或过去语境选择，但 **不必机械复制从句时
       label: '所需事物',
       sentence: 'What I need is a break.',
       translation: '我需要的是休息。',
-      segments: [
-        {
-          text: 'What I need',
-          role: '已知或待说明的内容',
-        },
-        {
-          text: ' is ',
-        },
-        {
-          text: 'a break',
-          role: '焦点',
-        },
-        {
-          text: '.',
-        },
-      ],
     },
     {
       label: '令人吃惊的事',
       sentence: 'What surprised me was his honesty.',
       translation: '让我吃惊的是他的诚实。',
-      segments: [
-        {
-          text: 'What surprised me',
-          role: '已知或待说明的内容',
-        },
-        {
-          text: ' was ',
-        },
-        {
-          text: 'his honesty',
-          role: '焦点',
-        },
-        {
-          text: '.',
-        },
-      ],
     },
     {
       label: '所做动作',
       sentence: 'What she did was cancel the meeting.',
       translation: '她做的事情是取消会议。',
-      segments: [
-        {
-          text: 'What she did',
-          role: '已知或待说明的内容',
-        },
-        {
-          text: ' was ',
-        },
-        {
-          text: 'cancel the meeting',
-          role: '焦点',
-        },
-        {
-          text: '.',
-        },
-      ],
     },
   ]}
 />
@@ -786,52 +372,16 @@ is 与 was 常随现在或过去语境选择，但 **不必机械复制从句时
       label: '完成助动词',
       sentence: 'I HAVE finished it.',
       translation: '我确实完成了。',
-      segments: [
-        {
-          text: 'I ',
-        },
-        {
-          text: 'HAVE',
-          role: '重读助动词',
-        },
-        {
-          text: ' finished it.',
-        },
-      ],
     },
     {
       label: '情态动词',
       sentence: 'She CAN swim.',
       translation: '她真的会游泳。',
-      segments: [
-        {
-          text: 'She ',
-        },
-        {
-          text: 'CAN',
-          role: '重读情态动词',
-        },
-        {
-          text: ' swim.',
-        },
-      ],
     },
     {
       label: '系动词 be',
       sentence: 'He IS ready.',
       translation: '他确实准备好了。',
-      segments: [
-        {
-          text: 'He ',
-        },
-        {
-          text: 'IS',
-          role: '重读系动词',
-        },
-        {
-          text: ' ready.',
-        },
-      ],
     },
   ]}
 />
@@ -973,46 +523,16 @@ is 与 was 常随现在或过去语境选择，但 **不必机械复制从句时
       label: '限定借车的人',
       sentence: 'Only Tom borrowed my bike.',
       translation: '借车的人只有 Tom。',
-      segments: [
-        {
-          text: 'Only Tom',
-          role: '限定焦点',
-        },
-        {
-          text: ' borrowed my bike.',
-        },
-      ],
     },
     {
       label: '限定所借的东西',
       sentence: 'Tom borrowed only my bike.',
       translation: '他借的东西只有我的自行车。',
-      segments: [
-        {
-          text: 'Tom borrowed ',
-        },
-        {
-          text: 'only my bike',
-          role: '限定焦点',
-        },
-        {
-          text: '.',
-        },
-      ],
     },
     {
       label: '扩展预期范围',
       sentence: 'Even Tom understood it.',
       translation: '连原本不太预期能理解的 Tom 也理解了。',
-      segments: [
-        {
-          text: 'Even Tom',
-          role: '焦点',
-        },
-        {
-          text: ' understood it.',
-        },
-      ],
     },
   ]}
 />

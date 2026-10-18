@@ -20,58 +20,12 @@ summary: 被动语态先按当前动词义项和补足结构判断能否构造�
     {
       label: '主动句',
       sentence: 'Tom repaired the bike.',
-      analysis: ['主语 Tom 也是修理者。'],
-      segments: [
-        {
-          text: 'Tom',
-          role: '主语：修理者',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'repaired',
-          role: '谓语动词',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'the bike',
-          role: '宾语：被修理对象',
-        },
-        {
-          text: '.',
-        },
-      ],
+      analysis: ['主语 Tom 也是修理者。', 'the bike 是宾语，表示被修理的对象。'],
     },
     {
       label: '被动句',
       sentence: 'The bike was repaired by Tom.',
-      analysis: ['主语改为 the bike，修理者仍是 Tom。'],
-      segments: [
-        {
-          text: 'The bike',
-          role: '主语：被修理对象',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'was repaired',
-          role: '被动谓语',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'by Tom',
-          role: '修理者',
-        },
-        {
-          text: '.',
-        },
-      ],
+      analysis: ['主语改为 the bike，修理者仍是 Tom。', 'the bike 虽作主语，仍是被修理的对象。'],
     },
   ]}
 />
@@ -276,51 +230,12 @@ measure 也按义项分支：
         '原句：He wrote these letters yesterday.',
         '原宾语改为主语，施事代词在 by 后用宾格 him。',
       ],
-      segments: [
-        {
-          text: 'These letters',
-          role: '主语',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'were written',
-          role: '被动谓语',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'by him',
-          role: '施事',
-        },
-        {
-          text: ' yesterday.',
-        },
-      ],
     },
     {
       label: '现在进行',
       sentence: 'The road is being repaired.',
       translation: '这条路正在维修。',
       analysis: ['原句：They are repairing the road.', '保留进行体，由单数新主语决定 is。'],
-      segments: [
-        {
-          text: 'The road',
-          role: '主语',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'is being repaired',
-          role: '进行体被动谓语',
-        },
-        {
-          text: '.',
-        },
-      ],
     },
   ]}
 />
@@ -339,66 +254,22 @@ measure 也按义项分支：
     {
       label: '以接收者为主语',
       sentence: 'Tom was given a book.',
-      analysis: ['原句：She gave Tom a book.', '提升间接宾语 Tom。'],
-      segments: [
-        {
-          text: 'Tom',
-          role: '被动主语',
-        },
-        {
-          text: ' was given ',
-        },
-        {
-          text: 'a book',
-          role: '保留宾语',
-        },
-        {
-          text: '.',
-        },
+      analysis: [
+        '原句：She gave Tom a book.',
+        '提升间接宾语 Tom。',
+        'a book 是保留在被动句中的宾语。',
       ],
     },
     {
       label: 'give：to',
       sentence: 'A book was given to Tom.',
       analysis: ['原句：She gave Tom a book.', '以书为主语时，用 to 保留接收者。'],
-      segments: [
-        {
-          text: 'A book',
-          role: '被动主语',
-        },
-        {
-          text: ' was given ',
-        },
-        {
-          text: 'to Tom',
-          role: '接收者',
-        },
-        {
-          text: '.',
-        },
-      ],
     },
     {
       label: 'buy：for',
       sentence: 'A book was bought for Tom.',
       translation: '她给 Tom 买了一本书。',
       analysis: ['原句：She bought Tom a book.', '用 for 保留受益者。'],
-      segments: [
-        {
-          text: 'A book',
-          role: '被动主语',
-        },
-        {
-          text: ' was bought ',
-        },
-        {
-          text: 'for Tom',
-          role: '受益者',
-        },
-        {
-          text: '.',
-        },
-      ],
     },
   ]}
 />
@@ -458,54 +329,18 @@ make 和部分感官动词的主动结构中，不带 to 的不定式，在对�
       sentence: 'He was made to leave.',
       translation: '他被迫离开。',
       analysis: ['原句：They made him leave.', '相应被动中的不定式通常恢复 to。'],
-      segments: [
-        {
-          text: 'He was made ',
-        },
-        {
-          text: 'to leave',
-          role: '不定式补语',
-        },
-        {
-          text: '.',
-        },
-      ],
     },
     {
       label: 'see：恢复 to',
       sentence: 'He was seen to enter the building.',
       translation: '有人看见他走进了大楼。',
       analysis: ['原句：They saw him enter the building.', '相应被动中的不定式通常恢复 to。'],
-      segments: [
-        {
-          text: 'He was seen ',
-        },
-        {
-          text: 'to enter the building',
-          role: '不定式补语',
-        },
-        {
-          text: '.',
-        },
-      ],
     },
     {
       label: 'see：保留 -ing',
       sentence: 'He was seen entering the building.',
       translation: '有人看见他正在走进大楼。',
       analysis: ['原句：They saw him entering the building.', '保留 -ing 形式。'],
-      segments: [
-        {
-          text: 'He was seen ',
-        },
-        {
-          text: 'entering the building',
-          role: '分词补语',
-        },
-        {
-          text: '.',
-        },
-      ],
     },
   ]}
 />
@@ -644,202 +479,47 @@ to have left 表示离开发生在「据说」所指的时间之前，不是主�
       label: '否定句',
       sentence: 'The files have not been deleted.',
       translation: '文件还没有删除。',
-      segments: [
-        {
-          text: 'The files ',
-        },
-        {
-          text: 'have not',
-          role: '限定助动词与否定',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'been deleted',
-          role: '后续被动结构',
-        },
-        {
-          text: '.',
-        },
-      ],
     },
     {
       label: '一般疑问',
       sentence: 'Have the files been deleted?',
       translation: '文件删除了吗？',
-      segments: [
-        {
-          text: 'Have',
-          role: '前置助动词',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'the files',
-          role: '主语',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'been deleted',
-          role: '后续被动结构',
-        },
-        {
-          text: '?',
-        },
-      ],
     },
     {
       label: '主语疑问',
       sentence: 'Which files have been deleted?',
       translation: '哪些文件已被删除？',
       analysis: ['Which files 本身是主语，仍位于 have 前，不因出现疑问词而倒装。'],
-      segments: [
-        {
-          text: 'Which files',
-          role: '疑问主语',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'have been deleted',
-          role: '谓语',
-        },
-        {
-          text: '?',
-        },
-      ],
     },
     {
       label: '非主语特殊疑问',
       sentence: 'When were the files deleted?',
       translation: '文件何时被删除的？',
-      segments: [
-        {
-          text: 'When',
-          role: '疑问状语',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'were',
-          role: '前置助动词',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'the files',
-          role: '主语',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'deleted',
-          role: '过去分词',
-        },
-        {
-          text: '?',
-        },
-      ],
     },
     {
       label: '义务',
       sentence: 'The files must be deleted.',
       translation: '这些文件必须删除。',
-      segments: [
-        {
-          text: 'The files ',
-        },
-        {
-          text: 'must be deleted',
-          role: '情态被动谓语',
-        },
-        {
-          text: '.',
-        },
-      ],
     },
     {
       label: '对过去的推断',
       sentence: 'The files may have been deleted.',
       translation: '文件可能已经删除了。',
-      segments: [
-        {
-          text: 'The files ',
-        },
-        {
-          text: 'may have been deleted',
-          role: '情态完成被动谓语',
-        },
-        {
-          text: '.',
-        },
-      ],
     },
     {
       label: '进行中的可能情况',
       sentence: 'The files may be being checked.',
       translation: '文件可能正在检查中。',
-      segments: [
-        {
-          text: 'The files ',
-        },
-        {
-          text: 'may be being checked',
-          role: '情态进行被动谓语',
-        },
-        {
-          text: '.',
-        },
-      ],
     },
     {
       label: '嵌入疑问',
       sentence: 'I wonder when the files were deleted.',
       analysis: ['嵌入部分采用主语在助动词前的语序。'],
-      segments: [
-        {
-          text: 'I wonder when ',
-        },
-        {
-          text: 'the files',
-          role: '嵌入分句主语',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'were deleted',
-          role: '嵌入分句谓语',
-        },
-        {
-          text: '.',
-        },
-      ],
     },
     {
       label: '回声疑问',
       sentence: 'The files were deleted when?',
       analysis: ['可保留陈述语序，在原位询问时间。'],
-      segments: [
-        {
-          text: 'The files were deleted ',
-        },
-        {
-          text: 'when',
-          role: '原位疑问状语',
-        },
-        {
-          text: '?',
-        },
-      ],
     },
   ]}
 />
@@ -864,84 +544,27 @@ must be done 中的 must 常表示义务；must have been done
       label: '不定式',
       sentence: 'She wants to be invited.',
       translation: '她想获邀。',
-      segments: [
-        {
-          text: 'She wants ',
-        },
-        {
-          text: 'to be invited',
-          role: '被动不定式',
-        },
-        {
-          text: '.',
-        },
-      ],
     },
     {
       label: '完成不定式',
       sentence: 'The file seems to have been deleted.',
       translation: '文件似乎已经删除了。',
       analysis: ['完成形式表示先于参照时间。'],
-      segments: [
-        {
-          text: 'The file seems ',
-        },
-        {
-          text: 'to have been deleted',
-          role: '完成被动不定式',
-        },
-        {
-          text: '.',
-        },
-      ],
     },
     {
       label: '动名词位置',
       sentence: 'He dislikes being interrupted.',
       translation: '他不喜欢被打断。',
-      segments: [
-        {
-          text: 'He dislikes ',
-        },
-        {
-          text: 'being interrupted',
-          role: '被动动名词结构',
-        },
-        {
-          text: '.',
-        },
-      ],
     },
     {
       label: '分词状语',
       sentence: 'Having been warned, he was careful.',
       translation: '得到提醒后，他很谨慎。',
-      segments: [
-        {
-          text: 'Having been warned',
-          role: '完成被动分词结构',
-        },
-        {
-          text: ', he was careful.',
-        },
-      ],
     },
     {
       label: '完成形式用于动名词位置',
       sentence: 'She regretted having been deceived.',
       translation: '她后悔自己受了骗。',
-      segments: [
-        {
-          text: 'She regretted ',
-        },
-        {
-          text: 'having been deceived',
-          role: '完成被动动名词结构',
-        },
-        {
-          text: '.',
-        },
-      ],
     },
   ]}
 />
@@ -981,50 +604,12 @@ must be done 中的 must 常表示义务；must have been done
       sentence: 'The door was closed by the guard at nine.',
       translation: '门在九点被保安关上。',
       analysis: ['描述关门事件。'],
-      segments: [
-        {
-          text: 'The door ',
-        },
-        {
-          text: 'was closed',
-          role: '动作被动',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'by the guard',
-          role: '施事',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'at nine',
-          role: '事件时间',
-        },
-        {
-          text: '.',
-        },
-      ],
     },
     {
       label: '关着的状态',
       sentence: 'When I arrived, the door was still closed.',
       translation: '我到达时门仍然关着。',
       analysis: ['描述当时状态。'],
-      segments: [
-        {
-          text: 'When I arrived, the door ',
-        },
-        {
-          text: 'was still closed',
-          role: '状态描述',
-        },
-        {
-          text: '.',
-        },
-      ],
     },
   ]}
 />

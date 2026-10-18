@@ -26,66 +26,21 @@ summary: 副词的词类、语义类别和句法用途分别归类，避免把�
       label: '修饰动作',
       sentence: 'She sings beautifully.',
       analysis: ['描述怎样唱。'],
-      segments: [
-        {
-          text: 'She sings ',
-        },
-        {
-          text: 'beautifully',
-          role: '方式副词',
-        },
-        {
-          text: '.',
-        },
-      ],
     },
     {
       label: '修饰形容词',
       sentence: 'It is very cold.',
       analysis: ['描述冷的程度。'],
-      segments: [
-        {
-          text: 'It is ',
-        },
-        {
-          text: 'very',
-          role: '程度副词',
-        },
-        {
-          text: ' cold.',
-        },
-      ],
     },
     {
       label: '修饰其他副词',
       sentence: 'He runs quite fast.',
       analysis: ['描述快的程度。'],
-      segments: [
-        {
-          text: 'He runs ',
-        },
-        {
-          text: 'quite',
-          role: '程度副词',
-        },
-        {
-          text: ' fast.',
-        },
-      ],
     },
     {
       label: '评价整个分句',
       sentence: 'Fortunately, no one was hurt.',
       analysis: ['评价整件事是幸运的。'],
-      segments: [
-        {
-          text: 'Fortunately',
-          role: '分句评价',
-        },
-        {
-          text: ', no one was hurt.',
-        },
-      ],
     },
   ]}
 />
@@ -100,90 +55,18 @@ summary: 副词的词类、语义类别和句法用途分别归类，避免把�
       sentence: 'She works carefully.',
       translation: '她工作很仔细。',
       analysis: ['carefully 是副词，在句中作状语，说明工作方式。'],
-      segments: [
-        {
-          text: 'She',
-          role: '主语',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'works',
-          role: '谓语动词',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'carefully',
-          role: '方式状语',
-          note: '副词是词类，状语是这里承担的句法功能。',
-        },
-        {
-          text: '.',
-        },
-      ],
     },
     {
       label: '介词短语作状语',
       sentence: 'She works with great care.',
       translation: '她工作很仔细。',
       analysis: ['with great care 是介词短语，在句中作状语。'],
-      segments: [
-        {
-          text: 'She',
-          role: '主语',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'works',
-          role: '谓语动词',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'with great care',
-          role: '方式状语',
-          note: '表达工作方式的介词短语。',
-        },
-        {
-          text: '.',
-        },
-      ],
     },
     {
       label: '从句作状语',
       sentence: 'She works when the office is quiet.',
       translation: '办公室安静时，她就工作。',
       analysis: ['when the office is quiet 是从句，在句中作时间状语。'],
-      segments: [
-        {
-          text: 'She',
-          role: '主语',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'works',
-          role: '谓语动词',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'when the office is quiet',
-          role: '时间状语从句',
-          note: '状语功能也可由从句承担。',
-        },
-        {
-          text: '.',
-        },
-      ],
     },
   ]}
 />
@@ -295,52 +178,16 @@ summary: 副词的词类、语义类别和句法用途分别归类，避免把�
       label: '努力工作',
       sentence: 'She works hard.',
       translation: '她工作很努力。',
-      segments: [
-        {
-          text: 'She works ',
-        },
-        {
-          text: 'hard',
-          role: '方式副词',
-        },
-        {
-          text: '.',
-        },
-      ],
     },
     {
       label: '几乎不工作',
       sentence: 'She hardly works.',
       translation: '她几乎不工作。',
-      segments: [
-        {
-          text: 'She ',
-        },
-        {
-          text: 'hardly',
-          role: '否定意义副词',
-        },
-        {
-          text: ' works.',
-        },
-      ],
     },
     {
       label: '几乎听不见',
       sentence: 'I can hardly hear you.',
       analysis: ['表示几乎听不见。'],
-      segments: [
-        {
-          text: 'I can ',
-        },
-        {
-          text: 'hardly',
-          role: '否定意义副词',
-        },
-        {
-          text: ' hear you.',
-        },
-      ],
     },
   ]}
 />
@@ -362,97 +209,23 @@ summary: 副词的词类、语义类别和句法用途分别归类，避免把�
     {
       label: '没有宾语',
       sentence: 'He runs quickly.',
-      segments: [
-        {
-          text: 'He runs ',
-        },
-        {
-          text: 'quickly',
-          role: '方式状语',
-        },
-        {
-          text: '.',
-        },
-      ],
     },
     {
       label: '方式在宾语后',
       sentence: 'She read the report carefully.',
-      segments: [
-        {
-          text: 'She read the report ',
-        },
-        {
-          text: 'carefully',
-          role: '方式状语',
-        },
-        {
-          text: '.',
-        },
-      ],
     },
     {
       label: '方式在动词前',
       sentence: 'She carefully read the report.',
-      segments: [
-        {
-          text: 'She ',
-        },
-        {
-          text: 'carefully',
-          role: '方式状语',
-        },
-        {
-          text: ' read the report.',
-        },
-      ],
     },
     {
       label: '副词短语整体修饰动作',
       sentence: 'She speaks English very well.',
       analysis: ['very 修饰 well，very well 整体修饰 speaks。'],
-      segments: [
-        {
-          text: 'She speaks English ',
-        },
-        {
-          text: 'very well',
-          role: '方式状语',
-        },
-        {
-          text: '.',
-        },
-      ],
     },
     {
       label: '方式、地点、时间',
       sentence: 'She worked quietly in the library yesterday.',
-      segments: [
-        {
-          text: 'She worked ',
-        },
-        {
-          text: 'quietly',
-          role: '方式状语',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'in the library',
-          role: '地点状语',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'yesterday',
-          role: '时间状语',
-        },
-        {
-          text: '.',
-        },
-      ],
     },
   ]}
 />
@@ -476,88 +249,19 @@ always、usually、often、never 等的常见中位位置，按谓语结构区�
     {
       label: '普通实义动词前',
       sentence: 'I often go swimming.',
-      segments: [
-        {
-          text: 'I ',
-        },
-        {
-          text: 'often',
-          role: '频率状语',
-        },
-        {
-          text: ' go swimming.',
-        },
-      ],
     },
     {
       label: '主要动词 be 后',
       sentence: 'He is always late.',
-      segments: [
-        {
-          text: 'He ',
-        },
-        {
-          text: 'is',
-          role: '系动词',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'always',
-          role: '频率状语',
-        },
-        {
-          text: ' late.',
-        },
-      ],
     },
     {
       label: '情态动词后',
       sentence: 'You should never lie.',
-      segments: [
-        {
-          text: 'You ',
-        },
-        {
-          text: 'should',
-          role: '情态动词',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'never',
-          role: '频率状语',
-        },
-        {
-          text: ' lie.',
-        },
-      ],
     },
     {
       label: '长助动词链中',
       sentence: 'She has often been asked that question.',
       analysis: ['位于第 1 个助动词之后，不是整条助动词链之后。'],
-      segments: [
-        {
-          text: 'She ',
-        },
-        {
-          text: 'has',
-          role: '首个助动词',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'often',
-          role: '频率状语',
-        },
-        {
-          text: ' been asked that question.',
-        },
-      ],
     },
   ]}
 />
@@ -568,47 +272,14 @@ always、usually、often、never 等的常见中位位置，按谓语结构区�
     {
       label: '句首',
       sentence: 'Sometimes I walk to school.',
-      segments: [
-        {
-          text: 'Sometimes',
-          role: '频率状语',
-        },
-        {
-          text: ' I walk to school.',
-        },
-      ],
     },
     {
       label: '句中',
       sentence: 'I sometimes walk to school.',
-      segments: [
-        {
-          text: 'I ',
-        },
-        {
-          text: 'sometimes',
-          role: '频率状语',
-        },
-        {
-          text: ' walk to school.',
-        },
-      ],
     },
     {
       label: '句末',
       sentence: 'I walk to school sometimes.',
-      segments: [
-        {
-          text: 'I walk to school ',
-        },
-        {
-          text: 'sometimes',
-          role: '频率状语',
-        },
-        {
-          text: '.',
-        },
-      ],
     },
   ]}
 />
@@ -637,49 +308,16 @@ always、usually、often、never 等的常见中位位置，按谓语结构区�
       label: '限定借书的人',
       sentence: 'Only Lily borrowed the book.',
       analysis: ['仅 Lily 借了，其他人没借。'],
-      segments: [
-        {
-          text: 'Only Lily',
-          role: '焦点',
-        },
-        {
-          text: ' borrowed the book.',
-        },
-      ],
     },
     {
       label: '限定借用的物品',
       sentence: 'Lily borrowed only the book.',
       analysis: ['仅借了书，没借其他东西。'],
-      segments: [
-        {
-          text: 'Lily borrowed ',
-        },
-        {
-          text: 'only the book',
-          role: '焦点',
-        },
-        {
-          text: '.',
-        },
-      ],
     },
     {
       label: '限定活动方式',
       sentence: 'Lily only borrowed the book.',
       analysis: ['可强调仅仅借用而未购买，具体焦点仍依语境。'],
-      segments: [
-        {
-          text: 'Lily ',
-        },
-        {
-          text: 'only borrowed',
-          role: '焦点',
-        },
-        {
-          text: ' the book.',
-        },
-      ],
     },
   ]}
 />
@@ -693,52 +331,16 @@ always、usually、often、never 等的常见中位位置，按谓语结构区�
       label: '否定每次都迟到',
       sentence: 'She is not always late.',
       analysis: ['否定「每次都迟到」，不保证每次都不迟到。'],
-      segments: [
-        {
-          text: 'She is ',
-        },
-        {
-          text: 'not always',
-          role: '否定与频率',
-        },
-        {
-          text: ' late.',
-        },
-      ],
     },
     {
       label: '每次都未准备好',
       sentence: 'She is always unprepared when we need to leave.',
       analysis: ['每次该出发时都没准备好。'],
-      segments: [
-        {
-          text: 'She is ',
-        },
-        {
-          text: 'always unprepared',
-          role: '频率与状态',
-        },
-        {
-          text: ' when we need to leave.',
-        },
-      ],
     },
     {
       label: '从不迟到',
       sentence: 'She is never late.',
       analysis: ['从不迟到。'],
-      segments: [
-        {
-          text: 'She is ',
-        },
-        {
-          text: 'never',
-          role: '频率状语',
-        },
-        {
-          text: ' late.',
-        },
-      ],
     },
   ]}
 />
@@ -755,78 +357,24 @@ not always successful 仅否定「每次都成功」，不保证曾经成功；n
     {
       label: '句首评价',
       sentence: 'Fortunately, no one was hurt.',
-      segments: [
-        {
-          text: 'Fortunately',
-          role: '分句评价',
-        },
-        {
-          text: ', no one was hurt.',
-        },
-      ],
     },
     {
       label: '句末评价',
       sentence: 'No one was hurt, fortunately.',
-      segments: [
-        {
-          text: 'No one was hurt, ',
-        },
-        {
-          text: 'fortunately',
-          role: '分句评价',
-        },
-        {
-          text: '.',
-        },
-      ],
     },
     {
       label: '判断可能性',
       sentence: 'She will probably come tomorrow.',
-      segments: [
-        {
-          text: 'She will ',
-        },
-        {
-          text: 'probably',
-          role: '判断副词',
-        },
-        {
-          text: ' come tomorrow.',
-        },
-      ],
     },
     {
       label: '回答方式',
       sentence: 'He answered honestly.',
       analysis: ['修饰回答方式。'],
-      segments: [
-        {
-          text: 'He answered ',
-        },
-        {
-          text: 'honestly',
-          role: '方式状语',
-        },
-        {
-          text: '.',
-        },
-      ],
     },
     {
       label: '说话人的态度',
       sentence: "Honestly, I don't know.",
       analysis: ['标明说话人的表达态度。'],
-      segments: [
-        {
-          text: 'Honestly',
-          role: '话语态度',
-        },
-        {
-          text: ", I don't know.",
-        },
-      ],
     },
   ]}
 />
@@ -844,86 +392,26 @@ already、yet、still 表达事件与预期、参照时刻的关系，不是某�
       label: 'already',
       sentence: 'She has already left.',
       analysis: ['比预期早或截至某时已发生。'],
-      segments: [
-        {
-          text: 'She has ',
-        },
-        {
-          text: 'already',
-          role: '时间状态副词',
-        },
-        {
-          text: ' left.',
-        },
-      ],
     },
     {
       label: 'yet 的询问',
       sentence: 'Has she left yet?',
       analysis: ['截至某时是否发生。'],
-      segments: [
-        {
-          text: 'Has she left ',
-        },
-        {
-          text: 'yet',
-          role: '时间状态副词',
-        },
-        {
-          text: '?',
-        },
-      ],
     },
     {
       label: 'yet 的否定',
       sentence: "She hasn't left yet.",
       analysis: ['截至某时还没有发生。'],
-      segments: [
-        {
-          text: "She hasn't left ",
-        },
-        {
-          text: 'yet',
-          role: '时间状态副词',
-        },
-        {
-          text: '.',
-        },
-      ],
     },
     {
       label: 'still 的持续状态',
       sentence: 'She is still here.',
       analysis: ['某状态继续存在。'],
-      segments: [
-        {
-          text: 'She is ',
-        },
-        {
-          text: 'still',
-          role: '持续状态副词',
-        },
-        {
-          text: ' here.',
-        },
-      ],
     },
     {
       label: 'still 与否定',
       sentence: "She still hasn't replied.",
       analysis: ['没有回复的状态仍在继续。'],
-      segments: [
-        {
-          text: 'She ',
-        },
-        {
-          text: 'still',
-          role: '持续状态副词',
-        },
-        {
-          text: " hasn't replied.",
-        },
-      ],
     },
   ]}
 />
@@ -946,105 +434,29 @@ already、yet、still 表达事件与预期、参照时刻的关系，不是某�
     {
       label: '差级',
       sentence: 'He runs faster than I do.',
-      segments: [
-        {
-          text: 'He runs ',
-        },
-        {
-          text: 'faster than I do',
-          role: '差级比较',
-        },
-        {
-          text: '.',
-        },
-      ],
     },
     {
       label: '同级',
       sentence: 'She works as hard as her brother.',
-      segments: [
-        {
-          text: 'She works ',
-        },
-        {
-          text: 'as hard as her brother',
-          role: '同级比较',
-        },
-        {
-          text: '.',
-        },
-      ],
     },
     {
       label: '最高级保留 the',
       sentence: 'He runs the fastest of all.',
       analysis: ['副词最高级前的 the 常可省。'],
-      segments: [
-        {
-          text: 'He runs ',
-        },
-        {
-          text: 'the fastest of all',
-          role: '最高级结构',
-        },
-        {
-          text: '.',
-        },
-      ],
     },
     {
       label: '最高级省去 the',
       sentence: 'He runs fastest of all.',
       analysis: ['副词最高级前的 the 常可省。'],
-      segments: [
-        {
-          text: 'He runs ',
-        },
-        {
-          text: 'fastest of all',
-          role: '最高级结构',
-        },
-        {
-          text: '.',
-        },
-      ],
     },
     {
       label: '递进',
       sentence: 'She answered more and more confidently.',
-      segments: [
-        {
-          text: 'She answered ',
-        },
-        {
-          text: 'more and more confidently',
-          role: '程度递进',
-        },
-        {
-          text: '.',
-        },
-      ],
     },
     {
       label: '关联比较',
       sentence: 'The more carefully you read, the fewer mistakes you make.',
       analysis: ['这里的 the 属于关联结构，不能按普通副词最高级的规则删去。'],
-      segments: [
-        {
-          text: 'The more carefully',
-          role: '关联比较',
-        },
-        {
-          text: ' you read, ',
-        },
-        {
-          text: 'the fewer mistakes',
-          role: '关联比较',
-        },
-        {
-          text: ' you make.',
-        },
-      ],
     },
   ]}
 />

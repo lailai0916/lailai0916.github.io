@@ -98,192 +98,48 @@ summary: 非限定动词形式不独立承担分句时态和主谓一致，但�
       sentence: 'She seems to know the answer.',
       translation: '她似乎知道答案。',
       analysis: ['know 与当前判断同时，不表示将来。'],
-      segments: [
-        {
-          text: 'She',
-          role: '主语',
-          note: '主句主语。',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'seems to know',
-          role: '重点结构',
-          note: '本组重点比较的形式或结构。',
-        },
-        {
-          text: ' the answer.',
-        },
-      ],
       label: '现在判断与同时状态',
     },
     {
       sentence: 'She seemed to know the answer.',
       translation: '她当时似乎知道答案。',
       analysis: ['know 与过去的判断同时。'],
-      segments: [
-        {
-          text: 'She',
-          role: '主语',
-          note: '主句主语。',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'seemed to know',
-          role: '重点结构',
-          note: '本组重点比较的形式或结构。',
-        },
-        {
-          text: ' the answer.',
-        },
-      ],
       label: '过去判断与同时状态',
     },
     {
       sentence: 'She seems to have left.',
       translation: '她似乎已经离开。',
       analysis: ['离开先于当前判断。'],
-      segments: [
-        {
-          text: 'She',
-          role: '主语',
-          note: '主句主语。',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'seems to have left',
-          role: '重点结构',
-          note: '本组重点比较的形式或结构。',
-        },
-        {
-          text: '.',
-        },
-      ],
       label: '先于现在的判断',
     },
     {
       sentence: 'She seemed to have left.',
       translation: '她当时似乎已经离开。',
       analysis: ['离开先于过去的判断。'],
-      segments: [
-        {
-          text: 'She',
-          role: '主语',
-          note: '主句主语。',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'seemed to have left',
-          role: '重点结构',
-          note: '本组重点比较的形式或结构。',
-        },
-        {
-          text: '.',
-        },
-      ],
       label: '先于过去的判断',
     },
     {
       sentence: 'I hope to see her tomorrow.',
       translation: '我希望明天见到她。',
       analysis: ['将来意义来自 hope 和 tomorrow 等语境。'],
-      segments: [
-        {
-          text: 'I',
-          role: '主语',
-          note: '主句主语。',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'hope to see',
-          role: '重点结构',
-          note: '本组重点比较的形式或结构。',
-        },
-        {
-          text: ' her tomorrow.',
-        },
-      ],
       label: '将来愿望',
     },
     {
       sentence: 'He seems to be working now.',
       translation: '他似乎正在工作。',
       analysis: ['过程与当前判断重叠。'],
-      segments: [
-        {
-          text: 'He',
-          role: '主语',
-          note: '主句主语。',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'seems to be working',
-          role: '重点结构',
-          note: '本组重点比较的形式或结构。',
-        },
-        {
-          text: ' now.',
-        },
-      ],
       label: '与现在重叠的过程',
     },
     {
       sentence: 'He seems to have been working all day.',
       translation: '他似乎已经工作一整天了。',
       analysis: ['突出截至当前参照时间附近的过程。'],
-      segments: [
-        {
-          text: 'He',
-          role: '主语',
-          note: '主句主语。',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'seems to have been working',
-          role: '重点结构',
-          note: '本组重点比较的形式或结构。',
-        },
-        {
-          text: ' all day.',
-        },
-      ],
       label: '截至现在附近的过程',
     },
     {
       sentence: 'The book seems to have been read many times.',
       translation: '这本书似乎被读过很多遍。',
       analysis: ['read 与 book 为被动关系，阅读先于当前判断。'],
-      segments: [
-        {
-          text: 'The book',
-          role: '主语',
-          note: '主句主语。',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'seems to have been read',
-          role: '重点结构',
-          note: '本组重点比较的形式或结构。',
-        },
-        {
-          text: ' many times.',
-        },
-      ],
       label: '较早的被动事件',
     },
   ]}
@@ -548,141 +404,24 @@ find 按自身搭配选择补语，不能直接套用 see 的原形模式：
       sentence: 'Reading books broadens the mind.',
       translation: '阅读书籍开阔思维。',
       analysis: ['作主语，books 是 reading 的宾语。'],
-      segments: [
-        {
-          text: 'Reading books',
-          role: '主语',
-          note: '整个 -ing 分句作主语，books 是 reading 的宾语。',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'broadens',
-          role: '谓语动词',
-          note: '主句的限定动词形式。',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'the mind',
-          role: '宾语',
-          note: 'broadens 的宾语。',
-        },
-        {
-          text: '.',
-        },
-      ],
       label: '主语',
     },
     {
       sentence: 'I enjoy reading novels.',
       translation: '我喜欢读小说。',
       analysis: ['作 enjoy 的补语。'],
-      segments: [
-        {
-          text: 'I',
-          role: '主语',
-          note: '体验者。',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'enjoy',
-          role: '谓语动词',
-          note: '该义项选择 -ing 补语。',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'reading novels',
-          role: '补语',
-          note: 'novels 是 reading 的宾语。',
-        },
-        {
-          text: '.',
-        },
-      ],
       label: '动词补语',
     },
     {
       sentence: 'Her hobby is collecting stamps.',
       translation: '她的爱好是集邮。',
       analysis: ['作表语。'],
-      segments: [
-        {
-          text: 'Her hobby',
-          role: '主语',
-          note: '被说明的活动。',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'is',
-          role: '系动词',
-          note: '连接主语和表语。',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'collecting stamps',
-          role: '表语',
-          note: '-ing 分句说明爱好的内容。',
-        },
-        {
-          text: '.',
-        },
-      ],
       label: '表语',
     },
     {
       sentence: "I'm interested in learning languages.",
       translation: '我对学习语言感兴趣。',
       analysis: ['作介词 in 的补语。'],
-      segments: [
-        {
-          text: 'I',
-          role: '主语',
-          note: '体验者。',
-        },
-        {
-          text: "'m",
-          role: '系动词',
-          note: 'am 的缩写。',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'interested',
-          role: '表语',
-          note: '形容词说明状态。',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'in',
-          role: '介词',
-          note: '后接 -ing 分句作补语。',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'learning languages',
-          role: '介词补语',
-          note: 'languages 是 learning 的宾语。',
-        },
-        {
-          text: '.',
-        },
-      ],
       label: '介词补语',
     },
   ]}
@@ -819,93 +558,21 @@ interesting/interested、boring/bored 等可以形成形容词对照：
     {
       sentence: 'The lecture is boring.',
       translation: '讲座令人厌烦。',
-      segments: [
-        {
-          text: 'The lecture',
-          role: '主语',
-          note: '主句主语。',
-        },
-        {
-          text: ' is ',
-        },
-        {
-          text: 'boring',
-          role: '重点结构',
-          note: '本组重点比较的形式或结构。',
-        },
-        {
-          text: '.',
-        },
-      ],
       label: '引起感受的性质',
     },
     {
       sentence: 'I am bored.',
       translation: '我感到厌烦。',
-      segments: [
-        {
-          text: 'I',
-          role: '主语',
-          note: '主句主语。',
-        },
-        {
-          text: ' am ',
-        },
-        {
-          text: 'bored',
-          role: '重点结构',
-          note: '本组重点比较的形式或结构。',
-        },
-        {
-          text: '.',
-        },
-      ],
       label: '体验者的状态',
     },
     {
       sentence: 'He is a boring person.',
       translation: '他是个无趣的人。',
-      segments: [
-        {
-          text: 'He',
-          role: '主语',
-          note: '主句主语。',
-        },
-        {
-          text: ' is a ',
-        },
-        {
-          text: 'boring person',
-          role: '重点结构',
-          note: '本组重点比较的形式或结构。',
-        },
-        {
-          text: '.',
-        },
-      ],
       label: '人的性质',
     },
     {
       sentence: 'She had a worried expression.',
       translation: '她露出担忧的神情。',
-      segments: [
-        {
-          text: 'She',
-          role: '主语',
-          note: '主句主语。',
-        },
-        {
-          text: ' had a ',
-        },
-        {
-          text: 'worried expression',
-          role: '重点结构',
-          note: '本组重点比较的形式或结构。',
-        },
-        {
-          text: '.',
-        },
-      ],
       label: '神情的状态',
     },
   ]}
@@ -939,36 +606,6 @@ interesting/interested、boring/bored 等可以形成形容词对照：
       label: '被动与先行事件',
       translation: '受到警告后，他谨慎行事。',
       analysis: ['he 承受 warn，且警告先于主句事件。'],
-      segments: [
-        {
-          text: 'Having been warned',
-          role: '分词状语',
-        },
-        {
-          text: ', ',
-        },
-        {
-          text: 'he',
-          role: '主语',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'acted',
-          role: '谓语动词',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'cautiously',
-          role: '状语',
-        },
-        {
-          text: '.',
-        },
-      ],
     },
   ]}
 />
@@ -1118,171 +755,36 @@ Walking down the street, **the rain** began to fall. 会把走路者错误地关
       sentence: 'I remembered to lock the door.',
       translation: '我当时记得锁门了。',
       analysis: ['这一肯定叙述表示记住并落实了锁门，不是「门还没锁」。'],
-      segments: [
-        {
-          text: 'I',
-          role: '主语',
-          note: '记住并执行锁门的人。',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'remembered',
-          role: '谓语动词',
-          note: '肯定的过去叙述。',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'to lock the door',
-          role: '补语',
-          note: '记住并落实要做的事。',
-        },
-        {
-          text: '.',
-        },
-      ],
       label: 'remember to do',
     },
     {
       sentence: 'I remember locking the door.',
       translation: '我记得锁过门。',
       analysis: ['记忆的内容是先前锁门这件事。'],
-      segments: [
-        {
-          text: 'I',
-          role: '主语',
-          note: '回忆的人。',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'remember',
-          role: '谓语动词',
-          note: '现在的记忆状态。',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'locking the door',
-          role: '补语',
-          note: '回忆先前锁门这件事。',
-        },
-        {
-          text: '.',
-        },
-      ],
       label: 'remember doing',
     },
     {
       sentence: 'He stopped smoking.',
       translation: '他停止吸烟。',
       analysis: ['smoking 是停止的活动。'],
-      segments: [
-        {
-          text: 'He',
-          role: '主语',
-          note: '停止吸烟的人。',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'stopped',
-          role: '谓语动词',
-          note: '停止活动。',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'smoking',
-          role: '补语',
-          note: '所停止的活动。',
-        },
-        {
-          text: '.',
-        },
-      ],
       label: 'stop doing',
     },
     {
       sentence: 'He stopped to smoke.',
       translation: '他停下来抽烟。',
       analysis: ['to smoke 表目的，不是与 smoking 完全相同的句法位置。'],
-      segments: [
-        {
-          text: 'He',
-          role: '主语',
-          note: '停下原活动的人。',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'stopped',
-          role: '谓语动词',
-          note: '停下原活动。',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'to smoke',
-          role: '目的状语',
-          note: '停下的目的，不是 stop 的活动补语。',
-        },
-        {
-          text: '.',
-        },
-      ],
       label: 'stop to do',
     },
     {
       sentence: 'Try restarting the computer.',
       translation: '试试重启电脑。',
       analysis: ['把重启作为解决问题的办法。'],
-      segments: [
-        {
-          text: 'Try ',
-        },
-        {
-          text: 'restarting',
-          role: '重点结构',
-          note: '本组重点比较的形式或结构。',
-        },
-        {
-          text: ' the computer.',
-        },
-      ],
       label: 'try doing',
     },
     {
       sentence: "I tried to restart it, but it didn't respond.",
       translation: '我设法重启它，但它没有响应。',
       analysis: ['强调尝试达到目标。'],
-      segments: [
-        {
-          text: 'I',
-          role: '主语',
-          note: '主句主语。',
-        },
-        {
-          text: ' tried ',
-        },
-        {
-          text: 'to restart',
-          role: '重点结构',
-          note: '本组重点比较的形式或结构。',
-        },
-        {
-          text: " it, but it didn't respond.",
-        },
-      ],
       label: 'try to do',
     },
   ]}

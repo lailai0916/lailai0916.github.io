@@ -195,57 +195,18 @@ summary: 构词形成新词或新的词类用法，屈折改变同一词的语�
       label: '名词转为动词',
       sentence: 'I will water the flowers.',
       translation: '我会给花浇水。',
-      segments: [
-        {
-          text: 'I will ',
-        },
-        {
-          text: 'water',
-          role: '动词',
-          note: '在此表示浇水。',
-        },
-        {
-          text: ' the flowers.',
-        },
-      ],
       analysis: ['water 保持原有词形，在这里用作动词。'],
     },
     {
       label: '动词转为名词',
       sentence: "Let's go for a walk.",
       translation: '我们去散步吧。',
-      segments: [
-        {
-          text: "Let's go for a ",
-        },
-        {
-          text: 'walk',
-          role: '名词',
-          note: 'a walk 构成名词短语。',
-        },
-        {
-          text: '.',
-        },
-      ],
       analysis: ['walk 在 a walk 中用作名词。'],
     },
     {
       label: '形容词转为名词',
       sentence: 'She is a regular at this café.',
       translation: '她是这家咖啡馆的常客。',
-      segments: [
-        {
-          text: 'She is a ',
-        },
-        {
-          text: 'regular',
-          role: '名词',
-          note: '在此指常客。',
-        },
-        {
-          text: ' at this café.',
-        },
-      ],
       analysis: ['regular 在这里表示常客，是名词用法。'],
     },
   ]}
@@ -333,29 +294,6 @@ summary: 构词形成新词或新的词类用法，屈折改变同一词的语�
         '功能：confidently 在本句作方式状语，修饰 answered。',
         '意义：按语境理解为自信地，句法位置不能唯一确定词义。',
       ],
-      segments: [
-        {
-          text: 'She',
-          role: '主语',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'answered',
-          role: '谓语动词',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'confidently',
-          role: '方式状语',
-        },
-        {
-          text: '.',
-        },
-      ],
       translation: '她自信地作了回答。',
     },
     {
@@ -364,29 +302,6 @@ summary: 构词形成新词或新的词类用法，屈折改变同一词的语�
       analysis: [
         'with confidence 是介词短语，也能在本句承担方式状语功能。',
         '句法功能相同，不代表结构形式或词类相同。',
-      ],
-      segments: [
-        {
-          text: 'She',
-          role: '主语',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'answered',
-          role: '谓语动词',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'with confidence',
-          role: '方式状语',
-        },
-        {
-          text: '.',
-        },
       ],
       translation: '她自信地作了回答。',
     },

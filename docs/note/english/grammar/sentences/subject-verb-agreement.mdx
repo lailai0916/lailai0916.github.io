@@ -75,44 +75,12 @@ summary: 主谓一致先定位限定动词和主语中心，再识别量化、�
       sentence: 'The quality of the products is excellent.',
       translation: '这些产品的质量很好。',
       analysis: ['主语是整个 the quality of the products，中心词是 quality。'],
-      segments: [
-        {
-          text: 'The quality of the products',
-          role: '主语',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'is',
-          role: '限定动词',
-        },
-        {
-          text: ' excellent.',
-        },
-      ],
     },
     {
       label: '中心词是 products',
       sentence: 'The products in the box are new.',
       translation: '箱子里的产品是新的。',
       analysis: ['中心词是 products，in the box 不改变其数。'],
-      segments: [
-        {
-          text: 'The products in the box',
-          role: '主语',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'are',
-          role: '限定动词',
-        },
-        {
-          text: ' new.',
-        },
-      ],
     },
   ]}
 />
@@ -284,106 +252,26 @@ none、either、neither 还须区分结构与语体：
       label: 'a number of',
       sentence: 'A number of students are absent.',
       analysis: ['a number of + 复数名词表示若干个，通常用复数。'],
-      segments: [
-        {
-          text: 'A number of students',
-          role: '主语',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'are',
-          role: '限定动词',
-        },
-        {
-          text: ' absent.',
-        },
-      ],
     },
     {
       label: 'the number of',
       sentence: 'The number of students is increasing.',
       analysis: ['the number of + 复数名词指数量，中心是 number，用单数。'],
-      segments: [
-        {
-          text: 'The number of students',
-          role: '主语',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'is',
-          role: '限定动词',
-        },
-        {
-          text: ' increasing.',
-        },
-      ],
     },
     {
       label: 'one of',
       sentence: 'One of the students is absent.',
       analysis: ['外层主语中心是 one。'],
-      segments: [
-        {
-          text: 'One of the students',
-          role: '主语',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'is',
-          role: '限定动词',
-        },
-        {
-          text: ' absent.',
-        },
-      ],
     },
     {
       label: 'a pair of',
       sentence: 'A pair of scissors is on the table.',
       analysis: ['按 pair 的单数形式判断。'],
-      segments: [
-        {
-          text: 'A pair of scissors',
-          role: '主语',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'is',
-          role: '限定动词',
-        },
-        {
-          text: ' on the table.',
-        },
-      ],
     },
     {
       label: 'two pairs of',
       sentence: 'Two pairs of scissors are on the table.',
       analysis: ['按 pairs 的复数形式判断。'],
-      segments: [
-        {
-          text: 'Two pairs of scissors',
-          role: '主语',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'are',
-          role: '限定动词',
-        },
-        {
-          text: ' on the table.',
-        },
-      ],
     },
   ]}
 />
@@ -405,22 +293,6 @@ none、either、neither 还须区分结构与语体：
       label: 'every 直接限定单数项',
       sentence: 'Every boy and every girl has a ticket.',
       analysis: ['every 直接限定并列的单数项，通常用单数。'],
-      segments: [
-        {
-          text: 'Every boy and every girl',
-          role: '主语',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'has',
-          role: '限定动词',
-        },
-        {
-          text: ' a ticket.',
-        },
-      ],
     },
     {
       label: '共享 every',
@@ -431,29 +303,6 @@ none、either、neither 还须区分结构与语体：
       label: '浮动 each',
       sentence: 'Tom and Lily each have a ticket.',
       analysis: ['each 不直接限定并列的单数项，仍按复数主语 Tom and Lily 处理。'],
-      segments: [
-        {
-          text: 'Tom and Lily',
-          role: '主语',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'each',
-          role: '浮动量化词',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'have',
-          role: '限定动词',
-        },
-        {
-          text: ' a ticket.',
-        },
-      ],
     },
     {
       label: '同一人',
@@ -735,80 +584,16 @@ there be 介绍的名词短语通常位于 be 后，there 是形式上的存在�
       label: 'who 对应 students',
       sentence: 'He is one of the students who are good at maths.',
       analysis: ['按 who 修饰 students 分析，are 对应该学生群体。'],
-      segments: [
-        {
-          text: 'He is one of the students ',
-        },
-        {
-          text: 'who',
-          role: '从句主语',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'are',
-          role: '从句限定动词',
-        },
-        {
-          text: ' good at maths.',
-        },
-      ],
     },
     {
       label: 'who 对应 one',
       sentence: 'He is the only one of the students who is qualified for the job.',
       analysis: ['按「唯一合格者」理解，who 对应 one。'],
-      segments: [
-        {
-          text: 'He is the only one of the students ',
-        },
-        {
-          text: 'who',
-          role: '从句主语',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'is qualified',
-          role: '从句谓语',
-        },
-        {
-          text: ' for the job.',
-        },
-      ],
     },
     {
       label: 'whom 作宾语',
       sentence: 'The students whom she knows are here.',
       analysis: ['关系词 whom 作宾语，knows 随从句主语 she，不随 students。'],
-      segments: [
-        {
-          text: 'The students ',
-        },
-        {
-          text: 'whom',
-          role: '从句宾语',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'she',
-          role: '从句主语',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'knows',
-          role: '从句谓语动词',
-        },
-        {
-          text: ' are here.',
-        },
-      ],
     },
     {
       label: '内外分别判断',
@@ -816,25 +601,6 @@ there be 介绍的名词短语通常位于 be 后，there 是形式上的存在�
       analysis: [
         '内层：若 who 修饰 students，关系从句用 have。',
         '外层：主语中心是 one，主句用 is。不能仅看到 one，就把内外 2 处都选单数。',
-      ],
-      segments: [
-        {
-          text: 'One of the students who ',
-        },
-        {
-          text: 'have',
-          role: '从句限定动词',
-        },
-        {
-          text: ' passed the exam ',
-        },
-        {
-          text: 'is',
-          role: '主句限定动词',
-        },
-        {
-          text: ' absent.',
-        },
       ],
     },
   ]}

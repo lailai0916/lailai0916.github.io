@@ -46,156 +46,36 @@ summary: 英语语法先按词、短语、分句和句子区分结构层级，�
       label: '名词短语作主语',
       sentence: 'The young student smiled.',
       analysis: ['The young student 是名词短语，在本句作主语。'],
-      segments: [
-        {
-          text: 'The young student',
-          role: '主语',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'smiled',
-          role: '谓语动词',
-        },
-        {
-          text: '.',
-        },
-      ],
       translation: '那位年轻学生笑了。',
     },
     {
       label: '名词短语作宾语',
       sentence: 'I saw the young student.',
       analysis: ['the young student 仍是名词短语，在本句作宾语。'],
-      segments: [
-        {
-          text: 'I',
-          role: '主语',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'saw',
-          role: '谓语动词',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'the young student',
-          role: '宾语',
-        },
-        {
-          text: '.',
-        },
-      ],
       translation: '我看见了那位年轻学生。',
     },
     {
       label: '介词短语修饰名词',
       sentence: 'the student in the room',
       analysis: ['in the room 是介词短语，在此后置修饰 student。'],
-      segments: [
-        {
-          text: 'the student',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'in the room',
-          role: '后置修饰语',
-        },
-      ],
       translation: '房间里的那位学生',
     },
     {
       label: '介词短语作状语',
       sentence: 'She studied in the room.',
       analysis: ['in the room 是介词短语，在本句作地点状语。'],
-      segments: [
-        {
-          text: 'She',
-          role: '主语',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'studied',
-          role: '谓语动词',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'in the room',
-          role: '地点状语',
-        },
-        {
-          text: '.',
-        },
-      ],
       translation: '她在房间里学习。',
     },
     {
       label: '限定内容分句作宾语',
       sentence: 'I know that she left.',
       analysis: ['that she left 是限定内容分句，在本句作宾语。'],
-      segments: [
-        {
-          text: 'I',
-          role: '主语',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'know',
-          role: '谓语动词',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'that she left',
-          role: '宾语从句',
-        },
-        {
-          text: '.',
-        },
-      ],
       translation: '我知道她离开了。',
     },
     {
       label: '非限定分句作补足成分',
       sentence: 'I want to leave early.',
       analysis: ['to leave early 是非限定分句，作 want 的补足成分。'],
-      segments: [
-        {
-          text: 'I',
-          role: '主语',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'want',
-          role: '谓语动词',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'to leave early',
-          role: '补足成分',
-        },
-        {
-          text: '.',
-        },
-      ],
       translation: '我想早点离开。',
     },
   ]}
@@ -218,76 +98,18 @@ summary: 英语语法先按词、短语、分句和句子区分结构层级，�
       label: '被动结构',
       sentence: 'The window was broken by Tom.',
       translation: '窗户被汤姆打破了。',
-      segments: [
-        {
-          text: 'The window',
-          role: '主语',
-          note: '主语指承受有关作用的窗户。',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'was broken',
-          role: '动词短语',
-          note: 'be 的过去式加过去分词构成被动。',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'by Tom.',
-          role: '施事说明',
-          note: 'Tom 是施事，不是主语。',
-        },
-      ],
       analysis: ['the window 是主语；Tom 是施事。', '句法功能与语义角色分别判断。'],
     },
     {
       label: '天气表达',
       sentence: 'It is raining.',
       translation: '正在下雨。',
-      segments: [
-        {
-          text: 'It',
-          role: '虚主语',
-          note: '没有具体指称。',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'is raining.',
-          role: '动词短语',
-        },
-      ],
       analysis: ['it 是虚主语，不指执行动作的人或物。'],
     },
     {
       label: '认知状态',
       sentence: 'She knows the answer.',
       translation: '她知道答案。',
-      segments: [
-        {
-          text: 'She',
-          role: '主语',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'knows',
-          role: '动词',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'the answer.',
-          role: '宾语',
-          note: '答案没有被这个认知状态改变。',
-        },
-      ],
       analysis: ['the answer 是宾语，但没有被动作改变。'],
     },
   ]}
@@ -309,32 +131,6 @@ summary: 英语语法先按词、短语、分句和句子区分结构层级，�
     {
       sentence: 'The cat has been eating a fish.',
       translation: '猫一直在吃一条鱼。',
-      segments: [
-        {
-          text: 'The cat',
-          role: '主语',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'has',
-          role: '限定形式',
-          note: '承担现在时和主谓一致。',
-        },
-        {
-          text: ' been eating',
-          role: '非限定形式',
-          note: '与 has 一起组成动词短语。',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'a fish.',
-          role: '宾语',
-        },
-      ],
       analysis: [
         '主语：The cat。',
         '谓语：has been eating a fish。',
@@ -409,79 +205,12 @@ summary: 英语语法先按词、短语、分句和句子区分结构层级，�
         'clear 是宾语补足语，it 是形式宾语。',
         'that she disagreed 是内容分句，在学校语法中称真正宾语。',
       ],
-      segments: [
-        {
-          text: 'She',
-          role: '主语',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'made',
-          role: '谓语动词',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'it',
-          role: '形式宾语',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'clear',
-          role: '宾语补足语',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'that she disagreed',
-          role: '内容分句',
-        },
-        {
-          text: '.',
-        },
-      ],
       translation: '她明确表示自己不同意。',
     },
     {
       label: '融合关系结构作宾语补足语',
       sentence: 'You can call me what you like.',
       analysis: ['what you like 是融合关系结构，整体作宾语补足语。'],
-      segments: [
-        {
-          text: 'You',
-          role: '主语',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'can call',
-          role: '谓语动词短语',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'me',
-          role: '宾语',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'what you like',
-          role: '宾语补足语',
-        },
-        {
-          text: '.',
-        },
-      ],
       translation: '你想怎么称呼我都可以。',
     },
   ]}
@@ -506,29 +235,6 @@ summary: 英语语法先按词、短语、分句和句子区分结构层级，�
         '分号连接 2 个独立分句。',
         'when I have time 从属于前一个独立分句。',
         '整句含至少 2 个独立分句及从属分句，属于并列复合句。',
-      ],
-      segments: [
-        {
-          text: 'I read',
-          role: '第 1 个分句的主句核心',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'when I have time',
-          role: '时间状语从句',
-        },
-        {
-          text: '; ',
-        },
-        {
-          text: 'she writes every evening',
-          role: '第 2 个独立分句',
-        },
-        {
-          text: '.',
-        },
       ],
       translation: '我有空时就读书；她每天晚上都写作。',
     },
@@ -636,42 +342,6 @@ summary: 英语语法先按词、短语、分句和句子区分结构层级，�
     {
       sentence: 'The book that you recommended has helped me understand why these forms differ.',
       translation: '你推荐的书帮助我理解了这些形式为何不同。',
-      segments: [
-        {
-          text: 'The',
-          role: '限定词',
-        },
-        {
-          text: ' ',
-        },
-        {
-          text: 'book',
-          role: '名词中心词',
-        },
-        {
-          text: ' that you recommended',
-          role: '关系从句',
-          note: '修饰 book；that 作 recommended 的宾语。',
-        },
-        {
-          text: ' has helped',
-          role: '动词短语',
-        },
-        {
-          text: ' me',
-          role: '宾语',
-        },
-        {
-          text: ' understand',
-          role: '非限定形式',
-          note: 'help 后的原形。',
-        },
-        {
-          text: ' why these forms differ.',
-          role: '嵌入疑问',
-          note: '作 understand 的补足成分。',
-        },
-      ],
       analysis: [
         '主句主语是 The book that you recommended，动词短语是 has helped。',
         '关系从句 that you recommended 修饰 book；不再添加宾语 it。',
