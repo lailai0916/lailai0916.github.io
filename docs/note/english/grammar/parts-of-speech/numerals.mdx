@@ -1,7 +1,7 @@
 ---
 title: 数词
 description: 本文讲解英语基数词、序数词、分数与倍数，以及数量一致关系和日期单位表达。
-summary: 基数词表示数量，序数词表示顺序；整数按三位分节，数量单位依确切数量、不确切大量和集合选取采用不同形式。序数缩写先检查末两位，再检查个位。分数、小数和百分数按表达结构读出，一致关系区分单数整体、多个个体、不可数总量及数值本身。倍数比较明确总量与增量，by 和 to 分别标明变化量与终值。时间、日期、年代、单位及运算按用途归组，复合修饰语与实际数量中的单位分别处理。
+summary: 基数词表示数量，序数词表示顺序；整数每 3 位分节，数量单位依确切数量、不确切大量和集合选取采用不同形式。序数缩写先检查末 2 位，再检查个位。分数、小数和百分数按表达结构读出，一致关系区分单数整体、多个个体、不可数总量及数值本身。倍数比较明确总量与增量，by 和 to 分别标明变化量与终值。时间、日期、年代、单位及运算按用途归组，复合修饰语与实际数量中的单位分别处理。
 ---
 
 ## 参考资料
@@ -14,10 +14,102 @@ summary: 基数词表示数量，序数词表示顺序；整数按三位分节�
 
 **数词**（Numeral）表达数量或顺序。
 
-- **基数词**（Cardinal Numeral）：回答多少，如 one、two；three books 限定名词，I bought three. 独立表达数量。
-- **序数词**（Ordinal Numeral）：回答第几，如 first、second；the third book 限定名词，I chose the third. 独立指代。
-- **同位语或主表语**：You **two** can come with me. 中 two 补充说明 you；**Three** is a prime number. / The answer is **three**. 中数字本身作主语或表语。
+- **基数词**（Cardinal Numeral）：回答多少，如 one、two；three books 限定名词，也可独立表达数量。
+- **序数词**（Ordinal Numeral）：回答第几，如 first、second；the third book 限定名词，也可独立指代。
+- **同位语、主语或表语**：数词可补充说明代词，数字本身也可作主语或表语。
 - **编号**：Room 201、Chapter Two 是标签，不要求改成序数词。
+
+<EnglishExamples
+  title="数词的句法功能"
+  items={[
+    {
+      label: '独立表达数量',
+      sentence: 'I bought three.',
+      segments: [
+        {
+          text: 'I bought ',
+        },
+        {
+          text: 'three',
+          role: '宾语',
+          note: '独立表示数量，所指由语境恢复。',
+        },
+        {
+          text: '.',
+        },
+      ],
+    },
+    {
+      label: '独立序数表达',
+      sentence: 'I chose the third.',
+      segments: [
+        {
+          text: 'I chose ',
+        },
+        {
+          text: 'the third',
+          role: '宾语',
+          note: '独立指代第三个。',
+        },
+        {
+          text: '.',
+        },
+      ],
+    },
+    {
+      label: '补充说明代词',
+      sentence: 'You two can come with me.',
+      translation: '你们两个可以跟我来。',
+      analysis: ['two 补充说明 you。'],
+      segments: [
+        {
+          text: 'You ',
+        },
+        {
+          text: 'two',
+          role: '补充成分',
+          note: '传统分析可称同位语。',
+        },
+        {
+          text: ' can come with me.',
+        },
+      ],
+    },
+    {
+      label: '数字作主语',
+      sentence: 'Three is a prime number.',
+      translation: '3 是质数。',
+      segments: [
+        {
+          text: 'Three',
+          role: '主语',
+          note: '将数字本身作为一个值。',
+        },
+        {
+          text: ' is a prime number.',
+        },
+      ],
+    },
+    {
+      label: '数字作表语',
+      sentence: 'The answer is three.',
+      translation: '答案是 3。',
+      segments: [
+        {
+          text: 'The answer is ',
+        },
+        {
+          text: 'three',
+          role: '表语',
+          note: '说明答案的数值。',
+        },
+        {
+          text: '.',
+        },
+      ],
+    },
+  ]}
+/>
 
 冠词取决于结构，不由序数形式单独决定：the first visit、my first visit、a second chance 均成立，最后一项表示再一次机会。
 
@@ -51,7 +143,7 @@ summary: 基数词表示数量，序数词表示顺序；整数按三位分节�
 - 16,777,216：sixteen **million** seven hundred (and) seventy-seven **thousand** two hundred (and) sixteen。
 - 4,294,967,296：four **billion** two hundred (and) ninety-four **million** nine hundred (and) sixty-seven **thousand** two hundred (and) ninety-six。
 
-示例逗号展示三位分组；中文万、亿按四位换组，翻译时按实际数值换算，不能逐个单位对应。
+示例逗号展示 3 位分组；中文万、亿按 4 位换组，翻译时按实际数值换算，不能逐个单位对应。
 
 ### 数量单位的形式
 
@@ -99,7 +191,7 @@ summary: 基数词表示数量，序数词表示顺序；整数按三位分节�
 
 数字缩写按以下顺序判定：
 
-1. 末两位为 **11、12、13**，用 -th，如 11th、112th、113th；
+1. 末 2 位为 **11、12、13**，用 -th，如 11th、112th、113th；
 2. 否则，个位为 **1、2、3**，分别用 -st、-nd、-rd，如 21st、52nd、123rd；
 3. 其他情况用 -th，如 4th、20th、100th。
 
@@ -137,31 +229,297 @@ summary: 基数词表示数量，序数词表示顺序；整数按三位分节�
 - **英式拼写**：也可写 per cent。
 - **百分比与百分点**：从 20% 升至 30%，增加 10 percentage points，同时相对原值增加 50%，不是仅增加 10%。
 
-分数或百分数作主语时，先区分数值本身与 of 结构，再按所指名词的数和可数性选择谓语；不按分子或百分比数值的大小决定单复数。
+分数或百分数作主语时，先区分数值本身与 of 结构：
 
-1. **数值本身**：把数作为一个值，用单数，如「Two thirds **is** greater than one half.」；
-2. **of 后指单数可数整体或不可数总量**：用单数，如 Half of the book **is** missing. / Two thirds of the water **is** gone. / 「Sixty percent of the work **has** been finished.」；
-3. **of 后指多个可数个体**：用复数，如 Two thirds of the students **are** here. / Sixty percent of the students **have** finished.
+1. **数值本身**：把数作为一个值，用单数；
+2. **of 后指单数可数整体或不可数总量**：用单数；
+3. **of 后指多个可数个体**：用复数。
+
+<EnglishExamples
+  title="分数与百分数的一致关系"
+  items={[
+    {
+      sentence: 'Two thirds is greater than one half.',
+      label: '数值本身',
+      analysis: ['把数作为一个值。'],
+      segments: [
+        {
+          text: 'Two thirds',
+          role: '主语',
+          note: '指一个数值。',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'is',
+          role: '谓语动词',
+          note: '采用单数。',
+        },
+        {
+          text: ' greater than one half.',
+        },
+      ],
+    },
+    {
+      sentence: 'Half of the book is missing.',
+      label: '单数可数整体',
+      segments: [
+        {
+          text: 'Half of the book',
+          role: '主语',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'is',
+          role: '谓语动词',
+          note: '按单数整体处理。',
+        },
+        {
+          text: ' missing.',
+        },
+      ],
+    },
+    {
+      sentence: 'Two thirds of the water is gone.',
+      label: '不可数总量',
+      segments: [
+        {
+          text: 'Two thirds of the water',
+          role: '主语',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'is',
+          role: '谓语动词',
+          note: '按 water 的不可数义处理。',
+        },
+        {
+          text: ' gone.',
+        },
+      ],
+    },
+    {
+      sentence: 'Sixty percent of the work has been finished.',
+      label: '不可数总量',
+      segments: [
+        {
+          text: 'Sixty percent of the work',
+          role: '主语',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'has been finished',
+          role: '谓语',
+          note: '按 work 的不可数义处理。',
+        },
+        {
+          text: '.',
+        },
+      ],
+    },
+    {
+      sentence: 'Two thirds of the students are here.',
+      label: '多个可数个体',
+      segments: [
+        {
+          text: 'Two thirds of the students',
+          role: '主语',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'are',
+          role: '谓语动词',
+          note: '按复数成员处理。',
+        },
+        {
+          text: ' here.',
+        },
+      ],
+    },
+    {
+      sentence: 'Sixty percent of the students have finished.',
+      label: '多个可数个体',
+      segments: [
+        {
+          text: 'Sixty percent of the students',
+          role: '主语',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'have finished',
+          role: '谓语',
+          note: '按复数成员处理。',
+        },
+        {
+          text: '.',
+        },
+      ],
+    },
+  ]}
+/>
+
+谓语的单复数不由分子或百分比数值的大小决定。
 
 ## 倍数与数量关系
 
 ### 总量比较
 
-表达 A 是 B 的 3 倍，可用两种明确结构：
+表达 A 是 B 的 3 倍，可用 2 种明确结构：
 
-- **倍数 + as + 形容词或副词 + as**：A is **three times as long as** B.
-- **倍数 + the + 对应名词 + of**：A is **three times the length of** B.
+- **倍数 + as + 形容词或副词 + as**。
+- **倍数 + the + 对应名词 + of**。
 
 比较对象不同，补足形式也不同：
 
-- **2 倍**：用 twice，如 A is **twice as long as** B.
-- **一半**：用 half，如 A is **half as long as** B.
-- **可数数量**：倍数 + as many + 复数名词 + as，如 I have **twice as many books as** she does.
-- **不可数数量**：倍数 + as much + 不可数名词 + as，如 This task takes **twice as much time as** that one.
+- **2 倍**：用 twice。
+- **一半**：用 half。
+- **可数数量**：倍数 + as many + 复数名词 + as。
+- **不可数数量**：倍数 + as much + 不可数名词 + as。
+
+<EnglishExamples
+  title="总量倍数的明确表达"
+  items={[
+    {
+      sentence: 'A is three times as long as B.',
+      label: '长度：形容词结构',
+      segments: [
+        {
+          text: 'A is ',
+        },
+        {
+          text: 'three times',
+          role: '倍数',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'as long as B',
+          role: '比较结构',
+        },
+        {
+          text: '.',
+        },
+      ],
+    },
+    {
+      sentence: 'A is three times the length of B.',
+      label: '长度：名词结构',
+      segments: [
+        {
+          text: 'A is ',
+        },
+        {
+          text: 'three times',
+          role: '倍数',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'the length of B',
+          role: '度量名词短语',
+        },
+        {
+          text: '.',
+        },
+      ],
+    },
+    {
+      sentence: 'A is twice as long as B.',
+      label: '2 倍',
+      segments: [
+        {
+          text: 'A is ',
+        },
+        {
+          text: 'twice',
+          role: '倍数',
+        },
+        {
+          text: ' as long as B.',
+        },
+      ],
+    },
+    {
+      sentence: 'A is half as long as B.',
+      label: '一半',
+      segments: [
+        {
+          text: 'A is ',
+        },
+        {
+          text: 'half',
+          role: '比例',
+        },
+        {
+          text: ' as long as B.',
+        },
+      ],
+    },
+    {
+      sentence: 'I have twice as many books as she does.',
+      label: '可数数量',
+      segments: [
+        {
+          text: 'I have ',
+        },
+        {
+          text: 'twice',
+          role: '倍数',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'as many books as she does',
+          role: '数量比较',
+        },
+        {
+          text: '.',
+        },
+      ],
+    },
+    {
+      sentence: 'This task takes twice as much time as that one.',
+      label: '不可数数量',
+      segments: [
+        {
+          text: 'This task takes ',
+        },
+        {
+          text: 'twice',
+          role: '倍数',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'as much time as that one',
+          role: '数量比较',
+        },
+        {
+          text: '.',
+        },
+      ],
+    },
+  ]}
+/>
 
 ### 总量与增量
 
-原值为 100，新值为 300 时，区分三个量：
+原值为 100，新值为 300 时，区分 3 个量：
 
 - **总量倍数**：新值是原值的 3 倍，is three times as large as the original。
 - **变化量**：增加 200，相对原值增加 200%，has increased **by 200%**。
@@ -176,12 +534,143 @@ three times **longer than**、four times **higher than** 既可能按总量倍�
 
 ### 数量与主谓一致
 
-- **作为整体金额或时长**：Ten dollars **is** enough. / Two hours **is** a long time. 把数量作为一个量。
-- **逐个指物品**：Ten books **are** on the desk. / Ten one-dollar coins **were** on the desk. 指多本书或多枚硬币。
-- **a number of + 复数名词**：指若干成员，如 A number of students **are** absent.
-- **the number of + 复数名词**：中心是数量这个值，如 The number of students **is** increasing.
+- **作为整体金额或时长**：把数量作为一个量。
+- **逐个指物品**：指多本书或多枚硬币。
+- **a number of + 复数名词**：指若干成员。
+- **the number of + 复数名词**：中心是数量这个值。
 
-Ten dollars **was** missing. 表少了 10 美元这一金额，不能仅凭 dollars 有 -s 就机械选复数谓语。
+<EnglishExamples
+  title="数量整体与多个个体"
+  items={[
+    {
+      sentence: 'Ten dollars is enough.',
+      label: '整体金额',
+      segments: [
+        {
+          text: 'Ten dollars',
+          role: '主语',
+          note: '把金额看作整体。',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'is',
+          role: '谓语动词',
+        },
+        {
+          text: ' enough.',
+        },
+      ],
+    },
+    {
+      sentence: 'Two hours is a long time.',
+      label: '整体时长',
+      segments: [
+        {
+          text: 'Two hours',
+          role: '主语',
+          note: '把时长看作整体。',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'is',
+          role: '谓语动词',
+        },
+        {
+          text: ' a long time.',
+        },
+      ],
+    },
+    {
+      sentence: 'Ten books are on the desk.',
+      label: '多个个体',
+      segments: [
+        {
+          text: 'Ten books',
+          role: '主语',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'are',
+          role: '谓语动词',
+        },
+        {
+          text: ' on the desk.',
+        },
+      ],
+    },
+    {
+      sentence: 'Ten one-dollar coins were on the desk.',
+      label: '多个个体',
+      segments: [
+        {
+          text: 'Ten one-dollar coins',
+          role: '主语',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'were',
+          role: '谓语动词',
+        },
+        {
+          text: ' on the desk.',
+        },
+      ],
+    },
+    {
+      sentence: 'A number of students are absent.',
+      label: '若干成员',
+      segments: [
+        {
+          text: 'A number of students',
+          role: '主语',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'are',
+          role: '谓语动词',
+          note: '按复数成员处理。',
+        },
+        {
+          text: ' absent.',
+        },
+      ],
+    },
+    {
+      sentence: 'The number of students is increasing.',
+      label: '数量这个值',
+      segments: [
+        {
+          text: 'The number of students',
+          role: '主语',
+          note: '中心是数量这个值。',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'is increasing',
+          role: '谓语',
+          note: '采用单数。',
+        },
+        {
+          text: '.',
+        },
+      ],
+    },
+  ]}
+/>
+
+「Ten dollars **was** missing.」表少了 10 美元这一金额，不能仅凭 dollars 有 -s 就机械选复数谓语。
 
 ## 时间、日期与年代
 
@@ -198,7 +687,10 @@ Ten dollars **was** missing. 表少了 10 美元这一金额，不能仅凭 doll
 
 - **直读法**：先读小时，再读分钟。
 - **整点**：用小时 + o'clock。
-- **past/to 读法**：分钟为 1 – 30，用已过分钟数 + past + 当前小时；分钟为 31 – 59，用距下一整点的分钟数 + to + 下一小时。15 分钟可用 a quarter，30 分钟可用 half。
+- **past/to 读法**：
+  - 分钟为 1 – 30：已过分钟数 + past + 当前小时。
+  - 分钟为 31 – 59：距下一整点的分钟数 + to + 下一小时。
+  - 15 分钟可用 a quarter，30 分钟可用 half。
 - **12 小时制**：a.m. 表午夜至中午之前，p.m. 表中午至午夜之前；正午与午夜用 noon、midnight 更清楚。
 
 ### 日期与年份
@@ -231,17 +723,196 @@ Ten dollars **was** missing. 表少了 10 美元这一金额，不能仅凭 doll
 
 按单位在结构中的作用决定单复数：
 
-- **实际数量**：He is **six feet** tall. / We walked **two miles**. 单位按数量采用词条允许的单复数形式。
-- **foot 的度量义**：复数可用 feet 或 foot，如 She is **five feet/foot three inches** tall. 句中表示实际身高数量；身体部位义的 foot 复数用 feet。
-- **前置复合修饰语**：It is **a two-mile walk**. 单位 mile 用单数；同理 a three-hour exam、a six-foot-tall man 中的 hour、foot 用单数，不写 a three-hours exam。
-- **面积与容积**：The room has an area of **20 square metres**. / The tank holds **five cubic metres of water**. 后句表示水箱能装 5 立方米的水。
+- **实际数量**：单位按数量采用词条允许的单复数形式。
+- **foot 的度量义**：复数可用 feet 或 foot，如「She is **five feet/foot three inches** tall.」句中表示实际身高数量；身体部位义的 foot 复数用 feet。
+- **前置复合修饰语**：单位用单数；如 a three-hour exam、a six-foot-tall man 中的 hour、foot，不写 a three-hours exam。
+
+<EnglishExamples
+  title="单位数量与复合修饰语"
+  items={[
+    {
+      sentence: 'He is six feet tall.',
+      label: '实际数量',
+      segments: [
+        {
+          text: 'He is ',
+        },
+        {
+          text: 'six feet',
+          role: '度量短语',
+          note: '单位按实际数量用复数。',
+        },
+        {
+          text: ' tall.',
+        },
+      ],
+    },
+    {
+      sentence: 'We walked two miles.',
+      label: '实际数量',
+      segments: [
+        {
+          text: 'We walked ',
+        },
+        {
+          text: 'two miles',
+          role: '度量短语',
+          note: '单位按实际数量用复数。',
+        },
+        {
+          text: '.',
+        },
+      ],
+    },
+    {
+      sentence: 'It is a two-mile walk.',
+      label: '前置复合修饰语',
+      analysis: ['单位 mile 用单数。'],
+      segments: [
+        {
+          text: 'It is a ',
+        },
+        {
+          text: 'two-mile',
+          role: '修饰语',
+          note: '位于名词前，单位用单数。',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'walk',
+          role: '中心词',
+        },
+        {
+          text: '.',
+        },
+      ],
+    },
+    {
+      sentence: 'The room has an area of 20 square metres.',
+      label: '面积',
+      segments: [
+        {
+          text: 'The room has an area of ',
+        },
+        {
+          text: '20 square metres',
+          role: '度量短语',
+        },
+        {
+          text: '.',
+        },
+      ],
+    },
+    {
+      sentence: 'The tank holds five cubic metres of water.',
+      label: '容积',
+      analysis: ['水箱能装 5 立方米的水。'],
+      segments: [
+        {
+          text: 'The tank holds ',
+        },
+        {
+          text: 'five cubic metres of water',
+          role: '宾语',
+          note: '度量结构中心为 metres。',
+        },
+        {
+          text: '.',
+        },
+      ],
+    },
+  ]}
+/>
 
 ### 尺寸与换算
 
-- **长度**：The river is **1000 metres long**. / The river is **1000 metres in length**. 均表示河长 1000 米。
+- **长度**：数量后接 long，或用 in length。
 - **宽度与高度**：对应 wide/width、high/height；人的身高用 tall。
-- **两个维度**：The room is **20 by 35 metres**. 两边为 20 米、35 米，面积为 700 平方米。
-- **三个维度**：The box is **8 by 5 by 6 centimetres**. 三个尺寸分别为 8 厘米、5 厘米、6 厘米。
+- **多个维度**：用 by 依次连接各个尺寸。
+
+<EnglishExamples
+  title="长度与多个维度"
+  items={[
+    {
+      label: '数量 + long',
+      sentence: 'The river is 1000 metres long.',
+      translation: '这条河长 1000 米。',
+      analysis: ['表示河长 1000 米。'],
+      segments: [
+        {
+          text: 'The river is ',
+        },
+        {
+          text: '1000 metres long',
+          role: '表语',
+          note: '数量加长度形容词。',
+        },
+        {
+          text: '.',
+        },
+      ],
+    },
+    {
+      label: '数量 + in length',
+      sentence: 'The river is 1000 metres in length.',
+      translation: '这条河长 1000 米。',
+      analysis: ['表示河长 1000 米。'],
+      segments: [
+        {
+          text: 'The river is ',
+        },
+        {
+          text: '1000 metres in length',
+          role: '长度表达',
+        },
+        {
+          text: '.',
+        },
+      ],
+    },
+    {
+      label: '2 个维度',
+      sentence: 'The room is 20 by 35 metres.',
+      translation: '这个房间的尺寸是 20 米乘 35 米。',
+      analysis: ['边长分别为 20 米和 35 米，面积为 700 平方米。'],
+      segments: [
+        {
+          text: 'The room is ',
+        },
+        {
+          text: '20 by 35 metres',
+          role: '尺寸表达',
+          note: 'by 连接 2 个维度。',
+        },
+        {
+          text: '.',
+        },
+      ],
+    },
+    {
+      label: '3 个维度',
+      sentence: 'The box is 8 by 5 by 6 centimetres.',
+      translation: '这个箱子的尺寸是 8 厘米乘 5 厘米乘 6 厘米。',
+      analysis: ['3 个尺寸分别为 8 厘米、5 厘米、6 厘米。'],
+      segments: [
+        {
+          text: 'The box is ',
+        },
+        {
+          text: '8 by 5 by 6 centimetres',
+          role: '尺寸表达',
+          note: 'by 依次连接 3 个维度。',
+        },
+        {
+          text: '.',
+        },
+      ],
+    },
+  ]}
+/>
+
 - **公制换算**：1 centimetre = 10 millimetres；1 metre = 100 centimetres；1 kilometre = 1000 metres。
 - **英制换算**：1 inch = 2.54 centimetres；1 foot = 12 inches；1 yard = 3 feet；1 mile 约为 1.61 kilometres。
 
@@ -284,4 +955,4 @@ Ten dollars **was** missing. 表少了 10 美元这一金额，不能仅凭 doll
 - $5!=120$：Five factorial equals one hundred (and) twenty.
 - $22\bmod 7=1$：Twenty-two mod seven is one.
 
-公式作为一个运算关系来陈述时，可用 is/equals；equals 本身是动词，不写 is equals，也不由式子中出现两个数就改用 are。
+公式作为一个运算关系来陈述时，可用 is/equals；equals 本身是动词，不写 is equals，也不因式子中有 2 个数就改用 are。

@@ -18,7 +18,7 @@ summary: 倒装按构式判断，先区分疑问、否定前置、only 状语、
 - **部分倒装**：仅第一个助动词、情态动词或作谓语的 be 放到主语前。
   - She has never seen it. → **Never has she seen it**.
 
-谓语仅有系动词 be 时，两类的表面语序可能重合，不同教材的归类也会有差别。判断具体句子时，应辨认主语、前置成分与动词位置，不能仅按「搬动了几个单词」分类。
+谓语仅有系动词 be 时，2 类的表面语序可能重合，不同教材的归类也会有差别。判断具体句子时，应辨认主语、前置成分与动词位置，不能仅按「搬动了几个单词」分类。
 
 不是所有句首成分前置都要倒装。Yesterday I met Tom.（昨天我遇见了 Tom。）的时间状语在句首，主语仍在谓语前。
 
@@ -26,13 +26,134 @@ summary: 倒装按构式判断，先区分疑问、否定前置、only 状语、
 
 部分倒装也称 **主语与助动词倒装**（Subject–Auxiliary Inversion）。先确认后文列出的触发构式成立，再按已有动词选择操作；不是任意前置成分都启动这一步。
 
-1. **已有助动词或情态动词**：仅提前第一个，其余动词保持原位。
-   - She **has never seen** it. → Never **has she seen** it.
-   - I **have never been** so tired. → Never **have I been** so tired.
-2. **没有上述助动词，但谓语是 be**：提前 be。
-   - He **is rarely** late. → Rarely **is he** late.
+1. **已有助动词或情态动词**：仅提前第一个，其余动词保持原位；
+2. **没有上述助动词，但谓语是 be**：提前 be；
 3. **一般现在或一般过去的实义动词**：按时态和主语补 do、does 或 did，再把实义动词恢复原形。
-   - She **seldom complains**. → Seldom **does she complain**.
+
+<EnglishExamples
+  title="部分倒装的构造"
+  items={[
+    {
+      label: '已有 has',
+      sentence: 'Never has she seen it.',
+      analysis: ['原句：She has never seen it. 仅提前第一个助动词 has。'],
+      segments: [
+        {
+          text: 'Never',
+          role: '前置否定状语',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'has',
+          role: '前置助动词',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'she',
+          role: '主语',
+        },
+        {
+          text: ' seen it.',
+        },
+      ],
+    },
+    {
+      label: '已有 have been',
+      sentence: 'Never have I been so tired.',
+      analysis: ['原句：I have never been so tired. 仅提前 have，been 保持原位。'],
+      segments: [
+        {
+          text: 'Never',
+          role: '前置否定状语',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'have',
+          role: '前置助动词',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'I',
+          role: '主语',
+        },
+        {
+          text: ' been so tired.',
+        },
+      ],
+    },
+    {
+      label: '谓语是 be',
+      sentence: 'Rarely is he late.',
+      analysis: ['原句：He is rarely late. 提前限定 be。'],
+      segments: [
+        {
+          text: 'Rarely',
+          role: '前置近否定状语',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'is',
+          role: '前置限定动词',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'he',
+          role: '主语',
+        },
+        {
+          text: ' late.',
+        },
+      ],
+    },
+    {
+      label: '补 does',
+      sentence: 'Seldom does she complain.',
+      analysis: ['原句：She seldom complains. 补 does 后，complains 恢复为原形 complain。'],
+      segments: [
+        {
+          text: 'Seldom',
+          role: '前置近否定状语',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'does',
+          role: '前置助动词',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'she',
+          role: '主语',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'complain',
+          role: '动词原形',
+        },
+        {
+          text: '.',
+        },
+      ],
+    },
+  ]}
+/>
 
 助动词链中的后续部分保持原位。不能把 have been 全部搬到主语前，也不能在 did 后继续用过去式。
 
@@ -40,21 +161,143 @@ summary: 倒装按构式判断，先区分疑问、否定前置、only 状语、
 
 ### 疑问句
 
-普通直接问句按疑问成分的作用分支：
+疑问结构先区分嵌入与独立问句；独立问句再按疑问成分的作用判断。
 
-1. **询问整个命题是否成立**：构造一般疑问句，使用主语与助动词倒装；
-2. **疑问成分不是主语**：把疑问成分前置，再构造相应的一般疑问语序；
-3. **疑问成分本身是主语**：它直接占据主语位置，不作这种倒装；
-4. **疑问内容嵌入另一分句**：嵌入部分用陈述语序，不把直接问句的倒装带入。
+1. **嵌入疑问**：嵌入部分用陈述语序，不照搬直接问句的倒装；
+2. **独立的一般疑问句**：询问整个命题是否成立，使用主语与助动词倒装；
+3. **独立的非主语特殊疑问句**：采用疑问词前置时，先前置疑问成分，再构造相应的一般疑问语序；
+4. **独立的主语疑问句**：疑问成分直接占据主语位置，不作这种倒装。
 
-- **Have you** finished the work?（你完成工作了吗？）
-- Where **does she live**?（她住在哪里？）
-- Who **did you meet**?（你遇见了谁？who 是宾语。）
-
-后两种分支分别对应：
-
-- **主语疑问句**：Who called you?（谁给你打了电话？who 本身是主语。）
-- **间接疑问句**：I wonder where she lives.（我想知道她住在哪里。）嵌入部分用陈述语序。
+<EnglishExamples
+  title="疑问成分与倒装条件"
+  items={[
+    {
+      label: '嵌入疑问',
+      sentence: 'I wonder where she lives.',
+      translation: '我想知道她住在哪里。',
+      analysis: ['嵌入部分用陈述语序。'],
+      segments: [
+        {
+          text: 'I wonder where ',
+        },
+        {
+          text: 'she',
+          role: '嵌入分句主语',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'lives',
+          role: '嵌入分句谓语动词',
+        },
+        {
+          text: '.',
+        },
+      ],
+    },
+    {
+      label: '独立一般疑问',
+      sentence: 'Have you finished the work?',
+      translation: '你完成工作了吗？',
+      segments: [
+        {
+          text: 'Have',
+          role: '前置助动词',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'you',
+          role: '主语',
+        },
+        {
+          text: ' finished the work?',
+        },
+      ],
+    },
+    {
+      label: '非主语特殊疑问',
+      sentence: 'Where does she live?',
+      translation: '她住在哪里？',
+      segments: [
+        {
+          text: 'Where',
+          role: '疑问状语',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'does',
+          role: '前置助动词',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'she',
+          role: '主语',
+        },
+        {
+          text: ' live?',
+        },
+      ],
+    },
+    {
+      label: '宾语特殊疑问',
+      sentence: 'Who did you meet?',
+      translation: '你遇见了谁？',
+      analysis: ['who 是宾语。'],
+      segments: [
+        {
+          text: 'Who',
+          role: '疑问宾语',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'did',
+          role: '前置助动词',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'you',
+          role: '主语',
+        },
+        {
+          text: ' meet?',
+        },
+      ],
+    },
+    {
+      label: '主语特殊疑问',
+      sentence: 'Who called you?',
+      translation: '谁给你打了电话？',
+      analysis: ['who 本身是主语，不作主语与助动词倒装。'],
+      segments: [
+        {
+          text: 'Who',
+          role: '主语',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'called',
+          role: '谓语动词',
+        },
+        {
+          text: ' you?',
+        },
+      ],
+    },
+  ]}
+/>
 
 ### 否定成分前置
 
@@ -67,39 +310,157 @@ summary: 倒装按构式判断，先区分疑问、否定前置、only 状语、
 常见前置成分如下。
 
 - **否定或近否定频率**：never、rarely、seldom。
-  - **Never have I seen** such a sight.（我从未见过这样的景象。）
-- **表示「几乎不知道」的 little**：
-  - **Little did he know** what would happen.（他几乎不知道将要发生什么。）
+- **表示「几乎不知道」的 little**。
 - **否定时间或方式状语**：at no time、in no way。
-  - **At no time did we agree** to this.（我们从未同意过此事。）
 - **否定条件或理由状语**：on no account、under no circumstances。
-  - **Under no circumstances should you open** this door.（任何情况下你都不应打开这扇门。）
 - **not only 前置并作用于谓语内容**：前一分句倒装，but 后的分句保持原顺序。
-  - **Not only did she apologise**, but she also offered to help.（她不仅道歉，还提出帮忙。）
+
+<EnglishExamples
+  title="否定前置的常见触发成分"
+  items={[
+    {
+      label: '否定频率',
+      sentence: 'Never have I seen such a sight.',
+      translation: '我从未见过这样的景象。',
+    },
+    {
+      label: 'little',
+      sentence: 'Little did he know what would happen.',
+      translation: '他几乎不知道将要发生什么。',
+    },
+    {
+      label: '否定时间',
+      sentence: 'At no time did we agree to this.',
+      translation: '我们从未同意过此事。',
+    },
+    {
+      label: '否定条件',
+      sentence: 'Under no circumstances should you open this door.',
+      translation: '任何情况下你都不应打开这扇门。',
+    },
+    {
+      label: 'not only',
+      sentence: 'Not only did she apologise, but she also offered to help.',
+      translation: '她不仅道歉，还提出帮忙。',
+      analysis: ['前一分句倒装，but 后的分句保持原顺序。'],
+    },
+  ]}
+/>
 
 否定宾语前置也可触发部分倒装：I did not say **a single word**. → **Not a single word did I say**.（我一句话也没说。）这里 a single word 是 say 的宾语，不是状语。
 
 规则针对 **否定成分的句法作用、位置与范围**，不是看到否定词就倒装。
 
-- I **have never seen** it.：never 不在句首，不触发这种倒装。
-- **Nobody knows** the answer.：nobody 是主语，不另加 does。
-- **Not only Tom but also Lily came**.：not only...but also... 连接主语，不倒装。
+<EnglishExamples
+  title="否定词不触发倒装的边界"
+  items={[
+    {
+      label: '否定状语未前置',
+      sentence: 'I have never seen it.',
+      analysis: ['never 不在句首，不触发这种倒装。'],
+      segments: [
+        {
+          text: 'I',
+          role: '主语',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'have never seen',
+          role: '谓语',
+        },
+        {
+          text: ' it.',
+        },
+      ],
+    },
+    {
+      label: '否定主语',
+      sentence: 'Nobody knows the answer.',
+      analysis: ['nobody 是主语，不另加 does。'],
+      segments: [
+        {
+          text: 'Nobody',
+          role: '主语',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'knows',
+          role: '谓语动词',
+        },
+        {
+          text: ' the answer.',
+        },
+      ],
+    },
+    {
+      label: '并列主语',
+      sentence: 'Not only Tom but also Lily came.',
+      analysis: ['not only...but also... 连接主语，不倒装。'],
+      segments: [
+        {
+          text: 'Not only Tom but also Lily',
+          role: '主语',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'came',
+          role: '谓语动词',
+        },
+        {
+          text: '.',
+        },
+      ],
+    },
+  ]}
+/>
 
 ### not until 与先后结构
 
 **Not until + 时间短语或从句** 前置时，倒装发生在 **主句**，until 从句内部保持陈述语序。
 
-- We did not begin **until he arrived**.
-- **Not until he arrived did we begin**.（直到他到场，我们才开始。）
+<EnglishExamples
+  title="not until 前置的作用范围"
+  items={[
+    {
+      label: '原句',
+      sentence: 'We did not begin until he arrived.',
+    },
+    {
+      label: '主句倒装',
+      sentence: 'Not until he arrived did we begin.',
+      translation: '直到他到场，我们才开始。',
+    },
+  ]}
+/>
 
 不能写成 Not until did he arrive we began.
 
 表示「刚……就……」时，常见以下搭配：
 
-- **hardly/scarcely...when...**：
-  - **Hardly had I sat down when** the phone rang.（我刚坐下，电话就响了。）
-- **no sooner...than...**：
-  - **No sooner had I arrived than** it began to rain.（我一到就下起了雨。）
+- **hardly/scarcely...when...**。
+- **no sooner...than...**。
+
+<EnglishExamples
+  title="先后结构的固定搭配"
+  items={[
+    {
+      label: 'hardly/scarcely...when',
+      sentence: 'Hardly had I sat down when the phone rang.',
+      translation: '我刚坐下，电话就响了。',
+    },
+    {
+      label: 'no sooner...than',
+      sentence: 'No sooner had I arrived than it began to rain.',
+      translation: '我一到就下起了雨。',
+    },
+  ]}
+/>
 
 过去叙事中，先发生的事件常用过去完成时，后发生的事件常用一般过去时。不要把 when 与 than 对换，也不要连后一个分句一起倒装。
 
@@ -107,50 +468,279 @@ summary: 倒装按构式判断，先区分疑问、否定前置、only 状语、
 
 在 **only + 状语前置** 构式中，先识别 only 限定的对象。若它限定时间、方式或条件状语，把整个状语前置后，对主句作部分倒装；若它限定主语，则不适用。
 
-- **Only then did I realise** my mistake.（直到那时，我才意识到自己的错误。）
-- **Only by checking the data can we find** the cause.（只有检查数据，我们才能找到原因。）
-- **Only when he arrived did the meeting begin**.（直到他到场，会议才开始。）
+<EnglishExamples
+  title="only 前置的状语类型"
+  items={[
+    {
+      label: '时间',
+      sentence: 'Only then did I realise my mistake.',
+      translation: '直到那时，我才意识到自己的错误。',
+    },
+    {
+      label: '方式',
+      sentence: 'Only by checking the data can we find the cause.',
+      translation: '只有检查数据，我们才能找到原因。',
+    },
+    {
+      label: '时间从句',
+      sentence: 'Only when he arrived did the meeting begin.',
+      translation: '直到他到场，会议才开始。',
+    },
+  ]}
+/>
 
 only when 后的从句仍用 he arrived，倒装的是主句 did the meeting begin。
 
-- **only 修饰句首状语**：前置该状语后，主句部分倒装。
-  - **Only then did Tom understand**.
-- **only 修饰主语**：主语仍在谓语前，不因此倒装。
-  - **Only Tom understood**.
-- **only 状语留在句中或句末**：不触发句首状语倒装。
-  - **Tom understood only then**.
+<EnglishExamples
+  title="only 的位置与作用范围"
+  items={[
+    {
+      label: '状语前置',
+      sentence: 'Only then did Tom understand.',
+      analysis: ['only 修饰句首状语，前置该状语后，主句部分倒装。'],
+      segments: [
+        {
+          text: 'Only then',
+          role: '前置状语',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'did',
+          role: '前置助动词',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'Tom',
+          role: '主语',
+        },
+        {
+          text: ' understand.',
+        },
+      ],
+    },
+    {
+      label: '限定主语',
+      sentence: 'Only Tom understood.',
+      analysis: ['only 修饰主语，主语仍在谓语前，不因此倒装。'],
+      segments: [
+        {
+          text: 'Only Tom',
+          role: '主语',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'understood',
+          role: '谓语动词',
+        },
+        {
+          text: '.',
+        },
+      ],
+    },
+    {
+      label: '状语未前置',
+      sentence: 'Tom understood only then.',
+      analysis: ['only 状语留在句中或句末，不触发句首状语倒装。'],
+      segments: [
+        {
+          text: 'Tom',
+          role: '主语',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'understood',
+          role: '谓语动词',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'only then',
+          role: '状语',
+        },
+        {
+          text: '.',
+        },
+      ],
+    },
+  ]}
+/>
 
 ### so、neither 与 nor
 
 承接前句表示另一个人或事物「也一样」时，用 **so + 助动词 + 主语**；否定承接用 neither 或 nor。
 
-- Lily likes music. **So do I**.（Lily 喜欢音乐，我也喜欢。）
-- He is tired. **So am I**.（他累了，我也累了。）
-- He cannot swim. **Neither can I**.（他不会游泳，我也不会。）
+- **肯定承接** 用 so，**否定承接** 用 neither 或 nor。
+- **完成形式** 保留相应助动词。
+- **句末 too/either** 也可表示相应承接，不要求倒装。
+- **so + 主语 + 助动词** 不倒装，表示认同原判断，常译为「的确如此」。
 
-nor 可替换这种否定承接中的 neither：He cannot swim. **Nor can I**. 完成形式则保留相应助动词：She **has finished**. **So have I**.（她完成了，我也完成了。）
+助动词需匹配前句的时态、情态与新主语，不能把所有情况都写成 so do I。不能把表示否定承接的 neither 句式改成 Neither I can。
 
-也可不倒装而用句末 too/either：I like music **too**.（我也喜欢音乐。）/ I cannot swim **either**.（我也不会游泳。）不能把表示否定承接的 neither 句式改成 Neither I can。
-
-助动词需匹配前句的时态、情态与新主语，不能把所有情况都写成 so do I。
-
-**so + 主语 + 助动词** 不倒装，表示认同原判断，常译为「的确如此」。
-
-- "He is tired." "**So he is**."（「他累了。」「确实如此。」）
+<EnglishExamples
+  title="肯定、否定承接与认同"
+  items={[
+    {
+      label: '一般现在时承接',
+      sentence: 'Lily likes music. So do I.',
+      translation: 'Lily 喜欢音乐，我也喜欢。',
+    },
+    {
+      label: 'be 承接',
+      sentence: 'He is tired. So am I.',
+      translation: '他累了，我也累了。',
+    },
+    {
+      label: 'neither 否定承接',
+      sentence: 'He cannot swim. Neither can I.',
+      translation: '他不会游泳，我也不会。',
+    },
+    {
+      label: 'nor 否定承接',
+      sentence: 'He cannot swim. Nor can I.',
+      analysis: ['nor 可替换这种否定承接中的 neither。'],
+    },
+    {
+      label: '完成形式承接',
+      sentence: 'She has finished. So have I.',
+      translation: '她完成了，我也完成了。',
+      analysis: ['保留相应助动词。'],
+    },
+    {
+      label: '句末 too',
+      sentence: 'I like music too.',
+      translation: '我也喜欢音乐。',
+      analysis: ['也可不倒装而用句末 too。'],
+    },
+    {
+      label: '句末 either',
+      sentence: 'I cannot swim either.',
+      translation: '我也不会游泳。',
+      analysis: ['也可不倒装而用句末 either。'],
+    },
+    {
+      label: '认同原判断',
+      sentence: '"He is tired." "So he is."',
+      translation: '「他累了。」「确实如此。」',
+      analysis: ['so + 主语 + 助动词不倒装，表示认同原判断。'],
+    },
+  ]}
+/>
 
 ### 省略 if 的条件句
 
 省 if 的条件倒装用于下列正式条件结构。先确认已有 **were、完成助动词 had 或 should**，再省 if 并提前相应动词；不是先删除 if，再任意补一个助动词。详见 [动词语气](/docs/note/english/grammar/verbs/verb-moods)。
 
 - **were 条件结构**：删除 if，把 were 放到主语前，其余内容保持顺序。
-  - If I **were** you, ... → **Were I you**, I would wait.
-  - If she **were to return**, ... → **Were she to return**, we would welcome her.
 - **had + 过去分词条件结构**：删除 if，把完成助动词 had 放到主语前。
-  - If I **had known**, ... → **Had I known**, I would have helped.
 - **should + 原形条件结构**：删除 if，把 should 放到主语前。
-  - If you **should need** help, ... → **Should you need help**, please call me.
 
-这不是「任意条件句都能删 if 再倒装」。通常不能把 If he comes, ... 改成 Comes he, ... 或 Does he come, ...
+<EnglishExamples
+  title="省略 if 的条件结构"
+  items={[
+    {
+      label: 'were 条件',
+      sentence: 'Were I you, I would wait.',
+      analysis: [
+        '对应原句：If I were you, I would wait.',
+        '删除 if，把 were 放到主语前，其余内容保持顺序。',
+      ],
+      segments: [
+        {
+          text: 'Were',
+          role: '前置限定动词',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'I',
+          role: '条件分句主语',
+        },
+        {
+          text: ' you, I would wait.',
+        },
+      ],
+    },
+    {
+      label: 'were to 条件',
+      sentence: 'Were she to return, we would welcome her.',
+      analysis: [
+        '对应原句：If she were to return, we would welcome her.',
+        '只提前 were，to return 保持原位。',
+      ],
+      segments: [
+        {
+          text: 'Were',
+          role: '前置限定动词',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'she',
+          role: '条件分句主语',
+        },
+        {
+          text: ' to return, we would welcome her.',
+        },
+      ],
+    },
+    {
+      label: 'had 条件',
+      sentence: 'Had I known, I would have helped.',
+      analysis: ['对应原句：If I had known, I would have helped.', '提前完成助动词 had。'],
+      segments: [
+        {
+          text: 'Had',
+          role: '前置助动词',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'I',
+          role: '条件分句主语',
+        },
+        {
+          text: ' known, I would have helped.',
+        },
+      ],
+    },
+    {
+      label: 'should 条件',
+      sentence: 'Should you need help, please call me.',
+      analysis: ['对应原句：If you should need help, please call me.', '提前 should。'],
+      segments: [
+        {
+          text: 'Should',
+          role: '前置情态动词',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'you',
+          role: '条件分句主语',
+        },
+        {
+          text: ' need help, please call me.',
+        },
+      ],
+    },
+  ]}
+/>
+
+这不是「任意条件句都能删 if 再倒装」。通常不能把 If he comes, ... 改成 Comes he, ... 或 Does he
+come, ...
 
 否定词通常放在主语后：**Had I not checked**, I would have missed the error.（若没有检查，我就会漏掉这个错误。）
 
@@ -158,8 +748,21 @@ nor 可替换这种否定承接中的 neither：He cannot swim. **Nor can I**. �
 
 正式表达中，**so + 形容词或副词** 提到句首，可伴随倒装。
 
-- **So difficult was the task that** nobody finished it.（任务太难，没有人完成。）
-- **So carefully did she check the figures that** she found every error.（她检查数字十分仔细，找出了所有错误。）
+<EnglishExamples
+  title="程度成分前置"
+  items={[
+    {
+      label: '形容词程度',
+      sentence: 'So difficult was the task that nobody finished it.',
+      translation: '任务太难，没有人完成。',
+    },
+    {
+      label: '副词程度',
+      sentence: 'So carefully did she check the figures that she found every error.',
+      translation: '她检查数字十分仔细，找出了所有错误。',
+    },
+  ]}
+/>
 
 **May + 主语 + 动词原形** 可表达祝愿：**May you succeed!**（愿你成功！）这不是一般疑问句。
 
@@ -169,20 +772,146 @@ nor 可替换这种否定承接中的 neither：He cannot swim. **Nor can I**. �
 
 地点、方向成分前置时，部分不及物谓语可放在名词主语前。常见动词包括 be、come、go、stand、sit、lie 等。这种结构常先交代场景，再引出人物或事物。
 
-- **Here comes the bus**.（公交车来了。）
-- **On the hill stood an old castle**.（山丘上矗立着一座古堡。）
-- **Out rushed the children**.（孩子们冲了出去。）
+<EnglishExamples
+  title="地点、方向与阶段引入"
+  items={[
+    {
+      label: 'here',
+      sentence: 'Here comes the bus.',
+      translation: '公交车来了。',
+    },
+    {
+      label: '地点',
+      sentence: 'On the hill stood an old castle.',
+      translation: '山丘上矗立着一座古堡。',
+    },
+    {
+      label: '方向',
+      sentence: 'Out rushed the children.',
+      translation: '孩子们冲了出去。',
+    },
+    {
+      label: 'now',
+      sentence: 'Now comes your turn.',
+      translation: '现在轮到你了。',
+    },
+    {
+      label: 'then',
+      sentence: 'Then came the difficult part.',
+      translation: '然后到了困难的部分。',
+    },
+  ]}
+/>
 
-now、then 等时间副词在引出新阶段或新事件时，也可出现类似语序：**Now comes your turn**.（现在轮到你了。）/ **Then came the difficult part**.（然后到了困难的部分。）这不等于所有时间状语前置都要倒装。
-
+now、then 等时间副词在引出新阶段或新事件时，也可出现类似语序。这不等于所有时间状语前置都要倒装。
 选用这类完全倒装，需同时满足场景引入、适合后置主语的谓语结构及名词主语等条件。**地点前置本身不决定倒装**：On the hill, we had a picnic.（我们在山丘上野餐。）仍用正常语序。
 
 此类地点或方向倒装通常要求主语为名词短语；主语为人称代词时一般保持正常语序。
 
 - **主语是名词短语，且采用场景引入结构**：可把主语放在谓语后。
-  - Here comes **Tom**. / Away went **the children**.
 - **主语是普通人称代词**：这类 here/away 结构保留主语在动词前。
-  - Here **he comes**. / Away **they went**.
+
+<EnglishExamples
+  title="地点或方向结构的主语限制"
+  items={[
+    {
+      label: '名词主语',
+      sentence: 'Here comes Tom.',
+      analysis: ['名词短语主语在场景引入结构中可后置。'],
+      segments: [
+        {
+          text: 'Here ',
+        },
+        {
+          text: 'comes',
+          role: '谓语动词',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'Tom',
+          role: '后置主语',
+        },
+        {
+          text: '.',
+        },
+      ],
+    },
+    {
+      label: '名词主语',
+      sentence: 'Away went the children.',
+      analysis: ['名词短语主语在场景引入结构中可后置。'],
+      segments: [
+        {
+          text: 'Away ',
+        },
+        {
+          text: 'went',
+          role: '谓语动词',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'the children',
+          role: '后置主语',
+        },
+        {
+          text: '.',
+        },
+      ],
+    },
+    {
+      label: '人称代词主语',
+      sentence: 'Here he comes.',
+      analysis: ['普通人称代词在这类 here 结构中保持在动词前。'],
+      segments: [
+        {
+          text: 'Here ',
+        },
+        {
+          text: 'he',
+          role: '主语',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'comes',
+          role: '谓语动词',
+        },
+        {
+          text: '.',
+        },
+      ],
+    },
+    {
+      label: '人称代词主语',
+      sentence: 'Away they went.',
+      analysis: ['普通人称代词在这类 away 结构中保持在动词前。'],
+      segments: [
+        {
+          text: 'Away ',
+        },
+        {
+          text: 'they',
+          role: '主语',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'went',
+          role: '谓语动词',
+        },
+        {
+          text: '.',
+        },
+      ],
+    },
+  ]}
+/>
 
 代词限制针对这类完全倒装，不适用于 Never have **I** seen it. 等部分倒装。
 
@@ -190,19 +919,58 @@ now、then 等时间副词在引出新阶段或新事件时，也可出现类似
 
 表语前置有时伴随系动词与主语位置变化，常见于书面表达。
 
-- **Gone are the days** when we had no clean water.（没有洁净用水的日子已经过去了。）
-- **Present at the meeting were three teachers**.（出席会议的有 3 位老师。）
+<EnglishExamples
+  title="表语前置与后置主语"
+  items={[
+    {
+      label: '过去分词表语',
+      sentence: 'Gone are the days when we had no clean water.',
+      translation: '没有洁净用水的日子已经过去了。',
+    },
+    {
+      label: '复数主语',
+      sentence: 'Present at the meeting were three teachers.',
+      translation: '出席会议的有 3 位老师。',
+    },
+    {
+      label: 'such 表语',
+      sentence: 'Such were his tricks.',
+      translation: '这就是他的把戏。',
+    },
+    {
+      label: 'such 与结果',
+      sentence: 'Such was his excitement that he could not speak.',
+      translation: '他激动得说不出话。',
+    },
+    {
+      label: '单数主语',
+      sentence: 'Present at the meeting was one teacher.',
+      analysis: ['谓语的数取决于后面的主语，而不是前置表语，因此用 was。'],
+    },
+  ]}
+/>
 
-such 作前置表语也有类似结构：**Such were his tricks**.（这就是他的把戏。）还可接结果从句：**Such was his excitement that** he could not speak.（他激动得说不出话。）不必把所有 such 加名词结构都机械搬到句首。
-
-谓语的数取决于后面的主语，而不是前置表语。Present at the meeting **was one teacher**. 中用 was。
+such 作前置表语也有类似结构，还可接结果从句。不必把所有 such 加名词结构都机械搬到句首。谓语的数取决于后面的主语，而不是前置表语。
 
 ### 引述语倒装
 
 直接引语在前时，后面的引述语有时把名词主语放在 say、ask 等动词后。
 
-- "I am ready," **said Lily**.（「我准备好了。」Lily 说。）
-- "Are you sure?" **asked the teacher**.（「你确定吗？」老师问道。）
+<EnglishExamples
+  title="引述语倒装的名词主语"
+  items={[
+    {
+      label: 'say',
+      sentence: '"I am ready," said Lily.',
+      translation: '「我准备好了。」Lily 说。',
+    },
+    {
+      label: 'ask',
+      sentence: '"Are you sure?" asked the teacher.',
+      translation: '「你确定吗？」老师问道。',
+    },
+  ]}
+/>
 
 这是引述结构的倒装，不要求谓语像地点倒装那样是不及物动词。主语为人称代词时，普通叙述通常用 **she said**，said she 带有文学或旧式色彩。标点见 [标点](/docs/note/english/grammar/sentences/punctuation)。
 
@@ -212,8 +980,21 @@ There is a book on the desk. 表示「桌上有一本书」，不等于 The book
 
 现代语法常把存在句中的 there 分析为 **形式主语**。它与表示「那里」的地点副词 there 不同，因此不宜把所有 there be 句都仅解释为普通完全倒装。
 
-- **There is a book** on the desk.：存在句。
-- I opened the door, and **there stood Tom**.：there 表示地点，后面出现地点倒装。
+<EnglishExamples
+  title="存在 there 与地点 there"
+  items={[
+    {
+      label: '存在句',
+      sentence: 'There is a book on the desk.',
+      analysis: ['存在句。'],
+    },
+    {
+      label: '地点倒装',
+      sentence: 'I opened the door, and there stood Tom.',
+      analysis: ['there 表示地点，后面出现地点倒装。'],
+    },
+  ]}
+/>
 
 ## 前置与倒装的边界
 
@@ -221,10 +1002,123 @@ There is a book on the desk. 表示「桌上有一本书」，不等于 The book
 
 学校语法常把下列结构归入让步倒装，但它实际是 **表语、状语或动词前置**，不等同于把助动词移到主语前。
 
-- **Tired as he was**, he kept working.（尽管很累，他仍在工作。）
-- **Child as he is**, he understands the problem.（尽管还是个孩子，他理解这个问题。）
-- **Hard as she tried**, she could not open the door.（尽管她努力尝试，还是打不开门。）
-- **Try as he might**, he could not open the door.（尽管他尽力尝试，还是打不开门。）
+<EnglishExamples
+  title="让步前置的成分类型"
+  items={[
+    {
+      label: '形容词前置',
+      sentence: 'Tired as he was, he kept working.',
+      translation: '尽管很累，他仍在工作。',
+      segments: [
+        {
+          text: 'Tired',
+          role: '前置表语',
+        },
+        {
+          text: ' as ',
+        },
+        {
+          text: 'he',
+          role: '从句主语',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'was',
+          role: '从句谓语动词',
+        },
+        {
+          text: ', he kept working.',
+        },
+      ],
+    },
+    {
+      label: '名词前置',
+      sentence: 'Child as he is, he understands the problem.',
+      translation: '尽管还是个孩子，他理解这个问题。',
+      segments: [
+        {
+          text: 'Child',
+          role: '前置表语',
+        },
+        {
+          text: ' as ',
+        },
+        {
+          text: 'he',
+          role: '从句主语',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'is',
+          role: '从句谓语动词',
+        },
+        {
+          text: ', he understands the problem.',
+        },
+      ],
+    },
+    {
+      label: '副词前置',
+      sentence: 'Hard as she tried, she could not open the door.',
+      translation: '尽管她努力尝试，还是打不开门。',
+      segments: [
+        {
+          text: 'Hard',
+          role: '前置状语',
+        },
+        {
+          text: ' as ',
+        },
+        {
+          text: 'she',
+          role: '从句主语',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'tried',
+          role: '从句谓语动词',
+        },
+        {
+          text: ', she could not open the door.',
+        },
+      ],
+    },
+    {
+      label: '动词前置',
+      sentence: 'Try as he might, he could not open the door.',
+      translation: '尽管他尽力尝试，还是打不开门。',
+      segments: [
+        {
+          text: 'Try',
+          role: '前置动词',
+        },
+        {
+          text: ' as ',
+        },
+        {
+          text: 'he',
+          role: '从句主语',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'might',
+          role: '从句情态动词',
+        },
+        {
+          text: ', he could not open the door.',
+        },
+      ],
+    },
+  ]}
+/>
 
 构造时保留主语与剩余谓语的顺序：Tired as **he was**，不能写 Tired as was he。
 
@@ -236,9 +1130,26 @@ There is a book on the desk. 表示「桌上有一本书」，不等于 The book
 
 有些教材还把下列结构称为形式倒装。它们的共同点是某些成分前置，**从句内部通常仍保持主语在助动词或谓语前**。
 
-- **what / how 感叹**：What a useful book **it is**! 保留 it is，不改为 is it。
-- **the + 比较级...the + 比较级...**：The more **you practise**, the more confident **you become**. 两个分句都不因比较成分前置而作助动词倒装。
-- **however 等引导让步**：However difficult **the task is**, we should try. 保留 the task is，不改为 is the task。
+<EnglishExamples
+  title="成分前置而不作助动词倒装"
+  items={[
+    {
+      label: 'what / how 感叹',
+      sentence: 'What a useful book it is!',
+      analysis: ['保留 it is，不改为 is it。'],
+    },
+    {
+      label: '关联比较',
+      sentence: 'The more you practise, the more confident you become.',
+      analysis: ['2 个分句都不因比较成分前置而作助动词倒装。'],
+    },
+    {
+      label: 'however 让步',
+      sentence: 'However difficult the task is, we should try.',
+      analysis: ['保留 the task is，不改为 is the task。'],
+    },
+  ]}
+/>
 
 as 让步还常用 **Much as I admire her, I disagree with her**.（尽管我很钦佩她，我仍与她意见不同。）这些形式不能与 Never have I... 的助动词前置机械归为同一条规则。
 
@@ -248,6 +1159,6 @@ often、well、many a time 等前置后，文学或修辞语境中偶有倒装�
 
 例如 **Many a time has he helped me**.（他多次帮助过我。）保留 has he helped 的助动词倒装；它是带修辞色彩的选择，不意味着所有句首频率状语都要求倒装。
 
-威廉·莎士比亚（William Shakespeare，1564–1616）的《十四行诗第 18 首》中，**And often is his gold complexion dimmed**. 也采用文学性的 is 前置。普通散文可写 And his gold complexion is often dimmed. 诗歌语序受节奏与修辞影响，不应据此推出新的强制倒装规则。
+威廉·莎士比亚（William Shakespeare，1564 – 1616）的《十四行诗第 18 首》中，**And often is his gold complexion dimmed**. 也采用文学性的 is 前置。普通散文可写 And his gold complexion is often dimmed. 诗歌语序受节奏与修辞影响，不应据此推出新的强制倒装规则。
 
 **It was Tom that called me** 是 [强调句](/docs/note/english/grammar/sentences/emphasis)，不是倒装。判断倒装应检查主语与动词的位置，而不能仅凭语气强烈。

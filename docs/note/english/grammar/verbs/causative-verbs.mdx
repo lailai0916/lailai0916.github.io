@@ -13,12 +13,29 @@ summary: 使役结构先按支配动词及当前义项选择补语，再判断�
 
 ## 简介
 
-**使役结构**（Causative Construction）表达促使、允许或安排某人做某事，也可以表达使某物处于某状态。具有这些意义的动词用法称为 **使役动词**（Causative Verb）。
+**使役结构**（Causative Construction）表达促使、允许或安排某人做某事，或使某物处于某状态。这些动词用法称为 **使役动词**（Causative Verb）。
 
 基本结构为 **主语 + 动词 + 宾语 + 宾语补足语**。补语可以说明宾语的动作、状态、身份或方向：
 
-- **动作**：I made **him leave**.（我让他离开了。）him 是 leave 的 **逻辑主语**，即离开的人。
-- **状态**：The news made **her happy**.（消息使她高兴。）happy 说明 her 的状态。
+补语可以说明宾语的动作或状态：
+
+<EnglishExamples
+  title="使役结构的宾语与补语"
+  items={[
+    {
+      sentence: 'I made him leave.',
+      label: '动作',
+      translation: '我让他离开了。',
+      analysis: ['him 是 leave 的逻辑主语，即离开的人。'],
+    },
+    {
+      sentence: 'The news made her happy.',
+      label: '状态',
+      translation: '消息使她高兴。',
+      analysis: ['happy 说明 her 的状态。'],
+    },
+  ]}
+/>
 
 同一个动词可以有不同用法：make a cake 表示做蛋糕，不是上述使役结构。
 
@@ -29,19 +46,101 @@ summary: 使役结构先按支配动词及当前义项选择补语，再判断�
 do 表示动词原形，done 表示过去分词。先确定支配动词及其义项，选择它许可的补语构式：
 
 - **make**：
-  - **make + 宾语 + do**，表示促使或迫使：The joke **made us laugh**.（笑话把我们逗笑了。）make 不必表示强迫。
-  - **词项受限的过去分词补语**：make oneself **heard/understood** 表示让别人听到或理解自己。She shouted to **make herself heard**.（她大声喊，好让别人听到。）不能推广成 make + 任意宾语 + 任意过去分词。
+  - **make + 宾语 + do**：表示促使或迫使，make 不必表示强迫。
+  - **词项受限的过去分词补语**：make oneself **heard/understood** 表示让别人听到或理解自己，不能推广成 make + 任意宾语 + 任意过去分词。
 - **let**：
-  - **let + 宾语 + do**，表示允许或让：**Let me try**.（让我试试。）let 不自带委婉语气。
-  - **裸不定式内部也可被动**：**Let it be known** that we disagree.（让大家知道我们不同意。）be known 是裸不定式中的被动结构，不是把主句 let 改成被动。
+  - **let + 宾语 + do**：表示允许或让，let 不自带委婉语气。
+  - **裸不定式内部也可被动**：不能把不定式中的被动等同于主句 let 的被动。
 - **have/get**：
   - **不定式补语**：have + 宾语 + do；get + 宾语 + to do。
-    - I'll **have the porter carry** the bags.（我会让门童搬包。）表示安排或叫某人做。
-    - I **got him to help**.（我让他帮了忙。）表示设法让或说服。
-  - **过去分词补语**：have/get + 宾语 + done。I **had my car repaired**.（我请人修了车。）car 是被修的对象。
-  - **-ing 补语**：have/get + 宾语 + doing。We **got the engine running**.（我们让发动机运转起来了。）表示促成过程开始或持续。
+  - **过去分词补语**：have/get + 宾语 + done。
+  - **-ing 补语**：have/get + 宾语 + doing。
 
-选定构式后，再判断宾语是补语所述动作的执行者、承受者，还是某种状态的主体。承受动作不只对应 have/get + done，还可能由许可被动不定式的构式表达。
+<EnglishExamples
+  title="make、let、have 与 get 的补语"
+  items={[
+    {
+      sentence: 'The joke made us laugh.',
+      label: 'make + 原形',
+      translation: '笑话把我们逗笑了。',
+      analysis: ['make 不必表示强迫。'],
+      segments: [
+        {
+          text: 'The joke',
+          role: '主语',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'made',
+          role: '谓语动词',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'us',
+          role: '宾语',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'laugh',
+          role: '宾语补足语',
+        },
+        {
+          text: '.',
+        },
+      ],
+    },
+    {
+      sentence: 'She shouted to make herself heard.',
+      label: '词项受限的过去分词',
+      translation: '她大声喊，好让别人听到。',
+      analysis: ['不能推广成 make + 任意宾语 + 任意过去分词。'],
+    },
+    {
+      sentence: 'Let me try.',
+      label: 'let + 原形',
+      translation: '让我试试。',
+      analysis: ['let 不自带委婉语气。'],
+    },
+    {
+      sentence: 'Let it be known that we disagree.',
+      label: '不定式内部被动',
+      translation: '让大家知道我们不同意。',
+      analysis: ['be known 是裸不定式中的被动结构，不是把主句 let 改成被动。'],
+    },
+    {
+      sentence: "I'll have the porter carry the bags.",
+      label: 'have + 原形',
+      translation: '我会让门童搬包。',
+      analysis: ['表示安排或叫某人做。'],
+    },
+    {
+      sentence: 'I got him to help.',
+      label: 'get + to do',
+      translation: '我让他帮了忙。',
+      analysis: ['表示设法让或说服。'],
+    },
+    {
+      sentence: 'I had my car repaired.',
+      label: '过去分词补语',
+      translation: '我请人修了车。',
+      analysis: ['car 是被修的对象。'],
+    },
+    {
+      sentence: 'We got the engine running.',
+      label: '-ing 补语',
+      translation: '我们让发动机运转起来了。',
+      analysis: ['表示促成过程开始或持续。'],
+    },
+  ]}
+/>
+
+选定构式后，再判断宾语是补语所述动作的执行者、承受者，还是某种状态的主体。承受动作不仅对应 have/get + done，还可能由许可被动不定式的构式表达。
 
 make him **do** 中的 do 是裸不定式，can **do** 也选择原形不定式。两者的上层结构不同：前者是带宾语的补足结构，后者属于情态动词链。
 
@@ -49,14 +148,161 @@ make him **do** 中的 do 是裸不定式，can **do** 也选择原形不定式�
 
 补语不是动词时，按它说明的内容分析：
 
-- **形容词说明状态**：The news **made her happy**.（消息使她高兴。）这里表因果，没有施加命令。
-- **名词说明身份**：They **made him captain**.（他们选他当队长。）
-- **方向或位置补语**：**Let me out!**（让我出去！）out 说明 me 所要到达的方向。传统语法称这里的 out 为副词，部分现代分析归为不带宾语的介词。
+- **形容词补语**：说明状态。
+- **名词补语**：说明身份。
+- **方向或位置补语**：说明宾语所要到达的方向或位置。
+
+<EnglishExamples
+  title="非动词补语的意义"
+  items={[
+    {
+      sentence: 'The news made her happy.',
+      label: '形容词',
+      translation: '消息使她高兴。',
+      analysis: ['这里表因果，没有施加命令。'],
+    },
+    {
+      sentence: 'They made him captain.',
+      label: '名词',
+      translation: '他们选他当队长。',
+      segments: [
+        {
+          text: 'They',
+          role: '主语',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'made',
+          role: '谓语动词',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'him',
+          role: '宾语',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'captain',
+          role: '宾语补足语',
+        },
+        {
+          text: '.',
+        },
+      ],
+    },
+    {
+      sentence: 'Let me out!',
+      label: '方向',
+      translation: '让我出去！',
+      analysis: [
+        'out 说明 me 所要到达的方向。',
+        '传统语法称这里的 out 为副词，部分现代分析归为不带宾语的介词。',
+      ],
+    },
+  ]}
+/>
 
 have/get 的主动动作补语与过去分词补语须区分：
 
-- I **had the mechanic repair the car**.（我让修理工修车。）mechanic 执行 repair。
-- I **had the car repaired**.（我请人修了车。）car 承受 repair，主句的 had 仍是主动形式。
+<EnglishExamples
+  title="使役宾语的动作关系"
+  items={[
+    {
+      sentence: 'I had the mechanic repair the car.',
+      translation: '我让修理工修车。',
+      analysis: ['mechanic 执行 repair。'],
+      segments: [
+        {
+          text: 'I',
+          role: '主语',
+          note: '安排事件的人。',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'had',
+          role: '使役动词',
+          note: '主句采用主动形式。',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'the mechanic',
+          role: '宾语',
+          note: 'repair 的逻辑主语。',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'repair',
+          role: '补语动词',
+          note: '裸不定式；修理工执行修理。',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'the car',
+          role: '宾语',
+          note: 'repair 的宾语。',
+        },
+        {
+          text: '.',
+        },
+      ],
+      label: '宾语执行动作',
+    },
+    {
+      sentence: 'I had the car repaired.',
+      translation: '我请人修了车。',
+      analysis: ['car 承受 repair，主句的 had 仍是主动形式。'],
+      segments: [
+        {
+          text: 'I',
+          role: '主语',
+          note: '安排事件的人。',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'had',
+          role: '使役动词',
+          note: '主句仍为主动形式。',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'the car',
+          role: '宾语',
+          note: 'repaired 描述的对象。',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'repaired',
+          role: '补足语',
+          note: '过去分词，car 承受修理。',
+        },
+        {
+          text: '.',
+        },
+      ],
+      label: '宾语承受动作',
+    },
+  ]}
+/>
 
 **补语中存在被动关系，不等于整个主句是被动语态。**
 
@@ -67,27 +313,153 @@ have/get 的主动动作补语与过去分词补语须区分：
 转换或转述时，按原动词分支处理：
 
 - **make + 宾语 + 原形不定式**：作对应被动转换时，用 **be made to do**，保留动作，补上 to。
-  - They **made us wait**.（他们让我们等。）
-  - We **were made to wait**.（我们被要求等。）
 - **let 表示允许**：用 **be allowed to do** 转述，不写 be let to do。
-  - They **let him leave**.（他们允许他离开。）
-  - He **was allowed to leave**.（他获准离开。）
 - **let go 等固定表达**：保留该表达自身的用法。He **was let go**. 可表示「他被放走了」或「他被解雇了」。
 - **have someone do、get someone to do**：不能套用 be made to do 的转换规则。要表达被要求做某事，按原意选择 He **was asked/told to do** ... 等结构。
+
+<EnglishExamples
+  title="make 与 let 的被动转述"
+  items={[
+    {
+      sentence: 'They made us wait.',
+      label: 'make 主动',
+      translation: '他们让我们等。',
+    },
+    {
+      sentence: 'We were made to wait.',
+      label: 'make 被动',
+      translation: '我们被要求等。',
+      analysis: ['原形不定式在对应被动句中补上 to。'],
+    },
+    {
+      sentence: 'They let him leave.',
+      label: 'let 主动',
+      translation: '他们允许他离开。',
+    },
+    {
+      sentence: 'He was allowed to leave.',
+      label: '允许的被动转述',
+      translation: '他获准离开。',
+      analysis: ['用 be allowed to do 转述，不写 be let to do。'],
+    },
+  ]}
+/>
 
 ### have/get something done
 
 按事件来源与语境区分读法：
 
-- **主动安排别人处理**：I **had my hair cut**.（我请人剪了头发。）主语安排别人执行 cut。
-- **促成任务完成**：We **got the work done**.（我们把工作完成了。）重点是完成结果，执行者由语境判断。
-- **遭遇事件**：He **had his wallet stolen**.（他的钱包被偷了。）不表示主语安排了偷窃。
+<EnglishExamples
+  title="have/get something done 的读法"
+  items={[
+    {
+      sentence: 'I had my hair cut.',
+      label: '主动安排别人处理',
+      translation: '我请人剪了头发。',
+      analysis: ['主语安排别人执行 cut。'],
+      segments: [
+        {
+          text: 'I',
+          role: '主语',
+          note: '主句主语。',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'had my hair cut',
+          role: '重点结构',
+          note: '本组重点比较的形式或结构。',
+        },
+        {
+          text: '.',
+        },
+      ],
+    },
+    {
+      sentence: 'We got the work done.',
+      label: '促成任务完成',
+      translation: '我们把工作完成了。',
+      analysis: ['重点是完成结果，执行者由语境判断。'],
+      segments: [
+        {
+          text: 'We',
+          role: '主语',
+          note: '主句主语。',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'got the work done',
+          role: '重点结构',
+          note: '本组重点比较的形式或结构。',
+        },
+        {
+          text: '.',
+        },
+      ],
+    },
+    {
+      sentence: 'He had his wallet stolen.',
+      label: '遭遇事件',
+      translation: '他的钱包被偷了。',
+      analysis: ['不表示主语安排了偷窃。'],
+      segments: [
+        {
+          text: 'He',
+          role: '主语',
+          note: '主句主语。',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'had his wallet stolen',
+          role: '重点结构',
+          note: '本组重点比较的形式或结构。',
+        },
+        {
+          text: '.',
+        },
+      ],
+    },
+  ]}
+/>
 
 have/get 的差别不按收费划分：
 
 - **意义侧重**：have 在安排任务的语境中突出安排，get 在克服困难或达成目标的语境中突出促成。
-- **服务场景**：I **had my nails done**. 与 I **got my nails done**.（我请人修了指甲。）都可用于付费服务，意义可以接近；have 不要求付费，get 也不要求免费或劝说。
-- **剪发场景的默认读法**：I **cut my hair**. 通常表示自己剪；I **had my hair cut**. 通常表示请别人剪。中文都可说「我剪了头发」，英语须按动作关系选结构。
+- **服务场景**：have 与 get 都可用于付费服务，意义可以接近；have 不要求付费，get 也不要求免费或劝说。
+- **剪发场景的默认读法**：中文都可说「我剪了头发」，英语须按动作关系选结构。
+
+<EnglishExamples
+  title="安排服务与自己完成"
+  items={[
+    {
+      sentence: 'I had my nails done.',
+      label: 'have 安排服务',
+      translation: '我请人修了指甲。',
+      analysis: ['可用于付费服务，have 不要求付费。'],
+    },
+    {
+      sentence: 'I got my nails done.',
+      label: 'get 促成服务',
+      translation: '我请人修了指甲。',
+      analysis: ['可用于付费服务，get 也不要求免费或劝说。'],
+    },
+    {
+      sentence: 'I cut my hair.',
+      label: '自己完成',
+      analysis: ['通常表示自己剪。'],
+    },
+    {
+      sentence: 'I had my hair cut.',
+      label: '安排他人完成',
+      analysis: ['通常表示请别人剪。'],
+    },
+  ]}
+/>
 
 ## 相关动词模式
 
@@ -95,23 +467,82 @@ have/get 的差别不按收费划分：
 
 表达下列意义时，用 **动词 + 宾语 + to do**：
 
-- **促成、使能够**：cause、enable。The grant **enabled her to study** abroad.（资助使她能出国学习。）
-- **强制、命令**：force、compel、order。They **forced him to confess**.（他们迫使他招供。）
-- **请求、告知**：ask、tell。She **asked me to wait**.（她请我等一下。）
-- **说服、鼓励**：persuade、encourage。They **encouraged us to read**.（他们鼓励我们阅读。）
-- **允许**：allow、permit。They **allowed us to enter**.（他们允许我们进入。）
+- **促成、使能够**：cause、enable。
+- **强制、命令**：force、compel、order。
+- **请求、告知**：ask、tell。
+- **说服、鼓励**：persuade、encourage。
+- **允许**：allow、permit。
 
 否定范围须区分主句与补语：
 
-- **否定带 to 不定式的动作**：中性语序用 **not to do**。She told me **not to wait**.（她叫我不要等。）强调否定时也可用 to not do，不定式仍带 to。
-- **否定主句谓语**：**Don't make him wait**.（别让他等。）否定的是 make，wait 仍是裸不定式；它不等于「让他不要等」。
+- **否定带 to 不定式的动作**：中性语序用 **not to do**。强调否定时也可用 to not do，不定式仍带 to。
+- **否定主句谓语**：否定的是上层动词，不等于否定补语中的动作。
+
+<EnglishExamples
+  title="宾语与带 to 不定式"
+  items={[
+    {
+      sentence: 'The grant enabled her to study abroad.',
+      label: '使能够',
+      translation: '资助使她能出国学习。',
+    },
+    {
+      sentence: 'They forced him to confess.',
+      label: '强制',
+      translation: '他们迫使他招供。',
+    },
+    {
+      sentence: 'She asked me to wait.',
+      label: '请求',
+      translation: '她请我等一下。',
+    },
+    {
+      sentence: 'They encouraged us to read.',
+      label: '鼓励',
+      translation: '他们鼓励我们阅读。',
+    },
+    {
+      sentence: 'They allowed us to enter.',
+      label: '允许',
+      translation: '他们允许我们进入。',
+    },
+    {
+      sentence: 'She told me not to wait.',
+      label: '否定不定式',
+      translation: '她叫我不要等。',
+      analysis: ['not 否定 wait，不定式仍带 to。'],
+    },
+    {
+      sentence: "Don't make him wait.",
+      label: '否定主句',
+      translation: '别让他等。',
+      analysis: ['否定的是 make，wait 仍是裸不定式；它不等于「让他不要等」。'],
+    },
+  ]}
+/>
 
 ### 状态与过程补语
 
 使役意义不统一要求 to do；其他动词须按自身补语形式选用：
 
-- **drive + 宾语 + 形容词**：The noise **drove me crazy**.（噪声让我发狂。）
-- **leave + 宾语 + doing**：She **left me waiting** outside.（她让我一直在外面等。）
+- **drive + 宾语 + 形容词**：说明宾语的状态。
+- **leave + 宾语 + doing**：说明宾语持续进行的活动。
+
+<EnglishExamples
+  title="状态与过程补语"
+  items={[
+    {
+      sentence: 'The noise drove me crazy.',
+      label: '形容词补语',
+      translation: '噪声让我发狂。',
+    },
+    {
+      sentence: 'She left me waiting outside.',
+      label: '-ing 补语',
+      translation: '她让我一直在外面等。',
+    },
+  ]}
+/>
 
 ## 感官结构
 
@@ -119,15 +550,186 @@ see、hear、watch、notice、feel 等感知动词也可接宾语和非限定补
 
 按宾语与事件的关系、观察角度选择形式：
 
-- **把事件作为整体感知**：用 **see + 宾语 + do**。I **saw him cross** the road.（我看见他过了马路。）整体视角不要求肉眼观察到每一个瞬间，也可呈现重复的完整事件。
-- **感知正在展开的片段**：用 **see + 宾语 + doing**。I **saw him crossing** the road.（我看见他正在过马路。）
-- **宾语承受被感知的动作**：用 **see + 宾语 + done**。I **saw him arrested**.（我看见他被捕。）
+- **把事件作为整体感知**：用 **see + 宾语 + do**。
+- **感知正在展开的片段**：用 **see + 宾语 + doing**。
+- **宾语承受被感知的动作**：用 **see + 宾语 + done**。
 
-find 不应直接套用 see 的裸不定式模式。例如 We **found him working**.（我们发现他正在工作。）和 We **found him to be reliable**.（我们发现他可靠。）分别使用 -ing 和带 to 不定式。
+<EnglishExamples
+  title="感知补语的观察角度"
+  items={[
+    {
+      label: '整体事件',
+      sentence: 'I saw him cross the road.',
+      translation: '我看见他过了马路。',
+      segments: [
+        {
+          text: 'I',
+          role: '主语',
+          note: '感知者。',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'saw',
+          role: '谓语动词',
+          note: '感知动词的过去式。',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'him',
+          role: '宾语',
+          note: 'cross 的逻辑主语。',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'cross the road',
+          role: '补足语',
+          note: '裸不定式，把事件作为整体呈现。',
+        },
+        {
+          text: '.',
+        },
+      ],
+      analysis: ['整体视角不要求肉眼观察到每一个瞬间，也可呈现重复的完整事件。'],
+    },
+    {
+      label: '进行片段',
+      sentence: 'I saw him crossing the road.',
+      translation: '我看见他正在过马路。',
+      segments: [
+        {
+          text: 'I',
+          role: '主语',
+          note: '感知者。',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'saw',
+          role: '谓语动词',
+          note: '感知动词的过去式。',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'him',
+          role: '宾语',
+          note: 'crossing 的逻辑主语。',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'crossing the road',
+          role: '补足语',
+          note: '-ing 结构，呈现进行片段。',
+        },
+        {
+          text: '.',
+        },
+      ],
+    },
+    {
+      label: '被动关系',
+      sentence: 'I saw him arrested.',
+      translation: '我看见他被捕。',
+      segments: [
+        {
+          text: 'I',
+          role: '主语',
+          note: '感知者。',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'saw',
+          role: '谓语动词',
+          note: '感知动词的过去式。',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'him',
+          role: '宾语',
+          note: 'arrested 的逻辑主语。',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'arrested',
+          role: '补足语',
+          note: '过去分词，him 承受逮捕。',
+        },
+        {
+          text: '.',
+        },
+      ],
+    },
+  ]}
+/>
+
+find 不应直接套用 see 的裸不定式模式：
+
+<EnglishExamples
+  title="find 的补语"
+  items={[
+    {
+      sentence: 'We found him working.',
+      label: '-ing 补语',
+      translation: '我们发现他正在工作。',
+    },
+    {
+      sentence: 'We found him to be reliable.',
+      label: '带 to 不定式',
+      translation: '我们发现他可靠。',
+    },
+  ]}
+/>
 
 以 see 的对应被动结构为例，按原补语形式分支；不能据此假定所有感知动词都能套用同一种被动结构：
 
-- **原形补语改为 to do**：Someone **saw him enter**. → He **was seen to enter**.（有人看见他进去了。）
-- **-ing 补语保留 -ing**：Someone **saw him entering**. → He **was seen entering**.（有人看见他正在进去。）He **was seen running away**. 同样保留进行片段的视角，不必改为 to run。
+- **原形补语**：对应被动结构改为 to do。
+- **-ing 补语**：对应被动结构保留 -ing。
+
+<EnglishExamples
+  title="感知补语的被动转换"
+  items={[
+    {
+      sentence: 'Someone saw him enter.',
+      label: '原形补语主动',
+      translation: '有人看见他进去了。',
+    },
+    {
+      sentence: 'He was seen to enter.',
+      label: '原形补语被动',
+      analysis: ['原形补语改为 to do。'],
+    },
+    {
+      sentence: 'Someone saw him entering.',
+      label: '-ing 补语主动',
+      translation: '有人看见他正在进去。',
+    },
+    {
+      sentence: 'He was seen entering.',
+      label: '-ing 补语被动',
+      analysis: ['对应被动结构保留 -ing。'],
+    },
+    {
+      sentence: 'He was seen running away.',
+      label: '保留过程视角',
+      analysis: ['同样保留进行片段的视角，不必改为 to run。'],
+    },
+  ]}
+/>
 
 把 -ing 统一改成 to do 会改变观察角度。详见 [非谓语动词](/docs/note/english/grammar/verbs/non-finite-verbs)。

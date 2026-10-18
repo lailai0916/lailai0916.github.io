@@ -74,7 +74,8 @@ Oh 不是后面分句的主语、宾语或表语，删去后 I forgot to tell yo
 - **问候或引起注意**：hi、hello、hey，常有叹词用法。
 - **可能性**：maybe 通常是副词；Maybe later 是省略表达，独立应答不会使它自动变成叹词。
 - **动词祈使或话语标记**：look、listen。
-  - **Listen!** 与 **Listen to the recording.** 都可与省略主语 you 的祈使结构联系，不能只因有招呼功能就与 hey 判成同一结构。
+  - **Listen!** 与 **Listen to the recording.** 都可按隐含主语 you 的祈使结构分析。
+  - 引起注意是话语功能，不足以把 listen 与 hey 判成同一词类或句法结构。
 - **固定词组的即时反应**：
   - **Come on!** 可表鼓励、催促或不耐烦。
   - **Oh dear!** 可表担忧或失望。
@@ -82,14 +83,45 @@ Oh 不是后面分句的主语、宾语或表语，删去后 I forgot to tell yo
 
 英语 yes/no 的短答通常按事实的肯否定选择，否定问句也一样：
 
-- Haven't you finished? — **Yes, I have.**（已经完成了。）
-- Haven't you finished? — **No, I haven't.**（还没有完成。）
+<EnglishExamples
+  title="否定问句的肯定与否定回答"
+  items={[
+    {
+      label: '肯定事实',
+      sentence: "Haven't you finished? — Yes, I have.",
+      translation: '已经完成了。',
+      segments: [
+        {
+          text: "Haven't you finished? — ",
+        },
+        {
+          text: 'Yes, I have.',
+          role: '肯定回答',
+        },
+      ],
+    },
+    {
+      label: '否定事实',
+      sentence: "Haven't you finished? — No, I haven't.",
+      translation: '还没有完成。',
+      segments: [
+        {
+          text: "Haven't you finished? — ",
+        },
+        {
+          text: "No, I haven't.",
+          role: '否定回答',
+        },
+      ],
+    },
+  ]}
+/>
 
 补出 I have/I haven't 能避免与中文「是的」「不是」的对应混淆。
 
 ### 拟声与词类
 
-**拟声词**（Onomatopoeia）模仿声音，常见形式有：
+**拟声**（Onomatopoeia）指模仿声音的构词或表达方式，由此形成的词称 **拟声词**。常见形式有：
 
 - **撞击或爆炸**：bang、boom，如 **Bang!** The door slammed shut.
 - **落水或水花**：**Splash!** He fell into the pool.
@@ -98,9 +130,56 @@ Oh 不是后面分句的主语、宾语或表语，删去后 I forgot to tell yo
 
 同一声音形式可占据不同句法位置：
 
-- **Bang!**：独立的声音呼喊，可发挥类似叹词的作用。
-- a loud **bang**：bang 是名词。
-- 「The door **banged**.」：banged 是动词过去式。
+<EnglishExamples
+  title="同一拟声形式的词类与功能"
+  items={[
+    {
+      label: '独立声音呼喊',
+      sentence: 'Bang!',
+      analysis: ['独立的声音呼喊，可发挥类似叹词的作用。'],
+      segments: [
+        {
+          text: 'Bang',
+          role: '拟声呼喊',
+        },
+        {
+          text: '!',
+        },
+      ],
+    },
+    {
+      label: '名词',
+      sentence: 'a loud bang',
+      analysis: ['bang 是名词。'],
+      segments: [
+        {
+          text: 'a loud ',
+        },
+        {
+          text: 'bang',
+          role: '名词',
+        },
+      ],
+    },
+    {
+      label: '动词',
+      sentence: 'The door banged.',
+      analysis: ['banged 是动词过去式。'],
+      segments: [
+        {
+          text: 'The door ',
+        },
+        {
+          text: 'banged',
+          role: '动词过去式',
+        },
+        {
+          text: '.',
+        },
+      ],
+    },
+  ]}
+/>
 
 ## 标点与感叹句
 
@@ -108,10 +187,72 @@ Oh 不是后面分句的主语、宾语或表语，删去后 I forgot to tell yo
 
 按语气及与后文的联系选择，不是独立出现就必须加感叹号。
 
-- **较轻、连着后句的反应**：**Oh,** I see. 用逗号。
-- **较强、独立的反应**：**Ouch!** That hurts. 用感叹号。
-- **平缓或低落**：**Oh.** I thought you knew. 用句号。
-- **询问或要求确认**：**Hmm?** 用问号。
+- **较轻、连着后句的反应**：用逗号。
+- **较强、独立的反应**：用感叹号。
+- **平缓或低落**：用句号。
+- **询问或要求确认**：用问号。
+
+<EnglishExamples
+  title="反应的标点选择"
+  items={[
+    {
+      label: '较轻且连着后句',
+      sentence: 'Oh, I see.',
+      analysis: ['用逗号。'],
+      segments: [
+        {
+          text: 'Oh',
+          role: '叹词',
+        },
+        {
+          text: ', I see.',
+        },
+      ],
+    },
+    {
+      label: '较强且独立',
+      sentence: 'Ouch! That hurts.',
+      analysis: ['用感叹号。'],
+      segments: [
+        {
+          text: 'Ouch',
+          role: '叹词',
+        },
+        {
+          text: '! That hurts.',
+        },
+      ],
+    },
+    {
+      label: '平缓或低落',
+      sentence: 'Oh. I thought you knew.',
+      analysis: ['用句号。'],
+      segments: [
+        {
+          text: 'Oh',
+          role: '叹词',
+        },
+        {
+          text: '. I thought you knew.',
+        },
+      ],
+    },
+    {
+      label: '询问或要求确认',
+      sentence: 'Hmm?',
+      analysis: ['用问号。'],
+      segments: [
+        {
+          text: 'Hmm',
+          role: '反应声',
+        },
+        {
+          text: '?',
+        },
+      ],
+    },
+  ]}
+/>
 
 小说、聊天可用重复字母或标点表现声音；正式考试写作保持规范标点。叹词在句首大写，位于句中不必一律大写。
 
@@ -121,15 +262,194 @@ Oh 不是后面分句的主语、宾语或表语，删去后 I forgot to tell yo
 
 - **叹词表达**：「Wow!」，不要求主谓结构。
 - **what + 名词短语 + 主语 + 谓语**：
-  - **What a beautiful day it is!**
-  - 不可数或复数名词不加 a/an：**What beautiful weather!**，不写 What a beautiful weather!
-  - 主谓可省：**What a beautiful day!**
-- **how + 形容词或副词 + 主语 + 谓语**：
-  - **How beautiful the day is!**
-  - **How carefully she works!**
-  - 保持陈述语序，不写 How beautiful is the day! 来套用这个结构。
-- **可同时出现**：**Wow, what a beautiful day!** 既有叹词，也有感叹句。
+  - 不可数或复数名词不加 a/an，不能写成「What a beautiful weather!」。
+  - 主语和谓语可省，保留 what 与名词短语。
+- **how + 形容词或副词 + 主语 + 谓语**：保持陈述语序，不写 How beautiful is the day! 来套用这个结构。
+- **可同时出现**：叹词和 what/how 感叹结构可以在同一句中出现。
 - **其他呼喊**：Fire! 可表达警报或感叹，但不能仅凭感叹号归为 what/how 感叹句。
+
+<EnglishExamples
+  title="what 与 how 感叹结构"
+  items={[
+    {
+      label: 'what + 单数可数名词短语',
+      sentence: 'What a beautiful day it is!',
+      translation: '多么美好的一天啊！',
+      analysis: ['what 引出名词短语 a beautiful day，后面保留主语 it 与谓语 is。'],
+      segments: [
+        {
+          text: 'What',
+          role: '感叹标记',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'a beautiful day',
+          role: '名词短语',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'it',
+          role: '主语',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'is',
+          role: '谓语',
+        },
+        {
+          text: '!',
+        },
+      ],
+    },
+    {
+      label: 'what + 不可数名词短语',
+      sentence: 'What beautiful weather!',
+      translation: '多好的天气啊！',
+      analysis: ['weather 在此是不可数名词，不加 a/an。'],
+      segments: [
+        {
+          text: 'What',
+          role: '感叹标记',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'beautiful weather',
+          role: '不可数名词短语',
+        },
+        {
+          text: '!',
+        },
+      ],
+    },
+    {
+      label: 'what 结构省去主谓',
+      sentence: 'What a beautiful day!',
+      translation: '多么美好的一天啊！',
+      analysis: ['感叹结构可以仅保留 what 与名词短语，省去主语和谓语。'],
+      segments: [
+        {
+          text: 'What',
+          role: '感叹标记',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'a beautiful day',
+          role: '名词短语',
+        },
+        {
+          text: '!',
+        },
+      ],
+    },
+    {
+      label: 'how + 形容词',
+      sentence: 'How beautiful the day is!',
+      translation: '这一天多么美好啊！',
+      analysis: ['how 修饰形容词 beautiful，后面按主语 the day、谓语 is 排列。'],
+      segments: [
+        {
+          text: 'How',
+          role: '程度标记',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'beautiful',
+          role: '形容词',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'the day',
+          role: '主语',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'is',
+          role: '谓语',
+        },
+        {
+          text: '!',
+        },
+      ],
+    },
+    {
+      label: 'how + 副词',
+      sentence: 'How carefully she works!',
+      translation: '她工作多么仔细啊！',
+      analysis: ['how 修饰副词 carefully，后面按主语 she、谓语 works 排列。'],
+      segments: [
+        {
+          text: 'How',
+          role: '程度标记',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'carefully',
+          role: '副词',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'she',
+          role: '主语',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'works',
+          role: '谓语',
+        },
+        {
+          text: '!',
+        },
+      ],
+    },
+    {
+      label: '叹词与感叹结构同时出现',
+      sentence: 'Wow, what a beautiful day!',
+      translation: '哇，多么美好的一天啊！',
+      analysis: [
+        'Wow 是叹词，what a beautiful day 是感叹结构。',
+        '两者可以同时出现，词类与句式仍分别分析。',
+      ],
+      segments: [
+        {
+          text: 'Wow',
+          role: '叹词',
+        },
+        {
+          text: ', ',
+        },
+        {
+          text: 'what a beautiful day',
+          role: '感叹结构',
+        },
+        {
+          text: '!',
+        },
+      ],
+    },
+  ]}
+/>
 
 ## 交际场景
 

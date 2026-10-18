@@ -16,8 +16,51 @@ summary: 代词的选择依次检查所指、句法功能、格和一致关系�
 
 - **依赖说话角色**：I、you 可直接指说话人和听者，不必先出现一个名词。
 - **依赖现场或话语**：this 可由手势、现场或前后文确定。
-- **不指具体对象**：It is raining. 中 it 是语法主语，没有对应的某件事物。
-- **同形但功能不同**：This is useful. 中 this 独立作代词；This book is useful. 中 this 作限定词。
+- **不指具体对象**：「It is raining.」中 it 是语法主语，没有对应的某件事物。
+- **同形但功能不同**：this 可独立作代词，也可在名词前作限定词。
+
+<EnglishExamples
+  title="同形形式的不同功能"
+  items={[
+    {
+      label: '独立指代',
+      sentence: 'This is useful.',
+      translation: '这很有用。',
+      segments: [
+        {
+          text: 'This',
+          role: '主语',
+          note: 'this 独立用作代词。',
+        },
+        {
+          text: ' is useful.',
+        },
+      ],
+    },
+    {
+      label: '限定名词',
+      sentence: 'This book is useful.',
+      translation: '这本书很有用。',
+      segments: [
+        {
+          text: 'This',
+          role: '限定词',
+          note: '限定后面的 book。',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'book',
+          role: '中心名词',
+        },
+        {
+          text: ' is useful.',
+        },
+      ],
+    },
+  ]}
+/>
 
 选择形式时，依次检查 **所指 → 句法功能 → 格与数 → 谓语及回指的一致关系**。
 
@@ -43,35 +86,487 @@ summary: 代词的选择依次检查所指、句法功能、格和一致关系�
 
 ### 格与句法位置
 
-- **普通限定分句的主语用主格**：**He** is a teacher. / Are **they** ready? 疑问或倒装会改变表面顺序，不能按是否位于动词前判断。非限定分句另按结构选格，如 for **him** to leave。
-- **动词或介词的宾语用宾格**：I saw **him** yesterday. / This gift is for **her**.
-- **并列结构逐项检查功能**：Anna and **I** are ready. 对应「I am ready.」；She invited Anna and **me**. 对应 She invited me.
+- **普通限定分句的主语用主格**：疑问或倒装会改变表面顺序，不能按是否位于动词前判断。非限定分句另按结构选格，如 for **him** to leave。
+- **动词或介词的宾语用宾格**。
+- **并列结构逐项检查功能**。
 - **并列次序与格分开判断**：you and I、Anna and me 将自己放在后面是礼貌习惯；2-3-1 或担责时 I 放首位不是语法规则。
-- **表语区分语体**：It's **me**. / That's **her**. 是自然的标准口语；It is **I**. 属于很正式的传统用法。
+- **表语区分语体**：me、her 等宾格形式用于自然的标准口语；I 等主格形式也见于很正式的传统用法。
 
-代词还需有清楚的所指。Anna told Lisa that she had passed. 中 she 可以指 Anna 或 Lisa；需要消除歧义时重复姓名。
+<EnglishExamples
+  title="表语代词的语体"
+  items={[
+    {
+      label: '口语宾格',
+      sentence: "It's me.",
+      analysis: ['自然的标准口语。'],
+      segments: [
+        {
+          text: "It's ",
+        },
+        {
+          text: 'me',
+          role: '表语',
+          note: '此处采用宾格形式。',
+        },
+        {
+          text: '.',
+        },
+      ],
+    },
+    {
+      label: '口语宾格',
+      sentence: "That's her.",
+      analysis: ['自然的标准口语。'],
+      segments: [
+        {
+          text: "That's ",
+        },
+        {
+          text: 'her',
+          role: '表语',
+          note: '此处采用宾格形式。',
+        },
+        {
+          text: '.',
+        },
+      ],
+    },
+    {
+      label: '正式主格',
+      sentence: 'It is I.',
+      analysis: ['很正式的传统用法。'],
+      segments: [
+        {
+          text: 'It is ',
+        },
+        {
+          text: 'I',
+          role: '表语',
+          note: '此处采用主格形式。',
+        },
+        {
+          text: '.',
+        },
+      ],
+    },
+  ]}
+/>
+
+<EnglishExamples
+  title="按句法功能选格"
+  items={[
+    {
+      sentence: 'He is a teacher.',
+      label: '主格',
+      segments: [
+        {
+          text: 'He',
+          role: '主语',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'is',
+          role: '谓语动词',
+        },
+        {
+          text: ' a teacher.',
+        },
+      ],
+    },
+    {
+      sentence: 'Are they ready?',
+      label: '疑问语序',
+      analysis: ['they 仍作主语，不按动词前后判断格。'],
+      segments: [
+        {
+          text: 'Are',
+          role: '谓语动词',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'they',
+          role: '主语',
+        },
+        {
+          text: ' ready?',
+        },
+      ],
+    },
+    {
+      sentence: 'I saw him yesterday.',
+      label: '动词宾语',
+      segments: [
+        {
+          text: 'I saw ',
+        },
+        {
+          text: 'him',
+          role: '宾语',
+        },
+        {
+          text: ' yesterday.',
+        },
+      ],
+    },
+    {
+      sentence: 'This gift is for her.',
+      label: '介词宾语',
+      segments: [
+        {
+          text: 'This gift is for ',
+        },
+        {
+          text: 'her',
+          role: '介词宾语',
+        },
+        {
+          text: '.',
+        },
+      ],
+    },
+    {
+      sentence: 'Anna and I are ready. I am ready.',
+      label: '并列主语逐项检查',
+      analysis: ['Anna and I are ready. 对应 I am ready.'],
+      segments: [
+        {
+          text: 'Anna and I',
+          role: '主语',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'are',
+          role: '谓语动词',
+        },
+        {
+          text: ' ready. ',
+        },
+        {
+          text: 'I',
+          role: '主语',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'am',
+          role: '谓语动词',
+        },
+        {
+          text: ' ready.',
+        },
+      ],
+    },
+    {
+      sentence: 'She invited Anna and me. She invited me.',
+      label: '并列宾语逐项检查',
+      analysis: ['She invited Anna and me. 对应 She invited me.'],
+      segments: [
+        {
+          text: 'She invited ',
+        },
+        {
+          text: 'Anna and me',
+          role: '宾语',
+        },
+        {
+          text: '. She invited ',
+        },
+        {
+          text: 'me',
+          role: '宾语',
+        },
+        {
+          text: '.',
+        },
+      ],
+    },
+  ]}
+/>
+
+代词还需有清楚的所指。「Anna told Lisa that she had passed.」中 she 可以指 Anna 或 Lisa；需要消除歧义时重复姓名。
 
 ### 单数 they
 
 **单数 they**（Singular They）指性别未知、无需说明性别的人，或使用 they 作为代词的特定个体。
 
-- Someone **has** left **their** umbrella.（有人落下了伞。）someone 作主语仍接单数谓语。
-- Every student **has** a password. **They are** expected to keep it private.（每名学生都有密码，应妥善保管。）回指的 they 保留 are、have 等形式，不用 they is。
+<EnglishExamples
+  title="单数 they 的一致关系"
+  items={[
+    {
+      sentence: 'Someone has left their umbrella.',
+      label: '主语单数与回指',
+      translation: '有人落下了伞。',
+      analysis: ['someone 作主语仍接单数谓语。'],
+      segments: [
+        {
+          text: 'Someone',
+          role: '主语',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'has left',
+          role: '谓语',
+          note: '与 someone 一致。',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'their',
+          role: '物主限定词',
+          note: '可用单数 they 的物主形式回指。',
+        },
+        {
+          text: ' umbrella.',
+        },
+      ],
+    },
+    {
+      sentence: 'Every student has a password. They are expected to keep it private.',
+      label: '跨句回指',
+      translation: '每名学生都有密码，应妥善保管。',
+      analysis: ['回指的 they 保留 are、have 等形式，不用 they is。'],
+      segments: [
+        {
+          text: 'Every student',
+          role: '主语',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'has',
+          role: '谓语动词',
+        },
+        {
+          text: ' a password. ',
+        },
+        {
+          text: 'They',
+          role: '主语',
+          note: '可单数回指每名学生。',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'are expected',
+          role: '谓语',
+          note: 'they 仍使用 are。',
+        },
+        {
+          text: ' to keep it private.',
+        },
+      ],
+    },
+  ]}
+/>
+
 - 语义上只有一个人，不会使 they 采用 he/she 的动词形式；everyone 接 has 与回指用 their 可以同时成立。
 - he or she、his or her 是另一套表达，现代标准英语也广泛接受单数 they；考试给定人称或选项时，按所指定结构判断。
 
-it 的非指称用法也应单独识别：**It** is raining. 表天气，**It** is five o'clock. 表时间；**It** is important to practise. 中 it 为形式主语。
+it 的非指称用法按天气、时间和形式主语等结构分别识别：
+
+<EnglishExamples
+  title="it 的非指称用法"
+  items={[
+    {
+      label: '天气',
+      sentence: 'It is raining.',
+      translation: '正在下雨。',
+      analysis: ['it 不指某件事物，仍占据语法主语位置。'],
+      segments: [
+        {
+          text: 'It',
+          role: '主语',
+          note: '非指称的天气主语。',
+        },
+        {
+          text: ' is raining.',
+        },
+      ],
+    },
+    {
+      label: '时间',
+      sentence: "It is five o'clock.",
+      translation: '现在是 5 点。',
+      analysis: ['it 用于表达时间。'],
+      segments: [
+        {
+          text: 'It',
+          role: '主语',
+          note: '非指称的时间主语。',
+        },
+        {
+          text: " is five o'clock.",
+        },
+      ],
+    },
+    {
+      label: '形式主语',
+      sentence: 'It is important to practise.',
+      translation: '练习很重要。',
+      analysis: ['it 占据主语位置，不定式内容后置。'],
+      segments: [
+        {
+          text: 'It',
+          role: '形式主语',
+        },
+        {
+          text: ' is important ',
+        },
+        {
+          text: 'to practise',
+          role: '后置内容',
+          note: '对应所评价的活动。',
+        },
+        {
+          text: '.',
+        },
+      ],
+    },
+  ]}
+/>
 
 ### 物主形式与缩写
 
-- **后接名词短语**：**My book** is on the desk. 中 my 限定 book。
-- **独立使用**：This book is **mine**. / **Yours** is on the shelf. 所指名词可从语境恢复。
+- **后接名词短语**：物主限定词限定后面的名词。
+- **独立使用**：独立物主形式的所指名词可从语境恢复。
 - **双重所有格**：a friend of **mine**，不用 a friend of my。
 - **限定位置**：my、this、the 不叠占同一中心限定位置，用 my book，不用 the my book，详见 [冠词](/docs/note/english/grammar/parts-of-speech/articles)。
 
+<EnglishExamples
+  title="物主限定与独立物主形式"
+  items={[
+    {
+      label: '限定名词',
+      sentence: 'My book is on the desk.',
+      translation: '我的书在桌上。',
+      analysis: ['my 限定 book。'],
+      segments: [
+        {
+          text: 'My',
+          role: '物主限定词',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'book',
+          role: '中心名词',
+        },
+        {
+          text: ' is on the desk.',
+        },
+      ],
+    },
+    {
+      label: '独立物主形式',
+      sentence: 'This book is mine.',
+      translation: '这本书是我的。',
+      analysis: ['mine 独立作表语，所指名词由语境恢复。'],
+      segments: [
+        {
+          text: 'This book is ',
+        },
+        {
+          text: 'mine',
+          role: '表语',
+          note: '独立物主形式。',
+        },
+        {
+          text: '.',
+        },
+      ],
+    },
+    {
+      label: '独立物主形式作主语',
+      sentence: 'Yours is on the shelf.',
+      translation: '你的在架子上。',
+      analysis: ['yours 的所指名词可从语境恢复。'],
+      segments: [
+        {
+          text: 'Yours',
+          role: '主语',
+          note: '独立物主形式。',
+        },
+        {
+          text: ' is on the shelf.',
+        },
+      ],
+    },
+  ]}
+/>
+
 按是否含动词区分同音形式：
 
-- **its / it's**：its 表所属；it's 缩写 it is 或 it has，如 The dog wagged **its** tail. / **It's** raining. / **It's** been a long day.
+- **its / it's**：its 表所属；it's 缩写 it is 或 it has。
+
+<EnglishExamples
+  title="its 与 it's"
+  items={[
+    {
+      label: 'its 表所属',
+      sentence: 'The dog wagged its tail.',
+      translation: '狗摇了摇尾巴。',
+      segments: [
+        {
+          text: 'The dog wagged ',
+        },
+        {
+          text: 'its',
+          role: '物主限定词',
+          note: '后接名词 tail。',
+        },
+        {
+          text: ' tail.',
+        },
+      ],
+    },
+    {
+      label: 'it is 的缩写',
+      sentence: "It's raining.",
+      translation: '正在下雨。',
+      analysis: ["it's 在这里展开为 it is。"],
+      segments: [
+        {
+          text: "It's",
+          role: '缩写结构',
+          note: 'it is；is 构造进行体。',
+        },
+        {
+          text: ' raining.',
+        },
+      ],
+    },
+    {
+      label: 'it has 的缩写',
+      sentence: "It's been a long day.",
+      translation: '真是漫长的一天。',
+      analysis: ["it's 在这里展开为 it has；has 后接过去分词 been。"],
+      segments: [
+        {
+          text: "It's",
+          role: '缩写结构',
+          note: 'it has，构造完成形式。',
+        },
+        {
+          text: ' been a long day.',
+        },
+      ],
+    },
+  ]}
+/>
+
 - **their / they're**：their 表所属，they're 缩写 they are。
 - **your / you're**：your 表所属，you're 缩写 you are。
 - **whose / who's**：whose 表所属，who's 缩写 who is 或 who has，不能把所有 's 都展开为 is。
@@ -82,12 +577,167 @@ it 的非指称用法也应单独识别：**It** is raining. 表天气，**It** 
 
 **反身代词**（Reflexive Pronoun）在局部结构中指回相应的主语；用于强调时，也可突出某人亲自做某事。
 
-- **反身宾语**：He hurt **himself**.（他伤到了自己。）She taught **herself** English.（她自学英语。）
-- **与他人对比**：He hurt **him**. 中 him 按这一局部结构的普通解读指另一个男性，与 himself 不同。
-- **亲自强调**：The president **himself** answered. / I did the work **myself**. 去掉强调成分后，句子骨架仍成立。
-- **非反身的同指结构**：I took my bag **with me**. 中 with me 自然，不因 me 与主语同指就一律改成 myself。
-- **可理解宾语的省略**：wash、dress 可不明说反身宾语，如 She washed and dressed.
-- **宾格不能机械改成反身形式**：Please contact Anna or **me**. 本句按普通宾语表达用 me，不能将 myself 当作更礼貌的宾格通用替代。
+- **可理解宾语的省略**：wash、dress 可不明说反身宾语，如「She washed and dressed.」。
+
+<EnglishExamples
+  title="反身、强调与普通宾格"
+  items={[
+    {
+      sentence: 'He hurt himself.',
+      label: '反身宾语',
+      translation: '他伤到了自己。',
+      segments: [
+        {
+          text: 'He',
+          role: '主语',
+        },
+        {
+          text: ' hurt ',
+        },
+        {
+          text: 'himself',
+          role: '宾语',
+          note: '在局部结构中指回主语。',
+        },
+        {
+          text: '.',
+        },
+      ],
+    },
+    {
+      sentence: 'She taught herself English.',
+      label: '反身宾语',
+      translation: '她自学英语。',
+      segments: [
+        {
+          text: 'She',
+          role: '主语',
+        },
+        {
+          text: ' taught ',
+        },
+        {
+          text: 'herself',
+          role: '宾语',
+          note: '指回 she。',
+        },
+        {
+          text: ' English.',
+        },
+      ],
+    },
+    {
+      sentence: 'He hurt him.',
+      label: '与他人对比',
+      analysis: ['him 按这一局部结构的普通解读指另一个男性，与 himself 不同。'],
+      segments: [
+        {
+          text: 'He',
+          role: '主语',
+        },
+        {
+          text: ' hurt ',
+        },
+        {
+          text: 'him',
+          role: '宾语',
+          note: '普通解读指另一个男性。',
+        },
+        {
+          text: '.',
+        },
+      ],
+    },
+    {
+      sentence: 'The president himself answered.',
+      label: '亲自强调',
+      analysis: ['去掉强调成分后，句子骨架仍成立。'],
+      segments: [
+        {
+          text: 'The president',
+          role: '主语',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'himself',
+          role: '强调成分',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'answered',
+          role: '谓语动词',
+        },
+        {
+          text: '.',
+        },
+      ],
+    },
+    {
+      sentence: 'I did the work myself.',
+      label: '亲自强调',
+      analysis: ['去掉强调成分后，句子骨架仍成立。'],
+      segments: [
+        {
+          text: 'I',
+          role: '主语',
+        },
+        {
+          text: ' did the work ',
+        },
+        {
+          text: 'myself',
+          role: '强调成分',
+        },
+        {
+          text: '.',
+        },
+      ],
+    },
+    {
+      sentence: 'I took my bag with me.',
+      label: '非反身的同指结构',
+      analysis: ['with me 自然，不因 me 与主语同指就一律改成 myself。'],
+      segments: [
+        {
+          text: 'I',
+          role: '主语',
+        },
+        {
+          text: ' took my bag with ',
+        },
+        {
+          text: 'me',
+          role: '介词宾语',
+          note: '与主语同指仍自然。',
+        },
+        {
+          text: '.',
+        },
+      ],
+    },
+    {
+      sentence: 'Please contact Anna or me.',
+      label: '宾格与礼貌',
+      analysis: ['本句按普通宾语表达用 me，不能将 myself 当作更礼貌的宾格通用替代。'],
+      segments: [
+        {
+          text: 'Please contact ',
+        },
+        {
+          text: 'Anna or me',
+          role: '宾语',
+        },
+        {
+          text: '.',
+        },
+      ],
+    },
+  ]}
+/>
 
 常见搭配按意义归组：
 
@@ -100,74 +750,830 @@ it 的非指称用法也应单独识别：**It** is raining. 表天气，**It** 
 
 **相互代词**（Reciprocal Pronoun）each other、one another 表示成员之间的关系；现代英语中两者都可用于两者或多者。
 
-- The students helped **each other / one another**.（学生们相互帮助。）
-- They read **each other's** notes.（他们读对方的笔记。）所有格为 each other's、one another's，不是 each others'。
-- They looked at **themselves** in the mirror. 指看自己；They looked at **each other**. 指看彼此。
+相互形式的所有格用 each other's、one another's，不用 each others'。
+
+<EnglishExamples
+  title="相互关系与反身关系"
+  items={[
+    {
+      label: '成员相互帮助',
+      sentence: 'The students helped each other / one another.',
+      translation: '学生们相互帮助。',
+      segments: [
+        {
+          text: 'The students helped ',
+        },
+        {
+          text: 'each other / one another',
+          role: '相互代词',
+          note: '2 种形式都可用于两者或多者。',
+        },
+        {
+          text: '.',
+        },
+      ],
+    },
+    {
+      label: '相互形式的所有格',
+      sentence: "They read each other's notes.",
+      translation: '他们读对方的笔记。',
+      analysis: ["所有格为 each other's、one another's，不是 each others'。"],
+      segments: [
+        {
+          text: 'They read ',
+        },
+        {
+          text: "each other's",
+          role: '所有格',
+          note: '限定 notes。',
+        },
+        {
+          text: ' notes.',
+        },
+      ],
+    },
+    {
+      label: '反身关系',
+      sentence: 'They looked at themselves in the mirror.',
+      translation: '他们在镜子里看自己。',
+      analysis: ['指看自己。'],
+      segments: [
+        {
+          text: 'They looked at ',
+        },
+        {
+          text: 'themselves',
+          role: '介词宾语',
+          note: '指回主语 They。',
+        },
+        {
+          text: ' in the mirror.',
+        },
+      ],
+    },
+    {
+      label: '相互关系',
+      sentence: 'They looked at each other.',
+      translation: '他们看着彼此。',
+      analysis: ['指看彼此。'],
+      segments: [
+        {
+          text: 'They looked at ',
+        },
+        {
+          text: 'each other',
+          role: '介词宾语',
+          note: '成员之间的相互关系。',
+        },
+        {
+          text: '.',
+        },
+      ],
+    },
+  ]}
+/>
 
 ## 指示与疑问
 
 ### 指示与替代
 
-- **近指**：this 用于单数，these 用于复数，如 This is my book. / These are my friends.
-- **远指或回指**：that 用于单数，those 用于复数，如 That is what I mean. / Those are yours.
+- **近指**：this 用于单数，these 用于复数。
+- **远指或回指**：that 用于单数，those 用于复数。
 - **事件或话语**：this、that 也可指整件事，远近不必是物理距离。
-- **电话惯用表达**：This is Anna speaking. / Is that Lisa? 不按中文我、你的词形直接替换。
+- **电话惯用表达**：用 this/that 识别通话双方，不按中文我、你的词形直接替换。
+
+<EnglishExamples
+  title="指示指称与电话表达"
+  items={[
+    {
+      label: 'this 单数',
+      sentence: 'This is my book.',
+      translation: '这是我的书。',
+      segments: [
+        {
+          text: 'This',
+          role: '主语',
+          note: '单数指示形式。',
+        },
+        {
+          text: ' is my book.',
+        },
+      ],
+    },
+    {
+      label: 'these 复数',
+      sentence: 'These are my friends.',
+      translation: '这些是我的朋友。',
+      segments: [
+        {
+          text: 'These',
+          role: '主语',
+          note: '复数指示形式。',
+        },
+        {
+          text: ' are my friends.',
+        },
+      ],
+    },
+    {
+      label: 'that 远指或回指',
+      sentence: 'That is what I mean.',
+      translation: '那就是我的意思。',
+      segments: [
+        {
+          text: 'That',
+          role: '主语',
+          note: '可回指话语内容。',
+        },
+        {
+          text: ' is what I mean.',
+        },
+      ],
+    },
+    {
+      label: 'those 复数',
+      sentence: 'Those are yours.',
+      translation: '那些是你的。',
+      segments: [
+        {
+          text: 'Those',
+          role: '主语',
+          note: '复数指示形式。',
+        },
+        {
+          text: ' are yours.',
+        },
+      ],
+    },
+    {
+      label: '电话中自报身份',
+      sentence: 'This is Anna speaking.',
+      translation: '我是 Anna。',
+      segments: [
+        {
+          text: 'This',
+          role: '主语',
+          note: '电话中指说话人。',
+        },
+        {
+          text: ' is Anna speaking.',
+        },
+      ],
+    },
+    {
+      label: '电话中询问身份',
+      sentence: 'Is that Lisa?',
+      translation: '你是 Lisa 吗？',
+      segments: [
+        {
+          text: 'Is ',
+        },
+        {
+          text: 'that',
+          role: '主语',
+          note: '电话中询问对方身份。',
+        },
+        {
+          text: ' Lisa?',
+        },
+      ],
+    },
+  ]}
+/>
 
 比较与替代时，先检查名词的可数性、数和限定方式，再结合语境判断是否指同一对象：
 
-- **it 指同一对象**：I lost my pen, but later found **it**. 仍是原来那支笔。
-- **one/ones 替代可数名词**：one 用于单数，ones 用于复数。I lost my pen, so I bought **one**. 引入同类中的另一支笔；These pens are blue; the red **ones** are mine. 用 ones 替代复数 pens。
-- **限定方式影响所指**：I found my pen—the **one I lost yesterday**. 中 the one 仍指原来那支笔，one 不必表示换成另一对象。
-- **不可数义项**：Have you got any milk? Can I borrow **some**? 用 some 指一定量的牛奶，不用 one 替代 milk 的物质义。
-- **that 替代单数或不可数比较项**：The weather here is warmer than **that in Beijing**. 对应 the weather。
-- **those 替代复数比较项**：The houses here are cheaper than **those in London**. 对应 the houses。
+one/ones 替代可数名词，one 用于单数，ones 用于复数；限定方式影响所指。
+
+<EnglishExamples
+  title="先判名词类型再选择替代形式"
+  items={[
+    {
+      sentence: 'I lost my pen, but later found it.',
+      label: 'it：同一对象',
+      analysis: ['仍是原来那支笔。'],
+      segments: [
+        {
+          text: 'I lost my pen, but later found ',
+        },
+        {
+          text: 'it',
+          role: '宾语',
+          note: '回指原来那支笔。',
+        },
+        {
+          text: '.',
+        },
+      ],
+    },
+    {
+      sentence: 'I lost my pen, so I bought one.',
+      label: 'one：同类对象',
+      analysis: ['引入同类中的另一支笔。'],
+      segments: [
+        {
+          text: 'I lost my pen, so I bought ',
+        },
+        {
+          text: 'one',
+          role: '宾语',
+          note: '替代单数可数名词。',
+        },
+        {
+          text: '.',
+        },
+      ],
+    },
+    {
+      sentence: 'These pens are blue; the red ones are mine.',
+      label: 'ones：复数替代',
+      analysis: ['用 ones 替代复数 pens。'],
+      segments: [
+        {
+          text: 'These pens are blue; the red ',
+        },
+        {
+          text: 'ones',
+          role: '主语中心',
+          note: '替代复数可数名词。',
+        },
+        {
+          text: ' are mine.',
+        },
+      ],
+    },
+    {
+      sentence: 'I found my pen—the one I lost yesterday.',
+      label: '限定方式与同一性',
+      analysis: ['the one 仍指原来那支笔，one 不必表示换成另一对象。'],
+      segments: [
+        {
+          text: 'I found my pen—',
+        },
+        {
+          text: 'the one I lost yesterday',
+          role: '同位说明',
+          note: '仍与 my pen 同指。',
+        },
+        {
+          text: '.',
+        },
+      ],
+    },
+    {
+      sentence: 'Have you got any milk? Can I borrow some?',
+      label: '不可数义项',
+      analysis: ['用 some 指一定量的牛奶，不用 one 替代 milk 的物质义。'],
+      segments: [
+        {
+          text: 'Have you got any milk? Can I borrow ',
+        },
+        {
+          text: 'some',
+          role: '宾语',
+          note: '指一定量的牛奶。',
+        },
+        {
+          text: '?',
+        },
+      ],
+    },
+    {
+      sentence: 'The weather here is warmer than that in Beijing.',
+      label: 'that：单数或不可数比较项',
+      analysis: ['对应 the weather。'],
+      segments: [
+        {
+          text: 'The weather here is warmer than ',
+        },
+        {
+          text: 'that in Beijing',
+          role: '比较项',
+          note: '对应 the weather。',
+        },
+        {
+          text: '.',
+        },
+      ],
+    },
+    {
+      sentence: 'The houses here are cheaper than those in London.',
+      label: 'those：复数比较项',
+      analysis: ['对应 the houses。'],
+      segments: [
+        {
+          text: 'The houses here are cheaper than ',
+        },
+        {
+          text: 'those in London',
+          role: '比较项',
+          note: '对应 the houses。',
+        },
+        {
+          text: '.',
+        },
+      ],
+    },
+  ]}
+/>
 
 ### 疑问形式
 
-- **who**：询问人的身份，作主语或宾语，如 Who called? / Who did you see?
-- **whom**：人的宾格形式，偏正式，如 Whom did you invite?
-- **whose**：询问所属，可独立使用或限定名词，如 Whose is this? / Whose book is this?
-- **what**：不先建立一组备选项，如 What do you want? / What colour is it?
-- **which**：从语境建立的备选范围选择，如 Which do you prefer, tea or coffee? 也能选人，如 Which of the students won?
+- **who**：询问人的身份，作主语或宾语。
+- **whom**：人的宾格形式，偏正式。
+- **whose**：询问所属，可独立使用或限定名词。
+- **what**：不先建立一组备选项。
+- **which**：从语境建立的备选范围选择，也能选人。
 
-what/which 的区别是提问时怎样设定范围，不是客观世界中的选项是否有限。Which colour do you prefer? 把颜色当作一组已建立的备选项；What colour is it? 没有这样设定。
+what/which 的区别是提问时怎样设定范围，不是客观世界中的选项是否有限。
+
+<EnglishExamples
+  title="疑问形式与选择范围"
+  items={[
+    {
+      label: '询问主语',
+      sentence: 'Who called?',
+      translation: '谁打了电话？',
+      segments: [
+        {
+          text: 'Who',
+          role: '主语',
+        },
+        {
+          text: ' called?',
+        },
+      ],
+    },
+    {
+      label: '询问宾语',
+      sentence: 'Who did you see?',
+      translation: '你看见了谁？',
+      segments: [
+        {
+          text: 'Who',
+          role: '疑问宾语',
+        },
+        {
+          text: ' did you see?',
+        },
+      ],
+    },
+    {
+      label: '正式宾格',
+      sentence: 'Whom did you invite?',
+      translation: '你邀请了谁？',
+      segments: [
+        {
+          text: 'Whom',
+          role: '疑问宾语',
+          note: '较正式的宾格形式。',
+        },
+        {
+          text: ' did you invite?',
+        },
+      ],
+    },
+    {
+      label: '独立询问所属',
+      sentence: 'Whose is this?',
+      translation: '这是谁的？',
+      segments: [
+        {
+          text: 'Whose',
+          role: '疑问物主形式',
+          note: '独立使用。',
+        },
+        {
+          text: ' is this?',
+        },
+      ],
+    },
+    {
+      label: '限定名词询问所属',
+      sentence: 'Whose book is this?',
+      translation: '这是谁的书？',
+      segments: [
+        {
+          text: 'Whose',
+          role: '疑问限定词',
+          note: '限定 book。',
+        },
+        {
+          text: ' book is this?',
+        },
+      ],
+    },
+    {
+      label: '未预设备选范围',
+      sentence: 'What do you want?',
+      translation: '你想要什么？',
+      segments: [
+        {
+          text: 'What',
+          role: '疑问宾语',
+        },
+        {
+          text: ' do you want?',
+        },
+      ],
+    },
+    {
+      label: '未预设颜色范围',
+      sentence: 'What colour is it?',
+      translation: '它是什么颜色？',
+      analysis: ['提问时没有先把颜色设定为一组已建立的备选项。'],
+      segments: [
+        {
+          text: 'What',
+          role: '疑问限定词',
+          note: '限定 colour。',
+        },
+        {
+          text: ' colour is it?',
+        },
+      ],
+    },
+    {
+      label: '已给定备选项',
+      sentence: 'Which do you prefer, tea or coffee?',
+      translation: '茶和咖啡，你更喜欢哪一种？',
+      segments: [
+        {
+          text: 'Which',
+          role: '疑问宾语',
+          note: '在 tea 与 coffee 之间选择。',
+        },
+        {
+          text: ' do you prefer, tea or coffee?',
+        },
+      ],
+    },
+    {
+      label: '从人中选择',
+      sentence: 'Which of the students won?',
+      translation: '这些学生中谁赢了？',
+      segments: [
+        {
+          text: 'Which of the students',
+          role: '主语',
+          note: '范围为已给定的学生。',
+        },
+        {
+          text: ' won?',
+        },
+      ],
+    },
+    {
+      label: '已建立颜色范围',
+      sentence: 'Which colour do you prefer?',
+      translation: '你更喜欢哪种颜色？',
+      analysis: ['把颜色当作一组已建立的备选项。'],
+      segments: [
+        {
+          text: 'Which colour',
+          role: '疑问宾语',
+        },
+        {
+          text: ' do you prefer?',
+        },
+      ],
+    },
+  ]}
+/>
 
 介词的位置决定正式宾格形式的用法：
 
-- **介词前置的正式结构**：**To whom** did you speak?
-- **介词留在句末的自然口语**：**Who** did you speak **to**?
+- **介词前置的正式结构**：前置介词后用宾格 whom。
+- **介词留在句末的自然口语**：可用 who。
+
+<EnglishExamples
+  title="疑问句中的介词位置"
+  items={[
+    {
+      label: '前置介词',
+      sentence: 'To whom did you speak?',
+      translation: '你和谁说了话？',
+      segments: [
+        {
+          text: 'To whom',
+          role: '前置介词短语',
+          note: '介词后用正式宾格 whom。',
+        },
+        {
+          text: ' did you speak?',
+        },
+      ],
+    },
+    {
+      label: '句末介词',
+      sentence: 'Who did you speak to?',
+      translation: '你和谁说了话？',
+      segments: [
+        {
+          text: 'Who',
+          role: '疑问成分',
+          note: 'to 的宾语；介词留在句末时，口语可用 who。',
+        },
+        {
+          text: ' did you speak to?',
+        },
+      ],
+    },
+  ]}
+/>
 
 因此，正式结构中前置介词后用 whom，不等于句末有介词时也不能用 who。
 
 ## 不定与数量
 
-一些词既可独立指代，也可在名词前限定：**Some** are missing. / **Some books** are missing. every 则需接名词或 one，不直接独立使用。
+一些词既可独立指代，也可在名词前限定；every 则需接名词或 one，不直接独立使用。
+
+<EnglishExamples
+  title="独立指代与限定名词"
+  items={[
+    {
+      label: '独立指代',
+      sentence: 'Some are missing.',
+      segments: [
+        {
+          text: 'Some',
+          role: '主语',
+          note: '独立使用，所指由语境恢复。',
+        },
+        {
+          text: ' are missing.',
+        },
+      ],
+    },
+    {
+      label: '限定名词',
+      sentence: 'Some books are missing.',
+      segments: [
+        {
+          text: 'Some',
+          role: '限定词',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'books',
+          role: '中心名词',
+        },
+        {
+          text: ' are missing.',
+        },
+      ],
+    },
+  ]}
+/>
 
 ### 两者与整体
 
-明确涉及两者时，区分以下三个量词：
+明确涉及两者时，区分以下 3 个量词：
 
-- **both**：两者都，如 both answers、both of them；作主语用复数，Both **are** correct.
-- **either**：两者中任一，如 either answer、either of them；正式写作按单数，Either **is** fine.
-- **neither**：两者都不，如 neither answer、neither of them；正式写作按单数，Neither **is** correct.
+- **both**：两者都，如 both answers、both of them；作主语用复数。
+- **either**：两者中任一，如 either answer、either of them；正式写作按单数。
+- **neither**：两者都不，如 neither answer、neither of them；正式写作按单数。
+
+<EnglishExamples
+  title="两者范围中的一致关系"
+  items={[
+    {
+      label: 'both 复数',
+      sentence: 'Both are correct.',
+      translation: '两个都正确。',
+      segments: [
+        {
+          text: 'Both',
+          role: '主语',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'are',
+          role: '谓语动词',
+          note: '与 both 配复数。',
+        },
+        {
+          text: ' correct.',
+        },
+      ],
+    },
+    {
+      label: 'either 单数',
+      sentence: 'Either is fine.',
+      translation: '两个中任一个都可以。',
+      segments: [
+        {
+          text: 'Either',
+          role: '主语',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'is',
+          role: '谓语动词',
+          note: '正式表达采用单数。',
+        },
+        {
+          text: ' fine.',
+        },
+      ],
+    },
+    {
+      label: 'neither 单数',
+      sentence: 'Neither is correct.',
+      translation: '两个都不正确。',
+      segments: [
+        {
+          text: 'Neither',
+          role: '主语',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'is',
+          role: '谓语动词',
+          note: '正式表达采用单数。',
+        },
+        {
+          text: ' correct.',
+        },
+      ],
+    },
+  ]}
+/>
 
 指整个集合或总量时，另看所指的数：
 
-- **all + 可数复数**：全部成员，如 all the books、All **are** ready.
-- **all + 不可数**：整个量或情状，如 all the water、All **is** well.
-- **none + 不可数所指**：没有任何量，单数谓语，如 None of the water **was** wasted.
-- **none of + 可数复数**：没有一个，单复数谓语均有标准用例，如 None of the answers **is/are** correct. 单数可突出没有任何一个，复数可按多个成员组织一致关系。
+- **all + 可数复数**：全部成员，如 all the books。
+- **all + 不可数**：整个量或情状，如 all the water。
+- **none + 不可数所指**：没有任何量，用单数谓语。
+- **none of + 可数复数**：没有一个，单复数谓语均有标准用例；单数可突出没有任何一个，复数可按多个成员组织一致关系。
 
-- **否定对象范围**：明确否定两者时，用 neither 更直接；none 也能否定不可数的量，不限于三者以上。
+<EnglishExamples
+  title="整体数量与 none 的一致关系"
+  items={[
+    {
+      label: '多个成员',
+      sentence: 'All are ready.',
+      translation: '所有人都准备好了。',
+      segments: [
+        {
+          text: 'All',
+          role: '主语',
+          note: '指多个成员。',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'are',
+          role: '谓语动词',
+        },
+        {
+          text: ' ready.',
+        },
+      ],
+    },
+    {
+      label: '整个情状',
+      sentence: 'All is well.',
+      translation: '一切都好。',
+      segments: [
+        {
+          text: 'All',
+          role: '主语',
+          note: '按整个情状理解。',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'is',
+          role: '谓语动词',
+        },
+        {
+          text: ' well.',
+        },
+      ],
+    },
+    {
+      label: '不可数总量',
+      sentence: 'None of the water was wasted.',
+      translation: '这些水一点也没浪费。',
+      segments: [
+        {
+          text: 'None',
+          role: '主语中心',
+        },
+        {
+          text: ' of the water ',
+        },
+        {
+          text: 'was wasted',
+          role: '谓语',
+          note: '不可数总量采用单数一致。',
+        },
+        {
+          text: '.',
+        },
+      ],
+    },
+    {
+      label: '可数复数所指',
+      sentence: 'None of the answers is/are correct.',
+      translation: '这些答案都不正确。',
+      analysis: ['单复数谓语均有标准用例；单数可突出没有任何一个，复数可按多个成员组织一致关系。'],
+      segments: [
+        {
+          text: 'None of the answers ',
+        },
+        {
+          text: 'is/are',
+          role: '谓语动词变体',
+          note: '2 种一致形式均有标准用例。',
+        },
+        {
+          text: ' correct.',
+        },
+      ],
+    },
+  ]}
+/>
+
+范围与语体另行检查：
+
+- **否定对象范围**：明确否定两者时，用 neither 更直接；none 也能否定不可数的量，不限于 3 个及以上对象。
 - **一致关系的语体**：either/neither of + 复数名词在非正式英语中可见复数谓语；正式写作和多数学校语法题取单数。
 
 ### 逐个分配
 
-- **each 作主语中心**：Each of the students **has** a book. 单数谓语与 each 一致。
-- **each 为附加分配成分**：The students each **have** a book. 主语中心是复数 students。
+<EnglishExamples
+  title="each 的位置与一致关系"
+  items={[
+    {
+      sentence: 'Each of the students has a book.',
+      label: 'each 作主语中心',
+      analysis: ['单数谓语与 each 一致。'],
+      segments: [
+        {
+          text: 'Each',
+          role: '主语中心',
+        },
+        {
+          text: ' of the students ',
+        },
+        {
+          text: 'has',
+          role: '谓语动词',
+          note: '采用单数。',
+        },
+        {
+          text: ' a book.',
+        },
+      ],
+    },
+    {
+      sentence: 'The students each have a book.',
+      label: 'each 为附加分配成分',
+      analysis: ['主语中心是复数 students。'],
+      segments: [
+        {
+          text: 'The students',
+          role: '主语',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'each',
+          role: '分配成分',
+          note: '不是主语中心。',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'have',
+          role: '谓语动词',
+          note: '与 students 一致。',
+        },
+        {
+          text: ' a book.',
+        },
+      ],
+    },
+  ]}
+/>
+
 - **each 可独立使用**：「Each is different.」；each of us、each student 均成立。
 - **every 不直接独立使用**：every student、every one of us，不用 every of us。
-- **数量范围**：each 可用于两个及以上成员；every 的常见分配用法面向三个及以上成员，明确仅两者时用 both 或 each 更自然。
+- **数量范围**：each 可用于 2 个及以上成员；every 的常见分配用法面向 3 个及以上成员，明确仅两者时用 both 或 each 更自然。
 - **every + 数量间隔**：every two days 表每两天一次，即隔一天；它按每个两天的间隔组织，不是 every + 单数名词规则的反例。
 
 否定的位置决定范围：
@@ -187,22 +1593,232 @@ what/which 的区别是提问时怎样设定范围，不是客观世界中的选
 - few/little 强调数量少或不足，a few/a little 肯定仍有一些；这是语义与语用倾向，不等于说话人的情绪必然消极或积极。
 - quite a few 表相当多，不能逐字解释为很少。
 - a lot of/lots of 可接复数可数或不可数名词，如 a lot of books、a lot of time。
-- 普通肯定句中单独的 much 较正式，日常常说「We have **a lot of time**.」；否定、疑问及 so、too 等修饰结构中用 much 自然，如 We don't have **much time**. / There is **too much noise**.
+- 普通肯定句中单独的 much 较正式；日常常用 a lot of。否定、疑问及 so、too 等修饰结构中用 much 自然。
+
+<EnglishExamples
+  title="much 与 a lot of 的语境"
+  items={[
+    {
+      label: '日常肯定句',
+      sentence: 'We have a lot of time.',
+      translation: '我们有很多时间。',
+      segments: [
+        {
+          text: 'We have ',
+        },
+        {
+          text: 'a lot of time',
+          role: '宾语',
+          note: 'a lot of 可限定不可数名词。',
+        },
+        {
+          text: '.',
+        },
+      ],
+    },
+    {
+      label: '否定句',
+      sentence: "We don't have much time.",
+      translation: '我们没有多少时间。',
+      segments: [
+        {
+          text: "We don't have ",
+        },
+        {
+          text: 'much time',
+          role: '宾语',
+          note: '否定语境中 much 自然。',
+        },
+        {
+          text: '.',
+        },
+      ],
+    },
+    {
+      label: 'too 修饰 much',
+      sentence: 'There is too much noise.',
+      translation: '噪声太大了。',
+      segments: [
+        {
+          text: 'There is ',
+        },
+        {
+          text: 'too much noise',
+          role: '名词短语',
+          note: 'too 修饰数量限定成分 much。',
+        },
+        {
+          text: '.',
+        },
+      ],
+    },
+  ]}
+/>
 
 some/any 按数量意义及语境判断：
 
-- **some 表一定数量**：I have some questions. 肯定有一些。
-- **some 用于提供或期待肯定回应**：Would you like some tea? 不是所有问句都用 any。
-- **any 用于疑问、否定或条件**：Do you have any questions? / I don't have any questions. 不预设一定存在；If you have any questions, ask me. 则把存在问题作为条件。
-- **any 表自由选择**：Any student can apply. 表任何一名学生，不限于否定或疑问。
+- **some 表一定数量**：肯定有一些。
+- **some 用于提供或期待肯定回应**：不是所有问句都用 any。
+- **any 用于疑问、否定或条件**：询问不预设一定存在，条件则把存在作为条件。
+- **any 表自由选择**：不限于否定或疑问。
+
+<EnglishExamples
+  title="some 与 any 的数量语境"
+  items={[
+    {
+      label: '肯定存在',
+      sentence: 'I have some questions.',
+      translation: '我有一些问题。',
+      segments: [
+        {
+          text: 'I have ',
+        },
+        {
+          text: 'some questions',
+          role: '宾语',
+        },
+        {
+          text: '.',
+        },
+      ],
+    },
+    {
+      label: '提供物品',
+      sentence: 'Would you like some tea?',
+      translation: '你想喝点茶吗？',
+      segments: [
+        {
+          text: 'Would you like ',
+        },
+        {
+          text: 'some tea',
+          role: '宾语',
+          note: '呈现拟提供的一些。',
+        },
+        {
+          text: '?',
+        },
+      ],
+    },
+    {
+      label: '不预设存在的询问',
+      sentence: 'Do you have any questions?',
+      translation: '你有什么问题吗？',
+      segments: [
+        {
+          text: 'Do you have ',
+        },
+        {
+          text: 'any questions',
+          role: '宾语',
+        },
+        {
+          text: '?',
+        },
+      ],
+    },
+    {
+      label: '否定存在',
+      sentence: "I don't have any questions.",
+      translation: '我没有任何问题。',
+      segments: [
+        {
+          text: "I don't have ",
+        },
+        {
+          text: 'any questions',
+          role: '宾语',
+        },
+        {
+          text: '.',
+        },
+      ],
+    },
+    {
+      label: '存在作为条件',
+      sentence: 'If you have any questions, ask me.',
+      translation: '如果你有什么问题，就问我。',
+      segments: [
+        {
+          text: 'If you have ',
+        },
+        {
+          text: 'any questions',
+          role: '宾语',
+          note: '位于条件分句中。',
+        },
+        {
+          text: ', ask me.',
+        },
+      ],
+    },
+    {
+      label: '自由选择',
+      sentence: 'Any student can apply.',
+      translation: '任何学生都可以申请。',
+      segments: [
+        {
+          text: 'Any student',
+          role: '主语',
+          note: '表示任何一名学生。',
+        },
+        {
+          text: ' can apply.',
+        },
+      ],
+    },
+  ]}
+/>
 
 ### 其他与剩余
 
 - **another**：再一个或另一个，如 another book；后接数量短语时还可说 another two days（再两天）。
 - **other + 名词**：other books、other information；前有适当限定词时也可接单数，如 my other hand、one other question。
-- **others 独立使用**：Some stayed; others left. 不在 others 后再直接接名词。
+- **others 独立使用**：后面不再直接接名词。
 - **the other**：已确定的另一个，如 one hand ... the other；也可限定复数，如 the other students。
-- **the others**：某组其余全部，独立使用，如 Three left; the others stayed.
+- **the others**：某组其余全部，独立使用。
+
+<EnglishExamples
+  title="others 与 the others"
+  items={[
+    {
+      label: '泛指其他成员',
+      sentence: 'Some stayed; others left.',
+      translation: '有些人留了下来，其他人离开了。',
+      segments: [
+        {
+          text: 'Some stayed; ',
+        },
+        {
+          text: 'others',
+          role: '主语',
+          note: '独立指其他人。',
+        },
+        {
+          text: ' left.',
+        },
+      ],
+    },
+    {
+      label: '其余全部',
+      sentence: 'Three left; the others stayed.',
+      translation: '3 人离开，其余人留了下来。',
+      segments: [
+        {
+          text: 'Three left; ',
+        },
+        {
+          text: 'the others',
+          role: '主语',
+          note: '指已给定群体的其余全部成员。',
+        },
+        {
+          text: ' stayed.',
+        },
+      ],
+    },
+  ]}
+/>
 
 ### 复合不定代词
 
@@ -211,11 +1827,118 @@ some/any 按数量意义及语境判断：
 |  人  | someone/somebody | anyone/anybody | everyone/everybody | no one/nobody |
 | 事物 |    something     |    anything    |     everything     |    nothing    |
 
-- **作主语**：接单数谓语，如「Everyone **is** ready.」；回指人时可用单数 they，如 Everyone **has** brought **their** ticket.
+- **作主语**：接单数谓语；回指人时可用单数 they。
+
+<EnglishExamples
+  title="复合不定代词与回指"
+  items={[
+    {
+      label: '单数一致',
+      sentence: 'Everyone is ready.',
+      translation: '每个人都准备好了。',
+      segments: [
+        {
+          text: 'Everyone',
+          role: '主语',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'is',
+          role: '谓语动词',
+          note: '与 everyone 配单数。',
+        },
+        {
+          text: ' ready.',
+        },
+      ],
+    },
+    {
+      label: '单数一致与单数 they',
+      sentence: 'Everyone has brought their ticket.',
+      translation: '每个人都带了自己的票。',
+      segments: [
+        {
+          text: 'Everyone',
+          role: '主语',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'has brought',
+          role: '谓语',
+          note: '与 everyone 配单数。',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'their',
+          role: '物主限定词',
+          note: '单数 they 的回指形式。',
+        },
+        {
+          text: ' ticket.',
+        },
+      ],
+    },
+  ]}
+/>
+
 - **后接修饰语**：something **important**、nothing **to say**，不用把形容词机械前置。
 - **拼写**：no one 分写，英式英语也见 no-one。
 - **-one/-body**：多数场景可互换，不按书面或口语一刀切。
-- **否定范围**：I didn't see **anyone**. 与 I saw **no one**. 均可表达没见到任何人；标准英语不叠成 I didn't see no one. 表达同一个单重否定。
+- **否定范围**：下列 2 句均可表达没见到任何人；标准英语不叠成「I didn't see no one.」表达同一个单重否定。
+
+<EnglishExamples
+  title="anyone 与 no one 的否定表达"
+  items={[
+    {
+      label: '谓语否定',
+      sentence: "I didn't see anyone.",
+      translation: '我没见到任何人。',
+      segments: [
+        {
+          text: 'I ',
+        },
+        {
+          text: "didn't see",
+          role: '否定谓语',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'anyone',
+          role: '宾语',
+        },
+        {
+          text: '.',
+        },
+      ],
+    },
+    {
+      label: 'no one 表否定',
+      sentence: 'I saw no one.',
+      translation: '我没见到任何人。',
+      segments: [
+        {
+          text: 'I saw ',
+        },
+        {
+          text: 'no one',
+          role: '宾语',
+          note: 'no one 自带否定意义。',
+        },
+        {
+          text: '.',
+        },
+      ],
+    },
+  ]}
+/>
 
 ## 从句中的代词
 
@@ -226,16 +1949,139 @@ some/any 按数量意义及语境判断：
 - 传统的 **连接代词** 引导名词性从句，并在从句内部作成分。
 - 传统的 **关系代词** 引导关系从句，关联先行内容并在内部作成分；现代语法对部分形式另有分析。
 
-- **直接疑问**：**What** do you need? 直接提出问题，what 作 need 的宾语。
-- **间接疑问**：I wonder **which book she chose**. 从句作 wonder 的宾语，which 在从句内限定 book。
-- **普通关系从句**：the book **which she chose**，从句修饰名词 book，which 作 chose 的宾语。
-- **融合关系结构**：**What she chose** surprised me. 整体接近 the thing that she chose，并作主语。
-- **内容从句**：I know **that she left**. that 标记从属，不代替名词，也不在 she left 内作主语或宾语。
+<EnglishExamples
+  title="同形词在不同从句中的功能"
+  items={[
+    {
+      sentence: 'What do you need?',
+      label: '直接疑问',
+      analysis: ['直接提出问题，what 作 need 的宾语。'],
+      segments: [
+        {
+          text: 'What',
+          role: '宾语',
+          note: '疑问形式。',
+        },
+        {
+          text: ' do you need?',
+        },
+      ],
+    },
+    {
+      sentence: 'I wonder which book she chose.',
+      label: '间接疑问',
+      analysis: ['从句作 wonder 的宾语，which 在从句内限定 book。'],
+      segments: [
+        {
+          text: 'I wonder ',
+        },
+        {
+          text: 'which',
+          role: '疑问限定词',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'book',
+          role: '中心词',
+        },
+        {
+          text: ' she chose.',
+        },
+      ],
+    },
+    {
+      sentence: 'the book which she chose',
+      label: '普通关系从句',
+      analysis: ['从句修饰名词 book，which 作 chose 的宾语。'],
+      segments: [
+        {
+          text: 'the ',
+        },
+        {
+          text: 'book',
+          role: '先行词',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'which',
+          role: '关系词',
+          note: '在从句中作宾语。',
+        },
+        {
+          text: ' she chose',
+        },
+      ],
+    },
+    {
+      sentence: 'What she chose surprised me.',
+      label: '融合关系结构',
+      analysis: ['整体接近 the thing that she chose，并作主语。'],
+      segments: [
+        {
+          text: 'What she chose',
+          role: '主语',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'surprised',
+          role: '谓语动词',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'me',
+          role: '宾语',
+        },
+        {
+          text: '.',
+        },
+      ],
+    },
+    {
+      sentence: 'I know that she left.',
+      label: '内容从句',
+      analysis: ['that 标记从属，不代替名词，也不在 she left 内作主语或宾语。'],
+      segments: [
+        {
+          text: 'I know ',
+        },
+        {
+          text: 'that',
+          role: '从属标记',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'she',
+          role: '从句主语',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'left',
+          role: '从句谓语动词',
+        },
+        {
+          text: '.',
+        },
+      ],
+    },
+  ]}
+/>
 
-what 的两种位置不能混用：
+what 的 2 种位置不能混用：
 
 - 有显式名词先行词时，用 the book **that/which** I need，不用 the book what I need 引导普通关系从句。
-- **What I need** is a book. 没有另一个名词先行词，what 将所指与关系功能融合；传统学校语法常将整体归为名词性从句。
+- 「**What I need** is a book.」没有另一个名词先行词，what 将所指与关系功能融合；传统学校语法常将整体归为名词性从句。
 
 ### 关系形式
 
@@ -246,12 +2092,99 @@ what 的两种位置不能混用：
 - **that**：关联人或物，用于限制性关系从句；传统分析将其列为关系代词，与内容从句中的连词 that 区分。
 - **as**：可关联整个事实，如「**As we expected**, the train was late.」，不必代替前面一个名词。
 
-关系词的可省略性取决于功能：The man **who called** is my uncle. 中 who 作主语，不能直接删除；The book **which I bought** is useful. 中 which 作宾语，在这个限制性结构中可以省略。
+关系词的可省略性取决于功能与结构：
+
+- **从句主语**：普通关系从句的主语关系词不能直接删除。
+- **限制性关系从句的宾语**：在许可省略的结构中可以省去关系词。
+
+<EnglishExamples
+  title="关系词的主语与宾语功能"
+  items={[
+    {
+      label: '关系词作从句主语',
+      sentence: 'The man who called is my uncle.',
+      translation: '打电话的那个人是我叔叔。',
+      analysis: ['who 作 called 的主语，不能直接删除。'],
+      segments: [
+        {
+          text: 'The man ',
+        },
+        {
+          text: 'who',
+          role: '从句主语',
+          note: '关系分句内部的主语。',
+        },
+        {
+          text: ' called is my uncle.',
+        },
+      ],
+    },
+    {
+      label: '关系词作从句宾语',
+      sentence: 'The book which I bought is useful.',
+      translation: '我买的那本书很有用。',
+      analysis: ['which 作 bought 的宾语，在这个限制性结构中可以省略。'],
+      segments: [
+        {
+          text: 'The book ',
+        },
+        {
+          text: 'which',
+          role: '从句宾语',
+          note: '不是主句的宾语。',
+        },
+        {
+          text: ' I bought is useful.',
+        },
+      ],
+    },
+  ]}
+/>
 
 ### wh-ever 形式
 
-- **泛指所指**：**Whoever arrives first** may choose a seat.（谁先到，谁就可选座。）whatever、whichever 也可引导相应结构。
+- **泛指所指**：whoever、whatever、whichever 可引导相应结构。
 - **内部格决定形式**：whomever 是较正式的宾格形式，需看它在从句内的功能。
-- **外层介词不直接决定格**：Give it to **whoever needs it**. 中 whoever 作 needs 的主语，不因外层有 to 就改成 whomever。
+- **外层介词不直接决定格**：内部作主语时，不因外层介词而改成宾格。
+
+<EnglishExamples
+  title="wh-ever 的内部功能"
+  items={[
+    {
+      label: '整个分句作主语',
+      sentence: 'Whoever arrives first may choose a seat.',
+      translation: '谁先到，谁就可选座。',
+      segments: [
+        {
+          text: 'Whoever arrives first',
+          role: '主语',
+          note: '内部 whoever 作 arrives 的主语。',
+        },
+        {
+          text: ' may choose a seat.',
+        },
+      ],
+    },
+    {
+      label: '外层介词后的分句',
+      sentence: 'Give it to whoever needs it.',
+      translation: '把它给需要它的人。',
+      analysis: ['whoever 作 needs 的主语，不因外层有 to 就改成 whomever。'],
+      segments: [
+        {
+          text: 'Give it to ',
+        },
+        {
+          text: 'whoever needs it',
+          role: '介词补语',
+          note: '分句内部 whoever 是主语。',
+        },
+        {
+          text: '.',
+        },
+      ],
+    },
+  ]}
+/>
 
 非限制性关系从句、前置介词和省略规则详见 [从句](/docs/note/english/grammar/sentences/clauses)。

@@ -14,13 +14,126 @@ summary: 形容词的词类、句法功能、词义与构成分别分析：可�
 
 **形容词**（Adjective）通常描述人或事物的性质、状态、特征，例如 good、tall、red、asleep。
 
-- **词类与功能** 分开判断：
-  - a **clever** student：clever 是形容词，作定语。
-  - 「The student is **clever**.」：clever 作表语，说明主语。
-  - 「We found the student **clever**.」：clever 作宾语补足语。
-  - a **school** bus：school 是名词，作名词前的修饰语；作定语不等于属于形容词。
+- **词类与功能** 分开判断：形容词可作定语、表语或宾语补足语；名词作定语不因此变为形容词。
 - **形式不与名词保持数或性的一致**：a new book / two new books，不写 two news books。比较级、最高级表示程度变化。
 - this、my、some、three 等用于限定或计数的词，分别见 [限定词](/docs/note/english/grammar/parts-of-speech/determiners) 和 [数词](/docs/note/english/grammar/parts-of-speech/numerals)。
+
+<EnglishExamples
+  title="词类与句法功能"
+  items={[
+    {
+      label: '形容词作定语',
+      sentence: 'a clever student',
+      translation: '一个聪明的学生',
+      analysis: ['clever 是形容词，作定语，修饰名词 student。'],
+      segments: [
+        {
+          text: 'a ',
+        },
+        {
+          text: 'clever',
+          role: '定语',
+          note: 'clever 属于形容词，描述学生的性质。',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'student',
+          role: '中心名词',
+        },
+      ],
+    },
+    {
+      label: '形容词作表语',
+      sentence: 'The student is clever.',
+      translation: '这个学生很聪明。',
+      analysis: ['clever 作表语，说明主语 The student。'],
+      segments: [
+        {
+          text: 'The student',
+          role: '主语',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'is',
+          role: '系动词',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'clever',
+          role: '表语',
+        },
+        {
+          text: '.',
+        },
+      ],
+    },
+    {
+      label: '形容词作宾语补足语',
+      sentence: 'We found the student clever.',
+      translation: '我们觉得这个学生很聪明。',
+      analysis: ['clever 作宾语补足语，说明宾语 the student。'],
+      segments: [
+        {
+          text: 'We',
+          role: '主语',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'found',
+          role: '谓语动词',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'the student',
+          role: '宾语',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'clever',
+          role: '宾语补足语',
+        },
+        {
+          text: '.',
+        },
+      ],
+    },
+    {
+      label: '名词作修饰语',
+      sentence: 'a school bus',
+      translation: '一辆校车',
+      analysis: ['school 是名词，作名词前的修饰语。', '作定语不等于属于形容词。'],
+      segments: [
+        {
+          text: 'a ',
+        },
+        {
+          text: 'school',
+          role: '名词修饰语',
+          note: 'school 表示用途或所属类别，词类仍是名词。',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'bus',
+          role: '中心名词',
+        },
+      ],
+    },
+  ]}
+/>
 
 ## 词义与构成
 
@@ -43,13 +156,52 @@ summary: 形容词的词类、句法功能、词义与构成分别分析：可�
 
 动词分词有时用作形容词。
 
-- **情感动词派生**：
-  - The lesson is **interesting**.（这节课很有趣。）说明引起兴趣的事物。
-  - I am **interested in** grammar.（我对语法感兴趣。）说明产生兴趣的人。
-  - bore、excite 等也有相似对比，但「-ing 令人……、-ed 感到……」不适用于所有分词。
+- **情感动词派生**：bore、excite 等也有相似对比，但「-ing 令人……、-ed 感到……」不适用于所有分词。
 - **其他动作或状态**：
   - a **broken** window：破了的窗户，描述结果状态。
   - **boiling** water：沸腾的水；**boiled** water：烧开过的水，都不表示感受。
+
+<EnglishExamples
+  title="情感动词派生的分词"
+  items={[
+    {
+      label: '引起兴趣',
+      sentence: 'The lesson is interesting.',
+      translation: '这节课很有趣。',
+      analysis: ['说明引起兴趣的事物。'],
+      segments: [
+        {
+          text: 'The lesson is ',
+        },
+        {
+          text: 'interesting',
+          role: '形容词',
+        },
+        {
+          text: '.',
+        },
+      ],
+    },
+    {
+      label: '产生兴趣',
+      sentence: 'I am interested in grammar.',
+      translation: '我对语法感兴趣。',
+      analysis: ['说明产生兴趣的人。'],
+      segments: [
+        {
+          text: 'I am ',
+        },
+        {
+          text: 'interested in grammar',
+          role: '表语',
+        },
+        {
+          text: '.',
+        },
+      ],
+    },
+  ]}
+/>
 
 ### 复合构词
 
@@ -95,18 +247,216 @@ summary: 形容词的词类、句法功能、词义与构成分别分析：可�
 ### 表语与补足语
 
 - **系动词后作表语**（Predicative Complement）：描述主语。
-  - She is **happy**.（她很开心。）
-  - The soup tastes **delicious**.（这汤尝起来很美味。）
-  - He looks **tired**.（他看起来很累。）
-  - 对比「He looked **carefully** at the picture.」：carefully 是副词，说明他怎样看画。
 - **作宾语补足语**（Object Complement）：描述宾语。
-  - We painted the wall **white**.（我们把墙刷成白色。）
-  - The news made me **sad**.（这个消息使我难过。）
-  - Keep the door **open**.（让门开着。）
-  - 被动句 The wall was painted **white**. 中，white 仍说明墙的结果状态，传统语法常称主语补足语。
-  - He was elected **chairman**. 中 chairman 是名词，不能用作形容词例子。
 - **补充主语的状态**：He arrived home **tired**.（他到家时很累。）
   - tired 不表示到家的动作方式；传统语法也常称形容词作状语，词类仍是形容词。
+
+<EnglishExamples
+  title="形容词表语与动作方式"
+  items={[
+    {
+      label: 'be 后的表语',
+      sentence: 'She is happy.',
+      translation: '她很开心。',
+      segments: [
+        {
+          text: 'She is ',
+        },
+        {
+          text: 'happy',
+          role: '表语',
+        },
+        {
+          text: '.',
+        },
+      ],
+    },
+    {
+      label: '感官系动词后的表语',
+      sentence: 'The soup tastes delicious.',
+      translation: '这汤尝起来很美味。',
+      segments: [
+        {
+          text: 'The soup ',
+        },
+        {
+          text: 'tastes',
+          role: '系动词',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'delicious',
+          role: '表语',
+        },
+        {
+          text: '.',
+        },
+      ],
+    },
+    {
+      label: '外观或状态',
+      sentence: 'He looks tired.',
+      translation: '他看起来很累。',
+      segments: [
+        {
+          text: 'He ',
+        },
+        {
+          text: 'looks',
+          role: '系动词',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'tired',
+          role: '表语',
+        },
+        {
+          text: '.',
+        },
+      ],
+    },
+    {
+      label: '动作方式对照',
+      sentence: 'He looked carefully at the picture.',
+      analysis: ['carefully 是副词，说明他怎样看画。'],
+      segments: [
+        {
+          text: 'He ',
+        },
+        {
+          text: 'looked',
+          role: '实义动词',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'carefully',
+          role: '方式状语',
+        },
+        {
+          text: ' at the picture.',
+        },
+      ],
+    },
+  ]}
+/>
+
+<EnglishExamples
+  title="宾语补足语与结果状态"
+  items={[
+    {
+      label: '颜色结果',
+      sentence: 'We painted the wall white.',
+      translation: '我们把墙刷成白色。',
+      segments: [
+        {
+          text: 'We painted ',
+        },
+        {
+          text: 'the wall',
+          role: '宾语',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'white',
+          role: '宾语补足语',
+        },
+        {
+          text: '.',
+        },
+      ],
+    },
+    {
+      label: '情感结果',
+      sentence: 'The news made me sad.',
+      translation: '这个消息使我难过。',
+      segments: [
+        {
+          text: 'The news made ',
+        },
+        {
+          text: 'me',
+          role: '宾语',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'sad',
+          role: '宾语补足语',
+        },
+        {
+          text: '.',
+        },
+      ],
+    },
+    {
+      label: '保持状态',
+      sentence: 'Keep the door open.',
+      translation: '让门开着。',
+      segments: [
+        {
+          text: 'Keep ',
+        },
+        {
+          text: 'the door',
+          role: '宾语',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'open',
+          role: '宾语补足语',
+        },
+        {
+          text: '.',
+        },
+      ],
+    },
+    {
+      label: '被动句中的结果状态',
+      sentence: 'The wall was painted white.',
+      analysis: ['white 仍说明墙的结果状态，传统语法常称主语补足语。'],
+      segments: [
+        {
+          text: 'The wall was painted ',
+        },
+        {
+          text: 'white',
+          role: '结果状态补足语',
+        },
+        {
+          text: '.',
+        },
+      ],
+    },
+    {
+      label: '名词补足语对照',
+      sentence: 'He was elected chairman.',
+      analysis: ['chairman 是名词，不能用作形容词例子。'],
+      segments: [
+        {
+          text: 'He was elected ',
+        },
+        {
+          text: 'chairman',
+          role: '名词补足语',
+        },
+        {
+          text: '.',
+        },
+      ],
+    },
+  ]}
+/>
 
 ### 词项的位置限制
 
@@ -142,21 +492,151 @@ summary: 形容词的词类、句法功能、词义与构成分别分析：可�
 
 「美小新圆色国材用」概括的是倾向，不是生成公式。年龄与形状的相对位置有变体，强调、对比、固定搭配也会改变顺序；材料或用途位置上的词还可能是名词，如 silk shirt 中的 silk。
 
-- **并列修饰**：a **kind, patient** teacher，可改为 kind and patient。
-- **累积修饰**：a **small wooden** box，wooden box 先组成一层，small 再修饰它，通常不写 small, wooden box。
+- **并列修饰**：修饰语可用 and 连接。
+- **累积修饰**：按层次修饰，不把层次关系一律改成逗号并列。
+
+<EnglishExamples
+  title="并列与累积修饰"
+  items={[
+    {
+      label: '并列修饰',
+      sentence: 'a kind, patient teacher',
+      analysis: ['可改为 kind and patient。'],
+      segments: [
+        {
+          text: 'a ',
+        },
+        {
+          text: 'kind, patient',
+          role: '并列修饰语',
+        },
+        {
+          text: ' teacher',
+        },
+      ],
+    },
+    {
+      label: '累积修饰',
+      sentence: 'a small wooden box',
+      analysis: ['wooden box 先组成一层，small 再修饰它。', '通常不写 small, wooden box。'],
+      segments: [
+        {
+          text: 'a ',
+        },
+        {
+          text: 'small',
+          role: '外层修饰语',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'wooden',
+          role: '内层修饰语',
+        },
+        {
+          text: ' box',
+        },
+      ],
+    },
+  ]}
+/>
 
 ## the 与形容词
 
 某些形容词在 the 后可构成名词性表达，范围和一致关系随含义而变。
 
 - **一类人**：通常按复数处理。
-  - **The rich are** not always happy.
-  - **The wounded were** taken to hospital.
   - the rich 不是普通单数可数名词；「一个富人」用 a rich person，不用 a rich。
-- **抽象概念**：通常按单数处理，如 **The unknown is** frightening.
+- **抽象概念**：通常按单数处理。
 - **某些国籍群体**：the French、the British、the Chinese 可表复数群体。
-  - **The French are** proud of their cuisine.
   - 国籍词构造不统一：「美国人」通常用复数名词 Americans 或 the Americans。
+
+<EnglishExamples
+  title="the 与形容词的一致关系"
+  items={[
+    {
+      label: '一类人',
+      sentence: 'The rich are not always happy.',
+      segments: [
+        {
+          text: 'The rich',
+          role: '主语',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'are',
+          role: '复数谓语动词',
+        },
+        {
+          text: ' not always happy.',
+        },
+      ],
+    },
+    {
+      label: '一类人',
+      sentence: 'The wounded were taken to hospital.',
+      segments: [
+        {
+          text: 'The wounded',
+          role: '主语',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'were',
+          role: '复数助动词',
+        },
+        {
+          text: ' taken to hospital.',
+        },
+      ],
+    },
+    {
+      label: '抽象概念',
+      sentence: 'The unknown is frightening.',
+      segments: [
+        {
+          text: 'The unknown',
+          role: '主语',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'is',
+          role: '单数谓语动词',
+        },
+        {
+          text: ' frightening.',
+        },
+      ],
+    },
+    {
+      label: '国籍群体',
+      sentence: 'The French are proud of their cuisine.',
+      segments: [
+        {
+          text: 'The French',
+          role: '主语',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'are',
+          role: '复数谓语动词',
+        },
+        {
+          text: ' proud of their cuisine.',
+        },
+      ],
+    },
+  ]}
+/>
 
 ## 比较结构
 
@@ -164,22 +644,22 @@ summary: 形容词的词类、句法功能、词义与构成分别分析：可�
 
 **比较级**（Comparative）表示相对程度，**最高级**（Superlative）表示给定范围内最高或最低的程度。选择形式时依次判断：
 
-1. **当前义项是否适合程度比较**：先确定正在表达的性质；具有程度意义时，再进入词形选择。
-2. **先核对不规则形式及专门用法**，不强行套用后缀规则。
+1. **当前义项是否适合程度比较**：先确定正在表达的性质；具有程度意义时，再进入词形选择；
+2. **先核对不规则形式及专门用法**，不强行套用后缀规则：
 
    |    原级     |      比较级       |       最高级        |               适用范围               |
    | :---------: | :---------------: | :-----------------: | :----------------------------------: |
    | good / well |      better       |        best         |     well 作形容词时常表身体健康      |
    |     bad     |       worse       |        worst        |   badly 作副词时也用 worse / worst   |
-   |     far     | farther / further | farthest / furthest |  两组都可表距离；further 还表进一步  |
+   |     far     | farther / further | farthest / furthest |  2 组都可表距离；further 还表进一步  |
    |     old     |       older       |       oldest        |             普通年龄比较             |
    |     old     |       elder       |       eldest        | 主要用于家庭成员，如 my elder sister |
 
-3. **规则形式按词项允许的路径选择**。允许两种时，按语境和语体选择；以下类型不意味着同类所有词都走同一路径。
+3. **规则形式按词项允许的路径选择**。允许 2 种时，按语境和语体选择；以下类型不意味着同类所有词都走同一路径。
    - 单音节可分级形容词常用后缀：long、nice、big。
    - 常用的辅音字母加 -y 词也用后缀：happy、easy、busy，以及加前缀形成的 unhappy → unhappier → unhappiest，不能只按总音节数排除。
    - 部分双音节词常用后缀：simple → simpler → simplest；narrow → narrower → narrowest。
-   - 双音节词可能有变体：cleverer / more clever、politer / more polite，对应最高级也有两种；不能仅凭 most clever 就判错。
+   - 双音节词可能有变体：cleverer / more clever、politer / more polite，对应最高级也有 2 种；不能仅凭 most clever 就判错。
    - modern、famous 及 expensive、interesting、difficult 等用 more/most：more modern、most expensive。
    - 分词形容词通常用 more/most，即使 tired 是单音节，也常说 more tired。
    - **未列出或形式不确定的词项**：先查词典或用法资料；确认前不生成词形，也不自动回退到 more/most。
@@ -189,14 +669,18 @@ many/much → more → most、little → less → least 主要是数量表达，
 
 ### 后缀路径的拼写
 
-已选定 **-er/-est** 路径后，按先后顺序匹配：
+已选定 **-er/-est** 路径后，按以下顺序匹配。命中后不再执行后续分支：
 
-1. **先保留词项指定的拼写或变体**：cruel 可用 crueller/cruellest 或 crueler/cruelest；双 l 形式不能只凭下面的重音规则推出，也不意味着所有 -l 词都能任选双写；
+1. **先保留词项指定的拼写或变体**：
+   - cruel 可用 crueller/cruellest 或 crueler/cruelest。双 l 形式不能仅凭下面的重音规则推出，也不意味着所有 -l 词都能任选双写。
+   - shy → shyer → shyest；dry → drier → driest。单音节辅音字母加 y 的词须核对词项，不能一律改成 i。
 2. **末尾已有 e**：加 -r/-st，如 nice → nicer → nicest、simple → simpler → simplest；
-3. **末尾为辅音字母 + y**：
-   - happy → happier → happiest、easy → easier → easiest。
-   - 单音节词有词项差异：dry → drier → driest；shy → shyer → shyest，不能把所有 -y 结尾一律改成 i。
-4. **末尾音节含重读短元音，词尾拼写为单个元音字母 + 单个辅音字母，且末尾不是 w、x、y**：双写末尾辅音后加 -er/-est，如 big → bigger → biggest、hot → hotter → hottest；
+3. **末尾为辅音字母 + y**：改 y 为 i，再加 -er/-est，如 happy → happier → happiest、easy → easier → easiest；
+4. **同时满足以下条件**：双写末尾辅音后加 -er/-est。
+   - 末尾音节重读，元音是短元音。
+   - 词尾为单个元音字母 + 单个辅音字母；该元音字母前不紧接另一元音字母，qu 中的 u 不按独立元音字母处理。
+   - 末尾不是 w、x、y。
+   - 例如 big → bigger → biggest、hot → hotter → hottest、squat → squatter → squattest。
 5. **其余情况直接加 -er/-est**：long → longer → longest、new → newer → newest。
 
 more taller、more interestinger 都是不当的重复标记；用 taller 或 more interesting。
@@ -204,42 +688,320 @@ more taller、more interestinger 都是不当的重复标记；用 taller 或 mo
 ### 同级与差级
 
 - **同级**：as + 原级 + as。
-  - She is **as tall as** her brother.
-  - 否定可用 not as/so + 原级 + as：I am **not as tall as** you.
-  - 用原级，不用 as taller as。
+  - 否定可用 not as/so + 原级 + as；用原级，不用 as taller as。
 - **差级**：比较级 + than；程度较低用 less + 原级 + than。
-  - This book is **more useful than** that one.
-  - This route is **less dangerous than** that one.
 - **修饰差距**：much、far、a lot、a little、slightly、even 等修饰比较级。
   - much better、a little colder、far more useful；不用 very taller。
 - **than 后的形式**：可以是名词短语，也可以是分句。
-  - He is taller **than me** 是普通用法；He is taller **than I am** 写出完整分句。
-- **比较对象对应**：The population of City A is larger than **that of City B**. 比较两个城市的人口，不是人口和城市。
+- **比较对象对应**：不能将某城市的人口与另一座城市直接比较。
+
+<EnglishExamples
+  title="同级、差级与比较对象"
+  items={[
+    {
+      label: '同级',
+      sentence: 'She is as tall as her brother.',
+      segments: [
+        {
+          text: 'She is ',
+        },
+        {
+          text: 'as tall as her brother',
+          role: '同级比较',
+        },
+        {
+          text: '.',
+        },
+      ],
+    },
+    {
+      label: '否定同级',
+      sentence: 'I am not as tall as you.',
+      analysis: ['否定可用 not as/so + 原级 + as。'],
+      segments: [
+        {
+          text: 'I am ',
+        },
+        {
+          text: 'not as tall as you',
+          role: '否定同级比较',
+        },
+        {
+          text: '.',
+        },
+      ],
+    },
+    {
+      label: '差级',
+      sentence: 'This book is more useful than that one.',
+      segments: [
+        {
+          text: 'This book is ',
+        },
+        {
+          text: 'more useful than that one',
+          role: '差级比较',
+        },
+        {
+          text: '.',
+        },
+      ],
+    },
+    {
+      label: '程度较低',
+      sentence: 'This route is less dangerous than that one.',
+      segments: [
+        {
+          text: 'This route is ',
+        },
+        {
+          text: 'less dangerous than that one',
+          role: '差级比较',
+        },
+        {
+          text: '.',
+        },
+      ],
+    },
+    {
+      label: 'than 后接代词',
+      sentence: 'He is taller than me.',
+      analysis: ['普通用法。'],
+      segments: [
+        {
+          text: 'He is taller ',
+        },
+        {
+          text: 'than me.',
+          role: '比较项',
+        },
+      ],
+    },
+    {
+      label: 'than 后接分句',
+      sentence: 'He is taller than I am.',
+      analysis: ['写出完整分句。'],
+      segments: [
+        {
+          text: 'He is taller ',
+        },
+        {
+          text: 'than I am.',
+          role: '比较分句',
+        },
+      ],
+    },
+    {
+      label: '对应的比较对象',
+      sentence: 'The population of City A is larger than that of City B.',
+      analysis: ['比较 2 个城市的人口，不是人口和城市。'],
+      segments: [
+        {
+          text: 'The population of City A',
+          role: '主语',
+        },
+        {
+          text: ' is larger than ',
+        },
+        {
+          text: 'that of City B',
+          role: '比较对象',
+        },
+        {
+          text: '.',
+        },
+      ],
+    },
+  ]}
+/>
 
 ### 最高级与范围
 
 - **范围明确**：the tallest student **in our class**；the most useful **of the three books**。
   - in 常配地点或群体，of 常配明确列出的比较集合。
 - **限定词**：修饰名词的最高级前通常有 the；已有物主限定词则不再加 the，如 **my best friend**。
-  - 比较同一人在不同情境下的状态时可不用 the：She is **happiest at home**.
-- **群体中的一项**：one of the + 最高级 + 复数名词。
-  - She is **one of the best players** on the team.
+  - 比较同一人在不同情境下的状态时可不用 the。
+- **群体中的 1 项**：one of the + 最高级 + 复数名词。
   - one of the most clever **students** 中 students 也须用复数；cleverest students 同样成立。
-  - 最高程度可由多人并列达到，不要求只有一名最佳者。
+  - 最高程度可由多人并列达到，不要求仅有 1 名最佳者。
 - **名次**：the **second highest** mountain（第二高的山）。
 - **两者比较**：通常用 the + 比较级 + of the two，如 **the taller of the two**。
-- **排除自身**：She is taller than any **other** student in her class. 不能把自己计入比较对象。
+- **排除自身**：不能把自己计入比较对象。
 - **most 不一定在比较**：a **most useful** book 相当于 a very useful book，较正式；the **most useful** book 才是在相关范围里比较最有用的一本。
+
+<EnglishExamples
+  title="最高级与比较范围"
+  items={[
+    {
+      label: '同一人的不同情境',
+      sentence: 'She is happiest at home.',
+      analysis: ['比较同一人在不同情境下的状态时可不用 the。'],
+      segments: [
+        {
+          text: 'She is ',
+        },
+        {
+          text: 'happiest',
+          role: '最高级',
+        },
+        {
+          text: ' at home.',
+        },
+      ],
+    },
+    {
+      label: '群体中的 1 项',
+      sentence: 'She is one of the best players on the team.',
+      analysis: ['最高程度可由多人并列达到，不要求仅有 1 名最佳者。'],
+      segments: [
+        {
+          text: 'She is ',
+        },
+        {
+          text: 'one of the best players',
+          role: '表语',
+        },
+        {
+          text: ' on the team.',
+        },
+      ],
+    },
+    {
+      label: '比较时排除自身',
+      sentence: 'She is taller than any other student in her class.',
+      analysis: ['不能把自己计入比较对象。'],
+      segments: [
+        {
+          text: 'She is taller than ',
+        },
+        {
+          text: 'any other student in her class',
+          role: '比较对象',
+        },
+        {
+          text: '.',
+        },
+      ],
+    },
+  ]}
+/>
 
 ### 递进与倍数
 
 - **同一程度递增**：比较级 + and + 比较级，或 more and more + 原级。
-  - It is getting **hotter and hotter**.
-  - It is becoming **more and more difficult**.
-- **两种变化对应**：the + 比较级，the + 比较级。
-  - **The harder** you practise, **the better** you become.
+- **2 种变化对应**：the + 比较级，the + 比较级。
 - **精确倍数**：倍数 + as + 原级 + as，或倍数 + the + 度量名词 + of。
-  - A is **three times as long as** B.
-  - A is **three times the length of** B.
-  - 若 A 长 12 m、B 长 4 m，两句都表示 A 的长度是 B 的 3 倍。
-- **有歧义的表达**：three times longer than 可能被理解为「总长 3 倍」或「多出 3 倍」；数量需要精确时用上面的两种结构。
+  - 若 A 长 12 m、B 长 4 m，2 种结构都表示 A 的长度是 B 的 3 倍。
+- **有歧义的表达**：three times longer than 可能被理解为「总长 3 倍」或「多出 3 倍」；数量需要精确时用上面的 2 种结构。
+
+<EnglishExamples
+  title="程度递进与关联比较"
+  items={[
+    {
+      label: '后缀比较级递进',
+      sentence: 'It is getting hotter and hotter.',
+      segments: [
+        {
+          text: 'It is getting ',
+        },
+        {
+          text: 'hotter and hotter',
+          role: '程度递进',
+        },
+        {
+          text: '.',
+        },
+      ],
+    },
+    {
+      label: 'more 比较级递进',
+      sentence: 'It is becoming more and more difficult.',
+      segments: [
+        {
+          text: 'It is becoming ',
+        },
+        {
+          text: 'more and more difficult',
+          role: '程度递进',
+        },
+        {
+          text: '.',
+        },
+      ],
+    },
+    {
+      label: '2 种变化对应',
+      sentence: 'The harder you practise, the better you become.',
+      segments: [
+        {
+          text: 'The harder',
+          role: '关联比较',
+        },
+        {
+          text: ' you practise, ',
+        },
+        {
+          text: 'the better',
+          role: '关联比较',
+        },
+        {
+          text: ' you become.',
+        },
+      ],
+    },
+  ]}
+/>
+
+<EnglishExamples
+  title="精确倍数的 2 种结构"
+  items={[
+    {
+      label: '倍数 + as...as',
+      sentence: 'A is three times as long as B.',
+      analysis: ['若 A 长 12 m、B 长 4 m，表示 A 的长度是 B 的 3 倍。'],
+      segments: [
+        {
+          text: 'A is ',
+        },
+        {
+          text: 'three times',
+          role: '倍数',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'as long as B',
+          role: '比较结构',
+        },
+        {
+          text: '.',
+        },
+      ],
+    },
+    {
+      label: '倍数 + 度量名词',
+      sentence: 'A is three times the length of B.',
+      analysis: ['若 A 长 12 m、B 长 4 m，表示 A 的长度是 B 的 3 倍。'],
+      segments: [
+        {
+          text: 'A is ',
+        },
+        {
+          text: 'three times',
+          role: '倍数',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'the length of B',
+          role: '度量名词短语',
+        },
+        {
+          text: '.',
+        },
+      ],
+    },
+  ]}
+/>

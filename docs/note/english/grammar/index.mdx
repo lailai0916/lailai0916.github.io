@@ -22,9 +22,9 @@ summary: 英语语法先按词、短语、分句和句子区分结构层级，�
 ### 结构层级
 
 1. **词**（Word）：词汇单位，如 book、read；
-2. **短语**（Phrase）：以中心词组织的结构，如 the old book、very useful；短语也可以仅由一个词构成；
+2. **短语**（Phrase）：以中心词组织的结构，如 the old book、very useful；短语也可仅含 1 个词；
 3. **分句**（Clause）：以述谓关系组织的结构，如 she reads the book；典型限定分句包含主语和限定动词短语；
-4. **句子**（Sentence）：由一个或多个分句构成的独立语法单位，如「She reads because she enjoys it.」。
+4. **句子**（Sentence）：由至少 1 个分句构成的独立语法单位，如「She reads because she enjoys it.」。
 
 分析时分别处理以下情况：
 
@@ -39,28 +39,259 @@ summary: 英语语法先按词、短语、分句和句子区分结构层级，�
 
 同一形式可承担不同功能：
 
-- **名词短语 the young student**：
-  - 「**The young student** smiled.」中作主语。
-  - 「I saw **the young student**.」中作宾语。
-- **介词短语 in the room**：
-  - the student **in the room** 中作后置修饰语。
-  - 「She studied **in the room**.」中作地点状语。
-- **分句**：
-  - 「I know **that she left**.」中的限定内容分句作宾语。
-  - 「I want **to leave early**.」中的非限定分句作补足成分。
+<EnglishExamples
+  title="同一结构形式承担不同功能"
+  items={[
+    {
+      label: '名词短语作主语',
+      sentence: 'The young student smiled.',
+      analysis: ['The young student 是名词短语，在本句作主语。'],
+      segments: [
+        {
+          text: 'The young student',
+          role: '主语',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'smiled',
+          role: '谓语动词',
+        },
+        {
+          text: '.',
+        },
+      ],
+      translation: '那位年轻学生笑了。',
+    },
+    {
+      label: '名词短语作宾语',
+      sentence: 'I saw the young student.',
+      analysis: ['the young student 仍是名词短语，在本句作宾语。'],
+      segments: [
+        {
+          text: 'I',
+          role: '主语',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'saw',
+          role: '谓语动词',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'the young student',
+          role: '宾语',
+        },
+        {
+          text: '.',
+        },
+      ],
+      translation: '我看见了那位年轻学生。',
+    },
+    {
+      label: '介词短语修饰名词',
+      sentence: 'the student in the room',
+      analysis: ['in the room 是介词短语，在此后置修饰 student。'],
+      segments: [
+        {
+          text: 'the student',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'in the room',
+          role: '后置修饰语',
+        },
+      ],
+      translation: '房间里的那位学生',
+    },
+    {
+      label: '介词短语作状语',
+      sentence: 'She studied in the room.',
+      analysis: ['in the room 是介词短语，在本句作地点状语。'],
+      segments: [
+        {
+          text: 'She',
+          role: '主语',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'studied',
+          role: '谓语动词',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'in the room',
+          role: '地点状语',
+        },
+        {
+          text: '.',
+        },
+      ],
+      translation: '她在房间里学习。',
+    },
+    {
+      label: '限定内容分句作宾语',
+      sentence: 'I know that she left.',
+      analysis: ['that she left 是限定内容分句，在本句作宾语。'],
+      segments: [
+        {
+          text: 'I',
+          role: '主语',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'know',
+          role: '谓语动词',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'that she left',
+          role: '宾语从句',
+        },
+        {
+          text: '.',
+        },
+      ],
+      translation: '我知道她离开了。',
+    },
+    {
+      label: '非限定分句作补足成分',
+      sentence: 'I want to leave early.',
+      analysis: ['to leave early 是非限定分句，作 want 的补足成分。'],
+      segments: [
+        {
+          text: 'I',
+          role: '主语',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'want',
+          role: '谓语动词',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'to leave early',
+          role: '补足成分',
+        },
+        {
+          text: '.',
+        },
+      ],
+      translation: '我想早点离开。',
+    },
+  ]}
+/>
 
-因此，判断顺序是 **先识别结构，再确定功能**。名词能作主语、形容词能作定语、副词能作状语，但主语、定语和状语也能由其他结构实现。
+判断顺序是 **先识别结构，再确定功能**：
+
+- 名词能作主语、形容词能作定语、副词能作状语。
+- 主语、定语和状语也能由其他结构实现。
 
 ### 句法与意义
 
 - **主语、宾语**：句法功能。
 - **施事、受事**：语义角色。
 
-二者分别判断：
-
-- 「**The window** was broken by **Tom**.」：the window 是主语，Tom 是施事。
-- 「**It** is raining.」：it 是虚主语，没有具体指称。
-- 「She knows **the answer**.」：the answer 是宾语，但没有被动作改变。
+<EnglishExamples
+  title="句法成分与语义角色"
+  items={[
+    {
+      label: '被动结构',
+      sentence: 'The window was broken by Tom.',
+      translation: '窗户被汤姆打破了。',
+      segments: [
+        {
+          text: 'The window',
+          role: '主语',
+          note: '主语指承受有关作用的窗户。',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'was broken',
+          role: '动词短语',
+          note: 'be 的过去式加过去分词构成被动。',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'by Tom.',
+          role: '施事说明',
+          note: 'Tom 是施事，不是主语。',
+        },
+      ],
+      analysis: ['the window 是主语；Tom 是施事。', '句法功能与语义角色分别判断。'],
+    },
+    {
+      label: '天气表达',
+      sentence: 'It is raining.',
+      translation: '正在下雨。',
+      segments: [
+        {
+          text: 'It',
+          role: '虚主语',
+          note: '没有具体指称。',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'is raining.',
+          role: '动词短语',
+        },
+      ],
+      analysis: ['it 是虚主语，不指执行动作的人或物。'],
+    },
+    {
+      label: '认知状态',
+      sentence: 'She knows the answer.',
+      translation: '她知道答案。',
+      segments: [
+        {
+          text: 'She',
+          role: '主语',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'knows',
+          role: '动词',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'the answer.',
+          role: '宾语',
+          note: '答案没有被这个认知状态改变。',
+        },
+      ],
+      analysis: ['the answer 是宾语，但没有被动作改变。'],
+    },
+  ]}
+/>
 
 ## 句子骨架
 
@@ -72,12 +303,47 @@ summary: 英语语法先按词、短语、分句和句子区分结构层级，�
 - **谓语**（Predicate）：对主语作陈述的部分，包含动词短语及相关宾语、补语、状语。
 - **动词短语**（Verb Phrase）：本笔记采用狭义定义，指主要动词与助动词组成的链。
 
-例如「The cat has been eating a fish.」：
-
-1. 主语：The cat；
-2. 谓语：has been eating a fish；
-3. 动词短语：has been eating；
-4. **限定形式**（Finite Form）：has，承担现在时和主谓一致；been、eating 是非限定形式。
+<EnglishExamples
+  title="主语、谓语与动词链"
+  items={[
+    {
+      sentence: 'The cat has been eating a fish.',
+      translation: '猫一直在吃一条鱼。',
+      segments: [
+        {
+          text: 'The cat',
+          role: '主语',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'has',
+          role: '限定形式',
+          note: '承担现在时和主谓一致。',
+        },
+        {
+          text: ' been eating',
+          role: '非限定形式',
+          note: '与 has 一起组成动词短语。',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'a fish.',
+          role: '宾语',
+        },
+      ],
+      analysis: [
+        '主语：The cat。',
+        '谓语：has been eating a fish。',
+        '动词短语：has been eating。',
+        '限定形式是 has；been、eating 是非限定形式。',
+      ],
+    },
+  ]}
+/>
 
 动词词形数量不等于分句数量：
 
@@ -99,12 +365,12 @@ summary: 英语语法先按词、短语、分句和句子区分结构层级，�
 按动词当前用法要求的成分区分：
 
 1. **S + V**：不要求宾语或表语，如「The baby slept.」；
-2. **S + V + O**：接一个宾语，不要求描述该宾语的补语，如「She opened **the door**.」；
+2. **S + V + O**：接 1 个宾语，不要求描述该宾语的补语，如「She opened **the door**.」；
 3. **S + V + IO + DO**：接间接宾语和直接宾语，如「She gave **me** **a book**.」；
 4. **S + V + O + C**：接宾语及描述宾语的补语，如「They elected **her** **captain**.」；
 5. **S + V + C**：不接宾语，由动词连接主语及描述主语的补语，如「She became **a doctor**.」。
 
-双宾语与宾补结构结合两项证据判断：
+双宾语与宾补结构结合 2 项证据判断：
 
 - **指称关系**：gave me a book 不表示「我就是书」；elected her captain 表示「她担任队长」。
 - **动词搭配**：上述关系只是诊断线索，最终还要检查该动词允许的补足结构。
@@ -133,10 +399,93 @@ summary: 英语语法先按词、短语、分句和句子区分结构层级，�
 
 名称不直接决定内部形式，what she wrote 与 that she left 就具有不同结构。详见 [从句](/docs/note/english/grammar/sentences/clauses)。
 
-区分两个含补语的例子：
-
-- 「She made **it** **clear** **that she disagreed**.」：clear 是宾补；it 是形式宾语；that 内容从句在学校语法中称真正宾语。
-- 「You can call me **what you like**.」：what you like 是融合关系结构，整体作宾补。
+<EnglishExamples
+  title="形式宾语与融合关系结构"
+  items={[
+    {
+      label: '形式宾语和外置内容分句',
+      sentence: 'She made it clear that she disagreed.',
+      analysis: [
+        'clear 是宾语补足语，it 是形式宾语。',
+        'that she disagreed 是内容分句，在学校语法中称真正宾语。',
+      ],
+      segments: [
+        {
+          text: 'She',
+          role: '主语',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'made',
+          role: '谓语动词',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'it',
+          role: '形式宾语',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'clear',
+          role: '宾语补足语',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'that she disagreed',
+          role: '内容分句',
+        },
+        {
+          text: '.',
+        },
+      ],
+      translation: '她明确表示自己不同意。',
+    },
+    {
+      label: '融合关系结构作宾语补足语',
+      sentence: 'You can call me what you like.',
+      analysis: ['what you like 是融合关系结构，整体作宾语补足语。'],
+      segments: [
+        {
+          text: 'You',
+          role: '主语',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'can call',
+          role: '谓语动词短语',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'me',
+          role: '宾语',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'what you like',
+          role: '宾语补足语',
+        },
+        {
+          text: '.',
+        },
+      ],
+      translation: '你想怎么称呼我都可以。',
+    },
+  ]}
+/>
 
 ### 并列与从属
 
@@ -147,11 +496,44 @@ summary: 英语语法先按词、短语、分句和句子区分结构层级，�
 |     1 个     |  简单句（Simple Sentence）  |     主从复合句（Complex Sentence）      |
 |  至少 2 个   | 并列句（Compound Sentence） | 并列复合句（Compound-complex Sentence） |
 
-例如「I read **when I have time**; she writes every evening.」：
-
-1. 分号连接两个独立分句；
-2. when I have time 从属于前一个独立分句；
-3. 整句含至少 2 个独立分句及从属分句，属于并列复合句。
+<EnglishExamples
+  title="逐层判断并列与从属"
+  items={[
+    {
+      label: '并列复合句',
+      sentence: 'I read when I have time; she writes every evening.',
+      analysis: [
+        '分号连接 2 个独立分句。',
+        'when I have time 从属于前一个独立分句。',
+        '整句含至少 2 个独立分句及从属分句，属于并列复合句。',
+      ],
+      segments: [
+        {
+          text: 'I read',
+          role: '第 1 个分句的主句核心',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'when I have time',
+          role: '时间状语从句',
+        },
+        {
+          text: '; ',
+        },
+        {
+          text: 'she writes every evening',
+          role: '第 2 个独立分句',
+        },
+        {
+          text: '.',
+        },
+      ],
+      translation: '我有空时就读书；她每天晚上都写作。',
+    },
+  ]}
+/>
 
 ## 动词系统
 
@@ -173,8 +555,12 @@ summary: 英语语法先按词、短语、分句和句子区分结构层级，�
 
 - 传统教学用 **4 种时间视角 × 4 种体形式** 组织 16 种时态，便于横纵比较。
 - 形态分析区分现在和过去的屈折形式；将来意义还借助情态动词、现在时形式等表达。两种分类采用不同口径。
-- 完成体不能单独保证动作结束，进行体不能单独保证动作发生在此刻，过去形式也能表达假设距离。
-- **过去将来** 以过去为视点谈其后的时间，不要求该时间晚于现在。例如周五回顾「I knew on Monday that she would arrive on Tuesday.」，周二晚于周一，即使已经过去，仍可用 would arrive。
+- **完成体**：不能单独保证动作结束。
+- **进行体**：不能单独保证动作发生在此刻。
+- **过去形式**：也能表达假设距离。
+- **过去将来**：以过去为视点谈其后的时间，不要求该时间晚于现在。
+  - 例如周五回顾「I knew on Monday that she would arrive on Tuesday.」。
+  - 周二晚于周一，即使已经过去，仍可用 would arrive。
 
 构造和参照时间见 [动词时态](/docs/note/english/grammar/verbs/verb-tenses)。其他专题分别处理：
 
@@ -202,7 +588,11 @@ summary: 英语语法先按词、短语、分句和句子区分结构层级，�
 - [连词](/docs/note/english/grammar/parts-of-speech/conjunctions)：标记并列或从属关系，如 and、because、if。
 - [叹词](/docs/note/english/grammar/parts-of-speech/interjections)：独立表达反应或情感，如 oh、ouch。
 
-**限定词**（Determiner）把冠词、指示词、物主词、量词等按限定作用归组，采用另一套分类口径，不直接作为上述分类中互斥的第 11 项。详见 [限定词](/docs/note/english/grammar/parts-of-speech/determiners)。
+**限定词**（Determiner）按限定作用归组：
+
+- 包括冠词、指示词、物主词、量词等。
+- 采用另一套分类口径，不直接作为上述分类中互斥的第 11 项。
+- 具体分类与排列条件见 [限定词](/docs/note/english/grammar/parts-of-speech/determiners)。
 
 同一词形结合语境判断：
 
@@ -240,12 +630,57 @@ summary: 英语语法先按词、短语、分句和句子区分结构层级，�
 3. 遇到关系词或从属连词，划出从句边界；
 4. 在从句内部重复上述分析。
 
-例如「The book **that you recommended** **has helped** me understand **why these forms differ**.」：
-
-- **主句**：The book that you recommended 是主语，has helped 是动词短语。
-- **关系从句**：that you recommended 修饰 book；that 作 recommended 的宾语，不再添加 it。
-- **非限定结构**：help 后接 me 与原形 understand。
-- **宾语从句**：why these forms differ 作 understand 的补足成分，保持陈述语序。
+<EnglishExamples
+  title="逐层分析长句"
+  items={[
+    {
+      sentence: 'The book that you recommended has helped me understand why these forms differ.',
+      translation: '你推荐的书帮助我理解了这些形式为何不同。',
+      segments: [
+        {
+          text: 'The',
+          role: '限定词',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'book',
+          role: '名词中心词',
+        },
+        {
+          text: ' that you recommended',
+          role: '关系从句',
+          note: '修饰 book；that 作 recommended 的宾语。',
+        },
+        {
+          text: ' has helped',
+          role: '动词短语',
+        },
+        {
+          text: ' me',
+          role: '宾语',
+        },
+        {
+          text: ' understand',
+          role: '非限定形式',
+          note: 'help 后的原形。',
+        },
+        {
+          text: ' why these forms differ.',
+          role: '嵌入疑问',
+          note: '作 understand 的补足成分。',
+        },
+      ],
+      analysis: [
+        '主句主语是 The book that you recommended，动词短语是 has helped。',
+        '关系从句 that you recommended 修饰 book；不再添加宾语 it。',
+        'help 后接 me 与原形 understand。',
+        'why these forms differ 作 understand 的补足成分，保持陈述语序。',
+      ],
+    },
+  ]}
+/>
 
 词形选择先由结构确定所需成分和词类，再判断限定性、时间、语态、一致与搭配。
 

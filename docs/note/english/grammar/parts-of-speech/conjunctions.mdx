@@ -16,7 +16,7 @@ summary: 连词先按句法关系分并列与从属，再分别讨论连接单�
 - **句法关系**：
   - **并列**：两边处于同一语法层级，如 tea **and** coffee；I called, **but** nobody answered.
   - **从属**：分句依附于另一结构，如 I stayed home **because it was raining**.
-- **表达形式**：**关联结构**（Correlative Construction）用两个标记配合，如 both...and、either...or；成对出现不等于另有一种独立的句法关系。
+- **表达形式**：**关联结构**（Correlative Construction）用 2 个标记配合，如 both...and、either...or；成对出现不等于另有一种独立的句法关系。
 - **语义关系**：时间、原因、条件、转折等，同一连接词可能跨多个意义。
 
 连词通常不在所引导分句内部充当主语、宾语等成分：I know **that he left**. 中 that 引出内容；the book **that I bought** 中 that 与 bought 的宾语位置相联系，传统语法称关系代词。能连接结构，不足以单独判定词类。
@@ -49,9 +49,9 @@ summary: 连词先按句法关系分并列与从属，再分别讨论连接单�
 
 1. **词或短语**：通常不加逗号，如 a small **but comfortable** room；
 2. **共享主语的谓语**：通常不加逗号，如「She opened the book **and started reading**.」；
-3. **两个独立分句**：通常在连词前加逗号，如「She opened the book, **and her brother turned on the light**.」。
+3. **2 个独立分句**：通常在连词前加逗号，如「She opened the book, **and her brother turned on the light**.」。
 
-短而紧密的分句可省逗号；「两个主语」本身不是必须加逗号的充分条件。并列三项以上时，常在最后一项前加连词：I bought pens, books, **and** erasers. 最后这个 and 前的逗号称 **序列逗号**（Serial Comma），不同出版规范允许不同选择。
+短而紧密的分句可省逗号；「2 个主语」本身不是必须加逗号的充分条件。并列 3 项以上时，常在最后一项前加连词：I bought pens, books, **and** erasers. 最后这个 and 前的逗号称 **序列逗号**（Serial Comma），不同出版规范允许不同选择。
 
 and、but、or 可在句首，包括正式写作；与前文的关系仍须清楚。
 
@@ -112,18 +112,161 @@ and、but、or 可在句首，包括正式写作；与前文的关系仍须清�
 
 ### 连词与连接副词
 
-**连接副词**（Linking Adverb）如 however、therefore、otherwise 表语义联系，通常不能独自把两个独立分句连接成一句。
+**连接副词**（Linking Adverb）如 however、therefore、otherwise 表语义联系，通常不能独自把 2 个独立分句连接成 1 句。
 
-|         结构         |                 示例                 |           句法与标点            |
-| :------------------: | :----------------------------------: | :-----------------------------: |
-|       并列连词       |   It rained, **but** we went out.    |        but 连接独立分句         |
-|  连接副词，另起一句  | It rained. **However**, we went out. |          句号分开两句           |
-|  连接副词，分号连接  | It rained; **however**, we went out. |        分号连接独立分句         |
-| 连接副词，本分句中位 |   We **therefore** stayed inside.    | 不必给 therefore 一律加两侧逗号 |
+- **并列连词**：可以连接同一句中的独立分句。
+- **连接副词**：表达语义联系；独立分句之间仍须有句号、分号或连词等连接手段。
+- **连接副词的标点**：按具体位置和句法选择，不一律加两侧逗号。
 
-- **逗号拼接**（Comma Splice）：It rained, however, we went out. 中，however 两侧都有逗号，也未建立两个分句的规范连接。
-- **同义不保证同句法**：Hurry up, **or else** you'll be late. / Hurry up; **otherwise**, you'll be late. 意义近似，标点不同。
+<EnglishExamples
+  title="连接方式与标点"
+  items={[
+    {
+      label: '并列连词连接分句',
+      sentence: 'It rained, but we went out.',
+      translation: '下雨了，但我们还是出门了。',
+      analysis: ['but 是并列连词，连接 2 个独立分句。'],
+      segments: [
+        {
+          text: 'It rained',
+          role: '独立分句',
+        },
+        {
+          text: ', ',
+        },
+        {
+          text: 'but',
+          role: '并列连词',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'we went out',
+          role: '独立分句',
+        },
+        {
+          text: '.',
+        },
+      ],
+    },
+    {
+      label: '连接副词承接 2 句',
+      sentence: 'It rained. However, we went out.',
+      translation: '下雨了。不过，我们还是出门了。',
+      analysis: ['句号分开 2 个独立句，however 表示它们的语义联系。'],
+      segments: [
+        {
+          text: 'It rained. ',
+        },
+        {
+          text: 'However',
+          role: '连接副词',
+          note: 'however 表语义转折，前一个句号已经分开 2 句。',
+        },
+        {
+          text: ', we went out.',
+        },
+      ],
+    },
+    {
+      label: '连接副词与分号配合',
+      sentence: 'It rained; however, we went out.',
+      translation: '下雨了；不过，我们还是出门了。',
+      analysis: ['分号连接 2 个独立分句，however 本身不承担并列连词的句法作用。'],
+      segments: [
+        {
+          text: 'It rained',
+          role: '独立分句',
+        },
+        {
+          text: '; ',
+        },
+        {
+          text: 'however',
+          role: '连接副词',
+        },
+        {
+          text: ', ',
+        },
+        {
+          text: 'we went out',
+          role: '独立分句',
+        },
+        {
+          text: '.',
+        },
+      ],
+    },
+    {
+      label: '连接副词位于句中',
+      sentence: 'We therefore stayed inside.',
+      translation: '因此，我们待在屋里。',
+      analysis: [
+        'therefore 位于本分句中间，此处不用逗号隔开。',
+        '不应给所有连接副词一律加两侧逗号。',
+      ],
+      segments: [
+        {
+          text: 'We ',
+        },
+        {
+          text: 'therefore',
+          role: '连接副词',
+        },
+        {
+          text: ' stayed inside.',
+        },
+      ],
+    },
+  ]}
+/>
+
+连接方式还须区分以下边界：
+
+- **逗号拼接**（Comma Splice）：It rained, however, we went out. 中，however 两侧都有逗号，也未建立 2 个分句的规范连接。
+- **同义不保证同句法**：or else 与 otherwise 意义近似，连接方式和标点不同。
 - **同形不保证同用法**：however difficult it is 表「无论多么困难」，不按上面的连接副词规则标点。
+
+<EnglishExamples
+  title="同义表达的不同连接方式"
+  items={[
+    {
+      label: '并列连词 or else',
+      sentence: "Hurry up, or else you'll be late.",
+      analysis: ['or else 按并列连接处理。'],
+      segments: [
+        {
+          text: 'Hurry up, ',
+        },
+        {
+          text: 'or else',
+          role: '并列连接',
+        },
+        {
+          text: " you'll be late.",
+        },
+      ],
+    },
+    {
+      label: '连接副词 otherwise',
+      sentence: "Hurry up; otherwise, you'll be late.",
+      analysis: ['意义近似，但用分号连接独立分句。'],
+      segments: [
+        {
+          text: 'Hurry up; ',
+        },
+        {
+          text: 'otherwise',
+          role: '连接副词',
+        },
+        {
+          text: ", you'll be late.",
+        },
+      ],
+    },
+  ]}
+/>
 
 ### 原因、让步与后接形式
 
@@ -137,10 +280,69 @@ and、but、or 可在句首，包括正式写作；与前文的关系仍须清�
 
 同一层次、同一逻辑关系不能按中文重复标记：
 
-- **从属让步**：Although he is rich, he is unhappy.
-- **并列转折**：He is rich, but he is unhappy.
-- **从属原因**：Because it was raining, we stayed home.
-- **并列结果**：It was raining, so we stayed home.
+<EnglishExamples
+  title="同层让步与原因的连接"
+  items={[
+    {
+      label: '从属让步',
+      sentence: 'Although he is rich, he is unhappy.',
+      segments: [
+        {
+          text: 'Although he is rich',
+          role: '让步从句',
+        },
+        {
+          text: ', he is unhappy.',
+        },
+      ],
+    },
+    {
+      label: '并列转折',
+      sentence: 'He is rich, but he is unhappy.',
+      segments: [
+        {
+          text: 'He is rich, ',
+        },
+        {
+          text: 'but',
+          role: '并列连词',
+        },
+        {
+          text: ' he is unhappy.',
+        },
+      ],
+    },
+    {
+      label: '从属原因',
+      sentence: 'Because it was raining, we stayed home.',
+      segments: [
+        {
+          text: 'Because it was raining',
+          role: '原因从句',
+        },
+        {
+          text: ', we stayed home.',
+        },
+      ],
+    },
+    {
+      label: '并列结果',
+      sentence: 'It was raining, so we stayed home.',
+      segments: [
+        {
+          text: 'It was raining, ',
+        },
+        {
+          text: 'so',
+          role: '并列连词',
+        },
+        {
+          text: ' we stayed home.',
+        },
+      ],
+    },
+  ]}
+/>
 
 although...but...、because...so... 的限制针对同一对分句；复杂句中不同层级仍可分别出现这些词。
 
@@ -161,37 +363,303 @@ although...but...、because...so... 的限制针对同一对分句；复杂句�
 
 either...or 和 neither...nor 也可扩展到多项：
 
-- You can choose **either tea or coffee or juice**.
-- She speaks **neither English nor French nor German**.
+<EnglishExamples
+  title="关联结构可扩展到多项"
+  items={[
+    {
+      label: '多项选择',
+      sentence: 'You can choose either tea or coffee or juice.',
+      analysis: ['either...or 可以扩展到多项。'],
+      segments: [
+        {
+          text: 'You can choose ',
+        },
+        {
+          text: 'either tea or coffee or juice',
+          role: '关联并列成分',
+        },
+        {
+          text: '.',
+        },
+      ],
+    },
+    {
+      label: '多项否定',
+      sentence: 'She speaks neither English nor French nor German.',
+      analysis: ['neither...nor 可以扩展到多项。'],
+      segments: [
+        {
+          text: 'She speaks ',
+        },
+        {
+          text: 'neither English nor French nor German',
+          role: '关联并列成分',
+        },
+        {
+          text: '.',
+        },
+      ],
+    },
+  ]}
+/>
 
 这属于关联连词的用法，不应与 either/neither 作限定词或代词时的「两者」范围混为一谈。
 
 配对标记靠近对应成分，形成 **平行结构**（Parallel Structure）。
 
-- **形容词对应**：She is **not only intelligent but also diligent**.
-- **动词短语对应**：She **either sings or dances**.
-- **不定式对应**：The course teaches us **not only to read but also to write**.
+- **形容词对应**。
+- **动词短语对应**。
+- **不定式对应**。
 
-位置还决定追加信息的范围：
+位置还决定追加信息的范围。
 
-- 「She **not only teaches English but also writes books**.」：追加另一种活动。
-- 「She teaches **not only English but also French**.」：追加另一种语言。
+<EnglishExamples
+  title="关联结构的平行与范围"
+  items={[
+    {
+      label: '形容词对应',
+      sentence: 'She is not only intelligent but also diligent.',
+      segments: [
+        {
+          text: 'She is ',
+        },
+        {
+          text: 'not only intelligent but also diligent',
+          role: '平行形容词',
+        },
+        {
+          text: '.',
+        },
+      ],
+    },
+    {
+      label: '动词短语对应',
+      sentence: 'She either sings or dances.',
+      segments: [
+        {
+          text: 'She ',
+        },
+        {
+          text: 'either sings or dances',
+          role: '平行动词短语',
+        },
+        {
+          text: '.',
+        },
+      ],
+    },
+    {
+      label: '不定式对应',
+      sentence: 'The course teaches us not only to read but also to write.',
+      segments: [
+        {
+          text: 'The course teaches us ',
+        },
+        {
+          text: 'not only to read but also to write',
+          role: '平行不定式',
+        },
+        {
+          text: '.',
+        },
+      ],
+    },
+    {
+      label: '追加另一种活动',
+      sentence: 'She not only teaches English but also writes books.',
+      analysis: ['追加另一种活动。'],
+      segments: [
+        {
+          text: 'She ',
+        },
+        {
+          text: 'not only teaches English but also writes books',
+          role: '关联范围',
+        },
+        {
+          text: '.',
+        },
+      ],
+    },
+    {
+      label: '追加另一种语言',
+      sentence: 'She teaches not only English but also French.',
+      analysis: ['追加另一种语言。'],
+      segments: [
+        {
+          text: 'She teaches ',
+        },
+        {
+          text: 'not only English but also French',
+          role: '关联范围',
+        },
+        {
+          text: '.',
+        },
+      ],
+    },
+  ]}
+/>
 
 ### 一致与倒装
 
 - **both...and 连接不同主语**：通常复数，如 Both Tom and Lily **are** here.
 - **either...or、neither...nor、not only...but also 连接主语**：基础用法常与靠近谓语的并列项一致。
-  - Either the students or the teacher **is** responsible.
-  - Neither the teacher nor the students **are** here.
   - 人称或数冲突造成别扭时可调整顺序或改写，完整条件见 [主谓一致](/docs/note/english/grammar/sentences/subject-verb-agreement)。
 - **not only 前置并作用于分句谓语**：所在分句通常部分倒装。
-  - **Not only did she read the book**, but she also took notes.
   - did 承担过去时，read 用原形；后半句不因此倒装。
 - **not only 仅连接主语**：不倒装。
-  - **Not only Lily but also Tom** read the book.
 - **时间关联结构**：no sooner...than、hardly/scarcely...when。
-  - **No sooner had he arrived than** it began to rain.
-  - **Hardly had I sat down when** the phone rang.
   - 否定意义部分前置通常触发倒装；hardly 等词不会因为参与配对就全部变成连词。
+
+<EnglishExamples
+  title="关联主语的一致关系"
+  items={[
+    {
+      label: '靠近单数项',
+      sentence: 'Either the students or the teacher is responsible.',
+      segments: [
+        {
+          text: 'Either the students or the teacher',
+          role: '主语',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'is',
+          role: '单数谓语动词',
+        },
+        {
+          text: ' responsible.',
+        },
+      ],
+    },
+    {
+      label: '靠近复数项',
+      sentence: 'Neither the teacher nor the students are here.',
+      segments: [
+        {
+          text: 'Neither the teacher nor the students',
+          role: '主语',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'are',
+          role: '复数谓语动词',
+        },
+        {
+          text: ' here.',
+        },
+      ],
+    },
+  ]}
+/>
+
+<EnglishExamples
+  title="否定前置与倒装范围"
+  items={[
+    {
+      label: 'not only 作用于谓语',
+      sentence: 'Not only did she read the book, but she also took notes.',
+      analysis: ['did 承担过去时，read 用原形；后半句不因此倒装。'],
+      segments: [
+        {
+          text: 'Not only',
+          role: '前置否定成分',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'did',
+          role: '助动词',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'she',
+          role: '主语',
+        },
+        {
+          text: ' read the book, but she also took notes.',
+        },
+      ],
+    },
+    {
+      label: 'not only 仅连接主语',
+      sentence: 'Not only Lily but also Tom read the book.',
+      analysis: ['不倒装。'],
+      segments: [
+        {
+          text: 'Not only Lily but also Tom',
+          role: '主语',
+        },
+        {
+          text: ' read the book.',
+        },
+      ],
+    },
+    {
+      label: 'no sooner...than',
+      sentence: 'No sooner had he arrived than it began to rain.',
+      analysis: ['否定意义部分前置通常触发倒装。'],
+      segments: [
+        {
+          text: 'No sooner',
+          role: '前置否定成分',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'had',
+          role: '助动词',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'he',
+          role: '主语',
+        },
+        {
+          text: ' arrived than it began to rain.',
+        },
+      ],
+    },
+    {
+      label: 'hardly...when',
+      sentence: 'Hardly had I sat down when the phone rang.',
+      analysis: ['否定意义部分前置通常触发倒装。'],
+      segments: [
+        {
+          text: 'Hardly',
+          role: '前置否定成分',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'had',
+          role: '助动词',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'I',
+          role: '主语',
+        },
+        {
+          text: ' sat down when the phone rang.',
+        },
+      ],
+    },
+  ]}
+/>
 
 as...as 比较结构也能按配对形式学习，但仍须逐个判断成分的词类和作用。

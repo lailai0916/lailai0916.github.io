@@ -1,7 +1,7 @@
 ---
 title: 构词法
 description: 本文按词基、词缀和构词步骤整理派生、合成、转化、缩略、混成及逆构词。
-summary: 构词形成新词或新的词类用法，屈折改变同一词的语法形式。分析时先确定目标词义与词类，再识别词基、选择构词方式，最后处理词形、读音和搭配。派生按前缀意义和后缀词类归组，区分词缀选择与选定后的拼写调整；合成分别考察生成词类与书写形式，转化保持词形而改变词类用法。缩略区分截短与首字母缩写，混成截取不同词的片段，逆构词则关注历史形成方向。词源、现代结构与句法功能分别判断，不能只靠相似字母推导词义或任意拼接词缀。
+summary: 构词形成新词或新的词类用法，屈折改变同一词的语法形式。分析时先确定目标词义与词类，再识别词基、选择构词方式，最后处理词形、读音和搭配。派生按前缀意义和后缀词类归组，区分词缀选择与选定后的拼写调整；合成分别考察生成词类与书写形式，转化保持词形而改变词类用法。缩略区分截短与首字母缩写，混成截取不同词的片段，逆构词则关注历史形成方向。词源、现代结构与句法功能分别判断，不能仅靠相似字母推导词义或任意拼接词缀。
 ---
 
 ## 参考资料
@@ -97,7 +97,7 @@ summary: 构词形成新词或新的词类用法，屈折改变同一词的语�
    - **re-**：重复或返回，如 rewrite（重写）、reread（重读）。
    - **co-、com-、con-、syn-**：共同或相互，如 cooperate（合作）、connect（连接）、synonym（同义词）。
 
-**否定 in- 的变体** 按两层判断：
+**否定 in- 的变体** 按 2 层判断：
 
 1. 先确定该词的否定形式属于 in- 词族；popular 的否定是 unpopular，不能因 p 开头就改用 im-；
 2. 在这一词族中，按后接词基的首字母选择书写形式：
@@ -129,7 +129,7 @@ summary: 构词形成新词或新的词类用法，屈折改变同一词的语�
   - modern（形容词）+ -ize → modernize（动词）。
   - simplify（简化）、soften（使变软）。
 
-后缀作用不能只凭字母判定：
+后缀作用不能仅凭字母判定：
 
 - friend → friendship：改变词义，前后都是名词。
 - friendly、lovely 中的 -ly 形成形容词，不能套用副词派生规则。
@@ -155,14 +155,14 @@ summary: 构词形成新词或新的词类用法，屈折改变同一词的语�
 - 动词词形：见 [动词时态](/docs/note/english/grammar/verbs/verb-tenses)。
 - 名词复数：见 [名词](/docs/note/english/grammar/parts-of-speech/nouns)。
 
--able 与 -ible 的选择不能只看中文释义或词根是否独立成词，如 countable、visible。相近释义还可能对应不同搭配：
+-able 与 -ible 的选择不能仅看中文释义或词根是否独立成词，如 countable、visible。相近释义还可能对应不同搭配：
 
 - **legible**：字迹或印刷清楚到容易辨认，如 legible handwriting。
 - **readable**：内容易读、有趣，如 a readable account。
 
 ## 合成法
 
-**合成法**（Compounding）将两个或多个词或词基组合为新词。生成词类与书写形式分别判断。
+**合成法**（Compounding）将至少 2 个词或词基组合为新词。生成词类与书写形式分别判断。
 
 ### 结果词类
 
@@ -184,12 +184,72 @@ summary: 构词形成新词或新的词类用法，屈折改变同一词的语�
 **转化法**（Conversion）保持词形，改变词类用法：
 
 - **名词** $\to$ **动词**：water → to water、email → to email。
-  - 「I will **water** the flowers.」（我会给花浇水。）
 - **动词** $\to$ **名词**：to run → a run、to walk → a walk。
-  - 「Let's go for a **walk**.」（我们去散步吧。）
 - **形容词** $\to$ **动词**：empty → to empty、dry → to dry。
 - **形容词** $\to$ **名词**：regular（经常的）→ a regular（常客）。
-  - 「She is a **regular** at this café.」（她是这家咖啡馆的常客。）
+
+<EnglishExamples
+  title="相同词形，不同词类"
+  items={[
+    {
+      label: '名词转为动词',
+      sentence: 'I will water the flowers.',
+      translation: '我会给花浇水。',
+      segments: [
+        {
+          text: 'I will ',
+        },
+        {
+          text: 'water',
+          role: '动词',
+          note: '在此表示浇水。',
+        },
+        {
+          text: ' the flowers.',
+        },
+      ],
+      analysis: ['water 保持原有词形，在这里用作动词。'],
+    },
+    {
+      label: '动词转为名词',
+      sentence: "Let's go for a walk.",
+      translation: '我们去散步吧。',
+      segments: [
+        {
+          text: "Let's go for a ",
+        },
+        {
+          text: 'walk',
+          role: '名词',
+          note: 'a walk 构成名词短语。',
+        },
+        {
+          text: '.',
+        },
+      ],
+      analysis: ['walk 在 a walk 中用作名词。'],
+    },
+    {
+      label: '形容词转为名词',
+      sentence: 'She is a regular at this café.',
+      translation: '她是这家咖啡馆的常客。',
+      segments: [
+        {
+          text: 'She is a ',
+        },
+        {
+          text: 'regular',
+          role: '名词',
+          note: '在此指常客。',
+        },
+        {
+          text: ' at this café.',
+        },
+      ],
+      analysis: ['regular 在这里表示常客，是名词用法。'],
+    },
+  ]}
+/>
 
 判断转化时，词类与句法功能分别处理：
 
@@ -234,14 +294,19 @@ summary: 构词形成新词或新的词类用法，屈折改变同一词的语�
 
 ## 混成法
 
-**混成法**（Blending）拼合两个词的片段：
+**混成法**（Blending）拼合不同词的片段：
 
 - breakfast（早餐）+ lunch → brunch。
 - smoke（烟）+ fog → smog。
 - motor（汽车）+ hotel → motel。
 - internet（互联网）+ citizen → netizen。
 
-形成过程可以包含多步：web + log 先合成 weblog，再截短为 blog，不能把所有缩短一概归为混成。
+形成过程可以包含多步，如 web + log → weblog → blog：
+
+1. web + log 合成 weblog；
+2. weblog 截短为 blog。
+
+第 2 步没有拼合不同词的片段，属于截短，不能归为混成。
 
 ## 逆构词与词族
 
@@ -250,19 +315,83 @@ summary: 构词形成新词或新的词类用法，屈折改变同一词的语�
 - editor → edit。
 - babysitter → babysit。
 
-分析时区分两个方向：
+分析时区分 2 个方向：
 
 - **历史形成方向**：已有词在先，减去被当作词缀的部分后形成新词；较短的词不必较早出现。
 - **现代结构分析**：babysit 能分出 baby 与 sit，不代表其历史上直接由两词合成。
 
 词族可同时记录词类与形式，如 decide（动词）→ decision（名词）→ decisive（形容词）→ decisively（副词）。该排列展示相关词项，不断言每一步都是历史上的直接来源。
 
-分析「She answered **confidently**.」时：
-
-1. **词类**：confidently 是由 confident 加 -ly 形成的副词；
-2. **功能**：confidently 在本句作方式状语，修饰 answered；
-   - 相同功能也可由介词短语承担，如「She answered **with confidence**.」。
-3. **意义**：按语境理解为自信地，句法位置不能唯一确定词义。
+<EnglishExamples
+  title="词类、功能与意义分别判断"
+  items={[
+    {
+      label: '派生副词作方式状语',
+      sentence: 'She answered confidently.',
+      analysis: [
+        '词类：confidently 是由 confident 加 -ly 形成的副词。',
+        '功能：confidently 在本句作方式状语，修饰 answered。',
+        '意义：按语境理解为自信地，句法位置不能唯一确定词义。',
+      ],
+      segments: [
+        {
+          text: 'She',
+          role: '主语',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'answered',
+          role: '谓语动词',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'confidently',
+          role: '方式状语',
+        },
+        {
+          text: '.',
+        },
+      ],
+      translation: '她自信地作了回答。',
+    },
+    {
+      label: '介词短语承担相同功能',
+      sentence: 'She answered with confidence.',
+      analysis: [
+        'with confidence 是介词短语，也能在本句承担方式状语功能。',
+        '句法功能相同，不代表结构形式或词类相同。',
+      ],
+      segments: [
+        {
+          text: 'She',
+          role: '主语',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'answered',
+          role: '谓语动词',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'with confidence',
+          role: '方式状语',
+        },
+        {
+          text: '.',
+        },
+      ],
+      translation: '她自信地作了回答。',
+    },
+  ]}
+/>
 
 ## 思维导图
 

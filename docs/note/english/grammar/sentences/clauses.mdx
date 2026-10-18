@@ -15,9 +15,28 @@ summary: 从句先按内部形式区分陈述内容、嵌入疑问与关系结�
 
 **从句**（Subordinate Clause）是嵌入另一结构或依附其他分句的分句。典型限定从句有主语与谓语，但从属关系不能仅凭「有没有主谓」或「能不能删引导词」判断。
 
-- I know **he is right**. 中即使省去 that，he is right 仍是 know 的宾语从句。
-- I know **that he is right**. 中整个外层分句包含宾语从句；I know 只是删去宾语后的骨架。
-- I want **to leave**. 包含现代语法所说的非限定从句；中学语法通常称其为非谓语结构，详见 [非谓语动词](/docs/note/english/grammar/verbs/non-finite-verbs)。
+<EnglishExamples
+  title="从属关系与限定形式"
+  items={[
+    {
+      label: '省略 that',
+      sentence: 'I know he is right.',
+      analysis: ['句中即使省去 that，he is right 仍是 know 的宾语从句。'],
+    },
+    {
+      label: '保留 that',
+      sentence: 'I know that he is right.',
+      analysis: ['句中整个外层分句包含宾语从句；I know 只是删去宾语后的骨架。'],
+    },
+    {
+      label: '非限定从句',
+      sentence: 'I want to leave.',
+      analysis: ['包含现代语法所说的非限定从句；中学语法通常称其为非谓语结构。'],
+    },
+  ]}
+/>
+
+非限定结构的形式详见 [非谓语动词](/docs/note/english/grammar/verbs/non-finite-verbs)。
 
 ### 分类维度
 
@@ -53,7 +72,7 @@ summary: 从句先按内部形式区分陈述内容、嵌入疑问与关系结�
   - know 的宾语从句：that she believes that he is honest。
     - believes 的宾语从句：that he is honest。
 
-内层从句属于外层宾语从句，不能把它们直接平铺为两个 know 的宾语。
+内层从句属于外层宾语从句，不能把它们直接平铺为 2 个 know 的宾语。
 
 ## 名词性从句
 
@@ -61,56 +80,320 @@ summary: 从句先按内部形式区分陈述内容、嵌入疑问与关系结�
 
 传统 **名词性从句**（Noun Clause）主要包括以下功能类型，同一种 that 内容结构可以放入不同位置。
 
-- **主语从句**：**That he lied** surprised us.（他撒谎这件事让我们惊讶。）整个 that 结构作 surprised 的主语。
-- **宾语从句**：I know **that he lied**.（我知道他撒了谎。）作 know 的宾语。
-- **表语从句**：The truth is **that he lied**.（事实是他撒了谎。）作系动词后的表语。
-- **同位语从句／名词内容补语**：The fact **that he lied** surprised us.（他撒谎这一事实让我们惊讶。）补充 fact 的内容。
+<EnglishExamples
+  title="同一内容结构的不同功能"
+  items={[
+    {
+      label: '主语从句',
+      sentence: 'That he lied surprised us.',
+      translation: '他撒谎这件事让我们惊讶。',
+      analysis: ['整个 that 结构作 surprised 的主语。'],
+      segments: [
+        {
+          text: 'That he lied',
+          role: '主语',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'surprised',
+          role: '谓语动词',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'us',
+          role: '宾语',
+        },
+        {
+          text: '.',
+        },
+      ],
+    },
+    {
+      label: '宾语从句',
+      sentence: 'I know that he lied.',
+      translation: '我知道他撒了谎。',
+      analysis: ['that he lied 作 know 的宾语。'],
+      segments: [
+        {
+          text: 'I',
+          role: '主语',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'know',
+          role: '谓语动词',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'that he lied',
+          role: '宾语',
+        },
+        {
+          text: '.',
+        },
+      ],
+    },
+    {
+      label: '表语从句',
+      sentence: 'The truth is that he lied.',
+      translation: '事实是他撒了谎。',
+      analysis: ['that he lied 作系动词后的表语。'],
+      segments: [
+        {
+          text: 'The truth',
+          role: '主语',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'is',
+          role: '系动词',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'that he lied',
+          role: '表语',
+        },
+        {
+          text: '.',
+        },
+      ],
+    },
+    {
+      label: '名词内容补语',
+      sentence: 'The fact that he lied surprised us.',
+      translation: '他撒谎这一事实让我们惊讶。',
+      analysis: ['that he lied 补充 fact 的内容。'],
+      segments: [
+        {
+          text: 'The',
+          role: '限定词',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'fact',
+          role: '名词中心词',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'that he lied',
+          role: '内容补语',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'surprised',
+          role: '谓语动词',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'us',
+          role: '宾语',
+        },
+        {
+          text: '.',
+        },
+      ],
+    },
+  ]}
+/>
 
 that 内容从句还可补足形容词：I am sure **that he is right**. 中它补足 sure，不因为位于句末就成为宾语从句。把 I am happy that... 改写为 because 或 about the fact that 的近义表达，也不证明两者句法结构完全相同。
 
 ### 连接形式
 
 - **that** 引入陈述内容，自身不占从句中的主语、宾语等位置。
-  - I believe **that she is honest**.
 - **whether / if** 引入「是否」的选择疑问内容，自身不作主语或宾语等。
-  - I wonder **whether she will come**.
 - **who、whom、what、which、whose** 在疑问从句中承担主语、宾语或限定语等作用。
-  - I wonder **what she bought**. 中 what 是 bought 的宾语。
 - **when、where、why、how** 在疑问从句中表示时间、地点、原因或方式等。
-  - Tell me **why she left**.
+
+<EnglishExamples
+  title="连接形式与内部作用"
+  items={[
+    {
+      label: 'that',
+      sentence: 'I believe that she is honest.',
+      analysis: ['that 引入陈述内容，自身不占从句中的主语、宾语等位置。'],
+    },
+    {
+      label: 'whether',
+      sentence: 'I wonder whether she will come.',
+      analysis: ['whether / if 引入「是否」的选择疑问内容，自身不作主语或宾语等。'],
+    },
+    {
+      label: 'what',
+      sentence: 'I wonder what she bought.',
+      analysis: [
+        'who、whom、what、which、whose 在疑问从句中承担主语、宾语或限定语等作用；这里 what 是 bought 的宾语。',
+      ],
+    },
+    {
+      label: 'why',
+      sentence: 'Tell me why she left.',
+      analysis: ['when、where、why、how 在疑问从句中表示时间、地点、原因或方式等。'],
+    },
+  ]}
+/>
 
 wh- 形式不一定表示疑问，须结合外层动词与语境判断。
 
-- **嵌入疑问**：I wonder **what she wrote**.（我想知道她写了什么。）
-- **融合关系结构**：I read **what she wrote**.（我读了她写的内容。）what 相当于 the thing(s) that，融合了先行词与关系成分的作用。
+<EnglishExamples
+  title="嵌入疑问与融合关系"
+  items={[
+    {
+      label: '嵌入疑问',
+      sentence: 'I wonder what she wrote.',
+      translation: '我想知道她写了什么。',
+    },
+    {
+      label: '融合关系结构',
+      sentence: 'I read what she wrote.',
+      translation: '我读了她写的内容。',
+      analysis: ['what 相当于 the thing(s) that，融合了先行词与关系成分的作用。'],
+    },
+  ]}
+/>
 
 融合关系结构还可承担不同的外层功能：
 
-- **介词补语**：I am interested in **what she wrote**. 中整个结构补足 in，不是修饰前面某个名词的定语。
-- **表语**：This is **what I want**. 中 what 结构作表语。
+<EnglishExamples
+  title="融合关系的外层功能"
+  items={[
+    {
+      label: '介词补语',
+      sentence: 'I am interested in what she wrote.',
+      analysis: ['整个 what 结构补足 in，不是修饰前面某个名词的定语。'],
+    },
+    {
+      label: '表语',
+      sentence: 'This is what I want.',
+      analysis: ['what 结构作表语。'],
+    },
+  ]}
+/>
 
 比较 that 与 what，要看从句内部是否已有对应成分：
 
-- I know **that she bought a book**. 中 she bought a book 的主宾结构完整，that 仅连接。
-- I know **what she bought**. 中 bought 的宾语位置由 what 占据，不能再加 a book 表达同一个宾语。
+<EnglishExamples
+  title="that 与 what 的内部结构"
+  items={[
+    {
+      label: '内部结构完整',
+      sentence: 'I know that she bought a book.',
+      analysis: ['句中 she bought a book 的主宾结构完整，that 仅连接。'],
+    },
+    {
+      label: 'what 对应宾语',
+      sentence: 'I know what she bought.',
+      analysis: ['句中 bought 的宾语位置由 what 占据，不能再加 a book 表达同一个宾语。'],
+    },
+  ]}
+/>
 
 ### whether 与 if
 
 whether 的分布比表示「是否」的 if 更广。先看从句所处位置，再选择连接词。
 
-- **常见动词后**：通常两者都可用。
-  - I wonder **whether/if** he will come.
+- **常见动词后**：通常两者都可用，如 I wonder **whether/if** he will come.
 - **句首主语位置**：用 whether。
-  - **Whether he will come** is unclear.
 - **介词后**：用 whether。
-  - It depends on **whether he agrees**.
 - **表语位置**：正式基础表达优先用 whether。
-  - The question is **whether we should go**.
 - **不定式前**：用 whether。
-  - I do not know **whether to stay**.
-- **or not 紧接引导词**：用 whether。
-  - I do not know **whether or not he agrees**.
-  - 若 or not 在从句末尾，I do not know **if he agrees or not**. 也可接受。
+- **or not 紧接引导词**：用 whether；在从句末尾时也可用 if。
+
+<EnglishExamples
+  title="whether 与 if 的位置条件"
+  items={[
+    {
+      label: '句首主语',
+      sentence: 'Whether he will come is unclear.',
+      analysis: ['句首主语位置用 whether。'],
+      segments: [
+        {
+          text: 'Whether he will come',
+          role: '主语',
+        },
+        {
+          text: ' is unclear.',
+        },
+      ],
+    },
+    {
+      label: '介词后',
+      sentence: 'It depends on whether he agrees.',
+      analysis: ['介词后用 whether。'],
+      segments: [
+        {
+          text: 'It depends ',
+        },
+        {
+          text: 'on',
+          role: '介词',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'whether he agrees',
+          role: '介词补语',
+        },
+        {
+          text: '.',
+        },
+      ],
+    },
+    {
+      label: '表语',
+      sentence: 'The question is whether we should go.',
+      analysis: ['正式基础表达在表语位置优先用 whether。'],
+      segments: [
+        {
+          text: 'The question is ',
+        },
+        {
+          text: 'whether we should go',
+          role: '表语',
+        },
+        {
+          text: '.',
+        },
+      ],
+    },
+    {
+      label: '不定式前',
+      sentence: 'I do not know whether to stay.',
+      analysis: ['不定式前用 whether。'],
+    },
+    {
+      label: '紧接 or not',
+      sentence: 'I do not know whether or not he agrees.',
+      analysis: ['or not 紧接引导词时用 whether。'],
+    },
+    {
+      label: '句末 or not',
+      sentence: 'I do not know if he agrees or not.',
+      analysis: ['or not 在从句末尾时，if 也可接受。'],
+    },
+  ]}
+/>
 
 if 还可跟在某些形容词后：I am not sure **if he agrees**. 因而「if 只能引导宾语从句」过于绝对。
 
@@ -140,8 +423,23 @@ that 的省略按位置与清晰度判断：
 
 think、believe、expect 等动词后，第一人称意见表达常用主句否定来传达对从句内容的否定。
 
-- I **do not think** she will come.（我认为她不会来。）常称 **否定转移**（Negative Raising），也常用于缓和语气。
-- I **think** she will **not come**.（我认为她不会来。）同样可以成立，不能一律判错。
+<EnglishExamples
+  title="否定范围的不同形式"
+  items={[
+    {
+      label: '主句否定',
+      sentence: 'I do not think she will come.',
+      translation: '我认为她不会来。',
+      analysis: ['常称否定转移（Negative Raising），也常用于缓和语气。'],
+    },
+    {
+      label: '从句否定',
+      sentence: 'I think she will not come.',
+      translation: '我认为她不会来。',
+      analysis: ['同样可以成立，不能一律判错。'],
+    },
+  ]}
+/>
 
 判断时仍须区分：
 
@@ -152,35 +450,251 @@ think、believe、expect 等动词后，第一人称意见表达常用主句否�
 
 较长的从句常后置，以 it 占据相应位置。
 
-- **形式主语**：
-  - **It** is clear **that he is right**. 中 it 是形式主语，that 从句是后置内容。
-  - **It** is a pity **that you cannot come**. 中 a pity 是表语。
-- **形式宾语**：
-  - We consider **it** strange **that he did not come**. 中 strange 是宾语补足语，that 从句对应形式宾语 it 的内容。
-  - We found **it** surprising **that he agreed**. 中宾补同样是 surprising，而非后置的 that 内容从句。
-  - I find **it** difficult **to understand him**. 中 difficult 是宾补，to understand him 是后置非限定内容，不能据此称为限定的「宾语补语从句」。
+<EnglishExamples
+  title="形式 it 与后置内容"
+  items={[
+    {
+      label: '形式主语',
+      sentence: 'It is clear that he is right.',
+      analysis: ['it 是形式主语，that 从句是后置内容。'],
+      segments: [
+        {
+          text: 'It',
+          role: '形式主语',
+        },
+        {
+          text: ' is ',
+        },
+        {
+          text: 'clear',
+          role: '表语',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'that he is right',
+          role: '后置内容',
+        },
+        {
+          text: '.',
+        },
+      ],
+    },
+    {
+      label: '名词短语作表语',
+      sentence: 'It is a pity that you cannot come.',
+      analysis: ['a pity 是表语。'],
+      segments: [
+        {
+          text: 'It',
+          role: '形式主语',
+        },
+        {
+          text: ' is ',
+        },
+        {
+          text: 'a pity',
+          role: '表语',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'that you cannot come',
+          role: '后置内容',
+        },
+        {
+          text: '.',
+        },
+      ],
+    },
+    {
+      label: '形式宾语',
+      sentence: 'We consider it strange that he did not come.',
+      analysis: ['strange 是宾语补足语，that 从句对应形式宾语 it 的内容。'],
+      segments: [
+        {
+          text: 'We consider ',
+        },
+        {
+          text: 'it',
+          role: '形式宾语',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'strange',
+          role: '宾语补足语',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'that he did not come',
+          role: '后置内容',
+        },
+        {
+          text: '.',
+        },
+      ],
+    },
+    {
+      label: '宾补不是 that 从句',
+      sentence: 'We found it surprising that he agreed.',
+      analysis: ['宾补是 surprising，不是后置的 that 内容从句。'],
+      segments: [
+        {
+          text: 'We found ',
+        },
+        {
+          text: 'it',
+          role: '形式宾语',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'surprising',
+          role: '宾语补足语',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'that he agreed',
+          role: '后置内容',
+        },
+        {
+          text: '.',
+        },
+      ],
+    },
+    {
+      label: '后置非限定内容',
+      sentence: 'I find it difficult to understand him.',
+      analysis: [
+        'difficult 是宾补，to understand him 是后置非限定内容，不能称为限定的宾语补语从句。',
+      ],
+      segments: [
+        {
+          text: 'I find ',
+        },
+        {
+          text: 'it',
+          role: '形式宾语',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'difficult',
+          role: '宾语补足语',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'to understand him',
+          role: '后置内容',
+        },
+        {
+          text: '.',
+        },
+      ],
+    },
+  ]}
+/>
 
 还要区分非人称结构：
 
-- **It seems that...**：It seems that he is right.（他似乎是对的。）
-- **It happens/happened that...**：It happened that we were away.（碰巧我们当时不在。）
-- 这里 it 不指前文的具体事物，不能按普通指代关系翻译。
+<EnglishExamples
+  title="非人称 it 结构"
+  items={[
+    {
+      label: 'It seems that...',
+      sentence: 'It seems that he is right.',
+      translation: '他似乎是对的。',
+    },
+    {
+      label: 'It happens/happened that...',
+      sentence: 'It happened that we were away.',
+      translation: '碰巧我们当时不在。',
+    },
+  ]}
+/>
+
+这里 it 不指前文的具体事物，不能按普通指代关系翻译。
 
 ### 融合关系结构与宾补
 
-融合关系结构确实也可整体作宾语补足语，说明宾语的身份、称呼或所成为的人。
+融合关系结构也可整体作宾语补足语，说明宾语的身份、称呼或所成为的人。
 
-- You can call **me what you like**.（你可以随意称呼我。）what you like 对应给 me 的称呼。
-- My education made **me who I am today**.（我的教育成就了今天的我。）who I am today 说明 me 所成为的人。
+<EnglishExamples
+  title="融合关系结构作宾补"
+  items={[
+    {
+      label: '称呼',
+      sentence: 'You can call me what you like.',
+      translation: '你可以随意称呼我。',
+      analysis: ['what you like 对应给 me 的称呼。'],
+      segments: [
+        {
+          text: 'You can call ',
+        },
+        {
+          text: 'me',
+          role: '宾语',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'what you like',
+          role: '宾语补足语',
+        },
+        {
+          text: '.',
+        },
+      ],
+    },
+    {
+      label: '身份',
+      sentence: 'My education made me who I am today.',
+      translation: '我的教育成就了今天的我。',
+      analysis: ['who I am today 说明 me 所成为的人。'],
+      segments: [
+        {
+          text: 'My education made ',
+        },
+        {
+          text: 'me',
+          role: '宾语',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'who I am today',
+          role: '宾语补足语',
+        },
+        {
+          text: '.',
+        },
+      ],
+    },
+  ]}
+/>
 
 - **内部结构**：两者没有外置先行词，是融合关系结构。
 - **外层功能**：整体作宾补，一些资料因此称为宾语补语从句。
 
-这里的宾补功能须与形式宾语 it 后置的 that 内容从句区分，不能只看句末位置合并归类。
+这里的宾补功能须与形式宾语 it 后置的 that 内容从句区分，不能仅看句末位置合并归类。
 
 ### 时态后移
 
-过去时的转述动词常触发 **时态后移**（Backshift，亦称时态回溯）：以原话为参照调整从句形式，保持同时、先时或后时关系。
+过去时的转述动词常触发 **时态后移**（Backshift，亦称时态回溯）。从句形式随转述视点调整，保持与原话对应的同时、先时或后时关系。
 
 |       原话       |             转述             |    时间关系    |
 | :--------------: | :--------------------------: | :------------: |
@@ -189,11 +703,28 @@ think、believe、expect 等动词后，第一人称意见表达常用主句否�
 |   I will come.   |  He said he **would come**.  | 到来在说话之后 |
 
 - 内容仍成立、仍相关，或属于一般事实时，可以不后移。
-  - The teacher said that the earth **goes** around the sun.
-  - She said she **lives** in London. 表示说话者把居住情况当作现在仍成立的事实。
 - 描述当时习惯时，也可以用过去形式。
-  - He said he **walked** to school every day.
 - 不能把「客观事实可保留现在形式」扩大成「所有习惯动作永远不用过去时」。
+
+<EnglishExamples
+  title="时态后移的语境选择"
+  items={[
+    {
+      label: '一般事实可保留现在形式',
+      sentence: 'The teacher said that the earth goes around the sun.',
+    },
+    {
+      label: '仍成立的情况',
+      sentence: 'She said she lives in London.',
+      analysis: ['表示说话者把居住情况当作现在仍成立的事实。'],
+    },
+    {
+      label: '当时习惯',
+      sentence: 'He said he walked to school every day.',
+      analysis: ['描述当时习惯时，也可以用过去形式。'],
+    },
+  ]}
+/>
 
 ### 名词内容与关系修饰
 
@@ -203,9 +734,31 @@ fact、news、idea、belief、hope、suggestion、doubt、opinion 等名词后�
 2. **名词对应从句内部的一个位置**，按关系从句分析；
 3. 抽象名词本身不能决定从句类型，须同时检查内部结构与意义。
 
-- **内容**：The idea **that we should wait** was rejected. 中 we should wait 完整，说明被拒绝的想法。
-- **关系修饰**：The idea **that she put forward** was rejected. 中 put forward 缺宾语，that 对应 idea。
-- **疑问内容**：The question **whether we should leave** remains open. / I have no idea **who called**. 名词内容不局限于 that 陈述，whether、who 也不必然引导定语从句。
+<EnglishExamples
+  title="名词内容与关系修饰的对照"
+  items={[
+    {
+      label: '陈述内容',
+      sentence: 'The idea that we should wait was rejected.',
+      analysis: ['we should wait 完整，说明被拒绝的想法。'],
+    },
+    {
+      label: '关系修饰',
+      sentence: 'The idea that she put forward was rejected.',
+      analysis: ['put forward 缺宾语，that 对应 idea。'],
+    },
+    {
+      label: 'whether 疑问内容',
+      sentence: 'The question whether we should leave remains open.',
+      analysis: ['名词内容不局限于 that 陈述，whether 也不必然引导定语从句。'],
+    },
+    {
+      label: 'who 疑问内容',
+      sentence: 'I have no idea who called.',
+      analysis: ['名词内容不局限于 that 陈述，who 也不必然引导定语从句。'],
+    },
+  ]}
+/>
 
 ## 定语从句
 
@@ -223,23 +776,134 @@ fact、news、idea、belief、hope、suggestion、doubt、opinion 等名词后�
 以下沿用学校语法中「关系代词作成分」的分析；部分现代体系将 that 另行分类，但仍须说明它与内部缺口的对应关系。
 
 - **主语或宾语关系**：
-  - 指人常用 **who**：The woman **who called** is my teacher.
-  - 指人的宾语还可用 **whom**，较正式：The woman **whom I met** is my teacher.
-  - 指物或动物常用 **which**：The book **which I bought** is useful.
-  - 限制性从句中，人或物还可用 **that**：The book **that I bought** is useful.
+  - 指人常用 **who**；指人的宾语还可用 **whom**，较正式。
+  - 指物或动物常用 **which**；限制性从句中，人或物还可用 **that**。
 - **所有关系**：**whose + 名词**，先行词可指人或物。
-  - The house **whose roof is red** is mine.
-- **时间、地点、原因关系**：
-  - **when**：I remember the day **when we met**.
-  - **where**：This is the house **where she lives**. 还可指相关情境。
-  - **why**：That is the reason **why she left**. 先行词通常是 reason。
+- **时间、地点、原因关系**：分别按内部位置选择 **when**、**where**、**why**。where 还可指相关情境，why 的先行词通常是 reason。
+
+<EnglishExamples
+  title="关系词的内部位置"
+  items={[
+    {
+      label: 'who',
+      sentence: 'The woman who called is my teacher.',
+      analysis: ['指人常用 who，这里对应从句主语。'],
+    },
+    {
+      label: 'whom',
+      sentence: 'The woman whom I met is my teacher.',
+      analysis: ['指人的宾语还可用 whom，较正式。'],
+    },
+    {
+      label: 'which',
+      sentence: 'The book which I bought is useful.',
+      analysis: ['指物或动物常用 which。'],
+    },
+    {
+      label: 'that',
+      sentence: 'The book that I bought is useful.',
+      analysis: ['限制性从句中，人或物还可用 that。'],
+    },
+    {
+      label: 'whose',
+      sentence: 'The house whose roof is red is mine.',
+      analysis: ['whose + 名词表示所有关系，先行词可指人或物。'],
+    },
+    {
+      label: 'when',
+      sentence: 'I remember the day when we met.',
+      analysis: ['对应时间关系。'],
+    },
+    {
+      label: 'where',
+      sentence: 'This is the house where she lives.',
+      analysis: ['对应地点关系，也可指相关情境。'],
+    },
+    {
+      label: 'why',
+      sentence: 'That is the reason why she left.',
+      analysis: ['对应原因关系，先行词通常是 reason。'],
+    },
+  ]}
+/>
 
 同一个先行词也可能对应不同内部位置：
 
-- **房子作宾语**：This is the house **which I bought**. 对应 I bought the house，选 which/that。
-- **房子表示地点**：This is the house **where I live**. 对应 I live in the house，选 where/in which。
-- **日期作宾语**：I remember the day **which we spent together**. 中 spent 缺宾语，选 which/that。
-- **日期表示时间**：I remember the day **when we met**. 中 met 不缺宾语，选 when/on which。
+<EnglishExamples
+  title="先行词与从句内部位置"
+  items={[
+    {
+      label: '房子作宾语',
+      sentence: 'This is the house which I bought.',
+      analysis: ['对应 I bought the house，关系词选 which/that。'],
+      segments: [
+        {
+          text: 'This is the house ',
+        },
+        {
+          text: 'which I bought',
+          role: '关系从句',
+          note: 'which 对应 bought 的宾语',
+        },
+        {
+          text: '.',
+        },
+      ],
+    },
+    {
+      label: '房子表示地点',
+      sentence: 'This is the house where I live.',
+      analysis: ['对应 I live in the house，关系词选 where/in which。'],
+      segments: [
+        {
+          text: 'This is the house ',
+        },
+        {
+          text: 'where I live',
+          role: '关系从句',
+          note: 'where 表地点',
+        },
+        {
+          text: '.',
+        },
+      ],
+    },
+    {
+      label: '日期作宾语',
+      sentence: 'I remember the day which we spent together.',
+      analysis: ['spent 缺宾语，关系词选 which/that。'],
+      segments: [
+        {
+          text: 'I remember the day ',
+        },
+        {
+          text: 'which we spent together',
+          role: '关系从句',
+        },
+        {
+          text: '.',
+        },
+      ],
+    },
+    {
+      label: '日期表示时间',
+      sentence: 'I remember the day when we met.',
+      analysis: ['met 不缺宾语，关系词选 when/on which。'],
+      segments: [
+        {
+          text: 'I remember the day ',
+        },
+        {
+          text: 'when we met',
+          role: '关系从句',
+        },
+        {
+          text: '.',
+        },
+      ],
+    },
+  ]}
+/>
 
 先行词是地点不代表必用 where，是时间也不代表必用 when。This is the town **(which/that) I visited**. 与 This is the town **where/in which I grew up**. 同样分别需要宾语与地点关系。
 
@@ -269,25 +933,56 @@ fact、news、idea、belief、hope、suggestion、doubt、opinion 等名词后�
 - **指物的限制性从句** 中 that、which 都有标准用法。
   - 美式编辑常偏好限制性用 that、非限制性用 which，这是体例偏好，不是所有英语的普遍语法规则。
 - **最高级、序数词、the only、all、everything、nothing 等之后** 常偏好 that。
-  - This is the best book **that** I have read. / Everything **that** he said was true.
   - 分布还受先行词和语体影响，不能据此把所有 which 一律判错。
+
 - **人和物并列作先行词** 时，that 常是方便的共同选择。
 - **已有显式先行词** 时，通常不用融合关系 what 再修饰：不把 the book what I read 当作标准关系结构。
+
+<EnglishExamples
+  title="限制性从句中常偏好 that 的语境"
+  items={[
+    {
+      label: '最高级修饰先行词',
+      sentence: 'This is the best book that I have read.',
+    },
+    {
+      label: 'everything 作先行词',
+      sentence: 'Everything that he said was true.',
+    },
+  ]}
+/>
 
 关系词对应的位置也不能再填普通代词：The book which I bought **it** is useful. 中 it 与 which 重复占据 bought 的宾语位置。
 
 ### 介词位置与 as
 
-介词由实际搭配和关系决定，不能只按先行词表面类别机械替换。
+介词由实际搭配和关系决定，不能仅按先行词表面类别机械替换。
 
 - **介词前置**：指人用 whom，指物通常用 which，关系词不能这样省略。
-  - The person **to whom** I spoke was helpful.
-  - The house **in which** I live is small. 不能用 in that 代替这里的 in which。
 - **介词后置**：限制性从句中，作介词宾语的关系代词可省。
-  - The person **(who/whom/that)** I spoke **to** was helpful.
-- **关系副词与介词组合** 可对照理解，但具体介词不同。
-  - the day **on which** we met、the house **in which** she lives、the reason **for which** she left。
+- **关系副词与介词组合** 可对照理解，但具体介词不同，如 the day **on which** we met、the house **in which** she lives、the reason **for which** she left。
 - **固定搭配** 中含义不可拆的部分，不能机械搬移其中的词。
+
+<EnglishExamples
+  title="关系从句的介词位置"
+  items={[
+    {
+      label: '指人的介词前置',
+      sentence: 'The person to whom I spoke was helpful.',
+      analysis: ['指人用 whom，介词前置时关系词不能这样省略。'],
+    },
+    {
+      label: '指物的介词前置',
+      sentence: 'The house in which I live is small.',
+      analysis: ['指物通常用 which；不能用 in that 代替这里的 in which。'],
+    },
+    {
+      label: '介词后置',
+      sentence: 'The person I spoke to was helpful.',
+      analysis: ['限制性从句中，作介词宾语的关系代词可省；保留时可用 who、whom 或 that。'],
+    },
+  ]}
+/>
 
 学校语法还常讲 as 关系结构，须结合具体形式分析。
 
@@ -302,50 +997,250 @@ fact、news、idea、belief、hope、suggestion、doubt、opinion 等名词后�
 ### 语义分类
 
 - **时间**：说明事件何时发生；常见 when、while、as、before、after、until/till、since、as soon as、once。
-  - I will call you **when I arrive**.（我到达时会给你打电话。）
 - **地点**：说明事件发生的地点或适用范围；常见 where、wherever。
-  - Sit **wherever you like**.（你想坐哪里就坐哪里。）
 - **原因**：说明原因或判断依据；常见 because、since、as、now that、seeing that。
-  - I stayed home **because I was ill**.（我因生病待在家里。）
 - **目的**：说明预期达到的目标；常见 so that、in order that。
-  - Speak clearly **so that everyone can hear**.（说清楚，好让大家听见。）
 - **结果**：说明前面情况造成的结果；常见 so...that、such...that，也可用 so that。
-  - He was **so tired that he fell asleep**.（他累得睡着了。）
 - **条件**：说明结论成立的条件；常见 if、unless、provided (that)、as long as。
-  - We will go **if it does not rain**.（若不下雨，我们就去。）
 - **让步**：承认或假设一种情况，结论仍成立；常见 although、though、even though、even if、no matter wh-、whatever、however。
-  - **Although it was raining**, we went out.（尽管下雨，我们还是出门了。）
 - **方式**：说明做事方式或比较设想；常见 as、as if、as though。
-  - Do **as I say**.（照我说的做。）
 - **比较**：说明程度等比较关系；常见 than、as...as。
-  - He is taller **than I am**.（他比我高。）
+
+<EnglishExamples
+  title="状语从句的语义关系"
+  items={[
+    {
+      label: '时间',
+      sentence: 'I will call you when I arrive.',
+      translation: '我到达时会给你打电话。',
+      segments: [
+        {
+          text: 'I will call you ',
+        },
+        {
+          text: 'when I arrive',
+          role: '状语从句',
+        },
+        {
+          text: '.',
+        },
+      ],
+    },
+    {
+      label: '地点',
+      sentence: 'Sit wherever you like.',
+      translation: '你想坐哪里就坐哪里。',
+      segments: [
+        {
+          text: 'Sit ',
+        },
+        {
+          text: 'wherever you like',
+          role: '状语从句',
+        },
+        {
+          text: '.',
+        },
+      ],
+    },
+    {
+      label: '原因',
+      sentence: 'I stayed home because I was ill.',
+      translation: '我因生病待在家里。',
+      segments: [
+        {
+          text: 'I stayed home ',
+        },
+        {
+          text: 'because I was ill',
+          role: '状语从句',
+        },
+        {
+          text: '.',
+        },
+      ],
+    },
+    {
+      label: '目的',
+      sentence: 'Speak clearly so that everyone can hear.',
+      translation: '说清楚，好让大家听见。',
+      segments: [
+        {
+          text: 'Speak clearly ',
+        },
+        {
+          text: 'so that everyone can hear',
+          role: '状语从句',
+        },
+        {
+          text: '.',
+        },
+      ],
+    },
+    {
+      label: '结果',
+      sentence: 'He was so tired that he fell asleep.',
+      translation: '他累得睡着了。',
+      segments: [
+        {
+          text: 'He was so tired ',
+        },
+        {
+          text: 'that he fell asleep',
+          role: '结果从句',
+        },
+        {
+          text: '.',
+        },
+      ],
+    },
+    {
+      label: '条件',
+      sentence: 'We will go if it does not rain.',
+      translation: '若不下雨，我们就去。',
+      segments: [
+        {
+          text: 'We will go ',
+        },
+        {
+          text: 'if it does not rain',
+          role: '状语从句',
+        },
+        {
+          text: '.',
+        },
+      ],
+    },
+    {
+      label: '让步',
+      sentence: 'Although it was raining, we went out.',
+      translation: '尽管下雨，我们还是出门了。',
+      segments: [
+        {
+          text: 'Although it was raining',
+          role: '状语从句',
+        },
+        {
+          text: ', we went out.',
+        },
+      ],
+    },
+    {
+      label: '方式',
+      sentence: 'Do as I say.',
+      translation: '照我说的做。',
+      segments: [
+        {
+          text: 'Do ',
+        },
+        {
+          text: 'as I say',
+          role: '状语从句',
+        },
+        {
+          text: '.',
+        },
+      ],
+    },
+    {
+      label: '比较',
+      sentence: 'He is taller than I am.',
+      translation: '他比我高。',
+      segments: [
+        {
+          text: 'He is taller ',
+        },
+        {
+          text: 'than I am',
+          role: '比较从句',
+        },
+        {
+          text: '.',
+        },
+      ],
+    },
+  ]}
+/>
 
 连接词的词类和所表示的语义关系不能混为一谈：
 
 - 表原因的 **for** 通常连接并列分句，不归入这里的原因状语从句。
 - **whereas** 通常表示对比；**while** 可表示时间、对比或让步，须按语境分析。
 - because 与 so、although/though 与 but 通常不重复连接同一层次、同一逻辑关系的两部分。
-  - 可用 Because I was ill, I stayed home.
-  - 也可用 I was ill, so I stayed home.
+
+<EnglishExamples
+  title="原因从属与结果并列"
+  items={[
+    {
+      label: 'because 从属连接',
+      sentence: 'Because I was ill, I stayed home.',
+    },
+    {
+      label: 'so 并列连接',
+      sentence: 'I was ill, so I stayed home.',
+    },
+  ]}
+/>
 
 ### 时间关系
 
 先判断事件之间的关系，再选择连接形式，不能把连接词直接换算成固定时态。
 
 - **先后**：before / after。
-  - I left **after she arrived**.（她到达后我才离开。）
 - **同时或背景**：when、while、as。
-  - **when** 可关联时点或一段时间：I was reading **when she called**.
-  - **while** 常以持续情况为背景，但不强制使用进行体：I read **while she cooked**.
-  - **as** 可表示同时展开或伴随变化：**As we walked**, we talked.
+  - **when** 可关联时点或一段时间。
+  - **while** 常以持续情况为背景，但不强制使用进行体。
+  - **as** 可表示同时展开或伴随变化。
 - **起点**：since。
-  - I have lived here **since I was a child**.（我从小就住在这里。）
 - **持续到边界**：until / till。
-  - Wait **until she returns**.（等到她回来。）
 - **边界前未发生**：not...until。
-  - I did not leave **until she returned**.（直到她回来，我才离开。）
 - **紧接发生**：as soon as。
-  - Call me **as soon as you arrive**.（你一到就给我打电话。）
+
+<EnglishExamples
+  title="时间从句的事件关系"
+  items={[
+    {
+      label: '先后',
+      sentence: 'I left after she arrived.',
+      translation: '她到达后我才离开。',
+    },
+    {
+      label: 'when',
+      sentence: 'I was reading when she called.',
+      analysis: ['when 可关联时点或一段时间。'],
+    },
+    {
+      label: 'while',
+      sentence: 'I read while she cooked.',
+      analysis: ['while 常以持续情况为背景，但不强制使用进行体。'],
+    },
+    {
+      label: 'as',
+      sentence: 'As we walked, we talked.',
+      analysis: ['as 可表示同时展开或伴随变化。'],
+    },
+    {
+      label: '起点',
+      sentence: 'I have lived here since I was a child.',
+      translation: '我从小就住在这里。',
+    },
+    {
+      label: '持续到边界',
+      sentence: 'Wait until she returns.',
+      translation: '等到她回来。',
+    },
+    {
+      label: '边界前未发生',
+      sentence: 'I did not leave until she returned.',
+      translation: '直到她回来，我才离开。',
+    },
+    {
+      label: '紧接发生',
+      sentence: 'Call me as soon as you arrive.',
+      translation: '你一到就给我打电话。',
+    },
+  ]}
+/>
 
 the next time、every time、the first time 等时间短语后也可接分句，整体表达时间关系：**The next time you visit**, I will show you the garden.（下次你来时，我会带你看花园。）
 
@@ -357,20 +1252,107 @@ the next time、every time、the first time 等时间短语后也可接分句，
 2. **再判断所指**：表示将来时间或开放条件的状语从句中，通常用现在形式，不用纯粹表示将来的 will；
 3. **最后选择体与主句形式**：从句可用现在完成时突出先完成，主句也可用情态结构或祈使句，不限于 will。
 
-- We can start **if everyone is ready**.（若大家准备好了，我们就可以开始。）
-- Call me **when you arrive**.（到达时给我打电话。）
-- We will leave **after she has finished**.（她完成后我们就离开。）
+<EnglishExamples
+  title="时间条件从句的现在形式"
+  items={[
+    {
+      label: '情态主句',
+      sentence: 'We can start if everyone is ready.',
+      translation: '若大家准备好了，我们就可以开始。',
+    },
+    {
+      label: '祈使主句',
+      sentence: 'Call me when you arrive.',
+      translation: '到达时给我打电话。',
+    },
+    {
+      label: '从句现在完成',
+      sentence: 'We will leave after she has finished.',
+      translation: '她完成后我们就离开。',
+    },
+  ]}
+/>
 
 按从句功能比较相同的引导形式：
 
 - **时间或条件状语**：when/if 建立事件之间的时间或条件关系，按上述状语规则选择形式。
-  - **when 表时间**：「I will call you **when she arrives**.」表示她到达时，例句用现在形式。
-  - **if 表条件**：「We will go **if she comes**.」表示若她来，例句用现在形式。
 - **嵌入疑问内容**：when/if 引出所询问的时间或是否成立，不适用上述状语规则；谈将来时可用 will。
-  - **when 询问时间**：「I do not know **when she will arrive**.」表示不知道她何时到达。
-  - **if 询问是否**：「I wonder **if she will come**.」表示想知道她是否会来。
 
-还须保留两类边界：
+<EnglishExamples
+  title="同形 when/if 的不同功能"
+  items={[
+    {
+      label: 'when 表时间',
+      sentence: 'I will call you when she arrives.',
+      analysis: ['表示她到达时；时间状语从句在例句中用现在形式。'],
+      segments: [
+        {
+          text: 'I will call you ',
+        },
+        {
+          text: 'when she arrives',
+          role: '时间状语从句',
+        },
+        {
+          text: '.',
+        },
+      ],
+    },
+    {
+      label: 'if 表条件',
+      sentence: 'We will go if she comes.',
+      analysis: ['表示若她来；条件状语从句在例句中用现在形式。'],
+      segments: [
+        {
+          text: 'We will go ',
+        },
+        {
+          text: 'if she comes',
+          role: '条件状语从句',
+        },
+        {
+          text: '.',
+        },
+      ],
+    },
+    {
+      label: 'when 询问时间',
+      sentence: 'I do not know when she will arrive.',
+      analysis: ['表示不知道她何时到达；嵌入疑问内容谈将来时可用 will。'],
+      segments: [
+        {
+          text: 'I do not know ',
+        },
+        {
+          text: 'when she will arrive',
+          role: '嵌入疑问',
+        },
+        {
+          text: '.',
+        },
+      ],
+    },
+    {
+      label: 'if 询问是否',
+      sentence: 'I wonder if she will come.',
+      analysis: ['表示想知道她是否会来；嵌入疑问不套用上述状语规则。'],
+      segments: [
+        {
+          text: 'I wonder ',
+        },
+        {
+          text: 'if she will come',
+          role: '嵌入疑问',
+        },
+        {
+          text: '.',
+        },
+      ],
+    },
+  ]}
+/>
+
+还须保留 2 类边界：
 
 - **疑问内容中可用 will，不等于必须用 will**：询问已安排的到达时间时，也可采用相应现在形式。
 - **条件从句中 will 表意愿**：If you **will wait** here, I will get the manager.（若你愿意在这里等，我就去叫经理。）与单纯将来时间不同。
@@ -379,19 +1361,65 @@ the next time、every time、the first time 等时间短语后也可接分句，
 
 ### 同词与不同功能
 
-仍按「依附谁、整体作什么」判断，不能只按引导词贴标签。
+仍按「依附谁、整体作什么」判断，不能仅按引导词贴标签。
 
-- **where** 的不同功能：
-  - I will visit the place **where she grew up**. 修饰 place，是关系从句。
-  - I will live **where she lives**. 按传统教学作地点状语分析，没有显式先行名词。
-  - Tell me **where she lives**. 表示要告诉的内容，是嵌入疑问。
-- **whoever** 的不同功能：
-  - **Whoever arrives first** can open the door. 整体作主语，相当于「最先到的那个人」。
-  - **Whoever comes**, I will not open the door. 表让步，相当于 no matter who comes。
-- **地点范围表达**：
-  - You can sit **wherever you like**. 指任意可选地点。
-  - **Everywhere she goes**, she makes friends. 指所到的各处。
-  - You can work **anywhere you like**. 指可选择的任何一处，不只是把 where 换成更强的语气词。
+<EnglishExamples
+  title="where 的不同外层功能"
+  items={[
+    {
+      label: '关系从句',
+      sentence: 'I will visit the place where she grew up.',
+      analysis: ['修饰 place，是关系从句。'],
+    },
+    {
+      label: '地点状语',
+      sentence: 'I will live where she lives.',
+      analysis: ['按传统教学作地点状语分析，没有显式先行名词。'],
+    },
+    {
+      label: '嵌入疑问',
+      sentence: 'Tell me where she lives.',
+      analysis: ['表示要告诉的内容，是嵌入疑问。'],
+    },
+  ]}
+/>
+
+<EnglishExamples
+  title="whoever 的不同功能"
+  items={[
+    {
+      label: '整体作主语',
+      sentence: 'Whoever arrives first can open the door.',
+      analysis: ['相当于「最先到的那个人」。'],
+    },
+    {
+      label: '让步',
+      sentence: 'Whoever comes, I will not open the door.',
+      analysis: ['相当于 no matter who comes。'],
+    },
+  ]}
+/>
+
+<EnglishExamples
+  title="地点范围表达"
+  items={[
+    {
+      label: '任意可选地点',
+      sentence: 'You can sit wherever you like.',
+      analysis: ['指任意可选地点。'],
+    },
+    {
+      label: '所到各处',
+      sentence: 'Everywhere she goes, she makes friends.',
+      analysis: ['指所到的各处。'],
+    },
+    {
+      label: '任何可选地点',
+      sentence: 'You can work anywhere you like.',
+      analysis: ['指可选择的任何一处，不等于给 where 增加语气强度。'],
+    },
+  ]}
+/>
 
 ### 条件、让步与方式
 
@@ -406,8 +1434,22 @@ the next time、every time、the first time 等时间短语后也可接分句，
 - **the way** 后可有关系修饰语，整体表达方式。
   - Do it **the way (that/in which) I do it**.
 - **as if/as though** 可表示有现实依据的判断，也可用过去形式表示遥远假设。
-  - He spends money **as if he were rich**. 断言花钱的表现，再设想其富有。
-  - **If he were rich, he would spend more**. 则以假设条件推导尚未断言的结果，不能仅因都有 were 就混为同一种关系。
+
+<EnglishExamples
+  title="as if 与 if 的关系"
+  items={[
+    {
+      label: '方式设想',
+      sentence: 'He spends money as if he were rich.',
+      analysis: ['断言花钱的表现，再设想其富有。'],
+    },
+    {
+      label: '假设条件',
+      sentence: 'If he were rich, he would spend more.',
+      analysis: ['以假设条件推导尚未断言的结果，不能仅因都有 were 就混为同一种关系。'],
+    },
+  ]}
+/>
 
 ### 原因、目的与结果
 
@@ -415,37 +1457,92 @@ the next time、every time、the first time 等时间短语后也可接分句，
 
 - **because** 常突出要解释的原因。
 - **since/as** 常把原因作为已知或背景信息，这不是固定的语气强弱等级。
-- 三者引导的原因从句都可前置或后置，since/as 也不只用于句首。
+- 三者引导的原因从句都可前置或后置，since/as 也不限于句首。
   - We stayed indoors **since it was raining**.
 - since/as 还可表示时间，须结合上下文排除其他义项。
 - **for** 可补充推断依据，但保持并列关系。
   - He must be at home, **for the lights are on**.
-  - because 也可说明判断依据，不能把「实际原因」与「推断依据」分别固定给两个词。
+  - because 也可说明判断依据，不能把「实际原因」与「推断依据」分别固定给 2 个词。
 
-**目的与结果** 要看事件之间的关系，不能只看 so that 或情态词。
+**目的与结果** 要看事件之间的关系，不能仅看 so that 或情态词。
 
 - **目的**：预期达到的目标，不保证已实现。
-  - I spoke clearly **so that everyone could hear**.
   - 目的从句常见 can/could、may/might、will/would，也可用普通现在形式。
   - lest、for fear that 常表达防备或担忧；具体形式见 [动词语气](/docs/note/english/grammar/verbs/verb-moods)。
 - **结果**：前面事件造成的情况。
-  - The temperature fell, **so that the lake froze**.
 - **程度或数量与结果**：先判断被加强的成分，再选形式。
-  - **so + 形容词／副词 + that**：He was **so tired that** he fell asleep.
-  - **so + many/few + 复数名词 + that**，或 **so + much/little + 不可数名词 + that**：I ate **so many carrots that** I felt sick.
-  - **such + 名词短语 + that**：It was **such a long journey that** we were exhausted.
-  - 单数可数名词的较正式变体是 **so + 形容词 + a/an + 名词 + that**：It was **so long a journey that** we were exhausted.
+  - **so + 形容词／副词 + that**。
+  - **so + many/few + 复数名词 + that**，或 **so + much/little + 不可数名词 + that**。
+  - **such + 名词短语 + that**。
+  - 单数可数名词的较正式变体是 **so + 形容词 + a/an + 名词 + that**。
 
-冠词位置也随结构改变：such **a** long journey 与 so long **a** journey。复数和不可数名词不加 a/an，如 such difficult questions、such bad weather；不能仅看到名词就忽略 so many / so much 等数量结构。
+<EnglishExamples
+  title="目的与结果的对照"
+  items={[
+    {
+      label: '目的',
+      sentence: 'I spoke clearly so that everyone could hear.',
+      analysis: ['预期达到的目标，不保证已实现。'],
+    },
+    {
+      label: '结果',
+      sentence: 'The temperature fell, so that the lake froze.',
+      analysis: ['前面事件造成的情况。'],
+    },
+  ]}
+/>
+
+<EnglishExamples
+  title="程度、数量与结果的形式"
+  items={[
+    {
+      label: 'so + 形容词',
+      sentence: 'He was so tired that he fell asleep.',
+    },
+    {
+      label: 'so + 数量结构',
+      sentence: 'I ate so many carrots that I felt sick.',
+    },
+    {
+      label: 'such + 名词短语',
+      sentence: 'It was such a long journey that we were exhausted.',
+    },
+    {
+      label: 'so + 形容词 + a + 名词',
+      sentence: 'It was so long a journey that we were exhausted.',
+      analysis: ['单数可数名词的较正式变体。'],
+    },
+  ]}
+/>
+
+冠词与数量词还须按名词结构判断：
+
+- **单数可数名词**：such **a** long journey 与 so long **a** journey，冠词位置不同。
+- **复数或不可数名词**：such difficult questions、such bad weather，不加 a/an。
+- **many/few/much/little 数量结构**：按前面的 so + 数量词分支，不能仅因后面有名词就选 such。
 
 ### 省略与比较
 
-- **时间、条件、让步结构缩约** 时，要能恢复合理的逻辑主语。
-  - **When (she was) asked**, she said nothing.
-  - **Although (he was) tired**, he kept working.
-  - 相关边界见 [独立主格](/docs/note/english/grammar/sentences/absolute-constructions)。
+- **时间、条件、让步结构缩约** 时，要能恢复合理的逻辑主语。相关边界见 [独立主格](/docs/note/english/grammar/sentences/absolute-constructions)。
+
 - **比较结构** 常省略重复内容，但不能强行补成同一种句型。
   - She is taller than I **am**. 可省为 She is taller than I.
   - than me 也常见，尤其口语，不能一概判错。
-- **关联比较** 表达两种变化的对应关系。
+- **关联比较** 表达 2 种变化的对应关系。
   - **The harder you work, the more you learn**.
+
+<EnglishExamples
+  title="缩约结构的逻辑主语"
+  items={[
+    {
+      label: '时间结构',
+      sentence: 'When asked, she said nothing.',
+      analysis: ['可还原为「When she was asked, she said nothing.」。'],
+    },
+    {
+      label: '让步结构',
+      sentence: 'Although tired, he kept working.',
+      analysis: ['可还原为「Although he was tired, he kept working.」。'],
+    },
+  ]}
+/>

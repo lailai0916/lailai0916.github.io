@@ -1,6 +1,6 @@
 ---
 title: 句子分类
-description: 本文讲解英语句法层级、五种基本句型及四类句子结构的判断方法。
+description: 本文讲解英语句法层级、五种基本句型及 4 类句子结构的判断方法。
 summary: 句法分析先区分词、短语、分句和句子，再区分结构形式与句法功能。五种基本句型用于识别分句骨架，动词的必需补足成分不能当作可选修饰语。按限定分句的并列与从属关系，区分简单句、并列句、主从复合句和并列复合句；并列主语、并列谓语或多个动词不直接决定类别。分析嵌套时逐层确定支配关系，外层主句包含它的从句。陈述、疑问、祈使、感叹是另一条分类轴，句式形式与交际功能也需分别判断。附加疑问先区分前面的陈述句或祈使句，再选形式。
 ---
 
@@ -17,7 +17,7 @@ summary: 句法分析先区分词、短语、分句和句子，再区分结构�
 - **词**（Word）：词汇与语法的基本单位，如 student、reads。
 - **短语**（Phrase）：以中心词组织的单位，也可以只有一个词，如 the young student、very carefully。
 - **分句**（Clause）：以谓词为核心的结构，典型形式包含主语与谓语，如 the student reads a book。
-- **句子**（Sentence）：能完成一次独立表达的句法单位，可包含一个或多个分句，如 The student reads a book, and I take notes.
+- **句子**（Sentence）：能完成一次独立表达的句法单位，可包含 1 个或多个分句，如 The student reads a book, and I take notes.
 
 这些单位可以嵌套：the student **who won the prize** 整体是名词短语，内部又包含关系从句。
 
@@ -25,20 +25,100 @@ summary: 句法分析先区分词、短语、分句和句子，再区分结构�
 
 - **结构形式** 回答「它是什么结构」，如名词短语、关系从句。
 - **句法功能** 回答「它在上层结构中做什么」，如主语、宾语、定语。
-- 同一功能可由不同形式承担：
-  - **The answer** surprised me.（这个答案使我惊讶。）名词短语作主语。
-  - **What she said** surprised me.（她说的话使我惊讶。）从句作主语。
+- 同一功能可由不同形式承担，例如名词短语或从句都能作主语。
 - 名词是词类，主语是句法功能，不能把两者当作同一维度的类别。
+
+<EnglishExamples
+  title="不同形式作主语"
+  items={[
+    {
+      label: '名词短语',
+      sentence: 'The answer surprised me.',
+      translation: '这个答案使我惊讶。',
+      analysis: ['名词短语 The answer 作主语。'],
+      segments: [
+        {
+          text: 'The answer',
+          role: '主语',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'surprised',
+          role: '谓语动词',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'me',
+          role: '宾语',
+        },
+        {
+          text: '.',
+        },
+      ],
+    },
+    {
+      label: '从句',
+      sentence: 'What she said surprised me.',
+      translation: '她说的话使我惊讶。',
+      analysis: ['从句 What she said 整体作主语。'],
+      segments: [
+        {
+          text: 'What she said',
+          role: '主语',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'surprised',
+          role: '谓语动词',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'me',
+          role: '宾语',
+        },
+        {
+          text: '.',
+        },
+      ],
+    },
+  ]}
+/>
 
 ### 限定与非限定
 
 按动词形式区分：
 
 - **限定分句**（Finite Clause）：包含限定动词，体现时态或情态等语法信息。
-  - She **has finished** the work. 中 has 是限定形式，finished 是过去分词；has finished 构成谓语动词短语。
 - **非限定分句**（Non-finite Clause）：使用不定式、分词等形式，常省略可由上下文确定的主语。
-  - She wants **to finish the work**. 中 to finish the work 是非限定结构。
-  - **Walking along the river**, I saw a bird. 中 Walking 的逻辑主语是 I。
+
+<EnglishExamples
+  title="限定形式与非限定结构"
+  items={[
+    {
+      label: '限定谓语',
+      sentence: 'She has finished the work.',
+      analysis: ['has 是限定形式，finished 是过去分词；has finished 构成谓语动词短语。'],
+    },
+    {
+      label: '不定式',
+      sentence: 'She wants to finish the work.',
+      analysis: ['to finish the work 是非限定结构。'],
+    },
+    {
+      label: '分词状语',
+      sentence: 'Walking along the river, I saw a bird.',
+      analysis: ['Walking 的逻辑主语是 I。'],
+    },
+  ]}
+/>
 
 分类时须先确定分析口径：
 
@@ -61,23 +141,215 @@ summary: 句法分析先区分词、短语、分句和句子，再区分结构�
 ### 五种基本句型
 
 - **主谓：S + V**。动词不要求宾语或表语。
-  - Birds **fly**.（鸟会飞。）
 - **主系表：S + V + C**。系动词后的表语说明主语。
-  - She **is a teacher**.（她是一名教师。）
-- **主谓宾：S + V + O**。动词接一个宾语，不要求描述该宾语的补语。
-  - I **like music**.（我喜欢音乐。）
+- **主谓宾：S + V + O**。动词接 1 个宾语，不要求描述该宾语的补语。
 - **主谓双宾：S + V + IO + DO**。分别是间接宾语和直接宾语；给予句中常为接收者与给予的事物。
-  - He **gave me a book**.（他给了我一本书。）me 是接收者，a book 是给予的事物。
-- **主谓宾补：S + V + O + C**。补语说明宾语的身份、性质或状态。
-  - We **elected her captain**.（我们选她当队长。）her 与 captain 指向同一人。
+- **主谓宾补：S + V + O + C**。补语说明宾语的身份、性质、状态或动作。
+
+<EnglishExamples
+  title="五种基本句型对照"
+  items={[
+    {
+      label: 'S + V',
+      sentence: 'Birds fly.',
+      translation: '鸟会飞。',
+      segments: [
+        {
+          text: 'Birds',
+          role: '主语',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'fly',
+          role: '谓语动词',
+        },
+        {
+          text: '.',
+        },
+      ],
+    },
+    {
+      label: 'S + V + C',
+      sentence: 'She is a teacher.',
+      translation: '她是一名教师。',
+      segments: [
+        {
+          text: 'She',
+          role: '主语',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'is',
+          role: '谓语动词',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'a teacher',
+          role: '补足语',
+          note: '表语 C',
+        },
+        {
+          text: '.',
+        },
+      ],
+    },
+    {
+      label: 'S + V + O',
+      sentence: 'I like music.',
+      translation: '我喜欢音乐。',
+      segments: [
+        {
+          text: 'I',
+          role: '主语',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'like',
+          role: '谓语动词',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'music',
+          role: '宾语',
+        },
+        {
+          text: '.',
+        },
+      ],
+    },
+    {
+      label: 'S + V + IO + DO',
+      sentence: 'He gave me a book.',
+      translation: '他给了我一本书。',
+      analysis: ['me 是接收者，a book 是给予的事物。'],
+      segments: [
+        {
+          text: 'He',
+          role: '主语',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'gave',
+          role: '谓语动词',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'me',
+          role: '宾语',
+          note: '间接宾语 IO',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'a book',
+          role: '宾语',
+          note: '直接宾语 DO',
+        },
+        {
+          text: '.',
+        },
+      ],
+    },
+    {
+      label: 'S + V + O + C',
+      sentence: 'We elected her captain.',
+      translation: '我们选她当队长。',
+      analysis: ['her 与 captain 指向同一人。'],
+      segments: [
+        {
+          text: 'We',
+          role: '主语',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'elected',
+          role: '谓语动词',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'her',
+          role: '宾语',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'captain',
+          role: '补足语',
+          note: '宾语补足语 C',
+        },
+        {
+          text: '.',
+        },
+      ],
+    },
+  ]}
+/>
 
 ### 必需成分与修饰语
 
 五种句型是入门模型，不能穷尽动词的补足要求。
 
-- **可选修饰语**：I read a book **yesterday**. 中 yesterday 可省。
-- **必需地点成分**：She put the book **on the desk**. 中，put 在此通常需要地点成分，不能直接删去 on the desk。
-- 有些体系因此另列 **S + V + A** 和 **S + V + O + A**。不能把所有介词短语都当作可随意删除的附加信息。
+<EnglishExamples
+  title="可选修饰语与必需成分"
+  items={[
+    {
+      label: '可选修饰语',
+      sentence: 'I read a book yesterday.',
+      analysis: ['yesterday 可省。'],
+      segments: [
+        {
+          text: 'I read a book ',
+        },
+        {
+          text: 'yesterday',
+          role: '可选修饰语',
+        },
+        {
+          text: '.',
+        },
+      ],
+    },
+    {
+      label: '必需地点成分',
+      sentence: 'She put the book on the desk.',
+      analysis: ['put 在此通常需要地点成分，不能直接删去 on the desk。'],
+      segments: [
+        {
+          text: 'She put the book ',
+        },
+        {
+          text: 'on the desk',
+          role: '必需地点成分',
+        },
+        {
+          text: '.',
+        },
+      ],
+    },
+  ]}
+/>
+
+有些体系因此另列 **S + V + A** 和 **S + V + O + A**。不能把所有介词短语都当作可随意删除的附加信息。
 
 ## 结构分类
 
@@ -98,22 +370,174 @@ summary: 句法分析先区分词、短语、分句和句子，再区分结构�
 |   1 个    |  简单句（Simple Sentence）  |     主从复合句（Complex Sentence）      |
 | 至少 2 个 | 并列句（Compound Sentence） | 并列复合句（Compound-complex Sentence） |
 
-- **简单句**：I called him.
-- **并列句**：I called him, but he did not answer.
-- **主从复合句**：I called him because I needed help.
-- **并列复合句**：I called him, but he did not answer because he was asleep.
+<EnglishExamples
+  title="4 类句子结构"
+  items={[
+    {
+      label: '简单句',
+      sentence: 'I called him.',
+      segments: [
+        {
+          text: 'I',
+          role: '主语',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'called',
+          role: '谓语动词',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'him',
+          role: '宾语',
+        },
+        {
+          text: '.',
+        },
+      ],
+    },
+    {
+      label: '并列句',
+      sentence: 'I called him, but he did not answer.',
+      segments: [
+        {
+          text: 'I called him',
+          role: '独立分句',
+        },
+        {
+          text: ', ',
+        },
+        {
+          text: 'but',
+          role: '并列连词',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'he did not answer',
+          role: '独立分句',
+        },
+        {
+          text: '.',
+        },
+      ],
+    },
+    {
+      label: '主从复合句',
+      sentence: 'I called him because I needed help.',
+      segments: [
+        {
+          text: 'I',
+          role: '主语',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'called',
+          role: '谓语动词',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'him',
+          role: '宾语',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'because I needed help',
+          role: '状语从句',
+        },
+        {
+          text: '.',
+        },
+      ],
+    },
+    {
+      label: '并列复合句',
+      sentence: 'I called him, but he did not answer because he was asleep.',
+      segments: [
+        {
+          text: 'I called him',
+          role: '独立分句',
+        },
+        {
+          text: ', ',
+        },
+        {
+          text: 'but',
+          role: '并列连词',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'he',
+          role: '主语',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'did not answer',
+          role: '谓语动词',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'because he was asleep',
+          role: '状语从句',
+        },
+        {
+          text: '.',
+        },
+      ],
+    },
+  ]}
+/>
 
-不同教材对 compound、complex 的中文译名不完全一致。课程的简单句、复合句、复杂句三分法与这里的四类结构可按英文名称对应；同时含并列与从属的情形归入 Compound-complex。
+不同教材对 compound、complex 的中文译名不完全一致。课程的简单句、复合句、复杂句三分法与这里的 4 类结构可按英文名称对应；同时含并列与从属的情形归入 Compound-complex。
 
 ### 并列成分与并列分句
 
 - **并列主语和谓语** 不自动增加独立分句。
-  - My brother and I **read and write** every day. 只有一套共享主语的结构，仍是简单句。
-  - Tom **reads and takes notes**. 中两个谓语共享 Tom。
-- **两个独立分句并列** 才构成这里所说的并列句。
-  - Tom **reads**, and Mary **takes notes**. 中两部分各有自己的主语与谓语。
+- **2 个独立分句并列** 才构成这里所说的并列句。
 - **非限定结构** 不按上述教学口径另计限定分句。
-  - Tom wants **to study abroad**. 仍归为简单句。
+
+<EnglishExamples
+  title="并列成分与独立分句"
+  items={[
+    {
+      label: '并列主语和谓语',
+      sentence: 'My brother and I read and write every day.',
+      analysis: ['仅有 1 套共享主语的结构，仍是简单句。'],
+    },
+    {
+      label: '共享主语的并列谓语',
+      sentence: 'Tom reads and takes notes.',
+      analysis: ['2 个谓语共享 Tom。'],
+    },
+    {
+      label: '2 个独立分句',
+      sentence: 'Tom reads, and Mary takes notes.',
+      analysis: ['2 部分各有自己的主语与谓语。'],
+    },
+    {
+      label: '非限定结构',
+      sentence: 'Tom wants to study abroad.',
+      analysis: ['非限定结构不按上述教学口径另计限定分句，仍归为简单句。'],
+    },
+  ]}
+/>
 
 and 的数量、动词数量、句子长度都不能单独决定类别。
 
@@ -121,30 +545,80 @@ and 的数量、动词数量、句子长度都不能单独决定类别。
 
 先确认连接的是独立分句，再选择连接方式。
 
-- **并列连词**：for、and、nor、but、or、yet、so，可用 FANBOYS 记忆。
-  - It rained, **so** we stayed inside.（下雨了，所以我们待在室内。）
-  - She is young, **but** she is wise.（她很年轻，但很有智慧。）
-  - 连词前通常用逗号；极短且联系紧密的分句有时可省。
-- **关联结构**：either...or、not only...but also 等。
-  - **Either** you apologize, **or** I leave.（要么你道歉，要么我离开。）
-  - **Not only** did he come, **but** he also brought a gift.（他不仅来了，还带了一份礼物。）
-  - not only 前置并修饰分句谓语时，常触发部分倒装，见 [倒装](/docs/note/english/grammar/sentences/inversion)。
-- **分号**：连接两个关系紧密的独立分句。
-  - He did not come; he was ill.（他没来；他病了。）
+- **并列连词**：for、and、nor、but、or、yet、so，可用 FANBOYS 记忆。连词前通常用逗号；极短且联系紧密的分句有时可省。
+- **关联结构**：either...or、not only...but also 等。not only 前置并修饰分句谓语时，常触发部分倒装，见 [倒装](/docs/note/english/grammar/sentences/inversion)。
+- **分号**：连接 2 个关系紧密的独立分句。
 - **连接副词**：however、therefore、moreover 等说明逻辑关系，本身不代替并列连词或边界标点。
-  - It was raining; **however**, we went out.（当时在下雨；不过，我们还是出门了。）
-  - 也可断为两句：It rained. **Therefore**, we stayed inside.
-  - 正式写作不能只用逗号拼接为「It rained, we stayed inside.」。
 
+<EnglishExamples
+  title="独立分句的连接方式"
+  items={[
+    {
+      label: '并列连词 so',
+      sentence: 'It rained, so we stayed inside.',
+      translation: '下雨了，所以我们待在室内。',
+    },
+    {
+      label: '并列连词 but',
+      sentence: 'She is young, but she is wise.',
+      translation: '她很年轻，但很有智慧。',
+    },
+    {
+      label: '关联结构 either...or',
+      sentence: 'Either you apologize, or I leave.',
+      translation: '要么你道歉，要么我离开。',
+    },
+    {
+      label: '关联结构 not only...but also',
+      sentence: 'Not only did he come, but he also brought a gift.',
+      translation: '他不仅来了，还带了一份礼物。',
+      analysis: ['not only 前置并修饰分句谓语时，常触发部分倒装。'],
+    },
+    {
+      label: '分号',
+      sentence: 'He did not come; he was ill.',
+      translation: '他没来；他病了。',
+    },
+    {
+      label: '连接副词',
+      sentence: 'It was raining; however, we went out.',
+      translation: '当时在下雨；不过，我们还是出门了。',
+    },
+    {
+      label: '断为两句',
+      sentence: 'It rained. Therefore, we stayed inside.',
+      analysis: ['也可断为两句，Therefore 不充当并列连词。'],
+    },
+  ]}
+/>
+
+正式写作不能仅用逗号拼接为「It rained, we stayed inside.」。
 连词和关联结构也能连接词或短语，仍须逐句检查它们连接的层级。
 
 ### 主从关系与嵌套
 
 先确定上层成分，再向内分析：
 
-- **宾语从句**：I know **that he is right**. 中，that he is right 是 know 的宾语。
-- **关系从句**：The book **which I bought yesterday** is on the desk. 中，which I bought yesterday 修饰 book。
-- **状语从句**：He came **because he needed help**. 中，because 从句说明原因。
+<EnglishExamples
+  title="从句的外层关系"
+  items={[
+    {
+      label: '宾语从句',
+      sentence: 'I know that he is right.',
+      analysis: ['that he is right 是 know 的宾语。'],
+    },
+    {
+      label: '关系从句',
+      sentence: 'The book which I bought yesterday is on the desk.',
+      analysis: ['which I bought yesterday 修饰 book。'],
+    },
+    {
+      label: '状语从句',
+      sentence: 'He came because he needed help.',
+      analysis: ['because 从句说明原因。'],
+    },
+  ]}
+/>
 
 外层主句包含它的从句。I know that he is right 中，I know 只是删去宾语后的骨架，不能一概当作完整主句。
 
@@ -154,35 +628,108 @@ I know **that she believes [that he is honest]**.（我知道她相信他很诚�
   - know 的宾语：that she believes that he is honest。
     - believes 的宾语：that he is honest。
 
-最内层从句嵌在 know 的宾语从句内部，不能把两个从句都直接平铺到最外层。详细分类见 [从句](/docs/note/english/grammar/sentences/clauses)。
+最内层从句嵌在 know 的宾语从句内部，不能把 2 个从句都直接平铺到最外层。详细分类见 [从句](/docs/note/english/grammar/sentences/clauses)。
 
 ## 句式与用途
 
 句式是另一条分类轴，与简单句、并列句等结构分类相互独立。
 
 - **陈述句**（Declarative）：典型形式为主语在谓语前。
-  - He is a student.（他是一名学生。）
-- **疑问句**（Interrogative）：用来询问信息；一般疑问句常有主语与助动词倒装。
-  - Are you ready?（你准备好了吗？）
+- **疑问句**（Interrogative）：典型形式采用疑问语序，一般疑问句常有主语与助动词倒装。
 - **祈使句**（Imperative）：常用动词原形，主语 you 通常不出现。
-  - Close the door.（关上门。）
 - **感叹句**（Exclamative）：常由 what 或 how 引导。
-  - What a beautiful day!（多美好的一天！）
-  - How clever she is!（她真聪明！）
 
-句式与交际功能也不完全对应：Could you close the door? 形式上是疑问句，通常用来提出请求；Stop! 是祈使句，不能仅因感叹号就归为感叹句。
+<EnglishExamples
+  title="句式形式对照"
+  items={[
+    {
+      label: '陈述句',
+      sentence: 'He is a student.',
+      translation: '他是一名学生。',
+    },
+    {
+      label: '疑问句',
+      sentence: 'Are you ready?',
+      translation: '你准备好了吗？',
+    },
+    {
+      label: '祈使句',
+      sentence: 'Close the door.',
+      translation: '关上门。',
+    },
+    {
+      label: 'what 感叹句',
+      sentence: 'What a beautiful day!',
+      translation: '多美好的一天！',
+    },
+    {
+      label: 'how 感叹句',
+      sentence: 'How clever she is!',
+      translation: '她真聪明！',
+    },
+  ]}
+/>
+
+句式与交际功能也不完全对应。
+
+<EnglishExamples
+  title="句式形式与交际功能"
+  items={[
+    {
+      label: '疑问形式表达请求',
+      sentence: 'Could you close the door?',
+      analysis: ['形式上是疑问句，通常用来提出请求。'],
+    },
+    {
+      label: '祈使句带感叹号',
+      sentence: 'Stop!',
+      analysis: ['是祈使句，不能仅因感叹号就归为感叹句。'],
+    },
+  ]}
+/>
 
 疑问表达还可从答案范围与表达结构两方面描述。
 
 - **按所询问的答案范围**：
   - **一般疑问句**（Yes–No Question）：询问命题是否成立。
-    - Did she buy the book?（她买了那本书吗？）
   - **特殊疑问句**（Wh-question）：用 wh- 成分询问具体信息。
-    - What did she buy?（她买了什么？）
   - **选择疑问句**（Alternative Question）：要求在给定选项中选择。
-    - Did she buy a book or a magazine?（她买了书还是杂志？）or 在这里连接宾语，不因此形成并列句。
 - **按是否采用附加结构**：
-  - 上述例子都是独立提出的问句。
+  - 前 3 个例子都是独立提出的问句。
   - **附加疑问句**（Tag Question）在前面的分句后附加简短问句，须先判断该分句的类型。
-    - **陈述句后**：She bought the book, didn't she?（她买了那本书，对吗？）这是常见的反意形式，助动词与人称随前句，肯否定相反；语调也影响确认或询问的含义。
-    - **祈使句后**：Close the door, will you?（请关上门，好吗？）这里的附加问句可缓和请求，不套用陈述句的时态与肯否定对应规则。
+
+<EnglishExamples
+  title="疑问表达的不同结构"
+  items={[
+    {
+      label: '一般疑问句',
+      sentence: 'Did she buy the book?',
+      translation: '她买了那本书吗？',
+    },
+    {
+      label: '特殊疑问句',
+      sentence: 'What did she buy?',
+      translation: '她买了什么？',
+    },
+    {
+      label: '选择疑问句',
+      sentence: 'Did she buy a book or a magazine?',
+      translation: '她买了书还是杂志？',
+      analysis: ['or 在这里连接宾语，不因此形成并列句。'],
+    },
+    {
+      label: '陈述句后的附加问句',
+      sentence: "She bought the book, didn't she?",
+      translation: '她买了那本书，对吗？',
+      analysis: [
+        '这是常见的反意形式，助动词与人称随前句，肯否定相反；语调也影响确认或询问的含义。',
+      ],
+    },
+    {
+      label: '祈使句后的附加问句',
+      sentence: 'Close the door, will you?',
+      translation: '请关上门，好吗？',
+      analysis: ['这里的附加问句可缓和请求，不套用陈述句的时态与肯否定对应规则。'],
+    },
+  ]}
+/>

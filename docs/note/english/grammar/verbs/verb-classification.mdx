@@ -1,7 +1,7 @@
 ---
 title: 动词分类
-description: 本文从句法功能、补足结构和词义三个维度整理英语动词，区分限定形式与非限定形式。
-summary: 分析动词需要依次确定分句与谓语边界、动词链中各形式的功能、当前用法要求的宾语或补语，以及词义描述的动作或状态。主要动词与助动词、及物性、动作与状态属于不同分类维度，不能平铺成互斥词类。限定形式承担时态、一致或情态功能，非限定形式仍能带宾语和状语。五种基本句型按补足结构区分，双宾语表示两个宾语，宾补则与宾语形成描述关系。同一个词可以切换及物、不及物或连系用法，判断应以当前结构和词典所列义项为依据。
+description: 本文从句法功能、补足结构和词义 3 个维度整理英语动词，区分限定形式与非限定形式。
+summary: 分析动词需要依次确定分句与谓语边界、动词链中各形式的功能、当前用法要求的宾语或补语，以及词义描述的动作或状态。主要动词与助动词、及物性、动作与状态属于不同分类维度，不能平铺成互斥词类。限定形式承担时态、一致或情态功能，非限定形式仍能带宾语和状语。五种基本句型按补足结构区分，双宾语表示 2 个宾语，宾补则与宾语形成描述关系。同一个词可以切换及物、不及物或连系用法，判断应以当前结构和词典所列义项为依据。
 ---
 
 ## 参考资料
@@ -12,13 +12,24 @@ summary: 分析动词需要依次确定分句与谓语边界、动词链中各�
 
 ## 简介
 
-**动词**（Verb）是英语句子组织谓语的核心。分类时分别检查三个维度：
+**动词**（Verb）是英语句子组织谓语的核心。分类时分别检查 3 个维度：
 
 - **动词短语功能**：提供词汇意义的是主要动词；构造进行、完成、被动或疑问否定等形式的是助动词。情态助动词还表达能力、许可、推断等意义。
 - **补足结构**：检查当前用法是否带宾语，带几个宾语，是否要求宾补、表语或其他补足成分。
 - **词汇意义**：检查此处描述活动、过程、变化，还是认知、拥有、关系等状态。
 
-这些维度可以交叉：She **has known** him for years. 中，has 是完成助动词，known 是主要动词；know 带宾语 him，描述认知状态。
+这些维度可以交叉：
+
+<EnglishExamples
+  title="同一句中的不同分类维度"
+  items={[
+    {
+      sentence: 'She has known him for years.',
+      label: '功能、补足结构与词义',
+      analysis: ['has 是完成助动词，known 是主要动词。', 'know 带宾语 him，描述认知状态。'],
+    },
+  ]}
+/>
 
 ## 谓语结构
 
@@ -26,9 +37,83 @@ summary: 分析动词需要依次确定分句与谓语边界、动词链中各�
 
 按主语与谓语的传统分析，**谓语**（Predicate）包含动词短语及其有关成分，不等于某一个动词词形。
 
-- The cat **eats a fish**.（猫吃一条鱼。）谓语是 eats a fish，主要动词是 eats。
-- The cat **may have eaten a fish**.（猫可能吃过一条鱼。）同一谓语包含 may、have、eaten 三个动词形式。
-- She **opened the book and began to read**.（她打开书，开始阅读。）一个主语可以对应并列谓语。
+<EnglishExamples
+  title="动词与谓语的范围"
+  items={[
+    {
+      sentence: 'The cat eats a fish.',
+      translation: '猫吃一条鱼。',
+      analysis: ['谓语是 eats a fish，主要动词是 eats。'],
+      segments: [
+        {
+          text: 'The cat',
+          role: '主语',
+          note: '主句主语。',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'eats a fish',
+          role: '重点结构',
+          note: '本组重点比较的形式或结构。',
+        },
+        {
+          text: '.',
+        },
+      ],
+      label: '单个动词的谓语',
+    },
+    {
+      sentence: 'The cat may have eaten a fish.',
+      translation: '猫可能吃过一条鱼。',
+      analysis: ['同一谓语包含 may、have、eaten 3 个动词形式。'],
+      segments: [
+        {
+          text: 'The cat',
+          role: '主语',
+          note: '主句主语。',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'may have eaten a fish',
+          role: '重点结构',
+          note: '本组重点比较的形式或结构。',
+        },
+        {
+          text: '.',
+        },
+      ],
+      label: '动词链',
+    },
+    {
+      sentence: 'She opened the book and began to read.',
+      translation: '她打开书，开始阅读。',
+      analysis: ['1 个主语可以对应并列谓语。'],
+      segments: [
+        {
+          text: 'She',
+          role: '主语',
+          note: '主句主语。',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'opened the book and began to read',
+          role: '重点结构',
+          note: '本组重点比较的形式或结构。',
+        },
+        {
+          text: '.',
+        },
+      ],
+      label: '并列谓语',
+    },
+  ]}
+/>
 
 检查句子时，先划分分句，再分析各自的动词链；遇到并列谓语，分别检查并列项。祈使句和省略结构按各自构造分析，不能用动词单词数直接计算分句数。
 
@@ -36,11 +121,128 @@ summary: 分析动词需要依次确定分句与谓语边界、动词链中各�
 
 **限定形式**（Finite Form）承担分句的时态、主谓一致或情态等语法功能；**非限定形式**（Non-finite Form）本身不独立标示分句的时态和人称数变化。
 
-- She **reads** every day.：reads 是限定形式。
-- She **is reading** now.：is 是限定形式，reading 是非限定形式。
-- She **may have left**.：may 是限定形式，have 和 left 是非限定形式。
-- I **want to leave**.：want 是限定形式，to leave 是非限定形式。
-- She **has been reading**.：has 承担时态与一致关系；been 和 reading 共同构造完成进行体，不能把三个词形当作三个分句。
+<EnglishExamples
+  title="限定与非限定形式"
+  items={[
+    {
+      sentence: 'She reads every day.',
+      analysis: ['reads 是限定形式。'],
+      segments: [
+        {
+          text: 'She',
+          role: '主语',
+          note: '主句主语。',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'reads',
+          role: '重点结构',
+          note: '本组重点比较的形式或结构。',
+        },
+        {
+          text: ' every day.',
+        },
+      ],
+      label: '单独限定形式',
+    },
+    {
+      sentence: 'She is reading now.',
+      analysis: ['is 是限定形式，reading 是非限定形式。'],
+      segments: [
+        {
+          text: 'She',
+          role: '主语',
+          note: '主句主语。',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'is reading',
+          role: '重点结构',
+          note: '本组重点比较的形式或结构。',
+        },
+        {
+          text: ' now.',
+        },
+      ],
+      label: '进行体',
+    },
+    {
+      sentence: 'She may have left.',
+      analysis: ['may 是限定形式，have 和 left 是非限定形式。'],
+      segments: [
+        {
+          text: 'She',
+          role: '主语',
+          note: '主句主语。',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'may have left',
+          role: '重点结构',
+          note: '本组重点比较的形式或结构。',
+        },
+        {
+          text: '.',
+        },
+      ],
+      label: '情态动词链',
+    },
+    {
+      sentence: 'I want to leave.',
+      analysis: ['want 是限定形式，to leave 是非限定形式。'],
+      segments: [
+        {
+          text: 'I',
+          role: '主语',
+          note: '主句主语。',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'want to leave',
+          role: '重点结构',
+          note: '本组重点比较的形式或结构。',
+        },
+        {
+          text: '.',
+        },
+      ],
+      label: '不定式补语',
+    },
+    {
+      sentence: 'She has been reading.',
+      analysis: [
+        'has 承担时态与一致关系；been 和 reading 共同构造完成进行体，不能把 3 个词形当作 3 个分句。',
+      ],
+      segments: [
+        {
+          text: 'She',
+          role: '主语',
+          note: '主句主语。',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'has been reading',
+          role: '重点结构',
+          note: '本组重点比较的形式或结构。',
+        },
+        {
+          text: '.',
+        },
+      ],
+      label: '完成进行体',
+    },
+  ]}
+/>
 
 非限定形式并非「没有动词性质」：reading a book 中，reading 仍然带宾语 a book。详见 [非谓语动词](/docs/note/english/grammar/verbs/non-finite-verbs)。
 
@@ -50,13 +252,130 @@ summary: 分析动词需要依次确定分句与谓语边界、动词链中各�
 
 传统学习语法用五种基本句型整理动词补足结构。S 表示主语，V 表示动词，O 表示宾语，C 表示补语；IO（Indirect Object）表示间接宾语，DO（Direct Object）表示直接宾语。
 
-- **不及物：S + V**。不要求宾语或表语：The baby **slept**.（婴儿睡了。）
-- **单及物：S + V + O**。接一个宾语，不要求描述该宾语的补语：She **opened the door**.（她打开门。）
-- **双及物：S + V + IO + DO**。带间接与直接宾语：She **gave me a book**.（她给我一本书。）me 接收 a book，两个名词短语不是同一对象。
-- **复杂及物：S + V + O + C**。宾补描述宾语：They **made him captain**.（他们选他当队长。）captain 说明 him 的身份。They **called him a genius**. 中的 a genius 同样描述 him，不是另一个接受物。
-- **连系：S + V + C**。表语描述主语：He **became a doctor**.（他成了医生。）The soup **tastes good**. 中 good 描述汤，不是宾语。
+- **不及物：S + V**。不要求宾语或表语。
+- **单及物：S + V + O**。接 1 个宾语，不要求描述该宾语的补语。
+- **双及物：S + V + IO + DO**。带间接与直接宾语。
+- **复杂及物：S + V + O + C**。宾补描述宾语。
+- **连系：S + V + C**。表语描述主语。
 
-五种句型适合作为入口，但不穷尽所有必要成分。She **put the book on the desk**. 中，地点成分 on the desk 是 put 这个用法所要求的补足成分，不能随意删去。
+<EnglishExamples
+  title="五种句型的补足关系"
+  items={[
+    {
+      sentence: 'The baby slept.',
+      label: '不及物',
+      translation: '婴儿睡了。',
+      analysis: ['不要求宾语或表语。'],
+    },
+    {
+      sentence: 'She opened the door.',
+      label: '单及物',
+      translation: '她打开门。',
+      analysis: ['the door 是宾语。'],
+    },
+    {
+      sentence: 'She gave me a book.',
+      label: '双及物',
+      translation: '她给我一本书。',
+      analysis: ['me 接收 a book，2 个名词短语不是同一对象。'],
+      segments: [
+        {
+          text: 'She',
+          role: '主语',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'gave',
+          role: '谓语动词',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'me',
+          role: '间接宾语',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'a book',
+          role: '直接宾语',
+        },
+        {
+          text: '.',
+        },
+      ],
+    },
+    {
+      sentence: 'They made him captain.',
+      label: '复杂及物',
+      translation: '他们选他当队长。',
+      analysis: ['captain 说明 him 的身份。'],
+      segments: [
+        {
+          text: 'They',
+          role: '主语',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'made',
+          role: '谓语动词',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'him',
+          role: '宾语',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'captain',
+          role: '宾语补足语',
+        },
+        {
+          text: '.',
+        },
+      ],
+    },
+    {
+      sentence: 'They called him a genius.',
+      label: '复杂及物',
+      analysis: ['a genius 同样描述 him，不是另一个接受物。'],
+    },
+    {
+      sentence: 'He became a doctor.',
+      label: '连系',
+      translation: '他成了医生。',
+      analysis: ['a doctor 是说明主语身份的表语。'],
+    },
+    {
+      sentence: 'The soup tastes good.',
+      label: '连系',
+      analysis: ['good 描述汤，不是宾语。'],
+    },
+  ]}
+/>
+
+五种句型适合作为入口，但不穷尽所有必要成分：
+
+<EnglishExamples
+  title="五种句型之外的必要补足成分"
+  items={[
+    {
+      sentence: 'She put the book on the desk.',
+      label: 'put 的地点补足语',
+      analysis: ['地点成分 on the desk 是 put 这个用法所要求的补足成分，不能随意删去。'],
+    },
+  ]}
+/>
 
 ### 及物性属于用法
 
@@ -71,8 +390,23 @@ summary: 分析动词需要依次确定分句与谓语边界、动词链中各�
 
 look 的介词结构和连系用法另按补足关系区分：
 
-- She **looked at me**.（她看着我。）me 是介词 at 的宾语，不能因为后面出现名词就把 look 直接判为及物动词。
-- She **looked tired**.（她显得很累。）tired 是描述 she 的表语，属于连系用法。
+<EnglishExamples
+  title="look 的补足关系"
+  items={[
+    {
+      sentence: 'She looked at me.',
+      label: '介词结构',
+      translation: '她看着我。',
+      analysis: ['me 是介词 at 的宾语，不能因为后面出现名词就把 look 直接判为及物动词。'],
+    },
+    {
+      sentence: 'She looked tired.',
+      label: '连系用法',
+      translation: '她显得很累。',
+      analysis: ['tired 是描述 she 的表语，属于连系用法。'],
+    },
+  ]}
+/>
 
 查词典时，应连同词义、句型和搭配一起记录。
 
@@ -92,10 +426,107 @@ look 的介词结构和连系用法另按补足关系区分：
 
 同一单词也能切换功能：
 
-- She **has a bike**.（她有一辆自行车。）has 是主要动词。
-- She **has bought a bike**.（她买了一辆自行车。）has 是完成助动词。
-- She **is happy**.（她很开心。）is 是系动词。
-- She **is working**.（她正在工作。）is 是进行助动词。
+<EnglishExamples
+  title="同一词形的不同功能"
+  items={[
+    {
+      sentence: 'She has a bike.',
+      translation: '她有一辆自行车。',
+      analysis: ['has 是主要动词。'],
+      segments: [
+        {
+          text: 'She',
+          role: '主语',
+          note: '主句主语。',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'has a bike',
+          role: '重点结构',
+          note: '本组重点比较的形式或结构。',
+        },
+        {
+          text: '.',
+        },
+      ],
+      label: 'have：主要动词',
+    },
+    {
+      sentence: 'She has bought a bike.',
+      translation: '她买了一辆自行车。',
+      analysis: ['has 是完成助动词。'],
+      segments: [
+        {
+          text: 'She',
+          role: '主语',
+          note: '主句主语。',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'has bought a bike',
+          role: '重点结构',
+          note: '本组重点比较的形式或结构。',
+        },
+        {
+          text: '.',
+        },
+      ],
+      label: 'have：完成助动词',
+    },
+    {
+      sentence: 'She is happy.',
+      translation: '她很开心。',
+      analysis: ['is 是系动词。'],
+      segments: [
+        {
+          text: 'She',
+          role: '主语',
+          note: '主句主语。',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'is happy',
+          role: '重点结构',
+          note: '本组重点比较的形式或结构。',
+        },
+        {
+          text: '.',
+        },
+      ],
+      label: 'be：系动词',
+    },
+    {
+      sentence: 'She is working.',
+      translation: '她正在工作。',
+      analysis: ['is 是进行助动词。'],
+      segments: [
+        {
+          text: 'She',
+          role: '主语',
+          note: '主句主语。',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'is working',
+          role: '重点结构',
+          note: '本组重点比较的形式或结构。',
+        },
+        {
+          text: '.',
+        },
+      ],
+      label: 'be：进行助动词',
+    },
+  ]}
+/>
 
 详见 [助动词与情态动词](/docs/note/english/grammar/verbs/auxiliary-modal-verbs)。
 
@@ -103,9 +534,106 @@ look 的介词结构和连系用法另按补足关系区分：
 
 **动作动词**（Dynamic Verb）描述活动、过程或变化；**状态动词**（Stative Verb）描述认知、拥有、关系等状态。这同样要结合词义判断。
 
-- I **think** you are right.（我认为你是对的。）think 表示稳定看法；中性的标准书面表达采用非进行形式。
-- I **am thinking about** the problem.（我正在思考这个问题。）think about 表示思考活动，可以用进行体。
-- She **has a car**.（她有一辆车。）have 表示拥有。
-- She **is having lunch**.（她正在吃午饭。）have lunch 表示活动。
+<EnglishExamples
+  title="动词意义与体的选择"
+  items={[
+    {
+      sentence: 'I think you are right.',
+      translation: '我认为你是对的。',
+      analysis: ['think 表示稳定看法；中性的标准书面表达采用非进行形式。'],
+      segments: [
+        {
+          text: 'I',
+          role: '主语',
+          note: '主句主语。',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'think',
+          role: '重点结构',
+          note: '本组重点比较的形式或结构。',
+        },
+        {
+          text: ' you are right.',
+        },
+      ],
+      label: 'think：状态',
+    },
+    {
+      sentence: 'I am thinking about the problem.',
+      translation: '我正在思考这个问题。',
+      analysis: ['think about 表示思考活动，可以用进行体。'],
+      segments: [
+        {
+          text: 'I',
+          role: '主语',
+          note: '主句主语。',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'am thinking about',
+          role: '重点结构',
+          note: '本组重点比较的形式或结构。',
+        },
+        {
+          text: ' the problem.',
+        },
+      ],
+      label: 'think about：活动',
+    },
+    {
+      sentence: 'She has a car.',
+      translation: '她有一辆车。',
+      analysis: ['have 表示拥有。'],
+      segments: [
+        {
+          text: 'She',
+          role: '主语',
+          note: '主句主语。',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'has a car',
+          role: '重点结构',
+          note: '本组重点比较的形式或结构。',
+        },
+        {
+          text: '.',
+        },
+      ],
+      label: 'have：拥有',
+    },
+    {
+      sentence: 'She is having lunch.',
+      translation: '她正在吃午饭。',
+      analysis: ['have lunch 表示活动。'],
+      segments: [
+        {
+          text: 'She',
+          role: '主语',
+          note: '主句主语。',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'is having lunch',
+          role: '重点结构',
+          note: '本组重点比较的形式或结构。',
+        },
+        {
+          text: '.',
+        },
+      ],
+      label: 'have lunch：活动',
+    },
+  ]}
+/>
 
 选择体时，先确定词义：know、belong 等表达稳定认知或所属关系的用法采用非进行形式；think about、have lunch 等活动用法可以采用进行体。若说话人把状态重新呈现为暂时表现或变化，再检查该词是否接受这种读法，详见 [动词时态](/docs/note/english/grammar/verbs/verb-tenses)。

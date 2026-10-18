@@ -1,7 +1,7 @@
 ---
 title: 主谓一致
 description: 本文讲解英语主谓一致的结构判断、数量表达、集合名词及就近规则的边界。
-summary: 主谓一致先定位限定动词和主语中心，再识别量化、并列与附加结构，最后判断数量意义和语体变体。each 与复数主语后的 each、a number of 与 the number of、整体数量与多个单位应分别处理。and 的一致取决于是否指不同对象或一个整体；or、neither...nor 等的就近规则不能推广到普通名词短语。集合名词须结合整体或成员视角及英美习惯，police、不可数名词与单复数同形词另行判断。关系从句、存在句和 what 主语结构各有条件，不能只看距离或表面词尾选谓语。
+summary: 主谓一致先定位限定动词和主语中心，再识别量化、并列与附加结构，最后判断数量意义和语体变体。each 作主语与复数主语后的 each、a number of 与 the number of、整体数量与多个单位应分别处理。and 的一致取决于是否指不同对象或一个整体；or、neither...nor 等的就近规则不能推广到普通名词短语。集合名词须结合整体或成员视角及英美习惯，police、不可数名词与单复数同形词另行判断。关系从句、存在句和 what 主语结构各有条件，不能仅看距离或表面词尾选谓语。
 ---
 
 ## 参考资料
@@ -18,11 +18,11 @@ summary: 主谓一致先定位限定动词和主语中心，再识别量化、�
 
 1. **定位限定动词和整个主语**，找出主语中心，先排除定语、介词短语和插入成分的干扰；
 2. **识别主语结构**：普通名词短语、量化结构、并列结构、从句或非谓语结构，分别进入相应规则；
-3. **判断所指的数与数量意义**：可数或不可数、单个或多个、一个总量或多个单位，不能只看词尾；
+3. **判断所指的数与数量意义**：可数或不可数、单个或多个、一个总量或多个单位，不能仅看词尾；
 4. **检查特定边界**：只有结构允许时才考虑就近一致；集合名词和部分不定代词还需检查英美习惯与语体；
 5. **把变化落实到限定位置**，后续动词仍按助动词结构选择形式。
 
-三条常见原则分别用于不同判断环节：
+3 条常见原则分别用于不同判断环节：
 
 - **语法一致**（Grammatical Concord）：通常与主语的语法人称和数一致，如 The book **is** new. / The books **are** new.
 - **意义一致**（Notional Concord）：数量或集合按当前所指选择，如 Ten years **is** a long time.
@@ -41,10 +41,25 @@ summary: 主谓一致先定位限定动词和主语中心，再识别量化、�
 | he、she、it、第三人称单数名词 |   works    |     is      | has / does |
 
 - I 是单数，但不是第三人称，不能据此给 work 加 -s。
-- She **does not work**. 中变化落在 does，work 用原形。
-- She **has finished**. 中变化落在 has，finished 仍是过去分词。
+
 - 大多数一般过去时动词不区分人称和数，be 常区分 was/were。
 - can、must 等情态动词不因第三人称单数加 -s；非现实原形和 were 见 [动词语气](/docs/note/english/grammar/verbs/verb-moods)。
+
+<EnglishExamples
+  title="一致变化在限定位置"
+  items={[
+    {
+      label: 'do 助动词',
+      sentence: 'She does not work.',
+      analysis: ['变化落在 does，work 用原形。'],
+    },
+    {
+      label: '完成助动词',
+      sentence: 'She has finished.',
+      analysis: ['变化落在 has，finished 仍是过去分词。'],
+    },
+  ]}
+/>
 
 ## 主语中心
 
@@ -52,19 +67,95 @@ summary: 主谓一致先定位限定动词和主语中心，再识别量化、�
 
 先标出完整主语，再找中心词，不能让距离谓语最近的名词决定一切。
 
-- The **quality** of the products **is** excellent.（这些产品的质量很好。）主语是整个 the quality of the products，中心词是 quality。
-- The **products** in the box **are** new.（箱子里的产品是新的。）中心词是 products，in the box 不改变其数。
+<EnglishExamples
+  title="主语中心与介词短语"
+  items={[
+    {
+      label: '中心词是 quality',
+      sentence: 'The quality of the products is excellent.',
+      translation: '这些产品的质量很好。',
+      analysis: ['主语是整个 the quality of the products，中心词是 quality。'],
+      segments: [
+        {
+          text: 'The quality of the products',
+          role: '主语',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'is',
+          role: '限定动词',
+        },
+        {
+          text: ' excellent.',
+        },
+      ],
+    },
+    {
+      label: '中心词是 products',
+      sentence: 'The products in the box are new.',
+      translation: '箱子里的产品是新的。',
+      analysis: ['中心词是 products，in the box 不改变其数。'],
+      segments: [
+        {
+          text: 'The products in the box',
+          role: '主语',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'are',
+          role: '限定动词',
+        },
+        {
+          text: ' new.',
+        },
+      ],
+    },
+  ]}
+/>
 
 ### 附加与排除成分
 
 若后面的短语只是附加或排除信息，仍按原主语中心判断。
 
 - **附加信息**：with、along with、together with、as well as、including、in addition to 等通常不构成 and 式并列。
-  - Tom, **as well as his friends**, **is** coming.（Tom 和他的朋友们都会来。）
-  - The teacher, **together with the students**, **was** invited.（老师和学生们都受到了邀请。）
-  - 改为 Tom **and his friends are** coming. 后，才形成这里的复数并列主语。
 - **排除信息**：except、but 表示「除……以外」时，被排除的对象不控制谓语。
-  - Everyone **except the twins is** ready. / Everyone **but the twins is** ready.（除那对双胞胎外，大家都准备好了。）中心仍是 everyone。
+
+<EnglishExamples
+  title="附加成分与并列主语"
+  items={[
+    {
+      label: 'as well as 附加',
+      sentence: 'Tom, as well as his friends, is coming.',
+      translation: 'Tom 和他的朋友们都会来。',
+    },
+    {
+      label: 'together with 附加',
+      sentence: 'The teacher, together with the students, was invited.',
+      translation: '老师和学生们都受到了邀请。',
+    },
+    {
+      label: '改成 and 并列',
+      sentence: 'Tom and his friends are coming.',
+      analysis: ['改用 and 后，才形成这里的复数并列主语。'],
+    },
+    {
+      label: 'except 排除',
+      sentence: 'Everyone except the twins is ready.',
+      translation: '除那对双胞胎外，大家都准备好了。',
+      analysis: ['主语中心仍是 everyone。'],
+    },
+    {
+      label: 'but 排除',
+      sentence: 'Everyone but the twins is ready.',
+      translation: '除那对双胞胎外，大家都准备好了。',
+      analysis: ['主语中心仍是 everyone。'],
+    },
+  ]}
+/>
 
 「就前一致」只是这类结构的表面结果，不是可以独立套用的算法。
 
@@ -74,45 +165,228 @@ summary: 主谓一致先定位限定动词和主语中心，再识别量化、�
 
 先判断量化词是否构成主语中心，还是只附加在复数主语后。
 
-- **通常用单数**：
-  - each、each of...：Each of the students **has** a book.
-  - every + 单数名词：Every student **has** a book.
-  - everyone、someone、anyone、nobody、everything 等：Everyone **is** ready.
+- **通常用单数**：each、each of...、every + 单数名词，以及 everyone、someone、anyone、nobody、everything 等。
 - **通常用复数**：both、many、few、several 等指多个对象时。
-  - Both of them **are** ready.
 - **复数主语后的 each** 不改变主语的数。
-  - The students **each have** a dictionary.（学生们每人都有一本词典。）主语仍是 students。
-- **every 不能像 each 那样单独作代词**。
-  - 用 each of the students 或 every one of the students，不用 every of the students。
+- **every 不能像 each 那样单独作代词**：用 each of the students 或 every one of the students，不用 every of the students。
+
+<EnglishExamples
+  title="逐个量化与复数群体"
+  items={[
+    {
+      label: 'each 作主语中心',
+      sentence: 'Each of the students has a book.',
+    },
+    {
+      label: 'every + 单数名词',
+      sentence: 'Every student has a book.',
+    },
+    {
+      label: 'everyone',
+      sentence: 'Everyone is ready.',
+    },
+    {
+      label: 'both 指多个对象',
+      sentence: 'Both of them are ready.',
+    },
+    {
+      label: '复数主语后浮动 each',
+      sentence: 'The students each have a dictionary.',
+      translation: '学生们每人都有一本词典。',
+      analysis: ['主语仍是 students。'],
+    },
+  ]}
+/>
 
 ### 部分数量
 
 some、all、most、half、plenty of、分数、百分数等，通常按所指名词的可数性和数选择谓语。
 
-- 指不可数事物：All of the **water is** clean. / Half of the **work is** finished.
-- 指复数个体：All of the **students are** here. / Half of the **students have** finished.
-- 所指名词省去时，仍按语境判断：
-  - **All is quiet**. 中 all 指一切情况。
-  - **All are quiet**. 中 all 指所有人。
+- **指不可数事物**：按不可数所指选择。
+- **指复数个体**：按复数所指选择。
+- **所指名词省去**：仍按语境判断。
+
+<EnglishExamples
+  title="部分数量与语境中的所指"
+  items={[
+    {
+      label: '不可数事物',
+      sentence: 'All of the water is clean.',
+    },
+    {
+      label: '不可数事物',
+      sentence: 'Half of the work is finished.',
+    },
+    {
+      label: '复数个体',
+      sentence: 'All of the students are here.',
+    },
+    {
+      label: '复数个体',
+      sentence: 'Half of the students have finished.',
+    },
+    {
+      label: '所指名词省去：一切情况',
+      sentence: 'All is quiet.',
+      analysis: ['all 指一切情况。'],
+    },
+    {
+      label: '所指名词省去：所有人',
+      sentence: 'All are quiet.',
+      analysis: ['all 指所有人。'],
+    },
+  ]}
+/>
 
 none、either、neither 还须区分结构与语体：
 
-- **none of + 不可数名词**：None of the water **is** clean.
-- **none of + 复数名词**：None of the students **is/are** ready. 两种一致都有标准用法；单数可强调「没有任何一个」，复数可按复数群体理解。
-- **either/neither 单独使用或接 of 短语**：正式语体通常用单数，如 Neither of the answers **is** correct.
-- neither of + 复数名词在口语中也可接复数谓语。它与 neither...nor... 并列结构不同，不能混用规则。
+- **none of + 不可数名词**：通常用单数。
+- **none of + 复数名词**：单复数 2 种一致都有标准用法；单数可强调「没有任何一个」，复数可按复数群体理解。
+- **either/neither 单独使用或接 of 短语**：正式语体通常用单数。
+- **neither of + 复数名词**：口语中也可接复数谓语。它与 neither...nor... 并列结构不同，不能混用规则。
+
+<EnglishExamples
+  title="none 与 neither 的结构和语体"
+  items={[
+    {
+      label: 'none of + 不可数名词',
+      sentence: 'None of the water is clean.',
+    },
+    {
+      label: 'none of + 复数名词：单数',
+      sentence: 'None of the students is ready.',
+      analysis: ['单数可强调「没有任何一个」。'],
+    },
+    {
+      label: 'none of + 复数名词：复数',
+      sentence: 'None of the students are ready.',
+      analysis: ['复数可按复数群体理解，2 种一致都有标准用法。'],
+    },
+    {
+      label: 'neither of：正式表达',
+      sentence: 'Neither of the answers is correct.',
+      analysis: ['either/neither 单独使用或接 of 短语，正式语体通常用单数。'],
+    },
+  ]}
+/>
 
 ### 数量中心与单位中心
 
 - **a number of + 复数名词** 表示若干个，通常用复数。
-  - A number of students **are** absent.
 - **the number of + 复数名词** 指数量，中心是 number，用单数。
-  - The number of students **is** increasing.
 - **one of + 复数名词** 的外层主语中心是 one。
-  - One of the students **is** absent.
 - **a pair of / two pairs of** 按 pair 的数判断。
-  - A pair of scissors **is** on the table.
-  - Two pairs of scissors **are** on the table.
+
+<EnglishExamples
+  title="数量中心与单位中心"
+  items={[
+    {
+      label: 'a number of',
+      sentence: 'A number of students are absent.',
+      analysis: ['a number of + 复数名词表示若干个，通常用复数。'],
+      segments: [
+        {
+          text: 'A number of students',
+          role: '主语',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'are',
+          role: '限定动词',
+        },
+        {
+          text: ' absent.',
+        },
+      ],
+    },
+    {
+      label: 'the number of',
+      sentence: 'The number of students is increasing.',
+      analysis: ['the number of + 复数名词指数量，中心是 number，用单数。'],
+      segments: [
+        {
+          text: 'The number of students',
+          role: '主语',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'is',
+          role: '限定动词',
+        },
+        {
+          text: ' increasing.',
+        },
+      ],
+    },
+    {
+      label: 'one of',
+      sentence: 'One of the students is absent.',
+      analysis: ['外层主语中心是 one。'],
+      segments: [
+        {
+          text: 'One of the students',
+          role: '主语',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'is',
+          role: '限定动词',
+        },
+        {
+          text: ' absent.',
+        },
+      ],
+    },
+    {
+      label: 'a pair of',
+      sentence: 'A pair of scissors is on the table.',
+      analysis: ['按 pair 的单数形式判断。'],
+      segments: [
+        {
+          text: 'A pair of scissors',
+          role: '主语',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'is',
+          role: '限定动词',
+        },
+        {
+          text: ' on the table.',
+        },
+      ],
+    },
+    {
+      label: 'two pairs of',
+      sentence: 'Two pairs of scissors are on the table.',
+      analysis: ['按 pairs 的复数形式判断。'],
+      segments: [
+        {
+          text: 'Two pairs of scissors',
+          role: '主语',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'are',
+          role: '限定动词',
+        },
+        {
+          text: ' on the table.',
+        },
+      ],
+    },
+  ]}
+/>
 
 ## 并列结构
 
@@ -120,16 +394,89 @@ none、either、neither 还须区分结构与语体：
 
 遇到 and，依次检查限定词的位置、整体含义和普通并列。
 
-1. **each/every 直接限定并列的单数项** 时，相应结构通常用单数；
-   - Every boy and every girl **has** a ticket.
-   - Every man and woman **has** a ticket.
-   - 并列复数主语后的浮动 each 不进入这一分支：Tom and Lily **each have** a ticket. 仍按复数主语处理。
+1. **each/every 直接限定并列的单数项** 时，相应结构通常用单数；并列复数主语后的浮动 each 不进入这一分支；
 2. **再判断是否同一对象或一个整体**，这类解释可用单数；
-   - The singer and dancer **is** my sister. 指同一人兼有两个身份。
-   - Bread and butter **is** my usual breakfast. 把它作为一道早餐看待。
 3. **其余不同对象的普通并列** 通常用复数。
-   - The singer and the dancer **are** here. 指两个不同的人。
-   - Bread and butter **are** sold here. 把两者作为不同商品陈述。
+
+<EnglishExamples
+  title="and 并列的判断分支"
+  items={[
+    {
+      label: 'every 直接限定单数项',
+      sentence: 'Every boy and every girl has a ticket.',
+      analysis: ['every 直接限定并列的单数项，通常用单数。'],
+      segments: [
+        {
+          text: 'Every boy and every girl',
+          role: '主语',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'has',
+          role: '限定动词',
+        },
+        {
+          text: ' a ticket.',
+        },
+      ],
+    },
+    {
+      label: '共享 every',
+      sentence: 'Every man and woman has a ticket.',
+      analysis: ['every 直接限定并列的单数项，通常用单数。'],
+    },
+    {
+      label: '浮动 each',
+      sentence: 'Tom and Lily each have a ticket.',
+      analysis: ['each 不直接限定并列的单数项，仍按复数主语 Tom and Lily 处理。'],
+      segments: [
+        {
+          text: 'Tom and Lily',
+          role: '主语',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'each',
+          role: '浮动量化词',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'have',
+          role: '限定动词',
+        },
+        {
+          text: ' a ticket.',
+        },
+      ],
+    },
+    {
+      label: '同一人',
+      sentence: 'The singer and dancer is my sister.',
+      analysis: ['同一人兼有 2 个身份，可用单数。'],
+    },
+    {
+      label: '一个整体',
+      sentence: 'Bread and butter is my usual breakfast.',
+      analysis: ['把它作为一道早餐看待，可用单数。'],
+    },
+    {
+      label: '不同的人',
+      sentence: 'The singer and the dancer are here.',
+      analysis: ['指 2 个不同的人，普通并列用复数。'],
+    },
+    {
+      label: '不同商品',
+      sentence: 'Bread and butter are sold here.',
+      analysis: ['把两者作为不同商品陈述，普通并列用复数。'],
+    },
+  ]}
+/>
 
 冠词有助于判断所指，但不能把「只出现一个 the」当作必然同一人的充分条件。
 
@@ -138,13 +485,40 @@ none、either、neither 还须区分结构与语体：
 只有确认是相应并列主语，才考虑就近一致。
 
 - **or、either...or、neither...nor、not only...but also** 连接不同人称或数的主语时，谓语常与靠近它的并列项一致。
-  - Either the teacher or the students **are** coming.
-  - Either the students or the teacher **is** coming.
-  - Neither Tom nor his friends **are** here.
-  - Not only the students but also the teacher **was** present.
 - **not...but...** 否定一项、肯定另一项时，通常按被肯定的主语选择。
-  - Not the students but **the teacher is** responsible.（负责的是老师，不是学生。）
-  - **The teacher**, not the students, **is** responsible. 中仍随 teacher，不机械改随最近的 students。
+
+<EnglishExamples
+  title="关联主语与被肯定的主语"
+  items={[
+    {
+      label: '复数项靠近谓语',
+      sentence: 'Either the teacher or the students are coming.',
+    },
+    {
+      label: '单数项靠近谓语',
+      sentence: 'Either the students or the teacher is coming.',
+    },
+    {
+      label: 'neither...nor',
+      sentence: 'Neither Tom nor his friends are here.',
+    },
+    {
+      label: 'not only...but also',
+      sentence: 'Not only the students but also the teacher was present.',
+    },
+    {
+      label: 'not...but...',
+      sentence: 'Not the students but the teacher is responsible.',
+      translation: '负责的是老师，不是学生。',
+      analysis: ['通常按被肯定的主语 the teacher 选择。'],
+    },
+    {
+      label: '附加否定项',
+      sentence: 'The teacher, not the students, is responsible.',
+      analysis: ['仍随 teacher，不机械改随最近的 students。'],
+    },
+  ]}
+/>
 
 这类距离规则不适用于 The quality of the products **is** excellent. 等普通名词短语。若并列项的人称或数冲突而显得生硬，可调整顺序或改写。
 
@@ -154,16 +528,51 @@ none、either、neither 还须区分结构与语体：
 
 时间、距离、金额、重量等复数表达，先判断是在评价一个总量，还是分别陈述多个单位。
 
-- **一个总量** 常用单数：
-  - Ten years **is** a long time.（十年是很长的一段时间。）
-  - Five dollars **is** enough.（五美元就够了。）
-- **多个单位** 可用复数：
-  - Ten years **have passed**.（十年已经过去了。）
-  - Five one-dollar bills **were lying** on the table.（桌上放着五张一美元钞票。）
-- **算术关系** 常作为一个运算结果陈述：Two plus three **is** five.
-- **单个实体的专名** 通常按单数处理，即使外形为复数：
-  - _Great Expectations_ **is** a novel by Dickens.
-  - The United States **is** a large country.
+- **一个总量** 常用单数。
+- **多个单位** 可用复数。
+- **算术关系** 常作为一个运算结果陈述。
+- **单个实体的专名** 通常按单数处理，即使外形为复数。
+
+<EnglishExamples
+  title="总量、多个单位与专名"
+  items={[
+    {
+      label: '时间总量',
+      sentence: 'Ten years is a long time.',
+      translation: '10 年是很长的一段时间。',
+    },
+    {
+      label: '金额总量',
+      sentence: 'Five dollars is enough.',
+      translation: '5 美元就够了。',
+    },
+    {
+      label: '分别经过的年份',
+      sentence: 'Ten years have passed.',
+      translation: '10 年已经过去了。',
+    },
+    {
+      label: '多个钞票单位',
+      sentence: 'Five one-dollar bills were lying on the table.',
+      translation: '桌上放着 5 张 1 美元钞票。',
+    },
+    {
+      label: '算术关系',
+      sentence: 'Two plus three is five.',
+      analysis: ['常作为一个运算结果陈述。'],
+    },
+    {
+      label: '书名',
+      sentence: 'Great Expectations is a novel by Dickens.',
+      analysis: ['单个实体的专名通常按单数处理，即使外形为复数。'],
+    },
+    {
+      label: '国家名',
+      sentence: 'The United States is a large country.',
+      analysis: ['单个实体的专名通常按单数处理，即使外形为复数。'],
+    },
+  ]}
+/>
 
 ### 词形与义项
 
@@ -177,22 +586,59 @@ none、either、neither 还须区分结构与语体：
 - **通常按复数一致**：
   - 表示复数群体的 people、police、cattle。
     - The police **are** investigating.
-    - 一名警察用 a police officer，不用 one police。
+    - 1 名警察用 a police officer，不用 one police。
   - 常用复数的成对物品，如 trousers、jeans、scissors、glasses。
     - My glasses **are** broken.
     - shoe 本身可用单数，scissors 表剪刀通常用复数形式；都能接 a pair of，不代表词形规律相同。
   - the + 形容词表示一类人的结构，如 the rich、the poor、the young。
     - The rich **are** not always happy.
 - **须由限定词及所指判断单复数**：sheep、deer、series、species、表方法的 means 等单复数同形词。
-  - A sheep **is** here. / Two sheep **are** here.
-  - A means of transport **is** needed. / Several means of transport **are** available.
+
+<EnglishExamples
+  title="单复数同形词的数量所指"
+  items={[
+    {
+      label: 'sheep：单数',
+      sentence: 'A sheep is here.',
+    },
+    {
+      label: 'sheep：复数',
+      sentence: 'Two sheep are here.',
+    },
+    {
+      label: 'means：单数',
+      sentence: 'A means of transport is needed.',
+    },
+    {
+      label: 'means：复数',
+      sentence: 'Several means of transport are available.',
+    },
+  ]}
+/>
 
 同一个词换义项时，还须重新判断：
 
-- **statistics**：Statistics **is** difficult. 指统计学；The statistics **are** worrying. 指统计数据。
+- **statistics**：区分统计学与统计数据义项。
+
 - **poultry**：指禽类时用复数一致；指禽肉时是不可数名词，通常用单数一致。
-- **people**：表示「民族」时另有 a people / peoples 的可数用法，不能只按警察、牛群一类规则记忆。
+- **people**：表示「民族」时另有 a people / peoples 的可数用法，不能仅按警察、牛群一类规则记忆。
 - **the unknown**：The unknown **is** frightening. 指抽象的未知事物，不适用「the + 形容词表示一类人」的复数规则。
+
+<EnglishExamples
+  title="statistics 的不同义项"
+  items={[
+    {
+      label: '统计学',
+      sentence: 'Statistics is difficult.',
+      analysis: ['指统计学。'],
+    },
+    {
+      label: '统计数据',
+      sentence: 'The statistics are worrying.',
+      analysis: ['指统计数据。'],
+    },
+  ]}
+/>
 
 名词形式详见 [名词](/docs/note/english/grammar/parts-of-speech/nouns)。
 
@@ -200,11 +646,41 @@ none、either、neither 还须区分结构与语体：
 
 family、team、class、group、audience、government 等可突出整体，也可突出成员。
 
-- **整体视角**：The team **is** successful.
-- **成员视角**：The team **are** arguing among themselves. 在英式英语中自然。
+- **整体视角** 常用单数，**成员视角** 可用复数。
 - **地区习惯**：英式英语对单数形式集合名词用复数谓语较常见；美式英语通常更偏好单数。
-- **代词连贯**：The team **is** proud of **its** record. / The team **are** putting on **their** uniforms.
-- **明确成员**：The team members **are** arguing. 在两种变体中都清楚。
+- **代词连贯**：后续代词应与所采用的整体或成员视角呼应。
+- **明确成员**：需要时用 members 等词明确主语中心。
+
+<EnglishExamples
+  title="集合名词的整体与成员视角"
+  items={[
+    {
+      label: '整体视角',
+      sentence: 'The team is successful.',
+      analysis: ['突出整个队伍，用单数。'],
+    },
+    {
+      label: '成员视角',
+      sentence: 'The team are arguing among themselves.',
+      analysis: ['突出成员，在英式英语中自然。'],
+    },
+    {
+      label: '单数呼应',
+      sentence: 'The team is proud of its record.',
+      analysis: ['限定动词 is 与代词 its 采用整体视角。'],
+    },
+    {
+      label: '复数呼应',
+      sentence: 'The team are putting on their uniforms.',
+      analysis: ['限定动词 are 与代词 their 采用成员视角。'],
+    },
+    {
+      label: '明确成员',
+      sentence: 'The team members are arguing.',
+      analysis: ['明确以 members 为主语中心，在 2 种变体中都清楚。'],
+    },
+  ]}
+/>
 
 整体或成员意义不是完全不受地区、语体和名词习惯影响的自由选择。people、police、cattle 及不可数 furniture 应与 family/team 类分开。
 
@@ -214,12 +690,36 @@ family、team、class、group、audience、government 等可突出整体，也�
 
 there be 介绍的名词短语通常位于 be 后，there 是形式上的存在标记。
 
-- **单个名词短语** 通常按其数选择：There **is** a book on the desk. / There **are** two books on the desk.
-- **多个并列项** 常按第一项选择：
-  - There **is** a book and two pens on the desk.
-  - There **are** two pens and a book on the desk.
-  - 这种用法存在语体差异；正式写作可把复数项放前，或分句表达。
-- **口语 There's + 复数** 很常见，但正式考试和学术写作通常用 There **are** two books.
+- **单个名词短语**：通常按其数选择。
+- **多个并列项**：常按第一项选择；这种用法存在语体差异，正式写作可把复数项放前，或分句表达。
+- **口语 There's + 复数** 很常见，但正式考试和学术写作通常用 There are + 复数。
+
+<EnglishExamples
+  title="there be 后的名词数量"
+  items={[
+    {
+      label: '单数名词短语',
+      sentence: 'There is a book on the desk.',
+    },
+    {
+      label: '复数名词短语',
+      sentence: 'There are two books on the desk.',
+    },
+    {
+      label: '单数项在前',
+      sentence: 'There is a book and two pens on the desk.',
+    },
+    {
+      label: '复数项在前',
+      sentence: 'There are two pens and a book on the desk.',
+    },
+    {
+      label: '正式写作的复数形式',
+      sentence: 'There are two books.',
+      analysis: ["口语 There's + 复数很常见，但正式考试和学术写作通常用「There are two books.」。"],
+    },
+  ]}
+/>
 
 ### 关系从句
 
@@ -228,21 +728,157 @@ there be 介绍的名词短语通常位于 be 后，there 是形式上的存在�
 1. **关系词作主语**，通常由先行词所指决定从句谓语的数；
 2. **关系词作宾语**，按从句自身的主语选择，不能让先行词越过主语控制谓语。
 
-- He is one of the **students who are** good at maths. 按 who 修饰 students 分析，are 对应该学生群体。
-- He is the only **one** of the students **who is** qualified for the job. 按「唯一合格者」理解，who 对应 one。
-- The students whom **she knows** are here. 中 knows 随 she，不随 students。
-
-外层一致另行判断：One of the students who **have** passed the exam **is** absent. 若 who 修饰 students，内层用 have，外层中心 one 用 is；不能仅看到 one 就把内外两处都选单数。
+<EnglishExamples
+  title="关系从句与外层的一致"
+  items={[
+    {
+      label: 'who 对应 students',
+      sentence: 'He is one of the students who are good at maths.',
+      analysis: ['按 who 修饰 students 分析，are 对应该学生群体。'],
+      segments: [
+        {
+          text: 'He is one of the students ',
+        },
+        {
+          text: 'who',
+          role: '从句主语',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'are',
+          role: '从句限定动词',
+        },
+        {
+          text: ' good at maths.',
+        },
+      ],
+    },
+    {
+      label: 'who 对应 one',
+      sentence: 'He is the only one of the students who is qualified for the job.',
+      analysis: ['按「唯一合格者」理解，who 对应 one。'],
+      segments: [
+        {
+          text: 'He is the only one of the students ',
+        },
+        {
+          text: 'who',
+          role: '从句主语',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'is qualified',
+          role: '从句谓语',
+        },
+        {
+          text: ' for the job.',
+        },
+      ],
+    },
+    {
+      label: 'whom 作宾语',
+      sentence: 'The students whom she knows are here.',
+      analysis: ['关系词 whom 作宾语，knows 随从句主语 she，不随 students。'],
+      segments: [
+        {
+          text: 'The students ',
+        },
+        {
+          text: 'whom',
+          role: '从句宾语',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'she',
+          role: '从句主语',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'knows',
+          role: '从句谓语动词',
+        },
+        {
+          text: ' are here.',
+        },
+      ],
+    },
+    {
+      label: '内外分别判断',
+      sentence: 'One of the students who have passed the exam is absent.',
+      analysis: [
+        '内层：若 who 修饰 students，关系从句用 have。',
+        '外层：主语中心是 one，主句用 is。不能仅看到 one，就把内外 2 处都选单数。',
+      ],
+      segments: [
+        {
+          text: 'One of the students who ',
+        },
+        {
+          text: 'have',
+          role: '从句限定动词',
+        },
+        {
+          text: ' passed the exam ',
+        },
+        {
+          text: 'is',
+          role: '主句限定动词',
+        },
+        {
+          text: ' absent.',
+        },
+      ],
+    },
+  ]}
+/>
 
 ### 从句与非谓语主语
 
 - **一个 that 内容从句、不定式或动名词结构** 作主语，通常按一件事用单数。
-  - **That she refused is** surprising.
-  - **To learn a language takes** time.
-  - **Swimming is** good exercise.
-- **what 结构** 结合所指分析。
-  - **What he said is** true.
-  - **What we need is** more time.
-  - **What we need is/are** more books. 两种一致都可见，复数受所需事物及复数表语的意义影响。
+- **what 结构** 结合所指分析，不能只凭表语的外形决定一致。
+
+<EnglishExamples
+  title="从句与非谓语主语的一致"
+  items={[
+    {
+      label: 'that 内容从句',
+      sentence: 'That she refused is surprising.',
+    },
+    {
+      label: '不定式',
+      sentence: 'To learn a language takes time.',
+    },
+    {
+      label: '动名词结构',
+      sentence: 'Swimming is good exercise.',
+    },
+    {
+      label: 'what：命题内容',
+      sentence: 'What he said is true.',
+    },
+    {
+      label: 'what：不可数所指',
+      sentence: 'What we need is more time.',
+    },
+    {
+      label: 'what：复数表语，单数一致',
+      sentence: 'What we need is more books.',
+      analysis: ['2 种一致都可见。'],
+    },
+    {
+      label: 'what：复数表语，复数一致',
+      sentence: 'What we need are more books.',
+      analysis: ['复数受所需事物及复数表语的意义影响，2 种一致都可见。'],
+    },
+  ]}
+/>
 
 不能把 what 结构概括为「一律单数」，也不能反过来规定「表语复数，系动词就必须复数」。

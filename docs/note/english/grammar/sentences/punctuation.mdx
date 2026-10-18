@@ -27,47 +27,140 @@ summary: 英语标点先按句法关系判断，再选择符号与书写体例�
 **句号**（Full Stop / Period，`.`）结束陈述句和多数普通祈使句。**问号**（Question Mark，`?`）标示整句为问句。**感叹号**（Exclamation Mark，`!`）表达感叹、命令或强烈情绪。
 
 - **陈述或普通祈使**：用句号。
-  - She has finished the report.（她完成了报告。）
-  - Please close the door.（请关门。）
 - **整句直接提问**：用问号。
-  - Where does she live?（她住在哪里？）
 - **感叹或强烈命令**：按表达语气用感叹号。
-  - What a beautiful day!（多么美好的一天！）
-  - Stop!（停下！）
 
 问号取决于 **整句功能**，不是看到疑问词就加问号。
 
-- **I wonder where she lives.**：主句是陈述，句末用句号。
-- **Do you know where she lives?**：整句在提问，句末用问号；嵌入部分仍用陈述语序。
+<EnglishExamples
+  title="整句功能与句末标点"
+  items={[
+    {
+      label: '陈述句',
+      sentence: 'She has finished the report.',
+      translation: '她完成了报告。',
+      analysis: ['陈述句用句号。'],
+    },
+    {
+      label: '普通祈使句',
+      sentence: 'Please close the door.',
+      translation: '请关门。',
+      analysis: ['普通祈使句用句号。'],
+    },
+    {
+      label: '直接特殊疑问',
+      sentence: 'Where does she live?',
+      translation: '她住在哪里？',
+      analysis: ['整句直接提问，用问号。'],
+    },
+    {
+      label: '感叹句',
+      sentence: 'What a beautiful day!',
+      translation: '多么美好的一天！',
+      analysis: ['按表达语气用感叹号。'],
+    },
+    {
+      label: '强烈命令',
+      sentence: 'Stop!',
+      translation: '停下！',
+      analysis: ['按表达语气用感叹号。'],
+    },
+    {
+      label: '嵌入疑问的陈述句',
+      sentence: 'I wonder where she lives.',
+      analysis: ['主句是陈述，句末用句号。'],
+    },
+    {
+      label: '包含嵌入疑问的问句',
+      sentence: 'Do you know where she lives?',
+      analysis: ['整句在提问，句末用问号；嵌入部分仍用陈述语序。'],
+    },
+  ]}
+/>
 
 正式考试议论文通常很少需要感叹号。句末已有 `?` 或 `!` 时，不另加句号。
 
 ### 独立分句与逗号拼接
 
-**独立分句**（Independent Clause）可以在相应语境中单独构成一个完整句子。两个独立分句通常不能仅靠一个逗号连接。
+**独立分句**（Independent Clause）可以在相应语境中单独构成一个完整句子。2 个独立分句通常不能仅靠一个逗号连接。
 
 不当：**I was tired, I kept working.**
 
 这种错误称为 **逗号拼接**（Comma Splice）。连接两段内容时，按以下顺序判断：
 
-1. **两侧都能独立成句**：使用句号、分号，或逗号加并列连词；不能只放一个逗号；
+1. **两侧都能独立成句**：使用句号、分号，或逗号加并列连词；不能仅放一个逗号；
 2. **一侧由 although、when 等引成状语从句**：按主从关系连接，不用分号把从句单独切开；
-3. **只是同一主语的两个并列谓语**：按谓语并列处理，不因为有两个动词就一律在中间加逗号。
+3. **只是同一主语的 2 个并列谓语**：按谓语并列处理，不因为有 2 个动词就一律在中间加逗号。
 
 对于 I was tired 与 I kept working，可按需要保留的逻辑关系选择：
 
-- **分别构成两个句子**：用句号。
-  - I was tired. I kept working.
-- **保留两个相关独立分句**：用分号，或按逻辑关系加并列连词。
-  - I was tired; I kept working.
-  - I was tired, **but** I kept working. 这是并列句。
+- **分别构成 2 个句子**：用句号。
+- **保留 2 个相关独立分句**：用分号，或按逻辑关系加并列连词。
 - **把一部分改为从句**：选择能表达逻辑关系的从属连接词，再按从句位置使用逗号。
-  - **Although I was tired,** I kept working.
 
-**however、therefore、moreover 等连接副词不是并列连词**。不能写 I was tired, however, I kept working. 来修复逗号拼接。
+<EnglishExamples
+  title="修复逗号拼接的不同关系"
+  items={[
+    {
+      label: '分为 2 句',
+      sentence: 'I was tired. I kept working.',
+      analysis: ['用句号分别构成 2 个句子。'],
+    },
+    {
+      label: '相关独立分句',
+      sentence: 'I was tired; I kept working.',
+      analysis: ['用分号保留 2 个相关独立分句。'],
+    },
+    {
+      label: '并列关系',
+      sentence: 'I was tired, but I kept working.',
+      analysis: ['加并列连词 but，构成并列句。'],
+      segments: [
+        {
+          text: 'I was tired, ',
+        },
+        {
+          text: 'but',
+          role: '并列连词',
+        },
+        {
+          text: ' I kept working.',
+        },
+      ],
+    },
+    {
+      label: '主从关系',
+      sentence: 'Although I was tired, I kept working.',
+      analysis: ['选择表达逻辑关系的从属连接词，把一部分改为从句，再按从句位置使用逗号。'],
+      segments: [
+        {
+          text: 'Although I was tired',
+          role: '让步状语从句',
+        },
+        {
+          text: ', I kept working.',
+        },
+      ],
+    },
+  ]}
+/>
 
-- I was tired; **however,** I kept working.
-- I was tired. **However,** I kept working.
+**however、therefore、moreover 等连接副词不是并列连词**。不能写 I was tired, however, I kept
+working. 来修复逗号拼接。
+
+<EnglishExamples
+  title="连接副词前的句子边界"
+  items={[
+    {
+      label: '分号连接',
+      sentence: 'I was tired; however, I kept working.',
+    },
+    {
+      label: '分为两句',
+      sentence: 'I was tired. However, I kept working.',
+    },
+  ]}
+/>
 
 同样，不加任何标点写成 I was tired I kept working. 也是句子边界错误。正式写作以明确分句关系为准，不套用中文长串逗号。
 
@@ -75,25 +168,60 @@ summary: 英语标点先按句法关系判断，再选择符号与书写体例�
 
 **逗号**（Comma，`,`）的用途按句法关系判断：
 
-- **分句之间**：检查是独立分句并列，还是状语从句与主句相连；
-- **名词后的从句或说明**：检查它是筛选对象，还是补充已确定对象；
-- **句内并列或插入**：标出并列项、呼语、插入语等边界；
+- **分句之间**：检查是独立分句并列，还是状语从句与主句相连。
+- **名词后的从句或说明**：检查它是筛选对象，还是补充已确定对象。
+- **句内并列或插入**：标出并列项、呼语、插入语等边界。
 - **日期、地址等固定书写**：按对应体例使用，不能反推普通句子的分句规则。
 
 ### 并列与前置成分
 
-两个独立分句由 and、but、or、nor、for、so、yet 等并列连词连接时，较长或结构复杂的句子通常在连词前用逗号。
+2 个独立分句由 and、but、or、nor、for、so、yet 等并列连词连接时，较长或结构复杂的句子通常在连词前用逗号。
 
-- The rain stopped, **and we went outside**.（雨停了，我们走到外面。）
-- I wanted to leave, **but she asked me to stay**.（我想离开，但她让我留下。）
+<EnglishExamples
+  title="独立分句与共享主语的并列"
+  items={[
+    {
+      label: '2 个独立分句',
+      sentence: 'The rain stopped, and we went outside.',
+      translation: '雨停了，我们走到外面。',
+    },
+    {
+      label: '2 个独立分句',
+      sentence: 'I wanted to leave, but she asked me to stay.',
+      translation: '我想离开，但她让我留下。',
+    },
+    {
+      label: '共享主语的 2 个谓语',
+      sentence: 'She opened the door and walked in.',
+      translation: '她开门走了进去。',
+      analysis: ['同一主语仅连接 2 个谓语时，通常不用逗号。'],
+    },
+  ]}
+/>
 
-若同一主语仅连接两个谓语，通常不用逗号：**She opened the door and walked in**.（她开门走了进去。）较短独立分句中，逗号有时也可省，具体取决于体例与清晰度。
+若同一主语仅连接 2 个谓语，通常不用逗号。较短独立分句中，逗号有时也可省，具体取决于体例与清晰度。
 
 状语从句前置时，通常用逗号隔开；放在主句后、与主句紧密相连时通常不加。
 
-- **When the bell rang,** we left.（铃响时，我们离开了。）
-- We left **when the bell rang**.
-- **Although it was raining,** we went out.（尽管下着雨，我们还是出去了。）
+<EnglishExamples
+  title="状语从句的位置与逗号"
+  items={[
+    {
+      label: '时间从句在前',
+      sentence: 'When the bell rang, we left.',
+      translation: '铃响时，我们离开了。',
+    },
+    {
+      label: '时间从句在后',
+      sentence: 'We left when the bell rang.',
+    },
+    {
+      label: '让步从句在前',
+      sentence: 'Although it was raining, we went out.',
+      translation: '尽管下着雨，我们还是出去了。',
+    },
+  ]}
+/>
 
 不能由此推出「所有从句前都加逗号」。例如 I know **that he is right**. 中，that 内容从句前不用逗号。
 
@@ -102,17 +230,108 @@ summary: 英语标点先按句法关系判断，再选择符号与书写体例�
 **限制性定语从句**（Defining Relative Clause）用于确定谈论对象，通常不加逗号。**非限制性定语从句**（Non-Defining Relative Clause）补充已确定对象的信息，使用逗号隔开。
 
 - **关系从句用来筛选对象**：不加隔离逗号。
-  - The students **who revised** passed. 谈论复习过的那部分学生，不直接断言其他学生的结果。
 - **关系从句补充已确定对象的信息**：用逗号划出边界；处于句中时两侧都要标明。
-  - The students, **who revised**, passed. 谈论已确定的全体学生，并补充他们复习过。
-  - My brother, **who lives in London**, works as a doctor. 从句补充说明已确定的人物，不能只保留 who 前的逗号。
+
+<EnglishExamples
+  title="关系从句的限制与补充"
+  items={[
+    {
+      label: '筛选对象',
+      sentence: 'The students who revised passed.',
+      analysis: ['谈论复习过的那部分学生，不直接断言其他学生的结果。'],
+      segments: [
+        {
+          text: 'The students ',
+        },
+        {
+          text: 'who revised',
+          role: '限制性关系从句',
+        },
+        {
+          text: ' passed.',
+        },
+      ],
+    },
+    {
+      label: '补充信息',
+      sentence: 'The students, who revised, passed.',
+      analysis: ['谈论已确定的全体学生，并补充他们复习过。'],
+      segments: [
+        {
+          text: 'The students, ',
+        },
+        {
+          text: 'who revised',
+          role: '非限制性关系从句',
+        },
+        {
+          text: ', passed.',
+        },
+      ],
+    },
+    {
+      label: '句中补充需两侧边界',
+      sentence: 'My brother, who lives in London, works as a doctor.',
+      analysis: ['从句补充说明已确定的人物，不能仅保留 who 前的逗号。'],
+      segments: [
+        {
+          text: 'My brother, ',
+        },
+        {
+          text: 'who lives in London',
+          role: '非限制性关系从句',
+        },
+        {
+          text: ', works as a doctor.',
+        },
+      ],
+    },
+  ]}
+/>
 
 逗号会改变信息范围，不只是增加停顿。非限制性从句通常不用 that，引导词也不能照限制性宾语关系代词那样省略。
 
 同位语和插入信息也按是否用于确定对象判断。
 
-- **My friend Lily** lives in London.：Lily 用于说明是哪位朋友。
-- **Lily, my oldest friend,** lives in London.：my oldest friend 是补充说明。
+<EnglishExamples
+  title="同位语的限定与补充"
+  items={[
+    {
+      label: '确定对象',
+      sentence: 'My friend Lily lives in London.',
+      analysis: ['Lily 用于说明是哪位朋友。'],
+      segments: [
+        {
+          text: 'My friend ',
+        },
+        {
+          text: 'Lily',
+          role: '确定对象的同位语',
+        },
+        {
+          text: ' lives in London.',
+        },
+      ],
+    },
+    {
+      label: '补充说明',
+      sentence: 'Lily, my oldest friend, lives in London.',
+      analysis: ['my oldest friend 是补充说明。'],
+      segments: [
+        {
+          text: 'Lily, ',
+        },
+        {
+          text: 'my oldest friend',
+          role: '补充同位语',
+        },
+        {
+          text: ', lives in London.',
+        },
+      ],
+    },
+  ]}
+/>
 
 插入信息位于句中时，通常要 **成对使用逗号**。Lily, my oldest friend lives in London. 不能仅留下前一个逗号。
 
@@ -120,22 +339,90 @@ summary: 英语标点先按句法关系判断，再选择符号与书写体例�
 
 3 项及以上的简单并列项通常用逗号分隔。最后一项前的逗号叫 **牛津逗号**（Oxford Comma），也叫 **序列逗号**（Serial Comma）或 Harvard Comma。
 
-- I bought apples, pears**, and** oranges.
-- I bought apples, pears **and** oranges.
+2 种体例都存在。美式学术写作常保留牛津逗号，部分英式体例常省略，但不能概括为绝对的英美语法对错。全文保持一致，并在可能歧义时调整表达。
 
-两种体例都存在。美式学术写作常保留牛津逗号，部分英式体例常省略，但不能概括为绝对的英美语法对错。全文保持一致，并在可能歧义时调整表达。
+<EnglishExamples
+  title="序列逗号与所指范围"
+  items={[
+    {
+      label: '有序列逗号',
+      sentence: 'I bought apples, pears, and oranges.',
+    },
+    {
+      label: '无序列逗号',
+      sentence: 'I bought apples, pears and oranges.',
+    },
+    {
+      label: '可能有歧义',
+      sentence: 'I thanked my parents, Anna and Tom.',
+      analysis: ['可能把 Anna and Tom 理解为父母姓名，也可能把他们列为另 2 个人。'],
+    },
+    {
+      label: '列出 3 项',
+      sentence: 'I thanked my parents, Anna, and Tom.',
+      analysis: ['通常更清楚地列出父母、Anna、Tom 3 项。'],
+    },
+  ]}
+/>
 
-例如 **I thanked my parents, Anna and Tom**. 可能把 Anna and Tom 理解为父母姓名，也可能把他们列为另两个人。**I thanked my parents, Anna, and Tom**. 通常更清楚地列出父母、Anna、Tom 三项。序列逗号能减少部分歧义，但复杂语境中仍可能需要改写。
-
+序列逗号能减少部分歧义，但复杂语境中仍可能需要改写。
 其他常见用途包括：
 
-- 并列形容词：a **long, difficult** exam（一次漫长且困难的考试）。累计修饰通常不用逗号，如 a **small wooden** box（一个小木箱）。
-- 呼语：Thank you**, Lily**.（谢谢你，Lily。）比较 Let's eat, Grandma. 与 Let's eat Grandma. 逗号影响句法关系。
-- 插入语：The plan**, however,** failed.（然而，计划失败了）。
-- 反意疑问：You are ready**, aren't you**?（你准备好了，对吧）。
+- 并列形容词：a **long, difficult** exam（一次漫长且困难的考试）。累积修饰通常不用逗号，如 a **small wooden** box（一个小木箱）。
+- **呼语**：用逗号标明被称呼的对象。
+- **插入语**：位于句中时标明两侧边界。
+- **反意疑问**：在前面的分句后用逗号接附加问句。
+
 - 日期：On **July 4, 1776,** ...；数字分组：**1,234,567**。这里的逗号属于专门的书写惯例。
 
-连续书写地名或地址时，逗号也常分隔地点层级：She lives in **Oxford, England**.（她住在英格兰牛津。）若地点说明后还有主句内容，相关边界通常成对标明：**Oxford, England, is a historic city**.
+<EnglishExamples
+  title="呼语、插入语与附加问句"
+  items={[
+    {
+      label: '呼语',
+      sentence: 'Thank you, Lily.',
+      translation: '谢谢你，Lily。',
+    },
+    {
+      label: 'Grandma 作呼语',
+      sentence: "Let's eat, Grandma.",
+      analysis: ['与不加逗号的形式比较，逗号影响句法关系。'],
+    },
+    {
+      label: 'Grandma 作宾语',
+      sentence: "Let's eat Grandma.",
+      analysis: ['与加逗号的呼语形式比较，句法关系不同。'],
+    },
+    {
+      label: '插入语',
+      sentence: 'The plan, however, failed.',
+      translation: '然而，计划失败了。',
+    },
+    {
+      label: '反意疑问',
+      sentence: "You are ready, aren't you?",
+      translation: '你准备好了，对吧？',
+    },
+  ]}
+/>
+
+连续书写地名或地址时，逗号也常分隔地点层级。
+
+<EnglishExamples
+  title="地点层级与句中边界"
+  items={[
+    {
+      label: '句末地点层级',
+      sentence: 'She lives in Oxford, England.',
+      translation: '她住在英格兰牛津。',
+    },
+    {
+      label: '句中地点层级',
+      sentence: 'Oxford, England, is a historic city.',
+      analysis: ['地点说明后还有主句内容时，相关边界通常成对标明。'],
+    },
+  ]}
+/>
 
 **主语再长，也不能仅因长度在它与谓语之间加逗号**。例如 The student who won the prize **is** my friend. 中，prize 后不加逗号。
 
@@ -143,18 +430,42 @@ summary: 英语标点先按句法关系判断，再选择符号与书写体例�
 
 ### 分号
 
-**分号**（Semicolon，`;`）按两类用途判断：
+**分号**（Semicolon，`;`）按 2 类用途判断：
 
-- **连接分句**：两侧须各自独立，且语义相关；
+- **连接分句**：两侧须各自独立，且语义相关。
 - **分隔复杂列表项**：若各项内部已有逗号，可用分号标出更高一层边界。
 
-- I prefer coffee; my sister prefers tea.（我更喜欢咖啡，我姐姐更喜欢茶。）
-- The evidence was weak; therefore, we rejected the claim.（证据薄弱，因此我们否定了这项主张。）
+<EnglishExamples
+  title="分号连接相关独立分句"
+  items={[
+    {
+      label: '相关陈述',
+      sentence: 'I prefer coffee; my sister prefers tea.',
+      translation: '我更喜欢咖啡，我姐姐更喜欢茶。',
+    },
+    {
+      label: '连接副词 therefore',
+      sentence: 'The evidence was weak; therefore, we rejected the claim.',
+      translation: '证据薄弱，因此我们否定了这项主张。',
+    },
+  ]}
+/>
 
 分号不是「较长的逗号」，后面一般不能仅接一个孤立的从句或普通短语。
 
-- 不当：Although it was raining; we went out.
-- 正确：Although it was raining**,** we went out.
+<EnglishExamples
+  title="从属关系不能用分号切开"
+  items={[
+    {
+      label: '不当：孤立的从句',
+      sentence: 'Although it was raining; we went out.',
+    },
+    {
+      label: '正确：逗号连接',
+      sentence: 'Although it was raining, we went out.',
+    },
+  ]}
+/>
 
 并列项内部已有逗号时，分号还可标示更高一层的列表边界。
 
@@ -168,15 +479,97 @@ summary: 英语标点先按句法关系判断，再选择符号与书写体例�
 2. **左侧仍缺动词或介词所要求的宾语**：先补成完整结构，或不用冒号；不能用冒号把必需成分切断；
 3. **属于时间、比例、标题或说话人标签**：按该类书写惯例判断，不套用前两项的句法检查。
 
-- She needed three things**: a pen, some paper, and a ruler**.（她需要 3 样东西：一支笔、一些纸和一把尺子。）
-- He had only one goal**: to win**.（他仅有一个目标：获胜。）
-- There was one problem**: nobody had a key**.（有一个问题：没有人有钥匙。）
+<EnglishExamples
+  title="完整引出语后的冒号"
+  items={[
+    {
+      label: '引出列表',
+      sentence: 'She needed three things: a pen, some paper, and a ruler.',
+      translation: '她需要 3 样东西：一支笔、一些纸和一把尺子。',
+      segments: [
+        {
+          text: 'She needed three things',
+          role: '完整引出语',
+        },
+        {
+          text: ': ',
+        },
+        {
+          text: 'a pen, some paper, and a ruler',
+          role: '列表',
+        },
+        {
+          text: '.',
+        },
+      ],
+    },
+    {
+      label: '引出解释',
+      sentence: 'He had only one goal: to win.',
+      translation: '他仅有一个目标：获胜。',
+      segments: [
+        {
+          text: 'He had only one goal',
+          role: '完整引出语',
+        },
+        {
+          text: ': ',
+        },
+        {
+          text: 'to win',
+          role: '解释',
+        },
+        {
+          text: '.',
+        },
+      ],
+    },
+    {
+      label: '引出具体内容',
+      sentence: 'There was one problem: nobody had a key.',
+      translation: '有一个问题：没有人有钥匙。',
+      segments: [
+        {
+          text: 'There was one problem',
+          role: '完整引出语',
+        },
+        {
+          text: ': ',
+        },
+        {
+          text: 'nobody had a key',
+          role: '具体内容',
+        },
+        {
+          text: '.',
+        },
+      ],
+    },
+  ]}
+/>
 
 避免用冒号直接拆开动词和宾语、介词和宾语。
 
-- 不宜：The kit contains: a pen and a ruler.
-- 可改：The kit contains a pen and a ruler.
-- 可改：The kit contains the following: a pen and a ruler.
+<EnglishExamples
+  title="冒号不能切断必需宾语"
+  items={[
+    {
+      label: '不宜：切断动宾关系',
+      sentence: 'The kit contains: a pen and a ruler.',
+      analysis: ['冒号把 contains 与它需要的宾语切断。'],
+    },
+    {
+      label: '去掉冒号',
+      sentence: 'The kit contains a pen and a ruler.',
+      analysis: ['动词直接接宾语。'],
+    },
+    {
+      label: '补成完整引出语',
+      sentence: 'The kit contains the following: a pen and a ruler.',
+      analysis: ['the following 补成完整引出语，再用冒号列出内容。'],
+    },
+  ]}
+/>
 
 时间 09:30、比例 2:3 和书名副标题中的冒号属于另外的惯例。不能以这些用法反推句子中冒号前后必须是何种成分。
 
@@ -196,14 +589,54 @@ summary: 英语标点先按句法关系判断，再选择符号与书写体例�
 - **英式逻辑标点**：通常根据标点是否属于引语决定位置，但直接引语的引述格式也有专门惯例。
 - **问号和感叹号**：通常看其属于引语本身，还是属于整个外层句子。
 
-- **直接引语后接引述语**：**"I am tired," she said.** 引语末用逗号放在闭引号前；英美写作中都可见。
-- **引语本身在提问**：She asked, **"Are you ready?"** 问号属于引语。
-- **外层句子在提问**：**Did she really say "I am ready"?** 问号属于外层句子。
+- **直接引语后接引述语**：引语末的逗号放在闭引号前。
+- **引语本身在提问**：问号属于引语。
+- **外层句子在提问**：问号属于外层句子。
+- **引述语在前**：常用逗号引出直接引语；在适当体例中也可用冒号。
+- **引述语插入一句中间**：两侧逗号标示插入位置；后半段延续原句。
+- **引述语倒装**：名词主语可位于引述动词后。
+- **剧本或逐字对话**：冒号分隔说话人标签与台词。
 
-- **引述语在前**：常用逗号引出直接引语，如 She said**, "I am ready."**；在适当体例中也可用冒号。
-- **引述语插入一句中间**：**"I am ready," she said, "and I will begin now."** 两侧逗号标示插入位置，后半段是同一句的延续，and 不另大写。
-
-引述语还可倒装为 **"I am ready," said Lily.** 名词主语 Lily 位于 said 后。剧本或逐字对话也常用 **Lily: I am ready.** 这里的冒号分隔说话人标签与台词，不是把普通叙述中的 said 机械换成冒号。
+<EnglishExamples
+  title="直接引语的标点与引述位置"
+  items={[
+    {
+      label: '引语后接引述语',
+      sentence: '"I am tired," she said.',
+      analysis: ['引语末用逗号放在闭引号前；英美写作中都可见。'],
+    },
+    {
+      label: '引语本身提问',
+      sentence: 'She asked, "Are you ready?"',
+      analysis: ['问号属于引语。'],
+    },
+    {
+      label: '外层句子提问',
+      sentence: 'Did she really say "I am ready"?',
+      analysis: ['问号属于外层句子。'],
+    },
+    {
+      label: '引述语在前',
+      sentence: 'She said, "I am ready."',
+      analysis: ['常用逗号引出直接引语；在适当体例中也可用冒号。'],
+    },
+    {
+      label: '引述语插入句中',
+      sentence: '"I am ready," she said, "and I will begin now."',
+      analysis: ['两侧逗号标示插入位置，后半段是同一句的延续，and 不另大写。'],
+    },
+    {
+      label: '引述语倒装',
+      sentence: '"I am ready," said Lily.',
+      analysis: ['名词主语 Lily 位于 said 后。'],
+    },
+    {
+      label: '剧本或逐字对话',
+      sentence: 'Lily: I am ready.',
+      analysis: ['冒号分隔说话人标签与台词，不是把普通叙述中的 said 机械换成冒号。'],
+    },
+  ]}
+/>
 
 不能简单把 "I am tired", she said. 当成英式英语的通用对应格式。
 
@@ -215,8 +648,19 @@ summary: 英语标点先按句法关系判断，再选择符号与书写体例�
 
 **圆括号**（Parentheses，`()`）提供补充信息。
 
-- She left early **(before lunch)**.
-- **(She left before lunch.)**
+<EnglishExamples
+  title="括号内容与句号位置"
+  items={[
+    {
+      label: '句内补充成分',
+      sentence: 'She left early (before lunch).',
+    },
+    {
+      label: '括号中的完整句子',
+      sentence: '(She left before lunch.)',
+    },
+  ]}
+/>
 
 括号内容若只是句内成分，整句句号放在括号外；若括号内本身是独立的完整句子，句号可放在括号内。
 
@@ -238,7 +682,7 @@ summary: 英语标点先按句法关系判断，再选择符号与书写体例�
 
 普通复合词中的连字符两侧不留空格，如 **well-known**、**mother-in-law**。拼写出的非整十数在 21 – 99 范围内通常用连字符连接，如 **twenty-one**。具体复合词是否连写、分写或加连字符，还需按词典和体例判断。
 
-连字符的英文名称是 **Hyphen**；键盘上的 `-` 兼任连字符与减号，所以 Unicode 名称为 Hyphen-Minus。专业排版中还存在专用连字符 `‐`（U+2010）。名称和字符编码属于不同层次，不能只凭显示长度判断。
+连字符的英文名称是 **Hyphen**；键盘上的 `-` 兼任连字符与减号，所以 Unicode 名称为 Hyphen-Minus。专业排版中还存在专用连字符 `‐`（U+2010）。名称和字符编码属于不同层次，不能仅凭显示长度判断。
 
 英文排版中，范围短破折号通常紧贴两侧内容；部分体例另有空格约定。不要把中文笔记的区间排版偏好当成英文的普遍规则。
 
@@ -288,6 +732,6 @@ U.S. / US、U.S.A. / USA 等形式也有体例差异；etc. 通常保留末点�
 
 - **1/2**：二分之一。
 - **he/she**：他或她。
-- **and/or**：和、或两种关系的组合。
+- **and/or**：和、或 2 种关系的组合。
 
 普通论述中若选择关系复杂，直接写明条件通常比连续使用斜杠更清楚。

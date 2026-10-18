@@ -14,26 +14,192 @@ summary: 副词的词类、语义类别和句法用途分别归类，避免把�
 
 **副词**（Adverb）的常见修饰对象包括：
 
-- **动词或动词短语**：She sings **beautifully**. 描述怎样唱。
-- **形容词**：It is **very** cold. 描述冷的程度。
-- **其他副词**：He runs **quite** fast. 描述快的程度。
-- **整个分句**：**Fortunately**, no one was hurt. 评价整件事是幸运的。
+- **动词或动词短语**：可说明动作方式。
+- **形容词**：可说明性质或状态的程度。
+- **其他副词**：可说明副词表达的程度。
+- **整个分句**：可评价整件事。
+
+<EnglishExamples
+  title="副词的修饰对象"
+  items={[
+    {
+      label: '修饰动作',
+      sentence: 'She sings beautifully.',
+      analysis: ['描述怎样唱。'],
+      segments: [
+        {
+          text: 'She sings ',
+        },
+        {
+          text: 'beautifully',
+          role: '方式副词',
+        },
+        {
+          text: '.',
+        },
+      ],
+    },
+    {
+      label: '修饰形容词',
+      sentence: 'It is very cold.',
+      analysis: ['描述冷的程度。'],
+      segments: [
+        {
+          text: 'It is ',
+        },
+        {
+          text: 'very',
+          role: '程度副词',
+        },
+        {
+          text: ' cold.',
+        },
+      ],
+    },
+    {
+      label: '修饰其他副词',
+      sentence: 'He runs quite fast.',
+      analysis: ['描述快的程度。'],
+      segments: [
+        {
+          text: 'He runs ',
+        },
+        {
+          text: 'quite',
+          role: '程度副词',
+        },
+        {
+          text: ' fast.',
+        },
+      ],
+    },
+    {
+      label: '评价整个分句',
+      sentence: 'Fortunately, no one was hurt.',
+      analysis: ['评价整件事是幸运的。'],
+      segments: [
+        {
+          text: 'Fortunately',
+          role: '分句评价',
+        },
+        {
+          text: ', no one was hurt.',
+        },
+      ],
+    },
+  ]}
+/>
 
 **副词** 是词类，**状语**（Adverbial）是句法功能：
 
-- 「She works **carefully**.」：副词作状语。
-- 「She works **with great care**.」：介词短语作状语。
-- 「She works **when the office is quiet**.」：从句作状语。
+<EnglishExamples
+  title="状语形式对照"
+  items={[
+    {
+      label: '副词作状语',
+      sentence: 'She works carefully.',
+      translation: '她工作很仔细。',
+      analysis: ['carefully 是副词，在句中作状语，说明工作方式。'],
+      segments: [
+        {
+          text: 'She',
+          role: '主语',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'works',
+          role: '谓语动词',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'carefully',
+          role: '方式状语',
+          note: '副词是词类，状语是这里承担的句法功能。',
+        },
+        {
+          text: '.',
+        },
+      ],
+    },
+    {
+      label: '介词短语作状语',
+      sentence: 'She works with great care.',
+      translation: '她工作很仔细。',
+      analysis: ['with great care 是介词短语，在句中作状语。'],
+      segments: [
+        {
+          text: 'She',
+          role: '主语',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'works',
+          role: '谓语动词',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'with great care',
+          role: '方式状语',
+          note: '表达工作方式的介词短语。',
+        },
+        {
+          text: '.',
+        },
+      ],
+    },
+    {
+      label: '从句作状语',
+      sentence: 'She works when the office is quiet.',
+      translation: '办公室安静时，她就工作。',
+      analysis: ['when the office is quiet 是从句，在句中作时间状语。'],
+      segments: [
+        {
+          text: 'She',
+          role: '主语',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'works',
+          role: '谓语动词',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'when the office is quiet',
+          role: '时间状语从句',
+          note: '状语功能也可由从句承担。',
+        },
+        {
+          text: '.',
+        },
+      ],
+    },
+  ]}
+/>
 
 部分副词还可承担其他功能：
 
 - **名词后修饰**：the people **here**，限定谈论哪些人。
-- **表语或地点补足语**：「She is **abroad**.」，说明主语所在位置。
-- **宾语补足语**：「Let me **in**.」/「Let me **out**.」，说明 me 要进入或离开的方向。
+- **表语或地点补足语**：「She is **abroad**.」说明主语所在位置。
+- **宾语补足语**：「Let me **in**.」或「Let me **out**.」说明 me 要进入或离开的方向。
 
-这里采用传统教学的副词分类；现代语法中也有把 in、out 等归入更宽介词类的分析。功能须按具体结构判断，既不能说副词只能作状语，也不能说所有副词都能修饰名词。
+这里采用传统教学的副词分类；现代语法中也有把 in、out 等归入更宽介词类的分析。
 
-副词也不必是可删的附加信息：Put the book **here**. 中，here 补充 put 所要求的放置地点，直接删除会使通常意义下的结构不完整。
+- **词类与功能并非一一对应**：副词可以作状语，也可以承担上述其他功能。
+- **功能仍有词项限制**：here 可修饰名词，不意味着所有副词都能修饰名词。
+
+副词也不必是可删的附加信息。「Put the book **here**.」中，here 补足 put 要求的放置地点。直接删除 here 会使这个放置义结构不完整。
 
 ## 分类维度
 
@@ -63,10 +229,10 @@ summary: 副词的词类、语义类别和句法用途分别归类，避免把�
   - when、where、why 在关系从句内部表达时间、地点、原因等；这里的 when 既属于时间意义，也承担关系功能。
 - **分句间的逻辑联系**：however、therefore、besides、otherwise。
   - It rained; **however**, we went out.
-  - **连接副词**（Linking Adverb）表达逻辑关系，通常不能仅靠一个逗号连接两个独立分句。
+  - **连接副词**（Linking Adverb）表达逻辑关系，通常不能仅靠 1 个逗号连接 2 个独立分句。
   - 对照「It rained, **but** we went out.」与「It rained. **However**, we went out.」；详见 [连词](/docs/note/english/grammar/parts-of-speech/conjunctions)。
 
-语义和句法用途是两条分类轴，不能把「时间副词」与「关系副词」当成互斥类别。
+语义和句法用途是 2 条分类轴，不能把「时间副词」与「关系副词」当成互斥类别。
 
 ## 构词与近形词
 
@@ -88,21 +254,20 @@ summary: 副词的词类、语义类别和句法用途分别归类，避免把�
 
 ### 形容词派生 -ly 副词
 
-以下是 **已经具有相应 -ly 派生副词的形容词** 的拼写规则，不保证任意形容词都能生成常用副词，也不保证派生后词义完全相同。条件按顺序处理，匹配一项后不再叠加后续分支。
+输入须是 **已经确认具有相应 -ly 派生副词的形容词**。任意形容词未必都能生成常用副词，派生后的词义也可能改变。以下条件按顺序处理，命中后不再执行后续分支。
 
 1. **先处理固定词形和词项变体**：
    - true → **truly**、due → **duly**、whole → **wholly**，不是所有 e 结尾都去 e。
    - public → **publicly**，不套用下文 -ic 型的 -ically。
    - shy → **shyly**；sly → **slyly**；dry → **dryly/drily**，不能把单音节辅音加 y 统一改成 i。
    - gay 表「欢快的」时对应 **gaily**，也有 **gayly**；不能只凭前一个字母是元音就排除词项变体。
-2. **词尾为 -ll**：加 -y，如 full → **fully**、dull → **dully**，不再多写一个 l；
+2. **词尾为 -ll**：加 -y，如 full → **fully**、dull → **dully**，不再多写 1 个 l；
 3. **带 -ic 构词词尾的形容词**：加 -ally，形成 -ically，如 basic → **basically**、automatic → **automatically**；
 4. **词尾为辅音字母 + le**：把 le 替换为 ly，如 simple → **simply**、gentle → **gently**、terrible → **terribly**；
-5. **词尾为 -y**：
-   - 多音节的辅音字母 + y：改 y 为 i，再加 -ly，如 happy → **happily**、easy → **easily**、busy → **busily**。
-   - 保留 y 的词项，如 coy → **coyly**；单音节 shy、sly 及有双拼写的 dry 已在第一项处理。
-6. **其余常见情形直接加 -ly**：
+5. **多音节词，词尾为辅音字母 + y**：改 y 为 i，再加 -ly，如 happy → **happily**、easy → **easily**、busy → **busily**；
+6. **其余情况直接加 -ly**：
    - quick → **quickly**、careful → **carefully**。
+   - 元音字母 + y 保留 y，如 coy → **coyly**；gaily/gayly 已在第 1 项处理。
    - 普通 e 结尾保留 e：polite → **politely**、extreme → **extremely**。
    - 词尾单个 l 与后缀的 l 相邻：beautiful → **beautifully**，与 full → fully 的 -ll 分支不同。
 
@@ -118,37 +283,335 @@ summary: 副词的词类、语义类别和句法用途分别归类，避免把�
 | high / highly |     fly high，飞得高      |   highly successful，非常成功   |
 | deep / deeply |    dig deep，往深处挖     |     deeply moved，深受感动      |
 
-- **hardly 有否定意义**：She works **hard**. 是「她工作很努力」；She **hardly works**. 是「她几乎不工作」。I can hardly hear you 也表示几乎听不见。
+- **hardly 有否定意义**，与表示「努力」的 hard 不同。
 - **具体与抽象不是固定分界**：breathe **deeply** 描述实际呼吸，不能用「无 -ly 具体、有 -ly 抽象」解释所有搭配。
 - **同形也可跨词义**：a **pretty** flower 中是「漂亮的」；a **pretty** difficult question 中是程度副词「相当、颇」，较非正式。
 - **派生可改变意义**：large 表「大的」，largely 常表「主要地、大体上」：The work is **largely** finished.
+
+<EnglishExamples
+  title="hard 与 hardly"
+  items={[
+    {
+      label: '努力工作',
+      sentence: 'She works hard.',
+      translation: '她工作很努力。',
+      segments: [
+        {
+          text: 'She works ',
+        },
+        {
+          text: 'hard',
+          role: '方式副词',
+        },
+        {
+          text: '.',
+        },
+      ],
+    },
+    {
+      label: '几乎不工作',
+      sentence: 'She hardly works.',
+      translation: '她几乎不工作。',
+      segments: [
+        {
+          text: 'She ',
+        },
+        {
+          text: 'hardly',
+          role: '否定意义副词',
+        },
+        {
+          text: ' works.',
+        },
+      ],
+    },
+    {
+      label: '几乎听不见',
+      sentence: 'I can hardly hear you.',
+      analysis: ['表示几乎听不见。'],
+      segments: [
+        {
+          text: 'I can ',
+        },
+        {
+          text: 'hardly',
+          role: '否定意义副词',
+        },
+        {
+          text: ' hear you.',
+        },
+      ],
+    },
+  ]}
+/>
 
 ## 位置与作用域
 
 ### 动词、宾语与句末状语
 
 - **修饰动作方式**：常放在动词后；有短宾语时，通常放宾语后，也可前置到动词前。
-  - He runs **quickly**.
-  - She read the report **carefully**. / She **carefully** read the report.
-  - She speaks **English very well**. 中，very 修饰 well，very well 整体修饰 speaks，通常不插成 She speaks very well English。
+  - very 修饰 well，very well 整体修饰 speaks，通常不插成 She speaks very well English。
 - **多个信息中性的句末状语**：常按方式 → 地点 → 时间排列。
-  - She worked **quietly in the library yesterday**.
   - 时间也可在句首；语境、长短和强调会改变顺序。
 - **地点副词与移动动词**：go **home**、come **here**、travel **abroad**，通常不加 to。
   - 对比 go **to school**，school 是名词。
+
+<EnglishExamples
+  title="动作方式与句末状语的位置"
+  items={[
+    {
+      label: '没有宾语',
+      sentence: 'He runs quickly.',
+      segments: [
+        {
+          text: 'He runs ',
+        },
+        {
+          text: 'quickly',
+          role: '方式状语',
+        },
+        {
+          text: '.',
+        },
+      ],
+    },
+    {
+      label: '方式在宾语后',
+      sentence: 'She read the report carefully.',
+      segments: [
+        {
+          text: 'She read the report ',
+        },
+        {
+          text: 'carefully',
+          role: '方式状语',
+        },
+        {
+          text: '.',
+        },
+      ],
+    },
+    {
+      label: '方式在动词前',
+      sentence: 'She carefully read the report.',
+      segments: [
+        {
+          text: 'She ',
+        },
+        {
+          text: 'carefully',
+          role: '方式状语',
+        },
+        {
+          text: ' read the report.',
+        },
+      ],
+    },
+    {
+      label: '副词短语整体修饰动作',
+      sentence: 'She speaks English very well.',
+      analysis: ['very 修饰 well，very well 整体修饰 speaks。'],
+      segments: [
+        {
+          text: 'She speaks English ',
+        },
+        {
+          text: 'very well',
+          role: '方式状语',
+        },
+        {
+          text: '.',
+        },
+      ],
+    },
+    {
+      label: '方式、地点、时间',
+      sentence: 'She worked quietly in the library yesterday.',
+      segments: [
+        {
+          text: 'She worked ',
+        },
+        {
+          text: 'quietly',
+          role: '方式状语',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'in the library',
+          role: '地点状语',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'yesterday',
+          role: '时间状语',
+        },
+        {
+          text: '.',
+        },
+      ],
+    },
+  ]}
+/>
 
 ### 频率与助动词链
 
 always、usually、often、never 等的常见中位位置，按谓语结构区分：
 
-1. **普通实义动词前**：I **often go** swimming；
-2. **be 作主要动词时，在 be 后**：He **is always** late；
-3. **有助动词或情态动词时，在第一个之后**：You **should never** lie；She **has often** been asked that question。
+1. **普通实义动词前**；
+2. **be 作主要动词时，在 be 后**；
+3. **有助动词或情态动词时，在第 1 个之后**。
 
 - 助动词链不等于一个不可分的词尾位置，不能把「助动词后」误读为整条链之后。
 - has to 表义务时常作为整体：She **often has to** work late.
-- sometimes 句首、句中、句末都可用：**Sometimes** I walk to school. / I **sometimes** walk to school. / I walk to school **sometimes**.
+- sometimes 句首、句中、句末都可用。
 - every day、three times a day 是频率短语；表达频率不等于词类必为副词。
+
+<EnglishExamples
+  title="频率副词与谓语结构"
+  items={[
+    {
+      label: '普通实义动词前',
+      sentence: 'I often go swimming.',
+      segments: [
+        {
+          text: 'I ',
+        },
+        {
+          text: 'often',
+          role: '频率状语',
+        },
+        {
+          text: ' go swimming.',
+        },
+      ],
+    },
+    {
+      label: '主要动词 be 后',
+      sentence: 'He is always late.',
+      segments: [
+        {
+          text: 'He ',
+        },
+        {
+          text: 'is',
+          role: '系动词',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'always',
+          role: '频率状语',
+        },
+        {
+          text: ' late.',
+        },
+      ],
+    },
+    {
+      label: '情态动词后',
+      sentence: 'You should never lie.',
+      segments: [
+        {
+          text: 'You ',
+        },
+        {
+          text: 'should',
+          role: '情态动词',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'never',
+          role: '频率状语',
+        },
+        {
+          text: ' lie.',
+        },
+      ],
+    },
+    {
+      label: '长助动词链中',
+      sentence: 'She has often been asked that question.',
+      analysis: ['位于第 1 个助动词之后，不是整条助动词链之后。'],
+      segments: [
+        {
+          text: 'She ',
+        },
+        {
+          text: 'has',
+          role: '首个助动词',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'often',
+          role: '频率状语',
+        },
+        {
+          text: ' been asked that question.',
+        },
+      ],
+    },
+  ]}
+/>
+
+<EnglishExamples
+  title="sometimes 的不同位置"
+  items={[
+    {
+      label: '句首',
+      sentence: 'Sometimes I walk to school.',
+      segments: [
+        {
+          text: 'Sometimes',
+          role: '频率状语',
+        },
+        {
+          text: ' I walk to school.',
+        },
+      ],
+    },
+    {
+      label: '句中',
+      sentence: 'I sometimes walk to school.',
+      segments: [
+        {
+          text: 'I ',
+        },
+        {
+          text: 'sometimes',
+          role: '频率状语',
+        },
+        {
+          text: ' walk to school.',
+        },
+      ],
+    },
+    {
+      label: '句末',
+      sentence: 'I walk to school sometimes.',
+      segments: [
+        {
+          text: 'I walk to school ',
+        },
+        {
+          text: 'sometimes',
+          role: '频率状语',
+        },
+        {
+          text: '.',
+        },
+      ],
+    },
+  ]}
+/>
 
 ### 程度与搭配
 
@@ -167,31 +630,303 @@ always、usually、often、never 等的常见中位位置，按谓语结构区�
 
 **作用域**（Scope）指意义影响哪一部分。only 的位置和重音会改变焦点，书面语宜使它靠近限定对象。
 
-- 「**Only Lily** borrowed the book.」：仅 Lily 借了，其他人没借。
-- 「Lily borrowed **only the book**.」：仅借了书，没借其他东西。
-- 「Lily **only borrowed** the book.」：可强调仅仅借用而未购买，具体焦点仍依语境。
+<EnglishExamples
+  title="only 的焦点"
+  items={[
+    {
+      label: '限定借书的人',
+      sentence: 'Only Lily borrowed the book.',
+      analysis: ['仅 Lily 借了，其他人没借。'],
+      segments: [
+        {
+          text: 'Only Lily',
+          role: '焦点',
+        },
+        {
+          text: ' borrowed the book.',
+        },
+      ],
+    },
+    {
+      label: '限定借用的物品',
+      sentence: 'Lily borrowed only the book.',
+      analysis: ['仅借了书，没借其他东西。'],
+      segments: [
+        {
+          text: 'Lily borrowed ',
+        },
+        {
+          text: 'only the book',
+          role: '焦点',
+        },
+        {
+          text: '.',
+        },
+      ],
+    },
+    {
+      label: '限定活动方式',
+      sentence: 'Lily only borrowed the book.',
+      analysis: ['可强调仅仅借用而未购买，具体焦点仍依语境。'],
+      segments: [
+        {
+          text: 'Lily ',
+        },
+        {
+          text: 'only borrowed',
+          role: '焦点',
+        },
+        {
+          text: ' the book.',
+        },
+      ],
+    },
+  ]}
+/>
 
-否定与频率的关系也要分别判断：
+否定与频率的关系也要分别判断。
 
-- 「She is **not always** late.」：否定「每次都迟到」，不保证每次都不迟到。
-- 「She is **always unprepared** when we need to leave.」：每次该出发时都没准备好。
-- 「She is **never** late.」：从不迟到。
+<EnglishExamples
+  title="否定与频率的作用域"
+  items={[
+    {
+      label: '否定每次都迟到',
+      sentence: 'She is not always late.',
+      analysis: ['否定「每次都迟到」，不保证每次都不迟到。'],
+      segments: [
+        {
+          text: 'She is ',
+        },
+        {
+          text: 'not always',
+          role: '否定与频率',
+        },
+        {
+          text: ' late.',
+        },
+      ],
+    },
+    {
+      label: '每次都未准备好',
+      sentence: 'She is always unprepared when we need to leave.',
+      analysis: ['每次该出发时都没准备好。'],
+      segments: [
+        {
+          text: 'She is ',
+        },
+        {
+          text: 'always unprepared',
+          role: '频率与状态',
+        },
+        {
+          text: ' when we need to leave.',
+        },
+      ],
+    },
+    {
+      label: '从不迟到',
+      sentence: 'She is never late.',
+      analysis: ['从不迟到。'],
+      segments: [
+        {
+          text: 'She is ',
+        },
+        {
+          text: 'never',
+          role: '频率状语',
+        },
+        {
+          text: ' late.',
+        },
+      ],
+    },
+  ]}
+/>
 
-not always successful 不等于 never successful：前者不保证曾经成功，只否定每次都成功；后者表示从未成功。
+not always successful 仅否定「每次都成功」，不保证曾经成功；never successful 表示「从未成功」。两者不等价。
 
 ### 分句评价与时间状态
 
 **句子副词**（Sentence Adverb）评价整个分句时，可置句首、句中或句末。
 
-- **Fortunately**, no one was hurt. / No one was hurt, **fortunately**.
-- She will **probably** come tomorrow.
-- He answered **honestly**. 修饰回答方式；**Honestly**, I don't know. 标明说话人的表达态度。
+<EnglishExamples
+  title="分句评价与动作方式"
+  items={[
+    {
+      label: '句首评价',
+      sentence: 'Fortunately, no one was hurt.',
+      segments: [
+        {
+          text: 'Fortunately',
+          role: '分句评价',
+        },
+        {
+          text: ', no one was hurt.',
+        },
+      ],
+    },
+    {
+      label: '句末评价',
+      sentence: 'No one was hurt, fortunately.',
+      segments: [
+        {
+          text: 'No one was hurt, ',
+        },
+        {
+          text: 'fortunately',
+          role: '分句评价',
+        },
+        {
+          text: '.',
+        },
+      ],
+    },
+    {
+      label: '判断可能性',
+      sentence: 'She will probably come tomorrow.',
+      segments: [
+        {
+          text: 'She will ',
+        },
+        {
+          text: 'probably',
+          role: '判断副词',
+        },
+        {
+          text: ' come tomorrow.',
+        },
+      ],
+    },
+    {
+      label: '回答方式',
+      sentence: 'He answered honestly.',
+      analysis: ['修饰回答方式。'],
+      segments: [
+        {
+          text: 'He answered ',
+        },
+        {
+          text: 'honestly',
+          role: '方式状语',
+        },
+        {
+          text: '.',
+        },
+      ],
+    },
+    {
+      label: '说话人的态度',
+      sentence: "Honestly, I don't know.",
+      analysis: ['标明说话人的表达态度。'],
+      segments: [
+        {
+          text: 'Honestly',
+          role: '话语态度',
+        },
+        {
+          text: ", I don't know.",
+        },
+      ],
+    },
+  ]}
+/>
 
 already、yet、still 表达事件与预期、参照时刻的关系，不是某一种时态的专属标志。
 
-- **already**：比预期早或截至某时已发生，如 She has **already** left.
-- **yet**：截至某时是否发生，常见于疑问、否定，如 Has she left **yet**? / She hasn't left **yet**.
-- **still**：某状态继续存在，如 She is **still** here. / She **still** hasn't replied.
+- **already**：比预期早或截至某时已发生。
+- **yet**：截至某时是否发生，常见于疑问、否定。
+- **still**：某状态继续存在。
+
+<EnglishExamples
+  title="already、yet 与 still"
+  items={[
+    {
+      label: 'already',
+      sentence: 'She has already left.',
+      analysis: ['比预期早或截至某时已发生。'],
+      segments: [
+        {
+          text: 'She has ',
+        },
+        {
+          text: 'already',
+          role: '时间状态副词',
+        },
+        {
+          text: ' left.',
+        },
+      ],
+    },
+    {
+      label: 'yet 的询问',
+      sentence: 'Has she left yet?',
+      analysis: ['截至某时是否发生。'],
+      segments: [
+        {
+          text: 'Has she left ',
+        },
+        {
+          text: 'yet',
+          role: '时间状态副词',
+        },
+        {
+          text: '?',
+        },
+      ],
+    },
+    {
+      label: 'yet 的否定',
+      sentence: "She hasn't left yet.",
+      analysis: ['截至某时还没有发生。'],
+      segments: [
+        {
+          text: "She hasn't left ",
+        },
+        {
+          text: 'yet',
+          role: '时间状态副词',
+        },
+        {
+          text: '.',
+        },
+      ],
+    },
+    {
+      label: 'still 的持续状态',
+      sentence: 'She is still here.',
+      analysis: ['某状态继续存在。'],
+      segments: [
+        {
+          text: 'She is ',
+        },
+        {
+          text: 'still',
+          role: '持续状态副词',
+        },
+        {
+          text: ' here.',
+        },
+      ],
+    },
+    {
+      label: 'still 与否定',
+      sentence: "She still hasn't replied.",
+      analysis: ['没有回复的状态仍在继续。'],
+      segments: [
+        {
+          text: 'She ',
+        },
+        {
+          text: 'still',
+          role: '持续状态副词',
+        },
+        {
+          text: " hasn't replied.",
+        },
+      ],
+    },
+  ]}
+/>
 
 ## 比较级与最高级
 
@@ -205,10 +940,113 @@ already、yet、still 表达事件与预期、参照时刻的关系，不是某�
 
 后缀的拼写条件见 [形容词](/docs/note/english/grammar/parts-of-speech/adjectives)；它们仅用于已选择后缀的词项。
 
-- **差级**：He runs **faster than I do**.
-- **同级**：She works **as hard as her brother**.
-- **最高级**：He runs **the fastest of all**. / He runs **fastest of all**. the 常可省。
-- **递进**：She answered **more and more confidently**.
-- **关联比较**：**The more carefully** you read, **the fewer mistakes** you make. 这里的 the 属于关联结构，不能按普通副词最高级的规则删去。
+<EnglishExamples
+  title="副词的比较结构"
+  items={[
+    {
+      label: '差级',
+      sentence: 'He runs faster than I do.',
+      segments: [
+        {
+          text: 'He runs ',
+        },
+        {
+          text: 'faster than I do',
+          role: '差级比较',
+        },
+        {
+          text: '.',
+        },
+      ],
+    },
+    {
+      label: '同级',
+      sentence: 'She works as hard as her brother.',
+      segments: [
+        {
+          text: 'She works ',
+        },
+        {
+          text: 'as hard as her brother',
+          role: '同级比较',
+        },
+        {
+          text: '.',
+        },
+      ],
+    },
+    {
+      label: '最高级保留 the',
+      sentence: 'He runs the fastest of all.',
+      analysis: ['副词最高级前的 the 常可省。'],
+      segments: [
+        {
+          text: 'He runs ',
+        },
+        {
+          text: 'the fastest of all',
+          role: '最高级结构',
+        },
+        {
+          text: '.',
+        },
+      ],
+    },
+    {
+      label: '最高级省去 the',
+      sentence: 'He runs fastest of all.',
+      analysis: ['副词最高级前的 the 常可省。'],
+      segments: [
+        {
+          text: 'He runs ',
+        },
+        {
+          text: 'fastest of all',
+          role: '最高级结构',
+        },
+        {
+          text: '.',
+        },
+      ],
+    },
+    {
+      label: '递进',
+      sentence: 'She answered more and more confidently.',
+      segments: [
+        {
+          text: 'She answered ',
+        },
+        {
+          text: 'more and more confidently',
+          role: '程度递进',
+        },
+        {
+          text: '.',
+        },
+      ],
+    },
+    {
+      label: '关联比较',
+      sentence: 'The more carefully you read, the fewer mistakes you make.',
+      analysis: ['这里的 the 属于关联结构，不能按普通副词最高级的规则删去。'],
+      segments: [
+        {
+          text: 'The more carefully',
+          role: '关联比较',
+        },
+        {
+          text: ' you read, ',
+        },
+        {
+          text: 'the fewer mistakes',
+          role: '关联比较',
+        },
+        {
+          text: ' you make.',
+        },
+      ],
+    },
+  ]}
+/>
 
 比较对象对应、程度修饰和倍数表达见 [形容词](/docs/note/english/grammar/parts-of-speech/adjectives)。

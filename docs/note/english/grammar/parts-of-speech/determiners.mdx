@@ -17,9 +17,106 @@ summary: 限定词在名词短语中表达指称、所属和数量，涵盖冠�
 - **修饰成分**：描写性质、类别等特征。
 - **中心名词**：确定所谈论的事物类别。
 
-- **the old house**：the 限定，old 修饰，house 是中心名词。
-- **my two English books**：my two 限定，English 修饰，books 是中心名词。
-- **some useful information**：some 限定，useful 修饰，information 是中心名词。
+<EnglishExamples
+  title="名词短语的 3 个部分"
+  items={[
+    {
+      sentence: 'the old house',
+      translation: '那座老房子',
+      label: '冠词 + 修饰语 + 中心词',
+      analysis: ['the 限定，old 修饰，house 是中心名词。'],
+      segments: [
+        {
+          text: 'the',
+          role: '限定词',
+          note: '冠词，确定指称。',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'old',
+          role: '修饰语',
+          note: '形容词，描写新旧。',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'house',
+          role: '中心词',
+          note: '单数可数名词。',
+        },
+      ],
+    },
+    {
+      sentence: 'my two English books',
+      translation: '我的 2 本英语书',
+      label: '所属、数量与修饰',
+      analysis: ['my two 限定，English 修饰，books 是中心名词。'],
+      segments: [
+        {
+          text: 'my',
+          role: '限定词',
+          note: '物主限定成分。',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'two',
+          role: '限定词',
+          note: '数量限定成分。',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'English',
+          role: '修饰语',
+          note: '描写类别。',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'books',
+          role: '中心词',
+          note: '复数名词。',
+        },
+      ],
+    },
+    {
+      sentence: 'some useful information',
+      translation: '一些有用的信息',
+      label: '不可数名词短语',
+      analysis: ['some 限定，useful 修饰，information 是中心名词。'],
+      segments: [
+        {
+          text: 'some',
+          role: '限定词',
+          note: '表达不定数量。',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'useful',
+          role: '修饰语',
+          note: '形容词，描写性质。',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'information',
+          role: '中心词',
+          note: '当前义项不可数。',
+        },
+      ],
+    },
+  ]}
+/>
 
 传统教学将相关用法分散在冠词、代词、数词等章节。本页采用限定功能的分类口径，不把这一口径与传统词类清单直接合并。
 
@@ -45,19 +142,110 @@ summary: 限定词在名词短语中表达指称、所属和数量，涵盖冠�
 
 限定用法与独立指称分别判断：
 
-- this book 中 this 限定 book；「**This** is mine.」中 this 独立指称，传统教学称指示代词。
-- 「This is **my book**.」使用物主限定词；「This book is **mine**.」使用能独立指称的物主形式。
+- this book 中 this 限定 book。
 - the teacher's book 中，the 限定 teacher；整个 the teacher's 再限定 book，两者不争用同一中心位置。
+
+<EnglishExamples
+  title="限定用法与独立指称"
+  items={[
+    {
+      sentence: 'This is mine.',
+      label: '独立指称',
+      analysis: ['this 独立指称，传统教学称指示代词。'],
+      segments: [
+        {
+          text: 'This',
+          role: '主语',
+          note: '独立使用的指示形式。',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'is',
+          role: '谓语动词',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'mine',
+          role: '表语',
+          note: '独立物主形式。',
+        },
+        {
+          text: '.',
+        },
+      ],
+    },
+    {
+      sentence: 'This is my book.',
+      label: '物主限定词',
+      analysis: ['使用物主限定词。'],
+      segments: [
+        {
+          text: 'This is ',
+        },
+        {
+          text: 'my',
+          role: '限定词',
+          note: '后接名词。',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'book',
+          role: '中心词',
+        },
+        {
+          text: '.',
+        },
+      ],
+    },
+    {
+      sentence: 'This book is mine.',
+      label: '独立物主形式',
+      analysis: ['使用能独立指称的物主形式。'],
+      segments: [
+        {
+          text: 'This book',
+          role: '主语',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'is',
+          role: '谓语动词',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'mine',
+          role: '表语',
+          note: '不再直接接被替代的名词。',
+        },
+        {
+          text: '.',
+        },
+      ],
+    },
+  ]}
+/>
 
 ### 名词类型
 
-1. **单数可数名词**：可用 a/an、this/that、each、every、either、neither 等直接限定，如 a book、each student；
-2. **复数可数名词**：可用 these/those、many、several、few、both 等，如 several books、both students；
-3. **不可数名词**：可用 much、little、a little 等，如 much information、a little water；
-4. **复数可数或不可数名词**：均可配 some、any、all、most、enough 等，如 some books、some water。
+按当前义项把名词分为 3 类：
 
-上述列表列出对应搭配，不互相排除所有成员：
+- **单数可数名词**：可用 a/an、this/that、each、every、either、neither 等直接限定，如 a book、each student。
+- **复数可数名词**：可用 these/those、many、several、few、both 等，如 several books、both students。
+- **不可数名词**：可用 much、little、a little 等，如 much information、a little water。
 
+跨类型的搭配另行判断：
+
+- **复数可数或不可数名词**：均可配 some、any、all、most、enough 等，如 some books、some water。
 - **the、物主限定词**：可配不同数和可数性的名词，如 the book、the books、the water。
 - **this/that**：可配单数可数或不可数名词；**these/those** 配复数。
 - **every 的逐个分配义**：直接接单数，如 every student；表达周期时接数量词组，如 every two weeks。
@@ -72,8 +260,83 @@ summary: 限定词在名词短语中表达指称、所属和数量，涵盖冠�
 
 词形选择与谓语一致分别判断：
 
-- 「**Each** of the students **has** a book.」：主语中心 each 是单数。
-- 「**Both** of the students **have** a book.」：both 表示两者，采用复数。
+<EnglishExamples
+  title="量词与谓语一致"
+  items={[
+    {
+      sentence: 'Each of the students has a book.',
+      label: '逐个分配',
+      analysis: ['主语中心 each 是单数。'],
+      segments: [
+        {
+          text: 'Each',
+          role: '主语中心',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'of the students',
+          role: '范围',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'has',
+          role: '谓语动词',
+          note: '与 each 一致。',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'a book',
+          role: '宾语',
+        },
+        {
+          text: '.',
+        },
+      ],
+    },
+    {
+      sentence: 'Both of the students have a book.',
+      label: '两者都',
+      analysis: ['both 表示两者，采用复数。'],
+      segments: [
+        {
+          text: 'Both',
+          role: '主语中心',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'of the students',
+          role: '范围',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'have',
+          role: '谓语动词',
+          note: '与 both 一致。',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'a book',
+          role: '宾语',
+        },
+        {
+          text: '.',
+        },
+      ],
+    },
+  ]}
+/>
 
 其他组合见 [主谓一致](/docs/note/english/grammar/sentences/subject-verb-agreement)。
 
@@ -111,8 +374,86 @@ summary: 限定词在名词短语中表达指称、所属和数量，涵盖冠�
 - **each**：each student 或 each of them。
 - **all、both、half + 已限定名词短语**：of 可省，如 all (of) the books、both (of) my parents、half (of) the cake。
 - **all、both、half 在人称代词前**：接 of + 宾格，如 all of them、both of us、half of it。
-- **all + 指示代词**：of 可省，如「**All (of) this** has to go.」。
-- **all、both 在人称宾格代词后**：不用 of，如「I thanked **them all**.」「The teacher invited **us both**.」。这是另一种排列，不是省去前置结构中的 of。
+
+<EnglishExamples
+  title="量词与代词的位置"
+  items={[
+    {
+      sentence: 'All (of) this has to go.',
+      label: '指示代词前',
+      analysis: ['all + 指示代词时，of 可省。'],
+      segments: [
+        {
+          text: 'All (of) this',
+          role: '主语',
+          note: '指示形式 this 前可用 all 或 all of。',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'has to go',
+          role: '谓语',
+        },
+        {
+          text: '.',
+        },
+      ],
+    },
+    {
+      sentence: 'I thanked them all.',
+      label: '宾格代词后',
+      analysis: ['all 在人称宾格代词后不用 of。', '这是另一种排列，不是省去前置结构中的 of。'],
+      segments: [
+        {
+          text: 'I thanked ',
+        },
+        {
+          text: 'them',
+          role: '宾语',
+          note: '人称宾格。',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'all',
+          role: '量词',
+          note: '位于代词之后。',
+        },
+        {
+          text: '.',
+        },
+      ],
+    },
+    {
+      sentence: 'The teacher invited us both.',
+      label: '宾格代词后',
+      analysis: ['both 在人称宾格代词后不用 of。', '这是另一种排列，不是省去前置结构中的 of。'],
+      segments: [
+        {
+          text: 'The teacher invited ',
+        },
+        {
+          text: 'us',
+          role: '宾语',
+          note: '人称宾格。',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'both',
+          role: '量词',
+          note: '位于代词之后。',
+        },
+        {
+          text: '.',
+        },
+      ],
+    },
+  ]}
+/>
 
 ## 数量与语境
 
@@ -120,12 +461,103 @@ summary: 限定词在名词短语中表达指称、所属和数量，涵盖冠�
 
 先按名词类型选择词，再按想表达的数量视角决定是否加 a：
 
-1. **复数可数名词**：
-   - few：数量少，表达接近没有或不足的否定取向，如「**Few students** understood.」。
-   - a few：确认仍有一些，如「**A few students** understood.」。
-2. **不可数名词**：
-   - little：数量少，表达接近没有或不足的否定取向，如「We have **little time**.」。
-   - a little：确认仍有一点，如「We have **a little time**.」。
+<EnglishExamples
+  title="少量的 2 种视角"
+  items={[
+    {
+      sentence: 'Few students understood.',
+      label: '复数可数：few',
+      analysis: ['数量少，表达接近没有或不足的否定取向。'],
+      segments: [
+        {
+          text: 'Few',
+          role: '限定词',
+          note: '修饰复数可数名词。',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'students',
+          role: '中心词',
+        },
+        {
+          text: ' understood.',
+        },
+      ],
+    },
+    {
+      sentence: 'A few students understood.',
+      label: '复数可数：a few',
+      analysis: ['确认仍有一些。'],
+      segments: [
+        {
+          text: 'A few',
+          role: '限定词',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'students',
+          role: '中心词',
+        },
+        {
+          text: ' understood.',
+        },
+      ],
+    },
+    {
+      sentence: 'We have little time.',
+      label: '不可数：little',
+      analysis: ['数量少，表达接近没有或不足的否定取向。'],
+      segments: [
+        {
+          text: 'We have ',
+        },
+        {
+          text: 'little',
+          role: '限定词',
+          note: '修饰不可数名词。',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'time',
+          role: '中心词',
+        },
+        {
+          text: '.',
+        },
+      ],
+    },
+    {
+      sentence: 'We have a little time.',
+      label: '不可数：a little',
+      analysis: ['确认仍有一点。'],
+      segments: [
+        {
+          text: 'We have ',
+        },
+        {
+          text: 'a little',
+          role: '限定词',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'time',
+          role: '中心词',
+        },
+        {
+          text: '.',
+        },
+      ],
+    },
+  ]}
+/>
 
 这些形式不对应固定人数或固定比例：
 
@@ -143,12 +575,131 @@ many、much 与 a lot of 的选择还涉及语体：
 
 先确定要表达的含义，再选择形式；问句或否定句的外形不足以唯一决定用词：
 
-1. **任意选择义**：用 any，表达不限于某个对象，如「Choose **any book** you like.」；可接单数可数名词；
-2. **否定范围内的存在义**：用 any，如「I don't have **any questions**.」；
-3. **不预设存在的询问或条件**：可用 any，如「Do you have **any questions**?」「If you need **any help**, call me.」；
-4. **未指明身份的单个对象**：some + 单数可数名词，如「**Some person** left a message.」，表示某个人，而不是一些人；
-5. **肯定存在的未指明数量**：some + 复数可数或不可数名词，如「I bought **some apples**.」；
-6. **提供或请求物品**：用 some 呈现拟提供或希望得到的一些，如「Would you like **some tea**?」。
+1. **任意选择义**：用 any，表达不限于某个对象；可接单数可数名词；
+2. **否定范围内的存在义**：用 any；
+3. **不预设存在的询问或条件**：可用 any；
+4. **未指明身份的单个对象**：some + 单数可数名词，表示某个人，而不是一些人；
+5. **肯定存在的未指明数量**：some + 复数可数或不可数名词；
+6. **提供或请求物品**：用 some 呈现拟提供或希望得到的一些。
+
+<EnglishExamples
+  title="some 与 any 的语境"
+  items={[
+    {
+      sentence: 'Choose any book you like.',
+      label: '任意选择',
+      segments: [
+        {
+          text: 'Choose ',
+        },
+        {
+          text: 'any book you like',
+          role: '宾语',
+          note: 'any 接单数可数名词，表示自由选择；you like 修饰 book。',
+        },
+        {
+          text: '.',
+        },
+      ],
+    },
+    {
+      sentence: "I don't have any questions.",
+      label: '否定范围内的存在义',
+      segments: [
+        {
+          text: "I don't have ",
+        },
+        {
+          text: 'any questions',
+          role: '宾语',
+        },
+        {
+          text: '.',
+        },
+      ],
+    },
+    {
+      sentence: 'Do you have any questions?',
+      label: '不预设存在的询问',
+      segments: [
+        {
+          text: 'Do you have ',
+        },
+        {
+          text: 'any questions',
+          role: '宾语',
+        },
+        {
+          text: '?',
+        },
+      ],
+    },
+    {
+      sentence: 'If you need any help, call me.',
+      label: '条件',
+      segments: [
+        {
+          text: 'If you need ',
+        },
+        {
+          text: 'any help',
+          role: '宾语',
+          note: '存在需要帮助的情况作为条件。',
+        },
+        {
+          text: ', call me.',
+        },
+      ],
+    },
+    {
+      sentence: 'Some person left a message.',
+      label: '未指明身份',
+      analysis: ['表示某个人，而不是一些人。'],
+      segments: [
+        {
+          text: 'Some person',
+          role: '主语',
+        },
+        {
+          text: ' left a message.',
+        },
+      ],
+    },
+    {
+      sentence: 'I bought some apples.',
+      label: '肯定存在的不定数量',
+      segments: [
+        {
+          text: 'I bought ',
+        },
+        {
+          text: 'some apples',
+          role: '宾语',
+        },
+        {
+          text: '.',
+        },
+      ],
+    },
+    {
+      sentence: 'Would you like some tea?',
+      label: '提供物品',
+      segments: [
+        {
+          text: 'Would you like ',
+        },
+        {
+          text: 'some tea',
+          role: '宾语',
+          note: '呈现拟提供的一些。',
+        },
+        {
+          text: '?',
+        },
+      ],
+    },
+  ]}
+/>
 
 some、any 在相同句型中可以表达不同预期。上述步骤区分含义，不把「肯定用 some，疑问否定用 any」当作机械替换规则。
 
@@ -157,15 +708,96 @@ some、any 在相同句型中可以表达不同预期。上述步骤区分含义
 设 $S$ 是当前谈论的非空学生集合，$A(x)$ 表示学生 $x$ 同意：
 
 - **not all**：否定所有人都同意，即 $\exists x\in S:\neg A(x)$。
-  - 「**Not all students** agreed.」表示至少一人未同意。
   - 结构本身不保证有人同意；语境可以暗示有部分人同意。
 - **no / none**：每个人都未同意，即 $\forall x\in S:\neg A(x)$。
-  - 「**No students** agreed.」「**None of the students** agreed.」表示同意人数为零。
+
+<EnglishExamples
+  title="部分否定与全部否定"
+  items={[
+    {
+      sentence: 'Not all students agreed.',
+      label: '否定全称',
+      analysis: ['表示至少 1 人未同意。', '结构本身不保证有人同意；语境可以暗示有部分人同意。'],
+      segments: [
+        {
+          text: 'Not all students',
+          role: '主语',
+          note: '否定所有人都满足。',
+        },
+        {
+          text: ' agreed.',
+        },
+      ],
+    },
+    {
+      sentence: 'No students agreed.',
+      label: '全部否定',
+      analysis: ['表示同意人数为零。'],
+      segments: [
+        {
+          text: 'No students',
+          role: '主语',
+        },
+        {
+          text: ' agreed.',
+        },
+      ],
+    },
+    {
+      sentence: 'None of the students agreed.',
+      label: '全部否定',
+      analysis: ['表示同意人数为零。'],
+      segments: [
+        {
+          text: 'None of the students',
+          role: '主语',
+        },
+        {
+          text: ' agreed.',
+        },
+      ],
+    },
+  ]}
+/>
 
 两者不能互换：
 
-- **not all the answers are correct**：并非全部正确。
-- **all the answers are wrong**：全部错误。
+<EnglishExamples
+  title="答案范围中的全称否定"
+  items={[
+    {
+      label: '否定全称',
+      sentence: 'Not all the answers are correct.',
+      analysis: ['并非全部正确。'],
+      segments: [
+        {
+          text: 'Not all the answers',
+          role: '主语范围',
+          note: '否定全部正确，不保证有正确答案。',
+        },
+        {
+          text: ' are correct.',
+        },
+      ],
+    },
+    {
+      label: '全部错误',
+      sentence: 'All the answers are wrong.',
+      analysis: ['全部错误。'],
+      segments: [
+        {
+          text: 'All the answers',
+          role: '主语',
+          note: '范围覆盖全部答案。',
+        },
+        {
+          text: ' are wrong.',
+        },
+      ],
+    },
+  ]}
+/>
+
 - **not both**：否定两者同时满足，不必表示两者都不满足。
 - **neither**：表达两者均不满足。
 

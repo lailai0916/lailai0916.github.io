@@ -1,7 +1,7 @@
 ---
 title: 省略
 description: 本文讲解英语省略与替代的结构条件，辨析助动词保留、从句缩约和常见歧义。
-summary: 省略先检查构式许可，再检查上下文能否恢复所需关系；可理解并不允许任意删词。共享限定词、并列成分、口语应答、助动词后的动词短语和保留 to 的不定式分别有各自条件。状语从句缩约按固定无人称表达、主语照应及剩余谓语形式分支；关系代词省略先区分从句类型，再检查主语、宾语和介词位置。替代用 so、not、do so 或 one 承接内容，与不说出成分不同。比较省略还需明确比较对象，避免主语与宾语两种读法混淆。
+summary: 省略先检查构式许可，再检查上下文能否恢复所需关系；可理解并不允许任意删词。共享限定词、并列成分、口语应答、助动词后的动词短语和保留 to 的不定式分别有各自条件。状语从句缩约按固定无人称表达、主语照应及剩余谓语形式分支；关系代词省略先区分从句类型，再检查主语、宾语和介词位置。替代用 so、not、do so 或 one 承接内容，与不说出成分不同。比较省略还需明确比较对象，避免主语与宾语 2 种读法混淆。
 ---
 
 ## 参考资料
@@ -14,8 +14,23 @@ summary: 省略先检查构式许可，再检查上下文能否恢复所需关�
 
 **省略**（Ellipsis）是在特定结构和语境中，不说出仍能被理解的成分。括号中标出的内容表示可还原的部分。
 
-- She sang and (she) played the piano.（她唱歌并弹钢琴。）
-- "Can you swim?" "Yes, I can (swim)."（「你会游泳吗？」「会。」）
+<EnglishExamples
+  title="省略与可还原内容"
+  items={[
+    {
+      label: '共享主语',
+      sentence: 'She sang and played the piano.',
+      translation: '她唱歌并弹钢琴。',
+      analysis: ['可还原为「She sang and she played the piano.」。'],
+    },
+    {
+      label: '应答省略',
+      sentence: '"Can you swim?" "Yes, I can."',
+      translation: '「你会游泳吗？」「会。」',
+      analysis: ['应答中省去了已知的 swim，可还原为「Yes, I can swim.」。'],
+    },
+  ]}
+/>
 
 判断省略时，依次检查：
 
@@ -31,12 +46,38 @@ summary: 省略先检查构式许可，再检查上下文能否恢复所需关�
 
 有些教学材料把零冠词或共享限定词也列入省略。分析时仍要识别它们本来的结构条件。
 
-- **职位或身份作补语，且该职位用法允许零冠词**：They appointed her **chair** of the committee. 不能扩展为所有独一无二名词都省 the。
-- **并列名词受同一个限定词限定**：**The boys and girls** were ready. 可共享 the，也可按语境分别限定。
-- **同一个人兼有两种身份**：She is **a teacher and writer**. 句中 she 指同一人，teacher 与 writer 共用 a。
-- **分别引入两个人**：**A teacher and a writer** arrived. 在相应语境中分别引入两人，冠词和一致关系共同帮助判断。
+- **职位或身份作补语，且该职位用法允许零冠词**：按对应的职位用法判断。
+- **并列名词受同一个限定词限定**：可共享限定词，也可按语境分别限定。
+- **同一个人兼有 2 种身份**：可在相应并列结构中共享不定冠词。
+- **分别引入 2 个人**：冠词与一致关系共同帮助判断，仍须结合语境。
 
-共享冠词不等于两个名词必然指同一个对象，重复冠词也不能脱离上下文单独充当人数公式。**The president has arrived**. 中 president 作主语中心词，不能因职位独一无二就删去 the。详见 [冠词](/docs/note/english/grammar/parts-of-speech/articles)。
+<EnglishExamples
+  title="限定词共享与零冠词"
+  items={[
+    {
+      label: '职位补语',
+      sentence: 'They appointed her chair of the committee.',
+      analysis: ['该职位用法允许零冠词；不能扩展为所有独一无二名词都省 the。'],
+    },
+    {
+      label: '共享限定词',
+      sentence: 'The boys and girls were ready.',
+      analysis: ['并列名词可共享 the，也可按语境分别限定。'],
+    },
+    {
+      label: '同一个人的身份',
+      sentence: 'She is a teacher and writer.',
+      analysis: ['句中 she 指同一人，teacher 与 writer 共用 a。'],
+    },
+    {
+      label: '分别引入 2 人',
+      sentence: 'A teacher and a writer arrived.',
+      analysis: ['在相应语境中分别引入 2 人，冠词和一致关系共同帮助判断。'],
+    },
+  ]}
+/>
+
+共享冠词不等于 2 个名词必然指同一个对象，重复冠词也不能脱离上下文单独充当人数公式。**The president has arrived**. 中 president 作主语中心词，不能因职位独一无二就删去 the。详见 [冠词](/docs/note/english/grammar/parts-of-speech/articles)。
 
 **She entered, book in hand**.（她走了进来，手里拿着书。）中的 book in hand 是简练的独立结构，可与 with a book in her hand 对照理解；但不能据此在所有 with 结构中任意删去 with、冠词或物主限定词。相关结构见 [独立主格](/docs/note/english/grammar/sentences/absolute-constructions)。
 
@@ -44,9 +85,34 @@ summary: 省略先检查构式许可，再检查上下文能否恢复所需关�
 
 时间表达中，有些介词可选，有些名词短语本身就能作时间状语，应分开判断。
 
-- **that day 等可带可不带介词的时间表达**：We met **(on) that day**.
-- **last、next、this、every 开头的常见时间名词短语**：本身可作时间状语，如 **We met last week.**，不补写 in last week。
-- **表示持续时长的相应肯定结构**：We waited **(for) two hours**. 中 for 可省；不能从此推导其他动词搭配中的介词也能省。
+- **that day 等可带可不带介词的时间表达**：按具体结构选择。
+- **last、next、this、every 开头的常见时间名词短语**：本身可作时间状语。
+- **表示持续时长的相应肯定结构**：for 可省，但不能推广到其他动词搭配。
+
+<EnglishExamples
+  title="时间表达中的介词条件"
+  items={[
+    {
+      label: 'that day',
+      sentence: 'We met that day.',
+      analysis: ['也可保留 on，写作「We met on that day.」。'],
+    },
+    {
+      label: 'last week',
+      sentence: 'We met last week.',
+      analysis: [
+        'last、next、this、every 开头的常见时间名词短语本身可作时间状语，不补写 in last week。',
+      ],
+    },
+    {
+      label: '持续时长',
+      sentence: 'We waited two hours.',
+      analysis: [
+        '相应肯定结构中也可保留 for，写作「We waited for two hours.」；不能从此推导其他动词搭配中的介词也能省。',
+      ],
+    },
+  ]}
+/>
 
 **be busy doing**、**spend time doing** 是常用搭配，不能由此推出所有 doing 前的介词都可省。例如 be interested **in** learning 中的 in 通常要保留。动名词或分词的具体分析也不能仅靠「有没有省掉一个介词」决定。
 
@@ -58,10 +124,31 @@ summary: 省略先检查构式许可，再检查上下文能否恢复所需关�
 
 熟悉的现场情境可以支持简短表达，尤其常见于非正式口语。
 
-- **现场询问准备状态**：Are you ready? → **Ready?**
-- **现场询问是否需要某物**：Do you want some coffee? → **Want some coffee?**
-- **道歉**：I am sorry. → **Sorry.**
-- **非正式祝愿**：I hope you enjoy it. → **Hope you enjoy it.**
+<EnglishExamples
+  title="现场情境中的简短表达"
+  items={[
+    {
+      label: '询问准备状态',
+      sentence: 'Ready?',
+      analysis: ['完整表达为「Are you ready?」，现场情境支持简短询问。'],
+    },
+    {
+      label: '询问是否需要某物',
+      sentence: 'Want some coffee?',
+      analysis: ['完整表达为「Do you want some coffee?」，现场情境支持简短询问。'],
+    },
+    {
+      label: '道歉',
+      sentence: 'Sorry.',
+      analysis: ['完整表达为「I am sorry.」，现场情境支持简短道歉。'],
+    },
+    {
+      label: '非正式祝愿',
+      sentence: 'Hope you enjoy it.',
+      analysis: ['完整表达为「I hope you enjoy it.」，非正式语境可省去 I。'],
+    },
+  ]}
+/>
 
 这些形式不能推广成「任何句子都能省主语或助动词」。正式考试写作中，独立陈述句通常保留完整主语和谓语。
 
@@ -69,8 +156,23 @@ summary: 省略先检查构式许可，再检查上下文能否恢复所需关�
 
 问答中的已知信息常不重复。
 
-- "Who broke the window?" "**Tom** (broke the window)."（打破窗户的是 Tom。）
-- "Are you tired?" "**A little** (tired)."（有点累。）
+<EnglishExamples
+  title="问答中的已知信息"
+  items={[
+    {
+      label: '省去已知谓语',
+      sentence: '"Who broke the window?" "Tom."',
+      translation: '打破窗户的是 Tom。',
+      analysis: ['应答可还原为「Tom broke the window.」。'],
+    },
+    {
+      label: '省去已知状态词',
+      sentence: '"Are you tired?" "A little."',
+      translation: '有点累。',
+      analysis: ['应答中理解的是 a little tired。'],
+    },
+  ]}
+/>
 
 祈使句通常不出现主语 you，如 **Close the door**.（关门。）这是祈使句的常规结构，不必把它理解为任意陈述句删除主语。强调或区分对象时也能明说 you：**You stay here**.（你留在这里。）
 
@@ -80,21 +182,140 @@ summary: 省略先检查构式许可，再检查上下文能否恢复所需关�
 
 并列的谓语或其他成分可以共享主语、宾语等，不必重复相同词语。
 
-- He **came in and sat down**.（他走进来坐下。）两个谓语共享主语 he。
-- She **bought and read the book**.（她买了这本书并读完了。）两个动词共享宾语 the book。
-- I can remember his face but **cannot remember his name**.（我记得他的脸，却记不得他的名字。）后半部分共享主语 I。
-- The news **made Tom happy but Lily sad**.（这消息让 Tom 高兴，却让 Lily 难过。）并列部分分别保留宾语与宾语补语，共享主语和 made。
+<EnglishExamples
+  title="并列结构的共享成分"
+  items={[
+    {
+      label: '共享主语',
+      sentence: 'He came in and sat down.',
+      translation: '他走进来坐下。',
+      analysis: ['2 个谓语共享主语 he。'],
+      segments: [
+        {
+          text: 'He',
+          role: '共享主语',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'came in and sat down',
+          role: '并列谓语',
+        },
+        {
+          text: '.',
+        },
+      ],
+    },
+    {
+      label: '共享宾语',
+      sentence: 'She bought and read the book.',
+      translation: '她买了这本书并读完了。',
+      analysis: ['2 个动词共享宾语 the book。'],
+      segments: [
+        {
+          text: 'She ',
+        },
+        {
+          text: 'bought and read',
+          role: '并列动词',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'the book',
+          role: '共享宾语',
+        },
+        {
+          text: '.',
+        },
+      ],
+    },
+    {
+      label: '后半共享主语',
+      sentence: 'I can remember his face but cannot remember his name.',
+      translation: '我记得他的脸，却记不得他的名字。',
+      analysis: ['后半部分共享主语 I。'],
+    },
+    {
+      label: '共享主语和动词',
+      sentence: 'The news made Tom happy but Lily sad.',
+      translation: '这消息让 Tom 高兴，却让 Lily 难过。',
+      analysis: ['并列部分分别保留宾语与宾语补语，共享主语和 made。'],
+      segments: [
+        {
+          text: 'The news',
+          role: '共享主语',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'made',
+          role: '共享动词',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'Tom',
+          role: '宾语',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'happy',
+          role: '宾语补足语',
+        },
+        {
+          text: ' but ',
+        },
+        {
+          text: 'Lily',
+          role: '宾语',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'sad',
+          role: '宾语补足语',
+        },
+        {
+          text: '.',
+        },
+      ],
+    },
+  ]}
+/>
 
 主语改变时，要明确标出新的主语：**He came in and she sat down**.（他走进来，她坐下。）不能删 she 后仍声称动作由她完成。
 
-共享宾语也受搭配限制，两个动词需要能按当前结构接同一个成分。不能仅因中文都能接同一个词，就忽略英语的介词要求。
+共享宾语也受搭配限制，2 个动词需要能按当前结构接同一个成分。不能仅因中文都能接同一个词，就忽略英语的介词要求。
 
 ### 空缺结构
 
 后一并列分句有新的主语、宾语等，但与前句相同的谓语有时可以省去。
 
-- Tom bought **books**, and Lily (bought) **magazines**.（Tom 买了书，Lily 买了杂志。）
-- Some students chose **French**, and others (chose) **German**.（一些学生选了法语，另一些选了德语。）
+<EnglishExamples
+  title="并列分句的谓语空缺"
+  items={[
+    {
+      label: '省去 bought',
+      sentence: 'Tom bought books, and Lily magazines.',
+      translation: 'Tom 买了书，Lily 买了杂志。',
+      analysis: ['后一分句省去与前句相同的 bought。'],
+    },
+    {
+      label: '省去 chose',
+      sentence: 'Some students chose French, and others German.',
+      translation: '一些学生选了法语，另一些选了德语。',
+      analysis: ['后一分句省去与前句相同的 chose。'],
+    },
+  ]}
+/>
 
 这种 **空缺**（Gapping）依赖并列结构和对应关系，不是允许在任意独立句中删除谓语。
 
@@ -104,20 +325,116 @@ summary: 省略先检查构式许可，再检查上下文能否恢复所需关�
 
 省略已知动词短语时，先确定需要保留的时态、情态、否定与一致信息，再选择承接形式。不能因为动作相同，就把这些信息一起删除。
 
-1. **有助动词、情态动词或 be 可承接**：保留所需助动词，省去上下文已知的后续部分。
-   - "Can you swim?" "Yes, I **can** (swim)."
-   - "Has she finished?" "Yes, she **has** (finished)."
-   - "Is he working?" "Yes, he **is** (working)."
-2. **一般现在或过去的实义动词没有现成助动词**：用 do、does、did 承接，并保留时态和主谓一致。
-   - "Did Tom leave?" "Yes, he **did** (leave)." did 承担过去时，被省略的动词短语以原形 leave 还原；对应的过去事件可另表述为 He left.
+1. **有助动词、情态动词或 be 可承接**：保留所需助动词，省去上下文已知的后续部分；
+2. **一般现在或过去的实义动词没有现成助动词**：用 do、does、did 承接，并保留时态和主谓一致；
 3. **承接动作但改变情态**：动作相同不要求照抄原助动词。
-   - "You should apologise." "I **will** (apologise)." should 与 will 保留各自的情态意义。
+
+<EnglishExamples
+  title="助动词保留的应答"
+  items={[
+    {
+      label: '保留 can',
+      sentence: '"Can you swim?" "Yes, I can."',
+      analysis: ['省去上下文已知的 swim。'],
+    },
+    {
+      label: '保留 has',
+      sentence: '"Has she finished?" "Yes, she has."',
+      analysis: ['省去上下文已知的 finished。'],
+    },
+    {
+      label: '保留 is',
+      sentence: '"Is he working?" "Yes, he is."',
+      analysis: ['省去上下文已知的 working。'],
+    },
+    {
+      label: '用 did 承接',
+      sentence: '"Did Tom leave?" "Yes, he did."',
+      analysis: [
+        'did 承担过去时，被省略的动词短语以原形 leave 还原；对应的过去事件可另表述为「He left.」。',
+      ],
+    },
+    {
+      label: '改变情态',
+      sentence: '"You should apologise." "I will."',
+      analysis: ['省去已知的 apologise，should 与 will 保留各自的情态意义。'],
+    },
+  ]}
+/>
 
 同样的承接也出现在并列结构中。
 
-- I like coffee, and Lily **does too**.（我喜欢咖啡，Lily 也喜欢。）
-- I cannot swim, and **neither can she**.（我不会游泳，她也不会。）
-- I do not like coffee, and she does not **either**.（我不喜欢咖啡，她也不喜欢。）否定和助动词保留，either 放在句末。
+<EnglishExamples
+  title="并列结构中的动词短语省略"
+  items={[
+    {
+      label: '肯定承接',
+      sentence: 'I like coffee, and Lily does too.',
+      translation: '我喜欢咖啡，Lily 也喜欢。',
+      segments: [
+        {
+          text: 'I like coffee, and Lily ',
+        },
+        {
+          text: 'does',
+          role: '保留助动词',
+        },
+        {
+          text: ' too.',
+        },
+      ],
+    },
+    {
+      label: 'neither 否定承接',
+      sentence: 'I cannot swim, and neither can she.',
+      translation: '我不会游泳，她也不会。',
+      segments: [
+        {
+          text: 'I cannot swim, and ',
+        },
+        {
+          text: 'neither',
+          role: '否定承接',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'can',
+          role: '保留情态动词',
+        },
+        {
+          text: ' she.',
+        },
+      ],
+    },
+    {
+      label: 'either 否定承接',
+      sentence: 'I do not like coffee, and she does not either.',
+      translation: '我不喜欢咖啡，她也不喜欢。',
+      analysis: ['否定和助动词保留，either 放在句末。'],
+      segments: [
+        {
+          text: 'I do not like coffee, and she ',
+        },
+        {
+          text: 'does not',
+          role: '保留助动词与否定',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'either',
+          role: '句末承接词',
+        },
+        {
+          text: '.',
+        },
+      ],
+    },
+  ]}
+/>
 
 so、neither、nor 的语序详见 [倒装](/docs/note/english/grammar/sentences/inversion)。否定含义必须保留：I can 与 I cannot 不能因后面的动作相同而混为一谈。
 
@@ -125,9 +442,28 @@ so、neither、nor 的语序详见 [倒装](/docs/note/english/grammar/sentences
 
 不定式内容已知时，可以省去 **to 后面的动词短语**，而保留 to。
 
-- "Would you like to come?" "Yes, I'd like **to** (come)."（「你想来吗？」「想。」）
-- "Would you like to join us?" "I'd love **to** (join you)." 应答时所指群体不变，人称随说话人转换，不要求逐字重复 us。
-- I did not go because I did not want **to** (go).（我没去，因为我不想去。）
+<EnglishExamples
+  title="保留 to 的不定式省略"
+  items={[
+    {
+      label: '应答中保留 to',
+      sentence: '"Would you like to come?" "Yes, I\'d like to."',
+      translation: '「你想来吗？」「想。」',
+      analysis: ['省去的动作是 come。'],
+    },
+    {
+      label: '人称随说话人转换',
+      sentence: '"Would you like to join us?" "I\'d love to."',
+      analysis: ['应答中省去 join you，所指群体不变，人称随说话人转换，不要求逐字重复 us。'],
+    },
+    {
+      label: '句内承接',
+      sentence: 'I did not go because I did not want to.',
+      translation: '我没去，因为我不想去。',
+      analysis: ['to 后省去已知的 go。'],
+    },
+  ]}
+/>
 
 这里省掉的不是一个固定的单词 do，而是整个已知动词短语。do 只是语法公式中代表动词的占位写法。
 
@@ -138,19 +474,53 @@ so、neither、nor 的语序详见 [倒装](/docs/note/english/grammar/sentences
 
 want 的部分承接结构还允许不出现 to，不能推广为所有动词都能省 to：
 
-- **肯定的 if / whenever 结构**：You can leave **whenever you want (to)**.（你想什么时候离开都可以。）/ You can join us **if you want (to)**.（你想加入我们就来。）
-- **否定的 if 结构**：标准基础表达保留 to，如 You do not have to come **if you do not want to**.
+- **肯定的 if / whenever 结构**：相应的 want 承接结构可有可无 to。
+- **否定的 if 结构**：标准基础表达保留 to。
+
+<EnglishExamples
+  title="want 后是否保留 to"
+  items={[
+    {
+      label: '肯定 whenever',
+      sentence: 'You can leave whenever you want to.',
+      translation: '你想什么时候离开都可以。',
+      analysis: ['该结构也可省去末尾 to，写作「You can leave whenever you want.」。'],
+    },
+    {
+      label: '肯定 if',
+      sentence: 'You can join us if you want to.',
+      translation: '你想加入我们就来。',
+      analysis: ['该结构也可省去末尾 to，写作「You can join us if you want.」。'],
+    },
+    {
+      label: '否定 if',
+      sentence: 'You do not have to come if you do not want to.',
+      analysis: ['标准基础表达保留末尾 to。'],
+    },
+  ]}
+/>
 
 若需要明确保留完成或 be 结构，常留下 have 或 be。
 
-- "Have you finished?" "I seem **to have**."（「你做完了吗？」「似乎做完了。」）
-- "Is he a teacher?" "He used **to be**."（「他是老师吗？」「他以前是。」）
+<EnglishExamples
+  title="明确保留 have 或 be"
+  items={[
+    {
+      label: '完成结构',
+      sentence: '"Have you finished?" "I seem to have."',
+      translation: '「你做完了吗？」「似乎做完了。」',
+    },
+    {
+      label: 'be 结构',
+      sentence: '"Is he a teacher?" "He used to be."',
+      translation: '「他是老师吗？」「他以前是。」',
+    },
+  ]}
+/>
 
 **can、must 等情态动词后原本就不带 to**。I can. 不是先把 can to swim 中的 to 删掉；can to swim 本来就不成立。
 
-同样，make somebody do 等结构中的不带 to 不定式，是动词搭配规则，不应全部归为这种上下文省略。
-
-let、make 后的相应结构通常不带 to，help 后可带也可不带，如 help me **(to) carry** it。这些是完整结构本身的选择，与 I'd like **to** 后省去已知动词短语不同。
+let、make 后的相应不定式通常不带 to，如 make somebody do；help 后可带也可不带，如 help me **(to) carry** it。这些是完整搭配的形式选择，与 I'd like **to** 后省去已知动词短语不同。
 
 ## 从句省略与缩约
 
@@ -163,15 +533,45 @@ let、make 后的相应结构通常不带 to，help 后可带也可不带，如 
 3. **相应的 be 从句**：在 when、while、if、unless、though、although、once、as、until 等允许该缩约的具体结构中，省去同指主语和 be，保留形容词、-ing 或被动分词等；
 4. **不是 be 从句**：若改成 after finishing 等非谓语结构，属于另一步结构转换，不是直接删去主语和任意谓语。
 
-- **be + 形容词**：
-  - When he was young, he lived in Hangzhou. → **When young**, he lived in Hangzhou.
-  - Although she was tired, she continued. → **Although tired**, she continued.
-  - If you are free, call me. → **If free**, call me.
-- **be + -ing**：
-  - While you are crossing the road, be careful. → **While crossing the road**, be careful.
-- **被动 be + 过去分词**：
-  - Once the form is completed, it must be signed. → **Once completed**, the form must be signed.
-  - He remained silent until he was asked. → He remained silent **until asked**.
+- **be + 形容词**：省去同指主语与 be，保留形容词。
+- **be + -ing**：省去同指主语与 be，保留 -ing。
+- **被动 be + 过去分词**：省去同指主语与 be，保留过去分词。
+
+<EnglishExamples
+  title="状语从句的缩约形式"
+  items={[
+    {
+      label: 'be + 形容词',
+      sentence: 'When young, he lived in Hangzhou.',
+      analysis: ['原句为「When he was young, he lived in Hangzhou.」。'],
+    },
+    {
+      label: 'be + 形容词',
+      sentence: 'Although tired, she continued.',
+      analysis: ['原句为「Although she was tired, she continued.」。'],
+    },
+    {
+      label: '祈使句的 you',
+      sentence: 'If free, call me.',
+      analysis: ['原句为「If you are free, call me.」。'],
+    },
+    {
+      label: 'be + -ing',
+      sentence: 'While crossing the road, be careful.',
+      analysis: ['原句为「While you are crossing the road, be careful.」。'],
+    },
+    {
+      label: '被动 be + 过去分词',
+      sentence: 'Once completed, the form must be signed.',
+      analysis: ['原句为「Once the form is completed, it must be signed.」。'],
+    },
+    {
+      label: '被动 be + 过去分词',
+      sentence: 'He remained silent until asked.',
+      analysis: ['原句为「He remained silent until he was asked.」。'],
+    },
+  ]}
+/>
 
 Once completed 的主句主语 the form 与原从句主语同指；主语照应要求指称一致，不要求前后必须重复相同单词。祈使句的隐含主语也可参与判断，例如 If free 中理解的 you 与 call me 的隐含主语相同。
 
@@ -179,21 +579,118 @@ Once completed 的主句主语 the form 与原从句主语同指；主语照应�
 
 需要防止 **悬垂修饰**（Dangling Modifier）：缩约部分的隐含主语与主句主语无法合理对应。
 
-- 不当：**While crossing the road, a car nearly hit me**. 字面上使 a car 成为 crossing the road 的默认主语，偏离原意。
-- 清楚：**While I was crossing the road, a car nearly hit me**.（我过马路时，一辆车差点撞到我。）
-- 清楚：**While crossing the road, I was nearly hit by a car**.（过马路时，我差点被车撞到。）
+<EnglishExamples
+  title="缩约从句的主语照应"
+  items={[
+    {
+      label: '不当：悬垂修饰',
+      sentence: 'While crossing the road, a car nearly hit me.',
+      analysis: ['字面上使 a car 成为 crossing the road 的默认主语，偏离原意。'],
+      segments: [
+        {
+          text: 'While crossing the road',
+          role: '缩约状语从句',
+        },
+        {
+          text: ', ',
+        },
+        {
+          text: 'a car',
+          role: '主句主语',
+        },
+        {
+          text: ' nearly hit me.',
+        },
+      ],
+    },
+    {
+      label: '清楚：保留从句主语',
+      sentence: 'While I was crossing the road, a car nearly hit me.',
+      translation: '我过马路时，一辆车差点撞到我。',
+      segments: [
+        {
+          text: 'While ',
+        },
+        {
+          text: 'I',
+          role: '从句主语',
+        },
+        {
+          text: ' was crossing the road, ',
+        },
+        {
+          text: 'a car',
+          role: '主句主语',
+        },
+        {
+          text: ' nearly hit me.',
+        },
+      ],
+    },
+    {
+      label: '清楚：调整主句主语',
+      sentence: 'While crossing the road, I was nearly hit by a car.',
+      translation: '过马路时，我差点被车撞到。',
+      analysis: ['缩约部分的隐含主语与主句主语 I 同指。'],
+      segments: [
+        {
+          text: 'While crossing the road',
+          role: '缩约状语从句',
+        },
+        {
+          text: ', ',
+        },
+        {
+          text: 'I',
+          role: '主句主语',
+        },
+        {
+          text: ' was nearly hit by a car.',
+        },
+      ],
+    },
+  ]}
+/>
 
-表达「我步行上学时被雨淋湿」时，同样有两个分支：
+表达「我步行上学时被雨淋湿」时，同样有 2 个分支：
 
-- **保留原主句主语 the rain**：While **I was walking** to school, the rain soaked me. 从句明说步行者 I。
-- **缩约步行从句**：While **walking** to school, **I** got soaked by the rain. 主句改以步行者 I 为主语。
+<EnglishExamples
+  title="步行者与主句主语"
+  items={[
+    {
+      label: '保留原主句主语 the rain',
+      sentence: 'While I was walking to school, the rain soaked me.',
+      analysis: ['从句明说步行者 I。'],
+    },
+    {
+      label: '缩约步行从句',
+      sentence: 'While walking to school, I got soaked by the rain.',
+      analysis: ['主句改以步行者 I 为主语。'],
+    },
+  ]}
+/>
 
 不能让 the rain 成为步行者，写成 While walking to school, the rain soaked me.
 
 有些固定结构以无人称 it 为理解上的主语，不受「必须同主句主语」的简单规则限制。
 
-- **If possible**, send me an email.（若可以，给我发邮件。）相当于 if it is possible。
-- **When necessary**, ask for help.（必要时寻求帮助。）相当于 when it is necessary。
+<EnglishExamples
+  title="无人称固定缩约"
+  items={[
+    {
+      label: 'if possible',
+      sentence: 'If possible, send me an email.',
+      translation: '若可以，给我发邮件。',
+      analysis: ['相当于 if it is possible。'],
+    },
+    {
+      label: 'when necessary',
+      sentence: 'When necessary, ask for help.',
+      translation: '必要时寻求帮助。',
+      analysis: ['相当于 when it is necessary。'],
+    },
+  ]}
+/>
 
 另外，**After finishing the work, she went home**.（完成工作后，她回家了。）可以与 After she finished the work... 对照，但这里涉及把限定分句改为非谓语结构，不只是机械删除主语和 be。
 
@@ -201,12 +698,12 @@ Once completed 的主句主语 the form 与原从句主语同指；主语照应�
 
 省略关系代词需要同时检查 **从句类型** 与 **关系代词的句法作用**。
 
-1. **非限制性关系从句**：保留关系词。
+1. **非限制性关系从句**：保留关系词；
    - My bike, **which I bought last year**, is broken.
 2. **限制性关系从句**：再检查关系代词的句法作用。
    - **作主语**：不能仅删除关系代词；the book **that explains the rule** 中必须保留主语位置的关系词。
    - **作动词宾语**：可省，如 the book **(that/which) I read**。
-   - **作介词宾语，介词在它前面**：不能只省关系代词，如 the person **to whom I spoke**。
+   - **作介词宾语，介词在它前面**：不能仅省关系代词，如 the person **to whom I spoke**。
    - **作介词宾语，介词留在句末**：可省，如 the person **(who/whom/that) I spoke to**。
 
 **关系代词 + be** 有时可整体缩约为修饰语。
@@ -221,8 +718,23 @@ Once completed 的主句主语 the form 与原从句主语同指；主语照应�
 
 某些动词、形容词后的陈述性内容从句，可以省略连接词 that。
 
-- I know **(that) he is right**.（我知道他是对的。）
-- I am glad **(that) you came**.（我很高兴你来了。）
+<EnglishExamples
+  title="内容从句的 that 省略"
+  items={[
+    {
+      label: '动词后',
+      sentence: 'I know he is right.',
+      translation: '我知道他是对的。',
+      analysis: ['也可保留 that，写作「I know that he is right.」。'],
+    },
+    {
+      label: '形容词后',
+      sentence: 'I am glad you came.',
+      translation: '我很高兴你来了。',
+      analysis: ['也可保留 that，写作「I am glad that you came.」。'],
+    },
+  ]}
+/>
 
 whether、if、what、why 等承载的关系或意义不能据此一并删除。**I wonder whether he will come**.（我想知道他会不会来。）不能仅删 whether 而保留同一种结构与含义。
 
@@ -232,13 +744,41 @@ that 是否保留还受位置和句式影响。主语从句位于句首时通常
 
 上下文已给出事件时，间接疑问从句有时仅保留疑问成分，省去其余已知部分。这种结构常称为 **截省**（Sluicing），与直接删除疑问词不同。
 
-- She will leave, but I do not know **when** (she will leave).（她要离开，但我不知道什么时候。）
-- Someone called, but I do not know **who** (called).（有人打了电话，但我不知道是谁。）
+<EnglishExamples
+  title="疑问残余的截省"
+  items={[
+    {
+      label: '保留 when',
+      sentence: 'She will leave, but I do not know when.',
+      translation: '她要离开，但我不知道什么时候。',
+      analysis: ['when 后省去已知的 she will leave。'],
+    },
+    {
+      label: '保留 who',
+      sentence: 'Someone called, but I do not know who.',
+      translation: '有人打了电话，但我不知道是谁。',
+      analysis: ['who 后省去已知的 called。'],
+    },
+  ]}
+/>
 
 口语应答还可仅保留条件从句，让对方从问题理解主句。
 
-- "Shall I send you the file?" "**If you'd like**."（「要我把文件发给你吗？」「你愿意的话就发吧。」）
-- "Sorry to hear that." 可理解为 "**I am** sorry to hear that."
+<EnglishExamples
+  title="由对话支持的简短表达"
+  items={[
+    {
+      label: '条件应答',
+      sentence: '"Shall I send you the file?" "If you\'d like."',
+      translation: '「要我把文件发给你吗？」「你愿意的话就发吧。」',
+    },
+    {
+      label: '省略 I am',
+      sentence: '"Sorry to hear that."',
+      analysis: ['可理解为 "I am sorry to hear that."'],
+    },
+  ]}
+/>
 
 这些简短应答由对话支持，不意味着正式段落中的 if 从句都能独立作为完整论述句。
 
@@ -248,50 +788,247 @@ that 是否保留还受位置和句式影响。主语从句位于句首时通常
 
 **替代**（Substitution）用其他形式代替已提到的词语或命题，不等于把该位置完全留空。不同语法体系对部分 do 结构的分类会有差异，使用时更应关注形式与搭配。
 
-- **省略**：She can come, but I cannot (come). 后一个 can 后没有说出已知的 come。
-- **do so 替代动作**：She promised to check it and **did so**. did so 承接 check it。
-- **so 替代命题**："Will he come?" "I think **so**." so 承接 he will come。
-- **not 替代否定命题**："Will it rain?" "I hope **not**." not 承接 it will not rain。
-- **one/ones 替代名词**：I need a pen. Do you have **one**? one 表示同类对象，不必是前面提到的同一支笔。
+<EnglishExamples
+  title="省略与替代的对照"
+  items={[
+    {
+      label: '省略已知动作',
+      sentence: 'She can come, but I cannot.',
+      analysis: ['后一个 can 后没有说出已知的 come，可还原为「I cannot come.」。'],
+      segments: [
+        {
+          text: 'She can come, but I ',
+        },
+        {
+          text: 'cannot',
+          role: '保留情态动词与否定',
+        },
+        {
+          text: '.',
+        },
+      ],
+    },
+    {
+      label: 'do so 替代动作',
+      sentence: 'She promised to check it and did so.',
+      analysis: ['did so 承接 check it。'],
+      segments: [
+        {
+          text: 'She promised to check it and ',
+        },
+        {
+          text: 'did so',
+          role: '动作替代',
+        },
+        {
+          text: '.',
+        },
+      ],
+    },
+    {
+      label: 'so 替代命题',
+      sentence: '"Will he come?" "I think so."',
+      analysis: ['so 承接 he will come。'],
+      segments: [
+        {
+          text: '"Will he come?" "I think ',
+        },
+        {
+          text: 'so',
+          role: '命题替代',
+        },
+        {
+          text: '."',
+        },
+      ],
+    },
+    {
+      label: 'not 替代否定命题',
+      sentence: '"Will it rain?" "I hope not."',
+      analysis: ['not 承接 it will not rain。'],
+      segments: [
+        {
+          text: '"Will it rain?" "I hope ',
+        },
+        {
+          text: 'not',
+          role: '否定命题替代',
+        },
+        {
+          text: '."',
+        },
+      ],
+    },
+    {
+      label: 'one 替代名词',
+      sentence: 'I need a pen. Do you have one?',
+      analysis: ['one 表示同类对象，不必是前面提到的同一支笔；复数可用 ones。'],
+      segments: [
+        {
+          text: 'I need a pen. Do you have ',
+        },
+        {
+          text: 'one',
+          role: '名词替代',
+        },
+        {
+          text: '?',
+        },
+      ],
+    },
+  ]}
+/>
 
 so/not 的选择受前面的动词搭配限制，不能把任何动词后的从句都换成 so。
 
-- 常用：I think so. / I **don't think so**.
-- 常用：I hope so. / I **hope not**.
-- 常用：I'm afraid so. / I'm afraid not.
-
-其他常见词项可分别对照肯定与否定承接：
-
-- **believe**：I believe **so**. / I **don't believe so**.
-- **suppose**：I suppose **so**. / I suppose **not**.
-- **expect**：I expect **so**. / I expect **not**.
-- **guess**：I guess **so**. / I guess **not**.
+<EnglishExamples
+  title="so 与 not 的常见词项搭配"
+  items={[
+    {
+      label: 'think',
+      sentence: "I think so. I don't think so.",
+    },
+    {
+      label: 'hope',
+      sentence: 'I hope so. I hope not.',
+    },
+    {
+      label: 'be afraid',
+      sentence: "I'm afraid so. I'm afraid not.",
+    },
+    {
+      label: 'believe',
+      sentence: "I believe so. I don't believe so.",
+    },
+    {
+      label: 'suppose',
+      sentence: 'I suppose so. I suppose not.',
+    },
+    {
+      label: 'expect',
+      sentence: 'I expect so. I expect not.',
+    },
+    {
+      label: 'guess',
+      sentence: 'I guess so. I guess not.',
+    },
+  ]}
+/>
 
 否定表达依搭配和语体选择，不能从某一个词的用法推导出所有动词都相同。
 
 I think not. 可以成立，但通常比 I don't think so. 正式；不能因 hope not 存在，就认为所有动词都同样偏好「动词 + not」。
 
-do so 常承接行动或事件，不能无条件替代所有状态谓语。He knows the answer, and I do too.（他知道答案，我也知道。）自然，但不能简单套成 I do so too 来表达同样的状态。
+do so 常承接行动或事件，不能无条件替代所有状态谓语。
+
+- **用 do 承接状态**：He knows the answer, and I do too.（他知道答案，我也知道。）
+- **不能照搬 do so**：不把这里的 I do too 换成 I do so too 来表达同样的状态。
 
 ### 比较与固定表达
 
 比较结构常省略已知内容。
 
-- She works as hard as he **does**.（她与他工作一样努力。）does 承接 works，避免重复动作。
-- This book is longer than that one **(is)**.（这本书比那本长。）
+<EnglishExamples
+  title="比较结构的动词省略"
+  items={[
+    {
+      label: 'does 承接动作',
+      sentence: 'She works as hard as he does.',
+      translation: '她与他工作一样努力。',
+      analysis: ['does 承接 works，避免重复动作。'],
+    },
+    {
+      label: '省去 is',
+      sentence: 'This book is longer than that one.',
+      translation: '这本书比那本长。',
+      analysis: ['可保留 is，写作「This book is longer than that one is.」。'],
+    },
+  ]}
+/>
 
 He is taller than **I (am)**.（他比我高。）可保留主格 I 并理解省去 am；He is taller than **me**. 也广泛用于标准英语，尤其口语。这时 than 可按介词结构分析，不能把所有 than me 都判成省略错误。正式表达需要排除争议或歧义时，可用完整的 than I am。
 
 省略可能产生多种合理解释。**She likes me more than Tom**. 可理解为她喜欢我胜过喜欢 Tom，也可能比较她与 Tom 对我的喜欢程度。需要明确时写全：
 
-- She likes me more than **she likes Tom**.
-- She likes me more than **Tom does**. 也可写全为 She likes me more than **Tom likes me**.
+<EnglishExamples
+  title="比较省略的 2 种读法"
+  items={[
+    {
+      label: '比较她喜欢的对象',
+      sentence: 'She likes me more than she likes Tom.',
+      analysis: ['写明她喜欢我胜过喜欢 Tom。'],
+      segments: [
+        {
+          text: 'She likes me more than ',
+        },
+        {
+          text: 'she likes Tom',
+          role: '完整比较分句',
+        },
+        {
+          text: '.',
+        },
+      ],
+    },
+    {
+      label: '比较喜欢我的人',
+      sentence: 'She likes me more than Tom does.',
+      analysis: [
+        '也可写全为「She likes me more than Tom likes me.」，比较她与 Tom 对我的喜欢程度。',
+      ],
+      segments: [
+        {
+          text: 'She likes me more than ',
+        },
+        {
+          text: 'Tom',
+          role: '比较分句主语',
+        },
+        {
+          text: ' ',
+        },
+        {
+          text: 'does',
+          role: '承接动词',
+        },
+        {
+          text: '.',
+        },
+      ],
+    },
+  ]}
+/>
 
 固定表达可保留精简形式，但不能由此推出一般删词规则。
 
-- There are few mistakes, **if any**.（错误即使有，也很少。）if any 可理解为 if there are any。
-- He rarely, **if ever**, complains.（他即使抱怨，也极少。）if ever 可理解为 if he ever complains。
-- **What a beautiful day!**（多么美好的一天！）可与 What a beautiful day it is! 对照。
-- **How clever!**（真聪明！）可与 How clever she is! 对照，具体说的是谁需由语境确定。
+<EnglishExamples
+  title="固定表达的可还原内容"
+  items={[
+    {
+      label: 'if any',
+      sentence: 'There are few mistakes, if any.',
+      translation: '错误即使有，也很少。',
+      analysis: ['if any 可理解为 if there are any。'],
+    },
+    {
+      label: 'if ever',
+      sentence: 'He rarely, if ever, complains.',
+      translation: '他即使抱怨，也极少。',
+      analysis: ['if ever 可理解为 if he ever complains。'],
+    },
+    {
+      label: 'what 感叹',
+      sentence: 'What a beautiful day!',
+      translation: '多么美好的一天！',
+      analysis: ['可与「What a beautiful day it is!」对照。'],
+    },
+    {
+      label: 'how 感叹',
+      sentence: 'How clever!',
+      translation: '真聪明！',
+      analysis: ['可与「How clever she is!」对照，具体说的是谁需由语境确定。'],
+    },
+  ]}
+/>
 
-**How time flies!**（时间过得真快！）本身有主语 time 和谓语 flies，不能仅因它是感叹句就认定省略了主语或谓语，也无需强行补出一个固定的 fast 才能使用。
+**How time flies!**（时间过得真快！）有主语 time 和谓语 flies，是完整的感叹句。它没有省略主语或谓语，也无需补出固定的 fast。
