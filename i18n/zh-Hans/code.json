@@ -1913,6 +1913,39 @@
   "pages.privacy.contact.template": {
     "message": "请求类型：\n相关页面或服务：\n具体说明："
   },
+  "pages.resources.title": {
+    "message": "资源"
+  },
+  "pages.resources.description": {
+    "message": "精心筛选的优质工具与平台"
+  },
+  "pages.resources.modification": {
+    "message": "精选<b>资源</b>"
+  },
+  "pages.resources.search.clear": {
+    "message": "清空搜索"
+  },
+  "pages.resources.search.placeholder": {
+    "message": "搜索资源"
+  },
+  "pages.resources.category.ariaLabel": {
+    "message": "资源分类"
+  },
+  "pages.resources.category.clear": {
+    "message": "清除分类"
+  },
+  "pages.resources.category.count": {
+    "message": "{count} 项"
+  },
+  "pages.resources.category.all": {
+    "message": "全部资源"
+  },
+  "pages.resources.datacard.items": {
+    "message": "项资源"
+  },
+  "pages.resources.search.empty": {
+    "message": "没有找到与“{query}”匹配的资源"
+  },
   "pages.settings.title": {
     "message": "设置"
   },
@@ -2035,39 +2068,6 @@
   },
   "pages.travel.datacard.countries": {
     "message": "个国家"
-  },
-  "pages.resources.title": {
-    "message": "资源"
-  },
-  "pages.resources.description": {
-    "message": "精心筛选的优质工具与平台"
-  },
-  "pages.resources.modification": {
-    "message": "精选<b>资源</b>"
-  },
-  "pages.resources.search.clear": {
-    "message": "清空搜索"
-  },
-  "pages.resources.search.placeholder": {
-    "message": "搜索资源"
-  },
-  "pages.resources.category.ariaLabel": {
-    "message": "资源分类"
-  },
-  "pages.resources.category.clear": {
-    "message": "清除分类"
-  },
-  "pages.resources.category.count": {
-    "message": "{count} 项"
-  },
-  "pages.resources.category.all": {
-    "message": "全部资源"
-  },
-  "pages.resources.datacard.items": {
-    "message": "项资源"
-  },
-  "pages.resources.search.empty": {
-    "message": "没有找到与“{query}”匹配的资源"
   },
   "components.admonition.example.title": {
     "message": "示例"
@@ -2194,14 +2194,14 @@
   "components.article.summaryLabel": {
     "message": "概述"
   },
+  "components.article.viewCount": {
+    "message": "{viewCount} 浏览"
+  },
   "components.tableOfContents.title": {
     "message": "目录"
   },
   "components.tableOfContents.progress": {
     "message": "阅读进度：{percent}%"
-  },
-  "components.article.viewCount": {
-    "message": "{viewCount} 浏览"
   },
   "components.navbar.language.ariaLabel": {
     "message": "当前语言：{currentLanguage}，切换至 {nextLanguage}"
@@ -2424,6 +2424,15 @@
   "pages.insights.retry": {
     "message": "重试"
   },
+  "pages.insights.uptime.avgPing": {
+    "message": "平均 {ping}ms"
+  },
+  "pages.insights.status.error": {
+    "message": "无法连接监控服务"
+  },
+  "pages.insights.uptime.empty": {
+    "message": "暂无监控项"
+  },
   "pages.insights.systemStatus.cores": {
     "message": "核心"
   },
@@ -2492,15 +2501,6 @@
   },
   "pages.insights.systemStatus.protocol": {
     "message": "连接类型"
-  },
-  "pages.insights.uptime.avgPing": {
-    "message": "平均 {ping}ms"
-  },
-  "pages.insights.status.error": {
-    "message": "无法连接监控服务"
-  },
-  "pages.insights.uptime.empty": {
-    "message": "暂无监控项"
   },
   "pages.travel.map.motherland": {
     "message": "祖国"
@@ -2899,6 +2899,10 @@
     "message": "标签：",
     "description": "The label alongside a tag list"
   },
+  "theme.AnnouncementBar.closeButtonAriaLabel": {
+    "message": "关闭",
+    "description": "The ARIA label for close button of announcement bar"
+  },
   "theme.admonition.caution": {
     "message": "警告",
     "description": "The default label used for the Caution admonition (:::caution)"
@@ -2922,10 +2926,6 @@
   "theme.admonition.warning": {
     "message": "注意",
     "description": "The default label used for the Warning admonition (:::warning)"
-  },
-  "theme.AnnouncementBar.closeButtonAriaLabel": {
-    "message": "关闭",
-    "description": "The ARIA label for close button of announcement bar"
   },
   "theme.blog.sidebar.navAriaLabel": {
     "message": "最近文章导航",
