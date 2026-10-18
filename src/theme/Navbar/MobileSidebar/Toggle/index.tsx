@@ -19,7 +19,7 @@ export default function MobileSidebarToggle(): ReactNode {
       className={clsx('navbar__toggle clean-btn navbar-control', styles.toggle)}
       type="button"
     >
-      <Icon icon="lucide:menu" width={20} height={20} aria-hidden="true" />
+      <Icon icon="lucide:menu" width={17} height={17} aria-hidden="true" />
     </button>
   );
 }

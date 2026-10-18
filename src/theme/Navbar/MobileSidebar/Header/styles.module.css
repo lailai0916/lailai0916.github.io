@@ -1,21 +1,24 @@
-.closeButton {
-  margin-left: 0;
-}
-
 .brand {
-  gap: var(--lk-space-2);
+  gap: var(--navbar-control-gap);
 }
 
 .brand :global(.navbar__brand) {
   flex: 1;
+  min-width: 0;
   margin-right: 0;
+}
+
+.brand :global(.navbar__title) {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .actions {
   display: none;
   flex: none;
   align-items: center;
-  gap: var(--lk-space-2);
+  gap: var(--navbar-control-gap);
 }
 @media (max-width: 375px) {
   .actions {

@@ -1,7 +1,6 @@
 @import '@lailai0916/ui/theme.css';
 @import '@lailai0916/ui/styles.css';
 @import './laikit.css';
-@import './search-icons.css';
 @import '@fontsource/inter/400.css';
 @import '@fontsource/inter/500.css';
 @import '@fontsource/inter/600.css';
@@ -67,6 +66,9 @@ html.debug-mode span {
    opaque bar + hard drop shadow. Same frosted material as the WindowBar; the
    blur, not a shadow, separates it from the content scrolling under. */
 .navbar {
+  --navbar-control-size: 32px;
+  --navbar-control-icon-size: 17px;
+  --navbar-control-gap: var(--lk-space-2);
   background-color: color-mix(in srgb, var(--ifm-navbar-background-color) 72%, transparent);
   backdrop-filter: saturate(180%) blur(20px);
   -webkit-backdrop-filter: saturate(180%) blur(20px);
@@ -82,8 +84,18 @@ html.debug-mode span {
   transition: none;
 }
 
+.navbar__items--right {
+  gap: var(--navbar-control-gap);
+}
+
+.navbar__items--right > .navbar__item {
+  padding-inline: var(--navbar-control-gap);
+}
+
 .navbar__items--right > :has(.navbar-control) {
   display: flex;
+  flex: none;
+  padding: 0;
 }
 @media (max-width: 375px) {
   .navbar__items--right > :has(.navbar-control) {
@@ -91,53 +103,96 @@ html.debug-mode span {
   }
 }
 
-@media (width > 375px) {
-  .navbar__items--right > :has(.navbar-control) + * {
-    margin-inline-start: var(--lk-space-2);
-  }
-}
-
 .navbar__items--right > :has(.DocSearch-Button) {
   position: static;
+  display: flex;
+  flex: none;
+  align-items: center;
   padding-inline: 0;
 }
 
-.navbar-control {
+.navbar-control,
+.navbar .DocSearch-Button {
+  appearance: none;
+  box-sizing: border-box;
   display: inline-flex;
   flex: none;
   align-items: center;
   justify-content: center;
-  width: 2rem;
-  height: 2rem;
+  width: var(--navbar-control-size);
+  height: var(--navbar-control-size);
+  min-width: var(--navbar-control-size);
+  min-height: var(--navbar-control-size);
+  margin: 0;
   padding: 0;
-  border: 0;
+  border: 1px solid transparent;
   border-radius: var(--lk-radius-sm);
   background: transparent;
   box-shadow: none;
-  color: var(--ifm-navbar-link-color);
+  color: var(--lk-font-color-secondary);
   cursor: pointer;
   line-height: 1;
   text-decoration: none;
   -webkit-tap-highlight-color: transparent;
   transition:
+    border-color 160ms ease,
     background-color 160ms ease,
     color 160ms ease,
     transform 160ms ease;
 }
+@media (width > 768px) {
+  .navbar .DocSearch-Button {
+    width: auto;
+    padding-inline: var(--lk-space-3);
+    border-color: var(--ifm-color-emphasis-200);
+    background: var(--ifm-card-background-color);
+    box-shadow: var(--lk-shadow-sm);
+    font-family: var(--ifm-font-family-base);
+  }
+}
 
-.navbar-control:hover {
-  background-color: var(--ifm-color-emphasis-200);
+.navbar-control:hover,
+.navbar .DocSearch-Button:hover {
+  border-color: var(--lk-color-emphasis-300);
+  background-color: var(--lk-color-emphasis-100);
   color: var(--ifm-font-color-base);
   text-decoration: none;
 }
-
-.navbar-control:active {
-  transform: scale(0.92);
+@media (width > 768px) {
+  .navbar .DocSearch-Button:hover {
+    border-color: var(--ifm-color-primary);
+    background: var(--ifm-card-background-color);
+    color: var(--lk-font-color-secondary);
+  }
 }
 
-.navbar-control:focus-visible {
+.navbar-control:active,
+.navbar .DocSearch-Button:active {
+  transform: scale(0.92);
+}
+@media (width > 768px) {
+  .navbar .DocSearch-Button:active {
+    transform: scale(0.97);
+  }
+}
+
+.navbar-control:focus-visible,
+.navbar .DocSearch-Button:focus-visible {
   outline: none;
   box-shadow: var(--lk-focus-ring);
+}
+
+.navbar-control svg,
+.navbar .DocSearch-Search-Icon {
+  flex: none;
+  width: var(--navbar-control-icon-size);
+  height: var(--navbar-control-icon-size);
+  stroke-width: 1.75;
+}
+
+.navbar-control svg [stroke-width],
+.navbar .DocSearch-Search-Icon [stroke-width] {
+  stroke-width: inherit;
 }
 
 /* Keep site preferences scoped to the navbar trigger and full search page. */
@@ -175,89 +230,34 @@ html.debug-mode span {
   --docsearch-success-color: var(--lk-color-success-soft);
 }
 
-.navbar .DocSearch-Button {
-  height: 38px;
-  padding: 0 0.75rem;
-  border-radius: var(--lk-radius-sm);
-  background: var(--ifm-card-background-color);
-  border-color: var(--ifm-color-emphasis-200);
-  box-shadow: var(--lk-shadow-md);
-  color: var(--ifm-color-emphasis-500);
-  font-family: var(--ifm-font-family-base);
-  transition:
-    background-color 160ms ease,
-    border-color 160ms ease,
-    color 160ms ease,
-    transform 160ms ease;
-}
-@media (max-width: 768px) {
-  .navbar .DocSearch-Button {
-    -webkit-tap-highlight-color: transparent;
-    flex-shrink: 0;
-    justify-content: center;
-    width: 32px;
-    height: 32px;
-    padding: 0;
-    border: none;
-    border-radius: var(--lk-radius-sm);
-    background: transparent;
-    box-shadow: none;
-    color: var(--ifm-color-emphasis-700);
-    line-height: 1;
-  }
-}
-
-.navbar .DocSearch-Button:hover {
-  background: var(--ifm-card-background-color);
-  border-color: var(--ifm-color-primary);
-  box-shadow: var(--lk-shadow-md);
-  color: var(--ifm-color-emphasis-500);
-}
-@media (max-width: 768px) {
-  .navbar .DocSearch-Button:hover {
-    background: var(--ifm-color-emphasis-200);
-    box-shadow: none;
-    color: var(--ifm-font-color-base);
-  }
-}
-
-.navbar .DocSearch-Button:active {
-  transform: scale(0.97);
-}
-@media (max-width: 768px) {
-  .navbar .DocSearch-Button:active {
-    transform: scale(0.92);
-  }
-}
-
-.navbar .DocSearch-Button:focus-visible {
-  outline: none;
-  box-shadow: var(--lk-focus-ring);
+.navbar .DocSearch-Button-Container {
+  gap: var(--lk-space-2);
 }
 
 .navbar .DocSearch-Button-Placeholder {
-  padding-inline: var(--lk-space-2) var(--lk-space-3);
+  padding: 0;
   font-size: 0.95rem;
   font-weight: 400;
 }
 
-.navbar .DocSearch-Search-Icon {
-  width: 1.05rem;
-  height: 1.05rem;
-}
-@media (max-width: 768px) {
-  .navbar .DocSearch-Search-Icon {
-    width: 17px;
-    height: 17px;
-  }
+.navbar .DocSearch-Button-Keys {
+  gap: var(--lk-space-1);
+  min-width: 0;
+  margin-inline-start: var(--lk-space-3);
 }
 
 .navbar .DocSearch-Button-Key {
+  box-sizing: border-box;
+  width: 20px;
   height: 20px;
   background: var(--ifm-card-background-color);
   border-color: var(--ifm-color-emphasis-200);
   font-family: var(--lk-font-mono);
   font-size: 0.75rem;
+}
+
+.navbar .DocSearch-Button-Key:first-child {
+  margin-inline-end: 0;
 }
 
 /* Use the framework's page marker and semantic elements rather than hashed module names. */

@@ -1,10 +1,10 @@
-import React, { type ReactNode } from 'react';
+import { memo, type ReactNode } from 'react';
 import clsx from 'clsx';
 import useIsBrowser from '@docusaurus/useIsBrowser';
 import { translate } from '@docusaurus/Translate';
-import IconLightMode from '@theme/Icon/LightMode';
-import IconDarkMode from '@theme/Icon/DarkMode';
-import IconSystemColorMode from '@theme/Icon/SystemColorMode';
+import IconLightMode from 'lucide-static/icons/sun.svg';
+import IconDarkMode from 'lucide-static/icons/moon.svg';
+import IconSystemColorMode from 'lucide-static/icons/monitor.svg';
 import type { Props } from '@theme/ColorModeToggle';
 import type { ColorMode } from '@docusaurus/theme-common';
 
@@ -128,4 +128,4 @@ function ColorModeToggle({
   );
 }
 
-export default React.memo(ColorModeToggle);
+export default memo(ColorModeToggle);

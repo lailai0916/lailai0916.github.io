@@ -1,10 +1,13 @@
 .toggle {
-  width: 2rem;
-  height: 2rem;
+  flex: none;
+  width: var(--navbar-control-size);
+  height: var(--navbar-control-size);
 }
 
 .toggleIcon {
   display: none;
+  width: var(--navbar-control-icon-size);
+  height: var(--navbar-control-icon-size);
 }
 
 [data-theme-choice='system'] .systemToggleIcon,

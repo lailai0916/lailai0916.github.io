@@ -19,10 +19,10 @@ function CloseButton() {
         message: 'Close navigation bar',
         description: 'The ARIA label for close button of mobile sidebar',
       })}
-      className={clsx('clean-btn navbar-sidebar__close navbar-control', styles.closeButton)}
+      className="clean-btn navbar-sidebar__close navbar-control"
       onClick={() => mobileSidebar.toggle()}
     >
-      <Icon icon="lucide:x" width={20} height={20} aria-hidden="true" />
+      <Icon icon="lucide:x" width={17} height={17} aria-hidden="true" />
     </button>
   );
 }
