@@ -37,27 +37,104 @@ summary: 代词的选择依次检查所指、句法功能、格和一致关系�
 
 选择形式时，依次检查 **所指 → 句法功能 → 格与数 → 谓语及回指的一致关系**。
 
-## 人称与物主形式
+## 人称、物主与反身代词
 
 ### 形式表
 
-|   人称与数   | 主格 | 宾格 | 物主限定词 |   独立物主形式   |         反身形式          |
-| :----------: | :--: | :--: | :--------: | :--------------: | :-----------------------: |
-| 第一人称单数 |  I   |  me  |     my     |       mine       |          myself           |
-| 第一人称复数 |  we  |  us  |    our     |       ours       |         ourselves         |
-| 第二人称单数 | you  | you  |    your    |      yours       |         yourself          |
-| 第二人称复数 | you  | you  |    your    |      yours       |        yourselves         |
-| 第三人称单数 |  he  | him  |    his     |       his        |          himself          |
-| 第三人称单数 | she  | her  |    her     |       hers       |          herself          |
-| 第三人称单数 |  it  |  it  |    its     | 通常不用独立形式 |          itself           |
-| 第三人称复数 | they | them |   their    |      theirs      |        themselves         |
-|  单数 they   | they | them |   their    |      theirs      | themselves；也见 themself |
+<table style={{ textAlign: 'center' }}>
+  <thead>
+    <tr>
+      <th rowSpan={2}>人称</th>
+      <th rowSpan={2}>数</th>
+      <th colSpan={2}>人称代词</th>
+      <th colSpan={2}>物主代词</th>
+      <th rowSpan={2}>反身代词</th>
+    </tr>
+    <tr>
+      <th>主格</th>
+      <th>宾格</th>
+      <th>形容词性</th>
+      <th>名词性</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td rowSpan={2}>第一人称</td>
+      <td>单数</td>
+      <td>I</td>
+      <td>me</td>
+      <td>my</td>
+      <td>mine</td>
+      <td>myself</td>
+    </tr>
+    <tr>
+      <td>复数</td>
+      <td>we</td>
+      <td>us</td>
+      <td>our</td>
+      <td>ours</td>
+      <td>ourselves</td>
+    </tr>
+    <tr>
+      <td rowSpan={2}>第二人称</td>
+      <td>单数</td>
+      <td>you</td>
+      <td>you</td>
+      <td>your</td>
+      <td>yours</td>
+      <td>yourself</td>
+    </tr>
+    <tr>
+      <td>复数</td>
+      <td>you</td>
+      <td>you</td>
+      <td>your</td>
+      <td>yours</td>
+      <td>yourselves</td>
+    </tr>
+    <tr>
+      <td rowSpan={4}>第三人称</td>
+      <td rowSpan={3}>单数</td>
+      <td>he</td>
+      <td>him</td>
+      <td>his</td>
+      <td>his</td>
+      <td>himself</td>
+    </tr>
+    <tr>
+      <td>she</td>
+      <td>her</td>
+      <td>her</td>
+      <td>hers</td>
+      <td>herself</td>
+    </tr>
+    <tr>
+      <td>it</td>
+      <td>it</td>
+      <td>its</td>
+      <td>—</td>
+      <td>itself</td>
+    </tr>
+    <tr>
+      <td>复数</td>
+      <td>they</td>
+      <td>them</td>
+      <td>their</td>
+      <td>theirs</td>
+      <td>themselves</td>
+    </tr>
+  </tbody>
+</table>
 
 - 传统的形容词性物主代词对应 **物主限定词** my、your 等。
 - 传统的名词性物主代词对应 **独立物主形式** mine、yours 等。
-- its 不能直接按 mine 的句法填入每个独立位置；可使用 its own 等完整表达，不能仅为表格对称而推广。
+- it 没有与 mine 同样通用的独立物主形式，表中用 — 表示。of its own 等结构可以成立，不能因此将单独的 its 当作 mine 使用。
 
-### 格与句法位置
+### 人称代词
+
+**人称代词**（Personal Pronoun）依照说话角色或语境指称人和事物；按当前句法功能选格。
+
+#### 格与句法位置
 
 - **普通限定分句的主语用主格**：疑问或倒装会改变表面顺序，不能按是否位于动词前判断。非限定分句另按结构选格，如 for **him** to leave。
 - **动词或介词的宾语用宾格**。
@@ -91,6 +168,7 @@ summary: 代词的选择依次检查所指、句法功能、格和一致关系�
   items={[
     {
       sentence: 'He is a teacher.',
+      translation: '他是一名老师。',
       label: '主格',
     },
     {
@@ -100,10 +178,12 @@ summary: 代词的选择依次检查所指、句法功能、格和一致关系�
     },
     {
       sentence: 'I saw him yesterday.',
+      translation: '我昨天见到他了。',
       label: '动词宾语',
     },
     {
       sentence: 'This gift is for her.',
+      translation: '这份礼物是给她的。',
       label: '介词宾语',
     },
     {
@@ -121,9 +201,12 @@ summary: 代词的选择依次检查所指、句法功能、格和一致关系�
 
 代词还需有清楚的所指。「Anna told Lisa that she had passed.」中 she 可以指 Anna 或 Lisa；需要消除歧义时重复姓名。
 
-### 单数 they
+#### 单数 they
 
 **单数 they**（Singular They）指性别未知、无需说明性别的人，或使用 they 作为代词的特定个体。
+
+- **人称与物主形式**：主格 they，宾格 them，物主限定词 their，独立物主形式 theirs。
+- **反身形式**：themselves；也见 themself，具体采用哪种形式按所用词典或体例。
 
 <EnglishExamples
   title="单数 they 的一致关系"
@@ -145,6 +228,8 @@ summary: 代词的选择依次检查所指、句法功能、格和一致关系�
 
 - 语义上只有一个人，不会使 they 采用 he/she 的动词形式；everyone 接 has 与回指用 their 可以同时成立。
 - he or she、his or her 是另一套表达，现代标准英语也广泛接受单数 they；考试给定人称或选项时，按所指定结构判断。
+
+#### it 的非指称用法
 
 it 的非指称用法按天气、时间和形式主语等结构分别识别：
 
@@ -172,7 +257,9 @@ it 的非指称用法按天气、时间和形式主语等结构分别识别：
   ]}
 />
 
-### 物主形式与缩写
+### 物主代词
+
+物主形式表达所属或关联，分为依存形式与独立形式：
 
 - **后接名词短语**：物主限定词限定后面的名词。
 - **独立使用**：独立物主形式的所指名词可从语境恢复。
@@ -234,9 +321,7 @@ it 的非指称用法按天气、时间和形式主语等结构分别识别：
 - **your / you're**：your 表所属，you're 缩写 you are。
 - **whose / who's**：whose 表所属，who's 缩写 who is 或 who has，不能把所有 's 都展开为 is。
 
-## 反身与相互关系
-
-### 反身与强调
+### 反身代词
 
 **反身代词**（Reflexive Pronoun）在局部结构中指回相应的主语；用于强调时，也可突出某人亲自做某事。
 
@@ -267,6 +352,7 @@ it 的非指称用法按天气、时间和形式主语等结构分别识别：
     },
     {
       sentence: 'I did the work myself.',
+      translation: '这活儿是我自己做的。',
       label: '亲自强调',
       analysis: ['去掉强调成分后，句子骨架仍成立。'],
     },
@@ -290,7 +376,7 @@ it 的非指称用法按天气、时间和形式主语等结构分别识别：
 - **自取或放松**：help oneself to（自取食物等）、make oneself at home（不拘束）。
 - **投入活动**：lose oneself in（沉浸于）。
 
-### 相互关系
+## 相互代词
 
 **相互代词**（Reciprocal Pronoun）each other、one another 表示成员之间的关系；现代英语中两者都可用于两者或多者。
 
@@ -379,11 +465,13 @@ one/ones 替代可数名词，one 用于单数，ones 用于复数；限定方�
   items={[
     {
       sentence: 'I lost my pen, but later found it.',
+      translation: '我丢了钢笔，但后来找到了它。',
       label: 'it：同一对象',
       analysis: ['仍是原来那支笔。'],
     },
     {
       sentence: 'I lost my pen, so I bought one.',
+      translation: '我丢了钢笔，所以又买了一支。',
       label: 'one：同类对象',
       analysis: ['引入同类中的另一支笔。'],
     },
@@ -599,11 +687,13 @@ what/which 的区别是提问时怎样设定范围，不是客观世界中的选
   items={[
     {
       sentence: 'Each of the students has a book.',
+      translation: '每个学生都有一本书。',
       label: 'each 作主语中心',
       analysis: ['单数谓语与 each 一致。'],
     },
     {
       sentence: 'The students each have a book.',
+      translation: '学生们每人都有一本书。',
       label: 'each 为附加分配成分',
       analysis: ['主语中心是复数 students。'],
     },
@@ -724,10 +814,11 @@ some/any 按数量意义及语境判断：
 
 ### 复合不定代词
 
-| 所指 |      some-       |      any-      |       every-       |      no-      |
-| :--: | :--------------: | :------------: | :----------------: | :-----------: |
-|  人  | someone/somebody | anyone/anybody | everyone/everybody | no one/nobody |
-| 事物 |    something     |    anything    |     everything     |    nothing    |
+|      结尾      |   some-   |   any-   |   every-   |   no-   |
+| :------------: | :-------: | :------: | :--------: | :-----: |
+|   -one（人）   |  someone  |  anyone  |  everyone  | no one  |
+|  -body（人）   | somebody  | anybody  | everybody  | nobody  |
+| -thing（事物） | something | anything | everything | nothing |
 
 - **作主语**：接单数谓语；回指人时可用单数 they。
 

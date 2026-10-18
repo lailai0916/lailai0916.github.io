@@ -97,11 +97,13 @@ a/an 直接限定 **单数可数义项**，常用于以下结构：
   items={[
     {
       sentence: 'I saw a dog yesterday.',
+      translation: '我昨天看见一条狗。',
       label: '引入对象',
       analysis: ['听者不必已知道是哪条狗。'],
     },
     {
       sentence: 'She is an engineer.',
+      translation: '她是一名工程师。',
       label: '职业或类别',
       analysis: ['说明她属于工程师这一类。'],
     },
@@ -143,11 +145,13 @@ the 可用于单数、复数和不可数名词。识别依据包括：
   items={[
     {
       sentence: 'I bought a book. The book is new.',
+      translation: '我买了一本书。这本书是新的。',
       label: '前文建立',
       analysis: ['The book 指刚提过的那本书。'],
     },
     {
       sentence: 'Please close the door.',
+      translation: '请把门关上。',
       label: '现场环境',
       analysis: ['现场有双方能确定的门。'],
     },
@@ -211,12 +215,16 @@ the 可用于单数、复数和不可数名词。识别依据包括：
 
 ### 专有名词
 
-名称的冠词是名称用法的一部分，按类别可整理出以下常见形式：
+下表并排整理常见名称的冠词用法，最终按具体名称及语境确定：
 
-- **带 the**：河流 the Nile、the Thames、the Yangtze River；海洋 the Pacific、the Atlantic；山脉 the Alps、the Himalayas。
-- **群岛及部分国名带 the**：the Philippines、the Netherlands、the United States、the United Kingdom。
-- **不带 the 的名称**：湖泊 Lake Victoria、Lake Tahoe；山峰 Mount Everest、Mount Tai；岛屿 Taiwan、Greenland。
-- **多数单一国名、城市、人名及街道名不带 the**：China、Japan、London、Anna、Wall Street。
+|                                     带 the                                     |            不带 the             |
+| :----------------------------------------------------------------------------: | :-----------------------------: |
+| 河流：the Nile、the Thames、the Yangtze River；海洋：the Pacific、the Atlantic | 湖泊：Lake Victoria、Lake Tahoe |
+|                         山脉：the Alps、the Himalayas                          | 山峰：Mount Everest、Mount Tai  |
+|                      群岛：the Philippines、the Maldives                       |   单座岛屿：Taiwan、Greenland   |
+|          国名：the Netherlands、the United States、the United Kingdom          |       国名：China、Japan        |
+
+London、Anna、Wall Street 这几个名称本身不带 the。
 
 机构、大学和报刊按实际用名判断。Bank of America 不因名称中有 of 就自动加 the；包含 of 不是普遍的冠词判定条件。
 
@@ -281,6 +289,7 @@ the 可用于单数、复数和不可数名词。识别依据包括：
     },
     {
       sentence: 'She is an engineer.',
+      translation: '她是一名工程师。',
       label: '普通职业分类',
       analysis: ['不能只因名词表示职业就省去 a/an。'],
     },

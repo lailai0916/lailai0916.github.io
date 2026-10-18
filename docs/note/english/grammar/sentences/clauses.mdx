@@ -26,6 +26,7 @@ summary: 从句先按内部形式区分陈述内容、嵌入疑问与关系结�
     {
       label: '保留 that',
       sentence: 'I know that he is right.',
+      translation: '我知道他是对的。',
       analysis: ['句中整个外层分句包含宾语从句；I know 只是删去宾语后的骨架。'],
     },
     {
@@ -78,7 +79,15 @@ summary: 从句先按内部形式区分陈述内容、嵌入疑问与关系结�
 
 ### 句法功能
 
-传统 **名词性从句**（Noun Clause）主要包括以下功能类型，同一种 that 内容结构可以放入不同位置。
+传统 **名词性从句**（Noun Clause）按外层功能区分以下位置：
+
+- **主语**：整个结构作外层分句的主语。
+- **宾语**：整个结构作动词的宾语。
+- **表语**：位于系动词后，说明主语。
+- **宾语补足语**：说明宾语的身份或称呼，部分融合关系结构可承担这一功能。
+- **名词内容补语**：说明名词的内容，传统教学常称 **同位语从句**。
+
+这些功能不要求采用同一种内部结构。以下用同一 that 内容结构比较其中 4 种位置：
 
 <EnglishExamples
   title="同一内容结构的不同功能"
@@ -130,6 +139,7 @@ that 内容从句还可补足形容词：I am sure **that he is right**. 中它�
     {
       label: 'whether',
       sentence: 'I wonder whether she will come.',
+      translation: '我想知道她是否会来。',
       analysis: ['whether / if 引入「是否」的选择疑问内容，自身不作主语或宾语等。'],
     },
     {
@@ -179,6 +189,7 @@ wh- 形式不一定表示疑问，须结合外层动词与语境判断。
     {
       label: '表语',
       sentence: 'This is what I want.',
+      translation: '这就是我想要的。',
       analysis: ['what 结构作表语。'],
     },
   ]}
@@ -229,6 +240,7 @@ whether 的分布比表示「是否」的 if 更广。先看从句所处位置�
     {
       label: '表语',
       sentence: 'The question is whether we should go.',
+      translation: '问题是我们是否该去。',
       analysis: ['正式基础表达在表语位置优先用 whether。'],
     },
     {
@@ -310,6 +322,7 @@ think、believe、expect 等动词后，第一人称意见表达常用主句否�
     {
       label: '形式主语',
       sentence: 'It is clear that he is right.',
+      translation: '很明显他是对的。',
       analysis: ['it 是形式主语，that 从句是后置内容。'],
     },
     {
@@ -330,6 +343,7 @@ think、believe、expect 等动词后，第一人称意见表达常用主句否�
     {
       label: '后置非限定内容',
       sentence: 'I find it difficult to understand him.',
+      translation: '我觉得理解他很难。',
       analysis: [
         'difficult 是宾补，to understand him 是后置非限定内容，不能称为限定的宾语补语从句。',
       ],
@@ -467,11 +481,64 @@ fact、news、idea、belief、hope、suggestion、doubt、opinion 等名词后�
 
 以下沿用学校语法中「关系代词作成分」的分析；部分现代体系将 that 另行分类，但仍须说明它与内部缺口的对应关系。
 
-- **主语或宾语关系**：
-  - 指人常用 **who**；指人的宾语还可用 **whom**，较正式。
-  - 指物或动物常用 **which**；限制性从句中，人或物还可用 **that**。
-- **所有关系**：**whose + 名词**，先行词可指人或物。
-- **时间、地点、原因关系**：分别按内部位置选择 **when**、**where**、**why**。where 还可指相关情境，why 的先行词通常是 reason。
+<table style={{ textAlign: 'center' }}>
+  <thead>
+    <tr>
+      <th>类别</th>
+      <th>形式</th>
+      <th>先行词所指</th>
+      <th>从句内部作用</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th rowSpan={5}>关系代词</th>
+      <td>who</td>
+      <td>人</td>
+      <td>主语或宾语</td>
+    </tr>
+    <tr>
+      <td>whom</td>
+      <td>人</td>
+      <td>宾语</td>
+    </tr>
+    <tr>
+      <td>whose</td>
+      <td>人或物</td>
+      <td>所有关系限定语</td>
+    </tr>
+    <tr>
+      <td>which</td>
+      <td>物、动物或前述事件</td>
+      <td>主语或宾语</td>
+    </tr>
+    <tr>
+      <td>that</td>
+      <td>人或物</td>
+      <td>主语或宾语</td>
+    </tr>
+    <tr>
+      <th rowSpan={3}>关系副词</th>
+      <td>when</td>
+      <td>时间</td>
+      <td>时间状语</td>
+    </tr>
+    <tr>
+      <td>where</td>
+      <td>地点或情境</td>
+      <td>地点或情境状语</td>
+    </tr>
+    <tr>
+      <td>why</td>
+      <td>原因，通常为 reason</td>
+      <td>原因状语</td>
+    </tr>
+  </tbody>
+</table>
+
+- whom 作宾语较正式，who 也可作宾语。
+- that 限于限制性关系从句，不能直接跟在前置介词后。
+- whose 限定后面的名词；整个 whose 名词短语再承担主语、宾语等功能。
 
 <EnglishExamples
   title="关系词的内部位置"
@@ -912,17 +979,20 @@ the next time、every time、the first time 等时间短语后也可接分句，
 
 ### 条件、让步与方式
 
-- **unless** 常表示「除非／若不」，但有预设和例外意味，不能在所有语境中机械替换 if...not。
-- **in case** 常表示预防，不等于 if 的条件。
-  - Take an umbrella **in case it rains**. 是为可能下雨预先带伞，不是下雨后才按条件带伞。
-- **even though** 通常承认已知事实；**even if** 假设某种条件，即便发生结论也成立。
-- **no matter wh-** 的内部语序按相应结构保持陈述次序。
-  - **No matter how tired I am**, I will finish it. 中是 how tired I am。
-- **regardless of** 后的 what 结构是介词补语，整体表达让步。
-  - **Regardless of what he says**, I will go.
-- **the way** 后可有关系修饰语，整体表达方式。
-  - Do it **the way (that/in which) I do it**.
-- **as if/as though** 可表示有现实依据的判断，也可用过去形式表示遥远假设。
+- **条件与预防**：
+  - **unless** 常表示「除非／若不」，但有预设和例外意味，不能在所有语境中机械替换 if...not。
+  - **in case** 常表示预防，不等于 if 的条件。
+    - Take an umbrella **in case it rains**. 是为可能下雨预先带伞，不是下雨后才按条件带伞。
+- **让步**：
+  - **even though** 通常承认已知事实；**even if** 假设某种条件，即便发生结论也成立。
+  - **no matter wh-** 的内部语序按相应结构保持陈述次序。
+    - **No matter how tired I am**, I will finish it. 中是 how tired I am。
+  - **regardless of** 后的 what 结构是介词补语，整体表达让步。
+    - **Regardless of what he says**, I will go.
+- **方式**：
+  - **the way** 后可有关系修饰语，整体表达方式。
+    - Do it **the way (that/in which) I do it**.
+  - **as if/as though** 可表示有现实依据的判断，也可用过去形式表示遥远假设。
 
 <EnglishExamples
   title="as if 与 if 的关系"

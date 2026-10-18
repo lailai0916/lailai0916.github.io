@@ -189,11 +189,13 @@ being 与限定词的省略均有搭配限制：
     {
       label: '伴随',
       sentence: 'He stood at the door, his hands behind his back.',
+      translation: '他站在门口，双手背在身后。',
       analysis: ['补充站在门口时双手的状态。'],
     },
     {
       label: '方式',
       sentence: 'He walked away, his head held high.',
+      translation: '他昂首离去。',
       analysis: ['补充离开时昂首的姿态。'],
     },
   ]}
@@ -308,12 +310,19 @@ with 与 without 的搭配并不完全对称，不能逐词互换，也不能把
 
 先检查有无限定谓语，再检查逻辑主语是否显式出现。
 
+|     结构     | 限定谓语 |          逻辑主语          |
+| :----------: | :------: | :------------------------: |
+| 完整状语从句 |    有    |        显式写出主语        |
+|   分词状语   |    无    | 通常由主句主语确定隐含主语 |
+|   独立主格   |    无    |      显式自带逻辑主语      |
+
 <EnglishExamples
   title="从句、分词状语与独立主格"
   items={[
     {
       label: '完整状语从句',
       sentence: 'When the rain stopped, we left.',
+      translation: '雨停后，我们就离开了。',
       analysis: ['When the rain stopped 有自己的主语及限定谓语，when 明确时间关系。'],
     },
     {

@@ -20,6 +20,16 @@ summary: 英语时态可用 4 个时间视角与一般、进行、完成、完�
 
 **时态**（Tense）和 **体**（Aspect）在严格语法描述中不是同一个概念。英语有现在、过去的形态对立，没有与过去式同类的专属将来词尾；will 还属于情态系统。不同语法体系对完成结构的分类也略有差异。
 
+把常用教学模型写成两个集合的笛卡尔积：
+
+$$
+\begin{aligned}
+  S_{\text{时间视角}} & =\set{\text{现在},\text{过去},\text{将来},\text{过去将来}} \\
+  S_{\text{体}} & =\set{\text{一般},\text{进行},\text{完成},\text{完成进行}} \\
+  S_{\text{教学组合}} & =S_{\text{时间视角}}\times S_{\text{体}}
+\end{aligned}
+$$
+
 学习阶段仍可保留 $4\times4=16$ 的时态表：它把常用的时间视角与体组合放在同一张地图上。矩阵是检索工具，不能据此认为英语仅有这些表达时间的方式，也不能把 4 行都当成同一种形态变化。
 
 ## 构造矩阵
@@ -30,12 +40,12 @@ summary: 英语时态可用 4 个时间视角与一般、进行、完成、完�
 - **动词链中的 do**：代表原形，如 will do 中 will 要求后一动词用原形。
 - **did、doing、done**：分别代表过去式、-ing 形式和过去分词；具体词汇按相应词形替换。
 
-| <span style={{ whiteSpace: 'nowrap' }}>时间视角</span> |   一般   |      进行       |      完成       |       完成进行        |
-| :----------------------------------------------------: | :------: | :-------------: | :-------------: | :-------------------: |
-|                          现在                          | do/does  | am/is/are doing |  have/has done  |  have/has been doing  |
-|                          过去                          |   did    | was/were doing  |    had done     |    had been doing     |
-|                          将来                          | will do  |  will be doing  | will have done  | will have been doing  |
-|                        过去将来                        | would do | would be doing  | would have done | would have been doing |
+| <span style={{ whiteSpace: 'nowrap' }}>时间视角</span> |             一般             |                进行                |                完成                 |                   完成进行                    |
+| :----------------------------------------------------: | :--------------------------: | :--------------------------------: | :---------------------------------: | :-------------------------------------------: |
+|                          现在                          |   一般现在时<br />do/does    |  现在进行时<br />am/is/are doing   |    现在完成时<br />have/has done    |    现在完成进行时<br />have/has been doing    |
+|                          过去                          |     一般过去时<br />did      |   过去进行时<br />was/were doing   |      过去完成时<br />had done       |      过去完成进行时<br />had been doing       |
+|                          将来                          |   一般将来时<br />will do    |   将来进行时<br />will be doing    |   将来完成时<br />will have done    |   将来完成进行时<br />will have been doing    |
+|                        过去将来                        | 一般过去将来时<br />would do | 过去将来进行时<br />would be doing | 过去将来完成时<br />would have done | 过去将来完成进行时<br />would have been doing |
 
 将来和过去将来 2 行选用 will/would 作为代表形式。be going to、现在进行表安排、一般现在表时刻表等同样能表达将来。过去将来中的 would 也不能与所有「would + 动词」结构画等号。
 
@@ -159,6 +169,12 @@ be 在现在还用 am/are，与主语配合；read 的原形读 /riːd/，过去
 - **S（Speech Time）**：当前被分析话语的说话时间。
 - **R（Reference Time）**：有关参照时间，可以由主句、时间状语或上下文给出。
 - **E（Event Time）**：动作或状态占据的时间。
+
+以 S 为参照，时间轴上的位置 t 可表示为：
+
+$$
+\overset{\text{过去}}{t<S}\longleftarrow\overset{\text{现在}}{S}\longrightarrow\overset{\text{将来}}{t>S}
+$$
 
 它们是分析工具，并非每个句子都能压缩成 3 个精确的数学点。状态、反复活动和进行过程往往占据区间，完成体也可能包含持续到参照时间的情状。
 

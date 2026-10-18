@@ -32,13 +32,13 @@ summary: 主谓一致先定位限定动词和主语中心，再识别量化、�
 
 ### 一致的形式
 
-英语的一致变化主要出现在现在时第三人称单数，以及 be、have、do 等形式中。
+一般现在时的人称和数对照如下，分别以 work、be、have、do 展示具体词形。
 
-|             主语              | 一般现在时 | be 的现在式 | have / do  |
-| :---------------------------: | :--------: | :---------: | :--------: |
-|               I               |    work    |     am      | have / do  |
-|    you、we、they、复数名词    |    work    |     are     | have / do  |
-| he、she、it、第三人称单数名词 |   works    |     is      | has / does |
+|             主语              | work  | be  | have |  do  |
+| :---------------------------: | :---: | :-: | :--: | :--: |
+|               I               | work  | am  | have |  do  |
+|    you、we、they、复数名词    | work  | are | have |  do  |
+| he、she、it、第三人称单数名词 | works | is  | has  | does |
 
 - I 是单数，但不是第三人称，不能据此给 work 加 -s。
 
@@ -180,6 +180,7 @@ some、all、most、half、plenty of、分数、百分数等，通常按所指�
     {
       label: '不可数事物',
       sentence: 'All of the water is clean.',
+      translation: '所有的水都是干净的。',
     },
     {
       label: '不可数事物',
@@ -307,6 +308,7 @@ none、either、neither 还须区分结构与语体：
     {
       label: '同一人',
       sentence: 'The singer and dancer is my sister.',
+      translation: '那位歌手兼舞者是我姐姐。',
       analysis: ['同一人兼有 2 个身份，可用单数。'],
     },
     {
@@ -350,10 +352,12 @@ none、either、neither 还须区分结构与语体：
     {
       label: 'neither...nor',
       sentence: 'Neither Tom nor his friends are here.',
+      translation: 'Tom 和他的朋友都不在。',
     },
     {
       label: 'not only...but also',
       sentence: 'Not only the students but also the teacher was present.',
+      translation: '不仅学生们在场，老师也在。',
     },
     {
       label: 'not...but...',
@@ -379,11 +383,9 @@ none、either、neither 还须区分结构与语体：
 
 - **一个总量** 常用单数。
 - **多个单位** 可用复数。
-- **算术关系** 常作为一个运算结果陈述。
-- **单个实体的专名** 通常按单数处理，即使外形为复数。
 
 <EnglishExamples
-  title="总量、多个单位与专名"
+  title="总量与多个单位"
   items={[
     {
       label: '时间总量',
@@ -405,14 +407,29 @@ none、either、neither 还须区分结构与语体：
       sentence: 'Five one-dollar bills were lying on the table.',
       translation: '桌上放着 5 张 1 美元钞票。',
     },
+  ]}
+/>
+
+### 运算与专名
+
+- **算术关系**：常作为一个运算结果陈述，用单数一致。
+- **专名**：指单个实体时通常用单数一致，即使词形为复数。
+  - 作品名，如 Great Expectations。
+  - 国家名，如 the United States。
+
+<EnglishExamples
+  title="运算与专名"
+  items={[
     {
       label: '算术关系',
       sentence: 'Two plus three is five.',
+      translation: '二加三等于五。',
       analysis: ['常作为一个运算结果陈述。'],
     },
     {
       label: '书名',
       sentence: 'Great Expectations is a novel by Dickens.',
+      translation: '《远大前程》是狄更斯的一部小说。',
       analysis: ['单个实体的专名通常按单数处理，即使外形为复数。'],
     },
     {
@@ -557,10 +574,12 @@ there be 介绍的名词短语通常位于 be 后，there 是形式上的存在�
     {
       label: '单数项在前',
       sentence: 'There is a book and two pens on the desk.',
+      translation: '桌上有一本书和两支笔。',
     },
     {
       label: '复数项在前',
       sentence: 'There are two pens and a book on the desk.',
+      translation: '桌上有两支笔和一本书。',
     },
     {
       label: '正式写作的复数形式',
@@ -629,6 +648,7 @@ there be 介绍的名词短语通常位于 be 后，there 是形式上的存在�
     {
       label: 'what：命题内容',
       sentence: 'What he said is true.',
+      translation: '他说的是真的。',
     },
     {
       label: 'what：不可数所指',

@@ -54,28 +54,33 @@ summary: 被动语态先按当前动词义项和补足结构判断能否构造�
 
 ## 适用条件
 
-### 及物结构与介词结构
+### 基本句型
 
 **有宾语是常见条件，但不是充分条件**。还要检查动词义项、固定搭配和表达是否自然。
 
-1. **没有可提升的宾语**：不及物用法不作这种转换，系动词后的表语不是宾语；
-2. **有动词宾语**：先核对该义项是否允许被动，再按单宾语、双宾语或宾语加补语的结构转换；
-3. **宾语位于介词后**：只有允许介词被动的搭配才可提升，原介词留在动词后。
+- **不及物动词**：主语 + do。没有可提升的宾语，不作这种转换。
+- **单及物动词**：先确认当前义项允许被动。
+  - 主动：主语 + do + 宾语。
+  - 被动：宾语 + be done。
+- **双及物动词**：先确认当前动词允许提升哪一个宾语。
+  - 主动：主语 + do + 间接宾语 + 直接宾语。
+  - 提升间接宾语：间接宾语 + be done + 直接宾语。
+  - 提升直接宾语：直接宾语 + be done + 介词 + 原间接宾语。介词按搭配选 to 或 for 等。
+- **复杂及物动词**：原宾语变为主语，补语保留。
+  - 主动：主语 + do + 宾语 + 宾语补语。
+  - 被动：宾语 + be done + 补语。
+- **连系动词**：主语 + do + 主语补语。表语不是宾语，不作这种转换。
+
+以上是结构模板，be 的形式还要保留原句的时间、体和情态，并与新主语一致；原施事可按需用 by 引出。
 
 <EnglishExamples
-  title="当前结构与被动适用条件"
+  title="基本句型与被动适用条件"
   items={[
     {
       label: '不及物用法',
       sentence: 'The parcel arrived.',
       translation: '包裹到了。',
       analysis: ['没有可提升的宾语，不作这种转换。'],
-    },
-    {
-      label: '系动词',
-      sentence: 'The soup tastes good.',
-      translation: '汤尝起来不错。',
-      analysis: ['表语不是宾语。'],
     },
     {
       label: '单宾语',
@@ -95,18 +100,26 @@ summary: 被动语态先按当前动词义项和补足结构判断能否构造�
       analysis: ['原句为「They considered him reliable.」。'],
     },
     {
-      label: '介词宾语',
-      sentence: 'The child was looked after.',
-      analysis: ['原句为「They looked after the child.」；原介词 after 留在动词后。'],
+      label: '系动词',
+      sentence: 'The soup tastes good.',
+      translation: '汤尝起来不错。',
+      analysis: ['表语不是宾语。'],
     },
   ]}
 />
 
-介词被动中，**介词必须保留**，不能把 looked after 简化成 looked。
+### 介词被动
+
+宾语位于介词后时，只有允许介词被动的搭配才可提升；**原介词必须保留**。
 
 <EnglishExamples
   title="介词被动保留原介词"
   items={[
+    {
+      label: 'look after',
+      sentence: 'The child was looked after.',
+      analysis: ['原句为「They looked after the child.」；原介词 after 留在动词后。'],
+    },
     {
       label: 'pay for',
       sentence: 'The trip has not been paid for.',
@@ -135,7 +148,7 @@ summary: 被动语态先按当前动词义项和补足结构判断能否构造�
   - He **resembles his father**. 表相像，这个用法不作常规被动改写。
   - This coat **fits me**. 中 fit 表尺寸适合；fit/suit 的相应适合义不作常规被动改写。
 - **价格、重量或尺寸的量值表达**：数值不是可机械提升的受事。
-  - The book **cost me 50 yuan**. 不把 50 yuan 提升为被动主语。
+  - The book **cost me 50 yuan**.（这本书花了我 50 元。）不把 50 yuan 提升为被动主语。
   - The box **weighs 10 kg**. 描述重量；不改成 The box is weighed 10 kg.
 - **同一单词的事件义项**：另按及物结构判断，不能受上一项限制连带排除。
   - They **weighed the box**. → The box **was weighed**.（箱子被称重了。）
@@ -244,7 +257,7 @@ measure 也按义项分支：
 
 转换还可能影响数量词的作用域、信息焦点与自然程度，不能假设所有主被动句在每种语境中都完全等义。
 
-### 双宾语与宾语补语
+### 双宾语
 
 双宾语句常有 2 种被动，但具体动词的接受程度不同。
 
@@ -268,7 +281,7 @@ measure 也按义项分支：
     {
       label: 'buy：for',
       sentence: 'A book was bought for Tom.',
-      translation: '她给 Tom 买了一本书。',
+      translation: '给 Tom 买了一本书。',
       analysis: ['原句：She bought Tom a book.', '用 for 保留受益者。'],
     },
   ]}
@@ -298,6 +311,8 @@ measure 也按义项分支：
     },
   ]}
 />
+
+### 宾语补语
 
 宾语补语通常保留，原来说明宾语的内容转而说明被动主语。
 
@@ -423,14 +438,14 @@ to have left 表示离开发生在「据说」所指的时间之前，不是主�
 
 ### 形式总表
 
-下表沿用教学中「4 类时间 × 4 类体」的排列。将来和过去将来分别用 will 和 would 表示；这不意味着英语有 16 种独立的动词词形。表中 done 代表可在当前义项中构成被动的动词过去分词。
+下表沿用教学中「4 类时间 × 4 类体」的排列。每格上行为主动形式，下行为对应的被动形式。将来和过去将来分别用 will 和 would 表示；这不意味着英语有 16 种独立的动词词形。do、doing、done 分别代表当前义项允许被动的实义动词的原形、-ing 形式和过去分词。
 
-|   时间   |      一般      |         进行         |         完成         |          完成进行           |
-| :------: | :------------: | :------------------: | :------------------: | :-------------------------: |
-|   现在   | am/is/are done | am/is/are being done |  have/has been done  |  have/has been being done†  |
-|   过去   | was/were done  | was/were being done  |    had been done     |    had been being done†     |
-|   将来   |  will be done  | will be being done†  | will have been done  | will have been being done†  |
-| 过去将来 | would be done  | would be being done† | would have been done | would have been being done† |
+|   时间   |                 一般                  |                        进行                         |                        完成                         |                             完成进行                             |
+| :------: | :-----------------------------------: | :-------------------------------------------------: | :-------------------------------------------------: | :--------------------------------------------------------------: |
+|   现在   | **do/does**<br />→ **am/is/are done** | am/is/are **doing**<br />→ am/is/are **being done** |   have/has **done**<br />→ have/has **been done**   |   have/has been **doing**<br />→ have/has been **being done**†   |
+|   过去   |   **did**<br />→ **was/were done**    |  was/were **doing**<br />→ was/were **being done**  |        had **done**<br />→ had **been done**        |        had been **doing**<br />→ had been **being done**†        |
+|   将来   |  will **do**<br />→ will **be done**  |  will be **doing**<br />→ will be **being done**†   |  will have **done**<br />→ will have **been done**  |  will have been **doing**<br />→ will have been **being done**†  |
+| 过去将来 | would **do**<br />→ would **be done** | would be **doing**<br />→ would be **being done**†  | would have **done**<br />→ would have **been done** | would have been **doing**<br />→ would have been **being done**† |
 
 † 表示形式可按结构推导，但通常少用，尤其完成进行被动十分笨重。**能构造不等于值得使用**，也不能把这些形式全部判为语法错误。
 
@@ -657,16 +672,19 @@ get tired 中的 tired 也可分析为形容词，表示变累；不能见到 ge
     {
       label: '系动词加表语',
       sentence: 'The cake tastes good.',
+      translation: '这蛋糕尝起来不错。',
       analysis: ['描述性质，没有「被尝好」的事件。'],
     },
     {
       label: '中动用法',
       sentence: 'This book sells well.',
+      translation: '这本书很畅销。',
       analysis: ['描述书容易卖出的性质，不交代某次售卖事件。'],
     },
     {
       label: 'need + doing',
       sentence: 'The window needs cleaning.',
+      translation: '窗户需要擦了。',
       analysis: ['在这里相当于 needs to be cleaned。'],
     },
     {

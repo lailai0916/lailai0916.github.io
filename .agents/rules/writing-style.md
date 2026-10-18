@@ -102,6 +102,16 @@ KaTeX strict warnings only in a cold build, so do not treat a cached build as su
 - **English grammar and word-formation notes prefer lists, then tables, then prose.** Use ordered
   lists for decisions and transformations, and nested lists for categories and examples. Keep
   tables for comparisons that benefit from two independent axes, such as the 16-form tense matrix.
+- **Preserve effective structures when revising notes.** Compare with the original before replacing
+  an existing classification, rule sequence or comparison. Keep useful parent categories, grouped
+  table headers and merged cells; a preference for lists does not justify flattening their hierarchy.
+  Correct a specific problem in place instead of rewriting every topic into the same template.
+  For mixed-origin notes, inspect section-level Git history and preserve deliberate refinements;
+  an AI-authored addition and an earlier carefully revised section need separate judgments.
+- **Keep form tables focused on forms.** Retain the category and feature axes that explain each
+  correspondence. Put detailed usage restrictions and variants beside the table rather than inside
+  its paradigm cells. Check that existing examples, translations and useful distinctions survive
+  a revision, alongside the usual formatting, links and rendering checks.
 - **Separate rule selection from spelling.** State the input, scope, branch order, and resulting
   form. Put lexically specified forms and language-variety choices in explicit branches; do not
   replace missing conditions with vague qualifiers or invent universal spelling rules.
