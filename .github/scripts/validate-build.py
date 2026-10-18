@@ -119,6 +119,23 @@ for locale, prefix in [("en", ""), ("zh-Hans", "/zh-Hans")]:
         file = root / f"{route}.html"
         assert archive_years(file, prefix) == years, f"Incorrect archive years in {file}"
 
+    for route in ["blog", "blog/archive", "blog/overview", "blog/moments"]:
+        file = root / f"{route}.html"
+        page = PageLinks()
+        page.feed(file.read_text())
+        for href in page.links:
+            url = urlsplit(href)
+            if url.netloc not in {"", "lailai.one"}:
+                continue
+            if not url.path.startswith(f"{prefix}/blog/"):
+                continue
+            target = build / unquote(url.path).strip("/")
+            assert (
+                target.is_file()
+                or Path(str(target) + ".html").is_file()
+                or (target / "index.html").is_file()
+            ), f"Missing blog aggregate target in {file}: {href}"
+
     overview = PageLinks()
     overview.feed((root / "blog/overview.html").read_text())
     assert overview.stat_numbers and overview.stat_numbers[0] != "0", f"Empty {locale} blog overview"

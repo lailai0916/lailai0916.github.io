@@ -10,10 +10,12 @@ import Skeleton from '@lailai0916/ui/Skeleton';
 import { useSysStatus } from '@site/src/hooks/useSysStatus';
 import { useVisitorTimeZone } from '@site/src/hooks/useVisitorTimeZone';
 import { formatInTimeZone, getDateKey, parseInstant } from '@site/src/utils/dateTime';
+import { withTimeout } from '@site/src/utils/withTimeout';
 import styles from './styles.module.css';
 
 const PING_TARGET = 'https://analytics.lailai.one/script.js';
 const PING_INTERVAL = 1000;
+const PING_TIMEOUT = 10000;
 const TICK_INTERVAL = 1000;
 const CORE_LABEL = translate({ id: 'pages.insights.systemStatus.cores', message: 'core|cores' });
 
@@ -87,33 +89,43 @@ function usePing(): number | null {
   const [val, setVal] = useState<number | null>(null);
   useEffect(() => {
     let stopped = false;
+    let controller: AbortController | null = null;
+    let id = 0;
     const measure = async () => {
+      if (stopped || document.hidden || controller) return;
+      const request = new AbortController();
+      controller = request;
       const t0 = performance.now();
       try {
-        await fetch(PING_TARGET + '?t=' + Date.now(), {
-          method: 'HEAD',
-          mode: 'no-cors',
-          cache: 'no-store',
-        });
-        if (stopped) return;
-        setVal(Math.round(performance.now() - t0));
+        await withTimeout(
+          (signal) =>
+            fetch(PING_TARGET + '?t=' + Date.now(), {
+              method: 'HEAD',
+              mode: 'no-cors',
+              cache: 'no-store',
+              signal,
+            }),
+          request.signal,
+          PING_TIMEOUT
+        );
+        if (!stopped && !request.signal.aborted) setVal(Math.round(performance.now() - t0));
       } catch {
-        if (!stopped) setVal(null);
+        if (!stopped && !request.signal.aborted) setVal(null);
+      } finally {
+        controller = null;
+        if (!stopped && !document.hidden) {
+          id = window.setTimeout(measure, PING_INTERVAL - (Date.now() % PING_INTERVAL));
+        }
       }
     };
-    // A hidden Insights page should not keep measuring request latency.
-    let id = 0;
+    // Hidden pages cancel their probe; the next probe waits for the previous one to finish.
     const stop = () => {
       window.clearTimeout(id);
-      id = 0;
-    };
-    const poll = () => {
-      void measure();
-      id = window.setTimeout(poll, PING_INTERVAL - (Date.now() % PING_INTERVAL));
+      controller?.abort();
     };
     const start = () => {
-      stop();
-      poll();
+      window.clearTimeout(id);
+      void measure();
     };
     const onVisibility = () => (document.hidden ? stop() : start());
     if (!document.hidden) start();

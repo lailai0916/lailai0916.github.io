@@ -15,6 +15,7 @@ import {
   EXPERIMENTAL_STORAGE_KEY,
   EXPERIMENTAL_EVENT,
   SETTINGS_EXPERIMENTAL_DEFAULT,
+  isExperimentalSettings,
   type ExperimentalSettings,
 } from '@site/src/hooks/useExperimentalFlag';
 import { useThemeColors } from '@site/src/hooks/useThemeColors';
@@ -346,16 +347,6 @@ function Typography() {
         />
       </div>
     </TitleCard>
-  );
-}
-
-function isExperimentalSettings(value: unknown): value is ExperimentalSettings {
-  if (value === null || typeof value !== 'object') return false;
-  const settings = value as Partial<ExperimentalSettings>;
-  return (
-    typeof settings.classicDesign === 'boolean' &&
-    typeof settings.debugMode === 'boolean' &&
-    typeof settings.grayMode === 'boolean'
   );
 }
 

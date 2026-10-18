@@ -3289,5 +3289,11 @@
   "theme.tags.tagsPageTitle": {
     "message": "标签",
     "description": "The title of the tag list page"
+  },
+  "components.searchPage.error": {
+    "message": "搜索暂时不可用，请重试。"
+  },
+  "components.searchPage.retry": {
+    "message": "重试"
   }
 }

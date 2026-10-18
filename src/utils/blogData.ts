@@ -21,30 +21,9 @@ interface BlogPostMetadataSummary {
   readingTime?: number;
 }
 
-type JsonModule<T> = { default?: T } | T;
-
-function resolveJsonModule<T extends object>(mod: JsonModule<T>): T {
-  if (typeof mod === 'object' && 'default' in mod && mod.default) {
-    return mod.default as T;
-  }
-  return mod as T;
-}
-
-/**
- * Read every BlogPostMetadata (including tags) via the `~blog` alias.
- * The official plugin writes these as `createData(hash).json` while building routes.
- */
+/** Use this build's loaded content; old per-post JSON files can survive a dev server restart. */
 export function getAllPostMetadata(): BlogPostMetadataSummary[] {
-  const list: BlogPostMetadataSummary[] = [];
-  const ctx = (require as any).context('~blog/default', false, /\.json$/);
-  ctx.keys().forEach((key: string) => {
-    const mod = ctx(key);
-    const data = resolveJsonModule<BlogPostMetadataSummary>(mod);
-    if (data && data.permalink && data.title && data.date && Array.isArray(data.tags)) {
-      list.push(data);
-    }
-  });
-  return list;
+  return require('@generated/blog-catalog/default/posts.json') as BlogPostMetadataSummary[];
 }
 
 /** The generated list-prop file can be empty outside the blog list route. */

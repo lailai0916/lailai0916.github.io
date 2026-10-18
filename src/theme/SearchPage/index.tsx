@@ -1,10 +1,9 @@
-import { type ReactNode, useEffect, useReducer, useRef, useState } from 'react';
+import { type ReactNode, useEffect, useRef, useState } from 'react';
 import clsx from 'clsx';
 
 import algoliaSearchHelper from 'algoliasearch-helper';
 import { liteClient } from 'algoliasearch/lite';
 
-import ExecutionEnvironment from '@docusaurus/ExecutionEnvironment';
 import Head from '@docusaurus/Head';
 import Link from '@docusaurus/Link';
 import { useAllDocsData } from '@docusaurus/plugin-content-docs/client';
@@ -24,6 +23,8 @@ import {
 import Layout from '@theme/Layout';
 import Heading from '@theme/Heading';
 import SearchField from '@site/src/components/SearchField';
+import Button from '@lailai0916/ui/Button';
+import DataState from '@lailai0916/ui/DataState';
 import styles from './styles.module.css';
 
 function useDocumentsFoundPlural() {
@@ -166,7 +167,7 @@ function AlgoliaLogo(): ReactNode {
   );
 }
 
-type ResultDispatcherState = {
+type SearchResultState = {
   items: {
     title: string;
     url: string;
@@ -176,16 +177,22 @@ type ResultDispatcherState = {
   query: string | null;
   totalResults: number | null;
   totalPages: number | null;
-  lastPage: number | null;
-  hasMore: boolean | null;
-  loading: boolean | null;
+  lastPage: number;
+  hasMore: boolean;
+  loading: boolean;
+  error: boolean;
 };
 
-type ResultDispatcher =
-  | { type: 'reset'; value?: undefined }
-  | { type: 'loading'; value?: undefined }
-  | { type: 'update'; value: ResultDispatcherState }
-  | { type: 'advance'; value?: undefined };
+const initialSearchResultState: SearchResultState = {
+  items: [],
+  query: null,
+  totalResults: null,
+  totalPages: null,
+  lastPage: -1,
+  hasMore: false,
+  loading: false,
+  error: false,
+};
 
 function getSearchPageTitle(searchQuery: string | undefined): string {
   return searchQuery
@@ -220,178 +227,116 @@ function SearchPageContent(): ReactNode {
   const [searchQuery, setSearchQuery] = useSearchQueryString();
   const pageTitle = getSearchPageTitle(searchQuery);
 
-  const initialSearchResultState: ResultDispatcherState = {
-    items: [],
-    query: null,
-    totalResults: null,
-    totalPages: null,
-    lastPage: null,
-    hasMore: null,
-    loading: null,
-  };
-  const [searchResultState, searchResultStateDispatcher] = useReducer(
-    (prevState: ResultDispatcherState, data: ResultDispatcher) => {
-      switch (data.type) {
-        case 'reset': {
-          return initialSearchResultState;
-        }
-        case 'loading': {
-          return { ...prevState, loading: true };
-        }
-        case 'update': {
-          if (searchQuery !== data.value.query) {
-            return prevState;
-          }
+  const [searchResultState, setSearchResultState] = useState(initialSearchResultState);
+  const requestPage = useRef<((page: number) => void) | null>(null);
+  const processUrl = useEvent(processSearchResultUrl);
+  const { searchVersions } = docsSearchVersionsHelpers;
 
-          return {
-            ...data.value,
-            items:
-              data.value.lastPage === 0
-                ? data.value.items
-                : prevState.items.concat(data.value.items),
-          };
-        }
-        case 'advance': {
-          const hasMore = prevState.totalPages! > prevState.lastPage! + 1;
+  useEffect(() => {
+    setSearchResultState({ ...initialSearchResultState, loading: Boolean(searchQuery) });
+    if (!searchQuery) return;
 
-          return {
-            ...prevState,
-            lastPage: hasMore ? prevState.lastPage! + 1 : prevState.lastPage,
-            hasMore,
-          };
-        }
-        default:
-          return prevState;
-      }
-    },
-    initialSearchResultState
-  );
+    // A helper belongs to one query and facet set; obsolete responses cannot update the page.
+    let active = true;
+    let pendingPage: number | null = null;
+    const helper = algoliaSearchHelper(liteClient(appId, apiKey), indexName, {
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+      // @ts-ignore: The helper's search options do not match the installed Algolia client types.
+      hitsPerPage: 15,
+      advancedSyntax: true,
+      disjunctiveFacets: contextualSearch ? ['language', 'docusaurus_tag'] : [],
+    });
 
-  // respect settings from the theme config for facets
-  const disjunctiveFacets = contextualSearch ? ['language', 'docusaurus_tag'] : [];
-
-  const algoliaClient = liteClient(appId, apiKey);
-  const algoliaHelper = algoliaSearchHelper(algoliaClient, indexName, {
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-    // @ts-ignore: why errors happens after upgrading to TS 5.5 ?
-    hitsPerPage: 15,
-    advancedSyntax: true,
-    disjunctiveFacets,
-  });
-
-  algoliaHelper.on('result', ({ results: { query, hits, page, nbHits, nbPages } }) => {
-    if (query === '' || !Array.isArray(hits)) {
-      searchResultStateDispatcher({ type: 'reset' });
-      return;
+    if (contextualSearch) {
+      helper.addDisjunctiveFacetRefinement('docusaurus_tag', 'default');
+      helper.addDisjunctiveFacetRefinement('language', currentLocale);
+      Object.entries(searchVersions).forEach(([pluginId, version]) => {
+        helper.addDisjunctiveFacetRefinement('docusaurus_tag', `docs-${pluginId}-${version}`);
+      });
     }
 
-    const sanitizeValue = (value: string) =>
-      value.replace(/algolia-docsearch-suggestion--highlight/g, 'search-result-match');
-
-    const items = hits.map(
-      ({
-        url,
-        _highlightResult: { hierarchy },
-        _snippetResult: snippet = {},
-      }: {
-        url: string;
-        _highlightResult: { hierarchy: { [key: string]: { value: string } } };
-        _snippetResult: { content?: { value: string } };
-      }) => {
-        const titles = Object.keys(hierarchy).map((key) => sanitizeValue(hierarchy[key]!.value));
-        return {
-          title: titles.pop()!,
-          url: processSearchResultUrl(url),
-          summary: snippet.content ? `${sanitizeValue(snippet.content.value)}...` : '',
-          breadcrumbs: titles,
-        };
-      }
-    );
-
-    searchResultStateDispatcher({
-      type: 'update',
-      value: {
-        items,
+    helper.on('result', ({ results: { query, hits, page, nbHits, nbPages } }) => {
+      if (!active || page !== pendingPage) return;
+      pendingPage = null;
+      const sanitizeValue = (value: string) =>
+        value.replace(/algolia-docsearch-suggestion--highlight/g, 'search-result-match');
+      const items = hits.map(
+        ({
+          url,
+          _highlightResult: { hierarchy },
+          _snippetResult: snippet = {},
+        }: {
+          url: string;
+          _highlightResult: { hierarchy: { [key: string]: { value: string } } };
+          _snippetResult: { content?: { value: string } };
+        }) => {
+          const titles = Object.keys(hierarchy).map((key) => sanitizeValue(hierarchy[key]!.value));
+          return {
+            title: titles.pop()!,
+            url: processUrl(url),
+            summary: snippet.content ? `${sanitizeValue(snippet.content.value)}...` : '',
+            breadcrumbs: titles,
+          };
+        }
+      );
+      setSearchResultState((previous) => ({
+        items: page === 0 ? items : previous.items.concat(items),
         query,
         totalResults: nbHits,
         totalPages: nbPages,
         lastPage: page,
         hasMore: nbPages > page + 1,
         loading: false,
-      },
+        error: false,
+      }));
     });
-  });
+    helper.on('error', () => {
+      if (!active) return;
+      pendingPage = null;
+      setSearchResultState((previous) => ({ ...previous, loading: false, error: true }));
+    });
 
+    const search = (page: number) => {
+      if (!active || pendingPage !== null) return;
+      pendingPage = page;
+      setSearchResultState((previous) => ({ ...previous, loading: true, error: false }));
+      helper.setQuery(searchQuery).setPage(page).search();
+    };
+    requestPage.current = search;
+    const timer = window.setTimeout(() => search(0), 300);
+    return () => {
+      active = false;
+      requestPage.current = null;
+      window.clearTimeout(timer);
+    };
+  }, [
+    appId,
+    apiKey,
+    indexName,
+    contextualSearch,
+    currentLocale,
+    searchQuery,
+    searchVersions,
+    processUrl,
+  ]);
+
+  const loadMore = useEvent(() => {
+    if (searchResultState.hasMore && !searchResultState.loading && !searchResultState.error) {
+      requestPage.current?.(searchResultState.lastPage + 1);
+    }
+  });
   const [loaderRef, setLoaderRef] = useState<HTMLDivElement | null>(null);
-  const prevY = useRef(0);
-  const observer = useRef(
-    ExecutionEnvironment.canUseIntersectionObserver &&
-      new IntersectionObserver(
-        (entries) => {
-          const {
-            isIntersecting,
-            boundingClientRect: { y: currentY },
-          } = entries[0]!;
-
-          if (isIntersecting && prevY.current > currentY) {
-            searchResultStateDispatcher({ type: 'advance' });
-          }
-
-          prevY.current = currentY;
-        },
-        { threshold: 1 }
-      )
-  );
-
-  const makeSearch = useEvent((page: number = 0) => {
-    if (contextualSearch) {
-      algoliaHelper.addDisjunctiveFacetRefinement('docusaurus_tag', 'default');
-      algoliaHelper.addDisjunctiveFacetRefinement('language', currentLocale);
-
-      Object.entries(docsSearchVersionsHelpers.searchVersions).forEach(
-        ([pluginId, searchVersion]) => {
-          algoliaHelper.addDisjunctiveFacetRefinement(
-            'docusaurus_tag',
-            `docs-${pluginId}-${searchVersion}`
-          );
-        }
-      );
-    }
-
-    algoliaHelper.setQuery(searchQuery).setPage(page).search();
-  });
-
   useEffect(() => {
-    if (!loaderRef) {
-      return undefined;
-    }
-    const currentObserver = observer.current;
-    if (currentObserver) {
-      currentObserver.observe(loaderRef);
-      return () => currentObserver.unobserve(loaderRef);
-    }
-    return () => true;
-  }, [loaderRef]);
-
-  useEffect(() => {
-    searchResultStateDispatcher({ type: 'reset' });
-
-    if (searchQuery) {
-      searchResultStateDispatcher({ type: 'loading' });
-
-      setTimeout(() => {
-        makeSearch();
-      }, 300);
-    }
-  }, [searchQuery, docsSearchVersionsHelpers.searchVersions, makeSearch]);
-
-  useEffect(() => {
-    if (!searchResultState.lastPage || searchResultState.lastPage === 0) {
-      return;
-    }
-
-    makeSearch(searchResultState.lastPage);
-  }, [makeSearch, searchResultState.lastPage]);
+    if (!loaderRef || typeof IntersectionObserver === 'undefined') return;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry?.isIntersecting) loadMore();
+      },
+      { threshold: 1 }
+    );
+    observer.observe(loaderRef);
+    return () => observer.disconnect();
+  }, [loaderRef, loadMore]);
 
   return (
     <Layout>
@@ -499,7 +444,7 @@ function SearchPageContent(): ReactNode {
           </main>
         ) : (
           [
-            searchQuery && !searchResultState.loading && (
+            searchQuery && !searchResultState.loading && !searchResultState.error && (
               <p key="no-results">
                 <Translate
                   id="theme.SearchPage.noResultsText"
@@ -513,7 +458,27 @@ function SearchPageContent(): ReactNode {
           ]
         )}
 
-        {searchResultState.hasMore && (
+        {searchResultState.error && (
+          <div role="alert">
+            <DataState
+              message={translate({
+                id: 'components.searchPage.error',
+                message: 'Search is unavailable. Please try again.',
+              })}
+              action={
+                <Button
+                  size="sm"
+                  variant="secondary"
+                  onClick={() => requestPage.current?.(searchResultState.lastPage + 1)}
+                >
+                  {translate({ id: 'components.searchPage.retry', message: 'Retry' })}
+                </Button>
+              }
+            />
+          </div>
+        )}
+
+        {searchResultState.hasMore && !searchResultState.error && (
           <div className={styles.loader} ref={setLoaderRef}>
             <Translate
               id="theme.SearchPage.fetchingNewResults"

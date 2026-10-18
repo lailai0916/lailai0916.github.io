@@ -16,6 +16,16 @@ export interface ExperimentalSettingsChangedDetail {
   checked: boolean;
 }
 
+export function isExperimentalSettings(value: unknown): value is ExperimentalSettings {
+  if (value === null || typeof value !== 'object') return false;
+  const settings = value as Partial<ExperimentalSettings>;
+  return (
+    typeof settings.classicDesign === 'boolean' &&
+    typeof settings.debugMode === 'boolean' &&
+    typeof settings.grayMode === 'boolean'
+  );
+}
+
 export function useExperimentalFlag(key: keyof ExperimentalSettings): boolean {
   const [value, setValue] = useState(false);
 
@@ -23,10 +33,8 @@ export function useExperimentalFlag(key: keyof ExperimentalSettings): boolean {
     const load = () => {
       try {
         const stored = localStorage.getItem(EXPERIMENTAL_STORAGE_KEY);
-        if (stored) {
-          const parsed = JSON.parse(stored) as Partial<ExperimentalSettings>;
-          setValue(Boolean(parsed[key]));
-        }
+        const parsed: unknown = stored ? JSON.parse(stored) : null;
+        setValue(isExperimentalSettings(parsed) ? parsed[key] : false);
       } catch {
         setValue(false);
       }
@@ -36,7 +44,7 @@ export function useExperimentalFlag(key: keyof ExperimentalSettings): boolean {
 
     // `storage` fires across tabs; the custom event covers same-tab updates.
     const handleStorage = (e: StorageEvent) => {
-      if (e.key === EXPERIMENTAL_STORAGE_KEY) load();
+      if (e.key === EXPERIMENTAL_STORAGE_KEY || e.key === null) load();
     };
     const handleChange = (e: Event) => {
       const { detail } = e as CustomEvent<ExperimentalSettingsChangedDetail>;

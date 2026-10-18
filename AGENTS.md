@@ -32,7 +32,7 @@ The publish job combines both artifacts, preserving hidden static files, then ru
 After syncing, it compares the bilingual public homepages, application-component and contest
 documentation, and entry assets with the exact build before deploying GitHub Pages.
 The validator also checks that archive year filters match on tag/author detail routes and that
-Overview has a nonzero post count in both locales.
+Overview has a nonzero post count in both locales. Blog aggregate links must resolve to built pages.
 It validates heading text, attributes, self-links, and both full and collapsible table-of-contents
 targets on every sitemap page.
 The root `postinstall` script backports React 18.3.1's upstream UTF-8 streaming flush fix
@@ -94,7 +94,7 @@ Don't restate their content here; extend the file itself.
 | `src/components/LaikitProvider/`        | Adapter for the external `@lailai0916/ui` design system → [`.agents/rules/components.md`](.agents/rules/components.md)                                                                                                                 |
 | `src/components/` (site widgets)        | Author-facing MDX widgets, shared `Article/` chrome, one-off `Playground/` demos → [`.agents/rules/components.md`](.agents/rules/components.md)                                                                                        |
 | `src/hooks/`, `src/utils/`, `src/data/` | Shared hooks, helpers, and static data (`resources`, `changelog`, `travel`, `moments`)                                                                                                                                                 |
-| `src/plugins/`                          | Local Docusaurus build plugins; `privacyLastUpdate` publishes each Privacy body file's latest Git commit time                                                                                                                          |
+| `src/plugins/`                          | Local Docusaurus build plugins; `privacyLastUpdate` publishes each Privacy body file's latest Git commit time; `blogCatalog` exposes only the current locale's loaded blog metadata for aggregate views                                |
 | `static/`                               | Copied verbatim to site root — `CNAME`, `.nojekyll`, verification files, image/JSON assets                                                                                                                                             |
 
 Custom-page notes: `insights` is live Umami traffic. `blog/overview` and `blog/moments` live under the blog area and reuse `BlogShared/Scaffold` (single-column blog chrome). The scaffold places Blog / Moments / Archive / Overview navigation above every blog page. `/blog/archive` offers year and tag browsing plus search; generated `/blog/tags` and `/blog/authors` list routes redirect there, while their detail routes remain available.
