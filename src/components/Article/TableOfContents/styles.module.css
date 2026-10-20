@@ -1,5 +1,6 @@
 .tocProgress {
   position: relative;
+  flex-shrink: 0;
   width: 100%;
   height: 4px;
   background: var(--ifm-color-emphasis-200);
