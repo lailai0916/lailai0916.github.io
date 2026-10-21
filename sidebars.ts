@@ -711,6 +711,7 @@ const sidebars: SidebarsConfig = {
         'project/tools/sun-path-atlas',
         'project/tools/hydrocarbon-namer',
         'project/tools/peercoach',
+        'project/tools/athletics-simulator',
       ],
     },
     {
