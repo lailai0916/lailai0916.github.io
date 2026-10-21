@@ -3,12 +3,16 @@ import type { Config } from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
 
 import { execSync } from 'child_process';
+import { simpleHash } from '@docusaurus/utils';
 import remarkMath from 'remark-math';
 import rehypeKatex from 'rehype-katex';
 import remarkProblem from './src/remark/remarkProblem';
 import { toShanghaiDateTimeString } from './src/utils/dateTime';
 
 const defaultLocale = 'en';
+const siteUrl = 'https://lailai.one';
+const storageNamespace = simpleHash(`${siteUrl}/`, 3);
+const legacyChineseStorageNamespace = simpleHash(`${siteUrl}/zh-Hans/`, 3);
 
 function safeGit(cmd: string, fallback = ''): string {
   try {
@@ -32,6 +36,25 @@ const config: Config = {
   favicon: 'img/favicon.ico',
   headTags: [
     {
+      tagName: 'script',
+      attributes: {},
+      // Migrate before Docusaurus restores the theme, avoiding a light-mode flash.
+      innerHTML: `(function () {
+  try {
+    for (const key of ['theme', 'ifm-theme-colors']) {
+      const legacyKey = key + '-${legacyChineseStorageNamespace}';
+      const sharedKey = key + '-${storageNamespace}';
+      const value = localStorage.getItem(legacyKey);
+      if (value !== null && localStorage.getItem(sharedKey) === null &&
+          (key !== 'theme' || value === 'light' || value === 'dark')) {
+        localStorage.setItem(sharedKey, value);
+      }
+      localStorage.removeItem(legacyKey);
+    }
+  } catch {}
+})();`,
+    },
+    {
       tagName: 'link',
       attributes: {
         rel: 'apple-touch-icon',
@@ -45,8 +68,11 @@ const config: Config = {
     faster: true,
   },
 
-  url: 'https://lailai.one',
+  url: siteUrl,
   baseUrl: process.env.BUILD_LOCALE === 'zh-Hans' ? '/zh-Hans/' : '/',
+
+  // Keep the root site's existing namespace when switching languages.
+  storage: { namespace: storageNamespace },
 
   organizationName: 'lailai0916',
   projectName: 'lailai0916.github.io',

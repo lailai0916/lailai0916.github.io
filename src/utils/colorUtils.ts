@@ -77,8 +77,7 @@ const legacyThemeStorage = createStorageSlot(COLOR_STORAGE_KEY, {
   persistence: 'localStorage',
 });
 
-// Docusaurus's automatic namespace includes the locale base URL. Use one fixed
-// key for the accent, migrating the current locale's old choice on first read.
+// Keep the shared accent key, migrating its older namespaced slot on first read.
 export const themeStorage = {
   get(): string | null {
     if (typeof window === 'undefined') return null;
@@ -158,16 +157,25 @@ export function readStoredColorState(isDarkTheme: boolean): ColorState {
       shades: COLOR_SHADES,
     };
   }
-  let stored: Partial<ColorState> = {};
+  let baseColor: string = defaults.primary;
   try {
-    stored = JSON.parse(themeStorage.get() ?? '{}') as Partial<ColorState>;
+    const stored: unknown = JSON.parse(themeStorage.get() ?? '{}');
+    if (
+      stored !== null &&
+      typeof stored === 'object' &&
+      'baseColor' in stored &&
+      typeof stored.baseColor === 'string'
+    ) {
+      baseColor = Color(stored.baseColor).hex().toLowerCase();
+    }
   } catch {
-    // A corrupted slot falls back to the defaults rather than breaking the page.
+    // Invalid JSON and colors must not interrupt client initialization.
   }
   return {
-    baseColor: stored.baseColor ?? defaults.primary,
+    baseColor,
     background: defaults.background,
-    shades: stored.shades ?? COLOR_SHADES,
+    // Shade definitions belong to the stylesheet contract, not user preferences.
+    shades: COLOR_SHADES,
   };
 }
 

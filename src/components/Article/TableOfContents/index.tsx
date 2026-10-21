@@ -16,17 +16,29 @@ function useScrollProgress() {
   const [progress, setProgress] = useState(0);
 
   useEffect(() => {
-    const handleScroll = () => {
+    let frame = 0;
+    const updateProgress = () => {
+      frame = 0;
       const scrollTop = window.scrollY;
       const scrollHeight =
         document.documentElement.scrollHeight - document.documentElement.clientHeight;
       setProgress(scrollHeight > 0 ? scrollTop / scrollHeight : 0);
     };
+    const scheduleUpdate = () => {
+      if (!frame) frame = window.requestAnimationFrame(updateProgress);
+    };
+    const observer = new ResizeObserver(scheduleUpdate);
+    // The body stays viewport-high; the app root grows with article content.
+    observer.observe(document.getElementById('__docusaurus') ?? document.body);
 
-    handleScroll();
-    window.addEventListener('scroll', handleScroll, { passive: true });
+    updateProgress();
+    window.addEventListener('scroll', scheduleUpdate, { passive: true });
+    window.addEventListener('resize', scheduleUpdate);
     return () => {
-      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('scroll', scheduleUpdate);
+      window.removeEventListener('resize', scheduleUpdate);
+      observer.disconnect();
+      window.cancelAnimationFrame(frame);
     };
   }, []);
 
