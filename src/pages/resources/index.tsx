@@ -53,13 +53,13 @@ const CATEGORY_MENU_LABEL = translate({
 
 function filterResourceCategories(
   categories: readonly ResourceCategoryItem[],
-  activeCategory: string,
+  activeCategory: string | null,
   searchQuery: string
 ): ResourceCategoryItem[] {
   const query = searchQuery.toLowerCase().trim();
 
   const filteredByCategory =
-    activeCategory === 'all'
+    activeCategory === null
       ? [...categories]
       : categories.filter((category) => category.id === activeCategory);
 
@@ -84,7 +84,7 @@ function SearchBar({
   onSearchChange,
   onCategoryClear,
 }: {
-  activeCategory: string;
+  activeCategory: string | null;
   searchValue: string;
   onSearchChange: (value: string) => void;
   onCategoryClear: () => void;
@@ -164,7 +164,7 @@ function CategorySection({ category }: { category: ResourceCategoryItem }) {
 }
 
 export default function Resources(): ReactNode {
-  const [activeCategory, setActiveCategory] = useState('all');
+  const [activeCategory, setActiveCategory] = useState<string | null>(null);
   const [categoriesOpen, setCategoriesOpen] = useState(false);
   const categoryDisclosureRef = useRef<HTMLButtonElement>(null);
   const [categoriesRef, categoriesHeight] = useMeasuredHeight<HTMLDivElement>(RESOURCE_LIST);
@@ -174,9 +174,8 @@ export default function Resources(): ReactNode {
     () => filterResourceCategories(RESOURCE_LIST, activeCategory, searchQuery),
     [activeCategory, searchQuery]
   );
-  const allLabel = translate({ id: 'pages.resources.category.all', message: 'All resources' });
   const selectCategory = (category: string) => {
-    setActiveCategory(category);
+    setActiveCategory((current) => (current === category ? null : category));
     setCategoriesOpen(false);
     if (categoryDisclosureRef.current?.getClientRects().length) {
       categoryDisclosureRef.current.focus();
@@ -193,7 +192,7 @@ export default function Resources(): ReactNode {
               id: 'pages.resources.datacard.items',
               message: 'Resource|Resources',
             })}
-            icon="lucide:database"
+            icon="lucide:layout-grid"
           />
         }
       >
@@ -203,10 +202,7 @@ export default function Resources(): ReactNode {
         <div className={styles.layout}>
           <aside className={styles.sidebar}>
             <Card className={styles.categoryCard}>
-              <h2 className={styles.sidebarTitle}>
-                <span>{CATEGORY_MENU_LABEL}</span>
-                <span className={styles.categoryTotal}>{RESOURCE_LIST.length}</span>
-              </h2>
+              <h2 className={styles.sidebarTitle}>{CATEGORY_MENU_LABEL}</h2>
               <button
                 ref={categoryDisclosureRef}
                 type="button"
@@ -219,9 +215,6 @@ export default function Resources(): ReactNode {
                   {RESOURCE_LIST.find((category) => category.id === activeCategory)?.title ??
                     CATEGORY_MENU_LABEL}
                 </span>
-                {activeCategory === 'all' && (
-                  <span className={styles.categoryTotal}>{RESOURCE_LIST.length}</span>
-                )}
                 <span
                   className={clsx(
                     styles.categoryChevron,
@@ -245,27 +238,9 @@ export default function Resources(): ReactNode {
                     className={styles.categories}
                     aria-label={CATEGORY_MENU_LABEL}
                   >
-                    <Hint label={allLabel}>
-                      <button
-                        type="button"
-                        className={clsx(
-                          styles.categoryButton,
-                          activeCategory === 'all' && styles.categoryActive
-                        )}
-                        aria-pressed={activeCategory === 'all'}
-                        onClick={() => selectCategory('all')}
-                      >
-                        <span className={styles.categoryIcon} aria-hidden>
-                          <Icon icon="lucide:layout-grid" />
-                        </span>
-                        <span className={styles.categoryLabel}>{allLabel}</span>
-                        <small>{total}</small>
-                      </button>
-                    </Hint>
                     {RESOURCE_LIST.map((category) => (
-                      <Hint label={category.title}>
+                      <Hint key={category.id} label={category.title}>
                         <button
-                          key={category.id}
                           type="button"
                           className={clsx(
                             styles.categoryButton,
@@ -292,7 +267,7 @@ export default function Resources(): ReactNode {
               activeCategory={activeCategory}
               searchValue={searchQuery}
               onSearchChange={setSearchQuery}
-              onCategoryClear={() => setActiveCategory('all')}
+              onCategoryClear={() => setActiveCategory(null)}
             />
             <div className={styles.results}>
               {filteredCategories.map((category) => (
