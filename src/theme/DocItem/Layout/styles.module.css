@@ -5,9 +5,23 @@
   margin-top: 0;
 }
 
+.docTocMobile > nav {
+  margin-top: 0;
+}
+
+.docTocMobile details {
+  border-top: 0;
+}
+
 @media (min-width: 997px) {
   .docTocMobile {
     display: none;
+  }
+}
+
+@media (max-width: 996px) {
+  .docItemContainer:has(.docTocMobile) {
+    --doc-top-row-margin-bottom: 0;
   }
 }
 
