@@ -9,6 +9,7 @@ import { MetaBar, type MetaBarItem } from '@site/src/theme/BlogShared/BlogUI';
 import Card from '@lailai0916/ui/Card';
 import IconBlock from '@lailai0916/ui/IconBlock';
 import ShareCard from '@lailai0916/ui/ShareCard';
+import Countdown from '@site/src/components/Countdown';
 import { getMomentList } from '@site/src/data/moments';
 import { useImageStatus } from '@lailai0916/ui';
 import { useVisitorTimeZone } from '@site/src/hooks/useVisitorTimeZone';
@@ -216,6 +217,8 @@ export default function Moments() {
           </div>
         </div>
       </Card>
+
+      <Countdown />
 
       {visibleMoments.map((moment, i) => {
         const metaItems: MetaBarItem[] = [

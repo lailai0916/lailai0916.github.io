@@ -131,19 +131,17 @@
 .panel {
   container-type: inline-size;
   width: 100%;
-  max-width: 34rem;
-  margin: 0 auto;
 }
 
 .body {
   position: relative;
-  padding: clamp(1.5rem, 6cqi, 2.25rem) clamp(1.25rem, 7cqi, 2.5rem);
+  padding: clamp(1.25rem, 4cqi, 1.5rem);
 }
 
 .countdown {
   display: flex;
   flex-direction: column;
-  gap: clamp(1.1rem, 4.5cqi, 1.6rem);
+  gap: clamp(0.875rem, 3cqi, 1.125rem);
 }
 
 .countdownHidden {
@@ -176,7 +174,7 @@
      the digits' optical center (measured ~0.1em via canvas TextMetrics). */
   position: relative;
   top: -0.1em;
-  font-size: clamp(1.6rem, 11cqi, 3.5rem);
+  font-size: clamp(1.6rem, 11cqi, 2.75rem);
   font-weight: 300;
   line-height: 1.08;
   color: var(--ifm-color-emphasis-300);
@@ -193,7 +191,7 @@
 .value {
   display: flex;
   justify-content: center;
-  font-size: clamp(1.6rem, 11cqi, 3.5rem);
+  font-size: clamp(1.6rem, 11cqi, 2.75rem);
   font-weight: 600;
   line-height: 1.08;
   font-variant-numeric: tabular-nums;
