@@ -14,7 +14,7 @@ interface MomentItem {
 
 const STATIC_MOMENTS: MomentItem[] = [
   {
-    date: '2026-10-19T00:01:00+08:00',
+    date: '2026-10-19T01:00:00+08:00',
     content: '2nd Anniversary!',
   },
   {
