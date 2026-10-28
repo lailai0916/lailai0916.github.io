@@ -19,7 +19,7 @@ import { geoContains, geoBounds } from 'd3-geo';
 import * as countries from 'i18n-iso-countries';
 import countriesEn from 'i18n-iso-countries/langs/en.json';
 import countriesZh from 'i18n-iso-countries/langs/zh.json';
-import { MeshBasicMaterial, type CanvasTexture } from 'three';
+import { MeshBasicMaterial } from 'three';
 import Button from '@lailai0916/ui/Button';
 import Tooltip from '@lailai0916/ui/Tooltip';
 import { TRAVEL_LIST } from '@site/src/data/travel';
@@ -31,8 +31,7 @@ import {
   type WorldGeoJson,
 } from '@site/src/utils/travelGlobe';
 import { withTimeout } from '@site/src/utils/withTimeout';
-import { createDotGlobe } from './createDotGlobe';
-import { createGlobeTexture } from './createGlobeTexture';
+import { createGlobeSurface } from './createGlobeSurface';
 import { createGlobePicker } from './pickGlobe';
 import LocationMarker from './LocationMarker';
 import { HOME_LOCATION } from './LocationMarker/renderMarker';
@@ -47,6 +46,10 @@ const MOTHERLAND_LABEL = translate({
   id: 'pages.travel.map.motherland',
   message: 'Motherland',
 });
+const VISITED_LABEL = translate({
+  id: 'pages.travel.map.legend.visited',
+  message: 'Visited',
+});
 const NOT_VISITED_LABEL = translate({
   id: 'pages.travel.map.legend.unvisited',
   message: 'Not Visited',
@@ -54,14 +57,6 @@ const NOT_VISITED_LABEL = translate({
 const HOME_LOCATION_LABEL = translate({
   id: 'pages.travel.map.location',
   message: 'lailai · Hangzhou, China',
-});
-const ORIGINAL_MAP_LABEL = translate({
-  id: 'pages.travel.map.showOriginal',
-  message: 'Switch to original map',
-});
-const DOT_MAP_LABEL = translate({
-  id: 'pages.travel.map.showDots',
-  message: 'Switch to dot map',
 });
 const RESET_VIEW_LABEL = translate({
   id: 'pages.travel.map.reset',
@@ -75,7 +70,7 @@ const PAUSE_ROTATION_LABEL = translate({
   id: 'pages.travel.map.pause',
   message: 'Pause rotation',
 });
-const DEFAULT_POINT_OF_VIEW = { ...HOME_LOCATION, altitude: 1.8 };
+const DEFAULT_POINT_OF_VIEW = { ...HOME_LOCATION, altitude: 1.6 };
 const RESET_DURATION_MS = 600;
 const GEOJSON_TIMEOUT_MS = 15000;
 
@@ -116,10 +111,7 @@ function TravelGlobeClient({
   const [isGlobeReady, setIsGlobeReady] = useState(false);
   const [isRotating, setIsRotating] = useState(false);
   const [features, setFeatures] = useState<readonly GlobeCountryFeature[]>([]);
-  const [dotGlobe, setDotGlobe] = useState<ReturnType<typeof createDotGlobe> | null>(null);
-  const [mapStyle, setMapStyle] = useState<'dots' | 'original'>('dots');
-  const [originalRequested, setOriginalRequested] = useState(false);
-  const [originalTexture, setOriginalTexture] = useState<CanvasTexture | null>(null);
+  const [surface, setSurface] = useState<ReturnType<typeof createGlobeSurface> | null>(null);
   const [geoFailed, setGeoFailed] = useState(false);
   const [geoRequest, setGeoRequest] = useState(0);
   const [isFrameVisible, setIsFrameVisible] = useState(true);
@@ -184,36 +176,27 @@ function TravelGlobeClient({
     const background = pageBackground.alpha()
       ? pageBackground
       : Color(readCssVar('--ifm-background-surface-color'));
-    const neutral = Color(readCssVar('--ifm-color-emphasis-600'));
-    const ocean = readCssVar('--ifm-color-emphasis-100');
+    const neutral = Color(readCssVar('--ifm-color-emphasis-500'));
+    const ink = Color(readCssVar('--ifm-color-emphasis-700'));
+    let land = isDark ? neutral.mix(background, 0.25) : background.mix(neutral, 0.1);
+    if (!isDark) land = land.mix(ink, 0.08);
     return {
-      dots: {
-        ocean: background.hex(),
-        visited: accent.mix(background, isDark ? 0.08 : 0.12).hex(),
-        unvisited: neutral.mix(background, isDark ? 0.22 : 0.18).hex(),
-        grid: neutral.mix(background, isDark ? 0.85 : 0.87).hex(),
-      },
-      original: {
-        ocean,
-        grid: neutral.mix(Color(ocean), isDark ? 0.92 : 0.9).hex(),
-        visited: readCssVar('--ifm-color-primary-lighter'),
-        unvisited: readCssVar('--ifm-color-emphasis-300'),
-        stroke: readCssVar('--ifm-color-emphasis-400'),
-      },
+      dark: isDark,
+      ink: ink.hex(),
+      visited: accent.hex(),
+      unvisited: land.hex(),
     };
   }, [colorMode]);
+  const colorsRef = useRef(colors);
+  colorsRef.current = colors;
 
   useEffect(() => {
-    setDotGlobe(null);
-    const globe = globeRef.current;
-    if (!isGlobeReady || !globe || features.length === 0) return;
-    let dots: ReturnType<typeof createDotGlobe> | null = null;
+    if (features.length === 0) return;
     // Required map work must run promptly, even when the browser never becomes idle.
     const timeoutId = window.setTimeout(() => {
       try {
-        dots = createDotGlobe(globe, features, visitedCountries);
-        globe.scene().add(dots.group);
-        setDotGlobe(dots);
+        const next = createGlobeSurface(features, visitedCountries, colorsRef.current);
+        setSurface(next);
       } catch (error) {
         console.error(error);
         setGeoFailed(true);
@@ -221,42 +204,13 @@ function TravelGlobeClient({
     }, 0);
     return () => {
       window.clearTimeout(timeoutId);
-      dots?.dispose();
     };
-  }, [features, isGlobeReady, visitedCountries]);
+  }, [features, visitedCountries]);
+  useEffect(() => () => surface?.dispose(), [surface]);
 
-  useEffect(() => {
-    if (!originalRequested || features.length === 0) {
-      setOriginalTexture(null);
-      return;
-    }
-    const timeoutId = window.setTimeout(() => {
-      try {
-        setOriginalTexture(createGlobeTexture(features, visitedCountries, colors.original));
-      } catch (error) {
-        console.error(error);
-        setGeoFailed(true);
-      }
-    }, 0);
-    return () => window.clearTimeout(timeoutId);
-  }, [colors.original, features, originalRequested, visitedCountries]);
-  useEffect(() => () => originalTexture?.dispose(), [originalTexture]);
-
-  const globeMaterial = useMemo(() => new MeshBasicMaterial(), []);
-  useEffect(() => () => globeMaterial.dispose(), [globeMaterial]);
-  const showOriginal = mapStyle === 'original' && originalTexture !== null;
-  useEffect(() => {
-    const texture = showOriginal ? originalTexture : null;
-    if (globeMaterial.map !== texture) {
-      globeMaterial.map = texture;
-      globeMaterial.needsUpdate = true;
-    }
-    globeMaterial.color.set(showOriginal ? '#ffffff' : colors.dots.ocean);
-    if (dotGlobe) {
-      dotGlobe.setColors(colors.dots);
-      dotGlobe.group.visible = !showOriginal;
-    }
-  }, [colors.dots, dotGlobe, globeMaterial, originalTexture, showOriginal]);
+  const placeholderMaterial = useMemo(() => new MeshBasicMaterial(), []);
+  useEffect(() => () => placeholderMaterial.dispose(), [placeholderMaterial]);
+  useEffect(() => surface?.setColors(colors), [colors, surface]);
 
   useEffect(() => {
     const element = frameRef.current;
@@ -453,11 +407,6 @@ function TravelGlobeClient({
 
   const retryGeoJson = () => setGeoRequest((request) => request + 1);
 
-  const toggleMapStyle = () => {
-    setOriginalRequested(true);
-    setMapStyle((style) => (style === 'dots' ? 'original' : 'dots'));
-  };
-
   const handleReady = useCallback(() => setIsGlobeReady(true), []);
 
   // onGlobeReady can fire before react-kapsule attaches the ref in Safari.
@@ -467,9 +416,10 @@ function TravelGlobeClient({
     const globe = globeRef.current;
     if (!globe) return;
     const controls = globe.controls();
-    const shouldRotate = !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const motionPreference = window.matchMedia('(prefers-reduced-motion: reduce)');
+    const shouldRotate = !motionPreference.matches;
     controls.autoRotate = shouldRotate;
-    controls.autoRotateSpeed = 1.0;
+    controls.autoRotateSpeed = 0.45;
     controls.enablePan = false;
     controls.enableZoom = false;
     controls.enableDamping = true;
@@ -477,11 +427,18 @@ function TravelGlobeClient({
     globe.pointOfView(DEFAULT_POINT_OF_VIEW, 0);
     rotationEnabledRef.current = shouldRotate;
     setIsRotating(shouldRotate);
+    const onMotionChange = () => {
+      if (!motionPreference.matches) return;
+      controls.autoRotate = false;
+      rotationEnabledRef.current = false;
+      setIsRotating(false);
+    };
+    motionPreference.addEventListener('change', onMotionChange);
+    return () => motionPreference.removeEventListener('change', onMotionChange);
   }, [isGlobeReady]);
 
-  const isReady = isGlobeReady && (dotGlobe !== null || geoFailed);
+  const isReady = isGlobeReady && (surface !== null || geoFailed);
   const rotationLabel = isRotating ? PAUSE_ROTATION_LABEL : PLAY_ROTATION_LABEL;
-  const mapStyleLabel = mapStyle === 'dots' ? ORIGINAL_MAP_LABEL : DOT_MAP_LABEL;
 
   return (
     <div
@@ -499,10 +456,9 @@ function TravelGlobeClient({
           backgroundColor="rgba(0,0,0,0)"
           rendererConfig={{ antialias: true }}
           animateIn={false}
-          showGlobe
           showAtmosphere={false}
           enablePointerInteraction={false}
-          globeMaterial={globeMaterial}
+          globeMaterial={surface?.material ?? placeholderMaterial}
           onGlobeReady={handleReady}
         />
         <LocationMarker
@@ -527,52 +483,49 @@ function TravelGlobeClient({
         </div>
       )}
       {isReady && (
-        <div className={styles.globeControls}>
-          <Button
-            variant="secondary"
-            size="sm"
-            className={clsx(styles.globeControlButton, styles.mapStyleButton)}
-            leftIcon={
-              <Icon
-                icon={mapStyle === 'dots' ? 'lucide:earth' : 'lucide:grip'}
-                className={styles.globeControlIcon}
-                aria-hidden="true"
-              />
-            }
-            onClick={toggleMapStyle}
-            aria-label={mapStyleLabel}
-            title={mapStyleLabel}
-          />
-          <Button
-            variant="secondary"
-            size="sm"
-            className={styles.globeControlButton}
-            leftIcon={
-              <Icon
-                icon="lucide:rotate-ccw"
-                className={styles.globeControlIcon}
-                aria-hidden="true"
-              />
-            }
-            onClick={resetView}
-            aria-label={RESET_VIEW_LABEL}
-            title={RESET_VIEW_LABEL}
-          />
-          <Button
-            variant="secondary"
-            size="sm"
-            className={styles.globeControlButton}
-            leftIcon={
-              <Icon
-                icon={isRotating ? 'lucide:pause' : 'lucide:play'}
-                className={styles.globeControlIcon}
-                aria-hidden="true"
-              />
-            }
-            onClick={toggleRotation}
-            aria-label={rotationLabel}
-            title={rotationLabel}
-          />
+        <div className={styles.globeFooter}>
+          <div className={styles.globeLegend}>
+            <span className={styles.legendItem}>
+              <span className={clsx(styles.legendSwatch, styles.legendVisited)} />
+              {VISITED_LABEL}
+            </span>
+            <span className={styles.legendItem}>
+              <span className={styles.legendSwatch} style={{ backgroundColor: colors.unvisited }} />
+              {NOT_VISITED_LABEL}
+            </span>
+          </div>
+          <div className={styles.globeControls}>
+            <Button
+              variant="secondary"
+              size="sm"
+              className={styles.globeControlButton}
+              leftIcon={
+                <Icon
+                  icon="lucide:rotate-ccw"
+                  className={styles.globeControlIcon}
+                  aria-hidden="true"
+                />
+              }
+              onClick={resetView}
+              aria-label={RESET_VIEW_LABEL}
+              title={RESET_VIEW_LABEL}
+            />
+            <Button
+              variant="secondary"
+              size="sm"
+              className={styles.globeControlButton}
+              leftIcon={
+                <Icon
+                  icon={isRotating ? 'lucide:pause' : 'lucide:play'}
+                  className={styles.globeControlIcon}
+                  aria-hidden="true"
+                />
+              }
+              onClick={toggleRotation}
+              aria-label={rotationLabel}
+              title={rotationLabel}
+            />
+          </div>
         </div>
       )}
       {hovered && (

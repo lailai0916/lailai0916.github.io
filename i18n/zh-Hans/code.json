@@ -1661,9 +1661,6 @@
   "pages.home.connect": {
     "message": "联系"
   },
-  "components.browserWindow.openLink": {
-    "message": "在新标签页打开链接"
-  },
   "components.countdown.event": {
     "message": "我的生日"
   },
@@ -1688,11 +1685,14 @@
   "components.countdown.progress": {
     "message": "年度进度"
   },
-  "components.desmos.frameTitle": {
-    "message": "Desmos 图形计算器"
+  "components.browserWindow.openLink": {
+    "message": "在新标签页打开链接"
   },
   "components.englishExamples.title": {
     "message": "示例"
+  },
+  "components.desmos.frameTitle": {
+    "message": "Desmos 图形计算器"
   },
   "components.laikitProvider.quoteAttributionDash": {
     "message": "—— "
@@ -2197,14 +2197,14 @@
   "components.article.summaryLabel": {
     "message": "概述"
   },
-  "components.article.viewCount": {
-    "message": "{viewCount} 浏览"
-  },
   "components.tableOfContents.title": {
     "message": "目录"
   },
   "components.tableOfContents.progress": {
     "message": "阅读进度：{percent}%"
+  },
+  "components.article.viewCount": {
+    "message": "{viewCount} 浏览"
   },
   "components.navbar.language.ariaLabel": {
     "message": "当前语言：{currentLanguage}，切换至 {nextLanguage}"
@@ -2287,6 +2287,9 @@
   "pages.overview.metric.moments": {
     "message": "动态"
   },
+  "blog.post.empty": {
+    "message": "暂无文章"
+  },
   "blog.pages.archive.title": {
     "message": "归档"
   },
@@ -2307,9 +2310,6 @@
   },
   "blog.archive.search.empty": {
     "message": "没有找到与“{query}”匹配的文章"
-  },
-  "blog.post.empty": {
-    "message": "暂无文章"
   },
   "blog.archive.redirect.link": {
     "message": "浏览归档"
@@ -2508,17 +2508,14 @@
   "pages.travel.map.motherland": {
     "message": "祖国"
   },
+  "pages.travel.map.legend.visited": {
+    "message": "已到访"
+  },
   "pages.travel.map.legend.unvisited": {
     "message": "未到访"
   },
   "pages.travel.map.location": {
     "message": "lailai · 中国杭州"
-  },
-  "pages.travel.map.showOriginal": {
-    "message": "切换为原版地图"
-  },
-  "pages.travel.map.showDots": {
-    "message": "切换为点阵地图"
   },
   "pages.travel.map.reset": {
     "message": "重置视角"
@@ -2542,7 +2539,7 @@
     "message": "旅行地图"
   },
   "pages.travel.map.ariaDescription": {
-    "message": "显示已到访国家的交互式地球。下方的旅行时间轴提供相同信息的文本版本。"
+    "message": "可交互的地球仪，展示到访过的国家。旅行页面也提供相同信息的文字时间线。"
   },
   "blog.pages.authors.title": {
     "message": "作者"
@@ -2906,10 +2903,6 @@
     "message": "标签：",
     "description": "The label alongside a tag list"
   },
-  "theme.AnnouncementBar.closeButtonAriaLabel": {
-    "message": "关闭",
-    "description": "The ARIA label for close button of announcement bar"
-  },
   "theme.admonition.caution": {
     "message": "警告",
     "description": "The default label used for the Caution admonition (:::caution)"
@@ -2934,6 +2927,10 @@
     "message": "注意",
     "description": "The default label used for the Warning admonition (:::warning)"
   },
+  "theme.AnnouncementBar.closeButtonAriaLabel": {
+    "message": "关闭",
+    "description": "The ARIA label for close button of announcement bar"
+  },
   "theme.blog.sidebar.navAriaLabel": {
     "message": "最近文章导航",
     "description": "The ARIA label for recent posts in the blog sidebar"
@@ -2954,13 +2951,13 @@
     "message": "主导航",
     "description": "The ARIA label for the main navigation"
   },
-  "theme.NotFound.p2": {
-    "message": "请联系原始链接来源网站的所有者，并告知他们链接已损坏。",
-    "description": "The 2nd paragraph of the 404 page"
-  },
   "theme.navbar.mobileLanguageDropdown.label": {
     "message": "选择语言",
     "description": "The label for the mobile language switcher dropdown"
+  },
+  "theme.NotFound.p2": {
+    "message": "请联系原始链接来源网站的所有者，并告知他们链接已损坏。",
+    "description": "The 2nd paragraph of the 404 page"
   },
   "theme.TOCCollapsible.toggleButtonLabel": {
     "message": "本页总览",
@@ -2978,6 +2975,10 @@
     "message": "阅读需 {readingTime} 分钟",
     "description": "Pluralized label for \"{readingTime} min read\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
   },
+  "theme.CodeBlock.wordWrapToggle": {
+    "message": "切换自动换行",
+    "description": "The title attribute for toggle word wrapping button of code block lines"
+  },
   "theme.CodeBlock.copy": {
     "message": "复制",
     "description": "The copy button label on code blocks"
@@ -2989,10 +2990,6 @@
   "theme.CodeBlock.copyButtonAriaLabel": {
     "message": "复制代码到剪贴板",
     "description": "The ARIA label for copy code blocks button"
-  },
-  "theme.CodeBlock.wordWrapToggle": {
-    "message": "切换自动换行",
-    "description": "The title attribute for toggle word wrapping button of code block lines"
   },
   "theme.docs.sidebar.collapseButtonTitle": {
     "message": "收起侧边栏",

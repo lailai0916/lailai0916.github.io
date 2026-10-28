@@ -33,7 +33,7 @@ const MAP_ARIA_LABEL = translate({
 const MAP_ARIA_DESCRIPTION = translate({
   id: 'pages.travel.map.ariaDescription',
   message:
-    'An interactive globe showing visited countries. The travel timeline below provides the same information in text.',
+    'An interactive globe showing visited countries. The Travel page provides the same information as a text timeline.',
 });
 
 function MapShell({ children }: { children: ReactNode }) {

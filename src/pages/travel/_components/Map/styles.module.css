@@ -16,16 +16,14 @@
   }
 }
 
-/* Height comes from CSS (not the canvas) so the box is correct on the first
-   paint — no layout shift once the measured size resolves. Near-square and
-   generous so the close-up globe (altitude 1) fills it edge to edge. */
+/* Reserve the canvas dimensions before hydration to prevent layout shift. */
 .globeFrame {
   position: relative;
   overflow: hidden;
   width: 100%;
-  aspect-ratio: 1 / 1;
+  aspect-ratio: 1.5 / 1;
   min-height: 400px;
-  max-height: 640px;
+  max-height: 600px;
   border-radius: 24px;
   background: transparent;
   border: none;
@@ -34,6 +32,10 @@
 
 @media (max-width: 576px) {
   .globeFrame {
+    overflow: visible;
+    aspect-ratio: 1;
+    min-height: 0;
+    margin-bottom: 3.5rem;
     border-radius: 20px;
   }
 }
@@ -43,6 +45,12 @@
   inset: 0;
   opacity: 0;
   transition: opacity 0.6s ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .globeLayer {
+    transition: none;
+  }
 }
 
 .globeVisible {
@@ -86,14 +94,52 @@
   border: 0;
 }
 
-.globeControls {
+.globeFooter {
   position: absolute;
-  inset: clamp(0.75rem, 2vw, 1rem) calc((100% - min(100%, 640px)) / 2 + clamp(0.75rem, 2vw, 1rem))
-    auto;
+  inset: auto max(1rem, calc((100% - 600px) / 2)) 0.75rem;
   display: flex;
-  gap: 0.5rem;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
   z-index: 2;
   pointer-events: none;
+}
+
+@media (max-width: 576px) {
+  .globeFooter {
+    inset: 100% 1rem auto;
+    min-height: 44px;
+  }
+}
+
+.globeLegend {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.25rem;
+  color: var(--ifm-color-emphasis-700);
+  font-size: 0.75rem;
+}
+
+.legendItem {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.legendSwatch {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.legendVisited {
+  background: var(--ifm-color-primary);
+}
+
+.globeControls {
+  display: flex;
+  gap: 0.5rem;
 }
 
 .globeControlButton {
@@ -102,12 +148,15 @@
   pointer-events: auto;
 }
 
-.globeControlButton:not(:disabled):not([aria-disabled='true']):active {
-  transform: scale(0.92);
+@media (pointer: coarse) {
+  .globeControlButton {
+    width: 44px;
+    min-height: 44px;
+  }
 }
 
-.mapStyleButton {
-  margin-right: auto;
+.globeControlButton:not(:disabled):not([aria-disabled='true']):active {
+  transform: scale(0.92);
 }
 
 .globeControlIcon {
