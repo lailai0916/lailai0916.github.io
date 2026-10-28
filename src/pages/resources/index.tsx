@@ -8,6 +8,7 @@ import DataCard from '@lailai0916/ui/DataCard';
 import Badge from '@lailai0916/ui/Badge';
 import Card from '@lailai0916/ui/Card';
 import SearchField from '@site/src/components/SearchField';
+import WebsiteIcon from '@site/src/components/WebsiteIcon';
 import LinkCard from '@lailai0916/ui/LinkCard';
 import clsx from 'clsx';
 
@@ -126,8 +127,7 @@ function ResourceCard({ resource }: { resource: ResourceItem }) {
       to={resource.href}
       title={resource.title}
       description={resource.description}
-      image={getFaviconUrl(resource.href)}
-      fallbackIcon="lucide:globe"
+      imageSlot={<WebsiteIcon src={getFaviconUrl(resource.href)} className={styles.resourceIcon} />}
     />
   );
 }

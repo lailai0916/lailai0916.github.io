@@ -45,7 +45,7 @@
   gap: 0.5rem;
 }
 
-.label > span {
+.label > span:not([aria-hidden='true']) {
   flex: 1;
   min-width: 0;
   white-space: nowrap;

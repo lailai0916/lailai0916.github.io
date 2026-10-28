@@ -40,6 +40,10 @@
   box-shadow: var(--lk-focus-ring);
 }
 
+.resourceIcon {
+  --website-icon-size: 24px;
+}
+
 .categorySection {
   min-width: 0;
   scroll-margin-top: 6rem;

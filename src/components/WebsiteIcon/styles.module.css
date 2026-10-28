@@ -1,0 +1,38 @@
+.icon {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: var(--website-icon-size, 1em);
+  height: var(--website-icon-size, 1em);
+  color: var(--ifm-color-emphasis-600);
+}
+
+.icon svg,
+.icon img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.fallback {
+  transition: opacity 160ms ease;
+}
+
+.fallbackHidden {
+  opacity: 0;
+}
+
+.image {
+  position: absolute;
+  inset: 0;
+  object-fit: contain;
+  border-radius: inherit;
+  opacity: 0;
+  transition: opacity 160ms ease;
+}
+
+.imageLoaded {
+  opacity: 1;
+}

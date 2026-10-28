@@ -97,6 +97,8 @@ export function ChineseUI({ children }: { children: ReactNode }) {
 | `formatCompact`     | 数值、可选语言、可选有效位数                               | 使用紧凑记数法，默认英文与 3 位有效数字      |
 | `formatBytes`       | 字节数                                                     | 按 1024 换算，以 B、KB、MB 显示              |
 
+`useImageStatus` 需要把 `imgRef`、`onLoad` 和 `onError` 绑定到同一个 `<img>`。它会检查已缓存的图片，并在地址变化时重置状态；加载超过 3 秒后进入 `error`。设置 `loading="lazy"` 时，从图片进入视口后开始计时。
+
 ```tsx
 import { formatBytes, formatCompact } from '@lailai0916/ui';
 
