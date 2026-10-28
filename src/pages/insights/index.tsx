@@ -26,6 +26,7 @@ import { UMAMI_DASHBOARD_URL } from '@site/src/utils/umami';
 import { toPageviewsData } from './_components/seriesFormat';
 import MetricList from './_components/MetricList';
 import metricListStyles from './_components/MetricList/styles.module.css';
+import ReferrerIcon from './_components/ReferrerIcon';
 import UptimeSection from './_components/UptimeSection';
 import SysStatusCard from './_components/SysStatusCard';
 import StatePanel from './_components/StatePanel';
@@ -428,20 +429,23 @@ function MetricsGrid({ range }: { range: InsightsRange }) {
         }
         errorAction={<RetryButton onClick={referrers.retry} />}
         notice={referrers.isRefreshError && <RefreshNotice onRetry={referrers.retry} />}
-        renderLabel={(r) =>
-          r ? (
-            <Hint label={r}>
-              <span>{r}</span>
-            </Hint>
-          ) : (
-            <span className={styles.muted}>
-              {translate({
-                id: 'pages.insights.metricList.referrers.direct',
-                message: 'Direct',
-              })}
-            </span>
-          )
-        }
+        renderLabel={(r) => (
+          <>
+            <ReferrerIcon referrer={r} />
+            {r ? (
+              <Hint label={r}>
+                <span>{r}</span>
+              </Hint>
+            ) : (
+              <span className={styles.muted}>
+                {translate({
+                  id: 'pages.insights.metricList.referrers.direct',
+                  message: 'Direct',
+                })}
+              </span>
+            )}
+          </>
+        )}
         href={(r) => (r ? (/^https?:\/\//.test(r) ? r : `https://${r}`) : null)}
       />
       <MetricList
