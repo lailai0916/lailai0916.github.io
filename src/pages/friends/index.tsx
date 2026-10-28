@@ -2,6 +2,7 @@ import { type ReactNode } from 'react';
 import clsx from 'clsx';
 import Layout from '@theme/Layout';
 import Icon from '@lailai0916/ui/Icon';
+import AvatarFallbackIcon from 'lucide-static/icons/user-round.svg';
 import { PageTitle, PageHeader, PageContent } from '@lailai0916/ui/Page';
 import Button from '@lailai0916/ui/Button';
 import Card from '@lailai0916/ui/Card';
@@ -50,24 +51,24 @@ function FriendAvatar({
 }): ReactNode {
   const { imgRef, status, onLoad, onError } = useImageStatus(src);
 
-  if (!src || status === 'error') {
-    return (
-      <span className={clsx(className, styles.avatarFallback)} aria-hidden>
-        <Icon icon="lucide:user-round" />
-      </span>
-    );
-  }
-
   return (
-    <img
-      ref={imgRef}
-      src={src}
-      alt=""
-      className={className}
-      loading={loading}
-      onLoad={onLoad}
-      onError={onError}
-    />
+    <span className={className} aria-hidden="true">
+      <AvatarFallbackIcon
+        className={clsx(styles.avatarFallback, status === 'loaded' && styles.avatarFallbackHidden)}
+      />
+      {src && status !== 'error' && (
+        <img
+          ref={imgRef}
+          src={src}
+          alt=""
+          className={clsx(styles.avatarImage, status === 'loaded' && styles.avatarImageLoaded)}
+          loading={loading}
+          decoding="async"
+          onLoad={onLoad}
+          onError={onError}
+        />
+      )}
+    </span>
   );
 }
 
