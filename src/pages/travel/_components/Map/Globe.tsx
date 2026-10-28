@@ -419,7 +419,7 @@ function TravelGlobeClient({
     const motionPreference = window.matchMedia('(prefers-reduced-motion: reduce)');
     const shouldRotate = !motionPreference.matches;
     controls.autoRotate = shouldRotate;
-    controls.autoRotateSpeed = 0.45;
+    controls.autoRotateSpeed = 1.0;
     controls.enablePan = false;
     controls.enableZoom = false;
     controls.enableDamping = true;
