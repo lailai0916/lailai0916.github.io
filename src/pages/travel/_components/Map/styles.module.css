@@ -1,19 +1,9 @@
 .globeShell {
   width: 100%;
-  max-width: 920px;
+  max-width: 600px;
   /* Cancel PageContent's top padding so the globe tucks up under the header
      instead of floating below a gap. */
   margin: calc(clamp(2rem, 4vw, 3rem) * -1) auto 0;
-}
-
-/* On small screens let the globe bleed to the page edges — negate exactly
-   PageContent's horizontal padding (no 100vw, so no scrollbar overflow). */
-@media (max-width: 768px) {
-  .globeShell {
-    width: auto;
-    max-width: none;
-    margin-inline: calc(clamp(1rem, 3vw, 2rem) * -1);
-  }
 }
 
 /* Reserve the canvas dimensions before hydration to prevent layout shift. */
@@ -21,9 +11,7 @@
   position: relative;
   overflow: hidden;
   width: 100%;
-  aspect-ratio: 1.5 / 1;
-  min-height: 400px;
-  max-height: 600px;
+  aspect-ratio: 1;
   border-radius: 24px;
   background: transparent;
   border: none;
@@ -33,8 +21,6 @@
 @media (max-width: 576px) {
   .globeFrame {
     overflow: visible;
-    aspect-ratio: 1;
-    min-height: 0;
     margin-bottom: 3.5rem;
     border-radius: 20px;
   }
@@ -142,16 +128,30 @@
   gap: 0.5rem;
 }
 
+@media (pointer: coarse) {
+  .globeControls {
+    gap: 12px;
+  }
+}
+
 .globeControlButton {
+  position: relative;
+  flex: none;
   width: 32px;
+  height: 32px;
   padding: 0;
   pointer-events: auto;
 }
 
 @media (pointer: coarse) {
-  .globeControlButton {
+  .globeControlButton::before {
+    position: absolute;
+    top: 50%;
+    left: 50%;
     width: 44px;
-    min-height: 44px;
+    height: 44px;
+    content: '';
+    transform: translate(-50%, -50%);
   }
 }
 

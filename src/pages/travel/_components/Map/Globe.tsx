@@ -70,7 +70,7 @@ const PAUSE_ROTATION_LABEL = translate({
   id: 'pages.travel.map.pause',
   message: 'Pause rotation',
 });
-const DEFAULT_POINT_OF_VIEW = { ...HOME_LOCATION, altitude: 1.6 };
+const DEFAULT_POINT_OF_VIEW = { ...HOME_LOCATION, altitude: 1.8 };
 const RESET_DURATION_MS = 600;
 const GEOJSON_TIMEOUT_MS = 15000;
 
