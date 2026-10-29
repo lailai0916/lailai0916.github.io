@@ -21,7 +21,7 @@ const STATIC_MOMENTS: MomentItem[] = [
   {
     date: '2026-10-19T01:00:00+08:00',
     content: '2nd Anniversary!',
-    images: ['https://cloud.lailai.one/f/VrdhE/lailai-home-devices-only-5k.png'],
+    images: ['https://cloud.lailai.one/f/KZqsJ/lailai-home-devices.png'],
   },
   {
     date: '2026-09-19T12:35:00+08:00',
