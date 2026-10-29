@@ -11,7 +11,11 @@
     <img src="https://img.shields.io/github/license/lailai0916/lailai0916.github.io?style=flat-square" />
   </p>
   <a href="https://lailai.one">
-    <img src="https://cloud.lailai.one/f/KZqsJ/lailai-home-devices.png" />
+    <picture>
+      <source media="(prefers-color-scheme: dark)" srcset="https://cloud.lailai.one/f/Wr3he/preview-dark.png" />
+      <source media="(prefers-color-scheme: light)" srcset="https://cloud.lailai.one/f/BQPuA/preview-light.png" />
+      <img src="https://cloud.lailai.one/f/BQPuA/preview-light.png" />
+    </picture>
   </a>
 </div>
 
