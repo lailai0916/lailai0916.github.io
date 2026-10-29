@@ -1,81 +1,55 @@
-/* Header card */
-
-.headerCard {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
+.postPreview {
+  width: 100%;
+  font-size: var(--global-font-size);
 }
 
-@media (max-width: 480px) {
-  .headerCard {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-}
-
-.headerInfo {
-  flex: 1;
-  min-width: 0;
-}
-
-.title {
-  font-size: 1.6rem;
-  font-weight: 700;
-  line-height: 1.15;
-  letter-spacing: -0.01em;
+.postPublished {
   margin: 0;
-}
-
-.description {
-  margin: 0.4rem 0 0;
-  font-size: 0.92rem;
   color: var(--ifm-color-emphasis-700);
+  font-size: 0.8125rem;
+  line-height: 1.6;
 }
 
-.count {
-  flex-shrink: 0;
-  display: inline-flex;
-  align-items: baseline;
-  gap: 0.4rem;
-  line-height: 1;
-}
-
-.countNumber {
-  font-weight: 700;
-  font-size: 1.2rem;
-  color: var(--ifm-color-emphasis-900);
-  font-variant-numeric: tabular-nums;
-}
-
-.countLabel {
-  font-size: 0.78rem;
+.postTitle {
+  margin: 0.25rem 0 0;
+  font-size: inherit;
   font-weight: 600;
-  letter-spacing: 0.04em;
-  color: var(--ifm-color-emphasis-600);
+  line-height: 1.65;
 }
 
-/* Moment content body */
-
-.momentContent {
-  font-size: 0.95rem;
-  line-height: 1.7;
+.postLink {
+  display: inline-block;
+  max-width: 100%;
   color: var(--ifm-font-color-base);
+  text-decoration: none !important;
   overflow-wrap: break-word;
+  transition: color 160ms ease;
 }
 
-.momentContent p {
-  margin: 0 0 0.6rem;
+.postLink:hover {
+  color: var(--ifm-color-primary);
 }
 
-.momentContent p:last-child {
-  margin-bottom: 0;
+.postLink:active {
+  color: var(--ifm-color-primary-dark);
 }
 
-/* Moment images */
+.postLink:focus-visible {
+  outline: none;
+  border-radius: 2px;
+  box-shadow: var(--lk-focus-ring);
+}
 
 .momentImages {
   position: relative;
-  margin-top: 0.85rem;
+  width: 100%;
+  min-width: 0;
+}
+
+.momentImages:hover .imageArrow,
+.momentImages:has(:focus-visible) .imageArrow {
+  opacity: 1;
+  pointer-events: auto;
 }
 
 .momentImageViewport {
@@ -108,13 +82,13 @@
 .momentImages[data-count='1'] .momentImage {
   width: auto;
   height: auto;
-  max-width: 100%;
-  max-height: 30rem;
+  max-width: min(100%, 36rem);
+  max-height: 26rem;
 }
 
 .momentImages:not([data-count='1']) {
   container-type: inline-size;
-  --media-height: clamp(14rem, 60cqi, 32rem);
+  --media-height: clamp(12rem, 52cqi, 25rem);
 }
 
 .momentImages:not([data-count='1']) .momentImage {
@@ -164,8 +138,11 @@
   background: var(--ifm-card-background-color);
   color: var(--ifm-color-emphasis-900);
   cursor: pointer;
+  opacity: 0;
+  pointer-events: none;
   transform: translateY(-50%);
   transition:
+    opacity 160ms ease,
     border-color 160ms ease,
     color 160ms ease,
     transform 160ms ease;
@@ -222,7 +199,136 @@
   }
 }
 
-/* Load-more footer */
+.page {
+  width: 100%;
+  margin-inline: auto;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  padding-block: 1.75rem;
+  border-bottom: 1px solid var(--ifm-color-emphasis-200);
+}
+
+.headerInfo {
+  min-width: 0;
+}
+
+.title {
+  margin: 0;
+  font-size: 1.6rem;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.025em;
+}
+
+.description {
+  margin: 0.5rem 0 0;
+  color: var(--ifm-color-emphasis-700);
+  font-size: 0.92rem;
+  line-height: 1.6;
+}
+
+.count {
+  flex: none;
+  color: var(--ifm-color-emphasis-700);
+  font-size: 0.875rem;
+  font-weight: 400;
+  font-variant-numeric: tabular-nums;
+  line-height: 1.5;
+}
+
+.feed {
+  min-width: 0;
+}
+
+.moment {
+  display: grid;
+  grid-template-columns: 40px minmax(0, 1fr);
+  gap: 1rem;
+  padding-block: 2rem;
+  border-bottom: 1px solid var(--ifm-color-emphasis-200);
+}
+
+@media (max-width: 480px) {
+  .moment {
+    grid-template-columns: 32px minmax(0, 1fr);
+    gap: 0.75rem;
+    padding-block: 1.5rem;
+  }
+}
+
+.avatar {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.momentBody {
+  min-width: 0;
+}
+
+.momentHeader {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.25rem 0.75rem;
+  line-height: 1.5;
+}
+
+.author {
+  color: var(--ifm-font-color-base);
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.date {
+  color: var(--ifm-color-emphasis-700);
+  font-size: 0.9rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.momentMain {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.875rem;
+  padding-top: 0.5rem;
+}
+
+.momentContent {
+  width: 100%;
+  color: var(--ifm-font-color-base);
+  font-size: var(--global-font-size);
+  line-height: 1.75;
+  overflow-wrap: break-word;
+}
+
+.momentContent p {
+  margin: 0 0 0.6rem;
+}
+
+.momentContent p:last-child {
+  margin-bottom: 0;
+}
+
+.attachment {
+  width: 100%;
+  max-width: 36rem;
+}
+
+.momentDetails {
+  margin-top: 0.875rem;
+}
+
+.momentDetails > div {
+  margin-bottom: 0;
+}
+
 .loadMore {
   display: flex;
   justify-content: center;

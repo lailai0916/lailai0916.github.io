@@ -5,11 +5,13 @@ hide_table_of_contents: true
 
 import {
   AboutTitle,
+  Countdown,
   Skills,
   Devices,
   Community,
   Comments,
 } from '@site/src/pages/about/\_components';
+import styles from '@site/src/pages/about/styles.module.css';
 
 <div style={{ maxWidth: '664px', margin: 'auto' }}>
 
@@ -26,6 +28,10 @@ import {
 ## 我的昵称
 
 我的昵称是 **lailai**。由于这个名字比较常见，我通常会使用 **lailai0916** 作为线上用户名，其中 `0916` 来自我的生日。如果这个用户名也被占用，我会使用 **lailai0x394**，其中 `0x394` 是 `0916` 的十六进制表示。
+
+<div className={styles.birthday}>
+  <Countdown />
+</div>
 
 ## 教育经历
 

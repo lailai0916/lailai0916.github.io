@@ -35,6 +35,7 @@ Date-time behavior follows the value's meaning, not one blanket timezone convers
 - Overview's monthly bar chart extends through the visitor's current month even when there are no posts in it. Fill missing months with zero posts. Seed the current month from build time for SSR and initial hydration, then use the visitor's current date after hydration.
 - The homepage clock is the site owner's current local time and remains fixed to `Asia/Shanghai`.
 - The birthday countdown is a global event anchored to `09-16T00:00:00+08:00`; every visitor enters the celebration at the same instant.
+- Its age label belongs to the target birthday, calculated from the owner's `2009-09-16` birthdate. After the birthday ends, the target advances to the following year's birthday.
 
 ## Boundary contracts
 

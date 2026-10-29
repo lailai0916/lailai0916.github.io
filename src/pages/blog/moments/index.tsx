@@ -1,16 +1,15 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import clsx from 'clsx';
+import useBaseUrl from '@docusaurus/useBaseUrl';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
+import Link from '@docusaurus/Link';
 import { translate } from '@docusaurus/Translate';
 import { usePluralForm } from '@docusaurus/theme-common';
 import Icon from '@lailai0916/ui/Icon';
 import BlogScaffold from '@site/src/theme/BlogShared/Scaffold';
 import { MetaBar, type MetaBarItem } from '@site/src/theme/BlogShared/BlogUI';
-import Card from '@lailai0916/ui/Card';
-import IconBlock from '@lailai0916/ui/IconBlock';
 import ShareCard from '@lailai0916/ui/ShareCard';
-import Countdown from '@site/src/components/Countdown';
-import { getMomentList } from '@site/src/data/moments';
+import { getMomentList, type MomentPost } from '@site/src/data/moments';
 import { useImageStatus } from '@lailai0916/ui';
 import { useVisitorTimeZone } from '@site/src/hooks/useVisitorTimeZone';
 import { formatLocalDate, formatLocalTime } from '@site/src/utils/dateTime';
@@ -46,6 +45,24 @@ const LOAD_MORE_LABEL = translate({
   id: 'pages.moments.loadMore',
   message: 'Load more',
 });
+
+const POST_PUBLISHED_LABEL = translate({
+  id: 'pages.moments.postPublished',
+  message: 'Published a new post',
+});
+
+function MomentPostPreview({ post }: { post: MomentPost }) {
+  return (
+    <div className={styles.postPreview}>
+      <p className={styles.postPublished}>{POST_PUBLISHED_LABEL}</p>
+      <h2 className={styles.postTitle}>
+        <Link to={post.permalink} className={styles.postLink}>
+          {post.title}
+        </Link>
+      </h2>
+    </div>
+  );
+}
 
 function MomentImage({ src }: { src: string }) {
   const { imgRef, status, onLoad, onError } = useImageStatus(src);
@@ -175,6 +192,7 @@ export default function Moments() {
     i18n: { currentLocale, defaultLocale },
   } = useDocusaurusContext();
   const { selectMessage } = usePluralForm();
+  const avatarUrl = useBaseUrl('/img/logo.svg');
   const timeZone = useVisitorTimeZone();
   const [visibleCount, setVisibleCount] = useState(PAGE_SIZE);
   const loadMoreRef = useRef<HTMLDivElement>(null);
@@ -204,72 +222,89 @@ export default function Moments() {
 
   return (
     <BlogScaffold title={TITLE} description={DESCRIPTION}>
-      <Card>
-        <div className={styles.headerCard}>
-          <IconBlock icon="lucide:aperture" variant="accent" size={48} />
+      <div className={styles.page}>
+        <header className={styles.header}>
           <div className={styles.headerInfo}>
             <h1 className={styles.title}>{TITLE}</h1>
             <p className={styles.description}>{DESCRIPTION}</p>
           </div>
-          <div className={styles.count}>
-            <span className={styles.countNumber}>{moments.length}</span>
-            <span className={styles.countLabel}>{selectMessage(moments.length, COUNT_LABEL)}</span>
+          <span className={styles.count}>
+            {totalCount} {selectMessage(totalCount, COUNT_LABEL)}
+          </span>
+        </header>
+
+        <section className={styles.feed} aria-label={TITLE}>
+          {visibleMoments.map((moment, i) => {
+            const metaItems: MetaBarItem[] = [];
+            if (moment.event) {
+              metaItems.push({
+                icon: 'lucide:flag',
+                label: moment.event,
+              });
+            }
+            if (moment.location) {
+              metaItems.push({
+                icon: 'lucide:map-pin',
+                label: moment.location,
+              });
+            }
+            const timeId = `moment-time-${i}`;
+            return (
+              <article
+                key={`${moment.date}-${i}`}
+                className={styles.moment}
+                aria-labelledby={timeId}
+              >
+                <img src={avatarUrl} alt="" width={40} height={40} className={styles.avatar} />
+                <div className={styles.momentBody}>
+                  <header className={styles.momentHeader}>
+                    <span className={styles.author}>lailai</span>
+                    <time id={timeId} className={styles.date} dateTime={moment.date}>
+                      {formatLocalDate(moment.date, currentLocale, timeZone)}
+                      <span aria-hidden="true"> · </span>
+                      {formatLocalTime(moment.date, currentLocale, timeZone)}
+                    </time>
+                  </header>
+                  <div className={styles.momentMain}>
+                    {moment.post && <MomentPostPreview post={moment.post} />}
+                    {moment.content && (
+                      <div
+                        className={styles.momentContent}
+                        dangerouslySetInnerHTML={{ __html: moment.content }}
+                      />
+                    )}
+                    {moment.share && (
+                      <div className={styles.attachment}>
+                        <ShareCard {...moment.share} />
+                      </div>
+                    )}
+                    {moment.images && moment.images.length > 0 && (
+                      <MomentGallery images={moment.images} />
+                    )}
+                  </div>
+                  {metaItems.length > 0 && (
+                    <footer className={styles.momentDetails}>
+                      <MetaBar items={metaItems} />
+                    </footer>
+                  )}
+                </div>
+              </article>
+            );
+          })}
+        </section>
+
+        {hasMore && (
+          <div ref={loadMoreRef} className={styles.loadMore}>
+            <button
+              type="button"
+              className={styles.loadMoreLink}
+              onClick={() => setVisibleCount((c) => Math.min(c + PAGE_SIZE, totalCount))}
+            >
+              {LOAD_MORE_LABEL}
+            </button>
           </div>
-        </div>
-      </Card>
-
-      <Countdown />
-
-      {visibleMoments.map((moment, i) => {
-        const metaItems: MetaBarItem[] = [
-          {
-            icon: 'lucide:calendar',
-            dateTime: moment.date,
-            label: formatLocalDate(moment.date, currentLocale, timeZone),
-          },
-          {
-            icon: 'lucide:clock',
-            label: formatLocalTime(moment.date, currentLocale, timeZone),
-          },
-        ];
-        if (moment.event) {
-          metaItems.push({
-            icon: 'lucide:flag',
-            label: moment.event,
-          });
-        }
-        if (moment.location) {
-          metaItems.push({
-            icon: 'lucide:map-pin',
-            label: moment.location,
-          });
-        }
-        return (
-          <Card key={`${moment.date}-${i}`}>
-            <MetaBar items={metaItems} />
-            {moment.content && (
-              <div
-                className={styles.momentContent}
-                dangerouslySetInnerHTML={{ __html: moment.content }}
-              />
-            )}
-            {moment.share && <ShareCard {...moment.share} />}
-            {moment.images && moment.images.length > 0 && <MomentGallery images={moment.images} />}
-          </Card>
-        );
-      })}
-
-      {hasMore && (
-        <div ref={loadMoreRef} className={styles.loadMore}>
-          <button
-            type="button"
-            className={styles.loadMoreLink}
-            onClick={() => setVisibleCount((c) => Math.min(c + PAGE_SIZE, totalCount))}
-          >
-            {LOAD_MORE_LABEL}
-          </button>
-        </div>
-      )}
+        )}
+      </div>
     </BlogScaffold>
   );
 }

@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { Fragment, useState, useEffect, useRef, type CSSProperties } from 'react';
 import clsx from 'clsx';
 
 import BrowserOnly from '@docusaurus/BrowserOnly';
@@ -7,13 +7,15 @@ import Translate, { translate } from '@docusaurus/Translate';
 import Giscus from '@giscus/react';
 import Icon from '@lailai0916/ui/Icon';
 import Card from '@lailai0916/ui/Card';
-import { useColorMode } from '@docusaurus/theme-common';
+import { useColorMode, usePluralForm } from '@docusaurus/theme-common';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Heading from '@theme/Heading';
 
 import { DEVICE_LIST } from '@site/src/data/devices';
 import { COMMUNITY_LIST } from '@site/src/data/community';
 import { useImageStatus } from '@lailai0916/ui';
+import { fireConfetti } from '@site/src/utils/confetti';
+import { parseInstant } from '@site/src/utils/dateTime';
 import styles from './styles.module.css';
 
 const SKILLS_ARIA_LABEL = translate({
@@ -32,6 +34,217 @@ export function AboutTitle() {
         {'\xa0🥳'}
       </Heading>
     </section>
+  );
+}
+
+// The birthday follows the owner's Asia/Shanghai calendar, so every visitor
+// enters and leaves the celebration at the same instant.
+const BIRTHDAY_YEAR = 2009;
+const BIRTHDAY_MONTH = 9;
+const BIRTHDAY_DAY = 16;
+const BIRTHDAY_DATE = [BIRTHDAY_MONTH, BIRTHDAY_DAY].map((part) => String(part).padStart(2, '0'));
+const BEIJING_OFFSET_MS = 8 * 60 * 60 * 1000;
+
+const FINAL = translate({
+  id: 'pages.about.countdown.final',
+  message: 'Happy Birthday!',
+});
+
+type CountdownUnitKey = 'days' | 'hours' | 'minutes' | 'seconds';
+
+const TIME_UNITS: Array<{ key: CountdownUnitKey; label: string }> = [
+  {
+    key: 'days',
+    label: translate({ id: 'pages.about.countdown.unit.days', message: 'day|days' }),
+  },
+  {
+    key: 'hours',
+    label: translate({ id: 'pages.about.countdown.unit.hours', message: 'hour|hours' }),
+  },
+  {
+    key: 'minutes',
+    label: translate({ id: 'pages.about.countdown.unit.minutes', message: 'minute|minutes' }),
+  },
+  {
+    key: 'seconds',
+    label: translate({ id: 'pages.about.countdown.unit.seconds', message: 'second|seconds' }),
+  },
+];
+
+interface CountdownState {
+  age: number | null;
+  days: number;
+  hours: number;
+  minutes: number;
+  seconds: number;
+  isBirthday: boolean;
+}
+
+const INITIAL_STATE: CountdownState = {
+  age: null,
+  days: 0,
+  hours: 0,
+  minutes: 0,
+  seconds: 0,
+  isBirthday: false,
+};
+
+function birthdayMs(year: number): number {
+  return parseInstant(`${year}-${BIRTHDAY_DATE.join('-')}T00:00:00+08:00`).getTime();
+}
+
+function calculateState(now: number): CountdownState {
+  // Shifting by the offset lets the UTC getters read Beijing wall-clock parts.
+  const beijing = new Date(now + BEIJING_OFFSET_MS);
+  const year = beijing.getUTCFullYear();
+  if (beijing.getUTCMonth() + 1 === BIRTHDAY_MONTH && beijing.getUTCDate() === BIRTHDAY_DAY) {
+    return { ...INITIAL_STATE, age: year - BIRTHDAY_YEAR, isBirthday: true };
+  }
+  const targetYear = now < birthdayMs(year) ? year : year + 1;
+  const target = birthdayMs(targetYear);
+  const distance = target - now;
+  return {
+    age: targetYear - BIRTHDAY_YEAR,
+    days: Math.floor(distance / 86_400_000),
+    hours: Math.floor(distance / 3_600_000) % 24,
+    minutes: Math.floor(distance / 60_000) % 60,
+    seconds: Math.floor(distance / 1000) % 60,
+    isBirthday: false,
+  };
+}
+
+// One digit slot: on change the old numeral rolls out below while the new one
+// drops in from above, so only the slots that actually change ever move.
+function RollingDigit({ digit }: { digit: string }) {
+  const prevRef = useRef(digit);
+  const prev = prevRef.current;
+  useEffect(() => {
+    prevRef.current = digit;
+  });
+  return (
+    <span className={styles.countdownDigit} aria-hidden="true">
+      {prev !== digit && (
+        <span key={`out-${prev}`} className={styles.countdownDigitOut}>
+          {prev}
+        </span>
+      )}
+      <span key={`in-${digit}`} className={styles.countdownDigitIn}>
+        {digit}
+      </span>
+    </span>
+  );
+}
+
+// Keyed from the right so the ones/tens slots stay put when the day count
+// gains or loses a digit.
+function RollingNumber({ value }: { value: string }) {
+  return (
+    <>
+      {[...value].map((digit, i) => (
+        <RollingDigit key={value.length - i} digit={digit} />
+      ))}
+    </>
+  );
+}
+
+// The birthday greeting: FINAL rendered one candy glyph at a time — fill and tilt cycle
+// every six via :nth-child, letters stagger in on --i, and the whole word is announced
+// once through the wrapper's aria-label. Candy-lettering look inspired by
+// https://x.com/Pusheen/status/1821577239168692577
+function Greeting({ exiting, onExited }: { exiting: boolean; onExited: () => void }) {
+  return (
+    <div className={styles.countdownCard} role="img" aria-label={FINAL}>
+      <p className={styles.countdownWordmark} aria-hidden="true">
+        {[...FINAL].map((char, i) =>
+          char === ' ' ? (
+            ' '
+          ) : (
+            <span
+              key={i}
+              className={clsx(styles.countdownLetter, exiting && styles.countdownLetterExiting)}
+              style={{ '--i': i } as CSSProperties}
+              onAnimationEnd={exiting && i === FINAL.length - 1 ? onExited : undefined}
+            >
+              {char}
+            </span>
+          )
+        )}
+      </p>
+    </div>
+  );
+}
+
+export function Countdown() {
+  const { selectMessage } = usePluralForm();
+  const [state, setState] = useState<CountdownState>(INITIAL_STATE);
+  const [greetingPresent, setGreetingPresent] = useState(false);
+  const celebrated = useRef(false);
+  const birthdayVisible = state.isBirthday || greetingPresent;
+
+  useEffect(() => {
+    let timer: number;
+    const tick = () => {
+      const now = Date.now();
+      setState(calculateState(now));
+      timer = window.setTimeout(tick, 1000 - (now % 1000));
+    };
+    tick();
+    return () => window.clearTimeout(timer);
+  }, []);
+
+  useEffect(() => {
+    if (state.isBirthday) setGreetingPresent(true);
+  }, [state.isBirthday]);
+
+  useEffect(() => {
+    if (!state.isBirthday || celebrated.current) return;
+    celebrated.current = true;
+    fireConfetti();
+  }, [state.isBirthday]);
+
+  function finishBirthdayExit() {
+    if (!state.isBirthday) setGreetingPresent(false);
+  }
+
+  return (
+    <div className={styles.countdownPanel}>
+      <div className={clsx(styles.countdownBody, birthdayVisible && styles.countdownBirthday)}>
+        <div
+          className={clsx(styles.countdownText, birthdayVisible && styles.countdownHidden)}
+          role="timer"
+          aria-hidden={birthdayVisible || undefined}
+        >
+          <Translate
+            id="pages.about.countdown.description"
+            values={{
+              birthday: (
+                <strong>
+                  <Translate id="pages.about.countdown.birthday" values={{ age: state.age ?? '…' }}>
+                    {'I turn {age}'}
+                  </Translate>
+                </strong>
+              ),
+            }}
+          >
+            {'Until {birthday}'}
+          </Translate>{' '}
+          {TIME_UNITS.map(({ key, label }, index) => (
+            <Fragment key={key}>
+              <span className={styles.countdownUnit}>
+                <span className={styles.countdownNumber}>
+                  <RollingNumber value={String(state[key]).padStart(key === 'days' ? 3 : 2, '0')} />
+                  <span className={styles.countdownSrOnly}>{state[key]}</span>
+                </span>{' '}
+                {selectMessage(state[key], label)}
+              </span>
+              {index < TIME_UNITS.length - 1 && ' '}
+            </Fragment>
+          ))}
+          <Translate id="pages.about.countdown.sentenceEnd">{'.'}</Translate>
+        </div>
+        {birthdayVisible && <Greeting exiting={!state.isBirthday} onExited={finishBirthdayExit} />}
+      </div>
+    </div>
   );
 }
 

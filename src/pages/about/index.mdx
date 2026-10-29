@@ -5,11 +5,13 @@ hide_table_of_contents: true
 
 import {
   AboutTitle,
+  Countdown,
   Skills,
   Devices,
   Community,
   Comments,
 } from '@site/src/pages/about/\_components';
+import styles from '@site/src/pages/about/styles.module.css';
 
 <div style={{ maxWidth: '664px', margin: 'auto' }}>
 
@@ -26,6 +28,10 @@ I learn independently, think systematically, and approach problems through both 
 ## My Nickname
 
 My nickname is **lailai**. Since the name is fairly common, I often use **lailai0916** online, with `0916` taken from my birthday. When that is unavailable, I use **lailai0x394** instead, where `0x394` is the hexadecimal representation of `0916`.
+
+<div className={styles.birthday}>
+  <Countdown />
+</div>
 
 ## My Education
 

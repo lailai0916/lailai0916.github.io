@@ -1,11 +1,16 @@
-import { translate } from '@docusaurus/Translate';
 import { getAllBlogItems } from '@site/src/utils/blogData';
 import { compareInstantsDescending } from '@site/src/utils/dateTime';
 import type { ShareCardProps } from '@lailai0916/ui/ShareCard';
 
+export interface MomentPost {
+  title: string;
+  permalink: string;
+}
+
 interface MomentItem {
   date: string;
   content?: string;
+  post?: MomentPost;
   event?: string;
   location?: string;
   images?: string[];
@@ -194,27 +199,13 @@ const STATIC_MOMENTS: MomentItem[] = [
   },
 ];
 
-function escapeHtml(s: string): string {
-  return s
-    .replace(/&/g, '&amp;')
-    .replace(/</g, '&lt;')
-    .replace(/>/g, '&gt;')
-    .replace(/"/g, '&quot;')
-    .replace(/'/g, '&#39;');
-}
-
 function getBlogMoments(locale?: string): MomentItem[] {
-  return getAllBlogItems(locale).map((it): MomentItem => {
-    const { title, date, permalink } = it;
-    const content = translate(
-      {
-        id: 'data.moments.blogPublished',
-        message: 'Published a new post <a href="{permalink}">{title}</a>',
-      },
-      { permalink: escapeHtml(permalink), title: escapeHtml(title) }
-    );
-    return { date, content };
-  });
+  return getAllBlogItems(locale).map(
+    ({ date, title, permalink }): MomentItem => ({
+      date,
+      post: { title, permalink },
+    })
+  );
 }
 
 export function getMomentList(locale?: string): MomentItem[] {
