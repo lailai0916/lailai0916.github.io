@@ -221,4 +221,17 @@ export const FRIEND_LIST: FriendItem[] = [
     href: 'https://www.federico2903.dev',
     avatar: 'https://mydisk.cn-nb1.rains3.com/头像.png',
   },
+  {
+    title: translate({
+      id: 'data.friends.xiaoten.title',
+      message: '小十的个人博客',
+    }),
+    description: translate({
+      id: 'data.friends.xiaoten.description',
+      message: '调配电流、像素和代码的ISFP型导体。',
+    }),
+    href: 'https://www.xiaoten.com/',
+    avatar: 'https://www.xiaoten.com/avatar.png',
+    rss: 'https://www.xiaoten.com/index.xml',
+  },
 ];

@@ -401,6 +401,12 @@
   "data.friends.federico2903.description": {
     "message": "Pisa tino, magi gali humo lonrodop."
   },
+  "data.friends.xiaoten.title": {
+    "message": "小十的个人博客"
+  },
+  "data.friends.xiaoten.description": {
+    "message": "调配电流、像素和代码的ISFP型导体。"
+  },
   "data.resources.site.google.title": {
     "message": "谷歌"
   },
