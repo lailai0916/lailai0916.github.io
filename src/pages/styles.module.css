@@ -366,7 +366,7 @@
   transition: color 160ms ease;
 }
 
-.infoRowValue:hover {
+a.infoRowValue:hover {
   color: var(--ifm-color-primary);
 }
 

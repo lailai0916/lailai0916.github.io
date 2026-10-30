@@ -256,7 +256,6 @@ export default function Home(): ReactNode {
       key: 'time',
       value: `${localTime} (UTC+08:00)`,
       icon: timeIcon,
-      href: 'https://time.is/UTC+8',
     },
     {
       key: 'orcid',
@@ -319,9 +318,13 @@ export default function Home(): ReactNode {
                 {infoItems.map((item) => (
                   <li key={item.key} className={styles.infoRow}>
                     <Icon icon={item.icon} className={styles.infoRowIcon} />
-                    <Link href={item.href} className={styles.infoRowValue}>
-                      {item.value}
-                    </Link>
+                    {item.href ? (
+                      <Link href={item.href} className={styles.infoRowValue}>
+                        {item.value}
+                      </Link>
+                    ) : (
+                      <span className={styles.infoRowValue}>{item.value}</span>
+                    )}
                   </li>
                 ))}
               </ul>
