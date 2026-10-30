@@ -8,6 +8,22 @@ interface ChangelogItem {
 
 export const CHANGELOG_LIST: ChangelogItem[] = [
   {
+    date: '2026-10-30',
+    type: 'added',
+    content: translate({
+      id: 'data.changelog.entry20261030FriendsPosts',
+      message: 'Friends’ Posts',
+    }),
+  },
+  {
+    date: '2026-10-30',
+    type: 'changed',
+    content: translate({
+      id: 'data.changelog.entry20261030MomentsLayout',
+      message: 'Blog Moments page layout',
+    }),
+  },
+  {
     date: '2026-10-01',
     type: 'changed',
     content: translate({

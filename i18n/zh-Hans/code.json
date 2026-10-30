@@ -1,4 +1,10 @@
 {
+  "data.changelog.entry20261030FriendsPosts": {
+    "message": "朋友动态"
+  },
+  "data.changelog.entry20261030MomentsLayout": {
+    "message": "博客 Moments 页面布局"
+  },
   "data.changelog.entry20261001Print": {
     "message": "优化打印版式"
   },
