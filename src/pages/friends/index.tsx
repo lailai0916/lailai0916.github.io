@@ -1,14 +1,12 @@
 import { type ReactNode } from 'react';
-import clsx from 'clsx';
 import Layout from '@theme/Layout';
 import Icon from '@lailai0916/ui/Icon';
-import AvatarFallbackIcon from 'lucide-static/icons/user-round.svg';
 import { PageTitle, PageHeader, PageContent } from '@lailai0916/ui/Page';
 import Button from '@lailai0916/ui/Button';
 import Card from '@lailai0916/ui/Card';
 import { FRIEND_LIST } from '@site/src/data/friends';
-import { useImageStatus } from '@lailai0916/ui';
 import { translate } from '@docusaurus/Translate';
+import { FriendAvatar, FriendFeed } from './_components';
 import styles from './styles.module.css';
 
 const TITLE = translate({
@@ -35,50 +33,11 @@ const REQUEST_SUBJECT = translate({
 const REQUEST_TEMPLATE = `title: "lailai's Home",
 description: 'Student & Developer',
 href: 'https://lailai.one',
-avatar: 'https://lailai.one/img/logo.png',`;
+avatar: 'https://lailai.one/img/logo.png',
+rss: 'https://lailai.one/blog/rss.xml',`;
 const REQUEST_LINK_EMAIL = `mailto:lailai0x394@gmail.com?subject=${encodeURIComponent(
   REQUEST_SUBJECT
 )}&body=${encodeURIComponent(REQUEST_TEMPLATE)}`;
-
-function FriendAvatar({
-  src,
-  className,
-  loading,
-}: {
-  src?: string;
-  className: string;
-  loading?: 'lazy';
-}): ReactNode {
-  const { imgRef, status, onLoad, onError } = useImageStatus(src);
-
-  return (
-    <span className={className} aria-hidden="true">
-      <AvatarFallbackIcon
-        className={clsx(styles.avatarFallback, status === 'loaded' && styles.avatarFallbackHidden)}
-      />
-      {src && status !== 'error' && (
-        <img
-          ref={imgRef}
-          src={src}
-          alt=""
-          className={clsx(styles.avatarImage, status === 'loaded' && styles.avatarImageLoaded)}
-          loading={loading}
-          decoding="async"
-          onLoad={onLoad}
-          onError={onError}
-        />
-      )}
-    </span>
-  );
-}
-
-function getDomain(href: string): string {
-  try {
-    return new URL(href).hostname.replace(/^www\./, '');
-  } catch {
-    return href;
-  }
-}
 
 export default function Friends(): ReactNode {
   return (
@@ -95,26 +54,28 @@ export default function Friends(): ReactNode {
           {REQUEST_LINK}
         </Button>
       </PageHeader>
-      <PageContent className={styles.layout}>
-        {FRIEND_LIST.map((friend, index) => (
-          <Card
-            key={`${friend.title}-${index}`}
-            href={friend.href}
-            padding="1.25rem"
-            className={styles.friendCard}
-            wrapperClassName={styles.friendLink}
-          >
-            <FriendAvatar src={friend.avatar} className={styles.avatar} loading="lazy" />
-            <div className={styles.cardBody}>
-              <h2 className={styles.friendName}>{friend.title}</h2>
-              <p className={styles.friendDescription}>{friend.description ?? friend.href}</p>
-            </div>
-            <span className={styles.arrow} aria-hidden>
-              <Icon icon="lucide:arrow-up-right" />
-            </span>
-            <span className={styles.domain}>{getDomain(friend.href)}</span>
-          </Card>
-        ))}
+      <PageContent>
+        <div className={styles.layout}>
+          {FRIEND_LIST.map((friend, index) => (
+            <Card
+              key={`${friend.title}-${index}`}
+              href={friend.href}
+              padding="1.25rem"
+              className={styles.friendCard}
+              wrapperClassName={styles.friendLink}
+            >
+              <FriendAvatar src={friend.avatar} className={styles.avatar} loading="lazy" />
+              <div className={styles.cardBody}>
+                <h2 className={styles.friendName}>{friend.title}</h2>
+                <p className={styles.friendDescription}>{friend.description ?? friend.href}</p>
+              </div>
+              <span className={styles.arrow} aria-hidden>
+                <Icon icon="lucide:arrow-up-right" />
+              </span>
+            </Card>
+          ))}
+        </div>
+        <FriendFeed />
       </PageContent>
     </Layout>
   );

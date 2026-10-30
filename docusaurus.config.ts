@@ -324,6 +324,7 @@ const config: Config = {
     require.resolve('./src/plugins/externalFonts/index.ts'),
     require.resolve('./src/plugins/problemChunks/index.ts'),
     require.resolve('./src/plugins/blogCatalog/index.ts'),
+    require.resolve('./src/plugins/friendFeedManifest/index.ts'),
     require.resolve('docusaurus-plugin-image-zoom'),
   ],
 };

@@ -1748,6 +1748,24 @@
   "pages.changelog.description": {
     "message": "lailai's Home 的更新日志"
   },
+  "pages.friends.feed.title": {
+    "message": "朋友动态"
+  },
+  "pages.friends.feed.empty": {
+    "message": "暂无文章"
+  },
+  "pages.friends.feed.loading": {
+    "message": "正在加载朋友动态"
+  },
+  "pages.friends.feed.error": {
+    "message": "朋友动态加载失败。"
+  },
+  "pages.friends.feed.retry": {
+    "message": "重试"
+  },
+  "pages.friends.feed.updated": {
+    "message": "最后更新于 {date}"
+  },
   "pages.friends.title": {
     "message": "友链"
   },
@@ -1940,27 +1958,6 @@
   "pages.resources.search.empty": {
     "message": "没有找到与“{query}”匹配的资源"
   },
-  "pages.travel.title": {
-    "message": "旅行"
-  },
-  "pages.travel.description": {
-    "message": "每一次旅行都能带来新的视野和感悟"
-  },
-  "pages.travel.modification": {
-    "message": "旅行<b>记录</b>"
-  },
-  "pages.travel.quote.content": {
-    "message": "纸上得来终觉浅，绝知此事要躬行。"
-  },
-  "pages.travel.quote.author": {
-    "message": "陆游"
-  },
-  "pages.travel.quote.source": {
-    "message": "《冬夜读书示子聿》"
-  },
-  "pages.travel.datacard.countries": {
-    "message": "个国家"
-  },
   "pages.settings.title": {
     "message": "设置"
   },
@@ -2063,6 +2060,27 @@
   "pages.settings.loading": {
     "message": "正在加载设置…"
   },
+  "pages.travel.title": {
+    "message": "旅行"
+  },
+  "pages.travel.description": {
+    "message": "每一次旅行都能带来新的视野和感悟"
+  },
+  "pages.travel.modification": {
+    "message": "旅行<b>记录</b>"
+  },
+  "pages.travel.quote.content": {
+    "message": "纸上得来终觉浅，绝知此事要躬行。"
+  },
+  "pages.travel.quote.author": {
+    "message": "陆游"
+  },
+  "pages.travel.quote.source": {
+    "message": "《冬夜读书示子聿》"
+  },
+  "pages.travel.datacard.countries": {
+    "message": "个国家"
+  },
   "components.admonition.example.title": {
     "message": "示例"
   },
@@ -2132,12 +2150,6 @@
   "components.footer.licenseLabel": {
     "message": "知识共享 署名 4.0 国际许可协议"
   },
-  "components.article.editPage": {
-    "message": "编辑此页面"
-  },
-  "components.article.print": {
-    "message": "打印此页面"
-  },
   "theme.SearchPage.documentsFound.plurals": {
     "message": "找到 {count} 份文件",
     "description": "Pluralized label for \"{count} documents found\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
@@ -2178,6 +2190,12 @@
   "theme.SearchPage.fetchingNewResults": {
     "message": "正在获取新的搜索结果...",
     "description": "The paragraph for fetching new search results"
+  },
+  "components.article.editPage": {
+    "message": "编辑此页面"
+  },
+  "components.article.print": {
+    "message": "打印此页面"
   },
   "components.article.copyMarkdown": {
     "message": "复制 Markdown"
@@ -2287,9 +2305,6 @@
   "pages.overview.metric.moments": {
     "message": "动态"
   },
-  "blog.post.empty": {
-    "message": "暂无文章"
-  },
   "blog.pages.archive.title": {
     "message": "归档"
   },
@@ -2310,6 +2325,9 @@
   },
   "blog.archive.search.empty": {
     "message": "没有找到与“{query}”匹配的文章"
+  },
+  "blog.post.empty": {
+    "message": "暂无文章"
   },
   "blog.archive.redirect.link": {
     "message": "浏览归档"
@@ -2362,18 +2380,6 @@
   "blog.pagination.ariaLabel": {
     "message": "分页"
   },
-  "blog.sidebarPrototype.profileLabel": {
-    "message": "资料卡"
-  },
-  "blog.sidebarPrototype.featureLabel": {
-    "message": "功能卡"
-  },
-  "blog.sidebarPrototype.previous": {
-    "message": "上一款"
-  },
-  "blog.sidebarPrototype.next": {
-    "message": "下一款"
-  },
   "blog.menu.sectionsAriaLabel": {
     "message": "博客分区"
   },
@@ -2388,6 +2394,18 @@
   },
   "blog.menu.overview": {
     "message": "概览"
+  },
+  "blog.sidebarPrototype.profileLabel": {
+    "message": "资料卡"
+  },
+  "blog.sidebarPrototype.featureLabel": {
+    "message": "功能卡"
+  },
+  "blog.sidebarPrototype.previous": {
+    "message": "上一款"
+  },
+  "blog.sidebarPrototype.next": {
+    "message": "下一款"
   },
   "theme.NotFound.title": {
     "message": "找不到页面",
@@ -2426,6 +2444,15 @@
   },
   "pages.insights.retry": {
     "message": "重试"
+  },
+  "pages.insights.uptime.avgPing": {
+    "message": "平均 {ping}ms"
+  },
+  "pages.insights.status.error": {
+    "message": "无法连接监控服务"
+  },
+  "pages.insights.uptime.empty": {
+    "message": "暂无监控项"
   },
   "pages.insights.systemStatus.cores": {
     "message": "核心"
@@ -2495,15 +2522,6 @@
   },
   "pages.insights.systemStatus.protocol": {
     "message": "连接类型"
-  },
-  "pages.insights.uptime.avgPing": {
-    "message": "平均 {ping}ms"
-  },
-  "pages.insights.status.error": {
-    "message": "无法连接监控服务"
-  },
-  "pages.insights.uptime.empty": {
-    "message": "暂无监控项"
   },
   "pages.travel.map.motherland": {
     "message": "祖国"
@@ -2951,13 +2969,13 @@
     "message": "主导航",
     "description": "The ARIA label for the main navigation"
   },
-  "theme.navbar.mobileLanguageDropdown.label": {
-    "message": "选择语言",
-    "description": "The label for the mobile language switcher dropdown"
-  },
   "theme.NotFound.p2": {
     "message": "请联系原始链接来源网站的所有者，并告知他们链接已损坏。",
     "description": "The 2nd paragraph of the 404 page"
+  },
+  "theme.navbar.mobileLanguageDropdown.label": {
+    "message": "选择语言",
+    "description": "The label for the mobile language switcher dropdown"
   },
   "theme.TOCCollapsible.toggleButtonLabel": {
     "message": "本页总览",

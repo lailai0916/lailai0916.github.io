@@ -5,6 +5,7 @@ interface FriendItem {
   description?: string;
   href: string;
   avatar?: string;
+  rss?: string;
 }
 
 export const FRIEND_LIST: FriendItem[] = [
@@ -19,6 +20,7 @@ export const FRIEND_LIST: FriendItem[] = [
     }),
     href: 'https://sintle.github.io',
     avatar: 'https://q1.qlogo.cn/g?b=qq&nk=3545418095&s=640',
+    rss: 'https://sintle.github.io/blog/rss.xml',
   },
   {
     title: translate({
@@ -31,6 +33,7 @@ export const FRIEND_LIST: FriendItem[] = [
     }),
     href: 'https://www.cnblogs.com/yunluo-qwq',
     avatar: 'https://cdn.luogu.com.cn/upload/usericon/765961.png',
+    rss: 'https://feed.cnblogs.com/blog/u/836486/rss/',
   },
   {
     title: translate({
@@ -91,6 +94,7 @@ export const FRIEND_LIST: FriendItem[] = [
     }),
     href: 'https://www.cnblogs.com/jdzhzw',
     avatar: 'https://cdn.luogu.com.cn/upload/usericon/718017.png',
+    rss: 'https://feed.cnblogs.com/blog/u/819543/rss/',
   },
   {
     title: translate({
@@ -99,6 +103,7 @@ export const FRIEND_LIST: FriendItem[] = [
     }),
     href: 'https://www.cnblogs.com/Jasonshan10',
     avatar: 'https://q1.qlogo.cn/g?b=qq&nk=342200890&s=640',
+    rss: 'https://feed.cnblogs.com/blog/u/811362/rss/',
   },
   {
     title: translate({
@@ -111,6 +116,7 @@ export const FRIEND_LIST: FriendItem[] = [
     }),
     href: 'https://www.cnblogs.com/decimal10',
     avatar: 'https://cdn.luogu.com.cn/upload/usericon/809729.png',
+    rss: 'https://feed.cnblogs.com/blog/u/800177/rss/',
   },
   {
     title: translate({
@@ -123,6 +129,7 @@ export const FRIEND_LIST: FriendItem[] = [
     }),
     href: 'https://www.castamerego.com',
     avatar: 'https://github.com/Casta-mere.png',
+    rss: 'https://www.castamerego.com/blog/rss.xml',
   },
   {
     title: translate({
@@ -135,6 +142,7 @@ export const FRIEND_LIST: FriendItem[] = [
     }),
     href: 'https://cszj.wang',
     avatar: 'https://cszj.wang/api/f/X3fbn/mmexport1762511348709.png',
+    rss: 'https://cszj.wang/rss.xml',
   },
   {
     title: translate({
@@ -147,6 +155,7 @@ export const FRIEND_LIST: FriendItem[] = [
     }),
     href: 'https://kuizuo.me',
     avatar: 'https://kuizuo.me/img/logo.png',
+    rss: 'https://kuizuo.me/blog/rss.xml',
   },
   {
     title: translate({
@@ -159,6 +168,7 @@ export const FRIEND_LIST: FriendItem[] = [
     }),
     href: 'https://skywt.net',
     avatar: 'https://img.skywt.net/avatar.jpg',
+    rss: 'https://skywt.net/rss.xml',
   },
   {
     title: translate({
@@ -171,6 +181,7 @@ export const FRIEND_LIST: FriendItem[] = [
     }),
     href: 'https://oi.baoshuo.ren',
     avatar: 'https://cdn.jsdelivr.net/npm/bsi/avatar/512x512.png',
+    rss: 'https://oi.baoshuo.ren/atom.xml',
   },
   {
     title: translate({
@@ -183,6 +194,7 @@ export const FRIEND_LIST: FriendItem[] = [
     }),
     href: 'https://cyanhaze.github.io',
     avatar: 'https://cyanhaze.github.io/images/avatar.png',
+    rss: 'https://cyanhaze.github.io/feed.xml',
   },
   {
     title: translate({
@@ -195,6 +207,7 @@ export const FRIEND_LIST: FriendItem[] = [
     }),
     href: 'https://studyingfather.com',
     avatar: 'https://studyingfather.cdn.zsq001.cn/wp-content/uploads/2024/04/400x400.png',
+    rss: 'https://studyingfather.com/feed',
   },
   {
     title: translate({
