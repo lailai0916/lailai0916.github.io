@@ -1,4 +1,4 @@
 .separator {
   margin: var(--lk-space-2) var(--ifm-menu-link-padding-horizontal);
-  border-top: 1px solid var(--ifm-color-emphasis-200);
+  border-top: var(--lk-divider-width) solid var(--lk-divider-color);
 }

@@ -4,7 +4,7 @@
   gap: 1rem;
   padding-top: 0.75rem;
   margin-top: 2rem;
-  border-top: 1px solid color-mix(in srgb, var(--ifm-color-emphasis-300) 65%, transparent);
+  border-top: var(--lk-divider-width) solid var(--lk-divider-color);
 }
 
 .meta {

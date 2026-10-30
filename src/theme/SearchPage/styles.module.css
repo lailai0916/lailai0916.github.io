@@ -38,7 +38,7 @@
 
 .searchResultItem {
   padding: 1rem 0;
-  border-bottom: 1px solid var(--ifm-toc-border-color);
+  border-bottom: var(--lk-divider-width) solid var(--lk-divider-color);
 }
 
 .searchResultItemHeading {

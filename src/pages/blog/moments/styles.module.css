@@ -210,7 +210,7 @@
   justify-content: space-between;
   gap: 1.5rem;
   padding-block: 1.75rem;
-  border-bottom: 1px solid var(--ifm-color-emphasis-200);
+  border-bottom: var(--lk-divider-width) solid var(--lk-divider-color);
 }
 
 .headerInfo {
@@ -250,7 +250,7 @@
   grid-template-columns: 40px minmax(0, 1fr);
   gap: 1rem;
   padding-block: 2rem;
-  border-bottom: 1px solid var(--ifm-color-emphasis-200);
+  border-bottom: var(--lk-divider-width) solid var(--lk-divider-color);
 }
 
 @media (max-width: 480px) {

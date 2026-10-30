@@ -27,6 +27,7 @@ export function ThemeButtonPreview() {
 | 背景       | `--lk-background-color`、`--lk-card-background-color`                                              |
 | 文字       | `--lk-font-color-base`、`--lk-font-color-secondary`、`--lk-heading-color`                          |
 | 中性色     | `--lk-color-emphasis-100` 至 `--lk-color-emphasis-900`                                             |
+| 分割线     | `--lk-divider-color`、`--lk-divider-width`                                                         |
 | 状态色     | `--lk-color-success`、`--lk-color-warning`、`--lk-color-danger`                                    |
 | 字体       | `--lk-font-family`、`--lk-font-mono`、`--lk-font-size`、`--lk-line-height`                         |
 | 圆角       | `--lk-radius-control`、`--lk-radius-overlay`、`--lk-radius-sm`、`--lk-radius-md`、`--lk-radius-lg` |
@@ -49,6 +50,8 @@ export function ThemeButtonPreview() {
 ```
 
 显式指定根元素 `data-theme="light"` 或 `data-theme="dark"`；没有指定时，默认变量跟随系统偏好。主题按整份文档管理，不把嵌套的深浅色容器当作隔离边界。
+
+`--lk-divider-color` 默认使用当前主题的 `--lk-color-emphasis-200`，`--lk-divider-width` 默认为 `1px`。`Divider`、面板内部分区与顶部栏边界共用这两个变量；间距仍由所在布局控制。可在根元素统一调整，或在局部容器中覆盖。
 
 ## 独立应用
 
@@ -124,7 +127,7 @@ export function AppearanceAction() {
 
 ## 局部样式
 
-按顺序考虑组件属性、`className`、主题变量，再使用公开的 `data-lk` 标记。支持的标记为 `button`、`avatar`、`brand`、`brand-logo`、`field-control`、`panel`、`theme-menu`。
+按顺序考虑组件属性、`className`、主题变量，再使用公开的 `data-lk` 标记。支持的标记为 `button`、`avatar`、`brand`、`brand-logo`、`divider`、`field-control`、`panel`、`theme-menu`。
 
 ```css
 .settings [data-lk='field-control'] {

@@ -1,7 +1,7 @@
 ---
 title: 布局与卡片
-description: 本文介绍页面容器、排列、面板和卡片组件的组合方式，以及路由链接和标题的使用边界。
-summary: 布局组件负责宽度、排列与间距，卡片和面板负责内容表面及分区。PageContainer 限制页面宽度，Stack 纵向排列，Cluster 横向排列并换行；Panel 可组合标题、正文与页脚。卡片家族提供标题、链接、统计和分享等结构，页面业务与响应式网格仍由宿主组织。间距与容器宽度使用像素数值，链接接入宿主路由，标题层级需要与页面结构保持一致。
+description: 本文介绍页面容器、排列、分割线、面板和卡片组件的组合方式，以及路由链接和标题的使用边界。
+summary: 布局组件负责宽度、排列与间距，卡片和面板负责内容表面及分区。PageContainer 限制页面宽度，Stack 纵向排列，Cluster 横向排列并换行；Divider 分隔内容，Panel 可组合标题、正文与页脚。卡片家族提供标题、链接、统计和分享等结构，页面业务与响应式网格仍由宿主组织。间距与容器宽度使用像素数值，链接接入宿主路由，标题层级需要与页面结构保持一致。
 ---
 
 import {
@@ -9,6 +9,7 @@ import {
   Brand,
   ButtonLink,
   Cluster,
+  Divider,
   Panel,
   PanelBody,
   PanelFooter,
@@ -20,6 +21,7 @@ import {
 ## 参考资料
 
 - [Layout 组件 - GitHub](https://github.com/lailai0916/ui/tree/main/src/components/Layout)
+- [Divider 组件 - GitHub](https://github.com/lailai0916/ui/tree/main/src/components/Divider)
 - [Panel 组件 - GitHub](https://github.com/lailai0916/ui/tree/main/src/components/Panel)
 - [SiteHeader 组件 - GitHub](https://github.com/lailai0916/ui/tree/main/src/components/SiteHeader)
 
@@ -77,6 +79,52 @@ export function ProjectPanel() {
 ```
 
 `PageTitle.title` 保留 HTML 字符串接口，只能使用应用自己编写的可信内容。来自用户或远程数据的标题应使用普通 React 文本元素；文章标题可以选择接受 `ReactNode` 的 `MDTitle`。
+
+## 分割线
+
+`Divider` 使用原生 `hr` 分隔内容，默认横向，不附带外边距。间距由所在容器或应用样式控制。
+
+export function DividerPreview() {
+  return (
+    <Stack gap={16}>
+      <Stack gap={12}>
+        <span>第一段内容</span>
+        <Divider />
+        <span>第二段内容</span>
+      </Stack>
+      <Cluster gap={12}>
+        <span>概览</span>
+        <Divider orientation="vertical" decorative style={{ blockSize: 24 }} />
+        <span>详情</span>
+      </Cluster>
+    </Stack>
+  );
+}
+
+<DividerPreview />
+
+|      属性      |                          行为                          |
+| :------------: | :----------------------------------------------------: |
+| `orientation`  |         默认 `horizontal`；`vertical` 显示竖线         |
+|  `decorative`  |   默认 `false`，保留分隔语义；`true` 时仅作视觉装饰    |
+| 原生属性与 ref | 支持 `hr` 的原生属性，以及 `className`、`style` 和 ref |
+
+```tsx
+import Divider from '@lailai0916/ui/Divider';
+
+<Divider style={{ marginBlock: 24 }} />;
+<Divider orientation="vertical" decorative style={{ blockSize: 24 }} />;
+```
+
+竖线在横向 flex 容器中可随容器拉伸，独立使用时需指定高度。`Divider` 默认提供分隔语义；导航文字之间等装饰线使用 `decorative`，避免读屏重复播报。稳定样式入口是 `[data-lk='divider']`。
+
+列表和容器内部分区使用 CSS 边框，引用相同变量，无需插入额外元素。颜色与粗细的默认值见 [主题定制](/docs/project/ui/theming)。
+
+```css
+.section + .section {
+  border-block-start: var(--lk-divider-width) solid var(--lk-divider-color);
+}
+```
 
 ## 网站顶部栏
 

@@ -73,7 +73,8 @@ html.debug-mode span {
   backdrop-filter: saturate(180%) blur(20px);
   -webkit-backdrop-filter: saturate(180%) blur(20px);
   box-shadow: none;
-  border-bottom: 1px solid color-mix(in srgb, var(--ifm-color-emphasis-200) 55%, transparent);
+  border-bottom: var(--lk-divider-width) solid
+    color-mix(in srgb, var(--lk-divider-color) 55%, transparent);
 }
 
 /* Backdrop filters and transforms trap fixed descendants inside the navbar's containing block. */
@@ -82,6 +83,12 @@ html.debug-mode span {
   -webkit-backdrop-filter: none;
   transform: none;
   transition: none;
+}
+
+@media (min-width: 997px) {
+  .main-wrapper .theme-doc-sidebar-container {
+    border-right: var(--lk-divider-width) solid var(--lk-divider-color);
+  }
 }
 
 .navbar__items--right {
@@ -228,6 +235,19 @@ html.debug-mode span {
   --docsearch-footer-shadow: none;
   --docsearch-error-color: var(--lk-color-danger);
   --docsearch-success-color: var(--lk-color-success-soft);
+}
+
+/* Keep the search dialog's controls and tables on their native border colors. */
+.DocSearch-Modal .DocSearch-Form {
+  border-block-end: var(--lk-divider-width) solid var(--lk-divider-color);
+}
+
+.DocSearch-Modal .DocSearch-Footer {
+  border-block-start: var(--lk-divider-width) solid var(--lk-divider-color);
+}
+
+.DocSearch-Modal .DocSearch-Divider {
+  border-inline-start: var(--lk-divider-width) solid var(--lk-divider-color);
 }
 
 .navbar .DocSearch-Button-Container {

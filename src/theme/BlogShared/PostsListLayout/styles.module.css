@@ -113,7 +113,7 @@
   align-items: center;
   gap: 0.5rem 1.25rem;
   padding-top: 0.75rem;
-  border-top: 1px solid var(--ifm-color-emphasis-200);
+  border-top: var(--lk-divider-width) solid var(--lk-divider-color);
   font-size: 0.85rem;
   color: var(--ifm-color-emphasis-600);
 }

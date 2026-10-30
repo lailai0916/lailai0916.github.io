@@ -22,4 +22,6 @@
   --lk-font-family: var(--ifm-font-family-base);
   --lk-font-size: var(--global-font-size);
   --lk-line-height: var(--global-line-height);
+  --ifm-hr-background-color: var(--lk-divider-color);
+  --ifm-hr-height: var(--lk-divider-width);
 }

@@ -166,7 +166,7 @@
 
 .feedItem {
   min-width: 0;
-  border-bottom: 1px solid var(--ifm-color-emphasis-200);
+  border-bottom: var(--lk-divider-width) solid var(--lk-divider-color);
 }
 
 @media (width > 760px) {

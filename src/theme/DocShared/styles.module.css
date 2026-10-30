@@ -7,7 +7,7 @@
   min-height: var(--doc-top-row-min-height);
   margin-bottom: var(--doc-top-row-margin-bottom, 1rem);
   padding-bottom: 0.5rem;
-  border-bottom: 1px solid var(--ifm-color-emphasis-200);
+  border-bottom: var(--lk-divider-width) solid var(--lk-divider-color);
 }
 
 .topRow > :not(:global(.theme-doc-breadcrumbs)) {

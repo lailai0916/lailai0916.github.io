@@ -29,7 +29,7 @@
 }
 
 .tocDisclosure {
-  border-block: 1px solid var(--ifm-color-emphasis-200);
+  border-block: var(--lk-divider-width) solid var(--lk-divider-color);
 }
 
 .tocDisclosureSummary {

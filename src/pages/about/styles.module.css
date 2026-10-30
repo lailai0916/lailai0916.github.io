@@ -445,11 +445,11 @@
 }
 
 .communityItem:nth-child(even) {
-  border-left: 1px solid var(--ifm-color-emphasis-200);
+  border-left: var(--lk-divider-width) solid var(--lk-divider-color);
 }
 
 .communityItem:nth-child(n + 3) {
-  border-top: 1px solid var(--ifm-color-emphasis-200);
+  border-top: var(--lk-divider-width) solid var(--lk-divider-color);
 }
 
 @media (max-width: 420px) {
@@ -460,7 +460,7 @@
 
 @media (max-width: 420px) {
   .communityItem + .communityItem {
-    border-top: 1px solid var(--ifm-color-emphasis-200);
+    border-top: var(--lk-divider-width) solid var(--lk-divider-color);
   }
 }
 

@@ -58,7 +58,7 @@
 .item + .item {
   margin-top: 1rem;
   padding-top: 1rem;
-  border-top: 1px solid var(--lk-color-emphasis-200);
+  border-top: var(--lk-divider-width) solid var(--lk-divider-color);
 }
 
 @media print {
