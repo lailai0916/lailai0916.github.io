@@ -1658,6 +1658,9 @@
   "pages.home.connect": {
     "message": "联系"
   },
+  "pages.home.mascot.hide": {
+    "message": "收起吉祥物"
+  },
   "components.browserWindow.openLink": {
     "message": "在新标签页打开链接"
   },
@@ -2253,6 +2256,9 @@
   },
   "pages.home.avatar.ariaLabel": {
     "message": "拖动 lailai 的头像，松手回弹；或按回车键弹跳"
+  },
+  "pages.home.avatar.description": {
+    "message": "将头像拖到屏幕左下角并松手，唤出吉祥物。按 Shift+Enter 显示或隐藏吉祥物。"
   },
   "pages.moments.title": {
     "message": "动态"

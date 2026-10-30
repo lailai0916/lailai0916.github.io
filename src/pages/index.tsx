@@ -1,6 +1,7 @@
-import { useEffect, useState, type ReactNode } from 'react';
+import { useEffect, useRef, useState, type ReactNode } from 'react';
 import Layout from '@theme/Layout';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
+import useBaseUrl from '@docusaurus/useBaseUrl';
 import Link from '@docusaurus/Link';
 import { translate } from '@docusaurus/Translate';
 import clsx from 'clsx';
@@ -124,6 +125,28 @@ function useLocalTime() {
 
 export default function Home(): ReactNode {
   const { siteConfig } = useDocusaurusContext();
+  const mascotSrc = useBaseUrl('/img/mascot.webp');
+  const [mascotVisible, setMascotVisible] = useState(false);
+  const mascotTriggerRef = useRef<HTMLElement | null>(null);
+
+  function revealMascot() {
+    if (mascotVisible) return;
+    mascotTriggerRef.current = document.activeElement as HTMLElement | null;
+    setMascotVisible(true);
+  }
+
+  function toggleMascot() {
+    mascotTriggerRef.current = document.activeElement as HTMLElement | null;
+    setMascotVisible((visible) => !visible);
+  }
+
+  useEffect(() => {
+    const reset = (event: PageTransitionEvent) => {
+      if (event.persisted) setMascotVisible(false);
+    };
+    window.addEventListener('pageshow', reset);
+    return () => window.removeEventListener('pageshow', reset);
+  }, []);
 
   const navItems = [
     {
@@ -260,7 +283,7 @@ export default function Home(): ReactNode {
         <div className={styles.bento}>
           <Card className={styles.cardMain}>
             <div className={styles.cardMainInner}>
-              <SpringAvatar />
+              <SpringAvatar onCornerDrop={revealMascot} onToggleMascot={toggleMascot} />
               <div className={styles.intro}>
                 <h1 className={styles.name}>lailai</h1>
                 <p className={styles.role}>
@@ -324,6 +347,29 @@ export default function Home(): ReactNode {
               </div>
             </Card>
           </div>
+        </div>
+        <div
+          className={styles.mascot}
+          data-visible={mascotVisible || undefined}
+          aria-hidden={!mascotVisible}
+        >
+          <button
+            type="button"
+            className={styles.mascotButton}
+            disabled={!mascotVisible}
+            aria-label={translate({
+              id: 'pages.home.mascot.hide',
+              message: 'Hide mascot',
+            })}
+            onClick={(event) => {
+              setMascotVisible(false);
+              if (event.detail === 0 && mascotTriggerRef.current?.isConnected) {
+                mascotTriggerRef.current.focus({ preventScroll: true });
+              }
+            }}
+          >
+            <img src={mascotSrc} width={336} height={336} alt="" draggable={false} />
+          </button>
         </div>
       </section>
     </Layout>

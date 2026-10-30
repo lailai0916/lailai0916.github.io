@@ -5,8 +5,15 @@ import styles from './styles.module.css';
 
 type Drag = {
   pointerId: number;
+  startX: number;
+  startY: number;
   originX: number;
   originY: number;
+};
+
+type SpringAvatarProps = {
+  onCornerDrop?: () => void;
+  onToggleMascot?: () => void;
 };
 
 // Sample a damped spring once; the browser plays only transform keyframes.
@@ -15,7 +22,7 @@ const spring = Array.from({ length: 61 }, (_, index) => {
   return index === 60 ? 0 : Math.exp(-9 * t) * (Math.cos(14 * t) + (9 / 14) * Math.sin(14 * t));
 });
 
-export default function SpringAvatar() {
+export default function SpringAvatar({ onCornerDrop, onToggleMascot }: SpringAvatarProps) {
   const avatarSrc = useBaseUrl('/img/logo.svg');
   const slotRef = useRef<HTMLDivElement>(null);
   const buttonRef = useRef<HTMLButtonElement>(null);
@@ -63,6 +70,8 @@ export default function SpringAvatar() {
     const { x, y } = stopAnimation();
     dragRef.current = {
       pointerId: event.pointerId,
+      startX: event.clientX,
+      startY: event.clientY,
       originX: event.clientX - x,
       originY: event.clientY - y,
     };
@@ -87,6 +96,19 @@ export default function SpringAvatar() {
     const button = buttonRef.current!;
     if (button.hasPointerCapture(drag.pointerId)) button.releasePointerCapture(drag.pointerId);
     returnHome();
+  }
+
+  function finishDrag(event: ReactPointerEvent<HTMLButtonElement>) {
+    const drag = dragRef.current;
+    if (!drag || drag.pointerId !== event.pointerId) return;
+    const moved = Math.hypot(event.clientX - drag.startX, event.clientY - drag.startY) >= 24;
+    const inCorner =
+      event.clientX >= 0 &&
+      event.clientX <= Math.min(128, window.innerWidth) &&
+      event.clientY >= Math.max(0, window.innerHeight - 128) &&
+      event.clientY <= window.innerHeight;
+    endDrag(event.pointerId);
+    if (moved && inCorner) onCornerDrop?.();
   }
 
   useEffect(() => {
@@ -129,14 +151,38 @@ export default function SpringAvatar() {
           id: 'pages.home.avatar.ariaLabel',
           message: "Drag lailai's avatar and release to spring back, or press Enter to bounce",
         })}
+        aria-description={
+          onCornerDrop
+            ? translate({
+                id: 'pages.home.avatar.description',
+                message:
+                  'Drag to the bottom-left corner and release to reveal the mascot. Press Shift+Enter to show or hide it.',
+              })
+            : undefined
+        }
+        aria-keyshortcuts={onToggleMascot ? 'Shift+Enter' : undefined}
         onPointerDown={startDrag}
         onPointerMove={moveDrag}
-        onPointerUp={(event) => endDrag(event.pointerId)}
+        onPointerUp={finishDrag}
         onPointerCancel={(event) => endDrag(event.pointerId)}
         onLostPointerCapture={(event) => endDrag(event.pointerId)}
         onBlur={() => endDrag()}
         onKeyDown={(event) => {
           if (event.key === 'Escape') endDrag();
+          if (
+            event.key === 'Enter' &&
+            event.shiftKey &&
+            !event.ctrlKey &&
+            !event.metaKey &&
+            !event.altKey &&
+            onToggleMascot
+          ) {
+            event.preventDefault();
+            if (event.repeat) return;
+            endDrag();
+            returnHome(true);
+            onToggleMascot();
+          }
         }}
         onClick={(event) => {
           if (event.detail === 0) returnHome(true);
