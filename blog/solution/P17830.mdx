@@ -1,0 +1,61 @@
+---
+title: 题解：P17830 [CSP-J 2026] 纸牌游戏
+description: 本文为洛谷 P17830 的题解，倒序构造后缀桌面集合并统计各牌值出现次数。
+summary: 设每局结束时桌面上的牌值构成集合。若本局牌值在后续出现过，桌面状态复用其右侧最近相同牌对应的集合；否则在后缀集合中加入当前牌值。倒序构造这些集合的链表表示，每局对应一个链首结点。统计各链首的出现次数后，按结点依赖关系传递计数，即可得到每种牌值最终留在桌面的局数，时间复杂度为 O(n+m)。
+date: 2026-10-31T18:05:19+08:00
+authors: lailai
+tags: [oi, solution, luogu]
+lid: sp7tdrfm
+---
+
+{/* truncate */}
+
+## 解题思路
+
+令 $T_i$ 表示第 $i$ 局最终桌面的点数集合，$u_i$ 表示 $i$ 右侧最近的 $a_i$ 位置；若不存在，则 $u_i=0$，并约定 $T_{n+1}=\varnothing$。若 $u_i>0$，处理到 $u_i$ 会清空桌面并重新放上 $a_i$；否则 $a_i$ 会保留。因此：
+
+$$
+T_i=
+\begin{cases}
+  T_{u_i} & u_i>0 \\
+  T_{i+1}\cup\set{a_i} & u_i=0
+\end{cases}
+$$
+
+倒序构造链表，链首为 $rt_i$：$u_i>0$ 时复用 $rt_{u_i}$，否则新建 $a_i$ 结点并接到 $rt_{i+1}$。每个 $rt_i$ 计数一次；结点按倒序创建，后继编号更小，故按编号递减传递计数。$k$ 的末次出现结点计数即答案，复杂度为 $O(n+m)$。
+
+## 参考代码
+
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+
+const int N=500005;
+int a[N],last[N],rt[N],nxt[N],id[N],cnt[N];
+int main()
+{
+	ios::sync_with_stdio(false);
+	cin.tie(nullptr);
+	int n,m;
+	cin>>n>>m;
+	for(int i=1;i<=n;i++)cin>>a[i];
+	int tot=0;
+	for(int i=n;i>=1;i--)
+	{
+		if(last[a[i]])rt[i]=rt[last[a[i]]];
+		else
+		{
+			tot++;
+			id[a[i]]=tot;
+			nxt[tot]=rt[i+1];
+			rt[i]=tot;
+		}
+		last[a[i]]=i;
+	}
+	for(int i=1;i<=n;i++)cnt[rt[i]]++;
+	for(int i=tot;i>=1;i--)cnt[nxt[i]]+=cnt[i];
+	cout<<cnt[id[1]];
+	for(int i=2;i<=m;i++)cout<<' '<<cnt[id[i]];
+	return 0;
+}
+```
