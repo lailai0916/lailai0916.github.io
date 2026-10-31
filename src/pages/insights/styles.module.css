@@ -101,26 +101,6 @@ html[data-theme='dark'] .heroDeltaDown {
   background: var(--ifm-color-emphasis-100);
 }
 
-.trafficContext {
-  margin-bottom: 1rem;
-  font-size: 0.8rem;
-  line-height: 1.5;
-  color: var(--ifm-font-color-secondary);
-}
-
-.trafficWindow {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
-  gap: 0.25rem 1rem;
-  font-variant-numeric: tabular-nums;
-}
-
-.comparisonNote {
-  margin: 0.25rem 0 0;
-}
-
 .heroGrid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(min(180px, 100%), 1fr));

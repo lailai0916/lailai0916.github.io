@@ -19,12 +19,10 @@ import { useUmamiStats, type InsightsRange, type UmamiStats } from '@site/src/ho
 import { useUmamiPageviewsSeries } from '@site/src/hooks/useUmamiPageviewsSeries';
 import { useUmamiMetric } from '@site/src/hooks/useUmamiMetric';
 import { useAnimatedNumber } from '@site/src/hooks/useAnimatedNumber';
-import { useVisitorTimeZone } from '@site/src/hooks/useVisitorTimeZone';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import { formatCompact } from '@lailai0916/ui';
 import { KUMA_STATUS_URL } from '@site/src/utils/kuma';
 import { UMAMI_DASHBOARD_URL } from '@site/src/utils/umami';
-import { formatInTimeZone } from '@site/src/utils/dateTime';
 import { toPageviewsData } from './_components/seriesFormat';
 import MetricList from './_components/MetricList';
 import metricListStyles from './_components/MetricList/styles.module.css';
@@ -78,10 +76,6 @@ const ANALYTICS_ERROR = translate({
 const ENV_OTHER = translate({
   id: 'pages.insights.env.other',
   message: 'Other',
-});
-const COMPARISON_LABEL = translate({
-  id: 'pages.insights.traffic.comparison',
-  message: 'Rolling window; changes compare with the preceding equal period.',
 });
 
 // Umami reports raw browser/device codes; map the common ones to display names
@@ -215,20 +209,10 @@ function HeroMetric({
 }
 
 function HeroGrid({ range }: { range: InsightsRange }) {
-  const { data, status, isInitialLoading, isRefreshError, isFetching, updatedAt, retry } =
+  const { data, status, isInitialLoading, isRefreshError, isFetching, retry } =
     useUmamiStats(range);
   const { i18n } = useDocusaurusContext();
-  const timeZone = useVisitorTimeZone();
   const errored = status === 'error' && !isRefreshError;
-  const formatTime = (value: number) =>
-    formatInTimeZone(value, i18n.currentLocale, timeZone, {
-      year: 'numeric',
-      month: 'short',
-      day: 'numeric',
-      hour: '2-digit',
-      minute: '2-digit',
-      hourCycle: 'h23',
-    });
 
   // Round before formatting so a count-up frame never shows more decimals than
   // its final value (e.g. an integer total of 23 must not flash "11.5").
@@ -287,35 +271,6 @@ function HeroGrid({ range }: { range: InsightsRange }) {
 
   return (
     <div>
-      <div className={styles.trafficContext}>
-        <div className={styles.trafficWindow}>
-          {data ? (
-            <span>
-              <time dateTime={new Date(data.window.startAt).toISOString()}>
-                {formatTime(data.window.startAt)}
-              </time>
-              {' – '}
-              <time dateTime={new Date(data.window.endAt).toISOString()}>
-                {formatTime(data.window.endAt)}
-              </time>
-            </span>
-          ) : (
-            <Skeleton width="min(100%, 24rem)" height="1.2em" />
-          )}
-          {updatedAt !== null && (
-            <span>
-              {translate(
-                {
-                  id: 'pages.insights.traffic.updated',
-                  message: 'Summary updated {time}',
-                },
-                { time: formatTime(updatedAt) }
-              )}
-            </span>
-          )}
-        </div>
-        <p className={styles.comparisonNote}>{COMPARISON_LABEL}</p>
-      </div>
       {isRefreshError && <RefreshNotice onRetry={retry} busy={isFetching} />}
       <div className={styles.heroGrid}>
         {specs.map((spec) => {

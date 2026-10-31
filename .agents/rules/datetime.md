@@ -25,7 +25,7 @@ Date-time behavior follows the value's meaning, not one blanket timezone convers
 - Runtime Snapshot uses `YYYY-MM-DD HH:mm:ss` for build time, local time, and the deployment timestamp tooltip in both locales; these still use the visitor's timezone.
 - Runtime Snapshot durations use narrow localized units (`70d`, `9m ago` in English); relative times retain numeric offsets (`1d ago`).
 - Insights analytics and public Uptime Kuma status refresh every minute, aligned to whole minutes. Fetch immediately on entry, range changes, and return from a hidden tab; skip overlapping requests and pause polling while hidden. This is separate from Runtime Snapshot's one-second refresh.
-- Insights ranges are fixed 24-hour, 7-day, 30-day, and 365-day windows; the 24-hour window ends at the next whole-hour boundary. The traffic summary displays the successful request's actual window and completion time, retaining both with the old data after a failed refresh. Percentages compare the preceding equal-length window.
+- Insights ranges are fixed 24-hour, 7-day, 30-day, and 365-day windows; the 24-hour window ends at the next whole-hour boundary. Percentages compare the preceding equal-length window.
 - Runtime Snapshot's system polling, latency measurements, and clock rows align to whole seconds by recalculating the delay from the current epoch time after each tick. Initialize immediately; pause network polling while the page is hidden, then fetch immediately and realign on return.
 
 ## Display zones
