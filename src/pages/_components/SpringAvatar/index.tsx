@@ -9,12 +9,15 @@ type Drag = {
   startY: number;
   originX: number;
   originY: number;
+  moved: boolean;
 };
 
 type SpringAvatarProps = {
-  onCornerDrop?: () => void;
+  onRevealMascot?: () => void;
   onToggleMascot?: () => void;
 };
+
+const dragThreshold = 6;
 
 // Sample a damped spring once; the browser plays only transform keyframes.
 const spring = Array.from({ length: 61 }, (_, index) => {
@@ -22,11 +25,12 @@ const spring = Array.from({ length: 61 }, (_, index) => {
   return index === 60 ? 0 : Math.exp(-9 * t) * (Math.cos(14 * t) + (9 / 14) * Math.sin(14 * t));
 });
 
-export default function SpringAvatar({ onCornerDrop, onToggleMascot }: SpringAvatarProps) {
+export default function SpringAvatar({ onRevealMascot, onToggleMascot }: SpringAvatarProps) {
   const avatarSrc = useBaseUrl('/img/logo.svg');
   const slotRef = useRef<HTMLDivElement>(null);
   const buttonRef = useRef<HTMLButtonElement>(null);
   const dragRef = useRef<Drag | null>(null);
+  const clickAllowedRef = useRef(false);
   const animationRef = useRef<Animation | null>(null);
 
   function stopAnimation() {
@@ -67,6 +71,7 @@ export default function SpringAvatar({ onCornerDrop, onToggleMascot }: SpringAva
 
   function startDrag(event: ReactPointerEvent<HTMLButtonElement>) {
     if (!event.isPrimary || event.button !== 0 || dragRef.current) return;
+    clickAllowedRef.current = false;
     const { x, y } = stopAnimation();
     dragRef.current = {
       pointerId: event.pointerId,
@@ -74,6 +79,7 @@ export default function SpringAvatar({ onCornerDrop, onToggleMascot }: SpringAva
       startY: event.clientY,
       originX: event.clientX - x,
       originY: event.clientY - y,
+      moved: false,
     };
     event.currentTarget.style.transform = `translate(${x}px, ${y}px)`;
     event.currentTarget.dataset.dragging = 'true';
@@ -84,6 +90,8 @@ export default function SpringAvatar({ onCornerDrop, onToggleMascot }: SpringAva
   function moveDrag(event: ReactPointerEvent<HTMLButtonElement>) {
     const drag = dragRef.current;
     if (!drag || drag.pointerId !== event.pointerId) return;
+    drag.moved ||=
+      Math.hypot(event.clientX - drag.startX, event.clientY - drag.startY) >= dragThreshold;
     const x = event.clientX - drag.originX;
     const y = event.clientY - drag.originY;
     event.currentTarget.style.transform = `translate(${x}px, ${y}px)`;
@@ -101,14 +109,11 @@ export default function SpringAvatar({ onCornerDrop, onToggleMascot }: SpringAva
   function finishDrag(event: ReactPointerEvent<HTMLButtonElement>) {
     const drag = dragRef.current;
     if (!drag || drag.pointerId !== event.pointerId) return;
-    const moved = Math.hypot(event.clientX - drag.startX, event.clientY - drag.startY) >= 24;
-    const inCorner =
-      event.clientX >= 0 &&
-      event.clientX <= Math.min(128, window.innerWidth) &&
-      event.clientY >= Math.max(0, window.innerHeight - 128) &&
-      event.clientY <= window.innerHeight;
+    const clicked =
+      !drag.moved &&
+      Math.hypot(event.clientX - drag.startX, event.clientY - drag.startY) < dragThreshold;
     endDrag(event.pointerId);
-    if (moved && inCorner) onCornerDrop?.();
+    clickAllowedRef.current = clicked;
   }
 
   useEffect(() => {
@@ -152,11 +157,11 @@ export default function SpringAvatar({ onCornerDrop, onToggleMascot }: SpringAva
           message: "Drag lailai's avatar and release to spring back, or press Enter to bounce",
         })}
         aria-description={
-          onCornerDrop
+          onRevealMascot
             ? translate({
                 id: 'pages.home.avatar.description',
                 message:
-                  'Drag to the bottom-left corner of the visible page and release to reveal the mascot. Press Shift+Enter to show or hide it.',
+                  'Click the avatar to reveal the mascot. Press Shift+Enter to show or hide it.',
               })
             : undefined
         }
@@ -185,7 +190,14 @@ export default function SpringAvatar({ onCornerDrop, onToggleMascot }: SpringAva
           }
         }}
         onClick={(event) => {
-          if (event.detail === 0) returnHome(true);
+          if (event.detail === 0) {
+            returnHome(true);
+          } else {
+            const allowed = clickAllowedRef.current;
+            clickAllowedRef.current = false;
+            if (!allowed) return;
+          }
+          onRevealMascot?.();
         }}
       >
         <img src={avatarSrc} alt="lailai" draggable={false} />

@@ -282,7 +282,7 @@ export default function Home(): ReactNode {
         <div className={styles.bento}>
           <Card className={styles.cardMain}>
             <div className={styles.cardMainInner}>
-              <SpringAvatar onCornerDrop={revealMascot} onToggleMascot={toggleMascot} />
+              <SpringAvatar onRevealMascot={revealMascot} onToggleMascot={toggleMascot} />
               <div className={styles.intro}>
                 <h1 className={styles.name}>lailai</h1>
                 <p className={styles.role}>

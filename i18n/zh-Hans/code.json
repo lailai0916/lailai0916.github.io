@@ -2270,7 +2270,7 @@
     "message": "拖动 lailai 的头像，松手回弹；或按回车键弹跳"
   },
   "pages.home.avatar.description": {
-    "message": "将头像拖到浏览器可见区域的左下角并松手，唤出吉祥物。按 Shift+Enter 显示或隐藏吉祥物。"
+    "message": "点击头像唤出吉祥物。按 Shift+Enter 显示或隐藏吉祥物。"
   },
   "pages.moments.title": {
     "message": "动态"
