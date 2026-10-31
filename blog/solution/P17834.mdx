@@ -41,25 +41,21 @@ using namespace std;
 const int N=1000005;
 vector<int> G[N];
 int tim[N],deg[N],q[N],f[N],a[N],b[N],c[N],h[N];
-bool mid[N],vis[N];
+bool mid[N];
 bool check(int r,int n,int k)
 {
 	int len=deg[r+1]-k;
 	if(len<=0)return 1;
 	if(len>2*r)return 0;
+	for(int i=1;i<=n;i++)mid[i]=h[i]>r&&c[i]<=r;
 	for(int i=1;i<=n;i++)
 	{
-		mid[i]=h[i]>r&&c[i]<=r;
-		vis[i]=0;
-	}
-	for(int i=1;i<=n;i++)
-	{
-		if(!mid[i]||vis[i]||(mid[a[i]]&&mid[b[i]]))continue;
+		if(!mid[i]||(mid[a[i]]&&mid[b[i]]))continue;
 		int u=i,v=mid[a[i]]?b[i]:a[i],cur=0,j=0;
 		f[0]=0;
 		while(mid[u])
 		{
-			vis[u]=1;
+			mid[u]=0;
 			j++;
 			f[j]=0;
 			int d=r-c[u],l=max(0,j+d-len),p=j-d;
@@ -117,16 +113,15 @@ int main()
 			a[i]=b[i]=c[i]=0;
 			for(auto v:G[i])
 			{
-				if(tim[v]>tim[a[i]]){c[i]=tim[b[i]];b[i]=a[i];a[i]=v;}
-				else if(tim[v]>tim[b[i]]){c[i]=tim[b[i]];b[i]=v;}
-				else c[i]=max(c[i],tim[v]);
+				if(tim[v]>tim[a[i]])swap(v,a[i]);
+				if(tim[v]>tim[b[i]])swap(v,b[i]);
+				c[i]=max(c[i],tim[v]);
 			}
 			h[i]=tim[b[i]];
 		}
 		for(int i=n;i>=0;i--)deg[i]+=deg[i+1];
-		l=r=0;
-		while(deg[l+1]-k>2*l)l++;
-		while(deg[r+1]>k)r++;
+		l=0;
+		r=n;
 		while(l<r)
 		{
 			int mid=l+r>>1;
