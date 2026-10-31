@@ -79,11 +79,9 @@
   width: 100%;
 }
 
-.momentImages[data-count='1'] .momentImage {
-  width: auto;
-  height: auto;
-  max-width: min(100%, 36rem);
-  max-height: 26rem;
+.momentImages[data-count='1'] .momentImageButton {
+  width: min(100%, 36rem, calc(26rem * var(--image-ratio)));
+  aspect-ratio: var(--image-ratio);
 }
 
 .momentImages:not([data-count='1']) {
@@ -91,37 +89,58 @@
   --media-height: clamp(12rem, 52cqi, 25rem);
 }
 
-.momentImages:not([data-count='1']) .momentImage {
+.momentImages:not([data-count='1']) .momentImageButton {
   flex: none;
-  width: auto;
+  width: min(
+    calc(var(--media-height) * var(--image-ratio)),
+    82cqi,
+    calc(var(--media-height) * 20 / 17)
+  );
   height: var(--media-height);
-  max-width: min(82cqi, calc(var(--media-height) * 20 / 17));
-  aspect-ratio: auto 1 / 1;
-  object-fit: cover;
   scroll-snap-align: center;
+}
+
+.momentImageButton {
+  display: block;
+  flex: none;
+  padding: 0;
+  overflow: hidden;
+  border: 0;
+  border-radius: 10px;
+  background: var(--ifm-color-emphasis-100);
+  cursor: zoom-in;
+  transition: filter 160ms ease;
+}
+
+.momentImageButton:active:not(:disabled) {
+  filter: brightness(0.97);
+}
+
+.momentImageButton:focus-visible {
+  outline: none;
+  box-shadow: var(--lk-focus-ring);
+}
+
+.momentImageButton:disabled {
+  cursor: default;
 }
 
 .momentImage {
   display: block;
-  border-radius: 10px;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .momentImageFallback {
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 8rem;
+  width: 100%;
+  height: 100%;
   background: var(--ifm-color-emphasis-100);
   color: var(--ifm-color-emphasis-500);
   font-size: 1.5rem;
-}
-
-.momentImages[data-count='1'] .momentImageFallback {
-  width: min(100%, 30rem);
-}
-
-.momentImages:not([data-count='1']) .momentImageFallback {
-  width: min(var(--media-height), 82cqi);
 }
 
 .imageArrow {
@@ -186,12 +205,10 @@
     width: 100%;
   }
 
-  .momentImages:not([data-count='1']) .momentImage {
-    width: auto;
+  .momentImages:not([data-count='1']) .momentImageButton {
+    width: min(calc(20rem * var(--image-ratio)), calc(50% - 0.1875rem));
     height: auto;
-    max-width: calc(50% - 0.1875rem);
-    max-height: 20rem;
-    object-fit: contain;
+    aspect-ratio: var(--image-ratio);
   }
 
   .imageArrow {

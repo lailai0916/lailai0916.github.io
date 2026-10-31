@@ -33,7 +33,7 @@
 .heroLabel {
   font-size: 0.78rem;
   font-weight: 500;
-  color: var(--ifm-color-emphasis-600);
+  color: var(--ifm-font-color-secondary);
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;

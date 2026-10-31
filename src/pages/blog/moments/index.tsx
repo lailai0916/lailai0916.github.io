@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useRef, useState } from 'react';
+import { useEffect, useMemo, useRef, useState, type CSSProperties } from 'react';
 import clsx from 'clsx';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
@@ -9,7 +9,11 @@ import Icon from '@lailai0916/ui/Icon';
 import BlogScaffold from '@site/src/theme/BlogShared/Scaffold';
 import { MetaBar, type MetaBarItem } from '@site/src/theme/BlogShared/BlogUI';
 import ShareCard from '@lailai0916/ui/ShareCard';
-import { getMomentList, type MomentPost } from '@site/src/data/moments';
+import {
+  getMomentList,
+  type MomentImage as MomentImageData,
+  type MomentPost,
+} from '@site/src/data/moments';
 import { useImageStatus } from '@lailai0916/ui';
 import { useVisitorTimeZone } from '@site/src/hooks/useVisitorTimeZone';
 import { formatLocalDate, formatLocalTime } from '@site/src/utils/dateTime';
@@ -41,6 +45,10 @@ const NEXT_IMAGE_LABEL = translate({
   id: 'pages.moments.images.next',
   message: 'Next image',
 });
+const OPEN_IMAGE_LABEL = translate({
+  id: 'pages.moments.images.open',
+  message: 'Enlarge image',
+});
 const LOAD_MORE_LABEL = translate({
   id: 'pages.moments.loadMore',
   message: 'Load more',
@@ -64,33 +72,41 @@ function MomentPostPreview({ post }: { post: MomentPost }) {
   );
 }
 
-function MomentImage({ src }: { src: string }) {
+function MomentImage({ src, width, height }: MomentImageData) {
   const { imgRef, status, onLoad, onError } = useImageStatus(src);
 
-  if (status === 'error') {
-    return (
-      <span className={clsx(styles.momentImage, styles.momentImageFallback)} aria-hidden="true">
-        <Icon icon="lucide:image-off" />
-      </span>
-    );
-  }
-
   return (
-    <img
-      ref={imgRef}
-      src={src}
-      alt=""
-      className={styles.momentImage}
-      loading="lazy"
-      decoding="async"
-      data-zoomable
-      onLoad={onLoad}
-      onError={onError}
-    />
+    <button
+      type="button"
+      className={styles.momentImageButton}
+      style={{ '--image-ratio': width / height } as CSSProperties}
+      aria-label={OPEN_IMAGE_LABEL}
+      disabled={status !== 'loaded'}
+    >
+      {status === 'error' ? (
+        <span className={styles.momentImageFallback} aria-hidden="true">
+          <Icon icon="lucide:image-off" />
+        </span>
+      ) : (
+        <img
+          ref={imgRef}
+          src={src}
+          width={width}
+          height={height}
+          alt=""
+          className={styles.momentImage}
+          loading="lazy"
+          decoding="async"
+          data-zoomable
+          onLoad={onLoad}
+          onError={onError}
+        />
+      )}
+    </button>
   );
 }
 
-function MomentGallery({ images }: { images: string[] }) {
+function MomentGallery({ images }: { images: MomentImageData[] }) {
   const viewportRef = useRef<HTMLDivElement>(null);
   const trackRef = useRef<HTMLDivElement>(null);
   const [scrollable, setScrollable] = useState({ prev: false, next: false });
@@ -106,6 +122,15 @@ function MomentGallery({ images }: { images: string[] }) {
       const maxScroll = viewport.scrollWidth - viewport.clientWidth;
       const prev = viewport.scrollLeft > 1;
       const next = viewport.scrollLeft < maxScroll - 1;
+      const focused = document.activeElement;
+      if (
+        focused instanceof HTMLButtonElement &&
+        focused.parentElement === viewport.parentElement &&
+        ((focused.dataset.direction === 'prev' && !prev) ||
+          (focused.dataset.direction === 'next' && !next))
+      ) {
+        viewport.focus({ preventScroll: true });
+      }
       setScrollable((current) =>
         current.prev === prev && current.next === next ? current : { prev, next }
       );
@@ -159,7 +184,7 @@ function MomentGallery({ images }: { images: string[] }) {
       >
         <div ref={trackRef} className={styles.momentImageTrack}>
           {images.map((image) => (
-            <MomentImage key={image} src={image} />
+            <MomentImage key={image.src} {...image} />
           ))}
         </div>
       </div>
@@ -168,6 +193,7 @@ function MomentGallery({ images }: { images: string[] }) {
           type="button"
           className={clsx(styles.imageArrow, styles.imageArrowPrev)}
           aria-label={PREVIOUS_IMAGE_LABEL}
+          data-direction="prev"
           onClick={() => scrollImage(-1)}
         >
           <Icon icon="lucide:chevron-left" />
@@ -178,6 +204,7 @@ function MomentGallery({ images }: { images: string[] }) {
           type="button"
           className={clsx(styles.imageArrow, styles.imageArrowNext)}
           aria-label={NEXT_IMAGE_LABEL}
+          data-direction="next"
           onClick={() => scrollImage(1)}
         >
           <Icon icon="lucide:chevron-right" />

@@ -25,3 +25,7 @@
   --ifm-hr-background-color: var(--lk-divider-color);
   --ifm-hr-height: var(--lk-divider-width);
 }
+
+.site-chart {
+  --lk-color-emphasis-500: var(--lk-font-color-secondary);
+}

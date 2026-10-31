@@ -3325,5 +3325,26 @@
   "theme.tags.tagsPageTitle": {
     "message": "标签",
     "description": "The title of the tag list page"
+  },
+  "components.imageZoom.open": {
+    "message": "放大图片"
+  },
+  "components.imageZoom.close": {
+    "message": "关闭图片预览"
+  },
+  "components.imageZoom.title": {
+    "message": "图片预览"
+  },
+  "components.playground.lorenz.pause": {
+    "message": "暂停"
+  },
+  "components.playground.lorenz.play": {
+    "message": "继续"
+  },
+  "components.playground.neuralNetwork.neuron.ariaLabel": {
+    "message": "第 {layer} 层，第 {neuron} 个神经元"
+  },
+  "pages.moments.images.open": {
+    "message": "放大图片"
   }
 }

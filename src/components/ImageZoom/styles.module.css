@@ -1,0 +1,104 @@
+.trigger {
+  cursor: zoom-in;
+}
+
+.trigger:focus-visible {
+  outline: none;
+  box-shadow: var(--lk-focus-ring);
+}
+
+.sourceHidden {
+  visibility: hidden;
+}
+
+.dialog {
+  --preview-background: #fff;
+
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  max-height: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  border: 0;
+  background: transparent;
+  color: var(--ifm-font-color-base);
+  cursor: zoom-out;
+}
+
+:global([data-theme='dark']) .dialog {
+  --preview-background: #1b1b1d;
+}
+
+.dialog::backdrop {
+  background: transparent;
+}
+
+.backdrop {
+  position: absolute;
+  inset: 0;
+  background: var(--preview-background);
+  opacity: 0;
+}
+
+.preview {
+  position: fixed;
+  z-index: 1;
+  display: block;
+  max-width: none;
+  max-height: none;
+  margin: 0;
+  object-fit: fill;
+  transform-origin: top left;
+  will-change: transform, clip-path;
+  user-select: none;
+}
+
+.close {
+  position: fixed;
+  z-index: 2;
+  top: max(1rem, env(safe-area-inset-top));
+  right: max(1rem, env(safe-area-inset-right));
+  display: grid;
+  place-items: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  padding: 0;
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-radius: var(--lk-radius-control);
+  background: var(--ifm-card-background-color);
+  color: var(--ifm-font-color-base);
+  font: inherit;
+  font-size: 1.75rem;
+  line-height: 1;
+  cursor: pointer;
+  transition:
+    background-color 160ms ease,
+    transform 160ms ease;
+}
+
+.close:hover {
+  background: var(--ifm-color-emphasis-100);
+}
+
+.close:active {
+  transform: scale(0.92);
+}
+
+.close:focus-visible {
+  outline: none;
+  box-shadow: var(--lk-focus-ring);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .close {
+    transition: none;
+  }
+
+  .close:active {
+    transform: none;
+  }
+}

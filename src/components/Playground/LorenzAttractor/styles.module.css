@@ -33,24 +33,20 @@ html[data-theme='dark'] .cardSurface {
 .controls {
   width: 100%;
   display: grid;
-  grid-template-columns: repeat(3, 1fr) auto;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 0.85rem;
   align-items: end;
 }
 
-@media (max-width: 500px) {
-  .controls {
-    grid-template-columns: repeat(3, 1fr);
-  }
+.actions {
+  display: grid;
+  grid-column: 1 / -1;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.6rem;
 }
 
-.resetButton {
-  flex-shrink: 0;
-}
-
-@media (max-width: 500px) {
-  .resetButton {
-    grid-column: 1 / -1;
-    width: 100%;
+@media (pointer: coarse) {
+  .actions > * {
+    min-height: 44px;
   }
 }

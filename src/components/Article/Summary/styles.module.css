@@ -39,7 +39,7 @@ html[data-theme='dark'] .header:active {
 
 .header:focus-visible {
   outline: none;
-  box-shadow: var(--lk-focus-ring);
+  box-shadow: inset var(--lk-focus-ring);
 }
 
 .icon {

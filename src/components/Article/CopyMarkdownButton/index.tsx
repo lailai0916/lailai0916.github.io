@@ -1,5 +1,5 @@
 import Hint from '@lailai0916/ui/Hint';
-import { useEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import clsx from 'clsx';
 import { loadIcons } from '@iconify/react';
 import Icon from '@lailai0916/ui/Icon';
@@ -48,54 +48,106 @@ const COPY_ERROR_LABEL = translate({
 // flashes an empty button while Iconify fetches them on first use.
 const STATUS_ICONS = ['lucide:check', 'lucide:x'];
 
+async function writeClipboard(text: string) {
+  try {
+    if (!navigator.clipboard) throw new Error('Clipboard API unavailable');
+    await navigator.clipboard.writeText(text);
+  } catch {
+    const previousFocus = document.activeElement;
+    const textarea = document.createElement('textarea');
+    textarea.value = text;
+    textarea.readOnly = true;
+    textarea.style.position = 'fixed';
+    textarea.style.opacity = '0';
+    document.body.appendChild(textarea);
+    try {
+      textarea.select();
+      if (!document.execCommand('copy')) throw new Error('Copy failed');
+    } finally {
+      textarea.remove();
+      if (previousFocus instanceof HTMLElement && previousFocus.isConnected) {
+        previousFocus.focus({ preventScroll: true });
+      }
+    }
+  }
+}
+
 export default function CopyMarkdownButton({ source }: { source: string }) {
   const [state, setState] = useState<State>('idle');
   const textRef = useRef<string | null>(null);
   const loadRef = useRef<Promise<string> | null>(null);
+  const sourceVersionRef = useRef(0);
+  const requestRef = useRef(0);
+  const timerRef = useRef<ReturnType<typeof setTimeout> | undefined>(undefined);
+
+  const invalidateRequests = useCallback(() => {
+    sourceVersionRef.current++;
+    requestRef.current++;
+    clearTimeout(timerRef.current);
+  }, []);
+
+  const loadSource = useCallback(() => {
+    const resolved = resolveSource(source);
+    if (!resolved) return null;
+    const version = sourceVersionRef.current;
+    const promise: Promise<string> = resolved.ctx(resolved.key).then(
+      (mod: { default: string }) => {
+        if (version === sourceVersionRef.current) textRef.current = mod.default;
+        return mod.default;
+      },
+      (error: unknown) => {
+        if (version === sourceVersionRef.current) loadRef.current = null;
+        throw error;
+      }
+    );
+    loadRef.current = promise;
+    return promise;
+  }, [source]);
 
   useEffect(() => {
     loadIcons(STATUS_ICONS);
   }, []);
 
   useEffect(() => {
+    invalidateRequests();
     textRef.current = null;
-    const resolved = resolveSource(source);
-    if (!resolved) {
-      loadRef.current = null;
-      return;
-    }
-    const promise = resolved.ctx(resolved.key).then((mod: { default: string }) => {
-      textRef.current = mod.default;
-      return mod.default;
-    });
-    promise.catch(() => {});
-    loadRef.current = promise;
-  }, [source]);
+    loadRef.current = null;
+    setState('idle');
+    loadSource()?.catch(() => {});
+    return invalidateRequests;
+  }, [loadSource, invalidateRequests]);
 
   if (!resolveSource(source)) return null;
 
-  function copy(text: string) {
-    navigator.clipboard.writeText(text).then(
-      () => {
-        setState('copied');
-        setTimeout(() => setState('idle'), 2000);
-      },
-      (e: unknown) => {
-        console.error('Copy markdown failed:', e);
-        setState('error');
-        setTimeout(() => setState('idle'), 2000);
-      }
-    );
+  function feedback(next: State, request: number) {
+    if (request !== requestRef.current) return;
+    clearTimeout(timerRef.current);
+    setState(next);
+    timerRef.current = setTimeout(() => setState('idle'), 2000);
+  }
+
+  async function copy(text: string, request: number) {
+    try {
+      await writeClipboard(text);
+      feedback('copied', request);
+    } catch {
+      feedback('error', request);
+    }
   }
 
   function onClick() {
+    const request = ++requestRef.current;
+    clearTimeout(timerRef.current);
     // Fast path: source already prefetched — write synchronously so the
     // clipboard call stays inside the click's user activation.
     if (textRef.current != null) {
-      copy(textRef.current);
-    } else if (loadRef.current) {
-      // Rare: clicked before the in-flight prefetch resolved.
-      loadRef.current.then(copy).catch(() => setState('error'));
+      void copy(textRef.current, request);
+    } else {
+      (loadRef.current ?? loadSource())
+        ?.then((text) => {
+          if (request === requestRef.current) void copy(text, request);
+        })
+        .catch(() => feedback('error', request));
     }
   }
 

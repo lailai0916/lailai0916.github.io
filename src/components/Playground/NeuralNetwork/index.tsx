@@ -11,11 +11,13 @@ import {
   type ReactNode,
   type MouseEvent as ReactMouseEvent,
   type TouchEvent as ReactTouchEvent,
+  type KeyboardEvent as ReactKeyboardEvent,
 } from 'react';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import { translate } from '@docusaurus/Translate';
 import Button from '@lailai0916/ui/Button';
 import Card from '@lailai0916/ui/Card';
+import { useAnimationActivity } from '@site/src/hooks/useAnimationActivity';
 import styles from './styles.module.css';
 
 const RESET_LABEL = translate({
@@ -65,6 +67,10 @@ function getNeuronPosition(layerIndex: number, visibleNeuronIndex: number) {
 }
 
 export default function NeuralNetwork({ instant = false }: { instant?: boolean }) {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const { reducedMotion } = useAnimationActivity(containerRef);
+  const reducedMotionRef = useRef(reducedMotion);
+  reducedMotionRef.current = reducedMotion;
   const dataUrl = useBaseUrl('/json/neural-network-data.json');
   const [dataLoaded, setDataLoaded] = useState(false);
   const [points, setPoints] = useState<Point[]>([]);
@@ -79,13 +85,16 @@ export default function NeuralNetwork({ instant = false }: { instant?: boolean }
   // timers; both outlive the component unless they're torn down here.
   const rafRef = useRef(0);
   const timeoutRef = useRef(0);
-  useEffect(
-    () => () => {
-      cancelAnimationFrame(rafRef.current);
-      clearTimeout(timeoutRef.current);
-    },
-    []
-  );
+  const operationRef = useRef(0);
+  const pendingNormalizationRef = useRef<((completed: boolean) => void) | null>(null);
+  const cancelPending = useCallback(() => {
+    operationRef.current += 1;
+    cancelAnimationFrame(rafRef.current);
+    clearTimeout(timeoutRef.current);
+    pendingNormalizationRef.current?.(false);
+    pendingNormalizationRef.current = null;
+  }, []);
+  useEffect(() => cancelPending, [cancelPending]);
 
   useEffect(() => {
     if (weights !== null) {
@@ -121,15 +130,19 @@ export default function NeuralNetwork({ instant = false }: { instant?: boolean }
   }, [points, instant, animating]);
 
   const normalizePointsAnimated = useCallback(
-    (duration = 1.0): Promise<void> => {
+    (duration = 1.0): Promise<boolean> => {
+      cancelPending();
+      const operation = operationRef.current;
       setNormalizing(true);
       const normData = collectNormalizationData(points);
       const startTime = Date.now();
       const ease = (t: number) => (t < 0.5 ? 4 * t ** 3 : 1 - (-2 * t + 2) ** 3 / 2);
 
       return new Promise((resolve) => {
+        pendingNormalizationRef.current = resolve;
         const frame = () => {
-          const t = (Date.now() - startTime) / 1000;
+          if (operation !== operationRef.current) return;
+          const t = reducedMotionRef.current ? duration : (Date.now() - startTime) / 1000;
           setPoints(
             applyNormalizationTransformation(points, normData, ease(Math.min(1, t / duration)))
           );
@@ -138,30 +151,43 @@ export default function NeuralNetwork({ instant = false }: { instant?: boolean }
             rafRef.current = requestAnimationFrame(frame);
           } else {
             setNormalizing(false);
-            resolve();
+            pendingNormalizationRef.current = null;
+            resolve(true);
           }
         };
         frame();
       });
     },
-    [points]
+    [cancelPending, points]
   );
 
   const animate = useCallback(() => {
+    cancelPending();
     setCheckLocked(true);
     setAnimating(false);
+    const operation = operationRef.current;
     if (isNormalized) {
-      timeoutRef.current = window.setTimeout(() => setAnimating(true), 1);
+      if (reducedMotionRef.current) setAnimating(true);
+      else
+        timeoutRef.current = window.setTimeout(() => {
+          if (operation === operationRef.current) setAnimating(true);
+        }, 1);
     } else {
-      normalizePointsAnimated().then(() => {
-        timeoutRef.current = window.setTimeout(() => setAnimating(true), 200);
+      const normalization = normalizePointsAnimated();
+      const normalizationOperation = operationRef.current;
+      normalization.then((completed) => {
+        if (!completed || normalizationOperation !== operationRef.current) return;
+        if (reducedMotionRef.current) setAnimating(true);
+        else
+          timeoutRef.current = window.setTimeout(() => {
+            if (normalizationOperation === operationRef.current) setAnimating(true);
+          }, 200);
       });
     }
-  }, [isNormalized, normalizePointsAnimated]);
+  }, [cancelPending, isNormalized, normalizePointsAnimated]);
 
   const resetToDefault = () => {
-    cancelAnimationFrame(rafRef.current);
-    clearTimeout(timeoutRef.current);
+    cancelPending();
     setPoints(threeImage ?? []);
     setIsNormalized(true);
     setNormalizing(false);
@@ -174,14 +200,16 @@ export default function NeuralNetwork({ instant = false }: { instant?: boolean }
   const isEmpty = !inputValues.some((v) => v > 0.1);
 
   if (!dataLoaded) {
-    return <div className={styles.container} style={{ minHeight: CANVAS_SIZE }} />;
+    return (
+      <div ref={containerRef} className={styles.container} style={{ minHeight: CANVAS_SIZE }} />
+    );
   }
 
   const compact = animating || instant;
   const editing = !animating || instant;
 
   return (
-    <div className={styles.container}>
+    <div ref={containerRef} className={styles.container}>
       <Card padding="0" className={styles.cardSurface}>
         <div className={styles.frame}>
           <svg
@@ -194,7 +222,7 @@ export default function NeuralNetwork({ instant = false }: { instant?: boolean }
             <NeuronConnections
               selectedNeuron={selectedNeuron}
               animating={animating}
-              instant={instant}
+              instant={instant || reducedMotion === true}
             />
             <VerticalEllipsis cx={175} cy={CANVAS_CENTER} />
             <Neurons
@@ -202,10 +230,15 @@ export default function NeuralNetwork({ instant = false }: { instant?: boolean }
               selectedNeuron={selectedNeuron}
               setSelectedNeuron={setSelectedNeuron}
               animating={animating}
-              instant={instant}
+              instant={instant || reducedMotion === true}
+              interactive={animating || instant}
             />
             <OutputDigitLabels />
-            <WinningOutputNeuronBox neurons={neurons} animating={animating} instant={instant} />
+            <WinningOutputNeuronBox
+              neurons={neurons}
+              animating={animating}
+              instant={instant || reducedMotion === true}
+            />
 
             {selectedNeuron?.layerIndex === 1 &&
               (() => {
@@ -240,8 +273,10 @@ export default function NeuralNetwork({ instant = false }: { instant?: boolean }
             <ImageGrid
               editing={editing}
               startEditing={() => {
-                setAnimating(false);
+                cancelPending();
+                setNormalizing(false);
                 setCheckLocked(false);
+                setAnimating(false);
                 setPoints([]);
                 setIsNormalized(false);
               }}
@@ -253,6 +288,9 @@ export default function NeuralNetwork({ instant = false }: { instant?: boolean }
               points={points}
               inputValues={inputValues}
               setPoints={(newPoints) => {
+                cancelPending();
+                setNormalizing(false);
+                setCheckLocked(false);
                 setPoints(newPoints);
                 setIsNormalized(false);
               }}
@@ -272,6 +310,8 @@ export default function NeuralNetwork({ instant = false }: { instant?: boolean }
           fullWidth
           disabled={isEmpty}
           onClick={() => {
+            cancelPending();
+            setNormalizing(false);
             setAnimating(false);
             setCheckLocked(false);
             setPoints([]);
@@ -384,13 +424,62 @@ function Neurons({
   setSelectedNeuron,
   animating,
   instant,
+  interactive,
 }: {
   neurons: number[][];
   selectedNeuron: SelectedNeuron;
   setSelectedNeuron: (n: SelectedNeuron) => void;
   animating: boolean;
   instant: boolean;
+  interactive: boolean;
 }) {
+  const [focused, setFocused] = useState({ layerIndex: 0, neuronId: 0 });
+  const nodeRefs = useRef(new Map<string, SVGGElement>());
+
+  const moveFocus = (
+    event: ReactKeyboardEvent<SVGGElement>,
+    layerIndex: number,
+    neuronId: number
+  ) => {
+    const layer = visibleNeurons[layerIndex];
+    const row = layer.indexOf(neuronId);
+    let nextLayer = layerIndex;
+    let nextId = neuronId;
+    if (event.key === 'ArrowUp' || event.key === 'ArrowDown') {
+      const ids = layer.filter((id): id is number => id !== null);
+      const index = ids.indexOf(neuronId);
+      nextId = ids[(index + (event.key === 'ArrowDown' ? 1 : -1) + ids.length) % ids.length];
+    } else if (event.key === 'ArrowLeft' || event.key === 'ArrowRight') {
+      nextLayer = Math.max(
+        0,
+        Math.min(visibleNeurons.length - 1, layerIndex + (event.key === 'ArrowRight' ? 1 : -1))
+      );
+      const next = visibleNeurons[nextLayer];
+      const position = getNeuronPosition(layerIndex, row);
+      let closestDistance = Infinity;
+      next.forEach((id, index) => {
+        if (id === null) return;
+        const distance = Math.abs(getNeuronPosition(nextLayer, index).y - position.y);
+        if (distance < closestDistance) {
+          closestDistance = distance;
+          nextId = id;
+        }
+      });
+    } else if (event.key === 'Enter' || event.key === ' ') {
+      event.preventDefault();
+      if (!event.repeat) {
+        const selected =
+          selectedNeuron?.layerIndex === layerIndex && selectedNeuron.neuronId === neuronId;
+        setSelectedNeuron(selected ? null : { layerIndex, neuronId });
+      }
+      return;
+    } else {
+      return;
+    }
+    event.preventDefault();
+    nodeRefs.current.get(`${nextLayer}-${nextId}`)?.focus();
+  };
+
   return (
     <g>
       {visibleNeurons.map((layer, layerIndex) =>
@@ -405,23 +494,50 @@ function Neurons({
             selectedNeuron?.layerIndex === layerIndex && selectedNeuron?.neuronId === neuronId;
 
           return (
-            <circle
+            <g
               key={`${layerIndex}-${neuronId}`}
-              cx={pos.x}
-              cy={pos.y}
-              r={8}
-              stroke={isSelected ? 'var(--ifm-color-primary)' : 'var(--nn-neuron-border-default)'}
-              strokeWidth={isSelected ? 2 : 1}
-              style={{
-                fill: animating || instant ? fill : 'var(--nn-neuron-fill-default)',
-                transition:
-                  animating && !instant
-                    ? `fill 600ms ease-in-out ${1200 * layerIndex + 100}ms`
-                    : 'none',
-                cursor: 'pointer',
+              ref={(node) => {
+                const key = `${layerIndex}-${neuronId}`;
+                if (node) nodeRefs.current.set(key, node);
+                else nodeRefs.current.delete(key);
               }}
+              className={styles.neuron}
+              role="button"
+              tabIndex={
+                interactive && focused.layerIndex === layerIndex && focused.neuronId === neuronId
+                  ? 0
+                  : -1
+              }
+              aria-hidden={!interactive || undefined}
+              aria-pressed={isSelected}
+              aria-label={translate(
+                {
+                  id: 'components.playground.neuralNetwork.neuron.ariaLabel',
+                  message: 'Layer {layer}, neuron {neuron}',
+                },
+                { layer: layerIndex + 1, neuron: neuronId + 1 }
+              )}
+              onFocus={() => setFocused({ layerIndex, neuronId })}
+              onKeyDown={(event) => moveFocus(event, layerIndex, neuronId)}
               onClick={() => setSelectedNeuron(isSelected ? null : { layerIndex, neuronId })}
-            />
+            >
+              <circle cx={pos.x} cy={pos.y} r={12} className={styles.neuronFocus} />
+              <circle
+                cx={pos.x}
+                cy={pos.y}
+                r={8}
+                stroke={isSelected ? 'var(--ifm-color-primary)' : 'var(--nn-neuron-border-default)'}
+                strokeWidth={isSelected ? 2 : 1}
+                style={{
+                  fill: animating || instant ? fill : 'var(--nn-neuron-fill-default)',
+                  transition:
+                    animating && !instant
+                      ? `fill 600ms ease-in-out ${1200 * layerIndex + 100}ms`
+                      : 'none',
+                  cursor: 'pointer',
+                }}
+              />
+            </g>
           );
         })
       )}

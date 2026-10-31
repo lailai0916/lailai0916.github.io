@@ -80,6 +80,24 @@
   -ms-user-select: none;
 }
 
+.neuron {
+  cursor: pointer;
+}
+
+.neuron:focus-visible {
+  outline: none;
+}
+
+.neuronFocus {
+  fill: transparent;
+  stroke: transparent;
+}
+
+.neuron:focus-visible .neuronFocus {
+  stroke: var(--ifm-color-primary);
+  stroke-width: 2px;
+}
+
 .controls {
   width: 100%;
   display: grid;

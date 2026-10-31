@@ -186,12 +186,6 @@
   position: relative;
 }
 
-.countdownBirthday {
-  display: grid;
-  align-items: center;
-  min-height: 7rem;
-}
-
 .countdownText {
   width: 100%;
   min-width: 0;
@@ -202,6 +196,13 @@
 .countdownHidden {
   visibility: hidden;
   opacity: 0;
+}
+
+.countdownAge {
+  display: inline-block;
+  min-width: 2ch;
+  text-align: center;
+  font-variant-numeric: tabular-nums;
 }
 
 .countdownUnit {

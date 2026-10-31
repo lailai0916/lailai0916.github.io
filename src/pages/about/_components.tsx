@@ -208,7 +208,7 @@ export function Countdown() {
 
   return (
     <div className={styles.countdownPanel}>
-      <div className={clsx(styles.countdownBody, birthdayVisible && styles.countdownBirthday)}>
+      <div className={styles.countdownBody}>
         <div
           className={clsx(styles.countdownText, birthdayVisible && styles.countdownHidden)}
           role="timer"
@@ -219,7 +219,12 @@ export function Countdown() {
             values={{
               birthday: (
                 <strong>
-                  <Translate id="pages.about.countdown.birthday" values={{ age: state.age ?? '…' }}>
+                  <Translate
+                    id="pages.about.countdown.birthday"
+                    values={{
+                      age: <span className={styles.countdownAge}>{state.age ?? '…'}</span>,
+                    }}
+                  >
                     {'I turn {age}'}
                   </Translate>
                 </strong>

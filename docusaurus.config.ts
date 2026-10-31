@@ -166,13 +166,6 @@ const config: Config = {
 
   themeConfig: {
     image: 'img/social-card.png',
-    zoom: {
-      selector: '.markdown img:not([data-link-icon]), img[data-zoomable]',
-      background: {
-        light: 'rgb(255, 255, 255)',
-        dark: 'rgb(27, 27, 29)',
-      },
-    },
     algolia: {
       appId: '5RCTMT18J0',
       apiKey: '14ba8b9ca7ed34dbbc3852d690b15473',
@@ -325,7 +318,6 @@ const config: Config = {
     require.resolve('./src/plugins/problemChunks/index.ts'),
     require.resolve('./src/plugins/blogCatalog/index.ts'),
     require.resolve('./src/plugins/friendFeedManifest/index.ts'),
-    require.resolve('docusaurus-plugin-image-zoom'),
   ],
 };
 

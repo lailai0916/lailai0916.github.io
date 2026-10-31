@@ -7,13 +7,19 @@ export interface MomentPost {
   permalink: string;
 }
 
+export interface MomentImage {
+  src: string;
+  width: number;
+  height: number;
+}
+
 interface MomentItem {
   date: string;
   content?: string;
   post?: MomentPost;
   event?: string;
   location?: string;
-  images?: string[];
+  images?: MomentImage[];
   share?: ShareCardProps;
 }
 
@@ -21,21 +27,27 @@ const STATIC_MOMENTS: MomentItem[] = [
   {
     date: '2026-10-19T01:00:00+08:00',
     content: '2nd Anniversary!',
-    images: ['https://cloud.lailai.one/f/KZqsJ/lailai-home-devices.png'],
+    images: [
+      {
+        src: 'https://cloud.lailai.one/f/KZqsJ/lailai-home-devices.png',
+        width: 4543,
+        height: 2791,
+      },
+    ],
   },
   {
     date: '2026-09-19T12:35:00+08:00',
-    images: ['https://cloud.lailai.one/f/LqntV/2501.png'],
+    images: [{ src: 'https://cloud.lailai.one/f/LqntV/2501.png', width: 1254, height: 1254 }],
   },
   {
     date: '2026-09-16T00:00:00+08:00',
     content: '17th Birthday!',
-    images: ['https://cloud.lailai.one/f/AdNtA/wordcloud.svg'],
+    images: [{ src: 'https://cloud.lailai.one/f/AdNtA/wordcloud.svg', width: 2618, height: 952 }],
   },
   {
     date: '2026-08-17T14:01:00+08:00',
     content: '征集眼前一亮的 idea',
-    images: ['https://cloud.lailai.one/f/NRotg/IMG_5577.PNG'],
+    images: [{ src: 'https://cloud.lailai.one/f/NRotg/IMG_5577.PNG', width: 872, height: 1804 }],
   },
   {
     date: '2026-08-12T23:58:00+08:00',
@@ -46,15 +58,19 @@ const STATIC_MOMENTS: MomentItem[] = [
       description: 'Answer',
     },
     images: [
-      'https://cloud.lailai.one/f/Prnuy/attention1.png',
-      'https://cloud.lailai.one/f/Y8RsA/attention2.png',
+      { src: 'https://cloud.lailai.one/f/Prnuy/attention1.png', width: 1388, height: 1300 },
+      { src: 'https://cloud.lailai.one/f/Y8RsA/attention2.png', width: 3242, height: 2192 },
     ],
   },
   {
     date: '2026-08-04T20:00:00+08:00',
     content: '使用 GPT-5.6 Sol (xhigh) 证明了饱和 Sperner 系统的稳定值 sat(6)=30 和 sat(7)=55',
     images: [
-      'https://cloud.lailai.one/f/e3Ehw/P0054-sat6-sat7-manuscript-v1.1.2-page-1-600dpi.png',
+      {
+        src: 'https://cloud.lailai.one/f/e3Ehw/P0054-sat6-sat7-manuscript-v1.1.2-page-1-600dpi.png',
+        width: 4961,
+        height: 7016,
+      },
     ],
   },
   {
@@ -72,7 +88,9 @@ const STATIC_MOMENTS: MomentItem[] = [
       title: 'Anthropic embedded spyware in Claude Code — and attempted to hide it from you',
       description: 'Comment',
     },
-    images: ['https://cloud.lailai.one/f/MEQfy/claude_suspended.png'],
+    images: [
+      { src: 'https://cloud.lailai.one/f/MEQfy/claude_suspended.png', width: 1546, height: 2060 },
+    ],
   },
   {
     date: '2026-06-26T18:04:00+08:00',
@@ -97,7 +115,9 @@ const STATIC_MOMENTS: MomentItem[] = [
   {
     date: '2026-06-09T07:40:00+08:00',
     content: 'Goodbye, macOS 26!',
-    images: ['https://cloud.lailai.one/f/eOLuw/macos26-dock.png'],
+    images: [
+      { src: 'https://cloud.lailai.one/f/eOLuw/macos26-dock.png', width: 3344, height: 238 },
+    ],
   },
   {
     date: '2026-06-02T12:00:00+08:00',
@@ -130,7 +150,9 @@ const STATIC_MOMENTS: MomentItem[] = [
   {
     date: '2026-03-08T15:33:00+08:00',
     event: '联合省选 2026',
-    images: ['https://cloud.lailai.one/f/rjAcM/67f706e91a0d0a8dba.jpg'],
+    images: [
+      { src: 'https://cloud.lailai.one/f/rjAcM/67f706e91a0d0a8dba.jpg', width: 1440, height: 719 },
+    ],
   },
   {
     date: '2026-03-06T09:33:00+08:00',
@@ -152,13 +174,17 @@ const STATIC_MOMENTS: MomentItem[] = [
   {
     date: '2026-01-11T05:01:00+08:00',
     content: 'USACO Platinum',
-    images: ['https://cloud.lailai.one/f/wyAUg/usaco-platinum.png'],
+    images: [
+      { src: 'https://cloud.lailai.one/f/wyAUg/usaco-platinum.png', width: 1800, height: 1776 },
+    ],
   },
   {
     date: '2025-12-26T23:23:00+08:00',
     content: 'ChatGPT 2025',
     event: 'Your Year with ChatGPT',
-    images: ['https://cloud.lailai.one/f/PVyuy/chatgpt-2025.png'],
+    images: [
+      { src: 'https://cloud.lailai.one/f/PVyuy/chatgpt-2025.png', width: 1800, height: 1800 },
+    ],
   },
   {
     date: '2025-12-26T23:23:00+08:00',
@@ -172,7 +198,13 @@ const STATIC_MOMENTS: MomentItem[] = [
   {
     date: '2025-10-17T21:03:00+08:00',
     content: '杭州高中分布地图',
-    images: ['https://cloud.lailai.one/f/nMdSq/hangzhou-highschool-map.png'],
+    images: [
+      {
+        src: 'https://cloud.lailai.one/f/nMdSq/hangzhou-highschool-map.png',
+        width: 9531,
+        height: 5884,
+      },
+    ],
   },
   {
     date: '2025-10-17T20:30:00+08:00',
@@ -181,17 +213,19 @@ const STATIC_MOMENTS: MomentItem[] = [
   {
     date: '2025-10-16T19:50:00+08:00',
     content: '图灵测试',
-    images: ['https://cloud.lailai.one/f/YvpHA/certificate.png'],
+    images: [
+      { src: 'https://cloud.lailai.one/f/YvpHA/certificate.png', width: 3451, height: 2440 },
+    ],
   },
   {
     date: '2025-10-05T19:45:00+08:00',
     content: 'GIMPS | Lucas–Lehmer Primality Test',
-    images: ['https://cloud.lailai.one/f/wrhg/gimps.png'],
+    images: [{ src: 'https://cloud.lailai.one/f/wrhg/gimps.png', width: 3456, height: 2234 }],
   },
   {
     date: '2025-09-16T00:00:00+08:00',
     content: '16th Birthday!',
-    images: ['https://cloud.lailai.one/f/r4HM/birthday-16.png'],
+    images: [{ src: 'https://cloud.lailai.one/f/r4HM/birthday-16.png', width: 3952, height: 2704 }],
   },
   {
     date: '2025-05-23T22:22:00+08:00',

@@ -15,6 +15,7 @@ import { getAllBlogItems, getAllPostMetadata, loadOfficialTags } from '@site/src
 import { TagChipList } from '../BlogUI';
 import BlogScaffold from '../Scaffold';
 import { BlogArchiveList } from '../ArchiveList';
+import { scopeArchivePosts, searchArchivePosts } from './filter';
 import styles from './styles.module.css';
 
 type PostLike = {
@@ -140,44 +141,40 @@ export default function BlogArchive({
     !selected && isBrowser && years.some(({ year }) => year === requestedYear)
       ? requestedYear
       : null;
-  const normalizedQuery = query.trim().toLocaleLowerCase(i18n.currentLocale);
+  const scopedPosts = useMemo(
+    () =>
+      scopeArchivePosts(allPosts, selected?.posts, activeYear, (post) =>
+        Number(getDateKey(post.metadata.date, timeZone).slice(0, 4))
+      ),
+    [allPosts, selected?.posts, activeYear, timeZone]
+  );
+  const hasQuery = query.trim().length > 0;
   const searchResults = useMemo(
     () =>
-      normalizedQuery
-        ? allPosts
-            .filter((post) => {
-              const detail = postMetadata.get(post.metadata.permalink);
-              return [
-                post.metadata.title,
-                ...(detail?.tags.map((tag) => tag.label ?? '') ?? []),
-                ...(detail?.authors?.map((author) => author.name ?? author.key) ?? []),
-              ].some((value) =>
-                value.toLocaleLowerCase(i18n.currentLocale).includes(normalizedQuery)
-              );
-            })
-            .map((post) => ({
-              metadata: {
-                ...post.metadata,
-                tags:
-                  post.metadata.tags ??
-                  postMetadata
-                    .get(post.metadata.permalink)
-                    ?.tags.filter((tag): tag is { label: string; permalink: string } =>
-                      Boolean(tag.label && tag.permalink)
-                    ),
-              },
-            }))
+      hasQuery
+        ? searchArchivePosts(scopedPosts, query, i18n.currentLocale, (post) => {
+            const detail = postMetadata.get(post.metadata.permalink);
+            return [
+              post.metadata.title,
+              ...(detail?.tags.map((tag) => tag.label ?? '') ?? []),
+              ...(detail?.authors?.map((author) => author.name ?? author.key) ?? []),
+            ];
+          }).map((post) => ({
+            metadata: {
+              ...post.metadata,
+              tags:
+                post.metadata.tags ??
+                postMetadata
+                  .get(post.metadata.permalink)
+                  ?.tags.filter((tag): tag is { label: string; permalink: string } =>
+                    Boolean(tag.label && tag.permalink)
+                  ),
+            },
+          }))
         : null,
-    [allPosts, i18n.currentLocale, normalizedQuery, postMetadata]
+    [scopedPosts, hasQuery, query, i18n.currentLocale, postMetadata]
   );
-  const resultPosts =
-    searchResults ??
-    selected?.posts ??
-    (activeYear === null
-      ? allPosts
-      : allPosts.filter(
-          (post) => Number(getDateKey(post.metadata.date, timeZone).slice(0, 4)) === activeYear
-        ));
+  const resultPosts = searchResults ?? scopedPosts;
   const canonical = selected?.permalink ?? archiveUrl;
 
   return (

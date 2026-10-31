@@ -150,6 +150,7 @@ export default function BlogStats(): ReactNode {
         data={monthData}
         emptyText={CHART_EMPTY}
         formatValue={postsLabel}
+        className="site-chart"
       />
       <PopularPosts items={items} />
     </BlogScaffold>

@@ -1,8 +1,15 @@
-import { useRef, useEffect, useState, type PointerEvent as ReactPointerEvent } from 'react';
+import {
+  useRef,
+  useEffect,
+  useState,
+  useCallback,
+  type PointerEvent as ReactPointerEvent,
+} from 'react';
 import { useColorMode } from '@docusaurus/theme-common';
 import { translate } from '@docusaurus/Translate';
 import Button from '@lailai0916/ui/Button';
 import Card from '@lailai0916/ui/Card';
+import { useAnimationActivity } from '@site/src/hooks/useAnimationActivity';
 import { dft, type Point, type FourierCoefficient } from './fourier';
 import styles from './styles.module.css';
 
@@ -98,9 +105,12 @@ function resamplePoints(points: Point[]): Point[] {
 export default function FourierTransform() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
+  const { reducedMotion, isActive } = useAnimationActivity(containerRef);
+  const redrawRef = useRef<(() => void) | null>(null);
   const [canvasSize, setCanvasSize] = useState(BASE_SIZE);
   const [dpr, setDpr] = useState(1);
-  const [isPaused, setIsPaused] = useState(false);
+  const [paused, setIsPaused] = useState<boolean | null>(null);
+  const isPaused = paused ?? reducedMotion !== false;
   const [isDrawing, setIsDrawing] = useState(false);
   const { colorMode } = useColorMode();
   const isDark = colorMode === 'dark';
@@ -124,6 +134,47 @@ export default function FourierTransform() {
     wasPaused: boolean;
   } | null>(null);
 
+  useEffect(() => {
+    if (reducedMotion) setIsPaused(true);
+  }, [reducedMotion]);
+
+  const cancelDrawing = useCallback(() => {
+    const state = stateRef.current;
+    const pointerId = state.activePointerId;
+    if (pointerId === null) return;
+    state.activePointerId = null;
+    const previous = previousDrawingRef.current;
+    previousDrawingRef.current = null;
+    if (previous) {
+      state.drawing = previous.drawing;
+      state.currentState = previous.currentState;
+      setIsPaused(previous.wasPaused);
+      setIsDrawing(previous.currentState === STATE.DRAWING);
+    }
+    const canvas = canvasRef.current;
+    if (canvas?.hasPointerCapture(pointerId)) canvas.releasePointerCapture(pointerId);
+    redrawRef.current?.();
+  }, []);
+
+  useEffect(() => {
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape' && stateRef.current.activePointerId !== null) {
+        event.preventDefault();
+        cancelDrawing();
+      }
+    };
+    window.addEventListener('keydown', onKeyDown);
+    window.addEventListener('blur', cancelDrawing);
+    return () => {
+      window.removeEventListener('keydown', onKeyDown);
+      window.removeEventListener('blur', cancelDrawing);
+    };
+  }, [cancelDrawing]);
+
+  useEffect(() => {
+    if (!isActive) cancelDrawing();
+  }, [cancelDrawing, isActive]);
+
   // Theme colors live in a ref so theme changes don't restart the animation effect.
   const themeRef = useRef({
     primary: '',
@@ -145,8 +196,9 @@ export default function FourierTransform() {
     previousDrawingRef.current = null;
     stateRef.current.baseDrawing = centerPoints(pts);
     rebuildFromBase();
-    setIsPaused(false);
+    setIsPaused(null);
     setIsDrawing(false);
+    redrawRef.current?.();
   };
 
   const rebuildFromBase = () => {
@@ -187,8 +239,9 @@ export default function FourierTransform() {
     }));
     previousDrawingRef.current = null;
     rebuildFromBase();
-    setIsPaused(false);
+    setIsPaused(null);
     setIsDrawing(false);
+    redrawRef.current?.();
   };
 
   const handleClear = () => {
@@ -203,8 +256,9 @@ export default function FourierTransform() {
     state.path = [];
     state.phaseElapsed = 0;
     state.phase = 'draw';
-    setIsPaused(false);
+    setIsPaused(null);
     setIsDrawing(true);
+    redrawRef.current?.();
   };
 
   // Resolve devicePixelRatio after mount to avoid SSR hydration mismatch.
@@ -265,7 +319,7 @@ export default function FourierTransform() {
     }
 
     const state = stateRef.current;
-    let animationId: number;
+    let animationId = 0;
     let lastFrameTime = performance.now();
 
     const drawEpicycles = (time: number) => {
@@ -332,10 +386,10 @@ export default function FourierTransform() {
       ctx.globalAlpha = 1;
     };
 
-    const render = (timestamp: number) => {
+    const render = (timestamp: number, schedule = true) => {
       const { primary, colors } = themeRef.current;
 
-      const elapsed = Math.max((timestamp - lastFrameTime) / 1000, 0);
+      const elapsed = schedule && isActive ? Math.max((timestamp - lastFrameTime) / 1000, 0) : 0;
       lastFrameTime = timestamp;
       if (state.currentState === STATE.PLAYING && !isPaused) {
         const totalElapsed = state.phaseElapsed + elapsed;
@@ -392,13 +446,17 @@ export default function FourierTransform() {
       }
 
       ctx.restore();
-      if (!isPaused) animationId = requestAnimationFrame(render);
+      if (schedule && isActive && !isPaused) animationId = requestAnimationFrame(render);
     };
 
+    redrawRef.current = () => render(performance.now(), false);
     render(performance.now());
 
-    return () => cancelAnimationFrame(animationId);
-  }, [canvasSize, dpr, isDark, isPaused]);
+    return () => {
+      cancelAnimationFrame(animationId);
+      redrawRef.current = null;
+    };
+  }, [canvasSize, dpr, isDark, isPaused, isActive]);
 
   const getCanvasCoords = (clientX: number, clientY: number): Point | null => {
     const canvas = canvasRef.current;
@@ -411,6 +469,7 @@ export default function FourierTransform() {
   };
 
   const handleStart = (e: ReactPointerEvent) => {
+    if (!e.isPrimary || e.button !== 0) return;
     const point = getCanvasCoords(e.clientX, e.clientY);
     if (!point || stateRef.current.activePointerId !== null) return;
 
@@ -455,18 +514,14 @@ export default function FourierTransform() {
   const handleEnd = (e: ReactPointerEvent) => {
     const state = stateRef.current;
     if (state.currentState !== STATE.DRAWING || state.activePointerId !== e.pointerId) return;
-    state.activePointerId = null;
     if (state.drawing.length >= 10) {
+      state.activePointerId = null;
       captureDrawing(state.drawing);
-    } else {
-      const previous = previousDrawingRef.current;
-      previousDrawingRef.current = null;
-      if (previous) {
-        state.drawing = previous.drawing;
-        state.currentState = previous.currentState;
-        setIsPaused(previous.wasPaused);
-        setIsDrawing(previous.currentState === STATE.DRAWING);
+      if (e.currentTarget.hasPointerCapture(e.pointerId)) {
+        e.currentTarget.releasePointerCapture(e.pointerId);
       }
+    } else {
+      cancelDrawing();
     }
   };
 
@@ -482,7 +537,8 @@ export default function FourierTransform() {
           onPointerDown={handleStart}
           onPointerMove={handleMove}
           onPointerUp={handleEnd}
-          onPointerCancel={handleEnd}
+          onPointerCancel={cancelDrawing}
+          onLostPointerCapture={cancelDrawing}
         />
       </Card>
       <div className={styles.controls}>
@@ -494,7 +550,7 @@ export default function FourierTransform() {
         </Button>
         <Button
           variant="secondary"
-          onClick={() => setIsPaused((paused) => !paused)}
+          onClick={() => setIsPaused(!isPaused)}
           disabled={isDrawing}
           aria-label={isPaused ? PLAY_LABEL : PAUSE_LABEL}
         >

@@ -1,14 +1,12 @@
 import { umamiFetchJson } from '@site/src/utils/umami';
+import { mergeSeries, splitPageviewWindow, type SeriesPoint } from '@site/src/utils/umamiSeries';
 import { useFetch } from './useFetch';
 import { rangeWindow, type InsightsRange } from './useUmamiStats';
 
 type SeriesUnit = 'day' | 'hour' | 'month';
 type ChartUnit = 'hour' | '6h' | 'day' | 'week';
 
-export interface SeriesPoint {
-  x: string;
-  y: number;
-}
+export type { SeriesPoint } from '@site/src/utils/umamiSeries';
 
 interface UmamiPageviewsResponse {
   pageviews: SeriesPoint[];
@@ -29,16 +27,6 @@ function chartUnit(range: InsightsRange): ChartUnit {
   if (range === 7) return '6h';
   if (range === 30) return 'day';
   return 'week';
-}
-
-function mergeSeries(parts: SeriesPoint[][]): SeriesPoint[] {
-  const seen = new Map<string, SeriesPoint>();
-  for (const arr of parts) {
-    for (const pt of arr) {
-      seen.set(pt.x, pt);
-    }
-  }
-  return [...seen.values()].sort((a, b) => a.x.localeCompare(b.x));
 }
 
 function pad2(n: number) {
@@ -143,10 +131,9 @@ export function useUmamiPageviewsSeries(range: InsightsRange) {
       // Umami caps day-resolution at ~200 days; chunk longer ranges in two.
       const needsChunk = range > 200 && unit === 'day';
       const parts: UmamiPageviewsResponse[] = needsChunk
-        ? await Promise.all([
-            fetchSeg(startAt, startAt + (endAt - startAt) / 2),
-            fetchSeg(startAt + (endAt - startAt) / 2 + 1, endAt),
-          ])
+        ? await Promise.all(
+            splitPageviewWindow(startAt, endAt).map((part) => fetchSeg(part.startAt, part.endAt))
+          )
         : [await fetchSeg(startAt, endAt)];
       const reduce = (merged: SeriesPoint[]) => {
         const filled = fillSeries(merged, unit, startAt, endAt);

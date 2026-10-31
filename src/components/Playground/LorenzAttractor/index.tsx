@@ -10,6 +10,7 @@ import { translate } from '@docusaurus/Translate';
 import Slider from '@lailai0916/ui/Slider';
 import Button from '@lailai0916/ui/Button';
 import Card from '@lailai0916/ui/Card';
+import { useAnimationActivity } from '@site/src/hooks/useAnimationActivity';
 import styles from './styles.module.css';
 
 const TWO_PI = 2 * Math.PI;
@@ -38,6 +39,14 @@ const INITIAL_POSITION: Vec3 = { x: 1, y: 1, z: 1 };
 const RESET_LABEL = translate({
   id: 'components.playground.lorenz.reset',
   message: 'Reset',
+});
+const PAUSE_LABEL = translate({
+  id: 'components.playground.lorenz.pause',
+  message: 'Pause',
+});
+const PLAY_LABEL = translate({
+  id: 'components.playground.lorenz.play',
+  message: 'Resume',
 });
 
 const THEME_COLORS = {
@@ -111,6 +120,17 @@ function rk4Step(p: Vec3, sigma: number, rho: number, beta: number, dt: number):
   };
 }
 
+function createParticle(still = false): Particle {
+  const particle: Particle = { pos: { ...INITIAL_POSITION }, trail: [] };
+  if (still) {
+    for (let i = 0; i < MAX_TRAIL; i++) {
+      particle.pos = rk4Step(particle.pos, DEFAULT_SIGMA, DEFAULT_RHO, DEFAULT_BETA, DT);
+      particle.trail.push({ ...particle.pos });
+    }
+  }
+  return particle;
+}
+
 interface SliderProps {
   label: string;
   value: number;
@@ -140,6 +160,10 @@ function ParamSlider({ label, value, min, max, step, precision, onChange }: Slid
 export default function LorenzAttractor() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
+  const { reducedMotion, isActive } = useAnimationActivity(containerRef);
+  const [paused, setPaused] = useState<boolean | null>(null);
+  const isPaused = paused ?? reducedMotion !== false;
+  const redrawRef = useRef<(() => void) | null>(null);
   const [canvasSize, setCanvasSize] = useState(BASE_SIZE);
   const [dpr, setDpr] = useState(1);
   const { colorMode } = useColorMode();
@@ -155,14 +179,21 @@ export default function LorenzAttractor() {
   }, [sigma, rho, beta]);
 
   const stateRef = useRef({
-    particle: {
-      pos: { ...INITIAL_POSITION },
-      trail: [] as Vec3[],
-    },
+    particle: createParticle(),
     yaw: INITIAL_YAW,
     pitch: INITIAL_PITCH,
     autoRotate: true,
   });
+
+  useEffect(() => {
+    if (!reducedMotion) return;
+    setPaused(true);
+    if (stateRef.current.particle.trail.length === 0) {
+      // A still preview should show the attractor rather than an empty canvas.
+      stateRef.current.particle = createParticle(true);
+    }
+    redrawRef.current?.();
+  }, [reducedMotion]);
 
   const themeRef = useRef({
     primary: '',
@@ -175,6 +206,7 @@ export default function LorenzAttractor() {
         primary: getComputedStyle(root).getPropertyValue('--ifm-color-primary').trim(),
         colors: isDark ? THEME_COLORS.dark : THEME_COLORS.light,
       };
+      redrawRef.current?.();
     };
     updateTheme();
 
@@ -184,11 +216,8 @@ export default function LorenzAttractor() {
   }, [isDark]);
 
   const resetSimulation = useCallback(() => {
-    stateRef.current.particle = {
-      pos: { ...INITIAL_POSITION },
-      trail: [],
-    };
-  }, []);
+    stateRef.current.particle = createParticle(isPaused);
+  }, [isPaused]);
 
   const handleReset = useCallback(() => {
     resetSimulation();
@@ -198,6 +227,7 @@ export default function LorenzAttractor() {
     setSigma(DEFAULT_SIGMA);
     setRho(DEFAULT_RHO);
     setBeta(DEFAULT_BETA);
+    redrawRef.current?.();
   }, [resetSimulation]);
 
   useEffect(() => {
@@ -306,10 +336,19 @@ export default function LorenzAttractor() {
       ctx.fill();
     };
 
+    const paint = () => {
+      const { primary, colors } = themeRef.current;
+      ctx.fillStyle = colors.background;
+      ctx.fillRect(0, 0, canvasSize, canvasSize);
+      drawAxes();
+      drawTrail(stateRef.current.particle, primary);
+    };
+    redrawRef.current = paint;
+
     const render = (timestamp: number) => {
       // Limit catch-up work after returning from a background tab.
       const elapsed =
-        lastFrameTime === null
+        lastFrameTime === null || isPaused || !isActive
           ? 0
           : Math.min(Math.max((timestamp - lastFrameTime) / 1000, 0), MAX_FRAME_DELTA_SECONDS);
       lastFrameTime = timestamp;
@@ -317,7 +356,6 @@ export default function LorenzAttractor() {
       const steps = Math.floor(stepRemainder);
       stepRemainder -= steps;
 
-      const { primary, colors } = themeRef.current;
       const state = stateRef.current;
       const { particle } = state;
       const { sigma: σ, rho: ρ, beta: β } = paramsRef.current;
@@ -332,19 +370,16 @@ export default function LorenzAttractor() {
         state.yaw += AUTO_ROTATE_RADIANS_PER_SECOND * elapsed;
       }
 
-      ctx.fillStyle = colors.background;
-      ctx.fillRect(0, 0, canvasSize, canvasSize);
-
-      drawAxes();
-
-      drawTrail(particle, primary);
-
-      animId = requestAnimationFrame(render);
+      paint();
+      if (isActive && !isPaused) animId = requestAnimationFrame(render);
     };
 
     render(performance.now());
-    return () => cancelAnimationFrame(animId);
-  }, [canvasSize, dpr]);
+    return () => {
+      cancelAnimationFrame(animId);
+      redrawRef.current = null;
+    };
+  }, [canvasSize, dpr, isActive, isPaused, sigma, rho, beta]);
 
   const interactionRef = useRef({ x: 0, y: 0, active: false, moved: false });
 
@@ -371,6 +406,7 @@ export default function LorenzAttractor() {
     if (stateRef.current.pitch < -PITCH_LIMIT) stateRef.current.pitch = -PITCH_LIMIT;
     inter.x = e.clientX;
     inter.y = e.clientY;
+    redrawRef.current?.();
   };
 
   const handlePointerUp = () => {
@@ -420,14 +456,18 @@ export default function LorenzAttractor() {
           precision={2}
           onChange={setBeta}
         />
-        <Button
-          variant="secondary"
-          className={styles.resetButton}
-          onClick={handleReset}
-          aria-label={RESET_LABEL}
-        >
-          {RESET_LABEL}
-        </Button>
+        <div className={styles.actions}>
+          <Button variant="secondary" onClick={handleReset} aria-label={RESET_LABEL}>
+            {RESET_LABEL}
+          </Button>
+          <Button
+            variant="secondary"
+            onClick={() => setPaused((value) => !(value ?? reducedMotion !== false))}
+            aria-label={isPaused ? PLAY_LABEL : PAUSE_LABEL}
+          >
+            {isPaused ? PLAY_LABEL : PAUSE_LABEL}
+          </Button>
+        </div>
       </div>
     </div>
   );

@@ -379,7 +379,7 @@ function PageviewsChart({ range }: { range: InsightsRange }) {
       errorAction={<RetryButton onClick={retry} />}
       notice={isRefreshError && <RefreshNotice onRetry={retry} />}
       formatValue={pageviewsLabel}
-      className={styles.chartCard}
+      className={clsx('site-chart', styles.chartCard)}
     />
   );
 }
@@ -480,9 +480,9 @@ function MetricsGrid({ range }: { range: InsightsRange }) {
 }
 
 function EnvironmentGrid({ range }: { range: InsightsRange }) {
-  const browsers = useUmamiMetric('browser', range);
-  const os = useUmamiMetric('os', range);
-  const devices = useUmamiMetric('device', range);
+  const browsers = useUmamiMetric('browser', range, 'all');
+  const os = useUmamiMetric('os', range, 'all');
+  const devices = useUmamiMetric('device', range, 'all');
 
   return (
     <section className={styles.metricsGrid}>
