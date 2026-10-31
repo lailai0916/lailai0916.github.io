@@ -1,7 +1,7 @@
 ---
 title: 题解：P17832 [CSP-S 2026] 地铁
-description: 本文为洛谷 P17832 的题解，对应 CSP-S 2026 试题《地铁》，正文待补充。
-summary: CSP-S 2026 试题《地铁》的题解，解题思路与参考代码待补充。
+description: 本文为洛谷 P17832 的题解，将地铁线路缩点并用 Floyd 预处理最小换乘代价。
+summary: 乘车时间不计入步行代价，同一线路的所有站台可以缩成一个点。两条线路之间的边权为公共站点处两段站厅通道时间之和的最小值，用 Floyd 预处理线路间最短换乘时间。每次询问枚举起点和终点各自经过的线路，补上进出站代价；每站至多有 d 条线路，询问复杂度为 O(d²)。
 date: 2026-10-31T18:21:59+08:00
 authors: lailai
 tags: [oi, solution, luogu]
@@ -9,3 +9,81 @@ lid: i9rr26r5
 ---
 
 {/* truncate */}
+
+## 解题思路
+
+乘车时间不计入答案，同一线路任意两个站台之间的步行代价为 $0$。因此将每条线路缩成一个点，仅保留换乘代价。
+
+设 $S_v$ 为经过站点 $v$ 的线路集合，$b_{i,v}$ 为该站站厅到线路 $i$ 站台的步行时间。在站点 $v$ 从线路 $i$ 换乘到线路 $j$，代价为 $b_{i,v}+b_{j,v}$。因此两条不同线路之间的无向边权为：
+
+$$
+\min_{v:i,j\in S_v}(b_{i,v}+b_{j,v})
+$$
+
+没有公共站点时不连边。任意实际路线都对应一条线路图路径，每次换乘的代价不小于对应边权。反过来，每条边都能在取到最小值的公共站点换乘。相邻两次换乘之间可以沿同一线路乘车，不增加步行时间。因此图上最短路恰好等于最小换乘步行时间。由于 $n\le500$，使用 Floyd 算法求出所有线路之间的最短距离 $f_{i,j}$，其中 $f_{i,i}=0$。
+
+对于询问 $(x,y)$，枚举首末线路 $i\in S_x$ 和 $j\in S_y$。进站、换乘和出站的代价分别为 $w_x+b_{i,x}$、$f_{i,j}$ 和 $b_{j,y}+w_y$，故答案为：
+
+$$
+w_x+w_y+\min_{i\in S_x,j\in S_y}(b_{i,x}+f_{i,j}+b_{j,y})
+$$
+
+枚举覆盖所有首末线路，每个候选值也都能按对应最短路实现。$f_{i,i}=0$ 自然包含不换乘的情况；中间站点仅经过站厅，不计 $w_v$。路径长度使用 `long long`。
+
+记 $K=\sum_{i=1}^n k_i$。每个站点至多经过 $d$ 条线路。建边枚举同站线路对，询问枚举首末线路对。总时间复杂度为 $O(Kd+n^3+qd^2)$，空间复杂度为 $O(K+m+n^2)$。
+
+## 参考代码
+
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+
+using ll=long long;
+const int N=505;
+const int M=500005;
+const ll inf=0x3f3f3f3f3f3f3f3f;
+ll dis[N][N];
+int w[M];
+vector<pair<int,int>> G[M];
+int main()
+{
+	ios::sync_with_stdio(false);
+	cin.tie(nullptr);
+	int c,n,m,d,q;
+	cin>>c>>n>>m>>d>>q;
+	for(int i=1;i<=m;i++)cin>>w[i];
+	memset(dis,0x3f,sizeof dis);
+	for(int i=1;i<=n;i++)dis[i][i]=0;
+	for(int i=1;i<=n;i++)
+	{
+		int k;
+		cin>>k;
+		for(int j=1;j<=k;j++)
+		{
+			int a,t;
+			cin>>a>>t;
+			for(auto [v,s]:G[a])dis[i][v]=dis[v][i]=min(dis[i][v],1ll*t+s);
+			G[a].push_back({i,t});
+		}
+	}
+	for(int k=1;k<=n;k++)
+	{
+		for(int i=1;i<=n;i++)
+		{
+			for(int j=1;j<=n;j++)dis[i][j]=min(dis[i][j],dis[i][k]+dis[k][j]);
+		}
+	}
+	while(q--)
+	{
+		int x,y;
+		cin>>x>>y;
+		ll ans=inf;
+		for(auto [u,s]:G[x])
+		{
+			for(auto [v,t]:G[y])ans=min(ans,s+dis[u][v]+t);
+		}
+		cout<<ans+w[x]+w[y]<<'\n';
+	}
+	return 0;
+}
+```

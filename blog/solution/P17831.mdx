@@ -1,7 +1,7 @@
 ---
 title: 题解：P17831 [CSP-S 2026] 能量水晶
-description: 本文为洛谷 P17831 的题解，对应 CSP-S 2026 试题《能量水晶》，正文待补充。
-summary: CSP-S 2026 试题《能量水晶》的题解，解题思路与参考代码待补充。
+description: 本文为洛谷 P17831 的题解，排序后用双指针维护操作次数不超过预算的最长区间。
+summary: 水晶只能增加能量，选定一组后，将它们全部增加到组内最大值的代价最小。排序后固定数量和最大下标，用更靠近最大值的元素替换较小元素不会增加代价，因此只需考虑连续区间。利用区间和计算操作次数，并按右端点递增维护最长可行窗口，得到 O(nlogn) 的排序与双指针算法。
 date: 2026-10-31T18:21:53+08:00
 authors: lailai
 tags: [oi, solution, luogu]
@@ -9,3 +9,52 @@ lid: 4cfjwf88
 ---
 
 {/* truncate */}
+
+## 解题思路
+
+将能量值从小到大排序。固定选取数量 $k$ 和选中元素的最大下标 $r$，最优目标值为 $a_r$。若选中了 $r-k+1$ 之前的元素，则区间 $[r-k+1,r]$ 内必有未选中的元素。用后者替换前者，操作次数不会增加。因此，仅需考虑连续区间。
+
+设区间 $[l,r]$ 的元素和为 $s$，将其全部增加到 $a_r$ 的代价为：
+
+$$
+\sum_{i=l}^r(a_r-a_i)=(r-l+1)a_r-s
+$$
+
+固定 $l$，右移 $r$ 时，原有元素的目标值不会降低，新元素无需操作，故代价不减。于是依次枚举 $r$，若代价超过 $m$，便右移 $l$，直到区间可行。被舍弃的左端点以后仍不可行，故此时的 $[l,r]$ 是以 $r$ 为右端点的最长可行区间。取所有区间长度的最大值即可。
+
+两个指针均至多移动 $n$ 次，总时间复杂度为 $O(n\log n)$。代价不超过 $(n-1)\times2\times10^{12}<10^{18}$，使用 `long long`。
+
+## 参考代码
+
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+
+using ll=long long;
+const int N=500005;
+ll a[N];
+int main()
+{
+	ios::sync_with_stdio(false);
+	cin.tie(nullptr);
+	int n;
+	ll m;
+	cin>>n>>m;
+	for(int i=1;i<=n;i++)cin>>a[i];
+	sort(a+1,a+n+1);
+	int l=1,ans=0;
+	ll sum=0;
+	for(int i=1;i<=n;i++)
+	{
+		sum+=a[i];
+		while(a[i]*(i-l+1)-sum>m)
+		{
+			sum-=a[l];
+			l++;
+		}
+		ans=max(ans,i-l+1);
+	}
+	cout<<ans<<'\n';
+	return 0;
+}
+```

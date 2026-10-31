@@ -1,7 +1,7 @@
 ---
 title: 题解：P17834 [CSP-S 2026] 研发基地
-description: 本文为洛谷 P17834 的题解，对应 CSP-S 2026 试题《研发基地》，正文待补充。
-summary: CSP-S 2026 试题《研发基地》的题解，解题思路与参考代码待补充。
+description: 本文为洛谷 P17834 的题解，二分半径并在剥叶得到的核心树上用差分判定合法链段。
+summary: 二分通勤半径，剥去相应轮数的叶子得到核心树。覆盖方案可投影到核心，核心叶子与分叉点必须保留，未选点只能位于一条度为二的链段。将需要删除的点数固定，利用各点产生的禁用左端点区间和差分完成单趟判定。预处理邻居删除轮数的前三大值，避免每轮重复扫描邻接表，总时间为 O(nlogn)。
 date: 2026-10-31T18:22:09+08:00
 authors: lailai
 tags: [oi, solution, luogu]
@@ -9,3 +9,162 @@ lid: st6ljm36
 ---
 
 {/* truncate */}
+
+## 解题思路
+
+二分通勤半径 $r$。只需判断能否选出至多 $k$ 个点：不足 $k$ 个时，逐次加入相邻的未选点，覆盖半径和连通块数均不会增加。
+
+### 核心树
+
+每轮同时删除所有度数不超过 $1$ 的点，重复 $r$ 轮，得到核心树 $C$。设点 $v$ 在第 $t_v$ 轮被删除，则 $v\in C$ 当且仅当 $t_v>r$。核心外的每棵悬挂子树高度均不超过 $r$；核心为空时，原树半径已不超过 $r$，直接可行。
+
+将任意覆盖方案中的选点投影到 $C$，即替换为离它最近的核心点，选点数和连通块数均不会增加。对于待覆盖点 $x$，若原选点与 $x$ 位于同一棵悬挂子树，投影后选中了该子树的根，距 $x$ 不超过 $r$；否则投影只会缩短距离。因此，可以只在核心内选点。若 $|C|\le k$，直接可行。
+
+对核心点 $v$，记其悬挂部分的最大深度为 $h_v$，包含 $v$ 自身的深度 $0$。剥叶过程中，以核心为根的外部子树中，每个点的删除轮数等于其子树高度加一，因此：
+
+$$
+h_v=\max(\set{0}\cup\set{t_u:(u,v)\in E,t_u\le r})
+$$
+
+核心的每个叶子 $v$ 均有 $h_v=r$，否则它会更早被删除。漏选 $v$ 后，其悬挂部分的最深点无法被其他核心点覆盖，所以所有核心叶子都必须选。若漏选核心分叉点，至少三个分支中的必选叶子会分属不同连通块。因此，未选点只能是某条度数为 $2$ 的链上的一段连续区间；出现两段缺口也会产生至少三个连通块。
+
+### 链上判定
+
+令 $D=|C|-k>0$。只需找到可以删除的连续 $D$ 个点：若某段更长的缺口合法，保留其中任意 $D$ 个未选点，其余点重新加入，仍然合法。
+
+将一条极大链编号为 $0,1,\dots,s$，两端必须保留，记 $b_i=r-h_i$。删除点 $L+1,\dots,L+D$，两侧最近的选点为 $L,L+D+1$。点 $i$ 的悬挂部分无法被覆盖，当且仅当：
+
+$$
+i-L>b_i,L+D+1-i>b_i
+$$
+
+整理得，该点禁止的左端点范围为：
+
+$$
+i+b_i-D\le L<i-b_i
+$$
+
+用差分数组维护所有禁用区间与 $L\ge0$ 的交集。扫描到内部点 $i$ 时，若 $i\ge D$，便检查 $L=i-D$。更靠右的点 $j>i$ 只能禁止 $L\ge j+b_j-D>i-D$，不会影响当前候选；因此，此时覆盖计数为 $0$，就找到了合法缺口。每条链只需单趟扫描。
+
+此外，缺口两侧各至多覆盖 $r$ 个点，所以 $D>2r$ 时可以直接判为不可行。
+
+### 实现优化
+
+对每个点预处理其邻居删除轮数的前三大值 $t_1\ge t_2\ge t_3$，不足三项补 $0$，并记录前两项对应的邻点。该点在核心中的度数为 $2$，当且仅当：
+
+$$
+t_2>r\ge t_3
+$$
+
+此时两个核心邻点恰为预存的前两项，悬挂高度为 $h_i=t_3$。因此，每次判定只访问数组，沿固定邻点遍历链，无需再次扫描原树邻接表。
+
+统计删除轮数的频数，即可直接查询 $|C|$。二分下界取满足 $|C|\le k+2r$ 的最小 $r$，上界取满足 $|C|\le k$ 的最小 $r$。
+
+预处理和每次判定均为 $O(n)$。总时间复杂度为 $O(n\log n)$，空间复杂度为 $O(n)$。
+
+## 参考代码
+
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+
+const int N=1000005;
+vector<int> G[N];
+int tim[N],deg[N],q[N],f[N],a[N],b[N],c[N],h[N];
+bool mid[N],vis[N];
+bool check(int r,int n,int k)
+{
+	int len=deg[r+1]-k;
+	if(len<=0)return 1;
+	if(len>2*r)return 0;
+	for(int i=1;i<=n;i++)
+	{
+		mid[i]=h[i]>r&&c[i]<=r;
+		vis[i]=0;
+	}
+	for(int i=1;i<=n;i++)
+	{
+		if(!mid[i]||vis[i]||(mid[a[i]]&&mid[b[i]]))continue;
+		int u=i,v=mid[a[i]]?b[i]:a[i],cur=0,j=0;
+		f[0]=0;
+		while(mid[u])
+		{
+			vis[u]=1;
+			j++;
+			f[j]=0;
+			int d=r-c[u],l=max(0,j+d-len),p=j-d;
+			if(l<p){f[l]++;f[p]--;}
+			if(j>=len)
+			{
+				cur+=f[j-len];
+				if(!cur)return 1;
+			}
+			int nxt=a[u]^b[u]^v;
+			v=u;
+			u=nxt;
+		}
+	}
+	return 0;
+}
+int main()
+{
+	ios::sync_with_stdio(false);
+	cin.tie(nullptr);
+	int id,T;
+	cin>>id>>T;
+	while(T--)
+	{
+		int n,k;
+		cin>>n>>k;
+		for(int i=1;i<=n;i++)G[i].clear();
+		for(int i=1;i<n;i++)
+		{
+			int u,v;
+			cin>>u>>v;
+			G[u].push_back(v);
+			G[v].push_back(u);
+		}
+		int l=0,r=0;
+		for(int i=1;i<=n;i++)
+		{
+			deg[i]=G[i].size();
+			tim[i]=0;
+			if(deg[i]==1){tim[i]=1;q[r++]=i;}
+		}
+		while(l<r)
+		{
+			int u=q[l++];
+			for(auto v:G[u])
+			{
+				deg[v]--;
+				if(deg[v]==1){tim[v]=tim[u]+1;q[r++]=v;}
+			}
+		}
+		fill(deg,deg+n+2,0);
+		for(int i=1;i<=n;i++)
+		{
+			deg[tim[i]]++;
+			a[i]=b[i]=c[i]=0;
+			for(auto v:G[i])
+			{
+				if(tim[v]>tim[a[i]]){c[i]=tim[b[i]];b[i]=a[i];a[i]=v;}
+				else if(tim[v]>tim[b[i]]){c[i]=tim[b[i]];b[i]=v;}
+				else c[i]=max(c[i],tim[v]);
+			}
+			h[i]=tim[b[i]];
+		}
+		for(int i=n;i>=0;i--)deg[i]+=deg[i+1];
+		l=r=0;
+		while(deg[l+1]-k>2*l)l++;
+		while(deg[r+1]>k)r++;
+		while(l<r)
+		{
+			int mid=l+r>>1;
+			if(check(mid,n,k))r=mid;
+			else l=mid+1;
+		}
+		cout<<l<<'\n';
+	}
+	return 0;
+}
+```
