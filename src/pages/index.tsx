@@ -201,7 +201,7 @@ function useMascotMotion(visible: boolean) {
 
 export default function Home(): ReactNode {
   const { siteConfig } = useDocusaurusContext();
-  const mascotSrc = useBaseUrl('/img/mascot.webp');
+  const mascotSrc = useBaseUrl('/img/mascot.png');
   const [mascotVisible, setMascotVisible] = useState(false);
   const mascotButtonRef = useMascotMotion(mascotVisible);
   const mascotTriggerRef = useRef<HTMLElement | null>(null);
