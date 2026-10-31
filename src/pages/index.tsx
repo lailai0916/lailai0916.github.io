@@ -129,12 +129,6 @@ export default function Home(): ReactNode {
   const [mascotVisible, setMascotVisible] = useState(false);
   const mascotTriggerRef = useRef<HTMLElement | null>(null);
 
-  function revealMascot() {
-    if (mascotVisible) return;
-    mascotTriggerRef.current = document.activeElement as HTMLElement | null;
-    setMascotVisible(true);
-  }
-
   function toggleMascot() {
     mascotTriggerRef.current = document.activeElement as HTMLElement | null;
     setMascotVisible((visible) => !visible);
@@ -282,7 +276,7 @@ export default function Home(): ReactNode {
         <div className={styles.bento}>
           <Card className={styles.cardMain}>
             <div className={styles.cardMainInner}>
-              <SpringAvatar onRevealMascot={revealMascot} onToggleMascot={toggleMascot} />
+              <SpringAvatar onToggleMascot={toggleMascot} />
               <div className={styles.intro}>
                 <h1 className={styles.name}>lailai</h1>
                 <p className={styles.role}>

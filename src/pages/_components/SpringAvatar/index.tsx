@@ -13,7 +13,6 @@ type Drag = {
 };
 
 type SpringAvatarProps = {
-  onRevealMascot?: () => void;
   onToggleMascot?: () => void;
 };
 
@@ -25,7 +24,7 @@ const spring = Array.from({ length: 61 }, (_, index) => {
   return index === 60 ? 0 : Math.exp(-9 * t) * (Math.cos(14 * t) + (9 / 14) * Math.sin(14 * t));
 });
 
-export default function SpringAvatar({ onRevealMascot, onToggleMascot }: SpringAvatarProps) {
+export default function SpringAvatar({ onToggleMascot }: SpringAvatarProps) {
   const avatarSrc = useBaseUrl('/img/logo.svg');
   const slotRef = useRef<HTMLDivElement>(null);
   const buttonRef = useRef<HTMLButtonElement>(null);
@@ -157,11 +156,10 @@ export default function SpringAvatar({ onRevealMascot, onToggleMascot }: SpringA
           message: "Drag lailai's avatar and release to spring back, or press Enter to bounce",
         })}
         aria-description={
-          onRevealMascot
+          onToggleMascot
             ? translate({
                 id: 'pages.home.avatar.description',
-                message:
-                  'Click the avatar to reveal the mascot. Press Shift+Enter to show or hide it.',
+                message: 'Click the avatar or press Shift+Enter to show or hide the mascot.',
               })
             : undefined
         }
@@ -197,7 +195,7 @@ export default function SpringAvatar({ onRevealMascot, onToggleMascot }: SpringA
             clickAllowedRef.current = false;
             if (!allowed) return;
           }
-          onRevealMascot?.();
+          onToggleMascot?.();
         }}
       >
         <img src={avatarSrc} alt="lailai" draggable={false} />
