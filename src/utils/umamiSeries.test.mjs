@@ -36,6 +36,31 @@ for (const timeZone of [
       else process.env.TZ = previousTimeZone;
     }
   });
+
+  test(`Umami bucket labels retain their clock time in ${timeZone}`, () => {
+    const previousTimeZone = process.env.TZ;
+    process.env.TZ = timeZone;
+    try {
+      const legacy = [
+        { x: '2026-10-31 23:00:00', y: 156 },
+        { x: '2026-11-01 00:00:00', y: 42 },
+      ];
+      assert.deepEqual(
+        mergeSeries([
+          [
+            { x: '2026-10-31T23:00:00Z', y: 156 },
+            { x: '2026-11-01T00:00:00.000Z', y: 42 },
+          ],
+        ]),
+        legacy
+      );
+      assert.deepEqual(mergeSeries([legacy]), legacy);
+      assert.deepEqual(mergeSeries([legacy, [{ x: '2026-11-01T00:00:00Z', y: 42 }]]), legacy);
+    } finally {
+      if (previousTimeZone === undefined) delete process.env.TZ;
+      else process.env.TZ = previousTimeZone;
+    }
+  });
 }
 
 test('a DST boundary keeps every view without double-counting a daily visitor', () => {

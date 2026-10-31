@@ -41,7 +41,7 @@ Date-time behavior follows the value's meaning, not one blanket timezone convers
 ## Boundary contracts
 
 - Uptime Kuma heartbeat strings are offsetless UTC. Parse them with `parseUtcDateTime()` before local display.
-- Umami pageview buckets are already labeled in the visitor timezone requested by the client. Treat them as local bucket labels; never append `Z` or convert them again.
+- Umami pageview buckets are already labeled in the visitor timezone requested by the client. Normalize both legacy space-separated labels and newer ISO-shaped labels with a literal `Z` in `src/utils/umamiSeries.ts` before merging and filling gaps. Preserve their written clock time; the API's `Z` does not make these bucket labels UTC instants.
 - Docusaurus may normalize blog metadata to `Z`. That generated representation is valid; derive visitor-local date keys from the represented instant.
 - Privacy's last-update plugin reads the newest Git commit instant for each locale's Markdown body. Convert it to an `Asia/Shanghai` date key before formatting it as a calendar date; changes to the page shell, components, or styles do not update the policy date.
 - Travel's `YYYY-MM` values and Changelog's `YYYY-MM-DD` values are calendar labels. Their displayed month or date must remain unchanged in every timezone.

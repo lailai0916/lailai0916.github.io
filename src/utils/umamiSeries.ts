@@ -23,7 +23,11 @@ export function splitPageviewWindow(startAt: number, endAt: number): SeriesWindo
 export function mergeSeries(parts: SeriesPoint[][]): SeriesPoint[] {
   const seen = new Map<string, SeriesPoint>();
   for (const arr of parts) {
-    for (const point of arr) seen.set(point.x, point);
+    for (const point of arr) {
+      // Umami's literal Z marks an already-local bucket, not a UTC instant.
+      const x = point.x.replace(/^(\d{4}-\d{2}-\d{2})T(\d{2}:\d{2}:\d{2})(?:\.\d+)?Z$/, '$1 $2');
+      seen.set(x, { x, y: point.y });
+    }
   }
   return [...seen.values()].sort((a, b) => a.x.localeCompare(b.x));
 }
