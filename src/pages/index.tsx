@@ -123,10 +123,87 @@ function useLocalTime() {
   return state;
 }
 
+function useMascotMotion(visible: boolean) {
+  const buttonRef = useRef<HTMLButtonElement>(null);
+  const retargetRef = useRef<((target: number) => void) | null>(null);
+
+  useEffect(() => {
+    const button = buttonRef.current!;
+    const motion = window.matchMedia('(prefers-reduced-motion: reduce)');
+    const frequency = 18;
+    let position = 1;
+    let velocity = 0;
+    let target = 1;
+    let frame = 0;
+    let previous = 0;
+
+    const paint = () => {
+      button.style.transform = `translateY(${position * 104}%) rotate(${-position * 5}deg) scale(${1 - position * 0.04})`;
+    };
+    const settle = () => {
+      cancelAnimationFrame(frame);
+      frame = 0;
+      position = target;
+      velocity = 0;
+      paint();
+    };
+    const advance = (now: number) => {
+      const dt = (now - previous) / 1000;
+      previous = now;
+      const offset = position - target;
+      const momentum = velocity + frequency * offset;
+      const decay = Math.exp(-frequency * dt);
+      // The exact spring step preserves velocity when a click reverses its target.
+      position = target + (offset + momentum * dt) * decay;
+      velocity = (velocity - frequency * momentum * dt) * decay;
+    };
+    const tick = () => {
+      frame = 0;
+      advance(performance.now());
+      if (Math.abs(position - target) < 0.0005 && Math.abs(velocity) < 0.005) {
+        settle();
+      } else {
+        paint();
+        frame = requestAnimationFrame(tick);
+      }
+    };
+    const update = () => {
+      if (motion.matches || document.hidden) {
+        settle();
+      } else if (!frame && (position !== target || velocity !== 0)) {
+        previous = performance.now();
+        frame = requestAnimationFrame(tick);
+      }
+    };
+
+    retargetRef.current = (next) => {
+      if (frame) advance(performance.now());
+      target = next;
+      update();
+    };
+    paint();
+    motion.addEventListener('change', update);
+    document.addEventListener('visibilitychange', update);
+    return () => {
+      retargetRef.current = null;
+      cancelAnimationFrame(frame);
+      motion.removeEventListener('change', update);
+      document.removeEventListener('visibilitychange', update);
+    };
+  }, []);
+
+  useEffect(() => {
+    retargetRef.current?.(visible ? 0 : 1);
+  }, [visible]);
+
+  return buttonRef;
+}
+
 export default function Home(): ReactNode {
   const { siteConfig } = useDocusaurusContext();
   const mascotSrc = useBaseUrl('/img/mascot.webp');
   const [mascotVisible, setMascotVisible] = useState(false);
+  const mascotButtonRef = useMascotMotion(mascotVisible);
   const mascotTriggerRef = useRef<HTMLElement | null>(null);
 
   function toggleMascot() {
@@ -351,6 +428,7 @@ export default function Home(): ReactNode {
           aria-hidden={!mascotVisible}
         >
           <button
+            ref={mascotButtonRef}
             type="button"
             className={styles.mascotButton}
             disabled={!mascotVisible}
