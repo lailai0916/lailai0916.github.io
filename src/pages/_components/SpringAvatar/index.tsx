@@ -102,15 +102,11 @@ export default function SpringAvatar({ onCornerDrop, onToggleMascot }: SpringAva
     const drag = dragRef.current;
     if (!drag || drag.pointerId !== event.pointerId) return;
     const moved = Math.hypot(event.clientX - drag.startX, event.clientY - drag.startY) >= 24;
-    const display = window.screen as Screen & { availLeft?: number; availTop?: number };
-    const left = display.availLeft ?? 0;
-    // Keep the target reachable above the Dock or taskbar.
-    const bottom = (display.availTop ?? 0) + display.availHeight;
     const inCorner =
-      event.screenX >= left &&
-      event.screenX <= left + Math.min(128, display.availWidth) &&
-      event.screenY >= bottom - Math.min(128, display.availHeight) &&
-      event.screenY <= bottom;
+      event.clientX >= 0 &&
+      event.clientX <= Math.min(128, window.innerWidth) &&
+      event.clientY >= Math.max(0, window.innerHeight - 128) &&
+      event.clientY <= window.innerHeight;
     endDrag(event.pointerId);
     if (moved && inCorner) onCornerDrop?.();
   }
@@ -160,7 +156,7 @@ export default function SpringAvatar({ onCornerDrop, onToggleMascot }: SpringAva
             ? translate({
                 id: 'pages.home.avatar.description',
                 message:
-                  'Drag to the bottom-left corner of the screen and release to reveal the mascot. Press Shift+Enter to show or hide it.',
+                  'Drag to the bottom-left corner of the visible page and release to reveal the mascot. Press Shift+Enter to show or hide it.',
               })
             : undefined
         }
