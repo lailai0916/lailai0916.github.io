@@ -9,11 +9,17 @@
   }
 }
 
-/* Placeholder rows reuse the real .list / .rowItem / .row structure, so the
-   skeleton is exactly the same height as a loaded row at every font-size,
-   line-height, and breakpoint. This bar just fills the row width. */
+/* The placeholder text reserves the line box; both bars share the row bounds. */
+.skeletonBar,
+.bar {
+  position: absolute;
+  inset: 4px auto 4px 0;
+  border-radius: 8px;
+  pointer-events: none;
+}
+
 .skeletonBar {
-  flex: 1;
+  right: 0;
 }
 
 .list {
@@ -26,11 +32,7 @@
 }
 
 .bar {
-  position: absolute;
-  inset: 4px auto 4px 0;
   background: color-mix(in srgb, var(--ifm-color-primary) 8%, transparent);
-  border-radius: 8px;
-  pointer-events: none;
   transition: width 600ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -83,6 +85,14 @@
     padding: 0.5rem;
     font-size: 0.85rem;
   }
+}
+
+/* Reserve icon height even at the smallest text preference. */
+.row::after {
+  content: '';
+  flex-shrink: 0;
+  width: 0;
+  height: 16px;
 }
 
 a.row:hover,

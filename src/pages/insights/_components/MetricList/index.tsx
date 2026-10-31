@@ -72,12 +72,11 @@ export default function MetricList({
     >
       {notice}
       {loading ? (
-        <ol className={styles.list}>
+        <ol className={styles.list} aria-hidden="true">
           {Array.from({ length: 8 }).map((_, i) => (
             <Row key={i}>
-              <Skeleton className={styles.skeletonBar} radius={8}>
-                &nbsp;
-              </Skeleton>
+              <span>&nbsp;</span>
+              <Skeleton className={styles.skeletonBar} />
             </Row>
           ))}
         </ol>
