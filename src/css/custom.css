@@ -145,7 +145,7 @@ html.debug-mode span {
   min-height: var(--navbar-control-size);
   margin: 0;
   padding: 0;
-  border: 1px solid transparent;
+  border: 0;
   border-radius: var(--lk-radius-sm);
   background: transparent;
   box-shadow: none;
@@ -164,7 +164,7 @@ html.debug-mode span {
   .navbar .DocSearch-Button {
     width: auto;
     padding-inline: var(--lk-space-3);
-    border-color: var(--ifm-color-emphasis-200);
+    border: 1px solid var(--ifm-color-emphasis-200);
     background: var(--ifm-card-background-color);
     box-shadow: var(--lk-shadow-sm);
     font-family: var(--ifm-font-family-base);
@@ -172,7 +172,6 @@ html.debug-mode span {
 }
 
 .navbar .DocSearch-Button:hover {
-  border-color: var(--lk-color-emphasis-300);
   background-color: var(--lk-color-emphasis-100);
   color: var(--ifm-font-color-base);
   text-decoration: none;
