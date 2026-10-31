@@ -135,7 +135,7 @@ function MonitorRow({
 }
 
 export default function UptimeSection() {
-  const { data, status, isInitialLoading, isRefreshError, retry } = useKumaStatus();
+  const { data, status, isInitialLoading, isRefreshError, isFetching, retry } = useKumaStatus();
   const loading = isInitialLoading;
   const errored = status === 'error' && !isRefreshError;
 
@@ -147,7 +147,7 @@ export default function UptimeSection() {
 
   return (
     <section className={styles.section}>
-      {isRefreshError && <RefreshNotice onRetry={retry} />}
+      {isRefreshError && <RefreshNotice onRetry={retry} busy={isFetching} />}
       {errored ? (
         <StatePanel
           text={translate({
@@ -155,6 +155,7 @@ export default function UptimeSection() {
             message: 'Unable to reach status server',
           })}
           onRetry={retry}
+          busy={isFetching}
         />
       ) : (
         <div className={styles.list}>

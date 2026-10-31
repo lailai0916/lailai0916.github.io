@@ -19,10 +19,12 @@ import { useUmamiStats, type InsightsRange, type UmamiStats } from '@site/src/ho
 import { useUmamiPageviewsSeries } from '@site/src/hooks/useUmamiPageviewsSeries';
 import { useUmamiMetric } from '@site/src/hooks/useUmamiMetric';
 import { useAnimatedNumber } from '@site/src/hooks/useAnimatedNumber';
+import { useVisitorTimeZone } from '@site/src/hooks/useVisitorTimeZone';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import { formatCompact } from '@lailai0916/ui';
 import { KUMA_STATUS_URL } from '@site/src/utils/kuma';
 import { UMAMI_DASHBOARD_URL } from '@site/src/utils/umami';
+import { formatInTimeZone } from '@site/src/utils/dateTime';
 import { toPageviewsData } from './_components/seriesFormat';
 import MetricList from './_components/MetricList';
 import metricListStyles from './_components/MetricList/styles.module.css';
@@ -76,6 +78,10 @@ const ANALYTICS_ERROR = translate({
 const ENV_OTHER = translate({
   id: 'pages.insights.env.other',
   message: 'Other',
+});
+const COMPARISON_LABEL = translate({
+  id: 'pages.insights.traffic.comparison',
+  message: 'Rolling window; changes compare with the preceding equal period.',
 });
 
 // Umami reports raw browser/device codes; map the common ones to display names
@@ -209,9 +215,20 @@ function HeroMetric({
 }
 
 function HeroGrid({ range }: { range: InsightsRange }) {
-  const { data, status, isInitialLoading, isRefreshError, retry } = useUmamiStats(range);
+  const { data, status, isInitialLoading, isRefreshError, isFetching, updatedAt, retry } =
+    useUmamiStats(range);
   const { i18n } = useDocusaurusContext();
+  const timeZone = useVisitorTimeZone();
   const errored = status === 'error' && !isRefreshError;
+  const formatTime = (value: number) =>
+    formatInTimeZone(value, i18n.currentLocale, timeZone, {
+      year: 'numeric',
+      month: 'short',
+      day: 'numeric',
+      hour: '2-digit',
+      minute: '2-digit',
+      hourCycle: 'h23',
+    });
 
   // Round before formatting so a count-up frame never shows more decimals than
   // its final value (e.g. an integer total of 23 must not flash "11.5").
@@ -266,11 +283,40 @@ function HeroGrid({ range }: { range: InsightsRange }) {
     },
   ];
 
-  if (errored) return <StatePanel text={ANALYTICS_ERROR} onRetry={retry} />;
+  if (errored) return <StatePanel text={ANALYTICS_ERROR} onRetry={retry} busy={isFetching} />;
 
   return (
     <div>
-      {isRefreshError && <RefreshNotice onRetry={retry} />}
+      <div className={styles.trafficContext}>
+        <div className={styles.trafficWindow}>
+          {data ? (
+            <span>
+              <time dateTime={new Date(data.window.startAt).toISOString()}>
+                {formatTime(data.window.startAt)}
+              </time>
+              {' – '}
+              <time dateTime={new Date(data.window.endAt).toISOString()}>
+                {formatTime(data.window.endAt)}
+              </time>
+            </span>
+          ) : (
+            <Skeleton width="min(100%, 24rem)" height="1.2em" />
+          )}
+          {updatedAt !== null && (
+            <span>
+              {translate(
+                {
+                  id: 'pages.insights.traffic.updated',
+                  message: 'Summary updated {time}',
+                },
+                { time: formatTime(updatedAt) }
+              )}
+            </span>
+          )}
+        </div>
+        <p className={styles.comparisonNote}>{COMPARISON_LABEL}</p>
+      </div>
+      {isRefreshError && <RefreshNotice onRetry={retry} busy={isFetching} />}
       <div className={styles.heroGrid}>
         {specs.map((spec) => {
           const current = deriveMetric(spec, data);
@@ -302,28 +348,28 @@ function RangeBar({
       value: 1,
       label: translate({
         id: 'pages.insights.range.day',
-        message: 'Day',
+        message: '24 Hours',
       }),
     },
     {
       value: 7,
       label: translate({
         id: 'pages.insights.range.week',
-        message: 'Week',
+        message: '7 Days',
       }),
     },
     {
       value: 30,
       label: translate({
         id: 'pages.insights.range.month',
-        message: 'Month',
+        message: '30 Days',
       }),
     },
     {
       value: 365,
       label: translate({
         id: 'pages.insights.range.year',
-        message: 'Year',
+        message: '365 Days',
       }),
     },
   ];
@@ -345,7 +391,8 @@ function RangeBar({
 }
 
 function PageviewsChart({ range }: { range: InsightsRange }) {
-  const { data, status, isInitialLoading, isRefreshError, retry } = useUmamiPageviewsSeries(range);
+  const { data, status, isInitialLoading, isRefreshError, isFetching, retry } =
+    useUmamiPageviewsSeries(range);
   const {
     i18n: { currentLocale },
   } = useDocusaurusContext();
@@ -376,8 +423,8 @@ function PageviewsChart({ range }: { range: InsightsRange }) {
       loading={isInitialLoading}
       emptyText={METRIC_LIST_EMPTY}
       error={status === 'error' && !isRefreshError ? ANALYTICS_ERROR : undefined}
-      errorAction={<RetryButton onClick={retry} />}
-      notice={isRefreshError && <RefreshNotice onRetry={retry} />}
+      errorAction={<RetryButton onClick={retry} busy={isFetching} />}
+      notice={isRefreshError && <RefreshNotice onRetry={retry} busy={isFetching} />}
       formatValue={pageviewsLabel}
       className={clsx('site-chart', styles.chartCard)}
     />
@@ -406,8 +453,10 @@ function MetricsGrid({ range }: { range: InsightsRange }) {
         loading={pages.isInitialLoading}
         emptyText={METRIC_LIST_EMPTY}
         error={pages.status === 'error' && !pages.isRefreshError ? ANALYTICS_ERROR : undefined}
-        errorAction={<RetryButton onClick={pages.retry} />}
-        notice={pages.isRefreshError && <RefreshNotice onRetry={pages.retry} />}
+        errorAction={<RetryButton onClick={pages.retry} busy={pages.isFetching} />}
+        notice={
+          pages.isRefreshError && <RefreshNotice onRetry={pages.retry} busy={pages.isFetching} />
+        }
         renderLabel={(p) => (
           <Hint label={p}>
             <span>{p === '/' ? '/' : p}</span>
@@ -427,8 +476,12 @@ function MetricsGrid({ range }: { range: InsightsRange }) {
         error={
           referrers.status === 'error' && !referrers.isRefreshError ? ANALYTICS_ERROR : undefined
         }
-        errorAction={<RetryButton onClick={referrers.retry} />}
-        notice={referrers.isRefreshError && <RefreshNotice onRetry={referrers.retry} />}
+        errorAction={<RetryButton onClick={referrers.retry} busy={referrers.isFetching} />}
+        notice={
+          referrers.isRefreshError && (
+            <RefreshNotice onRetry={referrers.retry} busy={referrers.isFetching} />
+          )
+        }
         renderLabel={(r) => (
           <>
             <ReferrerIcon referrer={r} />
@@ -462,8 +515,14 @@ function MetricsGrid({ range }: { range: InsightsRange }) {
             ? ANALYTICS_ERROR
             : undefined
         }
-        errorAction={<RetryButton onClick={countriesMetric.retry} />}
-        notice={countriesMetric.isRefreshError && <RefreshNotice onRetry={countriesMetric.retry} />}
+        errorAction={
+          <RetryButton onClick={countriesMetric.retry} busy={countriesMetric.isFetching} />
+        }
+        notice={
+          countriesMetric.isRefreshError && (
+            <RefreshNotice onRetry={countriesMetric.retry} busy={countriesMetric.isFetching} />
+          )
+        }
         renderLabel={(code) => (
           <>
             <Icon
@@ -498,8 +557,12 @@ function EnvironmentGrid({ range }: { range: InsightsRange }) {
         error={
           browsers.status === 'error' && !browsers.isRefreshError ? ANALYTICS_ERROR : undefined
         }
-        errorAction={<RetryButton onClick={browsers.retry} />}
-        notice={browsers.isRefreshError && <RefreshNotice onRetry={browsers.retry} />}
+        errorAction={<RetryButton onClick={browsers.retry} busy={browsers.isFetching} />}
+        notice={
+          browsers.isRefreshError && (
+            <RefreshNotice onRetry={browsers.retry} busy={browsers.isFetching} />
+          )
+        }
         maxSlices={4}
         otherLabel={ENV_OTHER}
         renderLabel={(x) => BROWSER_LABELS[x.toLowerCase()] ?? titleCaseKey(x)}
@@ -514,8 +577,8 @@ function EnvironmentGrid({ range }: { range: InsightsRange }) {
         loading={os.isInitialLoading}
         emptyText={METRIC_LIST_EMPTY}
         error={os.status === 'error' && !os.isRefreshError ? ANALYTICS_ERROR : undefined}
-        errorAction={<RetryButton onClick={os.retry} />}
-        notice={os.isRefreshError && <RefreshNotice onRetry={os.retry} />}
+        errorAction={<RetryButton onClick={os.retry} busy={os.isFetching} />}
+        notice={os.isRefreshError && <RefreshNotice onRetry={os.retry} busy={os.isFetching} />}
         maxSlices={4}
         otherLabel={ENV_OTHER}
         renderLabel={(x) => x || titleCaseKey(x)}
@@ -530,8 +593,12 @@ function EnvironmentGrid({ range }: { range: InsightsRange }) {
         loading={devices.isInitialLoading}
         emptyText={METRIC_LIST_EMPTY}
         error={devices.status === 'error' && !devices.isRefreshError ? ANALYTICS_ERROR : undefined}
-        errorAction={<RetryButton onClick={devices.retry} />}
-        notice={devices.isRefreshError && <RefreshNotice onRetry={devices.retry} />}
+        errorAction={<RetryButton onClick={devices.retry} busy={devices.isFetching} />}
+        notice={
+          devices.isRefreshError && (
+            <RefreshNotice onRetry={devices.retry} busy={devices.isFetching} />
+          )
+        }
         maxSlices={4}
         otherLabel={ENV_OTHER}
         renderLabel={(x) => DEVICE_LABELS[x.toLowerCase()] ?? titleCaseKey(x)}

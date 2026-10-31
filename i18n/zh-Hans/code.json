@@ -1682,11 +1682,26 @@
   "components.englishExamples.title": {
     "message": "示例"
   },
+  "components.imageZoom.open": {
+    "message": "放大图片"
+  },
+  "components.imageZoom.close": {
+    "message": "关闭图片预览"
+  },
+  "components.imageZoom.title": {
+    "message": "图片预览"
+  },
   "components.laikitProvider.quoteAttributionDash": {
     "message": "—— "
   },
   "components.laikitProvider.githubError": {
     "message": "加载 GitHub 数据失败"
+  },
+  "components.laikitProvider.githubRetry": {
+    "message": "重试"
+  },
+  "components.laikitProvider.githubRetrying": {
+    "message": "正在重试…"
   },
   "components.laikitProvider.githubNoDescription": {
     "message": "暂无描述"
@@ -1826,6 +1841,9 @@
   "pages.insights.env.other": {
     "message": "其他"
   },
+  "pages.insights.traffic.comparison": {
+    "message": "滚动时间范围；变化比例与上一等长时段比较。"
+  },
   "pages.insights.env.device.desktop": {
     "message": "桌面端"
   },
@@ -1853,17 +1871,20 @@
   "pages.insights.metric.avgVisit": {
     "message": "访问时长"
   },
+  "pages.insights.traffic.updated": {
+    "message": "概览更新于 {time}"
+  },
   "pages.insights.range.day": {
-    "message": "日"
+    "message": "24 小时"
   },
   "pages.insights.range.week": {
-    "message": "周"
+    "message": "7 天"
   },
   "pages.insights.range.month": {
-    "message": "月"
+    "message": "30 天"
   },
   "pages.insights.range.year": {
-    "message": "年"
+    "message": "365 天"
   },
   "pages.insights.range.ariaLabel": {
     "message": "时间范围"
@@ -2224,14 +2245,14 @@
   "components.article.lastUpdated": {
     "message": "最后更新于 {date}"
   },
-  "components.article.summaryLabel": {
-    "message": "概述"
-  },
   "components.tableOfContents.title": {
     "message": "目录"
   },
   "components.tableOfContents.progress": {
     "message": "阅读进度：{percent}%"
+  },
+  "components.article.summaryLabel": {
+    "message": "概述"
   },
   "components.article.viewCount": {
     "message": "{viewCount} 浏览"
@@ -2254,6 +2275,12 @@
   "components.playground.lorenz.reset": {
     "message": "重置"
   },
+  "components.playground.lorenz.pause": {
+    "message": "暂停"
+  },
+  "components.playground.lorenz.play": {
+    "message": "继续"
+  },
   "components.playground.neuralNetwork.reset": {
     "message": "重置"
   },
@@ -2265,6 +2292,9 @@
   },
   "components.playground.neuralNetwork.preprocess": {
     "message": "预处理"
+  },
+  "components.playground.neuralNetwork.neuron.ariaLabel": {
+    "message": "第 {layer} 层，第 {neuron} 个神经元"
   },
   "pages.home.avatar.ariaLabel": {
     "message": "拖动 lailai 的头像，松手回弹；或按回车键弹跳"
@@ -2289,6 +2319,9 @@
   },
   "pages.moments.images.next": {
     "message": "下一张图片"
+  },
+  "pages.moments.images.open": {
+    "message": "放大图片"
   },
   "pages.moments.loadMore": {
     "message": "加载更多"
@@ -2323,6 +2356,9 @@
   "pages.overview.metric.moments": {
     "message": "动态"
   },
+  "blog.post.empty": {
+    "message": "暂无文章"
+  },
   "blog.pages.archive.title": {
     "message": "归档"
   },
@@ -2343,9 +2379,6 @@
   },
   "blog.archive.search.empty": {
     "message": "没有找到与“{query}”匹配的文章"
-  },
-  "blog.post.empty": {
-    "message": "暂无文章"
   },
   "blog.archive.redirect.link": {
     "message": "浏览归档"
@@ -2371,6 +2404,18 @@
   "blog.post.paginator.ariaLabel": {
     "message": "博客文章导航"
   },
+  "blog.postcard.readMore": {
+    "message": "阅读更多"
+  },
+  "blog.pagination.prev": {
+    "message": "上一页"
+  },
+  "blog.pagination.next": {
+    "message": "下一页"
+  },
+  "blog.pagination.ariaLabel": {
+    "message": "分页"
+  },
   "blog.post.pinned": {
     "message": "置顶"
   },
@@ -2385,18 +2430,6 @@
   },
   "blog.postcard.viewCount": {
     "message": "{viewCount} 浏览"
-  },
-  "blog.postcard.readMore": {
-    "message": "阅读更多"
-  },
-  "blog.pagination.prev": {
-    "message": "上一页"
-  },
-  "blog.pagination.next": {
-    "message": "下一页"
-  },
-  "blog.pagination.ariaLabel": {
-    "message": "分页"
   },
   "blog.menu.sectionsAriaLabel": {
     "message": "博客分区"
@@ -2463,14 +2496,8 @@
   "pages.insights.retry": {
     "message": "重试"
   },
-  "pages.insights.uptime.avgPing": {
-    "message": "平均 {ping}ms"
-  },
-  "pages.insights.status.error": {
-    "message": "无法连接监控服务"
-  },
-  "pages.insights.uptime.empty": {
-    "message": "暂无监控项"
+  "pages.insights.retrying": {
+    "message": "正在重试…"
   },
   "pages.insights.systemStatus.cores": {
     "message": "核心"
@@ -2540,6 +2567,15 @@
   },
   "pages.insights.systemStatus.protocol": {
     "message": "连接类型"
+  },
+  "pages.insights.uptime.avgPing": {
+    "message": "平均 {ping}ms"
+  },
+  "pages.insights.status.error": {
+    "message": "无法连接监控服务"
+  },
+  "pages.insights.uptime.empty": {
+    "message": "暂无监控项"
   },
   "pages.travel.map.motherland": {
     "message": "祖国"
@@ -2939,6 +2975,10 @@
     "message": "标签：",
     "description": "The label alongside a tag list"
   },
+  "theme.AnnouncementBar.closeButtonAriaLabel": {
+    "message": "关闭",
+    "description": "The ARIA label for close button of announcement bar"
+  },
   "theme.admonition.caution": {
     "message": "警告",
     "description": "The default label used for the Caution admonition (:::caution)"
@@ -2963,10 +3003,6 @@
     "message": "注意",
     "description": "The default label used for the Warning admonition (:::warning)"
   },
-  "theme.AnnouncementBar.closeButtonAriaLabel": {
-    "message": "关闭",
-    "description": "The ARIA label for close button of announcement bar"
-  },
   "theme.blog.sidebar.navAriaLabel": {
     "message": "最近文章导航",
     "description": "The ARIA label for recent posts in the blog sidebar"
@@ -2987,13 +3023,13 @@
     "message": "主导航",
     "description": "The ARIA label for the main navigation"
   },
-  "theme.NotFound.p2": {
-    "message": "请联系原始链接来源网站的所有者，并告知他们链接已损坏。",
-    "description": "The 2nd paragraph of the 404 page"
-  },
   "theme.navbar.mobileLanguageDropdown.label": {
     "message": "选择语言",
     "description": "The label for the mobile language switcher dropdown"
+  },
+  "theme.NotFound.p2": {
+    "message": "请联系原始链接来源网站的所有者，并告知他们链接已损坏。",
+    "description": "The 2nd paragraph of the 404 page"
   },
   "theme.TOCCollapsible.toggleButtonLabel": {
     "message": "本页总览",
@@ -3325,26 +3361,5 @@
   "theme.tags.tagsPageTitle": {
     "message": "标签",
     "description": "The title of the tag list page"
-  },
-  "components.imageZoom.open": {
-    "message": "放大图片"
-  },
-  "components.imageZoom.close": {
-    "message": "关闭图片预览"
-  },
-  "components.imageZoom.title": {
-    "message": "图片预览"
-  },
-  "components.playground.lorenz.pause": {
-    "message": "暂停"
-  },
-  "components.playground.lorenz.play": {
-    "message": "继续"
-  },
-  "components.playground.neuralNetwork.neuron.ariaLabel": {
-    "message": "第 {layer} 层，第 {neuron} 个神经元"
-  },
-  "pages.moments.images.open": {
-    "message": "放大图片"
   }
 }

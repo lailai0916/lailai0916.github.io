@@ -11,6 +11,7 @@ export function useUmamiMetric(type: MetricType, range: InsightsRange, limit: Me
     status,
     isInitialLoading,
     isRefreshError,
+    isFetching,
     retry,
   } = useFetch<MetricItem[]>(
     async (signal) => {
@@ -30,5 +31,5 @@ export function useUmamiMetric(type: MetricType, range: InsightsRange, limit: Me
     60_000
   );
 
-  return { items, status, isInitialLoading, isRefreshError, retry };
+  return { items, status, isInitialLoading, isRefreshError, isFetching, retry };
 }

@@ -146,7 +146,7 @@ export default function Footer(): ReactNode {
             <span className={styles.licenseTerms}>
               <a className={styles.metaLink} href="https://creativecommons.org/licenses/by/4.0/">
                 {LICENSE_LABEL}
-              </a>
+              </a>{' '}
               <span className={styles.licenseIcons} aria-hidden="true">
                 <img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg" alt="" />
                 <img src="https://mirrors.creativecommons.org/presskit/icons/by.svg" alt="" />

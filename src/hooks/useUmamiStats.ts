@@ -25,15 +25,20 @@ interface UmamiStatsResponse extends UmamiStats {
   comparison?: UmamiStats;
 }
 
+interface StatsResult extends UmamiStatsResponse {
+  window: { startAt: number; endAt: number };
+}
+
 export function useUmamiStats(range: InsightsRange) {
-  return useFetch<UmamiStatsResponse | null>(
-    (signal) => {
+  return useFetch<StatsResult | null>(
+    async (signal) => {
       const { startAt, endAt } = rangeWindow(range);
-      return umamiFetchJson<UmamiStatsResponse>(
+      const data = await umamiFetchJson<UmamiStatsResponse>(
         '/api/websites/{id}/stats',
         { startAt, endAt },
         { signal }
       );
+      return { ...data, window: { startAt, endAt } };
     },
     [range],
     null,

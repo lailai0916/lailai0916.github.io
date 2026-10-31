@@ -19,7 +19,7 @@ import { geoContains, geoBounds } from 'd3-geo';
 import * as countries from 'i18n-iso-countries';
 import countriesEn from 'i18n-iso-countries/langs/en.json';
 import countriesZh from 'i18n-iso-countries/langs/zh.json';
-import { MeshBasicMaterial } from 'three';
+import { MeshBasicMaterial, Vector3 } from 'three';
 import Button from '@lailai0916/ui/Button';
 import Tooltip from '@lailai0916/ui/Tooltip';
 import { TRAVEL_LIST } from '@site/src/data/travel';
@@ -272,23 +272,40 @@ function TravelGlobeClient({
     const globe = globeRef.current;
     const canvas = globe?.renderer()?.domElement;
     if (!globe || !canvas) return;
+    const controls = globe.controls();
+    const camera = globe.camera();
+    const position = new Vector3();
+    const center = new Vector3();
+    const originalClip = canvas.style.clipPath;
+    const updateClip = () => {
+      const width = canvas.clientWidth;
+      const height = canvas.clientHeight;
+      const radius = globe.getGlobeRadius();
+      const distance = camera.getWorldPosition(position).length();
+      if (!width || !height || distance <= radius) return;
 
-    const handlePointerDownCapture = (event: PointerEvent) => {
-      const rect = canvas.getBoundingClientRect();
-      if (!rect.width || !rect.height) return;
-      const x = (event.clientX - rect.left) / rect.width;
-      const y = (event.clientY - rect.top) / rect.height;
-      if (pickGlobe(globe, x, y)) return;
-      event.preventDefault();
-      event.stopPropagation();
-      event.stopImmediatePropagation();
+      // Clip before hit testing so touch gestures outside the sphere can scroll.
+      // The extra pixel preserves the antialiased rim; the marker is a separate canvas.
+      const tangent = radius / Math.sqrt(distance * distance - radius * radius);
+      const rx = (width * camera.projectionMatrix.elements[0] * tangent) / 2 + 1;
+      const ry = (height * camera.projectionMatrix.elements[5] * tangent) / 2 + 1;
+      center.set(0, 0, 0).project(camera);
+      const x = ((center.x + 1) * width) / 2;
+      const y = ((1 - center.y) * height) / 2;
+      const clip = `ellipse(${rx.toFixed(1)}px ${ry.toFixed(1)}px at ${x.toFixed(1)}px ${y.toFixed(1)}px)`;
+      if (canvas.style.clipPath !== clip) canvas.style.clipPath = clip;
     };
 
-    canvas.addEventListener('pointerdown', handlePointerDownCapture, true);
+    updateClip();
+    const observer = new ResizeObserver(updateClip);
+    observer.observe(canvas);
+    controls.addEventListener('change', updateClip);
     return () => {
-      canvas.removeEventListener('pointerdown', handlePointerDownCapture, true);
+      observer.disconnect();
+      controls.removeEventListener('change', updateClip);
+      canvas.style.clipPath = originalClip;
     };
-  }, [isGlobeReady, pickGlobe]);
+  }, [isGlobeReady]);
 
   // Hover is resolved geometrically: screen point → lat/lng on the sphere →
   // which country contains it. No polygon meshes needed.

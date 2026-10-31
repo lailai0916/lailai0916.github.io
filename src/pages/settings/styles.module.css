@@ -9,6 +9,7 @@
 
 .colorInputContainer {
   display: flex;
+  flex-wrap: wrap;
   gap: 0.75rem;
   align-items: center;
 }
@@ -16,8 +17,8 @@
 .colorField {
   display: flex;
   align-items: center;
-  flex: 1;
-  min-width: 0;
+  flex: 1 1 auto;
+  min-width: min-content;
   gap: 0.5rem;
   padding: 0.25rem;
   border-radius: 10px;
@@ -57,7 +58,7 @@
 
 .textColorInput {
   flex: 1;
-  min-width: 0;
+  min-width: 7ch;
   padding: 0;
   border: none;
   background: transparent;
@@ -71,7 +72,14 @@
 .resetButton.resetButton {
   flex-shrink: 0;
   height: auto;
+  min-height: var(--lk-control-height-compact);
   align-self: stretch;
+}
+
+@media (max-width: 600px), (pointer: coarse) {
+  .resetButton.resetButton {
+    min-height: 44px;
+  }
 }
 
 .presetColors {
@@ -181,14 +189,7 @@
   padding: 0.75rem 0.5rem;
   text-align: center;
   line-height: 1.25;
-  white-space: nowrap;
-}
-
-@media (max-width: 360px) {
-  .actionItem.actionItem {
-    padding-inline: 0.25rem;
-    font-size: 0.825rem;
-  }
+  white-space: normal;
 }
 
 .actionItemIcon {

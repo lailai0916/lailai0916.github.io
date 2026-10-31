@@ -55,6 +55,18 @@ function writeSessionCache(data: ShareSession): void {
   }
 }
 
+function invalidateSession(session: ShareSession): void {
+  if (typeof window === 'undefined') return;
+  const cached = readSessionCache();
+  // A late rejection for an old token must not clear a newer session.
+  if (cached?.token !== session.token || cached.websiteId !== session.websiteId) return;
+  try {
+    window.sessionStorage.removeItem(SESSION_STORAGE_KEY);
+  } catch {
+    // sessionStorage may be unavailable
+  }
+}
+
 async function fetchShareSession(): Promise<ShareSession> {
   const requestController = new AbortController();
   const res = await withTimeout(
@@ -108,6 +120,7 @@ function waitForSignal<T>(promise: Promise<T>, signal?: AbortSignal): Promise<T>
 }
 
 async function getShareSession(signal?: AbortSignal): Promise<ShareSession> {
+  signal?.throwIfAborted();
   const cached = readSessionCache();
   if (cached) return cached;
   if (pendingSession) return waitForSignal(pendingSession, signal);
@@ -138,17 +151,26 @@ async function umamiFetch(
   params?: Record<string, SearchParamValue>,
   init?: Omit<RequestInit, 'headers'>
 ): Promise<Response> {
-  const session = await getShareSession(init?.signal ?? undefined);
-  const path = pathTemplate.replace('{id}', session.websiteId);
-  const url = `${UMAMI_BASE}${path}${buildSearch(params)}`;
+  const signal = init?.signal ?? undefined;
+  const request = (session: ShareSession) =>
+    fetch(`${UMAMI_BASE}${pathTemplate.replace('{id}', session.websiteId)}${buildSearch(params)}`, {
+      ...init,
+      headers: {
+        'x-umami-share-token': session.token,
+        'x-umami-share-context': '1',
+      },
+    });
 
-  return fetch(url, {
-    ...init,
-    headers: {
-      'x-umami-share-token': session.token,
-      'x-umami-share-context': '1',
-    },
-  });
+  let session = await getShareSession(signal);
+  let response = await request(session);
+  if (response.status !== 401 && response.status !== 403) return response;
+
+  signal?.throwIfAborted();
+  invalidateSession(session);
+  session = await getShareSession(signal);
+  response = await request(session);
+  if (response.status === 401 || response.status === 403) invalidateSession(session);
+  return response;
 }
 
 export async function umamiFetchJson<T>(

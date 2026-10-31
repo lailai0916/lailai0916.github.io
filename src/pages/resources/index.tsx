@@ -100,20 +100,24 @@ function SearchBar({
         aria-label={SEARCH_PLACEHOLDER}
         prefix={
           activeCat && (
-            <Badge icon={activeCat.icon} className={styles.filterActiveCat}>
-              {activeCat.title}
-              <button
-                type="button"
-                className={styles.filterActiveCatClear}
-                onClick={onCategoryClear}
-                aria-label={translate({
-                  id: 'pages.resources.category.clear',
-                  message: 'Clear category',
-                })}
-              >
-                <Icon icon="lucide:x" aria-hidden />
-              </button>
-            </Badge>
+            <button
+              type="button"
+              className={styles.filterActiveCat}
+              onClick={(event) => {
+                const input = event.currentTarget.parentElement?.querySelector('input');
+                onCategoryClear();
+                input?.focus();
+              }}
+              aria-label={translate({
+                id: 'pages.resources.category.clear',
+                message: 'Clear category',
+              })}
+            >
+              <Badge icon={activeCat.icon}>
+                {activeCat.title}
+                <Icon icon="lucide:x" className={styles.filterActiveCatIcon} aria-hidden />
+              </Badge>
+            </button>
           )
         }
       />

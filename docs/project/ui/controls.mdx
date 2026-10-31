@@ -223,7 +223,7 @@ import { Icon, IconButton } from '@lailai0916/ui';
 | `Slider`    | `value`、`min`、`max`、`onChange`         | `step`、`label`、`valueLabel`、`onCommit`、`aria-label`                             |
 | `Switch`    | `checked`、`onChange`                     | 用 `aria-label` 提供开关用途                                                        |
 
-`Segmented.items` 中每项包含 `value` 和 `label`，可附 `icon`。按钮模式采用单选组语义，通过方向键移动和选择。横向排列在 480 px 以下堆叠，也可指定 `stackAt={360}`，或用 `stackAt={0}` 始终保持横向。
+`Segmented.items` 中每项包含 `value` 和 `label`，可附 `icon`。按钮模式采用单选组语义，横向时用左右键、纵向时用上下键移动和选择。横向排列在 480 px 以下堆叠，也可指定 `stackAt={360}`，或用 `stackAt={0}` 始终保持横向；堆叠后键盘方向和辅助技术信息同步改为纵向。
 
 `size` 默认为 `md`。`size="sm"` 使用紧凑文字和 32 px 高的选项，在小屏或触摸设备上增至 44 px；选中块、圆角和焦点样式与默认尺寸一致。
 

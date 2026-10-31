@@ -20,11 +20,15 @@ export function useFetch<T>(
   status: FetchStatus;
   isInitialLoading: boolean;
   isRefreshError: boolean;
+  isFetching: boolean;
+  updatedAt: number | null;
   retry: () => void;
 } {
   const [data, setData] = useState<T>(initial);
   const [status, setStatus] = useState<FetchStatus>('loading');
   const [hasSucceeded, setHasSucceeded] = useState(false);
+  const [isFetching, setIsFetching] = useState(false);
+  const [updatedAt, setUpdatedAt] = useState<number | null>(null);
   const retryRef = useRef<() => void>(() => {});
 
   const retry = useCallback(() => retryRef.current(), []);
@@ -36,11 +40,14 @@ export function useFetch<T>(
     let timer = 0;
     setData(initial);
     setHasSucceeded(false);
+    setIsFetching(false);
+    setUpdatedAt(null);
     setStatus('loading');
 
     const fetchOnce = async () => {
       if (inFlight || controller.signal.aborted) return;
       inFlight = true;
+      setIsFetching(true);
       if (!hasData) setStatus('loading');
       try {
         const result = await withTimeout(fetcher, controller.signal, FETCH_TIMEOUT_MS);
@@ -48,6 +55,7 @@ export function useFetch<T>(
         hasData = true;
         setData(result);
         setHasSucceeded(true);
+        setUpdatedAt(Date.now());
         setStatus('success');
       } catch (error) {
         if (controller.signal.aborted) return;
@@ -55,6 +63,7 @@ export function useFetch<T>(
         setStatus('error');
       } finally {
         inFlight = false;
+        if (!controller.signal.aborted) setIsFetching(false);
       }
     };
     retryRef.current = fetchOnce;
@@ -91,6 +100,8 @@ export function useFetch<T>(
     status,
     isInitialLoading: status === 'loading' && !hasSucceeded,
     isRefreshError: status === 'error' && hasSucceeded,
+    isFetching,
+    updatedAt,
     retry,
   };
 }

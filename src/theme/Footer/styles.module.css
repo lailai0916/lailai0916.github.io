@@ -255,13 +255,12 @@
 }
 
 .licenseTerms {
-  white-space: nowrap;
+  white-space: normal;
 }
 
 .licenseIcons {
   display: inline-flex;
   gap: 0.2em;
-  margin-left: 0.3em;
   vertical-align: -0.12em;
 }
 

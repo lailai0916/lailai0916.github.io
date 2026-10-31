@@ -3,7 +3,21 @@
 }
 
 .filterActiveCat {
+  display: inline-flex;
+  align-items: center;
   flex-shrink: 0;
+  min-height: 40px;
+  margin-block: -6px;
+  padding: 0;
+  border: none;
+  border-radius: 6px;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+  transition:
+    opacity 160ms ease,
+    transform 160ms ease;
 }
 @media (max-width: 768px) {
   .filterActiveCat {
@@ -11,33 +25,22 @@
   }
 }
 
-.filterActiveCatClear {
-  appearance: none;
-  border: none;
-  background: transparent;
-  padding: 0;
-  margin-left: 0.25rem;
-  cursor: pointer;
-  display: inline-flex;
-  vertical-align: middle;
-  color: inherit;
-  opacity: 0.75;
-  transition:
-    opacity 160ms ease,
-    transform 160ms ease;
+.filterActiveCat:hover {
+  opacity: 0.8;
 }
 
-.filterActiveCatClear:hover {
-  opacity: 1;
+.filterActiveCat:active {
+  transform: scale(0.97);
 }
 
-.filterActiveCatClear:active {
-  transform: scale(0.92);
-}
-
-.filterActiveCatClear:focus-visible {
+.filterActiveCat:focus-visible {
   outline: none;
   box-shadow: var(--lk-focus-ring);
+}
+
+.filterActiveCatIcon {
+  margin-left: 0.25rem;
+  vertical-align: middle;
 }
 
 .resourceIcon {

@@ -15,6 +15,14 @@ const messages = {
     id: 'components.laikitProvider.githubError',
     message: 'Failed to load GitHub data',
   }),
+  githubRetry: translate({
+    id: 'components.laikitProvider.githubRetry',
+    message: 'Retry',
+  }),
+  githubRetrying: translate({
+    id: 'components.laikitProvider.githubRetrying',
+    message: 'Retrying…',
+  }),
   githubNoDescription: translate({
     id: 'components.laikitProvider.githubNoDescription',
     message: 'No description provided',
