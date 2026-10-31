@@ -47,6 +47,7 @@ export default function NavbarLanguageToggle({ queryString, onClick }: Props): R
     <Hint label={label}>
       <Link
         className={clsx('navbar-control', styles.language)}
+        data-lk-icon-button="sm"
         data-locale={currentLocale}
         to={to}
         target="_self"

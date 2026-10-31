@@ -190,11 +190,11 @@
 }
 
 .feedLink:hover .feedPostTitle {
-  color: var(--ifm-color-primary);
+  color: var(--lk-color-primary-label);
 }
 
 .feedLink:active .feedPostTitle {
-  color: var(--ifm-color-primary-dark);
+  color: var(--lk-color-primary-label);
 }
 
 .feedLink:focus-visible {

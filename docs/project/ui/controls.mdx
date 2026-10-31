@@ -177,7 +177,7 @@ export function DropdownSelectPreview() {
 `Button` 支持原生按钮属性和 `ref`，默认 `type="button"`。表单提交应显式设置 `type="submit"`。
 
 ```tsx
-import { Button, IconButton } from '@lailai0916/ui';
+import { Button, Icon, IconButton } from '@lailai0916/ui';
 
 export function Actions() {
   return (
@@ -186,14 +186,16 @@ export function Actions() {
         保存
       </Button>
       <IconButton label="关闭" size="sm">
-        ×
+        <Icon icon="lucide:x" />
       </IconButton>
     </>
   );
 }
 ```
 
-`IconButton` 的 `label` 必填。默认 `variant="ghost"`，尺寸为 `sm` 或 `md`；顶部栏的搜索、导航等图标操作使用 `variant="header"`，与语言和主题按钮共享圆角、悬停边框、按压、焦点与图标描边。顶部样式在桌面为 32 像素，在宽度不超过 980 像素或粗指针设备上为 44 像素，尺寸由该样式统一管理；图标推荐使用 17 像素。
+`IconButton` 的 `label` 必填。默认 `variant="ghost"`，`xs`、`sm`、`md` 的尺寸分别为 28、32、40 像素，图标分别为 16、17、20 像素；粗指针设备上的操作区域至少为 44 像素。各尺寸共享中性色、8 像素圆角、悬停边框、按压、柔和焦点光圈与图标描边。
+
+顶部栏的搜索、导航等图标操作可使用 `variant="header"`，与语言和主题按钮共享同一套反馈。顶部样式在桌面为 32 像素，在宽度不超过 980 像素或粗指针设备上为 44 像素；图标为 17 像素。
 
 ```tsx
 import { Icon, IconButton } from '@lailai0916/ui';

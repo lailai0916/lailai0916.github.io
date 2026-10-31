@@ -2,9 +2,11 @@ import { useEffect, useMemo, useState } from 'react';
 import clsx from 'clsx';
 import Link from '@docusaurus/Link';
 import Icon from '@lailai0916/ui/Icon';
+import IconButton from '@lailai0916/ui/IconButton';
 import { translate } from '@docusaurus/Translate';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Card from '@lailai0916/ui/Card';
+import Hint from '@lailai0916/ui/Hint';
 import { getAllBlogItems } from '@site/src/utils/blogData';
 import { useVisitorTimeZone } from '@site/src/hooks/useVisitorTimeZone';
 import {
@@ -183,40 +185,37 @@ export default function CalendarCard() {
       <div className={styles.calendarHeader}>
         <span className={styles.calendarTitle}>{monthLabel}</span>
         <div className={styles.calendarNav}>
-          <button
-            type="button"
-            className={styles.calendarNavBtn}
+          <IconButton
+            size="xs"
             onClick={goToday}
             disabled={isOnCurrentMonth}
-            aria-label={translate({
+            label={translate({
               id: 'blog.sidebar.calendar.today',
               message: 'Today',
             })}
           >
             <Icon icon="lucide:calendar-clock" width="1em" height="1em" />
-          </button>
-          <button
-            type="button"
-            className={styles.calendarNavBtn}
+          </IconButton>
+          <IconButton
+            size="xs"
             onClick={goPrev}
-            aria-label={translate({
+            label={translate({
               id: 'blog.sidebar.calendar.prev',
               message: 'Previous month',
             })}
           >
             <Icon icon="lucide:chevron-left" width="1em" height="1em" />
-          </button>
-          <button
-            type="button"
-            className={styles.calendarNavBtn}
+          </IconButton>
+          <IconButton
+            size="xs"
             onClick={goNext}
-            aria-label={translate({
+            label={translate({
               id: 'blog.sidebar.calendar.next',
               message: 'Next month',
             })}
           >
             <Icon icon="lucide:chevron-right" width="1em" height="1em" />
-          </button>
+          </IconButton>
         </div>
       </div>
 
@@ -264,10 +263,14 @@ export default function CalendarCard() {
         <ul className={styles.calendarPostList}>
           {visiblePosts.map((post) => (
             <li key={post.permalink} className={styles.calendarPostItem}>
-              <Link to={post.permalink} className={styles.calendarPostLink}>
-                <span className={styles.calendarPostTitle}>{post.title}</span>
-                <span className={styles.calendarPostDate}>{formatDayLabel(post.dateKey)}</span>
-              </Link>
+              <Hint label={post.title} onlyWhenTruncated truncationTarget="[data-truncated-title]">
+                <Link to={post.permalink} className={styles.calendarPostLink}>
+                  <span className={styles.calendarPostTitle} data-truncated-title>
+                    {post.title}
+                  </span>
+                  <span className={styles.calendarPostDate}>{formatDayLabel(post.dateKey)}</span>
+                </Link>
+              </Hint>
             </li>
           ))}
         </ul>

@@ -6,6 +6,7 @@ import { translate } from '@docusaurus/Translate';
 import AvatarFallbackIcon from 'lucide-static/icons/user-round.svg';
 import Button from '@lailai0916/ui/Button';
 import DataState from '@lailai0916/ui/DataState';
+import Hint from '@lailai0916/ui/Hint';
 import Skeleton from '@lailai0916/ui/Skeleton';
 import { useImageStatus } from '@lailai0916/ui';
 import { FRIEND_LIST } from '@site/src/data/friends';
@@ -149,35 +150,47 @@ export function FriendFeed(): ReactNode {
         <DataState message={FEED_EMPTY} />
       ) : (
         <ul className={styles.feedList}>
-          {posts.slice(0, POST_LIMIT).map((post) => (
-            <li key={post.url} className={styles.feedItem}>
-              <Link
-                href={post.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className={styles.feedLink}
-              >
-                <FriendAvatar
-                  src={post.friend.avatar}
-                  className={clsx(styles.avatar, styles.feedAvatar)}
-                  loading="lazy"
-                />
-                <div className={styles.feedContent}>
-                  <h3 className={styles.feedPostTitle}>{post.title}</h3>
-                  <div className={styles.feedMeta}>
-                    <span className={styles.feedAuthor}>{post.friend.title}</span>
-                    <span aria-hidden="true">·</span>
-                    <time
-                      dateTime={post.publishedAt}
-                      title={`${formatLocalDate(post.publishedAt, currentLocale, timeZone)} ${formatLocalTime(post.publishedAt, currentLocale, timeZone)}`}
-                    >
-                      {formatLocalDate(post.publishedAt, currentLocale, timeZone)}
-                    </time>
-                  </div>
-                </div>
-              </Link>
-            </li>
-          ))}
+          {posts.slice(0, POST_LIMIT).map((post) => {
+            const publishedDate = formatLocalDate(post.publishedAt, currentLocale, timeZone);
+            const publishedLabel = `${publishedDate} ${formatLocalTime(post.publishedAt, currentLocale, timeZone)}`;
+
+            return (
+              <li key={post.url} className={styles.feedItem}>
+                <Hint
+                  label={post.title}
+                  onlyWhenTruncated
+                  truncationTarget="[data-truncated-title]"
+                >
+                  <Link
+                    href={post.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={styles.feedLink}
+                  >
+                    <FriendAvatar
+                      src={post.friend.avatar}
+                      className={clsx(styles.avatar, styles.feedAvatar)}
+                      loading="lazy"
+                    />
+                    <div className={styles.feedContent}>
+                      <h3 className={styles.feedPostTitle} data-truncated-title>
+                        {post.title}
+                      </h3>
+                      <div className={styles.feedMeta}>
+                        <span className={styles.feedAuthor}>{post.friend.title}</span>
+                        <span aria-hidden="true">·</span>
+                        <Hint label={publishedLabel}>
+                          <time dateTime={post.publishedAt} aria-label={publishedLabel}>
+                            {publishedDate}
+                          </time>
+                        </Hint>
+                      </div>
+                    </div>
+                  </Link>
+                </Hint>
+              </li>
+            );
+          })}
         </ul>
       )}
     </section>

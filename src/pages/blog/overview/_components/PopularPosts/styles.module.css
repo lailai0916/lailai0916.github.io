@@ -34,7 +34,7 @@
 }
 
 a.row:hover {
-  color: var(--ifm-color-primary);
+  color: var(--lk-color-primary-label);
   background-color: var(--ifm-color-emphasis-100);
 }
 

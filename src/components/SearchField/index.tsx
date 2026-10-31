@@ -2,6 +2,7 @@ import { useRef, type ComponentProps, type ReactNode } from 'react';
 import { translate } from '@docusaurus/Translate';
 import Card from '@lailai0916/ui/Card';
 import Icon from '@lailai0916/ui/Icon';
+import IconButton from '@lailai0916/ui/IconButton';
 import clsx from 'clsx';
 import styles from './styles.module.css';
 
@@ -39,17 +40,16 @@ export default function SearchField({
           className={styles.input}
         />
         {value && (
-          <button
-            type="button"
-            className={styles.clear}
-            aria-label={CLEAR_SEARCH}
+          <IconButton
+            size="xs"
+            label={CLEAR_SEARCH}
             onClick={() => {
               onValueChange('');
               inputRef.current?.focus();
             }}
           >
-            <Icon icon="lucide:x" aria-hidden />
-          </button>
+            <Icon icon="lucide:x" width={16} height={16} aria-hidden />
+          </IconButton>
         )}
       </div>
     </Card>

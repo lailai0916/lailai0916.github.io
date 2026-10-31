@@ -77,36 +77,42 @@ export default function PopularPosts({ items }: { items: BlogItems }) {
           <ol className={styles.list} role="list">
             {posts.map((post, i) => (
               <li key={post.permalink}>
-                <Link to={post.permalink} className={styles.row}>
-                  <span className={styles.rank} aria-hidden="true">
-                    {i + 1}
-                  </span>
-                  <div className={styles.content}>
-                    <div className={styles.heading}>
-                      <Hint label={post.title}>
-                        <span className={styles.title}>{post.title}</span>
-                      </Hint>
-                      <span className={styles.views}>
-                        {selectMessage(
-                          post.views,
-                          translate(
-                            {
-                              id: 'pages.overview.popular.views',
-                              message: '{count} view|{count} views',
-                            },
-                            { count: new Intl.NumberFormat(locale).format(post.views) }
-                          )
-                        )}
-                      </span>
+                <Hint
+                  label={post.title}
+                  onlyWhenTruncated
+                  truncationTarget="[data-truncated-title]"
+                >
+                  <Link to={post.permalink} className={styles.row}>
+                    <span className={styles.rank} aria-hidden="true">
+                      {i + 1}
+                    </span>
+                    <div className={styles.content}>
+                      <div className={styles.heading}>
+                        <span className={styles.title} data-truncated-title>
+                          {post.title}
+                        </span>
+                        <span className={styles.views}>
+                          {selectMessage(
+                            post.views,
+                            translate(
+                              {
+                                id: 'pages.overview.popular.views',
+                                message: '{count} view|{count} views',
+                              },
+                              { count: new Intl.NumberFormat(locale).format(post.views) }
+                            )
+                          )}
+                        </span>
+                      </div>
+                      <div className={styles.track} aria-hidden="true">
+                        <div
+                          className={styles.fill}
+                          style={{ width: `${maxViews > 0 ? (post.views / maxViews) * 100 : 0}%` }}
+                        />
+                      </div>
                     </div>
-                    <div className={styles.track} aria-hidden="true">
-                      <div
-                        className={styles.fill}
-                        style={{ width: `${maxViews > 0 ? (post.views / maxViews) * 100 : 0}%` }}
-                      />
-                    </div>
-                  </div>
-                </Link>
+                  </Link>
+                </Hint>
               </li>
             ))}
           </ol>

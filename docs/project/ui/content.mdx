@@ -156,6 +156,8 @@ import { Hint, Input } from '@lailai0916/ui';
 
 `side` 支持 `top`、`bottom`、`left`、`right`，默认 `bottom`；`delay` 是悬停等待的毫秒数；`disabled` 仅关闭提示，不禁用控件。`className` 与原生 `div` 属性作用于提示内容，稳定样式入口是 `[data-lk="hint"]`。原生对话框内的提示保留在对话框的顶层中。
 
+为省略的文本补充完整内容时，设置 `onlyWhenTruncated`，提示仅在文本实际溢出时出现。若触发器是整行链接、被截断的标题位于内部，可用 `truncationTarget` 指定其 CSS 选择器；提示仍由原有链接触发，不增加键盘停靠点。尺寸变化后会重新判断单行省略或多行截断。
+
 `IconButton` 自动显示操作提示，内容默认取 `title ?? label`，可用 `hint={false}` 或 `title=""` 关闭。`Button`、`ButtonLink` 在传入非空 `title` 时使用 `Hint`；语言和主题按钮也复用它。字段的标签、错误和必读说明继续通过 `label`、`description`、`error` 常驻展示。
 
 ## 数据提示
@@ -179,7 +181,7 @@ export function ChartHint({ visible }: { visible: boolean }) {
 }
 ```
 
-`Hint` 用于操作说明，`Tooltip` 用于日期、数值、状态等数据展示。需要包含可点击链接或按钮的卡片应采用单独的弹层或对话框交互。
+`Hint` 用于操作说明、完整标题和精确时间等简短补充；`Tooltip` 用于图表中需要定位的数据展示。需要包含可点击链接或按钮的卡片应采用单独的弹层或对话框交互。
 
 完整图表优先使用 `Chart` 或 `Donut`，它们已组织图形与提示层。
 

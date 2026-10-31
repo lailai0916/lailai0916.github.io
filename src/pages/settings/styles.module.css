@@ -24,11 +24,14 @@
   border-radius: 10px;
   border: 1px solid var(--ifm-color-emphasis-300);
   cursor: text;
-  transition: border-color 160ms ease;
+  transition:
+    border-color var(--lk-transition),
+    box-shadow var(--lk-transition);
 }
 
 .colorField:focus-within {
-  border-color: var(--ifm-color-primary);
+  border-color: var(--lk-color-primary);
+  box-shadow: var(--lk-focus-ring);
 }
 
 .colorPickerInput {

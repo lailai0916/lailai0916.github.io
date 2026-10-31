@@ -90,7 +90,7 @@
 }
 
 .postTitleLink:hover {
-  color: var(--ifm-color-primary);
+  color: var(--lk-color-primary-label);
 }
 
 .postExcerpt {

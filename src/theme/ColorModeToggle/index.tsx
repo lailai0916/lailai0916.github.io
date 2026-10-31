@@ -8,7 +8,7 @@ import IconSystemColorMode from 'lucide-static/icons/monitor.svg';
 import type { Props } from '@theme/ColorModeToggle';
 import type { ColorMode } from '@docusaurus/theme-common';
 
-import Hint from '@lailai0916/ui/Hint';
+import IconButton from '@lailai0916/ui/IconButton';
 import styles from './styles.module.css';
 
 // The order of color modes is defined here, and can be customized with swizzle
@@ -100,30 +100,20 @@ function ColorModeToggle({
   const isBrowser = useIsBrowser();
   return (
     <div className={clsx(styles.toggle, className)}>
-      <Hint label={getColorModeAriaLabel(value)}>
-        <button
-          className={clsx(
-            'clean-btn navbar-control',
-            !isBrowser && styles.toggleButtonDisabled,
-            buttonClassName
-          )}
-          type="button"
-          onClick={() => onChange(getNextColorMode(value, respectPrefersColorScheme))}
-          disabled={!isBrowser}
-          aria-label={getColorModeAriaLabel(value)}
-
-          // For accessibility decisions
-          // See https://github.com/facebook/docusaurus/issues/7667#issuecomment-2724401796
-
-          // aria-live disabled on purpose - This is annoying because:
-          // - without this attribute, VoiceOver doesn't announce on button enter
-          // - with this attribute, VoiceOver announces twice on ctrl+opt+space
-          // - with this attribute, NVDA announces many times
-          // aria-live="polite"
-        >
-          <CurrentColorModeIcon />
-        </button>
-      </Hint>
+      <IconButton
+        size="sm"
+        label={getColorModeAriaLabel(value)}
+        className={clsx(
+          'navbar-control',
+          !isBrowser && styles.toggleButtonDisabled,
+          buttonClassName
+        )}
+        type="button"
+        onClick={() => onChange(getNextColorMode(value, respectPrefersColorScheme))}
+        disabled={!isBrowser}
+      >
+        <CurrentColorModeIcon />
+      </IconButton>
     </div>
   );
 }

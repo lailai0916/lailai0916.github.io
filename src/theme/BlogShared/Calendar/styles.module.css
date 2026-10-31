@@ -19,39 +19,6 @@
   margin-left: auto;
 }
 
-.calendarNavBtn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 1.6rem;
-  height: 1.6rem;
-  font-size: 1.2rem;
-  border-radius: 8px;
-  border: none;
-  background: transparent;
-  color: var(--ifm-color-emphasis-700);
-  cursor: pointer;
-  transition:
-    color 160ms ease,
-    background 160ms ease;
-}
-
-.calendarNavBtn:hover:not(:disabled) {
-  color: var(--ifm-color-primary);
-  background: var(--ifm-color-emphasis-100);
-}
-
-.calendarNavBtn:disabled {
-  color: var(--ifm-color-emphasis-400);
-  cursor: not-allowed;
-  background: transparent;
-}
-
-.calendarNavBtn:focus-visible {
-  outline: none;
-  box-shadow: var(--lk-focus-ring);
-}
-
 .calendarWeekdays,
 .calendarGrid {
   display: grid;
@@ -195,7 +162,7 @@
 }
 
 .calendarPostLink:hover {
-  color: var(--ifm-color-primary);
+  color: var(--lk-color-primary-label);
 }
 
 .calendarPostTitle {

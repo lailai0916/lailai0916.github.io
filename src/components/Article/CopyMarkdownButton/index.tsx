@@ -1,11 +1,9 @@
-import Hint from '@lailai0916/ui/Hint';
+import IconButton from '@lailai0916/ui/IconButton';
 import { useCallback, useEffect, useRef, useState } from 'react';
-import clsx from 'clsx';
 import { loadIcons } from '@iconify/react';
 import Icon from '@lailai0916/ui/Icon';
 import { translate } from '@docusaurus/Translate';
 import styles from './styles.module.css';
-import shared from '../styles.module.css';
 
 declare const require: any;
 
@@ -157,23 +155,11 @@ export default function CopyMarkdownButton({ source }: { source: string }) {
     state === 'copied' ? COPIED_LABEL : state === 'error' ? COPY_ERROR_LABEL : COPY_LABEL;
 
   return (
-    <Hint label={label}>
-      <button
-        type="button"
-        onClick={onClick}
-        aria-label={label}
-        className={clsx(
-          shared.metaItem,
-          shared.metaLink,
-          shared.iconBtn,
-          styles.copyMarkdownButton
-        )}
-      >
-        <Icon icon={icon} width={16} height={16} />
-        <span className={styles.status} role="status" aria-live="polite">
-          {state === 'copied' ? COPIED_LABEL : state === 'error' ? COPY_ERROR_LABEL : ''}
-        </span>
-      </button>
-    </Hint>
+    <IconButton size="xs" label={label} onClick={onClick}>
+      <Icon icon={icon} width={16} height={16} aria-hidden />
+      <span className={styles.status} role="status" aria-live="polite">
+        {state === 'copied' ? COPIED_LABEL : state === 'error' ? COPY_ERROR_LABEL : ''}
+      </span>
+    </IconButton>
   );
 }

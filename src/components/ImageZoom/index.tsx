@@ -2,6 +2,9 @@ import { useEffect } from 'react';
 import { translate } from '@docusaurus/Translate';
 import styles from './styles.module.css';
 
+declare const require: (path: string) => { default: string };
+
+const CLOSE_ICON = require('!!raw-loader!lucide-static/icons/x.svg').default;
 const SELECTOR = '.markdown img:not([data-link-icon]), img[data-zoomable]';
 const OPEN_LABEL = translate({ id: 'components.imageZoom.open', message: 'Enlarge image' });
 const CLOSE_LABEL = translate({ id: 'components.imageZoom.close', message: 'Close image preview' });
@@ -186,9 +189,16 @@ export default function ImageZoom() {
       const closeButton = document.createElement('button');
       closeButton.type = 'button';
       closeButton.className = styles.close;
+      closeButton.setAttribute('data-lk-icon-button', 'md');
       closeButton.setAttribute('aria-label', CLOSE_LABEL);
       closeButton.autofocus = true;
-      closeButton.textContent = '×';
+      const closeIcon = new DOMParser().parseFromString(
+        CLOSE_ICON,
+        'image/svg+xml'
+      ).documentElement;
+      closeIcon.setAttribute('aria-hidden', 'true');
+      closeIcon.setAttribute('focusable', 'false');
+      closeButton.append(closeIcon);
       dialog.append(backdrop, image, closeButton);
       const root = document.documentElement;
       const preview: Preview = {

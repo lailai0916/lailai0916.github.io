@@ -2,6 +2,7 @@ import { useMemo } from 'react';
 import Link from '@docusaurus/Link';
 import Translate from '@docusaurus/Translate';
 import Card from '@lailai0916/ui/Card';
+import Hint from '@lailai0916/ui/Hint';
 import TitleCard from '@lailai0916/ui/TitleCard';
 import { useVisitorTimeZone } from '@site/src/hooks/useVisitorTimeZone';
 import { compareInstantsDescending, getDateKey } from '@site/src/utils/dateTime';
@@ -65,9 +66,11 @@ export function BlogArchiveList({ posts }: { posts: readonly PostLike[] }) {
                 <div className={styles.recentDate}>
                   {getDateKey(post.metadata.date, timeZone).slice(5, 10)}
                 </div>
-                <Link to={post.metadata.permalink} className={styles.recentLink}>
-                  {post.metadata.title}
-                </Link>
+                <Hint label={post.metadata.title} onlyWhenTruncated>
+                  <Link to={post.metadata.permalink} className={styles.recentLink}>
+                    {post.metadata.title}
+                  </Link>
+                </Hint>
                 {post.metadata.tags && post.metadata.tags.length > 0 && (
                   <div className={styles.recentTags}>
                     {post.metadata.tags.map((tag) => (

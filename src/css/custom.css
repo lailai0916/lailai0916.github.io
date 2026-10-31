@@ -118,7 +118,20 @@ html.debug-mode span {
   padding-inline: 0;
 }
 
-.navbar-control,
+.navbar-control {
+  flex: none;
+  width: var(--navbar-control-size);
+  height: var(--navbar-control-size);
+  min-width: var(--navbar-control-size);
+  min-height: var(--navbar-control-size);
+  margin: 0;
+  text-decoration: none;
+}
+
+.navbar-control:hover {
+  text-decoration: none;
+}
+
 .navbar .DocSearch-Button {
   appearance: none;
   box-sizing: border-box;
@@ -158,7 +171,6 @@ html.debug-mode span {
   }
 }
 
-.navbar-control:hover,
 .navbar .DocSearch-Button:hover {
   border-color: var(--lk-color-emphasis-300);
   background-color: var(--lk-color-emphasis-100);
@@ -173,7 +185,6 @@ html.debug-mode span {
   }
 }
 
-.navbar-control:active,
 .navbar .DocSearch-Button:active {
   transform: scale(0.92);
 }
@@ -183,7 +194,6 @@ html.debug-mode span {
   }
 }
 
-.navbar-control:focus-visible,
 .navbar .DocSearch-Button:focus-visible {
   outline: none;
   box-shadow: var(--lk-focus-ring);

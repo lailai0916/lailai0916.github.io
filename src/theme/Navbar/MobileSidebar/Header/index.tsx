@@ -3,6 +3,7 @@ import clsx from 'clsx';
 import { useNavbarMobileSidebar } from '@docusaurus/theme-common/internal';
 import { translate } from '@docusaurus/Translate';
 import Icon from '@lailai0916/ui/Icon';
+import IconButton from '@lailai0916/ui/IconButton';
 import NavbarLanguageToggle from '@site/src/components/Navbar/LanguageToggle';
 import NavbarColorModeToggle from '@theme/Navbar/ColorModeToggle';
 import NavbarLogo from '@theme/Navbar/Logo';
@@ -12,18 +13,19 @@ import styles from './styles.module.css';
 function CloseButton() {
   const mobileSidebar = useNavbarMobileSidebar();
   return (
-    <button
+    <IconButton
+      size="sm"
       type="button"
-      aria-label={translate({
+      label={translate({
         id: 'theme.docs.sidebar.closeSidebarButtonAriaLabel',
         message: 'Close navigation bar',
         description: 'The ARIA label for close button of mobile sidebar',
       })}
-      className="clean-btn navbar-sidebar__close navbar-control"
+      className="navbar-sidebar__close navbar-control"
       onClick={() => mobileSidebar.toggle()}
     >
       <Icon icon="lucide:x" width={17} height={17} aria-hidden="true" />
-    </button>
+    </IconButton>
   );
 }
 

@@ -58,47 +58,11 @@
 }
 
 .close {
+  --lk-icon-button-size: 44px;
+  --lk-icon-button-background: var(--ifm-card-background-color);
+
   position: fixed;
   z-index: 2;
   top: max(1rem, env(safe-area-inset-top));
   right: max(1rem, env(safe-area-inset-right));
-  display: grid;
-  place-items: center;
-  width: 2.75rem;
-  height: 2.75rem;
-  padding: 0;
-  border: 1px solid var(--ifm-color-emphasis-300);
-  border-radius: var(--lk-radius-control);
-  background: var(--ifm-card-background-color);
-  color: var(--ifm-font-color-base);
-  font: inherit;
-  font-size: 1.75rem;
-  line-height: 1;
-  cursor: pointer;
-  transition:
-    background-color 160ms ease,
-    transform 160ms ease;
-}
-
-.close:hover {
-  background: var(--ifm-color-emphasis-100);
-}
-
-.close:active {
-  transform: scale(0.92);
-}
-
-.close:focus-visible {
-  outline: none;
-  box-shadow: var(--lk-focus-ring);
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .close {
-    transition: none;
-  }
-
-  .close:active {
-    transform: none;
-  }
 }
