@@ -46,6 +46,7 @@ When you browse or interact with the Site, we and the service providers we use m
 - approximate geolocation derived from IP;
 - browser type, browser language, operating system, device type, and screen size;
 - referring URL, visited pages, page titles, timestamps, session information, and navigation patterns;
+- page structure, visible text, mouse movements, clicks, scroll positions, and page changes used for session replays and heatmaps;
 - search queries entered into the Site search feature;
 - performance, diagnostic, and error information; and
 - network, CDN, and security logs needed to operate and protect the Site.
@@ -106,19 +107,21 @@ To operate the Site, we use a limited number of third-party services. When those
 
 Depending on the service and context, those providers may act as processors, service providers, or independent controllers of their own processing activities.
 
-| Provider / service                                         | Why it is used                                                              | Examples of information involved                                                     |
-| ---------------------------------------------------------- | --------------------------------------------------------------------------- | ------------------------------------------------------------------------------------ |
-| Self-managed cloud server                                  | Hosting and delivery for the main site `lailai.one` and the Tor onion site  | IP address, request URL, headers, timestamps, user agent                             |
-| GitHub Pages and related delivery infrastructure           | Hosting, caching, and content delivery for the mirror site `lailai0916.com` | IP address, request URL, headers, timestamps, user agent                             |
-| `analytics.lailai.one` (Umami-based self-hosted analytics) | Privacy-focused website analytics and page statistics                       | Page URL, referrer, browser/device/language/screen data, technical request data      |
-| Algolia DocSearch                                          | Site search                                                                 | Search queries, search interactions, technical metadata                              |
-| GitHub Discussions / Giscus                                | Public comments and reactions                                               | GitHub account information, public comment content, timestamps, and related metadata |
-| Google favicon service (`www.google.com/s2/favicons`)      | Fetching icons for Resources, Markdown links, and Insights referrers        | IP address, user agent, and requests triggered when the icons load                   |
+| Provider / service                                         | Why it is used                                                              | Examples of information involved                                                                      |
+| ---------------------------------------------------------- | --------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- |
+| Self-managed cloud server                                  | Hosting and delivery for the main site `lailai.one` and the Tor onion site  | IP address, request URL, headers, timestamps, user agent                                              |
+| GitHub Pages and related delivery infrastructure           | Hosting, caching, and content delivery for the mirror site `lailai0916.com` | IP address, request URL, headers, timestamps, user agent                                              |
+| `analytics.lailai.one` (Umami-based self-hosted analytics) | Website analytics, performance measurement, session replays, and heatmaps   | Page URL and title, referrer, device data, page structure, interaction events, technical request data |
+| Algolia DocSearch                                          | Site search                                                                 | Search queries, search interactions, technical metadata                                               |
+| GitHub Discussions / Giscus                                | Public comments and reactions                                               | GitHub account information, public comment content, timestamps, and related metadata                  |
+| Google favicon service (`www.google.com/s2/favicons`)      | Fetching icons for Resources, Markdown links, and Insights referrers        | IP address, user agent, and requests triggered when the icons load                                    |
 
 Additional detail about key third-party services:
 
 - The self-hosted analytics script loaded from `analytics.lailai.one` is Umami-based. According to Umami's official documentation, Umami is designed to operate without cookies by default.
 - Umami also collects page performance metrics (LCP, INP, CLS, FCP, and TTFB) to measure loading speed, interaction responsiveness, and visual stability.
+- Session replays and heatmaps use a 100% sampling rate for eligible visits. Each recording lasts up to 5 minutes; reloading the page can start a new recording. Input values are masked by default; visible page text and URLs may still be recorded.
+- Replay and heatmap data are stored on the self-managed server and require authenticated access to the analytics dashboard. They are not available in the public traffic dashboard.
 - If you choose to post a comment, your comment and associated GitHub profile information may be processed and displayed publicly through GitHub Discussions / Giscus.
 
 Provider notices and official information:
@@ -156,13 +159,14 @@ We keep information only for as long as reasonably necessary for the purposes de
 
 Retention depends on the category of data:
 
-| Category                                    | Retention approach                                                                                     |
-| ------------------------------------------- | ------------------------------------------------------------------------------------------------------ |
-| Browser storage and local preferences       | Kept on your device until you clear them, or until the browser or session removes them                 |
-| Analytics and security logs                 | Retained for limited periods determined by operational need, provider settings, and legal requirements |
-| Search queries and related search telemetry | Retained according to Algolia's settings and policies                                                  |
-| Contact emails and correspondence           | Retained as long as needed to respond, keep reasonable records, and protect our rights                 |
-| Public comments and reactions               | Remain public until deleted by you, GitHub, or us from the underlying discussion where applicable      |
+| Category                                    | Retention approach                                                                                            |
+| ------------------------------------------- | ------------------------------------------------------------------------------------------------------------- |
+| Browser storage and local preferences       | Kept on your device until you clear them, or until the browser or session removes them                        |
+| Umami analytics, replays, and heatmaps      | Retained in the self-hosted database until manually deleted; no fixed automatic deletion period is configured |
+| Security and server logs                    | Retained for limited periods determined by operational need, provider settings, and legal requirements        |
+| Search queries and related search telemetry | Retained according to Algolia's settings and policies                                                         |
+| Contact emails and correspondence           | Retained as long as needed to respond, keep reasonable records, and protect our rights                        |
+| Public comments and reactions               | Remain public until deleted by you, GitHub, or us from the underlying discussion where applicable             |
 
 Because the Site does not maintain a normal end-user account database for browsing, we may not always be able to link anonymous technical or analytics records back to a specific person.
 

@@ -309,6 +309,7 @@ const config: Config = {
     require.resolve('./src/clientModules/katexCopyTex.ts'),
     require.resolve('./src/clientModules/consoleSignature.ts'),
     require.resolve('./src/clientModules/konami.ts'),
+    require.resolve('./src/clientModules/umamiRecorder.ts'),
   ],
 
   themes: ['@docusaurus/theme-mermaid', '@docusaurus/theme-live-codeblock'],
