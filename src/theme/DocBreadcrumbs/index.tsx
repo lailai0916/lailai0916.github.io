@@ -8,7 +8,6 @@ import { useHomePageRoute } from '@docusaurus/theme-common/internal';
 import { useSidebarBreadcrumbs } from '@docusaurus/plugin-content-docs/client';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import DocBreadcrumbsStructuredData from '@theme/DocBreadcrumbs/StructuredData';
-import shared from '@site/src/components/Article/styles.module.css';
 import styles from './styles.module.css';
 
 export default function DocBreadcrumbs(): ReactNode {
@@ -34,7 +33,8 @@ export default function DocBreadcrumbs(): ReactNode {
             <li className={styles.homeItem}>
               <Link
                 href={homeHref}
-                className={clsx(shared.iconBtn, styles.homeLink)}
+                className={styles.homeLink}
+                data-lk-icon-button="sm"
                 aria-label={translate({
                   id: 'theme.docs.breadcrumbs.home',
                   message: 'Home page',
