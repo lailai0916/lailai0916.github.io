@@ -124,9 +124,19 @@ export function FriendFeed(): ReactNode {
                     height="40px"
                     radius={9}
                   />
-                  <div className={styles.feedPlaceholderContent}>
-                    <Skeleton width="90%" height="1rem" />
-                    <Skeleton width="55%" height="0.75rem" />
+                  <div className={styles.feedContent}>
+                    <Skeleton
+                      className={clsx(styles.feedPostTitle, styles.feedPlaceholderLine)}
+                      width="90%"
+                    >
+                      &nbsp;
+                    </Skeleton>
+                    <Skeleton
+                      className={clsx(styles.feedMeta, styles.feedPlaceholderLine)}
+                      width="55%"
+                    >
+                      &nbsp;
+                    </Skeleton>
                   </div>
                 </div>
               </li>

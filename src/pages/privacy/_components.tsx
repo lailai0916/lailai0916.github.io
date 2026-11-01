@@ -159,6 +159,7 @@ function PrivacyContact() {
   return (
     <Button
       variant="secondary"
+      className={styles.contactButton}
       leftIcon={<Icon icon="lucide:mail" width={16} height={16} />}
       onClick={() => {
         trackEvent('contact_click', { surface: 'content', contact: 'email', item_id: 'privacy' });

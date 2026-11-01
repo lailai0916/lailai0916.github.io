@@ -35,6 +35,19 @@
   font-variant-numeric: tabular-nums;
 }
 
+.contactButton {
+  max-width: 100%;
+}
+
+@media (max-width: 319px) {
+  .contactButton {
+    height: auto;
+    min-height: 40px;
+    padding-block: 0.5rem;
+    white-space: normal;
+  }
+}
+
 .policyLayout {
   display: grid;
   grid-template-areas: 'content summary';

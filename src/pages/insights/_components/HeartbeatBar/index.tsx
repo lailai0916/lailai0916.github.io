@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { type CSSProperties, useEffect, useRef, useState } from 'react';
 import clsx from 'clsx';
 import { translate } from '@docusaurus/Translate';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
@@ -122,6 +122,7 @@ export default function HeartbeatBar({ beats, slots = 100 }: HeartbeatBarProps) 
     <div className={styles.wrap} ref={wrapRef}>
       <div
         className={styles.bar}
+        style={{ '--heartbeat-slots': effectiveSlots } as CSSProperties}
         role="img"
         aria-label={HEARTBEAT_ARIA_LABEL}
         onPointerLeave={() => setHoverIdx(null)}
