@@ -22,9 +22,8 @@ export default function PopularPosts({ items }: { items: BlogItems }) {
   return (
     <MetricList
       title={translate({ id: 'pages.overview.popular.title', message: 'Popular Posts' })}
+      icon="lucide:list-ordered"
       variant="ranked"
-      size="plain"
-      padding="1.25rem"
       items={posts.map((post) => ({ x: post.permalink, y: post.views }))}
       loading={isInitialLoading}
       loadingCount={POPULAR_POST_LIMIT}

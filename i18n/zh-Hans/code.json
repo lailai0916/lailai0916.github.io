@@ -2380,6 +2380,9 @@
   "blog.post.empty": {
     "message": "暂无文章"
   },
+  "blog.archive.postCount": {
+    "message": "{count} 篇"
+  },
   "blog.archive.redirect.link": {
     "message": "浏览归档"
   },

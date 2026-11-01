@@ -135,18 +135,6 @@ html[data-theme='dark'] .heroDeltaDown {
   margin-top: calc(1rem - var(--lk-page-padding-block));
 }
 
-@media (max-width: 480px) {
-  .chartCard {
-    --card-padding: 1rem 0.85rem 0.85rem !important;
-  }
-}
-
-@media (max-width: 360px) {
-  .chartCard {
-    --card-padding: 0.85rem 0.7rem 0.7rem !important;
-  }
-}
-
 .metricsGrid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
@@ -168,10 +156,11 @@ html[data-theme='dark'] .heroDeltaDown {
 .sectionLink {
   display: inline-flex;
   align-items: center;
-  gap: 0.35rem;
+  gap: 0.2em;
   min-height: 44px;
   padding: 0 0.25rem;
   border-radius: 6px;
+  color: inherit;
   text-decoration: none;
 }
 
@@ -186,7 +175,9 @@ html[data-theme='dark'] .heroDeltaDown {
 }
 
 .sectionLinkIcon {
+  flex: none;
   font-size: 0.95rem;
+  translate: 0 -1px;
   transition: transform var(--lk-transition);
 }
 

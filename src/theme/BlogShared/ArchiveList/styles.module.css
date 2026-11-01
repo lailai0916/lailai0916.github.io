@@ -15,7 +15,36 @@
   padding: 0.25rem 0;
 }
 
+@media (max-width: 640px) {
+  .recentItem {
+    display: grid;
+    grid-template-columns: max-content minmax(0, 1fr);
+    grid-template-areas:
+      'date tags'
+      'title title';
+  }
+}
+
+@media (max-width: 360px) {
+  .recentItem {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas:
+      'date'
+      'tags'
+      'title';
+  }
+}
+
+@media (max-width: 360px) {
+  .recentItem:not(:has(.recentTags)) {
+    grid-template-areas:
+      'date'
+      'title';
+  }
+}
+
 .recentDate {
+  grid-area: date;
   flex-shrink: 0;
   color: var(--ifm-color-emphasis-700);
   font-size: 0.9rem;
@@ -24,7 +53,8 @@
 }
 
 .recentLink {
-  flex: 1;
+  grid-area: title;
+  flex: 1 1 10rem;
   min-width: 0;
   text-decoration: none !important;
   color: var(--ifm-font-color-base);
@@ -38,22 +68,15 @@
 }
 
 .recentTags {
+  grid-area: tags;
   flex-shrink: 0;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.4rem;
+  min-width: 0;
+  max-width: 100%;
   margin-left: auto;
 }
 
-.recentTag {
-  font-size: 0.78rem;
-  color: var(--ifm-color-emphasis-600);
-  text-decoration: none !important;
-  white-space: nowrap;
-  letter-spacing: -0.005em;
-  transition: color var(--lk-transition);
-}
-
-.recentTag:hover {
-  color: var(--ifm-color-primary);
+@media (max-width: 360px) {
+  .recentTags {
+    margin-left: 0;
+  }
 }

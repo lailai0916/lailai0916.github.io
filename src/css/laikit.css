@@ -29,3 +29,15 @@
 .site-chart {
   --lk-color-emphasis-500: var(--lk-font-color-secondary);
 }
+
+@media (max-width: 480px) {
+  .site-chart {
+    --card-padding: 1rem 0.85rem 0.85rem !important;
+  }
+}
+
+@media (max-width: 360px) {
+  .site-chart {
+    --card-padding: 0.85rem 0.7rem 0.7rem !important;
+  }
+}

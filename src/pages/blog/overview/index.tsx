@@ -145,7 +145,7 @@ export default function BlogStats(): ReactNode {
       </div>
       <Chart
         type="bar"
-        size="plain"
+        icon="lucide:chart-column"
         title={CHART_TITLE}
         data={monthData}
         emptyText={CHART_EMPTY}

@@ -1,11 +1,14 @@
 import { useMemo } from 'react';
 import Link from '@docusaurus/Link';
-import Translate from '@docusaurus/Translate';
+import Translate, { translate } from '@docusaurus/Translate';
+import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
+import { usePluralForm } from '@docusaurus/theme-common';
 import Card from '@lailai0916/ui/Card';
 import Hint from '@lailai0916/ui/Hint';
 import TitleCard from '@lailai0916/ui/TitleCard';
 import { useVisitorTimeZone } from '@site/src/hooks/useVisitorTimeZone';
 import { compareInstantsDescending, getDateKey } from '@site/src/utils/dateTime';
+import { TagChipList } from '../BlogUI';
 import styles from './styles.module.css';
 
 type PostLike = {
@@ -21,6 +24,9 @@ type PostLike = {
 };
 
 export function BlogArchiveList({ posts }: { posts: readonly PostLike[] }) {
+  const { i18n } = useDocusaurusContext();
+  const { selectMessage } = usePluralForm();
+  const countFormatter = new Intl.NumberFormat(i18n.currentLocale);
   const timeZone = useVisitorTimeZone();
   const groups = useMemo(() => {
     const map = new Map<number, PostLike[]>();
@@ -58,7 +64,13 @@ export function BlogArchiveList({ posts }: { posts: readonly PostLike[] }) {
           size="plain"
           padding="1rem"
           title={String(year)}
-          count={yearPosts.length}
+          aside={selectMessage(
+            yearPosts.length,
+            translate(
+              { id: 'blog.archive.postCount', message: '{count} post|{count} posts' },
+              { count: countFormatter.format(yearPosts.length) }
+            )
+          )}
         >
           <ul className={styles.recentList}>
             {yearPosts.map((post) => (
@@ -73,11 +85,12 @@ export function BlogArchiveList({ posts }: { posts: readonly PostLike[] }) {
                 </Hint>
                 {post.metadata.tags && post.metadata.tags.length > 0 && (
                   <div className={styles.recentTags}>
-                    {post.metadata.tags.map((tag) => (
-                      <Link key={tag.permalink} to={tag.permalink} className={styles.recentTag}>
-                        #{tag.label}
-                      </Link>
-                    ))}
+                    <TagChipList
+                      items={post.metadata.tags.map((tag) => ({
+                        to: tag.permalink,
+                        label: tag.label,
+                      }))}
+                    />
                   </div>
                 )}
               </li>
