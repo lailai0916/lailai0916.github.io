@@ -1,4 +1,4 @@
-import type { ReactNode } from 'react';
+import { forwardRef, type ReactNode } from 'react';
 import DocusaurusLink from '@docusaurus/Link';
 import DocusaurusHeading from '@theme/Heading';
 import { translate } from '@docusaurus/Translate';
@@ -53,9 +53,9 @@ const messages = {
   }),
 };
 
-function Link(props: LinkProps) {
-  return <DocusaurusLink {...props} />;
-}
+const Link = forwardRef<HTMLAnchorElement, LinkProps>(function Link(props, ref) {
+  return <DocusaurusLink {...props} ref={ref} />;
+});
 
 function Heading(props: HeadingProps) {
   return <DocusaurusHeading {...props} />;

@@ -19,8 +19,9 @@ come from the package root. Change component implementation and shared tokens in
 a version, then update the dependency and lockfile here.
 
 `src/components/LaikitProvider` supplies Docusaurus links, headings, locale, plural selection, and
-translated library labels. `src/theme/Root` mounts it without adding a DOM wrapper. The About
-page owns its personal greeting and title styling in `src/pages/about/_components.tsx`
+translated library labels. `src/theme/Root` mounts it without adding a DOM wrapper.
+Host link adapters forward their ref to the underlying anchor for focus and Hint triggers in React 18 and 19.
+The About page owns its personal greeting and title styling in `src/pages/about/_components.tsx`
 and `styles.module.css`.
 `src/css/custom.css` loads package theme and styles before `src/css/laikit.css`, which maps package
 colors onto the site's live Infima variables. Shared shadows and radius tokens belong to the package.
