@@ -1,7 +1,7 @@
 {
   "en": {
     "entryCssGzip": 65536,
-    "entryMainGzip": 239616,
+    "entryMainGzip": 240128,
     "entryRuntimeGzip": 26624,
     "/:initialJsGzip": 280576,
     "/docs/note/math/basic/logic:initialJsGzip": 409600,

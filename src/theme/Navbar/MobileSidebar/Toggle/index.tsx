@@ -9,28 +9,23 @@ import styles from './styles.module.css';
 export default function MobileSidebarToggle(): ReactNode {
   const { toggle, shown } = useNavbarMobileSidebar();
   const toggleRef = useRef<HTMLButtonElement>(null);
-  const restoreFocus = useRef(false);
 
   useEffect(() => {
-    if (!shown) {
-      if (restoreFocus.current) toggleRef.current?.focus({ preventScroll: true });
-      restoreFocus.current = false;
-      return;
-    }
+    if (!shown) return;
 
     const onKeyDown = (event: KeyboardEvent) => {
       if (
         event.key !== 'Escape' ||
         event.defaultPrevented ||
         event.isComposing ||
-        document.body.classList.contains('DocSearch--active') ||
-        document.querySelector('dialog[open]')
+        document.querySelector('.DocSearch--active, dialog[open]')
       ) {
         return;
       }
       event.preventDefault();
-      restoreFocus.current = true;
       toggle();
+      // Wait until closing the drawer makes its trigger visible again.
+      requestAnimationFrame(() => toggleRef.current?.focus({ preventScroll: true }));
     };
 
     window.addEventListener('keydown', onKeyDown);
