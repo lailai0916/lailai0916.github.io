@@ -256,7 +256,7 @@ const config: Config = {
           ],
         },
       ],
-      copyright: `Copyright © 2021 – ${new Date().getFullYear()} lailai. Built with&nbsp;<a href="https://docusaurus.io/" target="_blank">Docusaurus</a>.`,
+      copyright: `Copyright © 2021 – ${new Date().getFullYear()} <a href="https://lailai.one">lailai</a>. Built with&nbsp;<a href="https://docusaurus.io/" target="_blank">Docusaurus</a>.`,
     },
     prism: {
       theme: prismThemes.vsLight,

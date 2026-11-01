@@ -204,13 +204,6 @@
   opacity: 0;
 }
 
-.countdownAge {
-  display: inline-block;
-  min-width: 2ch;
-  text-align: center;
-  font-variant-numeric: tabular-nums;
-}
-
 .countdownUnit {
   white-space: nowrap;
 }
@@ -331,7 +324,11 @@
 }
 
 .deviceCard {
-  --card-height: 100px;
+  --device-name-line-height: 1.3rem;
+  --device-spec-line-height: 1.0875rem;
+  --card-height: calc(
+    2rem + var(--device-name-line-height) + 0.4rem + 2 * var(--device-spec-line-height) + 2px
+  );
   position: relative;
   overflow: hidden;
   min-height: var(--card-height);
@@ -355,16 +352,17 @@
 .deviceName {
   font-size: 1rem;
   font-weight: 600;
-  line-height: 1.3;
+  line-height: var(--device-name-line-height);
   color: var(--ifm-heading-color);
 }
 
 .deviceSpec {
   font-size: 0.75rem;
-  line-height: 1.45;
+  line-height: var(--device-spec-line-height);
+  min-height: 2lh;
   color: var(--ifm-color-emphasis-700);
   overflow-wrap: break-word;
-  max-width: 60%;
+  max-width: 70%;
 }
 
 .communityIcon {

@@ -1764,7 +1764,7 @@
     "message": "距离 {birthday} 还有"
   },
   "pages.about.countdown.birthday": {
-    "message": "我的 {age} 岁生日"
+    "message": "我的生日"
   },
   "pages.about.countdown.sentenceEnd": {
     "message": "。"
@@ -2159,26 +2159,32 @@
   "components.footer.siteInformation": {
     "message": "站点信息"
   },
+  "components.footer.viewSource": {
+    "message": "查看本站源码"
+  },
   "components.footer.navigation": {
     "message": "页脚导航"
   },
   "components.footer.feeds.ariaLabel": {
-    "message": "订阅源"
+    "message": "源码与订阅源"
   },
   "components.footer.feeds.rss": {
-    "message": "RSS 订阅"
+    "message": "RSS"
   },
   "components.footer.feeds.atom": {
-    "message": "Atom 订阅"
+    "message": "Atom"
   },
   "components.footer.feeds.json": {
-    "message": "JSON 订阅"
+    "message": "JSON"
   },
   "components.footer.licenseNotice": {
     "message": "本网站内容采用"
   },
   "components.footer.licenseLabel": {
     "message": "知识共享 署名 4.0 国际许可协议"
+  },
+  "components.footer.feeds.subscribe": {
+    "message": "通过 {format} 订阅"
   },
   "theme.SearchPage.documentsFound.plurals": {
     "message": "找到 {count} 份文件",

@@ -2,6 +2,7 @@ import { type ReactNode } from 'react';
 import clsx from 'clsx';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import Link from '@docusaurus/Link';
 import { translate } from '@docusaurus/Translate';
 import {
   isMultiColumnFooterLinks,
@@ -10,6 +11,8 @@ import {
 } from '@docusaurus/theme-common';
 import FooterCopyright from '@theme/Footer/Copyright';
 import FooterLinkItem from '@theme/Footer/LinkItem';
+import Hint from '@lailai0916/ui/Hint';
+import Icon from '@lailai0916/ui/Icon';
 import styles from './styles.module.css';
 
 const FOOTER_DESCRIPTION = translate({
@@ -23,6 +26,11 @@ const SITE_INFORMATION_LABEL = translate({
   message: 'Site information',
 });
 
+const REPOSITORY_LABEL = translate({
+  id: 'components.footer.viewSource',
+  message: 'View source on GitHub',
+});
+
 const FOOTER_NAVIGATION_LABEL = translate({
   id: 'components.footer.navigation',
   message: 'Footer navigation',
@@ -30,22 +38,22 @@ const FOOTER_NAVIGATION_LABEL = translate({
 
 const FEED_NAVIGATION_LABEL = translate({
   id: 'components.footer.feeds.ariaLabel',
-  message: 'Feed subscriptions',
+  message: 'Source code and feed subscriptions',
 });
 
 const RSS_FEED_LABEL = translate({
   id: 'components.footer.feeds.rss',
-  message: 'RSS Feed',
+  message: 'RSS',
 });
 
 const ATOM_FEED_LABEL = translate({
   id: 'components.footer.feeds.atom',
-  message: 'Atom Feed',
+  message: 'Atom',
 });
 
 const JSON_FEED_LABEL = translate({
   id: 'components.footer.feeds.json',
-  message: 'JSON Feed',
+  message: 'JSON',
 });
 
 const LICENSE_NOTICE = translate({
@@ -97,18 +105,39 @@ export default function Footer(): ReactNode {
             <p className={styles.description}>{FOOTER_DESCRIPTION}</p>
             <nav className={styles.feeds} aria-label={FEED_NAVIGATION_LABEL}>
               <ul className={styles.feedList}>
-                {feeds.map((feed, feedIndex) => (
-                  <li key={feed.href} className={styles.feedItem}>
-                    {feedIndex > 0 && (
+                <li className={styles.feedItem}>
+                  <Hint label={REPOSITORY_LABEL}>
+                    <Link
+                      href="https://github.com/lailai0916/lailai0916.github.io"
+                      aria-label={REPOSITORY_LABEL}
+                      data-lk-icon-button="xs"
+                    >
+                      <Icon icon="simple-icons:github" width={16} height={16} aria-hidden />
+                    </Link>
+                  </Hint>
+                </li>
+                {feeds.map((feed) => {
+                  const label = translate(
+                    {
+                      id: 'components.footer.feeds.subscribe',
+                      message: 'Subscribe via {format}',
+                    },
+                    { format: feed.label }
+                  );
+
+                  return (
+                    <li key={feed.href} className={styles.feedItem}>
                       <span className={styles.feedDivider} aria-hidden="true">
                         ·
                       </span>
-                    )}
-                    <a className={styles.metaLink} href={feed.href}>
-                      {feed.label}
-                    </a>
-                  </li>
-                ))}
+                      <Hint label={label}>
+                        <a className={styles.metaLink} href={feed.href} aria-label={label}>
+                          {feed.label}
+                        </a>
+                      </Hint>
+                    </li>
+                  );
+                })}
               </ul>
             </nav>
           </section>

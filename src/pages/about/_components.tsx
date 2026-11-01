@@ -39,7 +39,6 @@ export function AboutTitle() {
 
 // The birthday follows the owner's Asia/Shanghai calendar, so every visitor
 // enters and leaves the celebration at the same instant.
-const BIRTHDAY_YEAR = 2009;
 const BIRTHDAY_MONTH = 9;
 const BIRTHDAY_DAY = 16;
 const BIRTHDAY_DATE = [BIRTHDAY_MONTH, BIRTHDAY_DAY].map((part) => String(part).padStart(2, '0'));
@@ -72,7 +71,6 @@ const TIME_UNITS: Array<{ key: CountdownUnitKey; label: string }> = [
 ];
 
 interface CountdownState {
-  age: number | null;
   days: number;
   hours: number;
   minutes: number;
@@ -81,7 +79,6 @@ interface CountdownState {
 }
 
 const INITIAL_STATE: CountdownState = {
-  age: null,
   days: 0,
   hours: 0,
   minutes: 0,
@@ -98,13 +95,12 @@ function calculateState(now: number): CountdownState {
   const beijing = new Date(now + BEIJING_OFFSET_MS);
   const year = beijing.getUTCFullYear();
   if (beijing.getUTCMonth() + 1 === BIRTHDAY_MONTH && beijing.getUTCDate() === BIRTHDAY_DAY) {
-    return { ...INITIAL_STATE, age: year - BIRTHDAY_YEAR, isBirthday: true };
+    return { ...INITIAL_STATE, isBirthday: true };
   }
   const targetYear = now < birthdayMs(year) ? year : year + 1;
   const target = birthdayMs(targetYear);
   const distance = target - now;
   return {
-    age: targetYear - BIRTHDAY_YEAR,
     days: Math.floor(distance / 86_400_000),
     hours: Math.floor(distance / 3_600_000) % 24,
     minutes: Math.floor(distance / 60_000) % 60,
@@ -219,14 +215,7 @@ export function Countdown() {
             values={{
               birthday: (
                 <strong>
-                  <Translate
-                    id="pages.about.countdown.birthday"
-                    values={{
-                      age: <span className={styles.countdownAge}>{state.age ?? '…'}</span>,
-                    }}
-                  >
-                    {'I turn {age}'}
-                  </Translate>
+                  <Translate id="pages.about.countdown.birthday">{'my birthday'}</Translate>
                 </strong>
               ),
             }}
