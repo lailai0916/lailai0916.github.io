@@ -59,7 +59,12 @@ int main()
 
 - **判断点在直线哪侧**：设直线过点 $P$，方向向量 $\mathbf{v}$，待判点 $Q$，则 $\mathbf{v}\times\overrightarrow{PQ}$ 的符号即为所在侧（正值在左，负值在右，零值在线上）。
 - **线段相交**：先做快速排斥实验（检查包围盒是否重叠），再做跨立实验（两端点叉积异号）。
-- **多边形面积**：逆时针标记顶点 $p_1,\dots,p_n$，选辅助点 $O$，面积为 $\frac{1}{2}\left|\sum_{i=1}^n\overrightarrow{Op_i}\times\overrightarrow{Op_{(i\bmod n)+1}}\right|$。
+- **多边形面积**：逆时针标记顶点 $p_1,\dots,p_n$，选辅助点 $O$，面积为：
+
+  $$
+  \frac{1}{2}\left|\sum_{i=1}^n\overrightarrow{Op_i}\times\overrightarrow{Op_{(i\bmod n)+1}}\right|
+  $$
+
 - **两直线交点**：利用叉积构造正弦定理，计算参数 $T=\frac{|\mathbf{u}\times\mathbf{b}|}{|\mathbf{a}\times\mathbf{b}|}$，交点为 $B+T\cdot\mathbf{a}$。
 
 ## 例题

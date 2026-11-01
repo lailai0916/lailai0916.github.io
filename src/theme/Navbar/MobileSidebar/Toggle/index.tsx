@@ -1,4 +1,4 @@
-import type { ReactNode } from 'react';
+import { useEffect, useRef, type ReactNode } from 'react';
 import clsx from 'clsx';
 import { useNavbarMobileSidebar } from '@docusaurus/theme-common/internal';
 import { translate } from '@docusaurus/Translate';
@@ -8,8 +8,38 @@ import styles from './styles.module.css';
 
 export default function MobileSidebarToggle(): ReactNode {
   const { toggle, shown } = useNavbarMobileSidebar();
+  const toggleRef = useRef<HTMLButtonElement>(null);
+  const restoreFocus = useRef(false);
+
+  useEffect(() => {
+    if (!shown) {
+      if (restoreFocus.current) toggleRef.current?.focus({ preventScroll: true });
+      restoreFocus.current = false;
+      return;
+    }
+
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (
+        event.key !== 'Escape' ||
+        event.defaultPrevented ||
+        event.isComposing ||
+        document.body.classList.contains('DocSearch--active') ||
+        document.querySelector('dialog[open]')
+      ) {
+        return;
+      }
+      event.preventDefault();
+      restoreFocus.current = true;
+      toggle();
+    };
+
+    window.addEventListener('keydown', onKeyDown);
+    return () => window.removeEventListener('keydown', onKeyDown);
+  }, [shown, toggle]);
+
   return (
     <IconButton
+      ref={toggleRef}
       size="sm"
       onClick={toggle}
       label={translate({
