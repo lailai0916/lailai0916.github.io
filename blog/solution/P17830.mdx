@@ -43,8 +43,7 @@ int main()
 		ans[a[i]]++;
 	}
 	for(int i=1;i<=n;i++)if(last[a[i]]==i)ans[a[i+1]]+=ans[a[i]];
-	cout<<ans[1];
-	for(int i=2;i<=m;i++)cout<<' '<<ans[i];
+	for(int i=1;i<=m;i++)cout<<ans[i]<<' ';
 	return 0;
 }
 ```
