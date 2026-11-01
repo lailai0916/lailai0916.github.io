@@ -27,6 +27,22 @@
 
   --global-font-size: 16px;
   --global-line-height: 1.65;
+  --site-page-bottom-space: clamp(2rem, 4vw, 3rem);
+}
+
+.site-page-content {
+  padding-bottom: var(--site-page-bottom-space);
+}
+
+.site-page-content > :last-child {
+  margin-bottom: 0;
+}
+
+/* Important utility overrides must share Infima's cascade layer. */
+@layer docusaurus.infima {
+  .about-page-wrapper main.margin-vert--lg {
+    margin-bottom: var(--site-page-bottom-space) !important;
+  }
 }
 
 [data-theme='dark'] {

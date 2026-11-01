@@ -18,7 +18,7 @@ const DESCRIPTION = translate({
 export default function Changelog(): ReactNode {
   return (
     <Layout title={TITLE} description={DESCRIPTION}>
-      <PageContent className={styles.pageContent}>
+      <PageContent className={clsx('site-page-content', styles.pageContent)}>
         <div className={clsx('markdown', styles.layout)}>
           <h1 className={styles.title}>{TITLE}</h1>
           <ChangelogList />

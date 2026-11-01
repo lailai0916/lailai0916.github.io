@@ -202,7 +202,7 @@ export default function Resources(): ReactNode {
       >
         <PageTitle title={MODIFICATION} description={DESCRIPTION} />
       </PageHeader>
-      <PageContent>
+      <PageContent className="site-page-content">
         <div className={styles.layout}>
           <aside className={styles.sidebar}>
             <Card className={styles.categoryCard}>

@@ -1,4 +1,5 @@
 import { useEffect, useState, type ReactNode } from 'react';
+import clsx from 'clsx';
 import Icon from '@lailai0916/ui/Icon';
 import { translate } from '@docusaurus/Translate';
 import type { TOCItem } from '@docusaurus/mdx-loader';
@@ -176,7 +177,7 @@ export function PrivacyPage({ children }: { children: ReactNode }): ReactNode {
         <PageTitle title={MODIFICATION} description={DESCRIPTION} />
         <PrivacyContact />
       </PageHeader>
-      <PageContent className={styles.policyLayout}>
+      <PageContent className={clsx('site-page-content', styles.policyLayout)}>
         <aside className={styles.policySidebar}>
           <PrivacySummary />
           <TableOfContents toc={toc} />

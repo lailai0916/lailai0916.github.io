@@ -512,7 +512,7 @@ export default function Settings(): ReactNode {
       <PageHeader>
         <PageTitle title={MODIFICATION} description={DESCRIPTION} />
       </PageHeader>
-      <PageContent>
+      <PageContent className="site-page-content">
         <BrowserOnly
           fallback={
             <div

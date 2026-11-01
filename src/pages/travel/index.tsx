@@ -54,7 +54,7 @@ export default function Travel(): ReactNode {
       >
         <PageTitle title={MODIFICATION} description={DESCRIPTION} />
       </PageHeader>
-      <PageContent>
+      <PageContent className="site-page-content">
         <TravelMap />
         <TravelTimeline />
         <Quote author={QUOTE_AUTHOR} source={QUOTE_SOURCE}>

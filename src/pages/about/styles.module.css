@@ -1,3 +1,9 @@
+/* Keep the embedded comment frame from adding an inline baseline gap. */
+:global(.about-page-wrapper) :global(giscus-widget),
+:global(.about-page-wrapper) :global(giscus-widget)::part(iframe) {
+  display: block;
+}
+
 .title {
   margin: 2rem 0;
   text-align: center;

@@ -593,7 +593,7 @@ export default function Insights(): ReactNode {
         <PageTitle title={MODIFICATION} description={DESCRIPTION} />
         <RangeBar range={range} onChange={setRange} />
       </PageHeader>
-      <PageContent className={styles.layout}>
+      <PageContent className={clsx('site-page-content', styles.layout)}>
         <section className={styles.dataSection} aria-labelledby="traffic-title">
           <header className={styles.sectionHeader}>
             <h2 id="traffic-title" className={styles.sectionTitle}>

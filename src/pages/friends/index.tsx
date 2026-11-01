@@ -54,7 +54,7 @@ export default function Friends(): ReactNode {
           {REQUEST_LINK}
         </Button>
       </PageHeader>
-      <PageContent>
+      <PageContent className="site-page-content">
         <div className={styles.layout}>
           {FRIEND_LIST.map((friend, index) => (
             <Card
