@@ -1998,7 +1998,7 @@
     "message": "个性化<b>设置</b>"
   },
   "pages.settings.item.theme.option.system": {
-    "message": "系统模式"
+    "message": "跟随系统"
   },
   "pages.settings.item.theme.option.light": {
     "message": "浅色模式"

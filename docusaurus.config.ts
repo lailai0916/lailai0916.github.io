@@ -51,6 +51,11 @@ const config: Config = {
       }
       localStorage.removeItem(legacyKey);
     }
+    const themeKey = 'theme-${storageNamespace}';
+    const theme = localStorage.getItem(themeKey);
+    if (theme !== null && theme !== 'light' && theme !== 'dark') {
+      localStorage.removeItem(themeKey);
+    }
   } catch {}
 })();`,
     },
