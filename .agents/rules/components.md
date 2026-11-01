@@ -189,6 +189,14 @@ The document top row owns its bottom separator and padding at every width. Attac
 
 **Client modules** (`src/clientModules/`, registered in `docusaurus.config.ts`) are browser-only side-effect scripts guarded by `ExecutionEnvironment.canUseDOM`: `applyPreferences` (see below), `katexCopyTex` (copy rendered math back as LaTeX source), `consoleSignature` (a one-time styled DevTools greeting that picks up the live `--ifm-color-primary`), and `konami` (the ↑↑↓↓←→←→ B A sequence fires the shared `fireConfetti`, which already opts out under `prefers-reduced-motion`). Add global page-agnostic behaviours here rather than in a component.
 
+**Theme preference** follows the [shared contract](https://github.com/lailai0916/ui/blob/main/docs/integration.md#theme-preference-contract).
+Keep Docusaurus as the only document theme owner with `respectPrefersColorScheme: true`.
+Its `colorModeChoice` is the system/light/dark preference (`null` means System), while `colorMode`
+is the resolved palette. The navbar's existing three-state cycle and Settings' explicit three-option
+control must use the same preference. Manual choices survive reloads and system changes; selecting
+System resumes synchronization immediately. Never add a standalone `ThemeProvider` or replace a
+choice merely because the system happens to match it.
+
 **Appearance preferences are replayed globally, not owned by the settings page.** The settings page keeps its six-card grid. Controls mount inside `BrowserOnly` so saved values agree with the first browser render. The `/settings` tiles write font family, font size, line height (`src/utils/preferences.ts`) and accent color (`src/utils/colorUtils.ts`) to storage, but a preference only survives a reload because `applyPreferences` reads it back onto `:root` as the bundle loads — it must stay **first** in the `clientModules` list, since `consoleSignature` reads the resolved `--ifm-color-primary`. Anything the settings page applies from an effect must have a matching read in `applyStoredPreferences` / `applyStoredColors`, or it silently reverts on every hard navigation. Both write **inline custom properties on `documentElement`**; do not go back to injecting a stylesheet rule (`document.styleSheets` + `insertRule`) — that variant could not run before the stylesheet had loaded, which is exactly why it could not restore anything at boot.
 
 Both locales use the root site's existing Docusaurus storage namespace, so manual theme choices and resets survive language switches. The config's head script migrates legacy Chinese theme and accent slots before the framework restores the theme; existing shared values take precedence, and migrated slots are removed so a reset cannot revive them.
