@@ -253,10 +253,12 @@
 .count {
   flex: none;
   color: var(--ifm-color-emphasis-700);
+  font-family: inherit;
   font-size: 0.875rem;
   font-weight: 400;
   font-variant-numeric: tabular-nums;
   line-height: 1.5;
+  white-space: nowrap;
 }
 
 .feed {
