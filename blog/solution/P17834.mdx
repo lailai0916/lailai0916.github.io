@@ -12,7 +12,7 @@ lid: st6ljm36
 
 ## 解题思路
 
-二分半径 $r$。同时剥去 $r$ 轮叶子，余树记为 $C$。若 $|C|\le k$，直接可行；否则，可将选点投影至 $C$ 而不影响可行性。
+二分半径 $r$。同时剥去 $r$ 轮叶子，余树记为 $C$。若 $|C|\le k$，直接可行；否则，将选点投影至 $C$，再补入与已选点相邻的核心点，直至恰好 $k$ 个；仍满足半径 $r$ 的覆盖要求，且连通块数不增加。
 
 核心叶子的最大悬挂深度为 $r$，故必须选取。漏选分叉点或留下两段缺口都会产生至少三个连通块，因此，只需在一条度为 $2$ 的链上删去连续 $D=|C|-k$ 个点。
 
@@ -24,7 +24,7 @@ $$
 
 用差分维护这些禁用区间。扫描到 $i$ 时检查 $L=i-D\ge0$：后续点 $j>i$ 的区间左端点至少为 $j-D>L$，不会影响当前候选。若覆盖计数为 $0$，则找到合法缺口。$D>2r$ 时无解。
 
-预处理各点邻居剥叶时间的前三大值 $t_1\ge t_2\ge t_3$，不足补 $0$。该点为链内点的条件及其悬挂高度为：
+预处理各点邻居剥叶时间的前三大值 $t_1\ge t_2\ge t_3$，不足补 $0$。该点在第 $t_2+1$ 轮剥去，链内点的判定与悬挂高度为：
 
 $$
 t_2>r\ge t_3,h_i=t_3
@@ -40,14 +40,14 @@ using namespace std;
 
 const int N=1000005;
 vector<int> G[N];
-int tim[N],deg[N],q[N],f[N],a[N],b[N],c[N],h[N];
+int tim[N],deg[N],q[N],f[N],a[N],b[N],c[N];
 bool mid[N];
 bool check(int r,int n,int k)
 {
 	int len=deg[r+1]-k;
 	if(len<=0)return 1;
 	if(len>2*r)return 0;
-	for(int i=1;i<=n;i++)mid[i]=h[i]>r&&c[i]<=r;
+	for(int i=1;i<=n;i++)mid[i]=tim[i]>r+1&&c[i]<=r;
 	for(int i=1;i<=n;i++)
 	{
 		if(!mid[i]||(mid[a[i]]&&mid[b[i]]))continue;
@@ -94,7 +94,6 @@ int main()
 		for(int i=1;i<=n;i++)
 		{
 			deg[i]=G[i].size();
-			tim[i]=0;
 			if(deg[i]==1){tim[i]=1;q[r++]=i;}
 		}
 		while(l<r)
@@ -117,11 +116,9 @@ int main()
 				if(tim[v]>tim[b[i]])swap(v,b[i]);
 				c[i]=max(c[i],tim[v]);
 			}
-			h[i]=tim[b[i]];
 		}
-		for(int i=n;i>=0;i--)deg[i]+=deg[i+1];
+		for(int i=n;i;i--)deg[i]+=deg[i+1];
 		l=0;
-		r=n;
 		while(l<r)
 		{
 			int mid=l+r>>1;

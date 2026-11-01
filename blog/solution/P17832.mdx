@@ -47,12 +47,12 @@ int main()
 	cin>>c>>n>>m>>d>>q;
 	for(int i=1;i<=m;i++)cin>>w[i];
 	memset(dis,0x3f,sizeof dis);
-	for(int i=1;i<=n;i++)dis[i][i]=0;
 	for(int i=1;i<=n;i++)
 	{
+		dis[i][i]=0;
 		int k;
 		cin>>k;
-		for(int j=1;j<=k;j++)
+		while(k--)
 		{
 			int a,t;
 			cin>>a>>t;
@@ -64,6 +64,7 @@ int main()
 	{
 		for(int i=1;i<=n;i++)
 		{
+			if(dis[i][k]==inf)continue;
 			for(int j=1;j<=n;j++)dis[i][j]=min(dis[i][j],dis[i][k]+dis[k][j]);
 		}
 	}
