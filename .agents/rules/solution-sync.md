@@ -14,5 +14,5 @@ paths:
 
 - **站点外壳 / frontmatter** 见 [`writing-style.md`](writing-style.md)；题解正文由外部工作流唯一维护。其中 `summary` / `description` 是站内独有字段，可单独增补，**不需重新 sign-off**。
 - **AI 题解索引** 固定在 `docs/contest/personal/luogu.mdx` 的 `### AI 题解`，仅列完整标题与洛谷专栏链接。所有条目直接放在同一个列表，不建立合集博客或逐题页面；格式见 [`writing-style.md`](writing-style.md)。
-- **维护方式** 只使用本仓库的 Agent 文本规则与行为测试，不为 AI 题解索引增加专用脚本或包管理命令。
+- **维护方式** 只使用本仓库的 Agent 文本规则，不为 AI 题解索引增加专用脚本或包管理命令。
 - **`blog/solution/*.mdx` 镜像洛谷**：任何站点级 sweep / reformat / 审查（含「找全站问题」式检测）一律**绕开这些文件、单独列出**。用户明确要求维护某篇题解时，该任务本身即授权本地修改；真实发布与审核仍由外部工作流的授权、回读与平台规范闸门决定。

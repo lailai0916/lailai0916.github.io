@@ -44,7 +44,7 @@ against the HTML entry assets and Docusaurus's generated client/route manifests.
 external so CSS does not carry unused subsets. The `problemChunks` plugin shares the contest
 catalog; `src/remark/remarkProblem.ts` imports it only in MDX that uses `Problem`, preserving
 route preloading and complete SSR. CI verifies automatic imports with
-`.github/scripts/check-problem-imports.mjs`; `perf/REPORT.md` summarizes the measured gains.
+`.github/scripts/check-problem-imports.mjs`.
 
 ## Commands
 
@@ -64,6 +64,11 @@ npm run check:ci          # check + fail if generation or formatting changed the
 ```
 
 There is no test runner. `npm run check` is the gate.
+
+Keep one-off validation scripts, screenshots, benchmark reports, and debugging artifacts outside
+the repository, in a temporary directory. Do not leave manual test files beside production source.
+Permanent checks need a maintained automatic entry point; installation, build, and deployment
+checks live in `.github/scripts/`. Do not add a test framework for a one-off verification.
 
 **Lint layer is deliberately lean** (`eslint.config.mjs`, flat config, `src/` only): Prettier owns formatting and tsc owns types, so ESLint carries no stylistic rules — just what the other two can't see. That's `typescript-eslint` recommended (minus `no-explicit-any` and `no-require-imports`, both of which fight legitimate Docusaurus/webpack patterns here) plus the two **classic** React Hooks rules (`rules-of-hooks` error, `exhaustive-deps` warn). Do **not** switch react-hooks to its v7 `recommended-latest` — the React-Compiler rules it adds (`set-state-in-effect`, `refs`, `immutability`) flag valid patterns and drown the signal. Unused-var escape hatch: `_`-prefix.
 
@@ -101,7 +106,7 @@ Custom-page notes: `insights` is live Umami traffic. `blog/overview` and `blog/m
 
 ### Non-obvious gotchas
 
-- **Friends' posts backend:** `src/data/friends.tsx` is the only authored subscription list. An optional literal `rss` URL opts a friend into collection. Each production build exports `friend-feeds.json`; the cloud server reads `/var/www/lailai.one/friend-feeds.json` hourly with `lailai-friend-feed.timer`. Maintain the collector, its tests, and deployment configuration directly in `/opt/lailai-friend-feed/` on that host, independently of this static-site repository, following the same separation as `/opt/lailai-sys-api/`. The collector runs as the dedicated `friend-feed` user and writes `/var/lib/lailai-friend-feed/posts.json`; Caddy serves it at `/api/friends/posts` through `/etc/caddy/friend-feed.Caddyfile`. Keep runtime data outside the site's `rsync --delete` target. The collector retains old articles only for failed configured sources, clears successful empty sources, prunes removed sources, and atomically replaces the output. A failed source-manifest load leaves the output untouched; an entirely failed collection does not advance its update timestamp. Run `python3 -m unittest discover -s /opt/lailai-friend-feed -p 'test_*.py'` on the server for backend changes and `node --experimental-strip-types --test src/plugins/friendFeedManifest/sources.test.mjs` locally for subscription-manifest changes.
+- **Friends' posts backend:** `src/data/friends.tsx` is the only authored subscription list. An optional literal `rss` URL opts a friend into collection. Each production build exports `friend-feeds.json`; the cloud server reads `/var/www/lailai.one/friend-feeds.json` hourly with `lailai-friend-feed.timer`. Maintain the collector, its tests, and deployment configuration directly in `/opt/lailai-friend-feed/` on that host, independently of this static-site repository, following the same separation as `/opt/lailai-sys-api/`. The collector runs as the dedicated `friend-feed` user and writes `/var/lib/lailai-friend-feed/posts.json`; Caddy serves it at `/api/friends/posts` through `/etc/caddy/friend-feed.Caddyfile`. Keep runtime data outside the site's `rsync --delete` target. The collector retains old articles only for failed configured sources, clears successful empty sources, prunes removed sources, and atomically replaces the output. A failed source-manifest load leaves the output untouched; an entirely failed collection does not advance its update timestamp. Run `python3 -m unittest discover -s /opt/lailai-friend-feed -p 'test_*.py'` on the server for backend changes. Subscription-manifest validation runs during the website build.
 
 - **UI library documentation:** `docs/project/ui/` is the public usage guide for `@lailai0916/ui`, with a hand-curated category in `projectSidebar`. Keep examples and component inventories aligned with the installed package. MDX previews import the package directly and inherit the site's provider; never mount another `ThemeProvider` inside a documentation preview. Shared component implementation remains in `lailai0916/ui`.
 
