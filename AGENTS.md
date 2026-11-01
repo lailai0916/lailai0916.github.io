@@ -65,10 +65,16 @@ npm run check:ci          # check + fail if generation or formatting changed the
 
 There is no test runner. `npm run check` is the gate.
 
-Keep one-off validation scripts, screenshots, benchmark reports, and debugging artifacts outside
-the repository, in a temporary directory. Do not leave manual test files beside production source.
-Permanent checks need a maintained automatic entry point; installation, build, and deployment
-checks live in `.github/scripts/`. Do not add a test framework for a one-off verification.
+- **Temporary artifacts:** Keep one-off development scripts, screenshots, benchmark reports, and
+  debugging output in a temporary directory outside this repository.
+- **Maintained checks:** Regression tests may live beside production code when they protect a
+  defined behavior and have a documented execution command. Integrate recurring checks into local
+  validation or CI. Installation, build, and deployment checks live in `.github/scripts/`; do not
+  add a test framework for one-off verification.
+- **Maintenance documentation:** Record stable repository architecture, usage, and conventions in
+  the existing owning document. Link to canonical rules instead of copying them. Keep task logs and
+  experimental records outside the repository. Published blog and documentation content follows its
+  own rules.
 
 **Lint layer is deliberately lean** (`eslint.config.mjs`, flat config, `src/` only): Prettier owns formatting and tsc owns types, so ESLint carries no stylistic rules — just what the other two can't see. That's `typescript-eslint` recommended (minus `no-explicit-any` and `no-require-imports`, both of which fight legitimate Docusaurus/webpack patterns here) plus the two **classic** React Hooks rules (`rules-of-hooks` error, `exhaustive-deps` warn). Do **not** switch react-hooks to its v7 `recommended-latest` — the React-Compiler rules it adds (`set-state-in-effect`, `refs`, `immutability`) flag valid patterns and drown the signal. Unused-var escape hatch: `_`-prefix.
 
