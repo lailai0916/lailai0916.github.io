@@ -14,7 +14,7 @@
   mask-position: center;
   mask-repeat: no-repeat;
   opacity: 0;
-  transition: opacity 160ms ease;
+  transition: opacity var(--lk-transition);
 }
 
 .slot[data-moving] .placeholder {
@@ -57,7 +57,7 @@
   height: 100%;
   object-fit: cover;
   pointer-events: none;
-  transition: transform 160ms ease;
+  transition: transform var(--lk-transition);
 }
 
 .avatar:active img {

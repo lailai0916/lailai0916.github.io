@@ -298,8 +298,8 @@
   opacity: 0;
   transform: translate(-4px, 4px);
   transition:
-    opacity 160ms ease,
-    transform 160ms ease;
+    opacity var(--lk-transition),
+    transform var(--lk-transition);
 }
 
 @container home (width < calc(800px + 3rem)) {
@@ -363,7 +363,7 @@
   font-variant-numeric: tabular-nums;
   color: var(--ifm-color-emphasis-900);
   text-decoration: none !important;
-  transition: color 160ms ease;
+  transition: color var(--lk-transition);
 }
 
 a.infoRowValue:hover {
@@ -411,13 +411,13 @@ a.infoRowValue:hover {
   justify-content: center;
   width: var(--home-contact-size);
   height: var(--home-contact-size);
-  border-radius: 12px;
+  border-radius: var(--lk-radius-md);
   color: var(--ifm-color-emphasis-600);
   opacity: 0.8;
   background: var(--ifm-color-emphasis-100);
   transition:
-    color 160ms ease,
-    transform 160ms ease;
+    color var(--lk-transition),
+    transform var(--lk-transition);
 }
 
 .socialLink:hover {

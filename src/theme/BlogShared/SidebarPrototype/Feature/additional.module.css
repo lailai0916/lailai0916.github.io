@@ -46,7 +46,7 @@
   font-size: 0.78rem;
   font-variant-numeric: tabular-nums;
   text-align: left;
-  transition: background-color 160ms ease;
+  transition: background-color var(--lk-transition);
 }
 
 .timelineRow[aria-pressed='true'] {
@@ -113,8 +113,8 @@
   font-size: 0.8rem;
   font-variant-numeric: tabular-nums;
   transition:
-    background-color 160ms ease,
-    transform 160ms ease;
+    background-color var(--lk-transition),
+    transform var(--lk-transition);
 }
 
 .monthButton[aria-pressed='true'] {

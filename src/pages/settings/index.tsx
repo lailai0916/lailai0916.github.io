@@ -1,3 +1,4 @@
+import { Input, InputGroup } from '@lailai0916/ui/Field';
 import { useState, useEffect, type ReactNode } from 'react';
 import BrowserOnly from '@docusaurus/BrowserOnly';
 import Skeleton from '@lailai0916/ui/Skeleton';
@@ -150,7 +151,7 @@ function AccentColor() {
     >
       <div className={styles.colorGeneratorContainer}>
         <div className={styles.colorInputContainer}>
-          <label className={styles.colorField}>
+          <InputGroup className={styles.colorField}>
             <input
               type="color"
               value={colorState.baseColor}
@@ -161,20 +162,21 @@ function AccentColor() {
                 message: 'Pick color',
               })}
             />
-            <input
+            <Input
               type="text"
+              monospace
               value={inputColor}
               onChange={(e) => updateColor(e.target.value)}
               onBlur={commitColor}
               onKeyDown={(e) => e.key === 'Enter' && e.currentTarget.blur()}
-              className={styles.textColorInput}
+              style={{ minWidth: '7ch' }}
               size={8}
               aria-label={translate({
                 id: 'pages.settings.item.color.hex',
                 message: 'Hex color value',
               })}
             />
-          </label>
+          </InputGroup>
           <Button
             variant="secondary"
             size="sm"

@@ -51,8 +51,8 @@ html[data-theme='dark'] .maintenance {
   min-width: 2px;
   border-radius: 2px;
   transition:
-    transform 160ms ease,
-    opacity 160ms ease;
+    transform var(--lk-transition),
+    opacity var(--lk-transition);
 }
 
 .cell:hover {

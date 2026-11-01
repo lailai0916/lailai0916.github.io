@@ -188,7 +188,7 @@ html[data-theme='dark'] .statusMaintenance {
   display: flex;
   flex-direction: column;
   gap: 1.25rem;
-  margin-top: calc(1rem - clamp(2rem, 4vw, 3rem));
+  margin-top: calc(1rem - var(--lk-page-padding-block));
 }
 
 .list {

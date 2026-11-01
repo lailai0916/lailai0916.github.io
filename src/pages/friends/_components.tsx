@@ -8,7 +8,8 @@ import Button from '@lailai0916/ui/Button';
 import DataState from '@lailai0916/ui/DataState';
 import Hint from '@lailai0916/ui/Hint';
 import Skeleton from '@lailai0916/ui/Skeleton';
-import { useImageStatus } from '@lailai0916/ui';
+import { Avatar } from '@lailai0916/ui/Avatar';
+import SectionHeader from '@lailai0916/ui/SectionHeader';
 import { FRIEND_LIST } from '@site/src/data/friends';
 import { useFetch } from '@site/src/hooks/useFetch';
 import { useVisitorTimeZone } from '@site/src/hooks/useVisitorTimeZone';
@@ -20,31 +21,23 @@ export function FriendAvatar({
   src,
   className,
   loading,
+  size = '3rem',
 }: {
   src?: string;
   className: string;
   loading?: 'lazy';
+  size?: number | string;
 }): ReactNode {
-  const { imgRef, status, onLoad, onError } = useImageStatus(src);
-
   return (
-    <span className={className} aria-hidden="true">
-      <AvatarFallbackIcon
-        className={clsx(styles.avatarFallback, status === 'loaded' && styles.avatarFallbackHidden)}
-      />
-      {src && status !== 'error' && (
-        <img
-          ref={imgRef}
-          src={src}
-          alt=""
-          className={clsx(styles.avatarImage, status === 'loaded' && styles.avatarImageLoaded)}
-          loading={loading}
-          decoding="async"
-          onLoad={onLoad}
-          onError={onError}
-        />
-      )}
-    </span>
+    <Avatar
+      src={src}
+      alt=""
+      name=""
+      size={size}
+      loading={loading}
+      className={className}
+      fallback={<AvatarFallbackIcon className={styles.avatarFallback} />}
+    />
   );
 }
 
@@ -101,21 +94,23 @@ export function FriendFeed(): ReactNode {
       aria-labelledby="friend-activity-title"
       aria-busy={isInitialLoading}
     >
-      <header className={styles.feedHeader}>
-        <h2 id="friend-activity-title" className={styles.feedTitle}>
-          {FEED_TITLE}
-        </h2>
-        {data && (
-          <p className={styles.feedUpdated}>
-            {translate(
-              { id: 'pages.friends.feed.updated', message: 'Last updated {date}' },
-              {
-                date: `${formatLocalDate(data.updatedAt, currentLocale, timeZone)} ${formatLocalTime(data.updatedAt, currentLocale, timeZone)}`,
-              }
-            )}
-          </p>
-        )}
-      </header>
+      <SectionHeader
+        className={styles.feedHeader}
+        titleId="friend-activity-title"
+        title={FEED_TITLE}
+        aside={
+          data ? (
+            <p className={styles.feedUpdated}>
+              {translate(
+                { id: 'pages.friends.feed.updated', message: 'Last updated {date}' },
+                {
+                  date: `${formatLocalDate(data.updatedAt, currentLocale, timeZone)} ${formatLocalTime(data.updatedAt, currentLocale, timeZone)}`,
+                }
+              )}
+            </p>
+          ) : undefined
+        }
+      />
       {isInitialLoading ? (
         <div role="status" aria-label={FEED_LOADING}>
           <ul className={styles.feedList} aria-hidden="true">
@@ -171,6 +166,7 @@ export function FriendFeed(): ReactNode {
                       src={post.friend.avatar}
                       className={clsx(styles.avatar, styles.feedAvatar)}
                       loading="lazy"
+                      size={40}
                     />
                     <div className={styles.feedContent}>
                       <h3 className={styles.feedPostTitle} data-truncated-title>

@@ -7,6 +7,10 @@ import { usePluralForm } from '@docusaurus/theme-common';
 import { LaikitProvider as Provider, type HeadingProps, type LinkProps } from '@lailai0916/ui';
 
 const messages = {
+  clearSearch: translate({
+    id: 'components.laikitProvider.clearSearch',
+    message: 'Clear search',
+  }),
   quoteAttributionDash: translate({
     id: 'components.laikitProvider.quoteAttributionDash',
     message: '— ',

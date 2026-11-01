@@ -23,7 +23,7 @@
   color: var(--ifm-font-color-base);
   text-decoration: none !important;
   overflow-wrap: break-word;
-  transition: color 160ms ease;
+  transition: color var(--lk-transition);
 }
 
 .postLink:hover {
@@ -65,7 +65,7 @@
 
 .momentImageViewport:focus-visible {
   outline: none;
-  border-radius: 10px;
+  border-radius: var(--lk-radius-control);
   box-shadow: var(--lk-focus-ring);
 }
 
@@ -106,10 +106,10 @@
   padding: 0;
   overflow: hidden;
   border: 0;
-  border-radius: 10px;
+  border-radius: var(--lk-radius-control);
   background: transparent;
   cursor: zoom-in;
-  transition: filter 160ms ease;
+  transition: filter var(--lk-transition);
 }
 
 .momentImageButton:active:not(:disabled) {
@@ -162,10 +162,10 @@
   pointer-events: none;
   transform: translateY(-50%);
   transition:
-    opacity 160ms ease,
-    border-color 160ms ease,
-    color 160ms ease,
-    transform 160ms ease;
+    opacity var(--lk-transition),
+    border-color var(--lk-transition),
+    color var(--lk-transition),
+    transform var(--lk-transition);
 }
 
 .imageArrow:hover {
@@ -283,7 +283,7 @@
   display: block;
   width: 100%;
   height: auto;
-  border-radius: 10px;
+  border-radius: var(--lk-radius-control);
 }
 
 .momentBody {
@@ -365,8 +365,8 @@
   color: var(--ifm-color-emphasis-700);
   cursor: pointer;
   transition:
-    color 160ms ease,
-    transform 160ms ease;
+    color var(--lk-transition),
+    transform var(--lk-transition);
 }
 
 .loadMoreLink:hover {

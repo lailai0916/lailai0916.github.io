@@ -22,7 +22,7 @@ import {
 } from '@docusaurus/theme-search-algolia/client';
 import Layout from '@theme/Layout';
 import Heading from '@theme/Heading';
-import SearchField from '@site/src/components/SearchField';
+import SearchField from '@lailai0916/ui/SearchField';
 import Button from '@lailai0916/ui/Button';
 import DataState from '@lailai0916/ui/DataState';
 import styles from './styles.module.css';

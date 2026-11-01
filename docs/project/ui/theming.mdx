@@ -53,6 +53,20 @@ export function ThemeButtonPreview() {
 
 `--lk-divider-color` 默认使用当前主题的 `--lk-color-emphasis-200`，`--lk-divider-width` 默认为 `1px`。`Divider`、面板内部分区与顶部栏边界共用这两个变量；间距仍由所在布局控制。可在根元素统一调整，或在局部容器中覆盖。
 
+## 间距与交互变量
+
+| 变量                        | 用途                                              |
+| --------------------------- | ------------------------------------------------- |
+| `--lk-page-padding-block`   | 页面内容上下留白，默认 `clamp(2rem, 4vw, 3rem)`   |
+| `--lk-page-padding-inline`  | 页面水平留白，默认 `clamp(1rem, 3vw, 2rem)`       |
+| `--lk-space-section`        | 内容分区之间的间隔，默认 `clamp(2rem, 4vw, 3rem)` |
+| `--lk-space-section-header` | 分区标题到正文的间隔，默认 `1.25rem`              |
+| `--lk-font-size-meta`       | 分区附加信息字号，默认 `0.875rem`                 |
+| `--lk-radius-xs`            | 紧凑圆角，默认 `4px`                              |
+| `--lk-transition`           | 短交互过渡，默认 `160ms ease`                     |
+
+Page、SectionHeader 与表单组件使用这些变量。应用应按内容角色选择变量，保留不同布局需要的间距；专门的展开、滚动和图形动画可以继续使用自己的时长。
+
 ## 独立应用
 
 ```tsx

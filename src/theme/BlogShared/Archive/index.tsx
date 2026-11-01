@@ -7,7 +7,7 @@ import { useLocation } from '@docusaurus/router';
 import { translate } from '@docusaurus/Translate';
 import Button from '@lailai0916/ui/Button';
 import Card from '@lailai0916/ui/Card';
-import SearchField from '@site/src/components/SearchField';
+import SearchField from '@lailai0916/ui/SearchField';
 import DataState from '@lailai0916/ui/DataState';
 import { useVisitorTimeZone } from '@site/src/hooks/useVisitorTimeZone';
 import { getDateKey } from '@site/src/utils/dateTime';

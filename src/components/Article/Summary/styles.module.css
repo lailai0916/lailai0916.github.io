@@ -17,7 +17,7 @@
   font: inherit;
   text-align: left;
   cursor: pointer;
-  transition: background-color 160ms ease;
+  transition: background-color var(--lk-transition);
 }
 
 .header:hover {
@@ -59,7 +59,7 @@ html[data-theme='dark'] .header:active {
   flex-shrink: 0;
   font-size: 1.05rem;
   color: var(--ifm-color-emphasis-500);
-  transition: transform 160ms ease;
+  transition: transform var(--lk-transition);
 }
 
 .chevronOpen {

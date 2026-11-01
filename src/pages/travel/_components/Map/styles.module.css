@@ -3,7 +3,7 @@
   max-width: 600px;
   /* Cancel PageContent's top padding so the globe tucks up under the header
      instead of floating below a gap. */
-  margin: calc(clamp(2rem, 4vw, 3rem) * -1) auto 0;
+  margin: calc(var(--lk-page-padding-block) * -1) auto 0;
 }
 
 /* Reserve the canvas dimensions before hydration to prevent layout shift. */

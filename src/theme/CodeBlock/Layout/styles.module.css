@@ -1,5 +1,5 @@
 .codeBlock {
-  border-radius: 16px;
+  border-radius: var(--lk-radius-lg);
   overflow: hidden;
   border: 1px solid var(--ifm-color-emphasis-200);
   box-shadow: var(--lk-shadow-md);

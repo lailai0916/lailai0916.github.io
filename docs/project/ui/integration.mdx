@@ -92,10 +92,14 @@ export function ChineseUI({ children }: { children: ReactNode }) {
 
 | 导出                | 参数或返回值                                               | 用途                                         |
 | ------------------- | ---------------------------------------------------------- | -------------------------------------------- |
+| `useClipboard`      | 可选 `resetAfter`；返回 `status`、`copy`、`reset`          | 复制文本、反馈状态与失效处理                 |
+| `writeClipboard`    | 待复制文本；返回 Promise                                   | 原生剪贴板与兼容回退                         |
 | `useImageStatus`    | 可选图片地址；返回 `imgRef`、`status`、`onLoad`、`onError` | 跟踪 `loading`、`loaded`、`error`            |
 | `useMeasuredHeight` | 变化键；返回只读的 `[ref, height]`                         | 测量挂载后的高度，初始高度可能为 `undefined` |
 | `formatCompact`     | 数值、可选语言、可选有效位数                               | 使用紧凑记数法，默认英文与 3 位有效数字      |
 | `formatBytes`       | 字节数                                                     | 按 1024 换算，以 B、KB、MB 显示              |
+
+`useClipboard().copy` 接受字符串或返回字符串、Promise 的函数。卸载或调用 `reset` 后，尚未完成的文本读取不会继续写入剪贴板；反馈默认在 2 秒后恢复。使用现成按钮时优先选择 `CopyButton`。
 
 `useImageStatus` 需要把 `imgRef`、`onLoad` 和 `onError` 绑定到同一个 `<img>`。它会检查已缓存的图片，并在地址变化时重置状态；加载超过 3 秒后进入 `error`。设置 `loading="lazy"` 时，从图片进入视口后开始计时。
 

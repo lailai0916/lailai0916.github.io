@@ -35,12 +35,12 @@
   justify-self: end;
   width: 28px;
   height: 28px;
-  border-radius: 8px;
+  border-radius: var(--lk-radius-sm);
   color: var(--ifm-color-emphasis-600);
   transition:
-    color 160ms ease,
-    background-color 160ms ease,
-    transform 160ms ease;
+    color var(--lk-transition),
+    background-color var(--lk-transition),
+    transform var(--lk-transition);
 }
 
 .browserWindowAction:hover {

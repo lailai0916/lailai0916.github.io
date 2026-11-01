@@ -51,7 +51,7 @@
   text-decoration: none !important;
   white-space: nowrap;
   letter-spacing: -0.005em;
-  transition: color 160ms ease;
+  transition: color var(--lk-transition);
 }
 
 .recentTag:hover {

@@ -8,7 +8,7 @@
   max-width: 960px;
   margin-inline: auto;
   padding: 2rem;
-  padding-bottom: var(--site-page-bottom-space);
+  padding-bottom: var(--lk-page-padding-block);
 }
 
 .main {
@@ -65,7 +65,7 @@
 @media (max-width: 996px) {
   .container {
     padding: 1rem;
-    padding-bottom: var(--site-page-bottom-space);
+    padding-bottom: var(--lk-page-padding-block);
   }
 }
 

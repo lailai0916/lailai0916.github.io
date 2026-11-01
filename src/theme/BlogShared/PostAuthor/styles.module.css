@@ -18,7 +18,7 @@
   font-size: 0.95rem;
   font-weight: 600;
   color: var(--ifm-font-color-base);
-  transition: color 160ms ease;
+  transition: color var(--lk-transition);
 }
 
 .articleAuthorTitle {

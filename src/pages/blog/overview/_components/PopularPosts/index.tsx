@@ -1,16 +1,11 @@
-import Hint from '@lailai0916/ui/Hint';
-import Link from '@docusaurus/Link';
+import MetricList from '@lailai0916/ui/MetricList';
 import { translate } from '@docusaurus/Translate';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import { usePluralForm } from '@docusaurus/theme-common';
 import Button from '@lailai0916/ui/Button';
-import DataState from '@lailai0916/ui/DataState';
-import Skeleton from '@lailai0916/ui/Skeleton';
-import TitleCard from '@lailai0916/ui/TitleCard';
 import { useFetch } from '@site/src/hooks/useFetch';
 import { loadPopularPosts, POPULAR_POST_LIMIT, type BlogItems } from './data';
-import styles from './styles.module.css';
 
 export default function PopularPosts({ items }: { items: BlogItems }) {
   const { i18n } = useDocusaurusContext();
@@ -23,101 +18,42 @@ export default function PopularPosts({ items }: { items: BlogItems }) {
     isInitialLoading,
     retry,
   } = useFetch((signal) => loadPopularPosts(items, blogPath, signal), [blogPath], []);
-  const maxViews = posts[0]?.views ?? 0;
-
+  const titles = new Map(posts.map((post) => [post.permalink, post.title]));
   return (
-    <TitleCard
+    <MetricList
+      title={translate({ id: 'pages.overview.popular.title', message: 'Popular Posts' })}
+      variant="ranked"
       size="plain"
       padding="1.25rem"
-      title={translate({ id: 'pages.overview.popular.title', message: 'Popular Posts' })}
-      className={styles.card}
-    >
-      <div aria-busy={isInitialLoading} aria-live="polite">
-        {isInitialLoading ? (
-          <div className={styles.list} aria-hidden="true">
-            {Array.from({ length: POPULAR_POST_LIMIT }, (_, i) => (
-              <div key={i} className={styles.row}>
-                <div className={styles.rank}>
-                  <Skeleton width="1.25rem" height="1.25rem" />
-                </div>
-                <div className={styles.content}>
-                  <div className={styles.heading}>
-                    <div className={styles.title}>
-                      <Skeleton width="75%" height="1.4em" />
-                    </div>
-                    <div className={styles.views}>
-                      <Skeleton width="4rem" height="1.4em" />
-                    </div>
-                  </div>
-                  <Skeleton width="100%" height="3px" />
-                </div>
-              </div>
-            ))}
-          </div>
-        ) : status === 'error' ? (
-          <DataState
-            message={translate({
+      items={posts.map((post) => ({ x: post.permalink, y: post.views }))}
+      loading={isInitialLoading}
+      loadingCount={POPULAR_POST_LIMIT}
+      renderLabel={(path) => titles.get(path) ?? path}
+      labelTitle={(path) => titles.get(path) ?? path}
+      href={(path) => path}
+      emptyText={translate({ id: 'pages.overview.popular.empty', message: 'No reading data yet.' })}
+      error={
+        status === 'error'
+          ? translate({
               id: 'pages.overview.popular.error',
               message: 'Could not load popular posts.',
-            })}
-            action={
-              <Button size="sm" onClick={retry}>
-                {translate({ id: 'pages.overview.popular.retry', message: 'Retry' })}
-              </Button>
-            }
-          />
-        ) : posts.length === 0 ? (
-          <DataState
-            message={translate({
-              id: 'pages.overview.popular.empty',
-              message: 'No reading data yet.',
-            })}
-          />
-        ) : (
-          <ol className={styles.list} role="list">
-            {posts.map((post, i) => (
-              <li key={post.permalink}>
-                <Hint
-                  label={post.title}
-                  onlyWhenTruncated
-                  truncationTarget="[data-truncated-title]"
-                >
-                  <Link to={post.permalink} className={styles.row}>
-                    <span className={styles.rank} aria-hidden="true">
-                      {i + 1}
-                    </span>
-                    <div className={styles.content}>
-                      <div className={styles.heading}>
-                        <span className={styles.title} data-truncated-title>
-                          {post.title}
-                        </span>
-                        <span className={styles.views}>
-                          {selectMessage(
-                            post.views,
-                            translate(
-                              {
-                                id: 'pages.overview.popular.views',
-                                message: '{count} view|{count} views',
-                              },
-                              { count: new Intl.NumberFormat(locale).format(post.views) }
-                            )
-                          )}
-                        </span>
-                      </div>
-                      <div className={styles.track} aria-hidden="true">
-                        <div
-                          className={styles.fill}
-                          style={{ width: `${maxViews > 0 ? (post.views / maxViews) * 100 : 0}%` }}
-                        />
-                      </div>
-                    </div>
-                  </Link>
-                </Hint>
-              </li>
-            ))}
-          </ol>
-        )}
-      </div>
-    </TitleCard>
+            })
+          : undefined
+      }
+      errorAction={
+        <Button size="sm" onClick={retry}>
+          {translate({ id: 'pages.overview.popular.retry', message: 'Retry' })}
+        </Button>
+      }
+      formatValue={(count) =>
+        selectMessage(
+          count,
+          translate(
+            { id: 'pages.overview.popular.views', message: '{count} view|{count} views' },
+            { count: new Intl.NumberFormat(locale).format(count) }
+          )
+        )
+      }
+    />
   );
 }

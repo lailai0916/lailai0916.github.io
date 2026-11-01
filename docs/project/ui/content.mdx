@@ -6,6 +6,7 @@ summary: 内容组件提供头像、品牌、徽标、图标、窗口、文章�
 
 import {
   Avatar,
+  FallbackImage,
   Badge,
   Cluster,
   EmptyState,
@@ -55,7 +56,7 @@ import {
 | `Icon`      | `icon`            | `width`、`height`、`className`、`style`、`onLoad`、SVG 属性     |
 | `IconBlock` | 无                | `icon`、`variant`、`size`、`iconSize`、`className`、`children`  |
 
-`Avatar` 在没有图片时显示姓名首字母；`alt` 应描述头像用途。`Brand` 由应用提供标志地址与名称。`IconBlock.variant` 为 `accent` 或 `muted`。
+`Avatar` 在图片加载前或失败时显示姓名首字母，成功后淡入图片；`fallback` 可替换默认回退内容。`size` 接受像素数值或 CSS 长度，默认 36 px；`alt` 应描述头像用途。`Brand` 由应用提供标志地址与名称。`IconBlock.variant` 为 `accent` 或 `muted`。
 
 `Badge.hoverable` 只提供悬停外观，不会把徽标变成按钮；需要点击操作时使用按钮或链接。图标名使用 Iconify 标识，例如 `lucide:book-open`，图标数据可能通过网络加载。
 
@@ -72,6 +73,24 @@ import Icon from '@lailai0916/ui/Icon';
 <Icon icon="lucide:book-open" width={20} />;
 <Icon icon="flag:cn-4x3" width={20} height={15} />;
 ```
+
+## 图片回退
+
+`FallbackImage` 先显示 `fallback`，加载成功后淡入图片，失败时保留回退内容。组件不规定尺寸；宿主用 `style` 或 `className` 固定图片区域，避免布局跳动。`fit` 为 `cover` 或 `contain`，`loading` 默认为 `lazy`。
+
+export function FallbackImagePreview() {
+  return (
+    <FallbackImage
+      alt="示例头像"
+      fallback={<Icon icon="lucide:user-round" />}
+      style={{ width: 48, height: 48 }}
+    />
+  );
+}
+
+<FallbackImagePreview />
+
+`src` 可省略，图片原生属性和事件通过 `imageProps` 传入。组件检查缓存图片并在地址变化时重新加载；懒加载图片进入视口后才开始 3 秒超时计时。非空 `alt` 为整个区域提供一个可访问名称，装饰图片使用空 `alt`。
 
 ## 窗口
 

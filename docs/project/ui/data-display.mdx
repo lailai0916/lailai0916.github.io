@@ -1,10 +1,10 @@
 ---
 title: 数据展示
-description: 本文介绍图表、环形图、进度条与数据状态组件的输入格式，以及加载、空值和错误处理。
-summary: Chart 使用带有键、数值和标签的数据绘制柱状图或折线图，Donut 使用分类与数值绘制环形图。两者区分加载、空数据、错误和保留旧数据时的提示，日期与数字格式由宿主决定。Progress 展示有限范围内的进度，DataState 与 Skeleton 分别承载状态说明和加载占位。数据请求、重试与缓存由应用负责，示例使用固定数据。
+description: 本文介绍图表、指标列表与数据状态组件的格式，以及加载、空值和错误处理。
+summary: MetricList 使用背景比例条或排名展示有序指标，Chart 使用带有键、数值和标签的数据绘制柱状图或折线图，Donut 使用分类与数值绘制环形图。两者区分加载、空数据、错误和保留旧数据时的提示，日期与数字格式由宿主决定。Progress 展示有限范围内的进度，DataState 与 Skeleton 分别承载状态说明和加载占位。数据请求、重试与缓存由应用负责，示例使用固定数据。
 ---
 
-import { Chart, Progress, Stack } from '@lailai0916/ui';
+import { Chart, MetricList, Progress, Stack } from '@lailai0916/ui';
 
 ## 参考资料
 
@@ -81,6 +81,41 @@ export function DeviceChart() {
 ```
 
 `Donut` 要求 `title`、`icon`、`items`、`emptyText`。每项的 `x` 是分类名称，`y` 是数值；`maxSlices` 将长尾分类归入 `otherLabel`。`renderLabel` 可自定义分类呈现，`formatValue` 控制数字格式；加载、错误与提示属性同 `Chart`。
+
+## 指标列表
+
+`MetricList` 接收有序的 `{ x, y }[]`。默认 `variant="bar"` 在行内显示背景比例条；`variant="ranked"` 显示序号和细进度条。组件保留传入顺序，数据请求、排序和跳转地址由应用决定。
+
+export function MetricListPreview() {
+  return (
+    <MetricList
+      title="访问来源"
+      items={[
+        { x: '直接访问', y: 64 },
+        { x: '搜索引擎', y: 32 },
+      ]}
+      emptyText="暂无来源数据"
+    />
+  );
+}
+
+<MetricListPreview />
+
+```tsx
+<MetricList
+  title="热门文章"
+  variant="ranked"
+  items={posts.map((post) => ({ x: post.path, y: post.views }))}
+  renderLabel={(path) => titles.get(path)}
+  labelTitle={(path) => titles.get(path) ?? path}
+  href={(path) => path}
+  emptyText="暂无阅读数据"
+  loading={loading}
+  loadingCount={5}
+/>
+```
+
+`renderLabel` 自定义行标题，`labelTitle` 提供标题被截断时的完整提示，`href` 使整行成为链接。`formatValue` 格式化数值；默认使用当前语言的紧凑记数法。`loadingCount` 默认是 8，占位与数据共享行结构。`error`、`errorAction`、`notice` 与图表采用同样的状态约定。
 
 ## 状态处理
 

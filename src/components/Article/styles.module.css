@@ -4,5 +4,5 @@
   gap: 0.4rem;
   text-decoration: none;
   color: inherit;
-  transition: color 160ms ease;
+  transition: color var(--lk-transition);
 }

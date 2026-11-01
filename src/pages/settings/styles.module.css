@@ -15,23 +15,11 @@
 }
 
 .colorField {
-  display: flex;
-  align-items: center;
+  --lk-input-group-padding: var(--lk-space-1);
   flex: 1 1 auto;
   min-width: min-content;
-  gap: 0.5rem;
-  padding: 0.25rem;
-  border-radius: 10px;
-  border: 1px solid var(--ifm-color-emphasis-300);
+  font-size: 0.9rem;
   cursor: text;
-  transition:
-    border-color var(--lk-transition),
-    box-shadow var(--lk-transition);
-}
-
-.colorField:focus-within {
-  border-color: var(--lk-color-primary);
-  box-shadow: var(--lk-focus-ring);
 }
 
 .colorPickerInput {
@@ -57,18 +45,6 @@
 .colorPickerInput::-moz-color-swatch {
   border: none;
   border-radius: 6px;
-}
-
-.textColorInput {
-  flex: 1;
-  min-width: 7ch;
-  padding: 0;
-  border: none;
-  background: transparent;
-  outline: none;
-  font-size: 0.9rem;
-  font-family: monospace;
-  color: inherit;
 }
 
 /* Doubled class to outweigh Button's .size_sm height. */
@@ -104,7 +80,7 @@
   border: 0;
   border-radius: 50%;
   cursor: pointer;
-  transition: transform 160ms ease;
+  transition: transform var(--lk-transition);
 }
 
 .presetColorButton:hover {
@@ -203,7 +179,7 @@
   width: 2rem;
   height: 2rem;
   border: 1px solid var(--ifm-color-emphasis-200);
-  border-radius: 10px;
+  border-radius: var(--lk-radius-control);
   background: var(--ifm-color-emphasis-100);
   color: var(--ifm-color-emphasis-600);
   font-size: 1rem;

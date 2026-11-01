@@ -1,3 +1,4 @@
+import SectionHeader from '@lailai0916/ui/SectionHeader';
 import Hint from '@lailai0916/ui/Hint';
 import { type ReactNode, useState } from 'react';
 import clsx from 'clsx';
@@ -24,8 +25,7 @@ import { formatCompact } from '@lailai0916/ui';
 import { KUMA_STATUS_URL } from '@site/src/utils/kuma';
 import { UMAMI_DASHBOARD_URL } from '@site/src/utils/umami';
 import { toPageviewsData } from './_components/seriesFormat';
-import MetricList from './_components/MetricList';
-import metricListStyles from './_components/MetricList/styles.module.css';
+import MetricList from '@lailai0916/ui/MetricList';
 import ReferrerIcon from './_components/ReferrerIcon';
 import UptimeSection from './_components/UptimeSection';
 import SysStatusCard from './_components/SysStatusCard';
@@ -481,7 +481,7 @@ function MetricsGrid({ range }: { range: InsightsRange }) {
         renderLabel={(code) => (
           <>
             <Icon
-              className={metricListStyles.flag}
+              className={styles.flag}
               icon={`flag:${code.toLowerCase()}-4x3`}
               aria-hidden="true"
             />
@@ -595,35 +595,29 @@ export default function Insights(): ReactNode {
       </PageHeader>
       <PageContent className={clsx('site-page-content', styles.layout)}>
         <section className={styles.dataSection} aria-labelledby="traffic-title">
-          <header className={styles.sectionHeader}>
-            <h2 id="traffic-title" className={styles.sectionTitle}>
-              {TRAFFIC_TITLE}
-            </h2>
-            <SectionLink href={UMAMI_DASHBOARD_URL} label={TRAFFIC_ANALYTICS_LINK} />
-          </header>
+          <SectionHeader
+            titleId="traffic-title"
+            title={TRAFFIC_TITLE}
+            aside={<SectionLink href={UMAMI_DASHBOARD_URL} label={TRAFFIC_ANALYTICS_LINK} />}
+          />
           <div className={styles.sectionBody}>
             <HeroGrid range={range} />
             <PageviewsChart range={range} />
           </div>
         </section>
         <section className={styles.dataSection} aria-labelledby="audience-title">
-          <header className={styles.sectionHeader}>
-            <h2 id="audience-title" className={styles.sectionTitle}>
-              {audienceTitle}
-            </h2>
-          </header>
+          <SectionHeader titleId="audience-title" title={audienceTitle} />
           <div className={styles.sectionBody}>
             <MetricsGrid range={range} />
             <EnvironmentGrid range={range} />
           </div>
         </section>
         <section className={styles.dataSection} aria-labelledby="service-health-title">
-          <header className={styles.sectionHeader}>
-            <h2 id="service-health-title" className={styles.sectionTitle}>
-              {SERVICE_HEALTH_TITLE}
-            </h2>
-            <SectionLink href={KUMA_STATUS_URL} label={SERVICE_HEALTH_STATUS_LINK} />
-          </header>
+          <SectionHeader
+            titleId="service-health-title"
+            title={SERVICE_HEALTH_TITLE}
+            aside={<SectionLink href={KUMA_STATUS_URL} label={SERVICE_HEALTH_STATUS_LINK} />}
+          />
           <div className={styles.sectionBody}>
             <UptimeSection />
             <SysStatusCard />

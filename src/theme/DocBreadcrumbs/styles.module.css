@@ -71,8 +71,8 @@
   color: var(--ifm-color-emphasis-700);
   font-weight: 500;
   transition:
-    color 160ms ease,
-    background-color 160ms ease;
+    color var(--lk-transition),
+    background-color var(--lk-transition);
 }
 
 .link:hover {

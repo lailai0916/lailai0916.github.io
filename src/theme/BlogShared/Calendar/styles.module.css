@@ -102,8 +102,8 @@
   border-radius: 50%;
   background: var(--ifm-color-primary);
   transition:
-    width 160ms ease,
-    background 160ms ease;
+    width var(--lk-transition),
+    background var(--lk-transition);
 }
 
 .calendarDivider {
@@ -145,7 +145,7 @@
 
 .calendarPostList::-webkit-scrollbar-thumb {
   background: var(--ifm-color-emphasis-300);
-  border-radius: 4px;
+  border-radius: var(--lk-radius-xs);
 }
 
 .calendarPostItem {

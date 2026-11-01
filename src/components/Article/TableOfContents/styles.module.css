@@ -62,7 +62,7 @@
   width: 1rem;
   height: 1rem;
   color: var(--ifm-color-emphasis-700);
-  transition: transform 160ms ease;
+  transition: transform var(--lk-transition);
 }
 
 .tocDisclosure[open] .tocDisclosureChevron {
@@ -166,7 +166,7 @@
   padding: 0.3rem 0;
   color: var(--ifm-toc-link-color);
   text-decoration: none !important;
-  transition: color 160ms ease;
+  transition: color var(--lk-transition);
 }
 
 .tocLink:hover {

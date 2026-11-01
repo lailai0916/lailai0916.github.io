@@ -3,7 +3,7 @@
 }
 
 .postCard :global(.card) {
-  transition: border-color 160ms ease;
+  transition: border-color var(--lk-transition);
 }
 
 .postCard:hover :global(.card) {
@@ -32,7 +32,7 @@
   display: block;
   aspect-ratio: 16 / 9;
   margin: 0 0 1.25rem;
-  border-radius: 12px;
+  border-radius: var(--lk-radius-md);
   overflow: hidden;
   background: var(--ifm-color-emphasis-100);
 }
@@ -86,7 +86,7 @@
 .postTitleLink {
   color: inherit;
   text-decoration: none !important;
-  transition: color 160ms ease;
+  transition: color var(--lk-transition);
 }
 
 .postTitleLink:hover {
@@ -130,7 +130,7 @@
   margin-left: auto;
   text-decoration: none;
   color: inherit;
-  transition: color 160ms ease;
+  transition: color var(--lk-transition);
 }
 
 .postFooterReadMore:hover {
@@ -161,7 +161,7 @@
   text-decoration: none !important;
   user-select: none;
   outline: none;
-  transition: color 160ms ease;
+  transition: color var(--lk-transition);
 }
 
 .pageNav:hover {
@@ -211,7 +211,7 @@
   text-decoration: none !important;
   user-select: none;
   outline: none;
-  transition: color 160ms ease;
+  transition: color var(--lk-transition);
 }
 
 .pageNumber:hover {

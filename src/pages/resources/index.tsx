@@ -7,7 +7,7 @@ import { PageTitle, PageHeader, PageContent } from '@lailai0916/ui/Page';
 import DataCard from '@lailai0916/ui/DataCard';
 import Badge from '@lailai0916/ui/Badge';
 import Card from '@lailai0916/ui/Card';
-import SearchField from '@site/src/components/SearchField';
+import SearchField from '@lailai0916/ui/SearchField';
 import WebsiteIcon from '@site/src/components/WebsiteIcon';
 import LinkCard from '@lailai0916/ui/LinkCard';
 import clsx from 'clsx';

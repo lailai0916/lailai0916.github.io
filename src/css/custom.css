@@ -27,11 +27,6 @@
 
   --global-font-size: 16px;
   --global-line-height: 1.65;
-  --site-page-bottom-space: clamp(2rem, 4vw, 3rem);
-}
-
-.site-page-content {
-  padding-bottom: var(--site-page-bottom-space);
 }
 
 .site-page-content > :last-child {
@@ -41,7 +36,7 @@
 /* Important utility overrides must share Infima's cascade layer. */
 @layer docusaurus.infima {
   .about-page-wrapper main.margin-vert--lg {
-    margin-bottom: var(--site-page-bottom-space) !important;
+    margin-bottom: var(--lk-page-padding-block) !important;
   }
 }
 
@@ -171,10 +166,10 @@ html.debug-mode span {
   text-decoration: none;
   -webkit-tap-highlight-color: transparent;
   transition:
-    border-color 160ms ease,
-    background-color 160ms ease,
-    color 160ms ease,
-    transform 160ms ease;
+    border-color var(--lk-transition),
+    background-color var(--lk-transition),
+    color var(--lk-transition),
+    transform var(--lk-transition);
 }
 @media (width > 768px) {
   .navbar .DocSearch-Button {
@@ -310,7 +305,7 @@ html.debug-mode span {
   width: 100%;
   max-width: 960px;
   margin-block: 0;
-  padding: clamp(2rem, 4vw, 3rem) clamp(1rem, 3vw, 2rem);
+  padding: var(--lk-page-padding-block) var(--lk-page-padding-inline);
 }
 
 .search-page-wrapper .container > h1 {
@@ -344,8 +339,8 @@ html.debug-mode span {
   color: var(--ifm-font-color-base);
   font: inherit;
   transition:
-    border-color 160ms ease,
-    box-shadow 160ms ease;
+    border-color var(--lk-transition),
+    box-shadow var(--lk-transition);
 }
 
 .search-page-wrapper .container select:focus {
@@ -403,7 +398,7 @@ html.debug-mode span {
 
 .search-page-wrapper article > h2 > a {
   color: var(--ifm-font-color-base);
-  transition: color 160ms ease;
+  transition: color var(--lk-transition);
 }
 
 .search-page-wrapper article > h2 > a:hover {

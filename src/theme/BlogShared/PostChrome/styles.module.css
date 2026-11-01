@@ -14,7 +14,7 @@
   position: relative;
   /* 0.75 + parent flex gap 0.5 = 1.25rem, matching .postCoverWrap in list view */
   margin: 0 0 0.75rem;
-  border-radius: 12px;
+  border-radius: var(--lk-radius-md);
   overflow: hidden;
   background: var(--ifm-color-emphasis-100);
 }

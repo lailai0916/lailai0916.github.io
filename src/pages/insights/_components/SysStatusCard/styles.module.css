@@ -136,12 +136,12 @@
   height: 100%;
   border-radius: inherit;
   background: var(--ifm-color-primary);
-  transition: width 160ms ease;
+  transition: width var(--lk-transition);
 }
 
 .wrapper {
   container: runtime-snapshot / inline-size;
-  margin-top: calc(1rem - clamp(2rem, 4vw, 3rem));
+  margin-top: calc(1rem - var(--lk-page-padding-block));
 }
 
 .grid {

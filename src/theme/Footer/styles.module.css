@@ -83,8 +83,8 @@
   text-decoration-color: color-mix(in srgb, currentColor 35%, transparent);
   text-underline-offset: 0.18em;
   transition:
-    color 160ms ease,
-    text-decoration-color 160ms ease;
+    color var(--lk-transition),
+    text-decoration-color var(--lk-transition);
 }
 
 .copyright a:hover {
@@ -93,7 +93,7 @@
 }
 
 .copyright a:focus-visible {
-  border-radius: 4px;
+  border-radius: var(--lk-radius-xs);
   outline: none;
   box-shadow: var(--lk-focus-ring);
 }
@@ -160,7 +160,7 @@
   line-height: 1.5;
   overflow-wrap: break-word;
   text-decoration: none;
-  transition: color 160ms ease;
+  transition: color var(--lk-transition);
 }
 
 .item :global(.footer__link-item):hover {
@@ -169,7 +169,7 @@
 }
 
 .item :global(.footer__link-item):focus-visible {
-  border-radius: 4px;
+  border-radius: var(--lk-radius-xs);
   outline: none;
   box-shadow: var(--lk-focus-ring);
 }
@@ -225,8 +225,8 @@
   text-decoration-color: color-mix(in srgb, currentColor 35%, transparent);
   text-underline-offset: 0.18em;
   transition:
-    color 160ms ease,
-    text-decoration-color 160ms ease;
+    color var(--lk-transition),
+    text-decoration-color var(--lk-transition);
 }
 
 .metaLink:hover {
@@ -235,7 +235,7 @@
 }
 
 .metaLink:focus-visible {
-  border-radius: 4px;
+  border-radius: var(--lk-radius-xs);
   outline: none;
   box-shadow: var(--lk-focus-ring);
 }

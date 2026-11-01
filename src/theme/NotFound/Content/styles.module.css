@@ -53,15 +53,15 @@
   margin-top: 1rem;
   padding: 0 1.1rem;
   border: 1px solid var(--ifm-color-primary);
-  border-radius: 10px;
+  border-radius: var(--lk-radius-control);
   background: var(--ifm-color-primary);
   color: #ffffff;
   font-weight: 600;
   letter-spacing: 0.01em;
   text-decoration: none !important;
   transition:
-    background-color 160ms ease,
-    border-color 160ms ease;
+    background-color var(--lk-transition),
+    border-color var(--lk-transition);
 }
 
 .homeButton:hover {

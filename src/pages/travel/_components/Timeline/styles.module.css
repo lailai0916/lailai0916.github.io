@@ -77,8 +77,8 @@
   letter-spacing: 0.01em;
   font-variant-numeric: tabular-nums;
   transition:
-    background-color 160ms ease,
-    color 160ms ease;
+    background-color var(--lk-transition),
+    color var(--lk-transition);
 }
 
 .yearLabelLit {
@@ -125,7 +125,7 @@
   font-weight: 700;
   line-height: 1;
   font-variant-numeric: tabular-nums;
-  transition: border-color 160ms ease;
+  transition: border-color var(--lk-transition);
   z-index: 1;
 }
 
@@ -205,8 +205,8 @@
   opacity: 0;
   transform: translate(-4px, 4px);
   transition:
-    opacity 160ms ease,
-    transform 160ms ease;
+    opacity var(--lk-transition),
+    transform var(--lk-transition);
 }
 
 .entryMonth {

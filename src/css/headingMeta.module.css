@@ -1,7 +1,7 @@
 .headingMeta {
   color: var(--ifm-color-emphasis-700);
   font-family: inherit;
-  font-size: 0.875rem;
+  font-size: var(--lk-font-size-meta);
   font-weight: 400;
   font-variant-numeric: tabular-nums;
   line-height: 1.5;

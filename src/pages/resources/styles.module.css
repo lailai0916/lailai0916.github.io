@@ -16,8 +16,8 @@
   font: inherit;
   cursor: pointer;
   transition:
-    opacity 160ms ease,
-    transform 160ms ease;
+    opacity var(--lk-transition),
+    transform var(--lk-transition);
 }
 @media (max-width: 768px) {
   .filterActiveCat {
@@ -142,7 +142,7 @@
   font-weight: 600;
   text-align: left;
   cursor: pointer;
-  transition: background-color 160ms ease;
+  transition: background-color var(--lk-transition);
 }
 @media (max-width: 768px) {
   .categoryDisclosure {
@@ -173,7 +173,7 @@
   width: 1rem;
   height: 1rem;
   color: var(--ifm-color-emphasis-500);
-  transition: transform 160ms ease;
+  transition: transform var(--lk-transition);
 }
 .categoryChevron svg {
   width: 100%;
@@ -234,7 +234,7 @@
   min-height: 40px;
   padding: 0.5rem 0.75rem;
   border: 0;
-  border-radius: 10px;
+  border-radius: var(--lk-radius-control);
   background: none;
   color: var(--ifm-color-emphasis-700);
   font: inherit;
@@ -244,9 +244,9 @@
   text-align: left;
   cursor: pointer;
   transition:
-    background-color 160ms ease,
-    color 160ms ease,
-    transform 160ms ease;
+    background-color var(--lk-transition),
+    color var(--lk-transition),
+    transform var(--lk-transition);
 }
 @media (max-width: 768px) {
   .categoryButton {

@@ -1,7 +1,7 @@
 ---
 title: 布局与卡片
 description: 本文介绍页面容器、排列、分割线、面板和卡片组件的组合方式，以及路由链接和标题的使用边界。
-summary: 布局组件负责宽度、排列与间距，卡片和面板负责内容表面及分区。PageContainer 限制页面宽度，Stack 纵向排列，Cluster 横向排列并换行；Divider 分隔内容，Panel 可组合标题、正文与页脚。卡片家族提供标题、链接、统计和分享等结构，页面业务与响应式网格仍由宿主组织。间距与容器宽度使用像素数值，链接接入宿主路由，标题层级需要与页面结构保持一致。
+summary: 布局组件负责宽度、排列与间距，卡片和面板负责内容表面及分区，SectionHeader 统一分区标题和附加信息。PageContainer 限制页面宽度，Stack 纵向排列，Cluster 横向排列并换行；Divider 分隔内容，Panel 可组合标题、正文与页脚。卡片家族提供标题、链接、统计和分享等结构，页面业务与响应式网格仍由宿主组织。间距与容器宽度使用像素数值，链接接入宿主路由，标题层级需要与页面结构保持一致。
 ---
 
 import {
@@ -15,6 +15,7 @@ import {
   PanelFooter,
   PanelHeader,
   SiteHeader,
+  SectionHeader,
   Stack,
 } from '@lailai0916/ui';
 
@@ -46,15 +47,16 @@ import {
 
 ## 页面布局
 
-| 组件            | 主要属性                         | 行为                               |
-| --------------- | -------------------------------- | ---------------------------------- |
-| `PageContainer` | `children`、`width`              | 居中限制内容宽度，默认最大 1120 px |
-| `SiteHeader`    | `brand`、`navigation`、`actions` | 网站顶部栏与响应式排列             |
-| `Stack`         | `children`、`gap`                | 纵向排列，默认间距 16 px           |
-| `Cluster`       | `children`、`gap`                | 横向排列并换行，默认间距 12 px     |
-| `PageHeader`    | `children`、`aside`              | 标题区域与附加内容                 |
-| `PageTitle`     | `title`、`description`           | 页面标题与说明                     |
-| `PageContent`   | `children`、`as`、`className`    | 页面正文容器，可选择元素类型       |
+| 组件            | 主要属性                                 | 行为                               |
+| --------------- | ---------------------------------------- | ---------------------------------- |
+| `PageContainer` | `children`、`width`                      | 居中限制内容宽度，默认最大 1120 px |
+| `SiteHeader`    | `brand`、`navigation`、`actions`         | 网站顶部栏与响应式排列             |
+| `Stack`         | `children`、`gap`                        | 纵向排列，默认间距 16 px           |
+| `Cluster`       | `children`、`gap`                        | 横向排列并换行，默认间距 12 px     |
+| `PageHeader`    | `children`、`aside`                      | 标题区域与附加内容                 |
+| `SectionHeader` | `title`、`titleId`、`aside`、`headingAs` | 分区标题、附加信息与响应式排列     |
+| `PageTitle`     | `title`、`description`                   | 页面标题与说明                     |
+| `PageContent`   | `children`、`as`、`className`            | 页面正文容器，可选择元素类型       |
 
 `PageContainer`、`Stack` 和 `Cluster` 支持原生 `div` 属性。`width`、`gap` 是像素数值，例如 `width={960}`、`gap={16}`。
 
@@ -79,6 +81,28 @@ export function ProjectPanel() {
 ```
 
 `PageTitle.title` 保留 HTML 字符串接口，只能使用应用自己编写的可信内容。来自用户或远程数据的标题应使用普通 React 文本元素；文章标题可以选择接受 `ReactNode` 的 `MDTitle`。
+
+## 分区标题
+
+`SectionHeader` 将标题和附加信息放在同一行，窄屏时改为上下排列。`titleId` 可供所在 `section` 的 `aria-labelledby` 引用；`headingAs` 默认是 `h2`，应按页面层级选择。组件不附带外边距，分区间隔由宿主设置。
+
+export function SectionHeaderPreview() {
+  return (
+    <section aria-labelledby="section-example">
+      <SectionHeader title="访问概览" titleId="section-example" aside={<span>最近 30 天</span>} />
+    </section>
+  );
+}
+
+<SectionHeaderPreview />
+
+```tsx
+<SectionHeader
+  title="访问概览"
+  titleId="traffic-title"
+  aside={<a href="/statistics">查看统计</a>}
+/>
+```
 
 ## 分割线
 

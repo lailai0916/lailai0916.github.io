@@ -132,7 +132,7 @@ html[data-theme='dark'] .heroDeltaDown {
 }
 
 .chartCard {
-  margin-top: calc(1rem - clamp(2rem, 4vw, 3rem));
+  margin-top: calc(1rem - var(--lk-page-padding-block));
 }
 
 @media (max-width: 480px) {
@@ -151,7 +151,7 @@ html[data-theme='dark'] .heroDeltaDown {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
   gap: 1rem;
-  margin-top: calc(1rem - clamp(2rem, 4vw, 3rem));
+  margin-top: calc(1rem - var(--lk-page-padding-block));
 }
 
 @media (max-width: 640px) {
@@ -166,7 +166,6 @@ html[data-theme='dark'] .heroDeltaDown {
 }
 
 .sectionLink {
-  composes: headingMeta from '@site/src/css/headingMeta.module.css';
   display: inline-flex;
   align-items: center;
   gap: 0.35rem;
@@ -188,7 +187,7 @@ html[data-theme='dark'] .heroDeltaDown {
 
 .sectionLinkIcon {
   font-size: 0.95rem;
-  transition: transform 160ms ease;
+  transition: transform var(--lk-transition);
 }
 
 .sectionLink:hover .sectionLinkIcon {
@@ -198,36 +197,13 @@ html[data-theme='dark'] .heroDeltaDown {
 .dataSection {
   display: flex;
   flex-direction: column;
-  gap: 1.25rem;
-}
-
-.sectionHeader {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
-}
-
-@media (max-width: 768px) {
-  .sectionHeader {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-}
-
-.sectionTitle {
-  margin: 0;
-  color: var(--ifm-font-color-base);
-  font-size: clamp(1.25rem, 1vw + 1rem, 1.5rem);
-  font-weight: 600;
-  line-height: 1.3;
-  letter-spacing: -0.02em;
+  gap: var(--lk-space-section-header);
 }
 
 .sectionBody {
   display: flex;
   flex-direction: column;
-  gap: clamp(2rem, 4vw, 3rem);
+  gap: var(--lk-space-section);
 }
 
 .sectionBody > :first-child {
@@ -237,5 +213,15 @@ html[data-theme='dark'] .heroDeltaDown {
 .layout {
   display: flex;
   flex-direction: column;
-  gap: clamp(2rem, 4vw, 3rem);
+  gap: var(--lk-space-section);
+}
+
+/* flag (lipis) 4:3 rectangular SVG glyphs (Iconify) — a subtle rounded corner
+   and hairline ring lift them off the row background. */
+.flag {
+  width: 20px;
+  height: 15px;
+  flex-shrink: 0;
+  border-radius: 2px;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.06);
 }

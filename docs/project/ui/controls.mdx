@@ -13,6 +13,9 @@ import {
   DropdownSelectField,
   LanguageButton,
   PasswordField,
+  Input,
+  InputGroup,
+  SearchField,
   Radio,
   Cluster,
   Panel,
@@ -351,6 +354,26 @@ export function ProfileFields() {
 
 校验失败时传入具体的 `error` 文案，组件会设置 `aria-invalid` 并关联错误消息。业务校验、请求状态与提交处理由宿主负责；不要把占位文字作为唯一标签。
 
+## 组合输入与搜索
+
+`InputGroup` 为前缀、输入和附加操作提供统一边框、焦点及错误反馈。内部使用 `Input`，把 `disabled` 或 `invalid` 同时传给组合容器和控件。原生输入事件、名称和可访问标签仍由控件持有。
+
+```tsx
+<InputGroup invalid={invalid}>
+  <span aria-hidden="true">#</span>
+  <Input aria-label="颜色值" value={color} onChange={handleChange} invalid={invalid} monospace />
+</InputGroup>
+```
+
+`SearchField` 在同一输入基础上加入搜索图标和清除按钮，使用 `value` 与 `onValueChange` 控制内容。清除后焦点返回输入框；禁用或只读时不可清除。`prefix` 可放分类标签，`clearLabel` 可覆盖默认的本地化提示。输入的原生属性直接传给控件，`className` 用于布局整个组合。
+
+export function SearchFieldPreview() {
+  const [query, setQuery] = useState('React');
+  return <SearchField aria-label="搜索示例" value={query} onValueChange={setQuery} />;
+}
+
+<SearchFieldPreview />
+
 ## 原生控件与应用操作
 
 <ApplicationFieldsPreview />
@@ -361,4 +384,4 @@ export function ProfileFields() {
 
 `Checkbox`、`Radio` 必须提供可见 `label`，可附加 `description`；受控选中状态、`name`、`value`、`disabled` 与事件采用原生输入接口。
 
-`ButtonLink` 接受 `to` 或 `href`，使用 Button 同款 `variant`、`size`、`rounded`、`fullWidth` 与 `leftIcon`，通过 Provider 接入路由。`CopyButton` 接受待复制的 `value`，默认反馈跟随语言，复制失败时明确提示；`onCopied` 与 `onError` 可接入应用处理。
+`ButtonLink` 接受 `to` 或 `href`，使用 Button 同款 `variant`、`size`、`rounded`、`fullWidth` 与 `leftIcon`，通过 Provider 接入路由。`CopyButton` 接受待复制的 `value`，默认反馈跟随语言，复制失败时明确提示；`onCopied` 与 `onError` 可接入应用处理。`iconOnly` 使用 IconButton 的尺寸与提示样式；`size="xs"` 适合紧凑工具栏。`value` 也可使用稳定的函数，返回文本或 Promise；应提前加载异步内容，以保留点击时的剪贴板权限。
