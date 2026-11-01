@@ -296,6 +296,7 @@ const config: Config = {
             src: 'https://analytics.lailai.one/script.js',
             defer: true,
             'data-website-id': '69d3b7de-90e4-4be4-a355-633620ecefdb',
+            'data-performance': 'true',
           },
         ]
       : []),
