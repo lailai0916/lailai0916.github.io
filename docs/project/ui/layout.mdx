@@ -218,7 +218,7 @@ export function ProjectLayout() {
 | 组件        | 必要属性                     | 可选属性                                                                  |
 | ----------- | ---------------------------- | ------------------------------------------------------------------------- |
 | `Card`      | `children`                   | `as`、`padding`、`className`、`wrapperClassName`、`style`；`to` 或 `href` |
-| `TitleCard` | `title`、`children`          | `icon`、`description`、`count`、`padding`、`bodyAlign`、`size`            |
+| `TitleCard` | `title`、`children`          | `icon`、`description`、`count`、`aside`、`padding`、`bodyAlign`、`size`   |
 | `LinkCard`  | `title`，以及 `to` 或 `href` | `description`、`image`、`fallbackIcon`、`imageVariant`、`imageSlot`       |
 | `DataCard`  | `value`、`label`、`icon`     | `format`、`description`                                                   |
 | `ShareCard` | `url`、`title`               | `description`、`image`                                                    |
@@ -228,6 +228,8 @@ export function ProjectLayout() {
 `LinkCard.imageSlot` 接收自定义图片节点，替换默认图片和回退图标，保留原有的 48px 图标容器。节点的尺寸、加载和回退由调用方控制；未传入时继续使用 `image`、`fallbackIcon` 和 `imageVariant`。
 
 `TitleCard.size` 为 `md`、`sm` 或 `plain`，`bodyAlign` 为 `top` 或 `bottom`。卡片保留外部焦点环，铺满卡片的图片如需裁剪，应由自己的图片容器设置溢出裁剪。
+
+`TitleCard.count` 紧跟标题显示数字；`aside` 在标题行另一侧显示格式化数量或操作，文字沿用统一的辅助信息样式。
 
 ```tsx
 import { DataCard, LaikitProvider, LinkCard, Stack } from '@lailai0916/ui';
