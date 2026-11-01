@@ -288,12 +288,16 @@ html.debug-mode span {
 
 .navbar .DocSearch-Button-Key {
   box-sizing: border-box;
-  width: 20px;
+  flex: none;
+  width: auto;
+  min-width: 20px;
   height: 20px;
+  padding-inline: 0.25em;
   background: var(--ifm-card-background-color);
   border-color: var(--ifm-color-emphasis-200);
   font-family: var(--lk-font-mono);
   font-size: 0.75rem;
+  white-space: nowrap;
 }
 
 .navbar .DocSearch-Button-Key:first-child {

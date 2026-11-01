@@ -237,7 +237,7 @@
 
 .title {
   margin: 0;
-  font-size: 1.6rem;
+  font-size: 1.75rem;
   font-weight: 700;
   line-height: 1.2;
   letter-spacing: -0.025em;
@@ -246,7 +246,7 @@
 .description {
   margin: 0.5rem 0 0;
   color: var(--ifm-color-emphasis-700);
-  font-size: 0.92rem;
+  font-size: 1rem;
   line-height: 1.6;
 }
 
