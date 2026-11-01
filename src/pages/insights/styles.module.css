@@ -166,15 +166,13 @@ html[data-theme='dark'] .heroDeltaDown {
 }
 
 .sectionLink {
+  composes: headingMeta from '@site/src/css/headingMeta.module.css';
   display: inline-flex;
   align-items: center;
   gap: 0.35rem;
   min-height: 44px;
   padding: 0 0.25rem;
   border-radius: 6px;
-  color: var(--ifm-color-emphasis-700);
-  font-size: 0.85rem;
-  font-weight: 600;
   text-decoration: none;
 }
 
