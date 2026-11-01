@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react';
+import { useMemo, useState, type MouseEvent } from 'react';
 import Head from '@docusaurus/Head';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
@@ -10,6 +10,8 @@ import Card from '@lailai0916/ui/Card';
 import SearchField from '@lailai0916/ui/SearchField';
 import DataState from '@lailai0916/ui/DataState';
 import { useVisitorTimeZone } from '@site/src/hooks/useVisitorTimeZone';
+import useSearchAnalytics from '@site/src/hooks/useSearchAnalytics';
+import { normalizeContentPath, trackEvent } from '@site/src/utils/analytics';
 import { getDateKey } from '@site/src/utils/dateTime';
 import { getAllBlogItems, getAllPostMetadata, loadOfficialTags } from '@site/src/utils/blogData';
 import { TagChipList } from '../BlogUI';
@@ -49,6 +51,24 @@ const SEARCH_PLACEHOLDER = translate({
 
 const CLEAR_SEARCH = translate({ id: 'blog.archive.search.clear', message: 'Clear search' });
 
+function trackFilterActivation(event: MouseEvent<HTMLDivElement>, filter: 'year' | 'tag') {
+  if (event.defaultPrevented || event.button > 1 || !(event.target instanceof Element)) return;
+  const link = event.target.closest<HTMLAnchorElement>('a[href]');
+  if (!link) return;
+  const url = new URL(link.href);
+  const year = url.searchParams.get('year');
+  const path = normalizeContentPath(url.pathname);
+  const value =
+    filter === 'year'
+      ? year
+        ? Number(year)
+        : 'all'
+      : path.endsWith('/blog/archive')
+        ? 'all'
+        : path;
+  trackEvent('filter_change', { surface: 'archive', filter, value });
+}
+
 function YearSection({
   years,
   activeYear,
@@ -59,7 +79,16 @@ function YearSection({
   archiveUrl: string;
 }) {
   return (
-    <div id="years" className={styles.filterGroup} role="group" aria-label={YEAR_TITLE}>
+    <div
+      id="years"
+      className={styles.filterGroup}
+      role="group"
+      aria-label={YEAR_TITLE}
+      onClickCapture={(event) => trackFilterActivation(event, 'year')}
+      onAuxClickCapture={(event) => {
+        if (event.button === 1) trackFilterActivation(event, 'year');
+      }}
+    >
       <TagChipList
         items={years.map(({ year, count }) => ({
           to: year === activeYear ? archiveUrl : `${archiveUrl}?year=${year}`,
@@ -86,7 +115,16 @@ function TagsSection({
     [localeKey]
   );
   return (
-    <div id="tags" className={styles.filterGroup} role="group" aria-label={TAGS_TITLE}>
+    <div
+      id="tags"
+      className={styles.filterGroup}
+      role="group"
+      aria-label={TAGS_TITLE}
+      onClickCapture={(event) => trackFilterActivation(event, 'tag')}
+      onAuxClickCapture={(event) => {
+        if (event.button === 1) trackFilterActivation(event, 'tag');
+      }}
+    >
       <TagChipList
         items={sorted.map((tag) => ({
           to: tag.permalink === activePermalink ? archiveUrl : tag.permalink,
@@ -175,6 +213,17 @@ export default function BlogArchive({
     [scopedPosts, hasQuery, query, i18n.currentLocale, postMetadata]
   );
   const resultPosts = searchResults ?? scopedPosts;
+  const searchAnalytics = useSearchAnalytics({
+    surface: 'archive',
+    query,
+    resultCount: searchResults?.length ?? null,
+    resultKind: 'articles',
+    scope: selected
+      ? `${selected.kind}:${normalizeContentPath(selected.permalink)}`
+      : activeYear === null
+        ? 'all'
+        : `year:${activeYear}`,
+  });
   const canonical = selected?.permalink ?? archiveUrl;
 
   return (
@@ -188,6 +237,8 @@ export default function BlogArchive({
       <SearchField
         value={query}
         onValueChange={setQuery}
+        onCompositionStart={searchAnalytics.onCompositionStart}
+        onCompositionEnd={searchAnalytics.onCompositionEnd}
         placeholder={SEARCH_PLACEHOLDER}
         aria-label={SEARCH_PLACEHOLDER}
       />
@@ -217,7 +268,12 @@ export default function BlogArchive({
           />
         </div>
       )}
-      {(!searchResults || resultPosts.length > 0) && <BlogArchiveList posts={resultPosts} />}
+      {(!searchResults || resultPosts.length > 0) && (
+        <BlogArchiveList
+          posts={resultPosts}
+          onPostActivate={hasQuery ? searchAnalytics.trackResultClick : undefined}
+        />
+      )}
     </BlogScaffold>
   );
 }

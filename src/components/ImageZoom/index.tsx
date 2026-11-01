@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import { translate } from '@docusaurus/Translate';
+import { trackEvent } from '@site/src/utils/analytics';
 import styles from './styles.module.css';
 
 declare const require: (path: string) => { default: string };
@@ -159,8 +160,15 @@ export default function ImageZoom() {
         .catch(() => {});
     }
 
-    function close() {
-      if (active && active.phase !== 'closing') animate(active, true);
+    function close(reason: 'button' | 'overlay' | 'escape') {
+      if (!active || active.phase === 'closing') return;
+      trackEvent('feature_use', {
+        surface: 'content',
+        feature: 'image_viewer',
+        action: 'close',
+        value: reason,
+      });
+      animate(active, true);
     }
 
     function open(source: HTMLImageElement) {
@@ -223,10 +231,12 @@ export default function ImageZoom() {
         gutter: root.style.scrollbarGutter,
       };
       active = preview;
-      dialog.addEventListener('click', close);
+      dialog.addEventListener('click', (event) => {
+        close(closeButton.contains(event.target as Node) ? 'button' : 'overlay');
+      });
       dialog.addEventListener('cancel', (event) => {
         event.preventDefault();
-        close();
+        close('escape');
       });
       dialog.addEventListener('close', () => finish(preview));
       document.body.append(dialog);
@@ -234,6 +244,7 @@ export default function ImageZoom() {
       root.style.overflow = 'hidden';
       source.classList.add(styles.sourceHidden);
       dialog.showModal();
+      trackEvent('feature_use', { surface: 'content', feature: 'image_viewer', action: 'open' });
       closeButton.focus({ preventScroll: true });
       animate(preview, false);
 
@@ -324,7 +335,7 @@ export default function ImageZoom() {
         if (event.key === 'Escape') {
           event.preventDefault();
           event.stopPropagation();
-          close();
+          close('escape');
         } else if (event.key === 'Tab') {
           event.preventDefault();
           active.closeButton.focus({ preventScroll: true });

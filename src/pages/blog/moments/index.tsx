@@ -17,6 +17,7 @@ import {
 import { useImageStatus } from '@lailai0916/ui';
 import { useVisitorTimeZone } from '@site/src/hooks/useVisitorTimeZone';
 import { formatLocalDate, formatLocalTime } from '@site/src/utils/dateTime';
+import { trackEvent } from '@site/src/utils/analytics';
 import styles from './styles.module.css';
 
 const PAGE_SIZE = 15;
@@ -167,6 +168,11 @@ function MomentGallery({ images }: { images: MomentImageData[] }) {
         ? edge
         : target.offsetLeft + target.offsetWidth / 2 - viewport.clientWidth / 2;
 
+    trackEvent('feature_use', {
+      surface: 'moments',
+      feature: 'image_gallery',
+      action: direction === 1 ? 'next' : 'previous',
+    });
     viewport.scrollTo({
       left,
       behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth',
@@ -260,7 +266,7 @@ export default function Moments() {
           </span>
         </header>
 
-        <section className={styles.feed} aria-label={TITLE}>
+        <section className={styles.feed} aria-label={TITLE} data-analytics-surface="moments">
           {visibleMoments.map((moment, i) => {
             const metaItems: MetaBarItem[] = [];
             if (moment.event) {
@@ -325,7 +331,14 @@ export default function Moments() {
             <button
               type="button"
               className={styles.loadMoreLink}
-              onClick={() => setVisibleCount((c) => Math.min(c + PAGE_SIZE, totalCount))}
+              onClick={() => {
+                trackEvent('feature_use', {
+                  surface: 'moments',
+                  feature: 'moments_feed',
+                  action: 'load_more',
+                });
+                setVisibleCount((c) => Math.min(c + PAGE_SIZE, totalCount));
+              }}
             >
               {LOAD_MORE_LABEL}
             </button>

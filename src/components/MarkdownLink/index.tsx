@@ -27,7 +27,7 @@ export default function MarkdownLink({ href, children, ...props }: Props) {
   }
 
   return (
-    <MDXA {...props} href={href}>
+    <MDXA data-analytics-surface="article" {...props} href={href}>
       {iconSrc && <WebsiteIcon key={iconSrc} src={iconSrc} className={styles.icon} />}
       {children}
     </MDXA>

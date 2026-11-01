@@ -13,6 +13,7 @@ import SectionHeader from '@lailai0916/ui/SectionHeader';
 import { FRIEND_LIST } from '@site/src/data/friends';
 import { useFetch } from '@site/src/hooks/useFetch';
 import { useVisitorTimeZone } from '@site/src/hooks/useVisitorTimeZone';
+import { trackEvent } from '@site/src/utils/analytics';
 import { formatLocalDate, formatLocalTime } from '@site/src/utils/dateTime';
 import { parseFriendFeed, type FriendFeedData } from './_feed';
 import styles from './styles.module.css';
@@ -136,7 +137,18 @@ export function FriendFeed(): ReactNode {
         <DataState
           message={FEED_ERROR}
           action={
-            <Button variant="secondary" size="sm" onClick={retry}>
+            <Button
+              variant="secondary"
+              size="sm"
+              onClick={() => {
+                trackEvent('feature_use', {
+                  surface: 'friend_posts',
+                  feature: 'data',
+                  action: 'retry',
+                });
+                retry();
+              }}
+            >
               {FEED_RETRY}
             </Button>
           }
@@ -158,6 +170,8 @@ export function FriendFeed(): ReactNode {
                 >
                   <Link
                     href={post.url}
+                    data-analytics-surface="friend_posts"
+                    data-analytics-id={post.friend.id}
                     target="_blank"
                     rel="noopener noreferrer"
                     className={styles.feedLink}

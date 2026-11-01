@@ -11,6 +11,7 @@ import Slider from '@lailai0916/ui/Slider';
 import Button from '@lailai0916/ui/Button';
 import Card from '@lailai0916/ui/Card';
 import { useAnimationActivity } from '@site/src/hooks/useAnimationActivity';
+import { trackEvent } from '@site/src/utils/analytics';
 import styles from './styles.module.css';
 
 const TWO_PI = 2 * Math.PI;
@@ -132,6 +133,7 @@ function createParticle(still = false): Particle {
 }
 
 interface SliderProps {
+  parameter: 'sigma' | 'rho' | 'beta';
   label: string;
   value: number;
   min: number;
@@ -141,7 +143,17 @@ interface SliderProps {
   onChange: (value: number) => void;
 }
 
-function ParamSlider({ label, value, min, max, step, precision, onChange }: SliderProps) {
+function ParamSlider({
+  parameter,
+  label,
+  value,
+  min,
+  max,
+  step,
+  precision,
+  onChange,
+}: SliderProps) {
+  const changeStart = useRef<number | null>(null);
   return (
     <Slider
       label={label}
@@ -151,7 +163,22 @@ function ParamSlider({ label, value, min, max, step, precision, onChange }: Slid
       min={min}
       max={max}
       step={step}
-      onChange={onChange}
+      onChange={(next) => {
+        if (next !== value && changeStart.current === null) changeStart.current = value;
+        onChange(next);
+      }}
+      onCommit={(next) => {
+        const previous = changeStart.current;
+        changeStart.current = null;
+        if (previous === null || previous === next) return;
+        trackEvent('feature_use', {
+          surface: 'playground',
+          feature: 'lorenz_attractor',
+          action: 'set_parameter',
+          item_id: parameter,
+          value: next,
+        });
+      }}
       aria-label={label}
     />
   );
@@ -430,6 +457,7 @@ export default function LorenzAttractor() {
       </Card>
       <div className={styles.controls}>
         <ParamSlider
+          parameter="sigma"
           label="σ"
           value={sigma}
           min={1}
@@ -439,6 +467,7 @@ export default function LorenzAttractor() {
           onChange={setSigma}
         />
         <ParamSlider
+          parameter="rho"
           label="ρ"
           value={rho}
           min={1}
@@ -448,6 +477,7 @@ export default function LorenzAttractor() {
           onChange={setRho}
         />
         <ParamSlider
+          parameter="beta"
           label="β"
           value={beta}
           min={0.5}
@@ -457,12 +487,30 @@ export default function LorenzAttractor() {
           onChange={setBeta}
         />
         <div className={styles.actions}>
-          <Button variant="secondary" onClick={handleReset} aria-label={RESET_LABEL}>
+          <Button
+            variant="secondary"
+            onClick={() => {
+              trackEvent('feature_use', {
+                surface: 'playground',
+                feature: 'lorenz_attractor',
+                action: 'reset',
+              });
+              handleReset();
+            }}
+            aria-label={RESET_LABEL}
+          >
             {RESET_LABEL}
           </Button>
           <Button
             variant="secondary"
-            onClick={() => setPaused((value) => !(value ?? reducedMotion !== false))}
+            onClick={() => {
+              trackEvent('feature_use', {
+                surface: 'playground',
+                feature: 'lorenz_attractor',
+                action: isPaused ? 'resume' : 'pause',
+              });
+              setPaused(!isPaused);
+            }}
             aria-label={isPaused ? PLAY_LABEL : PAUSE_LABEL}
           >
             {isPaused ? PLAY_LABEL : PAUSE_LABEL}

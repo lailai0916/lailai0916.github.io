@@ -5,6 +5,7 @@ import { translate } from '@docusaurus/Translate';
 import Icon from '@lailai0916/ui/Icon';
 import IconButton from '@lailai0916/ui/IconButton';
 import NavbarLanguageToggle from '@site/src/components/Navbar/LanguageToggle';
+import { trackEvent } from '@site/src/utils/analytics';
 import NavbarColorModeToggle from '@theme/Navbar/ColorModeToggle';
 import NavbarLogo from '@theme/Navbar/Logo';
 import { useMobileNavbarItems } from '../items';
@@ -22,7 +23,15 @@ function CloseButton() {
         description: 'The ARIA label for close button of mobile sidebar',
       })}
       className="navbar-sidebar__close navbar-control"
-      onClick={() => mobileSidebar.toggle()}
+      onClick={() => {
+        trackEvent('feature_use', {
+          surface: 'navbar',
+          feature: 'mobile_navigation',
+          action: 'close',
+          value: 'button',
+        });
+        mobileSidebar.toggle();
+      }}
     >
       <Icon icon="lucide:x" width={17} height={17} aria-hidden="true" />
     </IconButton>

@@ -1,6 +1,7 @@
 import Icon from '@lailai0916/ui/Icon';
 import { translate } from '@docusaurus/Translate';
 import Button from '@lailai0916/ui/Button';
+import { trackEvent } from '@site/src/utils/analytics';
 
 const RETRY_LABEL = translate({
   id: 'pages.insights.retry',
@@ -23,7 +24,10 @@ export default function RetryButton({
       size="sm"
       variant="secondary"
       leftIcon={<Icon icon="lucide:refresh-cw" aria-hidden="true" />}
-      onClick={onClick}
+      onClick={() => {
+        trackEvent('feature_use', { surface: 'insights', feature: 'data', action: 'retry' });
+        onClick();
+      }}
       disabled={busy}
       aria-busy={busy}
     >

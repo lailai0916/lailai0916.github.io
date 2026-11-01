@@ -1,5 +1,5 @@
 import { Input, InputGroup } from '@lailai0916/ui/Field';
-import { useState, useEffect, type ReactNode } from 'react';
+import { useState, useEffect, useRef, useCallback, type ReactNode } from 'react';
 import BrowserOnly from '@docusaurus/BrowserOnly';
 import Skeleton from '@lailai0916/ui/Skeleton';
 import { translate } from '@docusaurus/Translate';
@@ -20,7 +20,8 @@ import {
   type ExperimentalSettings,
 } from '@site/src/hooks/useExperimentalFlag';
 import { useThemeColors } from '@site/src/hooks/useThemeColors';
-import { themeStorage } from '@site/src/utils/colorUtils';
+import { getThemeDefaults, readStoredColorState, themeStorage } from '@site/src/utils/colorUtils';
+import { trackEvent } from '@site/src/utils/analytics';
 import {
   FONT_FAMILY_KEY,
   FONT_FAMILY_DEFAULT,
@@ -36,6 +37,7 @@ import {
   applyFontFamily,
   applyFontSize,
   applyLineHeight,
+  readFontFamily,
   readFontSize,
   readLineHeight,
   writeFontSize,
@@ -108,7 +110,16 @@ function ThemeSettings() {
       <Segmented<ThemeChoice>
         value={colorModeChoice as ThemeChoice}
         items={themeOptions}
-        onChange={(v) => setColorMode(v)}
+        onChange={(value) => {
+          setColorMode(value);
+          if (value !== colorModeChoice) {
+            trackEvent('preference_change', {
+              surface: 'settings',
+              preference: 'theme',
+              value: value ?? 'system',
+            });
+          }
+        }}
         ariaLabel={title}
       />
     </TitleCard>
@@ -135,6 +146,32 @@ function AccentColor() {
   const { colorState, inputColor, updateColor, commitColor, resetColors } = useThemeColors(
     colorMode === 'dark'
   );
+  const pickerRef = useRef<HTMLInputElement>(null);
+  const committedColor = useRef(colorState.baseColor.toLowerCase());
+  const recordColor = useCallback((value: string) => {
+    const next = value.toLowerCase();
+    if (next === committedColor.current) return;
+    committedColor.current = next;
+    trackEvent('preference_change', {
+      surface: 'settings',
+      preference: 'accent_color',
+      value: next,
+    });
+  }, []);
+  const commitInputColor = () => {
+    commitColor();
+    recordColor(colorState.baseColor);
+  };
+
+  useEffect(() => {
+    const picker = pickerRef.current;
+    // React's color onChange also fires for previews; native change marks a committed selection.
+    const handleCommit = () => {
+      if (picker) recordColor(picker.value);
+    };
+    picker?.addEventListener('change', handleCommit);
+    return () => picker?.removeEventListener('change', handleCommit);
+  }, [recordColor]);
 
   return (
     <TitleCard
@@ -153,9 +190,11 @@ function AccentColor() {
         <div className={styles.colorInputContainer}>
           <InputGroup className={styles.colorField}>
             <input
+              ref={pickerRef}
               type="color"
               value={colorState.baseColor}
               onChange={(e) => updateColor(e.target.value)}
+              onBlur={commitInputColor}
               className={styles.colorPickerInput}
               aria-label={translate({
                 id: 'pages.settings.item.color.picker',
@@ -167,7 +206,7 @@ function AccentColor() {
               monospace
               value={inputColor}
               onChange={(e) => updateColor(e.target.value)}
-              onBlur={commitColor}
+              onBlur={commitInputColor}
               onKeyDown={(e) => e.key === 'Enter' && e.currentTarget.blur()}
               style={{ minWidth: '7ch' }}
               size={8}
@@ -181,7 +220,10 @@ function AccentColor() {
             variant="secondary"
             size="sm"
             className={styles.resetButton}
-            onClick={resetColors}
+            onClick={() => {
+              resetColors();
+              recordColor(getThemeDefaults(colorMode === 'dark').primary);
+            }}
           >
             {translate({
               id: 'pages.settings.item.color.default',
@@ -198,7 +240,10 @@ function AccentColor() {
                 background: color,
               }}
               aria-pressed={colorState.baseColor.toLowerCase() === color.toLowerCase()}
-              onClick={() => updateColor(color)}
+              onClick={() => {
+                updateColor(color);
+                recordColor(color);
+              }}
               aria-label={translate(
                 {
                   id: 'pages.settings.item.color.ariaLabel',
@@ -274,7 +319,16 @@ function FontFamily() {
       <Segmented<FontFamilyChoice>
         value={choice}
         items={items}
-        onChange={setChoice}
+        onChange={(value) => {
+          setChoice(value);
+          if (value !== choice) {
+            trackEvent('preference_change', {
+              surface: 'settings',
+              preference: 'font_family',
+              value,
+            });
+          }
+        }}
         ariaLabel={title}
       />
     </TitleCard>
@@ -287,18 +341,36 @@ function Typography() {
   // applied on mount — `applyPreferences` already put it on :root at boot.
   const [fontSize, setFontSize] = useState(() => readFontSize() ?? FONT_SIZE_DEFAULT);
   const [lineHeight, setLineHeight] = useState(() => readLineHeight() ?? LINE_HEIGHT_DEFAULT);
+  const committedSize = useRef(fontSize);
+  const committedLineHeight = useRef(lineHeight);
 
   // Applied on release rather than per drag frame: --global-font-size reflows the
   // whole document, so following the thumb would stutter under the cursor.
   const commitSize = (size: number) => {
     applyFontSize(size);
     writeFontSize(size);
+    if (size !== committedSize.current) {
+      committedSize.current = size;
+      trackEvent('preference_change', {
+        surface: 'settings',
+        preference: 'font_size',
+        value: size,
+      });
+    }
   };
 
   const commitLineHeight = (value: number) => {
     const rounded = Math.round(value * 20) / 20;
     applyLineHeight(rounded);
     writeLineHeight(rounded);
+    if (rounded !== committedLineHeight.current) {
+      committedLineHeight.current = rounded;
+      trackEvent('preference_change', {
+        surface: 'settings',
+        preference: 'line_height',
+        value: rounded,
+      });
+    }
   };
 
   return (
@@ -386,6 +458,7 @@ function ExperimentalFeatures() {
   );
 
   const handleToggle = (key: keyof ExperimentalSettings, checked: boolean) => {
+    if (toggles[key] === checked) return;
     setToggles((prev) => ({ ...prev, [key]: checked }));
 
     // Notify same-tab listeners; cross-tab updates flow through the `storage` event.
@@ -394,6 +467,14 @@ function ExperimentalFeatures() {
         detail: { key, checked },
       })
     );
+    const preference = (
+      {
+        classicDesign: 'classic_design',
+        grayMode: 'gray_mode',
+        debugMode: 'debug_mode',
+      } as const
+    )[key];
+    trackEvent('preference_change', { surface: 'settings', preference, value: checked });
   };
 
   return (
@@ -429,9 +510,27 @@ function ExperimentalFeatures() {
 }
 
 function QuickActions() {
-  const { setColorMode } = useColorMode();
+  const { colorMode, colorModeChoice, setColorMode } = useColorMode();
 
   function handleReset() {
+    let experimentalChanged = false;
+    try {
+      const settings: unknown = JSON.parse(
+        localStorage.getItem(EXPERIMENTAL_STORAGE_KEY) ?? 'null'
+      );
+      experimentalChanged =
+        isExperimentalSettings(settings) && Object.values(settings).some(Boolean);
+    } catch {
+      // Invalid stored values already resolve to the default settings.
+    }
+    const changed =
+      colorModeChoice !== null ||
+      readStoredColorState(colorMode === 'dark').baseColor !==
+        getThemeDefaults(colorMode === 'dark').primary ||
+      (readFontFamily() ?? FONT_FAMILY_DEFAULT) !== FONT_FAMILY_DEFAULT ||
+      (readFontSize() ?? FONT_SIZE_DEFAULT) !== FONT_SIZE_DEFAULT ||
+      (readLineHeight() ?? LINE_HEIGHT_DEFAULT) !== LINE_HEIGHT_DEFAULT ||
+      experimentalChanged;
     setColorMode(null);
     // Keep an explicit default so another locale's legacy color cannot return.
     themeStorage.set('{}');
@@ -439,6 +538,13 @@ function QuickActions() {
     localStorage.removeItem(FONT_SIZE_KEY);
     localStorage.removeItem(LINE_HEIGHT_KEY);
     localStorage.removeItem(EXPERIMENTAL_STORAGE_KEY);
+    if (changed) {
+      trackEvent('preference_change', {
+        surface: 'settings',
+        preference: 'reset',
+        value: 'defaults',
+      });
+    }
     window.location.reload();
   }
 
@@ -450,7 +556,14 @@ function QuickActions() {
         message: 'Surprise Me',
       }),
       icon: 'lucide:sparkles',
-      onClick: fireConfetti,
+      onClick: () => {
+        fireConfetti();
+        trackEvent('feature_use', {
+          surface: 'settings',
+          feature: 'confetti',
+          action: 'activate',
+        });
+      },
     },
     {
       key: 'reset' as const,

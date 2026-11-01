@@ -25,6 +25,7 @@ import Heading from '@theme/Heading';
 import SearchField from '@lailai0916/ui/SearchField';
 import Button from '@lailai0916/ui/Button';
 import DataState from '@lailai0916/ui/DataState';
+import useSearchAnalytics from '@site/src/hooks/useSearchAnalytics';
 import styles from './styles.module.css';
 
 function useDocumentsFoundPlural() {
@@ -228,6 +229,13 @@ function SearchPageContent(): ReactNode {
   const pageTitle = getSearchPageTitle(searchQuery);
 
   const [searchResultState, setSearchResultState] = useState(initialSearchResultState);
+  const searchAnalytics = useSearchAnalytics({
+    surface: 'search_page',
+    query: searchQuery,
+    resultCount: searchResultState.totalResults,
+    resultKind: 'records',
+    ready: searchResultState.query === searchQuery,
+  });
   const requestPage = useRef<((page: number) => void) | null>(null);
   const processUrl = useEvent(processSearchResultUrl);
   const { searchVersions } = docsSearchVersionsHelpers;
@@ -373,6 +381,8 @@ function SearchPageContent(): ReactNode {
                 description: 'The ARIA label for search page input',
               })}
               onValueChange={setSearchQuery}
+              onCompositionStart={searchAnalytics.onCompositionStart}
+              onCompositionEnd={searchAnalytics.onCompositionEnd}
               value={searchQuery}
               autoComplete="off"
               autoFocus
@@ -409,7 +419,14 @@ function SearchPageContent(): ReactNode {
             {searchResultState.items.map(({ title, url, summary, breadcrumbs }, i) => (
               <article key={i} className={styles.searchResultItem}>
                 <Heading as="h2" className={styles.searchResultItemHeading}>
-                  <Link to={url} dangerouslySetInnerHTML={{ __html: title }} />
+                  <Link
+                    to={url}
+                    onClick={() => searchAnalytics.trackResultClick(url, i + 1)}
+                    onAuxClick={(event) => {
+                      if (event.button === 1) searchAnalytics.trackResultClick(url, i + 1);
+                    }}
+                    dangerouslySetInnerHTML={{ __html: title }}
+                  />
                 </Heading>
 
                 {breadcrumbs.length > 0 && (

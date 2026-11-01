@@ -6,6 +6,7 @@ import { useTOCHighlight, type TOCHighlightConfig } from '@docusaurus/theme-comm
 import type { TOCItem } from '@docusaurus/mdx-loader';
 import { translate } from '@docusaurus/Translate';
 import Card from '@lailai0916/ui/Card';
+import { trackEvent } from '@site/src/utils/analytics';
 import styles from './styles.module.css';
 
 const CONTENTS_LABEL = translate({
@@ -78,6 +79,7 @@ export default function TableOfContents({
 }) {
   const progress = useScrollProgress();
   const disclosureRef = useRef<HTMLDetailsElement>(null);
+  const disclosureActionRef = useRef<boolean | null>(null);
   const linkClassName = collapsible ? 'article-toc-link-collapsible' : 'article-toc-link-full';
   const highlightConfig = useMemo<TOCHighlightConfig | undefined>(() => {
     if (!toc.length) return undefined;
@@ -111,6 +113,13 @@ export default function TableOfContents({
                   to={`#${encodeURIComponent(item.id)}`}
                   className={clsx(styles.tocLink, linkClassName)}
                   onClick={() => {
+                    trackEvent('feature_use', {
+                      surface: 'article',
+                      feature: 'article_contents',
+                      action: 'navigate',
+                      item_id: item.id,
+                      value: collapsible ? 'collapsible' : 'full',
+                    });
                     if (disclosureRef.current) disclosureRef.current.open = false;
                   }}
                   dangerouslySetInnerHTML={{ __html: item.value }}
@@ -135,8 +144,29 @@ export default function TableOfContents({
       aria-label={CONTENTS_LABEL}
     >
       {collapsible ? (
-        <details ref={disclosureRef} className={styles.tocDisclosure}>
-          <summary className={styles.tocDisclosureSummary}>
+        <details
+          ref={disclosureRef}
+          className={styles.tocDisclosure}
+          onToggle={(event) => {
+            const open = event.currentTarget.open;
+            if (disclosureActionRef.current === open) {
+              trackEvent('feature_use', {
+                surface: 'article',
+                feature: 'article_contents',
+                action: open ? 'open' : 'close',
+              });
+            }
+            disclosureActionRef.current = null;
+          }}
+        >
+          <summary
+            className={styles.tocDisclosureSummary}
+            onClick={(event) => {
+              if (!event.defaultPrevented && disclosureRef.current) {
+                disclosureActionRef.current = !disclosureRef.current.open;
+              }
+            }}
+          >
             {header}
             <span className={styles.tocDisclosureChevron} aria-hidden="true">
               <Icon icon="lucide:chevron-down" width="1em" height="1em" />

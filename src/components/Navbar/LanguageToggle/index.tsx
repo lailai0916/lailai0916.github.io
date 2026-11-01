@@ -6,6 +6,7 @@ import { mergeSearchStrings, useHistorySelector } from '@docusaurus/theme-common
 import { useAlternatePageUtils } from '@docusaurus/theme-common/internal';
 import { translate } from '@docusaurus/Translate';
 import Hint from '@lailai0916/ui/Hint';
+import { trackEvent } from '@site/src/utils/analytics';
 import styles from './styles.module.css';
 
 interface Props {
@@ -54,7 +55,25 @@ export default function NavbarLanguageToggle({ queryString, onClick }: Props): R
         autoAddBaseUrl={false}
         hrefLang={nextConfig.htmlLang}
         aria-label={label}
-        onClick={onClick}
+        onClick={(event) => {
+          onClick?.();
+          if (!event.defaultPrevented && event.button === 0) {
+            trackEvent('preference_change', {
+              surface: event.currentTarget.closest('.navbar-sidebar') ? 'sidebar' : 'navbar',
+              preference: 'language',
+              value: nextLocale,
+            });
+          }
+        }}
+        onAuxClick={(event) => {
+          if (!event.defaultPrevented && event.button === 1) {
+            trackEvent('preference_change', {
+              surface: event.currentTarget.closest('.navbar-sidebar') ? 'sidebar' : 'navbar',
+              preference: 'language',
+              value: nextLocale,
+            });
+          }
+        }}
       >
         <span aria-hidden="true">{currentLocale === 'zh-Hans' ? '中' : 'EN'}</span>
       </Link>

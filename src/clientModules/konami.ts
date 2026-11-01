@@ -2,6 +2,7 @@
 // confetti burst (which already opts out under prefers-reduced-motion).
 import ExecutionEnvironment from '@docusaurus/ExecutionEnvironment';
 import { fireConfetti } from '../utils/confetti';
+import { trackEvent } from '../utils/analytics';
 
 if (ExecutionEnvironment.canUseDOM) {
   const SEQUENCE = [
@@ -30,6 +31,7 @@ if (ExecutionEnvironment.canUseDOM) {
     if (progress === SEQUENCE.length) {
       progress = 0;
       fireConfetti();
+      trackEvent('feature_use', { surface: 'content', feature: 'konami', action: 'activate' });
     }
   });
 }

@@ -24,6 +24,7 @@ import Button from '@lailai0916/ui/Button';
 import Tooltip from '@lailai0916/ui/Tooltip';
 import { TRAVEL_LIST } from '@site/src/data/travel';
 import { formatCalendarMonth } from '@site/src/utils/dateTime';
+import { trackEvent } from '@site/src/utils/analytics';
 import {
   getFeatureIso3,
   getTravelDatesByCountry,
@@ -400,6 +401,7 @@ function TravelGlobeClient({
 
     controls.autoRotate = false;
     globe.pointOfView(DEFAULT_POINT_OF_VIEW, duration);
+    trackEvent('feature_use', { surface: 'travel', feature: 'globe', action: 'reset_view' });
 
     if (duration === 0) {
       controls.autoRotate = rotationEnabledRef.current;
@@ -420,9 +422,18 @@ function TravelGlobeClient({
     controls.autoRotate = next;
     rotationEnabledRef.current = next;
     setIsRotating(next);
+    trackEvent('feature_use', {
+      surface: 'travel',
+      feature: 'globe',
+      action: 'toggle_rotation',
+      value: next,
+    });
   };
 
-  const retryGeoJson = () => setGeoRequest((request) => request + 1);
+  const retryGeoJson = () => {
+    setGeoRequest((request) => request + 1);
+    trackEvent('feature_use', { surface: 'travel', feature: 'globe', action: 'retry' });
+  };
 
   const handleReady = useCallback(() => setIsGlobeReady(true), []);
 

@@ -294,19 +294,6 @@ const config: Config = {
     mermaid: true,
   },
 
-  scripts: [
-    ...(process.env.NODE_ENV === 'production'
-      ? [
-          {
-            src: 'https://analytics.lailai.one/script.js',
-            defer: true,
-            'data-website-id': '69d3b7de-90e4-4be4-a355-633620ecefdb',
-            'data-performance': 'true',
-          },
-        ]
-      : []),
-  ],
-
   clientModules: [
     // First: consoleSignature reads the live --ifm-color-primary, so the stored
     // accent color has to be on :root before it runs.
@@ -314,12 +301,14 @@ const config: Config = {
     require.resolve('./src/clientModules/katexCopyTex.ts'),
     require.resolve('./src/clientModules/consoleSignature.ts'),
     require.resolve('./src/clientModules/konami.ts'),
+    require.resolve('./src/clientModules/analytics.ts'),
     require.resolve('./src/clientModules/umamiRecorder.ts'),
   ],
 
   themes: ['@docusaurus/theme-mermaid', '@docusaurus/theme-live-codeblock'],
 
   plugins: [
+    require.resolve('./src/plugins/analytics/index.ts'),
     require.resolve('./src/plugins/privacyLastUpdate/index.ts'),
     require.resolve('./src/plugins/externalFonts/index.ts'),
     require.resolve('./src/plugins/problemChunks/index.ts'),

@@ -9,6 +9,7 @@ import type { Props } from '@theme/ColorModeToggle';
 import type { ColorMode } from '@docusaurus/theme-common';
 
 import IconButton from '@lailai0916/ui/IconButton';
+import { trackEvent } from '@site/src/utils/analytics';
 import styles from './styles.module.css';
 
 // The order of color modes is defined here, and can be customized with swizzle
@@ -109,7 +110,17 @@ function ColorModeToggle({
           buttonClassName
         )}
         type="button"
-        onClick={() => onChange(getNextColorMode(value, respectPrefersColorScheme))}
+        onClick={(event) => {
+          const next = getNextColorMode(value, respectPrefersColorScheme);
+          onChange(next);
+          if (next !== value) {
+            trackEvent('preference_change', {
+              surface: event.currentTarget.closest('.navbar-sidebar') ? 'sidebar' : 'navbar',
+              preference: 'theme',
+              value: next ?? 'system',
+            });
+          }
+        }}
         disabled={!isBrowser}
       >
         <CurrentColorModeIcon />

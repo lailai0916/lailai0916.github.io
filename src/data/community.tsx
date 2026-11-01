@@ -1,14 +1,18 @@
 import { translate } from '@docusaurus/Translate';
 
 interface CommunityItem {
+  id: string;
   title: string;
   text: string;
   icon: string;
   href: string;
+  contact?: boolean;
 }
 
 export const COMMUNITY_LIST: CommunityItem[] = [
   {
+    id: 'phone',
+    contact: true,
     title: translate({
       id: 'data.community.phone',
       message: 'Phone',
@@ -18,6 +22,8 @@ export const COMMUNITY_LIST: CommunityItem[] = [
     href: 'tel:+86 17757102577',
   },
   {
+    id: 'email',
+    contact: true,
     title: translate({
       id: 'data.community.email',
       message: 'Email',
@@ -27,6 +33,7 @@ export const COMMUNITY_LIST: CommunityItem[] = [
     href: 'mailto:lailai0x394@gmail.com',
   },
   {
+    id: 'x',
     title: translate({
       id: 'data.community.x',
       message: 'X (Twitter)',
@@ -36,6 +43,8 @@ export const COMMUNITY_LIST: CommunityItem[] = [
     href: 'https://x.com/lailai0x394',
   },
   {
+    id: 'telegram',
+    contact: true,
     title: translate({
       id: 'data.community.telegram',
       message: 'Telegram',
@@ -45,6 +54,7 @@ export const COMMUNITY_LIST: CommunityItem[] = [
     href: 'https://t.me/lailai0916',
   },
   {
+    id: 'linkedin',
     title: translate({
       id: 'data.community.linkedin',
       message: 'LinkedIn',
@@ -54,6 +64,7 @@ export const COMMUNITY_LIST: CommunityItem[] = [
     href: 'https://www.linkedin.com/in/lailai0916',
   },
   {
+    id: 'github',
     title: translate({
       id: 'data.community.github',
       message: 'GitHub',
@@ -63,6 +74,8 @@ export const COMMUNITY_LIST: CommunityItem[] = [
     href: 'https://github.com/lailai0916',
   },
   {
+    id: 'qq',
+    contact: true,
     title: translate({
       id: 'data.community.qq',
       message: 'QQ',
@@ -72,6 +85,8 @@ export const COMMUNITY_LIST: CommunityItem[] = [
     href: 'https://qm.qq.com/q/aREQfS97PO',
   },
   {
+    id: 'wechat',
+    contact: true,
     title: translate({
       id: 'data.community.wechat',
       message: 'WeChat',
@@ -81,6 +96,7 @@ export const COMMUNITY_LIST: CommunityItem[] = [
     href: 'https://cloud.lailai.one/f/6dzs5/community-wechat.jpg',
   },
   {
+    id: 'bilibili',
     title: translate({
       id: 'data.community.bilibili',
       message: 'bilibili',
@@ -90,6 +106,7 @@ export const COMMUNITY_LIST: CommunityItem[] = [
     href: 'https://space.bilibili.com/1796257032',
   },
   {
+    id: 'luogu',
     title: translate({
       id: 'data.community.luogu',
       message: 'Luogu',

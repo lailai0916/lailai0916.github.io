@@ -18,6 +18,7 @@ import { translate } from '@docusaurus/Translate';
 import Button from '@lailai0916/ui/Button';
 import Card from '@lailai0916/ui/Card';
 import { useAnimationActivity } from '@site/src/hooks/useAnimationActivity';
+import { trackEvent } from '@site/src/utils/analytics';
 import styles from './styles.module.css';
 
 const RESET_LABEL = translate({
@@ -302,7 +303,18 @@ export default function NeuralNetwork({ instant = false }: { instant?: boolean }
       </Card>
 
       <div className={styles.controls}>
-        <Button variant="secondary" fullWidth onClick={resetToDefault}>
+        <Button
+          variant="secondary"
+          fullWidth
+          onClick={() => {
+            trackEvent('feature_use', {
+              surface: 'playground',
+              feature: 'neural_network',
+              action: 'reset',
+            });
+            resetToDefault();
+          }}
+        >
           {RESET_LABEL}
         </Button>
         <Button
@@ -310,6 +322,11 @@ export default function NeuralNetwork({ instant = false }: { instant?: boolean }
           fullWidth
           disabled={isEmpty}
           onClick={() => {
+            trackEvent('feature_use', {
+              surface: 'playground',
+              feature: 'neural_network',
+              action: 'clear',
+            });
             cancelPending();
             setNormalizing(false);
             setAnimating(false);
@@ -325,12 +342,31 @@ export default function NeuralNetwork({ instant = false }: { instant?: boolean }
             variant="primary"
             fullWidth
             disabled={isEmpty || isNormalized}
-            onClick={() => normalizePointsAnimated(1)}
+            onClick={() => {
+              trackEvent('feature_use', {
+                surface: 'playground',
+                feature: 'neural_network',
+                action: 'preprocess',
+              });
+              void normalizePointsAnimated(1);
+            }}
           >
             {PREPROCESS_LABEL}
           </Button>
         ) : (
-          <Button variant="secondary" fullWidth disabled={isEmpty || checkLocked} onClick={animate}>
+          <Button
+            variant="secondary"
+            fullWidth
+            disabled={isEmpty || checkLocked}
+            onClick={() => {
+              trackEvent('feature_use', {
+                surface: 'playground',
+                feature: 'neural_network',
+                action: 'run',
+              });
+              animate();
+            }}
+          >
             {CHECK_LABEL}
           </Button>
         )}

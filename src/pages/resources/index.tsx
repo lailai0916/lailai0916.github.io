@@ -1,5 +1,12 @@
 import Hint from '@lailai0916/ui/Hint';
-import { type CSSProperties, type ReactNode, useMemo, useRef, useState } from 'react';
+import {
+  type CSSProperties,
+  type MouseEvent,
+  type ReactNode,
+  useMemo,
+  useRef,
+  useState,
+} from 'react';
 import Icon from '@lailai0916/ui/Icon';
 import Layout from '@theme/Layout';
 
@@ -25,6 +32,8 @@ import {
 } from '@site/src/data/resources';
 import { translate } from '@docusaurus/Translate';
 import { getFaviconUrl } from '@site/src/utils/favicon';
+import useSearchAnalytics from '@site/src/hooks/useSearchAnalytics';
+import { trackEvent } from '@site/src/utils/analytics';
 import styles from './styles.module.css';
 
 const TITLE = translate({
@@ -84,11 +93,15 @@ function SearchBar({
   searchValue,
   onSearchChange,
   onCategoryClear,
+  onCompositionStart,
+  onCompositionEnd,
 }: {
   activeCategory: string | null;
   searchValue: string;
   onSearchChange: (value: string) => void;
   onCategoryClear: () => void;
+  onCompositionStart: () => void;
+  onCompositionEnd: () => void;
 }) {
   const activeCat = RESOURCE_LIST.find((category) => category.id === activeCategory);
   return (
@@ -96,6 +109,8 @@ function SearchBar({
       <SearchField
         value={searchValue}
         onValueChange={onSearchChange}
+        onCompositionStart={onCompositionStart}
+        onCompositionEnd={onCompositionEnd}
         placeholder={SEARCH_PLACEHOLDER}
         aria-label={SEARCH_PLACEHOLDER}
         prefix={
@@ -129,6 +144,7 @@ function ResourceCard({ resource }: { resource: ResourceItem }) {
   return (
     <LinkCard
       to={resource.href}
+      data-analytics-id={resource.id}
       title={resource.title}
       description={resource.description}
       imageSlot={<WebsiteIcon src={getFaviconUrl(resource.href)} className={styles.resourceIcon} />}
@@ -178,8 +194,21 @@ export default function Resources(): ReactNode {
     () => filterResourceCategories(RESOURCE_LIST, activeCategory, searchQuery),
     [activeCategory, searchQuery]
   );
+  const searchAnalytics = useSearchAnalytics({
+    surface: 'resources',
+    query: searchQuery,
+    resultCount: filteredCategories.reduce((sum, category) => sum + category.resources.length, 0),
+    resultKind: 'resources',
+    scope: activeCategory ?? 'all',
+  });
+  const handleResourceActivate = (event: MouseEvent<HTMLDivElement>) => {
+    if (event.defaultPrevented || event.button > 1 || !(event.target instanceof Element)) return;
+    if (event.target.closest('a[data-analytics-id]')) searchAnalytics.flush();
+  };
   const selectCategory = (category: string) => {
-    setActiveCategory((current) => (current === category ? null : category));
+    const next = activeCategory === category ? null : category;
+    setActiveCategory(next);
+    trackEvent('filter_change', { surface: 'resources', filter: 'category', value: next ?? 'all' });
     setCategoriesOpen(false);
     if (categoryDisclosureRef.current?.getClientRects().length) {
       categoryDisclosureRef.current.focus();
@@ -271,9 +300,25 @@ export default function Resources(): ReactNode {
               activeCategory={activeCategory}
               searchValue={searchQuery}
               onSearchChange={setSearchQuery}
-              onCategoryClear={() => setActiveCategory(null)}
+              onCategoryClear={() => {
+                if (activeCategory === null) return;
+                setActiveCategory(null);
+                trackEvent('filter_change', {
+                  surface: 'resources',
+                  filter: 'category',
+                  value: 'all',
+                });
+              }}
+              onCompositionStart={searchAnalytics.onCompositionStart}
+              onCompositionEnd={searchAnalytics.onCompositionEnd}
             />
-            <div className={styles.results}>
+            <div
+              className={styles.results}
+              data-analytics-surface="resources"
+              data-analytics-from-search={searchQuery.trim() ? 'true' : 'false'}
+              onClickCapture={handleResourceActivate}
+              onAuxClickCapture={handleResourceActivate}
+            >
               {filteredCategories.map((category) => (
                 <CategorySection key={category.id} category={category} />
               ))}

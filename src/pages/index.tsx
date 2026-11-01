@@ -8,6 +8,7 @@ import clsx from 'clsx';
 import Icon from '@lailai0916/ui/Icon';
 import { getTimes } from 'suncalc';
 import { COMMUNITY_LIST } from '@site/src/data/community';
+import { trackEvent } from '@site/src/utils/analytics';
 import {
   formatLocalTime,
   getDateKey,
@@ -208,7 +209,14 @@ export default function Home(): ReactNode {
 
   function toggleMascot() {
     mascotTriggerRef.current = document.activeElement as HTMLElement | null;
-    setMascotVisible((visible) => !visible);
+    const visible = !mascotVisible;
+    setMascotVisible(visible);
+    trackEvent('feature_use', {
+      surface: 'home',
+      feature: 'mascot',
+      action: visible ? 'show' : 'hide',
+      item_id: 'avatar',
+    });
   }
 
   useEffect(() => {
@@ -410,8 +418,11 @@ export default function Home(): ReactNode {
               <div className={styles.socialLinks}>
                 {COMMUNITY_LIST.map((social) => (
                   <Link
-                    key={social.title}
+                    key={social.id}
                     href={social.href}
+                    data-analytics-surface="home"
+                    data-analytics-id={social.id}
+                    data-analytics-event={social.contact ? 'contact_click' : undefined}
                     className={styles.socialLink}
                     aria-label={social.title}
                   >
@@ -438,6 +449,12 @@ export default function Home(): ReactNode {
             })}
             onClick={(event) => {
               setMascotVisible(false);
+              trackEvent('feature_use', {
+                surface: 'home',
+                feature: 'mascot',
+                action: 'hide',
+                item_id: 'mascot',
+              });
               if (event.detail === 0 && mascotTriggerRef.current?.isConnected) {
                 mascotTriggerRef.current.focus({ preventScroll: true });
               }

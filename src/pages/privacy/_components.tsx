@@ -12,6 +12,7 @@ import Card from '@lailai0916/ui/Card';
 import TableOfContents from '@site/src/components/Article/TableOfContents';
 import { PageContent, PageHeader, PageTitle } from '@lailai0916/ui/Page';
 import { formatCalendarDate, getDateKey, SHANGHAI_TIME_ZONE } from '@site/src/utils/dateTime';
+import { trackEvent } from '@site/src/utils/analytics';
 import styles from './styles.module.css';
 
 type PrivacyLastUpdateData = Record<string, number | null>;
@@ -160,6 +161,7 @@ function PrivacyContact() {
       variant="secondary"
       leftIcon={<Icon icon="lucide:mail" width={16} height={16} />}
       onClick={() => {
+        trackEvent('contact_click', { surface: 'content', contact: 'email', item_id: 'privacy' });
         window.location.href = CONTACT_EMAIL;
       }}
     >

@@ -59,7 +59,8 @@ npm run i18n              # Regenerate translation JSON for zh-Hans
 npm run format            # Prettier write across the repo
 npm run lint              # ESLint over src/ (flat config, eslint.config.mjs)
 npm run typecheck         # tsc, no emit
-npm run check             # i18n + format + lint + typecheck — run before every commit
+npm run check:analytics    # Analytics privacy, attribution, and failure-behavior checks
+npm run check             # i18n + format + lint + typecheck + analytics — run before every commit
 npm run check:ci          # check + fail if generation or formatting changed the worktree
 ```
 
@@ -118,6 +119,7 @@ Custom-page notes: `insights` is live Umami traffic. `blog/overview` and `blog/m
 
 - **Build-time metadata:** `docusaurus.config.ts` shells to `git` (via `safeGit`) for `BUILD_TIME` / `GIT_SHA` / `GIT_COUNT` / `DEBUG_ID`, exposed as `customFields`. Keep the fallback intact — the site must still build outside a git checkout.
 - **Umami recorder:** `src/clientModules/umamiRecorder.ts` loads the official recorder only when the production tracker is present, reusing its website ID. Skip iframe contexts so the analytics heatmap preview does not record itself. Sampling, input masking, and replay duration are configured on the Umami server; keep both Privacy page locales aligned with those settings.
+- **Umami events:** `src/utils/analytics.ts` is the typed event gateway; `src/clientModules/analytics.ts` owns delegated link activation, and `useSearchAnalytics` owns settled searches. The server-only `src/plugins/analytics` injects the `analyticsPolicy.ts` head bootstrap before the production tracker so the first request also removes unsupported query parameters and search-page query titles, without copying the bootstrap into the client configuration. See `.agents/rules/components.md` for the event schema and counting rules. The recorder is a separate collection path; do not claim this tracker policy sanitizes replay data.
 - **Browser storage:** both locales explicitly share the root site's original Docusaurus namespace. The config's head script migrates the old Chinese theme and accent slots before the framework restores the theme; keep it ahead of the framework's theme bootstrap and remove migrated slots so resets cannot restore old choices.
 - **Markdown pipeline:** docs, blog, and pages share one plugin set — `remark-math` + `rehype-katex`, `remark-plugin-npm2yarn`, Mermaid, live-codeblock; admonitions add a custom `example` keyword.
 - **Image zoom:** `src/components/ImageZoom`, mounted by `Root`, registers `.markdown img:not([data-link-icon]), img[data-zoomable]` as content is mounted and removes disconnected images. Linked images retain their link action. The native modal preview supports keyboard opening, Escape, a close control, reduced motion, and focus restoration. Custom pages opt in with `data-zoomable`; Moments images carry their original dimensions to reserve layout space.

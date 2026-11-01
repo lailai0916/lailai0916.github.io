@@ -4,6 +4,7 @@ import { useNavbarMobileSidebar } from '@docusaurus/theme-common/internal';
 import { translate } from '@docusaurus/Translate';
 import Icon from '@lailai0916/ui/Icon';
 import IconButton from '@lailai0916/ui/IconButton';
+import { trackEvent } from '@site/src/utils/analytics';
 import styles from './styles.module.css';
 
 export default function MobileSidebarToggle(): ReactNode {
@@ -23,6 +24,12 @@ export default function MobileSidebarToggle(): ReactNode {
         return;
       }
       event.preventDefault();
+      trackEvent('feature_use', {
+        surface: 'navbar',
+        feature: 'mobile_navigation',
+        action: 'close',
+        value: 'escape',
+      });
       toggle();
       // Wait until closing the drawer makes its trigger visible again.
       requestAnimationFrame(() => toggleRef.current?.focus({ preventScroll: true }));
@@ -36,7 +43,15 @@ export default function MobileSidebarToggle(): ReactNode {
     <IconButton
       ref={toggleRef}
       size="sm"
-      onClick={toggle}
+      onClick={() => {
+        trackEvent('feature_use', {
+          surface: 'navbar',
+          feature: 'mobile_navigation',
+          action: shown ? 'close' : 'open',
+          value: 'button',
+        });
+        toggle();
+      }}
       label={translate({
         id: 'theme.docs.sidebar.toggleSidebarButtonAriaLabel',
         message: 'Toggle navigation bar',

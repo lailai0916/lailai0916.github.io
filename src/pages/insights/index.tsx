@@ -24,6 +24,7 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import { formatCompact } from '@lailai0916/ui';
 import { KUMA_STATUS_URL } from '@site/src/utils/kuma';
 import { UMAMI_DASHBOARD_URL } from '@site/src/utils/umami';
+import { trackEvent } from '@site/src/utils/analytics';
 import { toPageviewsData } from './_components/seriesFormat';
 import MetricList from '@lailai0916/ui/MetricList';
 import ReferrerIcon from './_components/ReferrerIcon';
@@ -591,7 +592,14 @@ export default function Insights(): ReactNode {
     <Layout title={TITLE} description={DESCRIPTION}>
       <PageHeader>
         <PageTitle title={MODIFICATION} description={DESCRIPTION} />
-        <RangeBar range={range} onChange={setRange} />
+        <RangeBar
+          range={range}
+          onChange={(next) => {
+            if (next === range) return;
+            setRange(next);
+            trackEvent('filter_change', { surface: 'insights', filter: 'time_range', value: next });
+          }}
+        />
       </PageHeader>
       <PageContent className={clsx('site-page-content', styles.layout)}>
         <section className={styles.dataSection} aria-labelledby="traffic-title">

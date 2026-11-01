@@ -4,6 +4,7 @@ import { translate } from '@docusaurus/Translate';
 import Icon from '@lailai0916/ui/Icon';
 import Card from '@lailai0916/ui/Card';
 import { useMeasuredHeight } from '@lailai0916/ui';
+import { trackEvent } from '@site/src/utils/analytics';
 import styles from './styles.module.css';
 
 const LABEL = translate({
@@ -56,6 +57,11 @@ export default function Summary({ content }: { content: string }) {
   }, [phase, count, content.length]);
 
   const toggle = () => {
+    trackEvent('feature_use', {
+      surface: 'article',
+      feature: 'article_summary',
+      action: phase === 'idle' || !open ? 'open' : 'close',
+    });
     if (phase === 'idle') {
       setPhase('typing');
       setOpen(true);

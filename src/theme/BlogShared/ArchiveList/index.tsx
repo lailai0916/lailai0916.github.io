@@ -23,7 +23,13 @@ type PostLike = {
   };
 };
 
-export function BlogArchiveList({ posts }: { posts: readonly PostLike[] }) {
+export function BlogArchiveList({
+  posts,
+  onPostActivate,
+}: {
+  posts: readonly PostLike[];
+  onPostActivate?: (permalink: string) => void;
+}) {
   const { i18n } = useDocusaurusContext();
   const { selectMessage } = usePluralForm();
   const countFormatter = new Intl.NumberFormat(i18n.currentLocale);
@@ -79,7 +85,20 @@ export function BlogArchiveList({ posts }: { posts: readonly PostLike[] }) {
                   {getDateKey(post.metadata.date, timeZone).slice(5, 10)}
                 </div>
                 <Hint label={post.metadata.title} onlyWhenTruncated>
-                  <Link to={post.metadata.permalink} className={styles.recentLink}>
+                  <Link
+                    to={post.metadata.permalink}
+                    className={styles.recentLink}
+                    onClick={(event) => {
+                      if (!event.defaultPrevented && event.button === 0) {
+                        onPostActivate?.(post.metadata.permalink);
+                      }
+                    }}
+                    onAuxClick={(event) => {
+                      if (!event.defaultPrevented && event.button === 1) {
+                        onPostActivate?.(post.metadata.permalink);
+                      }
+                    }}
+                  >
                     {post.metadata.title}
                   </Link>
                 </Hint>

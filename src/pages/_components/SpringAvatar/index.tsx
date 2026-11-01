@@ -1,6 +1,7 @@
 import { useEffect, useRef, type PointerEvent as ReactPointerEvent } from 'react';
 import { translate } from '@docusaurus/Translate';
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import { trackEvent } from '@site/src/utils/analytics';
 import styles from './styles.module.css';
 
 type Drag = {
@@ -113,6 +114,9 @@ export default function SpringAvatar({ onToggleMascot }: SpringAvatarProps) {
       Math.hypot(event.clientX - drag.startX, event.clientY - drag.startY) < dragThreshold;
     endDrag(event.pointerId);
     clickAllowedRef.current = clicked;
+    if (!clicked) {
+      trackEvent('feature_use', { surface: 'home', feature: 'avatar', action: 'drag' });
+    }
   }
 
   useEffect(() => {

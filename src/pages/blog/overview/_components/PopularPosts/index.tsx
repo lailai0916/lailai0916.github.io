@@ -5,6 +5,7 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import { usePluralForm } from '@docusaurus/theme-common';
 import Button from '@lailai0916/ui/Button';
 import { useFetch } from '@site/src/hooks/useFetch';
+import { trackEvent } from '@site/src/utils/analytics';
 import { loadPopularPosts, POPULAR_POST_LIMIT, type BlogItems } from './data';
 
 export default function PopularPosts({ items }: { items: BlogItems }) {
@@ -40,7 +41,17 @@ export default function PopularPosts({ items }: { items: BlogItems }) {
           : undefined
       }
       errorAction={
-        <Button size="sm" onClick={retry}>
+        <Button
+          size="sm"
+          onClick={() => {
+            trackEvent('feature_use', {
+              surface: 'overview',
+              feature: 'popular_posts',
+              action: 'retry',
+            });
+            retry();
+          }}
+        >
           {translate({ id: 'pages.overview.popular.retry', message: 'Retry' })}
         </Button>
       }

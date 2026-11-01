@@ -6,6 +6,7 @@ import Button from '@lailai0916/ui/Button';
 import Card from '@lailai0916/ui/Card';
 import { FRIEND_LIST } from '@site/src/data/friends';
 import { translate } from '@docusaurus/Translate';
+import { trackEvent } from '@site/src/utils/analytics';
 import { FriendAvatar, FriendFeed } from './_components';
 import styles from './styles.module.css';
 
@@ -48,6 +49,11 @@ export default function Friends(): ReactNode {
           variant="secondary"
           leftIcon={<Icon icon="lucide:link-2" width={16} height={16} />}
           onClick={() => {
+            trackEvent('contact_click', {
+              surface: 'friends',
+              contact: 'email',
+              item_id: 'friend_link_request',
+            });
             window.location.href = REQUEST_LINK_EMAIL;
           }}
         >
@@ -56,10 +62,12 @@ export default function Friends(): ReactNode {
       </PageHeader>
       <PageContent className="site-page-content">
         <div className={styles.layout}>
-          {FRIEND_LIST.map((friend, index) => (
+          {FRIEND_LIST.map((friend) => (
             <Card
-              key={`${friend.title}-${index}`}
+              key={friend.id}
               href={friend.href}
+              data-analytics-surface="friends"
+              data-analytics-id={friend.id}
               padding="1.25rem"
               className={styles.friendCard}
               wrapperClassName={styles.friendLink}

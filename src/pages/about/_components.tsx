@@ -372,8 +372,14 @@ export function Community() {
     <Card padding="0" className={styles.community}>
       <ul className={styles.communityGrid} role="list">
         {COMMUNITY_LIST.map((item) => (
-          <li key={item.title} className={styles.communityItem}>
-            <Link href={item.href} className={styles.communityLink}>
+          <li key={item.id} className={styles.communityItem}>
+            <Link
+              href={item.href}
+              data-analytics-surface="about"
+              data-analytics-id={item.id}
+              data-analytics-event={item.contact ? 'contact_click' : undefined}
+              className={styles.communityLink}
+            >
               <CommunityDetails item={item} />
             </Link>
           </li>

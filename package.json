@@ -21,7 +21,8 @@
     "format": "npx prettier --write .",
     "lint": "eslint src",
     "typecheck": "tsc",
-    "check": "npm run i18n && npm run format && npm run lint && npm run typecheck",
+    "check:analytics": "node .github/scripts/check-analytics.mjs",
+    "check": "npm run i18n && npm run format && npm run lint && npm run typecheck && npm run check:analytics",
     "check:ci": "npm run check && git diff --exit-code && test -z \"$(git status --porcelain --untracked-files=all)\""
   },
   "dependencies": {

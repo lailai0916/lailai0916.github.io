@@ -1,6 +1,7 @@
 import { translate } from '@docusaurus/Translate';
 
 interface FriendItem {
+  id: string;
   title: string;
   description?: string;
   href: string;
@@ -10,6 +11,7 @@ interface FriendItem {
 
 export const FRIEND_LIST: FriendItem[] = [
   {
+    id: 'sintle',
     title: translate({
       id: 'data.friends.sintle.title',
       message: 'Sintle',
@@ -23,6 +25,7 @@ export const FRIEND_LIST: FriendItem[] = [
     rss: 'https://sintle.github.io/blog/rss.xml',
   },
   {
+    id: 'yunLuo',
     title: translate({
       id: 'data.friends.yunLuo.title',
       message: 'YunLuo',
@@ -36,6 +39,7 @@ export const FRIEND_LIST: FriendItem[] = [
     rss: 'https://feed.cnblogs.com/blog/u/836486/rss/',
   },
   {
+    id: 'mirekintoc',
     title: translate({
       id: 'data.friends.mirekintoc.title',
       message: 'Mirekintoc',
@@ -48,6 +52,7 @@ export const FRIEND_LIST: FriendItem[] = [
     avatar: 'https://vochant.github.io/images/logo.svg',
   },
   {
+    id: 'akorz',
     title: translate({
       id: 'data.friends.akorz.title',
       message: 'AKorz',
@@ -60,6 +65,7 @@ export const FRIEND_LIST: FriendItem[] = [
     avatar: 'https://cdn.luogu.com.cn/upload/usericon/716602.png',
   },
   {
+    id: 'cefqwq',
     title: translate({
       id: 'data.friends.cefqwq.title',
       message: 'CEFqwq',
@@ -72,6 +78,7 @@ export const FRIEND_LIST: FriendItem[] = [
     avatar: 'https://cdn.luogu.com.cn/upload/usericon/482610.png',
   },
   {
+    id: 'ladex',
     title: translate({
       id: 'data.friends.ladex.title',
       message: 'LaDeX',
@@ -84,6 +91,7 @@ export const FRIEND_LIST: FriendItem[] = [
     avatar: 'https://cdn.luogu.com.cn/upload/usericon/431658.png',
   },
   {
+    id: 'dreamMaker',
     title: translate({
       id: 'data.friends.dreamMaker.title',
       message: 'Dream__maker',
@@ -97,6 +105,7 @@ export const FRIEND_LIST: FriendItem[] = [
     rss: 'https://feed.cnblogs.com/blog/u/819543/rss/',
   },
   {
+    id: 'jasonshan10',
     title: translate({
       id: 'data.friends.jasonshan10.title',
       message: 'Jasonshan10',
@@ -106,6 +115,7 @@ export const FRIEND_LIST: FriendItem[] = [
     rss: 'https://feed.cnblogs.com/blog/u/811362/rss/',
   },
   {
+    id: 'sjz2010',
     title: translate({
       id: 'data.friends.sjz2010.title',
       message: 'SJZ2010',
@@ -119,6 +129,7 @@ export const FRIEND_LIST: FriendItem[] = [
     rss: 'https://feed.cnblogs.com/blog/u/800177/rss/',
   },
   {
+    id: 'castamere',
     title: translate({
       id: 'data.friends.castamere.title',
       message: 'Castamere',
@@ -132,6 +143,7 @@ export const FRIEND_LIST: FriendItem[] = [
     rss: 'https://www.castamerego.com/blog/rss.xml',
   },
   {
+    id: 'cszj',
     title: translate({
       id: 'data.friends.cszj.title',
       message: '吕舒君的博客',
@@ -145,6 +157,7 @@ export const FRIEND_LIST: FriendItem[] = [
     rss: 'https://cszj.wang/rss.xml',
   },
   {
+    id: 'kuizuo',
     title: translate({
       id: 'data.friends.kuizuo.title',
       message: '愧怍',
@@ -158,6 +171,7 @@ export const FRIEND_LIST: FriendItem[] = [
     rss: 'https://kuizuo.me/blog/rss.xml',
   },
   {
+    id: 'skywt',
     title: translate({
       id: 'data.friends.skywt.title',
       message: 'SkyWT',
@@ -171,6 +185,7 @@ export const FRIEND_LIST: FriendItem[] = [
     rss: 'https://skywt.net/rss.xml',
   },
   {
+    id: 'baoshuo',
     title: translate({
       id: 'data.friends.baoshuo.title',
       message: 'Baoshuo',
@@ -184,6 +199,7 @@ export const FRIEND_LIST: FriendItem[] = [
     rss: 'https://oi.baoshuo.ren/atom.xml',
   },
   {
+    id: 'cyanHaze',
     title: translate({
       id: 'data.friends.cyanHaze.title',
       message: "CyanHaze's Homepage",
@@ -197,6 +213,7 @@ export const FRIEND_LIST: FriendItem[] = [
     rss: 'https://cyanhaze.github.io/feed.xml',
   },
   {
+    id: 'studyingFather',
     title: translate({
       id: 'data.friends.studyingFather.title',
       message: "Studying Father's blog",
@@ -210,6 +227,7 @@ export const FRIEND_LIST: FriendItem[] = [
     rss: 'https://studyingfather.com/feed',
   },
   {
+    id: 'federico2903',
     title: translate({
       id: 'data.friends.federico2903.title',
       message: 'Federico2903',
@@ -222,6 +240,7 @@ export const FRIEND_LIST: FriendItem[] = [
     avatar: 'https://mydisk.cn-nb1.rains3.com/头像.png',
   },
   {
+    id: 'xiaoten',
     title: translate({
       id: 'data.friends.xiaoten.title',
       message: '小十的个人博客',

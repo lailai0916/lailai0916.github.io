@@ -74,14 +74,17 @@ export default function Footer(): ReactNode {
   const titleAccent = siteConfig.title.slice(titleAccentStart);
   const feeds = [
     {
+      format: 'rss',
       label: RSS_FEED_LABEL,
       href: useBaseUrl('/blog/rss.xml', { absolute: true }),
     },
     {
+      format: 'atom',
       label: ATOM_FEED_LABEL,
       href: useBaseUrl('/blog/atom.xml', { absolute: true }),
     },
     {
+      format: 'json',
       label: JSON_FEED_LABEL,
       href: useBaseUrl('/blog/feed.json', { absolute: true }),
     },
@@ -94,7 +97,10 @@ export default function Footer(): ReactNode {
   const columns = isMultiColumnFooterLinks(footer.links) ? footer.links : [];
 
   return (
-    <footer className={clsx(ThemeClassNames.layout.footer.container, 'footer', styles.footer)}>
+    <footer
+      className={clsx(ThemeClassNames.layout.footer.container, 'footer', styles.footer)}
+      data-analytics-surface="footer"
+    >
       <div className={styles.inner}>
         <div className={styles.top}>
           <section className={styles.brand} aria-label={SITE_INFORMATION_LABEL}>
@@ -131,7 +137,13 @@ export default function Footer(): ReactNode {
                         ·
                       </span>
                       <Hint label={label}>
-                        <a className={styles.metaLink} href={feed.href} aria-label={label}>
+                        <a
+                          className={styles.metaLink}
+                          href={feed.href}
+                          aria-label={label}
+                          data-analytics-event="feed_click"
+                          data-analytics-format={feed.format}
+                        >
                           {feed.label}
                         </a>
                       </Hint>

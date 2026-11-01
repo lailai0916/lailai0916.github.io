@@ -10,6 +10,7 @@ import { translate } from '@docusaurus/Translate';
 import Button from '@lailai0916/ui/Button';
 import Card from '@lailai0916/ui/Card';
 import { useAnimationActivity } from '@site/src/hooks/useAnimationActivity';
+import { trackEvent } from '@site/src/utils/analytics';
 import { dft, type Point, type FourierCoefficient } from './fourier';
 import styles from './styles.module.css';
 
@@ -542,15 +543,44 @@ export default function FourierTransform() {
         />
       </Card>
       <div className={styles.controls}>
-        <Button variant="secondary" onClick={initDefault} aria-label={RESET_LABEL}>
+        <Button
+          variant="secondary"
+          onClick={() => {
+            trackEvent('feature_use', {
+              surface: 'playground',
+              feature: 'fourier_transform',
+              action: 'reset',
+            });
+            initDefault();
+          }}
+          aria-label={RESET_LABEL}
+        >
           {RESET_LABEL}
         </Button>
-        <Button variant="secondary" onClick={handleClear} aria-label={CLEAR_LABEL}>
+        <Button
+          variant="secondary"
+          onClick={() => {
+            trackEvent('feature_use', {
+              surface: 'playground',
+              feature: 'fourier_transform',
+              action: 'clear',
+            });
+            handleClear();
+          }}
+          aria-label={CLEAR_LABEL}
+        >
           {CLEAR_LABEL}
         </Button>
         <Button
           variant="secondary"
-          onClick={() => setIsPaused(!isPaused)}
+          onClick={() => {
+            trackEvent('feature_use', {
+              surface: 'playground',
+              feature: 'fourier_transform',
+              action: isPaused ? 'resume' : 'pause',
+            });
+            setIsPaused(!isPaused);
+          }}
           disabled={isDrawing}
           aria-label={isPaused ? PLAY_LABEL : PAUSE_LABEL}
         >

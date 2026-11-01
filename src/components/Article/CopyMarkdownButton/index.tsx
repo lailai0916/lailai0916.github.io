@@ -1,6 +1,7 @@
 import CopyButton from '@lailai0916/ui/CopyButton';
 import { useCallback, useEffect, useRef } from 'react';
 import { translate } from '@docusaurus/Translate';
+import { trackEvent } from '@site/src/utils/analytics';
 
 declare const require: any;
 
@@ -83,6 +84,7 @@ export default function CopyMarkdownButton({ source }: { source: string }) {
       iconOnly
       size="xs"
       value={value}
+      onCopied={() => trackEvent('copy_success', { surface: 'article', format: 'markdown' })}
       label={COPY_LABEL}
       copiedLabel={COPIED_LABEL}
       errorLabel={COPY_ERROR_LABEL}
