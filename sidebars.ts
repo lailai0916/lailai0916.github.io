@@ -708,6 +708,7 @@ const sidebars: SidebarsConfig = {
         'project/tools/tools',
         'project/tools/academy',
         'project/tools/code-comparator',
+        'project/tools/device-preview',
         'project/tools/sun-path-atlas',
         'project/tools/hydrocarbon-namer',
         'project/tools/peercoach',

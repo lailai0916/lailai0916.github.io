@@ -1,0 +1,78 @@
+---
+title: Device Preview
+description: 本文介绍网站设备预览图工具，说明透明图片合成、批量导出与自动截图的使用方式。
+summary: Device Preview 将网站截图放入固定的 MacBook 与 iPhone 构图，生成高清透明 PNG。它保留设备比例、屏幕位置、摄像头开孔和重叠关系，按实际可见边界裁切，再添加等宽留白。输入可以是原生尺寸截图，也可以是按独立视口捕获的网页。一份配置可批量生成不同主题与语言的版本，页面准备钩子用于等待应用就绪、固定展示内容或叠加图片。公开示例使用原创示意外框，实际设备素材由使用者按许可自行提供。
+---
+
+## 项目仓库
+
+<GitHub repo="lailai0916/device-preview" />
+
+## 简介
+
+Device Preview 是一个本地运行的网站设备预览图工具，将网页截图与 MacBook、iPhone 外框合成为高清透明 PNG。
+
+它最初用于制作 [lailai's Home](https://lailai.one) 的两周年宣传图，随后整理成可复用的项目。设备构图保持固定，网站内容、主题、语言和输出文件名通过配置切换。
+
+## 特性
+
+- **精确合成**：保留设备比例、屏幕开孔和重叠位置，按实际可见边界裁切，四周添加等宽透明留白。
+- **独立视口**：分别配置浏览器视口和截图像素密度，让内容大小与输出清晰度可以独立调整。已有截图须匹配原生尺寸。
+- **批量导出**：一份配置生成多个版本，例如电脑浅色、手机深色及其反转组合，再分别导出中文与英文。
+- **页面准备**：通过钩子等待页面就绪、切换主题、固定时间和身份文案，也可在屏幕内叠加吉祥物等图片。
+- **生成记录**：输出清单记录输入哈希值、尺寸与合成几何信息，便于检查和复现。
+
+## 使用
+
+需要 Node.js 22 或更新版本。克隆仓库并运行示例：
+
+```bash
+git clone https://github.com/lailai0916/device-preview.git
+cd device-preview
+npm ci
+npm run demo
+```
+
+示例使用原创示意外框，在 `output/demo/` 生成两张透明 PNG，无须下载设备素材或安装浏览器。
+
+### 已有截图
+
+复制配置，并准备外框与截图：
+
+```bash
+mkdir -p local/assets local/screenshots
+cp examples/preview.config.mjs local/preview.config.mjs
+```
+
+将兼容外框放入 `local/assets/`，按配置中的文件名准备截图。当前预设使用以下网页图片尺寸：
+
+|  设备   | 网页 PNG 尺寸 | 默认浏览器视口 |
+| :-----: | :-----------: | :------------: |
+| MacBook |  3472 × 2170  |   1280 × 800   |
+| iPhone  |  1320 × 2580  |   396 × 774    |
+
+调整配置后运行：
+
+```bash
+npm run render -- --config local/preview.config.mjs
+```
+
+结果写入 `local/output/`。文件路径相对于配置文件解析，`local/` 已被 Git 忽略。
+
+### 自动截图
+
+安装 Chromium，将 `examples/capture.config.mjs` 与基础配置复制到同一目录，再按网站实际情况修改网址和 `prepare` 钩子：
+
+```bash
+npx playwright install chromium
+cp examples/capture.config.mjs local/capture.config.mjs
+npm run render -- --config local/capture.config.mjs
+```
+
+截图使用独立的浏览器环境，并等待字体、图片和页面准备钩子完成。完整字段与示例见仓库的 [使用文档](https://github.com/lailai0916/device-preview/blob/main/README.zh-Hans.md)。
+
+## 素材与许可
+
+预设按实测外框确定屏幕位置与遮罩，更换设备型号需要重新测量。
+
+项目代码采用 MIT 许可。仓库不分发 Apple 原始外框或个人截图，设备素材需自行获取并遵守对应许可。公开示例使用原创示意素材，代码许可不覆盖另外提供的外框与截图。
