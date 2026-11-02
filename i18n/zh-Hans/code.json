@@ -3370,5 +3370,8 @@
   "theme.tags.tagsPageTitle": {
     "message": "标签",
     "description": "The title of the tag list page"
+  },
+  "components.navbar.mobileNavigation": {
+    "message": "导航"
   }
 }

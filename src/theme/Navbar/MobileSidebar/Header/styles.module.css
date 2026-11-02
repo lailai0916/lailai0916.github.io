@@ -2,6 +2,10 @@
   gap: var(--navbar-control-gap);
 }
 
+.close:global(.navbar-sidebar__close) {
+  margin: 0;
+}
+
 .brand :global(.navbar__brand) {
   flex: 1;
   min-width: 0;

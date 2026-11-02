@@ -22,8 +22,9 @@ function CloseButton() {
         message: 'Close navigation bar',
         description: 'The ARIA label for close button of mobile sidebar',
       })}
-      className="navbar-sidebar__close navbar-control"
+      className={clsx('navbar-sidebar__close navbar-control', styles.close)}
       onClick={() => {
+        if (!mobileSidebar.shown) return;
         trackEvent('feature_use', {
           surface: 'navbar',
           feature: 'mobile_navigation',
@@ -43,7 +44,19 @@ export default function NavbarMobileSidebarHeader(): ReactNode {
   const mobileSidebar = useNavbarMobileSidebar();
 
   return (
-    <div className={clsx('navbar-sidebar__brand', styles.brand)}>
+    <div
+      className={clsx('navbar-sidebar__brand', styles.brand)}
+      onClick={(event) => {
+        if (
+          mobileSidebar.shown &&
+          event.target instanceof Element &&
+          event.target.closest('.navbar__brand')
+        ) {
+          mobileSidebar.toggle();
+        }
+      }}
+    >
+      <CloseButton />
       <NavbarLogo />
       <div className={styles.actions}>
         {localeItem && (
@@ -54,7 +67,6 @@ export default function NavbarMobileSidebarHeader(): ReactNode {
         )}
         <NavbarColorModeToggle />
       </div>
-      <CloseButton />
     </div>
   );
 }

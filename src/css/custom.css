@@ -88,12 +88,9 @@ html.debug-mode span {
     color-mix(in srgb, var(--lk-divider-color) 55%, transparent);
 }
 
-/* Backdrop filters and transforms trap fixed descendants inside the navbar's containing block. */
-.navbar.navbar-sidebar--show {
-  backdrop-filter: none;
-  -webkit-backdrop-filter: none;
-  transform: none;
-  transition: none;
+/* The native drawer owns the backdrop without changing the navbar's glass material. */
+.navbar-sidebar__backdrop {
+  display: none;
 }
 
 @media (min-width: 997px) {

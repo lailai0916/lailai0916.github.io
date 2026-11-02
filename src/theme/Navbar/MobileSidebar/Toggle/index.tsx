@@ -1,4 +1,4 @@
-import { useEffect, useRef, type ReactNode } from 'react';
+import type { ReactNode } from 'react';
 import clsx from 'clsx';
 import { useNavbarMobileSidebar } from '@docusaurus/theme-common/internal';
 import { translate } from '@docusaurus/Translate';
@@ -9,41 +9,13 @@ import styles from './styles.module.css';
 
 export default function MobileSidebarToggle(): ReactNode {
   const { toggle, shown } = useNavbarMobileSidebar();
-  const toggleRef = useRef<HTMLButtonElement>(null);
-
-  useEffect(() => {
-    if (!shown) return;
-
-    const onKeyDown = (event: KeyboardEvent) => {
-      if (
-        event.key !== 'Escape' ||
-        event.defaultPrevented ||
-        event.isComposing ||
-        document.querySelector('.DocSearch--active, dialog[open]')
-      ) {
-        return;
-      }
-      event.preventDefault();
-      trackEvent('feature_use', {
-        surface: 'navbar',
-        feature: 'mobile_navigation',
-        action: 'close',
-        value: 'escape',
-      });
-      toggle();
-      // Wait until closing the drawer makes its trigger visible again.
-      requestAnimationFrame(() => toggleRef.current?.focus({ preventScroll: true }));
-    };
-
-    window.addEventListener('keydown', onKeyDown);
-    return () => window.removeEventListener('keydown', onKeyDown);
-  }, [shown, toggle]);
 
   return (
     <IconButton
-      ref={toggleRef}
       size="sm"
-      onClick={() => {
+      onClick={(event) => {
+        // Safari does not focus mouse-clicked buttons before the modal captures its return target.
+        event.currentTarget.focus({ preventScroll: true });
         trackEvent('feature_use', {
           surface: 'navbar',
           feature: 'mobile_navigation',
@@ -58,6 +30,8 @@ export default function MobileSidebarToggle(): ReactNode {
         description: 'The ARIA label for hamburger menu button of mobile navigation',
       })}
       aria-expanded={shown}
+      aria-controls="mobile-navigation"
+      aria-haspopup="dialog"
       className={clsx('navbar__toggle navbar-control', styles.toggle)}
       type="button"
     >
