@@ -407,6 +407,12 @@
   "data.friends.xiaoten.description": {
     "message": "调配电流、像素和代码的ISFP型导体。"
   },
+  "data.friends.debert.title": {
+    "message": "Debert"
+  },
+  "data.friends.debert.description": {
+    "message": "Great oaks from little acorns grow."
+  },
   "data.resources.site.google.title": {
     "message": "谷歌"
   },

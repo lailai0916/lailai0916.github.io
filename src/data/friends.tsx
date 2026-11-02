@@ -253,4 +253,18 @@ export const FRIEND_LIST: FriendItem[] = [
     avatar: 'https://www.xiaoten.com/avatar.png',
     rss: 'https://www.xiaoten.com/index.xml',
   },
+  {
+    id: 'debert',
+    title: translate({
+      id: 'data.friends.debert.title',
+      message: 'Debert',
+    }),
+    description: translate({
+      id: 'data.friends.debert.description',
+      message: 'Great oaks from little acorns grow.',
+    }),
+    href: 'https://debertjamie.com',
+    avatar: 'https://debertjamie.com/avatar.png',
+    rss: 'https://debertjamie.com/feed.xml',
+  },
 ];
