@@ -1679,6 +1679,9 @@
   "pages.home.mascot.hide": {
     "message": "收起吉祥物"
   },
+  "pages.home.mascot.greeting": {
+    "message": "你好呀，欢迎来玩！"
+  },
   "components.browserWindow.openLink": {
     "message": "在新标签页打开链接"
   },

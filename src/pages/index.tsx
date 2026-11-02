@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState, type ReactNode } from 'react';
+import { useEffect, useId, useRef, useState, type ReactNode } from 'react';
 import Layout from '@theme/Layout';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -206,6 +206,7 @@ export default function Home(): ReactNode {
   const [mascotVisible, setMascotVisible] = useState(false);
   const mascotButtonRef = useMascotMotion(mascotVisible);
   const mascotTriggerRef = useRef<HTMLElement | null>(null);
+  const mascotGreetingId = useId();
 
   function toggleMascot() {
     mascotTriggerRef.current = document.activeElement as HTMLElement | null;
@@ -438,30 +439,39 @@ export default function Home(): ReactNode {
           data-visible={mascotVisible || undefined}
           aria-hidden={!mascotVisible}
         >
-          <button
-            ref={mascotButtonRef}
-            type="button"
-            className={styles.mascotButton}
-            disabled={!mascotVisible}
-            aria-label={translate({
-              id: 'pages.home.mascot.hide',
-              message: 'Hide mascot',
+          <div className={styles.mascotViewport}>
+            <button
+              ref={mascotButtonRef}
+              type="button"
+              className={styles.mascotButton}
+              disabled={!mascotVisible}
+              aria-label={translate({
+                id: 'pages.home.mascot.hide',
+                message: 'Hide mascot',
+              })}
+              aria-describedby={mascotVisible ? mascotGreetingId : undefined}
+              onClick={(event) => {
+                setMascotVisible(false);
+                trackEvent('feature_use', {
+                  surface: 'home',
+                  feature: 'mascot',
+                  action: 'hide',
+                  item_id: 'mascot',
+                });
+                if (event.detail === 0 && mascotTriggerRef.current?.isConnected) {
+                  mascotTriggerRef.current.focus({ preventScroll: true });
+                }
+              }}
+            >
+              <img src={mascotSrc} width={336} height={336} alt="" draggable={false} />
+            </button>
+          </div>
+          <div id={mascotGreetingId} className={styles.mascotGreeting}>
+            {translate({
+              id: 'pages.home.mascot.greeting',
+              message: 'Hi there, welcome!',
             })}
-            onClick={(event) => {
-              setMascotVisible(false);
-              trackEvent('feature_use', {
-                surface: 'home',
-                feature: 'mascot',
-                action: 'hide',
-                item_id: 'mascot',
-              });
-              if (event.detail === 0 && mascotTriggerRef.current?.isConnected) {
-                mascotTriggerRef.current.focus({ preventScroll: true });
-              }
-            }}
-          >
-            <img src={mascotSrc} width={336} height={336} alt="" draggable={false} />
-          </button>
+          </div>
         </div>
       </section>
     </Layout>
