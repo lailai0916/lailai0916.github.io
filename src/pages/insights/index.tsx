@@ -577,7 +577,6 @@ function SectionLink({ href, label }: { href: string; label: string }) {
       )}
     >
       {label}
-      <Icon icon="lucide:arrow-up-right" className={styles.sectionLinkIcon} aria-hidden="true" />
     </Link>
   );
 }

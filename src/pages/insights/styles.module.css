@@ -156,7 +156,6 @@ html[data-theme='dark'] .heroDeltaDown {
 .sectionLink {
   display: inline-flex;
   align-items: center;
-  gap: 0.2em;
   min-height: 44px;
   padding: 0 0.25rem;
   border-radius: 6px;
@@ -172,17 +171,6 @@ html[data-theme='dark'] .heroDeltaDown {
 .sectionLink:focus-visible {
   outline: none;
   box-shadow: var(--lk-focus-ring);
-}
-
-.sectionLinkIcon {
-  flex: none;
-  font-size: 0.95rem;
-  translate: 0 -1px;
-  transition: transform var(--lk-transition);
-}
-
-.sectionLink:hover .sectionLinkIcon {
-  transform: translate(1px, -1px);
 }
 
 .dataSection {
