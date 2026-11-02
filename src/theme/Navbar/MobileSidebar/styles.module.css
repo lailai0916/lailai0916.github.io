@@ -47,7 +47,9 @@ dialog.dialog[open] {
 
 .dialog :global(.navbar-sidebar__brand) {
   flex: none;
-  height: calc(var(--ifm-navbar-height) - var(--lk-divider-width));
+  height: var(--ifm-navbar-height);
+  border-bottom: var(--lk-divider-width) solid
+    color-mix(in srgb, var(--lk-divider-color) 55%, transparent);
   background: var(--ifm-navbar-background-color);
   box-shadow: none;
 }
