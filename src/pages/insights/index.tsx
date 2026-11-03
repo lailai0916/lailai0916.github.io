@@ -603,6 +603,7 @@ export default function Insights(): ReactNode {
       <PageContent className={clsx('site-page-content', styles.layout)}>
         <section className={styles.dataSection} aria-labelledby="traffic-title">
           <SectionHeader
+            className={styles.sectionHeader}
             titleId="traffic-title"
             title={TRAFFIC_TITLE}
             aside={<SectionLink href={UMAMI_DASHBOARD_URL} label={TRAFFIC_ANALYTICS_LINK} />}
@@ -613,7 +614,11 @@ export default function Insights(): ReactNode {
           </div>
         </section>
         <section className={styles.dataSection} aria-labelledby="audience-title">
-          <SectionHeader titleId="audience-title" title={audienceTitle} />
+          <SectionHeader
+            className={styles.sectionHeader}
+            titleId="audience-title"
+            title={audienceTitle}
+          />
           <div className={styles.sectionBody}>
             <MetricsGrid range={range} />
             <EnvironmentGrid range={range} />
@@ -621,6 +626,7 @@ export default function Insights(): ReactNode {
         </section>
         <section className={styles.dataSection} aria-labelledby="service-health-title">
           <SectionHeader
+            className={styles.sectionHeader}
             titleId="service-health-title"
             title={SERVICE_HEALTH_TITLE}
             aside={<SectionLink href={KUMA_STATUS_URL} label={SERVICE_HEALTH_STATUS_LINK} />}

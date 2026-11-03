@@ -153,6 +153,10 @@ html[data-theme='dark'] .heroDeltaDown {
   font-style: italic;
 }
 
+.sectionHeader {
+  min-height: 44px;
+}
+
 .sectionLink {
   display: inline-flex;
   align-items: center;
