@@ -65,10 +65,6 @@ dialog.dialog[open] {
   scrollbar-width: thin;
 }
 
-.dialog :global(.theme-doc-sidebar-menu .menu__link) {
-  min-height: 44px;
-}
-
 @starting-style {
   .dialog[open]::backdrop {
     opacity: 0;
