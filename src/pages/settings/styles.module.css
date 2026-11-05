@@ -197,7 +197,7 @@ html[data-theme='dark'] .actionItemIcon {
 .layout {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 1.5rem;
+  gap: var(--lk-space-4);
 }
 
 @media (max-width: 1199px) {

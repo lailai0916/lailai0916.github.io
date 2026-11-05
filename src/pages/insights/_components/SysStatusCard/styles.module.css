@@ -141,13 +141,13 @@
 
 .wrapper {
   container: runtime-snapshot / inline-size;
-  margin-top: calc(1rem - var(--lk-page-padding-block));
+  margin-top: calc(var(--lk-space-4) - var(--lk-page-padding-block));
 }
 
 .grid {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
-  gap: 1rem;
+  gap: var(--lk-space-4);
 }
 
 @container runtime-snapshot (max-width: 960px) or (max-width: 52rem) {

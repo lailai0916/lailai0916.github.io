@@ -46,7 +46,7 @@
 }
 
 .bento {
-  --home-grid-gap: 1rem;
+  --home-grid-gap: var(--lk-space-4);
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: auto auto auto;
@@ -57,7 +57,7 @@
 
 @container home (width < calc(800px + 3rem)) {
   .bento {
-    --home-grid-gap: 0.75rem;
+    --home-grid-gap: var(--lk-space-3);
     grid-template-columns: repeat(2, 1fr);
     max-width: calc(2 * var(--home-detail-min-width) + var(--home-grid-gap));
   }

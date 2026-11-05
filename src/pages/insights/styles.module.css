@@ -104,13 +104,13 @@ html[data-theme='dark'] .heroDeltaDown {
 .heroGrid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(min(180px, 100%), 1fr));
-  gap: 1rem;
+  gap: var(--lk-space-4);
 }
 
 @media (max-width: 480px) {
   .heroGrid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 0.6rem;
+    gap: var(--lk-space-3);
   }
 }
 
@@ -132,14 +132,14 @@ html[data-theme='dark'] .heroDeltaDown {
 }
 
 .chartCard {
-  margin-top: calc(1rem - var(--lk-page-padding-block));
+  margin-top: calc(var(--lk-space-4) - var(--lk-page-padding-block));
 }
 
 .metricsGrid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
-  gap: 1rem;
-  margin-top: calc(1rem - var(--lk-page-padding-block));
+  gap: var(--lk-space-4);
+  margin-top: calc(var(--lk-space-4) - var(--lk-page-padding-block));
 }
 
 @media (max-width: 640px) {

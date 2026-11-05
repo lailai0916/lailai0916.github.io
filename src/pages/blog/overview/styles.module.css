@@ -1,7 +1,7 @@
 .kpiGrid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 1rem;
+  gap: var(--lk-space-4);
 }
 
 /* Four cards need room for their labels and values beside the icon. */

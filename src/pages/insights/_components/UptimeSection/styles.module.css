@@ -188,13 +188,13 @@ html[data-theme='dark'] .statusMaintenance {
   display: flex;
   flex-direction: column;
   gap: 1.25rem;
-  margin-top: calc(1rem - var(--lk-page-padding-block));
+  margin-top: calc(var(--lk-space-4) - var(--lk-page-padding-block));
 }
 
 .list {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 0.75rem 1rem;
+  gap: var(--lk-space-3);
 }
 
 @media (max-width: 768px) {
