@@ -2508,6 +2508,9 @@
   "pages.insights.heartbeat.noData": {
     "message": "暂无数据"
   },
+  "pages.insights.heartbeat.checks": {
+    "message": "{count} 次检测"
+  },
   "pages.insights.refreshError": {
     "message": "更新失败，正在显示上次的数据。"
   },

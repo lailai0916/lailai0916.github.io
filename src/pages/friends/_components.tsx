@@ -63,7 +63,7 @@ const FEED_RETRY = translate({
   message: 'Retry',
 });
 
-const POST_LIMIT = 12;
+const POST_LIMIT = 10;
 const FEED_URL = 'https://lailai.one/api/friends/posts';
 const FEED_SITE_URLS = new Set(FRIEND_LIST.filter(({ rss }) => rss).map(({ href }) => href));
 

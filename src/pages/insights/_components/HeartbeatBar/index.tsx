@@ -2,10 +2,12 @@ import { type CSSProperties, useEffect, useRef, useState } from 'react';
 import clsx from 'clsx';
 import { translate } from '@docusaurus/Translate';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
+import { usePluralForm } from '@docusaurus/theme-common';
 import type { KumaHeartbeat } from '@site/src/utils/kuma';
 import { useVisitorTimeZone } from '@site/src/hooks/useVisitorTimeZone';
 import { formatInTimeZone, parseUtcDateTime } from '@site/src/utils/dateTime';
 import Tooltip from '@lailai0916/ui/Tooltip';
+import { getHeartbeatBuckets } from './buckets';
 import styles from './styles.module.css';
 
 interface HeartbeatBarProps {
@@ -105,17 +107,12 @@ export default function HeartbeatBar({ beats, slots = 100 }: HeartbeatBarProps) 
     i18n: { currentLocale: locale },
   } = useDocusaurusContext();
   const timeZone = useVisitorTimeZone();
+  const { selectMessage } = usePluralForm();
 
-  const effectiveSlots = fitSlots;
-
-  const padded: (KumaHeartbeat | null)[] = [];
-  const start = Math.max(0, beats.length - effectiveSlots);
-  const recent = beats.slice(start);
-  const empty = effectiveSlots - recent.length;
-  for (let i = 0; i < empty; i++) padded.push(null);
-  for (const b of recent) padded.push(b);
-
-  const active = hoverIdx != null ? padded[hoverIdx] : null;
+  const effectiveSlots = Math.min(slots, fitSlots);
+  const buckets = getHeartbeatBuckets(beats, slots, effectiveSlots);
+  const active = hoverIdx != null ? buckets[hoverIdx] : undefined;
+  const representative = active?.representative;
   const tooltipLeftPct = hoverIdx != null ? ((hoverIdx + 0.5) / effectiveSlots) * 100 : 0;
 
   return (
@@ -127,36 +124,63 @@ export default function HeartbeatBar({ beats, slots = 100 }: HeartbeatBarProps) 
         aria-label={HEARTBEAT_ARIA_LABEL}
         onPointerLeave={() => setHoverIdx(null)}
       >
-        {padded.map((beat, i) => (
+        {buckets.map((bucket, i) => (
           <span
             key={i}
-            className={clsx(styles.cell, beat ? statusClass(beat.status) : styles.empty)}
+            className={clsx(styles.cell, statusClass(bucket.representative?.status))}
             onPointerEnter={() => setHoverIdx(i)}
           />
         ))}
       </div>
 
-      {hoverIdx != null && (
+      {active && (
         <Tooltip leftPct={tooltipLeftPct}>
           <Tooltip.Label>
-            {active
-              ? formatTooltipDate(active.time, locale, timeZone)
-              : translate({
-                  id: 'pages.insights.heartbeat.noData',
-                  message: 'No Data',
-                })}
+            {active.first ? (
+              <>
+                {formatTooltipDate(active.first.time, locale, timeZone)}
+                {active.last && active.last.time !== active.first.time && (
+                  <>
+                    <br />
+                    {'– '}
+                    {formatTooltipDate(active.last.time, locale, timeZone)}
+                  </>
+                )}
+              </>
+            ) : (
+              translate({
+                id: 'pages.insights.heartbeat.noData',
+                message: 'No Data',
+              })
+            )}
           </Tooltip.Label>
           <Tooltip.Value>
             <span
-              className={clsx(styles.dot, active ? statusClass(active.status) : styles.empty)}
+              className={clsx(styles.dot, statusClass(representative?.status))}
               aria-hidden="true"
             />
-            {heartbeatStatusLabel(active?.status)}
-            {active && typeof active.ping === 'number' && (
-              <span className={styles.tooltipPing}>· {active.ping}ms</span>
+            {heartbeatStatusLabel(representative?.status)}
+            {representative && typeof representative.ping === 'number' && (
+              <span className={styles.tooltipPing}>· {representative.ping}ms</span>
             )}
           </Tooltip.Value>
-          {active?.msg && <span className={styles.tooltipMsg}>{active.msg}</span>}
+          {active.count > 1 && representative && (
+            <Tooltip.Label>
+              {selectMessage(
+                active.count,
+                translate(
+                  {
+                    id: 'pages.insights.heartbeat.checks',
+                    message: '{count} check|{count} checks',
+                  },
+                  { count: String(active.count) }
+                )
+              )}
+              <br />
+              {formatTooltipDate(representative.time, locale, timeZone)}
+            </Tooltip.Label>
+          )}
+          {representative?.msg && <span className={styles.tooltipMsg}>{representative.msg}</span>}
         </Tooltip>
       )}
     </div>

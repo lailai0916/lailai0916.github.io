@@ -6,7 +6,7 @@ import Icon from '@lailai0916/ui/Icon';
 import Link from '@docusaurus/Link';
 import Layout from '@theme/Layout';
 import { translate } from '@docusaurus/Translate';
-import { usePluralForm } from '@docusaurus/theme-common';
+import { usePluralForm, useWindowSize } from '@docusaurus/theme-common';
 import * as countries from 'i18n-iso-countries';
 import countriesEn from 'i18n-iso-countries/langs/en.json';
 import countriesZh from 'i18n-iso-countries/langs/zh.json';
@@ -353,6 +353,9 @@ function PageviewsChart({ range }: { range: InsightsRange }) {
     i18n: { currentLocale },
   } = useDocusaurusContext();
   const { selectMessage } = usePluralForm();
+  const windowSize = useWindowSize();
+  const tickCount = windowSize === 'desktop' ? 5 : 3;
+  const compactTicks = useWindowSize({ desktopBreakpoint: 300 }) === 'mobile';
   const series = data?.pageviews ?? [];
   const unit = data?.unit ?? 'hour';
   const pageviewsLabel = (v: number) =>
@@ -375,7 +378,7 @@ function PageviewsChart({ range }: { range: InsightsRange }) {
         id: 'pages.insights.chart.title',
         message: 'Views Over Time',
       })}
-      data={toPageviewsData(series, unit, currentLocale)}
+      data={toPageviewsData(series, unit, currentLocale, tickCount, compactTicks)}
       loading={isInitialLoading}
       emptyText={METRIC_LIST_EMPTY}
       error={status === 'error' && !isRefreshError ? ANALYTICS_ERROR : undefined}

@@ -28,10 +28,20 @@ function formatYMD(d: Date, locale: string): string {
   });
 }
 
-function formatTick(iso: string, unit: SeriesUnit, spanDays: number, locale: string): string {
+function formatTick(
+  iso: string,
+  unit: SeriesUnit,
+  spanDays: number,
+  locale: string,
+  compact: boolean
+): string {
   const d = parseDate(iso);
   if (Number.isNaN(d.getTime())) return iso;
-  if (unit === 'hour' && spanDays <= 1.5) return formatHM(d, locale);
+  if (unit === 'hour' && spanDays <= 1.5) {
+    const time = formatHM(d, locale);
+    return compact ? time.slice(0, 2) : time;
+  }
+  if (compact) return d.toLocaleDateString(locale, { month: 'numeric', day: 'numeric' });
   return formatMD(d, locale);
 }
 
@@ -63,17 +73,19 @@ function formatTooltipDate(iso: string, unit: SeriesUnit, locale: string): strin
   return formatYMD(d, locale);
 }
 
-// Map a Umami pageviews series into Chart data: every point gets a tooltip,
-// and only the first / middle / last get an X-axis tick (matching the old
-// 3-tick sparkline).
+// Keep every data point while spacing axis labels across the available range.
 export function toPageviewsData(
   series: SeriesPoint[],
   unit: SeriesUnit,
-  locale: string
+  locale: string,
+  tickCount: 3 | 5 = 3,
+  compactTicks = false
 ): ChartDatum[] {
   const lastIndex = series.length - 1;
   const tickIdxs =
-    series.length <= 3 ? series.map((_, i) => i) : [0, Math.floor(lastIndex / 2), lastIndex];
+    series.length <= tickCount
+      ? series.map((_, i) => i)
+      : Array.from({ length: tickCount }, (_, i) => Math.floor((i * lastIndex) / (tickCount - 1)));
   const spanDays =
     series.length > 1
       ? (parseDate(series[lastIndex].x).getTime() - parseDate(series[0].x).getTime()) / 86400000
@@ -83,6 +95,8 @@ export function toPageviewsData(
     key: p.x,
     value: p.y,
     tooltipLabel: formatTooltipDate(p.x, unit, locale),
-    axisLabel: tickIdxs.includes(i) ? formatTick(p.x, unit, spanDays, locale) : undefined,
+    axisLabel: tickIdxs.includes(i)
+      ? formatTick(p.x, unit, spanDays, locale, compactTicks)
+      : undefined,
   }));
 }
