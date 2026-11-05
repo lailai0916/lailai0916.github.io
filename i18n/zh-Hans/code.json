@@ -1109,6 +1109,12 @@
   "data.resources.site.nealFun.description": {
     "message": "互动网页游戏与可视化实验合集"
   },
+  "data.resources.site.raricy.title": {
+    "message": "聪明山"
+  },
+  "data.resources.site.raricy.description": {
+    "message": "原创小说、互动故事、网页游戏与实用工具"
+  },
   "data.resources.site.lichess.title": {
     "message": "Lichess"
   },

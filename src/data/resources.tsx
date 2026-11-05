@@ -1283,6 +1283,17 @@ const RESOURCE_CATALOG = {
       message: 'Collection of interactive web games and visual experiments',
     }),
   },
+  raricy: {
+    title: translate({
+      id: 'data.resources.site.raricy.title',
+      message: 'Raricy',
+    }),
+    href: 'https://raricy.com',
+    description: translate({
+      id: 'data.resources.site.raricy.description',
+      message: 'Original fiction, interactive stories, browser games, and utilities',
+    }),
+  },
   lichess: {
     title: translate({
       id: 'data.resources.site.lichess.title',
@@ -1915,6 +1926,7 @@ export const RESOURCE_LIST: ResourceCategoryItem[] = [
       'freeFocusGames',
       'ioGames',
       'nealFun',
+      'raricy',
       'lichess',
       'generalsIo',
       'florrIo',
