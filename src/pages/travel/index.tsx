@@ -1,4 +1,5 @@
 import { type ReactNode } from 'react';
+import clsx from 'clsx';
 import Layout from '@theme/Layout';
 import { PageTitle, PageHeader, PageContent } from '@lailai0916/ui/Page';
 import DataCard from '@lailai0916/ui/DataCard';
@@ -8,6 +9,7 @@ import TravelMap from '@site/src/pages/travel/_components/Map';
 import { translate } from '@docusaurus/Translate';
 import { TRAVEL_LIST } from '@site/src/data/travel';
 import { getTravelCountryCodes } from '@site/src/utils/travelGlobe';
+import styles from './styles.module.css';
 
 const TITLE = translate({
   id: 'pages.travel.title',
@@ -54,10 +56,10 @@ export default function Travel(): ReactNode {
       >
         <PageTitle title={MODIFICATION} description={DESCRIPTION} />
       </PageHeader>
-      <PageContent className="site-page-content">
+      <PageContent className={clsx('site-page-content', styles.content)}>
         <TravelMap />
         <TravelTimeline />
-        <Quote author={QUOTE_AUTHOR} source={QUOTE_SOURCE}>
+        <Quote className={styles.quote} author={QUOTE_AUTHOR} source={QUOTE_SOURCE}>
           {QUOTE_TEXT}
         </Quote>
       </PageContent>
