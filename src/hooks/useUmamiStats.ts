@@ -1,17 +1,9 @@
 import { umamiFetchJson } from '@site/src/utils/umami';
 import { useFetch } from './useFetch';
+import { useUmamiWindow, type InsightsRange, type InsightsWindow } from './useUmamiWindow';
 
 export type { FetchStatus } from './useFetch';
-
-export type InsightsRange = 1 | 7 | 30 | 365;
-
-// The [startAt, endAt] query window for a range. The 1-day view aligns the end
-// to the current hour so the live hourly bucket doesn't jitter every render.
-export function rangeWindow(range: InsightsRange): { startAt: number; endAt: number } {
-  const endAt = range === 1 ? Math.ceil(Date.now() / 3600_000) * 3600_000 : Date.now();
-  const startAt = endAt - range * 24 * 60 * 60 * 1000;
-  return { startAt, endAt };
-}
+export { rangeWindow, type InsightsRange } from './useUmamiWindow';
 
 export interface UmamiStats {
   pageviews: number;
@@ -26,16 +18,17 @@ interface UmamiStatsResponse extends UmamiStats {
 }
 
 interface StatsResult extends UmamiStatsResponse {
-  window: { startAt: number; endAt: number };
+  window: InsightsWindow;
 }
 
 export function useUmamiStats(range: InsightsRange) {
+  const getWindow = useUmamiWindow();
   return useFetch<StatsResult | null>(
     async (signal) => {
-      const { startAt, endAt } = rangeWindow(range);
+      const { startAt, endAt } = getWindow(range);
       const data = await umamiFetchJson<UmamiStatsResponse>(
         '/api/websites/{id}/stats',
-        { startAt, endAt },
+        { startAt, endAt: endAt - 1 },
         { signal }
       );
       return { ...data, window: { startAt, endAt } };

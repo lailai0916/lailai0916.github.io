@@ -1,11 +1,12 @@
 import { umamiFetchJson } from '@site/src/utils/umami';
 import { fetchMetricItems, type MetricItem, type MetricLimit } from '@site/src/utils/umamiMetrics';
 import { useFetch } from './useFetch';
-import { rangeWindow, type InsightsRange } from './useUmamiStats';
+import { useUmamiWindow, type InsightsRange } from './useUmamiWindow';
 
 type MetricType = 'path' | 'referrer' | 'country' | 'device' | 'browser' | 'os';
 
 export function useUmamiMetric(type: MetricType, range: InsightsRange, limit: MetricLimit = 8) {
+  const getWindow = useUmamiWindow();
   const {
     data: items,
     status,
@@ -15,11 +16,11 @@ export function useUmamiMetric(type: MetricType, range: InsightsRange, limit: Me
     retry,
   } = useFetch<MetricItem[]>(
     async (signal) => {
-      const { startAt, endAt } = rangeWindow(range);
+      const { startAt, endAt } = getWindow(range);
       return fetchMetricItems(async (pageLimit, offset) => {
         const result = await umamiFetchJson<MetricItem[]>(
           '/api/websites/{id}/metrics',
-          { startAt, endAt, type, limit: pageLimit, offset },
+          { startAt, endAt: endAt - 1, type, limit: pageLimit, offset },
           { signal }
         );
         if (!Array.isArray(result)) throw new Error('Invalid Umami metrics response');

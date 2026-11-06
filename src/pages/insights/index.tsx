@@ -19,7 +19,9 @@ import Segmented, { type SegmentedItem } from '@lailai0916/ui/Segmented';
 import { useUmamiStats, type InsightsRange, type UmamiStats } from '@site/src/hooks/useUmamiStats';
 import { useUmamiPageviewsSeries } from '@site/src/hooks/useUmamiPageviewsSeries';
 import { useUmamiMetric } from '@site/src/hooks/useUmamiMetric';
+import { UmamiWindowProvider } from '@site/src/hooks/useUmamiWindow';
 import { useAnimatedNumber } from '@site/src/hooks/useAnimatedNumber';
+import { useVisitorTimeZone } from '@site/src/hooks/useVisitorTimeZone';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import { formatCompact } from '@lailai0916/ui';
 import { KUMA_STATUS_URL } from '@site/src/utils/kuma';
@@ -356,6 +358,7 @@ function PageviewsChart({ range }: { range: InsightsRange }) {
   const windowSize = useWindowSize();
   const tickCount = windowSize === 'desktop' ? 5 : 3;
   const compactTicks = useWindowSize({ desktopBreakpoint: 300 }) === 'mobile';
+  const timeZone = useVisitorTimeZone();
   const series = data?.pageviews ?? [];
   const unit = data?.unit ?? 'hour';
   const pageviewsLabel = (v: number) =>
@@ -378,7 +381,7 @@ function PageviewsChart({ range }: { range: InsightsRange }) {
         id: 'pages.insights.chart.title',
         message: 'Views Over Time',
       })}
-      data={toPageviewsData(series, unit, currentLocale, tickCount, compactTicks)}
+      data={toPageviewsData(series, unit, currentLocale, tickCount, compactTicks, timeZone)}
       loading={isInitialLoading}
       emptyText={METRIC_LIST_EMPTY}
       error={status === 'error' && !isRefreshError ? ANALYTICS_ERROR : undefined}
@@ -591,55 +594,61 @@ export default function Insights(): ReactNode {
     message: 'Audience',
   });
   return (
-    <Layout title={TITLE} description={DESCRIPTION}>
-      <PageHeader>
-        <PageTitle title={MODIFICATION} description={DESCRIPTION} />
-        <RangeBar
-          range={range}
-          onChange={(next) => {
-            if (next === range) return;
-            setRange(next);
-            trackEvent('filter_change', { surface: 'insights', filter: 'time_range', value: next });
-          }}
-        />
-      </PageHeader>
-      <PageContent className={clsx('site-page-content', styles.layout)}>
-        <section className={styles.dataSection} aria-labelledby="traffic-title">
-          <SectionHeader
-            className={styles.sectionHeader}
-            titleId="traffic-title"
-            title={TRAFFIC_TITLE}
-            aside={<SectionLink href={UMAMI_DASHBOARD_URL} label={TRAFFIC_ANALYTICS_LINK} />}
+    <UmamiWindowProvider>
+      <Layout title={TITLE} description={DESCRIPTION}>
+        <PageHeader>
+          <PageTitle title={MODIFICATION} description={DESCRIPTION} />
+          <RangeBar
+            range={range}
+            onChange={(next) => {
+              if (next === range) return;
+              setRange(next);
+              trackEvent('filter_change', {
+                surface: 'insights',
+                filter: 'time_range',
+                value: next,
+              });
+            }}
           />
-          <div className={styles.sectionBody}>
-            <HeroGrid range={range} />
-            <PageviewsChart range={range} />
-          </div>
-        </section>
-        <section className={styles.dataSection} aria-labelledby="audience-title">
-          <SectionHeader
-            className={styles.sectionHeader}
-            titleId="audience-title"
-            title={audienceTitle}
-          />
-          <div className={styles.sectionBody}>
-            <MetricsGrid range={range} />
-            <EnvironmentGrid range={range} />
-          </div>
-        </section>
-        <section className={styles.dataSection} aria-labelledby="service-health-title">
-          <SectionHeader
-            className={styles.sectionHeader}
-            titleId="service-health-title"
-            title={SERVICE_HEALTH_TITLE}
-            aside={<SectionLink href={KUMA_STATUS_URL} label={SERVICE_HEALTH_STATUS_LINK} />}
-          />
-          <div className={styles.sectionBody}>
-            <UptimeSection />
-            <SysStatusCard />
-          </div>
-        </section>
-      </PageContent>
-    </Layout>
+        </PageHeader>
+        <PageContent className={clsx('site-page-content', styles.layout)}>
+          <section className={styles.dataSection} aria-labelledby="traffic-title">
+            <SectionHeader
+              className={styles.sectionHeader}
+              titleId="traffic-title"
+              title={TRAFFIC_TITLE}
+              aside={<SectionLink href={UMAMI_DASHBOARD_URL} label={TRAFFIC_ANALYTICS_LINK} />}
+            />
+            <div className={styles.sectionBody}>
+              <HeroGrid range={range} />
+              <PageviewsChart range={range} />
+            </div>
+          </section>
+          <section className={styles.dataSection} aria-labelledby="audience-title">
+            <SectionHeader
+              className={styles.sectionHeader}
+              titleId="audience-title"
+              title={audienceTitle}
+            />
+            <div className={styles.sectionBody}>
+              <MetricsGrid range={range} />
+              <EnvironmentGrid range={range} />
+            </div>
+          </section>
+          <section className={styles.dataSection} aria-labelledby="service-health-title">
+            <SectionHeader
+              className={styles.sectionHeader}
+              titleId="service-health-title"
+              title={SERVICE_HEALTH_TITLE}
+              aside={<SectionLink href={KUMA_STATUS_URL} label={SERVICE_HEALTH_STATUS_LINK} />}
+            />
+            <div className={styles.sectionBody}>
+              <UptimeSection />
+              <SysStatusCard />
+            </div>
+          </section>
+        </PageContent>
+      </Layout>
+    </UmamiWindowProvider>
   );
 }

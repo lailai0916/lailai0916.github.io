@@ -1,27 +1,28 @@
 import { type ChartDatum } from '@lailai0916/ui/Chart';
-import type { SeriesPoint } from '@site/src/hooks/useUmamiPageviewsSeries';
+import { translate } from '@docusaurus/Translate';
+import { formatInTimeZone, getDateKey } from '@site/src/utils/dateTime';
+import type { ChartSeriesPoint, ChartUnit } from '@site/src/utils/umamiSeries';
 
-// Bucket width of each Umami series point, used to format ticks/tooltips.
-export type SeriesUnit = 'hour' | '6h' | 'day' | 'week';
+export type SeriesUnit = ChartUnit;
 
 function parseDate(iso: string): Date {
   return new Date(iso.replace(' ', 'T'));
 }
 
-function formatHM(d: Date, locale: string): string {
-  return d.toLocaleTimeString(locale, {
+function formatHM(d: Date, locale: string, timeZone: string): string {
+  return formatInTimeZone(d, locale, timeZone, {
     hour: '2-digit',
     minute: '2-digit',
     hourCycle: 'h23',
   });
 }
 
-function formatMD(d: Date, locale: string): string {
-  return d.toLocaleDateString(locale, { month: 'short', day: 'numeric' });
+function formatMD(d: Date, locale: string, timeZone: string): string {
+  return formatInTimeZone(d, locale, timeZone, { month: 'short', day: 'numeric' });
 }
 
-function formatYMD(d: Date, locale: string): string {
-  return d.toLocaleDateString(locale, {
+function formatYMD(d: Date, locale: string, timeZone: string): string {
+  return formatInTimeZone(d, locale, timeZone, {
     year: 'numeric',
     month: 'short',
     day: 'numeric',
@@ -33,70 +34,71 @@ function formatTick(
   unit: SeriesUnit,
   spanDays: number,
   locale: string,
-  compact: boolean
+  compact: boolean,
+  timeZone: string
 ): string {
   const d = parseDate(iso);
   if (Number.isNaN(d.getTime())) return iso;
   if (unit === 'hour' && spanDays <= 1.5) {
-    const time = formatHM(d, locale);
+    const time = formatHM(d, locale, timeZone);
     return compact ? time.slice(0, 2) : time;
   }
-  if (compact) return d.toLocaleDateString(locale, { month: 'numeric', day: 'numeric' });
-  return formatMD(d, locale);
+  if (compact) {
+    return formatInTimeZone(d, locale, timeZone, { month: 'numeric', day: 'numeric' });
+  }
+  return formatMD(d, locale, timeZone);
 }
 
-function formatTooltipDate(iso: string, unit: SeriesUnit, locale: string): string {
-  const d = parseDate(iso);
-  if (Number.isNaN(d.getTime())) return iso;
-  if (unit === 'hour') {
-    const end = new Date(d);
-    end.setHours(end.getHours() + 1);
-    return `${formatMD(d, locale)} ${formatHM(d, locale)} – ${formatHM(end, locale)}`;
+function formatTooltipDate(
+  point: ChartSeriesPoint,
+  unit: SeriesUnit,
+  locale: string,
+  timeZone: string
+): string {
+  const start = new Date(point.startAt);
+  const end = new Date(point.endAt);
+  if (unit === 'day' && !point.partial) return formatYMD(start, locale, timeZone);
+  if (unit === 'week' && !point.partial) {
+    return `${formatMD(start, locale, timeZone)} – ${formatYMD(new Date(point.endAt - 1), locale, timeZone)}`;
   }
-  if (unit === '6h') {
-    const end = new Date(d);
-    end.setHours(end.getHours() + 6);
-    const sameDay =
-      d.getFullYear() === end.getFullYear() &&
-      d.getMonth() === end.getMonth() &&
-      d.getDate() === end.getDate();
-    const endLabel = sameDay
-      ? formatHM(end, locale)
-      : `${formatMD(end, locale)} ${formatHM(end, locale)}`;
-    return `${formatMD(d, locale)} ${formatHM(d, locale)} – ${endLabel}`;
-  }
-  if (unit === 'week') {
-    const end = new Date(d);
-    end.setDate(end.getDate() + 6);
-    return `${formatMD(d, locale)} – ${formatYMD(end, locale)}`;
-  }
-  return formatYMD(d, locale);
+  const sameDay = getDateKey(start, timeZone) === getDateKey(end, timeZone);
+  const endLabel = sameDay
+    ? formatHM(end, locale, timeZone)
+    : `${formatYMD(end, locale, timeZone)} ${formatHM(end, locale, timeZone)}`;
+  const period = `${formatYMD(start, locale, timeZone)} ${formatHM(start, locale, timeZone)} – ${endLabel}`;
+  return point.partial
+    ? translate(
+        {
+          id: 'pages.insights.chart.partialPeriod',
+          message: '{period} (Partial Period)',
+        },
+        { period }
+      )
+    : period;
 }
 
 // Keep every data point while spacing axis labels across the available range.
 export function toPageviewsData(
-  series: SeriesPoint[],
+  series: ChartSeriesPoint[],
   unit: SeriesUnit,
   locale: string,
   tickCount: 3 | 5 = 3,
-  compactTicks = false
+  compactTicks = false,
+  timeZone = Intl.DateTimeFormat().resolvedOptions().timeZone
 ): ChartDatum[] {
   const lastIndex = series.length - 1;
   const tickIdxs =
     series.length <= tickCount
       ? series.map((_, i) => i)
       : Array.from({ length: tickCount }, (_, i) => Math.floor((i * lastIndex) / (tickCount - 1)));
-  const spanDays =
-    series.length > 1
-      ? (parseDate(series[lastIndex].x).getTime() - parseDate(series[0].x).getTime()) / 86400000
-      : 0;
+  const spanDays = series.length > 1 ? (series[lastIndex].endAt - series[0].startAt) / 86400000 : 0;
 
   return series.map((p, i) => ({
     key: p.x,
     value: p.y,
-    tooltipLabel: formatTooltipDate(p.x, unit, locale),
+    tooltipLabel: formatTooltipDate(p, unit, locale, timeZone),
     axisLabel: tickIdxs.includes(i)
-      ? formatTick(p.x, unit, spanDays, locale, compactTicks)
+      ? formatTick(p.x, unit, spanDays, locale, compactTicks, timeZone)
       : undefined,
   }));
 }

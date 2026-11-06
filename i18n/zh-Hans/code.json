@@ -2371,6 +2371,9 @@
   "pages.overview.metric.moments": {
     "message": "动态"
   },
+  "pages.insights.chart.partialPeriod": {
+    "message": "{period}（部分时段）"
+  },
   "blog.pages.archive.title": {
     "message": "归档"
   },
