@@ -28,8 +28,6 @@
 
 .avatar {
   position: relative;
-  display: grid;
-  place-items: center;
   width: 3rem;
   height: 3rem;
   border-radius: var(--lk-radius-md);
