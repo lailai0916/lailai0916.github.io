@@ -29,6 +29,11 @@
   --global-line-height: 1.65;
 }
 
+/* Keep short and long pages aligned when classic scrollbars are used. */
+html {
+  scrollbar-gutter: stable;
+}
+
 .site-page-content > :last-child {
   margin-bottom: 0;
 }
