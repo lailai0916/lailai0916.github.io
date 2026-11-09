@@ -1884,16 +1884,16 @@
     "message": "访问时长"
   },
   "pages.insights.range.day": {
-    "message": "24 小时"
+    "message": "近 24 小时"
   },
   "pages.insights.range.week": {
-    "message": "7 天"
+    "message": "近 7 天"
   },
   "pages.insights.range.month": {
-    "message": "30 天"
+    "message": "近 30 天"
   },
   "pages.insights.range.year": {
-    "message": "近一年"
+    "message": "近 1 年"
   },
   "pages.insights.range.ariaLabel": {
     "message": "时间范围"
