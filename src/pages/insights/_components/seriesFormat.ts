@@ -1,7 +1,6 @@
 import { type ChartDatum } from '@lailai0916/ui/Chart';
-import { translate } from '@docusaurus/Translate';
 import { formatInTimeZone, getDateKey } from '@site/src/utils/dateTime';
-import type { ChartSeriesPoint, ChartUnit } from '@site/src/utils/umamiSeries';
+import { nextBucket, type ChartSeriesPoint, type ChartUnit } from '@site/src/utils/umamiSeries';
 
 export type SeriesUnit = ChartUnit;
 
@@ -55,26 +54,29 @@ function formatTooltipDate(
   locale: string,
   timeZone: string
 ): string {
-  const start = new Date(point.startAt);
-  const end = new Date(point.endAt);
-  if (unit === 'day' && !point.partial) return formatYMD(start, locale, timeZone);
-  if (unit === 'week' && !point.partial) {
-    return `${formatMD(start, locale, timeZone)} – ${formatYMD(new Date(point.endAt - 1), locale, timeZone)}`;
+  const start = parseDate(point.x);
+  const end = nextBucket(start, unit);
+  if (unit === 'day') return formatYMD(start, locale, timeZone);
+  if (unit === 'week') {
+    const lastDay = new Date(end.getTime() - 1);
+    const sameYear =
+      getDateKey(start, timeZone).slice(0, 4) === getDateKey(lastDay, timeZone).slice(0, 4);
+    const yearFirst = locale.startsWith('zh');
+    const startLabel =
+      sameYear && !yearFirst
+        ? formatMD(start, locale, timeZone)
+        : formatYMD(start, locale, timeZone);
+    const endLabel =
+      sameYear && yearFirst
+        ? formatMD(lastDay, locale, timeZone)
+        : formatYMD(lastDay, locale, timeZone);
+    return `${startLabel} – ${endLabel}`;
   }
   const sameDay = getDateKey(start, timeZone) === getDateKey(end, timeZone);
   const endLabel = sameDay
     ? formatHM(end, locale, timeZone)
     : `${formatYMD(end, locale, timeZone)} ${formatHM(end, locale, timeZone)}`;
-  const period = `${formatYMD(start, locale, timeZone)} ${formatHM(start, locale, timeZone)} – ${endLabel}`;
-  return point.partial
-    ? translate(
-        {
-          id: 'pages.insights.chart.partialPeriod',
-          message: '{period} (Partial Period)',
-        },
-        { period }
-      )
-    : period;
+  return `${formatYMD(start, locale, timeZone)} ${formatHM(start, locale, timeZone)} – ${endLabel}`;
 }
 
 // Keep every data point while spacing axis labels across the available range.

@@ -1893,7 +1893,7 @@
     "message": "30 天"
   },
   "pages.insights.range.year": {
-    "message": "365 天"
+    "message": "近一年"
   },
   "pages.insights.range.ariaLabel": {
     "message": "时间范围"
@@ -2370,9 +2370,6 @@
   },
   "pages.overview.metric.moments": {
     "message": "动态"
-  },
-  "pages.insights.chart.partialPeriod": {
-    "message": "{period}（部分时段）"
   },
   "blog.pages.archive.title": {
     "message": "归档"

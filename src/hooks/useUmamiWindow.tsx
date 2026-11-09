@@ -1,4 +1,5 @@
 import { createContext, useCallback, useContext, useEffect, useRef, type ReactNode } from 'react';
+import { bucketStart } from '@site/src/utils/umamiSeries';
 
 export type InsightsRange = 1 | 7 | 30 | 365;
 
@@ -18,7 +19,11 @@ interface WindowSnapshot {
 const WindowContext = createContext<WindowGetter | null>(null);
 
 export function rangeWindow(range: InsightsRange, endAt = Date.now()): InsightsWindow {
-  return { startAt: endAt - range * 24 * 60 * 60 * 1000, endAt };
+  const startAt = endAt - range * 24 * 60 * 60 * 1000;
+  return {
+    startAt: range === 365 ? bucketStart(new Date(startAt), 'week').getTime() : startAt,
+    endAt,
+  };
 }
 
 export function UmamiWindowProvider({ children }: { children: ReactNode }) {

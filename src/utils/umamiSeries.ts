@@ -40,7 +40,7 @@ export function mergeSeries(parts: SeriesPoint[][]): SeriesPoint[] {
   return [...seen.values()].sort((a, b) => a.x.localeCompare(b.x));
 }
 
-function bucketStart(value: Date, unit: ChartUnit): Date {
+export function bucketStart(value: Date, unit: ChartUnit): Date {
   const date = new Date(value);
   if (unit === 'hour' || unit === '6h') {
     const hour = unit === '6h' ? Math.floor(date.getHours() / 6) * 6 : date.getHours();
@@ -52,7 +52,7 @@ function bucketStart(value: Date, unit: ChartUnit): Date {
   return date;
 }
 
-function nextBucket(value: Date, unit: ChartUnit): Date {
+export function nextBucket(value: Date, unit: ChartUnit): Date {
   const date = new Date(value);
   if (unit === 'hour' || unit === '6h') {
     const nextHour =
