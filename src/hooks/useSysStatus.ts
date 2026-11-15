@@ -16,6 +16,8 @@ interface SysStatus {
   swap?: number | null;
   swap_used_mb?: number | null;
   swap_total_mb?: number | null;
+  network_tx_bytes_per_second?: number | null;
+  network_rx_bytes_per_second?: number | null;
   last_deploy?: number | null;
   tls_expires_in?: number | null;
   ip?: string | null;

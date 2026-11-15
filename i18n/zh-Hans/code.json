@@ -2003,6 +2003,27 @@
   "pages.resources.search.empty": {
     "message": "没有找到与“{query}”匹配的资源"
   },
+  "pages.travel.title": {
+    "message": "旅行"
+  },
+  "pages.travel.description": {
+    "message": "每一次旅行都能带来新的视野和感悟"
+  },
+  "pages.travel.modification": {
+    "message": "旅行<b>记录</b>"
+  },
+  "pages.travel.quote.content": {
+    "message": "纸上得来终觉浅，绝知此事要躬行。"
+  },
+  "pages.travel.quote.author": {
+    "message": "陆游"
+  },
+  "pages.travel.quote.source": {
+    "message": "《冬夜读书示子聿》"
+  },
+  "pages.travel.datacard.countries": {
+    "message": "个国家"
+  },
   "pages.settings.title": {
     "message": "设置"
   },
@@ -2104,27 +2125,6 @@
   },
   "pages.settings.loading": {
     "message": "正在加载设置…"
-  },
-  "pages.travel.title": {
-    "message": "旅行"
-  },
-  "pages.travel.description": {
-    "message": "每一次旅行都能带来新的视野和感悟"
-  },
-  "pages.travel.modification": {
-    "message": "旅行<b>记录</b>"
-  },
-  "pages.travel.quote.content": {
-    "message": "纸上得来终觉浅，绝知此事要躬行。"
-  },
-  "pages.travel.quote.author": {
-    "message": "陆游"
-  },
-  "pages.travel.quote.source": {
-    "message": "《冬夜读书示子聿》"
-  },
-  "pages.travel.datacard.countries": {
-    "message": "个国家"
   },
   "components.admonition.example.title": {
     "message": "示例"
@@ -2392,14 +2392,14 @@
   "blog.archive.search.empty": {
     "message": "没有找到与“{query}”匹配的文章"
   },
+  "blog.archive.redirect.link": {
+    "message": "浏览归档"
+  },
   "blog.post.empty": {
     "message": "暂无文章"
   },
   "blog.archive.postCount": {
     "message": "{count} 篇"
-  },
-  "blog.archive.redirect.link": {
-    "message": "浏览归档"
   },
   "blog.sidebar.calendar.today": {
     "message": "本月"
@@ -2422,6 +2422,18 @@
   "blog.post.paginator.ariaLabel": {
     "message": "博客文章导航"
   },
+  "blog.postcard.readMore": {
+    "message": "阅读更多"
+  },
+  "blog.pagination.prev": {
+    "message": "上一页"
+  },
+  "blog.pagination.next": {
+    "message": "下一页"
+  },
+  "blog.pagination.ariaLabel": {
+    "message": "分页"
+  },
   "blog.post.pinned": {
     "message": "置顶"
   },
@@ -2436,18 +2448,6 @@
   },
   "blog.postcard.viewCount": {
     "message": "{viewCount} 浏览"
-  },
-  "blog.postcard.readMore": {
-    "message": "阅读更多"
-  },
-  "blog.pagination.prev": {
-    "message": "上一页"
-  },
-  "blog.pagination.next": {
-    "message": "下一页"
-  },
-  "blog.pagination.ariaLabel": {
-    "message": "分页"
   },
   "blog.menu.sectionsAriaLabel": {
     "message": "博客分区"
@@ -2475,6 +2475,9 @@
   },
   "blog.sidebarPrototype.next": {
     "message": "下一款"
+  },
+  "components.navbar.mobileNavigation": {
+    "message": "导航"
   },
   "theme.NotFound.title": {
     "message": "找不到页面",
@@ -2547,8 +2550,14 @@
   "pages.insights.systemStatus.disk": {
     "message": "磁盘"
   },
-  "pages.insights.systemStatus.swap": {
-    "message": "交换空间"
+  "pages.insights.systemStatus.network": {
+    "message": "网络速率"
+  },
+  "pages.insights.systemStatus.networkSend": {
+    "message": "发送速率"
+  },
+  "pages.insights.systemStatus.networkReceive": {
+    "message": "接收速率"
   },
   "pages.insights.systemStatus.title": {
     "message": "运行时快照"
@@ -2556,38 +2565,38 @@
   "pages.insights.systemStatus.server": {
     "message": "服务器状态"
   },
-  "pages.insights.systemStatus.uptime": {
-    "message": "持续运行"
-  },
   "pages.insights.systemStatus.load": {
     "message": "负载"
   },
+  "pages.insights.systemStatus.swap": {
+    "message": "交换空间"
+  },
+  "pages.insights.systemStatus.uptime": {
+    "message": "持续运行"
+  },
   "pages.insights.systemStatus.tls": {
     "message": "证书有效期"
-  },
-  "pages.insights.systemStatus.debugId": {
-    "message": "构建标识"
   },
   "pages.insights.systemStatus.buildTime": {
     "message": "构建时间"
   },
   "pages.insights.systemStatus.client": {
-    "message": "访问环境"
-  },
-  "pages.insights.systemStatus.ip": {
-    "message": "你的 IP"
+    "message": "页面与访问环境"
   },
   "pages.insights.systemStatus.latency": {
     "message": "请求延迟"
   },
-  "pages.insights.systemStatus.host": {
-    "message": "当前域名"
+  "pages.insights.systemStatus.ip": {
+    "message": "你的 IP"
   },
   "pages.insights.systemStatus.browser": {
     "message": "浏览器"
   },
-  "pages.insights.systemStatus.protocol": {
-    "message": "连接类型"
+  "pages.insights.systemStatus.host": {
+    "message": "当前域名"
+  },
+  "pages.insights.systemStatus.debugId": {
+    "message": "构建标识"
   },
   "pages.insights.uptime.avgPing": {
     "message": "平均 {ping}ms"
@@ -2636,6 +2645,22 @@
   },
   "blog.pages.authors.title": {
     "message": "作者"
+  },
+  "theme.CodeBlock.copy": {
+    "message": "复制",
+    "description": "The copy button label on code blocks"
+  },
+  "theme.CodeBlock.copied": {
+    "message": "复制成功",
+    "description": "The copied button label on code blocks"
+  },
+  "theme.CodeBlock.copyButtonAriaLabel": {
+    "message": "复制代码到剪贴板",
+    "description": "The ARIA label for copy code blocks button"
+  },
+  "theme.CodeBlock.wordWrapToggle": {
+    "message": "切换自动换行",
+    "description": "The title attribute for toggle word wrapping button of code block lines"
   },
   "blog.sidebarPrototype.feature.bookends.first": {
     "message": "第一篇"
@@ -2949,9 +2974,6 @@
     "message": "{nDocsTagged}「{tagName}」",
     "description": "The title of the page for a docs tag"
   },
-  "theme.docs.versionBadge.label": {
-    "message": "版本：{versionLabel}"
-  },
   "theme.docs.versions.unreleasedVersionLabel": {
     "message": "此为 {siteTitle} {versionLabel} 版尚未发行的文档。",
     "description": "The label used to tell the user that he's browsing an unreleased doc version"
@@ -2967,6 +2989,9 @@
   "theme.docs.versions.latestVersionLinkLabel": {
     "message": "最新版本",
     "description": "The label used for the latest version suggestion link label"
+  },
+  "theme.docs.versionBadge.label": {
+    "message": "版本：{versionLabel}"
   },
   "theme.common.editThisPage": {
     "message": "编辑此页",
@@ -2996,6 +3021,10 @@
     "message": "标签：",
     "description": "The label alongside a tag list"
   },
+  "theme.AnnouncementBar.closeButtonAriaLabel": {
+    "message": "关闭",
+    "description": "The ARIA label for close button of announcement bar"
+  },
   "theme.admonition.caution": {
     "message": "警告",
     "description": "The default label used for the Caution admonition (:::caution)"
@@ -3019,10 +3048,6 @@
   "theme.admonition.warning": {
     "message": "注意",
     "description": "The default label used for the Warning admonition (:::warning)"
-  },
-  "theme.AnnouncementBar.closeButtonAriaLabel": {
-    "message": "关闭",
-    "description": "The ARIA label for close button of announcement bar"
   },
   "theme.blog.sidebar.navAriaLabel": {
     "message": "最近文章导航",
@@ -3052,6 +3077,10 @@
     "message": "请联系原始链接来源网站的所有者，并告知他们链接已损坏。",
     "description": "The 2nd paragraph of the 404 page"
   },
+  "theme.TOCCollapsible.toggleButtonLabel": {
+    "message": "本页总览",
+    "description": "The label used by the button on the collapsible TOC component"
+  },
   "theme.blog.post.readMore": {
     "message": "阅读更多",
     "description": "The label used in blog post item excerpts to link to full blog posts"
@@ -3060,29 +3089,9 @@
     "message": "阅读 {title} 的全文",
     "description": "The ARIA label for the link to full blog posts from excerpts"
   },
-  "theme.TOCCollapsible.toggleButtonLabel": {
-    "message": "本页总览",
-    "description": "The label used by the button on the collapsible TOC component"
-  },
   "theme.blog.post.readingTime.plurals": {
     "message": "阅读需 {readingTime} 分钟",
     "description": "Pluralized label for \"{readingTime} min read\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
-  },
-  "theme.CodeBlock.copy": {
-    "message": "复制",
-    "description": "The copy button label on code blocks"
-  },
-  "theme.CodeBlock.copied": {
-    "message": "复制成功",
-    "description": "The copied button label on code blocks"
-  },
-  "theme.CodeBlock.copyButtonAriaLabel": {
-    "message": "复制代码到剪贴板",
-    "description": "The ARIA label for copy code blocks button"
-  },
-  "theme.CodeBlock.wordWrapToggle": {
-    "message": "切换自动换行",
-    "description": "The title attribute for toggle word wrapping button of code block lines"
   },
   "theme.docs.sidebar.collapseButtonTitle": {
     "message": "收起侧边栏",
@@ -3382,8 +3391,5 @@
   "theme.tags.tagsPageTitle": {
     "message": "标签",
     "description": "The title of the tag list page"
-  },
-  "components.navbar.mobileNavigation": {
-    "message": "导航"
   }
 }

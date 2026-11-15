@@ -6,6 +6,7 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import { translate } from '@docusaurus/Translate';
 import { usePluralForm } from '@docusaurus/theme-common';
 import TitleCard from '@lailai0916/ui/TitleCard';
+import Icon from '@lailai0916/ui/Icon';
 import Skeleton from '@lailai0916/ui/Skeleton';
 import { useSysStatus } from '@site/src/hooks/useSysStatus';
 import { useVisitorTimeZone } from '@site/src/hooks/useVisitorTimeZone';
@@ -85,6 +86,25 @@ function formatCapacity(
   return number.format(used / divisor) + ' / ' + number.format(total / divisor) + ' ' + unit;
 }
 
+function formatNetworkRate(value: number | null | undefined, locale: string): string {
+  if (value == null || !Number.isFinite(value) || value < 0) return '—';
+  const units = ['B/s', 'KiB/s', 'MiB/s', 'GiB/s'];
+  let rate = Math.round(value);
+  let unit = 0;
+  while (rate >= 1024 && unit < units.length - 1) {
+    rate /= 1024;
+    unit++;
+  }
+  return (
+    new Intl.NumberFormat(locale, {
+      minimumFractionDigits: unit === 0 ? 0 : 1,
+      maximumFractionDigits: unit === 0 ? 0 : 1,
+    }).format(rate) +
+    ' ' +
+    units[unit]
+  );
+}
+
 function usePing(): number | null {
   const [val, setVal] = useState<number | null>(null);
   useEffect(() => {
@@ -156,21 +176,25 @@ function useNow(): Date {
 
 function Cell({
   label,
+  icon,
   value,
   loading = false,
   identifier = false,
   title,
 }: {
   label: string;
+  icon?: string;
   value: string;
   loading?: boolean;
   identifier?: boolean;
   title?: string;
 }) {
   return (
-    <div className={styles.cell}>
+    <div className={clsx(styles.cell, icon && styles.iconCell)}>
       <Hint label={label}>
-        <dt className={styles.key}>{label}</dt>
+        <dt className={styles.key} aria-label={icon ? label : undefined}>
+          {icon ? <Icon icon={icon} aria-hidden="true" /> : label}
+        </dt>
       </Hint>
       <Hint label={title ?? value}>
         <dd className={clsx(styles.val, value === '—' && styles.muted)}>
@@ -275,12 +299,11 @@ export default function SysStatusCard() {
   const { data: sys, status } = useSysStatus();
   const loading = status === 'loading';
   const ping = usePing();
-  const [client, setClient] = useState({ browser: '—', host: '—', protocol: '—' });
+  const [client, setClient] = useState({ browser: '—', host: '—' });
   useEffect(() => {
     setClient({
       browser: detectBrowser(navigator.userAgent),
       host: window.location.hostname,
-      protocol: window.location.protocol.replace(':', '').toUpperCase(),
     });
   }, []);
   const locale = i18n.currentLocale;
@@ -291,6 +314,10 @@ export default function SysStatusCard() {
       ? number.format(cores) + ' ' + selectMessage(cores, CORE_LABEL)
       : '—';
   const load = sys?.load?.[0];
+  const swap = sys?.swap;
+  const swapValue =
+    swap != null && Number.isFinite(swap) && swap >= 0 && swap <= 100 ? swap.toFixed(1) + '%' : '—';
+  const swapCapacity = formatCapacity(sys?.swap_used_mb, sys?.swap_total_mb, locale);
   const tls = sys?.tls_expires_in;
   const note =
     status === 'error'
@@ -336,12 +363,36 @@ export default function SysStatusCard() {
               detail={formatCapacity(sys?.disk_used_mb, sys?.disk_total_mb, locale, 'GiB')}
               loading={loading}
             />
-            <ResourceMeter
-              label={translate({ id: 'pages.insights.systemStatus.swap', message: 'Swap' })}
-              value={sys?.swap}
-              detail={formatCapacity(sys?.swap_used_mb, sys?.swap_total_mb, locale)}
-              loading={loading}
-            />
+            <dl className={styles.network} aria-busy={loading}>
+              <dt className="sr-only">
+                {translate({
+                  id: 'pages.insights.systemStatus.network',
+                  message: 'Network rates',
+                })}
+              </dt>
+              <dd className={styles.networkValue}>
+                <dl className={styles.networkRates}>
+                  <Cell
+                    label={translate({
+                      id: 'pages.insights.systemStatus.networkSend',
+                      message: 'Send rate',
+                    })}
+                    icon="lucide:arrow-up"
+                    value={formatNetworkRate(sys?.network_tx_bytes_per_second, locale)}
+                    loading={loading}
+                  />
+                  <Cell
+                    label={translate({
+                      id: 'pages.insights.systemStatus.networkReceive',
+                      message: 'Receive rate',
+                    })}
+                    icon="lucide:arrow-down"
+                    value={formatNetworkRate(sys?.network_rx_bytes_per_second, locale)}
+                    loading={loading}
+                  />
+                </dl>
+              </dd>
+            </dl>
           </div>
         </TitleCard>
         <TitleCard
@@ -364,16 +415,22 @@ export default function SysStatusCard() {
             >
               <dl className={styles.list}>
                 <Cell
-                  label={translate({ id: 'pages.insights.systemStatus.uptime', message: 'Uptime' })}
-                  value={formatUptime(sys?.uptime, locale)}
-                  loading={loading}
-                />
-                <Cell
                   label={translate({
                     id: 'pages.insights.systemStatus.load',
                     message: 'Load',
                   })}
                   value={load != null && Number.isFinite(load) ? load.toFixed(2) : '—'}
+                  loading={loading}
+                />
+                <Cell
+                  label={translate({ id: 'pages.insights.systemStatus.swap', message: 'Swap' })}
+                  value={swapValue}
+                  title={swapCapacity === '—' ? undefined : swapCapacity}
+                  loading={loading}
+                />
+                <Cell
+                  label={translate({ id: 'pages.insights.systemStatus.uptime', message: 'Uptime' })}
+                  value={formatUptime(sys?.uptime, locale)}
                   loading={loading}
                 />
                 <Cell
@@ -395,14 +452,6 @@ export default function SysStatusCard() {
                 <DeployCell value={sys?.last_deploy} loading={loading} />
                 <Cell
                   label={translate({
-                    id: 'pages.insights.systemStatus.debugId',
-                    message: 'Build ID',
-                  })}
-                  value={String(siteConfig.customFields?.debugId ?? '—')}
-                  identifier
-                />
-                <Cell
-                  label={translate({
                     id: 'pages.insights.systemStatus.buildTime',
                     message: 'Build time',
                   })}
@@ -414,16 +463,10 @@ export default function SysStatusCard() {
               className={styles.section}
               aria-label={translate({
                 id: 'pages.insights.systemStatus.client',
-                message: 'Visitor environment',
+                message: 'Page and visitor environment',
               })}
             >
               <dl className={styles.list}>
-                <Cell
-                  label={translate({ id: 'pages.insights.systemStatus.ip', message: 'Your IP' })}
-                  value={sys?.ip || '—'}
-                  loading={loading}
-                  identifier
-                />
                 <Cell
                   label={translate({
                     id: 'pages.insights.systemStatus.latency',
@@ -432,8 +475,9 @@ export default function SysStatusCard() {
                   value={ping == null ? '—' : ping + 'ms'}
                 />
                 <Cell
-                  label={translate({ id: 'pages.insights.systemStatus.host', message: 'Host' })}
-                  value={client.host}
+                  label={translate({ id: 'pages.insights.systemStatus.ip', message: 'Your IP' })}
+                  value={sys?.ip || '—'}
+                  loading={loading}
                   identifier
                 />
                 <Cell
@@ -444,11 +488,17 @@ export default function SysStatusCard() {
                   value={client.browser}
                 />
                 <Cell
+                  label={translate({ id: 'pages.insights.systemStatus.host', message: 'Host' })}
+                  value={client.host}
+                  identifier
+                />
+                <Cell
                   label={translate({
-                    id: 'pages.insights.systemStatus.protocol',
-                    message: 'Connection',
+                    id: 'pages.insights.systemStatus.debugId',
+                    message: 'Build ID',
                   })}
-                  value={client.protocol}
+                  value={String(siteConfig.customFields?.debugId ?? '—')}
+                  identifier
                 />
                 <ClockCell />
               </dl>
