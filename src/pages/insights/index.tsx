@@ -327,7 +327,7 @@ function RangeBar({
       value: 365,
       label: translate({
         id: 'pages.insights.range.year',
-        message: 'Past Year',
+        message: '1 Year',
       }),
     },
   ];
