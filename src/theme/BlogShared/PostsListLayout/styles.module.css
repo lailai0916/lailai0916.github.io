@@ -134,7 +134,7 @@
 }
 
 .postFooterReadMore:hover {
-  color: var(--ifm-color-primary);
+  color: var(--lk-color-primary-label);
   text-decoration: none;
 }
 
@@ -165,7 +165,7 @@
 }
 
 .pageNav:hover {
-  color: var(--ifm-color-primary);
+  color: var(--lk-color-primary-label);
 }
 
 .pageNavDisabled {
@@ -218,7 +218,7 @@
 }
 
 .pageNumber:hover {
-  color: var(--ifm-color-primary);
+  color: var(--lk-color-primary-label);
 }
 
 .pageNumberActive {

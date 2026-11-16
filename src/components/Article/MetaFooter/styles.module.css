@@ -28,6 +28,10 @@
   color: inherit;
 }
 
+.tagChipLink:hover .tagChip {
+  color: var(--lk-color-primary-label);
+}
+
 /* Push the view count + "last updated" cluster to the right of the row.
    Works whether or not tags are present on the left. */
 .metaEnd {

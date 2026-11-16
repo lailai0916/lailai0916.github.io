@@ -52,7 +52,12 @@ export type ChipItem = {
 function TagChip({ item }: { item: ChipItem }) {
   return (
     <Link to={item.to} className={styles.tagChipLink}>
-      <Badge active={item.active} hoverable={!item.active} count={item.count}>
+      <Badge
+        active={item.active}
+        hoverable={!item.active}
+        count={item.count}
+        className={item.active ? undefined : styles.tagChip}
+      >
         {item.label}
       </Badge>
     </Link>

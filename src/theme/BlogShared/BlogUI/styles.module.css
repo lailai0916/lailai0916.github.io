@@ -35,12 +35,16 @@
 }
 
 .eyebrowLink:hover {
-  color: var(--ifm-color-primary);
+  color: var(--lk-color-primary-label);
 }
 
 .tagChipLink {
   text-decoration: none !important;
   color: inherit;
+}
+
+.tagChipLink:hover .tagChip {
+  color: var(--lk-color-primary-label);
 }
 
 .tagList {

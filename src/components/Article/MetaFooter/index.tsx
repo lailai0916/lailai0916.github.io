@@ -35,7 +35,9 @@ export default function MetaFooter({ tags, lastUpdatedAt, views }: MetaFooterPro
           <div className={styles.tagList}>
             {tags.map((tag) => (
               <Link key={tag.to} to={tag.to} className={styles.tagChipLink}>
-                <Badge hoverable>{tag.label}</Badge>
+                <Badge hoverable className={styles.tagChip}>
+                  {tag.label}
+                </Badge>
               </Link>
             ))}
           </div>

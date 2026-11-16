@@ -168,7 +168,7 @@ html[data-theme='dark'] .heroDeltaDown {
 }
 
 .sectionLink:hover {
-  color: var(--ifm-color-primary);
+  color: var(--lk-color-primary-label);
   text-decoration: none;
 }
 

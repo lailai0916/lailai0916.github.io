@@ -77,7 +77,7 @@
 
 .link:hover {
   background: var(--ifm-hover-overlay);
-  color: var(--ifm-color-primary-darkest);
+  color: var(--lk-color-primary-label);
   text-decoration: none;
 }
 
@@ -93,8 +93,4 @@
 .closest .unlinked {
   color: var(--ifm-font-color-base);
   font-weight: 600;
-}
-
-:global([data-theme='dark']) .link:hover {
-  color: var(--ifm-color-primary-light);
 }

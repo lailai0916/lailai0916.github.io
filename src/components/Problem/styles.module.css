@@ -44,7 +44,7 @@
 }
 
 .titleLink:hover {
-  color: var(--ifm-color-primary);
+  color: var(--lk-color-primary-label);
   text-decoration: underline;
   text-underline-offset: 0.2em;
 }

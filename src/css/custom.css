@@ -93,6 +93,10 @@ html.debug-mode span {
     color-mix(in srgb, var(--lk-divider-color) 55%, transparent);
 }
 
+.navbar :is(.navbar__brand, .navbar__link):hover {
+  color: var(--lk-color-primary-label);
+}
+
 /* The native drawer owns the backdrop without changing the navbar's glass material. */
 .navbar-sidebar__backdrop {
   display: none;
