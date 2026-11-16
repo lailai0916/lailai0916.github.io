@@ -1,6 +1,7 @@
 import type { ReactNode } from 'react';
 import clsx from 'clsx';
-import Icon from '@lailai0916/ui/Icon';
+import HomeIcon from 'lucide-static/icons/house.svg';
+import ChevronRightIcon from 'lucide-static/icons/chevron-right.svg';
 import Link from '@docusaurus/Link';
 import { translate } from '@docusaurus/Translate';
 import { ThemeClassNames } from '@docusaurus/theme-common';
@@ -41,7 +42,7 @@ export default function DocBreadcrumbs(): ReactNode {
                   description: 'The ARIA label for the home page in the breadcrumbs',
                 })}
               >
-                <Icon icon="lucide:house" width="1.0625rem" height="1.0625rem" aria-hidden="true" />
+                <HomeIcon width="1.0625rem" height="1.0625rem" aria-hidden="true" />
               </Link>
             </li>
           )}
@@ -55,8 +56,7 @@ export default function DocBreadcrumbs(): ReactNode {
                 aria-current={current ? 'page' : undefined}
               >
                 {(homePageRoute || index > 0) && (
-                  <Icon
-                    icon="lucide:chevron-right"
+                  <ChevronRightIcon
                     width="0.875rem"
                     height="0.875rem"
                     className={styles.separator}
