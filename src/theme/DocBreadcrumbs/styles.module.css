@@ -6,7 +6,6 @@
 .breadcrumbs {
   display: flex;
   align-items: center;
-  gap: 0.25rem;
   min-width: 0;
   min-height: 2rem;
   margin: 0;
@@ -16,9 +15,12 @@
 
 .homeItem {
   flex: none;
+  /* Balance the icon's hit-area inset against the text links' padding. */
+  margin-inline-end: -0.125rem;
 }
 
 .homeLink {
+  --lk-icon-button-icon-size: 1.0625rem;
   display: inline-flex;
   align-items: center;
   width: 2rem;
@@ -39,19 +41,13 @@
   flex-shrink: 3;
 }
 
-.item::before {
-  content: '';
+.separator {
+  display: block;
   flex: none;
-  width: 0.45rem;
-  height: 0.45rem;
-  margin-inline: 0.25rem 0.375rem;
-  border-top: 1.5px solid var(--ifm-color-emphasis-500);
-  border-right: 1.5px solid var(--ifm-color-emphasis-500);
-  transform: rotate(45deg);
-}
-
-.item:first-child::before {
-  display: none;
+  width: 0.875rem;
+  height: 0.875rem;
+  margin-inline: var(--lk-space-1);
+  color: var(--ifm-color-emphasis-500);
 }
 
 .link,

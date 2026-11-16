@@ -41,7 +41,7 @@ export default function DocBreadcrumbs(): ReactNode {
                   description: 'The ARIA label for the home page in the breadcrumbs',
                 })}
               >
-                <Icon icon="lucide:house" width={18} height={18} aria-hidden="true" />
+                <Icon icon="lucide:house" width="1.0625rem" height="1.0625rem" aria-hidden="true" />
               </Link>
             </li>
           )}
@@ -54,6 +54,15 @@ export default function DocBreadcrumbs(): ReactNode {
                 className={clsx(styles.item, current && styles.closest)}
                 aria-current={current ? 'page' : undefined}
               >
+                {(homePageRoute || index > 0) && (
+                  <Icon
+                    icon="lucide:chevron-right"
+                    width="0.875rem"
+                    height="0.875rem"
+                    className={styles.separator}
+                    aria-hidden="true"
+                  />
+                )}
                 {!current && href ? (
                   <Link href={href} className={styles.link}>
                     {item.label}
