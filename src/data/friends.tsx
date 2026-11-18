@@ -339,4 +339,18 @@ export const FRIEND_LIST: FriendItem[] = [
     avatar: 'https://www.mofei.life/img/mofei-logo_500_500.png',
     rss: 'https://www.mofei.life/zh/rss',
   },
+  {
+    id: 'yixuanWang',
+    title: translate({
+      id: 'data.friends.yixuanWang.title',
+      message: 'Pak',
+    }),
+    description: translate({
+      id: 'data.friends.yixuanWang.description',
+      message: "Yixuan Wang's blog.",
+    }),
+    href: 'https://blog.yixuan-wang.site',
+    avatar: 'https://am.yixuan-wang.site/avatar.webp',
+    rss: 'https://blog.yixuan-wang.site/feed.xml',
+  },
 ];
