@@ -267,4 +267,18 @@ export const FRIEND_LIST: FriendItem[] = [
     avatar: 'https://debertjamie.com/avatar.png',
     rss: 'https://debertjamie.com/feed.xml',
   },
+  {
+    id: 'ariasaka',
+    title: translate({
+      id: 'data.friends.ariasaka.title',
+      message: 'Ariasakaの小窝',
+    }),
+    description: translate({
+      id: 'data.friends.ariasaka.description',
+      message: '人有悲欢离合 月有阴晴圆缺',
+    }),
+    href: 'https://blog.yaria.top',
+    avatar: 'https://img.0v0.my/2024/12/05/67517bcf104da.png',
+    rss: 'https://blog.yaria.top/feed.xml',
+  },
 ];

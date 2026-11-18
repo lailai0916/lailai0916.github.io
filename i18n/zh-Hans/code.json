@@ -413,6 +413,12 @@
   "data.friends.debert.description": {
     "message": "Great oaks from little acorns grow."
   },
+  "data.friends.ariasaka.title": {
+    "message": "Ariasakaの小窝"
+  },
+  "data.friends.ariasaka.description": {
+    "message": "人有悲欢离合 月有阴晴圆缺"
+  },
   "data.resources.site.google.title": {
     "message": "谷歌"
   },
