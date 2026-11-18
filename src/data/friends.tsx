@@ -324,4 +324,19 @@ export const FRIEND_LIST: FriendItem[] = [
     avatar: 'https://hanlife02.com/avatar.webp?v=20260804',
     rss: 'https://hanlife02.com/rss.xml',
   },
+  {
+    id: 'mofei',
+    title: translate({
+      id: 'data.friends.mofei.title',
+      message: 'Mofei - A Super Dad Programmer in Finland',
+    }),
+    description: translate({
+      id: 'data.friends.mofei.description',
+      message:
+        'A super dad programmer living in Finland, writing about immigration life, parenting, and occasionally technology.',
+    }),
+    href: 'https://www.mofei.life',
+    avatar: 'https://www.mofei.life/img/mofei-logo_500_500.png',
+    rss: 'https://www.mofei.life/zh/rss',
+  },
 ];
