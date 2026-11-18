@@ -328,7 +328,7 @@ export const FRIEND_LIST: FriendItem[] = [
     id: 'mofei',
     title: translate({
       id: 'data.friends.mofei.title',
-      message: 'Mofei - A Super Dad Programmer in Finland',
+      message: 'Mofei',
     }),
     description: translate({
       id: 'data.friends.mofei.description',
