@@ -40,6 +40,14 @@ const REQUEST_LINK_EMAIL = `mailto:lailai0x394@gmail.com?subject=${encodeURIComp
   REQUEST_SUBJECT
 )}&body=${encodeURIComponent(REQUEST_TEMPLATE)}`;
 
+function getDomain(href: string): string {
+  try {
+    return new URL(href).hostname.replace(/^www\./, '');
+  } catch {
+    return href;
+  }
+}
+
 export default function Friends(): ReactNode {
   return (
     <Layout title={TITLE} description={DESCRIPTION}>
@@ -75,7 +83,9 @@ export default function Friends(): ReactNode {
               <FriendAvatar src={friend.avatar} className={styles.avatar} loading="lazy" />
               <div className={styles.cardBody}>
                 <h2 className={styles.friendName}>{friend.title}</h2>
-                <p className={styles.friendDescription}>{friend.description ?? friend.href}</p>
+                <p className={styles.friendDescription}>
+                  {friend.description ?? getDomain(friend.href)}
+                </p>
               </div>
               <span className={styles.arrow} aria-hidden>
                 <Icon icon="lucide:arrow-up-right" />
