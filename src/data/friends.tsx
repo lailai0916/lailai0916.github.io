@@ -296,4 +296,18 @@ export const FRIEND_LIST: FriendItem[] = [
     avatar: 'https://public.zzfw.cc/rabithua/rabithua.svg',
     rss: 'https://api.rote.ink/v2/api/rss/rabithua',
   },
+  {
+    id: 'arthals',
+    title: translate({
+      id: 'data.friends.arthals.title',
+      message: "Arthals' ink",
+    }),
+    description: translate({
+      id: 'data.friends.arthals.description',
+      message: '所见高山远木，阔云流风；所幸岁月盈余，了无拘束',
+    }),
+    href: 'https://arthals.ink/',
+    avatar: 'https://cdn.arthals.ink/Arthals.png',
+    rss: 'https://arthals.ink/rss.xml',
+  },
 ];

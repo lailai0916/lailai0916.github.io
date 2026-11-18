@@ -425,6 +425,12 @@
   "data.friends.rabithua.description": {
     "message": "前端开发、UI 与交互设计、摄影及独立创作。"
   },
+  "data.friends.arthals.title": {
+    "message": "Arthals' ink"
+  },
+  "data.friends.arthals.description": {
+    "message": "所见高山远木，阔云流风；所幸岁月盈余，了无拘束"
+  },
   "data.resources.site.google.title": {
     "message": "谷歌"
   },
