@@ -281,4 +281,19 @@ export const FRIEND_LIST: FriendItem[] = [
     avatar: 'https://img.0v0.my/2024/12/05/67517bcf104da.png',
     rss: 'https://blog.yaria.top/feed.xml',
   },
+  {
+    id: 'rabithua',
+    title: translate({
+      id: 'data.friends.rabithua.title',
+      message: 'Rabithua',
+    }),
+    description: translate({
+      id: 'data.friends.rabithua.description',
+      message:
+        'Front-end development, UI and interaction design, photography, and independent creative experiments.',
+    }),
+    href: 'https://zzfw.cc',
+    avatar: 'https://public.zzfw.cc/rabithua/rabithua.svg',
+    rss: 'https://api.rote.ink/v2/api/rss/rabithua',
+  },
 ];

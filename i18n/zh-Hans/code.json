@@ -419,6 +419,12 @@
   "data.friends.ariasaka.description": {
     "message": "人有悲欢离合 月有阴晴圆缺"
   },
+  "data.friends.rabithua.title": {
+    "message": "Rabithua"
+  },
+  "data.friends.rabithua.description": {
+    "message": "前端开发、UI 与交互设计、摄影及独立创作。"
+  },
   "data.resources.site.google.title": {
     "message": "谷歌"
   },
