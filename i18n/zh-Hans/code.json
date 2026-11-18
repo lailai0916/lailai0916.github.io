@@ -431,6 +431,12 @@
   "data.friends.arthals.description": {
     "message": "所见高山远木，阔云流风；所幸岁月盈余，了无拘束"
   },
+  "data.friends.ethan.title": {
+    "message": "Ethan"
+  },
+  "data.friends.ethan.description": {
+    "message": "Don't stay awake for too long."
+  },
   "data.resources.site.google.title": {
     "message": "谷歌"
   },

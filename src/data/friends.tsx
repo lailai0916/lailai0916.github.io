@@ -310,4 +310,18 @@ export const FRIEND_LIST: FriendItem[] = [
     avatar: 'https://cdn.arthals.ink/Arthals.png',
     rss: 'https://arthals.ink/rss.xml',
   },
+  {
+    id: 'ethan',
+    title: translate({
+      id: 'data.friends.ethan.title',
+      message: 'Ethan',
+    }),
+    description: translate({
+      id: 'data.friends.ethan.description',
+      message: "Don't stay awake for too long.",
+    }),
+    href: 'https://hanlife02.com',
+    avatar: 'https://hanlife02.com/avatar.webp?v=20260804',
+    rss: 'https://hanlife02.com/rss.xml',
+  },
 ];
