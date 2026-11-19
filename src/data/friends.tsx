@@ -347,10 +347,10 @@ export const FRIEND_LIST: FriendItem[] = [
     }),
     description: translate({
       id: 'data.friends.yixuanWang.description',
-      message: "Yixuan Wang's blog.",
+      message: '|_| todo!()',
     }),
     href: 'https://blog.yixuan-wang.site',
-    avatar: 'https://am.yixuan-wang.site/avatar.webp',
+    avatar: 'https://blog.yixuan-wang.site/favicon.svg',
     rss: 'https://blog.yixuan-wang.site/feed.xml',
   },
 ];
