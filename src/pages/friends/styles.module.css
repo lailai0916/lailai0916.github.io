@@ -69,7 +69,7 @@
   align-items: center;
   gap: 0.875rem;
   height: 100%;
-  padding-block: 1.25rem;
+  padding-block: var(--lk-space-6);
   color: var(--ifm-font-color-base);
   text-decoration: none !important;
 }

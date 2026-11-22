@@ -264,14 +264,13 @@
   display: grid;
   grid-template-columns: 40px minmax(0, 1fr);
   gap: 1rem;
-  padding-block: 2rem;
+  padding-block: var(--lk-space-6);
 }
 
 @media (max-width: 480px) {
   .moment {
     grid-template-columns: 32px minmax(0, 1fr);
     gap: 0.75rem;
-    padding-block: 1.5rem;
   }
 }
 
