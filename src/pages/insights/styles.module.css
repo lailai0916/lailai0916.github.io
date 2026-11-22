@@ -47,7 +47,8 @@ html[data-theme='dark'] .heroDeltaDown {
 
 .heroGrid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(var(--lk-data-card-min-width), 1fr));
+  /* Allow the longest traffic label to fit beside its icon before adding another column. */
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 10.25rem), 1fr));
   gap: var(--lk-space-4);
 }
 
