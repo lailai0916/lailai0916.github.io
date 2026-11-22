@@ -188,7 +188,7 @@ export function FriendFeed(): ReactNode {
                   >
                     <FriendAvatar
                       src={post.friend.avatar}
-                      className={clsx(styles.avatar, styles.feedAvatar)}
+                      className={styles.feedAvatar}
                       loading="lazy"
                       size={40}
                     />

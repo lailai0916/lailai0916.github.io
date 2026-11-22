@@ -3,7 +3,7 @@ import Layout from '@theme/Layout';
 import Icon from '@lailai0916/ui/Icon';
 import { PageTitle, PageHeader, PageContent } from '@lailai0916/ui/Page';
 import Button from '@lailai0916/ui/Button';
-import Card from '@lailai0916/ui/Card';
+import LinkCard from '@lailai0916/ui/LinkCard';
 import { FRIEND_LIST } from '@site/src/data/friends';
 import { translate } from '@docusaurus/Translate';
 import { trackEvent } from '@site/src/utils/analytics';
@@ -69,28 +69,25 @@ export default function Friends(): ReactNode {
         </Button>
       </PageHeader>
       <PageContent className="site-page-content">
+        <h2 className="sr-only">{TITLE}</h2>
         <div className={styles.layout}>
           {FRIEND_LIST.map((friend) => (
-            <Card
+            <LinkCard
               key={friend.id}
-              href={friend.href}
+              to={friend.href}
               data-analytics-surface="friends"
               data-analytics-id={friend.id}
-              padding="1.25rem"
-              className={styles.friendCard}
-              wrapperClassName={styles.friendLink}
-            >
-              <FriendAvatar src={friend.avatar} className={styles.avatar} loading="lazy" />
-              <div className={styles.cardBody}>
-                <h2 className={styles.friendName}>{friend.title}</h2>
-                <p className={styles.friendDescription}>
-                  {friend.description ?? getDomain(friend.href)}
-                </p>
-              </div>
-              <span className={styles.arrow} aria-hidden>
-                <Icon icon="lucide:arrow-up-right" />
-              </span>
-            </Card>
+              title={friend.title}
+              description={friend.description ?? getDomain(friend.href)}
+              imageSlot={
+                <FriendAvatar
+                  src={friend.avatar}
+                  className={styles.cardAvatar}
+                  loading="lazy"
+                  size="100%"
+                />
+              }
+            />
           ))}
         </div>
         <FriendFeed />
