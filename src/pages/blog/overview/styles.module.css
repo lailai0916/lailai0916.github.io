@@ -4,7 +4,6 @@
   gap: var(--lk-space-4);
 }
 
-/* Four cards need room for their labels and values beside the icon. */
 @media (max-width: 900px) {
   .kpiGrid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -13,12 +12,7 @@
 
 @media (max-width: 480px) {
   .kpiGrid {
-    grid-template-columns: minmax(0, 1fr);
-  }
-}
-
-@media (max-width: 240px) {
-  .kpiGrid > * {
-    padding-inline: 0.75rem;
+    grid-template-columns: repeat(auto-fit, minmax(var(--lk-data-card-min-width), 1fr));
+    gap: var(--lk-space-3);
   }
 }

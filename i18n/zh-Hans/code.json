@@ -2022,7 +2022,7 @@
     "message": "{count} 项"
   },
   "pages.resources.datacard.items": {
-    "message": "项资源"
+    "message": "资源总数"
   },
   "pages.resources.search.empty": {
     "message": "没有找到与“{query}”匹配的资源"
@@ -2046,7 +2046,7 @@
     "message": "《冬夜读书示子聿》"
   },
   "pages.travel.datacard.countries": {
-    "message": "个国家"
+    "message": "到访国家"
   },
   "pages.settings.title": {
     "message": "设置"

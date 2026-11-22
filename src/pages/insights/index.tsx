@@ -11,7 +11,7 @@ import * as countries from 'i18n-iso-countries';
 import countriesEn from 'i18n-iso-countries/langs/en.json';
 import countriesZh from 'i18n-iso-countries/langs/zh.json';
 import { PageHeader, PageTitle, PageContent } from '@lailai0916/ui/Page';
-import Card from '@lailai0916/ui/Card';
+import DataCard from '@lailai0916/ui/DataCard';
 import Skeleton from '@lailai0916/ui/Skeleton';
 import Chart from '@lailai0916/ui/Chart';
 import Donut from '@lailai0916/ui/Donut';
@@ -170,44 +170,33 @@ function HeroMetric({
   const displayedDelta = delta == null ? null : Math.abs(delta * 100).toFixed(1);
   const sign = delta == null ? null : displayedDelta === '0.0' ? 'flat' : delta > 0 ? 'up' : 'down';
   const positive = sign === 'flat' ? null : spec.invertDelta ? sign === 'down' : sign === 'up';
+  const trend = loading ? (
+    <Skeleton className={styles.heroDeltaSkeleton} width="3rem" radius="999px" />
+  ) : displayedDelta != null && sign !== 'flat' ? (
+    <span className={clsx(styles.heroDelta, positive ? styles.heroDeltaUp : styles.heroDeltaDown)}>
+      <Icon
+        icon={sign === 'up' ? 'lucide:arrow-up-right' : 'lucide:arrow-down-right'}
+        className={styles.heroDeltaIcon}
+        aria-hidden="true"
+      />
+      <span className="sr-only">{sign === 'up' ? '+' : '−'}</span>
+      {displayedDelta}%
+    </span>
+  ) : (
+    <span className={clsx(styles.heroDelta, styles.heroDeltaFlat)}>
+      {displayedDelta == null ? '—' : `${displayedDelta}%`}
+    </span>
+  );
 
   return (
-    <Card padding="1.4rem 1.4rem 1.25rem" className={styles.heroTile}>
-      <div className={styles.heroHead}>
-        <Icon icon={spec.icon} className={styles.heroIcon} aria-hidden="true" />
-        <span className={styles.heroLabel}>{spec.label}</span>
-      </div>
-      {loading ? (
-        <Skeleton className={styles.heroValue} radius="8px">
-          {'     '}
-        </Skeleton>
-      ) : (
-        <span className={styles.heroValue}>{spec.format(animated)}</span>
-      )}
-      {loading ? (
-        <Skeleton
-          className={styles.heroDeltaSkeleton}
-          width="3rem"
-          height="1.3rem"
-          radius="999px"
-        />
-      ) : displayedDelta != null && sign !== 'flat' ? (
-        <span
-          className={clsx(styles.heroDelta, positive ? styles.heroDeltaUp : styles.heroDeltaDown)}
-        >
-          <Icon
-            icon={sign === 'up' ? 'lucide:arrow-up-right' : 'lucide:arrow-down-right'}
-            className={styles.heroDeltaIcon}
-            aria-hidden="true"
-          />
-          {displayedDelta}%
-        </span>
-      ) : (
-        <span className={clsx(styles.heroDelta, styles.heroDeltaFlat)}>
-          {displayedDelta == null ? '—' : `${displayedDelta}%`}
-        </span>
-      )}
-    </Card>
+    <DataCard
+      value={animated}
+      label={spec.label}
+      icon={spec.icon}
+      format={spec.format}
+      loading={loading}
+      trend={trend}
+    />
   );
 }
 
@@ -226,7 +215,7 @@ function HeroGrid({ range }: { range: InsightsRange }) {
       key: 'visitors',
       label: translate({
         id: 'pages.insights.metric.visitors',
-        message: 'Visitors',
+        message: 'Visitors|Visitors',
       }),
       icon: 'lucide:users',
       format: compact,
@@ -235,7 +224,7 @@ function HeroGrid({ range }: { range: InsightsRange }) {
       key: 'visits',
       label: translate({
         id: 'pages.insights.metric.visits',
-        message: 'Visits',
+        message: 'Visits|Visits',
       }),
       icon: 'lucide:log-in',
       format: compact,
@@ -244,7 +233,7 @@ function HeroGrid({ range }: { range: InsightsRange }) {
       key: 'pageviews',
       label: translate({
         id: 'pages.insights.metric.pageviews',
-        message: 'Views',
+        message: 'Views|Views',
       }),
       icon: 'lucide:eye',
       format: compact,
@@ -253,7 +242,7 @@ function HeroGrid({ range }: { range: InsightsRange }) {
       key: 'bounceRate',
       label: translate({
         id: 'pages.insights.metric.bounceRate',
-        message: 'Bounce Rate',
+        message: 'Bounce Rate|Bounce Rate',
       }),
       icon: 'lucide:undo-2',
       format: formatPercent,
@@ -263,7 +252,7 @@ function HeroGrid({ range }: { range: InsightsRange }) {
       key: 'avgVisit',
       label: translate({
         id: 'pages.insights.metric.avgVisit',
-        message: 'Visit Duration',
+        message: 'Visit Duration|Visit Duration',
       }),
       icon: 'lucide:timer',
       format: formatDuration,
