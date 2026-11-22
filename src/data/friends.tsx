@@ -52,45 +52,6 @@ export const FRIEND_LIST: FriendItem[] = [
     avatar: 'https://vochant.github.io/images/logo.svg',
   },
   {
-    id: 'akorz',
-    title: translate({
-      id: 'data.friends.akorz.title',
-      message: 'AKorz',
-    }),
-    description: translate({
-      id: 'data.friends.akorz.description',
-      message: 'FACE THE SIN, SAVE THE E.G.O.',
-    }),
-    href: 'https://www.luogu.com.cn/user/716602',
-    avatar: 'https://cdn.luogu.com.cn/upload/usericon/716602.png',
-  },
-  {
-    id: 'cefqwq',
-    title: translate({
-      id: 'data.friends.cefqwq.title',
-      message: 'CEFqwq',
-    }),
-    description: translate({
-      id: 'data.friends.cefqwq.description',
-      message: '代词使用她',
-    }),
-    href: 'https://www.luogu.com.cn/user/482610',
-    avatar: 'https://cdn.luogu.com.cn/upload/usericon/482610.png',
-  },
-  {
-    id: 'ladex',
-    title: translate({
-      id: 'data.friends.ladex.title',
-      message: 'LaDeX',
-    }),
-    description: translate({
-      id: 'data.friends.ladex.description',
-      message: 'Ciallo～(∠・ω< )⌒★',
-    }),
-    href: 'https://www.luogu.com.cn/user/431658',
-    avatar: 'https://cdn.luogu.com.cn/upload/usericon/431658.png',
-  },
-  {
     id: 'dreamMaker',
     title: translate({
       id: 'data.friends.dreamMaker.title',
