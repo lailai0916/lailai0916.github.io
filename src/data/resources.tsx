@@ -1327,6 +1327,17 @@ const RESOURCE_CATALOG = {
       message: 'Multiplayer survival game built around flowers and petals',
     }),
   },
+  digdigIo: {
+    title: translate({
+      id: 'data.resources.site.digdigIo.title',
+      message: 'digdig.io',
+    }),
+    href: 'https://digdig.io',
+    description: translate({
+      id: 'data.resources.site.digdigIo.description',
+      message: 'Multiplayer survival game about digging for resources',
+    }),
+  },
   tilemanIo: {
     title: translate({
       id: 'data.resources.site.tilemanIo.title',
@@ -1930,6 +1941,7 @@ export const RESOURCE_LIST: ResourceCategoryItem[] = [
       'lichess',
       'generalsIo',
       'florrIo',
+      'digdigIo',
       'tilemanIo',
       'yorgIo',
       'bloxdIo',

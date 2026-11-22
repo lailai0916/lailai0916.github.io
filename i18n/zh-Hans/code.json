@@ -1169,6 +1169,12 @@
   "data.resources.site.florrIo.description": {
     "message": "围绕花朵与花瓣展开的多人生存游戏"
   },
+  "data.resources.site.digdigIo.title": {
+    "message": "digdig.io"
+  },
+  "data.resources.site.digdigIo.description": {
+    "message": "通过挖掘资源成长的多人生存游戏"
+  },
   "data.resources.site.tilemanIo.title": {
     "message": "TileMan.io"
   },
